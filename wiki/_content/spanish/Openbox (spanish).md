@@ -10,37 +10,37 @@ Openbox es un gestor de ventanas ligero, altamente configurable y con amplia com
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
 *   [2 Actualizando a Openbox 3.5](#Actualizando_a_Openbox_3.5)
 *   [3 Openbox Solo](#Openbox_Solo)
 *   [4 Openbox como WM junto a otros entornos de escritorio](#Openbox_como_WM_junto_a_otros_entornos_de_escritorio)
     *   [4.1 GNOME](#GNOME)
     *   [4.2 KDE](#KDE)
     *   [4.3 Xfce4](#Xfce4)
-*   [5 Configuración](#Configuraci.C3.B3n)
-    *   [5.1 Cofiguración Manual](#Cofiguraci.C3.B3n_Manual)
+*   [5 Configuración](#Configuración)
+    *   [5.1 Cofiguración Manual](#Cofiguración_Manual)
     *   [5.2 ObConf](#ObConf)
-    *   [5.3 Personalización de Aplicaciones](#Personalizaci.C3.B3n_de_Aplicaciones)
-*   [6 Menús](#Men.C3.BAs)
+    *   [5.3 Personalización de Aplicaciones](#Personalización_de_Aplicaciones)
+*   [6 Menús](#Menús)
     *   [6.1 Manualmente](#Manualmente)
-    *   [6.2 Iconos en el Menú](#Iconos_en_el_Men.C3.BA)
+    *   [6.2 Iconos en el Menú](#Iconos_en_el_Menú)
     *   [6.3 MenuMaker](#MenuMaker)
     *   [6.4 Obmenu](#Obmenu)
         *   [6.4.1 Obm-xdg](#Obm-xdg)
     *   [6.5 openbox-menu](#openbox-menu)
-    *   [6.6 Script Menú xdg Basado en Python](#Script_Men.C3.BA_xdg_Basado_en_Python)
-    *   [6.7 Generador Automático De Menú](#Generador_Autom.C3.A1tico_De_Men.C3.BA)
-    *   [6.8 menús Dinámicos (Pipe menus)](#men.C3.BAs_Din.C3.A1micos_.28Pipe_menus.29)
+    *   [6.6 Script Menú xdg Basado en Python](#Script_Menú_xdg_Basado_en_Python)
+    *   [6.7 Generador Automático De Menú](#Generador_Automático_De_Menú)
+    *   [6.8 menús Dinámicos (Pipe menus)](#menús_Dinámicos_(Pipe_menus))
 *   [7 Programas en el arranque](#Programas_en_el_arranque)
     *   [7.1 Habilitar el auto-arranque](#Habilitar_el_auto-arranque)
-    *   [7.2 Script de inicio (autostart)](#Script_de_inicio_.28autostart.29)
+    *   [7.2 Script de inicio (autostart)](#Script_de_inicio_(autostart))
 *   [8 Temas y apariencia](#Temas_y_apariencia)
     *   [8.1 Temas de Openbox](#Temas_de_Openbox)
-    *   [8.2 Cursores , Iconos y Fondos de Escritorio](#Cursores_.2C_Iconos_y_Fondos_de_Escritorio)
+    *   [8.2 Cursores , Iconos y Fondos de Escritorio](#Cursores_,_Iconos_y_Fondos_de_Escritorio)
 *   [9 Consejos y trucos](#Consejos_y_trucos)
     *   [9.1 Programas recomendados](#Programas_recomendados)
-    *   [9.2 Obtener rápidamente valores xprop para ajustes individualizados](#Obtener_r.C3.A1pidamente_valores_xprop_para_ajustes_individualizados)
-    *   [9.3 Ligando el menú a una orden](#Ligando_el_men.C3.BA_a_una_orden)
+    *   [9.2 Obtener rápidamente valores xprop para ajustes individualizados](#Obtener_rápidamente_valores_xprop_para_ajustes_individualizados)
+    *   [9.3 Ligando el menú a una orden](#Ligando_el_menú_a_una_orden)
     *   [9.4 Control de volumen por teclado](#Control_de_volumen_por_teclado)
         *   [9.4.1 Alsa](#Alsa)
         *   [9.4.2 Pulseaudio](#Pulseaudio)
@@ -69,7 +69,7 @@ Estos archivos son la base de tu configuración en openbox. Cada archivo apunta 
 
 	`menu.xml` 
 
-	Controla el menú de aplicaciones de Openbox que aparece al hacer click secundario en el escritorio. [ver la sección menú](#Men.C3.BAs).
+	Controla el menú de aplicaciones de Openbox que aparece al hacer click secundario en el escritorio. [ver la sección menú](#Menús).
 
 	`autostart` 
 

@@ -21,7 +21,7 @@ Of course there are also [tools that do both](#Archiving_and_compression), which
     *   [3.3 Archiving and compression usage](#Archiving_and_compression_usage)
 *   [4 Convenience tools](#Convenience_tools)
 *   [5 Determining archive format](#Determining_archive_format)
-*   [6 Esoteric, rare or deprecated tools](#Esoteric.2C_rare_or_deprecated_tools)
+*   [6 Esoteric, rare or deprecated tools](#Esoteric,_rare_or_deprecated_tools)
 *   [7 Compression libraries](#Compression_libraries)
 *   [8 See also](#See_also)
 

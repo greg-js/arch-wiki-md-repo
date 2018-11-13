@@ -14,11 +14,11 @@ Como não há suporte aos auxiliares do AUR, eles não estão presentes nos [rep
 
 *   [1 Legenda](#Legenda)
 *   [2 Pesquisa e download](#Pesquisa_e_download)
-*   [3 Download e compilação](#Download_e_compila.C3.A7.C3.A3o)
+*   [3 Download e compilação](#Download_e_compilação)
 *   [4 Wrappers do pacman](#Wrappers_do_pacman)
-*   [5 Gráficos](#Gr.C3.A1ficos)
+*   [5 Gráficos](#Gráficos)
 *   [6 Outros](#Outros)
-*   [7 Manutenção](#Manuten.C3.A7.C3.A3o)
+*   [7 Manutenção](#Manutenção)
 
 ## Legenda
 

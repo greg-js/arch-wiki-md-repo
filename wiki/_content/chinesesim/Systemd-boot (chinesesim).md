@@ -17,24 +17,24 @@
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-    *   [1.1 在UEFI 引导下安装](#.E5.9C.A8UEFI_.E5.BC.95.E5.AF.BC.E4.B8.8B.E5.AE.89.E8.A3.85)
-    *   [1.2 在传统启动下安装](#.E5.9C.A8.E4.BC.A0.E7.BB.9F.E5.90.AF.E5.8A.A8.E4.B8.8B.E5.AE.89.E8.A3.85)
-    *   [1.3 更新](#.E6.9B.B4.E6.96.B0)
-*   [2 配置](#.E9.85.8D.E7.BD.AE)
-    *   [2.1 基本配置](#.E5.9F.BA.E6.9C.AC.E9.85.8D.E7.BD.AE)
-    *   [2.2 增加启动选项](#.E5.A2.9E.E5.8A.A0.E5.90.AF.E5.8A.A8.E9.80.89.E9.A1.B9)
-        *   [2.2.1 一般的安装选项](#.E4.B8.80.E8.88.AC.E7.9A.84.E5.AE.89.E8.A3.85.E9.80.89.E9.A1.B9)
-        *   [2.2.2 根分区在LVM 逻辑卷上时](#.E6.A0.B9.E5.88.86.E5.8C.BA.E5.9C.A8LVM_.E9.80.BB.E8.BE.91.E5.8D.B7.E4.B8.8A.E6.97.B6)
-        *   [2.2.3 加密的根分区](#.E5.8A.A0.E5.AF.86.E7.9A.84.E6.A0.B9.E5.88.86.E5.8C.BA)
-        *   [2.2.4 根分区是btrfs子卷](#.E6.A0.B9.E5.88.86.E5.8C.BA.E6.98.AFbtrfs.E5.AD.90.E5.8D.B7)
-        *   [2.2.5 EFI Shells 或其他 EFI 应用程序](#EFI_Shells_.E6.88.96.E5.85.B6.E4.BB.96_EFI_.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F)
-    *   [2.3 对休眠的支持](#.E5.AF.B9.E4.BC.91.E7.9C.A0.E7.9A.84.E6.94.AF.E6.8C.81)
-*   [3 启动选单中的按键操作](#.E5.90.AF.E5.8A.A8.E9.80.89.E5.8D.95.E4.B8.AD.E7.9A.84.E6.8C.89.E9.94.AE.E6.93.8D.E4.BD.9C)
-*   [4 排除问题](#.E6.8E.92.E9.99.A4.E9.97.AE.E9.A2.98)
-    *   [4.1 通过efibootmgr手动添加启动选项](#.E9.80.9A.E8.BF.87efibootmgr.E6.89.8B.E5.8A.A8.E6.B7.BB.E5.8A.A0.E5.90.AF.E5.8A.A8.E9.80.89.E9.A1.B9)
-    *   [4.2 在Windows升级后不能看到启动菜单](#.E5.9C.A8Windows.E5.8D.87.E7.BA.A7.E5.90.8E.E4.B8.8D.E8.83.BD.E7.9C.8B.E5.88.B0.E5.90.AF.E5.8A.A8.E8.8F.9C.E5.8D.95)
-*   [5 参阅](#.E5.8F.82.E9.98.85)
+*   [1 安装](#安装)
+    *   [1.1 在UEFI 引导下安装](#在UEFI_引导下安装)
+    *   [1.2 在传统启动下安装](#在传统启动下安装)
+    *   [1.3 更新](#更新)
+*   [2 配置](#配置)
+    *   [2.1 基本配置](#基本配置)
+    *   [2.2 增加启动选项](#增加启动选项)
+        *   [2.2.1 一般的安装选项](#一般的安装选项)
+        *   [2.2.2 根分区在LVM 逻辑卷上时](#根分区在LVM_逻辑卷上时)
+        *   [2.2.3 加密的根分区](#加密的根分区)
+        *   [2.2.4 根分区是btrfs子卷](#根分区是btrfs子卷)
+        *   [2.2.5 EFI Shells 或其他 EFI 应用程序](#EFI_Shells_或其他_EFI_应用程序)
+    *   [2.3 对休眠的支持](#对休眠的支持)
+*   [3 启动选单中的按键操作](#启动选单中的按键操作)
+*   [4 排除问题](#排除问题)
+    *   [4.1 通过efibootmgr手动添加启动选项](#通过efibootmgr手动添加启动选项)
+    *   [4.2 在Windows升级后不能看到启动菜单](#在Windows升级后不能看到启动菜单)
+*   [5 参阅](#参阅)
 
 ## 安装
 
@@ -44,7 +44,7 @@
 2.  验证[可以正确访问 EFI 变量](/index.php/Unified_Extensible_Firmware_Interface#Requirements_for_UEFI_variable_support "Unified Extensible Firmware Interface")
 3.  挂载 [EFI 系统分区](/index.php/EFI_system_partition "EFI system partition")(ESP)，下面的例子中会用 `$esp` 代替 EFI 系统分区的实际位置。
 
-**Note:** systemd-boot 无法从其它分区加载 EFI 程序。 建议将 ESP 挂载到 `/boot`. 如果希望 ESP 和 /boot 分离，请查看后面的 [#更新](#.E6.9B.B4.E6.96.B0)部分。
+**Note:** systemd-boot 无法从其它分区加载 EFI 程序。 建议将 ESP 挂载到 `/boot`. 如果希望 ESP 和 /boot 分离，请查看后面的 [#更新](#更新)部分。
 
 1.  如果 EFI 系统分区没挂载在 /boot 上的话，复制内核和 initramfs 到 ESP。
 

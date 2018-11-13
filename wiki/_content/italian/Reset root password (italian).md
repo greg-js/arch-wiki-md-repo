@@ -6,7 +6,7 @@ Se avete dimenticato la password di root questa guida vi aiutera' a recuperarla.
     *   [1.1 Change Root](#Change_Root)
     *   [1.2 Eliminare la password](#Eliminare_la_password)
 *   [2 Utilizzare GRUB per richiamare Bash](#Utilizzare_GRUB_per_richiamare_Bash)
-*   [3 Risorse ( in inglese)](#Risorse_.28_in_inglese.29)
+*   [3 Risorse ( in inglese)](#Risorse_(_in_inglese))
 
 ## Usare un LiveCD
 

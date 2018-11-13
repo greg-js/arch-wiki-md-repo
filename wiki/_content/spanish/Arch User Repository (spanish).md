@@ -27,13 +27,13 @@ Un buen número de paquetes nuevos que entran en los repositorios oficiales tien
     *   [2.1 Repositorios Git para paquetes AUR3](#Repositorios_Git_para_paquetes_AUR3)
 *   [3 Instalar paquetes](#Instalar_paquetes)
     *   [3.1 Requisitos previos](#Requisitos_previos)
-    *   [3.2 Obtener los archivos de compilación](#Obtener_los_archivos_de_compilaci.C3.B3n)
+    *   [3.2 Obtener los archivos de compilación](#Obtener_los_archivos_de_compilación)
     *   [3.3 Compilar e instalar el paquete](#Compilar_e_instalar_el_paquete)
 *   [4 Feedback](#Feedback)
 *   [5 Compartir y mantener los paquetes](#Compartir_y_mantener_los_paquetes)
     *   [5.1 Enviar paquetes](#Enviar_paquetes)
-        *   [5.1.1 Reglas de envío](#Reglas_de_env.C3.ADo)
-        *   [5.1.2 Verificación](#Verificaci.C3.B3n)
+        *   [5.1.1 Reglas de envío](#Reglas_de_envío)
+        *   [5.1.2 Verificación](#Verificación)
         *   [5.1.3 Crear un paquete nuevo](#Crear_un_paquete_nuevo)
         *   [5.1.4 Subir paquetes](#Subir_paquetes)
     *   [5.2 Mantener los paquetes](#Mantener_los_paquetes)
@@ -41,29 +41,29 @@ Un buen número de paquetes nuevos que entran en los repositorios oficiales tien
 *   [6 Traducir la interfaz web](#Traducir_la_interfaz_web)
 *   [7 Sintaxis de comentario](#Sintaxis_de_comentario)
 *   [8 FAQ](#FAQ)
-    *   [8.1 ¿Que es AUR?](#.C2.BFQue_es_AUR.3F)
-    *   [8.2 ¿Qué tipo de paquetes se permiten en AUR?](#.C2.BFQu.C3.A9_tipo_de_paquetes_se_permiten_en_AUR.3F)
-    *   [8.3 ¿Cómo puedo votar por los paquetes en AUR?](#.C2.BFC.C3.B3mo_puedo_votar_por_los_paquetes_en_AUR.3F)
-    *   [8.4 ¿Qué es un usuario de confianza / Trusted Users (TU)?](#.C2.BFQu.C3.A9_es_un_usuario_de_confianza_.2F_Trusted_Users_.28TU.29.3F)
-    *   [8.5 ¿Cuál es la diferencia entre Arch User Repository y el repositorio community?](#.C2.BFCu.C3.A1l_es_la_diferencia_entre_Arch_User_Repository_y_el_repositorio_community.3F)
-    *   [8.6 Un paquete en AUR está desactualizado, ¿qué hago?](#Un_paquete_en_AUR_est.C3.A1_desactualizado.2C_.C2.BFqu.C3.A9_hago.3F)
-    *   [8.7 Foo, que está en AUR, no me compila con makepkg, ¿qué hago?](#Foo.2C_que_est.C3.A1_en_AUR.2C_no_me_compila_con_makepkg.2C_.C2.BFqu.C3.A9_hago.3F)
-    *   [8.8 ERROR: One or more PGP signatures could not be verified!; ¿qué debería hacer?](#ERROR:_One_or_more_PGP_signatures_could_not_be_verified.21.3B_.C2.BFqu.C3.A9_deber.C3.ADa_hacer.3F)
-    *   [8.9 ¿Cómo hacer un PKGBUILD?](#.C2.BFC.C3.B3mo_hacer_un_PKGBUILD.3F)
-    *   [8.10 Quiero enviar un PKGBUILD ¿podría alguien comprobar antes si tiene errores?](#Quiero_enviar_un_PKGBUILD_.C2.BFpodr.C3.ADa_alguien_comprobar_antes_si_tiene_errores.3F)
-    *   [8.11 ¿Qué hacer para que un PKGBUILD pase al repositorio community?](#.C2.BFQu.C3.A9_hacer_para_que_un_PKGBUILD_pase_al_repositorio_community.3F)
-    *   [8.12 ¿Cómo puedo acelerar los repetidos procesos de compilación?](#.C2.BFC.C3.B3mo_puedo_acelerar_los_repetidos_procesos_de_compilaci.C3.B3n.3F)
-    *   [8.13 ¿Cuál es la diferencia entre los paquetes foo y foo-git?](#.C2.BFCu.C3.A1l_es_la_diferencia_entre_los_paquetes_foo_y_foo-git.3F)
-    *   [8.14 ¿Por qué foo desapareció de AUR?](#.C2.BFPor_qu.C3.A9_foo_desapareci.C3.B3_de_AUR.3F)
-    *   [8.15 ¿Cómo puedo averiguar si alguno de los paquetes instalados desapareció de AUR?](#.C2.BFC.C3.B3mo_puedo_averiguar_si_alguno_de_los_paquetes_instalados_desapareci.C3.B3_de_AUR.3F)
-    *   [8.16 ¿Cómo puedo obtener una lista de todos los paquetes de AUR?](#.C2.BFC.C3.B3mo_puedo_obtener_una_lista_de_todos_los_paquetes_de_AUR.3F)
-*   [9 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+    *   [8.1 ¿Que es AUR?](#¿Que_es_AUR?)
+    *   [8.2 ¿Qué tipo de paquetes se permiten en AUR?](#¿Qué_tipo_de_paquetes_se_permiten_en_AUR?)
+    *   [8.3 ¿Cómo puedo votar por los paquetes en AUR?](#¿Cómo_puedo_votar_por_los_paquetes_en_AUR?)
+    *   [8.4 ¿Qué es un usuario de confianza / Trusted Users (TU)?](#¿Qué_es_un_usuario_de_confianza_/_Trusted_Users_(TU)?)
+    *   [8.5 ¿Cuál es la diferencia entre Arch User Repository y el repositorio community?](#¿Cuál_es_la_diferencia_entre_Arch_User_Repository_y_el_repositorio_community?)
+    *   [8.6 Un paquete en AUR está desactualizado, ¿qué hago?](#Un_paquete_en_AUR_está_desactualizado,_¿qué_hago?)
+    *   [8.7 Foo, que está en AUR, no me compila con makepkg, ¿qué hago?](#Foo,_que_está_en_AUR,_no_me_compila_con_makepkg,_¿qué_hago?)
+    *   [8.8 ERROR: One or more PGP signatures could not be verified!; ¿qué debería hacer?](#ERROR:_One_or_more_PGP_signatures_could_not_be_verified!;_¿qué_debería_hacer?)
+    *   [8.9 ¿Cómo hacer un PKGBUILD?](#¿Cómo_hacer_un_PKGBUILD?)
+    *   [8.10 Quiero enviar un PKGBUILD ¿podría alguien comprobar antes si tiene errores?](#Quiero_enviar_un_PKGBUILD_¿podría_alguien_comprobar_antes_si_tiene_errores?)
+    *   [8.11 ¿Qué hacer para que un PKGBUILD pase al repositorio community?](#¿Qué_hacer_para_que_un_PKGBUILD_pase_al_repositorio_community?)
+    *   [8.12 ¿Cómo puedo acelerar los repetidos procesos de compilación?](#¿Cómo_puedo_acelerar_los_repetidos_procesos_de_compilación?)
+    *   [8.13 ¿Cuál es la diferencia entre los paquetes foo y foo-git?](#¿Cuál_es_la_diferencia_entre_los_paquetes_foo_y_foo-git?)
+    *   [8.14 ¿Por qué foo desapareció de AUR?](#¿Por_qué_foo_desapareció_de_AUR?)
+    *   [8.15 ¿Cómo puedo averiguar si alguno de los paquetes instalados desapareció de AUR?](#¿Cómo_puedo_averiguar_si_alguno_de_los_paquetes_instalados_desapareció_de_AUR?)
+    *   [8.16 ¿Cómo puedo obtener una lista de todos los paquetes de AUR?](#¿Cómo_puedo_obtener_una_lista_de_todos_los_paquetes_de_AUR?)
+*   [9 Véase también](#Véase_también)
 
 ## Para empezar
 
 Los usuarios pueden buscar y descargar PKGBUILD desde la [interfaz Web de AUR](https://aur.archlinux.org). Estos PKGBUILD se pueden compilar en paquetes instalables usando [makepkg](/index.php/Makepkg "Makepkg"), y luego instalarlos con pacman.
 
-*   Asegúrese de que los paquetes del grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) están [instalados](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)").
+*   Asegúrese de que los paquetes del grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) están [instalados](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)").
 *   Léase [#FAQ](#FAQ) para obtener respuestas a las preguntas más comunes.
 *   Es posible mejorar la optimización ajustando `/etc/makepkg.conf` para el procesador (del equipo) antes de crear paquetes desde AUR. Se puede obtener una mejora significativa en los tiempos de compilación en sistemas con procesadores multicore ajustando la variable MAKEFLAGS. También se pueden habilitar optimizaciones para hardware específico en GCC a través de la variable CFLAGS. Véase [makepkg](/index.php/Makepkg "Makepkg") para obtener más información.
 
@@ -327,13 +327,13 @@ AUR (Arch User Repository) es el lugar donde la comunidad de Arch Linux puede su
 
 ### ¿Qué tipo de paquetes se permiten en AUR?
 
-Los paquetes en AUR no son más que «scripts de compilación», es decir, instrucciones para construir los binarios que pueden ser manejados por pacman. Para la mayor parte de los casos, no hay limitaciones, siempre y cuando se ajusten a [las directrices](#Reglas_de_env.C3.ADo) de la utilidad antes mencionada y a los términos de licencia del contenido. En otros casos, cuando se menciona que «no se puede vincular» a las descargas, como cuando los contenidos no son redistribuibles, solo se podrá hacer uso del mismo nombre del archivo como la fuente. Esto significa y requiere que los usuarios deben tener ya la fuente en el directorio de compilación antes de iniciar el proceso de construcción del paquete. En caso de duda, pregunte.
+Los paquetes en AUR no son más que «scripts de compilación», es decir, instrucciones para construir los binarios que pueden ser manejados por pacman. Para la mayor parte de los casos, no hay limitaciones, siempre y cuando se ajusten a [las directrices](#Reglas_de_envío) de la utilidad antes mencionada y a los términos de licencia del contenido. En otros casos, cuando se menciona que «no se puede vincular» a las descargas, como cuando los contenidos no son redistribuibles, solo se podrá hacer uso del mismo nombre del archivo como la fuente. Esto significa y requiere que los usuarios deben tener ya la fuente en el directorio de compilación antes de iniciar el proceso de construcción del paquete. En caso de duda, pregunte.
 
 ### ¿Cómo puedo votar por los paquetes en AUR?
 
 Inscríbase en el [sitio web de AUR](https://aur.archlinux.org/) para tener acceso a la opción "Vote for this package" («Vote por este paquete») mientras explora los paquetes. Después de registrarse, también es posible votar desde la línea de órdenes con [aurvote](https://aur.archlinux.org/packages/aurvote/), [aurvote-git](https://aur.archlinux.org/packages/aurvote-git/) o [aur-auto-vote-git](https://aur.archlinux.org/packages/aur-auto-vote-git/).
 
-Alternativamente, si ha configurado [autenticación ssh](#Verificaci.C3.B3n) como se indicó anteriormente, puede votar directamente desde la línea de órdenes usando su clave ssh. Esto significa que no necesitará guardar o escribir su contraseña AUR.
+Alternativamente, si ha configurado [autenticación ssh](#Verificación) como se indicó anteriormente, puede votar directamente desde la línea de órdenes usando su clave ssh. Esto significa que no necesitará guardar o escribir su contraseña AUR.
 
 ```
 ssh aur@aur.archlinux.org vote <PACKAGE_NAME>
@@ -410,7 +410,7 @@ Véase también [System maintenance#Use proven software packages](/index.php/Sys
 
 Es posible que el paquete haya sido adoptado por un TU (Trusted Users —*«usuarios de confianza»*—) y ahora esté en el [repositorio community](/index.php/Repositorio_community "Repositorio community").
 
-Los paquetes pueden eliminarse si no cumplen con las [#Reglas de envío](#Reglas_de_env.C3.ADo). Consulte los [aur-requests archivos](https://lists.archlinux.org/pipermail/aur-requests/) para conocer el motivo de la eliminación.
+Los paquetes pueden eliminarse si no cumplen con las [#Reglas de envío](#Reglas_de_envío). Consulte los [aur-requests archivos](https://lists.archlinux.org/pipermail/aur-requests/) para conocer el motivo de la eliminación.
 
 Si el paquete estaba presente en AUR3, podría no haber sido [migrado a AUR4](https://lists.archlinux.org/pipermail/aur-general/2015-August/031322.html). Consulte los [#Repositorios Git para paquetes AUR3](#Repositorios_Git_para_paquetes_AUR3) donde se conservará.
 

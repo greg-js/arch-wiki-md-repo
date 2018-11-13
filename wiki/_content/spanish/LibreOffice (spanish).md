@@ -5,16 +5,16 @@ de [Home - LibreOffice](http://www.libreoffice.org/):
 ## Contents
 
 *   [1 LibreOffice en Arch Linux](#LibreOffice_en_Arch_Linux)
-*   [2 Instalación](#Instalaci.C3.B3n)
-*   [3 Extensiones de gestión](#Extensiones_de_gesti.C3.B3n)
-*   [4 Corrección de ortografía](#Correcci.C3.B3n_de_ortograf.C3.ADa)
-*   [5 Reglas de división de palabras](#Reglas_de_divisi.C3.B3n_de_palabras)
-*   [6 Sinónimos](#Sin.C3.B3nimos)
+*   [2 Instalación](#Instalación)
+*   [3 Extensiones de gestión](#Extensiones_de_gestión)
+*   [4 Corrección de ortografía](#Corrección_de_ortografía)
+*   [5 Reglas de división de palabras](#Reglas_de_división_de_palabras)
+*   [6 Sinónimos](#Sinónimos)
 *   [7 Instalando Macros](#Instalando_Macros)
 *   [8 Ejecutar LibreOffice](#Ejecutar_LibreOffice)
 *   [9 Acelerar LibreOffice](#Acelerar_LibreOffice)
-*   [10 Solución de problemas](#Soluci.C3.B3n_de_problemas)
-    *   [10.1 Sustitución de fuentes](#Sustituci.C3.B3n_de_fuentes)
+*   [10 Solución de problemas](#Solución_de_problemas)
+    *   [10.1 Sustitución de fuentes](#Sustitución_de_fuentes)
     *   [10.2 No se pueden ingresar acentos](#No_se_pueden_ingresar_acentos)
 
 ## LibreOffice en Arch Linux

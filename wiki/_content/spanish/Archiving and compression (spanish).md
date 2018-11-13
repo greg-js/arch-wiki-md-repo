@@ -8,25 +8,25 @@ Las herramientas tradicionales de archivado y compresión de Unix se separan de 
 
 Estas herramientas a menudo se utilizan en secuencia creando primero un archivo de almacenamiento y luego comprimiéndolo.
 
-Por supuesto, también hay [herramientas que hacen ambas cosas](#Archivado_y_compresi.C3.B3n), que tienden a ofrecer adicionalmente cifrado, detección de errores y recuperación.
+Por supuesto, también hay [herramientas que hacen ambas cosas](#Archivado_y_compresión), que tienden a ofrecer adicionalmente cifrado, detección de errores y recuperación.
 
 ## Contents
 
 *   [1 Solo archivado](#Solo_archivado)
-*   [2 Herramientas de compresión](#Herramientas_de_compresi.C3.B3n)
-    *   [2.1 Solo compresión](#Solo_compresi.C3.B3n)
-    *   [2.2 Archivado y compresión](#Archivado_y_compresi.C3.B3n)
-    *   [2.3 Tablas de características](#Tablas_de_caracter.C3.ADsticas)
-        *   [2.3.1 Descompresión](#Descompresi.C3.B3n)
-*   [3 Comparación de utilización](#Comparaci.C3.B3n_de_utilizaci.C3.B3n)
-    *   [3.1 Utilización para solo archivado](#Utilizaci.C3.B3n_para_solo_archivado)
-    *   [3.2 Utilización para solo compresión](#Utilizaci.C3.B3n_para_solo_compresi.C3.B3n)
-    *   [3.3 Utilización para archivado y compresión](#Utilizaci.C3.B3n_para_archivado_y_compresi.C3.B3n)
+*   [2 Herramientas de compresión](#Herramientas_de_compresión)
+    *   [2.1 Solo compresión](#Solo_compresión)
+    *   [2.2 Archivado y compresión](#Archivado_y_compresión)
+    *   [2.3 Tablas de características](#Tablas_de_características)
+        *   [2.3.1 Descompresión](#Descompresión)
+*   [3 Comparación de utilización](#Comparación_de_utilización)
+    *   [3.1 Utilización para solo archivado](#Utilización_para_solo_archivado)
+    *   [3.2 Utilización para solo compresión](#Utilización_para_solo_compresión)
+    *   [3.3 Utilización para archivado y compresión](#Utilización_para_archivado_y_compresión)
 *   [4 Herramientas convenientes](#Herramientas_convenientes)
 *   [5 Determinar el formato de archivo](#Determinar_el_formato_de_archivo)
-*   [6 Herramientas esotéricas, raras u obsoletas](#Herramientas_esot.C3.A9ricas.2C_raras_u_obsoletas)
-*   [7 Bibliotecas de compresión](#Bibliotecas_de_compresi.C3.B3n)
-*   [8 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [6 Herramientas esotéricas, raras u obsoletas](#Herramientas_esotéricas,_raras_u_obsoletas)
+*   [7 Bibliotecas de compresión](#Bibliotecas_de_compresión)
+*   [8 Véase también](#Véase_también)
 
 ## Solo archivado
 
@@ -40,7 +40,7 @@ Por supuesto, también hay [herramientas que hacen ambas cosas](#Archivado_y_com
 
 **Sugerencia:** Tanto tar de GNU como de BSD hacen automáticamente la delegación de descompresión para los archivos comprimidos con bzip2, compress, gzip, lzip, lzma y xz. Al crear archivos, ambos admiten la opción `-a` para filtrar automáticamente el archivo creado a través del programa de compresión adecuado en función de la extensión del archivo. Mientras que tar de BSD reconoce los formatos de compresión basados ​​en el formato, tar de GNU lo adivina según la extensión del archivo.
 
-Véase también [#Utilización para solo archivado](#Utilizaci.C3.B3n_para_solo_archivado).
+Véase también [#Utilización para solo archivado](#Utilización_para_solo_archivado).
 
 ## Herramientas de compresión
 
@@ -59,7 +59,7 @@ Estos programas de compresión implementan su propio formato de archivo de almac
 
 *   Las implementaciones multihilo ofrecen velocidades mejoradas mediante el uso de múltiples núcleos de CPU.
 *   Las extensiones de tar se refieren a archivos comprimidos donde se utiliza `tar` y la herramienta de compresión, por ejemplo. `.tzo` es `.tar.lzo`.
-*   Véase también [#Utilización para solo compresión](#Utilizaci.C3.B3n_para_solo_compresi.C3.B3n).
+*   Véase también [#Utilización para solo compresión](#Utilización_para_solo_compresión).
 
 ### Archivado y compresión
 
@@ -70,7 +70,7 @@ Estos programas de compresión implementan su propio formato de archivo de almac
 | [Unarchiver](https://theunarchiver.com/) | [unarchiver](https://www.archlinux.org/packages/?name=unarchiver) | [unar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/unar.1), [lsar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lsar.1) | *many* | Herramienta de línea de órdenes de una aplicación Mac, soporta más de 40 formatos de archivo de almacenamiento. |
 | [ZPAQ](https://en.wikipedia.org/wiki/ZPAQ "wikipedia:ZPAQ") | [zpaq](https://aur.archlinux.org/packages/zpaq/) | [zpaq(1)](http://mattmahoney.net/dc/zpaqdoc.html) | .zpaq | Un archivador de alta tasa de compresión escrito en C++, utiliza varios algoritmos. |
 
-Véase también [#Utilización para archivado y compresión](#Utilizaci.C3.B3n_para_archivado_y_compresi.C3.B3n).
+Véase también [#Utilización para archivado y compresión](#Utilización_para_archivado_y_compresión).
 
 ### Tablas de características
 

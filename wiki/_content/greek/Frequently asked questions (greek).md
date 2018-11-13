@@ -1,16 +1,16 @@
 ## Contents
 
-*   [1 Γενικά](#.CE.93.CE.B5.CE.BD.CE.B9.CE.BA.CE.AC)
-    *   [1.1 Τι είναι το Arch Linux;](#.CE.A4.CE.B9_.CE.B5.CE.AF.CE.BD.CE.B1.CE.B9_.CF.84.CE.BF_Arch_Linux.3B)
-    *   [1.2 Γιατί θα ήθελα να χρησιμοποιήσω Arch;](#.CE.93.CE.B9.CE.B1.CF.84.CE.AF_.CE.B8.CE.B1_.CE.AE.CE.B8.CE.B5.CE.BB.CE.B1_.CE.BD.CE.B1_.CF.87.CF.81.CE.B7.CF.83.CE.B9.CE.BC.CE.BF.CF.80.CE.BF.CE.B9.CE.AE.CF.83.CF.89_Arch.3B)
-    *   [1.3 Γιατί δεν θα ήθελα να χρησιμοποιήσω Arch;](#.CE.93.CE.B9.CE.B1.CF.84.CE.AF_.CE.B4.CE.B5.CE.BD_.CE.B8.CE.B1_.CE.AE.CE.B8.CE.B5.CE.BB.CE.B1_.CE.BD.CE.B1_.CF.87.CF.81.CE.B7.CF.83.CE.B9.CE.BC.CE.BF.CF.80.CE.BF.CE.B9.CE.AE.CF.83.CF.89_Arch.3B)
-    *   [1.4 Σε ποια διανομή βασίζεται το Arch;](#.CE.A3.CE.B5_.CF.80.CE.BF.CE.B9.CE.B1_.CE.B4.CE.B9.CE.B1.CE.BD.CE.BF.CE.BC.CE.AE_.CE.B2.CE.B1.CF.83.CE.AF.CE.B6.CE.B5.CF.84.CE.B1.CE.B9_.CF.84.CE.BF_Arch.3B)
-    *   [1.5 Είμαι εντελώς αρχάριος στο GNU/Linux. Να χρησιμοποιήσω Arch;](#.CE.95.CE.AF.CE.BC.CE.B1.CE.B9_.CE.B5.CE.BD.CF.84.CE.B5.CE.BB.CF.8E.CF.82_.CE.B1.CF.81.CF.87.CE.AC.CF.81.CE.B9.CE.BF.CF.82_.CF.83.CF.84.CE.BF_GNU.2FLinux._.CE.9D.CE.B1_.CF.87.CF.81.CE.B7.CF.83.CE.B9.CE.BC.CE.BF.CF.80.CE.BF.CE.B9.CE.AE.CF.83.CF.89_Arch.3B)
-    *   [1.6 Για ποια χρήση προορίζονται τα Arch; Για server, desktop, ή για δουλειά;](#.CE.93.CE.B9.CE.B1_.CF.80.CE.BF.CE.B9.CE.B1_.CF.87.CF.81.CE.AE.CF.83.CE.B7_.CF.80.CF.81.CE.BF.CE.BF.CF.81.CE.AF.CE.B6.CE.BF.CE.BD.CF.84.CE.B1.CE.B9_.CF.84.CE.B1_Arch.3B_.CE.93.CE.B9.CE.B1_server.2C_desktop.2C_.CE.AE_.CE.B3.CE.B9.CE.B1_.CE.B4.CE.BF.CF.85.CE.BB.CE.B5.CE.B9.CE.AC.3B)
-*   [2 Εγκατάσταση](#.CE.95.CE.B3.CE.BA.CE.B1.CF.84.CE.AC.CF.83.CF.84.CE.B1.CF.83.CE.B7)
-    *   [2.1 Τα Arch χρειάζονται έναν εγκαταστάτη. Ίσως με κάποιο γραφικό μενού;](#.CE.A4.CE.B1_Arch_.CF.87.CF.81.CE.B5.CE.B9.CE.AC.CE.B6.CE.BF.CE.BD.CF.84.CE.B1.CE.B9_.CE.AD.CE.BD.CE.B1.CE.BD_.CE.B5.CE.B3.CE.BA.CE.B1.CF.84.CE.B1.CF.83.CF.84.CE.AC.CF.84.CE.B7._.CE.8A.CF.83.CF.89.CF.82_.CE.BC.CE.B5_.CE.BA.CE.AC.CF.80.CE.BF.CE.B9.CE.BF_.CE.B3.CF.81.CE.B1.CF.86.CE.B9.CE.BA.CF.8C_.CE.BC.CE.B5.CE.BD.CE.BF.CF.8D.3B)
-    *   [2.2 Εγκατέστησα τα Arch, τώρα είμαι σε ένα τερματικό! Τώρα τι;](#.CE.95.CE.B3.CE.BA.CE.B1.CF.84.CE.AD.CF.83.CF.84.CE.B7.CF.83.CE.B1_.CF.84.CE.B1_Arch.2C_.CF.84.CF.8E.CF.81.CE.B1_.CE.B5.CE.AF.CE.BC.CE.B1.CE.B9_.CF.83.CE.B5_.CE.AD.CE.BD.CE.B1_.CF.84.CE.B5.CF.81.CE.BC.CE.B1.CF.84.CE.B9.CE.BA.CF.8C.21_.CE.A4.CF.8E.CF.81.CE.B1_.CF.84.CE.B9.3B)
-    *   [2.3 Τι κάνει τα Arch να διαφέρει από άλλες "μινιμαλιστικές" διανομές;](#.CE.A4.CE.B9_.CE.BA.CE.AC.CE.BD.CE.B5.CE.B9_.CF.84.CE.B1_Arch_.CE.BD.CE.B1_.CE.B4.CE.B9.CE.B1.CF.86.CE.AD.CF.81.CE.B5.CE.B9_.CE.B1.CF.80.CF.8C_.CE.AC.CE.BB.CE.BB.CE.B5.CF.82_.22.CE.BC.CE.B9.CE.BD.CE.B9.CE.BC.CE.B1.CE.BB.CE.B9.CF.83.CF.84.CE.B9.CE.BA.CE.AD.CF.82.22_.CE.B4.CE.B9.CE.B1.CE.BD.CE.BF.CE.BC.CE.AD.CF.82.3B)
+*   [1 Γενικά](#Γενικά)
+    *   [1.1 Τι είναι το Arch Linux;](#Τι_είναι_το_Arch_Linux;)
+    *   [1.2 Γιατί θα ήθελα να χρησιμοποιήσω Arch;](#Γιατί_θα_ήθελα_να_χρησιμοποιήσω_Arch;)
+    *   [1.3 Γιατί δεν θα ήθελα να χρησιμοποιήσω Arch;](#Γιατί_δεν_θα_ήθελα_να_χρησιμοποιήσω_Arch;)
+    *   [1.4 Σε ποια διανομή βασίζεται το Arch;](#Σε_ποια_διανομή_βασίζεται_το_Arch;)
+    *   [1.5 Είμαι εντελώς αρχάριος στο GNU/Linux. Να χρησιμοποιήσω Arch;](#Είμαι_εντελώς_αρχάριος_στο_GNU/Linux._Να_χρησιμοποιήσω_Arch;)
+    *   [1.6 Για ποια χρήση προορίζονται τα Arch; Για server, desktop, ή για δουλειά;](#Για_ποια_χρήση_προορίζονται_τα_Arch;_Για_server,_desktop,_ή_για_δουλειά;)
+*   [2 Εγκατάσταση](#Εγκατάσταση)
+    *   [2.1 Τα Arch χρειάζονται έναν εγκαταστάτη. Ίσως με κάποιο γραφικό μενού;](#Τα_Arch_χρειάζονται_έναν_εγκαταστάτη._Ίσως_με_κάποιο_γραφικό_μενού;)
+    *   [2.2 Εγκατέστησα τα Arch, τώρα είμαι σε ένα τερματικό! Τώρα τι;](#Εγκατέστησα_τα_Arch,_τώρα_είμαι_σε_ένα_τερματικό!_Τώρα_τι;)
+    *   [2.3 Τι κάνει τα Arch να διαφέρει από άλλες "μινιμαλιστικές" διανομές;](#Τι_κάνει_τα_Arch_να_διαφέρει_από_άλλες_"μινιμαλιστικές"_διανομές;)
 
 ## Γενικά
 

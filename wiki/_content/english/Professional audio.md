@@ -32,7 +32,7 @@ Modern Linux systems are more than capable of supporting your (semi-)professiona
     *   [6.5 Tascam US-122](#Tascam_US-122)
     *   [6.6 RME Babyface](#RME_Babyface)
 *   [7 Restricted software](#Restricted_software)
-    *   [7.1 Steinberg's SDKs](#Steinberg.27s_SDKs)
+    *   [7.1 Steinberg's SDKs](#Steinberg's_SDKs)
 *   [8 Arch Linux Pro Audio Project](#Arch_Linux_Pro_Audio_Project)
 *   [9 Linux and Arch Linux Pro Audio in the news](#Linux_and_Arch_Linux_Pro_Audio_in_the_news)
 *   [10 Mailing lists](#Mailing_lists)
@@ -60,7 +60,7 @@ You may want to consider the following often seen system optimizations:
 *   Using the `threadirqs` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") (consult [[1]](https://www.kernel.org/doc/html/latest/admin-guide/kernel-parameters.html) for reference) - enforced by default by the [realtime kernel patchset](/index.php/Realtime_kernel_patchset "Realtime kernel patchset").
 *   Using the [realtime kernel patchset](/index.php/Realtime_kernel_patchset "Realtime kernel patchset").
 *   Add `noatime` to [fstab](/index.php/Fstab "Fstab") (see [Improving performance#Mount options](/index.php/Improving_performance#Mount_options "Improving performance")).
-*   Increasing the highest requested RTC interrupt frequency (default is 64 Hz) by [running the following at boot](/index.php/Systemd_FAQ#How_can_I_make_a_script_start_during_the_boot_process.3F "Systemd FAQ"):
+*   Increasing the highest requested RTC interrupt frequency (default is 64 Hz) by [running the following at boot](/index.php/Systemd_FAQ#How_can_I_make_a_script_start_during_the_boot_process? "Systemd FAQ"):
 
 ```
 echo 2048 > /sys/class/rtc/rtc0/max_user_freq

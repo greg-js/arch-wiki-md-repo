@@ -37,7 +37,7 @@ Create a [Linux user](/index.php/Users_and_groups "Users and groups") for each u
 
 **Warning:** If you deploy [TLS](https://en.wikipedia.org/wiki/TLS "wikipedia:TLS"), be sure to follow [weakdh.org's guide](https://weakdh.org/sysadmin.html) and [disable SSLv3](http://disablessl3.com/) to prevent vulnerabilities. For more information see [Server-side TLS](/index.php/Server-side_TLS "Server-side TLS").
 
-To obtain a certificate, see [OpenSSL#Certificates](/index.php/OpenSSL#Certificates "OpenSSL").
+To obtain a certificate, see [OpenSSL#Usage](/index.php/OpenSSL#Usage "OpenSSL").
 
 ### sendmail.cf
 

@@ -5,14 +5,14 @@
     *   [2.1 Configuration files](#Configuration_files)
         *   [2.1.1 default.pa](#default.pa)
         *   [2.1.2 client.conf](#client.conf)
-    *   [2.2 Connection & authentication](#Connection_.26_authentication)
+    *   [2.2 Connection & authentication](#Connection_&_authentication)
         *   [2.2.1 Environment variables](#Environment_variables)
         *   [2.2.2 X11 properties](#X11_properties)
 *   [3 Modules](#Modules)
     *   [3.1 Protocols](#Protocols)
     *   [3.2 ALSA](#ALSA)
     *   [3.3 JACK](#JACK)
-    *   [3.4 Filters & Routing](#Filters_.26_Routing)
+    *   [3.4 Filters & Routing](#Filters_&_Routing)
 
 ## Easy configuration
 

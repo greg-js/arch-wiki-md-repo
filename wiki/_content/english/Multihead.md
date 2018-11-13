@@ -4,7 +4,7 @@ Related articles
 *   [xrandr](/index.php/Xrandr "Xrandr")
 *   [NVIDIA#Multiple monitors](/index.php/NVIDIA#Multiple_monitors "NVIDIA")
 *   [Nouveau#Dual Head](/index.php/Nouveau#Dual_Head "Nouveau")
-*   [AMD Catalyst#Double Screen (Dual Head / Dual Screen / Xinerama)](/index.php/AMD_Catalyst#Double_Screen_.28Dual_Head_.2F_Dual_Screen_.2F_Xinerama.29 "AMD Catalyst")
+*   [AMD Catalyst#Double Screen (Dual Head / Dual Screen / Xinerama)](/index.php/AMD_Catalyst#Double_Screen_(Dual_Head_/_Dual_Screen_/_Xinerama) "AMD Catalyst")
 *   [ATI#Multihead setup](/index.php/ATI#Multihead_setup "ATI")
 *   [Extreme Multihead](/index.php/Extreme_Multihead "Extreme Multihead")
 

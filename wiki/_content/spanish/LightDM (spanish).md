@@ -6,16 +6,16 @@ Artículos relacionados
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
     *   [1.1 Greeter](#Greeter)
     *   [1.2 Habilitar Lightdm](#Habilitar_Lightdm)
-*   [2 Configuración](#Configuraci.C3.B3n)
+*   [2 Configuración](#Configuración)
     *   [2.1 Command line tool](#Command_line_tool)
         *   [2.1.1 Cambiando la imagen o color de fondo](#Cambiando_la_imagen_o_color_de_fondo)
-            *   [2.1.1.1 GTK+ Greeter](#GTK.2B_Greeter)
+            *   [2.1.1.1 GTK+ Greeter](#GTK+_Greeter)
             *   [2.1.1.2 Unity Greeter](#Unity_Greeter)
             *   [2.1.1.3 KDE Greeter](#KDE_Greeter)
-    *   [2.2 Cambiando íconos](#Cambiando_.C3.ADconos)
+    *   [2.2 Cambiando íconos](#Cambiando_íconos)
     *   [2.3 Habilitando el autologin](#Habilitando_el_autologin)
 
 # Instalación

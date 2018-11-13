@@ -17,10 +17,10 @@ This is an article detailing different methods of Arch/Windows coexistence.
     *   [2.1 BIOS systems](#BIOS_systems)
         *   [2.1.1 Using a Linux boot loader](#Using_a_Linux_boot_loader)
         *   [2.1.2 Using Windows boot loader](#Using_Windows_boot_loader)
-            *   [2.1.2.1 Windows Vista/7/8/8.1 boot loader](#Windows_Vista.2F7.2F8.2F8.1_boot_loader)
+            *   [2.1.2.1 Windows Vista/7/8/8.1 boot loader](#Windows_Vista/7/8/8.1_boot_loader)
     *   [2.2 UEFI systems](#UEFI_systems)
     *   [2.3 Troubleshooting](#Troubleshooting)
-        *   [2.3.1 Couldn't create a new partition or locate an existing one](#Couldn.27t_create_a_new_partition_or_locate_an_existing_one)
+        *   [2.3.1 Couldn't create a new partition or locate an existing one](#Couldn't_create_a_new_partition_or_locate_an_existing_one)
         *   [2.3.2 Cannot boot Linux after installing Windows](#Cannot_boot_Linux_after_installing_Windows)
         *   [2.3.3 Restoring a Windows boot record](#Restoring_a_Windows_boot_record)
 *   [3 Time standard](#Time_standard)
@@ -169,7 +169,7 @@ If you already have Windows installed, it will already have created some partiti
 
 Using the Disk Management utility in Windows, check how the partitions are labelled and which type gets reported. This will help you understand which partitions are essential to Windows, and which others you might repurpose: the first 3 bullets in the above list are essential, do not delete them.
 
-You can then proceed with [partitioning](/index.php/Partitioning "Partitioning"), depending on your needs. Mind that there is no need to create an additional EFI System Partition, since it already exists (see above). [rEFInd](/index.php/REFInd "REFInd") and [systemd-boot](/index.php/Systemd-boot "Systemd-boot") autodetect *Windows Boot Manager* (`\EFI\Microsoft\Boot\bootmgfw.efi`) and show it in their boot menu automatically. For [GRUB](/index.php/GRUB "GRUB") follow [GRUB#Windows installed in UEFI/GPT Mode menu entry](/index.php/GRUB#Windows_installed_in_UEFI.2FGPT_Mode_menu_entry "GRUB"). The bootloader needs to support chainloading other EFI applications to do dual boot windows / linux.
+You can then proceed with [partitioning](/index.php/Partitioning "Partitioning"), depending on your needs. Mind that there is no need to create an additional EFI System Partition, since it already exists (see above). [rEFInd](/index.php/REFInd "REFInd") and [systemd-boot](/index.php/Systemd-boot "Systemd-boot") autodetect *Windows Boot Manager* (`\EFI\Microsoft\Boot\bootmgfw.efi`) and show it in their boot menu automatically. For [GRUB](/index.php/GRUB "GRUB") follow [GRUB#Windows installed in UEFI/GPT Mode menu entry](/index.php/GRUB#Windows_installed_in_UEFI/GPT_Mode_menu_entry "GRUB"). The bootloader needs to support chainloading other EFI applications to do dual boot windows / linux.
 
 Computers that come with newer versions of Windows often have [Secure Boot](/index.php/Secure_Boot "Secure Boot") enabled. You will need to take extra steps to either disable Secure Boot or to make your installation media compatible with secure boot (see above and in the linked page).
 

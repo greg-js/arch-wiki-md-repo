@@ -12,7 +12,7 @@ Biedt een overzicht van het Arch User Repository.
 *   [2 Beginnen met AUR](#Beginnen_met_AUR)
 *   [3 Geschiedenis](#Geschiedenis)
     *   [3.1 Incoming](#Incoming)
-    *   [3.2 Trusted User Repository's](#Trusted_User_Repository.27s)
+    *   [3.2 Trusted User Repository's](#Trusted_User_Repository's)
 *   [4 Zie ook](#Zie_ook)
 
 ## Overzicht

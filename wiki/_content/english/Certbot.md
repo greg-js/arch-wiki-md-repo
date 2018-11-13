@@ -11,7 +11,7 @@
         *   [2.2.1 Mapping ACME-challenge requests](#Mapping_ACME-challenge_requests)
             *   [2.2.1.1 nginx](#nginx_2)
             *   [2.2.1.2 Apache](#Apache)
-        *   [2.2.2 Obtain certificate(s)](#Obtain_certificate.28s.29)
+        *   [2.2.2 Obtain certificate(s)](#Obtain_certificate(s))
     *   [2.3 Manual](#Manual)
 *   [3 Advanced Configuration](#Advanced_Configuration)
     *   [3.1 Automatic renewal](#Automatic_renewal)
@@ -79,7 +79,7 @@ server {
 }
 ```
 
-See [nginx#TLS/SSL](/index.php/Nginx#TLS.2FSSL "Nginx") for more information.
+See [nginx#TLS](/index.php/Nginx#TLS "Nginx") for more information.
 
 It's also possible to create a separated config file and include it in each server block:
 

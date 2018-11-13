@@ -4,7 +4,7 @@
 
 *   [1 Installation](#Installation)
     *   [1.1 Test your installation](#Test_your_installation)
-    *   [1.2 $GOPATH](#.24GOPATH)
+    *   [1.2 $GOPATH](#$GOPATH)
     *   [1.3 Enable cross compilation for other platforms](#Enable_cross_compilation_for_other_platforms)
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 Jetbrains Go Plugin](#Jetbrains_Go_Plugin)

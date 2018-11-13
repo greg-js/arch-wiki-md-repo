@@ -45,7 +45,7 @@ end
 
 	 `alias startx='startx &> ~/.xlog'` 
 
-**Note:** Redirecting stderr (`startx &>`) breaks rootless startup, see [Xorg#Rootless Xorg (v1.16)](/index.php/Xorg#Rootless_Xorg_.28v1.16.29 "Xorg").
+**Note:** Redirecting stderr (`startx &>`) breaks rootless startup, see [Xorg#Rootless Xorg (v1.16)](/index.php/Xorg#Rootless_Xorg_(v1.16) "Xorg").
 
 ## See also
 

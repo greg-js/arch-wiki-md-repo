@@ -19,42 +19,42 @@
 
 ## Contents
 
-*   [1 导读](#.E5.AF.BC.E8.AF.BB)
-*   [2 历史](#.E5.8E.86.E5.8F.B2)
-*   [3 搜索](#.E6.90.9C.E7.B4.A2)
-*   [4 安装软件包](#.E5.AE.89.E8.A3.85.E8.BD.AF.E4.BB.B6.E5.8C.85)
-    *   [4.1 准备](#.E5.87.86.E5.A4.87)
-    *   [4.2 获取软件包构建所需文件](#.E8.8E.B7.E5.8F.96.E8.BD.AF.E4.BB.B6.E5.8C.85.E6.9E.84.E5.BB.BA.E6.89.80.E9.9C.80.E6.96.87.E4.BB.B6)
-    *   [4.3 构建和安装软件包](#.E6.9E.84.E5.BB.BA.E5.92.8C.E5.AE.89.E8.A3.85.E8.BD.AF.E4.BB.B6.E5.8C.85)
-*   [5 反馈](#.E5.8F.8D.E9.A6.88)
-*   [6 分享和维护软件包](#.E5.88.86.E4.BA.AB.E5.92.8C.E7.BB.B4.E6.8A.A4.E8.BD.AF.E4.BB.B6.E5.8C.85)
-    *   [6.1 提交软件包](#.E6.8F.90.E4.BA.A4.E8.BD.AF.E4.BB.B6.E5.8C.85)
-        *   [6.1.1 提交软件包的规则](#.E6.8F.90.E4.BA.A4.E8.BD.AF.E4.BB.B6.E5.8C.85.E7.9A.84.E8.A7.84.E5.88.99)
-        *   [6.1.2 认证](#.E8.AE.A4.E8.AF.81)
-        *   [6.1.3 创建软件包](#.E5.88.9B.E5.BB.BA.E8.BD.AF.E4.BB.B6.E5.8C.85)
-        *   [6.1.4 提交和更新软件包](#.E6.8F.90.E4.BA.A4.E5.92.8C.E6.9B.B4.E6.96.B0.E8.BD.AF.E4.BB.B6.E5.8C.85)
-    *   [6.2 维护软件包](#.E7.BB.B4.E6.8A.A4.E8.BD.AF.E4.BB.B6.E5.8C.85)
-    *   [6.3 其他事项](#.E5.85.B6.E4.BB.96.E4.BA.8B.E9.A1.B9)
-*   [7 AUR3 软件包的Git仓库](#AUR3_.E8.BD.AF.E4.BB.B6.E5.8C.85.E7.9A.84Git.E4.BB.93.E5.BA.93)
+*   [1 导读](#导读)
+*   [2 历史](#历史)
+*   [3 搜索](#搜索)
+*   [4 安装软件包](#安装软件包)
+    *   [4.1 准备](#准备)
+    *   [4.2 获取软件包构建所需文件](#获取软件包构建所需文件)
+    *   [4.3 构建和安装软件包](#构建和安装软件包)
+*   [5 反馈](#反馈)
+*   [6 分享和维护软件包](#分享和维护软件包)
+    *   [6.1 提交软件包](#提交软件包)
+        *   [6.1.1 提交软件包的规则](#提交软件包的规则)
+        *   [6.1.2 认证](#认证)
+        *   [6.1.3 创建软件包](#创建软件包)
+        *   [6.1.4 提交和更新软件包](#提交和更新软件包)
+    *   [6.2 维护软件包](#维护软件包)
+    *   [6.3 其他事项](#其他事项)
+*   [7 AUR3 软件包的Git仓库](#AUR3_软件包的Git仓库)
 *   [8 AUR translation](#AUR_translation)
 *   [9 FAQ](#FAQ)
-    *   [9.1 AUR是什么？](#AUR.E6.98.AF.E4.BB.80.E4.B9.88.EF.BC.9F)
-    *   [9.2 什么样的软件包能被放到 AUR?](#.E4.BB.80.E4.B9.88.E6.A0.B7.E7.9A.84.E8.BD.AF.E4.BB.B6.E5.8C.85.E8.83.BD.E8.A2.AB.E6.94.BE.E5.88.B0_AUR.3F)
-    *   [9.3 如何给 AUR 中的软件包投票?](#.E5.A6.82.E4.BD.95.E7.BB.99_AUR_.E4.B8.AD.E7.9A.84.E8.BD.AF.E4.BB.B6.E5.8C.85.E6.8A.95.E7.A5.A8.3F)
-    *   [9.4 受信用户（或TU）是什么？](#.E5.8F.97.E4.BF.A1.E7.94.A8.E6.88.B7.EF.BC.88.E6.88.96TU.EF.BC.89.E6.98.AF.E4.BB.80.E4.B9.88.EF.BC.9F)
-    *   [9.5 Arch User Repository和[community]仓库有何区别？](#Arch_User_Repository.E5.92.8C.5Bcommunity.5D.E4.BB.93.E5.BA.93.E6.9C.89.E4.BD.95.E5.8C.BA.E5.88.AB.EF.BC.9F)
-    *   [9.6 AUR的某个软件包过时了，该怎么办？](#AUR.E7.9A.84.E6.9F.90.E4.B8.AA.E8.BD.AF.E4.BB.B6.E5.8C.85.E8.BF.87.E6.97.B6.E4.BA.86.EF.BC.8C.E8.AF.A5.E6.80.8E.E4.B9.88.E5.8A.9E.EF.BC.9F)
-    *   [9.7 makepkg无法构建某个软件包怎么办？](#makepkg.E6.97.A0.E6.B3.95.E6.9E.84.E5.BB.BA.E6.9F.90.E4.B8.AA.E8.BD.AF.E4.BB.B6.E5.8C.85.E6.80.8E.E4.B9.88.E5.8A.9E.EF.BC.9F)
-    *   [9.8 如何编写PKGBUILD？](#.E5.A6.82.E4.BD.95.E7.BC.96.E5.86.99PKGBUILD.EF.BC.9F)
-    *   [9.9 我想提交一个PKGBUILD，希望别人帮忙检查错误。](#.E6.88.91.E6.83.B3.E6.8F.90.E4.BA.A4.E4.B8.80.E4.B8.AAPKGBUILD.EF.BC.8C.E5.B8.8C.E6.9C.9B.E5.88.AB.E4.BA.BA.E5.B8.AE.E5.BF.99.E6.A3.80.E6.9F.A5.E9.94.99.E8.AF.AF.E3.80.82)
-    *   [9.10 PKGBUILD（AUR软件包）怎样才能被收录到community软件仓库？](#PKGBUILD.EF.BC.88AUR.E8.BD.AF.E4.BB.B6.E5.8C.85.EF.BC.89.E6.80.8E.E6.A0.B7.E6.89.8D.E8.83.BD.E8.A2.AB.E6.94.B6.E5.BD.95.E5.88.B0community.E8.BD.AF.E4.BB.B6.E4.BB.93.E5.BA.93.EF.BC.9F)
-    *   [9.11 如何加速编译？](#.E5.A6.82.E4.BD.95.E5.8A.A0.E9.80.9F.E7.BC.96.E8.AF.91.EF.BC.9F)
-    *   [9.12 foo 和 foo-git 的区别是什么?](#foo_.E5.92.8C_foo-git_.E7.9A.84.E5.8C.BA.E5.88.AB.E6.98.AF.E4.BB.80.E4.B9.88.3F)
-    *   [9.13 为啥某个软件包从AUR消失了?](#.E4.B8.BA.E5.95.A5.E6.9F.90.E4.B8.AA.E8.BD.AF.E4.BB.B6.E5.8C.85.E4.BB.8EAUR.E6.B6.88.E5.A4.B1.E4.BA.86.3F)
-    *   [9.14 我要怎么找出从AUR里消失的软件包?](#.E6.88.91.E8.A6.81.E6.80.8E.E4.B9.88.E6.89.BE.E5.87.BA.E4.BB.8EAUR.E9.87.8C.E6.B6.88.E5.A4.B1.E7.9A.84.E8.BD.AF.E4.BB.B6.E5.8C.85.3F)
-    *   [9.15 如何查找已经安装但是从 AUR 消失的软件包](#.E5.A6.82.E4.BD.95.E6.9F.A5.E6.89.BE.E5.B7.B2.E7.BB.8F.E5.AE.89.E8.A3.85.E4.BD.86.E6.98.AF.E4.BB.8E_AUR_.E6.B6.88.E5.A4.B1.E7.9A.84.E8.BD.AF.E4.BB.B6.E5.8C.85)
-    *   [9.16 想知道 AUR 里都有啥 ？](#.E6.83.B3.E7.9F.A5.E9.81.93_AUR_.E9.87.8C.E9.83.BD.E6.9C.89.E5.95.A5_.EF.BC.9F)
-*   [10 另请参阅](#.E5.8F.A6.E8.AF.B7.E5.8F.82.E9.98.85)
+    *   [9.1 AUR是什么？](#AUR是什么？)
+    *   [9.2 什么样的软件包能被放到 AUR?](#什么样的软件包能被放到_AUR?)
+    *   [9.3 如何给 AUR 中的软件包投票?](#如何给_AUR_中的软件包投票?)
+    *   [9.4 受信用户（或TU）是什么？](#受信用户（或TU）是什么？)
+    *   [9.5 Arch User Repository和[community]仓库有何区别？](#Arch_User_Repository和[community]仓库有何区别？)
+    *   [9.6 AUR的某个软件包过时了，该怎么办？](#AUR的某个软件包过时了，该怎么办？)
+    *   [9.7 makepkg无法构建某个软件包怎么办？](#makepkg无法构建某个软件包怎么办？)
+    *   [9.8 如何编写PKGBUILD？](#如何编写PKGBUILD？)
+    *   [9.9 我想提交一个PKGBUILD，希望别人帮忙检查错误。](#我想提交一个PKGBUILD，希望别人帮忙检查错误。)
+    *   [9.10 PKGBUILD（AUR软件包）怎样才能被收录到community软件仓库？](#PKGBUILD（AUR软件包）怎样才能被收录到community软件仓库？)
+    *   [9.11 如何加速编译？](#如何加速编译？)
+    *   [9.12 foo 和 foo-git 的区别是什么?](#foo_和_foo-git_的区别是什么?)
+    *   [9.13 为啥某个软件包从AUR消失了?](#为啥某个软件包从AUR消失了?)
+    *   [9.14 我要怎么找出从AUR里消失的软件包?](#我要怎么找出从AUR里消失的软件包?)
+    *   [9.15 如何查找已经安装但是从 AUR 消失的软件包](#如何查找已经安装但是从_AUR_消失的软件包)
+    *   [9.16 想知道 AUR 里都有啥 ？](#想知道_AUR_里都有啥_？)
+*   [10 另请参阅](#另请参阅)
 
 ## 导读
 
@@ -245,7 +245,7 @@ $ git fetch *remote_name*
 
 `*remote_name*` 是需要创建的仓库，参考 [Git#Using remotes](/index.php/Git#Using_remotes "Git")。
 
-第一次 *push* 之后，AUR 上就会出现软件包。可以将源代码加入本地 Git 仓库，参考 [#维护软件包](#.E7.BB.B4.E6.8A.A4.E8.BD.AF.E4.BB.B6.E5.8C.85).
+第一次 *push* 之后，AUR 上就会出现软件包。可以将源代码加入本地 Git 仓库，参考 [#维护软件包](#维护软件包).
 
 **Warning:** AUR 提交会通过 git 用户名和邮件定义作者，一旦提交很难改变。如果需要修改用户名和密码，请通过 `git config user.name [...]` 和 `git config user.email [...]` 修改。请一定在推送前进行检查。
 
@@ -384,9 +384,9 @@ Arch User Repository是储存所有用户提交的PKGBUILD的地方，软件包�
 
 ### 为啥某个软件包从AUR消失了?
 
-软件包可能因为不满足[#提交软件包的规则](#.E6.8F.90.E4.BA.A4.E8.BD.AF.E4.BB.B6.E5.8C.85.E7.9A.84.E8.A7.84.E5.88.99)或是其它原因而被删除,你可以在 [aur-requests archives](https://lists.archlinux.org/pipermail/aur-requests/) 找到对应删除记录的归档.
+软件包可能因为不满足[#提交软件包的规则](#提交软件包的规则)或是其它原因而被删除,你可以在 [aur-requests archives](https://lists.archlinux.org/pipermail/aur-requests/) 找到对应删除记录的归档.
 
-如果某个软件包在AUR3时期存在,它可能没 [迁移到AUR4](https://lists.archlinux.org/pipermail/aur-general/2015-August/031322.html). 参阅[#AUR3 软件包的Git仓库](#AUR3_.E8.BD.AF.E4.BB.B6.E5.8C.85.E7.9A.84Git.E4.BB.93.E5.BA.93) 获得获取他们的更多信息.
+如果某个软件包在AUR3时期存在,它可能没 [迁移到AUR4](https://lists.archlinux.org/pipermail/aur-general/2015-August/031322.html). 参阅[#AUR3 软件包的Git仓库](#AUR3_软件包的Git仓库) 获得获取他们的更多信息.
 
 ### 我要怎么找出从AUR里消失的软件包?
 

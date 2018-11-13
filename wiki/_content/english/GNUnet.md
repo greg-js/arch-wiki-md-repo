@@ -13,8 +13,8 @@ See also [Wikipedia:GNUnet](https://en.wikipedia.org/wiki/GNUnet "wikipedia:GNUn
 *   [3 Usage](#Usage)
     *   [3.1 Downloading](#Downloading)
     *   [3.2 Uploading](#Uploading)
-        *   [3.2.1 To index a file/directory](#To_index_a_file.2Fdirectory)
-        *   [3.2.2 To unindex a file/directory](#To_unindex_a_file.2Fdirectory)
+        *   [3.2.1 To index a file/directory](#To_index_a_file/directory)
+        *   [3.2.2 To unindex a file/directory](#To_unindex_a_file/directory)
         *   [3.2.3 Modifying and removing indexed files](#Modifying_and_removing_indexed_files)
 *   [4 Web User Interface](#Web_User_Interface)
 

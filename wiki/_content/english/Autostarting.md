@@ -6,12 +6,12 @@ This article links to various methods to launch scripts or applications automati
 
 ## Contents
 
-*   [1 On bootup / shutdown](#On_bootup_.2F_shutdown)
-*   [2 On user login / logout](#On_user_login_.2F_logout)
-*   [3 On device plug in / unplug](#On_device_plug_in_.2F_unplug)
+*   [1 On bootup / shutdown](#On_bootup_/_shutdown)
+*   [2 On user login / logout](#On_user_login_/_logout)
+*   [3 On device plug in / unplug](#On_device_plug_in_/_unplug)
 *   [4 On time events](#On_time_events)
 *   [5 On filesystem events](#On_filesystem_events)
-*   [6 On shell login / logout](#On_shell_login_.2F_logout)
+*   [6 On shell login / logout](#On_shell_login_/_logout)
 *   [7 On Xorg startup](#On_Xorg_startup)
 *   [8 On desktop environment startup](#On_desktop_environment_startup)
 *   [9 On window manager startup](#On_window_manager_startup)

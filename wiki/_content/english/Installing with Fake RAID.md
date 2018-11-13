@@ -8,7 +8,7 @@ The purpose of this guide is to enable use of a RAID set created by the on-board
 
 ## Contents
 
-*   [1 What is "fake RAID"](#What_is_.22fake_RAID.22)
+*   [1 What is "fake RAID"](#What_is_"fake_RAID")
 *   [2 History](#History)
 *   [3 Preparation](#Preparation)
     *   [3.1 Configure RAID sets](#Configure_RAID_sets)
@@ -23,7 +23,7 @@ The purpose of this guide is to enable use of a RAID set created by the on-board
     *   [8.1 GRUB2](#GRUB2)
 *   [9 Troubleshooting](#Troubleshooting)
     *   [9.1 Booting with degraded array](#Booting_with_degraded_array)
-    *   [9.2 Error: Unable to determine major/minor number of root device](#Error:_Unable_to_determine_major.2Fminor_number_of_root_device)
+    *   [9.2 Error: Unable to determine major/minor number of root device](#Error:_Unable_to_determine_major/minor_number_of_root_device)
     *   [9.3 dmraid mirror fails to activate](#dmraid_mirror_fails_to_activate)
     *   [9.4 No block devices for partitions on existing RAID array](#No_block_devices_for_partitions_on_existing_RAID_array)
 *   [10 See also](#See_also)

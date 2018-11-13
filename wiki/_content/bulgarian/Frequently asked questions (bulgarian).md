@@ -2,11 +2,11 @@ Besides the questions covered below, you may find [The Arch Way](/index.php/The_
 
 ## Contents
 
-*   [1 Основни](#.D0.9E.D1.81.D0.BD.D0.BE.D0.B2.D0.BD.D0.B8)
-    *   [1.1 Q) Какво е Arch Linux?](#Q.29_.D0.9A.D0.B0.D0.BA.D0.B2.D0.BE_.D0.B5_Arch_Linux.3F)
-    *   [1.2 Q) Защо бих искал да ползвам Arch?](#Q.29_.D0.97.D0.B0.D1.89.D0.BE_.D0.B1.D0.B8.D1.85_.D0.B8.D1.81.D0.BA.D0.B0.D0.BB_.D0.B4.D0.B0_.D0.BF.D0.BE.D0.BB.D0.B7.D0.B2.D0.B0.D0.BC_Arch.3F)
-    *   [1.3 Q) Защо не бих искал да ползвам Arch?](#Q.29_.D0.97.D0.B0.D1.89.D0.BE_.D0.BD.D0.B5_.D0.B1.D0.B8.D1.85_.D0.B8.D1.81.D0.BA.D0.B0.D0.BB_.D0.B4.D0.B0_.D0.BF.D0.BE.D0.BB.D0.B7.D0.B2.D0.B0.D0.BC_Arch.3F)
-    *   [1.4 Q) Базиран ли е Arch на CRUX?](#Q.29_.D0.91.D0.B0.D0.B7.D0.B8.D1.80.D0.B0.D0.BD_.D0.BB.D0.B8_.D0.B5_Arch_.D0.BD.D0.B0_CRUX.3F)
+*   [1 Основни](#Основни)
+    *   [1.1 Q) Какво е Arch Linux?](#Q)_Какво_е_Arch_Linux?)
+    *   [1.2 Q) Защо бих искал да ползвам Arch?](#Q)_Защо_бих_искал_да_ползвам_Arch?)
+    *   [1.3 Q) Защо не бих искал да ползвам Arch?](#Q)_Защо_не_бих_искал_да_ползвам_Arch?)
+    *   [1.4 Q) Базиран ли е Arch на CRUX?](#Q)_Базиран_ли_е_Arch_на_CRUX?)
 
 # Основни
 

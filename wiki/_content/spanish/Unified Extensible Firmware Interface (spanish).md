@@ -12,7 +12,7 @@ Artículos relacionados
 
 La [Unified Extensible Firmware Interface](http://www.uefi.org/) (UEFI o EFI para abreviar) es un nuevo modelo de interfaz para interactuar entre los sistemas operativos y el firmware. Proporciona un entorno estándar para iniciar un sistema operativo y ejecutar aplicaciones previas al inicio.
 
-Es un método distito del comunmente usado «[código de arranque MBR](/index.php/Partitioning#Master_Boot_Record_.28bootstrap_code.29 "Partitioning")» seguido por los sistemas [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS"). Consulte [Arch boot process](/index.php/Arch_boot_process "Arch boot process") para conocer sus diferencias y el proceso de arranque con UEFI. Para configurar los cargadores de arranque UEFI, vea [Category:Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders").
+Es un método distito del comunmente usado «[código de arranque MBR](/index.php/Partitioning#Master_Boot_Record_(bootstrap_code) "Partitioning")» seguido por los sistemas [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS"). Consulte [Arch boot process](/index.php/Arch_boot_process "Arch boot process") para conocer sus diferencias y el proceso de arranque con UEFI. Para configurar los cargadores de arranque UEFI, vea [Category:Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders").
 
 ## Contents
 
@@ -20,34 +20,34 @@ Es un método distito del comunmente usado «[código de arranque MBR](/index.ph
 *   [2 Firmware de UEFI](#Firmware_de_UEFI)
     *   [2.1 Sistemas UEFI que no son Mac](#Sistemas_UEFI_que_no_son_Mac)
     *   [2.2 Mac de Apple](#Mac_de_Apple)
-*   [3 Configuración de las opciones del kernel de Linux para UEFI](#Configuraci.C3.B3n_de_las_opciones_del_kernel_de_Linux_para_UEFI)
+*   [3 Configuración de las opciones del kernel de Linux para UEFI](#Configuración_de_las_opciones_del_kernel_de_Linux_para_UEFI)
 *   [4 Variables de UEFI](#Variables_de_UEFI)
     *   [4.1 Soporte de las variables UEFI en el kernel de Linux](#Soporte_de_las_variables_UEFI_en_el_kernel_de_Linux)
     *   [4.2 Requisitos para que el soporte de las variables UEFI funcione correctamente](#Requisitos_para_que_el_soporte_de_las_variables_UEFI_funcione_correctamente)
         *   [4.2.1 Montar efivarfs](#Montar_efivarfs)
     *   [4.3 Herramientas en el espacio de usuario](#Herramientas_en_el_espacio_de_usuario)
         *   [4.3.1 efibootmgr](#efibootmgr)
-*   [5 Intérprete de órdenes UEFI](#Int.C3.A9rprete_de_.C3.B3rdenes_UEFI)
-    *   [5.1 Obtener el intérprete de órdenes UEFI](#Obtener_el_int.C3.A9rprete_de_.C3.B3rdenes_UEFI)
-    *   [5.2 Lanzar el intérprete de órdenes UEFI](#Lanzar_el_int.C3.A9rprete_de_.C3.B3rdenes_UEFI)
-    *   [5.3 Órdenes importantes del intérprete UEFI](#.C3.93rdenes_importantes_del_int.C3.A9rprete_UEFI)
+*   [5 Intérprete de órdenes UEFI](#Intérprete_de_órdenes_UEFI)
+    *   [5.1 Obtener el intérprete de órdenes UEFI](#Obtener_el_intérprete_de_órdenes_UEFI)
+    *   [5.2 Lanzar el intérprete de órdenes UEFI](#Lanzar_el_intérprete_de_órdenes_UEFI)
+    *   [5.3 Órdenes importantes del intérprete UEFI](#Órdenes_importantes_del_intérprete_UEFI)
         *   [5.3.1 bcfg](#bcfg)
         *   [5.3.2 map](#map)
         *   [5.3.3 edit](#edit)
 *   [6 Soporte para arrancar UEFI](#Soporte_para_arrancar_UEFI)
     *   [6.1 Crear un USB arrancable con UEFI desde la ISO](#Crear_un_USB_arrancable_con_UEFI_desde_la_ISO)
-    *   [6.2 Eliminar el apoyo de arranque de UEFI de una unidad óptica](#Eliminar_el_apoyo_de_arranque_de_UEFI_de_una_unidad_.C3.B3ptica)
+    *   [6.2 Eliminar el apoyo de arranque de UEFI de una unidad óptica](#Eliminar_el_apoyo_de_arranque_de_UEFI_de_una_unidad_óptica)
     *   [6.3 Arrancar el kernel de 64-bit en UEFI de 32-bit](#Arrancar_el_kernel_de_64-bit_en_UEFI_de_32-bit)
         *   [6.3.1 Utilizar GRUB](#Utilizar_GRUB)
 *   [7 Probar UEFI en sistemas sin soporte nativo](#Probar_UEFI_en_sistemas_sin_soporte_nativo)
-    *   [7.1 OVMF para máquinas virtuales](#OVMF_para_m.C3.A1quinas_virtuales)
-    *   [7.2 DUET para sistemas BIOS únicamente](#DUET_para_sistemas_BIOS_.C3.BAnicamente)
-*   [8 Solución de problemas](#Soluci.C3.B3n_de_problemas)
+    *   [7.1 OVMF para máquinas virtuales](#OVMF_para_máquinas_virtuales)
+    *   [7.2 DUET para sistemas BIOS únicamente](#DUET_para_sistemas_BIOS_únicamente)
+*   [8 Solución de problemas](#Solución_de_problemas)
     *   [8.1 Windows 7 no se inicia en la modalidad UEFI](#Windows_7_no_se_inicia_en_la_modalidad_UEFI)
     *   [8.2 Windows cambia el orden de arranque](#Windows_cambia_el_orden_de_arranque)
     *   [8.3 El soporte USB se topa con una pantalla negra](#El_soporte_USB_se_topa_con_una_pantalla_negra)
-    *   [8.4 El cargador de arranque UEFI no aparece en el menú del firmware](#El_cargador_de_arranque_UEFI_no_aparece_en_el_men.C3.BA_del_firmware)
-*   [9 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+    *   [8.4 El cargador de arranque UEFI no aparece en el menú del firmware](#El_cargador_de_arranque_UEFI_no_aparece_en_el_menú_del_firmware)
+*   [9 Véase también](#Véase_también)
 
 ## Versiones de UEFI
 
@@ -178,7 +178,7 @@ Existen algunas herramientas que permiten acceder/modificar las variables UEFI, 
 
 **Nota:**
 
-*   Si `efibootmgr` no funciona en absoluto en su sistema, puede reiniciar en el [intérprete de órdenes UEFI](#Int.C3.A9rprete_de_.C3.B3rdenes_UEFI) y utilizar la orden `bcfg` para crear una entrada de arranque en el gestor de arranque.
+*   Si `efibootmgr` no funciona en absoluto en su sistema, puede reiniciar en el [intérprete de órdenes UEFI](#Intérprete_de_órdenes_UEFI) y utilizar la orden `bcfg` para crear una entrada de arranque en el gestor de arranque.
 *   Si no es posible usar `efibootmgr`, algunos firmwares UEFI permiten a los usuarios gestionar directamente las entradas de inicio de UEFI desde la interfaz que aparece durante el arranque. Por ejemplo, algunas BIOS de ASUS tienen una opción llamada «Add New Boot Option» (*«Añadir nueva opción de arranque»*) que permite seleccionar una partición de sistema EFI local e introducir manualmente la ubicación del código de EFI (por ejemplo `\EFI\refind\refind_x64.efi`).
 *   Las siguientes órdenes utilizan el cargador de arranque [rEFInd](/index.php/REFInd "REFInd") como ejemplo.
 
@@ -244,7 +244,7 @@ La orden `bcfg` se utiliza para modificar las entradas en la NVRAM de UEFI, lo q
 **Nota:**
 
 *   Se recomienda probar `bcfg` únicamente si `efibootmgr` no puede crear entradas de inicio que funcionen en el propio sistema.
-*   La versión 1 del binario oficial del intérprete de órdenes UEFI no proporciona soporte para la orden `bcfg`. Consulte [#Obtener el intérprete de órdenes UEFI](#Obtener_el_int.C3.A9rprete_de_.C3.B3rdenes_UEFI) para un binario UEFI shell v2 modificado que puede funcionar en UEFI con firmwares anteriores a 2.3.
+*   La versión 1 del binario oficial del intérprete de órdenes UEFI no proporciona soporte para la orden `bcfg`. Consulte [#Obtener el intérprete de órdenes UEFI](#Obtener_el_intérprete_de_órdenes_UEFI) para un binario UEFI shell v2 modificado que puede funcionar en UEFI con firmwares anteriores a 2.3.
 
 Para conocer una lista de entradas de arranque actuales:
 

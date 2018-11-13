@@ -4,21 +4,21 @@
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 配置](#.E9.85.8D.E7.BD.AE)
-    *   [2.1 客户端](#.E5.AE.A2.E6.88.B7.E7.AB.AF)
-        *   [2.1.1 命令行](#.E5.91.BD.E4.BB.A4.E8.A1.8C)
-        *   [2.1.2 以守护进程形式运行客户端](#.E4.BB.A5.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B.E5.BD.A2.E5.BC.8F.E8.BF.90.E8.A1.8C.E5.AE.A2.E6.88.B7.E7.AB.AF)
-        *   [2.1.3 图形界面客户端](#.E5.9B.BE.E5.BD.A2.E7.95.8C.E9.9D.A2.E5.AE.A2.E6.88.B7.E7.AB.AF)
-        *   [2.1.4 配置代理](#.E9.85.8D.E7.BD.AE.E4.BB.A3.E7.90.86)
-            *   [2.1.4.1 浏览器配置](#.E6.B5.8F.E8.A7.88.E5.99.A8.E9.85.8D.E7.BD.AE)
-    *   [2.2 服务端](#.E6.9C.8D.E5.8A.A1.E7.AB.AF)
-        *   [2.2.1 以命令行启动进程](#.E4.BB.A5.E5.91.BD.E4.BB.A4.E8.A1.8C.E5.90.AF.E5.8A.A8.E8.BF.9B.E7.A8.8B)
-        *   [2.2.2 以守护进程形式运行](#.E4.BB.A5.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B.E5.BD.A2.E5.BC.8F.E8.BF.90.E8.A1.8C)
-        *   [2.2.3 多端口运行](#.E5.A4.9A.E7.AB.AF.E5.8F.A3.E8.BF.90.E8.A1.8C)
-        *   [2.2.4 加密方法](#.E5.8A.A0.E5.AF.86.E6.96.B9.E6.B3.95)
-        *   [2.2.5 性能优化](#.E6.80.A7.E8.83.BD.E4.BC.98.E5.8C.96)
-*   [3 参阅](#.E5.8F.82.E9.98.85)
+*   [1 安装](#安装)
+*   [2 配置](#配置)
+    *   [2.1 客户端](#客户端)
+        *   [2.1.1 命令行](#命令行)
+        *   [2.1.2 以守护进程形式运行客户端](#以守护进程形式运行客户端)
+        *   [2.1.3 图形界面客户端](#图形界面客户端)
+        *   [2.1.4 配置代理](#配置代理)
+            *   [2.1.4.1 浏览器配置](#浏览器配置)
+    *   [2.2 服务端](#服务端)
+        *   [2.2.1 以命令行启动进程](#以命令行启动进程)
+        *   [2.2.2 以守护进程形式运行](#以守护进程形式运行)
+        *   [2.2.3 多端口运行](#多端口运行)
+        *   [2.2.4 加密方法](#加密方法)
+        *   [2.2.5 性能优化](#性能优化)
+*   [3 参阅](#参阅)
 
 ## 安装
 
@@ -113,7 +113,7 @@ shadowsocks客户端启动后，其他程序并不会直接应用socks5连接，
 
 *   程序设置自身代理
 
-不少程序都能在其设置中添加代理，只需要在其设置中找到网络相关配置，添加socks v5代理，参照本地配置文件中的ip和port填写即可（例如浏览器的配置可参考下文[#浏览器配置](#.E6.B5.8F.E8.A7.88.E5.99.A8.E9.85.8D.E7.BD.AE)）。
+不少程序都能在其设置中添加代理，只需要在其设置中找到网络相关配置，添加socks v5代理，参照本地配置文件中的ip和port填写即可（例如浏览器的配置可参考下文[#浏览器配置](#浏览器配置)）。
 
 *   使用工具进行临时代理
 
@@ -151,7 +151,7 @@ shadowsocks客户端启动后，其他程序并不会直接应用socks5连接，
 
 ##### 浏览器配置
 
-**提示：** 浏览器直接使用[SOCKS](https://en.wikipedia.org/wiki/SOCKS "wikipedia:SOCKS")代理时，你可能需要使用[privoxy](/index.php/Privoxy "Privoxy")等辅助程序，因为一般浏览器会泄漏你的DNS请求，从而减少你的匿名，参看前文[#配置代理](#.E9.85.8D.E7.BD.AE.E4.BB.A3.E7.90.86)中转化为http代理一节。
+**提示：** 浏览器直接使用[SOCKS](https://en.wikipedia.org/wiki/SOCKS "wikipedia:SOCKS")代理时，你可能需要使用[privoxy](/index.php/Privoxy "Privoxy")等辅助程序，因为一般浏览器会泄漏你的DNS请求，从而减少你的匿名，参看前文[#配置代理](#配置代理)中转化为http代理一节。
 
 *   firefox
     *   使用扩展如[foxyproxy](https://getfoxyproxy.org/)或[switchyomega](https://github.com/FelisCatus/SwitchyOmega)等。
@@ -291,7 +291,7 @@ AEAD加密:
 
 #### 性能优化
 
-*   多用户使用的情况下，建议使用[#多端口运行](#.E5.A4.9A.E7.AB.AF.E5.8F.A3.E8.BF.90.E8.A1.8C)，尽量避免一个端口有过多用户连接。
+*   多用户使用的情况下，建议使用[#多端口运行](#多端口运行)，尽量避免一个端口有过多用户连接。
 *   使用[常用端口](https://www.google.com/search?newwindow=1&q=%E5%B8%B8%E7%94%A8%E7%AB%AF%E5%8F%A3%E5%8F%B7&oq=%E5%B8%B8%E7%94%A8%E7%AB%AF%E5%8F%A3%E5%8F%B7&gs_l=psy-ab.3...30218.34357.0.34596.9.8.1.0.0.0.552.2392.4-4j1.5.0....0...1.1.64.psy-ab..4.3.1400...35i39k1j0i5i30k1.0.tTk_3WbYY-g)如25、443、21等等，[GFW](https://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E9%95%BF%E5%9F%8E)为减轻压力，对常用端口检查相对较少。
 *   使用[python-gevent](https://www.archlinux.org/packages/?name=python-gevent)提升python的[shadowsocks](https://www.archlinux.org/packages/?name=shadowsocks)运行的速度。
 *   使用[python-pip](https://www.archlinux.org/packages/?name=python-pip)安装`M2Crypto`可略微提升加密速度；使用较弱的加密方式CR4-MD5提升加密速度（但是会降低安全程度，请根据实际使用情况考虑加密强度的选择）。

@@ -2,14 +2,14 @@ Následuje seznam často kladených dotazů k 64-bitovému Archlinuxu (Arch64)
 
 ## Contents
 
-*   [1 Jak nainstaluji Arch64?](#Jak_nainstaluji_Arch64.3F)
-*   [2 Do jaké míry je Arch64 hotový? Budu v něm mít všechny své balíčky z 32-bitového Archlinuxu?](#Do_jak.C3.A9_m.C3.ADry_je_Arch64_hotov.C3.BD.3F_Budu_v_n.C4.9Bm_m.C3.ADt_v.C5.A1echny_sv.C3.A9_bal.C3.AD.C4.8Dky_z_32-bitov.C3.A9ho_Archlinuxu.3F)
-*   [3 Znamená 64-bitová architektura znatelné zvýšení rychlosti prostředí?](#Znamen.C3.A1_64-bitov.C3.A1_architektura_znateln.C3.A9_zv.C3.BD.C5.A1en.C3.AD_rychlosti_prost.C5.99ed.C3.AD.3F)
-*   [4 Jak mohu nahlásit chybu?](#Jak_mohu_nahl.C3.A1sit_chybu.3F)
-*   [5 Co mi v Arch64 bude scházet?](#Co_mi_v_Arch64_bude_sch.C3.A1zet.3F)
-*   [6 Můžu v Arch64 sestavovat 32-bitové balíčky pro i686?](#M.C5.AF.C5.BEu_v_Arch64_sestavovat_32-bitov.C3.A9_bal.C3.AD.C4.8Dky_pro_i686.3F)
-*   [7 Můžu v Arch64 provozovat 32-bitové aplikace?](#M.C5.AF.C5.BEu_v_Arch64_provozovat_32-bitov.C3.A9_aplikace.3F)
-*   [8 Můžu aktualizovat/přepnout svůj systém z i686 na x86_64 bez přeinstalace?](#M.C5.AF.C5.BEu_aktualizovat.2Fp.C5.99epnout_sv.C5.AFj_syst.C3.A9m_z_i686_na_x86_64_bez_p.C5.99einstalace.3F)
+*   [1 Jak nainstaluji Arch64?](#Jak_nainstaluji_Arch64?)
+*   [2 Do jaké míry je Arch64 hotový? Budu v něm mít všechny své balíčky z 32-bitového Archlinuxu?](#Do_jaké_míry_je_Arch64_hotový?_Budu_v_něm_mít_všechny_své_balíčky_z_32-bitového_Archlinuxu?)
+*   [3 Znamená 64-bitová architektura znatelné zvýšení rychlosti prostředí?](#Znamená_64-bitová_architektura_znatelné_zvýšení_rychlosti_prostředí?)
+*   [4 Jak mohu nahlásit chybu?](#Jak_mohu_nahlásit_chybu?)
+*   [5 Co mi v Arch64 bude scházet?](#Co_mi_v_Arch64_bude_scházet?)
+*   [6 Můžu v Arch64 sestavovat 32-bitové balíčky pro i686?](#Můžu_v_Arch64_sestavovat_32-bitové_balíčky_pro_i686?)
+*   [7 Můžu v Arch64 provozovat 32-bitové aplikace?](#Můžu_v_Arch64_provozovat_32-bitové_aplikace?)
+*   [8 Můžu aktualizovat/přepnout svůj systém z i686 na x86_64 bez přeinstalace?](#Můžu_aktualizovat/přepnout_svůj_systém_z_i686_na_x86_64_bez_přeinstalace?)
 
 ## Jak nainstaluji Arch64?
 

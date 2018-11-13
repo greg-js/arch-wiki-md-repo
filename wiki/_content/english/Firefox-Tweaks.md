@@ -11,13 +11,13 @@ This page contains advanced Firefox configuration options and performance tweaks
 
 *   [1 Performance](#Performance)
     *   [1.1 Change Performance settings](#Change_Performance_settings)
-    *   [1.2 Enable OpenGL Off-Main-Thread Compositing (OMTC)](#Enable_OpenGL_Off-Main-Thread_Compositing_.28OMTC.29)
+    *   [1.2 Enable OpenGL Off-Main-Thread Compositing (OMTC)](#Enable_OpenGL_Off-Main-Thread_Compositing_(OMTC))
     *   [1.3 Enable Accelerated Azure Canvas](#Enable_Accelerated_Azure_Canvas)
     *   [1.4 Stop urlclassifier3.sqlite from being created again](#Stop_urlclassifier3.sqlite_from_being_created_again)
     *   [1.5 Turn off the disk cache](#Turn_off_the_disk_cache)
     *   [1.6 Longer interval between session information record](#Longer_interval_between_session_information_record)
     *   [1.7 Referrer header control](#Referrer_header_control)
-    *   [1.8 Defragment the profile's SQLite databases](#Defragment_the_profile.27s_SQLite_databases)
+    *   [1.8 Defragment the profile's SQLite databases](#Defragment_the_profile's_SQLite_databases)
     *   [1.9 Cache the entire profile into RAM via tmpfs](#Cache_the_entire_profile_into_RAM_via_tmpfs)
     *   [1.10 Disable Pocket](#Disable_Pocket)
 *   [2 Appearance](#Appearance)
@@ -32,7 +32,7 @@ This page contains advanced Firefox configuration options and performance tweaks
         *   [2.2.5 Hide window border and title bar](#Hide_window_border_and_title_bar)
         *   [2.2.6 Auto-hide Bookmarks Toolbar](#Auto-hide_Bookmarks_Toolbar)
         *   [2.2.7 Remove sidebar width restrictions](#Remove_sidebar_width_restrictions)
-        *   [2.2.8 Unreadable input fields with dark GTK+ themes](#Unreadable_input_fields_with_dark_GTK.2B_themes)
+        *   [2.2.8 Unreadable input fields with dark GTK+ themes](#Unreadable_input_fields_with_dark_GTK+_themes)
             *   [2.2.8.1 Override input field color with CSS](#Override_input_field_color_with_CSS)
             *   [2.2.8.2 Change the GTK theme](#Change_the_GTK_theme)
             *   [2.2.8.3 Change the GTK theme for content process only](#Change_the_GTK_theme_for_content_process_only)
@@ -40,21 +40,21 @@ This page contains advanced Firefox configuration options and performance tweaks
     *   [2.4 Web content CSS settings](#Web_content_CSS_settings)
         *   [2.4.1 Import other CSS files](#Import_other_CSS_files)
         *   [2.4.2 Block certain parts of a domain](#Block_certain_parts_of_a_domain)
-        *   [2.4.3 Add [pdf] after links to PDF files](#Add_.5Bpdf.5D_after_links_to_PDF_files)
+        *   [2.4.3 Add [pdf] after links to PDF files](#Add_[pdf]_after_links_to_PDF_files)
         *   [2.4.4 Block ads](#Block_ads)
 *   [3 Mouse and keyboard](#Mouse_and_keyboard)
     *   [3.1 Mouse wheel scroll speed](#Mouse_wheel_scroll_speed)
     *   [3.2 Pixel-perfect trackpad scrolling](#Pixel-perfect_trackpad_scrolling)
     *   [3.3 Enable touchscreen gestures](#Enable_touchscreen_gestures)
-    *   [3.4 Mouse click on URL bar's behavior](#Mouse_click_on_URL_bar.27s_behavior)
-    *   [3.5 Set backspace's behavior](#Set_backspace.27s_behavior)
+    *   [3.4 Mouse click on URL bar's behavior](#Mouse_click_on_URL_bar's_behavior)
+    *   [3.5 Set backspace's behavior](#Set_backspace's_behavior)
     *   [3.6 Disable middle mouse button clipboard paste](#Disable_middle_mouse_button_clipboard_paste)
 *   [4 Miscellaneous](#Miscellaneous)
     *   [4.1 Enable additional media codecs](#Enable_additional_media_codecs)
-        *   [4.1.1 Widevine and Netflix/Amazon Video](#Widevine_and_Netflix.2FAmazon_Video)
+        *   [4.1.1 Widevine and Netflix/Amazon Video](#Widevine_and_Netflix/Amazon_Video)
     *   [4.2 Remove full screen warning](#Remove_full_screen_warning)
     *   [4.3 Change the order of search engines in the Firefox Search Bar](#Change_the_order_of_search_engines_in_the_Firefox_Search_Bar)
-    *   [4.4 "I'm Feeling Lucky" mode](#.22I.27m_Feeling_Lucky.22_mode)
+    *   [4.4 "I'm Feeling Lucky" mode](#"I'm_Feeling_Lucky"_mode)
     *   [4.5 Secure DNS with DNSSEC validator](#Secure_DNS_with_DNSSEC_validator)
     *   [4.6 Adding magnet protocol association](#Adding_magnet_protocol_association)
     *   [4.7 Prevent accidental closing](#Prevent_accidental_closing)
@@ -106,7 +106,7 @@ For more information on OMTC in Firefox read [MozillaWiki:Platform/GFX/OffMainTh
 
 ### Enable Accelerated Azure Canvas
 
-**Warning:** Accelerated Azure Canvas may cause invalid/corrupt rendering of images on unsupported devices and/or drivers, see [#Enable OpenGL Off-Main-Thread Compositing (OMTC)](#Enable_OpenGL_Off-Main-Thread_Compositing_.28OMTC.29).
+**Warning:** Accelerated Azure Canvas may cause invalid/corrupt rendering of images on unsupported devices and/or drivers, see [#Enable OpenGL Off-Main-Thread Compositing (OMTC)](#Enable_OpenGL_Off-Main-Thread_Compositing_(OMTC)).
 
 Go to `about:config`, accept the warning, right click and create a new boolean value. Set the name as `gfx.canvas.azure.accelerated` and set it to `true`.
 
@@ -471,7 +471,7 @@ layout.word_select.stop_at_punctuation; true (default)
 
 ### Set backspace's behavior
 
-See [Firefox#Backspace does not work as the 'Back' button](/index.php/Firefox#Backspace_does_not_work_as_the_.27Back.27_button "Firefox").
+See [Firefox#Backspace does not work as the 'Back' button](/index.php/Firefox#Backspace_does_not_work_as_the_'Back'_button "Firefox").
 
 ### Disable middle mouse button clipboard paste
 
@@ -606,7 +606,7 @@ Once your container is booted, run the Xorg binary like so:
 
 ### Disable WebRTC audio post processing
 
-If you are using the PulseAudio [module-echo-cancel](/index.php/PulseAudio/Troubleshooting#Enable_Echo.2FNoise-Cancellation "PulseAudio/Troubleshooting"), you probably don't want Firefox to do additional audio post processing.
+If you are using the PulseAudio [module-echo-cancel](/index.php/PulseAudio/Troubleshooting#Enable_Echo/Noise-Cancellation "PulseAudio/Troubleshooting"), you probably don't want Firefox to do additional audio post processing.
 
 To disable audio post processing, change the value of the following preferences to `false`:
 

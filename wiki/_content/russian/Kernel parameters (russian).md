@@ -8,7 +8,7 @@ This page now explains in more detail the second method and shows a list of most
 
 ## Contents
 
-*   [1 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
+*   [1 Настройка](#Настройка)
     *   [1.1 Syslinux](#Syslinux)
     *   [1.2 GRUB](#GRUB)
     *   [1.3 GRUB Legacy](#GRUB_Legacy)
@@ -16,8 +16,8 @@ This page now explains in more detail the second method and shows a list of most
     *   [1.5 LILO](#LILO)
     *   [1.6 Gummiboot](#Gummiboot)
     *   [1.7 rEFInd](#rEFInd)
-*   [2 Список параметров](#.D0.A1.D0.BF.D0.B8.D1.81.D0.BE.D0.BA_.D0.BF.D0.B0.D1.80.D0.B0.D0.BC.D0.B5.D1.82.D1.80.D0.BE.D0.B2)
-*   [3 Ссылки](#.D0.A1.D1.81.D1.8B.D0.BB.D0.BA.D0.B8)
+*   [2 Список параметров](#Список_параметров)
+*   [3 Ссылки](#Ссылки)
 
 ## Настройка
 

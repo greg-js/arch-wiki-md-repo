@@ -8,10 +8,10 @@ Catwm is a small, lightweight tiling window manager created by pyknite. It was f
 *   [2 Starting](#Starting)
 *   [3 Configuration](#Configuration)
     *   [3.1 Add Custom Keybindings](#Add_Custom_Keybindings)
-    *   [3.2 Set Volume Up/Down Hotkeys](#Set_Volume_Up.2FDown_Hotkeys)
-    *   [3.3 Set Next/Previous Song Hotkeys](#Set_Next.2FPrevious_Song_Hotkeys)
+    *   [3.2 Set Volume Up/Down Hotkeys](#Set_Volume_Up/Down_Hotkeys)
+    *   [3.3 Set Next/Previous Song Hotkeys](#Set_Next/Previous_Song_Hotkeys)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 My volume hotkeys do not work!](#My_volume_hotkeys_do_not_work.21)
+    *   [4.1 My volume hotkeys do not work!](#My_volume_hotkeys_do_not_work!)
 
 ## Installation
 

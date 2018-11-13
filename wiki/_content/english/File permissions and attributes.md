@@ -111,7 +111,7 @@ Let us look at another example, this time of a file, not a directory:
 
 ```
 
-Here we can see the first letter is not `d` but `-`. So we know it is a file, not a directory. Next the owner's permissions are `rw-` so the owner has the ability to read and write but not execute. This may seem odd that the owner does not have all three permissions, but the `x` permission is not needed as it is a text/data file, to be read by a text editor such as Gedit, EMACS, or software like R, and not an executable in its own right (if it contained something like python programming code then it very well could be). The group's permssions are set to `r--`, so the group has the ability to read the file but not write/edit it in any way — it is essentially like setting something to read-only. We can see that the same permissions apply to everyone else as well.
+Here we can see the first letter is not `d` but `-`. So we know it is a file, not a directory. Next the owner's permissions are `rw-` so the owner has the ability to read and write but not execute. This may seem odd that the owner does not have all three permissions, but the `x` permission is not needed as it is a text/data file, to be read by a text editor such as Gedit, EMACS, or software like R, and not an executable in its own right (if it contained something like python programming code then it very well could be). The group's permissions are set to `r--`, so the group has the ability to read the file but not write/edit it in any way — it is essentially like setting something to read-only. We can see that the same permissions apply to everyone else as well.
 
 ## Changing permissions
 

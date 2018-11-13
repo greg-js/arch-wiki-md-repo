@@ -29,7 +29,7 @@ Most plugins on this page are NPAPI-only, unless noted otherwise.
     *   [2.2 External PDF viewers](#External_PDF_viewers)
 *   [3 UnionPay Online Pay](#UnionPay_Online_Pay)
 *   [4 Citrix](#Citrix)
-*   [5 Java (IcedTea)](#Java_.28IcedTea.29)
+*   [5 Java (IcedTea)](#Java_(IcedTea))
 *   [6 Pipelight](#Pipelight)
 *   [7 Multimedia playback](#Multimedia_playback)
 *   [8 Google Hangouts](#Google_Hangouts)

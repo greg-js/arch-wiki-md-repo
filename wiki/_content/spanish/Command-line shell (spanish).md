@@ -12,18 +12,18 @@ De [Wikipedia](https://en.wikipedia.org/wiki/es:Shell_de_Unix "wikipedia:es:Shel
 
 ## Contents
 
-*   [1 Listado de intérpretes de línea de órdenes](#Listado_de_int.C3.A9rpretes_de_l.C3.ADnea_de_.C3.B3rdenes)
+*   [1 Listado de intérpretes de línea de órdenes](#Listado_de_intérpretes_de_línea_de_órdenes)
     *   [1.1 Compatibles POSIX](#Compatibles_POSIX)
-    *   [1.2 Intérpretes de línea de órdenes alternativos](#Int.C3.A9rpretes_de_l.C3.ADnea_de_.C3.B3rdenes_alternativos)
-*   [2 Cambiar su intérprete de línea de órdenes predeterminado](#Cambiar_su_int.C3.A9rprete_de_l.C3.ADnea_de_.C3.B3rdenes_predeterminado)
-*   [3 Archivos de configuración](#Archivos_de_configuraci.C3.B3n)
-    *   [3.1 /etc/profile](#.2Fetc.2Fprofile)
+    *   [1.2 Intérpretes de línea de órdenes alternativos](#Intérpretes_de_línea_de_órdenes_alternativos)
+*   [2 Cambiar su intérprete de línea de órdenes predeterminado](#Cambiar_su_intérprete_de_línea_de_órdenes_predeterminado)
+*   [3 Archivos de configuración](#Archivos_de_configuración)
+    *   [3.1 /etc/profile](#/etc/profile)
 *   [4 Entrada y salida](#Entrada_y_salida)
-*   [5 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [5 Véase también](#Véase_también)
 
 ## Listado de intérpretes de línea de órdenes
 
-Los intérpretes de línea de órdenes que son más o menos [compatibles con POSIX](http://pubs.opengroup.org/onlinepubs/009695399/utilities/xcu_chap02.html) se listan bajo [#Compatibles POSIX](#Compatibles_POSIX), mientras que los intérpretes de línea de órdenes que tienen una sintaxis diferente están bajo [#Intérpretes de línea de órdenes alternativos](#Int.C3.A9rpretes_de_l.C3.ADnea_de_.C3.B3rdenes_alternativos).
+Los intérpretes de línea de órdenes que son más o menos [compatibles con POSIX](http://pubs.opengroup.org/onlinepubs/009695399/utilities/xcu_chap02.html) se listan bajo [#Compatibles POSIX](#Compatibles_POSIX), mientras que los intérpretes de línea de órdenes que tienen una sintaxis diferente están bajo [#Intérpretes de línea de órdenes alternativos](#Intérpretes_de_línea_de_órdenes_alternativos).
 
 ### Compatibles POSIX
 
@@ -105,7 +105,7 @@ Si ahora se desconecta y vuelve a iniciar sesión, será recibido por el otro in
 
 ## Archivos de configuración
 
-Para iniciar automáticamente los programas en la consola o al iniciar sesión, puede usar los archivos/directorios de inicio del intérprete de línea de órdenes. Lea la documentación de su intérprete de línea de órdenes o su artículo de ArchWiki, por ejemplo [Bash (Español)#Archivos de configuración](/index.php/Bash_(Espa%C3%B1ol)#Archivos_de_configuraci.C3.B3n "Bash (Español)") o [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup.2FShutdown_files "Zsh").
+Para iniciar automáticamente los programas en la consola o al iniciar sesión, puede usar los archivos/directorios de inicio del intérprete de línea de órdenes. Lea la documentación de su intérprete de línea de órdenes o su artículo de ArchWiki, por ejemplo [Bash (Español)#Archivos de configuración](/index.php/Bash_(Espa%C3%B1ol)#Archivos_de_configuración "Bash (Español)") o [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup/Shutdown_files "Zsh").
 
 Véase también [Wikipedia:es:Shell de Unix#Archivos de configuración para shells](https://en.wikipedia.org/wiki/es:Shell_de_Unix#Archivos_de_configuraci.C3.B3n_para_shells "wikipedia:es:Shell de Unix").
 

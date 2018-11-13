@@ -4,7 +4,7 @@ Sljedećih pet osnovnih principa čine ono što se obično naziva *Put Archa*, i
 
 *   [1 Jednostavnost](#Jednostavnost)
 *   [2 Ispravnost osnove nad udobnosti](#Ispravnost_osnove_nad_udobnosti)
-*   [3 Korisnik uvijek središte pažnje](#Korisnik_uvijek_sredi.C5.A1te_pa.C5.BEnje)
+*   [3 Korisnik uvijek središte pažnje](#Korisnik_uvijek_središte_pažnje)
 *   [4 Otvorenost](#Otvorenost)
 *   [5 Sloboda](#Sloboda)
 

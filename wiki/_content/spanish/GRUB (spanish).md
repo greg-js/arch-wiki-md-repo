@@ -20,48 +20,48 @@ Artículos relacionados
 ## Contents
 
 *   [1 Sistemas BIOS](#Sistemas_BIOS)
-    *   [1.1 Instrucciones específicas para GUID Partition Table (GPT)](#Instrucciones_espec.C3.ADficas_para_GUID_Partition_Table_.28GPT.29)
-    *   [1.2 Instrucciones específicas para Master Boot Record (MBR)](#Instrucciones_espec.C3.ADficas_para_Master_Boot_Record_.28MBR.29)
-    *   [1.3 Instalación](#Instalaci.C3.B3n)
+    *   [1.1 Instrucciones específicas para GUID Partition Table (GPT)](#Instrucciones_específicas_para_GUID_Partition_Table_(GPT))
+    *   [1.2 Instrucciones específicas para Master Boot Record (MBR)](#Instrucciones_específicas_para_Master_Boot_Record_(MBR))
+    *   [1.3 Instalación](#Instalación)
 *   [2 Sistemas UEFI](#Sistemas_UEFI)
-    *   [2.1 Comprobar si se está utilizando una partición EFI del sistema](#Comprobar_si_se_est.C3.A1_utilizando_una_partici.C3.B3n_EFI_del_sistema)
-    *   [2.2 Instalación](#Instalaci.C3.B3n_2)
-*   [3 Generar el archivo de configuración principal](#Generar_el_archivo_de_configuraci.C3.B3n_principal)
-*   [4 Configuración](#Configuraci.C3.B3n)
+    *   [2.1 Comprobar si se está utilizando una partición EFI del sistema](#Comprobar_si_se_está_utilizando_una_partición_EFI_del_sistema)
+    *   [2.2 Instalación](#Instalación_2)
+*   [3 Generar el archivo de configuración principal](#Generar_el_archivo_de_configuración_principal)
+*   [4 Configuración](#Configuración)
     *   [4.1 Argumentos adicionales](#Argumentos_adicionales)
     *   [4.2 LVM](#LVM)
     *   [4.3 RAID](#RAID)
-    *   [4.4 Encriptación](#Encriptaci.C3.B3n)
-        *   [4.4.1 Partición raíz](#Partici.C3.B3n_ra.C3.ADz)
-        *   [4.4.2 Partición de arranque](#Partici.C3.B3n_de_arranque)
-    *   [4.5 Entradas múltiples](#Entradas_m.C3.BAltiples)
+    *   [4.4 Encriptación](#Encriptación)
+        *   [4.4.1 Partición raíz](#Partición_raíz)
+        *   [4.4.2 Partición de arranque](#Partición_de_arranque)
+    *   [4.5 Entradas múltiples](#Entradas_múltiples)
     *   [4.6 Cargar en cadena un archivo .efi de Arch Linux](#Cargar_en_cadena_un_archivo_.efi_de_Arch_Linux)
     *   [4.7 Arranque dual](#Arranque_dual)
-        *   [4.7.1 Entrada de menú para «Apagar»](#Entrada_de_men.C3.BA_para_.C2.ABApagar.C2.BB)
-        *   [4.7.2 Entrada de menú para «Reiniciar»](#Entrada_de_men.C3.BA_para_.C2.ABReiniciar.C2.BB)
-        *   [4.7.3 Entrada de menú para «configurar Firmware» (solo para UEFI)](#Entrada_de_men.C3.BA_para_.C2.ABconfigurar_Firmware.C2.BB_.28solo_para_UEFI.29)
-        *   [4.7.4 Entrada de menú para GNU/Linux](#Entrada_de_men.C3.BA_para_GNU.2FLinux)
-        *   [4.7.5 Entrada de menú para Windows instalado en modo UEFI/GPT](#Entrada_de_men.C3.BA_para_Windows_instalado_en_modo_UEFI.2FGPT)
-        *   [4.7.6 Entrada de menú para Windows instalado en modo BIOS-MBR](#Entrada_de_men.C3.BA_para_Windows_instalado_en_modo_BIOS-MBR)
-*   [5 Utilizar la consola de intérprete de órdenes](#Utilizar_la_consola_de_int.C3.A9rprete_de_.C3.B3rdenes)
-    *   [5.1 Soporte para «pager»](#Soporte_para_.C2.ABpager.C2.BB)
-    *   [5.2 Usar el entorno de la consola de intérprete de órdenes para arrancar distintos sistemas operativos](#Usar_el_entorno_de_la_consola_de_int.C3.A9rprete_de_.C3.B3rdenes_para_arrancar_distintos_sistemas_operativos)
+        *   [4.7.1 Entrada de menú para «Apagar»](#Entrada_de_menú_para_«Apagar»)
+        *   [4.7.2 Entrada de menú para «Reiniciar»](#Entrada_de_menú_para_«Reiniciar»)
+        *   [4.7.3 Entrada de menú para «configurar Firmware» (solo para UEFI)](#Entrada_de_menú_para_«configurar_Firmware»_(solo_para_UEFI))
+        *   [4.7.4 Entrada de menú para GNU/Linux](#Entrada_de_menú_para_GNU/Linux)
+        *   [4.7.5 Entrada de menú para Windows instalado en modo UEFI/GPT](#Entrada_de_menú_para_Windows_instalado_en_modo_UEFI/GPT)
+        *   [4.7.6 Entrada de menú para Windows instalado en modo BIOS-MBR](#Entrada_de_menú_para_Windows_instalado_en_modo_BIOS-MBR)
+*   [5 Utilizar la consola de intérprete de órdenes](#Utilizar_la_consola_de_intérprete_de_órdenes)
+    *   [5.1 Soporte para «pager»](#Soporte_para_«pager»)
+    *   [5.2 Usar el entorno de la consola de intérprete de órdenes para arrancar distintos sistemas operativos](#Usar_el_entorno_de_la_consola_de_intérprete_de_órdenes_para_arrancar_distintos_sistemas_operativos)
         *   [5.2.1 Alternar el arranque desde una partition](#Alternar_el_arranque_desde_una_partition)
-        *   [5.2.2 Alternar el arranque desde un disco/unidad](#Alternar_el_arranque_desde_un_disco.2Funidad)
-        *   [5.2.3 Alternar el arranque de Windows/Linux instalados en modalidad UEFI](#Alternar_el_arranque_de_Windows.2FLinux_instalados_en_modalidad_UEFI)
+        *   [5.2.2 Alternar el arranque desde un disco/unidad](#Alternar_el_arranque_desde_un_disco/unidad)
+        *   [5.2.3 Alternar el arranque de Windows/Linux instalados en modalidad UEFI](#Alternar_el_arranque_de_Windows/Linux_instalados_en_modalidad_UEFI)
         *   [5.2.4 Cargar en modo normal](#Cargar_en_modo_normal)
     *   [5.3 Utilizar la consola de rescate](#Utilizar_la_consola_de_rescate)
-*   [6 Solución de problemas](#Soluci.C3.B3n_de_problemas)
+*   [6 Solución de problemas](#Solución_de_problemas)
     *   [6.1 F2FS y otros sistemas de archivos sin soporte](#F2FS_y_otros_sistemas_de_archivos_sin_soporte)
     *   [6.2 La BIOS de Intel no arranca con GPT](#La_BIOS_de_Intel_no_arranca_con_GPT)
-    *   [6.3 Activar mensajes de depuración de errores](#Activar_mensajes_de_depuraci.C3.B3n_de_errores)
-    *   [6.4 Corregir el error de GRUB: «no suitable mode found»](#Corregir_el_error_de_GRUB:_.C2.ABno_suitable_mode_found.C2.BB)
+    *   [6.3 Activar mensajes de depuración de errores](#Activar_mensajes_de_depuración_de_errores)
+    *   [6.4 Corregir el error de GRUB: «no suitable mode found»](#Corregir_el_error_de_GRUB:_«no_suitable_mode_found»)
     *   [6.5 Mensaje de error msdos-style](#Mensaje_de_error_msdos-style)
     *   [6.6 UEFI](#UEFI)
-        *   [6.6.1 Errores comunes de instalación](#Errores_comunes_de_instalaci.C3.B3n)
+        *   [6.6.1 Errores comunes de instalación](#Errores_comunes_de_instalación)
         *   [6.6.2 Salta la consola de emergencia](#Salta_la_consola_de_emergencia)
         *   [6.6.3 GRUB UEFI no se carga](#GRUB_UEFI_no_se_carga)
-        *   [6.6.4 Ruta de arranque default/fallback](#Ruta_de_arranque_default.2Ffallback)
+        *   [6.6.4 Ruta de arranque default/fallback](#Ruta_de_arranque_default/fallback)
     *   [6.7 Invalid signature](#Invalid_signature)
     *   [6.8 Bloqueos al arrancar](#Bloqueos_al_arrancar)
     *   [6.9 Arch no es detectado por otros sistemas operativos](#Arch_no_es_detectado_por_otros_sistemas_operativos)
@@ -69,10 +69,10 @@ Artículos relacionados
     *   [6.11 GRUB carga lentamente](#GRUB_carga_lentamente)
     *   [6.12 error: unknown filesystem](#error:_unknown_filesystem)
     *   [6.13 grub-reboot no reinicia](#grub-reboot_no_reinicia)
-    *   [6.14 El sistema de archivos BTRFS antiguo presiste en la instalación](#El_sistema_de_archivos_BTRFS_antiguo_presiste_en_la_instalaci.C3.B3n)
-    *   [6.15 Windows 8/10 no es encontrado](#Windows_8.2F10_no_es_encontrado)
+    *   [6.14 El sistema de archivos BTRFS antiguo presiste en la instalación](#El_sistema_de_archivos_BTRFS_antiguo_presiste_en_la_instalación)
+    *   [6.15 Windows 8/10 no es encontrado](#Windows_8/10_no_es_encontrado)
     *   [6.16 Modalidad EFI en VirtualBox](#Modalidad_EFI_en_VirtualBox)
-*   [7 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [7 Véase también](#Véase_también)
 
 ## Sistemas BIOS
 
@@ -110,11 +110,11 @@ Por lo general, el espacio disponilbe después del [MBR](/index.php/Master_Boot_
 
 donde `/dev/sd**X**` es el disco donde se instalará grub (por ejemplo, el disco `/dev/sda` y **no** la partición `/dev/sda1`).
 
-Ahora genere [el archivo principal de configuración](#Generar_el_archivo_de_configuraci.C3.B3n_principal).
+Ahora genere [el archivo principal de configuración](#Generar_el_archivo_de_configuración_principal).
 
 Si usa [LVM (Español)](/index.php/LVM_(Espa%C3%B1ol) "LVM (Español)") para `/boot`, puede instalar GRUB en varios discos físicos.
 
-**Sugerencia:** Consulte [GRUB/Tips and tricks (Español)#Métodos alternativos de instalación](/index.php/GRUB/Tips_and_tricks_(Espa%C3%B1ol)#M.C3.A9todos_alternativos_de_instalaci.C3.B3n "GRUB/Tips and tricks (Español)") para conocer otras formas de instalar GRUB, como en una memoria USB.
+**Sugerencia:** Consulte [GRUB/Tips and tricks (Español)#Métodos alternativos de instalación](/index.php/GRUB/Tips_and_tricks_(Espa%C3%B1ol)#Métodos_alternativos_de_instalación "GRUB/Tips and tricks (Español)") para conocer otras formas de instalar GRUB, como en una memoria USB.
 
 Consulte [grub-install(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/grub-install.8) y el [Manual de GRUB](https://www.gnu.org/software/grub/manual/grub/html_node/BIOS-installation.html#BIOS-installation) para obtener más detalles sobre la orden *grub-install*.
 
@@ -141,7 +141,7 @@ La orden le devolverá:
 *   El esquema de la partición del disco: si el disco es GPT, indica `Partition Table: gpt`.
 *   La lista de particiones del disco: busque la partición del sistema EFI en la lista, es una partición pequeña (generalmente de aproximadamente 100-550 MiB) con un sistema de archivos `fat32` y con el flag `esp` activado. Para confirmar que se trata de ESP, móntela y verifique si contiene un directorio llamado `EFI`, y si es así, definitivamente es la ESP.
 
-Una vez encontrada, **tome nota del número de la partición**, lo necesitará para la [instalación de GRUB](#Instalaci.C3.B3n_2). Si no tiene una ESP, tendrá que crear una. Vea el artículo de [EFI system partition](/index.php/EFI_system_partition "EFI system partition").
+Una vez encontrada, **tome nota del número de la partición**, lo necesitará para la [instalación de GRUB](#Instalación_2). Si no tiene una ESP, tendrá que crear una. Vea el artículo de [EFI system partition](/index.php/EFI_system_partition "EFI system partition").
 
 ### Instalación
 
@@ -165,7 +165,7 @@ A continuación, siga los siguientes pasos para instalar GRUB:
 
 Después de completar la instalación anterior, el directorio principal de GRUB se encuentrará en `/boot/grub/`.Tenga en cuenta que `grub-install` también intenta [crear una entrada en el gestor de arranque del firmware](/index.php/GRUB/Tips_and_tricks_(Espa%C3%B1ol)#Crear_una_entrada_GRUB_en_el_gestor_de_arranque_del_firmware "GRUB/Tips and tricks (Español)"), llamado `***GRUB***` siguiendo el ejemplo anterior.
 
-Recuerde [Generar el archivo de configuración principal](#Generar_el_archivo_de_configuraci.C3.B3n_principal) al terminar la [configuración](#Configuraci.C3.B3n).
+Recuerde [Generar el archivo de configuración principal](#Generar_el_archivo_de_configuración_principal) al terminar la [configuración](#Configuración).
 
 **Sugerencia:** Si usa la opción `--removable`, GRUB se instalará en `*esp*/EFI/BOOT/BOOTX64.EFI` (o `*esp*/EFI/BOOT/BOOTIA32.EFI` para la arquitectura `i386-efi`) y tendrá la capacidad adicional de poder arrancar desde la unidad, en caso de que las variables EFI se reseteen o se mueva la unidad a otro equipo. Por lo general, puede hacer esto seleccionando la unidad en sí de manera similar a como lo haría con la BIOS. Si tiene un arranque dual con Windows, tenga en cuenta que Windows generalmente tiene una carpeta `BOOT` dentro de la carpeta `EFI` en la partición del sistema EFI, pero su único propósito es recrear la entrada de arranque UEFI para Windows.
 
@@ -178,7 +178,7 @@ Consulte la sección sobre [solución de problemas de UEFI](#UEFI) si tiene prob
 
 ## Generar el archivo de configuración principal
 
-Después de instalar GRUB, se debe crear el archivo de configuración principal `grub.cfg`. El proceso de generación puede verse influido por una variedad de opciones presentes en `/etc/default/grub` y de scripts presentes en `/etc/grub.d/`; Consulte [#Configuración](#Configuraci.C3.B3n).
+Después de instalar GRUB, se debe crear el archivo de configuración principal `grub.cfg`. El proceso de generación puede verse influido por una variedad de opciones presentes en `/etc/default/grub` y de scripts presentes en `/etc/grub.d/`; Consulte [#Configuración](#Configuración).
 
 Si no se ha hecho una configuración adicional, la generación automática determinará el sistema de archivos raíz del sistema que el archivo de configuración arrancará. Para que esto tenga éxito, es importante que el sistema o bien sea arrancable o bien se haga dentro de chroot.
 
@@ -204,7 +204,7 @@ Por defecto, los scripts de generación añaden automáticamente las entradas de
 
 Esta sección cubre solo la edición del archivo de configuración `/etc/default/grub`. Consulte [GRUB/Tips and tricks (Español)](/index.php/GRUB/Tips_and_tricks_(Espa%C3%B1ol) "GRUB/Tips and tricks (Español)") si necesita más opciones.
 
-Recuerde siempre [#Generar el archivo de configuración principal](#Generar_el_archivo_de_configuraci.C3.B3n_principal) después de realizar cambios en `/etc/default/grub`.
+Recuerde siempre [#Generar el archivo de configuración principal](#Generar_el_archivo_de_configuración_principal) después de realizar cambios en `/etc/default/grub`.
 
 ### Argumentos adicionales
 
@@ -262,7 +262,7 @@ Donde el alojamiento de la matriz RAID 1 `/boot` está ubicado en `/dev/sda` y `
 
 #### Partición raíz
 
-Para cifrar un sistema de archivos raíz que arranque con GRUB, agregue el hook `encrypt`, o `sd-encrypt` (si usa los hooks de systemd), a [mkinitcpio (Español)](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)"). Consulte [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") para obtener más información, y [Mkinitcpio (Español)#Hooks más comunes](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Hooks_m.C3.A1s_comunes "Mkinitcpio (Español)") para los hooks de cifrado alternativos.
+Para cifrar un sistema de archivos raíz que arranque con GRUB, agregue el hook `encrypt`, o `sd-encrypt` (si usa los hooks de systemd), a [mkinitcpio (Español)](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)"). Consulte [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") para obtener más información, y [Mkinitcpio (Español)#Hooks más comunes](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Hooks_más_comunes "Mkinitcpio (Español)") para los hooks de cifrado alternativos.
 
 Si usa el hook `encrypt`, añada el parámetro `cryptdevice` a `/etc/default/grub`.
 
@@ -274,11 +274,11 @@ Si usa el hook `sd-encrypt`, adañada `rd.luks.name`:
 
 donde *UUID_del_DISPOSITIVO* es el UUID del dispositivo cifrado con LUKS.
 
-Asegúrese de [volver a generar el archivo de configuración principal](#Generar_el_archivo_de_configuraci.C3.B3n_principal) cuando haya terminado.
+Asegúrese de [volver a generar el archivo de configuración principal](#Generar_el_archivo_de_configuración_principal) cuando haya terminado.
 
 Para obtener más información acerca de la configuración del gestor de arranque para dispositivos cifrados, consulte [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration").
 
-**Nota:** Si desea cifrar `/boot` bien como una partición separada o como parte de la partición raíz `/`, se requiere una configuración adicional. Consulte [#Partición de arranque](#Partici.C3.B3n_de_arranque).
+**Nota:** Si desea cifrar `/boot` bien como una partición separada o como parte de la partición raíz `/`, se requiere una configuración adicional. Consulte [#Partición de arranque](#Partición_de_arranque).
 
 **Sugerencia:** Si está actualizando desde una configuración de GRUB Legacy en funcionamiento, compruebe `/boot/grub/menu.lst.pacsave` para agregar el dispositivo/etiqueta correcto. Localícelo después del texto `kernel /vmlinuz-linux`.
 
@@ -292,9 +292,9 @@ Para activar esta función, encripte la partición en la que resida `/boot` util
 
  `/etc/default/grub`  `GRUB_ENABLE_CRYPTODISK=y` 
 
-Asegúrese de [#Generar el archivo de configuración principal](#Generar_el_archivo_de_configuraci.C3.B3n_principal) cuando la partición que contiene `/boot` esté montada
+Asegúrese de [#Generar el archivo de configuración principal](#Generar_el_archivo_de_configuración_principal) cuando la partición que contiene `/boot` esté montada
 
-Sin más cambios, se le solicitará dos veces una contraseña: la primera para GRUB para desbloquear el punto de montaje `/boot` en el arranque temprano, y la segunda para desbloquear el sistema de archivos raíz como se describe en [#Partición raíz](#Partici.C3.B3n_ra.C3.ADz). Puede utilizar un [keyfile](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption") para evitar esta doble contraseña.
+Sin más cambios, se le solicitará dos veces una contraseña: la primera para GRUB para desbloquear el punto de montaje `/boot` en el arranque temprano, y la segunda para desbloquear el sistema de archivos raíz como se describe en [#Partición raíz](#Partición_raíz). Puede utilizar un [keyfile](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption") para evitar esta doble contraseña.
 
 **Nota:**
 
@@ -306,7 +306,7 @@ Sin más cambios, se le solicitará dos veces una contraseña: la primera para G
 
 ### Entradas múltiples
 
-Para obtener sugerencias sobre la administración de varias entradas de GRUB, por ejemplo, al usar tanto kernel [linux](https://www.archlinux.org/packages/?name=linux) como [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernels, consulte [GRUB/Tips and tricks (Español)#Múltiples entradas](/index.php/GRUB/Tips_and_tricks_(Espa%C3%B1ol)#M.C3.BAltiples_entradas "GRUB/Tips and tricks (Español)").
+Para obtener sugerencias sobre la administración de varias entradas de GRUB, por ejemplo, al usar tanto kernel [linux](https://www.archlinux.org/packages/?name=linux) como [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernels, consulte [GRUB/Tips and tricks (Español)#Múltiples entradas](/index.php/GRUB/Tips_and_tricks_(Espa%C3%B1ol)#Múltiples_entradas "GRUB/Tips and tricks (Español)").
 
 ### Cargar en cadena un archivo .efi de Arch Linux
 
@@ -627,7 +627,7 @@ boot
 
 Tras el lanzamiento con éxito de una instalación de Arch Linux, los usuarios pueden corregir `grub.cfg` si fuese necesario y proceder a reinstalar GRUB.
 
-Para reinstalar GRUB y arreglar completamente el problema, cambie `/dev/sda` de acuerdo a sus propias necesidades. Consulte el apartado sobre [#Instalación](#Instalaci.C3.B3n) para más detalles.
+Para reinstalar GRUB y arreglar completamente el problema, cambie `/dev/sda` de acuerdo a sus propias necesidades. Consulte el apartado sobre [#Instalación](#Instalación) para más detalles.
 
 ## Solución de problemas
 
@@ -657,7 +657,7 @@ Para más información consulte [esto](http://www.rodsbooks.com/gdisk/bios.html)
 
 ### Activar mensajes de depuración de errores
 
-**Nota:** Este cambio se sobrescribe al [#Generar el archivo de configuración principal](#Generar_el_archivo_de_configuraci.C3.B3n_principal).
+**Nota:** Este cambio se sobrescribe al [#Generar el archivo de configuración principal](#Generar_el_archivo_de_configuración_principal).
 
 Añada:
 
@@ -742,7 +742,7 @@ grub-setup: error: If you really want blocklists, use --force.
 
 ```
 
-Este problema se produce cuando se intenta instalar GRUB en VMWare. Más información [aquí](https://bbs.archlinux.org/viewtopic.php?pid=581760#p581760). También puede ocurrir cuando la partición comienza justo después del MBR (bloque 63), sin dejar un espacio de alrededor de 1 MB (2048 bloques) antes de la primera partición. Consulte [#Instrucciones específicas para Master Boot Record (MBR)](#Instrucciones_espec.C3.ADficas_para_Master_Boot_Record_.28MBR.29).
+Este problema se produce cuando se intenta instalar GRUB en VMWare. Más información [aquí](https://bbs.archlinux.org/viewtopic.php?pid=581760#p581760). También puede ocurrir cuando la partición comienza justo después del MBR (bloque 63), sin dejar un espacio de alrededor de 1 MB (2048 bloques) antes de la primera partición. Consulte [#Instrucciones específicas para Master Boot Record (MBR)](#Instrucciones_específicas_para_Master_Boot_Record_(MBR)).
 
 ### UEFI
 
@@ -842,7 +842,7 @@ GRUB puede tardar mucho tiempo en cargarse cuando el espacio en disco es pequeñ
 
 ### error: unknown filesystem
 
-GRUB puede mostrar la salida `error: unknown filesystem` y negarse a arrancar por varias razones. Si está seguro de que todas las [UUID](/index.php/Persistent_block_device_naming_(Espa%C3%B1ol)#by-uuid "Persistent block device naming (Español)") son correctas y todos los sistemas de archivos son válidos y soportados, puede ser debido a que su [BIOS Boot Partition](#Instrucciones_espec.C3.ADficas_para_GUID_Partition_Table_.28GPT.29) se encuentra fuera de los primeros 2TB de su unidad [[2]](https://bbs.archlinux.org/viewtopic.php?id=195948). Utilice una herramienta de particionado de su elección para asegurarse de que esta partición se encuentra totalmente dentro de los primeros 2TB, y luego reinstale y reconfigure GRUB.
+GRUB puede mostrar la salida `error: unknown filesystem` y negarse a arrancar por varias razones. Si está seguro de que todas las [UUID](/index.php/Persistent_block_device_naming_(Espa%C3%B1ol)#by-uuid "Persistent block device naming (Español)") son correctas y todos los sistemas de archivos son válidos y soportados, puede ser debido a que su [BIOS Boot Partition](#Instrucciones_específicas_para_GUID_Partition_Table_(GPT)) se encuentra fuera de los primeros 2TB de su unidad [[2]](https://bbs.archlinux.org/viewtopic.php?id=195948). Utilice una herramienta de particionado de su elección para asegurarse de que esta partición se encuentra totalmente dentro de los primeros 2TB, y luego reinstale y reconfigure GRUB.
 
 ### grub-reboot no reinicia
 
@@ -866,7 +866,7 @@ Una configuración en Windows 8/10 llamada «Hiberboot», «Hybrid Boot» or «F
 
 ### Modalidad EFI en VirtualBox
 
-Instale GRUB en la [ruta de arranque default/fallback](#Ruta_de_arranque_default.2Ffallback).
+Instale GRUB en la [ruta de arranque default/fallback](#Ruta_de_arranque_default/fallback).
 
 Consulte también [VirtualBox#Installation in EFI mode](/index.php/VirtualBox#Installation_in_EFI_mode "VirtualBox").
 

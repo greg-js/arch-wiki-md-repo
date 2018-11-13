@@ -2,18 +2,18 @@ Intel顯示卡及晶片資訊. *在終端機下使用(不使用X視窗)，請參
 
 ## Contents
 
-*   [1 前言](#.E5.89.8D.E8.A8.80)
-    *   [1.1 模組](#.E6.A8.A1.E7.B5.84)
-    *   [1.2 驅動程式](#.E9.A9.85.E5.8B.95.E7.A8.8B.E5.BC.8F)
-*   [2 安裝](#.E5.AE.89.E8.A3.9D)
-*   [3 配置](#.E9.85.8D.E7.BD.AE)
-*   [4 KMS (核心模式設定)](#KMS_.28.E6.A0.B8.E5.BF.83.E6.A8.A1.E5.BC.8F.E8.A8.AD.E5.AE.9A.29)
-    *   [4.1 其他](#.E5.85.B6.E4.BB.96)
-*   [5 提示與技巧 (翻譯中)](#.E6.8F.90.E7.A4.BA.E8.88.87.E6.8A.80.E5.B7.A7_.28.E7.BF.BB.E8.AD.AF.E4.B8.AD.29)
+*   [1 前言](#前言)
+    *   [1.1 模組](#模組)
+    *   [1.2 驅動程式](#驅動程式)
+*   [2 安裝](#安裝)
+*   [3 配置](#配置)
+*   [4 KMS (核心模式設定)](#KMS_(核心模式設定))
+    *   [4.1 其他](#其他)
+*   [5 提示與技巧 (翻譯中)](#提示與技巧_(翻譯中))
     *   [5.1 Setting scaling mode](#Setting_scaling_mode)
     *   [5.2 Workaround for bug with opening laptop lid](#Workaround_for_bug_with_opening_laptop_lid)
-        *   [5.2.1 Solution #1](#Solution_.231)
-        *   [5.2.2 Solution #2](#Solution_.232)
+        *   [5.2.1 Solution #1](#Solution_#1)
+        *   [5.2.2 Solution #2](#Solution_#2)
     *   [5.3 KMS Issue: console is limited to small area](#KMS_Issue:_console_is_limited_to_small_area)
 
 ## 前言

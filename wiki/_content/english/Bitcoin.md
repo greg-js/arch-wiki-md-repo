@@ -9,7 +9,7 @@ Related articles
 *   [1 Introduction](#Introduction)
     *   [1.1 Consensus](#Consensus)
         *   [1.1.1 Nature of consensus failure](#Nature_of_consensus_failure)
-*   [2 How to get Bitcoins?](#How_to_get_Bitcoins.3F)
+*   [2 How to get Bitcoins?](#How_to_get_Bitcoins?)
 *   [3 Bitcoin software](#Bitcoin_software)
     *   [3.1 Thin client](#Thin_client)
     *   [3.2 Full node](#Full_node)

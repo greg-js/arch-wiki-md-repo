@@ -5,7 +5,7 @@
 *   [1 Installation](#Installation)
 *   [2 IMAP](#IMAP)
 *   [3 Setting the return address](#Setting_the_return_address)
-*   [4 What else can you configure?](#What_else_can_you_configure.3F)
+*   [4 What else can you configure?](#What_else_can_you_configure?)
 *   [5 Printing from alpine](#Printing_from_alpine)
 *   [6 Remote Configuration](#Remote_Configuration)
 *   [7 Tips and Tricks](#Tips_and_Tricks)

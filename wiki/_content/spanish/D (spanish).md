@@ -7,11 +7,11 @@ De [Wikipedia: D (lenguaje de programación)](https://en.wikipedia.org/wiki/es:D
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Probando la instalación](#Probando_la_instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
+*   [2 Probando la instalación](#Probando_la_instalación)
 *   [3 Consideraciones](#Consideraciones)
-*   [4 Librerías y enlaces útiles](#Librer.C3.ADas_y_enlaces_.C3.BAtiles)
-*   [5 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [4 Librerías y enlaces útiles](#Librerías_y_enlaces_útiles)
+*   [5 Véase también](#Véase_también)
 
 ## Instalación
 

@@ -7,26 +7,26 @@
 ## Contents
 
 *   [1 Ciencia](#Ciencia)
-    *   [1.1 Documentos científicos](#Documentos_cient.C3.ADficos)
-    *   [1.2 Matemáticas](#Matem.C3.A1ticas)
+    *   [1.1 Documentos científicos](#Documentos_científicos)
+    *   [1.2 Matemáticas](#Matemáticas)
         *   [1.2.1 Calculadoras](#Calculadoras)
-        *   [1.2.2 Sistema de álgebra computacional](#Sistema_de_.C3.A1lgebra_computacional)
-        *   [1.2.3 Ciencia o técnica computacional](#Ciencia_o_t.C3.A9cnica_computacional)
-        *   [1.2.4 Estadística](#Estad.C3.ADstica)
-        *   [1.2.5 Evaluación de datos](#Evaluaci.C3.B3n_de_datos)
-    *   [1.3 Química y biología](#Qu.C3.ADmica_y_biolog.C3.ADa)
-        *   [1.3.1 Biología computacional y bioinformática](#Biolog.C3.ADa_computacional_y_bioinform.C3.A1tica)
+        *   [1.2.2 Sistema de álgebra computacional](#Sistema_de_álgebra_computacional)
+        *   [1.2.3 Ciencia o técnica computacional](#Ciencia_o_técnica_computacional)
+        *   [1.2.4 Estadística](#Estadística)
+        *   [1.2.5 Evaluación de datos](#Evaluación_de_datos)
+    *   [1.3 Química y biología](#Química_y_biología)
+        *   [1.3.1 Biología computacional y bioinformática](#Biología_computacional_y_bioinformática)
         *   [1.3.2 Visores moleculares](#Visores_moleculares)
-        *   [1.3.3 Gráficos moleculares](#Gr.C3.A1ficos_moleculares)
-        *   [1.3.4 Tabla periódica](#Tabla_peri.C3.B3dica)
-        *   [1.3.5 Bioquímica](#Bioqu.C3.ADmica)
+        *   [1.3.3 Gráficos moleculares](#Gráficos_moleculares)
+        *   [1.3.4 Tabla periódica](#Tabla_periódica)
+        *   [1.3.5 Bioquímica](#Bioquímica)
         *   [1.3.6 Modelado molecular](#Modelado_molecular)
-        *   [1.3.7 Manipulación de imágenes](#Manipulaci.C3.B3n_de_im.C3.A1genes)
-    *   [1.4 Astronomía](#Astronom.C3.ADa)
-    *   [1.5 Física](#F.C3.ADsica)
-        *   [1.5.1 Electrónica](#Electr.C3.B3nica)
-        *   [1.5.2 Simulación física](#Simulaci.C3.B3n_f.C3.ADsica)
-        *   [1.5.3 Conversión de unidades](#Conversi.C3.B3n_de_unidades)
+        *   [1.3.7 Manipulación de imágenes](#Manipulación_de_imágenes)
+    *   [1.4 Astronomía](#Astronomía)
+    *   [1.5 Física](#Física)
+        *   [1.5.1 Electrónica](#Electrónica)
+        *   [1.5.2 Simulación física](#Simulación_física)
+        *   [1.5.3 Conversión de unidades](#Conversión_de_unidades)
 
 ## Ciencia
 
@@ -34,7 +34,7 @@
 
 ### Documentos científicos
 
-Véase el artículo de [ArchWiki](/index.php/Main_page_(Espa%C3%B1ol) "Main page (Español)") sobre este asunto para obtener más información: [List of applications/Documents (Español)#Documentos científicos](/index.php/List_of_applications/Documents_(Espa%C3%B1ol)#Documentos_cient.C3.ADficos "List of applications/Documents (Español)").
+Véase el artículo de [ArchWiki](/index.php/Main_page_(Espa%C3%B1ol) "Main page (Español)") sobre este asunto para obtener más información: [List of applications/Documents (Español)#Documentos científicos](/index.php/List_of_applications/Documents_(Espa%C3%B1ol)#Documentos_científicos "List of applications/Documents (Español)").
 
 ### Matemáticas
 

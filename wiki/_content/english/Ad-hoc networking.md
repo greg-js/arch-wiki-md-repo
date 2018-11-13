@@ -18,7 +18,7 @@ For example, ad-hoc networking may be used to [share an internet connection](/in
 *   [3 Network configuration](#Network_configuration)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Using NetworkManager](#Using_NetworkManager)
-    *   [4.2 Custom systemd service (with wpa_supplicant and static IP)](#Custom_systemd_service_.28with_wpa_supplicant_and_static_IP.29)
+    *   [4.2 Custom systemd service (with wpa_supplicant and static IP)](#Custom_systemd_service_(with_wpa_supplicant_and_static_IP))
 *   [5 See also](#See_also)
 
 ## Requirements

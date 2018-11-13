@@ -7,19 +7,19 @@
 
 ## Contents
 
-*   [1 Для GNU/Linux](#.D0.94.D0.BB.D1.8F_GNU.2FLinux)
+*   [1 Для GNU/Linux](#Для_GNU/Linux)
     *   [1.1 UNetBootin](#UNetBootin)
     *   [1.2 Gujin](#Gujin)
-*   [2 Устанока новым способом в Mac OS X](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.BA.D0.B0_.D0.BD.D0.BE.D0.B2.D1.8B.D0.BC_.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1.D0.BE.D0.BC_.D0.B2_Mac_OS_X)
-*   [3 Установка новым способом в Windows](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BD.D0.BE.D0.B2.D1.8B.D0.BC_.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1.D0.BE.D0.BC_.D0.B2_Windows)
-    *   [3.1 Использование flashnul](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_flashnul)
-    *   [3.2 Использование Cygwin](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_Cygwin)
+*   [2 Устанока новым способом в Mac OS X](#Устанока_новым_способом_в_Mac_OS_X)
+*   [3 Установка новым способом в Windows](#Установка_новым_способом_в_Windows)
+    *   [3.1 Использование flashnul](#Использование_flashnul)
+    *   [3.2 Использование Cygwin](#Использование_Cygwin)
     *   [3.3 win32 disk imager](#win32_disk_imager)
     *   [3.4 UltraISO](#UltraISO)
     *   [3.5 UNetBootin](#UNetBootin_2)
-*   [4 Старый метод установки ISO-образа](#.D0.A1.D1.82.D0.B0.D1.80.D1.8B.D0.B9_.D0.BC.D0.B5.D1.82.D0.BE.D0.B4_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B8_ISO-.D0.BE.D0.B1.D1.80.D0.B0.D0.B7.D0.B0)
-    *   [4.1 После загрузки с USB-диска](#.D0.9F.D0.BE.D1.81.D0.BB.D0.B5_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8_.D1.81_USB-.D0.B4.D0.B8.D1.81.D0.BA.D0.B0)
-    *   [4.2 Заметки и решение частых проблем:](#.D0.97.D0.B0.D0.BC.D0.B5.D1.82.D0.BA.D0.B8_.D0.B8_.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D1.87.D0.B0.D1.81.D1.82.D1.8B.D1.85_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC:)
+*   [4 Старый метод установки ISO-образа](#Старый_метод_установки_ISO-образа)
+    *   [4.1 После загрузки с USB-диска](#После_загрузки_с_USB-диска)
+    *   [4.2 Заметки и решение частых проблем:](#Заметки_и_решение_частых_проблем:)
 
 ## Для GNU/Linux
 

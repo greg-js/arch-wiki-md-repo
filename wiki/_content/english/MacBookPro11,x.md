@@ -22,7 +22,7 @@ Like previous MacBook models, the MacBook Pro 11,x supports UEFI. This page will
     *   [6.2 Fan control](#Fan_control)
     *   [6.3 Console](#Console)
     *   [6.4 Graphics](#Graphics)
-        *   [6.4.1 Getting the integrated intel card to work on 11,3](#Getting_the_integrated_intel_card_to_work_on_11.2C3)
+        *   [6.4.1 Getting the integrated intel card to work on 11,3](#Getting_the_integrated_intel_card_to_work_on_11,3)
         *   [6.4.2 Alternative method to disable NVIDIA card](#Alternative_method_to_disable_NVIDIA_card)
     *   [6.5 Microcode](#Microcode)
     *   [6.6 HiDPI](#HiDPI)
@@ -40,7 +40,7 @@ Like previous MacBook models, the MacBook Pro 11,x supports UEFI. This page will
 *   [7 What does not work](#What_does_not_work)
     *   [7.1 General](#General)
     *   [7.2 Wi-Fi](#Wi-Fi)
-    *   [7.3 Backlight keys / Suspend support](#Backlight_keys_.2F_Suspend_support)
+    *   [7.3 Backlight keys / Suspend support](#Backlight_keys_/_Suspend_support)
 *   [8 Discussions](#Discussions)
 *   [9 See also](#See_also)
 

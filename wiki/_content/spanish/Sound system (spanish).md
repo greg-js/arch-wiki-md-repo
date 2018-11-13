@@ -2,10 +2,10 @@ Este artículo versa sobre la gestión básica del sonido. Para temas avanzados 
 
 ## Contents
 
-*   [1 Información General](#Informaci.C3.B3n_General)
+*   [1 Información General](#Información_General)
 *   [2 Controladores e interfaces](#Controladores_e_interfaces)
 *   [3 Servidores de sonido](#Servidores_de_sonido)
-*   [4 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [4 Véase también](#Véase_también)
 
 ## Información General
 

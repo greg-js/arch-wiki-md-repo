@@ -17,24 +17,24 @@ Briefly, the *bootloader* is the first software program that runs when a compute
 
 *   [1 Installation](#Installation)
 *   [2 Upgrading to GRUB2](#Upgrading_to_GRUB2)
-    *   [2.1 Is upgrading necessary?](#Is_upgrading_necessary.3F)
+    *   [2.1 Is upgrading necessary?](#Is_upgrading_necessary?)
     *   [2.2 How to upgrade](#How_to_upgrade)
     *   [2.3 Differences](#Differences)
         *   [2.3.1 Backup important data](#Backup_important_data)
-    *   [2.4 Converting GRUB Legacy's config file to the new format](#Converting_GRUB_Legacy.27s_config_file_to_the_new_format)
+    *   [2.4 Converting GRUB Legacy's config file to the new format](#Converting_GRUB_Legacy's_config_file_to_the_new_format)
     *   [2.5 Restore GRUB Legacy](#Restore_GRUB_Legacy)
 *   [3 Configuration](#Configuration)
-    *   [3.1 Finding GRUB's root](#Finding_GRUB.27s_root)
+    *   [3.1 Finding GRUB's root](#Finding_GRUB's_root)
     *   [3.2 Dual booting with Windows](#Dual_booting_with_Windows)
-    *   [3.3 Dual booting with GNU/Linux](#Dual_booting_with_GNU.2FLinux)
+    *   [3.3 Dual booting with GNU/Linux](#Dual_booting_with_GNU/Linux)
     *   [3.4 chainloader and configfile](#chainloader_and_configfile)
-    *   [3.5 Dual booting with GNU/Linux (GRUB2)](#Dual_booting_with_GNU.2FLinux_.28GRUB2.29)
+    *   [3.5 Dual booting with GNU/Linux (GRUB2)](#Dual_booting_with_GNU/Linux_(GRUB2))
 *   [4 Bootloader installation](#Bootloader_installation)
     *   [4.1 Manual recovery of GRUB libs](#Manual_recovery_of_GRUB_libs)
     *   [4.2 General notes about bootloader installation](#General_notes_about_bootloader_installation)
     *   [4.3 Installing to the MBR](#Installing_to_the_MBR)
     *   [4.4 Installing to a partition](#Installing_to_a_partition)
-    *   [4.5 Alternate method (grub-install)](#Alternate_method_.28grub-install.29)
+    *   [4.5 Alternate method (grub-install)](#Alternate_method_(grub-install))
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Graphical boot](#Graphical_boot)
     *   [5.2 Framebuffer resolution](#Framebuffer_resolution)
@@ -43,7 +43,7 @@ Briefly, the *bootloader* is the first software program that runs when a compute
     *   [5.3 Naming partitions](#Naming_partitions)
         *   [5.3.1 By Label](#By_Label)
         *   [5.3.2 By UUID](#By_UUID)
-    *   [5.4 Boot as root (single-user mode)](#Boot_as_root_.28single-user_mode.29)
+    *   [5.4 Boot as root (single-user mode)](#Boot_as_root_(single-user_mode))
     *   [5.5 Password protection](#Password_protection)
     *   [5.6 Restart with named boot choice](#Restart_with_named_boot_choice)
     *   [5.7 LILO and GRUB interaction](#LILO_and_GRUB_interaction)
@@ -52,12 +52,12 @@ Briefly, the *bootloader* is the first software program that runs when a compute
 *   [6 Advanced debugging](#Advanced_debugging)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 GRUB Error 17](#GRUB_Error_17)
-    *   [7.2 /boot/grub/stage1 not read correctly](#.2Fboot.2Fgrub.2Fstage1_not_read_correctly)
+    *   [7.2 /boot/grub/stage1 not read correctly](#/boot/grub/stage1_not_read_correctly)
     *   [7.3 Accidental install to a Windows partition](#Accidental_install_to_a_Windows_partition)
     *   [7.4 Edit GRUB entries in the boot menu](#Edit_GRUB_entries_in_the_boot_menu)
     *   [7.5 device.map error](#device.map_error)
     *   [7.6 KDE reboot pull-down menu fails](#KDE_reboot_pull-down_menu_fails)
-    *   [7.7 GRUB fails to find or install to any virtio */dev/vd** or other non-BIOS devices](#GRUB_fails_to_find_or_install_to_any_virtio_.2Fdev.2Fvd.2A_or_other_non-BIOS_devices)
+    *   [7.7 GRUB fails to find or install to any virtio */dev/vd** or other non-BIOS devices](#GRUB_fails_to_find_or_install_to_any_virtio_/dev/vd*_or_other_non-BIOS_devices)
 *   [8 See also](#See_also)
 
 ## Installation
@@ -448,7 +448,7 @@ Installation is *necessary* when:
 
 Before continuing, a few notes:
 
-*   Be sure that your GRUB configuration is correct (`/boot/grub/menu.lst`) before proceeding. Refer to [Finding GRUB's root](#Finding_GRUB.27s_root) to ensure your devices are defined correctly.
+*   Be sure that your GRUB configuration is correct (`/boot/grub/menu.lst`) before proceeding. Refer to [Finding GRUB's root](#Finding_GRUB's_root) to ensure your devices are defined correctly.
 *   GRUB must be installed on the [MBR](/index.php/MBR "MBR") (first sector of the hard disk), or the first partition of the first storage device to be recognized by most BIOSes. To allow individual distributions the ability to manage their own GRUB menus, multiple instances of GRUB can be used, see [chainloader and configfile](#chainloader_and_configfile).
 *   Installing the GRUB bootloader may need to be done from within a `chroot`ed environment (i.e. from installed environment via a separate medium) for cases like RAID configurations or if you forgot/broke your GRUB installation. You will need to [Change root](/index.php/Change_root "Change root") from a LiveCD or another Linux installation to do so.
 
@@ -459,7 +459,7 @@ First, enter the GRUB shell:
 
 ```
 
-Use the `root` command with the output from the `find` command (see [Finding GRUB's root](#Finding_GRUB.27s_root)) to instruct GRUB which partition contains stage1 (and therefore, `/boot`):
+Use the `root` command with the output from the `find` command (see [Finding GRUB's root](#Finding_GRUB's_root)) to instruct GRUB which partition contains stage1 (and therefore, `/boot`):
 
 ```
 grub> root (hd1,0)
@@ -895,7 +895,7 @@ quit
 
 ```
 
-**5.** If GRUB reports no error messages, then you probably are done. You also need to add appropriate modules to the ramdisk. For more information, please refer to [QEMU#Preparing an (Arch) Linux guest](/index.php/QEMU#Preparing_an_.28Arch.29_Linux_guest "QEMU").
+**5.** If GRUB reports no error messages, then you probably are done. You also need to add appropriate modules to the ramdisk. For more information, please refer to [QEMU#Preparing an (Arch) Linux guest](/index.php/QEMU#Preparing_an_(Arch)_Linux_guest "QEMU").
 
 ## See also
 

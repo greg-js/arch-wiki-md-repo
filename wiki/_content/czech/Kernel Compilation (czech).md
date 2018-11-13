@@ -1,8 +1,8 @@
 ## Contents
 
 *   [1 Volba](#Volba)
-    *   [1.1 Tradiční](#Tradi.C4.8Dn.C3.AD)
-    *   [1.2 Použití Arch Build System](#Pou.C5.BEit.C3.AD_Arch_Build_System)
+    *   [1.1 Tradiční](#Tradiční)
+    *   [1.2 Použití Arch Build System](#Použití_Arch_Build_System)
 *   [2 Links](#Links)
 
 ## Volba

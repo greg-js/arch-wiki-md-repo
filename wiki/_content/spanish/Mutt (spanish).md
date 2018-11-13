@@ -2,10 +2,10 @@
 
 ## Contents
 
-*   [1 Descripción](#Descripci.C3.B3n)
-*   [2 Instalación](#Instalaci.C3.B3n)
+*   [1 Descripción](#Descripción)
+*   [2 Instalación](#Instalación)
     *   [2.1 Notas](#Notas)
-*   [3 Configuración](#Configuraci.C3.B3n)
+*   [3 Configuración](#Configuración)
     *   [3.1 IMAP](#IMAP)
         *   [3.1.1 Usando el soporte nativo de IMAP](#Usando_el_soporte_nativo_de_IMAP)
             *   [3.1.1.1 spoolfile](#spoolfile)
@@ -27,11 +27,11 @@
         *   [4.2.1 Firma aleatoria](#Firma_aleatoria)
     *   [4.3 Visualizando URLs y abriendo Firefox](#Visualizando_URLs_y_abriendo_Firefox)
     *   [4.4 Mutt y Vim](#Mutt_y_Vim)
-    *   [4.5 Visualizando HTML dentro de una configuración Vim/Mutt](#Visualizando_HTML_dentro_de_una_configuraci.C3.B3n_Vim.2FMutt)
+    *   [4.5 Visualizando HTML dentro de una configuración Vim/Mutt](#Visualizando_HTML_dentro_de_una_configuración_Vim/Mutt)
     *   [4.6 Mutt y GNU nano](#Mutt_y_GNU_nano)
 *   [5 Sugerencias y Trucos](#Sugerencias_y_Trucos)
-    *   [5.1 Use Mutt para enviar correo desde la línea de comandos](#Use_Mutt_para_enviar_correo_desde_la_l.C3.ADnea_de_comandos)
-    *   [5.2 Como mostrar un correo durante la composición de otro](#Como_mostrar_un_correo_durante_la_composici.C3.B3n_de_otro)
+    *   [5.1 Use Mutt para enviar correo desde la línea de comandos](#Use_Mutt_para_enviar_correo_desde_la_línea_de_comandos)
+    *   [5.2 Como mostrar un correo durante la composición de otro](#Como_mostrar_un_correo_durante_la_composición_de_otro)
 
 ## Descripción
 

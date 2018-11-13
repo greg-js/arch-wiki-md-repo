@@ -9,7 +9,7 @@ This page provides an overview of the Arch Linux services that require backed up
 *   [5 ArchWeb](#ArchWeb)
 *   [6 Git](#Git)
 *   [7 SVN](#SVN)
-    *   [7.1 Core/Extra Repos](#Core.2FExtra_Repos)
+    *   [7.1 Core/Extra Repos](#Core/Extra_Repos)
     *   [7.2 Community Repos](#Community_Repos)
 *   [8 System files](#System_files)
     *   [8.1 Gerolde](#Gerolde)

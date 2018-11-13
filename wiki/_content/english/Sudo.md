@@ -26,7 +26,7 @@ Sudo can also be used to run commands as other users; additionally, sudo logs al
     *   [4.5 Disable root login](#Disable_root_login)
         *   [4.5.1 kdesu](#kdesu)
     *   [4.6 Harden with Sudo Example](#Harden_with_Sudo_Example)
-    *   [4.7 Configure sudo using drop-in files in /etc/sudoers.d](#Configure_sudo_using_drop-in_files_in_.2Fetc.2Fsudoers.d)
+    *   [4.7 Configure sudo using drop-in files in /etc/sudoers.d](#Configure_sudo_using_drop-in_files_in_/etc/sudoers.d)
     *   [4.8 Editing files](#Editing_files)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 SSH TTY Problems](#SSH_TTY_Problems)

@@ -10,20 +10,20 @@ La configurazione dei dispositivi wireless è un processo suddiviso in due parti
 ## Contents
 
 *   [1 Drivers](#Drivers)
-    *   [1.1 Verificare se il driver per la propria periferica è stato caricato](#Verificare_se_il_driver_per_la_propria_periferica_.C3.A8_stato_caricato)
-    *   [1.2 Installazione drivers/firmware](#Installazione_drivers.2Ffirmware)
+    *   [1.1 Verificare se il driver per la propria periferica è stato caricato](#Verificare_se_il_driver_per_la_propria_periferica_è_stato_caricato)
+    *   [1.2 Installazione drivers/firmware](#Installazione_drivers/firmware)
 *   [2 Gestione Wireless](#Gestione_Wireless)
     *   [2.1 Metodi di gestione](#Metodi_di_gestione)
     *   [2.2 Configurazione Manuale](#Configurazione_Manuale)
         *   [2.2.1 Ottenere informazioni utili](#Ottenere_informazioni_utili)
-        *   [2.2.2 Attivazione dell'interfaccia](#Attivazione_dell.27interfaccia)
+        *   [2.2.2 Attivazione dell'interfaccia](#Attivazione_dell'interfaccia)
         *   [2.2.3 Ricerca degli Access Points](#Ricerca_degli_Access_Points)
-        *   [2.2.4 Modalità di funzionamento](#Modalit.C3.A0_di_funzionamento)
+        *   [2.2.4 Modalità di funzionamento](#Modalità_di_funzionamento)
         *   [2.2.5 Associazione](#Associazione)
         *   [2.2.6 Ottenere un indirizzo IP](#Ottenere_un_indirizzo_IP)
-        *   [2.2.7 Script di configurazione/avvio personalizzati](#Script_di_configurazione.2Favvio_personalizzati)
+        *   [2.2.7 Script di configurazione/avvio personalizzati](#Script_di_configurazione/avvio_personalizzati)
             *   [2.2.7.1 Connessione wireless manuale al boot utilizzando systemd e dhcpcd](#Connessione_wireless_manuale_al_boot_utilizzando_systemd_e_dhcpcd)
-        *   [2.2.8 Systemd più wpa_supplicant con IP statico](#Systemd_pi.C3.B9_wpa_supplicant_con_IP_statico)
+        *   [2.2.8 Systemd più wpa_supplicant con IP statico](#Systemd_più_wpa_supplicant_con_IP_statico)
     *   [2.3 Configurazione automatica](#Configurazione_automatica)
         *   [2.3.1 Netctl](#Netctl)
         *   [2.3.2 Wicd](#Wicd)
@@ -34,7 +34,7 @@ La configurazione dei dispositivi wireless è un processo suddiviso in due parti
 *   [4 Risoluzione dei problemi](#Risoluzione_dei_problemi)
     *   [4.1 Impossibile ottenere un indirizzo IP](#Impossibile_ottenere_un_indirizzo_IP)
     *   [4.2 La connessione va sempre in timeout](#La_connessione_va_sempre_in_timeout)
-        *   [4.2.1 Ridurre la velocità di trasmissione](#Ridurre_la_velocit.C3.A0_di_trasmissione)
+        *   [4.2.1 Ridurre la velocità di trasmissione](#Ridurre_la_velocità_di_trasmissione)
         *   [4.2.2 Ridurre la potenza di trasmissione](#Ridurre_la_potenza_di_trasmissione)
         *   [4.2.3 Impostazione di rts e fragmentation treshold](#Impostazione_di_rts_e_fragmentation_treshold)
     *   [4.3 Disconnessioni casuali](#Disconnessioni_casuali)
@@ -59,16 +59,16 @@ La configurazione dei dispositivi wireless è un processo suddiviso in due parti
         *   [5.3.4 ath9k_htc](#ath9k_htc)
     *   [5.4 Intel](#Intel)
         *   [5.4.1 ipw2100 e ipw2200](#ipw2100_e_ipw2200)
-        *   [5.4.2 iwl3945, iwl4965 e serie-iwl5000](#iwl3945.2C_iwl4965_e_serie-iwl5000)
+        *   [5.4.2 iwl3945, iwl4965 e serie-iwl5000](#iwl3945,_iwl4965_e_serie-iwl5000)
             *   [5.4.2.1 Caricamento del Driver](#Caricamento_del_Driver)
             *   [5.4.2.2 Disattivazione del lampeggio dei LED](#Disattivazione_del_lampeggio_dei_LED)
         *   [5.4.3 Altre osservazioni](#Altre_osservazioni)
     *   [5.5 Broadcom](#Broadcom)
-    *   [5.6 Altri drivers/dispositivi](#Altri_drivers.2Fdispositivi)
+    *   [5.6 Altri drivers/dispositivi](#Altri_drivers/dispositivi)
         *   [5.6.1 w322u](#w322u)
         *   [5.6.2 orinoco](#orinoco)
         *   [5.6.3 prism54](#prism54)
-        *   [5.6.4 ACX100/111](#ACX100.2F111)
+        *   [5.6.4 ACX100/111](#ACX100/111)
         *   [5.6.5 zd1211rw](#zd1211rw)
         *   [5.6.6 carl9170](#carl9170)
         *   [5.6.7 hostap_cs](#hostap_cs)
@@ -80,7 +80,7 @@ La configurazione dei dispositivi wireless è un processo suddiviso in due parti
 
 Il kernel di Arch è *modulare*, il che significa che la maggior parte dei driver per l'hardware della macchina risiedono sull'hard disk e sono disponibili come *[moduli](/index.php/Kernel_modules_(Italiano) "Kernel modules (Italiano)")*. All'avvio, [udev](/index.php/Udev_(Italiano) "Udev (Italiano)") fa un inventario dell'hardware presente. Lo stesso udev carica quindi i moduli (i driver) per l'hardware corrispondente, e il driver, di contro, permette la creazione di una *kernel interface*.
 
-Alcuni chipset wireless richiedono oltre al driver l'installazione di un firmware, alcuni dei quali sono contenuti nel pacchetto [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware), installato di default. Tuttavia, alcuni firmware sono proprietari e dovranno essere installati separatamente, come spiegato in [#Installazione drivers/firmware](#Installazione_drivers.2Ffirmware)
+Alcuni chipset wireless richiedono oltre al driver l'installazione di un firmware, alcuni dei quali sono contenuti nel pacchetto [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware), installato di default. Tuttavia, alcuni firmware sono proprietari e dovranno essere installati separatamente, come spiegato in [#Installazione drivers/firmware](#Installazione_drivers/firmware)
 
 **Nota:**
 
@@ -136,7 +136,7 @@ Se il modulo del kernel è stato correttamente caricato e l'interfaccia è attiv
 *   Anche [Linux Wireless Support](http://linux-wless.passys.nl/) e le "Linux Questions" in [Hardware Compatibility List](http://www.linuxquestions.org/hcl/index.php?cat=10) (HCL) contengono un elenco di hardware wireless supportato.
 *   Inoltre, questa [pagina](http://wireless.kernel.org/en/users/Devices) contiene una matrice addizionale di hardware supportato.
 
-Se la propria scheda di rete wireless compare in uno degli elenchi di cui sopra, si consulti la sezione [#Risoluzione dei problemi di drivers e firmware](#Risoluzione_dei_problemi_di_drivers_e_firmware), che contiene informazioni sull'installazione di drivers e firmware per schede specifiche. Si effettuino quindi nuovamente le operazioni descritte in [#Verificare se il driver per la propria periferica è stato caricato](#Verificare_se_il_driver_per_la_propria_periferica_.C3.A8_stato_caricato).
+Se la propria scheda di rete wireless compare in uno degli elenchi di cui sopra, si consulti la sezione [#Risoluzione dei problemi di drivers e firmware](#Risoluzione_dei_problemi_di_drivers_e_firmware), che contiene informazioni sull'installazione di drivers e firmware per schede specifiche. Si effettuino quindi nuovamente le operazioni descritte in [#Verificare se il driver per la propria periferica è stato caricato](#Verificare_se_il_driver_per_la_propria_periferica_è_stato_caricato).
 
 Se la scheda wireless non è elencata sopra, è probabile che sia supportata solo da Windows (come alcune Broadcom, 3com, ecc). Per queste schede è possibile provare ad utilizzare *ndiswrapper*. Si consulti la sezione [#ndiswrapper](#ndiswrapper) per ulteriori informazioni.
 
@@ -368,7 +368,7 @@ Indipendentemente dal metodo utilizzato, è possibile verificare l'avvenuta asso
 
 #### Ottenere un indirizzo IP
 
-**Nota:** Si legga la pagina [Configuring Network (Italiano)#Configurare l'indirizzo IP](/index.php/Configuring_Network_(Italiano)#Configurare_l.27indirizzo_IP "Configuring Network (Italiano)") per ulteriori esempi.
+**Nota:** Si legga la pagina [Configuring Network (Italiano)#Configurare l'indirizzo IP](/index.php/Configuring_Network_(Italiano)#Configurare_l'indirizzo_IP "Configuring Network (Italiano)") per ulteriori esempi.
 .
 
 Infine, associate la vostra interfaccia di rete ad un indirizzo IP. Alcuni semplici esempi:

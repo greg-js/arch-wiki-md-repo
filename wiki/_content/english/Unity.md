@@ -21,7 +21,7 @@ Not to be confused with [Unity3D](/index.php/Unity3D "Unity3D").
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Cannot right click on desktop](#Cannot_right_click_on_desktop)
     *   [3.2 Unity stops working after update](#Unity_stops_working_after_update)
-    *   [3.3 Some GTK+ themes look ugly since GNOME 3.6](#Some_GTK.2B_themes_look_ugly_since_GNOME_3.6)
+    *   [3.3 Some GTK+ themes look ugly since GNOME 3.6](#Some_GTK+_themes_look_ugly_since_GNOME_3.6)
     *   [3.4 Workspace switcher widget disappeared](#Workspace_switcher_widget_disappeared)
     *   [3.5 No skype or other applications appear in indicator tray](#No_skype_or_other_applications_appear_in_indicator_tray)
 *   [4 Known issues](#Known_issues)
@@ -88,7 +88,7 @@ The following section lists packages that, whilst not required for the Unity she
 
 ### Customize LightDM wallpaper and appearance
 
-See [LightDM#Changing background images/colors](/index.php/LightDM#Changing_background_images.2Fcolors "LightDM").
+See [LightDM#Changing background images/colors](/index.php/LightDM#Changing_background_images/colors "LightDM").
 
 ### Autostart programs on login
 

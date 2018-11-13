@@ -7,13 +7,13 @@ In biologie is mutualisme een interactie tussen twee organismen die elk profijt 
 *   [3 Wiki](#Wiki)
 *   [4 Bugs](#Bugs)
 *   [5 AUR](#AUR)
-*   [6 'Rolling Release' e-zine](#.27Rolling_Release.27_e-zine)
+*   [6 'Rolling Release' e-zine](#'Rolling_Release'_e-zine)
 *   [7 Arch projecten](#Arch_projecten)
 *   [8 Community projecten](#Community_projecten)
 *   [9 Bijdragen](#Bijdragen)
-    *   [9.1 Wat kan ik doen als een ontwikkelaar?](#Wat_kan_ik_doen_als_een_ontwikkelaar.3F)
-    *   [9.2 Hoe kan ik een arch ontwikkelaar worden?](#Hoe_kan_ik_een_arch_ontwikkelaar_worden.3F)
-    *   [9.3 Wat kan ik doen als een kunstenaar?](#Wat_kan_ik_doen_als_een_kunstenaar.3F)
+    *   [9.1 Wat kan ik doen als een ontwikkelaar?](#Wat_kan_ik_doen_als_een_ontwikkelaar?)
+    *   [9.2 Hoe kan ik een arch ontwikkelaar worden?](#Hoe_kan_ik_een_arch_ontwikkelaar_worden?)
+    *   [9.3 Wat kan ik doen als een kunstenaar?](#Wat_kan_ik_doen_als_een_kunstenaar?)
 
 ## Schenken
 

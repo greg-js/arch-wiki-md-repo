@@ -171,7 +171,7 @@ WantedBy=sleep.target
 
 **Note:** The `sleep.target` is pulled by all `suspend`, `hybrid-sleep` and `hibernate` targets, but it finishes starting up *before* the system is suspended, so the three targets have to be specified explicitly. See [[1]](https://wiki.archlinux.org/index.php?title=Talk:Hdparm&oldid=440457#Troubleshooting_APM_settings_after_suspend.2C_hibernate_or_hybrid-sleep).
 
-Alternatively, create a [hook in /usr/lib/systemd/system-sleep](/index.php/Power_management#Hooks_in_.2Fusr.2Flib.2Fsystemd.2Fsystem-sleep "Power management").
+Alternatively, create a [hook in /usr/lib/systemd/system-sleep](/index.php/Power_management#Hooks_in_/usr/lib/systemd/system-sleep "Power management").
 
 ## See also
 

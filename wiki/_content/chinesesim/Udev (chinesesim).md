@@ -6,38 +6,38 @@
 
 `udev` 取代了`hotplug` 和 `hwdetect`两个工具。
 
-与传统的顺序加载相比，udev 通过并行加载内核模块提供了潜在的性能优势。异步加载模块的方式也有一个天生的缺点：无法保证每次加载模块的顺序，如果机器具有多个块设备，那么它们的设备节点可能随机变化。例如如果有两个硬盘，`/dev/sda` 可能会随机变成`/dev/sdb`。[本文后面](#.E8.AE.BE.E7.BD.AE.E9.9D.99.E6.80.81.E8.AE.BE.E5.A4.87.E5.90.8D)有更详细的信息。
+与传统的顺序加载相比，udev 通过并行加载内核模块提供了潜在的性能优势。异步加载模块的方式也有一个天生的缺点：无法保证每次加载模块的顺序，如果机器具有多个块设备，那么它们的设备节点可能随机变化。例如如果有两个硬盘，`/dev/sda` 可能会随机变成`/dev/sdb`。[本文后面](#设置静态设备名)有更详细的信息。
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 udev 规则](#udev_.E8.A7.84.E5.88.99)
-    *   [2.1 编写 udev 规则](#.E7.BC.96.E5.86.99_udev_.E8.A7.84.E5.88.99)
-    *   [2.2 列出设备属性](#.E5.88.97.E5.87.BA.E8.AE.BE.E5.A4.87.E5.B1.9E.E6.80.A7)
-    *   [2.3 加载前测试规则](#.E5.8A.A0.E8.BD.BD.E5.89.8D.E6.B5.8B.E8.AF.95.E8.A7.84.E5.88.99)
-    *   [2.4 加载新规则](#.E5.8A.A0.E8.BD.BD.E6.96.B0.E8.A7.84.E5.88.99)
+*   [1 安装](#安装)
+*   [2 udev 规则](#udev_规则)
+    *   [2.1 编写 udev 规则](#编写_udev_规则)
+    *   [2.2 列出设备属性](#列出设备属性)
+    *   [2.3 加载前测试规则](#加载前测试规则)
+    *   [2.4 加载新规则](#加载新规则)
 *   [3 Udisks](#Udisks)
-*   [4 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
-    *   [4.1 访问固件编程器（烧录器）和 USB 虚拟串行设备](#.E8.AE.BF.E9.97.AE.E5.9B.BA.E4.BB.B6.E7.BC.96.E7.A8.8B.E5.99.A8.EF.BC.88.E7.83.A7.E5.BD.95.E5.99.A8.EF.BC.89.E5.92.8C_USB_.E8.99.9A.E6.8B.9F.E4.B8.B2.E8.A1.8C.E8.AE.BE.E5.A4.87)
-    *   [4.2 VGA 线缆接入时执行规则](#VGA_.E7.BA.BF.E7.BC.86.E6.8E.A5.E5.85.A5.E6.97.B6.E6.89.A7.E8.A1.8C.E8.A7.84.E5.88.99)
-    *   [4.3 侦测新的 eSATA 设备](#.E4.BE.A6.E6.B5.8B.E6.96.B0.E7.9A.84_eSATA_.E8.AE.BE.E5.A4.87)
-    *   [4.4 将内置 SATA 接口标记为 eSATA](#.E5.B0.86.E5.86.85.E7.BD.AE_SATA_.E6.8E.A5.E5.8F.A3.E6.A0.87.E8.AE.B0.E4.B8.BA_eSATA)
-    *   [4.5 设置静态设备名](#.E8.AE.BE.E7.BD.AE.E9.9D.99.E6.80.81.E8.AE.BE.E5.A4.87.E5.90.8D)
-        *   [4.5.1 视频设备](#.E8.A7.86.E9.A2.91.E8.AE.BE.E5.A4.87)
-        *   [4.5.2 打印机](#.E6.89.93.E5.8D.B0.E6.9C.BA)
-    *   [4.6 唤醒挂起的 USB 设备](#.E5.94.A4.E9.86.92.E6.8C.82.E8.B5.B7.E7.9A.84_USB_.E8.AE.BE.E5.A4.87)
-    *   [4.7 触发事件](#.E8.A7.A6.E5.8F.91.E4.BA.8B.E4.BB.B6)
-    *   [4.8 触发 udev 规则事件的桌面提示](#.E8.A7.A6.E5.8F.91_udev_.E8.A7.84.E5.88.99.E4.BA.8B.E4.BB.B6.E7.9A.84.E6.A1.8C.E9.9D.A2.E6.8F.90.E7.A4.BA)
-*   [5 排错](#.E6.8E.92.E9.94.99)
-    *   [5.1 屏蔽模块](#.E5.B1.8F.E8.94.BD.E6.A8.A1.E5.9D.97)
+*   [4 提示与技巧](#提示与技巧)
+    *   [4.1 访问固件编程器（烧录器）和 USB 虚拟串行设备](#访问固件编程器（烧录器）和_USB_虚拟串行设备)
+    *   [4.2 VGA 线缆接入时执行规则](#VGA_线缆接入时执行规则)
+    *   [4.3 侦测新的 eSATA 设备](#侦测新的_eSATA_设备)
+    *   [4.4 将内置 SATA 接口标记为 eSATA](#将内置_SATA_接口标记为_eSATA)
+    *   [4.5 设置静态设备名](#设置静态设备名)
+        *   [4.5.1 视频设备](#视频设备)
+        *   [4.5.2 打印机](#打印机)
+    *   [4.6 唤醒挂起的 USB 设备](#唤醒挂起的_USB_设备)
+    *   [4.7 触发事件](#触发事件)
+    *   [4.8 触发 udev 规则事件的桌面提示](#触发_udev_规则事件的桌面提示)
+*   [5 排错](#排错)
+    *   [5.1 屏蔽模块](#屏蔽模块)
     *   [5.2 Debug output](#Debug_output)
-    *   [5.3 udevd 引导时挂起](#udevd_.E5.BC.95.E5.AF.BC.E6.97.B6.E6.8C.82.E8.B5.B7)
+    *   [5.3 udevd 引导时挂起](#udevd_引导时挂起)
     *   [5.4 BusLogic](#BusLogic)
-    *   [5.5 一些移动设备不可移除](#.E4.B8.80.E4.BA.9B.E7.A7.BB.E5.8A.A8.E8.AE.BE.E5.A4.87.E4.B8.8D.E5.8F.AF.E7.A7.BB.E9.99.A4)
-    *   [5.6 声音问题和一些不能自动加载的模块](#.E5.A3.B0.E9.9F.B3.E9.97.AE.E9.A2.98.E5.92.8C.E4.B8.80.E4.BA.9B.E4.B8.8D.E8.83.BD.E8.87.AA.E5.8A.A8.E5.8A.A0.E8.BD.BD.E7.9A.84.E6.A8.A1.E5.9D.97)
-    *   [5.7 IDE CD/DVD 驱动器的支持](#IDE_CD.2FDVD_.E9.A9.B1.E5.8A.A8.E5.99.A8.E7.9A.84.E6.94.AF.E6.8C.81)
-    *   [5.8 光驱被标识为磁盘](#.E5.85.89.E9.A9.B1.E8.A2.AB.E6.A0.87.E8.AF.86.E4.B8.BA.E7.A3.81.E7.9B.98)
-*   [6 参阅](#.E5.8F.82.E9.98.85)
+    *   [5.5 一些移动设备不可移除](#一些移动设备不可移除)
+    *   [5.6 声音问题和一些不能自动加载的模块](#声音问题和一些不能自动加载的模块)
+    *   [5.7 IDE CD/DVD 驱动器的支持](#IDE_CD/DVD_驱动器的支持)
+    *   [5.8 光驱被标识为磁盘](#光驱被标识为磁盘)
+*   [6 参阅](#参阅)
 
 ## 安装
 
@@ -243,13 +243,13 @@ DEVPATH=="/devices/pci0000:00/0000:00:1f.2/host4/*", ENV{UDISKS_SYSTEM}="0"
 
 由于 udev 异步加载所有模块，使得它们被初始化的次序不同。这将导致设备会随机改变名称。可以添加一条 udev 规则使得设备使用静态名称。
 
-对于块设备和网络设备的规则配置，请分别参阅 [块设备持久化命名](/index.php/Persistent_block_device_naming_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Persistent block device naming (简体中文)") 和[网络配置-设备命名](/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.AE.BE.E5.A4.87.E5.91.BD.E5.90.8D "Network configuration (简体中文)")。
+对于块设备和网络设备的规则配置，请分别参阅 [块设备持久化命名](/index.php/Persistent_block_device_naming_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Persistent block device naming (简体中文)") 和[网络配置-设备命名](/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#设备命名 "Network configuration (简体中文)")。
 
 #### 视频设备
 
 For setting up the webcam in the first place, refer to [Webcam configuration](/index.php/Webcam_setup#Webcam_configuration "Webcam setup").
 
-Using multiple webcams, useful for example with [motion](https://aur.archlinux.org/packages/motion/) (software motion detector which grabs images from video4linux devices and/or from webcams), will assign video devices as /dev/video0..n randomly on boot. The recommended solution is to create symlinks using an *udev* rule (as in the example in [#编写 udev 规则](#.E7.BC.96.E5.86.99_udev_.E8.A7.84.E5.88.99)：
+Using multiple webcams, useful for example with [motion](https://aur.archlinux.org/packages/motion/) (software motion detector which grabs images from video4linux devices and/or from webcams), will assign video devices as /dev/video0..n randomly on boot. The recommended solution is to create symlinks using an *udev* rule (as in the example in [#编写 udev 规则](#编写_udev_规则)：
 
  `/etc/udev/rules.d/83-webcam.rules` 
 ```

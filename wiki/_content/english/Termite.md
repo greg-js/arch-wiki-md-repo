@@ -11,7 +11,7 @@ The configuration file allows to change colors and set some options. Termite sup
     *   [3.2 Colors](#Colors)
 *   [4 Transparency](#Transparency)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Ctrl+Shift+t](#Ctrl.2BShift.2Bt)
+    *   [5.1 Ctrl+Shift+t](#Ctrl+Shift+t)
     *   [5.2 Remote SSH error](#Remote_SSH_error)
 *   [6 See also](#See_also)
 

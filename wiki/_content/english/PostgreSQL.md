@@ -8,7 +8,7 @@ Related articles
 
 *   [1 Installation](#Installation)
 *   [2 Initial configuration](#Initial_configuration)
-*   [3 Create your first database/user](#Create_your_first_database.2Fuser)
+*   [3 Create your first database/user](#Create_your_first_database/user)
 *   [4 Familiarize with PostgreSQL](#Familiarize_with_PostgreSQL)
     *   [4.1 Access the database shell](#Access_the_database_shell)
 *   [5 Optional configuration](#Optional_configuration)
@@ -107,7 +107,7 @@ If these are the kind of lines you see, then the process succeeded. Return to th
 
 **Warning:**
 
-*   If the database resides on a [Btrfs](/index.php/Btrfs "Btrfs") file system, you should consider disabling [Copy-on-Write](/index.php/Btrfs#Copy-on-Write_.28CoW.29 "Btrfs") for the directory before creating any database.
+*   If the database resides on a [Btrfs](/index.php/Btrfs "Btrfs") file system, you should consider disabling [Copy-on-Write](/index.php/Btrfs#Copy-on-Write_(CoW) "Btrfs") for the directory before creating any database.
 *   If the database resides on a [ZFS](/index.php/ZFS "ZFS") file system, you should consult [ZFS#Database](/index.php/ZFS#Database "ZFS") before creating any database.
 
 Finally, [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the `postgresql.service`.

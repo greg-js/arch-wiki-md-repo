@@ -13,16 +13,16 @@ El paquete makepkg lo provee el paquete [pacman](https://www.archlinux.org/packa
 
 ## Contents
 
-*   [1 Configuración](#Configuraci.C3.B3n)
-    *   [1.1 Información del empaquetador](#Informaci.C3.B3n_del_empaquetador)
+*   [1 Configuración](#Configuración)
+    *   [1.1 Información del empaquetador](#Información_del_empaquetador)
     *   [1.2 Resultado del paquete](#Resultado_del_paquete)
-    *   [1.3 Verificación de firmas](#Verificaci.C3.B3n_de_firmas)
+    *   [1.3 Verificación de firmas](#Verificación_de_firmas)
     *   [1.4 fakeroot](#fakeroot)
 *   [2 Uso](#Uso)
 *   [3 Recomendaciones](#Recomendaciones)
-    *   [3.1 Compilación paralela](#Compilaci.C3.B3n_paralela)
-    *   [3.2 Generar nueva suma de verificación](#Generar_nueva_suma_de_verificaci.C3.B3n)
-    *   [3.3 Uso de múltiples núcleos en la compresión](#Uso_de_m.C3.BAltiples_n.C3.BAcleos_en_la_compresi.C3.B3n)
+    *   [3.1 Compilación paralela](#Compilación_paralela)
+    *   [3.2 Generar nueva suma de verificación](#Generar_nueva_suma_de_verificación)
+    *   [3.3 Uso de múltiples núcleos en la compresión](#Uso_de_múltiples_núcleos_en_la_compresión)
 
 ## Configuración
 
@@ -113,7 +113,7 @@ $ makepkg -s
 
 ```
 
-**Nota:** Estas dependencias deben estar disponibles dentro de los repositorios disponibles para pacman, vea [pacman (Español)#Repositorios y servidores de réplicas](/index.php/Pacman_(Espa%C3%B1ol)#Repositorios_y_servidores_de_r.C3.A9plicas "Pacman (Español)") para mayor información al respecto. También se pueden instalar las dependencias antes de construir el paquete (`pacman -S --asdeps dep1 dep2`).
+**Nota:** Estas dependencias deben estar disponibles dentro de los repositorios disponibles para pacman, vea [pacman (Español)#Repositorios y servidores de réplicas](/index.php/Pacman_(Espa%C3%B1ol)#Repositorios_y_servidores_de_réplicas "Pacman (Español)") para mayor información al respecto. También se pueden instalar las dependencias antes de construir el paquete (`pacman -S --asdeps dep1 dep2`).
 
 Una vez que se hayan satisfecho todas las dependencias y el paquete se construyo satisfactoriamente, un archivo con el nombre (`pkgname-pkgver.pkg.tar.gz`) será creado en el directorio de trabajo. Para instalarlo (al igual que `pacman -U pkgname-pkgver.pkg.tar.gz`) simplemente se ejecuta:
 

@@ -10,7 +10,7 @@ Articoli correlati
     *   [1.1 OpenJDK](#OpenJDK)
         *   [1.1.1 Segnalare i pacchetti come out-of-date](#Segnalare_i_pacchetti_come_out-of-date)
     *   [1.2 Oracle Java SE](#Oracle_Java_SE)
-        *   [1.2.1 Java SE 6/7](#Java_SE_6.2F7)
+        *   [1.2.1 Java SE 6/7](#Java_SE_6/7)
         *   [1.2.2 JDK-compat](#JDK-compat)
     *   [1.3 Oracle JRockit](#Oracle_JRockit)
     *   [1.4 VMkit](#VMkit)
@@ -36,7 +36,7 @@ L'unica implementazione della Java Virtual Machine supportata da Arch Linux è [
 
 Il Java Runtime Environment ("JRE") di OpenJDK può essere installato attraverso il pacchetto [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk), disponibile nei [repository ufficiali](/index.php/Official_repositories "Official repositories"). È anche disponibile il Java Development Kit ("JDK") installabile attraverso il pacchetto [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk). I file sorgente possono essere reperiti installando il pacchetto [openjdk7-src](https://www.archlinux.org/packages/?name=openjdk7-src).
 
-Se si desidera utilizzare le funzionalità Java negli web browsers ([Java applets](https://en.wikipedia.org/wiki/Java_applet "wikipedia:Java applet") e [Java Web Start](https://en.wikipedia.org/wiki/Java_Web_Start "wikipedia:Java Web Start")), installare il pacchetto [icedtea-web-java7](https://www.archlinux.org/packages/?name=icedtea-web-java7). Per altri dettagli si legga [Browser plugins#Java (IcedTea)](/index.php/Browser_plugins#Java_.28IcedTea.29 "Browser plugins").
+Se si desidera utilizzare le funzionalità Java negli web browsers ([Java applets](https://en.wikipedia.org/wiki/Java_applet "wikipedia:Java applet") e [Java Web Start](https://en.wikipedia.org/wiki/Java_Web_Start "wikipedia:Java Web Start")), installare il pacchetto [icedtea-web-java7](https://www.archlinux.org/packages/?name=icedtea-web-java7). Per altri dettagli si legga [Browser plugins#Java (IcedTea)](/index.php/Browser_plugins#Java_(IcedTea) "Browser plugins").
 
 #### Segnalare i pacchetti come out-of-date
 

@@ -20,7 +20,7 @@ ABS is a similar concept. ABS is made up of a directory tree that can be checked
 
 *   [1 ABS overview](#ABS_overview)
     *   [1.1 SVN tree](#SVN_tree)
-*   [2 Why would I want to use ABS?](#Why_would_I_want_to_use_ABS.3F)
+*   [2 Why would I want to use ABS?](#Why_would_I_want_to_use_ABS?)
 *   [3 How to use ABS](#How_to_use_ABS)
     *   [3.1 Retrieve PKGBUILD source using Svn](#Retrieve_PKGBUILD_source_using_Svn)
         *   [3.1.1 Prerequisites](#Prerequisites)

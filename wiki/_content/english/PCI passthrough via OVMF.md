@@ -11,7 +11,7 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [2.3 Gotchas](#Gotchas)
         *   [2.3.1 Plugging your guest GPU in an unisolated CPU-based PCIe slot](#Plugging_your_guest_GPU_in_an_unisolated_CPU-based_PCIe_slot)
 *   [3 Isolating the GPU](#Isolating_the_GPU)
-    *   [3.1 With vfio-pci built into the kernel (4.18.16.arch1 onwards)](#With_vfio-pci_built_into_the_kernel_.284.18.16.arch1_onwards.29)
+    *   [3.1 With vfio-pci built into the kernel (4.18.16.arch1 onwards)](#With_vfio-pci_built_into_the_kernel_(4.18.16.arch1_onwards))
     *   [3.2 With vfio-pci loaded as a module](#With_vfio-pci_loaded_as_a_module)
     *   [3.3 Verifying that the configuration worked](#Verifying_that_the_configuration_worked)
 *   [4 Setting up an OVMF-based guest VM](#Setting_up_an_OVMF-based_guest_VM)
@@ -24,9 +24,9 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [5.1 CPU pinning](#CPU_pinning)
         *   [5.1.1 CPU topology](#CPU_topology)
         *   [5.1.2 XML examples](#XML_examples)
-            *   [5.1.2.1 4c/1t CPU w/o Hyperthreading Example](#4c.2F1t_CPU_w.2Fo_Hyperthreading_Example)
-            *   [5.1.2.2 6c/2t Intel CPU pinning example](#6c.2F2t_Intel_CPU_pinning_example)
-            *   [5.1.2.3 4c/2t AMD CPU example](#4c.2F2t_AMD_CPU_example)
+            *   [5.1.2.1 4c/1t CPU w/o Hyperthreading Example](#4c/1t_CPU_w/o_Hyperthreading_Example)
+            *   [5.1.2.2 4c/2t Intel CPU pinning example](#4c/2t_Intel_CPU_pinning_example)
+            *   [5.1.2.3 4c/2t AMD CPU example](#4c/2t_AMD_CPU_example)
     *   [5.2 Huge memory pages](#Huge_memory_pages)
         *   [5.2.1 Transparent huge pages](#Transparent_huge_pages)
         *   [5.2.2 Static huge pages](#Static_huge_pages)
@@ -47,20 +47,20 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
         *   [6.3.2 Installing the IVSHMEM Host to Windows guest](#Installing_the_IVSHMEM_Host_to_Windows_guest)
         *   [6.3.3 Getting a client](#Getting_a_client)
     *   [6.4 Swap peripherals to and from the Host](#Swap_peripherals_to_and_from_the_Host)
-    *   [6.5 Bypassing the IOMMU groups (ACS override patch)](#Bypassing_the_IOMMU_groups_.28ACS_override_patch.29)
+    *   [6.5 Bypassing the IOMMU groups (ACS override patch)](#Bypassing_the_IOMMU_groups_(ACS_override_patch))
 *   [7 Plain QEMU without libvirt](#Plain_QEMU_without_libvirt)
 *   [8 Passing though other devices](#Passing_though_other_devices)
     *   [8.1 USB controller](#USB_controller)
     *   [8.2 Passing VM audio to host via PulseAudio](#Passing_VM_audio_to_host_via_PulseAudio)
         *   [8.2.1 QEMU 3.0 audio changes](#QEMU_3.0_audio_changes)
-    *   [8.3 Physical disk/partition](#Physical_disk.2Fpartition)
+    *   [8.3 Physical disk/partition](#Physical_disk/partition)
     *   [8.4 Gotchas](#Gotchas_3)
         *   [8.4.1 Passing through a device that does not support resetting](#Passing_through_a_device_that_does_not_support_resetting)
 *   [9 Complete setups and examples](#Complete_setups_and_examples)
 *   [10 Troubleshooting](#Troubleshooting)
-    *   [10.1 "Error 43: Driver failed to load" on Nvidia GPUs passed to Windows VMs](#.22Error_43:_Driver_failed_to_load.22_on_Nvidia_GPUs_passed_to_Windows_VMs)
-    *   [10.2 "BAR 3: cannot reserve [mem]" error in dmesg after starting VM](#.22BAR_3:_cannot_reserve_.5Bmem.5D.22_error_in_dmesg_after_starting_VM)
-    *   [10.3 UEFI (OVMF) compatibility in VBIOS](#UEFI_.28OVMF.29_compatibility_in_VBIOS)
+    *   [10.1 "Error 43: Driver failed to load" on Nvidia GPUs passed to Windows VMs](#"Error_43:_Driver_failed_to_load"_on_Nvidia_GPUs_passed_to_Windows_VMs)
+    *   [10.2 "BAR 3: cannot reserve [mem]" error in dmesg after starting VM](#"BAR_3:_cannot_reserve_[mem]"_error_in_dmesg_after_starting_VM)
+    *   [10.3 UEFI (OVMF) compatibility in VBIOS](#UEFI_(OVMF)_compatibility_in_VBIOS)
     *   [10.4 Slowed down audio pumped through HDMI on the video card](#Slowed_down_audio_pumped_through_HDMI_on_the_video_card)
     *   [10.5 No HDMI audio output on host when intel_iommu is enabled](#No_HDMI_audio_output_on_host_when_intel_iommu_is_enabled)
     *   [10.6 X does not start after enabling vfio_pci](#X_does_not_start_after_enabling_vfio_pci)
@@ -172,7 +172,7 @@ IOMMU Group 1 01:00.1 Audio device: NVIDIA Corporation Device 0fbc (rev a1)
 
 ```
 
-This is fine so long as only your guest GPU is included in here, such as above. Depending on what is plugged in to your other PCIe slots and whether they are allocated to your CPU or your PCH, you may find yourself with additional devices within the same group, which would force you to pass those as well. If you are ok with passing everything that is in there to your VM, you are free to continue. Otherwise, you will either need to try and plug your GPU in your other PCIe slots (if you have any) and see if those provide isolation from the rest or to install the ACS override patch, which comes with its own drawbacks. See [#Bypassing the IOMMU groups (ACS override patch)](#Bypassing_the_IOMMU_groups_.28ACS_override_patch.29) for more information.
+This is fine so long as only your guest GPU is included in here, such as above. Depending on what is plugged in to your other PCIe slots and whether they are allocated to your CPU or your PCH, you may find yourself with additional devices within the same group, which would force you to pass those as well. If you are ok with passing everything that is in there to your VM, you are free to continue. Otherwise, you will either need to try and plug your GPU in your other PCIe slots (if you have any) and see if those provide isolation from the rest or to install the ACS override patch, which comes with its own drawbacks. See [#Bypassing the IOMMU groups (ACS override patch)](#Bypassing_the_IOMMU_groups_(ACS_override_patch)) for more information.
 
 **Note:** If they are grouped with other devices in this manner, pci root ports and bridges should neither be bound to vfio at boot, nor be added to the VM.
 
@@ -385,7 +385,7 @@ If you don't need all cores for the guest, it would then be preferable to leave 
 
 ```
 
-##### 6c/2t Intel CPU pinning example
+##### 4c/2t Intel CPU pinning example
 
  `$ virsh edit [vmname]` 
 ```

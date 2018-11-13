@@ -1,8 +1,8 @@
-**Note:** Procmail is unmaintained (last update 2001), the author recommends to use something else.[[1]](https://marc.info/?l=openbsd-ports&m=141634350915839&w=2)
+**Note:** Procmail is unmaintained (last update 2001), the author recommends to use something else.[[1]](https://marc.info/?l=openbsd-ports&m=141634350915839&w=2) An example for an alternative is [courier-maildrop](https://aur.archlinux.org/packages/courier-maildrop/).
 
 [Procmail](https://en.wikipedia.org/wiki/procmail "wikipedia:procmail") is a program for filtering, sorting and storing email. It can be used both on mail clients and mail servers. It can be used to filter out spam, checking for viruses, to send automatic replies, etc.
 
-The goal of this article is to teach the configuration of procmail. This article assumes you already have either a email client ([mutt](/index.php/Mutt "Mutt"), [nmh](/index.php/Nmh "Nmh"), etc) or a mail server ([sendmail](/index.php/Sendmail "Sendmail"), [postfix](/index.php/Postfix "Postfix"), etc) working, that can use (or requires) procmail. It also assumes you have at least basic knowledge on regular expressions. This article will give only a minimal explanation, for a complete manual, check the [procmailrc(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/procmailrc.5)
+The goal of this article is to teach the configuration of procmail. This article assumes you already have either a email client ([Mutt](/index.php/Mutt "Mutt"), [nmh](/index.php/Nmh "Nmh"), etc) or a mail server ([Sendmail](/index.php/Sendmail "Sendmail"), [Postfix](/index.php/Postfix "Postfix"), etc) working, that can use (or requires) procmail. It also assumes you have at least basic knowledge on regular expressions. This article will give only a minimal explanation, for a complete manual, check the [procmailrc(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/procmailrc.5)
 
 ## Contents
 
@@ -14,7 +14,7 @@ The goal of this article is to teach the configuration of procmail. This article
         *   [2.2.2 Conditions](#Conditions)
         *   [2.2.3 Action](#Action)
 *   [3 Tips and tricks](#Tips_and_tricks)
-    *   [3.1 Spamassassin](#Spamassassin)
+    *   [3.1 SpamAssassin](#SpamAssassin)
     *   [3.2 ClamAV](#ClamAV)
     *   [3.3 Filtering mail to a different mailbox](#Filtering_mail_to_a_different_mailbox)
     *   [3.4 Postfix Piping](#Postfix_Piping)
@@ -95,16 +95,16 @@ An action can also start with a pipe, which means the message is going to be pas
 
 By default, once a recipe's action is done, the processing is over.
 
-If the **f** flag was used, the command can alter the message and keep reading recipes. In this example, the spamassassin command will add headers to the mail, with its spam status level, which later can be used by **another recipe** to block it, or store it on a different mailbox.
+If the **f** flag was used, the command can alter the message and keep reading recipes. In this example, the SpamAssassin command will add headers to the mail, with its spam status level, which later can be used by **another recipe** to block it, or store it on a different mailbox.
 
 ## Tips and tricks
 
-### Spamassassin
+### SpamAssassin
 
-Here is an example using spamassassin to block spam. You should already have spamassassin installed and working.
+Here is an example using SpamAssassin to block spam. You should already have SpamAssassin installed and working.
 
 ```
-# By using the f and w flags and no condition, spamassassin is going add the X-Spam headers to every single mail, and then process other recipes.
+# By using the f and w flags and no condition, SpamAssassin is going add the X-Spam headers to every single mail, and then process other recipes.
 # No lockfile is used.
 :0fw
 | /usr/bin/vendor_perl/spamc

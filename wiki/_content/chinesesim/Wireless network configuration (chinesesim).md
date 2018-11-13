@@ -12,36 +12,36 @@
 
 ## Contents
 
-*   [1 设备驱动](#.E8.AE.BE.E5.A4.87.E9.A9.B1.E5.8A.A8)
-    *   [1.1 检查设备状态](#.E6.A3.80.E6.9F.A5.E8.AE.BE.E5.A4.87.E7.8A.B6.E6.80.81)
-    *   [1.2 安装 driver/firmware](#.E5.AE.89.E8.A3.85_driver.2Ffirmware)
-*   [2 无线网络管理](#.E6.97.A0.E7.BA.BF.E7.BD.91.E7.BB.9C.E7.AE.A1.E7.90.86)
-    *   [2.1 手动设置](#.E6.89.8B.E5.8A.A8.E8.AE.BE.E7.BD.AE)
-        *   [2.1.1 获取有用信息](#.E8.8E.B7.E5.8F.96.E6.9C.89.E7.94.A8.E4.BF.A1.E6.81.AF)
-        *   [2.1.2 激活内核接口](#.E6.BF.80.E6.B4.BB.E5.86.85.E6.A0.B8.E6.8E.A5.E5.8F.A3)
-        *   [2.1.3 查看接入点](#.E6.9F.A5.E7.9C.8B.E6.8E.A5.E5.85.A5.E7.82.B9)
-        *   [2.1.4 运行模式](#.E8.BF.90.E8.A1.8C.E6.A8.A1.E5.BC.8F)
-        *   [2.1.5 关联](#.E5.85.B3.E8.81.94)
-        *   [2.1.6 获取 IP 地址](#.E8.8E.B7.E5.8F.96_IP_.E5.9C.B0.E5.9D.80)
-        *   [2.1.7 示例](#.E7.A4.BA.E4.BE.8B)
-    *   [2.2 自动设置](#.E8.87.AA.E5.8A.A8.E8.AE.BE.E7.BD.AE)
+*   [1 设备驱动](#设备驱动)
+    *   [1.1 检查设备状态](#检查设备状态)
+    *   [1.2 安装 driver/firmware](#安装_driver/firmware)
+*   [2 无线网络管理](#无线网络管理)
+    *   [2.1 手动设置](#手动设置)
+        *   [2.1.1 获取有用信息](#获取有用信息)
+        *   [2.1.2 激活内核接口](#激活内核接口)
+        *   [2.1.3 查看接入点](#查看接入点)
+        *   [2.1.4 运行模式](#运行模式)
+        *   [2.1.5 关联](#关联)
+        *   [2.1.6 获取 IP 地址](#获取_IP_地址)
+        *   [2.1.7 示例](#示例)
+    *   [2.2 自动设置](#自动设置)
         *   [2.2.1 Connman](#Connman)
         *   [2.2.2 Netctl](#Netctl)
         *   [2.2.3 Wicd](#Wicd)
         *   [2.2.4 NetworkManager](#NetworkManager)
         *   [2.2.5 Wifi Radar](#Wifi_Radar)
-*   [3 WPA2 企业模式](#WPA2_.E4.BC.81.E4.B8.9A.E6.A8.A1.E5.BC.8F)
+*   [3 WPA2 企业模式](#WPA2_企业模式)
     *   [3.1 eduroam](#eduroam)
-    *   [3.2 手工/自动配置](#.E6.89.8B.E5.B7.A5.2F.E8.87.AA.E5.8A.A8.E9.85.8D.E7.BD.AE)
+    *   [3.2 手工/自动配置](#手工/自动配置)
         *   [3.2.1 wpa_supplicant](#wpa_supplicant)
         *   [3.2.2 NetworkManager](#NetworkManager_2)
         *   [3.2.3 connman](#connman_2)
         *   [3.2.4 netctl](#netctl_2)
-    *   [3.3 排错](#.E6.8E.92.E9.94.99)
+    *   [3.3 排错](#排错)
         *   [3.3.1 MS-CHAPv2](#MS-CHAPv2)
-*   [4 排错](#.E6.8E.92.E9.94.99_2)
-    *   [4.1 临时上网](#.E4.B8.B4.E6.97.B6.E4.B8.8A.E7.BD.91)
-    *   [4.2 Rfkill 警告](#Rfkill_.E8.AD.A6.E5.91.8A)
+*   [4 排错](#排错_2)
+    *   [4.1 临时上网](#临时上网)
+    *   [4.2 Rfkill 警告](#Rfkill_警告)
     *   [4.3 Respecting the regulatory domain](#Respecting_the_regulatory_domain)
     *   [4.4 Observing Logs](#Observing_Logs)
     *   [4.5 Power saving](#Power_saving)
@@ -49,11 +49,11 @@
     *   [4.7 Valid IP address but cannot resolve host](#Valid_IP_address_but_cannot_resolve_host)
     *   [4.8 Setting RTS and fragmentation thresholds](#Setting_RTS_and_fragmentation_thresholds)
     *   [4.9 Random disconnections](#Random_disconnections)
-        *   [4.9.1 Cause #1](#Cause_.231)
-        *   [4.9.2 Cause #2](#Cause_.232)
-        *   [4.9.3 Cause #3](#Cause_.233)
-        *   [4.9.4 Cause #4](#Cause_.234)
-*   [5 驱动与固件排错](#.E9.A9.B1.E5.8A.A8.E4.B8.8E.E5.9B.BA.E4.BB.B6.E6.8E.92.E9.94.99)
+        *   [4.9.1 Cause #1](#Cause_#1)
+        *   [4.9.2 Cause #2](#Cause_#2)
+        *   [4.9.3 Cause #3](#Cause_#3)
+        *   [4.9.4 Cause #4](#Cause_#4)
+*   [5 驱动与固件排错](#驱动与固件排错)
     *   [5.1 Ralink](#Ralink)
         *   [5.1.1 rt2x00](#rt2x00)
         *   [5.1.2 rt3090](#rt3090)
@@ -64,43 +64,43 @@
         *   [5.2.1 rtl8192cu](#rtl8192cu)
         *   [5.2.2 rtl8192e](#rtl8192e)
         *   [5.2.3 rtl8188eu](#rtl8188eu)
-        *   [5.2.4 rtl8723ae/rtl8723be](#rtl8723ae.2Frtl8723be)
-        *   [5.2.5 rtl8812au/rtl8821au](#rtl8812au.2Frtl8821au)
+        *   [5.2.4 rtl8723ae/rtl8723be](#rtl8723ae/rtl8723be)
+        *   [5.2.5 rtl8812au/rtl8821au](#rtl8812au/rtl8821au)
     *   [5.3 Atheros](#Atheros)
         *   [5.3.1 ath5k](#ath5k)
         *   [5.3.2 ath9k](#ath9k)
         *   [5.3.3 ath9k](#ath9k_2)
             *   [5.3.3.1 Power saving](#Power_saving_2)
     *   [5.4 Intel](#Intel)
-        *   [5.4.1 ipw2100 与 ipw2200](#ipw2100_.E4.B8.8E_ipw2200)
+        *   [5.4.1 ipw2100 与 ipw2200](#ipw2100_与_ipw2200)
         *   [5.4.2 iwlegacy](#iwlegacy)
         *   [5.4.3 iwlwifi](#iwlwifi)
             *   [5.4.3.1 Bluetooth coexistence](#Bluetooth_coexistence)
-            *   [5.4.3.2 禁用 LED 闪烁](#.E7.A6.81.E7.94.A8_LED_.E9.97.AA.E7.83.81)
+            *   [5.4.3.2 禁用 LED 闪烁](#禁用_LED_闪烁)
     *   [5.5 Broadcom](#Broadcom)
         *   [5.5.1 Tenda w322u](#Tenda_w322u)
         *   [5.5.2 orinoco](#orinoco)
         *   [5.5.3 prism54](#prism54)
-        *   [5.5.4 ACX100/111](#ACX100.2F111)
+        *   [5.5.4 ACX100/111](#ACX100/111)
         *   [5.5.5 zd1211rw](#zd1211rw)
         *   [5.5.6 hostap_cs](#hostap_cs)
-    *   [5.6 Other drivers/devices](#Other_drivers.2Fdevices)
+    *   [5.6 Other drivers/devices](#Other_drivers/devices)
         *   [5.6.1 Tenda w322u](#Tenda_w322u_2)
         *   [5.6.2 orinoco](#orinoco_2)
         *   [5.6.3 prism54](#prism54_2)
-        *   [5.6.4 ACX100/111](#ACX100.2F111_2)
+        *   [5.6.4 ACX100/111](#ACX100/111_2)
         *   [5.6.5 zd1211rw](#zd1211rw_2)
         *   [5.6.6 hostap_cs](#hostap_cs_2)
     *   [5.7 ndiswrapper](#ndiswrapper)
     *   [5.8 backports-patched](#backports-patched)
-*   [6 参见](#.E5.8F.82.E8.A7.81)
-*   [7 其他资源](#.E5.85.B6.E4.BB.96.E8.B5.84.E6.BA.90)
+*   [6 参见](#参见)
+*   [7 其他资源](#其他资源)
 
 ## 设备驱动
 
 默认的 Arch Linux 内核是**模块化**的，，硬件的设备驱动作为[内核模块](/index.php/Kernel_modules "Kernel modules")保存在硬盘上。启动时 [udev](/index.php/Udev "Udev") 会根据硬件加载不同的驱动模块，这就创建了需要的网络接口。
 
-有些无线芯片需要额外的固件，默认安装的 [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) 提供了很多固件。如果缺失需要的固件，请查看 [#安装 driver/firmware](#.E5.AE.89.E8.A3.85_driver.2Ffirmware).
+有些无线芯片需要额外的固件，默认安装的 [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) 提供了很多固件。如果缺失需要的固件，请查看 [#安装 driver/firmware](#安装_driver/firmware).
 
 Udev 不是完美的，有些内核模块需要[手动安装](/index.php/Kernel_modules#Manual_module_handling "Kernel modules"). 有些时候 Udev 会同时加载相互冲突的多个模块，就需要[屏蔽](/index.php/Kernel_modules#Blacklisting "Kernel modules") 不需要的模块。
 
@@ -182,11 +182,11 @@ Ndiswrapper 可以在 Linux 中使用 Windows 驱动。兼容性列表在 [这�
 | 管理方法 | 接口激活 | 无线连接管理
 (/=alternatives) | IP 地址分配
 (/=alternatives) |
-| [手动设置](#.E6.89.8B.E5.8A.A8.E8.AE.BE.E7.BD.AE)
+| [手动设置](#手动设置)
 无加密或 WEP 加密 | [ip](/index.php/Core_utilities_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#ip "Core utilities (简体中文)") | [iw](https://www.archlinux.org/packages/?name=iw)/[iwconfig](https://www.archlinux.org/packages/?name=wireless_tools) | [ip](/index.php/Core_utilities_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#ip "Core utilities (简体中文)")/[dhcpcd](/index.php/Dhcpcd "Dhcpcd")/[dhclient](https://www.archlinux.org/packages/?name=dhclient)/[networkd](/index.php/Networkd "Networkd") |
-| [手动管理](#.E6.89.8B.E5.8A.A8.E8.AE.BE.E7.BD.AE)
+| [手动管理](#手动设置)
 WPA 或 WPA2 PSK 加密 | [ip](/index.php/Core_utilities_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#ip "Core utilities (简体中文)") | [iw](https://www.archlinux.org/packages/?name=iw)/[iwconfig](https://www.archlinux.org/packages/?name=wireless_tools) + [wpa_supplicant](/index.php/WPA_supplicant_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "WPA supplicant (简体中文)") | [ip](/index.php/Core_utilities_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#ip "Core utilities (简体中文)")/[dhcpcd](/index.php/Dhcpcd "Dhcpcd")/[dhclient](https://www.archlinux.org/packages/?name=dhclient) |
-| [自动管理](#.E8.87.AA.E5.8A.A8.E8.AE.BE.E7.BD.AE)
+| [自动管理](#自动设置)
 支持网络配置 | [netctl](/index.php/Netctl_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Netctl (简体中文)")、[Wicd](/index.php/Wicd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wicd (简体中文)")、[NetworkManager](/index.php/NetworkManager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "NetworkManager (简体中文)") 等等
 
 这些工具会自动安装手动配置需要的工具。
@@ -227,7 +227,7 @@ WPA 或 WPA2 PSK 加密 | [ip](/index.php/Core_utilities_(%E7%AE%80%E4%BD%93%E4%
 | iw dev *wlan0* connect *your_essid* key 0:*your_key* | iwconfig *wlan0* essid *your_essid* key s:*your_key* | 用 ASCII 密码访问 WEP 加密网络. |
 | iw dev *wlan0* set power_save on | iwconfig *wlan0* power on | 启用省电模式 |
 
-**注意:** 根据硬件和加密设备的不同，有些步骤可以跳过。一些网卡需要在关联到热点前先激活或扫描热点，需要一些实验才能确定。WPA/WPA2 用户可以按照[#关联](#.E5.85.B3.E8.81.94)中的步骤激活网络。
+**注意:** 根据硬件和加密设备的不同，有些步骤可以跳过。一些网卡需要在关联到热点前先激活或扫描热点，需要一些实验才能确定。WPA/WPA2 用户可以按照[#关联](#关联)中的步骤激活网络。
 
 #### 获取有用信息
 
@@ -306,7 +306,7 @@ Station 12:34:56:78:9a:bc (on wlan0)
 
 ```
 
-如果出现错误 `RTNETLINK answers: Operation not possible due to RF-kill`, 请确保硬件开关已经打开。参阅 [#Rfkill 警告](#Rfkill_.E8.AD.A6.E5.91.8A)。
+如果出现错误 `RTNETLINK answers: Operation not possible due to RF-kill`, 请确保硬件开关已经打开。参阅 [#Rfkill 警告](#Rfkill_警告)。
 
 要验证接口确实打开：
 
@@ -416,7 +416,7 @@ Station 12:34:56:78:9a:bc (on wlan0)
 
 ```
 
-**提示：** [dhcpcd](/index.php/Dhcpcd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Dhcpcd (简体中文)") 提供了 [钩子](/index.php/Dhcpcd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E9.92.A9.E5.AD.90 "Dhcpcd (简体中文)"), 可以使用它自动在无线接口上启动 [WPA supplicant](/index.php/WPA_supplicant_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "WPA supplicant (简体中文)")。
+**提示：** [dhcpcd](/index.php/Dhcpcd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Dhcpcd (简体中文)") 提供了 [钩子](/index.php/Dhcpcd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#钩子 "Dhcpcd (简体中文)"), 可以使用它自动在无线接口上启动 [WPA supplicant](/index.php/WPA_supplicant_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "WPA supplicant (简体中文)")。
 
 #### 示例
 
@@ -555,7 +555,7 @@ WPA2-Enterprise wireless networks demanding MSCHAPv2 type-2 authentication with 
 
 ## 排错
 
-这个单元包含一般性的问题快照(troubleshooting）和提示, 问题与设备与固件驱动并没有什么严格意义上的关系。 对于驱动与固件上的问题, 请看 [#驱动与固件排错](#.E9.A9.B1.E5.8A.A8.E4.B8.8E.E5.9B.BA.E4.BB.B6.E6.8E.92.E9.94.99).
+这个单元包含一般性的问题快照(troubleshooting）和提示, 问题与设备与固件驱动并没有什么严格意义上的关系。 对于驱动与固件上的问题, 请看 [#驱动与固件排错](#驱动与固件排错).
 
 ### 临时上网
 
@@ -679,7 +679,7 @@ See [Power saving#Network interfaces](/index.php/Power_saving#Network_interfaces
 
 ### Failed to get IP address
 
-*   If getting an IP address repeatedly fails using the default [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) client, try installing and using [dhclient](https://www.archlinux.org/packages/?name=dhclient) instead. Do not forget to select *dhclient* as the primary DHCP client in your [connection manager](#.E8.87.AA.E5.8A.A8.E8.AE.BE.E7.BD.AE)!
+*   If getting an IP address repeatedly fails using the default [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) client, try installing and using [dhclient](https://www.archlinux.org/packages/?name=dhclient) instead. Do not forget to select *dhclient* as the primary DHCP client in your [connection manager](#自动设置)!
 
 *   If you can get an IP address for a wired interface and not for a wireless interface, try disabling the wireless card's [power saving](#Power_saving) features (specify `off` instead of `on`).
 

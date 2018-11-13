@@ -15,19 +15,19 @@ Esses componentes combinam-se com o *sistema* init. Algumas entradas incluem o g
 
 ## Contents
 
-*   [1 Inits (integrados)](#Inits_.28integrados.29)
+*   [1 Inits (integrados)](#Inits_(integrados))
 *   [2 Inits](#Inits)
 *   [3 Init scripts](#Init_scripts)
-*   [4 Gerenciadores de serviços](#Gerenciadores_de_servi.C3.A7os)
-*   [5 Configuração](#Configura.C3.A7.C3.A3o)
-    *   [5.1 Migrar serviços em execução](#Migrar_servi.C3.A7os_em_execu.C3.A7.C3.A3o)
+*   [4 Gerenciadores de serviços](#Gerenciadores_de_serviços)
+*   [5 Configuração](#Configuração)
+    *   [5.1 Migrar serviços em execução](#Migrar_serviços_em_execução)
     *   [5.2 logind](#logind)
     *   [5.3 Tarefas agendadas](#Tarefas_agendadas)
     *   [5.4 Dbus](#Dbus)
 *   [6 Dicas e truques](#Dicas_e_truques)
     *   [6.1 systemd-nspawn](#systemd-nspawn)
     *   [6.2 Substituindo udev](#Substituindo_udev)
-*   [7 Veja também](#Veja_tamb.C3.A9m)
+*   [7 Veja também](#Veja_também)
 
 ## Inits (integrados)
 
@@ -131,7 +131,7 @@ Adicione usuários aos respectivos [grupos de usuários](/index.php/Grupos_de_us
 
 ```
 
-Veja também [Usuários e grupos#Grupos pré-systemd](/index.php/Usu%C3%A1rios_e_grupos#Grupos_pr.C3.A9-systemd "Usuários e grupos"). Para criar regras de grupo para usar com [Polkit](/index.php/Polkit "Polkit"), veja [Polkit#Bypass password prompt](/index.php/Polkit#Bypass_password_prompt "Polkit").
+Veja também [Usuários e grupos#Grupos pré-systemd](/index.php/Usu%C3%A1rios_e_grupos#Grupos_pré-systemd "Usuários e grupos"). Para criar regras de grupo para usar com [Polkit](/index.php/Polkit "Polkit"), veja [Polkit#Bypass password prompt](/index.php/Polkit#Bypass_password_prompt "Polkit").
 
 	X sem root (1.16)
 

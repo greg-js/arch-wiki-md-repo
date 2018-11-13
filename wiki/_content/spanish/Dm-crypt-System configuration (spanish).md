@@ -7,14 +7,14 @@
 **Estado de la traducción**
 Este artículo es una traducción de [Dm-crypt/System configuration](/index.php/Dm-crypt/System_configuration "Dm-crypt/System configuration"), revisada por última vez el **2018-10-26**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Dm-crypt/System_configuration&diff=0&oldid=551201) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
-**Sugerencia:** Si necesita desbloquear de forma remota la raíz u otros sistemas de archivos de arranque temprano (máquinas sin encabezados, servidores distantes ...), siga las instrucciones específicas de [dm-crypt/Specialties (Español)#Desbloqueo remoto de la partición (u otro volumen) raíz](/index.php/Dm-crypt/Specialties_(Espa%C3%B1ol)#Desbloqueo_remoto_de_la_partici.C3.B3n_.28u_otro_volumen.29_ra.C3.ADz "Dm-crypt/Specialties (Español)").
+**Sugerencia:** Si necesita desbloquear de forma remota la raíz u otros sistemas de archivos de arranque temprano (máquinas sin encabezados, servidores distantes ...), siga las instrucciones específicas de [dm-crypt/Specialties (Español)#Desbloqueo remoto de la partición (u otro volumen) raíz](/index.php/Dm-crypt/Specialties_(Espa%C3%B1ol)#Desbloqueo_remoto_de_la_partición_(u_otro_volumen)_raíz "Dm-crypt/Specialties (Español)").
 
 ## Contents
 
 *   [1 mkinitcpio](#mkinitcpio)
     *   [1.1 Ejemplos](#Ejemplos)
 *   [2 Cargador de arranque](#Cargador_de_arranque)
-    *   [2.1 Parámetros del Kernel](#Par.C3.A1metros_del_Kernel)
+    *   [2.1 Parámetros del Kernel](#Parámetros_del_Kernel)
         *   [2.1.1 root](#root)
         *   [2.1.2 resume](#resume)
     *   [2.2 Utilizar el hook encrypt](#Utilizar_el_hook_encrypt)
@@ -26,13 +26,13 @@ Este artículo es una traducción de [Dm-crypt/System configuration](/index.php/
         *   [2.3.2 rd.luks.name](#rd.luks.name)
         *   [2.3.3 rd.luks.options](#rd.luks.options)
         *   [2.3.4 rd.luks.key](#rd.luks.key)
-        *   [2.3.5 Tiempo de espera («*timeout*»)](#Tiempo_de_espera_.28.C2.ABtimeout.C2.BB.29)
+        *   [2.3.5 Tiempo de espera («*timeout*»)](#Tiempo_de_espera_(«timeout»))
 *   [3 crypttab](#crypttab)
     *   [3.1 Montaje en el momento del arranque](#Montaje_en_el_momento_del_arranque)
         *   [3.1.1 Montaje de un dispositivo de bloque apilado](#Montaje_de_un_dispositivo_de_bloque_apilado)
     *   [3.2 Montaje bajo demanda](#Montaje_bajo_demanda)
-*   [4 Solución de problemas](#Soluci.C3.B3n_de_problemas)
-    *   [4.1 El espacio del sistema en el arranque/solicitud de contraseña no se muestra](#El_espacio_del_sistema_en_el_arranque.2Fsolicitud_de_contrase.C3.B1a_no_se_muestra)
+*   [4 Solución de problemas](#Solución_de_problemas)
+    *   [4.1 El espacio del sistema en el arranque/solicitud de contraseña no se muestra](#El_espacio_del_sistema_en_el_arranque/solicitud_de_contraseña_no_se_muestra)
 
 ## mkinitcpio
 
@@ -41,12 +41,12 @@ Dependiendo de los escenarios particulares, tendrá que activarse un conjunto de
 | busybox | systemd | Caso de uso |
 | `encrypt` | `sd-encrypt` | Siempre necesario cuando se cifra la partición raíz, o una partición que necesita ser montada *antes* de la raíz. No es necesario en todos los demás casos, ya que los scripts de inicialización del sistema como `/etc/crypttab` se encargan de desbloquear otras particiones cifradas. Este enlace debe colocarse *después* del hook `udev` o `systemd`. |
 | `keyboard` | Necesario para hacer que los teclados funcionen en el espacio temprano del usuario. |
-| `keymap` | `sd-vconsole` | Proporciona soporte para mapas de teclas no estadounidenses para escribir contraseñas de cifrado; debe colocarse *antes* del hook `encrypt`. Configure su mapa de teclas en `/etc/vconsole.conf`, vea [Keyboard configuration in console (Español)#Configuración permanente](/index.php/Keyboard_configuration_in_console_(Espa%C3%B1ol)#Configuraci.C3.B3n_permanente "Keyboard configuration in console (Español)"). |
+| `keymap` | `sd-vconsole` | Proporciona soporte para mapas de teclas no estadounidenses para escribir contraseñas de cifrado; debe colocarse *antes* del hook `encrypt`. Configure su mapa de teclas en `/etc/vconsole.conf`, vea [Keyboard configuration in console (Español)#Configuración permanente](/index.php/Keyboard_configuration_in_console_(Espa%C3%B1ol)#Configuración_permanente "Keyboard configuration in console (Español)"). |
 | `consolefont` | Carga un titpo de letra de consola alternativo en el espacio temprano del usuario. Configure su tipo de letra en `/etc/vconsole.conf`, vea [Linux console#Persistent configuration](/index.php/Linux_console#Persistent_configuration "Linux console"). |
 
-[Otros hooks](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Hooks_m.C3.A1s_comunes "Mkinitcpio (Español)") necesarios deben quedar limpios en otros pasos manuales seguidos durante la instalación del sistema.
+[Otros hooks](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Hooks_más_comunes "Mkinitcpio (Español)") necesarios deben quedar limpios en otros pasos manuales seguidos durante la instalación del sistema.
 
-Recuerde [regenerar initramfs](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Creaci.C3.B3n_de_la_imagen_y_activaci.C3.B3n "Mkinitcpio (Español)") después de guardar los cambios.
+Recuerde [regenerar initramfs](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Creación_de_la_imagen_y_activación "Mkinitcpio (Español)") después de guardar los cambios.
 
 ### Ejemplos
 
@@ -72,7 +72,7 @@ HOOKS=(base systemd autodetect keyboard sd-vconsole modconf block sd-encrypt sd-
 
 Para activar el arranque de una partición raíz cifrada, es necesario configurar un conjunto de los siguientes parámetros del kernel. Consulte los [parámetros del kernel](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)") para obtener instrucciones específicas para su [cargador de arranque](/index.php/Boot_loader_(Espa%C3%B1ol) "Boot loader (Español)").
 
-Por ejemplo, si utiliza [GRUB](/index.php/GRUB_(Espa%C3%B1ol)#Partici.C3.B3n_de_arranque "GRUB (Español)"), los parámetros relevantes se añadirán a `/etc/default/grub` antes de [generar el archivo de configuración principal](/index.php/GRUB_(Espa%C3%B1ol)#Generar_el_archivo_de_configuraci.C3.B3n_principal "GRUB (Español)"). Vea también [GRUB (Español)#Advertencias cuando se instala en entorno chroot](/index.php/GRUB_(Espa%C3%B1ol)#Advertencias_cuando_se_instala_en_entorno_chroot "GRUB (Español)") como otro punto a tener en cuenta al instalar el cargador GRUB.
+Por ejemplo, si utiliza [GRUB](/index.php/GRUB_(Espa%C3%B1ol)#Partición_de_arranque "GRUB (Español)"), los parámetros relevantes se añadirán a `/etc/default/grub` antes de [generar el archivo de configuración principal](/index.php/GRUB_(Espa%C3%B1ol)#Generar_el_archivo_de_configuración_principal "GRUB (Español)"). Vea también [GRUB (Español)#Advertencias cuando se instala en entorno chroot](/index.php/GRUB_(Espa%C3%B1ol)#Advertencias_cuando_se_instala_en_entorno_chroot "GRUB (Español)") como otro punto a tener en cuenta al instalar el cargador GRUB.
 
 Los parámetros del kernel que necesita especificar dependen de si está utilizando el hook `encrypt` o `sd-encrypt`.
 
@@ -163,7 +163,7 @@ Ejemplo: `cryptkey=rootfs:/secretkey`
 
 También tenga en cuenta que si `cryptkey` no se especifica, por defecto es `/crypto_keyfile.bin` (en initramfs).[[2]](https://git.archlinux.org/svntogit/packages.git/tree/trunk/hooks-encrypt?h=packages/cryptsetup#n8)
 
-**Nota:** Si la inicialización del disco duro USB falla en el arranque, agregue `usb_storage` a la matriz `MODULES` de [mkinitcpio](/index.php/Mkinitcpio_(Espa%C3%B1ol)#M.C3.93DULOS "Mkinitcpio (Español)") [[3]](https://bugs.archlinux.org/task/60272).
+**Nota:** Si la inicialización del disco duro USB falla en el arranque, agregue `usb_storage` a la matriz `MODULES` de [mkinitcpio](/index.php/Mkinitcpio_(Espa%C3%B1ol)#MÓDULOS "Mkinitcpio (Español)") [[3]](https://bugs.archlinux.org/task/60272).
 
 Véase también [dm-crypt/Device encryption (Español)#Archivos de claves](/index.php/Dm-crypt/Device_encryption_(Espa%C3%B1ol)#Archivos_de_claves "Dm-crypt/Device encryption (Español)").
 
@@ -201,7 +201,7 @@ En todo lo que sigue `rd.luks` puede reemplazarse con `luks`. Los parámetros `r
 **Sugerencia:**
 
 *   Si existe el archivo `/etc/crypttab.initramfs`, [mkinitcpio (Español)](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") lo agregará a initramfs como `/etc/crypttab`, pudiendo especificar allí los dispositivos que deben desbloquearse en el arranque. La sintaxis está documentada en [#crypttab](#crypttab) y [crypttab(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/crypttab.5).
-*   `/etc/crypttab.initramfs` no se limita a usar solo UUID como `rd.luks`. Puede usar cualquiera de los [métodos para asignar nombres permanentes a dispositivos de bloques](/index.php/Persistent_block_device_naming_(Espa%C3%B1ol)#M.C3.A9todos_para_nombrar_los_dispositivos_de_forma_permanente "Persistent block device naming (Español)").
+*   `/etc/crypttab.initramfs` no se limita a usar solo UUID como `rd.luks`. Puede usar cualquiera de los [métodos para asignar nombres permanentes a dispositivos de bloques](/index.php/Persistent_block_device_naming_(Espa%C3%B1ol)#Métodos_para_nombrar_los_dispositivos_de_forma_permanente "Persistent block device naming (Español)").
 
 **Nota:**
 

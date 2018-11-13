@@ -1,6 +1,6 @@
 ## Contents
 
-*   [1 Apakah Arch Linux?](#Apakah_Arch_Linux.3F)
+*   [1 Apakah Arch Linux?](#Apakah_Arch_Linux?)
 *   [2 Kelebihan](#Kelebihan)
 *   [3 Manajemen Paket yang Unik](#Manajemen_Paket_yang_Unik)
 *   [4 Modernitas](#Modernitas)

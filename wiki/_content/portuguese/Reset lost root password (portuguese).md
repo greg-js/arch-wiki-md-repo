@@ -9,7 +9,7 @@ Este guia irá mostrar-lhe como redefinir uma senha de [root](/index.php/Usu%C3%
 *   [1 Usando um LiveCD](#Usando_um_LiveCD)
     *   [1.1 Alterando a raiz](#Alterando_a_raiz)
 *   [2 Usando GRUB para chamar bash](#Usando_GRUB_para_chamar_bash)
-*   [3 Veja também](#Veja_tamb.C3.A9m)
+*   [3 Veja também](#Veja_também)
 
 ## Usando um LiveCD
 

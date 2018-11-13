@@ -23,7 +23,7 @@ Related articles
     *   [3.3 C](#C)
         *   [3.3.1 mpv-mpris](#mpv-mpris)
 *   [4 Vapoursynth](#Vapoursynth)
-    *   [4.1 SVP 4 Linux (SmoothVideoProject)](#SVP_4_Linux_.28SmoothVideoProject.29)
+    *   [4.1 SVP 4 Linux (SmoothVideoProject)](#SVP_4_Linux_(SmoothVideoProject))
 *   [5 Tips and Tricks](#Tips_and_Tricks)
     *   [5.1 Hardware decoding](#Hardware_decoding)
         *   [5.1.1 In GNOME Wayland](#In_GNOME_Wayland)
@@ -46,8 +46,8 @@ Related articles
     *   [6.1 General debugging](#General_debugging)
     *   [6.2 Fix jerky playback and tearing](#Fix_jerky_playback_and_tearing)
     *   [6.3 Problems with window compositors](#Problems_with_window_compositors)
-    *   [6.4 No volume bar, cannot change volume](#No_volume_bar.2C_cannot_change_volume)
-    *   [6.5 GNOME Blank screen (Wayland)](#GNOME_Blank_screen_.28Wayland.29)
+    *   [6.4 No volume bar, cannot change volume](#No_volume_bar,_cannot_change_volume)
+    *   [6.5 GNOME Blank screen (Wayland)](#GNOME_Blank_screen_(Wayland))
     *   [6.6 Use mpv with a compositor](#Use_mpv_with_a_compositor)
 
 ## Installation

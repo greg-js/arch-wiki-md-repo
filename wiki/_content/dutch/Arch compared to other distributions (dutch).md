@@ -4,7 +4,7 @@ Deze pagina vat de overeenkomsten en de verschillen samen tussen Arch en andere 
 
 *   [1 Arch vs Gentoo](#Arch_vs_Gentoo)
 *   [2 Arch vs Crux](#Arch_vs_Crux)
-*   [3 Arch vs Sorcerer/Lunar-linux/Sourcemage](#Arch_vs_Sorcerer.2FLunar-linux.2FSourcemage)
+*   [3 Arch vs Sorcerer/Lunar-linux/Sourcemage](#Arch_vs_Sorcerer/Lunar-linux/Sourcemage)
 *   [4 Arch vs grafische distributies](#Arch_vs_grafische_distributies)
 *   [5 Arch vs Slackware](#Arch_vs_Slackware)
 *   [6 Arch vs Debian](#Arch_vs_Debian)

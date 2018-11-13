@@ -7,14 +7,14 @@ Este artículo trata sobre la configuración de un servidor svn en su máquina. 
 
 ## Contents
 
-*   [1 Configuración de Apache Subversion](#Configuraci.C3.B3n_de_Apache_Subversion)
+*   [1 Configuración de Apache Subversion](#Configuración_de_Apache_Subversion)
     *   [1.1 Objetivos](#Objetivos)
-    *   [1.2 Instalación](#Instalaci.C3.B3n)
-    *   [1.3 Configuración de Subversion](#Configuraci.C3.B3n_de_Subversion)
-        *   [1.3.1 Editar /etc/httpd/conf/httpd.conf](#Editar_.2Fetc.2Fhttpd.2Fconf.2Fhttpd.conf)
-        *   [1.3.2 ¿SSL o no SSL?](#.C2.BFSSL_o_no_SSL.3F)
-        *   [1.3.3 Crear /home/svn/.svn-policy-file](#Crear_.2Fhome.2Fsvn.2F.svn-policy-file)
-        *   [1.3.4 Crear /home/svn/.svn-auth-file](#Crear_.2Fhome.2Fsvn.2F.svn-auth-file)
+    *   [1.2 Instalación](#Instalación)
+    *   [1.3 Configuración de Subversion](#Configuración_de_Subversion)
+        *   [1.3.1 Editar /etc/httpd/conf/httpd.conf](#Editar_/etc/httpd/conf/httpd.conf)
+        *   [1.3.2 ¿SSL o no SSL?](#¿SSL_o_no_SSL?)
+        *   [1.3.3 Crear /home/svn/.svn-policy-file](#Crear_/home/svn/.svn-policy-file)
+        *   [1.3.4 Crear /home/svn/.svn-auth-file](#Crear_/home/svn/.svn-auth-file)
         *   [1.3.5 Crear un repositorio](#Crear_un_repositorio)
         *   [1.3.6 Establecer permisos](#Establecer_permisos)
     *   [1.4 Crear un proyecto](#Crear_un_proyecto)
@@ -25,12 +25,12 @@ Este artículo trata sobre la configuración de un servidor svn en su máquina. 
 *   [2 Configurar Svnserve](#Configurar_Svnserve)
     *   [2.1 Instalar el paquete](#Instalar_el_paquete)
     *   [2.2 Crear un repositorio](#Crear_un_repositorio_2)
-    *   [2.3 Establecer políticas de acceso](#Establecer_pol.C3.ADticas_de_acceso)
+    *   [2.3 Establecer políticas de acceso](#Establecer_políticas_de_acceso)
     *   [2.4 Iniciar el demonio del servidor](#Iniciar_el_demonio_del_servidor)
-    *   [2.5 svn+ssh](#svn.2Bssh)
-*   [3 Copia de seguridad y restauración de Subversion](#Copia_de_seguridad_y_restauraci.C3.B3n_de_Subversion)
+    *   [2.5 svn+ssh](#svn+ssh)
+*   [3 Copia de seguridad y restauración de Subversion](#Copia_de_seguridad_y_restauración_de_Subversion)
 *   [4 Clientes Subversion](#Clientes_Subversion)
-*   [5 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [5 Véase también](#Véase_también)
 
 ## Configuración de Apache Subversion
 

@@ -19,8 +19,8 @@ A [interface RPC do Aurweb](https://aur.archlinux.org/rpc.php) é uma interface 
         *   [1.2.2 search](#search_2)
         *   [1.2.3 info](#info_2)
     *   [1.3 jsonp](#jsonp)
-*   [2 Limitações](#Limita.C3.A7.C3.B5es)
-*   [3 Clientes de referência](#Clientes_de_refer.C3.AAncia)
+*   [2 Limitações](#Limitações)
+*   [3 Clientes de referência](#Clientes_de_referência)
 
 ## Uso da API
 

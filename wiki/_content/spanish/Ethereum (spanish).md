@@ -7,7 +7,7 @@ El [Proyecto Ethereum](https://ethereum.org/) proporciona una plataforma de cód
 
 *   [1 Clientes](#Clientes)
     *   [1.1 Go Ethereum](#Go_Ethereum)
-        *   [1.1.1 Minería GPU con geth](#Miner.C3.ADa_GPU_con_geth)
+        *   [1.1.1 Minería GPU con geth](#Minería_GPU_con_geth)
     *   [1.2 Ethereum Wallet](#Ethereum_Wallet)
 
 ## Clientes

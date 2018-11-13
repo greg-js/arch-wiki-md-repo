@@ -17,45 +17,45 @@ De [http://www.x.org/wiki/](http://www.x.org/wiki/):
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-    *   [1.1 Instalación del controlador](#Instalaci.C3.B3n_del_controlador)
-*   [2 Ejecución](#Ejecuci.C3.B3n)
-*   [3 Configuración](#Configuraci.C3.B3n)
+*   [1 Instalación](#Instalación)
+    *   [1.1 Instalación del controlador](#Instalación_del_controlador)
+*   [2 Ejecución](#Ejecución)
+*   [3 Configuración](#Configuración)
     *   [3.1 Usar archivos .conf](#Usar_archivos_.conf)
     *   [3.2 Usar xorg.conf](#Usar_xorg.conf)
     *   [3.3 Configuraciones de muestra](#Configuraciones_de_muestra)
 *   [4 Los dispositivos de entrada](#Los_dispositivos_de_entrada)
-    *   [4.1 Aceleración del ratón](#Aceleraci.C3.B3n_del_rat.C3.B3n)
-    *   [4.2 Botones extras del ratón](#Botones_extras_del_rat.C3.B3n)
+    *   [4.1 Aceleración del ratón](#Aceleración_del_ratón)
+    *   [4.2 Botones extras del ratón](#Botones_extras_del_ratón)
     *   [4.3 Touchpad Synaptics](#Touchpad_Synaptics)
-    *   [4.4 Configuración del teclado](#Configuraci.C3.B3n_del_teclado)
+    *   [4.4 Configuración del teclado](#Configuración_del_teclado)
 *   [5 Configuraciones del monitor](#Configuraciones_del_monitor)
     *   [5.1 Primeros pasos](#Primeros_pasos)
-    *   [5.2 Múltiples monitores](#M.C3.BAltiples_monitores)
-        *   [5.2.1 Más de una tarjeta gráfica](#M.C3.A1s_de_una_tarjeta_gr.C3.A1fica)
-    *   [5.3 Tamaño de la pantalla y DPI](#Tama.C3.B1o_de_la_pantalla_y_DPI)
-        *   [5.3.1 Configuración manual de DPI](#Configuraci.C3.B3n_manual_de_DPI)
+    *   [5.2 Múltiples monitores](#Múltiples_monitores)
+        *   [5.2.1 Más de una tarjeta gráfica](#Más_de_una_tarjeta_gráfica)
+    *   [5.3 Tamaño de la pantalla y DPI](#Tamaño_de_la_pantalla_y_DPI)
+        *   [5.3.1 Configuración manual de DPI](#Configuración_manual_de_DPI)
     *   [5.4 DPMS](#DPMS)
 *   [6 Composite](#Composite)
 *   [7 Consejos y trucos](#Consejos_y_trucos)
-    *   [7.1 Ajustar el arranque de X (startx)](#Ajustar_el_arranque_de_X_.28startx.29)
-    *   [7.2 Sesión anidada de X](#Sesi.C3.B3n_anidada_de_X)
-    *   [7.3 Iniciar programas GUI remótamente](#Iniciar_programas_GUI_rem.C3.B3tamente)
+    *   [7.1 Ajustar el arranque de X (startx)](#Ajustar_el_arranque_de_X_(startx))
+    *   [7.2 Sesión anidada de X](#Sesión_anidada_de_X)
+    *   [7.3 Iniciar programas GUI remótamente](#Iniciar_programas_GUI_remótamente)
     *   [7.4 Activar y desactivar bajo demanda las fuentes de entrada](#Activar_y_desactivar_bajo_demanda_las_fuentes_de_entrada)
-*   [8 Solución de problemas](#Soluci.C3.B3n_de_problemas)
-    *   [8.1 Problemas más comunes](#Problemas_m.C3.A1s_comunes)
-    *   [8.2 Tecla CTRL derecha no funciona con la distribución del teclado oss](#Tecla_CTRL_derecha_no_funciona_con_la_distribuci.C3.B3n_del_teclado_oss)
-    *   [8.3 Erro iniciando el cliente X con "su"](#Erro_iniciando_el_cliente_X_con_.22su.22)
-    *   [8.4 Programas que requieren "font '(null)'"](#Programas_que_requieren_.22font_.27.28null.29.27.22)
+*   [8 Solución de problemas](#Solución_de_problemas)
+    *   [8.1 Problemas más comunes](#Problemas_más_comunes)
+    *   [8.2 Tecla CTRL derecha no funciona con la distribución del teclado oss](#Tecla_CTRL_derecha_no_funciona_con_la_distribución_del_teclado_oss)
+    *   [8.3 Erro iniciando el cliente X con "su"](#Erro_iniciando_el_cliente_X_con_"su")
+    *   [8.4 Programas que requieren "font '(null)'"](#Programas_que_requieren_"font_'(null)'")
     *   [8.5 Problemas con el modo Frame-buffer](#Problemas_con_el_modo_Frame-buffer)
     *   [8.6 DRI deja de funcionar con tarjetas Matrox](#DRI_deja_de_funcionar_con_tarjetas_Matrox)
-    *   [8.7 Recuperación: deshabilitar Xorg antes de la pantalla de inicio de sesión](#Recuperaci.C3.B3n:_deshabilitar_Xorg_antes_de_la_pantalla_de_inicio_de_sesi.C3.B3n)
-    *   [8.8 Error de X al iniciar: inicialización del teclado fallido](#Error_de_X_al_iniciar:_inicializaci.C3.B3n_del_teclado_fallido)
-    *   [8.9 Pantalla en negro, Sin protocolo especificado..., recursos temporalmente no disponibles para todos o algunos usuarios](#Pantalla_en_negro.2C_Sin_protocolo_especificado....2C_recursos_temporalmente_no_disponibles_para_todos_o_algunos_usuarios)
+    *   [8.7 Recuperación: deshabilitar Xorg antes de la pantalla de inicio de sesión](#Recuperación:_deshabilitar_Xorg_antes_de_la_pantalla_de_inicio_de_sesión)
+    *   [8.8 Error de X al iniciar: inicialización del teclado fallido](#Error_de_X_al_iniciar:_inicialización_del_teclado_fallido)
+    *   [8.9 Pantalla en negro, Sin protocolo especificado..., recursos temporalmente no disponibles para todos o algunos usuarios](#Pantalla_en_negro,_Sin_protocolo_especificado...,_recursos_temporalmente_no_disponibles_para_todos_o_algunos_usuarios)
 
 ## Instalación
 
-En primer lugar, tendrá que [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el servidor X con el paquete [xorg-server](https://www.archlinux.org/packages/?name=xorg-server), disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
+En primer lugar, tendrá que [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") el servidor X con el paquete [xorg-server](https://www.archlinux.org/packages/?name=xorg-server), disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 Por otro lado, algunos paquetes del grupo [xorg-apps](https://www.archlinux.org/groups/x86_64/xorg-apps/) pueden ser útiles para realizar ciertas tareas de configuración, las cuales se señalan en la sección/página correspondiente.
 
@@ -104,7 +104,7 @@ Xorg debería funcionar sin problemas y sin necesidad de controladores privativo
 
 **Sugerencia:** La forma más fácil de arrancar X es usando un [gestor de pantalla](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)") como [GDM](/index.php/GDM "GDM") o [SLiM](/index.php/SLiM "SLiM").
 
-Si desea arrancar X sin un gestor de pantalla, [instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [xorg-xinit](https://www.archlinux.org/packages/?name=xorg-xinit). Opcionalmente, los paquetes [xorg-twm](https://www.archlinux.org/packages/?name=xorg-twm), [xorg-xclock](https://www.archlinux.org/packages/?name=xorg-xclock) y [xterm](https://www.archlinux.org/packages/?name=xterm) permiten un entorno por defecto, como se describe a continuación.
+Si desea arrancar X sin un gestor de pantalla, [instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") el paquete [xorg-xinit](https://www.archlinux.org/packages/?name=xorg-xinit). Opcionalmente, los paquetes [xorg-twm](https://www.archlinux.org/packages/?name=xorg-twm), [xorg-xclock](https://www.archlinux.org/packages/?name=xorg-xclock) y [xterm](https://www.archlinux.org/packages/?name=xterm) permiten un entorno por defecto, como se describe a continuación.
 
 Los comandos `startx` y `xinit` inician el servidor X y los clientes (el script `startx` es simplemente un front-end para hacer más versátil la orden `xinit`). Para determinar el cliente a ejecutar, `startx`/`xinit` se dirigirán primero a analizar el archivo `~/.xinitrc` en el directorio home del usuario. En ausencia del archivo específico del usuario `~/.xinitrc`, el valor predeterminado en el archivo global del sistema `/etc/X11/xinit/xinitrc`, será iniciar, por defecto, un entorno básico con el gestor de ventanas [Twm](/index.php/Twm "Twm") , [Xclock](https://en.wikipedia.org/wiki/Xclock "wikipedia:Xclock") y [Xterm](/index.php/Xterm "Xterm"). Para obtener más información, consulte [xinitrc](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)").
 
@@ -221,8 +221,8 @@ Véase el artículo principal main article [Multihead](/index.php/Multihead "Mul
 Véanse también las instruccines específicas para su GPU:
 
 *   [NVIDIA (Español)#Varios monitores](/index.php/NVIDIA_(Espa%C3%B1ol)#Varios_monitores "NVIDIA (Español)")
-*   [Nouveau (Español)#Dual Head](/index.php/Nouveau_(Espa%C3%B1ol)#Dual_Head "Nouveau (Español)")* [ATI Catalyst (Español)#Doble Pantalla (Dual Head / Dual Screen / Xinerama)](/index.php/ATI_Catalyst_(Espa%C3%B1ol)#Doble_Pantalla_.28Dual_Head_.2F_Dual_Screen_.2F_Xinerama.29 "ATI Catalyst (Español)")
-*   [ATI (Español)#Configuración Dual Head](/index.php/ATI_(Espa%C3%B1ol)#Configuraci.C3.B3n_Dual_Head "ATI (Español)")
+*   [Nouveau (Español)#Dual Head](/index.php/Nouveau_(Espa%C3%B1ol)#Dual_Head "Nouveau (Español)")* [ATI Catalyst (Español)#Doble Pantalla (Dual Head / Dual Screen / Xinerama)](/index.php/ATI_Catalyst_(Espa%C3%B1ol)#Doble_Pantalla_(Dual_Head_/_Dual_Screen_/_Xinerama) "ATI Catalyst (Español)")
+*   [ATI (Español)#Configuración Dual Head](/index.php/ATI_(Espa%C3%B1ol)#Configuración_Dual_Head "ATI (Español)")
 
 #### Más de una tarjeta gráfica
 
@@ -385,7 +385,7 @@ $ /usr/bin/Xnest :1 -geometry 1024x768+0+0 -ac -name Windowmaker & wmaker -disp
 
 Esto iniciará una sesión de Window Maker en una ventana con una resolución de 1024 por 768 dentro de su sesión X actual.
 
-Esto requiere tener [instalado](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [xorg-server-xnest](https://www.archlinux.org/packages/?name=xorg-server-xnest).
+Esto requiere tener [instalado](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") el paquete [xorg-server-xnest](https://www.archlinux.org/packages/?name=xorg-server-xnest).
 
 ### Iniciar programas GUI remótamente
 
@@ -395,7 +395,7 @@ Véase la página principal: [SSH#X11 forwarding](/index.php/SSH#X11_forwarding 
 
 Con la ayuda de `xinput` podemos activar o desactivar temporalmente las fuentes de entrada. Esto puede ser útil, por ejemplo, en sistemas que tienen más de un ratón, como los ThinkPads, y preferimos usar uno solo para evitar clics no deseados del ratón. Vamos a ver cómo lograr esto.
 
-[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") el paquete [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 Busque el ID del dispositivo que deseamos desactivar: `xinput` 
 

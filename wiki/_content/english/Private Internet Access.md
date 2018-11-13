@@ -15,10 +15,10 @@
     *   [2.2 Official Linux client](#Official_Linux_client)
     *   [2.3 Packages](#Packages)
 *   [3 Tips and tricks](#Tips_and_tricks)
-    *   [3.1 Internet "kill switch"](#Internet_.22kill_switch.22)
+    *   [3.1 Internet "kill switch"](#Internet_"kill_switch")
     *   [3.2 Setting PIA DNS](#Setting_PIA_DNS)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 I can't connect to OpenVPN using PIA manager, or OpenVPN doesn't work](#I_can.27t_connect_to_OpenVPN_using_PIA_manager.2C_or_OpenVPN_doesn.27t_work)
+    *   [4.1 I can't connect to OpenVPN using PIA manager, or OpenVPN doesn't work](#I_can't_connect_to_OpenVPN_using_PIA_manager,_or_OpenVPN_doesn't_work)
 
 ## Manual
 

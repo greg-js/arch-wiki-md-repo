@@ -5,7 +5,7 @@ Alternativamente, si puù usare ABS per compilare ed installare il proprio kerne
 ## Contents
 
 *   [1 Recupero dei sorgenti](#Recupero_dei_sorgenti)
-    *   [1.1 Riguardo /usr/src/](#Riguardo_.2Fusr.2Fsrc.2F)
+    *   [1.1 Riguardo /usr/src/](#Riguardo_/usr/src/)
 *   [2 Configurazione](#Configurazione)
     *   [2.1 Ottenere un file .config](#Ottenere_un_file_.config)
     *   [2.2 Configurare il proprio kernel](#Configurare_il_proprio_kernel)
@@ -13,7 +13,7 @@ Alternativamente, si puù usare ABS per compilare ed installare il proprio kerne
 *   [3 Compilazione ed installazione](#Compilazione_ed_installazione)
     *   [3.1 Compilare](#Compilare)
     *   [3.2 Installare i moduli](#Installare_i_moduli)
-    *   [3.3 Copiare il kernel nella cartella /boot](#Copiare_il_kernel_nella_cartella_.2Fboot)
+    *   [3.3 Copiare il kernel nella cartella /boot](#Copiare_il_kernel_nella_cartella_/boot)
     *   [3.4 Creare un initial RAM disk](#Creare_un_initial_RAM_disk)
     *   [3.5 Copiare System.map](#Copiare_System.map)
 *   [4 Configurazione del bootloader](#Configurazione_del_bootloader)

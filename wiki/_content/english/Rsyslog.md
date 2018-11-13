@@ -11,7 +11,7 @@ Related articles
     *   [1.2 Configure Hostname](#Configure_Hostname)
 *   [2 Configuration](#Configuration)
     *   [2.1 imjournal](#imjournal)
-    *   [2.2 journald's syslog-forward feature](#journald.27s_syslog-forward_feature)
+    *   [2.2 journald's syslog-forward feature](#journald's_syslog-forward_feature)
     *   [2.3 References](#References)
 *   [3 Facility Levels](#Facility_Levels)
 *   [4 Security Levels](#Security_Levels)

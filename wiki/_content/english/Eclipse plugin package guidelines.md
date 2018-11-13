@@ -17,7 +17,7 @@ There are many ways to install working [Eclipse](/index.php/Eclipse "Eclipse") p
         *   [2.3.2 Files](#Files)
             *   [2.3.2.1 Extraction](#Extraction)
             *   [2.3.2.2 Locations](#Locations)
-        *   [2.3.3 The build() function](#The_build.28.29_function)
+        *   [2.3.3 The build() function](#The_build()_function)
 *   [3 Troubleshooting](#Troubleshooting)
 
 ## Eclipse plugin structure and installation

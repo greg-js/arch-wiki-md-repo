@@ -12,42 +12,42 @@ Si tiene dudas sobre cuál elegir, pruebe primero el controlador de código abie
 ## Contents
 
 *   [1 Convenciones sobre nombres](#Convenciones_sobre_nombres)
-*   [2 Descripción](#Descripci.C3.B3n)
-*   [3 Instalación](#Instalaci.C3.B3n)
-*   [4 Configuración](#Configuraci.C3.B3n)
-*   [5 Kernel mode-setting (KMS)](#Kernel_mode-setting_.28KMS.29)
+*   [2 Descripción](#Descripción)
+*   [3 Instalación](#Instalación)
+*   [4 Configuración](#Configuración)
+*   [5 Kernel mode-setting (KMS)](#Kernel_mode-setting_(KMS))
     *   [5.1 Inicio temprano de KMS](#Inicio_temprano_de_KMS)
-    *   [5.2 Inicio tardío](#Inicio_tard.C3.ADo)
+    *   [5.2 Inicio tardío](#Inicio_tardío)
 *   [6 Optimizar prestaciones](#Optimizar_prestaciones)
     *   [6.1 Desactivar PCI-E 2.0](#Desactivar_PCI-E_2.0)
     *   [6.2 Glamor](#Glamor)
-*   [7 Tarjetas gráficas intercambiables Hybrid graphics/AMD Dynamic](#Tarjetas_gr.C3.A1ficas_intercambiables_Hybrid_graphics.2FAMD_Dynamic)
-*   [8 Gestionar el ahorro de energía (Powersaving)](#Gestionar_el_ahorro_de_energ.C3.ADa_.28Powersaving.29)
-    *   [8.1 Métodos antiguos](#M.C3.A9todos_antiguos)
-        *   [8.1.1 Variación dinámica de la frecuencia](#Variaci.C3.B3n_din.C3.A1mica_de_la_frecuencia)
-        *   [8.1.2 Variación de la frecuencia, basada en perfiles](#Variaci.C3.B3n_de_la_frecuencia.2C_basada_en_perfiles)
-        *   [8.1.3 Configuración permanente](#Configuraci.C3.B3n_permanente)
-        *   [8.1.4 Herramientas gráficas](#Herramientas_gr.C3.A1ficas)
+*   [7 Tarjetas gráficas intercambiables Hybrid graphics/AMD Dynamic](#Tarjetas_gráficas_intercambiables_Hybrid_graphics/AMD_Dynamic)
+*   [8 Gestionar el ahorro de energía (Powersaving)](#Gestionar_el_ahorro_de_energía_(Powersaving))
+    *   [8.1 Métodos antiguos](#Métodos_antiguos)
+        *   [8.1.1 Variación dinámica de la frecuencia](#Variación_dinámica_de_la_frecuencia)
+        *   [8.1.2 Variación de la frecuencia, basada en perfiles](#Variación_de_la_frecuencia,_basada_en_perfiles)
+        *   [8.1.3 Configuración permanente](#Configuración_permanente)
+        *   [8.1.4 Herramientas gráficas](#Herramientas_gráficas)
         *   [8.1.5 Otras notas](#Otras_notas)
-    *   [8.2 Gestión dinámica de la energía](#Gesti.C3.B3n_din.C3.A1mica_de_la_energ.C3.ADa)
+    *   [8.2 Gestión dinámica de la energía](#Gestión_dinámica_de_la_energía)
 *   [9 Salida de TV](#Salida_de_TV)
     *   [9.1 Forzar la salida de TV con KMS](#Forzar_la_salida_de_TV_con_KMS)
 *   [10 Audio por HDMI](#Audio_por_HDMI)
-*   [11 Configuración Dual Head](#Configuraci.C3.B3n_Dual_Head)
+*   [11 Configuración Dual Head](#Configuración_Dual_Head)
     *   [11.1 Pantallas X independientes](#Pantallas_X_independientes)
-*   [12 Activar la aceleración de vídeo](#Activar_la_aceleraci.C3.B3n_de_v.C3.ADdeo)
+*   [12 Activar la aceleración de vídeo](#Activar_la_aceleración_de_vídeo)
 *   [13 Cambiar vsync a off](#Cambiar_vsync_a_off)
-*   [14 Solución de problemas](#Soluci.C3.B3n_de_problemas)
-    *   [14.1 Fallos al iniciar sesión en el DE o WM](#Fallos_al_iniciar_sesi.C3.B3n_en_el_DE_o_WM)
-    *   [14.2 Añadir resoluciones no detectadas](#A.C3.B1adir_resoluciones_no_detectadas)
-    *   [14.3 AGP está desactivado (con KMS)](#AGP_est.C3.A1_desactivado_.28con_KMS.29)
+*   [14 Solución de problemas](#Solución_de_problemas)
+    *   [14.1 Fallos al iniciar sesión en el DE o WM](#Fallos_al_iniciar_sesión_en_el_DE_o_WM)
+    *   [14.2 Añadir resoluciones no detectadas](#Añadir_resoluciones_no_detectadas)
+    *   [14.3 AGP está desactivado (con KMS)](#AGP_está_desactivado_(con_KMS))
     *   [14.4 TV mostrando un borde negro alrededor de la pantalla](#TV_mostrando_un_borde_negro_alrededor_de_la_pantalla)
-    *   [14.5 Pantalla en negro mostrando el cursor del ratón en X al reanudar desde la suspensión](#Pantalla_en_negro_mostrando_el_cursor_del_rat.C3.B3n_en_X_al_reanudar_desde_la_suspensi.C3.B3n)
+    *   [14.5 Pantalla en negro mostrando el cursor del ratón en X al reanudar desde la suspensión](#Pantalla_en_negro_mostrando_el_cursor_del_ratón_en_X_al_reanudar_desde_la_suspensión)
     *   [14.6 Sin efectos de escritorio de KDE4 con X1300 y el controlador Radeon](#Sin_efectos_de_escritorio_de_KDE4_con_X1300_y_el_controlador_Radeon)
-    *   [14.7 Pantalla negra y sin consola visualizada, pero X funcionando en KMS](#Pantalla_negra_y_sin_consola_visualizada.2C_pero_X_funcionando_en_KMS)
+    *   [14.7 Pantalla negra y sin consola visualizada, pero X funcionando en KMS](#Pantalla_negra_y_sin_consola_visualizada,_pero_X_funcionando_en_KMS)
     *   [14.8 Algunas aplicaciones 3D fallan o muestran texturas completamente negras](#Algunas_aplicaciones_3D_fallan_o_muestran_texturas_completamente_negras)
-    *   [14.9 Prestaciones 2D (por ejemplo, el desplazamiento) lentas](#Prestaciones_2D_.28por_ejemplo.2C_el_desplazamiento.29_lentas)
-    *   [14.10 ATI X1600 (series RV530) con aplicaciones 3D muestra ventanas negras](#ATI_X1600_.28series_RV530.29_con_aplicaciones_3D_muestra_ventanas_negras)
+    *   [14.9 Prestaciones 2D (por ejemplo, el desplazamiento) lentas](#Prestaciones_2D_(por_ejemplo,_el_desplazamiento)_lentas)
+    *   [14.10 ATI X1600 (series RV530) con aplicaciones 3D muestra ventanas negras](#ATI_X1600_(series_RV530)_con_aplicaciones_3D_muestra_ventanas_negras)
 
 ## Convenciones sobre nombres
 
@@ -71,7 +71,7 @@ Generalmente, **xf86-video-ati** debe ser su primera opción, independientemente
 
 ## Instalación
 
-**Nota:** Si Catalyst/`fglrx` ha sido instalado previamente, véase [ATI Catalyst (Español)#Desinstalación](/index.php/ATI_Catalyst_(Espa%C3%B1ol)#Desinstalaci.C3.B3n "ATI Catalyst (Español)").
+**Nota:** Si Catalyst/`fglrx` ha sido instalado previamente, véase [ATI Catalyst (Español)#Desinstalación](/index.php/ATI_Catalyst_(Espa%C3%B1ol)#Desinstalación "ATI Catalyst (Español)").
 
 [Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati), disponible en los [Repositorios Oficiales](/index.php/Repositorios_Oficiales "Repositorios Oficiales").
 
@@ -237,9 +237,9 @@ Con el controlador radeon, el ahorro de energía está desactivado por defecto y
 
 Se puede elegir entre tres métodos diferentes:
 
-1.  [dynpm](#Variaci.C3.B3n_din.C3.A1mica_de_la_frecuencia)
-2.  [profile](#Variaci.C3.B3n_de_la_frecuencia.2C_basada_en_perfiles)
-3.  [dpm](#Gesti.C3.B3n_din.C3.A1mica_de_la_energ.C3.ADa) (disponible desde el kernel 3.11)
+1.  [dynpm](#Variación_dinámica_de_la_frecuencia)
+2.  [profile](#Variación_de_la_frecuencia,_basada_en_perfiles)
+3.  [dpm](#Gestión_dinámica_de_la_energía) (disponible desde el kernel 3.11)
 
 **Es difícil decir cuál es el mejor en general, así que se tiene que decidir por cada cual.**
 
@@ -288,7 +288,7 @@ Así, por ejemplo, digamos que queremos activar el perfil `low` (sustituya `low`
 
 #### Configuración permanente
 
-La activación que se ha descrito anteriormente no es persistente, esto es, no va a durar después de reiniciar el equipo. Para que permanezca, puede utilizar [systemd-tmpfiles](/index.php/Systemd#Temporary_files "Systemd") (ejemplo para [#Variación dinámica de la frecuencia](#Variaci.C3.B3n_din.C3.A1mica_de_la_frecuencia)):
+La activación que se ha descrito anteriormente no es persistente, esto es, no va a durar después de reiniciar el equipo. Para que permanezca, puede utilizar [systemd-tmpfiles](/index.php/Systemd#Temporary_files "Systemd") (ejemplo para [#Variación dinámica de la frecuencia](#Variación_dinámica_de_la_frecuencia)):
 
  `/etc/tmpfiles.d/radeon-pm.conf` 
 ```
@@ -296,7 +296,7 @@ w /sys/class/drm/card0/device/power_method - - - - dynpm
 
 ```
 
-Como alternativa, puede usar esta regla [udev](/index.php/Udev "Udev") en su lugar (ejemplo para [#Variación de la frecuencia, basada en perfiles](#Variaci.C3.B3n_de_la_frecuencia.2C_basada_en_perfiles)):
+Como alternativa, puede usar esta regla [udev](/index.php/Udev "Udev") en su lugar (ejemplo para [#Variación de la frecuencia, basada en perfiles](#Variación_de_la_frecuencia,_basada_en_perfiles)):
 
  `/etc/udev/rules.d/30-radeon-pm.rules` 
 ```
@@ -341,7 +341,7 @@ Los sensores térmicos se realizan a través de los chips i2c externos o a trav�
 
 Con el kernel 3.11, ASPM está activado por defecto, pero DPM no. Para activarlo, agregue el parámetro `radeon.dpm=1` en los [parámetros del kernel](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)").
 
-A diferencia de [dynpm](#Variaci.C3.B3n_din.C3.A1mica_de_la_frecuencia), el método «dpm» utiliza el hardware de la GPU para cambiar dinámicamente los relojes y el voltaje según la carga de la GPU.
+A diferencia de [dynpm](#Variación_dinámica_de_la_frecuencia), el método «dpm» utiliza el hardware de la GPU para cambiar dinámicamente los relojes y el voltaje según la carga de la GPU.
 
 Hay 3 modos de funcionamiento para elegir:
 
@@ -493,7 +493,7 @@ Si el audio HDMI no funciona después de instalar el controlador, compruebe la c
 **Nota:** Al escribir estas líneas (2013-05-20), los controladores de las tarjetas [Southern Islands](http://www.x.org/wiki/RadeonFeature#Decoder_ring_for_engineering_vs_marketing_names) no son compatibles con el audio HDMI.
 
 *   El módulo del kernel `radeon.audio` solo funciona si [KMS](#Kernel_mode-setting_.28KMS.29) está activado. Por defecto, **xf86-video-ati** permite KMS.
-*   Si el sonido se distorsiona pruebe [ajustando `tsched=0`](/index.php/PulseAudio#Glitches.2C_skips_or_crackling "PulseAudio") y asegúrese que el demonio `rtkit` está ejecutándose.
+*   Si el sonido se distorsiona pruebe [ajustando `tsched=0`](/index.php/PulseAudio#Glitches,_skips_or_crackling "PulseAudio") y asegúrese que el demonio `rtkit` está ejecutándose.
 
 ## Configuración Dual Head
 
@@ -556,7 +556,7 @@ Si encuentra fallos gráficos cuando efectúa el login en su Entorno de Escritor
 
 Con el fin de funcionar sin un archivo de configuración, se recomienda que el grupo de paquetes `xorg-input-drivers` esté instalado.
 
-Los fallos también pueden estar relacionados con el [Kernel Mode Setting](/index.php/Kernel_mode_setting_(Espa%C3%B1ol) "Kernel mode setting (Español)"). Considere la posibilidad de [deshabilitar KMS](#Kernel_mode-setting_.28KMS.29).
+Los fallos también pueden estar relacionados con el [Kernel Mode Setting](/index.php/Kernel_mode_setting_(Espa%C3%B1ol) "Kernel mode setting (Español)"). Considere la posibilidad de [deshabilitar KMS](#Kernel_mode-setting_(KMS)).
 
 Se puede también intentar desactivar la opción `EXAPixmaps` en el archivo `/etc/X11/xorg.conf.d/20-radeon.conf`:
 
@@ -591,7 +591,7 @@ Si experimenta un rendimiento deficiente y dmesg muestra algo como esto
 
 ```
 
-compruebe si el controlador AGP de la placa base (por ejemplo, `via_agp`, `intel_agp`, etc.) se carga antes que el módulo `radeon`. Consulte [activación de KMS](#Kernel_mode-setting_.28KMS.29).
+compruebe si el controlador AGP de la placa base (por ejemplo, `via_agp`, `intel_agp`, etc.) se carga antes que el módulo `radeon`. Consulte [activación de KMS](#Kernel_mode-setting_(KMS)).
 
 ### TV mostrando un borde negro alrededor de la pantalla
 

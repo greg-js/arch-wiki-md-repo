@@ -16,12 +16,12 @@ Um servidor de e-mail consiste em vários componentes. Um [agente de transferên
 ## Contents
 
 *   [1 Software](#Software)
-    *   [1.1 Servidores POP3/IMAP](#Servidores_POP3.2FIMAP)
-    *   [1.2 MDAs autônomos](#MDAs_aut.C3.B4nomos)
+    *   [1.1 Servidores POP3/IMAP](#Servidores_POP3/IMAP)
+    *   [1.2 MDAs autônomos](#MDAs_autônomos)
 *   [2 Portas](#Portas)
 *   [3 Registro MX](#Registro_MX)
 *   [4 TLS](#TLS)
-*   [5 Autenticação](#Autentica.C3.A7.C3.A3o)
+*   [5 Autenticação](#Autenticação)
     *   [5.1 Sender Policy Framework](#Sender_Policy_Framework)
     *   [5.2 Sender Rewriting Scheme](#Sender_Rewriting_Scheme)
     *   [5.3 DKIM](#DKIM)

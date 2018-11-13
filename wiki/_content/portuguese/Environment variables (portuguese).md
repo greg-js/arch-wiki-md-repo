@@ -8,16 +8,16 @@ Uma variável de ambiente é um objeto nomeado que contém dados usados por um o
 
 ## Contents
 
-*   [1 Utilitários](#Utilit.C3.A1rios)
-*   [2 Definindo variáveis](#Definindo_vari.C3.A1veis)
+*   [1 Utilitários](#Utilitários)
+*   [2 Definindo variáveis](#Definindo_variáveis)
     *   [2.1 Globalmente](#Globalmente)
-    *   [2.2 Por usuário](#Por_usu.C3.A1rio)
-        *   [2.2.1 Aplicativos gráficos](#Aplicativos_gr.C3.A1ficos)
-    *   [2.3 Por sessão](#Por_sess.C3.A3o)
+    *   [2.2 Por usuário](#Por_usuário)
+        *   [2.2.1 Aplicativos gráficos](#Aplicativos_gráficos)
+    *   [2.3 Por sessão](#Por_sessão)
 *   [3 Exemplos](#Exemplos)
-    *   [3.1 Programas padrão](#Programas_padr.C3.A3o)
+    *   [3.1 Programas padrão](#Programas_padrão)
     *   [3.2 Usando pam_env](#Usando_pam_env)
-*   [4 Veja também](#Veja_tamb.C3.A9m)
+*   [4 Veja também](#Veja_também)
 
 ## Utilitários
 
@@ -52,7 +52,7 @@ Os seguintes arquivos devem ser usados para definir variáveis de ambiente globa
 
 *   `/etc/environment` é usado pelo módulo pam_env e é agnóstico do shell, portanto script ou expansão glob não podem ser usados. O arquivo aceita apenas pares `*variável=valor*`. Veja [pam_env(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.8) e [pam_env.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.conf.5) para detalhes.
 
-*   Arquivos de configuração globais de seu [shell](/index.php/Shell_de_linha_de_comando "Shell de linha de comando"), inicializa variáveis e executa scripts. Por exemplo, [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash") ou [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup.2FShutdown_files "Zsh").
+*   Arquivos de configuração globais de seu [shell](/index.php/Shell_de_linha_de_comando "Shell de linha de comando"), inicializa variáveis e executa scripts. Por exemplo, [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash") ou [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup/Shutdown_files "Zsh").
 *   `/etc/profile` inicializa variáveis para shells de login *apenas*. Ele, porém, executa scripts e pode ser usado por todos os shells compatíveis com [Bourne shell](https://en.wikipedia.org/wiki/Bourne_shell "wikipedia:Bourne shell").
 
 Neste exemplo, adicionamos o diretório `~/bin` ao `PATH` para o respectivo usuário. Para fazer isso, basta colocar isso em seu arquivo de configuração global de variável de ambiente (`/etc/profile` ou `/etc/bash.bashrc`):
@@ -74,7 +74,7 @@ fi
 Nem sempre você deseja definir uma variável de ambiente globalmente. Por exemplo, você pode querer adicionar `/home/meu_usuário/bin` à variável `PATH`, mas não deseja que todos os outros usuários em seu sistema tenham isso em seus `PATH` também. Variáveis de ambiente locais pode ser definidos em muitos arquivos diferentes:
 
 *   `~/.pam_environment` é o equivalente específico de usuário de `/etc/security/pam_env.conf` [[1]](https://github.com/linux-pam/linux-pam/issues/6), usado pelo módulo pam_env. Veja [pam_env(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.8) e [pam_env.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.conf.5) para detalhes.
-*   Arquivos de configuração de usuário de seu [shell](/index.php/Shell_de_linha_de_comando "Shell de linha de comando"), por exemplo [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash") ou [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup.2FShutdown_files "Zsh").
+*   Arquivos de configuração de usuário de seu [shell](/index.php/Shell_de_linha_de_comando "Shell de linha de comando"), por exemplo [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash") ou [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup/Shutdown_files "Zsh").
 *   `~/.profile` é usado por muitos shells como reserva, veja [Wikipedia:pt:Shell do Unix#Arquivos de configuração](https://en.wikipedia.org/wiki/pt:Shell_do_Unix#Arquivos_de_configura.C3.A7.C3.A3o "wikipedia:pt:Shell do Unix").
 *   [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") vai carregar variáveis de ambiente de `~/.config/environment.d/*.conf` veja [environment.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/environment.d.5) e [https://wiki.gnome.org/Initiatives/Wayland/SessionStart](https://wiki.gnome.org/Initiatives/Wayland/SessionStart).
 

@@ -9,19 +9,19 @@
 ## Contents
 
 *   [1 Nota importante](#Nota_importante)
-*   [2 Compatibilidade de versão](#Compatibilidade_de_vers.C3.A3o)
+*   [2 Compatibilidade de versão](#Compatibilidade_de_versão)
 *   [3 Compilando um compilador cruzado](#Compilando_um_compilador_cruzado)
 *   [4 Nomenclatura de pacote](#Nomenclatura_de_pacote)
-*   [5 Colocação de arquivos](#Coloca.C3.A7.C3.A3o_de_arquivos)
+*   [5 Colocação de arquivos](#Colocação_de_arquivos)
 *   [6 Exemplo](#Exemplo)
 *   [7 Comos e por ques](#Comos_e_por_ques)
-    *   [7.1 Por que não instalar em /opt?](#Por_que_n.C3.A3o_instalar_em_.2Fopt.3F)
-    *   [7.2 O que é o negócio de *out-of-path executables*?](#O_que_.C3.A9_o_neg.C3.B3cio_de_out-of-path_executables.3F)
-*   [8 Solução de problemas](#Solu.C3.A7.C3.A3o_de_problemas)
-    *   [8.1 O que fazer se a compilação falhar sem uma mensagem clara?](#O_que_fazer_se_a_compila.C3.A7.C3.A3o_falhar_sem_uma_mensagem_clara.3F)
-    *   [8.2 O que esse erro [error message] significa?](#O_que_esse_erro_.5Berror_message.5D_significa.3F)
-    *   [8.3 Por que os arquivos são instalados em lugares errados?](#Por_que_os_arquivos_s.C3.A3o_instalados_em_lugares_errados.3F)
-*   [9 Veja também](#Veja_tamb.C3.A9m)
+    *   [7.1 Por que não instalar em /opt?](#Por_que_não_instalar_em_/opt?)
+    *   [7.2 O que é o negócio de *out-of-path executables*?](#O_que_é_o_negócio_de_out-of-path_executables?)
+*   [8 Solução de problemas](#Solução_de_problemas)
+    *   [8.1 O que fazer se a compilação falhar sem uma mensagem clara?](#O_que_fazer_se_a_compilação_falhar_sem_uma_mensagem_clara?)
+    *   [8.2 O que esse erro [error message] significa?](#O_que_esse_erro_[error_message]_significa?)
+    *   [8.3 Por que os arquivos são instalados em lugares errados?](#Por_que_os_arquivos_são_instalados_em_lugares_errados?)
+*   [9 Veja também](#Veja_também)
 
 **Dica:** Como alternativa à criação de pacotes de compiladores cruzados, você poderia usar [crosstool-ng](http://crosstool-ng.org/) e criar sua própria cadeia de ferramentas de maneira totalmente automatizada. crosstool-ng pode ser encontrado em [crosstool-ng](https://aur.archlinux.org/packages/crosstool-ng/).
 

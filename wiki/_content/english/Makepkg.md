@@ -32,14 +32,14 @@ Related articles
     *   [3.7 Build 32-bit packages on a 64-bit system](#Build_32-bit_packages_on_a_64-bit_system)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Makepkg sometimes fails to sign a package without asking for signature passphrase](#Makepkg_sometimes_fails_to_sign_a_package_without_asking_for_signature_passphrase)
-    *   [4.2 CFLAGS/CXXFLAGS/LDFLAGS in makepkg.conf do not work for CMake based packages](#CFLAGS.2FCXXFLAGS.2FLDFLAGS_in_makepkg.conf_do_not_work_for_CMake_based_packages)
-    *   [4.3 CFLAGS/CXXFLAGS in makepkg.conf do not work for QMAKE based packages](#CFLAGS.2FCXXFLAGS_in_makepkg.conf_do_not_work_for_QMAKE_based_packages)
+    *   [4.2 CFLAGS/CXXFLAGS/LDFLAGS in makepkg.conf do not work for CMake based packages](#CFLAGS/CXXFLAGS/LDFLAGS_in_makepkg.conf_do_not_work_for_CMake_based_packages)
+    *   [4.3 CFLAGS/CXXFLAGS in makepkg.conf do not work for QMAKE based packages](#CFLAGS/CXXFLAGS_in_makepkg.conf_do_not_work_for_QMAKE_based_packages)
     *   [4.4 Specifying install directory for QMAKE based packages](#Specifying_install_directory_for_QMAKE_based_packages)
-    *   [4.5 WARNING: Package contains reference to $srcdir](#WARNING:_Package_contains_reference_to_.24srcdir)
+    *   [4.5 WARNING: Package contains reference to $srcdir](#WARNING:_Package_contains_reference_to_$srcdir)
     *   [4.6 Makepkg fails to download dependencies when behind proxy](#Makepkg_fails_to_download_dependencies_when_behind_proxy)
         *   [4.6.1 Enable proxy by setting its URL in XferCommand](#Enable_proxy_by_setting_its_URL_in_XferCommand)
-        *   [4.6.2 Enable proxy via sudoer's env_keep](#Enable_proxy_via_sudoer.27s_env_keep)
-    *   [4.7 Makepkg fails, but make succeeds](#Makepkg_fails.2C_but_make_succeeds)
+        *   [4.6.2 Enable proxy via sudoer's env_keep](#Enable_proxy_via_sudoer's_env_keep)
+    *   [4.7 Makepkg fails, but make succeeds](#Makepkg_fails,_but_make_succeeds)
 *   [5 See also](#See_also)
 
 ## Configuration
@@ -107,7 +107,7 @@ $ makepkg --syncdeps
 
 ```
 
-Adding the `-r`/`--rmdeps` flag causes *makepkg* to remove the make dependencies later, which are no longer needed. If constantly building packages, consider using [Pacman/Tips and tricks#Removing unused packages (orphans)](/index.php/Pacman/Tips_and_tricks#Removing_unused_packages_.28orphans.29 "Pacman/Tips and tricks") once in a while instead.
+Adding the `-r`/`--rmdeps` flag causes *makepkg* to remove the make dependencies later, which are no longer needed. If constantly building packages, consider using [Pacman/Tips and tricks#Removing unused packages (orphans)](/index.php/Pacman/Tips_and_tricks#Removing_unused_packages_(orphans) "Pacman/Tips and tricks") once in a while instead.
 
 **Note:**
 

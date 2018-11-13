@@ -23,7 +23,7 @@ Besides the sound device drivers, ALSA also bundles a user space driven library 
 *   [2 Unmuting the channels](#Unmuting_the_channels)
     *   [2.1 Unmute with amixer](#Unmute_with_amixer)
     *   [2.2 Unmute with alsamixer](#Unmute_with_alsamixer)
-    *   [2.3 Unmute 5.1/7.1 sound](#Unmute_5.1.2F7.1_sound)
+    *   [2.3 Unmute 5.1/7.1 sound](#Unmute_5.1/7.1_sound)
     *   [2.4 Enable the microphone](#Enable_the_microphone)
     *   [2.5 Test your changes](#Test_your_changes)
     *   [2.6 Additional notes](#Additional_notes)
@@ -32,20 +32,20 @@ Besides the sound device drivers, ALSA also bundles a user space driven library 
         *   [3.1.1 Assignments and Separators](#Assignments_and_Separators)
         *   [3.1.2 Data types](#Data_types)
         *   [3.1.3 Operation modes](#Operation_modes)
-            *   [3.1.3.1 An example of setting default device using "defaults" node](#An_example_of_setting_default_device_using_.22defaults.22_node)
+            *   [3.1.3.1 An example of setting default device using "defaults" node](#An_example_of_setting_default_device_using_"defaults"_node)
         *   [3.1.4 Nesting](#Nesting)
         *   [3.1.5 Including configuration files](#Including_configuration_files)
     *   [3.2 Set the default sound card](#Set_the_default_sound_card)
         *   [3.2.1 Select the default PCM via environment variable](#Select_the_default_PCM_via_environment_variable)
         *   [3.2.2 Alternative method](#Alternative_method)
     *   [3.3 Verifying correct sound modules are loaded](#Verifying_correct_sound_modules_are_loaded)
-    *   [3.4 Getting S/PDIF output](#Getting_S.2FPDIF_output)
+    *   [3.4 Getting S/PDIF output](#Getting_S/PDIF_output)
     *   [3.5 System-wide equalizer](#System-wide_equalizer)
-        *   [3.5.1 Using ALSAEqual (provides UI)](#Using_ALSAEqual_.28provides_UI.29)
+        *   [3.5.1 Using ALSAEqual (provides UI)](#Using_ALSAEqual_(provides_UI))
             *   [3.5.1.1 Managing ALSAEqual states](#Managing_ALSAEqual_states)
         *   [3.5.2 Using mbeq](#Using_mbeq)
 *   [4 High quality resampling](#High_quality_resampling)
-*   [5 Upmixing/downmixing](#Upmixing.2Fdownmixing)
+*   [5 Upmixing/downmixing](#Upmixing/downmixing)
     *   [5.1 Upmixing](#Upmixing)
     *   [5.2 Downmixing](#Downmixing)
 *   [6 Dmix](#Dmix)
@@ -56,9 +56,9 @@ Besides the sound device drivers, ALSA also bundles a user space driven library 
     *   [7.4 Virtual sound device using snd-aloop](#Virtual_sound_device_using_snd-aloop)
     *   [7.5 Debugging ALSA](#Debugging_ALSA)
         *   [7.5.1 Retrieving the driver state](#Retrieving_the_driver_state)
-        *   [7.5.2 Reconfiguring input/output ports](#Reconfiguring_input.2Foutput_ports)
+        *   [7.5.2 Reconfiguring input/output ports](#Reconfiguring_input/output_ports)
         *   [7.5.3 Resetting codecs](#Resetting_codecs)
-    *   [7.6 Correctly detect microphone plugged in a 4-pin 3.5mm (TRRS) jack](#Correctly_detect_microphone_plugged_in_a_4-pin_3.5mm_.28TRRS.29_jack)
+    *   [7.6 Correctly detect microphone plugged in a 4-pin 3.5mm (TRRS) jack](#Correctly_detect_microphone_plugged_in_a_4-pin_3.5mm_(TRRS)_jack)
 *   [8 See also](#See_also)
 
 ## Installation
@@ -79,7 +79,7 @@ To allow remote users to use ALSA, you need to [add](/index.php/Users_and_groups
 
 [Install](/index.php/Install "Install") the [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) package. This contains (among other utilities) the `alsamixer` and `amixer` utilities. *amixer* is a shell command to change audio settings, while *alsamixer* provides a more intuitive [ncurses](https://en.wikipedia.org/wiki/Ncurses "wikipedia:Ncurses") based interface for audio device configuration.
 
-If you need [high quality resampling](#High_quality_resampling) install the [alsa-plugins](https://www.archlinux.org/packages/?name=alsa-plugins) package to enable [upmixing/downmixing](#Upmixing.2Fdownmixing) and other advanced features.
+If you need [high quality resampling](#High_quality_resampling) install the [alsa-plugins](https://www.archlinux.org/packages/?name=alsa-plugins) package to enable [upmixing/downmixing](#Upmixing/downmixing) and other advanced features.
 
 ### OSS compatibility
 
@@ -141,7 +141,7 @@ Use the `↑` key to increase the volume and obtain a value of `0` dB gain. The 
 
 To get full 5.1 or 7.1 surround sound you will likely need to unmute other channels such as `Front`, `Surround`, `Center`, `LFE` (subwoofer) and `Side`. (Those are channel names with Intel HD Audio, they may vary with different hardware)
 
-**Note:** Please take note that this will not automatically upmix stereo sources (like most music). In order to accomplish that, see [#Upmixing/downmixing](#Upmixing.2Fdownmixing).
+**Note:** Please take note that this will not automatically upmix stereo sources (like most music). In order to accomplish that, see [#Upmixing/downmixing](#Upmixing/downmixing).
 
 ### Enable the microphone
 
@@ -563,7 +563,7 @@ If this is not the case, your sound modules have not been detected properly. To 
 *   Locate the module for your sound card: [ALSA Soundcard Matrix](http://www.alsa-project.org/main/index.php/Matrix:Main) The module will be prefixed with 'snd-' (for example: `snd-via82xx`).
 *   [Load the module](/index.php/Kernel_modules#Manual_module_handling "Kernel modules").
 *   Check for the device files in `/dev/snd` (see above) and/or try if `alsamixer` or `amixer` have reasonable output.
-*   Configure `snd-NAME-OF-MODULE` and `snd-pcm-oss` to [load at boot](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules").
+*   Configure `snd-NAME-OF-MODULE` and `snd-pcm-oss` to [load at boot](/index.php/Kernel_modules#Automatic_module_loading_with_systemd "Kernel modules").
 
 ### Getting S/PDIF output
 

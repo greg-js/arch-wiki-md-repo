@@ -2,14 +2,14 @@
 
 ## Contents
 
-*   [1 الخلفية التاريخية](#.D8.A7.D9.84.D8.AE.D9.84.D9.81.D9.8A.D8.A9_.D8.A7.D9.84.D8.AA.D8.A7.D8.B1.D9.8A.D8.AE.D9.8A.D8.A9)
-*   [2 [core]](#.5Bcore.5D)
-*   [3 [extra]](#.5Bextra.5D)
-*   [4 [community]](#.5Bcommunity.5D)
-*   [5 [multilib]](#.5Bmultilib.5D)
-*   [6 [testing]](#.5Btesting.5D)
-*   [7 [community-testing]](#.5Bcommunity-testing.5D)
-*   [8 [multilib-testing]](#.5Bmultilib-testing.5D)
+*   [1 الخلفية التاريخية](#الخلفية_التاريخية)
+*   [2 [core]](#[core])
+*   [3 [extra]](#[extra])
+*   [4 [community]](#[community])
+*   [5 [multilib]](#[multilib])
+*   [6 [testing]](#[testing])
+*   [7 [community-testing]](#[community-testing])
+*   [8 [multilib-testing]](#[multilib-testing])
 
 ## الخلفية التاريخية
 

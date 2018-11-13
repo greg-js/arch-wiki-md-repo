@@ -9,7 +9,7 @@ Um [ambiente de desktop](https://en.wikipedia.org/wiki/pt:Ambiente_de_desktop "w
 
 ## Contents
 
-*   [1 Visão geral](#Vis.C3.A3o_geral)
+*   [1 Visão geral](#Visão_geral)
 *   [2 Lista de ambientes de desktop](#Lista_de_ambientes_de_desktop)
     *   [2.1 Com suporte oficial](#Com_suporte_oficial)
     *   [2.2 Sem suporte oficial](#Sem_suporte_oficial)
@@ -119,7 +119,7 @@ Outros componentes geralmente fornecidos por ambientes de área de trabalho são
 *   [Gerenciador de área de transferência](/index.php/Clipboard_manager "Clipboard manager")
 *   Compositor de desktop: [Xorg#Composite](/index.php/Xorg#Composite "Xorg")
 *   Definidor de papel de parede e ícone da área de trabalho: [List of applications#Wallpaper setters](/index.php/List_of_applications#Wallpaper_setters "List of applications") e [Openbox#Desktop icons and wallpapers](/index.php/Openbox#Desktop_icons_and_wallpapers "Openbox")
-*   Gerenciador de exibição: [Gerenciadores de exibição#Lista de gerenciadores de exibição](/index.php/Gerenciadores_de_exibi%C3%A7%C3%A3o#Lista_de_gerenciadores_de_exibi.C3.A7.C3.A3o "Gerenciadores de exibição")
+*   Gerenciador de exibição: [Gerenciadores de exibição#Lista de gerenciadores de exibição](/index.php/Gerenciadores_de_exibi%C3%A7%C3%A3o#Lista_de_gerenciadores_de_exibição "Gerenciadores de exibição")
 *   Configurações de tela de economia de energia: [Display Power Management Signaling](/index.php/Display_Power_Management_Signaling "Display Power Management Signaling")
 *   Diálogo de *logout*: [Oblogout](/index.php/Oblogout "Oblogout")
 *   Ferramenta de montagem: [List of applications#Mount tools](/index.php/List_of_applications#Mount_tools "List of applications")

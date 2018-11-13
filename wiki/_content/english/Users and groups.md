@@ -16,7 +16,7 @@ Users and groups are used on GNU/Linux for [access control](https://en.wikipedia
 *   [5 User management](#User_management)
     *   [5.1 Example adding a user](#Example_adding_a_user)
     *   [5.2 Example adding a system user](#Example_adding_a_system_user)
-    *   [5.3 Change a user's login name or home directory](#Change_a_user.27s_login_name_or_home_directory)
+    *   [5.3 Change a user's login name or home directory](#Change_a_user's_login_name_or_home_directory)
     *   [5.4 Other examples of user management](#Other_examples_of_user_management)
 *   [6 User database](#User_database)
 *   [7 Group management](#Group_management)

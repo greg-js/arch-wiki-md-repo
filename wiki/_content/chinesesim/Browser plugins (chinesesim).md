@@ -16,34 +16,34 @@
 *   [1 Flash Player](#Flash_Player)
     *   [1.1 Adobe Flash Player](#Adobe_Flash_Player)
         *   [1.1.1 Installation](#Installation)
-        *   [1.1.2 更新](#.E6.9B.B4.E6.96.B0)
-        *   [1.1.3 配置](#.E9.85.8D.E7.BD.AE)
+        *   [1.1.2 更新](#更新)
+        *   [1.1.3 配置](#配置)
         *   [1.1.4 Multiple monitor full-screen fix](#Multiple_monitor_full-screen_fix)
         *   [1.1.5 Playing DRM-protected content](#Playing_DRM-protected_content)
     *   [1.2 Shumway](#Shumway)
     *   [1.3 Gnash](#Gnash)
     *   [1.4 Lightspark](#Lightspark)
-*   [2 PDF浏览器](#PDF.E6.B5.8F.E8.A7.88.E5.99.A8)
+*   [2 PDF浏览器](#PDF浏览器)
     *   [2.1 PDF.js](#PDF.js)
     *   [2.2 External PDF viewers](#External_PDF_viewers)
-*   [3 中国的在线支付](#.E4.B8.AD.E5.9B.BD.E7.9A.84.E5.9C.A8.E7.BA.BF.E6.94.AF.E4.BB.98)
+*   [3 中国的在线支付](#中国的在线支付)
 *   [4 Citrix](#Citrix)
 *   [5 Java](#Java)
 *   [6 Pipelight](#Pipelight)
-*   [7 视频播放插件](#.E8.A7.86.E9.A2.91.E6.92.AD.E6.94.BE.E6.8F.92.E4.BB.B6)
-    *   [7.1 其它插件](#.E5.85.B6.E5.AE.83.E6.8F.92.E4.BB.B6)
-*   [8 其他](#.E5.85.B6.E4.BB.96)
+*   [7 视频播放插件](#视频播放插件)
+    *   [7.1 其它插件](#其它插件)
+*   [8 其他](#其他)
     *   [8.1 Hangouts](#Hangouts)
     *   [8.2 MozPlugger](#MozPlugger)
-*   [9 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
-    *   [9.1 Flash无声音](#Flash.E6.97.A0.E5.A3.B0.E9.9F.B3)
-    *   [9.2 Flash独占了声音设备](#Flash.E7.8B.AC.E5.8D.A0.E4.BA.86.E5.A3.B0.E9.9F.B3.E8.AE.BE.E5.A4.87)
-    *   [9.3 Flash性能](#Flash.E6.80.A7.E8.83.BD)
-    *   [9.4 Flash中webcam分辨率低](#Flash.E4.B8.ADwebcam.E5.88.86.E8.BE.A8.E7.8E.87.E4.BD.8E)
+*   [9 疑难解答](#疑难解答)
+    *   [9.1 Flash无声音](#Flash无声音)
+    *   [9.2 Flash独占了声音设备](#Flash独占了声音设备)
+    *   [9.3 Flash性能](#Flash性能)
+    *   [9.4 Flash中webcam分辨率低](#Flash中webcam分辨率低)
     *   [9.5 Black bars in fullscreen video playback on multiheaded desktops](#Black_bars_in_fullscreen_video_playback_on_multiheaded_desktops)
     *   [9.6 Flash Player: plugin version still shown older version after upgrade](#Flash_Player:_plugin_version_still_shown_older_version_after_upgrade)
-    *   [9.7 插件安装后无法使用](#.E6.8F.92.E4.BB.B6.E5.AE.89.E8.A3.85.E5.90.8E.E6.97.A0.E6.B3.95.E4.BD.BF.E7.94.A8)
-    *   [9.8 Gecko Media Player 无法播放 Apple Trailers](#Gecko_Media_Player_.E6.97.A0.E6.B3.95.E6.92.AD.E6.94.BE_Apple_Trailers)
+    *   [9.7 插件安装后无法使用](#插件安装后无法使用)
+    *   [9.8 Gecko Media Player 无法播放 Apple Trailers](#Gecko_Media_Player_无法播放_Apple_Trailers)
 
 ## Flash Player
 
@@ -350,7 +350,7 @@ $ lsmod | grep snd_pcm_oss
 
 ### Flash性能
 
-Adobe的Flash插件有严重的性能问题，尤其是在CPU使用自动降频功能时。参见：[cpufrequtils#Changing the ondemand governor's threshold](/index.php/Cpufrequtils#Changing_the_ondemand_governor.27s_threshold "Cpufrequtils")。
+Adobe的Flash插件有严重的性能问题，尤其是在CPU使用自动降频功能时。参见：[cpufrequtils#Changing the ondemand governor's threshold](/index.php/Cpufrequtils#Changing_the_ondemand_governor's_threshold "Cpufrequtils")。
 
 ### Flash中webcam分辨率低
 

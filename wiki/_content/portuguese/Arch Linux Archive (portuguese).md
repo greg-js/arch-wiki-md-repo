@@ -16,19 +16,19 @@ Os pacotes são mantidos apenas por poucos anos e, posteriormente, eles são mov
 
 ## Contents
 
-*   [1 Localização](#Localiza.C3.A7.C3.A3o)
-*   [2 Diretórios](#Diret.C3.B3rios)
-    *   [2.1 /repos](#.2Frepos)
-    *   [2.2 /packages](#.2Fpackages)
-    *   [2.3 /iso](#.2Fiso)
+*   [1 Localização](#Localização)
+*   [2 Diretórios](#Diretórios)
+    *   [2.1 /repos](#/repos)
+    *   [2.2 /packages](#/packages)
+    *   [2.3 /iso](#/iso)
 *   [3 FAQ](#FAQ)
     *   [3.1 Como fazer downgrade de um pacote](#Como_fazer_downgrade_de_um_pacote)
-    *   [3.2 Como restaurar todos os pacotes para uma data específica](#Como_restaurar_todos_os_pacotes_para_uma_data_espec.C3.ADfica)
+    *   [3.2 Como restaurar todos os pacotes para uma data específica](#Como_restaurar_todos_os_pacotes_para_uma_data_específica)
 *   [4 Historical Archive](#Historical_Archive)
     *   [4.1 Localizando pacotes no Historical Archive](#Localizando_pacotes_no_Historical_Archive)
     *   [4.2 Baixando pacotes do Historical Archive](#Baixando_pacotes_do_Historical_Archive)
     *   [4.3 Redirecionando downloads de pacote para o Historical Archive](#Redirecionando_downloads_de_pacote_para_o_Historical_Archive)
-*   [5 História](#Hist.C3.B3ria)
+*   [5 História](#História)
 
 ## Localização
 
@@ -184,7 +184,7 @@ O diretório [iso](https://archive.archlinux.org/iso) contém imagens ISO oficia
 
 ### Como fazer downgrade de um pacote
 
-Encontre o pacote que deseja em [/packages](#.2Fpackages) e deixe o pacman buscá-lo para instalação. Por exemplo
+Encontre o pacote que deseja em [/packages](#/packages) e deixe o pacman buscá-lo para instalação. Por exemplo
 
 ```
 # pacman -U https://archive.archlinux.org/packages/ ... *nomepacote*.pkg.tar.xz
@@ -195,7 +195,7 @@ Deixar o pacman buscá-lo irá baixar automaticamente o arquivo *.sig* separado 
 
 Alternativamente, baixe e instale o pacote manualmente usando `pacman -U`.
 
-Veja também [Fazendo downgrade de pacotes#Automação](/index.php/Fazendo_downgrade_de_pacotes#Automa.C3.A7.C3.A3o "Fazendo downgrade de pacotes") para as ferramentas que simplificam o processo.
+Veja também [Fazendo downgrade de pacotes#Automação](/index.php/Fazendo_downgrade_de_pacotes#Automação "Fazendo downgrade de pacotes") para as ferramentas que simplificam o processo.
 
 ### Como restaurar todos os pacotes para uma data específica
 

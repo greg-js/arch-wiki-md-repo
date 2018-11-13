@@ -13,57 +13,57 @@ See [PulseAudio](/index.php/PulseAudio "PulseAudio") for the main article.
     *   [1.8 Sound output is only mono on M-Audio Audiophile 2496 sound card](#Sound_output_is_only_mono_on_M-Audio_Audiophile_2496_sound_card)
     *   [1.9 No sound below a volume cutoff](#No_sound_below_a_volume_cutoff)
     *   [1.10 Low volume for internal microphone](#Low_volume_for_internal_microphone)
-    *   [1.11 Clients alter master output volume (a.k.a. volume jumps to 100% after running application)](#Clients_alter_master_output_volume_.28a.k.a._volume_jumps_to_100.25_after_running_application.29)
+    *   [1.11 Clients alter master output volume (a.k.a. volume jumps to 100% after running application)](#Clients_alter_master_output_volume_(a.k.a._volume_jumps_to_100%_after_running_application))
     *   [1.12 No sound after resume from suspend](#No_sound_after_resume_from_suspend)
-    *   [1.13 ALSA channels mute when headphones are plugged/unplugged improperly](#ALSA_channels_mute_when_headphones_are_plugged.2Funplugged_improperly)
-    *   [1.14 Volume resets to 50% every few seconds](#Volume_resets_to_50.25_every_few_seconds)
+    *   [1.13 ALSA channels mute when headphones are plugged/unplugged improperly](#ALSA_channels_mute_when_headphones_are_plugged/unplugged_improperly)
+    *   [1.14 Volume resets to 50% every few seconds](#Volume_resets_to_50%_every_few_seconds)
 *   [2 Microphone](#Microphone)
     *   [2.1 Microphone not detected by PulseAudio](#Microphone_not_detected_by_PulseAudio)
     *   [2.2 PulseAudio uses wrong microphone](#PulseAudio_uses_wrong_microphone)
-    *   [2.3 No microphone on ThinkPad T400/T500/T420](#No_microphone_on_ThinkPad_T400.2FT500.2FT420)
+    *   [2.3 No microphone on ThinkPad T400/T500/T420](#No_microphone_on_ThinkPad_T400/T500/T420)
     *   [2.4 No microphone input on Acer Aspire One](#No_microphone_input_on_Acer_Aspire_One)
     *   [2.5 Static noise in microphone recording](#Static_noise_in_microphone_recording)
-        *   [2.5.1 Determine sound cards in the system (1/5)](#Determine_sound_cards_in_the_system_.281.2F5.29)
-        *   [2.5.2 Determine sampling rate of the sound card (2/5)](#Determine_sampling_rate_of_the_sound_card_.282.2F5.29)
-        *   [2.5.3 Setting the sound card's sampling rate into PulseAudio configuration (3/5)](#Setting_the_sound_card.27s_sampling_rate_into_PulseAudio_configuration_.283.2F5.29)
-        *   [2.5.4 Restart PulseAudio to apply the new settings (4/5)](#Restart_PulseAudio_to_apply_the_new_settings_.284.2F5.29)
-        *   [2.5.5 Finally check by recording and playing it back (5/5)](#Finally_check_by_recording_and_playing_it_back_.285.2F5.29)
+        *   [2.5.1 Determine sound cards in the system (1/5)](#Determine_sound_cards_in_the_system_(1/5))
+        *   [2.5.2 Determine sampling rate of the sound card (2/5)](#Determine_sampling_rate_of_the_sound_card_(2/5))
+        *   [2.5.3 Setting the sound card's sampling rate into PulseAudio configuration (3/5)](#Setting_the_sound_card's_sampling_rate_into_PulseAudio_configuration_(3/5))
+        *   [2.5.4 Restart PulseAudio to apply the new settings (4/5)](#Restart_PulseAudio_to_apply_the_new_settings_(4/5))
+        *   [2.5.5 Finally check by recording and playing it back (5/5)](#Finally_check_by_recording_and_playing_it_back_(5/5))
         *   [2.5.6 Another Possible Cause](#Another_Possible_Cause)
         *   [2.5.7 If using a USB microphone](#If_using_a_USB_microphone)
-    *   [2.6 No microphone on Steam or Skype with enable-remixing = no](#No_microphone_on_Steam_or_Skype_with_enable-remixing_.3D_no)
+    *   [2.6 No microphone on Steam or Skype with enable-remixing = no](#No_microphone_on_Steam_or_Skype_with_enable-remixing_=_no)
     *   [2.7 Microphone distorted due to automatic adjustment](#Microphone_distorted_due_to_automatic_adjustment)
     *   [2.8 Microphone crackling with Realtek ALC892](#Microphone_crackling_with_Realtek_ALC892)
     *   [2.9 Echo test](#Echo_test)
 *   [3 Audio quality](#Audio_quality)
-    *   [3.1 Enable Echo/Noise-Cancellation](#Enable_Echo.2FNoise-Cancellation)
-        *   [3.1.1 Possible 'aec_args' for 'aec_method=webrtc'](#Possible_.27aec_args.27_for_.27aec_method.3Dwebrtc.27)
+    *   [3.1 Enable Echo/Noise-Cancellation](#Enable_Echo/Noise-Cancellation)
+        *   [3.1.1 Possible 'aec_args' for 'aec_method=webrtc'](#Possible_'aec_args'_for_'aec_method=webrtc')
         *   [3.1.2 Disable audio post processing in certain applications](#Disable_audio_post_processing_in_certain_applications)
         *   [3.1.3 Script for reloading module-echo-cancel](#Script_for_reloading_module-echo-cancel)
-    *   [3.2 Glitches, skips or crackling](#Glitches.2C_skips_or_crackling)
+    *   [3.2 Glitches, skips or crackling](#Glitches,_skips_or_crackling)
     *   [3.3 Static noise when using headphones](#Static_noise_when_using_headphones)
     *   [3.4 Setting the default fragment number and buffer size in PulseAudio](#Setting_the_default_fragment_number_and_buffer_size_in_PulseAudio)
-        *   [3.4.1 Disabling timer-based scheduling (0/4)](#Disabling_timer-based_scheduling_.280.2F4.29)
-        *   [3.4.2 Finding out your audio device parameters (1/4)](#Finding_out_your_audio_device_parameters_.281.2F4.29)
-        *   [3.4.3 Calculate your fragment size in msecs and number of fragments (2/4)](#Calculate_your_fragment_size_in_msecs_and_number_of_fragments_.282.2F4.29)
-        *   [3.4.4 Modify PulseAudio's configuration file (3/4)](#Modify_PulseAudio.27s_configuration_file_.283.2F4.29)
-        *   [3.4.5 Restart the PulseAudio daemon (4/4)](#Restart_the_PulseAudio_daemon_.284.2F4.29)
+        *   [3.4.1 Disabling timer-based scheduling (0/4)](#Disabling_timer-based_scheduling_(0/4))
+        *   [3.4.2 Finding out your audio device parameters (1/4)](#Finding_out_your_audio_device_parameters_(1/4))
+        *   [3.4.3 Calculate your fragment size in msecs and number of fragments (2/4)](#Calculate_your_fragment_size_in_msecs_and_number_of_fragments_(2/4))
+        *   [3.4.4 Modify PulseAudio's configuration file (3/4)](#Modify_PulseAudio's_configuration_file_(3/4))
+        *   [3.4.5 Restart the PulseAudio daemon (4/4)](#Restart_the_PulseAudio_daemon_(4/4))
     *   [3.5 Choppy sound with analog surround sound setup](#Choppy_sound_with_analog_surround_sound_setup)
     *   [3.6 Laggy sound](#Laggy_sound)
-    *   [3.7 Choppy/distorted sound](#Choppy.2Fdistorted_sound)
+    *   [3.7 Choppy/distorted sound](#Choppy/distorted_sound)
     *   [3.8 Sound stuttering when streaming over network](#Sound_stuttering_when_streaming_over_network)
     *   [3.9 Pops when starting and stopping playback](#Pops_when_starting_and_stopping_playback)
 *   [4 Hardware and Cards](#Hardware_and_Cards)
     *   [4.1 No HDMI sound output after some time with the monitor turned off](#No_HDMI_sound_output_after_some_time_with_the_monitor_turned_off)
     *   [4.2 No HDMI sound using a headless server](#No_HDMI_sound_using_a_headless_server)
     *   [4.3 No cards](#No_cards)
-    *   [4.4 Starting an application interrupts other app's sound](#Starting_an_application_interrupts_other_app.27s_sound)
-    *   [4.5 The only device shown is "dummy output" or newly connected cards are not detected](#The_only_device_shown_is_.22dummy_output.22_or_newly_connected_cards_are_not_detected)
-    *   [4.6 No HDMI 5/7.1 Selection for Device](#No_HDMI_5.2F7.1_Selection_for_Device)
+    *   [4.4 Starting an application interrupts other app's sound](#Starting_an_application_interrupts_other_app's_sound)
+    *   [4.5 The only device shown is "dummy output" or newly connected cards are not detected](#The_only_device_shown_is_"dummy_output"_or_newly_connected_cards_are_not_detected)
+    *   [4.6 No HDMI 5/7.1 Selection for Device](#No_HDMI_5/7.1_Selection_for_Device)
     *   [4.7 Failed to create sink input: sink is suspended](#Failed_to_create_sink_input:_sink_is_suspended)
-    *   [4.8 Simultaneous output to multiple sound cards / devices](#Simultaneous_output_to_multiple_sound_cards_.2F_devices)
+    *   [4.8 Simultaneous output to multiple sound cards / devices](#Simultaneous_output_to_multiple_sound_cards_/_devices)
     *   [4.9 Simultaneous output to multiple sinks on the same sound card not working](#Simultaneous_output_to_multiple_sinks_on_the_same_sound_card_not_working)
     *   [4.10 Some profiles like SPDIF are not enabled by default on the card](#Some_profiles_like_SPDIF_are_not_enabled_by_default_on_the_card)
-    *   [4.11 Only S/PDIF output available](#Only_S.2FPDIF_output_available)
+    *   [4.11 Only S/PDIF output available](#Only_S/PDIF_output_available)
 *   [5 Bluetooth](#Bluetooth)
     *   [5.1 Disable Bluetooth support](#Disable_Bluetooth_support)
     *   [5.2 Bluetooth headset replay problems](#Bluetooth_headset_replay_problems)
@@ -83,11 +83,11 @@ See [PulseAudio](/index.php/PulseAudio "PulseAudio") for the main article.
         *   [7.6.1 Outputs by PulseAudio error status check utilities](#Outputs_by_PulseAudio_error_status_check_utilities)
     *   [7.7 Daemon already running](#Daemon_already_running)
     *   [7.8 Subwoofer stops working after end of every song](#Subwoofer_stops_working_after_end_of_every_song)
-    *   [7.9 Unable to select surround configuration other than "Surround 4.0"](#Unable_to_select_surround_configuration_other_than_.22Surround_4.0.22)
+    *   [7.9 Unable to select surround configuration other than "Surround 4.0"](#Unable_to_select_surround_configuration_other_than_"Surround_4.0")
     *   [7.10 Realtime scheduling](#Realtime_scheduling)
-    *   [7.11 pactl "invalid option" error with negative percentage arguments](#pactl_.22invalid_option.22_error_with_negative_percentage_arguments)
+    *   [7.11 pactl "invalid option" error with negative percentage arguments](#pactl_"invalid_option"_error_with_negative_percentage_arguments)
     *   [7.12 Fallback device is not respected](#Fallback_device_is_not_respected)
-    *   [7.13 RTP/UDP packet flood](#RTP.2FUDP_packet_flood)
+    *   [7.13 RTP/UDP packet flood](#RTP/UDP_packet_flood)
 
 ## Volume
 
@@ -1191,7 +1191,7 @@ load-module module-switch-on-connect ignore_virtual=no
 
 Since [PulseAudio 11](https://www.freedesktop.org/wiki/Software/PulseAudio/Notes/11.0/) USB and bluetooth devices are preferred over internal sound cards by default, but as in the above link described, you still need module-switch-on-connect to also moves existing streams to the new sink.
 
-Since [PulseAudio 12](https://www.freedesktop.org/wiki/Software/PulseAudio/Notes/12.0/) virtual devices are ignored by default. If you don't want this behavior because you want to move existing streams to freshly loaded [module-echo-cancel](#Enable_Echo.2FNoise-Cancellation) for example, you have to add `ignore_virtual=no`.
+Since [PulseAudio 12](https://www.freedesktop.org/wiki/Software/PulseAudio/Notes/12.0/) virtual devices are ignored by default. If you don't want this behavior because you want to move existing streams to freshly loaded [module-echo-cancel](#Enable_Echo/Noise-Cancellation) for example, you have to add `ignore_virtual=no`.
 
 ### My Bluetooth device is paired but does not play any sound
 
@@ -1214,7 +1214,7 @@ If you face problems with A2DP and PA 2.99 make sure you have [sbc](https://www.
 
 Since Adobe Flash does not directly support PulseAudio, the recommended way is to [configure ALSA to use the virtual PulseAudio sound card](/index.php/PulseAudio#ALSA "PulseAudio").
 
-If Flash audio is lagging, you may try to have Flash access ALSA directly. See [PulseAudio#ALSA/dmix without grabbing hardware device](/index.php/PulseAudio#ALSA.2Fdmix_without_grabbing_hardware_device "PulseAudio") for details.
+If Flash audio is lagging, you may try to have Flash access ALSA directly. See [PulseAudio#ALSA/dmix without grabbing hardware device](/index.php/PulseAudio#ALSA/dmix_without_grabbing_hardware_device "PulseAudio") for details.
 
 ### Permission errors bug
 

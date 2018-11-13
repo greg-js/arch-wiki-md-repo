@@ -10,62 +10,62 @@ La [Arquitectura Avanzada para el Sonido en Linux](https://en.wikipedia.org/wiki
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
     *   [1.1 Utilidades en el espacio de usuario](#Utilidades_en_el_espacio_de_usuario)
 *   [2 Abrir los canales de audio](#Abrir_los_canales_de_audio)
-*   [3 Configuración](#Configuraci.C3.B3n)
+*   [3 Configuración](#Configuración)
     *   [3.1 Sin sonido en virtualbox](#Sin_sonido_en_virtualbox)
     *   [3.2 Establecer la tarjeta de sonido predeterminada](#Establecer_la_tarjeta_de_sonido_predeterminada)
-        *   [3.2.1 Seleccionar el PCM por defecto a través de la variable de entorno](#Seleccionar_el_PCM_por_defecto_a_trav.C3.A9s_de_la_variable_de_entorno)
-        *   [3.2.2 Método alternativo](#M.C3.A9todo_alternativo)
-    *   [3.3 Asegurarse de que los módulos de sonido se cargan](#Asegurarse_de_que_los_m.C3.B3dulos_de_sonido_se_cargan)
+        *   [3.2.1 Seleccionar el PCM por defecto a través de la variable de entorno](#Seleccionar_el_PCM_por_defecto_a_través_de_la_variable_de_entorno)
+        *   [3.2.2 Método alternativo](#Método_alternativo)
+    *   [3.3 Asegurarse de que los módulos de sonido se cargan](#Asegurarse_de_que_los_módulos_de_sonido_se_cargan)
     *   [3.4 Conseguir salida SPDIF](#Conseguir_salida_SPDIF)
     *   [3.5 Ecualizador System-Wide](#Ecualizador_System-Wide)
-        *   [3.5.1 Usar AlsaEqual (proporciona la interfaz gráfica)](#Usar_AlsaEqual_.28proporciona_la_interfaz_gr.C3.A1fica.29)
+        *   [3.5.1 Usar AlsaEqual (proporciona la interfaz gráfica)](#Usar_AlsaEqual_(proporciona_la_interfaz_gráfica))
             *   [3.5.1.1 Administrar los estados de AlsaEqual](#Administrar_los_estados_de_AlsaEqual)
         *   [3.5.2 Usar mbeq](#Usar_mbeq)
 *   [4 Remuestreo de alta calidad](#Remuestreo_de_alta_calidad)
-*   [5 Upmixing/Downmixing](#Upmixing.2FDownmixing)
+*   [5 Upmixing/Downmixing](#Upmixing/Downmixing)
     *   [5.1 Upmixing](#Upmixing)
     *   [5.2 Downmixing](#Downmixing)
 *   [6 Mezclar](#Mezclar)
-    *   [6.1 Mezclar con software (dmix)](#Mezclar_con_software_.28dmix.29)
+    *   [6.1 Mezclar con software (dmix)](#Mezclar_con_software_(dmix))
     *   [6.2 Mezclar con Hardware](#Mezclar_con_Hardware)
         *   [6.2.1 Soporte](#Soporte)
         *   [6.2.2 Arreglos](#Arreglos)
-*   [7 Solución de problemas](#Soluci.C3.B3n_de_problemas)
+*   [7 Solución de problemas](#Solución_de_problemas)
     *   [7.1 Sonido con saltos durante el uso de Dynamic Frequency Scaling](#Sonido_con_saltos_durante_el_uso_de_Dynamic_Frequency_Scaling)
     *   [7.2 Problemas con la disponibilidad del software de mezcla por solo un usuario a la vez](#Problemas_con_la_disponibilidad_del_software_de_mezcla_por_solo_un_usuario_a_la_vez)
-    *   [7.3 Problemas de reproducción simultánea](#Problemas_de_reproducci.C3.B3n_simult.C3.A1nea)
+    *   [7.3 Problemas de reproducción simultánea](#Problemas_de_reproducción_simultánea)
     *   [7.4 Ausencia de sonido al azar en el inicio](#Ausencia_de_sonido_al_azar_en_el_inicio)
         *   [7.4.1 Timidity](#Timidity)
-    *   [7.5 Problemas específicos de algunos programas](#Problemas_espec.C3.ADficos_de_algunos_programas)
+    *   [7.5 Problemas específicos de algunos programas](#Problemas_específicos_de_algunos_programas)
     *   [7.6 Configurar los modelos](#Configurar_los_modelos)
     *   [7.7 Audio en conflicto con altavoz interno del PC](#Audio_en_conflicto_con_altavoz_interno_del_PC)
-    *   [7.8 Sin entrada en el micrófono](#Sin_entrada_en_el_micr.C3.B3fono)
-    *   [7.9 Configuración predeterminada de Micrófono/Dispositivo de captura](#Configuraci.C3.B3n_predeterminada_de_Micr.C3.B3fono.2FDispositivo_de_captura)
-    *   [7.10 El micrófono interno no funciona](#El_micr.C3.B3fono_interno_no_funciona)
+    *   [7.8 Sin entrada en el micrófono](#Sin_entrada_en_el_micrófono)
+    *   [7.9 Configuración predeterminada de Micrófono/Dispositivo de captura](#Configuración_predeterminada_de_Micrófono/Dispositivo_de_captura)
+    *   [7.10 El micrófono interno no funciona](#El_micrófono_interno_no_funciona)
     *   [7.11 Sin sonido con tarjeta de sonido Intel integrada](#Sin_sonido_con_tarjeta_de_sonido_Intel_integrada)
     *   [7.12 Sin sonido en auriculares con tarjeta de sonido Intel integrada](#Sin_sonido_en_auriculares_con_tarjeta_de_sonido_Intel_integrada)
-    *   [7.13 Sin sonido cuando se instala la tarjeta de vídeo con S/PDIF](#Sin_sonido_cuando_se_instala_la_tarjeta_de_v.C3.ADdeo_con_S.2FPDIF)
+    *   [7.13 Sin sonido cuando se instala la tarjeta de vídeo con S/PDIF](#Sin_sonido_cuando_se_instala_la_tarjeta_de_vídeo_con_S/PDIF)
     *   [7.14 Calidad de audio deficiente](#Calidad_de_audio_deficiente)
-    *   [7.15 Crepiteos al iniciar y detener la reproducción](#Crepiteos_al_iniciar_y_detener_la_reproducci.C3.B3n)
-    *   [7.16 La salida S/PDIF no funciona](#La_salida_S.2FPDIF_no_funciona)
+    *   [7.15 Crepiteos al iniciar y detener la reproducción](#Crepiteos_al_iniciar_y_detener_la_reproducción)
+    *   [7.16 La salida S/PDIF no funciona](#La_salida_S/PDIF_no_funciona)
     *   [7.17 La salida HDMI no funciona](#La_salida_HDMI_no_funciona)
-    *   [7.18 La salida multicanal PCM de HDMI no funciona (Intel)](#La_salida_multicanal_PCM_de_HDMI_no_funciona_.28Intel.29)
+    *   [7.18 La salida multicanal PCM de HDMI no funciona (Intel)](#La_salida_multicanal_PCM_de_HDMI_no_funciona_(Intel))
     *   [7.19 HP TX2500](#HP_TX2500)
-    *   [7.20 Salto de sonido durante la reproducción MP3](#Salto_de_sonido_durante_la_reproducci.C3.B3n_MP3)
+    *   [7.20 Salto de sonido durante la reproducción MP3](#Salto_de_sonido_durante_la_reproducción_MP3)
     *   [7.21 Auriculares USB y tarjetas de sonido externas USB](#Auriculares_USB_y_tarjetas_de_sonido_externas_USB)
         *   [7.21.1 Sonido crepitante con dispositivos USB](#Sonido_crepitante_con_dispositivos_USB)
-        *   [7.21.2 Conexión hot-plugging de una tarjeta de sonido USB](#Conexi.C3.B3n_hot-plugging_de_una_tarjeta_de_sonido_USB)
-    *   [7.22 Error 'Unkown hardware' después de una actualización del Kernel](#Error_.27Unkown_hardware.27_despu.C3.A9s_de_una_actualizaci.C3.B3n_del_Kernel)
+        *   [7.21.2 Conexión hot-plugging de una tarjeta de sonido USB](#Conexión_hot-plugging_de_una_tarjeta_de_sonido_USB)
+    *   [7.22 Error 'Unkown hardware' después de una actualización del Kernel](#Error_'Unkown_hardware'_después_de_una_actualización_del_Kernel)
     *   [7.23 HDA Analyzer](#HDA_Analyzer)
     *   [7.24 ALSA con SDL](#ALSA_con_SDL)
     *   [7.25 Alternativa al sonido bajo](#Alternativa_al_sonido_bajo)
-    *   [7.26 Sonido abrupto después de reanudar la suspensión](#Sonido_abrupto_despu.C3.A9s_de_reanudar_la_suspensi.C3.B3n)
-    *   [7.27 Silencio después de reiniciar](#Silencio_despu.C3.A9s_de_reiniciar)
+    *   [7.26 Sonido abrupto después de reanudar la suspensión](#Sonido_abrupto_después_de_reanudar_la_suspensión)
+    *   [7.27 Silencio después de reiniciar](#Silencio_después_de_reiniciar)
 *   [8 Configuraciones de ejemplo](#Configuraciones_de_ejemplo)
-*   [9 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [9 Véase también](#Véase_también)
 
 ## Instalación
 
@@ -73,11 +73,11 @@ ALSA está incluido en el kernel de Arch por defecto como un conjunto de módulo
 
 [udev](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)") explorará automáticamente el hardware en el arranque, cargando el módulo del kernel correcto para la tarjeta de sonido encontrada. Por lo tanto, el sonido debería estar funcionando desde el inicio, pero, ha de tener en cuenta que su configuración viene, por defecto, con todos los canales de audio silenciados.
 
-Los usuarios con un inicio de sesión local (en una terminal virtual o un gestor de pantalla) tienen habilitados los permisos para reproducir sonido y cambiar los niveles del mezclador. Para permitir esto en un inicio de sesión remoto, el usuario tiene que ser [añadido](/index.php/Users_and_groups_(Espa%C3%B1ol)#Administraci.C3.B3n_de_grupos "Users and groups (Español)") al grupo de `audio`. La calidad de miembro del grupo de `audio` también permite el acceso directo a los dispositivos, lo que puede conducir a que se graben exclusivamente las salidas de las aplicaciones (rompiendo el software de mezcla) y frustrar el rápido intercambio entre usuarios, y multisede. Por lo tanto, la adición de un usuario al grupo de `audio` **no** es recomendable, a menos que se necesite específicamente [[1]](https://wiki.ubuntu.com/Audio/TheAudioGroup).
+Los usuarios con un inicio de sesión local (en una terminal virtual o un gestor de pantalla) tienen habilitados los permisos para reproducir sonido y cambiar los niveles del mezclador. Para permitir esto en un inicio de sesión remoto, el usuario tiene que ser [añadido](/index.php/Users_and_groups_(Espa%C3%B1ol)#Administración_de_grupos "Users and groups (Español)") al grupo de `audio`. La calidad de miembro del grupo de `audio` también permite el acceso directo a los dispositivos, lo que puede conducir a que se graben exclusivamente las salidas de las aplicaciones (rompiendo el software de mezcla) y frustrar el rápido intercambio entre usuarios, y multisede. Por lo tanto, la adición de un usuario al grupo de `audio` **no** es recomendable, a menos que se necesite específicamente [[1]](https://wiki.ubuntu.com/Audio/TheAudioGroup).
 
 ### Utilidades en el espacio de usuario
 
-[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) desde los [repositorios oficiales](/index.php/Official_repositories "Official repositories") que contienen la herrameinta `alsamixer` para el espacio de usuario, que permite la configuración de los dispositivos de sonido desde la consola o terminal. Instale también el paquete [alsa-plugins](https://www.archlinux.org/packages/?name=alsa-plugins) si desea [remuestreo en alta calidad](#Remuestreo_de_alta_calidad), [upmixing/downmixing](#Upmixing.2FDownmixing) y otras características avanzadas.
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) desde los [repositorios oficiales](/index.php/Official_repositories "Official repositories") que contienen la herrameinta `alsamixer` para el espacio de usuario, que permite la configuración de los dispositivos de sonido desde la consola o terminal. Instale también el paquete [alsa-plugins](https://www.archlinux.org/packages/?name=alsa-plugins) si desea [remuestreo en alta calidad](#Remuestreo_de_alta_calidad), [upmixing/downmixing](#Upmixing/Downmixing) y otras características avanzadas.
 
 Si desea que las aplicaciones de OSS funcionen mediante dmix (software de mezcla), instale también el paquete [alsa-oss](https://www.archlinux.org/packages/?name=alsa-oss). Cargue los [módulos del kernel](/index.php/Kernel_modules_(Espa%C3%B1ol) "Kernel modules (Español)") `snd_seq_oss`, `snd_pcm_oss` y `snd_mixer_oss` para activar los módulos de emulación de OSS.
 
@@ -105,7 +105,7 @@ El procedimiento a seguir es el siguiente:
 
 Desplácese hasta los canales `Master` y `PCM` con las teclas `←` y `→`, y retire el silencio pulsando la tecla `m`. Utilice la tecla `↑` para aumentar el volumen y obtener un «dB gain» con valor `0`. El valor «gain» se puede encontrar en la parte superior izquierda junto al campo `Item:`. Los valores más altos de «gain» producirán sonido distorsionado.
 
-Para obtener un verdadero sonido envolvente (surround) 5.1 o 7.1 es probable que tenga que activar otros canales como Front, Surround, Center, LFE (subwoofer) y Side (estos son los nombres de los canales para el módulo Intel HD Audio, y pueden variar según el hardware). Tenga en cuenta que esto no se logrará automáticamente con Upmix para las fuentes de sonido estéreo (como, por ejemplo, la música). Con el fin de lograrlo, consulte [Upmixing/Downmixing](#Upmixing.2FDownmixing).
+Para obtener un verdadero sonido envolvente (surround) 5.1 o 7.1 es probable que tenga que activar otros canales como Front, Surround, Center, LFE (subwoofer) y Side (estos son los nombres de los canales para el módulo Intel HD Audio, y pueden variar según el hardware). Tenga en cuenta que esto no se logrará automáticamente con Upmix para las fuentes de sonido estéreo (como, por ejemplo, la música). Con el fin de lograrlo, consulte [Upmixing/Downmixing](#Upmixing/Downmixing).
 
 Salga de alsamixer pulsando `Esc`.
 
@@ -129,7 +129,7 @@ $ speaker-test -c 8
 
 ```
 
-Si esto no funciona, vaya a [configuración](#Configuraci.C3.B3n) o consulte la sección sobre [solución de problemas](#Soluci.C3.B3n_de_problemas).
+Si esto no funciona, vaya a [configuración](#Configuración) o consulte la sección sobre [solución de problemas](#Solución_de_problemas).
 
 El paquete [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) incluye `alsa-restore.service` y `alsa-store.service`, que están preconfigurados para hacer funcionar el arranque y la parada, respectivamente.
 
@@ -274,7 +274,7 @@ snd_page_alloc         7017    2  snd_hda_intel,snd_pcm
 
 Si el resultado es similar, los controladores de sonido han sido reconocidos automáticamente con éxito.
 
-**Nota:** Desde `udev>=171`, los módulos de emulación de OSS (`snd_seq_oss, snd_pcm_oss, snd_mixer_oss`) no se cargan de forma predeterminada: [Cárguelos manualmente](/index.php/Kernel_modules_(Espa%C3%B1ol)#Cargar_m.C3.B3dulos "Kernel modules (Español)") si son necesarios.
+**Nota:** Desde `udev>=171`, los módulos de emulación de OSS (`snd_seq_oss, snd_pcm_oss, snd_mixer_oss`) no se cargan de forma predeterminada: [Cárguelos manualmente](/index.php/Kernel_modules_(Espa%C3%B1ol)#Cargar_módulos "Kernel modules (Español)") si son necesarios.
 
 También puede ser que desee comprobar el directorio `/dev/snd/` para verificar que los archivos de dispositivos son los correctos:
 
@@ -300,9 +300,9 @@ Si tiene presente, por lo menos, los dispositivos **controlC0** y **pcmC0D0p** o
 Si este no es el caso, sus módulos de sonido no se han detectado correctamente. Para solucionar esto, pruebe intentando cargar los módulos manualmente:
 
 *   Localice el módulo de la tarjeta de sonido: [ALSA Soundcard Matrix](http://www.alsa-project.org/main/index.php/Matrix:Main). El módulo contendrá el prefijo 'snd-' (por ejemplo: `snd-via82xx`).
-*   [Cargue el módulo](/index.php/Kernel_modules_(Espa%C3%B1ol)#Cargar_m.C3.B3dulos "Kernel modules (Español)").
+*   [Cargue el módulo](/index.php/Kernel_modules_(Espa%C3%B1ol)#Cargar_módulos "Kernel modules (Español)").
 *   Verifique que los archivos del dispositivo en `/dev/snd` tienen una salida razonable (véase más arriba) y/o compruebelo con `alsamixer` o `amixer`.
-*   Configure `snd-NAME-OF-MODULE` y `snd-pcm-oss` para [cargar al arranque](/index.php/Kernel_modules_(Espa%C3%B1ol)#Cargar_m.C3.B3dulos "Kernel modules (Español)").
+*   Configure `snd-NAME-OF-MODULE` y `snd-pcm-oss` para [cargar al arranque](/index.php/Kernel_modules_(Espa%C3%B1ol)#Cargar_módulos "Kernel modules (Español)").
 
 ### Conseguir salida SPDIF
 
@@ -577,7 +577,7 @@ Esto debería habilitar dmix (software de mezcla) y permitir el acceso simultán
 
 Para una salida de sonido digital como S/PDIF, el paquete ALSA todavía no habilita dmix por defecto. Así, la configuración dmix anteriormente citada se puede usar para habilitar dmix para dispositivos con salida S/PDIF.
 
-Consulte el apartado sobre [solución de problemas](#Soluci.C3.B3n_de_problemas) para los problemas más comunes y sus soluciones.
+Consulte el apartado sobre [solución de problemas](#Solución_de_problemas) para los problemas más comunes y sus soluciones.
 
 ### Mezclar con Hardware
 

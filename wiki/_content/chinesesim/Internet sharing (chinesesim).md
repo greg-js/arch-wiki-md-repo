@@ -15,14 +15,14 @@ Related articles
 
 ## Contents
 
-*   [1 依赖](#.E4.BE.9D.E8.B5.96)
-*   [2 配置](#.E9.85.8D.E7.BD.AE)
-    *   [2.1 静态IP地址](#.E9.9D.99.E6.80.81IP.E5.9C.B0.E5.9D.80)
-    *   [2.2 启用包转发](#.E5.90.AF.E7.94.A8.E5.8C.85.E8.BD.AC.E5.8F.91)
+*   [1 依赖](#依赖)
+*   [2 配置](#配置)
+    *   [2.1 静态IP地址](#静态IP地址)
+    *   [2.2 启用包转发](#启用包转发)
     *   [2.3 Enable NAT](#Enable_NAT)
         *   [2.3.1 With iptables](#With_iptables)
         *   [2.3.2 With nftables](#With_nftables)
-    *   [2.4 给客户机分配IP地址](#.E7.BB.99.E5.AE.A2.E6.88.B7.E6.9C.BA.E5.88.86.E9.85.8DIP.E5.9C.B0.E5.9D.80)
+    *   [2.4 给客户机分配IP地址](#给客户机分配IP地址)
         *   [2.4.1 Manually adding an IP](#Manually_adding_an_IP)
 *   [3 Troubleshooting](#Troubleshooting)
 *   [4 See also](#See_also)
@@ -41,7 +41,7 @@ Related articles
 
 **提示：** 为了此事，你可以使用[Udev#Setting static device names](/index.php/Udev#Setting_static_device_names "Udev")所述的方法重命名你的设备。
 
-所有的配置都是在服务器计算机上完成的，除了最后一步[#给客户机分配IP地址](#.E7.BB.99.E5.AE.A2.E6.88.B7.E6.9C.BA.E5.88.86.E9.85.8DIP.E5.9C.B0.E5.9D.80).
+所有的配置都是在服务器计算机上完成的，除了最后一步[#给客户机分配IP地址](#给客户机分配IP地址).
 
 ### 静态IP地址
 
@@ -126,7 +126,7 @@ After that, you have to masquerade the `net0` adresses for `internet0`:
 
 ```
 
-You may want to add some more firewall restrictions on the forwarding (assuming the filter table already exists, like configured in [Nftables#Simple IPv4/IPv6 firewall](/index.php/Nftables#Simple_IPv4.2FIPv6_firewall "Nftables")):
+You may want to add some more firewall restrictions on the forwarding (assuming the filter table already exists, like configured in [Nftables#Simple IPv4/IPv6 firewall](/index.php/Nftables#Simple_IPv4/IPv6_firewall "Nftables")):
 
 ```
 # nft add chain inet filter forward { type filter hook forward priority 0 \; policy drop}

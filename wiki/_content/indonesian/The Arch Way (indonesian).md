@@ -4,7 +4,7 @@ Berikut ini lima prinsip utama yang biasanya disebut sebagai Arch Way, atau Filo
 
 *   [1 Kesederhanaan](#Kesederhanaan)
 *   [2 Kebenaran-kode diatas kemudahan](#Kebenaran-kode_diatas_kemudahan)
-*   [3 User-centric (Berpusat pada pengguna)](#User-centric_.28Berpusat_pada_pengguna.29)
+*   [3 User-centric (Berpusat pada pengguna)](#User-centric_(Berpusat_pada_pengguna))
 *   [4 Keterbukaan](#Keterbukaan)
 *   [5 Kebebasan](#Kebebasan)
 

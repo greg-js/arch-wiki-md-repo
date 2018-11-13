@@ -68,7 +68,7 @@ Affinché pacman comincia a controllare le firme dei pacchetti, si devono import
 
 **Nota:** Se si ha la necessità di eseguire `pacman-key --init` su un computer che non genera abbastanza entropia (ad esempio su un server headless), la generazione delle chiavi potrebbe richiedere molto tempo. Per generare della pseudo-entropia, si installi il pacchetto [haveged](https://www.archlinux.org/packages/?name=haveged) oppure [rng-tools](https://www.archlinux.org/packages/?name=rng-tools) sulla macchina in questione.
 
-Si [avvii](/index.php/Systemd_(Italiano)#Usare_le_unit.C3.A0 "Systemd (Italiano)") il servizio `haveged.service` prima di eseguire `pacman-key --init` da root.
+Si [avvii](/index.php/Systemd_(Italiano)#Usare_le_unità "Systemd (Italiano)") il servizio `haveged.service` prima di eseguire `pacman-key --init` da root.
 
 ## Gestire il portachiavi
 

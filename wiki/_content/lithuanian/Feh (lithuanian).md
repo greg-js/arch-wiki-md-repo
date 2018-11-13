@@ -4,8 +4,8 @@
 
 *   [1 Diegimas](#Diegimas)
 *   [2 Naudojimas](#Naudojimas)
-    *   [2.1 Paveikslėlių peržiūros įrankis](#Paveiksl.C4.97li.C5.B3_per.C5.BEi.C5.ABros_.C4.AFrankis)
-    *   [2.2 Darbastalio užsklandos įrankis](#Darbastalio_u.C5.BEsklandos_.C4.AFrankis)
+    *   [2.1 Paveikslėlių peržiūros įrankis](#Paveikslėlių_peržiūros_įrankis)
+    *   [2.2 Darbastalio užsklandos įrankis](#Darbastalio_užsklandos_įrankis)
         *   [2.2.1 Atsitiktinis darbastalio fonas](#Atsitiktinis_darbastalio_fonas)
 
 ## Diegimas

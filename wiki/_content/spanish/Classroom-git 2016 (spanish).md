@@ -6,7 +6,7 @@ Esta es la página de registro para una clase/taller de GIT que se llevará a ca
 ## Contents
 
 *   [1 Cree una clave SSH](#Cree_una_clave_SSH)
-*   [2 Comparta su clave pública](#Comparta_su_clave_p.C3.BAblica)
+*   [2 Comparta su clave pública](#Comparta_su_clave_pública)
 *   [3 Registrase](#Registrase)
     *   [3.1 Ayuda](#Ayuda)
 

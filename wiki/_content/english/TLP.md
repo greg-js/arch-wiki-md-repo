@@ -13,7 +13,7 @@ From the [project page](http://linrunner.de/en/tlp/tlp.html):
     *   [1.1 ThinkPads only](#ThinkPads_only)
     *   [1.2 Front end](#Front_end)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Force battery (BAT) configuration](#Force_battery_.28BAT.29_configuration)
+    *   [2.1 Force battery (BAT) configuration](#Force_battery_(BAT)_configuration)
     *   [2.2 Btrfs](#Btrfs)
     *   [2.3 Bumblebee with NVIDIA driver](#Bumblebee_with_NVIDIA_driver)
     *   [2.4 Radio Device Wizard](#Radio_Device_Wizard)

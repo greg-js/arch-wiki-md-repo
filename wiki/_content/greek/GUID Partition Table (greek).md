@@ -14,18 +14,18 @@
 ## Contents
 
 *   [1 Master Boot Record](#Master_Boot_Record)
-    *   [1.1 Τα προβλήματα του MBR](#.CE.A4.CE.B1_.CF.80.CF.81.CE.BF.CE.B2.CE.BB.CE.AE.CE.BC.CE.B1.CF.84.CE.B1_.CF.84.CE.BF.CF.85_MBR)
+    *   [1.1 Τα προβλήματα του MBR](#Τα_προβλήματα_του_MBR)
 *   [2 GUID Partition Table](#GUID_Partition_Table)
-    *   [2.1 Πλεονεκτήματα του GPT](#.CE.A0.CE.BB.CE.B5.CE.BF.CE.BD.CE.B5.CE.BA.CF.84.CE.AE.CE.BC.CE.B1.CF.84.CE.B1_.CF.84.CE.BF.CF.85_GPT)
-    *   [2.2 Υποστήριξη Kernel](#.CE.A5.CF.80.CE.BF.CF.83.CF.84.CE.AE.CF.81.CE.B9.CE.BE.CE.B7_Kernel)
-*   [3 Υποστήριξη Bootloader](#.CE.A5.CF.80.CE.BF.CF.83.CF.84.CE.AE.CF.81.CE.B9.CE.BE.CE.B7_Bootloader)
-    *   [3.1 Συστήματα UEFI](#.CE.A3.CF.85.CF.83.CF.84.CE.AE.CE.BC.CE.B1.CF.84.CE.B1_UEFI)
-    *   [3.2 Συστήματα BIOS](#.CE.A3.CF.85.CF.83.CF.84.CE.AE.CE.BC.CE.B1.CF.84.CE.B1_BIOS)
-*   [4 Εργαλεία Κατάτμησης](#.CE.95.CF.81.CE.B3.CE.B1.CE.BB.CE.B5.CE.AF.CE.B1_.CE.9A.CE.B1.CF.84.CE.AC.CF.84.CE.BC.CE.B7.CF.83.CE.B7.CF.82)
+    *   [2.1 Πλεονεκτήματα του GPT](#Πλεονεκτήματα_του_GPT)
+    *   [2.2 Υποστήριξη Kernel](#Υποστήριξη_Kernel)
+*   [3 Υποστήριξη Bootloader](#Υποστήριξη_Bootloader)
+    *   [3.1 Συστήματα UEFI](#Συστήματα_UEFI)
+    *   [3.2 Συστήματα BIOS](#Συστήματα_BIOS)
+*   [4 Εργαλεία Κατάτμησης](#Εργαλεία_Κατάτμησης)
     *   [4.1 GPT fdisk](#GPT_fdisk)
-        *   [4.1.1 Μετατροπή από MBR σε GPT](#.CE.9C.CE.B5.CF.84.CE.B1.CF.84.CF.81.CE.BF.CF.80.CE.AE_.CE.B1.CF.80.CF.8C_MBR_.CF.83.CE.B5_GPT)
+        *   [4.1.1 Μετατροπή από MBR σε GPT](#Μετατροπή_από_MBR_σε_GPT)
     *   [4.2 GNU Parted](#GNU_Parted)
-*   [5 Δείτε επίσης](#.CE.94.CE.B5.CE.AF.CF.84.CE.B5_.CE.B5.CF.80.CE.AF.CF.83.CE.B7.CF.82)
+*   [5 Δείτε επίσης](#Δείτε_επίσης)
 
 ## Master Boot Record
 
@@ -80,7 +80,7 @@
 
 **Note:** Μερικά συστήματα BIOS μπορεί να μην εκκινήσουν απο δίσκους GPT. Δείτε τα [http://mjg59.dreamwidth.org/8035.html](http://mjg59.dreamwidth.org/8035.html) και [http://rodsbooks.com/gdisk/bios.html](http://rodsbooks.com/gdisk/bios.html) για πείσσότερες πληροφορίες και λύσεις.
 
-*   [GRUB](/index.php/GRUB "GRUB") απαιτεί μια κατάτμηση [BIOS Boot](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB") των 1007 [KiB](https://en.wikipedia.org/wiki/KiB "wikipedia:KiB") τύπου (`EF02` στο gdisk και την σήμανση bios_grub στο GNU Parted) στα συστήματα BIOS ώστε να προσαρτήσει το αρχείο `core.img` λόγω έλλειψης του περιθωρίου προσάρτησης μετά τον MBR στους δίσκους. Η υποστήριξη GPT στον GRUB παρέχεται μέσω του αρθρώματος `part_gpt`.
+*   [GRUB](/index.php/GRUB "GRUB") απαιτεί μια κατάτμηση [BIOS Boot](/index.php/GRUB#GUID_Partition_Table_(GPT)_specific_instructions "GRUB") των 1007 [KiB](https://en.wikipedia.org/wiki/KiB "wikipedia:KiB") τύπου (`EF02` στο gdisk και την σήμανση bios_grub στο GNU Parted) στα συστήματα BIOS ώστε να προσαρτήσει το αρχείο `core.img` λόγω έλλειψης του περιθωρίου προσάρτησης μετά τον MBR στους δίσκους. Η υποστήριξη GPT στον GRUB παρέχεται μέσω του αρθρώματος `part_gpt`.
 
 *   [Syslinux](/index.php/Syslinux "Syslinux") απαιτεί η κατάτμηση που περιέχει το `/boot/syslinux/ldlinux.sys` (Ανεξάρτητα αν ο κατάλογος `/boot` αποτελεί ξεχωριστή κατάτμηση ή όχι) να επισημανθεί με το χαρακτηριστικό "Legacy BIOS Bootable" του GPT (*legacy_boot* για το GNU Parted) ώστε να αναγνωριστεί πως περιέχει τα αρχεία εκκίνησης του Syslinux απο τον κώδικα εκκίνησης MBR, των 440-byte `gptmbr.bin`. Δείτε το [Syslinux#GUID Partition Table aka GPT](/index.php/Syslinux#GUID_Partition_Table_aka_GPT "Syslinux") για περισσότερες πληροφορίες. Είναι αντίστοιχο της σήμανσης "boot" στους δίσκους MBR.
 
@@ -106,7 +106,7 @@
 
 **Note:** Θυμηθείτε ότι το GPT αποθηκεύει εναν δευτερεύοντα πίνακα στο τέλος του δίσκου. Πρέπει να βεβαιωθείτε πως τουλάχιστον 1 [MiB](https://en.wikipedia.org/wiki/MiB "wikipedia:MiB") του δίσκου δεν έχει εκχωρηθεί σε καμία κατάτμηση.
 
-**Note:** Έχετε υπόψη ότι αν χρησιμοποιείτε τον GRUB, τότε χρειάζεται μια κατάτμηση [BIOS Boot](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB"). Αν ο σχεδιασμός MBR κατατμήσεων σας δεν είναι ιδιαίτερα παλιός, υπάρχει μεγάλη πιθανότητα η πρώτη κατάτμηση να ξεκινά στον τομέα 2048 για λόγους στοίχισης. Το οποίο σημαίνει ότι στην αρχή θα υπάρχουν 1007 [KiB](https://en.wikipedia.org/wiki/KiB "wikipedia:KiB") άδειου χώρου όπου η κατάτμηση bios-boot μπορεί να δημιουργηθεί. Για να επιτευχθεί αυτό, Αρχικά πραγματοποιήστε την μετατροπή mbr->gpt με το gdisk όπως περιγράφηκε παραπάνω. Έπειτα, δημιουργήστε χειροκίνητα μια νέα κατάτμηση με το gdisk και ορίστε την θέση της στους τομείς 34 - 2047, και θέστε τον τύπο `EF02` ως τύπο της εν λόγω κατάτμησης.
+**Note:** Έχετε υπόψη ότι αν χρησιμοποιείτε τον GRUB, τότε χρειάζεται μια κατάτμηση [BIOS Boot](/index.php/GRUB#GUID_Partition_Table_(GPT)_specific_instructions "GRUB"). Αν ο σχεδιασμός MBR κατατμήσεων σας δεν είναι ιδιαίτερα παλιός, υπάρχει μεγάλη πιθανότητα η πρώτη κατάτμηση να ξεκινά στον τομέα 2048 για λόγους στοίχισης. Το οποίο σημαίνει ότι στην αρχή θα υπάρχουν 1007 [KiB](https://en.wikipedia.org/wiki/KiB "wikipedia:KiB") άδειου χώρου όπου η κατάτμηση bios-boot μπορεί να δημιουργηθεί. Για να επιτευχθεί αυτό, Αρχικά πραγματοποιήστε την μετατροπή mbr->gpt με το gdisk όπως περιγράφηκε παραπάνω. Έπειτα, δημιουργήστε χειροκίνητα μια νέα κατάτμηση με το gdisk και ορίστε την θέση της στους τομείς 34 - 2047, και θέστε τον τύπο `EF02` ως τύπο της εν λόγω κατάτμησης.
 
 ### GNU Parted
 

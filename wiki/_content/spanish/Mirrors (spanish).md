@@ -34,13 +34,13 @@ Esta guía esta orientada a ayudarle a seleccionar y configurar los mejores mirr
     *   [5.12 Nueva Zelanda](#Nueva_Zelanda)
     *   [5.13 Polonia](#Polonia)
     *   [5.14 Rusia](#Rusia)
-    *   [5.15 Sudáfrica](#Sud.C3.A1frica)
+    *   [5.15 Sudáfrica](#Sudáfrica)
     *   [5.16 Estados Unidos](#Estados_Unidos)
     *   [5.17 Hyperboria](#Hyperboria)
-*   [6 Solución de problemas](#Soluci.C3.B3n_de_problemas)
-    *   [6.1 Mirrors fuera de sincronización: paquetes corruptos/archivo no encontrado](#Mirrors_fuera_de_sincronizaci.C3.B3n:_paquetes_corruptos.2Farchivo_no_encontrado)
+*   [6 Solución de problemas](#Solución_de_problemas)
+    *   [6.1 Mirrors fuera de sincronización: paquetes corruptos/archivo no encontrado](#Mirrors_fuera_de_sincronización:_paquetes_corruptos/archivo_no_encontrado)
         *   [6.1.1 Utilizar todos los mirrors](#Utilizar_todos_los_mirrors)
-*   [7 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [7 Véase también](#Véase_también)
 
 ## Habilitar un mirror especifico
 

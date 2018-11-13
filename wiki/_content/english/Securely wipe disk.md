@@ -17,7 +17,7 @@ Wiping a disk is done by writing new data over every single bit.
     *   [1.1 Wipe all data left on the device](#Wipe_all_data_left_on_the_device)
     *   [1.2 Preparations for block device encryption](#Preparations_for_block_device_encryption)
 *   [2 Data remanence](#Data_remanence)
-    *   [2.1 Operating system, programs and filesystem](#Operating_system.2C_programs_and_filesystem)
+    *   [2.1 Operating system, programs and filesystem](#Operating_system,_programs_and_filesystem)
     *   [2.2 Hardware-specific issues](#Hardware-specific_issues)
         *   [2.2.1 Flash memory](#Flash_memory)
         *   [2.2.2 Marked Bad Sectors](#Marked_Bad_Sectors)
@@ -390,7 +390,7 @@ Alternatively, shred can be instructed to do only one pass, with entropy from e.
 
 ### Badblocks
 
-For letting badblocks (from the [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) package) perform a disk wipe, a destructive [read-write test](/index.php/Badblocks#Read-write_test_.28warning:destructive.29 "Badblocks") has to be done:
+For letting badblocks (from the [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) package) perform a disk wipe, a destructive [read-write test](/index.php/Badblocks#Read-write_test_(warning:destructive) "Badblocks") has to be done:
 
 ```
 # badblocks -c <NUMBER_BLOCKS> -wsv /dev/<drive>

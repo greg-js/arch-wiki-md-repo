@@ -13,7 +13,7 @@ This article was created to provide information on how to get Arch installed on 
 
 *   [1 Introduction](#Introduction)
     *   [1.1 Legacy Boot Mode](#Legacy_Boot_Mode)
-        *   [1.1.1 Models without Legacy Boot Mode/SeaBIOS](#Models_without_Legacy_Boot_Mode.2FSeaBIOS)
+        *   [1.1.1 Models without Legacy Boot Mode/SeaBIOS](#Models_without_Legacy_Boot_Mode/SeaBIOS)
     *   [1.2 Firmware write protection intro](#Firmware_write_protection_intro)
     *   [1.3 Prerequisites](#Prerequisites)
 *   [2 Chrome OS devices](#Chrome_OS_devices)
@@ -34,7 +34,7 @@ This article was created to provide information on how to get Arch installed on 
     *   [4.2 Video driver](#Video_driver)
     *   [4.3 Touchpad and touchscreen](#Touchpad_and_touchscreen)
         *   [4.3.1 Touchpad and touchscreen kernel modules](#Touchpad_and_touchscreen_kernel_modules)
-            *   [4.3.1.1 What to do if your touchpad or touchscreen is not supported?](#What_to_do_if_your_touchpad_or_touchscreen_is_not_supported.3F)
+            *   [4.3.1.1 What to do if your touchpad or touchscreen is not supported?](#What_to_do_if_your_touchpad_or_touchscreen_is_not_supported?)
         *   [4.3.2 Touchpad configuration](#Touchpad_configuration)
         *   [4.3.3 Chromium OS input drivers](#Chromium_OS_input_drivers)
     *   [4.4 Fixing suspend](#Fixing_suspend)

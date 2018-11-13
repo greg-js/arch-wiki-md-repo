@@ -27,22 +27,22 @@ Variáveis obrigatórias são `pkgname`, `pkgver`, `pkgrel` e `arch`. `license` 
 *   [1 Nome do pacote](#Nome_do_pacote)
     *   [1.1 pkgbase](#pkgbase)
     *   [1.2 pkgname](#pkgname)
-*   [2 Versão](#Vers.C3.A3o)
+*   [2 Versão](#Versão)
     *   [2.1 pkgver](#pkgver)
     *   [2.2 pkgrel](#pkgrel)
     *   [2.3 epoch](#epoch)
-*   [3 Genérica](#Gen.C3.A9rica)
+*   [3 Genérica](#Genérica)
     *   [3.1 pkgdesc](#pkgdesc)
     *   [3.2 arch](#arch)
     *   [3.3 url](#url)
     *   [3.4 license](#license)
     *   [3.5 groups](#groups)
-*   [4 Dependências](#Depend.C3.AAncias)
+*   [4 Dependências](#Dependências)
     *   [4.1 depends](#depends)
     *   [4.2 optdepends](#optdepends)
     *   [4.3 makedepends](#makedepends)
     *   [4.4 checkdepends](#checkdepends)
-*   [5 Relações do pacote](#Rela.C3.A7.C3.B5es_do_pacote)
+*   [5 Relações do pacote](#Relações_do_pacote)
     *   [5.1 provides](#provides)
     *   [5.2 conflicts](#conflicts)
     *   [5.3 replaces](#replaces)
@@ -59,8 +59,8 @@ Variáveis obrigatórias são `pkgname`, `pkgver`, `pkgrel` e `arch`. `license` 
     *   [8.1 md5sums](#md5sums)
     *   [8.2 sha1sums](#sha1sums)
     *   [8.3 sha256sums](#sha256sums)
-    *   [8.4 sha224sums, sha384sums, sha512sums](#sha224sums.2C_sha384sums.2C_sha512sums)
-*   [9 Veja também](#Veja_tamb.C3.A9m)
+    *   [8.4 sha224sums, sha384sums, sha512sums](#sha224sums,_sha384sums,_sha512sums)
+*   [9 Veja também](#Veja_também)
 
 ## Nome do pacote
 
@@ -87,7 +87,7 @@ A versão do pacote. Ela deve ser a mesma que a versão de lançamento pelo auto
 **Dica:**
 
 *   A ordem de valores incomuns pode ser testada com [vercmp](https://www.archlinux.org/pacman/vercmp.8.html), que é fornecido pelo pacote [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)").
-*   [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") pode [atualizar](http://allanmcrae.com/2013/04/pacman-4-1-released/) automaticamente essa variável definindo uma função `pkgver()` no PKGBUILD. Veja [Diretrizes de pacotes VCS#A função pkgver()](/index.php/Diretrizes_de_pacotes_VCS#A_fun.C3.A7.C3.A3o_pkgver.28.29 "Diretrizes de pacotes VCS") para detalhes.
+*   [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") pode [atualizar](http://allanmcrae.com/2013/04/pacman-4-1-released/) automaticamente essa variável definindo uma função `pkgver()` no PKGBUILD. Veja [Diretrizes de pacotes VCS#A função pkgver()](/index.php/Diretrizes_de_pacotes_VCS#A_função_pkgver() "Diretrizes de pacotes VCS") para detalhes.
 
 ### pkgrel
 
@@ -206,7 +206,7 @@ $ LC_ALL=C pacman -Si $(pactree -rl ''pacote'') 2>/dev/null | grep -q "^Groups *
 
 ### checkdepends
 
-Um vetor de pacotes dos quais o software depende para executar sua suíte de testes, mas que não são necessários em tempo de execução. Pacotes nesta lista seguem o mesmo formato que `depends`. Essas dependências são consideradas apenas quando a função [check()](/index.php/Criando_pacotes#check.28.29 "Criando pacotes") estiver presente e for ser executada pelo makepkg.
+Um vetor de pacotes dos quais o software depende para executar sua suíte de testes, mas que não são necessários em tempo de execução. Pacotes nesta lista seguem o mesmo formato que `depends`. Essas dependências são consideradas apenas quando a função [check()](/index.php/Criando_pacotes#check() "Criando pacotes") estiver presente e for ser executada pelo makepkg.
 
 **Nota:** Presume-se que o grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) já esteja instalado ao compilar com *makepkg*. Membros deste grupo **não devem** ser incluídos no vetor `checkdepends`.
 
@@ -297,7 +297,7 @@ Os arquivos também podem ser fornecidos no mesmo diretório onde o `PKGBUILD` e
 
 Arquivos *.install* são reconhecidos automaticamente pelo *makepkg* e não devem ser incluídos no vetor de fontes. Arquivos no vetor de fontes com extensões *.sig*, *.sign* ou *.asc* são reconhecidos pelo *makepkg* como assinaturas PGP e serão usados automaticamente para verificar a integridade do arquivo fonte correspondente.
 
-**Atenção:** Os nomes de arquivos de fontes baixados devem ser globalmente únicos porque o diretório [SRCDEST](/index.php/Makepkg_(Portugu%C3%AAs)#Sa.C3.ADda_de_pacote "Makepkg (Português)") pode ser o mesmo para todos pacotes. Por exemplo, usar o número de versão do projeto como um nome de arquivo potencialmente conflita com outros projetos com o mesmo número de versão. Neste caso, o nome de arquivo único alternativo a ser usado é fornecido com a sintaxe `source=('*nome_pacote_único*::*uri-arquivo*')` - por exemplo, `source=("$pkgname-$pkgver.tar.gz::https://github.com/codificador/programa/archive/v$pkgver.tar.gz")`.
+**Atenção:** Os nomes de arquivos de fontes baixados devem ser globalmente únicos porque o diretório [SRCDEST](/index.php/Makepkg_(Portugu%C3%AAs)#Saída_de_pacote "Makepkg (Português)") pode ser o mesmo para todos pacotes. Por exemplo, usar o número de versão do projeto como um nome de arquivo potencialmente conflita com outros projetos com o mesmo número de versão. Neste caso, o nome de arquivo único alternativo a ser usado é fornecido com a sintaxe `source=('*nome_pacote_único*::*uri-arquivo*')` - por exemplo, `source=("$pkgname-$pkgver.tar.gz::https://github.com/codificador/programa/archive/v$pkgver.tar.gz")`.
 
 **Dica:**
 
@@ -306,7 +306,7 @@ Arquivos *.install* são reconhecidos automaticamente pelo *makepkg* e não deve
 
 ### noextract
 
-Um vetor de arquivos listados sob `source` que não devem ser extraídos de seu formato empacotado pelo *makepkg*. Isso pode ser usado com pacotes que não podem ser tratados pelo `/usr/bin/bsdtar` ou aqueles que precisam ser instalado como estão. Se uma ferramenta alternativa de extração for usada (e.g. [lrzip](https://www.archlinux.org/packages/?name=lrzip)), ela deve ser adicionada no vetor `makedepends` e a primeira linha da função [prepare()](/index.php/Criando_pacotes#prepare.28.29 "Criando pacotes") deve extrair manualmente o pacote fonte; por exemplo:
+Um vetor de arquivos listados sob `source` que não devem ser extraídos de seu formato empacotado pelo *makepkg*. Isso pode ser usado com pacotes que não podem ser tratados pelo `/usr/bin/bsdtar` ou aqueles que precisam ser instalado como estão. Se uma ferramenta alternativa de extração for usada (e.g. [lrzip](https://www.archlinux.org/packages/?name=lrzip)), ela deve ser adicionada no vetor `makedepends` e a primeira linha da função [prepare()](/index.php/Criando_pacotes#prepare() "Criando pacotes") deve extrair manualmente o pacote fonte; por exemplo:
 
 ```
 prepare() {
@@ -341,7 +341,7 @@ Apenas impressões digitais completas são aceitas. Elas devem estar em caixa al
 
 **Nota:** Você pode usar `gpg --list-keys --fingerprint <ID-CHAVE>` para localizar a impressão digital da chave apropriada.
 
-Por favor, leia [makepkg (Português)#Verificação de assinatura](/index.php/Makepkg_(Portugu%C3%AAs)#Verifica.C3.A7.C3.A3o_de_assinatura "Makepkg (Português)") para mais informações.
+Por favor, leia [makepkg (Português)#Verificação de assinatura](/index.php/Makepkg_(Portugu%C3%AAs)#Verificação_de_assinatura "Makepkg (Português)") para mais informações.
 
 ## Integridade
 

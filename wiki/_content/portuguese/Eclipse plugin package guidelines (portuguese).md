@@ -10,17 +10,17 @@ Há muitas maneiras de instalar os plugins do [Eclipse](/index.php/Eclipse "Ecli
 
 ## Contents
 
-*   [1 Estrutura e instalação de plugins do Eclipse](#Estrutura_e_instala.C3.A7.C3.A3o_de_plugins_do_Eclipse)
+*   [1 Estrutura e instalação de plugins do Eclipse](#Estrutura_e_instalação_de_plugins_do_Eclipse)
 *   [2 Empacotamento](#Empacotamento)
     *   [2.1 Exemplo de PKGBUILD](#Exemplo_de_PKGBUILD)
-    *   [2.2 Como personalizar a compilação](#Como_personalizar_a_compila.C3.A7.C3.A3o)
-    *   [2.3 Revisão aprofundada do PKGBUILD](#Revis.C3.A3o_aprofundada_do_PKGBUILD)
+    *   [2.2 Como personalizar a compilação](#Como_personalizar_a_compilação)
+    *   [2.3 Revisão aprofundada do PKGBUILD](#Revisão_aprofundada_do_PKGBUILD)
         *   [2.3.1 Nomenclatura de pacote](#Nomenclatura_de_pacote)
         *   [2.3.2 Arquivos](#Arquivos)
-            *   [2.3.2.1 Extração](#Extra.C3.A7.C3.A3o)
-            *   [2.3.2.2 Localizações](#Localiza.C3.A7.C3.B5es)
-        *   [2.3.3 A função build()](#A_fun.C3.A7.C3.A3o_build.28.29)
-*   [3 Solução de problemas](#Solu.C3.A7.C3.A3o_de_problemas)
+            *   [2.3.2.1 Extração](#Extração)
+            *   [2.3.2.2 Localizações](#Localizações)
+        *   [2.3.3 A função build()](#A_função_build())
+*   [3 Solução de problemas](#Solução_de_problemas)
 
 ## Estrutura e instalação de plugins do Eclipse
 

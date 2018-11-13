@@ -6,17 +6,17 @@ De [Wikipedia](https://es.wikipedia.org/wiki/NetBeans):
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
 *   [2 Consejos](#Consejos)
     *   [2.1 Antialiasing de las fuentes en NetBeans](#Antialiasing_de_las_fuentes_en_NetBeans)
         *   [2.1.1 Solo NetBeans](#Solo_NetBeans)
         *   [2.1.2 Java en general](#Java_en_general)
-    *   [2.2 «Look and feel» estilo GTK](#.C2.ABLook_and_feel.C2.BB_estilo_GTK)
+    *   [2.2 «Look and feel» estilo GTK](#«Look_and_feel»_estilo_GTK)
 *   [3 Problemas conocidos](#Problemas_conocidos)
     *   [3.1 OpenJDK vs SunJDK](#OpenJDK_vs_SunJDK)
-    *   [3.2 Glassfish server - No puede descargar Glassfish server. I/O Exception](#Glassfish_server_-_No_puede_descargar_Glassfish_server._I.2FO_Exception)
-    *   [3.3 NetBeans no se ejecuta despues de la primera ejecución](#NetBeans_no_se_ejecuta_despues_de_la_primera_ejecuci.C3.B3n)
-*   [4 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+    *   [3.2 Glassfish server - No puede descargar Glassfish server. I/O Exception](#Glassfish_server_-_No_puede_descargar_Glassfish_server._I/O_Exception)
+    *   [3.3 NetBeans no se ejecuta despues de la primera ejecución](#NetBeans_no_se_ejecuta_despues_de_la_primera_ejecución)
+*   [4 Véase también](#Véase_también)
 
 ## Instalación
 

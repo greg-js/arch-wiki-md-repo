@@ -12,21 +12,21 @@
 ## Contents
 
 *   [1 Brother](#Brother)
-    *   [1.1 Сетевые принтеры](#.D0.A1.D0.B5.D1.82.D0.B5.D0.B2.D1.8B.D0.B5_.D0.BF.D1.80.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.8B)
-    *   [1.2 Специализированные драйверы](#.D0.A1.D0.BF.D0.B5.D1.86.D0.B8.D0.B0.D0.BB.D0.B8.D0.B7.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.BD.D1.8B.D0.B5_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D1.8B)
-        *   [1.2.1 Установка вручную из пакетов RPM](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B2.D1.80.D1.83.D1.87.D0.BD.D1.83.D1.8E_.D0.B8.D0.B7_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2_RPM)
-    *   [1.3 Обновление прошивки](#.D0.9E.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D1.88.D0.B8.D0.B2.D0.BA.D0.B8)
+    *   [1.1 Сетевые принтеры](#Сетевые_принтеры)
+    *   [1.2 Специализированные драйверы](#Специализированные_драйверы)
+        *   [1.2.1 Установка вручную из пакетов RPM](#Установка_вручную_из_пакетов_RPM)
+    *   [1.3 Обновление прошивки](#Обновление_прошивки)
 *   [2 Canon](#Canon)
     *   [2.1 CARPS](#CARPS)
-    *   [2.2 USB через IP (BJNP)](#USB_.D1.87.D0.B5.D1.80.D0.B5.D0.B7_IP_.28BJNP.29)
+    *   [2.2 USB через IP (BJNP)](#USB_через_IP_(BJNP))
     *   [2.3 cnijfilter](#cnijfilter)
 *   [3 Dell](#Dell)
 *   [4 Epson](#Epson)
-    *   [4.1 Утилиты](#.D0.A3.D1.82.D0.B8.D0.BB.D0.B8.D1.82.D1.8B)
+    *   [4.1 Утилиты](#Утилиты)
         *   [4.1.1 escputil](#escputil)
         *   [4.1.2 mtink](#mtink)
         *   [4.1.3 Stylus-toolbox](#Stylus-toolbox)
-    *   [4.2 Специализированные драйверы](#.D0.A1.D0.BF.D0.B5.D1.86.D0.B8.D0.B0.D0.BB.D0.B8.D0.B7.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.BD.D1.8B.D0.B5_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D1.8B_2)
+    *   [4.2 Специализированные драйверы](#Специализированные_драйверы_2)
         *   [4.2.1 Avasys](#Avasys)
 *   [5 HP](#HP)
     *   [5.1 HPLIP](#HPLIP)
@@ -34,13 +34,13 @@
 *   [6 Konica Minolta](#Konica_Minolta)
     *   [6.1 foo2zjs](#foo2zjs_2)
 *   [7 Lexmark](#Lexmark)
-    *   [7.1 Утилиты](#.D0.A3.D1.82.D0.B8.D0.BB.D0.B8.D1.82.D1.8B_2)
-    *   [7.2 Специализированный драйверы](#.D0.A1.D0.BF.D0.B5.D1.86.D0.B8.D0.B0.D0.BB.D0.B8.D0.B7.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.BD.D1.8B.D0.B9_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D1.8B)
+    *   [7.1 Утилиты](#Утилиты_2)
+    *   [7.2 Специализированный драйверы](#Специализированный_драйверы)
 *   [8 Oki](#Oki)
 *   [9 Ricoh](#Ricoh)
 *   [10 Samsung](#Samsung)
-*   [11 Xerox или FujiXerox](#Xerox_.D0.B8.D0.BB.D0.B8_FujiXerox)
-    *   [11.1 Специализированные драйверы](#.D0.A1.D0.BF.D0.B5.D1.86.D0.B8.D0.B0.D0.BB.D0.B8.D0.B7.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.BD.D1.8B.D0.B5_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D1.8B_3)
+*   [11 Xerox или FujiXerox](#Xerox_или_FujiXerox)
+    *   [11.1 Специализированные драйверы](#Специализированные_драйверы_3)
         *   [11.1.1 Phaser 3100MFP](#Phaser_3100MFP)
         *   [11.1.2 Phaser 6000B](#Phaser_6000B)
         *   [11.1.3 Phaser 6125N](#Phaser_6125N)
@@ -76,8 +76,8 @@
 | HL-L2300D | [brother-hll2300d](https://aur.archlinux.org/packages/brother-hll2300d/) |
 | HL-L2350DW | [brother-hll2350dw](https://aur.archlinux.org/packages/brother-hll2350dw/) |
 | HL-L2380DW | [brother-hll2380dw](https://aur.archlinux.org/packages/brother-hll2380dw/) |
-| HL-L2395DW | [brother-hll2395dw](https://aur.archlinux.org/packages/brother-hll2395dw/) | Используйте протокол `socket`'а, как описано в разделе [#Сетевые принтеры](#.D0.A1.D0.B5.D1.82.D0.B5.D0.B2.D1.8B.D0.B5_.D0.BF.D1.80.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.8B). |
-| HL-L5100DN | Драйвер Foomatic для HP LaserJet | Эта модель будет эмулировать HP LaserJet. Используйте протокол `lpd`, как описано в разделе [#Сетевые принтеры](#.D0.A1.D0.B5.D1.82.D0.B5.D0.B2.D1.8B.D0.B5_.D0.BF.D1.80.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.8B). |
+| HL-L2395DW | [brother-hll2395dw](https://aur.archlinux.org/packages/brother-hll2395dw/) | Используйте протокол `socket`'а, как описано в разделе [#Сетевые принтеры](#Сетевые_принтеры). |
+| HL-L5100DN | Драйвер Foomatic для HP LaserJet | Эта модель будет эмулировать HP LaserJet. Используйте протокол `lpd`, как описано в разделе [#Сетевые принтеры](#Сетевые_принтеры). |
 | MFC-420CN | [brother-mfc-420cn](https://aur.archlinux.org/packages/brother-mfc-420cn/) |
 | MFC-440CN | [brother-mfc-440cn](https://aur.archlinux.org/packages/brother-mfc-440cn/) |
 | MFC-7360N | [brother-mfc7360n](https://aur.archlinux.org/packages/brother-mfc7360n/) |
@@ -88,7 +88,7 @@
 | MFC-9840CDW | [foomatic](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Foomatic "CUPS (Русский)") | Или драйвер Brother. Этот принтер также работает с универсальным драйвером PCL-6 из пакета [gutenprint](https://www.archlinux.org/packages/?name=gutenprint). Используйте **pcl_p1**, как адрес принтера при использовании драйвера PCL-6. |
 | MFC-J470DW | [brother-mfc-j470dw](https://aur.archlinux.org/packages/brother-mfc-j470dw/) |
 | MFC-J4710DW | [brother-mfc-j4710dw](https://aur.archlinux.org/packages/brother-mfc-j4710dw/) |
-| MFC-J480DW | [brother-mfc-j480dw](https://aur.archlinux.org/packages/brother-mfc-j480dw/) | Используйте протокол `ipp://`, как описано в разделе [#Сетевые принтеры](#.D0.A1.D0.B5.D1.82.D0.B5.D0.B2.D1.8B.D0.B5_.D0.BF.D1.80.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.8B). |
+| MFC-J480DW | [brother-mfc-j480dw](https://aur.archlinux.org/packages/brother-mfc-j480dw/) | Используйте протокол `ipp://`, как описано в разделе [#Сетевые принтеры](#Сетевые_принтеры). |
 | MFC-J5520DW | [brother-mfc-j5520dw](https://aur.archlinux.org/packages/brother-mfc-j5520dw/) |
 | MFC-J5910DW | [brother-mfc-j5910dw](https://aur.archlinux.org/packages/brother-mfc-j5910dw/) |
 | MFC-J650DW | Установите драйвер Brother. |
@@ -246,7 +246,7 @@ ftp $PRINTER_IP
 | LBP7210Cdn |
 | LBP9100C |
 | MF4720w | [cndrvcups-lb-bin](https://aur.archlinux.org/packages/cndrvcups-lb-bin/) |
-| MG4200 series | [cnijfilter-mg4200](https://aur.archlinux.org/packages/cnijfilter-mg4200/) | Избегайте добавления принтера через [веб интерфейс](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.92.D0.B5.D0.B1_.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.84.D0.B5.D0.B9.D1.81 "CUPS (Русский)"), т.к. он не найдет файл PPD. |
+| MG4200 series | [cnijfilter-mg4200](https://aur.archlinux.org/packages/cnijfilter-mg4200/) | Избегайте добавления принтера через [веб интерфейс](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Веб_интерфейс "CUPS (Русский)"), т.к. он не найдет файл PPD. |
 | MX490 | [cnijfilter2](https://aur.archlinux.org/packages/cnijfilter2/)
 [cnijfilter2-bin](https://aur.archlinux.org/packages/cnijfilter2-bin/) |
 | MX492 |
@@ -266,7 +266,7 @@ ftp $PRINTER_IP
 
 ### cnijfilter
 
-Некоторые принтеры используют поддержку драйверами cnijfilter протокола `cnijnet`. Чтобы выяснить [URI принтера](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#URI_.D0.BF.D1.80.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D0.B0 "CUPS (Русский)") выполните
+Некоторые принтеры используют поддержку драйверами cnijfilter протокола `cnijnet`. Чтобы выяснить [URI принтера](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#URI_принтера "CUPS (Русский)") выполните
 
 ```
 $ cnijnetprn --search auto
@@ -393,7 +393,7 @@ $ make
 
 ## HP
 
-Смотрите также [CUPS/Решение проблем#Проблемы с HP](/index.php/CUPS/%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_HP "CUPS/Решение проблем").
+Смотрите также [CUPS/Решение проблем#Проблемы с HP](/index.php/CUPS/%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC#Проблемы_с_HP "CUPS/Решение проблем").
 
 Большинство принтеров HP будут работать с [hplip](https://www.archlinux.org/packages/?name=hplip), но некоторые - при использование [hpoj](https://aur.archlinux.org/packages/hpoj/). Также некоторые лазерные принтеры поддерживаются [foo2zjs-nightly](https://aur.archlinux.org/packages/foo2zjs-nightly/).
 

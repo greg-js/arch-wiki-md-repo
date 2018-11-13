@@ -20,7 +20,7 @@ Related articles
 *   [3 Tips and Tricks](#Tips_and_Tricks)
     *   [3.1 Performance settings for home broadband users](#Performance_settings_for_home_broadband_users)
     *   [3.2 Additional performance settings](#Additional_performance_settings)
-        *   [3.2.1 TTLs (Time-To-Live)](#TTLs_.28Time-To-Live.29)
+        *   [3.2.1 TTLs (Time-To-Live)](#TTLs_(Time-To-Live))
         *   [3.2.2 Timeouts](#Timeouts)
         *   [3.2.3 Debugging](#Debugging)
         *   [3.2.4 Cache size](#Cache_size)

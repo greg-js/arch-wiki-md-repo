@@ -26,7 +26,7 @@
     *   [1.5 Fisica](#Fisica)
         *   [1.5.1 Elettronica](#Elettronica)
         *   [1.5.2 Simulazioni fisiche](#Simulazioni_fisiche)
-        *   [1.5.3 Convertitori di unità](#Convertitori_di_unit.C3.A0)
+        *   [1.5.3 Convertitori di unità](#Convertitori_di_unità)
 
 ## Scienza
 

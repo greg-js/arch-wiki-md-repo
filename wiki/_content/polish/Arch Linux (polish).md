@@ -4,10 +4,10 @@ Arch Linux jest niezależnie tworzoną dystrubucją ogólnego przeznaczenia GNU/
 
 *   [1 Historia](#Historia)
 *   [2 Prostota](#Prostota)
-*   [3 Nowoczesność](#Nowoczesno.C5.9B.C4.87)
-*   [4 Zarządzanie Pakietami](#Zarz.C4.85dzanie_Pakietami)
-*   [5 Integracja Źródeł](#Integracja_.C5.B9r.C3.B3de.C5.82)
-*   [6 Społeczność](#Spo.C5.82eczno.C5.9B.C4.87)
+*   [3 Nowoczesność](#Nowoczesność)
+*   [4 Zarządzanie Pakietami](#Zarządzanie_Pakietami)
+*   [5 Integracja Źródeł](#Integracja_Źródeł)
+*   [6 Społeczność](#Społeczność)
 *   [7 Podsumowanie](#Podsumowanie)
 
 ## Historia

@@ -6,14 +6,14 @@ Artículos relacionados
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
 *   [2 Idiomas soportados](#Idiomas_soportados)
 *   [3 Uso](#Uso)
-    *   [3.1 Adquisición de imágenes](#Adquisici.C3.B3n_de_im.C3.A1genes)
-    *   [3.2 Preprocesado de imágenes](#Preprocesado_de_im.C3.A1genes)
+    *   [3.1 Adquisición de imágenes](#Adquisición_de_imágenes)
+    *   [3.2 Preprocesado de imágenes](#Preprocesado_de_imágenes)
     *   [3.3 El reconocimiento de texto](#El_reconocimiento_de_texto)
     *   [3.4 Guardando los resultados](#Guardando_los_resultados)
-*   [4 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [4 Véase también](#Véase_también)
 
 ## Instalación
 

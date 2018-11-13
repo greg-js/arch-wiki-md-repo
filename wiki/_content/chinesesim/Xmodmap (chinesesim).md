@@ -9,12 +9,12 @@
 
 ## Contents
 
-*   [1 介绍](#.E4.BB.8B.E7.BB.8D)
-*   [2 Keymap表](#Keymap.E8.A1.A8)
-*   [3 自定义映射表](#.E8.87.AA.E5.AE.9A.E4.B9.89.E6.98.A0.E5.B0.84.E8.A1.A8)
-    *   [3.1 测试你的修改](#.E6.B5.8B.E8.AF.95.E4.BD.A0.E7.9A.84.E4.BF.AE.E6.94.B9)
-*   [4 特殊的按键](#.E7.89.B9.E6.AE.8A.E7.9A.84.E6.8C.89.E9.94.AE)
-*   [5 MAC OS X的自然滚动](#MAC_OS_X.E7.9A.84.E8.87.AA.E7.84.B6.E6.BB.9A.E5.8A.A8)
+*   [1 介绍](#介绍)
+*   [2 Keymap表](#Keymap表)
+*   [3 自定义映射表](#自定义映射表)
+    *   [3.1 测试你的修改](#测试你的修改)
+*   [4 特殊的按键](#特殊的按键)
+*   [5 MAC OS X的自然滚动](#MAC_OS_X的自然滚动)
 *   [6 Additional resources](#Additional_resources)
 
 ## 介绍

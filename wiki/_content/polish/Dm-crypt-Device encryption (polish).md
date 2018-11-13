@@ -4,45 +4,45 @@ W tej sekcji opisano sposób ręcznego wykorzystania *dm-crypt* z linii poleceń
 
 *   [1 Przygotowanie](#Przygotowanie)
 *   [2 Wykorzystanie Cryptsetup](#Wykorzystanie_Cryptsetup)
-    *   [2.1 Hasła i klucze programu Cryptsetup](#Has.C5.82a_i_klucze_programu_Cryptsetup)
+    *   [2.1 Hasła i klucze programu Cryptsetup](#Hasła_i_klucze_programu_Cryptsetup)
 *   [3 Opcje szyfrowania z dm-crypt](#Opcje_szyfrowania_z_dm-crypt)
     *   [3.1 Opcje szyfrowania dla trybu LUKS](#Opcje_szyfrowania_dla_trybu_LUKS)
-    *   [3.2 Opcje szyfrowania dla trybu zwykłego](#Opcje_szyfrowania_dla_trybu_zwyk.C5.82ego)
-*   [4 Szyfrowanie urządzeń za pomocą cryptsetup](#Szyfrowanie_urz.C4.85dze.C5.84_za_pomoc.C4.85_cryptsetup)
-    *   [4.1 Szyfrowanie urządzeń w trybie LUKS](#Szyfrowanie_urz.C4.85dze.C5.84_w_trybie_LUKS)
+    *   [3.2 Opcje szyfrowania dla trybu zwykłego](#Opcje_szyfrowania_dla_trybu_zwykłego)
+*   [4 Szyfrowanie urządzeń za pomocą cryptsetup](#Szyfrowanie_urządzeń_za_pomocą_cryptsetup)
+    *   [4.1 Szyfrowanie urządzeń w trybie LUKS](#Szyfrowanie_urządzeń_w_trybie_LUKS)
         *   [4.1.1 Formatowanie partycji LUKS](#Formatowanie_partycji_LUKS)
-            *   [4.1.1.1 Używanie LUKS do formatowania partycji za pomocą pliku kluczy](#U.C5.BCywanie_LUKS_do_formatowania_partycji_za_pomoc.C4.85_pliku_kluczy)
-        *   [4.1.2 Odblokowywanie / mapowanie partycji LUKS za pomocą device mapper](#Odblokowywanie_.2F_mapowanie_partycji_LUKS_za_pomoc.C4.85_device_mapper)
-    *   [4.2 Szyfrowanie urządzeń w trybie zwykłym](#Szyfrowanie_urz.C4.85dze.C5.84_w_trybie_zwyk.C5.82ym)
-*   [5 Działania Cryptsetup specyficzne dla LUKS](#Dzia.C5.82ania_Cryptsetup_specyficzne_dla_LUKS)
-    *   [5.1 Zarządzanie kluczami](#Zarz.C4.85dzanie_kluczami)
+            *   [4.1.1.1 Używanie LUKS do formatowania partycji za pomocą pliku kluczy](#Używanie_LUKS_do_formatowania_partycji_za_pomocą_pliku_kluczy)
+        *   [4.1.2 Odblokowywanie / mapowanie partycji LUKS za pomocą device mapper](#Odblokowywanie_/_mapowanie_partycji_LUKS_za_pomocą_device_mapper)
+    *   [4.2 Szyfrowanie urządzeń w trybie zwykłym](#Szyfrowanie_urządzeń_w_trybie_zwykłym)
+*   [5 Działania Cryptsetup specyficzne dla LUKS](#Działania_Cryptsetup_specyficzne_dla_LUKS)
+    *   [5.1 Zarządzanie kluczami](#Zarządzanie_kluczami)
         *   [5.1.1 Dodawanie kluczy LUKS](#Dodawanie_kluczy_LUKS)
         *   [5.1.2 Usuwanie kluczy LUKS](#Usuwanie_kluczy_LUKS)
     *   [5.2 Kopia zapasowa i przywracanie](#Kopia_zapasowa_i_przywracanie)
-        *   [5.2.1 Kopia zapasowa za pomocą cryptsetup](#Kopia_zapasowa_za_pomoc.C4.85_cryptsetup)
-        *   [5.2.2 Przywracanie za pomocą cryptsetup](#Przywracanie_za_pomoc.C4.85_cryptsetup)
-        *   [5.2.3 Ręczne tworzenie kopii zapasowych i przywracanie](#R.C4.99czne_tworzenie_kopii_zapasowych_i_przywracanie)
-    *   [5.3 Ponowne szyfrowanie urządzeń](#Ponowne_szyfrowanie_urz.C4.85dze.C5.84)
-        *   [5.3.1 Zaszyfruj niezaszyfrowany system plików](#Zaszyfruj_niezaszyfrowany_system_plik.C3.B3w)
-        *   [5.3.2 Ponowne szyfrowanie istniejącej partycji LUKS](#Ponowne_szyfrowanie_istniej.C4.85cej_partycji_LUKS)
-*   [6 Zmiana rozmiaru zaszyfrowanych urządzeń](#Zmiana_rozmiaru_zaszyfrowanych_urz.C4.85dze.C5.84)
+        *   [5.2.1 Kopia zapasowa za pomocą cryptsetup](#Kopia_zapasowa_za_pomocą_cryptsetup)
+        *   [5.2.2 Przywracanie za pomocą cryptsetup](#Przywracanie_za_pomocą_cryptsetup)
+        *   [5.2.3 Ręczne tworzenie kopii zapasowych i przywracanie](#Ręczne_tworzenie_kopii_zapasowych_i_przywracanie)
+    *   [5.3 Ponowne szyfrowanie urządzeń](#Ponowne_szyfrowanie_urządzeń)
+        *   [5.3.1 Zaszyfruj niezaszyfrowany system plików](#Zaszyfruj_niezaszyfrowany_system_plików)
+        *   [5.3.2 Ponowne szyfrowanie istniejącej partycji LUKS](#Ponowne_szyfrowanie_istniejącej_partycji_LUKS)
+*   [6 Zmiana rozmiaru zaszyfrowanych urządzeń](#Zmiana_rozmiaru_zaszyfrowanych_urządzeń)
     *   [6.1 Loopback filesystem](#Loopback_filesystem)
 *   [7 Pliki kluczy](#Pliki_kluczy)
-    *   [7.1 Rodzaje plików kluczy](#Rodzaje_plik.C3.B3w_kluczy)
-        *   [7.1.1 hasło](#has.C5.82o)
+    *   [7.1 Rodzaje plików kluczy](#Rodzaje_plików_kluczy)
+        *   [7.1.1 hasło](#hasło)
         *   [7.1.2 randomtext](#randomtext)
         *   [7.1.3 binary](#binary)
     *   [7.2 Tworzenie pliku kluczy z losowymi znakami](#Tworzenie_pliku_kluczy_z_losowymi_znakami)
-        *   [7.2.1 Przechowywanie pliku klucza w systemie plików](#Przechowywanie_pliku_klucza_w_systemie_plik.C3.B3w)
-            *   [7.2.1.1 Bezpieczne nadpisywanie zapisanych plików kluczy](#Bezpieczne_nadpisywanie_zapisanych_plik.C3.B3w_kluczy)
+        *   [7.2.1 Przechowywanie pliku klucza w systemie plików](#Przechowywanie_pliku_klucza_w_systemie_plików)
+            *   [7.2.1.1 Bezpieczne nadpisywanie zapisanych plików kluczy](#Bezpieczne_nadpisywanie_zapisanych_plików_kluczy)
         *   [7.2.2 Przechowywanie pliku kluczy w ramfs](#Przechowywanie_pliku_kluczy_w_ramfs)
     *   [7.3 Konfigurowanie LUKS do korzystania z pliku klucza](#Konfigurowanie_LUKS_do_korzystania_z_pliku_klucza)
-    *   [7.4 Ręczne odblokowywanie partycji przy użyciu pliku klucza](#R.C4.99czne_odblokowywanie_partycji_przy_u.C5.BCyciu_pliku_klucza)
+    *   [7.4 Ręczne odblokowywanie partycji przy użyciu pliku klucza](#Ręczne_odblokowywanie_partycji_przy_użyciu_pliku_klucza)
     *   [7.5 Odblokowywanie dodatkowej partycji podczas rozruchu](#Odblokowywanie_dodatkowej_partycji_podczas_rozruchu)
-    *   [7.6 Odblokowywanie partycji głównej podczas rozruchu](#Odblokowywanie_partycji_g.C5.82.C3.B3wnej_podczas_rozruchu)
-        *   [7.6.1 Z plikiem kluczy przechowywanym na zewnętrznym nośniku](#Z_plikiem_kluczy_przechowywanym_na_zewn.C4.99trznym_no.C5.9Bniku)
+    *   [7.6 Odblokowywanie partycji głównej podczas rozruchu](#Odblokowywanie_partycji_głównej_podczas_rozruchu)
+        *   [7.6.1 Z plikiem kluczy przechowywanym na zewnętrznym nośniku](#Z_plikiem_kluczy_przechowywanym_na_zewnętrznym_nośniku)
             *   [7.6.1.1 Konfigurowanie mkinitcpio](#Konfigurowanie_mkinitcpio)
-            *   [7.6.1.2 Konfigurowanie parametrów jądra](#Konfigurowanie_parametr.C3.B3w_j.C4.85dra)
+            *   [7.6.1.2 Konfigurowanie parametrów jądra](#Konfigurowanie_parametrów_jądra)
         *   [7.6.2 Z plikiem kluczy osadzonym w initramfs](#Z_plikiem_kluczy_osadzonym_w_initramfs)
 
 ## Przygotowanie
@@ -175,7 +175,7 @@ Aby utworzyć mapowanie w trybie zwykłym z domyślnymi parametrami cryptsetup:
 
 ```
 
-Wykonanie go spowoduje podanie hasła, które powinno mieć bardzo wysoką entropię. Poniżej porównanie domyślnych parametrów z przykładem w [dm-crypt/Encrypting an entire system (Polski)#Zwykły dm-crypt](/index.php/Dm-crypt/Encrypting_an_entire_system_(Polski)#Zwyk.C5.82y_dm-crypt "Dm-crypt/Encrypting an entire system (Polski)")
+Wykonanie go spowoduje podanie hasła, które powinno mieć bardzo wysoką entropię. Poniżej porównanie domyślnych parametrów z przykładem w [dm-crypt/Encrypting an entire system (Polski)#Zwykły dm-crypt](/index.php/Dm-crypt/Encrypting_an_entire_system_(Polski)#Zwykły_dm-crypt "Dm-crypt/Encrypting an entire system (Polski)")
 
 | Option | Cryptsetup 1.7.0 defaults | Example | Comment |
 | --hash
@@ -316,7 +316,7 @@ Aby zamknąć kontener luks, odmontuj partycję i wykonaj następujące czynnoś
 
 ### Szyfrowanie urządzeń w trybie zwykłym
 
-Stworzenie i późniejszy dostęp do *dm-crypt* Szyfrowania w trybie zwykłym wymaga nie więcej niż korzystania z *cryptsetup* `open` akcję z poprawnymi [parametrami](#Opcje_szyfrowania_dla_trybu_zwyk.C5.82ego). Poniżej pokazano, że z dwoma przykładami urządzeń innych niż root, ale dodaje dziwnie, układając je w stos (tj. Drugi jest tworzony wewnątrz pierwszego). Oczywiście układanie szyfrowania podwaja się narzutowo. Oto przykład użycia innego przykładu użycia opcji szyfrowania.
+Stworzenie i późniejszy dostęp do *dm-crypt* Szyfrowania w trybie zwykłym wymaga nie więcej niż korzystania z *cryptsetup* `open` akcję z poprawnymi [parametrami](#Opcje_szyfrowania_dla_trybu_zwykłego). Poniżej pokazano, że z dwoma przykładami urządzeń innych niż root, ale dodaje dziwnie, układając je w stos (tj. Drugi jest tworzony wewnątrz pierwszego). Oczywiście układanie szyfrowania podwaja się narzutowo. Oto przykład użycia innego przykładu użycia opcji szyfrowania.
 
 Otwórz akcję z poprawnymi parametrami.
 
@@ -623,7 +623,7 @@ Przywracanie można następnie wykonać przy użyciu tych samych wartości, co p
 
 The [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) ppakiet zawiera narzędzie "cryptsetup-reencrypt". Może być użyty do konwersji istniejącego niezaszyfrowanego systemu plików na zaszyfrowany LUKS (opcja `--new`) i trwale usunąć szyfrowanie LUKS (`--decrypt`) z urządzenia. Jak sama nazwa wskazuje, może być również użyty do ponownego zaszyfrowania istniejącego zaszyfrowanego urządzenia LUKS, jednak ponowne szyfrowanie nie jest możliwe w przypadku odłączonego nagłówka LUKS lub innych trybów szyfrowania (na przykład w trybie zwykłym). W celu ponownego szyfrowania można zmienić [#Opcje szyfrowania dla trybu LUKS](#Opcje_szyfrowania_dla_trybu_LUKS). *cryptsetup-reencrypt*Działania można wykonywać tylko dla niezamontowanych urządzeń. Zobacz [cryptsetup-reencrypt(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cryptsetup-reencrypt.8) po więcej informacji.
 
-Jednym z zastosowań ponownego szyfrowania może być ponowne zabezpieczenie danych po złamaniu hasła lub [pliku klucza](#Keyfiles) i nie można mieć pewności, że nie otrzymano żadnej kopii nagłówka LUKS. Na przykład, jeśli tylko hasło zostało naruszone, ale nie nastąpił fizyczny dostęp do urządzenia, wystarczy zmienić odpowiednie hasło / klucz tylko ([#Zarządzanie kluczami](#Zarz.C4.85dzanie_kluczami)).
+Jednym z zastosowań ponownego szyfrowania może być ponowne zabezpieczenie danych po złamaniu hasła lub [pliku klucza](#Keyfiles) i nie można mieć pewności, że nie otrzymano żadnej kopii nagłówka LUKS. Na przykład, jeśli tylko hasło zostało naruszone, ale nie nastąpił fizyczny dostęp do urządzenia, wystarczy zmienić odpowiednie hasło / klucz tylko ([#Zarządzanie kluczami](#Zarządzanie_kluczami)).
 
 **Warning:** Zawsze upewnij się, że "kopia zapasowa" jest dostępna i sprawdź dokładnie opcje, które określisz przed użyciem narzędzia!
 
@@ -785,7 +785,7 @@ Możesz teraz ponownie zamontować kontener:
 
 ## Pliki kluczy
 
-**Note:** TW tej sekcji opisano użycie pliku klucza tekstowego w postaci zwykłego tekstu. Jeśli chcesz zaszyfrować plik klucza, co daje dwuetapowe uwierzytelnianie, Zobacz [Using GPG or OpenSSL Encrypted Keyfiles](/index.php/Dm-crypt/Specialties#Using_GPG.2C_LUKS.2C_or_OpenSSL_Encrypted_Keyfiles "Dm-crypt/Specialties") po szczegóły, ale proszę, przeczytaj ten rozdział.
+**Note:** TW tej sekcji opisano użycie pliku klucza tekstowego w postaci zwykłego tekstu. Jeśli chcesz zaszyfrować plik klucza, co daje dwuetapowe uwierzytelnianie, Zobacz [Using GPG or OpenSSL Encrypted Keyfiles](/index.php/Dm-crypt/Specialties#Using_GPG,_LUKS,_or_OpenSSL_Encrypted_Keyfiles "Dm-crypt/Specialties") po szczegóły, ale proszę, przeczytaj ten rozdział.
 
 **Co to jest plik klucza?**
 

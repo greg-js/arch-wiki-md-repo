@@ -11,44 +11,44 @@ Netctl 是基于命令行的网络管理器，支持场景配置。它是 Arch L
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 配置](#.E9.85.8D.E7.BD.AE)
-*   [3 使用](#.E4.BD.BF.E7.94.A8)
-    *   [3.1 启动配置文件](#.E5.90.AF.E5.8A.A8.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)
-    *   [3.2 启用配置文件](#.E5.90.AF.E7.94.A8.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)
-    *   [3.3 特殊 systemd 单元](#.E7.89.B9.E6.AE.8A_systemd_.E5.8D.95.E5.85.83)
-        *   [3.3.1 有线连接](#.E6.9C.89.E7.BA.BF.E8.BF.9E.E6.8E.A5)
-        *   [3.3.2 无线连接](#.E6.97.A0.E7.BA.BF.E8.BF.9E.E6.8E.A5)
-*   [4 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
-    *   [4.1 配置示例](#.E9.85.8D.E7.BD.AE.E7.A4.BA.E4.BE.8B)
-        *   [4.1.1 有线连接](#.E6.9C.89.E7.BA.BF.E8.BF.9E.E6.8E.A5_2)
-        *   [4.1.2 无线连接(WPA-PSK)](#.E6.97.A0.E7.BA.BF.E8.BF.9E.E6.8E.A5.28WPA-PSK.29)
-    *   [4.2 隐藏无线密码](#.E9.9A.90.E8.97.8F.E6.97.A0.E7.BA.BF.E5.AF.86.E7.A0.81)
-    *   [4.3 使用体验版图形用户界面](#.E4.BD.BF.E7.94.A8.E4.BD.93.E9.AA.8C.E7.89.88.E5.9B.BE.E5.BD.A2.E7.94.A8.E6.88.B7.E7.95.8C.E9.9D.A2)
+*   [1 安装](#安装)
+*   [2 配置](#配置)
+*   [3 使用](#使用)
+    *   [3.1 启动配置文件](#启动配置文件)
+    *   [3.2 启用配置文件](#启用配置文件)
+    *   [3.3 特殊 systemd 单元](#特殊_systemd_单元)
+        *   [3.3.1 有线连接](#有线连接)
+        *   [3.3.2 无线连接](#无线连接)
+*   [4 提示与技巧](#提示与技巧)
+    *   [4.1 配置示例](#配置示例)
+        *   [4.1.1 有线连接](#有线连接_2)
+        *   [4.1.2 无线连接(WPA-PSK)](#无线连接(WPA-PSK))
+    *   [4.2 隐藏无线密码](#隐藏无线密码)
+    *   [4.3 使用体验版图形用户界面](#使用体验版图形用户界面)
     *   [4.4 Eduroam](#Eduroam)
-    *   [4.5 绑定](#.E7.BB.91.E5.AE.9A)
-        *   [4.5.1 负载均衡](#.E8.B4.9F.E8.BD.BD.E5.9D.87.E8.A1.A1)
-        *   [4.5.2 有线 -> 无线故障切换](#.E6.9C.89.E7.BA.BF_-.3E_.E6.97.A0.E7.BA.BF.E6.95.85.E9.9A.9C.E5.88.87.E6.8D.A2)
-    *   [4.6 使用任意接口](#.E4.BD.BF.E7.94.A8.E4.BB.BB.E6.84.8F.E6.8E.A5.E5.8F.A3)
-    *   [4.7 使用钩子](#.E4.BD.BF.E7.94.A8.E9.92.A9.E5.AD.90)
-        *   [4.7.1 范例](#.E8.8C.83.E4.BE.8B)
-            *   [4.7.1.1 在已有连接上执行命令](#.E5.9C.A8.E5.B7.B2.E6.9C.89.E8.BF.9E.E6.8E.A5.E4.B8.8A.E6.89.A7.E8.A1.8C.E5.91.BD.E4.BB.A4)
-            *   [4.7.1.2 激活 network-online.target](#.E6.BF.80.E6.B4.BB_network-online.target)
-            *   [4.7.1.3 设置默认 DHCP 客户端](#.E8.AE.BE.E7.BD.AE.E9.BB.98.E8.AE.A4_DHCP_.E5.AE.A2.E6.88.B7.E7.AB.AF)
-*   [5 排错](#.E6.8E.92.E9.94.99)
-    *   [5.1 Job for netctl@wlan(...).service failed](#Job_for_netctl.40wlan.28....29.service_failed)
+    *   [4.5 绑定](#绑定)
+        *   [4.5.1 负载均衡](#负载均衡)
+        *   [4.5.2 有线 -> 无线故障切换](#有线_->_无线故障切换)
+    *   [4.6 使用任意接口](#使用任意接口)
+    *   [4.7 使用钩子](#使用钩子)
+        *   [4.7.1 范例](#范例)
+            *   [4.7.1.1 在已有连接上执行命令](#在已有连接上执行命令)
+            *   [4.7.1.2 激活 network-online.target](#激活_network-online.target)
+            *   [4.7.1.3 设置默认 DHCP 客户端](#设置默认_DHCP_客户端)
+*   [5 排错](#排错)
+    *   [5.1 Job for netctl@wlan(...).service failed](#Job_for_netctl@wlan(...).service_failed)
     *   [5.2 dhcpcd: ipv4_addroute: File exists](#dhcpcd:_ipv4_addroute:_File_exists)
     *   [5.3 DHCP timeout issues](#DHCP_timeout_issues)
     *   [5.4 Connection timeout issues](#Connection_timeout_issues)
     *   [5.5 Problems with netctl-auto on resume](#Problems_with_netctl-auto_on_resume)
     *   [5.6 netctl-auto suddenly stopped working for WiFi adapters](#netctl-auto_suddenly_stopped_working_for_WiFi_adapters)
     *   [5.7 netctl-auto does not automatically unblock a wireless card to use an interface](#netctl-auto_does_not_automatically_unblock_a_wireless_card_to_use_an_interface)
-    *   [5.8 RTNETLINK answers: File exists (with multiple NICs)](#RTNETLINK_answers:_File_exists_.28with_multiple_NICs.29)
-*   [6 参见](#.E5.8F.82.E8.A7.81)
+    *   [5.8 RTNETLINK answers: File exists (with multiple NICs)](#RTNETLINK_answers:_File_exists_(with_multiple_NICs))
+*   [6 参见](#参见)
 
 ## 安装
 
-[netctl](https://www.archlinux.org/packages/?name=netctl) 是 [base](https://www.archlinux.org/groups/x86_64/base/) 包组的成员，所以系统中应当已经安装了。否则可以手工[安装](/index.php/Install "Install")。 netctl 有一些用于自动连接的[#特殊 systemd 单元](#.E7.89.B9.E6.AE.8A_systemd_.E5.8D.95.E5.85.83)需要一些附加依赖包，详情参阅该章节。 下表列出 netctl 的其他可选依赖包：
+[netctl](https://www.archlinux.org/packages/?name=netctl) 是 [base](https://www.archlinux.org/groups/x86_64/base/) 包组的成员，所以系统中应当已经安装了。否则可以手工[安装](/index.php/Install "Install")。 netctl 有一些用于自动连接的[#特殊 systemd 单元](#特殊_systemd_单元)需要一些附加依赖包，详情参阅该章节。 下表列出 netctl 的其他可选依赖包：
 
 | 功能 | 依赖 |
 | WPA | [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) |
@@ -64,7 +64,7 @@ Netctl 是基于命令行的网络管理器，支持场景配置。它是 Arch L
 
 *netctl*的配置文件保存在 `/etc/netctl/` 。一些配置文件的示例位于 `/etc/netctl/examples/`。
 
-若要使用上述示例配置文件，只需将其从 `/etc/netctl/examples/` 复制到 `/etc/netctl/` 并按需配置。参见下述[#配置示例](#.E9.85.8D.E7.BD.AE.E7.A4.BA.E4.BE.8B)。编辑配置文件所需的首要参数是网络*端口(interface)*，详阅[网络配置#更改设备名称](/index.php/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE#.E6.9B.B4.E6.94.B9.E8.AE.BE.E5.A4.87.E5.90.8D.E7.A7.B0 "网络配置")。
+若要使用上述示例配置文件，只需将其从 `/etc/netctl/examples/` 复制到 `/etc/netctl/` 并按需配置。参见下述[#配置示例](#配置示例)。编辑配置文件所需的首要参数是网络*端口(interface)*，详阅[网络配置#更改设备名称](/index.php/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE#更改设备名称 "网络配置")。
 
 **提示：**
 
@@ -107,7 +107,7 @@ netctl 的完整命令清单请参阅：[netctl(1)](http://jlk.fjfi.cvut.cz/arch
 
 启用的配置文件将在下次引导时自动启动。显然，只有线缆已连接或已处于无线信号覆盖区域时，配置文件才能成功启动。
 
-如果需要在多个配置文件之间频繁切换（比如携带笔记本电脑旅行），应改用 [#特殊 systemd 单元](#.E7.89.B9.E6.AE.8A_systemd_.E5.8D.95.E5.85.83) 一节的方法代替本节所述方法。
+如果需要在多个配置文件之间频繁切换（比如携带笔记本电脑旅行），应改用 [#特殊 systemd 单元](#特殊_systemd_单元) 一节的方法代替本节所述方法。
 
 ### 特殊 systemd 单元
 
@@ -123,7 +123,7 @@ netctl 的完整命令清单请参阅：[netctl(1)](http://jlk.fjfi.cvut.cz/arch
 
 #### 无线连接
 
-[安装](/index.php/Install "Install") [wpa_actiond](https://www.archlinux.org/packages/?name=wpa_actiond) 包并[启动/启用](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E5.8D.95.E5.85.83 "Systemd (简体中文)") `netctl-auto@*interface*.service` systemd 单元。当在不同网络覆盖区域间移动（漫游）时，*netctl* 配置文件将会自动启动/停止。
+[安装](/index.php/Install "Install") [wpa_actiond](https://www.archlinux.org/packages/?name=wpa_actiond) 包并[启动/启用](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#使用单元 "Systemd (简体中文)") `netctl-auto@*interface*.service` systemd 单元。当在不同网络覆盖区域间移动（漫游）时，*netctl* 配置文件将会自动启动/停止。
 
 *   *netctl-auto* 要求配置文件必须使用 `Security=wpa-configsection` 或 `Security=wpa` 配置项才能工作，不能使用 `Security=wpa-config` 配置项。
 
@@ -135,7 +135,7 @@ netctl 的完整命令清单请参阅：[netctl(1)](http://jlk.fjfi.cvut.cz/arch
 **注意:**
 
 *   如果任何一个配置文件包含错误，例如包含空变量 `Key=`，即使这个文件未被使用，也将加载失败并报错 `"Failed to read or parse configuration '/run/network/wpa_supplicant_wlan0.conf'`。
-*   本方法与 [启用配置文件](#.E5.90.AF.E7.94.A8.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6) 矛盾。如果你之前已经通过netctl启用了一个配置文件，运行 `netctl disable *profile*` 来防止这个配置在计算机启动时被启用两次。
+*   本方法与 [启用配置文件](#启用配置文件) 矛盾。如果你之前已经通过netctl启用了一个配置文件，运行 `netctl disable *profile*` 来防止这个配置在计算机启动时被启用两次。
 
 通过 netctl-auto 的命令动作可以在不停止 `netctl-auto.service` 服务的情况下手工控制一个不受 netctl-auto 管理的网络接口。完整的 netctl-auto 命令动作列表参阅 [netctl-auto(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/netctl-auto.1)。
 

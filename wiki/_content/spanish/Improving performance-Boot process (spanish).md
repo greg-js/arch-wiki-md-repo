@@ -14,14 +14,14 @@ Mejorar el rendimiento de arranque de un sistema puede proporcionar que los tiem
     *   [1.1 Usando systemd-analyze](#Usando_systemd-analyze)
 *   [2 Usando systemd-bootchart](#Usando_systemd-bootchart)
 *   [3 Usando bootchart2](#Usando_bootchart2)
-*   [4 Leer por adelantado (Readahead)](#Leer_por_adelantado_.28Readahead.29)
+*   [4 Leer por adelantado (Readahead)](#Leer_por_adelantado_(Readahead))
 *   [5 Compilando un custom kernel](#Compilando_un_custom_kernel)
 *   [6 Initramfs](#Initramfs)
-*   [7 Cominezo rápido de los serivicios](#Cominezo_r.C3.A1pido_de_los_serivicios)
+*   [7 Cominezo rápido de los serivicios](#Cominezo_rápido_de_los_serivicios)
 *   [8 Escalonar spin-up](#Escalonar_spin-up)
 *   [9 Montaje de sistemas de archivos](#Montaje_de_sistemas_de_archivos)
 *   [10 Menos salida durante el arranque](#Menos_salida_durante_el_arranque)
-*   [11 Suspensión de la RAM](#Suspensi.C3.B3n_de_la_RAM)
+*   [11 Suspensión de la RAM](#Suspensión_de_la_RAM)
 
 ## Analizando los procesos de inicio
 

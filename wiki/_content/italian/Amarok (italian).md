@@ -6,13 +6,13 @@
 *   [2 Personalizzazione](#Personalizzazione)
     *   [2.1 Integrazione con Gnome](#Integrazione_con_Gnome)
     *   [2.2 Script e applet](#Script_e_applet)
-    *   [2.3 Barra dell'atmosfera](#Barra_dell.27atmosfera)
+    *   [2.3 Barra dell'atmosfera](#Barra_dell'atmosfera)
 *   [3 SHOUTcast](#SHOUTcast)
-*   [4 Ampache/Riproduzione degli MP3](#Ampache.2FRiproduzione_degli_MP3)
+*   [4 Ampache/Riproduzione degli MP3](#Ampache/Riproduzione_degli_MP3)
 *   [5 Database per la raccolta](#Database_per_la_raccolta)
     *   [5.1 MySQL](#MySQL)
     *   [5.2 PostgreSQL](#PostgreSQL)
-*   [6 Firefly / Daap-Share](#Firefly_.2F_Daap-Share)
+*   [6 Firefly / Daap-Share](#Firefly_/_Daap-Share)
 *   [7 Altri articoli correlati](#Altri_articoli_correlati)
 
 ## Installazione

@@ -10,7 +10,7 @@ This article does not attempt to show how to set up a shared connection between 
 *   [2 Network interface configuration](#Network_interface_configuration)
     *   [2.1 Persistent interface naming](#Persistent_interface_naming)
     *   [2.2 IP configuration](#IP_configuration)
-*   [3 ADSL connection/PPPoE](#ADSL_connection.2FPPPoE)
+*   [3 ADSL connection/PPPoE](#ADSL_connection/PPPoE)
     *   [3.1 PPPoE configuration](#PPPoE_configuration)
 *   [4 DNS and DHCP](#DNS_and_DHCP)
 *   [5 Connection sharing](#Connection_sharing)
@@ -21,7 +21,7 @@ This article does not attempt to show how to set up a shared connection between 
     *   [6.2 Global Unicast Addresses](#Global_Unicast_Addresses)
         *   [6.2.1 Static IPv6 prefix](#Static_IPv6_prefix)
         *   [6.2.2 Acquiring IPv6 prefix via DHCPv6-PD](#Acquiring_IPv6_prefix_via_DHCPv6-PD)
-    *   [6.3 Router Advertisement and Stateless Autoconfiguration (SLAAC)](#Router_Advertisement_and_Stateless_Autoconfiguration_.28SLAAC.29)
+    *   [6.3 Router Advertisement and Stateless Autoconfiguration (SLAAC)](#Router_Advertisement_and_Stateless_Autoconfiguration_(SLAAC))
 *   [7 Optional additions](#Optional_additions)
     *   [7.1 UPnP](#UPnP)
     *   [7.2 Remote administration](#Remote_administration)
@@ -205,7 +205,7 @@ You can use this in addition to the ULA address described above.
 
 #### Acquiring IPv6 prefix via DHCPv6-PD
 
-If your ISP handles IPv6 via prefix delegation then you can follow the instructions in the [IPv6#Prefix delegation (DHCPv6-PD)](/index.php/IPv6#Prefix_delegation_.28DHCPv6-PD.29 "IPv6") on how to properly configure your router. Following the conventions of this article the WAN interface is `extern0` (or `ppp0` if you are connecting through PPPoE) and the LAN interface is `intern0`.
+If your ISP handles IPv6 via prefix delegation then you can follow the instructions in the [IPv6#Prefix delegation (DHCPv6-PD)](/index.php/IPv6#Prefix_delegation_(DHCPv6-PD) "IPv6") on how to properly configure your router. Following the conventions of this article the WAN interface is `extern0` (or `ppp0` if you are connecting through PPPoE) and the LAN interface is `intern0`.
 
 ### Router Advertisement and Stateless Autoconfiguration (SLAAC)
 

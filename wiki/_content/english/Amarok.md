@@ -8,11 +8,11 @@
     *   [2.2 Scripts and applets](#Scripts_and_applets)
     *   [2.3 Moodbar](#Moodbar)
 *   [3 SHOUTcast](#SHOUTcast)
-*   [4 Ampache/MP3 streaming](#Ampache.2FMP3_streaming)
+*   [4 Ampache/MP3 streaming](#Ampache/MP3_streaming)
 *   [5 Collection database](#Collection_database)
     *   [5.1 MySQL](#MySQL)
 *   [6 Audio CD playback](#Audio_CD_playback)
-*   [7 Firefly/Daap share](#Firefly.2FDaap_share)
+*   [7 Firefly/Daap share](#Firefly/Daap_share)
 *   [8 See also](#See_also)
 
 ## Installation

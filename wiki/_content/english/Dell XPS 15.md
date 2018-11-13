@@ -22,8 +22,8 @@ This page is a work in progress! More info coming soon.
 ## Contents
 
 *   [1 System Settings](#System_Settings)
-*   [2 Differences between XPS 9550 & Precision 5510](#Differences_between_XPS_9550_.26_Precision_5510)
-*   [3 XPS 15 9560 and "early 2017" revision](#XPS_15_9560_and_.22early_2017.22_revision)
+*   [2 Differences between XPS 9550 & Precision 5510](#Differences_between_XPS_9550_&_Precision_5510)
+*   [3 XPS 15 9560 and "early 2017" revision](#XPS_15_9560_and_"early_2017"_revision)
 *   [4 System Setup](#System_Setup)
     *   [4.1 Power Management](#Power_Management)
     *   [4.2 Sound](#Sound)
@@ -46,7 +46,7 @@ This page is a work in progress! More info coming soon.
             *   [4.12.1.1 XPS 9550](#XPS_9550)
         *   [4.12.2 Synaptics](#Synaptics)
     *   [4.13 Notes](#Notes)
-*   [5 Howtos & Helpful Info](#Howtos_.26_Helpful_Info)
+*   [5 Howtos & Helpful Info](#Howtos_&_Helpful_Info)
 
 ## System Settings
 

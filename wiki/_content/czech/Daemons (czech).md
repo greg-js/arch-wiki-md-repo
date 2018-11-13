@@ -2,10 +2,10 @@ Démon je program, který běží v pozadí, čeká na události, které nastano
 
 ## Contents
 
-*   [1 Spouštění po startu](#Spou.C5.A1t.C4.9Bn.C3.AD_po_startu)
-*   [2 Ruční spouštění a zastavování](#Ru.C4.8Dn.C3.AD_spou.C5.A1t.C4.9Bn.C3.AD_a_zastavov.C3.A1n.C3.AD)
-*   [3 Základy](#Z.C3.A1klady)
-*   [4 Spouštění démonů v pozadí](#Spou.C5.A1t.C4.9Bn.C3.AD_d.C3.A9mon.C5.AF_v_pozad.C3.AD)
+*   [1 Spouštění po startu](#Spouštění_po_startu)
+*   [2 Ruční spouštění a zastavování](#Ruční_spouštění_a_zastavování)
+*   [3 Základy](#Základy)
+*   [4 Spouštění démonů v pozadí](#Spouštění_démonů_v_pozadí)
 
 ## Spouštění po startu
 

@@ -23,9 +23,9 @@ En este artículo se describe cómo los usuarios nuevos o experimentados en Arch
     *   [2.2 Software](#Software)
     *   [2.3 Otros](#Otros)
 *   [3 FAQ](#FAQ)
-    *   [3.1 ¿Cómo puedo convertirme en un desarrollador de Arch?](#.C2.BFC.C3.B3mo_puedo_convertirme_en_un_desarrollador_de_Arch.3F)
-    *   [3.2 ¿Cómo puedo ser un usuario de confianza?](#.C2.BFC.C3.B3mo_puedo_ser_un_usuario_de_confianza.3F)
-    *   [3.3 ¿Cómo puedo ser un artista?](#.C2.BFC.C3.B3mo_puedo_ser_un_artista.3F)
+    *   [3.1 ¿Cómo puedo convertirme en un desarrollador de Arch?](#¿Cómo_puedo_convertirme_en_un_desarrollador_de_Arch?)
+    *   [3.2 ¿Cómo puedo ser un usuario de confianza?](#¿Cómo_puedo_ser_un_usuario_de_confianza?)
+    *   [3.3 ¿Cómo puedo ser un artista?](#¿Cómo_puedo_ser_un_artista?)
 
 ## Proyectos oficiales de Arch Linux
 
@@ -152,7 +152,7 @@ He aquí una lista de cosas que puede hacer para ganar un poco de "notoriedad" e
 
 ### ¿Cómo puedo ser un usuario de confianza?
 
-Por favor, véase [¿Cómo me convierto en un TU?](/index.php/Trusted_Users_(Espa%C3%B1ol)#.C2.BFC.C3.B3mo_me_convierto_en_un_TU.3F "Trusted Users (Español)").
+Por favor, véase [¿Cómo me convierto en un TU?](/index.php/Trusted_Users_(Espa%C3%B1ol)#¿Cómo_me_convierto_en_un_TU? "Trusted Users (Español)").
 
 ### ¿Cómo puedo ser un artista?
 

@@ -11,37 +11,37 @@ La configuración inalámbrica es un proceso que consta de dos partes: la primer
 
 *   [1 Controlador del dispositivo](#Controlador_del_dispositivo)
     *   [1.1 Comprobar el estado del controlador](#Comprobar_el_estado_del_controlador)
-    *   [1.2 Instalar el controlador/firmware](#Instalar_el_controlador.2Ffirmware)
-*   [2 Gestión de las redes inalámbricas](#Gesti.C3.B3n_de_las_redes_inal.C3.A1mbricas)
-    *   [2.1 Configuración manual](#Configuraci.C3.B3n_manual)
-        *   [2.1.1 Obtener información útil](#Obtener_informaci.C3.B3n_.C3.BAtil)
-        *   [2.1.2 Activación de la interfaz](#Activaci.C3.B3n_de_la_interfaz)
+    *   [1.2 Instalar el controlador/firmware](#Instalar_el_controlador/firmware)
+*   [2 Gestión de las redes inalámbricas](#Gestión_de_las_redes_inalámbricas)
+    *   [2.1 Configuración manual](#Configuración_manual)
+        *   [2.1.1 Obtener información útil](#Obtener_información_útil)
+        *   [2.1.2 Activación de la interfaz](#Activación_de_la_interfaz)
         *   [2.1.3 Descubrir el punto de acceso](#Descubrir_el_punto_de_acceso)
         *   [2.1.4 Modalidades de funcionamiento](#Modalidades_de_funcionamiento)
-        *   [2.1.5 Asociación](#Asociaci.C3.B3n)
-        *   [2.1.6 Obtener una dirección IP](#Obtener_una_direcci.C3.B3n_IP)
-        *   [2.1.7 Iniciar scripts/servicios personalizados](#Iniciar_scripts.2Fservicios_personalizados)
-            *   [2.1.7.1 Conectarse manualmente a una red inalámbrica en el arranque con systemd y dhcpcd](#Conectarse_manualmente_a_una_red_inal.C3.A1mbrica_en_el_arranque_con_systemd_y_dhcpcd)
-            *   [2.1.7.2 Systemd con wpa_supplicant e IP estática](#Systemd_con_wpa_supplicant_e_IP_est.C3.A1tica)
-    *   [2.2 Configuración automática](#Configuraci.C3.B3n_autom.C3.A1tica)
+        *   [2.1.5 Asociación](#Asociación)
+        *   [2.1.6 Obtener una dirección IP](#Obtener_una_dirección_IP)
+        *   [2.1.7 Iniciar scripts/servicios personalizados](#Iniciar_scripts/servicios_personalizados)
+            *   [2.1.7.1 Conectarse manualmente a una red inalámbrica en el arranque con systemd y dhcpcd](#Conectarse_manualmente_a_una_red_inalámbrica_en_el_arranque_con_systemd_y_dhcpcd)
+            *   [2.1.7.2 Systemd con wpa_supplicant e IP estática](#Systemd_con_wpa_supplicant_e_IP_estática)
+    *   [2.2 Configuración automática](#Configuración_automática)
         *   [2.2.1 Netctl](#Netctl)
         *   [2.2.2 Wicd](#Wicd)
         *   [2.2.3 NetworkManager](#NetworkManager)
         *   [2.2.4 WiFi Radar](#WiFi_Radar)
-*   [3 Solución de problemas](#Soluci.C3.B3n_de_problemas)
+*   [3 Solución de problemas](#Solución_de_problemas)
     *   [3.1 Rfkill](#Rfkill)
     *   [3.2 Dominio regulador](#Dominio_regulador)
     *   [3.3 Observar los registros](#Observar_los_registros)
-    *   [3.4 Ahorro de energía](#Ahorro_de_energ.C3.ADa)
-    *   [3.5 Imposible obtener una dirección IP](#Imposible_obtener_una_direcci.C3.B3n_IP)
-    *   [3.6 Conexión siempre fuera de tiempo](#Conexi.C3.B3n_siempre_fuera_de_tiempo)
-        *   [3.6.1 Reducir la velocidad de la transmisión](#Reducir_la_velocidad_de_la_transmisi.C3.B3n)
-        *   [3.6.2 Reducir la potencia de la transmisión](#Reducir_la_potencia_de_la_transmisi.C3.B3n)
-        *   [3.6.3 Configurar rts y los umbrales de fragmentación](#Configurar_rts_y_los_umbrales_de_fragmentaci.C3.B3n)
+    *   [3.4 Ahorro de energía](#Ahorro_de_energía)
+    *   [3.5 Imposible obtener una dirección IP](#Imposible_obtener_una_dirección_IP)
+    *   [3.6 Conexión siempre fuera de tiempo](#Conexión_siempre_fuera_de_tiempo)
+        *   [3.6.1 Reducir la velocidad de la transmisión](#Reducir_la_velocidad_de_la_transmisión)
+        *   [3.6.2 Reducir la potencia de la transmisión](#Reducir_la_potencia_de_la_transmisión)
+        *   [3.6.3 Configurar rts y los umbrales de fragmentación](#Configurar_rts_y_los_umbrales_de_fragmentación)
     *   [3.7 Desconexiones al azar](#Desconexiones_al_azar)
-        *   [3.7.1 Causa #1](#Causa_.231)
-        *   [3.7.2 Causa #2](#Causa_.232)
-*   [4 Solución de problemas sobre controladores y firmware](#Soluci.C3.B3n_de_problemas_sobre_controladores_y_firmware)
+        *   [3.7.1 Causa #1](#Causa_#1)
+        *   [3.7.2 Causa #2](#Causa_#2)
+*   [4 Solución de problemas sobre controladores y firmware](#Solución_de_problemas_sobre_controladores_y_firmware)
     *   [4.1 Ralink](#Ralink)
         *   [4.1.1 rt2x00](#rt2x00)
         *   [4.1.2 rt3090](#rt3090)
@@ -62,29 +62,29 @@ La configuración inalámbrica es un proceso que consta de dos partes: la primer
         *   [4.4.3 iwlwifi](#iwlwifi)
         *   [4.4.4 Desactivar el parpadeo del LED](#Desactivar_el_parpadeo_del_LED)
     *   [4.5 Broadcom](#Broadcom)
-    *   [4.6 Otros controladores/dispositivos](#Otros_controladores.2Fdispositivos)
+    *   [4.6 Otros controladores/dispositivos](#Otros_controladores/dispositivos)
         *   [4.6.1 Tenda w322u](#Tenda_w322u)
         *   [4.6.2 orinoco](#orinoco)
         *   [4.6.3 prism54](#prism54)
-        *   [4.6.4 ACX100/111](#ACX100.2F111)
+        *   [4.6.4 ACX100/111](#ACX100/111)
         *   [4.6.5 zd1211rw](#zd1211rw)
         *   [4.6.6 hostap_cs](#hostap_cs)
     *   [4.7 ndiswrapper](#ndiswrapper)
     *   [4.8 compat-drivers-patched](#compat-drivers-patched)
-*   [5 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [5 Véase también](#Véase_también)
 
 ## Controlador del dispositivo
 
 De forma predeterminada el kernel de Arch Linux es *modular*, lo que significa que muchos de los controladores del hardware del equipo residen en el disco duro y están disponibles como *[modulos](/index.php/Kernel_modules_(Espa%C3%B1ol) "Kernel modules (Español)")*. En el arranque, [udev](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)") hace un inventario de su hardware, el cual cargará los módulos (controladores) apropiados para el hardware correspondiente, y el controlador, a su vez, permitirá la creación de una *interfaz* para el kernel.
 
-Algunos chipsets inalámbricos también requieren un firmware, amén del controlador correspondiente. Muchas imágenes de firmware son proporcionados por el paquete [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) que se instala por defecto, sin embargo, las imágenes de firmware propietarias no están incluidas y deben instalarse por separado. Esto se describe en [#Instalar el controlador/firmware](#Instalar_el_controlador.2Ffirmware).
+Algunos chipsets inalámbricos también requieren un firmware, amén del controlador correspondiente. Muchas imágenes de firmware son proporcionados por el paquete [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) que se instala por defecto, sin embargo, las imágenes de firmware propietarias no están incluidas y deben instalarse por separado. Esto se describe en [#Instalar el controlador/firmware](#Instalar_el_controlador/firmware).
 
 **Nota:**
 
 *   Udev no es perfecto. Si el módulo apropiado no es cargado por udev en el arranque, simplemente [cárguelo manualmente](/index.php/Kernel_modules#Loading "Kernel modules"). Tenga en cuenta también que udev en ocasiones puede cargar más de un controlador para un dispositivo, y el conflicto resultante impide una configuración exitosa. Asegúrese de incluir en [blacklist](/index.php/Kernel_modules_(Espa%C3%B1ol)#Blacklisting "Kernel modules (Español)") el módulo no deseado.
 *   El nombre de la interfaz para los diferentes controladores y chipsets pueden variar. Algunos ejemplos son `wlan0`, `eth1` y `ath0`. Véase también [esta sección](/index.php/Configuring_Network_(Espa%C3%B1ol)#Nombres_de_los_dispositivos "Configuring Network (Español)").
 
-**Sugerencia:** Aunque no es estrictamente necesario, es una buena idea instalar primero las herramientas en el espacio de usuario mencionadas en [#Configuración manual](#Configuraci.C3.B3n_manual), especialmente ante la aparición de eventuales problemas.
+**Sugerencia:** Aunque no es estrictamente necesario, es una buena idea instalar primero las herramientas en el espacio de usuario mencionadas en [#Configuración manual](#Configuración_manual), especialmente ante la aparición de eventuales problemas.
 
 ### Comprobar el estado del controlador
 
@@ -197,7 +197,7 @@ Al igual que otras interfaces de red, las redes inalámbricas se controlan con `
 | iw dev wlan0 connect *your_essid* key 0:*your_key* | iwconfig wlan0 essid *your_essid* key s:*your_key* | Conectar a una red encriptada WEP usando clave ASCII. |
 | iw dev wlan0 set power_save on | iwconfig wlan0 power on | Activar ahorro de energía. |
 
-**Nota:** Según el hardware y el tipo de cifrado, algunos de estos pasos pueden no ser necesario. Algunas tarjetas se sabe que requieren la activación de la interfaz y/o el escaneo del punto de acceso antes de ser asociado a un punto de acceso y asignarle una dirección IP. Puede que sea necesario experimentar previamente. Por ejemplo, los usuarios pueden intentar WPA/WPA2 directamente para activar su red inalámbrica desde el paso [#Asociación](#Asociaci.C3.B3n).
+**Nota:** Según el hardware y el tipo de cifrado, algunos de estos pasos pueden no ser necesario. Algunas tarjetas se sabe que requieren la activación de la interfaz y/o el escaneo del punto de acceso antes de ser asociado a un punto de acceso y asignarle una dirección IP. Puede que sea necesario experimentar previamente. Por ejemplo, los usuarios pueden intentar WPA/WPA2 directamente para activar su red inalámbrica desde el paso [#Asociación](#Asociación).
 
 #### Obtener información útil
 
@@ -384,7 +384,7 @@ para DHCP, o
 
 para direcciones IP estáticas.
 
-**Sugerencia:** [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) contiene un hook (activado por defecto) para poner en marcha de forma automática [WPA supplicant](/index.php/WPA_supplicant_(Espa%C3%B1ol) "WPA supplicant (Español)") en busca de interfaces inalámbricas. Se inicia solo si existe un archivo de configuración en `/etc/wpa_supplicant.conf` y sin un proceso *wpa_supplicant* sondeando la interfaz en cuestión. En la mayoría de los casos, no es necesario crear ningún [servicio personalizado](#Conectarse_manualmente_a_una_red_inal.C3.A1mbrica_en_el_arranque_con_systemd_y_dhcpcd), basta con activar `dhcpcd@*interfaz*`.
+**Sugerencia:** [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) contiene un hook (activado por defecto) para poner en marcha de forma automática [WPA supplicant](/index.php/WPA_supplicant_(Espa%C3%B1ol) "WPA supplicant (Español)") en busca de interfaces inalámbricas. Se inicia solo si existe un archivo de configuración en `/etc/wpa_supplicant.conf` y sin un proceso *wpa_supplicant* sondeando la interfaz en cuestión. En la mayoría de los casos, no es necesario crear ningún [servicio personalizado](#Conectarse_manualmente_a_una_red_inalámbrica_en_el_arranque_con_systemd_y_dhcpcd), basta con activar `dhcpcd@*interfaz*`.
 
 #### Iniciar scripts/servicios personalizados
 
@@ -589,7 +589,7 @@ Véase [Power saving#Network interfaces](/index.php/Power_saving#Network_interfa
 
 ### Imposible obtener una dirección IP
 
-*   Si falla repetidamente la obtención de una dirección IP por el cliente [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) predeterminado, pruebe instalando y usando [dhclient](https://www.archlinux.org/packages/?name=dhclient) en su lugar. No olvide seleccionar *dhclient* como el principal cliente DHCP en la [gestión de la conexión](#Configuraci.C3.B3n_autom.C3.A1tica).
+*   Si falla repetidamente la obtención de una dirección IP por el cliente [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) predeterminado, pruebe instalando y usando [dhclient](https://www.archlinux.org/packages/?name=dhclient) en su lugar. No olvide seleccionar *dhclient* como el principal cliente DHCP en la [gestión de la conexión](#Configuración_automática).
 
 *   Si puede obtener una dirección IP para la interfaz de cable y no para la interfaz inalámbrica, pruebe a desactivar las funciones de ahorro de energía de la tarjeta inalámbrica: ` # iwconfig wlan0 power off` 
 

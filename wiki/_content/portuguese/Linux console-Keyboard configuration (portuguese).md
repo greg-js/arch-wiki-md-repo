@@ -10,17 +10,17 @@ Mapeamentos de teclado (conhecido pela abreviação inglesa como *keymaps*) para
 
 ## Contents
 
-*   [1 Vendo as configurações do teclado](#Vendo_as_configura.C3.A7.C3.B5es_do_teclado)
+*   [1 Vendo as configurações do teclado](#Vendo_as_configurações_do_teclado)
 *   [2 Mapas de teclado](#Mapas_de_teclado)
     *   [2.1 Listando mapas de teclado](#Listando_mapas_de_teclado)
     *   [2.2 Loadkeys](#Loadkeys)
-    *   [2.3 Configuração persistente](#Configura.C3.A7.C3.A3o_persistente)
+    *   [2.3 Configuração persistente](#Configuração_persistente)
     *   [2.4 Criando um mapa de teclado personalizado](#Criando_um_mapa_de_teclado_personalizado)
         *   [2.4.1 Adicionando diretivas](#Adicionando_diretivas)
         *   [2.4.2 Outros exemplos](#Outros_exemplos)
-        *   [2.4.3 Salvando alterações](#Salvando_altera.C3.A7.C3.B5es)
-*   [3 Ajustando o atraso e a taxa de digitação](#Ajustando_o_atraso_e_a_taxa_de_digita.C3.A7.C3.A3o)
-    *   [3.1 Serviço do systemd](#Servi.C3.A7o_do_systemd)
+        *   [2.4.3 Salvando alterações](#Salvando_alterações)
+*   [3 Ajustando o atraso e a taxa de digitação](#Ajustando_o_atraso_e_a_taxa_de_digitação)
+    *   [3.1 Serviço do systemd](#Serviço_do_systemd)
 
 ## Vendo as configurações do teclado
 
@@ -196,7 +196,7 @@ $ loadkeys /usr/local/share/kbd/keymaps/personal.map
 
 ```
 
-No entanto, este mapa de teclado está ativo apenas para a sessão atual. Para carregar o mapa de teclado na inicialização, especifique o caminho completo para o arquivo na variável `KEYMAP` em [/etc/vconsole.conf](#Configura.C3.A7.C3.A3o_persistente). O arquivo não precisa ser compactado como os mapas de teclado oficiais fornecidos pelo [kbd](https://www.archlinux.org/packages/?name=kbd).
+No entanto, este mapa de teclado está ativo apenas para a sessão atual. Para carregar o mapa de teclado na inicialização, especifique o caminho completo para o arquivo na variável `KEYMAP` em [/etc/vconsole.conf](#Configuração_persistente). O arquivo não precisa ser compactado como os mapas de teclado oficiais fornecidos pelo [kbd](https://www.archlinux.org/packages/?name=kbd).
 
 ## Ajustando o atraso e a taxa de digitação
 

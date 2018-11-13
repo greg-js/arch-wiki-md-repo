@@ -24,7 +24,7 @@ This article covers the proprietary [NVIDIA](http://www.nvidia.com) graphics car
     *   [2.1 Minimal configuration](#Minimal_configuration)
     *   [2.2 Automatic configuration](#Automatic_configuration)
     *   [2.3 NVIDIA Settings](#NVIDIA_Settings)
-    *   [2.4 Multiple GPUs/SLI](#Multiple_GPUs.2FSLI)
+    *   [2.4 Multiple GPUs/SLI](#Multiple_GPUs/SLI)
     *   [2.5 Multiple monitors](#Multiple_monitors)
         *   [2.5.1 Using NVIDIA Settings](#Using_NVIDIA_Settings)
         *   [2.5.2 ConnectedMonitor](#ConnectedMonitor)

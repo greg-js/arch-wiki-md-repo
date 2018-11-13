@@ -11,28 +11,28 @@ Los siguientes son ejemplos de escenarios comunes en el cifrado completo de un s
 
 ## Contents
 
-*   [1 Descripción general](#Descripci.C3.B3n_general)
+*   [1 Descripción general](#Descripción_general)
 *   [2 Esquema de particionado simple con LUKS](#Esquema_de_particionado_simple_con_LUKS)
     *   [2.1 Preparar el disco](#Preparar_el_disco)
-    *   [2.2 Preparar las particiones que no son de arranque (boot)](#Preparar_las_particiones_que_no_son_de_arranque_.28boot.29)
-    *   [2.3 Preparar la partición de arranque](#Preparar_la_partici.C3.B3n_de_arranque)
+    *   [2.2 Preparar las particiones que no son de arranque (boot)](#Preparar_las_particiones_que_no_son_de_arranque_(boot))
+    *   [2.3 Preparar la partición de arranque](#Preparar_la_partición_de_arranque)
     *   [2.4 Montar los dispositivos](#Montar_los_dispositivos)
     *   [2.5 Configurar mkinitcpio](#Configurar_mkinitcpio)
     *   [2.6 Configurar el gestor de arranque](#Configurar_el_gestor_de_arranque)
 *   [3 LVM sobre LUKS](#LVM_sobre_LUKS)
     *   [3.1 Preparar el disco](#Preparar_el_disco_2)
-    *   [3.2 Preparar los volúmenes lógicos](#Preparar_los_vol.C3.BAmenes_l.C3.B3gicos)
-    *   [3.3 Preparar la partición de arranque](#Preparar_la_partici.C3.B3n_de_arranque_2)
+    *   [3.2 Preparar los volúmenes lógicos](#Preparar_los_volúmenes_lógicos)
+    *   [3.3 Preparar la partición de arranque](#Preparar_la_partición_de_arranque_2)
     *   [3.4 Configurar mkinitcpio](#Configurar_mkinitcpio_2)
     *   [3.5 Configurar el gestor de arranque](#Configurar_el_gestor_de_arranque_2)
 *   [4 LUKS sobre LVM](#LUKS_sobre_LVM)
     *   [4.1 Preparar el disco](#Preparar_el_disco_3)
-    *   [4.2 Preparar los volúmenes lógicos](#Preparar_los_vol.C3.BAmenes_l.C3.B3gicos_2)
-    *   [4.3 Preparar la partición de arranque](#Preparar_la_partici.C3.B3n_de_arranque_3)
+    *   [4.2 Preparar los volúmenes lógicos](#Preparar_los_volúmenes_lógicos_2)
+    *   [4.3 Preparar la partición de arranque](#Preparar_la_partición_de_arranque_3)
     *   [4.4 Configurar mkinitcpio](#Configurar_mkinitcpio_3)
     *   [4.5 Configurar el gestor de arranque](#Configurar_el_gestor_de_arranque_3)
     *   [4.6 Configurar fstab y crypttab](#Configurar_fstab_y_crypttab)
-    *   [4.7 Cifrar el volúmen lógico /home](#Cifrar_el_vol.C3.BAmen_l.C3.B3gico_.2Fhome)
+    *   [4.7 Cifrar el volúmen lógico /home](#Cifrar_el_volúmen_lógico_/home)
 *   [5 LUKS sobre RAID por software](#LUKS_sobre_RAID_por_software)
     *   [5.1 Preparar los discos](#Preparar_los_discos)
     *   [5.2 Compilar la matriz RAID](#Compilar_la_matriz_RAID)
@@ -42,30 +42,30 @@ Los siguientes son ejemplos de escenarios comunes en el cifrado completo de un s
     *   [5.6 Configurar el sistema](#Configurar_el_sistema)
 *   [6 Modalidad plain de dm-crypt](#Modalidad_plain_de_dm-crypt)
     *   [6.1 Preparar el disco](#Preparar_el_disco_4)
-    *   [6.2 Preparar las particiones que no son de arranque (boot)](#Preparar_las_particiones_que_no_son_de_arranque_.28boot.29_2)
-    *   [6.3 Preparar la partición de arranque](#Preparar_la_partici.C3.B3n_de_arranque_4)
+    *   [6.2 Preparar las particiones que no son de arranque (boot)](#Preparar_las_particiones_que_no_son_de_arranque_(boot)_2)
+    *   [6.3 Preparar la partición de arranque](#Preparar_la_partición_de_arranque_4)
     *   [6.4 Configurar mkinitcpio](#Configurar_mkinitcpio_4)
     *   [6.5 Configurar el gestor de arranque](#Configurar_el_gestor_de_arranque_5)
-    *   [6.6 Posinstalación](#Posinstalaci.C3.B3n)
-*   [7 Cifrar partición de arranque (GRUB)](#Cifrar_partici.C3.B3n_de_arranque_.28GRUB.29)
+    *   [6.6 Posinstalación](#Posinstalación)
+*   [7 Cifrar partición de arranque (GRUB)](#Cifrar_partición_de_arranque_(GRUB))
     *   [7.1 Preparar el disco](#Preparar_el_disco_5)
-    *   [7.2 Preparar los volúmenes lógicos](#Preparar_los_vol.C3.BAmenes_l.C3.B3gicos_3)
-    *   [7.3 Preparar la partición de arranque](#Preparar_la_partici.C3.B3n_de_arranque_5)
+    *   [7.2 Preparar los volúmenes lógicos](#Preparar_los_volúmenes_lógicos_3)
+    *   [7.3 Preparar la partición de arranque](#Preparar_la_partición_de_arranque_5)
     *   [7.4 Configurar mkinitcpio](#Configurar_mkinitcpio_5)
     *   [7.5 Configurar el gestor de arranque](#Configurar_el_gestor_de_arranque_6)
     *   [7.6 Configurar fstab y crypttab](#Configurar_fstab_y_crypttab_2)
-*   [8 Subvolúmenes btrfs con espacio de intercambio](#Subvol.C3.BAmenes_btrfs_con_espacio_de_intercambio)
+*   [8 Subvolúmenes btrfs con espacio de intercambio](#Subvolúmenes_btrfs_con_espacio_de_intercambio)
     *   [8.1 Preparar el disco](#Preparar_el_disco_6)
-    *   [8.2 Preparar la partición del sistema](#Preparar_la_partici.C3.B3n_del_sistema)
+    *   [8.2 Preparar la partición del sistema](#Preparar_la_partición_del_sistema)
         *   [8.2.1 Crear contenedor LUKS](#Crear_contenedor_LUKS)
         *   [8.2.2 Desbloquear el contenedor LUKS](#Desbloquear_el_contenedor_LUKS)
         *   [8.2.3 Formatear el dispositivo mapeado](#Formatear_el_dispositivo_mapeado)
         *   [8.2.4 Montar el dispositivo mapeado](#Montar_el_dispositivo_mapeado)
-    *   [8.3 Crear subvolúmenes btrfs](#Crear_subvol.C3.BAmenes_btrfs)
+    *   [8.3 Crear subvolúmenes btrfs](#Crear_subvolúmenes_btrfs)
         *   [8.3.1 Esquema](#Esquema)
         *   [8.3.2 Crear subvolumenes de nivel superior](#Crear_subvolumenes_de_nivel_superior)
-        *   [8.3.3 Montar subvolúmenes de nivel superior](#Montar_subvol.C3.BAmenes_de_nivel_superior)
-        *   [8.3.4 Crear subvolúmenes anidados](#Crear_subvol.C3.BAmenes_anidados)
+        *   [8.3.3 Montar subvolúmenes de nivel superior](#Montar_subvolúmenes_de_nivel_superior)
+        *   [8.3.4 Crear subvolúmenes anidados](#Crear_subvolúmenes_anidados)
         *   [8.3.5 Montar ESP](#Montar_ESP)
     *   [8.4 Configurar mkinitcpio](#Configurar_mkinitcpio_6)
         *   [8.4.1 Crear archivo de claves](#Crear_archivo_de_claves)
@@ -148,7 +148,7 @@ Este escenario también permite emplear dispositivos USB para `/boot` y almacena
 
 *   Capacidad de recuperación de los datos para los casos en que pueda dañarse un encabezado LUKS
 *   Permite el [cifrado completo de disco](https://en.wikipedia.org/wiki/es:Cifrado_de_disco#Completo_cifrado_de_disco "wikipedia:es:Cifrado de disco")
-*   Ayuda a abordar [problemas](/index.php/Dm-crypt/Specialties#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29 "Dm-crypt/Specialties") con unidades SSD
+*   Ayuda a abordar [problemas](/index.php/Dm-crypt/Specialties#Discard/TRIM_support_for_solid_state_drives_(SSD) "Dm-crypt/Specialties") con unidades SSD
 
  | 
 
@@ -156,7 +156,7 @@ Este escenario también permite emplear dispositivos USB para `/boot` y almacena
 *   Clave de cifrado única y sin opción de cambiarla
 
  |
-| [#Cifrar partición de arranque (GRUB)](#Cifrar_partici.C3.B3n_de_arranque_.28GRUB.29)
+| [#Cifrar partición de arranque (GRUB)](#Cifrar_partición_de_arranque_(GRUB))
 
 muestra cómo cifrar la partición de arranque utilizando el gestor de arranque GRUB.
 Este escenario también emplea una partición ESP, que se puede aplicar a los otros escenarios.
@@ -173,18 +173,18 @@ Este escenario también emplea una partición ESP, que se puede aplicar a los ot
 *   No es compatible con otros gestores de arranque
 
  |
-| [#Subvolúmenes btrfs con espacio de intercambio](#Subvol.C3.BAmenes_btrfs_con_espacio_de_intercambio)
+| [#Subvolúmenes btrfs con espacio de intercambio](#Subvolúmenes_btrfs_con_espacio_de_intercambio)
 
 muestra cómo cifrar un sistema [Btrfs](/index.php/Btrfs "Btrfs"), incluyendo el directorio `/boot`, también agrega una partición de intercambio, en el hardware UEFI.
 
  | 
 
-*   Ventajas similares a [#Cifrar partición de arranque (GRUB)](#Cifrar_partici.C3.B3n_de_arranque_.28GRUB.29)
+*   Ventajas similares a [#Cifrar partición de arranque (GRUB)](#Cifrar_partición_de_arranque_(GRUB))
 *   Disponibilidad de las características de Btrfs
 
  | 
 
-*   Desventajas similares a [#Cifrar partición de arranque (GRUB)](#Cifrar_partici.C3.B3n_de_arranque_.28GRUB.29)
+*   Desventajas similares a [#Cifrar partición de arranque (GRUB)](#Cifrar_partición_de_arranque_(GRUB))
 
  |
 
@@ -196,7 +196,7 @@ Otra área a considerar es si se debe configurar una partición de intercambio c
 
 Si quiere avanzar en la protección de los datos del sistema no solo contra el robo físico, sino también previniéndose contra la manipulación lógica, vea [Dm-crypt/Specialties#Securing the unencrypted boot partition](/index.php/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition "Dm-crypt/Specialties") para conocer más posibilidades después de seguir uno de los escenarios.
 
-Para [solid state drives](/index.php/Solid_state_drive "Solid state drive") es posible que desee considerar activar la compatibilidad con TRIM, pero tenga en cuenta que existen posibles implicaciones de seguridad. Consulte [dm-crypt/Specialties#Discard/TRIM support for solid state drives (SSD)](/index.php/Dm-crypt/Specialties#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29 "Dm-crypt/Specialties") para obtener más información.
+Para [solid state drives](/index.php/Solid_state_drive "Solid state drive") es posible que desee considerar activar la compatibilidad con TRIM, pero tenga en cuenta que existen posibles implicaciones de seguridad. Consulte [dm-crypt/Specialties#Discard/TRIM support for solid state drives (SSD)](/index.php/Dm-crypt/Specialties#Discard/TRIM_support_for_solid_state_drives_(SSD) "Dm-crypt/Specialties") para obtener más información.
 
 **Advertencia:** En cualquier situación, nunca utilice software de reparación del sistema de archivos como [fsck](/index.php/Fsck "Fsck") directamente sobre un volumen cifrado, o destruirá cualquier medio para recuperar la clave utilizada para descifrar sus archivos. En su lugar, utilice estas herramientas en el dispositivo una vez desencriptado (abierto).
 
@@ -228,7 +228,7 @@ A continuación, cree las particiones necesarias, al menos una para `/` (por eje
 
 ### Preparar las particiones que no son de arranque (boot)
 
-Las siguientes órdenes crean y montan la partición raíz cifrada. Se corresponden con el proceso descrito con detalle en [Dm-crypt/Encrypting a non-root file system (Español)#Partición](/index.php/Dm-crypt/Encrypting_a_non-root_file_system_(Espa%C3%B1ol)#Partici.C3.B3n "Dm-crypt/Encrypting a non-root file system (Español)") (que, a pesar del título, *se puede* aplicar a particiones raíz, siempre y cuando [mkinitcpio](#Configurar_mkinitcpio) y el [gestor de arranque](#Configurar_el_gestor_de_arranque) estén configurados correctamente). Si desea utilizar determinadas opciones de cifrado no predeterminadas (por ejemplo, respecto al algoritmo de cifrado, longitud de la clave, etc.), consulte [opciones de cifrado](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") antes de ejecutar la primera orden:
+Las siguientes órdenes crean y montan la partición raíz cifrada. Se corresponden con el proceso descrito con detalle en [Dm-crypt/Encrypting a non-root file system (Español)#Partición](/index.php/Dm-crypt/Encrypting_a_non-root_file_system_(Espa%C3%B1ol)#Partición "Dm-crypt/Encrypting a non-root file system (Español)") (que, a pesar del título, *se puede* aplicar a particiones raíz, siempre y cuando [mkinitcpio](#Configurar_mkinitcpio) y el [gestor de arranque](#Configurar_el_gestor_de_arranque) estén configurados correctamente). Si desea utilizar determinadas opciones de cifrado no predeterminadas (por ejemplo, respecto al algoritmo de cifrado, longitud de la clave, etc.), consulte [opciones de cifrado](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") antes de ejecutar la primera orden:
 
 ```
 # cryptsetup -y -v luksFormat --type luks2 /dev/sda2
@@ -333,13 +333,13 @@ El esquema de particionado del disco en este ejemplo sería:
 
 *   Las instrucciones de [Dm-crypt/Specialties#Encrypted system using a detached LUKS header](/index.php/Dm-crypt/Specialties#Encrypted_system_using_a_detached_LUKS_header "Dm-crypt/Specialties") utilizan esta configuración con un encabezado LUKS remoto sobre un dispositivo USB para lograr una autenticación de dos factores con él.
 *   Las instrucciones del [blog de Pavel Kogan](https://web.archive.org/web/20180103175714/http://www.pavelkogan.com/2014/05/23/luks-full-disk-encryption/) muestran cómo encriptar la partición `/boot` mientras se mantiene en la partición LUKS principal cuando se usa GRUB.
-*   Las instrucciones de [dm-crypt/Specialties#Encrypted /boot and a detached LUKS header on USB](/index.php/Dm-crypt/Specialties#Encrypted_.2Fboot_and_a_detached_LUKS_header_on_USB "Dm-crypt/Specialties") usan esta configuración con un encabezado LUKS separado, una partición `/boot` cifrada y un archivo de clave encriptado todo en un dispositivo USB.
+*   Las instrucciones de [dm-crypt/Specialties#Encrypted /boot and a detached LUKS header on USB](/index.php/Dm-crypt/Specialties#Encrypted_/boot_and_a_detached_LUKS_header_on_USB "Dm-crypt/Specialties") usan esta configuración con un encabezado LUKS separado, una partición `/boot` cifrada y un archivo de clave encriptado todo en un dispositivo USB.
 
 ### Preparar el disco
 
 Antes de crear las particiones, debe informarse sobre la importancia y los métodos sobre cómo borrar de forma segura el disco, descrito en [Dm-crypt/Drive preparation (Español)](/index.php/Dm-crypt/Drive_preparation_(Espa%C3%B1ol) "Dm-crypt/Drive preparation (Español)").
 
-**Sugerencia:** Cuando se utiliza el gestor de arranque [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") junto con [GPT](/index.php/Partitioning_(Espa%C3%B1ol)#GUID_Partition_Table "Partitioning (Español)"), debe crear una partición [BIOS boot partition](/index.php/GRUB_(Espa%C3%B1ol)#Instrucciones_espec.C3.ADficas_para_GUID_Partition_Table_.28GPT.29 "GRUB (Español)").
+**Sugerencia:** Cuando se utiliza el gestor de arranque [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") junto con [GPT](/index.php/Partitioning_(Espa%C3%B1ol)#GUID_Partition_Table "Partitioning (Español)"), debe crear una partición [BIOS boot partition](/index.php/GRUB_(Espa%C3%B1ol)#Instrucciones_específicas_para_GUID_Partition_Table_(GPT) "GRUB (Español)").
 
 Cree una partición con punto de montaje en `/boot`, del tipo `8300`, con un tamaño de 200 MiB o más.
 
@@ -501,7 +501,7 @@ Esquema de particionado:
 
 ```
 
-Escriba aleatóriamente la partición `/dev/sda2` como indica el artículo [dm-crypt/Drive preparation (Español)#Limpiar un disco o partición vacía con dm-crypt](/index.php/Dm-crypt/Drive_preparation_(Espa%C3%B1ol)#Limpiar_un_disco_o_partici.C3.B3n_vac.C3.ADa_con_dm-crypt "Dm-crypt/Drive preparation (Español)").
+Escriba aleatóriamente la partición `/dev/sda2` como indica el artículo [dm-crypt/Drive preparation (Español)#Limpiar un disco o partición vacía con dm-crypt](/index.php/Dm-crypt/Drive_preparation_(Espa%C3%B1ol)#Limpiar_un_disco_o_partición_vacía_con_dm-crypt "Dm-crypt/Drive preparation (Español)").
 
 ### Preparar los volúmenes lógicos
 
@@ -523,9 +523,9 @@ Escriba aleatóriamente la partición `/dev/sda2` como indica el artículo [dm-c
 
 ```
 
-Más información acerca de las opciones de cifrado se puede encontrar en [Dm-crypt/Device encryption#Encryption options for LUKS mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption"). Tenga en cuenta se indicará cómo cifrar `/home` en [#Cifrar el volúmen lógico /home](#Cifrar_el_vol.C3.BAmen_l.C3.B3gico_.2Fhome).
+Más información acerca de las opciones de cifrado se puede encontrar en [Dm-crypt/Device encryption#Encryption options for LUKS mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption"). Tenga en cuenta se indicará cómo cifrar `/home` en [#Cifrar el volúmen lógico /home](#Cifrar_el_volúmen_lógico_/home).
 
-**Sugerencia:** Además, observe que si alguna vez tiene que acceder a la raíz cifrada desde la ISO de Arch, la anterior acción `open` le permitirá a continuación [mostrar los volúmenes de LVM](/index.php/LVM_(Espa%C3%B1ol)#No_se_muestran_los_vol.C3.BAmenes_l.C3.B3gicos "LVM (Español)").
+**Sugerencia:** Además, observe que si alguna vez tiene que acceder a la raíz cifrada desde la ISO de Arch, la anterior acción `open` le permitirá a continuación [mostrar los volúmenes de LVM](/index.php/LVM_(Espa%C3%B1ol)#No_se_muestran_los_volúmenes_lógicos "LVM (Español)").
 
 ### Preparar la partición de arranque
 
@@ -632,7 +632,7 @@ Este ejemplo se basa en una configuración real para un portátil destinado a fu
 
 Esta configuración utiliza un esquema de particionado muy simplificado, con todo el almacenamiento RAID disponible montado en `/` (sin partición `/boot` separada, y el disco HDD descifrado montado en `/mnt/data`. También vale la pena mencionar que el sistema en este ejemplo arranca en modo BIOS y las unidades están particionadas con la tabla de particiones [GPT](/index.php/Partitioning_(Espa%C3%B1ol)#GUID_Partition_Table "Partitioning (Español)").
 
-Tenga en cuenta que es muy importante en este tipo de configuraciones realizar [copias de seguridad del sistema](/index.php/System_backup "System backup") regulares. Si cualquiera de los SSD falla, los datos contenidos en el conjunto RAID serán prácticamente imposibles de recuperar. Es posible que desee seleccionar un [nivel RAID](/index.php/RAID_(Espa%C3%B1ol)#Niveles_RAID_est.C3.A1ndar "RAID (Español)") diferente si la tolerancia a los fallos es importante para usted.
+Tenga en cuenta que es muy importante en este tipo de configuraciones realizar [copias de seguridad del sistema](/index.php/System_backup "System backup") regulares. Si cualquiera de los SSD falla, los datos contenidos en el conjunto RAID serán prácticamente imposibles de recuperar. Es posible que desee seleccionar un [nivel RAID](/index.php/RAID_(Espa%C3%B1ol)#Niveles_RAID_estándar "RAID (Español)") diferente si la tolerancia a los fallos es importante para usted.
 
 El cifrado no es denegable en esta configuración.
 
@@ -651,7 +651,7 @@ Asegúrese de sustituirlos por las designaciones de dispositivo apropiadas para 
 
 Antes de crear cualquier partición, debe informarse acerca de la importancia y los métodos para borrar de forma segura el disco, descrito en [dm-crypt/Drive preparation (Español)](/index.php/Dm-crypt/Drive_preparation_(Espa%C3%B1ol) "Dm-crypt/Drive preparation (Español)").
 
-Al usar el gestor de arranque [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") junto con [GPT](/index.php/Partitioning_(Espa%C3%B1ol)#GUID_Partition_Table "Partitioning (Español)"), cree una [BIOS boot partition](/index.php/GRUB_(Espa%C3%B1ol)#Instrucciones_espec.C3.ADficas_para_GUID_Partition_Table_.28GPT.29 "GRUB (Español)"). Para esta configuración, esto incluye una partición de 1 MiB para el arranque de BIOS/GPT en `/dev/sda1` y el espacio restante de la unidad que está siendo particionada para «Linux RAID» en `/dev/sda2`.
+Al usar el gestor de arranque [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") junto con [GPT](/index.php/Partitioning_(Espa%C3%B1ol)#GUID_Partition_Table "Partitioning (Español)"), cree una [BIOS boot partition](/index.php/GRUB_(Espa%C3%B1ol)#Instrucciones_específicas_para_GUID_Partition_Table_(GPT) "GRUB (Español)"). Para esta configuración, esto incluye una partición de 1 MiB para el arranque de BIOS/GPT en `/dev/sda1` y el espacio restante de la unidad que está siendo particionada para «Linux RAID» en `/dev/sda2`.
 
 Una vez que se ha creado las particiones en `/dev/sda`, se pueden usar las siguientes órdenes para clonarlas en `/dev/sdb`
 
@@ -716,7 +716,7 @@ GRUB_ENABLE_CRYPTODISK=y
 
 ```
 
-Consulte [dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") y [GRUB (Español)#Partición de arranque](/index.php/GRUB_(Espa%C3%B1ol)#Partici.C3.B3n_de_arranque "GRUB (Español)") para obtener más detalles.
+Consulte [dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") y [GRUB (Español)#Partición de arranque](/index.php/GRUB_(Espa%C3%B1ol)#Partición_de_arranque "GRUB (Español)") para obtener más detalles.
 
 Complete la instalación de GRUB en ambas unidades SSD (en realidad, la instalación solo para `/dev/sda` funcionará).
 
@@ -767,7 +767,7 @@ Contrariamente a LUKS, la modalidad *plain* de dm-crypt no requiere una cabecera
 
 Tenga en cuenta que si no necesita cifrar el disco completo, los métodos que utilizan LUKS descritos anteriormente son las mejores opciones para el cifrado del sistema y de las particiones. Características de LUKS como la gestión de claves con múltiples frases de contraseñas/archivos de claves no están disponibles con la modalidad *plain*.
 
-Los discos cifrados con la modalidad *plain* de dm-crypt pueden ser más resistentes a los daños que los discos cifrados con LUKS, ya que no se basan en una clave maestra de cifrado, la cual constituye un punto vulnerable único de fallo si se daña. Sin embargo, utilizando el modo *plain* también se requiere una configuración más manual de las opciones de cifrado para lograr la misma fuerza criptográfica. Véase también [Disk encryption (Español)#Metadatos criptográficos](/index.php/Disk_encryption_(Espa%C3%B1ol)#Metadatos_criptogr.C3.A1ficos "Disk encryption (Español)"). También se puede considerar el uso de la modalidad *plain* si se trata de los problemas explicados en [dm-crypt/Specialties#Discard/TRIM support for solid state drives (SSD)](/index.php/Dm-crypt/Specialties#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29 "Dm-crypt/Specialties").
+Los discos cifrados con la modalidad *plain* de dm-crypt pueden ser más resistentes a los daños que los discos cifrados con LUKS, ya que no se basan en una clave maestra de cifrado, la cual constituye un punto vulnerable único de fallo si se daña. Sin embargo, utilizando el modo *plain* también se requiere una configuración más manual de las opciones de cifrado para lograr la misma fuerza criptográfica. Véase también [Disk encryption (Español)#Metadatos criptográficos](/index.php/Disk_encryption_(Espa%C3%B1ol)#Metadatos_criptográficos "Disk encryption (Español)"). También se puede considerar el uso de la modalidad *plain* si se trata de los problemas explicados en [dm-crypt/Specialties#Discard/TRIM support for solid state drives (SSD)](/index.php/Dm-crypt/Specialties#Discard/TRIM_support_for_solid_state_drives_(SSD) "Dm-crypt/Specialties").
 
 **Sugerencia:** Si el cifrado sin cabeceras es su objetivo, pero no está seguro acerca de la falta de derivación de clave con el modo *plain*, entonces dispone de dos alternativas:
 
@@ -797,13 +797,13 @@ El esquema de particionado del disco es:
 **Sugerencia:**
 
 *   También es posible utilizar una sola llave USB mediante la copia del archivo de claves a la initram directamente. Un ejemplo de archivo de claves `/etc/keyfile` copiado a la imagen initram se hace estableciendo `FILES="/etc/keyfile"` en `/etc/mkinitcpio.conf`. La manera de instruir al hook `encrypt` para que lea el archivo de claves en la imagen initram es utilizando el prefijo `rootfs:` delante del nombre del archivo, por ejemplo `cryptkey=rootfs:/etc/keyfile`.
-*   Otra opción es usar una frase de acceso con buena [entropía](/index.php/Disk_encryption_(Espa%C3%B1ol)#Elegir_una_frase_de_acceso_s.C3.B3lida "Disk encryption (Español)").
+*   Otra opción es usar una frase de acceso con buena [entropía](/index.php/Disk_encryption_(Espa%C3%B1ol)#Elegir_una_frase_de_acceso_sólida "Disk encryption (Español)").
 
 ### Preparar el disco
 
 Es de vital importancia que el dispositivo mapeado está lleno de datos. En particular, esto se aplica al caso que nos afecta.
 
-Véase [Dm-crypt/Drive preparation (Español)](/index.php/Dm-crypt/Drive_preparation_(Espa%C3%B1ol) "Dm-crypt/Drive preparation (Español)") y [Dm-crypt/Drive preparation (Español)#Métodos específicos de dm-crypt](/index.php/Dm-crypt/Drive_preparation_(Espa%C3%B1ol)#M.C3.A9todos_espec.C3.ADficos_de_dm-crypt "Dm-crypt/Drive preparation (Español)")
+Véase [Dm-crypt/Drive preparation (Español)](/index.php/Dm-crypt/Drive_preparation_(Espa%C3%B1ol) "Dm-crypt/Drive preparation (Español)") y [Dm-crypt/Drive preparation (Español)#Métodos específicos de dm-crypt](/index.php/Dm-crypt/Drive_preparation_(Espa%C3%B1ol)#Métodos_específicos_de_dm-crypt "Dm-crypt/Drive preparation (Español)")
 
 ### Preparar las particiones que no son de arranque (boot)
 
@@ -912,7 +912,7 @@ Sin embargo, cuando se requiere una actualización del kernel o del cargador de 
 
 ## Cifrar partición de arranque (GRUB)
 
-Esta configuración utiliza el mismo diseño de partición y configuración que para la partición raíz del sistema en la sección anterior [#LVM sobre LUKS](#LVM_sobre_LUKS), con la clara diferencia una característica especial del gestor de arranque [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") es utilizada para cifrar adicionalmente la partición de arranque `/boot`. Vea también [GRUB (Español)#Partición de arranque](/index.php/GRUB_(Espa%C3%B1ol)#Partici.C3.B3n_de_arranque "GRUB (Español)").
+Esta configuración utiliza el mismo diseño de partición y configuración que para la partición raíz del sistema en la sección anterior [#LVM sobre LUKS](#LVM_sobre_LUKS), con la clara diferencia una característica especial del gestor de arranque [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") es utilizada para cifrar adicionalmente la partición de arranque `/boot`. Vea también [GRUB (Español)#Partición de arranque](/index.php/GRUB_(Espa%C3%B1ol)#Partición_de_arranque "GRUB (Español)").
 
 La distribución del disco en este ejemplo es:
 
@@ -938,7 +938,7 @@ La distribución del disco en este ejemplo es:
 
 Antes de crear las particiones, debe informarse sobre la importancia y los métodos para borrar de forma segura el disco, descrito en [Dm-crypt/Drive preparation (Español)](/index.php/Dm-crypt/Drive_preparation_(Espa%C3%B1ol) "Dm-crypt/Drive preparation (Español)").
 
-Para [sistemas BIOS](/index.php/GRUB_(Espa%C3%B1ol)#Sistemas_BIOS "GRUB (Español)") cree una [BIOS boot partition](/index.php/GRUB_(Espa%C3%B1ol)#Instrucciones_espec.C3.ADficas_para_GUID_Partition_Table_.28GPT.29 "GRUB (Español)") con tamaño de 1 MiB para GRUB para almacenar la segunda etapa del gestor de arranque BIOS. No monte la partición.
+Para [sistemas BIOS](/index.php/GRUB_(Espa%C3%B1ol)#Sistemas_BIOS "GRUB (Español)") cree una [BIOS boot partition](/index.php/GRUB_(Espa%C3%B1ol)#Instrucciones_específicas_para_GUID_Partition_Table_(GPT) "GRUB (Español)") con tamaño de 1 MiB para GRUB para almacenar la segunda etapa del gestor de arranque BIOS. No monte la partición.
 
 Para [sistemas UEFI](/index.php/GRUB_(Espa%C3%B1ol)#Sistemas_UEFI "GRUB (Español)") cree una [EFI system partition (Español)](/index.php/EFI_system_partition_(Espa%C3%B1ol) "EFI system partition (Español)") con un tamaño apropiado, para luego montarla en `/efi`.
 
@@ -978,7 +978,7 @@ El contenedor desbloqueado estará ahora disponible como `/dev/mapper/cryptlvm`.
 
 ### Preparar los volúmenes lógicos
 
-Los volúmenes lógicos LVM de este ejemplo siguen el mismo esquema descrito en el escenario [#LVM sobre LUKS](#LVM_sobre_LUKS). Por lo tanto, siga la sección [#Preparar los volúmenes lógicos](#Preparar_los_vol.C3.BAmenes_l.C3.B3gicos) de arriba o haga los ajustes necesarios.
+Los volúmenes lógicos LVM de este ejemplo siguen el mismo esquema descrito en el escenario [#LVM sobre LUKS](#LVM_sobre_LUKS). Por lo tanto, siga la sección [#Preparar los volúmenes lógicos](#Preparar_los_volúmenes_lógicos) de arriba o haga los ajustes necesarios.
 
 ### Preparar la partición de arranque
 
@@ -1083,23 +1083,23 @@ GRUB_CMDLINE_LINUX="... rd.luks.name=*device-UUID*=cryptlvm" ...
 GRUB_ENABLE_CRYPTODISK=y
 ```
 
-Véase [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") y [GRUB (Español)#Partición de arranque](/index.php/GRUB_(Espa%C3%B1ol)#Partici.C3.B3n_de_arranque "GRUB (Español)") para obtener más detalles. El `*device-UUID*` hace referencia al UUID de `/dev/sda4` (la partición que aloja el lvm, la cual contiene a su vez el sistema de archivos raíz). Vea [Persistent block device naming (Español)](/index.php/Persistent_block_device_naming_(Espa%C3%B1ol) "Persistent block device naming (Español)").
+Véase [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") y [GRUB (Español)#Partición de arranque](/index.php/GRUB_(Espa%C3%B1ol)#Partición_de_arranque "GRUB (Español)") para obtener más detalles. El `*device-UUID*` hace referencia al UUID de `/dev/sda4` (la partición que aloja el lvm, la cual contiene a su vez el sistema de archivos raíz). Vea [Persistent block device naming (Español)](/index.php/Persistent_block_device_naming_(Espa%C3%B1ol) "Persistent block device naming (Español)").
 
-Genere el archivo de [configuration](/index.php/GRUB_(Espa%C3%B1ol)#Generar_el_archivo_de_configuraci.C3.B3n_principal "GRUB (Español)") de GRUB :
+Genere el archivo de [configuration](/index.php/GRUB_(Espa%C3%B1ol)#Generar_el_archivo_de_configuración_principal "GRUB (Español)") de GRUB :
 
 ```
 # grub-mkconfig -o /boot/grub/grub.cfg
 
 ```
 
-[Instale GRUB](/index.php/GRUB_(Espa%C3%B1ol)#Instalaci.C3.B3n_2 "GRUB (Español)") con la ESP montada para arrancar UEFI:
+[Instale GRUB](/index.php/GRUB_(Espa%C3%B1ol)#Instalación_2 "GRUB (Español)") con la ESP montada para arrancar UEFI:
 
 ```
 # grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB --recheck
 
 ```
 
-[Instale GRUB](/index.php/GRUB#Instalaci.C3.B3n "GRUB") en el disco para arrancar BIOS:
+[Instale GRUB](/index.php/GRUB#Instalación "GRUB") en el disco para arrancar BIOS:
 
 ```
 # grub-install --target=i386-pc --recheck /dev/sda
@@ -1174,7 +1174,7 @@ Siga la sección [dm-crypt/Device encryption#Encrypting devices with LUKS mode](
 
 #### Desbloquear el contenedor LUKS
 
-Ahora siga las instrucciones de [dm-crypt/Device encryption#Unlocking/Mapping LUKS partitions with the device mapper](/index.php/Dm-crypt/Device_encryption#Unlocking.2FMapping_LUKS_partitions_with_the_device_mapper "Dm-crypt/Device encryption") para desbloquear el contenedor LUKS y mapearlo.
+Ahora siga las instrucciones de [dm-crypt/Device encryption#Unlocking/Mapping LUKS partitions with the device mapper](/index.php/Dm-crypt/Device_encryption#Unlocking/Mapping_LUKS_partitions_with_the_device_mapper "Dm-crypt/Device encryption") para desbloquear el contenedor LUKS y mapearlo.
 
 #### Formatear el dispositivo mapeado
 
@@ -1272,7 +1272,7 @@ Después de crear, agregar e incrustar la clave como se describe arriba, añada 
 
 ### Configurar el gestor de arranque
 
-Instale [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") en `/dev/sda`. A continuación, modifique `/etc/default/grub` como se indica en el artículo [GRUB (Español)# Encriptación](/index.php/GRUB_(Espa%C3%B1ol)#_Encriptaci.C3.B3n "GRUB (Español)"), siguiendo las instrucciones de una partición raíz y de arranque cifrada. Finalmente, genere el archivo de configuración GRUB.
+Instale [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") en `/dev/sda`. A continuación, modifique `/etc/default/grub` como se indica en el artículo [GRUB (Español)# Encriptación](/index.php/GRUB_(Espa%C3%B1ol)#_Encriptación "GRUB (Español)"), siguiendo las instrucciones de una partición raíz y de arranque cifrada. Finalmente, genere el archivo de configuración GRUB.
 
 ### Configurar el espacio de intercambio
 

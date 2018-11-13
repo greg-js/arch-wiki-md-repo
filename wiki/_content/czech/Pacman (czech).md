@@ -15,25 +15,25 @@ Narozdíl od většiny ostatních správců balíčků je pacman napsán v progr
 ## Contents
 
 *   [1 Konfigurace](#Konfigurace)
-    *   [1.1 Hlavní volby](#Hlavn.C3.AD_volby)
-        *   [1.1.1 Zamezení upgradu balíčku](#Zamezen.C3.AD_upgradu_bal.C3.AD.C4.8Dku)
-        *   [1.1.2 Zamezení upgradu skupiny balíčků](#Zamezen.C3.AD_upgradu_skupiny_bal.C3.AD.C4.8Dk.C5.AF)
-    *   [1.2 Repozitáře](#Repozit.C3.A1.C5.99e)
-*   [2 Použití](#Pou.C5.BEit.C3.AD)
-    *   [2.1 Instalace balíčků](#Instalace_bal.C3.AD.C4.8Dk.C5.AF)
-    *   [2.2 Odstraňování balíčků](#Odstra.C5.88ov.C3.A1n.C3.AD_bal.C3.AD.C4.8Dk.C5.AF)
-    *   [2.3 Upgrade balíčků](#Upgrade_bal.C3.AD.C4.8Dk.C5.AF)
-    *   [2.4 Dotazování databází balíčků](#Dotazov.C3.A1n.C3.AD_datab.C3.A1z.C3.AD_bal.C3.AD.C4.8Dk.C5.AF)
-    *   [2.5 Další příkazy](#Dal.C5.A1.C3.AD_p.C5.99.C3.ADkazy)
-*   [3 Řešení problémů](#.C5.98e.C5.A1en.C3.AD_probl.C3.A9m.C5.AF)
-    *   [3.1 Aktualizace balíčku XYZ mi rozbila systém!](#Aktualizace_bal.C3.AD.C4.8Dku_XYZ_mi_rozbila_syst.C3.A9m.21)
-    *   [3.2 Vím o tom, že byl vydán update balíčku ABC, ale pacman mi stále říká, že je můj systém aktuální!](#V.C3.ADm_o_tom.2C_.C5.BEe_byl_vyd.C3.A1n_update_bal.C3.AD.C4.8Dku_ABC.2C_ale_pacman_mi_st.C3.A1le_.C5.99.C3.ADk.C3.A1.2C_.C5.BEe_je_m.C5.AFj_syst.C3.A9m_aktu.C3.A1ln.C3.AD.21)
-    *   [3.3 Při aktualizaci dostávám chybu: "file exists in filesystem"!](#P.C5.99i_aktualizaci_dost.C3.A1v.C3.A1m_chybu:_.22file_exists_in_filesystem.22.21)
-    *   [3.4 Při instalaci balíčku dostávám chybu: "not found in sync db"](#P.C5.99i_instalaci_bal.C3.AD.C4.8Dku_dost.C3.A1v.C3.A1m_chybu:_.22not_found_in_sync_db.22)
-    *   [3.5 pacman opakovaně upgraduje ten samý balíček!](#pacman_opakovan.C4.9B_upgraduje_ten_sam.C3.BD_bal.C3.AD.C4.8Dek.21)
-    *   [3.6 pacman během upgradu sletěl!](#pacman_b.C4.9Bhem_upgradu_slet.C4.9Bl.21)
-    *   [3.7 Nainstaloval jsem software pomocí make install; tyto soubory nepatří žádnému balíčku!](#Nainstaloval_jsem_software_pomoc.C3.AD_make_install.3B_tyto_soubory_nepat.C5.99.C3.AD_.C5.BE.C3.A1dn.C3.A9mu_bal.C3.AD.C4.8Dku.21)
-*   [4 Externí odkazy](#Extern.C3.AD_odkazy)
+    *   [1.1 Hlavní volby](#Hlavní_volby)
+        *   [1.1.1 Zamezení upgradu balíčku](#Zamezení_upgradu_balíčku)
+        *   [1.1.2 Zamezení upgradu skupiny balíčků](#Zamezení_upgradu_skupiny_balíčků)
+    *   [1.2 Repozitáře](#Repozitáře)
+*   [2 Použití](#Použití)
+    *   [2.1 Instalace balíčků](#Instalace_balíčků)
+    *   [2.2 Odstraňování balíčků](#Odstraňování_balíčků)
+    *   [2.3 Upgrade balíčků](#Upgrade_balíčků)
+    *   [2.4 Dotazování databází balíčků](#Dotazování_databází_balíčků)
+    *   [2.5 Další příkazy](#Další_příkazy)
+*   [3 Řešení problémů](#Řešení_problémů)
+    *   [3.1 Aktualizace balíčku XYZ mi rozbila systém!](#Aktualizace_balíčku_XYZ_mi_rozbila_systém!)
+    *   [3.2 Vím o tom, že byl vydán update balíčku ABC, ale pacman mi stále říká, že je můj systém aktuální!](#Vím_o_tom,_že_byl_vydán_update_balíčku_ABC,_ale_pacman_mi_stále_říká,_že_je_můj_systém_aktuální!)
+    *   [3.3 Při aktualizaci dostávám chybu: "file exists in filesystem"!](#Při_aktualizaci_dostávám_chybu:_"file_exists_in_filesystem"!)
+    *   [3.4 Při instalaci balíčku dostávám chybu: "not found in sync db"](#Při_instalaci_balíčku_dostávám_chybu:_"not_found_in_sync_db")
+    *   [3.5 pacman opakovaně upgraduje ten samý balíček!](#pacman_opakovaně_upgraduje_ten_samý_balíček!)
+    *   [3.6 pacman během upgradu sletěl!](#pacman_během_upgradu_sletěl!)
+    *   [3.7 Nainstaloval jsem software pomocí make install; tyto soubory nepatří žádnému balíčku!](#Nainstaloval_jsem_software_pomocí_make_install;_tyto_soubory_nepatří_žádnému_balíčku!)
+*   [4 Externí odkazy](#Externí_odkazy)
 
 ## Konfigurace
 
@@ -117,7 +117,7 @@ Někdy je od jednoho balíčku vícero verzí v různých repozitářích (např
 
 ```
 
-**Note:** **Neměňte** během instalace balíčků jejich seznam (např. pomocí `pacman -Sy jméno_balíčku`); může to vést k problémům se závislostmi [[1]](https://bbs.archlinux.org/viewtopic.php?id=89328). Namísto toho proveďte onen [upgrade](#Upgrade_bal.C3.AD.C4.8Dk.C5.AF) **před** instalací jakýchkoliv nových balíčků.
+**Note:** **Neměňte** během instalace balíčků jejich seznam (např. pomocí `pacman -Sy jméno_balíčku`); může to vést k problémům se závislostmi [[1]](https://bbs.archlinux.org/viewtopic.php?id=89328). Namísto toho proveďte onen [upgrade](#Upgrade_balíčků) **před** instalací jakýchkoliv nových balíčků.
 
 ### Odstraňování balíčků
 

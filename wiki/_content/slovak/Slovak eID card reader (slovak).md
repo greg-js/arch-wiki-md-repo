@@ -2,16 +2,16 @@ Táto stránka popisuje postup rozbehania čítačky a aplikácie eID klient pre
 
 ## Contents
 
-*   [1 Testované a funkčné čítačky](#Testovan.C3.A9_a_funk.C4.8Dn.C3.A9_.C4.8D.C3.ADta.C4.8Dky)
-*   [2 Inštalácia](#In.C5.A1tal.C3.A1cia)
-*   [3 Oficiálna príručka](#Ofici.C3.A1lna_pr.C3.ADru.C4.8Dka)
-*   [4 Používanie](#Pou.C5.BE.C3.ADvanie)
-    *   [4.1 Prvé spustenie](#Prv.C3.A9_spustenie)
-    *   [4.2 Povolenie automatického spúšťania eID klienta](#Povolenie_automatick.C3.A9ho_sp.C3.BA.C5.A1.C5.A5ania_eID_klienta)
-    *   [4.3 Kontrola čítačky](#Kontrola_.C4.8D.C3.ADta.C4.8Dky)
-    *   [4.4 "Čítačka IDBridge CT30 nie je podporovaná vo virtualizovanom prostredí pre OS Linux."](#.22.C4.8C.C3.ADta.C4.8Dka_IDBridge_CT30_nie_je_podporovan.C3.A1_vo_virtualizovanom_prostred.C3.AD_pre_OS_Linux..22)
+*   [1 Testované a funkčné čítačky](#Testované_a_funkčné_čítačky)
+*   [2 Inštalácia](#Inštalácia)
+*   [3 Oficiálna príručka](#Oficiálna_príručka)
+*   [4 Používanie](#Používanie)
+    *   [4.1 Prvé spustenie](#Prvé_spustenie)
+    *   [4.2 Povolenie automatického spúšťania eID klienta](#Povolenie_automatického_spúšťania_eID_klienta)
+    *   [4.3 Kontrola čítačky](#Kontrola_čítačky)
+    *   [4.4 "Čítačka IDBridge CT30 nie je podporovaná vo virtualizovanom prostredí pre OS Linux."](#"Čítačka_IDBridge_CT30_nie_je_podporovaná_vo_virtualizovanom_prostredí_pre_OS_Linux.")
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 DEBTAP: gzip: /var/cache/debtap/ubuntu-packages-files.gz: unexpected end of file; Synchronization failed. Exiting...](#DEBTAP:_gzip:_.2Fvar.2Fcache.2Fdebtap.2Fubuntu-packages-files.gz:_unexpected_end_of_file.3B_Synchronization_failed._Exiting...)
+    *   [5.1 DEBTAP: gzip: /var/cache/debtap/ubuntu-packages-files.gz: unexpected end of file; Synchronization failed. Exiting...](#DEBTAP:_gzip:_/var/cache/debtap/ubuntu-packages-files.gz:_unexpected_end_of_file;_Synchronization_failed._Exiting...)
 
 ## Testované a funkčné čítačky
 

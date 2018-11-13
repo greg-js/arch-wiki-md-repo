@@ -11,33 +11,33 @@ Arch Linux官方支持开源的 [OpenJDK](https://openjdk.java.net/) 版本7、8
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
+*   [1 安装](#安装)
     *   [1.1 OpenJDK](#OpenJDK)
-    *   [1.2 其他实现](#.E5.85.B6.E4.BB.96.E5.AE.9E.E7.8E.B0)
-*   [2 在JVM间切换](#.E5.9C.A8JVM.E9.97.B4.E5.88.87.E6.8D.A2)
-    *   [2.1 列出兼容的安装了的Java环境](#.E5.88.97.E5.87.BA.E5.85.BC.E5.AE.B9.E7.9A.84.E5.AE.89.E8.A3.85.E4.BA.86.E7.9A.84Java.E7.8E.AF.E5.A2.83)
-    *   [2.2 改变默认Java环境](#.E6.94.B9.E5.8F.98.E9.BB.98.E8.AE.A4Java.E7.8E.AF.E5.A2.83)
-    *   [2.3 取消设置的默认Java环境](#.E5.8F.96.E6.B6.88.E8.AE.BE.E7.BD.AE.E7.9A.84.E9.BB.98.E8.AE.A4Java.E7.8E.AF.E5.A2.83)
-    *   [2.4 解决默认Java环境的问题](#.E8.A7.A3.E5.86.B3.E9.BB.98.E8.AE.A4Java.E7.8E.AF.E5.A2.83.E7.9A.84.E9.97.AE.E9.A2.98)
-    *   [2.5 运行非默认Java版本的程序](#.E8.BF.90.E8.A1.8C.E9.9D.9E.E9.BB.98.E8.AE.A4Java.E7.89.88.E6.9C.AC.E7.9A.84.E7.A8.8B.E5.BA.8F)
-*   [3 包支持archlinux-java的先决条件](#.E5.8C.85.E6.94.AF.E6.8C.81archlinux-java.E7.9A.84.E5.85.88.E5.86.B3.E6.9D.A1.E4.BB.B6)
-*   [4 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
+    *   [1.2 其他实现](#其他实现)
+*   [2 在JVM间切换](#在JVM间切换)
+    *   [2.1 列出兼容的安装了的Java环境](#列出兼容的安装了的Java环境)
+    *   [2.2 改变默认Java环境](#改变默认Java环境)
+    *   [2.3 取消设置的默认Java环境](#取消设置的默认Java环境)
+    *   [2.4 解决默认Java环境的问题](#解决默认Java环境的问题)
+    *   [2.5 运行非默认Java版本的程序](#运行非默认Java版本的程序)
+*   [3 包支持archlinux-java的先决条件](#包支持archlinux-java的先决条件)
+*   [4 故障排除](#故障排除)
     *   [4.1 MySQL](#MySQL)
-    *   [4.2 冒充另一个窗口管理器](#.E5.86.92.E5.85.85.E5.8F.A6.E4.B8.80.E4.B8.AA.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8)
-    *   [4.3 难以辨认的字体](#.E9.9A.BE.E4.BB.A5.E8.BE.A8.E8.AE.A4.E7.9A.84.E5.AD.97.E4.BD.93)
-    *   [4.4 一些应用缺少文字](#.E4.B8.80.E4.BA.9B.E5.BA.94.E7.94.A8.E7.BC.BA.E5.B0.91.E6.96.87.E5.AD.97)
-    *   [4.5 应用未调整WM大小，菜单快速关闭](#.E5.BA.94.E7.94.A8.E6.9C.AA.E8.B0.83.E6.95.B4WM.E5.A4.A7.E5.B0.8F.EF.BC.8C.E8.8F.9C.E5.8D.95.E5.BF.AB.E9.80.9F.E5.85.B3.E9.97.AD)
-    *   [4.6 当调试JavaFX程序的时候系统卡住](#.E5.BD.93.E8.B0.83.E8.AF.95JavaFX.E7.A8.8B.E5.BA.8F.E7.9A.84.E6.97.B6.E5.80.99.E7.B3.BB.E7.BB.9F.E5.8D.A1.E4.BD.8F)
-    *   [4.7 JavaFX 的 MediaPlayer 构造函数抛出了一个 exception](#JavaFX_.E7.9A.84_MediaPlayer_.E6.9E.84.E9.80.A0.E5.87.BD.E6.95.B0.E6.8A.9B.E5.87.BA.E4.BA.86.E4.B8.80.E4.B8.AA_exception)
-    *   [4.8 Java程序无法打开外部链接](#Java.E7.A8.8B.E5.BA.8F.E6.97.A0.E6.B3.95.E6.89.93.E5.BC.80.E5.A4.96.E9.83.A8.E9.93.BE.E6.8E.A5)
-*   [5 建议和技巧](#.E5.BB.BA.E8.AE.AE.E5.92.8C.E6.8A.80.E5.B7.A7)
-    *   [5.1 更好的字体渲染](#.E6.9B.B4.E5.A5.BD.E7.9A.84.E5.AD.97.E4.BD.93.E6.B8.B2.E6.9F.93)
-    *   [5.2 禁止命令行的 'Picked up _JAVA_OPTIONS' 消息](#.E7.A6.81.E6.AD.A2.E5.91.BD.E4.BB.A4.E8.A1.8C.E7.9A.84_.27Picked_up_JAVA_OPTIONS.27_.E6.B6.88.E6.81.AF)
-    *   [5.3 GTK 视觉效果和感觉](#GTK_.E8.A7.86.E8.A7.89.E6.95.88.E6.9E.9C.E5.92.8C.E6.84.9F.E8.A7.89)
-        *   [5.3.1 GTK3支持](#GTK3.E6.94.AF.E6.8C.81)
-    *   [5.4 更好的2D性能](#.E6.9B.B4.E5.A5.BD.E7.9A.842D.E6.80.A7.E8.83.BD)
-    *   [5.5 非重新父母窗口管理器 / 灰色窗口 / 程序被绘制得不恰当](#.E9.9D.9E.E9.87.8D.E6.96.B0.E7.88.B6.E6.AF.8D.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8_.2F_.E7.81.B0.E8.89.B2.E7.AA.97.E5.8F.A3_.2F_.E7.A8.8B.E5.BA.8F.E8.A2.AB.E7.BB.98.E5.88.B6.E5.BE.97.E4.B8.8D.E6.81.B0.E5.BD.93)
-*   [6 参阅](#.E5.8F.82.E9.98.85)
+    *   [4.2 冒充另一个窗口管理器](#冒充另一个窗口管理器)
+    *   [4.3 难以辨认的字体](#难以辨认的字体)
+    *   [4.4 一些应用缺少文字](#一些应用缺少文字)
+    *   [4.5 应用未调整WM大小，菜单快速关闭](#应用未调整WM大小，菜单快速关闭)
+    *   [4.6 当调试JavaFX程序的时候系统卡住](#当调试JavaFX程序的时候系统卡住)
+    *   [4.7 JavaFX 的 MediaPlayer 构造函数抛出了一个 exception](#JavaFX_的_MediaPlayer_构造函数抛出了一个_exception)
+    *   [4.8 Java程序无法打开外部链接](#Java程序无法打开外部链接)
+*   [5 建议和技巧](#建议和技巧)
+    *   [5.1 更好的字体渲染](#更好的字体渲染)
+    *   [5.2 禁止命令行的 'Picked up _JAVA_OPTIONS' 消息](#禁止命令行的_'Picked_up_JAVA_OPTIONS'_消息)
+    *   [5.3 GTK 视觉效果和感觉](#GTK_视觉效果和感觉)
+        *   [5.3.1 GTK3支持](#GTK3支持)
+    *   [5.4 更好的2D性能](#更好的2D性能)
+    *   [5.5 非重新父母窗口管理器 / 灰色窗口 / 程序被绘制得不恰当](#非重新父母窗口管理器_/_灰色窗口_/_程序被绘制得不恰当)
+*   [6 参阅](#参阅)
 
 ## 安装
 
@@ -239,11 +239,11 @@ $ wmname LG3D
 
 ### 难以辨认的字体
 
-除了下述的建议 [#更好的字体渲染](#.E6.9B.B4.E5.A5.BD.E7.9A.84.E5.AD.97.E4.BD.93.E6.B8.B2.E6.9F.93), 可能还是有一些字体难以辨认. 如果是这样的话,有一个很好的机会能用Microsoft的字体. 在[AUR](/index.php/AUR "AUR")安装[ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) .
+除了下述的建议 [#更好的字体渲染](#更好的字体渲染), 可能还是有一些字体难以辨认. 如果是这样的话,有一个很好的机会能用Microsoft的字体. 在[AUR](/index.php/AUR "AUR")安装[ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) .
 
 ### 一些应用缺少文字
 
-如果一些应用完全没有文字，你可以用下面的办法[#建议和技巧](#.E5.BB.BA.E8.AE.AE.E5.92.8C.E6.8A.80.E5.B7.A7) 它在[FS#40871](https://bugs.archlinux.org/task/40871)里被建议.
+如果一些应用完全没有文字，你可以用下面的办法[#建议和技巧](#建议和技巧) 它在[FS#40871](https://bugs.archlinux.org/task/40871)里被建议.
 
 ### 应用未调整WM大小，菜单快速关闭
 

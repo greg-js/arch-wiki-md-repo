@@ -3,15 +3,15 @@ Este artículo es una traducción de [Acer Aspire 5745g](/index.php/Acer_Aspire_
 
 ## Contents
 
-*   [1 Introducción](#Introducci.C3.B3n)
+*   [1 Introducción](#Introducción)
 *   [2 Hardware](#Hardware)
 *   [3 Redes](#Redes)
-    *   [3.1 Conexión inalámbrica](#Conexi.C3.B3n_inal.C3.A1mbrica)
-*   [4 Gestión de energía](#Gesti.C3.B3n_de_energ.C3.ADa)
+    *   [3.1 Conexión inalámbrica](#Conexión_inalámbrica)
+*   [4 Gestión de energía](#Gestión_de_energía)
     *   [4.1 Escalado de frecuencia de CPU](#Escalado_de_frecuencia_de_CPU)
 *   [5 Xorg](#Xorg)
-*   [6 Panel táctil](#Panel_t.C3.A1ctil)
-*   [7 Teclas de acceso rápido](#Teclas_de_acceso_r.C3.A1pido)
+*   [6 Panel táctil](#Panel_táctil)
+*   [7 Teclas de acceso rápido](#Teclas_de_acceso_rápido)
 
 # Introducción
 

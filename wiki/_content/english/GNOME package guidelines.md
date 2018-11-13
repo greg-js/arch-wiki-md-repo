@@ -65,7 +65,7 @@ Many GNOME software migrated the build system to [Meson](https://mesonbuild.com/
 
 In order to build using Meson, add the [meson](https://www.archlinux.org/packages/?name=meson) package to [makedepends](/index.php/Makedepends "Makedepends") and call its command *meson*, optionally including any desired options supported by the target software. The [ninja](https://www.archlinux.org/packages/?name=ninja) package will also be used in this build system but it is a dependency of [meson](https://www.archlinux.org/packages/?name=meson), so you do not need to include it in the *makedepends* array.)
 
-The [build()](/index.php/Creating_packages#build.28.29 "Creating packages"), [check()](/index.php/Creating_packages#check.28.29 "Creating packages"), and [package()](/index.php/Creating_packages#package.28.29 "Creating packages") functions should look something like:
+The [build()](/index.php/Creating_packages#build() "Creating packages"), [check()](/index.php/Creating_packages#check() "Creating packages"), and [package()](/index.php/Creating_packages#package() "Creating packages") functions should look something like:
 
  `PKGBUILD` 
 ```

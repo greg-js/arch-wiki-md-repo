@@ -32,7 +32,7 @@ As of kernel 4.3, the Intel Skylake architecture is supported.
 *   [2 BIOS](#BIOS)
     *   [2.1 Updates](#Updates)
     *   [2.2 Firmware Updates](#Firmware_Updates)
-*   [3 Thunderbolt 3 / USB 3.1](#Thunderbolt_3_.2F_USB_3.1)
+*   [3 Thunderbolt 3 / USB 3.1](#Thunderbolt_3_/_USB_3.1)
     *   [3.1 Doing Thunderbolt firmware updates without fwupd or Windows](#Doing_Thunderbolt_firmware_updates_without_fwupd_or_Windows)
     *   [3.2 External screen](#External_screen)
 *   [4 SATA controller](#SATA_controller)
@@ -228,7 +228,7 @@ The video should work with the `i915` driver of the current [linux](https://www.
 
 ### Blank screen issue after booting
 
-If using "late start" [KMS](/index.php/KMS "KMS") (the default) and the screen goes blank when loading modules, it may help to add `i915` and `intel_agp` to the initramfs or using a special [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"). Consult [Intel graphics#Blank screen during boot, when "Loading modules"](/index.php/Intel_graphics#Blank_screen_during_boot.2C_when_.22Loading_modules.22 "Intel graphics") for more information about the kernel paramter way and have a look at [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting") for a guide on how to setup the modules for the initramfs.
+If using "late start" [KMS](/index.php/KMS "KMS") (the default) and the screen goes blank when loading modules, it may help to add `i915` and `intel_agp` to the initramfs or using a special [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"). Consult [Intel graphics#Blank screen during boot, when "Loading modules"](/index.php/Intel_graphics#Blank_screen_during_boot,_when_"Loading_modules" "Intel graphics") for more information about the kernel paramter way and have a look at [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting") for a guide on how to setup the modules for the initramfs.
 
 ### Linux kernel 4.8 or later power savings
 

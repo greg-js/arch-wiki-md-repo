@@ -22,11 +22,11 @@ This article aims to assist users creating their own packages using the Arch Lin
 *   [3 Creating a PKGBUILD](#Creating_a_PKGBUILD)
     *   [3.1 Defining PKGBUILD variables](#Defining_PKGBUILD_variables)
     *   [3.2 PKGBUILD functions](#PKGBUILD_functions)
-        *   [3.2.1 prepare()](#prepare.28.29)
-        *   [3.2.2 pkgver()](#pkgver.28.29)
-        *   [3.2.3 build()](#build.28.29)
-        *   [3.2.4 check()](#check.28.29)
-        *   [3.2.5 package()](#package.28.29)
+        *   [3.2.1 prepare()](#prepare())
+        *   [3.2.2 pkgver()](#pkgver())
+        *   [3.2.3 build()](#build())
+        *   [3.2.4 check()](#check())
+        *   [3.2.5 package()](#package())
 *   [4 Testing the PKGBUILD and package](#Testing_the_PKGBUILD_and_package)
     *   [4.1 Checking package sanity](#Checking_package_sanity)
 *   [5 Submitting packages to the AUR](#Submitting_packages_to_the_AUR)
@@ -111,13 +111,13 @@ There are five functions, listed here in the order they are executed. Beside the
 
 #### prepare()
 
-This function, commands that are used to prepare sources for building are run, such as [patching](/index.php/Patching_in_ABS "Patching in ABS"). This function runs right after package extraction, before [pkgver()](#pkgver.28.29) and the build function. If extraction is skipped (`makepkg -e`), then `prepare()` is not run.
+This function, commands that are used to prepare sources for building are run, such as [patching](/index.php/Patching_in_ABS "Patching in ABS"). This function runs right after package extraction, before [pkgver()](#pkgver()) and the build function. If extraction is skipped (`makepkg -e`), then `prepare()` is not run.
 
 **Note:** (From [PKGBUILD(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5)) The function is run in `bash -e` mode, meaning any command that exits with a non-zero status will cause the function to exit.
 
 #### pkgver()
 
-`pkgver()` runs after the sources are fetched, extracted and [prepare()](#prepare.28.29) executed. So you can update the pkgver variable during a makepkg stage.
+`pkgver()` runs after the sources are fetched, extracted and [prepare()](#prepare()) executed. So you can update the pkgver variable during a makepkg stage.
 
 This is particularly useful if you are [making git/svn/hg/etc. packages](/index.php/VCS_PKGBUILD_Guidelines "VCS PKGBUILD Guidelines"), where the build process may remain the same, but the source could be updated every day, even every hour. The old way of doing this was to put the date into the pkgver field which, if the software was not updated, makepkg would still rebuild it thinking the version had changed. Some useful commands for this are `git describe`, `hg identify -ni`, etc. Please test these before submitting a PKGBUILD, as a failure in the `pkgver()` function can stop a build in its tracks.
 

@@ -7,29 +7,29 @@ Artículos relacionados
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
 *   [2 Variables de Entorno](#Variables_de_Entorno)
     *   [2.1 GNUPGHOME](#GNUPGHOME)
     *   [2.2 GPG_AGENT_INFO](#GPG_AGENT_INFO)
-*   [3 Archivo de configuración](#Archivo_de_configuraci.C3.B3n)
-*   [4 Gestión básica de claves](#Gesti.C3.B3n_b.C3.A1sica_de_claves)
+*   [3 Archivo de configuración](#Archivo_de_configuración)
+*   [4 Gestión básica de claves](#Gestión_básica_de_claves)
     *   [4.1 Crear una clave](#Crear_una_clave)
     *   [4.2 Gestionar una clave](#Gestionar_una_clave)
     *   [4.3 Rotar subclaves](#Rotar_subclaves)
     *   [4.4 Importar una clave](#Importar_una_clave)
     *   [4.5 Listar claves](#Listar_claves)
 *   [5 Cifrar y descifrar](#Cifrar_y_descifrar)
-    *   [5.1 Asimétrico](#Asim.C3.A9trico)
-    *   [5.2 Simétrico](#Sim.C3.A9trico)
-    *   [5.3 Cifrar una contraseña](#Cifrar_una_contrase.C3.B1a)
+    *   [5.1 Asimétrico](#Asimétrico)
+    *   [5.2 Simétrico](#Simétrico)
+    *   [5.3 Cifrar una contraseña](#Cifrar_una_contraseña)
 *   [6 Firmas](#Firmas)
     *   [6.1 Crear una firma](#Crear_una_firma)
         *   [6.1.1 Firmar un documento](#Firmar_un_documento)
         *   [6.1.2 Firma sencilla de un archivo o mensaje](#Firma_sencilla_de_un_archivo_o_mensaje)
         *   [6.1.3 Crear una firma independiente](#Crear_una_firma_independiente)
-    *   [6.2 Verificación de firmas](#Verificaci.C3.B3n_de_firmas)
+    *   [6.2 Verificación de firmas](#Verificación_de_firmas)
 *   [7 gpg-agent](#gpg-agent)
-    *   [7.1 Configuración](#Configuraci.C3.B3n)
+    *   [7.1 Configuración](#Configuración)
     *   [7.2 Recargar el agente](#Recargar_el_agente)
     *   [7.3 pinentry](#pinentry)
     *   [7.4 Iniciar gpg-agent con el usuario systemd](#Iniciar_gpg-agent_con_el_usuario_systemd)
@@ -40,18 +40,18 @@ Artículos relacionados
 *   [9 Smartcards](#Smartcards)
     *   [9.1 Instalaciones solo con GnuPG](#Instalaciones_solo_con_GnuPG)
     *   [9.2 GnuPG junto con OpenSC](#GnuPG_junto_con_OpenSC)
-*   [10 Resolución de problemas](#Resoluci.C3.B3n_de_problemas)
+*   [10 Resolución de problemas](#Resolución_de_problemas)
     *   [10.1 su](#su)
     *   [10.2 El agente se queja del final del archivo](#El_agente_se_queja_del_final_del_archivo)
-    *   [10.3 Permisos de configuración de KGpg](#Permisos_de_configuraci.C3.B3n_de_KGpg)
+    *   [10.3 Permisos de configuración de KGpg](#Permisos_de_configuración_de_KGpg)
     *   [10.4 Conflictos entre gnome-keyring y gpg-agent](#Conflictos_entre_gnome-keyring_y_gpg-agent)
     *   [10.5 mutt y gpg](#mutt_y_gpg)
-    *   [10.6 Llaves "perdidas", actualizando a gnupg versión 2.1](#Llaves_.22perdidas.22.2C_actualizando_a_gnupg_versi.C3.B3n_2.1)
-*   [11 Ver también](#Ver_tambi.C3.A9n)
+    *   [10.6 Llaves "perdidas", actualizando a gnupg versión 2.1](#Llaves_"perdidas",_actualizando_a_gnupg_versión_2.1)
+*   [11 Ver también](#Ver_también)
 
 ## Instalación
 
-[Instala](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [gnupg](https://www.archlinux.org/packages/?name=gnupg), disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
+[Instala](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") [gnupg](https://www.archlinux.org/packages/?name=gnupg), disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 Esto instalará también [pinentry](https://www.archlinux.org/packages/?name=pinentry), una colección de diálogos sencillos para introducción de PINs o contraseñas que GnuPG utiliza para la introducción de frases de acceso. *pinenetry* está señalado por el enlace simbólico `/usr/bin/pinentry`, que por defecto apunta a `/usr/bin/pinentry-gtk-2`.
 
@@ -296,7 +296,7 @@ $ gpg --output *doc* --decrypt *doc*.gpg
 *   Agregue `--armor` para cifrar un archivo usando ASCII armor (apropiado para copiar y pegar el mensaje en formato de texto)
 *   Use `-R *user-id*` o `--hidden-recipient *user-id*` en lugar de `-r` para no poner la clave del recipiente en el mensaje cifrado. Esto ayuda a ocultar el recipiente del mensaje y es una medida limitada de protección contra el análisis de trafico.
 *   Agregue `--no-emit-version` para prevenir la impresión de la versión, también se puede modificar este parámetro en el archivo de configuración.
-*   Es posible usar gnupg para cifrar documentos delicados con su propio *user-id* como recipiente o usando el parametro `--default-recipient-self`; de cualquier manera, esto solo se puede hacer un archivo a la vez, aunque se pueden comprimir varios archivos en un tarball y después cifrar el tarball. Vea tambien [Disk encryption (Español)#Métodos disponibles](/index.php/Disk_encryption_(Espa%C3%B1ol)#M.C3.A9todos_disponibles "Disk encryption (Español)") si quiere cifrar directorios enteros o incluso todo sus sistema de archivos.
+*   Es posible usar gnupg para cifrar documentos delicados con su propio *user-id* como recipiente o usando el parametro `--default-recipient-self`; de cualquier manera, esto solo se puede hacer un archivo a la vez, aunque se pueden comprimir varios archivos en un tarball y después cifrar el tarball. Vea tambien [Disk encryption (Español)#Métodos disponibles](/index.php/Disk_encryption_(Espa%C3%B1ol)#Métodos_disponibles "Disk encryption (Español)") si quiere cifrar directorios enteros o incluso todo sus sistema de archivos.
 
 #### Simétrico
 
@@ -589,7 +589,7 @@ y después cámbialo de nuevo tras usar gpg la primera vez. Es probable que haya
 
 ### El agente se queja del final del archivo
 
-El programa pinentry por defecto es pinentry-gtk-2, que necesita una sesión de DBus para funcionar correctamente. Ver [permisos de sesión](/index.php/General_troubleshooting_(Espa%C3%B1ol)#Permisos_de_sesi.C3.B3n "General troubleshooting (Español)") para más detalles.
+El programa pinentry por defecto es pinentry-gtk-2, que necesita una sesión de DBus para funcionar correctamente. Ver [permisos de sesión](/index.php/General_troubleshooting_(Espa%C3%B1ol)#Permisos_de_sesión "General troubleshooting (Español)") para más detalles.
 
 En su lugar, puedes usar `pinentry-qt`. Consulte [#pinentry](#pinentry).
 

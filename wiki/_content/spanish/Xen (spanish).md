@@ -2,18 +2,18 @@ Esta página explica como instalar Xen en Arch Linux.
 
 ## Contents
 
-*   [1 Que es Xen?](#Que_es_Xen.3F)
+*   [1 Que es Xen?](#Que_es_Xen?)
 *   [2 Instalando Xen](#Instalando_Xen)
     *   [2.1 Consiguiendo los paquetes necesarios](#Consiguiendo_los_paquetes_necesarios)
     *   [2.2 Configurando GRUB](#Configurando_GRUB)
     *   [2.3 Configurando GRUB2](#Configurando_GRUB2)
     *   [2.4 Agregando un domU](#Agregando_un_domU)
-    *   [2.5 Virtualización por Hardware](#Virtualizaci.C3.B3n_por_Hardware)
-*   [3 Arch como huésped de Xen (modo PV)](#Arch_como_hu.C3.A9sped_de_Xen_.28modo_PV.29)
+    *   [2.5 Virtualización por Hardware](#Virtualización_por_Hardware)
+*   [3 Arch como huésped de Xen (modo PV)](#Arch_como_huésped_de_Xen_(modo_PV))
     *   [3.1 xe-guest-utilities](#xe-guest-utilities)
     *   [3.2 Notas](#Notas)
 *   [4 Administrando Xen](#Administrando_Xen)
-*   [5 Paquetes Útiles](#Paquetes_.C3.9Atiles)
+*   [5 Paquetes Útiles](#Paquetes_Útiles)
 *   [6 Enlaces Externos](#Enlaces_Externos)
 
 ## Que es Xen?

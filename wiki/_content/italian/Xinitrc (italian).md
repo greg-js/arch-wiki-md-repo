@@ -12,12 +12,12 @@ Una delle funzioni principali di `~/.xinitrc` è quello di dettare quale client 
 ## Contents
 
 *   [1 Per iniziare](#Per_iniziare)
-    *   [1.1 Effettuare la scelta fra i DE/WM](#Effettuare_la_scelta_fra_i_DE.2FWM)
+    *   [1.1 Effettuare la scelta fra i DE/WM](#Effettuare_la_scelta_fra_i_DE/WM)
     *   [1.2 Preservare la sessione](#Preservare_la_sessione)
-*   [2 File d'esempio](#File_d.27esempio)
+*   [2 File d'esempio](#File_d'esempio)
 *   [3 Configurazione del file](#Configurazione_del_file)
     *   [3.1 Dalla riga di comando](#Dalla_riga_di_comando)
-    *   [3.2 All'avvio](#All.27avvio)
+    *   [3.2 All'avvio](#All'avvio)
 
 ## Per iniziare
 

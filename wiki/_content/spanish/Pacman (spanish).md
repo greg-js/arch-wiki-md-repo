@@ -10,7 +10,7 @@ Artículos relacionados
 *   [pacman/Restore local database](/index.php/Pacman/Restore_local_database "Pacman/Restore local database")
 *   [pacman/Rosetta (Español)](/index.php/Pacman/Rosetta_(Espa%C3%B1ol) "Pacman/Rosetta (Español)")
 *   [pacman/Consejos y trucos](/index.php/Pacman/Tips_and_tricks_(Espa%C3%B1ol) "Pacman/Tips and tricks (Español)")
-*   [Administración de paquetes](/index.php/Frequently_asked_questions_(Espa%C3%B1ol)#Administraci.C3.B3n_de_paquetes "Frequently asked questions (Español)")
+*   [Administración de paquetes](/index.php/Frequently_asked_questions_(Espa%C3%B1ol)#Administración_de_paquetes "Frequently asked questions (Español)")
 *   [Mantenimiento del sistema](/index.php/System_maintenance_(Espa%C3%B1ol) "System maintenance (Español)")
 *   [Arch Build System (Español)](/index.php/Arch_Build_System_(Espa%C3%B1ol) "Arch Build System (Español)")
 *   [Repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)")
@@ -26,48 +26,48 @@ El [gestor de paquetes](https://en.wikipedia.org/wiki/Package_management_system 
 
 ## Contents
 
-*   [1 Utilización](#Utilizaci.C3.B3n)
+*   [1 Utilización](#Utilización)
     *   [1.1 Instalar paquetes](#Instalar_paquetes)
-        *   [1.1.1 Instalar paquetes específicos](#Instalar_paquetes_espec.C3.ADficos)
+        *   [1.1.1 Instalar paquetes específicos](#Instalar_paquetes_específicos)
         *   [1.1.2 Instalar grupos de paquetes](#Instalar_grupos_de_paquetes)
     *   [1.2 Desinstalar paquetes](#Desinstalar_paquetes)
     *   [1.3 Actualizar paquetes](#Actualizar_paquetes)
     *   [1.4 Consultar la base de datos de los paquetes](#Consultar_la_base_de_datos_de_los_paquetes)
         *   [1.4.1 Pactree](#Pactree)
         *   [1.4.2 Estructura de la base de datos](#Estructura_de_la_base_de_datos)
-    *   [1.5 Limpiar la memoria caché de los paquetes](#Limpiar_la_memoria_cach.C3.A9_de_los_paquetes)
-    *   [1.6 Órdenes adicionales](#.C3.93rdenes_adicionales)
-    *   [1.7 Motivo de la instalación](#Motivo_de_la_instalaci.C3.B3n)
-    *   [1.8 Buscar un paquete que contenga un archivo específico](#Buscar_un_paquete_que_contenga_un_archivo_espec.C3.ADfico)
-*   [2 Configuración](#Configuraci.C3.B3n)
+    *   [1.5 Limpiar la memoria caché de los paquetes](#Limpiar_la_memoria_caché_de_los_paquetes)
+    *   [1.6 Órdenes adicionales](#Órdenes_adicionales)
+    *   [1.7 Motivo de la instalación](#Motivo_de_la_instalación)
+    *   [1.8 Buscar un paquete que contenga un archivo específico](#Buscar_un_paquete_que_contenga_un_archivo_específico)
+*   [2 Configuración](#Configuración)
     *   [2.1 Opciones generales](#Opciones_generales)
         *   [2.1.1 Comparar versiones antes de actualizar](#Comparar_versiones_antes_de_actualizar)
-        *   [2.1.2 Evitar la actualización de un paquete](#Evitar_la_actualizaci.C3.B3n_de_un_paquete)
-        *   [2.1.3 Evitar la actualización de un grupo de paquetes](#Evitar_la_actualizaci.C3.B3n_de_un_grupo_de_paquetes)
-        *   [2.1.4 Evitar la instalación de archivos en el sistema](#Evitar_la_instalaci.C3.B3n_de_archivos_en_el_sistema)
-        *   [2.1.5 Mantener varios archivos de configuración](#Mantener_varios_archivos_de_configuraci.C3.B3n)
+        *   [2.1.2 Evitar la actualización de un paquete](#Evitar_la_actualización_de_un_paquete)
+        *   [2.1.3 Evitar la actualización de un grupo de paquetes](#Evitar_la_actualización_de_un_grupo_de_paquetes)
+        *   [2.1.4 Evitar la instalación de archivos en el sistema](#Evitar_la_instalación_de_archivos_en_el_sistema)
+        *   [2.1.5 Mantener varios archivos de configuración](#Mantener_varios_archivos_de_configuración)
         *   [2.1.6 Hooks](#Hooks)
-    *   [2.2 Repositorios y servidores de réplicas](#Repositorios_y_servidores_de_r.C3.A9plicas)
+    *   [2.2 Repositorios y servidores de réplicas](#Repositorios_y_servidores_de_réplicas)
         *   [2.2.1 Seguridad de los paquetes](#Seguridad_de_los_paquetes)
-*   [3 Solución de problemas](#Soluci.C3.B3n_de_problemas)
-    *   [3.1 Error «Failed to commit transaction (conflicting files)»](#Error_.C2.ABFailed_to_commit_transaction_.28conflicting_files.29.C2.BB)
-    *   [3.2 Error «Failed to commit transaction (invalid or corrupted package)»](#Error_.C2.ABFailed_to_commit_transaction_.28invalid_or_corrupted_package.29.C2.BB)
-    *   [3.3 Error «Failed to init transaction (unable to lock database)»](#Error_.C2.ABFailed_to_init_transaction_.28unable_to_lock_database.29.C2.BB)
-    *   [3.4 Los paquetes no se pueden recibir en la instalación](#Los_paquetes_no_se_pueden_recibir_en_la_instalaci.C3.B3n)
+*   [3 Solución de problemas](#Solución_de_problemas)
+    *   [3.1 Error «Failed to commit transaction (conflicting files)»](#Error_«Failed_to_commit_transaction_(conflicting_files)»)
+    *   [3.2 Error «Failed to commit transaction (invalid or corrupted package)»](#Error_«Failed_to_commit_transaction_(invalid_or_corrupted_package)»)
+    *   [3.3 Error «Failed to init transaction (unable to lock database)»](#Error_«Failed_to_init_transaction_(unable_to_lock_database)»)
+    *   [3.4 Los paquetes no se pueden recibir en la instalación](#Los_paquetes_no_se_pueden_recibir_en_la_instalación)
     *   [3.5 Reinstalar manualmente pacman](#Reinstalar_manualmente_pacman)
-    *   [3.6 pacman se bloquea durante una actualización](#pacman_se_bloquea_durante_una_actualizaci.C3.B3n)
-    *   [3.7 Error «unable to find root device» después de reiniciar](#Error_.C2.ABunable_to_find_root_device.C2.BB_despu.C3.A9s_de_reiniciar)
-    *   [3.8 Signature from "User <email@gmail.com>" is unknown trust, installation failed](#Signature_from_.22User_.3Cemail.40gmail.com.3E.22_is_unknown_trust.2C_installation_failed)
+    *   [3.6 pacman se bloquea durante una actualización](#pacman_se_bloquea_durante_una_actualización)
+    *   [3.7 Error «unable to find root device» después de reiniciar](#Error_«unable_to_find_root_device»_después_de_reiniciar)
+    *   [3.8 Signature from "User <email@gmail.com>" is unknown trust, installation failed](#Signature_from_"User_<email@gmail.com>"_is_unknown_trust,_installation_failed)
     *   [3.9 Solicitud para importar las claves PGP](#Solicitud_para_importar_las_claves_PGP)
-    *   [3.10 Error: key "0123456789ABCDEF" could not be looked up remotely](#Error:_key_.220123456789ABCDEF.22_could_not_be_looked_up_remotely)
-    *   [3.11 Signature from "User <email@archlinux.org>" is invalid, installation failed](#Signature_from_.22User_.3Cemail.40archlinux.org.3E.22_is_invalid.2C_installation_failed)
-    *   [3.12 Error «Warning: current locale is invalid; using default "C" locale»](#Error_.C2.ABWarning:_current_locale_is_invalid.3B_using_default_.22C.22_locale.C2.BB)
+    *   [3.10 Error: key "0123456789ABCDEF" could not be looked up remotely](#Error:_key_"0123456789ABCDEF"_could_not_be_looked_up_remotely)
+    *   [3.11 Signature from "User <email@archlinux.org>" is invalid, installation failed](#Signature_from_"User_<email@archlinux.org>"_is_invalid,_installation_failed)
+    *   [3.12 Error «Warning: current locale is invalid; using default "C" locale»](#Error_«Warning:_current_locale_is_invalid;_using_default_"C"_locale»)
     *   [3.13 pacman no respeta los ajustes del proxy](#pacman_no_respeta_los_ajustes_del_proxy)
-    *   [3.14 ¿Cómo reinstalar todos los paquetes, conservando la información sobre si algo se instaló explícitamente o como una dependencia?](#.C2.BFC.C3.B3mo_reinstalar_todos_los_paquetes.2C_conservando_la_informaci.C3.B3n_sobre_si_algo_se_instal.C3.B3_expl.C3.ADcitamente_o_como_una_dependencia.3F)
-    *   [3.15 Error «Cannot open shared object file»](#Error_.C2.ABCannot_open_shared_object_file.C2.BB)
+    *   [3.14 ¿Cómo reinstalar todos los paquetes, conservando la información sobre si algo se instaló explícitamente o como una dependencia?](#¿Cómo_reinstalar_todos_los_paquetes,_conservando_la_información_sobre_si_algo_se_instaló_explícitamente_o_como_una_dependencia?)
+    *   [3.15 Error «Cannot open shared object file»](#Error_«Cannot_open_shared_object_file»)
     *   [3.16 Descarga de paquetes congelada](#Descarga_de_paquetes_congelada)
-    *   [3.17 Error al recuperar el archivo 'core.db' del servidor de réplica](#Error_al_recuperar_el_archivo_.27core.db.27_del_servidor_de_r.C3.A9plica)
-*   [4 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+    *   [3.17 Error al recuperar el archivo 'core.db' del servidor de réplica](#Error_al_recuperar_el_archivo_'core.db'_del_servidor_de_réplica)
+*   [4 Véase también](#Véase_también)
 
 ## Utilización
 
@@ -79,7 +79,7 @@ Lo que sigue es una pequeña muestra de las operaciones que se pueden realizar c
 
 **Nota:** los paquetes suelen tener [dependencias opcionales](/index.php/PKGBUILD#optdepends "PKGBUILD"), dependencias que proporcionan características adicionales a la aplicación, sin ser necesarias para su funcionamiento. Al instalar un paquete, *pacman* mostrará sus dependencias opcionales sin registrarlas en `pacman.log`: utilice la orden [pacman -Si](#Consultar_la_base_de_datos_de_los_paquetes) para ver las dependencias opcionales de un paquete así como una breve descripción de sus funcionalidades.
 
-**Advertencia:** al instalar paquetes en Arch, evite actualizar la lista de paquetes sin [actualizar el sistema](#Actualizar_paquetes) (imagine, por ejemplo, el caso de un [paquete que ya no se mantiene](#Los_paquetes_no_se_pueden_recibir_en_la_instalaci.C3.B3n) en los repositorios). En la práctica, **no** es aconsejable ejecutar `pacman -Sy *nombre_paquete*`, sino más bien `pacman -Sy**u** *nombre_paquete*`, ya que la primera orden podría ocasionar problemas de dependencia. Consulte [System maintenance#Partial upgrades are unsupported](/index.php/System_maintenance#Partial_upgrades_are_unsupported "System maintenance") y [BBS#89328](https://bbs.archlinux.org/viewtopic.php?id=89328).
+**Advertencia:** al instalar paquetes en Arch, evite actualizar la lista de paquetes sin [actualizar el sistema](#Actualizar_paquetes) (imagine, por ejemplo, el caso de un [paquete que ya no se mantiene](#Los_paquetes_no_se_pueden_recibir_en_la_instalación) en los repositorios). En la práctica, **no** es aconsejable ejecutar `pacman -Sy *nombre_paquete*`, sino más bien `pacman -Sy**u** *nombre_paquete*`, ya que la primera orden podría ocasionar problemas de dependencia. Consulte [System maintenance#Partial upgrades are unsupported](/index.php/System_maintenance#Partial_upgrades_are_unsupported "System maintenance") y [BBS#89328](https://bbs.archlinux.org/viewtopic.php?id=89328).
 
 #### Instalar paquetes específicos
 
@@ -637,11 +637,11 @@ En primer lugar, asegúrese de que el paquete existe realmente (¡y cuidado con 
 
 También podría ser que el repositorio que contiene el paquete no esté activado en su sistema, por ejemplo, el paquete podría estar en el repositorio *multilib*, pero el mismo no está activado en el archivo *pacman.conf*.
 
-Consulte también: [¿Por qué hay solo una única versión de cada biblioteca compartida en los repositorios oficiales?](/index.php/Frequently_asked_questions_(Espa%C3%B1ol)#.C2.BFPor_qu.C3.A9_hay_solo_una_.C3.BAnica_versi.C3.B3n_de_cada_biblioteca_compartida_en_los_repositorios_oficiales.3F "Frequently asked questions (Español)")
+Consulte también: [¿Por qué hay solo una única versión de cada biblioteca compartida en los repositorios oficiales?](/index.php/Frequently_asked_questions_(Espa%C3%B1ol)#¿Por_qué_hay_solo_una_única_versión_de_cada_biblioteca_compartida_en_los_repositorios_oficiales? "Frequently asked questions (Español)")
 
 ### Reinstalar manualmente pacman
 
-**Advertencia:** es extremadamente fácil romper el sistema aún más utilizando este enfoque. Utilice esto como último recurso si el método descrito en la sección [#pacman se bloquea durante una actualización](#pacman_se_bloquea_durante_una_actualizaci.C3.B3n) no es una opción.
+**Advertencia:** es extremadamente fácil romper el sistema aún más utilizando este enfoque. Utilice esto como último recurso si el método descrito en la sección [#pacman se bloquea durante una actualización](#pacman_se_bloquea_durante_una_actualización) no es una opción.
 
 Incluso si *pacman* está seriamente dañado, puede arreglarse manualmente descargando los paquetes más recientes y extrayéndolos a las ubicaciones correctas. Los pasos ásperos a realizar son:
 
@@ -719,11 +719,11 @@ Puede intentar:
 
 ### Solicitud para importar las claves PGP
 
-Si [instala](/index.php/Installation_guide "Installation guide") Arch con una ISO obsoleta, es probable que se le pida que importe las claves PGP. Acepte, para descargar las claves y poder continuar. Si no puede agregar la clave PGP correctamente, actualice el depósito de llaves o actualice [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) (vea [lo anterior](#Signature_from_.22User_.3Cemail.40gmail.com.3E.22_is_unknown_trust.2C_installation_failed)).
+Si [instala](/index.php/Installation_guide "Installation guide") Arch con una ISO obsoleta, es probable que se le pida que importe las claves PGP. Acepte, para descargar las claves y poder continuar. Si no puede agregar la clave PGP correctamente, actualice el depósito de llaves o actualice [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) (vea [lo anterior](#Signature_from_"User_<email@gmail.com>"_is_unknown_trust,_installation_failed)).
 
 ### Error: key "0123456789ABCDEF" could not be looked up remotely
 
-Si los paquetes se firman con claves nuevas, las cuales se agregaron a última hora a [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring), estas claves no estarán disponibles localmente durante la actualización (el dilema del huevo o la gallina). El llavero [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) no contendrá las claves (nuevas) hasta que se actualice. Pacman trata de evitar esto mediante una búsqueda a través de un servidor de claves, lo que no siempre es posible, por ejemplo, si nos encontramos detrás de un proxy o un cortafuegos, lo que dará como resultado el error indicado. Actualice [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) primero como se indica [arriba](#Signature_from_.22User_.3Cemail.40example.org.3E.22_is_unknown_trust.2C_installation_failed).
+Si los paquetes se firman con claves nuevas, las cuales se agregaron a última hora a [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring), estas claves no estarán disponibles localmente durante la actualización (el dilema del huevo o la gallina). El llavero [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) no contendrá las claves (nuevas) hasta que se actualice. Pacman trata de evitar esto mediante una búsqueda a través de un servidor de claves, lo que no siempre es posible, por ejemplo, si nos encontramos detrás de un proxy o un cortafuegos, lo que dará como resultado el error indicado. Actualice [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) primero como se indica [arriba](#Signature_from_"User_<email@example.org>"_is_unknown_trust,_installation_failed).
 
 ### Signature from "User <email@archlinux.org>" is invalid, installation failed
 
@@ -758,7 +758,7 @@ Este error se da cuando al ejecutar *pacman*, este hubiera eliminado o dañado l
 
 Para recuperarse de esta situación es necesario descomprimir manualmente en su sistema de archivos las bibliotecas necesarias. En primer lugar, busque qué paquete contiene la biblioteca perdida y, luego, localícela en la caché de *pacman* (`/var/cache/pacman/pkg/`). Desempaquete la biblioteca compartida requerida por el sistema de archivos. Esto permitirá ejecutar *pacman*.
 
-Ahora necesita [reinstalar](#Instalar_paquetes_espec.C3.ADficos) el paquete roto. Tenga en cuenta que necesita utilizar el parámetro `--force` como si acabara de desempaquetar los archivos del sistema y *pacman* no lo supiera. *pacman* reemplazará correctamente nuestro archivo de biblioteca compartida con uno del paquete (reinstalado).
+Ahora necesita [reinstalar](#Instalar_paquetes_específicos) el paquete roto. Tenga en cuenta que necesita utilizar el parámetro `--force` como si acabara de desempaquetar los archivos del sistema y *pacman* no lo supiera. *pacman* reemplazará correctamente nuestro archivo de biblioteca compartida con uno del paquete (reinstalado).
 
 Hecho esto, actualice el resto del sistema.
 

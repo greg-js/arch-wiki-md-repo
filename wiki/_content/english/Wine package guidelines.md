@@ -14,7 +14,7 @@ Many Windows programs may still be useful in Linux and so we may want to have a 
     *   [1.3 Portability and cleanness](#Portability_and_cleanness)
 *   [2 The guideline in short](#The_guideline_in_short)
     *   [2.1 Installing](#Installing)
-    *   [2.2 The /usr/bin script](#The_.2Fusr.2Fbin_script)
+    *   [2.2 The /usr/bin script](#The_/usr/bin_script)
     *   [2.3 UnionFsFuse](#UnionFsFuse)
 *   [3 One example](#One_example)
 *   [4 Gecko and Mono](#Gecko_and_Mono)

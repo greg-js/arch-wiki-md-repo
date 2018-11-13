@@ -19,14 +19,14 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Optical_disc_drive "wikipedia:Opt
         *   [1.2.1 Basic options](#Basic_options)
         *   [1.2.2 graft-points](#graft-points)
     *   [1.3 Mounting an ISO image](#Mounting_an_ISO_image)
-    *   [1.4 Converting img/ccd to an ISO image](#Converting_img.2Fccd_to_an_ISO_image)
+    *   [1.4 Converting img/ccd to an ISO image](#Converting_img/ccd_to_an_ISO_image)
     *   [1.5 Learning the name of your optical drive](#Learning_the_name_of_your_optical_drive)
     *   [1.6 Reading the volume label of a CD or DVD](#Reading_the_volume_label_of_a_CD_or_DVD)
-    *   [1.7 Creating an ISO image from a CD, DVD, or BD](#Creating_an_ISO_image_from_a_CD.2C_DVD.2C_or_BD)
+    *   [1.7 Creating an ISO image from a CD, DVD, or BD](#Creating_an_ISO_image_from_a_CD,_DVD,_or_BD)
     *   [1.8 Erasing CD-RW and DVD-RW](#Erasing_CD-RW_and_DVD-RW)
     *   [1.9 Formatting DVD-RW](#Formatting_DVD-RW)
     *   [1.10 Formatting BD-RE and BD-R](#Formatting_BD-RE_and_BD-R)
-    *   [1.11 Burning an ISO image to CD, DVD, or BD](#Burning_an_ISO_image_to_CD.2C_DVD.2C_or_BD)
+    *   [1.11 Burning an ISO image to CD, DVD, or BD](#Burning_an_ISO_image_to_CD,_DVD,_or_BD)
     *   [1.12 Verifying the burnt ISO image](#Verifying_the_burnt_ISO_image)
     *   [1.13 ISO 9660 and burning on-the-fly](#ISO_9660_and_burning_on-the-fly)
     *   [1.14 Multi-session](#Multi-session)
@@ -35,10 +35,10 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Optical_disc_drive "wikipedia:Opt
         *   [1.14.3 Multi-session by xorriso](#Multi-session_by_xorriso)
     *   [1.15 BD Defect Management](#BD_Defect_Management)
     *   [1.16 Burning an audio CD](#Burning_an_audio_CD)
-    *   [1.17 Burning a BIN/CUE](#Burning_a_BIN.2FCUE)
-        *   [1.17.1 TOC/CUE/BIN for mixed-mode disks](#TOC.2FCUE.2FBIN_for_mixed-mode_disks)
+    *   [1.17 Burning a BIN/CUE](#Burning_a_BIN/CUE)
+        *   [1.17.1 TOC/CUE/BIN for mixed-mode disks](#TOC/CUE/BIN_for_mixed-mode_disks)
     *   [1.18 Burn backend problems](#Burn_backend_problems)
-    *   [1.19 Burning CD/DVD/BD with a GUI](#Burning_CD.2FDVD.2FBD_with_a_GUI)
+    *   [1.19 Burning CD/DVD/BD with a GUI](#Burning_CD/DVD/BD_with_a_GUI)
 *   [2 Playback](#Playback)
     *   [2.1 CD](#CD)
     *   [2.2 DVD](#DVD)
@@ -52,12 +52,12 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Optical_disc_drive "wikipedia:Opt
     *   [3.3 DVD-Audio](#DVD-Audio)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Brasero fails to normalize audio CD](#Brasero_fails_to_normalize_audio_CD)
-    *   [4.2 VLC: Error "... could not open the disc /dev/dvd"](#VLC:_Error_.22..._could_not_open_the_disc_.2Fdev.2Fdvd.22)
+    *   [4.2 VLC: Error "... could not open the disc /dev/dvd"](#VLC:_Error_"..._could_not_open_the_disc_/dev/dvd")
     *   [4.3 DVD drive is noisy](#DVD_drive_is_noisy)
-    *   [4.4 Playback does not work with new computer (new DVD-Drive)](#Playback_does_not_work_with_new_computer_.28new_DVD-Drive.29)
-    *   [4.5 None of the above programs are able to rip/encode a DVD to my hard disk!](#None_of_the_above_programs_are_able_to_rip.2Fencode_a_DVD_to_my_hard_disk.21)
+    *   [4.4 Playback does not work with new computer (new DVD-Drive)](#Playback_does_not_work_with_new_computer_(new_DVD-Drive))
+    *   [4.5 None of the above programs are able to rip/encode a DVD to my hard disk!](#None_of_the_above_programs_are_able_to_rip/encode_a_DVD_to_my_hard_disk!)
     *   [4.6 GUI program log indicates problems with backend program](#GUI_program_log_indicates_problems_with_backend_program)
-        *   [4.6.1 Special case: medium error / write error](#Special_case:_medium_error_.2F_write_error)
+        *   [4.6.1 Special case: medium error / write error](#Special_case:_medium_error_/_write_error)
     *   [4.7 AHCI](#AHCI)
     *   [4.8 BD-R DL 50GB errors on trying to burn second layer](#BD-R_DL_50GB_errors_on_trying_to_burn_second_layer)
     *   [4.9 Disc tray autocloses](#Disc_tray_autocloses)
@@ -71,7 +71,7 @@ The burning process of optical disc drives consists of creating or obtaining an 
 
 ### Install burning utilities
 
-If you want to use programs with graphical user interface, then follow [#Burning CD/DVD/BD with a GUI](#Burning_CD.2FDVD.2FBD_with_a_GUI).
+If you want to use programs with graphical user interface, then follow [#Burning CD/DVD/BD with a GUI](#Burning_CD/DVD/BD_with_a_GUI).
 
 The programs listed here are command line oriented. They are the back ends which are used by most free GUI programs for CD, DVD, and BD. GUI users might get to them when it comes to troubleshooting or to scripting of burn activities.
 

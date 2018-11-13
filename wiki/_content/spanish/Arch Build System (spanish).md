@@ -21,10 +21,10 @@ ABS es un concepto similar. ABS es un componente de un árbol de directorios (el
 
 ## Contents
 
-*   [1 Descripción general de ABS](#Descripci.C3.B3n_general_de_ABS)
-    *   [1.1 Árbol SVN](#.C3.81rbol_SVN)
-*   [2 ¿Por qué utilizar ABS?](#.C2.BFPor_qu.C3.A9_utilizar_ABS.3F)
-*   [3 ¿Cómo utilizar ABS?](#.C2.BFC.C3.B3mo_utilizar_ABS.3F)
+*   [1 Descripción general de ABS](#Descripción_general_de_ABS)
+    *   [1.1 Árbol SVN](#Árbol_SVN)
+*   [2 ¿Por qué utilizar ABS?](#¿Por_qué_utilizar_ABS?)
+*   [3 ¿Cómo utilizar ABS?](#¿Cómo_utilizar_ABS?)
     *   [3.1 Obtener PKGBUILD usando Svn](#Obtener_PKGBUILD_usando_Svn)
         *   [3.1.1 Requisitos previos](#Requisitos_previos)
         *   [3.1.2 Descarga no recursiva](#Descarga_no_recursiva)
@@ -33,7 +33,7 @@ ABS es un concepto similar. ABS es un componente de un árbol de directorios (el
     *   [3.3 Compilar el paquete](#Compilar_el_paquete)
 *   [4 Consejos y trucos](#Consejos_y_trucos)
     *   [4.1 Conservar paquetes modificados](#Conservar_paquetes_modificados)
-    *   [4.2 Descargar una versión anterior de un paquete](#Descargar_una_versi.C3.B3n_anterior_de_un_paquete)
+    *   [4.2 Descargar una versión anterior de un paquete](#Descargar_una_versión_anterior_de_un_paquete)
 *   [5 Otras herramientas](#Otras_herramientas)
 
 ## Descripción general de ABS
@@ -106,7 +106,7 @@ Para obtener el [PKGBUILD](/index.php/PKGBUILD_(Espa%C3%B1ol) "PKGBUILD (Españo
 
 #### Requisitos previos
 
-[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [subversion](https://www.archlinux.org/packages/?name=subversion).
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") el paquete [subversion](https://www.archlinux.org/packages/?name=subversion).
 
 #### Descarga no recursiva
 
@@ -145,7 +145,7 @@ Si se especifica un paquete que no existe, svn no le mostrara una advertencia, s
 *   Confirme que el paquete no se ha movido a otro repositorio (por ejemplo de *community* a *extra*)
 *   Revise [https://www.archlinux.org/packages](https://www.archlinux.org/packages) para verificar si el paquete es construido con fuentes de otro paquete (por ejemplo, [python-tensorflow](https://www.archlinux.org/packages/?name=python-tensorflow) es construido con el PKGBUILD de [tensorflow](https://www.archlinux.org/packages/?name=tensorflow))
 
-**Sugerencia:** Para descargar versiones antiguas de un paquete, consulte [#Descargar una versión anterior de un paquete](#Descargar_una_versi.C3.B3n_anterior_de_un_paquete).
+**Sugerencia:** Para descargar versiones antiguas de un paquete, consulte [#Descargar una versión anterior de un paquete](#Descargar_una_versión_anterior_de_un_paquete).
 
 Es aconsejable actualizar todas las ramas que ha descargado si desea recompilar paquetes con versiones mas recientes de los repositorios. Para actualizar ejecute:
 
@@ -156,7 +156,7 @@ $ svn update
 
 ### Obtener PKGBUILD usando Git
 
-Es necesario [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [asp](https://www.archlinux.org/packages/?name=asp).
+Es necesario [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") el paquete [asp](https://www.archlinux.org/packages/?name=asp).
 
 Para clonar el repositorio del paquete, ejecute:
 
@@ -180,7 +180,7 @@ $ asp export *nobre-paquete*
 
 ### Compilar el paquete
 
-Consulte [makepkg](/index.php/Makepkg_(Espa%C3%B1ol)#Configuraci.C3.B3n "Makepkg (Español)") para configurar *makepkg* para la compilación de los [PKGBUILD (Español)](/index.php/PKGBUILD_(Espa%C3%B1ol) "PKGBUILD (Español)") que esta revisando.
+Consulte [makepkg](/index.php/Makepkg_(Espa%C3%B1ol)#Configuración "Makepkg (Español)") para configurar *makepkg* para la compilación de los [PKGBUILD (Español)](/index.php/PKGBUILD_(Espa%C3%B1ol) "PKGBUILD (Español)") que esta revisando.
 
 Después, copie el directorio que contiene el [PKGBUILD (Español)](/index.php/PKGBUILD_(Espa%C3%B1ol) "PKGBUILD (Español)") a un lugar nuevo. Allí, modifique lo que considere necesario y utilice *makepkg* como se describe en [makepkg (Español)#Uso](/index.php/Makepkg_(Espa%C3%B1ol)#Uso "Makepkg (Español)") para crear un nuevo paquete.
 

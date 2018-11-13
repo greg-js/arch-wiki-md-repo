@@ -11,7 +11,7 @@
         *   [4.2.1 PECL](#PECL)
     *   [4.3 pthreads](#pthreads)
     *   [4.4 PCNTL](#PCNTL)
-    *   [4.5 MySQL/MariaDB](#MySQL.2FMariaDB)
+    *   [4.5 MySQL/MariaDB](#MySQL/MariaDB)
     *   [4.6 Redis](#Redis)
     *   [4.7 PostgreSQL](#PostgreSQL)
     *   [4.8 Sqlite](#Sqlite)
@@ -43,9 +43,9 @@
     *   [7.12 PHPUnit Skeleton Generator](#PHPUnit_Skeleton_Generator)
     *   [7.13 Producer](#Producer)
 *   [8 Troubleshooting](#Troubleshooting)
-    *   [8.1 PHP Fatal error: Class 'ZipArchive' not found](#PHP_Fatal_error:_Class_.27ZipArchive.27_not_found)
-    *   [8.2 /etc/php/php.ini not parsed](#.2Fetc.2Fphp.2Fphp.ini_not_parsed)
-    *   [8.3 PHP Warning: PHP Startup: *<module>*: Unable to initialize module](#PHP_Warning:_PHP_Startup:_.3Cmodule.3E:_Unable_to_initialize_module)
+    *   [8.1 PHP Fatal error: Class 'ZipArchive' not found](#PHP_Fatal_error:_Class_'ZipArchive'_not_found)
+    *   [8.2 /etc/php/php.ini not parsed](#/etc/php/php.ini_not_parsed)
+    *   [8.3 PHP Warning: PHP Startup: *<module>*: Unable to initialize module](#PHP_Warning:_PHP_Startup:_<module>:_Unable_to_initialize_module)
 *   [9 See also](#See_also)
 
 ## Installation

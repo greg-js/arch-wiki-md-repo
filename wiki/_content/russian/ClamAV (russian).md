@@ -2,23 +2,23 @@
 
 ## Contents
 
-*   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-*   [2 Запуск службы](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D1.81.D0.BB.D1.83.D0.B6.D0.B1.D1.8B)
-*   [3 Обновление баз](#.D0.9E.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B1.D0.B0.D0.B7)
-*   [4 Тестирование](#.D0.A2.D0.B5.D1.81.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
-*   [5 Сканирование](#.D0.A1.D0.BA.D0.B0.D0.BD.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
-*   [6 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
+*   [1 Установка](#Установка)
+*   [2 Запуск службы](#Запуск_службы)
+*   [3 Обновление баз](#Обновление_баз)
+*   [4 Тестирование](#Тестирование)
+*   [5 Сканирование](#Сканирование)
+*   [6 Решение проблем](#Решение_проблем)
     *   [6.1 Error: Clamd was NOT notified](#Error:_Clamd_was_NOT_notified)
     *   [6.2 Error: No supported database files found](#Error:_No_supported_database_files_found)
-    *   [6.3 Error: Can't create temporary directory](#Error:_Can.27t_create_temporary_directory)
+    *   [6.3 Error: Can't create temporary directory](#Error:_Can't_create_temporary_directory)
 
 ## Установка
 
-[Установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2 "Pacman (Русский)") пакет [clamav](https://www.archlinux.org/packages/?name=clamav), доступный в [официальных репозиториях](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)").
+[Установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_пакетов "Pacman (Русский)") пакет [clamav](https://www.archlinux.org/packages/?name=clamav), доступный в [официальных репозиториях](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)").
 
 ## Запуск службы
 
-Смотрите раздел [Systemd:Использование юнитов](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.8E.D0.BD.D0.B8.D1.82.D0.BE.D0.B2 "Systemd (Русский)") для получения информации об управлении службами.
+Смотрите раздел [Systemd:Использование юнитов](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Использование_юнитов "Systemd (Русский)") для получения информации об управлении службами.
 
 Название службы: `clamd.service`.
 
@@ -55,7 +55,7 @@ Eicar-Test-Signature FOUND
 
 ```
 
-В противном случае, см. раздел [Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC) или воспользуйтесь [форумом](https://bbs.archlinux.org/).
+В противном случае, см. раздел [Решение проблем](#Решение_проблем) или воспользуйтесь [форумом](https://bbs.archlinux.org/).
 
 ## Сканирование
 
@@ -99,7 +99,7 @@ LocalSocket /var/lib/clamav/clamd.sock
 
 ```
 
-Сохраните файл и [перезапустите службу](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.8E.D0.BD.D0.B8.D1.82.D0.BE.D0.B2 "Systemd (Русский)")
+Сохраните файл и [перезапустите службу](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Использование_юнитов "Systemd (Русский)")
 
 ### Error: No supported database files found
 

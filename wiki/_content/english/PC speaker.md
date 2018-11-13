@@ -19,7 +19,7 @@ Sounds from the computer can be heard from the built-in case speaker, the speake
     *   [1.4 ALSA](#ALSA)
     *   [1.5 GNOME](#GNOME)
     *   [1.6 Cinnamon](#Cinnamon)
-    *   [1.7 GTK+](#GTK.2B)
+    *   [1.7 GTK+](#GTK+)
 *   [2 Beep](#Beep)
     *   [2.1 Installation](#Installation)
     *   [2.2 Access for non-root users](#Access_for_non-root_users)

@@ -9,35 +9,35 @@ Manutenção de sistema regular é necessário para o correto funcionamento do A
 ## Contents
 
 *   [1 Verifique por erros](#Verifique_por_erros)
-    *   [1.1 Falha em serviços de systemd](#Falha_em_servi.C3.A7os_de_systemd)
+    *   [1.1 Falha em serviços de systemd](#Falha_em_serviços_de_systemd)
     *   [1.2 Arquivos de log](#Arquivos_de_log)
 *   [2 Backup](#Backup)
-    *   [2.1 Arquivos de configuração](#Arquivos_de_configura.C3.A7.C3.A3o)
+    *   [2.1 Arquivos de configuração](#Arquivos_de_configuração)
     *   [2.2 Lista de pacotes instalados](#Lista_de_pacotes_instalados)
     *   [2.3 Banco de dados do pacman](#Banco_de_dados_do_pacman)
-    *   [2.4 Cabeçalhos LUKS](#Cabe.C3.A7alhos_LUKS)
-    *   [2.5 Dados de sistema e de usuário](#Dados_de_sistema_e_de_usu.C3.A1rio)
+    *   [2.4 Cabeçalhos LUKS](#Cabeçalhos_LUKS)
+    *   [2.5 Dados de sistema e de usuário](#Dados_de_sistema_e_de_usuário)
 *   [3 Atualizando o sistema](#Atualizando_o_sistema)
     *   [3.1 Leia antes de atualizar o sistema](#Leia_antes_de_atualizar_o_sistema)
     *   [3.2 Evite certos comandos do pacman](#Evite_certos_comandos_do_pacman)
-    *   [3.3 Sem suporte a atualizações parciais](#Sem_suporte_a_atualiza.C3.A7.C3.B5es_parciais)
-    *   [3.4 Aja em alertas durante uma atualização](#Aja_em_alertas_durante_uma_atualiza.C3.A7.C3.A3o)
-    *   [3.5 Lide prontamente com os novos arquivos de configuração](#Lide_prontamente_com_os_novos_arquivos_de_configura.C3.A7.C3.A3o)
-    *   [3.6 Reverta atualizações quebradas](#Reverta_atualiza.C3.A7.C3.B5es_quebradas)
-    *   [3.7 Verifique por pacotes órfãos ou abandonados](#Verifique_por_pacotes_.C3.B3rf.C3.A3os_ou_abandonados)
+    *   [3.3 Sem suporte a atualizações parciais](#Sem_suporte_a_atualizações_parciais)
+    *   [3.4 Aja em alertas durante uma atualização](#Aja_em_alertas_durante_uma_atualização)
+    *   [3.5 Lide prontamente com os novos arquivos de configuração](#Lide_prontamente_com_os_novos_arquivos_de_configuração)
+    *   [3.6 Reverta atualizações quebradas](#Reverta_atualizações_quebradas)
+    *   [3.7 Verifique por pacotes órfãos ou abandonados](#Verifique_por_pacotes_órfãos_ou_abandonados)
 *   [4 Use o gerenciador de pacotes para instalar softwares](#Use_o_gerenciador_de_pacotes_para_instalar_softwares)
-    *   [4.1 Escolha drivers código aberto](#Escolha_drivers_c.C3.B3digo_aberto)
-    *   [4.2 Tenha cuidado com pacotes não oficiais](#Tenha_cuidado_com_pacotes_n.C3.A3o_oficiais)
+    *   [4.1 Escolha drivers código aberto](#Escolha_drivers_código_aberto)
+    *   [4.2 Tenha cuidado com pacotes não oficiais](#Tenha_cuidado_com_pacotes_não_oficiais)
     *   [4.3 Atualize o mirrorlist](#Atualize_o_mirrorlist)
 *   [5 Limpe o sistema de arquivos](#Limpe_o_sistema_de_arquivos)
     *   [5.1 Cache de pacotes](#Cache_de_pacotes)
-    *   [5.2 Pacotes não usados (órfãos)](#Pacotes_n.C3.A3o_usados_.28.C3.B3rf.C3.A3os.29)
-    *   [5.3 Arquivos de configuração antigos](#Arquivos_de_configura.C3.A7.C3.A3o_antigos)
-    *   [5.4 Links simbólicos quebrados](#Links_simb.C3.B3licos_quebrados)
+    *   [5.2 Pacotes não usados (órfãos)](#Pacotes_não_usados_(órfãos))
+    *   [5.3 Arquivos de configuração antigos](#Arquivos_de_configuração_antigos)
+    *   [5.4 Links simbólicos quebrados](#Links_simbólicos_quebrados)
 *   [6 Dicas e truques](#Dicas_e_truques)
     *   [6.1 Use pacotes de software aprovados](#Use_pacotes_de_software_aprovados)
     *   [6.2 Instale o pacote linux-lts](#Instale_o_pacote_linux-lts)
-*   [7 Veja também](#Veja_tamb.C3.A9m)
+*   [7 Veja também](#Veja_também)
 
 ## Verifique por erros
 
@@ -73,7 +73,7 @@ Os backups podem ser automatizados com [systemd/Timers](/index.php/Systemd/Timer
 
 ### Arquivos de configuração
 
-Antes de editar quaisquer arquivos de configuração, crie um backup de forma que você possa reverter para uma versão funcional no caso de haver problemas. Editores como [vim](/index.php/Vim "Vim") e [emacs](/index.php/Emacs "Emacs") pode fazer isso automaticamente, assim como ferramentas como [etckeeper](/index.php/Etckeeper "Etckeeper") que mantêm `/etc` em um [sistema de controle de versão](/index.php/Version_control_system "Version control system") (VCS); veja [dotfiles (Português)#Controle de versão](/index.php/Dotfiles_(Portugu%C3%AAs)#Controle_de_vers.C3.A3o "Dotfiles (Português)") para mais.
+Antes de editar quaisquer arquivos de configuração, crie um backup de forma que você possa reverter para uma versão funcional no caso de haver problemas. Editores como [vim](/index.php/Vim "Vim") e [emacs](/index.php/Emacs "Emacs") pode fazer isso automaticamente, assim como ferramentas como [etckeeper](/index.php/Etckeeper "Etckeeper") que mantêm `/etc` em um [sistema de controle de versão](/index.php/Version_control_system "Version control system") (VCS); veja [dotfiles (Português)#Controle de versão](/index.php/Dotfiles_(Portugu%C3%AAs)#Controle_de_versão "Dotfiles (Português)") para mais.
 
 ### Lista de pacotes instalados
 
@@ -113,7 +113,7 @@ Da mesma forma, usuários devem estar cientes de que atualizar pacotes pode traz
 
 ### Evite certos comandos do pacman
 
-Evite fazer [atualizações parciais](#Sem_suporte_a_atualiza.C3.A7.C3.B5es_parciais). Em outras palavras, nunca execute `pacman -Sy`; em vez disso, sempre use `pacman -Syu`.
+Evite fazer [atualizações parciais](#Sem_suporte_a_atualizações_parciais). Em outras palavras, nunca execute `pacman -Sy`; em vez disso, sempre use `pacman -Syu`.
 
 Geralmente evite usar a opção `--overwrite` com o pacman. A opção `--overwrite` leva um argumento contendo um glob. Quando usado, o pacman ignorará as verificações de conflitos de arquivos em busca de arquivos que correspondam ao glob. Em um sistema adequadamente mantido, ele deve ser usado somente quando explicitamente recomendado pelos desenvolvedores do Arch. Veja a seção [#Leia antes de atualizar o sistema](#Leia_antes_de_atualizar_o_sistema).
 
@@ -163,7 +163,7 @@ O [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") faz um trab
 *   Se o programa que você deseja não estiver disponível, verifique se alguém criou um pacote no [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"). Siga o método naquele artigo para instalação.
 *   Por último, se o programa que você deseja não se encontra nos repositórios oficiais ou no AUR, aprenda como [criar um pacote](/index.php/Criar_um_pacote "Criar um pacote") para ele.
 
-Para limpar arquivos instalados inadequadamente, Veja [Pacman/Dicas e truques#Identificar arquivos que pertençam a nenhum pacote](/index.php/Pacman/Dicas_e_truques#Identificar_arquivos_que_perten.C3.A7am_a_nenhum_pacote "Pacman/Dicas e truques").
+Para limpar arquivos instalados inadequadamente, Veja [Pacman/Dicas e truques#Identificar arquivos que pertençam a nenhum pacote](/index.php/Pacman/Dicas_e_truques#Identificar_arquivos_que_pertençam_a_nenhum_pacote "Pacman/Dicas e truques").
 
 ### Escolha drivers código aberto
 
@@ -173,7 +173,7 @@ Sempre tente usar drivers de código aberto antes de recorrer a drivers propriet
 
 Seja cauteloso ao usar pacotes do [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)") ou um [repositório não oficial de usuários](/index.php/Unofficial_user_repository "Unofficial user repository"). A maioria é fornecida pelos usuários e, portanto, pode não ter os mesmos padrões que aqueles nos repositórios oficiais. Evite [auxiliares do AUR](/index.php/Auxiliares_do_AUR "Auxiliares do AUR") que automatizam a instalação de pacotes do AUR. **Sempre** verifique PKGBUILDs por sanidade e sinais de erro ou código malicioso antes de compilar a/ou instalar o pacote.
 
-Para simplificar a manutenção, limite a quantidade de pacotes não oficiais usados. Faça verificações periódicas de quais estão em uso e remova (ou substitua por suas contrapartes oficiais) quaisquer outros. Veja [pacman/Dicas e truques#Manutenção](/index.php/Pacman/Dicas_e_truques#Manuten.C3.A7.C3.A3o "Pacman/Dicas e truques") para comandos úteis.
+Para simplificar a manutenção, limite a quantidade de pacotes não oficiais usados. Faça verificações periódicas de quais estão em uso e remova (ou substitua por suas contrapartes oficiais) quaisquer outros. Veja [pacman/Dicas e truques#Manutenção](/index.php/Pacman/Dicas_e_truques#Manutenção "Pacman/Dicas e truques") para comandos úteis.
 
 ### Atualize o mirrorlist
 
@@ -198,7 +198,7 @@ Veja [Pacman (Português)#Limpando o cache de pacotes](/index.php/Pacman_(Portug
 
 Remova pacotes não usados do sistema para liberar espaço em disco e simplificar a manutenção
 
-See [Pacman/Dicas e truques#Removendo pacotes não usados (órfãos)](/index.php/Pacman/Dicas_e_truques#Removendo_pacotes_n.C3.A3o_usados_.28.C3.B3rf.C3.A3os.29 "Pacman/Dicas e truques") for details.
+See [Pacman/Dicas e truques#Removendo pacotes não usados (órfãos)](/index.php/Pacman/Dicas_e_truques#Removendo_pacotes_não_usados_(órfãos) "Pacman/Dicas e truques") for details.
 
 ### Arquivos de configuração antigos
 

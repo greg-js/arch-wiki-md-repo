@@ -5,7 +5,7 @@ This document describes how to install the [Network UPS Tools (NUT)](http://netw
 *   [1 Installation of Network UPS Tools](#Installation_of_Network_UPS_Tools)
 *   [2 Configuration](#Configuration)
     *   [2.1 Driver configuration](#Driver_configuration)
-        *   [2.1.1 Can't claim USB device error](#Can.27t_claim_USB_device_error)
+        *   [2.1.1 Can't claim USB device error](#Can't_claim_USB_device_error)
     *   [2.2 upsd configuration](#upsd_configuration)
     *   [2.3 upsmon configuration](#upsmon_configuration)
 *   [3 NUT-Monitor](#NUT-Monitor)

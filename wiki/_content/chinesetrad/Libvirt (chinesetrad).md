@@ -18,34 +18,34 @@ Libvirt 的一些主要功能如下：
 
 ## Contents
 
-*   [1 安裝](#.E5.AE.89.E8.A3.9D)
-    *   [1.1 伺服器端](#.E4.BC.BA.E6.9C.8D.E5.99.A8.E7.AB.AF)
-    *   [1.2 用戶端](#.E7.94.A8.E6.88.B6.E7.AB.AF)
-*   [2 配置](#.E9.85.8D.E7.BD.AE)
-    *   [2.1 設定授權](#.E8.A8.AD.E5.AE.9A.E6.8E.88.E6.AC.8A)
-        *   [2.1.1 使用 polkit](#.E4.BD.BF.E7.94.A8_polkit)
-        *   [2.1.2 基於檔案的權限授權](#.E5.9F.BA.E6.96.BC.E6.AA.94.E6.A1.88.E7.9A.84.E6.AC.8A.E9.99.90.E6.8E.88.E6.AC.8A)
-    *   [2.2 守護程序](#.E5.AE.88.E8.AD.B7.E7.A8.8B.E5.BA.8F)
-    *   [2.3 非加密的 TCP/IP sockets](#.E9.9D.9E.E5.8A.A0.E5.AF.86.E7.9A.84_TCP.2FIP_sockets)
-*   [3 测试](#.E6.B5.8B.E8.AF.95)
-*   [4 管理](#.E7.AE.A1.E7.90.86)
+*   [1 安裝](#安裝)
+    *   [1.1 伺服器端](#伺服器端)
+    *   [1.2 用戶端](#用戶端)
+*   [2 配置](#配置)
+    *   [2.1 設定授權](#設定授權)
+        *   [2.1.1 使用 polkit](#使用_polkit)
+        *   [2.1.2 基於檔案的權限授權](#基於檔案的權限授權)
+    *   [2.2 守護程序](#守護程序)
+    *   [2.3 非加密的 TCP/IP sockets](#非加密的_TCP/IP_sockets)
+*   [3 测试](#测试)
+*   [4 管理](#管理)
     *   [4.1 virsh](#virsh)
-    *   [4.2 儲存pool](#.E5.84.B2.E5.AD.98pool)
-        *   [4.2.1 用 virsh 新增存儲Pool](#.E7.94.A8_virsh_.E6.96.B0.E5.A2.9E.E5.AD.98.E5.84.B2Pool)
-        *   [4.2.2 用 virt-manager 新增儲存Pool](#.E7.94.A8_virt-manager_.E6.96.B0.E5.A2.9E.E5.84.B2.E5.AD.98Pool)
-    *   [4.3 存儲磁區](#.E5.AD.98.E5.84.B2.E7.A3.81.E5.8D.80)
-        *   [4.3.1 用 virsh 新增磁區](#.E7.94.A8_virsh_.E6.96.B0.E5.A2.9E.E7.A3.81.E5.8D.80)
-        *   [4.3.2 virt-manager 後備儲存類型的 bug](#virt-manager_.E5.BE.8C.E5.82.99.E5.84.B2.E5.AD.98.E9.A1.9E.E5.9E.8B.E7.9A.84_bug)
-    *   [4.4 虛擬機](#.E8.99.9B.E6.93.AC.E6.A9.9F)
-        *   [4.4.1 用 virt-install 新增虛擬機器](#.E7.94.A8_virt-install_.E6.96.B0.E5.A2.9E.E8.99.9B.E6.93.AC.E6.A9.9F.E5.99.A8)
-        *   [4.4.2 用 virt-manager 新增虛擬機器](#.E7.94.A8_virt-manager_.E6.96.B0.E5.A2.9E.E8.99.9B.E6.93.AC.E6.A9.9F.E5.99.A8)
-        *   [4.4.3 管理虛擬機](#.E7.AE.A1.E7.90.86.E8.99.9B.E6.93.AC.E6.A9.9F)
-    *   [4.5 網路](#.E7.B6.B2.E8.B7.AF)
-    *   [4.6 快照](#.E5.BF.AB.E7.85.A7)
-        *   [4.6.1 新增快照](#.E6.96.B0.E5.A2.9E.E5.BF.AB.E7.85.A7)
-    *   [4.7 其他管理操作](#.E5.85.B6.E4.BB.96.E7.AE.A1.E7.90.86.E6.93.8D.E4.BD.9C)
-*   [5 Python 連接代碼](#Python_.E9.80.A3.E6.8E.A5.E4.BB.A3.E7.A2.BC)
-*   [6 參閱](#.E5.8F.83.E9.96.B1)
+    *   [4.2 儲存pool](#儲存pool)
+        *   [4.2.1 用 virsh 新增存儲Pool](#用_virsh_新增存儲Pool)
+        *   [4.2.2 用 virt-manager 新增儲存Pool](#用_virt-manager_新增儲存Pool)
+    *   [4.3 存儲磁區](#存儲磁區)
+        *   [4.3.1 用 virsh 新增磁區](#用_virsh_新增磁區)
+        *   [4.3.2 virt-manager 後備儲存類型的 bug](#virt-manager_後備儲存類型的_bug)
+    *   [4.4 虛擬機](#虛擬機)
+        *   [4.4.1 用 virt-install 新增虛擬機器](#用_virt-install_新增虛擬機器)
+        *   [4.4.2 用 virt-manager 新增虛擬機器](#用_virt-manager_新增虛擬機器)
+        *   [4.4.3 管理虛擬機](#管理虛擬機)
+    *   [4.5 網路](#網路)
+    *   [4.6 快照](#快照)
+        *   [4.6.1 新增快照](#新增快照)
+    *   [4.7 其他管理操作](#其他管理操作)
+*   [5 Python 連接代碼](#Python_連接代碼)
+*   [6 參閱](#參閱)
 
 ## 安裝
 
@@ -87,7 +87,7 @@ Libvirt 的一些主要功能如下：
 
 ## 配置
 
-對於***系統*** 級別的管理工作（如：全局配置和鏡像位置），libvirt 要求至少要[設定授權](#.E8.A8.AD.E5.AE.9A.E6.8E.88.E6.AC.8A)和[啟動守護程序](#.E5.AE.88.E8.AD.B7.E7.A8.8B.E5.BA.8F)。
+對於***系統*** 級別的管理工作（如：全局配置和鏡像位置），libvirt 要求至少要[設定授權](#設定授權)和[啟動守護程序](#守護程序)。
 
 **注意:** 對於使用者***工作階段*** 級別的管理任務，守護程序的安裝和設定*不是* 必須的。授權總是僅限本地，前台程式將啟動一个 **libvirtd** 守護程序的本地實例。
 
@@ -97,22 +97,22 @@ Libvirt 的一些主要功能如下：
 
 	Libvirt daemon允許管理員分別為用戶端連線的每個網路 socket 選擇不同授權機制。這主要是通過 libvirt 守護程序的主設定檔 `/etc/libvirt/libvirtd.conf` 來實現的。每個 libvirt socket 可以有獨立的授權機制配置。目前的可選項有 `none`、`polkit` 和 `sasl`。
 
-由于 [libvirt](https://www.archlinux.org/packages/?name=libvirt) 在安裝时將把 [polkit](https://www.archlinux.org/packages/?name=polkit) 作為依赖一並安裝，所以 [polkit](#.E4.BD.BF.E7.94.A8_polkit) 通常是 `unix_sock_auth` 參數的預設值（[來源](http://libvirt.org/auth.html#ACL_server_polkit)）。但[基於檔案的權限](#.E5.9F.BA.E6.96.BC.E6.AA.94.E6.A1.88.E7.9A.84.E6.AC.8A.E9.99.90.E6.8E.88.E6.AC.8A)仍然可用。
+由于 [libvirt](https://www.archlinux.org/packages/?name=libvirt) 在安裝时將把 [polkit](https://www.archlinux.org/packages/?name=polkit) 作為依赖一並安裝，所以 [polkit](#使用_polkit) 通常是 `unix_sock_auth` 參數的預設值（[來源](http://libvirt.org/auth.html#ACL_server_polkit)）。但[基於檔案的權限](#基於檔案的權限授權)仍然可用。
 
 #### 使用 polkit
 
 **注意:** 為了使 `polkit` 認證工作正常，應該重新啟動一次系統。
 
-*libvirt* daemon在 polkit 策略設定檔（`/usr/share/polkit-1/actions/org.libvirt.unix.policy`）中提供了2種 [行為](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.A1.8C.E4.B8.BA "Polkit (简体中文)") 策略：
+*libvirt* daemon在 polkit 策略設定檔（`/usr/share/polkit-1/actions/org.libvirt.unix.policy`）中提供了2種 [行為](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#行为 "Polkit (简体中文)") 策略：
 
 *   `org.libvirt.unix.manage` 面向完全的管理存取（讀寫模式的後台 socket），以及
 *   `org.libvirt.unix.monitor` 面向僅监視查看存取（唯讀 socket）。
 
 預設的面向讀寫模式後台 socket 的策略將請求認證為管理者。這類似於 [sudo](/index.php/Sudo "Sudo") 認證，但它並不要求用戶應用最終以 root 身分執行。預設策略下也仍然允許任何應用連線到唯讀 socket。
 
-Arch Linux 預設 `wheel` 組的所有實驗者都是管理員身分：定義於 `/etc/polkit-1/rules.d/50-default.rules`（參閱[管理员标识](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E7.AE.A1.E7.90.86.E5.91.98.E6.A0.87.E8.AF.86 "Polkit (简体中文)")）。這樣就不必新增組和規則檔案。 **如果用户是 `wheel` 群組的成員**：只要連線到了讀寫模式 socket（例如通过 [virt-manager](https://www.archlinux.org/packages/?name=virt-manager)）就會被提示輸入該使用者的口令。
+Arch Linux 預設 `wheel` 組的所有實驗者都是管理員身分：定義於 `/etc/polkit-1/rules.d/50-default.rules`（參閱[管理员标识](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#管理员标识 "Polkit (简体中文)")）。這樣就不必新增組和規則檔案。 **如果用户是 `wheel` 群組的成員**：只要連線到了讀寫模式 socket（例如通过 [virt-manager](https://www.archlinux.org/packages/?name=virt-manager)）就會被提示輸入該使用者的口令。
 
-**注意:** 要求口令的提示由系統中的 [認證代理](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.AE.A4.E8.AF.81.E4.BB.A3.E7.90.86 "Polkit (简体中文)") 給出。文本控制台預設的認證代理是 `pkttyagent` 它可能因工作不正常而導致各種問題。
+**注意:** 要求口令的提示由系統中的 [認證代理](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#认证代理 "Polkit (简体中文)") 給出。文本控制台預設的認證代理是 `pkttyagent` 它可能因工作不正常而導致各種問題。
 
 **提示：** 如果要配置無密碼認證，參考 [跳過密碼提示](/index.php/Polkit#Bypass_password_prompt "Polkit")。
 
@@ -316,7 +316,7 @@ Print active and inactive domains:
 
 #### 用 virt-install 新增虛擬機器
 
-For an extremely detailed domain (virtual machine) setup, it is easier to [#用 virt-manager 新增虛擬機器](#.E7.94.A8_virt-manager_.E6.96.B0.E5.A2.9E.E8.99.9B.E6.93.AC.E6.A9.9F.E5.99.A8). However, basics can easily be done with `virt-install` and still run quite well. Minimum specifications are `--name`, `--memory`, guest storage (`--disk`, `--filesystem`, or `--nodisks`), and an install method (generally an `.iso` or CD).
+For an extremely detailed domain (virtual machine) setup, it is easier to [#用 virt-manager 新增虛擬機器](#用_virt-manager_新增虛擬機器). However, basics can easily be done with `virt-install` and still run quite well. Minimum specifications are `--name`, `--memory`, guest storage (`--disk`, `--filesystem`, or `--nodisks`), and an install method (generally an `.iso` or CD).
 
 Arch Linux install (two GiB, raw format volume create; user-networking):
 
@@ -428,14 +428,14 @@ $ virsh edit *domain*
 
 [此處](https://jamielinux.com/docs/libvirt-networking-handbook/)是有有關libvirt 網路的一个正宗的概述。
 
-預設情況下，當 `libvird` 服務啟動後，即創建了一个名為 *default* 的 NAT 網橋与外部網路聯通（警告：參閱 [#"default" 網路的 bug](#.22default.22_.E7.B6.B2.E8.B7.AF.E7.9A.84_bug)）。對於其他的網路連線需求，可創建下列4種類型的網路讓虛擬機連線到網路：
+預設情況下，當 `libvird` 服務啟動後，即創建了一个名為 *default* 的 NAT 網橋与外部網路聯通（警告：參閱 [#"default" 網路的 bug](#"default"_網路的_bug)）。對於其他的網路連線需求，可創建下列4種類型的網路讓虛擬機連線到網路：
 
 *   bridge — 這是一個虛擬裝置，它通過一個物理介面直接共享網路資料。使用場合為：宿主機有 *靜態* 網路、虛擬機不需與其它虛擬機連接、虛擬機要佔用全部進出流量，並且虛擬機執行於*系統* 層級。有關如何在現有預設網橋時增加另一個網橋的方法，參閱 [網橋](/index.php?title=%E7%B6%B2%E6%A9%8B&action=edit&redlink=1 "網橋 (page does not exist)")。網橋創建後，需要將它指定到相應客戶機的 `.xml` 設定檔中。
 *   network — 這是一個虛擬網路，它可以與其它虛擬機共用。使用場景为：宿主機有 *動態* 網路（例如：NetworkManager）或使用無線網路。
 *   macvtap — 直接連線到宿主機的一個物理網路介面。
 *   user — 本地網路，僅用於使用者 *工作階段*。
 
-絕大多數用戶都可以通過 `virsh` 的各種可選項創建具有各種功能的網路，一般來說比通過 GUI 程式（像 `virt-manager` 等）更容易做到。也可以按 [#用 virt-install 新增虛擬機](#.E7.94.A8_virt-install_.E6.96.B0.E5.A2.9E.E8.99.9B.E6.93.AC.E6.A9.9F) 實現。
+絕大多數用戶都可以通過 `virsh` 的各種可選項創建具有各種功能的網路，一般來說比通過 GUI 程式（像 `virt-manager` 等）更容易做到。也可以按 [#用 virt-install 新增虛擬機](#用_virt-install_新增虛擬機) 實現。
 
 **注意:** libvirt 通過 [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) 處理 DHCP 和 DNS 請求，以啟動每個虛擬網路的不同實例。也會為特定的路由添加 iptables 規則並啟用 `ip_forward` 內核參數。
 

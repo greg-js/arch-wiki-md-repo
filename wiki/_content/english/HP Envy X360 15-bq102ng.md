@@ -15,7 +15,7 @@ The HP Envy X360 15-bq102ng was released in 2017\. It has a Ryzen Mobile 5 2500u
 
 *   [1 Installing Arch](#Installing_Arch)
 *   [2 Battery and Power Management](#Battery_and_Power_Management)
-*   [3 Display, Video Card](#Display.2C_Video_Card)
+*   [3 Display, Video Card](#Display,_Video_Card)
 *   [4 Touchscreen and Stylus](#Touchscreen_and_Stylus)
 *   [5 Orientation Sensor](#Orientation_Sensor)
 *   [6 Wireless Networking](#Wireless_Networking)

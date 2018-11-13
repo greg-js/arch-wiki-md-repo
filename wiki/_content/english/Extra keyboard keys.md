@@ -7,12 +7,12 @@ Many keyboards include some *special keys* (also called *hotkeys* or *multimedia
 *   [1 Laptops](#Laptops)
     *   [1.1 Apple MacBooks](#Apple_MacBooks)
     *   [1.2 Asus M series](#Asus_M_series)
-    *   [1.3 Asus N56VJ (or possibly others)](#Asus_N56VJ_.28or_possibly_others.29)
-    *   [1.4 Lenovo T460p (or possibly others)](#Lenovo_T460p_.28or_possibly_others.29)
+    *   [1.3 Asus N56VJ (or possibly others)](#Asus_N56VJ_(or_possibly_others))
+    *   [1.4 Lenovo T460p (or possibly others)](#Lenovo_T460p_(or_possibly_others))
 *   [2 Gaming Keyboards](#Gaming_Keyboards)
     *   [2.1 Cooler Master CM Storm QuickFire TK](#Cooler_Master_CM_Storm_QuickFire_TK)
     *   [2.2 Corsair K series keyboards](#Corsair_K_series_keyboards)
-    *   [2.3 Logitech G series G710 and 710+](#Logitech_G_series_G710_and_710.2B)
+    *   [2.3 Logitech G series G710 and 710+](#Logitech_G_series_G710_and_710+)
 *   [3 See also](#See_also)
 
 ## Laptops
@@ -49,7 +49,7 @@ If most of your special keys do not work, try loading the asus-nb-wmi kernel mod
 
 ```
 
-then check xev again. If you combine this with the acpi_osi="!Windows 2012" boot option, you may get weird results in xev, so try not using it. If this did fix things, make sure to make the module load at boot with methods described in [Kernel modules#Automatic module handling](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules").
+then check xev again. If you combine this with the acpi_osi="!Windows 2012" boot option, you may get weird results in xev, so try not using it. If this did fix things, make sure to make the module load at boot with methods described in [Kernel modules#Automatic module loading with systemd](/index.php/Kernel_modules#Automatic_module_loading_with_systemd "Kernel modules").
 
 ### Lenovo T460p (or possibly others)
 

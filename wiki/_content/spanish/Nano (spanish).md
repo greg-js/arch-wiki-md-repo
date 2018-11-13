@@ -2,15 +2,15 @@
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Configuración](#Configuraci.C3.B3n)
-    *   [2.1 Crear ~/.nanorc](#Crear_.7E.2F.nanorc)
+*   [1 Instalación](#Instalación)
+*   [2 Configuración](#Configuración)
+    *   [2.1 Crear ~/.nanorc](#Crear_~/.nanorc)
     *   [2.2 Resaltado de sintaxis](#Resaltado_de_sintaxis)
         *   [2.2.1 PKGBUILD](#PKGBUILD)
         *   [2.2.2 Forth](#Forth)
         *   [2.2.3 Otras definiciones](#Otras_definiciones)
     *   [2.3 Configuraciones sugeridas](#Configuraciones_sugeridas)
-        *   [2.3.1 Suspensión](#Suspensi.C3.B3n)
+        *   [2.3.1 Suspensión](#Suspensión)
         *   [2.3.2 Ajuste de texto](#Ajuste_de_texto)
 *   [3 Uso](#Uso)
     *   [3.1 Funciones especiales](#Funciones_especiales)
@@ -18,9 +18,9 @@
         *   [3.1.2 Selecciona las funciones secundarias](#Selecciona_las_funciones_secundarias)
 *   [4 Consejos y trucos](#Consejos_y_trucos)
     *   [4.1 Reemplazar vi con nano](#Reemplazar_vi_con_nano)
-*   [5 Solución De Problemas](#Soluci.C3.B3n_De_Problemas)
+*   [5 Solución De Problemas](#Solución_De_Problemas)
     *   [5.1 Conflictos combinaciones de teclas](#Conflictos_combinaciones_de_teclas)
-*   [6 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [6 Véase también](#Véase_también)
 
 ## Instalación
 

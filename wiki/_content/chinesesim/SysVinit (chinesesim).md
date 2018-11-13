@@ -8,25 +8,25 @@
 
 ## Contents
 
-*   [1 迁移到 Systemd](#.E8.BF.81.E7.A7.BB.E5.88.B0_Systemd)
-    *   [1.1 安装](#.E5.AE.89.E8.A3.85)
-    *   [1.2 附加信息](#.E9.99.84.E5.8A.A0.E4.BF.A1.E6.81.AF)
-*   [2 init、inittab 概览](#init.E3.80.81inittab_.E6.A6.82.E8.A7.88)
-*   [3 调整运行级别](#.E8.B0.83.E6.95.B4.E8.BF.90.E8.A1.8C.E7.BA.A7.E5.88.AB)
-    *   [3.1 通过启动加载器](#.E9.80.9A.E8.BF.87.E5.90.AF.E5.8A.A8.E5.8A.A0.E8.BD.BD.E5.99.A8)
-    *   [3.2 启动之后](#.E5.90.AF.E5.8A.A8.E4.B9.8B.E5.90.8E)
+*   [1 迁移到 Systemd](#迁移到_Systemd)
+    *   [1.1 安装](#安装)
+    *   [1.2 附加信息](#附加信息)
+*   [2 init、inittab 概览](#init、inittab_概览)
+*   [3 调整运行级别](#调整运行级别)
+    *   [3.1 通过启动加载器](#通过启动加载器)
+    *   [3.2 启动之后](#启动之后)
 *   [4 inittab](#inittab)
-    *   [4.1 默认运行级别](#.E9.BB.98.E8.AE.A4.E8.BF.90.E8.A1.8C.E7.BA.A7.E5.88.AB)
-    *   [4.2 主启动脚本](#.E4.B8.BB.E5.90.AF.E5.8A.A8.E8.84.9A.E6.9C.AC)
-    *   [4.3 单用户启动](#.E5.8D.95.E7.94.A8.E6.88.B7.E5.90.AF.E5.8A.A8)
-    *   [4.4 终端初始化](#.E7.BB.88.E7.AB.AF.E5.88.9D.E5.A7.8B.E5.8C.96)
+    *   [4.1 默认运行级别](#默认运行级别)
+    *   [4.2 主启动脚本](#主启动脚本)
+    *   [4.3 单用户启动](#单用户启动)
+    *   [4.4 终端初始化](#终端初始化)
     *   [4.5 Ctrl-Alt-Del](#Ctrl-Alt-Del)
-    *   [4.6 X 程序](#X_.E7.A8.8B.E5.BA.8F)
-    *   [4.7 电源检测脚本](#.E7.94.B5.E6.BA.90.E6.A3.80.E6.B5.8B.E8.84.9A.E6.9C.AC)
-    *   [4.8 自定义键盘请求](#.E8.87.AA.E5.AE.9A.E4.B9.89.E9.94.AE.E7.9B.98.E8.AF.B7.E6.B1.82)
-        *   [4.8.1 触发 kbrequest](#.E8.A7.A6.E5.8F.91_kbrequest)
-*   [5 另见](#.E5.8F.A6.E8.A7.81)
-*   [6 外部链接](#.E5.A4.96.E9.83.A8.E9.93.BE.E6.8E.A5)
+    *   [4.6 X 程序](#X_程序)
+    *   [4.7 电源检测脚本](#电源检测脚本)
+    *   [4.8 自定义键盘请求](#自定义键盘请求)
+        *   [4.8.1 触发 kbrequest](#触发_kbrequest)
+*   [5 另见](#另见)
+*   [6 外部链接](#外部链接)
 
 ## 迁移到 Systemd
 
@@ -88,7 +88,7 @@ id:runlevels:action:process
 
 ### 通过启动加载器
 
-想要改变系统启动时的运行级别，只需要添加想要的运行级别 `n` 到启动加载器的内核参数。这通常的应用是 [Start X at login#/etc/inittab](/index.php/Start_X_at_login#.2Fetc.2Finittab "Start X at login")。要启动到需要的运行级别，将号码加入 [内核参数](/index.php/Kernel_parameters "Kernel parameters") (例如 `3` 则启动要运行级别 3)。
+想要改变系统启动时的运行级别，只需要添加想要的运行级别 `n` 到启动加载器的内核参数。这通常的应用是 [Start X at login#/etc/inittab](/index.php/Start_X_at_login#/etc/inittab "Start X at login")。要启动到需要的运行级别，将号码加入 [内核参数](/index.php/Kernel_parameters "Kernel parameters") (例如 `3` 则启动要运行级别 3)。
 
 运行级别追加到最后，这样内核就知道用哪个运行级别启动。想要使用另一个 init 程序(如 [systemd](/index.php/Systemd "Systemd"))，添加`init=/usr/lib/systemd/systemd`或者类似的命令到内核行。
 

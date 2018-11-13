@@ -12,23 +12,23 @@ Una unidad [flash](https://en.wikipedia.org/wiki/es:Memoria_flash "wikipedia:es:
 ## Contents
 
 *   [1 Utilizar GRUB y dispositivos loopback](#Utilizar_GRUB_y_dispositivos_loopback)
-    *   [1.1 Preparación](#Preparaci.C3.B3n)
+    *   [1.1 Preparación](#Preparación)
     *   [1.2 Instalar GRUB](#Instalar_GRUB)
-        *   [1.2.1 Instalación simple](#Instalaci.C3.B3n_simple)
-        *   [1.2.2 Arranque híbrido UEFI GPT + BIOS GPT/MBR](#Arranque_h.C3.ADbrido_UEFI_GPT_.2B_BIOS_GPT.2FMBR)
+        *   [1.2.1 Instalación simple](#Instalación_simple)
+        *   [1.2.2 Arranque híbrido UEFI GPT + BIOS GPT/MBR](#Arranque_híbrido_UEFI_GPT_+_BIOS_GPT/MBR)
     *   [1.3 Configurar GRUB](#Configurar_GRUB)
         *   [1.3.1 Utilizar una plantilla](#Utilizar_una_plantilla)
-        *   [1.3.2 Configuración manual](#Configuraci.C3.B3n_manual)
+        *   [1.3.2 Configuración manual](#Configuración_manual)
     *   [1.4 Entradas de arranque](#Entradas_de_arranque)
         *   [1.4.1 Lanzamiento mensual de Arch Linu](#Lanzamiento_mensual_de_Arch_Linu)
         *   [1.4.2 archboot](#archboot)
 *   [2 Utilizar Syslinux y memdisk](#Utilizar_Syslinux_y_memdisk)
-    *   [2.1 Preparación](#Preparaci.C3.B3n_2)
-    *   [2.2 Instalar el módulo memdisk](#Instalar_el_m.C3.B3dulo_memdisk)
-    *   [2.3 Configuración](#Configuraci.C3.B3n)
-    *   [2.4 Precaución para sistemas de 32 bits](#Precauci.C3.B3n_para_sistemas_de_32_bits)
+    *   [2.1 Preparación](#Preparación_2)
+    *   [2.2 Instalar el módulo memdisk](#Instalar_el_módulo_memdisk)
+    *   [2.3 Configuración](#Configuración)
+    *   [2.4 Precaución para sistemas de 32 bits](#Precaución_para_sistemas_de_32_bits)
 *   [3 Herramientas automatizadas](#Herramientas_automatizadas)
-*   [4 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [4 Véase también](#Véase_también)
 
 ## Utilizar GRUB y dispositivos loopback
 
@@ -87,7 +87,7 @@ Para UEFI, la partición debe ser la primera en una tabla de particiones MBR y f
 Esta configuración es útil para crear una memoria USB universal, que arranque en todos los equipos. En primer lugar, debe crear una tabla de particionado [GPT](/index.php/Partitioning_(Espa%C3%B1ol)#GUID_Partition_Table "Partitioning (Español)") en su dispositivo. Necesita al menos 3 particiones:
 
 1.  Una partición «BIOS boot partition» (código tipo para gdisk `EF02`). Esta partición debe tener un tamaño de 1 MiB.
-2.  Una partición «EFI System partition» (código tipo para gdisk `EF00` con un sistema de archivos [FAT32](/index.php/EFI_system_partition_(Espa%C3%B1ol)#Formatear_la_partici.C3.B3n "EFI system partition (Español)")). Esta partición puede ser tan pequeña como 50 MiB.
+2.  Una partición «EFI System partition» (código tipo para gdisk `EF00` con un sistema de archivos [FAT32](/index.php/EFI_system_partition_(Espa%C3%B1ol)#Formatear_la_partición "EFI system partition (Español)")). Esta partición puede ser tan pequeña como 50 MiB.
 
 1.  Una partición de datos (use un sistema de archivos compatible con [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)")). Esta partición puede ocupar el resto del espacio de su disco.
 
@@ -174,7 +174,7 @@ GLIM (GRUB2 Live ISO Multiboot): [https://github.com/thias/glim](https://github.
 
 #### Configuración manual
 
-Para el propósito de la unidad USB multiarranque, es más fácil modificar el archivo `grub.cfg` manualmente en lugar de generarlo automáticamente. Alternativamente, realice los siguientes cambios en `/etc/grub.d/40_custom` o `/mnt/boot/grub/custom.cfg` y genere `/mnt/boot/grub/grub.cfg` utilizando la orden [grub-mkconfig](/index.php/GRUB_(Espa%C3%B1ol)#Generar_el_archivo_de_configuraci.C3.B3n_principal "GRUB (Español)").
+Para el propósito de la unidad USB multiarranque, es más fácil modificar el archivo `grub.cfg` manualmente en lugar de generarlo automáticamente. Alternativamente, realice los siguientes cambios en `/etc/grub.d/40_custom` o `/mnt/boot/grub/custom.cfg` y genere `/mnt/boot/grub/grub.cfg` utilizando la orden [grub-mkconfig](/index.php/GRUB_(Espa%C3%B1ol)#Generar_el_archivo_de_configuración_principal "GRUB (Español)").
 
 Como se recomienda usar un [nombre permanente](/index.php/Persistent_block_device_naming_(Espa%C3%B1ol) "Persistent block device naming (Español)") en lugar de `/dev/sd*xY*` para identificar la partición en la unidad USB donde se encuentran los archivos de imágenes, defina una variable de conveniencia para mantener el valor. Si las imágenes ISO están en la misma partición que GRUB, use lo siguiente para leer el UUID en el momento del arranque:
 
@@ -255,7 +255,7 @@ Usando el módulo [memdisk](http://www.syslinux.org/wiki/index.php/MEMDISK), la 
 
 ### Preparación
 
-Asegúrese de que la unidad USB esté correctamente [particionada](/index.php/Partitioning_(Espa%C3%B1ol) "Partitioning (Español)") y que haya una partición con un [sistema de archivos](/index.php/File_systems_(Espa%C3%B1ol) "File systems (Español)") compatible con Syslinux, por ejemplo fat32 o ext4\. Luego instale Syslinux en esta partición, vea [Syslinux (Español)#Instalación](/index.php/Syslinux_(Espa%C3%B1ol)#Instalaci.C3.B3n "Syslinux (Español)").
+Asegúrese de que la unidad USB esté correctamente [particionada](/index.php/Partitioning_(Espa%C3%B1ol) "Partitioning (Español)") y que haya una partición con un [sistema de archivos](/index.php/File_systems_(Espa%C3%B1ol) "File systems (Español)") compatible con Syslinux, por ejemplo fat32 o ext4\. Luego instale Syslinux en esta partición, vea [Syslinux (Español)#Instalación](/index.php/Syslinux_(Espa%C3%B1ol)#Instalación "Syslinux (Español)").
 
 ### Instalar el módulo memdisk
 
@@ -268,7 +268,7 @@ El módulo memdisk no se instalará durante la instalación de Syslinux, por lo 
 
 ### Configuración
 
-Después de copiar los archivos ISO en la unidad USB, edite el [archivo de configuración de Syslinux](/index.php/Syslinux_(Espa%C3%B1ol)#Configuraci.C3.B3n "Syslinux (Español)") y cree entradas de menú para las imágenes ISO. La entrada básica se verá así:
+Después de copiar los archivos ISO en la unidad USB, edite el [archivo de configuración de Syslinux](/index.php/Syslinux_(Espa%C3%B1ol)#Configuración "Syslinux (Español)") y cree entradas de menú para las imágenes ISO. La entrada básica se verá así:
 
  `boot/syslinux/syslinux.cfg` 
 ```

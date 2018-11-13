@@ -4,16 +4,16 @@ A Equipe de Segurança do Arch é um grupo de voluntários cujo objetivo é rast
 
 ## Contents
 
-*   [1 Missão](#Miss.C3.A3o)
+*   [1 Missão](#Missão)
 *   [2 Contribuir](#Contribuir)
 *   [3 Procedimento](#Procedimento)
-    *   [3.1 Fase de investigação e compartilhamento de informações](#Fase_de_investiga.C3.A7.C3.A3o_e_compartilhamento_de_informa.C3.A7.C3.B5es)
-    *   [3.2 Situação do upstream e relatório de erros](#Situa.C3.A7.C3.A3o_do_upstream_e_relat.C3.B3rio_de_erros)
-    *   [3.3 Rastreamento e publicação](#Rastreamento_e_publica.C3.A7.C3.A3o)
+    *   [3.1 Fase de investigação e compartilhamento de informações](#Fase_de_investigação_e_compartilhamento_de_informações)
+    *   [3.2 Situação do upstream e relatório de erros](#Situação_do_upstream_e_relatório_de_erros)
+    *   [3.3 Rastreamento e publicação](#Rastreamento_e_publicação)
 *   [4 Recursos](#Recursos)
     *   [4.1 RSS](#RSS)
-    *   [4.2 Listas de discussão](#Listas_de_discuss.C3.A3o)
-    *   [4.3 Outras distribuições](#Outras_distribui.C3.A7.C3.B5es)
+    *   [4.2 Listas de discussão](#Listas_de_discussão)
+    *   [4.3 Outras distribuições](#Outras_distribuições)
     *   [4.4 Outros](#Outros)
     *   [4.5 Mais](#Mais)
 *   [5 Membros da equipe](#Membros_da_equipe)
@@ -38,7 +38,7 @@ O [rastreador de segurança do Arch Linux](https://security.archlinux.org/) é u
 Para se envolver na identificação das vulnerabilidades, é recomendado:
 
 *   Seguir o canal IRC [#archlinux-security](irc://irc.freenode.net/archlinux-security). É o principal meio de comunicação para relatar e discutir CVEs, pacotes afetados e a primeira versão corrigida do pacote.
-*   Para ser avisado antecipadamente sobre novos problemas, pode-se monitorar as [#Listas de discussão](#Listas_de_discuss.C3.A3o) recomendadas para novos CVEs, junto com outras fontes, se necessário.
+*   Para ser avisado antecipadamente sobre novos problemas, pode-se monitorar as [#Listas de discussão](#Listas_de_discussão) recomendadas para novos CVEs, junto com outras fontes, se necessário.
 *   Encorajamos os voluntários a examinar os avisos por erros, perguntas ou comentários e relatar no canal do IRC.
 *   Inscrever-se nas listas de discussão [arch-security](https://lists.archlinux.org/listinfo/arch-security) e [oss-security](http://oss-security.openwall.org/wiki/mailing-lists/oss-security).
 *   Fazer commit de código para o projeto [arch-security-tracker (GitHub)](https://github.com/archlinux/arch-security-tracker) é uma ótima forma de contribuir para a equipe.

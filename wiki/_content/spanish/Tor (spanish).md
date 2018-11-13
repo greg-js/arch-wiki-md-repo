@@ -8,13 +8,13 @@ Artículos relacionados
 
 ## Contents
 
-*   [1 Introducción](#Introducci.C3.B3n)
-*   [2 Instalación](#Instalaci.C3.B3n)
-*   [3 Configuración](#Configuraci.C3.B3n)
-    *   [3.1 Configuración de Relevos](#Configuraci.C3.B3n_de_Relevos)
+*   [1 Introducción](#Introducción)
+*   [2 Instalación](#Instalación)
+*   [3 Configuración](#Configuración)
+    *   [3.1 Configuración de Relevos](#Configuración_de_Relevos)
 *   [4 Corriendo Tor en un Chroot](#Corriendo_Tor_en_un_Chroot)
 *   [5 Corriendo Tor en un contenedor systemd-nspawn con una interfaz de red virtual](#Corriendo_Tor_en_un_contenedor_systemd-nspawn_con_una_interfaz_de_red_virtual)
-    *   [5.1 Instalación y Configuración del Servidor](#Instalaci.C3.B3n_y_Configuraci.C3.B3n_del_Servidor)
+    *   [5.1 Instalación y Configuración del Servidor](#Instalación_y_Configuración_del_Servidor)
         *   [5.1.1 Interfaz de red virtual](#Interfaz_de_red_virtual)
 
 ## Introducción

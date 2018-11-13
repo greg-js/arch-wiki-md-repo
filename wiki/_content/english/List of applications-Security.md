@@ -15,7 +15,7 @@
         *   [1.8.2 Graphical](#Graphical)
     *   [1.9 Cryptography](#Cryptography)
         *   [1.9.1 Hash checkers](#Hash_checkers)
-        *   [1.9.2 Encryption, signing, steganography](#Encryption.2C_signing.2C_steganography)
+        *   [1.9.2 Encryption, signing, steganography](#Encryption,_signing,_steganography)
         *   [1.9.3 Disk encryption](#Disk_encryption)
 
 ## Security

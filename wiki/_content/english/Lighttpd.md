@@ -8,7 +8,7 @@
         *   [2.1.1 Basic logging](#Basic_logging)
         *   [2.1.2 Enabling https via SSL](#Enabling_https_via_SSL)
             *   [2.1.2.1 Self-signed](#Self-signed)
-            *   [2.1.2.2 Let's Encrypt](#Let.27s_Encrypt)
+            *   [2.1.2.2 Let's Encrypt](#Let's_Encrypt)
         *   [2.1.3 Password protecting a directory](#Password_protecting_a_directory)
     *   [2.2 CGI](#CGI)
     *   [2.3 FastCGI](#FastCGI)

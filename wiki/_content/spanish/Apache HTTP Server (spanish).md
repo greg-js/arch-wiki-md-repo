@@ -7,7 +7,7 @@
 
 ## Contents
 
-*   [1 Apache, PHP, y MySQL](#Apache.2C_PHP.2C_y_MySQL)
+*   [1 Apache, PHP, y MySQL](#Apache,_PHP,_y_MySQL)
     *   [1.1 Instalar Paquetes](#Instalar_Paquetes)
     *   [1.2 Configurar Apache](#Configurar_Apache)
         *   [1.2.1 Opciones adicionales](#Opciones_adicionales)

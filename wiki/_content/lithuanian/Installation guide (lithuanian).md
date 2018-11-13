@@ -6,26 +6,26 @@ Arch Linux turėtų veikti bet kokioje [x86_64](https://en.wikipedia.org/wiki/X8
 
 ## Contents
 
-*   [1 Prieš diegimą](#Prie.C5.A1_diegim.C4.85)
-    *   [1.1 Nustatykite klaviatūros išdėstymą](#Nustatykite_klaviat.C5.ABros_i.C5.A1d.C4.97stym.C4.85)
-    *   [1.2 Patikrinkite įkrovos rėžimą](#Patikrinkite_.C4.AFkrovos_r.C4.97.C5.BEim.C4.85)
+*   [1 Prieš diegimą](#Prieš_diegimą)
+    *   [1.1 Nustatykite klaviatūros išdėstymą](#Nustatykite_klaviatūros_išdėstymą)
+    *   [1.2 Patikrinkite įkrovos rėžimą](#Patikrinkite_įkrovos_rėžimą)
     *   [1.3 Prisijunkite prie interneto](#Prisijunkite_prie_interneto)
-    *   [1.4 Atnaujinkite sistemos laikrodį](#Atnaujinkite_sistemos_laikrod.C4.AF)
+    *   [1.4 Atnaujinkite sistemos laikrodį](#Atnaujinkite_sistemos_laikrodį)
     *   [1.5 Padalinkite diskus](#Padalinkite_diskus)
     *   [1.6 Suformatuokite particijas](#Suformatuokite_particijas)
-    *   [1.7 Prijunkite failų sistemas](#Prijunkite_fail.C5.B3_sistemas)
-*   [2 Įdiegimas](#.C4.AEdiegimas)
-    *   [2.1 Pasirinkite veidrodžius](#Pasirinkite_veidrod.C5.BEius)
-    *   [2.2 Įdiekite pagrininius paketus](#.C4.AEdiekite_pagrininius_paketus)
-*   [3 Sukonfigūruokite sistemą](#Sukonfig.C5.ABruokite_sistem.C4.85)
+    *   [1.7 Prijunkite failų sistemas](#Prijunkite_failų_sistemas)
+*   [2 Įdiegimas](#Įdiegimas)
+    *   [2.1 Pasirinkite veidrodžius](#Pasirinkite_veidrodžius)
+    *   [2.2 Įdiekite pagrininius paketus](#Įdiekite_pagrininius_paketus)
+*   [3 Sukonfigūruokite sistemą](#Sukonfigūruokite_sistemą)
     *   [3.1 Fstab](#Fstab)
     *   [3.2 Chroot](#Chroot)
     *   [3.3 Laiko zona](#Laiko_zona)
     *   [3.4 Lokalizacija](#Lokalizacija)
-    *   [3.5 Tinklo konfigūracija](#Tinklo_konfig.C5.ABracija)
+    *   [3.5 Tinklo konfigūracija](#Tinklo_konfigūracija)
     *   [3.6 Initramfs](#Initramfs)
-    *   [3.7 Root slaptažodis](#Root_slapta.C5.BEodis)
-    *   [3.8 Įkroviklis](#.C4.AEkroviklis)
+    *   [3.7 Root slaptažodis](#Root_slaptažodis)
+    *   [3.8 Įkroviklis](#Įkroviklis)
 *   [4 Perkrovimas](#Perkrovimas)
 *   [5 Po diegimo](#Po_diegimo)
 
@@ -229,7 +229,7 @@ Atitinkmai nustatykite `LANG` [kintamąjį](/index.php/Variable "Variable") [loc
 
  `/etc/locale.conf`  `LANG=*en_US.UTF-8*` 
 
-Jeigu [nustatėte klaviatūros išdėstymą](#Nustatykite_klaviat.C5.ABros_i.C5.A1d.C4.97stym.C4.85), padarykite pakeitimus pastovius [vconsole.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5) faile:
+Jeigu [nustatėte klaviatūros išdėstymą](#Nustatykite_klaviatūros_išdėstymą), padarykite pakeitimus pastovius [vconsole.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5) faile:
 
  `/etc/vconsole.conf`  `KEYMAP=*de-latin1*` 
 

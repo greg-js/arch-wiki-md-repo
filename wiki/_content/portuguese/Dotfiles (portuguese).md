@@ -9,13 +9,13 @@ Este artigo coleta repositórios de usuários com arquivos de configuração per
 
 ## Contents
 
-*   [1 Controle de versão](#Controle_de_vers.C3.A3o)
+*   [1 Controle de versão](#Controle_de_versão)
     *   [1.1 Usando gitignore](#Usando_gitignore)
     *   [1.2 Outras ferramentas](#Outras_ferramentas)
-    *   [1.3 Mantendo dotfiles em várias máquinas](#Mantendo_dotfiles_em_v.C3.A1rias_m.C3.A1quinas)
-    *   [1.4 Informação confidencial](#Informa.C3.A7.C3.A3o_confidencial)
-*   [2 Repositórios](#Reposit.C3.B3rios)
-*   [3 Veja também](#Veja_tamb.C3.A9m)
+    *   [1.3 Mantendo dotfiles em várias máquinas](#Mantendo_dotfiles_em_várias_máquinas)
+    *   [1.4 Informação confidencial](#Informação_confidencial)
+*   [2 Repositórios](#Repositórios)
+*   [3 Veja também](#Veja_também)
 
 ## Controle de versão
 

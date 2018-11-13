@@ -4,12 +4,12 @@ O [Wireshark](https://www.wireshark.org/) é um analisador de pacotes livre e de
 
 ## Contents
 
-*   [1 Instalação](#Instala.C3.A7.C3.A3o)
-*   [2 Capturando como um usuário normal](#Capturando_como_um_usu.C3.A1rio_normal)
-*   [3 Algumas técnicas de captura](#Algumas_t.C3.A9cnicas_de_captura)
+*   [1 Instalação](#Instalação)
+*   [2 Capturando como um usuário normal](#Capturando_como_um_usuário_normal)
+*   [3 Algumas técnicas de captura](#Algumas_técnicas_de_captura)
     *   [3.1 Filtrando pacotes TCP](#Filtrando_pacotes_TCP)
     *   [3.2 Filtrando pacotes UDP](#Filtrando_pacotes_UDP)
-    *   [3.3 Filtrar pacotes para um endereço IP específico](#Filtrar_pacotes_para_um_endere.C3.A7o_IP_espec.C3.ADfico)
+    *   [3.3 Filtrar pacotes para um endereço IP específico](#Filtrar_pacotes_para_um_endereço_IP_específico)
 
 ## Instalação
 

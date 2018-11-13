@@ -129,7 +129,7 @@ Delete a bridge, you need to first set it to *down*:
 
 ```
 
-See also [Kernel modules#Automatic module handling](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules").
+See also [Kernel modules#Automatic module loading with systemd](/index.php/Kernel_modules#Automatic_module_loading_with_systemd "Kernel modules").
 
 ### With netctl
 

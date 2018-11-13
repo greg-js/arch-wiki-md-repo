@@ -16,7 +16,7 @@ This article describes configuration & troubleshooting steps specific to Bluetoo
     *   [2.2 Problems with the USB dongle](#Problems_with_the_USB_dongle)
     *   [2.3 Mouse always disconnect](#Mouse_always_disconnect)
     *   [2.4 Thinkpad Bluetooth Laser Mouse problems](#Thinkpad_Bluetooth_Laser_Mouse_problems)
-    *   [2.5 Problems with the Logitech BLE mouse (M590, anywhere mouse 2, etc)](#Problems_with_the_Logitech_BLE_mouse_.28M590.2C_anywhere_mouse_2.2C_etc.29)
+    *   [2.5 Problems with the Logitech BLE mouse (M590, anywhere mouse 2, etc)](#Problems_with_the_Logitech_BLE_mouse_(M590,_anywhere_mouse_2,_etc))
 
 ## Configuration
 

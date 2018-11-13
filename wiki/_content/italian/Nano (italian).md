@@ -4,7 +4,7 @@
 
 *   [1 Installazione](#Installazione)
 *   [2 Configurazione](#Configurazione)
-    *   [2.1 Creare il file ~/.nanorc](#Creare_il_file_.7E.2F.nanorc)
+    *   [2.1 Creare il file ~/.nanorc](#Creare_il_file_~/.nanorc)
     *   [2.2 Evidenziazione della sintassi](#Evidenziazione_della_sintassi)
         *   [2.2.1 PKGBUILD](#PKGBUILD)
         *   [2.2.2 Altri file](#Altri_file)
@@ -14,7 +14,7 @@
 *   [3 Utilizzo di nano](#Utilizzo_di_nano)
     *   [3.1 Funzioni Speciali](#Funzioni_Speciali)
         *   [3.1.1 Panoramica sui tasti di scelta rapida](#Panoramica_sui_tasti_di_scelta_rapida)
-        *   [3.1.2 Abilitazione/Disabilitazione delle funzioni speciali](#Abilitazione.2FDisabilitazione_delle_funzioni_speciali)
+        *   [3.1.2 Abilitazione/Disabilitazione delle funzioni speciali](#Abilitazione/Disabilitazione_delle_funzioni_speciali)
 *   [4 Suggerimenti](#Suggerimenti)
     *   [4.1 Sostituire vi con nano](#Sostituire_vi_con_nano)
         *   [4.1.1 Primo metodo](#Primo_metodo)

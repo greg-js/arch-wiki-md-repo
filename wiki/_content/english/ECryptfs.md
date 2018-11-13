@@ -6,7 +6,7 @@ In implementation eCryptfs differs from [dm-crypt](/index.php/Dm-crypt "Dm-crypt
 
 *   [1 Basics](#Basics)
     *   [1.1 Deficiencies](#Deficiencies)
-*   [2 Setup & mounting](#Setup_.26_mounting)
+*   [2 Setup & mounting](#Setup_&_mounting)
     *   [2.1 Ubuntu tools](#Ubuntu_tools)
         *   [2.1.1 Encrypting a data directory](#Encrypting_a_data_directory)
         *   [2.1.2 Encrypting a home directory](#Encrypting_a_home_directory)

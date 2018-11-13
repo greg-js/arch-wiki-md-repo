@@ -11,13 +11,13 @@ Véase también [Wikipedia:GNUnet](https://en.wikipedia.org/wiki/es:GNUnet "wiki
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Configuración](#Configuraci.C3.B3n)
-*   [3 Utilización](#Utilizaci.C3.B3n)
+*   [1 Instalación](#Instalación)
+*   [2 Configuración](#Configuración)
+*   [3 Utilización](#Utilización)
     *   [3.1 Descargar](#Descargar)
     *   [3.2 Subir](#Subir)
-        *   [3.2.1 Para indexar un archivo/directorio](#Para_indexar_un_archivo.2Fdirectorio)
-        *   [3.2.2 Para desindexar un archivo/directorio](#Para_desindexar_un_archivo.2Fdirectorio)
+        *   [3.2.1 Para indexar un archivo/directorio](#Para_indexar_un_archivo/directorio)
+        *   [3.2.2 Para desindexar un archivo/directorio](#Para_desindexar_un_archivo/directorio)
         *   [3.2.3 Modificar y eliminar archivos indexados](#Modificar_y_eliminar_archivos_indexados)
 *   [4 Interfaz de usuario Web](#Interfaz_de_usuario_Web)
 

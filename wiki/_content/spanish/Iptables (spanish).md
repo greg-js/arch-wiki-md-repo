@@ -7,40 +7,40 @@ Artículos relacionados
 *   [Nftables (Español)](/index.php/Nftables_(Espa%C3%B1ol) "Nftables (Español)")
 *   [Sshguard (Español)](/index.php/Sshguard_(Espa%C3%B1ol) "Sshguard (Español)")
 *   [Simple stateful firewall (Español)](/index.php/Simple_stateful_firewall_(Espa%C3%B1ol) "Simple stateful firewall (Español)")
-*   [Sysctl#TCP/IP stack hardening](/index.php/Sysctl#TCP.2FIP_stack_hardening "Sysctl")
+*   [Sysctl#TCP/IP stack hardening](/index.php/Sysctl#TCP/IP_stack_hardening "Sysctl")
 
-*iptables* es una utilidad de línea de órdenes para configurar el [cortafuegos](/index.php/Firewalls_(Espa%C3%B1ol) "Firewalls (Español)") del kernel de Linux implementado como parte del proyecto [Netfilter](https://en.wikipedia.org/wiki/es:Netfilter "wikipedia:es:Netfilter"). El término *iptables* también se usa comúnmente para referirse a dicho cortafuegos del kernel. Puede configurarse directamente con iptables, o usando uno de los muchos frontend existentes de [consola](#De_consola) y [gráficos](#Gr.C3.A1ficos). El término *iptables* se usa para [IPv4](https://en.wikipedia.org/wiki/IPv4 "wikipedia:IPv4"), y el término *ip6tables* para [IPv6](/index.php/IPv6 "IPv6"). Tanto *iptables* como *ip6tables* tienen la misma sintaxis, pero algunas opciones son específicas de IPv4 o de IPv6.
+*iptables* es una utilidad de línea de órdenes para configurar el [cortafuegos](/index.php/Firewalls_(Espa%C3%B1ol) "Firewalls (Español)") del kernel de Linux implementado como parte del proyecto [Netfilter](https://en.wikipedia.org/wiki/es:Netfilter "wikipedia:es:Netfilter"). El término *iptables* también se usa comúnmente para referirse a dicho cortafuegos del kernel. Puede configurarse directamente con iptables, o usando uno de los muchos frontend existentes de [consola](#De_consola) y [gráficos](#Gráficos). El término *iptables* se usa para [IPv4](https://en.wikipedia.org/wiki/IPv4 "wikipedia:IPv4"), y el término *ip6tables* para [IPv6](/index.php/IPv6 "IPv6"). Tanto *iptables* como *ip6tables* tienen la misma sintaxis, pero algunas opciones son específicas de IPv4 o de IPv6.
 
 [nftables](/index.php/Nftables "Nftables") está programada para [ser liberada con el kernel de Linux 3.13](http://www.phoronix.com/scan.php?page=news_item&px=MTQ5MDU), y vendrá a sustituir definitivamente iptables como la principal utilidad del cortafuegos de Linux.
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
     *   [1.1 Frontend](#Frontend)
         *   [1.1.1 De consola](#De_consola)
-        *   [1.1.2 Gráficos](#Gr.C3.A1ficos)
-*   [2 Conceptos básicos](#Conceptos_b.C3.A1sicos)
+        *   [1.1.2 Gráficos](#Gráficos)
+*   [2 Conceptos básicos](#Conceptos_básicos)
     *   [2.1 Tablas](#Tablas)
     *   [2.2 Cadenas](#Cadenas)
     *   [2.3 Reglas](#Reglas)
     *   [2.4 Cadenas transversales](#Cadenas_transversales)
-    *   [2.5 Módulos](#M.C3.B3dulos)
-*   [3 Configuración y utilización](#Configuraci.C3.B3n_y_utilizaci.C3.B3n)
-    *   [3.1 Desde la línea de órdenes](#Desde_la_l.C3.ADnea_de_.C3.B3rdenes)
+    *   [2.5 Módulos](#Módulos)
+*   [3 Configuración y utilización](#Configuración_y_utilización)
+    *   [3.1 Desde la línea de órdenes](#Desde_la_línea_de_órdenes)
         *   [3.1.1 Mostrar las reglas vigentes](#Mostrar_las_reglas_vigentes)
         *   [3.1.2 Restablecer las reglas](#Restablecer_las_reglas)
         *   [3.1.3 Modificar las reglas](#Modificar_las_reglas)
-    *   [3.2 Guías](#Gu.C3.ADas)
+    *   [3.2 Guías](#Guías)
 *   [4 Registro](#Registro)
-    *   [4.1 Limitar el tamaño del registro](#Limitar_el_tama.C3.B1o_del_registro)
+    *   [4.1 Limitar el tamaño del registro](#Limitar_el_tamaño_del_registro)
     *   [4.2 Visualizar los paquetes registrados](#Visualizar_los_paquetes_registrados)
     *   [4.3 syslog-ng](#syslog-ng)
     *   [4.4 ulogd](#ulogd)
-*   [5 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [5 Véase también](#Véase_también)
 
 ## Instalación
 
-Todos los kernels de serie de Arch Linux son compatibles con iptables. Solo necesita [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") las herramientas en el [espacio de usuario](https://en.wikipedia.org/wiki/es:Espacio_de_usuario "wikipedia:es:Espacio de usuario"), que son proporcionadas por el paquete [iptables](https://www.archlinux.org/packages/?name=iptables). El paquete [iproute2](https://www.archlinux.org/packages/?name=iproute2) presente en el grupo [base](https://www.archlinux.org/groups/x86_64/base/) depende de iptables, por lo que el paquete iptables debe estar instalado en su sistema por defecto.
+Todos los kernels de serie de Arch Linux son compatibles con iptables. Solo necesita [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") las herramientas en el [espacio de usuario](https://en.wikipedia.org/wiki/es:Espacio_de_usuario "wikipedia:es:Espacio de usuario"), que son proporcionadas por el paquete [iptables](https://www.archlinux.org/packages/?name=iptables). El paquete [iproute2](https://www.archlinux.org/packages/?name=iproute2) presente en el grupo [base](https://www.archlinux.org/groups/x86_64/base/) depende de iptables, por lo que el paquete iptables debe estar instalado en su sistema por defecto.
 
 ### Frontend
 
@@ -398,7 +398,7 @@ Y añada las siguientes reglas a la cadena recién creada:
 
 ```
 
-La explicación de las opciones `limit` y `limit-burst` son dadas [a continuación](#Limitar_el_tama.C3.B1o_del_registro).
+La explicación de las opciones `limit` y `limit-burst` son dadas [a continuación](#Limitar_el_tamaño_del_registro).
 
 Ahora, cada vez que queremos soltar un paquete de red y registrar este evento, simplemente saltamos a la cadena `logdrop`, por ejemplo:
 

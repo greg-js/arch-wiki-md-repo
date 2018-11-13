@@ -12,8 +12,8 @@ Related articles
 ## Contents
 
 *   [1 Brugeren og AUR](#Brugeren_og_AUR)
-    *   [1.1 Dele 'PKGBUILDs' i 'UNSUPPORTED'](#Dele_.27PKGBUILDs.27_i_.27UNSUPPORTED.27)
-    *   [1.2 [community]](#.5Bcommunity.5D)
+    *   [1.1 Dele 'PKGBUILDs' i 'UNSUPPORTED'](#Dele_'PKGBUILDs'_i_'UNSUPPORTED')
+    *   [1.2 [community]](#[community])
     *   [1.3 Afstemning](#Afstemning)
 *   [2 Hvordan bruges AUR](#Hvordan_bruges_AUR)
     *   [2.1 Brug af pakker fra UNSUPPORTED](#Brug_af_pakker_fra_UNSUPPORTED)

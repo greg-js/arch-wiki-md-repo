@@ -1,12 +1,12 @@
 ## Contents
 
-*   [1 Czym jest ABS?](#Czym_jest_ABS.3F)
-*   [2 Dlaczego warto korzystać z ABS?](#Dlaczego_warto_korzysta.C4.87_z_ABS.3F)
+*   [1 Czym jest ABS?](#Czym_jest_ABS?)
+*   [2 Dlaczego warto korzystać z ABS?](#Dlaczego_warto_korzystać_z_ABS?)
 *   [3 Instalacja ABS](#Instalacja_ABS)
 *   [4 Konfiguracja](#Konfiguracja)
-    *   [4.1 /etc/abs.conf](#.2Fetc.2Fabs.conf)
-    *   [4.2 /etc/makepkg.conf](#.2Fetc.2Fmakepkg.conf)
-*   [5 Tradycyjna metoda instalacji pakietów bez używania ABS](#Tradycyjna_metoda_instalacji_pakiet.C3.B3w_bez_u.C5.BCywania_ABS)
+    *   [4.1 /etc/abs.conf](#/etc/abs.conf)
+    *   [4.2 /etc/makepkg.conf](#/etc/makepkg.conf)
+*   [5 Tradycyjna metoda instalacji pakietów bez używania ABS](#Tradycyjna_metoda_instalacji_pakietów_bez_używania_ABS)
 
 ## Czym jest ABS?
 

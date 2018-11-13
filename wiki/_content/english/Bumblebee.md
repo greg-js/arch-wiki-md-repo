@@ -30,31 +30,31 @@ From Bumblebee's [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ):
     *   [4.4 Multiple NVIDIA Graphics Cards](#Multiple_NVIDIA_Graphics_Cards)
 *   [5 CUDA without Bumblebee](#CUDA_without_Bumblebee)
 *   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 [VGL] ERROR: Could not open display :8](#.5BVGL.5D_ERROR:_Could_not_open_display_:8)
-    *   [6.2 Xlib: extension "GLX" missing on display ":0.0"](#Xlib:_extension_.22GLX.22_missing_on_display_.22:0.0.22)
-    *   [6.3 [ERROR]Cannot access secondary GPU: No devices detected](#.5BERROR.5DCannot_access_secondary_GPU:_No_devices_detected)
-        *   [6.3.1 NVIDIA(0): Failed to assign any connected display devices to X screen 0](#NVIDIA.280.29:_Failed_to_assign_any_connected_display_devices_to_X_screen_0)
-        *   [6.3.2 Failed to initialize the NVIDIA GPU at PCI:1:0:0 (GPU fallen off the bus / RmInitAdapter failed!)](#Failed_to_initialize_the_NVIDIA_GPU_at_PCI:1:0:0_.28GPU_fallen_off_the_bus_.2F_RmInitAdapter_failed.21.29)
-        *   [6.3.3 Failed to initialize the NVIDIA GPU at PCI:1:0:0 (Bumblebee daemon reported: error: [XORG] (EE) NVIDIA(GPU-0))](#Failed_to_initialize_the_NVIDIA_GPU_at_PCI:1:0:0_.28Bumblebee_daemon_reported:_error:_.5BXORG.5D_.28EE.29_NVIDIA.28GPU-0.29.29)
+    *   [6.1 [VGL] ERROR: Could not open display :8](#[VGL]_ERROR:_Could_not_open_display_:8)
+    *   [6.2 Xlib: extension "GLX" missing on display ":0.0"](#Xlib:_extension_"GLX"_missing_on_display_":0.0")
+    *   [6.3 [ERROR]Cannot access secondary GPU: No devices detected](#[ERROR]Cannot_access_secondary_GPU:_No_devices_detected)
+        *   [6.3.1 NVIDIA(0): Failed to assign any connected display devices to X screen 0](#NVIDIA(0):_Failed_to_assign_any_connected_display_devices_to_X_screen_0)
+        *   [6.3.2 Failed to initialize the NVIDIA GPU at PCI:1:0:0 (GPU fallen off the bus / RmInitAdapter failed!)](#Failed_to_initialize_the_NVIDIA_GPU_at_PCI:1:0:0_(GPU_fallen_off_the_bus_/_RmInitAdapter_failed!))
+        *   [6.3.3 Failed to initialize the NVIDIA GPU at PCI:1:0:0 (Bumblebee daemon reported: error: [XORG] (EE) NVIDIA(GPU-0))](#Failed_to_initialize_the_NVIDIA_GPU_at_PCI:1:0:0_(Bumblebee_daemon_reported:_error:_[XORG]_(EE)_NVIDIA(GPU-0)))
         *   [6.3.4 Could not load GPU driver](#Could_not_load_GPU_driver)
-        *   [6.3.5 NOUVEAU(0): [drm] failed to set drm interface version](#NOUVEAU.280.29:_.5Bdrm.5D_failed_to_set_drm_interface_version)
-    *   [6.4 [ERROR]Cannot access secondary GPU - error: X did not start properly](#.5BERROR.5DCannot_access_secondary_GPU_-_error:_X_did_not_start_properly)
-    *   [6.5 /dev/dri/card0: failed to set DRM interface version 1.4: Permission denied](#.2Fdev.2Fdri.2Fcard0:_failed_to_set_DRM_interface_version_1.4:_Permission_denied)
-    *   [6.6 ERROR: ld.so: object 'libdlfaker.so' from LD_PRELOAD cannot be preloaded: ignored](#ERROR:_ld.so:_object_.27libdlfaker.so.27_from_LD_PRELOAD_cannot_be_preloaded:_ignored)
-    *   [6.7 Fatal IO error 11 (Resource temporarily unavailable) on X server](#Fatal_IO_error_11_.28Resource_temporarily_unavailable.29_on_X_server)
+        *   [6.3.5 NOUVEAU(0): [drm] failed to set drm interface version](#NOUVEAU(0):_[drm]_failed_to_set_drm_interface_version)
+    *   [6.4 [ERROR]Cannot access secondary GPU - error: X did not start properly](#[ERROR]Cannot_access_secondary_GPU_-_error:_X_did_not_start_properly)
+    *   [6.5 /dev/dri/card0: failed to set DRM interface version 1.4: Permission denied](#/dev/dri/card0:_failed_to_set_DRM_interface_version_1.4:_Permission_denied)
+    *   [6.6 ERROR: ld.so: object 'libdlfaker.so' from LD_PRELOAD cannot be preloaded: ignored](#ERROR:_ld.so:_object_'libdlfaker.so'_from_LD_PRELOAD_cannot_be_preloaded:_ignored)
+    *   [6.7 Fatal IO error 11 (Resource temporarily unavailable) on X server](#Fatal_IO_error_11_(Resource_temporarily_unavailable)_on_X_server)
     *   [6.8 Video tearing](#Video_tearing)
     *   [6.9 Bumblebee cannot connect to socket](#Bumblebee_cannot_connect_to_socket)
-    *   [6.10 Running X.org from console after login (rootless X.org)](#Running_X.org_from_console_after_login_.28rootless_X.org.29)
+    *   [6.10 Running X.org from console after login (rootless X.org)](#Running_X.org_from_console_after_login_(rootless_X.org))
     *   [6.11 Using Primus causes a segmentation fault](#Using_Primus_causes_a_segmentation_fault)
-    *   [6.12 Primusrun mouse delay (disable VSYNC)](#Primusrun_mouse_delay_.28disable_VSYNC.29)
+    *   [6.12 Primusrun mouse delay (disable VSYNC)](#Primusrun_mouse_delay_(disable_VSYNC))
     *   [6.13 Primus issues under compositing window managers](#Primus_issues_under_compositing_window_managers)
     *   [6.14 Problems with bumblebee after resuming from standby](#Problems_with_bumblebee_after_resuming_from_standby)
-    *   [6.15 Optirun does not work, no debug output](#Optirun_does_not_work.2C_no_debug_output)
+    *   [6.15 Optirun does not work, no debug output](#Optirun_does_not_work,_no_debug_output)
     *   [6.16 Broken power management with kernel 4.8](#Broken_power_management_with_kernel_4.8)
-    *   [6.17 Lockup issue (lspci hangs)](#Lockup_issue_.28lspci_hangs.29)
+    *   [6.17 Lockup issue (lspci hangs)](#Lockup_issue_(lspci_hangs))
     *   [6.18 Discrete card always on and acpi warnings](#Discrete_card_always_on_and_acpi_warnings)
     *   [6.19 Screen 0 deleted because of no matching config section](#Screen_0_deleted_because_of_no_matching_config_section)
-    *   [6.20 Erratic, unpredictable behaviour](#Erratic.2C_unpredictable_behaviour)
+    *   [6.20 Erratic, unpredictable behaviour](#Erratic,_unpredictable_behaviour)
     *   [6.21 Discrete card always on and nvidia driver cannot be unloaded](#Discrete_card_always_on_and_nvidia_driver_cannot_be_unloaded)
 *   [7 See also](#See_also)
 
@@ -245,7 +245,7 @@ $ optirun -b primus glxgears
 
 Or, set `Bridge=primus` in `/etc/bumblebee/bumblebee.conf` and you will not have to specify it on the command line.
 
-**Tip:** Refer to [#Primusrun mouse delay (disable VSYNC)](#Primusrun_mouse_delay_.28disable_VSYNC.29) if you want to disable `VSYNC`. It can also remove mouse input delay lag and slightly increase the performance.
+**Tip:** Refer to [#Primusrun mouse delay (disable VSYNC)](#Primusrun_mouse_delay_(disable_VSYNC)) if you want to disable `VSYNC`. It can also remove mouse input delay lag and slightly increase the performance.
 
 ### Power management
 
@@ -305,7 +305,7 @@ If the above fix fails, try the following command:
 
 ```
 
-To rescan the PCI bus automatically after a suspend, create a script as described in [Power management#Hooks in /usr/lib/systemd/system-sleep](/index.php/Power_management#Hooks_in_.2Fusr.2Flib.2Fsystemd.2Fsystem-sleep "Power management").
+To rescan the PCI bus automatically after a suspend, create a script as described in [Power management#Hooks in /usr/lib/systemd/system-sleep](/index.php/Power_management#Hooks_in_/usr/lib/systemd/system-sleep "Power management").
 
 ### Multiple monitors
 
@@ -666,7 +666,7 @@ $ optirun nvidia-settings -c :8
 
 `X Server XVideo Settings -> Sync to VBlank` and `OpenGL Settings -> Sync to VBlank` should both be enabled. The Intel card has in general less tearing, so use it for video playback. Especially use VA-API for video decoding (e.g. `mplayer-vaapi` and with `-vsync` parameter).
 
-Refer to [Intel#Tear-free video](/index.php/Intel#Tear-free_video "Intel") on how to fix tearing on the Intel card.
+Refer to [Intel#Tearing](/index.php/Intel#Tearing "Intel") on how to fix tearing on the Intel card.
 
 If it is still not fixed, try to disable compositing from your desktop environment. Try also disabling triple buffering.
 
@@ -728,7 +728,7 @@ Performance comparison:
 
 *Tested with [ASUS N550JV](/index.php/ASUS_N550JV "ASUS N550JV") notebook and benchmark app [unigine-heaven](https://aur.archlinux.org/packages/unigine-heaven/).*
 
-**Note:** To disable vertical synchronization system-wide, see [Intel graphics#Disable Vertical Synchronization (VSYNC)](/index.php/Intel_graphics#Disable_Vertical_Synchronization_.28VSYNC.29 "Intel graphics").
+**Note:** To disable vertical synchronization system-wide, see [Intel graphics#Disable Vertical Synchronization (VSYNC)](/index.php/Intel_graphics#Disable_Vertical_Synchronization_(VSYNC) "Intel graphics").
 
 ### Primus issues under compositing window managers
 
@@ -796,7 +796,7 @@ Alternatively, if you are only interested in power saving (and perhaps use of ex
 
 ### Lockup issue (lspci hangs)
 
-See [NVIDIA Optimus#Lockup issue (lspci hangs)](/index.php/NVIDIA_Optimus#Lockup_issue_.28lspci_hangs.29 "NVIDIA Optimus")] for an issue that affects new laptops with a GTX 965M (or alike).
+See [NVIDIA Optimus#Lockup issue (lspci hangs)](/index.php/NVIDIA_Optimus#Lockup_issue_(lspci_hangs) "NVIDIA Optimus")] for an issue that affects new laptops with a GTX 965M (or alike).
 
 ### Discrete card always on and acpi warnings
 

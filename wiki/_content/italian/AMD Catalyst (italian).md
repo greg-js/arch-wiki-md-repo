@@ -26,20 +26,20 @@ Comparando i Catalyst con i driver open source, si nota che i driver open source
         *   [1.2.4 Controlli](#Controlli)
     *   [1.3 Kernel personalizzati](#Kernel_personalizzati)
     *   [1.4 Supporto a PowerXpress](#Supporto_a_PowerXpress)
-        *   [1.4.1 Running two X servers (one using the Intel driver, another one using fglrx) simultaneously (inglese)](#Running_two_X_servers_.28one_using_the_Intel_driver.2C_another_one_using_fglrx.29_simultaneously_.28inglese.29)
-        *   [1.4.2 Issues with PowerXpress laptops running in AMD mode (pxp_switch_catalyst amd) with external / secondary monitor (inglese)](#Issues_with_PowerXpress_laptops_running_in_AMD_mode_.28pxp_switch_catalyst_amd.29_with_external_.2F_secondary_monitor_.28inglese.29)
+        *   [1.4.1 Running two X servers (one using the Intel driver, another one using fglrx) simultaneously (inglese)](#Running_two_X_servers_(one_using_the_Intel_driver,_another_one_using_fglrx)_simultaneously_(inglese))
+        *   [1.4.2 Issues with PowerXpress laptops running in AMD mode (pxp_switch_catalyst amd) with external / secondary monitor (inglese)](#Issues_with_PowerXpress_laptops_running_in_AMD_mode_(pxp_switch_catalyst_amd)_with_external_/_secondary_monitor_(inglese))
 *   [2 Repository xorg-server](#Repository_xorg-server)
-    *   [2.1 [xorg114]](#.5Bxorg114.5D)
-    *   [2.2 [xorg113]](#.5Bxorg113.5D)
-    *   [2.3 [xorg112]](#.5Bxorg112.5D)
+    *   [2.1 [xorg114]](#[xorg114])
+    *   [2.2 [xorg113]](#[xorg113])
+    *   [2.3 [xorg112]](#[xorg112])
 *   [3 Strumenti](#Strumenti)
     *   [3.1 Catalyst-hook](#Catalyst-hook)
     *   [3.2 Catalyst-generator](#Catalyst-generator)
 *   [4 Caratteristiche](#Caratteristiche)
     *   [4.1 Desktop senza Tearing](#Desktop_senza_Tearing)
     *   [4.2 Accelerazione video](#Accelerazione_video)
-    *   [4.3 Strumenti per la frequenza GPU/Mem, Temperatura, Velocità ventole, Overclock utilities](#Strumenti_per_la_frequenza_GPU.2FMem.2C_Temperatura.2C_Velocit.C3.A0_ventole.2C_Overclock_utilities)
-    *   [4.4 Double Screen (Dual Head / Dual Screen / Xinerama)](#Double_Screen_.28Dual_Head_.2F_Dual_Screen_.2F_Xinerama.29)
+    *   [4.3 Strumenti per la frequenza GPU/Mem, Temperatura, Velocità ventole, Overclock utilities](#Strumenti_per_la_frequenza_GPU/Mem,_Temperatura,_Velocità_ventole,_Overclock_utilities)
+    *   [4.4 Double Screen (Dual Head / Dual Screen / Xinerama)](#Double_Screen_(Dual_Head_/_Dual_Screen_/_Xinerama))
         *   [4.4.1 Introduzione](#Introduzione)
         *   [4.4.2 ATI Catalyst Control Center](#ATI_Catalyst_Control_Center)
         *   [4.4.3 Installazione](#Installazione_2)
@@ -52,16 +52,16 @@ Comparando i Catalyst con i driver open source, si nota che i driver open source
         *   [5.4.1 Chiamate hardware ACPI difettose](#Chiamate_hardware_ACPI_difettose)
     *   [5.5 KDM scompare dopo il logout](#KDM_scompare_dopo_il_logout)
     *   [5.6 Il Direct Rendering non funziona](#Il_Direct_Rendering_non_funziona)
-    *   [5.7 Problemi con l'ibernazione/sospensione](#Problemi_con_l.27ibernazione.2Fsospensione)
+    *   [5.7 Problemi con l'ibernazione/sospensione](#Problemi_con_l'ibernazione/sospensione)
         *   [5.7.1 La parte video fallisce nel tentativo di di riprendersi dal suspend2ram](#La_parte_video_fallisce_nel_tentativo_di_di_riprendersi_dal_suspend2ram)
-    *   [5.8 Blocco del sistema/Hard lock](#Blocco_del_sistema.2FHard_lock)
+    *   [5.8 Blocco del sistema/Hard lock](#Blocco_del_sistema/Hard_lock)
     *   [5.9 Conflitti hardware](#Conflitti_hardware)
-    *   [5.10 Blocchi temporanei durante l'esecuzione di video](#Blocchi_temporanei_durante_l.27esecuzione_di_video)
-    *   [5.11 "aticonfig: No supported adaptaters detected"](#.22aticonfig:_No_supported_adaptaters_detected.22)
+    *   [5.10 Blocchi temporanei durante l'esecuzione di video](#Blocchi_temporanei_durante_l'esecuzione_di_video)
+    *   [5.11 "aticonfig: No supported adaptaters detected"](#"aticonfig:_No_supported_adaptaters_detected")
     *   [5.12 Supporto a WebGL in Chromium](#Supporto_a_WebGL_in_Chromium)
     *   [5.13 Freeze guardando video flash con flashplugin](#Freeze_guardando_video_flash_con_flashplugin)
     *   [5.14 Artefatti e movimenti lenti delle finestre con GNOME 3](#Artefatti_e_movimenti_lenti_delle_finestre_con_GNOME_3)
-    *   [5.15 Impossibile usare la modalità fullscreen con risoluzione 1920x1080](#Impossibile_usare_la_modalit.C3.A0_fullscreen_con_risoluzione_1920x1080)
+    *   [5.15 Impossibile usare la modalità fullscreen con risoluzione 1920x1080](#Impossibile_usare_la_modalità_fullscreen_con_risoluzione_1920x1080)
 *   [6 Altre risorse](#Altre_risorse)
 
 ## Installazione
@@ -169,7 +169,7 @@ Se si hanno due monitor invece si può eseguire il comando qui sotto. Si noti pe
 
 ```
 
-**Nota:** Vedere [#Double Screen (Dual Head / Dual Screen / Xinerama)](#Double_Screen_.28Dual_Head_.2F_Dual_Screen_.2F_Xinerama.29) per maggiori informazioni sulla configurazione per i due monitor.
+**Nota:** Vedere [#Double Screen (Dual Head / Dual Screen / Xinerama)](#Double_Screen_(Dual_Head_/_Dual_Screen_/_Xinerama)) per maggiori informazioni sulla configurazione per i due monitor.
 
 Ora è possibile comparare il file `xorg.conf` con un [file d'esempio](/index.php/Xorg_(Italiano)#Xorg.conf_di_esempio "Xorg (Italiano)").
 

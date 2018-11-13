@@ -7,11 +7,11 @@ Hardware-based full-disk encryption (FDE) is now available from many hard disk (
     *   [1.2 Advantages](#Advantages)
     *   [1.3 Disadvantages](#Disadvantages)
 *   [2 Linux support](#Linux_support)
-*   [3 Encrypting the root (boot) drive](#Encrypting_the_root_.28boot.29_drive)
+*   [3 Encrypting the root (boot) drive](#Encrypting_the_root_(boot)_drive)
     *   [3.1 Check if your disk supports OPAL](#Check_if_your_disk_supports_OPAL)
-    *   [3.2 Download (or create) the pre-boot authorization (PBA) image](#Download_.28or_create.29_the_pre-boot_authorization_.28PBA.29_image)
-    *   [3.3 Test the PBA on your machine (optional)](#Test_the_PBA_on_your_machine_.28optional.29)
-    *   [3.4 Prepare and test the rescue image (optional)](#Prepare_and_test_the_rescue_image_.28optional.29)
+    *   [3.2 Download (or create) the pre-boot authorization (PBA) image](#Download_(or_create)_the_pre-boot_authorization_(PBA)_image)
+    *   [3.3 Test the PBA on your machine (optional)](#Test_the_PBA_on_your_machine_(optional))
+    *   [3.4 Prepare and test the rescue image (optional)](#Prepare_and_test_the_rescue_image_(optional))
     *   [3.5 Set up the drive](#Set_up_the_drive)
     *   [3.6 Enable locking](#Enable_locking)
     *   [3.7 Accessing the drive from a live distro](#Accessing_the_drive_from_a_live_distro)
@@ -56,8 +56,8 @@ In fact, in drives featuring FDE, data is *always* encrypted with the DEK when s
 *   Easier to setup (compared to software-based encryption)
 *   Notably transparent to the user, except for initial bootup authentication
 *   Data-at-Rest protection
-*   Increased performance (cpu is freed up from encryption/decryption calculations)
-*   Increased security due to reduced attack vectors (the main cpu & memory are eliminated as possible attack targets)
+*   Increased performance (CPU is freed up from encryption/decryption calculations)
+*   The main CPU and RAM are eliminated as possible attack targets
 *   Optimally fast and [#Secure disk erasure](#Secure_disk_erasure) (sanitation) (regardless of disk size)
 *   Protection from alternative boot methods due to the possibility to encrypt the MBR, rendering the drive inaccessible before pre-boot authentication
 
@@ -65,7 +65,7 @@ In fact, in drives featuring FDE, data is *always* encrypted with the DEK when s
 
 *   Constant-power exploits
 
-	Typical self-encrypting drives, once unlocked, will remain unlocked as long as power is provided. This vulnerability can be exploited by means of altering the environment external to the drive, without cutting power, in effect keeping the drive in an unlocked state. For example, it has been shown (by researchers at Universiy of Erlangen-Nuremberg) that it is possible to reboot the computer into an attacker-controlled operating system without cutting power to the drive. The researchers have also demonstrated moving the drive to another computer without cutting power.[[1]](https://www1.cs.fau.de/sed)
+	Typical self-encrypting drives, once unlocked, will remain unlocked as long as power is provided. This vulnerability can be exploited by means of altering the environment external to the drive, without cutting power, in effect keeping the drive in an unlocked state. For example, it has been shown (by researchers at University of Erlangen-Nuremberg) that it is possible to reboot the computer into an attacker-controlled operating system without cutting power to the drive. The researchers have also demonstrated moving the drive to another computer without cutting power.[[1]](https://www1.cs.fau.de/sed)
 
 *   Key-in-memory exploits
 
@@ -73,7 +73,7 @@ In fact, in drives featuring FDE, data is *always* encrypted with the DEK when s
 
 *   Compromised firmware
 
-	The firmware of the drive may be compromised (backdoor) and data sent to it thus potentially compromised (decryptable by the malicious third party in question, provided access to physical drive is achievable). However, if data is encrypted by the operating system (e.g. dm-crypt), the encryption key is unknown to the compromised drive, thus circumventing this attack vector entirely.
+	The firmware of the drive may be compromised (backdoor) and data sent to it thus potentially compromised (decryptable by the malicious third party in question, provided access to physical drive is achievable). A study demonstrated methods for compromising device firmware, as well as applying invalid passwords to access data on OPAL devices.[[3]](https://www.ru.nl/publish/pages/909275/draft-paper_1.pdf) If data is encrypted by the operating system (e.g. dm-crypt), the encryption key is unknown to the compromised drive, thus circumventing this attack vector entirely.
 
 ## Linux support
 
@@ -243,7 +243,7 @@ Read the [#Key management technical implementation](#Key_management_technical_im
 
 ## BIOS based ATA-password
 
-Previous to the industry's TCG OPAL 2.0 standard initiative, the relevant [ATA](https://en.wikipedia.org/wiki/Parallel_ATA#ATA_standards_versions.2C_transfer_rates.2C_and_features "w:Parallel ATA") standard defined an "ATA Security feature Set" for SED FDE. This relies on the PC (not SSD/HDD) BIOS to feature an unlocking mechanism utilizing the BIOS to setup the user's encryption password/passphrase. This legacy BIOS-based (ATA) method was considered more unreliable to setup and prone to error with regard to interoperability between PC vendors.[[4]](http://www.t13.org/documents/UploadedDocuments/docs2006/e05179r4-ACS-SecurityClarifications.pdf) Typical errors include, for example, inabilities to unlock a device once it is plugged into a system from a different hardware vendor. Hence, the availability of BIOS support for the legacy password mechanism decreases in availability, particularly for consumer hardware.
+Previous to the industry's TCG OPAL 2.0 standard initiative, the relevant [ATA](https://en.wikipedia.org/wiki/Parallel_ATA#ATA_standards_versions.2C_transfer_rates.2C_and_features "w:Parallel ATA") standard defined an "ATA Security feature Set" for SED FDE. This relies on the PC (not SSD/HDD) BIOS to feature an unlocking mechanism utilizing the BIOS to setup the user's encryption password/passphrase. This legacy BIOS-based (ATA) method was considered more unreliable to setup and prone to error with regard to interoperability between PC vendors.[[5]](http://www.t13.org/documents/UploadedDocuments/docs2006/e05179r4-ACS-SecurityClarifications.pdf) Typical errors include, for example, inabilities to unlock a device once it is plugged into a system from a different hardware vendor. Hence, the availability of BIOS support for the legacy password mechanism decreases in availability, particularly for consumer hardware.
 
 See [Solid state drive#Security](/index.php/Solid_state_drive#Security "Solid state drive") for more information.
 

@@ -14,7 +14,7 @@ No Arch Linux, os nós de dispositivo são gerenciados pelo [udev](/index.php/Ud
     *   [1.1 lsblk](#lsblk)
     *   [1.2 wipefs](#wipefs)
 *   [2 Pseudodispositivos](#Pseudodispositivos)
-*   [3 Veja também](#Veja_tamb.C3.A9m)
+*   [3 Veja também](#Veja_também)
 
 ## Dispositivos de bloco
 

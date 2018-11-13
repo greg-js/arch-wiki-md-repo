@@ -19,8 +19,8 @@ The [Media Transfer Protocol](https://en.wikipedia.org/wiki/Media_Transfer_Proto
 *   [5 File manager integration](#File_manager_integration)
     *   [5.1 gvfs-mtp](#gvfs-mtp)
 *   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 jmtpfs: Input/output error upon first access](#jmtpfs:_Input.2Foutput_error_upon_first_access)
-    *   [6.2 kio-mtp: cannot use "Open with File Manager" action](#kio-mtp:_cannot_use_.22Open_with_File_Manager.22_action)
+    *   [6.1 jmtpfs: Input/output error upon first access](#jmtpfs:_Input/output_error_upon_first_access)
+    *   [6.2 kio-mtp: cannot use "Open with File Manager" action](#kio-mtp:_cannot_use_"Open_with_File_Manager"_action)
 
 ## Connecting
 

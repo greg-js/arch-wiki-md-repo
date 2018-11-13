@@ -13,7 +13,7 @@ In this guide, PXE is used to boot the installation media with an appropriate op
 *   [1 Preparation](#Preparation)
 *   [2 Server setup](#Server_setup)
     *   [2.1 Network](#Network)
-    *   [2.2 DHCP + TFTP](#DHCP_.2B_TFTP)
+    *   [2.2 DHCP + TFTP](#DHCP_+_TFTP)
     *   [2.3 HTTP](#HTTP)
 *   [3 Installation](#Installation)
     *   [3.1 Boot](#Boot)

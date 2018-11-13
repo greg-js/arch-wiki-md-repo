@@ -15,9 +15,9 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 ## Contents
 
 *   [1 Hardware](#Hardware)
-*   [2 Suspend / Hibernation](#Suspend_.2F_Hibernation)
+*   [2 Suspend / Hibernation](#Suspend_/_Hibernation)
 *   [3 TrackPoint and Touchpad](#TrackPoint_and_Touchpad)
-*   [4 Power management/Throttling issues](#Power_management.2FThrottling_issues)
+*   [4 Power management/Throttling issues](#Power_management/Throttling_issues)
 *   [5 UEFI](#UEFI)
 *   [6 Screen backlight](#Screen_backlight)
 *   [7 Special buttons](#Special_buttons)

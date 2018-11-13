@@ -2,11 +2,11 @@ This document is an intro to how the Linux kernel and modules see and understand
 
 ## Contents
 
-*   [1 What is a 'modalias'](#What_is_a_.27modalias.27)
-*   [2 What is a 'modalias' file?](#What_is_a_.27modalias.27_file.3F)
-*   [3 How is this information used?](#How_is_this_information_used.3F)
-*   [4 Where does this modules.alias file come from?](#Where_does_this_modules.alias_file_come_from.3F)
-*   [5 How does udev work?](#How_does_udev_work.3F)
+*   [1 What is a 'modalias'](#What_is_a_'modalias')
+*   [2 What is a 'modalias' file?](#What_is_a_'modalias'_file?)
+*   [3 How is this information used?](#How_is_this_information_used?)
+*   [4 Where does this modules.alias file come from?](#Where_does_this_modules.alias_file_come_from?)
+*   [5 How does udev work?](#How_does_udev_work?)
 *   [6 See also](#See_also)
 
 ## What is a 'modalias'

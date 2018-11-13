@@ -9,17 +9,17 @@
 *   [4 Multihead](#Multihead)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Conky](#Conky)
-    *   [5.2 dwm | dmenu](#dwm_.7C_dmenu)
+    *   [5.2 dwm | dmenu](#dwm_|_dmenu)
     *   [5.3 Firefox](#Firefox)
     *   [5.4 slock](#slock)
     *   [5.5 Freezing video playback](#Freezing_video_playback)
     *   [5.6 Flicker](#Flicker)
     *   [5.7 Fullscreen tearing](#Fullscreen_tearing)
     *   [5.8 Lag when using xft fonts](#Lag_when_using_xft_fonts)
-    *   [5.9 Screen artifacts/screenshot issues when using AMD's Catalyst driver](#Screen_artifacts.2Fscreenshot_issues_when_using_AMD.27s_Catalyst_driver)
+    *   [5.9 Screen artifacts/screenshot issues when using AMD's Catalyst driver](#Screen_artifacts/screenshot_issues_when_using_AMD's_Catalyst_driver)
     *   [5.10 Tabbed windows](#Tabbed_windows)
     *   [5.11 Unable to change the background color with xsetroot](#Unable_to_change_the_background_color_with_xsetroot)
-    *   [5.12 Screentearing with NVIDIA's proprietary drivers](#Screentearing_with_NVIDIA.27s_proprietary_drivers)
+    *   [5.12 Screentearing with NVIDIA's proprietary drivers](#Screentearing_with_NVIDIA's_proprietary_drivers)
     *   [5.13 Lag with Nvidia proprietary drivers and FullCompositionPipeline](#Lag_with_Nvidia_proprietary_drivers_and_FullCompositionPipeline)
 *   [6 See also](#See_also)
 
@@ -323,7 +323,7 @@ vsync = "opengl"
 
 ### Lag with Nvidia proprietary drivers and FullCompositionPipeline
 
-See [#Screen artifacts/screenshot issues when using AMD's Catalyst driver](#Screen_artifacts.2Fscreenshot_issues_when_using_AMD.27s_Catalyst_driver).
+See [#Screen artifacts/screenshot issues when using AMD's Catalyst driver](#Screen_artifacts/screenshot_issues_when_using_AMD's_Catalyst_driver).
 
 ## See also
 

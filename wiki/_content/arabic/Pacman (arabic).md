@@ -8,38 +8,38 @@
 
 ## Contents
 
-*   [1 التهيئة](#.D8.A7.D9.84.D8.AA.D9.87.D9.8A.D8.A6.D8.A9)
-    *   [1.1 الخيارات العامة](#.D8.A7.D9.84.D8.AE.D9.8A.D8.A7.D8.B1.D8.A7.D8.AA_.D8.A7.D9.84.D8.B9.D8.A7.D9.85.D8.A9)
-        *   [1.1.1 إستثناء حزمة من التحديث](#.D8.A5.D8.B3.D8.AA.D8.AB.D9.86.D8.A7.D8.A1_.D8.AD.D8.B2.D9.85.D8.A9_.D9.85.D9.86_.D8.A7.D9.84.D8.AA.D8.AD.D8.AF.D9.8A.D8.AB)
-        *   [1.1.2 إستثناء مجموعة حزمية من التحديث](#.D8.A5.D8.B3.D8.AA.D8.AB.D9.86.D8.A7.D8.A1_.D9.85.D8.AC.D9.85.D9.88.D8.B9.D8.A9_.D8.AD.D8.B2.D9.85.D9.8A.D8.A9_.D9.85.D9.86_.D8.A7.D9.84.D8.AA.D8.AD.D8.AF.D9.8A.D8.AB)
-        *   [1.1.3 إستثناء ملفات من أن تثبت على النضام](#.D8.A5.D8.B3.D8.AA.D8.AB.D9.86.D8.A7.D8.A1_.D9.85.D9.84.D9.81.D8.A7.D8.AA_.D9.85.D9.86_.D8.A3.D9.86_.D8.AA.D8.AB.D8.A8.D8.AA_.D8.B9.D9.84.D9.89_.D8.A7.D9.84.D9.86.D8.B6.D8.A7.D9.85)
-    *   [1.2 المخازن](#.D8.A7.D9.84.D9.85.D8.AE.D8.A7.D8.B2.D9.86)
-    *   [1.3 أمان الحزمة](#.D8.A3.D9.85.D8.A7.D9.86_.D8.A7.D9.84.D8.AD.D8.B2.D9.85.D8.A9)
-*   [2 الإستعمال](#.D8.A7.D9.84.D8.A5.D8.B3.D8.AA.D8.B9.D9.85.D8.A7.D9.84)
-    *   [2.1 تثبيت الحزم](#.D8.AA.D8.AB.D8.A8.D9.8A.D8.AA_.D8.A7.D9.84.D8.AD.D8.B2.D9.85)
-        *   [2.1.1 تثبيت حزمة محددة](#.D8.AA.D8.AB.D8.A8.D9.8A.D8.AA_.D8.AD.D8.B2.D9.85.D8.A9_.D9.85.D8.AD.D8.AF.D8.AF.D8.A9)
-        *   [2.1.2 تثبيت مجموعة حزمية](#.D8.AA.D8.AB.D8.A8.D9.8A.D8.AA_.D9.85.D8.AC.D9.85.D9.88.D8.B9.D8.A9_.D8.AD.D8.B2.D9.85.D9.8A.D8.A9)
-    *   [2.2 حذف الحزم](#.D8.AD.D8.B0.D9.81_.D8.A7.D9.84.D8.AD.D8.B2.D9.85)
-    *   [2.3 تحديث الحزم](#.D8.AA.D8.AD.D8.AF.D9.8A.D8.AB_.D8.A7.D9.84.D8.AD.D8.B2.D9.85)
+*   [1 التهيئة](#التهيئة)
+    *   [1.1 الخيارات العامة](#الخيارات_العامة)
+        *   [1.1.1 إستثناء حزمة من التحديث](#إستثناء_حزمة_من_التحديث)
+        *   [1.1.2 إستثناء مجموعة حزمية من التحديث](#إستثناء_مجموعة_حزمية_من_التحديث)
+        *   [1.1.3 إستثناء ملفات من أن تثبت على النضام](#إستثناء_ملفات_من_أن_تثبت_على_النضام)
+    *   [1.2 المخازن](#المخازن)
+    *   [1.3 أمان الحزمة](#أمان_الحزمة)
+*   [2 الإستعمال](#الإستعمال)
+    *   [2.1 تثبيت الحزم](#تثبيت_الحزم)
+        *   [2.1.1 تثبيت حزمة محددة](#تثبيت_حزمة_محددة)
+        *   [2.1.2 تثبيت مجموعة حزمية](#تثبيت_مجموعة_حزمية)
+    *   [2.2 حذف الحزم](#حذف_الحزم)
+    *   [2.3 تحديث الحزم](#تحديث_الحزم)
     *   [2.4 Querying package databases](#Querying_package_databases)
-    *   [2.5 أوامر إضافية](#.D8.A3.D9.88.D8.A7.D9.85.D8.B1_.D8.A5.D8.B6.D8.A7.D9.81.D9.8A.D8.A9)
-    *   [2.6 الترقيات الجزئية غير معتمدة](#.D8.A7.D9.84.D8.AA.D8.B1.D9.82.D9.8A.D8.A7.D8.AA_.D8.A7.D9.84.D8.AC.D8.B2.D8.A6.D9.8A.D8.A9_.D8.BA.D9.8A.D8.B1_.D9.85.D8.B9.D8.AA.D9.85.D8.AF.D8.A9)
+    *   [2.5 أوامر إضافية](#أوامر_إضافية)
+    *   [2.6 الترقيات الجزئية غير معتمدة](#الترقيات_الجزئية_غير_معتمدة)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 An update to package XYZ broke my system!](#An_update_to_package_XYZ_broke_my_system.21)
-    *   [3.2 I know an update to package ABC was released, but pacman says my system is up to date!](#I_know_an_update_to_package_ABC_was_released.2C_but_pacman_says_my_system_is_up_to_date.21)
-    *   [3.3 I get an error when updating: "file exists in filesystem"!](#I_get_an_error_when_updating:_.22file_exists_in_filesystem.22.21)
-    *   [3.4 I get an error when installing a package: "not found in sync db"](#I_get_an_error_when_installing_a_package:_.22not_found_in_sync_db.22)
-    *   [3.5 Pacman is repeatedly upgrading the same package!](#Pacman_is_repeatedly_upgrading_the_same_package.21)
-    *   [3.6 Pacman crashes during an upgrade!](#Pacman_crashes_during_an_upgrade.21)
-    *   [3.7 I installed software using "make install"; these files do not belong to any package!](#I_installed_software_using_.22make_install.22.3B_these_files_do_not_belong_to_any_package.21)
-    *   [3.8 I need a package with a specific file. How do I know what provides it?](#I_need_a_package_with_a_specific_file._How_do_I_know_what_provides_it.3F)
-    *   [3.9 Pacman is completely broken! How do I reinstall it?](#Pacman_is_completely_broken.21_How_do_I_reinstall_it.3F)
-    *   [3.10 After updating my system, I get a "unable to find root device" error after rebooting and my system will no longer boot](#After_updating_my_system.2C_I_get_a_.22unable_to_find_root_device.22_error_after_rebooting_and_my_system_will_no_longer_boot)
-    *   [3.11 Signature from "User <email@gmail.com>" is unknown trust, installation failed](#Signature_from_.22User_.3Cemail.40gmail.com.3E.22_is_unknown_trust.2C_installation_failed)
+    *   [3.1 An update to package XYZ broke my system!](#An_update_to_package_XYZ_broke_my_system!)
+    *   [3.2 I know an update to package ABC was released, but pacman says my system is up to date!](#I_know_an_update_to_package_ABC_was_released,_but_pacman_says_my_system_is_up_to_date!)
+    *   [3.3 I get an error when updating: "file exists in filesystem"!](#I_get_an_error_when_updating:_"file_exists_in_filesystem"!)
+    *   [3.4 I get an error when installing a package: "not found in sync db"](#I_get_an_error_when_installing_a_package:_"not_found_in_sync_db")
+    *   [3.5 Pacman is repeatedly upgrading the same package!](#Pacman_is_repeatedly_upgrading_the_same_package!)
+    *   [3.6 Pacman crashes during an upgrade!](#Pacman_crashes_during_an_upgrade!)
+    *   [3.7 I installed software using "make install"; these files do not belong to any package!](#I_installed_software_using_"make_install";_these_files_do_not_belong_to_any_package!)
+    *   [3.8 I need a package with a specific file. How do I know what provides it?](#I_need_a_package_with_a_specific_file._How_do_I_know_what_provides_it?)
+    *   [3.9 Pacman is completely broken! How do I reinstall it?](#Pacman_is_completely_broken!_How_do_I_reinstall_it?)
+    *   [3.10 After updating my system, I get a "unable to find root device" error after rebooting and my system will no longer boot](#After_updating_my_system,_I_get_a_"unable_to_find_root_device"_error_after_rebooting_and_my_system_will_no_longer_boot)
+    *   [3.11 Signature from "User <email@gmail.com>" is unknown trust, installation failed](#Signature_from_"User_<email@gmail.com>"_is_unknown_trust,_installation_failed)
     *   [3.12 I keep getting](#I_keep_getting)
-    *   [3.13 I keep getting a "failed to commit transaction (invalid or corrupted package)" error](#I_keep_getting_a_.22failed_to_commit_transaction_.28invalid_or_corrupted_package.29.22_error)
-    *   [3.14 I get an error every time I use pacman saying 'warning: current locale is invalid; using default "C" locale'. What do I do?](#I_get_an_error_every_time_I_use_pacman_saying_.27warning:_current_locale_is_invalid.3B_using_default_.22C.22_locale.27._What_do_I_do.3F)
-    *   [3.15 How can I get Pacman to honor my proxy settings?](#How_can_I_get_Pacman_to_honor_my_proxy_settings.3F)
+    *   [3.13 I keep getting a "failed to commit transaction (invalid or corrupted package)" error](#I_keep_getting_a_"failed_to_commit_transaction_(invalid_or_corrupted_package)"_error)
+    *   [3.14 I get an error every time I use pacman saying 'warning: current locale is invalid; using default "C" locale'. What do I do?](#I_get_an_error_every_time_I_use_pacman_saying_'warning:_current_locale_is_invalid;_using_default_"C"_locale'._What_do_I_do?)
+    *   [3.15 How can I get Pacman to honor my proxy settings?](#How_can_I_get_Pacman_to_honor_my_proxy_settings?)
 *   [4 See also](#See_also)
 
 ## التهيئة
@@ -185,14 +185,14 @@ Enter a selection (default=all): ^5-8 ^2
 
 **ملاحظة :** إذا كانت حزمة في القائمة مثبتة بالفعل على النظام فسيعاد تنصيبها حتى ولو كانت أحدث نسخة . هذا السلوك يمكن تجاوزه بالخيار `needed--`.
 
-**تحذير :** عند تنصيب الحزم **لا تقم** بعمل تحديث لقائمة الحزم بدون [تحديث](#.D8.AA.D8.AD.D8.AF.D9.8A.D8.AB_.D8.A7.D9.84.D8.AD.D8.B2.D9.85) النظام مثلا استخدم الأمر
+**تحذير :** عند تنصيب الحزم **لا تقم** بعمل تحديث لقائمة الحزم بدون [تحديث](#تحديث_الحزم) النظام مثلا استخدم الأمر
 
 ```
 pacman -Sy *package_name*
 
 ```
 
-وذلك قد يؤدي إلى مشكلة في التبعيات . انظر [#الترقيات الجزئية غير معتمدة](#.D8.A7.D9.84.D8.AA.D8.B1.D9.82.D9.8A.D8.A7.D8.AA_.D8.A7.D9.84.D8.AC.D8.B2.D8.A6.D9.8A.D8.A9_.D8.BA.D9.8A.D8.B1_.D9.85.D8.B9.D8.AA.D9.85.D8.AF.D8.A9) و [https://bbs.archlinux.org/viewtopic.php](https://bbs.archlinux.org/viewtopic.php)? id=89328.
+وذلك قد يؤدي إلى مشكلة في التبعيات . انظر [#الترقيات الجزئية غير معتمدة](#الترقيات_الجزئية_غير_معتمدة) و [https://bbs.archlinux.org/viewtopic.php](https://bbs.archlinux.org/viewtopic.php)? id=89328.
 
 ### حذف الحزم
 
@@ -530,7 +530,7 @@ As the error message says, your locale is not correctly configured. See [Locale]
 
 ### How can I get Pacman to honor my proxy settings?
 
-Make sure that the relevant environment variables (`$http_proxy`, `$ftp_proxy` etc.) are set up. If you use Pacman with [sudo](/index.php/Sudo "Sudo"), you need to configure sudo to [pass these environment variables to Pacman](/index.php/Sudo#Environment_variables_.28Outdated.3F.29 "Sudo").
+Make sure that the relevant environment variables (`$http_proxy`, `$ftp_proxy` etc.) are set up. If you use Pacman with [sudo](/index.php/Sudo "Sudo"), you need to configure sudo to [pass these environment variables to Pacman](/index.php/Sudo#Environment_variables_(Outdated?) "Sudo").
 
 ## See also
 

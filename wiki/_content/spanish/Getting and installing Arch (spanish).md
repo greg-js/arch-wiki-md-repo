@@ -7,7 +7,7 @@ La imagen de instalación y su firma [GnuPG](/index.php/GnuPG_(Espa%C3%B1ol) "Gn
 
 Es recomendado verificar la imagen de instalación antes de usarla, especialmente al descargala de un mirror *HTTP*, donde es mas posible que la imagen sea interceptada para [servir imagenes maliciosas](http://www.cs.arizona.edu/stork/packagemanagersecurity/attacks-on-package-managers.html#explanation).
 
-En un sistema con [GnuPG](/index.php/GnuPG_(Espa%C3%B1ol) "GnuPG (Español)") instalado, descargue la firma *PGP signature* (en la sección *Checksums*) en el mismo directorio donde descargo la ISO, y [verifique](/index.php/GnuPG_(Espa%C3%B1ol)#Verificaci.C3.B3n_de_firmas "GnuPG (Español)") la firma ejecutando `gpg --keyserver pgp.mit.edu --keyserver-options auto-key-retrieve --verify archlinux-<version>-x86_64.iso.sig`.
+En un sistema con [GnuPG](/index.php/GnuPG_(Espa%C3%B1ol) "GnuPG (Español)") instalado, descargue la firma *PGP signature* (en la sección *Checksums*) en el mismo directorio donde descargo la ISO, y [verifique](/index.php/GnuPG_(Espa%C3%B1ol)#Verificación_de_firmas "GnuPG (Español)") la firma ejecutando `gpg --keyserver pgp.mit.edu --keyserver-options auto-key-retrieve --verify archlinux-<version>-x86_64.iso.sig`.
 
 En un sistema Arch Linux puede ejecutar `pacman-key -v archlinux-<version>-x86_64.iso.sig` con privilegios de root.
 
@@ -30,7 +30,7 @@ La tabla a continuación ofrece un resumen de los métodos mas comunes para inic
 | Queme la ISO en USB o un CD, después encienda desde este. | 
 
 *   [Instalación en USB](/index.php/USB_flash_installation_media_(Espa%C3%B1ol) "USB flash installation media (Español)")
-*   [Grabación de Disco Óptico CD](/index.php/Optical_disc_drive_(Espa%C3%B1ol)#Grabaci.C3.B3n "Optical disc drive (Español)")
+*   [Grabación de Disco Óptico CD](/index.php/Optical_disc_drive_(Espa%C3%B1ol)#Grabación "Optical disc drive (Español)")
 
  | 
 

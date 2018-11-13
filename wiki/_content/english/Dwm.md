@@ -16,7 +16,7 @@ Related articles
         *   [4.1.1 Conky statusbar](#Conky_statusbar)
     *   [4.2 Restart dwm](#Restart_dwm)
     *   [4.3 Bind the right Alt key to Mod4](#Bind_the_right_Alt_key_to_Mod4)
-    *   [4.4 Space around font in dwm's bar](#Space_around_font_in_dwm.27s_bar)
+    *   [4.4 Space around font in dwm's bar](#Space_around_font_in_dwm's_bar)
     *   [4.5 Disable focus follows mouse](#Disable_focus_follows_mouse)
     *   [4.6 Floating layout for some windows](#Floating_layout_for_some_windows)
 *   [5 Troubleshooting](#Troubleshooting)

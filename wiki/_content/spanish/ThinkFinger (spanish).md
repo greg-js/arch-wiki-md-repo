@@ -4,18 +4,18 @@ ThinkFinger es un controlador para el lector de huellas digitales SGS de la empr
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Configuración](#Configuraci.C3.B3n)
+*   [1 Instalación](#Instalación)
+*   [2 Configuración](#Configuración)
     *   [2.1 TF-Tool](#TF-Tool)
 *   [3 Pam](#Pam)
-    *   [3.1 /etc/pam.d/login](#.2Fetc.2Fpam.d.2Flogin)
-    *   [3.2 /etc/pam.d/su](#.2Fetc.2Fpam.d.2Fsu)
-    *   [3.3 /etc/pam.d/sudo](#.2Fetc.2Fpam.d.2Fsudo)
-    *   [3.4 /etc/pam.d/xscreensaver](#.2Fetc.2Fpam.d.2Fxscreensaver)
-    *   [3.5 /etc/pam.d/gdm](#.2Fetc.2Fpam.d.2Fgdm)
-    *   [3.6 /etc/pam.d/xdm](#.2Fetc.2Fpam.d.2Fxdm)
+    *   [3.1 /etc/pam.d/login](#/etc/pam.d/login)
+    *   [3.2 /etc/pam.d/su](#/etc/pam.d/su)
+    *   [3.3 /etc/pam.d/sudo](#/etc/pam.d/sudo)
+    *   [3.4 /etc/pam.d/xscreensaver](#/etc/pam.d/xscreensaver)
+    *   [3.5 /etc/pam.d/gdm](#/etc/pam.d/gdm)
+    *   [3.6 /etc/pam.d/xdm](#/etc/pam.d/xdm)
 *   [4 SLiM](#SLiM)
-*   [5 Más información](#M.C3.A1s_informaci.C3.B3n)
+*   [5 Más información](#Más_información)
 
 ## Instalación
 

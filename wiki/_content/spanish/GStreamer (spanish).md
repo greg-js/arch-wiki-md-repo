@@ -6,15 +6,15 @@ Diseñado para ser multiplataforma, se sabe que funciona en Linux (x86, PowerPC 
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-    *   [1.1 Complementos de la versión actual](#Complementos_de_la_versi.C3.B3n_actual)
-    *   [1.2 Complementos de la versión antigua](#Complementos_de_la_versi.C3.B3n_antigua)
-*   [2 Integración](#Integraci.C3.B3n)
+*   [1 Instalación](#Instalación)
+    *   [1.1 Complementos de la versión actual](#Complementos_de_la_versión_actual)
+    *   [1.2 Complementos de la versión antigua](#Complementos_de_la_versión_antigua)
+*   [2 Integración](#Integración)
     *   [2.1 PulseAudio](#PulseAudio)
     *   [2.2 Escritorios ligeros](#Escritorios_ligeros)
-    *   [2.3 Integración en KDE / Phonon](#Integraci.C3.B3n_en_KDE_.2F_Phonon)
+    *   [2.3 Integración en KDE / Phonon](#Integración_en_KDE_/_Phonon)
 *   [3 Errores](#Errores)
-*   [4 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [4 Véase también](#Véase_también)
 
 ## Instalación
 

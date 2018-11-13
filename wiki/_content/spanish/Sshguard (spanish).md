@@ -16,16 +16,16 @@ sshguard no es vulnerable a la mayoría (o, tal vez, a ninguno) de los análisis
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
 *   [2 Ajustes](#Ajustes)
     *   [2.1 FirewallD](#FirewallD)
     *   [2.2 UFW](#UFW)
     *   [2.3 iptables](#iptables)
     *   [2.4 nftables](#nftables)
-*   [3 Utilización](#Utilizaci.C3.B3n)
+*   [3 Utilización](#Utilización)
     *   [3.1 systemd](#systemd)
     *   [3.2 syslog-ng](#syslog-ng)
-*   [4 Configuración](#Configuraci.C3.B3n)
+*   [4 Configuración](#Configuración)
     *   [4.1 Umbral de la lista negra](#Umbral_de_la_lista_negra)
     *   [4.2 Ejemplo moderado de baneado](#Ejemplo_moderado_de_baneado)
     *   [4.3 Baneado agresivo](#Baneado_agresivo)

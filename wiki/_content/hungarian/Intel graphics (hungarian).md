@@ -10,20 +10,20 @@ Mivel az Intel készít és támogat is nyílt forráskodú drivereket, így az 
 
 ## Contents
 
-*   [1 Típusok](#T.C3.ADpusok)
+*   [1 Típusok](#Típusok)
 *   [2 Driver](#Driver)
-*   [3 Telepítés](#Telep.C3.ADt.C3.A9s)
-*   [4 Beállítás](#Be.C3.A1ll.C3.ADt.C3.A1s)
-*   [5 KMS (Kernel Mode Setting)](#KMS_.28Kernel_Mode_Setting.29)
-    *   [5.1 Lásd még](#L.C3.A1sd_m.C3.A9g)
-*   [6 Tippek és trükkök](#Tippek_.C3.A9s_tr.C3.BCkk.C3.B6k)
-    *   [6.1 Átméretezés módjának beállítása](#.C3.81tm.C3.A9retez.C3.A9s_m.C3.B3dj.C3.A1nak_be.C3.A1ll.C3.ADt.C3.A1sa)
-    *   [6.2 KMS probléma: a terminál nem tölti ki a képernyőt](#KMS_probl.C3.A9ma:_a_termin.C3.A1l_nem_t.C3.B6lti_ki_a_k.C3.A9perny.C5.91t)
-*   [7 Támogatott hardverek](#T.C3.A1mogatott_hardverek)
-*   [8 Hibaelhárítás](#Hibaelh.C3.A1r.C3.ADt.C3.A1s)
-    *   [8.1 A Glxgears alacsony teljesítményt mutat](#A_Glxgears_alacsony_teljes.C3.ADtm.C3.A9nyt_mutat)
-    *   [8.2 Sötét képernyő a rendszer töltődése során, "Loading modules" után](#S.C3.B6t.C3.A9t_k.C3.A9perny.C5.91_a_rendszer_t.C3.B6lt.C5.91d.C3.A9se_sor.C3.A1n.2C_.22Loading_modules.22_ut.C3.A1n)
-    *   [8.3 A laptophoz csatlakoztatott külső monitor 30 másodpercenként elsötétül](#A_laptophoz_csatlakoztatott_k.C3.BCls.C5.91_monitor_30_m.C3.A1sodpercenk.C3.A9nt_els.C3.B6t.C3.A9t.C3.BCl)
+*   [3 Telepítés](#Telepítés)
+*   [4 Beállítás](#Beállítás)
+*   [5 KMS (Kernel Mode Setting)](#KMS_(Kernel_Mode_Setting))
+    *   [5.1 Lásd még](#Lásd_még)
+*   [6 Tippek és trükkök](#Tippek_és_trükkök)
+    *   [6.1 Átméretezés módjának beállítása](#Átméretezés_módjának_beállítása)
+    *   [6.2 KMS probléma: a terminál nem tölti ki a képernyőt](#KMS_probléma:_a_terminál_nem_tölti_ki_a_képernyőt)
+*   [7 Támogatott hardverek](#Támogatott_hardverek)
+*   [8 Hibaelhárítás](#Hibaelhárítás)
+    *   [8.1 A Glxgears alacsony teljesítményt mutat](#A_Glxgears_alacsony_teljesítményt_mutat)
+    *   [8.2 Sötét képernyő a rendszer töltődése során, "Loading modules" után](#Sötét_képernyő_a_rendszer_töltődése_során,_"Loading_modules"_után)
+    *   [8.3 A laptophoz csatlakoztatott külső monitor 30 másodpercenként elsötétül](#A_laptophoz_csatlakoztatott_külső_monitor_30_másodpercenként_elsötétül)
 
 ### Típusok
 
@@ -185,7 +185,7 @@ Ennek oka nem az, hogy a rendszer ennyire kis teljesítményre lenne képes, han
 
 ### Sötét képernyő a rendszer töltődése során, "Loading modules" után
 
-Ha a KMS-t a korábban leírt később induló módban használod, és a rendszer töltődésekor a képernyő elsötétül a "Loading modules" szakasznál, akkor segíthet ha hozzáadod az i915 és intel_agp modulokat az initramfs-hoz. Lásd korábban: [KMS](/index.php/Intel#KMS_.28Kernel_Mode_Setting.29 "Intel").
+Ha a KMS-t a korábban leírt később induló módban használod, és a rendszer töltődésekor a képernyő elsötétül a "Loading modules" szakasznál, akkor segíthet ha hozzáadod az i915 és intel_agp modulokat az initramfs-hoz. Lásd korábban: [KMS](/index.php/Intel#KMS_(Kernel_Mode_Setting) "Intel").
 
 Egy alternatív megoldás lehet az is, ha hozzáadod a következő opciót a `/boot/grub/menu.lst` fájl kernel sorához:
 

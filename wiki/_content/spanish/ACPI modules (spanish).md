@@ -14,13 +14,13 @@ Los módulos ACPI son módulos del kernel para diferentes partes de ACPI. Permit
 
 ## Contents
 
-*   [1 ¿Qué módulos están disponibles?](#.C2.BFQu.C3.A9_m.C3.B3dulos_est.C3.A1n_disponibles.3F)
-*   [2 Cómo seleccionar los adecuados](#C.C3.B3mo_seleccionar_los_adecuados)
-*   [3 Obteniendo información](#Obteniendo_informaci.C3.B3n)
-*   [4 Solución de problemas](#Soluci.C3.B3n_de_problemas)
+*   [1 ¿Qué módulos están disponibles?](#¿Qué_módulos_están_disponibles?)
+*   [2 Cómo seleccionar los adecuados](#Cómo_seleccionar_los_adecuados)
+*   [3 Obteniendo información](#Obteniendo_información)
+*   [4 Solución de problemas](#Solución_de_problemas)
     *   [4.1 Corregir DSDT](#Corregir_DSDT)
-    *   [4.2 Corregir ACPI para portátiles](#Corregir_ACPI_para_port.C3.A1tiles)
-*   [5 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+    *   [4.2 Corregir ACPI para portátiles](#Corregir_ACPI_para_portátiles)
+*   [5 Véase también](#Véase_también)
 
 ## ¿Qué módulos están disponibles?
 

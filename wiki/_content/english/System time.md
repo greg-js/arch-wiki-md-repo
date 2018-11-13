@@ -27,7 +27,7 @@ Standard behavior of most operating systems is:
 *   [4 Time zone](#Time_zone)
 *   [5 Time skew](#Time_skew)
 *   [6 Time synchronization](#Time_synchronization)
-*   [7 Per-user/session or temporary settings](#Per-user.2Fsession_or_temporary_settings)
+*   [7 Per-user/session or temporary settings](#Per-user/session_or_temporary_settings)
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 Clock shows a value that is neither UTC nor local time](#Clock_shows_a_value_that_is_neither_UTC_nor_local_time)
 *   [9 Tips and tricks](#Tips_and_tricks)

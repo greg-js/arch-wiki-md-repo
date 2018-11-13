@@ -4,8 +4,8 @@ Existen dos métodos para falsear una dirección MAC (Media Access Control) en A
 
 ## Contents
 
-*   [1 Método 1: macchanger](#M.C3.A9todo_1:_macchanger)
-*   [2 Método 2: Manual](#M.C3.A9todo_2:_Manual)
+*   [1 Método 1: macchanger](#Método_1:_macchanger)
+*   [2 Método 2: Manual](#Método_2:_Manual)
 *   [3 Spoofing MAC On Boot](#Spoofing_MAC_On_Boot)
 *   [4 Enlaces y Referencias](#Enlaces_y_Referencias)
 

@@ -2,38 +2,38 @@ See [GRUB](/index.php/GRUB "GRUB") for the main article.
 
 ## Contents
 
-*   [1 其它安装方式](#.E5.85.B6.E5.AE.83.E5.AE.89.E8.A3.85.E6.96.B9.E5.BC.8F)
-    *   [1.1 安装到U盘](#.E5.AE.89.E8.A3.85.E5.88.B0U.E7.9B.98)
+*   [1 其它安装方式](#其它安装方式)
+    *   [1.1 安装到U盘](#安装到U盘)
         *   [1.1.1 BIOS](#BIOS)
         *   [1.1.2 EFI](#EFI)
-    *   [1.2 安装到分区上或者无分区磁盘上](#.E5.AE.89.E8.A3.85.E5.88.B0.E5.88.86.E5.8C.BA.E4.B8.8A.E6.88.96.E8.80.85.E6.97.A0.E5.88.86.E5.8C.BA.E7.A3.81.E7.9B.98.E4.B8.8A)
-    *   [1.3 只生成core.img](#.E5.8F.AA.E7.94.9F.E6.88.90core.img)
-*   [2 图形化配置工具](#.E5.9B.BE.E5.BD.A2.E5.8C.96.E9.85.8D.E7.BD.AE.E5.B7.A5.E5.85.B7)
-*   [3 视觉配置](#.E8.A7.86.E8.A7.89.E9.85.8D.E7.BD.AE)
-    *   [3.1 设置帧缓冲分辨率](#.E8.AE.BE.E7.BD.AE.E5.B8.A7.E7.BC.93.E5.86.B2.E5.88.86.E8.BE.A8.E7.8E.87)
-        *   [3.1.1 设定帧缓冲的分辨率](#.E8.AE.BE.E5.AE.9A.E5.B8.A7.E7.BC.93.E5.86.B2.E7.9A.84.E5.88.86.E8.BE.A8.E7.8E.87)
+    *   [1.2 安装到分区上或者无分区磁盘上](#安装到分区上或者无分区磁盘上)
+    *   [1.3 只生成core.img](#只生成core.img)
+*   [2 图形化配置工具](#图形化配置工具)
+*   [3 视觉配置](#视觉配置)
+    *   [3.1 设置帧缓冲分辨率](#设置帧缓冲分辨率)
+        *   [3.1.1 设定帧缓冲的分辨率](#设定帧缓冲的分辨率)
     *   [3.2 915resolution hack](#915resolution_hack)
-    *   [3.3 背景图像和点阵字体](#.E8.83.8C.E6.99.AF.E5.9B.BE.E5.83.8F.E5.92.8C.E7.82.B9.E9.98.B5.E5.AD.97.E4.BD.93)
+    *   [3.3 背景图像和点阵字体](#背景图像和点阵字体)
     *   [3.4 Theme](#Theme)
-    *   [3.5 菜单颜色](#.E8.8F.9C.E5.8D.95.E9.A2.9C.E8.89.B2)
-    *   [3.6 隐藏菜单](#.E9.9A.90.E8.97.8F.E8.8F.9C.E5.8D.95)
-    *   [3.7 禁用framebuffer](#.E7.A6.81.E7.94.A8framebuffer)
+    *   [3.5 菜单颜色](#菜单颜色)
+    *   [3.6 隐藏菜单](#隐藏菜单)
+    *   [3.7 禁用framebuffer](#禁用framebuffer)
 *   [4 Booting ISO9660 image file directly via GRUB](#Booting_ISO9660_image_file_directly_via_GRUB)
-*   [5 持久块设备命名法](#.E6.8C.81.E4.B9.85.E5.9D.97.E8.AE.BE.E5.A4.87.E5.91.BD.E5.90.8D.E6.B3.95)
-*   [6 使用卷标](#.E4.BD.BF.E7.94.A8.E5.8D.B7.E6.A0.87)
-*   [7 用密码保护 GRUB 菜单](#.E7.94.A8.E5.AF.86.E7.A0.81.E4.BF.9D.E6.8A.A4_GRUB_.E8.8F.9C.E5.8D.95)
-*   [8 启动时隐藏GRUB界面,除非按着SHIFT键](#.E5.90.AF.E5.8A.A8.E6.97.B6.E9.9A.90.E8.97.8FGRUB.E7.95.8C.E9.9D.A2.2C.E9.99.A4.E9.9D.9E.E6.8C.89.E7.9D.80SHIFT.E9.94.AE)
-*   [9 使用 UUID 和基础脚本](#.E4.BD.BF.E7.94.A8_UUID_.E5.92.8C.E5.9F.BA.E7.A1.80.E8.84.9A.E6.9C.AC)
-*   [10 手动创建 grub.cfg](#.E6.89.8B.E5.8A.A8.E5.88.9B.E5.BB.BA_grub.cfg)
+*   [5 持久块设备命名法](#持久块设备命名法)
+*   [6 使用卷标](#使用卷标)
+*   [7 用密码保护 GRUB 菜单](#用密码保护_GRUB_菜单)
+*   [8 启动时隐藏GRUB界面,除非按着SHIFT键](#启动时隐藏GRUB界面,除非按着SHIFT键)
+*   [9 使用 UUID 和基础脚本](#使用_UUID_和基础脚本)
+*   [10 手动创建 grub.cfg](#手动创建_grub.cfg)
 *   [11 Multiple entries](#Multiple_entries)
     *   [11.1 Disable submenu](#Disable_submenu)
-    *   [11.2 调用之前的启动项](#.E8.B0.83.E7.94.A8.E4.B9.8B.E5.89.8D.E7.9A.84.E5.90.AF.E5.8A.A8.E9.A1.B9)
+    *   [11.2 调用之前的启动项](#调用之前的启动项)
     *   [11.3 Changing the default menu entry](#Changing_the_default_menu_entry)
-    *   [11.4 设定下次启动的启动项(一次性,非持久)](#.E8.AE.BE.E5.AE.9A.E4.B8.8B.E6.AC.A1.E5.90.AF.E5.8A.A8.E7.9A.84.E5.90.AF.E5.8A.A8.E9.A1.B9.28.E4.B8.80.E6.AC.A1.E6.80.A7.2C.E9.9D.9E.E6.8C.81.E4.B9.85.29)
-*   [12 UEFI 延伸阅读](#UEFI_.E5.BB.B6.E4.BC.B8.E9.98.85.E8.AF.BB)
-    *   [12.1 其他方法](#.E5.85.B6.E4.BB.96.E6.96.B9.E6.B3.95)
-    *   [12.2 在固件启动管理器中创建GRUB条目](#.E5.9C.A8.E5.9B.BA.E4.BB.B6.E5.90.AF.E5.8A.A8.E7.AE.A1.E7.90.86.E5.99.A8.E4.B8.AD.E5.88.9B.E5.BB.BAGRUB.E6.9D.A1.E7.9B.AE)
-    *   [12.3 创建GRUB Standalone模式的UEFI应用程序](#.E5.88.9B.E5.BB.BAGRUB_Standalone.E6.A8.A1.E5.BC.8F.E7.9A.84UEFI.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F)
+    *   [11.4 设定下次启动的启动项(一次性,非持久)](#设定下次启动的启动项(一次性,非持久))
+*   [12 UEFI 延伸阅读](#UEFI_延伸阅读)
+    *   [12.1 其他方法](#其他方法)
+    *   [12.2 在固件启动管理器中创建GRUB条目](#在固件启动管理器中创建GRUB条目)
+    *   [12.3 创建GRUB Standalone模式的UEFI应用程序](#创建GRUB_Standalone模式的UEFI应用程序)
     *   [12.4 Technical information](#Technical_information)
 
 ## 其它安装方式
@@ -112,7 +112,7 @@ Installation finished. No error reported.
 
 临时解决方案是给`/boot/grub/i386-pc/core.img`文件加"不可变"(immutable)标志.这样 `core.img` 文件的位置就不会变。只有当将`grub`安装到分区启动扇区或者无分区磁盘上时才需要给core.img加"不可变"标志.
 
-执行`grub-install`并不会生成GRUB配置文件,请移至[#生成主配置文件](#.E7.94.9F.E6.88.90.E4.B8.BB.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)一节
+执行`grub-install`并不会生成GRUB配置文件,请移至[#生成主配置文件](#生成主配置文件)一节
 
 即使没有报错，生成的 `grub.cfg` 文件并不会包含正确的 UUID。参考 [https://bbs.archlinux.org/viewtopic.php?pid=1294604#p1294604.要解决这个问题：](https://bbs.archlinux.org/viewtopic.php?pid=1294604#p1294604.要解决这个问题：)
 
@@ -158,7 +158,7 @@ Installation finished. No error reported.
 
 ## 视觉配置
 
-在GRUB的默认情况中是可以改变菜单外观的。如果你没有初始化，请务必初始化 GRUB 图形终端，带视频模式的gfxmode和gfxterm。你可以在 [GRUB#"No suitable mode found" error](/index.php/GRUB#.22No_suitable_mode_found.22_error "GRUB")的到这部分内容。此视频模式由GRUB通过“ gfxpayload '传递给Linux内核，为了有效果，任何视觉配置需要这种模式。
+在GRUB的默认情况中是可以改变菜单外观的。如果你没有初始化，请务必初始化 GRUB 图形终端，带视频模式的gfxmode和gfxterm。你可以在 [GRUB#"No suitable mode found" error](/index.php/GRUB#"No_suitable_mode_found"_error "GRUB")的到这部分内容。此视频模式由GRUB通过“ gfxpayload '传递给Linux内核，为了有效果，任何视觉配置需要这种模式。
 
 ### 设置帧缓冲分辨率
 
@@ -230,7 +230,7 @@ GRUB原生支持设置背景图像和点阵字体(以pf2格式).[grub](https://w
 
 GRUB支持的图像格式有tga,png,jpeg.所支持的最大图像分辨率跟硬件有关.
 
-Make sure you have set up the proper [framebuffer resolution](#Setting_the_framebuffer_resolution). 请确保你已经设定了合适的[帧缓冲分辨率](#.E8.AE.BE.E5.AE.9A.E5.B8.A7.E7.BC.93.E5.86.B2.E7.9A.84.E5.88.86.E8.BE.A8.E7.8E.87)
+Make sure you have set up the proper [framebuffer resolution](#Setting_the_framebuffer_resolution). 请确保你已经设定了合适的[帧缓冲分辨率](#设定帧缓冲的分辨率)
 
 编辑`/etc/default/grub`:
 

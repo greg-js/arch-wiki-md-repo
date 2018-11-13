@@ -8,29 +8,29 @@ Arch Linux 能在任何内存空间不小于 512MB 的 [x86_64](https://en.wikip
 
 ## Contents
 
-*   [1 安装准备](#.E5.AE.89.E8.A3.85.E5.87.86.E5.A4.87)
-    *   [1.1 键盘布局](#.E9.94.AE.E7.9B.98.E5.B8.83.E5.B1.80)
-    *   [1.2 验证启动模式](#.E9.AA.8C.E8.AF.81.E5.90.AF.E5.8A.A8.E6.A8.A1.E5.BC.8F)
-    *   [1.3 连接到因特网](#.E8.BF.9E.E6.8E.A5.E5.88.B0.E5.9B.A0.E7.89.B9.E7.BD.91)
-    *   [1.4 更新系统时间](#.E6.9B.B4.E6.96.B0.E7.B3.BB.E7.BB.9F.E6.97.B6.E9.97.B4)
-    *   [1.5 建立硬盘分区](#.E5.BB.BA.E7.AB.8B.E7.A1.AC.E7.9B.98.E5.88.86.E5.8C.BA)
-    *   [1.6 格式化分区](#.E6.A0.BC.E5.BC.8F.E5.8C.96.E5.88.86.E5.8C.BA)
-    *   [1.7 挂载分区](#.E6.8C.82.E8.BD.BD.E5.88.86.E5.8C.BA)
-*   [2 安装](#.E5.AE.89.E8.A3.85)
-    *   [2.1 选择镜像](#.E9.80.89.E6.8B.A9.E9.95.9C.E5.83.8F)
-    *   [2.2 安装基本系统](#.E5.AE.89.E8.A3.85.E5.9F.BA.E6.9C.AC.E7.B3.BB.E7.BB.9F)
-*   [3 配置系统](#.E9.85.8D.E7.BD.AE.E7.B3.BB.E7.BB.9F)
+*   [1 安装准备](#安装准备)
+    *   [1.1 键盘布局](#键盘布局)
+    *   [1.2 验证启动模式](#验证启动模式)
+    *   [1.3 连接到因特网](#连接到因特网)
+    *   [1.4 更新系统时间](#更新系统时间)
+    *   [1.5 建立硬盘分区](#建立硬盘分区)
+    *   [1.6 格式化分区](#格式化分区)
+    *   [1.7 挂载分区](#挂载分区)
+*   [2 安装](#安装)
+    *   [2.1 选择镜像](#选择镜像)
+    *   [2.2 安装基本系统](#安装基本系统)
+*   [3 配置系统](#配置系统)
     *   [3.1 Fstab](#Fstab)
     *   [3.2 Chroot](#Chroot)
-    *   [3.3 时区](#.E6.97.B6.E5.8C.BA)
-    *   [3.4 本地化](#.E6.9C.AC.E5.9C.B0.E5.8C.96)
-    *   [3.5 主机名](#.E4.B8.BB.E6.9C.BA.E5.90.8D)
-    *   [3.6 网络配置](#.E7.BD.91.E7.BB.9C.E9.85.8D.E7.BD.AE)
+    *   [3.3 时区](#时区)
+    *   [3.4 本地化](#本地化)
+    *   [3.5 主机名](#主机名)
+    *   [3.6 网络配置](#网络配置)
     *   [3.7 Initramfs](#Initramfs)
-    *   [3.8 Root 密码](#Root_.E5.AF.86.E7.A0.81)
-    *   [3.9 安装引导程序](#.E5.AE.89.E8.A3.85.E5.BC.95.E5.AF.BC.E7.A8.8B.E5.BA.8F)
-*   [4 重启](#.E9.87.8D.E5.90.AF)
-*   [5 安装后的工作](#.E5.AE.89.E8.A3.85.E5.90.8E.E7.9A.84.E5.B7.A5.E4.BD.9C)
+    *   [3.8 Root 密码](#Root_密码)
+    *   [3.9 安装引导程序](#安装引导程序)
+*   [4 重启](#重启)
+*   [5 安装后的工作](#安装后的工作)
 
 ## 安装准备
 
@@ -135,7 +135,7 @@ Arch Linux 能在任何内存空间不小于 512MB 的 [x86_64](https://en.wikip
 
 ```
 
-详情参见 [文件系统](/index.php/File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.88.9B.E5.BB.BA.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F "File systems (简体中文)")。
+详情参见 [文件系统](/index.php/File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#创建文件系统 "File systems (简体中文)")。
 
 ### 挂载分区
 
@@ -260,7 +260,7 @@ zh_TW.UTF-8 UTF-8
  `/etc/locale.conf`  `LANG=*en_US.UTF-8*` 
 **警告:** 不推荐在此设置任何中文 locale，会导致 TTY 乱码。
 
-另外，如果你需要修改 [#键盘布局](#.E9.94.AE.E7.9B.98.E5.B8.83.E5.B1.80)，并想让这个设置持续生效，编辑 [vconsole.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5)，例如：
+另外，如果你需要修改 [#键盘布局](#键盘布局)，并想让这个设置持续生效，编辑 [vconsole.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5)，例如：
 
  `/etc/vconsole.conf`  `KEYMAP=*de-latin1*` 
 
@@ -290,7 +290,7 @@ zh_TW.UTF-8 UTF-8
 
 对新安装的系统，需要再次设置网络。具体请参考 [Network configuration (简体中文)](/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network configuration (简体中文)")。
 
-对于 [无线网络配置](/index.php/Wireless_network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wireless network configuration (简体中文)")，[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 软件包 [iw](https://www.archlinux.org/packages/?name=iw)、[wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant)、[dialog](https://www.archlinux.org/packages/?name=dialog) 以及需要的 [固件软件包](/index.php/Wireless#Installing_driver.2Ffirmware "Wireless")。
+对于 [无线网络配置](/index.php/Wireless_network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wireless network configuration (简体中文)")，[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 软件包 [iw](https://www.archlinux.org/packages/?name=iw)、[wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant)、[dialog](https://www.archlinux.org/packages/?name=dialog) 以及需要的 [固件软件包](/index.php/Wireless#Installing_driver/firmware "Wireless")。
 
 ### Initramfs
 

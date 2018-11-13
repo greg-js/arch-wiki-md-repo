@@ -13,16 +13,16 @@ Artículos relacionados
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Configuración](#Configuraci.C3.B3n)
+*   [1 Instalación](#Instalación)
+*   [2 Configuración](#Configuración)
     *   [2.1 mbox](#mbox)
     *   [2.2 maildir](#maildir)
-    *   [2.3 Configuración final](#Configuraci.C3.B3n_final)
+    *   [2.3 Configuración final](#Configuración_final)
 *   [3 Pruebas](#Pruebas)
-*   [4 Utilización extendida](#Utilizaci.C3.B3n_extendida)
+*   [4 Utilización extendida](#Utilización_extendida)
     *   [4.1 Filtrado adicional](#Filtrado_adicional)
-    *   [4.2 Automatización con cron](#Automatizaci.C3.B3n_con_cron)
-*   [5 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+    *   [4.2 Automatización con cron](#Automatización_con_cron)
+*   [5 Véase también](#Véase_también)
 
 ## Instalación
 

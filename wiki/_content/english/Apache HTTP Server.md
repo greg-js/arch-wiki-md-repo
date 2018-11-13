@@ -14,7 +14,7 @@ This article describes how to set up Apache and how to optionally integrate it w
     *   [2.1 Advanced options](#Advanced_options)
     *   [2.2 User directories](#User_directories)
     *   [2.3 TLS](#TLS)
-        *   [2.3.1 Create a key and (self-signed) certificate](#Create_a_key_and_.28self-signed.29_certificate)
+        *   [2.3.1 Create a key and (self-signed) certificate](#Create_a_key_and_(self-signed)_certificate)
     *   [2.4 Virtual hosts](#Virtual_hosts)
         *   [2.4.1 Managing many virtual hosts](#Managing_many_virtual_hosts)
 *   [3 Extensions](#Extensions)
@@ -26,8 +26,8 @@ This article describes how to set up Apache and how to optionally integrate it w
     *   [3.2 HTTP2](#HTTP2)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Apache Status and Logs](#Apache_Status_and_Logs)
-    *   [4.2 Error: PID file /run/httpd/httpd.pid not readable (yet?) after start](#Error:_PID_file_.2Frun.2Fhttpd.2Fhttpd.pid_not_readable_.28yet.3F.29_after_start)
-    *   [4.3 Apache is running a threaded MPM, but your PHP Module is not compiled to be threadsafe.](#Apache_is_running_a_threaded_MPM.2C_but_your_PHP_Module_is_not_compiled_to_be_threadsafe.)
+    *   [4.2 Error: PID file /run/httpd/httpd.pid not readable (yet?) after start](#Error:_PID_file_/run/httpd/httpd.pid_not_readable_(yet?)_after_start)
+    *   [4.3 Apache is running a threaded MPM, but your PHP Module is not compiled to be threadsafe.](#Apache_is_running_a_threaded_MPM,_but_your_PHP_Module_is_not_compiled_to_be_threadsafe.)
     *   [4.4 AH00534: httpd: Configuration error: No MPM loaded.](#AH00534:_httpd:_Configuration_error:_No_MPM_loaded.)
     *   [4.5 AH00072: make_sock: could not bind to address](#AH00072:_make_sock:_could_not_bind_to_address)
     *   [4.6 Changing the max_execution_time in php.ini has no effect](#Changing_the_max_execution_time_in_php.ini_has_no_effect)
@@ -154,7 +154,7 @@ LoadModule rewrite_module modules/mod_rewrite.so
 
 ```
 
-For TLS, you will need a key and certificate. If you own a public domain, you can use [Let's Encrypt](/index.php/Let%27s_Encrypt "Let's Encrypt") to obtain a certificate for free, otherwise follow [#Create a key and (self-signed) certificate](#Create_a_key_and_.28self-signed.29_certificate).
+For TLS, you will need a key and certificate. If you own a public domain, you can use [Let's Encrypt](/index.php/Let%27s_Encrypt "Let's Encrypt") to obtain a certificate for free, otherwise follow [#Create a key and (self-signed) certificate](#Create_a_key_and_(self-signed)_certificate).
 
 After obtaining a key and certificate, make sure the `SSLCertificateFile` and `SSLCertificateKeyFile` lines in `/etc/httpd/conf/extra/httpd-ssl.conf` point to the key and certificate. If a concatenated chain of CA certificates was also generated, add that filename against `SSLCertificateChainFile`.
 

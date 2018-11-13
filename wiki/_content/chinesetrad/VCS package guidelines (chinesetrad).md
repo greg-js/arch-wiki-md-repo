@@ -1,12 +1,12 @@
 ## Contents
 
-*   [1 用 makepkg 打包 CVS, SVN & GIT 文件](#.E7.94.A8_makepkg_.E6.89.93.E5.8C.85_CVS.2C_SVN_.26_GIT_.E6.96.87.E4.BB.B6)
-    *   [1.1 一些小提示](#.E4.B8.80.E4.BA.9B.E5.B0.8F.E6.8F.90.E7.A4.BA)
-    *   [1.2 CVS PKGBUILD 樣例](#CVS_PKGBUILD_.E6.A8.A3.E4.BE.8B)
-    *   [1.3 SVN PKGBUILD 樣例](#SVN_PKGBUILD_.E6.A8.A3.E4.BE.8B)
-    *   [1.4 GIT PKGBUILD 樣例](#GIT_PKGBUILD_.E6.A8.A3.E4.BE.8B)
-    *   [1.5 versionpkg - a makepkg wrapper for CVS/SVN builds](#versionpkg_-_a_makepkg_wrapper_for_CVS.2FSVN_builds)
-        *   [1.5.1 看看這個腳本!](#.E7.9C.8B.E7.9C.8B.E9.80.99.E5.80.8B.E8.85.B3.E6.9C.AC.21)
+*   [1 用 makepkg 打包 CVS, SVN & GIT 文件](#用_makepkg_打包_CVS,_SVN_&_GIT_文件)
+    *   [1.1 一些小提示](#一些小提示)
+    *   [1.2 CVS PKGBUILD 樣例](#CVS_PKGBUILD_樣例)
+    *   [1.3 SVN PKGBUILD 樣例](#SVN_PKGBUILD_樣例)
+    *   [1.4 GIT PKGBUILD 樣例](#GIT_PKGBUILD_樣例)
+    *   [1.5 versionpkg - a makepkg wrapper for CVS/SVN builds](#versionpkg_-_a_makepkg_wrapper_for_CVS/SVN_builds)
+        *   [1.5.1 看看這個腳本!](#看看這個腳本!)
 
 ## 用 makepkg 打包 CVS, SVN & GIT 文件
 

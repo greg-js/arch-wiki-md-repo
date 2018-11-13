@@ -4,24 +4,24 @@ Evoliucinėje biologijoje, [bendradarbiavimas](https://en.wikipedia.org/wiki/Co-
 
 ## Contents
 
-*   [1 Oficialūs Arch Linux projektai](#Oficial.C5.ABs_Arch_Linux_projektai)
-    *   [1.1 Rašykite forumuose](#Ra.C5.A1ykite_forumuose)
-    *   [1.2 Tobulinkite vikipediją](#Tobulinkite_vikipedij.C4.85)
+*   [1 Oficialūs Arch Linux projektai](#Oficialūs_Arch_Linux_projektai)
+    *   [1.1 Rašykite forumuose](#Rašykite_forumuose)
+    *   [1.2 Tobulinkite vikipediją](#Tobulinkite_vikipediją)
     *   [1.3 Prisijunkite prie IRC](#Prisijunkite_prie_IRC)
-    *   [1.4 Praneškite apie įsidiegtus paketus](#Prane.C5.A1kite_apie_.C4.AFsidiegtus_paketus)
-    *   [1.5 Klaidų pranešimai ir jų taisymas](#Klaid.C5.B3_prane.C5.A1imai_ir_j.C5.B3_taisymas)
+    *   [1.4 Praneškite apie įsidiegtus paketus](#Praneškite_apie_įsidiegtus_paketus)
+    *   [1.5 Klaidų pranešimai ir jų taisymas](#Klaidų_pranešimai_ir_jų_taisymas)
     *   [1.6 Informuokite apie saugumo problemas](#Informuokite_apie_saugumo_problemas)
-    *   [1.7 Padėkite testuoti paketus](#Pad.C4.97kite_testuoti_paketus)
-    *   [1.8 AUR paketų kūrimas ir perėmimas](#AUR_paket.C5.B3_k.C5.ABrimas_ir_per.C4.97mimas)
-    *   [1.9 Oficialūs programinės įrangos projektai](#Oficial.C5.ABs_programin.C4.97s_.C4.AFrangos_projektai)
+    *   [1.7 Padėkite testuoti paketus](#Padėkite_testuoti_paketus)
+    *   [1.8 AUR paketų kūrimas ir perėmimas](#AUR_paketų_kūrimas_ir_perėmimas)
+    *   [1.9 Oficialūs programinės įrangos projektai](#Oficialūs_programinės_įrangos_projektai)
     *   [1.10 Aukokite pinigus](#Aukokite_pinigus)
-*   [2 Bendruomenės projektai](#Bendruomen.C4.97s_projektai)
-    *   [2.1 Grupės](#Grup.C4.97s)
-    *   [2.2 Programinė Įranga](#Programin.C4.97_.C4.AEranga)
-    *   [2.3 ArchWiki naršymas](#ArchWiki_nar.C5.A1ymas)
+*   [2 Bendruomenės projektai](#Bendruomenės_projektai)
+    *   [2.1 Grupės](#Grupės)
+    *   [2.2 Programinė Įranga](#Programinė_Įranga)
+    *   [2.3 ArchWiki naršymas](#ArchWiki_naršymas)
     *   [2.4 Kita](#Kita)
 *   [3 DUK](#DUK)
-    *   [3.1 Kaip galiu tapti Arch programuotoju?](#Kaip_galiu_tapti_Arch_programuotoju.3F)
+    *   [3.1 Kaip galiu tapti Arch programuotoju?](#Kaip_galiu_tapti_Arch_programuotoju?)
     *   [3.2 Kaip tapti patikimu naudotoju](#Kaip_tapti_patikimu_naudotoju)
 *   [4 Kaip menininkas..](#Kaip_menininkas..)
 
@@ -182,7 +182,7 @@ Nauji programuotojai, jau esamų, dažniausiai parenkami, kai padidėja darbo kr
 
 ### Kaip tapti patikimu naudotoju
 
-Skaitykite [Trusted Users#How do I become a TU?](/index.php/Trusted_Users#How_do_I_become_a_TU.3F "Trusted Users").
+Skaitykite [Trusted Users#How do I become a TU?](/index.php/Trusted_Users#How_do_I_become_a_TU? "Trusted Users").
 
 ## Kaip menininkas..
 

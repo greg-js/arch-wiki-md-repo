@@ -7,13 +7,13 @@ Instrukce byly převzaty z [z toho přízpěvku ve fóru](https://bbs.archlinux.
 ## Contents
 
 *   [1 Soubory](#Soubory)
-    *   [1.1 Zálohovací skript](#Z.C3.A1lohovac.C3.AD_skript)
-    *   [1.2 Seznam toho, co zahrnout/nezahrnout](#Seznam_toho.2C_co_zahrnout.2Fnezahrnout)
-*   [2 Záloha](#Z.C3.A1loha)
-*   [3 Nastavení bootování](#Nastaven.C3.AD_bootov.C3.A1n.C3.AD)
-    *   [3.1 Úprava fstab](#.C3.9Aprava_fstab)
-    *   [3.2 Instalace boot manažera](#Instalace_boot_mana.C5.BEera)
-    *   [3.3 Konfigurace boot manažera](#Konfigurace_boot_mana.C5.BEera)
+    *   [1.1 Zálohovací skript](#Zálohovací_skript)
+    *   [1.2 Seznam toho, co zahrnout/nezahrnout](#Seznam_toho,_co_zahrnout/nezahrnout)
+*   [2 Záloha](#Záloha)
+*   [3 Nastavení bootování](#Nastavení_bootování)
+    *   [3.1 Úprava fstab](#Úprava_fstab)
+    *   [3.2 Instalace boot manažera](#Instalace_boot_manažera)
+    *   [3.3 Konfigurace boot manažera](#Konfigurace_boot_manažera)
 
 ## Soubory
 

@@ -44,19 +44,20 @@ Version: ThinkPad X1 Carbon 6th
 
 *   [1 BIOS](#BIOS)
     *   [1.1 Updates](#Updates)
-        *   [1.1.1 Automatic (Linux Vendor Firmware Service)](#Automatic_.28Linux_Vendor_Firmware_Service.29)
+        *   [1.1.1 Automatic (Linux Vendor Firmware Service)](#Automatic_(Linux_Vendor_Firmware_Service))
         *   [1.1.2 Manual](#Manual)
 *   [2 Suspend issues](#Suspend_issues)
     *   [2.1 Enabling S3](#Enabling_S3)
     *   [2.2 Verifying S3](#Verifying_S3)
     *   [2.3 Disabling the memory card reader](#Disabling_the_memory_card_reader)
     *   [2.4 BIOS configurations](#BIOS_configurations)
-*   [3 Power management/Throttling issues](#Power_management.2FThrottling_issues)
+*   [3 Power management/Throttling issues](#Power_management/Throttling_issues)
     *   [3.1 Throttling fix](#Throttling_fix)
 *   [4 Configuration](#Configuration)
     *   [4.1 Keyboard Fn Shortcuts](#Keyboard_Fn_Shortcuts)
     *   [4.2 Special buttons](#Special_buttons)
-    *   [4.3 HDR Display Color Calibration](#HDR_Display_Color_Calibration)
+    *   [4.3 Bind special keys](#Bind_special_keys)
+    *   [4.4 HDR Display Color Calibration](#HDR_Display_Color_Calibration)
 *   [5 TrackPoint and Touchpad issues](#TrackPoint_and_Touchpad_issues)
 *   [6 Full-disk encryption](#Full-disk_encryption)
     *   [6.1 Ramdisk module](#Ramdisk_module)
@@ -85,7 +86,7 @@ The ThinkPad X1 Carbon supports setting a custom splash image at the earliest bo
 
 ## Suspend issues
 
-Since BIOS version 1.30, the X1 Carbon supports S3 mode when enabled in the BIOS menu (choose "Linux" sleep mode instead of the default "Windows 10"). See [#Automatic (Linux Vendor Firmware Service)](#Automatic_.28Linux_Vendor_Firmware_Service.29) for instructions to update and verify your BIOS version.
+Since BIOS version 1.30, the X1 Carbon supports S3 mode when enabled in the BIOS menu (choose "Linux" sleep mode instead of the default "Windows 10"). See [#Automatic (Linux Vendor Firmware Service)](#Automatic_(Linux_Vendor_Firmware_Service)) for instructions to update and verify your BIOS version.
 
 ### Enabling S3
 
@@ -176,6 +177,16 @@ To make the changes take effect:
 
 ```
 
+### Bind special keys
+
+It should be noted that `Fn+F11` which is `KEY_KEYBOARD` and `Fn+F12` which is `KEY_FAVORITES` could be bound respectively with `XF86Launch1` and `XF86Launch2`, as followed :
+
+```
+# bindsym XF86Launch1 [your app]
+# bindsym XF86Launch2 [your app]
+
+```
+
 ### HDR Display Color Calibration
 
 For models with the 1440p HDR display, the default color profile can be corrected under Gnome using an ICC calibration provided by [notebookcheck.net's review](https://www.notebookcheck.net/Lenovo-ThinkPad-X1-Carbon-2018-WQHD-HDR-i7-Laptop-Review.284682.0.html).
@@ -214,7 +225,7 @@ You can verify the profile is active by running `colormgr get-devices`.
 
 **Note:** Some models of the 6th generation X1 Carbon seem to have issues with the TrackPoint and Touchpad working at the same time.
 
-**Note:** The following parameter will only work for kernel versions *after* v4.14\. Fore more information, see [Lenovo ThinkPad X1 Carbon (Gen 5)#Bug: Trackpoint/Trackpad not working](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_5)#Bug:_Trackpoint.2FTrackpad_not_working "Lenovo ThinkPad X1 Carbon (Gen 5)").
+**Note:** The following parameter will only work for kernel versions *after* v4.14\. Fore more information, see [Lenovo ThinkPad X1 Carbon (Gen 5)#Bug: Trackpoint/Trackpad not working](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_5)#Bug:_Trackpoint/Trackpad_not_working "Lenovo ThinkPad X1 Carbon (Gen 5)").
 
 To get the TrackPoint and Touchpad to work at the same time, add `synaptics_intertouch=1` to the `psmouse` [kernel module](/index.php/Kernel_module "Kernel module") options, for example in the cmdline of the [boot loader](/index.php/Boot_loader "Boot loader"):
 

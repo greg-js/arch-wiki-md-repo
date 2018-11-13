@@ -8,12 +8,12 @@
 *   [4 scroobler Last.fm](#scroobler_Last.fm)
     *   [4.1 mocp-scrobbler](#mocp-scrobbler)
 *   [5 Alternatywne interfejsy](#Alternatywne_interfejsy)
-*   [6 Plik usługi dla systemd](#Plik_us.C5.82ugi_dla_systemd)
-*   [7 Rozwiązywanie problemów](#Rozwi.C4.85zywanie_problem.C3.B3w)
-    *   [7.1 MOC nie uruchamia się](#MOC_nie_uruchamia_si.C4.99)
+*   [6 Plik usługi dla systemd](#Plik_usługi_dla_systemd)
+*   [7 Rozwiązywanie problemów](#Rozwiązywanie_problemów)
+    *   [7.1 MOC nie uruchamia się](#MOC_nie_uruchamia_się)
     *   [7.2 Dziwne znaki](#Dziwne_znaki)
     *   [7.3 FATAL_ERROR: Layout1 is malformed](#FATAL_ERROR:_Layout1_is_malformed)
-*   [8 Zobacz także](#Zobacz_tak.C5.BCe)
+*   [8 Zobacz także](#Zobacz_także)
 
 ## Installacja
 

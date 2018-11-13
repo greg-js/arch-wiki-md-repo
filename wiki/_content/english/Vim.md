@@ -22,7 +22,7 @@ Related articles
     *   [5.3 Save the previous runtime state](#Save_the_previous_runtime_state)
     *   [5.4 Save cursor position](#Save_cursor_position)
     *   [5.5 Replace vi command with Vim](#Replace_vi_command_with_Vim)
-    *   [5.6 DOS/Windows carriage returns](#DOS.2FWindows_carriage_returns)
+    *   [5.6 DOS/Windows carriage returns](#DOS/Windows_carriage_returns)
     *   [5.7 Empty space at the bottom of gVim windows](#Empty_space_at_the_bottom_of_gVim_windows)
     *   [5.8 Vim as a pager](#Vim_as_a_pager)
 *   [6 Plugins](#Plugins)

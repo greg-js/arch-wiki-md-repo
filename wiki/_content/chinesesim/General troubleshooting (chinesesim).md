@@ -11,33 +11,33 @@ Related articles
 
 ## Contents
 
-*   [1 常用手段](#.E5.B8.B8.E7.94.A8.E6.89.8B.E6.AE.B5)
-    *   [1.1 注意细节](#.E6.B3.A8.E6.84.8F.E7.BB.86.E8.8A.82)
-    *   [1.2 常见问题 / 检查项](#.E5.B8.B8.E8.A7.81.E9.97.AE.E9.A2.98_.2F_.E6.A3.80.E6.9F.A5.E9.A1.B9)
-    *   [1.3 寻求解决](#.E5.AF.BB.E6.B1.82.E8.A7.A3.E5.86.B3)
-    *   [1.4 额外支援](#.E9.A2.9D.E5.A4.96.E6.94.AF.E6.8F.B4)
-*   [2 系统启动问题](#.E7.B3.BB.E7.BB.9F.E5.90.AF.E5.8A.A8.E9.97.AE.E9.A2.98)
-    *   [2.1 控制台的输出信息](#.E6.8E.A7.E5.88.B6.E5.8F.B0.E7.9A.84.E8.BE.93.E5.87.BA.E4.BF.A1.E6.81.AF)
-        *   [2.1.1 输出流控制](#.E8.BE.93.E5.87.BA.E6.B5.81.E6.8E.A7.E5.88.B6)
-        *   [2.1.2 回滚显示](#.E5.9B.9E.E6.BB.9A.E6.98.BE.E7.A4.BA)
-        *   [2.1.3 Debug 输出](#Debug_.E8.BE.93.E5.87.BA)
-    *   [2.2 故障恢复控制台](#.E6.95.85.E9.9A.9C.E6.81.A2.E5.A4.8D.E6.8E.A7.E5.88.B6.E5.8F.B0)
-    *   [2.3 Intel 显卡造成的黑屏](#Intel_.E6.98.BE.E5.8D.A1.E9.80.A0.E6.88.90.E7.9A.84.E9.BB.91.E5.B1.8F)
-    *   [2.4 加载内核时卡住](#.E5.8A.A0.E8.BD.BD.E5.86.85.E6.A0.B8.E6.97.B6.E5.8D.A1.E4.BD.8F)
-    *   [2.5 调试内核模块](#.E8.B0.83.E8.AF.95.E5.86.85.E6.A0.B8.E6.A8.A1.E5.9D.97)
-    *   [2.6 调试硬件](#.E8.B0.83.E8.AF.95.E7.A1.AC.E4.BB.B6)
-*   [3 内核崩溃 (Kernel panics)](#.E5.86.85.E6.A0.B8.E5.B4.A9.E6.BA.83_.28Kernel_panics.29)
-    *   [3.1 查看 panic 信息](#.E6.9F.A5.E7.9C.8B_panic_.E4.BF.A1.E6.81.AF)
-        *   [3.1.1 示例场景：模块损坏](#.E7.A4.BA.E4.BE.8B.E5.9C.BA.E6.99.AF.EF.BC.9A.E6.A8.A1.E5.9D.97.E6.8D.9F.E5.9D.8F)
-    *   [3.2 重启至 root shell 并修复故障](#.E9.87.8D.E5.90.AF.E8.87.B3_root_shell_.E5.B9.B6.E4.BF.AE.E5.A4.8D.E6.95.85.E9.9A.9C)
-*   [4 软件包管理](#.E8.BD.AF.E4.BB.B6.E5.8C.85.E7.AE.A1.E7.90.86)
+*   [1 常用手段](#常用手段)
+    *   [1.1 注意细节](#注意细节)
+    *   [1.2 常见问题 / 检查项](#常见问题_/_检查项)
+    *   [1.3 寻求解决](#寻求解决)
+    *   [1.4 额外支援](#额外支援)
+*   [2 系统启动问题](#系统启动问题)
+    *   [2.1 控制台的输出信息](#控制台的输出信息)
+        *   [2.1.1 输出流控制](#输出流控制)
+        *   [2.1.2 回滚显示](#回滚显示)
+        *   [2.1.3 Debug 输出](#Debug_输出)
+    *   [2.2 故障恢复控制台](#故障恢复控制台)
+    *   [2.3 Intel 显卡造成的黑屏](#Intel_显卡造成的黑屏)
+    *   [2.4 加载内核时卡住](#加载内核时卡住)
+    *   [2.5 调试内核模块](#调试内核模块)
+    *   [2.6 调试硬件](#调试硬件)
+*   [3 内核崩溃 (Kernel panics)](#内核崩溃_(Kernel_panics))
+    *   [3.1 查看 panic 信息](#查看_panic_信息)
+        *   [3.1.1 示例场景：模块损坏](#示例场景：模块损坏)
+    *   [3.2 重启至 root shell 并修复故障](#重启至_root_shell_并修复故障)
+*   [4 软件包管理](#软件包管理)
 *   [5 fuser](#fuser)
-*   [6 会话权限](#.E4.BC.9A.E8.AF.9D.E6.9D.83.E9.99.90)
-*   [7 错误信息： "error while loading shared libraries"](#.E9.94.99.E8.AF.AF.E4.BF.A1.E6.81.AF.EF.BC.9A_.22error_while_loading_shared_libraries.22)
-*   [8 错误信息： "file: could not find any magic files!"](#.E9.94.99.E8.AF.AF.E4.BF.A1.E6.81.AF.EF.BC.9A_.22file:_could_not_find_any_magic_files.21.22)
-    *   [8.1 错误原因](#.E9.94.99.E8.AF.AF.E5.8E.9F.E5.9B.A0)
-    *   [8.2 解决方法](#.E8.A7.A3.E5.86.B3.E6.96.B9.E6.B3.95)
-*   [9 参阅](#.E5.8F.82.E9.98.85)
+*   [6 会话权限](#会话权限)
+*   [7 错误信息： "error while loading shared libraries"](#错误信息：_"error_while_loading_shared_libraries")
+*   [8 错误信息： "file: could not find any magic files!"](#错误信息：_"file:_could_not_find_any_magic_files!")
+    *   [8.1 错误原因](#错误原因)
+    *   [8.2 解决方法](#解决方法)
+*   [9 参阅](#参阅)
 
 ## 常用手段
 
@@ -65,7 +65,7 @@ Related articles
 
 4.  第一次遇到这些故障的时间，以及从没有故障到故障发生之间你修改了什么内容？
 
-    	如果这种情况发生在某次升级之后，可以列出 **所有已升级的包**。包括 *版本号*，同时粘贴 [pacman](/index.php/Pacman "Pacman").log (`/var/log/pacman.log`) 的升级日志。使用 [systemd](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)") 的 systemctl 工具检查故障程序依赖的 *所有* 服务的运行状态。例如，可以将 [systemd](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#systemd_.E5.9F.BA.E6.9C.AC.E5.B7.A5.E5.85.B7 "Systemd (简体中文)") 命令的输出转发到 `$HOME/issue.log`：
+    	如果这种情况发生在某次升级之后，可以列出 **所有已升级的包**。包括 *版本号*，同时粘贴 [pacman](/index.php/Pacman "Pacman").log (`/var/log/pacman.log`) 的升级日志。使用 [systemd](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)") 的 systemctl 工具检查故障程序依赖的 *所有* 服务的运行状态。例如，可以将 [systemd](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#systemd_基本工具 "Systemd (简体中文)") 命令的输出转发到 `$HOME/issue.log`：
 
     	 `$ systemctl status dhcpcd@eth0.service >> $HOME/issue.log` 
 
@@ -87,7 +87,7 @@ Related articles
 
 如果需要额外支援，[官方论坛](https://bbs.archlinux.org) 或 IRC （irc.freenode.net 上的 #archlinux 频道） 都可以提供帮助。更多频道可参考 [IRC channels](/index.php/IRC_channels "IRC channels")。
 
-**注意:** [技术支持 *仅限于* Arch Linux](/index.php/Code_of_conduct_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BB.85.E6.94.AF.E6.8C.81_Arch_Linux "Code of conduct (简体中文)") 而非 [基于 Arch 的发行版](/index.php/Arch-based_distributions_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch-based distributions (简体中文)")。
+**注意:** [技术支持 *仅限于* Arch Linux](/index.php/Code_of_conduct_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#仅支持_Arch_Linux "Code of conduct (简体中文)") 而非 [基于 Arch 的发行版](/index.php/Arch-based_distributions_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch-based distributions (简体中文)")。
 
 当要求贴出 **完整** 的 输出 / 日志 时，不能仅仅贴出你认为的重要部分。信息来源应该包括：
 
@@ -134,7 +134,7 @@ Related articles
 
 这样不仅会暂停输出，而且会暂停尝试打印到终端的程序，即暂停输出时会阻塞 `write()` 调用。 如果你的 *init* 进程出现冻结，请确保系统控制台没有暂停。
 
-要查看已经显示过的错误信息，参见 [Getty (简体中文)#将引导消息保留在 tty1 上](/index.php/Getty_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.B0.86.E5.BC.95.E5.AF.BC.E6.B6.88.E6.81.AF.E4.BF.9D.E7.95.99.E5.9C.A8_tty1_.E4.B8.8A "Getty (简体中文)")。
+要查看已经显示过的错误信息，参见 [Getty (简体中文)#将引导消息保留在 tty1 上](/index.php/Getty_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#将引导消息保留在_tty1_上 "Getty (简体中文)")。
 
 #### 回滚显示
 
@@ -158,7 +158,7 @@ Related articles
 
 还有很多独立的调试参数，用于在特定的子系统中启用调试，例如 `bootmem_debug` 和 `sched_debug`。更多详细信息请参考 [kernel parameter documentation](https://www.kernel.org/doc/Documentation/admin-guide/kernel-parameters.txt)。
 
-**注意:** 如果无法回滚的足够远以查看所需的启动输出，你需要扩大 [回滚缓冲区](#.E5.9B.9E.E6.BB.9A.E6.98.BE.E7.A4.BA) 的大小。
+**注意:** 如果无法回滚的足够远以查看所需的启动输出，你需要扩大 [回滚缓冲区](#回滚显示) 的大小。
 
 ### 故障恢复控制台
 
@@ -309,7 +309,7 @@ $ loginctl show-session $XDG_SESSION_ID
 
 D-Bus 会话也必须随 X 一起启动。关于这个的更多信息参见 [D-Bus#Starting the user session](/index.php/D-Bus#Starting_the_user_session "D-Bus")。
 
-基本 [polkit](/index.php/Polkit "Polkit") 操作不需要额外的配置。但有一些 polkit 操作需要请求额外的身份认证，即使是本地会话也是如此。为了达成这项工作，必须运行一个 polkit 身份认证组件。更多信息可参见 [polkit (简体中文)#身份认证组件](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.BA.AB.E4.BB.BD.E8.AE.A4.E8.AF.81.E7.BB.84.E4.BB.B6 "Polkit (简体中文)")。
+基本 [polkit](/index.php/Polkit "Polkit") 操作不需要额外的配置。但有一些 polkit 操作需要请求额外的身份认证，即使是本地会话也是如此。为了达成这项工作，必须运行一个 polkit 身份认证组件。更多信息可参见 [polkit (简体中文)#身份认证组件](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#身份认证组件 "Polkit (简体中文)")。
 
 ## 错误信息： "error while loading shared libraries"
 

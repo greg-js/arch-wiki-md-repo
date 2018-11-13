@@ -1,27 +1,27 @@
 ## Contents
 
-*   [1 Úvod](#.C3.9Avod)
+*   [1 Úvod](#Úvod)
 *   [2 Instalace](#Instalace)
     *   [2.1 Instalace Arch Linuxu na LVM](#Instalace_Arch_Linuxu_na_LVM)
-    *   [2.2 Rozdělení disků](#Rozd.C4.9Blen.C3.AD_disk.C5.AF)
-    *   [2.3 Vytvoření fyzických zařízení](#Vytvo.C5.99en.C3.AD_fyzick.C3.BDch_za.C5.99.C3.ADzen.C3.AD)
-    *   [2.4 Vytvoření skupin(y) svazků](#Vytvo.C5.99en.C3.AD_skupin.28y.29_svazk.C5.AF)
-    *   [2.5 Vytvoření logických svazků](#Vytvo.C5.99en.C3.AD_logick.C3.BDch_svazk.C5.AF)
-    *   [2.6 Vytvoření systému souborů a připojení logického svazku](#Vytvo.C5.99en.C3.AD_syst.C3.A9mu_soubor.C5.AF_a_p.C5.99ipojen.C3.AD_logick.C3.A9ho_svazku)
-    *   [2.7 Důležité informace](#D.C5.AFle.C5.BEit.C3.A9_informace)
-*   [3 Nastavení](#Nastaven.C3.AD)
-    *   [3.1 Rozšíření logického svazku](#Roz.C5.A1.C3.AD.C5.99en.C3.AD_logick.C3.A9ho_svazku)
-    *   [3.2 Zmenšení logického svazku](#Zmen.C5.A1en.C3.AD_logick.C3.A9ho_svazku)
-    *   [3.3 Přidání diskového oddílu do skupiny svazků](#P.C5.99id.C3.A1n.C3.AD_diskov.C3.A9ho_odd.C3.ADlu_do_skupiny_svazk.C5.AF)
-    *   [3.4 Odebrání diskového oddílu ze skupiny svazků](#Odebr.C3.A1n.C3.AD_diskov.C3.A9ho_odd.C3.ADlu_ze_skupiny_svazk.C5.AF)
-    *   [3.5 Snímky](#Sn.C3.ADmky)
-        *   [3.5.1 Úvod](#.C3.9Avod_2)
-        *   [3.5.2 Nastavení](#Nastaven.C3.AD_2)
-*   [4 Řešení problémů](#.C5.98e.C5.A1en.C3.AD_probl.C3.A9m.C5.AF)
-    *   [4.1 LVM příkazy nefungují](#LVM_p.C5.99.C3.ADkazy_nefunguj.C3.AD)
-    *   [4.2 Výpis nastavení přípojných bodů systému souborů nezobrazuje logické svazky](#V.C3.BDpis_nastaven.C3.AD_p.C5.99.C3.ADpojn.C3.BDch_bod.C5.AF_syst.C3.A9mu_soubor.C5.AF_nezobrazuje_logick.C3.A9_svazky)
+    *   [2.2 Rozdělení disků](#Rozdělení_disků)
+    *   [2.3 Vytvoření fyzických zařízení](#Vytvoření_fyzických_zařízení)
+    *   [2.4 Vytvoření skupin(y) svazků](#Vytvoření_skupin(y)_svazků)
+    *   [2.5 Vytvoření logických svazků](#Vytvoření_logických_svazků)
+    *   [2.6 Vytvoření systému souborů a připojení logického svazku](#Vytvoření_systému_souborů_a_připojení_logického_svazku)
+    *   [2.7 Důležité informace](#Důležité_informace)
+*   [3 Nastavení](#Nastavení)
+    *   [3.1 Rozšíření logického svazku](#Rozšíření_logického_svazku)
+    *   [3.2 Zmenšení logického svazku](#Zmenšení_logického_svazku)
+    *   [3.3 Přidání diskového oddílu do skupiny svazků](#Přidání_diskového_oddílu_do_skupiny_svazků)
+    *   [3.4 Odebrání diskového oddílu ze skupiny svazků](#Odebrání_diskového_oddílu_ze_skupiny_svazků)
+    *   [3.5 Snímky](#Snímky)
+        *   [3.5.1 Úvod](#Úvod_2)
+        *   [3.5.2 Nastavení](#Nastavení_2)
+*   [4 Řešení problémů](#Řešení_problémů)
+    *   [4.1 LVM příkazy nefungují](#LVM_příkazy_nefungují)
+    *   [4.2 Výpis nastavení přípojných bodů systému souborů nezobrazuje logické svazky](#Výpis_nastavení_přípojných_bodů_systému_souborů_nezobrazuje_logické_svazky)
 *   [5 Tipy a triky](#Tipy_a_triky)
-*   [6 Další zdroje](#Dal.C5.A1.C3.AD_zdroje)
+*   [6 Další zdroje](#Další_zdroje)
 
 # Úvod
 
@@ -83,7 +83,7 @@ Nejprve je potřeba načíst příslušný jaderný modul:
 
 ```
 
-Pokud už máte Arch Linux nainstalovaný a pouze chcete přidat či vyzkoušet LVM, přeskočte na [rozdělení disků](#Rozd.C4.9Blen.C3.AD_disk.C5.AF).
+Pokud už máte Arch Linux nainstalovaný a pouze chcete přidat či vyzkoušet LVM, přeskočte na [rozdělení disků](#Rozdělení_disků).
 
 #### Instalace Arch Linuxu na LVM
 
@@ -186,7 +186,7 @@ Nyní můžete na logických svazcích vytvořit systémy souborů. Poté už je
 
 ```
 
-Pokud instalujete Arch Linux, spusťte /arch/setup, vyberte volbu *Prepare Hard Drive* a pak přímo krok 3 *Set Filesystem Mountpoints* a ***přečtěte si sekci [Důležité informace](#D.C5.AFle.C5.BEit.C3.A9_informace) před tím, než budete s instalací systému pokračovat!***
+Pokud instalujete Arch Linux, spusťte /arch/setup, vyberte volbu *Prepare Hard Drive* a pak přímo krok 3 *Set Filesystem Mountpoints* a ***přečtěte si sekci [Důležité informace](#Důležité_informace) před tím, než budete s instalací systému pokračovat!***
 
 ### Důležité informace
 

@@ -8,7 +8,7 @@ There are many posts on the forums about different firewall apps and scripts so 
 
 *   [1 iptables](#iptables)
 *   [2 iptables front-ends](#iptables_front-ends)
-    *   [2.1 Arno's Firewall](#Arno.27s_Firewall)
+    *   [2.1 Arno's Firewall](#Arno's_Firewall)
     *   [2.2 ferm](#ferm)
     *   [2.3 Firehol](#Firehol)
     *   [2.4 Firetable](#Firetable)
@@ -17,7 +17,7 @@ There are many posts on the forums about different firewall apps and scripts so 
     *   [2.7 uruk](#uruk)
     *   [2.8 ufw](#ufw)
     *   [2.9 Vuurmuur](#Vuurmuur)
-*   [3 iptables grafička sučelja](#iptables_grafi.C4.8Dka_su.C4.8Delja)
+*   [3 iptables grafička sučelja](#iptables_grafička_sučelja)
     *   [3.1 Firestarter](#Firestarter)
     *   [3.2 Guarddog](#Guarddog)
     *   [3.3 Gufw](#Gufw)

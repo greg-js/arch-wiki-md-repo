@@ -9,7 +9,7 @@ Ci sono molti post nei forum riguardo alle differenti applicazioni firewall e sc
 ## Contents
 
 *   [1 iptables front-ends](#iptables_front-ends)
-    *   [1.1 Arno's Firewall](#Arno.27s_Firewall)
+    *   [1.1 Arno's Firewall](#Arno's_Firewall)
     *   [1.2 ferm](#ferm)
     *   [1.3 Firehol](#Firehol)
     *   [1.4 Firetable](#Firetable)
@@ -18,7 +18,7 @@ Ci sono molti post nei forum riguardo alle differenti applicazioni firewall e sc
     *   [1.7 Vuurmuur](#Vuurmuur)
 *   [2 iptables GUIs](#iptables_GUIs)
     *   [2.1 Firestarter](#Firestarter)
-    *   [2.2 Uncomplicated firewall (ufw) front-end](#Uncomplicated_firewall_.28ufw.29_front-end)
+    *   [2.2 Uncomplicated firewall (ufw) front-end](#Uncomplicated_firewall_(ufw)_front-end)
     *   [2.3 KMyFirewall](#KMyFirewall)
 *   [3 Firewall Builder](#Firewall_Builder)
 *   [4 Altri](#Altri)

@@ -13,7 +13,7 @@
     *   [2.2 Generate a certificate signing request](#Generate_a_certificate_signing_request)
     *   [2.3 Generate a self-signed certificate](#Generate_a_self-signed_certificate)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 "bad decrypt" while decrypting](#.22bad_decrypt.22_while_decrypting)
+    *   [3.1 "bad decrypt" while decrypting](#"bad_decrypt"_while_decrypting)
 *   [4 See also](#See_also)
 
 ## Configuration

@@ -5,8 +5,8 @@ Este artículo es una traducción de [Mbrola](/index.php/Mbrola "Mbrola"), revis
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-    *   [1.1 Añadir voces](#A.C3.B1adir_voces)
+*   [1 Instalación](#Instalación)
+    *   [1.1 Añadir voces](#Añadir_voces)
 *   [2 Prueba](#Prueba)
 *   [3 Instalar un programa de texto a fonemas](#Instalar_un_programa_de_texto_a_fonemas)
     *   [3.1 LLiaphon](#LLiaphon)

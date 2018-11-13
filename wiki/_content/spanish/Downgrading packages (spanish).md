@@ -10,23 +10,23 @@ Antes de desactualizar uno o varios paquetes, considere por qué desea hacerlo. 
 
 *   La desactualización de un paquete puede requerir que sus dependencias también sean desactualizadas. Cuando el número de paquetes a desactualizar es grande, considere usar una instantánea. Ver [Cómo restaurar todos los paquetes a una fecha específica.](/index.php/Arch_Linux_Archive#How_to_restore_all_packages_to_a_specific_date "Arch Linux Archive").
 *   Tenga cuidado con los cambios en los archivos de configuración y scripts. Por ahora, *pacman* se encargará de esto por nosotros, siempre y cuando no eludamos sus medidas de seguridad.
-*   Si la desactualización implica un cambio de nombre, toda dependencia puede necesitar ser desactualizada o también [reconstruida](/index.php/Frequently_asked_questions_(Espa%C3%B1ol)#.C2.BFQu.C3.A9_pasa_si_ejecuto_una_actualizaci.C3.B3n_completa_del_sistema_y_hay_una_actualizaci.C3.B3n_de_una_biblioteca_compartida.2C_pero_no_para_las_aplicaciones_que_dependen_de_ella.3F "Frequently asked questions (Español)") .
+*   Si la desactualización implica un cambio de nombre, toda dependencia puede necesitar ser desactualizada o también [reconstruida](/index.php/Frequently_asked_questions_(Espa%C3%B1ol)#¿Qué_pasa_si_ejecuto_una_actualización_completa_del_sistema_y_hay_una_actualización_de_una_biblioteca_compartida,_pero_no_para_las_aplicaciones_que_dependen_de_ella? "Frequently asked questions (Español)") .
 
 ## Contents
 
-*   [1 Volver a una versión anterior del paquete](#Volver_a_una_versi.C3.B3n_anterior_del_paquete)
-    *   [1.1 Usando la caché de pacman](#Usando_la_cach.C3.A9_de_pacman)
+*   [1 Volver a una versión anterior del paquete](#Volver_a_una_versión_anterior_del_paquete)
+    *   [1.1 Usando la caché de pacman](#Usando_la_caché_de_pacman)
     *   [1.2 Desactualizando el kernel](#Desactualizando_el_kernel)
     *   [1.3 Archivo Arch Linux](#Archivo_Arch_Linux)
-    *   [1.4 Reconstrucción del paquete](#Reconstrucci.C3.B3n_del_paquete)
-    *   [1.5 Automatización](#Automatizaci.C3.B3n)
-*   [2 Volver de [testing]](#Volver_de_.5Btesting.5D)
+    *   [1.4 Reconstrucción del paquete](#Reconstrucción_del_paquete)
+    *   [1.5 Automatización](#Automatización)
+*   [2 Volver de [testing]](#Volver_de_[testing])
 
 ## Volver a una versión anterior del paquete
 
 ### Usando la caché de pacman
 
-Si un paquete se instaló anteriormente, y la [caché de pacman](/index.php/Pacman_(Espa%C3%B1ol)#Limpiar_la_memoria_cach.C3.A9_de_los_paquetes "Pacman (Español)") no se ha limpiado, instale una versión anterior de `/var/cache/pacman/pkg/`.
+Si un paquete se instaló anteriormente, y la [caché de pacman](/index.php/Pacman_(Espa%C3%B1ol)#Limpiar_la_memoria_caché_de_los_paquetes "Pacman (Español)") no se ha limpiado, instale una versión anterior de `/var/cache/pacman/pkg/`.
 
 Este proceso eliminará el paquete actual e instalará la versión anterior. Los cambios de dependencia serán gestionados, pero [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") no gestionará conflictos de versión. Si una librería u otro paquete necesita ser desactualizado con los paquetes, por favor tenga en cuenta que usted también tendrá que desactualizarlo.
 
@@ -35,11 +35,11 @@ Este proceso eliminará el paquete actual e instalará la versión anterior. Los
 
 ```
 
-Una vez revertido el paquete, añádalo temporalmente al archivo [IgnorePkg section](/index.php/Pacman_(Espa%C3%B1ol)#Evitar_la_actualizaci.C3.B3n_de_un_paquete "Pacman (Español)") de `pacman.conf`, hasta que se resuelva el problema con el paquete actualizado.
+Una vez revertido el paquete, añádalo temporalmente al archivo [IgnorePkg section](/index.php/Pacman_(Espa%C3%B1ol)#Evitar_la_actualización_de_un_paquete "Pacman (Español)") de `pacman.conf`, hasta que se resuelva el problema con el paquete actualizado.
 
 ### Desactualizando el kernel
 
-En caso de problemas con un nuevo kernel, los paquetes de Linux pueden ser desactualizados a los últimos que funcionen [#Usando la caché de pacman](#Usando_la_cach.C3.A9_de_pacman). Vaya al directorio `/var/cache/pacman/pkg` y desactualice al menos [linux](https://www.archlinux.org/packages/?name=linux), [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) y cualquier módulo del núcleo. Por ejemplo:
+En caso de problemas con un nuevo kernel, los paquetes de Linux pueden ser desactualizados a los últimos que funcionen [#Usando la caché de pacman](#Usando_la_caché_de_pacman). Vaya al directorio `/var/cache/pacman/pkg` y desactualice al menos [linux](https://www.archlinux.org/packages/?name=linux), [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) y cualquier módulo del núcleo. Por ejemplo:
 
 ```
 # pacman -U linux-4.15.8-1-x86_64.pkg.tar.xz linux-headers-4.15.8-1-x86_64.pkg.tar.xz virtualbox-host-modules-arch-5.2.8-4-x86_64.pkg.tar.xz
@@ -58,7 +58,7 @@ Si el paquete no está disponible, busque el [PKGBUILD](/index.php/PKGBUILD_(Esp
 
 Para los paquetes de los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"), recupere el *PKGBUILD* con [ABS](/index.php/Arch_Build_System_(Espa%C3%B1ol) "Arch Build System (Español)") y cambie la versión del software. Alternativamente, busque el paquete en el sitio web [Paquetes](https://www.archlinux.org/packages), haga clic en "Ver cambios" y navegue hasta la versión deseada. Los archivos están disponibles a través de una instantánea `.tar.gz` y a través de la vista *Árbol*.
 
-Consulte también [Revisión de un paquete antiguo](/index.php/Arch_Build_System_(Espa%C3%B1ol)#Revisi.C3.B3n_de_un_paquete_antiguo "Arch Build System (Español)").
+Consulte también [Revisión de un paquete antiguo](/index.php/Arch_Build_System_(Espa%C3%B1ol)#Revisión_de_un_paquete_antiguo "Arch Build System (Español)").
 
 Los paquetes antiguos de AUR pueden construirse revisando un compromiso antiguo en el repositorio de GIT del paquete AUR. Para los PKGBUILD anteriores a 2015 AUR3 PKGBUILDs, consulte los [Arch User Repository#Git repositories for AUR3 packages](/index.php/Arch_User_Repository#Git_repositories_for_AUR3_packages "Arch User Repository").
 

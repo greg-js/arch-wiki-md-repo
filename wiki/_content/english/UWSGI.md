@@ -11,7 +11,7 @@ There are alternatives written in Python such as [gunicorn](https://www.archlinu
         *   [2.1.2 PHP](#PHP)
     *   [2.2 Web server](#Web_server)
         *   [2.2.1 Nginx](#Nginx)
-        *   [2.2.2 Nginx (in chroot)](#Nginx_.28in_chroot.29)
+        *   [2.2.2 Nginx (in chroot)](#Nginx_(in_chroot))
 *   [3 Running uWSGI](#Running_uWSGI)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Socket activation](#Socket_activation)

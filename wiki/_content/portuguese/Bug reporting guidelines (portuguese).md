@@ -12,23 +12,23 @@ Veja também: [Como relatar erros de forma efetiva](https://www.chiark.greenend.
 
 *   [1 Antes de relatar](#Antes_de_relatar)
     *   [1.1 Pesquise por duplicados](#Pesquise_por_duplicados)
-    *   [1.2 Upstream ou Arch?](#Upstream_ou_Arch.3F)
-    *   [1.3 Erro ou recurso?](#Erro_ou_recurso.3F)
-        *   [1.3.1 Motivos para não ser um erro](#Motivos_para_n.C3.A3o_ser_um_erro)
-        *   [1.3.2 Motivos para não ser um recurso](#Motivos_para_n.C3.A3o_ser_um_recurso)
-    *   [1.4 Colete informações úteis](#Colete_informa.C3.A7.C3.B5es_.C3.BAteis)
-*   [2 Abrindo um relatório](#Abrindo_um_relat.C3.B3rio)
+    *   [1.2 Upstream ou Arch?](#Upstream_ou_Arch?)
+    *   [1.3 Erro ou recurso?](#Erro_ou_recurso?)
+        *   [1.3.1 Motivos para não ser um erro](#Motivos_para_não_ser_um_erro)
+        *   [1.3.2 Motivos para não ser um recurso](#Motivos_para_não_ser_um_recurso)
+    *   [1.4 Colete informações úteis](#Colete_informações_úteis)
+*   [2 Abrindo um relatório](#Abrindo_um_relatório)
     *   [2.1 Criando uma conta](#Criando_uma_conta)
     *   [2.2 Projetos](#Projetos)
     *   [2.3 Resumo](#Resumo)
     *   [2.4 Severidade](#Severidade)
-    *   [2.5 Incluindo informações relevantes](#Incluindo_informa.C3.A7.C3.B5es_relevantes)
-*   [3 Acompanhando relatórios](#Acompanhando_relat.C3.B3rios)
+    *   [2.5 Incluindo informações relevantes](#Incluindo_informações_relevantes)
+*   [3 Acompanhando relatórios](#Acompanhando_relatórios)
     *   [3.1 Votando e monitorando](#Votando_e_monitorando)
-    *   [3.2 Respondendo solicitações de informações adicionais](#Respondendo_solicita.C3.A7.C3.B5es_de_informa.C3.A7.C3.B5es_adicionais)
-    *   [3.3 Atualizando o relatório de erro quando surgir uma nova versão do software relatado](#Atualizando_o_relat.C3.B3rio_de_erro_quando_surgir_uma_nova_vers.C3.A3o_do_software_relatado)
+    *   [3.2 Respondendo solicitações de informações adicionais](#Respondendo_solicitações_de_informações_adicionais)
+    *   [3.3 Atualizando o relatório de erro quando surgir uma nova versão do software relatado](#Atualizando_o_relatório_de_erro_quando_surgir_uma_nova_versão_do_software_relatado)
     *   [3.4 Fechando quando resolvido](#Fechando_quando_resolvido)
-    *   [3.5 Mais sobre status de relatórios](#Mais_sobre_status_de_relat.C3.B3rios)
+    *   [3.5 Mais sobre status de relatórios](#Mais_sobre_status_de_relatórios)
 
 ## Antes de relatar
 
@@ -38,7 +38,7 @@ Os passos a seguir vão lhe guiar na preparação de seu relatório de erro ou r
 
 ### Pesquise por duplicados
 
-Se você encontrar um problema ou desejar um novo recurso, existe uma grande probabilidade de que alguém já tenha esse problema ou ideia. Se assim for, um relatório de erro apropriado já pode existir. Nesse caso, não crie um relatório duplicado; veja [#Acompanhando relatórios](#Acompanhando_relat.C3.B3rios).
+Se você encontrar um problema ou desejar um novo recurso, existe uma grande probabilidade de que alguém já tenha esse problema ou ideia. Se assim for, um relatório de erro apropriado já pode existir. Nesse caso, não crie um relatório duplicado; veja [#Acompanhando relatórios](#Acompanhando_relatórios).
 
 Pesquise detalhadamente as informações existentes, incluindo:
 
@@ -63,7 +63,7 @@ Então, pelo que o Arch Linux é responsável?
 *   [Projetos do Arch Linux](https://projects.archlinux.org/): [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)"), [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"), [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") e sites do Arch. Se você tiver dúvidas sobre se o projeto pertence ao Arch ou obtenha estas informações do pacote (`pacman -Qi *nome_pacote*` ou usando o site) e veja o URL do upstream.
 *   **Empacotamento**: O empacotamento basicamente consiste em buscar o código fonte do upstream, compilando-o com as opções relevantes, certificando-se de que ele será instalado corretamente em um sistema Arch e verificando se a funcionalidade principal funciona. O empacotamento no Arch não consiste em adicionar novas funcionalidades ou patches para erros existentes; este é o trabalho do desenvolvedor upstream.
 
-Se um erro/recurso não está sob a responsabilidade do Arch, relate-o ao upstream. Veja também [#Motivos para não ser um erro](#Motivos_para_n.C3.A3o_ser_um_erro).
+Se um erro/recurso não está sob a responsabilidade do Arch, relate-o ao upstream. Veja também [#Motivos para não ser um erro](#Motivos_para_não_ser_um_erro).
 
 ### Erro ou recurso?
 
@@ -163,7 +163,7 @@ Aqui está um uso geral de severidades:
 
 ### Incluindo informações relevantes
 
-Esta é talvez uma das partes mais difíceis de relatar erros. Você tem que escolher na seção [#Colete informações úteis](#Colete_informa.C3.A7.C3.B5es_.C3.BAteis) quais informações você irá adicionar ao seu relatório de erros. Isso vai depender de qual é o seu problema. Se você não sabe quais são as informações relevantes, não seja tímido: **é melhor fornecer mais informações do que é necessário a não ter o suficiente**.
+Esta é talvez uma das partes mais difíceis de relatar erros. Você tem que escolher na seção [#Colete informações úteis](#Colete_informações_úteis) quais informações você irá adicionar ao seu relatório de erros. Isso vai depender de qual é o seu problema. Se você não sabe quais são as informações relevantes, não seja tímido: **é melhor fornecer mais informações do que é necessário a não ter o suficiente**.
 
 Um bom tutorial sobre relatório de erro pode ser localizado em [[1]](https://www.chiark.greenend.org.uk/~sgtatham/bugs.html).
 
@@ -209,6 +209,6 @@ Durante sua vida, um relatório de erro passa por vários status:
 *   **Researching** *(Pesquisando)* - Alguém está procurando uma solução. Este status é **raramente usado no Arch** e é melhor assim. O status de *pesquisa* pode fazer as pessoas acreditarem que não precisam se interessar pelo relatório de erros. Mas geralmente precisamos de mais de uma pessoa para consertar um erro: ter várias pessoas experientes em um relatório ajuda muito.
 *   **Waiting on Response** *(Aguardando resposta)* e **Requires testing** *(Requer teste)* - Aquele que relatou o erro foi solicitado a fornecer mais informações ou a tentar uma solução proposta, mas ele ainda não deu um feedback. Esses status são raramente usados no Arch e deveriam ser usados com mais frequência. No entanto, é importante que você **monitore o relatório** (consulte a seção [#Votando e monitorando](#Votando_e_monitorando)), já que desenvolvedores ou caçadores de erros costumam fazer perguntas nos comentários.
 *   **A task closure has been requested** *(Um fechamento de tarefa foi requisitado)* - Este não é exatamente um status, mas você pode encontrar alguns relatórios de erros com essa notificação. Isso indica que alguém solicitou um fechamento para o relatório. Um motivo é adicionado à solicitação na maioria das vezes. Cabe ao desenvolvedor responsável decidir se ele aceitará o encerramento ou não.
-*   **Closed** *(Fechado)* - Ou esse não é um relatório válido (veja [#Motivos para não ser um erro](#Motivos_para_n.C3.A3o_ser_um_erro)) ou uma solução foi encontrada e foi lançada.
+*   **Closed** *(Fechado)* - Ou esse não é um relatório válido (veja [#Motivos para não ser um erro](#Motivos_para_não_ser_um_erro)) ou uma solução foi encontrada e foi lançada.
 
 Algumas pessoas (desenvolvedores, TUs ...) são responsáveis por despachar os erros e alterar seu status.

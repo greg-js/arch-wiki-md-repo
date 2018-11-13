@@ -14,7 +14,7 @@ Os grupos de pacotes mais importantes são:
 
 ## Diferença para um pacote meta
 
-Um *pacote meta*, muitas vezes (embora nem sempre) intitulado com o sufixo "-meta", fornece funcionalidade semelhante a um grupo de pacotes, pois permite que vários pacotes relacionados sejam instalados ou desinstalados simultaneamente. Pacotes Meta podem ser instalados como qualquer outro pacote (veja [Pacman (Português)#Instalando pacotes específicos](/index.php/Pacman_(Portugu%C3%AAs)#Instalando_pacotes_espec.C3.ADficos "Pacman (Português)")). A única diferença entre um pacote meta e um pacote regular é que um pacote meta é vazio e existe apenas para vincular pacotes relacionados por meio de dependências.
+Um *pacote meta*, muitas vezes (embora nem sempre) intitulado com o sufixo "-meta", fornece funcionalidade semelhante a um grupo de pacotes, pois permite que vários pacotes relacionados sejam instalados ou desinstalados simultaneamente. Pacotes Meta podem ser instalados como qualquer outro pacote (veja [Pacman (Português)#Instalando pacotes específicos](/index.php/Pacman_(Portugu%C3%AAs)#Instalando_pacotes_específicos "Pacman (Português)")). A única diferença entre um pacote meta e um pacote regular é que um pacote meta é vazio e existe apenas para vincular pacotes relacionados por meio de dependências.
 
 A vantagem de um pacote meta, comparado a um grupo, é que quaisquer novos pacotes membro serão instalados quando o pacote meta for atualizado com um novo conjunto de dependências. Isso está em contraste com um grupo no qual os novos membros do grupo não serão instalados automaticamente. A desvantagem de um pacote meta é que ele não é tão flexível quanto um grupo; você pode escolher quais membros do grupo você deseja instalar, mas você não pode escolher quais dependências do pacote meta você deseja instalar. Da mesma forma, você pode desinstalar membros do grupo sem precisar remover o grupo inteiro. No entanto, você não pode remover as dependências do pacote meta sem ter que desinstalar o próprio pacote meta.
 
@@ -22,6 +22,6 @@ A vantagem de um pacote meta, comparado a um grupo, é que quaisquer novos pacot
 
 *   [Lista de todos os grupos de pacotes](https://www.archlinux.org/groups/)
 *   Exemplos:
-    *   [GNOME (Português)#Instalação](/index.php/GNOME_(Portugu%C3%AAs)#Instala.C3.A7.C3.A3o "GNOME (Português)")
+    *   [GNOME (Português)#Instalação](/index.php/GNOME_(Portugu%C3%AAs)#Instalação "GNOME (Português)")
     *   [KDE#Installation](/index.php/KDE#Installation "KDE")
     *   [i3#Installation](/index.php/I3#Installation "I3")

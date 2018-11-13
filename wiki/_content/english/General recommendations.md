@@ -59,7 +59,7 @@ This document is an annotated index of popular articles and important informatio
     *   [10.3 Printing](#Printing)
 *   [11 Appearance](#Appearance)
     *   [11.1 Fonts](#Fonts)
-    *   [11.2 GTK+ and Qt themes](#GTK.2B_and_Qt_themes)
+    *   [11.2 GTK+ and Qt themes](#GTK+_and_Qt_themes)
 *   [12 Console improvements](#Console_improvements)
     *   [12.1 Tab-completion enhancements](#Tab-completion_enhancements)
     *   [12.2 Aliases](#Aliases)

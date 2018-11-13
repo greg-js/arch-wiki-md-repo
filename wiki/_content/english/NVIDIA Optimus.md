@@ -29,11 +29,11 @@ These options are explained in detail below.
     *   [2.2 Checking 3D](#Checking_3D)
     *   [2.3 Further Information](#Further_Information)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Tearing/Broken VSync](#Tearing.2FBroken_VSync)
-    *   [3.2 Failed to initialize the NVIDIA GPU at PCI:1:0:0 (GPU fallen off the bus / RmInitAdapter failed!)](#Failed_to_initialize_the_NVIDIA_GPU_at_PCI:1:0:0_.28GPU_fallen_off_the_bus_.2F_RmInitAdapter_failed.21.29)
-    *   [3.3 Resolution, screen scan wrong. EDID errors in Xorg.log](#Resolution.2C_screen_scan_wrong._EDID_errors_in_Xorg.log)
-    *   [3.4 Lockup issue (lspci hangs)](#Lockup_issue_.28lspci_hangs.29)
-    *   [3.5 No screens found on a laptop/NVIDIA Optimus](#No_screens_found_on_a_laptop.2FNVIDIA_Optimus)
+    *   [3.1 Tearing/Broken VSync](#Tearing/Broken_VSync)
+    *   [3.2 Failed to initialize the NVIDIA GPU at PCI:1:0:0 (GPU fallen off the bus / RmInitAdapter failed!)](#Failed_to_initialize_the_NVIDIA_GPU_at_PCI:1:0:0_(GPU_fallen_off_the_bus_/_RmInitAdapter_failed!))
+    *   [3.3 Resolution, screen scan wrong. EDID errors in Xorg.log](#Resolution,_screen_scan_wrong._EDID_errors_in_Xorg.log)
+    *   [3.4 Lockup issue (lspci hangs)](#Lockup_issue_(lspci_hangs))
+    *   [3.5 No screens found on a laptop/NVIDIA Optimus](#No_screens_found_on_a_laptop/NVIDIA_Optimus)
 *   [4 Using nouveau](#Using_nouveau)
 *   [5 Using Bumblebee](#Using_Bumblebee)
 *   [6 Using nvidia-xrun](#Using_nvidia-xrun)
@@ -59,7 +59,7 @@ $ lspci | egrep 'VGA|3D'
 
 The PCI address is the first 7 characters of the line that mentions NVIDIA. It will look something like `01:00.0`. In the `xorg.conf`, you will need to format it as `#:#:#`; e.g. `01:00.0` would be formatted as `1:0:0`.
 
-**Note:** On some setups this setup breaks automatic detection of the values of the display by the nvidia driver through the EDID file. As a work-around see [#Resolution, screen scan wrong. EDID errors in Xorg.log](#Resolution.2C_screen_scan_wrong._EDID_errors_in_Xorg.log).
+**Note:** On some setups this setup breaks automatic detection of the values of the display by the nvidia driver through the EDID file. As a work-around see [#Resolution, screen scan wrong. EDID errors in Xorg.log](#Resolution,_screen_scan_wrong._EDID_errors_in_Xorg.log).
 
 If X.Org X server version 1.17.2 or higher is installed ([[2]](http://us.download.nvidia.com/XFree86/Linux-x86/358.16/README/randr14.html))
 

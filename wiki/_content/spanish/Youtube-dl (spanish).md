@@ -10,16 +10,16 @@ Artículos relacionados
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Utilización](#Utilizaci.C3.B3n)
-    *   [2.1 Selección de formato](#Selecci.C3.B3n_de_formato)
+*   [1 Instalación](#Instalación)
+*   [2 Utilización](#Utilización)
+    *   [2.1 Selección de formato](#Selección_de_formato)
     *   [2.2 Extraer audio](#Extraer_audio)
-*   [3 Configuración](#Configuraci.C3.B3n)
+*   [3 Configuración](#Configuración)
 *   [4 Consejos y trucos](#Consejos_y_trucos)
     *   [4.1 Aumento de las velocidades de descarga](#Aumento_de_las_velocidades_de_descarga)
-    *   [4.2 Recortar (descarga parcial)](#Recortar_.28descarga_parcial.29)
+    *   [4.2 Recortar (descarga parcial)](#Recortar_(descarga_parcial))
     *   [4.3 URL del portapapeles](#URL_del_portapapeles)
-*   [5 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [5 Véase también](#Véase_también)
 
 ## Instalación
 

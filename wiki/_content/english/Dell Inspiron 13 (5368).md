@@ -26,8 +26,8 @@ See the [Laptop/Dell](/index.php/Laptop/Dell "Laptop/Dell") chart for informatio
     *   [3.4 Touchpad](#Touchpad)
     *   [3.5 Touchscreen](#Touchscreen)
     *   [3.6 Wireless](#Wireless)
-    *   [3.7 HDMI/Monitor](#HDMI.2FMonitor)
-    *   [3.8 USB, SD card slot, HDMI, webcam](#USB.2C_SD_card_slot.2C_HDMI.2C_webcam)
+    *   [3.7 HDMI/Monitor](#HDMI/Monitor)
+    *   [3.8 USB, SD card slot, HDMI, webcam](#USB,_SD_card_slot,_HDMI,_webcam)
 
 ## Hardware Details
 

@@ -16,12 +16,12 @@ Este mecanismo difiere de [Lxc-systemd](/index.php/Lxc-systemd "Lxc-systemd") o 
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
 *   [2 Ejemplos](#Ejemplos)
     *   [2.1 Crear e iniciar Arch Linux en un contenedor](#Crear_e_iniciar_Arch_Linux_en_un_contenedor)
-        *   [2.1.1 Crear un Arch Linux i686 dentro de un anfitrión x86_64](#Crear_un_Arch_Linux_i686_dentro_de_un_anfitri.C3.B3n_x86_64)
+        *   [2.1.1 Crear un Arch Linux i686 dentro de un anfitrión x86_64](#Crear_un_Arch_Linux_i686_dentro_de_un_anfitrión_x86_64)
     *   [2.2 Crear un ambiente Debian o Ubuntu](#Crear_un_ambiente_Debian_o_Ubuntu)
-    *   [2.3 Activar inicio automático de los contenedores](#Activar_inicio_autom.C3.A1tico_de_los_contenedores)
+    *   [2.3 Activar inicio automático de los contenedores](#Activar_inicio_automático_de_los_contenedores)
 *   [3 Manejo de contenedores](#Manejo_de_contenedores)
     *   [3.1 machinectl](#machinectl)
     *   [3.2 Utilidades de systemd](#Utilidades_de_systemd)
@@ -34,7 +34,7 @@ Este mecanismo difiere de [Lxc-systemd](/index.php/Lxc-systemd "Lxc-systemd") o 
 
 ### Crear e iniciar Arch Linux en un contenedor
 
-En primer lugar [instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts).
+En primer lugar [instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts).
 
 Cree un directorio para mantener el contenedor. En este ejemplo se usará `~/MyContainer`.
 
@@ -45,7 +45,7 @@ Use *pacstrap* para instalar un sistema básico de arch dentro del contenedor. C
 
 ```
 
-**Sugerencia:** El parametro `-i` **omitira** auto confirmación en la selección de paquetes. Ya que no es necesario instalar el kernel en el contenedor, lo puede remover de la lista de selección para ahorrar espacio. Vea [pacman#Utilización](/index.php/Pacman_(Espa%C3%B1ol)#Utilizaci.C3.B3n "Pacman (Español)").
+**Sugerencia:** El parametro `-i` **omitira** auto confirmación en la selección de paquetes. Ya que no es necesario instalar el kernel en el contenedor, lo puede remover de la lista de selección para ahorrar espacio. Vea [pacman#Utilización](/index.php/Pacman_(Espa%C3%B1ol)#Utilización "Pacman (Español)").
 
 **Nota:** El paquete [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) requerido por [linux](https://www.archlinux.org/packages/?name=linux), que esta incluido en el grupo de paquetes [base](https://www.archlinux.org/groups/x86_64/base/) no es necesario para ejecutar el contenedor. Este causa algunos problemas con `systemd-tmpfiles-setup.service` durante el arranque del contenedor con `systemd-nspawn`. Es posible instalar el grupo [base](https://www.archlinux.org/groups/x86_64/base/) excluyendo el paquete [linux](https://www.archlinux.org/packages/?name=linux) y sus dependecias al construir el contenedor con `# pacstrap -i -c -d ~/MyContainer base --ignore linux [additional pkgs/groups]`. El parámetro `--ignore` es pasado a [pacman](https://www.archlinux.org/packages/?name=pacman). Vea [FS#46591](https://bugs.archlinux.org/task/46591) para más información.
 
@@ -86,7 +86,7 @@ Para arrancar el sistema i686 resultante como una instancia de systemd-nspawn, e
 
 ### Crear un ambiente Debian o Ubuntu
 
-[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [debootstrap](https://www.archlinux.org/packages/?name=debootstrap), [gnupg1](https://aur.archlinux.org/packages/gnupg1/), y uno de estos paquetes: [debian-archive-keyring](https://www.archlinux.org/packages/?name=debian-archive-keyring) o [ubuntu-keyring](https://www.archlinux.org/packages/?name=ubuntu-keyring) (obviamente instale el llavero del distro que quiere).
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") [debootstrap](https://www.archlinux.org/packages/?name=debootstrap), [gnupg1](https://aur.archlinux.org/packages/gnupg1/), y uno de estos paquetes: [debian-archive-keyring](https://www.archlinux.org/packages/?name=debian-archive-keyring) o [ubuntu-keyring](https://www.archlinux.org/packages/?name=ubuntu-keyring) (obviamente instale el llavero del distro que quiere).
 
 **Nota:** *systemd-nspawn* requiere que el sistema operativo dentro del contenedor ejecute systemd como PID 1 y que *systemd-nspawn* este instalado en el contenedor. Esto quiere decir que Ubuntu antes de la version 15.04 no funcionaran, y configuraciones extras para cambiar de upstart a systemd son necesarias. También asegurese que el paquete `systemd-container` esta instalado en el contenedor.
 

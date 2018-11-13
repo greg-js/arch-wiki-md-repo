@@ -37,25 +37,25 @@ Nextcloud is a fork of ownCloud. For differences between the two, see [wikipedia
         *   [6.1.1 Calendar](#Calendar)
         *   [6.1.2 Contacts](#Contacts)
         *   [6.1.3 Mounting files with davfs2](#Mounting_files_with_davfs2)
-    *   [6.2 Mounting files in GNOME Files (Nautilus)](#Mounting_files_in_GNOME_Files_.28Nautilus.29)
+    *   [6.2 Mounting files in GNOME Files (Nautilus)](#Mounting_files_in_GNOME_Files_(Nautilus))
     *   [6.3 Android](#Android)
     *   [6.4 iOS](#iOS)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Environment variables not available](#Environment_variables_not_available)
     *   [7.2 Self-signed certificate not accepted](#Self-signed_certificate_not_accepted)
     *   [7.3 Self-signed certificate for Android devices](#Self-signed_certificate_for_Android_devices)
-    *   [7.4 Cannot write into config directory!](#Cannot_write_into_config_directory.21)
+    *   [7.4 Cannot write into config directory!](#Cannot_write_into_config_directory!)
     *   [7.5 Cannot create data directory](#Cannot_create_data_directory)
     *   [7.6 CSync failed to find a specific file.](#CSync_failed_to_find_a_specific_file.)
     *   [7.7 Seeing white page after login](#Seeing_white_page_after_login)
     *   [7.8 GUI sync client fails to connect](#GUI_sync_client_fails_to_connect)
-    *   [7.9 Some files upload, but give an error 'Integrity constraint violation...'](#Some_files_upload.2C_but_give_an_error_.27Integrity_constraint_violation....27)
-    *   [7.10 "Cannot write into apps directory"](#.22Cannot_write_into_apps_directory.22)
+    *   [7.9 Some files upload, but give an error 'Integrity constraint violation...'](#Some_files_upload,_but_give_an_error_'Integrity_constraint_violation...')
+    *   [7.10 "Cannot write into apps directory"](#"Cannot_write_into_apps_directory")
     *   [7.11 Installed apps get blocked because of MIME type error](#Installed_apps_get_blocked_because_of_MIME_type_error)
     *   [7.12 Security warnings even though the recommended settings have been included in nginx.conf](#Security_warnings_even_though_the_recommended_settings_have_been_included_in_nginx.conf)
-    *   [7.13 "Reading from keychain failed with error: 'No keychain service available'"](#.22Reading_from_keychain_failed_with_error:_.27No_keychain_service_available.27.22)
-    *   [7.14 FolderSync: "Method Not Allowed"](#FolderSync:_.22Method_Not_Allowed.22)
-    *   [7.15 Nextcloud 13 : "Unable to load dynamic library 'mcrypt.so"](#Nextcloud_13_:_.22Unable_to_load_dynamic_library_.27mcrypt.so.22)
+    *   [7.13 "Reading from keychain failed with error: 'No keychain service available'"](#"Reading_from_keychain_failed_with_error:_'No_keychain_service_available'")
+    *   [7.14 FolderSync: "Method Not Allowed"](#FolderSync:_"Method_Not_Allowed")
+    *   [7.15 Nextcloud 13 : "Unable to load dynamic library 'mcrypt.so"](#Nextcloud_13_:_"Unable_to_load_dynamic_library_'mcrypt.so")
 *   [8 Tips and tricks](#Tips_and_tricks)
     *   [8.1 Running ownCloud in a subdirectory](#Running_ownCloud_in_a_subdirectory)
     *   [8.2 Docker](#Docker)
@@ -116,7 +116,7 @@ Some apps (*News* for example) require the `iconv` extension, if you wish to use
 
 Depending on which database backend will be used:
 
-*   For [MySQL](/index.php/MySQL "MySQL"), see [PHP#MySQL/MariaDB](/index.php/PHP#MySQL.2FMariaDB "PHP").
+*   For [MySQL](/index.php/MySQL "MySQL"), see [PHP#MySQL/MariaDB](/index.php/PHP#MySQL/MariaDB "PHP").
 *   For [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"), see [PHP#PostgreSQL](/index.php/PHP#PostgreSQL "PHP").
 *   For [SQLite](/index.php/SQLite "SQLite"), see [PHP#Sqlite](/index.php/PHP#Sqlite "PHP").
 
@@ -157,7 +157,7 @@ $ sudo -u postgres createdb -O nextcloud nextcloud
 
 ### Web server setup
 
-**Warning:** It is recommended to use TLS/SSL (HTTPS) over plain HTTP, see [Apache#TLS](/index.php/Apache#TLS "Apache") or [Nginx#TLS/SSL](/index.php/Nginx#TLS.2FSSL "Nginx") for examples and implement this in the examples given below.
+**Warning:** It is recommended to use TLS/SSL (HTTPS) over plain HTTP, see [Apache#TLS](/index.php/Apache#TLS "Apache") or [Nginx#TLS](/index.php/Nginx#TLS "Nginx") for examples and implement this in the examples given below.
 
 Depending on which [web server](/index.php/Web_server "Web server") you are using, further setup is required, indicated below.
 
@@ -518,7 +518,7 @@ You can also create an entry for this in `/etc/fstab`
 
 **Tip:** In order to allow automount you can also store your username (and password if you like) in a file as described in [davfs2#Storing credentials](/index.php/Davfs2#Storing_credentials "Davfs2").
 
-**Note:** If creating/copying files is not possible, while the same operations work on directories, see [davfs2#Creating/copying files not possible and/or freezes](/index.php/Davfs2#Creating.2Fcopying_files_not_possible_and.2For_freezes "Davfs2").
+**Note:** If creating/copying files is not possible, while the same operations work on directories, see [davfs2#Creating/copying files not possible and/or freezes](/index.php/Davfs2#Creating/copying_files_not_possible_and/or_freezes "Davfs2").
 
 ### Mounting files in GNOME Files (Nautilus)
 

@@ -12,13 +12,13 @@ El controlador de entrada X.Org soporta la mayoría de [Xorg#dispositivos de ent
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Configuración](#Configuraci.C3.B3n)
+*   [1 Instalación](#Instalación)
+*   [2 Configuración](#Configuración)
     *   [2.1 Via xinput](#Via_xinput)
-    *   [2.2 Herramientas gráficas](#Herramientas_gr.C3.A1ficas)
+    *   [2.2 Herramientas gráficas](#Herramientas_gráficas)
 *   [3 Consejos y trucos](#Consejos_y_trucos)
     *   [3.1 Re-configurar botones](#Re-configurar_botones)
-    *   [3.2 Inhabilitar paneles táctiles](#Inhabilitar_paneles_t.C3.A1ctiles)
+    *   [3.2 Inhabilitar paneles táctiles](#Inhabilitar_paneles_táctiles)
 
 ## Instalación
 

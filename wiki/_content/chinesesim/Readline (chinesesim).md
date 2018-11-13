@@ -7,7 +7,7 @@
 ## Contents
 
 *   [1 Command-line editing](#Command-line_editing)
-*   [2 历史](#.E5.8E.86.E5.8F.B2)
+*   [2 历史](#历史)
     *   [2.1 History search](#History_search)
         *   [2.1.1 Avoid duplicates](#Avoid_duplicates)
         *   [2.1.2 Avoid whitespaces](#Avoid_whitespaces)

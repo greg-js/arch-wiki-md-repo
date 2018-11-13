@@ -6,30 +6,30 @@
 
 ## Contents
 
-*   [1 其他](#.E5.85.B6.E4.BB.96)
-    *   [1.1 工作環境](#.E5.B7.A5.E4.BD.9C.E7.92.B0.E5.A2.83)
+*   [1 其他](#其他)
+    *   [1.1 工作環境](#工作環境)
         *   [1.1.1 Bootsplash](#Bootsplash)
-        *   [1.1.2 指令 shell](#.E6.8C.87.E4.BB.A4_shell)
-        *   [1.1.3 終端機多工器](#.E7.B5.82.E7.AB.AF.E6.A9.9F.E5.A4.9A.E5.B7.A5.E5.99.A8)
-        *   [1.1.4 桌面環境](#.E6.A1.8C.E9.9D.A2.E7.92.B0.E5.A2.83)
-        *   [1.1.5 視窗管理員](#.E8.A6.96.E7.AA.97.E7.AE.A1.E7.90.86.E5.93.A1)
-            *   [1.1.5.1 終端機](#.E7.B5.82.E7.AB.AF.E6.A9.9F)
-            *   [1.1.5.2 圖形](#.E5.9C.96.E5.BD.A2)
-        *   [1.1.6 虛擬桌面分頁器](#.E8.99.9B.E6.93.AC.E6.A1.8C.E9.9D.A2.E5.88.86.E9.A0.81.E5.99.A8)
-        *   [1.1.7 支援應用程式](#.E6.94.AF.E6.8F.B4.E6.87.89.E7.94.A8.E7.A8.8B.E5.BC.8F)
-            *   [1.1.7.1 登入管理員](#.E7.99.BB.E5.85.A5.E7.AE.A1.E7.90.86.E5.93.A1)
-            *   [1.1.7.2 任務欄 / 面板 / Dock](#.E4.BB.BB.E5.8B.99.E6.AC.84_.2F_.E9.9D.A2.E6.9D.BF_.2F_Dock)
-            *   [1.1.7.3 應用程式啟動器](#.E6.87.89.E7.94.A8.E7.A8.8B.E5.BC.8F.E5.95.9F.E5.8B.95.E5.99.A8)
-            *   [1.1.7.4 登出對話框](#.E7.99.BB.E5.87.BA.E5.B0.8D.E8.A9.B1.E6.A1.86)
-    *   [1.2 整合開發環境](#.E6.95.B4.E5.90.88.E9.96.8B.E7.99.BC.E7.92.B0.E5.A2.83)
-    *   [1.3 財務](#.E8.B2.A1.E5.8B.99)
-    *   [1.4 時間管理](#.E6.99.82.E9.96.93.E7.AE.A1.E7.90.86)
-        *   [1.4.1 終端機](#.E7.B5.82.E7.AB.AF.E6.A9.9F_2)
-        *   [1.4.2 圖形](#.E5.9C.96.E5.BD.A2_2)
-    *   [1.5 模擬器](#.E6.A8.A1.E6.93.AC.E5.99.A8)
-        *   [1.5.1 終端機](#.E7.B5.82.E7.AB.AF.E6.A9.9F_3)
-        *   [1.5.2 其他](#.E5.85.B6.E4.BB.96_2)
-    *   [1.6 業餘無線電](#.E6.A5.AD.E9.A4.98.E7.84.A1.E7.B7.9A.E9.9B.BB)
+        *   [1.1.2 指令 shell](#指令_shell)
+        *   [1.1.3 終端機多工器](#終端機多工器)
+        *   [1.1.4 桌面環境](#桌面環境)
+        *   [1.1.5 視窗管理員](#視窗管理員)
+            *   [1.1.5.1 終端機](#終端機)
+            *   [1.1.5.2 圖形](#圖形)
+        *   [1.1.6 虛擬桌面分頁器](#虛擬桌面分頁器)
+        *   [1.1.7 支援應用程式](#支援應用程式)
+            *   [1.1.7.1 登入管理員](#登入管理員)
+            *   [1.1.7.2 任務欄 / 面板 / Dock](#任務欄_/_面板_/_Dock)
+            *   [1.1.7.3 應用程式啟動器](#應用程式啟動器)
+            *   [1.1.7.4 登出對話框](#登出對話框)
+    *   [1.2 整合開發環境](#整合開發環境)
+    *   [1.3 財務](#財務)
+    *   [1.4 時間管理](#時間管理)
+        *   [1.4.1 終端機](#終端機_2)
+        *   [1.4.2 圖形](#圖形_2)
+    *   [1.5 模擬器](#模擬器)
+        *   [1.5.1 終端機](#終端機_3)
+        *   [1.5.2 其他](#其他_2)
+    *   [1.6 業餘無線電](#業餘無線電)
 
 ## 其他
 
@@ -85,7 +85,7 @@ See the main article: [Desktop environment#List of desktop environments](/index.
 
 	[http://sourceforge.net/projects/twin/](http://sourceforge.net/projects/twin/) || [twin](https://www.archlinux.org/packages/?name=twin)
 
-*   see also [#Terminal_multiplexers](#.E7.B5.82.E7.AB.AF.E6.A9.9F.E5.A4.9A.E5.B7.A5.E5.99.A8) which offer some of the functions of window managers for the console
+*   see also [#Terminal_multiplexers](#終端機多工器) which offer some of the functions of window managers for the console
 
 ##### 圖形
 
@@ -117,7 +117,7 @@ See also [Wikipedia:Pager (GUI)](https://en.wikipedia.org/wiki/Pager_(GUI) "wiki
 
 ##### 登入管理員
 
-參閱主文：[顯示管理員#顯示管理員清單](/index.php/Display_manager_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87)#.E9.A1.AF.E7.A4.BA.E7.AE.A1.E7.90.86.E5.93.A1.E6.B8.85.E5.96.AE "Display manager (正體中文)").
+參閱主文：[顯示管理員#顯示管理員清單](/index.php/Display_manager_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87)#顯示管理員清單 "Display manager (正體中文)").
 
 ##### 任務欄 / 面板 / Dock
 

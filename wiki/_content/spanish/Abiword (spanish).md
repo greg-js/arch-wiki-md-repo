@@ -5,13 +5,13 @@ Este artículo es una traducción de [Abiword](/index.php/Abiword "Abiword"), re
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
 *   [2 Plantillas](#Plantillas)
-*   [3 Comprobación de gramática](#Comprobaci.C3.B3n_de_gram.C3.A1tica)
+*   [3 Comprobación de gramática](#Comprobación_de_gramática)
 *   [4 Cambiar los atajos de teclado](#Cambiar_los_atajos_de_teclado)
 *   [5 Fuentes LaTeX](#Fuentes_LaTeX)
-*   [6 Solución de problemas](#Soluci.C3.B3n_de_problemas)
-    *   [6.1 Solución para el cuelgue del diálogo de impresión](#Soluci.C3.B3n_para_el_cuelgue_del_di.C3.A1logo_de_impresi.C3.B3n)
+*   [6 Solución de problemas](#Solución_de_problemas)
+    *   [6.1 Solución para el cuelgue del diálogo de impresión](#Solución_para_el_cuelgue_del_diálogo_de_impresión)
 
 ## Instalación
 

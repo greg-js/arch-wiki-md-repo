@@ -1,13 +1,13 @@
 ## Contents
 
-*   [1 Καλώς ήλθατε](#.CE.9A.CE.B1.CE.BB.CF.8E.CF.82_.CE.AE.CE.BB.CE.B8.CE.B1.CF.84.CE.B5)
-    *   [1.1 Οργάνωση της μετάφρασης](#.CE.9F.CF.81.CE.B3.CE.AC.CE.BD.CF.89.CF.83.CE.B7_.CF.84.CE.B7.CF.82_.CE.BC.CE.B5.CF.84.CE.AC.CF.86.CF.81.CE.B1.CF.83.CE.B7.CF.82)
-    *   [1.2 Άμεση επικοινωνία (IRC)](#.CE.86.CE.BC.CE.B5.CF.83.CE.B7_.CE.B5.CF.80.CE.B9.CE.BA.CE.BF.CE.B9.CE.BD.CF.89.CE.BD.CE.AF.CE.B1_.28IRC.29)
-    *   [1.3 Επικοινωνία μέσω Arch Linux Forum](#.CE.95.CF.80.CE.B9.CE.BA.CE.BF.CE.B9.CE.BD.CF.89.CE.BD.CE.AF.CE.B1_.CE.BC.CE.AD.CF.83.CF.89_Arch_Linux_Forum)
-*   [2 Μεταφράσεις](#.CE.9C.CE.B5.CF.84.CE.B1.CF.86.CF.81.CE.AC.CF.83.CE.B5.CE.B9.CF.82)
-    *   [2.1 Ενότητες που μεταφράζονται](#.CE.95.CE.BD.CF.8C.CF.84.CE.B7.CF.84.CE.B5.CF.82_.CF.80.CE.BF.CF.85_.CE.BC.CE.B5.CF.84.CE.B1.CF.86.CF.81.CE.AC.CE.B6.CE.BF.CE.BD.CF.84.CE.B1.CE.B9)
-    *   [2.2 Ενότητες που έχουν μεταφραστεί](#.CE.95.CE.BD.CF.8C.CF.84.CE.B7.CF.84.CE.B5.CF.82_.CF.80.CE.BF.CF.85_.CE.AD.CF.87.CE.BF.CF.85.CE.BD_.CE.BC.CE.B5.CF.84.CE.B1.CF.86.CF.81.CE.B1.CF.83.CF.84.CE.B5.CE.AF)
-    *   [2.3 Templates που έχουν μεταφραστεί](#Templates_.CF.80.CE.BF.CF.85_.CE.AD.CF.87.CE.BF.CF.85.CE.BD_.CE.BC.CE.B5.CF.84.CE.B1.CF.86.CF.81.CE.B1.CF.83.CF.84.CE.B5.CE.AF)
+*   [1 Καλώς ήλθατε](#Καλώς_ήλθατε)
+    *   [1.1 Οργάνωση της μετάφρασης](#Οργάνωση_της_μετάφρασης)
+    *   [1.2 Άμεση επικοινωνία (IRC)](#Άμεση_επικοινωνία_(IRC))
+    *   [1.3 Επικοινωνία μέσω Arch Linux Forum](#Επικοινωνία_μέσω_Arch_Linux_Forum)
+*   [2 Μεταφράσεις](#Μεταφράσεις)
+    *   [2.1 Ενότητες που μεταφράζονται](#Ενότητες_που_μεταφράζονται)
+    *   [2.2 Ενότητες που έχουν μεταφραστεί](#Ενότητες_που_έχουν_μεταφραστεί)
+    *   [2.3 Templates που έχουν μεταφραστεί](#Templates_που_έχουν_μεταφραστεί)
 
 ## Καλώς ήλθατε
 

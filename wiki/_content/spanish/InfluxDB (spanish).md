@@ -10,10 +10,10 @@ InfluxDB es una base de datos de series de tiempo construida desde cero para man
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Configuración](#Configuraci.C3.B3n)
-*   [3 Utilización](#Utilizaci.C3.B3n)
-*   [4 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [1 Instalación](#Instalación)
+*   [2 Configuración](#Configuración)
+*   [3 Utilización](#Utilización)
+*   [4 Véase también](#Véase_también)
 
 ## Instalación
 

@@ -11,7 +11,7 @@ This article describes how to access an [iSCSI](/index.php/ISCSI "ISCSI") target
     *   [3.4 Login to available targets](#Login_to_available_targets)
     *   [3.5 Info](#Info)
     *   [3.6 Online resize of volumes](#Online_resize_of_volumes)
-*   [4 Tips & Troubleshooting](#Tips_.26_Troubleshooting)
+*   [4 Tips & Troubleshooting](#Tips_&_Troubleshooting)
 
 ## Installation
 

@@ -16,7 +16,7 @@ From the [WireGuard](https://www.wireguard.com/) project homepage:
     *   [2.6 Example configuration for systemd-networkd](#Example_configuration_for_systemd-networkd)
 *   [3 Setup a VPN server](#Setup_a_VPN_server)
     *   [3.1 Server](#Server)
-    *   [3.2 Client (tunnel all traffic)](#Client_.28tunnel_all_traffic.29)
+    *   [3.2 Client (tunnel all traffic)](#Client_(tunnel_all_traffic))
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Routes are periodically reset](#Routes_are_periodically_reset)
     *   [4.2 Connection loss with NetworkManager](#Connection_loss_with_NetworkManager)

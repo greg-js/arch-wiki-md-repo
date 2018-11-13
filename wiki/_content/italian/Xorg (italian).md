@@ -33,26 +33,26 @@ Da [http://www.x.org/wiki/](http://www.x.org/wiki/):
 *   [5 Impostazioni del monitor](#Impostazioni_del_monitor)
     *   [5.1 Come iniziare](#Come_iniziare)
     *   [5.2 Monitor multipli](#Monitor_multipli)
-        *   [5.2.1 Con più di una scheda grafica](#Con_pi.C3.B9_di_una_scheda_grafica)
+        *   [5.2.1 Con più di una scheda grafica](#Con_più_di_una_scheda_grafica)
     *   [5.3 Dimensione dello schermo e DPI](#Dimensione_dello_schermo_e_DPI)
         *   [5.3.1 Impostazione manuale DPI](#Impostazione_manuale_DPI)
     *   [5.4 DPMS](#DPMS)
 *   [6 Composite](#Composite)
 *   [7 Consigli utili](#Consigli_utili)
     *   [7.1 Modifiche allo script di avvio di X](#Modifiche_allo_script_di_avvio_di_X)
-    *   [7.2 Sessioni di X una dentro l'altra](#Sessioni_di_X_una_dentro_l.27altra)
+    *   [7.2 Sessioni di X una dentro l'altra](#Sessioni_di_X_una_dentro_l'altra)
     *   [7.3 Avvio programmi con interfaccia grafica in remoto](#Avvio_programmi_con_interfaccia_grafica_in_remoto)
     *   [7.4 Disattivazione e attivazione a richiesta delle sorgenti di ingresso](#Disattivazione_e_attivazione_a_richiesta_delle_sorgenti_di_ingresso)
 *   [8 Risoluzione dei problemi](#Risoluzione_dei_problemi)
     *   [8.1 Problemi comuni](#Problemi_comuni)
     *   [8.2 Ctrl destro non funziona con tastiera oss](#Ctrl_destro_non_funziona_con_tastiera_oss)
-    *   [8.3 Errore avviando il client X con "su"](#Errore_avviando_il_client_X_con_.22su.22)
-    *   [8.4 Programmi che richiedono "font '(null)'"](#Programmi_che_richiedono_.22font_.27.28null.29.27.22)
-    *   [8.5 Problemi con la modalità Frame-buffer](#Problemi_con_la_modalit.C3.A0_Frame-buffer)
+    *   [8.3 Errore avviando il client X con "su"](#Errore_avviando_il_client_X_con_"su")
+    *   [8.4 Programmi che richiedono "font '(null)'"](#Programmi_che_richiedono_"font_'(null)'")
+    *   [8.5 Problemi con la modalità Frame-buffer](#Problemi_con_la_modalità_Frame-buffer)
     *   [8.6 DRI smette di funzionare con le schede Matrox](#DRI_smette_di_funzionare_con_le_schede_Matrox)
     *   [8.7 Ripristino: disattivare Xorg prima della schermata di login](#Ripristino:_disattivare_Xorg_prima_della_schermata_di_login)
-    *   [8.8 Errore di X all'avvio : Inizializzazione della tastiera fallito](#Errore_di_X_all.27avvio_:_Inizializzazione_della_tastiera_fallito)
-    *   [8.9 Schermo nero, nessun protocollo specificato .., Risorsa temporaneamente non disponibile per tutti o alcuni utenti](#Schermo_nero.2C_nessun_protocollo_specificato_...2C_Risorsa_temporaneamente_non_disponibile_per_tutti_o_alcuni_utenti)
+    *   [8.8 Errore di X all'avvio : Inizializzazione della tastiera fallito](#Errore_di_X_all'avvio_:_Inizializzazione_della_tastiera_fallito)
+    *   [8.9 Schermo nero, nessun protocollo specificato .., Risorsa temporaneamente non disponibile per tutti o alcuni utenti](#Schermo_nero,_nessun_protocollo_specificato_..,_Risorsa_temporaneamente_non_disponibile_per_tutti_o_alcuni_utenti)
 
 ## Installazione
 
@@ -234,8 +234,8 @@ Si veda l'articolo principale [Multihead](/index.php/Multihead "Multihead") per 
 
 *   [NVIDIA (Italiano)#Monitor multipli](/index.php/NVIDIA_(Italiano)#Monitor_multipli "NVIDIA (Italiano)").
 *   [Nouveau (Italiano)#Dual Head](/index.php/Nouveau_(Italiano)#Dual_Head "Nouveau (Italiano)")
-*   [AMD Catalyst (Italiano)#Double Screen (Dual Head / Dual Screen / Xinerama)](/index.php/AMD_Catalyst_(Italiano)#Double_Screen_.28Dual_Head_.2F_Dual_Screen_.2F_Xinerama.29 "AMD Catalyst (Italiano)")
-*   [ATI (Italiano)#Configurare la modalità Dual Head](/index.php/ATI_(Italiano)#Configurare_la_modalit.C3.A0_Dual_Head "ATI (Italiano)")
+*   [AMD Catalyst (Italiano)#Double Screen (Dual Head / Dual Screen / Xinerama)](/index.php/AMD_Catalyst_(Italiano)#Double_Screen_(Dual_Head_/_Dual_Screen_/_Xinerama) "AMD Catalyst (Italiano)")
+*   [ATI (Italiano)#Configurare la modalità Dual Head](/index.php/ATI_(Italiano)#Configurare_la_modalità_Dual_Head "ATI (Italiano)")
 
 #### Con più di una scheda grafica
 
@@ -551,7 +551,7 @@ alla sezione Device che fa riferimento alla vostra scheda video nello `xorg.conf
 
 Se Xorg è impostato per avviarsi automaticamente e per qualche motivo è necessario evitare che si avvii prima che si presenti la schermata di login o che si entri nella propria sessione grafica (se ad esempio `rc.conf` è erroneamente configurato e Xorg non riconosce il mouse o la tastiera), è possibile disattivare il suo caricamento in due modi.
 
-*   Cambia destinazione predefinita per rescue.target. Vedere [systemd (Italiano)#Cambiare il target predefinito all'avvio](/index.php/Systemd_(Italiano)#Cambiare_il_target_predefinito_all.27avvio "Systemd (Italiano)").
+*   Cambia destinazione predefinita per rescue.target. Vedere [systemd (Italiano)#Cambiare il target predefinito all'avvio](/index.php/Systemd_(Italiano)#Cambiare_il_target_predefinito_all'avvio "Systemd (Italiano)").
 *   If you have not only a faulty system that makes Xorg unusable, but you have also set the GRUB menu wait time to zero, or cannot otherwise use GRUB to prevent Xorg from booting, you can use the Arch Linux live CD. Boot up the live CD and log in as root. You need a mount point, such as `/mnt`, and you need to know the name of the partition you want to mount.
 
 Potete utilizzare il comando,

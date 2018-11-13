@@ -11,7 +11,7 @@
     *   [4.1 What is the command to start WPS Office](#What_is_the_command_to_start_WPS_Office)
     *   [4.2 formula can not display normally](#formula_can_not_display_normally)
     *   [4.3 Microsoft Office file in KDE is recognized as Zip](#Microsoft_Office_file_in_KDE_is_recognized_as_Zip)
-    *   [4.4 Fcitx imput method framework can't input on WPS](#Fcitx_imput_method_framework_can.27t_input_on_WPS)
+    *   [4.4 Fcitx imput method framework can't input on WPS](#Fcitx_imput_method_framework_can't_input_on_WPS)
 *   [5 See also](#See_also)
 
 ## installation

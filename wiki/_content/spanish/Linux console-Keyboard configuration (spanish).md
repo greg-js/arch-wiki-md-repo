@@ -9,10 +9,10 @@ Las asignaciones del teclado (keymaps) para la [consola virtual](https://en.wiki
 
 ## Contents
 
-*   [1 Visualizar la configuración del teclado](#Visualizar_la_configuraci.C3.B3n_del_teclado)
-*   [2 Configurar la distribución del teclado](#Configurar_la_distribuci.C3.B3n_del_teclado)
-    *   [2.1 Configuración permanente](#Configuraci.C3.B3n_permanente)
-    *   [2.2 Configuración temporal](#Configuraci.C3.B3n_temporal)
+*   [1 Visualizar la configuración del teclado](#Visualizar_la_configuración_del_teclado)
+*   [2 Configurar la distribución del teclado](#Configurar_la_distribución_del_teclado)
+    *   [2.1 Configuración permanente](#Configuración_permanente)
+    *   [2.2 Configuración temporal](#Configuración_temporal)
 *   [3 Otras opciones](#Otras_opciones)
     *   [3.1 Cambiar el tipo de letra de la consola](#Cambiar_el_tipo_de_letra_de_la_consola)
     *   [3.2 Ajustar el retardo y la velocidad de typematic](#Ajustar_el_retardo_y_la_velocidad_de_typematic)

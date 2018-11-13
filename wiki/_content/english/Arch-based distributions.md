@@ -5,7 +5,7 @@ Related articles
 *   [TalkingArch](/index.php/TalkingArch "TalkingArch")
 *   [DeveloperWiki:TrademarkPolicy](/index.php/DeveloperWiki:TrademarkPolicy "DeveloperWiki:TrademarkPolicy")
 
-**Warning:** Arch-based distributions are **not** supported by the Arch community or developers. See [Code of conduct#Arch Linux distribution support *only*](/index.php/Code_of_conduct#Arch_Linux_distribution_support_.2Aonly.2A "Code of conduct")
+**Warning:** Arch-based distributions are **not** supported by the Arch community or developers. See [Code of conduct#Arch Linux distribution support *only*](/index.php/Code_of_conduct#Arch_Linux_distribution_support_*only* "Code of conduct")
 
 **Note:** Please use the discussion page to suggest edits to this article: [Talk:Arch-based distributions](/index.php/Talk:Arch-based_distributions "Talk:Arch-based distributions").
 

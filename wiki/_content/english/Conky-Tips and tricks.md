@@ -19,7 +19,7 @@ Go back to [Conky](/index.php/Conky "Conky").
         *   [9.1.1 method 1](#method_1)
         *   [9.1.2 method 2](#method_2)
         *   [9.1.3 method 3](#method_3)
-        *   [9.1.4 IMAP + SSL using Perl](#IMAP_.2B_SSL_using_Perl)
+        *   [9.1.4 IMAP + SSL using Perl](#IMAP_+_SSL_using_Perl)
         *   [9.1.5 IMAP using PHP](#IMAP_using_PHP)
 *   [10 Show graphic of active network interface](#Show_graphic_of_active_network_interface)
 *   [11 User-contributed configuration examples](#User-contributed_configuration_examples)

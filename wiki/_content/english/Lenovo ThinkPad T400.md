@@ -15,11 +15,11 @@ Installation instructions for the Lenovo ThinkPad T400.
         *   [3.2.2 Realtek chipset](#Realtek_chipset)
     *   [3.3 Modem](#Modem)
     *   [3.4 Bluetooth](#Bluetooth)
-*   [4 Graphics/Xorg Configuration](#Graphics.2FXorg_Configuration)
+*   [4 Graphics/Xorg Configuration](#Graphics/Xorg_Configuration)
     *   [4.1 Integrated Graphics](#Integrated_Graphics)
     *   [4.2 Discrete Graphics](#Discrete_Graphics)
     *   [4.3 Switchable Graphics](#Switchable_Graphics)
-    *   [4.4 Synaptic, UltraNav](#Synaptic.2C_UltraNav)
+    *   [4.4 Synaptic, UltraNav](#Synaptic,_UltraNav)
 *   [5 Audio](#Audio)
 *   [6 Multimedia Keys](#Multimedia_Keys)
     *   [6.1 Mute](#Mute)
@@ -116,7 +116,7 @@ See [ATI](/index.php/ATI "ATI") for the open-source driver or [AMD Catalyst](/in
 
 ### Switchable Graphics
 
-[ATI#Hybrid graphics/AMD Dynamic Switchable Graphics](/index.php/ATI#Hybrid_graphics.2FAMD_Dynamic_Switchable_Graphics "ATI")
+[ATI#Hybrid graphics/AMD Dynamic Switchable Graphics](/index.php/ATI#Hybrid_graphics/AMD_Dynamic_Switchable_Graphics "ATI")
 
 ### Synaptic, UltraNav
 

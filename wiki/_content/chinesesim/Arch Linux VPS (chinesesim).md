@@ -14,15 +14,15 @@
 
 ## Contents
 
-*   [1 支持Arch Linux的提供商](#.E6.94.AF.E6.8C.81Arch_Linux.E7.9A.84.E6.8F.90.E4.BE.9B.E5.95.86)
-*   [2 安装](#.E5.AE.89.E8.A3.85)
+*   [1 支持Arch Linux的提供商](#支持Arch_Linux的提供商)
+*   [2 安装](#安装)
     *   [2.1 KVM](#KVM)
     *   [2.2 OpenVZ](#OpenVZ)
-        *   [2.2.1 在任意OpenVZ提供商上安装Arch Linux](#.E5.9C.A8.E4.BB.BB.E6.84.8FOpenVZ.E6.8F.90.E4.BE.9B.E5.95.86.E4.B8.8A.E5.AE.89.E8.A3.85Arch_Linux)
-            *   [2.2.1.1 前置知识](#.E5.89.8D.E7.BD.AE.E7.9F.A5.E8.AF.86)
-            *   [2.2.1.2 搭建一个干净的Arch Linux](#.E6.90.AD.E5.BB.BA.E4.B8.80.E4.B8.AA.E5.B9.B2.E5.87.80.E7.9A.84Arch_Linux)
-            *   [2.2.1.3 把VPS上的所有东西都Arch Arch掉](#.E6.8A.8AVPS.E4.B8.8A.E7.9A.84.E6.89.80.E6.9C.89.E4.B8.9C.E8.A5.BF.E9.83.BDArch_Arch.E6.8E.89)
-            *   [2.2.1.4 配置](#.E9.85.8D.E7.BD.AE)
+        *   [2.2.1 在任意OpenVZ提供商上安装Arch Linux](#在任意OpenVZ提供商上安装Arch_Linux)
+            *   [2.2.1.1 前置知识](#前置知识)
+            *   [2.2.1.2 搭建一个干净的Arch Linux](#搭建一个干净的Arch_Linux)
+            *   [2.2.1.3 把VPS上的所有东西都Arch Arch掉](#把VPS上的所有东西都Arch_Arch掉)
+            *   [2.2.1.4 配置](#配置)
     *   [2.3 Xen](#Xen)
 
 ## 支持Arch Linux的提供商
@@ -69,7 +69,7 @@
 
 ### KVM
 
-参阅 [QEMU#Preparing an (Arch) Linux guest](/index.php/QEMU#Preparing_an_.28Arch.29_Linux_guest "QEMU").
+参阅 [QEMU#Preparing an (Arch) Linux guest](/index.php/QEMU#Preparing_an_(Arch)_Linux_guest "QEMU").
 
 ### OpenVZ
 
@@ -132,4 +132,4 @@ At minimum, only the `-a` (preserve timestamps, permissions, etc.), `-x` (don't 
 
 ### Xen
 
-参阅 [Xen#Arch as Xen guest (PVHVM mode)](/index.php/Xen#Arch_as_Xen_guest_.28PVHVM_mode.29 "Xen") 及/或 [Xen#Arch as Xen guest (PV mode)](/index.php/Xen#Arch_as_Xen_guest_.28PV_mode.29 "Xen").
+参阅 [Xen#Arch as Xen guest (PVHVM mode)](/index.php/Xen#Arch_as_Xen_guest_(PVHVM_mode) "Xen") 及/或 [Xen#Arch as Xen guest (PV mode)](/index.php/Xen#Arch_as_Xen_guest_(PV_mode) "Xen").

@@ -7,26 +7,26 @@ El IDE de Eclipse está escrito principalmente en Java, pero se puede usar para 
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
 *   [2 Complementos](#Complementos)
-    *   [2.1 Agregar el sitio de actualización predeterminado](#Agregar_el_sitio_de_actualizaci.C3.B3n_predeterminado)
+    *   [2.1 Agregar el sitio de actualización predeterminado](#Agregar_el_sitio_de_actualización_predeterminado)
     *   [2.2 Eclipse Marketplace](#Eclipse_Marketplace)
     *   [2.3 Administrador de complementos](#Administrador_de_complementos)
-        *   [2.3.1 Actualizaciones a través del administrador de complementos](#Actualizaciones_a_trav.C3.A9s_del_administrador_de_complementos)
+        *   [2.3.1 Actualizaciones a través del administrador de complementos](#Actualizaciones_a_través_del_administrador_de_complementos)
     *   [2.4 Lista de complementos](#Lista_de_complementos)
-*   [3 Habilitar la integración de javadoc](#Habilitar_la_integraci.C3.B3n_de_javadoc)
-    *   [3.1 Versión en linea](#Versi.C3.B3n_en_linea)
-    *   [3.2 Versión fuera de línea](#Versi.C3.B3n_fuera_de_l.C3.ADnea)
-*   [4 Solución de problemas](#Soluci.C3.B3n_de_problemas)
-    *   [4.1 Ctrl+X cierra Eclipse](#Ctrl.2BX_cierra_Eclipse)
+*   [3 Habilitar la integración de javadoc](#Habilitar_la_integración_de_javadoc)
+    *   [3.1 Versión en linea](#Versión_en_linea)
+    *   [3.2 Versión fuera de línea](#Versión_fuera_de_línea)
+*   [4 Solución de problemas](#Solución_de_problemas)
+    *   [4.1 Ctrl+X cierra Eclipse](#Ctrl+X_cierra_Eclipse)
     *   [4.2 Tema oscuro](#Tema_oscuro)
-    *   [4.3 Cambiar el tamaño de fuente del título predeterminado de la ventana](#Cambiar_el_tama.C3.B1o_de_fuente_del_t.C3.ADtulo_predeterminado_de_la_ventana)
-    *   [4.4 Deshabilitar GTK+ 3](#Deshabilitar_GTK.2B_3)
+    *   [4.3 Cambiar el tamaño de fuente del título predeterminado de la ventana](#Cambiar_el_tamaño_de_fuente_del_título_predeterminado_de_la_ventana)
+    *   [4.4 Deshabilitar GTK+ 3](#Deshabilitar_GTK+_3)
     *   [4.5 Freshplayerplugin](#Freshplayerplugin)
     *   [4.6 Eclipse 4.6 no puede abrir marketplace adecuadamente](#Eclipse_4.6_no_puede_abrir_marketplace_adecuadamente)
     *   [4.7 Mostrar en el Explorador del sistema no funciona](#Mostrar_en_el_Explorador_del_sistema_no_funciona)
     *   [4.8 Muestra problemas en Wayland](#Muestra_problemas_en_Wayland)
-*   [5 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [5 Véase también](#Véase_también)
 
 ## Instalación
 
@@ -50,13 +50,13 @@ Asegúrese de verificar que el sitio de actualización predeterminado para su ve
 
 ### Eclipse Marketplace
 
-**Nota:** asegúrate de haber seguido la sección [Agregar el sitio de actualización predeterminado](#Agregar_el_sitio_de_actualizaci.C3.B3n_predeterminado).
+**Nota:** asegúrate de haber seguido la sección [Agregar el sitio de actualización predeterminado](#Agregar_el_sitio_de_actualización_predeterminado).
 
 Para usar Eclipse Marketplace, instálelo primero: vaya a Ayuda> Instalar nuevo software> Cambiar al sitio de actualización predeterminado> Herramientas de propósito general> Cliente de Marketplace. Reinicie Eclipse y estará disponible en Ayuda > Eclipse Marketplace.
 
 ### Administrador de complementos
 
-**Nota:** asegúrate de haber seguido la sección [Agregar el sitio de actualización predeterminado](#Agregar_el_sitio_de_actualizaci.C3.B3n_predeterminado).
+**Nota:** asegúrate de haber seguido la sección [Agregar el sitio de actualización predeterminado](#Agregar_el_sitio_de_actualización_predeterminado).
 
 Utilice el administrador de complementos de Eclipse para descargar e instalar complementos desde sus repositorios originales: en este caso debe encontrar el repositorio necesario en el sitio web del complemento, luego vaya a *Ayuda> Instalar nuevo software...*, ingrese el repositorio en el campo *Trabajar con* , seleccione el complemento para instalar de la lista a continuación y siga las instrucciones.
 

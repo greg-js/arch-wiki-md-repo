@@ -16,12 +16,12 @@ Related articles
 
 ## Contents
 
-*   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-*   [2 Примеры](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80.D1.8B)
-    *   [2.1 Создание и загрузка минимального дистрибутива Arch Linux в контейнере](#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B8_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B0_.D0.BC.D0.B8.D0.BD.D0.B8.D0.BC.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B4.D0.B8.D1.81.D1.82.D1.80.D0.B8.D0.B1.D1.83.D1.82.D0.B8.D0.B2.D0.B0_Arch_Linux_.D0.B2_.D0.BA.D0.BE.D0.BD.D1.82.D0.B5.D0.B9.D0.BD.D0.B5.D1.80.D0.B5)
+*   [1 Установка](#Установка)
+*   [2 Примеры](#Примеры)
+    *   [2.1 Создание и загрузка минимального дистрибутива Arch Linux в контейнере](#Создание_и_загрузка_минимального_дистрибутива_Arch_Linux_в_контейнере)
         *   [2.1.1 Bootstrap Arch Linux i686 inside x86_64 host](#Bootstrap_Arch_Linux_i686_inside_x86_64_host)
     *   [2.2 Create a Debian or Ubuntu environment](#Create_a_Debian_or_Ubuntu_environment)
-    *   [2.3 Creating private users (unprivileged containers)](#Creating_private_users_.28unprivileged_containers.29)
+    *   [2.3 Creating private users (unprivileged containers)](#Creating_private_users_(unprivileged_containers))
     *   [2.4 Enable container on boot](#Enable_container_on_boot)
     *   [2.5 Build and test packages](#Build_and_test_packages)
 *   [3 Management](#Management)

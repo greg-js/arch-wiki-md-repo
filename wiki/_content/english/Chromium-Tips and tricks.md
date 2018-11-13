@@ -3,15 +3,15 @@ The following tips and tricks should work for both Chromium and Chrome unless ex
 ## Contents
 
 *   [1 Browsing experience](#Browsing_experience)
-    *   [1.1 chrome:// URLs](#chrome:.2F.2F_URLs)
+    *   [1.1 chrome:// URLs](#chrome://_URLs)
     *   [1.2 Chromium task manager](#Chromium_task_manager)
-    *   [1.3 Chromium overrides/overwrites Preferences file](#Chromium_overrides.2Foverwrites_Preferences_file)
+    *   [1.3 Chromium overrides/overwrites Preferences file](#Chromium_overrides/overwrites_Preferences_file)
     *   [1.4 Search engines](#Search_engines)
     *   [1.5 Tmpfs](#Tmpfs)
         *   [1.5.1 Cache in tmpfs](#Cache_in_tmpfs)
         *   [1.5.2 Profile in tmpfs](#Profile_in_tmpfs)
     *   [1.6 Launch a new browser instance](#Launch_a_new_browser_instance)
-    *   [1.7 Directly open *.torrent files and magnet links with a torrent client](#Directly_open_.2A.torrent_files_and_magnet_links_with_a_torrent_client)
+    *   [1.7 Directly open *.torrent files and magnet links with a torrent client](#Directly_open_*.torrent_files_and_magnet_links_with_a_torrent_client)
     *   [1.8 Touch Scrolling on touchscreen devices](#Touch_Scrolling_on_touchscreen_devices)
     *   [1.9 Reduce memory usage](#Reduce_memory_usage)
     *   [1.10 User Agent](#User_Agent)

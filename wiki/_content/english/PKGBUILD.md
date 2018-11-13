@@ -57,7 +57,7 @@ It is a common practice to define the variables in the PKGBUILD in same order as
     *   [8.1 md5sums](#md5sums)
     *   [8.2 sha1sums](#sha1sums)
     *   [8.3 sha256sums](#sha256sums)
-    *   [8.4 sha224sums, sha384sums, sha512sums](#sha224sums.2C_sha384sums.2C_sha512sums)
+    *   [8.4 sha224sums, sha384sums, sha512sums](#sha224sums,_sha384sums,_sha512sums)
 *   [9 See also](#See_also)
 
 ## Package name
@@ -85,7 +85,7 @@ The version of the package. This should be the same as the version released by t
 **Tip:**
 
 *   The ordering of uncommon values can be tested with [vercmp(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vercmp.8), which is provided by the [pacman](/index.php/Pacman "Pacman") package.
-*   [makepkg](/index.php/Makepkg "Makepkg") can automatically [update](http://allanmcrae.com/2013/04/pacman-4-1-released/) this variable by defining a `pkgver()` function in the PKGBUILD. See [VCS package guidelines#The pkgver() function](/index.php/VCS_package_guidelines#The_pkgver.28.29_function "VCS package guidelines") for details.
+*   [makepkg](/index.php/Makepkg "Makepkg") can automatically [update](http://allanmcrae.com/2013/04/pacman-4-1-released/) this variable by defining a `pkgver()` function in the PKGBUILD. See [VCS package guidelines#The pkgver() function](/index.php/VCS_package_guidelines#The_pkgver()_function "VCS package guidelines") for details.
 
 ### pkgrel
 
@@ -157,7 +157,7 @@ Additional information and perspectives on free and open source software license
 
 ### groups
 
-The [group](/index.php/Creating_packages#Meta_packages_and_groups "Creating packages") the package belongs in. For instance, when installing the [kdebase](https://www.archlinux.org/groups/x86_64/kdebase/) package, it installs all packages belonging in that group.
+The [group](/index.php/Package_group "Package group") the package belongs in. For instance, when installing the [kdebase](https://www.archlinux.org/groups/x86_64/kdebase/) package, it installs all packages belonging in that group.
 
 ## Dependencies
 
@@ -204,7 +204,7 @@ $ LC_ALL=C pacman -Si $(pactree -rl ''package'') 2>/dev/null | grep -q "^Groups 
 
 ### checkdepends
 
-An array of packages that the software depends on to run its test suite, but are not needed at runtime. Packages in this list follow the same format as `depends`. These dependencies are only considered when the [check()](/index.php/Creating_packages#check.28.29 "Creating packages") function is present and is to be run by makepkg.
+An array of packages that the software depends on to run its test suite, but are not needed at runtime. Packages in this list follow the same format as `depends`. These dependencies are only considered when the [check()](/index.php/Creating_packages#check() "Creating packages") function is present and is to be run by makepkg.
 
 **Note:** The group [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) is assumed to be already installed when building with *makepkg*. Members of this group **should not** be included in `checkdepends` array.
 
@@ -304,7 +304,7 @@ Files can also be supplied in the same directory where the `PKGBUILD` is located
 
 ### noextract
 
-An array of files listed under `source`, which should not be extracted from their archive format by *makepkg*. This can be used with archives that cannot be handled by `/usr/bin/bsdtar` or those that need to be installed as-is. If an alternative unarchiving tool is used (e.g. [lrzip](https://www.archlinux.org/packages/?name=lrzip)), it should be added in the `makedepends` array and the first line of the [prepare()](/index.php/Creating_packages#prepare.28.29 "Creating packages") function should extract the source archive manually; for example:
+An array of files listed under `source`, which should not be extracted from their archive format by *makepkg*. This can be used with archives that cannot be handled by `/usr/bin/bsdtar` or those that need to be installed as-is. If an alternative unarchiving tool is used (e.g. [lrzip](https://www.archlinux.org/packages/?name=lrzip)), it should be added in the `makedepends` array and the first line of the [prepare()](/index.php/Creating_packages#prepare() "Creating packages") function should extract the source archive manually; for example:
 
 ```
 prepare() {

@@ -4,14 +4,14 @@
 
 ## Contents
 
-*   [1 守护进程](#.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B)
+*   [1 守护进程](#守护进程)
     *   [1.1 Systemd](#Systemd)
 *   [2 Cron](#Cron)
-*   [3 文件系统变更](#.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F.E5.8F.98.E6.9B.B4)
+*   [3 文件系统变更](#文件系统变更)
 *   [4 Shells](#Shells)
-    *   [4.1 /etc/profile](#.2Fetc.2Fprofile)
-*   [5 图形程序](#.E5.9B.BE.E5.BD.A2.E7.A8.8B.E5.BA.8F)
-    *   [5.1 X 会话启动](#X_.E4.BC.9A.E8.AF.9D.E5.90.AF.E5.8A.A8)
+    *   [4.1 /etc/profile](#/etc/profile)
+*   [5 图形程序](#图形程序)
+    *   [5.1 X 会话启动](#X_会话启动)
     *   [5.2 Desktop entries](#Desktop_entries)
     *   [5.3 GNOME](#GNOME)
     *   [5.4 KDE Plasma](#KDE_Plasma)
@@ -42,7 +42,7 @@
 
 ## Shells
 
-使用 shell 启动文件目录可以在登录时自动执行脚本，请阅读所用 shell 的文档和对应的 ArchWiki 页面，例如 [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash") 或 [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup.2FShutdown_files "Zsh").
+使用 shell 启动文件目录可以在登录时自动执行脚本，请阅读所用 shell 的文档和对应的 ArchWiki 页面，例如 [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash") 或 [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup/Shutdown_files "Zsh").
 
 参阅： [Wikipedia:Unix shell#Configuration files for shells](https://en.wikipedia.org/wiki/Unix_shell#Configuration_files_for_shells "wikipedia:Unix shell").
 

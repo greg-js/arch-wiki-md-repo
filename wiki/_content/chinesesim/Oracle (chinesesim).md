@@ -1,25 +1,25 @@
 ## Contents
 
-*   [1 介绍](#.E4.BB.8B.E7.BB.8D)
-*   [2 安装方法1 - 手动](#.E5.AE.89.E8.A3.85.E6.96.B9.E6.B3.951_-_.E6.89.8B.E5.8A.A8)
-    *   [2.1 准备安装](#.E5.87.86.E5.A4.87.E5.AE.89.E8.A3.85)
-    *   [2.2 安装桌面环境](#.E5.AE.89.E8.A3.85.E6.A1.8C.E9.9D.A2.E7.8E.AF.E5.A2.83)
-        *   [2.2.1 安装Oracle数据库必需的软件包](#.E5.AE.89.E8.A3.85Oracle.E6.95.B0.E6.8D.AE.E5.BA.93.E5.BF.85.E9.9C.80.E7.9A.84.E8.BD.AF.E4.BB.B6.E5.8C.85)
-        *   [2.2.2 配置](#.E9.85.8D.E7.BD.AE)
-    *   [2.3 图形安装](#.E5.9B.BE.E5.BD.A2.E5.AE.89.E8.A3.85)
-        *   [2.3.1 安装Oracle数据库软件](#.E5.AE.89.E8.A3.85Oracle.E6.95.B0.E6.8D.AE.E5.BA.93.E8.BD.AF.E4.BB.B6)
-    *   [2.4 Oracle企业管理安装(可选)](#Oracle.E4.BC.81.E4.B8.9A.E7.AE.A1.E7.90.86.E5.AE.89.E8.A3.85.28.E5.8F.AF.E9.80.89.29)
-*   [3 安装方法2 - AUR](#.E5.AE.89.E8.A3.85.E6.96.B9.E6.B3.952_-_AUR)
-    *   [3.1 安装](#.E5.AE.89.E8.A3.85)
-*   [4 Post 安装=](#Post_.E5.AE.89.E8.A3.85.3D)
-    *   [4.1 创建初始化数据库](#.E5.88.9B.E5.BB.BA.E5.88.9D.E5.A7.8B.E5.8C.96.E6.95.B0.E6.8D.AE.E5.BA.93)
-        *   [4.1.1 图形](#.E5.9B.BE.E5.BD.A2)
+*   [1 介绍](#介绍)
+*   [2 安装方法1 - 手动](#安装方法1_-_手动)
+    *   [2.1 准备安装](#准备安装)
+    *   [2.2 安装桌面环境](#安装桌面环境)
+        *   [2.2.1 安装Oracle数据库必需的软件包](#安装Oracle数据库必需的软件包)
+        *   [2.2.2 配置](#配置)
+    *   [2.3 图形安装](#图形安装)
+        *   [2.3.1 安装Oracle数据库软件](#安装Oracle数据库软件)
+    *   [2.4 Oracle企业管理安装(可选)](#Oracle企业管理安装(可选))
+*   [3 安装方法2 - AUR](#安装方法2_-_AUR)
+    *   [3.1 安装](#安装)
+*   [4 Post 安装=](#Post_安装=)
+    *   [4.1 创建初始化数据库](#创建初始化数据库)
+        *   [4.1.1 图形](#图形)
         *   [4.1.2 Scripted](#Scripted)
-        *   [4.1.3 测试数据库](#.E6.B5.8B.E8.AF.95.E6.95.B0.E6.8D.AE.E5.BA.93)
-    *   [4.2 在启动时启动oracle](#.E5.9C.A8.E5.90.AF.E5.8A.A8.E6.97.B6.E5.90.AF.E5.8A.A8oracle)
-    *   [4.3 为普通用户设定权限](#.E4.B8.BA.E6.99.AE.E9.80.9A.E7.94.A8.E6.88.B7.E8.AE.BE.E5.AE.9A.E6.9D.83.E9.99.90)
+        *   [4.1.3 测试数据库](#测试数据库)
+    *   [4.2 在启动时启动oracle](#在启动时启动oracle)
+    *   [4.3 为普通用户设定权限](#为普通用户设定权限)
 *   [5 Transfer existing Oracle installation](#Transfer_existing_Oracle_installation)
-    *   [5.1 更多资源](#.E6.9B.B4.E5.A4.9A.E8.B5.84.E6.BA.90)
+    *   [5.1 更多资源](#更多资源)
 
 ### 介绍
 
@@ -921,7 +921,7 @@ Configure server for oracle
 Setup OEM (optional)
 
 ```
-[Oracle#Oracle Enterprise Manager installation (optional)](/index.php/Oracle#Oracle_Enterprise_Manager_installation_.28optional.29 "Oracle")
+[Oracle#Oracle Enterprise Manager installation (optional)](/index.php/Oracle#Oracle_Enterprise_Manager_installation_(optional) "Oracle")
 
 ```
 

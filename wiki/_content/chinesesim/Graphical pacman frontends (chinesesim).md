@@ -6,12 +6,12 @@
 
 ## Contents
 
-*   [1 Pacman 图形化前端](#Pacman_.E5.9B.BE.E5.BD.A2.E5.8C.96.E5.89.8D.E7.AB.AF)
+*   [1 Pacman 图形化前端](#Pacman_图形化前端)
     *   [1.1 X11](#X11)
-    *   [1.2 GNOME/GTK+](#GNOME.2FGTK.2B)
-    *   [1.3 KDE/Qt](#KDE.2FQt)
+    *   [1.2 GNOME/GTK+](#GNOME/GTK+)
+    *   [1.3 KDE/Qt](#KDE/Qt)
     *   [1.4 NCurses](#NCurses)
-*   [2 Pacman / AUR Package Browser](#Pacman_.2F_AUR_Package_Browser)
+*   [2 Pacman / AUR Package Browser](#Pacman_/_AUR_Package_Browser)
     *   [2.1 Pacinfo](#Pacinfo)
 *   [3 System Tray Notifiers](#System_Tray_Notifiers)
     *   [3.1 Aarchup](#Aarchup)

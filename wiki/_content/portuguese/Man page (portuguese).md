@@ -12,21 +12,21 @@ Apesar de seu escopo, páginas man são projetadas para serem documentos autocon
 
 ## Contents
 
-*   [1 Acessando páginas man](#Acessando_p.C3.A1ginas_man)
+*   [1 Acessando páginas man](#Acessando_páginas_man)
 *   [2 Formato](#Formato)
 *   [3 Pesquisando por manuais](#Pesquisando_por_manuais)
-*   [4 Largura de página](#Largura_de_p.C3.A1gina)
-*   [5 Lendo páginas man locais](#Lendo_p.C3.A1ginas_man_locais)
-    *   [5.1 Aplicativos de visualização](#Aplicativos_de_visualiza.C3.A7.C3.A3o)
-    *   [5.2 Conversão para HTML](#Convers.C3.A3o_para_HTML)
+*   [4 Largura de página](#Largura_de_página)
+*   [5 Lendo páginas man locais](#Lendo_páginas_man_locais)
+    *   [5.1 Aplicativos de visualização](#Aplicativos_de_visualização)
+    *   [5.2 Conversão para HTML](#Conversão_para_HTML)
         *   [5.2.1 mandoc](#mandoc)
         *   [5.2.2 man2html](#man2html)
         *   [5.2.3 man -H](#man_-H)
         *   [5.2.4 roffit](#roffit)
-    *   [5.3 Conversão para PDF](#Convers.C3.A3o_para_PDF)
-*   [6 Páginas man online](#P.C3.A1ginas_man_online)
-*   [7 Páginas man notáveis](#P.C3.A1ginas_man_not.C3.A1veis)
-*   [8 Veja também](#Veja_tamb.C3.A9m)
+    *   [5.3 Conversão para PDF](#Conversão_para_PDF)
+*   [6 Páginas man online](#Páginas_man_online)
+*   [7 Páginas man notáveis](#Páginas_man_notáveis)
+*   [8 Veja também](#Veja_também)
 
 ## Acessando páginas man
 

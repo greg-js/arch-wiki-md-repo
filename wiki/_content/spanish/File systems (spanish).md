@@ -15,10 +15,10 @@ Antes de ser formateado, el disco debe ser [particionado](/index.php/Partitionin
 
 *   [1 Tipos de sistemas de archivos](#Tipos_de_sistemas_de_archivos)
     *   [1.1 Journaling](#Journaling)
-    *   [1.2 Soporte técnico de Arch Linux](#Soporte_t.C3.A9cnico_de_Arch_Linux)
+    *   [1.2 Soporte técnico de Arch Linux](#Soporte_técnico_de_Arch_Linux)
     *   [1.3 Sistemas de archivos basados en FUSE](#Sistemas_de_archivos_basados_en_FUSE)
 *   [2 Crear un sistema de archivos](#Crear_un_sistema_de_archivos)
-*   [3 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [3 Véase también](#Véase_también)
 
 ## Tipos de sistemas de archivos
 

@@ -14,11 +14,11 @@ From [Wikipedia](https://en.wikipedia.org/wiki/GNU "wikipedia:GNU"):
 ## Contents
 
 *   [1 Texinfo](#Texinfo)
-*   [2 基本系统](#.E5.9F.BA.E6.9C.AC.E7.B3.BB.E7.BB.9F)
-*   [3 工具链](#.E5.B7.A5.E5.85.B7.E9.93.BE)
-    *   [3.1 构建系统](#.E6.9E.84.E5.BB.BA.E7.B3.BB.E7.BB.9F)
-*   [4 其他软件](#.E5.85.B6.E4.BB.96.E8.BD.AF.E4.BB.B6)
-*   [5 可参阅](#.E5.8F.AF.E5.8F.82.E9.98.85)
+*   [2 基本系统](#基本系统)
+*   [3 工具链](#工具链)
+    *   [3.1 构建系统](#构建系统)
+*   [4 其他软件](#其他软件)
+*   [5 可参阅](#可参阅)
 
 ## Texinfo
 

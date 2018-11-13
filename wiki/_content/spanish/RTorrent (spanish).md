@@ -2,14 +2,14 @@ RTorrent es un cliente de bittorrent muy sencillo, elegante y ultraligero. Está
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Configuración](#Configuraci.C3.B3n)
-    *   [2.1 Configuración recomendada](#Configuraci.C3.B3n_recomendada)
+*   [1 Instalación](#Instalación)
+*   [2 Configuración](#Configuración)
+    *   [2.1 Configuración recomendada](#Configuración_recomendada)
 *   [3 Controles](#Controles)
 *   [4 Usar RTorrent con Screen](#Usar_RTorrent_con_Screen)
 *   [5 Consejos adicionales](#Consejos_adicionales)
-*   [6 Conclusión](#Conclusi.C3.B3n)
-*   [7 Vea también](#Vea_tambi.C3.A9n)
+*   [6 Conclusión](#Conclusión)
+*   [7 Vea también](#Vea_también)
 
 ## Instalación
 

@@ -15,43 +15,43 @@
 
 ## Contents
 
-*   [1 LVM基本组成](#LVM.E5.9F.BA.E6.9C.AC.E7.BB.84.E6.88.90)
-*   [2 优点](#.E4.BC.98.E7.82.B9)
-*   [3 缺点](#.E7.BC.BA.E7.82.B9)
-*   [4 在LVM上安装Arch Linux](#.E5.9C.A8LVM.E4.B8.8A.E5.AE.89.E8.A3.85Arch_Linux)
-    *   [4.1 创建分区](#.E5.88.9B.E5.BB.BA.E5.88.86.E5.8C.BA)
-    *   [4.2 创建物理卷（PV）](#.E5.88.9B.E5.BB.BA.E7.89.A9.E7.90.86.E5.8D.B7.EF.BC.88PV.EF.BC.89)
-    *   [4.3 创建卷组（VG）](#.E5.88.9B.E5.BB.BA.E5.8D.B7.E7.BB.84.EF.BC.88VG.EF.BC.89)
-    *   [4.4 一步创建卷组](#.E4.B8.80.E6.AD.A5.E5.88.9B.E5.BB.BA.E5.8D.B7.E7.BB.84)
-    *   [4.5 创建逻辑卷（LV）](#.E5.88.9B.E5.BB.BA.E9.80.BB.E8.BE.91.E5.8D.B7.EF.BC.88LV.EF.BC.89)
-    *   [4.6 建立文件系统与挂载逻辑卷](#.E5.BB.BA.E7.AB.8B.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F.E4.B8.8E.E6.8C.82.E8.BD.BD.E9.80.BB.E8.BE.91.E5.8D.B7)
-    *   [4.7 在mkinitcpio.conf中加入lvm的钩子扩展（hook）](#.E5.9C.A8mkinitcpio.conf.E4.B8.AD.E5.8A.A0.E5.85.A5lvm.E7.9A.84.E9.92.A9.E5.AD.90.E6.89.A9.E5.B1.95.EF.BC.88hook.EF.BC.89)
-    *   [4.8 内核参数](#.E5.86.85.E6.A0.B8.E5.8F.82.E6.95.B0)
-*   [5 配置](#.E9.85.8D.E7.BD.AE)
-    *   [5.1 高级选项](#.E9.AB.98.E7.BA.A7.E9.80.89.E9.A1.B9)
-        *   [5.1.1 物理卷](#.E7.89.A9.E7.90.86.E5.8D.B7)
-            *   [5.1.1.1 扩增](#.E6.89.A9.E5.A2.9E)
-            *   [5.1.1.2 缩小](#.E7.BC.A9.E5.B0.8F)
-                *   [5.1.1.2.1 移动物理区域](#.E7.A7.BB.E5.8A.A8.E7.89.A9.E7.90.86.E5.8C.BA.E5.9F.9F)
-                *   [5.1.1.2.2 调整物理卷大小](#.E8.B0.83.E6.95.B4.E7.89.A9.E7.90.86.E5.8D.B7.E5.A4.A7.E5.B0.8F)
-                *   [5.1.1.2.3 调整分区大小](#.E8.B0.83.E6.95.B4.E5.88.86.E5.8C.BA.E5.A4.A7.E5.B0.8F)
-        *   [5.1.2 逻辑卷](#.E9.80.BB.E8.BE.91.E5.8D.B7)
-            *   [5.1.2.1 使用lvresize增加或缩小容量](#.E4.BD.BF.E7.94.A8lvresize.E5.A2.9E.E5.8A.A0.E6.88.96.E7.BC.A9.E5.B0.8F.E5.AE.B9.E9.87.8F)
-            *   [5.1.2.2 单独设置文件系统大小](#.E5.8D.95.E7.8B.AC.E8.AE.BE.E7.BD.AE.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F.E5.A4.A7.E5.B0.8F)
-    *   [5.2 移除逻辑卷](#.E7.A7.BB.E9.99.A4.E9.80.BB.E8.BE.91.E5.8D.B7)
-    *   [5.3 添加物理卷（PV）到卷组（VG）中](#.E6.B7.BB.E5.8A.A0.E7.89.A9.E7.90.86.E5.8D.B7.EF.BC.88PV.EF.BC.89.E5.88.B0.E5.8D.B7.E7.BB.84.EF.BC.88VG.EF.BC.89.E4.B8.AD)
-    *   [5.4 从卷组（VG）中移除分区](#.E4.BB.8E.E5.8D.B7.E7.BB.84.EF.BC.88VG.EF.BC.89.E4.B8.AD.E7.A7.BB.E9.99.A4.E5.88.86.E5.8C.BA)
-    *   [5.5 快照功能](#.E5.BF.AB.E7.85.A7.E5.8A.9F.E8.83.BD)
-        *   [5.5.1 介绍](#.E4.BB.8B.E7.BB.8D)
-        *   [5.5.2 配置](#.E9.85.8D.E7.BD.AE_2)
-*   [6 常见问题](#.E5.B8.B8.E8.A7.81.E9.97.AE.E9.A2.98)
-    *   [6.1 Arch Linux默认设定所必须的设定值](#Arch_Linux.E9.BB.98.E8.AE.A4.E8.AE.BE.E5.AE.9A.E6.89.80.E5.BF.85.E9.A1.BB.E7.9A.84.E8.AE.BE.E5.AE.9A.E5.80.BC)
-    *   [6.2 LVM 命令不起作用](#LVM_.E5.91.BD.E4.BB.A4.E4.B8.8D.E8.B5.B7.E4.BD.9C.E7.94.A8)
-    *   [6.3 逻辑卷无法显示](#.E9.80.BB.E8.BE.91.E5.8D.B7.E6.97.A0.E6.B3.95.E6.98.BE.E7.A4.BA)
-    *   [6.4 在可移除设备上的LVM问题](#.E5.9C.A8.E5.8F.AF.E7.A7.BB.E9.99.A4.E8.AE.BE.E5.A4.87.E4.B8.8A.E7.9A.84LVM.E9.97.AE.E9.A2.98)
+*   [1 LVM基本组成](#LVM基本组成)
+*   [2 优点](#优点)
+*   [3 缺点](#缺点)
+*   [4 在LVM上安装Arch Linux](#在LVM上安装Arch_Linux)
+    *   [4.1 创建分区](#创建分区)
+    *   [4.2 创建物理卷（PV）](#创建物理卷（PV）)
+    *   [4.3 创建卷组（VG）](#创建卷组（VG）)
+    *   [4.4 一步创建卷组](#一步创建卷组)
+    *   [4.5 创建逻辑卷（LV）](#创建逻辑卷（LV）)
+    *   [4.6 建立文件系统与挂载逻辑卷](#建立文件系统与挂载逻辑卷)
+    *   [4.7 在mkinitcpio.conf中加入lvm的钩子扩展（hook）](#在mkinitcpio.conf中加入lvm的钩子扩展（hook）)
+    *   [4.8 内核参数](#内核参数)
+*   [5 配置](#配置)
+    *   [5.1 高级选项](#高级选项)
+        *   [5.1.1 物理卷](#物理卷)
+            *   [5.1.1.1 扩增](#扩增)
+            *   [5.1.1.2 缩小](#缩小)
+                *   [5.1.1.2.1 移动物理区域](#移动物理区域)
+                *   [5.1.1.2.2 调整物理卷大小](#调整物理卷大小)
+                *   [5.1.1.2.3 调整分区大小](#调整分区大小)
+        *   [5.1.2 逻辑卷](#逻辑卷)
+            *   [5.1.2.1 使用lvresize增加或缩小容量](#使用lvresize增加或缩小容量)
+            *   [5.1.2.2 单独设置文件系统大小](#单独设置文件系统大小)
+    *   [5.2 移除逻辑卷](#移除逻辑卷)
+    *   [5.3 添加物理卷（PV）到卷组（VG）中](#添加物理卷（PV）到卷组（VG）中)
+    *   [5.4 从卷组（VG）中移除分区](#从卷组（VG）中移除分区)
+    *   [5.5 快照功能](#快照功能)
+        *   [5.5.1 介绍](#介绍)
+        *   [5.5.2 配置](#配置_2)
+*   [6 常见问题](#常见问题)
+    *   [6.1 Arch Linux默认设定所必须的设定值](#Arch_Linux默认设定所必须的设定值)
+    *   [6.2 LVM 命令不起作用](#LVM_命令不起作用)
+    *   [6.3 逻辑卷无法显示](#逻辑卷无法显示)
+    *   [6.4 在可移除设备上的LVM问题](#在可移除设备上的LVM问题)
     *   [6.5 Resizing a contiguous logical volume fails](#Resizing_a_contiguous_logical_volume_fails)
-    *   [6.6 Command "grub-mkconfig" reports "unknown filesystem" errors](#Command_.22grub-mkconfig.22_reports_.22unknown_filesystem.22_errors)
-*   [7 更多资源](#.E6.9B.B4.E5.A4.9A.E8.B5.84.E6.BA.90)
+    *   [6.6 Command "grub-mkconfig" reports "unknown filesystem" errors](#Command_"grub-mkconfig"_reports_"unknown_filesystem"_errors)
+*   [7 更多资源](#更多资源)
 
 ### LVM基本组成
 
@@ -114,7 +114,7 @@ LVM的基本组成块（building blocks）如下：
 
 ## 在LVM上安装Arch Linux
 
-你应该在安装过程的[分区](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Partitioning (简体中文)")和[创建文件系统](/index.php/File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.88.9B.E5.BB.BA.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F "File systems (简体中文)")这一步中创建LVM卷， 而且根（root）分区不再通过直接格式化硬盘来创建，而是创建在LVM逻辑卷（LV）上。
+你应该在安装过程的[分区](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Partitioning (简体中文)")和[创建文件系统](/index.php/File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#创建文件系统 "File systems (简体中文)")这一步中创建LVM卷， 而且根（root）分区不再通过直接格式化硬盘来创建，而是创建在LVM逻辑卷（LV）上。
 
 快速导览：
 
@@ -151,7 +151,7 @@ LVM的基本组成块（building blocks）如下：
 
 ```
 
-该命令在各个设备上创建LVM使用的头部。如[#LVM基本组成](#LVM.E5.9F.BA.E6.9C.AC.E7.BB.84.E6.88.90)所示, *DEVICE*可以是磁盘（如`/dev/sda`），分区（如`/dev/sda2`）或环回设备。例如：
+该命令在各个设备上创建LVM使用的头部。如[#LVM基本组成](#LVM基本组成)所示, *DEVICE*可以是磁盘（如`/dev/sda`），分区（如`/dev/sda2`）或环回设备。例如：
 
 ```
 # pvcreate /dev/sda2
@@ -274,7 +274,7 @@ LVM支持将卷组与物理卷的创建聚合在一个命令中。例如，为�
 
 ```
 
-现在你可以在逻辑卷上创建文件系统并像普通分区一样挂载它了（如果你正在安装Arch linux，需要更详细的信息，请参考[挂载分区](/index.php/Beginners%27_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E6.8C.82.E8.BD.BD.E5.88.86.E5.8C.BA "Beginners' guide (简体中文)")）：
+现在你可以在逻辑卷上创建文件系统并像普通分区一样挂载它了（如果你正在安装Arch linux，需要更详细的信息，请参考[挂载分区](/index.php/Beginners%27_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#挂载分区 "Beginners' guide (简体中文)")）：
 
 ```
 # mkfs.<*fstype*> /dev/mapper/<*volume_group*>-<*logical_volume*>
@@ -300,7 +300,7 @@ LVM支持将卷组与物理卷的创建聚合在一个命令中。例如，为�
 
  `/etc/mkinitcpio.conf`  `HOOKS="base udev ... block **lvm2** filesystems"` 
 
-之后你就可以继续下一步的[创建和启用镜像](/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.88.9B.E5.BB.BA.E5.92.8C.E5.90.AF.E7.94.A8.E9.95.9C.E5.83.8F "Mkinitcpio (简体中文)")操作了。
+之后你就可以继续下一步的[创建和启用镜像](/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#创建和启用镜像 "Mkinitcpio (简体中文)")操作了。
 
 ### 内核参数
 
@@ -350,7 +350,7 @@ LVM支持将卷组与物理卷的创建聚合在一个命令中。例如，为�
 
 ```
 
-即该物理卷已分配物理区域超过了命令指定的新大小边界，`pvresize`会拒绝将物理卷缩小。若磁盘空间足够，可通过[pvmove](#.E7.A7.BB.E5.8A.A8.E7.89.A9.E7.90.86.E5.8C.BA.E5.9F.9F)将物理区域重新分配至别的卷组来解决这个问题。
+即该物理卷已分配物理区域超过了命令指定的新大小边界，`pvresize`会拒绝将物理卷缩小。若磁盘空间足够，可通过[pvmove](#移动物理区域)将物理区域重新分配至别的卷组来解决这个问题。
 
 ###### 移动物理区域
 
@@ -426,7 +426,7 @@ LVM支持将卷组与物理卷的创建聚合在一个命令中。例如，为�
 
 ###### 调整分区大小
 
-最后，你可以用你喜欢的[分区工具](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.88.86.E5.8C.BA.E5.B7.A5.E5.85.B7 "Partitioning (简体中文)")来缩小该分区。
+最后，你可以用你喜欢的[分区工具](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#分区工具 "Partitioning (简体中文)")来缩小该分区。
 
 #### 逻辑卷
 
@@ -443,7 +443,7 @@ LVM支持将卷组与物理卷的创建聚合在一个命令中。例如，为�
 
 ```
 
-而从逻辑组`vg1/lv1`中减少500MB空间但*并不*修改其文件系统大小（需要确保[文件系统已经缩小过](/index.php/LVM#.E5.8D.95.E7.8B.AC.E8.AE.BE.E7.BD.AE.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F.E5.A4.A7.E5.B0.8F "LVM")），执行：
+而从逻辑组`vg1/lv1`中减少500MB空间但*并不*修改其文件系统大小（需要确保[文件系统已经缩小过](/index.php/LVM#单独设置文件系统大小 "LVM")），执行：
 
 ```
 # lvresize -L -500M vg1/lv1
@@ -655,7 +655,7 @@ If you have LVM volumes not activated via the [initramfs](/index.php/Initramfs "
 
  `/etc/mkinitcpio.conf:`  `MODULES="dm_mod ..."` 
 
-你需要[重建initramfs](/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.88.9B.E5.BB.BA.E5.92.8C.E5.90.AF.E7.94.A8.E9.95.9C.E5.83.8F "Mkinitcpio (简体中文)")来提交你对`/etc/mkinitcpio.conf`的更改。
+你需要[重建initramfs](/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#创建和启用镜像 "Mkinitcpio (简体中文)")来提交你对`/etc/mkinitcpio.conf`的更改。
 
 *   测试以*lvm*开头的命令是否可以被正确执行，例如：
 

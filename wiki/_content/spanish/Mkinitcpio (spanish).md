@@ -7,29 +7,29 @@ Artículos relacionados
 
 ## Contents
 
-*   [1 Introducción](#Introducci.C3.B3n)
-*   [2 Instalación](#Instalaci.C3.B3n)
-*   [3 Creación de la imagen y activación](#Creaci.C3.B3n_de_la_imagen_y_activaci.C3.B3n)
-*   [4 Configuración](#Configuraci.C3.B3n)
-    *   [4.1 MÓDULOS](#M.C3.93DULOS)
+*   [1 Introducción](#Introducción)
+*   [2 Instalación](#Instalación)
+*   [3 Creación de la imagen y activación](#Creación_de_la_imagen_y_activación)
+*   [4 Configuración](#Configuración)
+    *   [4.1 MÓDULOS](#MÓDULOS)
     *   [4.2 BINARIOS y ARCHIVOS](#BINARIOS_y_ARCHIVOS)
     *   [4.3 HOOKS](#HOOKS)
         *   [4.3.1 Build hooks](#Build_hooks)
         *   [4.3.2 Runtime hooks](#Runtime_hooks)
-        *   [4.3.3 Hooks más comunes](#Hooks_m.C3.A1s_comunes)
+        *   [4.3.3 Hooks más comunes](#Hooks_más_comunes)
         *   [4.3.4 Hooks desatendidos](#Hooks_desatendidos)
     *   [4.4 COMPRESION](#COMPRESION)
     *   [4.5 COMPRESSION_OPTIONS](#COMPRESSION_OPTIONS)
-*   [5 Personalizar el tiempo de ejecución](#Personalizar_el_tiempo_de_ejecuci.C3.B3n)
+*   [5 Personalizar el tiempo de ejecución](#Personalizar_el_tiempo_de_ejecución)
     *   [5.1 init](#init)
     *   [5.2 Usar RAID](#Usar_RAID)
     *   [5.3 Usar la red](#Usar_la_red)
     *   [5.4 Utilizar LVM](#Utilizar_LVM)
     *   [5.5 Utilizar root cifrado](#Utilizar_root_cifrado)
-    *   [5.6 /usr en una partición separada](#.2Fusr_en_una_partici.C3.B3n_separada)
-*   [6 Solución de problemas](#Soluci.C3.B3n_de_problemas)
+    *   [5.6 /usr en una partición separada](#/usr_en_una_partición_separada)
+*   [6 Solución de problemas](#Solución_de_problemas)
     *   [6.1 Extraer la imagen](#Extraer_la_imagen)
-*   [7 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [7 Véase también](#Véase_también)
 *   [8 Referencias](#Referencias)
 
 ## Introducción
@@ -210,7 +210,7 @@ A continuación se muestra una tabla de los hooks más comunes y cómo afectan a
 | **keymap** | Añade la distribución de teclado y la tipografía a la connsola según lo establecido en `/etc/vconsole.conf`. | Carga la distribución de teclado especificado y la tipografía de la consola de `/etc/vconsole.conf` durante la fase del espacio de usuario inicial. |
 | **consolefont** | Agrega el tipo de letra de consola especificado en `/etc/vconsole.conf` a initramfs. | Carga el tipo de letra especificado para la consola en `/etc/vconsole.conf` durante la fase temprana del espacio de usuario. |
 | **sd-vconsole** | Agrega la distribución del teclado y el tipo de fuente de la consola especificados en `/etc/vconsole.conf` a initramfs basado en systemd. | Carga la distribución del teclado y el tipo de fuente de la consola especificados durante la fase temprana del espacio de usuario. |
-| **encrypt** | Agrega el módulo `dm_crypt` del kernel y la herramienta `cryptsetup` a la imagen. Tendrá que tener instalado el paquete [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) para usar esta opción. | Detecta y desbloquea una partición de root cifrada. Vea [#Personalizar el tiempo de ejecución](#Personalizar_el_tiempo_de_ejecuci.C3.B3n) para ajustar la configuración. |
+| **encrypt** | Agrega el módulo `dm_crypt` del kernel y la herramienta `cryptsetup` a la imagen. Tendrá que tener instalado el paquete [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) para usar esta opción. | Detecta y desbloquea una partición de root cifrada. Vea [#Personalizar el tiempo de ejecución](#Personalizar_el_tiempo_de_ejecución) para ajustar la configuración. |
 | **sd-encrypt** | Este hook permite un dispositivo root encriptado con initramfs systemd.
 
 Véase la página del manual de systemd-cryptsetup-generator(8) para conocer las opciones disponibles en línea de órdes del kernel. Alternativamente, si el archivo `/etc/crypttab.initramfs` existe, se añadirá a initramfs como `/etc/crypttab`. Véase la página del manual de crypttab(5) para obtener información sobre la sintaxis de crypttab.
@@ -218,7 +218,7 @@ Véase la página del manual de systemd-cryptsetup-generator(8) para conocer las
  | -- |
 | **lvm2** | Agrega el mapeador del dispositivo al módulo del kernel y la herramienta `lvm` a la imagen. Tendrá que tener instalado el paquete [lvm2](https://www.archlinux.org/packages/?name=lvm2) para usar esta opción. | Habilita todos los grupos de los volúmenes LVM2\. Esto es necesario si el sistema de archivos raíz está en [LVM](/index.php/LVM "LVM"). |
 | **fsck** | Añade binarios de fsck y ayudas para el sistema de archivos específico. Si se coloca después del hook **autodetect** sólo se añade la ayuda para el sistema de archivos raiz. Utilizar este hook es **muy** recomendable, y es necesario si tiene una partición `/usr` separada. | Lanza fsck en el dispositivo root (y `/usr` si son distintos) antes del montaje. |
-| **resume** | -- | Pretende volver a restaurar (resume) el sistema desde el estado de "suspensión en disco". Funciona conjuntamente con *swsusp* y *[suspend2](/index.php/Suspend2 "Suspend2")*. Vea [#Personalizar el tiempo de ejecución](#Personalizar_el_tiempo_de_ejecuci.C3.B3n) para ajustar configuración. |
+| **resume** | -- | Pretende volver a restaurar (resume) el sistema desde el estado de "suspensión en disco". Funciona conjuntamente con *swsusp* y *[suspend2](/index.php/Suspend2 "Suspend2")*. Vea [#Personalizar el tiempo de ejecución](#Personalizar_el_tiempo_de_ejecución) para ajustar configuración. |
 | **filesystems** | Este incluye los módulos necesarios del sistema de archivos en la imagen. Este hook es **necesario**, a menos que especifique los módulos del filesystem en la línea MODULES. | -- |
 | **shutdown** | Añade soporte al apagado en initramfs. Si se tiene una partición `/usr` separada o root cifrada, este hook es fundamental. | Desmonta y separa los dispositivos en el apagado. |
 | **usr** | Añade soporte para la partición `/usr` separada. | Monta la partición `/usr` después de la partición raiz, para que quede correctamente montada. |

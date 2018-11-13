@@ -21,7 +21,7 @@ Related articles
         *   [4.1.1 mpv](#mpv)
         *   [4.1.2 mplayer](#mplayer)
         *   [4.1.3 Kodi](#Kodi)
-        *   [4.1.4 Browser HTML5 video/Flash](#Browser_HTML5_video.2FFlash)
+        *   [4.1.4 Browser HTML5 video/Flash](#Browser_HTML5_video/Flash)
     *   [4.2 Animated wallpaper](#Animated_wallpaper)
 *   [5 Troubleshooting](#Troubleshooting)
 *   [6 See also](#See_also)

@@ -9,26 +9,26 @@ GNU Parted is a program for creating and manipulating partition tables. GParted 
 
 ## Contents
 
-*   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-*   [2 Использование](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
+*   [1 Установка](#Установка)
+*   [2 Использование](#Использование)
     *   [2.1 Command line mode](#Command_line_mode)
     *   [2.2 Interactive mode](#Interactive_mode)
 *   [3 Rounding](#Rounding)
 *   [4 Partitioning](#Partitioning)
     *   [4.1 Create new partition table](#Create_new_partition_table)
     *   [4.2 Partition schemes](#Partition_schemes)
-        *   [4.2.1 UEFI/GPT examples](#UEFI.2FGPT_examples)
-        *   [4.2.2 BIOS/MBR examples](#BIOS.2FMBR_examples)
-        *   [4.2.3 BIOS/GPT example](#BIOS.2FGPT_example)
+        *   [4.2.1 UEFI/GPT examples](#UEFI/GPT_examples)
+        *   [4.2.2 BIOS/MBR examples](#BIOS/MBR_examples)
+        *   [4.2.3 BIOS/GPT example](#BIOS/GPT_example)
     *   [4.3 Resizing Partitions](#Resizing_Partitions)
         *   [4.3.1 Growing partitions](#Growing_partitions)
         *   [4.3.2 Shrinking partitions](#Shrinking_partitions)
 *   [5 Warnings](#Warnings)
-    *   [5.1 Выравнивание](#.D0.92.D1.8B.D1.80.D0.B0.D0.B2.D0.BD.D0.B8.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
+    *   [5.1 Выравнивание](#Выравнивание)
 *   [6 Tips and tricks](#Tips_and_tricks)
     *   [6.1 Dual booting with Windows XP](#Dual_booting_with_Windows_XP)
     *   [6.2 Fixing messed-up partition order](#Fixing_messed-up_partition_order)
-    *   [6.3 Проверка выравнивания](#.D0.9F.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.B0_.D0.B2.D1.8B.D1.80.D0.B0.D0.B2.D0.BD.D0.B8.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F)
+    *   [6.3 Проверка выравнивания](#Проверка_выравнивания)
 *   [7 See also](#See_also)
 
 ## Установка

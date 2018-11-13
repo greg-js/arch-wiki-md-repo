@@ -19,7 +19,7 @@ Related articles
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Example profiles](#Example_profiles)
         *   [4.1.1 Wired](#Wired_2)
-        *   [4.1.2 Wireless (WPA-PSK)](#Wireless_.28WPA-PSK.29)
+        *   [4.1.2 Wireless (WPA-PSK)](#Wireless_(WPA-PSK))
     *   [4.2 Obfuscate wireless passphrase](#Obfuscate_wireless_passphrase)
     *   [4.3 Using an experimental GUI](#Using_an_experimental_GUI)
     *   [4.4 Bonding](#Bonding)
@@ -32,16 +32,16 @@ Related articles
             *   [4.6.1.2 Set default DHCP client](#Set_default_DHCP_client)
     *   [4.7 Minimal WPAConfigSection](#Minimal_WPAConfigSection)
     *   [4.8 resolv.conf](#resolv.conf)
-    *   [4.9 Starting netctl-auto on insertion of pluggable WiFi module (usually USB)](#Starting_netctl-auto_on_insertion_of_pluggable_WiFi_module_.28usually_USB.29)
+    *   [4.9 Starting netctl-auto on insertion of pluggable WiFi module (usually USB)](#Starting_netctl-auto_on_insertion_of_pluggable_WiFi_module_(usually_USB))
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Job for netctl@wlan(...).service failed](#Job_for_netctl.40wlan.28....29.service_failed)
+    *   [5.1 Job for netctl@wlan(...).service failed](#Job_for_netctl@wlan(...).service_failed)
     *   [5.2 dhcpcd: ipv4_addroute: File exists](#dhcpcd:_ipv4_addroute:_File_exists)
     *   [5.3 DHCP timeout issues](#DHCP_timeout_issues)
     *   [5.4 DHCP Troubleshooting](#DHCP_Troubleshooting)
     *   [5.5 Connection timeout issues](#Connection_timeout_issues)
     *   [5.6 Problems with netctl-auto on resume](#Problems_with_netctl-auto_on_resume)
     *   [5.7 netctl-auto does not automatically unblock a wireless card to use an interface](#netctl-auto_does_not_automatically_unblock_a_wireless_card_to_use_an_interface)
-    *   [5.8 RTNETLINK answers: File exists (with multiple NICs)](#RTNETLINK_answers:_File_exists_.28with_multiple_NICs.29)
+    *   [5.8 RTNETLINK answers: File exists (with multiple NICs)](#RTNETLINK_answers:_File_exists_(with_multiple_NICs))
     *   [5.9 Problems with eduroam and other MSCHAPv2 connections](#Problems_with_eduroam_and_other_MSCHAPv2_connections)
 *   [6 See also](#See_also)
 
@@ -260,7 +260,7 @@ This example describes how to use *bonding* to fallback to wireless when the wir
 
 You will need additional packages from the official repositories: [ifenslave](https://www.archlinux.org/packages/?name=ifenslave) and [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant).
 
-First enable the bonding module to be loaded upon boot time, as instructed on [Kernel modules#Automatic module handling](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules"):
+First enable the bonding module to be loaded upon boot time, as instructed on [Kernel modules#Automatic module loading with systemd](/index.php/Kernel_modules#Automatic_module_loading_with_systemd "Kernel modules"):
 
  `/etc/modules-load.d/bonding.conf`  `bonding` 
 

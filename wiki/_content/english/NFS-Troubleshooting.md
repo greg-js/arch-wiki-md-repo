@@ -7,10 +7,10 @@ Dedicated article for common problems and solutions.
 ## Contents
 
 *   [1 Server-side issues](#Server-side_issues)
-    *   [1.1 exportfs: /etc/exports:2: syntax error: bad option list](#exportfs:_.2Fetc.2Fexports:2:_syntax_error:_bad_option_list)
-    *   [1.2 Group/GID permissions issues](#Group.2FGID_permissions_issues)
-    *   [1.3 "Permission denied" when trying to write files as root](#.22Permission_denied.22_when_trying_to_write_files_as_root)
-    *   [1.4 "RPC: Program not registered" when showmount -e command issued](#.22RPC:_Program_not_registered.22_when_showmount_-e_command_issued)
+    *   [1.1 exportfs: /etc/exports:2: syntax error: bad option list](#exportfs:_/etc/exports:2:_syntax_error:_bad_option_list)
+    *   [1.2 Group/GID permissions issues](#Group/GID_permissions_issues)
+    *   [1.3 "Permission denied" when trying to write files as root](#"Permission_denied"_when_trying_to_write_files_as_root)
+    *   [1.4 "RPC: Program not registered" when showmount -e command issued](#"RPC:_Program_not_registered"_when_showmount_-e_command_issued)
     *   [1.5 UDP mounts not working](#UDP_mounts_not_working)
 *   [2 Client-side issues](#Client-side_issues)
     *   [2.1 mount.nfs4: No such device](#mount.nfs4:_No_such_device)
@@ -27,7 +27,7 @@ Dedicated article for common problems and solutions.
     *   [2.10 Problems with Vagrant and synced_folders](#Problems_with_Vagrant_and_synced_folders)
 *   [3 Performance issues](#Performance_issues)
     *   [3.1 Diagnose the problem](#Diagnose_the_problem)
-    *   [3.2 Close-to-open/flush-on-close](#Close-to-open.2Fflush-on-close)
+    *   [3.2 Close-to-open/flush-on-close](#Close-to-open/flush-on-close)
         *   [3.2.1 The nocto mount option](#The_nocto_mount_option)
         *   [3.2.2 The async export option](#The_async_export_option)
     *   [3.3 Buffer cache size and MTU](#Buffer_cache_size_and_MTU)

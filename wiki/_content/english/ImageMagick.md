@@ -2,11 +2,12 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/ImageMagick "wikipedia:Im
 
 	ImageMagick is a free and open-source software suite for displaying, converting, and editing raster image and vector image files. It can read and write over 200 image file formats.
 
-**Note:** Parsing PDF, EPS, PS and XPS is currently disabled due to its inherent insecurity [FS#59778](https://bugs.archlinux.org/task/59778). It might be re-enabled by changing the following line in `/etc/ImageMagick-7/policy.xml`:
+**Note:** [libmagick](https://www.archlinux.org/packages/?name=libmagick) uses [Ghostscript](/index.php/Ghostscript "Ghostscript") for PDF, EPS, PS and XPS parsing. Because their have been multiple vulnerabilities with Ghostscript[[1]](https://security.archlinux.org/package/ghostscript), these formats are now proactively disabled in `/etc/ImageMagick-7/policy.xml` with the following line:
 ```
 <policy domain="coder" rights="none" pattern="{PS,PS2,PS3,EPS,PDF,XPS}" />
 
 ```
+See also [FS#59778](https://bugs.archlinux.org/task/59778).
 
 ## Contents
 
@@ -15,7 +16,7 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/ImageMagick "wikipedia:Im
     *   [2.1 Screenshot taking](#Screenshot_taking)
         *   [2.1.1 Screenshot of multiple X screens](#Screenshot_of_multiple_X_screens)
         *   [2.1.2 Screenshot of individual Xinerama heads](#Screenshot_of_individual_Xinerama_heads)
-        *   [2.1.3 Screenshot of the active/focused window](#Screenshot_of_the_active.2Ffocused_window)
+        *   [2.1.3 Screenshot of the active/focused window](#Screenshot_of_the_active/focused_window)
 *   [3 See also](#See_also)
 
 ## Installation

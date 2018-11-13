@@ -10,11 +10,11 @@ GPGPU stands for [General-purpose computing on graphics processing units](https:
 
 *   [1 OpenCL](#OpenCL)
     *   [1.1 OpenCL Runtime](#OpenCL_Runtime)
-        *   [1.1.1 AMD/ATI](#AMD.2FATI)
+        *   [1.1.1 AMD/ATI](#AMD/ATI)
         *   [1.1.2 NVIDIA](#NVIDIA)
         *   [1.1.3 Intel](#Intel)
         *   [1.1.4 Others](#Others)
-    *   [1.2 OpenCL ICD loader (libOpenCL.so)](#OpenCL_ICD_loader_.28libOpenCL.so.29)
+    *   [1.2 OpenCL ICD loader (libOpenCL.so)](#OpenCL_ICD_loader_(libOpenCL.so))
     *   [1.3 OpenCL Development](#OpenCL_Development)
     *   [1.4 Implementations](#Implementations)
         *   [1.4.1 Language bindings](#Language_bindings)

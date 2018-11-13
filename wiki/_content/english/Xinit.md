@@ -18,12 +18,12 @@ From [Wikipedia](https://en.wikipedia.org/wiki/xinit "wikipedia:xinit"):
     *   [2.1 xinitrc](#xinitrc)
     *   [2.2 xserverrc](#xserverrc)
 *   [3 Usage](#Usage)
-*   [4 Autostart X at login](#Autostart_X_at_login)
-*   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Override xinitrc from command line](#Override_xinitrc_from_command_line)
-    *   [5.2 Switching between desktop environments/window managers](#Switching_between_desktop_environments.2Fwindow_managers)
-    *   [5.3 Starting applications without a window manager](#Starting_applications_without_a_window_manager)
-    *   [5.4 Output redirection using startx](#Output_redirection_using_startx)
+*   [4 Tips and tricks](#Tips_and_tricks)
+    *   [4.1 Autostart X at login](#Autostart_X_at_login)
+    *   [4.2 Override xinitrc](#Override_xinitrc)
+    *   [4.3 Switching between desktop environments/window managers](#Switching_between_desktop_environments/window_managers)
+    *   [4.4 Start applications only](#Start_applications_only)
+    *   [4.5 Output redirection using startx](#Output_redirection_using_startx)
 
 ## Installation
 
@@ -31,7 +31,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/xinit "wikipedia:xinit"):
 
 ## Configuration
 
-*xinit* and *startx* take an optional client program argument, see [#Override xinitrc from command line](#Override_xinitrc_from_command_line). If you do not provide one they will look for `~/.xinitrc` to run as a shell script to start up client programs.
+*xinit* and *startx* take an optional client program argument, see [#Override xinitrc](#Override_xinitrc). If you do not provide one they will look for `~/.xinitrc` to run as a shell script to start up client programs.
 
 ### xinitrc
 
@@ -46,7 +46,7 @@ $ cp /etc/X11/xinit/xinitrc ~/.xinitrc
 
 ```
 
-Then [edit](/index.php/Help:Reading#Append.2C_add.2C_create.2C_edit "Help:Reading") the file and replace the default programs with desired commands. Remember that lines following a command using `exec` would be ignored. For example, to start `xscreensaver` in the background and then start [openbox](/index.php/Openbox#Standalone "Openbox"), use the following:
+Then [edit](/index.php/Help:Reading#Append,_add,_create,_edit "Help:Reading") the file and replace the default programs with desired commands. Remember that lines following a command using `exec` would be ignored. For example, to start `xscreensaver` in the background and then start [openbox](/index.php/Openbox#Standalone "Openbox"), use the following:
 
  `~/.xinitrc` 
 ```
@@ -90,14 +90,14 @@ $ startx
 
 ```
 
-or
+Or if [#xserverrc](#xserverrc) is configured:
 
 ```
 $ xinit -- :1
 
 ```
 
-**Note:** *xinit* does not handle multiple displays when another X server is already started. For that you must specify the display by appending `-- :*display_number*`, where `*display_number*` is 1 or more.
+**Note:** *xinit* does not handle multiple displays when another X server is already started. For that you must specify the display by appending `-- :*display_number*`, where *display_number* is 1 or more.
 
 Your window manager (or desktop environment) of choice should now start correctly.
 
@@ -114,7 +114,11 @@ $ pkill -15 -t tty"$XDG_VTNR" Xorg
 
 ```
 
-## Autostart X at login
+See also [signal(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/signal.7).
+
+## Tips and tricks
+
+### Autostart X at login
 
 Make sure that *startx* is properly [configured](#Configuration).
 
@@ -137,25 +141,23 @@ See also [Fish#Start X at login](/index.php/Fish#Start_X_at_login "Fish") and [S
 
 **Tip:** This method can be combined with [automatic login to virtual console](/index.php/Automatic_login_to_virtual_console "Automatic login to virtual console").
 
-## Tips and tricks
+### Override xinitrc
 
-### Override xinitrc from command line
-
-If you have a working `~/.xinitrc`, but just want to try other window manager or desktop environment, you can run it by issuing *startx* followed by the path to the window manager:
+If you have a working `~/.xinitrc` but just want to try other window manager or desktop environment, you can run it by issuing *startx* followed by the path to the window manager, for example:
 
 ```
 $ startx /usr/bin/i3
 
 ```
 
-If the window manager takes arguments, they need to be quoted to be recognized as part of the first parameter of *startx*:
+If the binary takes arguments, they need to be quoted to be recognized as part of the first parameter of *startx*:
 
 ```
-$ startx "/usr/bin/*window-manager* --*key value*"
+$ startx "/usr/bin/*application* --*key value*"
 
 ```
 
-Note that the full path is **required**. Optionally, you can also specify custom options for [#xserverrc](#xserverrc) script by appending them after `--`, e.g.:
+Note that the full path is **required**. You can also specify custom options for the [#xserverrc](#xserverrc) script by appending them after the double dash `--` sign:
 
 ```
 $ startx /usr/bin/enlightenment -- -br +bs -dpi 96
@@ -164,13 +166,13 @@ $ startx /usr/bin/enlightenment -- -br +bs -dpi 96
 
 See also [startx(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/startx.1).
 
-**Tip:** This can be used even to start a regular GUI programs but without any of the window manager features. See also [#Starting applications without a window manager](#Starting_applications_without_a_window_manager) and [Running program in separate X display](/index.php/Running_program_in_separate_X_display "Running program in separate X display").
+**Tip:** This can be used to start regular GUI programs but without any of the basic window manager features. See also [#Start applications only](#Start_applications_only) and [Running program in separate X display](/index.php/Running_program_in_separate_X_display "Running program in separate X display").
 
 ### Switching between desktop environments/window managers
 
 If you are frequently switching between different desktop environments or window managers, it is convenient to either use a [display manager](/index.php/Display_manager "Display manager") or expand `~/.xinitrc` to make the switching possible.
 
-The following example `~/.xinitrc` shows how to start a particular desktop environment or window manager with an argument:
+The following example shows how to start a particular desktop environment or window manager with an argument:
 
  `~/.xinitrc` 
 ```
@@ -203,7 +205,7 @@ $ startx ~/.xinitrc *session*
 
 ```
 
-### Starting applications without a window manager
+### Start applications only
 
 It is possible to start only specific applications without a window manager, although most likely this is only useful with a single application shown in full-screen mode. For example:
 
@@ -215,9 +217,11 @@ exec chromium
 
 ```
 
-With this method you need to set each application window's geometry through its own configuration files, if possible at all.
+Alternatively the binary can be called directly from the command prompt as described in [#Override xinitrc](#Override_xinitrc).
 
-**Tip:** This method can be useful to launch graphical games, especially on systems where excluding the memory or CPU usage of a window manager or desktop environment, and possible accessory applications, can help improve the game's execution performance.
+With this method you need to set each application's window geometry through its own configuration files (if possible at all).
+
+**Tip:** This can be useful to launch graphical games, where excluding the overhead of a compositor can help improve the game's performance.
 
 See also [Display manager#Starting applications without a window manager](/index.php/Display_manager#Starting_applications_without_a_window_manager "Display manager").
 

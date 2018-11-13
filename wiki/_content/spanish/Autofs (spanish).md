@@ -1,12 +1,12 @@
 ## Contents
 
 *   [1 AutoFS](#AutoFS)
-    *   [1.1 ¿Qué es?](#.C2.BFQu.C3.A9_es.3F)
-    *   [1.2 Instalación](#Instalaci.C3.B3n)
+    *   [1.1 ¿Qué es?](#¿Qué_es?)
+    *   [1.2 Instalación](#Instalación)
     *   [1.3 Notas](#Notas)
 *   [2 Gestor de medios de XFCE](#Gestor_de_medios_de_XFCE)
-    *   [2.1 ¿Qué es?](#.C2.BFQu.C3.A9_es.3F_2)
-    *   [2.2 Requisitos e instalación](#Requisitos_e_instalaci.C3.B3n)
+    *   [2.1 ¿Qué es?](#¿Qué_es?_2)
+    *   [2.2 Requisitos e instalación](#Requisitos_e_instalación)
     *   [2.3 Notas](#Notas_2)
 
 ## AutoFS

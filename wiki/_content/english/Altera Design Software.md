@@ -23,11 +23,11 @@ This tutorial shows how to download, install, and configure the following softwa
         *   [1.2.6 USB-Blaster Download Cable Driver](#USB-Blaster_Download_Cable_Driver)
     *   [1.3 Standard Edition License Validation](#Standard_Edition_License_Validation)
     *   [1.4 Troubleshooting](#Troubleshooting)
-        *   [1.4.1 Empty (greyish) windows inside quartus (XMonad)](#Empty_.28greyish.29_windows_inside_quartus_.28XMonad.29)
+        *   [1.4.1 Empty (greyish) windows inside quartus (XMonad)](#Empty_(greyish)_windows_inside_quartus_(XMonad))
         *   [1.4.2 USB Blaster not working](#USB_Blaster_not_working)
             *   [1.4.2.1 JTAG chain broken](#JTAG_chain_broken)
             *   [1.4.2.2 Error when scanning hardware - Server error](#Error_when_scanning_hardware_-_Server_error)
-        *   [1.4.3 Installation hangs when installing Quartus Prime Help and/or ModelSim](#Installation_hangs_when_installing_Quartus_Prime_Help_and.2For_ModelSim)
+        *   [1.4.3 Installation hangs when installing Quartus Prime Help and/or ModelSim](#Installation_hangs_when_installing_Quartus_Prime_Help_and/or_ModelSim)
 *   [2 ModelSim-Altera Edition](#ModelSim-Altera_Edition)
     *   [2.1 Install](#Install)
     *   [2.2 Compatibility with Archlinux](#Compatibility_with_Archlinux)
@@ -38,8 +38,8 @@ This tutorial shows how to download, install, and configure the following softwa
         *   [2.2.5 lib32-glibc 2.23-1](#lib32-glibc_2.23-1)
     *   [2.3 Application Menu Entry - ModelSim-Altera Edition](#Application_Menu_Entry_-_ModelSim-Altera_Edition)
     *   [2.4 Troubleshooting](#Troubleshooting_2)
-        *   [2.4.1 Resolving the "ModelSim Failed to access library 'work'" error](#Resolving_the_.22ModelSim_Failed_to_access_library_.27work.27.22_error)
-        *   [2.4.2 Crash with "Error: couldn't open socket: host is unreachable"](#Crash_with_.22Error:_couldn.27t_open_socket:_host_is_unreachable.22)
+        *   [2.4.1 Resolving the "ModelSim Failed to access library 'work'" error](#Resolving_the_"ModelSim_Failed_to_access_library_'work'"_error)
+        *   [2.4.2 Crash with "Error: couldn't open socket: host is unreachable"](#Crash_with_"Error:_couldn't_open_socket:_host_is_unreachable")
 
 ## Quartus Prime Standard Edition
 

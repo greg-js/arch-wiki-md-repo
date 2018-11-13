@@ -8,11 +8,11 @@ From [AWStats - Free log file analyzer for advanced statistics](http://awstats.s
 *   [2 Configuration](#Configuration)
     *   [2.1 Enable mod_perl for Apache](#Enable_mod_perl_for_Apache)
     *   [2.2 Configure Apache to log for AWStats](#Configure_Apache_to_log_for_AWStats)
-    *   [2.3 Including AWStats configuration in Apache's configuration](#Including_AWStats_configuration_in_Apache.27s_configuration)
+    *   [2.3 Including AWStats configuration in Apache's configuration](#Including_AWStats_configuration_in_Apache's_configuration)
     *   [2.4 AWStats Configuration](#AWStats_Configuration)
 *   [3 Nginx](#Nginx)
 *   [4 Generating Statistics](#Generating_Statistics)
-*   [5 GeoIP (optional)](#GeoIP_.28optional.29)
+*   [5 GeoIP (optional)](#GeoIP_(optional))
 *   [6 See also](#See_also)
 
 ## Installation

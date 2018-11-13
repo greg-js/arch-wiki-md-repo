@@ -11,7 +11,7 @@ See [PAM](/index.php/PAM "PAM") for ways to configure *su'*s behavior.
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
-*   [3 Sudo, an alternative](#Sudo.2C_an_alternative)
+*   [3 Sudo, an alternative](#Sudo,_an_alternative)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Login shell](#Login_shell)
     *   [4.2 su and wheel](#su_and_wheel)

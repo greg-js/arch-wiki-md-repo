@@ -15,31 +15,31 @@ Artículos relacionados
 
 ## Contents
 
-*   [1 Invocación](#Invocaci.C3.B3n)
-    *   [1.1 Archivos de configuración](#Archivos_de_configuraci.C3.B3n)
-    *   [1.2 Variables del intérprete de línea de órdenes y de entorno](#Variables_del_int.C3.A9rprete_de_l.C3.ADnea_de_.C3.B3rdenes_y_de_entorno)
-*   [2 Línea de órdenes](#L.C3.ADnea_de_.C3.B3rdenes)
+*   [1 Invocación](#Invocación)
+    *   [1.1 Archivos de configuración](#Archivos_de_configuración)
+    *   [1.2 Variables del intérprete de línea de órdenes y de entorno](#Variables_del_intérprete_de_línea_de_órdenes_y_de_entorno)
+*   [2 Línea de órdenes](#Línea_de_órdenes)
     *   [2.1 Completar con tabulador](#Completar_con_tabulador)
-        *   [2.1.1 Pulsación única del tabulador](#Pulsaci.C3.B3n_.C3.BAnica_del_tabulador)
-        *   [2.1.2 Órdenes comunes y opciones](#.C3.93rdenes_comunes_y_opciones)
-        *   [2.1.3 Personalizar por órdenes](#Personalizar_por_.C3.B3rdenes)
+        *   [2.1.1 Pulsación única del tabulador](#Pulsación_única_del_tabulador)
+        *   [2.1.2 Órdenes comunes y opciones](#Órdenes_comunes_y_opciones)
+        *   [2.1.3 Personalizar por órdenes](#Personalizar_por_órdenes)
     *   [2.2 Historial](#Historial)
         *   [2.2.1 Completado del historial](#Completado_del_historial)
-        *   [2.2.2 Historial más corto](#Historial_m.C3.A1s_corto)
-    *   [2.3 Imitación de la capacidad de ejecutar la ayuda como Zsh](#Imitaci.C3.B3n_de_la_capacidad_de_ejecutar_la_ayuda_como_Zsh)
+        *   [2.2.2 Historial más corto](#Historial_más_corto)
+    *   [2.3 Imitación de la capacidad de ejecutar la ayuda como Zsh](#Imitación_de_la_capacidad_de_ejecutar_la_ayuda_como_Zsh)
 *   [3 Alias](#Alias)
 *   [4 Consejos y trucos](#Consejos_y_trucos)
-    *   [4.1 Personalización del indicador](#Personalizaci.C3.B3n_del_indicador)
-    *   [4.2 No se encontró la orden](#No_se_encontr.C3.B3_la_orden)
-    *   [4.3 Desactivar Control+z en el terminal](#Desactivar_Control.2Bz_en_el_terminal)
-    *   [4.4 Borrar la pantalla después de cerrar la sesión](#Borrar_la_pantalla_despu.C3.A9s_de_cerrar_la_sesi.C3.B3n)
-    *   [4.5 Auto "cd" al introducir solo una ruta](#Auto_.22cd.22_al_introducir_solo_una_ruta)
+    *   [4.1 Personalización del indicador](#Personalización_del_indicador)
+    *   [4.2 No se encontró la orden](#No_se_encontró_la_orden)
+    *   [4.3 Desactivar Control+z en el terminal](#Desactivar_Control+z_en_el_terminal)
+    *   [4.4 Borrar la pantalla después de cerrar la sesión](#Borrar_la_pantalla_después_de_cerrar_la_sesión)
+    *   [4.5 Auto "cd" al introducir solo una ruta](#Auto_"cd"_al_introducir_solo_una_ruta)
     *   [4.6 Autojump](#Autojump)
     *   [4.7 Impedir la sobreescritura de archivos](#Impedir_la_sobreescritura_de_archivos)
-*   [5 Solución de problemas](#Soluci.C3.B3n_de_problemas)
-    *   [5.1 Ajuste de línea al redimensionar la ventana](#Ajuste_de_l.C3.ADnea_al_redimensionar_la_ventana)
-    *   [5.2 Intérprete de línea de órdenes sale incluso si ignoreeof está definido](#Int.C3.A9rprete_de_l.C3.ADnea_de_.C3.B3rdenes_sale_incluso_si_ignoreeof_est.C3.A1_definido)
-*   [6 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [5 Solución de problemas](#Solución_de_problemas)
+    *   [5.1 Ajuste de línea al redimensionar la ventana](#Ajuste_de_línea_al_redimensionar_la_ventana)
+    *   [5.2 Intérprete de línea de órdenes sale incluso si ignoreeof está definido](#Intérprete_de_línea_de_órdenes_sale_incluso_si_ignoreeof_está_definido)
+*   [6 Véase también](#Véase_también)
     *   [6.1 Tutoriales](#Tutoriales)
     *   [6.2 Comunidad](#Comunidad)
     *   [6.3 Ejemplos](#Ejemplos)
@@ -105,7 +105,7 @@ La línea de órdenes Bash es administrada por la biblioteca separada llamada [R
 
 #### Pulsación única del tabulador
 
-Puede requerirse hasta tres pulsaciones de tabulador para mostrar todas las terminaciones posibles para una orden. Para reducir el número necesario de pulsaciones de tabulador, véase [Readline (Español)#Completado más rápido](/index.php/Readline_(Espa%C3%B1ol)#Completado_m.C3.A1s_r.C3.A1pido "Readline (Español)").
+Puede requerirse hasta tres pulsaciones de tabulador para mostrar todas las terminaciones posibles para una orden. Para reducir el número necesario de pulsaciones de tabulador, véase [Readline (Español)#Completado más rápido](/index.php/Readline_(Espa%C3%B1ol)#Completado_más_rápido "Readline (Español)").
 
 #### Órdenes comunes y opciones
 
@@ -169,7 +169,7 @@ bind '"\eh": "\C-a\eb\ed\C-y\e#man \C-y\C-m\C-p\C-p\C-a\C-d\C-e"'
 
 ```
 
-Esto asume que está utilizando el (predeterminado) [modo de edición](/index.php/Readline_(Espa%C3%B1ol)#Modo_de_edici.C3.B3n "Readline (Español)") Emacs.
+Esto asume que está utilizando el (predeterminado) [modo de edición](/index.php/Readline_(Espa%C3%B1ol)#Modo_de_edición "Readline (Español)") Emacs.
 
 ## Alias
 
@@ -202,7 +202,7 @@ abiword may be found in the following packages:
 
 ```
 
-**Nota:** Es posible que deba actualizarse la base de datos pkgfile antes de que esto funcione. Véase [pkgfile (Español)#Instalación](/index.php/Pkgfile_(Espa%C3%B1ol)#Instalaci.C3.B3n "Pkgfile (Español)") para más detalles.
+**Nota:** Es posible que deba actualizarse la base de datos pkgfile antes de que esto funcione. Véase [pkgfile (Español)#Instalación](/index.php/Pkgfile_(Espa%C3%B1ol)#Instalación "Pkgfile (Español)") para más detalles.
 
 Un *hook* alternativo a "No se encontró la orden" lo proporciona [command-not-found](https://aur.archlinux.org/packages/command-not-found/), que se ve así:
 

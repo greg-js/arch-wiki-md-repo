@@ -1,13 +1,13 @@
 ## Contents
 
-*   [1 全局设置](#.E5.85.A8.E5.B1.80.E8.AE.BE.E7.BD.AE)
-*   [2 用户设置](#.E7.94.A8.E6.88.B7.E8.AE.BE.E7.BD.AE)
+*   [1 全局设置](#全局设置)
+*   [2 用户设置](#用户设置)
     *   [2.1 X](#X)
-    *   [2.2 控制台](#.E6.8E.A7.E5.88.B6.E5.8F.B0)
-    *   [2.3 使用 ALSA](#.E4.BD.BF.E7.94.A8_ALSA)
-    *   [2.4 在 GNOME/Metacity 中](#.E5.9C.A8_GNOME.2FMetacity_.E4.B8.AD)
-    *   [2.5 GTK+](#GTK.2B)
-*   [3 附加资源](#.E9.99.84.E5.8A.A0.E8.B5.84.E6.BA.90)
+    *   [2.2 控制台](#控制台)
+    *   [2.3 使用 ALSA](#使用_ALSA)
+    *   [2.4 在 GNOME/Metacity 中](#在_GNOME/Metacity_中)
+    *   [2.5 GTK+](#GTK+)
+*   [3 附加资源](#附加资源)
 
 ## 全局设置
 

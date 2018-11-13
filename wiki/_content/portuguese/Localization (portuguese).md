@@ -20,13 +20,13 @@ Subpáginas sem uma contraparte em inglês:
 *   [1 Fontes](#Fontes)
 *   [2 Locale](#Locale)
 *   [3 Layouts de teclado](#Layouts_de_teclado)
-*   [4 Métodos de entrada](#M.C3.A9todos_de_entrada)
-    *   [4.1 Mecanismos de método de entrada](#Mecanismos_de_m.C3.A9todo_de_entrada)
-    *   [4.2 Método de GTK IM](#M.C3.A9todo_de_GTK_IM)
-        *   [4.2.1 Desabilitando módulos de GTK IM (sem desinstalar)](#Desabilitando_m.C3.B3dulos_de_GTK_IM_.28sem_desinstalar.29)
-    *   [4.3 QT immodule (> QT 4.0.0)](#QT_immodule_.28.3E_QT_4.0.0.29)
-        *   [4.3.1 Desabilitando módulos QT IM (sem desinstalar)](#Desabilitando_m.C3.B3dulos_QT_IM_.28sem_desinstalar.29)
-*   [5 Veja também](#Veja_tamb.C3.A9m)
+*   [4 Métodos de entrada](#Métodos_de_entrada)
+    *   [4.1 Mecanismos de método de entrada](#Mecanismos_de_método_de_entrada)
+    *   [4.2 Método de GTK IM](#Método_de_GTK_IM)
+        *   [4.2.1 Desabilitando módulos de GTK IM (sem desinstalar)](#Desabilitando_módulos_de_GTK_IM_(sem_desinstalar))
+    *   [4.3 QT immodule (> QT 4.0.0)](#QT_immodule_(>_QT_4.0.0))
+        *   [4.3.1 Desabilitando módulos QT IM (sem desinstalar)](#Desabilitando_módulos_QT_IM_(sem_desinstalar))
+*   [5 Veja também](#Veja_também)
 
 ## Fontes
 

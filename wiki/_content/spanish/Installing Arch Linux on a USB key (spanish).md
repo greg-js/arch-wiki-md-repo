@@ -11,22 +11,22 @@ Esta página describe cómo realizar una instalación normal de Arch en una llav
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-    *   [1.1 Ajustes de instalación](#Ajustes_de_instalaci.C3.B3n)
-*   [2 Configuración](#Configuraci.C3.B3n)
+*   [1 Instalación](#Instalación)
+    *   [1.1 Ajustes de instalación](#Ajustes_de_instalación)
+*   [2 Configuración](#Configuración)
     *   [2.1 GRUB legacy](#GRUB_legacy)
     *   [2.2 GRUB](#GRUB)
     *   [2.3 Syslinux](#Syslinux)
 *   [3 Consejos](#Consejos)
-    *   [3.1 Usar la instalación USB en varias máquinas](#Usar_la_instalaci.C3.B3n_USB_en_varias_m.C3.A1quinas)
+    *   [3.1 Usar la instalación USB en varias máquinas](#Usar_la_instalación_USB_en_varias_máquinas)
         *   [3.1.1 Controladores de entrada](#Controladores_de_entrada)
-        *   [3.1.2 Controladores de vídeo](#Controladores_de_v.C3.ADdeo)
+        *   [3.1.2 Controladores de vídeo](#Controladores_de_vídeo)
         *   [3.1.3 Nombres permanentes para los dispositivos de bloques](#Nombres_permanentes_para_los_dispositivos_de_bloques)
-        *   [3.1.4 Parámetros del kernel](#Par.C3.A1metros_del_kernel)
+        *   [3.1.4 Parámetros del kernel](#Parámetros_del_kernel)
         *   [3.1.5 Arranque desde medios USB 3](#Arranque_desde_medios_USB_3)
     *   [3.2 Compatibilidad](#Compatibilidad)
-    *   [3.3 Optimizar la vida útil de la memoria flash](#Optimizar_la_vida_.C3.BAtil_de_la_memoria_flash)
-*   [4 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+    *   [3.3 Optimizar la vida útil de la memoria flash](#Optimizar_la_vida_útil_de_la_memoria_flash)
+*   [4 Véase también](#Véase_también)
 
 ## Instalación
 
@@ -141,7 +141,7 @@ Para admitir las GPU más comunes, instale[xf86-video-vesa](https://www.archlinu
 
 Se recomienda utilizar [UUID](/index.php/Persistent_block_device_naming_(Espa%C3%B1ol)#by-uuid "Persistent block device naming (Español)"), tanto en [fstab (Español)](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Español)") como en la configuración del gestor de arranque. Véase [Persistent block device naming (Español)](/index.php/Persistent_block_device_naming_(Espa%C3%B1ol) "Persistent block device naming (Español)") para obtener más detalles.
 
-Como alternativa, puede crear reglas udev para crear un enlace simbólico personalizado para la llave USB. A continuación, utilice este enlace simbólico en fstab y en la configuración del gestor de arranque. Véase [udev (Español)#Configurar nombres estáticos para los dispositivos](/index.php/Udev_(Espa%C3%B1ol)#Configurar_nombres_est.C3.A1ticos_para_los_dispositivos "Udev (Español)") para obtener más detalles.
+Como alternativa, puede crear reglas udev para crear un enlace simbólico personalizado para la llave USB. A continuación, utilice este enlace simbólico en fstab y en la configuración del gestor de arranque. Véase [udev (Español)#Configurar nombres estáticos para los dispositivos](/index.php/Udev_(Espa%C3%B1ol)#Configurar_nombres_estáticos_para_los_dispositivos "Udev (Español)") para obtener más detalles.
 
 #### Parámetros del kernel
 

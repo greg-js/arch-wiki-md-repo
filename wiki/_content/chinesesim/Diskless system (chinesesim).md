@@ -13,27 +13,27 @@ From [Wikipedia:Diskless node](https://en.wikipedia.org/wiki/Diskless_node "wiki
 
 ## Contents
 
-*   [1 配置服务](#.E9.85.8D.E7.BD.AE.E6.9C.8D.E5.8A.A1)
+*   [1 配置服务](#配置服务)
     *   [1.1 DHCP](#DHCP)
     *   [1.2 TFTP](#TFTP)
-    *   [1.3 网络存储](#.E7.BD.91.E7.BB.9C.E5.AD.98.E5.82.A8)
+    *   [1.3 网络存储](#网络存储)
         *   [1.3.1 NFS](#NFS)
         *   [1.3.2 NBD](#NBD)
-*   [2 安装客户端](#.E5.AE.89.E8.A3.85.E5.AE.A2.E6.88.B7.E7.AB.AF)
-    *   [2.1 启动目录](#.E5.90.AF.E5.8A.A8.E7.9B.AE.E5.BD.95)
-    *   [2.2 引导安装](#.E5.BC.95.E5.AF.BC.E5.AE.89.E8.A3.85)
+*   [2 安装客户端](#安装客户端)
+    *   [2.1 启动目录](#启动目录)
+    *   [2.2 引导安装](#引导安装)
         *   [2.2.1 NFS](#NFS_2)
         *   [2.2.2 NBD](#NBD_2)
-*   [3 配置客户端](#.E9.85.8D.E7.BD.AE.E5.AE.A2.E6.88.B7.E7.AB.AF)
-    *   [3.1 引导](#.E5.BC.95.E5.AF.BC)
+*   [3 配置客户端](#配置客户端)
+    *   [3.1 引导](#引导)
         *   [3.1.1 GRUB](#GRUB)
         *   [3.1.2 PXELINUX](#PXELINUX)
     *   [3.2 Additional mountpoints](#Additional_mountpoints)
         *   [3.2.1 NBD root](#NBD_root)
         *   [3.2.2 Program state directories](#Program_state_directories)
-*   [4 引导客户端](#.E5.BC.95.E5.AF.BC.E5.AE.A2.E6.88.B7.E7.AB.AF)
+*   [4 引导客户端](#引导客户端)
     *   [4.1 NBD](#NBD_3)
-*   [5 参阅](#.E5.8F.82.E9.98.85)
+*   [5 参阅](#参阅)
 
 ## 配置服务
 

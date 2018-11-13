@@ -4,8 +4,8 @@
 
 *   [1 Installation](#Installation)
 *   [2 Konfiguration](#Konfiguration)
-*   [3 Mærkelig segmenteringsfejl (segfault)](#M.C3.A6rkelig_segmenteringsfejl_.28segfault.29)
-*   [4 Understøttelse af flere skrifttyper](#Underst.C3.B8ttelse_af_flere_skrifttyper)
+*   [3 Mærkelig segmenteringsfejl (segfault)](#Mærkelig_segmenteringsfejl_(segfault))
+*   [4 Understøttelse af flere skrifttyper](#Understøttelse_af_flere_skrifttyper)
 *   [5 Eksterne ressourcer](#Eksterne_ressourcer)
 
 ## Installation

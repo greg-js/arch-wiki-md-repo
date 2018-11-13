@@ -8,12 +8,12 @@ Artigos relacionados
 
 ## Contents
 
-*   [1 Instalação](#Instala.C3.A7.C3.A3o)
+*   [1 Instalação](#Instalação)
 *   [2 Uso](#Uso)
-*   [3 Usuários](#Usu.C3.A1rios)
+*   [3 Usuários](#Usuários)
 *   [4 Assinantes](#Assinantes)
 *   [5 Dicas e truques](#Dicas_e_truques)
-    *   [5.1 Definindo vários valores por opções](#Definindo_v.C3.A1rios_valores_por_op.C3.A7.C3.B5es)
+    *   [5.1 Definindo vários valores por opções](#Definindo_vários_valores_por_opções)
 
 ## Instalação
 

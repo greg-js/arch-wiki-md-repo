@@ -13,7 +13,7 @@ These components combine to the init *system*. Some inits include the service ma
 
 ## Contents
 
-*   [1 Inits (integrated)](#Inits_.28integrated.29)
+*   [1 Inits (integrated)](#Inits_(integrated))
 *   [2 Inits](#Inits)
 *   [3 Init scripts](#Init_scripts)
 *   [4 Service managers](#Service_managers)

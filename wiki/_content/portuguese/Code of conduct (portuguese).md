@@ -8,40 +8,40 @@ Se familiarizar com os princípios e diretrizes aqui é uma cortesia para a comu
 
 ## Contents
 
-*   [1 Introdução ao Senso Comum](#Introdu.C3.A7.C3.A3o_ao_Senso_Comum)
-*   [2 Código de conduta](#C.C3.B3digo_de_conduta)
+*   [1 Introdução ao Senso Comum](#Introdução_ao_Senso_Comum)
+*   [2 Código de conduta](#Código_de_conduta)
     *   [2.1 Respeito](#Respeito)
-        *   [2.1.1 Respeite outros usuários](#Respeite_outros_usu.C3.A1rios)
+        *   [2.1.1 Respeite outros usuários](#Respeite_outros_usuários)
         *   [2.1.2 Respeite outros sistemas operacionais e projetos](#Respeite_outros_sistemas_operacionais_e_projetos)
         *   [2.1.3 Respeite a equipe](#Respeite_a_equipe)
-        *   [2.1.4 Sem "trollagem"](#Sem_.22trollagem.22)
-        *   [2.1.5 Não incendeie discussões](#N.C3.A3o_incendeie_discuss.C3.B5es)
-        *   [2.1.6 Seja responsável](#Seja_respons.C3.A1vel)
+        *   [2.1.4 Sem "trollagem"](#Sem_"trollagem")
+        *   [2.1.5 Não incendeie discussões](#Não_incendeie_discussões)
+        *   [2.1.6 Seja responsável](#Seja_responsável)
         *   [2.1.7 Contas de membros](#Contas_de_membros)
     *   [2.2 Legalidade](#Legalidade)
-        *   [2.2.1 Solicitação criminal](#Solicita.C3.A7.C3.A3o_criminal)
-        *   [2.2.2 Spam/Publicidade/Solicitação](#Spam.2FPublicidade.2FSolicita.C3.A7.C3.A3o)
-    *   [2.3 Correção](#Corre.C3.A7.C3.A3o)
-        *   [2.3.1 Suporte *apenas* à distribuição Arch Linux](#Suporte_.2Aapenas.2A_.C3.A0_distribui.C3.A7.C3.A3o_Arch_Linux)
-        *   [2.3.2 Tópicos pessoais/retóricos](#T.C3.B3picos_pessoais.2Fret.C3.B3ricos)
-        *   [2.3.3 Evite controvérsia/tópicos controversos](#Evite_controv.C3.A9rsia.2Ft.C3.B3picos_controversos)
-        *   [2.3.4 Discussões Inefetivas (*bikeshed*)](#Discuss.C3.B5es_Inefetivas_.28bikeshed.29)
+        *   [2.2.1 Solicitação criminal](#Solicitação_criminal)
+        *   [2.2.2 Spam/Publicidade/Solicitação](#Spam/Publicidade/Solicitação)
+    *   [2.3 Correção](#Correção)
+        *   [2.3.1 Suporte *apenas* à distribuição Arch Linux](#Suporte_*apenas*_à_distribuição_Arch_Linux)
+        *   [2.3.2 Tópicos pessoais/retóricos](#Tópicos_pessoais/retóricos)
+        *   [2.3.3 Evite controvérsia/tópicos controversos](#Evite_controvérsia/tópicos_controversos)
+        *   [2.3.4 Discussões Inefetivas (*bikeshed*)](#Discussões_Inefetivas_(bikeshed))
     *   [2.4 Liberdade](#Liberdade)
-*   [3 Diretrizes específicas para fóruns](#Diretrizes_espec.C3.ADficas_para_f.C3.B3runs)
-    *   [3.1 Fóruns](#F.C3.B3runs)
+*   [3 Diretrizes específicas para fóruns](#Diretrizes_específicas_para_fóruns)
+    *   [3.1 Fóruns](#Fóruns)
         *   [3.1.1 Como publicar](#Como_publicar)
-        *   [3.1.2 Colando imagens e código](#Colando_imagens_e_c.C3.B3digo)
-        *   [3.1.3 A vida é uma via de mão dupla](#A_vida_.C3.A9_uma_via_de_m.C3.A3o_dupla)
-        *   [3.1.4 Requisições de recomendação de produtos](#Requisi.C3.A7.C3.B5es_de_recomenda.C3.A7.C3.A3o_de_produtos)
-        *   [3.1.5 Tópicos antigos/"ressurreição de tópicos"](#T.C3.B3picos_antigos.2F.22ressurrei.C3.A7.C3.A3o_de_t.C3.B3picos.22)
-        *   [3.1.6 Proibição de tópicos vazios/*power-posting*](#Proibi.C3.A7.C3.A3o_de_t.C3.B3picos_vazios.2Fpower-posting)
+        *   [3.1.2 Colando imagens e código](#Colando_imagens_e_código)
+        *   [3.1.3 A vida é uma via de mão dupla](#A_vida_é_uma_via_de_mão_dupla)
+        *   [3.1.4 Requisições de recomendação de produtos](#Requisições_de_recomendação_de_produtos)
+        *   [3.1.5 Tópicos antigos/"ressurreição de tópicos"](#Tópicos_antigos/"ressurreição_de_tópicos")
+        *   [3.1.6 Proibição de tópicos vazios/*power-posting*](#Proibição_de_tópicos_vazios/power-posting)
         *   [3.1.7 *Bumping*](#Bumping)
-        *   [3.1.8 Publicação cruzada](#Publica.C3.A7.C3.A3o_cruzada)
-        *   [3.1.9 Espoliação(Hijacking) de Tópicos](#Espolia.C3.A7.C3.A3o.28Hijacking.29_de_T.C3.B3picos)
-        *   [3.1.10 Política da caixa de lixo (*marked for deletion*)](#Pol.C3.ADtica_da_caixa_de_lixo_.28marked_for_deletion.29)
-    *   [3.2 Listas de discussão](#Listas_de_discuss.C3.A3o)
+        *   [3.1.8 Publicação cruzada](#Publicação_cruzada)
+        *   [3.1.9 Espoliação(Hijacking) de Tópicos](#Espoliação(Hijacking)_de_Tópicos)
+        *   [3.1.10 Política da caixa de lixo (*marked for deletion*)](#Política_da_caixa_de_lixo_(marked_for_deletion))
+    *   [3.2 Listas de discussão](#Listas_de_discussão)
         *   [3.2.1 *Top posting*](#Top_posting)
-        *   [3.2.2 Citação](#Cita.C3.A7.C3.A3o)
+        *   [3.2.2 Citação](#Citação)
         *   [3.2.3 Texto simples](#Texto_simples)
     *   [3.3 AUR](#AUR)
     *   [3.4 IRC](#IRC)
@@ -52,7 +52,7 @@ Se familiarizar com os princípios e diretrizes aqui é uma cortesia para a comu
 
 ## Introdução ao Senso Comum
 
-*   Se você escolheu usar o Arch Linux, seja bem-vindo e encorajado a abraçar [os princípios do Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs)#Princ.C3.ADpios "Arch Linux (Português)").
+*   Se você escolheu usar o Arch Linux, seja bem-vindo e encorajado a abraçar [os princípios do Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs)#Princípios "Arch Linux (Português)").
 *   Quando buscares ajuda, leia o manual, faça suas pesquisas primeiro e exiba detalhes daquilo que está buscando ajuda.
 *   Quando ofereceres ajuda, seja paciente e tático conforme o possível.
 
@@ -62,7 +62,7 @@ Se familiarizar com os princípios e diretrizes aqui é uma cortesia para a comu
 
 ## Código de conduta
 
-Os *padrões mínimos necessários* ao interagir com outros na comunidade do Arch Linux compreendem os quatro pontos principais. Além daqueles pontos, há diretrizes específicas para cada um dos fóruns da comunidade; os [#Fóruns](#F.C3.B3runs), [#Wiki](#Wiki), [#IRC](#IRC), [#Listas de discussão](#Listas_de_discuss.C3.A3o), [#AUR](#AUR) e [#Rastreador de erros](#Rastreador_de_erros).
+Os *padrões mínimos necessários* ao interagir com outros na comunidade do Arch Linux compreendem os quatro pontos principais. Além daqueles pontos, há diretrizes específicas para cada um dos fóruns da comunidade; os [#Fóruns](#Fóruns), [#Wiki](#Wiki), [#IRC](#IRC), [#Listas de discussão](#Listas_de_discussão), [#AUR](#AUR) e [#Rastreador de erros](#Rastreador_de_erros).
 
 ### Respeito
 
@@ -144,7 +144,7 @@ A troca livre e aberta de assistência, fala, ideias e opiniões é altamente co
 
 ## Diretrizes específicas para fóruns
 
-Além do [código comum](#C.C3.B3digo_de_conduta), cada um dos fóruns possui suas próprias diretrizes específicas resumidas nas subseções a seguir.
+Além do [código comum](#Código_de_conduta), cada um dos fóruns possui suas próprias diretrizes específicas resumidas nas subseções a seguir.
 
 ### [Fóruns](https://bbs.archlinux.org/)
 
@@ -230,7 +230,7 @@ Texto simples é o padrão de Unix e de e-mail. HTML é desnecessário e, para a
 Diretrizes para o Arch User Repository podem ser encontradas aqui:
 
 *   [AUR (Português)#Regras de envio](/index.php/AUR_(Portugu%C3%AAs)#Regras_de_envio "AUR (Português)")
-*   [AUR (Português)#Outras requisições](/index.php/AUR_(Portugu%C3%AAs)#Outras_requisi.C3.A7.C3.B5es "AUR (Português)")
+*   [AUR (Português)#Outras requisições](/index.php/AUR_(Portugu%C3%AAs)#Outras_requisições "AUR (Português)")
 
 ### [IRC](/index.php/IRC_(Portugu%C3%AAs) "IRC (Português)")
 

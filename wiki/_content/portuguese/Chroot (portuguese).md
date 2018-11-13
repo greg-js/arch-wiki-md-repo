@@ -10,18 +10,18 @@ Artigos relacionados
 
 ## Contents
 
-*   [1 Motivação](#Motiva.C3.A7.C3.A3o)
+*   [1 Motivação](#Motivação)
 *   [2 Requisitos](#Requisitos)
 *   [3 Uso](#Uso)
     *   [3.1 Usando arch-chroot](#Usando_arch-chroot)
         *   [3.1.1 Entrar em um chroot](#Entrar_em_um_chroot)
-        *   [3.1.2 Executar um único comando e sair](#Executar_um_.C3.BAnico_comando_e_sair)
+        *   [3.1.2 Executar um único comando e sair](#Executar_um_único_comando_e_sair)
     *   [3.2 Usando chroot](#Usando_chroot)
-*   [4 Executar aplicativos gráficos a partir do chroot](#Executar_aplicativos_gr.C3.A1ficos_a_partir_do_chroot)
-*   [5 Sem privilégios de root](#Sem_privil.C3.A9gios_de_root)
+*   [4 Executar aplicativos gráficos a partir do chroot](#Executar_aplicativos_gráficos_a_partir_do_chroot)
+*   [5 Sem privilégios de root](#Sem_privilégios_de_root)
     *   [5.1 PRoot](#PRoot)
     *   [5.2 Fakechroot](#Fakechroot)
-*   [6 Veja também](#Veja_tamb.C3.A9m)
+*   [6 Veja também](#Veja_também)
 
 ## Motivação
 

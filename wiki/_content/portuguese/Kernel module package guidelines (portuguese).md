@@ -8,10 +8,10 @@
 
 ## Contents
 
-*   [1 Separação de pacote](#Separa.C3.A7.C3.A3o_de_pacote)
+*   [1 Separação de pacote](#Separação_de_pacote)
     *   [1.1 Diretrizes](#Diretrizes)
     *   [1.2 Motivos](#Motivos)
-*   [2 Colocação de arquivos](#Coloca.C3.A7.C3.A3o_de_arquivos)
+*   [2 Colocação de arquivos](#Colocação_de_arquivos)
 
 ## Separação de pacote
 

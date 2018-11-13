@@ -1,8 +1,8 @@
 ## Contents
 
-*   [1 ¿Que es deluge?](#.C2.BFQue_es_deluge.3F)
-*   [2 Instalación](#Instalaci.C3.B3n)
-*   [3 Configuración](#Configuraci.C3.B3n)
+*   [1 ¿Que es deluge?](#¿Que_es_deluge?)
+*   [2 Instalación](#Instalación)
+*   [3 Configuración](#Configuración)
     *   [3.1 Demonio e interfaz web](#Demonio_e_interfaz_web)
     *   [3.2 SSL](#SSL)
 

@@ -4,8 +4,8 @@ Este documento procura configurar hotplug de modo que los miembros del grupo de 
 
 *   [1 Instalar hotplug y libgphoto2](#Instalar_hotplug_y_libgphoto2)
 *   [2 Configurando hotplug](#Configurando_hotplug)
-*   [3 Testeamos la instalación](#Testeamos_la_instalaci.C3.B3n)
-*   [4 Usa la cámara con tu aplicación favorita](#Usa_la_c.C3.A1mara_con_tu_aplicaci.C3.B3n_favorita)
+*   [3 Testeamos la instalación](#Testeamos_la_instalación)
+*   [4 Usa la cámara con tu aplicación favorita](#Usa_la_cámara_con_tu_aplicación_favorita)
 
 ## Instalar hotplug y libgphoto2
 

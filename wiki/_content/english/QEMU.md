@@ -24,11 +24,11 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
     *   [3.3 Installing the operating system](#Installing_the_operating_system)
 *   [4 Running virtualized system](#Running_virtualized_system)
     *   [4.1 Enabling KVM](#Enabling_KVM)
-    *   [4.2 Enabling IOMMU (Intel VT-d/AMD-Vi) support](#Enabling_IOMMU_.28Intel_VT-d.2FAMD-Vi.29_support)
+    *   [4.2 Enabling IOMMU (Intel VT-d/AMD-Vi) support](#Enabling_IOMMU_(Intel_VT-d/AMD-Vi)_support)
 *   [5 Moving data between host and guest OS](#Moving_data_between_host_and_guest_OS)
     *   [5.1 Network](#Network)
-    *   [5.2 QEMU's port forwarding](#QEMU.27s_port_forwarding)
-    *   [5.3 QEMU's built-in SMB server](#QEMU.27s_built-in_SMB_server)
+    *   [5.2 QEMU's port forwarding](#QEMU's_port_forwarding)
+    *   [5.3 QEMU's built-in SMB server](#QEMU's_built-in_SMB_server)
     *   [5.4 Mounting a partition inside a raw disk image](#Mounting_a_partition_inside_a_raw_disk_image)
         *   [5.4.1 With manually specifying byte offset](#With_manually_specifying_byte_offset)
         *   [5.4.2 With loop module autodetecting partitions](#With_loop_module_autodetecting_partitions)
@@ -48,7 +48,7 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
         *   [6.3.4 Creating bridge manually](#Creating_bridge_manually)
         *   [6.3.5 Network sharing between physical device and a Tap device through iptables](#Network_sharing_between_physical_device_and_a_Tap_device_through_iptables)
     *   [6.4 Networking with VDE2](#Networking_with_VDE2)
-        *   [6.4.1 What is VDE?](#What_is_VDE.3F)
+        *   [6.4.1 What is VDE?](#What_is_VDE?)
         *   [6.4.2 Basics](#Basics)
         *   [6.4.3 Startup scripts](#Startup_scripts)
         *   [6.4.4 Alternative method](#Alternative_method)
@@ -71,7 +71,7 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
     *   [8.1 Host](#Host)
     *   [8.2 Guest](#Guest)
 *   [9 Installing virtio drivers](#Installing_virtio_drivers)
-    *   [9.1 Preparing an (Arch) Linux guest](#Preparing_an_.28Arch.29_Linux_guest)
+    *   [9.1 Preparing an (Arch) Linux guest](#Preparing_an_(Arch)_Linux_guest)
     *   [9.2 Preparing a Windows guest](#Preparing_a_Windows_guest)
         *   [9.2.1 Block device drivers](#Block_device_drivers)
             *   [9.2.1.1 New Install of Windows](#New_Install_of_Windows)
@@ -104,16 +104,16 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
     *   [12.1 Virtual machine runs too slowly](#Virtual_machine_runs_too_slowly)
     *   [12.2 Mouse cursor is jittery or erratic](#Mouse_cursor_is_jittery_or_erratic)
     *   [12.3 No visible Cursor](#No_visible_Cursor)
-    *   [12.4 Unable to move/attach Cursor](#Unable_to_move.2Fattach_Cursor)
+    *   [12.4 Unable to move/attach Cursor](#Unable_to_move/attach_Cursor)
     *   [12.5 Keyboard seems broken or the arrow keys do not work](#Keyboard_seems_broken_or_the_arrow_keys_do_not_work)
     *   [12.6 Guest display stretches on window resize](#Guest_display_stretches_on_window_resize)
-    *   [12.7 ioctl(KVM_CREATE_VM) failed: 16 Device or resource busy](#ioctl.28KVM_CREATE_VM.29_failed:_16_Device_or_resource_busy)
+    *   [12.7 ioctl(KVM_CREATE_VM) failed: 16 Device or resource busy](#ioctl(KVM_CREATE_VM)_failed:_16_Device_or_resource_busy)
     *   [12.8 libgfapi error message](#libgfapi_error_message)
     *   [12.9 Kernel panic on LIVE-environments](#Kernel_panic_on_LIVE-environments)
     *   [12.10 Windows 7 guest suffers low-quality sound](#Windows_7_guest_suffers_low-quality_sound)
     *   [12.11 Could not access KVM kernel module: Permission denied](#Could_not_access_KVM_kernel_module:_Permission_denied)
-    *   [12.12 "System Thread Exception Not Handled" when booting a Windows VM](#.22System_Thread_Exception_Not_Handled.22_when_booting_a_Windows_VM)
-    *   [12.13 Certain Windows games/applications crashing/causing a bluescreen](#Certain_Windows_games.2Fapplications_crashing.2Fcausing_a_bluescreen)
+    *   [12.12 "System Thread Exception Not Handled" when booting a Windows VM](#"System_Thread_Exception_Not_Handled"_when_booting_a_Windows_VM)
+    *   [12.13 Certain Windows games/applications crashing/causing a bluescreen](#Certain_Windows_games/applications_crashing/causing_a_bluescreen)
 *   [13 See also](#See_also)
 
 ## Installation
@@ -165,7 +165,7 @@ You may use `-f qcow2` to create a *qcow2* disk instead.
 
 **Note:** You can also simply create a *raw* image by creating a file of the needed size using `dd` or `fallocate`.
 
-**Warning:** If you store the hard disk images on a [Btrfs](/index.php/Btrfs "Btrfs") file system, you should consider disabling [Copy-on-Write](/index.php/Btrfs#Copy-on-Write_.28CoW.29 "Btrfs") for the directory before creating any images.
+**Warning:** If you store the hard disk images on a [Btrfs](/index.php/Btrfs "Btrfs") file system, you should consider disabling [Copy-on-Write](/index.php/Btrfs#Copy-on-Write_(CoW) "Btrfs") for the directory before creating any images.
 
 #### Overlay storage images
 

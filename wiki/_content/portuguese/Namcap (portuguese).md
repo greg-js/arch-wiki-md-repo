@@ -12,19 +12,19 @@ Se você tem um *patch* (corrigindo um erro ou adicionando um novo módulo para 
 
 ## Contents
 
-*   [1 Instalação](#Instala.C3.A7.C3.A3o)
-*   [2 Como usá-lo](#Como_us.C3.A1-lo)
-*   [3 Entendendo a saída](#Entendendo_a_sa.C3.ADda)
+*   [1 Instalação](#Instalação)
+*   [2 Como usá-lo](#Como_usá-lo)
+*   [3 Entendendo a saída](#Entendendo_a_saída)
 *   [4 Tags](#Tags)
-    *   [4.1 Links simbólicos](#Links_simb.C3.B3licos)
-    *   [4.2 Depedências](#Deped.C3.AAncias)
-    *   [4.3 Licenças](#Licen.C3.A7as)
+    *   [4.1 Links simbólicos](#Links_simbólicos)
+    *   [4.2 Depedências](#Depedências)
+    *   [4.3 Licenças](#Licenças)
     *   [4.4 Arquivos](#Arquivos)
     *   [4.5 Diversos](#Diversos)
     *   [4.6 PKGBUILDs](#PKGBUILDs)
-    *   [4.7 Não lançadas](#N.C3.A3o_lan.C3.A7adas)
-*   [5 Fazendo um módulo de namcap](#Fazendo_um_m.C3.B3dulo_de_namcap)
-*   [6 Relatórios do namcap](#Relat.C3.B3rios_do_namcap)
+    *   [4.7 Não lançadas](#Não_lançadas)
+*   [5 Fazendo um módulo de namcap](#Fazendo_um_módulo_de_namcap)
+*   [6 Relatórios do namcap](#Relatórios_do_namcap)
 
 ## Instalação
 

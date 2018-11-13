@@ -5,7 +5,7 @@
 *   [1 Instalace](#Instalace)
 *   [2 Konfigurace](#Konfigurace)
 *   [3 Extended usage](#Extended_usage)
-    *   [3.1 Patches & additional features](#Patches_.26_additional_features)
+    *   [3.1 Patches & additional features](#Patches_&_additional_features)
     *   [3.2 Tabbed browsing](#Tabbed_browsing)
 *   [4 See also](#See_also)
 

@@ -8,9 +8,9 @@ Dalla pagina di manuale [resolv.conf(5)](http://www.kernel.org/doc/man-pages/onl
 
 *   [1 Mantenere le impostazioni dei DNS](#Mantenere_le_impostazioni_dei_DNS)
     *   [1.1 Modificare la configurazione di dhcpcd](#Modificare_la_configurazione_di_dhcpcd)
-    *   [1.2 Usare /etc/resolv.conf.head](#Usare_.2Fetc.2Fresolv.conf.head)
-    *   [1.3 Proteggere dalla scrittura /etc/resolv.conf](#Proteggere_dalla_scrittura_.2Fetc.2Fresolv.conf)
-    *   [1.4 Usare l'opzione timeout per ridurre il tempo di loockup dei nomi host](#Usare_l.27opzione_timeout_per_ridurre_il_tempo_di_loockup_dei_nomi_host)
+    *   [1.2 Usare /etc/resolv.conf.head](#Usare_/etc/resolv.conf.head)
+    *   [1.3 Proteggere dalla scrittura /etc/resolv.conf](#Proteggere_dalla_scrittura_/etc/resolv.conf)
+    *   [1.4 Usare l'opzione timeout per ridurre il tempo di loockup dei nomi host](#Usare_l'opzione_timeout_per_ridurre_il_tempo_di_loockup_dei_nomi_host)
 
 ## Mantenere le impostazioni dei DNS
 

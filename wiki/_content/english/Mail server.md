@@ -14,7 +14,7 @@ A mail server consists of multiple components. A [mail transfer agent](https://e
 ## Contents
 
 *   [1 Software](#Software)
-    *   [1.1 POP3/IMAP servers](#POP3.2FIMAP_servers)
+    *   [1.1 POP3/IMAP servers](#POP3/IMAP_servers)
     *   [1.2 Standalone MDAs](#Standalone_MDAs)
 *   [2 Ports](#Ports)
 *   [3 MX record](#MX_record)
@@ -97,7 +97,7 @@ Hosting a mail server requires a [domain name](https://en.wikipedia.org/wiki/Dom
 
 **Warning:** If you deploy [TLS](https://en.wikipedia.org/wiki/TLS "wikipedia:TLS"), be sure to follow [Server-side TLS](/index.php/Server-side_TLS "Server-side TLS") to prevent vulnerabilities.
 
-To obtain a certificate, see [OpenSSL#Certificates](/index.php/OpenSSL#Certificates "OpenSSL").
+To obtain a certificate, see [OpenSSL#Usage](/index.php/OpenSSL#Usage "OpenSSL").
 
 ## Authentication
 

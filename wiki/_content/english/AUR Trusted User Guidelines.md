@@ -10,13 +10,13 @@ The TUs are governed using the [TU bylaws](https://aur.archlinux.org/trusted-use
 
 *   [1 TODO list for new Trusted Users](#TODO_list_for_new_Trusted_Users)
 *   [2 The TU and the AUR](#The_TU_and_the_AUR)
-*   [3 The TU and [community], Guidelines for Package Maintenance](#The_TU_and_.5Bcommunity.5D.2C_Guidelines_for_Package_Maintenance)
-    *   [3.1 Rules for Packages Entering the [community] Repo](#Rules_for_Packages_Entering_the_.5Bcommunity.5D_Repo)
+*   [3 The TU and [community], Guidelines for Package Maintenance](#The_TU_and_[community],_Guidelines_for_Package_Maintenance)
+    *   [3.1 Rules for Packages Entering the [community] Repo](#Rules_for_Packages_Entering_the_[community]_Repo)
     *   [3.2 Accessing and Updating the Repository](#Accessing_and_Updating_the_Repository)
     *   [3.3 Disowning packages](#Disowning_packages)
-    *   [3.4 Moving packages from unsupported to [community]](#Moving_packages_from_unsupported_to_.5Bcommunity.5D)
-    *   [3.5 Moving packages from [community] to unsupported](#Moving_packages_from_.5Bcommunity.5D_to_unsupported)
-    *   [3.6 Moving packages from [community-testing] to [community]](#Moving_packages_from_.5Bcommunity-testing.5D_to_.5Bcommunity.5D)
+    *   [3.4 Moving packages from unsupported to [community]](#Moving_packages_from_unsupported_to_[community])
+    *   [3.5 Moving packages from [community] to unsupported](#Moving_packages_from_[community]_to_unsupported)
+    *   [3.6 Moving packages from [community-testing] to [community]](#Moving_packages_from_[community-testing]_to_[community])
     *   [3.7 Deleting packages from unsupported](#Deleting_packages_from_unsupported)
     *   [3.8 Remote build on PKGBUILD.com](#Remote_build_on_PKGBUILD.com)
 *   [4 TODO list retiring a Trusted User](#TODO_list_retiring_a_Trusted_User)
@@ -31,6 +31,7 @@ The TUs are governed using the [TU bylaws](https://aur.archlinux.org/trusted-use
 5.  Subscribe to the public mailing list for Arch Linux development, [arch-dev-public](https://lists.archlinux.org/listinfo/arch-dev-public).
 6.  Remind a [BBS admin](https://bbs.archlinux.org/userlist.php?username=&show_group=1&sort_by=username&sort_dir=ASC&search=Submit) to change your account on forums.
 7.  Ask some TU for the #archlinux-tu@freenode key and hang out with us in the channel. You do not have to do this, but it would be neat since this is where most dark secrets are spilled and where many new ideas are conceived.
+    *   If you need a bouncer, ask heftig for a [Matrix](/index.php/Matrix "Matrix") invite, or execute `givemequassel` on the *soyuz.archlinux.org* server, then login using [Quassel](/index.php/Quassel "Quassel").
     *   Once in the channel, if you want an @archlinux/trusteduser/* cloak ask our [group contact](https://freenode.net/groupreg#two-types-of-group-contacts-exist-for-freenode), ioni, to get you one.
 8.  Create a PGP key for [package signing](/index.php/Package_signing "Package signing") or use your existing PGP key. Make sure the key also contains an encryption subkey so you can receive encrypted verification tokens.
 9.  Send a signed email to Florian Pritz (bluewind@xinu.at) or Bartłomiej Piotrowski (bpiotrowski@archlinux.org):

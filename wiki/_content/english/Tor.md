@@ -48,7 +48,7 @@ Related articles
         *   [13.2.1 Configuration](#Configuration_3)
     *   [13.3 Running a Tor exit node](#Running_a_Tor_exit_node)
         *   [13.3.1 Configuration](#Configuration_4)
-        *   [13.3.2 +100Mbps Exit Relay configuration example](#.2B100Mbps_Exit_Relay_configuration_example)
+        *   [13.3.2 +100Mbps Exit Relay configuration example](#+100Mbps_Exit_Relay_configuration_example)
             *   [13.3.2.1 Tor](#Tor)
                 *   [13.3.2.1.1 Raise maximum number of open file descriptors](#Raise_maximum_number_of_open_file_descriptors)
                 *   [13.3.2.1.2 Start tor.service as root to bind Tor to privileged ports](#Start_tor.service_as_root_to_bind_Tor_to_privileged_ports)

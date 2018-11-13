@@ -2,19 +2,19 @@ Esto cubre la instalación de un segundo disco después de tener un sistema que 
 
 ## Contents
 
-*   [1 Disco primario: déjalo para conseguir la info y grabarlo. Utilicé cfdisk.](#Disco_primario:_d.C3.A9jalo_para_conseguir_la_info_y_grabarlo._Utilic.C3.A9_cfdisk.)
-*   [2 Disco secundario: instalación usando cfdisk.](#Disco_secundario:_instalaci.C3.B3n_usando_cfdisk.)
+*   [1 Disco primario: déjalo para conseguir la info y grabarlo. Utilicé cfdisk.](#Disco_primario:_déjalo_para_conseguir_la_info_y_grabarlo._Utilicé_cfdisk.)
+*   [2 Disco secundario: instalación usando cfdisk.](#Disco_secundario:_instalación_usando_cfdisk.)
 *   [3 Creamos los nodos md para los dispositivos:](#Creamos_los_nodos_md_para_los_dispositivos:)
 *   [4 Creamos los dispositivos RAID](#Creamos_los_dispositivos_RAID)
-*   [5 Chequea /proc/mdstat](#Chequea_.2Fproc.2Fmdstat)
-*   [6 Creamos los sistemas de archivos que necesitemos utilizando las herramientas de creación.](#Creamos_los_sistemas_de_archivos_que_necesitemos_utilizando_las_herramientas_de_creaci.C3.B3n.)
-*   [7 Montamos y copiamos la información.](#Montamos_y_copiamos_la_informaci.C3.B3n.)
+*   [5 Chequea /proc/mdstat](#Chequea_/proc/mdstat)
+*   [6 Creamos los sistemas de archivos que necesitemos utilizando las herramientas de creación.](#Creamos_los_sistemas_de_archivos_que_necesitemos_utilizando_las_herramientas_de_creación.)
+*   [7 Montamos y copiamos la información.](#Montamos_y_copiamos_la_información.)
 *   [8 Nota: PASO CRUCIAL](#Nota:_PASO_CRUCIAL)
-*   [9 Instalar: vi /mnt/etc/fstab para el nuevo dispositivo md.](#Instalar:_vi_.2Fmnt.2Fetc.2Ffstab_para_el_nuevo_dispositivo_md.)
+*   [9 Instalar: vi /mnt/etc/fstab para el nuevo dispositivo md.](#Instalar:_vi_/mnt/etc/fstab_para_el_nuevo_dispositivo_md.)
 *   [10 Ejecutamos chroot dentro del nuevo sistema RAID y reconstruimos initrd.](#Ejecutamos_chroot_dentro_del_nuevo_sistema_RAID_y_reconstruimos_initrd.)
-*   [11 Instalamos GRUB en el nuevo RAID de discos, cambiando los números de acuerdo a la instalación.](#Instalamos_GRUB_en_el_nuevo_RAID_de_discos.2C_cambiando_los_n.C3.BAmeros_de_acuerdo_a_la_instalaci.C3.B3n.)
+*   [11 Instalamos GRUB en el nuevo RAID de discos, cambiando los números de acuerdo a la instalación.](#Instalamos_GRUB_en_el_nuevo_RAID_de_discos,_cambiando_los_números_de_acuerdo_a_la_instalación.)
 *   [12 Chequeamos con mdstat](#Chequeamos_con_mdstat)
-*   [13 Finalizamos la configuración de grub](#Finalizamos_la_configuraci.C3.B3n_de_grub)
+*   [13 Finalizamos la configuración de grub](#Finalizamos_la_configuración_de_grub)
 *   [14 Finalizamos initrd.](#Finalizamos_initrd.)
 *   [15 Cambiamos el orden de arranque en la BIOS nuevamente.](#Cambiamos_el_orden_de_arranque_en_la_BIOS_nuevamente.)
 

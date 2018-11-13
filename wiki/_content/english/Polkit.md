@@ -21,7 +21,7 @@ Polkit works by delimiting distinct actions, e.g. running GParted, and delimitin
     *   [2.2 Authorization rules](#Authorization_rules)
     *   [2.3 Administrator identities](#Administrator_identities)
 *   [3 Examples](#Examples)
-    *   [3.1 Debugging/logging](#Debugging.2Flogging)
+    *   [3.1 Debugging/logging](#Debugging/logging)
     *   [3.2 Disable suspend and hibernate](#Disable_suspend_and_hibernate)
     *   [3.3 Bypass password prompt](#Bypass_password_prompt)
         *   [3.3.1 Globally](#Globally)

@@ -44,8 +44,8 @@ From [MATE homepage](https://mate-desktop.org/):
     *   [5.4 Use of gradient backgrounds with LightDM](#Use_of_gradient_backgrounds_with_LightDM)
     *   [5.5 Enabling panel shadow](#Enabling_panel_shadow)
     *   [5.6 Disabling scroll in taskbar](#Disabling_scroll_in_taskbar)
-    *   [5.7 Logout/shutdown delayed by at-spi-registryd](#Logout.2Fshutdown_delayed_by_at-spi-registryd)
-    *   [5.8 Caja's text file preview](#Caja.27s_text_file_preview)
+    *   [5.7 Logout/shutdown delayed by at-spi-registryd](#Logout/shutdown_delayed_by_at-spi-registryd)
+    *   [5.8 Caja's text file preview](#Caja's_text_file_preview)
 *   [6 See also](#See_also)
 
 ## Installation

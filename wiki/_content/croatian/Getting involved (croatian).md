@@ -2,23 +2,23 @@ U biologiji, mutualizam je interakcija između dvaju organizama od kojih svaki p
 
 ## Contents
 
-*   [1 Službeni Arch Linux projekt](#Slu.C5.BEbeni_Arch_Linux_projekt)
+*   [1 Službeni Arch Linux projekt](#Službeni_Arch_Linux_projekt)
     *   [1.1 Objave na forumima](#Objave_na_forumima)
-    *   [1.2 Uređivanje wiki stranica](#Ure.C4.91ivanje_wiki_stranica)
-    *   [1.3 Pridružite se chat sobi](#Pridru.C5.BEite_se_chat_sobi)
-    *   [1.4 *Fix*evi i bug izvještaji](#Fixevi_i_bug_izvje.C5.A1taji)
+    *   [1.2 Uređivanje wiki stranica](#Uređivanje_wiki_stranica)
+    *   [1.3 Pridružite se chat sobi](#Pridružite_se_chat_sobi)
+    *   [1.4 *Fix*evi i bug izvještaji](#Fixevi_i_bug_izvještaji)
     *   [1.5 Pravljanje i usvajanje AUR paketa](#Pravljanje_i_usvajanje_AUR_paketa)
-    *   [1.6 Službeni softverski projekti](#Slu.C5.BEbeni_softverski_projekti)
+    *   [1.6 Službeni softverski projekti](#Službeni_softverski_projekti)
     *   [1.7 Doniratinje novca](#Doniratinje_novca)
 *   [2 Projekti u zajednici](#Projekti_u_zajednici)
     *   [2.1 Grupe](#Grupe)
     *   [2.2 Software](#Software)
     *   [2.3 Usluge](#Usluge)
     *   [2.4 Ostalo](#Ostalo)
-*   [3 FAQ (*česta pitanja*)](#FAQ_.28.C4.8Desta_pitanja.29)
-    *   [3.1 Kako mogu postati Arch Developer?](#Kako_mogu_postati_Arch_Developer.3F)
-    *   [3.2 Kako mogu postati Trusted Upute?](#Kako_mogu_postati_Trusted_Upute.3F)
-    *   [3.3 Što mogu učiniti kao umjetnik?](#.C5.A0to_mogu_u.C4.8Diniti_kao_umjetnik.3F)
+*   [3 FAQ (*česta pitanja*)](#FAQ_(česta_pitanja))
+    *   [3.1 Kako mogu postati Arch Developer?](#Kako_mogu_postati_Arch_Developer?)
+    *   [3.2 Kako mogu postati Trusted Upute?](#Kako_mogu_postati_Trusted_Upute?)
+    *   [3.3 Što mogu učiniti kao umjetnik?](#Što_mogu_učiniti_kao_umjetnik?)
 
 ## Službeni Arch Linux projekt
 

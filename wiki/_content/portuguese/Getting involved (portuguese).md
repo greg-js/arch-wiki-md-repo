@@ -7,12 +7,12 @@ Este artigo descreve como usuários novos e experientes do Arch podem contribuir
 ## Contents
 
 *   [1 Projetos oficiais do Arch Linux](#Projetos_oficiais_do_Arch_Linux)
-    *   [1.1 Postagens nos fóruns](#Postagens_nos_f.C3.B3runs)
+    *   [1.1 Postagens nos fóruns](#Postagens_nos_fóruns)
     *   [1.2 Melhore esta wiki](#Melhore_esta_wiki)
     *   [1.3 Ingresse nas salas de chat](#Ingresse_nas_salas_de_chat)
     *   [1.4 Relate pacotes instalados](#Relate_pacotes_instalados)
     *   [1.5 Corrija e relate](#Corrija_e_relate)
-    *   [1.6 Informe sobre problemas de segurança](#Informe_sobre_problemas_de_seguran.C3.A7a)
+    *   [1.6 Informe sobre problemas de segurança](#Informe_sobre_problemas_de_segurança)
     *   [1.7 Ajude a testar pacotes](#Ajude_a_testar_pacotes)
     *   [1.8 Crie e adote pacotes do AUR](#Crie_e_adote_pacotes_do_AUR)
     *   [1.9 Projetos de software oficiais](#Projetos_de_software_oficiais)
@@ -22,9 +22,9 @@ Este artigo descreve como usuários novos e experientes do Arch podem contribuir
     *   [2.2 Software](#Software)
     *   [2.3 Outros](#Outros)
 *   [3 FAQ](#FAQ)
-    *   [3.1 Como posso me tornar um desenvolvedor do Arch?](#Como_posso_me_tornar_um_desenvolvedor_do_Arch.3F)
-    *   [3.2 Como me torno um Trusted User?](#Como_me_torno_um_Trusted_User.3F)
-    *   [3.3 O que eu posso fazer sendo um artista?](#O_que_eu_posso_fazer_sendo_um_artista.3F)
+    *   [3.1 Como posso me tornar um desenvolvedor do Arch?](#Como_posso_me_tornar_um_desenvolvedor_do_Arch?)
+    *   [3.2 Como me torno um Trusted User?](#Como_me_torno_um_Trusted_User?)
+    *   [3.3 O que eu posso fazer sendo um artista?](#O_que_eu_posso_fazer_sendo_um_artista?)
 
 ## Projetos oficiais do Arch Linux
 
@@ -149,7 +149,7 @@ Aqui está uma lista de coisas que você pode fazer para ganhar alguma "populari
 
 ### Como me torno um Trusted User?
 
-Leia [Trusted Users (Português)#Como eu me torno um TU?](/index.php/Trusted_Users_(Portugu%C3%AAs)#Como_eu_me_torno_um_TU.3F "Trusted Users (Português)").
+Leia [Trusted Users (Português)#Como eu me torno um TU?](/index.php/Trusted_Users_(Portugu%C3%AAs)#Como_eu_me_torno_um_TU? "Trusted Users (Português)").
 
 ### O que eu posso fazer sendo um artista?
 

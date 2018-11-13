@@ -1,14 +1,14 @@
 ## Contents
 
-*   [1 Aclaración](#Aclaraci.C3.B3n)
+*   [1 Aclaración](#Aclaración)
 *   [2 Primero](#Primero)
-*   [3 Instalación](#Instalaci.C3.B3n)
+*   [3 Instalación](#Instalación)
 *   [4 Para que funcione Xorg](#Para_que_funcione_Xorg)
     *   [4.1 Teclado en X](#Teclado_en_X)
 *   [5 Sobre las interfaces de red](#Sobre_las_interfaces_de_red)
 *   [6 Evitar la degradacion del disco rigido](#Evitar_la_degradacion_del_disco_rigido)
 *   [7 Si quieren velocidad](#Si_quieren_velocidad)
-    *   [7.1 Entorno gráfico](#Entorno_gr.C3.A1fico)
+    *   [7.1 Entorno gráfico](#Entorno_gráfico)
     *   [7.2 Gestor de redes](#Gestor_de_redes)
     *   [7.3 Navegador web](#Navegador_web)
     *   [7.4 Optimizaciones](#Optimizaciones)

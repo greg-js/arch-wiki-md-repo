@@ -13,8 +13,8 @@ From [pipewire.org](http://pipewire.org):
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
     *   [2.1 Video](#Video)
-    *   [2.2 Audio (JACK)](#Audio_.28JACK.29)
-    *   [2.3 ALSA/Legacy applications](#ALSA.2FLegacy_applications)
+    *   [2.2 Audio (JACK)](#Audio_(JACK))
+    *   [2.3 ALSA/Legacy applications](#ALSA/Legacy_applications)
     *   [2.4 Bluetooth](#Bluetooth)
 *   [3 See also](#See_also)
 

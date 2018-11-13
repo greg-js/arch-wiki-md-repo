@@ -7,7 +7,7 @@
 | USB 3.0 | Yes |
 | [Ethernet](/index.php/Ethernet "Ethernet") | Yes |
 | [WLAN](/index.php/Wireless "Wireless") | Yes |
-| [WWAN](#WWAN_.28and_GPS.29_adapter) | Yes |
+| [WWAN](#WWAN_(and_GPS)_adapter) | Yes |
 | [GPS](/index.php/GPS "GPS") | Yes |
 | [Bluetooth](#Bluetooth_adapter) | Buggy device |
 | [Touchpad](#Synaptics_Touchpad) | Yes |
@@ -26,7 +26,7 @@ HP EliteBook 2570p is a powerful and customizable 12.5-inch notebook with a sock
 *   [1 Hardware support](#Hardware_support)
     *   [1.1 Intel CPU microcode](#Intel_CPU_microcode)
     *   [1.2 Synaptics Touchpad](#Synaptics_Touchpad)
-    *   [1.3 WWAN (and GPS) adapter](#WWAN_.28and_GPS.29_adapter)
+    *   [1.3 WWAN (and GPS) adapter](#WWAN_(and_GPS)_adapter)
     *   [1.4 Bluetooth adapter](#Bluetooth_adapter)
 *   [2 Power management](#Power_management)
     *   [2.1 Intel graphics](#Intel_graphics)

@@ -10,7 +10,7 @@ IceWM è estremamente configurabile ed è quasi equiparabile ad una via di mezzo
 *   [2 Lanciare IceWm in maniera stand-alone](#Lanciare_IceWm_in_maniera_stand-alone)
 *   [3 IceWm come WM per un Desktop Environment](#IceWm_come_WM_per_un_Desktop_Environment)
 *   [4 Configurazione](#Configurazione)
-    *   [4.1 Menù](#Men.C3.B9)
+    *   [4.1 Menù](#Menù)
     *   [4.2 Temi](#Temi)
 *   [5 File Managers](#File_Managers)
 *   [6 Articoli correlati](#Articoli_correlati)

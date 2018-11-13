@@ -29,9 +29,9 @@ An example live version can be found at [GitLab.com](https://gitlab.com/).
 *   [5 Advanced Configuration](#Advanced_Configuration)
     *   [5.1 Basic SSH](#Basic_SSH)
     *   [5.2 Custom SSH Connection](#Custom_SSH_Connection)
-    *   [5.3 HTTPS/SSL](#HTTPS.2FSSL)
+    *   [5.3 HTTPS/SSL](#HTTPS/SSL)
         *   [5.3.1 Change GitLab configs](#Change_GitLab_configs)
-        *   [5.3.2 Let's Encrypt](#Let.27s_Encrypt)
+        *   [5.3.2 Let's Encrypt](#Let's_Encrypt)
     *   [5.4 Web server configuration](#Web_server_configuration)
         *   [5.4.1 Node.js](#Node.js)
         *   [5.4.2 Nginx](#Nginx)
@@ -42,7 +42,7 @@ An example live version can be found at [GitLab.com](https://gitlab.com/).
     *   [6.2 Backup and restore](#Backup_and_restore)
     *   [6.3 Sending mails from Gitlab via SMTP](#Sending_mails_from_Gitlab_via_SMTP)
 *   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 HTTPS is not green (gravatar not using https)](#HTTPS_is_not_green_.28gravatar_not_using_https.29)
+    *   [7.1 HTTPS is not green (gravatar not using https)](#HTTPS_is_not_green_(gravatar_not_using_https))
     *   [7.2 Errors after updating](#Errors_after_updating)
     *   [7.3 Gitlab-Unicorn cannot access non-default repositories directory](#Gitlab-Unicorn_cannot_access_non-default_repositories_directory)
     *   [7.4 Failed to connect to Gitaly](#Failed_to_connect_to_Gitaly)
@@ -440,7 +440,7 @@ You can easily set up an http proxy on port 443 to proxy traffic to the GitLab a
 
 #### Nginx
 
-See [Nginx#Configuration](/index.php/Nginx#Configuration "Nginx") for basic *nginx* configuration and [Nginx#TLS/SSL](/index.php/Nginx#TLS.2FSSL "Nginx") for enabling HTTPS. The sample in this section also assumes that server blocks are managed with [Nginx#Managing server entries](/index.php/Nginx#Managing_server_entries "Nginx").
+See [Nginx#Configuration](/index.php/Nginx#Configuration "Nginx") for basic *nginx* configuration and [Nginx#TLS](/index.php/Nginx#TLS "Nginx") for enabling HTTPS. The sample in this section also assumes that server blocks are managed with [Nginx#Managing server entries](/index.php/Nginx#Managing_server_entries "Nginx").
 
 Create and edit the configuration based on the following snippet. See the [upstream GitLab repository](https://gitlab.com/gitlab-org/gitlab-ce/tree/master/lib/support/nginx) for more examples.
 

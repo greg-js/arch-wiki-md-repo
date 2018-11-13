@@ -11,7 +11,7 @@ Il sistema di monitoring del filesystem è usato per:
 
 *   [1 Installazione di FAM](#Installazione_di_FAM)
 *   [2 Configurazione](#Configurazione)
-*   [3 Start/Stop Manuale](#Start.2FStop_Manuale)
+*   [3 Start/Stop Manuale](#Start/Stop_Manuale)
 *   [4 Altre risorse](#Altre_risorse)
 
 ## Installazione di FAM

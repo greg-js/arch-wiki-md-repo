@@ -18,13 +18,13 @@ For the the second generation of Helx hardware (models 20CG and 20CH), see [Levo
     *   [2.2 Digitizers](#Digitizers)
         *   [2.2.1 Udev Configuration](#Udev_Configuration)
         *   [2.2.2 Xorg Configuration](#Xorg_Configuration)
-        *   [2.2.3 Touchscreen / Wacom Tips & Tricks](#Touchscreen_.2F_Wacom_Tips_.26_Tricks)
+        *   [2.2.3 Touchscreen / Wacom Tips & Tricks](#Touchscreen_/_Wacom_Tips_&_Tricks)
             *   [2.2.3.1 thinkpad-helix-utils: Toggle Touch](#thinkpad-helix-utils:_Toggle_Touch)
             *   [2.2.3.2 xnohands](#xnohands)
     *   [2.3 Sensors](#Sensors)
     *   [2.4 Screen Rotation](#Screen_Rotation)
     *   [2.5 Enable SSD TRIM](#Enable_SSD_TRIM)
-*   [3 BIOS/Firmware Updates](#BIOS.2FFirmware_Updates)
+*   [3 BIOS/Firmware Updates](#BIOS/Firmware_Updates)
 
 ## Installation
 

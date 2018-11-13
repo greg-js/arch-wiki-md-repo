@@ -8,7 +8,7 @@ Articoli correlati
 
 *   [1 Introduzione](#Introduzione)
 *   [2 Installazione](#Installazione)
-*   [3 Creazione dell'immagine ed attivazione](#Creazione_dell.27immagine_ed_attivazione)
+*   [3 Creazione dell'immagine ed attivazione](#Creazione_dell'immagine_ed_attivazione)
 *   [4 Configurazione](#Configurazione)
     *   [4.1 MODULES](#MODULES)
     *   [4.2 BINARIES e FILES](#BINARIES_e_FILES)
@@ -25,9 +25,9 @@ Articoli correlati
     *   [5.3 Usare la rete](#Usare_la_rete)
     *   [5.4 Usare LVM](#Usare_LVM)
     *   [5.5 Usare root criptato](#Usare_root_criptato)
-    *   [5.6 /usr su una partizione separata](#.2Fusr_su_una_partizione_separata)
+    *   [5.6 /usr su una partizione separata](#/usr_su_una_partizione_separata)
 *   [6 Risoluzione dei problemi](#Risoluzione_dei_problemi)
-    *   [6.1 Estrarre l'immagine](#Estrarre_l.27immagine)
+    *   [6.1 Estrarre l'immagine](#Estrarre_l'immagine)
 *   [7 Altre Fonti](#Altre_Fonti)
 *   [8 Riferimenti esterni](#Riferimenti_esterni)
 

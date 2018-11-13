@@ -51,27 +51,27 @@ In order to integrate functions of the host system to the guests, including shar
     *   [5.1 Keyboard and mouse are locked into virtual machine](#Keyboard_and_mouse_are_locked_into_virtual_machine)
     *   [5.2 No 64-bit OS client options](#No_64-bit_OS_client_options)
     *   [5.3 VirtualBox GUI does not match host GTK theme](#VirtualBox_GUI_does_not_match_host_GTK_theme)
-    *   [5.4 Cannot send Ctrl+Alt+Fn to guest](#Cannot_send_Ctrl.2BAlt.2BFn_to_guest)
+    *   [5.4 Cannot send Ctrl+Alt+Fn to guest](#Cannot_send_Ctrl+Alt+Fn_to_guest)
     *   [5.5 USB subsystem not working](#USB_subsystem_not_working)
     *   [5.6 USB modem not working on host](#USB_modem_not_working_on_host)
     *   [5.7 Access serial port from guest](#Access_serial_port_from_guest)
     *   [5.8 Guest freezes after starting Xorg](#Guest_freezes_after_starting_Xorg)
     *   [5.9 Fullscreen mode shows blank screen](#Fullscreen_mode_shows_blank_screen)
     *   [5.10 Host freezes on virtual machine start](#Host_freezes_on_virtual_machine_start)
-    *   [5.11 Linux guests have slow/distorted audio](#Linux_guests_have_slow.2Fdistorted_audio)
+    *   [5.11 Linux guests have slow/distorted audio](#Linux_guests_have_slow/distorted_audio)
     *   [5.12 Analog microphone not working](#Analog_microphone_not_working)
     *   [5.13 Microphone not working after upgrade](#Microphone_not_working_after_upgrade)
     *   [5.14 Problems with images converted to ISO](#Problems_with_images_converted_to_ISO)
     *   [5.15 Failed to create the host-only network interface](#Failed_to_create_the_host-only_network_interface)
     *   [5.16 Failed to insert module](#Failed_to_insert_module)
-    *   [5.17 VBOX_E_INVALID_OBJECT_STATE (0x80BB0007)](#VBOX_E_INVALID_OBJECT_STATE_.280x80BB0007.29)
+    *   [5.17 VBOX_E_INVALID_OBJECT_STATE (0x80BB0007)](#VBOX_E_INVALID_OBJECT_STATE_(0x80BB0007))
     *   [5.18 NS_ERROR_FAILURE and missing menu items](#NS_ERROR_FAILURE_and_missing_menu_items)
     *   [5.19 Arch: pacstrap script fails](#Arch:_pacstrap_script_fails)
     *   [5.20 OpenBSD unusable when virtualisation instructions unavailable](#OpenBSD_unusable_when_virtualisation_instructions_unavailable)
     *   [5.21 Windows host: VERR_ACCESS_DENIED](#Windows_host:_VERR_ACCESS_DENIED)
-    *   [5.22 Windows: "The specified path does not exist. Check the path and then try again."](#Windows:_.22The_specified_path_does_not_exist._Check_the_path_and_then_try_again..22)
+    *   [5.22 Windows: "The specified path does not exist. Check the path and then try again."](#Windows:_"The_specified_path_does_not_exist._Check_the_path_and_then_try_again.")
     *   [5.23 Windows 8.x error code 0x000000C4](#Windows_8.x_error_code_0x000000C4)
-    *   [5.24 Windows 8, 8.1 or 10 fails to install, boot or has error "ERR_DISK_FULL"](#Windows_8.2C_8.1_or_10_fails_to_install.2C_boot_or_has_error_.22ERR_DISK_FULL.22)
+    *   [5.24 Windows 8, 8.1 or 10 fails to install, boot or has error "ERR_DISK_FULL"](#Windows_8,_8.1_or_10_fails_to_install,_boot_or_has_error_"ERR_DISK_FULL")
     *   [5.25 WinXP: Bit-depth cannot be greater than 16](#WinXP:_Bit-depth_cannot_be_greater_than_16)
     *   [5.26 Windows: Screen flicker if 3D acceleration enabled](#Windows:_Screen_flicker_if_3D_acceleration_enabled)
     *   [5.27 No hardware 3D acceleration in Arch Linux guest](#No_hardware_3D_acceleration_in_Arch_Linux_guest)
@@ -151,7 +151,7 @@ Finally, you can also use [phpVirtualBox](/index.php/PhpVirtualBox "PhpVirtualBo
 
 Refer to the [VirtualBox manual](https://www.virtualbox.org/manual) to learn how to create virtual machines.
 
-**Warning:** If you intend to store virtual disk images on a [Btrfs](/index.php/Btrfs "Btrfs") file system, before creating any images, you should consider disabling [copy-on-write](/index.php/Btrfs#Copy-on-Write_.28CoW.29 "Btrfs") for the destination directory of these images.
+**Warning:** If you intend to store virtual disk images on a [Btrfs](/index.php/Btrfs "Btrfs") file system, before creating any images, you should consider disabling [copy-on-write](/index.php/Btrfs#Copy-on-Write_(CoW) "Btrfs") for the destination directory of these images.
 
 ## Installation steps for Arch Linux guests
 
@@ -370,7 +370,7 @@ and then transfer files between both.
 
 ## Virtual disks management
 
-See also [VirtualBox/Tips and tricks#Import/export VirtualBox virtual machines from/to other hypervisors](/index.php/VirtualBox/Tips_and_tricks#Import.2Fexport_VirtualBox_virtual_machines_from.2Fto_other_hypervisors "VirtualBox/Tips and tricks").
+See also [VirtualBox/Tips and tricks#Import/export VirtualBox virtual machines from/to other hypervisors](/index.php/VirtualBox/Tips_and_tricks#Import/export_VirtualBox_virtual_machines_from/to_other_hypervisors "VirtualBox/Tips and tricks").
 
 ### Formats supported by VirtualBox
 

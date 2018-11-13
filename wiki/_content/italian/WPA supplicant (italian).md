@@ -15,7 +15,7 @@ Articoli correlati
     *   [5.1 Configurazione](#Configurazione)
     *   [5.2 Connessione](#Connessione)
         *   [5.2.1 Manuale](#Manuale)
-        *   [5.2.2 All'avvio (systemd)](#All.27avvio_.28systemd.29)
+        *   [5.2.2 All'avvio (systemd)](#All'avvio_(systemd))
     *   [5.3 Action script per wpa_cli](#Action_script_per_wpa_cli)
 *   [6 Risoluzione dei problemi](#Risoluzione_dei_problemi)
     *   [6.1 Driver nl80211 non supportato su alcuni modelli](#Driver_nl80211_non_supportato_su_alcuni_modelli)
@@ -236,7 +236,7 @@ Ad esempio:
 
 ```
 
-È ora possibile [abilitare](/index.php/Systemd_(Italiano)#Usare_le_unit.C3.A0 "Systemd (Italiano)") un servizio per ottenere un indirizzo IP per una particolare *interfaccia*, come indicato nella sezione [#Panoramica](#Panoramica). Ad esempio:
+È ora possibile [abilitare](/index.php/Systemd_(Italiano)#Usare_le_unità "Systemd (Italiano)") un servizio per ottenere un indirizzo IP per una particolare *interfaccia*, come indicato nella sezione [#Panoramica](#Panoramica). Ad esempio:
 
 ```
 # systemctl enable dhcpcd@*interfaccia*

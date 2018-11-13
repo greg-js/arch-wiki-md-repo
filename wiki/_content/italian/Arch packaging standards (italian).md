@@ -10,7 +10,7 @@
     *   [1.7 Licenses](#Licenses)
     *   [1.8 Invio di pacchetti ad AUR](#Invio_di_pacchetti_ad_AUR)
 *   [2 Linee guida supplementari](#Linee_guida_supplementari)
-    *   [2.1 CVS/SVN Packages](#CVS.2FSVN_Packages)
+    *   [2.1 CVS/SVN Packages](#CVS/SVN_Packages)
     *   [2.2 Eclipse Plugin Packages](#Eclipse_Plugin_Packages)
     *   [2.3 Gnome Packages](#Gnome_Packages)
     *   [2.4 Haskell Packages](#Haskell_Packages)

@@ -5,7 +5,7 @@ Este artículo es una traducción de [Activating Numlock on Bootup](/index.php/A
 
 *   [1 Consola](#Consola)
     *   [1.1 Usando un servicio separado](#Usando_un_servicio_separado)
-    *   [1.2 Extendiendo getty@.service](#Extendiendo_getty.40.service)
+    *   [1.2 Extendiendo getty@.service](#Extendiendo_getty@.service)
     *   [1.3 Alternativa en Bash](#Alternativa_en_Bash)
 *   [2 X.org](#X.org)
     *   [2.1 startx](#startx)

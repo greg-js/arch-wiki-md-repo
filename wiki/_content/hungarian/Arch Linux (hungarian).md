@@ -2,13 +2,13 @@ Az Arch Linux egy függetlenül fejlesztett, [i686](https://en.wikipedia.org/wik
 
 ## Contents
 
-*   [1 Történet](#T.C3.B6rt.C3.A9net)
-*   [2 Egyszerűség](#Egyszer.C5.B1s.C3.A9g)
-*   [3 Korszerűség](#Korszer.C5.B1s.C3.A9g)
-*   [4 Szoftvercsomagolás](#Szoftvercsomagol.C3.A1s)
-*   [5 Forrásintegritás](#Forr.C3.A1sintegrit.C3.A1s)
-*   [6 Közösség](#K.C3.B6z.C3.B6ss.C3.A9g)
-*   [7 Összefoglalás](#.C3.96sszefoglal.C3.A1s)
+*   [1 Történet](#Történet)
+*   [2 Egyszerűség](#Egyszerűség)
+*   [3 Korszerűség](#Korszerűség)
+*   [4 Szoftvercsomagolás](#Szoftvercsomagolás)
+*   [5 Forrásintegritás](#Forrásintegritás)
+*   [6 Közösség](#Közösség)
+*   [7 Összefoglalás](#Összefoglalás)
 
 ## Történet
 

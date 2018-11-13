@@ -10,12 +10,12 @@ O *dhcpd* é o servidor DHCP da [Internet Systems Consortium](http://www.isc.org
 
 ## Contents
 
-*   [1 Instalação](#Instala.C3.A7.C3.A3o)
+*   [1 Instalação](#Instalação)
 *   [2 Uso](#Uso)
-*   [3 Configuração](#Configura.C3.A7.C3.A3o)
+*   [3 Configuração](#Configuração)
     *   [3.1 Ouvindo apenas em uma interface](#Ouvindo_apenas_em_uma_interface)
         *   [3.1.1 Configurando dhcpd](#Configurando_dhcpd)
-        *   [3.1.2 Arquivo de serviço](#Arquivo_de_servi.C3.A7o)
+        *   [3.1.2 Arquivo de serviço](#Arquivo_de_serviço)
     *   [3.2 Usar para PXE](#Usar_para_PXE)
 
 ## Instalação
@@ -44,7 +44,7 @@ Atribua um endereço IPv4 estático para a interface que você deseja usar (em n
 
 Veja também [RFC 1918](http://www.ietf.org/rfc/rfc1918.txt).
 
-Para ter seu IP estático atribuído na inicialização, veja [Configuração de rede#Endereço IP estático](/index.php/Configura%C3%A7%C3%A3o_de_rede#Endere.C3.A7o_IP_est.C3.A1tico "Configuração de rede").
+Para ter seu IP estático atribuído na inicialização, veja [Configuração de rede#Endereço IP estático](/index.php/Configura%C3%A7%C3%A3o_de_rede#Endereço_IP_estático "Configuração de rede").
 
 O `dhcpd.conf` padrão contém muitos exemplos descomentados, então mude-o:
 

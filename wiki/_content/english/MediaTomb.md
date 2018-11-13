@@ -19,7 +19,7 @@ MediaTomb enables users to stream digital media to UPnP compatible devices like 
     *   [3.2 Playstation 3 Support](#Playstation_3_Support)
     *   [3.3 Samsung TV Support](#Samsung_TV_Support)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Mediatomb doesn't provide content even though it is added in the webfrontend](#Mediatomb_doesn.27t_provide_content_even_though_it_is_added_in_the_webfrontend)
+    *   [4.1 Mediatomb doesn't provide content even though it is added in the webfrontend](#Mediatomb_doesn't_provide_content_even_though_it_is_added_in_the_webfrontend)
     *   [4.2 The Client loses connection after 30 Minutes](#The_Client_loses_connection_after_30_Minutes)
     *   [4.3 Problems with discovery](#Problems_with_discovery)
 

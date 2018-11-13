@@ -13,18 +13,18 @@ Una semplice guida per la configurazione di rete e risoluzione di problemi annes
 ## Contents
 
 *   [1 Primo controllo](#Primo_controllo)
-*   [2 Impostare l'host name](#Impostare_l.27host_name)
+*   [2 Impostare l'host name](#Impostare_l'host_name)
 *   [3 Driver dispositivo](#Driver_dispositivo)
     *   [3.1 Controllo stato driver](#Controllo_stato_driver)
     *   [3.2 Caricare il modulo del dispositivo](#Caricare_il_modulo_del_dispositivo)
 *   [4 Interfacce di rete](#Interfacce_di_rete)
     *   [4.1 Nomi dispositivi persistenti](#Nomi_dispositivi_persistenti)
     *   [4.2 Ottenere il nome corrente del dispositivo](#Ottenere_il_nome_corrente_del_dispositivo)
-    *   [4.3 Abilitare/disabilitare l'interfaccia](#Abilitare.2Fdisabilitare_l.27interfaccia)
-*   [5 Configurare l'indirizzo IP](#Configurare_l.27indirizzo_IP)
+    *   [4.3 Abilitare/disabilitare l'interfaccia](#Abilitare/disabilitare_l'interfaccia)
+*   [5 Configurare l'indirizzo IP](#Configurare_l'indirizzo_IP)
     *   [5.1 Indirizzo IP dinamico](#Indirizzo_IP_dinamico)
         *   [5.1.1 Esecuzione manuale del Demone Client DHCP](#Esecuzione_manuale_del_Demone_Client_DHCP)
-        *   [5.1.2 Esecuzione all'avvio di DHCP](#Esecuzione_all.27avvio_di_DHCP)
+        *   [5.1.2 Esecuzione all'avvio di DHCP](#Esecuzione_all'avvio_di_DHCP)
     *   [5.2 Indirizzo IP Statico](#Indirizzo_IP_Statico)
         *   [5.2.1 Assegnazione manuale](#Assegnazione_manuale)
         *   [5.2.2 Calcolo indirizzi](#Calcolo_indirizzi)
@@ -34,25 +34,25 @@ Una semplice guida per la configurazione di rete e risoluzione di problemi annes
     *   [7.2 Bonding o LAG](#Bonding_o_LAG)
     *   [7.3 Aliasing indirizzo IP](#Aliasing_indirizzo_IP)
         *   [7.3.1 Esempio](#Esempio)
-    *   [7.4 Cambiare MAC/hardware address](#Cambiare_MAC.2Fhardware_address)
+    *   [7.4 Cambiare MAC/hardware address](#Cambiare_MAC/hardware_address)
 *   [8 Risoluzione dei problemi](#Risoluzione_dei_problemi)
-    *   [8.1 Scambio computer/modem via cavo](#Scambio_computer.2Fmodem_via_cavo)
+    *   [8.1 Scambio computer/modem via cavo](#Scambio_computer/modem_via_cavo)
     *   [8.2 Il problema del TCP Window Scaling](#Il_problema_del_TCP_Window_Scaling)
-        *   [8.2.1 Come diagnosticare questo problema?](#Come_diagnosticare_questo_problema.3F)
-        *   [8.2.2 Come risolverlo? (La strada sbagliata)](#Come_risolverlo.3F_.28La_strada_sbagliata.29)
-        *   [8.2.3 Come risolverlo? (Il metodo corretto)](#Come_risolverlo.3F_.28Il_metodo_corretto.29)
-        *   [8.2.4 Come risolverlo? (Il metodo migliore)](#Come_risolverlo.3F_.28Il_metodo_migliore.29)
+        *   [8.2.1 Come diagnosticare questo problema?](#Come_diagnosticare_questo_problema?)
+        *   [8.2.2 Come risolverlo? (La strada sbagliata)](#Come_risolverlo?_(La_strada_sbagliata))
+        *   [8.2.3 Come risolverlo? (Il metodo corretto)](#Come_risolverlo?_(Il_metodo_corretto))
+        *   [8.2.4 Come risolverlo? (Il metodo migliore)](#Come_risolverlo?_(Il_metodo_migliore))
         *   [8.2.5 Ulteriori informazioni](#Ulteriori_informazioni)
-    *   [8.3 Problema No Link / WOL schede Realtek](#Problema_No_Link_.2F_WOL_schede_Realtek)
+    *   [8.3 Problema No Link / WOL schede Realtek](#Problema_No_Link_/_WOL_schede_Realtek)
         *   [8.3.1 Metodo 1 - Ripristino driver Windows](#Metodo_1_-_Ripristino_driver_Windows)
         *   [8.3.2 Metodo 2 - Abilitare il Wake on Lan nel driver Windows](#Metodo_2_-_Abilitare_il_Wake_on_Lan_nel_driver_Windows)
         *   [8.3.3 Metodo 3 - Aggiornare il driver Linux Realtek](#Metodo_3_-_Aggiornare_il_driver_Linux_Realtek)
-        *   [8.3.4 Metodo 4 - Abilitare *LAN Boot ROM* nel BIOS/CMOS](#Metodo_4_-_Abilitare_LAN_Boot_ROM_nel_BIOS.2FCMOS)
-    *   [8.4 Problema con DLink G604T/DLink G502T DNS](#Problema_con_DLink_G604T.2FDLink_G502T_DNS)
+        *   [8.3.4 Metodo 4 - Abilitare *LAN Boot ROM* nel BIOS/CMOS](#Metodo_4_-_Abilitare_LAN_Boot_ROM_nel_BIOS/CMOS)
+    *   [8.4 Problema con DLink G604T/DLink G502T DNS](#Problema_con_DLink_G604T/DLink_G502T_DNS)
         *   [8.4.1 Come diagnosticare il problema](#Come_diagnosticare_il_problema)
         *   [8.4.2 Come risolvere il problema](#Come_risolvere_il_problema)
         *   [8.4.3 Maggiori informazioni](#Maggiori_informazioni)
-    *   [8.5 Controllo problemi DHCP prima del rilascio dell'IP](#Controllo_problemi_DHCP_prima_del_rilascio_dell.27IP)
+    *   [8.5 Controllo problemi DHCP prima del rilascio dell'IP](#Controllo_problemi_DHCP_prima_del_rilascio_dell'IP)
 *   [9 Wiki Correlati](#Wiki_Correlati)
 
 ## Primo controllo
@@ -382,7 +382,7 @@ Provare a pingare il gateway, il server DNS, l’ISP e altri siti Internet, in q
 
 Di default è configurato per funzionare per il dispositivo `eth0`. Questa ed altre impostazioni come i ritardi, possono essere configurati in `/etc/ifplugd/ifplugd.conf`.
 
-[Avviare il demone ifplugd](/index.php/Daemon_(Italiano)#Avvio_e_blocco_manuale "Daemon (Italiano)") ed aggiungere `ifplugd` al proprio [DAEMONS array](/index.php/Daemon_(Italiano)#Esecuzione_automatica_all.27avvio "Daemon (Italiano)") di modo da farlo partire automaticamento all'avvio del sistema.
+[Avviare il demone ifplugd](/index.php/Daemon_(Italiano)#Avvio_e_blocco_manuale "Daemon (Italiano)") ed aggiungere `ifplugd` al proprio [DAEMONS array](/index.php/Daemon_(Italiano)#Esecuzione_automatica_all'avvio "Daemon (Italiano)") di modo da farlo partire automaticamento all'avvio del sistema.
 
 In alternativa, abilitando`net-auto-wired.service` ifplugd si dovrebbe avviare al boot, se si ha [netcfg](https://aur.archlinux.org/packages/netcfg/) installato, altrimenti è possibile utilizzare `ifplugd@eth0.service`.
 
@@ -523,7 +523,7 @@ Non è più possibile cambiare il proprio MAC address tramite `/etc/rc.conf`. Ve
 
 La maggior parte degli ISP (videotron for example) ha il modem via cavo configurato per riconoscere un solo PC client, attraverso il MAC Address della sua interfaccia di rete. Una volta che il modem via cavo ha acquisito il MAC Address del primo PC, o della relativa periferica, non risponderà in alcun modo ad un altro MAC Address. Pertanto, se si cambia un PC con un altro (o router), il nuovo PC (o router) non funzionerà con il modem via cavo, in quanto ha un MAC Address diverso dal precedente. Per effettuare il reset del modem via cavo in modo che riconosca il nuovo PC, è necessario spegnerlo e riaccenderlo. Una volta che il modem via cavo si è riavviato ed è ritornato completamente in linea (le spie luminose sono stabili), riavviare il nuovo computer in modo da effettuare una nuova richiesta DHCP, o effettuarla manualmente.
 
-Se questo metodo non funziona, è necessario clonare il MAC Address del pc originario. Vedere quindi [#Cambiare MAC/hardware address](#Cambiare_MAC.2Fhardware_address).
+Se questo metodo non funziona, è necessario clonare il MAC Address del pc originario. Vedere quindi [#Cambiare MAC/hardware address](#Cambiare_MAC/hardware_address).
 
 ### Il problema del TCP Window Scaling
 

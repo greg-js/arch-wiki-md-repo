@@ -15,7 +15,7 @@ Unless disabled by your provider, it is possible to share your iPhone's mobile d
 *   [2 Tethering over Bluetooth](#Tethering_over_Bluetooth)
     *   [2.1 Hardware Requirements](#Hardware_Requirements)
     *   [2.2 Setup](#Setup)
-        *   [2.2.1 Gnome/XFCE](#Gnome.2FXFCE)
+        *   [2.2.1 Gnome/XFCE](#Gnome/XFCE)
         *   [2.2.2 netcfg](#netcfg)
 
 ## Tethering over USB

@@ -8,35 +8,35 @@ Related articles
 ## Contents
 
 *   [1 Nastavenie](#Nastavenie)
-*   [2 Konfigurácia nášho live média](#Konfigur.C3.A1cia_n.C3.A1.C5.A1ho_live_m.C3.A9dia)
-    *   [2.1 Inštalácia balíčkov](#In.C5.A1tal.C3.A1cia_bal.C3.AD.C4.8Dkov)
-        *   [2.1.1 Vlastný lokálny repozitár](#Vlastn.C3.BD_lok.C3.A1lny_repozit.C3.A1r)
-        *   [2.1.2 Vyhnutie sa inštalácii balíčkov patriacich do základnej skupiny](#Vyhnutie_sa_in.C5.A1tal.C3.A1cii_bal.C3.AD.C4.8Dkov_patriacich_do_z.C3.A1kladnej_skupiny)
-    *   [2.2 Pridávanie užívateľa](#Prid.C3.A1vanie_u.C5.BE.C3.ADvate.C4.BEa)
-    *   [2.3 Pridávanie súborov do obrazu](#Prid.C3.A1vanie_s.C3.BAborov_do_obrazu)
+*   [2 Konfigurácia nášho live média](#Konfigurácia_nášho_live_média)
+    *   [2.1 Inštalácia balíčkov](#Inštalácia_balíčkov)
+        *   [2.1.1 Vlastný lokálny repozitár](#Vlastný_lokálny_repozitár)
+        *   [2.1.2 Vyhnutie sa inštalácii balíčkov patriacich do základnej skupiny](#Vyhnutie_sa_inštalácii_balíčkov_patriacich_do_základnej_skupiny)
+    *   [2.2 Pridávanie užívateľa](#Pridávanie_užívateľa)
+    *   [2.3 Pridávanie súborov do obrazu](#Pridávanie_súborov_do_obrazu)
     *   [2.4 Boot Loader](#Boot_Loader)
-    *   [2.5 Login manažér](#Login_mana.C5.BE.C3.A9r)
-    *   [2.6 Zmena automatického prihlasovania](#Zmena_automatick.C3.A9ho_prihlasovania)
+    *   [2.5 Login manažér](#Login_manažér)
+    *   [2.6 Zmena automatického prihlasovania](#Zmena_automatického_prihlasovania)
 *   [3 Budovanie ISO obrazu](#Budovanie_ISO_obrazu)
     *   [3.1 Prebudovanie ISO obrazu](#Prebudovanie_ISO_obrazu)
-*   [4 Použitie ISO obrazu](#Pou.C5.BEitie_ISO_obrazu)
+*   [4 Použitie ISO obrazu](#Použitie_ISO_obrazu)
     *   [4.1 CD](#CD)
     *   [4.2 USB](#USB)
     *   [4.3 GRUB](#GRUB)
     *   [4.4 grub4dos](#grub4dos)
-*   [5 Inštalácia bez prístupu na internet](#In.C5.A1tal.C3.A1cia_bez_pr.C3.ADstupu_na_internet)
-    *   [5.1 Inštalácia archisa do nového koreňového adresára](#In.C5.A1tal.C3.A1cia_archisa_do_nov.C3.A9ho_kore.C5.88ov.C3.A9ho_adres.C3.A1ra)
-    *   [5.2 Zmena práv (chroot) a konfigurácia základného systému](#Zmena_pr.C3.A1v_.28chroot.29_a_konfigur.C3.A1cia_z.C3.A1kladn.C3.A9ho_syst.C3.A9mu)
-        *   [5.2.1 Obnova konfigurácie journald](#Obnova_konfigur.C3.A1cie_journald)
-        *   [5.2.2 Obnova konfigurácie pam](#Obnova_konfigur.C3.A1cie_pam)
-        *   [5.2.3 Zmazanie špeciálneho udev pravidla](#Zmazanie_.C5.A1peci.C3.A1lneho_udev_pravidla)
-        *   [5.2.4 Zablokovanie a zmazanie služieb vytvorených archisom](#Zablokovanie_a_zmazanie_slu.C5.BEieb_vytvoren.C3.BDch_archisom)
-        *   [5.2.5 Zmazanie špeciálnych skriptov live prostredia](#Zmazanie_.C5.A1peci.C3.A1lnych_skriptov_live_prostredia)
-        *   [5.2.6 Opravenie prístupových práv k domovskému adresáru roota](#Opravenie_pr.C3.ADstupov.C3.BDch_pr.C3.A1v_k_domovsk.C3.A9mu_adres.C3.A1ru_roota)
+*   [5 Inštalácia bez prístupu na internet](#Inštalácia_bez_prístupu_na_internet)
+    *   [5.1 Inštalácia archisa do nového koreňového adresára](#Inštalácia_archisa_do_nového_koreňového_adresára)
+    *   [5.2 Zmena práv (chroot) a konfigurácia základného systému](#Zmena_práv_(chroot)_a_konfigurácia_základného_systému)
+        *   [5.2.1 Obnova konfigurácie journald](#Obnova_konfigurácie_journald)
+        *   [5.2.2 Obnova konfigurácie pam](#Obnova_konfigurácie_pam)
+        *   [5.2.3 Zmazanie špeciálneho udev pravidla](#Zmazanie_špeciálneho_udev_pravidla)
+        *   [5.2.4 Zablokovanie a zmazanie služieb vytvorených archisom](#Zablokovanie_a_zmazanie_služieb_vytvorených_archisom)
+        *   [5.2.5 Zmazanie špeciálnych skriptov live prostredia](#Zmazanie_špeciálnych_skriptov_live_prostredia)
+        *   [5.2.6 Opravenie prístupových práv k domovskému adresáru roota](#Opravenie_prístupových_práv_k_domovskému_adresáru_roota)
         *   [5.2.7 Nastavte archu heslo](#Nastavte_archu_heslo)
-*   [6 Pozrite tiež](#Pozrite_tie.C5.BE)
-    *   [6.1 Dokumentácia a tutoriály](#Dokument.C3.A1cia_a_tutori.C3.A1ly)
-    *   [6.2 Príklad šablony na prispôsobenie](#Pr.C3.ADklad_.C5.A1ablony_na_prisp.C3.B4sobenie)
+*   [6 Pozrite tiež](#Pozrite_tiež)
+    *   [6.1 Dokumentácia a tutoriály](#Dokumentácia_a_tutoriály)
+    *   [6.2 Príklad šablony na prispôsobenie](#Príklad_šablony_na_prispôsobenie)
 
 ## Nastavenie
 
@@ -66,7 +66,7 @@ Vzhľadom na váš výber, spustite nasledovný príkaz, pričom nahraďte 'PROF
 
 ```
 
-Ak používate profil *releng* k vytvoreniu plne prispôsobeného obrazu, potom pokračujte sekciou [#Konfigurácia nášho live média](#Konfigur.C3.A1cia_n.C3.A1.C5.A1ho_live_m.C3.A9dia)
+Ak používate profil *releng* k vytvoreniu plne prispôsobeného obrazu, potom pokračujte sekciou [#Konfigurácia nášho live média](#Konfigurácia_nášho_live_média)
 
 Ak používate profil *baseline* k vytvoreniu okliešteného obrazu, potom nebudete potrebovať robiť žiadne prispôsobenia a môžete pokračovať sekciou [#Budovanie ISO obrazu](#Budovanie_ISO_obrazu).
 

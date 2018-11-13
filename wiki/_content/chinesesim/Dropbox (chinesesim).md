@@ -8,15 +8,15 @@ Related articles
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
+*   [1 安装](#安装)
     *   [1.1 AUR](#AUR)
-    *   [1.2 手动安装](#.E6.89.8B.E5.8A.A8.E5.AE.89.E8.A3.85)
-    *   [1.3 可选软件包](#.E5.8F.AF.E9.80.89.E8.BD.AF.E4.BB.B6.E5.8C.85)
-*   [2 启动](#.E5.90.AF.E5.8A.A8)
-    *   [2.1 自动启动 Dropbox](#.E8.87.AA.E5.8A.A8.E5.90.AF.E5.8A.A8_Dropbox)
-    *   [2.2 作为 systemd 的服务启动](#.E4.BD.9C.E4.B8.BA_systemd_.E7.9A.84.E6.9C.8D.E5.8A.A1.E5.90.AF.E5.8A.A8)
+    *   [1.2 手动安装](#手动安装)
+    *   [1.3 可选软件包](#可选软件包)
+*   [2 启动](#启动)
+    *   [2.1 自动启动 Dropbox](#自动启动_Dropbox)
+    *   [2.2 作为 systemd 的服务启动](#作为_systemd_的服务启动)
         *   [2.2.1 Run as a daemon with systemd user](#Run_as_a_daemon_with_systemd_user)
-*   [3 不安装 Dropbox 而访问文件](#.E4.B8.8D.E5.AE.89.E8.A3.85_Dropbox_.E8.80.8C.E8.AE.BF.E9.97.AE.E6.96.87.E4.BB.B6)
+*   [3 不安装 Dropbox 而访问文件](#不安装_Dropbox_而访问文件)
 *   [4 Securing your Dropbox](#Securing_your_Dropbox)
     *   [4.1 Setup EncFS with Dropbox](#Setup_EncFS_with_Dropbox)
 *   [5 Multiple Dropbox instances](#Multiple_Dropbox_instances)
@@ -29,14 +29,14 @@ Related articles
     *   [7.2 Change the Dropbox location from the installation wizard](#Change_the_Dropbox_location_from_the_installation_wizard)
     *   [7.3 Context menu entries in file manager do not work](#Context_menu_entries_in_file_manager_do_not_work)
     *   [7.4 Connecting...](#Connecting...)
-    *   [7.5 Dropbox does not start - "This is usually because of a permission error"](#Dropbox_does_not_start_-_.22This_is_usually_because_of_a_permission_error.22)
+    *   [7.5 Dropbox does not start - "This is usually because of a permission error"](#Dropbox_does_not_start_-_"This_is_usually_because_of_a_permission_error")
         *   [7.5.1 Check permissions](#Check_permissions)
         *   [7.5.2 Re-linking your account](#Re-linking_your_account)
         *   [7.5.3 Errors caused by running out of space](#Errors_caused_by_running_out_of_space)
         *   [7.5.4 Locale caused errors](#Locale_caused_errors)
         *   [7.5.5 Filesystem monitoring problem](#Filesystem_monitoring_problem)
-    *   [7.6 代理设置](#.E4.BB.A3.E7.90.86.E8.AE.BE.E7.BD.AE)
-    *   [7.7 不要让它自动升级](#.E4.B8.8D.E8.A6.81.E8.AE.A9.E5.AE.83.E8.87.AA.E5.8A.A8.E5.8D.87.E7.BA.A7)
+    *   [7.6 代理设置](#代理设置)
+    *   [7.7 不要让它自动升级](#不要让它自动升级)
 
 ## 安装
 

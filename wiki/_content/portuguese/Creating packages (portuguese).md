@@ -17,18 +17,18 @@ Esse artigo objetiva auxiliar usuários na criação de seus próprios pacotes u
 
 ## Contents
 
-*   [1 Visão Geral](#Vis.C3.A3o_Geral)
-*   [2 Preparação](#Prepara.C3.A7.C3.A3o)
-    *   [2.1 Pré-requisito de software](#Pr.C3.A9-requisito_de_software)
-    *   [2.2 Baixe e teste a instalação](#Baixe_e_teste_a_instala.C3.A7.C3.A3o)
-*   [3 Criação de um PKGBUILD](#Cria.C3.A7.C3.A3o_de_um_PKGBUILD)
-    *   [3.1 Definindo as variáveis do PKGBUILD](#Definindo_as_vari.C3.A1veis_do_PKGBUILD)
-    *   [3.2 Funções do PKGBUILD](#Fun.C3.A7.C3.B5es_do_PKGBUILD)
-        *   [3.2.1 prepare()](#prepare.28.29)
-        *   [3.2.2 pkgver()](#pkgver.28.29)
-        *   [3.2.3 build()](#build.28.29)
-        *   [3.2.4 check()](#check.28.29)
-        *   [3.2.5 package()](#package.28.29)
+*   [1 Visão Geral](#Visão_Geral)
+*   [2 Preparação](#Preparação)
+    *   [2.1 Pré-requisito de software](#Pré-requisito_de_software)
+    *   [2.2 Baixe e teste a instalação](#Baixe_e_teste_a_instalação)
+*   [3 Criação de um PKGBUILD](#Criação_de_um_PKGBUILD)
+    *   [3.1 Definindo as variáveis do PKGBUILD](#Definindo_as_variáveis_do_PKGBUILD)
+    *   [3.2 Funções do PKGBUILD](#Funções_do_PKGBUILD)
+        *   [3.2.1 prepare()](#prepare())
+        *   [3.2.2 pkgver()](#pkgver())
+        *   [3.2.3 build()](#build())
+        *   [3.2.4 check()](#check())
+        *   [3.2.5 package()](#package())
 *   [4 Teste do PKGBUILD e pacote](#Teste_do_PKGBUILD_e_pacote)
     *   [4.1 Verificando sanidade do pacote](#Verificando_sanidade_do_pacote)
 *   [5 Enviando pacotes para o AUR](#Enviando_pacotes_para_o_AUR)
@@ -36,7 +36,7 @@ Esse artigo objetiva auxiliar usuários na criação de seus próprios pacotes u
     *   [6.1 Avisos](#Avisos)
 *   [7 Diretrizes mais detalhadas](#Diretrizes_mais_detalhadas)
 *   [8 Geradores de PKGBUILD](#Geradores_de_PKGBUILD)
-*   [9 Veja também](#Veja_tamb.C3.A9m)
+*   [9 Veja também](#Veja_também)
 
 ## Visão Geral
 
@@ -113,13 +113,13 @@ Há cinco funções, listadas aqui na ordem em que elas são executadas. Com exc
 
 #### prepare()
 
-Nessa função, comandos que são usados para preparar fontes para compilação são executados, tal como [patching](/index.php/Patching_in_ABS "Patching in ABS"). Essa função é executada após a extração do pacote, antes do [pkgver()](#pkgver.28.29) e a função de compilação. Se a extração for ignorada (`makepkg -e`), então `prepare()` não é executada.
+Nessa função, comandos que são usados para preparar fontes para compilação são executados, tal como [patching](/index.php/Patching_in_ABS "Patching in ABS"). Essa função é executada após a extração do pacote, antes do [pkgver()](#pkgver()) e a função de compilação. Se a extração for ignorada (`makepkg -e`), então `prepare()` não é executada.
 
 **Nota:** (De [PKGBUILD(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5)) A função é executada no modo `bash -e`, o que significa que qualquer comando que sair com um status não-zero fará com que a função saia.
 
 #### pkgver()
 
-`pkgver()` é executado após os fontes serem obtidos, extraídos e o [prepare()](#prepare.28.29) executado. Então, você pode atualizar a variável *pkgver* durante um estágio do makepkg.
+`pkgver()` é executado após os fontes serem obtidos, extraídos e o [prepare()](#prepare()) executado. Então, você pode atualizar a variável *pkgver* durante um estágio do makepkg.
 
 Isso é particularmente útil se você estiver [fazendo pacote git/svn/hg/etc.](/index.php/Diretrizes_de_pacotes_VCS "Diretrizes de pacotes VCS"), nos quais o processo de compilação pode se manter o mesmo, mas o fonte não puder ser atualizado todo dia, ou toda hora. A forma antiga de fazer isso é colocar a data no campo *pkgver* que, se o software não fosse atualizado, makepkg ainda iria recompilá-lo pensando que a versão foi alterada. Alguns comandos úteis para isso são `git describe`, `hg identify -ni`, etc. Por favor, teste antes de enviar um PKGBUILD, já que uma falha na função `pkgver()` pode parar um processo de compilação.
 

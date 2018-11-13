@@ -16,22 +16,22 @@ El archivo es leído por la orden `mount`, a la cual le basta con encontrar cual
 
 *   [1 Ejemplo de archivo](#Ejemplo_de_archivo)
 *   [2 Definiciones de los campos](#Definiciones_de_los_campos)
-*   [3 Identificación de los sistemas de archivos](#Identificaci.C3.B3n_de_los_sistemas_de_archivos)
+*   [3 Identificación de los sistemas de archivos](#Identificación_de_los_sistemas_de_archivos)
     *   [3.1 Nombre del kernel](#Nombre_del_kernel)
     *   [3.2 Etiqueta](#Etiqueta)
     *   [3.3 UUID](#UUID)
 *   [4 Consejos y trucos](#Consejos_y_trucos)
-    *   [4.1 Montaje automático con systemd](#Montaje_autom.C3.A1tico_con_systemd)
+    *   [4.1 Montaje automático con systemd](#Montaje_automático_con_systemd)
     *   [4.2 UUID para swap](#UUID_para_swap)
     *   [4.3 Utilizar rutas que contienen espacios](#Utilizar_rutas_que_contienen_espacios)
     *   [4.4 Dispositivos externos](#Dispositivos_externos)
     *   [4.5 Opciones atime](#Opciones_atime)
     *   [4.6 tmpfs](#tmpfs)
         *   [4.6.1 Uso](#Uso)
-            *   [4.6.1.1 Mejorar el tiempo de compilación](#Mejorar_el_tiempo_de_compilaci.C3.B3n)
+            *   [4.6.1.1 Mejorar el tiempo de compilación](#Mejorar_el_tiempo_de_compilación)
     *   [4.7 Escribir en FAT32 como usuario normal](#Escribir_en_FAT32_como_usuario_normal)
-    *   [4.8 Volver a montar la partición root](#Volver_a_montar_la_partici.C3.B3n_root)
-*   [5 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+    *   [4.8 Volver a montar la partición root](#Volver_a_montar_la_partición_root)
+*   [5 Véase también](#Véase_también)
 
 ## Ejemplo de archivo
 
@@ -241,7 +241,7 @@ Se puede o no especificar el tamaño aquí, pero debe dejar la opción `mode` in
 
  `/etc/fstab`  `tmpfs   /tmp         tmpfs   nodev,nosuid,size=2G          0  0` 
 
-He aquí un ejemplo más avanzado que muestra cómo agregar puntos de montaje tmpfs para los usuarios. Esto es útil para los sitios web, los archivos tmp de mysql, `~/.vim/`, y otros. Es importante tratar de obtener las opciones de montaje ideales para el propósito que se está tratando de lograr. La meta es tener tantos valores seguros como sea posible para evitar abusos. Limitar el tamaño y la especificación de uid y gid + mode es muy seguro. [Más información](#V.C3.A9ase_tambi.C3.A9n).
+He aquí un ejemplo más avanzado que muestra cómo agregar puntos de montaje tmpfs para los usuarios. Esto es útil para los sitios web, los archivos tmp de mysql, `~/.vim/`, y otros. Es importante tratar de obtener las opciones de montaje ideales para el propósito que se está tratando de lograr. La meta es tener tantos valores seguros como sea posible para evitar abusos. Limitar el tamaño y la especificación de uid y gid + mode es muy seguro. [Más información](#Véase_también).
 
  `/etc/fstab`  `tmpfs   /www/cache    tmpfs  rw,size=1G,nr_inodes=5k,noexec,nodev,nosuid,uid=648,gid=648,mode=1700   0  0` 
 

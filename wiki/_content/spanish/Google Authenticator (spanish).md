@@ -2,12 +2,12 @@
 
 ## Contents
 
-*   [1 Installación](#Installaci.C3.B3n)
+*   [1 Installación](#Installación)
 *   [2 Configurando PAM](#Configurando_PAM)
 *   [3 Generar un fichero de clave secreta](#Generar_un_fichero_de_clave_secreta)
 *   [4 Configurando tu generador de OTP](#Configurando_tu_generador_de_OTP)
 *   [5 Probando](#Probando)
-*   [6 Inicio de sesión en escritorio](#Inicio_de_sesi.C3.B3n_en_escritorio)
+*   [6 Inicio de sesión en escritorio](#Inicio_de_sesión_en_escritorio)
 
 ## Installación
 

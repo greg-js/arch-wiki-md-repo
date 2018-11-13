@@ -12,21 +12,21 @@
 
 ## Contents
 
-*   [1 基于源码的发行版](#.E5.9F.BA.E4.BA.8E.E6.BA.90.E7.A0.81.E7.9A.84.E5.8F.91.E8.A1.8C.E7.89.88)
+*   [1 基于源码的发行版](#基于源码的发行版)
     *   [1.1 CRUX](#CRUX)
     *   [1.2 LFS](#LFS)
-    *   [1.3 Gentoo/Funtoo Linux](#Gentoo.2FFuntoo_Linux)
-*   [2 通用发行版](#.E9.80.9A.E7.94.A8.E5.8F.91.E8.A1.8C.E7.89.88)
-    *   [2.1 Debian GNU/Linux](#Debian_GNU.2FLinux)
+    *   [1.3 Gentoo/Funtoo Linux](#Gentoo/Funtoo_Linux)
+*   [2 通用发行版](#通用发行版)
+    *   [2.1 Debian GNU/Linux](#Debian_GNU/Linux)
     *   [2.2 Fedora](#Fedora)
     *   [2.3 Slackware](#Slackware)
-*   [3 新手友好的发行版](#.E6.96.B0.E6.89.8B.E5.8F.8B.E5.A5.BD.E7.9A.84.E5.8F.91.E8.A1.8C.E7.89.88)
+*   [3 新手友好的发行版](#新手友好的发行版)
     *   [3.1 Ubuntu](#Ubuntu)
     *   [3.2 Linux Mint](#Linux_Mint)
     *   [3.3 openSUSE](#openSUSE)
-    *   [3.4 Mandriva/Mageia](#Mandriva.2FMageia)
-*   [4 与BSD系列的对比](#.E4.B8.8EBSD.E7.B3.BB.E5.88.97.E7.9A.84.E5.AF.B9.E6.AF.94)
-*   [5 参阅](#.E5.8F.82.E9.98.85)
+    *   [3.4 Mandriva/Mageia](#Mandriva/Mageia)
+*   [4 与BSD系列的对比](#与BSD系列的对比)
+*   [5 参阅](#参阅)
 
 ## 基于源码的发行版
 
@@ -106,7 +106,7 @@
 
 ### Linux Mint
 
-*   [Linux Mint](http://www.linuxmint.com/) 最初是一个 [Ubuntu](#Ubuntu) 的衍生版本，后来有添加了 LMDE（Linux Mint的 Debian版本）这是一个基于 [Debian](#Debian_GNU.2FLinux) 的版本。而 Arch 是一个独立的发行版，它依赖自己的 [构建系统](/index.php/ABS "ABS") 和 [官方仓库](/index.php/Official_repositories "Official repositories")。
+*   [Linux Mint](http://www.linuxmint.com/) 最初是一个 [Ubuntu](#Ubuntu) 的衍生版本，后来有添加了 LMDE（Linux Mint的 Debian版本）这是一个基于 [Debian](#Debian_GNU/Linux) 的版本。而 Arch 是一个独立的发行版，它依赖自己的 [构建系统](/index.php/ABS "ABS") 和 [官方仓库](/index.php/Official_repositories "Official repositories")。
 *   为了方便系统维护，Mint 包含了一些图形化工具，叫做 *MintTools(Mint工具)*，而 Arch 仅仅提供简单的命令行工具，例如 [pacman](/index.php/Pacman "Pacman")，因此 Arch 的系统管理工作需要由用户自己组织。
 *   Mint 主要运行 [Cinnamon](/index.php/Cinnamon "Cinnamon") 和 [MATE](/index.php/MATE "MATE")作为它的图形界面，也可以选择 [KDE](/index.php/KDE "KDE") 或者[Xfce4](/index.php/Xfce4 "Xfce4")。 Mint 同时支持plus codecs、flash、DVD playback 和 MP3，这其中有一些是私有软件。
 *   新的 Mint 系统每半年发布一次新版本。时间大约是在新的 Ubuntu 发布一个月以后。每一个版本都是基于最新的 Ubuntu LTS 而且有五年支持。 Mint 的 Debian 版本 (LMDE) 基于 Debian 稳定版。而且只接受来自 Mint 的更新或者安全性更新。而 Arch 则完全是一个滚动更新的发行版。

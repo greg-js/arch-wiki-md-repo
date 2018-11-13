@@ -17,7 +17,7 @@ Hardware reference from UX331UA-EG013T with kernel 4.16.
 ## Contents
 
 *   [1 Configuration](#Configuration)
-    *   [1.1 Secure Boot (option)](#Secure_Boot_.28option.29)
+    *   [1.1 Secure Boot (option)](#Secure_Boot_(option))
     *   [1.2 Video](#Video)
     *   [1.3 Touchpad](#Touchpad)
     *   [1.4 Function Keys](#Function_Keys)

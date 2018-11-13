@@ -13,31 +13,31 @@ El mantenimiento regular del sistema es necesario para el correcto funcionamient
     *   [1.1 Servicios systemd fallidos](#Servicios_systemd_fallidos)
     *   [1.2 Archivos de registro](#Archivos_de_registro)
 *   [2 Copias de respaldo](#Copias_de_respaldo)
-    *   [2.1 Archivos de configuración](#Archivos_de_configuraci.C3.B3n)
+    *   [2.1 Archivos de configuración](#Archivos_de_configuración)
     *   [2.2 Lista de paquetes instalados](#Lista_de_paquetes_instalados)
     *   [2.3 Base de datos Pacman](#Base_de_datos_Pacman)
     *   [2.4 Encabezados LUKS](#Encabezados_LUKS)
     *   [2.5 Datos del sistema y del usuario](#Datos_del_sistema_y_del_usuario)
-*   [3 Actualización del sistema](#Actualizaci.C3.B3n_del_sistema)
+*   [3 Actualización del sistema](#Actualización_del_sistema)
     *   [3.1 Leer antes de actualizar el sistema](#Leer_antes_de_actualizar_el_sistema)
     *   [3.2 Evite ciertos comandos de pacman](#Evite_ciertos_comandos_de_pacman)
     *   [3.3 Las actualizaciones parciales no son compatibles](#Las_actualizaciones_parciales_no_son_compatibles)
-    *   [3.4 Actuar sobre las alertas durante una actualización](#Actuar_sobre_las_alertas_durante_una_actualizaci.C3.B3n)
-    *   [3.5 Trate rápidamente con nuevos archivos de configuración](#Trate_r.C3.A1pidamente_con_nuevos_archivos_de_configuraci.C3.B3n)
+    *   [3.4 Actuar sobre las alertas durante una actualización](#Actuar_sobre_las_alertas_durante_una_actualización)
+    *   [3.5 Trate rápidamente con nuevos archivos de configuración](#Trate_rápidamente_con_nuevos_archivos_de_configuración)
     *   [3.6 Revertir actualizaciones fallidas](#Revertir_actualizaciones_fallidas)
 *   [4 Utilice el gestor de paquetes para instalar el software](#Utilice_el_gestor_de_paquetes_para_instalar_el_software)
-    *   [4.1 Elija los controladores de código abierto](#Elija_los_controladores_de_c.C3.B3digo_abierto)
+    *   [4.1 Elija los controladores de código abierto](#Elija_los_controladores_de_código_abierto)
     *   [4.2 Tenga cuidado con los paquetes no oficiales](#Tenga_cuidado_con_los_paquetes_no_oficiales)
-    *   [4.3 Actualizar la lista de réplicas](#Actualizar_la_lista_de_r.C3.A9plicas)
+    *   [4.3 Actualizar la lista de réplicas](#Actualizar_la_lista_de_réplicas)
 *   [5 Limpiar los archivos del sistema](#Limpiar_los_archivos_del_sistema)
-    *   [5.1 Caché del paquetes](#Cach.C3.A9_del_paquetes)
-    *   [5.2 Paquetes no utilizados (huérfanos)](#Paquetes_no_utilizados_.28hu.C3.A9rfanos.29)
-    *   [5.3 Archivos antiguos de configuración](#Archivos_antiguos_de_configuraci.C3.B3n)
-    *   [5.4 Enlaces simbólicos rotos](#Enlaces_simb.C3.B3licos_rotos)
+    *   [5.1 Caché del paquetes](#Caché_del_paquetes)
+    *   [5.2 Paquetes no utilizados (huérfanos)](#Paquetes_no_utilizados_(huérfanos))
+    *   [5.3 Archivos antiguos de configuración](#Archivos_antiguos_de_configuración)
+    *   [5.4 Enlaces simbólicos rotos](#Enlaces_simbólicos_rotos)
 *   [6 Consejos y trucos](#Consejos_y_trucos)
     *   [6.1 Usar paquetes de software probados](#Usar_paquetes_de_software_probados)
     *   [6.2 Instalar el paquete linux-lts](#Instalar_el_paquete_linux-lts)
-*   [7 Ver también](#Ver_tambi.C3.A9n)
+*   [7 Ver también](#Ver_también)
 
 ## Compruebe si hay errores
 
@@ -186,7 +186,7 @@ Consulte [Pacman#Cleaning the package cache]] para obtener más información.
 
 ### Paquetes no utilizados (huérfanos)
 
-Retire los paquetes no utilizados del sistema para liberar espacio en disco y simplificar el mantenimiento. Ver [Pacman/Tips and tricks#Removing unused packages (orphans)](/index.php/Pacman/Tips_and_tricks#Removing_unused_packages_.28orphans.29 "Pacman/Tips and tricks") para más detalles.
+Retire los paquetes no utilizados del sistema para liberar espacio en disco y simplificar el mantenimiento. Ver [Pacman/Tips and tricks#Removing unused packages (orphans)](/index.php/Pacman/Tips_and_tricks#Removing_unused_packages_(orphans) "Pacman/Tips and tricks") para más detalles.
 
 ### Archivos antiguos de configuración
 

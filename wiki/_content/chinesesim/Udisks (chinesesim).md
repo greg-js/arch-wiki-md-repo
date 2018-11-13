@@ -11,23 +11,23 @@ Related articles
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 配置](#.E9.85.8D.E7.BD.AE)
-*   [3 挂载助手](#.E6.8C.82.E8.BD.BD.E5.8A.A9.E6.89.8B)
+*   [1 安装](#安装)
+*   [2 配置](#配置)
+*   [3 挂载助手](#挂载助手)
     *   [3.1 Devmon](#Devmon)
     *   [3.2 udevadm monitor](#udevadm_monitor)
     *   [3.3 udiskie](#udiskie)
         *   [3.3.1 udiskie freezing and configuration](#udiskie_freezing_and_configuration)
     *   [3.4 udisksvm](#udisksvm)
-*   [4 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
-    *   [4.1 禁止隐藏设备（udisks2）](#.E7.A6.81.E6.AD.A2.E9.9A.90.E8.97.8F.E8.AE.BE.E5.A4.87.EF.BC.88udisks2.EF.BC.89)
-    *   [4.2 挂载到 /media (udisks2)](#.E6.8C.82.E8.BD.BD.E5.88.B0_.2Fmedia_.28udisks2.29)
-    *   [4.3 挂载 loop 设备](#.E6.8C.82.E8.BD.BD_loop_.E8.AE.BE.E5.A4.87)
-    *   [4.4 隐藏选中的分区](#.E9.9A.90.E8.97.8F.E9.80.89.E4.B8.AD.E7.9A.84.E5.88.86.E5.8C.BA)
-*   [5 排错](#.E6.8E.92.E9.94.99)
-    *   [5.1 卸载的设备被自动挂载](#.E5.8D.B8.E8.BD.BD.E7.9A.84.E8.AE.BE.E5.A4.87.E8.A2.AB.E8.87.AA.E5.8A.A8.E6.8C.82.E8.BD.BD)
-    *   [5.2 物理设备移除后再连接，无法再次挂载](#.E7.89.A9.E7.90.86.E8.AE.BE.E5.A4.87.E7.A7.BB.E9.99.A4.E5.90.8E.E5.86.8D.E8.BF.9E.E6.8E.A5.EF.BC.8C.E6.97.A0.E6.B3.95.E5.86.8D.E6.AC.A1.E6.8C.82.E8.BD.BD)
-*   [6 参阅](#.E5.8F.82.E9.98.85)
+*   [4 提示与技巧](#提示与技巧)
+    *   [4.1 禁止隐藏设备（udisks2）](#禁止隐藏设备（udisks2）)
+    *   [4.2 挂载到 /media (udisks2)](#挂载到_/media_(udisks2))
+    *   [4.3 挂载 loop 设备](#挂载_loop_设备)
+    *   [4.4 隐藏选中的分区](#隐藏选中的分区)
+*   [5 排错](#排错)
+    *   [5.1 卸载的设备被自动挂载](#卸载的设备被自动挂载)
+    *   [5.2 物理设备移除后再连接，无法再次挂载](#物理设备移除后再连接，无法再次挂载)
+*   [6 参阅](#参阅)
 
 ## 安装
 

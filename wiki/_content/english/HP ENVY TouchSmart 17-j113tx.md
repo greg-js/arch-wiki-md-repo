@@ -8,7 +8,7 @@
     *   [1.3 Audio](#Audio)
     *   [1.4 Mass Storage](#Mass_Storage)
     *   [1.5 Power](#Power)
-*   [2 I/O Components](#I.2FO_Components)
+*   [2 I/O Components](#I/O_Components)
     *   [2.1 Display](#Display)
     *   [2.2 Camera](#Camera)
     *   [2.3 Sound Playback](#Sound_Playback)

@@ -12,15 +12,15 @@ Arch Linux provee varios métodos para compilar el kernel. Usar [Arch Build Syst
     *   [2.1 Consiguiendo los ingredientes](#Consiguiendo_los_ingredientes)
     *   [2.2 Modificando el PKGBUILD](#Modificando_el_PKGBUILD)
         *   [2.2.1 Cambiando pkgname](#Cambiando_pkgname)
-        *   [2.2.2 Modificando build()](#Modificando_build.28.29)
-        *   [2.2.3 Cambiando la función package_kernel26()](#Cambiando_la_funci.C3.B3n_package_kernel26.28.29)
-    *   [2.3 Compilación](#Compilaci.C3.B3n)
-    *   [2.4 Instalación](#Instalaci.C3.B3n)
+        *   [2.2.2 Modificando build()](#Modificando_build())
+        *   [2.2.3 Cambiando la función package_kernel26()](#Cambiando_la_función_package_kernel26())
+    *   [2.3 Compilación](#Compilación)
+    *   [2.4 Instalación](#Instalación)
     *   [2.5 Boot Loader](#Boot_Loader)
     *   [2.6 Drivers propietarios de Nvidia](#Drivers_propietarios_de_Nvidia)
 *   [3 Usando AUR](#Usando_AUR)
 *   [4 Tradicional](#Tradicional)
-*   [5 Revisa también](#Revisa_tambi.C3.A9n)
+*   [5 Revisa también](#Revisa_también)
 
 ## Oficialmente compatibles
 
@@ -57,7 +57,7 @@ Se va a usar [makepkg](/index.php/Makepkg_(Espa%C3%B1ol) "Makepkg (Español)"), 
 
 ```
 
-[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [asp](https://www.archlinux.org/packages/?name=asp) y el grupo de paquetes [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/).
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") el paquete [asp](https://www.archlinux.org/packages/?name=asp) y el grupo de paquetes [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/).
 
 Se necesita un kernel limpio para poder hacer la personalización. Descargue los archivos del kernel desde ABS en su directorio *build*, ejecute:
 
@@ -156,7 +156,7 @@ El parámetro `-s` descargara cualquier dependencia adicional que no se encuentr
 
 **Nota:**
 
-*   La fuente del kernel contiene [firmas PGP](https://www.kernel.org/signature.html#kernel-org-web-of-trust), y makepkg intentara verificarlas. Vea [verificación de firmas](/index.php/Makepkg_(Espa%C3%B1ol)#Verificaci.C3.B3n_de_firmas "Makepkg (Español)") para mas información.
+*   La fuente del kernel contiene [firmas PGP](https://www.kernel.org/signature.html#kernel-org-web-of-trust), y makepkg intentara verificarlas. Vea [verificación de firmas](/index.php/Makepkg_(Espa%C3%B1ol)#Verificación_de_firmas "Makepkg (Español)") para mas información.
 *   El kernel necesita un tiempo para compilar, una hora no es inusual.
 *   [Compilar simultáneamente](/index.php/Makepkg_(Espa%C3%B1ol)#Recomendaciones "Makepkg (Español)") puede reducir los tiempos de compilación significativamente en sistemas con múltiples núcleos.
 

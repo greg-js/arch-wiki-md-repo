@@ -15,9 +15,9 @@ El archivo de configuración para los resolvers de DNS es `/etc/resolv.conf`. De
     *   [2.5 Yandex](#Yandex)
 *   [3 Conservar las configuraciones de DNS](#Conservar_las_configuraciones_de_DNS)
     *   [3.1 Utilizar openresolv](#Utilizar_openresolv)
-    *   [3.2 Modificar la configuración dhcpcd](#Modificar_la_configuraci.C3.B3n_dhcpcd)
-    *   [3.3 Protección contra escritura de /etc/resolv.conf](#Protecci.C3.B3n_contra_escritura_de_.2Fetc.2Fresolv.conf)
-    *   [3.4 Utilizar la opción timeout para reducir el tiempo de búsqueda del nombre del equipo](#Utilizar_la_opci.C3.B3n_timeout_para_reducir_el_tiempo_de_b.C3.BAsqueda_del_nombre_del_equipo)
+    *   [3.2 Modificar la configuración dhcpcd](#Modificar_la_configuración_dhcpcd)
+    *   [3.3 Protección contra escritura de /etc/resolv.conf](#Protección_contra_escritura_de_/etc/resolv.conf)
+    *   [3.4 Utilizar la opción timeout para reducir el tiempo de búsqueda del nombre del equipo](#Utilizar_la_opción_timeout_para_reducir_el_tiempo_de_búsqueda_del_nombre_del_equipo)
 
 ## DNS en Linux
 
@@ -140,7 +140,7 @@ nameserver 77.88.8.3
 
 [dhcpcd](/index.php/Dhcpcd "Dhcpcd"), [netctl](/index.php/Netctl_(Espa%C3%B1ol) "Netctl (Español)"), [NetworkManager](/index.php/NetworkManager_(Espa%C3%B1ol) "NetworkManager (Español)") y otros muchos procesos, pueden sobrescribir `/etc/resolv.conf`. Esto suele ser un comportamiento deseable, pero a veces la configuración de DNS exige ajustarla manualmente (por ejemplo, cuando se utiliza una dirección IP estática). Hay varias maneras de hacer esto.
 
-*   Si se está usando dhcpcd, vea [#Modificar la configuración dhcpcd](#Modificar_la_configuraci.C3.B3n_dhcpcd) a continuación.
+*   Si se está usando dhcpcd, vea [#Modificar la configuración dhcpcd](#Modificar_la_configuración_dhcpcd) a continuación.
 *   Si se está usando [netctl](/index.php/Netctl_(Espa%C3%B1ol) "Netctl (Español)"), con asignación de dirección IP estática, no utilize las opciones `DNS*` en su perfil, de lo contrario *resolvconf* será llamado y sobrescribirá `/etc/resolv.conf`.
 
 ### Utilizar openresolv

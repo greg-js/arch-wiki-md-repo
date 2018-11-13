@@ -7,9 +7,9 @@
 *   [2 Configuration](#Configuration)
     *   [2.1 Autostart](#Autostart)
 *   [3 Usage](#Usage)
-    *   [3.1 With GNOME/GTK+ 2 applications](#With_GNOME.2FGTK.2B_2_applications)
+    *   [3.1 With GNOME/GTK+ 2 applications](#With_GNOME/GTK+_2_applications)
     *   [3.2 With other applications](#With_other_applications)
-    *   [3.3 Additional notes for Wine/Crossover Office](#Additional_notes_for_Wine.2FCrossover_Office)
+    *   [3.3 Additional notes for Wine/Crossover Office](#Additional_notes_for_Wine/Crossover_Office)
 
 ## Installation
 

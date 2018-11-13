@@ -2,16 +2,16 @@
 
 Artigos relacionados
 
-*   [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes")
+*   [Permissões e atributos de arquivo](/index.php/Permiss%C3%B5es_e_atributos_de_arquivo "Permissões e atributos de arquivo")
 
 O utilitário [umask](https://en.wikipedia.org/wiki/pt:umask "wikipedia:pt:umask") é usado para controlar a máscara de modo de criação de arquivo, o qual determinar o valor inicial dos bits de permissão de arquivo para arquivos recém-criados. O seguinte comportamento deste utilitário é padronizado pelo [POSIX](https://en.wikipedia.org/wiki/pt:POSIX "wikipedia:pt:POSIX") e descrito no [Manual do Programador POSIX](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/umask.html). Porque o *umask* afeta o ambiente de execução do shell atual, é geralmente implementado como um comando incorporado de um shell.
 
 ## Contents
 
-*   [1 Significado da máscara de modo](#Significado_da_m.C3.A1scara_de_modo)
-*   [2 Exibir o valor atual da máscara](#Exibir_o_valor_atual_da_m.C3.A1scara)
-*   [3 Definir o valor da máscara](#Definir_o_valor_da_m.C3.A1scara)
-*   [4 Veja também](#Veja_tamb.C3.A9m)
+*   [1 Significado da máscara de modo](#Significado_da_máscara_de_modo)
+*   [2 Exibir o valor atual da máscara](#Exibir_o_valor_atual_da_máscara)
+*   [3 Definir o valor da máscara](#Definir_o_valor_da_máscara)
+*   [4 Veja também](#Veja_também)
 
 ## Significado da máscara de modo
 
@@ -68,7 +68,7 @@ Quando a opção `-S`, padronizada pelo POSIX, é usada, a máscara será exibid
 
 **Nota:** Os valores umask podem ser definidos caso a caso. Por exemplo, os usuários de desktop achar as permissões restritas em sua pasta *home* (`chmod 700`, conforme aplicado por `useradd -m`) suficiente, pois elas tornam todos os arquivos inacessíveis para outros usuários. Isso não seria prático (por exemplo, ao usar o [Apache](/index.php/Apache "Apache")) e os arquivos públicos são armazenados entre os particulares, então, em vez disso, considere restringir o umask.
 
-Você pode definir o valor de umask através do comando *umask*. A string que especifica a máscara de modo segue as mesmas regras sintáticas que o argumento de modo de [chmod](/index.php/Chmod "Chmod") (consulte o [Manual do Programador POSIX](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/chmod.html#tag_20_17_13) para mais detalhes).
+Você pode definir o valor de umask através do comando *umask*. A string que especifica a máscara de modo segue as mesmas regras sintáticas que o argumento de modo de [chmod](/index.php/Chmod_(Portugu%C3%AAs) "Chmod (Português)") (consulte o [Manual do Programador POSIX](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/chmod.html#tag_20_17_13) para mais detalhes).
 
 O valor de umask do sistema pode ser definido em `/etc/profile` ou nos arquivos de configuração padrão do [shell](/index.php/Shell_(Portugu%C3%AAs) "Shell (Português)"), por exemplo, `/etc/bash.bashrc`. A maioria das distribuições Linux, incluindo o Arch [[1]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/profile?h=packages/filesystem) definem um valor padrão de `022`. Você também pode configurar umask com `pam_umask.so`, mas este pode ser substituído por `/etc/profile` ou similar.
 

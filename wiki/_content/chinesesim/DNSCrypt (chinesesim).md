@@ -4,7 +4,7 @@
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
+*   [1 安装](#安装)
 *   [2 Configuration](#Configuration)
     *   [2.1 Startup](#Startup)
     *   [2.2 Select resolver](#Select_resolver)

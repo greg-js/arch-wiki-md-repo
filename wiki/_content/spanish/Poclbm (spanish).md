@@ -5,10 +5,10 @@ Este artículo es una traducción de [Poclbm](/index.php/Poclbm "Poclbm"), revis
 
 ## Contents
 
-*   [1 Introducción](#Introducci.C3.B3n)
-*   [2 Instalación](#Instalaci.C3.B3n)
+*   [1 Introducción](#Introducción)
+*   [2 Instalación](#Instalación)
 *   [3 Ejecutar el minero](#Ejecutar_el_minero)
-*   [4 Ejecutándolo como servicio de systemd](#Ejecut.C3.A1ndolo_como_servicio_de_systemd)
+*   [4 Ejecutándolo como servicio de systemd](#Ejecutándolo_como_servicio_de_systemd)
 
 ## Introducción
 

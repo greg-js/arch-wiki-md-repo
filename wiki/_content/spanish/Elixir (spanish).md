@@ -5,11 +5,11 @@ Este artículo es una traducción de [Elixir](/index.php/Elixir "Elixir"), revis
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-    *   [1.1 Versión única](#Versi.C3.B3n_.C3.BAnica)
+*   [1 Instalación](#Instalación)
+    *   [1.1 Versión única](#Versión_única)
     *   [1.2 Varias versiones](#Varias_versiones)
-*   [2 Configuración](#Configuraci.C3.B3n)
-*   [3 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [2 Configuración](#Configuración)
+*   [3 Véase también](#Véase_también)
 
 ## Instalación
 

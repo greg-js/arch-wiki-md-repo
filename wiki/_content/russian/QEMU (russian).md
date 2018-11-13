@@ -15,21 +15,21 @@ QEMU может использовать другие гипервизоры, т
 
 ## Contents
 
-*   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-*   [2 Графические интерфейсы для QEMU](#.D0.93.D1.80.D0.B0.D1.84.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B5_.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.84.D0.B5.D0.B9.D1.81.D1.8B_.D0.B4.D0.BB.D1.8F_QEMU)
-*   [3 Создание новой виртуальной машины](#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BD.D0.BE.D0.B2.D0.BE.D0.B9_.D0.B2.D0.B8.D1.80.D1.82.D1.83.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D0.B9_.D0.BC.D0.B0.D1.88.D0.B8.D0.BD.D1.8B)
-    *   [3.1 Создание образа жесткого диска](#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BE.D0.B1.D1.80.D0.B0.D0.B7.D0.B0_.D0.B6.D0.B5.D1.81.D1.82.D0.BA.D0.BE.D0.B3.D0.BE_.D0.B4.D0.B8.D1.81.D0.BA.D0.B0)
+*   [1 Установка](#Установка)
+*   [2 Графические интерфейсы для QEMU](#Графические_интерфейсы_для_QEMU)
+*   [3 Создание новой виртуальной машины](#Создание_новой_виртуальной_машины)
+    *   [3.1 Создание образа жесткого диска](#Создание_образа_жесткого_диска)
         *   [3.1.1 Overlay storage images](#Overlay_storage_images)
-        *   [3.1.2 Изменение размера образа](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.BC.D0.B5.D1.80.D0.B0_.D0.BE.D0.B1.D1.80.D0.B0.D0.B7.D0.B0)
-        *   [3.1.3 Преобразование образа](#.D0.9F.D1.80.D0.B5.D0.BE.D0.B1.D1.80.D0.B0.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BE.D0.B1.D1.80.D0.B0.D0.B7.D0.B0)
-    *   [3.2 Подготовка установочного носителя](#.D0.9F.D0.BE.D0.B4.D0.B3.D0.BE.D1.82.D0.BE.D0.B2.D0.BA.D0.B0_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BE.D1.87.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BD.D0.BE.D1.81.D0.B8.D1.82.D0.B5.D0.BB.D1.8F)
-    *   [3.3 Установка операционной системы](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BE.D0.BF.D0.B5.D1.80.D0.B0.D1.86.D0.B8.D0.BE.D0.BD.D0.BD.D0.BE.D0.B9_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B)
-*   [4 Запуск виртуальной машины](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D0.B2.D0.B8.D1.80.D1.82.D1.83.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D0.B9_.D0.BC.D0.B0.D1.88.D0.B8.D0.BD.D1.8B)
-    *   [4.1 Включение KVM](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_KVM)
-    *   [4.2 Включение поддержки IOMMU (Intel VT-d/AMD-Vi)](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.B8_IOMMU_.28Intel_VT-d.2FAMD-Vi.29)
+        *   [3.1.2 Изменение размера образа](#Изменение_размера_образа)
+        *   [3.1.3 Преобразование образа](#Преобразование_образа)
+    *   [3.2 Подготовка установочного носителя](#Подготовка_установочного_носителя)
+    *   [3.3 Установка операционной системы](#Установка_операционной_системы)
+*   [4 Запуск виртуальной машины](#Запуск_виртуальной_машины)
+    *   [4.1 Включение KVM](#Включение_KVM)
+    *   [4.2 Включение поддержки IOMMU (Intel VT-d/AMD-Vi)](#Включение_поддержки_IOMMU_(Intel_VT-d/AMD-Vi))
 *   [5 Moving data between host and guest OS](#Moving_data_between_host_and_guest_OS)
     *   [5.1 Network](#Network)
-    *   [5.2 QEMU's built-in SMB server](#QEMU.27s_built-in_SMB_server)
+    *   [5.2 QEMU's built-in SMB server](#QEMU's_built-in_SMB_server)
     *   [5.3 Mounting a partition inside a raw disk image](#Mounting_a_partition_inside_a_raw_disk_image)
         *   [5.3.1 With manually specifying byte offset](#With_manually_specifying_byte_offset)
         *   [5.3.2 With loop module autodetecting partitions](#With_loop_module_autodetecting_partitions)
@@ -49,7 +49,7 @@ QEMU может использовать другие гипервизоры, т
         *   [6.3.4 Creating bridge manually](#Creating_bridge_manually)
         *   [6.3.5 Network sharing between physical device and a Tap device through iptables](#Network_sharing_between_physical_device_and_a_Tap_device_through_iptables)
     *   [6.4 Networking with VDE2](#Networking_with_VDE2)
-        *   [6.4.1 What is VDE?](#What_is_VDE.3F)
+        *   [6.4.1 What is VDE?](#What_is_VDE?)
         *   [6.4.2 Basics](#Basics)
         *   [6.4.3 Startup scripts](#Startup_scripts)
         *   [6.4.4 Alternative method](#Alternative_method)
@@ -72,7 +72,7 @@ QEMU может использовать другие гипервизоры, т
     *   [8.1 Host](#Host)
     *   [8.2 Guest](#Guest)
 *   [9 Installing virtio drivers](#Installing_virtio_drivers)
-    *   [9.1 Preparing an (Arch) Linux guest](#Preparing_an_.28Arch.29_Linux_guest)
+    *   [9.1 Preparing an (Arch) Linux guest](#Preparing_an_(Arch)_Linux_guest)
     *   [9.2 Preparing a Windows guest](#Preparing_a_Windows_guest)
         *   [9.2.1 Block device drivers](#Block_device_drivers)
             *   [9.2.1.1 New Install of Windows](#New_Install_of_Windows)
@@ -104,16 +104,16 @@ QEMU может использовать другие гипервизоры, т
     *   [12.1 Virtual machine runs too slowly](#Virtual_machine_runs_too_slowly)
     *   [12.2 Mouse cursor is jittery or erratic](#Mouse_cursor_is_jittery_or_erratic)
     *   [12.3 No visible Cursor](#No_visible_Cursor)
-    *   [12.4 Unable to move/attach Cursor](#Unable_to_move.2Fattach_Cursor)
+    *   [12.4 Unable to move/attach Cursor](#Unable_to_move/attach_Cursor)
     *   [12.5 Keyboard seems broken or the arrow keys do not work](#Keyboard_seems_broken_or_the_arrow_keys_do_not_work)
     *   [12.6 Guest display stretches on window resize](#Guest_display_stretches_on_window_resize)
-    *   [12.7 ioctl(KVM_CREATE_VM) failed: 16 Device or resource busy](#ioctl.28KVM_CREATE_VM.29_failed:_16_Device_or_resource_busy)
+    *   [12.7 ioctl(KVM_CREATE_VM) failed: 16 Device or resource busy](#ioctl(KVM_CREATE_VM)_failed:_16_Device_or_resource_busy)
     *   [12.8 libgfapi error message](#libgfapi_error_message)
     *   [12.9 Kernel panic on LIVE-environments](#Kernel_panic_on_LIVE-environments)
     *   [12.10 Windows 7 guest suffers low-quality sound](#Windows_7_guest_suffers_low-quality_sound)
     *   [12.11 Could not access KVM kernel module: Permission denied](#Could_not_access_KVM_kernel_module:_Permission_denied)
-    *   [12.12 "System Thread Exception Not Handled" when booting a Windows VM](#.22System_Thread_Exception_Not_Handled.22_when_booting_a_Windows_VM)
-    *   [12.13 Certain Windows games/applications crashing/causing a bluescreen](#Certain_Windows_games.2Fapplications_crashing.2Fcausing_a_bluescreen)
+    *   [12.12 "System Thread Exception Not Handled" when booting a Windows VM](#"System_Thread_Exception_Not_Handled"_when_booting_a_Windows_VM)
+    *   [12.13 Certain Windows games/applications crashing/causing a bluescreen](#Certain_Windows_games/applications_crashing/causing_a_bluescreen)
 *   [13 See also](#See_also)
 
 ## Установка
@@ -165,7 +165,7 @@ $ qemu-img create -f raw *файл_образа* 4G
 
 **Примечание:** Также вы можете просто создать образ *raw*, используя `dd` или `fallocate` для создания файла с нужным размером.
 
-**Важно:** Если вы храните образы на файловой системе [Btrfs](/index.php/Btrfs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Btrfs (Русский)"), вам следует рассмотреть возможность отключения [Копирования при записи](/index.php/Btrfs#.D0.9A.D0.BE.D0.BF.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.B8_.D0.B7.D0.B0.D0.BF.D0.B8.D1.81.D0.B8_.28CoW.29 "Btrfs") для каталогов перед созданием каких-либо образов.
+**Важно:** Если вы храните образы на файловой системе [Btrfs](/index.php/Btrfs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Btrfs (Русский)"), вам следует рассмотреть возможность отключения [Копирования при записи](/index.php/Btrfs#Копирование_при_записи_(CoW) "Btrfs") для каталогов перед созданием каких-либо образов.
 
 #### Overlay storage images
 
@@ -246,9 +246,9 @@ $ qemu-system-x86_64 -cdrom *образ_iso* -boot order=d -drive file=*обра
 
 ```
 
-Для получения дополнительной информации о загрузки с других типов носителей (например, дискет, образов дисков или физических дисков) смотрите [qemu(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/qemu.1) и смотрите [#Запуск виртуальной машины](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D0.B2.D0.B8.D1.80.D1.82.D1.83.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D0.B9_.D0.BC.D0.B0.D1.88.D0.B8.D0.BD.D1.8B), чтобы узнать другие полезные параметры.
+Для получения дополнительной информации о загрузки с других типов носителей (например, дискет, образов дисков или физических дисков) смотрите [qemu(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/qemu.1) и смотрите [#Запуск виртуальной машины](#Запуск_виртуальной_машины), чтобы узнать другие полезные параметры.
 
-После завершения установки операционной системы, образ QEMU может быть загружен напрямую (смотрите [#Запуск виртуальной машины](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D0.B2.D0.B8.D1.80.D1.82.D1.83.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D0.B9_.D0.BC.D0.B0.D1.88.D0.B8.D0.BD.D1.8B)).
+После завершения установки операционной системы, образ QEMU может быть загружен напрямую (смотрите [#Запуск виртуальной машины](#Запуск_виртуальной_машины)).
 
 **Важно:** По умолчанию для машины устанавливается только 128 МБ памяти. Объем памяти можно настроить с помощью параметра `-m`, например, `-m 512M` или `-m 2G`.
 

@@ -2,8 +2,8 @@ Med ABS kan en Arch Linux-bruger let kompilere en kilde til en pkg.tar.gz-**pakk
 
 ## Contents
 
-*   [1 Hvad er en pakkefil?](#Hvad_er_en_pakkefil.3F)
-*   [2 Hvad er en PKGBUILD? Og hvad indeholder det?](#Hvad_er_en_PKGBUILD.3F_Og_hvad_indeholder_det.3F)
+*   [1 Hvad er en pakkefil?](#Hvad_er_en_pakkefil?)
+*   [2 Hvad er en PKGBUILD? Og hvad indeholder det?](#Hvad_er_en_PKGBUILD?_Og_hvad_indeholder_det?)
 *   [3 Byggefunktionen forklaret](#Byggefunktionen_forklaret)
 *   [4 Mere ABS-information](#Mere_ABS-information)
 

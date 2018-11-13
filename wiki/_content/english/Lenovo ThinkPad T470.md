@@ -11,7 +11,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 
 ## Contents
 
-*   [1 Firmware (e.g. bios and peripherals)](#Firmware_.28e.g._bios_and_peripherals.29)
+*   [1 Firmware (e.g. bios and peripherals)](#Firmware_(e.g._bios_and_peripherals))
 *   [2 Kernel and hardware support](#Kernel_and_hardware_support)
     *   [2.1 Fingerprint reader](#Fingerprint_reader)
     *   [2.2 Screen backlight](#Screen_backlight)
@@ -26,7 +26,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
     *   [3.2 T470 model 20JN](#T470_model_20JN)
         *   [3.2.1 lspci](#lspci_2)
         *   [3.2.2 lsusb](#lsusb_2)
-    *   [3.3 T470 model 20HD,20HE(Campus model)](#T470_model_20HD.2C20HE.28Campus_model.29)
+    *   [3.3 T470 model 20HD,20HE(Campus model)](#T470_model_20HD,20HE(Campus_model))
         *   [3.3.1 lspci](#lspci_3)
         *   [3.3.2 lsusb](#lsusb_3)
 *   [4 See also](#See_also)

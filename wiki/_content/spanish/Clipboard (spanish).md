@@ -4,8 +4,8 @@ Este artículo es una traducción de [Clipboard](/index.php/Clipboard "Clipboard
 Artículos relacionados
 
 *   [Copiando texto desde un terminal](/index.php/Copying_text_from_a_terminal "Copying text from a terminal")
-*   [Errores pulsando con el botón central en Firefox](/index.php/Firefox_(Espa%C3%B1ol)#Errores_haciendo_click_con_el_bot.C3.B3n_central "Firefox (Español)")
-*   [Desactivar pegar desde el ratón en GTK+](/index.php/GTK%2B_(Espa%C3%B1ol)#Desactivar_pegar_desde_el_rat.C3.B3n "GTK+ (Español)")
+*   [Errores pulsando con el botón central en Firefox](/index.php/Firefox_(Espa%C3%B1ol)#Errores_haciendo_click_con_el_botón_central "Firefox (Español)")
+*   [Desactivar pegar desde el ratón en GTK+](/index.php/GTK%2B_(Espa%C3%B1ol)#Desactivar_pegar_desde_el_ratón "GTK+ (Español)")
 *   [Vim#Clipboard](/index.php/Vim#Clipboard "Vim")
 
 De [Wikipedia:es:Portapapeles](https://en.wikipedia.org/wiki/es:Portapapeles "wikipedia:es:Portapapeles"):
@@ -18,7 +18,7 @@ De [Wikipedia:es:Portapapeles](https://en.wikipedia.org/wiki/es:Portapapeles "wi
 *   [2 Bases](#Bases)
 *   [3 Herramientas](#Herramientas)
 *   [4 Gestores](#Gestores)
-*   [5 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [5 Véase también](#Véase_también)
 
 ## Historia
 

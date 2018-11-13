@@ -4,10 +4,10 @@
 
 ## Contents
 
-*   [1 Instalação](#Instala.C3.A7.C3.A3o)
+*   [1 Instalação](#Instalação)
 *   [2 Compilar pacotes com Clang](#Compilar_pacotes_com_Clang)
-*   [3 Usar o analisador estático](#Usar_o_analisador_est.C3.A1tico)
-*   [4 Veja também](#Veja_tamb.C3.A9m)
+*   [3 Usar o analisador estático](#Usar_o_analisador_estático)
+*   [4 Veja também](#Veja_também)
 
 ## Instalação
 

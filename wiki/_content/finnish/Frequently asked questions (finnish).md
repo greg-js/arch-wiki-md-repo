@@ -2,22 +2,22 @@ Alla katettujen kysymysten lisäksi voit tarkistaa [The Arch Way](/index.php/Arc
 
 ## Contents
 
-*   [1 Yleistä](#Yleist.C3.A4)
-    *   [1.1 Q) Olen GNU/Linux -aloittelija. Pitäisikö minun käyttää Arch Linuxia?](#Q.29_Olen_GNU.2FLinux_-aloittelija._Pit.C3.A4isik.C3.B6_minun_k.C3.A4ytt.C3.A4.C3.A4_Arch_Linuxia.3F)
-    *   [1.2 Q) Milloin uusi julkaisu on valmis?](#Q.29_Milloin_uusi_julkaisu_on_valmis.3F)
-    *   [1.3 Q) Arch tarvitsee enemmän/vähemmän julkisuutta (esim. mainontaa)](#Q.29_Arch_tarvitsee_enemm.C3.A4n.2Fv.C3.A4hemm.C3.A4n_julkisuutta_.28esim._mainontaa.29)
-    *   [1.4 Q) Arch tarvitsee enemmän dokumentaatiota](#Q.29_Arch_tarvitsee_enemm.C3.A4n_dokumentaatiota)
-    *   [1.5 Q) Arch tarvitsee enemmän kehittäjiä](#Q.29_Arch_tarvitsee_enemm.C3.A4n_kehitt.C3.A4ji.C3.A4)
-    *   [1.6 Q) Miksi Arch on niin hidas? Luulin että sen pitäisi olla nopea!](#Q.29_Miksi_Arch_on_niin_hidas.3F_Luulin_ett.C3.A4_sen_pit.C3.A4isi_olla_nopea.21)
-    *   [1.7 Q) Miksi internet on hitaampi verrattuna muihin käyttöjärjestelmiin?](#Q.29_Miksi_internet_on_hitaampi_verrattuna_muihin_k.C3.A4ytt.C3.B6j.C3.A4rjestelmiin.3F)
+*   [1 Yleistä](#Yleistä)
+    *   [1.1 Q) Olen GNU/Linux -aloittelija. Pitäisikö minun käyttää Arch Linuxia?](#Q)_Olen_GNU/Linux_-aloittelija._Pitäisikö_minun_käyttää_Arch_Linuxia?)
+    *   [1.2 Q) Milloin uusi julkaisu on valmis?](#Q)_Milloin_uusi_julkaisu_on_valmis?)
+    *   [1.3 Q) Arch tarvitsee enemmän/vähemmän julkisuutta (esim. mainontaa)](#Q)_Arch_tarvitsee_enemmän/vähemmän_julkisuutta_(esim._mainontaa))
+    *   [1.4 Q) Arch tarvitsee enemmän dokumentaatiota](#Q)_Arch_tarvitsee_enemmän_dokumentaatiota)
+    *   [1.5 Q) Arch tarvitsee enemmän kehittäjiä](#Q)_Arch_tarvitsee_enemmän_kehittäjiä)
+    *   [1.6 Q) Miksi Arch on niin hidas? Luulin että sen pitäisi olla nopea!](#Q)_Miksi_Arch_on_niin_hidas?_Luulin_että_sen_pitäisi_olla_nopea!)
+    *   [1.7 Q) Miksi internet on hitaampi verrattuna muihin käyttöjärjestelmiin?](#Q)_Miksi_internet_on_hitaampi_verrattuna_muihin_käyttöjärjestelmiin?)
 *   [2 Paketinhallinta](#Paketinhallinta)
-    *   [2.1 Q) Löysin virheen paketista X. Mitä minun pitäisi tehdä?](#Q.29_L.C3.B6ysin_virheen_paketista_X._Mit.C3.A4_minun_pit.C3.A4isi_tehd.C3.A4.3F)
-    *   [2.2 Q) Arch paketit tarvitsevat yhtenäisen nimeämiskäytännön. .pkg.tar.gz on liian pitkä ja monimutkainen](#Q.29_Arch_paketit_tarvitsevat_yhten.C3.A4isen_nime.C3.A4misk.C3.A4yt.C3.A4nn.C3.B6n._.pkg.tar.gz_on_liian_pitk.C3.A4_ja_monimutkainen)
-    *   [2.3 Q) Pacman tarvitsee kirjaston jotta muut ohjelmat pääsevät helposti käsiksi pakettien tietoihin](#Q.29_Pacman_tarvitsee_kirjaston_jotta_muut_ohjelmat_p.C3.A4.C3.A4sev.C3.A4t_helposti_k.C3.A4siksi_pakettien_tietoihin)
-    *   [2.4 Q) Miksei Pacmanilla ole virallista graafista käyttöliittymää?](#Q.29_Miksei_Pacmanilla_ole_virallista_graafista_k.C3.A4ytt.C3.B6liittym.C3.A4.C3.A4.3F)
-    *   [2.5 Q) Pacman tarvitsee Ominaisuuden X!](#Q.29_Pacman_tarvitsee_Ominaisuuden_X.21)
+    *   [2.1 Q) Löysin virheen paketista X. Mitä minun pitäisi tehdä?](#Q)_Löysin_virheen_paketista_X._Mitä_minun_pitäisi_tehdä?)
+    *   [2.2 Q) Arch paketit tarvitsevat yhtenäisen nimeämiskäytännön. .pkg.tar.gz on liian pitkä ja monimutkainen](#Q)_Arch_paketit_tarvitsevat_yhtenäisen_nimeämiskäytännön._.pkg.tar.gz_on_liian_pitkä_ja_monimutkainen)
+    *   [2.3 Q) Pacman tarvitsee kirjaston jotta muut ohjelmat pääsevät helposti käsiksi pakettien tietoihin](#Q)_Pacman_tarvitsee_kirjaston_jotta_muut_ohjelmat_pääsevät_helposti_käsiksi_pakettien_tietoihin)
+    *   [2.4 Q) Miksei Pacmanilla ole virallista graafista käyttöliittymää?](#Q)_Miksei_Pacmanilla_ole_virallista_graafista_käyttöliittymää?)
+    *   [2.5 Q) Pacman tarvitsee Ominaisuuden X!](#Q)_Pacman_tarvitsee_Ominaisuuden_X!)
 *   [3 Asennus](#Asennus)
-    *   [3.1 Q) Arch tarvitsee paremman asennusohjelman, ehkä jopa graafisen sellaisen.](#Q.29_Arch_tarvitsee_paremman_asennusohjelman.2C_ehk.C3.A4_jopa_graafisen_sellaisen.)
+    *   [3.1 Q) Arch tarvitsee paremman asennusohjelman, ehkä jopa graafisen sellaisen.](#Q)_Arch_tarvitsee_paremman_asennusohjelman,_ehkä_jopa_graafisen_sellaisen.)
 
 # Yleistä
 

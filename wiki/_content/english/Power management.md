@@ -30,14 +30,14 @@ In Arch Linux, power management consists of two main parts:
     *   [2.2 Suspend and hibernate](#Suspend_and_hibernate)
         *   [2.2.1 Hybrid-sleep on suspend or hibernation request](#Hybrid-sleep_on_suspend_or_hibernation_request)
     *   [2.3 Sleep hooks](#Sleep_hooks)
-        *   [2.3.1 Suspend/resume service files](#Suspend.2Fresume_service_files)
-        *   [2.3.2 Combined Suspend/resume service file](#Combined_Suspend.2Fresume_service_file)
-        *   [2.3.3 Hooks in /usr/lib/systemd/system-sleep](#Hooks_in_.2Fusr.2Flib.2Fsystemd.2Fsystem-sleep)
+        *   [2.3.1 Suspend/resume service files](#Suspend/resume_service_files)
+        *   [2.3.2 Combined Suspend/resume service file](#Combined_Suspend/resume_service_file)
+        *   [2.3.3 Hooks in /usr/lib/systemd/system-sleep](#Hooks_in_/usr/lib/systemd/system-sleep)
     *   [2.4 Troubleshooting](#Troubleshooting)
         *   [2.4.1 Delayed lid switch action](#Delayed_lid_switch_action)
         *   [2.4.2 Suspend from corresponding laptop Fn key not working](#Suspend_from_corresponding_laptop_Fn_key_not_working)
 *   [3 Power saving](#Power_saving)
-    *   [3.1 Processors with HWP (Hardware P-state) support](#Processors_with_HWP_.28Hardware_P-state.29_support)
+    *   [3.1 Processors with HWP (Hardware P-state) support](#Processors_with_HWP_(Hardware_P-state)_support)
     *   [3.2 Audio](#Audio)
     *   [3.3 Backlight](#Backlight)
     *   [3.4 Bluetooth](#Bluetooth)
@@ -47,7 +47,7 @@ In Arch Linux, power management consists of two main parts:
         *   [3.6.2 Writeback Time](#Writeback_Time)
         *   [3.6.3 Laptop Mode](#Laptop_Mode)
     *   [3.7 Network interfaces](#Network_interfaces)
-        *   [3.7.1 Intel wireless cards (iwlwifi)](#Intel_wireless_cards_.28iwlwifi.29)
+        *   [3.7.1 Intel wireless cards (iwlwifi)](#Intel_wireless_cards_(iwlwifi))
     *   [3.8 Bus power management](#Bus_power_management)
         *   [3.8.1 Active State Power Management](#Active_State_Power_Management)
         *   [3.8.2 PCI Runtime Power Management](#PCI_Runtime_Power_Management)
@@ -676,7 +676,7 @@ Also little things like setting the [noatime](/index.php/Fstab#atime_options "Fs
 
 ### CD-ROM or DVD drive
 
-See [Udisks#Devices do not remain unmounted (udisks)](/index.php/Udisks#Devices_do_not_remain_unmounted_.28udisks.29 "Udisks").
+See [Udisks#Devices do not remain unmounted (udisks)](/index.php/Udisks#Devices_do_not_remain_unmounted_(udisks) "Udisks").
 
 ## Tools and scripts
 

@@ -12,8 +12,8 @@ See the [Laptop/Dell](/index.php/Laptop/Dell "Laptop/Dell") chart for informatio
     *   [3.3 Keyboard](#Keyboard)
     *   [3.4 Touchpad](#Touchpad)
     *   [3.5 Wireless](#Wireless)
-        *   [3.5.1 Toggle between HDMI/Monitor](#Toggle_between_HDMI.2FMonitor)
-    *   [3.6 USB, SD card slot, ethernet, VGA, HDMI, webcam](#USB.2C_SD_card_slot.2C_ethernet.2C_VGA.2C_HDMI.2C_webcam)
+        *   [3.5.1 Toggle between HDMI/Monitor](#Toggle_between_HDMI/Monitor)
+    *   [3.6 USB, SD card slot, ethernet, VGA, HDMI, webcam](#USB,_SD_card_slot,_ethernet,_VGA,_HDMI,_webcam)
 
 ## Hardware Details
 

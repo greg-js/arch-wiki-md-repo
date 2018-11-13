@@ -20,7 +20,7 @@ This article lists and describes [screenshot](https://en.wikipedia.org/wiki/Scre
         *   [1.2.4 Cinnamon](#Cinnamon)
         *   [1.2.5 Other desktop environments or window managers](#Other_desktop_environments_or_window_managers)
     *   [1.3 Packages including a screenshot utility](#Packages_including_a_screenshot_utility)
-        *   [1.3.1 ImageMagick/GraphicsMagick](#ImageMagick.2FGraphicsMagick)
+        *   [1.3.1 ImageMagick/GraphicsMagick](#ImageMagick/GraphicsMagick)
         *   [1.3.2 GIMP](#GIMP)
         *   [1.3.3 imlib2](#imlib2)
         *   [1.3.4 FFmpeg](#FFmpeg)

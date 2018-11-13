@@ -18,7 +18,7 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Icewm "wikipedia:Icewm"):
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Compositing](#Compositing)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 No start menu icon (Intel graphics)](#No_start_menu_icon_.28Intel_graphics.29)
+    *   [5.1 No start menu icon (Intel graphics)](#No_start_menu_icon_(Intel_graphics))
     *   [5.2 Unable to logout when PCManFM is managing the desktop](#Unable_to_logout_when_PCManFM_is_managing_the_desktop)
     *   [5.3 No shutdown or reboot options in logout menu](#No_shutdown_or_reboot_options_in_logout_menu)
 *   [6 See also](#See_also)

@@ -6,18 +6,18 @@
 
 推荐使用 GPT 和 UEFI 搭配因为有的 UEFI 固件不支持 UEFI-MBR 启动。
 
-**Warning:** 如果在 UEFI/GPT 系统上配置 [双启动](/index.php/Dual_boot_with_Windows "Dual boot with Windows")，请不要重新格式化 UEFI 分区，因为已有的分区上包含 Windows 启动需要的 *.efi* 文件。不需要重新创建分区，只需要 [#挂载分区](#.E6.8C.82.E8.BD.BD.E5.88.86.E5.8C.BA).
+**Warning:** 如果在 UEFI/GPT 系统上配置 [双启动](/index.php/Dual_boot_with_Windows "Dual boot with Windows")，请不要重新格式化 UEFI 分区，因为已有的分区上包含 Windows 启动需要的 *.efi* 文件。不需要重新创建分区，只需要 [#挂载分区](#挂载分区).
 
 ## Contents
 
-*   [1 创建分区](#.E5.88.9B.E5.BB.BA.E5.88.86.E5.8C.BA)
-    *   [1.1 GPT 磁盘分区](#GPT_.E7.A3.81.E7.9B.98.E5.88.86.E5.8C.BA)
-    *   [1.2 MBR 磁盘分区](#MBR_.E7.A3.81.E7.9B.98.E5.88.86.E5.8C.BA)
-*   [2 挂载分区](#.E6.8C.82.E8.BD.BD.E5.88.86.E5.8C.BA)
-    *   [2.1 RAID 上的 ESP](#RAID_.E4.B8.8A.E7.9A.84_ESP)
-*   [3 技巧](#.E6.8A.80.E5.B7.A7)
+*   [1 创建分区](#创建分区)
+    *   [1.1 GPT 磁盘分区](#GPT_磁盘分区)
+    *   [1.2 MBR 磁盘分区](#MBR_磁盘分区)
+*   [2 挂载分区](#挂载分区)
+    *   [2.1 RAID 上的 ESP](#RAID_上的_ESP)
+*   [3 技巧](#技巧)
     *   [3.1 Using bind mount](#Using_bind_mount)
-*   [4 参阅](#.E5.8F.82.E9.98.85)
+*   [4 参阅](#参阅)
 
 ## 创建分区
 

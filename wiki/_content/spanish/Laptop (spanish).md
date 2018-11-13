@@ -1,10 +1,10 @@
 ## Contents
 
-*   [1 Configuración de ordenadores portátiles](#Configuraci.C3.B3n_de_ordenadores_port.C3.A1tiles)
-*   [2 Administración de energía](#Administraci.C3.B3n_de_energ.C3.ADa)
-    *   [2.1 Utilidades de monitorización del estado de la batería](#Utilidades_de_monitorizaci.C3.B3n_del_estado_de_la_bater.C3.ADa)
-    *   [2.2 Suspensión e hibernación](#Suspensi.C3.B3n_e_hibernaci.C3.B3n)
-    *   [2.3 Ajustes automáticos para extender la vida de la batería](#Ajustes_autom.C3.A1ticos_para_extender_la_vida_de_la_bater.C3.ADa)
+*   [1 Configuración de ordenadores portátiles](#Configuración_de_ordenadores_portátiles)
+*   [2 Administración de energía](#Administración_de_energía)
+    *   [2.1 Utilidades de monitorización del estado de la batería](#Utilidades_de_monitorización_del_estado_de_la_batería)
+    *   [2.2 Suspensión e hibernación](#Suspensión_e_hibernación)
+    *   [2.3 Ajustes automáticos para extender la vida de la batería](#Ajustes_automáticos_para_extender_la_vida_de_la_batería)
     *   [2.4 Other tweaks](#Other_tweaks)
         *   [2.4.1 PCI-e ASPM](#PCI-e_ASPM)
         *   [2.4.2 Granola](#Granola)

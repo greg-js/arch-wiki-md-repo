@@ -2,19 +2,19 @@ El [puente de depurado de Android](https://developer.android.com/studio/command-
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
 *   [2 Uso](#Uso)
     *   [2.1 Conectar dispositivo](#Conectar_dispositivo)
     *   [2.2 Descubrimiento de dispositivos](#Descubrimiento_de_dispositivos)
     *   [2.3 Agregar reglas de udev](#Agregar_reglas_de_udev)
-    *   [2.4 Configuración del puente](#Configuraci.C3.B3n_del_puente)
+    *   [2.4 Configuración del puente](#Configuración_del_puente)
     *   [2.5 Descubrimiento de dispositivo](#Descubrimiento_de_dispositivo)
     *   [2.6 Transferencia de archivos](#Transferencia_de_archivos)
 *   [3 Herramientas basadas en el puente](#Herramientas_basadas_en_el_puente)
 
 ## Instalación
 
-ADB hace parte de los [paquetes SDK](/index.php/Android_(Espa%C3%B1ol)#Instalaci.C3.B3n_del_SDK "Android (Español)") de Android y del paquete [android-tools](https://www.archlinux.org/packages/?name=android-tools).
+ADB hace parte de los [paquetes SDK](/index.php/Android_(Espa%C3%B1ol)#Instalación_del_SDK "Android (Español)") de Android y del paquete [android-tools](https://www.archlinux.org/packages/?name=android-tools).
 
 ## Uso
 

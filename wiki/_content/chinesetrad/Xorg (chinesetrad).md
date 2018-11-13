@@ -1,14 +1,14 @@
 ## Contents
 
-*   [1 安裝 xorg](#.E5.AE.89.E8.A3.9D_xorg)
-    *   [1.1 不使用 xorg.conf](#.E4.B8.8D.E4.BD.BF.E7.94.A8_xorg.conf)
-        *   [1.1.1 不使用xorg.conf設定非美式鍵盤排列](#.E4.B8.8D.E4.BD.BF.E7.94.A8xorg.conf.E8.A8.AD.E5.AE.9A.E9.9D.9E.E7.BE.8E.E5.BC.8F.E9.8D.B5.E7.9B.A4.E6.8E.92.E5.88.97)
-*   [2 設定 xorg](#.E8.A8.AD.E5.AE.9A_xorg)
+*   [1 安裝 xorg](#安裝_xorg)
+    *   [1.1 不使用 xorg.conf](#不使用_xorg.conf)
+        *   [1.1.1 不使用xorg.conf設定非美式鍵盤排列](#不使用xorg.conf設定非美式鍵盤排列)
+*   [2 設定 xorg](#設定_xorg)
     *   [2.1 xorgconfig](#xorgconfig)
     *   [2.2 hwd](#hwd)
     *   [2.3 Post-editing](#Post-editing)
-*   [3 執行 Xorg](#.E5.9F.B7.E8.A1.8C_Xorg)
-*   [4 啟動 X (/usr/X11R6/bin/startx) 時的微調](#.E5.95.9F.E5.8B.95_X_.28.2Fusr.2FX11R6.2Fbin.2Fstartx.29_.E6.99.82.E7.9A.84.E5.BE.AE.E8.AA.BF)
+*   [3 執行 Xorg](#執行_Xorg)
+*   [4 啟動 X (/usr/X11R6/bin/startx) 時的微調](#啟動_X_(/usr/X11R6/bin/startx)_時的微調)
 
 ## 安裝 xorg
 

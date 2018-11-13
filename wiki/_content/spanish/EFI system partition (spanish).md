@@ -13,25 +13,25 @@ La especificación UEFI exige soporte para los sistemas de archivos FAT12, FAT16
 **Advertencia:**
 
 *   La partición del sistema EFI debe ser una partición física en la tabla de partición principal del disco, no en LVM o RAID por software, etc.
-*   Si tiene un [arranque dual](/index.php/Dual_boot_with_Windows "Dual boot with Windows") con una instalación ya existente de Windows en un sistema UEFI/GPT, evite reformatear la partición ESP, ya que esta incluye el archivo *.efi* de Windows, necesario para iniciarlo. En otras palabras, utilice la partición existente tal como está y simplemente [monte la partición](#Montar_la_partici.C3.B3n).
+*   Si tiene un [arranque dual](/index.php/Dual_boot_with_Windows "Dual boot with Windows") con una instalación ya existente de Windows en un sistema UEFI/GPT, evite reformatear la partición ESP, ya que esta incluye el archivo *.efi* de Windows, necesario para iniciarlo. En otras palabras, utilice la partición existente tal como está y simplemente [monte la partición](#Montar_la_partición).
 
 ## Contents
 
-*   [1 Crear la partición](#Crear_la_partici.C3.B3n)
+*   [1 Crear la partición](#Crear_la_partición)
     *   [1.1 Discos particionados con GPT](#Discos_particionados_con_GPT)
     *   [1.2 Discos particionados con MBR](#Discos_particionados_con_MBR)
-*   [2 Formatear la partición](#Formatear_la_partici.C3.B3n)
-*   [3 Montar la partición](#Montar_la_partici.C3.B3n)
+*   [2 Formatear la partición](#Formatear_la_partición)
+*   [3 Montar la partición](#Montar_la_partición)
     *   [3.1 Puntos de montaje alternativos](#Puntos_de_montaje_alternativos)
         *   [3.1.1 Utilizar el montaje con bind](#Utilizar_el_montaje_con_bind)
         *   [3.1.2 Utilizar systemd](#Utilizar_systemd)
         *   [3.1.3 Utilizar incron](#Utilizar_incron)
         *   [3.1.4 Utilizar un hook de mkinitcpio](#Utilizar_un_hook_de_mkinitcpio)
-        *   [3.1.5 Utilizar un hook de mkinitcpio (2)](#Utilizar_un_hook_de_mkinitcpio_.282.29)
+        *   [3.1.5 Utilizar un hook de mkinitcpio (2)](#Utilizar_un_hook_de_mkinitcpio_(2))
         *   [3.1.6 Utilizar un hook de pacman](#Utilizar_un_hook_de_pacman)
 *   [4 Problemas conocidos](#Problemas_conocidos)
-    *   [4.1 Partición ESP sobre RAID](#Partici.C3.B3n_ESP_sobre_RAID)
-*   [5 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+    *   [4.1 Partición ESP sobre RAID](#Partición_ESP_sobre_RAID)
+*   [5 Véase también](#Véase_también)
 
 ## Crear la partición
 
@@ -53,7 +53,7 @@ La partición del sistema EFI en GPT está identificada por la [GUID](https://en
 *   [gdisk](/index.php/Gdisk "Gdisk"): cree una partición con el tipo de partición `EF00`.
 *   [GNU Parted](/index.php/GNU_Parted "GNU Parted"): cree una partición con `fat32` como tipo de sistema de archivos y establezca/active el indicador `esp` en él.
 
-Continúe en la sección [#Formatear la partición](#Formatear_la_partici.C3.B3n) a continuación.
+Continúe en la sección [#Formatear la partición](#Formatear_la_partición) a continuación.
 
 ### Discos particionados con MBR
 
@@ -64,7 +64,7 @@ La partición del sistema EFI en MBR está identificada por el [ID](https://en.w
 *   [fdisk](/index.php/Fdisk "Fdisk"): crre una partición primaria con el tipo de partición `EFI (FAT-12/16/32)`.
 *   [GNU Parted](/index.php/GNU_Parted "GNU Parted"): cree una partición primaria con `fat32` como el tipo de sistema de archivos y establezca/active el indicador `esp` en ella.
 
-Continúe en la sección [#Formatear la partición](#Formatear_la_partici.C3.B3n) a continuación.
+Continúe en la sección [#Formatear la partición](#Formatear_la_partición) a continuación.
 
 ## Formatear la partición
 
@@ -88,7 +88,7 @@ Los escenarios más simples para montar la partición del sistema EFI son:
 
 ### Puntos de montaje alternativos
 
-Si no utiliza uno de los métodos simples para [#Montar la partición](#Montar_la_partici.C3.B3n), tendrá que copiar los archivos de arranque a la ESP (en adelante `*esp* `).
+Si no utiliza uno de los métodos simples para [#Montar la partición](#Montar_la_partición), tendrá que copiar los archivos de arranque a la ESP (en adelante `*esp* `).
 
 ```
 # mkdir -p *esp*/EFI/arch

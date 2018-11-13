@@ -10,12 +10,12 @@ Este documento define um padrão proposto para empacotar programas [Java](/index
 
 ## Contents
 
-*   [1 Introdução](#Introdu.C3.A7.C3.A3o)
-*   [2 Estrutura de um aplicativo Java típico](#Estrutura_de_um_aplicativo_Java_t.C3.ADpico)
+*   [1 Introdução](#Introdução)
+*   [2 Estrutura de um aplicativo Java típico](#Estrutura_de_um_aplicativo_Java_típico)
 *   [3 Empacotamento de Java no Arch Linux](#Empacotamento_de_Java_no_Arch_Linux)
-    *   [3.1 Múltiplas implementações de API](#M.C3.BAltiplas_implementa.C3.A7.C3.B5es_de_API)
-    *   [3.2 Exemplo de estrutura de diretórios](#Exemplo_de_estrutura_de_diret.C3.B3rios)
-    *   [3.3 Dependências](#Depend.C3.AAncias)
+    *   [3.1 Múltiplas implementações de API](#Múltiplas_implementações_de_API)
+    *   [3.2 Exemplo de estrutura de diretórios](#Exemplo_de_estrutura_de_diretórios)
+    *   [3.3 Dependências](#Dependências)
 
 ## Introdução
 
@@ -41,7 +41,7 @@ O empacotamento de aplicativos Java no Arch vai levar um pouco mais de trabalho 
 
 	Esta regra possibilita refatorar iterativamente as dependências. Ou seja, o pacote e todas as suas dependências podem ser colocados em um diretório no primeiro momento. Depois disso, as principais dependências podem ser refatoradas uma a uma. Observe que alguns aplicativos incluem dependências agrupadas dentro do arquivo jar principal. Ou seja, eles desfazem o jar das dependências agrupadas e as incluem no jar principal. Tais dependências geralmente são muito pequenas e há pouco interesse em refaturá-las.
 
-*   Se o programa deve ser executado pelo usuário, escreva um script de shell personalizado que executa o arquivo jar principal. Este script deve ser colocado em `/usr/bin`. As bibliotecas geralmente não requerem scripts de shell. Escreva o script do shell a partir do zero, em vez de usar um que esteja empacotado com o programa. Remova o código que testa para ambientes personalizados (como Cygwin) e o código que tenta determinar se `JAVA_HOME` foi configurado (Arch [não usa](/index.php/Java_(Portugu%C3%AAs)#Instala.C3.A7.C3.A3o "Java (Português)") `JAVA_HOME`, ele usa `archlinux-java` para definir o link simbólico `/usr/bin/java`).
+*   Se o programa deve ser executado pelo usuário, escreva um script de shell personalizado que executa o arquivo jar principal. Este script deve ser colocado em `/usr/bin`. As bibliotecas geralmente não requerem scripts de shell. Escreva o script do shell a partir do zero, em vez de usar um que esteja empacotado com o programa. Remova o código que testa para ambientes personalizados (como Cygwin) e o código que tenta determinar se `JAVA_HOME` foi configurado (Arch [não usa](/index.php/Java_(Portugu%C3%AAs)#Instalação "Java (Português)") `JAVA_HOME`, ele usa `archlinux-java` para definir o link simbólico `/usr/bin/java`).
 
 	tal script deve se parecer com isso para arquivos jar:
 

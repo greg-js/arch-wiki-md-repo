@@ -7,26 +7,26 @@ Related articles
 
 **翻译状态：** 本文是英文页面 [Systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2014-10-25，点击[这里](https://wiki.archlinux.org/index.php?title=Systemd%2FTimers&diff=0&oldid=340100)可以查看翻译后英文页面的改动。
 
-Timers 是以 `.timer` 为后缀名的 [systemd](/index.php/Systemd "Systemd") 单元文件，用于控制 `.service` 文件或事件。Timers 可用来替换 [cron](/index.php/Cron "Cron")（阅读 [#替代 cron](#.E6.9B.BF.E4.BB.A3_cron)）。Timers 内置了日历定时事件和单调定时事件的支持，并可以异步执行这些事件。
+Timers 是以 `.timer` 为后缀名的 [systemd](/index.php/Systemd "Systemd") 单元文件，用于控制 `.service` 文件或事件。Timers 可用来替换 [cron](/index.php/Cron "Cron")（阅读 [#替代 cron](#替代_cron)）。Timers 内置了日历定时事件和单调定时事件的支持，并可以异步执行这些事件。
 
 ## Contents
 
-*   [1 定时器单元](#.E5.AE.9A.E6.97.B6.E5.99.A8.E5.8D.95.E5.85.83)
-*   [2 服务单元](#.E6.9C.8D.E5.8A.A1.E5.8D.95.E5.85.83)
-*   [3 管理](#.E7.AE.A1.E7.90.86)
-*   [4 示例](#.E7.A4.BA.E4.BE.8B)
-    *   [4.1 单调定时器](#.E5.8D.95.E8.B0.83.E5.AE.9A.E6.97.B6.E5.99.A8)
-    *   [4.2 实时定时器](#.E5.AE.9E.E6.97.B6.E5.AE.9A.E6.97.B6.E5.99.A8)
-*   [5 替代 cron](#.E6.9B.BF.E4.BB.A3_cron)
-    *   [5.1 优势](#.E4.BC.98.E5.8A.BF)
-    *   [5.2 注意事项](#.E6.B3.A8.E6.84.8F.E4.BA.8B.E9.A1.B9)
-    *   [5.3 发送邮件](#.E5.8F.91.E9.80.81.E9.82.AE.E4.BB.B6)
-    *   [5.4 使用 crontab](#.E4.BD.BF.E7.94.A8_crontab)
-*   [6 参见](#.E5.8F.82.E8.A7.81)
+*   [1 定时器单元](#定时器单元)
+*   [2 服务单元](#服务单元)
+*   [3 管理](#管理)
+*   [4 示例](#示例)
+    *   [4.1 单调定时器](#单调定时器)
+    *   [4.2 实时定时器](#实时定时器)
+*   [5 替代 cron](#替代_cron)
+    *   [5.1 优势](#优势)
+    *   [5.2 注意事项](#注意事项)
+    *   [5.3 发送邮件](#发送邮件)
+    *   [5.4 使用 crontab](#使用_crontab)
+*   [6 参见](#参见)
 
 ## 定时器单元
 
-Timers 是以 `.timer` 为后缀的 *systemd* 单元文件。Timers 和其他[单元配置文件](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E7.BC.96.E5.86.99.E5.8D.95.E5.85.83.E6.96.87.E4.BB.B6 "Systemd (简体中文)")是类似的，它通过相同的路径加载，不同的是包含了 `[Timer]` 部分。 `[Timer]` 部分定义了何时以及如何激活定时事件。Timers 可以被定义成以下两种类型：
+Timers 是以 `.timer` 为后缀的 *systemd* 单元文件。Timers 和其他[单元配置文件](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#编写单元文件 "Systemd (简体中文)")是类似的，它通过相同的路径加载，不同的是包含了 `[Timer]` 部分。 `[Timer]` 部分定义了何时以及如何激活定时事件。Timers 可以被定义成以下两种类型：
 
 *   **单调定时器** 即从一个时间点过一段时间后激活定时任务。所有的单调计时器都遵循如下形式： `On*Type*Sec=`。 `OnBootSec` 和 `OnActiveSec` 是常用的单调定时器。
 *   **实时定时器** (亦称"挂钟定时器") 通过日历事件激活（类似于 cronjobs ）定时任务。 使用 `OnCalender=` 来定义实时定时器。
@@ -94,7 +94,7 @@ Persistent=true
 WantedBy=timers.target
 ```
 
-**提示：** 特殊的事件表达式如 `daily` 和 `weekly` 表示 *特定的启动时间*，因此任何共享该日历事件的定时器将同时启动。如果该定时器的服务会计算系统资源，那么定时器共享启动事件可能会引起系统性能下降。可以考虑手动错开该定时器运行特定事件的时间，如 `OnCalendar=Wed, 23:15`。参见 [#注意事项](#.E6.B3.A8.E6.84.8F.E4.BA.8B.E9.A1.B9).
+**提示：** 特殊的事件表达式如 `daily` 和 `weekly` 表示 *特定的启动时间*，因此任何共享该日历事件的定时器将同时启动。如果该定时器的服务会计算系统资源，那么定时器共享启动事件可能会引起系统性能下降。可以考虑手动错开该定时器运行特定事件的时间，如 `OnCalendar=Wed, 23:15`。参见 [#注意事项](#注意事项).
 
 ## 替代 cron
 
@@ -112,7 +112,7 @@ WantedBy=timers.target
 
 ### 注意事项
 
-*   附注：使用 *systemd* 配置计划任务相比于在 crontab 中只需添加一行任务来说，你需要创建两个文件并运行几次 `systemctl` 命令。 [systemd-crontab-generator](https://aur.archlinux.org/packages/systemd-crontab-generator/) 和 [systemd-cron](https://aur.archlinux.org/packages/systemd-cron/) 可以帮助你使用 crontab 来管理定时器服务。如果你喜欢 crontabs 只是因为它提供了查看所有计划任务的统一视图，`systemctl` 同样可以。参见 [#管理](#.E7.AE.A1.E7.90.86)。
+*   附注：使用 *systemd* 配置计划任务相比于在 crontab 中只需添加一行任务来说，你需要创建两个文件并运行几次 `systemctl` 命令。 [systemd-crontab-generator](https://aur.archlinux.org/packages/systemd-crontab-generator/) 和 [systemd-cron](https://aur.archlinux.org/packages/systemd-cron/) 可以帮助你使用 crontab 来管理定时器服务。如果你喜欢 crontabs 只是因为它提供了查看所有计划任务的统一视图，`systemctl` 同样可以。参见 [#管理](#管理)。
 *   邮件：目前还没有内置与 cron `MAILTO` 类似的任务失败时发送邮件的功能。 可以在每个服务文件中配置 `OnFailure=` 实现同样的功能。
 *   随机延时：目前没还有内置与 cron 类似的 `RANDOM_DELAY` 功能来指定一个数字用于定时器延时执行。（参见 [bug report](https://bugs.freedesktop.org/show_bug.cgi?id=82084)）。 你不想同时执行的服务必须手动设置它们的定时器。
 

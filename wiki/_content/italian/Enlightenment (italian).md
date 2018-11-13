@@ -22,7 +22,7 @@ Tratto dalla [documentazione di Enlightenment](http://trac.enlightenment.org/e/w
         *   [1.3.3 Integrazione con Gnome Keyring](#Integrazione_con_Gnome_Keyring)
     *   [1.4 Temi](#Temi)
     *   [1.5 Moduli e gadgets](#Moduli_e_gadgets)
-        *   [1.5.1 Moduli "Extra"](#Moduli_.22Extra.22)
+        *   [1.5.1 Moduli "Extra"](#Moduli_"Extra")
     *   [1.6 Risoluzione dei Problemi](#Risoluzione_dei_Problemi)
         *   [1.6.1 Compositing](#Compositing)
         *   [1.6.2 Caratteri illeggibili](#Caratteri_illeggibili)
@@ -30,7 +30,7 @@ Tratto dalla [documentazione di Enlightenment](http://trac.enlightenment.org/e/w
     *   [2.1 Installare E16](#Installare_E16)
     *   [2.2 Configurazione di base](#Configurazione_di_base)
         *   [2.2.1 Immagini di sfondo](#Immagini_di_sfondo)
-        *   [2.2.2 Script di Avvio/Riavvio/Stop](#Script_di_Avvio.2FRiavvio.2FStop)
+        *   [2.2.2 Script di Avvio/Riavvio/Stop](#Script_di_Avvio/Riavvio/Stop)
         *   [2.2.3 Composite](#Composite)
 *   [3 Vedi anche](#Vedi_anche)
 

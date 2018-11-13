@@ -4,19 +4,19 @@
 
 ## Contents
 
-*   [1 Preparação](#Prepara.C3.A7.C3.A3o)
-*   [2 Instalação](#Instala.C3.A7.C3.A3o)
+*   [1 Preparação](#Preparação)
+*   [2 Instalação](#Instalação)
     *   [2.1 O hook do plymouth](#O_hook_do_plymouth)
-    *   [2.2 Hook alternativo Plymouth (systemd)](#Hook_alternativo_Plymouth_.28systemd.29)
+    *   [2.2 Hook alternativo Plymouth (systemd)](#Hook_alternativo_Plymouth_(systemd))
     *   [2.3 Linha de comando do kernel](#Linha_de_comando_do_kernel)
-*   [3 Configuração](#Configura.C3.A7.C3.A3o)
-    *   [3.1 Transição suave](#Transi.C3.A7.C3.A3o_suave)
-    *   [3.2 Atraso na apresentação](#Atraso_na_apresenta.C3.A7.C3.A3o)
+*   [3 Configuração](#Configuração)
+    *   [3.1 Transição suave](#Transição_suave)
+    *   [3.2 Atraso na apresentação](#Atraso_na_apresentação)
     *   [3.3 Mudar o tema](#Mudar_o_tema)
 *   [4 Truques e dicas](#Truques_e_dicas)
     *   [4.1 Mostrar mensagens do kernel](#Mostrar_mensagens_do_kernel)
-    *   [4.2 Substituir o logo Arch e criar temas próprios](#Substituir_o_logo_Arch_e_criar_temas_pr.C3.B3prios)
-*   [5 Veja também](#Veja_tamb.C3.A9m)
+    *   [4.2 Substituir o logo Arch e criar temas próprios](#Substituir_o_logo_Arch_e_criar_temas_próprios)
+*   [5 Veja também](#Veja_também)
 
 ## Preparação
 

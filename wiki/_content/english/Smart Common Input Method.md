@@ -14,8 +14,8 @@ Its stated goals are to:
     *   [1.1 Input method engines](#Input_method_engines)
 *   [2 Configuration](#Configuration)
     *   [2.1 A simple scenario](#A_simple_scenario)
-    *   [2.2 Note for GTK+](#Note_for_GTK.2B)
-        *   [2.2.1 Note for GNOME, Xfce, LXDE](#Note_for_GNOME.2C_Xfce.2C_LXDE)
+    *   [2.2 Note for GTK+](#Note_for_GTK+)
+        *   [2.2.1 Note for GNOME, Xfce, LXDE](#Note_for_GNOME,_Xfce,_LXDE)
         *   [2.2.2 Note for KDE3](#Note_for_KDE3)
     *   [2.3 Locale-related files](#Locale-related_files)
         *   [2.3.1 Further troubleshooting with locales](#Further_troubleshooting_with_locales)
@@ -23,8 +23,8 @@ Its stated goals are to:
         *   [2.4.1 Note for GNOME](#Note_for_GNOME)
         *   [2.4.2 Note for KDE](#Note_for_KDE)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 LWJGL (Lightweight Java Game Library) losing keyboard focus](#LWJGL_.28Lightweight_Java_Game_Library.29_losing_keyboard_focus)
-    *   [3.2 Chrome/Chromium doesn't take input](#Chrome.2FChromium_doesn.27t_take_input)
+    *   [3.1 LWJGL (Lightweight Java Game Library) losing keyboard focus](#LWJGL_(Lightweight_Java_Game_Library)_losing_keyboard_focus)
+    *   [3.2 Chrome/Chromium doesn't take input](#Chrome/Chromium_doesn't_take_input)
 *   [4 See also](#See_also)
 
 ## Installation

@@ -2,10 +2,10 @@
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
     *   [1.1 Interfaces](#Interfaces)
         *   [1.1.1 Consola](#Consola)
-        *   [1.1.2 Gráfica](#Gr.C3.A1fica)
+        *   [1.1.2 Gráfica](#Gráfica)
             *   [1.1.2.1 GNOME Bluetooth](#GNOME_Bluetooth)
             *   [1.1.2.2 Bluedevil](#Bluedevil)
             *   [1.1.2.3 Blueberry](#Blueberry)
@@ -13,11 +13,11 @@
             *   [1.1.2.5 ObexFS](#ObexFS)
                 *   [1.1.2.5.1 Transferencias con ObexFTP](#Transferencias_con_ObexFTP)
                 *   [1.1.2.5.2 Obex Object Push](#Obex_Object_Push)
-*   [2 Asociación](#Asociaci.C3.B3n)
-*   [3 Configuración](#Configuraci.C3.B3n)
-    *   [3.1 Inicio automático después de reiniciar](#Inicio_autom.C3.A1tico_despu.C3.A9s_de_reiniciar)
+*   [2 Asociación](#Asociación)
+*   [3 Configuración](#Configuración)
+    *   [3.1 Inicio automático después de reiniciar](#Inicio_automático_después_de_reiniciar)
 *   [4 Audio](#Audio)
-    *   [4.1 Usar parlantes como audífonos de Bluetooth](#Usar_parlantes_como_aud.C3.ADfonos_de_Bluetooth)
+    *   [4.1 Usar parlantes como audífonos de Bluetooth](#Usar_parlantes_como_audífonos_de_Bluetooth)
 
 ## Instalación
 
@@ -57,7 +57,7 @@ Para recibir archivos, abra el panel de configuración de Bluetooth; solo se pue
 
 ##### Bluedevil
 
-[Bluedevil](https://projects.kde.org/projects/kde/workspace/bluedevil) la herramienta de Bluetooth de [KDE (Español)](/index.php/KDE_(Espa%C3%B1ol) "KDE (Español)"). [Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [bluedevil](https://www.archlinux.org/packages/?name=bluedevil) (KDE Plasma 5).
+[Bluedevil](https://projects.kde.org/projects/kde/workspace/bluedevil) la herramienta de Bluetooth de [KDE (Español)](/index.php/KDE_(Espa%C3%B1ol) "KDE (Español)"). [Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") el paquete [bluedevil](https://www.archlinux.org/packages/?name=bluedevil) (KDE Plasma 5).
 
 Si no hay un icono visible en Dolphin y en la bandeja de herramientas, se puede activar en las opciones de bandeja de herramientas o agregue un widget. Es posible configurar Bluedevil y detectar dispositivos Bluetooth haciendo clic en el icono. Una interfaz también esta disponible en el panel de configuración de KDE.
 
@@ -77,7 +77,7 @@ Otra opción, en lugar de usar los paquetes de KDE o GNOME, es ObexFS. Este perm
 
 **Nota:** Para usar ObexFS se necesita un dispositivo que provee servicio de ObexFTP.
 
-[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [obexfs](https://aur.archlinux.org/packages/obexfs/) y monte teléfonos soportados ejecutando:
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") [obexfs](https://aur.archlinux.org/packages/obexfs/) y monte teléfonos soportados ejecutando:
 
 ```
 $ obexfs -b *MAC_dispositivo* /puntodemontaje
@@ -140,7 +140,7 @@ Asociar un dispositivo desde una terminal es una de las opciones mas simples y c
 Comience con el comando `bluetoothctl` en una terminal. Teclee `help` para una lista de comandos disponibles.
 
 *   Posiblemente seleccione un controlador tecleando `select *dirección MAC*`.
-*   Encienda la energía del controlador tecleando `power on`. Por defecto esta apagado y se apagara de nuevo en cada reinicio, vea [Encendido automatico despues de reiniciar](#Inicio_autom.C3.A1tico_despu.C3.A9s_de_reiniciar).
+*   Encienda la energía del controlador tecleando `power on`. Por defecto esta apagado y se apagara de nuevo en cada reinicio, vea [Encendido automatico despues de reiniciar](#Inicio_automático_después_de_reiniciar).
 *   Teclee `devices` para obtener la dirección MAC del dispositivo con el que se quiere asociar.
 *   Entre en el modo de descubrimiento de dispositivos tecleando `scan on`, si el dispositivo requerido aun no esta en la lista.
 *   Encienda el agente con `agent on`, o seleccione el agente: al presionar tabulador dos veces después de `agent` se vera una lista de agentes disponibles.
@@ -196,7 +196,7 @@ AutoEnable=true
 
 ## Audio
 
-Para poder usar equipo de audio como parlantes o audífonos con Bluetooth, es necesario [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete adicional [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth).
+Para poder usar equipo de audio como parlantes o audífonos con Bluetooth, es necesario [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") el paquete adicional [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth).
 
 Vea la pagina [Bluetooth headset](/index.php/Bluetooth_headset "Bluetooth headset") (ingles) para mas información acerca de audio con Bluetooth en audífonos.
 

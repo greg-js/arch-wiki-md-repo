@@ -51,7 +51,7 @@ as well as dependencies of the above (not necessarily [makedepends](/index.php/M
 
 *core* has fairly strict quality requirements. Developers/users need to signoff on updates before package updates are accepted. For packages with low usage, a reasonable exposure is enough: informing people about update, requesting signoffs, keeping in [#testing](#testing) up to a week depending on the severity of the change, lack of outstanding bug reports, along with the implicit signoff of the package maintainer.
 
-**Tip:** To create a local repository with packages from *core* (or other repositories) without an internet connection see [Pacman tips#Installing packages from a CD/DVD or USB stick](/index.php/Pacman_tips#Installing_packages_from_a_CD.2FDVD_or_USB_stick "Pacman tips")
+**Tip:** To create a local repository with packages from *core* (or other repositories) without an internet connection see [Pacman tips#Installing packages from a CD/DVD or USB stick](/index.php/Pacman_tips#Installing_packages_from_a_CD/DVD_or_USB_stick "Pacman tips")
 
 ### extra
 

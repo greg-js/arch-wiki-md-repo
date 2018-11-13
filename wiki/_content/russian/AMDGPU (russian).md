@@ -12,8 +12,8 @@ Related articles
 
 ## Contents
 
-*   [1 Выбор правильного драйвера](#.D0.92.D1.8B.D0.B1.D0.BE.D1.80_.D0.BF.D1.80.D0.B0.D0.B2.D0.B8.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D0.B0)
-*   [2 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
+*   [1 Выбор правильного драйвера](#Выбор_правильного_драйвера)
+*   [2 Установка](#Установка)
     *   [2.1 AMDGPU PRO](#AMDGPU_PRO)
 *   [3 Configuration](#Configuration)
 *   [4 Loading](#Loading)
@@ -23,7 +23,7 @@ Related articles
 *   [6 Enable amdgpu for Sea Islands or Southern Islands cards](#Enable_amdgpu_for_Sea_Islands_or_Southern_Islands_cards)
 *   [7 Disable radeon driver](#Disable_radeon_driver)
 *   [8 Troubleshooting](#Troubleshooting)
-    *   [8.1 Xorg or applications won't start](#Xorg_or_applications_won.27t_start)
+    *   [8.1 Xorg or applications won't start](#Xorg_or_applications_won't_start)
 
 ## Выбор правильного драйвера
 

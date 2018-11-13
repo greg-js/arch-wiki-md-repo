@@ -12,7 +12,7 @@
     *   [2.3 Database](#Database)
     *   [2.4 LocalSettings.php](#LocalSettings.php)
 *   [3 Tips and tricks](#Tips_and_tricks)
-    *   [3.1 Mathematics (texvc)](#Mathematics_.28texvc.29)
+    *   [3.1 Mathematics (texvc)](#Mathematics_(texvc))
     *   [3.2 Unicode](#Unicode)
     *   [3.3 VisualEditor](#VisualEditor)
 

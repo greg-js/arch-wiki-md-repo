@@ -10,13 +10,13 @@ En este artículo se describe cómo utilizar nombres permanentes para sus dispos
 
 ## Contents
 
-*   [1 Métodos para nombrar los dispositivos de forma permanente](#M.C3.A9todos_para_nombrar_los_dispositivos_de_forma_permanente)
+*   [1 Métodos para nombrar los dispositivos de forma permanente](#Métodos_para_nombrar_los_dispositivos_de_forma_permanente)
     *   [1.1 by-label](#by-label)
     *   [1.2 by-uuid](#by-uuid)
     *   [1.3 by-id y by-path](#by-id_y_by-path)
     *   [1.4 by-partlabel](#by-partlabel)
     *   [1.5 by-partuuid](#by-partuuid)
-    *   [1.6 Nombres estáticos de los dispositivos con udev](#Nombres_est.C3.A1ticos_de_los_dispositivos_con_udev)
+    *   [1.6 Nombres estáticos de los dispositivos con udev](#Nombres_estáticos_de_los_dispositivos_con_udev)
 *   [2 Usar nomenclatura permanente](#Usar_nomenclatura_permanente)
     *   [2.1 fstab](#fstab)
     *   [2.2 Gestores de arranque](#Gestores_de_arranque)
@@ -126,7 +126,7 @@ La ventaja de usar el método UUID es que es mucho menos probable que se produzc
 
 La desventaja es que UUID hace largas líneas de código difícil de leer y rompe el formato en muchos archivos de configuración (por ejemplo fstab o crypttab). También, cada vez que una partición se redimensiona o reformatea, se genera un nuevo UUID y las configuraciones tienen que volver a ajustarse (manualmente).
 
-**Sugerencia:** En caso de que su partición de intercambio no tenga un UUID asignado, tendrá que restablecer la partición de swap usando la utilidad [mkswap](/index.php/Swap_(Espa%C3%B1ol)#Partici.C3.B3n_swap "Swap (Español)").
+**Sugerencia:** En caso de que su partición de intercambio no tenga un UUID asignado, tendrá que restablecer la partición de swap usando la utilidad [mkswap](/index.php/Swap_(Espa%C3%B1ol)#Partición_swap "Swap (Español)").
 
 ### by-id y by-path
 
@@ -179,7 +179,7 @@ lrwxrwxrwx 1 root root 10 May 27 23:31 d0d0d110-0a71-4ed6-936a-304969ea36af -> .
 
 ### Nombres estáticos de los dispositivos con udev
 
-Véase [Udev (Español)#Configurar nombres estáticos para los dispositivos](/index.php/Udev_(Espa%C3%B1ol)#Configurar_nombres_est.C3.A1ticos_para_los_dispositivos "Udev (Español)").
+Véase [Udev (Español)#Configurar nombres estáticos para los dispositivos](/index.php/Udev_(Espa%C3%B1ol)#Configurar_nombres_estáticos_para_los_dispositivos "Udev (Español)").
 
 ## Usar nomenclatura permanente
 
@@ -193,7 +193,7 @@ Ver el artículo principal: [fstab (Español)#UUID](/index.php/Fstab_(Espa%C3%B1
 
 Para utilizar nombres permanentes en su gestor de arranque, deben cumplirse los siguientes requisitos:
 
-*   estar utilizando [mkinitcpio](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Configuraci.C3.B3n "Mkinitcpio (Español)") para generar la imagen de disco RAM inicial;
+*   estar utilizando [mkinitcpio](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Configuración "Mkinitcpio (Español)") para generar la imagen de disco RAM inicial;
 *   tener el hook udev activado en el archivo `/etc/mkinitcpio.conf`.
 
 En el ejemplo anterior, `/dev/sda1` es la partición raíz. En el archivo `grub.cfg` de [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)"), la línea *linux* se parecerá a esto:

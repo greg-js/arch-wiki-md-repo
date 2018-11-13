@@ -2,30 +2,30 @@ QQ 是腾讯公司开发的即时通讯软件，为 ICQ 的仿制品，是中国
 
 ## Contents
 
-*   [1 虚拟机](#.E8.99.9A.E6.8B.9F.E6.9C.BA)
+*   [1 虚拟机](#虚拟机)
 *   [2 Wine](#Wine)
-    *   [2.1 Deepin QQ/TIM](#Deepin_QQ.2FTIM)
+    *   [2.1 Deepin QQ/TIM](#Deepin_QQ/TIM)
     *   [2.2 Crossover](#Crossover)
     *   [2.3 AppImage](#AppImage)
-    *   [2.4 清风老师的 Wine QQ 方案](#.E6.B8.85.E9.A3.8E.E8.80.81.E5.B8.88.E7.9A.84_Wine_QQ_.E6.96.B9.E6.A1.88)
-    *   [2.5 手动 Wine 方案](#.E6.89.8B.E5.8A.A8_Wine_.E6.96.B9.E6.A1.88)
-        *   [2.5.1 QQ 轻聊版](#QQ_.E8.BD.BB.E8.81.8A.E7.89.88)
+    *   [2.4 清风老师的 Wine QQ 方案](#清风老师的_Wine_QQ_方案)
+    *   [2.5 手动 Wine 方案](#手动_Wine_方案)
+        *   [2.5.1 QQ 轻聊版](#QQ_轻聊版)
         *   [2.5.2 TIM](#TIM)
-*   [3 基于 SmartQQ](#.E5.9F.BA.E4.BA.8E_SmartQQ)
+*   [3 基于 SmartQQ](#基于_SmartQQ)
     *   [3.1 SmartQQ](#SmartQQ)
     *   [3.2 weechat-webqq](#weechat-webqq)
     *   [3.3 SmartIM](#SmartIM)
-*   [4 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
-    *   [4.1 HiDPI 支持](#HiDPI_.E6.94.AF.E6.8C.81)
-    *   [4.2 平铺式窗口管理器下的配置](#.E5.B9.B3.E9.93.BA.E5.BC.8F.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8.E4.B8.8B.E7.9A.84.E9.85.8D.E7.BD.AE)
+*   [4 提示与技巧](#提示与技巧)
+    *   [4.1 HiDPI 支持](#HiDPI_支持)
+    *   [4.2 平铺式窗口管理器下的配置](#平铺式窗口管理器下的配置)
         *   [4.2.1 Awesome](#Awesome)
         *   [4.2.2 i3](#i3)
-*   [5 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
-    *   [5.1 字体配置](#.E5.AD.97.E4.BD.93.E9.85.8D.E7.BD.AE)
-    *   [5.2 文件被占用](#.E6.96.87.E4.BB.B6.E8.A2.AB.E5.8D.A0.E7.94.A8)
-    *   [5.3 xfce4(xfwm4)下无法输入表情](#xfce4.28xfwm4.29.E4.B8.8B.E6.97.A0.E6.B3.95.E8.BE.93.E5.85.A5.E8.A1.A8.E6.83.85)
-    *   [5.4 在非中文 locale 下无法输入中文](#.E5.9C.A8.E9.9D.9E.E4.B8.AD.E6.96.87_locale_.E4.B8.8B.E6.97.A0.E6.B3.95.E8.BE.93.E5.85.A5.E4.B8.AD.E6.96.87)
-*   [6 参阅](#.E5.8F.82.E9.98.85)
+*   [5 疑难解答](#疑难解答)
+    *   [5.1 字体配置](#字体配置)
+    *   [5.2 文件被占用](#文件被占用)
+    *   [5.3 xfce4(xfwm4)下无法输入表情](#xfce4(xfwm4)下无法输入表情)
+    *   [5.4 在非中文 locale 下无法输入中文](#在非中文_locale_下无法输入中文)
+*   [6 参阅](#参阅)
 
 ## 虚拟机
 
@@ -42,7 +42,7 @@ QQ 是腾讯公司开发的即时通讯软件，为 ICQ 的仿制品，是中国
 
 [Wine](/index.php/Wine_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wine (简体中文)") 是类 UNIX 系统下运行微软 Windows 程序的"兼容层"，可以用它模拟 Windows 环境来运行 QQ/TIM。
 
-**警告:** Wine QQ/TIM 在平铺式窗口管理器下的样式可能会大规模失控，需要进行[额外的配置](#.E5.B9.B3.E9.93.BA.E5.BC.8F.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8.E4.B8.8B.E7.9A.84.E9.85.8D.E7.BD.AE)。
+**警告:** Wine QQ/TIM 在平铺式窗口管理器下的样式可能会大规模失控，需要进行[额外的配置](#平铺式窗口管理器下的配置)。
 
 ### Deepin QQ/TIM
 
@@ -58,7 +58,7 @@ Deepin QQ/TIM 是 wine 中相对成熟的方案。几乎开箱即用，bug 较�
 
 AppImage 是一种把应用打包成单一文件的格式。您可以在[[1]](https://github.com/askme765cs/Wine-QQ-TIM)下载到封装好的 Wine QQ/TIM。只需要赋予可执行权限即可使用。由于 AppImage 格式附带了程序所需要的依赖，所以这种方式受系统中其他组件版本的影响最小。
 
-**注意:** 由于 AppImage 不使用系统的 Wine，所以对 Wine 的调整可能无效，例如[#HiDPI 支持](#HiDPI_.E6.94.AF.E6.8C.81)。
+**注意:** 由于 AppImage 不使用系统的 Wine，所以对 Wine 的调整可能无效，例如[#HiDPI 支持](#HiDPI_支持)。
 
 ### 清风老师的 Wine QQ 方案
 
@@ -135,7 +135,7 @@ $ wineconsole .wine/drive_c/run-qqlight.bat
 
 1.  安装[wine](https://www.archlinux.org/packages/?name=wine)、[wine_gecko](https://www.archlinux.org/packages/?name=wine_gecko) 和 [wine-mono](https://www.archlinux.org/packages/?name=wine-mono)。
 2.  执行`winetricks riched20`，也可使用 `winecfg` 设置函数库顶替。
-3.  中文字体显示见[#字体配置](#.E5.AD.97.E4.BD.93.E9.85.8D.E7.BD.AE)。
+3.  中文字体显示见[#字体配置](#字体配置)。
 4.  安装 TIM。
 
 **提示：** 安装的tim可能没有在程序列表中生成图标。若要自行添加图标，新建一个名为tim.desktop的文件，写入以下内容： `tim.desktop` 

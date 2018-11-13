@@ -26,13 +26,13 @@ Related articles
     *   [6.4 Templates are accessible under *Create New...*](#Templates_are_accessible_under_Create_New...)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Open With dialog window empty](#Open_With_dialog_window_empty)
-    *   [7.2 No "Applications"](#No_.22Applications.22)
+    *   [7.2 No "Applications"](#No_"Applications")
     *   [7.3 No icons](#No_icons)
-    *   [7.4 No "Previous/Next Folder" functionality with mouse buttons](#No_.22Previous.2FNext_Folder.22_functionality_with_mouse_buttons)
+    *   [7.4 No "Previous/Next Folder" functionality with mouse buttons](#No_"Previous/Next_Folder"_functionality_with_mouse_buttons)
     *   [7.5 --desktop parameter not working or crashing X-server](#--desktop_parameter_not_working_or_crashing_X-server)
     *   [7.6 Terminal emulator advanced configuration not saved](#Terminal_emulator_advanced_configuration_not_saved)
     *   [7.7 Make PCManFM remember your preferred Sort Files settings](#Make_PCManFM_remember_your_preferred_Sort_Files_settings)
-    *   [7.8 "Not authorized" error when attempting to mount drive](#.22Not_authorized.22_error_when_attempting_to_mount_drive)
+    *   [7.8 "Not authorized" error when attempting to mount drive](#"Not_authorized"_error_when_attempting_to_mount_drive)
     *   [7.9 Operation not supported](#Operation_not_supported)
 
 ## Installation

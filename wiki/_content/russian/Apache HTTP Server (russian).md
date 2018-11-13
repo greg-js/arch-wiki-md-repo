@@ -15,24 +15,24 @@ Apache часто используется вместе с языком сцен
 
 ## Contents
 
-*   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-*   [2 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
-    *   [2.1 Дополнительные опции](#.D0.94.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D0.BE.D0.BF.D1.86.D0.B8.D0.B8)
-    *   [2.2 Пользовательские каталоги](#.D0.9F.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D1.81.D0.BA.D0.B8.D0.B5_.D0.BA.D0.B0.D1.82.D0.B0.D0.BB.D0.BE.D0.B3.D0.B8)
-    *   [2.3 TLS/SSL](#TLS.2FSSL)
-    *   [2.4 Виртуальные хосты](#.D0.92.D0.B8.D1.80.D1.82.D1.83.D0.B0.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D1.85.D0.BE.D1.81.D1.82.D1.8B)
-        *   [2.4.1 Управление большим количеством виртуальных хостов](#.D0.A3.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B1.D0.BE.D0.BB.D1.8C.D1.88.D0.B8.D0.BC_.D0.BA.D0.BE.D0.BB.D0.B8.D1.87.D0.B5.D1.81.D1.82.D0.B2.D0.BE.D0.BC_.D0.B2.D0.B8.D1.80.D1.82.D1.83.D0.B0.D0.BB.D1.8C.D0.BD.D1.8B.D1.85_.D1.85.D0.BE.D1.81.D1.82.D0.BE.D0.B2)
-*   [3 Расширения](#.D0.A0.D0.B0.D1.81.D1.88.D0.B8.D1.80.D0.B5.D0.BD.D0.B8.D1.8F)
+*   [1 Установка](#Установка)
+*   [2 Настройка](#Настройка)
+    *   [2.1 Дополнительные опции](#Дополнительные_опции)
+    *   [2.2 Пользовательские каталоги](#Пользовательские_каталоги)
+    *   [2.3 TLS/SSL](#TLS/SSL)
+    *   [2.4 Виртуальные хосты](#Виртуальные_хосты)
+        *   [2.4.1 Управление большим количеством виртуальных хостов](#Управление_большим_количеством_виртуальных_хостов)
+*   [3 Расширения](#Расширения)
     *   [3.1 PHP](#PHP)
-        *   [3.1.1 Дополнительные параметры](#.D0.94.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D0.BF.D0.B0.D1.80.D0.B0.D0.BC.D0.B5.D1.82.D1.80.D1.8B)
-        *   [3.1.2 Использование php5 c php-fpm и mod_proxy_fcgi](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_php5_c_php-fpm_.D0.B8_mod_proxy_fcgi)
-        *   [3.1.3 Использование php5 c apache2-mpm-worker и mod_fcgid](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_php5_c_apache2-mpm-worker_.D0.B8_mod_fcgid)
-        *   [3.1.4 MySQL/MariaDB](#MySQL.2FMariaDB)
-*   [4 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
-    *   [4.1 Просмотр журнала и текущего состояния Apache](#.D0.9F.D1.80.D0.BE.D1.81.D0.BC.D0.BE.D1.82.D1.80_.D0.B6.D1.83.D1.80.D0.BD.D0.B0.D0.BB.D0.B0_.D0.B8_.D1.82.D0.B5.D0.BA.D1.83.D1.89.D0.B5.D0.B3.D0.BE_.D1.81.D0.BE.D1.81.D1.82.D0.BE.D1.8F.D0.BD.D0.B8.D1.8F_Apache)
-    *   [4.2 PID file /run/httpd/httpd.pid not readable (yet?) after start](#PID_file_.2Frun.2Fhttpd.2Fhttpd.pid_not_readable_.28yet.3F.29_after_start)
-    *   [4.3 Обновление с Apache 2.2 до 2.4](#.D0.9E.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81_Apache_2.2_.D0.B4.D0.BE_2.4)
-    *   [4.4 Apache is running a threaded MPM, but your PHP Module is not compiled to be threadsafe](#Apache_is_running_a_threaded_MPM.2C_but_your_PHP_Module_is_not_compiled_to_be_threadsafe)
+        *   [3.1.1 Дополнительные параметры](#Дополнительные_параметры)
+        *   [3.1.2 Использование php5 c php-fpm и mod_proxy_fcgi](#Использование_php5_c_php-fpm_и_mod_proxy_fcgi)
+        *   [3.1.3 Использование php5 c apache2-mpm-worker и mod_fcgid](#Использование_php5_c_apache2-mpm-worker_и_mod_fcgid)
+        *   [3.1.4 MySQL/MariaDB](#MySQL/MariaDB)
+*   [4 Решение проблем](#Решение_проблем)
+    *   [4.1 Просмотр журнала и текущего состояния Apache](#Просмотр_журнала_и_текущего_состояния_Apache)
+    *   [4.2 PID file /run/httpd/httpd.pid not readable (yet?) after start](#PID_file_/run/httpd/httpd.pid_not_readable_(yet?)_after_start)
+    *   [4.3 Обновление с Apache 2.2 до 2.4](#Обновление_с_Apache_2.2_до_2.4)
+    *   [4.4 Apache is running a threaded MPM, but your PHP Module is not compiled to be threadsafe](#Apache_is_running_a_threaded_MPM,_but_your_PHP_Module_is_not_compiled_to_be_threadsafe)
 
 ## Установка
 
@@ -185,7 +185,7 @@ Include conf/extra/httpd-ssl.conf
 
 ### Виртуальные хосты
 
-**Примечание:** Вам нужно будет добавить отдельную секцию `<VirtualHost dommainame:443>` для поддержки SSL на виртуальном хосте. Пример файла можно посмотреть ниже: [#Управление большим количеством виртуальных хостов](#.D0.A3.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B1.D0.BE.D0.BB.D1.8C.D1.88.D0.B8.D0.BC_.D0.BA.D0.BE.D0.BB.D0.B8.D1.87.D0.B5.D1.81.D1.82.D0.B2.D0.BE.D0.BC_.D0.B2.D0.B8.D1.80.D1.82.D1.83.D0.B0.D0.BB.D1.8C.D0.BD.D1.8B.D1.85_.D1.85.D0.BE.D1.81.D1.82.D0.BE.D0.B2).
+**Примечание:** Вам нужно будет добавить отдельную секцию `<VirtualHost dommainame:443>` для поддержки SSL на виртуальном хосте. Пример файла можно посмотреть ниже: [#Управление большим количеством виртуальных хостов](#Управление_большим_количеством_виртуальных_хостов).
 
 Если вы хотите, чтобы Apache обслуживал не один, а несколько хостов, раскомментируйте следующую строку в файле `/etc/httpd/conf/httpd.conf`:
 
@@ -292,7 +292,7 @@ httpd.service: control process exited, code=exited status=1
 
 на
 
- `LoadModule mpm_prefork_module modules/mod_mpm_prefork.so` Также вы можете просто использовать `mod_proxy_fcgi` (смотрите [#Использование php7 c php-fpm и mod_proxy_fcgi](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_php7_c_php-fpm_.D0.B8_mod_proxy_fcgi)).
+ `LoadModule mpm_prefork_module modules/mod_mpm_prefork.so` Также вы можете просто использовать `mod_proxy_fcgi` (смотрите [#Использование php7 c php-fpm и mod_proxy_fcgi](#Использование_php7_c_php-fpm_и_mod_proxy_fcgi)).
 
 Чтобы включить модуль PHP, добавьте следующие строки в `/etc/httpd/conf/httpd.conf`:
 
@@ -492,7 +492,7 @@ Include conf/extra/php5_fcgid.conf
 
 #### MySQL/MariaDB
 
-Следуйте инструкциям на странице [PHP (Русский)#MySQL/MariaDB](/index.php/PHP_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#MySQL.2FMariaDB "PHP (Русский)").
+Следуйте инструкциям на странице [PHP (Русский)#MySQL/MariaDB](/index.php/PHP_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#MySQL/MariaDB "PHP (Русский)").
 
 После выполнения настройки, [перезапустите](/index.php/%D0%9F%D0%B5%D1%80%D0%B5%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D0%B5 "Перезапустите") службу `mysqld`, чтобы изменения вступили в силу.
 

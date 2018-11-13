@@ -9,7 +9,7 @@ From [Wikipedia:Redis](https://en.wikipedia.org/wiki/Redis "wikipedia:Redis"):
 *   [2 Configuration](#Configuration)
     *   [2.1 Listen on socket](#Listen_on_socket)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Warning about Transparent Huge Pages (THP)](#Warning_about_Transparent_Huge_Pages_.28THP.29)
+    *   [3.1 Warning about Transparent Huge Pages (THP)](#Warning_about_Transparent_Huge_Pages_(THP))
     *   [3.2 Warning about TCP backlog](#Warning_about_TCP_backlog)
     *   [3.3 Warning about overcommit_memory is set to 0](#Warning_about_overcommit_memory_is_set_to_0)
 

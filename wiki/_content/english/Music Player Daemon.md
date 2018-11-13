@@ -175,7 +175,7 @@ The following tool provides assistance for MPD configuration:
 
 ### System-wide configuration
 
-**Note:** Users of PulseAudio with a system-wide MPD configuration have to implement a [workaround](/index.php/Music_Player_Daemon/Tips_and_tricks#Local_.28with_separate_mpd_user.29 "Music Player Daemon/Tips and tricks") in order to run MPD as its own user!
+**Note:** Users of PulseAudio with a system-wide MPD configuration have to implement a [workaround](/index.php/Music_Player_Daemon/Tips_and_tricks#Local_(with_separate_mpd_user) "Music Player Daemon/Tips and tricks") in order to run MPD as its own user!
 
 The default `/etc/mpd.conf` keeps the setup in `/var/lib/mpd` which is assigned to user as well as primary group MPD.
 

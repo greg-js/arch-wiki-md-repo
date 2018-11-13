@@ -20,9 +20,9 @@ Layouts are applied dynamically, and different layouts may be used on each works
     *   [5.2 Keyboard shortcuts](#Keyboard_shortcuts)
     *   [5.3 Targeting unbound keys:](#Targeting_unbound_keys:)
     *   [5.4 Increase the number of workspaces](#Increase_the_number_of_workspaces)
-    *   [5.5 Making room for docks/panels/trays (Xmobar, Tint2, Conky, etc)](#Making_room_for_docks.2Fpanels.2Ftrays_.28Xmobar.2C_Tint2.2C_Conky.2C_etc.29)
+    *   [5.5 Making room for docks/panels/trays (Xmobar, Tint2, Conky, etc)](#Making_room_for_docks/panels/trays_(Xmobar,_Tint2,_Conky,_etc))
     *   [5.6 Using xmobar with xmonad](#Using_xmobar_with_xmonad)
-        *   [5.6.1 Quick, less flexible](#Quick.2C_less_flexible)
+        *   [5.6.1 Quick, less flexible](#Quick,_less_flexible)
         *   [5.6.2 More configurable](#More_configurable)
         *   [5.6.3 Verify XMobar config](#Verify_XMobar_config)
     *   [5.7 Controlling xmonad with external scripts](#Controlling_xmonad_with_external_scripts)
@@ -38,12 +38,12 @@ Layouts are applied dynamically, and different layouts may be used on each works
     *   [6.3 Missing xmonad-i386-linux or xmonad-x86_64-linux](#Missing_xmonad-i386-linux_or_xmonad-x86_64-linux)
     *   [6.4 Problems with Java applications](#Problems_with_Java_applications)
     *   [6.5 Empty space at the bottom of gvim or terminals](#Empty_space_at_the_bottom_of_gvim_or_terminals)
-    *   [6.6 Chromium/Chrome will not go fullscreen](#Chromium.2FChrome_will_not_go_fullscreen)
-    *   [6.7 Multitouch / touchegg](#Multitouch_.2F_touchegg)
+    *   [6.6 Chromium/Chrome will not go fullscreen](#Chromium/Chrome_will_not_go_fullscreen)
+    *   [6.7 Multitouch / touchegg](#Multitouch_/_touchegg)
     *   [6.8 Keybinding issues with an azerty keyboard layout](#Keybinding_issues_with_an_azerty_keyboard_layout)
-    *   [6.9 GNOME 3 mod4+p changes display configuration instead of launching dmenu](#GNOME_3_mod4.2Bp_changes_display_configuration_instead_of_launching_dmenu)
+    *   [6.9 GNOME 3 mod4+p changes display configuration instead of launching dmenu](#GNOME_3_mod4+p_changes_display_configuration_instead_of_launching_dmenu)
     *   [6.10 Problems with focused border in VirtualBox](#Problems_with_focused_border_in_VirtualBox)
-    *   [6.11 Steam games (Half-Life, Left 4 Dead, …) and xmonad](#Steam_games_.28Half-Life.2C_Left_4_Dead.2C_.E2.80.A6.29_and_xmonad)
+    *   [6.11 Steam games (Half-Life, Left 4 Dead, …) and xmonad](#Steam_games_(Half-Life,_Left_4_Dead,_…)_and_xmonad)
     *   [6.12 LibreOffice - focus flicking between main window and dialog](#LibreOffice_-_focus_flicking_between_main_window_and_dialog)
     *   [6.13 Problems with finding shared libraries after update](#Problems_with_finding_shared_libraries_after_update)
 *   [7 See also](#See_also)
@@ -554,7 +554,7 @@ Now you should see the file.
 
 ### Problems with Java applications
 
-If you have problems, like Java application Windows not resizing, or menus immediately closing after you click, see [Java#Applications not resizing with WM, menus immediately closing](/index.php/Java#Applications_not_resizing_with_WM.2C_menus_immediately_closing "Java").
+If you have problems, like Java application Windows not resizing, or menus immediately closing after you click, see [Java#Applications not resizing with WM, menus immediately closing](/index.php/Java#Applications_not_resizing_with_WM,_menus_immediately_closing "Java").
 
 ### Empty space at the bottom of gvim or terminals
 

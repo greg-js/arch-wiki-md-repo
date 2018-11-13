@@ -15,33 +15,33 @@ O *makepkg* é fornecido pelo pacote [pacman](https://www.archlinux.org/packages
 
 ## Contents
 
-*   [1 Configuração](#Configura.C3.A7.C3.A3o)
-    *   [1.1 Informação do empacotador](#Informa.C3.A7.C3.A3o_do_empacotador)
-    *   [1.2 Saída de pacote](#Sa.C3.ADda_de_pacote)
-    *   [1.3 Verificação de assinatura](#Verifica.C3.A7.C3.A3o_de_assinatura)
+*   [1 Configuração](#Configuração)
+    *   [1.1 Informação do empacotador](#Informação_do_empacotador)
+    *   [1.2 Saída de pacote](#Saída_de_pacote)
+    *   [1.3 Verificação de assinatura](#Verificação_de_assinatura)
 *   [2 Uso](#Uso)
 *   [3 Dicas e truques](#Dicas_e_truques)
-    *   [3.1 Compilando binários otimizados](#Compilando_bin.C3.A1rios_otimizados)
-    *   [3.2 Melhorando os tempos de compilação](#Melhorando_os_tempos_de_compila.C3.A7.C3.A3o)
-        *   [3.2.1 Compilação paralela](#Compila.C3.A7.C3.A3o_paralela)
-        *   [3.2.2 Compilando de arquivos na memória](#Compilando_de_arquivos_na_mem.C3.B3ria)
-        *   [3.2.3 Usando cache de compilação](#Usando_cache_de_compila.C3.A7.C3.A3o)
+    *   [3.1 Compilando binários otimizados](#Compilando_binários_otimizados)
+    *   [3.2 Melhorando os tempos de compilação](#Melhorando_os_tempos_de_compilação)
+        *   [3.2.1 Compilação paralela](#Compilação_paralela)
+        *   [3.2.2 Compilando de arquivos na memória](#Compilando_de_arquivos_na_memória)
+        *   [3.2.3 Usando cache de compilação](#Usando_cache_de_compilação)
     *   [3.3 Gerar novos checksums](#Gerar_novos_checksums)
-    *   [3.4 Usar outros algoritmos de compressão](#Usar_outros_algoritmos_de_compress.C3.A3o)
-    *   [3.5 Usando vários núcleos na compressão](#Usando_v.C3.A1rios_n.C3.BAcleos_na_compress.C3.A3o)
-    *   [3.6 Mostrar pacotes com um empacotador específico](#Mostrar_pacotes_com_um_empacotador_espec.C3.ADfico)
+    *   [3.4 Usar outros algoritmos de compressão](#Usar_outros_algoritmos_de_compressão)
+    *   [3.5 Usando vários núcleos na compressão](#Usando_vários_núcleos_na_compressão)
+    *   [3.6 Mostrar pacotes com um empacotador específico](#Mostrar_pacotes_com_um_empacotador_específico)
     *   [3.7 Compilar pacotes 32 bits em um sistema 64 bits](#Compilar_pacotes_32_bits_em_um_sistema_64_bits)
-*   [4 Solução de problemas](#Solu.C3.A7.C3.A3o_de_problemas)
+*   [4 Solução de problemas](#Solução_de_problemas)
     *   [4.1 Makepkg algumas vezes falha ao assinar um pacote sem perguntar pela palavra-chave de assinatura](#Makepkg_algumas_vezes_falha_ao_assinar_um_pacote_sem_perguntar_pela_palavra-chave_de_assinatura)
-    *   [4.2 CFLAGS/CXXFLAGS/LDFLAGS no makepkg.conf não funcionam para pacotes baseados no CMAKE](#CFLAGS.2FCXXFLAGS.2FLDFLAGS_no_makepkg.conf_n.C3.A3o_funcionam_para_pacotes_baseados_no_CMAKE)
-    *   [4.3 CFLAGS/CXXFLAGS no makepkg.conf não funcionam para pacotes baseados no QMAKE](#CFLAGS.2FCXXFLAGS_no_makepkg.conf_n.C3.A3o_funcionam_para_pacotes_baseados_no_QMAKE)
-    *   [4.4 Especificando diretório de instalação para pacotes baseados em QMAKE](#Especificando_diret.C3.B3rio_de_instala.C3.A7.C3.A3o_para_pacotes_baseados_em_QMAKE)
-    *   [4.5 AVISO: O pacote contém referência para $srcdir](#AVISO:_O_pacote_cont.C3.A9m_refer.C3.AAncia_para_.24srcdir)
-    *   [4.6 Makepkg falha em baixar dependências quando por trás de um proxy](#Makepkg_falha_em_baixar_depend.C3.AAncias_quando_por_tr.C3.A1s_de_um_proxy)
+    *   [4.2 CFLAGS/CXXFLAGS/LDFLAGS no makepkg.conf não funcionam para pacotes baseados no CMAKE](#CFLAGS/CXXFLAGS/LDFLAGS_no_makepkg.conf_não_funcionam_para_pacotes_baseados_no_CMAKE)
+    *   [4.3 CFLAGS/CXXFLAGS no makepkg.conf não funcionam para pacotes baseados no QMAKE](#CFLAGS/CXXFLAGS_no_makepkg.conf_não_funcionam_para_pacotes_baseados_no_QMAKE)
+    *   [4.4 Especificando diretório de instalação para pacotes baseados em QMAKE](#Especificando_diretório_de_instalação_para_pacotes_baseados_em_QMAKE)
+    *   [4.5 AVISO: O pacote contém referência para $srcdir](#AVISO:_O_pacote_contém_referência_para_$srcdir)
+    *   [4.6 Makepkg falha em baixar dependências quando por trás de um proxy](#Makepkg_falha_em_baixar_dependências_quando_por_trás_de_um_proxy)
         *   [4.6.1 Habilitar proxy definindo sua URL no XferCommand](#Habilitar_proxy_definindo_sua_URL_no_XferCommand)
         *   [4.6.2 Habilitar proxy via env_keep do sudoers](#Habilitar_proxy_via_env_keep_do_sudoers)
-    *   [4.7 Makepkg falha, mas make obtém sucesso](#Makepkg_falha.2C_mas_make_obt.C3.A9m_sucesso)
-*   [5 Veja também](#Veja_tamb.C3.A9m)
+    *   [4.7 Makepkg falha, mas make obtém sucesso](#Makepkg_falha,_mas_make_obtém_sucesso)
+*   [5 Veja também](#Veja_também)
 
 ## Configuração
 
@@ -107,11 +107,11 @@ $ makepkg --syncdeps
 
 ```
 
-Adicionar as opções `-r`/`--rmdeps` faz com que o *makepkg* remova as dependências de compilação logo em seguida, já que não são mais necessárias. Se estiver compilando pacotes constantemente, considere usar [Pacman/Dicas e truques#Removendo pacotes não usados (órfãos)](/index.php/Pacman/Dicas_e_truques#Removendo_pacotes_n.C3.A3o_usados_.28.C3.B3rf.C3.A3os.29 "Pacman/Dicas e truques") de vez em quando.
+Adicionar as opções `-r`/`--rmdeps` faz com que o *makepkg* remova as dependências de compilação logo em seguida, já que não são mais necessárias. Se estiver compilando pacotes constantemente, considere usar [Pacman/Dicas e truques#Removendo pacotes não usados (órfãos)](/index.php/Pacman/Dicas_e_truques#Removendo_pacotes_não_usados_(órfãos) "Pacman/Dicas e truques") de vez em quando.
 
 **Nota:**
 
-*   Essas dependências devem estar disponíveis nos repositórios configurados; veja [pacman (Português)#Repositórios e espelhos](/index.php/Pacman_(Portugu%C3%AAs)#Reposit.C3.B3rios_e_espelhos "Pacman (Português)") para detalhes. Alternativamente, pode-se instalar manualmente as dependências antes de compilar (`pacman -S --asdeps *dep1* *dep2*`).
+*   Essas dependências devem estar disponíveis nos repositórios configurados; veja [pacman (Português)#Repositórios e espelhos](/index.php/Pacman_(Portugu%C3%AAs)#Repositórios_e_espelhos "Pacman (Português)") para detalhes. Alternativamente, pode-se instalar manualmente as dependências antes de compilar (`pacman -S --asdeps *dep1* *dep2*`).
 *   Apenas valores globais são usados ao instalar dependências, ou seja, qualquer sobrescrição feita em uma função de empacotamento de pacotes divididos não serão sadas.[[4]](https://patchwork.archlinux.org/patch/2271/)
 
 Uma vez que todas as dependências estejam satisfeitas e os pacotes compilados com sucesso, um arquivo de pacote (`*pkgname*-*pkgver*.pkg.tar.xz`) será criado no diretório. Para instalar, use `-i`/`--install` (o mesmo que `pacman -U *pkgname*-*pkgver*.pkg.tar.xz`):
@@ -187,7 +187,7 @@ Uma configuração persistente pode ser feita no `makepkg.conf` descomentando a 
 **Nota:** * Evite compilar pacotes grandes no tmpfs para evitar ficar sem memória.
 
 *   A pasta tmpfs deve ser montada sem a opção `noexec`; do contrário, ela vai impedir que binparios sejam executados.
-*   Tenha em mente que pacotes compilados no tmpfs não persistirá após reinicialização. Considere configurar a opção [PKGDEST](#Sa.C3.ADda_de_pacote) apropriadamente para mover o pacote compilado automaticamente para um diretório persistente.
+*   Tenha em mente que pacotes compilados no tmpfs não persistirá após reinicialização. Considere configurar a opção [PKGDEST](#Saída_de_pacote) apropriadamente para mover o pacote compilado automaticamente para um diretório persistente.
 
 #### Usando cache de compilação
 

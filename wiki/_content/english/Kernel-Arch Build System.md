@@ -6,7 +6,7 @@ The [Arch Build System](/index.php/Arch_Build_System "Arch Build System") can be
 
 *   [1 Getting the Ingredients](#Getting_the_Ingredients)
 *   [2 Modifying the PKGBUILD](#Modifying_the_PKGBUILD)
-    *   [2.1 Changing prepare()](#Changing_prepare.28.29)
+    *   [2.1 Changing prepare()](#Changing_prepare())
     *   [2.2 Generate new checksums](#Generate_new_checksums)
 *   [3 Compiling](#Compiling)
 *   [4 Installing](#Installing)

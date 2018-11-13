@@ -6,24 +6,24 @@ Artículos relacionados
 
 ## Contents
 
-*   [1 Aventura y acción](#Aventura_y_acci.C3.B3n)
+*   [1 Aventura y acción](#Aventura_y_acción)
 *   [2 Arcade](#Arcade)
 *   [3 Juegos de azar](#Juegos_de_azar)
 *   [4 Simuladores de ajedez](#Simuladores_de_ajedez)
 *   [5 Educativos](#Educativos)
-*   [6 Ficción interactiva](#Ficci.C3.B3n_interactiva)
-*   [7 Juegos multijugador masivo en línea (siglas en inglés MMO)](#Juegos_multijugador_masivo_en_l.C3.ADnea_.28siglas_en_ingl.C3.A9s_MMO.29)
+*   [6 Ficción interactiva](#Ficción_interactiva)
+*   [7 Juegos multijugador masivo en línea (siglas en inglés MMO)](#Juegos_multijugador_masivo_en_línea_(siglas_en_inglés_MMO))
 *   [8 Juegos de plataformas](#Juegos_de_plataformas)
 *   [9 Puzzle](#Puzzle)
 *   [10 Juegos de carreras](#Juegos_de_carreras)
 *   [11 Juegos roguelike](#Juegos_roguelike)
-*   [12 Juegos de rol (siglas en inglés RPG)](#Juegos_de_rol_.28siglas_en_ingl.C3.A9s_RPG.29)
-*   [13 Juegos de disparos (siglas en inglés FPS, Third Person)](#Juegos_de_disparos_.28siglas_en_ingl.C3.A9s_FPS.2C_Third_Person.29)
-*   [14 Simulación](#Simulaci.C3.B3n)
+*   [12 Juegos de rol (siglas en inglés RPG)](#Juegos_de_rol_(siglas_en_inglés_RPG))
+*   [13 Juegos de disparos (siglas en inglés FPS, Third Person)](#Juegos_de_disparos_(siglas_en_inglés_FPS,_Third_Person))
+*   [14 Simulación](#Simulación)
 *   [15 Estrategia](#Estrategia)
-*   [16 Juegos Tycoon/Management](#Juegos_Tycoon.2FManagement)
+*   [16 Juegos Tycoon/Management](#Juegos_Tycoon/Management)
 *   [17 Novelas visuales](#Novelas_visuales)
-*   [18 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [18 Véase también](#Véase_también)
 
 ## Aventura y acción
 

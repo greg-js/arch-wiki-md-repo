@@ -19,12 +19,12 @@ Not to be confused with Canonical's [Unity](/index.php/Unity "Unity").
     *   [2.3 Test](#Test)
 *   [3 Visual Studio Code](#Visual_Studio_Code)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Unity crashes on first launch before/while signing in](#Unity_crashes_on_first_launch_before.2Fwhile_signing_in)
+    *   [4.1 Unity crashes on first launch before/while signing in](#Unity_crashes_on_first_launch_before/while_signing_in)
     *   [4.2 Unity crashes when trying to load project](#Unity_crashes_when_trying_to_load_project)
-    *   [4.3 Unity crashes if ~/.config/user-dirs.dirs is missing](#Unity_crashes_if_.7E.2F.config.2Fuser-dirs.dirs_is_missing)
-    *   [4.4 Minor stuttering while playtesting (NVIDIA)](#Minor_stuttering_while_playtesting_.28NVIDIA.29)
+    *   [4.3 Unity crashes if ~/.config/user-dirs.dirs is missing](#Unity_crashes_if_~/.config/user-dirs.dirs_is_missing)
+    *   [4.4 Minor stuttering while playtesting (NVIDIA)](#Minor_stuttering_while_playtesting_(NVIDIA))
     *   [4.5 Error: Multiple Unity instances cannot open the same project](#Error:_Multiple_Unity_instances_cannot_open_the_same_project)
-    *   [4.6 Android Remote not working / Running Android build fails with "Unable to forward network traffic to device"](#Android_Remote_not_working_.2F_Running_Android_build_fails_with_.22Unable_to_forward_network_traffic_to_device.22)
+    *   [4.6 Android Remote not working / Running Android build fails with "Unable to forward network traffic to device"](#Android_Remote_not_working_/_Running_Android_build_fails_with_"Unable_to_forward_network_traffic_to_device")
 
 ## Installation
 

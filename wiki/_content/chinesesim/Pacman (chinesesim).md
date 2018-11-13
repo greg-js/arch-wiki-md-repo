@@ -24,53 +24,53 @@
 
 ## Contents
 
-*   [1 用法](#.E7.94.A8.E6.B3.95)
-    *   [1.1 安装软件包](#.E5.AE.89.E8.A3.85.E8.BD.AF.E4.BB.B6.E5.8C.85)
-        *   [1.1.1 安装指定的包](#.E5.AE.89.E8.A3.85.E6.8C.87.E5.AE.9A.E7.9A.84.E5.8C.85)
-        *   [1.1.2 安装包组](#.E5.AE.89.E8.A3.85.E5.8C.85.E7.BB.84)
-    *   [1.2 删除软件包](#.E5.88.A0.E9.99.A4.E8.BD.AF.E4.BB.B6.E5.8C.85)
-    *   [1.3 升级软件包](#.E5.8D.87.E7.BA.A7.E8.BD.AF.E4.BB.B6.E5.8C.85)
-    *   [1.4 查询包数据库](#.E6.9F.A5.E8.AF.A2.E5.8C.85.E6.95.B0.E6.8D.AE.E5.BA.93)
-        *   [1.4.1 数据库结构](#.E6.95.B0.E6.8D.AE.E5.BA.93.E7.BB.93.E6.9E.84)
-    *   [1.5 清理软件包缓存](#.E6.B8.85.E7.90.86.E8.BD.AF.E4.BB.B6.E5.8C.85.E7.BC.93.E5.AD.98)
-    *   [1.6 其它命令](#.E5.85.B6.E5.AE.83.E5.91.BD.E4.BB.A4)
-    *   [1.7 安装原因](#.E5.AE.89.E8.A3.85.E5.8E.9F.E5.9B.A0)
-    *   [1.8 查询一个包含具体文件的包名](#.E6.9F.A5.E8.AF.A2.E4.B8.80.E4.B8.AA.E5.8C.85.E5.90.AB.E5.85.B7.E4.BD.93.E6.96.87.E4.BB.B6.E7.9A.84.E5.8C.85.E5.90.8D)
-*   [2 配置](#.E9.85.8D.E7.BD.AE)
-    *   [2.1 通用选项](#.E9.80.9A.E7.94.A8.E9.80.89.E9.A1.B9)
-    *   [2.2 升级前对比版本](#.E5.8D.87.E7.BA.A7.E5.89.8D.E5.AF.B9.E6.AF.94.E7.89.88.E6.9C.AC)
-        *   [2.2.1 彩色输出](#.E5.BD.A9.E8.89.B2.E8.BE.93.E5.87.BA)
-        *   [2.2.2 不升级软件包](#.E4.B8.8D.E5.8D.87.E7.BA.A7.E8.BD.AF.E4.BB.B6.E5.8C.85)
-        *   [2.2.3 不升级软件包组](#.E4.B8.8D.E5.8D.87.E7.BA.A7.E8.BD.AF.E4.BB.B6.E5.8C.85.E7.BB.84)
-        *   [2.2.4 跳过软件包文件](#.E8.B7.B3.E8.BF.87.E8.BD.AF.E4.BB.B6.E5.8C.85.E6.96.87.E4.BB.B6)
-    *   [2.3 保留多个配置文件](#.E4.BF.9D.E7.95.99.E5.A4.9A.E4.B8.AA.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)
+*   [1 用法](#用法)
+    *   [1.1 安装软件包](#安装软件包)
+        *   [1.1.1 安装指定的包](#安装指定的包)
+        *   [1.1.2 安装包组](#安装包组)
+    *   [1.2 删除软件包](#删除软件包)
+    *   [1.3 升级软件包](#升级软件包)
+    *   [1.4 查询包数据库](#查询包数据库)
+        *   [1.4.1 数据库结构](#数据库结构)
+    *   [1.5 清理软件包缓存](#清理软件包缓存)
+    *   [1.6 其它命令](#其它命令)
+    *   [1.7 安装原因](#安装原因)
+    *   [1.8 查询一个包含具体文件的包名](#查询一个包含具体文件的包名)
+*   [2 配置](#配置)
+    *   [2.1 通用选项](#通用选项)
+    *   [2.2 升级前对比版本](#升级前对比版本)
+        *   [2.2.1 彩色输出](#彩色输出)
+        *   [2.2.2 不升级软件包](#不升级软件包)
+        *   [2.2.3 不升级软件包组](#不升级软件包组)
+        *   [2.2.4 跳过软件包文件](#跳过软件包文件)
+    *   [2.3 保留多个配置文件](#保留多个配置文件)
     *   [2.4 Hooks](#Hooks)
-    *   [2.5 软件仓库](#.E8.BD.AF.E4.BB.B6.E4.BB.93.E5.BA.93)
-    *   [2.6 软件包的安全性](#.E8.BD.AF.E4.BB.B6.E5.8C.85.E7.9A.84.E5.AE.89.E5.85.A8.E6.80.A7)
-    *   [2.7 一般注意事项](#.E4.B8.80.E8.88.AC.E6.B3.A8.E6.84.8F.E4.BA.8B.E9.A1.B9)
-*   [3 问题解决](#.E9.97.AE.E9.A2.98.E8.A7.A3.E5.86.B3)
-    *   [3.1 升级时遇到问题: "file exists in filesystem"(conflicting files)!](#.E5.8D.87.E7.BA.A7.E6.97.B6.E9.81.87.E5.88.B0.E9.97.AE.E9.A2.98:_.22file_exists_in_filesystem.22.28conflicting_files.29.21)
-    *   [3.2 "failed to commit transaction (invalid or corrupted package" 错误](#.22failed_to_commit_transaction_.28invalid_or_corrupted_package.22_.E9.94.99.E8.AF.AF)
-    *   [3.3 "error: failed to init transaction (unable to lock database)" 错误](#.22error:_failed_to_init_transaction_.28unable_to_lock_database.29.22_.E9.94.99.E8.AF.AF)
-    *   [3.4 安装时无法获取软件包](#.E5.AE.89.E8.A3.85.E6.97.B6.E6.97.A0.E6.B3.95.E8.8E.B7.E5.8F.96.E8.BD.AF.E4.BB.B6.E5.8C.85)
-    *   [3.5 pacman 重复升级同一个包](#pacman_.E9.87.8D.E5.A4.8D.E5.8D.87.E7.BA.A7.E5.90.8C.E4.B8.80.E4.B8.AA.E5.8C.85)
-    *   [3.6 pacman 完全坏掉，如何修复?](#pacman_.E5.AE.8C.E5.85.A8.E5.9D.8F.E6.8E.89.EF.BC.8C.E5.A6.82.E4.BD.95.E4.BF.AE.E5.A4.8D.3F)
-    *   [3.7 pacman 更新时崩溃](#pacman_.E6.9B.B4.E6.96.B0.E6.97.B6.E5.B4.A9.E6.BA.83)
+    *   [2.5 软件仓库](#软件仓库)
+    *   [2.6 软件包的安全性](#软件包的安全性)
+    *   [2.7 一般注意事项](#一般注意事项)
+*   [3 问题解决](#问题解决)
+    *   [3.1 升级时遇到问题: "file exists in filesystem"(conflicting files)!](#升级时遇到问题:_"file_exists_in_filesystem"(conflicting_files)!)
+    *   [3.2 "failed to commit transaction (invalid or corrupted package" 错误](#"failed_to_commit_transaction_(invalid_or_corrupted_package"_错误)
+    *   [3.3 "error: failed to init transaction (unable to lock database)" 错误](#"error:_failed_to_init_transaction_(unable_to_lock_database)"_错误)
+    *   [3.4 安装时无法获取软件包](#安装时无法获取软件包)
+    *   [3.5 pacman 重复升级同一个包](#pacman_重复升级同一个包)
+    *   [3.6 pacman 完全坏掉，如何修复?](#pacman_完全坏掉，如何修复?)
+    *   [3.7 pacman 更新时崩溃](#pacman_更新时崩溃)
     *   [3.8 pacman crashes the official installation media](#pacman_crashes_the_official_installation_media)
-    *   [3.9 升级系统重启后，出现"unable to find root device"错误，无法登陆](#.E5.8D.87.E7.BA.A7.E7.B3.BB.E7.BB.9F.E9.87.8D.E5.90.AF.E5.90.8E.EF.BC.8C.E5.87.BA.E7.8E.B0.22unable_to_find_root_device.22.E9.94.99.E8.AF.AF.EF.BC.8C.E6.97.A0.E6.B3.95.E7.99.BB.E9.99.86)
-        *   [3.9.1 Fallback 启动项](#Fallback_.E5.90.AF.E5.8A.A8.E9.A1.B9)
-        *   [3.9.2 Chroot 修复](#Chroot_.E4.BF.AE.E5.A4.8D)
-    *   [3.10 Signature from "User <email@gmail.com>" is unknown trust, installation failed](#Signature_from_.22User_.3Cemail.40gmail.com.3E.22_is_unknown_trust.2C_installation_failed)
+    *   [3.9 升级系统重启后，出现"unable to find root device"错误，无法登陆](#升级系统重启后，出现"unable_to_find_root_device"错误，无法登陆)
+        *   [3.9.1 Fallback 启动项](#Fallback_启动项)
+        *   [3.9.2 Chroot 修复](#Chroot_修复)
+    *   [3.10 Signature from "User <email@gmail.com>" is unknown trust, installation failed](#Signature_from_"User_<email@gmail.com>"_is_unknown_trust,_installation_failed)
     *   [3.11 Request on importing PGP keys](#Request_on_importing_PGP_keys)
-    *   [3.12 Error: key "0123456789ABCDEF" could not be looked up remotely](#Error:_key_.220123456789ABCDEF.22_could_not_be_looked_up_remotely)
-    *   [3.13 不停看到错误 "PackageName: signature from "User <email@archlinux.org>" is invalid"](#.E4.B8.8D.E5.81.9C.E7.9C.8B.E5.88.B0.E9.94.99.E8.AF.AF_.22PackageName:_signature_from_.22User_.3Cemail.40archlinux.org.3E.22_is_invalid.22)
-    *   [3.14 'warning: current locale is invalid; using default "C" locale' 错误](#.27warning:_current_locale_is_invalid.3B_using_default_.22C.22_locale.27_.E9.94.99.E8.AF.AF)
-    *   [3.15 pacman不使用我的代理设置](#pacman.E4.B8.8D.E4.BD.BF.E7.94.A8.E6.88.91.E7.9A.84.E4.BB.A3.E7.90.86.E8.AE.BE.E7.BD.AE)
-    *   [3.16 如何重装所有包并保留安装和依赖信息？](#.E5.A6.82.E4.BD.95.E9.87.8D.E8.A3.85.E6.89.80.E6.9C.89.E5.8C.85.E5.B9.B6.E4.BF.9D.E7.95.99.E5.AE.89.E8.A3.85.E5.92.8C.E4.BE.9D.E8.B5.96.E4.BF.A1.E6.81.AF.EF.BC.9F)
-    *   [3.17 "Cannot open shared object file" 错误](#.22Cannot_open_shared_object_file.22_.E9.94.99.E8.AF.AF)
-    *   [3.18 软件包下载停滞](#.E8.BD.AF.E4.BB.B6.E5.8C.85.E4.B8.8B.E8.BD.BD.E5.81.9C.E6.BB.9E)
-    *   [3.19 无法从镜像服务器获取 'core.db'](#.E6.97.A0.E6.B3.95.E4.BB.8E.E9.95.9C.E5.83.8F.E6.9C.8D.E5.8A.A1.E5.99.A8.E8.8E.B7.E5.8F.96_.27core.db.27)
-*   [4 参见](#.E5.8F.82.E8.A7.81)
+    *   [3.12 Error: key "0123456789ABCDEF" could not be looked up remotely](#Error:_key_"0123456789ABCDEF"_could_not_be_looked_up_remotely)
+    *   [3.13 不停看到错误 "PackageName: signature from "User <email@archlinux.org>" is invalid"](#不停看到错误_"PackageName:_signature_from_"User_<email@archlinux.org>"_is_invalid")
+    *   [3.14 'warning: current locale is invalid; using default "C" locale' 错误](#'warning:_current_locale_is_invalid;_using_default_"C"_locale'_错误)
+    *   [3.15 pacman不使用我的代理设置](#pacman不使用我的代理设置)
+    *   [3.16 如何重装所有包并保留安装和依赖信息？](#如何重装所有包并保留安装和依赖信息？)
+    *   [3.17 "Cannot open shared object file" 错误](#"Cannot_open_shared_object_file"_错误)
+    *   [3.18 软件包下载停滞](#软件包下载停滞)
+    *   [3.19 无法从镜像服务器获取 'core.db'](#无法从镜像服务器获取_'core.db')
+*   [4 参见](#参见)
 
 ## 用法
 
@@ -82,7 +82,7 @@
 
 **注意:** 软件包通常有很多[可选依赖](/index.php/PKGBUILD#optdepends "PKGBUILD")， 它们为软件提供额外功能， 并不强制要求安装它们。 安装软件时, *pacman* 将会输出它的可选依赖, 但是这个输出不会在 `pacman.log`中；当你想浏览已安装软件的可选依赖时可以使用`pacman -Si` ，得到关于可选依赖的简短描述。
 
-**警告:** 在Arch下安装软件包时，未[更新](#.E5.8D.87.E7.BA.A7.E8.BD.AF.E4.BB.B6.E5.8C.85)系统前，**不要**更新软件包数据库（例如，可能出现某软件包不再出现在官方库）。操作时，应使用`pacman -Syu *package_name*`, 而不要使用（`pacman -Sy *package_name*`），否则可能会有依赖问题。参见 [System maintenance (简体中文)#不支持部分升级](/index.php/System_maintenance_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.B8.8D.E6.94.AF.E6.8C.81.E9.83.A8.E5.88.86.E5.8D.87.E7.BA.A7 "System maintenance (简体中文)") 和 [BBS#89328](https://bbs.archlinux.org/viewtopic.php?id=89328).
+**警告:** 在Arch下安装软件包时，未[更新](#升级软件包)系统前，**不要**更新软件包数据库（例如，可能出现某软件包不再出现在官方库）。操作时，应使用`pacman -Syu *package_name*`, 而不要使用（`pacman -Sy *package_name*`），否则可能会有依赖问题。参见 [System maintenance (简体中文)#不支持部分升级](/index.php/System_maintenance_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#不支持部分升级 "System maintenance (简体中文)") 和 [BBS#89328](https://bbs.archlinux.org/viewtopic.php?id=89328).
 
 #### 安装指定的包
 
@@ -93,7 +93,7 @@
 
 ```
 
-用正则表达式安装多个软件包（参见 [pacman 小贴士](/index.php/Pacman_tips_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.B7.A7.E7.94.A8_Bash_.E8.AF.AD.E6.B3.95 "Pacman tips (简体中文)")和[这个帖子](https://bbs.archlinux.org/viewtopic.php?id=7179)）：
+用正则表达式安装多个软件包（参见 [pacman 小贴士](/index.php/Pacman_tips_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#巧用_Bash_语法 "Pacman tips (简体中文)")和[这个帖子](https://bbs.archlinux.org/viewtopic.php?id=7179)）：
 
 ```
 # pacman -S $(pacman -Ssq package_regex)
@@ -204,7 +204,7 @@ pacman -Rn package_name
 
 **警告:** * 建议所有用户都 [经常性的更新系统](/index.php/System_maintenance#Upgrading_the_system "System maintenance")。
 
-*   Arch 只支持系统完整升级，详细参见[不支持部分升级](/index.php/System_maintenance#Partial_upgrades_are_unsupported "System maintenance")和[#安装软件包](#.E5.AE.89.E8.A3.85.E8.BD.AF.E4.BB.B6.E5.8C.85)。
+*   Arch 只支持系统完整升级，详细参见[不支持部分升级](/index.php/System_maintenance#Partial_upgrades_are_unsupported "System maintenance")和[#安装软件包](#安装软件包)。
 
 一个 *pacman* 命令就可以升级整个系统。花费的时间取决于系统有多老。这个命令会同步非本地(local)软件仓库并升级系统的软件包：
 
@@ -648,7 +648,7 @@ Errors occurred, no packages were upgraded.
 
 也有可能包含该软件包的软件仓库没有启动。例如，该软件包可能在 *multilib* 仓库里，但该仓库没有在 *pacman.conf* 中启用。
 
-参阅[FAQ#Why is there only a single version of each shared library in the official repositories?](/index.php/FAQ#Why_is_there_only_a_single_version_of_each_shared_library_in_the_official_repositories.3F "FAQ").
+参阅[FAQ#Why is there only a single version of each shared library in the official repositories?](/index.php/FAQ#Why_is_there_only_a_single_version_of_each_shared_library_in_the_official_repositories? "FAQ").
 
 ### pacman 重复升级同一个包
 
@@ -676,7 +676,7 @@ Errors occurred, no packages were upgraded.
 
 The official installation media (ISO) before version 10.2015 are not setup to be updated itself at runtime. Running `pacman -Syu` from a booted install media console may crash unexpectedly any time, as soon as memory is depleted. This happens because the install media image build reports an arbitrary capacity (of 32GB) to pacman, regardless of available free memory.[[1]](https://bugs.archlinux.org/task/45618#comment137346) At the same time the ISO reserves only a low static memory allotment for operations (`/run/archiso/cowspace` of `256MB` RAM) of the live system, in order to allow installation on machines with low resources. If the machine has more RAM available, you can override the allotment by setting the `cow_spacesize=` kernel option for the ISO manually, e.g. `cow_spacesize=2GB`.
 
-If you use the install media to update an installed system, you simply have to use the `--root=` option along with a `--cachedir=` path to point pacman to available real storage. For example, see [#pacman 更新时崩溃](#pacman_.E6.9B.B4.E6.96.B0.E6.97.B6.E5.B4.A9.E6.BA.83).
+If you use the install media to update an installed system, you simply have to use the `--root=` option along with a `--cachedir=` path to point pacman to available real storage. For example, see [#pacman 更新时崩溃](#pacman_更新时崩溃).
 
 If you *require* an install media with persistent dataspace, the [Archiso](/index.php/Archiso "Archiso") build script can be used to create one along with its [boot options](https://projects.archlinux.org/archiso.git/tree/docs/README.bootparams).
 
@@ -719,11 +719,11 @@ If you *require* an install media with persistent dataspace, the [Archiso](/inde
 
 ### Request on importing PGP keys
 
-If [installing](/index.php/Installation_guide "Installation guide") Arch with an outdated ISO, you are likely prompted to import PGP keys. Agree to download the key to proceed. If you are unable to add the PGP key successfully, update the keyring or upgrade [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) (see [above](#Signature_from_.22User_.3Cemail.40gmail.com.3E.22_is_unknown_trust.2C_installation_failed)).
+If [installing](/index.php/Installation_guide "Installation guide") Arch with an outdated ISO, you are likely prompted to import PGP keys. Agree to download the key to proceed. If you are unable to add the PGP key successfully, update the keyring or upgrade [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) (see [above](#Signature_from_"User_<email@gmail.com>"_is_unknown_trust,_installation_failed)).
 
 ### Error: key "0123456789ABCDEF" could not be looked up remotely
 
-If packages are signed with new keys, which were only recently added to [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring), these keys are not locally available during update (chicken-egg-problem). The installed [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) does not contain the key, until it is updated. Pacman tries to bypass this by a lookup through a key-server, which might not be possible e.g. behind proxys or firewalls and results in the stated error. Upgrade [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) first as shown [above](#Signature_from_.22User_.3Cemail.40example.org.3E.22_is_unknown_trust.2C_installation_failed).
+If packages are signed with new keys, which were only recently added to [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring), these keys are not locally available during update (chicken-egg-problem). The installed [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) does not contain the key, until it is updated. Pacman tries to bypass this by a lookup through a key-server, which might not be possible e.g. behind proxys or firewalls and results in the stated error. Upgrade [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) first as shown [above](#Signature_from_"User_<email@example.org>"_is_unknown_trust,_installation_failed).
 
 ### 不停看到错误 "PackageName: signature from "User <email@archlinux.org>" is invalid"
 

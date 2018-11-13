@@ -137,7 +137,7 @@ nameserver 127.0.0.1
 
 ```
 
-See [Domain name resolution#Overwriting of /etc/resolv.conf](/index.php/Domain_name_resolution#Overwriting_of_.2Fetc.2Fresolv.conf "Domain name resolution") on how to protect `/etc/resolv.conf` from modification.
+See [Domain name resolution#Overwriting of /etc/resolv.conf](/index.php/Domain_name_resolution#Overwriting_of_/etc/resolv.conf "Domain name resolution") on how to protect `/etc/resolv.conf` from modification.
 
 The upstream DNS server addresses must then be specified in dnsmasq's configuration file as `server=*server_address*`. Also add `no-resolv` so dnsmasq does not needlessly read `/etc/resolv.conf` which only contains the localhost addresses of itself.
 

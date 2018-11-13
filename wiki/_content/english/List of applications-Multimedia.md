@@ -1951,4 +1951,4 @@ See [Optical disc drive#DVD-Video](/index.php/Optical_disc_drive#DVD-Video "Opti
 
 ### Optical disc burning
 
-See [Optical disc drive#Burning CD/DVD/BD with a GUI](/index.php/Optical_disc_drive#Burning_CD.2FDVD.2FBD_with_a_GUI "Optical disc drive").
+See [Optical disc drive#Burning CD/DVD/BD with a GUI](/index.php/Optical_disc_drive#Burning_CD/DVD/BD_with_a_GUI "Optical disc drive").

@@ -7,7 +7,7 @@ This guide will give you an overview for the most common server options in exist
 ## Contents
 
 *   [1 Preface](#Preface)
-    *   [1.1 What is a server?](#What_is_a_server.3F)
+    *   [1.1 What is a server?](#What_is_a_server?)
     *   [1.2 Arch Linux as a server OS](#Arch_Linux_as_a_server_OS)
 *   [2 Requirements](#Requirements)
 *   [3 Services](#Services)

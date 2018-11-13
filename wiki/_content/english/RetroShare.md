@@ -6,7 +6,7 @@
     *   [1.1 Retroshare over Tor via hidden service](#Retroshare_over_Tor_via_hidden_service)
         *   [1.1.1 Migrating existing profile to Retroshare-Tor](#Migrating_existing_profile_to_Retroshare-Tor)
 *   [2 Usage](#Usage)
-    *   [2.1 No friends to add?](#No_friends_to_add.3F)
+    *   [2.1 No friends to add?](#No_friends_to_add?)
 *   [3 External Links](#External_Links)
 
 ## Installation

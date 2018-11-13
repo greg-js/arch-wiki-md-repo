@@ -21,7 +21,7 @@ Un kernel EFISTUB se puede arrancar directamente por una placa base UEFI o indir
 *   [2 Arrancar EFISTUB](#Arrancar_EFISTUB)
     *   [2.1 Utilizar un gestor de arranque](#Utilizar_un_gestor_de_arranque)
     *   [2.2 Utilizar la shell de UEFI](#Utilizar_la_shell_de_UEFI)
-    *   [2.3 Utilizar directamente UEFI (efibootmgr)](#Utilizar_directamente_UEFI_.28efibootmgr.29)
+    *   [2.3 Utilizar directamente UEFI (efibootmgr)](#Utilizar_directamente_UEFI_(efibootmgr))
 
 ## Configurar EFISTUB
 

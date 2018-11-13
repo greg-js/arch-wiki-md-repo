@@ -11,22 +11,22 @@
 
 ## Contents
 
-*   [1 关于 GUID 分区表](#.E5.85.B3.E4.BA.8E_GUID_.E5.88.86.E5.8C.BA.E8.A1.A8)
-    *   [1.1 GPT 的优点](#GPT_.E7.9A.84.E4.BC.98.E7.82.B9)
-    *   [1.2 内核支持](#.E5.86.85.E6.A0.B8.E6.94.AF.E6.8C.81)
-*   [2 引导器支持](#.E5.BC.95.E5.AF.BC.E5.99.A8.E6.94.AF.E6.8C.81)
-    *   [2.1 UEFI 系统](#UEFI_.E7.B3.BB.E7.BB.9F)
-    *   [2.2 BIOS 系统](#BIOS_.E7.B3.BB.E7.BB.9F)
-        *   [2.2.1 解决方案](#.E8.A7.A3.E5.86.B3.E6.96.B9.E6.A1.88)
-*   [3 分区工具](#.E5.88.86.E5.8C.BA.E5.B7.A5.E5.85.B7)
-    *   [3.1 fdisk 和 gdisk](#fdisk_.E5.92.8C_gdisk)
+*   [1 关于 GUID 分区表](#关于_GUID_分区表)
+    *   [1.1 GPT 的优点](#GPT_的优点)
+    *   [1.2 内核支持](#内核支持)
+*   [2 引导器支持](#引导器支持)
+    *   [2.1 UEFI 系统](#UEFI_系统)
+    *   [2.2 BIOS 系统](#BIOS_系统)
+        *   [2.2.1 解决方案](#解决方案)
+*   [3 分区工具](#分区工具)
+    *   [3.1 fdisk 和 gdisk](#fdisk_和_gdisk)
     *   [3.2 GNU Parted](#GNU_Parted)
-*   [4 分区成例](#.E5.88.86.E5.8C.BA.E6.88.90.E4.BE.8B)
+*   [4 分区成例](#分区成例)
     *   [4.1 gdisk basic](#gdisk_basic)
-    *   [4.2 gdisk basic (以及混合 MBR)](#gdisk_basic_.28.E4.BB.A5.E5.8F.8A.E6.B7.B7.E5.90.88_MBR.29)
-    *   [4.3 parted basic (通过命令行选项)](#parted_basic_.28.E9.80.9A.E8.BF.87.E5.91.BD.E4.BB.A4.E8.A1.8C.E9.80.89.E9.A1.B9.29)
-    *   [4.4 sgdisk basic (自动搜寻)](#sgdisk_basic_.28.E8.87.AA.E5.8A.A8.E6.90.9C.E5.AF.BB.29)
-*   [5 另见](#.E5.8F.A6.E8.A7.81)
+    *   [4.2 gdisk basic (以及混合 MBR)](#gdisk_basic_(以及混合_MBR))
+    *   [4.3 parted basic (通过命令行选项)](#parted_basic_(通过命令行选项))
+    *   [4.4 sgdisk basic (自动搜寻)](#sgdisk_basic_(自动搜寻))
+*   [5 另见](#另见)
 
 ## 关于 GUID 分区表
 

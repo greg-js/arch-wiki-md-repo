@@ -6,13 +6,13 @@ Artículos relacionados
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
 *   [2 Uso](#Uso)
 *   [3 Comando no encontrado](#Comando_no_encontrado)
     *   [3.1 Bash](#Bash)
     *   [3.2 Zsh](#Zsh)
     *   [3.3 Fish](#Fish)
-*   [4 Actualizaciones automáticas](#Actualizaciones_autom.C3.A1ticas)
+*   [4 Actualizaciones automáticas](#Actualizaciones_automáticas)
 
 ## Instalación
 

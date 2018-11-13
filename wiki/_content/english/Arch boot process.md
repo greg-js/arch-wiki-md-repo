@@ -29,7 +29,7 @@ In order to boot Arch Linux, a Linux-capable [boot loader](#Boot_loader) must be
 *   [8 Display Manager](#Display_Manager)
 *   [9 Login](#Login)
 *   [10 Shell](#Shell)
-*   [11 GUI, xinit or wayland](#GUI.2C_xinit_or_wayland)
+*   [11 GUI, xinit or wayland](#GUI,_xinit_or_wayland)
 *   [12 See also](#See_also)
 
 ## Firmware types
@@ -52,7 +52,7 @@ UEFI launches EFI applications, e.g. [boot loaders](#Boot_loader), boot managers
 
 1.  System switched on, the [power-on self-test (POST)](https://en.wikipedia.org/wiki/Power-on_self-test "wikipedia:Power-on self-test") is executed.
 2.  After POST, BIOS initializes the necessary system hardware for booting (disk, keyboard controllers etc.).
-3.  BIOS launches the first 440 bytes ([the Master Boot Record bootstrap code area](/index.php/Partitioning#Master_Boot_Record_.28bootstrap_code.29 "Partitioning")) of the first disk in the BIOS disk order.
+3.  BIOS launches the first 440 bytes ([the Master Boot Record bootstrap code area](/index.php/Partitioning#Master_Boot_Record_(bootstrap_code) "Partitioning")) of the first disk in the BIOS disk order.
 4.  The boot loader's first stage in the MBR boot code then launches its second stage code (if any) from either:
     *   next disk sectors after the MBR, i.e. the so called post-MBR gap (only on a MBR partition table).
     *   a partition's or a partitionless disk's [volume boot record (VBR)](https://en.wikipedia.org/wiki/Volume_boot_record "wikipedia:Volume boot record").
@@ -65,7 +65,7 @@ UEFI launches EFI applications, e.g. [boot loaders](#Boot_loader), boot managers
 1.  System switched on, the [power-on self-test (POST)](https://en.wikipedia.org/wiki/Power-on_self-test "wikipedia:Power-on self-test") is executed.
 2.  UEFI initializes the hardware required for booting.
 3.  Firmware reads the boot entries in the NVRAM to determine which EFI application to launch and from where (e.g. from which disk and partition).
-    *   A boot entry could simply be a disk. In this case the firmware looks for an [EFI system partition](/index.php/EFI_system_partition "EFI system partition") on that disk and tries to find a EFI application in the fallback boot path `\EFI\BOOT\BOOTX64.EFI` (`BOOTIA32.EFI` on [IA32 (32-bit) EFI systems](/index.php/Unified_Extensible_Firmware_Interface#UEFI_firmware_bitness "Unified Extensible Firmware Interface")). This is how UEFI bootable removable media work.
+    *   A boot entry could simply be a disk. In this case the firmware looks for an [EFI system partition](/index.php/EFI_system_partition "EFI system partition") on that disk and tries to find a EFI application in the fallback boot path `\EFI\BOOT\BOOTX64.EFI` (`BOOTIA32.EFI` on [systems with a IA32 (32-bit) UEFI](/index.php/Unified_Extensible_Firmware_Interface#UEFI_firmware_bitness "Unified Extensible Firmware Interface")). This is how UEFI bootable removable media work.
 4.  Firmware launches the EFI application.
     *   This could be a [boot loader](#Boot_loader) or the Arch [kernel](/index.php/Kernel "Kernel") itself using [EFISTUB](/index.php/EFISTUB "EFISTUB").
     *   It could be some other EFI application such as a UEFI shell or a [boot manager](#Boot_loader) like [systemd-boot](/index.php/Systemd-boot "Systemd-boot") or [rEFInd](/index.php/REFInd "REFInd").

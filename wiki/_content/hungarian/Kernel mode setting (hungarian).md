@@ -6,11 +6,11 @@ A KMS engedélyezi a kijelző natív felbontását a framebufferben, és lehető
 
 ## Contents
 
-*   [1 Háttér](#H.C3.A1tt.C3.A9r)
-*   [2 Hibaelhárítás](#Hibaelh.C3.A1r.C3.ADt.C3.A1s)
-    *   [2.1 Túl kicsik a betűk](#T.C3.BAl_kicsik_a_bet.C5.B1k)
-*   [3 Megjelenítési mód beállítása](#Megjelen.C3.ADt.C3.A9si_m.C3.B3d_be.C3.A1ll.C3.ADt.C3.A1sa)
-*   [4 További források (angol)](#Tov.C3.A1bbi_forr.C3.A1sok_.28angol.29)
+*   [1 Háttér](#Háttér)
+*   [2 Hibaelhárítás](#Hibaelhárítás)
+    *   [2.1 Túl kicsik a betűk](#Túl_kicsik_a_betűk)
+*   [3 Megjelenítési mód beállítása](#Megjelenítési_mód_beállítása)
+*   [4 További források (angol)](#További_források_(angol))
 
 ## Háttér
 

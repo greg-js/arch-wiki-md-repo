@@ -11,13 +11,13 @@ Um [gerenciador de janela](https://en.wikipedia.org/wiki/pt:Gerenciador_de_janel
 
 ## Contents
 
-*   [1 Visão geral](#Vis.C3.A3o_geral)
+*   [1 Visão geral](#Visão_geral)
     *   [1.1 Tipos](#Tipos)
 *   [2 Lista de gerenciadores de janela](#Lista_de_gerenciadores_de_janela)
     *   [2.1 Gerenciadores de janela de empilhamento](#Gerenciadores_de_janela_de_empilhamento)
     *   [2.2 Gerenciadores de janela de tiling](#Gerenciadores_de_janela_de_tiling)
-    *   [2.3 Gerenciadores de janela dinâmicos](#Gerenciadores_de_janela_din.C3.A2micos)
-*   [3 Veja também](#Veja_tamb.C3.A9m)
+    *   [2.3 Gerenciadores de janela dinâmicos](#Gerenciadores_de_janela_dinâmicos)
+*   [3 Veja também](#Veja_também)
 
 ## Visão geral
 
@@ -37,7 +37,7 @@ Antes de instalar um gerenciador de janela, é necessária uma instalação func
 
 *   [Empilhamento](#Gerenciadores_de_janela_de_empilhamento) – os gerenciadores de janela, neste caso também conhecidos como *flutuantes*, fornecem a metáfora tradicional de desktop usado em sistemas operacionais comerciais como Windows e OS X. As janelas agem como folhas de papéis em uma mesa e pode ser empilhada uma sobre a outra. Para páginas disponíveis no Arch Wiki, veja [Category:Stacking WMs (Português)](/index.php/Category:Stacking_WMs_(Portugu%C3%AAs) "Category:Stacking WMs (Português)").
 *   [Tiling](#Gerenciadores_de_janela_de_tiling) – os gerenciadores de janela "colam" (*tile*) as janelas lado a lado, de forma que nenhuma se sobreponha a outra. Eles geralmente fazem grande uso de atalhos de teclados e menos (ou nenhuma) dependência do mouse. Os gerenciadores de janela de *tiling* podem ser manuais, oferecendo layouts pré-definidos ou ambos. Para páginas disponíveis no Arch Wiki, veja [Category:Tiling WMs](/index.php/Category:Tiling_WMs "Category:Tiling WMs").
-*   [Dinâmico](#Gerenciadores_de_janela_din.C3.A2micos) – os gerenciadores de janela podem trocar dinamicamente entre a disposição de janelas *tiling* ou flutuante. Para páginas disponíveis no Arch Wiki, veja [Category:Dynamic WMs](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs").
+*   [Dinâmico](#Gerenciadores_de_janela_dinâmicos) – os gerenciadores de janela podem trocar dinamicamente entre a disposição de janelas *tiling* ou flutuante. Para páginas disponíveis no Arch Wiki, veja [Category:Dynamic WMs](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs").
 
 Veja [Comparison of tiling window managers](/index.php/Comparison_of_tiling_window_managers "Comparison of tiling window managers") e [Wikipedia:Comparison of X window managers](https://en.wikipedia.org/wiki/Comparison_of_X_window_managers "wikipedia:Comparison of X window managers") para uma comparação entre gerenciadores de janelas.
 

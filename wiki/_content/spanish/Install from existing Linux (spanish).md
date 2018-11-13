@@ -17,13 +17,13 @@ Si el sistema anfitrión ejecuta Arch Linux, la instalación de los [arch-instal
 ## Contents
 
 *   [1 Efectuar chroot basado en Arch Linux](#Efectuar_chroot_basado_en_Arch_Linux)
-    *   [1.1 Método 1: Utilizar la imagen Bootstrap](#M.C3.A9todo_1:_Utilizar_la_imagen_Bootstrap)
-    *   [1.2 Método 2: Utilizar la imagen del LiveCD](#M.C3.A9todo_2:_Utilizar_la_imagen_del_LiveCD)
-    *   [1.3 Método 3: Montar manulamente el entorno chroot (con un script)](#M.C3.A9todo_3:_Montar_manulamente_el_entorno_chroot_.28con_un_script.29)
+    *   [1.1 Método 1: Utilizar la imagen Bootstrap](#Método_1:_Utilizar_la_imagen_Bootstrap)
+    *   [1.2 Método 2: Utilizar la imagen del LiveCD](#Método_2:_Utilizar_la_imagen_del_LiveCD)
+    *   [1.3 Método 3: Montar manulamente el entorno chroot (con un script)](#Método_3:_Montar_manulamente_el_entorno_chroot_(con_un_script))
     *   [1.4 Utilizar el entorno chroot](#Utilizar_el_entorno_chroot)
         *   [1.4.1 Inicializar pacman keyring](#Inicializar_pacman_keyring)
-        *   [1.4.2 Instalación](#Instalaci.C3.B3n)
-            *   [1.4.2.1 Anfitrión basado en Debian](#Anfitri.C3.B3n_basado_en_Debian)
+        *   [1.4.2 Instalación](#Instalación)
+            *   [1.4.2.1 Anfitrión basado en Debian](#Anfitrión_basado_en_Debian)
         *   [1.4.3 Configurar el sistema](#Configurar_el_sistema)
 *   [2 Sustituir el sistema existente sin un LiveCD](#Sustituir_el_sistema_existente_sin_un_LiveCD)
 

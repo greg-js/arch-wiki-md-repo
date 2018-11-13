@@ -5,12 +5,12 @@ Kodeky obecně využívají multimediální aplikace pro kódování nebo dekód
 ## Contents
 
 *   [1 Kodeky Gstreamer](#Kodeky_Gstreamer)
-*   [2 Užitečné multimediální přehrávače](#U.C5.BEite.C4.8Dn.C3.A9_multimedi.C3.A1ln.C3.AD_p.C5.99ehr.C3.A1va.C4.8De)
+*   [2 Užitečné multimediální přehrávače](#Užitečné_multimediální_přehrávače)
     *   [2.1 VLC](#VLC)
     *   [2.2 MPlayer](#MPlayer)
-*   [3 Další zdroje](#Dal.C5.A1.C3.AD_zdroje)
+*   [3 Další zdroje](#Další_zdroje)
     *   [3.1 codecs-all z archlinuxfr](#codecs-all_z_archlinuxfr)
-    *   [3.2 Přehrávání videí s posledními kodeky RealMedia (RV10...RV40)](#P.C5.99ehr.C3.A1v.C3.A1n.C3.AD_vide.C3.AD_s_posledn.C3.ADmi_kodeky_RealMedia_.28RV10...RV40.29)
+    *   [3.2 Přehrávání videí s posledními kodeky RealMedia (RV10...RV40)](#Přehrávání_videí_s_posledními_kodeky_RealMedia_(RV10...RV40))
 
 ## Kodeky Gstreamer
 

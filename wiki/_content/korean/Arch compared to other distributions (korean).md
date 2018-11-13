@@ -2,11 +2,11 @@
 
 ## Contents
 
-*   [1 소스-기반](#.EC.86.8C.EC.8A.A4-.EA.B8.B0.EB.B0.98)
-    *   [1.1 젠투](#.EC.A0.A0.ED.88.AC)
-    *   [1.2 소서러/루나-리눅스/소스메이지](#.EC.86.8C.EC.84.9C.EB.9F.AC.2F.EB.A3.A8.EB.82.98-.EB.A6.AC.EB.88.85.EC.8A.A4.2F.EC.86.8C.EC.8A.A4.EB.A9.94.EC.9D.B4.EC.A7.80)
+*   [1 소스-기반](#소스-기반)
+    *   [1.1 젠투](#젠투)
+    *   [1.2 소서러/루나-리눅스/소스메이지](#소서러/루나-리눅스/소스메이지)
     *   [1.3 Rock](#Rock)
-*   [2 최소주의](#.EC.B5.9C.EC.86.8C.EC.A3.BC.EC.9D.98)
+*   [2 최소주의](#최소주의)
     *   [2.1 LFS](#LFS)
     *   [2.2 CRUX](#CRUX)
     *   [2.3 Slackware](#Slackware)
@@ -16,12 +16,12 @@
     *   [3.3 Mandriva](#Mandriva)
     *   [3.4 SUSE](#SUSE)
     *   [3.5 PCLinuxOS](#PCLinuxOS)
-*   [4 The *BSDs](#The_.2ABSDs)
+*   [4 The *BSDs](#The_*BSDs)
     *   [4.1 FreeBSD](#FreeBSD)
     *   [4.2 NetBSD](#NetBSD)
     *   [4.3 OpenBSD](#OpenBSD)
 *   [5 Other](#Other)
-    *   [5.1 Debian GNU/Linux](#Debian_GNU.2FLinux)
+    *   [5.1 Debian GNU/Linux](#Debian_GNU/Linux)
     *   [5.2 Frugalware](#Frugalware)
 
 ## 소스-기반

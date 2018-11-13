@@ -9,27 +9,27 @@
 
 ## Contents
 
-*   [1 基於原始碼的發行版](#.E5.9F.BA.E6.96.BC.E5.8E.9F.E5.A7.8B.E7.A2.BC.E7.9A.84.E7.99.BC.E8.A1.8C.E7.89.88)
+*   [1 基於原始碼的發行版](#基於原始碼的發行版)
     *   [1.1 Gentoo Linux](#Gentoo_Linux)
-    *   [1.2 Sorcerer/Lunar-Linux/Source Mage](#Sorcerer.2FLunar-Linux.2FSource_Mage)
-*   [2 極簡化發行版](#.E6.A5.B5.E7.B0.A1.E5.8C.96.E7.99.BC.E8.A1.8C.E7.89.88)
+    *   [1.2 Sorcerer/Lunar-Linux/Source Mage](#Sorcerer/Lunar-Linux/Source_Mage)
+*   [2 極簡化發行版](#極簡化發行版)
     *   [2.1 LFS](#LFS)
     *   [2.2 CRUX](#CRUX)
     *   [2.3 Slackware](#Slackware)
-*   [3 通用發行版](#.E9.80.9A.E7.94.A8.E7.99.BC.E8.A1.8C.E7.89.88)
-    *   [3.1 Debian GNU/Linux](#Debian_GNU.2FLinux)
+*   [3 通用發行版](#通用發行版)
+    *   [3.1 Debian GNU/Linux](#Debian_GNU/Linux)
     *   [3.2 Fedora](#Fedora)
     *   [3.3 Frugalware](#Frugalware)
-*   [4 親近初學者的發行版](#.E8.A6.AA.E8.BF.91.E5.88.9D.E5.AD.B8.E8.80.85.E7.9A.84.E7.99.BC.E8.A1.8C.E7.89.88)
+*   [4 親近初學者的發行版](#親近初學者的發行版)
     *   [4.1 Ubuntu](#Ubuntu)
     *   [4.2 Mandriva](#Mandriva)
     *   [4.3 openSUSE](#openSUSE)
     *   [4.4 PCLinuxOS](#PCLinuxOS)
-*   [5 BSD 系列](#BSD_.E7.B3.BB.E5.88.97)
+*   [5 BSD 系列](#BSD_系列)
     *   [5.1 FreeBSD](#FreeBSD)
     *   [5.2 NetBSD](#NetBSD)
     *   [5.3 OpenBSD](#OpenBSD)
-*   [6 另請參閱](#.E5.8F.A6.E8.AB.8B.E5.8F.83.E9.96.B1)
+*   [6 另請參閱](#另請參閱)
 
 ## 基於原始碼的發行版
 

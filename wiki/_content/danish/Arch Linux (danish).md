@@ -1,11 +1,11 @@
 ## Contents
 
-*   [1 Hvad er Arch Linux?](#Hvad_er_Arch_Linux.3F)
+*   [1 Hvad er Arch Linux?](#Hvad_er_Arch_Linux?)
 *   [2 Fordele](#Fordele)
-*   [3 Unik pakkehåndtering](#Unik_pakkeh.C3.A5ndtering)
+*   [3 Unik pakkehåndtering](#Unik_pakkehåndtering)
 *   [4 Modernitet](#Modernitet)
 *   [5 Enkelthed](#Enkelthed)
-*   [6 Mere læsestof](#Mere_l.C3.A6sestof)
+*   [6 Mere læsestof](#Mere_læsestof)
 *   [7 I Danmark](#I_Danmark)
 
 ## Hvad er Arch Linux?

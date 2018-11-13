@@ -12,20 +12,20 @@ Related articles
 
 ## Contents
 
-*   [1 准备](#.E5.87.86.E5.A4.87)
-*   [2 服务器搭建](#.E6.9C.8D.E5.8A.A1.E5.99.A8.E6.90.AD.E5.BB.BA)
-    *   [2.1 网络](#.E7.BD.91.E7.BB.9C)
-    *   [2.2 DHCP + TFTP](#DHCP_.2B_TFTP)
+*   [1 准备](#准备)
+*   [2 服务器搭建](#服务器搭建)
+    *   [2.1 网络](#网络)
+    *   [2.2 DHCP + TFTP](#DHCP_+_TFTP)
     *   [2.3 HTTP](#HTTP)
-*   [3 安装](#.E5.AE.89.E8.A3.85)
-    *   [3.1 启动](#.E5.90.AF.E5.8A.A8)
-    *   [3.2 启动后工作](#.E5.90.AF.E5.8A.A8.E5.90.8E.E5.B7.A5.E4.BD.9C)
-*   [4 备用方法](#.E5.A4.87.E7.94.A8.E6.96.B9.E6.B3.95)
+*   [3 安装](#安装)
+    *   [3.1 启动](#启动)
+    *   [3.2 启动后工作](#启动后工作)
+*   [4 备用方法](#备用方法)
     *   [4.1 NFS](#NFS)
     *   [4.2 NBD](#NBD)
-    *   [4.3 已有的 PXE 服务器](#.E5.B7.B2.E6.9C.89.E7.9A.84_PXE_.E6.9C.8D.E5.8A.A1.E5.99.A8)
+    *   [4.3 已有的 PXE 服务器](#已有的_PXE_服务器)
     *   [4.4 DHCP interface rename bug](#DHCP_interface_rename_bug)
-    *   [4.5 小内存](#.E5.B0.8F.E5.86.85.E5.AD.98)
+    *   [4.5 小内存](#小内存)
 
 ## 准备
 
@@ -71,7 +71,7 @@ enable-tftp
 tftp-root=/mnt/archiso
 ```
 
-参见 `dnsmasq` [systemd 服务](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E5.8D.95.E5.85.83 "Systemd (简体中文)").
+参见 `dnsmasq` [systemd 服务](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#使用单元 "Systemd (简体中文)").
 
 ### HTTP
 
@@ -93,7 +93,7 @@ listening on: http://0.0.0.0:80/
 
 ### 启动
 
-通过[journald](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E6.97.A5.E5.BF.97 "Systemd (简体中文)")，可以查看 PXE 服务器早期 PXE 启动过程的信息：
+通过[journald](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#日志 "Systemd (简体中文)")，可以查看 PXE 服务器早期 PXE 启动过程的信息：
 
  `# journalctl -u dnsmasq -f` 
 ```
@@ -161,7 +161,7 @@ syslinux 菜单中暗含着其他方法：
 
 ### NFS
 
-您需搭建 [NFS 服务器](/index.php/NFS_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "NFS (简体中文)")并将安装镜像的挂载点作为出口（export）。如果您按照[#准备](#.E5.87.86.E5.A4.87) 段落做了的话，出口就是 `/mnt/archiso`。服务器搭建起来后，往 `/etc/exports` 写入这行：
+您需搭建 [NFS 服务器](/index.php/NFS_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "NFS (简体中文)")并将安装镜像的挂载点作为出口（export）。如果您按照[#准备](#准备) 段落做了的话，出口就是 `/mnt/archiso`。服务器搭建起来后，往 `/etc/exports` 写入这行：
 
  `/etc/exports`  `/mnt/archiso 192.168.0.0/24(ro,no_subtree_check)` 
 

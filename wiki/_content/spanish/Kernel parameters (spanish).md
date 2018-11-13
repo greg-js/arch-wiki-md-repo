@@ -8,15 +8,15 @@ Esta página explica con más detalle el segundo método y muestra una lista de 
 
 ## Contents
 
-*   [1 Configuración](#Configuraci.C3.B3n)
+*   [1 Configuración](#Configuración)
     *   [1.1 Syslinux](#Syslinux)
     *   [1.2 GRUB](#GRUB)
     *   [1.3 GRUB Legacy](#GRUB_Legacy)
     *   [1.4 LILO](#LILO)
     *   [1.5 Gummiboot](#Gummiboot)
     *   [1.6 rEFInd](#rEFInd)
-*   [2 Lista de parámetros](#Lista_de_par.C3.A1metros)
-*   [3 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [2 Lista de parámetros](#Lista_de_parámetros)
+*   [3 Véase también](#Véase_también)
 
 ## Configuración
 

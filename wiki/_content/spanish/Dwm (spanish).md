@@ -7,26 +7,26 @@ Artículos relacionados
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
     *   [1.1 Requerimientos](#Requerimientos)
-    *   [1.2 Descarga de los scripts de creación con ABS](#Descarga_de_los_scripts_de_creaci.C3.B3n_con_ABS)
-    *   [1.3 Creación e instalación del paquete](#Creaci.C3.B3n_e_instalaci.C3.B3n_del_paquete)
-*   [2 Configuración](#Configuraci.C3.B3n)
-    *   [2.1 Método 1: Re-crear con ABS (recomendado)](#M.C3.A9todo_1:_Re-crear_con_ABS_.28recomendado.29)
+    *   [1.2 Descarga de los scripts de creación con ABS](#Descarga_de_los_scripts_de_creación_con_ABS)
+    *   [1.3 Creación e instalación del paquete](#Creación_e_instalación_del_paquete)
+*   [2 Configuración](#Configuración)
+    *   [2.1 Método 1: Re-crear con ABS (recomendado)](#Método_1:_Re-crear_con_ABS_(recomendado))
         *   [2.1.1 Personalizando config.h](#Personalizando_config.h)
         *   [2.1.2 Notas](#Notas)
-    *   [2.2 Método 2: Mercurial (avanzado)](#M.C3.A9todo_2:_Mercurial_.28avanzado.29)
+    *   [2.2 Método 2: Mercurial (avanzado)](#Método_2:_Mercurial_(avanzado))
 *   [3 Iniciando dwm](#Iniciando_dwm)
-*   [4 Configuración de la barra de estado (statusbar)](#Configuraci.C3.B3n_de_la_barra_de_estado_.28statusbar.29)
-    *   [4.1 Barra de estado básica](#Barra_de_estado_b.C3.A1sica)
+*   [4 Configuración de la barra de estado (statusbar)](#Configuración_de_la_barra_de_estado_(statusbar))
+    *   [4.1 Barra de estado básica](#Barra_de_estado_básica)
     *   [4.2 Barra de estado con conky](#Barra_de_estado_con_conky)
 *   [5 Uso extendido](#Uso_extendido)
-    *   [5.1 Parches y modos de mosaico (tiling) adicionales](#Parches_y_modos_de_mosaico_.28tiling.29_adicionales)
-        *   [5.1.1 Habilitar un posicionamiento (layout) diferente por cada tag](#Habilitar_un_posicionamiento_.28layout.29_diferente_por_cada_tag)
+    *   [5.1 Parches y modos de mosaico (tiling) adicionales](#Parches_y_modos_de_mosaico_(tiling)_adicionales)
+        *   [5.1.1 Habilitar un posicionamiento (layout) diferente por cada tag](#Habilitar_un_posicionamiento_(layout)_diferente_por_cada_tag)
     *   [5.2 Eliminar espacios entre ventanas de las terminales](#Eliminar_espacios_entre_ventanas_de_las_terminales)
         *   [5.2.1 Urxvt](#Urxvt)
-    *   [5.3 Reiniciar dwm sin cerrar sesión y programas abiertos](#Reiniciar_dwm_sin_cerrar_sesi.C3.B3n_y_programas_abiertos)
-    *   [5.4 Deshabilitar el ganar foco con el ratón (mouse)](#Deshabilitar_el_ganar_foco_con_el_rat.C3.B3n_.28mouse.29)
+    *   [5.3 Reiniciar dwm sin cerrar sesión y programas abiertos](#Reiniciar_dwm_sin_cerrar_sesión_y_programas_abiertos)
+    *   [5.4 Deshabilitar el ganar foco con el ratón (mouse)](#Deshabilitar_el_ganar_foco_con_el_ratón_(mouse))
 *   [6 Recursos adicionales](#Recursos_adicionales)
 
 ## Instalación
@@ -92,7 +92,7 @@ Modificar la configuración de dwm es bastante sencillo utilizando éste procedi
 
 #### Personalizando config.h
 
-Busque y diríjase al directorio que contiene el código fuente de dwm utilizado durante la [instalación](#Instalaci.C3.B3n) (`~/dwm` en el ejemplo anterior). Dentro de ésta carpeta encontramos el archivo `config.h`, en el cual se almacenan las preferencias generales de configuración de dwm. La mayoría de las opciones que encontramos dentro de éste archivo deberían ser auto-descriptivas, pese a que algunas no compartan el mismo rasgo. Para una información detallada de éstas opciones, visite el [http://www.suckless.org/dwm/](http://www.suckless.org/dwm/) sitio de dwm].
+Busque y diríjase al directorio que contiene el código fuente de dwm utilizado durante la [instalación](#Instalación) (`~/dwm` en el ejemplo anterior). Dentro de ésta carpeta encontramos el archivo `config.h`, en el cual se almacenan las preferencias generales de configuración de dwm. La mayoría de las opciones que encontramos dentro de éste archivo deberían ser auto-descriptivas, pese a que algunas no compartan el mismo rasgo. Para una información detallada de éstas opciones, visite el [http://www.suckless.org/dwm/](http://www.suckless.org/dwm/) sitio de dwm].
 
 **Note:** Asegúrese de realizar una copia de respaldo del archivo `config.h`, en caso de que algo no funcione correctamente.
 
@@ -125,7 +125,7 @@ $ makepkg -efi --skipinteg
 
 ```
 
-Luego de agregar unas líneas al script de inicio de dwm, es posible [reiniciar dwm sin cerrar sesión y programas abiertos](#Reiniciar_dwm_sin_cerrar_sesi.C3.B3n_y_programas_abiertos).
+Luego de agregar unas líneas al script de inicio de dwm, es posible [reiniciar dwm sin cerrar sesión y programas abiertos](#Reiniciar_dwm_sin_cerrar_sesión_y_programas_abiertos).
 
 ### Método 2: Mercurial (avanzado)
 

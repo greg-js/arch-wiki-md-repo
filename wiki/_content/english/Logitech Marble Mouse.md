@@ -7,7 +7,7 @@ The **Logitech Marble Mouse** is a pointing device with four buttons and a track
 *   [3 Configuration](#Configuration)
     *   [3.1 Buttons and trackball](#Buttons_and_trackball)
         *   [3.1.1 Assigning buttons](#Assigning_buttons)
-        *   [3.1.2 "Both-large-buttons" combination-click](#.22Both-large-buttons.22_combination-click)
+        *   [3.1.2 "Both-large-buttons" combination-click](#"Both-large-buttons"_combination-click)
         *   [3.1.3 Scroll modifier](#Scroll_modifier)
     *   [3.2 Right-side or left-side](#Right-side_or_left-side)
     *   [3.3 System-wide or per-user](#System-wide_or_per-user)
@@ -23,7 +23,7 @@ The **Logitech Marble Mouse** is a pointing device with four buttons and a track
     *   [5.1 Using evdev](#Using_evdev)
     *   [5.2 Using libinput](#Using_libinput)
 *   [6 Additional tweaks](#Additional_tweaks)
-    *   [6.1 Console (gpm)](#Console_.28gpm.29)
+    *   [6.1 Console (gpm)](#Console_(gpm))
     *   [6.2 Chromium browser](#Chromium_browser)
     *   [6.3 Firefox browser](#Firefox_browser)
 *   [7 See also](#See_also)
@@ -82,7 +82,7 @@ You may find it helpful to simply jump to the [sample configuration](#Sample_con
 
 The configuration sections contain information which may not be of interest to you. Most Arch users will be using a modern version of the X server which requires udev hot plugging.
 
-**Note:** There is currently (as at May 2012) an issue with [Gnome 3 and middle click emulation](http://who-t.blogspot.com.au/2011/04/gnome-30-middle-mouse-button-emulation.html). See [#"Both-large-buttons" combination-click](#.22Both-large-buttons.22_combination-click) below.
+**Note:** There is currently (as at May 2012) an issue with [Gnome 3 and middle click emulation](http://who-t.blogspot.com.au/2011/04/gnome-30-middle-mouse-button-emulation.html). See [#"Both-large-buttons" combination-click](#"Both-large-buttons"_combination-click) below.
 
 Gnome 3 is used, for example, in Ubuntu 12.04.
 

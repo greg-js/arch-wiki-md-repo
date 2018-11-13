@@ -19,7 +19,7 @@ These [mirrors](/index.php/Mirrors "Mirrors") are *not* listed in `/etc/pacman.d
 *   [15 Thailand](#Thailand)
 *   [16 Turkey](#Turkey)
 *   [17 United States](#United_States)
-*   [18 Sourceforge (old ISOs)](#Sourceforge_.28old_ISOs.29)
+*   [18 Sourceforge (old ISOs)](#Sourceforge_(old_ISOs))
 
 ## Canada
 
@@ -47,6 +47,7 @@ These [mirrors](/index.php/Mirrors "Mirrors") are *not* listed in `/etc/pacman.d
 *   [http://mirrors.6.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.6.tuna.tsinghua.edu.cn/archlinux/) *(ipv6 only)*
 *   [http://mirror.lzu.edu.cn/archlinux/](http://mirror.lzu.edu.cn/archlinux/) - *Lanzhou University*
 *   [https://mirrors.nju.edu.cn/archlinux/](https://mirrors.nju.edu.cn/archlinux/) - *Nanjing University*
+*   [https://mirrors.zzu.edu.cn/archlinux/](https://mirrors.zzu.edu.cn/archlinux/) - *Zhengzhou University*
 
 ## France
 

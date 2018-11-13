@@ -12,41 +12,41 @@ Related articles
 
 ## Contents
 
-*   [1 systemd 基本工具](#systemd_.E5.9F.BA.E6.9C.AC.E5.B7.A5.E5.85.B7)
-    *   [1.1 分析系統狀態](#.E5.88.86.E6.9E.90.E7.B3.BB.E7.B5.B1.E7.8B.80.E6.85.8B)
-    *   [1.2 使用單元](#.E4.BD.BF.E7.94.A8.E5.96.AE.E5.85.83)
-    *   [1.3 電源管理](#.E9.9B.BB.E6.BA.90.E7.AE.A1.E7.90.86)
-*   [2 編寫單元檔案](#.E7.B7.A8.E5.AF.AB.E5.96.AE.E5.85.83.E6.AA.94.E6.A1.88)
-    *   [2.1 處理依賴關係](#.E8.99.95.E7.90.86.E4.BE.9D.E8.B3.B4.E9.97.9C.E4.BF.82)
-    *   [2.2 服務類型](#.E6.9C.8D.E5.8B.99.E9.A1.9E.E5.9E.8B)
-    *   [2.3 修改現有單元檔](#.E4.BF.AE.E6.94.B9.E7.8F.BE.E6.9C.89.E5.96.AE.E5.85.83.E6.AA.94)
-*   [3 目標（target）](#.E7.9B.AE.E6.A8.99.EF.BC.88target.EF.BC.89)
-    *   [3.1 获取當前目標](#.E8.8E.B7.E5.8F.96.E7.95.B6.E5.89.8D.E7.9B.AE.E6.A8.99)
-    *   [3.2 創建新目標](#.E5.89.B5.E5.BB.BA.E6.96.B0.E7.9B.AE.E6.A8.99)
-    *   [3.3 目標表](#.E7.9B.AE.E6.A8.99.E8.A1.A8)
-    *   [3.4 切换執行級別/目標](#.E5.88.87.E6.8D.A2.E5.9F.B7.E8.A1.8C.E7.B4.9A.E5.88.A5.2F.E7.9B.AE.E6.A8.99)
-    *   [3.5 修改預設執行級別/目標](#.E4.BF.AE.E6.94.B9.E9.A0.90.E8.A8.AD.E5.9F.B7.E8.A1.8C.E7.B4.9A.E5.88.A5.2F.E7.9B.AE.E6.A8.99)
-*   [4 臨時檔案](#.E8.87.A8.E6.99.82.E6.AA.94.E6.A1.88)
-*   [5 定時器](#.E5.AE.9A.E6.99.82.E5.99.A8)
-*   [6 日誌](#.E6.97.A5.E8.AA.8C)
-    *   [6.1 過濾輸出](#.E9.81.8E.E6.BF.BE.E8.BC.B8.E5.87.BA)
-    *   [6.2 日誌大小的限制](#.E6.97.A5.E8.AA.8C.E5.A4.A7.E5.B0.8F.E7.9A.84.E9.99.90.E5.88.B6)
-    *   [6.3 配合 syslog 使用](#.E9.85.8D.E5.90.88_syslog_.E4.BD.BF.E7.94.A8)
-    *   [6.4 手動清理日誌](#.E6.89.8B.E5.8B.95.E6.B8.85.E7.90.86.E6.97.A5.E8.AA.8C)
+*   [1 systemd 基本工具](#systemd_基本工具)
+    *   [1.1 分析系統狀態](#分析系統狀態)
+    *   [1.2 使用單元](#使用單元)
+    *   [1.3 電源管理](#電源管理)
+*   [2 編寫單元檔案](#編寫單元檔案)
+    *   [2.1 處理依賴關係](#處理依賴關係)
+    *   [2.2 服務類型](#服務類型)
+    *   [2.3 修改現有單元檔](#修改現有單元檔)
+*   [3 目標（target）](#目標（target）)
+    *   [3.1 获取當前目標](#获取當前目標)
+    *   [3.2 創建新目標](#創建新目標)
+    *   [3.3 目標表](#目標表)
+    *   [3.4 切换執行級別/目標](#切换執行級別/目標)
+    *   [3.5 修改預設執行級別/目標](#修改預設執行級別/目標)
+*   [4 臨時檔案](#臨時檔案)
+*   [5 定時器](#定時器)
+*   [6 日誌](#日誌)
+    *   [6.1 過濾輸出](#過濾輸出)
+    *   [6.2 日誌大小的限制](#日誌大小的限制)
+    *   [6.3 配合 syslog 使用](#配合_syslog_使用)
+    *   [6.4 手動清理日誌](#手動清理日誌)
     *   [6.5 Journald in conjunction with syslog](#Journald_in_conjunction_with_syslog)
-    *   [6.6 轉送 journald 到 /dev/tty12](#.E8.BD.89.E9.80.81_journald_.E5.88.B0_.2Fdev.2Ftty12)
-    *   [6.7 查看特定位置的日誌](#.E6.9F.A5.E7.9C.8B.E7.89.B9.E5.AE.9A.E4.BD.8D.E7.BD.AE.E7.9A.84.E6.97.A5.E8.AA.8C)
-*   [7 疑難解答](#.E7.96.91.E9.9B.A3.E8.A7.A3.E7.AD.94)
-    *   [7.1 尋找錯誤](#.E5.B0.8B.E6.89.BE.E9.8C.AF.E8.AA.A4)
-    *   [7.2 診斷開機問題](#.E8.A8.BA.E6.96.B7.E9.96.8B.E6.A9.9F.E5.95.8F.E9.A1.8C)
-    *   [7.3 診斷一个特定服務](#.E8.A8.BA.E6.96.B7.E4.B8.80.E4.B8.AA.E7.89.B9.E5.AE.9A.E6.9C.8D.E5.8B.99)
-    *   [7.4 關機/重啟十分緩慢](#.E9.97.9C.E6.A9.9F.2F.E9.87.8D.E5.95.9F.E5.8D.81.E5.88.86.E7.B7.A9.E6.85.A2)
-    *   [7.5 短時處理程序無日誌記錄](#.E7.9F.AD.E6.99.82.E8.99.95.E7.90.86.E7.A8.8B.E5.BA.8F.E7.84.A1.E6.97.A5.E8.AA.8C.E8.A8.98.E9.8C.84)
-    *   [7.6 禁止在程序崩溃时转储内存](#.E7.A6.81.E6.AD.A2.E5.9C.A8.E7.A8.8B.E5.BA.8F.E5.B4.A9.E6.BA.83.E6.97.B6.E8.BD.AC.E5.82.A8.E5.86.85.E5.AD.98)
-    *   [7.7 啟動時間太長](#.E5.95.9F.E5.8B.95.E6.99.82.E9.96.93.E5.A4.AA.E9.95.B7)
-    *   [7.8 systemd-tmpfiles-setup.service 在啟動時啟動失敗](#systemd-tmpfiles-setup.service_.E5.9C.A8.E5.95.9F.E5.8B.95.E6.99.82.E5.95.9F.E5.8B.95.E5.A4.B1.E6.95.97)
-    *   [7.9 不能設定在開機時启动軟連結到 /etc/systemd/system 的服務](#.E4.B8.8D.E8.83.BD.E8.A8.AD.E5.AE.9A.E5.9C.A8.E9.96.8B.E6.A9.9F.E6.99.82.E5.90.AF.E5.8A.A8.E8.BB.9F.E9.80.A3.E7.B5.90.E5.88.B0_.2Fetc.2Fsystemd.2Fsystem_.E7.9A.84.E6.9C.8D.E5.8B.99)
-*   [8 相關資源](#.E7.9B.B8.E9.97.9C.E8.B3.87.E6.BA.90)
+    *   [6.6 轉送 journald 到 /dev/tty12](#轉送_journald_到_/dev/tty12)
+    *   [6.7 查看特定位置的日誌](#查看特定位置的日誌)
+*   [7 疑難解答](#疑難解答)
+    *   [7.1 尋找錯誤](#尋找錯誤)
+    *   [7.2 診斷開機問題](#診斷開機問題)
+    *   [7.3 診斷一个特定服務](#診斷一个特定服務)
+    *   [7.4 關機/重啟十分緩慢](#關機/重啟十分緩慢)
+    *   [7.5 短時處理程序無日誌記錄](#短時處理程序無日誌記錄)
+    *   [7.6 禁止在程序崩溃时转储内存](#禁止在程序崩溃时转储内存)
+    *   [7.7 啟動時間太長](#啟動時間太長)
+    *   [7.8 systemd-tmpfiles-setup.service 在啟動時啟動失敗](#systemd-tmpfiles-setup.service_在啟動時啟動失敗)
+    *   [7.9 不能設定在開機時启动軟連結到 /etc/systemd/system 的服務](#不能設定在開機時启动軟連結到_/etc/systemd/system_的服務)
+*   [8 相關資源](#相關資源)
 
 ## systemd 基本工具
 
@@ -257,7 +257,7 @@ $ systemctl hybrid-sleep
 
 使用systemd时，可通過正確編寫單元檔來解決其依賴關係。典型的情況是，單元`A`要求單元`B`在`A`啟動之前執行。在此情況下，向單元`A`設定檔中的 `[Unit]` 段添加 `Requires=B` 和 `After=B` 即可。若此依賴關係是可选的，可添加 `Wants=B` 和 `After=B`。請注意 `Wants=` 和 `Requires=` 並不意味着 `After=`，即如果 `After=` 選項沒有制定，這兩個單元將被並行啟動。
 
-依賴關係通常被用在服務（service）而不是[目標（target）](#.E7.9B.AE.E6.A8.99.EF.BC.88target.EF.BC.89)上。例如， `network.target` 一般會被某个配置網路介面的服務引入，所以，將自訂的單元排在該服務之後即可，因為 `network.target` 已經啟動。
+依賴關係通常被用在服務（service）而不是[目標（target）](#目標（target）)上。例如， `network.target` 一般會被某个配置網路介面的服務引入，所以，將自訂的單元排在該服務之後即可，因為 `network.target` 已經啟動。
 
 ### 服務類型
 
@@ -401,7 +401,7 @@ w /proc/acpi/wakeup - - - - USBE
 
 詳情參見`systemd-tmpfiles(8)` 和 [tmpfiles.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tmpfiles.d.5)。
 
-**注意:** 該方法不能向 `/sys` 中的設定檔加入參數，因為 `systemd-tmpfiles-setup` 有可能在相關模組載入前運行。這種情況下，需要首先通過 `modinfo <模組名>` 確認需要的參數，並在 [`/etc/modprobe.d` 下的一个檔案](/index.php/Kernel_modules#Options "Kernel modules")中設置改參數。另外，還可以使用 [udev 規則](/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#udev.E8.A6.8F.E5.89.87 "Udev (简体中文)")，在設備就緒時設定相應屬性。
+**注意:** 該方法不能向 `/sys` 中的設定檔加入參數，因為 `systemd-tmpfiles-setup` 有可能在相關模組載入前運行。這種情況下，需要首先通過 `modinfo <模組名>` 確認需要的參數，並在 [`/etc/modprobe.d` 下的一个檔案](/index.php/Kernel_modules#Options "Kernel modules")中設置改參數。另外，還可以使用 [udev 規則](/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#udev規則 "Udev (简体中文)")，在設備就緒時設定相應屬性。
 
 ## 定時器
 
@@ -418,7 +418,7 @@ systemd 提供了自己的日誌系統（logging system），稱為 [journald](/
 
 預設情況下（當 `Storage=` 在檔案 `/etc/systemd/journald.conf` 中被設定為 `auto`），日誌記錄将被寫入 `/var/log/journal/`。該目錄是 [systemd](https://www.archlinux.org/packages/?name=systemd) 軟體包的一部分。若被删除，systemd **不會**自動創建它，直到下次升級軟體包时重建該目錄。如果該目錄缺失，systemd 會將日誌記錄寫入 `/run/systemd/journal`。這意味著，系統重啟後日誌將丟失。
 
-**Tip:** 如果 `/var/log/journal/` 位于 [btrfs](/index.php/Btrfs "Btrfs") 檔案系統，應該考慮對這個目錄禁用寫入時複製（COW，Copy On Write），參閱[Btrfs#Copy-on-Write (CoW)](/index.php/Btrfs#Copy-on-Write_.28CoW.29 "Btrfs").
+**Tip:** 如果 `/var/log/journal/` 位于 [btrfs](/index.php/Btrfs "Btrfs") 檔案系統，應該考慮對這個目錄禁用寫入時複製（COW，Copy On Write），參閱[Btrfs#Copy-on-Write (CoW)](/index.php/Btrfs#Copy-on-Write_(CoW) "Btrfs").
 
 ### 過濾輸出
 
@@ -595,7 +595,7 @@ systemd-modules-load.service - Load Kernel Modules
 Aug 25 12:22:31 mypc systemd[1]: **Started Load Kernel Modules**.
 ```
 
-參閱 [#診斷開機問題](#.E8.A8.BA.E6.96.B7.E9.96.8B.E6.A9.9F.E5.95.8F.E9.A1.8C) 一節获得更多探查錯誤的方法.
+參閱 [#診斷開機問題](#診斷開機問題) 一節获得更多探查錯誤的方法.
 
 ### 診斷開機問題
 
@@ -623,7 +623,7 @@ Environment=SYSTEMD_LOG_LEVEL=debug
 ....
 ```
 
-如果經常需要偵錯資訊,以[一般方法](#.E4.BF.AE.E6.94.B9.E7.8F.BE.E6.9C.89.E5.96.AE.E5.85.83.E6.AA.94)增加環境變數.
+如果經常需要偵錯資訊,以[一般方法](#修改現有單元檔)增加環境變數.
 
 ### 關機/重啟十分緩慢
 

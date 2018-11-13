@@ -2,9 +2,9 @@
 
 ## Contents
 
-*   [1 安裝](#.E5.AE.89.E8.A3.9D)
-    *   [1.1 開啟multilib](#.E9.96.8B.E5.95.9Fmultilib)
-    *   [1.2 安裝 wine](#.E5.AE.89.E8.A3.9D_wine)
+*   [1 安裝](#安裝)
+    *   [1.1 開啟multilib](#開啟multilib)
+    *   [1.2 安裝 wine](#安裝_wine)
     *   [1.3 Architectural differences](#Architectural_differences)
 *   [2 Configuration](#Configuration)
     *   [2.1 Using WINEARCH](#Using_WINEARCH)
@@ -13,7 +13,7 @@
     *   [2.4 Fonts](#Fonts)
     *   [2.5 Desktop Launcher Menus](#Desktop_Launcher_Menus)
         *   [2.5.1 Creating Menu Entries](#Creating_Menu_Entries)
-        *   [2.5.2 KDE 4 Menu Fix[1]](#KDE_4_Menu_Fix.5B1.5D)
+        *   [2.5.2 KDE 4 Menu Fix[1]](#KDE_4_Menu_Fix[1])
 *   [3 Running Windows Applications](#Running_Windows_Applications)
 *   [4 Tips and Tricks](#Tips_and_Tricks)
     *   [4.1 Installing Microsoft Office 2007](#Installing_Microsoft_Office_2007)
@@ -21,12 +21,12 @@
     *   [4.3 PlayOnLinux](#PlayOnLinux)
     *   [4.4 PyWinery](#PyWinery)
     *   [4.5 Sidenet Wine Configuration Utility](#Sidenet_Wine_Configuration_Utility)
-    *   [4.6 Using Wine as an interpreter for Win16/Win32 binaries](#Using_Wine_as_an_interpreter_for_Win16.2FWin32_binaries)
+    *   [4.6 Using Wine as an interpreter for Win16/Win32 binaries](#Using_Wine_as_an_interpreter_for_Win16/Win32_binaries)
     *   [4.7 Wineconsole](#Wineconsole)
     *   [4.8 Wine-doors](#Wine-doors)
     *   [4.9 WineTools assistant](#WineTools_assistant)
     *   [4.10 Winetricks](#Winetricks)
-*   [5 Alternatives to Win16 / Win32 binaries](#Alternatives_to_Win16_.2F_Win32_binaries)
+*   [5 Alternatives to Win16 / Win32 binaries](#Alternatives_to_Win16_/_Win32_binaries)
 *   [6 External Resources](#External_Resources)
 
 ## 安裝

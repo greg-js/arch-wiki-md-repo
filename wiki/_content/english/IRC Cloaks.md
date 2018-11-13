@@ -2,7 +2,7 @@
 
 *   [1 Developers](#Developers)
 *   [2 Trusted Users](#Trusted_Users)
-*   [3 Who needs cloaks?](#Who_needs_cloaks.3F)
+*   [3 Who needs cloaks?](#Who_needs_cloaks?)
     *   [3.1 Trusted Users](#Trusted_Users_2)
 
 ## Developers

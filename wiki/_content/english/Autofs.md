@@ -11,7 +11,7 @@ AutoFS provides automounting of removable media or network shares when they are 
         *   [2.3.1 Single shares](#Single_shares)
         *   [2.3.2 Multiple shares](#Multiple_shares)
         *   [2.3.3 Auto discovery](#Auto_discovery)
-    *   [2.4 FTP and SSH (with FUSE)](#FTP_and_SSH_.28with_FUSE.29)
+    *   [2.4 FTP and SSH (with FUSE)](#FTP_and_SSH_(with_FUSE))
         *   [2.4.1 Remote FTP](#Remote_FTP)
         *   [2.4.2 Remote SSH](#Remote_SSH)
 *   [3 MTP](#MTP)

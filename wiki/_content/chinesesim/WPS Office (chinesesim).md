@@ -2,16 +2,16 @@
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
-    *   [2.1 修改 WPS 文件图标以及文件关联](#.E4.BF.AE.E6.94.B9_WPS_.E6.96.87.E4.BB.B6.E5.9B.BE.E6.A0.87.E4.BB.A5.E5.8F.8A.E6.96.87.E4.BB.B6.E5.85.B3.E8.81.94)
-    *   [2.2 使用 GTK+ UI](#.E4.BD.BF.E7.94.A8_GTK.2B_UI)
-*   [3 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
-    *   [3.1 Office WPS for Linux 的启动命令是什么](#Office_WPS_for_Linux_.E7.9A.84.E5.90.AF.E5.8A.A8.E5.91.BD.E4.BB.A4.E6.98.AF.E4.BB.80.E4.B9.88)
-    *   [3.2 Zip 模板压缩包乱码](#Zip_.E6.A8.A1.E6.9D.BF.E5.8E.8B.E7.BC.A9.E5.8C.85.E4.B9.B1.E7.A0.81)
-    *   [3.3 公式无法正常显示](#.E5.85.AC.E5.BC.8F.E6.97.A0.E6.B3.95.E6.AD.A3.E5.B8.B8.E6.98.BE.E7.A4.BA)
-    *   [3.4 KDE中Microsoft Office文件格式被识别为Zip](#KDE.E4.B8.ADMicrosoft_Office.E6.96.87.E4.BB.B6.E6.A0.BC.E5.BC.8F.E8.A2.AB.E8.AF.86.E5.88.AB.E4.B8.BAZip)
-*   [4 参见](#.E5.8F.82.E8.A7.81)
+*   [1 安装](#安装)
+*   [2 提示与技巧](#提示与技巧)
+    *   [2.1 修改 WPS 文件图标以及文件关联](#修改_WPS_文件图标以及文件关联)
+    *   [2.2 使用 GTK+ UI](#使用_GTK+_UI)
+*   [3 疑难解答](#疑难解答)
+    *   [3.1 Office WPS for Linux 的启动命令是什么](#Office_WPS_for_Linux_的启动命令是什么)
+    *   [3.2 Zip 模板压缩包乱码](#Zip_模板压缩包乱码)
+    *   [3.3 公式无法正常显示](#公式无法正常显示)
+    *   [3.4 KDE中Microsoft Office文件格式被识别为Zip](#KDE中Microsoft_Office文件格式被识别为Zip)
+*   [4 参见](#参见)
 
 ## 安装
 

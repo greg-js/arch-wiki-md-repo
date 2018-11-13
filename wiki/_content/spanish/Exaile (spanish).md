@@ -1,12 +1,12 @@
 ## Contents
 
-*   [1 Descripción](#Descripci.C3.B3n)
+*   [1 Descripción](#Descripción)
 *   [2 Instalacion](#Instalacion)
-*   [3 Activando Imágenes de álbum, Letras de canciones y tablaturas de guitarra](#Activando_Im.C3.A1genes_de_.C3.A1lbum.2C_Letras_de_canciones_y_tablaturas_de_guitarra)
+*   [3 Activando Imágenes de álbum, Letras de canciones y tablaturas de guitarra](#Activando_Imágenes_de_álbum,_Letras_de_canciones_y_tablaturas_de_guitarra)
 *   [4 Tocando CD de Audio](#Tocando_CD_de_Audio)
 *   [5 Problemas Conocidos](#Problemas_Conocidos)
     *   [5.1 Barra de progreso se detiene en 0:00](#Barra_de_progreso_se_detiene_en_0:00)
-    *   [5.2 "Playback error encountered! Configured audiosink bin0 is not working"](#.22Playback_error_encountered.21_Configured_audiosink_bin0_is_not_working.22)
+    *   [5.2 "Playback error encountered! Configured audiosink bin0 is not working"](#"Playback_error_encountered!_Configured_audiosink_bin0_is_not_working")
     *   [5.3 Tocando Archivos desde carpetas compartidas por SMB](#Tocando_Archivos_desde_carpetas_compartidas_por_SMB)
 
 # Descripción

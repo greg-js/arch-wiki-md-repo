@@ -17,9 +17,9 @@ Debido a que el kernel de GNU, [Hurd](https://www.gnu.org/s/hurd/hurd.html), no 
 *   [1 Texinfo](#Texinfo)
 *   [2 Sistema Base](#Sistema_Base)
 *   [3 Toolchain](#Toolchain)
-    *   [3.1 Sistema de construcción](#Sistema_de_construcci.C3.B3n)
+    *   [3.1 Sistema de construcción](#Sistema_de_construcción)
 *   [4 Otros programas](#Otros_programas)
-*   [5 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [5 Véase también](#Véase_también)
 
 ## Texinfo
 

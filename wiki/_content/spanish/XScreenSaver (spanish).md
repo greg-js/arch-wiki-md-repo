@@ -1,8 +1,8 @@
 ## Contents
 
-*   [1 Configuración](#Configuraci.C3.B3n)
+*   [1 Configuración](#Configuración)
 *   [2 Arrancando Xscreensaver](#Arrancando_Xscreensaver)
-    *   [2.1 Ejemplo de ~/.xinitrc](#Ejemplo_de_.7E.2F.xinitrc)
+    *   [2.1 Ejemplo de ~/.xinitrc](#Ejemplo_de_~/.xinitrc)
 *   [3 bloquear pantalla](#bloquear_pantalla)
 
 ## Configuración

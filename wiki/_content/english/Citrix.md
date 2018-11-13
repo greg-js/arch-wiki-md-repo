@@ -5,7 +5,7 @@
 *   [1 Installation](#Installation)
     *   [1.1 Google Chromium](#Google_Chromium)
     *   [1.2 Manual installation](#Manual_installation)
-*   [2 TLS/SSL Certificates](#TLS.2FSSL_Certificates)
+*   [2 TLS/SSL Certificates](#TLS/SSL_Certificates)
 *   [3 Audio Support](#Audio_Support)
 *   [4 Troubleshooting](#Troubleshooting)
 

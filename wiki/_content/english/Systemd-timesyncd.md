@@ -49,7 +49,7 @@ NTPMessage={ Leap=0, Version=4, Mode=4, Stratum=2, Precision=-21, RootDelay=177.
 Frequency=22520548
 ```
 
-Further to the daemon configuration, NTP servers may also be provided via a [systemd-networkd](/index.php/Systemd-networkd#.5BNetDev.5D_section "Systemd-networkd") configuration with a `NTP=` option or, dynamically, via a DHCP server.
+Further to the daemon configuration, NTP servers may also be provided via a [systemd-networkd](/index.php/Systemd-networkd#[NetDev]_section "Systemd-networkd") configuration with a `NTP=` option or, dynamically, via a DHCP server.
 
 The NTP server to be used will be determined using the following rules:
 

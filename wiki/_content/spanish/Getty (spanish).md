@@ -9,14 +9,14 @@ Un [getty](https://en.wikipedia.org/wiki/getty_(Unix) "w:getty (Unix)") es el no
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Añadir consolas virtuales adicionales](#A.C3.B1adir_consolas_virtuales_adicionales)
-*   [3 Inicio de sesión automático a la consola virtual](#Inicio_de_sesi.C3.B3n_autom.C3.A1tico_a_la_consola_virtual)
+*   [1 Instalación](#Instalación)
+*   [2 Añadir consolas virtuales adicionales](#Añadir_consolas_virtuales_adicionales)
+*   [3 Inicio de sesión automático a la consola virtual](#Inicio_de_sesión_automático_a_la_consola_virtual)
     *   [3.1 Consola virtual](#Consola_virtual)
     *   [3.2 Consola serie](#Consola_serie)
     *   [3.3 Consola Nspawn](#Consola_Nspawn)
 *   [4 Mantener los mensajes de arranque en tty1](#Mantener_los_mensajes_de_arranque_en_tty1)
-*   [5 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [5 Véase también](#Véase_también)
 
 ## Instalación
 
@@ -68,7 +68,7 @@ ExecStart=-/usr/bin/agetty --autologin *username* --noclear %I $TERM
 
 **Sugerencia:** La opción `Type=idle` que se encuentra en el `getty@.service` predeterminado retrasará el inicio del servicio hasta que todos los trabajos (solicitudes de cambio de estado a las unidades) se completen en orden para evitar contaminar el mensaje de inicio de sesión con mensajes de arranque. Cuando [inicie X automáticamente](/index.php/Start_X_at_login_(Espa%C3%B1ol) "Start X at login (Español)"), puede ser útil iniciar `getty@tty1.service` inmediatamente añadiendo `Type=simple` en la [fragmento de entrada](/index.php/Drop-in_snippet_(Espa%C3%B1ol) "Drop-in snippet (Español)"). Tanto el sistema init como *startx* pueden ser [silenciados](/index.php/Silent_boot "Silent boot") para evitar el intercalado de sus mensajes durante el arranque.
 
-Si desea utilizar un *tty* distinto a *tty1*, véase el [FAQ de systemd](/index.php/Systemd_FAQ_(Espa%C3%B1ol)#.C2.BFC.C3.B3mo_puedo_cambiar_el_n.C3.BAmero_de_gettys_ejecutadas_por_defecto.3F "Systemd FAQ (Español)").
+Si desea utilizar un *tty* distinto a *tty1*, véase el [FAQ de systemd](/index.php/Systemd_FAQ_(Espa%C3%B1ol)#¿Cómo_puedo_cambiar_el_número_de_gettys_ejecutadas_por_defecto? "Systemd FAQ (Español)").
 
 ### Consola serie
 

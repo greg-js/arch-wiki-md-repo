@@ -26,7 +26,7 @@
     *   [5.2 Backlight](#Backlight)
     *   [5.3 Battery](#Battery)
 *   [6 Graphics](#Graphics)
-*   [7 Rotation/Conversion](#Rotation.2FConversion)
+*   [7 Rotation/Conversion](#Rotation/Conversion)
 *   [8 See also](#See_also)
 
 ## Installation

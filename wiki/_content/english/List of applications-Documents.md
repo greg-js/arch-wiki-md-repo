@@ -990,6 +990,8 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 ###### Manipulation
 
+This section lists applications dedicated to lossless PDF manipulation. Note that other applications like [LibreOffice](/index.php/LibreOffice "LibreOffice"), [Inkscape](/index.php/Inkscape "Inkscape"), [Gimp](/index.php/Gimp "Gimp") or [krita](https://www.archlinux.org/packages/?name=krita) can also import and export PDFs.
+
 *   **Master PDF Editor** — Functional proprietary PDF editor. Free for non-commercial use.
 
 	[https://code-industry.net/free-pdf-editor/](https://code-industry.net/free-pdf-editor/) || [masterpdfeditor](https://aur.archlinux.org/packages/masterpdfeditor/)

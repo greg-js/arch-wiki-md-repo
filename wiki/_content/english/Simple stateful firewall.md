@@ -23,7 +23,7 @@ This page explains how to set up a [stateful](https://en.wikipedia.org/wiki/Stat
         *   [2.6.1 Opening ports to incoming connections](#Opening_ports_to_incoming_connections)
         *   [2.6.2 Port knocking](#Port_knocking)
     *   [2.7 Protection against spoofing attacks](#Protection_against_spoofing_attacks)
-    *   [2.8 "Hide" your computer](#.22Hide.22_your_computer)
+    *   [2.8 "Hide" your computer](#"Hide"_your_computer)
         *   [2.8.1 Block ping request](#Block_ping_request)
         *   [2.8.2 Tricking port scanners](#Tricking_port_scanners)
             *   [2.8.2.1 SYN scans](#SYN_scans)
@@ -391,7 +391,7 @@ If either or both of the portscanning tricks above were used, the final default 
 
 ### Protection against other attacks
 
-See the [sysctl#TCP/IP stack hardening](/index.php/Sysctl#TCP.2FIP_stack_hardening "Sysctl") for relevant kernel parameters.
+See the [sysctl#TCP/IP stack hardening](/index.php/Sysctl#TCP/IP_stack_hardening "Sysctl") for relevant kernel parameters.
 
 #### Bruteforce attacks
 

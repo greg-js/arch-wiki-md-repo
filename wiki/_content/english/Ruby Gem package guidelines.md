@@ -14,7 +14,7 @@ Writing [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") for software written in [Rub
 *   [3 Notes](#Notes)
     *   [3.1 Quarry](#Quarry)
 *   [4 Gotchas](#Gotchas)
-    *   [4.1 Package contains reference to $pkgdir](#Package_contains_reference_to_.24pkgdir)
+    *   [4.1 Package contains reference to $pkgdir](#Package_contains_reference_to_$pkgdir)
 
 ## Package naming
 

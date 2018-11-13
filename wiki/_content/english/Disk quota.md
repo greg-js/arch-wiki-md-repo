@@ -11,7 +11,7 @@ This article covers the installation and setup of disk quota.
     *   [2.1 Setup the filesystem](#Setup_the_filesystem)
     *   [2.2 Create quota index](#Create_quota_index)
 *   [3 Usage](#Usage)
-    *   [3.1 Enable quota for user/group](#Enable_quota_for_user.2Fgroup)
+    *   [3.1 Enable quota for user/group](#Enable_quota_for_user/group)
     *   [3.2 Specify a grace period](#Specify_a_grace_period)
     *   [3.3 Reports](#Reports)
     *   [3.4 Copy quota settings](#Copy_quota_settings)

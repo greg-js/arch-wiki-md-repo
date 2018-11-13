@@ -24,17 +24,17 @@ As of kernel 4.3, the Intel Skylake architecture is supported.
 *   [2 Boot Parameters](#Boot_Parameters)
 *   [3 Graphics Configuration](#Graphics_Configuration)
     *   [3.1 Intel Only](#Intel_Only)
-    *   [3.2 Optimus Configuration (Hybrid Intel and Nvidia)](#Optimus_Configuration_.28Hybrid_Intel_and_Nvidia.29)
+    *   [3.2 Optimus Configuration (Hybrid Intel and Nvidia)](#Optimus_Configuration_(Hybrid_Intel_and_Nvidia))
 *   [4 Touchpad](#Touchpad)
     *   [4.1 Gestures](#Gestures)
 *   [5 Power Management](#Power_Management)
-    *   [5.1 Suspend & Hibernate](#Suspend_.26_Hibernate)
+    *   [5.1 Suspend & Hibernate](#Suspend_&_Hibernate)
     *   [5.2 Battery](#Battery)
     *   [5.3 Fans](#Fans)
 *   [6 Bluetooth](#Bluetooth)
 *   [7 Thunderbolt 3 Docks](#Thunderbolt_3_Docks)
-*   [8 USB-C / Thunderbolt 3 Compatibility Chart](#USB-C_.2F_Thunderbolt_3_Compatibility_Chart)
-*   [9 BIOS/firmware Updates](#BIOS.2Ffirmware_Updates)
+*   [8 USB-C / Thunderbolt 3 Compatibility Chart](#USB-C_/_Thunderbolt_3_Compatibility_Chart)
+*   [9 BIOS/firmware Updates](#BIOS/firmware_Updates)
 
 ## Pre-Installation System Settings
 

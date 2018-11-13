@@ -7,7 +7,7 @@ Jupyter Notebook es la aplicación tradicional y la más estable . [JupyterLab](
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
 *   [2 Puesta en marcha](#Puesta_en_marcha)
 *   [3 Kernels](#Kernels)
     *   [3.1 Haskell](#Haskell)
@@ -16,7 +16,7 @@ Jupyter Notebook es la aplicación tradicional y la más estable . [JupyterLab](
     *   [3.4 R](#R)
     *   [3.5 Sage math](#Sage_math)
     *   [3.6 Octave](#Octave)
-*   [4 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [4 Véase también](#Véase_también)
 
 ## Instalación
 

@@ -5,11 +5,11 @@ Del [sitio web oficial](http://aspell.net/): "GNU Aspell es un corrector ortogr�
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Utilización](#Utilizaci.C3.B3n)
-*   [3 Solución de problemas](#Soluci.C3.B3n_de_problemas)
-    *   [3.1 Todo el texto está marcado como mal escrito](#Todo_el_texto_est.C3.A1_marcado_como_mal_escrito)
-*   [4 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [1 Instalación](#Instalación)
+*   [2 Utilización](#Utilización)
+*   [3 Solución de problemas](#Solución_de_problemas)
+    *   [3.1 Todo el texto está marcado como mal escrito](#Todo_el_texto_está_marcado_como_mal_escrito)
+*   [4 Véase también](#Véase_también)
 
 ## Instalación
 

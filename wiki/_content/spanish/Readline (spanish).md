@@ -5,17 +5,17 @@ Este artículo es una traducción de [Readline](/index.php/Readline "Readline"),
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Modo de edición](#Modo_de_edici.C3.B3n)
+*   [1 Instalación](#Instalación)
+*   [2 Modo de edición](#Modo_de_edición)
     *   [2.1 Indicador de modo en el prompt](#Indicador_de_modo_en_el_prompt)
     *   [2.2 Diferentes formas de cursor para cada modo](#Diferentes_formas_de_cursor_para_cada_modo)
-*   [3 Movimiento rápido entre palabras](#Movimiento_r.C3.A1pido_entre_palabras)
+*   [3 Movimiento rápido entre palabras](#Movimiento_rápido_entre_palabras)
 *   [4 Historial](#Historial)
-*   [5 Completado más rápido](#Completado_m.C3.A1s_r.C3.A1pido)
+*   [5 Completado más rápido](#Completado_más_rápido)
 *   [6 Colores en el completado](#Colores_en_el_completado)
 *   [7 Macros](#Macros)
 *   [8 Desactivando el control de eco](#Desactivando_el_control_de_eco)
-*   [9 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [9 Véase también](#Véase_también)
 
 ## Instalación
 

@@ -10,20 +10,20 @@ Isso pode ser feito em um modo de gravação *(write-mode)* destrutivo que efeti
 
 ## Contents
 
-*   [1 Instalação](#Instala.C3.A7.C3.A3o)
+*   [1 Instalação](#Instalação)
 *   [2 Fidelidade do dispositivo de armazenamento](#Fidelidade_do_dispositivo_de_armazenamento)
-*   [3 Comparações com outros programas](#Compara.C3.A7.C3.B5es_com_outros_programas)
+*   [3 Comparações com outros programas](#Comparações_com_outros_programas)
 *   [4 Testando por setores ruins](#Testando_por_setores_ruins)
-    *   [4.1 Teste de leitura-gravação (aviso:destrutivo)](#Teste_de_leitura-grava.C3.A7.C3.A3o_.28aviso:destrutivo.29)
-        *   [4.1.1 Defina padrão de teste específico](#Defina_padr.C3.A3o_de_teste_espec.C3.ADfico)
-            *   [4.1.1.1 Padrão aleatório](#Padr.C3.A3o_aleat.C3.B3rio)
-    *   [4.2 Teste de leitura-gravação (não-destrutivo)](#Teste_de_leitura-grava.C3.A7.C3.A3o_.28n.C3.A3o-destrutivo.29)
-*   [5 Faça o sistema de arquivos incorporar setores ruins](#Fa.C3.A7a_o_sistema_de_arquivos_incorporar_setores_ruins)
-    *   [5.1 Durante a verificação de sistema de arquivos](#Durante_a_verifica.C3.A7.C3.A3o_de_sistema_de_arquivos)
-    *   [5.2 Antes da criação do sistema de arquivos](#Antes_da_cria.C3.A7.C3.A3o_do_sistema_de_arquivos)
+    *   [4.1 Teste de leitura-gravação (aviso:destrutivo)](#Teste_de_leitura-gravação_(aviso:destrutivo))
+        *   [4.1.1 Defina padrão de teste específico](#Defina_padrão_de_teste_específico)
+            *   [4.1.1.1 Padrão aleatório](#Padrão_aleatório)
+    *   [4.2 Teste de leitura-gravação (não-destrutivo)](#Teste_de_leitura-gravação_(não-destrutivo))
+*   [5 Faça o sistema de arquivos incorporar setores ruins](#Faça_o_sistema_de_arquivos_incorporar_setores_ruins)
+    *   [5.1 Durante a verificação de sistema de arquivos](#Durante_a_verificação_de_sistema_de_arquivos)
+    *   [5.2 Antes da criação do sistema de arquivos](#Antes_da_criação_do_sistema_de_arquivos)
         *   [5.2.1 Ext4](#Ext4)
         *   [5.2.2 Tamanho do bloco](#Tamanho_do_bloco)
-*   [6 Veja também](#Veja_tamb.C3.A9m)
+*   [6 Veja também](#Veja_também)
 
 ## Instalação
 

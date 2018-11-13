@@ -4,23 +4,23 @@ As PCI passthrough is quite tricky to get right (both on the hardware and softwa
 
 ## Contents
 
-*   [1 Users' setups](#Users.27_setups)
-    *   [1.1 mstrthealias: Intel 7800X / X299, GTX 1070](#mstrthealias:_Intel_7800X_.2F_X299.2C_GTX_1070)
-    *   [1.2 DragoonAethis: 6700K, GA-Z170X-UD3, GTX 1070](#DragoonAethis:_6700K.2C_GA-Z170X-UD3.2C_GTX_1070)
-    *   [1.3 Manbearpig3130's Virtual Gaming Machine](#Manbearpig3130.27s_Virtual_Gaming_Machine)
-    *   [1.4 Bretos' Virtual Gaming Setup](#Bretos.27_Virtual_Gaming_Setup)
-    *   [1.5 Skeen's Virtual Gaming Rack Machine](#Skeen.27s_Virtual_Gaming_Rack_Machine)
-    *   [1.6 droserasprout poor man's setup](#droserasprout_poor_man.27s_setup)
-    *   [1.7 prauat: 2xIntel(R) Xeon(R) CPU E5-2609 v4, 2xGigabyte GeForce GTX 1060 6GB G1 Gaming, Intel S2600CWTR](#prauat:_2xIntel.28R.29_Xeon.28R.29_CPU_E5-2609_v4.2C_2xGigabyte_GeForce_GTX_1060_6GB_G1_Gaming.2C_Intel_S2600CWTR)
-    *   [1.8 Dinkonin's virtual gaming/work setup](#Dinkonin.27s_virtual_gaming.2Fwork_setup)
-    *   [1.9 pauledd's unexeptional setup](#pauledd.27s_unexeptional_setup)
-    *   [1.10 hkk's Windows gaming machine (6700K, 1070, 16GB)](#hkk.27s_Windows_gaming_machine_.286700K.2C_1070.2C_16GB.29)
-    *   [1.11 sitilge's treachery](#sitilge.27s_treachery)
-    *   [1.12 chestm007's hackery](#chestm007.27s_hackery)
-    *   [1.13 Eduxstad's Infidelity](#Eduxstad.27s_Infidelity)
-    *   [1.14 Pi's vr-vm](#Pi.27s_vr-vm)
-    *   [1.15 coghex's gaming box](#coghex.27s_gaming_box)
-    *   [1.16 Roobre's VFIO setup](#Roobre.27s_VFIO_setup)
+*   [1 Users' setups](#Users'_setups)
+    *   [1.1 mstrthealias: Intel 7800X / X299, GTX 1070](#mstrthealias:_Intel_7800X_/_X299,_GTX_1070)
+    *   [1.2 DragoonAethis: 6700K, GA-Z170X-UD3, GTX 1070](#DragoonAethis:_6700K,_GA-Z170X-UD3,_GTX_1070)
+    *   [1.3 Manbearpig3130's Virtual Gaming Machine](#Manbearpig3130's_Virtual_Gaming_Machine)
+    *   [1.4 Bretos' Virtual Gaming Setup](#Bretos'_Virtual_Gaming_Setup)
+    *   [1.5 Skeen's Virtual Gaming Rack Machine](#Skeen's_Virtual_Gaming_Rack_Machine)
+    *   [1.6 droserasprout poor man's setup](#droserasprout_poor_man's_setup)
+    *   [1.7 prauat: 2xIntel(R) Xeon(R) CPU E5-2609 v4, 2xGigabyte GeForce GTX 1060 6GB G1 Gaming, Intel S2600CWTR](#prauat:_2xIntel(R)_Xeon(R)_CPU_E5-2609_v4,_2xGigabyte_GeForce_GTX_1060_6GB_G1_Gaming,_Intel_S2600CWTR)
+    *   [1.8 Dinkonin's virtual gaming/work setup](#Dinkonin's_virtual_gaming/work_setup)
+    *   [1.9 pauledd's unexeptional setup](#pauledd's_unexeptional_setup)
+    *   [1.10 hkk's Windows gaming machine (6700K, 1070, 16GB)](#hkk's_Windows_gaming_machine_(6700K,_1070,_16GB))
+    *   [1.11 sitilge's treachery](#sitilge's_treachery)
+    *   [1.12 chestm007's hackery](#chestm007's_hackery)
+    *   [1.13 Eduxstad's Infidelity](#Eduxstad's_Infidelity)
+    *   [1.14 Pi's vr-vm](#Pi's_vr-vm)
+    *   [1.15 coghex's gaming box](#coghex's_gaming_box)
+    *   [1.16 Roobre's VFIO setup](#Roobre's_VFIO_setup)
 *   [2 Adding your own setup](#Adding_your_own_setup)
 
 ## Users' setups
@@ -442,7 +442,7 @@ Issues:
 
 *   Synergy works really great. On some games (ones who take control of the mouse pointer, e.g. first-person), you need to lock the mouse cursor to the VM window to avoid issues (camera moving too fast).
 
-*   Do not forget to add the needed snippet for the nvidia driver to run ([PCI passthrough via OVMF#"Error 43: Driver failed to load" on Nvidia GPUs passed to Windows VMs](/index.php/PCI_passthrough_via_OVMF#.22Error_43:_Driver_failed_to_load.22_on_Nvidia_GPUs_passed_to_Windows_VMs "PCI passthrough via OVMF"))
+*   Do not forget to add the needed snippet for the nvidia driver to run ([PCI passthrough via OVMF#"Error 43: Driver failed to load" on Nvidia GPUs passed to Windows VMs](/index.php/PCI_passthrough_via_OVMF#"Error_43:_Driver_failed_to_load"_on_Nvidia_GPUs_passed_to_Windows_VMs "PCI passthrough via OVMF"))
 
 ## Adding your own setup
 

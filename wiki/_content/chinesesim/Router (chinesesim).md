@@ -6,30 +6,30 @@
 
 ## Contents
 
-*   [1 硬件需求](#.E7.A1.AC.E4.BB.B6.E9.9C.80.E6.B1.82)
-*   [2 约定](#.E7.BA.A6.E5.AE.9A)
-*   [3 网络接口配置](#.E7.BD.91.E7.BB.9C.E6.8E.A5.E5.8F.A3.E9.85.8D.E7.BD.AE)
-    *   [3.1 持久化命名与接口重命名](#.E6.8C.81.E4.B9.85.E5.8C.96.E5.91.BD.E5.90.8D.E4.B8.8E.E6.8E.A5.E5.8F.A3.E9.87.8D.E5.91.BD.E5.90.8D)
-    *   [3.2 IP 配置](#IP_.E9.85.8D.E7.BD.AE)
-*   [4 ADSL 连接/PPPoE](#ADSL_.E8.BF.9E.E6.8E.A5.2FPPPoE)
-    *   [4.1 PPPoE 配置](#PPPoE_.E9.85.8D.E7.BD.AE)
-*   [5 DNS 和 DHCP](#DNS_.E5.92.8C_DHCP)
-*   [6 连接共享](#.E8.BF.9E.E6.8E.A5.E5.85.B1.E4.BA.AB)
+*   [1 硬件需求](#硬件需求)
+*   [2 约定](#约定)
+*   [3 网络接口配置](#网络接口配置)
+    *   [3.1 持久化命名与接口重命名](#持久化命名与接口重命名)
+    *   [3.2 IP 配置](#IP_配置)
+*   [4 ADSL 连接/PPPoE](#ADSL_连接/PPPoE)
+    *   [4.1 PPPoE 配置](#PPPoE_配置)
+*   [5 DNS 和 DHCP](#DNS_和_DHCP)
+*   [6 连接共享](#连接共享)
 *   [7 IPv6 tips](#IPv6_tips)
     *   [7.1 Unique Local Addresses](#Unique_Local_Addresses)
     *   [7.2 Global Unicast Addresses](#Global_Unicast_Addresses)
         *   [7.2.1 Static IPv6 prefix](#Static_IPv6_prefix)
         *   [7.2.2 Acquiring IPv6 prefix via DHCPv6-PD](#Acquiring_IPv6_prefix_via_DHCPv6-PD)
-    *   [7.3 路由通告与无状态自动配置(SLAAC)](#.E8.B7.AF.E7.94.B1.E9.80.9A.E5.91.8A.E4.B8.8E.E6.97.A0.E7.8A.B6.E6.80.81.E8.87.AA.E5.8A.A8.E9.85.8D.E7.BD.AE.28SLAAC.29)
-*   [8 可选附加功能](#.E5.8F.AF.E9.80.89.E9.99.84.E5.8A.A0.E5.8A.9F.E8.83.BD)
+    *   [7.3 路由通告与无状态自动配置(SLAAC)](#路由通告与无状态自动配置(SLAAC))
+*   [8 可选附加功能](#可选附加功能)
     *   [8.1 UPnP](#UPnP)
-    *   [8.2 远程管理](#.E8.BF.9C.E7.A8.8B.E7.AE.A1.E7.90.86)
-    *   [8.3 缓存网页代理](#.E7.BC.93.E5.AD.98.E7.BD.91.E9.A1.B5.E4.BB.A3.E7.90.86)
-    *   [8.4 时间服务器](#.E6.97.B6.E9.97.B4.E6.9C.8D.E5.8A.A1.E5.99.A8)
-    *   [8.5 内容过滤](#.E5.86.85.E5.AE.B9.E8.BF.87.E6.BB.A4)
-    *   [8.6 流量共享](#.E6.B5.81.E9.87.8F.E5.85.B1.E4.BA.AB)
-        *   [8.6.1 用 shorewall 实现流量共享](#.E7.94.A8_shorewall_.E5.AE.9E.E7.8E.B0.E6.B5.81.E9.87.8F.E5.85.B1.E4.BA.AB)
-*   [9 参阅](#.E5.8F.82.E9.98.85)
+    *   [8.2 远程管理](#远程管理)
+    *   [8.3 缓存网页代理](#缓存网页代理)
+    *   [8.4 时间服务器](#时间服务器)
+    *   [8.5 内容过滤](#内容过滤)
+    *   [8.6 流量共享](#流量共享)
+        *   [8.6.1 用 shorewall 实现流量共享](#用_shorewall_实现流量共享)
+*   [9 参阅](#参阅)
 
 ## 硬件需求
 
@@ -48,7 +48,7 @@
 
 ### 持久化命名与接口重命名
 
-Systemd 将自动为网口选择一个唯一接口名称。这个命名将是持久化的，不因重启而改变。如果想改成更易理解的名称请参阅[网络配置#设备命名](/index.php/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE#.E8.AE.BE.E5.A4.87.E5.91.BD.E5.90.8D "网络配置")。
+Systemd 将自动为网口选择一个唯一接口名称。这个命名将是持久化的，不因重启而改变。如果想改成更易理解的名称请参阅[网络配置#设备命名](/index.php/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE#设备命名 "网络配置")。
 
 ### IP 配置
 
@@ -122,7 +122,7 @@ dhcp-range=10.0.0.2,10.0.0.255,255.255.255.0,1h # 定义局域网中 DHCP 地址
 
 下面将看到，只能添加***静态*** DHCP 租约，例如，分配一个 IP 地址给局域网中某一台机器的 MAC 地址。这样，无论这台机器何时请求，它都将获得同一个 IP 地址。对于需要 DNS 记录的网络服务来说这非常有用。这也可以拒绝特定 MAC 的机器获取 IP 地址。
 
-现在 [启动](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E5.8D.95.E5.85.83 "Systemd (简体中文)") `dnsmasq.service` 服务。
+现在 [启动](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#使用单元 "Systemd (简体中文)") `dnsmasq.service` 服务。
 
 ## 连接共享
 

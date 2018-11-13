@@ -14,12 +14,12 @@ Related articles
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 显示分区](#.E6.98.BE.E7.A4.BA.E5.88.86.E5.8C.BA)
-*   [3 备份和恢复分区](#.E5.A4.87.E4.BB.BD.E5.92.8C.E6.81.A2.E5.A4.8D.E5.88.86.E5.8C.BA)
+*   [1 安装](#安装)
+*   [2 显示分区](#显示分区)
+*   [3 备份和恢复分区](#备份和恢复分区)
     *   [3.1 Using dd](#Using_dd)
     *   [3.2 Using sfdisk](#Using_sfdisk)
-*   [4 创建分区表和分区](#.E5.88.9B.E5.BB.BA.E5.88.86.E5.8C.BA.E8.A1.A8.E5.92.8C.E5.88.86.E5.8C.BA)
+*   [4 创建分区表和分区](#创建分区表和分区)
     *   [4.1 Create new table](#Create_new_table)
     *   [4.2 Create partitions](#Create_partitions)
     *   [4.3 Write changes to disk](#Write_changes_to_disk)

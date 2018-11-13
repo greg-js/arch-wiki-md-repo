@@ -11,7 +11,7 @@ Newsboat is a [fork](https://groups.google.com/forum/#!topic/newsbeuter/RPtlWX8C
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
 *   [3 Managing feeds](#Managing_feeds)
-    *   [3.1 Adding/Removing feeds](#Adding.2FRemoving_feeds)
+    *   [3.1 Adding/Removing feeds](#Adding/Removing_feeds)
     *   [3.2 Tagging feeds](#Tagging_feeds)
         *   [3.2.1 Special tags](#Special_tags)
             *   [3.2.1.1 Custom feed names](#Custom_feed_names)
@@ -21,7 +21,7 @@ Newsboat is a [fork](https://groups.google.com/forum/#!topic/newsbeuter/RPtlWX8C
     *   [5.1 Automatic feed reloads](#Automatic_feed_reloads)
     *   [5.2 Pass article URL to external command](#Pass_article_URL_to_external_command)
 *   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Newsboat won't start](#Newsboat_won.27t_start)
+    *   [6.1 Newsboat won't start](#Newsboat_won't_start)
 *   [7 See Also](#See_Also)
 
 ## Installation

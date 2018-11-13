@@ -6,21 +6,21 @@ La herramienta pacman-key se usa tanto para configurar como para administrar las
 
 ## Contents
 
-*   [1 Introducción](#Introducci.C3.B3n)
-*   [2 Instalación](#Instalaci.C3.B3n)
-    *   [2.1 Configuración de pacman](#Configuraci.C3.B3n_de_pacman)
+*   [1 Introducción](#Introducción)
+*   [2 Instalación](#Instalación)
+    *   [2.1 Configuración de pacman](#Configuración_de_pacman)
     *   [2.2 Inicializar el archivo de claves o *keyring*](#Inicializar_el_archivo_de_claves_o_keyring)
-*   [3 Gestión del archivo de claves](#Gesti.C3.B3n_del_archivo_de_claves)
-    *   [3.1 Verificación de las cinco Claves Maestras](#Verificaci.C3.B3n_de_las_cinco_Claves_Maestras)
-    *   [3.2 Añadir claves de Desarrolladores](#A.C3.B1adir_claves_de_Desarrolladores)
-    *   [3.3 Añadir claves no oficiales](#A.C3.B1adir_claves_no_oficiales)
+*   [3 Gestión del archivo de claves](#Gestión_del_archivo_de_claves)
+    *   [3.1 Verificación de las cinco Claves Maestras](#Verificación_de_las_cinco_Claves_Maestras)
+    *   [3.2 Añadir claves de Desarrolladores](#Añadir_claves_de_Desarrolladores)
+    *   [3.3 Añadir claves no oficiales](#Añadir_claves_no_oficiales)
     *   [3.4 Using gpg](#Using_gpg)
-*   [4 Solución de problemas](#Soluci.C3.B3n_de_problemas)
+*   [4 Solución de problemas](#Solución_de_problemas)
     *   [4.1 No puedo importar llaves](#No_puedo_importar_llaves)
-    *   [4.2 Desactivar la comprobación de firmas](#Desactivar_la_comprobaci.C3.B3n_de_firmas)
+    *   [4.2 Desactivar la comprobación de firmas](#Desactivar_la_comprobación_de_firmas)
     *   [4.3 Restablecer todas las llaves](#Restablecer_todas_las_llaves)
     *   [4.4 Eliminar paquetes inservibles](#Eliminar_paquetes_inservibles)
-*   [5 Bibliografía complementaria](#Bibliograf.C3.ADa_complementaria)
+*   [5 Bibliografía complementaria](#Bibliografía_complementaria)
 
 ## Introducción
 

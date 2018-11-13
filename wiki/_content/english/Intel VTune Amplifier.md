@@ -5,7 +5,7 @@
 *   [1 Linux 4.0](#Linux_4.0)
     *   [1.1 Compiling the Kernel Modules](#Compiling_the_Kernel_Modules)
 *   [2 VTune Amplifier XE 2013](#VTune_Amplifier_XE_2013)
-    *   [2.1 Missing asm/system.h](#Missing_asm.2Fsystem.h)
+    *   [2.1 Missing asm/system.h](#Missing_asm/system.h)
     *   [2.2 Implicit declaration of this_cpu_read](#Implicit_declaration_of_this_cpu_read)
     *   [2.3 kmap_atomic and kunmap_atomic deprecated](#kmap_atomic_and_kunmap_atomic_deprecated)
 *   [3 VTune Amplifier XE 2011](#VTune_Amplifier_XE_2011)

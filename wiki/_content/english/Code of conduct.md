@@ -18,12 +18,12 @@ Familiarising yourself with the principles and guidelines here is both a courtes
         *   [2.1.7 Member accounts](#Member_accounts)
     *   [2.2 Legality](#Legality)
         *   [2.2.1 Criminal solicitation](#Criminal_solicitation)
-        *   [2.2.2 Spam/Advertising/Solicitation](#Spam.2FAdvertising.2FSolicitation)
+        *   [2.2.2 Spam/Advertising/Solicitation](#Spam/Advertising/Solicitation)
     *   [2.3 Correctness](#Correctness)
-        *   [2.3.1 Arch Linux distribution support *only*](#Arch_Linux_distribution_support_.2Aonly.2A)
-        *   [2.3.2 Personal topics/rants](#Personal_topics.2Frants)
-        *   [2.3.3 Avoid controversy/controversial topics](#Avoid_controversy.2Fcontroversial_topics)
-        *   [2.3.4 Ineffective discussion ("bikeshed")](#Ineffective_discussion_.28.22bikeshed.22.29)
+        *   [2.3.1 Arch Linux distribution support *only*](#Arch_Linux_distribution_support_*only*)
+        *   [2.3.2 Personal topics/rants](#Personal_topics/rants)
+        *   [2.3.3 Avoid controversy/controversial topics](#Avoid_controversy/controversial_topics)
+        *   [2.3.4 Ineffective discussion ("bikeshed")](#Ineffective_discussion_("bikeshed"))
     *   [2.4 Freedom](#Freedom)
 *   [3 Specific fora guidelines](#Specific_fora_guidelines)
     *   [3.1 Forums](#Forums)
@@ -31,12 +31,12 @@ Familiarising yourself with the principles and guidelines here is both a courtes
         *   [3.1.2 Pasting pictures and code](#Pasting_pictures_and_code)
         *   [3.1.3 Life is a two-way street](#Life_is_a_two-way_street)
         *   [3.1.4 Product recommendation requests](#Product_recommendation_requests)
-        *   [3.1.5 Old threads/"necro-bumping"](#Old_threads.2F.22necro-bumping.22)
-        *   [3.1.6 No power-posting/empty posts](#No_power-posting.2Fempty_posts)
+        *   [3.1.5 Old threads/"necro-bumping"](#Old_threads/"necro-bumping")
+        *   [3.1.6 No power-posting/empty posts](#No_power-posting/empty_posts)
         *   [3.1.7 Bumping](#Bumping)
         *   [3.1.8 Cross-posting](#Cross-posting)
         *   [3.1.9 Thread hijacking](#Thread_hijacking)
-        *   [3.1.10 Dustbin policy (marked for deletion)](#Dustbin_policy_.28marked_for_deletion.29)
+        *   [3.1.10 Dustbin policy (marked for deletion)](#Dustbin_policy_(marked_for_deletion))
     *   [3.2 Mailing lists](#Mailing_lists)
         *   [3.2.1 Top posting](#Top_posting)
         *   [3.2.2 Quoting](#Quoting)
@@ -112,7 +112,7 @@ Publicity, if it is related to Arch (as a project or community) or GNU/Linux/FOS
 
 ### Correctness
 
-The Arch Linux community value technical correctness. When seeking, or giving, help remember to strive for accuracy, completeness and correctness. An excellent introduction to the expectations of the Arch community is ESR's [How To Ask Questions The Smart Way](http://www.catb.org/~esr/faqs/smart-questions.html)
+The Arch Linux community value technical correctness. When seeking or giving help, remember to strive for accuracy, completeness and correctness. An excellent introduction to the expectations of the Arch community is ESR's [How To Ask Questions The Smart Way](http://www.catb.org/~esr/faqs/smart-questions.html)
 
 Other considerations in this category include:
 
@@ -122,7 +122,7 @@ Arch-based distributions have their own support fora and users of those distribu
 
 #### Personal topics/rants
 
-Rants and complaints are actively discouraged. This type of content is much better suited to a blog or other personal web space and are considered undesirable in the Arch community. Your contributions should be open, productive and inviting to all participants. Also see [Respect other operating systems and projects](#Respect_other_operating_systems_and_projects).
+Rants and complaints are actively discouraged. This type of content is much better suited to a blog or other personal web space and is considered undesirable in the Arch community. Your contributions should be open, productive and inviting to all participants. Also see [Respect other operating systems and projects](#Respect_other_operating_systems_and_projects).
 
 #### Avoid controversy/controversial topics
 
@@ -138,13 +138,15 @@ If you have a question regarding Arch development, please ensure that your topic
 
 ### Freedom
 
-The free and open exchange of assistance, speech, ideas and opinions is highly regarded and encouraged in the Arch community, but it must be noted that the freedom granted to participants is *relative freedom*. It exists within the boundaries of the above guidelines and principles. Complaints of censorship are therefore baseless and unfounded, since this necessary framework must simultaneously provide reasonable limitations. To illustrate, we are aware of the physical laws which govern energy and matter, yet we do not complain of their oppression. Instead, we recognize that such laws are essential for our welfare. Likewise, the Arch community's high standards reflected in these guidelines regulate community freedom for the common good and protection of all. The key, then, to true freedom in this community is to cultivate benevolence toward others and harmonize our attitude with the Arch Way by bringing only benefit to our peers. In addition, this allows members to satisfy all contributive impulses without aggravating themselves or encroaching on the freedom of others. Embracing the above principles and obeying the guidelines therefore benefits the entire community by providing freedom from the harmful and negative consequences of a more chaotic approach.
+The free and open exchange of assistance, speech, ideas and opinions is highly regarded and encouraged in the Arch community, but it must be noted that the freedom granted to participants is *relative freedom*. It exists within the boundaries of the above guidelines and principles. Complaints of censorship are therefore baseless and unfounded, since this necessary framework must simultaneously provide reasonable limitations. To illustrate, we are aware of the physical laws which govern energy and matter, yet we do not complain of their oppression. Instead, we recognize that such laws are essential for our welfare. Likewise, the Arch community's high standards reflected in these guidelines regulate community freedom for the common good and protection of all. The key, then, to true freedom in this community is to cultivate benevolence toward others and to harmonize our attitude with the Arch Way by bringing only benefits to our peers. In addition, this allows members to satisfy all contributive impulses without aggravating themselves or encroaching on the freedom of others. Embracing the above principles and obeying the guidelines therefore benefits the entire community by providing freedom from the harmful and negative consequences of a more chaotic approach.
 
 ## Specific fora guidelines
 
 In addition to the [common code](#Code_of_conduct), each of the fora has its own specific guidelines summarized in the following subsections.
 
-### [Forums](https://bbs.archlinux.org/)
+### Forums
+
+Guidelines specific to the [Arch forums](https://bbs.archlinux.org/).
 
 #### How to post
 
@@ -153,7 +155,7 @@ In addition to the [common code](#Code_of_conduct), each of the fora has its own
 *   When asking questions, provide as much information as possible, including error messages, terminal output, logs, what you have previously tried, what documentation and searches you have attempted, and related configuration files.
 *   Choose one topic per thread. Long threads are typically discouraged in the technical issue subforums.
 *   Post your question in only one subforum; pick the most relevant, and post there.
-*   Do not post tutorials or "how to's": documentation belongs on the wiki, where it can be maintained.
+*   Do not post tutorials or "how to's": documentation belongs in the wiki, where it can be maintained.
 *   When responding to an existing thread, always read the original post and attempt to focus on the original topic.
 *   Finally, when a solution is found, mark your thread as solved by editing the first post and prepending the tag [SOLVED] to the title in the "Subject" field.
     Note that you should avoid using [CLOSED], which is instead used by the system to mark a thread which is no longer accessible for new posts.
@@ -161,7 +163,7 @@ In addition to the [common code](#Code_of_conduct), each of the fora has its own
 
 #### Pasting pictures and code
 
-Please use [code] tags when pasting console snippets. Please use a [pastebin client](/index.php/Pastebin#Pastebin_clients "Pastebin") when posting large amounts of code. Do **not** use [pastebin.com](http://pastebin.com/)—it is blocked for some users and has a history of annoying issues (javascript, adverts, poor formatting, etc). For non-English locale users: Please prepend `LC_ALL=C` to posted commands so that the output will be in English. Do not post full screen pictures; use links to the images instead, optionally with thumbnails. Any image with dimensions greater than 250x250px or over 50Kb in size will be removed. Do **not** post screenshots of text output; post [the actual text](/index.php/Copying_text_from_a_terminal "Copying text from a terminal").
+Please use [code] tags when pasting console snippets. Please use a [pastebin client](/index.php/Pastebin#Pastebin_clients "Pastebin") when posting large amounts of code. Do **not** use [pastebin.com](http://pastebin.com/)—it is blocked for some users and has a history of annoying issues (javascript, adverts, poor formatting, etc). For non-English locale users: Please prepend `LC_ALL=C` to posted commands so that the output will be in English. Do not post full screen pictures; use links to the images instead, optionally with thumbnails. Any image with dimensions greater than 250x250px or over 50 kB in size will be removed. Do **not** post screenshots of text output; post [the actual text](/index.php/Copying_text_from_a_terminal "Copying text from a terminal").
 
 #### Life is a two-way street
 
@@ -207,9 +209,9 @@ Thread hijacking is the process of replying to an existing thread with a differe
 
 Threads that are locked/closed because they are either already documented on the boards or Wiki or are inconsistent with the Arch Way will be moved to Dust/troll-bin. After a period of five days, the thread will be deleted. The Moderator responsible will clearly mark the thread as "Binned" or "For deletion."
 
-### [Mailing lists](https://lists.archlinux.org//listinfo/)
+### Mailing lists
 
-See [Mailing list posting style](https://lists.archlinux.org/pipermail/arch-general/2014-August/036950.html).
+Guidelines for the [mailing lists](https://lists.archlinux.org/listinfo/). See also [Mailing list posting style](https://lists.archlinux.org/pipermail/arch-general/2014-August/036950.html).
 
 #### Top posting
 
@@ -223,16 +225,16 @@ Only quote the necessary elements from a previous email. Bulk quoting quickly bl
 
 Plain text is the Unix and email standard. HTML is unnecessary and, for those using command line clients, unwelcome. Please keep your line lengths reasonable: 72 characters is considered the default to wrap at.
 
-### [AUR](https://aur.archlinux.org/)
+### AUR
 
-Guidelines for the Arch User Repository can be found here:
+Guidelines for the [Arch User Repository](https://aur.archlinux.org/) can be found here:
 
 *   [AUR#Rules of submission](/index.php/AUR#Rules_of_submission "AUR")
 *   [AUR#Other requests](/index.php/AUR#Other_requests "AUR")
 
-### [IRC](/index.php/IRC "IRC")
+### IRC
 
-All Arch Linux IRC channels are on the freenode irc network. Users on freenode must follow the [network policy](https://freenode.net/policies) and freenode [channel guidelines](https://freenode.net/changuide).
+All [Arch IRC channels](/index.php/Arch_IRC_channels "Arch IRC channels") are on the freenode irc network. Users on freenode must follow the [network policy](https://freenode.net/policies) and freenode [channel guidelines](https://freenode.net/changuide).
 
 The official language of the **#archlinux** channel is English. If you need help in another language, search [international arch channels](/index.php/IRC_channels#International_IRC_channels "IRC channels").
 
@@ -262,19 +264,19 @@ Guidelines for the [wiki](/index.php/ArchWiki:About "ArchWiki:About") can be fou
 *   [Help:Style](/index.php/Help:Style "Help:Style")
 *   [Help:Discussion](/index.php/Help:Discussion "Help:Discussion")
 
-### [Bug tracker](https://bugs.archlinux.org/)
+### Bug tracker
 
-See the main page: [Reporting bug guidelines](/index.php/Reporting_bug_guidelines "Reporting bug guidelines").
+Guidelines for the [bug tracker](https://bugs.archlinux.org/) can be found in [Bug reporting guidelines](/index.php/Bug_reporting_guidelines "Bug reporting guidelines").
 
 ## Enforcement
 
-If the staff in any of the fora feel that a member's behavior is unacceptable and warrants intervention, a warning will typically be issued unless the occurrence is judged to be especially flagrant, in which case a ban may be issued immediately. Warnings will not be discussed on the Arch Forums, IRC channels, or mailing lists by the staff. If the warning goes unheeded, further action will be taken. This may range from locking the offending user account, to deletion or banning of the user, out of consideration for a peaceful forum and community. Action is generally on a case-by-case basis.
+If the staff in any of the fora considers that a member's behavior is unacceptable and warrants intervention, a warning will typically be issued unless the occurrence is judged to be especially flagrant, in which case a ban may be issued immediately. Warnings will not be discussed on the Arch Forums, IRC channels, or mailing lists by the staff. If the warning goes unheeded, further action will be taken. This may range from locking the offending user account, to deletion or banning of the user, out of consideration for a peaceful forum and community. Actions are usually conducted on a case-by-case basis.
 
-Each of the fora has an appeals process and if someone feels they were unjustly dealt with, they are encouraged to make their case for reinstatement through the appropriate channel (see below).
+Each of the fora has an appeal process and if someone feels they were unjustly dealt with, they are encouraged to plead their case for reinstatement through the appropriate channel (see below).
 
 ## Contacting the staff
 
-If you feel that an egregious oversight has been made, or you need to alert staff to abusive behaviour, there are a number of avenues through which you can seek assistance or redress. These include:
+If you feel that an egregious oversight has been made, or if you need to alert the staff of any abusive behavior, there are a number of ways you can ask for assistance or redress. These include:
 
 *   For the Forums: use the 'Report' button found below every text box, or email [forum@archlinux.org](mailto:forum@archlinux.org) to contact the forum admins.
 *   For the Wiki: contact the [ArchWiki:Maintenance Team](/index.php/ArchWiki:Maintenance_Team "ArchWiki:Maintenance Team")

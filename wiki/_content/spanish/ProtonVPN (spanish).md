@@ -12,9 +12,9 @@ Para seguir este tutorial, se debe tener una cuenta protonvpn.
 ## Contents
 
 *   [1 Tutorial](#Tutorial)
-    *   [1.1 Guardar la autenticación OpenVPN](#Guardar_la_autenticaci.C3.B3n_OpenVPN)
+    *   [1.1 Guardar la autenticación OpenVPN](#Guardar_la_autenticación_OpenVPN)
     *   [1.2 Activar VPN en el arranque](#Activar_VPN_en_el_arranque)
-*   [2 Utilizar el intérprete de línea de órdenes de ProtonVPN](#Utilizar_el_int.C3.A9rprete_de_l.C3.ADnea_de_.C3.B3rdenes_de_ProtonVPN)
+*   [2 Utilizar el intérprete de línea de órdenes de ProtonVPN](#Utilizar_el_intérprete_de_línea_de_órdenes_de_ProtonVPN)
 
 ## Tutorial
 

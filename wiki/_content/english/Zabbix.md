@@ -7,7 +7,7 @@
         *   [1.1.1 Zabbix-server installation](#Zabbix-server_installation)
         *   [1.1.2 Zabbix-frontend installation](#Zabbix-frontend_installation)
     *   [1.2 Configuration](#Configuration)
-    *   [1.3 ICMP/ping discovery](#ICMP.2Fping_discovery)
+    *   [1.3 ICMP/ping discovery](#ICMP/ping_discovery)
     *   [1.4 Starting](#Starting)
 *   [2 Agent setup](#Agent_setup)
     *   [2.1 Installation](#Installation_2)

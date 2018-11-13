@@ -4,17 +4,17 @@ O aplicativo Stoq usa o PostgreSQL como banco de dados back-end, com um cliente 
 
 ## Contents
 
-*   [1 Instalação](#Instala.C3.A7.C3.A3o)
-    *   [1.1 Instalação do Stoq](#Instala.C3.A7.C3.A3o_do_Stoq)
-    *   [1.2 Configuração do Stoq](#Configura.C3.A7.C3.A3o_do_Stoq)
-        *   [1.2.1 Conexão com banco de dados local](#Conex.C3.A3o_com_banco_de_dados_local)
-        *   [1.2.2 Configurar conexão com banco de dados manualmente](#Configurar_conex.C3.A3o_com_banco_de_dados_manualmente)
-        *   [1.2.3 Arquivo de configuração do Stoq](#Arquivo_de_configura.C3.A7.C3.A3o_do_Stoq)
-    *   [1.3 Instalação do stoq-server](#Instala.C3.A7.C3.A3o_do_stoq-server)
-    *   [1.4 Configuração do stoq-server](#Configura.C3.A7.C3.A3o_do_stoq-server)
-        *   [1.4.1 Arquivo de configuração do stoq-server](#Arquivo_de_configura.C3.A7.C3.A3o_do_stoq-server)
-    *   [1.5 Acessando via conexão serial](#Acessando_via_conex.C3.A3o_serial)
-*   [2 Documentação adicional](#Documenta.C3.A7.C3.A3o_adicional)
+*   [1 Instalação](#Instalação)
+    *   [1.1 Instalação do Stoq](#Instalação_do_Stoq)
+    *   [1.2 Configuração do Stoq](#Configuração_do_Stoq)
+        *   [1.2.1 Conexão com banco de dados local](#Conexão_com_banco_de_dados_local)
+        *   [1.2.2 Configurar conexão com banco de dados manualmente](#Configurar_conexão_com_banco_de_dados_manualmente)
+        *   [1.2.3 Arquivo de configuração do Stoq](#Arquivo_de_configuração_do_Stoq)
+    *   [1.3 Instalação do stoq-server](#Instalação_do_stoq-server)
+    *   [1.4 Configuração do stoq-server](#Configuração_do_stoq-server)
+        *   [1.4.1 Arquivo de configuração do stoq-server](#Arquivo_de_configuração_do_stoq-server)
+    *   [1.5 Acessando via conexão serial](#Acessando_via_conexão_serial)
+*   [2 Documentação adicional](#Documentação_adicional)
 
 ## Instalação
 

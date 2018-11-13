@@ -23,43 +23,43 @@ Arch Linux 用 [makepkg](/index.php/Makepkg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%8
 
 ## Contents
 
-*   [1 软件包名称](#.E8.BD.AF.E4.BB.B6.E5.8C.85.E5.90.8D.E7.A7.B0)
+*   [1 软件包名称](#软件包名称)
     *   [1.1 pkgbase](#pkgbase)
     *   [1.2 pkgname](#pkgname)
-*   [2 版本](#.E7.89.88.E6.9C.AC)
+*   [2 版本](#版本)
     *   [2.1 pkgver](#pkgver)
     *   [2.2 pkgrel](#pkgrel)
     *   [2.3 epoch](#epoch)
-*   [3 一般变量](#.E4.B8.80.E8.88.AC.E5.8F.98.E9.87.8F)
+*   [3 一般变量](#一般变量)
     *   [3.1 pkgdesc](#pkgdesc)
     *   [3.2 arch](#arch)
     *   [3.3 url](#url)
     *   [3.4 license](#license)
     *   [3.5 groups](#groups)
-*   [4 依赖关系](#.E4.BE.9D.E8.B5.96.E5.85.B3.E7.B3.BB)
+*   [4 依赖关系](#依赖关系)
     *   [4.1 depends](#depends)
     *   [4.2 optdepends](#optdepends)
     *   [4.3 makedepends](#makedepends)
     *   [4.4 checkdepends](#checkdepends)
-*   [5 软件相关性](#.E8.BD.AF.E4.BB.B6.E7.9B.B8.E5.85.B3.E6.80.A7)
+*   [5 软件相关性](#软件相关性)
     *   [5.1 provides](#provides)
     *   [5.2 conflicts](#conflicts)
     *   [5.3 replaces](#replaces)
-*   [6 其它](#.E5.85.B6.E5.AE.83)
+*   [6 其它](#其它)
     *   [6.1 backup](#backup)
     *   [6.2 options](#options)
     *   [6.3 install](#install)
     *   [6.4 changelog](#changelog)
-*   [7 源码](#.E6.BA.90.E7.A0.81)
+*   [7 源码](#源码)
     *   [7.1 source](#source)
     *   [7.2 noextract](#noextract)
     *   [7.3 validpgpkeys](#validpgpkeys)
-*   [8 完整性](#.E5.AE.8C.E6.95.B4.E6.80.A7)
+*   [8 完整性](#完整性)
     *   [8.1 md5sums](#md5sums)
     *   [8.2 sha1sums](#sha1sums)
     *   [8.3 sha256sums](#sha256sums)
-    *   [8.4 sha224sums, sha384sums, sha512sums](#sha224sums.2C_sha384sums.2C_sha512sums)
-*   [9 参阅](#.E5.8F.82.E9.98.85)
+    *   [8.4 sha224sums, sha384sums, sha512sums](#sha224sums,_sha384sums,_sha512sums)
+*   [9 参阅](#参阅)
 
 ## 软件包名称
 
@@ -206,7 +206,7 @@ $ LC_ALL=C pacman -Si $(pactree -rl ''package'') 2>/dev/null | grep -q "^Groups 
 
 ### checkdepends
 
-运行测试组件时需要，而运行时不需要的包列表。该列表中的包遵循和`depends`相同的格式。这些依赖只在[check()](/index.php/Creating_packages#The_check.28.29_function "Creating packages")函数存在且被makepkg运行时被考虑。
+运行测试组件时需要，而运行时不需要的包列表。该列表中的包遵循和`depends`相同的格式。这些依赖只在[check()](/index.php/Creating_packages#The_check()_function "Creating packages")函数存在且被makepkg运行时被考虑。
 
 **注意:** 在使用makepkg构建软件包时，[base-devel](https://www.archlinux.org/groups/x86_64/base-devel/)组被视为已安装。该组的成员**不应该**出现在`checkdepends`列表中。
 
@@ -297,7 +297,7 @@ $ pacman -Qc *pkgname*
 
 ### noextract
 
-一些列举于 `source` 中，但不需要在运行`makepkg`时解包的文件。在碰到不能被`/usr/bin/bsdtar`处理的文件或不需要解压的文件时使用。在这些情况下，额外的解包工具（如`unzip`、`p7zip`，[lrzip](https://www.archlinux.org/packages/?name=lrzip)等）应该加入 `makedepends` 序列，并且用[prepare()](/index.php/Creating_packages#The_prepare.28.29_function "Creating packages")函数手动解包。例如：
+一些列举于 `source` 中，但不需要在运行`makepkg`时解包的文件。在碰到不能被`/usr/bin/bsdtar`处理的文件或不需要解压的文件时使用。在这些情况下，额外的解包工具（如`unzip`、`p7zip`，[lrzip](https://www.archlinux.org/packages/?name=lrzip)等）应该加入 `makedepends` 序列，并且用[prepare()](/index.php/Creating_packages#The_prepare()_function "Creating packages")函数手动解包。例如：
 
 ```
   prepare() {

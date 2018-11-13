@@ -16,40 +16,40 @@ GTK+ (GIMP Toolkit) fue originalmente creado por el [Proyecto GNU](/index.php/GN
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
 *   [2 Temas](#Temas)
-    *   [2.1 GTK+ y Qt](#GTK.2B_y_Qt)
-*   [3 Herramientas de configuración](#Herramientas_de_configuraci.C3.B3n)
-*   [4 Configuración](#Configuraci.C3.B3n)
-    *   [4.1 Configuración básica del tema](#Configuraci.C3.B3n_b.C3.A1sica_del_tema)
+    *   [2.1 GTK+ y Qt](#GTK+_y_Qt)
+*   [3 Herramientas de configuración](#Herramientas_de_configuración)
+*   [4 Configuración](#Configuración)
+    *   [4.1 Configuración básica del tema](#Configuración_básica_del_tema)
     *   [4.2 Variante oscura del tema](#Variante_oscura_del_tema)
     *   [4.3 Atajos de teclado](#Atajos_de_teclado)
         *   [4.3.1 Combinaciones de teclas Emacs](#Combinaciones_de_teclas_Emacs)
-    *   [4.4 Retraso del menú de GNOME](#Retraso_del_men.C3.BA_de_GNOME)
-    *   [4.5 Reducir el tamaño de los widgets](#Reducir_el_tama.C3.B1o_de_los_widgets)
+    *   [4.4 Retraso del menú de GNOME](#Retraso_del_menú_de_GNOME)
+    *   [4.5 Reducir el tamaño de los widgets](#Reducir_el_tamaño_de_los_widgets)
     *   [4.6 Ocultar los botones CSD](#Ocultar_los_botones_CSD)
-    *   [4.7 Desactivar pegar desde el ratón](#Desactivar_pegar_desde_el_rat.C3.B3n)
-    *   [4.8 Posición inicial del selector de archivos](#Posici.C3.B3n_inicial_del_selector_de_archivos)
+    *   [4.7 Desactivar pegar desde el ratón](#Desactivar_pegar_desde_el_ratón)
+    *   [4.8 Posición inicial del selector de archivos](#Posición_inicial_del_selector_de_archivos)
     *   [4.9 Comportamiento de desplazamiento heredado](#Comportamiento_de_desplazamiento_heredado)
     *   [4.10 Deshabilitar las barras de desplazamiento superpuestas](#Deshabilitar_las_barras_de_desplazamiento_superpuestas)
-        *   [4.10.1 Eliminar indicadores de la barra de desplazamiento de superposición](#Eliminar_indicadores_de_la_barra_de_desplazamiento_de_superposici.C3.B3n)
+        *   [4.10.1 Eliminar indicadores de la barra de desplazamiento de superposición](#Eliminar_indicadores_de_la_barra_de_desplazamiento_de_superposición)
 *   [5 Backends de GDK](#Backends_de_GDK)
     *   [5.1 Backend de Broadway](#Backend_de_Broadway)
     *   [5.2 Backend de Wayland](#Backend_de_Wayland)
-*   [6 Solución de problemas](#Soluci.C3.B3n_de_problemas)
-    *   [6.1 Diferentes temas entre aplicaciones GTK+ 2 y GTK+ 3](#Diferentes_temas_entre_aplicaciones_GTK.2B_2_y_GTK.2B_3)
+*   [6 Solución de problemas](#Solución_de_problemas)
+    *   [6.1 Diferentes temas entre aplicaciones GTK+ 2 y GTK+ 3](#Diferentes_temas_entre_aplicaciones_GTK+_2_y_GTK+_3)
     *   [6.2 Tema no aplicado en aplicaciones del superusuario](#Tema_no_aplicado_en_aplicaciones_del_superusuario)
     *   [6.3 Decoraciones del lado del cliente](#Decoraciones_del_lado_del_cliente)
-    *   [6.4 Cedilla ç/Ç en lugar de ć/Ć](#Cedilla_.C3.A7.2F.C3.87_en_lugar_de_.C4.87.2F.C4.86)
+    *   [6.4 Cedilla ç/Ç en lugar de ć/Ć](#Cedilla_ç/Ç_en_lugar_de_ć/Ć)
     *   [6.5 Suprimir advertencia referente al bus de accesibilidad](#Suprimir_advertencia_referente_al_bus_de_accesibilidad)
-    *   [6.6 Falta de coincidencia del color de fondo de la barra de título](#Falta_de_coincidencia_del_color_de_fondo_de_la_barra_de_t.C3.ADtulo)
+    *   [6.6 Falta de coincidencia del color de fondo de la barra de título](#Falta_de_coincidencia_del_color_de_fondo_de_la_barra_de_título)
     *   [6.7 Eventos de enfoque incorrecto con administradores de ventanas de mosaico](#Eventos_de_enfoque_incorrecto_con_administradores_de_ventanas_de_mosaico)
-    *   [6.8 Soporte de miniaturas para el diálogo del archivo GTK+ 2](#Soporte_de_miniaturas_para_el_di.C3.A1logo_del_archivo_GTK.2B_2)
-    *   [6.9 Iconos de botón/menú en algunas aplicaciones en la sesión Wayland de GNOME](#Iconos_de_bot.C3.B3n.2Fmen.C3.BA_en_algunas_aplicaciones_en_la_sesi.C3.B3n_Wayland_de_GNOME)
-    *   [6.10 GTK+ 3 sin polkit](#GTK.2B_3_sin_polkit)
-    *   [6.11 Algunos temas de GTK+ 2 solo cambian la paleta de colores de la interfaz de usuario](#Algunos_temas_de_GTK.2B_2_solo_cambian_la_paleta_de_colores_de_la_interfaz_de_usuario)
+    *   [6.8 Soporte de miniaturas para el diálogo del archivo GTK+ 2](#Soporte_de_miniaturas_para_el_diálogo_del_archivo_GTK+_2)
+    *   [6.9 Iconos de botón/menú en algunas aplicaciones en la sesión Wayland de GNOME](#Iconos_de_botón/menú_en_algunas_aplicaciones_en_la_sesión_Wayland_de_GNOME)
+    *   [6.10 GTK+ 3 sin polkit](#GTK+_3_sin_polkit)
+    *   [6.11 Algunos temas de GTK+ 2 solo cambian la paleta de colores de la interfaz de usuario](#Algunos_temas_de_GTK+_2_solo_cambian_la_paleta_de_colores_de_la_interfaz_de_usuario)
 *   [7 Ejemplos](#Ejemplos)
-*   [8 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [8 Véase también](#Véase_también)
 
 ## Instalación
 
@@ -72,7 +72,7 @@ $ GTK2_RC_FILES=/usr/share/themes/Industrial/gtk-2.0/gtkrc gimp
 
 ```
 
-**Sugerencia:** `gtkrc` puede ser también un archivo personalizado en su directorio de inicio creado por cualquiera de las [#Herramientas de configuración](#Herramientas_de_configuraci.C3.B3n).
+**Sugerencia:** `gtkrc` puede ser también un archivo personalizado en su directorio de inicio creado por cualquiera de las [#Herramientas de configuración](#Herramientas_de_configuración).
 
 *   Para GTK+ 3, utilice `GTK_THEME`. Por ejemplo para lanzar la calculadora de GNOME con la variante oscura de *Adwaita*:
 
@@ -169,7 +169,7 @@ La mayoría de los [entornos de escritorio](/index.php/Desktop_environment_(Espa
 *   Si utiliza [MATE](/index.php/MATE_(Espa%C3%B1ol) "MATE (Español)"), emplee la herramienta de Preferencias de apariencia (*mate-apariencia-propiedades*): diríjase a *Sistema > Configuración > Apariencia*.
 *   Si utiliza [Xfce](/index.php/Xfce_(Espa%C3%B1ol) "Xfce (Español)"), emplee la herramienta Apariencia: diríjase a *Configuración > Apariencia*.
 
-Otras herramientas del GUI generalmente sobrescriben los [archivos de configuración](#Configuraci.C3.B3n).
+Otras herramientas del GUI generalmente sobrescriben los [archivos de configuración](#Configuración).
 
 **Compatibles con GTK+ 2 y GTK+ 3:**
 
@@ -388,7 +388,7 @@ gtk-primary-button-warps-slider = false
 
 ### Deshabilitar las barras de desplazamiento superpuestas
 
-Desde GTK+ 3.15, las barras de desplazamiento superpuestas están habilitadas de forma predeterminada, lo que significa que las barras de desplazamiento se mostrarán solo al pasar el ratón en las aplicaciones de GTK+ 3\. Este comportamiento se puede revertir configurando la siguiente variable de entorno: `GTK_OVERLAY_SCROLLING=0`. Véase [Aplicaciones gráficas](/index.php/Environment_variables_(Espa%C3%B1ol)#Aplicaciones_gr.C3.A1ficas "Environment variables (Español)").
+Desde GTK+ 3.15, las barras de desplazamiento superpuestas están habilitadas de forma predeterminada, lo que significa que las barras de desplazamiento se mostrarán solo al pasar el ratón en las aplicaciones de GTK+ 3\. Este comportamiento se puede revertir configurando la siguiente variable de entorno: `GTK_OVERLAY_SCROLLING=0`. Véase [Aplicaciones gráficas](/index.php/Environment_variables_(Espa%C3%B1ol)#Aplicaciones_gráficas "Environment variables (Español)").
 
 GTK+ 4 ya no admitirá `GTK_OVERLAY_SCROLLING`. Ya ha sido [eliminado](https://github.com/GNOME/gtk/commit/e49615184a9d85bb0bb4e289b3ee8252adee3813#diff-3cf94c6e1eb009e20985034bc2210bfd) de la rama principal de desarrollo. A partir de GTK+ 4, la naturaleza de superposición de las barras de desplazamiento es parte del kit de herramientas. Se ha eliminado el conmutador general para evitar que los desarrolladores rompan aplicaciones que no han sido probadas con ambas combinaciones. Para permitir que los desarrolladores de aplicaciones decidan qué aspecto deberían tener sus aplicaciones, en su lugar, el kit de herramientas proporciona un mecanismo para excluir o añadir una configuración para los usuarios. La función [gtk_scrolled_window_set_overlay_scrolling()](https://developer.gnome.org/gtk3/stable/GtkScrolledWindow.html#gtk-scrolled-window-setlay-scrolling) se puede usar para habilitar/deshabilitar las barras de desplazamiento superpuestas *por cada usuario*. Los desarrolladores de aplicaciones pueden utilizar opcionalmente [GSettings](https://blog.gtk.org/2017/05/01/first-steps-with-gsettings/) para que el usuario tenga una configuración vinculada a esta propiedad.
 

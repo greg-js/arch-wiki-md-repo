@@ -2,7 +2,7 @@
 
 *   [1 Console](#Console)
     *   [1.1 Using a separate service](#Using_a_separate_service)
-    *   [1.2 Extending getty@.service](#Extending_getty.40.service)
+    *   [1.2 Extending getty@.service](#Extending_getty@.service)
     *   [1.3 Bash alternative](#Bash_alternative)
 *   [2 X.org](#X.org)
     *   [2.1 startx](#startx)
@@ -205,6 +205,7 @@ numlock=1
 Set the option in `~/.config/lxqt/session.conf`:
 
 ```
+[Keyboard]
 numlock=true
 
 ```

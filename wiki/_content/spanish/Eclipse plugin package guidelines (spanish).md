@@ -11,17 +11,17 @@ Hay muchas formas de instalar complementos de trabajo [Eclipse (Español)](/inde
 
 ## Contents
 
-*   [1 Estructura e instalación de complementos de eclipse](#Estructura_e_instalaci.C3.B3n_de_complementos_de_eclipse)
+*   [1 Estructura e instalación de complementos de eclipse](#Estructura_e_instalación_de_complementos_de_eclipse)
 *   [2 Empaquetado](#Empaquetado)
     *   [2.1 Muestra de PKGBUILD](#Muestra_de_PKGBUILD)
-    *   [2.2 Cómo personalizar la construcción](#C.C3.B3mo_personalizar_la_construcci.C3.B3n)
-    *   [2.3 Revisión en profundidad de PKGBUILD](#Revisi.C3.B3n_en_profundidad_de_PKGBUILD)
+    *   [2.2 Cómo personalizar la construcción](#Cómo_personalizar_la_construcción)
+    *   [2.3 Revisión en profundidad de PKGBUILD](#Revisión_en_profundidad_de_PKGBUILD)
         *   [2.3.1 Nombre del paquete](#Nombre_del_paquete)
         *   [2.3.2 Archivos](#Archivos)
-            *   [2.3.2.1 Extracción](#Extracci.C3.B3n)
+            *   [2.3.2.1 Extracción](#Extracción)
             *   [2.3.2.2 Ubicaciones](#Ubicaciones)
-        *   [2.3.3 La funsión build()](#La_funsi.C3.B3n_build.28.29)
-*   [3 Solución de problemas](#Soluci.C3.B3n_de_problemas)
+        *   [2.3.3 La funsión build()](#La_funsión_build())
+*   [3 Solución de problemas](#Solución_de_problemas)
 
 ## Estructura e instalación de complementos de eclipse
 

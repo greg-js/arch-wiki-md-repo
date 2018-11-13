@@ -17,7 +17,7 @@ Related articles
     *   [2.2 Create pam_abl.conf](#Create_pam_abl.conf)
     *   [2.3 Create the blacklist databases](#Create_the_blacklist_databases)
 *   [3 Managing the blacklist databases](#Managing_the_blacklist_databases)
-    *   [3.1 Check blacklisted hosts/users](#Check_blacklisted_hosts.2Fusers)
+    *   [3.1 Check blacklisted hosts/users](#Check_blacklisted_hosts/users)
     *   [3.2 Manually removed a host or user from the blacklist](#Manually_removed_a_host_or_user_from_the_blacklist)
     *   [3.3 Manually add a host or user to the blacklist](#Manually_add_a_host_or_user_to_the_blacklist)
     *   [3.4 Other pam_abl commands](#Other_pam_abl_commands)

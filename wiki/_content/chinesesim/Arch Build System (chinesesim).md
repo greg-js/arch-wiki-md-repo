@@ -15,23 +15,23 @@
 
 ## Contents
 
-*   [1 什么是 ABS](#.E4.BB.80.E4.B9.88.E6.98.AF_ABS)
-    *   [1.1 类 ports 系统又是什么？](#.E7.B1.BB_ports_.E7.B3.BB.E7.BB.9F.E5.8F.88.E6.98.AF.E4.BB.80.E4.B9.88.EF.BC.9F)
-    *   [1.2 ABS 的概念与之相似](#ABS_.E7.9A.84.E6.A6.82.E5.BF.B5.E4.B8.8E.E4.B9.8B.E7.9B.B8.E4.BC.BC)
-    *   [1.3 ABS概览](#ABS.E6.A6.82.E8.A7.88)
-        *   [1.3.1 SVN目录树](#SVN.E7.9B.AE.E5.BD.95.E6.A0.91)
-*   [2 我为什么要用ABS](#.E6.88.91.E4.B8.BA.E4.BB.80.E4.B9.88.E8.A6.81.E7.94.A8ABS)
-*   [3 如何使用 ABS](#.E5.A6.82.E4.BD.95.E4.BD.BF.E7.94.A8_ABS)
-    *   [3.1 使用 SVN 获取 PKGBUILD](#.E4.BD.BF.E7.94.A8_SVN_.E8.8E.B7.E5.8F.96_PKGBUILD)
-        *   [3.1.1 前提](#.E5.89.8D.E6.8F.90)
-        *   [3.1.2 非递归checkout](#.E9.9D.9E.E9.80.92.E5.BD.92checkout)
-        *   [3.1.3 Checkout软件包](#Checkout.E8.BD.AF.E4.BB.B6.E5.8C.85)
-    *   [3.2 使用 Git 获取 PKGBUILD](#.E4.BD.BF.E7.94.A8_Git_.E8.8E.B7.E5.8F.96_PKGBUILD)
-    *   [3.3 构建软件包](#.E6.9E.84.E5.BB.BA.E8.BD.AF.E4.BB.B6.E5.8C.85)
-*   [4 技巧](#.E6.8A.80.E5.B7.A7)
-    *   [4.1 保留修改过的软件包](#.E4.BF.9D.E7.95.99.E4.BF.AE.E6.94.B9.E8.BF.87.E7.9A.84.E8.BD.AF.E4.BB.B6.E5.8C.85)
-    *   [4.2 Checkout旧版本软件包](#Checkout.E6.97.A7.E7.89.88.E6.9C.AC.E8.BD.AF.E4.BB.B6.E5.8C.85)
-*   [5 其它工具](#.E5.85.B6.E5.AE.83.E5.B7.A5.E5.85.B7)
+*   [1 什么是 ABS](#什么是_ABS)
+    *   [1.1 类 ports 系统又是什么？](#类_ports_系统又是什么？)
+    *   [1.2 ABS 的概念与之相似](#ABS_的概念与之相似)
+    *   [1.3 ABS概览](#ABS概览)
+        *   [1.3.1 SVN目录树](#SVN目录树)
+*   [2 我为什么要用ABS](#我为什么要用ABS)
+*   [3 如何使用 ABS](#如何使用_ABS)
+    *   [3.1 使用 SVN 获取 PKGBUILD](#使用_SVN_获取_PKGBUILD)
+        *   [3.1.1 前提](#前提)
+        *   [3.1.2 非递归checkout](#非递归checkout)
+        *   [3.1.3 Checkout软件包](#Checkout软件包)
+    *   [3.2 使用 Git 获取 PKGBUILD](#使用_Git_获取_PKGBUILD)
+    *   [3.3 构建软件包](#构建软件包)
+*   [4 技巧](#技巧)
+    *   [4.1 保留修改过的软件包](#保留修改过的软件包)
+    *   [4.2 Checkout旧版本软件包](#Checkout旧版本软件包)
+*   [5 其它工具](#其它工具)
 
 ## 什么是 ABS
 
@@ -73,7 +73,7 @@ ABS(Arch Build System)指的是Arch的构建系统。这是一种从源代码编
 
 #### SVN目录树
 
-*core*, *extra*和*testing* [官方软件仓库](/index.php/%E5%AE%98%E6%96%B9%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93 "官方软件仓库") 可从官方SVN的*packages* 仓库[checkout](#.E9.9D.9E.E9.80.92.E5.BD.92checkout). 而*community*和*multilib*在*community* SVN仓库。
+*core*, *extra*和*testing* [官方软件仓库](/index.php/%E5%AE%98%E6%96%B9%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93 "官方软件仓库") 可从官方SVN的*packages* 仓库[checkout](#非递归checkout). 而*community*和*multilib*在*community* SVN仓库。
 
 每个包有各自的子目录，其中又有`repos`和`trunk`目录。`repos`又进一步按仓库名(如*core*)和架构细分。`repos`里的PKGBUILD和其它文件用来构建官方包。`trunk`里的文件是正在开发的，并最终复制到`repos`。
 
@@ -154,7 +154,7 @@ $ svn update *package-name*
 *   检查包是不是被移到了另一个仓库 (例如从community到主仓库)
 *   到 [https://www.archlinux.org/packages](https://www.archlinux.org/packages) 检查这个包是不是从另一个基础包构建的 (例如[python-tensorflow](https://www.archlinux.org/packages/?name=python-tensorflow)是在[tensorflow](https://www.archlinux.org/packages/?name=tensorflow) PKGBUILD里构建的)
 
-**Tip:** 要check旧版本，参考[#Checkout旧版本软件包](#Checkout.E6.97.A7.E7.89.88.E6.9C.AC.E8.BD.AF.E4.BB.B6.E5.8C.85).
+**Tip:** 要check旧版本，参考[#Checkout旧版本软件包](#Checkout旧版本软件包).
 
 如果想在最新的版本进行编译，定期执行:
 
@@ -189,9 +189,9 @@ $ asp export *pkgname*
 
 ### 构建软件包
 
-关于如何配置*makepkg*来从[PKGBUILD](/index.php/PKGBUILD_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PKGBUILD (简体中文)")构建软件包，请参考[makepkg (简体中文)#配置](/index.php/Makepkg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E9.85.8D.E7.BD.AE "Makepkg (简体中文)")。
+关于如何配置*makepkg*来从[PKGBUILD](/index.php/PKGBUILD_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PKGBUILD (简体中文)")构建软件包，请参考[makepkg (简体中文)#配置](/index.php/Makepkg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#配置 "Makepkg (简体中文)")。
 
-把[PKGBUILD](/index.php/PKGBUILD_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PKGBUILD (简体中文)")所在目录复制到新的位置。在新目录按需要进行修改。 并按照[makepkg (简体中文)#使用](/index.php/Makepkg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8 "Makepkg (简体中文)")来构建和安装软件包。
+把[PKGBUILD](/index.php/PKGBUILD_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PKGBUILD (简体中文)")所在目录复制到新的位置。在新目录按需要进行修改。 并按照[makepkg (简体中文)#使用](/index.php/Makepkg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#使用 "Makepkg (简体中文)")来构建和安装软件包。
 
 ## 技巧
 
@@ -211,7 +211,7 @@ Pacman 进行升级时会将修改后的软件包升级到仓库中的最新版�
 
 ### Checkout旧版本软件包
 
-在checkout[#非递归checkout](#.E9.9D.9E.E9.80.92.E5.BD.92checkout)的SVN仓库目录 (即"packages"或"community") 中查看日志:
+在checkout[#非递归checkout](#非递归checkout)的SVN仓库目录 (即"packages"或"community") 中查看日志:
 
 ```
 $ svn log *package-name*

@@ -12,7 +12,7 @@ Related articles
     *   [2.1 PostgreSQL](#PostgreSQL)
         *   [2.1.1 With TCP socket](#With_TCP_socket)
         *   [2.1.2 With Unix socket](#With_Unix_socket)
-    *   [2.2 MariaDB/MySQL](#MariaDB.2FMySQL)
+    *   [2.2 MariaDB/MySQL](#MariaDB/MySQL)
 *   [3 Usage](#Usage)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Enable SSH Support](#Enable_SSH_Support)

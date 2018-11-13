@@ -13,7 +13,7 @@
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Blueman applet does not start](#Blueman_applet_does_not_start)
     *   [4.2 No adapters detected](#No_adapters_detected)
-    *   [4.3 Can't receive files](#Can.27t_receive_files)
+    *   [4.3 Can't receive files](#Can't_receive_files)
 *   [5 See also](#See_also)
 
 ## Installation

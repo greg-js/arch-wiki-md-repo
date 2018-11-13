@@ -3,21 +3,21 @@
 ## Contents
 
 *   [1 Instalacja](#Instalacja)
-*   [2 Podstawowe użycie](#Podstawowe_u.C5.BCycie)
-    *   [2.1 Konfiguracja użytkownika](#Konfiguracja_u.C5.BCytkownika)
+*   [2 Podstawowe użycie](#Podstawowe_użycie)
+    *   [2.1 Konfiguracja użytkownika](#Konfiguracja_użytkownika)
         *   [2.1.1 Konfiguracja w Qutebrowser](#Konfiguracja_w_Qutebrowser)
-    *   [2.2 Skróty klawiszowe](#Skr.C3.B3ty_klawiszowe)
+    *   [2.2 Skróty klawiszowe](#Skróty_klawiszowe)
     *   [2.3 Odtwarzanie wideo](#Odtwarzanie_wideo)
-*   [3 Porady i wskazówki](#Porady_i_wskaz.C3.B3wki)
-    *   [3.1 Włącz sprawdzanie pisowni](#W.C5.82.C4.85cz_sprawdzanie_pisowni)
-    *   [3.2 Zmniejsz odciski przeglądarki](#Zmniejsz_odciski_przegl.C4.85darki)
-        *   [3.2.1 Ustaw pospolity agent użytkownika](#Ustaw_pospolity_agent_u.C5.BCytkownika)
-        *   [3.2.2 Ustaw pospolity nagłówek HTTP_ACCEPT](#Ustaw_pospolity_nag.C5.82.C3.B3wek_HTTP_ACCEPT)
-        *   [3.2.3 Wyłącz czytanie z płótna](#Wy.C5.82.C4.85cz_czytanie_z_p.C5.82.C3.B3tna)
-        *   [3.2.4 Wyłączanie WebGL](#Wy.C5.82.C4.85czanie_WebGL)
-    *   [3.3 Zarządzanie sesjami jak w dwb](#Zarz.C4.85dzanie_sesjami_jak_w_dwb)
+*   [3 Porady i wskazówki](#Porady_i_wskazówki)
+    *   [3.1 Włącz sprawdzanie pisowni](#Włącz_sprawdzanie_pisowni)
+    *   [3.2 Zmniejsz odciski przeglądarki](#Zmniejsz_odciski_przeglądarki)
+        *   [3.2.1 Ustaw pospolity agent użytkownika](#Ustaw_pospolity_agent_użytkownika)
+        *   [3.2.2 Ustaw pospolity nagłówek HTTP_ACCEPT](#Ustaw_pospolity_nagłówek_HTTP_ACCEPT)
+        *   [3.2.3 Wyłącz czytanie z płótna](#Wyłącz_czytanie_z_płótna)
+        *   [3.2.4 Wyłączanie WebGL](#Wyłączanie_WebGL)
+    *   [3.3 Zarządzanie sesjami jak w dwb](#Zarządzanie_sesjami_jak_w_dwb)
     *   [3.4 Blokowanie stron](#Blokowanie_stron)
-*   [4 Zobacz również](#Zobacz_r.C3.B3wnie.C5.BC)
+*   [4 Zobacz również](#Zobacz_również)
 
 ## Instalacja
 

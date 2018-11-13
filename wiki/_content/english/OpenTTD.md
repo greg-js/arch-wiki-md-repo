@@ -3,13 +3,13 @@ OpenTTD is a free re-implementation of the popular DOS game [Transport Tycoon De
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Original Transport Tycoon Deluxe data (optional)](#Original_Transport_Tycoon_Deluxe_data_.28optional.29)
+    *   [1.1 Original Transport Tycoon Deluxe data (optional)](#Original_Transport_Tycoon_Deluxe_data_(optional))
 *   [2 Tutorial](#Tutorial)
 *   [3 Configuration](#Configuration)
     *   [3.1 Game Options](#Game_Options)
     *   [3.2 Difficulty](#Difficulty)
     *   [3.3 Advanced Settings](#Advanced_Settings)
-    *   [3.4 AI/Game Script Settings](#AI.2FGame_Script_Settings)
+    *   [3.4 AI/Game Script Settings](#AI/Game_Script_Settings)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Heightmaps](#Heightmaps)
     *   [4.2 Cheats](#Cheats)

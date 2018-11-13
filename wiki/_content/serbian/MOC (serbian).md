@@ -3,9 +3,9 @@
 *   [1 Opis](#Opis)
 *   [2 Instalacija](#Instalacija)
 *   [3 Konfigurisanje](#Konfigurisanje)
-*   [4 Korišćenje](#Kori.C5.A1.C4.87enje)
+*   [4 Korišćenje](#Korišćenje)
 *   [5 Razvojna verzija](#Razvojna_verzija)
-*   [6 MOC + last.fm](#MOC_.2B_last.fm)
+*   [6 MOC + last.fm](#MOC_+_last.fm)
 *   [7 Frontends](#Frontends)
 
 ## Opis

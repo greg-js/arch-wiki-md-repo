@@ -10,18 +10,18 @@ TU们依靠[TU bylaws](https://aur.archlinux.org/trusted-user/TUbylaws.html)来�
 
 ## Contents
 
-*   [1 新 TU 的 TODO 列表](#.E6.96.B0_TU_.E7.9A.84_TODO_.E5.88.97.E8.A1.A8)
-*   [2 TU 和 [unsupported]](#TU_.E5.92.8C_.5Bunsupported.5D)
-*   [3 TU 和 [community], 包维护导引](#TU_.E5.92.8C_.5Bcommunity.5D.2C_.E5.8C.85.E7.BB.B4.E6.8A.A4.E5.AF.BC.E5.BC.95)
-    *   [3.1 软件包进入 [community] 仓库的规则](#.E8.BD.AF.E4.BB.B6.E5.8C.85.E8.BF.9B.E5.85.A5_.5Bcommunity.5D_.E4.BB.93.E5.BA.93.E7.9A.84.E8.A7.84.E5.88.99)
-    *   [3.2 访问并更新仓库](#.E8.AE.BF.E9.97.AE.E5.B9.B6.E6.9B.B4.E6.96.B0.E4.BB.93.E5.BA.93)
-    *   [3.3 停止维护软件包](#.E5.81.9C.E6.AD.A2.E7.BB.B4.E6.8A.A4.E8.BD.AF.E4.BB.B6.E5.8C.85)
-    *   [3.4 将软件包从 unsupported 移到 [community]](#.E5.B0.86.E8.BD.AF.E4.BB.B6.E5.8C.85.E4.BB.8E_unsupported_.E7.A7.BB.E5.88.B0_.5Bcommunity.5D)
-    *   [3.5 将软件包从 [community] 移至 unsupported](#.E5.B0.86.E8.BD.AF.E4.BB.B6.E5.8C.85.E4.BB.8E_.5Bcommunity.5D_.E7.A7.BB.E8.87.B3_unsupported)
-    *   [3.6 将软件包从 [community-testing] 移至 [community]](#.E5.B0.86.E8.BD.AF.E4.BB.B6.E5.8C.85.E4.BB.8E_.5Bcommunity-testing.5D_.E7.A7.BB.E8.87.B3_.5Bcommunity.5D)
-    *   [3.7 从 unsupported 删除软件包](#.E4.BB.8E_unsupported_.E5.88.A0.E9.99.A4.E8.BD.AF.E4.BB.B6.E5.8C.85)
-*   [4 TU 辞职需要完成的事项](#TU_.E8.BE.9E.E8.81.8C.E9.9C.80.E8.A6.81.E5.AE.8C.E6.88.90.E7.9A.84.E4.BA.8B.E9.A1.B9)
-*   [5 另见](#.E5.8F.A6.E8.A7.81)
+*   [1 新 TU 的 TODO 列表](#新_TU_的_TODO_列表)
+*   [2 TU 和 [unsupported]](#TU_和_[unsupported])
+*   [3 TU 和 [community], 包维护导引](#TU_和_[community],_包维护导引)
+    *   [3.1 软件包进入 [community] 仓库的规则](#软件包进入_[community]_仓库的规则)
+    *   [3.2 访问并更新仓库](#访问并更新仓库)
+    *   [3.3 停止维护软件包](#停止维护软件包)
+    *   [3.4 将软件包从 unsupported 移到 [community]](#将软件包从_unsupported_移到_[community])
+    *   [3.5 将软件包从 [community] 移至 unsupported](#将软件包从_[community]_移至_unsupported)
+    *   [3.6 将软件包从 [community-testing] 移至 [community]](#将软件包从_[community-testing]_移至_[community])
+    *   [3.7 从 unsupported 删除软件包](#从_unsupported_删除软件包)
+*   [4 TU 辞职需要完成的事项](#TU_辞职需要完成的事项)
+*   [5 另见](#另见)
 
 ## 新 TU 的 TODO 列表
 

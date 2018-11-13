@@ -2,10 +2,10 @@ Un disco RAM (ramdisk) es un área de memoria utilizada como disco. Muchas distr
 
 ## Contents
 
-*   [1 ¿Por qué usar uno?](#.C2.BFPor_qu.C3.A9_usar_uno.3F)
-*   [2 Cómo crear un disco RAM](#C.C3.B3mo_crear_un_disco_RAM)
+*   [1 ¿Por qué usar uno?](#¿Por_qué_usar_uno?)
+*   [2 Cómo crear un disco RAM](#Cómo_crear_un_disco_RAM)
 *   [3 Ejemplo de uso](#Ejemplo_de_uso)
-*   [4 Enlaces de interés](#Enlaces_de_inter.C3.A9s)
+*   [4 Enlaces de interés](#Enlaces_de_interés)
 
 ## ¿Por qué usar uno?
 

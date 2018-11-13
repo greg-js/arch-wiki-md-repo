@@ -17,22 +17,22 @@ Exemplos de redes de confiança:
 
 ## Contents
 
-*   [1 Configuração](#Configura.C3.A7.C3.A3o)
+*   [1 Configuração](#Configuração)
     *   [1.1 Configurando o pacman](#Configurando_o_pacman)
     *   [1.2 Inicializando o chaveiro](#Inicializando_o_chaveiro)
 *   [2 Gerenciando o chaveiro](#Gerenciando_o_chaveiro)
     *   [2.1 Verificando as chaves mestras](#Verificando_as_chaves_mestras)
     *   [2.2 Adicionando as chaves de desenvolvedor](#Adicionando_as_chaves_de_desenvolvedor)
-    *   [2.3 Adicionando chaves não oficiais](#Adicionando_chaves_n.C3.A3o_oficiais)
+    *   [2.3 Adicionando chaves não oficiais](#Adicionando_chaves_não_oficiais)
     *   [2.4 Depurando com gpg](#Depurando_com_gpg)
-*   [3 Solução de problemas](#Solu.C3.A7.C3.A3o_de_problemas)
-    *   [3.1 Não foi possível importar chaves](#N.C3.A3o_foi_poss.C3.ADvel_importar_chaves)
-    *   [3.2 Desabilitando verificação de assinatura](#Desabilitando_verifica.C3.A7.C3.A3o_de_assinatura)
+*   [3 Solução de problemas](#Solução_de_problemas)
+    *   [3.1 Não foi possível importar chaves](#Não_foi_possível_importar_chaves)
+    *   [3.2 Desabilitando verificação de assinatura](#Desabilitando_verificação_de_assinatura)
     *   [3.3 Redefinindo todas as chaves](#Redefinindo_todas_as_chaves)
     *   [3.4 Removendo pacotes obsoletos](#Removendo_pacotes_obsoletos)
-    *   [3.5 Assinatura tem confiança desconhecida](#Assinatura_tem_confian.C3.A7a_desconhecida)
+    *   [3.5 Assinatura tem confiança desconhecida](#Assinatura_tem_confiança_desconhecida)
     *   [3.6 Atualizando chaves via proxy](#Atualizando_chaves_via_proxy)
-*   [4 Veja também](#Veja_tamb.C3.A9m)
+*   [4 Veja também](#Veja_também)
 
 ## Configuração
 
@@ -226,7 +226,7 @@ error: *nome-pacote*: a assinatura de "*empacotador*" tem confiança desconhecid
 
 ```
 
-Isso ocorre porque a chave do `*empacotador*` usada no pacote `*nome-pacote*` não está presente e/ou não é confiável no banco de dados gpg local do pacman-key. O Pacman parece não conseguir sempre verificar se a chave foi recebida e marcada como confiável antes de continuar. Mitigue [assinando manualmente a chave não confiável localmente](#Adicionando_chaves_n.C3.A3o_oficiais) ou [redefinindo todas as chaves](#Redefinindo_todas_as_chaves).
+Isso ocorre porque a chave do `*empacotador*` usada no pacote `*nome-pacote*` não está presente e/ou não é confiável no banco de dados gpg local do pacman-key. O Pacman parece não conseguir sempre verificar se a chave foi recebida e marcada como confiável antes de continuar. Mitigue [assinando manualmente a chave não confiável localmente](#Adicionando_chaves_não_oficiais) ou [redefinindo todas as chaves](#Redefinindo_todas_as_chaves).
 
 ### Atualizando chaves via proxy
 

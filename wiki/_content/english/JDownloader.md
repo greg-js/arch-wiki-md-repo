@@ -10,7 +10,7 @@
     *   [3.2 Changing preferences for individual sites](#Changing_preferences_for_individual_sites)
     *   [3.3 Changing font scale](#Changing_font_scale)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Application not resizing with WM, menus immediately closing](#Application_not_resizing_with_WM.2C_menus_immediately_closing)
+    *   [4.1 Application not resizing with WM, menus immediately closing](#Application_not_resizing_with_WM,_menus_immediately_closing)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -47,7 +47,7 @@ If font is too small, it can be enlarged by increasing scale factor: *settings >
 
 ### Application not resizing with WM, menus immediately closing
 
-see [Java#Applications not resizing with WM, menus immediately closing](/index.php/Java#Applications_not_resizing_with_WM.2C_menus_immediately_closing "Java")
+see [Java#Applications not resizing with WM, menus immediately closing](/index.php/Java#Applications_not_resizing_with_WM,_menus_immediately_closing "Java")
 
 ## See also
 

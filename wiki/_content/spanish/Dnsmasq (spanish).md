@@ -13,14 +13,14 @@ Artículos relacionados
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
 *   [2 Iniciar el demonio](#Iniciar_el_demonio)
-*   [3 Configuración](#Configuraci.C3.B3n)
+*   [3 Configuración](#Configuración)
     *   [3.1 Servidor DNS](#Servidor_DNS)
-        *   [3.1.1 Archivo de direcciones DNS y de reenvío](#Archivo_de_direcciones_DNS_y_de_reenv.C3.ADo)
+        *   [3.1.1 Archivo de direcciones DNS y de reenvío](#Archivo_de_direcciones_DNS_y_de_reenvío)
             *   [3.1.1.1 openresolv](#openresolv)
-            *   [3.1.1.2 Reenvío manual](#Reenv.C3.ADo_manual)
-        *   [3.1.2 Añadir un dominio personalizado](#A.C3.B1adir_un_dominio_personalizado)
+            *   [3.1.1.2 Reenvío manual](#Reenvío_manual)
+        *   [3.1.2 Añadir un dominio personalizado](#Añadir_un_dominio_personalizado)
         *   [3.1.3 Prueba](#Prueba)
     *   [3.2 Servidor DHCP](#Servidor_DHCP)
         *   [3.2.1 Prueba](#Prueba_2)
@@ -29,10 +29,10 @@ Artículos relacionados
 *   [4 Consejos y trucos](#Consejos_y_trucos)
     *   [4.1 Impedir que OpenDNS redirija las consultas de Google](#Impedir_que_OpenDNS_redirija_las_consultas_de_Google)
     *   [4.2 Anular direcciones](#Anular_direcciones)
-    *   [4.3 Tener más de una instancia](#Tener_m.C3.A1s_de_una_instancia)
-        *   [4.3.1 Estático](#Est.C3.A1tico)
-        *   [4.3.2 Dinámico](#Din.C3.A1mico)
-*   [5 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+    *   [4.3 Tener más de una instancia](#Tener_más_de_una_instancia)
+        *   [4.3.1 Estático](#Estático)
+        *   [4.3.2 Dinámico](#Dinámico)
+*   [5 Véase también](#Véase_también)
 
 ## Instalación
 
@@ -141,7 +141,7 @@ nameserver 127.0.0.1
 
 ```
 
-Consulte [Domain name resolution#Overwriting of /etc/resolv.conf](/index.php/Domain_name_resolution#Overwriting_of_.2Fetc.2Fresolv.conf "Domain name resolution") sobre cómo proteger el archivo `/etc/resolv.conf` de ser modificado.
+Consulte [Domain name resolution#Overwriting of /etc/resolv.conf](/index.php/Domain_name_resolution#Overwriting_of_/etc/resolv.conf "Domain name resolution") sobre cómo proteger el archivo `/etc/resolv.conf` de ser modificado.
 
 Las direcciones del servidor DNS ascendente deben especificarse en el archivo de configuración de dnsmasq como `server=*server_address*`. También añada `no-resolv` para que dnsmasq no lea innecesariamente `/etc/resolv.conf`, que solo contiene las direcciones del equipo local.
 

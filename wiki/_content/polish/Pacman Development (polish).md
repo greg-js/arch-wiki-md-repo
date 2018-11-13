@@ -5,11 +5,11 @@ Pamiętaj, że jeżeli, twoim zdaniem, na tej stronie brakuje jakiś niezbędnyc
 ## Contents
 
 *   [1 References and Links](#References_and_Links)
-*   [2 Repozytoria deweloperów](#Repozytoria_deweloper.C3.B3w)
+*   [2 Repozytoria deweloperów](#Repozytoria_deweloperów)
     *   [2.1 Allan McRae](#Allan_McRae)
     *   [2.2 Dan McGee](#Dan_McGee)
     *   [2.3 Dave Reisner](#Dave_Reisner)
-*   [3 Wskazówki do Gita](#Wskaz.C3.B3wki_do_Gita)
+*   [3 Wskazówki do Gita](#Wskazówki_do_Gita)
 
 ## References and Links
 

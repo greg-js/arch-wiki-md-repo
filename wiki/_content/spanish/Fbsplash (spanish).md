@@ -2,14 +2,14 @@
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
     *   [1.1 Fbsplash](#Fbsplash)
     *   [1.2 *Scripts*](#Scripts)
     *   [1.3 Temas](#Temas)
     *   [1.4 Suspender al Disco](#Suspender_al_Disco)
-*   [2 Configuración](#Configuraci.C3.B3n)
-    *   [2.1 Línea de comandos del Kernel](#L.C3.ADnea_de_comandos_del_Kernel)
-    *   [2.2 Archivos de configuración](#Archivos_de_configuraci.C3.B3n)
+*   [2 Configuración](#Configuración)
+    *   [2.1 Línea de comandos del Kernel](#Línea_de_comandos_del_Kernel)
+    *   [2.2 Archivos de configuración](#Archivos_de_configuración)
 *   [3 Ejecutando Fbsplash temprano en el initcpio](#Ejecutando_Fbsplash_temprano_en_el_initcpio)
 *   [4 Fondos de Consola](#Fondos_de_Consola)
 

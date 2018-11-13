@@ -10,12 +10,12 @@ El [gestor de pantalla](https://en.wikipedia.org/wiki/es:X_Display_Manager y de 
 
 *   [1 Lista de gestores de pantalla](#Lista_de_gestores_de_pantalla)
     *   [1.1 De consola](#De_consola)
-    *   [1.2 Gráficos](#Gr.C3.A1ficos)
-*   [2 Cargar el gestor de inicio de sesión](#Cargar_el_gestor_de_inicio_de_sesi.C3.B3n)
+    *   [1.2 Gráficos](#Gráficos)
+*   [2 Cargar el gestor de inicio de sesión](#Cargar_el_gestor_de_inicio_de_sesión)
     *   [2.1 Utilizar systemd-logind](#Utilizar_systemd-logind)
 *   [3 Consejos y trucos](#Consejos_y_trucos)
-    *   [3.1 Lista de sesión](#Lista_de_sesi.C3.B3n)
-    *   [3.2 Iniciar automáticamente](#Iniciar_autom.C3.A1ticamente)
+    *   [3.1 Lista de sesión](#Lista_de_sesión)
+    *   [3.2 Iniciar automáticamente](#Iniciar_automáticamente)
 *   [4 Problemas conocidos](#Problemas_conocidos)
     *   [4.1 Incompatibilidad con systemd](#Incompatibilidad_con_systemd)
 

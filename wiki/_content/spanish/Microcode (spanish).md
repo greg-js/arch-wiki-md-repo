@@ -4,20 +4,20 @@ El [microcódigo del procesador](https://en.wikipedia.org/wiki/es:Microc%C3%B3di
 
 ## Contents
 
-*   [1 Actualización del microcódigo](#Actualizaci.C3.B3n_del_microc.C3.B3digo)
-    *   [1.1 Activación de las actualizaciones del microcódigo de Intel](#Activaci.C3.B3n_de_las_actualizaciones_del_microc.C3.B3digo_de_Intel)
-    *   [1.2 Ejemplos específicos](#Ejemplos_espec.C3.ADficos)
-        *   [1.2.1 EFI boot stub / EFI handover](#EFI_boot_stub_.2F_EFI_handover)
+*   [1 Actualización del microcódigo](#Actualización_del_microcódigo)
+    *   [1.1 Activación de las actualizaciones del microcódigo de Intel](#Activación_de_las_actualizaciones_del_microcódigo_de_Intel)
+    *   [1.2 Ejemplos específicos](#Ejemplos_específicos)
+        *   [1.2.1 EFI boot stub / EFI handover](#EFI_boot_stub_/_EFI_handover)
         *   [1.2.2 Gummiboot](#Gummiboot)
         *   [1.2.3 rEFInd](#rEFInd)
         *   [1.2.4 GRUB](#GRUB)
-        *   [1.2.5 Método automático](#M.C3.A9todo_autom.C3.A1tico)
-        *   [1.2.6 Método manual](#M.C3.A9todo_manual)
+        *   [1.2.5 Método automático](#Método_automático)
+        *   [1.2.6 Método manual](#Método_manual)
         *   [1.2.7 Syslinux](#Syslinux)
-*   [2 Verificar qué microcódigo quedó actualizado en el arranque](#Verificar_qu.C3.A9_microc.C3.B3digo_qued.C3.B3_actualizado_en_el_arranque)
-*   [3 ¿Qué CPU aceptan actualizaciones de microcódigo?](#.C2.BFQu.C3.A9_CPU_aceptan_actualizaciones_de_microc.C3.B3digo.3F)
-    *   [3.1 Detectar la actualización del microcódigo disponible](#Detectar_la_actualizaci.C3.B3n_del_microc.C3.B3digo_disponible)
-    *   [3.2 Activación de la carga de Intel Early Microcode en Kernels personalizados](#Activaci.C3.B3n_de_la_carga_de_Intel_Early_Microcode_en_Kernels_personalizados)
+*   [2 Verificar qué microcódigo quedó actualizado en el arranque](#Verificar_qué_microcódigo_quedó_actualizado_en_el_arranque)
+*   [3 ¿Qué CPU aceptan actualizaciones de microcódigo?](#¿Qué_CPU_aceptan_actualizaciones_de_microcódigo?)
+    *   [3.1 Detectar la actualización del microcódigo disponible](#Detectar_la_actualización_del_microcódigo_disponible)
+    *   [3.2 Activación de la carga de Intel Early Microcode en Kernels personalizados](#Activación_de_la_carga_de_Intel_Early_Microcode_en_Kernels_personalizados)
 
 ## Actualización del microcódigo
 

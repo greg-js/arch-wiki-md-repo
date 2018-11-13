@@ -5,7 +5,7 @@
 *   [1 Preparation](#Preparation)
 *   [2 Installation](#Installation)
     *   [2.1 The plymouth hook](#The_plymouth_hook)
-    *   [2.2 Alternative plymouth hook (systemd)](#Alternative_plymouth_hook_.28systemd.29)
+    *   [2.2 Alternative plymouth hook (systemd)](#Alternative_plymouth_hook_(systemd))
     *   [2.3 The kernel command line](#The_kernel_command_line)
 *   [3 Configuration](#Configuration)
     *   [3.1 Smooth transition](#Smooth_transition)

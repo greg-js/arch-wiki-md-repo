@@ -9,7 +9,7 @@ See the [Laptop/Dell](/index.php/Laptop/Dell "Laptop/Dell") chart for informatio
 *   [3 Hardware](#Hardware)
     *   [3.1 Microphone](#Microphone)
     *   [3.2 Video](#Video)
-        *   [3.2.1 Toggle between HDMI/Monitor](#Toggle_between_HDMI.2FMonitor)
+        *   [3.2.1 Toggle between HDMI/Monitor](#Toggle_between_HDMI/Monitor)
     *   [3.3 Touchpad](#Touchpad)
 
 ## Hardware Details

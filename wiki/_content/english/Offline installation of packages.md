@@ -8,7 +8,7 @@ Related articles
     *   [1.1 A simple example](#A_simple_example)
     *   [1.2 A slightly contrived example](#A_slightly_contrived_example)
         *   [1.2.1 Generate a list of packages to download](#Generate_a_list_of_packages_to_download)
-        *   [1.2.2 Download/copy the packages and their dependencies](#Download.2Fcopy_the_packages_and_their_dependencies)
+        *   [1.2.2 Download/copy the packages and their dependencies](#Download/copy_the_packages_and_their_dependencies)
         *   [1.2.3 Create a repository database just for these packages](#Create_a_repository_database_just_for_these_packages)
         *   [1.2.4 Transfer the packages](#Transfer_the_packages)
         *   [1.2.5 Install the packages](#Install_the_packages)

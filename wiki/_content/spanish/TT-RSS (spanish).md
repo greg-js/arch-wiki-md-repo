@@ -5,10 +5,10 @@ Este artículo es una traducción de [TT-RSS](/index.php/TT-RSS "TT-RSS"), revis
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
     *   [1.1 Configurar PHP y base de datos](#Configurar_PHP_y_base_de_datos)
     *   [1.2 Hook de pacman](#Hook_de_pacman)
-    *   [1.3 Configurar un demonio de actualización](#Configurar_un_demonio_de_actualizaci.C3.B3n)
+    *   [1.3 Configurar un demonio de actualización](#Configurar_un_demonio_de_actualización)
 
 ## Instalación
 

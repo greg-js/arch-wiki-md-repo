@@ -13,7 +13,7 @@
     *   [3.3 i3](#i3)
     *   [3.4 Multiple panels](#Multiple_panels)
 *   [4 Enabling transparency](#Enabling_transparency)
-    *   [4.1 Fullscreen/Overlay](#Fullscreen.2FOverlay)
+    *   [4.1 Fullscreen/Overlay](#Fullscreen/Overlay)
     *   [4.2 Third party extensions](#Third_party_extensions)
 *   [5 See also](#See_also)
 

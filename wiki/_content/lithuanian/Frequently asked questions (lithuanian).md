@@ -2,38 +2,38 @@ Be atsakytų klausimų apačioje, [The Arch Way](/index.php/The_Arch_Way_(Lietuv
 
 ## Contents
 
-*   [1 Pagrindinė informacija](#Pagrindin.C4.97_informacija)
-    *   [1.1 Kas yra Arch Linux?](#Kas_yra_Arch_Linux.3F)
-    *   [1.2 Kodėl norėčiau naudotis Arch?](#Kod.C4.97l_nor.C4.97.C4.8Diau_naudotis_Arch.3F)
-    *   [1.3 Kodėl nenorėčiau naudotis Arch?](#Kod.C4.97l_nenor.C4.97.C4.8Diau_naudotis_Arch.3F)
-    *   [1.4 Kuria distribucija paremta Arch?](#Kuria_distribucija_paremta_Arch.3F)
-    *   [1.5 Kokias architektūras palaiko Arch?](#Kokias_architekt.C5.ABras_palaiko_Arch.3F)
-    *   [1.6 Ar Arch palaiko ARM procesorius?](#Ar_Arch_palaiko_ARM_procesorius.3F)
-    *   [1.7 Aš visiškas GNU/Linux pradedantysis. Ar turėčiau naudotis Arch?](#A.C5.A1_visi.C5.A1kas_GNU.2FLinux_pradedantysis._Ar_tur.C4.97.C4.8Diau_naudotis_Arch.3F)
-    *   [1.8 Arch įdiegimas ir naudojimas užima per daug laiko ir pastangų.Taip pat bendruomenė vis liepia man RTFM](#Arch_.C4.AFdiegimas_ir_naudojimas_u.C5.BEima_per_daug_laiko_ir_pastang.C5.B3.Taip_pat_bendruomen.C4.97_vis_liepia_man_RTFM)
-    *   [1.9 Ar Arch suprojektuota naudojimui serveryje? Kaip Darbastalio aplinka? Kaip Darbinė stotis?](#Ar_Arch_suprojektuota_naudojimui_serveryje.3F_Kaip_Darbastalio_aplinka.3F_Kaip_Darbin.C4.97_stotis.3F)
-    *   [1.10 Man labai patinka Arch, bet kūrėjų komanda turėtų įdiegti X funkciją](#Man_labai_patinka_Arch.2C_bet_k.C5.ABr.C4.97j.C5.B3_komanda_tur.C4.97t.C5.B3_.C4.AFdiegti_X_funkcij.C4.85)
-    *   [1.11 Kada bus prieinama nauja versija?](#Kada_bus_prieinama_nauja_versija.3F)
-    *   [1.12 Ar Arch stabili distribucija? Ar ji dažnai užlūžta?](#Ar_Arch_stabili_distribucija.3F_Ar_ji_da.C5.BEnai_u.C5.BEl.C5.AB.C5.BEta.3F)
-    *   [1.13 Arch reikia daugiau žiniasklaidos dėmesio (pvz.: reklamos)](#Arch_reikia_daugiau_.C5.BEiniasklaidos_d.C4.97mesio_.28pvz.:_reklamos.29)
-    *   [1.14 Arch reikia daugiau vystytojų](#Arch_reikia_daugiau_vystytoj.C5.B3)
-    *   [1.15 Kodėl mano interneto greitis toks lėtas palyginus su kitomis operacinėmis sistemomis?](#Kod.C4.97l_mano_interneto_greitis_toks_l.C4.97tas_palyginus_su_kitomis_operacin.C4.97mis_sistemomis.3F)
-    *   [1.16 Kodėl Arch naudoja visus mano RAM?](#Kod.C4.97l_Arch_naudoja_visus_mano_RAM.3F)
-    *   [1.17 Kur dingo visa mano laisva vieta?](#Kur_dingo_visa_mano_laisva_vieta.3F)
-*   [2 Paketų valdymas](#Paket.C5.B3_valdymas)
-    *   [2.1 Kuriame pakete galiu rasti X?](#Kuriame_pakete_galiu_rasti_X.3F)
-    *   [2.2 X pakete radau klaidą. Ką daryti?](#X_pakete_radau_klaid.C4.85._K.C4.85_daryti.3F)
-    *   [2.3 Arch paketams reikalingas unikalūs plėtinys. ".pkg.tar.gz" ir ".pkg.tar.xz" per ilgi ir/ar klaidinantys](#Arch_paketams_reikalingas_unikal.C5.ABs_pl.C4.97tinys._.22.pkg.tar.gz.22_ir_.22.pkg.tar.xz.22_per_ilgi_ir.2Far_klaidinantys)
-    *   [2.4 Pacman reikalinga biblioteka, kad kitos programos galėtų laisvai pasiekti paketų informaciją](#Pacman_reikalinga_biblioteka.2C_kad_kitos_programos_gal.C4.97t.C5.B3_laisvai_pasiekti_paket.C5.B3_informacij.C4.85)
-    *   [2.5 Kodėl pacman neturi oficialios GUI sąsajos?](#Kod.C4.97l_pacman_neturi_oficialios_GUI_s.C4.85sajos.3F)
-    *   [2.6 Pacman reikalinga X funkcija!](#Pacman_reikalinga_X_funkcija.21)
-    *   [2.7 Koks skirtumas tarp visų saugyklų?](#Koks_skirtumas_tarp_vis.C5.B3_saugykl.C5.B3.3F)
-    *   [2.8 Ką tik įdiegiau X paketą. Kaip man jį paleisti?](#K.C4.85_tik_.C4.AFdiegiau_X_paket.C4.85._Kaip_man_j.C4.AF_paleisti.3F)
-    *   [2.9 Kodėl oficialiose saugyklose yra tik viena kiekvienos pasidalintos bibliotekos versija?](#Kod.C4.97l_oficialiose_saugyklose_yra_tik_viena_kiekvienos_pasidalintos_bibliotekos_versija.3F)
+*   [1 Pagrindinė informacija](#Pagrindinė_informacija)
+    *   [1.1 Kas yra Arch Linux?](#Kas_yra_Arch_Linux?)
+    *   [1.2 Kodėl norėčiau naudotis Arch?](#Kodėl_norėčiau_naudotis_Arch?)
+    *   [1.3 Kodėl nenorėčiau naudotis Arch?](#Kodėl_nenorėčiau_naudotis_Arch?)
+    *   [1.4 Kuria distribucija paremta Arch?](#Kuria_distribucija_paremta_Arch?)
+    *   [1.5 Kokias architektūras palaiko Arch?](#Kokias_architektūras_palaiko_Arch?)
+    *   [1.6 Ar Arch palaiko ARM procesorius?](#Ar_Arch_palaiko_ARM_procesorius?)
+    *   [1.7 Aš visiškas GNU/Linux pradedantysis. Ar turėčiau naudotis Arch?](#Aš_visiškas_GNU/Linux_pradedantysis._Ar_turėčiau_naudotis_Arch?)
+    *   [1.8 Arch įdiegimas ir naudojimas užima per daug laiko ir pastangų.Taip pat bendruomenė vis liepia man RTFM](#Arch_įdiegimas_ir_naudojimas_užima_per_daug_laiko_ir_pastangų.Taip_pat_bendruomenė_vis_liepia_man_RTFM)
+    *   [1.9 Ar Arch suprojektuota naudojimui serveryje? Kaip Darbastalio aplinka? Kaip Darbinė stotis?](#Ar_Arch_suprojektuota_naudojimui_serveryje?_Kaip_Darbastalio_aplinka?_Kaip_Darbinė_stotis?)
+    *   [1.10 Man labai patinka Arch, bet kūrėjų komanda turėtų įdiegti X funkciją](#Man_labai_patinka_Arch,_bet_kūrėjų_komanda_turėtų_įdiegti_X_funkciją)
+    *   [1.11 Kada bus prieinama nauja versija?](#Kada_bus_prieinama_nauja_versija?)
+    *   [1.12 Ar Arch stabili distribucija? Ar ji dažnai užlūžta?](#Ar_Arch_stabili_distribucija?_Ar_ji_dažnai_užlūžta?)
+    *   [1.13 Arch reikia daugiau žiniasklaidos dėmesio (pvz.: reklamos)](#Arch_reikia_daugiau_žiniasklaidos_dėmesio_(pvz.:_reklamos))
+    *   [1.14 Arch reikia daugiau vystytojų](#Arch_reikia_daugiau_vystytojų)
+    *   [1.15 Kodėl mano interneto greitis toks lėtas palyginus su kitomis operacinėmis sistemomis?](#Kodėl_mano_interneto_greitis_toks_lėtas_palyginus_su_kitomis_operacinėmis_sistemomis?)
+    *   [1.16 Kodėl Arch naudoja visus mano RAM?](#Kodėl_Arch_naudoja_visus_mano_RAM?)
+    *   [1.17 Kur dingo visa mano laisva vieta?](#Kur_dingo_visa_mano_laisva_vieta?)
+*   [2 Paketų valdymas](#Paketų_valdymas)
+    *   [2.1 Kuriame pakete galiu rasti X?](#Kuriame_pakete_galiu_rasti_X?)
+    *   [2.2 X pakete radau klaidą. Ką daryti?](#X_pakete_radau_klaidą._Ką_daryti?)
+    *   [2.3 Arch paketams reikalingas unikalūs plėtinys. ".pkg.tar.gz" ir ".pkg.tar.xz" per ilgi ir/ar klaidinantys](#Arch_paketams_reikalingas_unikalūs_plėtinys._".pkg.tar.gz"_ir_".pkg.tar.xz"_per_ilgi_ir/ar_klaidinantys)
+    *   [2.4 Pacman reikalinga biblioteka, kad kitos programos galėtų laisvai pasiekti paketų informaciją](#Pacman_reikalinga_biblioteka,_kad_kitos_programos_galėtų_laisvai_pasiekti_paketų_informaciją)
+    *   [2.5 Kodėl pacman neturi oficialios GUI sąsajos?](#Kodėl_pacman_neturi_oficialios_GUI_sąsajos?)
+    *   [2.6 Pacman reikalinga X funkcija!](#Pacman_reikalinga_X_funkcija!)
+    *   [2.7 Koks skirtumas tarp visų saugyklų?](#Koks_skirtumas_tarp_visų_saugyklų?)
+    *   [2.8 Ką tik įdiegiau X paketą. Kaip man jį paleisti?](#Ką_tik_įdiegiau_X_paketą._Kaip_man_jį_paleisti?)
+    *   [2.9 Kodėl oficialiose saugyklose yra tik viena kiekvienos pasidalintos bibliotekos versija?](#Kodėl_oficialiose_saugyklose_yra_tik_viena_kiekvienos_pasidalintos_bibliotekos_versija?)
 *   [3 Diegimas](#Diegimas)
-    *   [3.1 Iš kur atsisiųsti Arch Linux?](#I.C5.A1_kur_atsisi.C5.B3sti_Arch_Linux.3F)
-    *   [3.2 Kurią darbastalio aplinką ar langų tvarkyklę turėčiau naudoti?](#Kuri.C4.85_darbastalio_aplink.C4.85_ar_lang.C5.B3_tvarkykl.C4.99_tur.C4.97.C4.8Diau_naudoti.3F)
-    *   [3.3 Kuo Arch išsiskiria iš kitų "minimalių" distribucijų?](#Kuo_Arch_i.C5.A1siskiria_i.C5.A1_kit.C5.B3_.22minimali.C5.B3.22_distribucij.C5.B3.3F)
+    *   [3.1 Iš kur atsisiųsti Arch Linux?](#Iš_kur_atsisiųsti_Arch_Linux?)
+    *   [3.2 Kurią darbastalio aplinką ar langų tvarkyklę turėčiau naudoti?](#Kurią_darbastalio_aplinką_ar_langų_tvarkyklę_turėčiau_naudoti?)
+    *   [3.3 Kuo Arch išsiskiria iš kitų "minimalių" distribucijų?](#Kuo_Arch_išsiskiria_iš_kitų_"minimalių"_distribucijų?)
 
 ## Pagrindinė informacija
 
@@ -75,7 +75,7 @@ Ne, bet [Arch Linux ARM](http://archlinuxarm.org/) projektas teikia Arch Linux p
 
 ### Arch įdiegimas ir naudojimas užima per daug laiko ir pastangų.Taip pat bendruomenė vis liepia man RTFM
 
-Arch sukurtas ir naudojamas specifinės vartotojų grupės. Galbūt tai ne jums. Žiūrėkit [aukščiau](#A.C5.A1_visi.C5.A1kas_GNU.2FLinux_pradedantysis._Ar_tur.C4.97.C4.8Diau_naudotis_Arch.3F).
+Arch sukurtas ir naudojamas specifinės vartotojų grupės. Galbūt tai ne jums. Žiūrėkit [aukščiau](#Aš_visiškas_GNU/Linux_pradedantysis._Ar_turėčiau_naudotis_Arch?).
 
 ### Ar Arch suprojektuota naudojimui serveryje? Kaip Darbastalio aplinka? Kaip Darbinė stotis?
 

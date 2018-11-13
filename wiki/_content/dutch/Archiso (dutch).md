@@ -1,10 +1,10 @@
 ## Contents
 
 *   [1 WORK in progress](#WORK_in_progress)
-*   [2 Wat is het?](#Wat_is_het.3F)
+*   [2 Wat is het?](#Wat_is_het?)
 *   [3 De meest kale Arch Linux live media bouwen.](#De_meest_kale_Arch_Linux_live_media_bouwen.)
-*   [4 Algemene (handmatig)](#Algemene_.28handmatig.29)
-*   [5 Make a booteable "pendrive" that have more things than "Arch Linux"](#Make_a_booteable_.22pendrive.22_that_have_more_things_than_.22Arch_Linux.22)
+*   [4 Algemene (handmatig)](#Algemene_(handmatig))
+*   [5 Make a booteable "pendrive" that have more things than "Arch Linux"](#Make_a_booteable_"pendrive"_that_have_more_things_than_"Arch_Linux")
 *   [6 Configure our live medium](#Configure_our_live_medium)
     *   [6.1 mkinitcpio.conf](#mkinitcpio.conf)
     *   [6.2 packages.list](#packages.list)

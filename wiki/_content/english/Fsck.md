@@ -19,7 +19,7 @@ The [Arch Linux boot process](/index.php/Arch_boot_process "Arch boot process") 
     *   [2.3 Changing the check frequency](#Changing_the_check_frequency)
     *   [2.4 fstab options](#fstab_options)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Can't run fsck on a separate /usr partition](#Can.27t_run_fsck_on_a_separate_.2Fusr_partition)
+    *   [3.1 Can't run fsck on a separate /usr partition](#Can't_run_fsck_on_a_separate_/usr_partition)
     *   [3.2 ext2fs : no external journal](#ext2fs_:_no_external_journal)
 
 ## Boot time checking

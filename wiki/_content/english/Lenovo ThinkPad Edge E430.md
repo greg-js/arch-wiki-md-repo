@@ -34,7 +34,7 @@ As usual, Realtek devices require a little work. See below.
 
 ### Realtek Ethernet Compatibility
 
-The Realtek RTL8111/8168B ethernet controller may be relatively unreliable with the r8169 module. Better Ethernet connectivity can be achieved with the [r8168](https://www.archlinux.org/packages/?name=r8168) module. See [Network configuration#Realtek RTL8111/8168B](/index.php/Network_configuration#Realtek_RTL8111.2F8168B "Network configuration") for instructions.
+The Realtek RTL8111/8168B ethernet controller may be relatively unreliable with the r8169 module. Better Ethernet connectivity can be achieved with the [r8168](https://www.archlinux.org/packages/?name=r8168) module. See [Network configuration#Realtek RTL8111/8168B](/index.php/Network_configuration#Realtek_RTL8111/8168B "Network configuration") for instructions.
 
 ### Wireless
 

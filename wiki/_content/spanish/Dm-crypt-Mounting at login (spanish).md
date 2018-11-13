@@ -24,7 +24,7 @@ Este tutorial supone que ya ha creado su partición cifrada, como se describe en
 
 *pam_exec* se puede usar para desbloquear el dispositivo al iniciar sesión. Edite `/etc/pam.d/system-login` y añada la línea siguiente resaltada en negrita después de `auth include system-auth`:
 
-**Nota:** GDM, LightDM, y tal vez otros administradores de inicio de sesión podrían requerir `pam_exec` para `session` también, vea [Talk:Dm-crypt/Mounting at login#pam_exec required for session & using script](/index.php/Talk:Dm-crypt/Mounting_at_login#pam_exec_required_for_session_.26_using_script "Talk:Dm-crypt/Mounting at login").
+**Nota:** GDM, LightDM, y tal vez otros administradores de inicio de sesión podrían requerir `pam_exec` para `session` también, vea [Talk:Dm-crypt/Mounting at login#pam_exec required for session & using script](/index.php/Talk:Dm-crypt/Mounting_at_login#pam_exec_required_for_session_&_using_script "Talk:Dm-crypt/Mounting at login").
  `/etc/pam.d/system-login` 
 ```
 ...

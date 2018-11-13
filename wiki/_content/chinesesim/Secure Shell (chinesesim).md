@@ -22,64 +22,64 @@ SSH 通常用于远程访问和执行命令，但是它也支持隧道，转发�
 ## Contents
 
 *   [1 OpenSSH](#OpenSSH)
-    *   [1.1 安装OpenSSH](#.E5.AE.89.E8.A3.85OpenSSH)
-    *   [1.2 SSH 客户端](#SSH_.E5.AE.A2.E6.88.B7.E7.AB.AF)
-        *   [1.2.1 配置](#.E9.85.8D.E7.BD.AE)
-    *   [1.3 SSH 服务端](#SSH_.E6.9C.8D.E5.8A.A1.E7.AB.AF)
-        *   [1.3.1 配置](#.E9.85.8D.E7.BD.AE_2)
-        *   [1.3.2 管理 sshd 守护进程](#.E7.AE.A1.E7.90.86_sshd_.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B)
-        *   [1.3.3 安全防护](#.E5.AE.89.E5.85.A8.E9.98.B2.E6.8A.A4)
-            *   [1.3.3.1 强制公钥验证](#.E5.BC.BA.E5.88.B6.E5.85.AC.E9.92.A5.E9.AA.8C.E8.AF.81)
-            *   [1.3.3.2 双因素验证与公钥](#.E5.8F.8C.E5.9B.A0.E7.B4.A0.E9.AA.8C.E8.AF.81.E4.B8.8E.E5.85.AC.E9.92.A5)
-            *   [1.3.3.3 防止暴力破解](#.E9.98.B2.E6.AD.A2.E6.9A.B4.E5.8A.9B.E7.A0.B4.E8.A7.A3)
-                *   [1.3.3.3.1 使用 ufw](#.E4.BD.BF.E7.94.A8_ufw)
-                *   [1.3.3.3.2 使用 iptables](#.E4.BD.BF.E7.94.A8_iptables)
-                *   [1.3.3.3.3 防止暴力破解的工具](#.E9.98.B2.E6.AD.A2.E6.9A.B4.E5.8A.9B.E7.A0.B4.E8.A7.A3.E7.9A.84.E5.B7.A5.E5.85.B7)
-            *   [1.3.3.4 禁用或限制 root 账户登录](#.E7.A6.81.E7.94.A8.E6.88.96.E9.99.90.E5.88.B6_root_.E8.B4.A6.E6.88.B7.E7.99.BB.E5.BD.95)
-                *   [1.3.3.4.1 禁用 root 登录](#.E7.A6.81.E7.94.A8_root_.E7.99.BB.E5.BD.95)
-                *   [1.3.3.4.2 限制 root 登录](#.E9.99.90.E5.88.B6_root_.E7.99.BB.E5.BD.95)
-            *   [1.3.3.5 保护 authorized_keys 文件](#.E4.BF.9D.E6.8A.A4_authorized_keys_.E6.96.87.E4.BB.B6)
-*   [2 其他 SSH 客户端与服务端](#.E5.85.B6.E4.BB.96_SSH_.E5.AE.A2.E6.88.B7.E7.AB.AF.E4.B8.8E.E6.9C.8D.E5.8A.A1.E7.AB.AF)
+    *   [1.1 安装OpenSSH](#安装OpenSSH)
+    *   [1.2 SSH 客户端](#SSH_客户端)
+        *   [1.2.1 配置](#配置)
+    *   [1.3 SSH 服务端](#SSH_服务端)
+        *   [1.3.1 配置](#配置_2)
+        *   [1.3.2 管理 sshd 守护进程](#管理_sshd_守护进程)
+        *   [1.3.3 安全防护](#安全防护)
+            *   [1.3.3.1 强制公钥验证](#强制公钥验证)
+            *   [1.3.3.2 双因素验证与公钥](#双因素验证与公钥)
+            *   [1.3.3.3 防止暴力破解](#防止暴力破解)
+                *   [1.3.3.3.1 使用 ufw](#使用_ufw)
+                *   [1.3.3.3.2 使用 iptables](#使用_iptables)
+                *   [1.3.3.3.3 防止暴力破解的工具](#防止暴力破解的工具)
+            *   [1.3.3.4 禁用或限制 root 账户登录](#禁用或限制_root_账户登录)
+                *   [1.3.3.4.1 禁用 root 登录](#禁用_root_登录)
+                *   [1.3.3.4.2 限制 root 登录](#限制_root_登录)
+            *   [1.3.3.5 保护 authorized_keys 文件](#保护_authorized_keys_文件)
+*   [2 其他 SSH 客户端与服务端](#其他_SSH_客户端与服务端)
     *   [2.1 Dropbear](#Dropbear)
     *   [2.2 Mosh](#Mosh)
-*   [3 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
-    *   [3.1 加密 Socks 通道](#.E5.8A.A0.E5.AF.86_Socks_.E9.80.9A.E9.81.93)
-        *   [3.1.1 第一步：开始连接](#.E7.AC.AC.E4.B8.80.E6.AD.A5.EF.BC.9A.E5.BC.80.E5.A7.8B.E8.BF.9E.E6.8E.A5)
-        *   [3.1.2 第二步：配置你的浏览器(或其它程序)](#.E7.AC.AC.E4.BA.8C.E6.AD.A5.EF.BC.9A.E9.85.8D.E7.BD.AE.E4.BD.A0.E7.9A.84.E6.B5.8F.E8.A7.88.E5.99.A8.28.E6.88.96.E5.85.B6.E5.AE.83.E7.A8.8B.E5.BA.8F.29)
-    *   [3.2 X11 转发](#X11_.E8.BD.AC.E5.8F.91)
-        *   [3.2.1 配置](#.E9.85.8D.E7.BD.AE_3)
-        *   [3.2.2 使用方法](#.E4.BD.BF.E7.94.A8.E6.96.B9.E6.B3.95)
-    *   [3.3 转发其他端口](#.E8.BD.AC.E5.8F.91.E5.85.B6.E4.BB.96.E7.AB.AF.E5.8F.A3)
-    *   [3.4 跳板机](#.E8.B7.B3.E6.9D.BF.E6.9C.BA)
-    *   [3.5 通过中继反向 SSH 连接](#.E9.80.9A.E8.BF.87.E4.B8.AD.E7.BB.A7.E5.8F.8D.E5.90.91_SSH_.E8.BF.9E.E6.8E.A5)
-    *   [3.6 端口复用](#.E7.AB.AF.E5.8F.A3.E5.A4.8D.E7.94.A8)
-    *   [3.7 加速 SSH](#.E5.8A.A0.E9.80.9F_SSH)
-    *   [3.8 用 SSHFS 挂载远程文件系统](#.E7.94.A8_SSHFS_.E6.8C.82.E8.BD.BD.E8.BF.9C.E7.A8.8B.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F)
-    *   [3.9 保持在线](#.E4.BF.9D.E6.8C.81.E5.9C.A8.E7.BA.BF)
-    *   [3.10 利用 systemd 自动重启 SSH 隧道](#.E5.88.A9.E7.94.A8_systemd_.E8.87.AA.E5.8A.A8.E9.87.8D.E5.90.AF_SSH_.E9.9A.A7.E9.81.93)
-    *   [3.11 Autossh - 自动重启 SSH 会话和隧道连接](#Autossh_-_.E8.87.AA.E5.8A.A8.E9.87.8D.E5.90.AF_SSH_.E4.BC.9A.E8.AF.9D.E5.92.8C.E9.9A.A7.E9.81.93.E8.BF.9E.E6.8E.A5)
-        *   [3.11.1 利用 systemd 在引导后自动运行 autossh](#.E5.88.A9.E7.94.A8_systemd_.E5.9C.A8.E5.BC.95.E5.AF.BC.E5.90.8E.E8.87.AA.E5.8A.A8.E8.BF.90.E8.A1.8C_autossh)
-    *   [3.12 当 SSH 守护进程出错时的其他选择](#.E5.BD.93_SSH_.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B.E5.87.BA.E9.94.99.E6.97.B6.E7.9A.84.E5.85.B6.E4.BB.96.E9.80.89.E6.8B.A9)
-*   [4 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
-    *   [4.1 自检清单](#.E8.87.AA.E6.A3.80.E6.B8.85.E5.8D.95)
-    *   [4.2 拒绝连接或者超时问题](#.E6.8B.92.E7.BB.9D.E8.BF.9E.E6.8E.A5.E6.88.96.E8.80.85.E8.B6.85.E6.97.B6.E9.97.AE.E9.A2.98)
-        *   [4.2.1 端口转发](#.E7.AB.AF.E5.8F.A3.E8.BD.AC.E5.8F.91)
-        *   [4.2.2 SSH服务是否开启并且正在监听？](#SSH.E6.9C.8D.E5.8A.A1.E6.98.AF.E5.90.A6.E5.BC.80.E5.90.AF.E5.B9.B6.E4.B8.94.E6.AD.A3.E5.9C.A8.E7.9B.91.E5.90.AC.EF.BC.9F)
-        *   [4.2.3 是否是防火墙阻止了连接？](#.E6.98.AF.E5.90.A6.E6.98.AF.E9.98.B2.E7.81.AB.E5.A2.99.E9.98.BB.E6.AD.A2.E4.BA.86.E8.BF.9E.E6.8E.A5.EF.BC.9F)
-        *   [4.2.4 你的电脑和目的主机之间是否连接？](#.E4.BD.A0.E7.9A.84.E7.94.B5.E8.84.91.E5.92.8C.E7.9B.AE.E7.9A.84.E4.B8.BB.E6.9C.BA.E4.B9.8B.E9.97.B4.E6.98.AF.E5.90.A6.E8.BF.9E.E6.8E.A5.EF.BC.9F)
-        *   [4.2.5 你的 ISP 或第三方屏蔽了默认端口？](#.E4.BD.A0.E7.9A.84_ISP_.E6.88.96.E7.AC.AC.E4.B8.89.E6.96.B9.E5.B1.8F.E8.94.BD.E4.BA.86.E9.BB.98.E8.AE.A4.E7.AB.AF.E5.8F.A3.EF.BC.9F)
-            *   [4.2.5.1 诊断](#.E8.AF.8A.E6.96.AD)
-            *   [4.2.5.2 可能的解决方案](#.E5.8F.AF.E8.83.BD.E7.9A.84.E8.A7.A3.E5.86.B3.E6.96.B9.E6.A1.88)
-        *   [4.2.6 "Read from socket failed: connection reset by peer" 错误](#.22Read_from_socket_failed:_connection_reset_by_peer.22_.E9.94.99.E8.AF.AF)
-    *   [4.3 "[your shell]: No such file or directory" / SSH 认证问题](#.22.5Byour_shell.5D:_No_such_file_or_directory.22_.2F_SSH_.E8.AE.A4.E8.AF.81.E9.97.AE.E9.A2.98)
-    *   [4.4 "Terminal unknown" 或 "Error opening terminal" 错误](#.22Terminal_unknown.22_.E6.88.96_.22Error_opening_terminal.22_.E9.94.99.E8.AF.AF)
+*   [3 提示与技巧](#提示与技巧)
+    *   [3.1 加密 Socks 通道](#加密_Socks_通道)
+        *   [3.1.1 第一步：开始连接](#第一步：开始连接)
+        *   [3.1.2 第二步：配置你的浏览器(或其它程序)](#第二步：配置你的浏览器(或其它程序))
+    *   [3.2 X11 转发](#X11_转发)
+        *   [3.2.1 配置](#配置_3)
+        *   [3.2.2 使用方法](#使用方法)
+    *   [3.3 转发其他端口](#转发其他端口)
+    *   [3.4 跳板机](#跳板机)
+    *   [3.5 通过中继反向 SSH 连接](#通过中继反向_SSH_连接)
+    *   [3.6 端口复用](#端口复用)
+    *   [3.7 加速 SSH](#加速_SSH)
+    *   [3.8 用 SSHFS 挂载远程文件系统](#用_SSHFS_挂载远程文件系统)
+    *   [3.9 保持在线](#保持在线)
+    *   [3.10 利用 systemd 自动重启 SSH 隧道](#利用_systemd_自动重启_SSH_隧道)
+    *   [3.11 Autossh - 自动重启 SSH 会话和隧道连接](#Autossh_-_自动重启_SSH_会话和隧道连接)
+        *   [3.11.1 利用 systemd 在引导后自动运行 autossh](#利用_systemd_在引导后自动运行_autossh)
+    *   [3.12 当 SSH 守护进程出错时的其他选择](#当_SSH_守护进程出错时的其他选择)
+*   [4 疑难解答](#疑难解答)
+    *   [4.1 自检清单](#自检清单)
+    *   [4.2 拒绝连接或者超时问题](#拒绝连接或者超时问题)
+        *   [4.2.1 端口转发](#端口转发)
+        *   [4.2.2 SSH服务是否开启并且正在监听？](#SSH服务是否开启并且正在监听？)
+        *   [4.2.3 是否是防火墙阻止了连接？](#是否是防火墙阻止了连接？)
+        *   [4.2.4 你的电脑和目的主机之间是否连接？](#你的电脑和目的主机之间是否连接？)
+        *   [4.2.5 你的 ISP 或第三方屏蔽了默认端口？](#你的_ISP_或第三方屏蔽了默认端口？)
+            *   [4.2.5.1 诊断](#诊断)
+            *   [4.2.5.2 可能的解决方案](#可能的解决方案)
+        *   [4.2.6 "Read from socket failed: connection reset by peer" 错误](#"Read_from_socket_failed:_connection_reset_by_peer"_错误)
+    *   [4.3 "[your shell]: No such file or directory" / SSH 认证问题](#"[your_shell]:_No_such_file_or_directory"_/_SSH_认证问题)
+    *   [4.4 "Terminal unknown" 或 "Error opening terminal" 错误](#"Terminal_unknown"_或_"Error_opening_terminal"_错误)
         *   [4.4.1 TERM hack](#TERM_hack)
-    *   [4.5 "Connection closed by x.x.x.x [preauth]" 错误](#.22Connection_closed_by_x.x.x.x_.5Bpreauth.5D.22_.E9.94.99.E8.AF.AF)
-    *   [4.6 id_dsa 被 OpenSSH 7.0 拒绝](#id_dsa_.E8.A2.AB_OpenSSH_7.0_.E6.8B.92.E7.BB.9D)
-    *   [4.7 OpenSSH 7.0 的 "No matching key exchange method found" 错误](#OpenSSH_7.0_.E7.9A.84_.22No_matching_key_exchange_method_found.22_.E9.94.99.E8.AF.AF)
-    *   [4.8 断开 SSH 连接时 tmux/screen 会话被关闭](#.E6.96.AD.E5.BC.80_SSH_.E8.BF.9E.E6.8E.A5.E6.97.B6_tmux.2Fscreen_.E4.BC.9A.E8.AF.9D.E8.A2.AB.E5.85.B3.E9.97.AD)
-    *   [4.9 SSH 会话无响应](#SSH_.E4.BC.9A.E8.AF.9D.E6.97.A0.E5.93.8D.E5.BA.94)
-*   [5 参阅](#.E5.8F.82.E9.98.85)
+    *   [4.5 "Connection closed by x.x.x.x [preauth]" 错误](#"Connection_closed_by_x.x.x.x_[preauth]"_错误)
+    *   [4.6 id_dsa 被 OpenSSH 7.0 拒绝](#id_dsa_被_OpenSSH_7.0_拒绝)
+    *   [4.7 OpenSSH 7.0 的 "No matching key exchange method found" 错误](#OpenSSH_7.0_的_"No_matching_key_exchange_method_found"_错误)
+    *   [4.8 断开 SSH 连接时 tmux/screen 会话被关闭](#断开_SSH_连接时_tmux/screen_会话被关闭)
+    *   [4.9 SSH 会话无响应](#SSH_会话无响应)
+*   [5 参阅](#参阅)
 
 ## OpenSSH
 
@@ -156,7 +156,7 @@ AllowGroups   *group1 group2*
 
 ```
 
-公钥和私钥在 *sshd* [service 文件](#.E7.AE.A1.E7.90.86_sshd_.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B) 安装的时候就自动生成在 `/etc/ssh` 里面了，四个秘钥对分别由四种算法生成： [dsa、rsa、ecdsa 和 ed25519](/index.php/SSH_keys#Choosing_the_authentication_key_type "SSH keys")。要让 sshd 使用一组特定的密钥，请指定以下选项：
+公钥和私钥在 *sshd* [service 文件](#管理_sshd_守护进程) 安装的时候就自动生成在 `/etc/ssh` 里面了，四个秘钥对分别由四种算法生成： [dsa、rsa、ecdsa 和 ed25519](/index.php/SSH_keys#Choosing_the_authentication_key_type "SSH keys")。要让 sshd 使用一组特定的密钥，请指定以下选项：
 
 ```
  HostKey /etc/ssh/ssh_host_rsa_key
@@ -173,7 +173,7 @@ AllowGroups   *group1 group2*
 **Tip:**
 
 *   参考 [TCP 和 UDP 端口号列表](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers "wikipedia:List of TCP and UDP port numbers") 和本地的 `/etc/services` 文件来选择一个未被常用服务占用的端口。把端口从默认的 22 改成别的可以减少由于端口扫描器尝试自动登录造成的登录日志条目，更多信息请参考 [Port knocking](/index.php/Port_knocking "Port knocking")。
-*   完全取消密码登录方式可以极大的增强安全性，请查看[#强制公钥验证](#.E5.BC.BA.E5.88.B6.E5.85.AC.E9.92.A5.E9.AA.8C.E8.AF.81)。查看[#安全防护](#.E5.AE.89.E5.85.A8.E9.98.B2.E6.8A.A4)了解更多增强安全性的手段。
+*   完全取消密码登录方式可以极大的增强安全性，请查看[#强制公钥验证](#强制公钥验证)。查看[#安全防护](#安全防护)了解更多增强安全性的手段。
 *   OpenSSH 可以监听多个端口，只需在配置文件中加入多行`Port *port_number*`即可。
 
 #### 管理 sshd 守护进程
@@ -210,7 +210,7 @@ ListenStream=12345
 
 ##### 强制公钥验证
 
-如果客户端无法通过公钥进行身份验证，则默认情况下，SSH服务器将使用密码来验证，从而允许恶意用户通过[暴力破解](#.E9.98.B2.E6.AD.A2.E6.9A.B4.E5.8A.9B.E7.A0.B4.E8.A7.A3)密码获取访问权限。一种防止此类攻击的有效方法是完全禁用密码登录，并强制使用[SSH keys](/index.php/SSH_keys "SSH keys")。可以在 `sshd_config` 中禁用以下选项：
+如果客户端无法通过公钥进行身份验证，则默认情况下，SSH服务器将使用密码来验证，从而允许恶意用户通过[暴力破解](#防止暴力破解)密码获取访问权限。一种防止此类攻击的有效方法是完全禁用密码登录，并强制使用[SSH keys](/index.php/SSH_keys "SSH keys")。可以在 `sshd_config` 中禁用以下选项：
 
 ```
 PasswordAuthentication no
@@ -493,9 +493,9 @@ $ secure_chromium
     *   将 `X11Forwarding` 设置为 *yes*
 *   最后 [重启](/index.php/Restart "Restart") [*sshd* 守护进程](#Daemon_management).
 
-在客户端上，通过在命令行设置 `-X` 参数启用 `ForwardX11`，或者在[客户端配置文件](#.E9.85.8D.E7.BD.AE)中将 `ForwardX11` 设置为 *yes*。
+在客户端上，通过在命令行设置 `-X` 参数启用 `ForwardX11`，或者在[客户端配置文件](#配置)中将 `ForwardX11` 设置为 *yes*。
 
-**提示：** 如果 GUI 绘制不正常或者有错误提示，你可以启用 `ForwardX11Trusted` 选项（或在命令行中加上 `-Y` 参数），这将使 X11 转发脱离 [X11 SECURITY extension](http://www.x.org/wiki/Development/Documentation/Security/) 的控制，如果你这样做，请确保已经读过本节开头的[警告](#X11_.E8.BD.AC.E5.8F.91)。
+**提示：** 如果 GUI 绘制不正常或者有错误提示，你可以启用 `ForwardX11Trusted` 选项（或在命令行中加上 `-Y` 参数），这将使 X11 转发脱离 [X11 SECURITY extension](http://www.x.org/wiki/Development/Documentation/Security/) 的控制，如果你这样做，请确保已经读过本节开头的[警告](#X11_转发)。
 
 #### 使用方法
 
@@ -662,7 +662,7 @@ Port 443
 
 ### 加速 SSH
 
-此处列出一些可以加速全部连接或针对某台主机加速的 [客户端配置](#.E9.85.8D.E7.BD.AE) 选项。要了解这些选项的完整概述，请参阅 [ssh_config(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ssh_config.5)。
+此处列出一些可以加速全部连接或针对某台主机加速的 [客户端配置](#配置) 选项。要了解这些选项的完整概述，请参阅 [ssh_config(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ssh_config.5)。
 
 *   使用以下参数来使到某一台主机的所有回话 (sessions) 共享同一个连接：
     ```
@@ -697,8 +697,8 @@ Port 443
 
 默认情况下，如果你的会话空闲了某个时间之后，它会自动登出。为了保持会话，在长时间没有数据传输时客户端可以向服务器发送一个激活信号。与之对应，服务器也可以在一段时间没有收到消息时定期发送一个信号。
 
-*   在 **服务器**，`ClientAliveInterval` 是没有从客户端收到消息后的超时时间，超时后 *sshd* 将会发送一个请求来等待回应。默认是 0，指不会发出请求。比如要求每隔 60 秒向客户端发送响应请求，在你的 [服务器配置](#.E9.85.8D.E7.BD.AE_2) 里设置 `ClientAliveInterval 60` 即可。`ClientAliveCountMax` 和 `TCPKeepAlive` 选项也可以参考一下。
-*   在 **客户端**，`ServerAliveInterval` 控制着从客户端发往服务器的响应请求的时间间隔。比如要求服务器每隔 120 秒响应一次，在你的 [客户端配置](#.E9.85.8D.E7.BD.AE) 里加入 `ServerAliveInterval 120` 即可。`ServerAliveCountMax` 和 `TCPKeepAlive` 选项也可以参考一下。
+*   在 **服务器**，`ClientAliveInterval` 是没有从客户端收到消息后的超时时间，超时后 *sshd* 将会发送一个请求来等待回应。默认是 0，指不会发出请求。比如要求每隔 60 秒向客户端发送响应请求，在你的 [服务器配置](#配置_2) 里设置 `ClientAliveInterval 60` 即可。`ClientAliveCountMax` 和 `TCPKeepAlive` 选项也可以参考一下。
+*   在 **客户端**，`ServerAliveInterval` 控制着从客户端发往服务器的响应请求的时间间隔。比如要求服务器每隔 120 秒响应一次，在你的 [客户端配置](#配置) 里加入 `ServerAliveInterval 120` 即可。`ServerAliveCountMax` 和 `TCPKeepAlive` 选项也可以参考一下。
 
 **注意:** 为确保会话保持活动状态，客户端或服务器中只有一个需要发送保持活动请求。如果用户同时控制服务器和客户端，那么合理的选择是使用 `ServerAliveInterval` 选项配置需要保持会话的客户端，并保留其他客户端和服务器的默认配置。
 
@@ -706,7 +706,7 @@ Port 443
 
 [systemd](/index.php/Systemd "Systemd") 可以在开机/登录时自动启动 SSH，*还可以* 在 SSH 连接断开时自动重连。这使它成为管理 SSH 隧道的有力工具。
 
-下面的 service 可以使用 [ssh 配置](#.E9.85.8D.E7.BD.AE) 里面的配置在你登录系统的时候自动开启一个 SSH 隧道。如果连接因为某种原因断开，它将会每隔10秒重启一下：
+下面的 service 可以使用 [ssh 配置](#配置) 里面的配置在你登录系统的时候自动开启一个 SSH 隧道。如果连接因为某种原因断开，它将会每隔10秒重启一下：
 
  `~/.config/systemd/user/tunnel.service` 
 ```
@@ -812,7 +812,7 @@ OnFailure=telnet.socket
     ```
 
 2.  检查客户端的公钥（比如 `id_rsa.pub`）在服务器的 `~/.ssh/authorized_keys` 文件里面。
-3.  检查有没有在 [服务器配置](#.E9.85.8D.E7.BD.AE_2) 里面设置 `AllowUsers` 或 `AllowGroups` 来限制 SSH 访问。
+3.  检查有没有在 [服务器配置](#配置_2) 里面设置 `AllowUsers` 或 `AllowGroups` 来限制 SSH 访问。
 4.  检查用户是否设置了密码。有时还没有登录过服务器的新用户没有密码。
 5.  把 `LogLevel DEBUG` 加到 `/etc/ssh/sshd_config` 文件尾部。
 6.  使用 `journalctl -xe` 查看可能的错误信息。
@@ -916,7 +916,7 @@ Port 1234
 
 #### "Read from socket failed: connection reset by peer" 错误
 
-使用最近版本的 openssh 连接到较旧的 ssh 服务器时有时会失败，并显示上述错误消息。这可以通过为该主机设置各种 [客户端选项](#.E9.85.8D.E7.BD.AE) 来解决。有关下列选项的更多信息，请参阅 [ssh_config(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ssh_config.5)。
+使用最近版本的 openssh 连接到较旧的 ssh 服务器时有时会失败，并显示上述错误消息。这可以通过为该主机设置各种 [客户端选项](#配置) 来解决。有关下列选项的更多信息，请参阅 [ssh_config(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ssh_config.5)。
 
 问题可能出在 `ecdsa-sha2-nistp*-cert-v01@openssh` 椭圆曲线算法上。这些算法可以通过在 `HostKeyAlgorithms` 里设置可用算法来排除那些算法。
 
@@ -961,7 +961,7 @@ HostKey /etc/ssh/ssh_host_rsa_key
 
 ### id_dsa 被 OpenSSH 7.0 拒绝
 
-出于安全原因，OpenSSH 7.0 弃用了 DSA 公钥。如果你必须启用它们，请[设置](#.E9.85.8D.E7.BD.AE) `PubkeyAcceptedKeyTypes +ssh-dss` 选项（[http://www.openssh.com/legacy.html](http://www.openssh.com/legacy.html) 没有提到这一点）。
+出于安全原因，OpenSSH 7.0 弃用了 DSA 公钥。如果你必须启用它们，请[设置](#配置) `PubkeyAcceptedKeyTypes +ssh-dss` 选项（[http://www.openssh.com/legacy.html](http://www.openssh.com/legacy.html) 没有提到这一点）。
 
 ### OpenSSH 7.0 的 "No matching key exchange method found" 错误
 
@@ -973,7 +973,7 @@ Their offer: diffie-hellman-group1-sha1
 
 ```
 
-这个问题的最佳解决方案是将服务器升级/配置为不使用不推荐的算法。如果做不到这一点，可以配置[客户端选项](#.E9.85.8D.E7.BD.AE) `KexAlgorithms +diffie-hellman-group1-sha1` 强制客户端使用这个算法。
+这个问题的最佳解决方案是将服务器升级/配置为不使用不推荐的算法。如果做不到这一点，可以配置[客户端选项](#配置) `KexAlgorithms +diffie-hellman-group1-sha1` 强制客户端使用这个算法。
 
 ### 断开 SSH 连接时 tmux/screen 会话被关闭
 

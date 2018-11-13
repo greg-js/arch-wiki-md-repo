@@ -11,12 +11,12 @@ Los UC se rigen por el [Estatuto UC](https://aur.archlinux.org/trusted-user/TUby
 *   [1 Deberes del UC](#Deberes_del_UC)
     *   [1.1 TODO lista para el nuevo usuario de confianza](#TODO_lista_para_el_nuevo_usuario_de_confianza)
     *   [1.2 El UC y UNSUPPORTED](#El_UC_y_UNSUPPORTED)
-    *   [1.3 El UC y [community], Guías para Mantenimiento de Paquetes](#El_UC_y_.5Bcommunity.5D.2C_Gu.C3.ADas_para_Mantenimiento_de_Paquetes)
-        *   [1.3.1 Reglas para paquetes que entren al [community] Repo](#Reglas_para_paquetes_que_entren_al_.5Bcommunity.5D_Repo)
+    *   [1.3 El UC y [community], Guías para Mantenimiento de Paquetes](#El_UC_y_[community],_Guías_para_Mantenimiento_de_Paquetes)
+        *   [1.3.1 Reglas para paquetes que entren al [community] Repo](#Reglas_para_paquetes_que_entren_al_[community]_Repo)
         *   [1.3.2 Accediendo y Actualizando el Repositorio](#Accediendo_y_Actualizando_el_Repositorio)
         *   [1.3.3 Dejar de mantener paquetes](#Dejar_de_mantener_paquetes)
         *   [1.3.4 Borrando paquetes de unsupported](#Borrando_paquetes_de_unsupported)
-        *   [1.3.5 Moviendo paquetes de [community] a unsupported](#Moviendo_paquetes_de_.5Bcommunity.5D_a_unsupported)
+        *   [1.3.5 Moviendo paquetes de [community] a unsupported](#Moviendo_paquetes_de_[community]_a_unsupported)
 
 ## Deberes del UC
 

@@ -2,9 +2,9 @@
 
 ## Contents
 
-*   [1 Introducción](#Introducci.C3.B3n)
-*   [2 Instalación](#Instalaci.C3.B3n)
-    *   [2.1 Módulo de Apache : Mod_Python](#M.C3.B3dulo_de_Apache_:_Mod_Python)
+*   [1 Introducción](#Introducción)
+*   [2 Instalación](#Instalación)
+    *   [2.1 Módulo de Apache : Mod_Python](#Módulo_de_Apache_:_Mod_Python)
         *   [2.1.1 Instalar paquete](#Instalar_paquete)
         *   [2.1.2 Configurar Apache](#Configurar_Apache)
         *   [2.1.3 Probando Mod_python](#Probando_Mod_python)

@@ -23,12 +23,12 @@
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Clipboard Access](#Clipboard_Access)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Disable or change *Extra key for trigger input method* [sic]](#Disable_or_change_Extra_key_for_trigger_input_method_.5Bsic.5D)
+    *   [5.1 Disable or change *Extra key for trigger input method* [sic]](#Disable_or_change_Extra_key_for_trigger_input_method_[sic])
     *   [5.2 Diagnose the problem](#Diagnose_the_problem)
     *   [5.3 Emacs](#Emacs)
         *   [5.3.1 Emacs Daemon](#Emacs_Daemon)
     *   [5.4 Firefox popup menu not work](#Firefox_popup_menu_not_work)
-    *   [5.5 Ctrl+Space fail to work in GTK programs](#Ctrl.2BSpace_fail_to_work_in_GTK_programs)
+    *   [5.5 Ctrl+Space fail to work in GTK programs](#Ctrl+Space_fail_to_work_in_GTK_programs)
     *   [5.6 Buildin Chinese Pinyin Default NOT ACTIVE](#Buildin_Chinese_Pinyin_Default_NOT_ACTIVE)
     *   [5.7 fcitx and KDE](#fcitx_and_KDE)
     *   [5.8 Input method switched to English unintentionally](#Input_method_switched_to_English_unintentionally)
@@ -89,7 +89,7 @@ Others packages (including git version) are also available in the [AUR](/index.p
 
 ## Usage
 
-**Note:** You need to have [Chinese, Japanese, Korean or Vietnamese font](/index.php/Fonts#Chinese.2C_Japanese.2C_Korean.2C_Vietnamese "Fonts") installed to be able to enter the corresponding characters.
+**Note:** You need to have [Chinese, Japanese, Korean or Vietnamese font](/index.php/Fonts#Chinese,_Japanese,_Korean,_Vietnamese "Fonts") installed to be able to enter the corresponding characters.
 
 ### Desktop Environment
 

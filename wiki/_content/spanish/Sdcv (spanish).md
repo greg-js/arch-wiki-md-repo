@@ -5,12 +5,12 @@ Este artículo es una traducción de [Sdcv](/index.php/Sdcv "Sdcv"), revisada po
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Utilización](#Utilizaci.C3.B3n)
-*   [3 Añadir diccionarios](#A.C3.B1adir_diccionarios)
+*   [1 Instalación](#Instalación)
+*   [2 Utilización](#Utilización)
+*   [3 Añadir diccionarios](#Añadir_diccionarios)
 *   [4 Consejos](#Consejos)
-    *   [4.1 Alias ​​sdcv](#Alias_.E2.80.8B.E2.80.8Bsdcv)
-*   [5 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+    *   [4.1 Alias ​​sdcv](#Alias_​​sdcv)
+*   [5 Véase también](#Véase_también)
 
 ## Instalación
 

@@ -3,12 +3,12 @@
 ## Contents
 
 *   [1 Historische achtergrond](#Historische_achtergrond)
-*   [2 Lijst van repository's](#Lijst_van_repository.27s)
-    *   [2.1 [core]](#.5Bcore.5D)
-    *   [2.2 [extra]](#.5Bextra.5D)
-    *   [2.3 [community]](#.5Bcommunity.5D)
-    *   [2.4 [testing]](#.5Btesting.5D)
-    *   [2.5 [unsupported]](#.5Bunsupported.5D)
+*   [2 Lijst van repository's](#Lijst_van_repository's)
+    *   [2.1 [core]](#[core])
+    *   [2.2 [extra]](#[extra])
+    *   [2.3 [community]](#[community])
+    *   [2.4 [testing]](#[testing])
+    *   [2.5 [unsupported]](#[unsupported])
 
 ## Historische achtergrond
 

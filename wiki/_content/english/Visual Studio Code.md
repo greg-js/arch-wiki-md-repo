@@ -8,7 +8,7 @@
     *   [3.1 Integrated Terminal](#Integrated_Terminal)
     *   [3.2 External Terminal](#External_Terminal)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Global menu not working in KDE/Plasma](#Global_menu_not_working_in_KDE.2FPlasma)
+    *   [4.1 Global menu not working in KDE/Plasma](#Global_menu_not_working_in_KDE/Plasma)
 
 ## Installation
 

@@ -23,7 +23,7 @@ TeX Live includes the [tex(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tex.1)
     *   [4.2 Making fonts available to Fontconfig](#Making_fonts_available_to_Fontconfig)
     *   [4.3 Updating babelbib language definitions](#Updating_babelbib_language_definitions)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Error with "formats not generated" upon update](#Error_with_.22formats_not_generated.22_upon_update)
+    *   [5.1 Error with "formats not generated" upon update](#Error_with_"formats_not_generated"_upon_update)
 *   [6 See also](#See_also)
 
 ## Installation

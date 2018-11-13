@@ -7,32 +7,32 @@ Related articles
 
 ## Contents
 
-*   [1 Žaidimų aplinkos](#.C5.BDaidim.C5.B3_aplinkos)
-*   [2 Žaidimų gavimas](#.C5.BDaidim.C5.B3_gavimas)
+*   [1 Žaidimų aplinkos](#Žaidimų_aplinkos)
+*   [2 Žaidimų gavimas](#Žaidimų_gavimas)
     *   [2.1 Skaitmeninis platinimas](#Skaitmeninis_platinimas)
 *   [3 Emuliatoriai](#Emuliatoriai)
-    *   [3.1 Konsolės](#Konsol.C4.97s)
+    *   [3.1 Konsolės](#Konsolės)
     *   [3.2 Kita](#Kita)
-*   [4 Žaidimų paleidimas](#.C5.BDaidim.C5.B3_paleidimas)
-    *   [4.1 Daugiaekranė sąranka](#Daugiaekran.C4.97_s.C4.85ranka)
-    *   [4.2 Klaviatūros sugriebimas](#Klaviat.C5.ABros_sugriebimas)
-    *   [4.3 Žaidimo paleidimas atskirame X serveryje](#.C5.BDaidimo_paleidimas_atskirame_X_serveryje)
-    *   [4.4 Pelės aptikimo reguliavimas](#Pel.C4.97s_aptikimo_reguliavimas)
+*   [4 Žaidimų paleidimas](#Žaidimų_paleidimas)
+    *   [4.1 Daugiaekranė sąranka](#Daugiaekranė_sąranka)
+    *   [4.2 Klaviatūros sugriebimas](#Klaviatūros_sugriebimas)
+    *   [4.3 Žaidimo paleidimas atskirame X serveryje](#Žaidimo_paleidimas_atskirame_X_serveryje)
+    *   [4.4 Pelės aptikimo reguliavimas](#Pelės_aptikimo_reguliavimas)
     *   [4.5 Binaurinis garsas su OpenAL](#Binaurinis_garsas_su_OpenAL)
     *   [4.6 PulseAudio reguliavimas](#PulseAudio_reguliavimas)
-        *   [4.6.1 Realaus laiko prioriteto ir neigiamo nice lygio įjungimas](#Realaus_laiko_prioriteto_ir_neigiamo_nice_lygio_.C4.AFjungimas)
-        *   [4.6.2 Aukštesnės kokybės atkūrimo naudojimas geresniam garsui](#Auk.C5.A1tesn.C4.97s_kokyb.C4.97s_atk.C5.ABrimo_naudojimas_geresniam_garsui)
-        *   [4.6.3 Techninės įrangos buferių suderinimas su Pulse buferingu](#Technin.C4.97s_.C4.AFrangos_buferi.C5.B3_suderinimas_su_Pulse_buferingu)
-    *   [4.7 Dukart patikrinkite procesoriaus dažnio mąstelio keitimo nustatymus](#Dukart_patikrinkite_procesoriaus_da.C5.BEnio_m.C4.85stelio_keitimo_nustatymus)
-*   [5 Kadrų skaičiaus ir reagavimo gerenimas su planavimo politika](#Kadr.C5.B3_skai.C4.8Diaus_ir_reagavimo_gerenimas_su_planavimo_politika)
+        *   [4.6.1 Realaus laiko prioriteto ir neigiamo nice lygio įjungimas](#Realaus_laiko_prioriteto_ir_neigiamo_nice_lygio_įjungimas)
+        *   [4.6.2 Aukštesnės kokybės atkūrimo naudojimas geresniam garsui](#Aukštesnės_kokybės_atkūrimo_naudojimas_geresniam_garsui)
+        *   [4.6.3 Techninės įrangos buferių suderinimas su Pulse buferingu](#Techninės_įrangos_buferių_suderinimas_su_Pulse_buferingu)
+    *   [4.7 Dukart patikrinkite procesoriaus dažnio mąstelio keitimo nustatymus](#Dukart_patikrinkite_procesoriaus_dažnio_mąstelio_keitimo_nustatymus)
+*   [5 Kadrų skaičiaus ir reagavimo gerenimas su planavimo politika](#Kadrų_skaičiaus_ir_reagavimo_gerenimas_su_planavimo_politika)
     *   [5.1 Wine programoms](#Wine_programoms)
     *   [5.2 Visam kitam](#Visam_kitam)
         *   [5.2.1 Politikos](#Politikos)
         *   [5.2.2 Nice lygiai](#Nice_lygiai)
         *   [5.2.3 Core affinity](#Core_affinity)
         *   [5.2.4 Bendras atvejis](#Bendras_atvejis)
-        *   [5.2.5 Optimus ir kitos padedančios programos](#Optimus_ir_kitos_padedan.C4.8Dios_programos)
-*   [6 Alternatyvūs branduoliai](#Alternatyv.C5.ABs_branduoliai)
+        *   [5.2.5 Optimus ir kitos padedančios programos](#Optimus_ir_kitos_padedančios_programos)
+*   [6 Alternatyvūs branduoliai](#Alternatyvūs_branduoliai)
     *   [6.1 BFQ naudojimas](#BFQ_naudojimas)
 
 ## Žaidimų aplinkos
@@ -204,7 +204,7 @@ Kai kuriems žaidimams ar jų tipams gali būti reikalinga speciali konfigūraci
 
 ### Daugiaekranė sąranka
 
-Turint daugiau nei vieną ekraną gali kilti problemų su pilno ekrano žaidimais. Tokiu atveju, [antro X serverio paleidimas](#.C5.BDaidimo_paleidimas_atskirame_X_serveryje) gali būti išeitis. Kitą išeitį galima rasti [NVIDIA straipsnyje](/index.php/NVIDIA#Gaming_using_TwinView "NVIDIA") (gali tikti ir ne NVIDIA naudotojams).
+Turint daugiau nei vieną ekraną gali kilti problemų su pilno ekrano žaidimais. Tokiu atveju, [antro X serverio paleidimas](#Žaidimo_paleidimas_atskirame_X_serveryje) gali būti išeitis. Kitą išeitį galima rasti [NVIDIA straipsnyje](/index.php/NVIDIA#Gaming_using_TwinView "NVIDIA") (gali tikti ir ne NVIDIA naudotojams).
 
 ### Klaviatūros sugriebimas
 

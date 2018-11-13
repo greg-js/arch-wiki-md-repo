@@ -10,7 +10,7 @@
     *   [1.7 Licenses](#Licenses)
     *   [1.8 Submitting Packages to the AUR](#Submitting_Packages_to_the_AUR)
 *   [2 Dodatna uputstva](#Dodatna_uputstva)
-    *   [2.1 VCS (SVN, GIT, HG, etc) Packages](#VCS_.28SVN.2C_GIT.2C_HG.2C_etc.29_Packages)
+    *   [2.1 VCS (SVN, GIT, HG, etc) Packages](#VCS_(SVN,_GIT,_HG,_etc)_Packages)
     *   [2.2 Eclipse Plugin Packages](#Eclipse_Plugin_Packages)
     *   [2.3 Gnome Paketi](#Gnome_Paketi)
     *   [2.4 Haskell Paketi](#Haskell_Paketi)

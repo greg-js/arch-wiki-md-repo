@@ -22,7 +22,7 @@ Currently, Metasploit requires to setup and configure [PostgreSQL](/index.php/Po
     *   [4.5 Preserve variable values between sessions](#Preserve_variable_values_between_sessions)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Cannot click in VNC viewer](#Cannot_click_in_VNC_viewer)
-    *   [5.2 cannot load such file -- robots (LoadError)](#cannot_load_such_file_--_robots_.28LoadError.29)
+    *   [5.2 cannot load such file -- robots (LoadError)](#cannot_load_such_file_--_robots_(LoadError))
     *   [5.3 db_connect fails silently](#db_connect_fails_silently)
 *   [6 See also](#See_also)
 

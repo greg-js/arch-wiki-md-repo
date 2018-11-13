@@ -2,19 +2,19 @@
 
 ## Contents
 
-*   [1 Πώς μπορώ να εγκαταστήσω το Arch64;](#.CE.A0.CF.8E.CF.82_.CE.BC.CF.80.CE.BF.CF.81.CF.8E_.CE.BD.CE.B1_.CE.B5.CE.B3.CE.BA.CE.B1.CF.84.CE.B1.CF.83.CF.84.CE.AE.CF.83.CF.89_.CF.84.CE.BF_Arch64.3B)
-*   [2 Πόσο πλήρης είναι η μεταφορά στην 64bit αρχιτεκτονική; Θα έχω όλα τα πακέτα απο το αντίστοιχο 32bit περιβάλλον ;](#.CE.A0.CF.8C.CF.83.CE.BF_.CF.80.CE.BB.CE.AE.CF.81.CE.B7.CF.82_.CE.B5.CE.AF.CE.BD.CE.B1.CE.B9_.CE.B7_.CE.BC.CE.B5.CF.84.CE.B1.CF.86.CE.BF.CF.81.CE.AC_.CF.83.CF.84.CE.B7.CE.BD_64bit_.CE.B1.CF.81.CF.87.CE.B9.CF.84.CE.B5.CE.BA.CF.84.CE.BF.CE.BD.CE.B9.CE.BA.CE.AE.3B_.CE.98.CE.B1_.CE.AD.CF.87.CF.89_.CF.8C.CE.BB.CE.B1_.CF.84.CE.B1_.CF.80.CE.B1.CE.BA.CE.AD.CF.84.CE.B1_.CE.B1.CF.80.CE.BF_.CF.84.CE.BF_.CE.B1.CE.BD.CF.84.CE.AF.CF.83.CF.84.CE.BF.CE.B9.CF.87.CE.BF_32bit_.CF.80.CE.B5.CF.81.CE.B9.CE.B2.CE.AC.CE.BB.CE.BB.CE.BF.CE.BD_.3B)
-*   [3 Το 64bit σημαίνει μεγάλη αύξηση σε ταχύτητα ;](#.CE.A4.CE.BF_64bit_.CF.83.CE.B7.CE.BC.CE.B1.CE.AF.CE.BD.CE.B5.CE.B9_.CE.BC.CE.B5.CE.B3.CE.AC.CE.BB.CE.B7_.CE.B1.CF.8D.CE.BE.CE.B7.CF.83.CE.B7_.CF.83.CE.B5_.CF.84.CE.B1.CF.87.CF.8D.CF.84.CE.B7.CF.84.CE.B1_.3B)
-*   [4 Προσοχή όταν αναβαθμίζετε το πακετο glibc από την έκδοση <2.4 !](#.CE.A0.CF.81.CE.BF.CF.83.CE.BF.CF.87.CE.AE_.CF.8C.CF.84.CE.B1.CE.BD_.CE.B1.CE.BD.CE.B1.CE.B2.CE.B1.CE.B8.CE.BC.CE.AF.CE.B6.CE.B5.CF.84.CE.B5_.CF.84.CE.BF_.CF.80.CE.B1.CE.BA.CE.B5.CF.84.CE.BF_glibc_.CE.B1.CF.80.CF.8C_.CF.84.CE.B7.CE.BD_.CE.AD.CE.BA.CE.B4.CE.BF.CF.83.CE.B7_.3C2.4_.21)
-*   [5 Πώς ενημερώνω για πιθανά bugs;](#.CE.A0.CF.8E.CF.82_.CE.B5.CE.BD.CE.B7.CE.BC.CE.B5.CF.81.CF.8E.CE.BD.CF.89_.CE.B3.CE.B9.CE.B1_.CF.80.CE.B9.CE.B8.CE.B1.CE.BD.CE.AC_bugs.3B)
-*   [6 Υπάρχει mailing list;](#.CE.A5.CF.80.CE.AC.CF.81.CF.87.CE.B5.CE.B9_mailing_list.3B)
-*   [7 Τί repos πρέπει να χρησιμοποιήσω;](#.CE.A4.CE.AF_repos_.CF.80.CF.81.CE.AD.CF.80.CE.B5.CE.B9_.CE.BD.CE.B1_.CF.87.CF.81.CE.B7.CF.83.CE.B9.CE.BC.CE.BF.CF.80.CE.BF.CE.B9.CE.AE.CF.83.CF.89.3B)
-*   [8 Πώς μπορώ να βρω PKGBUILDS για το χτίσιμο πακέτων για την αρχιτεκτονική 64bit ;](#.CE.A0.CF.8E.CF.82_.CE.BC.CF.80.CE.BF.CF.81.CF.8E_.CE.BD.CE.B1_.CE.B2.CF.81.CF.89_PKGBUILDS_.CE.B3.CE.B9.CE.B1_.CF.84.CE.BF_.CF.87.CF.84.CE.AF.CF.83.CE.B9.CE.BC.CE.BF_.CF.80.CE.B1.CE.BA.CE.AD.CF.84.CF.89.CE.BD_.CE.B3.CE.B9.CE.B1_.CF.84.CE.B7.CE.BD_.CE.B1.CF.81.CF.87.CE.B9.CF.84.CE.B5.CE.BA.CF.84.CE.BF.CE.BD.CE.B9.CE.BA.CE.AE_64bit_.3B)
-*   [9 Πώς μπορώ να χτίσω 64bit πακέτα απο έτοιμα 32bit PKGBUILDs;](#.CE.A0.CF.8E.CF.82_.CE.BC.CF.80.CE.BF.CF.81.CF.8E_.CE.BD.CE.B1_.CF.87.CF.84.CE.AF.CF.83.CF.89_64bit_.CF.80.CE.B1.CE.BA.CE.AD.CF.84.CE.B1_.CE.B1.CF.80.CE.BF_.CE.AD.CF.84.CE.BF.CE.B9.CE.BC.CE.B1_32bit_PKGBUILDs.3B)
-*   [10 Πώς μπορώ να προσθέσω patches σε ήδη υπάρχοντα PKGBUILDs για χρήση με το Arch64;](#.CE.A0.CF.8E.CF.82_.CE.BC.CF.80.CE.BF.CF.81.CF.8E_.CE.BD.CE.B1_.CF.80.CF.81.CE.BF.CF.83.CE.B8.CE.AD.CF.83.CF.89_patches_.CF.83.CE.B5_.CE.AE.CE.B4.CE.B7_.CF.85.CF.80.CE.AC.CF.81.CF.87.CE.BF.CE.BD.CF.84.CE.B1_PKGBUILDs_.CE.B3.CE.B9.CE.B1_.CF.87.CF.81.CE.AE.CF.83.CE.B7_.CE.BC.CE.B5_.CF.84.CE.BF_Arch64.3B)
-*   [11 Μπορώ να χτίσω πακέτα για την αρχιτεκτονική 32bit (i686) μεσα σε περιβάλλον 64bit (x86_64) ;](#.CE.9C.CF.80.CE.BF.CF.81.CF.8E_.CE.BD.CE.B1_.CF.87.CF.84.CE.AF.CF.83.CF.89_.CF.80.CE.B1.CE.BA.CE.AD.CF.84.CE.B1_.CE.B3.CE.B9.CE.B1_.CF.84.CE.B7.CE.BD_.CE.B1.CF.81.CF.87.CE.B9.CF.84.CE.B5.CE.BA.CF.84.CE.BF.CE.BD.CE.B9.CE.BA.CE.AE_32bit_.28i686.29_.CE.BC.CE.B5.CF.83.CE.B1_.CF.83.CE.B5_.CF.80.CE.B5.CF.81.CE.B9.CE.B2.CE.AC.CE.BB.CE.BB.CE.BF.CE.BD_64bit_.28x86_64.29_.3B)
-*   [12 Μπορώ να τρέξω 32bit εφαρμογές μεσα στο 64bit Arch σύστημα μου;](#.CE.9C.CF.80.CE.BF.CF.81.CF.8E_.CE.BD.CE.B1_.CF.84.CF.81.CE.AD.CE.BE.CF.89_32bit_.CE.B5.CF.86.CE.B1.CF.81.CE.BC.CE.BF.CE.B3.CE.AD.CF.82_.CE.BC.CE.B5.CF.83.CE.B1_.CF.83.CF.84.CE.BF_64bit_Arch_.CF.83.CF.8D.CF.83.CF.84.CE.B7.CE.BC.CE.B1_.CE.BC.CE.BF.CF.85.3B)
-*   [13 Μπορώ να "αναβαθμίσω" το σύστημα μου σε 64bit, από ένα σύστημα 32bit, χωρίς επανεγκατάσταση ;](#.CE.9C.CF.80.CE.BF.CF.81.CF.8E_.CE.BD.CE.B1_.22.CE.B1.CE.BD.CE.B1.CE.B2.CE.B1.CE.B8.CE.BC.CE.AF.CF.83.CF.89.22_.CF.84.CE.BF_.CF.83.CF.8D.CF.83.CF.84.CE.B7.CE.BC.CE.B1_.CE.BC.CE.BF.CF.85_.CF.83.CE.B5_64bit.2C_.CE.B1.CF.80.CF.8C_.CE.AD.CE.BD.CE.B1_.CF.83.CF.8D.CF.83.CF.84.CE.B7.CE.BC.CE.B1_32bit.2C_.CF.87.CF.89.CF.81.CE.AF.CF.82_.CE.B5.CF.80.CE.B1.CE.BD.CE.B5.CE.B3.CE.BA.CE.B1.CF.84.CE.AC.CF.83.CF.84.CE.B1.CF.83.CE.B7_.3B)
+*   [1 Πώς μπορώ να εγκαταστήσω το Arch64;](#Πώς_μπορώ_να_εγκαταστήσω_το_Arch64;)
+*   [2 Πόσο πλήρης είναι η μεταφορά στην 64bit αρχιτεκτονική; Θα έχω όλα τα πακέτα απο το αντίστοιχο 32bit περιβάλλον ;](#Πόσο_πλήρης_είναι_η_μεταφορά_στην_64bit_αρχιτεκτονική;_Θα_έχω_όλα_τα_πακέτα_απο_το_αντίστοιχο_32bit_περιβάλλον_;)
+*   [3 Το 64bit σημαίνει μεγάλη αύξηση σε ταχύτητα ;](#Το_64bit_σημαίνει_μεγάλη_αύξηση_σε_ταχύτητα_;)
+*   [4 Προσοχή όταν αναβαθμίζετε το πακετο glibc από την έκδοση <2.4 !](#Προσοχή_όταν_αναβαθμίζετε_το_πακετο_glibc_από_την_έκδοση_<2.4_!)
+*   [5 Πώς ενημερώνω για πιθανά bugs;](#Πώς_ενημερώνω_για_πιθανά_bugs;)
+*   [6 Υπάρχει mailing list;](#Υπάρχει_mailing_list;)
+*   [7 Τί repos πρέπει να χρησιμοποιήσω;](#Τί_repos_πρέπει_να_χρησιμοποιήσω;)
+*   [8 Πώς μπορώ να βρω PKGBUILDS για το χτίσιμο πακέτων για την αρχιτεκτονική 64bit ;](#Πώς_μπορώ_να_βρω_PKGBUILDS_για_το_χτίσιμο_πακέτων_για_την_αρχιτεκτονική_64bit_;)
+*   [9 Πώς μπορώ να χτίσω 64bit πακέτα απο έτοιμα 32bit PKGBUILDs;](#Πώς_μπορώ_να_χτίσω_64bit_πακέτα_απο_έτοιμα_32bit_PKGBUILDs;)
+*   [10 Πώς μπορώ να προσθέσω patches σε ήδη υπάρχοντα PKGBUILDs για χρήση με το Arch64;](#Πώς_μπορώ_να_προσθέσω_patches_σε_ήδη_υπάρχοντα_PKGBUILDs_για_χρήση_με_το_Arch64;)
+*   [11 Μπορώ να χτίσω πακέτα για την αρχιτεκτονική 32bit (i686) μεσα σε περιβάλλον 64bit (x86_64) ;](#Μπορώ_να_χτίσω_πακέτα_για_την_αρχιτεκτονική_32bit_(i686)_μεσα_σε_περιβάλλον_64bit_(x86_64)_;)
+*   [12 Μπορώ να τρέξω 32bit εφαρμογές μεσα στο 64bit Arch σύστημα μου;](#Μπορώ_να_τρέξω_32bit_εφαρμογές_μεσα_στο_64bit_Arch_σύστημα_μου;)
+*   [13 Μπορώ να "αναβαθμίσω" το σύστημα μου σε 64bit, από ένα σύστημα 32bit, χωρίς επανεγκατάσταση ;](#Μπορώ_να_"αναβαθμίσω"_το_σύστημα_μου_σε_64bit,_από_ένα_σύστημα_32bit,_χωρίς_επανεγκατάσταση_;)
 
 ## Πώς μπορώ να εγκαταστήσω το Arch64;
 

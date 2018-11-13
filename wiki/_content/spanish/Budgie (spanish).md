@@ -14,13 +14,13 @@ En este momento, Budgie está fuertemente en desarrollo, por lo que es de espera
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
 *   [2 Puesta en marcha](#Puesta_en_marcha)
-*   [3 Utilización](#Utilizaci.C3.B3n)
-*   [4 Configuración](#Configuraci.C3.B3n)
-    *   [4.1 Cambiar la distribución de los botones](#Cambiar_la_distribuci.C3.B3n_de_los_botones)
+*   [3 Utilización](#Utilización)
+*   [4 Configuración](#Configuración)
+    *   [4.1 Cambiar la distribución de los botones](#Cambiar_la_distribución_de_los_botones)
     *   [4.2 Usar un gestor de ventanas distinto](#Usar_un_gestor_de_ventanas_distinto)
-*   [5 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [5 Véase también](#Véase_también)
 
 ## Instalación
 

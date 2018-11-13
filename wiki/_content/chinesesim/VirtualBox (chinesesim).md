@@ -14,67 +14,67 @@
 
 ## Contents
 
-*   [1 在 Arch 里安装 VirtualBox](#.E5.9C.A8_Arch_.E9.87.8C.E5.AE.89.E8.A3.85_VirtualBox)
-    *   [1.1 安装基本软件包](#.E5.AE.89.E8.A3.85.E5.9F.BA.E6.9C.AC.E8.BD.AF.E4.BB.B6.E5.8C.85)
-    *   [1.2 模块签名](#.E6.A8.A1.E5.9D.97.E7.AD.BE.E5.90.8D)
-    *   [1.3 加载 VirtualBox 内核模块](#.E5.8A.A0.E8.BD.BD_VirtualBox_.E5.86.85.E6.A0.B8.E6.A8.A1.E5.9D.97)
-    *   [1.4 从客体系统访问主机 USB 设备](#.E4.BB.8E.E5.AE.A2.E4.BD.93.E7.B3.BB.E7.BB.9F.E8.AE.BF.E9.97.AE.E4.B8.BB.E6.9C.BA_USB_.E8.AE.BE.E5.A4.87)
-    *   [1.5 客体机插件光盘](#.E5.AE.A2.E4.BD.93.E6.9C.BA.E6.8F.92.E4.BB.B6.E5.85.89.E7.9B.98)
-    *   [1.6 扩展包](#.E6.89.A9.E5.B1.95.E5.8C.85)
-    *   [1.7 使用正确的前端](#.E4.BD.BF.E7.94.A8.E6.AD.A3.E7.A1.AE.E7.9A.84.E5.89.8D.E7.AB.AF)
-*   [2 在 VirtualBox 中安装 Archlinux](#.E5.9C.A8_VirtualBox_.E4.B8.AD.E5.AE.89.E8.A3.85_Archlinux)
-    *   [2.1 以 EFI 模式安装](#.E4.BB.A5_EFI_.E6.A8.A1.E5.BC.8F.E5.AE.89.E8.A3.85)
-    *   [2.2 安装客体机插件](#.E5.AE.89.E8.A3.85.E5.AE.A2.E4.BD.93.E6.9C.BA.E6.8F.92.E4.BB.B6)
-    *   [2.3 加载 VirtualBox 内核模块](#.E5.8A.A0.E8.BD.BD_VirtualBox_.E5.86.85.E6.A0.B8.E6.A8.A1.E5.9D.97_2)
-    *   [2.4 启动 VirtualBox 客体机服务](#.E5.90.AF.E5.8A.A8_VirtualBox_.E5.AE.A2.E4.BD.93.E6.9C.BA.E6.9C.8D.E5.8A.A1)
-    *   [2.5 显卡加速](#.E6.98.BE.E5.8D.A1.E5.8A.A0.E9.80.9F)
-    *   [2.6 启用共享目录](#.E5.90.AF.E7.94.A8.E5.85.B1.E4.BA.AB.E7.9B.AE.E5.BD.95)
-        *   [2.6.1 手动挂载](#.E6.89.8B.E5.8A.A8.E6.8C.82.E8.BD.BD)
-        *   [2.6.2 自动挂载](#.E8.87.AA.E5.8A.A8.E6.8C.82.E8.BD.BD)
-        *   [2.6.3 按配置于启动时挂载](#.E6.8C.89.E9.85.8D.E7.BD.AE.E4.BA.8E.E5.90.AF.E5.8A.A8.E6.97.B6.E6.8C.82.E8.BD.BD)
-    *   [2.7 从宿主机 SSH 登录客体机](#.E4.BB.8E.E5.AE.BF.E4.B8.BB.E6.9C.BA_SSH_.E7.99.BB.E5.BD.95.E5.AE.A2.E4.BD.93.E6.9C.BA)
-        *   [2.7.1 用 SSHFS 来实现共享目录](#.E7.94.A8_SSHFS_.E6.9D.A5.E5.AE.9E.E7.8E.B0.E5.85.B1.E4.BA.AB.E7.9B.AE.E5.BD.95)
-*   [3 虚拟磁盘管理](#.E8.99.9A.E6.8B.9F.E7.A3.81.E7.9B.98.E7.AE.A1.E7.90.86)
-    *   [3.1 VirtualBox 支持的格式](#VirtualBox_.E6.94.AF.E6.8C.81.E7.9A.84.E6.A0.BC.E5.BC.8F)
-    *   [3.2 转换虚拟磁盘文件格式](#.E8.BD.AC.E6.8D.A2.E8.99.9A.E6.8B.9F.E7.A3.81.E7.9B.98.E6.96.87.E4.BB.B6.E6.A0.BC.E5.BC.8F)
+*   [1 在 Arch 里安装 VirtualBox](#在_Arch_里安装_VirtualBox)
+    *   [1.1 安装基本软件包](#安装基本软件包)
+    *   [1.2 模块签名](#模块签名)
+    *   [1.3 加载 VirtualBox 内核模块](#加载_VirtualBox_内核模块)
+    *   [1.4 从客体系统访问主机 USB 设备](#从客体系统访问主机_USB_设备)
+    *   [1.5 客体机插件光盘](#客体机插件光盘)
+    *   [1.6 扩展包](#扩展包)
+    *   [1.7 使用正确的前端](#使用正确的前端)
+*   [2 在 VirtualBox 中安装 Archlinux](#在_VirtualBox_中安装_Archlinux)
+    *   [2.1 以 EFI 模式安装](#以_EFI_模式安装)
+    *   [2.2 安装客体机插件](#安装客体机插件)
+    *   [2.3 加载 VirtualBox 内核模块](#加载_VirtualBox_内核模块_2)
+    *   [2.4 启动 VirtualBox 客体机服务](#启动_VirtualBox_客体机服务)
+    *   [2.5 显卡加速](#显卡加速)
+    *   [2.6 启用共享目录](#启用共享目录)
+        *   [2.6.1 手动挂载](#手动挂载)
+        *   [2.6.2 自动挂载](#自动挂载)
+        *   [2.6.3 按配置于启动时挂载](#按配置于启动时挂载)
+    *   [2.7 从宿主机 SSH 登录客体机](#从宿主机_SSH_登录客体机)
+        *   [2.7.1 用 SSHFS 来实现共享目录](#用_SSHFS_来实现共享目录)
+*   [3 虚拟磁盘管理](#虚拟磁盘管理)
+    *   [3.1 VirtualBox 支持的格式](#VirtualBox_支持的格式)
+    *   [3.2 转换虚拟磁盘文件格式](#转换虚拟磁盘文件格式)
         *   [3.2.1 QCOW](#QCOW)
-    *   [3.3 在宿主机直接挂载并读写虚拟磁盘镜像](#.E5.9C.A8.E5.AE.BF.E4.B8.BB.E6.9C.BA.E7.9B.B4.E6.8E.A5.E6.8C.82.E8.BD.BD.E5.B9.B6.E8.AF.BB.E5.86.99.E8.99.9A.E6.8B.9F.E7.A3.81.E7.9B.98.E9.95.9C.E5.83.8F)
+    *   [3.3 在宿主机直接挂载并读写虚拟磁盘镜像](#在宿主机直接挂载并读写虚拟磁盘镜像)
         *   [3.3.1 VDI](#VDI)
-    *   [3.4 压紧虚拟磁盘](#.E5.8E.8B.E7.B4.A7.E8.99.9A.E6.8B.9F.E7.A3.81.E7.9B.98)
-    *   [3.5 扩充虚拟硬盘容量](#.E6.89.A9.E5.85.85.E8.99.9A.E6.8B.9F.E7.A1.AC.E7.9B.98.E5.AE.B9.E9.87.8F)
-        *   [3.5.1 一般方法](#.E4.B8.80.E8.88.AC.E6.96.B9.E6.B3.95)
-        *   [3.5.2 VDI 格式的方法](#VDI_.E6.A0.BC.E5.BC.8F.E7.9A.84.E6.96.B9.E6.B3.95)
-    *   [3.6 修改 .vbox 文件来替换磁盘镜像](#.E4.BF.AE.E6.94.B9_.vbox_.E6.96.87.E4.BB.B6.E6.9D.A5.E6.9B.BF.E6.8D.A2.E7.A3.81.E7.9B.98.E9.95.9C.E5.83.8F)
-        *   [3.6.1 将虚拟机从 Linux 宿主系统迁移到其他系统（或迁回）](#.E5.B0.86.E8.99.9A.E6.8B.9F.E6.9C.BA.E4.BB.8E_Linux_.E5.AE.BF.E4.B8.BB.E7.B3.BB.E7.BB.9F.E8.BF.81.E7.A7.BB.E5.88.B0.E5.85.B6.E4.BB.96.E7.B3.BB.E7.BB.9F.EF.BC.88.E6.88.96.E8.BF.81.E5.9B.9E.EF.BC.89)
-    *   [3.7 复制虚拟盘并为其分配新 UUID](#.E5.A4.8D.E5.88.B6.E8.99.9A.E6.8B.9F.E7.9B.98.E5.B9.B6.E4.B8.BA.E5.85.B6.E5.88.86.E9.85.8D.E6.96.B0_UUID)
-*   [4 使用技巧](#.E4.BD.BF.E7.94.A8.E6.8A.80.E5.B7.A7)
-*   [5 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
-    *   [5.1 鼠标键盘都锁死在虚拟机里了](#.E9.BC.A0.E6.A0.87.E9.94.AE.E7.9B.98.E9.83.BD.E9.94.81.E6.AD.BB.E5.9C.A8.E8.99.9A.E6.8B.9F.E6.9C.BA.E9.87.8C.E4.BA.86)
-    *   [5.2 无法新建 64 位虚拟机](#.E6.97.A0.E6.B3.95.E6.96.B0.E5.BB.BA_64_.E4.BD.8D.E8.99.9A.E6.8B.9F.E6.9C.BA)
-    *   [5.3 VirtualBox 图形管理界面和主机 GTK 主题样式不匹配](#VirtualBox_.E5.9B.BE.E5.BD.A2.E7.AE.A1.E7.90.86.E7.95.8C.E9.9D.A2.E5.92.8C.E4.B8.BB.E6.9C.BA_GTK_.E4.B8.BB.E9.A2.98.E6.A0.B7.E5.BC.8F.E4.B8.8D.E5.8C.B9.E9.85.8D)
-    *   [5.4 无法向虚拟机键入 Ctrl+Alt+Fn](#.E6.97.A0.E6.B3.95.E5.90.91.E8.99.9A.E6.8B.9F.E6.9C.BA.E9.94.AE.E5.85.A5_Ctrl.2BAlt.2BFn)
-    *   [5.5 USB 功能不可用](#USB_.E5.8A.9F.E8.83.BD.E4.B8.8D.E5.8F.AF.E7.94.A8)
-    *   [5.6 USB 调制解调器在宿主系统不可用](#USB_.E8.B0.83.E5.88.B6.E8.A7.A3.E8.B0.83.E5.99.A8.E5.9C.A8.E5.AE.BF.E4.B8.BB.E7.B3.BB.E7.BB.9F.E4.B8.8D.E5.8F.AF.E7.94.A8)
-    *   [5.7 让虚拟机使用串口](#.E8.AE.A9.E8.99.9A.E6.8B.9F.E6.9C.BA.E4.BD.BF.E7.94.A8.E4.B8.B2.E5.8F.A3)
-    *   [5.8 重启 Xorg 之后虚拟机卡死](#.E9.87.8D.E5.90.AF_Xorg_.E4.B9.8B.E5.90.8E.E8.99.9A.E6.8B.9F.E6.9C.BA.E5.8D.A1.E6.AD.BB)
-    *   [5.9 全屏模式只能看到黑屏](#.E5.85.A8.E5.B1.8F.E6.A8.A1.E5.BC.8F.E5.8F.AA.E8.83.BD.E7.9C.8B.E5.88.B0.E9.BB.91.E5.B1.8F)
-    *   [5.10 虚拟机启动时宿主系统卡死](#.E8.99.9A.E6.8B.9F.E6.9C.BA.E5.90.AF.E5.8A.A8.E6.97.B6.E5.AE.BF.E4.B8.BB.E7.B3.BB.E7.BB.9F.E5.8D.A1.E6.AD.BB)
-    *   [5.11 Linux 客体机的声音缓慢 / 扭曲](#Linux_.E5.AE.A2.E4.BD.93.E6.9C.BA.E7.9A.84.E5.A3.B0.E9.9F.B3.E7.BC.93.E6.85.A2_.2F_.E6.89.AD.E6.9B.B2)
-    *   [5.12 模拟信号麦克风不可用](#.E6.A8.A1.E6.8B.9F.E4.BF.A1.E5.8F.B7.E9.BA.A6.E5.85.8B.E9.A3.8E.E4.B8.8D.E5.8F.AF.E7.94.A8)
-    *   [5.13 版本更新之后麦克风不能用](#.E7.89.88.E6.9C.AC.E6.9B.B4.E6.96.B0.E4.B9.8B.E5.90.8E.E9.BA.A6.E5.85.8B.E9.A3.8E.E4.B8.8D.E8.83.BD.E7.94.A8)
-    *   [5.14 转换得来的 ISO 文件出现问题](#.E8.BD.AC.E6.8D.A2.E5.BE.97.E6.9D.A5.E7.9A.84_ISO_.E6.96.87.E4.BB.B6.E5.87.BA.E7.8E.B0.E9.97.AE.E9.A2.98)
-    *   [5.15 Host-only 网卡创建失败](#Host-only_.E7.BD.91.E5.8D.A1.E5.88.9B.E5.BB.BA.E5.A4.B1.E8.B4.A5)
-    *   [5.16 插入模块失败](#.E6.8F.92.E5.85.A5.E6.A8.A1.E5.9D.97.E5.A4.B1.E8.B4.A5)
-    *   [5.17 VBOX_E_INVALID_OBJECT_STATE (0x80BB0007)](#VBOX_E_INVALID_OBJECT_STATE_.280x80BB0007.29)
-    *   [5.18 NS_ERROR_FAILURE 且菜单项缺失](#NS_ERROR_FAILURE_.E4.B8.94.E8.8F.9C.E5.8D.95.E9.A1.B9.E7.BC.BA.E5.A4.B1)
-    *   [5.19 Arch: pacstrap 脚本出错](#Arch:_pacstrap_.E8.84.9A.E6.9C.AC.E5.87.BA.E9.94.99)
-    *   [5.20 缺少硬件虚拟化导致 OpenBSD 不稳定](#.E7.BC.BA.E5.B0.91.E7.A1.AC.E4.BB.B6.E8.99.9A.E6.8B.9F.E5.8C.96.E5.AF.BC.E8.87.B4_OpenBSD_.E4.B8.8D.E7.A8.B3.E5.AE.9A)
-    *   [5.21 Windows 宿主机: VERR_ACCESS_DENIED](#Windows_.E5.AE.BF.E4.B8.BB.E6.9C.BA:_VERR_ACCESS_DENIED)
-    *   [5.22 Windows: "The specified path does not exist. Check the path and then try again."](#Windows:_.22The_specified_path_does_not_exist._Check_the_path_and_then_try_again..22)
-    *   [5.23 Windows 8.x 出现错误代码 0x000000C4](#Windows_8.x_.E5.87.BA.E7.8E.B0.E9.94.99.E8.AF.AF.E4.BB.A3.E7.A0.81_0x000000C4)
-    *   [5.24 Windows 8, 8.1 或 10 无法安装、启动或报错 "ERR_DISK_FULL"](#Windows_8.2C_8.1_.E6.88.96_10_.E6.97.A0.E6.B3.95.E5.AE.89.E8.A3.85.E3.80.81.E5.90.AF.E5.8A.A8.E6.88.96.E6.8A.A5.E9.94.99_.22ERR_DISK_FULL.22)
-    *   [5.25 WinXP: 颜色深度不得多于 16 位](#WinXP:_.E9.A2.9C.E8.89.B2.E6.B7.B1.E5.BA.A6.E4.B8.8D.E5.BE.97.E5.A4.9A.E4.BA.8E_16_.E4.BD.8D)
-*   [6 参阅](#.E5.8F.82.E9.98.85)
+    *   [3.4 压紧虚拟磁盘](#压紧虚拟磁盘)
+    *   [3.5 扩充虚拟硬盘容量](#扩充虚拟硬盘容量)
+        *   [3.5.1 一般方法](#一般方法)
+        *   [3.5.2 VDI 格式的方法](#VDI_格式的方法)
+    *   [3.6 修改 .vbox 文件来替换磁盘镜像](#修改_.vbox_文件来替换磁盘镜像)
+        *   [3.6.1 将虚拟机从 Linux 宿主系统迁移到其他系统（或迁回）](#将虚拟机从_Linux_宿主系统迁移到其他系统（或迁回）)
+    *   [3.7 复制虚拟盘并为其分配新 UUID](#复制虚拟盘并为其分配新_UUID)
+*   [4 使用技巧](#使用技巧)
+*   [5 故障排除](#故障排除)
+    *   [5.1 鼠标键盘都锁死在虚拟机里了](#鼠标键盘都锁死在虚拟机里了)
+    *   [5.2 无法新建 64 位虚拟机](#无法新建_64_位虚拟机)
+    *   [5.3 VirtualBox 图形管理界面和主机 GTK 主题样式不匹配](#VirtualBox_图形管理界面和主机_GTK_主题样式不匹配)
+    *   [5.4 无法向虚拟机键入 Ctrl+Alt+Fn](#无法向虚拟机键入_Ctrl+Alt+Fn)
+    *   [5.5 USB 功能不可用](#USB_功能不可用)
+    *   [5.6 USB 调制解调器在宿主系统不可用](#USB_调制解调器在宿主系统不可用)
+    *   [5.7 让虚拟机使用串口](#让虚拟机使用串口)
+    *   [5.8 重启 Xorg 之后虚拟机卡死](#重启_Xorg_之后虚拟机卡死)
+    *   [5.9 全屏模式只能看到黑屏](#全屏模式只能看到黑屏)
+    *   [5.10 虚拟机启动时宿主系统卡死](#虚拟机启动时宿主系统卡死)
+    *   [5.11 Linux 客体机的声音缓慢 / 扭曲](#Linux_客体机的声音缓慢_/_扭曲)
+    *   [5.12 模拟信号麦克风不可用](#模拟信号麦克风不可用)
+    *   [5.13 版本更新之后麦克风不能用](#版本更新之后麦克风不能用)
+    *   [5.14 转换得来的 ISO 文件出现问题](#转换得来的_ISO_文件出现问题)
+    *   [5.15 Host-only 网卡创建失败](#Host-only_网卡创建失败)
+    *   [5.16 插入模块失败](#插入模块失败)
+    *   [5.17 VBOX_E_INVALID_OBJECT_STATE (0x80BB0007)](#VBOX_E_INVALID_OBJECT_STATE_(0x80BB0007))
+    *   [5.18 NS_ERROR_FAILURE 且菜单项缺失](#NS_ERROR_FAILURE_且菜单项缺失)
+    *   [5.19 Arch: pacstrap 脚本出错](#Arch:_pacstrap_脚本出错)
+    *   [5.20 缺少硬件虚拟化导致 OpenBSD 不稳定](#缺少硬件虚拟化导致_OpenBSD_不稳定)
+    *   [5.21 Windows 宿主机: VERR_ACCESS_DENIED](#Windows_宿主机:_VERR_ACCESS_DENIED)
+    *   [5.22 Windows: "The specified path does not exist. Check the path and then try again."](#Windows:_"The_specified_path_does_not_exist._Check_the_path_and_then_try_again.")
+    *   [5.23 Windows 8.x 出现错误代码 0x000000C4](#Windows_8.x_出现错误代码_0x000000C4)
+    *   [5.24 Windows 8, 8.1 或 10 无法安装、启动或报错 "ERR_DISK_FULL"](#Windows_8,_8.1_或_10_无法安装、启动或报错_"ERR_DISK_FULL")
+    *   [5.25 WinXP: 颜色深度不得多于 16 位](#WinXP:_颜色深度不得多于_16_位)
+*   [6 参阅](#参阅)
 
 ## 在 Arch 里安装 VirtualBox
 
@@ -153,7 +153,7 @@ VirtualBox 自带三个前端：
 
 若要了解如何创建虚拟机，可以查阅 [VirtualBox 手册](https://www.virtualbox.org/manual)。
 
-**Warning:** 如果你想把在虚拟机的硬盘镜像放到 [Btrfs](/index.php/Btrfs "Btrfs") 文件系统上，在创建镜像之前，你应该考虑为镜像所处的文件夹关闭[写时复制](/index.php/Btrfs#Copy-on-Write_.28CoW.29 "Btrfs")。
+**Warning:** 如果你想把在虚拟机的硬盘镜像放到 [Btrfs](/index.php/Btrfs "Btrfs") 文件系统上，在创建镜像之前，你应该考虑为镜像所处的文件夹关闭[写时复制](/index.php/Btrfs#Copy-on-Write_(CoW) "Btrfs")。
 
 ## 在 VirtualBox 中安装 Archlinux
 
@@ -235,7 +235,7 @@ $ VBoxClient --clipboard --draganddrop --seamless --display --checkhostversion
 
 为了方便，`VBoxClient-all` 这个 shell 脚本能取代上面这一整行命令。
 
-[virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) 包提供了 XDG 自启动项目 `/etc/xdg/autostart/vboxclient.desktop`，这会在登录 X 时自动运行 `VBoxClient-all`。然而，如果你在用的[桌面环境](/index.php/%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83 "桌面环境")或[窗口管理器](/index.php/%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E5%99%A8 "窗口管理器")不支持 XDG 自启动，那么你就需要手动配置。详见 [Autostarting (简体中文)#图形程序](/index.php/Autostarting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.9B.BE.E5.BD.A2.E7.A8.8B.E5.BA.8F "Autostarting (简体中文)")。
+[virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) 包提供了 XDG 自启动项目 `/etc/xdg/autostart/vboxclient.desktop`，这会在登录 X 时自动运行 `VBoxClient-all`。然而，如果你在用的[桌面环境](/index.php/%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83 "桌面环境")或[窗口管理器](/index.php/%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E5%99%A8 "窗口管理器")不支持 XDG 自启动，那么你就需要手动配置。详见 [Autostarting (简体中文)#图形程序](/index.php/Autostarting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#图形程序 "Autostarting (简体中文)")。
 
 至此，你的 Arch Linux 应该能在虚拟机里正常运行了。需要指出的是，某些功能（如剪贴板互通）在 VirtualBox 里是默认禁用的。这需要在各个虚拟机的设置选项里手动开启（*Settings > General > Advanced > Shared Clipboard*）。
 
@@ -254,7 +254,7 @@ $ VBoxClient --clipboard --draganddrop --seamless --display --checkhostversion
 为了让挂载之后的目录能让 root 之外的用户也直接读写，还要：
 
 *   安装 [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) 软件包时会创建用户组 `vboxsf`（在前面的步骤就装过了）
-*   你的用户需要加入到 `vboxsf` [用户组](/index.php/Users_and_groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E7.94.A8.E6.88.B7.E7.BB.84.E7.AE.A1.E7.90.86 "Users and groups (简体中文)")
+*   你的用户需要加入到 `vboxsf` [用户组](/index.php/Users_and_groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#用户组管理 "Users and groups (简体中文)")
 
 #### 手动挂载
 
@@ -629,7 +629,7 @@ $ VBoxManage internalcommands sethduuid */path/to/disk.vdi*
 
 **Tip:** 用 [VBoxManage clonehd](http://www.virtualbox.org/manual/ch08.html#vboxmanage-clonevdi) 可以一次性完成复制内容与分配新 UUID
 
-**注意:** 上述命令可以用于任意 [VirtualBox 所支持的镜像格式](#VirtualBox_.E6.94.AF.E6.8C.81.E7.9A.84.E6.A0.BC.E5.BC.8F)。
+**注意:** 上述命令可以用于任意 [VirtualBox 所支持的镜像格式](#VirtualBox_支持的格式)。
 
 ## 使用技巧
 
@@ -641,7 +641,7 @@ $ VBoxManage internalcommands sethduuid */path/to/disk.vdi*
 
 这是因为你的虚拟机捕获了键盘与鼠标的输入。只要按下右 `Ctrl` 键即可让输入焦点回到宿主系统。
 
-如果想要不按切换键就能让鼠标在宿主机与虚拟机之间无缝切换，这需要安装客户机插件。如果你的虚拟机系统是 Arch Linux，可以参阅前面的章节：[#安装客体机插件](#.E5.AE.89.E8.A3.85.E5.AE.A2.E4.BD.93.E6.9C.BA.E6.8F.92.E4.BB.B6)。其他系统请参阅 VirtualBox 的官方帮助文档。
+如果想要不按切换键就能让鼠标在宿主机与虚拟机之间无缝切换，这需要安装客户机插件。如果你的虚拟机系统是 Arch Linux，可以参阅前面的章节：[#安装客体机插件](#安装客体机插件)。其他系统请参阅 VirtualBox 的官方帮助文档。
 
 ### 无法新建 64 位虚拟机
 
@@ -659,7 +659,7 @@ VirtualBox 的 GUI 是基于 Qt 实现的。为了修改这类应用的外观，
 
 ### USB 功能不可用
 
-在宿主系统里使用虚拟机的用户需要加入到 `vboxusers` 用户组。如果想要支持 USB 2 设备，还要安装 [扩展包](#.E6.89.A9.E5.B1.95.E5.8C.85)。此后在虚拟机的设置里即可开启 USB 2 支持，并且通过过滤规则来允许客体系统访问指定的 USB 设备。
+在宿主系统里使用虚拟机的用户需要加入到 `vboxusers` 用户组。如果想要支持 USB 2 设备，还要安装 [扩展包](#扩展包)。此后在虚拟机的设置里即可开启 USB 2 支持，并且通过过滤规则来允许客体系统访问指定的 USB 设备。
 
 如果用 root 身份运行 `VBoxManage list usbhost` 命令也没有列出任何 USB 设备，需要确认一下 `/etc/udev/rules.d/` 目录里没有遗留的 VirtualBox 4.x 的 udev 规则。VirtualBox 5.0 起会把 udev 规则文件安装到 `/usr/lib/udev/rules.d/` 目录。用 `pacman -Qo /usr/lib/udev/rules.d/60-vboxdrv.rules` 命令可以查看这些 udev 文件是否已经过期。
 
@@ -744,7 +744,7 @@ options snd-intel8x0 ac97_clock=48000
 
 ### Host-only 网卡创建失败
 
-确保所需的内核模块都已成功加载。详见 [#加载 VirtualBox 内核模块](#.E5.8A.A0.E8.BD.BD_VirtualBox_.E5.86.85.E6.A0.B8.E6.A8.A1.E5.9D.97)。
+确保所需的内核模块都已成功加载。详见 [#加载 VirtualBox 内核模块](#加载_VirtualBox_内核模块)。
 
 ### 插入模块失败
 
@@ -755,7 +755,7 @@ Failed to insert 'vboxdrv': Required key not available
 
 ```
 
-将[模块签名](#.E6.A8.A1.E5.9D.97.E7.AD.BE.E5.90.8D)，或者在内核配置中禁用 `CONFIG_MODULE_SIG_FORCE`。
+将[模块签名](#模块签名)，或者在内核配置中禁用 `CONFIG_MODULE_SIG_FORCE`。
 
 ### VBOX_E_INVALID_OBJECT_STATE (0x80BB0007)
 
@@ -800,7 +800,7 @@ Medium
 
 ### Arch: pacstrap 脚本出错
 
-如果你在[安装 Arch 系统](#.E5.9C.A8_VirtualBox_.E4.B8.AD.E5.AE.89.E8.A3.85_Archlinux)时，用 `pactrap` 脚本直接[#安装客体机插件](#.E5.AE.89.E8.A3.85.E5.AE.A2.E4.BD.93.E6.9C.BA.E6.8F.92.E4.BB.B6)，但此时 **还没有** 启动至新安装到虚拟盘的系统。那么你需要以 root 身份运行一次 `umount -l /mnt/dev` 然后再次运行 `pactrap`。否则新装的系统就不可用。
+如果你在[安装 Arch 系统](#在_VirtualBox_中安装_Archlinux)时，用 `pactrap` 脚本直接[#安装客体机插件](#安装客体机插件)，但此时 **还没有** 启动至新安装到虚拟盘的系统。那么你需要以 root 身份运行一次 `umount -l /mnt/dev` 然后再次运行 `pactrap`。否则新装的系统就不可用。
 
 ### 缺少硬件虚拟化导致 OpenBSD 不稳定
 

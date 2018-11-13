@@ -17,17 +17,17 @@ Do [Wikipédia](https://en.wikipedia.org/wiki/xinit "wikipedia:xinit"):
 
 ## Contents
 
-*   [1 Instalação](#Instala.C3.A7.C3.A3o)
-*   [2 Configuração](#Configura.C3.A7.C3.A3o)
+*   [1 Instalação](#Instalação)
+*   [2 Configuração](#Configuração)
     *   [2.1 xinitrc](#xinitrc)
     *   [2.2 xserverrc](#xserverrc)
 *   [3 Uso](#Uso)
 *   [4 Inicializar automaticamente o X no login](#Inicializar_automaticamente_o_X_no_login)
 *   [5 Dicas e truques](#Dicas_e_truques)
     *   [5.1 Sobrescrevendo xinitrc a partir da linha de comando](#Sobrescrevendo_xinitrc_a_partir_da_linha_de_comando)
-    *   [5.2 Alternando entre ambientes de desktop/gerenciadores de janela](#Alternando_entre_ambientes_de_desktop.2Fgerenciadores_de_janela)
+    *   [5.2 Alternando entre ambientes de desktop/gerenciadores de janela](#Alternando_entre_ambientes_de_desktop/gerenciadores_de_janela)
     *   [5.3 Inicializando aplicativos sem um gerenciador de janela](#Inicializando_aplicativos_sem_um_gerenciador_de_janela)
-    *   [5.4 Faça redirecionamento usando startx](#Fa.C3.A7a_redirecionamento_usando_startx)
+    *   [5.4 Faça redirecionamento usando startx](#Faça_redirecionamento_usando_startx)
 
 ## Instalação
 
@@ -48,7 +48,7 @@ $ cp /etc/X11/xinit/xinitrc ~/.xinitrc
 
 ```
 
-Então, [edite](/index.php/Help:Reading_(Portugu%C3%AAs)#Acrescentar.2C_adicionar.2C_criar.2C_editar "Help:Reading (Português)") o arquivo e substitua os programas padrão pelos comandos desejados. Lembre-se que as linhas que seguem um comando usando `exec` serão ignoradas. Por exemplo, para iniciar `xscreensaver` em segundo plano e, em seguida, iniciar [openbox](/index.php/Openbox#Standalone "Openbox"), use o seguinte:
+Então, [edite](/index.php/Help:Reading_(Portugu%C3%AAs)#Acrescentar,_adicionar,_criar,_editar "Help:Reading (Português)") o arquivo e substitua os programas padrão pelos comandos desejados. Lembre-se que as linhas que seguem um comando usando `exec` serão ignoradas. Por exemplo, para iniciar `xscreensaver` em segundo plano e, em seguida, iniciar [openbox](/index.php/Openbox#Standalone "Openbox"), use o seguinte:
 
  `~/.xinitrc` 
 ```
@@ -118,7 +118,7 @@ $ pkill -15 -t tty"$XDG_VTNR" Xorg
 
 ## Inicializar automaticamente o X no login
 
-Certifique-se de que *startx* esteja apropriadamente [configurado](#Configura.C3.A7.C3.A3o).
+Certifique-se de que *startx* esteja apropriadamente [configurado](#Configuração).
 
 Para o [Bash](/index.php/Bash "Bash"), adicione o seguinte ao final do `~/.bash_profile`. Se o arquivo não existir, copie uma versão esqueleto de `/etc/skel/.bash_profile`. Para [Zsh](/index.php/Zsh "Zsh"), adicione-o a `~/.zprofile`.
 

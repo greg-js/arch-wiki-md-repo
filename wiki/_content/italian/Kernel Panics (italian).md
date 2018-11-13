@@ -4,7 +4,7 @@ In questa pagina si descrive come ritornare ad una versione precedente del kerne
 
 *   [1 Avvio dal CD di installazione](#Avvio_dal_CD_di_installazione)
 *   [2 Chroot nel proprio disco di root](#Chroot_nel_proprio_disco_di_root)
-*   [3 Ritornare ad una versione precedente del kernel (rollback)](#Ritornare_ad_una_versione_precedente_del_kernel_.28rollback.29)
+*   [3 Ritornare ad una versione precedente del kernel (rollback)](#Ritornare_ad_una_versione_precedente_del_kernel_(rollback))
 *   [4 Reboot](#Reboot)
 
 ## Avvio dal CD di installazione

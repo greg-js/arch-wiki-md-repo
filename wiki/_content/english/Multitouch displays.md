@@ -2,7 +2,7 @@ Since Linux Kernel 3.2, multitouch devices are handled by the `hid-multitouch` m
 
 ## Contents
 
-*   [1 Configuration (USB devices)](#Configuration_.28USB_devices.29)
+*   [1 Configuration (USB devices)](#Configuration_(USB_devices))
 *   [2 Rotating the touch screen](#Rotating_the_touch_screen)
 *   [3 Drivers](#Drivers)
     *   [3.1 eGalax](#eGalax)

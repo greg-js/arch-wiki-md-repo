@@ -7,7 +7,7 @@ Related articles
 
 ## Contents
 
-*   [1 Úvod](#.C3.9Avod)
+*   [1 Úvod](#Úvod)
     *   [1.1 Predstavenie](#Predstavenie)
     *   [1.2 Licencia](#Licencia)
     *   [1.3 The Arch Way](#The_Arch_Way)

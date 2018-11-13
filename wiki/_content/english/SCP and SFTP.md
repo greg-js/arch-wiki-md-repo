@@ -8,12 +8,12 @@ The [Secure copy (SCP)](https://en.wikipedia.org/wiki/Secure_copy "wikipedia:Sec
 
 ## Contents
 
-*   [1 Secure file transfer protocol (SFTP)](#Secure_file_transfer_protocol_.28SFTP.29)
-*   [2 Secure file transfer protocol (SFTP) with a chroot jail](#Secure_file_transfer_protocol_.28SFTP.29_with_a_chroot_jail)
+*   [1 Secure file transfer protocol (SFTP)](#Secure_file_transfer_protocol_(SFTP))
+*   [2 Secure file transfer protocol (SFTP) with a chroot jail](#Secure_file_transfer_protocol_(SFTP)_with_a_chroot_jail)
     *   [2.1 Setup the filesystem](#Setup_the_filesystem)
     *   [2.2 Create an unprivileged user](#Create_an_unprivileged_user)
     *   [2.3 Setup openssh](#Setup_openssh)
-*   [3 Secure copy protocol (SCP)](#Secure_copy_protocol_.28SCP.29)
+*   [3 Secure copy protocol (SCP)](#Secure_copy_protocol_(SCP))
     *   [3.1 Scponly](#Scponly)
         *   [3.1.1 Adding a chroot jail](#Adding_a_chroot_jail)
 

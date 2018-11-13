@@ -12,8 +12,8 @@ Esse documento cobre padrões e diretrizes de escrita [PKGBUILDs](/index.php/PKG
 
 *   [1 Nomenclatura de pacote](#Nomenclatura_de_pacote)
 *   [2 Usando npm](#Usando_npm)
-    *   [2.1 Definindo um cache temporário](#Definindo_um_cache_tempor.C3.A1rio)
-    *   [2.2 Pacote contém referência para $srcdir/$pkgdir](#Pacote_cont.C3.A9m_refer.C3.AAncia_para_.24srcdir.2F.24pkgdir)
+    *   [2.1 Definindo um cache temporário](#Definindo_um_cache_temporário)
+    *   [2.2 Pacote contém referência para $srcdir/$pkgdir](#Pacote_contém_referência_para_$srcdir/$pkgdir)
 
 ## Nomenclatura de pacote
 

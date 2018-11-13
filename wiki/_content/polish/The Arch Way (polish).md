@@ -1,12 +1,12 @@
 ## Contents
 
-*   [1 Wstęp](#Wst.C4.99p)
+*   [1 Wstęp](#Wstęp)
 *   [2 Prostota](#Prostota)
-*   [3 Poprawność kodu](#Poprawno.C5.9B.C4.87_kodu)
-*   [4 Użytkowanie](#U.C5.BCytkowanie)
-*   [5 Otwartość](#Otwarto.C5.9B.C4.87)
-*   [6 Wolność](#Wolno.C5.9B.C4.87)
-*   [7 Zobacz również](#Zobacz_r.C3.B3wnie.C5.BC)
+*   [3 Poprawność kodu](#Poprawność_kodu)
+*   [4 Użytkowanie](#Użytkowanie)
+*   [5 Otwartość](#Otwartość)
+*   [6 Wolność](#Wolność)
+*   [7 Zobacz również](#Zobacz_również)
 
 ## Wstęp
 

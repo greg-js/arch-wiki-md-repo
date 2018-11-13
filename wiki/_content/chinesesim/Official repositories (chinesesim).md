@@ -10,7 +10,7 @@
 
 ## Contents
 
-*   [1 历史背景](#.E5.8E.86.E5.8F.B2.E8.83.8C.E6.99.AF)
+*   [1 历史背景](#历史背景)
 *   [2 core](#core)
 *   [3 extra](#extra)
 *   [4 community](#community)

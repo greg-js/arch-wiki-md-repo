@@ -9,8 +9,8 @@
     *   [2.5 Bindings](#Bindings)
     *   [2.6 Summary](#Summary)
 *   [3 Arch user contributions](#Arch_user_contributions)
-    *   [3.1 MPD (modified for use w/ multiple hosts)](#MPD_.28modified_for_use_w.2F_multiple_hosts.29)
-    *   [3.2 POP/IMAP Mail Checker (w/ SSL)](#POP.2FIMAP_Mail_Checker_.28w.2F_SSL.29)
+    *   [3.1 MPD (modified for use w/ multiple hosts)](#MPD_(modified_for_use_w/_multiple_hosts))
+    *   [3.2 POP/IMAP Mail Checker (w/ SSL)](#POP/IMAP_Mail_Checker_(w/_SSL))
     *   [3.3 Bookmark manager](#Bookmark_manager)
 *   [4 Users Configs](#Users_Configs)
 

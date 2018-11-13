@@ -6,7 +6,7 @@ This article covers the Arch Linux support for the Lenovo ThinkPad Edge E130 lap
 *   [2 Hardware](#Hardware)
     *   [2.1 lspci](#lspci)
 *   [3 Configuration](#Configuration)
-    *   [3.1 ClickPad & TrackPoint](#ClickPad_.26_TrackPoint)
+    *   [3.1 ClickPad & TrackPoint](#ClickPad_&_TrackPoint)
     *   [3.2 Video](#Video)
     *   [3.3 Ethernet](#Ethernet)
     *   [3.4 Wireless](#Wireless)
@@ -16,9 +16,9 @@ This article covers the Arch Linux support for the Lenovo ThinkPad Edge E130 lap
     *   [3.6 Webcam](#Webcam)
     *   [3.7 Power](#Power)
 *   [4 Other](#Other)
-    *   [4.1 Hibernation & Suspend](#Hibernation_.26_Suspend)
-    *   [4.2 ACPI / Fan control](#ACPI_.2F_Fan_control)
-    *   [4.3 Kernel Mode Setting (KMS)](#Kernel_Mode_Setting_.28KMS.29)
+    *   [4.1 Hibernation & Suspend](#Hibernation_&_Suspend)
+    *   [4.2 ACPI / Fan control](#ACPI_/_Fan_control)
+    *   [4.3 Kernel Mode Setting (KMS)](#Kernel_Mode_Setting_(KMS))
     *   [4.4 Plymouth](#Plymouth)
 
 ## Installation

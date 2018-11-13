@@ -25,7 +25,7 @@ $ aspell check *somefile*
 
 You will then be dropped into a prompt with the file text displayed. From there you can select for *aspell* to make corrections to each misspelled word it detects, or you can choose to ignore its suggestions. Corrections you make will be saved to the file.
 
-To list mispelled words from standard input:
+To list misspelled words from standard input:
 
 ```
 $ aspell list < *somefile*

@@ -6,14 +6,14 @@ Deacuerdo a [Wikipedia](https://en.wikipedia.org/wiki/Icewm "wikipedia:Icewm"), 
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
 *   [2 IceWM en Solitario](#IceWM_en_Solitario)
 *   [3 IceWM como WM para Escritorios](#IceWM_como_WM_para_Escritorios)
-*   [4 Configuración](#Configuraci.C3.B3n)
-    *   [4.1 Menú](#Men.C3.BA)
+*   [4 Configuración](#Configuración)
+    *   [4.1 Menú](#Menú)
     *   [4.2 Temas](#Temas)
 *   [5 Gestores de Archivos](#Gestores_de_Archivos)
-*   [6 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [6 Véase también](#Véase_también)
 
 ## Instalación
 

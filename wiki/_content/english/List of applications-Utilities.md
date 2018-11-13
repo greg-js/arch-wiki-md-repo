@@ -20,7 +20,7 @@
         *   [1.2.3 File synchronization](#File_synchronization)
         *   [1.2.4 Archiving and compression tools](#Archiving_and_compression_tools)
             *   [1.2.4.1 Archive managers](#Archive_managers)
-        *   [1.2.5 Comparison, diff, merge](#Comparison.2C_diff.2C_merge)
+        *   [1.2.5 Comparison, diff, merge](#Comparison,_diff,_merge)
         *   [1.2.6 Batch renamers](#Batch_renamers)
         *   [1.2.7 File searching](#File_searching)
             *   [1.2.7.1 Console](#Console_2)
@@ -402,7 +402,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 *   **qtFM** — Small, lightweight filemanager for Linux desktops based on pure Qt.
 
-	[http://www.qtfm.org/](http://www.qtfm.org/) || [qtfm](https://aur.archlinux.org/packages/qtfm/)
+	[http://www.qtfm.eu/](http://www.qtfm.eu/) || [qtfm](https://aur.archlinux.org/packages/qtfm/)
 
 *   **ROX** — Small and fast file manager which can optionally manage the desktop background and panels.
 

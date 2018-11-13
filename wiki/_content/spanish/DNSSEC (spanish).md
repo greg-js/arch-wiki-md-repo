@@ -11,18 +11,18 @@ Del [artículo de Wikipedia sobre DNSSEC](https://en.wikipedia.org/wiki/Domain_N
 
 ## Contents
 
-*   [1 Validación básica de DNSSEC](#Validaci.C3.B3n_b.C3.A1sica_de_DNSSEC)
-    *   [1.1 Instalación](#Instalaci.C3.B3n)
-    *   [1.2 Consulta con validación de DNSSEC](#Consulta_con_validaci.C3.B3n_de_DNSSEC)
-    *   [1.3 Comprobación](#Comprobaci.C3.B3n)
-*   [2 Instalar un servidor recursivo de validación con reconocimiento DNSSEC](#Instalar_un_servidor_recursivo_de_validaci.C3.B3n_con_reconocimiento_DNSSEC)
-*   [3 Activar DNSSEC en un software específico](#Activar_DNSSEC_en_un_software_espec.C3.ADfico)
+*   [1 Validación básica de DNSSEC](#Validación_básica_de_DNSSEC)
+    *   [1.1 Instalación](#Instalación)
+    *   [1.2 Consulta con validación de DNSSEC](#Consulta_con_validación_de_DNSSEC)
+    *   [1.3 Comprobación](#Comprobación)
+*   [2 Instalar un servidor recursivo de validación con reconocimiento DNSSEC](#Instalar_un_servidor_recursivo_de_validación_con_reconocimiento_DNSSEC)
+*   [3 Activar DNSSEC en un software específico](#Activar_DNSSEC_en_un_software_específico)
 *   [4 Hardware con DNSSEC](#Hardware_con_DNSSEC)
-*   [5 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [5 Véase también](#Véase_también)
 
 ## Validación básica de DNSSEC
 
-**Nota:** Se requiere una configuración adicional para que las búsquedas de DNS se realicen a través de DNSSEC por defecto. Consulte [#Instalar un servidor recursivo de validación con reconocimiento DNSSEC](#Instalar_un_servidor_recursivo_de_validaci.C3.B3n_con_reconocimiento_DNSSEC) y [#Activar DNSSEC en un software específico](#Activar_DNSSEC_en_un_software_espec.C3.ADfico).
+**Nota:** Se requiere una configuración adicional para que las búsquedas de DNS se realicen a través de DNSSEC por defecto. Consulte [#Instalar un servidor recursivo de validación con reconocimiento DNSSEC](#Instalar_un_servidor_recursivo_de_validación_con_reconocimiento_DNSSEC) y [#Activar DNSSEC en un software específico](#Activar_DNSSEC_en_un_software_específico).
 
 ### Instalación
 
@@ -78,7 +78,7 @@ Si intenta visitar un sitio con una dirección IP falsa (*spoofed*), el sistema 
 
 ## Activar DNSSEC en un software específico
 
-Si elige no [#Instalar un servidor recursivo de validación con reconocimiento DNSSEC](#Instalar_un_servidor_recursivo_de_validaci.C3.B3n_con_reconocimiento_DNSSEC), necesitará utilizar un software que tenga incorporado soporte de DNSSEC para aprovechar sus funciones. A menudo, esto significa que deberá parchear el software usted mismo. Puede encontrar una lista de varias aplicaciones parcheadas [aquí](https://www.dnssec-tools.org/wiki/index.php?title=DNSSEC_Applications). Además, algunos navegadores web tienen extensiones o complementos que se pueden instalar para implementar DNSSEC sin parchear el programa.
+Si elige no [#Instalar un servidor recursivo de validación con reconocimiento DNSSEC](#Instalar_un_servidor_recursivo_de_validación_con_reconocimiento_DNSSEC), necesitará utilizar un software que tenga incorporado soporte de DNSSEC para aprovechar sus funciones. A menudo, esto significa que deberá parchear el software usted mismo. Puede encontrar una lista de varias aplicaciones parcheadas [aquí](https://www.dnssec-tools.org/wiki/index.php?title=DNSSEC_Applications). Además, algunos navegadores web tienen extensiones o complementos que se pueden instalar para implementar DNSSEC sin parchear el programa.
 
 ## Hardware con DNSSEC
 

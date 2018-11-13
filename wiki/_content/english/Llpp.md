@@ -15,7 +15,7 @@ Related articles
 *   [4 Tips and Tricks](#Tips_and_Tricks)
     *   [4.1 Reload File](#Reload_File)
     *   [4.2 Remote Interface](#Remote_Interface)
-    *   [4.3 Inverse search using Synctex and Vim/Emacs](#Inverse_search_using_Synctex_and_Vim.2FEmacs)
+    *   [4.3 Inverse search using Synctex and Vim/Emacs](#Inverse_search_using_Synctex_and_Vim/Emacs)
 *   [5 See also](#See_also)
 
 ## Installation

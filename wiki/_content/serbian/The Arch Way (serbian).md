@@ -2,7 +2,7 @@ The following five core principles comprise what is commonly referred to as the 
 
 ## Contents
 
-*   [1 Једноставност](#.D0.88.D0.B5.D0.B4.D0.BD.D0.BE.D1.81.D1.82.D0.B0.D0.B2.D0.BD.D0.BE.D1.81.D1.82)
+*   [1 Једноставност](#Једноставност)
 *   [2 Code-correctness over convenience](#Code-correctness_over_convenience)
 *   [3 User-centric](#User-centric)
 *   [4 Openness](#Openness)

@@ -16,9 +16,9 @@ Packages are only kept for a few years, afterwards they are moved to the [Arch L
 
 *   [1 Location](#Location)
 *   [2 Directories](#Directories)
-    *   [2.1 /repos](#.2Frepos)
-    *   [2.2 /packages](#.2Fpackages)
-    *   [2.3 /iso](#.2Fiso)
+    *   [2.1 /repos](#/repos)
+    *   [2.2 /packages](#/packages)
+    *   [2.3 /iso](#/iso)
 *   [3 FAQ](#FAQ)
     *   [3.1 How to downgrade one package](#How_to_downgrade_one_package)
     *   [3.2 How to restore all packages to a specific date](#How_to_restore_all_packages_to_a_specific_date)
@@ -182,7 +182,7 @@ The [iso](https://archive.archlinux.org/iso) directory contains official ISO ima
 
 ### How to downgrade one package
 
-Find the package you want under [/packages](#.2Fpackages) and let pacman fetch it for installation. For example:
+Find the package you want under [/packages](#/packages) and let pacman fetch it for installation. For example:
 
 ```
 # pacman -U https://archive.archlinux.org/packages/ ... *packagename*.pkg.tar.xz

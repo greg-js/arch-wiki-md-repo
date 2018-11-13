@@ -5,8 +5,8 @@ This page only applies to the 392 model (4th Gen Intel CPU), and may not be enti
 ## Contents
 
 *   [1 Compatibility](#Compatibility)
-    *   [1.1 What works?](#What_works.3F)
-    *   [1.2 What doesn't work, or is weird?](#What_doesn.27t_work.2C_or_is_weird.3F)
+    *   [1.1 What works?](#What_works?)
+    *   [1.2 What doesn't work, or is weird?](#What_doesn't_work,_or_is_weird?)
 *   [2 BIOS Setup](#BIOS_Setup)
     *   [2.1 Disable Secure Boot](#Disable_Secure_Boot)
 *   [3 Booting](#Booting)

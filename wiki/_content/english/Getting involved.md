@@ -20,9 +20,9 @@ This article describes how both new and experienced Arch users can contribute to
     *   [2.2 Software](#Software)
     *   [2.3 Other](#Other)
 *   [3 FAQ](#FAQ)
-    *   [3.1 How can I become an Arch Developer?](#How_can_I_become_an_Arch_Developer.3F)
-    *   [3.2 How can I become a Trusted User?](#How_can_I_become_a_Trusted_User.3F)
-    *   [3.3 What can I do as an artist?](#What_can_I_do_as_an_artist.3F)
+    *   [3.1 How can I become an Arch Developer?](#How_can_I_become_an_Arch_Developer?)
+    *   [3.2 How can I become a Trusted User?](#How_can_I_become_a_Trusted_User?)
+    *   [3.3 What can I do as an artist?](#What_can_I_do_as_an_artist?)
 
 ## Official Arch Linux projects
 
@@ -149,7 +149,7 @@ Here is a list of things that you may do in order to gain some "popularity" towa
 
 ### How can I become a Trusted User?
 
-Please read [Trusted Users#How do I become a TU?](/index.php/Trusted_Users#How_do_I_become_a_TU.3F "Trusted Users").
+Please read [Trusted Users#How do I become a TU?](/index.php/Trusted_Users#How_do_I_become_a_TU? "Trusted Users").
 
 ### What can I do as an artist?
 

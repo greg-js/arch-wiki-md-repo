@@ -6,10 +6,10 @@ See also: [Pacman package signing](/index.php/Pacman_package_signing "Pacman pac
 
 *   [1 Introduction](#Introduction)
 *   [2 Web of Trust - Simple introduction](#Web_of_Trust_-_Simple_introduction)
-*   [3 Pacman's keyring](#Pacman.27s_keyring)
+*   [3 Pacman's keyring](#Pacman's_keyring)
 *   [4 Arch Key Signing keys](#Arch_Key_Signing_keys)
     *   [4.1 Use case: Arch Key Signing Keys creation](#Use_case:_Arch_Key_Signing_Keys_creation)
-    *   [4.2 Use case: Signing of developer's keys](#Use_case:_Signing_of_developer.27s_keys)
+    *   [4.2 Use case: Signing of developer's keys](#Use_case:_Signing_of_developer's_keys)
 *   [5 Package signing by developers](#Package_signing_by_developers)
     *   [5.1 Use case](#Use_case)
 *   [6 Installation of KSK by the users](#Installation_of_KSK_by_the_users)

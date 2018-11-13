@@ -25,8 +25,8 @@ Bcache needs the backing device to be formatted as a bcache block device. In mos
         *   [5.1.2 Example of shrinking](#Example_of_shrinking)
             *   [5.1.2.1 Force flush of cache to backing device](#Force_flush_of_cache_to_backing_device)
 *   [6 Troubleshooting](#Troubleshooting_2)
-    *   [6.1 /dev/bcache device does not exist on bootup](#.2Fdev.2Fbcache_device_does_not_exist_on_bootup)
-    *   [6.2 /sys/fs/bcache/ does not exist](#.2Fsys.2Ffs.2Fbcache.2F_does_not_exist)
+    *   [6.1 /dev/bcache device does not exist on bootup](#/dev/bcache_device_does_not_exist_on_bootup)
+    *   [6.2 /sys/fs/bcache/ does not exist](#/sys/fs/bcache/_does_not_exist)
 *   [7 See also](#See_also)
 
 ## Setting up a bcache device on an existing system

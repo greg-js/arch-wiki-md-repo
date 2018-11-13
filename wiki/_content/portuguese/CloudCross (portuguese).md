@@ -19,12 +19,12 @@ O CloudCross pode ser usado em diferentes situações quando necessário para si
 
 ## Contents
 
-*   [1 Instalação](#Instala.C3.A7.C3.A3o)
+*   [1 Instalação](#Instalação)
 *   [2 Uso](#Uso)
-*   [3 Solução de problemas](#Solu.C3.A7.C3.A3o_de_problemas)
+*   [3 Solução de problemas](#Solução_de_problemas)
     *   [3.1 Excluir arquivos em vez de baixar](#Excluir_arquivos_em_vez_de_baixar)
-    *   [3.2 Constante upload/download de arquivos de escritório](#Constante_upload.2Fdownload_de_arquivos_de_escrit.C3.B3rio)
-*   [4 Veja também](#Veja_tamb.C3.A9m)
+    *   [3.2 Constante upload/download de arquivos de escritório](#Constante_upload/download_de_arquivos_de_escritório)
+*   [4 Veja também](#Veja_também)
 
 ## Instalação
 

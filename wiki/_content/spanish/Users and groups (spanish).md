@@ -12,17 +12,17 @@ Los usuarios y grupos se utilizan en GNU/Linux para el [control de acceso](https
 
 ## Contents
 
-*   [1 Descripción](#Descripci.C3.B3n)
+*   [1 Descripción](#Descripción)
 *   [2 Permisos y propiedad](#Permisos_y_propiedad)
 *   [3 Shadow](#Shadow)
 *   [4 Lista de archivos](#Lista_de_archivos)
-*   [5 Administración de usuarios](#Administraci.C3.B3n_de_usuarios)
-    *   [5.1 Ejemplo para añadir un usuario](#Ejemplo_para_a.C3.B1adir_un_usuario)
-    *   [5.2 Ejemplo para añadir un usuario del sistema](#Ejemplo_para_a.C3.B1adir_un_usuario_del_sistema)
-    *   [5.3 Cambio del nombre de inicio de sesión de un usuario o el directorio personal](#Cambio_del_nombre_de_inicio_de_sesi.C3.B3n_de_un_usuario_o_el_directorio_personal)
-    *   [5.4 Otros ejemplos de administración de usuarios](#Otros_ejemplos_de_administraci.C3.B3n_de_usuarios)
+*   [5 Administración de usuarios](#Administración_de_usuarios)
+    *   [5.1 Ejemplo para añadir un usuario](#Ejemplo_para_añadir_un_usuario)
+    *   [5.2 Ejemplo para añadir un usuario del sistema](#Ejemplo_para_añadir_un_usuario_del_sistema)
+    *   [5.3 Cambio del nombre de inicio de sesión de un usuario o el directorio personal](#Cambio_del_nombre_de_inicio_de_sesión_de_un_usuario_o_el_directorio_personal)
+    *   [5.4 Otros ejemplos de administración de usuarios](#Otros_ejemplos_de_administración_de_usuarios)
 *   [6 Base de datos del usuario](#Base_de_datos_del_usuario)
-*   [7 Administración de grupos](#Administraci.C3.B3n_de_grupos)
+*   [7 Administración de grupos](#Administración_de_grupos)
 *   [8 Listado de grupos](#Listado_de_grupos)
     *   [8.1 Grupos de usuarios](#Grupos_de_usuarios)
     *   [8.2 Grupos del sistema](#Grupos_del_sistema)
@@ -129,7 +129,7 @@ Las herramientas de gestión de usuarios, grupos y contraseñas en Arch Linux pr
 
 ## Lista de archivos
 
-**Advertencia:** No modifique estos archivos manualmente. Existen utilidades que bloquean el manejo de las propiedades y evitan invalidar el formato de la base de datos. Véase [administración de usuarios](#Administraci.C3.B3n_de_usuarios) y [administración de grupos](#Administraci.C3.B3n_de_grupos) para más detalles.
+**Advertencia:** No modifique estos archivos manualmente. Existen utilidades que bloquean el manejo de las propiedades y evitan invalidar el formato de la base de datos. Véase [administración de usuarios](#Administración_de_usuarios) y [administración de grupos](#Administración_de_grupos) para más detalles.
 
 | Archivo | Propósito |
 | `/etc/shadow` | Información reservada de las cuentas de usuario |
@@ -168,7 +168,7 @@ Para añadir un nuevo usuario, utilice el ocmando *useradd*:
 
 **Advertencia:** Para poder iniciar sesión, el intérprete de línea de órdenes de inicio de sesión debe ser uno de los listados en `/etc/shells`; de lo contrario, el módulo [PAM](/index.php/PAM "PAM") `pam_shell` negará la solicitud de inicio de sesión. En particular, no use la ruta `/usr/bin/bash` en lugar de `/bin/bash`, a menos que esté configurada correctamente en `/etc/shells`.
 
-**Nota:** La contraseña del usuario recién creado debe definirse después, utilizando *passwd* como se muestra en [#Ejemplo para añadir un usuario](#Ejemplo_para_a.C3.B1adir_un_usuario).
+**Nota:** La contraseña del usuario recién creado debe definirse después, utilizando *passwd* como se muestra en [#Ejemplo para añadir un usuario](#Ejemplo_para_añadir_un_usuario).
 
 Cuando el intérprete de línea de órdenes de inicio de sesión no es funcional, por ejemplo, cuando la cuenta de usuario se crea para un servicio específico, se puede especificar `/usr/bin/nologin` en lugar de un intérprete de línea de órdenes normal para rechazar amablemente el inicio de sesión (véase [nologin(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nologin.8)).
 
@@ -244,7 +244,7 @@ Para cambiar el nombre de inicio de sesión de un usuario:
 
 **Advertencia:** Asegúrese de no haber iniciado sesión como el usuario cuyo nombre va a cambiar. Abra un nuevo tty (`Ctrl+Alt+F1`) e inicie sesión como superusuario o como otro usuario y haga *su* como superusuario. El usermod debería evitar que hagas esto por error.
 
-Cambiar un nombre de usuario es seguro y fácil cuando se hace correctamente, simplemente use la orden [usermod](#Otros_ejemplos_de_administraci.C3.B3n_de_usuarios). Si el usuario está asociado a un grupo con el mismo nombre, puede cambiarle el nombre con la orden [groupmod](#Administraci.C3.B3n_de_grupos).
+Cambiar un nombre de usuario es seguro y fácil cuando se hace correctamente, simplemente use la orden [usermod](#Otros_ejemplos_de_administración_de_usuarios). Si el usuario está asociado a un grupo con el mismo nombre, puede cambiarle el nombre con la orden [groupmod](#Administración_de_grupos).
 
 Alternativamente, el archivo `/etc/passwd` puede modificarse directamente, véase [#Base de datos del usuario](#Base_de_datos_del_usuario) para una introducción a su formato.
 
@@ -332,8 +332,8 @@ Donde:
     **Advertencia:** El archivo `passwd` es legible para todo el mundo, por lo que almacenar las contraseñas (con hash o sin él) en este archivo es inseguro. En cambio, Arch Linux utiliza [contraseñas ocultas (shadowed)](/index.php/Security#Password_hashes "Security"): el campo `contraseña` contendrá un carácter de marcador de posición (`x`) que indica que la contraseña hash se guarda en el archivo de acceso restringido `/etc/shadow`. Por esta razón, se recomienda cambiar siempre las contraseñas usando la orden **passwd**.
 
 *   `*UID*` es la identificación numérica del usuario. En Arch, el primer nombre de inicio de sesión (después del superusuario) es UID 1000 de forma predeterminada; las entradas subsecuentes de UID para los usuarios deberían ser mayores a 1000.
-*   `*GID*` es la identificación numérica del grupo principal para el usuario. Los valores numéricos para los GID se enumeran en [/etc/group](#Administraci.C3.B3n_de_grupos).
-*   `*GECOS*` es un campo opcional utilizado con fines informativos; generalmente contiene el nombre de usuario completo, pero también puede ser utilizado por servicios como *finger* y se puede administrar con la orden [chfn](#Otros_ejemplos_de_administraci.C3.B3n_de_usuarios). Este campo es opcional y puede dejarse en blanco.
+*   `*GID*` es la identificación numérica del grupo principal para el usuario. Los valores numéricos para los GID se enumeran en [/etc/group](#Administración_de_grupos).
+*   `*GECOS*` es un campo opcional utilizado con fines informativos; generalmente contiene el nombre de usuario completo, pero también puede ser utilizado por servicios como *finger* y se puede administrar con la orden [chfn](#Otros_ejemplos_de_administración_de_usuarios). Este campo es opcional y puede dejarse en blanco.
 *   `*directorio*` es utilizado por la orden de inicio de sesión para establecer la variable de entorno `$HOME`. Varios servicios con sus propios usuarios usan `/`, pero los usuarios normales generalmente establecen una carpeta bajo `/home`.
 *   `*intérprete_de_línea_de_órdenes*` es la ruta al [intérprete de línea de órdenes](/index.php/Command_shell_(Espa%C3%B1ol) "Command shell (Español)") predeterminado del usuario. Este campo es opcional y su valor predeterminado es `/bin/bash`.
 
@@ -467,7 +467,7 @@ Los siguientes grupos se utilizan para fines del sistema, solo es necesario su a
 
 ### Grupos pre-systemd
 
-Antes de que Arch migrase a [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"), los usuarios tenían que añadirse manualmente a estos grupos para poder acceder a los dispositivos correspondientes. Esta metodología está obsoleta en favor de [udev](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)") marcando los dispositivos con `uaccess` [tag](https://github.com/systemd/systemd/blob/master/src/login/70-uaccess.rules.m4) y *logind* asignando los permisos a los usuarios dinámicamente a través de [ACLs](/index.php/Access_Control_Lists_(Espa%C3%B1ol) "Access Control Lists (Español)") según la sesión que esté actualmente activa. Tenga en cuenta que la sesión no debe interrumpirse para que esto funcione (véase [Permisos de sesión](/index.php/General_troubleshooting_(Espa%C3%B1ol)#Permisos_de_sesi.C3.B3n "General troubleshooting (Español)") para comprobarlo).
+Antes de que Arch migrase a [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"), los usuarios tenían que añadirse manualmente a estos grupos para poder acceder a los dispositivos correspondientes. Esta metodología está obsoleta en favor de [udev](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)") marcando los dispositivos con `uaccess` [tag](https://github.com/systemd/systemd/blob/master/src/login/70-uaccess.rules.m4) y *logind* asignando los permisos a los usuarios dinámicamente a través de [ACLs](/index.php/Access_Control_Lists_(Espa%C3%B1ol) "Access Control Lists (Español)") según la sesión que esté actualmente activa. Tenga en cuenta que la sesión no debe interrumpirse para que esto funcione (véase [Permisos de sesión](/index.php/General_troubleshooting_(Espa%C3%B1ol)#Permisos_de_sesión "General troubleshooting (Español)") para comprobarlo).
 
 Hay algunas excepciones notables que requieren añadir un usuario a algunos de estos grupos: por ejemplo, si desea permitir que los usuarios accedan al dispositivo incluso cuando no están conectados. Sin embargo, tenga en cuenta que añadir usuarios a los grupos puede incluso causar la rotura de alguna funcionalidad (por ejemplo, el grupo `audio` romperá el cambio rápido de usuario y permite que las aplicaciones bloqueen el mezclador por software).
 

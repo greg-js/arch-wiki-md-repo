@@ -27,9 +27,9 @@ En adelante, solo se compara Arch Linux con otras distribuciones. Las adaptacion
     *   [3.1 Ubuntu](#Ubuntu)
     *   [3.2 Linux Mint](#Linux_Mint)
     *   [3.3 openSUSE](#openSUSE)
-    *   [3.4 Mandriva/Mageia](#Mandriva.2FMageia)
-*   [4 Los *BSD](#Los_.2ABSD)
-*   [5 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+    *   [3.4 Mandriva/Mageia](#Mandriva/Mageia)
+*   [4 Los *BSD](#Los_*BSD)
+*   [5 Véase también](#Véase_también)
 
 ## Basadas en las fuentes
 

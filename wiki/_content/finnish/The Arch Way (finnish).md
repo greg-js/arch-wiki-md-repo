@@ -3,9 +3,9 @@ Seuraavat neljä periaatetta yhdistyvät kokonaisuudeksi jota kutsutaan Arch Lin
 ## Contents
 
 *   [1 Yksinkertainen](#Yksinkertainen)
-*   [2 Koodin oikea-oppisuus ja käytettävyys](#Koodin_oikea-oppisuus_ja_k.C3.A4ytett.C3.A4vyys)
+*   [2 Koodin oikea-oppisuus ja käytettävyys](#Koodin_oikea-oppisuus_ja_käytettävyys)
 *   [3 Avoin](#Avoin)
-*   [4 Käyttäjäkeskisyys](#K.C3.A4ytt.C3.A4j.C3.A4keskisyys)
+*   [4 Käyttäjäkeskisyys](#Käyttäjäkeskisyys)
 *   [5 Ilmainen](#Ilmainen)
 
 ## Yksinkertainen

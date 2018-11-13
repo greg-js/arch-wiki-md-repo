@@ -22,8 +22,8 @@ Once created, a partition must be formatted with an appropriate [file system](/i
 
 *   [1 Partition table](#Partition_table)
     *   [1.1 Master Boot Record](#Master_Boot_Record)
-        *   [1.1.1 Master Boot Record (bootstrap code)](#Master_Boot_Record_.28bootstrap_code.29)
-        *   [1.1.2 Master Boot Record (partition table)](#Master_Boot_Record_.28partition_table.29)
+        *   [1.1.1 Master Boot Record (bootstrap code)](#Master_Boot_Record_(bootstrap_code))
+        *   [1.1.2 Master Boot Record (partition table)](#Master_Boot_Record_(partition_table))
     *   [1.2 GUID Partition Table](#GUID_Partition_Table)
     *   [1.3 Choosing between GPT and MBR](#Choosing_between_GPT_and_MBR)
     *   [1.4 Partitionless disk](#Partitionless_disk)
@@ -33,16 +33,16 @@ Once created, a partition must be formatted with an appropriate [file system](/i
 *   [2 Partition scheme](#Partition_scheme)
     *   [2.1 Single root partition](#Single_root_partition)
     *   [2.2 Discrete partitions](#Discrete_partitions)
-        *   [2.2.1 /](#.2F)
-        *   [2.2.2 /boot](#.2Fboot)
-        *   [2.2.3 /home](#.2Fhome)
-        *   [2.2.4 /var](#.2Fvar)
-        *   [2.2.5 /data](#.2Fdata)
+        *   [2.2.1 /](#/)
+        *   [2.2.2 /boot](#/boot)
+        *   [2.2.3 /home](#/home)
+        *   [2.2.4 /var](#/var)
+        *   [2.2.5 /data](#/data)
         *   [2.2.6 Swap](#Swap)
     *   [2.3 Example layouts](#Example_layouts)
-        *   [2.3.1 UEFI/GPT example layout](#UEFI.2FGPT_example_layout)
-        *   [2.3.2 BIOS/MBR example layout](#BIOS.2FMBR_example_layout)
-        *   [2.3.3 BIOS/GPT example layout](#BIOS.2FGPT_example_layout)
+        *   [2.3.1 UEFI/GPT example layout](#UEFI/GPT_example_layout)
+        *   [2.3.2 BIOS/MBR example layout](#BIOS/MBR_example_layout)
+        *   [2.3.3 BIOS/GPT example layout](#BIOS/GPT_example_layout)
 *   [3 Partitioning tools](#Partitioning_tools)
     *   [3.1 fdisk](#fdisk)
     *   [3.2 GPT fdisk](#GPT_fdisk)
@@ -90,7 +90,7 @@ The customary numbering scheme is to create primary partitions *sda1* through *s
 
 [GUID Partition Table](https://en.wikipedia.org/wiki/GUID_Partition_Table "wikipedia:GUID Partition Table") (GPT) is a partitioning scheme that is part of the [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface") specification; it uses [globally unique identifiers](https://en.wikipedia.org/wiki/Globally_unique_identifier "wikipedia:Globally unique identifier") (GUIDs), or UUIDs in the Linux world, to define partitions and [partition types](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table"). It is designed to succeed the [Master Boot Record](#Master_Boot_Record) partitioning scheme method.
 
-At the start of a GUID Partition Table disk there is a [protective Master Boot Record](https://en.wikipedia.org/wiki/GUID_Partition_Table#Protective_MBR_.28LBA_0.29 "wikipedia:GUID Partition Table") (PMBR) to protect against GPT-unaware software. This protective MBR just like a real MBR has a [bootstrap code area](#Master_Boot_Record_.28bootstrap_code.29) which can be used for BIOS/GPT booting with boot loaders that support it.
+At the start of a GUID Partition Table disk there is a [protective Master Boot Record](https://en.wikipedia.org/wiki/GUID_Partition_Table#Protective_MBR_.28LBA_0.29 "wikipedia:GUID Partition Table") (PMBR) to protect against GPT-unaware software. This protective MBR just like a real MBR has a [bootstrap code area](#Master_Boot_Record_(bootstrap_code)) which can be used for BIOS/GPT booting with boot loaders that support it.
 
 ### Choosing between GPT and MBR
 

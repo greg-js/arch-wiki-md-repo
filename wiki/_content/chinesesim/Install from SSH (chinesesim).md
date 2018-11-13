@@ -1,11 +1,11 @@
 ## Contents
 
-*   [1 简介](#.E7.AE.80.E4.BB.8B)
-*   [2 从安装媒体启动](#.E4.BB.8E.E5.AE.89.E8.A3.85.E5.AA.92.E4.BD.93.E5.90.AF.E5.8A.A8)
-*   [3 为使用SSH设置live安装环境](#.E4.B8.BA.E4.BD.BF.E7.94.A8SSH.E8.AE.BE.E7.BD.AElive.E5.AE.89.E8.A3.85.E7.8E.AF.E5.A2.83)
-*   [4 通过SSH连接到目标PC](#.E9.80.9A.E8.BF.87SSH.E8.BF.9E.E6.8E.A5.E5.88.B0.E7.9B.AE.E6.A0.87PC)
-    *   [4.1 注意](#.E6.B3.A8.E6.84.8F)
-*   [5 下一步](#.E4.B8.8B.E4.B8.80.E6.AD.A5)
+*   [1 简介](#简介)
+*   [2 从安装媒体启动](#从安装媒体启动)
+*   [3 为使用SSH设置live安装环境](#为使用SSH设置live安装环境)
+*   [4 通过SSH连接到目标PC](#通过SSH连接到目标PC)
+    *   [4.1 注意](#注意)
+*   [5 下一步](#下一步)
 
 ## 简介
 
@@ -21,7 +21,7 @@
 
 ## 从安装媒体启动
 
-使用[最新的安装媒介](/index.php/Beginners%27_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.8E.B7.E5.BE.97.E6.9C.80.E6.96.B0.E7.9A.84.E5.AE.89.E8.A3.85.E5.AA.92.E4.BB.8B "Beginners' guide (简体中文)")启动PC到Arch的live环境，并且以**root**登陆。
+使用[最新的安装媒介](/index.php/Beginners%27_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#获得最新的安装媒介 "Beginners' guide (简体中文)")启动PC到Arch的live环境，并且以**root**登陆。
 
 ## 为使用SSH设置live安装环境
 

@@ -21,7 +21,7 @@
         *   [3.2.4 WIFI Breaks after resume from hibernating](#WIFI_Breaks_after_resume_from_hibernating)
 *   [4 On older kernels](#On_older_kernels)
     *   [4.1 Sound](#Sound_2)
-    *   [4.2 Power level information (ACPI)](#Power_level_information_.28ACPI.29)
+    *   [4.2 Power level information (ACPI)](#Power_level_information_(ACPI))
     *   [4.3 Touchpad](#Touchpad)
     *   [4.4 SD card reader](#SD_card_reader)
         *   [4.4.1 Device support](#Device_support)

@@ -180,7 +180,7 @@ Some things that are easy to do with cron are difficult to do with timer units a
 
 ### MAILTO
 
-You can set up systemd to send an e-mail when a unit fails. Cron sends mail to `MAILTO` the job outputs to stdout or stderr, but many jobs are setup to only output on error. First you need two files: an executable for sending the mail and a *.service* for starting the executable. For this example, the executable is just a shell script using `sendmail`:
+You can set up systemd to send an e-mail when a unit fails. Cron sends mail to `MAILTO` if the job outputs to stdout or stderr, but many jobs are setup to only output on error. First you need two files: an executable for sending the mail and a *.service* for starting the executable. For this example, the executable is just a shell script using `sendmail`:
 
  `/usr/local/bin/systemd-email` 
 ```

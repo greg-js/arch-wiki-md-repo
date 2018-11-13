@@ -2,21 +2,21 @@
 
 *   [顯示管理員](/index.php/Display_Manager_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Display Manager (正體中文)")
 
-**警告:** 目前 SLiM 尚未和 [Systemd](/index.php/Systemd "Systemd") 完全相容，第二次登入會引發各種問題。詳情參閱[顯示管理員#與 systemd 不相容](/index.php/Display_manager_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87)#.E8.88.87_systemd_.E4.B8.8D.E7.9B.B8.E5.AE.B9 "Display manager (正體中文)")。
+**警告:** 目前 SLiM 尚未和 [Systemd](/index.php/Systemd "Systemd") 完全相容，第二次登入會引發各種問題。詳情參閱[顯示管理員#與 systemd 不相容](/index.php/Display_manager_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87)#與_systemd_不相容 "Display manager (正體中文)")。
 
 [SLiM](http://slim.berlios.de/) is an acronym for Simple Login Manager. SLiM is simple, lightweight and easily configurable. SLiM is used by some because it does not require the dependencies of [GNOME](/index.php/GNOME "GNOME") or [KDE](/index.php/KDE "KDE") and can help make a lighter system for users that like to use lightweight desktops like [Xfce](/index.php/Xfce "Xfce"), [Openbox](/index.php/Openbox "Openbox"), and [Fluxbox](/index.php/Fluxbox "Fluxbox").
 
 ## Contents
 
-*   [1 安裝](#.E5.AE.89.E8.A3.9D)
-*   [2 設定](#.E8.A8.AD.E5.AE.9A)
-    *   [2.1 啟用 SLiM](#.E5.95.9F.E7.94.A8_SLiM)
-    *   [2.2 單一環境](#.E5.96.AE.E4.B8.80.E7.92.B0.E5.A2.83)
-    *   [2.3 多重環境](#.E5.A4.9A.E9.87.8D.E7.92.B0.E5.A2.83)
-    *   [2.4 佈景主題](#.E4.BD.88.E6.99.AF.E4.B8.BB.E9.A1.8C)
-        *   [2.4.1 雙螢幕設定](#.E9.9B.99.E8.9E.A2.E5.B9.95.E8.A8.AD.E5.AE.9A)
-*   [3 其它選項](#.E5.85.B6.E5.AE.83.E9.81.B8.E9.A0.85)
-    *   [3.1 變更鼠標](#.E8.AE.8A.E6.9B.B4.E9.BC.A0.E6.A8.99)
+*   [1 安裝](#安裝)
+*   [2 設定](#設定)
+    *   [2.1 啟用 SLiM](#啟用_SLiM)
+    *   [2.2 單一環境](#單一環境)
+    *   [2.3 多重環境](#多重環境)
+    *   [2.4 佈景主題](#佈景主題)
+        *   [2.4.1 雙螢幕設定](#雙螢幕設定)
+*   [3 其它選項](#其它選項)
+    *   [3.1 變更鼠標](#變更鼠標)
 
 ## 安裝
 

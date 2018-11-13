@@ -20,9 +20,9 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
 *   [3 X Resources](#X_Resources)
 *   [4 GUI toolkits](#GUI_toolkits)
     *   [4.1 Qt 5](#Qt_5)
-    *   [4.2 GDK 3 (GTK+ 3)](#GDK_3_.28GTK.2B_3.29)
-    *   [4.3 GTK+ 2](#GTK.2B_2)
-    *   [4.4 Elementary (EFL)](#Elementary_.28EFL.29)
+    *   [4.2 GDK 3 (GTK+ 3)](#GDK_3_(GTK+_3))
+    *   [4.3 GTK+ 2](#GTK+_2)
+    *   [4.4 Elementary (EFL)](#Elementary_(EFL))
 *   [5 Boot managers](#Boot_managers)
     *   [5.1 GRUB](#GRUB)
         *   [5.1.1 Lower the framebuffer resolution](#Lower_the_framebuffer_resolution)
@@ -30,7 +30,7 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
 *   [6 Applications](#Applications)
     *   [6.1 Browsers](#Browsers)
         *   [6.1.1 Firefox](#Firefox)
-        *   [6.1.2 Chromium / Google Chrome](#Chromium_.2F_Google_Chrome)
+        *   [6.1.2 Chromium / Google Chrome](#Chromium_/_Google_Chrome)
         *   [6.1.3 Opera](#Opera)
     *   [6.2 Thunderbird](#Thunderbird)
     *   [6.3 Wine applications](#Wine_applications)
@@ -307,7 +307,7 @@ Update GRUB configuration by running `grub-mkconfig -o /boot/grub/grub.cfg`
 
 #### Firefox
 
-Firefox should use the [#GDK 3 (GTK+ 3)](#GDK_3_.28GTK.2B_3.29) settings. However, the suggested `GDK_SCALE` suggestion doesn't consistently scale the entirety of Firefox, and doesn't work for fractional values (e.g., a factor of 158DPI/96DPI = 1.65 for a 1080p 14" laptop). You may want to use `GDK_DPI_SCALE` instead.
+Firefox should use the [#GDK 3 (GTK+ 3)](#GDK_3_(GTK+_3)) settings. However, the suggested `GDK_SCALE` suggestion doesn't consistently scale the entirety of Firefox, and doesn't work for fractional values (e.g., a factor of 158DPI/96DPI = 1.65 for a 1080p 14" laptop). You may want to use `GDK_DPI_SCALE` instead.
 
 To override those, open Firefox advanced preferences page (`about:config`) and set parameter `layout.css.devPixelsPerPx` to `2` (or find the one that suits you better; `2` is a good choice for Retina screens), but it also doesn't consistently scale the entirety of Firefox. If Firefox is not scaling fonts, you may want to create `userChrome.css` and add appropriate styles to it. More information about `userChrome.css` at [mozillaZine](http://kb.mozillazine.org/index.php?title=UserChrome.css).
 
@@ -333,7 +333,7 @@ If you use a HiDPI monitor such as Retina display together with another monitor,
 
 #### Chromium / Google Chrome
 
-Chromium should use the [#GDK 3 (GTK+ 3)](#GDK_3_.28GTK.2B_3.29) settings.
+Chromium should use the [#GDK 3 (GTK+ 3)](#GDK_3_(GTK+_3)) settings.
 
 To override those, use the `--force-device-scale-factor` flag with a scaling value. This will scale all content and ui, including tab and font size. For example `chromium --force-device-scale-factor=2`.
 
@@ -347,7 +347,7 @@ If you use a HiDPI monitor such as Retina display together with another monitor,
 
 #### Opera
 
-Opera should use the [#GDK 3 (GTK+ 3)](#GDK_3_.28GTK.2B_3.29) settings.
+Opera should use the [#GDK 3 (GTK+ 3)](#GDK_3_(GTK+_3)) settings.
 
 To override those, use the `--alt-high-dpi-setting=X` command line option, where X is the desired DPI. For example, with `--alt-high-dpi-setting=144` Opera will assume that DPI is 144\. Newer versions of opera will auto detect the DPI using the font DPI setting (in KDE: the force font DPI setting.)
 
@@ -368,7 +368,7 @@ and change the "dpi" setting found in the "Graphics" tab. This only affects the 
 
 ### Skype
 
-Skype for Linux ([skypeforlinux-stable-bin](https://aur.archlinux.org/packages/skypeforlinux-stable-bin/) package) uses [#GDK 3 (GTK+ 3)](#GDK_3_.28GTK.2B_3.29).
+Skype for Linux ([skypeforlinux-stable-bin](https://aur.archlinux.org/packages/skypeforlinux-stable-bin/) package) uses [#GDK 3 (GTK+ 3)](#GDK_3_(GTK+_3)).
 
 ### Slack
 
@@ -463,7 +463,7 @@ Since Java 9 the GDK_SCALE environment variable is used to scale Swing applicati
 
 ### Mono applications
 
-According to [[3]](https://bugzilla.xamarin.com/show_bug.cgi?id=35870), Mono applications should be scalable like [GTK3](#GDK_3_.28GTK.2B_3.29) applications.
+According to [[3]](https://bugzilla.xamarin.com/show_bug.cgi?id=35870), Mono applications should be scalable like [GTK3](#GDK_3_(GTK+_3)) applications.
 
 ### MATLAB
 
@@ -479,7 +479,7 @@ The settings take effect after MATLAB is restarted.
 
 ### VirtualBox
 
-**Note:** This ony applies to KDE with scaling enabled.
+**Note:** This only applies to KDE with scaling enabled.
 
 VirtualBox also applies the system-wide scaling to the virtual monitor, which reduces the maximum resolution inside VMs by your scaling factor (see [[4]](https://www.virtualbox.org/ticket/16604)).
 

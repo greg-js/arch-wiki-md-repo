@@ -15,7 +15,7 @@ See [Android](/index.php/Android "Android").
 
 You will need [libimobiledevice-git](https://aur.archlinux.org/packages/libimobiledevice-git/) and [libgpod-git](https://aur.archlinux.org/packages/libgpod-git/) compiled with afc support. You can use the [ifuse-git](https://aur.archlinux.org/packages/ifuse-git/) to mount your [iPod](/index.php/IPod "IPod") or if you use [GNOME](/index.php/GNOME "GNOME") you can compile [Gvfs](/index.php/Gvfs "Gvfs") with the option `--with-afc` [[1]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/gvfs).
 
-For more info see the [iPod](/index.php/IPod#iPhone.2FiPod_Touch "IPod") page.
+For more info see the [iPod](/index.php/IPod#iPhone/iPod_Touch "IPod") page.
 
 ## CDMA
 

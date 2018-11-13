@@ -10,7 +10,7 @@ This page deals with setting up Arch Linux on the Dell Vostro 1310 laptop. Nvidi
     *   [1.4 Webcam](#Webcam)
 *   [2 Power Management](#Power_Management)
     *   [2.1 CPU](#CPU)
-    *   [2.2 Hibernate/Suspend](#Hibernate.2FSuspend)
+    *   [2.2 Hibernate/Suspend](#Hibernate/Suspend)
 
 ## Hardware
 

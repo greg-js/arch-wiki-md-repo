@@ -20,7 +20,7 @@ This mechanism differs from [Lxc-systemd](/index.php/Lxc-systemd "Lxc-systemd") 
 *   [2 Examples](#Examples)
     *   [2.1 Create and boot a minimal Arch Linux distribution in a container](#Create_and_boot_a_minimal_Arch_Linux_distribution_in_a_container)
     *   [2.2 Create a Debian or Ubuntu environment](#Create_a_Debian_or_Ubuntu_environment)
-    *   [2.3 Creating private users (unprivileged containers)](#Creating_private_users_.28unprivileged_containers.29)
+    *   [2.3 Creating private users (unprivileged containers)](#Creating_private_users_(unprivileged_containers))
     *   [2.4 Enable container on boot](#Enable_container_on_boot)
     *   [2.5 Build and test packages](#Build_and_test_packages)
 *   [3 Management](#Management)
@@ -43,7 +43,7 @@ This mechanism differs from [Lxc-systemd](/index.php/Lxc-systemd "Lxc-systemd") 
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 root login fails](#root_login_fails)
     *   [5.2 Unable to upgrade some packages on the container](#Unable_to_upgrade_some_packages_on_the_container)
-    *   [5.3 execv(...) failed: Permission denied](#execv.28....29_failed:_Permission_denied)
+    *   [5.3 execv(...) failed: Permission denied](#execv(...)_failed:_Permission_denied)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -123,7 +123,7 @@ If the above didn't work. One can start the container and use these commands ins
 
 *systemd-nspawn* supports unprivileged containers, though the containers need to be booted as root.
 
-**Note:** This feature requires [user_namespaces(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/user_namespaces.7), for further info see [Linux Containers#Enable support to run unprivileged containers (optional)](/index.php/Linux_Containers#Enable_support_to_run_unprivileged_containers_.28optional.29 "Linux Containers")
+**Note:** This feature requires [user_namespaces(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/user_namespaces.7), for further info see [Linux Containers#Enable support to run unprivileged containers (optional)](/index.php/Linux_Containers#Enable_support_to_run_unprivileged_containers_(optional) "Linux Containers")
 
 The easiest way to do this is to let *systemd-nspawn* decide everything:
 
@@ -420,7 +420,7 @@ Bind=/sys/fs/cgroup
 
 This grants all capabilities to the container, whitelists two system calls `add_key` and `keyctl` (related to kernel keyring and required by Docker), and bind-mounts `/sys/fs/cgroup` from host to the container. After editing these files, you need to poweroff and restart your container for them to take effect.
 
-**Note:** You might need to load the `overlay` module on the host before starting Docker inside the systemd-nspawn to use the `overlay2` storage driver (default storage driver of Docker) properly. Failure to load the driver will cause Docker to choose the inefficient driver `vfs` which copies everything for every layer of Docker containers. Consult [Kernel modules#Automatic module handling](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules") on how to load the module automatically.
+**Note:** You might need to load the `overlay` module on the host before starting Docker inside the systemd-nspawn to use the `overlay2` storage driver (default storage driver of Docker) properly. Failure to load the driver will cause Docker to choose the inefficient driver `vfs` which copies everything for every layer of Docker containers. Consult [Kernel modules#Automatic module loading with systemd](/index.php/Kernel_modules#Automatic_module_loading_with_systemd "Kernel modules") on how to load the module automatically.
 
 ## Troubleshooting
 

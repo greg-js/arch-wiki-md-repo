@@ -15,7 +15,7 @@ Related articles
     *   [2.3 Mounting remote hosts](#Mounting_remote_hosts)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Open archive in app instead of extracting](#Open_archive_in_app_instead_of_extracting)
-    *   [3.2 Show custom context menu command only on files/folders](#Show_custom_context_menu_command_only_on_files.2Ffolders)
+    *   [3.2 Show custom context menu command only on files/folders](#Show_custom_context_menu_command_only_on_files/folders)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Columns are not resizeable](#Columns_are_not_resizeable)
     *   [4.2 Segmentation faults](#Segmentation_faults)

@@ -13,37 +13,37 @@
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 配置](#.E9.85.8D.E7.BD.AE)
-*   [3 附加组件](#.E9.99.84.E5.8A.A0.E7.BB.84.E4.BB.B6)
-    *   [3.1 增加搜索引擎](#.E5.A2.9E.E5.8A.A0.E6.90.9C.E7.B4.A2.E5.BC.95.E6.93.8E)
+*   [1 安装](#安装)
+*   [2 配置](#配置)
+*   [3 附加组件](#附加组件)
+    *   [3.1 增加搜索引擎](#增加搜索引擎)
         *   [3.1.1 arch-firefox-search](#arch-firefox-search)
-    *   [3.2 Gnome Keyring 整合](#Gnome_Keyring_.E6.95.B4.E5.90.88)
-    *   [3.3 KDE 整合](#KDE_.E6.95.B4.E5.90.88)
-    *   [3.4 拼写检查字典](#.E6.8B.BC.E5.86.99.E6.A3.80.E6.9F.A5.E5.AD.97.E5.85.B8)
-    *   [3.5 多媒体播放](#.E5.A4.9A.E5.AA.92.E4.BD.93.E6.92.AD.E6.94.BE)
+    *   [3.2 Gnome Keyring 整合](#Gnome_Keyring_整合)
+    *   [3.3 KDE 整合](#KDE_整合)
+    *   [3.4 拼写检查字典](#拼写检查字典)
+    *   [3.5 多媒体播放](#多媒体播放)
         *   [3.5.1 Open-with extension](#Open-with_extension)
-*   [4 小技巧](#.E5.B0.8F.E6.8A.80.E5.B7.A7)
-    *   [4.1 网页截图](#.E7.BD.91.E9.A1.B5.E6.88.AA.E5.9B.BE)
-*   [5 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
-    *   [5.1 Firefox 启动时间太长](#Firefox_.E5.90.AF.E5.8A.A8.E6.97.B6.E9.97.B4.E5.A4.AA.E9.95.BF)
-    *   [5.2 字体问题](#.E5.AD.97.E4.BD.93.E9.97.AE.E9.A2.98)
-    *   [5.3 设置 email 客户端](#.E8.AE.BE.E7.BD.AE_email_.E5.AE.A2.E6.88.B7.E7.AB.AF)
-    *   [5.4 Firefox 自动创建 ~/Desktop，但我不需要](#Firefox_.E8.87.AA.E5.8A.A8.E5.88.9B.E5.BB.BA_.7E.2FDesktop.EF.BC.8C.E4.BD.86.E6.88.91.E4.B8.8D.E9.9C.80.E8.A6.81)
-    *   [5.5 禁止插件弹窗](#.E7.A6.81.E6.AD.A2.E6.8F.92.E4.BB.B6.E5.BC.B9.E7.AA.97)
-    *   [5.6 中键点击问题](#.E4.B8.AD.E9.94.AE.E7.82.B9.E5.87.BB.E9.97.AE.E9.A2.98)
-    *   [5.7 Backspace 键无法实现“后退”功能](#Backspace_.E9.94.AE.E6.97.A0.E6.B3.95.E5.AE.9E.E7.8E.B0.E2.80.9C.E5.90.8E.E9.80.80.E2.80.9D.E5.8A.9F.E8.83.BD)
-    *   [5.8 无法记录登录信息](#.E6.97.A0.E6.B3.95.E8.AE.B0.E5.BD.95.E7.99.BB.E5.BD.95.E4.BF.A1.E6.81.AF)
-    *   [5.9 关闭Firefox时不询问是否保存标签](#.E5.85.B3.E9.97.ADFirefox.E6.97.B6.E4.B8.8D.E8.AF.A2.E9.97.AE.E6.98.AF.E5.90.A6.E4.BF.9D.E5.AD.98.E6.A0.87.E7.AD.BE)
-    *   [5.10 从Marketplace安装桌面应用失败且无错误提示](#.E4.BB.8EMarketplace.E5.AE.89.E8.A3.85.E6.A1.8C.E9.9D.A2.E5.BA.94.E7.94.A8.E5.A4.B1.E8.B4.A5.E4.B8.94.E6.97.A0.E9.94.99.E8.AF.AF.E6.8F.90.E7.A4.BA)
-    *   [5.11 Firefox 错误地认为插件过时](#Firefox_.E9.94.99.E8.AF.AF.E5.9C.B0.E8.AE.A4.E4.B8.BA.E6.8F.92.E4.BB.B6.E8.BF.87.E6.97.B6)
-    *   [5.12 在一些网页中，Javascript 上下文菜单不显示](#.E5.9C.A8.E4.B8.80.E4.BA.9B.E7.BD.91.E9.A1.B5.E4.B8.AD.EF.BC.8CJavascript_.E4.B8.8A.E4.B8.8B.E6.96.87.E8.8F.9C.E5.8D.95.E4.B8.8D.E6.98.BE.E7.A4.BA)
-    *   [5.13 Firefox 不保存默认的拼写检查语言](#Firefox_.E4.B8.8D.E4.BF.9D.E5.AD.98.E9.BB.98.E8.AE.A4.E7.9A.84.E6.8B.BC.E5.86.99.E6.A3.80.E6.9F.A5.E8.AF.AD.E8.A8.80)
-    *   [5.14 一些 MathML 符号消失了](#.E4.B8.80.E4.BA.9B_MathML_.E7.AC.A6.E5.8F.B7.E6.B6.88.E5.A4.B1.E4.BA.86)
-    *   [5.15 全屏模式下视频断裂](#.E5.85.A8.E5.B1.8F.E6.A8.A1.E5.BC.8F.E4.B8.8B.E8.A7.86.E9.A2.91.E6.96.AD.E8.A3.82)
+*   [4 小技巧](#小技巧)
+    *   [4.1 网页截图](#网页截图)
+*   [5 疑难解答](#疑难解答)
+    *   [5.1 Firefox 启动时间太长](#Firefox_启动时间太长)
+    *   [5.2 字体问题](#字体问题)
+    *   [5.3 设置 email 客户端](#设置_email_客户端)
+    *   [5.4 Firefox 自动创建 ~/Desktop，但我不需要](#Firefox_自动创建_~/Desktop，但我不需要)
+    *   [5.5 禁止插件弹窗](#禁止插件弹窗)
+    *   [5.6 中键点击问题](#中键点击问题)
+    *   [5.7 Backspace 键无法实现“后退”功能](#Backspace_键无法实现“后退”功能)
+    *   [5.8 无法记录登录信息](#无法记录登录信息)
+    *   [5.9 关闭Firefox时不询问是否保存标签](#关闭Firefox时不询问是否保存标签)
+    *   [5.10 从Marketplace安装桌面应用失败且无错误提示](#从Marketplace安装桌面应用失败且无错误提示)
+    *   [5.11 Firefox 错误地认为插件过时](#Firefox_错误地认为插件过时)
+    *   [5.12 在一些网页中，Javascript 上下文菜单不显示](#在一些网页中，Javascript_上下文菜单不显示)
+    *   [5.13 Firefox 不保存默认的拼写检查语言](#Firefox_不保存默认的拼写检查语言)
+    *   [5.14 一些 MathML 符号消失了](#一些_MathML_符号消失了)
+    *   [5.15 全屏模式下视频断裂](#全屏模式下视频断裂)
     *   [5.16 Firefox ESR 52 looks bad](#Firefox_ESR_52_looks_bad)
     *   [5.17 Firefox WebRTC module cannot detect a microphone](#Firefox_WebRTC_module_cannot_detect_a_microphone)
-*   [6 参见](#.E5.8F.82.E8.A7.81)
+*   [6 参见](#参见)
 
 ## 安装
 
@@ -349,7 +349,7 @@ $ rm -f cookies.sqlite
 
 ### 全屏模式下视频断裂
 
-如果你使用 Xorg Intel 或者 Nouveau 驱动并且感觉全屏模式下视频有撕裂感，试试 [Firefox tweaks#Enable OpenGL Off-Main-Thread Compositing (OMTC)](/index.php/Firefox_tweaks#Enable_OpenGL_Off-Main-Thread_Compositing_.28OMTC.29 "Firefox tweaks").
+如果你使用 Xorg Intel 或者 Nouveau 驱动并且感觉全屏模式下视频有撕裂感，试试 [Firefox tweaks#Enable OpenGL Off-Main-Thread Compositing (OMTC)](/index.php/Firefox_tweaks#Enable_OpenGL_Off-Main-Thread_Compositing_(OMTC) "Firefox tweaks").
 
 ### Firefox ESR 52 looks bad
 
@@ -367,7 +367,7 @@ WebRTC applications for instance [Firefox WebRTC getUserMedia test page](https:/
 
 You can try setting `media.navigator.audio.full_duplex` property to `false` at `about:config` Firefox page and restart Firefox.
 
-This can also help if you are using the PulseAudio [module-echo-cancel](/index.php/PulseAudio/Troubleshooting#Enable_Echo.2FNoise-Cancellation "PulseAudio/Troubleshooting"), and Firefox does not recognise the virtual echo canceling source.
+This can also help if you are using the PulseAudio [module-echo-cancel](/index.php/PulseAudio/Troubleshooting#Enable_Echo/Noise-Cancellation "PulseAudio/Troubleshooting"), and Firefox does not recognise the virtual echo canceling source.
 
 ## 参见
 

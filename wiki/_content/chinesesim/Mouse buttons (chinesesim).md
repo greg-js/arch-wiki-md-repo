@@ -9,9 +9,9 @@ Related articles
 
 ## Contents
 
-*   [1 写在前面](#.E5.86.99.E5.9C.A8.E5.89.8D.E9.9D.A2)
-*   [2 查找鼠标名称](#.E6.9F.A5.E6.89.BE.E9.BC.A0.E6.A0.87.E5.90.8D.E7.A7.B0)
-*   [3 配置Xorg](#.E9.85.8D.E7.BD.AEXorg)
+*   [1 写在前面](#写在前面)
+*   [2 查找鼠标名称](#查找鼠标名称)
+*   [3 配置Xorg](#配置Xorg)
 *   [4 Post Configuration](#Post_Configuration)
     *   [4.1 Google Chrome](#Google_Chrome)
     *   [4.2 Opera](#Opera)
@@ -21,19 +21,19 @@ Related articles
     *   [4.5 xmodmap tweaking](#xmodmap_tweaking)
     *   [4.6 xinput tweaking](#xinput_tweaking)
 *   [5 Alternate methods](#Alternate_methods)
-    *   [5.1 IMPS/2](#IMPS.2F2)
-    *   [5.2 ExplorerPS/2](#ExplorerPS.2F2)
+    *   [5.1 IMPS/2](#IMPS/2)
+    *   [5.2 ExplorerPS/2](#ExplorerPS/2)
     *   [5.3 Auto](#Auto)
     *   [5.4 easystroke](#easystroke)
 *   [6 Binding keyboard to mouse buttons](#Binding_keyboard_to_mouse_buttons)
     *   [6.1 xvkbd and xbindkeys](#xvkbd_and_xbindkeys)
     *   [6.2 evrouter](#evrouter)
-    *   [6.3 Binding + and - in Logitech G5 mouse](#Binding_.2B_and_-_in_Logitech_G5_mouse)
+    *   [6.3 Binding + and - in Logitech G5 mouse](#Binding_+_and_-_in_Logitech_G5_mouse)
 *   [7 User tools](#User_tools)
 *   [8 Device Specific Configuration Files](#Device_Specific_Configuration_Files)
     *   [8.1 Logitech G600](#Logitech_G600)
     *   [8.2 Mad Catz Mouse](#Mad_Catz_Mouse)
-    *   [8.3 Logitech M560/M545/M546](#Logitech_M560.2FM545.2FM546)
+    *   [8.3 Logitech M560/M545/M546](#Logitech_M560/M545/M546)
 
 ## 写在前面
 

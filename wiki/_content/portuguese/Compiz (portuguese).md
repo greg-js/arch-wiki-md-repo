@@ -12,8 +12,8 @@ Segundo a [Wikipedia](https://en.wikipedia.org/wiki/Compiz "wikipedia:Compiz"):
 
 ## Contents
 
-*   [1 Instalação](#Instala.C3.A7.C3.A3o)
-    *   [1.1 Através do Repositório Community](#Atrav.C3.A9s_do_Reposit.C3.B3rio_Community)
+*   [1 Instalação](#Instalação)
+    *   [1.1 Através do Repositório Community](#Através_do_Repositório_Community)
         *   [1.1.1 Todos os Pacotes](#Todos_os_Pacotes)
         *   [1.1.2 Pacotes GTK](#Pacotes_GTK)
         *   [1.1.3 Pacotes KDE](#Pacotes_KDE)
@@ -22,9 +22,9 @@ Segundo a [Wikipedia](https://en.wikipedia.org/wiki/Compiz "wikipedia:Compiz"):
         *   [1.2.2 KDE](#KDE)
             *   [1.2.2.1 Manual Sem O Fusion-Icon](#Manual_Sem_O_Fusion-Icon)
             *   [1.2.2.2 Automaticamente](#Automaticamente)
-                *   [1.2.2.2.1 Método 1 = Fusion-Icon](#M.C3.A9todo_1_.3D_Fusion-Icon)
-                *   [1.2.2.2.2 Método 2 = Manualmente criar um arquivo de inicialização automática](#M.C3.A9todo_2_.3D_Manualmente_criar_um_arquivo_de_inicializa.C3.A7.C3.A3o_autom.C3.A1tica)
-    *   [1.3 Links Úteis](#Links_.C3.9Ateis)
+                *   [1.2.2.2.1 Método 1 = Fusion-Icon](#Método_1_=_Fusion-Icon)
+                *   [1.2.2.2.2 Método 2 = Manualmente criar um arquivo de inicialização automática](#Método_2_=_Manualmente_criar_um_arquivo_de_inicialização_automática)
+    *   [1.3 Links Úteis](#Links_Úteis)
 
 # Instalação
 
@@ -32,7 +32,7 @@ A instalação pode ser feita usando os repositórios community. Uma outra forma
 
 ## Através do Repositório Community
 
-Após [habilitar o repositório no arquivo /etc/pacman.conf](/index.php/Pacman_(Portugu%C3%AAs)#Reposit.C3.B3rios_e_espelhos "Pacman (Português)"), pode-se instalar o compiz com o comando:
+Após [habilitar o repositório no arquivo /etc/pacman.conf](/index.php/Pacman_(Portugu%C3%AAs)#Repositórios_e_espelhos "Pacman (Português)"), pode-se instalar o compiz com o comando:
 
 ### Todos os Pacotes
 

@@ -11,9 +11,9 @@
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Use hardware video acceleration](#Use_hardware_video_acceleration)
     *   [5.2 Use VA-API support transcoding](#Use_VA-API_support_transcoding)
-    *   [5.3 Use CAPMT (Linux Network DVBAPI) with OSCam](#Use_CAPMT_.28Linux_Network_DVBAPI.29_with_OSCam)
+    *   [5.3 Use CAPMT (Linux Network DVBAPI) with OSCam](#Use_CAPMT_(Linux_Network_DVBAPI)_with_OSCam)
 *   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Unable to authenticate/play stream](#Unable_to_authenticate.2Fplay_stream)
+    *   [6.1 Unable to authenticate/play stream](#Unable_to_authenticate/play_stream)
 
 ## Installation
 

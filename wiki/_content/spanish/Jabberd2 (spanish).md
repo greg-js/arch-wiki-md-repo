@@ -5,10 +5,10 @@ Este artículo es una traducción de [Jabberd2](/index.php/Jabberd2 "Jabberd2"),
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Configuración](#Configuraci.C3.B3n)
+*   [1 Instalación](#Instalación)
+*   [2 Configuración](#Configuración)
     *   [2.1 Demonio](#Demonio)
-*   [3 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [3 Véase también](#Véase_también)
 
 ## Instalación
 

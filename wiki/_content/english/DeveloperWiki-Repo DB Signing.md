@@ -1,11 +1,11 @@
 ## Contents
 
-*   [1 [RFC] Repo DB signing (and ISO's/other artefacts)](#.5BRFC.5D_Repo_DB_signing_.28and_ISO.27s.2Fother_artefacts.29)
+*   [1 [RFC] Repo DB signing (and ISO's/other artefacts)](#[RFC]_Repo_DB_signing_(and_ISO's/other_artefacts))
     *   [1.1 Proposed solutions](#Proposed_solutions)
-        *   [1.1.1 Signing from a 'secure' enclave (solution 1)](#Signing_from_a_.27secure.27_enclave_.28solution_1.29)
-        *   [1.1.2 Signing from a 'secure' enclave (solution 2)](#Signing_from_a_.27secure.27_enclave_.28solution_2.29)
-    *   [1.2 Comparison benefits/pitfalls](#Comparison_benefits.2Fpitfalls)
-    *   [1.3 Solutions in other distro's](#Solutions_in_other_distro.27s)
+        *   [1.1.1 Signing from a 'secure' enclave (solution 1)](#Signing_from_a_'secure'_enclave_(solution_1))
+        *   [1.1.2 Signing from a 'secure' enclave (solution 2)](#Signing_from_a_'secure'_enclave_(solution_2))
+    *   [1.2 Comparison benefits/pitfalls](#Comparison_benefits/pitfalls)
+    *   [1.3 Solutions in other distro's](#Solutions_in_other_distro's)
         *   [1.3.1 Debian](#Debian)
         *   [1.3.2 OpenSuSe build service](#OpenSuSe_build_service)
         *   [1.3.3 Fedora](#Fedora)

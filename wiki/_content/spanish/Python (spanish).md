@@ -12,11 +12,11 @@ De la [Wikipedia](https://es.wikipedia.org/wiki/Python):
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
     *   [1.1 Python 3](#Python_3)
         *   [1.1.1 VirtualEnv](#VirtualEnv)
     *   [1.2 Python 2](#Python_2)
-*   [2 Tratar los problemas de versión en los *scripts* de compilación](#Tratar_los_problemas_de_versi.C3.B3n_en_los_scripts_de_compilaci.C3.B3n)
+*   [2 Tratar los problemas de versión en los *scripts* de compilación](#Tratar_los_problemas_de_versión_en_los_scripts_de_compilación)
 *   [3 Completado de sintaxis en el shell de Python](#Completado_de_sintaxis_en_el_shell_de_Python)
 *   [4 *Widget bindings*](#Widget_bindings)
 *   [5 Versiones antiguas](#Versiones_antiguas)

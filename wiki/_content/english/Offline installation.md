@@ -17,7 +17,7 @@ First, follow the [Installation guide](/index.php/Installation_guide "Installati
     *   [2.4 Remove special scripts of the Live environment](#Remove_special_scripts_of_the_Live_environment)
     *   [2.5 Importing archlinux keys](#Importing_archlinux_keys)
     *   [2.6 Configure the system](#Configure_the_system)
-    *   [2.7 Enable graphical login (optional)](#Enable_graphical_login_.28optional.29)
+    *   [2.7 Enable graphical login (optional)](#Enable_graphical_login_(optional))
 
 ## Install the archiso to the new root
 

@@ -11,12 +11,12 @@ Muitos programas do Windows ainda podem ser úteis no Linux e, portanto, podemos
 ## Contents
 
 *   [1 Coisas para verificar imediatamente](#Coisas_para_verificar_imediatamente)
-    *   [1.1 Licença](#Licen.C3.A7a)
+    *   [1.1 Licença](#Licença)
     *   [1.2 Instalador](#Instalador)
     *   [1.3 Portabilidade e limpeza](#Portabilidade_e_limpeza)
 *   [2 A diretriz em resumo](#A_diretriz_em_resumo)
     *   [2.1 Instalando](#Instalando)
-    *   [2.2 O script /usr/bin](#O_script_.2Fusr.2Fbin)
+    *   [2.2 O script /usr/bin](#O_script_/usr/bin)
     *   [2.3 UnionFsFuse](#UnionFsFuse)
 *   [3 Um exemplo](#Um_exemplo)
 *   [4 Gecko e Mono](#Gecko_e_Mono)

@@ -7,13 +7,13 @@ Related articles
 
 ## Contents
 
-*   [1 只要執行一行指令](#.E5.8F.AA.E8.A6.81.E5.9F.B7.E8.A1.8C.E4.B8.80.E8.A1.8C.E6.8C.87.E4.BB.A4)
-*   [2 使用 script](#.E4.BD.BF.E7.94.A8_script)
-*   [3 修改開機需要的相關檔案](#.E4.BF.AE.E6.94.B9.E9.96.8B.E6.A9.9F.E9.9C.80.E8.A6.81.E7.9A.84.E7.9B.B8.E9.97.9C.E6.AA.94.E6.A1.88)
-    *   [3.1 更新 fstab](#.E6.9B.B4.E6.96.B0_fstab)
-    *   [3.2 更新 bootloader 的設定檔](#.E6.9B.B4.E6.96.B0_bootloader_.E7.9A.84.E8.A8.AD.E5.AE.9A.E6.AA.94)
-*   [4 第一次開機](#.E7.AC.AC.E4.B8.80.E6.AC.A1.E9.96.8B.E6.A9.9F)
-*   [5 延伸閱讀](#.E5.BB.B6.E4.BC.B8.E9.96.B1.E8.AE.80)
+*   [1 只要執行一行指令](#只要執行一行指令)
+*   [2 使用 script](#使用_script)
+*   [3 修改開機需要的相關檔案](#修改開機需要的相關檔案)
+    *   [3.1 更新 fstab](#更新_fstab)
+    *   [3.2 更新 bootloader 的設定檔](#更新_bootloader_的設定檔)
+*   [4 第一次開機](#第一次開機)
+*   [5 延伸閱讀](#延伸閱讀)
 
 ## 只要執行一行指令
 
@@ -175,7 +175,7 @@ tmpfs        /tmp          tmpfs     nodev,nosuid             0   0
 
 現在你可以重新編輯 `/etc/fstab` 來去增加之前被你移除掉的磁區和掛載點。
 
-如果你將資料從 HDD 轉換到 SSD (固態硬碟)，別忘了啟動 TRIM。也別忘了使用 HDD 和 tmpfs 掛載點來降低 SSD 損害。- 可參考 [Relocate files to tmpfs](/index.php/Improving_performance#Relocate_files_to_tmpfs "Improving performance") 與 [Tips for Minimizing SSD Read & Writes](/index.php/Solid_State_Drives#Tips_for_minimizing_disk_reads.2Fwrites "Solid State Drives").
+如果你將資料從 HDD 轉換到 SSD (固態硬碟)，別忘了啟動 TRIM。也別忘了使用 HDD 和 tmpfs 掛載點來降低 SSD 損害。- 可參考 [Relocate files to tmpfs](/index.php/Improving_performance#Relocate_files_to_tmpfs "Improving performance") 與 [Tips for Minimizing SSD Read & Writes](/index.php/Solid_State_Drives#Tips_for_minimizing_disk_reads/writes "Solid State Drives").
 
 **Note:** 你可能需要再次重開機來讓服務可以被正常的運作。 如果你的 pulseaudio沒有辦法被正常的載入。 可以嘗試 restart dbus.service 來讓它正常。
 

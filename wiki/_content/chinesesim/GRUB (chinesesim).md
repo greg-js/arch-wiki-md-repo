@@ -15,61 +15,61 @@
 
 ## Contents
 
-*   [1 前言](#.E5.89.8D.E8.A8.80)
-*   [2 BIOS 系统](#BIOS_.E7.B3.BB.E7.BB.9F)
-    *   [2.1 特殊操作](#.E7.89.B9.E6.AE.8A.E6.93.8D.E4.BD.9C)
-        *   [2.1.1 GUID分区表（GPT）特殊操作](#GUID.E5.88.86.E5.8C.BA.E8.A1.A8.EF.BC.88GPT.EF.BC.89.E7.89.B9.E6.AE.8A.E6.93.8D.E4.BD.9C)
-        *   [2.1.2 主引导记录（MBR）特殊操作](#.E4.B8.BB.E5.BC.95.E5.AF.BC.E8.AE.B0.E5.BD.95.EF.BC.88MBR.EF.BC.89.E7.89.B9.E6.AE.8A.E6.93.8D.E4.BD.9C)
-    *   [2.2 安装](#.E5.AE.89.E8.A3.85)
-*   [3 UEFI 系统](#UEFI_.E7.B3.BB.E7.BB.9F)
-    *   [3.1 检查你是否使用GPT且有ESP分区](#.E6.A3.80.E6.9F.A5.E4.BD.A0.E6.98.AF.E5.90.A6.E4.BD.BF.E7.94.A8GPT.E4.B8.94.E6.9C.89ESP.E5.88.86.E5.8C.BA)
-    *   [3.2 安装](#.E5.AE.89.E8.A3.85_2)
-*   [4 生成主配置文件](#.E7.94.9F.E6.88.90.E4.B8.BB.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)
-*   [5 配置](#.E9.85.8D.E7.BD.AE)
-    *   [5.1 额外的参数](#.E9.A2.9D.E5.A4.96.E7.9A.84.E5.8F.82.E6.95.B0)
-    *   [5.2 多系统启动](#.E5.A4.9A.E7.B3.BB.E7.BB.9F.E5.90.AF.E5.8A.A8)
-        *   [5.2.1 使用 /etc/grub.d/40_custom 和 grub-mkconfig 自动生成](#.E4.BD.BF.E7.94.A8_.2Fetc.2Fgrub.d.2F40_custom_.E5.92.8C_grub-mkconfig_.E8.87.AA.E5.8A.A8.E7.94.9F.E6.88.90)
-            *   [5.2.1.1 GNU/Linux 启动项](#GNU.2FLinux_.E5.90.AF.E5.8A.A8.E9.A1.B9)
-            *   [5.2.1.2 FreeBSD 启动项](#FreeBSD_.E5.90.AF.E5.8A.A8.E9.A1.B9)
-                *   [5.2.1.2.1 直接加载内核](#.E7.9B.B4.E6.8E.A5.E5.8A.A0.E8.BD.BD.E5.86.85.E6.A0.B8)
-                *   [5.2.1.2.2 Chainloading 嵌入的启动项](#Chainloading_.E5.B5.8C.E5.85.A5.E7.9A.84.E5.90.AF.E5.8A.A8.E9.A1.B9)
-                *   [5.2.1.2.3 运行传统的 BSD 第二阶段 loader](#.E8.BF.90.E8.A1.8C.E4.BC.A0.E7.BB.9F.E7.9A.84_BSD_.E7.AC.AC.E4.BA.8C.E9.98.B6.E6.AE.B5_loader)
-            *   [5.2.1.3 UEFI-GPT 模式下安装的Windows的启动项](#UEFI-GPT_.E6.A8.A1.E5.BC.8F.E4.B8.8B.E5.AE.89.E8.A3.85.E7.9A.84Windows.E7.9A.84.E5.90.AF.E5.8A.A8.E9.A1.B9)
-            *   [5.2.1.4 "Shutdown" 启动项](#.22Shutdown.22_.E5.90.AF.E5.8A.A8.E9.A1.B9)
-            *   [5.2.1.5 "Restart" 启动项](#.22Restart.22_.E5.90.AF.E5.8A.A8.E9.A1.B9)
-            *   [5.2.1.6 在BIOS-MBR模式下安装的Microsoft Windows](#.E5.9C.A8BIOS-MBR.E6.A8.A1.E5.BC.8F.E4.B8.8B.E5.AE.89.E8.A3.85.E7.9A.84Microsoft_Windows)
-        *   [5.2.2 通过EasyBCD NeoGRUB 和Windows共存](#.E9.80.9A.E8.BF.87EasyBCD_NeoGRUB_.E5.92.8CWindows.E5.85.B1.E5.AD.98)
-    *   [5.3 其他选项](#.E5.85.B6.E4.BB.96.E9.80.89.E9.A1.B9)
+*   [1 前言](#前言)
+*   [2 BIOS 系统](#BIOS_系统)
+    *   [2.1 特殊操作](#特殊操作)
+        *   [2.1.1 GUID分区表（GPT）特殊操作](#GUID分区表（GPT）特殊操作)
+        *   [2.1.2 主引导记录（MBR）特殊操作](#主引导记录（MBR）特殊操作)
+    *   [2.2 安装](#安装)
+*   [3 UEFI 系统](#UEFI_系统)
+    *   [3.1 检查你是否使用GPT且有ESP分区](#检查你是否使用GPT且有ESP分区)
+    *   [3.2 安装](#安装_2)
+*   [4 生成主配置文件](#生成主配置文件)
+*   [5 配置](#配置)
+    *   [5.1 额外的参数](#额外的参数)
+    *   [5.2 多系统启动](#多系统启动)
+        *   [5.2.1 使用 /etc/grub.d/40_custom 和 grub-mkconfig 自动生成](#使用_/etc/grub.d/40_custom_和_grub-mkconfig_自动生成)
+            *   [5.2.1.1 GNU/Linux 启动项](#GNU/Linux_启动项)
+            *   [5.2.1.2 FreeBSD 启动项](#FreeBSD_启动项)
+                *   [5.2.1.2.1 直接加载内核](#直接加载内核)
+                *   [5.2.1.2.2 Chainloading 嵌入的启动项](#Chainloading_嵌入的启动项)
+                *   [5.2.1.2.3 运行传统的 BSD 第二阶段 loader](#运行传统的_BSD_第二阶段_loader)
+            *   [5.2.1.3 UEFI-GPT 模式下安装的Windows的启动项](#UEFI-GPT_模式下安装的Windows的启动项)
+            *   [5.2.1.4 "Shutdown" 启动项](#"Shutdown"_启动项)
+            *   [5.2.1.5 "Restart" 启动项](#"Restart"_启动项)
+            *   [5.2.1.6 在BIOS-MBR模式下安装的Microsoft Windows](#在BIOS-MBR模式下安装的Microsoft_Windows)
+        *   [5.2.2 通过EasyBCD NeoGRUB 和Windows共存](#通过EasyBCD_NeoGRUB_和Windows共存)
+    *   [5.3 其他选项](#其他选项)
         *   [5.3.1 LVM](#LVM)
-        *   [5.3.2 阵列](#.E9.98.B5.E5.88.97)
-        *   [5.3.3 root加密](#root.E5.8A.A0.E5.AF.86)
-    *   [5.4 在GRUB中直接从ISO启动](#.E5.9C.A8GRUB.E4.B8.AD.E7.9B.B4.E6.8E.A5.E4.BB.8EISO.E5.90.AF.E5.8A.A8)
+        *   [5.3.2 阵列](#阵列)
+        *   [5.3.3 root加密](#root加密)
+    *   [5.4 在GRUB中直接从ISO启动](#在GRUB中直接从ISO启动)
         *   [5.4.1 Arch ISO](#Arch_ISO)
             *   [5.4.1.1 x86_64](#x86_64)
             *   [5.4.1.2 i686](#i686)
         *   [5.4.2 Ubuntu ISO](#Ubuntu_ISO)
         *   [5.4.3 Other ISOs](#Other_ISOs)
-*   [6 使用GRUB命令行](#.E4.BD.BF.E7.94.A8GRUB.E5.91.BD.E4.BB.A4.E8.A1.8C)
-    *   [6.1 分页支持](#.E5.88.86.E9.A1.B5.E6.94.AF.E6.8C.81)
-    *   [6.2 使用命令行引导操作系统](#.E4.BD.BF.E7.94.A8.E5.91.BD.E4.BB.A4.E8.A1.8C.E5.BC.95.E5.AF.BC.E6.93.8D.E4.BD.9C.E7.B3.BB.E7.BB.9F)
-        *   [6.2.1 链式加载一个分区](#.E9.93.BE.E5.BC.8F.E5.8A.A0.E8.BD.BD.E4.B8.80.E4.B8.AA.E5.88.86.E5.8C.BA)
-        *   [6.2.2 链式加载磁盘](#.E9.93.BE.E5.BC.8F.E5.8A.A0.E8.BD.BD.E7.A3.81.E7.9B.98)
-        *   [6.2.3 正常载入](#.E6.AD.A3.E5.B8.B8.E8.BD.BD.E5.85.A5)
+*   [6 使用GRUB命令行](#使用GRUB命令行)
+    *   [6.1 分页支持](#分页支持)
+    *   [6.2 使用命令行引导操作系统](#使用命令行引导操作系统)
+        *   [6.2.1 链式加载一个分区](#链式加载一个分区)
+        *   [6.2.2 链式加载磁盘](#链式加载磁盘)
+        *   [6.2.3 正常载入](#正常载入)
 *   [7 parttool](#parttool)
-*   [8 使用应急命令行](#.E4.BD.BF.E7.94.A8.E5.BA.94.E6.80.A5.E5.91.BD.E4.BB.A4.E8.A1.8C)
-*   [9 异常处理](#.E5.BC.82.E5.B8.B8.E5.A4.84.E7.90.86)
-    *   [9.1 Intel BIOS不能引导GPT](#Intel_BIOS.E4.B8.8D.E8.83.BD.E5.BC.95.E5.AF.BCGPT)
-    *   [9.2 启用调试信息](#.E5.90.AF.E7.94.A8.E8.B0.83.E8.AF.95.E4.BF.A1.E6.81.AF)
-    *   [9.3 "No suitable mode found" error](#.22No_suitable_mode_found.22_error)
-    *   [9.4 出现"msdos-style"错误消息](#.E5.87.BA.E7.8E.B0.22msdos-style.22.E9.94.99.E8.AF.AF.E6.B6.88.E6.81.AF)
-    *   [9.5 GRUB UEFI 启动到了rescue shell下](#GRUB_UEFI_.E5.90.AF.E5.8A.A8.E5.88.B0.E4.BA.86rescue_shell.E4.B8.8B)
-    *   [9.6 GRUB UEFI 无法被载入](#GRUB_UEFI_.E6.97.A0.E6.B3.95.E8.A2.AB.E8.BD.BD.E5.85.A5)
-    *   [9.7 "Invalid signature"错误](#.22Invalid_signature.22.E9.94.99.E8.AF.AF)
-    *   [9.8 引导过程卡死](#.E5.BC.95.E5.AF.BC.E8.BF.87.E7.A8.8B.E5.8D.A1.E6.AD.BB)
-    *   [9.9 回滚到 GRUB Legacy](#.E5.9B.9E.E6.BB.9A.E5.88.B0_GRUB_Legacy)
-    *   [9.10 其他系统不能自动发现Arch Linux](#.E5.85.B6.E4.BB.96.E7.B3.BB.E7.BB.9F.E4.B8.8D.E8.83.BD.E8.87.AA.E5.8A.A8.E5.8F.91.E7.8E.B0Arch_Linux)
-    *   [9.11 未找到 Windows 8/10](#.E6.9C.AA.E6.89.BE.E5.88.B0_Windows_8.2F10)
-*   [10 参阅](#.E5.8F.82.E9.98.85)
+*   [8 使用应急命令行](#使用应急命令行)
+*   [9 异常处理](#异常处理)
+    *   [9.1 Intel BIOS不能引导GPT](#Intel_BIOS不能引导GPT)
+    *   [9.2 启用调试信息](#启用调试信息)
+    *   [9.3 "No suitable mode found" error](#"No_suitable_mode_found"_error)
+    *   [9.4 出现"msdos-style"错误消息](#出现"msdos-style"错误消息)
+    *   [9.5 GRUB UEFI 启动到了rescue shell下](#GRUB_UEFI_启动到了rescue_shell下)
+    *   [9.6 GRUB UEFI 无法被载入](#GRUB_UEFI_无法被载入)
+    *   [9.7 "Invalid signature"错误](#"Invalid_signature"错误)
+    *   [9.8 引导过程卡死](#引导过程卡死)
+    *   [9.9 回滚到 GRUB Legacy](#回滚到_GRUB_Legacy)
+    *   [9.10 其他系统不能自动发现Arch Linux](#其他系统不能自动发现Arch_Linux)
+    *   [9.11 未找到 Windows 8/10](#未找到_Windows_8/10)
+*   [10 参阅](#参阅)
 
 ## 前言
 
@@ -172,7 +172,7 @@ GPT 后面的空间也可以用作 BIOS 启动分区，但是这会违反 GPT �
 
 上述安装完成后 GRUB 的主目录将位于 `/boot/grub/`。
 
-请记得阅读 [#生成主配置文件](#.E7.94.9F.E6.88.90.E4.B8.BB.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6) 和 [#配置](#.E9.85.8D.E7.BD.AE).
+请记得阅读 [#生成主配置文件](#生成主配置文件) 和 [#配置](#配置).
 
 **注意:**
 
@@ -207,7 +207,7 @@ GPT 后面的空间也可以用作 BIOS 启动分区，但是这会违反 GPT �
 
 本部分介绍了 `/etc/default/grub` 文件的配置，更多信息请参考 [GRUB/Tips and tricks](/index.php/GRUB/Tips_and_tricks "GRUB/Tips and tricks").
 
-每次修改 `/etc/default/grub` 后，都需要重新[#生成主配置文件](#.E7.94.9F.E6.88.90.E4.B8.BB.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6).
+每次修改 `/etc/default/grub` 后，都需要重新[#生成主配置文件](#生成主配置文件).
 
 ### 额外的参数
 
@@ -243,7 +243,7 @@ GPT 后面的空间也可以用作 BIOS 启动分区，但是这会违反 GPT �
 
 ```
 
-一个典型 `/etc/grub.d/40_custom` 示例文件类似于下面。每个 `menuentry` 的结构都应该和下面的类似.请注意 UEFI 分区`/dev/sda2` 被命名为`hd0,gpt2` 和 `ahci0,gpt2`(请参考[here](/index.php/GRUB#Windows_installed_in_UEFI.2FGPT_Mode_menu_entry "GRUB")获取更多信息)
+一个典型 `/etc/grub.d/40_custom` 示例文件类似于下面。每个 `menuentry` 的结构都应该和下面的类似.请注意 UEFI 分区`/dev/sda2` 被命名为`hd0,gpt2` 和 `ahci0,gpt2`(请参考[here](/index.php/GRUB#Windows_installed_in_UEFI/GPT_Mode_menu_entry "GRUB")获取更多信息)
 
  `/etc/grub.d/40_custom` 
 ```
@@ -710,7 +710,7 @@ boot
 
 #### 正常载入
 
-请参考[#使用应急命令行](#.E4.BD.BF.E7.94.A8.E5.BA.94.E6.80.A5.E5.91.BD.E4.BB.A4.E8.A1.8C)
+请参考[#使用应急命令行](#使用应急命令行)
 
 ## parttool
 
@@ -728,7 +728,7 @@ boot
 
 ## 使用应急命令行
 
-请先阅读[#使用GRUB命令行](#.E4.BD.BF.E7.94.A8GRUB.E5.91.BD.E4.BB.A4.E8.A1.8C).如果无法进入命令行,请尝试使用Live CD或者其他rescue磁盘引导,然后修正错误.不过有些时候我们手上没有此类rescue磁盘,这时,应急命令行(rescue console)就可以派上用场了.
+请先阅读[#使用GRUB命令行](#使用GRUB命令行).如果无法进入命令行,请尝试使用Live CD或者其他rescue磁盘引导,然后修正错误.不过有些时候我们手上没有此类rescue磁盘,这时,应急命令行(rescue console)就可以派上用场了.
 
 GRUB应急命令行里可用的命令有`insmod`, `ls`, `set`, `unset`.可以使用set/unset修改变量,使用insmod来载入模组.
 
@@ -748,7 +748,7 @@ grub rescue> insmod (hdX,Y)/boot/grub/linux.mod
 
 **Note:** 如果/boot是在单独的分区上,请从路径中移除/boot.(即. 输入 `set prefix=(hdX,Y)/grub` 然后`insmod (hdX,Y)/grub/linux.mod`)
 
-这个模组会启动对我们熟悉的`linux` 和 `initrd` 命令的支持 (请参考[#配置](#.E9.85.8D.E7.BD.AE)).
+这个模组会启动对我们熟悉的`linux` 和 `initrd` 命令的支持 (请参考[#配置](#配置)).
 
 比如:
 
@@ -772,7 +772,7 @@ boot
 
 成功启动Arch后,用户可以修正配置的错误或者重新安装GRUB.
 
-关于修正配置和重新安装GRUB,请参考[#配置](#.E9.85.8D.E7.BD.AE)和[#安装](#.E5.AE.89.E8.A3.85)章节.
+关于修正配置和重新安装GRUB,请参考[#配置](#配置)和[#安装](#安装)章节.
 
 ## 异常处理
 
@@ -866,7 +866,7 @@ fi
 
 ### 出现"msdos-style"错误消息
 
-以下错误可能出现在你将GRUB安装到VMware上时.请阅读[相关链接](https://bbs.archlinux.org/viewtopic.php?pid=581760#p581760).这种情况是因为首分区直接从MBR后开始(即第64个扇区),而不是和正常的那样有1到2M post-MBR gap.请参阅[#MBR专用指令](#MBR.E4.B8.93.E7.94.A8.E6.8C.87.E4.BB.A4)
+以下错误可能出现在你将GRUB安装到VMware上时.请阅读[相关链接](https://bbs.archlinux.org/viewtopic.php?pid=581760#p581760).这种情况是因为首分区直接从MBR后开始(即第64个扇区),而不是和正常的那样有1到2M post-MBR gap.请参阅[#MBR专用指令](#MBR专用指令)
 
 ```
 grub-setup: warn: This msdos-style partition label has no post-MBR gap; embedding will not be possible!

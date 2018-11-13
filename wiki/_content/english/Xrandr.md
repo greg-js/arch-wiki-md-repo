@@ -386,7 +386,7 @@ $ xrandr --output HDMI1 --transform 0.80,0,-35,0,1.04,-19,0,0,1
 
 It may occur that the [Intel](/index.php/Intel "Intel") driver will not configure correctly the output of the HDMI monitor. It will set a limited color range (16-235) using the [Broadcast RGB property](https://patchwork.kernel.org/patch/1972181/), and the black will not look black, it will be grey.
 
-See [Intel graphics#Weathered colors (color range problem)](/index.php/Intel_graphics#Weathered_colors_.28color_range_problem.29 "Intel graphics").
+See [Intel graphics#Weathered colors (color range problem)](/index.php/Intel_graphics#Weathered_colors_(color_range_problem) "Intel graphics").
 
 ## See also
 

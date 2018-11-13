@@ -9,12 +9,12 @@ Puede utilizar [toolchain de GNU](/index.php/GNU_toolchain_(Espa%C3%B1ol) "GNU t
 
 ## Contents
 
-*   [1 Herramientas útiles](#Herramientas_.C3.BAtiles)
-    *   [1.1 Analizadores de código estático](#Analizadores_de_c.C3.B3digo_est.C3.A1tico)
+*   [1 Herramientas útiles](#Herramientas_útiles)
+    *   [1.1 Analizadores de código estático](#Analizadores_de_código_estático)
 *   [2 Compiladores alternativos](#Compiladores_alternativos)
 *   [3 Implementaciones de libc alternativas](#Implementaciones_de_libc_alternativas)
 *   [4 Bibliotecas](#Bibliotecas)
-*   [5 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [5 Véase también](#Véase_también)
 
 ## Herramientas útiles
 
@@ -81,7 +81,7 @@ Véase también:
 *   [GTK+/Development#C](/index.php/GTK%2B/Development#C "GTK+/Development")
 *   [Desktop notifications#C](/index.php/Desktop_notifications#C "Desktop notifications")
 *   [Libcanberra#C](/index.php/Libcanberra#C "Libcanberra")
-*   [Archiving and compression (Español)#Bibliotecas de compresión](/index.php/Archiving_and_compression_(Espa%C3%B1ol)#Bibliotecas_de_compresi.C3.B3n "Archiving and compression (Español)")
+*   [Archiving and compression (Español)#Bibliotecas de compresión](/index.php/Archiving_and_compression_(Espa%C3%B1ol)#Bibliotecas_de_compresión "Archiving and compression (Español)")
 *   [Wikipedia:Category:C libraries](https://en.wikipedia.org/wiki/Category:C_libraries "wikipedia:Category:C libraries")
 
 ## Véase también

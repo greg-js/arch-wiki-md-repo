@@ -25,7 +25,7 @@
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 GPU](#GPU)
     *   [3.2 Start up and shutdown freeze](#Start_up_and_shutdown_freeze)
-    *   [3.3 Bluetooth can't find any devices](#Bluetooth_can.27t_find_any_devices)
+    *   [3.3 Bluetooth can't find any devices](#Bluetooth_can't_find_any_devices)
 *   [4 See also](#See_also)
 
 ## Installation

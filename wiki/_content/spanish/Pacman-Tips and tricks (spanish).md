@@ -11,38 +11,38 @@ Para métodos generales para mejorar la flexibilidad de las sugerencias proporci
 
 *   [1 Mantenimiento](#Mantenimiento)
     *   [1.1 Listando paquetes](#Listando_paquetes)
-        *   [1.1.1 Por tamaño](#Por_tama.C3.B1o)
+        *   [1.1.1 Por tamaño](#Por_tamaño)
         *   [1.1.2 Por fecha](#Por_fecha)
         *   [1.1.3 No especificado en un grupo o repositorio](#No_especificado_en_un_grupo_o_repositorio)
         *   [1.1.4 Paquetes en desarrollo](#Paquetes_en_desarrollo)
-    *   [1.2 Listado de archivos propiedad de un paquete , ordenado por tamaño](#Listado_de_archivos_propiedad_de_un_paquete_.2C_ordenado_por_tama.C3.B1o)
-    *   [1.3 Identificar archivos que no pertenecen a ningún paquete](#Identificar_archivos_que_no_pertenecen_a_ning.C3.BAn_paquete)
-    *   [1.4 Eliminación de paquetes no utilizados (huérfanos)](#Eliminaci.C3.B3n_de_paquetes_no_utilizados_.28hu.C3.A9rfanos.29)
+    *   [1.2 Listado de archivos propiedad de un paquete , ordenado por tamaño](#Listado_de_archivos_propiedad_de_un_paquete_,_ordenado_por_tamaño)
+    *   [1.3 Identificar archivos que no pertenecen a ningún paquete](#Identificar_archivos_que_no_pertenecen_a_ningún_paquete)
+    *   [1.4 Eliminación de paquetes no utilizados (huérfanos)](#Eliminación_de_paquetes_no_utilizados_(huérfanos))
     *   [1.5 Eliminar todo menos el grupo base](#Eliminar_todo_menos_el_grupo_base)
     *   [1.6 Obtener la lista de dependencias de varios paquetes](#Obtener_la_lista_de_dependencias_de_varios_paquetes)
     *   [1.7 Listado de archivos de copia de seguridad modificados](#Listado_de_archivos_de_copia_de_seguridad_modificados)
     *   [1.8 Copia de seguridad de la base de datos de pacman](#Copia_de_seguridad_de_la_base_de_datos_de_pacman)
-    *   [1.9 Verifique registros de cambios fácilmente](#Verifique_registros_de_cambios_f.C3.A1cilmente)
-*   [2 Instalación y recuperación](#Instalaci.C3.B3n_y_recuperaci.C3.B3n)
-    *   [2.1 Instalación de paquetes desde un CD / DVD o dispositivo USB](#Instalaci.C3.B3n_de_paquetes_desde_un_CD_.2F_DVD_o_dispositivo_USB)
+    *   [1.9 Verifique registros de cambios fácilmente](#Verifique_registros_de_cambios_fácilmente)
+*   [2 Instalación y recuperación](#Instalación_y_recuperación)
+    *   [2.1 Instalación de paquetes desde un CD / DVD o dispositivo USB](#Instalación_de_paquetes_desde_un_CD_/_DVD_o_dispositivo_USB)
     *   [2.2 Repositorio local personalizado](#Repositorio_local_personalizado)
-    *   [2.3 Caché de pacman compartida en red](#Cach.C3.A9_de_pacman_compartida_en_red)
-        *   [2.3.1 Caché de solo lectura](#Cach.C3.A9_de_solo_lectura)
-        *   [2.3.2 Distribución de caché de solo lectura](#Distribuci.C3.B3n_de_cach.C3.A9_de_solo_lectura)
-        *   [2.3.3 Caché de lectura y escritura](#Cach.C3.A9_de_lectura_y_escritura)
+    *   [2.3 Caché de pacman compartida en red](#Caché_de_pacman_compartida_en_red)
+        *   [2.3.1 Caché de solo lectura](#Caché_de_solo_lectura)
+        *   [2.3.2 Distribución de caché de solo lectura](#Distribución_de_caché_de_solo_lectura)
+        *   [2.3.3 Caché de lectura y escritura](#Caché_de_lectura_y_escritura)
         *   [2.3.4 de doble sentido con rsync](#de_doble_sentido_con_rsync)
-        *   [2.3.5 Caché de proxy inverso dinámico usando nginx](#Cach.C3.A9_de_proxy_inverso_din.C3.A1mico_usando_nginx)
-        *   [2.3.6 Sincronice la memoria caché de *pacman* utilizando programas de sincronización](#Sincronice_la_memoria_cach.C3.A9_de_pacman_utilizando_programas_de_sincronizaci.C3.B3n)
-        *   [2.3.7 Prevención de limpiezas de caché no deseadas](#Prevenci.C3.B3n_de_limpiezas_de_cach.C3.A9_no_deseadas)
+        *   [2.3.5 Caché de proxy inverso dinámico usando nginx](#Caché_de_proxy_inverso_dinámico_usando_nginx)
+        *   [2.3.6 Sincronice la memoria caché de *pacman* utilizando programas de sincronización](#Sincronice_la_memoria_caché_de_pacman_utilizando_programas_de_sincronización)
+        *   [2.3.7 Prevención de limpiezas de caché no deseadas](#Prevención_de_limpiezas_de_caché_no_deseadas)
     *   [2.4 Reconstituir un paquete del sistema de archivos](#Reconstituir_un_paquete_del_sistema_de_archivos)
     *   [2.5 Lista de paquetes instalados](#Lista_de_paquetes_instalados)
     *   [2.6 Listado de todos los archivos modificados de los paquetes](#Listado_de_todos_los_archivos_modificados_de_los_paquetes)
     *   [2.7 Reinstalar todos los paquetes](#Reinstalar_todos_los_paquetes)
     *   [2.8 Restaurar la base de datos local de pacman](#Restaurar_la_base_de_datos_local_de_pacman)
-    *   [2.9 Recuperar una memoria USB desde la instalación existente](#Recuperar_una_memoria_USB_desde_la_instalaci.C3.B3n_existente)
-    *   [2.10 Visualización de un único archivo dentro de un .pkg](#Visualizaci.C3.B3n_de_un_.C3.BAnico_archivo_dentro_de_un_.pkg)
+    *   [2.9 Recuperar una memoria USB desde la instalación existente](#Recuperar_una_memoria_USB_desde_la_instalación_existente)
+    *   [2.10 Visualización de un único archivo dentro de un .pkg](#Visualización_de_un_único_archivo_dentro_de_un_.pkg)
     *   [2.11 Buscar aplicaciones que usan bibliotecas de paquetes antiguos](#Buscar_aplicaciones_que_usan_bibliotecas_de_paquetes_antiguos)
-*   [3 Optimización](#Optimizaci.C3.B3n)
+*   [3 Optimización](#Optimización)
     *   [3.1 Velocidades de acceso a la base de datos](#Velocidades_de_acceso_a_la_base_de_datos)
     *   [3.2 Velocidades de descarga](#Velocidades_de_descarga)
         *   [3.2.1 Powerpill](#Powerpill)
@@ -50,7 +50,7 @@ Para métodos generales para mejorar la flexibilidad de las sugerencias proporci
         *   [3.2.3 Aria2](#Aria2)
         *   [3.2.4 Otras aplcaciones](#Otras_aplcaciones)
 *   [4 Utilidades](#Utilidades)
-    *   [4.1 Front-ends gráficos](#Front-ends_gr.C3.A1ficos)
+    *   [4.1 Front-ends gráficos](#Front-ends_gráficos)
 
 ## Mantenimiento
 
@@ -108,7 +108,7 @@ O, con segundos desde la fecha (1970-01-01 UTC):
 
 #### No especificado en un grupo o repositorio
 
-**Nota:** Para obtener una lista de paquetes instalados como dependencias pero que ya no son necesarios para ningún paquete instalado, consulte [#Eliminación de paquetes no utilizados (huérfanos)](#Eliminaci.C3.B3n_de_paquetes_no_utilizados_.28hu.C3.A9rfanos.29).
+**Nota:** Para obtener una lista de paquetes instalados como dependencias pero que ya no son necesarios para ningún paquete instalado, consulte [#Eliminación de paquetes no utilizados (huérfanos)](#Eliminación_de_paquetes_no_utilizados_(huérfanos)).
 
 Lista los paquetes explícitamente instalados que no están en los grupos de [base](https://www.archlinux.org/groups/x86_64/base/) o [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) :
 
@@ -507,7 +507,7 @@ Si sospecha que hay corrupción de archivos (por ejemplo, por fallos de software
 
 ```
 
-Para la recuperación de la base de datos, véase [#Restaurar la base de datos local de pacman](#Restaurar_la_base_de_datos_local_de_pacman). Los archivos `mtree` también pueden ser [extraído como `.MTREE` de los respectivos archivos del paquete](#Visualizaci.C3.B3n_de_un_.C3.BAnico_archivo_dentro_de_un_.pkg).
+Para la recuperación de la base de datos, véase [#Restaurar la base de datos local de pacman](#Restaurar_la_base_de_datos_local_de_pacman). Los archivos `mtree` también pueden ser [extraído como `.MTREE` de los respectivos archivos del paquete](#Visualización_de_un_único_archivo_dentro_de_un_.pkg).
 
 **Nota:** ¡Esto *no* debe usarse cuando se sospeche de cambios maliciosos! En este caso, se recomiendan precauciones de seguridad, como usar un medio en vivo o una fuente independiente para las sumas de hash.
 

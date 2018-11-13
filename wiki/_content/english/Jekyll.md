@@ -5,8 +5,8 @@ Werner announced the release of Jekyll on his website on November 17, 2008\. [[1
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 RubyGems (recommended)](#RubyGems_.28recommended.29)
-    *   [1.2 AUR (alternate)](#AUR_.28alternate.29)
+    *   [1.1 RubyGems (recommended)](#RubyGems_(recommended))
+    *   [1.2 AUR (alternate)](#AUR_(alternate))
     *   [1.3 Rubygems binary repository](#Rubygems_binary_repository)
 *   [2 Select a markup language](#Select_a_markup_language)
     *   [2.1 Textile](#Textile)

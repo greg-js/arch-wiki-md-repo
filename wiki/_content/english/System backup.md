@@ -16,7 +16,7 @@ It is important to regularly backup system and user data stored for example in `
 *   [4 Using tar](#Using_tar)
 *   [5 Bootable backup](#Bootable_backup)
     *   [5.1 Update the fstab](#Update_the_fstab)
-    *   [5.2 Update the bootloader's configuration file](#Update_the_bootloader.27s_configuration_file)
+    *   [5.2 Update the bootloader's configuration file](#Update_the_bootloader's_configuration_file)
     *   [5.3 First boot](#First_boot)
 
 ## Using Btrfs snapshots

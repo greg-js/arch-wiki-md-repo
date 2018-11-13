@@ -20,7 +20,7 @@ The installation should be going without any problems, if you follow the followi
 *   [1 Pre-Installation System Settings](#Pre-Installation_System_Settings)
 *   [2 Graphics Card Configuration](#Graphics_Card_Configuration)
     *   [2.1 Intel Only](#Intel_Only)
-    *   [2.2 Intel/Nvidia Hybrid Configuration](#Intel.2FNvidia_Hybrid_Configuration)
+    *   [2.2 Intel/Nvidia Hybrid Configuration](#Intel/Nvidia_Hybrid_Configuration)
 *   [3 Input](#Input)
     *   [3.1 Touchpad](#Touchpad)
     *   [3.2 Fn-Keys](#Fn-Keys)

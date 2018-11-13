@@ -31,7 +31,7 @@ As of kernel 4.1.3 (released July 2015), a patched kernel is no longer necessary
 *   [2 Configuration](#Configuration)
     *   [2.1 BIOS updates](#BIOS_updates)
     *   [2.2 Screen and Keyboard Backlight](#Screen_and_Keyboard_Backlight)
-        *   [2.2.1 Dynamic Backlight/Brightness Control (DBC)](#Dynamic_Backlight.2FBrightness_Control_.28DBC.29)
+        *   [2.2.1 Dynamic Backlight/Brightness Control (DBC)](#Dynamic_Backlight/Brightness_Control_(DBC))
     *   [2.3 SSD](#SSD)
     *   [2.4 Wi-Fi](#Wi-Fi)
     *   [2.5 Bluetooth](#Bluetooth)
@@ -46,18 +46,18 @@ As of kernel 4.1.3 (released July 2015), a patched kernel is no longer necessary
         *   [2.7.2 Libinput driver](#Libinput_driver)
     *   [2.8 Powersaving](#Powersaving)
     *   [2.9 Calibrated ICC profile](#Calibrated_ICC_profile)
-        *   [2.9.1 QHD+ model](#QHD.2B_model)
+        *   [2.9.1 QHD+ model](#QHD+_model)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Sometimes the system fails to resume from suspend after closing and reopening the LID](#Sometimes_the_system_fails_to_resume_from_suspend_after_closing_and_reopening_the_LID)
-    *   [3.2 DE can't connect Bluetooth devices](#DE_can.27t_connect_Bluetooth_devices)
-    *   [3.3 Pink & green artifacts in video or webcam output](#Pink_.26_green_artifacts_in_video_or_webcam_output)
-    *   [3.4 Graphical artifacting/instability after S3 resume](#Graphical_artifacting.2Finstability_after_S3_resume)
+    *   [3.2 DE can't connect Bluetooth devices](#DE_can't_connect_Bluetooth_devices)
+    *   [3.3 Pink & green artifacts in video or webcam output](#Pink_&_green_artifacts_in_video_or_webcam_output)
+    *   [3.4 Graphical artifacting/instability after S3 resume](#Graphical_artifacting/instability_after_S3_resume)
     *   [3.5 Connection issues with Broadcom wireless](#Connection_issues_with_Broadcom_wireless)
     *   [3.6 rfkill issues with KDE](#rfkill_issues_with_KDE)
     *   [3.7 EFISTUB does not boot](#EFISTUB_does_not_boot)
     *   [3.8 Random kernel hangs at boot](#Random_kernel_hangs_at_boot)
-    *   [3.9 Sound doesn't work after upgrading to kernel 4.4+](#Sound_doesn.27t_work_after_upgrading_to_kernel_4.4.2B)
-    *   [3.10 Loud cracks/noise during boot or audio playback](#Loud_cracks.2Fnoise_during_boot_or_audio_playback)
+    *   [3.9 Sound doesn't work after upgrading to kernel 4.4+](#Sound_doesn't_work_after_upgrading_to_kernel_4.4+)
+    *   [3.10 Loud cracks/noise during boot or audio playback](#Loud_cracks/noise_during_boot_or_audio_playback)
 *   [4 See also](#See_also)
 
 ## Model differences
@@ -173,7 +173,7 @@ With the latest BIOS, the touchpad should work out-of-the-box with either the sy
 
 #### Synaptics driver
 
-For more advanced settings with the Synaptics driver, see [Touchpad Synaptics](/index.php/Touchpad_Synaptics#Buttonless_touchpads_.28aka_ClickPads.29 "Touchpad Synaptics").
+For more advanced settings with the Synaptics driver, see [Touchpad Synaptics](/index.php/Touchpad_Synaptics#Buttonless_touchpads_(aka_ClickPads) "Touchpad Synaptics").
 
 If the touchpad freezes when you use more than one finger, try enabling Clickpad mode with `synclient Clickpad=1`.
 

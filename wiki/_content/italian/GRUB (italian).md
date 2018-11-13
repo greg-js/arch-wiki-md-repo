@@ -18,8 +18,8 @@ In sintesi, il *bootloader* è il primo programma ad essere eseguito quando il c
         *   [1.1.1 Effetuare un backup dei dati importanti](#Effetuare_un_backup_dei_dati_importanti)
     *   [1.2 Prerequisiti per GRUB2](#Prerequisiti_per_GRUB2)
         *   [1.2.1 Sistemi BIOS](#Sistemi_BIOS)
-            *   [1.2.1.1 Istruzioni specifiche per GUID Partition Table (GPT)](#Istruzioni_specifiche_per_GUID_Partition_Table_.28GPT.29)
-            *   [1.2.1.2 Istruzioni specifiche per Master Boot Record (MBR)](#Istruzioni_specifiche_per_Master_Boot_Record_.28MBR.29)
+            *   [1.2.1.1 Istruzioni specifiche per GUID Partition Table (GPT)](#Istruzioni_specifiche_per_GUID_Partition_Table_(GPT))
+            *   [1.2.1.2 Istruzioni specifiche per Master Boot Record (MBR)](#Istruzioni_specifiche_per_Master_Boot_Record_(MBR))
         *   [1.2.2 Sistemi UEFI](#Sistemi_UEFI)
             *   [1.2.2.1 Controllare se si sta utilizzando GPT ed una partizione EFI di sistema](#Controllare_se_si_sta_utilizzando_GPT_ed_una_partizione_EFI_di_sistema)
             *   [1.2.2.2 Creazione di una partizione EFI di sistema](#Creazione_di_una_partizione_EFI_di_sistema)
@@ -41,16 +41,16 @@ In sintesi, il *bootloader* è il primo programma ad essere eseguito quando il c
     *   [3.1 Conversione del file di configurazione di GRUB Legacy al nuovo formato](#Conversione_del_file_di_configurazione_di_GRUB_Legacy_al_nuovo_formato)
 *   [4 Configurazione di base](#Configurazione_di_base)
     *   [4.1 Argomenti aggiuntivi](#Argomenti_aggiuntivi)
-    *   [4.2 Configurazione dell'aspetto](#Configurazione_dell.27aspetto)
+    *   [4.2 Configurazione dell'aspetto](#Configurazione_dell'aspetto)
         *   [4.2.1 Impostare la risoluzione del framebuffer](#Impostare_la_risoluzione_del_framebuffer)
         *   [4.2.2 Hack 915resolution](#Hack_915resolution)
         *   [4.2.3 Immagine di sfondo e caratteri bitmap](#Immagine_di_sfondo_e_caratteri_bitmap)
         *   [4.2.4 Temi](#Temi)
-        *   [4.2.5 Colori del Menù](#Colori_del_Men.C3.B9)
-        *   [4.2.6 Menù nascosto](#Men.C3.B9_nascosto)
+        *   [4.2.5 Colori del Menù](#Colori_del_Menù)
+        *   [4.2.6 Menù nascosto](#Menù_nascosto)
         *   [4.2.7 Disabilitare il framebuffer](#Disabilitare_il_framebuffer)
     *   [4.3 Nomenclatura permanente dei dispositivi a blocchi](#Nomenclatura_permanente_dei_dispositivi_a_blocchi)
-    *   [4.4 Richiamare l'ultimo sistema avviato](#Richiamare_l.27ultimo_sistema_avviato)
+    *   [4.4 Richiamare l'ultimo sistema avviato](#Richiamare_l'ultimo_sistema_avviato)
     *   [4.5 Cambiare la voce di menu predefinita](#Cambiare_la_voce_di_menu_predefinita)
     *   [4.6 Disabilitare il sottomenu](#Disabilitare_il_sottomenu)
     *   [4.7 Cifratura della partizione root](#Cifratura_della_partizione_root)
@@ -58,16 +58,16 @@ In sintesi, il *bootloader* è il primo programma ad essere eseguito quando il c
 *   [5 Configurazione avanzata](#Configurazione_avanzata)
     *   [5.1 Creazione manuale del grub.cfg](#Creazione_manuale_del_grub.cfg)
     *   [5.2 Dual-booting](#Dual-booting)
-        *   [5.2.1 Generazione automatica utilizzando il file /etc/grub.d/40_custom e grub-mkconfig](#Generazione_automatica_utilizzando_il_file_.2Fetc.2Fgrub.d.2F40_custom_e_grub-mkconfig)
-            *   [5.2.1.1 Voce di menù per GNU/Linux](#Voce_di_men.C3.B9_per_GNU.2FLinux)
-            *   [5.2.1.2 Voce di menù per FreeBSD](#Voce_di_men.C3.B9_per_FreeBSD)
-            *   [5.2.1.3 Voce di menù per Windows XP](#Voce_di_men.C3.B9_per_Windows_XP)
-            *   [5.2.1.4 Voce di menù per Windows installato in modalità UEFI-GPT](#Voce_di_men.C3.B9_per_Windows_installato_in_modalit.C3.A0_UEFI-GPT)
-            *   [5.2.1.5 Voce di menù per lo spegnimento del sistema](#Voce_di_men.C3.B9_per_lo_spegnimento_del_sistema)
-            *   [5.2.1.6 Voce di menù per il riavvio del sistema](#Voce_di_men.C3.B9_per_il_riavvio_del_sistema)
-            *   [5.2.1.7 Windows installato in modalità BIOS-MBR](#Windows_installato_in_modalit.C3.A0_BIOS-MBR)
+        *   [5.2.1 Generazione automatica utilizzando il file /etc/grub.d/40_custom e grub-mkconfig](#Generazione_automatica_utilizzando_il_file_/etc/grub.d/40_custom_e_grub-mkconfig)
+            *   [5.2.1.1 Voce di menù per GNU/Linux](#Voce_di_menù_per_GNU/Linux)
+            *   [5.2.1.2 Voce di menù per FreeBSD](#Voce_di_menù_per_FreeBSD)
+            *   [5.2.1.3 Voce di menù per Windows XP](#Voce_di_menù_per_Windows_XP)
+            *   [5.2.1.4 Voce di menù per Windows installato in modalità UEFI-GPT](#Voce_di_menù_per_Windows_installato_in_modalità_UEFI-GPT)
+            *   [5.2.1.5 Voce di menù per lo spegnimento del sistema](#Voce_di_menù_per_lo_spegnimento_del_sistema)
+            *   [5.2.1.6 Voce di menù per il riavvio del sistema](#Voce_di_menù_per_il_riavvio_del_sistema)
+            *   [5.2.1.7 Windows installato in modalità BIOS-MBR](#Windows_installato_in_modalità_BIOS-MBR)
         *   [5.2.2 Con Windows usando EasyBCD e NeoGRUB](#Con_Windows_usando_EasyBCD_e_NeoGRUB)
-    *   [5.3 Avviare un'immagine ISO9660 direttamente da GRUB](#Avviare_un.27immagine_ISO9660_direttamente_da_GRUB)
+    *   [5.3 Avviare un'immagine ISO9660 direttamente da GRUB](#Avviare_un'immagine_ISO9660_direttamente_da_GRUB)
     *   [5.4 LVM](#LVM)
     *   [5.5 RAID](#RAID)
     *   [5.6 Usare le etichette](#Usare_le_etichette)
@@ -78,19 +78,19 @@ In sintesi, il *bootloader* è il primo programma ad essere eseguito quando il c
     *   [7.1 Supporto al Pager](#Supporto_al_Pager)
     *   [7.2 Utilizzare la shell dei comanti per avviare altri sistemi operativi](#Utilizzare_la_shell_dei_comanti_per_avviare_altri_sistemi_operativi)
         *   [7.2.1 Effettuare il chainloading di una partizione](#Effettuare_il_chainloading_di_una_partizione)
-        *   [7.2.2 Effettuare il chainloading di un disco/drive](#Effettuare_il_chainloading_di_un_disco.2Fdrive)
-        *   [7.2.3 Effettuare il chainloading di sistemi Windows/Linux installati in modalità UEFI](#Effettuare_il_chainloading_di_sistemi_Windows.2FLinux_installati_in_modalit.C3.A0_UEFI)
+        *   [7.2.2 Effettuare il chainloading di un disco/drive](#Effettuare_il_chainloading_di_un_disco/drive)
+        *   [7.2.3 Effettuare il chainloading di sistemi Windows/Linux installati in modalità UEFI](#Effettuare_il_chainloading_di_sistemi_Windows/Linux_installati_in_modalità_UEFI)
         *   [7.2.4 Avvio normale](#Avvio_normale)
 *   [8 Tools grafici per la configurazione](#Tools_grafici_per_la_configurazione)
-*   [9 parttool per hide/unhide](#parttool_per_hide.2Funhide)
+*   [9 parttool per hide/unhide](#parttool_per_hide/unhide)
 *   [10 Usare la console di emergenza](#Usare_la_console_di_emergenza)
 *   [11 Risoluzione dei problemi](#Risoluzione_dei_problemi)
     *   [11.1 Sistemi con BIOS Intel non effettuano il boot da partizioni GPT](#Sistemi_con_BIOS_Intel_non_effettuano_il_boot_da_partizioni_GPT)
         *   [11.1.1 MBR](#MBR)
         *   [11.1.2 EFI](#EFI)
     *   [11.2 Abilitare i messaggi di debug in GRUB](#Abilitare_i_messaggi_di_debug_in_GRUB)
-    *   [11.3 Correggere l'errore di GRUB "no suitable mode found"](#Correggere_l.27errore_di_GRUB_.22no_suitable_mode_found.22)
-    *   [11.4 messaggio d'errore msdos-style](#messaggio_d.27errore_msdos-style)
+    *   [11.3 Correggere l'errore di GRUB "no suitable mode found"](#Correggere_l'errore_di_GRUB_"no_suitable_mode_found")
+    *   [11.4 messaggio d'errore msdos-style](#messaggio_d'errore_msdos-style)
     *   [11.5 GRUB UEFI torna alla shell](#GRUB_UEFI_torna_alla_shell)
     *   [11.6 GRUB UEFI non viene caricato](#GRUB_UEFI_non_viene_caricato)
     *   [11.7 Invalid signature](#Invalid_signature)
@@ -518,7 +518,7 @@ Si veda [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") pe
 
 ### Configurazione dell'aspetto
 
-In GRUB è possibile cambiare l'aspetto del menu. Ci si assicuri di aver inizializzato il terminale grafico di GRUB (gfxterm), usando una modalità video appropriata (gfxmode). Ulteriori informazioni sono reperibili nella sezione [#Correggere l'errore di GRUB "no suitable mode found"](#Correggere_l.27errore_di_GRUB_.22no_suitable_mode_found.22). La modalità video impostata di seguito, verrà passata al kernel via `gfxpayload`; di conseguenza, questa sarà richiesta affinchè ogni configurazione dell'aspetto abbia effetto.
+In GRUB è possibile cambiare l'aspetto del menu. Ci si assicuri di aver inizializzato il terminale grafico di GRUB (gfxterm), usando una modalità video appropriata (gfxmode). Ulteriori informazioni sono reperibili nella sezione [#Correggere l'errore di GRUB "no suitable mode found"](#Correggere_l'errore_di_GRUB_"no_suitable_mode_found"). La modalità video impostata di seguito, verrà passata al kernel via `gfxpayload`; di conseguenza, questa sarà richiesta affinchè ogni configurazione dell'aspetto abbia effetto.
 
 #### Impostare la risoluzione del framebuffer
 
@@ -873,7 +873,7 @@ Per generare un `grub.cfg` aggiornato.
 
 Un file `/etc/grub.d/40_custom` generico potrebbe avere una struttura simile a quello postato sotto, creato per un [HP Pavilion 15-e056sl notebook](http://h10025.www1.hp.com/ewfrf/wc/product?cc=us&destPage=product&lc=en&product=5402703&tmp_docname=) con Windows 8 preinstallato. Ogni voce `menuentry` dovrebbe mantenere una struttura simile a quanto segue.
 
-Si noti inoltre che la partizione `/dev/sda2` viene identificata da GRUB come `hd0,gpt2` e `ahci0,gpt2`. Si consulti [GRUB#Voce di menù per Windows installato in modalità UEFI-GPT](/index.php/GRUB#Voce_di_men.C3.B9_per_Windows_installato_in_modalit.C3.A0_UEFI-GPT "GRUB") per ulteriori informazioni.
+Si noti inoltre che la partizione `/dev/sda2` viene identificata da GRUB come `hd0,gpt2` e `ahci0,gpt2`. Si consulti [GRUB#Voce di menù per Windows installato in modalità UEFI-GPT](/index.php/GRUB#Voce_di_menù_per_Windows_installato_in_modalità_UEFI-GPT "GRUB") per ulteriori informazioni.
 
  `/etc/grub.d/40_custom` 
 ```
@@ -1641,7 +1641,7 @@ grub-setup: error: If you really want blocklists, use --force.
 
 Questo problema si verifica quando si tenta di installare GRUB in VMWare. Ulteriori informazioni [qui](https://bbs.archlinux.org/viewtopic.php?pid=581760#p581760). Si spera in un fix in tempi brevi.
 
-Può anche verificarsi quando la partizione inizia subito dopo l'MBR (blocco 63), senza lasciare uno spazio di circa 1MB (2048 blocchi) prima dell'inizio della prima partizione. Si veda [#Istruzioni specifiche per Master Boot Record (MBR)](#Istruzioni_specifiche_per_Master_Boot_Record_.28MBR.29)
+Può anche verificarsi quando la partizione inizia subito dopo l'MBR (blocco 63), senza lasciare uno spazio di circa 1MB (2048 blocchi) prima dell'inizio della prima partizione. Si veda [#Istruzioni specifiche per Master Boot Record (MBR)](#Istruzioni_specifiche_per_Master_Boot_Record_(MBR))
 
 ### GRUB UEFI torna alla shell
 

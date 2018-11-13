@@ -9,10 +9,10 @@ Familiarizarse con los principios y directrices que aquí se recogen es, a la ve
 
 ## Contents
 
-*   [1 Consideraciones de sentido común](#Consideraciones_de_sentido_com.C3.BAn)
-*   [2 Código de conducta](#C.C3.B3digo_de_conducta)
+*   [1 Consideraciones de sentido común](#Consideraciones_de_sentido_común)
+*   [2 Código de conducta](#Código_de_conducta)
     *   [2.1 Respeto](#Respeto)
-        *   [2.1.1 Respete a los demás usuarios](#Respete_a_los_dem.C3.A1s_usuarios)
+        *   [2.1.1 Respete a los demás usuarios](#Respete_a_los_demás_usuarios)
         *   [2.1.2 Respete otros sistemas operativos y proyectos](#Respete_otros_sistemas_operativos_y_proyectos)
         *   [2.1.3 Respete a los responsables](#Respete_a_los_responsables)
         *   [2.1.4 Evite el *trolling*](#Evite_el_trolling)
@@ -21,25 +21,25 @@ Familiarizarse con los principios y directrices que aquí se recogen es, a la ve
         *   [2.1.7 Cuentas de miembros](#Cuentas_de_miembros)
     *   [2.2 Legalidad](#Legalidad)
         *   [2.2.1 Incitar actos ilegales](#Incitar_actos_ilegales)
-        *   [2.2.2 Spam/Publicidad/Solicitudes](#Spam.2FPublicidad.2FSolicitudes)
+        *   [2.2.2 Spam/Publicidad/Solicitudes](#Spam/Publicidad/Solicitudes)
     *   [2.3 Exactitud](#Exactitud)
-        *   [2.3.1 Soporte *solo* para la distribución Arch Linux](#Soporte_.2Asolo.2A_para_la_distribuci.C3.B3n_Arch_Linux)
-        *   [2.3.2 Temas personales/fuera de tono](#Temas_personales.2Ffuera_de_tono)
-        *   [2.3.3 Evite la controversia/temas polémicos](#Evite_la_controversia.2Ftemas_pol.C3.A9micos)
-        *   [2.3.4 Discusiones ineficaces («bikeshed»)](#Discusiones_ineficaces_.28.C2.ABbikeshed.C2.BB.29)
+        *   [2.3.1 Soporte *solo* para la distribución Arch Linux](#Soporte_*solo*_para_la_distribución_Arch_Linux)
+        *   [2.3.2 Temas personales/fuera de tono](#Temas_personales/fuera_de_tono)
+        *   [2.3.3 Evite la controversia/temas polémicos](#Evite_la_controversia/temas_polémicos)
+        *   [2.3.4 Discusiones ineficaces («bikeshed»)](#Discusiones_ineficaces_(«bikeshed»))
     *   [2.4 Libertad](#Libertad)
-*   [3 Reglas específicas del foro](#Reglas_espec.C3.ADficas_del_foro)
+*   [3 Reglas específicas del foro](#Reglas_específicas_del_foro)
     *   [3.1 Foros](#Foros)
-        *   [3.1.1 Cómo publicar](#C.C3.B3mo_publicar)
-        *   [3.1.2 Colocar código e imágenes](#Colocar_c.C3.B3digo_e_im.C3.A1genes)
+        *   [3.1.1 Cómo publicar](#Cómo_publicar)
+        *   [3.1.2 Colocar código e imágenes](#Colocar_código_e_imágenes)
         *   [3.1.3 La vida es una calle de doble sentido](#La_vida_es_una_calle_de_doble_sentido)
         *   [3.1.4 Pedir recomendaciones sobre productos](#Pedir_recomendaciones_sobre_productos)
-        *   [3.1.5 Temas antiguos/*«necro-bumping»*](#Temas_antiguos.2F.C2.ABnecro-bumping.C2.BB)
-        *   [3.1.6 Evite las publicaciones vacías/*power-posting*](#Evite_las_publicaciones_vac.C3.ADas.2Fpower-posting)
+        *   [3.1.5 Temas antiguos/*«necro-bumping»*](#Temas_antiguos/«necro-bumping»)
+        *   [3.1.6 Evite las publicaciones vacías/*power-posting*](#Evite_las_publicaciones_vacías/power-posting)
         *   [3.1.7 Evite el *bumping*](#Evite_el_bumping)
         *   [3.1.8 Evite el *cross-posting*](#Evite_el_cross-posting)
         *   [3.1.9 Evite el *thread hijacking*](#Evite_el_thread_hijacking)
-        *   [3.1.10 Política Dustbin (temas marcados para su eliminación)](#Pol.C3.ADtica_Dustbin_.28temas_marcados_para_su_eliminaci.C3.B3n.29)
+        *   [3.1.10 Política Dustbin (temas marcados para su eliminación)](#Política_Dustbin_(temas_marcados_para_su_eliminación))
     *   [3.2 Listas de correo](#Listas_de_correo)
         *   [3.2.1 Publicar por encima](#Publicar_por_encima)
         *   [3.2.2 Citas](#Citas)
@@ -49,7 +49,7 @@ Familiarizarse con los principios y directrices que aquí se recogen es, a la ve
     *   [3.5 Wiki](#Wiki)
     *   [3.6 Seguimiento de errores](#Seguimiento_de_errores)
 *   [4 Correctivos](#Correctivos)
-*   [5 Ponerse en contacto con el personal técnico](#Ponerse_en_contacto_con_el_personal_t.C3.A9cnico)
+*   [5 Ponerse en contacto con el personal técnico](#Ponerse_en_contacto_con_el_personal_técnico)
 
 ## Consideraciones de sentido común
 
@@ -145,7 +145,7 @@ El intercambio libre y abierto de asistencia, debates, ideas y opiniones es muy 
 
 ## Reglas específicas del foro
 
-Además del [código común](#C.C3.B3digo_de_conducta_.28Espa.C3.B1ol.29), cada uno de los foros tiene sus propias directrices específicas, que se resumen en las siguientes subsecciones.
+Además del [código común](#Código_de_conducta_(Español)), cada uno de los foros tiene sus propias directrices específicas, que se resumen en las siguientes subsecciones.
 
 ### [Foros](https://bbs.archlinux.org/)
 

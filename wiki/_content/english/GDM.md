@@ -21,7 +21,7 @@ From [GDM - GNOME Display Manager](https://wiki.gnome.org/Projects/GDM): "The GN
         *   [3.2.4 Turning off the sound](#Turning_off_the_sound)
         *   [3.2.5 Configure power button behavior](#Configure_power_button_behavior)
         *   [3.2.6 Enabling tap-to-click](#Enabling_tap-to-click)
-        *   [3.2.7 Disable/Enable Accessibility Menu](#Disable.2FEnable_Accessibility_Menu)
+        *   [3.2.7 Disable/Enable Accessibility Menu](#Disable/Enable_Accessibility_Menu)
     *   [3.3 Keyboard layout](#Keyboard_layout)
     *   [3.4 Change the language](#Change_the_language)
     *   [3.5 Users and login](#Users_and_login)
@@ -38,7 +38,7 @@ From [GDM - GNOME Display Manager](https://wiki.gnome.org/Projects/GDM): "The GN
     *   [4.3 Rootless Xorg](#Rootless_Xorg)
     *   [4.4 Use Xorg backend](#Use_Xorg_backend)
     *   [4.5 Incomplete removal of gdm](#Incomplete_removal_of_gdm)
-    *   [4.6 GDM auto-suspend (GNOME 3.28)](#GDM_auto-suspend_.28GNOME_3.28.29)
+    *   [4.6 GDM auto-suspend (GNOME 3.28)](#GDM_auto-suspend_(GNOME_3.28))
 *   [5 See also](#See_also)
 
 ## Installation

@@ -5,13 +5,13 @@ OpenNTPD (parte del progetto OpenBSD) è un demone che può essere usato per sin
 ## Contents
 
 *   [1 Installazione](#Installazione)
-*   [2 Rendere openntpd dipendente dall'accesso al network](#Rendere_openntpd_dipendente_dall.27accesso_al_network)
+*   [2 Rendere openntpd dipendente dall'accesso al network](#Rendere_openntpd_dipendente_dall'accesso_al_network)
     *   [2.1 Usando netcfg](#Usando_netcfg)
-    *   [2.2 Usando l'invio di NetworkManager](#Usando_l.27invio_di_NetworkManager)
+    *   [2.2 Usando l'invio di NetworkManager](#Usando_l'invio_di_NetworkManager)
     *   [2.3 Usando wicd](#Usando_wicd)
-    *   [2.4 Usando l'hook dhcpcd](#Usando_l.27hook_dhcpcd)
+    *   [2.4 Usando l'hook dhcpcd](#Usando_l'hook_dhcpcd)
 *   [3 Risoluzione dei problemi](#Risoluzione_dei_problemi)
-    *   [3.1 Errore nella regolazione dell'ora](#Errore_nella_regolazione_dell.27ora)
+    *   [3.1 Errore nella regolazione dell'ora](#Errore_nella_regolazione_dell'ora)
     *   [3.2 Aumenti del tempo](#Aumenti_del_tempo)
     *   [3.3 Inizializzazione Fallita](#Inizializzazione_Fallita)
 *   [4 Articoli correlati](#Articoli_correlati)
@@ -184,7 +184,7 @@ Openntpd potrebbe fallire ad avviarsi correttamente se viene avviato prima che i
 
 ```
 
-**Note:** Questo metodo è un'alternativa ai quattro metodi elencati [sopra](#Rendere_openntpd_dipendente_dall.27accesso_al_network). Gli altri metodi sono preferibili e lavorano meglio. Usare questo metodo solo come ultima risorsa.
+**Note:** Questo metodo è un'alternativa ai quattro metodi elencati [sopra](#Rendere_openntpd_dipendente_dall'accesso_al_network). Gli altri metodi sono preferibili e lavorano meglio. Usare questo metodo solo come ultima risorsa.
 
 Ciò farà sì che il sistema aspetti 5 minuti prima di avviare openntpd, in modo tale da dare un tempo sufficiente al sistema per configurare la connessione. Se le proprie impostazioni network cambiano spesso, si potrebbe anche considerare di riavviare il demone regolarmente tramite cron.
 

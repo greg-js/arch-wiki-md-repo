@@ -7,7 +7,7 @@ Related articles
 
 Ta strona zawiera listę systemów operacyjnych, które są **dystrybucjami opartymi na Arch Linuksie – w całości lub w części**. Zestawienie to obejmuje tylko te systemy, które nie naruszają [praw autorskich Arch Linuksa](/index.php/DeveloperWiki:TrademarkPolicy "DeveloperWiki:TrademarkPolicy"). Chociaż poniższa lista jest tak wyczerpująca, jak to tylko możliwe, nie jest jednak kompletna, gdyż wciąż powstają kolejne tego typu dystrybucje. Została ona uaktualniona 22 października 2018 roku.
 
-Dystrybucje linuksa oparte na Archu **nie są wspierane** przez społeczność czy deweloperów Archa. Zobacz [wyjaśnienie tego problemu](/index.php/Code_of_conduct#Arch_Linux_distribution_support_.2Aonly.2A "Code of conduct") (w języku angielskim).
+Dystrybucje linuksa oparte na Archu **nie są wspierane** przez społeczność czy deweloperów Archa. Zobacz [wyjaśnienie tego problemu](/index.php/Code_of_conduct#Arch_Linux_distribution_support_*only* "Code of conduct") (w języku angielskim).
 
 ## Contents
 
@@ -26,7 +26,7 @@ Dystrybucje linuksa oparte na Archu **nie są wspierane** przez społeczność c
     *   [2.11 2007](#2007)
     *   [2.12 2006](#2006)
     *   [2.13 2004](#2004)
-*   [3 Zobacz także](#Zobacz_tak.C5.BCe)
+*   [3 Zobacz także](#Zobacz_także)
 
 ## Aktywne
 

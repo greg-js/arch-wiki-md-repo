@@ -18,18 +18,18 @@
 
 ## Contents
 
-*   [1 文件系统类型](#.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F.E7.B1.BB.E5.9E.8B)
-    *   [1.1 文件系统日志](#.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F.E6.97.A5.E5.BF.97)
-*   [2 基于 FUSE 的文件系统支持](#.E5.9F.BA.E4.BA.8E_FUSE_.E7.9A.84.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F.E6.94.AF.E6.8C.81)
-    *   [2.1 可叠加文件系统](#.E5.8F.AF.E5.8F.A0.E5.8A.A0.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F)
+*   [1 文件系统类型](#文件系统类型)
+    *   [1.1 文件系统日志](#文件系统日志)
+*   [2 基于 FUSE 的文件系统支持](#基于_FUSE_的文件系统支持)
+    *   [2.1 可叠加文件系统](#可叠加文件系统)
     *   [2.2 Read-only file systems](#Read-only_file_systems)
     *   [2.3 Clustered file systems](#Clustered_file_systems)
-*   [3 查看现有文件系统](#.E6.9F.A5.E7.9C.8B.E7.8E.B0.E6.9C.89.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F)
-*   [4 创建文件系统](#.E5.88.9B.E5.BB.BA.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F)
+*   [3 查看现有文件系统](#查看现有文件系统)
+*   [4 创建文件系统](#创建文件系统)
 *   [5 Mount a file system](#Mount_a_file_system)
     *   [5.1 List mounted file systems](#List_mounted_file_systems)
-    *   [5.2 卸载文件系统](#.E5.8D.B8.E8.BD.BD.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F)
-*   [6 参阅](#.E5.8F.82.E9.98.85)
+    *   [5.2 卸载文件系统](#卸载文件系统)
+*   [6 参阅](#参阅)
 
 ## 文件系统类型
 

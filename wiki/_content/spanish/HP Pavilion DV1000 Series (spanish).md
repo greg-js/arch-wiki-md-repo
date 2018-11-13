@@ -2,13 +2,13 @@ En esta página, trataré de hacer que la instalación de Arch en su máquina HP
 
 ## Contents
 
-*   [1 ¿Qué funciona?](#.C2.BFQu.C3.A9_funciona.3F)
-*   [2 ¿Qué es lo que no funciona?](#.C2.BFQu.C3.A9_es_lo_que_no_funciona.3F)
-*   [3 Instalación](#Instalaci.C3.B3n)
-*   [4 Configuración](#Configuraci.C3.B3n)
-    *   [4.1 Xorg y la tarjeta gráfica](#Xorg_y_la_tarjeta_gr.C3.A1fica)
-*   [5 Módulos](#M.C3.B3dulos)
-    *   [5.1 Conexión inhalámbrica ("Wireless")](#Conexi.C3.B3n_inhal.C3.A1mbrica_.28.22Wireless.22.29)
+*   [1 ¿Qué funciona?](#¿Qué_funciona?)
+*   [2 ¿Qué es lo que no funciona?](#¿Qué_es_lo_que_no_funciona?)
+*   [3 Instalación](#Instalación)
+*   [4 Configuración](#Configuración)
+    *   [4.1 Xorg y la tarjeta gráfica](#Xorg_y_la_tarjeta_gráfica)
+*   [5 Módulos](#Módulos)
+    *   [5.1 Conexión inhalámbrica ("Wireless")](#Conexión_inhalámbrica_("Wireless"))
     *   [5.2 Sonido](#Sonido)
 *   [6 Enlaces externos](#Enlaces_externos)
 

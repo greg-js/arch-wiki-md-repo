@@ -2,19 +2,19 @@
 
 ## Contents
 
-*   [1 Създаване под GNU/Linux](#.D0.A1.D1.8A.D0.B7.D0.B4.D0.B0.D0.B2.D0.B0.D0.BD.D0.B5_.D0.BF.D0.BE.D0.B4_GNU.2FLinux)
+*   [1 Създаване под GNU/Linux](#Създаване_под_GNU/Linux)
     *   [1.1 Arch USB images](#Arch_USB_images)
-    *   [1.2 С UNetBootin](#.D0.A1_UNetBootin)
-    *   [1.3 С Gujin](#.D0.A1_Gujin)
-*   [2 Създаване под Mac OS X](#.D0.A1.D1.8A.D0.B7.D0.B4.D0.B0.D0.B2.D0.B0.D0.BD.D0.B5_.D0.BF.D0.BE.D0.B4_Mac_OS_X)
-*   [3 Създавене под Windows](#.D0.A1.D1.8A.D0.B7.D0.B4.D0.B0.D0.B2.D0.B5.D0.BD.D0.B5_.D0.BF.D0.BE.D0.B4_Windows)
-    *   [3.1 С програмата Flashnul](#.D0.A1_.D0.BF.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.B0.D1.82.D0.B0_Flashnul)
-    *   [3.2 Със Cygwin](#.D0.A1.D1.8A.D1.81_Cygwin)
+    *   [1.2 С UNetBootin](#С_UNetBootin)
+    *   [1.3 С Gujin](#С_Gujin)
+*   [2 Създаване под Mac OS X](#Създаване_под_Mac_OS_X)
+*   [3 Създавене под Windows](#Създавене_под_Windows)
+    *   [3.1 С програмата Flashnul](#С_програмата_Flashnul)
+    *   [3.2 Със Cygwin](#Със_Cygwin)
     *   [3.3 win32 disk imager](#win32_disk_imager)
-    *   [3.4 С UNetBootin](#.D0.A1_UNetBootin_2)
-*   [4 Стар метод с ISO](#.D0.A1.D1.82.D0.B0.D1.80_.D0.BC.D0.B5.D1.82.D0.BE.D0.B4_.D1.81_ISO)
+    *   [3.4 С UNetBootin](#С_UNetBootin_2)
+*   [4 Стар метод с ISO](#Стар_метод_с_ISO)
     *   [4.1 After booting from the USB stick:](#After_booting_from_the_USB_stick:)
-    *   [4.2 Бележки:](#.D0.91.D0.B5.D0.BB.D0.B5.D0.B6.D0.BA.D0.B8:)
+    *   [4.2 Бележки:](#Бележки:)
 
 ## Създаване под GNU/Linux
 
@@ -138,7 +138,7 @@ Download win32 disk imager from [http://launchpad.net/win32-image-writer](http:/
 
 ### С UNetBootin
 
-Another way to make a USB drive bootable, is by using UNetBootin ([see above](#.D0.A1_UNetBootin)).
+Another way to make a USB drive bootable, is by using UNetBootin ([see above](#С_UNetBootin)).
 
 ## Стар метод с ISO
 

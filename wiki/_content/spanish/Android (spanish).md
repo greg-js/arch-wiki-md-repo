@@ -3,19 +3,19 @@
 *   [1 Explorando dispositivos de Android](#Explorando_dispositivos_de_Android)
 *   [2 Desarrollo en Android](#Desarrollo_en_Android)
     *   [2.1 Android Studio](#Android_Studio)
-    *   [2.2 Instalación del SDK](#Instalaci.C3.B3n_del_SDK)
+    *   [2.2 Instalación del SDK](#Instalación_del_SDK)
         *   [2.2.1 Emulator de Android](#Emulator_de_Android)
         *   [2.2.2 Otros paquetes de SDK en AUR](#Otros_paquetes_de_SDK_en_AUR)
-        *   [2.2.3 Cambiar el dueño de /opt/android-sdk](#Cambiar_el_due.C3.B1o_de_.2Fopt.2Fandroid-sdk)
-*   [3 Compilación](#Compilaci.C3.B3n)
+        *   [2.2.3 Cambiar el dueño de /opt/android-sdk](#Cambiar_el_dueño_de_/opt/android-sdk)
+*   [3 Compilación](#Compilación)
     *   [3.1 Paquetes requeridos](#Paquetes_requeridos)
     *   [3.2 Kit de desarrollo de Java](#Kit_de_desarrollo_de_Java)
-    *   [3.3 Configurando el entorno de Compilación](#Configurando_el_entorno_de_Compilaci.C3.B3n)
-    *   [3.4 Descarga de código fuente](#Descarga_de_c.C3.B3digo_fuente)
-    *   [3.5 Compilación del código](#Compilaci.C3.B3n_del_c.C3.B3digo)
-    *   [3.6 Probando la construcción](#Probando_la_construcci.C3.B3n)
+    *   [3.3 Configurando el entorno de Compilación](#Configurando_el_entorno_de_Compilación)
+    *   [3.4 Descarga de código fuente](#Descarga_de_código_fuente)
+    *   [3.5 Compilación del código](#Compilación_del_código)
+    *   [3.6 Probando la construcción](#Probando_la_construcción)
     *   [3.7 Crear una imagen para instalar](#Crear_una_imagen_para_instalar)
-*   [4 Instalación](#Instalaci.C3.B3n)
+*   [4 Instalación](#Instalación)
     *   [4.1 Fastboot](#Fastboot)
     *   [4.2 Dispositivos Samsung](#Dispositivos_Samsung)
         *   [4.2.1 Heimdall](#Heimdall)
@@ -298,7 +298,7 @@ Es posible restaurar el [firmware de Android](http://www.sammobile.com/firmwares
 
 Preparacion del anfitrion Arch Linux:
 
-1.  Instale el paquete [virtualbox](https://www.archlinux.org/packages/?name=virtualbox) junto con el [paquete de extensiones](/index.php/VirtualBox_(Espa%C3%B1ol)#Paquete_de_extensiones "VirtualBox (Español)") y [adiciones de huésped](/index.php/VirtualBox_(Espa%C3%B1ol)#Disco_de_.C2.ABGuest_Additions.C2.BB "VirtualBox (Español)").
+1.  Instale el paquete [virtualbox](https://www.archlinux.org/packages/?name=virtualbox) junto con el [paquete de extensiones](/index.php/VirtualBox_(Espa%C3%B1ol)#Paquete_de_extensiones "VirtualBox (Español)") y [adiciones de huésped](/index.php/VirtualBox_(Espa%C3%B1ol)#Disco_de_«Guest_Additions» "VirtualBox (Español)").
 2.  Instale su versión preferida, pero compatible con Odin de Windows.
 3.  En la configuracion de VirtualBox de su sistema de Windows, navegue a *USB*, y asegúrese que la opción **USB 2.0 (EHCI)** esta habilitada.
 4.  Cuando la maquina virtual inicie, vaya al menú de *dispositivos > USB* y seleccione su dispositivo Samsung en la lista. El cual esta conectado a su computadora via USB

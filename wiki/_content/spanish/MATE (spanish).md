@@ -8,7 +8,7 @@ Tomado de la [pagina de MATE](http://mate-desktop.org/):
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
     *   [1.1 Paquetes adicionales MATE](#Paquetes_adicionales_MATE)
 *   [2 Iniciando MATE](#Iniciando_MATE)
     *   [2.1 Acceso grafico](#Acceso_grafico)
@@ -20,7 +20,7 @@ Tomado de la [pagina de MATE](http://mate-desktop.org/):
     *   [4.3 Centrar ventanas nuevas](#Centrar_ventanas_nuevas)
 *   [5 Solucion de problemas](#Solucion_de_problemas)
     *   [5.1 Habilitar sombra del panel](#Habilitar_sombra_del_panel)
-*   [6 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [6 Véase también](#Véase_también)
 
 ## Instalación
 

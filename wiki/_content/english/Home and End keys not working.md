@@ -9,7 +9,7 @@ First you should check the common culprits that can affect the behavior of many 
 *   [3 Terminfo](#Terminfo)
 *   [4 Other Applications](#Other_Applications)
     *   [4.1 Lynx](#Lynx)
-    *   [4.2 URxvt/Rxvt](#URxvt.2FRxvt)
+    *   [4.2 URxvt/Rxvt](#URxvt/Rxvt)
     *   [4.3 Zsh](#Zsh)
     *   [4.4 Less](#Less)
 

@@ -11,7 +11,7 @@
         *   [3.1.3 Frontends](#Frontends)
         *   [3.1.4 Health checks](#Health_checks)
         *   [3.1.5 Logging with systemd](#Logging_with_systemd)
-        *   [3.1.6 Performing TLS/SSL termination](#Performing_TLS.2FSSL_termination)
+        *   [3.1.6 Performing TLS/SSL termination](#Performing_TLS/SSL_termination)
             *   [3.1.6.1 Redirecting HTTP to HTTPS](#Redirecting_HTTP_to_HTTPS)
         *   [3.1.7 Virtual host like configuration](#Virtual_host_like_configuration)
 *   [4 See also](#See_also)

@@ -11,26 +11,26 @@
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 疑难问题](#.E7.96.91.E9.9A.BE.E9.97.AE.E9.A2.98)
-    *   [2.1 鼠标主题不一致](#.E9.BC.A0.E6.A0.87.E4.B8.BB.E9.A2.98.E4.B8.8D.E4.B8.80.E8.87.B4)
-    *   [2.2 点击关闭按钮时将 Steam 最小化](#.E7.82.B9.E5.87.BB.E5.85.B3.E9.97.AD.E6.8C.89.E9.92.AE.E6.97.B6.E5.B0.86_Steam_.E6.9C.80.E5.B0.8F.E5.8C.96)
-    *   [2.3 64位系统上 Flash 无法使用](#64.E4.BD.8D.E7.B3.BB.E7.BB.9F.E4.B8.8A_Flash_.E6.97.A0.E6.B3.95.E4.BD.BF.E7.94.A8)
+*   [1 安装](#安装)
+*   [2 疑难问题](#疑难问题)
+    *   [2.1 鼠标主题不一致](#鼠标主题不一致)
+    *   [2.2 点击关闭按钮时将 Steam 最小化](#点击关闭按钮时将_Steam_最小化)
+    *   [2.3 64位系统上 Flash 无法使用](#64位系统上_Flash_无法使用)
     *   [2.4 Text is corrupt or missing](#Text_is_corrupt_or_missing)
-    *   [2.5 SetLocale('en_US.UTF-8') fails at game startup](#SetLocale.28.27en_US.UTF-8.27.29_fails_at_game_startup)
+    *   [2.5 SetLocale('en_US.UTF-8') fails at game startup](#SetLocale('en_US.UTF-8')_fails_at_game_startup)
     *   [2.6 The game crashes immediately after start](#The_game_crashes_immediately_after_start)
     *   [2.7 OpenGL not using direct rendering](#OpenGL_not_using_direct_rendering)
     *   [2.8 libGL error when running certain games](#libGL_error_when_running_certain_games)
-    *   [2.9 OpenGL GLX context is not using direct rendering, which may cause performance problems.](#OpenGL_GLX_context_is_not_using_direct_rendering.2C_which_may_cause_performance_problems.)
+    *   [2.9 OpenGL GLX context is not using direct rendering, which may cause performance problems.](#OpenGL_GLX_context_is_not_using_direct_rendering,_which_may_cause_performance_problems.)
     *   [2.10 No audio in certain games](#No_audio_in_certain_games)
-    *   [2.11 You are missing the following 32-bit libraries, and Steam may not run: libGL.so.1](#You_are_missing_the_following_32-bit_libraries.2C_and_Steam_may_not_run:_libGL.so.1)
+    *   [2.11 You are missing the following 32-bit libraries, and Steam may not run: libGL.so.1](#You_are_missing_the_following_32-bit_libraries,_and_Steam_may_not_run:_libGL.so.1)
     *   [2.12 Games do not launch on older intel hardware](#Games_do_not_launch_on_older_intel_hardware)
-    *   [2.13 X crashes when Steam starts (Radeon open source driver)](#X_crashes_when_Steam_starts_.28Radeon_open_source_driver.29)
-*   [3 Launching games with custom commands, such as Bumblebee/Primus](#Launching_games_with_custom_commands.2C_such_as_Bumblebee.2FPrimus)
+    *   [2.13 X crashes when Steam starts (Radeon open source driver)](#X_crashes_when_Steam_starts_(Radeon_open_source_driver))
+*   [3 Launching games with custom commands, such as Bumblebee/Primus](#Launching_games_with_custom_commands,_such_as_Bumblebee/Primus)
     *   [3.1 Killing standalone compositors when launching games](#Killing_standalone_compositors_when_launching_games)
 *   [4 Using native runtime](#Using_native_runtime)
-*   [5 Steam 皮肤](#Steam_.E7.9A.AE.E8.82.A4)
-    *   [5.1 Steam 皮肤管理器](#Steam_.E7.9A.AE.E8.82.A4.E7.AE.A1.E7.90.86.E5.99.A8)
+*   [5 Steam 皮肤](#Steam_皮肤)
+    *   [5.1 Steam 皮肤管理器](#Steam_皮肤管理器)
 *   [6 See also](#See_also)
 
 ## 安装
@@ -46,7 +46,7 @@ Steam 目前在 Arch Linux 上并不被官方支持，因此需要用户做一�
 
 *   Steam中大量使用 Arial 字体。你可以通过安装 [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) 或 [ttf-microsoft-arial](https://aur.archlinux.org/packages/ttf-microsoft-arial/) 或 [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) 或 [Steam提供的字体](#Text_is_corrupt_or_missing) 来让它看起来漂亮点儿。亚洲语言建议使用[wqy-zenhei](https://www.archlinux.org/packages/?name=wqy-zenhei)。
 
-*   如果你使用64位系统，你还需要安装 [32位版本的显卡驱动](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.AE.89.E8.A3.85 "Xorg (简体中文)") (位于表格中“Multilib 软件包 ”这一列) 以运行32位游戏。
+*   如果你使用64位系统，你还需要安装 [32位版本的显卡驱动](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#安装 "Xorg (简体中文)") (位于表格中“Multilib 软件包 ”这一列) 以运行32位游戏。
 
 *   如果你使用64位系统，你还需要安装 [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins) 为32位游戏提供声音支持。
 

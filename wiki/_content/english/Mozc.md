@@ -18,8 +18,8 @@ From the project [home page](https://github.com/google/mozc):
     *   [3.2 Launching Mozc tools from command line](#Launching_Mozc_tools_from_command_line)
     *   [3.3 Use CapsLock as Eisu_toggle key on ASCII layout keyboard](#Use_CapsLock_as_Eisu_toggle_key_on_ASCII_layout_keyboard)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Building Mozc fails (process is killed)](#Building_Mozc_fails_.28process_is_killed.29)
-    *   [4.2 New version of Mozc does not appear though I upgraded Mozc and restarted X or Input Method Framework (not rebooted)](#New_version_of_Mozc_does_not_appear_though_I_upgraded_Mozc_and_restarted_X_or_Input_Method_Framework_.28not_rebooted.29)
+    *   [4.1 Building Mozc fails (process is killed)](#Building_Mozc_fails_(process_is_killed))
+    *   [4.2 New version of Mozc does not appear though I upgraded Mozc and restarted X or Input Method Framework (not rebooted)](#New_version_of_Mozc_does_not_appear_though_I_upgraded_Mozc_and_restarted_X_or_Input_Method_Framework_(not_rebooted))
     *   [4.3 mozc_server becomes defunct](#mozc_server_becomes_defunct)
     *   [4.4 mozc_emacs_helper not found in emacs](#mozc_emacs_helper_not_found_in_emacs)
 

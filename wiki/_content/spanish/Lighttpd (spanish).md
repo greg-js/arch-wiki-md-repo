@@ -2,13 +2,13 @@
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Configuración](#Configuraci.C3.B3n)
-    *   [2.1 Sistema básico](#Sistema_b.C3.A1sico)
-        *   [2.1.1 Historial básico](#Historial_b.C3.A1sico)
+*   [1 Instalación](#Instalación)
+*   [2 Configuración](#Configuración)
+    *   [2.1 Sistema básico](#Sistema_básico)
+        *   [2.1.1 Historial básico](#Historial_básico)
         *   [2.1.2 Habilitar https con SSL](#Habilitar_https_con_SSL)
             *   [2.1.2.1 Auto firmado](#Auto_firmado)
-            *   [2.1.2.2 Let's Encrypt](#Let.27s_Encrypt)
+            *   [2.1.2.2 Let's Encrypt](#Let's_Encrypt)
     *   [2.2 CGI](#CGI)
     *   [2.3 FastCGI](#FastCGI)
         *   [2.3.1 PHP](#PHP)
@@ -18,8 +18,8 @@
             *   [2.3.2.1 Indicador del nombre del servidor](#Indicador_del_nombre_del_servidor)
         *   [2.3.3 Ruby on Rails](#Ruby_on_Rails)
         *   [2.3.4 Re-direccionamiento de http a https](#Re-direccionamiento_de_http_a_https)
-    *   [2.4 Compresión](#Compresi.C3.B3n)
-*   [3 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+    *   [2.4 Compresión](#Compresión)
+*   [3 Véase también](#Véase_también)
 
 ## Instalación
 

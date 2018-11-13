@@ -19,7 +19,7 @@ Related articles
     *   [2.3 Keyboard](#Keyboard)
         *   [2.3.1 Remapping keys using xmodmap](#Remapping_keys_using_xmodmap)
         *   [2.3.2 Remapping keys using xkb](#Remapping_keys_using_xkb)
-            *   [2.3.2.1 Backtick (`) and Tilde (~)](#Backtick_.28.60.29_and_Tilde_.28.7E.29)
+            *   [2.3.2.1 Backtick (`) and Tilde (~)](#Backtick_(`)_and_Tilde_(~))
             *   [2.3.2.2 Home and End](#Home_and_End)
             *   [2.3.2.3 BackSpace and Delete](#BackSpace_and_Delete)
     *   [2.4 Trackpad](#Trackpad)
@@ -43,7 +43,7 @@ Related articles
     *   [3.3 KMS](#KMS)
     *   [3.4 Webcam](#Webcam)
     *   [3.5 Fingerprint Reader](#Fingerprint_Reader)
-    *   [3.6 WWAN (Mobile broadband)](#WWAN_.28Mobile_broadband.29)
+    *   [3.6 WWAN (Mobile broadband)](#WWAN_(Mobile_broadband))
     *   [3.7 GPS](#GPS)
     *   [3.8 Bluetooth](#Bluetooth)
 *   [4 Other hardware](#Other_hardware)
@@ -273,7 +273,7 @@ gsettings set org.gnome.settings-daemon.plugins.mouse active false
 
 #### Touchpad not working after wake up from sleep
 
-See here: [Touchpad Synaptics#Touchpad does not work after resuming from hibernate/suspend](/index.php/Touchpad_Synaptics#Touchpad_does_not_work_after_resuming_from_hibernate.2Fsuspend "Touchpad Synaptics")
+See here: [Touchpad Synaptics#Touchpad does not work after resuming from hibernate/suspend](/index.php/Touchpad_Synaptics#Touchpad_does_not_work_after_resuming_from_hibernate/suspend "Touchpad Synaptics")
 
 ### Keyboard backlight
 

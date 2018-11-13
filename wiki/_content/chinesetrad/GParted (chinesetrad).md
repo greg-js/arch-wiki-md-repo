@@ -6,16 +6,16 @@
 
 ## Contents
 
-*   [1 安裝到 Arch](#.E5.AE.89.E8.A3.9D.E5.88.B0_Arch)
-    *   [1.1 選用相依性](#.E9.81.B8.E7.94.A8.E7.9B.B8.E4.BE.9D.E6.80.A7)
-        *   [1.1.1 檔案系統](#.E6.AA.94.E6.A1.88.E7.B3.BB.E7.B5.B1)
-        *   [1.1.2 額外功能](#.E9.A1.8D.E5.A4.96.E5.8A.9F.E8.83.BD)
-*   [2 GParted 支援](#GParted_.E6.94.AF.E6.8F.B4)
-*   [3 提示與技巧](#.E6.8F.90.E7.A4.BA.E8.88.87.E6.8A.80.E5.B7.A7)
-    *   [3.1 將 GParted-live 新增至您的 GRUB 選單](#.E5.B0.87_GParted-live_.E6.96.B0.E5.A2.9E.E8.87.B3.E6.82.A8.E7.9A.84_GRUB_.E9.81.B8.E5.96.AE)
-    *   [3.2 與 Windows XP 雙重開機](#.E8.88.87_Windows_XP_.E9.9B.99.E9.87.8D.E9.96.8B.E6.A9.9F)
-    *   [3.3 修復混亂的分割區順序](#.E4.BF.AE.E5.BE.A9.E6.B7.B7.E4.BA.82.E7.9A.84.E5.88.86.E5.89.B2.E5.8D.80.E9.A0.86.E5.BA.8F)
-    *   [3.4 從選單啟動 GParted](#.E5.BE.9E.E9.81.B8.E5.96.AE.E5.95.9F.E5.8B.95_GParted)
+*   [1 安裝到 Arch](#安裝到_Arch)
+    *   [1.1 選用相依性](#選用相依性)
+        *   [1.1.1 檔案系統](#檔案系統)
+        *   [1.1.2 額外功能](#額外功能)
+*   [2 GParted 支援](#GParted_支援)
+*   [3 提示與技巧](#提示與技巧)
+    *   [3.1 將 GParted-live 新增至您的 GRUB 選單](#將_GParted-live_新增至您的_GRUB_選單)
+    *   [3.2 與 Windows XP 雙重開機](#與_Windows_XP_雙重開機)
+    *   [3.3 修復混亂的分割區順序](#修復混亂的分割區順序)
+    *   [3.4 從選單啟動 GParted](#從選單啟動_GParted)
 
 ## 安裝到 Arch
 

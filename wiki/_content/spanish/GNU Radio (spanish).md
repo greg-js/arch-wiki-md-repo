@@ -11,9 +11,9 @@ Artículos relacionados
 ## Contents
 
 *   [1 Paquetes](#Paquetes)
-*   [2 Solución de problemas](#Soluci.C3.B3n_de_problemas)
-    *   [2.1 GetSize() doesn't work without window](#GetSize.28.29_doesn.27t_work_without_window)
-    *   [2.2 TypeError: in method 'source_sptr_set_gain_mode', argument 2 of type 'bool'](#TypeError:_in_method_.27source_sptr_set_gain_mode.27.2C_argument_2_of_type_.27bool.27)
+*   [2 Solución de problemas](#Solución_de_problemas)
+    *   [2.1 GetSize() doesn't work without window](#GetSize()_doesn't_work_without_window)
+    *   [2.2 TypeError: in method 'source_sptr_set_gain_mode', argument 2 of type 'bool'](#TypeError:_in_method_'source_sptr_set_gain_mode',_argument_2_of_type_'bool')
 
 ## Paquetes
 

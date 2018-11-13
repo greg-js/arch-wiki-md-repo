@@ -1,9 +1,9 @@
 ## Contents
 
-*   [1 Wstęp](#Wst.C4.99p)
+*   [1 Wstęp](#Wstęp)
     *   [1.1 Instalacja Xorg](#Instalacja_Xorg)
     *   [1.2 Konfiguracja Xorg](#Konfiguracja_Xorg)
-*   [2 Informacje końcowe](#Informacje_ko.C5.84cowe)
+*   [2 Informacje końcowe](#Informacje_końcowe)
 
 ## Wstęp
 

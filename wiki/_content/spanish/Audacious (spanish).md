@@ -11,7 +11,7 @@ Audacious es un reproductor de audio libre y avanzada, basada en GTK +2\. Se cen
     *   [2.4 soporte para OSS4](#soporte_para_OSS4)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Audtool](#Audtool)
-*   [4 Más recursos](#M.C3.A1s_recursos)
+*   [4 Más recursos](#Más_recursos)
 
 ## Installation
 

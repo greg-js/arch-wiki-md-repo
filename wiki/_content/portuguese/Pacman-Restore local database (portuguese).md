@@ -126,7 +126,7 @@ Opcionalmente, verifique todos os pacotes instalados por corrompimento:
 
 ```
 
-Opcionalmente, tente [pacman/Dicas e truques#Identificar arquivos que pertençam a nenhum pacote](/index.php/Pacman/Dicas_e_truques#Identificar_arquivos_que_perten.C3.A7am_a_nenhum_pacote "Pacman/Dicas e truques").
+Opcionalmente, tente [pacman/Dicas e truques#Identificar arquivos que pertençam a nenhum pacote](/index.php/Pacman/Dicas_e_truques#Identificar_arquivos_que_pertençam_a_nenhum_pacote "Pacman/Dicas e truques").
 
 Atualize todos os pacotes:
 

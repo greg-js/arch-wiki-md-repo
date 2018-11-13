@@ -5,11 +5,11 @@ Este artículo es una traducción de [Bioperl](/index.php/Bioperl "Bioperl"), re
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Configuración](#Configuraci.C3.B3n)
+*   [1 Instalación](#Instalación)
+*   [2 Configuración](#Configuración)
 *   [3 Extras](#Extras)
-*   [4 Solución de problemas](#Soluci.C3.B3n_de_problemas)
-*   [5 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [4 Solución de problemas](#Solución_de_problemas)
+*   [5 Véase también](#Véase_también)
 
 ## Instalación
 

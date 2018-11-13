@@ -18,14 +18,14 @@ For general methods to improve the flexibility of the provided tips or *pacman* 
     *   [1.2 Listing files owned by a package with size](#Listing_files_owned_by_a_package_with_size)
     *   [1.3 Identify files not owned by any package](#Identify_files_not_owned_by_any_package)
     *   [1.4 Tracking unowned files created by packages](#Tracking_unowned_files_created_by_packages)
-    *   [1.5 Removing unused packages (orphans)](#Removing_unused_packages_.28orphans.29)
+    *   [1.5 Removing unused packages (orphans)](#Removing_unused_packages_(orphans))
     *   [1.6 Removing everything but base group](#Removing_everything_but_base_group)
     *   [1.7 Getting the dependencies list of several packages](#Getting_the_dependencies_list_of_several_packages)
     *   [1.8 Listing changed backup files](#Listing_changed_backup_files)
     *   [1.9 Backup the pacman database](#Backup_the_pacman_database)
     *   [1.10 Check changelogs easily](#Check_changelogs_easily)
 *   [2 Installation and recovery](#Installation_and_recovery)
-    *   [2.1 Installing packages from a CD/DVD or USB stick](#Installing_packages_from_a_CD.2FDVD_or_USB_stick)
+    *   [2.1 Installing packages from a CD/DVD or USB stick](#Installing_packages_from_a_CD/DVD_or_USB_stick)
     *   [2.2 Custom local repository](#Custom_local_repository)
     *   [2.3 Network shared pacman cache](#Network_shared_pacman_cache)
         *   [2.3.1 Read-only cache](#Read-only_cache)
@@ -40,7 +40,7 @@ For general methods to improve the flexibility of the provided tips or *pacman* 
     *   [2.6 Install packages from a list](#Install_packages_from_a_list)
     *   [2.7 Listing all changed files from packages](#Listing_all_changed_files_from_packages)
     *   [2.8 Reinstalling all packages](#Reinstalling_all_packages)
-    *   [2.9 Restore pacman's local database](#Restore_pacman.27s_local_database)
+    *   [2.9 Restore pacman's local database](#Restore_pacman's_local_database)
     *   [2.10 Recovering a USB key from existing install](#Recovering_a_USB_key_from_existing_install)
     *   [2.11 Viewing a single file inside a .pkg file](#Viewing_a_single_file_inside_a_.pkg_file)
     *   [2.12 Find applications that use libraries from older packages](#Find_applications_that_use_libraries_from_older_packages)
@@ -130,7 +130,7 @@ $ expac --timefmt=%s '%l\t%n' | sort -n | tail -n 20
 
 #### Not in a specified group or repository
 
-**Note:** To get a list of packages installed as dependencies but no longer required by any installed package, see [#Removing unused packages (orphans)](#Removing_unused_packages_.28orphans.29).
+**Note:** To get a list of packages installed as dependencies but no longer required by any installed package, see [#Removing unused packages (orphans)](#Removing_unused_packages_(orphans)).
 
 List explicitly installed packages not in the [base](https://www.archlinux.org/groups/x86_64/base/) or [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) groups:
 
@@ -311,7 +311,7 @@ The database can be restored by moving the `pacman_database.tar.bz2` file into t
 
 ```
 
-**Note:** If the *pacman* database files are corrupted, and there is no backup file available, there exists some hope of rebuilding the *pacman* database. Consult [#Restore pacman's local database](#Restore_pacman.27s_local_database).
+**Note:** If the *pacman* database files are corrupted, and there is no backup file available, there exists some hope of rebuilding the *pacman* database. Consult [#Restore pacman's local database](#Restore_pacman's_local_database).
 
 **Tip:** The [pakbak-git](https://aur.archlinux.org/packages/pakbak-git/) package provides a script and a [systemd](/index.php/Systemd "Systemd") service to automate the task. Configuration is possible in `/etc/pakbak.conf`.
 
@@ -591,7 +591,7 @@ If you are suspecting file corruption (e.g. by software/hardware failure), but a
 
 ```
 
-For recovery of the database see [#Restore pacman's local database](#Restore_pacman.27s_local_database). The `mtree` files can also be [extracted as `.MTREE` from the respective package files](#Viewing_a_single_file_inside_a_.pkg_file).
+For recovery of the database see [#Restore pacman's local database](#Restore_pacman's_local_database). The `mtree` files can also be [extracted as `.MTREE` from the respective package files](#Viewing_a_single_file_inside_a_.pkg_file).
 
 **Note:** This should **not** be used as is when suspecting malicious changes! In this case security precautions such as using a live medium and an independent source for the hash sums are advised.
 

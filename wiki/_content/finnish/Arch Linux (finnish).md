@@ -1,12 +1,12 @@
 ## Contents
 
-*   [1 Mikä on Arch Linux?](#Mik.C3.A4_on_Arch_Linux.3F)
+*   [1 Mikä on Arch Linux?](#Mikä_on_Arch_Linux?)
 *   [2 Edut](#Edut)
 *   [3 Ainutlaatuinen pakettienhallinta](#Ainutlaatuinen_pakettienhallinta)
 *   [4 Vain parasta](#Vain_parasta)
 *   [5 Avainsana: Yksinkertaisuus](#Avainsana:_Yksinkertaisuus)
-*   [6 Nykyaikaiset työkalut](#Nykyaikaiset_ty.C3.B6kalut)
-*   [7 Lisää lukemista](#Lis.C3.A4.C3.A4_lukemista)
+*   [6 Nykyaikaiset työkalut](#Nykyaikaiset_työkalut)
+*   [7 Lisää lukemista](#Lisää_lukemista)
 
 ## Mikä on Arch Linux?
 

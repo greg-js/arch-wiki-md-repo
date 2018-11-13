@@ -8,17 +8,17 @@ Um [gerenciador de exibição](https://en.wikipedia.org/wiki/X_display_manager_(
 
 ## Contents
 
-*   [1 Lista de gerenciadores de exibição](#Lista_de_gerenciadores_de_exibi.C3.A7.C3.A3o)
+*   [1 Lista de gerenciadores de exibição](#Lista_de_gerenciadores_de_exibição)
     *   [1.1 Console](#Console)
-    *   [1.2 Gráficos](#Gr.C3.A1ficos)
-*   [2 Carregando o gerenciador de exibição](#Carregando_o_gerenciador_de_exibi.C3.A7.C3.A3o)
+    *   [1.2 Gráficos](#Gráficos)
+*   [2 Carregando o gerenciador de exibição](#Carregando_o_gerenciador_de_exibição)
     *   [2.1 Usando systemd-logind](#Usando_systemd-logind)
-*   [3 Configuração de sessão](#Configura.C3.A7.C3.A3o_de_sess.C3.A3o)
-    *   [3.1 Executar ~/.xinitrc como uma sessão](#Executar_.7E.2F.xinitrc_como_uma_sess.C3.A3o)
+*   [3 Configuração de sessão](#Configuração_de_sessão)
+    *   [3.1 Executar ~/.xinitrc como uma sessão](#Executar_~/.xinitrc_como_uma_sessão)
     *   [3.2 Iniciando aplicativos sem um gerenciador de janela](#Iniciando_aplicativos_sem_um_gerenciador_de_janela)
 *   [4 Dicas e truques](#Dicas_e_truques)
     *   [4.1 Iniciando automaticamente](#Iniciando_automaticamente)
-    *   [4.2 Definir o idioma para sessão de usuário](#Definir_o_idioma_para_sess.C3.A3o_de_usu.C3.A1rio)
+    *   [4.2 Definir o idioma para sessão de usuário](#Definir_o_idioma_para_sessão_de_usuário)
 
 ## Lista de gerenciadores de exibição
 

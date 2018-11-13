@@ -8,7 +8,7 @@ Este artículo es una traducción de [Common Lisp](/index.php/Common_Lisp "Commo
 *   [1 Implementaciones](#Implementaciones)
 *   [2 Quicklisp](#Quicklisp)
 *   [3 SLIME](#SLIME)
-*   [4 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [4 Véase también](#Véase_también)
 
 ## Implementaciones
 

@@ -13,11 +13,11 @@ Esse documento cobre padrões e diretrizes na escrita de [PKGBUILDs](/index.php/
 *   [1 Nome do pacote](#Nome_do_pacote)
     *   [1.1 Arquitetura](#Arquitetura)
     *   [1.2 Fonte](#Fonte)
-*   [2 Métodos de instalação](#M.C3.A9todos_de_instala.C3.A7.C3.A3o)
+*   [2 Métodos de instalação](#Métodos_de_instalação)
     *   [2.1 distutils](#distutils)
     *   [2.2 setuptools](#setuptools)
     *   [2.3 pip](#pip)
-*   [3 Verificação](#Verifica.C3.A7.C3.A3o)
+*   [3 Verificação](#Verificação)
 *   [4 Notas](#Notas)
 
 ## Nome do pacote

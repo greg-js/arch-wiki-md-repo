@@ -6,7 +6,7 @@ This page is about the Laptop ROG Strix AMD laptop. Runs pretty good out of the 
 *   [2 Fans](#Fans)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Secure Boot](#Secure_Boot)
-    *   [3.2 Fans turn 100% and computer becomes unresponsive after long idle time](#Fans_turn_100.25_and_computer_becomes_unresponsive_after_long_idle_time)
+    *   [3.2 Fans turn 100% and computer becomes unresponsive after long idle time](#Fans_turn_100%_and_computer_becomes_unresponsive_after_long_idle_time)
     *   [3.3 Bluetooth device not found](#Bluetooth_device_not_found)
 
 ## Backlight

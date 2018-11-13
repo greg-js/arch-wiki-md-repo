@@ -14,21 +14,21 @@ Related articles
 
 ## Contents
 
-*   [1 아치 빌드 시스템이란?](#.EC.95.84.EC.B9.98_.EB.B9.8C.EB.93.9C_.EC.8B.9C.EC.8A.A4.ED.85.9C.EC.9D.B4.EB.9E.80.3F)
-    *   [1.1 포트와 유사한(ports-like) 시스템이란?](#.ED.8F.AC.ED.8A.B8.EC.99.80_.EC.9C.A0.EC.82.AC.ED.95.9C.28ports-like.29_.EC.8B.9C.EC.8A.A4.ED.85.9C.EC.9D.B4.EB.9E.80.3F)
-    *   [1.2 **ABS** 는 같은 개념입니다.](#ABS_.EB.8A.94_.EA.B0.99.EC.9D.80_.EA.B0.9C.EB.85.90.EC.9E.85.EB.8B.88.EB.8B.A4.)
-    *   [1.3 ABS 개요](#ABS_.EA.B0.9C.EC.9A.94)
-*   [2 ABS를 왜 사용하나요?](#ABS.EB.A5.BC_.EC.99.9C_.EC.82.AC.EC.9A.A9.ED.95.98.EB.82.98.EC.9A.94.3F)
-*   [3 구성하기](#.EA.B5.AC.EC.84.B1.ED.95.98.EA.B8.B0)
-    *   [3.1 간략 내용](#.EA.B0.84.EB.9E.B5_.EB.82.B4.EC.9A.A9)
-    *   [3.2 세부사항](#.EC.84.B8.EB.B6.80.EC.82.AC.ED.95.AD)
-    *   [3.3 /etc/abs.conf](#.2Fetc.2Fabs.conf)
-    *   [3.4 ABS 트리 다운로드](#ABS_.ED.8A.B8.EB.A6.AC_.EB.8B.A4.EC.9A.B4.EB.A1.9C.EB.93.9C)
-    *   [3.5 /etc/makepkg.conf](#.2Fetc.2Fmakepkg.conf)
-    *   [3.6 ABS 트리 구조](#ABS_.ED.8A.B8.EB.A6.AC_.EA.B5.AC.EC.A1.B0)
-    *   [3.7 빌드 디렉토리 만들기](#.EB.B9.8C.EB.93.9C_.EB.94.94.EB.A0.89.ED.86.A0.EB.A6.AC_.EB.A7.8C.EB.93.A4.EA.B8.B0)
-    *   [3.8 전통적인 빌드 방법](#.EC.A0.84.ED.86.B5.EC.A0.81.EC.9D.B8_.EB.B9.8C.EB.93.9C_.EB.B0.A9.EB.B2.95)
-    *   [3.9 ABS를 이용한 패키지 빌드](#ABS.EB.A5.BC_.EC.9D.B4.EC.9A.A9.ED.95.9C_.ED.8C.A8.ED.82.A4.EC.A7.80_.EB.B9.8C.EB.93.9C)
+*   [1 아치 빌드 시스템이란?](#아치_빌드_시스템이란?)
+    *   [1.1 포트와 유사한(ports-like) 시스템이란?](#포트와_유사한(ports-like)_시스템이란?)
+    *   [1.2 **ABS** 는 같은 개념입니다.](#ABS_는_같은_개념입니다.)
+    *   [1.3 ABS 개요](#ABS_개요)
+*   [2 ABS를 왜 사용하나요?](#ABS를_왜_사용하나요?)
+*   [3 구성하기](#구성하기)
+    *   [3.1 간략 내용](#간략_내용)
+    *   [3.2 세부사항](#세부사항)
+    *   [3.3 /etc/abs.conf](#/etc/abs.conf)
+    *   [3.4 ABS 트리 다운로드](#ABS_트리_다운로드)
+    *   [3.5 /etc/makepkg.conf](#/etc/makepkg.conf)
+    *   [3.6 ABS 트리 구조](#ABS_트리_구조)
+    *   [3.7 빌드 디렉토리 만들기](#빌드_디렉토리_만들기)
+    *   [3.8 전통적인 빌드 방법](#전통적인_빌드_방법)
+    *   [3.9 ABS를 이용한 패키지 빌드](#ABS를_이용한_패키지_빌드)
 
 ## 아치 빌드 시스템이란?
 

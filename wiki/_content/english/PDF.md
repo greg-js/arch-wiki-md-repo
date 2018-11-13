@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Category:PDF](/index.php/Category:PDF "Category:PDF")
+*   [List of applications#PDF and DjVu](/index.php/List_of_applications#PDF_and_DjVu "List of applications")

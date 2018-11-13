@@ -5,7 +5,7 @@ MongoDB (from hu**mongo**us) is an open source document-oriented database system
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 MongoDB won't start](#MongoDB_won.27t_start)
+    *   [3.1 MongoDB won't start](#MongoDB_won't_start)
     *   [3.2 MongoDB complains about transparent_hugepage Kernel Setting](#MongoDB_complains_about_transparent_hugepage_Kernel_Setting)
 
 ## Installation

@@ -2,17 +2,17 @@
 
 ## Contents
 
-*   [1 Προετοιμασία](#.CE.A0.CF.81.CE.BF.CE.B5.CF.84.CE.BF.CE.B9.CE.BC.CE.B1.CF.83.CE.AF.CE.B1)
-*   [2 Προετοιμασία (χειροκίνητος τρόπος)](#.CE.A0.CF.81.CE.BF.CE.B5.CF.84.CE.BF.CE.B9.CE.BC.CE.B1.CF.83.CE.AF.CE.B1_.28.CF.87.CE.B5.CE.B9.CF.81.CE.BF.CE.BA.CE.AF.CE.BD.CE.B7.CF.84.CE.BF.CF.82_.CF.84.CF.81.CF.8C.CF.80.CE.BF.CF.82.29)
-*   [3 Παραμετροποίηση του live μέσου](#.CE.A0.CE.B1.CF.81.CE.B1.CE.BC.CE.B5.CF.84.CF.81.CE.BF.CF.80.CE.BF.CE.AF.CE.B7.CF.83.CE.B7_.CF.84.CE.BF.CF.85_live_.CE.BC.CE.AD.CF.83.CE.BF.CF.85)
-    *   [3.1 Εγκατάσταση πακέτων](#.CE.95.CE.B3.CE.BA.CE.B1.CF.84.CE.AC.CF.83.CF.84.CE.B1.CF.83.CE.B7_.CF.80.CE.B1.CE.BA.CE.AD.CF.84.CF.89.CE.BD)
-    *   [3.2 Προσθήκη χρήστη](#.CE.A0.CF.81.CE.BF.CF.83.CE.B8.CE.AE.CE.BA.CE.B7_.CF.87.CF.81.CE.AE.CF.83.CF.84.CE.B7)
-    *   [3.3 Προσθήκη αρχείων στην εικόνα](#.CE.A0.CF.81.CE.BF.CF.83.CE.B8.CE.AE.CE.BA.CE.B7_.CE.B1.CF.81.CF.87.CE.B5.CE.AF.CF.89.CE.BD_.CF.83.CF.84.CE.B7.CE.BD_.CE.B5.CE.B9.CE.BA.CF.8C.CE.BD.CE.B1)
+*   [1 Προετοιμασία](#Προετοιμασία)
+*   [2 Προετοιμασία (χειροκίνητος τρόπος)](#Προετοιμασία_(χειροκίνητος_τρόπος))
+*   [3 Παραμετροποίηση του live μέσου](#Παραμετροποίηση_του_live_μέσου)
+    *   [3.1 Εγκατάσταση πακέτων](#Εγκατάσταση_πακέτων)
+    *   [3.2 Προσθήκη χρήστη](#Προσθήκη_χρήστη)
+    *   [3.3 Προσθήκη αρχείων στην εικόνα](#Προσθήκη_αρχείων_στην_εικόνα)
     *   [3.4 aitab](#aitab)
     *   [3.5 Boot Loader](#Boot_Loader)
-    *   [3.6 Τελειώνοντας την root-image](#.CE.A4.CE.B5.CE.BB.CE.B5.CE.B9.CF.8E.CE.BD.CE.BF.CE.BD.CF.84.CE.B1.CF.82_.CF.84.CE.B7.CE.BD_root-image)
-*   [4 Δημιουργία του ISO](#.CE.94.CE.B7.CE.BC.CE.B9.CE.BF.CF.85.CF.81.CE.B3.CE.AF.CE.B1_.CF.84.CE.BF.CF.85_ISO)
-*   [5 Δείτε επίσης](#.CE.94.CE.B5.CE.AF.CF.84.CE.B5_.CE.B5.CF.80.CE.AF.CF.83.CE.B7.CF.82)
+    *   [3.6 Τελειώνοντας την root-image](#Τελειώνοντας_την_root-image)
+*   [4 Δημιουργία του ISO](#Δημιουργία_του_ISO)
+*   [5 Δείτε επίσης](#Δείτε_επίσης)
 
 ## Προετοιμασία
 

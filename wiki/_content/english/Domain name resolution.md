@@ -10,7 +10,7 @@ In general, a [domain name](https://en.wikipedia.org/wiki/Domain_name "wikipedia
 *   [1 Name Service Switch](#Name_Service_Switch)
     *   [1.1 Resolve a domain name using NSS](#Resolve_a_domain_name_using_NSS)
 *   [2 Glibc resolver](#Glibc_resolver)
-    *   [2.1 Overwriting of /etc/resolv.conf](#Overwriting_of_.2Fetc.2Fresolv.conf)
+    *   [2.1 Overwriting of /etc/resolv.conf](#Overwriting_of_/etc/resolv.conf)
     *   [2.2 Limit lookup time](#Limit_lookup_time)
     *   [2.3 Hostname lookup delayed with IPv6](#Hostname_lookup_delayed_with_IPv6)
     *   [2.4 Local domain names](#Local_domain_names)
@@ -124,12 +124,15 @@ In the table below, the columns have the following meaning:
 | [Knot Resolver](/index.php/Knot_Resolver "Knot Resolver") | Yes | Yes | No | Yes | Yes | [No](https://gitlab.labs.nic.cz/knot/knot-resolver/issues/243) |
 | [pdnsd](/index.php/Pdnsd "Pdnsd") | Yes | Yes | [openresolv](/index.php/Openresolv "Openresolv") subscriber | No | No | No |
 | [powerdns-recursor](https://www.archlinux.org/packages/?name=powerdns-recursor) | Yes | Yes | [No](https://roy.marples.name/projects/openresolv/config#pdns_recursor) | Yes | ? | ? |
+| [Rescached](/index.php/Rescached "Rescached") | Yes | No | [openresolv](/index.php/Openresolv "Openresolv") subscriber | No | No | Limited |
 | [Stubby](/index.php/Stubby "Stubby") | No | No | No | Yes | Yes | No |
 | [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") | Yes | No | [systemd-resolvconf](/index.php/Systemd-resolvconf "Systemd-resolvconf") | Yes | Insecure | [No](https://github.com/systemd/systemd/issues/8639) |
 | [Unbound](/index.php/Unbound "Unbound") | Yes | Yes | [openresolv](/index.php/Openresolv "Openresolv") subscriber | Yes | Yes | [No](https://nlnetlabs.nl/bugs-script/show_bug.cgi?id=1200) |
 
 1.  Implements a [DNSCrypt](https://en.wikipedia.org/wiki/DNSCrypt "wikipedia:DNSCrypt") protocol client.
-2.  From [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5): *Note as the resolver is not capable of authenticating the server, it is vulnerable for "man-in-the-middle" attacks.*[[2]](https://github.com/systemd/systemd/issues/9397) Also, the only supported mode is "opportunistic", which *makes DNS-over-TLS vulnerable to "downgrade" attacks*.
+2.  Can use the subscribers of dnsmasq, pdns and unbound.[[2]](https://github.com/shuLhan/rescached-go#integration-with-openresolv)
+3.  Only forwards using DNS over HTTPS when Rescached itself is queried using DNS over HTTPS.[[3]](https://github.com/shuLhan/rescached-go#integration-with-dns-over-https)
+4.  From [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5): *Note as the resolver is not capable of authenticating the server, it is vulnerable for "man-in-the-middle" attacks.*[[4]](https://github.com/systemd/systemd/issues/9397) Also, the only supported mode is "opportunistic", which *makes DNS-over-TLS vulnerable to "downgrade" attacks*.
 
 ## Privacy
 

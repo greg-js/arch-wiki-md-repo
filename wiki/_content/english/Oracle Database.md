@@ -12,7 +12,7 @@ This document will help you install [Oracle Database](https://en.wikipedia.org/w
         *   [1.1.2 Configuration](#Configuration)
     *   [1.2 Graphical installation](#Graphical_installation)
         *   [1.2.1 Installing Oracle database software](#Installing_Oracle_database_software)
-    *   [1.3 Oracle Enterprise Manager installation (optional)](#Oracle_Enterprise_Manager_installation_.28optional.29)
+    *   [1.3 Oracle Enterprise Manager installation (optional)](#Oracle_Enterprise_Manager_installation_(optional))
 *   [2 Install Oracle Express Edition](#Install_Oracle_Express_Edition)
     *   [2.1 Installation](#Installation)
 *   [3 Post installation](#Post_installation)
@@ -728,7 +728,7 @@ Install [unzip](https://www.archlinux.org/packages/?name=unzip), [sysstat](https
 
 Configure server for oracle [#Configuration](#Configuration)
 
-Setup OEM (optional) [#Oracle Enterprise Manager installation (optional)](#Oracle_Enterprise_Manager_installation_.28optional.29)
+Setup OEM (optional) [#Oracle Enterprise Manager installation (optional)](#Oracle_Enterprise_Manager_installation_(optional))
 
 Execute appropriate/desired post installation steps [#Post installation](#Post_installation)
 

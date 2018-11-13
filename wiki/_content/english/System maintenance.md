@@ -29,7 +29,7 @@ Regular system maintenance is necessary for the proper function of Arch over a p
     *   [4.3 Update the mirrorlist](#Update_the_mirrorlist)
 *   [5 Clean the filesystem](#Clean_the_filesystem)
     *   [5.1 Package cache](#Package_cache)
-    *   [5.2 Unused packages (orphans)](#Unused_packages_.28orphans.29)
+    *   [5.2 Unused packages (orphans)](#Unused_packages_(orphans))
     *   [5.3 Old configuration files](#Old_configuration_files)
     *   [5.4 Broken symlinks](#Broken_symlinks)
 *   [6 Tips and tricks](#Tips_and_tricks)
@@ -196,7 +196,7 @@ See [Pacman#Cleaning the package cache](/index.php/Pacman#Cleaning_the_package_c
 
 Remove unused packages from the system to free up disk space and simplify maintenance.
 
-See [Pacman/Tips and tricks#Removing unused packages (orphans)](/index.php/Pacman/Tips_and_tricks#Removing_unused_packages_.28orphans.29 "Pacman/Tips and tricks") for details.
+See [Pacman/Tips and tricks#Removing unused packages (orphans)](/index.php/Pacman/Tips_and_tricks#Removing_unused_packages_(orphans) "Pacman/Tips and tricks") for details.
 
 ### Old configuration files
 

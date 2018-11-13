@@ -9,11 +9,11 @@
 
 ## Contents
 
-*   [1 Поддерживаемые видеокарты](#.D0.9F.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.B8.D0.B2.D0.B0.D0.B5.D0.BC.D1.8B.D0.B5_.D0.B2.D0.B8.D0.B4.D0.B5.D0.BE.D0.BA.D0.B0.D1.80.D1.82.D1.8B)
-    *   [1.1 Поддерживаемые форматы](#.D0.9F.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.B8.D0.B2.D0.B0.D0.B5.D0.BC.D1.8B.D0.B5_.D1.84.D0.BE.D1.80.D0.BC.D0.B0.D1.82.D1.8B)
-    *   [1.2 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
-    *   [1.3 Проверка](#.D0.9F.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.B0)
-*   [2 Поддерживаемое программное обеспечение](#.D0.9F.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.B8.D0.B2.D0.B0.D0.B5.D0.BC.D0.BE.D0.B5_.D0.BF.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D0.BD.D0.BE.D0.B5_.D0.BE.D0.B1.D0.B5.D1.81.D0.BF.D0.B5.D1.87.D0.B5.D0.BD.D0.B8.D0.B5)
+*   [1 Поддерживаемые видеокарты](#Поддерживаемые_видеокарты)
+    *   [1.1 Поддерживаемые форматы](#Поддерживаемые_форматы)
+    *   [1.2 Настройка](#Настройка)
+    *   [1.3 Проверка](#Проверка)
+*   [2 Поддерживаемое программное обеспечение](#Поддерживаемое_программное_обеспечение)
 
 ## Поддерживаемые видеокарты
 
@@ -77,13 +77,13 @@
 
 Поддерживается пакетом [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/). Инструкция и важная информация доступна на странице [Intel graphics#Hardware accelerated H.264 decoding on GMA 4500](/index.php/Intel_graphics#Hardware_accelerated_H.264_decoding_on_GMA_4500 "Intel graphics").
 
-Чтобы проверить, какие профили (возможности) поддерживаются вашей видеокартой, обратитесь к секции [#Проверка](#.D0.9F.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.B0)
+Чтобы проверить, какие профили (возможности) поддерживаются вашей видеокартой, обратитесь к секции [#Проверка](#Проверка)
 
 ### Настройка
 
-**Note:** Можно не экспортировать `LIBVA_DRIVER`, так как большинство (современные) приложений и сред умеют находить VAAPI библиотеку [автоматически](#.D0.9F.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.B0).
+**Note:** Можно не экспортировать `LIBVA_DRIVER`, так как большинство (современные) приложений и сред умеют находить VAAPI библиотеку [автоматически](#Проверка).
 
-[libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) необходимо включить вручную, используя [переменную окружения](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Environment variables (Русский)") [глобально](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9D.D0.B0_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.BD.D0.BE.D0.BC_.D1.83.D1.80.D0.BE.D0.B2.D0.BD.D0.B5 "Environment variables (Русский)") или [для отдельного пользователя](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9D.D0.B0_.D1.83.D1.80.D0.BE.D0.B2.D0.BD.D0.B5_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8F "Environment variables (Русский)"):
+[libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) необходимо включить вручную, используя [переменную окружения](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Environment variables (Русский)") [глобально](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#На_системном_уровне "Environment variables (Русский)") или [для отдельного пользователя](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#На_уровне_пользователя "Environment variables (Русский)"):
 
 ```
 export LIBVA_DRIVER_NAME=vdpau
@@ -126,5 +126,5 @@ vainfo: Supported profile and entrypoints
 	Больше информации доступно по ссылке: [http://docs.gstreamer.com/display/GstSDK/Playback+tutorial+8%3A+Hardware-accelerated+video+decoding](http://docs.gstreamer.com/display/GstSDK/Playback+tutorial+8%3A+Hardware-accelerated+video+decoding).
 
 *   VLC: [VLC media player#Hardware acceleration support](/index.php/VLC_media_player#Hardware_acceleration_support "VLC media player").
-*   Mpv: [Mpv (Русский)#Аппаратное декодирование](/index.php/Mpv_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.90.D0.BF.D0.BF.D0.B0.D1.80.D0.B0.D1.82.D0.BD.D0.BE.D0.B5_.D0.B4.D0.B5.D0.BA.D0.BE.D0.B4.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5 "Mpv (Русский)").
+*   Mpv: [Mpv (Русский)#Аппаратное декодирование](/index.php/Mpv_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Аппаратное_декодирование "Mpv (Русский)").
 *   MPlayer: [MPlayer#Enabling VA-API](/index.php/MPlayer#Enabling_VA-API "MPlayer").

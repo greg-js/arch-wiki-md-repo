@@ -28,9 +28,9 @@ Related articles
     *   [5.6 rfkill unblock: Do not unblock](#rfkill_unblock:_Do_not_unblock)
     *   [5.7 My computer is not visible](#My_computer_is_not_visible)
     *   [5.8 Logitech keyboard does not pair](#Logitech_keyboard_does_not_pair)
-    *   [5.9 HSP/HFP profiles](#HSP.2FHFP_profiles)
-    *   [5.10 Foxconn / Hon Hai / Lite-On Broadcom device](#Foxconn_.2F_Hon_Hai_.2F_Lite-On_Broadcom_device)
-    *   [5.11 Device connects, then disconnects after a few moments](#Device_connects.2C_then_disconnects_after_a_few_moments)
+    *   [5.9 HSP/HFP profiles](#HSP/HFP_profiles)
+    *   [5.10 Foxconn / Hon Hai / Lite-On Broadcom device](#Foxconn_/_Hon_Hai_/_Lite-On_Broadcom_device)
+    *   [5.11 Device connects, then disconnects after a few moments](#Device_connects,_then_disconnects_after_a_few_moments)
     *   [5.12 Device does not connect with an error in journal](#Device_does_not_connect_with_an_error_in_journal)
     *   [5.13 Device does not show up in scan](#Device_does_not_show_up_in_scan)
 

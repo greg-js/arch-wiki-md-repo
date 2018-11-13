@@ -4,12 +4,12 @@ Poniżej przedstawiono przykłady szyfrowania wtórnego, tj. Innego niż root, s
 
 *   [1 Overview](#Overview)
 *   [2 Partycja](#Partycja)
-    *   [2.1 Ręczne zakładanie i odmontowywanie](#R.C4.99czne_zak.C5.82adanie_i_odmontowywanie)
+    *   [2.1 Ręczne zakładanie i odmontowywanie](#Ręczne_zakładanie_i_odmontowywanie)
     *   [2.2 Automatyczne odblokowywanie i montowanie](#Automatyczne_odblokowywanie_i_montowanie)
         *   [2.2.1 Podczas startu systemu](#Podczas_startu_systemu)
-        *   [2.2.2 Przy logowaniu użytkownika](#Przy_logowaniu_u.C5.BCytkownika)
+        *   [2.2.2 Przy logowaniu użytkownika](#Przy_logowaniu_użytkownika)
 *   [3 Loop device](#Loop_device)
-    *   [3.1 Ręczne montowanie i odmontowywanie](#R.C4.99czne_montowanie_i_odmontowywanie)
+    *   [3.1 Ręczne montowanie i odmontowywanie](#Ręczne_montowanie_i_odmontowywanie)
 
 ## Overview
 
@@ -48,7 +48,7 @@ Po odblokowaniu partycji będzie ona dostępna pod adresem `/dev/mapper/*name*`.
 
 ```
 
-Zamontuj system plików na `/home` lub jeśli powinien być dostępny tylko dla jednego użytkownika na `/home/*username*`, zobacz [#Ręczne montowanie i odmontowywanie](#R.C4.99czne_montowanie_i_odmontowywanie).
+Zamontuj system plików na `/home` lub jeśli powinien być dostępny tylko dla jednego użytkownika na `/home/*username*`, zobacz [#Ręczne montowanie i odmontowywanie](#Ręczne_montowanie_i_odmontowywanie).
 
 **Tip:** Odmontuj i zamontuj jeden raz, aby sprawdzić, czy mapowanie działa zgodnie z oczekiwaniami.
 

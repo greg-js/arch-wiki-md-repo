@@ -2,13 +2,13 @@
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-    *   [1.1 Probar instalación](#Probar_instalaci.C3.B3n)
-    *   [1.2 $GOPATH](#.24GOPATH)
-    *   [1.3 Habilitar la compilación cruzada para otras plataformas](#Habilitar_la_compilaci.C3.B3n_cruzada_para_otras_plataformas)
-*   [2 Solución de problemas](#Soluci.C3.B3n_de_problemas)
+*   [1 Instalación](#Instalación)
+    *   [1.1 Probar instalación](#Probar_instalación)
+    *   [1.2 $GOPATH](#$GOPATH)
+    *   [1.3 Habilitar la compilación cruzada para otras plataformas](#Habilitar_la_compilación_cruzada_para_otras_plataformas)
+*   [2 Solución de problemas](#Solución_de_problemas)
     *   [2.1 Complemento para Jetbrains](#Complemento_para_Jetbrains)
-*   [3 Ver también](#Ver_tambi.C3.A9n)
+*   [3 Ver también](#Ver_también)
 
 ## Instalación
 

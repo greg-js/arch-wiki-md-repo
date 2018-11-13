@@ -5,10 +5,10 @@ Este artículo es una traducción de [Ghostscript](/index.php/Ghostscript "Ghost
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Utilización](#Utilizaci.C3.B3n)
+*   [1 Instalación](#Instalación)
+*   [2 Utilización](#Utilización)
     *   [2.1 ps2pdf](#ps2pdf)
-*   [3 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [3 Véase también](#Véase_también)
 
 ## Instalación
 

@@ -15,7 +15,7 @@ In all of the following only Arch Linux is compared with other distributions. Co
 *   [1 Source-based](#Source-based)
     *   [1.1 CRUX](#CRUX)
     *   [1.2 LFS](#LFS)
-    *   [1.3 Gentoo/Funtoo Linux](#Gentoo.2FFuntoo_Linux)
+    *   [1.3 Gentoo/Funtoo Linux](#Gentoo/Funtoo_Linux)
 *   [2 General](#General)
     *   [2.1 Debian](#Debian)
     *   [2.2 Fedora](#Fedora)
@@ -24,7 +24,7 @@ In all of the following only Arch Linux is compared with other distributions. Co
     *   [3.1 Ubuntu](#Ubuntu)
     *   [3.2 Linux Mint](#Linux_Mint)
     *   [3.3 openSUSE](#openSUSE)
-    *   [3.4 Mandriva/Mageia](#Mandriva.2FMageia)
+    *   [3.4 Mandriva/Mageia](#Mandriva/Mageia)
 *   [4 The BSDs](#The_BSDs)
 *   [5 See also](#See_also)
 

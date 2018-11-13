@@ -8,28 +8,28 @@ Según la [Wikipedia](https://en.wikipedia.org/wiki/es:Network_File_System "wiki
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Configuración](#Configuraci.C3.B3n)
+*   [1 Instalación](#Instalación)
+*   [2 Configuración](#Configuración)
     *   [2.1 Servidor](#Servidor)
-    *   [2.2 Iniciar/Habilitar servicios](#Iniciar.2FHabilitar_servicios)
+    *   [2.2 Iniciar/Habilitar servicios](#Iniciar/Habilitar_servicios)
         *   [2.2.1 Mapeo de ID](#Mapeo_de_ID)
         *   [2.2.2 Sistema de archivos](#Sistema_de_archivos)
-        *   [2.2.3 Exportación](#Exportaci.C3.B3n)
+        *   [2.2.3 Exportación](#Exportación)
         *   [2.2.4 Arrancando el servidor](#Arrancando_el_servidor)
-        *   [2.2.5 Configuración del cortafuegos](#Configuraci.C3.B3n_del_cortafuegos)
+        *   [2.2.5 Configuración del cortafuegos](#Configuración_del_cortafuegos)
     *   [2.3 Cliente](#Cliente)
         *   [2.3.1 Montaje en Linux](#Montaje_en_Linux)
-            *   [2.3.1.1 Ajustes en /etc/fstab](#Ajustes_en_.2Fetc.2Ffstab)
+            *   [2.3.1.1 Ajustes en /etc/fstab](#Ajustes_en_/etc/fstab)
             *   [2.3.1.2 Uso de autofs](#Uso_de_autofs)
         *   [2.3.2 Montaje en Windows](#Montaje_en_Windows)
         *   [2.3.3 Montaje en OS X](#Montaje_en_OS_X)
 *   [3 Consejos y trucos](#Consejos_y_trucos)
     *   [3.1 Ajustar el rendimiento](#Ajustar_el_rendimiento)
-    *   [3.2 Manejar el montaje automático](#Manejar_el_montaje_autom.C3.A1tico)
+    *   [3.2 Manejar el montaje automático](#Manejar_el_montaje_automático)
         *   [3.2.1 NetworkManager dispatcher](#NetworkManager_dispatcher)
     *   [3.3 Configurar puertos fijos para NFS](#Configurar_puertos_fijos_para_NFS)
-*   [4 Solución de problemas](#Soluci.C3.B3n_de_problemas)
-*   [5 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [4 Solución de problemas](#Solución_de_problemas)
+*   [5 Véase también](#Véase_también)
 
 ## Instalación
 

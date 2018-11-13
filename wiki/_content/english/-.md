@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Partitioning#/](/index.php/Partitioning#.2F "Partitioning")
+*   [Partitioning#/](/index.php/Partitioning#/ "Partitioning")

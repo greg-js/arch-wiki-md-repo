@@ -6,11 +6,11 @@ Related articles
 ## Contents
 
 *   [1 Tips and tricks](#Tips_and_tricks)
-    *   [1.1 Bibliography / references](#Bibliography_.2F_references)
+    *   [1.1 Bibliography / references](#Bibliography_/_references)
     *   [1.2 ConTeXt](#ConTeXt)
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 texlive stopped working after update](#texlive_stopped_working_after_update)
-    *   [2.2 pdftex and/or dvips uses bitmap fonts instead of type1 postscript fonts](#pdftex_and.2For_dvips_uses_bitmap_fonts_instead_of_type1_postscript_fonts)
+    *   [2.2 pdftex and/or dvips uses bitmap fonts instead of type1 postscript fonts](#pdftex_and/or_dvips_uses_bitmap_fonts_instead_of_type1_postscript_fonts)
 *   [3 Creating graphics with TeX commands](#Creating_graphics_with_TeX_commands)
     *   [3.1 Pictures with LaTeX labels](#Pictures_with_LaTeX_labels)
     *   [3.2 Pictures with LaTeX labels - GUI](#Pictures_with_LaTeX_labels_-_GUI)

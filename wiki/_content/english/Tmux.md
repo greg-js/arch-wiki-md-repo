@@ -41,7 +41,7 @@ tmux is an ISC-licensed alternative to [GNU Screen](/index.php/GNU_Screen "GNU S
     *   [6.1 Scrolling issues](#Scrolling_issues)
     *   [6.2 Mouse scrolling](#Mouse_scrolling)
     *   [6.3 Terminal emulator does not support UTF-8 mouse events](#Terminal_emulator_does_not_support_UTF-8_mouse_events)
-    *   [6.4 Shift+F6 not working in Midnight Commander](#Shift.2BF6_not_working_in_Midnight_Commander)
+    *   [6.4 Shift+F6 not working in Midnight Commander](#Shift+F6_not_working_in_Midnight_Commander)
 *   [7 See also](#See_also)
 
 ## Installation

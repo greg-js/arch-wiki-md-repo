@@ -8,22 +8,22 @@ XFS 是由硅谷图形公司 (Silicon Graphics, Inc.) 开发的高性能日志�
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 数据损坏](#.E6.95.B0.E6.8D.AE.E6.8D.9F.E5.9D.8F)
-    *   [2.1 修复 XFS 文件系统](#.E4.BF.AE.E5.A4.8D_XFS_.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F)
-    *   [2.2 在线元数据检查 (scrub)](#.E5.9C.A8.E7.BA.BF.E5.85.83.E6.95.B0.E6.8D.AE.E6.A3.80.E6.9F.A5_.28scrub.29)
-*   [3 数据完整性](#.E6.95.B0.E6.8D.AE.E5.AE.8C.E6.95.B4.E6.80.A7)
-*   [4 性能](#.E6.80.A7.E8.83.BD)
-    *   [4.1 带区大小和宽度](#.E5.B8.A6.E5.8C.BA.E5.A4.A7.E5.B0.8F.E5.92.8C.E5.AE.BD.E5.BA.A6)
-    *   [4.2 关闭写入屏障 (Barrier)](#.E5.85.B3.E9.97.AD.E5.86.99.E5.85.A5.E5.B1.8F.E9.9A.9C_.28Barrier.29)
-    *   [4.3 访问时间记录](#.E8.AE.BF.E9.97.AE.E6.97.B6.E9.97.B4.E8.AE.B0.E5.BD.95)
-    *   [4.4 磁盘碎片整理](#.E7.A3.81.E7.9B.98.E7.A2.8E.E7.89.87.E6.95.B4.E7.90.86)
-        *   [4.4.1 检查碎片程度](#.E6.A3.80.E6.9F.A5.E7.A2.8E.E7.89.87.E7.A8.8B.E5.BA.A6)
-        *   [4.4.2 进行碎片整理](#.E8.BF.9B.E8.A1.8C.E7.A2.8E.E7.89.87.E6.95.B4.E7.90.86)
-    *   [4.5 B+树（用于索引未用 inode）](#B.2B.E6.A0.91.EF.BC.88.E7.94.A8.E4.BA.8E.E7.B4.A2.E5.BC.95.E6.9C.AA.E7.94.A8_inode.EF.BC.89)
-*   [5 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
-    *   [5.1 根文件系统配额](#.E6.A0.B9.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F.E9.85.8D.E9.A2.9D)
-*   [6 参考资料](#.E5.8F.82.E8.80.83.E8.B5.84.E6.96.99)
+*   [1 安装](#安装)
+*   [2 数据损坏](#数据损坏)
+    *   [2.1 修复 XFS 文件系统](#修复_XFS_文件系统)
+    *   [2.2 在线元数据检查 (scrub)](#在线元数据检查_(scrub))
+*   [3 数据完整性](#数据完整性)
+*   [4 性能](#性能)
+    *   [4.1 带区大小和宽度](#带区大小和宽度)
+    *   [4.2 关闭写入屏障 (Barrier)](#关闭写入屏障_(Barrier))
+    *   [4.3 访问时间记录](#访问时间记录)
+    *   [4.4 磁盘碎片整理](#磁盘碎片整理)
+        *   [4.4.1 检查碎片程度](#检查碎片程度)
+        *   [4.4.2 进行碎片整理](#进行碎片整理)
+    *   [4.5 B+树（用于索引未用 inode）](#B+树（用于索引未用_inode）)
+*   [5 故障排除](#故障排除)
+    *   [5.1 根文件系统配额](#根文件系统配额)
+*   [6 参考资料](#参考资料)
 
 ## 安装
 
@@ -55,7 +55,7 @@ XFS 是由硅谷图形公司 (Silicon Graphics, Inc.) 开发的高性能日志�
 
 `xfs_scrub` 请求内核检查 [文件系统](/index.php/File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "File systems (简体中文)") 中的所有元数据对象。内核会扫描元数据记录以查找明显错误的值，然后与其他元数据进行交叉引用。其目的是通过检查单个元数据记录与文件系统中其他元数据的一致性，建立对整个文件系统一致性的合理置信度。如果存在完整的冗余数据结构，则可以根据其他元数据重建损坏的元数据。
 
-[Enable](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E5.8D.95.E5.85.83 "Systemd (简体中文)") `xfs_scrub_all.timer` 以定期在线检查所有文件系统元数据。有时可能需要[编辑](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BF.AE.E6.94.B9.E7.8E.B0.E5.AD.98.E5.8D.95.E5.85.83.E6.96.87.E4.BB.B6 "Systemd (简体中文)") `xfs_scrub_all.timer`，因为它仅在每周日上午 3:10 运行。
+[Enable](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#使用单元 "Systemd (简体中文)") `xfs_scrub_all.timer` 以定期在线检查所有文件系统元数据。有时可能需要[编辑](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#修改现存单元文件 "Systemd (简体中文)") `xfs_scrub_all.timer`，因为它仅在每周日上午 3:10 运行。
 
 ## 数据完整性
 
@@ -83,7 +83,7 @@ xfsprogs 3.2.0 引入了一种新型磁盘格式 (v5)，其包含了称为 [自�
 
 **警告:** 关闭写入屏障 (barrier)、关闭访问时间记录 (atime) 以及其他性能增强功能会导致数据损坏和丢失的可能性更大。
 
-根据 [XFS wiki](http://xfs.org/index.php/XFS_FAQ#Q:_I_want_to_tune_my_XFS_filesystems_for_.3Csomething.3E)，可以考虑更改默认的 CFQ [I/O 调度器](/index.php/Improving_performance#Input.2Foutput_schedulers "Improving performance")（比如改成 [Deadline](https://en.wikipedia.org/wiki/Deadline_scheduler 上。
+根据 [XFS wiki](http://xfs.org/index.php/XFS_FAQ#Q:_I_want_to_tune_my_XFS_filesystems_for_.3Csomething.3E)，可以考虑更改默认的 CFQ [I/O 调度器](/index.php/Improving_performance#Input/output_schedulers "Improving performance")（比如改成 [Deadline](https://en.wikipedia.org/wiki/Deadline_scheduler 上。
 
 ### 带区大小和宽度
 

@@ -17,7 +17,7 @@ Peer-to-peer (P2P) sync, instead of having a central server which archives every
     *   [5.1 Automatic config file creation](#Automatic_config_file_creation)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Missing storage path](#Missing_storage_path)
-    *   [6.2 Ignore some files/folders synchronization](#Ignore_some_files.2Ffolders_synchronization)
+    *   [6.2 Ignore some files/folders synchronization](#Ignore_some_files/folders_synchronization)
     *   [6.3 ARM alignment error](#ARM_alignment_error)
 *   [7 See also](#See_also)
 

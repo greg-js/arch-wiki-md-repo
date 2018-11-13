@@ -44,7 +44,7 @@ NTP=0.arch.pool.ntp.org 1.arch.pool.ntp.org 2.arch.pool.ntp.org 3.arch.pool.ntp.
 FallbackNTP=0.pool.ntp.org 1.pool.ntp.org 0.fr.pool.ntp.org
 ```
 
-Od wersji 216 można również dodawać serwery za pomocą `NTP=` bezpośrednio w plikach konfiguracyjnych [systemd-networkd](/index.php/Systemd-networkd#.5BNetDev.5D_section "Systemd-networkd").
+Od wersji 216 można również dodawać serwery za pomocą `NTP=` bezpośrednio w plikach konfiguracyjnych [systemd-networkd](/index.php/Systemd-networkd#[NetDev]_section "Systemd-networkd").
 
 Reguły kolejności użycia serwerów NTP:
 

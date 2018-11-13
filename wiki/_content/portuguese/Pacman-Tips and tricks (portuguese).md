@@ -9,41 +9,41 @@ Para métodos gerais para melhorar a flexibilidade das dicas fornecidas ou do *p
 
 ## Contents
 
-*   [1 Manutenção](#Manuten.C3.A7.C3.A3o)
+*   [1 Manutenção](#Manutenção)
     *   [1.1 Listando pacotes](#Listando_pacotes)
         *   [1.1.1 Com tamanho](#Com_tamanho)
             *   [1.1.1.1 Pacotes individuais](#Pacotes_individuais)
-            *   [1.1.1.2 Pacotes e dependências](#Pacotes_e_depend.C3.AAncias)
+            *   [1.1.1.2 Pacotes e dependências](#Pacotes_e_dependências)
         *   [1.1.2 Por data](#Por_data)
-        *   [1.1.3 Que não estejam em um grupo ou repositório especificado](#Que_n.C3.A3o_estejam_em_um_grupo_ou_reposit.C3.B3rio_especificado)
+        *   [1.1.3 Que não estejam em um grupo ou repositório especificado](#Que_não_estejam_em_um_grupo_ou_repositório_especificado)
         *   [1.1.4 Pacotes de desenvolvimento](#Pacotes_de_desenvolvimento)
     *   [1.2 Listando arquivos pertencentes a um pacote com tamanho](#Listando_arquivos_pertencentes_a_um_pacote_com_tamanho)
-    *   [1.3 Identificar arquivos que pertençam a nenhum pacote](#Identificar_arquivos_que_perten.C3.A7am_a_nenhum_pacote)
-    *   [1.4 Removendo pacotes não usados (órfãos)](#Removendo_pacotes_n.C3.A3o_usados_.28.C3.B3rf.C3.A3os.29)
+    *   [1.3 Identificar arquivos que pertençam a nenhum pacote](#Identificar_arquivos_que_pertençam_a_nenhum_pacote)
+    *   [1.4 Removendo pacotes não usados (órfãos)](#Removendo_pacotes_não_usados_(órfãos))
     *   [1.5 Removendo tudo exceto o grupo base](#Removendo_tudo_exceto_o_grupo_base)
-    *   [1.6 Obtendo a lista de dependências de vários pacotes](#Obtendo_a_lista_de_depend.C3.AAncias_de_v.C3.A1rios_pacotes)
+    *   [1.6 Obtendo a lista de dependências de vários pacotes](#Obtendo_a_lista_de_dependências_de_vários_pacotes)
     *   [1.7 Listando arquivos backup modificados](#Listando_arquivos_backup_modificados)
     *   [1.8 Fazer backup da base de dados do pacman](#Fazer_backup_da_base_de_dados_do_pacman)
     *   [1.9 Verificar changelogs facilmente](#Verificar_changelogs_facilmente)
-*   [2 Instalação e recuperação](#Instala.C3.A7.C3.A3o_e_recupera.C3.A7.C3.A3o)
-    *   [2.1 Instalando pacotes a partir de um CD/DVD ou pendrive](#Instalando_pacotes_a_partir_de_um_CD.2FDVD_ou_pendrive)
-    *   [2.2 Repositório local personalizado](#Reposit.C3.B3rio_local_personalizado)
+*   [2 Instalação e recuperação](#Instalação_e_recuperação)
+    *   [2.1 Instalando pacotes a partir de um CD/DVD ou pendrive](#Instalando_pacotes_a_partir_de_um_CD/DVD_ou_pendrive)
+    *   [2.2 Repositório local personalizado](#Repositório_local_personalizado)
     *   [2.3 Cache do pacman compartilhado na rede](#Cache_do_pacman_compartilhado_na_rede)
         *   [2.3.1 Cache de somente leitura](#Cache_de_somente_leitura)
-        *   [2.3.2 Cache somente leitura distribuído](#Cache_somente_leitura_distribu.C3.ADdo)
+        *   [2.3.2 Cache somente leitura distribuído](#Cache_somente_leitura_distribuído)
         *   [2.3.3 Cache de leitura-escrita](#Cache_de_leitura-escrita)
         *   [2.3.4 Duas vias com rsync](#Duas_vias_com_rsync)
-        *   [2.3.5 Cache dinâmico de proxy reverso usando nginx](#Cache_din.C3.A2mico_de_proxy_reverso_usando_nginx)
-        *   [2.3.6 Sincronizar cache de pacotes do pacman usando programas de sincronização](#Sincronizar_cache_de_pacotes_do_pacman_usando_programas_de_sincroniza.C3.A7.C3.A3o)
-        *   [2.3.7 Prevenção de purgas de cache indesejadas](#Preven.C3.A7.C3.A3o_de_purgas_de_cache_indesejadas)
+        *   [2.3.5 Cache dinâmico de proxy reverso usando nginx](#Cache_dinâmico_de_proxy_reverso_usando_nginx)
+        *   [2.3.6 Sincronizar cache de pacotes do pacman usando programas de sincronização](#Sincronizar_cache_de_pacotes_do_pacman_usando_programas_de_sincronização)
+        *   [2.3.7 Prevenção de purgas de cache indesejadas](#Prevenção_de_purgas_de_cache_indesejadas)
     *   [2.4 Recriar um pacote do sistema de arquivos](#Recriar_um_pacote_do_sistema_de_arquivos)
     *   [2.5 Lista de pacotes instalados](#Lista_de_pacotes_instalados)
     *   [2.6 Instalar pacotes de uma lista](#Instalar_pacotes_de_uma_lista)
     *   [2.7 Listando todos os arquivos alterados de pacotes](#Listando_todos_os_arquivos_alterados_de_pacotes)
     *   [2.8 Reinstalando todos pacotes](#Reinstalando_todos_pacotes)
     *   [2.9 Restaurar a base de dados local do pacman](#Restaurar_a_base_de_dados_local_do_pacman)
-    *   [2.10 Recuperando um pendrive a partir de uma instalação existente](#Recuperando_um_pendrive_a_partir_de_uma_instala.C3.A7.C3.A3o_existente)
-    *   [2.11 Vendo um único arquivo dentro de um arquivo .pkg](#Vendo_um_.C3.BAnico_arquivo_dentro_de_um_arquivo_.pkg)
+    *   [2.10 Recuperando um pendrive a partir de uma instalação existente](#Recuperando_um_pendrive_a_partir_de_uma_instalação_existente)
+    *   [2.11 Vendo um único arquivo dentro de um arquivo .pkg](#Vendo_um_único_arquivo_dentro_de_um_arquivo_.pkg)
     *   [2.12 Localizar aplicativos que usam bibliotecas de pacotes mais antigos](#Localizar_aplicativos_que_usam_bibliotecas_de_pacotes_mais_antigos)
 *   [3 Desempenho](#Desempenho)
     *   [3.1 Velocidades de download](#Velocidades_de_download)
@@ -51,8 +51,8 @@ Para métodos gerais para melhorar a flexibilidade das dicas fornecidas ou do *p
         *   [3.1.2 wget](#wget)
         *   [3.1.3 aria2](#aria2)
         *   [3.1.4 Outros aplicativos](#Outros_aplicativos)
-*   [4 Utilitários](#Utilit.C3.A1rios)
-    *   [4.1 Gráficos](#Gr.C3.A1ficos)
+*   [4 Utilitários](#Utilitários)
+    *   [4.1 Gráficos](#Gráficos)
 
 ## Manutenção
 
@@ -131,7 +131,7 @@ $ expac --timefmt=%s '%l\t%n' | sort -n | tail -n 20
 
 #### Que não estejam em um grupo ou repositório especificado
 
-**Nota:** Para obter uma lista de pacotes instalados como dependências, mas não mais exigidos para qualquer pacote instalado, veja [#Removendo pacotes não usados (órfãos)](#Removendo_pacotes_n.C3.A3o_usados_.28.C3.B3rf.C3.A3os.29).
+**Nota:** Para obter uma lista de pacotes instalados como dependências, mas não mais exigidos para qualquer pacote instalado, veja [#Removendo pacotes não usados (órfãos)](#Removendo_pacotes_não_usados_(órfãos)).
 
 Listar explicitamente os pacotes instalados explicitamente que não estejam no grupo [base](https://www.archlinux.org/groups/x86_64/base/) nem no [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/):
 
@@ -559,7 +559,7 @@ Se você suspeitar de corrompimento de arquivos (por exemplo, por falha de softw
 
 ```
 
-Para recuperação da base de dados, veja [#Restaurar a base de dados local do pacman](#Restaurar_a_base_de_dados_local_do_pacman). Os arquivos `mtree` também pode ser [extraído como `.MTREE` a partir dos respectivos arquivos de pacote](#Vendo_um_.C3.BAnico_arquivo_dentro_de_um_arquivo_.pkg).
+Para recuperação da base de dados, veja [#Restaurar a base de dados local do pacman](#Restaurar_a_base_de_dados_local_do_pacman). Os arquivos `mtree` também pode ser [extraído como `.MTREE` a partir dos respectivos arquivos de pacote](#Vendo_um_único_arquivo_dentro_de_um_arquivo_.pkg).
 
 **Nota:** Isso **não** deve ser usado assim quando se suspeita de mudanças maliciosas! Neste caso, são recomendadas precauções de segurança, como o uso de uma mídia *Live* e uma fonte independente para as somas de hash.
 

@@ -5,23 +5,23 @@
 *   [Netctl](/index.php/Netctl "Netctl")
 *   [NetworkManager](/index.php/NetworkManager "NetworkManager")
 
-[Wicd](http://www.wicd.net/)是一个既能管理有线网络又能管理无线网络的网络接入管理器，是 [NetworkManager](/index.php/NetworkManager "NetworkManager") 的一个功能相似的替代。Wicd是用[Python](/index.php/Python_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Python (简体中文)")和[GTK+](/index.php/GTK%2B_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GTK+ (简体中文)")写成的。另外，一个用[Qt](/index.php/Qt_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Qt (简体中文)")写成的在[KDE](/index.php/KDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KDE (简体中文)")中工作的版本，可以从 [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")得到。Wicd 也可以从终端中用 curses 界面运行，不需要 X server 会话或者任务面板 (参见 [#运行 Wicd](#.E8.BF.90.E8.A1.8C_Wicd))。
+[Wicd](http://www.wicd.net/)是一个既能管理有线网络又能管理无线网络的网络接入管理器，是 [NetworkManager](/index.php/NetworkManager "NetworkManager") 的一个功能相似的替代。Wicd是用[Python](/index.php/Python_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Python (简体中文)")和[GTK+](/index.php/GTK%2B_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GTK+ (简体中文)")写成的。另外，一个用[Qt](/index.php/Qt_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Qt (简体中文)")写成的在[KDE](/index.php/KDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KDE (简体中文)")中工作的版本，可以从 [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")得到。Wicd 也可以从终端中用 curses 界面运行，不需要 X server 会话或者任务面板 (参见 [#运行 Wicd](#运行_Wicd))。
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-    *   [1.1 基础软件包](#.E5.9F.BA.E7.A1.80.E8.BD.AF.E4.BB.B6.E5.8C.85)
-    *   [1.2 GTK 客户端](#GTK_.E5.AE.A2.E6.88.B7.E7.AB.AF)
-    *   [1.3 KDE 客户端](#KDE_.E5.AE.A2.E6.88.B7.E7.AB.AF)
-    *   [1.4 通知程序](#.E9.80.9A.E7.9F.A5.E7.A8.8B.E5.BA.8F)
-    *   [1.5 其他软件包安装方法](#.E5.85.B6.E4.BB.96.E8.BD.AF.E4.BB.B6.E5.8C.85.E5.AE.89.E8.A3.85.E6.96.B9.E6.B3.95)
-*   [2 开始使用](#.E5.BC.80.E5.A7.8B.E4.BD.BF.E7.94.A8)
-    *   [2.1 初始设置](#.E5.88.9D.E5.A7.8B.E8.AE.BE.E7.BD.AE)
-    *   [2.2 运行 Wicd](#.E8.BF.90.E8.A1.8C_Wicd)
-*   [3 常见问题解决方法](#.E5.B8.B8.E8.A7.81.E9.97.AE.E9.A2.98.E8.A7.A3.E5.86.B3.E6.96.B9.E6.B3.95)
-    *   [3.1 GUI 图形界面](#GUI_.E5.9B.BE.E5.BD.A2.E7.95.8C.E9.9D.A2)
+*   [1 安装](#安装)
+    *   [1.1 基础软件包](#基础软件包)
+    *   [1.2 GTK 客户端](#GTK_客户端)
+    *   [1.3 KDE 客户端](#KDE_客户端)
+    *   [1.4 通知程序](#通知程序)
+    *   [1.5 其他软件包安装方法](#其他软件包安装方法)
+*   [2 开始使用](#开始使用)
+    *   [2.1 初始设置](#初始设置)
+    *   [2.2 运行 Wicd](#运行_Wicd)
+*   [3 常见问题解决方法](#常见问题解决方法)
+    *   [3.1 GUI 图形界面](#GUI_图形界面)
     *   [3.2 Hidden Wireless Networks and Autoconnection HACK](#Hidden_Wireless_Networks_and_Autoconnection_HACK)
-*   [4 相关链接](#.E7.9B.B8.E5.85.B3.E9.93.BE.E6.8E.A5)
+*   [4 相关链接](#相关链接)
 
 ## 安装
 
@@ -118,7 +118,7 @@ $ wicd-client -n
 
 你也可以把**wicd-client**添加到你所使用的DE/WM 自启动列表中，这样每次登录就能自动启动图形管理界面。
 
-**注意:** 一些用户当使用这种方法会遇到运行两个 `wicd-client` 进程的问题。在 Arch forums 和 Arch bug reports 有关于此的讨论(参见 [#相关链接](#.E7.9B.B8.E5.85.B3.E9.93.BE.E6.8E.A5))。貌似是 wicd 包会在 `/etc/xdg/autostart/wicd-tray.desktop` 放置一个文件，这会在登入桌面环境/窗口管理器时自动启动 wicd-client。如果是这个问题，如果你在桌面环境/窗口管理器的启动文件中添加了一个 `wicd-client` 的话你会有两个 `wicd-client` 同时运行。如果发生这种情况，确认 `wicd-tray.desktop` 文件存在于 `/etc/xdg/autostart`; 如果是，只需要在守护进程列表中有 `wicd` 就可以了。
+**注意:** 一些用户当使用这种方法会遇到运行两个 `wicd-client` 进程的问题。在 Arch forums 和 Arch bug reports 有关于此的讨论(参见 [#相关链接](#相关链接))。貌似是 wicd 包会在 `/etc/xdg/autostart/wicd-tray.desktop` 放置一个文件，这会在登入桌面环境/窗口管理器时自动启动 wicd-client。如果是这个问题，如果你在桌面环境/窗口管理器的启动文件中添加了一个 `wicd-client` 的话你会有两个 `wicd-client` 同时运行。如果发生这种情况，确认 `wicd-tray.desktop` 文件存在于 `/etc/xdg/autostart`; 如果是，只需要在守护进程列表中有 `wicd` 就可以了。
 
 你也可以在终端中运行 wicd 作为一个 curses 程序：
 

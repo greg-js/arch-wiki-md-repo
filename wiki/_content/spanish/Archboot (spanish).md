@@ -7,15 +7,15 @@ Solo funciona en la memoria RAM, sin ningún tipo de sistemas de archivos especi
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Diferencias con el soporte de instalación de archiso](#Diferencias_con_el_soporte_de_instalaci.C3.B3n_de_archiso)
+*   [1 Instalación](#Instalación)
+*   [2 Diferencias con el soporte de instalación de archiso](#Diferencias_con_el_soporte_de_instalación_de_archiso)
 *   [3 Lanzamientos de la ISO de Archboot](#Lanzamientos_de_la_ISO_de_Archboot)
     *   [3.1 Grabar lanzamiento](#Grabar_lanzamiento)
-    *   [3.2 Arrancar PXE/sistema de rescate](#Arrancar_PXE.2Fsistema_de_rescate)
+    *   [3.2 Arrancar PXE/sistema de rescate](#Arrancar_PXE/sistema_de_rescate)
     *   [3.3 Modos de arranque soportados por el soporte de Archboot](#Modos_de_arranque_soportados_por_el_soporte_de_Archboot)
-    *   [3.4 ¿Cómo hacer una instalación remota con ssh?](#.C2.BFC.C3.B3mo_hacer_una_instalaci.C3.B3n_remota_con_ssh.3F)
-    *   [3.5 Características del configurador interactivo](#Caracter.C3.ADsticas_del_configurador_interactivo)
-    *   [3.6 FAQ, limitaciones y problemas conocidos](#FAQ.2C_limitaciones_y_problemas_conocidos)
+    *   [3.4 ¿Cómo hacer una instalación remota con ssh?](#¿Cómo_hacer_una_instalación_remota_con_ssh?)
+    *   [3.5 Características del configurador interactivo](#Características_del_configurador_interactivo)
+    *   [3.6 FAQ, limitaciones y problemas conocidos](#FAQ,_limitaciones_y_problemas_conocidos)
     *   [3.7 Antecedentes](#Antecedentes)
     *   [3.8 Errores](#Errores)
 *   [4 Lanzamientos BETA de la ISO de Archboot](#Lanzamientos_BETA_de_la_ISO_de_Archboot)
@@ -23,8 +23,8 @@ Solo funciona en la memoria RAM, sin ningún tipo de sistemas de archivos especi
 *   [6 HOWTO: crear archivos de imagen](#HOWTO:_crear_archivos_de_imagen)
     *   [6.1 Requisitos](#Requisitos)
     *   [6.2 Crear entornos chroot para archboot](#Crear_entornos_chroot_para_archboot)
-    *   [6.3 Instalar archboot y actualizar a los últimos paquetes](#Instalar_archboot_y_actualizar_a_los_.C3.BAltimos_paquetes)
-    *   [6.4 Generar imágenes](#Generar_im.C3.A1genes)
+    *   [6.3 Instalar archboot y actualizar a los últimos paquetes](#Instalar_archboot_y_actualizar_a_los_últimos_paquetes)
+    *   [6.4 Generar imágenes](#Generar_imágenes)
 
 ## Instalación
 

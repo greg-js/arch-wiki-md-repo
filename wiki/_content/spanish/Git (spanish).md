@@ -13,16 +13,16 @@ Artículos relacionados
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-    *   [1.1 Programas Gráficos](#Programas_Gr.C3.A1ficos)
-*   [2 Configuración](#Configuraci.C3.B3n)
+*   [1 Instalación](#Instalación)
+    *   [1.1 Programas Gráficos](#Programas_Gráficos)
+*   [2 Configuración](#Configuración)
 *   [3 Uso](#Uso)
     *   [3.1 Repositorio local](#Repositorio_local)
-        *   [3.1.1 Preparación](#Preparaci.C3.B3n)
+        *   [3.1.1 Preparación](#Preparación)
         *   [3.1.2 Confirmar cambios](#Confirmar_cambios)
         *   [3.1.3 Ver cambios](#Ver_cambios)
         *   [3.1.4 Ramas en un repositorio](#Ramas_en_un_repositorio)
-    *   [3.2 Colaboración](#Colaboraci.C3.B3n)
+    *   [3.2 Colaboración](#Colaboración)
         *   [3.2.1 Adoptando una buena etiqueta](#Adoptando_una_buena_etiqueta)
         *   [3.2.2 Clonar un repositorio](#Clonar_un_repositorio)
         *   [3.2.3 Solicitud de cambio](#Solicitud_de_cambio)
@@ -30,20 +30,20 @@ Artículos relacionados
         *   [3.2.5 Publicar en un repositorio](#Publicar_en_un_repositorio)
         *   [3.2.6 Trabajando con fusiones](#Trabajando_con_fusiones)
         *   [3.2.7 Enviar un parche a una lista de correo](#Enviar_un_parche_a_una_lista_de_correo)
-    *   [3.3 Histórico y revisiones](#Hist.C3.B3rico_y_revisiones)
-        *   [3.3.1 Buscar en el histórico](#Buscar_en_el_hist.C3.B3rico)
+    *   [3.3 Histórico y revisiones](#Histórico_y_revisiones)
+        *   [3.3.1 Buscar en el histórico](#Buscar_en_el_histórico)
         *   [3.3.2 Revisiones para lanzamientos](#Revisiones_para_lanzamientos)
         *   [3.3.3 Organizando confirmaciones](#Organizando_confirmaciones)
 *   [4 Trucos y consejos](#Trucos_y_consejos)
     *   [4.1 Usar git-config](#Usar_git-config)
-    *   [4.2 Acelerar verificación](#Acelerar_verificaci.C3.B3n)
+    *   [4.2 Acelerar verificación](#Acelerar_verificación)
     *   [4.3 Valores por defecto del protocolo](#Valores_por_defecto_del_protocolo)
 *   [5 Servidor Git](#Servidor_Git)
     *   [5.1 SSH](#SSH)
 
 ## Instalación
 
-[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [git](https://www.archlinux.org/packages/?name=git). Para la versión en desarrollo instale el paquete [git-git](https://aur.archlinux.org/packages/git-git/). Verifique los requerimientos opcionales al usar *git svn*, *git gui* and *gitk*.
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") el paquete [git](https://www.archlinux.org/packages/?name=git). Para la versión en desarrollo instale el paquete [git-git](https://aur.archlinux.org/packages/git-git/). Verifique los requerimientos opcionales al usar *git svn*, *git gui* and *gitk*.
 
 ### Programas Gráficos
 
@@ -331,7 +331,7 @@ $ git branch -d *branch*
 #### Adoptando una buena etiqueta
 
 *   Cuando se considere contribuir a un proyecto existente, lea y entienda su licencia, ya que esta puede limitar excesivamente la habilidad para modificar el código. Algunas licencias pueden generar disputas sobre la autoría del código.
-*   Piense sobre la comunidad del proyecto y que tan bien se puede encajar allí. Para tener un sentimiento del rumbo del proyecto, lea la documentación e incluso el [histórico](#Hist.C3.B3rico_y_revisiones) del repositorio.
+*   Piense sobre la comunidad del proyecto y que tan bien se puede encajar allí. Para tener un sentimiento del rumbo del proyecto, lea la documentación e incluso el [histórico](#Histórico_y_revisiones) del repositorio.
 *   Cuando se solicite incluir (pull) una confirmación, o se suba un parche, mantenga el cambio pequeño, conciso y documentado; esto ayudara a los mantenedores a entender sus cambios y decidir si los incorporan, o para preguntar por una corrección.
 *   Si una contribución es rechazada, no se desanime, el proyecto es de ellos. Si es importante, discuta las razones para la contribución tan clara y pacientemente como sea posible: con este procedimiento una solución puede que eventualmente sea posible.
 
@@ -430,7 +430,7 @@ Vea [Procedimiento para fusionar](https://git-scm.com/book/es/v2/Ramificaciones-
 
 Si desea enviar parches directamente a una lista de correo, necesita instalar los siguientes paquetes: [perl-authen-sasl](https://www.archlinux.org/packages/?name=perl-authen-sasl), [perl-net-smtp-ssl](https://www.archlinux.org/packages/?name=perl-net-smtp-ssl) y [perl-mime-tools](https://www.archlinux.org/packages/?name=perl-mime-tools).
 
-Asegúrese de tener su usuario y correo electrónica configurado, vea[#Configuración](#Configuraci.C3.B3n).
+Asegúrese de tener su usuario y correo electrónica configurado, vea[#Configuración](#Configuración).
 
 **Modifique** la configuración de su **e-mail**:
 

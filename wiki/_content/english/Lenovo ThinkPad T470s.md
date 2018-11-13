@@ -15,7 +15,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 
 ## Contents
 
-*   [1 firmware (e.g. bios and peripherals)](#firmware_.28e.g._bios_and_peripherals.29)
+*   [1 firmware (e.g. bios and peripherals)](#firmware_(e.g._bios_and_peripherals))
 *   [2 kernel and hardware support](#kernel_and_hardware_support)
 *   [3 mobile broadband](#mobile_broadband)
 *   [4 lspci and lsusb](#lspci_and_lsusb)

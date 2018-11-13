@@ -17,7 +17,7 @@ This guide shows how to convert a functional single-drive system to a [RAID](/in
     *   [4.2 Alter fstab](#Alter_fstab)
     *   [4.3 Rebuild the initramfs](#Rebuild_the_initramfs)
         *   [4.3.1 Chroot into the RAID system](#Chroot_into_the_RAID_system)
-        *   [4.3.2 Record mdadm's config](#Record_mdadm.27s_config)
+        *   [4.3.2 Record mdadm's config](#Record_mdadm's_config)
         *   [4.3.3 Rebuild initcpio](#Rebuild_initcpio)
     *   [4.4 Install the boot loader on the RAID array](#Install_the_boot_loader_on_the_RAID_array)
         *   [4.4.1 GRUB Legacy](#GRUB_Legacy_2)

@@ -9,7 +9,7 @@
     *   [2.2 Add correct IR sensor](#Add_correct_IR_sensor)
     *   [2.3 Add face to Howdy](#Add_face_to_Howdy)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Howdy doesn't seem to work](#Howdy_doesn.27t_seem_to_work)
+    *   [3.1 Howdy doesn't seem to work](#Howdy_doesn't_seem_to_work)
 
 ## Installation
 

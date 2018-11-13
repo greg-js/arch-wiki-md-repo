@@ -4,10 +4,10 @@
 
 *   [1 Instalacija](#Instalacija)
 *   [2 Konfiguracija](#Konfiguracija)
-*   [3 Ažuriranje baze podataka](#A.C5.BEuriranje_baze_podataka)
+*   [3 Ažuriranje baze podataka](#Ažuriranje_baze_podataka)
 *   [4 Postavke Servera](#Postavke_Servera)
 *   [5 Skeniranje virusa](#Skeniranje_virusa)
-*   [6 Rešavanje problema](#Re.C5.A1avanje_problema)
+*   [6 Rešavanje problema](#Rešavanje_problema)
 
 ## Instalacija
 

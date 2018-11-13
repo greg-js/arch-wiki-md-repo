@@ -7,7 +7,7 @@ From the [documentation](https://backintime.readthedocs.io/en/latest/):
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Can't find snapshots folder](#Can.27t_find_snapshots_folder)
+    *   [3.1 Can't find snapshots folder](#Can't_find_snapshots_folder)
 *   [4 See also](#See_also)
 
 ## Installation

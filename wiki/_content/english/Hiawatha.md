@@ -9,11 +9,11 @@
     *   [2.3 CGI](#CGI)
         *   [2.3.1 Interpreters for CGI scripts](#Interpreters_for_CGI_scripts)
     *   [2.4 FastCGI](#FastCGI)
-    *   [2.5 Enable SSL/TLS](#Enable_SSL.2FTLS)
+    *   [2.5 Enable SSL/TLS](#Enable_SSL/TLS)
     *   [2.6 Reverse proxy](#Reverse_proxy)
 *   [3 Certificates](#Certificates)
     *   [3.1 Self-signed certificate](#Self-signed_certificate)
-    *   [3.2 Let's Encrypt certificate](#Let.27s_Encrypt_certificate)
+    *   [3.2 Let's Encrypt certificate](#Let's_Encrypt_certificate)
         *   [3.2.1 Install](#Install)
         *   [3.2.2 Obtain a certificate](#Obtain_a_certificate)
         *   [3.2.3 Auto renewal](#Auto_renewal)
@@ -88,7 +88,7 @@ Hiawatha supports two different methods to send information to the FastCGI proce
 
 ### Enable SSL/TLS
 
-First, a *X.509 SSL/TLS* certificate is required to use TLS. If you do not have one, you can use a [#Self-signed certificate](#Self-signed_certificate) or use one for free from [#Let's Encrypt certificate](#Let.27s_Encrypt_certificate) authority.
+First, a *X.509 SSL/TLS* certificate is required to use TLS. If you do not have one, you can use a [#Self-signed certificate](#Self-signed_certificate) or use one for free from [#Let's Encrypt certificate](#Let's_Encrypt_certificate) authority.
 
 The order of the items in the certificate file must be as follows:
 
@@ -152,7 +152,7 @@ VirtualHost {
 
 To get a local self-signed certificate for personal use, testing or web development, the procedure in [OpenSSL#Generate_a_self-signed_certificate](/index.php/OpenSSL#Generate_a_self-signed_certificate "OpenSSL") to create both a private key and a self-signed certificate can be followed.
 
-Make sure you did add the SSL bundle path to your `hiawatha.conf` as stated in [#Enable SSL/TLS](#Enable_SSL.2FTLS).
+Make sure you did add the SSL bundle path to your `hiawatha.conf` as stated in [#Enable SSL/TLS](#Enable_SSL/TLS).
 
 As this solution does not use an official certificate authority (CA), a security exception will need to be added the first time the website is visited.
 

@@ -14,7 +14,7 @@ Related articles
         *   [2.1.1 Local mail only](#Local_mail_only)
         *   [2.1.2 Hybrid : local mail and relay](#Hybrid_:_local_mail_and_relay)
         *   [2.1.3 Relay only](#Relay_only)
-    *   [2.2 Simple OpenSMTPD/mbox configuration](#Simple_OpenSMTPD.2Fmbox_configuration)
+    *   [2.2 Simple OpenSMTPD/mbox configuration](#Simple_OpenSMTPD/mbox_configuration)
         *   [2.2.1 TLS](#TLS)
         *   [2.2.2 Create user accounts](#Create_user_accounts)
         *   [2.2.3 Craft a simple smtpd.conf setup](#Craft_a_simple_smtpd.conf_setup)
@@ -24,7 +24,7 @@ Related articles
     *   [3.1 Console debugging](#Console_debugging)
     *   [3.2 Subsystem tracing](#Subsystem_tracing)
     *   [3.3 Manual Submission port authentication](#Manual_Submission_port_authentication)
-    *   [3.4 "Helo command rejected: need fully-qualified hostname"](#.22Helo_command_rejected:_need_fully-qualified_hostname.22)
+    *   [3.4 "Helo command rejected: need fully-qualified hostname"](#"Helo_command_rejected:_need_fully-qualified_hostname")
 *   [4 See also](#See_also)
 
 ## Installation
@@ -93,7 +93,7 @@ The aliases option is used for the local user mapping, for a simplified mapping 
 
 #### TLS
 
-To obtain a certificate, see [OpenSSL#Certificates](/index.php/OpenSSL#Certificates "OpenSSL").
+To obtain a certificate, see [OpenSSL#Usage](/index.php/OpenSSL#Usage "OpenSSL").
 
 **Note:** OpenSMTPD has solid defaults, SSLv3 is always disabled and the default `ciphers` are not known to be insecure. You might still want to test the server as described in [Server-side TLS](/index.php/Server-side_TLS "Server-side TLS").
 

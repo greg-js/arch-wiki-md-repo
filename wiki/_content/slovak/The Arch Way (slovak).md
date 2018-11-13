@@ -1,9 +1,9 @@
 ## Contents
 
-*   [1 Princípy a filozofia Archu](#Princ.C3.ADpy_a_filozofia_Archu)
-    *   [1.1 Princípy](#Princ.C3.ADpy)
+*   [1 Princípy a filozofia Archu](#Princípy_a_filozofia_Archu)
+    *   [1.1 Princípy](#Princípy)
     *   [1.2 Filozofia](#Filozofia)
-    *   [1.3 Komentáre](#Koment.C3.A1re)
+    *   [1.3 Komentáre](#Komentáre)
 *   [2 ZA a PROTI](#ZA_a_PROTI)
     *   [2.1 ZA](#ZA)
     *   [2.2 PROTI](#PROTI)

@@ -13,19 +13,19 @@ En este artículo se describe, además, cómo configurar y ejecutar el demonio N
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Configuración](#Configuraci.C3.B3n)
-    *   [2.1 Configurar conexión a servidores NTP](#Configurar_conexi.C3.B3n_a_servidores_NTP)
+*   [1 Instalación](#Instalación)
+*   [2 Configuración](#Configuración)
+    *   [2.1 Configurar conexión a servidores NTP](#Configurar_conexión_a_servidores_NTP)
     *   [2.2 Configurar el propio servidor NTP](#Configurar_el_propio_servidor_NTP)
-    *   [2.3 Otros recursos para la configuración de NTP](#Otros_recursos_para_la_configuraci.C3.B3n_de_NTP)
+    *   [2.3 Otros recursos para la configuración de NTP](#Otros_recursos_para_la_configuración_de_NTP)
 *   [3 Usar sin demonio](#Usar_sin_demonio)
     *   [3.1 Sincronizar cada vez que arranque](#Sincronizar_cada_vez_que_arranque)
     *   [3.2 Netctl](#Netctl)
 *   [4 Ejecutar como un demonio](#Ejecutar_como_un_demonio)
-    *   [4.1 Comprobar si el demonio está sincronizando correctamente](#Comprobar_si_el_demonio_est.C3.A1_sincronizando_correctamente)
+    *   [4.1 Comprobar si el demonio está sincronizando correctamente](#Comprobar_si_el_demonio_está_sincronizando_correctamente)
     *   [4.2 NetworkManager](#NetworkManager)
     *   [4.3 Ejecutar en un entorno chroot](#Ejecutar_en_un_entorno_chroot)
-*   [5 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [5 Véase también](#Véase_también)
 
 ## Instalación
 

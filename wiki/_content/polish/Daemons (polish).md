@@ -3,11 +3,11 @@
 ## Contents
 
 *   [1 Uruchamianie na starcie systemu](#Uruchamianie_na_starcie_systemu)
-*   [2 Ręczne zarządzanie demonami](#R.C4.99czne_zarz.C4.85dzanie_demonami)
+*   [2 Ręczne zarządzanie demonami](#Ręczne_zarządzanie_demonami)
 *   [3 Podstawy](#Podstawy)
-*   [4 Start demonów w tle](#Start_demon.C3.B3w_w_tle)
-*   [5 GUI dla menadżera daemonów w ArchLinux](#GUI_dla_menad.C5.BCera_daemon.C3.B3w_w_ArchLinux)
-*   [6 Lista popularnych daemonów](#Lista_popularnych_daemon.C3.B3w)
+*   [4 Start demonów w tle](#Start_demonów_w_tle)
+*   [5 GUI dla menadżera daemonów w ArchLinux](#GUI_dla_menadżera_daemonów_w_ArchLinux)
+*   [6 Lista popularnych daemonów](#Lista_popularnych_daemonów)
 
 ## Uruchamianie na starcie systemu
 

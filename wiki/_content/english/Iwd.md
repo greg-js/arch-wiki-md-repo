@@ -18,7 +18,7 @@ IWD can work in standalone mode or in combination with comprehensive network man
     *   [3.2 TLS Based EAP Methods](#TLS_Based_EAP_Methods)
 *   [4 Optional configuration](#Optional_configuration)
     *   [4.1 Disable auto-connect for a particular network](#Disable_auto-connect_for_a_particular_network)
-    *   [4.2 Deny console (local) user from modifying the settings](#Deny_console_.28local.29_user_from_modifying_the_settings)
+    *   [4.2 Deny console (local) user from modifying the settings](#Deny_console_(local)_user_from_modifying_the_settings)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -129,7 +129,7 @@ If you do not want autoconnect to the AP you can set the option to False and con
 
 ### TLS Based EAP Methods
 
-As of now, to connect to EAP-TLS, EAP-TTLS, and EAP-PEAP, the kernel has to be patched. Edit the PKGBUILD for the kernel and add the following sources
+Until Linux kernel v4.20, to connect to EAP-TLS, EAP-TTLS, and EAP-PEAP, the kernel has to be patched. Edit the PKGBUILD for the kernel and add the following sources
 
  `PKGBUILD` 
 ```

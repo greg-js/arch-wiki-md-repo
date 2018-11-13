@@ -5,7 +5,7 @@ Nota: il modo migliore per confrontare Arch con le altre distribuzioni è quello
 
 *   [1 Source-Based](#Source-Based)
     *   [1.1 Arch vs Gentoo](#Arch_vs_Gentoo)
-    *   [1.2 Arch vs Sorcerer/Lunar-linux/Sourcemage](#Arch_vs_Sorcerer.2FLunar-linux.2FSourcemage)
+    *   [1.2 Arch vs Sorcerer/Lunar-linux/Sourcemage](#Arch_vs_Sorcerer/Lunar-linux/Sourcemage)
 *   [2 Minimali](#Minimali)
     *   [2.1 Arch vs LFS](#Arch_vs_LFS)
     *   [2.2 Arch vs CRUX](#Arch_vs_CRUX)
@@ -16,12 +16,12 @@ Nota: il modo migliore per confrontare Arch con le altre distribuzioni è quello
     *   [3.3 Arch vs Mandriva](#Arch_vs_Mandriva)
     *   [3.4 Arch vs SUSE](#Arch_vs_SUSE)
     *   [3.5 Arch vs PCLinuxOS](#Arch_vs_PCLinuxOS)
-*   [4 I *BSD](#I_.2ABSD)
+*   [4 I *BSD](#I_*BSD)
     *   [4.1 Arch vs FreeBSD](#Arch_vs_FreeBSD)
     *   [4.2 Arch vs NetBSD](#Arch_vs_NetBSD)
     *   [4.3 Arch vs OpenBSD](#Arch_vs_OpenBSD)
 *   [5 Altre](#Altre)
-    *   [5.1 Arch vs Debian GNU/Linux](#Arch_vs_Debian_GNU.2FLinux)
+    *   [5.1 Arch vs Debian GNU/Linux](#Arch_vs_Debian_GNU/Linux)
     *   [5.2 Arch vs Frugalware](#Arch_vs_Frugalware)
 
 # Source-Based

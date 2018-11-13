@@ -47,7 +47,7 @@ Latter is comparable to `pacman -Ql` (see [pacman#Querying package databases](/i
 
 ## Command not found
 
-See [Bash#Command not found](/index.php/Bash#Command_not_found "Bash"), [Zsh#The "command not found" hook](/index.php/Zsh#The_.22command_not_found.22_hook "Zsh") and [Fish#The "command not found" hook](/index.php/Fish#The_.22command_not_found.22_hook "Fish").
+See [Bash#Command not found](/index.php/Bash#Command_not_found "Bash"), [Zsh#The "command not found" hook](/index.php/Zsh#The_"command_not_found"_hook "Zsh") and [Fish#The "command not found" hook](/index.php/Fish#The_"command_not_found"_hook "Fish").
 
 ## Automatic updates
 

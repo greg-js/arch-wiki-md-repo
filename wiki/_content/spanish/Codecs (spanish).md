@@ -20,16 +20,16 @@ Este artículo trata solo con codecs y backends de aplicaciones; véase la [list
 *   [2 Listado de codecs](#Listado_de_codecs)
     *   [2.1 Codecs de audio](#Codecs_de_audio)
         *   [2.1.1 AAC](#AAC)
-        *   [2.1.2 Compresión sin pérdida](#Compresi.C3.B3n_sin_p.C3.A9rdida)
+        *   [2.1.2 Compresión sin pérdida](#Compresión_sin_pérdida)
     *   [2.2 Codecs de imagen](#Codecs_de_imagen)
-    *   [2.3 Codecs de vídeo](#Codecs_de_v.C3.ADdeo)
+    *   [2.3 Codecs de vídeo](#Codecs_de_vídeo)
 *   [3 Backends](#Backends)
     *   [3.1 GStreamer](#GStreamer)
     *   [3.2 xine](#xine)
     *   [3.3 libavcodec](#libavcodec)
 *   [4 Consejos y trucos](#Consejos_y_trucos)
     *   [4.1 Instalar codecs binarios de MPlayer](#Instalar_codecs_binarios_de_MPlayer)
-    *   [4.2 Sin H264, mpg4 o Musepack (.mpc) en Totem Player](#Sin_H264.2C_mpg4_o_Musepack_.28.mpc.29_en_Totem_Player)
+    *   [4.2 Sin H264, mpg4 o Musepack (.mpc) en Totem Player](#Sin_H264,_mpg4_o_Musepack_(.mpc)_en_Totem_Player)
 
 ## Requisitos
 

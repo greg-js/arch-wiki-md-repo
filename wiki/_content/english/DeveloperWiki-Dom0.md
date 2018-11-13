@@ -2,13 +2,13 @@
 
 *   [1 Users](#Users)
 *   [2 Firewall](#Firewall)
-    *   [2.1 Incoming traffic to dom0 (INPUT chain)](#Incoming_traffic_to_dom0_.28INPUT_chain.29)
-    *   [2.2 Outgoing traffoc from dom0 (OUTPUT chain)](#Outgoing_traffoc_from_dom0_.28OUTPUT_chain.29)
-    *   [2.3 Incoming traffic to gerolde (FORWARD chain)](#Incoming_traffic_to_gerolde_.28FORWARD_chain.29)
-    *   [2.4 Incoming traffic to gudrun (FORWARD chain)](#Incoming_traffic_to_gudrun_.28FORWARD_chain.29)
-    *   [2.5 Traffic from gudrun to gerolde (FORWARD chain)](#Traffic_from_gudrun_to_gerolde_.28FORWARD_chain.29)
-    *   [2.6 Outgoing traffic from gerolde (FORWARD chain)](#Outgoing_traffic_from_gerolde_.28FORWARD_chain.29)
-    *   [2.7 Outgoing traffic from gudrun (FORWARD chain)](#Outgoing_traffic_from_gudrun_.28FORWARD_chain.29)
+    *   [2.1 Incoming traffic to dom0 (INPUT chain)](#Incoming_traffic_to_dom0_(INPUT_chain))
+    *   [2.2 Outgoing traffoc from dom0 (OUTPUT chain)](#Outgoing_traffoc_from_dom0_(OUTPUT_chain))
+    *   [2.3 Incoming traffic to gerolde (FORWARD chain)](#Incoming_traffic_to_gerolde_(FORWARD_chain))
+    *   [2.4 Incoming traffic to gudrun (FORWARD chain)](#Incoming_traffic_to_gudrun_(FORWARD_chain))
+    *   [2.5 Traffic from gudrun to gerolde (FORWARD chain)](#Traffic_from_gudrun_to_gerolde_(FORWARD_chain))
+    *   [2.6 Outgoing traffic from gerolde (FORWARD chain)](#Outgoing_traffic_from_gerolde_(FORWARD_chain))
+    *   [2.7 Outgoing traffic from gudrun (FORWARD chain)](#Outgoing_traffic_from_gudrun_(FORWARD_chain))
 
 ## Users
 

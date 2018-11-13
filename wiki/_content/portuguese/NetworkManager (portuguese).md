@@ -11,9 +11,9 @@ O [NetworkManager](http://www.gnome.org/projects/NetworkManager/) é um programa
 
 ## Contents
 
-*   [1 Instalação](#Instala.C3.A7.C3.A3o)
-    *   [1.1 Suporte a banda larga móvel](#Suporte_a_banda_larga_m.C3.B3vel)
-    *   [1.2 Suporte a PPPoE / DSL](#Suporte_a_PPPoE_.2F_DSL)
+*   [1 Instalação](#Instalação)
+    *   [1.1 Suporte a banda larga móvel](#Suporte_a_banda_larga_móvel)
+    *   [1.2 Suporte a PPPoE / DSL](#Suporte_a_PPPoE_/_DSL)
     *   [1.3 Suporte a VPN](#Suporte_a_VPN)
 *   [2 Uso](#Uso)
     *   [2.1 Exemplos de nmcli](#Exemplos_de_nmcli)
@@ -23,71 +23,71 @@ O [NetworkManager](http://www.gnome.org/projects/NetworkManager/) é um programa
     *   [3.3 nm-applet](#nm-applet)
         *   [3.3.1 Appindicator](#Appindicator)
     *   [3.4 nmcli-dmenu](#nmcli-dmenu)
-*   [4 Configuração](#Configura.C3.A7.C3.A3o)
+*   [4 Configuração](#Configuração)
     *   [4.1 Habilitar NetworkManager](#Habilitar_NetworkManager)
     *   [4.2 Habilitar NetworkManager Wait Online](#Habilitar_NetworkManager_Wait_Online)
-    *   [4.3 Configurar as permissões de PolicyKit](#Configurar_as_permiss.C3.B5es_de_PolicyKit)
-    *   [4.4 Configurações de proxy](#Configura.C3.A7.C3.B5es_de_proxy)
+    *   [4.3 Configurar as permissões de PolicyKit](#Configurar_as_permissões_de_PolicyKit)
+    *   [4.4 Configurações de proxy](#Configurações_de_proxy)
     *   [4.5 Verificando conectividade](#Verificando_conectividade)
     *   [4.6 Cliente DHCP](#Cliente_DHCP)
     *   [4.7 Cache de DNS e DNS dividido](#Cache_de_DNS_e_DNS_dividido)
         *   [4.7.1 dnsmasq](#dnsmasq)
-            *   [4.7.1.1 Configuração personalizada](#Configura.C3.A7.C3.A3o_personalizada)
+            *   [4.7.1.1 Configuração personalizada](#Configuração_personalizada)
             *   [4.7.1.2 IPv6](#IPv6)
             *   [4.7.1.3 DNSSEC](#DNSSEC)
         *   [4.7.2 systemd-resolved](#systemd-resolved)
-        *   [4.7.3 Outros métodos](#Outros_m.C3.A9todos)
-*   [5 Serviços de rede com o NetworkManager dispatcher](#Servi.C3.A7os_de_rede_com_o_NetworkManager_dispatcher)
+        *   [4.7.3 Outros métodos](#Outros_métodos)
+*   [5 Serviços de rede com o NetworkManager dispatcher](#Serviços_de_rede_com_o_NetworkManager_dispatcher)
     *   [5.1 Evitando o esgotamento de tempo limite do dispatcher](#Evitando_o_esgotamento_de_tempo_limite_do_dispatcher)
     *   [5.2 Exemplos de dispatcher](#Exemplos_de_dispatcher)
         *   [5.2.1 Montar pasta remota com sshfs](#Montar_pasta_remota_com_sshfs)
         *   [5.2.2 Montagem de compartilhamentos SMB](#Montagem_de_compartilhamentos_SMB)
         *   [5.2.3 Montagem de compartilhamentos NFS](#Montagem_de_compartilhamentos_NFS)
         *   [5.2.4 Usar dispatcher para ativar rede sem fio automaticamente dependendo de cabo LAN estar conectado](#Usar_dispatcher_para_ativar_rede_sem_fio_automaticamente_dependendo_de_cabo_LAN_estar_conectado)
-        *   [5.2.5 Usar dispatcher para conectar a uma VPN após uma conexão de rede ser estabelecida](#Usar_dispatcher_para_conectar_a_uma_VPN_ap.C3.B3s_uma_conex.C3.A3o_de_rede_ser_estabelecida)
+        *   [5.2.5 Usar dispatcher para conectar a uma VPN após uma conexão de rede ser estabelecida](#Usar_dispatcher_para_conectar_a_uma_VPN_após_uma_conexão_de_rede_ser_estabelecida)
         *   [5.2.6 OpenNTPD](#OpenNTPD)
 *   [6 Testando](#Testando)
 *   [7 Dicas e truques](#Dicas_e_truques)
     *   [7.1 Senhas de Wi-Fi criptografadas](#Senhas_de_Wi-Fi_criptografadas)
         *   [7.1.1 Usando GNOME Keyring](#Usando_GNOME_Keyring)
         *   [7.1.2 Usando KDE Wallet](#Usando_KDE_Wallet)
-    *   [7.2 Compartilhando conexão internet pelo Wi-Fi](#Compartilhando_conex.C3.A3o_internet_pelo_Wi-Fi)
-    *   [7.3 Compartilhando conexão internet por Ethernet](#Compartilhando_conex.C3.A3o_internet_por_Ethernet)
-    *   [7.4 Verificando se a conectividade está ativa dentro de um script ou trabalho cron](#Verificando_se_a_conectividade_est.C3.A1_ativa_dentro_de_um_script_ou_trabalho_cron)
-    *   [7.5 Conectar a uma rede com segredo na inicialização](#Conectar_a_uma_rede_com_segredo_na_inicializa.C3.A7.C3.A3o)
-    *   [7.6 Desbloquear automaticamente o chaveiro após o login](#Desbloquear_automaticamente_o_chaveiro_ap.C3.B3s_o_login)
+    *   [7.2 Compartilhando conexão internet pelo Wi-Fi](#Compartilhando_conexão_internet_pelo_Wi-Fi)
+    *   [7.3 Compartilhando conexão internet por Ethernet](#Compartilhando_conexão_internet_por_Ethernet)
+    *   [7.4 Verificando se a conectividade está ativa dentro de um script ou trabalho cron](#Verificando_se_a_conectividade_está_ativa_dentro_de_um_script_ou_trabalho_cron)
+    *   [7.5 Conectar a uma rede com segredo na inicialização](#Conectar_a_uma_rede_com_segredo_na_inicialização)
+    *   [7.6 Desbloquear automaticamente o chaveiro após o login](#Desbloquear_automaticamente_o_chaveiro_após_o_login)
         *   [7.6.1 GNOME](#GNOME_2)
         *   [7.6.2 Gerenciador de login SLiM](#Gerenciador_de_login_SLiM)
     *   [7.7 OpenConnect com senha no KWallet](#OpenConnect_com_senha_no_KWallet)
-    *   [7.8 Ignorar dispositivos específicos](#Ignorar_dispositivos_espec.C3.ADficos)
-    *   [7.9 Configurando aleatorização de endereço MAC](#Configurando_aleatoriza.C3.A7.C3.A3o_de_endere.C3.A7o_MAC)
-    *   [7.10 Habilitar extensões de privacidade IPv6](#Habilitar_extens.C3.B5es_de_privacidade_IPv6)
-    *   [7.11 Trabalhando com conexões cabeadas](#Trabalhando_com_conex.C3.B5es_cabeadas)
+    *   [7.8 Ignorar dispositivos específicos](#Ignorar_dispositivos_específicos)
+    *   [7.9 Configurando aleatorização de endereço MAC](#Configurando_aleatorização_de_endereço_MAC)
+    *   [7.10 Habilitar extensões de privacidade IPv6](#Habilitar_extensões_de_privacidade_IPv6)
+    *   [7.11 Trabalhando com conexões cabeadas](#Trabalhando_com_conexões_cabeadas)
     *   [7.12 resolv.conf](#resolv.conf)
         *   [7.12.1 Usar openresolv](#Usar_openresolv)
     *   [7.13 Usando iwd como o backend de Wi-Fi](#Usando_iwd_como_o_backend_de_Wi-Fi)
-*   [8 Solução de problemas](#Solu.C3.A7.C3.A3o_de_problemas)
+*   [8 Solução de problemas](#Solução_de_problemas)
     *   [8.1 Nenhum prompt para senha de redes Wi-Fi seguras](#Nenhum_prompt_para_senha_de_redes_Wi-Fi_seguras)
-    *   [8.2 Nenhum tráfego via túnel PPTP](#Nenhum_tr.C3.A1fego_via_t.C3.BAnel_PPTP)
+    *   [8.2 Nenhum tráfego via túnel PPTP](#Nenhum_tráfego_via_túnel_PPTP)
     *   [8.3 Gerenciamento de rede desabilitado](#Gerenciamento_de_rede_desabilitado)
     *   [8.4 Problemas com cliente DHCP interno](#Problemas_com_cliente_DHCP_interno)
     *   [8.5 Problemas DHCP com dhclient](#Problemas_DHCP_com_dhclient)
-    *   [8.6 Modem 3G não detectado](#Modem_3G_n.C3.A3o_detectado)
+    *   [8.6 Modem 3G não detectado](#Modem_3G_não_detectado)
     *   [8.7 Desligando WLAN em laptops](#Desligando_WLAN_em_laptops)
-    *   [8.8 Reversão de configurações de endereço IP estático para DHCP](#Revers.C3.A3o_de_configura.C3.A7.C3.B5es_de_endere.C3.A7o_IP_est.C3.A1tico_para_DHCP)
-    *   [8.9 Não é possível editar conexões como usuário normal](#N.C3.A3o_.C3.A9_poss.C3.ADvel_editar_conex.C3.B5es_como_usu.C3.A1rio_normal)
+    *   [8.8 Reversão de configurações de endereço IP estático para DHCP](#Reversão_de_configurações_de_endereço_IP_estático_para_DHCP)
+    *   [8.9 Não é possível editar conexões como usuário normal](#Não_é_possível_editar_conexões_como_usuário_normal)
     *   [8.10 Esquecer rede sem fio oculta](#Esquecer_rede_sem_fio_oculta)
-    *   [8.11 VPN não funciona no GNOME](#VPN_n.C3.A3o_funciona_no_GNOME)
-    *   [8.12 Impossibilidade de se conectar a redes sem fio europeias visíveis](#Impossibilidade_de_se_conectar_a_redes_sem_fio_europeias_vis.C3.ADveis)
-    *   [8.13 Conexão automática a VPN na inicialização não funciona](#Conex.C3.A3o_autom.C3.A1tica_a_VPN_na_inicializa.C3.A7.C3.A3o_n.C3.A3o_funciona)
+    *   [8.11 VPN não funciona no GNOME](#VPN_não_funciona_no_GNOME)
+    *   [8.12 Impossibilidade de se conectar a redes sem fio europeias visíveis](#Impossibilidade_de_se_conectar_a_redes_sem_fio_europeias_visíveis)
+    *   [8.13 Conexão automática a VPN na inicialização não funciona](#Conexão_automática_a_VPN_na_inicialização_não_funciona)
     *   [8.14 Gargalo no systemd](#Gargalo_no_systemd)
-    *   [8.15 Desconexões de rede regulares, latência, pacotes perdidos (WiFi)](#Desconex.C3.B5es_de_rede_regulares.2C_lat.C3.AAncia.2C_pacotes_perdidos_.28WiFi.29)
-    *   [8.16 Impossibilidade de ligar o Wi-Fi com laptop Lenovo (IdeaPad, Legion, etc.)](#Impossibilidade_de_ligar_o_Wi-Fi_com_laptop_Lenovo_.28IdeaPad.2C_Legion.2C_etc..29)
+    *   [8.15 Desconexões de rede regulares, latência, pacotes perdidos (WiFi)](#Desconexões_de_rede_regulares,_latência,_pacotes_perdidos_(WiFi))
+    *   [8.16 Impossibilidade de ligar o Wi-Fi com laptop Lenovo (IdeaPad, Legion, etc.)](#Impossibilidade_de_ligar_o_Wi-Fi_com_laptop_Lenovo_(IdeaPad,_Legion,_etc.))
     *   [8.17 Desligar envido de hostname](#Desligar_envido_de_hostname)
     *   [8.18 nm-applet desaparece no i3wm](#nm-applet_desaparece_no_i3wm)
-    *   [8.19 Ícones de bandeja do nm-applet exibidos incorretamente](#.C3.8Dcones_de_bandeja_do_nm-applet_exibidos_incorretamente)
+    *   [8.19 Ícones de bandeja do nm-applet exibidos incorretamente](#Ícones_de_bandeja_do_nm-applet_exibidos_incorretamente)
     *   [8.20 Desabilitar NetworkManager ao usar dbus](#Desabilitar_NetworkManager_ao_usar_dbus)
-*   [9 Veja também](#Veja_tamb.C3.A9m)
+*   [9 Veja também](#Veja_também)
 
 ## Instalação
 
@@ -98,7 +98,7 @@ Interfaces adicionais:
 *   [nm-connection-editor](https://www.archlinux.org/packages/?name=nm-connection-editor) para uma interface gráfica de usuário,
 *   [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) para um miniaplicativo de bandeja de sistema (`nm-applet`).
 
-**Nota:** Você deve garantir que nenhum outro serviço que deseje configurar a rede esteja em execução; na verdade, vários serviços de rede entrarão em conflito. Você pode encontrar uma lista dos serviços em execução no momento com `systemctl --type=service` e, em seguida, [parar](/index.php/Parar "Parar"). Veja [#Configuração](#Configura.C3.A7.C3.A3o) para ativar o serviço NetworkManager.
+**Nota:** Você deve garantir que nenhum outro serviço que deseje configurar a rede esteja em execução; na verdade, vários serviços de rede entrarão em conflito. Você pode encontrar uma lista dos serviços em execução no momento com `systemctl --type=service` e, em seguida, [parar](/index.php/Parar "Parar"). Veja [#Configuração](#Configuração) para ativar o serviço NetworkManager.
 
 ### Suporte a banda larga móvel
 
@@ -299,7 +299,7 @@ polkit.addRule(function(action, subject) {
 
 O NetworkManager não lida diretamente com configurações de proxy, mas se você estiver usando o [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)") ou [KDE](/index.php/KDE "KDE"), você pode usar o [proxydriver](http://marin.jb.free.fr/proxydriver/) que lida com configurações de proxy usando Informações do NetworkManager. O proxydriver é encontrado no pacote [proxydriver](https://aur.archlinux.org/packages/proxydriver/).
 
-Para que o *proxydriver* possa alterar as configurações do proxy, você precisaria executar este comando, como parte do processo de inicialização do GNOME (veja [GNOME (Português)#Inicialização automática](/index.php/GNOME_(Portugu%C3%AAs)#Inicializa.C3.A7.C3.A3o_autom.C3.A1tica "GNOME (Português)")):
+Para que o *proxydriver* possa alterar as configurações do proxy, você precisaria executar este comando, como parte do processo de inicialização do GNOME (veja [GNOME (Português)#Inicialização automática](/index.php/GNOME_(Portugu%C3%AAs)#Inicialização_automática "GNOME (Português)")):
 
 ```
 xhost +si:localuser:*nome_de_usuário*
@@ -406,7 +406,7 @@ Para ativar o recurso, você precisa [habilitar](/index.php/Habilitar "Habilitar
 
 Quando o serviço estiver ativo, os scripts poderão ser adicionados ao diretório `/etc/NetworkManager/dispatcher.d`.
 
-Os scripts devem pertencer ao **root**, caso contrário o distribuidor não os executará. Para maior segurança, defina a [propriedade](/index.php/Ownership "Ownership") de grupo como root:
+Os scripts devem pertencer ao **root**, caso contrário o distribuidor não os executará. Para maior segurança, defina o [proprietário](/index.php/Propriet%C3%A1rio "Proprietário") e grupo para root:
 
 ```
 # chown root:root /etc/NetworkManager/dispatcher.d/*10-script.sh*
@@ -602,7 +602,7 @@ esac
 
 ```
 
-Se você quiser se conectar automaticamente à VPN para todas as redes Wi-Fi, use a seguinte definição do ESSID: `ESSID=$(iwgetid -r)`. Lembre-se de definir as permissões do script [de acordo com isso](#Servi.C3.A7os_de_rede_com_o_NetworkManager_dispatcher).
+Se você quiser se conectar automaticamente à VPN para todas as redes Wi-Fi, use a seguinte definição do ESSID: `ESSID=$(iwgetid -r)`. Lembre-se de definir as permissões do script [de acordo com isso](#Serviços_de_rede_com_o_NetworkManager_dispatcher).
 
 A tentativa de se conectar com o script acima ainda pode falhar com `NetworkManager-dispatcher.service` reclamando sobre "nenhum segredo de VPN válido", por causa de [como os segredos VPN são armazenados](http://developer.gnome.org/NetworkManager/0.9/secrets-flags.html). Felizmente, existem diferentes opções para fornecer ao script acima acesso à sua senha de VPN.
 
@@ -869,7 +869,7 @@ Isso pode ser evitado adicionando `dns=none` à seção `[main]` no `/etc/Networ
 
 Após isso, o `/etc/resolv.conf` pode ser um link simbólico quebrado que você precisará remover. Então, basta criar um novo arquivo `/etc/resolv.conf`.
 
-O *NetworkManager* também oferece "hooks" através de scripts chamados de "dispatchers" que podem ser usados para alterar o `/etc/resolv.conf` após as mudanças na rede. Consulte [#Serviços de rede com o NetworkManager dispatcher](#Servi.C3.A7os_de_rede_com_o_NetworkManager_dispatcher) e [NetworkManager(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.8) para mais informações.
+O *NetworkManager* também oferece "hooks" através de scripts chamados de "dispatchers" que podem ser usados para alterar o `/etc/resolv.conf` após as mudanças na rede. Consulte [#Serviços de rede com o NetworkManager dispatcher](#Serviços_de_rede_com_o_NetworkManager_dispatcher) e [NetworkManager(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.8) para mais informações.
 
 #### Usar openresolv
 
@@ -963,7 +963,7 @@ Em seguida, você desejará fazer com que a conexão padrão não seja conectada
 
 ### Não é possível editar conexões como usuário normal
 
-Veja [#Configurar as permissões de PolicyKit](#Configurar_as_permiss.C3.B5es_de_PolicyKit).
+Veja [#Configurar as permissões de PolicyKit](#Configurar_as_permissões_de_PolicyKit).
 
 ### Esquecer rede sem fio oculta
 
@@ -994,7 +994,7 @@ Isso pode precisar ser feito para qualquer outro plug-in de VPN do NM, mas esses
 
 ### Impossibilidade de se conectar a redes sem fio europeias visíveis
 
-Os chips WLAN são fornecidos com um padrão [domínio regulatório](/index.php/Configura%C3%A7%C3%A3o_de_rede_sem_fio#Respeitar_o_dom.C3.ADnio_regulat.C3.B3rio "Configuração de rede sem fio"). Se o seu ponto de acesso não operar dentro dessas limitações, você não conseguirá se conectar à rede. Consertar isso é fácil:
+Os chips WLAN são fornecidos com um padrão [domínio regulatório](/index.php/Configura%C3%A7%C3%A3o_de_rede_sem_fio#Respeitar_o_domínio_regulatório "Configuração de rede sem fio"). Se o seu ponto de acesso não operar dentro dessas limitações, você não conseguirá se conectar à rede. Consertar isso é fácil:
 
 1.  [Instale](/index.php/Instale "Instale") [crda](https://www.archlinux.org/packages/?name=crda)
 2.  Descomente o código de país correto em `/etc/conf.d/wireless-regdom`
@@ -1004,13 +1004,13 @@ Os chips WLAN são fornecidos com um padrão [domínio regulatório](/index.php/
 
 O problema ocorre quando o sistema (ou seja, o NetworkManager em execução como usuário root) tenta estabelecer uma conexão VPN, mas a senha não está acessível porque está armazenada no GNOME Keyring de um usuário específico.
 
-Uma solução é manter a senha em sua VPN em texto simples, conforme descrito na etapa (2.) de [#Usar dispatcher para conectar a uma VPN após uma conexão de rede ser estabelecida](#Usar_dispatcher_para_conectar_a_uma_VPN_ap.C3.B3s_uma_conex.C3.A3o_de_rede_ser_estabelecida).
+Uma solução é manter a senha em sua VPN em texto simples, conforme descrito na etapa (2.) de [#Usar dispatcher para conectar a uma VPN após uma conexão de rede ser estabelecida](#Usar_dispatcher_para_conectar_a_uma_VPN_após_uma_conexão_de_rede_ser_estabelecida).
 
 Você não precisa mais usar o dispatcher descrito na etapa (1.) para se conectar automaticamente, se você usar a nova opção "autoconectar VPN" na interface gráfica do `nm-applet`.
 
 ### Gargalo no systemd
 
-Com o tempo, os arquivos de log (`/var/log/journal`) podem se tornar muito grandes. Isso pode ter um grande impacto no desempenho da inicialização ao usar o NetworkManager, consulte: [Systemd (Português)#Tempo de inicialização aumentando com o tempo](/index.php/Systemd_(Portugu%C3%AAs)#Tempo_de_inicializa.C3.A7.C3.A3o_aumentando_com_o_tempo "Systemd (Português)").
+Com o tempo, os arquivos de log (`/var/log/journal`) podem se tornar muito grandes. Isso pode ter um grande impacto no desempenho da inicialização ao usar o NetworkManager, consulte: [Systemd (Português)#Tempo de inicialização aumentando com o tempo](/index.php/Systemd_(Portugu%C3%AAs)#Tempo_de_inicialização_aumentando_com_o_tempo "Systemd (Português)").
 
 ### Desconexões de rede regulares, latência, pacotes perdidos (WiFi)
 

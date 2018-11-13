@@ -9,7 +9,7 @@ Existe una gran variedad de posibilidades para mejorar el indicador de bash y pe
 
 *   [1 Indicadores Basicos](#Indicadores_Basicos)
 *   [2 Distinguir Indicadores de root y otros usuarios](#Distinguir_Indicadores_de_root_y_otros_usuarios)
-*   [3 Más personalizaciones para el indicador de Bash](#M.C3.A1s_personalizaciones_para_el_indicador_de_Bash)
+*   [3 Más personalizaciones para el indicador de Bash](#Más_personalizaciones_para_el_indicador_de_Bash)
 *   [4 Indicadores Avanzados](#Indicadores_Avanzados)
     *   [4.1 Wolfman](#Wolfman)
 *   [5 External Resources](#External_Resources)

@@ -11,7 +11,7 @@ Da [wikipedia](https://en.wikipedia.org/wiki/it:Codec "wikipedia:it:Codec"):
 
 In generale, i codec sono utilizzati dalle applicazioni multimediali per codificare e/o decodificare un flusso audio o video. Per poter decodificare un flusso, gli utenti devono avere installato il codec appropriato.
 
-Questo articolo tratterà solamente di codec e di applicazioni che lavorano come backend; si veda l'articolo [Lista delle applicazioni](/index.php/List_of_applications_(Italiano)#Multimedia.23Multimedia "List of applications (Italiano)") per una lista completa di media player più utilizzati (come [MPlayer](/index.php/MPlayer_(Italiano) "MPlayer (Italiano)"), [mpv](/index.php/Mpv "Mpv") e [VLC](/index.php/VLC "VLC")).
+Questo articolo tratterà solamente di codec e di applicazioni che lavorano come backend; si veda l'articolo [Lista delle applicazioni](/index.php/List_of_applications_(Italiano)#Multimedia#Multimedia "List of applications (Italiano)") per una lista completa di media player più utilizzati (come [MPlayer](/index.php/MPlayer_(Italiano) "MPlayer (Italiano)"), [mpv](/index.php/Mpv "Mpv") e [VLC](/index.php/VLC "VLC")).
 
 ## Contents
 
@@ -23,7 +23,7 @@ Questo articolo tratterà solamente di codec e di applicazioni che lavorano come
     *   [3.3 libavcodec](#libavcodec)
 *   [4 Trucchi e Soluzioni](#Trucchi_e_Soluzioni)
     *   [4.1 Installare codec binari per MPlayer](#Installare_codec_binari_per_MPlayer)
-    *   [4.2 H264, mpg4 o Musepack (.mpc) mancante in Totem Player](#H264.2C_mpg4_o_Musepack_.28.mpc.29_mancante_in_Totem_Player)
+    *   [4.2 H264, mpg4 o Musepack (.mpc) mancante in Totem Player](#H264,_mpg4_o_Musepack_(.mpc)_mancante_in_Totem_Player)
 
 ## Requisiti
 

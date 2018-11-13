@@ -22,7 +22,7 @@ Open Database Connectivity, commonly ODBC, is an open specification for providin
         *   [3.2.1 Create a test database](#Create_a_test_database)
         *   [3.2.2 Testing the ODBC](#Testing_the_ODBC)
         *   [3.2.3 A couple useful websites](#A_couple_useful_websites)
-    *   [3.3 Virtuoso / SPARQL](#Virtuoso_.2F_SPARQL)
+    *   [3.3 Virtuoso / SPARQL](#Virtuoso_/_SPARQL)
     *   [3.4 SQLite](#SQLite_2)
 
 ## ODBC engines

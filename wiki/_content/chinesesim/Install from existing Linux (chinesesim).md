@@ -9,7 +9,7 @@ Related articles
 从当前 Linux 发行版安装 Arch Linux 对以下情形有所帮助：
 
 *   远程安装 Arch Linux，如一台（虚拟的）根服务器
-*   无需 LiveCD 替换当前 Linux 发行版（参见[#无 LiveCD 替换当前系统](#.E6.97.A0_LiveCD_.E6.9B.BF.E6.8D.A2.E5.BD.93.E5.89.8D.E7.B3.BB.E7.BB.9F)）
+*   无需 LiveCD 替换当前 Linux 发行版（参见[#无 LiveCD 替换当前系统](#无_LiveCD_替换当前系统)）
 *   创建基于 Arch Linux 的新 Linux 发行版或 LiveCD
 *   创建 Arch Linux 的 chroot 环境，如可为 Docker 基础容器创建
 *   [为无盘机器准备 rootfs-over-NFS](/index.php/Diskless_network_boot_NFS_root "Diskless network boot NFS root")
@@ -22,23 +22,23 @@ Related articles
 
 ## Contents
 
-*   [1 从一个主机运行Arch Linux](#.E4.BB.8E.E4.B8.80.E4.B8.AA.E4.B8.BB.E6.9C.BA.E8.BF.90.E8.A1.8CArch_Linux)
-    *   [1.1 安装和配置](#.E5.AE.89.E8.A3.85.E5.92.8C.E9.85.8D.E7.BD.AE)
-*   [2 从一个主机运行另一个Linux发行版](#.E4.BB.8E.E4.B8.80.E4.B8.AA.E4.B8.BB.E6.9C.BA.E8.BF.90.E8.A1.8C.E5.8F.A6.E4.B8.80.E4.B8.AALinux.E5.8F.91.E8.A1.8C.E7.89.88)
-    *   [2.1 创建 chroot](#.E5.88.9B.E5.BB.BA_chroot)
-        *   [2.1.1 方法一：使用 Bootstrap 镜像（推荐）](#.E6.96.B9.E6.B3.95.E4.B8.80.EF.BC.9A.E4.BD.BF.E7.94.A8_Bootstrap_.E9.95.9C.E5.83.8F.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89)
-        *   [2.1.2 方法二：使用 LiveCD 镜像](#.E6.96.B9.E6.B3.95.E4.BA.8C.EF.BC.9A.E4.BD.BF.E7.94.A8_LiveCD_.E9.95.9C.E5.83.8F)
-    *   [2.2 使用 chroot 环境](#.E4.BD.BF.E7.94.A8_chroot_.E7.8E.AF.E5.A2.83)
-        *   [2.2.1 初始化 pacman 密匙环](#.E5.88.9D.E5.A7.8B.E5.8C.96_pacman_.E5.AF.86.E5.8C.99.E7.8E.AF)
-        *   [2.2.2 选择镜像和下载基本工具](#.E9.80.89.E6.8B.A9.E9.95.9C.E5.83.8F.E5.92.8C.E4.B8.8B.E8.BD.BD.E5.9F.BA.E6.9C.AC.E5.B7.A5.E5.85.B7)
-        *   [2.2.3 安装提示](#.E5.AE.89.E8.A3.85.E6.8F.90.E7.A4.BA)
-            *   [2.2.3.1 基于 Debian 的当前系统](#.E5.9F.BA.E4.BA.8E_Debian_.E7.9A.84.E5.BD.93.E5.89.8D.E7.B3.BB.E7.BB.9F)
-                *   [2.2.3.1.1 /dev/shm](#.2Fdev.2Fshm)
-                *   [2.2.3.1.2 /dev/pts](#.2Fdev.2Fpts)
+*   [1 从一个主机运行Arch Linux](#从一个主机运行Arch_Linux)
+    *   [1.1 安装和配置](#安装和配置)
+*   [2 从一个主机运行另一个Linux发行版](#从一个主机运行另一个Linux发行版)
+    *   [2.1 创建 chroot](#创建_chroot)
+        *   [2.1.1 方法一：使用 Bootstrap 镜像（推荐）](#方法一：使用_Bootstrap_镜像（推荐）)
+        *   [2.1.2 方法二：使用 LiveCD 镜像](#方法二：使用_LiveCD_镜像)
+    *   [2.2 使用 chroot 环境](#使用_chroot_环境)
+        *   [2.2.1 初始化 pacman 密匙环](#初始化_pacman_密匙环)
+        *   [2.2.2 选择镜像和下载基本工具](#选择镜像和下载基本工具)
+        *   [2.2.3 安装提示](#安装提示)
+            *   [2.2.3.1 基于 Debian 的当前系统](#基于_Debian_的当前系统)
+                *   [2.2.3.1.1 /dev/shm](#/dev/shm)
+                *   [2.2.3.1.2 /dev/pts](#/dev/pts)
                 *   [2.2.3.1.3 lvmetad](#lvmetad)
-            *   [2.2.3.2 基于Fedora的当前系统](#.E5.9F.BA.E4.BA.8EFedora.E7.9A.84.E5.BD.93.E5.89.8D.E7.B3.BB.E7.BB.9F)
-*   [3 无 LiveCD 替换当前系统](#.E6.97.A0_LiveCD_.E6.9B.BF.E6.8D.A2.E5.BD.93.E5.89.8D.E7.B3.BB.E7.BB.9F)
-    *   [3.1 配置系统](#.E9.85.8D.E7.BD.AE.E7.B3.BB.E7.BB.9F)
+            *   [2.2.3.2 基于Fedora的当前系统](#基于Fedora的当前系统)
+*   [3 无 LiveCD 替换当前系统](#无_LiveCD_替换当前系统)
+    *   [3.1 配置系统](#配置系统)
 
 ## 从一个主机运行Arch Linux
 
@@ -162,7 +162,7 @@ Related articles
 
 #### 初始化 pacman 密匙环
 
-开始安装前，需要设置 pacman 密匙。执行以下命令前请阅读[Pacman-key (简体中文)#初始化密钥环](/index.php/Pacman-key_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.88.9D.E5.A7.8B.E5.8C.96.E5.AF.86.E9.92.A5.E7.8E.AF "Pacman-key (简体中文)")以理解其对熵的要求：
+开始安装前，需要设置 pacman 密匙。执行以下命令前请阅读[Pacman-key (简体中文)#初始化密钥环](/index.php/Pacman-key_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#初始化密钥环 "Pacman-key (简体中文)")以理解其对熵的要求：
 
 ```
 # pacman-key --init

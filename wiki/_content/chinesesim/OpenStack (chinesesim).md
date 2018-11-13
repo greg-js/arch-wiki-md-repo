@@ -4,21 +4,21 @@ OpenStack is a global collaboration of developers and cloud computing technologi
 
 ## Contents
 
-*   [1 组件](#.E7.BB.84.E4.BB.B6)
-    *   [1.1 计算(Nova)](#.E8.AE.A1.E7.AE.97.28Nova.29)
-    *   [1.2 网络(Neutron)](#.E7.BD.91.E7.BB.9C.28Neutron.29)
-    *   [1.3 镜像服务(Glance)](#.E9.95.9C.E5.83.8F.E6.9C.8D.E5.8A.A1.28Glance.29)
-    *   [1.4 块存储(Cinder)](#.E5.9D.97.E5.AD.98.E5.82.A8.28Cinder.29)
-    *   [1.5 对象存储(Swift)](#.E5.AF.B9.E8.B1.A1.E5.AD.98.E5.82.A8.28Swift.29)
-    *   [1.6 鉴证(Keystone)](#.E9.89.B4.E8.AF.81.28Keystone.29)
-    *   [1.7 监控台(Horizon)](#.E7.9B.91.E6.8E.A7.E5.8F.B0.28Horizon.29)
-    *   [1.8 Telemetry (Ceilometer)](#Telemetry_.28Ceilometer.29)
-    *   [1.9 Orchestration (Heat)](#Orchestration_.28Heat.29)
-*   [2 部署 OpenStack](#.E9.83.A8.E7.BD.B2_OpenStack)
-*   [3 镜像](#.E9.95.9C.E5.83.8F)
-    *   [3.1 可用的镜像](#.E5.8F.AF.E7.94.A8.E7.9A.84.E9.95.9C.E5.83.8F)
-    *   [3.2 自己创建镜像](#.E8.87.AA.E5.B7.B1.E5.88.9B.E5.BB.BA.E9.95.9C.E5.83.8F)
-*   [4 参阅](#.E5.8F.82.E9.98.85)
+*   [1 组件](#组件)
+    *   [1.1 计算(Nova)](#计算(Nova))
+    *   [1.2 网络(Neutron)](#网络(Neutron))
+    *   [1.3 镜像服务(Glance)](#镜像服务(Glance))
+    *   [1.4 块存储(Cinder)](#块存储(Cinder))
+    *   [1.5 对象存储(Swift)](#对象存储(Swift))
+    *   [1.6 鉴证(Keystone)](#鉴证(Keystone))
+    *   [1.7 监控台(Horizon)](#监控台(Horizon))
+    *   [1.8 Telemetry (Ceilometer)](#Telemetry_(Ceilometer))
+    *   [1.9 Orchestration (Heat)](#Orchestration_(Heat))
+*   [2 部署 OpenStack](#部署_OpenStack)
+*   [3 镜像](#镜像)
+    *   [3.1 可用的镜像](#可用的镜像)
+    *   [3.2 自己创建镜像](#自己创建镜像)
+*   [4 参阅](#参阅)
 
 ## 组件
 

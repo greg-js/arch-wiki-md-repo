@@ -15,7 +15,7 @@ This article is an introduction to building custom kernels from **kernel.org sou
 *   [3 Compilation and installation](#Compilation_and_installation)
     *   [3.1 Compile the kernel](#Compile_the_kernel)
     *   [3.2 Compile the modules](#Compile_the_modules)
-    *   [3.3 Copy the kernel to /boot directory](#Copy_the_kernel_to_.2Fboot_directory)
+    *   [3.3 Copy the kernel to /boot directory](#Copy_the_kernel_to_/boot_directory)
     *   [3.4 Make initial RAM disk](#Make_initial_RAM_disk)
         *   [3.4.1 Automated preset method](#Automated_preset_method)
         *   [3.4.2 Manual method](#Manual_method)

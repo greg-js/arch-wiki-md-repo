@@ -5,10 +5,10 @@ Este artículo es una traducción de [Freenet](/index.php/Freenet "Freenet"), re
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Configuración](#Configuraci.C3.B3n)
+*   [1 Instalación](#Instalación)
+*   [2 Configuración](#Configuración)
     *   [2.1 Asistente](#Asistente)
-    *   [2.2 Configuración manual](#Configuraci.C3.B3n_manual)
+    *   [2.2 Configuración manual](#Configuración_manual)
 
 ## Instalación
 

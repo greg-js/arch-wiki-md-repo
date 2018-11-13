@@ -14,7 +14,7 @@ Related articles
 *   [3 Configuration](#Configuration)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Faster downloads](#Faster_downloads)
-    *   [4.2 Trim (partial download)](#Trim_.28partial_download.29)
+    *   [4.2 Trim (partial download)](#Trim_(partial_download))
     *   [4.3 URL from clipboard](#URL_from_clipboard)
 *   [5 See also](#See_also)
 

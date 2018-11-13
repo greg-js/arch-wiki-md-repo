@@ -11,7 +11,7 @@
 
 **翻译状态：** 本文是英文页面 [RAID](/index.php/RAID "RAID") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-09-01，点击[这里](https://wiki.archlinux.org/index.php?title=RAID&diff=0&oldid=539084)可以查看翻译后英文页面的改动。
 
-独立磁盘冗余阵列 (Redundant Array of Independent Disks, [RAID](https://en.wikipedia.org/wiki/RAID "wikipedia:RAID")) 是一种将多个磁盘驱动器组件（通常是多块硬盘或多个分区）组合为一个逻辑单元的存储技术。根据 RAID 的部署情况，这个逻辑单元可以是单个的文件系统，也可以是一个能在其上建立多个分区的透明中间层。根据所需的冗余量和性能要求，数据按照 [#RAID 级别](#RAID_.E7.BA.A7.E5.88.AB) 中的某一种方式分布在驱动器中。所选的 RAID 级别决定了是否可以防止数据丢失（硬盘故障时）、是否提高性能或结合两者优势。
+独立磁盘冗余阵列 (Redundant Array of Independent Disks, [RAID](https://en.wikipedia.org/wiki/RAID "wikipedia:RAID")) 是一种将多个磁盘驱动器组件（通常是多块硬盘或多个分区）组合为一个逻辑单元的存储技术。根据 RAID 的部署情况，这个逻辑单元可以是单个的文件系统，也可以是一个能在其上建立多个分区的透明中间层。根据所需的冗余量和性能要求，数据按照 [#RAID 级别](#RAID_级别) 中的某一种方式分布在驱动器中。所选的 RAID 级别决定了是否可以防止数据丢失（硬盘故障时）、是否提高性能或结合两者优势。
 
 本文介绍如何使用 mdadm 创建并管理一个软件磁盘阵列。
 
@@ -19,50 +19,50 @@
 
 ## Contents
 
-*   [1 RAID 级别](#RAID_.E7.BA.A7.E5.88.AB)
-    *   [1.1 基本 RAID 级别](#.E5.9F.BA.E6.9C.AC_RAID_.E7.BA.A7.E5.88.AB)
-    *   [1.2 嵌套 RAID 级别](#.E5.B5.8C.E5.A5.97_RAID_.E7.BA.A7.E5.88.AB)
-    *   [1.3 RAID 级别对比](#RAID_.E7.BA.A7.E5.88.AB.E5.AF.B9.E6.AF.94)
-*   [2 实现方式](#.E5.AE.9E.E7.8E.B0.E6.96.B9.E5.BC.8F)
-    *   [2.1 我正在使用哪一种 RAID？](#.E6.88.91.E6.AD.A3.E5.9C.A8.E4.BD.BF.E7.94.A8.E5.93.AA.E4.B8.80.E7.A7.8D_RAID.EF.BC.9F)
-*   [3 安装](#.E5.AE.89.E8.A3.85)
-    *   [3.1 准备设备](#.E5.87.86.E5.A4.87.E8.AE.BE.E5.A4.87)
-    *   [3.2 对磁盘进行分区](#.E5.AF.B9.E7.A3.81.E7.9B.98.E8.BF.9B.E8.A1.8C.E5.88.86.E5.8C.BA)
-        *   [3.2.1 GUID 分区表](#GUID_.E5.88.86.E5.8C.BA.E8.A1.A8)
-        *   [3.2.2 主引导记录 (MBR)](#.E4.B8.BB.E5.BC.95.E5.AF.BC.E8.AE.B0.E5.BD.95_.28MBR.29)
-    *   [3.3 创建阵列](#.E5.88.9B.E5.BB.BA.E9.98.B5.E5.88.97)
-    *   [3.4 更新配置文件](#.E6.9B.B4.E6.96.B0.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)
-    *   [3.5 组合成磁盘阵列](#.E7.BB.84.E5.90.88.E6.88.90.E7.A3.81.E7.9B.98.E9.98.B5.E5.88.97)
-    *   [3.6 格式化 RAID 上的文件系统](#.E6.A0.BC.E5.BC.8F.E5.8C.96_RAID_.E4.B8.8A.E7.9A.84.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F)
-        *   [3.6.1 计算 stride（跨度大小）和 stripe width（带区宽度）](#.E8.AE.A1.E7.AE.97_stride.EF.BC.88.E8.B7.A8.E5.BA.A6.E5.A4.A7.E5.B0.8F.EF.BC.89.E5.92.8C_stripe_width.EF.BC.88.E5.B8.A6.E5.8C.BA.E5.AE.BD.E5.BA.A6.EF.BC.89)
-            *   [3.6.1.1 范例 1\. RAID0](#.E8.8C.83.E4.BE.8B_1._RAID0)
-            *   [3.6.1.2 范例 2\. RAID5](#.E8.8C.83.E4.BE.8B_2._RAID5)
-            *   [3.6.1.3 范例 3\. RAID10,far2](#.E8.8C.83.E4.BE.8B_3._RAID10.2Cfar2)
-*   [4 在 Live CD 中挂载 RAID](#.E5.9C.A8_Live_CD_.E4.B8.AD.E6.8C.82.E8.BD.BD_RAID)
-*   [5 在 RAID 上安装 Arch Linux](#.E5.9C.A8_RAID_.E4.B8.8A.E5.AE.89.E8.A3.85_Arch_Linux)
-    *   [5.1 更新配置文件](#.E6.9B.B4.E6.96.B0.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6_2)
-    *   [5.2 配置 mkinitcpio](#.E9.85.8D.E7.BD.AE_mkinitcpio)
-    *   [5.3 配置 boot loader](#.E9.85.8D.E7.BD.AE_boot_loader)
-*   [6 维护 RAID](#.E7.BB.B4.E6.8A.A4_RAID)
-    *   [6.1 数据清扫 (Scrubbing)](#.E6.95.B0.E6.8D.AE.E6.B8.85.E6.89.AB_.28Scrubbing.29)
-        *   [6.1.1 关于数据清扫的一般说明](#.E5.85.B3.E4.BA.8E.E6.95.B0.E6.8D.AE.E6.B8.85.E6.89.AB.E7.9A.84.E4.B8.80.E8.88.AC.E8.AF.B4.E6.98.8E)
-        *   [6.1.2 对清扫 RAID1 和 RAID10 的说明](#.E5.AF.B9.E6.B8.85.E6.89.AB_RAID1_.E5.92.8C_RAID10_.E7.9A.84.E8.AF.B4.E6.98.8E)
-    *   [6.2 从阵列中移除设备](#.E4.BB.8E.E9.98.B5.E5.88.97.E4.B8.AD.E7.A7.BB.E9.99.A4.E8.AE.BE.E5.A4.87)
-    *   [6.3 向阵列中添加设备](#.E5.90.91.E9.98.B5.E5.88.97.E4.B8.AD.E6.B7.BB.E5.8A.A0.E8.AE.BE.E5.A4.87)
-    *   [6.4 增大 RAID 卷的大小](#.E5.A2.9E.E5.A4.A7_RAID_.E5.8D.B7.E7.9A.84.E5.A4.A7.E5.B0.8F)
-    *   [6.5 修改同步速度限制](#.E4.BF.AE.E6.94.B9.E5.90.8C.E6.AD.A5.E9.80.9F.E5.BA.A6.E9.99.90.E5.88.B6)
-*   [7 监视运行情况](#.E7.9B.91.E8.A7.86.E8.BF.90.E8.A1.8C.E6.83.85.E5.86.B5)
-    *   [7.1 用 watch 监视 mdstat](#.E7.94.A8_watch_.E7.9B.91.E8.A7.86_mdstat)
-    *   [7.2 用 iotop 追踪 IO](#.E7.94.A8_iotop_.E8.BF.BD.E8.B8.AA_IO)
-    *   [7.3 用 iostat 追踪 IO](#.E7.94.A8_iostat_.E8.BF.BD.E8.B8.AA_IO)
-    *   [7.4 启用事件邮件通知](#.E5.90.AF.E7.94.A8.E4.BA.8B.E4.BB.B6.E9.82.AE.E4.BB.B6.E9.80.9A.E7.9F.A5)
-        *   [7.4.1 其他实现方式](#.E5.85.B6.E4.BB.96.E5.AE.9E.E7.8E.B0.E6.96.B9.E5.BC.8F)
-*   [8 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
-    *   [8.1 Error: "kernel: ataX.00: revalidation failed"](#Error:_.22kernel:_ataX.00:_revalidation_failed.22)
-    *   [8.2 磁盘阵列以只读模式启动](#.E7.A3.81.E7.9B.98.E9.98.B5.E5.88.97.E4.BB.A5.E5.8F.AA.E8.AF.BB.E6.A8.A1.E5.BC.8F.E5.90.AF.E5.8A.A8)
-    *   [8.3 在损坏或缺失磁盘的情况下恢复 RAID](#.E5.9C.A8.E6.8D.9F.E5.9D.8F.E6.88.96.E7.BC.BA.E5.A4.B1.E7.A3.81.E7.9B.98.E7.9A.84.E6.83.85.E5.86.B5.E4.B8.8B.E6.81.A2.E5.A4.8D_RAID)
-*   [9 基准测试](#.E5.9F.BA.E5.87.86.E6.B5.8B.E8.AF.95)
-*   [10 参考资料](#.E5.8F.82.E8.80.83.E8.B5.84.E6.96.99)
+*   [1 RAID 级别](#RAID_级别)
+    *   [1.1 基本 RAID 级别](#基本_RAID_级别)
+    *   [1.2 嵌套 RAID 级别](#嵌套_RAID_级别)
+    *   [1.3 RAID 级别对比](#RAID_级别对比)
+*   [2 实现方式](#实现方式)
+    *   [2.1 我正在使用哪一种 RAID？](#我正在使用哪一种_RAID？)
+*   [3 安装](#安装)
+    *   [3.1 准备设备](#准备设备)
+    *   [3.2 对磁盘进行分区](#对磁盘进行分区)
+        *   [3.2.1 GUID 分区表](#GUID_分区表)
+        *   [3.2.2 主引导记录 (MBR)](#主引导记录_(MBR))
+    *   [3.3 创建阵列](#创建阵列)
+    *   [3.4 更新配置文件](#更新配置文件)
+    *   [3.5 组合成磁盘阵列](#组合成磁盘阵列)
+    *   [3.6 格式化 RAID 上的文件系统](#格式化_RAID_上的文件系统)
+        *   [3.6.1 计算 stride（跨度大小）和 stripe width（带区宽度）](#计算_stride（跨度大小）和_stripe_width（带区宽度）)
+            *   [3.6.1.1 范例 1\. RAID0](#范例_1._RAID0)
+            *   [3.6.1.2 范例 2\. RAID5](#范例_2._RAID5)
+            *   [3.6.1.3 范例 3\. RAID10,far2](#范例_3._RAID10,far2)
+*   [4 在 Live CD 中挂载 RAID](#在_Live_CD_中挂载_RAID)
+*   [5 在 RAID 上安装 Arch Linux](#在_RAID_上安装_Arch_Linux)
+    *   [5.1 更新配置文件](#更新配置文件_2)
+    *   [5.2 配置 mkinitcpio](#配置_mkinitcpio)
+    *   [5.3 配置 boot loader](#配置_boot_loader)
+*   [6 维护 RAID](#维护_RAID)
+    *   [6.1 数据清扫 (Scrubbing)](#数据清扫_(Scrubbing))
+        *   [6.1.1 关于数据清扫的一般说明](#关于数据清扫的一般说明)
+        *   [6.1.2 对清扫 RAID1 和 RAID10 的说明](#对清扫_RAID1_和_RAID10_的说明)
+    *   [6.2 从阵列中移除设备](#从阵列中移除设备)
+    *   [6.3 向阵列中添加设备](#向阵列中添加设备)
+    *   [6.4 增大 RAID 卷的大小](#增大_RAID_卷的大小)
+    *   [6.5 修改同步速度限制](#修改同步速度限制)
+*   [7 监视运行情况](#监视运行情况)
+    *   [7.1 用 watch 监视 mdstat](#用_watch_监视_mdstat)
+    *   [7.2 用 iotop 追踪 IO](#用_iotop_追踪_IO)
+    *   [7.3 用 iostat 追踪 IO](#用_iostat_追踪_IO)
+    *   [7.4 启用事件邮件通知](#启用事件邮件通知)
+        *   [7.4.1 其他实现方式](#其他实现方式)
+*   [8 故障排除](#故障排除)
+    *   [8.1 Error: "kernel: ataX.00: revalidation failed"](#Error:_"kernel:_ataX.00:_revalidation_failed")
+    *   [8.2 磁盘阵列以只读模式启动](#磁盘阵列以只读模式启动)
+    *   [8.3 在损坏或缺失磁盘的情况下恢复 RAID](#在损坏或缺失磁盘的情况下恢复_RAID)
+*   [9 基准测试](#基准测试)
+*   [10 参考资料](#参考资料)
 
 ## RAID 级别
 
@@ -144,7 +144,7 @@ RAID 设备可以用不同方式来管理：
 
 	这是最简单的实现方式，因为它不依赖于专用固件或专有软件。这种阵列由操作系统通过以下方式进行管理：
 
-*   通过抽象层管理（比如 [mdadm](#.E5.AE.89.E8.A3.85)）；
+*   通过抽象层管理（比如 [mdadm](#安装)）；
     **注意:** 这是在本指南下文将要使用的方法。
 
 *   通过逻辑卷管理器来管理（比如 [LVM](/index.php/LVM#RAID "LVM")）；
@@ -193,7 +193,7 @@ RAID 设备可以用不同方式来管理：
 
 ### 对磁盘进行分区
 
-强烈推荐对用于阵列的硬盘进行分区。考虑到大多数 RAID 用户会用到超过 2 TiB 的硬盘，因此推荐并要求使用 GPT。参阅 [Partitioning (简体中文)](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Partitioning (简体中文)") 获取关于磁盘分区的更多信息以及可供使用的 [分区工具](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.88.86.E5.8C.BA.E5.B7.A5.E5.85.B7 "Partitioning (简体中文)")。
+强烈推荐对用于阵列的硬盘进行分区。考虑到大多数 RAID 用户会用到超过 2 TiB 的硬盘，因此推荐并要求使用 GPT。参阅 [Partitioning (简体中文)](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Partitioning (简体中文)") 获取关于磁盘分区的更多信息以及可供使用的 [分区工具](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#分区工具 "Partitioning (简体中文)")。
 
 **注意:** 也可以在裸磁盘（没有分区的磁盘）上直接创建 RAID，但不推荐这么做，因为这样可能会导致更换损坏硬盘时出现问题
 
@@ -410,7 +410,7 @@ stripe width = number of data disks * stride
 
 **注意:** 本节仅适用于根文件系统在磁盘阵列上的情况。如果你的磁盘阵列上只是一个数据分区，那么可以跳过本节。
 
-你应该在安装过程中的 [分区](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Partitioning (简体中文)") 和 [格式化](/index.php/File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.88.9B.E5.BB.BA.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F "File systems (简体中文)") 步骤之间创建 RAID 阵列。这将会把一个位于 RAID 阵列上的分区格式化成根文件系统，而不是直接格式化一个分区。 按照 [#安装](#.E5.AE.89.E8.A3.85) 一节的步骤创建 RAID 阵列。，然后继续安装过程，直到 pacstrap 步骤完成。 当使用 [UEFI 启动](/index.php/Unified_Extensible_Firmware_Interface_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Unified Extensible Firmware Interface (简体中文)") 时，还需要阅读 [EFI system partition (简体中文)#RAID 上的 ESP](/index.php/EFI_system_partition_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#RAID_.E4.B8.8A.E7.9A.84_ESP "EFI system partition (简体中文)")。
+你应该在安装过程中的 [分区](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Partitioning (简体中文)") 和 [格式化](/index.php/File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#创建文件系统 "File systems (简体中文)") 步骤之间创建 RAID 阵列。这将会把一个位于 RAID 阵列上的分区格式化成根文件系统，而不是直接格式化一个分区。 按照 [#安装](#安装) 一节的步骤创建 RAID 阵列。，然后继续安装过程，直到 pacstrap 步骤完成。 当使用 [UEFI 启动](/index.php/Unified_Extensible_Firmware_Interface_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Unified Extensible Firmware Interface (简体中文)") 时，还需要阅读 [EFI system partition (简体中文)#RAID 上的 ESP](/index.php/EFI_system_partition_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#RAID_上的_ESP "EFI system partition (简体中文)")。
 
 ### 更新配置文件
 
@@ -425,7 +425,7 @@ stripe width = number of data disks * stride
 
 在运行这个命令以后一定要用文本编辑器检查 `mdadm.conf` 配置文件来确保它的内容看起来是合理的。
 
-**注意:** 为防止系统启动时 `mdmonitor.service` 启动失败（默认设为自动启动），你需要取消 `MAILADDR` 的注释，并且在 `mdadm.conf` 结尾留下可处理磁盘阵列出错通知的邮件地址和/或应用程序。参阅 [#启用事件邮件通知](#.E5.90.AF.E7.94.A8.E4.BA.8B.E4.BB.B6.E9.82.AE.E4.BB.B6.E9.80.9A.E7.9F.A5)。
+**注意:** 为防止系统启动时 `mdmonitor.service` 启动失败（默认设为自动启动），你需要取消 `MAILADDR` 的注释，并且在 `mdadm.conf` 结尾留下可处理磁盘阵列出错通知的邮件地址和/或应用程序。参阅 [#启用事件邮件通知](#启用事件邮件通知)。
 
 现在继续安装过程直到 [Installation guide (简体中文)#Initramfs](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#Initramfs "Installation guide (简体中文)") 步骤之前为止，然后按照下一节的步骤做。
 
@@ -433,7 +433,7 @@ stripe width = number of data disks * stride
 
 **注意:** 这些操作应该在 chroot 时完成。
 
-向 `mkinitcpio.conf` 中的 [HOOKS](/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E9.92.A9.E5.AD.90.28HOOKS.29 "Mkinitcpio (简体中文)") 部分添加 `mdadm_udev` 来为初始化内存盘添加 mdadm 支持：
+向 `mkinitcpio.conf` 中的 [HOOKS](/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#钩子(HOOKS) "Mkinitcpio (简体中文)") 部分添加 `mdadm_udev` 来为初始化内存盘添加 mdadm 支持：
 
  `/etc/mkinitcpio.conf` 
 ```
@@ -442,7 +442,7 @@ stripe width = number of data disks * stride
 ...
 ```
 
-如果在一个 FakeRAID 阵列上使用 `mdadm_udev` 钩子，建议在 [BINARIES](/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E9.99.84.E5.8A.A0.E6.96.87.E4.BB.B6.EF.BC.88BINARIES.E3.80.81FILES.EF.BC.89 "Mkinitcpio (简体中文)") 列表中添加 *mdmon*：
+如果在一个 FakeRAID 阵列上使用 `mdadm_udev` 钩子，建议在 [BINARIES](/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#附加文件（BINARIES、FILES） "Mkinitcpio (简体中文)") 列表中添加 *mdmon*：
 
  `/etc/mkinitcpio.conf` 
 ```
@@ -451,9 +451,9 @@ BINARIES=(**mdmon**)
 ...
 ```
 
-然后 [重新生成初始化内存盘](/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.88.9B.E5.BB.BA.E5.92.8C.E5.90.AF.E7.94.A8.E9.95.9C.E5.83.8F "Mkinitcpio (简体中文)")。
+然后 [重新生成初始化内存盘](/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#创建和启用镜像 "Mkinitcpio (简体中文)")。
 
-参考 [mkinitcpio (简体中文)#使用 RAID 磁盘阵列](/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8_RAID_.E7.A3.81.E7.9B.98.E9.98.B5.E5.88.97 "Mkinitcpio (简体中文)")。
+参考 [mkinitcpio (简体中文)#使用 RAID 磁盘阵列](/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#使用_RAID_磁盘阵列 "Mkinitcpio (简体中文)")。
 
 ### 配置 boot loader
 
@@ -751,7 +751,7 @@ md0: [UU]
 
 ```
 
-mdadm 使用 `mdmonitor.service` 来完成监控任务，所以现在你无需进行更多设置了。如果你没有在 `/etc/mdadm.conf` 设置邮件地址，那么这个 service 就会出错。如果你不想接收 mdadm 一般事件通知，可以忽略这个错误；如果不想接收一般事件通知但是需要接收故障信息，可以 [mask（屏蔽）](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E5.8D.95.E5.85.83 "Systemd (简体中文)") 这个 unit。
+mdadm 使用 `mdmonitor.service` 来完成监控任务，所以现在你无需进行更多设置了。如果你没有在 `/etc/mdadm.conf` 设置邮件地址，那么这个 service 就会出错。如果你不想接收 mdadm 一般事件通知，可以忽略这个错误；如果不想接收一般事件通知但是需要接收故障信息，可以 [mask（屏蔽）](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#使用单元 "Systemd (简体中文)") 这个 unit。
 
 #### 其他实现方式
 
@@ -826,7 +826,7 @@ Feb  9 08:15:46 hostserver kernel: ata8.00: revalidation failed (errno=-5)
 
 ```
 
-现在磁盘阵列应该已经工作并且可以使用，但仍旧是缺一块盘的状态。因此需要按照上文 [#准备设备](#.E5.87.86.E5.A4.87.E8.AE.BE.E5.A4.87) 所述再添加一个磁盘分区，然后就可以将新磁盘分区加入到磁盘阵列中：
+现在磁盘阵列应该已经工作并且可以使用，但仍旧是缺一块盘的状态。因此需要按照上文 [#准备设备](#准备设备) 所述再添加一个磁盘分区，然后就可以将新磁盘分区加入到磁盘阵列中：
 
 ```
 # mdadm --manage --add /dev/md0 /dev/sdd1
@@ -842,7 +842,7 @@ Feb  9 08:15:46 hostserver kernel: ata8.00: revalidation failed (errno=-5)
 
 你就能看到磁盘阵列已经激活并正在重建。
 
-你可能还需要更新你的配置文件（参阅：[#更新配置文件](#.E6.9B.B4.E6.96.B0.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)）。
+你可能还需要更新你的配置文件（参阅：[#更新配置文件](#更新配置文件)）。
 
 ## 基准测试
 

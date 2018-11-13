@@ -28,8 +28,8 @@ Related articles
         *   [1.3.7 Improve throughput](#Improve_throughput)
 *   [2 Client](#Client)
     *   [2.1 List public shares](#List_public_shares)
-    *   [2.2 NetBIOS/WINS host names](#NetBIOS.2FWINS_host_names)
-        *   [2.2.1 Disable NetBIOS/WINS support](#Disable_NetBIOS.2FWINS_support)
+    *   [2.2 NetBIOS/WINS host names](#NetBIOS/WINS_host_names)
+        *   [2.2.1 Disable NetBIOS/WINS support](#Disable_NetBIOS/WINS_support)
     *   [2.3 Manual mounting](#Manual_mounting)
         *   [2.3.1 Storing share passwords](#Storing_share_passwords)
     *   [2.4 Automatic mounting](#Automatic_mounting)
@@ -39,28 +39,28 @@ Related articles
             *   [2.4.3.1 Daemon](#Daemon)
         *   [2.4.4 autofs](#autofs)
     *   [2.5 File manager configuration](#File_manager_configuration)
-        *   [2.5.1 GNOME Files, Nemo, Caja, Thunar and PCManFM](#GNOME_Files.2C_Nemo.2C_Caja.2C_Thunar_and_PCManFM)
+        *   [2.5.1 GNOME Files, Nemo, Caja, Thunar and PCManFM](#GNOME_Files,_Nemo,_Caja,_Thunar_and_PCManFM)
         *   [2.5.2 KDE](#KDE)
         *   [2.5.3 Other graphical environments](#Other_graphical_environments)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Discovering network shares](#Discovering_network_shares)
     *   [3.2 Remote control of Windows computer](#Remote_control_of_Windows_computer)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Failed to start Samba SMB/CIFS server](#Failed_to_start_Samba_SMB.2FCIFS_server)
+    *   [4.1 Failed to start Samba SMB/CIFS server](#Failed_to_start_Samba_SMB/CIFS_server)
     *   [4.2 Permission issues on AppArmor](#Permission_issues_on_AppArmor)
     *   [4.3 No dialect specified on mount](#No_dialect_specified_on_mount)
-    *   [4.4 Unable to overwrite files, permissions errors](#Unable_to_overwrite_files.2C_permissions_errors)
+    *   [4.4 Unable to overwrite files, permissions errors](#Unable_to_overwrite_files,_permissions_errors)
     *   [4.5 Windows clients keep asking for password even if Samba shares are created with guest permissions](#Windows_clients_keep_asking_for_password_even_if_Samba_shares_are_created_with_guest_permissions)
-    *   [4.6 Windows 7 connectivity problems - mount error(12): cannot allocate memory](#Windows_7_connectivity_problems_-_mount_error.2812.29:_cannot_allocate_memory)
-    *   [4.7 Windows 10 1709 and up connectivity problems - "Windows cannot access" 0x80004005](#Windows_10_1709_and_up_connectivity_problems_-_.22Windows_cannot_access.22_0x80004005)
+    *   [4.6 Windows 7 connectivity problems - mount error(12): cannot allocate memory](#Windows_7_connectivity_problems_-_mount_error(12):_cannot_allocate_memory)
+    *   [4.7 Windows 10 1709 and up connectivity problems - "Windows cannot access" 0x80004005](#Windows_10_1709_and_up_connectivity_problems_-_"Windows_cannot_access"_0x80004005)
     *   [4.8 Error: Failed to retrieve printer list: NT_STATUS_UNSUCCESSFUL](#Error:_Failed_to_retrieve_printer_list:_NT_STATUS_UNSUCCESSFUL)
     *   [4.9 Sharing a folder fails](#Sharing_a_folder_fails)
-    *   [4.10 "Browsing" network fails with "Failed to retrieve share list from server"](#.22Browsing.22_network_fails_with_.22Failed_to_retrieve_share_list_from_server.22)
+    *   [4.10 "Browsing" network fails with "Failed to retrieve share list from server"](#"Browsing"_network_fails_with_"Failed_to_retrieve_share_list_from_server")
     *   [4.11 Protocol negotiation failed: NT_STATUS_INVALID_NETWORK_RESPONSE](#Protocol_negotiation_failed:_NT_STATUS_INVALID_NETWORK_RESPONSE)
-    *   [4.12 Connection to SERVER failed: (Error NT_STATUS_UNSUCCESSFUL)](#Connection_to_SERVER_failed:_.28Error_NT_STATUS_UNSUCCESSFUL.29)
-    *   [4.13 Connection to SERVER failed: (Error NT_STATUS_CONNECTION_REFUSED)](#Connection_to_SERVER_failed:_.28Error_NT_STATUS_CONNECTION_REFUSED.29)
+    *   [4.12 Connection to SERVER failed: (Error NT_STATUS_UNSUCCESSFUL)](#Connection_to_SERVER_failed:_(Error_NT_STATUS_UNSUCCESSFUL))
+    *   [4.13 Connection to SERVER failed: (Error NT_STATUS_CONNECTION_REFUSED)](#Connection_to_SERVER_failed:_(Error_NT_STATUS_CONNECTION_REFUSED))
     *   [4.14 Protocol negotiation failed: NT_STATUS_CONNECTION_RESET](#Protocol_negotiation_failed:_NT_STATUS_CONNECTION_RESET)
-    *   [4.15 Password Error when correct credentials are given (error 1326)](#Password_Error_when_correct_credentials_are_given_.28error_1326.29)
+    *   [4.15 Password Error when correct credentials are given (error 1326)](#Password_Error_when_correct_credentials_are_given_(error_1326))
     *   [4.16 Mapping reserved Windows characters](#Mapping_reserved_Windows_characters)
     *   [4.17 Folder shared inside graphical environment is not available to guests](#Folder_shared_inside_graphical_environment_is_not_available_to_guests)
         *   [4.17.1 Verify correct samba configuration](#Verify_correct_samba_configuration)
@@ -494,7 +494,7 @@ The options `uid` and `gid` corresponds to the local (e.g. client) [user](/index
 
 *   Abstain from using a trailing `/`. `//*SERVER*/*sharename***/**` will not work.
 *   If your mount does not work stable, stutters or freezes, try to enable different SMB protocol version with `vers=` option. For example, `vers=2.0` for Windows Vista mount.
-*   If having timeouts on a mounted network share with cifs on a shutdown, see [WPA supplicant#Problem with mounted network shares (cifs) and shutdown](/index.php/WPA_supplicant#Problem_with_mounted_network_shares_.28cifs.29_and_shutdown "WPA supplicant").
+*   If having timeouts on a mounted network share with cifs on a shutdown, see [WPA supplicant#Problem with mounted network shares (cifs) and shutdown](/index.php/WPA_supplicant#Problem_with_mounted_network_shares_(cifs)_and_shutdown "WPA supplicant").
 
 #### Storing share passwords
 

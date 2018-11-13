@@ -15,9 +15,9 @@ Quest'articolo descrive vari modi in cui gli utenti di Arch (sia nuovi che veter
 *   [3 Wiki](#Wiki)
 *   [4 Bug](#Bug)
 *   [5 AUR](#AUR)
-*   [6 E-zine 'Rolling Release'](#E-zine_.27Rolling_Release.27)
+*   [6 E-zine 'Rolling Release'](#E-zine_'Rolling_Release')
 *   [7 Progetti ufficiali di Arch](#Progetti_ufficiali_di_Arch)
-*   [8 Progetti della comunità](#Progetti_della_comunit.C3.A0)
+*   [8 Progetti della comunità](#Progetti_della_comunità)
     *   [8.1 Distribuzioni basate su Arch](#Distribuzioni_basate_su_Arch)
     *   [8.2 AUR helpers](#AUR_helpers)
     *   [8.3 Frontend GUI per Pacman](#Frontend_GUI_per_Pacman)
@@ -25,9 +25,9 @@ Quest'articolo descrive vari modi in cui gli utenti di Arch (sia nuovi che veter
     *   [8.5 Netcfg](#Netcfg)
     *   [8.6 Altro](#Altro)
 *   [9 Collaborare](#Collaborare)
-    *   [9.1 Come posso aiutare da sviluppatore?](#Come_posso_aiutare_da_sviluppatore.3F)
-    *   [9.2 Come posso divenire un Arch developer?](#Come_posso_divenire_un_Arch_developer.3F)
-    *   [9.3 Come posso aiutare da artista?](#Come_posso_aiutare_da_artista.3F)
+    *   [9.1 Come posso aiutare da sviluppatore?](#Come_posso_aiutare_da_sviluppatore?)
+    *   [9.2 Come posso divenire un Arch developer?](#Come_posso_divenire_un_Arch_developer?)
+    *   [9.3 Come posso aiutare da artista?](#Come_posso_aiutare_da_artista?)
 
 ## Donazioni
 

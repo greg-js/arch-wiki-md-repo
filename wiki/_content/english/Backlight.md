@@ -18,9 +18,9 @@ Screen brightness might be tricky to control. On some machines physical hardware
     *   [6.3 Increase brightness above maximum level](#Increase_brightness_above_maximum_level)
 *   [7 External monitors](#External_monitors)
 *   [8 Troubleshooting](#Troubleshooting)
-    *   [8.1 Backlight PWM modulation frequency (Intel i915 only)](#Backlight_PWM_modulation_frequency_.28Intel_i915_only.29)
-    *   [8.2 Inverted Brightness (Intel i915 only)](#Inverted_Brightness_.28Intel_i915_only.29)
-    *   [8.3 Unable to control eDP Panel brightness (Intel i915 only)](#Unable_to_control_eDP_Panel_brightness_.28Intel_i915_only.29)
+    *   [8.1 Backlight PWM modulation frequency (Intel i915 only)](#Backlight_PWM_modulation_frequency_(Intel_i915_only))
+    *   [8.2 Inverted Brightness (Intel i915 only)](#Inverted_Brightness_(Intel_i915_only))
+    *   [8.3 Unable to control eDP Panel brightness (Intel i915 only)](#Unable_to_control_eDP_Panel_brightness_(Intel_i915_only))
     *   [8.4 sysfs modified but no brightness change](#sysfs_modified_but_no_brightness_change)
 
 ## Overview

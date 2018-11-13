@@ -6,7 +6,7 @@ Arch Linux oficialmente soporta el paquete de código abierto [OpenJDK](http://o
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
     *   [1.1 Paquetes con soporte oficial](#Paquetes_con_soporte_oficial)
     *   [1.2 Paquetes sin soporte oficial](#Paquetes_sin_soporte_oficial)
 *   [2 Marcar paquetes como antiguos](#Marcar_paquetes_como_antiguos)
@@ -15,7 +15,7 @@ Arch Linux oficialmente soporta el paquete de código abierto [OpenJDK](http://o
     *   [3.2 Cambiar el ambiente de Java](#Cambiar_el_ambiente_de_Java)
     *   [3.3 De-seleccionar el ambiente actual de Java](#De-seleccionar_el_ambiente_actual_de_Java)
     *   [3.4 Arreglo un ambiente de Java](#Arreglo_un_ambiente_de_Java)
-    *   [3.5 Ejecutar una aplicación con un ambiente no seleccionado de Java](#Ejecutar_una_aplicaci.C3.B3n_con_un_ambiente_no_seleccionado_de_Java)
+    *   [3.5 Ejecutar una aplicación con un ambiente no seleccionado de Java](#Ejecutar_una_aplicación_con_un_ambiente_no_seleccionado_de_Java)
 
 ## Instalación
 

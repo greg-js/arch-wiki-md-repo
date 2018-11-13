@@ -23,16 +23,16 @@ También hay muchas herramientas de administración de energía:
 
 ## Contents
 
-*   [1 Administración de energía con systemd](#Administraci.C3.B3n_de_energ.C3.ADa_con_systemd)
+*   [1 Administración de energía con systemd](#Administración_de_energía_con_systemd)
     *   [1.1 Eventos de ACPI](#Eventos_de_ACPI)
-    *   [1.2 Suspensión e hibernación](#Suspensi.C3.B3n_e_hibernaci.C3.B3n)
+    *   [1.2 Suspensión e hibernación](#Suspensión_e_hibernación)
     *   [1.3 Sleep hooks](#Sleep_hooks)
-        *   [1.3.1 Archivos de servicios para suspender/reanudar](#Archivos_de_servicios_para_suspender.2Freanudar)
-        *   [1.3.2 Archivo de servicio combinando suspensión/reanudación](#Archivo_de_servicio_combinando_suspensi.C3.B3n.2Freanudaci.C3.B3n)
-        *   [1.3.3 Hooks en /usr/lib/systemd/system-sleep](#Hooks_en_.2Fusr.2Flib.2Fsystemd.2Fsystem-sleep)
-*   [2 Solución de problemas](#Soluci.C3.B3n_de_problemas)
-    *   [2.1 Activar opciones de ahorro de energía RC6](#Activar_opciones_de_ahorro_de_energ.C3.ADa_RC6)
-*   [3 Consulte también](#Consulte_tambi.C3.A9n)
+        *   [1.3.1 Archivos de servicios para suspender/reanudar](#Archivos_de_servicios_para_suspender/reanudar)
+        *   [1.3.2 Archivo de servicio combinando suspensión/reanudación](#Archivo_de_servicio_combinando_suspensión/reanudación)
+        *   [1.3.3 Hooks en /usr/lib/systemd/system-sleep](#Hooks_en_/usr/lib/systemd/system-sleep)
+*   [2 Solución de problemas](#Solución_de_problemas)
+    *   [2.1 Activar opciones de ahorro de energía RC6](#Activar_opciones_de_ahorro_de_energía_RC6)
+*   [3 Consulte también](#Consulte_también)
 
 ## Administración de energía con systemd
 
@@ -231,4 +231,4 @@ Donde *#Nr*:
 ## Consulte también
 
 *   [Laptop#Power management](/index.php/Laptop#Power_management "Laptop") describes power management specific for laptops - especially battery monitoring.
-*   [Administración de energía en Recomendaciones generales](/index.php/General_recommendations_(Espa%C3%B1ol)#Administraci.C3.B3n_de_energ.C3.ADa "General recommendations (Español)")
+*   [Administración de energía en Recomendaciones generales](/index.php/General_recommendations_(Espa%C3%B1ol)#Administración_de_energía "General recommendations (Español)")

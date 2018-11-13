@@ -4,14 +4,14 @@
 
 *   [1 Instalacja](#Instalacja)
 *   [2 Konfiguracja](#Konfiguracja)
-    *   [2.1 Przejście z vima](#Przej.C5.9Bcie_z_vima)
-        *   [2.1.1 Ładowanie dodatków vima](#.C5.81adowanie_dodatk.C3.B3w_vima)
-*   [3 Porady i wskazówki](#Porady_i_wskaz.C3.B3wki)
-    *   [3.1 Zastępowanie vi i vim na neovim](#Zast.C4.99powanie_vi_i_vim_na_neovim)
+    *   [2.1 Przejście z vima](#Przejście_z_vima)
+        *   [2.1.1 Ładowanie dodatków vima](#Ładowanie_dodatków_vima)
+*   [3 Porady i wskazówki](#Porady_i_wskazówki)
+    *   [3.1 Zastępowanie vi i vim na neovim](#Zastępowanie_vi_i_vim_na_neovim)
     *   [3.2 Tworzenie linku symbolicznego init.vim do .vimrc](#Tworzenie_linku_symbolicznego_init.vim_do_.vimrc)
-*   [4 Rozwiązywanie problemów](#Rozwi.C4.85zywanie_problem.C3.B3w)
-    *   [4.1 Kursor nie jest przywracany do poprzedniego stanu po wyjściu](#Kursor_nie_jest_przywracany_do_poprzedniego_stanu_po_wyj.C5.9Bciu)
-*   [5 Zobacz również](#Zobacz_r.C3.B3wnie.C5.BC)
+*   [4 Rozwiązywanie problemów](#Rozwiązywanie_problemów)
+    *   [4.1 Kursor nie jest przywracany do poprzedniego stanu po wyjściu](#Kursor_nie_jest_przywracany_do_poprzedniego_stanu_po_wyjściu)
+*   [5 Zobacz również](#Zobacz_również)
 
 ## Instalacja
 

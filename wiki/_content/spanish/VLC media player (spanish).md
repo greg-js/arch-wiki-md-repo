@@ -7,25 +7,25 @@ Desde la [página de inicio](https://www.videolan.org/vlc/) del proyecto:
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
 *   [2 Idioma](#Idioma)
-*   [3 Máscaras](#M.C3.A1scaras)
+*   [3 Máscaras](#Máscaras)
 *   [4 Interfaz Web](#Interfaz_Web)
 *   [5 Consejos y trucos](#Consejos_y_trucos)
-    *   [5.1 Twitch.tv transmitiendo a través de VLC](#Twitch.tv_transmitiendo_a_trav.C3.A9s_de_VLC)
-    *   [5.2 Reproducción de contenido transmitido desde un servidor DLNA local](#Reproducci.C3.B3n_de_contenido_transmitido_desde_un_servidor_DLNA_local)
-    *   [5.3 Control usando teclas de acceso rápido o cli](#Control_usando_teclas_de_acceso_r.C3.A1pido_o_cli)
-    *   [5.4 Previniendo múltiples instancias](#Previniendo_m.C3.BAltiples_instancias)
-    *   [5.5 Aceleración de vídeo por hardware](#Aceleraci.C3.B3n_de_v.C3.ADdeo_por_hardware)
+    *   [5.1 Twitch.tv transmitiendo a través de VLC](#Twitch.tv_transmitiendo_a_través_de_VLC)
+    *   [5.2 Reproducción de contenido transmitido desde un servidor DLNA local](#Reproducción_de_contenido_transmitido_desde_un_servidor_DLNA_local)
+    *   [5.3 Control usando teclas de acceso rápido o cli](#Control_usando_teclas_de_acceso_rápido_o_cli)
+    *   [5.4 Previniendo múltiples instancias](#Previniendo_múltiples_instancias)
+    *   [5.5 Aceleración de vídeo por hardware](#Aceleración_de_vídeo_por_hardware)
     *   [5.6 Servicio de systemd](#Servicio_de_systemd)
     *   [5.7 Soporte de Chromecast](#Soporte_de_Chromecast)
-*   [6 Solución de problemas](#Soluci.C3.B3n_de_problemas)
-    *   [6.1 Vídeo roto u otro problema después de la actualización](#V.C3.ADdeo_roto_u_otro_problema_despu.C3.A9s_de_la_actualizaci.C3.B3n)
-    *   [6.2 Fallo de segmentación](#Fallo_de_segmentaci.C3.B3n)
-    *   [6.3 Faltan iconos en los menús desplegables](#Faltan_iconos_en_los_men.C3.BAs_desplegables)
+*   [6 Solución de problemas](#Solución_de_problemas)
+    *   [6.1 Vídeo roto u otro problema después de la actualización](#Vídeo_roto_u_otro_problema_después_de_la_actualización)
+    *   [6.2 Fallo de segmentación](#Fallo_de_segmentación)
+    *   [6.3 Faltan iconos en los menús desplegables](#Faltan_iconos_en_los_menús_desplegables)
     *   [6.4 Error al abrir el backend VDPAU](#Error_al_abrir_el_backend_VDPAU)
-    *   [6.5 No se reproducen a través de SFTP los nombres de los archivos multimedia que contienen espacios](#No_se_reproducen_a_trav.C3.A9s_de_SFTP_los_nombres_de_los_archivos_multimedia_que_contienen_espacios)
-*   [7 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+    *   [6.5 No se reproducen a través de SFTP los nombres de los archivos multimedia que contienen espacios](#No_se_reproducen_a_través_de_SFTP_los_nombres_de_los_archivos_multimedia_que_contienen_espacios)
+*   [7 Véase también](#Véase_también)
 
 ## Instalación
 
@@ -203,7 +203,7 @@ $ gconftool-2 --type boolean --set /desktop/gnome/interface/menus_have_icons tru
 
 consulte [Hardware video acceleration#Failed to open VDPAU backend](/index.php/Hardware_video_acceleration#Failed_to_open_VDPAU_backend "Hardware video acceleration").
 
-Como su sistema probablemente no admita VDPAU, debería decirle a VLC que use VA-API en su lugar, véase [#Aceleración de vídeo por hardware](#Aceleraci.C3.B3n_de_v.C3.ADdeo_por_hardware).
+Como su sistema probablemente no admita VDPAU, debería decirle a VLC que use VA-API en su lugar, véase [#Aceleración de vídeo por hardware](#Aceleración_de_vídeo_por_hardware).
 
 ### No se reproducen a través de SFTP los nombres de los archivos multimedia que contienen espacios
 

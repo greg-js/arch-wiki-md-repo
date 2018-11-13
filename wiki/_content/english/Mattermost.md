@@ -10,7 +10,7 @@ This article describes how to install and configure the Mattermost server.
     *   [1.1 With Docker](#With_Docker)
     *   [1.2 With AUR](#With_AUR)
 *   [2 Database setup](#Database_setup)
-    *   [2.1 MySQL/MariaDB](#MySQL.2FMariaDB)
+    *   [2.1 MySQL/MariaDB](#MySQL/MariaDB)
     *   [2.2 PostgreSQL](#PostgreSQL)
         *   [2.2.1 With TCP socket](#With_TCP_socket)
         *   [2.2.2 With Unix socket](#With_Unix_socket)
@@ -110,7 +110,7 @@ GRANT ALL ON mattermostdb.* TO mmuser;
 
 	 `sudo -u postgres createuser -P mmuser` 
 
-4\. Create the Gitea database, owned by `mmuser` user:
+4\. Create the Mattermost database, owned by `mmuser` user:
 
 	 `sudo -u postgres createdb -O mmuser mattermostdb` 
 
@@ -126,7 +126,7 @@ GRANT ALL ON mattermostdb.* TO mmuser;
 
 	 `sudo -u postgres createuser mattermost` 
 
-4\. Create the Gitea database, owned by `mattermost` user:
+4\. Create the Mattermost database, owned by `mattermost` user:
 
 	 `sudo -u postgres createdb -O mattermost mattermostdb` 
 
@@ -161,7 +161,7 @@ The `DataSource`:
 
 ## Setting up Mattermost
 
-1\. Navigate to your Matterost install and create a team and user.
+1\. Navigate to your Mattermost install and create a team and user.
 
 2\. The first user in the system is automatically granted the `system_admin` role, which gives you access to the System Console.
 

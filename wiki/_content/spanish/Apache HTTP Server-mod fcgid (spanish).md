@@ -4,14 +4,14 @@ El objetivo de este "how-to" es configurar Apache para que utilice un módulo fa
 ## Contents
 
 *   [1 Requisitos](#Requisitos)
-*   [2 Instalación](#Instalaci.C3.B3n)
+*   [2 Instalación](#Instalación)
     *   [2.1 Para satisfacer los requisitos](#Para_satisfacer_los_requisitos)
     *   [2.2 Descargue mod_fastcgi](#Descargue_mod_fastcgi)
     *   [2.3 Desempaquete mod_fastcgi](#Desempaquete_mod_fastcgi)
     *   [2.4 Modifique algunos archivos](#Modifique_algunos_archivos)
     *   [2.5 Construya mod_fastcgi](#Construya_mod_fastcgi)
-*   [3 Configuración](#Configuraci.C3.B3n)
-*   [4 Más](#M.C3.A1s)
+*   [3 Configuración](#Configuración)
+*   [4 Más](#Más)
 
 ## Requisitos
 

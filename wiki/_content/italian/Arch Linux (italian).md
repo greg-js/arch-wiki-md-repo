@@ -3,18 +3,18 @@ Arch Linux è una distribuzione GNU/Linux indipendente, sviluppata per un uso ge
 ## Contents
 
 *   [1 Pricipi](#Pricipi)
-    *   [1.1 Semplicità](#Semplicit.C3.A0)
-    *   [1.2 Modernità](#Modernit.C3.A0)
+    *   [1.1 Semplicità](#Semplicità)
+    *   [1.2 Modernità](#Modernità)
     *   [1.3 Pragmatismo](#Pragmatismo)
-    *   [1.4 Centralità dell'utente](#Centralit.C3.A0_dell.27utente)
-    *   [1.5 Versatilità](#Versatilit.C3.A0)
+    *   [1.4 Centralità dell'utente](#Centralità_dell'utente)
+    *   [1.5 Versatilità](#Versatilità)
 *   [2 Storia](#Storia)
     *   [2.1 I primi anni](#I_primi_anni)
     *   [2.2 Gli anni di mezzo](#Gli_anni_di_mezzo)
     *   [2.3 Nascita di ArchWiki](#Nascita_di_ArchWiki)
-    *   [2.4 L'era di Griffin](#L.27era_di_Griffin)
+    *   [2.4 L'era di Griffin](#L'era_di_Griffin)
     *   [2.5 Arch Install Script](#Arch_Install_Script)
-    *   [2.6 L'era di Systemd](#L.27era_di_Systemd)
+    *   [2.6 L'era di Systemd](#L'era_di_Systemd)
     *   [2.7 Fine del supporto a i686](#Fine_del_supporto_a_i686)
 
 ## Pricipi

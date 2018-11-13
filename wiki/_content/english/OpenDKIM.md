@@ -13,7 +13,7 @@ DKIM is supported by most common mail providers, including Yahoo, Google and Out
 *   [7 Multiple domains](#Multiple_domains)
 *   [8 Security](#Security)
 *   [9 Troubleshooting](#Troubleshooting)
-    *   [9.1 Error: "milter-reject: END-OF-MESSAGE from localhost"](#Error:_.22milter-reject:_END-OF-MESSAGE_from_localhost.22)
+    *   [9.1 Error: "milter-reject: END-OF-MESSAGE from localhost"](#Error:_"milter-reject:_END-OF-MESSAGE_from_localhost")
 *   [10 Notes](#Notes)
 *   [11 See also](#See_also)
 

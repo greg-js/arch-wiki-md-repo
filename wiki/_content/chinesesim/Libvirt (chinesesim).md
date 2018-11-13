@@ -17,38 +17,38 @@ Libvirt 的一些主要功能如下：
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-    *   [1.1 服务端](#.E6.9C.8D.E5.8A.A1.E7.AB.AF)
-    *   [1.2 客户端](#.E5.AE.A2.E6.88.B7.E7.AB.AF)
-*   [2 配置](#.E9.85.8D.E7.BD.AE)
-    *   [2.1 设置授权](#.E8.AE.BE.E7.BD.AE.E6.8E.88.E6.9D.83)
-        *   [2.1.1 使用 polkit](#.E4.BD.BF.E7.94.A8_polkit)
-        *   [2.1.2 基于文件的权限授权](#.E5.9F.BA.E4.BA.8E.E6.96.87.E4.BB.B6.E7.9A.84.E6.9D.83.E9.99.90.E6.8E.88.E6.9D.83)
-    *   [2.2 守护进程](#.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B)
-    *   [2.3 非加密的 TCP/IP sockets](#.E9.9D.9E.E5.8A.A0.E5.AF.86.E7.9A.84_TCP.2FIP_sockets)
-    *   [2.4 用主机名访问虚拟机](#.E7.94.A8.E4.B8.BB.E6.9C.BA.E5.90.8D.E8.AE.BF.E9.97.AE.E8.99.9A.E6.8B.9F.E6.9C.BA)
-*   [3 测试](#.E6.B5.8B.E8.AF.95)
-*   [4 管理](#.E7.AE.A1.E7.90.86)
+*   [1 安装](#安装)
+    *   [1.1 服务端](#服务端)
+    *   [1.2 客户端](#客户端)
+*   [2 配置](#配置)
+    *   [2.1 设置授权](#设置授权)
+        *   [2.1.1 使用 polkit](#使用_polkit)
+        *   [2.1.2 基于文件的权限授权](#基于文件的权限授权)
+    *   [2.2 守护进程](#守护进程)
+    *   [2.3 非加密的 TCP/IP sockets](#非加密的_TCP/IP_sockets)
+    *   [2.4 用主机名访问虚拟机](#用主机名访问虚拟机)
+*   [3 测试](#测试)
+*   [4 管理](#管理)
     *   [4.1 virsh](#virsh)
-    *   [4.2 存储池](#.E5.AD.98.E5.82.A8.E6.B1.A0)
-        *   [4.2.1 用 virsh 新建存储池](#.E7.94.A8_virsh_.E6.96.B0.E5.BB.BA.E5.AD.98.E5.82.A8.E6.B1.A0)
-        *   [4.2.2 用 virt-manager 新建存储池](#.E7.94.A8_virt-manager_.E6.96.B0.E5.BB.BA.E5.AD.98.E5.82.A8.E6.B1.A0)
-    *   [4.3 存储卷](#.E5.AD.98.E5.82.A8.E5.8D.B7)
-        *   [4.3.1 用 virsh 新建卷](#.E7.94.A8_virsh_.E6.96.B0.E5.BB.BA.E5.8D.B7)
-        *   [4.3.2 virt-manager 后备存储类型的 bug](#virt-manager_.E5.90.8E.E5.A4.87.E5.AD.98.E5.82.A8.E7.B1.BB.E5.9E.8B.E7.9A.84_bug)
-    *   [4.4 域](#.E5.9F.9F)
-        *   [4.4.1 用 virt-install 新建域](#.E7.94.A8_virt-install_.E6.96.B0.E5.BB.BA.E5.9F.9F)
-        *   [4.4.2 用 virt-manager 新建域](#.E7.94.A8_virt-manager_.E6.96.B0.E5.BB.BA.E5.9F.9F)
-        *   [4.4.3 管理域](#.E7.AE.A1.E7.90.86.E5.9F.9F)
-    *   [4.5 网络](#.E7.BD.91.E7.BB.9C)
+    *   [4.2 存储池](#存储池)
+        *   [4.2.1 用 virsh 新建存储池](#用_virsh_新建存储池)
+        *   [4.2.2 用 virt-manager 新建存储池](#用_virt-manager_新建存储池)
+    *   [4.3 存储卷](#存储卷)
+        *   [4.3.1 用 virsh 新建卷](#用_virsh_新建卷)
+        *   [4.3.2 virt-manager 后备存储类型的 bug](#virt-manager_后备存储类型的_bug)
+    *   [4.4 域](#域)
+        *   [4.4.1 用 virt-install 新建域](#用_virt-install_新建域)
+        *   [4.4.2 用 virt-manager 新建域](#用_virt-manager_新建域)
+        *   [4.4.3 管理域](#管理域)
+    *   [4.5 网络](#网络)
         *   [4.5.1 IPv6](#IPv6)
-    *   [4.6 快照](#.E5.BF.AB.E7.85.A7)
-        *   [4.6.1 创建快照](#.E5.88.9B.E5.BB.BA.E5.BF.AB.E7.85.A7)
-    *   [4.7 其他管理操作](#.E5.85.B6.E4.BB.96.E7.AE.A1.E7.90.86.E6.93.8D.E4.BD.9C)
-*   [5 Python 连接代码](#Python_.E8.BF.9E.E6.8E.A5.E4.BB.A3.E7.A0.81)
-*   [6 UEFI 支持](#UEFI_.E6.94.AF.E6.8C.81)
+    *   [4.6 快照](#快照)
+        *   [4.6.1 创建快照](#创建快照)
+    *   [4.7 其他管理操作](#其他管理操作)
+*   [5 Python 连接代码](#Python_连接代码)
+*   [6 UEFI 支持](#UEFI_支持)
 *   [7 PulseAudio](#PulseAudio)
-*   [8 参阅](#.E5.8F.82.E9.98.85)
+*   [8 参阅](#参阅)
 
 ## 安装
 
@@ -58,7 +58,7 @@ Libvirt 的一些主要功能如下：
 
 [安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [libvirt](https://www.archlinux.org/packages/?name=libvirt) 以及至少一个虚拟运行环境（hypervisor）：
 
-*   [libvirt 的 KVM/QEMU 驱动](http://libvirt.org/drvqemu.html) 是 *libvirt* 的首选驱动，如果 KVM 功能已 [启用](/index.php/QEMU_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.90.AF.E7.94.A8_KVM "QEMU (简体中文)")，则支持全虚拟化和硬件加速的客户机。详见 [QEMU](/index.php/QEMU_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "QEMU (简体中文)")。
+*   [libvirt 的 KVM/QEMU 驱动](http://libvirt.org/drvqemu.html) 是 *libvirt* 的首选驱动，如果 KVM 功能已 [启用](/index.php/QEMU_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#启用_KVM "QEMU (简体中文)")，则支持全虚拟化和硬件加速的客户机。详见 [QEMU](/index.php/QEMU_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "QEMU (简体中文)")。
 
 *   其他[受支持的虚拟运行环境](http://libvirt.org/drivers.html)，包括 [LXC](/index.php/LXC "LXC")、[VirtualBox](/index.php/VirtualBox "VirtualBox") 和 [Xen](/index.php/Xen "Xen")。请参见它们各自的安装说明。
     *   [Libvirt 的 LXC 驱动](http://libvirt.org/drvlxc.html) 并不依赖 [lxc](https://www.archlinux.org/packages/?name=lxc) 提供的用户空间工具。因此，即便需要使用这个驱动也并不是必须安装该工具。
@@ -102,7 +102,7 @@ Libvirt 的一些主要功能如下：
 
 ## 配置
 
-对于***系统*** 级别的管理任务（如：全局配置和镜像*卷* 位置），libvirt 要求至少要[设置授权](#.E8.AE.BE.E7.BD.AE.E6.8E.88.E6.9D.83)和[启动守护进程](#.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B)。
+对于***系统*** 级别的管理任务（如：全局配置和镜像*卷* 位置），libvirt 要求至少要[设置授权](#设置授权)和[启动守护进程](#守护进程)。
 
 **注意:** 对于用户***会话*** 级别的管理任务，守护进程的安装和设置*不是* 必须的。授权总是仅限本地，前台程序将启动一个 **libvirtd** 守护进程的本地实例。
 
@@ -112,24 +112,24 @@ Libvirt 的一些主要功能如下：
 
 	Libvirt 守护进程允许管理员分别为客户端连接的每个网络 socket 选择不同授权机制。这主要是通过 libvirt 守护进程的主配置文件 `/etc/libvirt/libvirtd.conf` 来实现的。每个 libvirt socket 可以有独立的授权机制配置。目前的可选项有 `none`、`polkit` 和 `sasl`。
 
-由于 [libvirt](https://www.archlinux.org/packages/?name=libvirt) 在安装时将把 [polkit](https://www.archlinux.org/packages/?name=polkit) 作为依赖一并安装，所以 [polkit](#.E4.BD.BF.E7.94.A8_polkit) 通常是 `unix_sock_auth` 参数的默认值（[来源](http://libvirt.org/auth.html#ACL_server_polkit)）。但[基于文件的权限](#.E5.9F.BA.E4.BA.8E.E6.96.87.E4.BB.B6.E7.9A.84.E6.9D.83.E9.99.90.E6.8E.88.E6.9D.83)仍然可用。
+由于 [libvirt](https://www.archlinux.org/packages/?name=libvirt) 在安装时将把 [polkit](https://www.archlinux.org/packages/?name=polkit) 作为依赖一并安装，所以 [polkit](#使用_polkit) 通常是 `unix_sock_auth` 参数的默认值（[来源](http://libvirt.org/auth.html#ACL_server_polkit)）。但[基于文件的权限](#基于文件的权限授权)仍然可用。
 
 #### 使用 polkit
 
 **注意:** 为使 `polkit` 认证工作正常，应该重启一次系统。
 
-*libvirt* 守护进程在 polkit 策略配置文件（`/usr/share/polkit-1/actions/org.libvirt.unix.policy`）中提供了两种**策略**（参阅：[Polkit (简体中文)#操作](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E6.93.8D.E4.BD.9C "Polkit (简体中文)")）：
+*libvirt* 守护进程在 polkit 策略配置文件（`/usr/share/polkit-1/actions/org.libvirt.unix.policy`）中提供了两种**策略**（参阅：[Polkit (简体中文)#操作](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#操作 "Polkit (简体中文)")）：
 
 *   `org.libvirt.unix.manage` 面向完全的管理访问（读写模式后台 socket），以及
 *   `org.libvirt.unix.monitor` 面向仅监视察看访问（只读 socket）。
 
 默认的面向读写模式后台 socket 的策略将请求认证为管理员。这点类似于 [sudo](/index.php/Sudo_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Sudo (简体中文)") 认证，但它并不要求客户应用最终以 root 身份运行。默认策略下也仍然允许任何应用连接到只读 socket。
 
-Arch Linux 默认 `wheel` 组的所有用户都是管理员身份：定义于 `/etc/polkit-1/rules.d/50-default.rules`（参阅：[Polkit (简体中文)#管理员身份认证](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E7.AE.A1.E7.90.86.E5.91.98.E8.BA.AB.E4.BB.BD.E8.AE.A4.E8.AF.81 "Polkit (简体中文)")）。这样就不必新建组和规则文件。 **如果用户是 `wheel` 组的成员**：只要连接到了读写模式 socket（例如通过 [virt-manager](https://www.archlinux.org/packages/?name=virt-manager)）就会被提示输入该用户的口令。
+Arch Linux 默认 `wheel` 组的所有用户都是管理员身份：定义于 `/etc/polkit-1/rules.d/50-default.rules`（参阅：[Polkit (简体中文)#管理员身份认证](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#管理员身份认证 "Polkit (简体中文)")）。这样就不必新建组和规则文件。 **如果用户是 `wheel` 组的成员**：只要连接到了读写模式 socket（例如通过 [virt-manager](https://www.archlinux.org/packages/?name=virt-manager)）就会被提示输入该用户的口令。
 
-**注意:** 要求口令的提示由系统中的认证代理给出（参阅：[Polkit (简体中文)#身份认证组件](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.BA.AB.E4.BB.BD.E8.AE.A4.E8.AF.81.E7.BB.84.E4.BB.B6 "Polkit (简体中文)")）。文本控制台默认的认证代理是 `pkttyagent` 它可能因工作不正常而导致各种问题。
+**注意:** 要求口令的提示由系统中的认证代理给出（参阅：[Polkit (简体中文)#身份认证组件](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#身份认证组件 "Polkit (简体中文)")）。文本控制台默认的认证代理是 `pkttyagent` 它可能因工作不正常而导致各种问题。
 
-**提示：** 如果要配置无口令认证，参阅 [Polkit (简体中文)#跳过口令提示](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.B7.B3.E8.BF.87.E5.8F.A3.E4.BB.A4.E6.8F.90.E7.A4.BA "Polkit (简体中文)")。
+**提示：** 如果要配置无口令认证，参阅 [Polkit (简体中文)#跳过口令提示](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#跳过口令提示 "Polkit (简体中文)")。
 
 从 libvirt 1.2.16 版开始（提案见：[[1]](http://libvirt.org/git/?p=libvirt.git;a=commit;h=e94979e901517af9fdde358d7b7c92cc055dd50c)），`libvirt` 组的成员用户默认可以无口令访问读写模式 socket。最简单的判断方法就是看 libvirt 组是否存在并且用户是否该组成员。 你可能想要修改授权以读写模式访问socket的组，例如，你想授权`kvm`组，可创建下面的文件：
 
@@ -146,7 +146,7 @@ polkit.addRule(function(action, subject) {
 
 ```
 
-然后[添加用户](/index.php/Users_and_groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.85.B6.E5.AE.83.E7.94.A8.E6.88.B7.E7.AE.A1.E7.90.86.E7.A4.BA.E4.BE.8B "Users and groups (简体中文)")到 `kvm` 组并重新登录。*kvm* 也可以是任何其它存在的组并且用户是该组成员（详阅[用户和用户组](/index.php/%E7%94%A8%E6%88%B7%E5%92%8C%E7%94%A8%E6%88%B7%E7%BB%84 "用户和用户组")）。
+然后[添加用户](/index.php/Users_and_groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#其它用户管理示例 "Users and groups (简体中文)")到 `kvm` 组并重新登录。*kvm* 也可以是任何其它存在的组并且用户是该组成员（详阅[用户和用户组](/index.php/%E7%94%A8%E6%88%B7%E5%92%8C%E7%94%A8%E6%88%B7%E7%BB%84 "用户和用户组")）。
 
 修改组之后不要忘记重新登录才能生效。
 
@@ -168,7 +168,7 @@ polkit.addRule(function(action, subject) {
 
 ### 守护进程
 
-`libvirtd.service` 和 `virtlogd.service`这两个服务单元都要[启动](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E5.8D.95.E5.85.83 "Systemd (简体中文)")。可以把 `libvirtd.service` 设置为[启用](/index.php/Enable "Enable")，这时系统将同时启用 `virtlogd.service` 和 `virtlockd.socket` 两个服务[单元](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E5.8D.95.E5.85.83 "Systemd (简体中文)")，因此后二者不必再设置为**启用**。
+`libvirtd.service` 和 `virtlogd.service`这两个服务单元都要[启动](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#使用单元 "Systemd (简体中文)")。可以把 `libvirtd.service` 设置为[启用](/index.php/Enable "Enable")，这时系统将同时启用 `virtlogd.service` 和 `virtlockd.socket` 两个服务[单元](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#使用单元 "Systemd (简体中文)")，因此后二者不必再设置为**启用**。
 
 ### 非加密的 TCP/IP sockets
 
@@ -342,7 +342,7 @@ $ qemu-img create -f qcow2 -o backing_file=<path to backing image>,backing_fmt=q
 
 #### 用 virt-install 新建域
 
-对于很详细的域（虚拟机）配置，可以[#用 virt-manager 新建域](#.E7.94.A8_virt-manager_.E6.96.B0.E5.BB.BA.E5.9F.9F)更简单地完成。但是，基础配置同样可以用`virt-install`完成并且同样运行顺利。至少要配置`--name`, `--memory`, 存储(`--disk`, `--filesystem`,或`--nodisks`),和安装方法（通常来说是`.iso`文件或CD）。查看[virt-install(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/virt-install.1)得到未列出的选项和更多的详情。
+对于很详细的域（虚拟机）配置，可以[#用 virt-manager 新建域](#用_virt-manager_新建域)更简单地完成。但是，基础配置同样可以用`virt-install`完成并且同样运行顺利。至少要配置`--name`, `--memory`, 存储(`--disk`, `--filesystem`,或`--nodisks`),和安装方法（通常来说是`.iso`文件或CD）。查看[virt-install(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/virt-install.1)得到未列出的选项和更多的详情。
 
 Arch Linux（两个虚拟CPU，1 GiB内存，qcow2，用户网络）:
 
@@ -462,7 +462,7 @@ $ virsh edit *domain*
 *   macvtap — 直接连接到宿主机的一个物理网络接口。
 *   user — 本地网络，仅用于用户 *会话*。
 
-绝大多数用户都可以通过 `virsh` 的各种可选项创建具有各种功能的网络，一般来说比通过 GUI 程序（像 `virt-manager` 之类）更容易做到。也可以按 [#用 virt-install 新建域](#.E7.94.A8_virt-install_.E6.96.B0.E5.BB.BA.E5.9F.9F) 所述实现。
+绝大多数用户都可以通过 `virsh` 的各种可选项创建具有各种功能的网络，一般来说比通过 GUI 程序（像 `virt-manager` 之类）更容易做到。也可以按 [#用 virt-install 新建域](#用_virt-install_新建域) 所述实现。
 
 **注意:** libvirt 通过 [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) 处理 DHCP 和 DNS 请求，以启动每个虚拟网络的不同实例。也会为特定的路由添加 iptables 规则并启用 `ip_forward` 内核参数。这也意味着宿主机上已运行的dnsmasq并不是libvirt所必须的（并可能干扰到libvirt的dnsmasq实例）。
 

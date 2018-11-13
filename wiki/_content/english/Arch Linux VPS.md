@@ -85,7 +85,7 @@ This article discusses the use of Arch Linux on Virtual Private Servers, and inc
 
 ### KVM
 
-See [QEMU#Preparing an (Arch) Linux guest](/index.php/QEMU#Preparing_an_.28Arch.29_Linux_guest "QEMU").
+See [QEMU#Preparing an (Arch) Linux guest](/index.php/QEMU#Preparing_an_(Arch)_Linux_guest "QEMU").
 
 ### OpenVZ
 

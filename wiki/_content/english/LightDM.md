@@ -28,8 +28,8 @@ More details about LightDM's design can be found [here](http://www.freedesktop.o
     *   [5.1 X session wrapper](#X_session_wrapper)
         *   [5.1.1 Environment variables](#Environment_variables)
         *   [5.1.2 Keymap](#Keymap)
-    *   [5.2 Changing background images/colors](#Changing_background_images.2Fcolors)
-        *   [5.2.1 GTK+ greeter](#GTK.2B_greeter)
+    *   [5.2 Changing background images/colors](#Changing_background_images/colors)
+        *   [5.2.1 GTK+ greeter](#GTK+_greeter)
             *   [5.2.1.1 GTK3 Theme](#GTK3_Theme)
         *   [5.2.2 Webkit2 greeter](#Webkit2_greeter)
         *   [5.2.3 Unity greeter](#Unity_greeter)
@@ -41,11 +41,11 @@ More details about LightDM's design can be found [here](http://www.freedesktop.o
     *   [5.6 Enabling interactive passwordless login](#Enabling_interactive_passwordless_login)
     *   [5.7 Hiding system and services users](#Hiding_system_and_services_users)
     *   [5.8 Migrating from SLiM](#Migrating_from_SLiM)
-    *   [5.9 Login using ~/.xinitrc](#Login_using_.7E.2F.xinitrc)
+    *   [5.9 Login using ~/.xinitrc](#Login_using_~/.xinitrc)
     *   [5.10 NumLock on by default](#NumLock_on_by_default)
     *   [5.11 Default session](#Default_session)
-    *   [5.12 Adjusting the login window's position](#Adjusting_the_login_window.27s_position)
-        *   [5.12.1 GTK+ greeter](#GTK.2B_greeter_2)
+    *   [5.12 Adjusting the login window's position](#Adjusting_the_login_window's_position)
+        *   [5.12.1 GTK+ greeter](#GTK+_greeter_2)
     *   [5.13 VNC Server](#VNC_Server)
     *   [5.14 Lock the screen using light-locker](#Lock_the_screen_using_light-locker)
 *   [6 Troubleshooting](#Troubleshooting)
@@ -56,7 +56,7 @@ More details about LightDM's design can be found [here](http://www.freedesktop.o
     *   [6.5 LightDM does not appear or monitor only displays TTY output](#LightDM_does_not_appear_or_monitor_only_displays_TTY_output)
     *   [6.6 Pulseaudio not starting automatically](#Pulseaudio_not_starting_automatically)
     *   [6.7 Long pause before LightDM shows up when home is encrypted](#Long_pause_before_LightDM_shows_up_when_home_is_encrypted)
-    *   [6.8 Boot hangs on "[ OK ] Reached target Graphical Interface."](#Boot_hangs_on_.22.5B_OK_.5D_Reached_target_Graphical_Interface..22)
+    *   [6.8 Boot hangs on "[ OK ] Reached target Graphical Interface."](#Boot_hangs_on_"[_OK_]_Reached_target_Graphical_Interface.")
 *   [7 See also](#See_also)
 
 ## Installation
@@ -337,7 +337,7 @@ Move the contents of [xinitrc](/index.php/Xinitrc "Xinitrc") to [xprofile](/inde
 
 ### Login using ~/.xinitrc
 
-See [Display manager#Run ~/.xinitrc as a session](/index.php/Display_manager#Run_.7E.2F.xinitrc_as_a_session "Display manager").
+See [Display manager#Run ~/.xinitrc as a session](/index.php/Display_manager#Run_~/.xinitrc_as_a_session "Display manager").
 
 ### NumLock on by default
 

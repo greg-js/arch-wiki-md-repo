@@ -2,11 +2,11 @@ A következő öt alapelv magába foglalja mindazt, amit általában az Arch Mó
 
 ## Contents
 
-*   [1 Egyszerűség](#Egyszer.C5.B1s.C3.A9g)
-*   [2 Kódhelyesség kényelem felett](#K.C3.B3dhelyess.C3.A9g_k.C3.A9nyelem_felett)
-*   [3 Felhasználóközpontúság](#Felhaszn.C3.A1l.C3.B3k.C3.B6zpont.C3.BAs.C3.A1g)
-*   [4 Nyíltság](#Ny.C3.ADlts.C3.A1g)
-*   [5 Szabadság](#Szabads.C3.A1g)
+*   [1 Egyszerűség](#Egyszerűség)
+*   [2 Kódhelyesség kényelem felett](#Kódhelyesség_kényelem_felett)
+*   [3 Felhasználóközpontúság](#Felhasználóközpontúság)
+*   [4 Nyíltság](#Nyíltság)
+*   [5 Szabadság](#Szabadság)
 
 ## Egyszerűség
 

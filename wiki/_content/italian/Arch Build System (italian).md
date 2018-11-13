@@ -4,19 +4,19 @@ Quest'articolo fornisce una panoramica dell' Arch Build System insieme ad una gu
 
 ## Contents
 
-*   [1 Cosa è ABS?](#Cosa_.C3.A8_ABS.3F)
-    *   [1.1 Cos'è un sistema ports-like?](#Cos.27.C3.A8_un_sistema_ports-like.3F)
-    *   [1.2 **ABS** è un concetto simile](#ABS_.C3.A8_un_concetto_simile)
+*   [1 Cosa è ABS?](#Cosa_è_ABS?)
+    *   [1.1 Cos'è un sistema ports-like?](#Cos'è_un_sistema_ports-like?)
+    *   [1.2 **ABS** è un concetto simile](#ABS_è_un_concetto_simile)
     *   [1.3 Descrizione generale di ABS](#Descrizione_generale_di_ABS)
-*   [2 Perchè dovrei usare ABS?](#Perch.C3.A8_dovrei_usare_ABS.3F)
-*   [3 Come usare ABS?](#Come_usare_ABS.3F)
-    *   [3.1 Strumenti d'installazione](#Strumenti_d.27installazione)
-    *   [3.2 /etc/abs.conf](#.2Fetc.2Fabs.conf)
-    *   [3.3 L'albero ABS](#L.27albero_ABS)
-    *   [3.4 Scaricare l'albero ABS](#Scaricare_l.27albero_ABS)
-    *   [3.5 /etc/makepkg.conf](#.2Fetc.2Fmakepkg.conf)
-        *   [3.5.1 Impostare la variabile PACKAGER all'interno di /etc/makepkg.conf](#Impostare_la_variabile_PACKAGER_all.27interno_di_.2Fetc.2Fmakepkg.conf)
-            *   [3.5.1.1 Mostrare tutti i pacchetti (inclusi quelli presi da AUR)](#Mostrare_tutti_i_pacchetti_.28inclusi_quelli_presi_da_AUR.29)
+*   [2 Perchè dovrei usare ABS?](#Perchè_dovrei_usare_ABS?)
+*   [3 Come usare ABS?](#Come_usare_ABS?)
+    *   [3.1 Strumenti d'installazione](#Strumenti_d'installazione)
+    *   [3.2 /etc/abs.conf](#/etc/abs.conf)
+    *   [3.3 L'albero ABS](#L'albero_ABS)
+    *   [3.4 Scaricare l'albero ABS](#Scaricare_l'albero_ABS)
+    *   [3.5 /etc/makepkg.conf](#/etc/makepkg.conf)
+        *   [3.5.1 Impostare la variabile PACKAGER all'interno di /etc/makepkg.conf](#Impostare_la_variabile_PACKAGER_all'interno_di_/etc/makepkg.conf)
+            *   [3.5.1.1 Mostrare tutti i pacchetti (inclusi quelli presi da AUR)](#Mostrare_tutti_i_pacchetti_(inclusi_quelli_presi_da_AUR))
             *   [3.5.1.2 Mostrare solo i pacchetti contenuti nei repository](#Mostrare_solo_i_pacchetti_contenuti_nei_repository)
     *   [3.6 Creare una directory di compilazione](#Creare_una_directory_di_compilazione)
     *   [3.7 Compilazione del pacchetto](#Compilazione_del_pacchetto)
@@ -217,7 +217,7 @@ Modificare il PKGBUILD per aggiungere o rimuovere il supporto a determinati comp
 Eseguire makepkg da utente normale (con lo switch `-s` per installare con la risoluzione automatica delle dipendenze (richiede la presenza del pacchetto [sudo](https://www.archlinux.org/packages/?name=sudo).)
 
  `$ makepkg -s` 
-**Attenzione:** Prima di lamentarsi riguardo la mancanza delle dipendenze di compilazione. ricordarsi che il gruppo [base](https://www.archlinux.org/groups/x86_64/base/) si suppone già installato su qualsiasi sistema Arch Linux. Il gruppo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) si suppone già installato quando si compila con makepkg. Consultare [#Strumenti d'installazione](#Strumenti_d.27installazione)
+**Attenzione:** Prima di lamentarsi riguardo la mancanza delle dipendenze di compilazione. ricordarsi che il gruppo [base](https://www.archlinux.org/groups/x86_64/base/) si suppone già installato su qualsiasi sistema Arch Linux. Il gruppo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) si suppone già installato quando si compila con makepkg. Consultare [#Strumenti d'installazione](#Strumenti_d'installazione)
 
 Installare da root:
 

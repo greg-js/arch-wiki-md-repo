@@ -5,7 +5,7 @@ Este artículo resume como instalar el editor de LaTeX Kile con TeXLive en vez d
 *   [1 Paso 1: Instalar TeXLive](#Paso_1:_Instalar_TeXLive)
 *   [2 Paso 2: Instalar Okular](#Paso_2:_Instalar_Okular)
 *   [3 Paso 3: Instalar Kile](#Paso_3:_Instalar_Kile)
-*   [4 Solución de problemas](#Soluci.C3.B3n_de_problemas)
+*   [4 Solución de problemas](#Solución_de_problemas)
     *   [4.1 Avisos de pdfTeX](#Avisos_de_pdfTeX)
 
 ## Paso 1: Instalar TeXLive

@@ -12,9 +12,9 @@ Questo articolo fornirà un esempio su come installare e configurare Arch Linux 
 *   [3 Installazione](#Installazione)
     *   [3.1 Installare Arch Linux su LVM](#Installare_Arch_Linux_su_LVM)
     *   [3.2 Partizionare i dischi](#Partizionare_i_dischi)
-    *   [3.3 Creare i volumi fisici(Physical volumes)](#Creare_i_volumi_fisici.28Physical_volumes.29)
-    *   [3.4 Creare gruppi di volumi (Volume group)](#Creare_gruppi_di_volumi_.28Volume_group.29)
-    *   [3.5 Creare i volumi logici (Logical Volumes)](#Creare_i_volumi_logici_.28Logical_Volumes.29)
+    *   [3.3 Creare i volumi fisici(Physical volumes)](#Creare_i_volumi_fisici(Physical_volumes))
+    *   [3.4 Creare gruppi di volumi (Volume group)](#Creare_gruppi_di_volumi_(Volume_group))
+    *   [3.5 Creare i volumi logici (Logical Volumes)](#Creare_i_volumi_logici_(Logical_Volumes))
     *   [3.6 Creare i filesystem ed effettuare il mount dei volumi logici](#Creare_i_filesystem_ed_effettuare_il_mount_dei_volumi_logici)
     *   [3.7 Impostare i filesystem ed i punti di mount](#Impostare_i_filesystem_ed_i_punti_di_mount)
     *   [3.8 Configurare il sistema](#Configurare_il_sistema)
@@ -257,7 +257,7 @@ Assicurarsi anche che sia abilitato il modulo `dm_mod`.
 
  `/etc/mkinitcpio.conf:`  `MODULES="dm_mod ..."` 
 
-In caso siano state effettuate delle modifiche al file, sarà necessario [ricreare](/index.php/Mkinitcpio_(Italiano)#Creazione_dell.27immagine_ed_attivazione "Mkinitcpio (Italiano)") l'initramfs, in modo da renderle effetive.
+In caso siano state effettuate delle modifiche al file, sarà necessario [ricreare](/index.php/Mkinitcpio_(Italiano)#Creazione_dell'immagine_ed_attivazione "Mkinitcpio (Italiano)") l'initramfs, in modo da renderle effetive.
 
 Può essere necessario aggiongere alle opzioni del kernel, `dolvm`. `root=` dovrebbe essere impostato sul volume logico, ad esempio `/dev/mapper/{vg-name}-{lv-name}`
 

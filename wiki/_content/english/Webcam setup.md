@@ -14,7 +14,7 @@ Most probably your webcam will work out of the box. Permissions to access video 
     *   [3.5 FFmpeg](#FFmpeg)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 V4L1 support](#V4L1_support)
-    *   [4.2 Microsoft Lifecam Studio/Cinema](#Microsoft_Lifecam_Studio.2FCinema)
+    *   [4.2 Microsoft Lifecam Studio/Cinema](#Microsoft_Lifecam_Studio/Cinema)
     *   [4.3 Skype](#Skype)
     *   [4.4 Check bandwidth used by USB webcams](#Check_bandwidth_used_by_USB_webcams)
 

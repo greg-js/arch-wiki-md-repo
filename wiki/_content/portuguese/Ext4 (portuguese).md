@@ -12,27 +12,27 @@ De [Ext4 - Linux Kernel Newbies](http://kernelnewbies.org/Ext4) (traduzido):
 ## Contents
 
 *   [1 Criar um novo sistema de arquivos ext4](#Criar_um_novo_sistema_de_arquivos_ext4)
-    *   [1.1 Proporção de bytes por inode](#Propor.C3.A7.C3.A3o_de_bytes_por_inode)
+    *   [1.1 Proporção de bytes por inode](#Proporção_de_bytes_por_inode)
     *   [1.2 Blocos reservados](#Blocos_reservados)
-*   [2 Migrando de ext2/ext3 para ext4](#Migrando_de_ext2.2Fext3_para_ext4)
-    *   [2.1 Montando partições ext2/ext3 como ext4 sem conversão](#Montando_parti.C3.A7.C3.B5es_ext2.2Fext3_como_ext4_sem_convers.C3.A3o)
+*   [2 Migrando de ext2/ext3 para ext4](#Migrando_de_ext2/ext3_para_ext4)
+    *   [2.1 Montando partições ext2/ext3 como ext4 sem conversão](#Montando_partições_ext2/ext3_como_ext4_sem_conversão)
         *   [2.1.1 Motivo](#Motivo)
         *   [2.1.2 Procedimento](#Procedimento)
-    *   [2.2 Convertendo partições ext2/ext3 para ext4](#Convertendo_parti.C3.A7.C3.B5es_ext2.2Fext3_para_ext4)
+    *   [2.2 Convertendo partições ext2/ext3 para ext4](#Convertendo_partições_ext2/ext3_para_ext4)
         *   [2.2.1 Motivo](#Motivo_2)
         *   [2.2.2 Procedimento](#Procedimento_2)
 *   [3 Usando criptografia baseada em arquivos](#Usando_criptografia_baseada_em_arquivos)
 *   [4 Melhorando performance](#Melhorando_performance)
     *   [4.1 E4rat](#E4rat)
-    *   [4.2 Desabilitando atualização de tempo de acesso](#Desabilitando_atualiza.C3.A7.C3.A3o_de_tempo_de_acesso)
+    *   [4.2 Desabilitando atualização de tempo de acesso](#Desabilitando_atualização_de_tempo_de_acesso)
     *   [4.3 Aumentando o intervalo de commit](#Aumentando_o_intervalo_de_commit)
     *   [4.4 Desligando barreiras](#Desligando_barreiras)
     *   [4.5 Desabilitando journaling](#Desabilitando_journaling)
-    *   [4.6 Tornando journals rápidos](#Tornando_journals_r.C3.A1pidos)
-*   [5 Habilitando somas de verificação de metadados](#Habilitando_somas_de_verifica.C3.A7.C3.A3o_de_metadados)
+    *   [4.6 Tornando journals rápidos](#Tornando_journals_rápidos)
+*   [5 Habilitando somas de verificação de metadados](#Habilitando_somas_de_verificação_de_metadados)
     *   [5.1 Novo sistema de arquivos](#Novo_sistema_de_arquivos)
     *   [5.2 Converter sistema de arquivos existentes](#Converter_sistema_de_arquivos_existentes)
-*   [6 Veja também](#Veja_tamb.C3.A9m)
+*   [6 Veja também](#Veja_também)
 
 ## Criar um novo sistema de arquivos ext4
 
@@ -46,7 +46,7 @@ Para formatar uma partição, faça:
 **Dica:**
 
 *   Veja [mke2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8) para mais opções; edite `/etc/mke2fs.conf` para ver/configurar as opções padrões.
-*   Se houver suporte, você pode querer habilitar [metadados de somas de verificação](#Habilitando_somas_de_verifica.C3.A7.C3.A3o_de_metadados) (também conhecidos como *checksums*).
+*   Se houver suporte, você pode querer habilitar [metadados de somas de verificação](#Habilitando_somas_de_verificação_de_metadados) (também conhecidos como *checksums*).
 
 ### Proporção de bytes por inode
 

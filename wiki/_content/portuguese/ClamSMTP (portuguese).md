@@ -6,13 +6,13 @@ Os requisitos básicos são uma instalação do [Postfix](/index.php/Postfix "Po
 
 ## Contents
 
-*   [1 Instalação](#Instala.C3.A7.C3.A3o)
-*   [2 Configuração](#Configura.C3.A7.C3.A3o)
+*   [1 Instalação](#Instalação)
+*   [2 Configuração](#Configuração)
     *   [2.1 CLAMSMTP](#CLAMSMTP)
     *   [2.2 CLAMAV](#CLAMAV)
     *   [2.3 POSTFIX](#POSTFIX)
 *   [3 Teste](#Teste)
-*   [4 Veja também](#Veja_tamb.C3.A9m)
+*   [4 Veja também](#Veja_também)
 
 ## Instalação
 

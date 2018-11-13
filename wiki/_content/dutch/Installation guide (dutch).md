@@ -3,7 +3,7 @@ Related articles
 ## Contents
 
 *   [1 Introductie](#Introductie)
-    *   [1.1 Wat is Arch Linux?](#Wat_is_Arch_Linux.3F)
+    *   [1.1 Wat is Arch Linux?](#Wat_is_Arch_Linux?)
     *   [1.2 Licentie](#Licentie)
 *   [2 Arch Linux installeren](#Arch_Linux_installeren)
     *   [2.1 Alvorens te installeren](#Alvorens_te_installeren)
@@ -15,7 +15,7 @@ Related articles
         *   [2.5.2 Setup uitvoeren](#Setup_uitvoeren)
         *   [2.5.3 Bron selecteren](#Bron_selecteren)
             *   [2.5.3.1 CD-ROM of OTHER SOURCE](#CD-ROM_of_OTHER_SOURCE)
-            *   [2.5.3.2 FTP/HTTP](#FTP.2FHTTP)
+            *   [2.5.3.2 FTP/HTTP](#FTP/HTTP)
                 *   [2.5.3.2.1 Netwerk configureren](#Netwerk_configureren)
                 *   [2.5.3.2.2 Spiegelserver kiezen](#Spiegelserver_kiezen)
         *   [2.5.4 Klok instellen](#Klok_instellen)

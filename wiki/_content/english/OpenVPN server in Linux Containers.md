@@ -47,7 +47,7 @@ lxc.cgroup.devices.allow = c 10:200 rwm
 
 ### LXD config
 
-If you're running under LXD, as far as I know you cannot use the configs for LXC config within a lxd configuration. It is also not needed. Running an openvpn service in a lxc/lxd configuration can lead to this errors:
+In the container it can be necessary to modify the preset option "LimitNPROC" of the openvpn-daemons to avoid an error like this:
 
 ```
 "Note: Cannot set tx queue length on tun0: Operation not permitted (errno=1)
@@ -56,8 +56,6 @@ openvpn_execve: unable to fork: Resource temporarily unavailable (errno=11)
 Exiting due to fatal error"
 
 ```
-
-To fix these errors you have to managed with "LimitNPROC" in the predefined daemons.
 
 There are 2 ways to solve it. I advise the first
 

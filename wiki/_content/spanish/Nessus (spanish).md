@@ -5,11 +5,11 @@ Este artículo es una traducción de [Nessus](/index.php/Nessus "Nessus"), revis
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Configuración posterior a la instalación](#Configuraci.C3.B3n_posterior_a_la_instalaci.C3.B3n)
-*   [3 Utilización](#Utilizaci.C3.B3n)
-*   [4 Eliminación](#Eliminaci.C3.B3n)
-*   [5 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [1 Instalación](#Instalación)
+*   [2 Configuración posterior a la instalación](#Configuración_posterior_a_la_instalación)
+*   [3 Utilización](#Utilización)
+*   [4 Eliminación](#Eliminación)
+*   [5 Véase también](#Véase_también)
 
 ## Instalación
 

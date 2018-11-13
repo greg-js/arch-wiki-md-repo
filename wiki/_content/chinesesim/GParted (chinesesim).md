@@ -12,17 +12,17 @@
 
 ## Contents
 
-*   [1 安装到 Arch](#.E5.AE.89.E8.A3.85.E5.88.B0_Arch)
-    *   [1.1 可选依赖](#.E5.8F.AF.E9.80.89.E4.BE.9D.E8.B5.96)
-        *   [1.1.1 文件系统](#.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F)
-        *   [1.1.2 额外功能](#.E9.A2.9D.E5.A4.96.E5.8A.9F.E8.83.BD)
-*   [2 GParted 支持](#GParted_.E6.94.AF.E6.8C.81)
-*   [3 小技巧](#.E5.B0.8F.E6.8A.80.E5.B7.A7)
-    *   [3.1 把 GParted-live 添加至您的 GRUB 菜单](#.E6.8A.8A_GParted-live_.E6.B7.BB.E5.8A.A0.E8.87.B3.E6.82.A8.E7.9A.84_GRUB_.E8.8F.9C.E5.8D.95)
-    *   [3.2 双启动 Windows XP](#.E5.8F.8C.E5.90.AF.E5.8A.A8_Windows_XP)
-    *   [3.3 修复混乱的分区顺序](#.E4.BF.AE.E5.A4.8D.E6.B7.B7.E4.B9.B1.E7.9A.84.E5.88.86.E5.8C.BA.E9.A1.BA.E5.BA.8F)
-    *   [3.4 从菜单启动 GParted](#.E4.BB.8E.E8.8F.9C.E5.8D.95.E5.90.AF.E5.8A.A8_GParted)
-    *   [3.5 启用 GParted 在线调整大小和设备对应器磁盘阵列(dmraid)功能](#.E5.90.AF.E7.94.A8_GParted_.E5.9C.A8.E7.BA.BF.E8.B0.83.E6.95.B4.E5.A4.A7.E5.B0.8F.E5.92.8C.E8.AE.BE.E5.A4.87.E5.AF.B9.E5.BA.94.E5.99.A8.E7.A3.81.E7.9B.98.E9.98.B5.E5.88.97.28dmraid.29.E5.8A.9F.E8.83.BD)
+*   [1 安装到 Arch](#安装到_Arch)
+    *   [1.1 可选依赖](#可选依赖)
+        *   [1.1.1 文件系统](#文件系统)
+        *   [1.1.2 额外功能](#额外功能)
+*   [2 GParted 支持](#GParted_支持)
+*   [3 小技巧](#小技巧)
+    *   [3.1 把 GParted-live 添加至您的 GRUB 菜单](#把_GParted-live_添加至您的_GRUB_菜单)
+    *   [3.2 双启动 Windows XP](#双启动_Windows_XP)
+    *   [3.3 修复混乱的分区顺序](#修复混乱的分区顺序)
+    *   [3.4 从菜单启动 GParted](#从菜单启动_GParted)
+    *   [3.5 启用 GParted 在线调整大小和设备对应器磁盘阵列(dmraid)功能](#启用_GParted_在线调整大小和设备对应器磁盘阵列(dmraid)功能)
 
 ## 安装到 Arch
 

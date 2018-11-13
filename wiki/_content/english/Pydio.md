@@ -66,4 +66,4 @@ Visit the installation wizard page at [http://127.0.0.1/](http://127.0.0.1/) and
 
 ## See also
 
-*   [Official ArchLinux installation manual](https://pyd.io/archlinux/)
+*   [Official ArchLinux installation manual](https://pydio.com/en/docs/kb/system/installing-archlinux)

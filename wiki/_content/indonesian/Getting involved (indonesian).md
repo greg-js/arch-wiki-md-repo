@@ -11,15 +11,15 @@ Dalam ilmu Biologi,simbiosis [mutualisme](https://en.wikipedia.org/wiki/Mutualis
 *   [2 Berkontribusi untuk Arch Wiki](#Berkontribusi_untuk_Arch_Wiki)
 *   [3 Melaporkan Masalah](#Melaporkan_Masalah)
 *   [4 Sekilas Tentang AUR](#Sekilas_Tentang_AUR)
-*   [5 'Rolling Release' ezine](#.27Rolling_Release.27_ezine)
+*   [5 'Rolling Release' ezine](#'Rolling_Release'_ezine)
 *   [6 Proyek Komunitas](#Proyek_Komunitas)
     *   [6.1 Distro berdasarkan Archlinux](#Distro_berdasarkan_Archlinux)
     *   [6.2 Penolong penggunaan AUR](#Penolong_penggunaan_AUR)
     *   [6.3 Pacman GUI Frontends](#Pacman_GUI_Frontends)
     *   [6.4 Lainnya](#Lainnya)
 *   [7 Anda sebagai Developer...](#Anda_sebagai_Developer...)
-    *   [7.1 Apa yang bisa Saya lakukan?](#Apa_yang_bisa_Saya_lakukan.3F)
-    *   [7.2 Bagaimana caranya untuk menjadi seorang Developer Arch?](#Bagaimana_caranya_untuk_menjadi_seorang_Developer_Arch.3F)
+    *   [7.1 Apa yang bisa Saya lakukan?](#Apa_yang_bisa_Saya_lakukan?)
+    *   [7.2 Bagaimana caranya untuk menjadi seorang Developer Arch?](#Bagaimana_caranya_untuk_menjadi_seorang_Developer_Arch?)
 *   [8 Anda mempunyai nilai seni...](#Anda_mempunyai_nilai_seni...)
 
 ## Bergabung dengan Forum Archlinux

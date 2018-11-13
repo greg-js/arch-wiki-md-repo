@@ -6,7 +6,7 @@
 
 ## Contents
 
-*   [1 Список вспомогательных инструментов](#.D0.A1.D0.BF.D0.B8.D1.81.D0.BE.D0.BA_.D0.B2.D1.81.D0.BF.D0.BE.D0.BC.D0.BE.D0.B3.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D1.85_.D0.B8.D0.BD.D1.81.D1.82.D1.80.D1.83.D0.BC.D0.B5.D0.BD.D1.82.D0.BE.D0.B2)
+*   [1 Список вспомогательных инструментов](#Список_вспомогательных_инструментов)
     *   [1.1 aurget](#aurget)
     *   [1.2 aurora](#aurora)
     *   [1.3 aurpac](#aurpac)
@@ -17,7 +17,7 @@
     *   [1.8 cower](#cower)
     *   [1.9 haskell-archlinux](#haskell-archlinux)
     *   [1.10 makeaur](#makeaur)
-    *   [1.11 Meat ( Alpha / Under development )](#Meat_.28_Alpha_.2F_Under_development_.29)
+    *   [1.11 Meat ( Alpha / Under development )](#Meat_(_Alpha_/_Under_development_))
     *   [1.12 pacaur](#pacaur)
     *   [1.13 packer](#packer)
     *   [1.14 pacmoon](#pacmoon)
@@ -29,7 +29,7 @@
     *   [1.20 spinach](#spinach)
     *   [1.21 srcman](#srcman)
     *   [1.22 yaourt](#yaourt)
-*   [2 Сравнительная таблица](#.D0.A1.D1.80.D0.B0.D0.B2.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D1.82.D0.B0.D0.B1.D0.BB.D0.B8.D1.86.D0.B0)
+*   [2 Сравнительная таблица](#Сравнительная_таблица)
 
 ## Список вспомогательных инструментов
 

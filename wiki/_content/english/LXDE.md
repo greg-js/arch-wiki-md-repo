@@ -16,13 +16,13 @@ From project [home page](http://lxde.org/):
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 GTK+ 3 version](#GTK.2B_3_version)
+    *   [1.1 GTK+ 3 version](#GTK+_3_version)
 *   [2 Starting the desktop](#Starting_the_desktop)
     *   [2.1 Graphical log-in](#Graphical_log-in)
     *   [2.2 Console](#Console)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Application menu editing](#Application_menu_editing)
-    *   [3.2 Application autostart](#Application_autostart)
+    *   [3.2 Autostart](#Autostart)
     *   [3.3 Bindings](#Bindings)
     *   [3.4 Cursors](#Cursors)
     *   [3.5 Digital clock applet time](#Digital_clock_applet_time)
@@ -69,7 +69,7 @@ See also [Start X at login](/index.php/Start_X_at_login "Start X at login").
 
 The application menu works by resolving the `.desktop` files located in `/usr/share/applications/` and `~/.local/share/applications/`. To add or edit a menu item, see [desktop entries](/index.php/Desktop_entries "Desktop entries"). Third party menu editor can be found in the [AUR](/index.php/AUR "AUR") (e.g. [lxmed](https://aur.archlinux.org/packages/lxmed/)).
 
-### Application autostart
+### Autostart
 
 Applications can be automatically started in a couple of ways:
 
@@ -121,11 +121,11 @@ You can right click on the digital clock applet on the panel and set how it disp
 
 ### Keyboard layout
 
-[lxpanel](https://www.archlinux.org/packages/?name=lxpanel) includes a keyboard layout applet. See [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg") for generic instructions and [#Application autostart](#Application_autostart) to automatically start *setxkbmap* in LXDE.
+[lxpanel](https://www.archlinux.org/packages/?name=lxpanel) includes a keyboard layout applet. See [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg") for generic instructions and [#Autostart](#Autostart) to automatically start *setxkbmap* in LXDE.
 
 ### Screen locking
 
-LXDE does not come with a screen locker of its own. See [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security") and [#Application autostart](#Application_autostart) on how to start them.
+LXDE does not come with a screen locker of its own. See [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security") and [#Autostart](#Autostart) on how to start them.
 
 The *Screen Lock* icon executes a script (located at `/usr/bin/lxlock`) which searches for a number of well known screen lockers and uses the first one it finds to lock the screen. See [lxlock](https://github.com/lxde/lxsession/blob/master/lxlock/lxlock) on GitHub.
 
@@ -163,7 +163,7 @@ window_manager=compiz
 
 ```
 
-Alternatively use `*WM* --replace` as defined in [#Application autostart](#Application_autostart), where *WM* is the name of the window manager executable being started. This means that *openbox* will be started first on each login and will then immediately be replaced. Note that Openbox and LXDE do not share the same `rc.xml` and keyboard shortcuts may differ. See [xbindkeys](/index.php/Xbindkeys "Xbindkeys").
+Alternatively use `*WM* --replace` as defined in [#Autostart](#Autostart), where *WM* is the name of the window manager executable being started. This means that *openbox* will be started first on each login and will then immediately be replaced. Note that Openbox and LXDE do not share the same `rc.xml` and keyboard shortcuts may differ. See [xbindkeys](/index.php/Xbindkeys "Xbindkeys").
 
 ## Troubleshooting
 

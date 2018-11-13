@@ -11,7 +11,7 @@ This document covers standards and guidelines on writing [PKGBUILDs](/index.php/
 *   [1 Package naming](#Package_naming)
 *   [2 Using npm](#Using_npm)
     *   [2.1 Setting temporary cache](#Setting_temporary_cache)
-    *   [2.2 Package contains reference to $srcdir/$pkgdir](#Package_contains_reference_to_.24srcdir.2F.24pkgdir)
+    *   [2.2 Package contains reference to $srcdir/$pkgdir](#Package_contains_reference_to_$srcdir/$pkgdir)
 
 ## Package naming
 

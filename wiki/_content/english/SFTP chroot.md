@@ -20,7 +20,7 @@ Related articles
         *   [3.2.3 OpenSSH configuration](#OpenSSH_configuration)
         *   [3.2.4 Restart service](#Restart_service)
 *   [4 Alternatives to SFTP](#Alternatives_to_SFTP)
-    *   [4.1 Secure copy protocol (SCP)](#Secure_copy_protocol_.28SCP.29)
+    *   [4.1 Secure copy protocol (SCP)](#Secure_copy_protocol_(SCP))
         *   [4.1.1 Scponly](#Scponly)
         *   [4.1.2 Adding a chroot jail](#Adding_a_chroot_jail)
 *   [5 See also](#See_also)

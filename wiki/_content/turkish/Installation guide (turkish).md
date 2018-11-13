@@ -4,29 +4,29 @@ Daha ayrıntılı talimatlar için, bu kılavuzdan sırasıyla [ArchWiki](/index
 
 ## Contents
 
-*   [1 Kurulum Öncesi](#Kurulum_.C3.96ncesi)
-    *   [1.1 Klavye düzenini ayarla](#Klavye_d.C3.BCzenini_ayarla)
-    *   [1.2 Önyükleme modunu doğrula](#.C3.96ny.C3.BCkleme_modunu_do.C4.9Frula)
-    *   [1.3 İnternete bağlan](#.C4.B0nternete_ba.C4.9Flan)
-    *   [1.4 Sistem saatini güncelle](#Sistem_saatini_g.C3.BCncelle)
-    *   [1.5 Diskleri bölümlendir](#Diskleri_b.C3.B6l.C3.BCmlendir)
-    *   [1.6 Bölümleri biçimlendir](#B.C3.B6l.C3.BCmleri_bi.C3.A7imlendir)
-    *   [1.7 Dosya sistemerini bağla](#Dosya_sistemerini_ba.C4.9Fla)
+*   [1 Kurulum Öncesi](#Kurulum_Öncesi)
+    *   [1.1 Klavye düzenini ayarla](#Klavye_düzenini_ayarla)
+    *   [1.2 Önyükleme modunu doğrula](#Önyükleme_modunu_doğrula)
+    *   [1.3 İnternete bağlan](#İnternete_bağlan)
+    *   [1.4 Sistem saatini güncelle](#Sistem_saatini_güncelle)
+    *   [1.5 Diskleri bölümlendir](#Diskleri_bölümlendir)
+    *   [1.6 Bölümleri biçimlendir](#Bölümleri_biçimlendir)
+    *   [1.7 Dosya sistemerini bağla](#Dosya_sistemerini_bağla)
 *   [2 Kurulum](#Kurulum)
-    *   [2.1 Yansıları(Mirrors) seç](#Yans.C4.B1lar.C4.B1.28Mirrors.29_se.C3.A7)
+    *   [2.1 Yansıları(Mirrors) seç](#Yansıları(Mirrors)_seç)
     *   [2.2 Temel paketleri kurun](#Temel_paketleri_kurun)
-*   [3 Sistemi yapılandır](#Sistemi_yap.C4.B1land.C4.B1r)
+*   [3 Sistemi yapılandır](#Sistemi_yapılandır)
     *   [3.1 Fstab](#Fstab)
     *   [3.2 Chroot](#Chroot)
     *   [3.3 Zaman dilimi](#Zaman_dilimi)
-    *   [3.4 Yerelleştirme(locale)](#Yerelle.C5.9Ftirme.28locale.29)
-    *   [3.5 Sistem adı(Hostname)](#Sistem_ad.C4.B1.28Hostname.29)
-    *   [3.6 Ağ yapılandırma](#A.C4.9F_yap.C4.B1land.C4.B1rma)
+    *   [3.4 Yerelleştirme(locale)](#Yerelleştirme(locale))
+    *   [3.5 Sistem adı(Hostname)](#Sistem_adı(Hostname))
+    *   [3.6 Ağ yapılandırma](#Ağ_yapılandırma)
     *   [3.7 Initramfs](#Initramfs)
-    *   [3.8 Root parolası](#Root_parolas.C4.B1)
-    *   [3.9 Önyükleme yükleyicisi(Boot Loader)](#.C3.96ny.C3.BCkleme_y.C3.BCkleyicisi.28Boot_Loader.29)
-*   [4 Yeniden Başlat](#Yeniden_Ba.C5.9Flat)
-*   [5 Yükleme sonrası](#Y.C3.BCkleme_sonras.C4.B1)
+    *   [3.8 Root parolası](#Root_parolası)
+    *   [3.9 Önyükleme yükleyicisi(Boot Loader)](#Önyükleme_yükleyicisi(Boot_Loader))
+*   [4 Yeniden Başlat](#Yeniden_Başlat)
+*   [5 Yükleme sonrası](#Yükleme_sonrası)
 
 ## Kurulum Öncesi
 
@@ -240,7 +240,7 @@ Ayrıca bakınız [Ağ yapılandırması#Sistem adını ayarla](/index.php/Netwo
 
 Yeni kurulan ortamda varsayılan olarak ağ bağlantısı yoktur. Bakınız [Ağ yapılandırması#Ağ yönetimi](/index.php/Network_configuration#Network_management "Network configuration").
 
-[Kablosuz yapılandırma](/index.php/Wireless_configuration "Wireless configuration") için, [iw](https://www.archlinux.org/packages/?name=iw) ve [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) paketlerinin yanı sıra gerekli [ürün yazılımı paketlerini](/index.php/Wireless#Installing_driver.2Ffirmware "Wireless") de kurun. İsteğe bağlı olarak *wifi-menu* kullanımı için(kendisi kablosuz ağa bağlanmanızı sağlar) [dialog](https://www.archlinux.org/packages/?name=dialog) paketini de kurun.
+[Kablosuz yapılandırma](/index.php/Wireless_configuration "Wireless configuration") için, [iw](https://www.archlinux.org/packages/?name=iw) ve [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) paketlerinin yanı sıra gerekli [ürün yazılımı paketlerini](/index.php/Wireless#Installing_driver/firmware "Wireless") de kurun. İsteğe bağlı olarak *wifi-menu* kullanımı için(kendisi kablosuz ağa bağlanmanızı sağlar) [dialog](https://www.archlinux.org/packages/?name=dialog) paketini de kurun.
 
 ### Initramfs
 

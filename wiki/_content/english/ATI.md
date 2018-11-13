@@ -20,7 +20,7 @@ This article covers the [radeon](https://wiki.freedesktop.org/xorg/radeon/) open
     *   [5.3 Kernel parameters](#Kernel_parameters)
         *   [5.3.1 Deactivating PCIe 2.0](#Deactivating_PCIe_2.0)
     *   [5.4 Gallium Heads-Up Display](#Gallium_Heads-Up_Display)
-*   [6 Hybrid graphics/AMD Dynamic Switchable Graphics](#Hybrid_graphics.2FAMD_Dynamic_Switchable_Graphics)
+*   [6 Hybrid graphics/AMD Dynamic Switchable Graphics](#Hybrid_graphics/AMD_Dynamic_Switchable_Graphics)
 *   [7 Powersaving](#Powersaving)
     *   [7.1 Dynamic power management](#Dynamic_power_management)
         *   [7.1.1 Commandline Tools](#Commandline_Tools)
@@ -39,15 +39,15 @@ This article covers the [radeon](https://wiki.freedesktop.org/xorg/radeon/) open
     *   [11.2 Independent X screens](#Independent_X_screens)
 *   [12 Turn vsync off](#Turn_vsync_off)
 *   [13 Troubleshooting](#Troubleshooting)
-    *   [13.1 Performance and/or artifacts issues when using EXA](#Performance_and.2For_artifacts_issues_when_using_EXA)
-    *   [13.2 Adding undetected/unsupported resolutions](#Adding_undetected.2Funsupported_resolutions)
+    *   [13.1 Performance and/or artifacts issues when using EXA](#Performance_and/or_artifacts_issues_when_using_EXA)
+    *   [13.2 Adding undetected/unsupported resolutions](#Adding_undetected/unsupported_resolutions)
     *   [13.3 TV showing a black border around the screen](#TV_showing_a_black_border_around_the_screen)
-    *   [13.4 Black screen and no console, but X works in KMS](#Black_screen_and_no_console.2C_but_X_works_in_KMS)
-    *   [13.5 ATI X1600 (RV530 series) 3D application show black windows](#ATI_X1600_.28RV530_series.29_3D_application_show_black_windows)
+    *   [13.4 Black screen and no console, but X works in KMS](#Black_screen_and_no_console,_but_X_works_in_KMS)
+    *   [13.5 ATI X1600 (RV530 series) 3D application show black windows](#ATI_X1600_(RV530_series)_3D_application_show_black_windows)
     *   [13.6 Cursor corruption after coming out of sleep](#Cursor_corruption_after_coming_out_of_sleep)
     *   [13.7 DisplayPort stays black on multimonitor mode](#DisplayPort_stays_black_on_multimonitor_mode)
-    *   [13.8 R9-390 Poor Performance and/or Instability](#R9-390_Poor_Performance_and.2For_Instability)
-    *   [13.9 QHD / UHD / 4k support over HDMI for older Radeon cards](#QHD_.2F_UHD_.2F_4k_support_over_HDMI_for_older_Radeon_cards)
+    *   [13.8 R9-390 Poor Performance and/or Instability](#R9-390_Poor_Performance_and/or_Instability)
+    *   [13.9 QHD / UHD / 4k support over HDMI for older Radeon cards](#QHD_/_UHD_/_4k_support_over_HDMI_for_older_Radeon_cards)
 *   [14 See also](#See_also)
 
 ## Selecting the right driver
@@ -480,7 +480,7 @@ If there is no video after boot up, the driver option has to be disabled.
 **Note:**
 
 *   If HDMI audio does not work after installing the driver, test your setup with the procedure at [Advanced Linux Sound Architecture/Troubleshooting#HDMI Output does not work](/index.php/Advanced_Linux_Sound_Architecture/Troubleshooting#HDMI_Output_does_not_work "Advanced Linux Sound Architecture/Troubleshooting").
-*   If the sound is distorted in PulseAudio try setting `tsched=0` as described in [PulseAudio/Troubleshooting#Glitches, skips or crackling](/index.php/PulseAudio/Troubleshooting#Glitches.2C_skips_or_crackling "PulseAudio/Troubleshooting") and make sure `rtkit` daemon is running.
+*   If the sound is distorted in PulseAudio try setting `tsched=0` as described in [PulseAudio/Troubleshooting#Glitches, skips or crackling](/index.php/PulseAudio/Troubleshooting#Glitches,_skips_or_crackling "PulseAudio/Troubleshooting") and make sure `rtkit` daemon is running.
 *   Your sound card might use the same module, since HDA compliant hardware is pretty common. [Advanced Linux Sound Architecture#Set the default sound card](/index.php/Advanced_Linux_Sound_Architecture#Set_the_default_sound_card "Advanced Linux Sound Architecture") using one of the suggested methods, which include using the `defaults` node in alsa configuration.
 
 ## Multihead setup

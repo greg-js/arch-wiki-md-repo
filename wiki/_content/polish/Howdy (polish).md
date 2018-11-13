@@ -4,12 +4,12 @@
 
 *   [1 Instalacja](#Instalacja)
 *   [2 Konfiguracja](#Konfiguracja)
-    *   [2.1 Ustaw Howdy żeby uruchamiać kiedy jest potrzebny](#Ustaw_Howdy_.C5.BCeby_uruchamia.C4.87_kiedy_jest_potrzebny)
-        *   [2.1.1 Przykład](#Przyk.C5.82ad)
+    *   [2.1 Ustaw Howdy żeby uruchamiać kiedy jest potrzebny](#Ustaw_Howdy_żeby_uruchamiać_kiedy_jest_potrzebny)
+        *   [2.1.1 Przykład](#Przykład)
     *   [2.2 Dodaj poprawny czujnik podczerwieni](#Dodaj_poprawny_czujnik_podczerwieni)
     *   [2.3 Dodaj twarz do Howdy](#Dodaj_twarz_do_Howdy)
-*   [3 Rozwiązywanie problemów](#Rozwi.C4.85zywanie_problem.C3.B3w)
-    *   [3.1 Wydaje się, że Howdy nie działa](#Wydaje_si.C4.99.2C_.C5.BCe_Howdy_nie_dzia.C5.82a)
+*   [3 Rozwiązywanie problemów](#Rozwiązywanie_problemów)
+    *   [3.1 Wydaje się, że Howdy nie działa](#Wydaje_się,_że_Howdy_nie_działa)
 
 ## Instalacja
 

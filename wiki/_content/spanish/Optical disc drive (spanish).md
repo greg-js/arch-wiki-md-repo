@@ -12,45 +12,45 @@ Según [Wikipedia](https://en.wikipedia.org/wiki/es:Unidad_de_disco_%C3%B3ptico 
 
 ## Contents
 
-*   [1 Grabación](#Grabaci.C3.B3n)
-    *   [1.1 Instalar utilidades de grabación](#Instalar_utilidades_de_grabaci.C3.B3n)
+*   [1 Grabación](#Grabación)
+    *   [1.1 Instalar utilidades de grabación](#Instalar_utilidades_de_grabación)
     *   [1.2 Crear una imagen ISO con archivos presentes en el disco duro](#Crear_una_imagen_ISO_con_archivos_presentes_en_el_disco_duro)
-        *   [1.2.1 parámetros básicos](#par.C3.A1metros_b.C3.A1sicos)
+        *   [1.2.1 parámetros básicos](#parámetros_básicos)
         *   [1.2.2 graft-points](#graft-points)
     *   [1.3 Montar una imagen ISO](#Montar_una_imagen_ISO)
-    *   [1.4 Convertir imagen img/ccd en una imagen ISO](#Convertir_imagen_img.2Fccd_en_una_imagen_ISO)
-    *   [1.5 Conocer el nombre de la unidad óptica](#Conocer_el_nombre_de_la_unidad_.C3.B3ptica)
-    *   [1.6 Leer una imagen ISO desde un CD, DVD o BD](#Leer_una_imagen_ISO_desde_un_CD.2C_DVD_o_BD)
+    *   [1.4 Convertir imagen img/ccd en una imagen ISO](#Convertir_imagen_img/ccd_en_una_imagen_ISO)
+    *   [1.5 Conocer el nombre de la unidad óptica](#Conocer_el_nombre_de_la_unidad_óptica)
+    *   [1.6 Leer una imagen ISO desde un CD, DVD o BD](#Leer_una_imagen_ISO_desde_un_CD,_DVD_o_BD)
     *   [1.7 Borrar CD-RW y DVD-RW](#Borrar_CD-RW_y_DVD-RW)
-    *   [1.8 Grabar una imagen ISO al CD, DVD o BD](#Grabar_una_imagen_ISO_al_CD.2C_DVD_o_BD)
+    *   [1.8 Grabar una imagen ISO al CD, DVD o BD](#Grabar_una_imagen_ISO_al_CD,_DVD_o_BD)
     *   [1.9 Verificar la imagen ISO grabada](#Verificar_la_imagen_ISO_grabada)
-    *   [1.10 ISO 9660 y grabación al vuelo (*On-The-Fly*)](#ISO_9660_y_grabaci.C3.B3n_al_vuelo_.28On-The-Fly.29)
-    *   [1.11 Multisesión](#Multisesi.C3.B3n)
-        *   [1.11.1 Multisesión con wodim](#Multisesi.C3.B3n_con_wodim)
-        *   [1.11.2 Multisesión con growisofs](#Multisesi.C3.B3n_con_growisofs)
-        *   [1.11.3 Multisesión con xorriso](#Multisesi.C3.B3n_con_xorriso)
-    *   [1.12 Defect Management en BD (Blu-ray disc)](#Defect_Management_en_BD_.28Blu-ray_disc.29)
+    *   [1.10 ISO 9660 y grabación al vuelo (*On-The-Fly*)](#ISO_9660_y_grabación_al_vuelo_(On-The-Fly))
+    *   [1.11 Multisesión](#Multisesión)
+        *   [1.11.1 Multisesión con wodim](#Multisesión_con_wodim)
+        *   [1.11.2 Multisesión con growisofs](#Multisesión_con_growisofs)
+        *   [1.11.3 Multisesión con xorriso](#Multisesión_con_xorriso)
+    *   [1.12 Defect Management en BD (Blu-ray disc)](#Defect_Management_en_BD_(Blu-ray_disc))
     *   [1.13 Grabar un CD de audio](#Grabar_un_CD_de_audio)
-    *   [1.14 Grabar una imagen bin/cue](#Grabar_una_imagen_bin.2Fcue)
-        *   [1.14.1 TOC/CUE/BIN para discos en modalidad mixta](#TOC.2FCUE.2FBIN_para_discos_en_modalidad_mixta)
-    *   [1.15 Problemas con los backend de grabación](#Problemas_con_los_backend_de_grabaci.C3.B3n)
-    *   [1.16 Grabar CD/DVD/BD con una GUI](#Grabar_CD.2FDVD.2FBD_con_una_GUI)
+    *   [1.14 Grabar una imagen bin/cue](#Grabar_una_imagen_bin/cue)
+        *   [1.14.1 TOC/CUE/BIN para discos en modalidad mixta](#TOC/CUE/BIN_para_discos_en_modalidad_mixta)
+    *   [1.15 Problemas con los backend de grabación](#Problemas_con_los_backend_de_grabación)
+    *   [1.16 Grabar CD/DVD/BD con una GUI](#Grabar_CD/DVD/BD_con_una_GUI)
         *   [1.16.1 Programas GUI libres](#Programas_GUI_libres)
         *   [1.16.2 Nero Linux](#Nero_Linux)
 *   [2 Reproducir DVD](#Reproducir_DVD)
 *   [3 Ripear DVD](#Ripear_DVD)
     *   [3.1 dvd::rip](#dvd::rip)
-*   [4 Solución de problemas](#Soluci.C3.B3n_de_problemas)
+*   [4 Solución de problemas](#Solución_de_problemas)
     *   [4.1 K3b y el error sobre el locale](#K3b_y_el_error_sobre_el_locale)
     *   [4.2 Brasero falla al encontrar discos en blanco](#Brasero_falla_al_encontrar_discos_en_blanco)
     *   [4.3 Brasero falla al normalizar el CD de audio](#Brasero_falla_al_normalizar_el_CD_de_audio)
-    *   [4.4 VLC: Error «... could not open the disc /dev/dvd»](#VLC:_Error_.C2.AB..._could_not_open_the_disc_.2Fdev.2Fdvd.C2.BB)
+    *   [4.4 VLC: Error «... could not open the disc /dev/dvd»](#VLC:_Error_«..._could_not_open_the_disc_/dev/dvd»)
     *   [4.5 Unidad DVD con ruidos](#Unidad_DVD_con_ruidos)
-    *   [4.6 La reproducción no funciona con el equipo nuevo (unidad DVD nueva)](#La_reproducci.C3.B3n_no_funciona_con_el_equipo_nuevo_.28unidad_DVD_nueva.29)
-    *   [4.7 Ninguno de los programas descritos puede ripear/codificar un DVD en el disco duro](#Ninguno_de_los_programas_descritos_puede_ripear.2Fcodificar_un_DVD_en_el_disco_duro)
+    *   [4.6 La reproducción no funciona con el equipo nuevo (unidad DVD nueva)](#La_reproducción_no_funciona_con_el_equipo_nuevo_(unidad_DVD_nueva))
+    *   [4.7 Ninguno de los programas descritos puede ripear/codificar un DVD en el disco duro](#Ninguno_de_los_programas_descritos_puede_ripear/codificar_un_DVD_en_el_disco_duro)
     *   [4.8 El registro del programa GUI indica problemas con el programa del backend](#El_registro_del_programa_GUI_indica_problemas_con_el_programa_del_backend)
-        *   [4.8.1 Caso especial: medium error / write error](#Caso_especial:_medium_error_.2F_write_error)
-*   [5 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+        *   [4.8.1 Caso especial: medium error / write error](#Caso_especial:_medium_error_/_write_error)
+*   [5 Véase también](#Véase_también)
 
 ## Grabación
 
@@ -58,7 +58,7 @@ El proceso de grabación de las unidades de disco óptico consiste en la creaci�
 
 ### Instalar utilidades de grabación
 
-Si desea utilizar programas con interfaz gráfica siga [esta sección](#Optical_Disc_Drive_.28Espa.C3.B1ol.29.23Grabar_CD.2FDVD.2FBD_con_una_GUI).
+Si desea utilizar programas con interfaz gráfica siga [esta sección](#Optical_Disc_Drive_(Español)#Grabar_CD.2FDVD.2FBD_con_una_GUI).
 
 Los programas enumerados aquí son los backends utilizados por la mayoría de los programas GUI gratuitos para grabar CD, DVD y BD. Están orientados a su utilización en la líneas de órdenes. Los usuarios que utilicen interfaces gráficas pueden servirse del conocimiento de aquellos cuando intenten resolver problemas o para crear scripts para actividades de grabación.
 
@@ -788,7 +788,7 @@ Asegúrese de la región de su lector DVD está configurada correctamente, de lo
 
 ### El registro del programa GUI indica problemas con el programa del backend
 
-Si utiliza un programa gráfico y experimenta problemas que el registro de dicho programa culpa a algún programa backend, intente reproducir el problema accediendo a los argumentos del programa backend. Si tiene éxito con la reproducción o no, puede informar de las líneas registradas y de sus propias conclusiones a los lugares mencionados en [esta sección](#Problemas_con_los_backend_de_grabaci.C3.B3n).
+Si utiliza un programa gráfico y experimenta problemas que el registro de dicho programa culpa a algún programa backend, intente reproducir el problema accediendo a los argumentos del programa backend. Si tiene éxito con la reproducción o no, puede informar de las líneas registradas y de sus propias conclusiones a los lugares mencionados en [esta sección](#Problemas_con_los_backend_de_grabación).
 
 #### Caso especial: medium error / write error
 

@@ -7,15 +7,15 @@ Este artículo es una traducción de [RetroArch](/index.php/RetroArch "RetroArch
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
 *   [2 Uso](#Uso)
-*   [3 Configuración](#Configuraci.C3.B3n)
-*   [4 Actualizador en línea](#Actualizador_en_l.C3.ADnea)
-*   [5 Solución de problemas](#Soluci.C3.B3n_de_problemas)
-    *   [5.1 No se encontraron núcleos](#No_se_encontraron_n.C3.BAcleos)
+*   [3 Configuración](#Configuración)
+*   [4 Actualizador en línea](#Actualizador_en_línea)
+*   [5 Solución de problemas](#Solución_de_problemas)
+    *   [5.1 No se encontraron núcleos](#No_se_encontraron_núcleos)
     *   [5.2 Los dispositivos de entrada no funcionan](#Los_dispositivos_de_entrada_no_funcionan)
-    *   [5.3 Rendimiento de vídeo deficiente](#Rendimiento_de_v.C3.ADdeo_deficiente)
-*   [6 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+    *   [5.3 Rendimiento de vídeo deficiente](#Rendimiento_de_vídeo_deficiente)
+*   [6 Véase también](#Véase_también)
 
 ## Instalación
 

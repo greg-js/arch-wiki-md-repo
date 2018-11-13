@@ -12,57 +12,57 @@
 
 ## Contents
 
-*   [1 检查连接](#.E6.A3.80.E6.9F.A5.E8.BF.9E.E6.8E.A5)
-*   [2 设置计算机名](#.E8.AE.BE.E7.BD.AE.E8.AE.A1.E7.AE.97.E6.9C.BA.E5.90.8D)
-*   [3 设备驱动程序](#.E8.AE.BE.E5.A4.87.E9.A9.B1.E5.8A.A8.E7.A8.8B.E5.BA.8F)
-    *   [3.1 检测驱动状态](#.E6.A3.80.E6.B5.8B.E9.A9.B1.E5.8A.A8.E7.8A.B6.E6.80.81)
-    *   [3.2 加载设备模块](#.E5.8A.A0.E8.BD.BD.E8.AE.BE.E5.A4.87.E6.A8.A1.E5.9D.97)
-*   [4 网络接口](#.E7.BD.91.E7.BB.9C.E6.8E.A5.E5.8F.A3)
-    *   [4.1 设备命名](#.E8.AE.BE.E5.A4.87.E5.91.BD.E5.90.8D)
-    *   [4.2 获取当前网络名](#.E8.8E.B7.E5.8F.96.E5.BD.93.E5.89.8D.E7.BD.91.E7.BB.9C.E5.90.8D)
-        *   [4.2.1 更改设备名称](#.E6.9B.B4.E6.94.B9.E8.AE.BE.E5.A4.87.E5.90.8D.E7.A7.B0)
-        *   [4.2.2 使用传统网络命名规则](#.E4.BD.BF.E7.94.A8.E4.BC.A0.E7.BB.9F.E7.BD.91.E7.BB.9C.E5.91.BD.E5.90.8D.E8.A7.84.E5.88.99)
-    *   [4.3 设定设备的 MTU 和队列长度](#.E8.AE.BE.E5.AE.9A.E8.AE.BE.E5.A4.87.E7.9A.84_MTU_.E5.92.8C.E9.98.9F.E5.88.97.E9.95.BF.E5.BA.A6)
-    *   [4.4 启用和禁用网络接口](#.E5.90.AF.E7.94.A8.E5.92.8C.E7.A6.81.E7.94.A8.E7.BD.91.E7.BB.9C.E6.8E.A5.E5.8F.A3)
-*   [5 配置 IP 地址](#.E9.85.8D.E7.BD.AE_IP_.E5.9C.B0.E5.9D.80)
-    *   [5.1 动态 IP 地址](#.E5.8A.A8.E6.80.81_IP_.E5.9C.B0.E5.9D.80)
+*   [1 检查连接](#检查连接)
+*   [2 设置计算机名](#设置计算机名)
+*   [3 设备驱动程序](#设备驱动程序)
+    *   [3.1 检测驱动状态](#检测驱动状态)
+    *   [3.2 加载设备模块](#加载设备模块)
+*   [4 网络接口](#网络接口)
+    *   [4.1 设备命名](#设备命名)
+    *   [4.2 获取当前网络名](#获取当前网络名)
+        *   [4.2.1 更改设备名称](#更改设备名称)
+        *   [4.2.2 使用传统网络命名规则](#使用传统网络命名规则)
+    *   [4.3 设定设备的 MTU 和队列长度](#设定设备的_MTU_和队列长度)
+    *   [4.4 启用和禁用网络接口](#启用和禁用网络接口)
+*   [5 配置 IP 地址](#配置_IP_地址)
+    *   [5.1 动态 IP 地址](#动态_IP_地址)
         *   [5.1.1 systemd-networkd](#systemd-networkd)
         *   [5.1.2 dhcpcd](#dhcpcd)
         *   [5.1.3 netctl](#netctl)
-    *   [5.2 静态 IP 地址](#.E9.9D.99.E6.80.81_IP_.E5.9C.B0.E5.9D.80)
+    *   [5.2 静态 IP 地址](#静态_IP_地址)
         *   [5.2.1 netctl](#netctl_2)
         *   [5.2.2 systemd-networkd](#systemd-networkd_2)
         *   [5.2.3 dhcpcd](#dhcpcd_2)
-        *   [5.2.4 手动指定](#.E6.89.8B.E5.8A.A8.E6.8C.87.E5.AE.9A)
-        *   [5.2.5 计算地址](#.E8.AE.A1.E7.AE.97.E5.9C.B0.E5.9D.80)
-*   [6 更多设置](#.E6.9B.B4.E5.A4.9A.E8.AE.BE.E7.BD.AE)
-    *   [6.1 笔记本电脑使用 Ifplugd](#.E7.AC.94.E8.AE.B0.E6.9C.AC.E7.94.B5.E8.84.91.E4.BD.BF.E7.94.A8_Ifplugd)
-    *   [6.2 绑定和链路聚合](#.E7.BB.91.E5.AE.9A.E5.92.8C.E9.93.BE.E8.B7.AF.E8.81.9A.E5.90.88)
-    *   [6.3 IP 别名](#IP_.E5.88.AB.E5.90.8D)
-    *   [6.4 更改 MAC/硬件地址](#.E6.9B.B4.E6.94.B9_MAC.2F.E7.A1.AC.E4.BB.B6.E5.9C.B0.E5.9D.80)
-    *   [6.5 共享网络连接](#.E5.85.B1.E4.BA.AB.E7.BD.91.E7.BB.9C.E8.BF.9E.E6.8E.A5)
-    *   [6.6 路由配置](#.E8.B7.AF.E7.94.B1.E9.85.8D.E7.BD.AE)
-    *   [6.7 局域网主机的名称解析](#.E5.B1.80.E5.9F.9F.E7.BD.91.E4.B8.BB.E6.9C.BA.E7.9A.84.E5.90.8D.E7.A7.B0.E8.A7.A3.E6.9E.90)
-    *   [6.8 全接收模式](#.E5.85.A8.E6.8E.A5.E6.94.B6.E6.A8.A1.E5.BC.8F)
-*   [7 疑难排解](#.E7.96.91.E9.9A.BE.E6.8E.92.E8.A7.A3)
-    *   [7.1 更换了连接cable modem的计算机](#.E6.9B.B4.E6.8D.A2.E4.BA.86.E8.BF.9E.E6.8E.A5cable_modem.E7.9A.84.E8.AE.A1.E7.AE.97.E6.9C.BA)
-    *   [7.2 TCP窗口扩缩（window scaling）故障](#TCP.E7.AA.97.E5.8F.A3.E6.89.A9.E7.BC.A9.EF.BC.88window_scaling.EF.BC.89.E6.95.85.E9.9A.9C)
-        *   [7.2.1 如何诊断故障](#.E5.A6.82.E4.BD.95.E8.AF.8A.E6.96.AD.E6.95.85.E9.9A.9C)
-        *   [7.2.2 如何修复（糟糕的方法）](#.E5.A6.82.E4.BD.95.E4.BF.AE.E5.A4.8D.EF.BC.88.E7.B3.9F.E7.B3.95.E7.9A.84.E6.96.B9.E6.B3.95.EF.BC.89)
-        *   [7.2.3 如何修复（好点的方法）](#.E5.A6.82.E4.BD.95.E4.BF.AE.E5.A4.8D.EF.BC.88.E5.A5.BD.E7.82.B9.E7.9A.84.E6.96.B9.E6.B3.95.EF.BC.89)
-        *   [7.2.4 如何修复（最佳的方法）](#.E5.A6.82.E4.BD.95.E4.BF.AE.E5.A4.8D.EF.BC.88.E6.9C.80.E4.BD.B3.E7.9A.84.E6.96.B9.E6.B3.95.EF.BC.89)
-        *   [7.2.5 更多](#.E6.9B.B4.E5.A4.9A)
-    *   [7.3 Realtek 没有连接/网络唤醒故障](#Realtek_.E6.B2.A1.E6.9C.89.E8.BF.9E.E6.8E.A5.2F.E7.BD.91.E7.BB.9C.E5.94.A4.E9.86.92.E6.95.85.E9.9A.9C)
-        *   [7.3.1 在 Linux 中启用网卡](#.E5.9C.A8_Linux_.E4.B8.AD.E5.90.AF.E7.94.A8.E7.BD.91.E5.8D.A1)
-        *   [7.3.2 方法一 还原/变更Win驱动](#.E6.96.B9.E6.B3.95.E4.B8.80_.E8.BF.98.E5.8E.9F.2F.E5.8F.98.E6.9B.B4Win.E9.A9.B1.E5.8A.A8)
-        *   [7.3.3 方法二 启动Windows驱动里的网络唤醒功能](#.E6.96.B9.E6.B3.95.E4.BA.8C_.E5.90.AF.E5.8A.A8Windows.E9.A9.B1.E5.8A.A8.E9.87.8C.E7.9A.84.E7.BD.91.E7.BB.9C.E5.94.A4.E9.86.92.E5.8A.9F.E8.83.BD)
-        *   [7.3.4 方法三 更新Realtek Linux驱动](#.E6.96.B9.E6.B3.95.E4.B8.89_.E6.9B.B4.E6.96.B0Realtek_Linux.E9.A9.B1.E5.8A.A8)
-        *   [7.3.5 方法四 在 BIOS/CMOS 中启用 *LAN Boot ROM*](#.E6.96.B9.E6.B3.95.E5.9B.9B_.E5.9C.A8_BIOS.2FCMOS_.E4.B8.AD.E5.90.AF.E7.94.A8_LAN_Boot_ROM)
-    *   [7.4 检查 DHCP 问题先释放 IP 地址](#.E6.A3.80.E6.9F.A5_DHCP_.E9.97.AE.E9.A2.98.E5.85.88.E9.87.8A.E6.94.BE_IP_.E5.9C.B0.E5.9D.80)
-    *   [7.5 Atheros 芯片组找不到网卡](#Atheros_.E8.8A.AF.E7.89.87.E7.BB.84.E6.89.BE.E4.B8.8D.E5.88.B0.E7.BD.91.E5.8D.A1)
+        *   [5.2.4 手动指定](#手动指定)
+        *   [5.2.5 计算地址](#计算地址)
+*   [6 更多设置](#更多设置)
+    *   [6.1 笔记本电脑使用 Ifplugd](#笔记本电脑使用_Ifplugd)
+    *   [6.2 绑定和链路聚合](#绑定和链路聚合)
+    *   [6.3 IP 别名](#IP_别名)
+    *   [6.4 更改 MAC/硬件地址](#更改_MAC/硬件地址)
+    *   [6.5 共享网络连接](#共享网络连接)
+    *   [6.6 路由配置](#路由配置)
+    *   [6.7 局域网主机的名称解析](#局域网主机的名称解析)
+    *   [6.8 全接收模式](#全接收模式)
+*   [7 疑难排解](#疑难排解)
+    *   [7.1 更换了连接cable modem的计算机](#更换了连接cable_modem的计算机)
+    *   [7.2 TCP窗口扩缩（window scaling）故障](#TCP窗口扩缩（window_scaling）故障)
+        *   [7.2.1 如何诊断故障](#如何诊断故障)
+        *   [7.2.2 如何修复（糟糕的方法）](#如何修复（糟糕的方法）)
+        *   [7.2.3 如何修复（好点的方法）](#如何修复（好点的方法）)
+        *   [7.2.4 如何修复（最佳的方法）](#如何修复（最佳的方法）)
+        *   [7.2.5 更多](#更多)
+    *   [7.3 Realtek 没有连接/网络唤醒故障](#Realtek_没有连接/网络唤醒故障)
+        *   [7.3.1 在 Linux 中启用网卡](#在_Linux_中启用网卡)
+        *   [7.3.2 方法一 还原/变更Win驱动](#方法一_还原/变更Win驱动)
+        *   [7.3.3 方法二 启动Windows驱动里的网络唤醒功能](#方法二_启动Windows驱动里的网络唤醒功能)
+        *   [7.3.4 方法三 更新Realtek Linux驱动](#方法三_更新Realtek_Linux驱动)
+        *   [7.3.5 方法四 在 BIOS/CMOS 中启用 *LAN Boot ROM*](#方法四_在_BIOS/CMOS_中启用_LAN_Boot_ROM)
+    *   [7.4 检查 DHCP 问题先释放 IP 地址](#检查_DHCP_问题先释放_IP_地址)
+    *   [7.5 Atheros 芯片组找不到网卡](#Atheros_芯片组找不到网卡)
     *   [7.6 Broadcom BCM57780](#Broadcom_BCM57780)
-    *   [7.7 Realtek RTL8111/8168B](#Realtek_RTL8111.2F8168B)
-    *   [7.8 Gigabyte Motherboard with Realtek 8111/8168/8411](#Gigabyte_Motherboard_with_Realtek_8111.2F8168.2F8411)
+    *   [7.7 Realtek RTL8111/8168B](#Realtek_RTL8111/8168B)
+    *   [7.8 Gigabyte Motherboard with Realtek 8111/8168/8411](#Gigabyte_Motherboard_with_Realtek_8111/8168/8411)
 
 ## 检查连接
 
@@ -243,7 +243,7 @@ ACTION=="add", SUBSYSTEM=="net", KERNEL=="wl*", ATTR{mtu}="1480", ATTR{tx_queue_
 
 ```
 
-**Note:** 如果默认路由是通过 `eth0` 建立，禁用接口同时也会删除路由，再次启用也不会自动重新建立路由，要重新建立，请参考 [#手动分配](#.E6.89.8B.E5.8A.A8.E5.88.86.E9.85.8D).
+**Note:** 如果默认路由是通过 `eth0` 建立，禁用接口同时也会删除路由，再次启用也不会自动重新建立路由，要重新建立，请参考 [#手动分配](#手动分配).
 
 ## 配置 IP 地址
 
@@ -385,7 +385,7 @@ Hosts/Net: 2                     Class A, Private Internet
 
 ### 绑定和链路聚合
 
-参见 [绑定](/index.php/Netctl_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E7.BB.91.E5.AE.9A "Netctl (简体中文)") 或 [无线网络绑定](/index.php/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E7%BB%91%E5%AE%9A "无线网络绑定")。
+参见 [绑定](/index.php/Netctl_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#绑定 "Netctl (简体中文)") 或 [无线网络绑定](/index.php/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E7%BB%91%E5%AE%9A "无线网络绑定")。
 
 ### IP 别名
 
@@ -483,7 +483,7 @@ WantedBy=multi-user.target
 
 许多家庭有线电视的运营商（例如加拿大最大的有线电视公司Videotron,还有中国大陆的有线电视宽带公司）都使用记录网卡MAC地址的方法将cable modem配置为只能一台计算机使用。一旦cable modem获得第一台连接它的PC的MAC地址，就不会响应任何其它MAC地址。这样如果你换了台PC（或者路由器），由于新PC（或者路由器）的MAC地址和旧的不同，就没法连接cable modem了。这时候必须复位cable modem以使它重新辨认新的PC。 你得关闭cable modem电源，然后重新打开。一旦cable modem重启并再次登录在线完毕（指示灯熄灭），重启新连接的PC以使它发起一个DHCP请求，或者手动发起DHCP请求。
 
-如果这个方法不能奏效，你需要克隆原来机器上的MAC地址。参见 [Change MAC/hardware address](/index.php/Configuring_Network#Change_MAC.2Fhardware_address "Configuring Network")。
+如果这个方法不能奏效，你需要克隆原来机器上的MAC地址。参见 [Change MAC/hardware address](/index.php/Configuring_Network#Change_MAC/hardware_address "Configuring Network")。
 
 ### TCP窗口扩缩（window scaling）故障
 

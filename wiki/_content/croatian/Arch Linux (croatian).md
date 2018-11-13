@@ -8,7 +8,7 @@ Arch Linux je nezavisno razvijana, i686/x86-64 GNU/Linux distrubucija opče namj
 *   [4 Pakovanje software-a](#Pakovanje_software-a)
 *   [5 Cjelokupnost izvornih datoteka](#Cjelokupnost_izvornih_datoteka)
 *   [6 Zajednica](#Zajednica)
-*   [7 Sažetak](#Sa.C5.BEetak)
+*   [7 Sažetak](#Sažetak)
 
 ## Povijest
 

@@ -13,12 +13,12 @@
 *   [5 File placement](#File_placement)
 *   [6 Example](#Example)
 *   [7 Hows and whys](#Hows_and_whys)
-    *   [7.1 Why not installing into /opt?](#Why_not_installing_into_.2Fopt.3F)
-    *   [7.2 What is that *out-of-path executables* thing?](#What_is_that_out-of-path_executables_thing.3F)
+    *   [7.1 Why not installing into /opt?](#Why_not_installing_into_/opt?)
+    *   [7.2 What is that *out-of-path executables* thing?](#What_is_that_out-of-path_executables_thing?)
 *   [8 Troubleshooting](#Troubleshooting)
-    *   [8.1 What to do if compilation fails without clear message?](#What_to_do_if_compilation_fails_without_clear_message.3F)
-    *   [8.2 What does this error [error message] means?](#What_does_this_error_.5Berror_message.5D_means.3F)
-    *   [8.3 Why do files get installed in wrong places?](#Why_do_files_get_installed_in_wrong_places.3F)
+    *   [8.1 What to do if compilation fails without clear message?](#What_to_do_if_compilation_fails_without_clear_message?)
+    *   [8.2 What does this error [error message] means?](#What_does_this_error_[error_message]_means?)
+    *   [8.3 Why do files get installed in wrong places?](#Why_do_files_get_installed_in_wrong_places?)
 *   [9 See also](#See_also)
 
 **Tip:** As alternative for creation of cross-compiler packages you could use [crosstool-ng](http://crosstool-ng.org/) and create you own toolchain in fully automated way. crosstool-ng can be found on [crosstool-ng](https://aur.archlinux.org/packages/crosstool-ng/).

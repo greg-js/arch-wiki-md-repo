@@ -8,10 +8,10 @@
 
 ## Contents
 
-*   [1 其它](#.E5.85.B6.E5.AE.83)
-    *   [1.1 工作环境](#.E5.B7.A5.E4.BD.9C.E7.8E.AF.E5.A2.83)
-        *   [1.1.1 开机动画](#.E5.BC.80.E6.9C.BA.E5.8A.A8.E7.94.BB)
-        *   [1.1.2 命令行](#.E5.91.BD.E4.BB.A4.E8.A1.8C)
+*   [1 其它](#其它)
+    *   [1.1 工作环境](#工作环境)
+        *   [1.1.1 开机动画](#开机动画)
+        *   [1.1.2 命令行](#命令行)
         *   [1.1.3 Terminal multiplexers](#Terminal_multiplexers)
         *   [1.1.4 Desktop environments](#Desktop_environments)
         *   [1.1.5 Window managers](#Window_managers)
@@ -22,7 +22,7 @@
         *   [1.1.8 Support applications](#Support_applications)
             *   [1.1.8.1 Login managers](#Login_managers)
             *   [1.1.8.2 Composite managers](#Composite_managers)
-            *   [1.1.8.3 Taskbars / panels / docks](#Taskbars_.2F_panels_.2F_docks)
+            *   [1.1.8.3 Taskbars / panels / docks](#Taskbars_/_panels_/_docks)
             *   [1.1.8.4 Application launchers](#Application_launchers)
             *   [1.1.8.5 Logout dialogue](#Logout_dialogue)
         *   [1.1.9 Accessibility](#Accessibility)

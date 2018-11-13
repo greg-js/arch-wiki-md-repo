@@ -4,14 +4,14 @@ Este documento le guía en la configuración del acceso a particiones NTFS con d
 
 *   [1 Instalar ntfs-3g](#Instalar_ntfs-3g)
 *   [2 Montaje manual](#Montaje_manual)
-    *   [2.1 Configuración básica](#Configuraci.C3.B3n_b.C3.A1sica)
+    *   [2.1 Configuración básica](#Configuración_básica)
         *   [2.1.1 Editar fstab](#Editar_fstab)
-    *   [2.2 Configuración avanzada](#Configuraci.C3.B3n_avanzada)
+    *   [2.2 Configuración avanzada](#Configuración_avanzada)
         *   [2.2.1 Editar fstab](#Editar_fstab_2)
-        *   [2.2.2 Opciones habituales y muy útiles de ntfs-3g](#Opciones_habituales_y_muy_.C3.BAtiles_de_ntfs-3g)
-        *   [2.2.3 Valores de máscara (Bitmask)](#Valores_de_m.C3.A1scara_.28Bitmask.29)
-    *   [2.3 Daños en sistemas de archivo NTFS](#Da.C3.B1os_en_sistemas_de_archivo_NTFS)
-    *   [2.4 Montar la partición](#Montar_la_partici.C3.B3n)
+        *   [2.2.2 Opciones habituales y muy útiles de ntfs-3g](#Opciones_habituales_y_muy_útiles_de_ntfs-3g)
+        *   [2.2.3 Valores de máscara (Bitmask)](#Valores_de_máscara_(Bitmask))
+    *   [2.3 Daños en sistemas de archivo NTFS](#Daños_en_sistemas_de_archivo_NTFS)
+    *   [2.4 Montar la partición](#Montar_la_partición)
     *   [2.5 Fallo de montaje](#Fallo_de_montaje)
 
 ### Instalar ntfs-3g

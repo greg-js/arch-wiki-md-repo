@@ -19,24 +19,24 @@ El cifrado de disco solo debe ser visto como un complemento a los mecanismos de 
 
 ## Contents
 
-*   [1 ¿Por qué utilizar la criptografía?](#.C2.BFPor_qu.C3.A9_utilizar_la_criptograf.C3.ADa.3F)
+*   [1 ¿Por qué utilizar la criptografía?](#¿Por_qué_utilizar_la_criptografía?)
 *   [2 Cifrar datos del sistema](#Cifrar_datos_del_sistema)
-*   [3 Métodos disponibles](#M.C3.A9todos_disponibles)
+*   [3 Métodos disponibles](#Métodos_disponibles)
     *   [3.1 Cifrar sistemas de archivos apilados](#Cifrar_sistemas_de_archivos_apilados)
         *   [3.1.1 Optimizar el almacenamiento en la nube](#Optimizar_el_almacenamiento_en_la_nube)
     *   [3.2 Cifrar dispositivos de bloques](#Cifrar_dispositivos_de_bloques)
     *   [3.3 Cifrar dispositivo de bloques vs cifrar de sistema de archivos apilados](#Cifrar_dispositivo_de_bloques_vs_cifrar_de_sistema_de_archivos_apilados)
     *   [3.4 Cuadro comparativo](#Cuadro_comparativo)
-*   [4 Preparación](#Preparaci.C3.B3n)
-    *   [4.1 Elegir una configuración](#Elegir_una_configuraci.C3.B3n)
+*   [4 Preparación](#Preparación)
+    *   [4.1 Elegir una configuración](#Elegir_una_configuración)
     *   [4.2 Ejemplos](#Ejemplos)
-    *   [4.3 Elegir una frase de acceso sólida](#Elegir_una_frase_de_acceso_s.C3.B3lida)
+    *   [4.3 Elegir una frase de acceso sólida](#Elegir_una_frase_de_acceso_sólida)
     *   [4.4 Preparar el disco](#Preparar_el_disco)
-*   [5 Cómo funciona el cifrado](#C.C3.B3mo_funciona_el_cifrado)
-    *   [5.1 Principio básico](#Principio_b.C3.A1sico)
-    *   [5.2 Claves, archivo de claves y frase de acceso](#Claves.2C_archivo_de_claves_y_frase_de_acceso)
-    *   [5.3 Metadatos criptográficos](#Metadatos_criptogr.C3.A1ficos)
-    *   [5.4 Algoritmos de cifrado y modalidades de operación](#Algoritmos_de_cifrado_y_modalidades_de_operaci.C3.B3n)
+*   [5 Cómo funciona el cifrado](#Cómo_funciona_el_cifrado)
+    *   [5.1 Principio básico](#Principio_básico)
+    *   [5.2 Claves, archivo de claves y frase de acceso](#Claves,_archivo_de_claves_y_frase_de_acceso)
+    *   [5.3 Metadatos criptográficos](#Metadatos_criptográficos)
+    *   [5.4 Algoritmos de cifrado y modalidades de operación](#Algoritmos_de_cifrado_y_modalidades_de_operación)
     *   [5.5 Negabilidad plausible](#Negabilidad_plausible)
 
 ## ¿Por qué utilizar la criptografía?
@@ -82,7 +82,7 @@ Todos los métodos de cifrado de discos operan de tal manera que a pesar de que 
 
 Para que esto suceda, cierta «información secreta» (por lo general en forma de un archivo de claves y/o frase de acceso) debe ser suministrada por el usuario, de la cual, se deriva la clave de cifrado real (y se almacena en el llavero del kernel mientras dure la sesión).
 
-Si no se está completamente familiarizado con este tipo de operaciones, lea también la sección siguiente [#Cómo funciona el cifrado](#C.C3.B3mo_funciona_el_cifrado).
+Si no se está completamente familiarizado con este tipo de operaciones, lea también la sección siguiente [#Cómo funciona el cifrado](#Cómo_funciona_el_cifrado).
 
 Los métodos de cifrado del disco disponibles se pueden separar en dos tipos por su capa de operación:
 
@@ -234,7 +234,7 @@ Chromium OS (cifrado de los datos del usuario en la memoria caché [[9]](https:/
 
 ### Elegir una configuración
 
-Qué configuración de cifrado de disco es apropiada para cada usuario dependerá de los propósitos del usuario (léase [#¿Por qué utilizar la criptografía?](#.C2.BFPor_qu.C3.A9_utilizar_la_criptograf.C3.ADa.3F) más arriba) y de los parámetros del sistema.
+Qué configuración de cifrado de disco es apropiada para cada usuario dependerá de los propósitos del usuario (léase [#¿Por qué utilizar la criptografía?](#¿Por_qué_utilizar_la_criptografía?) más arriba) y de los parámetros del sistema.
 
 Entre otras, tendrá que responder a las siguientes preguntas:
 
@@ -276,7 +276,7 @@ Entre otras, tendrá que responder a las siguientes preguntas:
 *   Usar claves/frases de acceso emitidas de forma independiente y revocables para la misma parte del disco cifrado
 *   Crear partes cifradas separadas del disco para los diferentes usuarios
 
-A continuación, se puede pasar a tomar las decisiones técnicas necesarias (vea [#Métodos disponibles](#M.C3.A9todos_disponibles) más arriba, y [#Cómo funciona el cifrado](#C.C3.B3mo_funciona_el_cifrado) más adelante), en relación con:
+A continuación, se puede pasar a tomar las decisiones técnicas necesarias (vea [#Métodos disponibles](#Métodos_disponibles) más arriba, y [#Cómo funciona el cifrado](#Cómo_funciona_el_cifrado) más adelante), en relación con:
 
 *   elegir entre cifrar sistemas de archivos apilados *versus* cifrar dispositivos de bloques
 *   la gestión de las claves
@@ -305,7 +305,7 @@ En la práctica, podría resultar algo así:
 
 	Ejemplo 3
 
-	cifrado completo del sistema —disco duro entero, excepto la partición `/boot`)—, (sin embargo, `/boot` puede ser cifrado con [GRUB](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol)#Cifrar_partici.C3.B3n_de_arranque_.28GRUB.29 "Dm-crypt/Encrypting an entire system (Español)")) cifrado con [Dm-crypt (Español)](/index.php/Dm-crypt_(Espa%C3%B1ol) "Dm-crypt (Español)")
+	cifrado completo del sistema —disco duro entero, excepto la partición `/boot`)—, (sin embargo, `/boot` puede ser cifrado con [GRUB](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol)#Cifrar_partición_de_arranque_(GRUB) "Dm-crypt/Encrypting an entire system (Español)")) cifrado con [Dm-crypt (Español)](/index.php/Dm-crypt_(Espa%C3%B1ol) "Dm-crypt (Español)")
 
 *   desbloqueado durante el arranque, mediante frases de contraseña o desde una memoria USB con un archivo de claves
 *   se pueden tener diferentes frases/claves por usuario, independientes y revocables
@@ -331,7 +331,7 @@ Antes de configurar el cifrado de un disco (o parte de él), considere realizar 
 
 	Impedir la recuperación de los datos almacenados previamente'
 
-El cifrado del disco no cambia el hecho de que los distintos sectores del mismo solo se sobrescriben bajo demanda, esto es, cuando el sistema de archivos crea o modifica los datos contenidos en esos sectores (véase [#Cómo funciona el cifrado](#C.C3.B3mo_funciona_el_cifrado) a continuación). Los sectores que el sistema de archivos considera que «no se están utilizando actualmente» no los toca, y todavía pueden contener restos de datos del sistemas de archivos anterior. La única manera de asegurarse de que todos los datos guardados previamente en la unidad no pueden ser [recuperados](https://en.wikipedia.org/wiki/es:Recuperaci%C3%B3n_de_datos "wikipedia:es:Recuperación de datos"), es borrarlos manualmente. Para este propósito, no importa si se utilizan bytes cero o bytes aleatorios (aunque limpiando con bytes cero será mucho más rápido).
+El cifrado del disco no cambia el hecho de que los distintos sectores del mismo solo se sobrescriben bajo demanda, esto es, cuando el sistema de archivos crea o modifica los datos contenidos en esos sectores (véase [#Cómo funciona el cifrado](#Cómo_funciona_el_cifrado) a continuación). Los sectores que el sistema de archivos considera que «no se están utilizando actualmente» no los toca, y todavía pueden contener restos de datos del sistemas de archivos anterior. La única manera de asegurarse de que todos los datos guardados previamente en la unidad no pueden ser [recuperados](https://en.wikipedia.org/wiki/es:Recuperaci%C3%B3n_de_datos "wikipedia:es:Recuperación de datos"), es borrarlos manualmente. Para este propósito, no importa si se utilizan bytes cero o bytes aleatorios (aunque limpiando con bytes cero será mucho más rápido).
 
 	Impedir la divulgación de los patrones de uso de la unidad cifrada
 
@@ -395,7 +395,7 @@ Almacenar simplemente la llave maestra en un archivo (en formato legible) es la 
 
 	Almacenada en forma de frase de acceso protegida en un archivo de claves o en el propio disco
 
-La llave maestra (y, por lo tanto, los datos cifrados con ella) se puede proteger con una contraseña secreta, que tendrá que recordar e introducir cada vez que desea montar el dispositivo de bloque o carpeta. Véase [#Metadatos criptográficos](#Metadatos_criptogr.C3.A1ficos) a continuación para obtener más detalles.
+La llave maestra (y, por lo tanto, los datos cifrados con ella) se puede proteger con una contraseña secreta, que tendrá que recordar e introducir cada vez que desea montar el dispositivo de bloque o carpeta. Véase [#Metadatos criptográficos](#Metadatos_criptográficos) a continuación para obtener más detalles.
 
 	Generada de forma aleatoria sobre la marcha para cada sesión
 
@@ -476,7 +476,7 @@ El cifrado de discos emplea «algoritmos de cifrado de bloques», que operan sob
 | [Twofish](https://en.wikipedia.org/wiki/Twofish "wikipedia:Twofish") | 128 bits | 128, 192 o 256 bits | *desarrollado como sucesor de Blowfish, pero sin haber alcanzado un uso tan amplio* |
 | [Serpent](https://en.wikipedia.org/wiki/es:Serpent "wikipedia:es:Serpent") | 128 bits | 128, 192 o 256 bits | Considerado el más seguro de los cinco finalistas de la competición AES[[10]](http://csrc.nist.gov/archive/aes/round2/r2report.pdf)[[11]](https://www.cl.cam.ac.uk/~rja14/Papers/serpentcase.pdf)[[12]](https://www.cl.cam.ac.uk/~rja14/Papers/serpent.pdf). |
 
-Cifrar/descifrar un sector ([véase más arriba](#Principio_b.C3.A1sico)) se consigue mediante su división en pequeños bloques, haciéndolos coincidir con el tamaño del bloque cifrado, y siguiendo, después, cierto conjunto de reglas (que antes hemos llamado «**modalidad de operación**») que informan sobre cómo aplicar el algoritmo de cifrado a los bloques individuales.
+Cifrar/descifrar un sector ([véase más arriba](#Principio_básico)) se consigue mediante su división en pequeños bloques, haciéndolos coincidir con el tamaño del bloque cifrado, y siguiendo, después, cierto conjunto de reglas (que antes hemos llamado «**modalidad de operación**») que informan sobre cómo aplicar el algoritmo de cifrado a los bloques individuales.
 
 Aplicar el algoritmo de cifrado sin más a cada bloque por separado sin modificaciones (denominada modalidad «*electronic codebook (ECB)*») no sería seguro, ya que si los mismos 16 bytes de texto plano siempre producen los mismos 16 bytes de texto cifrado, un atacante podría reconocer fácilmente los patrones en el texto cifrado que se almacenan en el disco.
 

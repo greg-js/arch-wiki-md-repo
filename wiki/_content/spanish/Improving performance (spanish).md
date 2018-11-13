@@ -11,7 +11,7 @@ Artículos relacionados
 
 ## Contents
 
-*   [1 Lo básico](#Lo_b.C3.A1sico)
+*   [1 Lo básico](#Lo_básico)
 *   [2 Conoce tu sistema](#Conoce_tu_sistema)
 *   [3 Lo primero a hacer](#Lo_primero_a_hacer)
     *   [3.1 Compromiso](#Compromiso)
@@ -27,7 +27,7 @@ Artículos relacionados
         *   [4.1.7 Reiserfs](#Reiserfs)
         *   [4.1.8 BTRFS](#BTRFS)
             *   [4.1.8.1 mkinitcpio.conf para btrfs](#mkinitcpio.conf_para_btrfs)
-    *   [4.2 Comprimiendo /usr](#Comprimiendo_.2Fusr)
+    *   [4.2 Comprimiendo /usr](#Comprimiendo_/usr)
     *   [4.3 Optimizando un disco SSD](#Optimizando_un_disco_SSD)
 *   [5 CPU](#CPU)
     *   [5.1 VeryNice](#VeryNice)
@@ -39,7 +39,7 @@ Artículos relacionados
 *   [8 RAM y swap](#RAM_y_swap)
     *   [8.1 valor de Intercambio](#valor_de_Intercambio)
     *   [8.2 Compcache](#Compcache)
-    *   [8.3 Montando /tmp en RAM](#Montando_.2Ftmp_en_RAM)
+    *   [8.3 Montando /tmp en RAM](#Montando_/tmp_en_RAM)
     *   [8.4 Usando la RAM de la placa de video](#Usando_la_RAM_de_la_placa_de_video)
     *   [8.5 Precarga](#Precarga)
         *   [8.5.1 Go-preload](#Go-preload)
@@ -47,9 +47,9 @@ Artículos relacionados
     *   [8.6 Suspender a RAM](#Suspender_a_RAM)
     *   [8.7 Opciones del kernel para el inicio](#Opciones_del_kernel_para_el_inicio)
     *   [8.8 Kernel modificado](#Kernel_modificado)
-*   [9 Trucos específicos de las aplicaciones](#Trucos_espec.C3.ADficos_de_las_aplicaciones)
+*   [9 Trucos específicos de las aplicaciones](#Trucos_específicos_de_las_aplicaciones)
     *   [9.1 Firefox](#Firefox)
-    *   [9.2 Gcc/Makepkg](#Gcc.2FMakepkg)
+    *   [9.2 Gcc/Makepkg](#Gcc/Makepkg)
     *   [9.3 Mkinitcpio](#Mkinitcpio)
     *   [9.4 LibreOffice](#LibreOffice)
     *   [9.5 Pacman](#Pacman)
@@ -353,7 +353,7 @@ Compilar un kernel modificado reducirá el tiempo de inicio y el uso de memoria,
 ### Firefox
 
 ```
-El articulo sobre [Firefox](/index.php/Firefox "Firefox") ofrece algunos buenos trucos; los mas notables son [Firefox Tips and Tweaks#Improve rendering by disabling pango |deshabilitar pango]], [Limpiar la base de datis SQLite](/index.php/Firefox_Tips_and_Tweaks#Defragment_the_profile.27s_SQLite_databases "Firefox Tips and Tweaks"), y usar  [firefox-pgo](/index.php/Firefox#Firefox_customized_for_speed "Firefox"). Revise cambien: [Aumentar la velocidad de Firefox usando tmpfs](/index.php?title=Aumentar_la_velocidad_de_Firefox_usando_tmpfs&action=edit&redlink=1 "Aumentar la velocidad de Firefox usando tmpfs (page does not exist)"), and [Apagando el ati-pishing](/index.php/Firefox_Tips_and_Tweaks#Turn_off_anti-phishing "Firefox Tips and Tweaks").
+El articulo sobre [Firefox](/index.php/Firefox "Firefox") ofrece algunos buenos trucos; los mas notables son [Firefox Tips and Tweaks#Improve rendering by disabling pango |deshabilitar pango]], [Limpiar la base de datis SQLite](/index.php/Firefox_Tips_and_Tweaks#Defragment_the_profile's_SQLite_databases "Firefox Tips and Tweaks"), y usar  [firefox-pgo](/index.php/Firefox#Firefox_customized_for_speed "Firefox"). Revise cambien: [Aumentar la velocidad de Firefox usando tmpfs](/index.php?title=Aumentar_la_velocidad_de_Firefox_usando_tmpfs&action=edit&redlink=1 "Aumentar la velocidad de Firefox usando tmpfs (page does not exist)"), and [Apagando el ati-pishing](/index.php/Firefox_Tips_and_Tweaks#Turn_off_anti-phishing "Firefox Tips and Tweaks").
 
 ```
 

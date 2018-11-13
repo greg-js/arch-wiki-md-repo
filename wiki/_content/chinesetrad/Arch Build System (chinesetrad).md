@@ -17,22 +17,22 @@
 
 ## Contents
 
-*   [1 什麼是 Arch 組建系統？](#.E4.BB.80.E9.BA.BC.E6.98.AF_Arch_.E7.B5.84.E5.BB.BA.E7.B3.BB.E7.B5.B1.EF.BC.9F)
-    *   [1.1 什麼是類似 ports 的系統?](#.E4.BB.80.E9.BA.BC.E6.98.AF.E9.A1.9E.E4.BC.BC_ports_.E7.9A.84.E7.B3.BB.E7.B5.B1.3F)
-    *   [1.2 ABS 是類似的概念](#ABS_.E6.98.AF.E9.A1.9E.E4.BC.BC.E7.9A.84.E6.A6.82.E5.BF.B5)
-    *   [1.3 ABS 快速瀏覽](#ABS_.E5.BF.AB.E9.80.9F.E7.80.8F.E8.A6.BD)
-*   [2 我為什麼要用到 ABS？](#.E6.88.91.E7.82.BA.E4.BB.80.E9.BA.BC.E8.A6.81.E7.94.A8.E5.88.B0_ABS.EF.BC.9F)
-*   [3 如何使用 ABS](#.E5.A6.82.E4.BD.95.E4.BD.BF.E7.94.A8_ABS)
-    *   [3.1 安裝工具](#.E5.AE.89.E8.A3.9D.E5.B7.A5.E5.85.B7)
-    *   [3.2 /etc/abs.conf](#.2Fetc.2Fabs.conf)
-    *   [3.3 ABS 樹](#ABS_.E6.A8.B9)
-        *   [3.3.1 下載 ABS 樹](#.E4.B8.8B.E8.BC.89_ABS_.E6.A8.B9)
-    *   [3.4 /etc/makepkg.conf](#.2Fetc.2Fmakepkg.conf)
-        *   [3.4.1 設定 /etc/makepkg.conf 的 PACKAGER 變數](#.E8.A8.AD.E5.AE.9A_.2Fetc.2Fmakepkg.conf_.E7.9A.84_PACKAGER_.E8.AE.8A.E6.95.B8)
-            *   [3.4.1.1 顯示所有軟體包 (包含 AUR 軟體包)](#.E9.A1.AF.E7.A4.BA.E6.89.80.E6.9C.89.E8.BB.9F.E9.AB.94.E5.8C.85_.28.E5.8C.85.E5.90.AB_AUR_.E8.BB.9F.E9.AB.94.E5.8C.85.29)
-            *   [3.4.1.2 只顯示軟體庫下的軟體包](#.E5.8F.AA.E9.A1.AF.E7.A4.BA.E8.BB.9F.E9.AB.94.E5.BA.AB.E4.B8.8B.E7.9A.84.E8.BB.9F.E9.AB.94.E5.8C.85)
-    *   [3.5 建立組建目錄](#.E5.BB.BA.E7.AB.8B.E7.B5.84.E5.BB.BA.E7.9B.AE.E9.8C.84)
-    *   [3.6 組建軟體包](#.E7.B5.84.E5.BB.BA.E8.BB.9F.E9.AB.94.E5.8C.85)
+*   [1 什麼是 Arch 組建系統？](#什麼是_Arch_組建系統？)
+    *   [1.1 什麼是類似 ports 的系統?](#什麼是類似_ports_的系統?)
+    *   [1.2 ABS 是類似的概念](#ABS_是類似的概念)
+    *   [1.3 ABS 快速瀏覽](#ABS_快速瀏覽)
+*   [2 我為什麼要用到 ABS？](#我為什麼要用到_ABS？)
+*   [3 如何使用 ABS](#如何使用_ABS)
+    *   [3.1 安裝工具](#安裝工具)
+    *   [3.2 /etc/abs.conf](#/etc/abs.conf)
+    *   [3.3 ABS 樹](#ABS_樹)
+        *   [3.3.1 下載 ABS 樹](#下載_ABS_樹)
+    *   [3.4 /etc/makepkg.conf](#/etc/makepkg.conf)
+        *   [3.4.1 設定 /etc/makepkg.conf 的 PACKAGER 變數](#設定_/etc/makepkg.conf_的_PACKAGER_變數)
+            *   [3.4.1.1 顯示所有軟體包 (包含 AUR 軟體包)](#顯示所有軟體包_(包含_AUR_軟體包))
+            *   [3.4.1.2 只顯示軟體庫下的軟體包](#只顯示軟體庫下的軟體包)
+    *   [3.5 建立組建目錄](#建立組建目錄)
+    *   [3.6 組建軟體包](#組建軟體包)
         *   [3.6.1 fakeroot](#fakeroot)
 
 ## 什麼是 Arch 組建系統？
@@ -102,7 +102,7 @@ ABS 並非 Arch Linux 下必需功能，但它是相當好用的原始碼編譯�
 
 將會抓取 abs 同步腳本、各種組建腳本以及 [rsync](/index.php/Rsync "Rsync") (若沒有的話會以相依軟體安裝)。
 
-在真正組建任何東西之前，您還需要基本的編譯工具。這些工具被收集於 [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) 這個[軟體群組](/index.php/Pacman_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87)#.E5.AE.89.E8.A3.9D.E8.BB.9F.E9.AB.94.E7.BE.A4.E7.B5.84 "Pacman (正體中文)")。用 pacman 安裝這個群組。
+在真正組建任何東西之前，您還需要基本的編譯工具。這些工具被收集於 [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) 這個[軟體群組](/index.php/Pacman_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87)#安裝軟體群組 "Pacman (正體中文)")。用 pacman 安裝這個群組。
 
 ### /etc/abs.conf
 
@@ -255,7 +255,7 @@ $ makepkg -s
 
 ```
 
-**註記:** 若出現缺少的 (make) 相依性，請記得，預設假定所有的 Arch Linux 系統已經安裝 [base](https://www.archlinux.org/groups/x86_64/base/) 群組。當使用 **makepkg** 組建時也假定已安裝 [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) 群組。參閱[#安裝工具](#.E5.AE.89.E8.A3.9D.E5.B7.A5.E5.85.B7)。
+**註記:** 若出現缺少的 (make) 相依性，請記得，預設假定所有的 Arch Linux 系統已經安裝 [base](https://www.archlinux.org/groups/x86_64/base/) 群組。當使用 **makepkg** 組建時也假定已安裝 [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) 群組。參閱[#安裝工具](#安裝工具)。
 
 以 root 身分安裝：
 

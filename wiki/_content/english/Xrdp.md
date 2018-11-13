@@ -4,9 +4,9 @@
 
 *   [1 Installation](#Installation)
     *   [1.1 Autoboot at startup](#Autoboot_at_startup)
-    *   [1.2 Running as Terminal Server (Xorg)](#Running_as_Terminal_Server_.28Xorg.29)
+    *   [1.2 Running as Terminal Server (Xorg)](#Running_as_Terminal_Server_(Xorg))
         *   [1.2.1 Troubleshoting](#Troubleshoting)
-    *   [1.3 Running with Vino (Gnome VNC-Server for root session)](#Running_with_Vino_.28Gnome_VNC-Server_for_root_session.29)
+    *   [1.3 Running with Vino (Gnome VNC-Server for root session)](#Running_with_Vino_(Gnome_VNC-Server_for_root_session))
 *   [2 Usage](#Usage)
 *   [3 See also](#See_also)
 

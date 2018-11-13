@@ -6,7 +6,7 @@
 *   [2 Starting](#Starting)
 *   [3 Configuration](#Configuration)
 *   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 Improve <Tasklist> contrast](#Improve_.3CTasklist.3E_contrast)
+    *   [4.1 Improve <Tasklist> contrast](#Improve_<Tasklist>_contrast)
     *   [4.2 Logout and refresh](#Logout_and_refresh)
         *   [4.2.1 Reboot and shutdown](#Reboot_and_shutdown)
         *   [4.2.2 Conky](#Conky)

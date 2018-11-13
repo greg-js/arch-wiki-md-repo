@@ -3,7 +3,7 @@ This article contains information regarding sparse files, their creation, mainte
 ## Contents
 
 *   [1 Sparse Files](#Sparse_Files)
-    *   [1.1 What is a sparse file?](#What_is_a_sparse_file.3F)
+    *   [1.1 What is a sparse file?](#What_is_a_sparse_file?)
     *   [1.2 Advantages](#Advantages)
     *   [1.3 Disadvantages](#Disadvantages)
 *   [2 Creating sparse files](#Creating_sparse_files)
@@ -11,8 +11,8 @@ This article contains information regarding sparse files, their creation, mainte
     *   [2.2 Formatting the file with a filesystem](#Formatting_the_file_with_a_filesystem)
     *   [2.3 Mounting the file at boot](#Mounting_the_file_at_boot)
 *   [3 Copying the sparse file](#Copying_the_sparse_file)
-    *   [3.1 Copying with `cp'](#Copying_with_.60cp.27)
-    *   [3.2 Archiving with `tar'](#Archiving_with_.60tar.27)
+    *   [3.1 Copying with `cp'](#Copying_with_`cp')
+    *   [3.2 Archiving with `tar'](#Archiving_with_`tar')
 *   [4 Resizing the sparse file](#Resizing_the_sparse_file)
     *   [4.1 Growing the file](#Growing_the_file)
 *   [5 Sources](#Sources)

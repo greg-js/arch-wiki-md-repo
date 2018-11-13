@@ -11,7 +11,7 @@ Non tutte le fotocamere digitali sono rilevate con l'opzione --auto-detect (in g
     *   [1.2 Problemi con i permessi](#Problemi_con_i_permessi)
 *   [2 GPhoto2](#GPhoto2)
     *   [2.1 Installazione e configurazione](#Installazione_e_configurazione_2)
-*   [3 Applicazioni frontend (esterne) per GPhoto2](#Applicazioni_frontend_.28esterne.29_per_GPhoto2)
+*   [3 Applicazioni frontend (esterne) per GPhoto2](#Applicazioni_frontend_(esterne)_per_GPhoto2)
 *   [4 Risoluzione dei problemi](#Risoluzione_dei_problemi)
     *   [4.1 Gruppi](#Gruppi)
 *   [5 Articoli wiki relativi a foto e videocamere](#Articoli_wiki_relativi_a_foto_e_videocamere)

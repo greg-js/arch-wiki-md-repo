@@ -13,13 +13,13 @@
 
 ## Contents
 
-*   [1 关于主引导记录(MBR)](#.E5.85.B3.E4.BA.8E.E4.B8.BB.E5.BC.95.E5.AF.BC.E8.AE.B0.E5.BD.95.28MBR.29)
-    *   [1.1 MBR 导致的问题](#MBR_.E5.AF.BC.E8.87.B4.E7.9A.84.E9.97.AE.E9.A2.98)
-*   [2 启动过程](#.E5.90.AF.E5.8A.A8.E8.BF.87.E7.A8.8B)
-*   [3 备份与还原](#.E5.A4.87.E4.BB.BD.E4.B8.8E.E8.BF.98.E5.8E.9F)
-*   [4 恢复 Windows 引导记录](#.E6.81.A2.E5.A4.8D_Windows_.E5.BC.95.E5.AF.BC.E8.AE.B0.E5.BD.95)
+*   [1 关于主引导记录(MBR)](#关于主引导记录(MBR))
+    *   [1.1 MBR 导致的问题](#MBR_导致的问题)
+*   [2 启动过程](#启动过程)
+*   [3 备份与还原](#备份与还原)
+*   [4 恢复 Windows 引导记录](#恢复_Windows_引导记录)
 *   [5 TestDisk MBRCode](#TestDisk_MBRCode)
-*   [6 另见](#.E5.8F.A6.E8.A7.81)
+*   [6 另见](#另见)
 
 ## 关于主引导记录(MBR)
 

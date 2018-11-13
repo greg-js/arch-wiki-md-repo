@@ -8,7 +8,7 @@
 *   [4 DPMS interaction in a Linux console with setterm](#DPMS_interaction_in_a_Linux_console_with_setterm)
     *   [4.1 Prevent screen from turning off](#Prevent_screen_from_turning_off)
     *   [4.2 Pipe the output to a cat to see the escapes](#Pipe_the_output_to_a_cat_to_see_the_escapes)
-    *   [4.3 Pipe the escapes to any tty (with write/append perms) to modify that terminal](#Pipe_the_escapes_to_any_tty_.28with_write.2Fappend_perms.29_to_modify_that_terminal)
+    *   [4.3 Pipe the escapes to any tty (with write/append perms) to modify that terminal](#Pipe_the_escapes_to_any_tty_(with_write/append_perms)_to_modify_that_terminal)
         *   [4.3.1 Bash loop to set ttys 0-256](#Bash_loop_to_set_ttys_0-256)
 *   [5 See also](#See_also)
 

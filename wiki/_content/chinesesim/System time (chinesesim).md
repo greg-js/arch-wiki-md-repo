@@ -8,21 +8,21 @@
 
 ## Contents
 
-*   [1 硬件时钟和系统时钟](#.E7.A1.AC.E4.BB.B6.E6.97.B6.E9.92.9F.E5.92.8C.E7.B3.BB.E7.BB.9F.E6.97.B6.E9.92.9F)
-    *   [1.1 读取时间](#.E8.AF.BB.E5.8F.96.E6.97.B6.E9.97.B4)
-    *   [1.2 设置时间](#.E8.AE.BE.E7.BD.AE.E6.97.B6.E9.97.B4)
-*   [2 时间标准](#.E6.97.B6.E9.97.B4.E6.A0.87.E5.87.86)
-    *   [2.1 Windows 系统使用 UTC](#Windows_.E7.B3.BB.E7.BB.9F.E4.BD.BF.E7.94.A8_UTC)
-    *   [2.2 UTC 在Ubuntu的设置](#UTC_.E5.9C.A8Ubuntu.E7.9A.84.E8.AE.BE.E7.BD.AE)
-*   [3 时区](#.E6.97.B6.E5.8C.BA)
-*   [4 时钟偏移](#.E6.97.B6.E9.92.9F.E5.81.8F.E7.A7.BB)
-*   [5 时钟同步](#.E6.97.B6.E9.92.9F.E5.90.8C.E6.AD.A5)
-*   [6 Per-user/会话或临时设置](#Per-user.2F.E4.BC.9A.E8.AF.9D.E6.88.96.E4.B8.B4.E6.97.B6.E8.AE.BE.E7.BD.AE)
-*   [7 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
-    *   [7.1 时间显示的既不是UTC也不是本地时间](#.E6.97.B6.E9.97.B4.E6.98.BE.E7.A4.BA.E7.9A.84.E6.97.A2.E4.B8.8D.E6.98.AFUTC.E4.B9.9F.E4.B8.8D.E6.98.AF.E6.9C.AC.E5.9C.B0.E6.97.B6.E9.97.B4)
-*   [8 提示和技巧](#.E6.8F.90.E7.A4.BA.E5.92.8C.E6.8A.80.E5.B7.A7)
+*   [1 硬件时钟和系统时钟](#硬件时钟和系统时钟)
+    *   [1.1 读取时间](#读取时间)
+    *   [1.2 设置时间](#设置时间)
+*   [2 时间标准](#时间标准)
+    *   [2.1 Windows 系统使用 UTC](#Windows_系统使用_UTC)
+    *   [2.2 UTC 在Ubuntu的设置](#UTC_在Ubuntu的设置)
+*   [3 时区](#时区)
+*   [4 时钟偏移](#时钟偏移)
+*   [5 时钟同步](#时钟同步)
+*   [6 Per-user/会话或临时设置](#Per-user/会话或临时设置)
+*   [7 故障排除](#故障排除)
+    *   [7.1 时间显示的既不是UTC也不是本地时间](#时间显示的既不是UTC也不是本地时间)
+*   [8 提示和技巧](#提示和技巧)
     *   [8.1 fake-hwclock](#fake-hwclock)
-*   [9 外部资源](#.E5.A4.96.E9.83.A8.E8.B5.84.E6.BA.90)
+*   [9 外部资源](#外部资源)
 
 ## 硬件时钟和系统时钟
 
@@ -104,7 +104,7 @@ $ timedatectl status | grep local
 
 ### Windows 系统使用 UTC
 
-如果同时安装了 Windows 操作系统（[默认使用地方时](http://blogs.msdn.com/b/oldnewthing/archive/2004/09/02/224672.aspx)），那么一般 RTC 会被设置为地方时。Windows 其实也能处理 UTC，需要[修改注册表](#Windows_.E7.B3.BB.E7.BB.9F.E4.BD.BF.E7.94.A8_UTC)。建议让 Windows 使用 UTC，而非让 Linux 使用地方时。Windows 使用 UTC 后，请记得禁用 Windows 的时间同步功能，以防 Windows 错误设置硬件时间。如上文所说，Linux 可以使用[NTP服务](/index.php/NTP_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "NTP (简体中文)")来在线同步硬件时钟。
+如果同时安装了 Windows 操作系统（[默认使用地方时](http://blogs.msdn.com/b/oldnewthing/archive/2004/09/02/224672.aspx)），那么一般 RTC 会被设置为地方时。Windows 其实也能处理 UTC，需要[修改注册表](#Windows_系统使用_UTC)。建议让 Windows 使用 UTC，而非让 Linux 使用地方时。Windows 使用 UTC 后，请记得禁用 Windows 的时间同步功能，以防 Windows 错误设置硬件时间。如上文所说，Linux 可以使用[NTP服务](/index.php/NTP_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "NTP (简体中文)")来在线同步硬件时钟。
 
 使用 `regedit`,新建如下 DWORD 值，并将其值设为十六进制的 `1`。
 

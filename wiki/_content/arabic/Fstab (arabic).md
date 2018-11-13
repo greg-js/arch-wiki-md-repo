@@ -10,23 +10,23 @@ Related articles
 
 ## Contents
 
-*   [1 مثال للملف](#.D9.85.D8.AB.D8.A7.D9.84_.D9.84.D9.84.D9.85.D9.84.D9.81)
-*   [2 تعريفات الحقول](#.D8.AA.D8.B9.D8.B1.D9.8A.D9.81.D8.A7.D8.AA_.D8.A7.D9.84.D8.AD.D9.82.D9.88.D9.84)
-*   [3 تعريف نظم الملفات](#.D8.AA.D8.B9.D8.B1.D9.8A.D9.81_.D9.86.D8.B8.D9.85_.D8.A7.D9.84.D9.85.D9.84.D9.81.D8.A7.D8.AA)
-    *   [3.1 تسمية النواة](#.D8.AA.D8.B3.D9.85.D9.8A.D8.A9_.D8.A7.D9.84.D9.86.D9.88.D8.A7.D8.A9)
-    *   [3.2 العنوان Label](#.D8.A7.D9.84.D8.B9.D9.86.D9.88.D8.A7.D9.86_Label)
-    *   [3.3 معرف UUID](#.D9.85.D8.B9.D8.B1.D9.81_UUID)
-*   [4 تلميحات و حيل](#.D8.AA.D9.84.D9.85.D9.8A.D8.AD.D8.A7.D8.AA_.D9.88_.D8.AD.D9.8A.D9.84)
-    *   [4.1 معرف قسم التبديل Swap UUID](#.D9.85.D8.B9.D8.B1.D9.81_.D9.82.D8.B3.D9.85_.D8.A7.D9.84.D8.AA.D8.A8.D8.AF.D9.8A.D9.84_Swap_UUID)
+*   [1 مثال للملف](#مثال_للملف)
+*   [2 تعريفات الحقول](#تعريفات_الحقول)
+*   [3 تعريف نظم الملفات](#تعريف_نظم_الملفات)
+    *   [3.1 تسمية النواة](#تسمية_النواة)
+    *   [3.2 العنوان Label](#العنوان_Label)
+    *   [3.3 معرف UUID](#معرف_UUID)
+*   [4 تلميحات و حيل](#تلميحات_و_حيل)
+    *   [4.1 معرف قسم التبديل Swap UUID](#معرف_قسم_التبديل_Swap_UUID)
     *   [4.2 Filepath spaces](#Filepath_spaces)
-    *   [4.3 اﻷقراص الخارجية](#.D8.A7.EF.BB.B7.D9.82.D8.B1.D8.A7.D8.B5_.D8.A7.D9.84.D8.AE.D8.A7.D8.B1.D8.AC.D9.8A.D8.A9)
-    *   [4.4 خيارات atime](#.D8.AE.D9.8A.D8.A7.D8.B1.D8.A7.D8.AA_atime)
-    *   [4.5 نظام ملفات tmpfs](#.D9.86.D8.B8.D8.A7.D9.85_.D9.85.D9.84.D9.81.D8.A7.D8.AA_tmpfs)
-        *   [4.5.1 طرق الاستخدام](#.D8.B7.D8.B1.D9.82_.D8.A7.D9.84.D8.A7.D8.B3.D8.AA.D8.AE.D8.AF.D8.A7.D9.85)
+    *   [4.3 اﻷقراص الخارجية](#اﻷقراص_الخارجية)
+    *   [4.4 خيارات atime](#خيارات_atime)
+    *   [4.5 نظام ملفات tmpfs](#نظام_ملفات_tmpfs)
+        *   [4.5.1 طرق الاستخدام](#طرق_الاستخدام)
             *   [4.5.1.1 Improving compile times](#Improving_compile_times)
-    *   [4.6 الكتابة على قسم FAT32 كمستخدم عادي](#.D8.A7.D9.84.D9.83.D8.AA.D8.A7.D8.A8.D8.A9_.D8.B9.D9.84.D9.89_.D9.82.D8.B3.D9.85_FAT32_.D9.83.D9.85.D8.B3.D8.AA.D8.AE.D8.AF.D9.85_.D8.B9.D8.A7.D8.AF.D9.8A)
-    *   [4.7 إعادة وصل قسم نظام ملفات الجذر](#.D8.A5.D8.B9.D8.A7.D8.AF.D8.A9_.D9.88.D8.B5.D9.84_.D9.82.D8.B3.D9.85_.D9.86.D8.B8.D8.A7.D9.85_.D9.85.D9.84.D9.81.D8.A7.D8.AA_.D8.A7.D9.84.D8.AC.D8.B0.D8.B1)
-*   [5 انظر أيضا](#.D8.A7.D9.86.D8.B8.D8.B1_.D8.A3.D9.8A.D8.B6.D8.A7)
+    *   [4.6 الكتابة على قسم FAT32 كمستخدم عادي](#الكتابة_على_قسم_FAT32_كمستخدم_عادي)
+    *   [4.7 إعادة وصل قسم نظام ملفات الجذر](#إعادة_وصل_قسم_نظام_ملفات_الجذر)
+*   [5 انظر أيضا](#انظر_أيضا)
 
 ## مثال للملف
 
@@ -76,7 +76,7 @@ Related articles
 *   `suid` - Allow the operation of suid, and sgid bits. They are mostly used to allow users on a computer system to execute binary executables with temporarily elevated privileges in order to perform a specific task.
 *   `nosuid` - Block the operation of suid, and sgid bits.
 *   `noatime` - Don't update inode access times on the filesystem. Can help performance (see [atime options](#atime_options)).
-*   `nodiratime` - Do not update directory inode access times on the filesystem. Can help performance (see [atime options](#.D8.AE.D9.8A.D8.A7.D8.B1.D8.A7.D8.AA_atime)).
+*   `nodiratime` - Do not update directory inode access times on the filesystem. Can help performance (see [atime options](#خيارات_atime)).
 *   `relatime` - Update inode access times relative to modify or change time. Access time is only updated if the previous access time was earlier than the current modify or change time. (Similar to noatime, but doesn't break mutt or other applications that need to know if a file has been read since the last time it was modified.) Can help performance (see [atime options](/index.php/Fstab#atime_options "Fstab")).
 *   `flush` - The `vfat` option to flush data more often, thus making copy dialogs or progress bars to stay up until all data is written.
 *   `defaults` - the default mount options for the filesystem to be used. The default options for `ext4` are: `rw`, `suid`, `dev`, `exec`, `auto`, `nouser`, `async`.
@@ -109,7 +109,7 @@ sdc
 
 نفذ اﻷمر `lsblk -f` لعرض قائمة أقسام القرص ، مع تصديرها بالبادئة `/dev`.
 
-انظر [مثال](#.D9.85.D8.AB.D8.A7.D9.84_.D9.84.D9.84.D9.85.D9.84.D9.81).
+انظر [مثال](#مثال_للملف).
 
 ### العنوان Label
 

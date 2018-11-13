@@ -11,26 +11,26 @@ Artículos relacionados
 
 ## Contents
 
-*   [1 Uso Básico](#Uso_B.C3.A1sico)
-    *   [1.1 Servicios Requeridos e Instalación](#Servicios_Requeridos_e_Instalaci.C3.B3n)
-*   [2 Ejemplos de Configuración](#Ejemplos_de_Configuraci.C3.B3n)
-    *   [2.1 Adaptador alámbrico usando DHCP](#Adaptador_al.C3.A1mbrico_usando_DHCP)
-    *   [2.2 Adaptador alámbrico Usando una IP Estática](#Adaptador_al.C3.A1mbrico_Usando_una_IP_Est.C3.A1tica)
-    *   [2.3 Adaptador Inalámbrico](#Adaptador_Inal.C3.A1mbrico)
-    *   [2.4 Adaptador Alámbrico e Inalámbrico en la misma máquina](#Adaptador_Al.C3.A1mbrico_e_Inal.C3.A1mbrico_en_la_misma_m.C3.A1quina)
+*   [1 Uso Básico](#Uso_Básico)
+    *   [1.1 Servicios Requeridos e Instalación](#Servicios_Requeridos_e_Instalación)
+*   [2 Ejemplos de Configuración](#Ejemplos_de_Configuración)
+    *   [2.1 Adaptador alámbrico usando DHCP](#Adaptador_alámbrico_usando_DHCP)
+    *   [2.2 Adaptador alámbrico Usando una IP Estática](#Adaptador_alámbrico_Usando_una_IP_Estática)
+    *   [2.3 Adaptador Inalámbrico](#Adaptador_Inalámbrico)
+    *   [2.4 Adaptador Alámbrico e Inalámbrico en la misma máquina](#Adaptador_Alámbrico_e_Inalámbrico_en_la_misma_máquina)
     *   [2.5 IPv6 privacy extensions](#IPv6_privacy_extensions)
-*   [3 Archivos de Configuración](#Archivos_de_Configuraci.C3.B3n)
+*   [3 Archivos de Configuración](#Archivos_de_Configuración)
     *   [3.1 Archivos de Red](#Archivos_de_Red)
-        *   [3.1.1 Sección [Match]](#Secci.C3.B3n_.5BMatch.5D)
-        *   [3.1.2 Sección [Network]](#Secci.C3.B3n_.5BNetwork.5D)
-        *   [3.1.3 Sección [Address]](#Secci.C3.B3n_.5BAddress.5D)
-        *   [3.1.4 Sección [Route]](#Secci.C3.B3n_.5BRoute.5D)
+        *   [3.1.1 Sección [Match]](#Sección_[Match])
+        *   [3.1.2 Sección [Network]](#Sección_[Network])
+        *   [3.1.3 Sección [Address]](#Sección_[Address])
+        *   [3.1.4 Sección [Route]](#Sección_[Route])
     *   [3.2 Archivos netdev](#Archivos_netdev)
-        *   [3.2.1 Sección [Match]](#Secci.C3.B3n_.5BMatch.5D_2)
-        *   [3.2.2 [Netdev] section](#.5BNetdev.5D_section)
+        *   [3.2.1 Sección [Match]](#Sección_[Match]_2)
+        *   [3.2.2 [Netdev] section](#[Netdev]_section)
     *   [3.3 Archivos Link](#Archivos_Link)
-        *   [3.3.1 Sección [Match]](#Secci.C3.B3n_.5BMatch.5D_3)
-        *   [3.3.2 Sección [Link]](#Secci.C3.B3n_.5BLink.5D)
+        *   [3.3.1 Sección [Match]](#Sección_[Match]_3)
+        *   [3.3.2 Sección [Link]](#Sección_[Link])
 *   [4 Uso De Contenedores](#Uso_De_Contenedores)
     *   [4.1 Basic DHCP network](#Basic_DHCP_network)
     *   [4.2 DHCP with two distinct IP](#DHCP_with_two_distinct_IP)
@@ -80,7 +80,7 @@ Mira [systemd-resolved(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-re
 
 ## Ejemplos de Configuración
 
-Todas las configuraciones estan almasenada como {ic|foo.network}} en `/etc/systemd/network`. Para una lista completa de opciones y orden de procesamiento, consulte [archivos de configuración](#Archivos_de_Configuraci.C3.B3n) y la página man de `systemd.network`.
+Todas las configuraciones estan almasenada como {ic|foo.network}} en `/etc/systemd/network`. Para una lista completa de opciones y orden de procesamiento, consulte [archivos de configuración](#Archivos_de_Configuración) y la página man de `systemd.network`.
 
 Systemd/udev automaticamente asigna previsibles, nombres de intefaces de res estables para todo el Ethernet local, interfaces de WLAN y WWAN. Usa `networkctl list` para enlistar los dispositivos en el sistema.
 
@@ -134,7 +134,7 @@ DHCP=ipv4
 
 ```
 
-Si el adaptador inalámbrico tiene una dirección IP estática, la configuracipon es la misma (excepto por el nombre de la interface) como en un [adaptador alámbrico](#Adaptador_al.C3.A1mbrico_Usando_una_IP_Est.C3.A1tica) .
+Si el adaptador inalámbrico tiene una dirección IP estática, la configuracipon es la misma (excepto por el nombre de la interface) como en un [adaptador alámbrico](#Adaptador_alámbrico_Usando_una_IP_Estática) .
 
 #### Adaptador Alámbrico e Inalámbrico en la misma máquina
 
@@ -331,7 +331,7 @@ Las claves más usadas son:
 
 ## Uso De Contenedores
 
-El servicio está disponible con [systemd](https://www.archlinux.org/packages/?name=systemd) >= 210\. Se requiere [habilitar e iniciar](/index.php/Systemd_(Espa%C3%B1ol)#Uso_b.C3.A1sico_de_systemctl "Systemd (Español)") el servicio `systemd-networkd.service` en el host y el contenedor
+El servicio está disponible con [systemd](https://www.archlinux.org/packages/?name=systemd) >= 210\. Se requiere [habilitar e iniciar](/index.php/Systemd_(Espa%C3%B1ol)#Uso_básico_de_systemctl "Systemd (Español)") el servicio `systemd-networkd.service` en el host y el contenedor
 
 Para propositos de debugging, se recomienda [instalar](/index.php/Install "Install") los paquetes [bridge-utils](https://www.archlinux.org/packages/?name=bridge-utils), [net-tools](https://www.archlinux.org/packages/?name=net-tools) y [iproute2](https://www.archlinux.org/packages/?name=iproute2).
 
@@ -342,7 +342,7 @@ Note que si se desea tomar ventaja de la configuración automatica DNS desde DHC
 **Sugerencia:** Antes de empezar a configurar el contenedor de red, es util:
 
 *   Deshabilitar todos los servicios [netctl](/index.php/Netctl_(Espa%C3%B1ol) "Netctl (Español)"). Esto evitará cualquier conflicto potencial con **systemd-networkd** y hace las configuraciones faciles de probar. Además, hay muchas posibilidades de terminar con pocos o incluso ningun perfil [netctl](/index.php/Netctl_(Espa%C3%B1ol) "Netctl (Español)") activado. el comando `netctl list` imprime una lista de todos los perfiles, con los activados siendo vigilados.
-*   Deshabilita el servicio `systemd-nspawn@.service` y use el comando `systemd-nspawn -bnD /path_to/your_container/` como super usuario para iniciar el contenedor. Para desconectar y apagar dentro del contenedor se usa `systemctl poweroff` como super usuario. Una vez que los ajustes de red encajan con los requerimientos, [habilita e inicia](/index.php/Systemd_(Espa%C3%B1ol)#Uso_b.C3.A1sico_de_systemctl "Systemd (Español)") `systemd-nspawn@.service`.
+*   Deshabilita el servicio `systemd-nspawn@.service` y use el comando `systemd-nspawn -bnD /path_to/your_container/` como super usuario para iniciar el contenedor. Para desconectar y apagar dentro del contenedor se usa `systemctl poweroff` como super usuario. Una vez que los ajustes de red encajan con los requerimientos, [habilita e inicia](/index.php/Systemd_(Espa%C3%B1ol)#Uso_básico_de_systemctl "Systemd (Español)") `systemd-nspawn@.service`.
 *   Deshabilita el servicio `dhcpcd.service` si está habilitado en el sistema, ya que habilita *dhcpcd* en **todas** las interfaces.
 *   Asegurese de no tener perfiles [netctl](/index.php/Netctl_(Espa%C3%B1ol) "Netctl (Español)") activados en el contenedor, y asegurar que `systemd-networkd.service` tanpoco esté habilitado ni iniciado.
 *   Asegurese que no tenga ninguna regla [iptables](/index.php/Iptables_(Espa%C3%B1ol) "Iptables (Español)") que pueda bloquear el tráfico.

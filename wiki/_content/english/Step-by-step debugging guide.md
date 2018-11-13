@@ -20,7 +20,7 @@ This page is mainly about how to gather more information in connection with bug 
     *   [3.1 Strace](#Strace)
     *   [3.2 LD_DEBUG](#LD_DEBUG)
     *   [3.3 Readelf](#Readelf)
-*   [4 If it is not written in C or C++, but perhaps in Python](#If_it_is_not_written_in_C_or_C.2B.2B.2C_but_perhaps_in_Python)
+*   [4 If it is not written in C or C++, but perhaps in Python](#If_it_is_not_written_in_C_or_C++,_but_perhaps_in_Python)
 *   [5 Report the bug](#Report_the_bug)
 *   [6 See also](#See_also)
 

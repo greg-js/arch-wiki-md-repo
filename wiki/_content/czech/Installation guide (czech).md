@@ -4,38 +4,38 @@ Komunitou spravovaná [ArchWiki](/index.php/Main_page_(%C4%8Cesky) "Main page (�
 
 ## Contents
 
-*   [1 Před instalací](#P.C5.99ed_instalac.C3.AD)
+*   [1 Před instalací](#Před_instalací)
     *   [1.1 UEFI](#UEFI)
-    *   [1.2 Rozložení klávesnice](#Rozlo.C5.BEen.C3.AD_kl.C3.A1vesnice)
-    *   [1.3 Připojte se k Internetu](#P.C5.99ipojte_se_k_Internetu)
-        *   [1.3.1 Bezdrátové připojení](#Bezdr.C3.A1tov.C3.A9_p.C5.99ipojen.C3.AD)
-    *   [1.4 Nastavte systémový čas](#Nastavte_syst.C3.A9mov.C3.BD_.C4.8Das)
-    *   [1.5 Rozdělte disk](#Rozd.C4.9Blte_disk)
-    *   [1.6 Naformátujte oddíly](#Naform.C3.A1tujte_odd.C3.ADly)
-    *   [1.7 Připojte oddíly](#P.C5.99ipojte_odd.C3.ADly)
+    *   [1.2 Rozložení klávesnice](#Rozložení_klávesnice)
+    *   [1.3 Připojte se k Internetu](#Připojte_se_k_Internetu)
+        *   [1.3.1 Bezdrátové připojení](#Bezdrátové_připojení)
+    *   [1.4 Nastavte systémový čas](#Nastavte_systémový_čas)
+    *   [1.5 Rozdělte disk](#Rozdělte_disk)
+    *   [1.6 Naformátujte oddíly](#Naformátujte_oddíly)
+    *   [1.7 Připojte oddíly](#Připojte_oddíly)
 *   [2 Instalace](#Instalace)
     *   [2.1 Vyberte mirrory](#Vyberte_mirrory)
-    *   [2.2 Nainstalujte základní systém](#Nainstalujte_z.C3.A1kladn.C3.AD_syst.C3.A9m)
-*   [3 Nakonfigurujte systém](#Nakonfigurujte_syst.C3.A9m)
+    *   [2.2 Nainstalujte základní systém](#Nainstalujte_základní_systém)
+*   [3 Nakonfigurujte systém](#Nakonfigurujte_systém)
     *   [3.1 fstab](#fstab)
     *   [3.2 Chroot](#Chroot)
-    *   [3.3 Časové pásmo](#.C4.8Casov.C3.A9_p.C3.A1smo)
+    *   [3.3 Časové pásmo](#Časové_pásmo)
     *   [3.4 Lokalizace](#Lokalizace)
     *   [3.5 Hostname](#Hostname)
-    *   [3.6 Nastavení síte](#Nastaven.C3.AD_s.C3.ADte)
+    *   [3.6 Nastavení síte](#Nastavení_síte)
     *   [3.7 Initramfs](#Initramfs)
     *   [3.8 Root heslo](#Root_heslo)
     *   [3.9 Boot loader](#Boot_loader)
     *   [3.10 Restart](#Restart)
 *   [4 Po instalaci](#Po_instalaci)
-    *   [4.1 Správa uživatelů](#Spr.C3.A1va_u.C5.BEivatel.C5.AF)
-    *   [4.2 Správa balíčků](#Spr.C3.A1va_bal.C3.AD.C4.8Dk.C5.AF)
-    *   [4.3 Správa služeb](#Spr.C3.A1va_slu.C5.BEeb)
+    *   [4.1 Správa uživatelů](#Správa_uživatelů)
+    *   [4.2 Správa balíčků](#Správa_balíčků)
+    *   [4.3 Správa služeb](#Správa_služeb)
     *   [4.4 Zvuk](#Zvuk)
-    *   [4.5 Ovladač grafické karty](#Ovlada.C4.8D_grafick.C3.A9_karty)
+    *   [4.5 Ovladač grafické karty](#Ovladač_grafické_karty)
     *   [4.6 Display server](#Display_server)
     *   [4.7 Fonty](#Fonty)
-*   [5 Závěr](#Z.C3.A1v.C4.9Br)
+*   [5 Závěr](#Závěr)
 
 ## Před instalací
 
@@ -108,7 +108,7 @@ Chcete-li zkontrolovat stav služby, použijte `timedatectl status`.
 
 Pro úpravu a vytvoření [partition table](/index.php/Partition_table "Partition table") (tabulka oddílů) použijte [fdisk](/index.php/Fdisk "Fdisk"), [cfdisk](/index.php/Cfdisk "Cfdisk") nebo [parted](/index.php/Parted "Parted") pro [MBR](/index.php/MBR "MBR") a [GPT](/index.php/GPT "GPT"), nebo [gdisk](/index.php/Gdisk "Gdisk") (pouze GPT).
 
-Alespoň jeden oddíl musí být dostupný pro kořenový adresář `/`. Pokud používáte UEFI, budete potřebovat další oddíl pro hostování [EFI system partition](/index.php/EFI_system_partition "EFI system partition"). Také mohou být zapotřebí další oddíly, např. [GRUB BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB") na BIOS/GPT konfiguraci.
+Alespoň jeden oddíl musí být dostupný pro kořenový adresář `/`. Pokud používáte UEFI, budete potřebovat další oddíl pro hostování [EFI system partition](/index.php/EFI_system_partition "EFI system partition"). Také mohou být zapotřebí další oddíly, např. [GRUB BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_(GPT)_specific_instructions "GRUB") na BIOS/GPT konfiguraci.
 
 Nezapomeňte vytvořit jakákoliv vrstvená bloková zařízení typu [LVM](/index.php/LVM "LVM"), [LUKS](/index.php/Dm-crypt_with_LUKS "Dm-crypt with LUKS") nebo [RAID](/index.php/RAID "RAID"), pokud je požadujete.
 
@@ -282,7 +282,7 @@ Vytvořte uživatelské účty podle vaší potřeby, jak je popsáno v [User ma
 
 ### Správa balíčků
 
-Vizte [pacman](/index.php/Pacman_(%C4%8Cesky) "Pacman (Česky)") a [Často kladené otázky](/index.php/FAQ_(%C4%8Cesky)#Spr.C3.A1va_bal.C3.AD.C4.8Dk.C5.AF "FAQ (Česky)") pro informace ohledně instalace, aktualizace a správy balíčků.
+Vizte [pacman](/index.php/Pacman_(%C4%8Cesky) "Pacman (Česky)") a [Často kladené otázky](/index.php/FAQ_(%C4%8Cesky)#Správa_balíčků "FAQ (Česky)") pro informace ohledně instalace, aktualizace a správy balíčků.
 
 ### Správa služeb
 

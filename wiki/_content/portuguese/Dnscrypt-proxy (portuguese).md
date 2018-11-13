@@ -4,17 +4,17 @@ O [dnscrypt-proxy](https://github.com/jedisct1/dnscrypt-proxy) é um proxy DNS c
 
 ## Contents
 
-*   [1 Instalação](#Instala.C3.A7.C3.A3o)
-*   [2 Configuração](#Configura.C3.A7.C3.A3o)
-    *   [2.1 Inicialização](#Inicializa.C3.A7.C3.A3o)
+*   [1 Instalação](#Instalação)
+*   [2 Configuração](#Configuração)
+    *   [2.1 Inicialização](#Inicialização)
     *   [2.2 Selecionar resolvedor](#Selecionar_resolvedor)
-    *   [2.3 Desabilitar quaisquer serviços na porta 53](#Desabilitar_quaisquer_servi.C3.A7os_na_porta_53)
+    *   [2.3 Desabilitar quaisquer serviços na porta 53](#Desabilitar_quaisquer_serviços_na_porta_53)
     *   [2.4 Modificar resolv.conf](#Modificar_resolv.conf)
-    *   [2.5 Iniciar o serviço systemd](#Iniciar_o_servi.C3.A7o_systemd)
+    *   [2.5 Iniciar o serviço systemd](#Iniciar_o_serviço_systemd)
 *   [3 Dicas e truques](#Dicas_e_truques)
-    *   [3.1 Configuração de cache de DNS local](#Configura.C3.A7.C3.A3o_de_cache_de_DNS_local)
+    *   [3.1 Configuração de cache de DNS local](#Configuração_de_cache_de_DNS_local)
         *   [3.1.1 Alterar a porta](#Alterar_a_porta)
-        *   [3.1.2 Exemplo de configurações de cache de DNS local](#Exemplo_de_configura.C3.A7.C3.B5es_de_cache_de_DNS_local)
+        *   [3.1.2 Exemplo de configurações de cache de DNS local](#Exemplo_de_configurações_de_cache_de_DNS_local)
             *   [3.1.2.1 Unbound](#Unbound)
             *   [3.1.2.2 dnsmasq](#dnsmasq)
             *   [3.1.2.3 pdnsd](#pdnsd)
@@ -82,7 +82,7 @@ options edns0 single-request-reopen
 
 ```
 
-Outros programas sobrescrevem essa configuração. Veja [resolv.conf (Português)#Sobrescrita do /etc/resolv.conf](/index.php/Resolv.conf_(Portugu%C3%AAs)#Sobrescrita_do_.2Fetc.2Fresolv.conf "Resolv.conf (Português)") para detalhes.
+Outros programas sobrescrevem essa configuração. Veja [resolv.conf (Português)#Sobrescrita do /etc/resolv.conf](/index.php/Resolv.conf_(Portugu%C3%AAs)#Sobrescrita_do_/etc/resolv.conf "Resolv.conf (Português)") para detalhes.
 
 ### Iniciar o serviço systemd
 

@@ -22,61 +22,61 @@ Un servidor SSH, por defecto, escucha el puerto TCP 22\. Un programa cliente de 
 ## Contents
 
 *   [1 OpenSSH](#OpenSSH)
-    *   [1.1 Instalación](#Instalaci.C3.B3n)
+    *   [1.1 Instalación](#Instalación)
     *   [1.2 Cliente](#Cliente)
-        *   [1.2.1 Configuración](#Configuraci.C3.B3n)
+        *   [1.2.1 Configuración](#Configuración)
     *   [1.3 Servidor](#Servidor)
-        *   [1.3.1 Configuración](#Configuraci.C3.B3n_2)
-        *   [1.3.2 Gestión del Demonio](#Gesti.C3.B3n_del_Demonio)
-        *   [1.3.3 Protección](#Protecci.C3.B3n)
-            *   [1.3.3.1 Forzamiento de autenticación con claves públicas](#Forzamiento_de_autenticaci.C3.B3n_con_claves_p.C3.BAblicas)
-            *   [1.3.3.2 Autenticación de dos factores y claves públicas](#Autenticaci.C3.B3n_de_dos_factores_y_claves_p.C3.BAblicas)
-            *   [1.3.3.3 Protección contra ataques de fuerza bruta](#Protecci.C3.B3n_contra_ataques_de_fuerza_bruta)
+        *   [1.3.1 Configuración](#Configuración_2)
+        *   [1.3.2 Gestión del Demonio](#Gestión_del_Demonio)
+        *   [1.3.3 Protección](#Protección)
+            *   [1.3.3.1 Forzamiento de autenticación con claves públicas](#Forzamiento_de_autenticación_con_claves_públicas)
+            *   [1.3.3.2 Autenticación de dos factores y claves públicas](#Autenticación_de_dos_factores_y_claves_públicas)
+            *   [1.3.3.3 Protección contra ataques de fuerza bruta](#Protección_contra_ataques_de_fuerza_bruta)
                 *   [1.3.3.3.1 Usango ufw](#Usango_ufw)
                 *   [1.3.3.3.2 Usando iptables](#Usando_iptables)
                 *   [1.3.3.3.3 Utilidades para prevenir ataques de fuerza bruta](#Utilidades_para_prevenir_ataques_de_fuerza_bruta)
-            *   [1.3.3.4 Limitar el inicio de sesión como root](#Limitar_el_inicio_de_sesi.C3.B3n_como_root)
+            *   [1.3.3.4 Limitar el inicio de sesión como root](#Limitar_el_inicio_de_sesión_como_root)
                 *   [1.3.3.4.1 Denegar](#Denegar)
                 *   [1.3.3.4.2 Restringir](#Restringir)
         *   [1.3.4 VirtualBox](#VirtualBox)
 *   [2 Otros servidores y clientes SSH](#Otros_servidores_y_clientes_SSH)
     *   [2.1 Dropbear](#Dropbear)
-    *   [2.2 SSH alternativa: Mobile Shell - responsive, survives disconnects](#SSH_alternativa:_Mobile_Shell_-_responsive.2C_survives_disconnects)
+    *   [2.2 SSH alternativa: Mobile Shell - responsive, survives disconnects](#SSH_alternativa:_Mobile_Shell_-_responsive,_survives_disconnects)
 *   [3 Trucos y sugerencias](#Trucos_y_sugerencias)
-    *   [3.1 Túneles SOCKS cifrados](#T.C3.BAneles_SOCKS_cifrados)
-        *   [3.1.1 Paso 1: Iniciar la conexión](#Paso_1:_Iniciar_la_conexi.C3.B3n)
-        *   [3.1.2 Paso 2: Configurar tu navegador (u otros programas)](#Paso_2:_Configurar_tu_navegador_.28u_otros_programas.29)
+    *   [3.1 Túneles SOCKS cifrados](#Túneles_SOCKS_cifrados)
+        *   [3.1.1 Paso 1: Iniciar la conexión](#Paso_1:_Iniciar_la_conexión)
+        *   [3.1.2 Paso 2: Configurar tu navegador (u otros programas)](#Paso_2:_Configurar_tu_navegador_(u_otros_programas))
     *   [3.2 Redireccionar X11](#Redireccionar_X11)
-        *   [3.2.1 Configuración](#Configuraci.C3.B3n_3)
-        *   [3.2.2 Utilización](#Utilizaci.C3.B3n)
+        *   [3.2.1 Configuración](#Configuración_3)
+        *   [3.2.2 Utilización](#Utilización)
     *   [3.3 Redireccionar otros puertos](#Redireccionar_otros_puertos)
-    *   [3.4 Multiplexación](#Multiplexaci.C3.B3n)
+    *   [3.4 Multiplexación](#Multiplexación)
     *   [3.5 Acelerando SSH](#Acelerando_SSH)
     *   [3.6 Montando un Sistema de archivos Remoto con SSHFS](#Montando_un_Sistema_de_archivos_Remoto_con_SSHFS)
-    *   [3.7 Mantener la sesión activa](#Mantener_la_sesi.C3.B3n_activa)
-    *   [3.8 Guardar los datos de conexión en la configuración de SSH](#Guardar_los_datos_de_conexi.C3.B3n_en_la_configuraci.C3.B3n_de_SSH)
-    *   [3.9 Autossh - reiniciar automáticamente las sesiones y túnes de SSH](#Autossh_-_reiniciar_autom.C3.A1ticamente_las_sesiones_y_t.C3.BAnes_de_SSH)
-        *   [3.9.1 Ejecutar Autossh automáticamente en el arranque mediante systemd](#Ejecutar_Autossh_autom.C3.A1ticamente_en_el_arranque_mediante_systemd)
-*   [4 Cambiar el número de puerto de SSH con la activación del socket (sshd.socket)](#Cambiar_el_n.C3.BAmero_de_puerto_de_SSH_con_la_activaci.C3.B3n_del_socket_.28sshd.socket.29)
-*   [5 Solución de problemas](#Soluci.C3.B3n_de_problemas)
-    *   [5.1 Lista de comprobación](#Lista_de_comprobaci.C3.B3n)
-        *   [5.1.1 Limpiar claves desactualizadas (opcional)](#Limpiar_claves_desactualizadas_.28opcional.29)
+    *   [3.7 Mantener la sesión activa](#Mantener_la_sesión_activa)
+    *   [3.8 Guardar los datos de conexión en la configuración de SSH](#Guardar_los_datos_de_conexión_en_la_configuración_de_SSH)
+    *   [3.9 Autossh - reiniciar automáticamente las sesiones y túnes de SSH](#Autossh_-_reiniciar_automáticamente_las_sesiones_y_túnes_de_SSH)
+        *   [3.9.1 Ejecutar Autossh automáticamente en el arranque mediante systemd](#Ejecutar_Autossh_automáticamente_en_el_arranque_mediante_systemd)
+*   [4 Cambiar el número de puerto de SSH con la activación del socket (sshd.socket)](#Cambiar_el_número_de_puerto_de_SSH_con_la_activación_del_socket_(sshd.socket))
+*   [5 Solución de problemas](#Solución_de_problemas)
+    *   [5.1 Lista de comprobación](#Lista_de_comprobación)
+        *   [5.1.1 Limpiar claves desactualizadas (opcional)](#Limpiar_claves_desactualizadas_(opcional))
         *   [5.1.2 Recomendaciones](#Recomendaciones)
-    *   [5.2 La conexión SSH queda colgada después de apagar/reiniciar](#La_conexi.C3.B3n_SSH_queda_colgada_despu.C3.A9s_de_apagar.2Freiniciar)
-    *   [5.3 Conexión denegada o problemas con timeout](#Conexi.C3.B3n_denegada_o_problemas_con_timeout)
-        *   [5.3.1 ¿Está su router haciendo reenvío de puertos?](#.C2.BFEst.C3.A1_su_router_haciendo_reenv.C3.ADo_de_puertos.3F)
-        *   [5.3.2 ¿Está SSH corriendo y escuchando?](#.C2.BFEst.C3.A1_SSH_corriendo_y_escuchando.3F)
-        *   [5.3.3 ¿Existen reglas de firewall que bloqueen la conexión?](#.C2.BFExisten_reglas_de_firewall_que_bloqueen_la_conexi.C3.B3n.3F)
-        *   [5.3.4 ¿Está el tráfico llegando a su ordenador?](#.C2.BFEst.C3.A1_el_tr.C3.A1fico_llegando_a_su_ordenador.3F)
-        *   [5.3.5 ¿Su ISP o un tercero está bloqueando el puerto por defecto?](#.C2.BFSu_ISP_o_un_tercero_est.C3.A1_bloqueando_el_puerto_por_defecto.3F)
-            *   [5.3.5.1 Diagnóstico con Wireshark](#Diagn.C3.B3stico_con_Wireshark)
-            *   [5.3.5.2 Posible solución](#Posible_soluci.C3.B3n)
+    *   [5.2 La conexión SSH queda colgada después de apagar/reiniciar](#La_conexión_SSH_queda_colgada_después_de_apagar/reiniciar)
+    *   [5.3 Conexión denegada o problemas con timeout](#Conexión_denegada_o_problemas_con_timeout)
+        *   [5.3.1 ¿Está su router haciendo reenvío de puertos?](#¿Está_su_router_haciendo_reenvío_de_puertos?)
+        *   [5.3.2 ¿Está SSH corriendo y escuchando?](#¿Está_SSH_corriendo_y_escuchando?)
+        *   [5.3.3 ¿Existen reglas de firewall que bloqueen la conexión?](#¿Existen_reglas_de_firewall_que_bloqueen_la_conexión?)
+        *   [5.3.4 ¿Está el tráfico llegando a su ordenador?](#¿Está_el_tráfico_llegando_a_su_ordenador?)
+        *   [5.3.5 ¿Su ISP o un tercero está bloqueando el puerto por defecto?](#¿Su_ISP_o_un_tercero_está_bloqueando_el_puerto_por_defecto?)
+            *   [5.3.5.1 Diagnóstico con Wireshark](#Diagnóstico_con_Wireshark)
+            *   [5.3.5.2 Posible solución](#Posible_solución)
         *   [5.3.6 Leer del socket fallido: connection reset by peer](#Leer_del_socket_fallido:_connection_reset_by_peer)
-    *   [5.4 «[your shell]: No such file or directory» / ssh_exchange_identification problem](#.C2.AB.5Byour_shell.5D:_No_such_file_or_directory.C2.BB_.2F_ssh_exchange_identification_problem)
-    *   [5.5 Mensaje de error «Terminal unknown» o «Error opening terminal»](#Mensaje_de_error_.C2.ABTerminal_unknown.C2.BB_o_.C2.ABError_opening_terminal.C2.BB)
-        *   [5.5.1 Solución estableciendo la variable $TERM](#Soluci.C3.B3n_estableciendo_la_variable_.24TERM)
-        *   [5.5.2 Solución usando el archivo terminfo](#Soluci.C3.B3n_usando_el_archivo_terminfo)
-*   [6 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+    *   [5.4 «[your shell]: No such file or directory» / ssh_exchange_identification problem](#«[your_shell]:_No_such_file_or_directory»_/_ssh_exchange_identification_problem)
+    *   [5.5 Mensaje de error «Terminal unknown» o «Error opening terminal»](#Mensaje_de_error_«Terminal_unknown»_o_«Error_opening_terminal»)
+        *   [5.5.1 Solución estableciendo la variable $TERM](#Solución_estableciendo_la_variable_$TERM)
+        *   [5.5.2 Solución usando el archivo terminfo](#Solución_usando_el_archivo_terminfo)
+*   [6 Véase también](#Véase_también)
 
 ## OpenSSH
 
@@ -86,7 +86,7 @@ OpenSSH es confundido a veces con OpenSSL por la similitud de nombre, sin embarg
 
 ### Instalación
 
-[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [openssh](https://www.archlinux.org/packages/?name=openssh) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") [openssh](https://www.archlinux.org/packages/?name=openssh) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 ### Cliente
 
@@ -155,7 +155,7 @@ Banner /etc/issue
 
 ```
 
-Claves de acceso del servidor serán generadas automáticamente por los [archivos de servicio](#Gesti.C3.B3n_del_Demonio) de *sshd*. Si se desea usar una clave especifica, previamente creada, se puede configurar manualmente:
+Claves de acceso del servidor serán generadas automáticamente por los [archivos de servicio](#Gestión_del_Demonio) de *sshd*. Si se desea usar una clave especifica, previamente creada, se puede configurar manualmente:
 
 ```
 HostKey /etc/ssh/ssh_host_rsa_key
@@ -172,7 +172,7 @@ Port 39901
 **Sugerencia:**
 
 *   Es posible que desee cambiar el puerto por defecto de 22 a cualquier puerto superior (ver [seguridad por oscuridad](https://en.wikipedia.org/wiki/es:Seguridad_por_oscuridad "wikipedia:es:Seguridad por oscuridad")). A pesar de que el puerto ssh que está siendo ejecutado puede ser detectado utilizando un port-scanner o escáner de puertos como [nmap](https://www.archlinux.org/packages/?name=nmap), cambiarlo reducirá el número de entradas en el log causados por intentos de autentificación automáticos. Para ayudar a seleccionar un puerto, revise la [lista de números de puerto TCP y UDP](https://en.wikipedia.org/wiki/es:Anexo:N%C3%BAmeros_de_puerto "wikipedia:es:Anexo:Números de puerto"). También puede encontrar información de los puertos a nivel local en `/etc/services`. Seleccione un puerto alternativo que **no** esté ya asignado a un servicio común para evitar conflictos.
-*   Desactivar completamente los inicios de sesión con contraseña aumentará en gran medida el nivel seguridad, consulte [#Forzamiento de autenticación con claves públicas](#Forzamiento_de_autenticaci.C3.B3n_con_claves_p.C3.BAblicas) para más información.
+*   Desactivar completamente los inicios de sesión con contraseña aumentará en gran medida el nivel seguridad, consulte [#Forzamiento de autenticación con claves públicas](#Forzamiento_de_autenticación_con_claves_públicas) para más información.
 
 #### Gestión del Demonio
 
@@ -210,7 +210,7 @@ Permitir el acceso remoto al sistema a través de SSH es bueno para fines admini
 
 ##### Forzamiento de autenticación con claves públicas
 
-Si un cliente no se puede autenticar mediante clave pública, por defecto el servidor de SSH intentará autenticar con contraseña, permitiendo así que un usuario malicioso intente ganar acceso con [ataques de fuerza bruta](#Protecci.C3.B3n_contra_ataques_de_fuerza_bruta) en la contraseña. Uno de los métodos más efectivos para proteger el sistema contra esta clase de ataques es desactivando el inicio de sesión con contraseña completamente, forzando así el uso de [claves SSH](/index.php/SSH_keys_(Espa%C3%B1ol) "SSH keys (Español)"). Esto se puede lograr modificando la siguiente opción en el archivo `sshd_config`:
+Si un cliente no se puede autenticar mediante clave pública, por defecto el servidor de SSH intentará autenticar con contraseña, permitiendo así que un usuario malicioso intente ganar acceso con [ataques de fuerza bruta](#Protección_contra_ataques_de_fuerza_bruta) en la contraseña. Uno de los métodos más efectivos para proteger el sistema contra esta clase de ataques es desactivando el inicio de sesión con contraseña completamente, forzando así el uso de [claves SSH](/index.php/SSH_keys_(Espa%C3%B1ol) "SSH keys (Español)"). Esto se puede lograr modificando la siguiente opción en el archivo `sshd_config`:
 
 ```
 PasswordAuthentication no
@@ -481,7 +481,7 @@ En el sistema remoto:
 *   en `/etc/ssh/ssh**d**_config`:
     *   verifique que las opciones `AllowTcpForwarding` y `X11UseLocalhost` están ajustadas a *yes*, y que `X11DisplayOffset` está ajustado a *10* (esos son los valores por defecto si no se han cambiado, ver [sshd_config(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sshd_config.5))
     *   ajuste `X11Forwarding` a *yes*
-*   a continuación, [reinicie](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") el [demonio *sshd*](#Gesti.C3.B3n_del_Demonio).
+*   a continuación, [reinicie](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") el [demonio *sshd*](#Gestión_del_Demonio).
 
 En el sistema cliente, active la opción `ForwardX11`, bien especificando el parámetro `-X` en la línea de órdenes para las conexiones ocasionales, bien ajustando `ForwardX11` a *yes* en el [archivo de configuración del cliente de openSSH](#Cliente).
 

@@ -12,30 +12,30 @@ Artículos relacionados
 
 ## Contents
 
-*   [1 Preparar la instalación](#Preparar_la_instalaci.C3.B3n)
+*   [1 Preparar la instalación](#Preparar_la_instalación)
 *   [2 Configurar el soporte live](#Configurar_el_soporte_live)
     *   [2.1 Instalar paquetes](#Instalar_paquetes)
         *   [2.1.1 Repositorio local personalizado](#Repositorio_local_personalizado)
-        *   [2.1.2 Evitar la instalación de paquetes que pertenecen al grupo base](#Evitar_la_instalaci.C3.B3n_de_paquetes_que_pertenecen_al_grupo_base)
+        *   [2.1.2 Evitar la instalación de paquetes que pertenecen al grupo base](#Evitar_la_instalación_de_paquetes_que_pertenecen_al_grupo_base)
         *   [2.1.3 Instalar paquetes de multilib](#Instalar_paquetes_de_multilib)
-    *   [2.2 Añadir archivos a la imagen](#A.C3.B1adir_archivos_a_la_imagen)
+    *   [2.2 Añadir archivos a la imagen](#Añadir_archivos_a_la_imagen)
     *   [2.3 Cargador de arranque](#Cargador_de_arranque)
         *   [2.3.1 UEFI Secure Boot](#UEFI_Secure_Boot)
-    *   [2.4 Gestor de inicio de sesión](#Gestor_de_inicio_de_sesi.C3.B3n)
-    *   [2.5 Cambiar el acceso automáticamente](#Cambiar_el_acceso_autom.C3.A1ticamente)
+    *   [2.4 Gestor de inicio de sesión](#Gestor_de_inicio_de_sesión)
+    *   [2.5 Cambiar el acceso automáticamente](#Cambiar_el_acceso_automáticamente)
 *   [3 Compilar la ISO](#Compilar_la_ISO)
     *   [3.1 Reconstruir la ISO](#Reconstruir_la_ISO)
 *   [4 Utilizar la ISO](#Utilizar_la_ISO)
-*   [5 Véase también](#V.C3.A9ase_tambi.C3.A9n)
-    *   [5.1 Documentación y tutoriales](#Documentaci.C3.B3n_y_tutoriales)
+*   [5 Véase también](#Véase_también)
+    *   [5.1 Documentación y tutoriales](#Documentación_y_tutoriales)
     *   [5.2 Ejemplo de plantilla personalizada](#Ejemplo_de_plantilla_personalizada)
-    *   [5.3 Crear una ISO de instalación sin conexión](#Crear_una_ISO_de_instalaci.C3.B3n_sin_conexi.C3.B3n)
+    *   [5.3 Crear una ISO de instalación sin conexión](#Crear_una_ISO_de_instalación_sin_conexión)
 
 ## Preparar la instalación
 
 **Nota:** Se recomienda actuar como root en todos los pasos siguientes. Si no es así, es muy probable que tenga problemas con los permisos más adelante.
 
-Antes de empezar, necesitamos hacernos con los scripts de archiso que llevan a cabo gran parte del trabajo, para ello [instalaremos](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [archiso](https://www.archlinux.org/packages/?name=archiso) o ([archiso-git](https://aur.archlinux.org/packages/archiso-git/)).
+Antes de empezar, necesitamos hacernos con los scripts de archiso que llevan a cabo gran parte del trabajo, para ello [instalaremos](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") el paquete [archiso](https://www.archlinux.org/packages/?name=archiso) o ([archiso-git](https://aur.archlinux.org/packages/archiso-git/)).
 
 Archiso viene con dos «perfiles»: *releng* y *baseline*.
 
@@ -57,7 +57,7 @@ Ahora, copie el perfil de su elección en un directorio (*archlive* en el ejempl
 
 Esta sección detalla la configuración de la imagen que va a crear, premitiéndole definir los paquetes y configuraciones que quiere que contenga la imagen.
 
-Dentro del directorio `*archlive*` creado según se ha indicado en [#Preparar la instalación](#Preparar_la_instalaci.C3.B3n) hay varios archivos y directorios; Solo nos interesan algunos de estos, principalmente:
+Dentro del directorio `*archlive*` creado según se ha indicado en [#Preparar la instalación](#Preparar_la_instalación) hay varios archivos y directorios; Solo nos interesan algunos de estos, principalmente:
 
 *   el directorio `packages.x86_64`: aquí es donde se listan, línea por línea, los paquetes que desea instalar, y;
 *   el directorio `airootfs`: este directorio actúa como una superposición o cubierte y es donde se realizan todas las personalizaciones.
@@ -68,7 +68,7 @@ En general, todas las tareas administrativas que normalmente haría después de 
 
 [Edite](/index.php/Edit "Edit") las listas de paquetes en `packages.x86_64` para indicar qué paquetes se instalarán en el soporte live.
 
-**Nota:** Si desea utiliza un [gestor de ventanas](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)") en el Live CD, debe agregar los [controladores de vídeo](/index.php/Xorg_(Espa%C3%B1ol)#Instalaci.C3.B3n_del_controlador "Xorg (Español)"),necesarios y correctos, o el gestor de ventanas puede congelarse al cargar.
+**Nota:** Si desea utiliza un [gestor de ventanas](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)") en el Live CD, debe agregar los [controladores de vídeo](/index.php/Xorg_(Espa%C3%B1ol)#Instalación_del_controlador "Xorg (Español)"),necesarios y correctos, o el gestor de ventanas puede congelarse al cargar.
 
 #### Repositorio local personalizado
 

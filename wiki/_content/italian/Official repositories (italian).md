@@ -13,13 +13,13 @@ Un [software repository](https://en.wikipedia.org/wiki/software_repository "wiki
 ## Contents
 
 *   [1 Cenni storici](#Cenni_storici)
-*   [2 [core]](#.5Bcore.5D)
-*   [3 [extra]](#.5Bextra.5D)
-*   [4 [community]](#.5Bcommunity.5D)
-*   [5 [multilib]](#.5Bmultilib.5D)
-*   [6 [testing]](#.5Btesting.5D)
-*   [7 [community-testing]](#.5Bcommunity-testing.5D)
-*   [8 [multilib-testing]](#.5Bmultilib-testing.5D)
+*   [2 [core]](#[core])
+*   [3 [extra]](#[extra])
+*   [4 [community]](#[community])
+*   [5 [multilib]](#[multilib])
+*   [6 [testing]](#[testing])
+*   [7 [community-testing]](#[community-testing])
+*   [8 [multilib-testing]](#[multilib-testing])
 
 ## Cenni storici
 

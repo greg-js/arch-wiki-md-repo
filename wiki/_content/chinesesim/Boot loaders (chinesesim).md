@@ -6,10 +6,10 @@
 
 ## Contents
 
-*   [1 适用于 BIOS 和 UEFI 的启动加载器](#.E9.80.82.E7.94.A8.E4.BA.8E_BIOS_.E5.92.8C_UEFI_.E7.9A.84.E5.90.AF.E5.8A.A8.E5.8A.A0.E8.BD.BD.E5.99.A8)
+*   [1 适用于 BIOS 和 UEFI 的启动加载器](#适用于_BIOS_和_UEFI_的启动加载器)
     *   [1.1 GRUB](#GRUB)
     *   [1.2 Syslinux](#Syslinux)
-*   [2 仅支持 UEFI 的启动加载器](#.E4.BB.85.E6.94.AF.E6.8C.81_UEFI_.E7.9A.84.E5.90.AF.E5.8A.A8.E5.8A.A0.E8.BD.BD.E5.99.A8)
+*   [2 仅支持 UEFI 的启动加载器](#仅支持_UEFI_的启动加载器)
     *   [2.1 Linux Kernel EFISTUB](#Linux_Kernel_EFISTUB)
         *   [2.1.1 systemd-boot](#systemd-boot)
         *   [2.1.2 rEFInd](#rEFInd)
@@ -18,7 +18,7 @@
 *   [3 BIOS-only Boot Loaders](#BIOS-only_Boot_Loaders)
     *   [3.1 GRUB Legacy](#GRUB_Legacy)
     *   [3.2 LILO](#LILO)
-*   [4 功能比较](#.E5.8A.9F.E8.83.BD.E6.AF.94.E8.BE.83)
+*   [4 功能比较](#功能比较)
 *   [5 See also](#See_also)
 
 ## 适用于 BIOS 和 UEFI 的启动加载器

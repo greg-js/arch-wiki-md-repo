@@ -20,19 +20,19 @@ ABS é um conceito similar. ABS é feito de uma árvore de diretórios que pode 
 
 ## Contents
 
-*   [1 Visão geral de ABS](#Vis.C3.A3o_geral_de_ABS)
-    *   [1.1 Árvore SVN](#.C3.81rvore_SVN)
-*   [2 Por que eu iria querer usar o ABS?](#Por_que_eu_iria_querer_usar_o_ABS.3F)
+*   [1 Visão geral de ABS](#Visão_geral_de_ABS)
+    *   [1.1 Árvore SVN](#Árvore_SVN)
+*   [2 Por que eu iria querer usar o ABS?](#Por_que_eu_iria_querer_usar_o_ABS?)
 *   [3 Como usar o ABS](#Como_usar_o_ABS)
     *   [3.1 Obtendo fonte de PKGBUILD usando Svn](#Obtendo_fonte_de_PKGBUILD_usando_Svn)
-        *   [3.1.1 Pré-requisitos](#Pr.C3.A9-requisitos)
-        *   [3.1.2 Checkout não-recursivo](#Checkout_n.C3.A3o-recursivo)
+        *   [3.1.1 Pré-requisitos](#Pré-requisitos)
+        *   [3.1.2 Checkout não-recursivo](#Checkout_não-recursivo)
         *   [3.1.3 Fazer checkout de um pacote](#Fazer_checkout_de_um_pacote)
     *   [3.2 Obtendo fonte de PKGBUILD usando Git](#Obtendo_fonte_de_PKGBUILD_usando_Git)
     *   [3.3 Compilar pacote](#Compilar_pacote)
 *   [4 Dicas e truques](#Dicas_e_truques)
     *   [4.1 Preserve pacotes modificados](#Preserve_pacotes_modificados)
-    *   [4.2 Faça checkout de uma versão anterior de um pacote](#Fa.C3.A7a_checkout_de_uma_vers.C3.A3o_anterior_de_um_pacote)
+    *   [4.2 Faça checkout de uma versão anterior de um pacote](#Faça_checkout_de_uma_versão_anterior_de_um_pacote)
 *   [5 Outras ferramentas](#Outras_ferramentas)
 
 ## Visão geral de ABS
@@ -63,7 +63,7 @@ ABS é um conceito similar. ABS é feito de uma árvore de diretórios que pode 
 
 ### Árvore SVN
 
-Os [repositórios](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais") *core*, *extra* e *testing* estão no repositório SVN *packages* para *[checkout](#Checkout_n.C3.A3o-recursivo)*. Os repositórios *community* e *multilib* estão no repositório SVN *community*.
+Os [repositórios](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais") *core*, *extra* e *testing* estão no repositório SVN *packages* para *[checkout](#Checkout_não-recursivo)*. Os repositórios *community* e *multilib* estão no repositório SVN *community*.
 
 Cada pacote possui seu próprio subdiretório. Dentro dele há diretórios `repos` e `trunk`. `repos` é expandido por nome de repositório (ex.: *core*) e arquitetura. PKGBUILDs e arquivos localizados em `repos` são usados em compilações oficiais. Arquivos localizados no `trunk` são usados pelos desenvolvedores na preparação antes de serem copiados para `repos`.
 
@@ -144,7 +144,7 @@ Se você especifica um pacote que não existe, svn não vai avisar você. Ele s�
 *   verifique se o pacote não foi movido para outro repositório (ex. do repositório *community* para o repositório principal)
 *   acesse [https://www.archlinux.org/packages](https://www.archlinux.org/packages) para ver se o pacote é compilado a partir de outro pacote base (por exemplo, [python-tensorflow](https://www.archlinux.org/packages/?name=python-tensorflow) é compilado no PKGBUILD do [tensorflow](https://www.archlinux.org/packages/?name=tensorflow))
 
-**Dica:** Para fazer *checkout* uma versão mais antiga de um pacote, veja [#Faça checkout de uma versão anterior de um pacote](#Fa.C3.A7a_checkout_de_uma_vers.C3.A3o_anterior_de_um_pacote).
+**Dica:** Para fazer *checkout* uma versão mais antiga de um pacote, veja [#Faça checkout de uma versão anterior de um pacote](#Faça_checkout_de_uma_versão_anterior_de_um_pacote).
 
 Você deve atualizar periodicamente todos os pacotes baixados se você deseja realizar recompilações em revisões mais recentes dos repositórios. Para fazer isso, execute:
 
@@ -177,7 +177,7 @@ $ asp export *nome-pacote*
 
 ### Compilar pacote
 
-Veja [makepkg (Português)#Configuração](/index.php/Makepkg_(Portugu%C3%AAs)#Configura.C3.A7.C3.A3o "Makepkg (Português)") sobre como configurar o *makepkg* para compilar pacotes dos [PKGBUILDs](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") que você fez *checkout*.
+Veja [makepkg (Português)#Configuração](/index.php/Makepkg_(Portugu%C3%AAs)#Configuração "Makepkg (Português)") sobre como configurar o *makepkg* para compilar pacotes dos [PKGBUILDs](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") que você fez *checkout*.
 
 Em seguida, copie o diretório contendo o [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") que você deseja modificar para uma nova localização. Então, faça as modificações desejadas e use *makepkg*, como descrito em [makepkg (Português)#Uso](/index.php/Makepkg_(Portugu%C3%AAs)#Uso "Makepkg (Português)"), para criar e instalar o novo pacote.
 
@@ -199,7 +199,7 @@ Se novas versões estiverem disponíveis nos repositórios oficiais durante uma 
 
 ### Faça checkout de uma versão anterior de um pacote
 
-Dentro do repositório svn que você faz checkout como descrito em [#Checkout não-recursivo](#Checkout_n.C3.A3o-recursivo) (isto é, "packages" ou "community"), primeiro examine o log:
+Dentro do repositório svn que você faz checkout como descrito em [#Checkout não-recursivo](#Checkout_não-recursivo) (isto é, "packages" ou "community"), primeiro examine o log:
 
 ```
 $ svn log *nome-pacote*

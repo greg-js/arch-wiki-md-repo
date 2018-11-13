@@ -80,7 +80,7 @@ options edns0 single-request-reopen
 
 ```
 
-Other programs may overwrite this setting; see [resolv.conf#Overwriting of /etc/resolv.conf](/index.php/Resolv.conf#Overwriting_of_.2Fetc.2Fresolv.conf "Resolv.conf") for details.
+Other programs may overwrite this setting; see [resolv.conf#Overwriting of /etc/resolv.conf](/index.php/Resolv.conf#Overwriting_of_/etc/resolv.conf "Resolv.conf") for details.
 
 ### Start systemd service
 

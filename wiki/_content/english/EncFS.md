@@ -28,7 +28,7 @@ For more details on how EncFS compares to other disk encryption solution, see [D
     *   [4.5 Mount via fstab](#Mount_via_fstab)
     *   [4.6 Mount at login using pam_encfs](#Mount_at_login_using_pam_encfs)
         *   [4.6.1 Single password](#Single_password)
-        *   [4.6.2 /etc/pam.d/](#.2Fetc.2Fpam.d.2F)
+        *   [4.6.2 /etc/pam.d/](#/etc/pam.d/)
             *   [4.6.2.1 setup pam_encfs for all login methods](#setup_pam_encfs_for_all_login_methods)
             *   [4.6.2.2 login](#login)
             *   [4.6.2.3 gdm](#gdm)

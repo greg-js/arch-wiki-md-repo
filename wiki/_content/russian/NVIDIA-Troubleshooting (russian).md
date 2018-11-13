@@ -4,37 +4,37 @@
 
 ## Contents
 
-*   [1 Wayland (gdm) рушится после установки nvidia-libgl](#Wayland_.28gdm.29_.D1.80.D1.83.D1.88.D0.B8.D1.82.D1.81.D1.8F_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B8_nvidia-libgl)
-*   [2 Поврежденный экран: проблема "Шести экранов"](#.D0.9F.D0.BE.D0.B2.D1.80.D0.B5.D0.B6.D0.B4.D0.B5.D0.BD.D0.BD.D1.8B.D0.B9_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD:_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D0.B0_.22.D0.A8.D0.B5.D1.81.D1.82.D0.B8_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.BE.D0.B2.22)
-*   [3 Ошибка ввода/вывода '/dev/nvidia0'](#.D0.9E.D1.88.D0.B8.D0.B1.D0.BA.D0.B0_.D0.B2.D0.B2.D0.BE.D0.B4.D0.B0.2F.D0.B2.D1.8B.D0.B2.D0.BE.D0.B4.D0.B0_.27.2Fdev.2Fnvidia0.27)
+*   [1 Wayland (gdm) рушится после установки nvidia-libgl](#Wayland_(gdm)_рушится_после_установки_nvidia-libgl)
+*   [2 Поврежденный экран: проблема "Шести экранов"](#Поврежденный_экран:_проблема_"Шести_экранов")
+*   [3 Ошибка ввода/вывода '/dev/nvidia0'](#Ошибка_ввода/вывода_'/dev/nvidia0')
 *   [4 Crashing in general](#Crashing_in_general)
 *   [5 Bad performance after installing a new driver version](#Bad_performance_after_installing_a_new_driver_version)
 *   [6 CPU spikes with 400 series cards](#CPU_spikes_with_400_series_cards)
-*   [7 Laptops: X hangs on login/out, worked around with Ctrl+Alt+Backspace](#Laptops:_X_hangs_on_login.2Fout.2C_worked_around_with_Ctrl.2BAlt.2BBackspace)
-*   [8 No screens found on a laptop/NVIDIA Optimus](#No_screens_found_on_a_laptop.2FNVIDIA_Optimus)
+*   [7 Laptops: X hangs on login/out, worked around with Ctrl+Alt+Backspace](#Laptops:_X_hangs_on_login/out,_worked_around_with_Ctrl+Alt+Backspace)
+*   [8 No screens found on a laptop/NVIDIA Optimus](#No_screens_found_on_a_laptop/NVIDIA_Optimus)
     *   [8.1 Possible Workaround](#Possible_Workaround)
-*   [9 Screen(s) found, but none have a usable configuration](#Screen.28s.29_found.2C_but_none_have_a_usable_configuration)
-*   [10 Blackscreen at X startup / Machine poweroff at X shutdown](#Blackscreen_at_X_startup_.2F_Machine_poweroff_at_X_shutdown)
+*   [9 Screen(s) found, but none have a usable configuration](#Screen(s)_found,_but_none_have_a_usable_configuration)
+*   [10 Blackscreen at X startup / Machine poweroff at X shutdown](#Blackscreen_at_X_startup_/_Machine_poweroff_at_X_shutdown)
 *   [11 Backlight is not turning off in some occasions](#Backlight_is_not_turning_off_in_some_occasions)
 *   [12 Full system freeze using Flash](#Full_system_freeze_using_Flash)
 *   [13 Xorg fails to load or Red Screen of Death](#Xorg_fails_to_load_or_Red_Screen_of_Death)
 *   [14 Black screen on systems with Intel integrated GPU](#Black_screen_on_systems_with_Intel_integrated_GPU)
 *   [15 Black screen on systems with VIA integrated GPU](#Black_screen_on_systems_with_VIA_integrated_GPU)
-*   [16 X fails with "no screens found" with Intel iGPU](#X_fails_with_.22no_screens_found.22_with_Intel_iGPU)
-*   [17 Xorg fails during boot, but otherwise starts fine](#Xorg_fails_during_boot.2C_but_otherwise_starts_fine)
+*   [16 X fails with "no screens found" with Intel iGPU](#X_fails_with_"no_screens_found"_with_Intel_iGPU)
+*   [17 Xorg fails during boot, but otherwise starts fine](#Xorg_fails_during_boot,_but_otherwise_starts_fine)
 *   [18 Flash video players crashes](#Flash_video_players_crashes)
 *   [19 xrandr BadMatch](#xrandr_BadMatch)
 *   [20 Override EDID](#Override_EDID)
 *   [21 Overclocking with nvidia-settings GUI not working](#Overclocking_with_nvidia-settings_GUI_not_working)
 *   [22 Avoid screen tearing](#Avoid_screen_tearing)
-    *   [22.1 Avoid screen tearing in KDE (KWin)](#Avoid_screen_tearing_in_KDE_.28KWin.29)
-*   [23 Modprobe Error: "Could not insert 'nvidia': No such device" on linux >=4.8](#Modprobe_Error:_.22Could_not_insert_.27nvidia.27:_No_such_device.22_on_linux_.3E.3D4.8)
+    *   [22.1 Avoid screen tearing in KDE (KWin)](#Avoid_screen_tearing_in_KDE_(KWin))
+*   [23 Modprobe Error: "Could not insert 'nvidia': No such device" on linux >=4.8](#Modprobe_Error:_"Could_not_insert_'nvidia':_No_such_device"_on_linux_>=4.8)
 
 ## Wayland (gdm) рушится после установки nvidia-libgl
 
 В некоторых процессорах Intel устаревший микрокод может привести к нестабильности работы с Wayland когда установлен драйвер nvidia, вызывая крах gdm.
 
-[Обновление микрокода](/index.php/Microcode_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9F.D0.BE.D0.B7.D0.B4.D0.BD.D0.B5.D0.B5_.D0.BE.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BC.D0.B8.D0.BA.D1.80.D0.BE.D0.BA.D0.BE.D0.B4.D0.B0 "Microcode (Русский)") должно решить проблему.
+[Обновление микрокода](/index.php/Microcode_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Позднее_обновление_микрокода "Microcode (Русский)") должно решить проблему.
 
 ## Поврежденный экран: проблема "Шести экранов"
 

@@ -19,43 +19,43 @@ A seção [#iw](#iw) descreve como gerenciar manualmente sua interface de rede s
 
 *   [1 Driver de dispositivo](#Driver_de_dispositivo)
     *   [1.1 Verificar o status de driver](#Verificar_o_status_de_driver)
-    *   [1.2 Instalar driver/firmware](#Instalar_driver.2Ffirmware)
-*   [2 Utilitários](#Utilit.C3.A1rios)
-    *   [2.1 Comparação entre iw e wireless_tools](#Compara.C3.A7.C3.A3o_entre_iw_e_wireless_tools)
+    *   [1.2 Instalar driver/firmware](#Instalar_driver/firmware)
+*   [2 Utilitários](#Utilitários)
+    *   [2.1 Comparação entre iw e wireless_tools](#Comparação_entre_iw_e_wireless_tools)
 *   [3 iw](#iw)
     *   [3.1 Obter o nome da interface](#Obter_o_nome_da_interface)
     *   [3.2 Obter o status da interface](#Obter_o_status_da_interface)
     *   [3.3 Ativar a interface](#Ativar_a_interface)
     *   [3.4 Descobrir pontos de acesso](#Descobrir_pontos_de_acesso)
-    *   [3.5 Definir o modo de operação](#Definir_o_modo_de_opera.C3.A7.C3.A3o)
+    *   [3.5 Definir o modo de operação](#Definir_o_modo_de_operação)
     *   [3.6 Conectar a um ponto de acesso](#Conectar_a_um_ponto_de_acesso)
 *   [4 WPA2 Empresarial](#WPA2_Empresarial)
     *   [4.1 eduroam](#eduroam)
-    *   [4.2 Configuração manual/automática](#Configura.C3.A7.C3.A3o_manual.2Fautom.C3.A1tica)
+    *   [4.2 Configuração manual/automática](#Configuração_manual/automática)
         *   [4.2.1 wpa_supplicant](#wpa_supplicant)
         *   [4.2.2 NetworkManager](#NetworkManager)
         *   [4.2.3 connman](#connman)
         *   [4.2.4 netctl](#netctl)
-    *   [4.3 Solução de problemas](#Solu.C3.A7.C3.A3o_de_problemas)
+    *   [4.3 Solução de problemas](#Solução_de_problemas)
         *   [4.3.1 MS-CHAPv2](#MS-CHAPv2)
 *   [5 Dicas e truques](#Dicas_e_truques)
-    *   [5.1 Respeitar o domínio regulatório](#Respeitar_o_dom.C3.ADnio_regulat.C3.B3rio)
-*   [6 Solução de problemas](#Solu.C3.A7.C3.A3o_de_problemas_2)
-    *   [6.1 Acesso temporário à internet](#Acesso_tempor.C3.A1rio_.C3.A0_internet)
+    *   [5.1 Respeitar o domínio regulatório](#Respeitar_o_domínio_regulatório)
+*   [6 Solução de problemas](#Solução_de_problemas_2)
+    *   [6.1 Acesso temporário à internet](#Acesso_temporário_à_internet)
     *   [6.2 Problemas com rfkill](#Problemas_com_rfkill)
     *   [6.3 Observando os logs](#Observando_os_logs)
     *   [6.4 Economia de energia](#Economia_de_energia)
-    *   [6.5 Falha ao obter endereço IP](#Falha_ao_obter_endere.C3.A7o_IP)
-    *   [6.6 Endereço IP válido, mas não consegue resolver host](#Endere.C3.A7o_IP_v.C3.A1lido.2C_mas_n.C3.A3o_consegue_resolver_host)
-    *   [6.7 Definindo limites de RTS e de fragmentação](#Definindo_limites_de_RTS_e_de_fragmenta.C3.A7.C3.A3o)
-    *   [6.8 Desconexões aleatórias](#Desconex.C3.B5es_aleat.C3.B3rias)
-        *   [6.8.1 Causa nº.1](#Causa_n.C2.BA.1)
-        *   [6.8.2 Causa nº.2](#Causa_n.C2.BA.2)
-        *   [6.8.3 Causa nº.3](#Causa_n.C2.BA.3)
-        *   [6.8.4 Causa nº.4](#Causa_n.C2.BA.4)
-    *   [6.9 Redes Wi-Fi invisíveis por causa do domínio regulatório incorreto](#Redes_Wi-Fi_invis.C3.ADveis_por_causa_do_dom.C3.ADnio_regulat.C3.B3rio_incorreto)
-*   [7 Solução de problemas de drivers e firmware](#Solu.C3.A7.C3.A3o_de_problemas_de_drivers_e_firmware)
-    *   [7.1 Ralink/Mediatek](#Ralink.2FMediatek)
+    *   [6.5 Falha ao obter endereço IP](#Falha_ao_obter_endereço_IP)
+    *   [6.6 Endereço IP válido, mas não consegue resolver host](#Endereço_IP_válido,_mas_não_consegue_resolver_host)
+    *   [6.7 Definindo limites de RTS e de fragmentação](#Definindo_limites_de_RTS_e_de_fragmentação)
+    *   [6.8 Desconexões aleatórias](#Desconexões_aleatórias)
+        *   [6.8.1 Causa nº.1](#Causa_nº.1)
+        *   [6.8.2 Causa nº.2](#Causa_nº.2)
+        *   [6.8.3 Causa nº.3](#Causa_nº.3)
+        *   [6.8.4 Causa nº.4](#Causa_nº.4)
+    *   [6.9 Redes Wi-Fi invisíveis por causa do domínio regulatório incorreto](#Redes_Wi-Fi_invisíveis_por_causa_do_domínio_regulatório_incorreto)
+*   [7 Solução de problemas de drivers e firmware](#Solução_de_problemas_de_drivers_e_firmware)
+    *   [7.1 Ralink/Mediatek](#Ralink/Mediatek)
         *   [7.1.1 rt2x00](#rt2x00)
         *   [7.1.2 rt3090](#rt3090)
         *   [7.1.3 rt3290](#rt3290)
@@ -64,7 +64,7 @@ A seção [#iw](#iw) descreve como gerenciar manualmente sua interface de rede s
         *   [7.1.6 mt7612u](#mt7612u)
     *   [7.2 Realtek](#Realtek)
         *   [7.2.1 rtl8192cu](#rtl8192cu)
-        *   [7.2.2 rtl8723ae/rtl8723be](#rtl8723ae.2Frtl8723be)
+        *   [7.2.2 rtl8723ae/rtl8723be](#rtl8723ae/rtl8723be)
         *   [7.2.3 rtl88xxau](#rtl88xxau)
         *   [7.2.4 rtl8822bu](#rtl8822bu)
         *   [7.2.5 rtl8xxxu](#rtl8xxxu)
@@ -76,25 +76,25 @@ A seção [#iw](#iw) descreve como gerenciar manualmente sua interface de rede s
         *   [7.4.1 ipw2100 e ipw2200](#ipw2100_e_ipw2200)
         *   [7.4.2 iwlegacy](#iwlegacy)
         *   [7.4.3 iwlwifi](#iwlwifi)
-            *   [7.4.3.1 Coexistência com Bluetooth](#Coexist.C3.AAncia_com_Bluetooth)
+            *   [7.4.3.1 Coexistência com Bluetooth](#Coexistência_com_Bluetooth)
         *   [7.4.4 Desabilitar piscada de LED](#Desabilitar_piscada_de_LED)
     *   [7.5 Broadcom](#Broadcom)
-    *   [7.6 Outros drivers/dispositivos](#Outros_drivers.2Fdispositivos)
+    *   [7.6 Outros drivers/dispositivos](#Outros_drivers/dispositivos)
         *   [7.6.1 Tenda w322u](#Tenda_w322u)
         *   [7.6.2 orinoco](#orinoco)
         *   [7.6.3 prism54](#prism54)
-        *   [7.6.4 ACX100/111](#ACX100.2F111)
+        *   [7.6.4 ACX100/111](#ACX100/111)
         *   [7.6.5 zd1211rw](#zd1211rw)
         *   [7.6.6 hostap_cs](#hostap_cs)
     *   [7.7 ndiswrapper](#ndiswrapper)
     *   [7.8 backports-patched](#backports-patched)
-*   [8 Veja também](#Veja_tamb.C3.A9m)
+*   [8 Veja também](#Veja_também)
 
 ## Driver de dispositivo
 
 O kernel padrão do Arch Linux é *modular*, o que significa que muitos dos drivers para hardware de máquina residem no disco rígido e estão disponíveis como [módulos](/index.php/Kernel_modules "Kernel modules"). Na inicialização, o [udev](/index.php/Udev "Udev") faz um inventário do seu hardware e carrega os módulos (drivers) apropriados para o hardware correspondente, o que, por sua vez, permite a criação de uma *interface* de rede.
 
-Alguns chipsets sem fio também exigem firmware, além de um driver correspondente. Muitas imagens de firmware são fornecidas pelo pacote [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) que é instalado por padrão, no entanto, as imagens de firmware proprietárias não são incluídas e devem ser instaladas separadamente. Isso é descrito em [#Instalar driver/firmware](#Instalar_driver.2Ffirmware).
+Alguns chipsets sem fio também exigem firmware, além de um driver correspondente. Muitas imagens de firmware são fornecidas pelo pacote [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) que é instalado por padrão, no entanto, as imagens de firmware proprietárias não são incluídas e devem ser instaladas separadamente. Isso é descrito em [#Instalar driver/firmware](#Instalar_driver/firmware).
 
 **Nota:** Se o módulo apropriado não for carregado pelo udev na inicialização, basta [carregá-lo manualmente](/index.php/Kernel_modules#Manual_module_handling "Kernel modules"). Se o udev carrega mais de um driver para um dispositivo, o conflito resultante pode impedir a configuração seja bem-sucedida. Certifique-se de [colocar na lista negra](/index.php/Blacklist "Blacklist") o módulo indesejado.
 
@@ -154,7 +154,7 @@ Verifique as listas a seguir para descobrir se sua placa é compatível:
 
 Observe que alguns fornecedores fornecem produtos que podem conter conjuntos de chips diferentes, mesmo se o identificador do produto for o mesmo. Apenas o usb-id (para dispositivos USB) ou pci-id (para dispositivos PCI) é autoritativo.
 
-Se a sua placa sem fio estiver listada acima, siga a subseção desta página [#Solução de problemas de drivers e firmware](#Solu.C3.A7.C3.A3o_de_problemas_de_drivers_e_firmware), que contém informações sobre a instalação de drivers e firmware de algumas placas sem fio específicas. Em seguida, [verifique o status do driver](#Verificar_o_status_de_driver) novamente.
+Se a sua placa sem fio estiver listada acima, siga a subseção desta página [#Solução de problemas de drivers e firmware](#Solução_de_problemas_de_drivers_e_firmware), que contém informações sobre a instalação de drivers e firmware de algumas placas sem fio específicas. Em seguida, [verifique o status do driver](#Verificar_o_status_de_driver) novamente.
 
 Se sua placa sem fio não estiver listada acima, provavelmente só há suporte no Windows (algumas Broadcom, 3com etc). Para essas, você pode tentar usar o [#ndiswrapper](#ndiswrapper).
 
@@ -208,7 +208,7 @@ Você precisará instalar um conjunto básico de ferramentas para gerenciar a co
 
 	[http://hostap.epitest.fi/wpa_supplicant/](http://hostap.epitest.fi/wpa_supplicant/) || [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant)
 
-**Dica:** Para uma comparação entre os comandos *iw* e *wireless_tools*, veja [#Comparação entre iw e wireless_tools](#Compara.C3.A7.C3.A3o_entre_iw_e_wireless_tools).
+**Dica:** Para uma comparação entre os comandos *iw* e *wireless_tools*, veja [#Comparação entre iw e wireless_tools](#Comparação_entre_iw_e_wireless_tools).
 
 **Nota:**
 
@@ -281,7 +281,7 @@ Para ver quais pontos de acesso estão disponíveis, execute:
 
 **Nota:** Se ele exibir `Interface does not support scanning`, você provavelmente se esqueceu de instalar o firmware. Em alguns casos, esta mensagem também é exibida quando não se está executando *iw* como root.
 
-**Dica:** Dependendo da sua localização, talvez seja necessário definir o [domínio regulatório](#Respeitar_o_dom.C3.ADnio_regulat.C3.B3rio) correto para ver todas as redes disponíveis.
+**Dica:** Dependendo da sua localização, talvez seja necessário definir o [domínio regulatório](#Respeitar_o_domínio_regulatório) correto para ver todas as redes disponíveis.
 
 Os pontos importantes para verificar são:
 
@@ -438,7 +438,7 @@ Para mais informações, leia a [documentação regulatória no wireless.kernel.
 
 ## Solução de problemas
 
-Essa seção contém dicas de solução de problemas gerais, e não estritamente relacionados com problemas de drivers ou firmwares. Para tais tópicos, veja a próxima seção [#Solução de problemas de drivers e firmware](#Solu.C3.A7.C3.A3o_de_problemas_de_drivers_e_firmware).
+Essa seção contém dicas de solução de problemas gerais, e não estritamente relacionados com problemas de drivers ou firmwares. Para tais tópicos, veja a próxima seção [#Solução de problemas de drivers e firmware](#Solução_de_problemas_de_drivers_e_firmware).
 
 ### Acesso temporário à internet
 
@@ -504,7 +504,7 @@ Veja [Power saving#Network interfaces](/index.php/Power_saving#Network_interface
 
 ### Falha ao obter endereço IP
 
-*   Se a obtenção de um endereço IP falhar repetidamente usando o cliente padrão [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd), tente instalar e usar [dhclient](https://www.archlinux.org/packages/?name=dhclient). Não se esqueça de selecionar *dhclient* como o cliente DHCP principal no [gerenciador de conexões](#Configura.C3.A7.C3.A3o_manual.2Fautom.C3.A1tica).
+*   Se a obtenção de um endereço IP falhar repetidamente usando o cliente padrão [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd), tente instalar e usar [dhclient](https://www.archlinux.org/packages/?name=dhclient). Não se esqueça de selecionar *dhclient* como o cliente DHCP principal no [gerenciador de conexões](#Configuração_manual/automática).
 
 *   Se você puder obter um endereço IP para uma interface com fio e não para uma interface sem fio, tente desabilitar o recurso [economia de energia](#Economia_de_energia) da placa de rede sem fio (especifique {{ic|off} } em vez de `on`).
 
@@ -580,7 +580,7 @@ Se isso funcionar, ative o WPA/WPA2 novamente, mas escolha configurações de ro
 
 ### Redes Wi-Fi invisíveis por causa do domínio regulatório incorreto
 
-Se os canais Wi-Fi do computador não corresponderem aos do país do usuário, isso poderá resultar na invisibilidade de algumas redes Wi-Fi no intervalo, porque eles usam canais sem fio que não são permitidos por padrão. A solução é configurar o domínio regulatório corretamente, consulte [#Respeitar o domínio regulatório](#Respeitar_o_dom.C3.ADnio_regulat.C3.B3rio).
+Se os canais Wi-Fi do computador não corresponderem aos do país do usuário, isso poderá resultar na invisibilidade de algumas redes Wi-Fi no intervalo, porque eles usam canais sem fio que não são permitidos por padrão. A solução é configurar o domínio regulatório corretamente, consulte [#Respeitar o domínio regulatório](#Respeitar_o_domínio_regulatório).
 
 ## Solução de problemas de drivers e firmware
 
@@ -785,7 +785,7 @@ Se você tiver dificuldade em conectar um fone de ouvido Bluetooth e manter uma 
 
 **Nota:** Isso funciona com os drivers `iwlegacy` e `iwlwifi`.
 
-As configurações padrão no módulo são para que o LED pisque na atividade. Algumas pessoas acham isso extremamente irritante. Para que o LED fique sólido quando o Wi-Fi estiver ativo, você pode usar o [systemd-tmpfiles](/index.php/Systemd_(Portugu%C3%AAs)#Arquivos_tempor.C3.A1rios "Systemd (Português)"):
+As configurações padrão no módulo são para que o LED pisque na atividade. Algumas pessoas acham isso extremamente irritante. Para que o LED fique sólido quando o Wi-Fi estiver ativo, você pode usar o [systemd-tmpfiles](/index.php/Systemd_(Portugu%C3%AAs)#Arquivos_temporários "Systemd (Português)"):
 
  `/etc/tmpfiles.d/phy0-led.conf` 
 ```

@@ -14,12 +14,12 @@ Artículos relacionados
     *   [3.1 Usando arch-chroot](#Usando_arch-chroot)
     *   [3.2 Usando chroot](#Usando_chroot)
     *   [3.3 Usando systemd-nspawn](#Usando_systemd-nspawn)
-*   [4 Ejecutar aplicaciones gráficas en entornos chroot](#Ejecutar_aplicaciones_gr.C3.A1ficas_en_entornos_chroot)
+*   [4 Ejecutar aplicaciones gráficas en entornos chroot](#Ejecutar_aplicaciones_gráficas_en_entornos_chroot)
 *   [5 Realizar el mantenimiento del sistema](#Realizar_el_mantenimiento_del_sistema)
 *   [6 Salir del entorno chroot](#Salir_del_entorno_chroot)
     *   [6.1 Desmonte recursivo](#Desmonte_recursivo)
 *   [7 Ejemplo](#Ejemplo)
-*   [8 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [8 Véase también](#Véase_también)
 
 ## Requisitos
 

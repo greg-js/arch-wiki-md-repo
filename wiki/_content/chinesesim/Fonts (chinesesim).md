@@ -12,54 +12,54 @@
 
 ## Contents
 
-*   [1 字体类型](#.E5.AD.97.E4.BD.93.E7.B1.BB.E5.9E.8B)
-    *   [1.1 常见格式](#.E5.B8.B8.E8.A7.81.E6.A0.BC.E5.BC.8F)
-    *   [1.2 其它格式](#.E5.85.B6.E5.AE.83.E6.A0.BC.E5.BC.8F)
-*   [2 安装](#.E5.AE.89.E8.A3.85)
+*   [1 字体类型](#字体类型)
+    *   [1.1 常见格式](#常见格式)
+    *   [1.2 其它格式](#其它格式)
+*   [2 安装](#安装)
     *   [2.1 Pacman](#Pacman)
-    *   [2.2 创建字体包](#.E5.88.9B.E5.BB.BA.E5.AD.97.E4.BD.93.E5.8C.85)
-    *   [2.3 手动安装字体](#.E6.89.8B.E5.8A.A8.E5.AE.89.E8.A3.85.E5.AD.97.E4.BD.93)
-        *   [2.3.1 手动安装：高级模式](#.E6.89.8B.E5.8A.A8.E5.AE.89.E8.A3.85.EF.BC.9A.E9.AB.98.E7.BA.A7.E6.A8.A1.E5.BC.8F)
-        *   [2.3.2 过老的应用程序](#.E8.BF.87.E8.80.81.E7.9A.84.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F)
-    *   [2.4 Pango 警告](#Pango_.E8.AD.A6.E5.91.8A)
-*   [3 终端字体](#.E7.BB.88.E7.AB.AF.E5.AD.97.E4.BD.93)
-    *   [3.1 预览和测试](#.E9.A2.84.E8.A7.88.E5.92.8C.E6.B5.8B.E8.AF.95)
-    *   [3.2 持久性配置](#.E6.8C.81.E4.B9.85.E6.80.A7.E9.85.8D.E7.BD.AE)
-*   [4 字体包](#.E5.AD.97.E4.BD.93.E5.8C.85)
-    *   [4.1 盲文点字](#.E7.9B.B2.E6.96.87.E7.82.B9.E5.AD.97)
-    *   [4.2 数学和符号字体](#.E6.95.B0.E5.AD.A6.E5.92.8C.E7.AC.A6.E5.8F.B7.E5.AD.97.E4.BD.93)
-    *   [4.3 非英文使用者](#.E9.9D.9E.E8.8B.B1.E6.96.87.E4.BD.BF.E7.94.A8.E8.80.85)
-        *   [4.3.1 中日韩越文字](#.E4.B8.AD.E6.97.A5.E9.9F.A9.E8.B6.8A.E6.96.87.E5.AD.97)
+    *   [2.2 创建字体包](#创建字体包)
+    *   [2.3 手动安装字体](#手动安装字体)
+        *   [2.3.1 手动安装：高级模式](#手动安装：高级模式)
+        *   [2.3.2 过老的应用程序](#过老的应用程序)
+    *   [2.4 Pango 警告](#Pango_警告)
+*   [3 终端字体](#终端字体)
+    *   [3.1 预览和测试](#预览和测试)
+    *   [3.2 持久性配置](#持久性配置)
+*   [4 字体包](#字体包)
+    *   [4.1 盲文点字](#盲文点字)
+    *   [4.2 数学和符号字体](#数学和符号字体)
+    *   [4.3 非英文使用者](#非英文使用者)
+        *   [4.3.1 中日韩越文字](#中日韩越文字)
             *   [4.3.1.1 Pan-CJK](#Pan-CJK)
-            *   [4.3.1.2 中文字](#.E4.B8.AD.E6.96.87.E5.AD.97)
-            *   [4.3.1.3 日文字](#.E6.97.A5.E6.96.87.E5.AD.97)
-            *   [4.3.1.4 韩文字](#.E9.9F.A9.E6.96.87.E5.AD.97)
-        *   [4.3.2 阿拉伯和乌尔都文字](#.E9.98.BF.E6.8B.89.E4.BC.AF.E5.92.8C.E4.B9.8C.E5.B0.94.E9.83.BD.E6.96.87.E5.AD.97)
-        *   [4.3.3 波斯文字](#.E6.B3.A2.E6.96.AF.E6.96.87.E5.AD.97)
-        *   [4.3.4 缅甸文字](#.E7.BC.85.E7.94.B8.E6.96.87.E5.AD.97)
-        *   [4.3.5 西里尔文字](#.E8.A5.BF.E9.87.8C.E5.B0.94.E6.96.87.E5.AD.97)
-        *   [4.3.6 希腊文字](#.E5.B8.8C.E8.85.8A.E6.96.87.E5.AD.97)
-        *   [4.3.7 希伯来文字](#.E5.B8.8C.E4.BC.AF.E6.9D.A5.E6.96.87.E5.AD.97)
-        *   [4.3.8 印地文字](#.E5.8D.B0.E5.9C.B0.E6.96.87.E5.AD.97)
-        *   [4.3.9 高棉文字](#.E9.AB.98.E6.A3.89.E6.96.87.E5.AD.97)
-        *   [4.3.10 僧伽罗文字](#.E5.83.A7.E4.BC.BD.E7.BD.97.E6.96.87.E5.AD.97)
-        *   [4.3.11 塔米尔文字](#.E5.A1.94.E7.B1.B3.E5.B0.94.E6.96.87.E5.AD.97)
-        *   [4.3.12 藏文字](#.E8.97.8F.E6.96.87.E5.AD.97)
-    *   [4.4 Microsoft 字体](#Microsoft_.E5.AD.97.E4.BD.93)
-    *   [4.5 Apple OS X 字体](#Apple_OS_X_.E5.AD.97.E4.BD.93)
-    *   [4.6 等宽字体](#.E7.AD.89.E5.AE.BD.E5.AD.97.E4.BD.93)
-        *   [4.6.1 TrueType 字体](#TrueType_.E5.AD.97.E4.BD.93)
-        *   [4.6.2 点阵字体](#.E7.82.B9.E9.98.B5.E5.AD.97.E4.BD.93)
-    *   [4.7 无衬线字体](#.E6.97.A0.E8.A1.AC.E7.BA.BF.E5.AD.97.E4.BD.93)
-    *   [4.8 手写体](#.E6.89.8B.E5.86.99.E4.BD.93)
-    *   [4.9 衬线字体](#.E8.A1.AC.E7.BA.BF.E5.AD.97.E4.BD.93)
-    *   [4.10 未分类字体](#.E6.9C.AA.E5.88.86.E7.B1.BB.E5.AD.97.E4.BD.93)
-*   [5 X11中的字体回滚顺序](#X11.E4.B8.AD.E7.9A.84.E5.AD.97.E4.BD.93.E5.9B.9E.E6.BB.9A.E9.A1.BA.E5.BA.8F)
-*   [6 字体别名](#.E5.AD.97.E4.BD.93.E5.88.AB.E5.90.8D)
-*   [7 小提示](#.E5.B0.8F.E6.8F.90.E7.A4.BA)
-    *   [7.1 列出已安装字体](#.E5.88.97.E5.87.BA.E5.B7.B2.E5.AE.89.E8.A3.85.E5.AD.97.E4.BD.93)
-    *   [7.2 应用程序专用的字体高速缓冲](#.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F.E4.B8.93.E7.94.A8.E7.9A.84.E5.AD.97.E4.BD.93.E9.AB.98.E9.80.9F.E7.BC.93.E5.86.B2)
-*   [8 参见](#.E5.8F.82.E8.A7.81)
+            *   [4.3.1.2 中文字](#中文字)
+            *   [4.3.1.3 日文字](#日文字)
+            *   [4.3.1.4 韩文字](#韩文字)
+        *   [4.3.2 阿拉伯和乌尔都文字](#阿拉伯和乌尔都文字)
+        *   [4.3.3 波斯文字](#波斯文字)
+        *   [4.3.4 缅甸文字](#缅甸文字)
+        *   [4.3.5 西里尔文字](#西里尔文字)
+        *   [4.3.6 希腊文字](#希腊文字)
+        *   [4.3.7 希伯来文字](#希伯来文字)
+        *   [4.3.8 印地文字](#印地文字)
+        *   [4.3.9 高棉文字](#高棉文字)
+        *   [4.3.10 僧伽罗文字](#僧伽罗文字)
+        *   [4.3.11 塔米尔文字](#塔米尔文字)
+        *   [4.3.12 藏文字](#藏文字)
+    *   [4.4 Microsoft 字体](#Microsoft_字体)
+    *   [4.5 Apple OS X 字体](#Apple_OS_X_字体)
+    *   [4.6 等宽字体](#等宽字体)
+        *   [4.6.1 TrueType 字体](#TrueType_字体)
+        *   [4.6.2 点阵字体](#点阵字体)
+    *   [4.7 无衬线字体](#无衬线字体)
+    *   [4.8 手写体](#手写体)
+    *   [4.9 衬线字体](#衬线字体)
+    *   [4.10 未分类字体](#未分类字体)
+*   [5 X11中的字体回滚顺序](#X11中的字体回滚顺序)
+*   [6 字体别名](#字体别名)
+*   [7 小提示](#小提示)
+    *   [7.1 列出已安装字体](#列出已安装字体)
+    *   [7.2 应用程序专用的字体高速缓冲](#应用程序专用的字体高速缓冲)
+*   [8 参见](#参见)
 
 ## 字体类型
 
@@ -158,9 +158,9 @@ post_remove() {
 
 ### 手动安装字体
 
-要安装不在源中的字体，推荐的方法请参考[#创建字体包](#.E5.88.9B.E5.BB.BA.E5.AD.97.E4.BD.93.E5.8C.85)。这样使得 pacman 在以后能够更新或者移除它们。当然字体也可以通过手工方式安装。
+要安装不在源中的字体，推荐的方法请参考[#创建字体包](#创建字体包)。这样使得 pacman 在以后能够更新或者移除它们。当然字体也可以通过手工方式安装。
 
-要在系统范围内（对所有用户有效）安装字体，请将文件夹移动到 `/usr/share/fonts/` 目录。这些文件需要对每个用户而言都是可读的，使用 [chmod](/index.php/Chmod "Chmod") 来设置合理的权限 (比如，文件至少为 `0444` ，而目录至少为 `0555`)。要为单个用户安装字体，请使用 `~/.local/share/fonts` (`~/.fonts/` 现在已经过时了)。 要让 Xserver 能直接载入字体（而不使用某些**字体服务**），就需要将新增字体的目录加入到 FontPath 中。它位于[您的 Xorg 设置目录](/index.php/Xorg#Configuration "Xorg")中（例如 `/etc/X11/xorg.conf` 或 `/etc/xorg.conf`) 中。更多详细内容请查阅[#X.Org 中的字体](#X.Org_.E4.B8.AD.E7.9A.84.E5.AD.97.E4.BD.93)
+要在系统范围内（对所有用户有效）安装字体，请将文件夹移动到 `/usr/share/fonts/` 目录。这些文件需要对每个用户而言都是可读的，使用 [chmod](/index.php/Chmod "Chmod") 来设置合理的权限 (比如，文件至少为 `0444` ，而目录至少为 `0555`)。要为单个用户安装字体，请使用 `~/.local/share/fonts` (`~/.fonts/` 现在已经过时了)。 要让 Xserver 能直接载入字体（而不使用某些**字体服务**），就需要将新增字体的目录加入到 FontPath 中。它位于[您的 Xorg 设置目录](/index.php/Xorg#Configuration "Xorg")中（例如 `/etc/X11/xorg.conf` 或 `/etc/xorg.conf`) 中。更多详细内容请查阅[#X.Org 中的字体](#X.Org_中的字体)
 
 然后更新 fontconfig 的字体缓存：
 
@@ -180,7 +180,7 @@ $ fc-cache -vf
 *   只要观察主字体目录下的内容，就能够确定系统上有哪种格式的字体集可供应用程序使用。您不需要复杂、占用大量资源的字体管理程序；[gtk2fontsel](https://www.archlinux.org/packages/?name=gtk2fontsel) 和基本的指令工具 (如 [fontconfig](https://www.archlinux.org/packages/?name=fontconfig) 软件包下的 `fc-query`) 就可以将这件差事办得又快又好。
 *   当您安装或升级单一字体，所有应用程序都可以使用新版本字体，包括 LaTeX 相关软件。
 *   有必要的话，可以快速启用 / 停用某个字体集，因为您知道它们在哪个目录下（调试时很好用）。
-*   不需担心有任何多余的 `/etc/fonts/conf.avail/nn-foo.conf` fontconfig 文件会可能与您的渲染设置起冲突 (特别是当您使用[自定的字体设置与修补过的函式库](/index.php/Font_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.A1.A5.E4.B8.81.E5.8C.85 "Font configuration (简体中文)")时)。
+*   不需担心有任何多余的 `/etc/fonts/conf.avail/nn-foo.conf` fontconfig 文件会可能与您的渲染设置起冲突 (特别是当您使用[自定的字体设置与修补过的函式库](/index.php/Font_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#补丁包 "Font configuration (简体中文)")时)。
 *   长远来看，可以省下那些因软件包管理器的失误，解决问题和清除冲突所浪费的宝贵时间。
 
 实际操作上有几种方式，有必要的话可任由软件包管理员采用。以下所举出的操作方式相当有效率，即使字体数目众多也相当安全。
@@ -393,9 +393,9 @@ FONT=lat2-16
 
 这代表使用 ISO/IEC 8859 字符的第二部分，尺寸设置为 16。您可以使用其它值更改字体尺寸 (如 `lat2-08`)。您可以在[Wikipedia的这张表](https://en.wikipedia.org/wiki/ISO/IEC_8859#The_Parts_of_ISO.2FIEC_8859 "wikipedia:ISO/IEC 8859")查询 8859 规范定义的本地。
 
-若要为早期的用户空间套用指定字体，请在 `/etc/mkinitcpio.conf` 使用 `consolefont` 勾子。更多信息请参阅 [Mkinitcpio (简体中文)#钩子(HOOKS)](/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E9.92.A9.E5.AD.90.28HOOKS.29 "Mkinitcpio (简体中文)")。
+若要为早期的用户空间套用指定字体，请在 `/etc/mkinitcpio.conf` 使用 `consolefont` 勾子。更多信息请参阅 [Mkinitcpio (简体中文)#钩子(HOOKS)](/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#钩子(HOOKS) "Mkinitcpio (简体中文)")。
 
-如果开机时字体没有任何变化，或只变化一下就恢复原样，则有可能是因为显卡驱动引导时字体被复位，然后终端被切至帧缓冲 (framebuffer)。提早装入图形驱动可以避免这个问题。若要在套用 `/etc/vconsole.conf` 之前将帧缓冲准备好，请参阅[核心模式设置#提早引导 KMS](/index.php/Kernel_mode_setting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#KMS_.E6.97.A9.E5.90.AF.E5.8A.A8 "Kernel mode setting (简体中文)")、[[2]](https://bbs.archlinux.org/viewtopic.php?id=145765) 或其它方式。
+如果开机时字体没有任何变化，或只变化一下就恢复原样，则有可能是因为显卡驱动引导时字体被复位，然后终端被切至帧缓冲 (framebuffer)。提早装入图形驱动可以避免这个问题。若要在套用 `/etc/vconsole.conf` 之前将帧缓冲准备好，请参阅[核心模式设置#提早引导 KMS](/index.php/Kernel_mode_setting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#KMS_早启动 "Kernel mode setting (简体中文)")、[[2]](https://bbs.archlinux.org/viewtopic.php?id=145765) 或其它方式。
 
 ## 字体包
 
@@ -449,7 +449,7 @@ Github用户Ternstor编写了一段python脚本，可以通过在 AUR 和官方�
 
 *   [noto-fonts-cjk](https://www.archlinux.org/packages/?name=noto-fonts-cjk) - Google Noto CJK 字体， 提供简体中文、繁体中文、日文、韩文一致的设计和外观。它是基于 [adobe-source-han-sans-otc-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-otc-fonts) 重贴的商标。
 
-**提示：** 中文用户在安装思源cjk全集或者noto-cjk全集后，部分文字显示为日文异形字体，可参看[Arch Linux Localization (简体中文)#修正简体中文显示为异体（日文）字形](/index.php/Arch_Linux_Localization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BF.AE.E6.AD.A3.E7.AE.80.E4.BD.93.E4.B8.AD.E6.96.87.E6.98.BE.E7.A4.BA.E4.B8.BA.E5.BC.82.E4.BD.93.EF.BC.88.E6.97.A5.E6.96.87.EF.BC.89.E5.AD.97.E5.BD.A2 "Arch Linux Localization (简体中文)") 进行解决。
+**提示：** 中文用户在安装思源cjk全集或者noto-cjk全集后，部分文字显示为日文异形字体，可参看[Arch Linux Localization (简体中文)#修正简体中文显示为异体（日文）字形](/index.php/Arch_Linux_Localization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#修正简体中文显示为异体（日文）字形 "Arch Linux Localization (简体中文)") 进行解决。
 
 *   文泉驿
     *   [wqy-microhei](https://www.archlinux.org/packages/?name=wqy-microhei) - 文泉驿微米黑，无衬线形式字体。
@@ -532,7 +532,7 @@ Github用户Ternstor编写了一段python脚本，可以通过在 AUR 和官方�
 
 #### 西里尔文字
 
-另请参阅[#等宽字体](#.E7.AD.89.E5.AE.BD.E5.AD.97.E4.BD.93)、[#无衬线字体](#.E6.97.A0.E8.A1.AC.E7.BA.BF.E5.AD.97.E4.BD.93)和[#衬线字体](#.E8.A1.AC.E7.BA.BF.E5.AD.97.E4.BD.93)
+另请参阅[#等宽字体](#等宽字体)、[#无衬线字体](#无衬线字体)和[#衬线字体](#衬线字体)
 
 *   [ttf-paratype](https://aur.archlinux.org/packages/ttf-paratype/) - ParaType类别的字体: sans, serif, mono, 扩展的西里尔和拉丁文字, OFL 认证
 

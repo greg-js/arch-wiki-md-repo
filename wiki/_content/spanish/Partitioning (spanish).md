@@ -19,26 +19,26 @@ Cada partición debe ser formateada con un [tipo de sistema de archivos](/index.
     *   [1.3 Particionado con Btrfs](#Particionado_con_Btrfs)
     *   [1.4 Elegir entre GPT y MBR](#Elegir_entre_GPT_y_MBR)
 *   [2 Esquemas de particionado](#Esquemas_de_particionado)
-    *   [2.1 Partición única root](#Partici.C3.B3n_.C3.BAnica_root)
+    *   [2.1 Partición única root](#Partición_única_root)
     *   [2.2 Particiones dedicadas](#Particiones_dedicadas)
     *   [2.3 Puntos de montaje](#Puntos_de_montaje)
-        *   [2.3.1 Partición raíz](#Partici.C3.B3n_ra.C3.ADz)
-        *   [2.3.2 /boot](#.2Fboot)
-        *   [2.3.3 /home](#.2Fhome)
-        *   [2.3.4 /var](#.2Fvar)
-        *   [2.3.5 /tmp](#.2Ftmp)
+        *   [2.3.1 Partición raíz](#Partición_raíz)
+        *   [2.3.2 /boot](#/boot)
+        *   [2.3.3 /home](#/home)
+        *   [2.3.4 /var](#/var)
+        *   [2.3.5 /tmp](#/tmp)
         *   [2.3.6 Swap](#Swap)
-        *   [2.3.7 ¿Qué tamaño deben tener las particiones?](#.C2.BFQu.C3.A9_tama.C3.B1o_deben_tener_las_particiones.3F)
+        *   [2.3.7 ¿Qué tamaño deben tener las particiones?](#¿Qué_tamaño_deben_tener_las_particiones?)
 *   [3 Herramientas de particionado](#Herramientas_de_particionado)
 *   [4 Alineamiento de las particiones](#Alineamiento_de_las_particiones)
     *   [4.1 Unidades de disco duro](#Unidades_de_disco_duro)
-    *   [4.2 Unidades de estado sólido](#Unidades_de_estado_s.C3.B3lido)
+    *   [4.2 Unidades de estado sólido](#Unidades_de_estado_sólido)
     *   [4.3 Herramientas de particionado](#Herramientas_de_particionado_2)
-*   [5 Usar GPT - método moderno](#Usar_GPT_-_m.C3.A9todo_moderno)
+*   [5 Usar GPT - método moderno](#Usar_GPT_-_método_moderno)
     *   [5.1 Resumen del uso de gdisk](#Resumen_del_uso_de_gdisk)
-*   [6 Usar MBR - método tradicional](#Usar_MBR_-_m.C3.A9todo_tradicional)
+*   [6 Usar MBR - método tradicional](#Usar_MBR_-_método_tradicional)
     *   [6.1 Resumen del uso de fdisk](#Resumen_del_uso_de_fdisk)
-*   [7 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [7 Véase también](#Véase_también)
 
 ## Tabla de particiones
 
@@ -169,7 +169,7 @@ El tamaño de las particiones es una cuestión de preferencia personal, pero la 
 
 	Históricamente, la regla general para determinar el tamaño de la partición de intercambio consistía en asignarle el doble de la cantidad de RAM física. A medida que los ordenadores han ido ganando cada vez mayores capacidades de memoria, esta regla ha devenido obsoleta. En las máquinas con hasta 512 MB de RAM, la regla 2x es normalmente suficiente. Si está disponible una cantidad suficiente de RAM (más de 1024), es posible tener una partición de intercambio más pequeña o incluso omitirla. Con más de 2 GB de memoria RAM física, generalmente se puede esperar un buen rendimiento sin la existencia de una partición de intercambio.
 
-**Nota:** Si va a utilizar una partición/archivo swap para hibernar, debe echar un vistazo a [Suspend and hibernate#About swap partition/file size](/index.php/Suspend_and_hibernate#About_swap_partition.2Ffile_size "Suspend and hibernate").
+**Nota:** Si va a utilizar una partición/archivo swap para hibernar, debe echar un vistazo a [Suspend and hibernate#About swap partition/file size](/index.php/Suspend_and_hibernate#About_swap_partition/file_size "Suspend and hibernate").
 
 	`/datos` — [variable] 
 

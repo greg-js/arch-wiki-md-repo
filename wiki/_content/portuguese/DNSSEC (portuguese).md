@@ -10,18 +10,18 @@ Do [artigo do Wikipédia sobre o DNSSEC](https://en.wikipedia.org/wiki/Domain_Na
 
 ## Contents
 
-*   [1 Validação básica de DNSSEC](#Valida.C3.A7.C3.A3o_b.C3.A1sica_de_DNSSEC)
-    *   [1.1 Instalação](#Instala.C3.A7.C3.A3o)
-    *   [1.2 Consulta com validação DNSSEC](#Consulta_com_valida.C3.A7.C3.A3o_DNSSEC)
+*   [1 Validação básica de DNSSEC](#Validação_básica_de_DNSSEC)
+    *   [1.1 Instalação](#Instalação)
+    *   [1.2 Consulta com validação DNSSEC](#Consulta_com_validação_DNSSEC)
     *   [1.3 Testando](#Testando)
-*   [2 Instalar um servidor recursivo de validação compatível com DNSSEC](#Instalar_um_servidor_recursivo_de_valida.C3.A7.C3.A3o_compat.C3.ADvel_com_DNSSEC)
-*   [3 Habilitar DNSSEC em um software específico](#Habilitar_DNSSEC_em_um_software_espec.C3.ADfico)
+*   [2 Instalar um servidor recursivo de validação compatível com DNSSEC](#Instalar_um_servidor_recursivo_de_validação_compatível_com_DNSSEC)
+*   [3 Habilitar DNSSEC em um software específico](#Habilitar_DNSSEC_em_um_software_específico)
 *   [4 Hardware de DNSSEC](#Hardware_de_DNSSEC)
-*   [5 Veja também](#Veja_tamb.C3.A9m)
+*   [5 Veja também](#Veja_também)
 
 ## Validação básica de DNSSEC
 
-**Nota:** É necessária uma configuração adicional para as suas lookups de DNS DNSSEC por padrão. Veja [#Instalar um servidor recursivo de validação compatível com DNSSEC](#Instalar_um_servidor_recursivo_de_valida.C3.A7.C3.A3o_compat.C3.ADvel_com_DNSSEC) e [#Habilitar DNSSEC em um software específico](#Habilitar_DNSSEC_em_um_software_espec.C3.ADfico).
+**Nota:** É necessária uma configuração adicional para as suas lookups de DNS DNSSEC por padrão. Veja [#Instalar um servidor recursivo de validação compatível com DNSSEC](#Instalar_um_servidor_recursivo_de_validação_compatível_com_DNSSEC) e [#Habilitar DNSSEC em um software específico](#Habilitar_DNSSEC_em_um_software_específico).
 
 ### Instalação
 
@@ -77,7 +77,7 @@ Se você tentar visitar um site com um endereço IP falso *(spoofed)*, o resolve
 
 ## Habilitar DNSSEC em um software específico
 
-Se você optar por não [#Instalar um servidor recursivo de validação compatível com DNSSEC](#Instalar_um_servidor_recursivo_de_valida.C3.A7.C3.A3o_compat.C3.ADvel_com_DNSSEC), será necessário usar o software que possui suporte a DNSSEC integrado para usar seus recursos. Muitas vezes isso significa que você deve corrigir o software sozinho. Uma lista de vários aplicativos corrigidos é encontrada [aqui](https://www.dnssec-tools.org/wiki/index.php?title=DNSSEC_Applications). Além disso, alguns navegadores web têm extensões ou complementos que podem ser instalados para implementar o DNSSEC sem corrigir o programa.
+Se você optar por não [#Instalar um servidor recursivo de validação compatível com DNSSEC](#Instalar_um_servidor_recursivo_de_validação_compatível_com_DNSSEC), será necessário usar o software que possui suporte a DNSSEC integrado para usar seus recursos. Muitas vezes isso significa que você deve corrigir o software sozinho. Uma lista de vários aplicativos corrigidos é encontrada [aqui](https://www.dnssec-tools.org/wiki/index.php?title=DNSSEC_Applications). Além disso, alguns navegadores web têm extensões ou complementos que podem ser instalados para implementar o DNSSEC sem corrigir o programa.
 
 ## Hardware de DNSSEC
 

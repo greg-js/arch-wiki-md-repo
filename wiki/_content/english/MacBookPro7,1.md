@@ -20,7 +20,7 @@ This page contains tips on installing Arch Linux on a Mid 2010 13" MacBook Pro a
     *   [2.2 Bootloader](#Bootloader)
         *   [2.2.1 EFI-Mode](#EFI-Mode_2)
         *   [2.2.2 CSM-Mode or BIOS-compatibility](#CSM-Mode_or_BIOS-compatibility)
-            *   [2.2.2.1 Can't find root device](#Can.27t_find_root_device)
+            *   [2.2.2.1 Can't find root device](#Can't_find_root_device)
 *   [3 Network](#Network)
 *   [4 Video](#Video)
     *   [4.1 Nouveau](#Nouveau)

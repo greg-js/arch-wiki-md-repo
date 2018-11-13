@@ -7,8 +7,8 @@ Related articles
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Running vncserver for virtual (headless) sessions](#Running_vncserver_for_virtual_.28headless.29_sessions)
-    *   [2.1 Create environment, config, and password files](#Create_environment.2C_config.2C_and_password_files)
+*   [2 Running vncserver for virtual (headless) sessions](#Running_vncserver_for_virtual_(headless)_sessions)
+    *   [2.1 Create environment, config, and password files](#Create_environment,_config,_and_password_files)
         *   [2.1.1 Edit the environment file](#Edit_the_environment_file)
         *   [2.1.2 Edit the optional config file](#Edit_the_optional_config_file)
     *   [2.2 Starting and stopping vncserver via systemd](#Starting_and_stopping_vncserver_via_systemd)
@@ -26,11 +26,11 @@ Related articles
     *   [5.3 Connecting to a vncserver from Android devices over SSH](#Connecting_to_a_vncserver_from_Android_devices_over_SSH)
 *   [6 Tips and tricks](#Tips_and_tricks)
     *   [6.1 Connecting to an OSX system](#Connecting_to_an_OSX_system)
-    *   [6.2 Connecting to non-X environments on a Raspberry Pi (Arch ARM)](#Connecting_to_non-X_environments_on_a_Raspberry_Pi_.28Arch_ARM.29)
+    *   [6.2 Connecting to non-X environments on a Raspberry Pi (Arch ARM)](#Connecting_to_non-X_environments_on_a_Raspberry_Pi_(Arch_ARM))
     *   [6.3 Recommended security settings](#Recommended_security_settings)
     *   [6.4 Toggling Fullscreen](#Toggling_Fullscreen)
 *   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 Unable to type '<' character](#Unable_to_type_.27.3C.27_character)
+    *   [7.1 Unable to type '<' character](#Unable_to_type_'<'_character)
     *   [7.2 Black rectangle instead of window](#Black_rectangle_instead_of_window)
     *   [7.3 No mouse cursor](#No_mouse_cursor)
     *   [7.4 Copying clipboard content from the remote machine](#Copying_clipboard_content_from_the_remote_machine)
@@ -207,7 +207,7 @@ vncconfig -nowin &
 As mentioned in [#Installation](#Installation), the *tigervnc* package also provides the x0vncserver binary which allows direct control over a physical X session. Invoke it like so:
 
 ```
-$ x0vncserver -rbfauth ~/.vnc/passwd
+$ x0vncserver -rfbauth ~/.vnc/passwd
 
 ```
 

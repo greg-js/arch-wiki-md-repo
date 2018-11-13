@@ -7,39 +7,39 @@ Véase [VirtualBox (Español)](/index.php/VirtualBox_(Espa%C3%B1ol) "VirtualBox 
 
 ## Contents
 
-*   [1 Importar/exportar máquinas virtuales de VirtualBox a/desde otros hipervisores](#Importar.2Fexportar_m.C3.A1quinas_virtuales_de_VirtualBox_a.2Fdesde_otros_hipervisores)
+*   [1 Importar/exportar máquinas virtuales de VirtualBox a/desde otros hipervisores](#Importar/exportar_máquinas_virtuales_de_VirtualBox_a/desde_otros_hipervisores)
     *   [1.1 Eliminar complementos](#Eliminar_complementos)
     *   [1.2 Utilizar el formato adecuado de disco virtual](#Utilizar_el_formato_adecuado_de_disco_virtual)
-        *   [1.2.1 Herramientas de automatización](#Herramientas_de_automatizaci.C3.B3n)
-        *   [1.2.2 Conversión manual](#Conversi.C3.B3n_manual)
-    *   [1.3 Crear la configuración de la maquina virtual para su hipervisor](#Crear_la_configuraci.C3.B3n_de_la_maquina_virtual_para_su_hipervisor)
-*   [2 Gestionar el lanzamiento de la máquina virtual](#Gestionar_el_lanzamiento_de_la_m.C3.A1quina_virtual)
-    *   [2.1 Iniciar máquinas virtuales con un servicio](#Iniciar_m.C3.A1quinas_virtuales_con_un_servicio)
-    *   [2.2 Iniciar máquinas virtuales con un atajo del teclado](#Iniciar_m.C3.A1quinas_virtuales_con_un_atajo_del_teclado)
-*   [3 Utilizar dispositivos específicos en la máquina virtual](#Utilizar_dispositivos_espec.C3.ADficos_en_la_m.C3.A1quina_virtual)
-    *   [3.1 Utilizar webcam / micrófono USB](#Utilizar_webcam_.2F_micr.C3.B3fono_USB)
-    *   [3.2 Detectar cámaras web y otros dispositivos USB](#Detectar_c.C3.A1maras_web_y_otros_dispositivos_USB)
-*   [4 Acceder a un servidor huésped](#Acceder_a_un_servidor_hu.C3.A9sped)
-*   [5 Aceleración D3D en huéspedes Windows](#Aceleraci.C3.B3n_D3D_en_hu.C3.A9spedes_Windows)
+        *   [1.2.1 Herramientas de automatización](#Herramientas_de_automatización)
+        *   [1.2.2 Conversión manual](#Conversión_manual)
+    *   [1.3 Crear la configuración de la maquina virtual para su hipervisor](#Crear_la_configuración_de_la_maquina_virtual_para_su_hipervisor)
+*   [2 Gestionar el lanzamiento de la máquina virtual](#Gestionar_el_lanzamiento_de_la_máquina_virtual)
+    *   [2.1 Iniciar máquinas virtuales con un servicio](#Iniciar_máquinas_virtuales_con_un_servicio)
+    *   [2.2 Iniciar máquinas virtuales con un atajo del teclado](#Iniciar_máquinas_virtuales_con_un_atajo_del_teclado)
+*   [3 Utilizar dispositivos específicos en la máquina virtual](#Utilizar_dispositivos_específicos_en_la_máquina_virtual)
+    *   [3.1 Utilizar webcam / micrófono USB](#Utilizar_webcam_/_micrófono_USB)
+    *   [3.2 Detectar cámaras web y otros dispositivos USB](#Detectar_cámaras_web_y_otros_dispositivos_USB)
+*   [4 Acceder a un servidor huésped](#Acceder_a_un_servidor_huésped)
+*   [5 Aceleración D3D en huéspedes Windows](#Aceleración_D3D_en_huéspedes_Windows)
 *   [6 VirtualBox en una llave USB](#VirtualBox_en_una_llave_USB)
-*   [7 Ejecutar una instalación nativa de Arch Linux dentro de VirtualBox](#Ejecutar_una_instalaci.C3.B3n_nativa_de_Arch_Linux_dentro_de_VirtualBox)
+*   [7 Ejecutar una instalación nativa de Arch Linux dentro de VirtualBox](#Ejecutar_una_instalación_nativa_de_Arch_Linux_dentro_de_VirtualBox)
     *   [7.1 Asegurarse de que se tiene un esquema de nombres persistentes](#Asegurarse_de_que_se_tiene_un_esquema_de_nombres_persistentes)
     *   [7.2 Asegurarse de que su imagen mkinitcpio es correcta](#Asegurarse_de_que_su_imagen_mkinitcpio_es_correcta)
-    *   [7.3 Crear una configuración de máquina virtual para arrancar desde la unidad física](#Crear_una_configuraci.C3.B3n_de_m.C3.A1quina_virtual_para_arrancar_desde_la_unidad_f.C3.ADsica)
+    *   [7.3 Crear una configuración de máquina virtual para arrancar desde la unidad física](#Crear_una_configuración_de_máquina_virtual_para_arrancar_desde_la_unidad_física)
         *   [7.3.1 Crear una imagen .vmdk de disco raw](#Crear_una_imagen_.vmdk_de_disco_raw)
-        *   [7.3.2 Crear el archivo de configuración de la máquina virtual](#Crear_el_archivo_de_configuraci.C3.B3n_de_la_m.C3.A1quina_virtual)
+        *   [7.3.2 Crear el archivo de configuración de la máquina virtual](#Crear_el_archivo_de_configuración_de_la_máquina_virtual)
 *   [8 Instalar un sistema nativo de Arch Linux desde VirtualBox](#Instalar_un_sistema_nativo_de_Arch_Linux_desde_VirtualBox)
-*   [9 Mover una instalación nativa de Windows a una máquina virtual](#Mover_una_instalaci.C3.B3n_nativa_de_Windows_a_una_m.C3.A1quina_virtual)
+*   [9 Mover una instalación nativa de Windows a una máquina virtual](#Mover_una_instalación_nativa_de_Windows_a_una_máquina_virtual)
     *   [9.1 Tareas en Windows](#Tareas_en_Windows)
     *   [9.2 Using Disk2vhd to clone Windows partition](#Using_Disk2vhd_to_clone_Windows_partition)
-    *   [9.3 Tareas en GNU/Linux](#Tareas_en_GNU.2FLinux)
+    *   [9.3 Tareas en GNU/Linux](#Tareas_en_GNU/Linux)
     *   [9.4 Arreglar el MBR y el gestor de arranque de Microsoft](#Arreglar_el_MBR_y_el_gestor_de_arranque_de_Microsoft)
     *   [9.5 Limitaciones conocidas](#Limitaciones_conocidas)
-*   [10 Ejecutar una partición de Windows en VirtualBox](#Ejecutar_una_partici.C3.B3n_de_Windows_en_VirtualBox)
+*   [10 Ejecutar una partición de Windows en VirtualBox](#Ejecutar_una_partición_de_Windows_en_VirtualBox)
     *   [10.1 Configurar udev para dar acceso sin formato a VirtualBox a las particiones de Windows](#Configurar_udev_para_dar_acceso_sin_formato_a_VirtualBox_a_las_particiones_de_Windows)
-    *   [10.2 Configuración de VirtualBox](#Configuraci.C3.B3n_de_VirtualBox)
+    *   [10.2 Configuración de VirtualBox](#Configuración_de_VirtualBox)
         *   [10.2.1 Crear archivos de imagen de disco virtual](#Crear_archivos_de_imagen_de_disco_virtual)
-        *   [10.2.2 Adjuntar imágenes de disco virtual a la máquina virtual](#Adjuntar_im.C3.A1genes_de_disco_virtual_a_la_m.C3.A1quina_virtual)
+        *   [10.2.2 Adjuntar imágenes de disco virtual a la máquina virtual](#Adjuntar_imágenes_de_disco_virtual_a_la_máquina_virtual)
     *   [10.3 Configurar una ESP por separado en VirtualBox](#Configurar_una_ESP_por_separado_en_VirtualBox)
     *   [10.4 Configurar el firmware UEFI virtual para usar el cargador de arranque de Windows](#Configurar_el_firmware_UEFI_virtual_para_usar_el_cargador_de_arranque_de_Windows)
 
@@ -251,7 +251,7 @@ Esta guía le permitirá utilizar, en una máquina virtual, la instalación nati
 
 ### Asegurarse de que se tiene un esquema de nombres persistentes
 
-Dependiendo de la configuración del disco duro, la representación de los archivos de los dispositivos del disco duro pueden aparecer de forma diferente cuando se ejecuta la instalación de Arch Linux de forma nativa o en la máquina virtual. Este problema se produce cuando se utiliza [FakeRAID](/index.php/RAID_(Espa%C3%B1ol)#Implementaci.C3.B3n "RAID (Español)") por ejemplo. El dispositivo FakeRAID vendrá asignado como `/dev/mapper/` al ejecutar la distribución GNU/Linux de forma nativa, al tiempo que los demás dispositivos siguen siendo accesibles por separado. Sin embargo, en su máquina virtual, puede aparecer sin ningún mapeo como `/dev/sdaX` por ejemplo, porque los controladores que controlan el FakeRAID en su sistema operativo anfitrión (por ejemplo, Windows) se abstraerán del dispositivo FakeRAID.
+Dependiendo de la configuración del disco duro, la representación de los archivos de los dispositivos del disco duro pueden aparecer de forma diferente cuando se ejecuta la instalación de Arch Linux de forma nativa o en la máquina virtual. Este problema se produce cuando se utiliza [FakeRAID](/index.php/RAID_(Espa%C3%B1ol)#Implementación "RAID (Español)") por ejemplo. El dispositivo FakeRAID vendrá asignado como `/dev/mapper/` al ejecutar la distribución GNU/Linux de forma nativa, al tiempo que los demás dispositivos siguen siendo accesibles por separado. Sin embargo, en su máquina virtual, puede aparecer sin ningún mapeo como `/dev/sdaX` por ejemplo, porque los controladores que controlan el FakeRAID en su sistema operativo anfitrión (por ejemplo, Windows) se abstraerán del dispositivo FakeRAID.
 
 Para evitar este problema, tendremos que utilizar un esquema de direccionamiento que sea persistente en ambos sistemas. Esto se puede lograr usando [UUID](/index.php/Fstab_(Espa%C3%B1ol)#UUID "Fstab (Español)") en su archivo `/etc/fstab`. Asegúrese de que su archivo [fstab (Español)](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Español)") utiliza UUID para solucionar este problema. Lea [fstab (Español)](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Español)") y [Persistent block device naming (Español)](/index.php/Persistent_block_device_naming_(Espa%C3%B1ol) "Persistent block device naming (Español)").
 
@@ -271,7 +271,7 @@ HOOKS="base udev autodetect modconf *block* filesystems keyboard fsck"
 [...]
 ```
 
-Si no está presente, añádalo y regenere su initramfs con la orden `# mkinitcpio -p linux`, cuyo [uso se describe aquí con detalle](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Creaci.C3.B3n_de_la_imagen_y_activaci.C3.B3n "Mkinitcpio (Español)").
+Si no está presente, añádalo y regenere su initramfs con la orden `# mkinitcpio -p linux`, cuyo [uso se describe aquí con detalle](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Creación_de_la_imagen_y_activación "Mkinitcpio (Español)").
 
 ### Crear una configuración de máquina virtual para arrancar desde la unidad física
 
@@ -373,7 +373,7 @@ $ VBoxManage storageattach machineA --storagectl "SATA Controller" --port 0 --de
 
 Aunque utilice la CLI, es recomendable utilizar la interfaz gráfica de VirtualBox para personalizar la configuración de la máquina virtual. De hecho, debe especificar su configuración de hardware tan precisa como le sea posible, como si lo hiciese en una máquina nativa: conectar la aceleración 3D, aumentar la memoria de vídeo, ajustar la interfaz de red, etc.
 
-Por último, es posible que desee una integración perfecta entre su sistema Arch Linux y su sistema operativo anfitrión, permitiendo la función de pegar y copiar entre ambos sistemas operativos. Por favor, consulte [VirtualBox (Español)#Instalar complementos para el sistema huésped](/index.php/VirtualBox_(Espa%C3%B1ol)#Instalar_complementos_para_el_sistema_hu.C3.A9sped "VirtualBox (Español)") ya que, no debemos olvidar que esta máquina virtual de Arch Linux no deja de ser un sistema huésped cuando se ejecuta sobre el otro sistema operativo.
+Por último, es posible que desee una integración perfecta entre su sistema Arch Linux y su sistema operativo anfitrión, permitiendo la función de pegar y copiar entre ambos sistemas operativos. Por favor, consulte [VirtualBox (Español)#Instalar complementos para el sistema huésped](/index.php/VirtualBox_(Espa%C3%B1ol)#Instalar_complementos_para_el_sistema_huésped "VirtualBox (Español)") ya que, no debemos olvidar que esta máquina virtual de Arch Linux no deja de ser un sistema huésped cuando se ejecuta sobre el otro sistema operativo.
 
 **Advertencia:** Para que [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)") pueda funcionar tanto en forma nativa como en la máquina virtual, dado que va a utilizar diferentes controladores en uno u otro entorno, la mejor opción es que no exista un archivo `/etc/X11/xorg.conf`, de modo que se deje a Xorg que recoja todo lo que necesita sobre la marcha. Sin embargo, si realmente necesita su propia configuración Xorg, tal vez valga la pena establecer su target predefinido de systemd a `multi-user.target` con `# systemctl isolate graphical.target` (más detalles en [Systemd (Español)#Tabla de targetsy](/index.php/Systemd_(Espa%C3%B1ol)#Tabla_de_targets "Systemd (Español)") [Systemd (Español)#Cambiar el target vigente](/index.php/Systemd_(Espa%C3%B1ol)#Cambiar_el_target_vigente "Systemd (Español)"). De este modo, la interfaz gráfica estará desactivada (es decir Xorg no se pondrá en marcha) y, después de iniciar sesión, podrá ejecutar `startx` manualmente con un archivo `xorg.conf` personalizado.
 
@@ -381,9 +381,9 @@ Por último, es posible que desee una integración perfecta entre su sistema Arc
 
 En algunos casos, puede ser útil instalar un sistema nativo de Linux Arch mientras se ejecuta otro sistema operativo: una forma de lograr esto es realizar la instalación a través de VirtualBox en un [disco raw](http://www.virtualbox.org/manual/ch09.html#rawdisk). Si el sistema operativo existente está basado en Linux, es posible que desee considerar el siguiente artículo [Install from existing Linux (Español)](/index.php/Install_from_existing_Linux_(Espa%C3%B1ol) "Install from existing Linux (Español)") en su lugar.
 
-Este escenario es muy similar a la [#Ejecutar una instalación nativa de Arch Linux dentro de VirtualBox](#Ejecutar_una_instalaci.C3.B3n_nativa_de_Arch_Linux_dentro_de_VirtualBox), pero seguirá los pasos en un orden diferente: empiece por [#Crear una imagen .vmdk de disco raw](#Crear_una_imagen_.vmdk_de_disco_raw), y luego [#Crear el archivo de configuración de la máquina virtual](#Crear_el_archivo_de_configuraci.C3.B3n_de_la_m.C3.A1quina_virtual).
+Este escenario es muy similar a la [#Ejecutar una instalación nativa de Arch Linux dentro de VirtualBox](#Ejecutar_una_instalación_nativa_de_Arch_Linux_dentro_de_VirtualBox), pero seguirá los pasos en un orden diferente: empiece por [#Crear una imagen .vmdk de disco raw](#Crear_una_imagen_.vmdk_de_disco_raw), y luego [#Crear el archivo de configuración de la máquina virtual](#Crear_el_archivo_de_configuración_de_la_máquina_virtual).
 
-Ahora, debe tener una configuración de máquina virtual funcional cuyos discos virtuales VMDK están ligados a un disco real. El proceso de instalación es exactamente lo mismo que el descrito en [VirtualBox (Español)#Pasos para preparar Arch Linux como sistema anfitrión](/index.php/VirtualBox_(Espa%C3%B1ol)#Pasos_para_preparar_Arch_Linux_como_sistema_anfitri.C3.B3n "VirtualBox (Español)"), pero [asegurándose de que tiene un esquema de nombres persistentes](/index.php/VirtualBox_(Espa%C3%B1ol)#Asegurarse_de_que_se_tiene_un_esquema_de_nombres_persistentes "VirtualBox (Español)") y [que su imagen mkinitcpio es correcta](#Asegurarse_de_que_su_imagen_mkinitcpio_es_correcta).
+Ahora, debe tener una configuración de máquina virtual funcional cuyos discos virtuales VMDK están ligados a un disco real. El proceso de instalación es exactamente lo mismo que el descrito en [VirtualBox (Español)#Pasos para preparar Arch Linux como sistema anfitrión](/index.php/VirtualBox_(Espa%C3%B1ol)#Pasos_para_preparar_Arch_Linux_como_sistema_anfitrión "VirtualBox (Español)"), pero [asegurándose de que tiene un esquema de nombres persistentes](/index.php/VirtualBox_(Espa%C3%B1ol)#Asegurarse_de_que_se_tiene_un_esquema_de_nombres_persistentes "VirtualBox (Español)") y [que su imagen mkinitcpio es correcta](#Asegurarse_de_que_su_imagen_mkinitcpio_es_correcta).
 
 **Advertencia:**
 
@@ -433,7 +433,7 @@ Boot into Windows, clean up the installation (with [CCleaner](http://www.pirifor
 
 	Si la prueba anterior tuvo éxito, ejecute la orden de nuevo, pero esta vez sin la opción antes mencionada.
 
-*   Instale VirtualBox en su sistema anfitrión GNU/Linux (vea [#Pasos para preparar Arch Linux como sistema anfitrión](#Pasos_para_preparar_Arch_Linux_como_sistema_anfitri.C3.B3n) si su sistema anfitrión es Arch Linux).
+*   Instale VirtualBox en su sistema anfitrión GNU/Linux (vea [#Pasos para preparar Arch Linux como sistema anfitrión](#Pasos_para_preparar_Arch_Linux_como_sistema_anfitrión) si su sistema anfitrión es Arch Linux).
 
 *   Cree la imagen de disco de Windows desde el principio de la unidad hasta el final de la primera partición donde se encuentra la instalación de Windows. Es necesario copiar desde el principio del disco porque el espacio del MBR del principio de la unidad tiene que estar en la unidad virtual junto con la partición de Windows. En este ejemplo las dos siguientes particiones `sda2` y `sda3` serán eliminadas de la tabla de particiones y el gestor de arranque MBR será actualizado.
 
@@ -487,7 +487,7 @@ Partition number (''1-3'', default ''3''): ''1''
 
 **Nota:** la técnica descrita en esta sección solo se aplica a los sistemas [UEFI](/index.php/UEFI "UEFI").
 
-En algunos casos, es útil poder tener un [arranque dual con Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows") *y* acceder a la partición en una máquina virtual. Este proceso es significativamente diferente a la operación de [#Mover una instalación nativa de Windows a una máquina virtual](#Mover_una_instalaci.C3.B3n_nativa_de_Windows_a_una_m.C3.A1quina_virtual) en varios puntos
+En algunos casos, es útil poder tener un [arranque dual con Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows") *y* acceder a la partición en una máquina virtual. Este proceso es significativamente diferente a la operación de [#Mover una instalación nativa de Windows a una máquina virtual](#Mover_una_instalación_nativa_de_Windows_a_una_máquina_virtual) en varios puntos
 
 *   La partición de Windows no se copia a una imagen de disco virtual. En su lugar, se crea un archivo VMDK en bruto
 *   Los cambios en la máquina virtual se reflejarán en la partición, y viceversa

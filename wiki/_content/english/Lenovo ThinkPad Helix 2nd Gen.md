@@ -12,8 +12,8 @@ This hardware is substantially different from the [Lenovo ThinkPad Helix 1st Gen
 
 ## Contents
 
-*   [1 Suspend & Resume](#Suspend_.26_Resume)
-    *   [1.1 Enable suspend-to-idle (freeze/s2idle)](#Enable_suspend-to-idle_.28freeze.2Fs2idle.29)
+*   [1 Suspend & Resume](#Suspend_&_Resume)
+    *   [1.1 Enable suspend-to-idle (freeze/s2idle)](#Enable_suspend-to-idle_(freeze/s2idle))
     *   [1.2 Disable embedded-controller wake-ups](#Disable_embedded-controller_wake-ups)
 *   [2 Sensors](#Sensors)
 *   [3 Touch Screen](#Touch_Screen)

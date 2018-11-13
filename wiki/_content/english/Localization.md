@@ -21,9 +21,9 @@ Subpages without an English counterpart:
 *   [4 Input methods](#Input_methods)
     *   [4.1 Input method engines](#Input_method_engines)
     *   [4.2 GTK IM-module](#GTK_IM-module)
-        *   [4.2.1 Disabling GTK IM modules (without uninstalling)](#Disabling_GTK_IM_modules_.28without_uninstalling.29)
-    *   [4.3 QT immodule (> QT 4.0.0)](#QT_immodule_.28.3E_QT_4.0.0.29)
-        *   [4.3.1 Disabling QT IM modules (without uninstalling)](#Disabling_QT_IM_modules_.28without_uninstalling.29)
+        *   [4.2.1 Disabling GTK IM modules (without uninstalling)](#Disabling_GTK_IM_modules_(without_uninstalling))
+    *   [4.3 QT immodule (> QT 4.0.0)](#QT_immodule_(>_QT_4.0.0))
+        *   [4.3.1 Disabling QT IM modules (without uninstalling)](#Disabling_QT_IM_modules_(without_uninstalling))
 *   [5 See also](#See_also)
 
 ## Fonts

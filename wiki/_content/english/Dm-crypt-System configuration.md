@@ -1,4 +1,4 @@
-**Tip:** If in need to remotely unlock root or other early-boot filesystems (headless machine, distant servers...), follow the specific instructions from [dm-crypt/Specialties#Remote unlocking of the root (or other) partition](/index.php/Dm-crypt/Specialties#Remote_unlocking_of_the_root_.28or_other.29_partition "Dm-crypt/Specialties").
+**Tip:** If in need to remotely unlock root or other early-boot filesystems (headless machine, distant servers...), follow the specific instructions from [dm-crypt/Specialties#Remote unlocking of the root (or other) partition](/index.php/Dm-crypt/Specialties#Remote_unlocking_of_the_root_(or_other)_partition "Dm-crypt/Specialties").
 
 ## Contents
 
@@ -23,7 +23,7 @@
         *   [3.1.1 Mounting a stacked blockdevice](#Mounting_a_stacked_blockdevice)
     *   [3.2 Mounting on demand](#Mounting_on_demand)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 System stuck on boot/password prompt does not show](#System_stuck_on_boot.2Fpassword_prompt_does_not_show)
+    *   [4.1 System stuck on boot/password prompt does not show](#System_stuck_on_boot/password_prompt_does_not_show)
 
 ## mkinitcpio
 

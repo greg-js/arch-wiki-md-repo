@@ -9,9 +9,9 @@
 *   [1 Seguridad](#Seguridad)
     *   [1.1 Cortafuegos](#Cortafuegos)
     *   [1.2 Seguridad de la red](#Seguridad_de_la_red)
-    *   [1.3 Detección de amenazas y vulnerabilidades](#Detecci.C3.B3n_de_amenazas_y_vulnerabilidades)
+    *   [1.3 Detección de amenazas y vulnerabilidades](#Detección_de_amenazas_y_vulnerabilidades)
     *   [1.4 Seguridad de los archivos](#Seguridad_de_los_archivos)
-    *   [1.5 Aplicaciones para realizar copias de respaldo (backup)](#Aplicaciones_para_realizar_copias_de_respaldo_.28backup.29)
+    *   [1.5 Aplicaciones para realizar copias de respaldo (backup)](#Aplicaciones_para_realizar_copias_de_respaldo_(backup))
     *   [1.6 Aplicaciones para bloquear la pantalla](#Aplicaciones_para_bloquear_la_pantalla)
 
 ## Seguridad

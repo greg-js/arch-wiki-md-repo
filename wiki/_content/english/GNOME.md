@@ -31,7 +31,7 @@ Related articles
     *   [6.1 System settings](#System_settings)
         *   [6.1.1 Color](#Color)
         *   [6.1.2 Night Light](#Night_Light)
-        *   [6.1.3 Date & time](#Date_.26_time)
+        *   [6.1.3 Date & time](#Date_&_time)
         *   [6.1.4 Default applications](#Default_applications)
         *   [6.1.5 Mouse and touchpad](#Mouse_and_touchpad)
         *   [6.1.6 Network](#Network)

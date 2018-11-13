@@ -7,11 +7,11 @@ The author of cdist is also using Arch Linux as a target distribution and has so
 *   [1 Preparation](#Preparation)
 *   [2 How to use the types](#How_to_use_the_types)
 *   [3 Type overview](#Type_overview)
-*   [4 Managed Desktop (__nico_managed_desktop)](#Managed_Desktop_.28_nico_managed_desktop.29)
-*   [5 Notebook (__nico_notebook)](#Notebook_.28_nico_notebook.29)
-*   [6 Dos gaming station (__nico_dosbox)](#Dos_gaming_station_.28_nico_dosbox.29)
-*   [7 Multimedia Support (__nico_media)](#Multimedia_Support_.28_nico_media.29)
-*   [8 User based network configuration (__nico_network_user_based)](#User_based_network_configuration_.28_nico_network_user_based.29)
+*   [4 Managed Desktop (__nico_managed_desktop)](#Managed_Desktop_(_nico_managed_desktop))
+*   [5 Notebook (__nico_notebook)](#Notebook_(_nico_notebook))
+*   [6 Dos gaming station (__nico_dosbox)](#Dos_gaming_station_(_nico_dosbox))
+*   [7 Multimedia Support (__nico_media)](#Multimedia_Support_(_nico_media))
+*   [8 User based network configuration (__nico_network_user_based)](#User_based_network_configuration_(_nico_network_user_based))
 
 ## Preparation
 

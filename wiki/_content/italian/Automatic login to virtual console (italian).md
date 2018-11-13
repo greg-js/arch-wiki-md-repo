@@ -65,4 +65,4 @@ Per killare X e prevenirne l'immediato ricaricamento, stoppare il servizio `auto
 
 ### Vedere anche
 
-*   [Cambiare il runlevel/target predefinito all'avvio](/index.php/Systemd_(Italiano)#Cambiare_il_target_predefinito_all.27avvio "Systemd (Italiano)").)
+*   [Cambiare il runlevel/target predefinito all'avvio](/index.php/Systemd_(Italiano)#Cambiare_il_target_predefinito_all'avvio "Systemd (Italiano)").)

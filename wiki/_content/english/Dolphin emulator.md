@@ -8,13 +8,13 @@ Dolphin is a Nintendo GameCube and Wii emulator, currently supporting the x86_64
     *   [2.2 Graphics section](#Graphics_section)
     *   [2.3 DSP section](#DSP_section)
 *   [3 Playing](#Playing)
-    *   [3.1 Dolphin's Wiki](#Dolphin.27s_Wiki)
+    *   [3.1 Dolphin's Wiki](#Dolphin's_Wiki)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Incompatibility with Wayland](#Incompatibility_with_Wayland)
-    *   [4.2 Launching games fails with "WriteRest Op" error](#Launching_games_fails_with_.22WriteRest_Op.22_error)
+    *   [4.2 Launching games fails with "WriteRest Op" error](#Launching_games_fails_with_"WriteRest_Op"_error)
     *   [4.3 Games play too fast](#Games_play_too_fast)
     *   [4.4 Emulation is too slow](#Emulation_is_too_slow)
-    *   [4.5 Games frequently stutter on first playthrough, but subsequent runs are smooth](#Games_frequently_stutter_on_first_playthrough.2C_but_subsequent_runs_are_smooth)
+    *   [4.5 Games frequently stutter on first playthrough, but subsequent runs are smooth](#Games_frequently_stutter_on_first_playthrough,_but_subsequent_runs_are_smooth)
 *   [5 See also](#See_also)
 
 ## Installation

@@ -9,20 +9,20 @@ Los nombres de los «locales» `(configuración regional)` se definen utilizando
 
 ## Contents
 
-*   [1 Activar el «locale» necesario](#Activar_el_.C2.ABlocale.C2.BB_necesario)
-    *   [1.1 Ejemplo ES Español](#Ejemplo_ES_Espa.C3.B1ol)
-*   [2 Configuración del locale de todo el sistema](#Configuraci.C3.B3n_del_locale_de_todo_el_sistema)
-*   [3 Configuración de locales de reserva](#Configuraci.C3.B3n_de_locales_de_reserva)
-*   [4 Configuración de locales de usuarios](#Configuraci.C3.B3n_de_locales_de_usuarios)
-    *   [4.1 Establecer la configuración regional en el archivo de inicio de la shell](#Establecer_la_configuraci.C3.B3n_regional_en_el_archivo_de_inicio_de_la_shell)
-    *   [4.2 Establecer la configuración regional en .locale.conf](#Establecer_la_configuraci.C3.B3n_regional_en_.locale.conf)
-*   [5 Configuración de la intercalación](#Configuraci.C3.B3n_de_la_intercalaci.C3.B3n)
-*   [6 Configuración del primer día de la semana](#Configuraci.C3.B3n_del_primer_d.C3.ADa_de_la_semana)
-*   [7 Solución de problemas](#Soluci.C3.B3n_de_problemas)
+*   [1 Activar el «locale» necesario](#Activar_el_«locale»_necesario)
+    *   [1.1 Ejemplo ES Español](#Ejemplo_ES_Español)
+*   [2 Configuración del locale de todo el sistema](#Configuración_del_locale_de_todo_el_sistema)
+*   [3 Configuración de locales de reserva](#Configuración_de_locales_de_reserva)
+*   [4 Configuración de locales de usuarios](#Configuración_de_locales_de_usuarios)
+    *   [4.1 Establecer la configuración regional en el archivo de inicio de la shell](#Establecer_la_configuración_regional_en_el_archivo_de_inicio_de_la_shell)
+    *   [4.2 Establecer la configuración regional en .locale.conf](#Establecer_la_configuración_regional_en_.locale.conf)
+*   [5 Configuración de la intercalación](#Configuración_de_la_intercalación)
+*   [6 Configuración del primer día de la semana](#Configuración_del_primer_día_de_la_semana)
+*   [7 Solución de problemas](#Solución_de_problemas)
     *   [7.1 Mi terminal no es compatible con UTF-8](#Mi_terminal_no_es_compatible_con_UTF-8)
         *   [7.1.1 Xterm no es compatible con UTF-8](#Xterm_no_es_compatible_con_UTF-8)
         *   [7.1.2 Gnome-terminal o rxvt-unicode no es compatible con UTF-8](#Gnome-terminal_o_rxvt-unicode_no_es_compatible_con_UTF-8)
-*   [8 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [8 Véase también](#Véase_también)
 
 ## Activar el «locale» necesario
 

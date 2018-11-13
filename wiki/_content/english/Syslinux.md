@@ -29,8 +29,8 @@ Related articles
     *   [3.3 Auto boot](#Auto_boot)
     *   [3.4 Security](#Security)
     *   [3.5 Chainloading](#Chainloading)
-        *   [3.5.1 Chainloading a partition's VBR](#Chainloading_a_partition.27s_VBR)
-        *   [3.5.2 Chainloading a disk's MBR](#Chainloading_a_disk.27s_MBR)
+        *   [3.5.1 Chainloading a partition's VBR](#Chainloading_a_partition's_VBR)
+        *   [3.5.2 Chainloading a disk's MBR](#Chainloading_a_disk's_MBR)
         *   [3.5.3 Chainloading other boot loaders](#Chainloading_other_boot_loaders)
         *   [3.5.4 Chainloading other Linux systems](#Chainloading_other_Linux_systems)
     *   [3.6 Using memtest](#Using_memtest)
@@ -49,11 +49,11 @@ Related articles
     *   [4.3 Fsck fails on root partition](#Fsck_fails_on_root_partition)
     *   [4.4 No Default or UI found on some computers](#No_Default_or_UI_found_on_some_computers)
     *   [4.5 Missing operating system](#Missing_operating_system)
-    *   [4.6 Windows boots up, ignoring Syslinux](#Windows_boots_up.2C_ignoring_Syslinux)
+    *   [4.6 Windows boots up, ignoring Syslinux](#Windows_boots_up,_ignoring_Syslinux)
     *   [4.7 Menu entries do nothing](#Menu_entries_do_nothing)
     *   [4.8 Cannot remove ldlinux.sys](#Cannot_remove_ldlinux.sys)
     *   [4.9 White block in upper left corner when using vesamenu](#White_block_in_upper_left_corner_when_using_vesamenu)
-    *   [4.10 Chainloading Windows does not work, when it is installed on another drive](#Chainloading_Windows_does_not_work.2C_when_it_is_installed_on_another_drive)
+    *   [4.10 Chainloading Windows does not work, when it is installed on another drive](#Chainloading_Windows_does_not_work,_when_it_is_installed_on_another_drive)
     *   [4.11 Read bootloader log](#Read_bootloader_log)
     *   [4.12 Btrfs compression](#Btrfs_compression)
     *   [4.13 Btrfs multi-device](#Btrfs_multi-device)
@@ -152,7 +152,7 @@ Alternatively, for a FAT boot partition use *syslinux*, where the device is **un
 
 ```
 
-After this, proceed to install the Syslinux boot code (`mbr.bin` or `gptmbr.bin`) to the [Master Boot Record 440-byte boot code region](/index.php/Partitioning#Master_Boot_Record_.28bootstrap_code.29 "Partitioning") (not to be confused with [MBR aka msdos partition table](/index.php/Partitioning#Master_Boot_Record_.28partition_table.29 "Partitioning")) of the disk, as described in the next sections, respectively.
+After this, proceed to install the Syslinux boot code (`mbr.bin` or `gptmbr.bin`) to the [Master Boot Record 440-byte boot code region](/index.php/Partitioning#Master_Boot_Record_(bootstrap_code) "Partitioning") (not to be confused with [MBR aka msdos partition table](/index.php/Partitioning#Master_Boot_Record_(partition_table) "Partitioning")) of the disk, as described in the next sections, respectively.
 
 **Note:** For a partitionless install, there is no need to install the Syslinux boot code to the MBR. You could skip below and jump to [#Configuration](#Configuration). See [[2]](https://unix.stackexchange.com/questions/103501/boot-partiotionless-disk-with-syslinux).
 

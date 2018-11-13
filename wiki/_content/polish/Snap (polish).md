@@ -10,15 +10,15 @@ Related articles
 
 *   [1 Instalacja](#Instalacja)
 *   [2 Konfiguracja](#Konfiguracja)
-*   [3 Użycie](#U.C5.BCycie)
+*   [3 Użycie](#Użycie)
     *   [3.1 Wyszukiwanie](#Wyszukiwanie)
     *   [3.2 Instalowanie](#Instalowanie)
     *   [3.3 Aktualizowanie](#Aktualizowanie)
     *   [3.4 Usuwanie](#Usuwanie)
-*   [4 Wskazówki i porady](#Wskaz.C3.B3wki_i_porady)
+*   [4 Wskazówki i porady](#Wskazówki_i_porady)
     *   [4.1 Klasyczne snapy](#Klasyczne_snapy)
 *   [5 Wsparcie](#Wsparcie)
-*   [6 Zobacz również](#Zobacz_r.C3.B3wnie.C5.BC)
+*   [6 Zobacz również](#Zobacz_również)
 
 ## Instalacja
 

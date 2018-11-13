@@ -32,7 +32,7 @@ This page contains recommendations for running Arch Linux on the Dell XPS 15 956
         *   [3.1.1 bbswitch method](#bbswitch_method)
         *   [3.1.2 acpi_call method](#acpi_call_method)
     *   [3.2 Standard power saving configuration](#Standard_power_saving_configuration)
-    *   [3.3 Disable/autosuspend of touchscreen](#Disable.2Fautosuspend_of_touchscreen)
+    *   [3.3 Disable/autosuspend of touchscreen](#Disable/autosuspend_of_touchscreen)
     *   [3.4 Enable NVME APST](#Enable_NVME_APST)
     *   [3.5 Enable power saving features for the i915 kernel module](#Enable_power_saving_features_for_the_i915_kernel_module)
     *   [3.6 Wifi and Bluetooth](#Wifi_and_Bluetooth)

@@ -14,21 +14,21 @@ Em todos os itens a seguir, apenas o Arch Linux é comparado com outras distribu
 
 ## Contents
 
-*   [1 Baseados em código-fonte](#Baseados_em_c.C3.B3digo-fonte)
+*   [1 Baseados em código-fonte](#Baseados_em_código-fonte)
     *   [1.1 CRUX](#CRUX)
     *   [1.2 LFS](#LFS)
-    *   [1.3 Gentoo/Funtoo Linux](#Gentoo.2FFuntoo_Linux)
+    *   [1.3 Gentoo/Funtoo Linux](#Gentoo/Funtoo_Linux)
 *   [2 Geral](#Geral)
     *   [2.1 Debian](#Debian)
     *   [2.2 Fedora](#Fedora)
     *   [2.3 Slackware](#Slackware)
-*   [3 Amigáveis para iniciantes](#Amig.C3.A1veis_para_iniciantes)
+*   [3 Amigáveis para iniciantes](#Amigáveis_para_iniciantes)
     *   [3.1 Ubuntu](#Ubuntu)
     *   [3.2 Linux Mint](#Linux_Mint)
     *   [3.3 openSUSE](#openSUSE)
-    *   [3.4 Mandriva/Mageia](#Mandriva.2FMageia)
+    *   [3.4 Mandriva/Mageia](#Mandriva/Mageia)
 *   [4 Os BSDs](#Os_BSDs)
-*   [5 Veja também](#Veja_tamb.C3.A9m)
+*   [5 Veja também](#Veja_também)
 
 ## Baseados em código-fonte
 
@@ -56,7 +56,7 @@ As distribuições baseadas em fontes são altamente portáteis, proporcionando 
 *   Tanto o Arch Linux quanto o [Gentoo Linux](https://gentoo.org/) são sistemas de lançamento contínuo (*rolling release*), tornando os pacotes disponíveis para a distribuição um curto período de tempo depois que eles são lançados pelo *upstream*.
 *   Os pacotes e o sistema base do Gentoo são construídos diretamente do código-fonte de acordo com os "USE flags" especificados pelo usuário. O Arch fornece um sistema tipo *ports* para criar pacotes a partir do fonte, embora o sistema base do Arch seja projetado para ser instalado como binário em x86_64 pré-compilado. Isso geralmente torna o Arch mais rápido para compilar e atualizar, e permite que o Gentoo seja mais sistematicamente personalizável.
 *   O Arch apenas oferece suporte a x86_64 enquanto o Gentoo oferece suporte oficialmente às arquiteturas x86 (i486/i686), x86_64, PPC/PPC64, SPARC, Alpha, ARM, MIPS, HPPA, S/390 e Itanium.
-*   O pacote oficial do Gentoo e as ferramentas de gerenciamento de sistema tendem a ser bastante mais complexas e "poderosas" do que as fornecidas pelo Arch, e certas características que estão no coração do Gentoo *([USE flags](https://wiki.gentoo.org/wiki/Handbook:X86/Working/USE), [SLOTs](https://wiki.gentoo.org/wiki/Handbook:X86/Working/Portage#Terminology), etc.)* não possui nenhum equivalente direto do Arch Linux. Parte disso é devido ao fato de que o Arch é principalmente uma distro binária, mas as diferenças na [filosofia do design](/index.php/Arch_Linux_(Portugu%C3%AAs)#Princ.C3.ADpios "Arch Linux (Português)") também desempenham um papel importante, com o Arch assumindo uma posição mais baseada em princípios em favor da simplicidade arquitetural e evitando excesso de engenharia.
+*   O pacote oficial do Gentoo e as ferramentas de gerenciamento de sistema tendem a ser bastante mais complexas e "poderosas" do que as fornecidas pelo Arch, e certas características que estão no coração do Gentoo *([USE flags](https://wiki.gentoo.org/wiki/Handbook:X86/Working/USE), [SLOTs](https://wiki.gentoo.org/wiki/Handbook:X86/Working/Portage#Terminology), etc.)* não possui nenhum equivalente direto do Arch Linux. Parte disso é devido ao fato de que o Arch é principalmente uma distro binária, mas as diferenças na [filosofia do design](/index.php/Arch_Linux_(Portugu%C3%AAs)#Princípios "Arch Linux (Português)") também desempenham um papel importante, com o Arch assumindo uma posição mais baseada em princípios em favor da simplicidade arquitetural e evitando excesso de engenharia.
 *   Como ambas as instalações do Gentoo e Arch incluem apenas um sistema base, ambos são considerados altamente personalizáveis. Se confortáveis com [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)"), os usuários do Gentoo também se sentirão geralmente à vontade com a maioria dos outros aspectos do Arch.
 
 ## Geral

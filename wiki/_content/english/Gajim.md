@@ -4,11 +4,11 @@
 
 *   [1 Installation](#Installation)
 *   [2 D-Bus remote control](#D-Bus_remote_control)
-*   [3 Show/hide roster](#Show.2Fhide_roster)
+*   [3 Show/hide roster](#Show/hide_roster)
 *   [4 OMEMO Support](#OMEMO_Support)
     *   [4.1 Configuration](#Configuration)
 *   [5 Off-the-Record Messaging](#Off-the-Record_Messaging)
-    *   [5.1 Installation / Configuration](#Installation_.2F_Configuration)
+    *   [5.1 Installation / Configuration](#Installation_/_Configuration)
     *   [5.2 gajim-otr version confusions](#gajim-otr_version_confusions)
 
 ## Installation

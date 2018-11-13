@@ -1,10 +1,10 @@
 ## Contents
 
 *   [1 About](#About)
-*   [2 Template (Package list)](#Template_.28Package_list.29)
+*   [2 Template (Package list)](#Template_(Package_list))
     *   [2.1 Candidates](#Candidates)
     *   [2.2 Possible reasons](#Possible_reasons)
-*   [3 Template (TU)](#Template_.28TU.29)
+*   [3 Template (TU)](#Template_(TU))
     *   [3.1 Packages to Remove](#Packages_to_Remove)
     *   [3.2 Packages to Keep](#Packages_to_Keep)
     *   [3.3 Possible reasons](#Possible_reasons_2)
@@ -38,9 +38,6 @@ Check for the package in the sorted lists below before adding.
 *   [a2jmidid-git](https://aur.archlinux.org/packages/a2jmidid-git/) - [a2midid](https://www.archlinux.org/packages/?name=a2midid) is available and seems to be newer than the last commit in git. Old and unmaintained developmental (cvs/svn/etc) package (last commit from 2013-11-26, upstream URL is dead, note: manually git-clones repo instad of using the source list.)
 *   [abook-git](https://aur.archlinux.org/packages/abook-git/) - error: access denied or repository not exported” for the repo specified in PKGBUILD
 *   [attic](https://aur.archlinux.org/packages/attic/) - Project dead, see [borg](https://www.archlinux.org/packages/?name=borg) fork
-
-<--[Obsoleted by --assumed-installed](https://lists.archlinux.org/pipermail/aur-requests/2017-June/017483.html)-->
-
 *   [akonadi-fake](https://aur.archlinux.org/packages/akonadi-fake/)
 *   [asciidoc-fake](https://aur.archlinux.org/packages/asciidoc-fake/)
 *   [kalzium-fake](https://aur.archlinux.org/packages/kalzium-fake/)

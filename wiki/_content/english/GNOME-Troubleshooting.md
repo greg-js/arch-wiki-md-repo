@@ -5,7 +5,7 @@ See [GNOME](/index.php/GNOME "GNOME") for the main article.
 *   [1 Shell freezes](#Shell_freezes)
 *   [2 Shell segfaults](#Shell_segfaults)
 *   [3 Incorrect application defaults](#Incorrect_application_defaults)
-*   [4 Tracker & Documents do not list any local files](#Tracker_.26_Documents_do_not_list_any_local_files)
+*   [4 Tracker & Documents do not list any local files](#Tracker_&_Documents_do_not_list_any_local_files)
 *   [5 Unable to add accounts in Empathy and GNOME Online Accounts](#Unable_to_add_accounts_in_Empathy_and_GNOME_Online_Accounts)
 *   [6 Empathy does not use GNOME Online Accounts](#Empathy_does_not_use_GNOME_Online_Accounts)
 *   [7 GNOME Online Accounts settings page does not show properly](#GNOME_Online_Accounts_settings_page_does_not_show_properly)
@@ -15,8 +15,8 @@ See [GNOME](/index.php/GNOME "GNOME") for the main article.
 *   [11 Keyboard shortcut do not work with only conky running](#Keyboard_shortcut_do_not_work_with_only_conky_running)
 *   [12 Unable to apply stored configuration for monitors](#Unable_to_apply_stored_configuration_for_monitors)
 *   [13 Consistent cursor theme](#Consistent_cursor_theme)
-*   [14 Windows cannot be modified with Alt-Key + mouse-button](#Windows_cannot_be_modified_with_Alt-Key_.2B_mouse-button)
-*   [15 Slow loading of system icons/slow GDM login](#Slow_loading_of_system_icons.2Fslow_GDM_login)
+*   [14 Windows cannot be modified with Alt-Key + mouse-button](#Windows_cannot_be_modified_with_Alt-Key_+_mouse-button)
+*   [15 Slow loading of system icons/slow GDM login](#Slow_loading_of_system_icons/slow_GDM_login)
 *   [16 Artifacts when maximizing windows](#Artifacts_when_maximizing_windows)
 *   [17 Tear-free video with Intel HD Graphics](#Tear-free_video_with_Intel_HD_Graphics)
 *   [18 Window opens behind other windows when using multiple monitors](#Window_opens_behind_other_windows_when_using_multiple_monitors)
@@ -27,13 +27,13 @@ See [GNOME](/index.php/GNOME "GNOME") for the main article.
 *   [23 PulseAudio system-wide causes delay in GNOME and GDM](#PulseAudio_system-wide_causes_delay_in_GNOME_and_GDM)
 *   [24 GNOME crashes when trying to reorder applications in the GNOME Shell Dash](#GNOME_crashes_when_trying_to_reorder_applications_in_the_GNOME_Shell_Dash)
 *   [25 Gnome Crashes while installing gnome-extra](#Gnome_Crashes_while_installing_gnome-extra)
-*   [26 No H264 Video in Gnome Video Player (Totem)](#No_H264_Video_in_Gnome_Video_Player_.28Totem.29)
+*   [26 No H264 Video in Gnome Video Player (Totem)](#No_H264_Video_in_Gnome_Video_Player_(Totem))
 *   [27 No suspend on LID closure](#No_suspend_on_LID_closure)
-*   [28 gnome-shell / gnome-session crashes on session startup](#gnome-shell_.2F_gnome-session_crashes_on_session_startup)
+*   [28 gnome-shell / gnome-session crashes on session startup](#gnome-shell_/_gnome-session_crashes_on_session_startup)
 *   [29 Low OpenGL performance and stuttering](#Low_OpenGL_performance_and_stuttering)
 *   [30 GNOME Wayland session not available](#GNOME_Wayland_session_not_available)
 *   [31 gnome-control-center is empty and does not list any categories](#gnome-control-center_is_empty_and_does_not_list_any_categories)
-*   [32 Gnome freezes for a second after using a Function (Fn) key shortcut](#Gnome_freezes_for_a_second_after_using_a_Function_.28Fn.29_key_shortcut)
+*   [32 Gnome freezes for a second after using a Function (Fn) key shortcut](#Gnome_freezes_for_a_second_after_using_a_Function_(Fn)_key_shortcut)
 
 ## Shell freezes
 
@@ -254,7 +254,7 @@ According to [this bug report](https://bugzilla.gnome.org/show_bug.cgi?id=711028
 
 	Intel TearFree
 
-Enabling the [Xorg Intel TearFree option](/index.php/Intel_graphics#Tear-free_video "Intel graphics") is a known workaround for tearing problems on Intel adapters. However, the way this option acts increases memory consumption and lowers performance, see [the original bug report's final comment](https://bugs.freedesktop.org/show_bug.cgi?id=37686#c123).
+Enabling the [Xorg Intel TearFree option](/index.php/Intel_graphics#Tearing "Intel graphics") is a known workaround for tearing problems on Intel adapters. However, the way this option acts increases memory consumption and lowers performance, see [the original bug report's final comment](https://bugs.freedesktop.org/show_bug.cgi?id=37686#c123).
 
 	Mutter tweaks
 

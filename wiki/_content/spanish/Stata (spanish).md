@@ -5,10 +5,10 @@ Este artículo es una traducción de [Stata](/index.php/Stata "Stata"), revisada
 
 ## Contents
 
-*   [1 Librerías necesarias](#Librer.C3.ADas_necesarias)
+*   [1 Librerías necesarias](#Librerías_necesarias)
 *   [2 Instalar Stata](#Instalar_Stata)
 *   [3 Consejos y trucos](#Consejos_y_trucos)
-*   [4 Solución de problemas](#Soluci.C3.B3n_de_problemas)
+*   [4 Solución de problemas](#Solución_de_problemas)
 
 ## Librerías necesarias
 
@@ -52,7 +52,7 @@ En una instalación predeterminada de Arch Linux, los iconos no se mostrarán si
 
 ## Consejos y trucos
 
-Para agregar Stata a su ruta, agregue lo siguiente al final de su ruta en su [bashrc](/index.php/Bashrc_(Espa%C3%B1ol)#Archivos_de_configuraci.C3.B3n "Bashrc (Español)"):
+Para agregar Stata a su ruta, agregue lo siguiente al final de su ruta en su [bashrc](/index.php/Bashrc_(Espa%C3%B1ol)#Archivos_de_configuración "Bashrc (Español)"):
 
  `~/.bashrc` 
 ```

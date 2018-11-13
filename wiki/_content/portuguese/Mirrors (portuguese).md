@@ -10,35 +10,35 @@ Esta página é um guia para selecionar e configurar seus espelhos e uma lista d
 
 *   [1 Espelhos oficiais](#Espelhos_oficiais)
     *   [1.1 Espelhos prontos para IPv6](#Espelhos_prontos_para_IPv6)
-*   [2 Habilitando um espelho específico](#Habilitando_um_espelho_espec.C3.ADfico)
-    *   [2.1 Forçar o pacman a renovar as listas de pacotes](#For.C3.A7ar_o_pacman_a_renovar_as_listas_de_pacotes)
+*   [2 Habilitando um espelho específico](#Habilitando_um_espelho_específico)
+    *   [2.1 Forçar o pacman a renovar as listas de pacotes](#Forçar_o_pacman_a_renovar_as_listas_de_pacotes)
 *   [3 Ordenando espelhos](#Ordenando_espelhos)
     *   [3.1 Listar por velocidade](#Listar_por_velocidade)
         *   [3.1.1 Classificando uma lista de espelhos existente](#Classificando_uma_lista_de_espelhos_existente)
         *   [3.1.2 Obtendo e classificando uma lista de espelho live](#Obtendo_e_classificando_uma_lista_de_espelho_live)
-    *   [3.2 Classificação do lado do servidor](#Classifica.C3.A7.C3.A3o_do_lado_do_servidor)
-*   [4 Solução de problemas](#Solu.C3.A7.C3.A3o_de_problemas)
-*   [5 Espelhos não oficiais](#Espelhos_n.C3.A3o_oficiais)
-    *   [5.1 Áustria](#.C3.81ustria)
-    *   [5.2 Canadá](#Canad.C3.A1)
+    *   [3.2 Classificação do lado do servidor](#Classificação_do_lado_do_servidor)
+*   [4 Solução de problemas](#Solução_de_problemas)
+*   [5 Espelhos não oficiais](#Espelhos_não_oficiais)
+    *   [5.1 Áustria](#Áustria)
+    *   [5.2 Canadá](#Canadá)
     *   [5.3 China](#China)
-    *   [5.4 França](#Fran.C3.A7a)
-    *   [5.5 Indonésia](#Indon.C3.A9sia)
-    *   [5.6 Irã](#Ir.C3.A3)
-    *   [5.7 Itália](#It.C3.A1lia)
-    *   [5.8 Japão](#Jap.C3.A3o)
-    *   [5.9 Malásia](#Mal.C3.A1sia)
+    *   [5.4 França](#França)
+    *   [5.5 Indonésia](#Indonésia)
+    *   [5.6 Irã](#Irã)
+    *   [5.7 Itália](#Itália)
+    *   [5.8 Japão](#Japão)
+    *   [5.9 Malásia](#Malásia)
     *   [5.10 Holanda](#Holanda)
-    *   [5.11 Nova Zelândia](#Nova_Zel.C3.A2ndia)
-    *   [5.12 Polônia](#Pol.C3.B4nia)
-    *   [5.13 Rússia](#R.C3.BAssia)
-    *   [5.14 África do Sul](#.C3.81frica_do_Sul)
-    *   [5.15 Suécia](#Su.C3.A9cia)
-    *   [5.16 Tailândia](#Tail.C3.A2ndia)
+    *   [5.11 Nova Zelândia](#Nova_Zelândia)
+    *   [5.12 Polônia](#Polônia)
+    *   [5.13 Rússia](#Rússia)
+    *   [5.14 África do Sul](#África_do_Sul)
+    *   [5.15 Suécia](#Suécia)
+    *   [5.16 Tailândia](#Tailândia)
     *   [5.17 Turquia](#Turquia)
     *   [5.18 Estados Unidos](#Estados_Unidos)
-    *   [5.19 Sourceforge (ISOs antigas)](#Sourceforge_.28ISOs_antigas.29)
-*   [6 Veja também](#Veja_tamb.C3.A9m)
+    *   [5.19 Sourceforge (ISOs antigas)](#Sourceforge_(ISOs_antigas))
+*   [6 Veja também](#Veja_também)
 
 ## Espelhos oficiais
 
@@ -46,7 +46,7 @@ A lista de espelhos oficial do Arch Linux está disponível no pacote [pacman-mi
 
 Verifique o status dos espelhos do Arch visitando a página [Mirror Status](https://www.archlinux.org/mirrors/status/). É recomendável usar apenas espelhos atualizados, ou seja, não fora de sincronia.
 
-Se você quiser que o seu espelho seja adicionado à lista oficial, veja [DeveloperWiki:NewMirrors](/index.php/DeveloperWiki:NewMirrors "DeveloperWiki:NewMirrors"). Enquanto isso, adicione-o à lista [#Espelhos não oficiais](#Espelhos_n.C3.A3o_oficiais) no final desta página.
+Se você quiser que o seu espelho seja adicionado à lista oficial, veja [DeveloperWiki:NewMirrors](/index.php/DeveloperWiki:NewMirrors "DeveloperWiki:NewMirrors"). Enquanto isso, adicione-o à lista [#Espelhos não oficiais](#Espelhos_não_oficiais) no final desta página.
 
 ### Espelhos prontos para IPv6
 

@@ -12,7 +12,7 @@
         *   [3.1.1 Usare uno script](#Usare_uno_script)
             *   [3.1.1.1 Doppio schermo senza Xinerama](#Doppio_schermo_senza_Xinerama)
         *   [3.1.2 Usare cron](#Usare_cron)
-        *   [3.1.3 Usare systemd/user](#Usare_systemd.2Fuser)
+        *   [3.1.3 Usare systemd/user](#Usare_systemd/user)
 *   [4 See also](#See_also)
 
 ## Installazione

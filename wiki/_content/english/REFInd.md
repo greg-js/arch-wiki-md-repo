@@ -37,7 +37,7 @@ Related articles
         *   [5.3.1 HashTool](#HashTool)
         *   [5.3.2 MokManager](#MokManager)
         *   [5.3.3 KeyTool](#KeyTool)
-    *   [5.4 GPT fdisk (gdisk)](#GPT_fdisk_.28gdisk.29)
+    *   [5.4 GPT fdisk (gdisk)](#GPT_fdisk_(gdisk))
     *   [5.5 iPXE](#iPXE)
     *   [5.6 fwupdate](#fwupdate)
 *   [6 Tips and tricks](#Tips_and_tricks)
@@ -391,7 +391,7 @@ rEFInd supports running various [3rd-party tools](https://www.rodsbooks.com/refi
  `*esp*/EFI/refind/refind.conf` 
 ```
 ...
-showtools [shell](#UEFI_shell), [memtest](#Memtest86), [mok_tool](#Key_management_tools), [gdisk](#GPT_fdisk_.28gdisk.29), [netboot](#iPXE), [fwupdate](#fwupdate) ...
+showtools [shell](#UEFI_shell), [memtest](#Memtest86), [mok_tool](#Key_management_tools), [gdisk](#GPT_fdisk_(gdisk)), [netboot](#iPXE), [fwupdate](#fwupdate) ...
 ...
 
 ```

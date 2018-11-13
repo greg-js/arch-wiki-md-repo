@@ -3,9 +3,9 @@ Artículos relacionados
 *   [xinitrc](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)")
 
 **Estado de la traducción**
-Este artículo es una traducción de [xprofile](/index.php/Xprofile "Xprofile"), revisada por última vez el **2018-11-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Xprofile&diff=0&oldid=540305) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [xprofile](/index.php/Xprofile "Xprofile"), revisada por última vez el **2018-11-11**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Xprofile&diff=0&oldid=540305) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
-Un archivo xprofile, `~/.xprofile` y `/etc/xprofile`, le permite ejecutar comandos al inicio de sesión del usuario X - antes de que se inicie el [gestor de ventanas](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)") .
+Un archivo xprofile, `~/.xprofile` y `/etc/xprofile`, le permite ejecutar comandos al inicio de la sesión de X user - antes de que se inicie el [gestor de ventanas](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)") .
 
 El archivo xprofile es similar en estilo a [xinitrc](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)").
 
@@ -27,7 +27,7 @@ Es posible cargar xprofile desde una sesión iniciada con uno de los siguientes 
 *   [XDM](/index.php/XDM "XDM")
 *   Cualquier otro [gesto de pantalla](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)") que utilize `~/.xsession` o `~/.xinitrc`
 
-Todos estos ejecutan, directa o indirectamente, `~/.xinitrc` o `/etc/X11/xinit/xinitrc` si no existe. Es por eso que xprofile tiene que ser cargado de estos archivos.
+Todos estos ejecutan, directa o indirectamente, `~/.xinitrc` o `/etc/X11/xinit/xinitrc` si no existe. Es por eso que xprofile tiene que ser cargado desde estos archivos.
 
  `~/.xinitrc and /etc/X11/xinit/xinitrc` 
 ```

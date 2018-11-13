@@ -15,15 +15,15 @@ Related articles
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Mount helpers](#Mount_helpers)
         *   [4.1.1 udevadm monitor](#udevadm_monitor)
-    *   [4.2 Mount to /media (udisks2)](#Mount_to_.2Fmedia_.28udisks2.29)
+    *   [4.2 Mount to /media (udisks2)](#Mount_to_/media_(udisks2))
     *   [4.3 Mount loop devices](#Mount_loop_devices)
     *   [4.4 Hide selected partitions](#Hide_selected_partitions)
         *   [4.4.1 Example](#Example)
-    *   [4.5 Apply ATA settings (udisks2)](#Apply_ATA_settings_.28udisks2.29)
+    *   [4.5 Apply ATA settings (udisks2)](#Apply_ATA_settings_(udisks2))
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Hidden devices (udisks2)](#Hidden_devices_.28udisks2.29)
-    *   [5.2 Devices do not remain unmounted (udisks)](#Devices_do_not_remain_unmounted_.28udisks.29)
-    *   [5.3 Broken standby timer (udisks2)](#Broken_standby_timer_.28udisks2.29)
+    *   [5.1 Hidden devices (udisks2)](#Hidden_devices_(udisks2))
+    *   [5.2 Devices do not remain unmounted (udisks)](#Devices_do_not_remain_unmounted_(udisks))
+    *   [5.3 Broken standby timer (udisks2)](#Broken_standby_timer_(udisks2))
 *   [6 See also](#See_also)
 
 ## Installation
@@ -225,7 +225,7 @@ See [udisks(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/udisks.8) for more in
 
 The udisks daemon polls [S.M.A.R.T.](/index.php/S.M.A.R.T. "S.M.A.R.T.") data from drives regularly. Hard drives with a longer standby timeout than the polling interval may fail to enter standby. Drives that are already spun down are usually not affected. There seems no way to disable polling or change the interval as for [udisks2](https://www.archlinux.org/packages/?name=udisks2) by now. See [[5]](https://bugs.launchpad.net/ubuntu/+source/udisks2/+bug/1281588), [[6]](https://bugs.freedesktop.org/show_bug.cgi?id=26508).
 
-However, Standby timeout applied by udisks2 seems to be unaffected. To set standby timeout via udisks, see [#Apply ATA settings (udisks2)](#Apply_ATA_settings_.28udisks2.29).
+However, Standby timeout applied by udisks2 seems to be unaffected. To set standby timeout via udisks, see [#Apply ATA settings (udisks2)](#Apply_ATA_settings_(udisks2)).
 
 Other possible workarounds could be setting the timeout below the polling interval (10 minutes) or forcing a manaul spindown using `hdparm -y /dev/*sdx*`.
 

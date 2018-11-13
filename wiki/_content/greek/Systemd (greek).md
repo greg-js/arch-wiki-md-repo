@@ -16,37 +16,37 @@
 
 ## Contents
 
-*   [1 Βασική χρήση της εντολής systemctl](#.CE.92.CE.B1.CF.83.CE.B9.CE.BA.CE.AE_.CF.87.CF.81.CE.AE.CF.83.CE.B7_.CF.84.CE.B7.CF.82_.CE.B5.CE.BD.CF.84.CE.BF.CE.BB.CE.AE.CF.82_systemctl)
-    *   [1.1 Αναλύοντας την κατάσταση του συστήματος](#.CE.91.CE.BD.CE.B1.CE.BB.CF.8D.CE.BF.CE.BD.CF.84.CE.B1.CF.82_.CF.84.CE.B7.CE.BD_.CE.BA.CE.B1.CF.84.CE.AC.CF.83.CF.84.CE.B1.CF.83.CE.B7_.CF.84.CE.BF.CF.85_.CF.83.CF.85.CF.83.CF.84.CE.AE.CE.BC.CE.B1.CF.84.CE.BF.CF.82)
-    *   [1.2 Χρησιμοποιώντας τις μονάδες (units)](#.CE.A7.CF.81.CE.B7.CF.83.CE.B9.CE.BC.CE.BF.CF.80.CE.BF.CE.B9.CF.8E.CE.BD.CF.84.CE.B1.CF.82_.CF.84.CE.B9.CF.82_.CE.BC.CE.BF.CE.BD.CE.AC.CE.B4.CE.B5.CF.82_.28units.29)
-    *   [1.3 Διαχείριση ενέργειας](#.CE.94.CE.B9.CE.B1.CF.87.CE.B5.CE.AF.CF.81.CE.B9.CF.83.CE.B7_.CE.B5.CE.BD.CE.AD.CF.81.CE.B3.CE.B5.CE.B9.CE.B1.CF.82)
-*   [2 Γράφοντας προσαρμοσμένα .service files](#.CE.93.CF.81.CE.AC.CF.86.CE.BF.CE.BD.CF.84.CE.B1.CF.82_.CF.80.CF.81.CE.BF.CF.83.CE.B1.CF.81.CE.BC.CE.BF.CF.83.CE.BC.CE.AD.CE.BD.CE.B1_.service_files)
-    *   [2.1 Χειρισμός εξαρτήσεων](#.CE.A7.CE.B5.CE.B9.CF.81.CE.B9.CF.83.CE.BC.CF.8C.CF.82_.CE.B5.CE.BE.CE.B1.CF.81.CF.84.CE.AE.CF.83.CE.B5.CF.89.CE.BD)
-    *   [2.2 Είδος](#.CE.95.CE.AF.CE.B4.CE.BF.CF.82)
-    *   [2.3 Επεξεργασία σε παρεχόμενα αρχεία μονάδων](#.CE.95.CF.80.CE.B5.CE.BE.CE.B5.CF.81.CE.B3.CE.B1.CF.83.CE.AF.CE.B1_.CF.83.CE.B5_.CF.80.CE.B1.CF.81.CE.B5.CF.87.CF.8C.CE.BC.CE.B5.CE.BD.CE.B1_.CE.B1.CF.81.CF.87.CE.B5.CE.AF.CE.B1_.CE.BC.CE.BF.CE.BD.CE.AC.CE.B4.CF.89.CE.BD)
-    *   [2.4 Επισήμανση σύνταξης για μονάδες με τον Vim](#.CE.95.CF.80.CE.B9.CF.83.CE.AE.CE.BC.CE.B1.CE.BD.CF.83.CE.B7_.CF.83.CF.8D.CE.BD.CF.84.CE.B1.CE.BE.CE.B7.CF.82_.CE.B3.CE.B9.CE.B1_.CE.BC.CE.BF.CE.BD.CE.AC.CE.B4.CE.B5.CF.82_.CE.BC.CE.B5_.CF.84.CE.BF.CE.BD_Vim)
+*   [1 Βασική χρήση της εντολής systemctl](#Βασική_χρήση_της_εντολής_systemctl)
+    *   [1.1 Αναλύοντας την κατάσταση του συστήματος](#Αναλύοντας_την_κατάσταση_του_συστήματος)
+    *   [1.2 Χρησιμοποιώντας τις μονάδες (units)](#Χρησιμοποιώντας_τις_μονάδες_(units))
+    *   [1.3 Διαχείριση ενέργειας](#Διαχείριση_ενέργειας)
+*   [2 Γράφοντας προσαρμοσμένα .service files](#Γράφοντας_προσαρμοσμένα_.service_files)
+    *   [2.1 Χειρισμός εξαρτήσεων](#Χειρισμός_εξαρτήσεων)
+    *   [2.2 Είδος](#Είδος)
+    *   [2.3 Επεξεργασία σε παρεχόμενα αρχεία μονάδων](#Επεξεργασία_σε_παρεχόμενα_αρχεία_μονάδων)
+    *   [2.4 Επισήμανση σύνταξης για μονάδες με τον Vim](#Επισήμανση_σύνταξης_για_μονάδες_με_τον_Vim)
 *   [3 Targets](#Targets)
-    *   [3.1 Δείτε τα τρέχοντα targets](#.CE.94.CE.B5.CE.AF.CF.84.CE.B5_.CF.84.CE.B1_.CF.84.CF.81.CE.AD.CF.87.CE.BF.CE.BD.CF.84.CE.B1_targets)
-    *   [3.2 Δημιουργία προσαρμοσμένου target](#.CE.94.CE.B7.CE.BC.CE.B9.CE.BF.CF.85.CF.81.CE.B3.CE.AF.CE.B1_.CF.80.CF.81.CE.BF.CF.83.CE.B1.CF.81.CE.BC.CE.BF.CF.83.CE.BC.CE.AD.CE.BD.CE.BF.CF.85_target)
-    *   [3.3 Πίνακας Targets](#.CE.A0.CE.AF.CE.BD.CE.B1.CE.BA.CE.B1.CF.82_Targets)
-    *   [3.4 Αλλαγή τρέχοντος target](#.CE.91.CE.BB.CE.BB.CE.B1.CE.B3.CE.AE_.CF.84.CF.81.CE.AD.CF.87.CE.BF.CE.BD.CF.84.CE.BF.CF.82_target)
-    *   [3.5 Αλλαγή προεπιλεγμένου target εκκίνησης συστήματος](#.CE.91.CE.BB.CE.BB.CE.B1.CE.B3.CE.AE_.CF.80.CF.81.CE.BF.CE.B5.CF.80.CE.B9.CE.BB.CE.B5.CE.B3.CE.BC.CE.AD.CE.BD.CE.BF.CF.85_target_.CE.B5.CE.BA.CE.BA.CE.AF.CE.BD.CE.B7.CF.83.CE.B7.CF.82_.CF.83.CF.85.CF.83.CF.84.CE.AE.CE.BC.CE.B1.CF.84.CE.BF.CF.82)
+    *   [3.1 Δείτε τα τρέχοντα targets](#Δείτε_τα_τρέχοντα_targets)
+    *   [3.2 Δημιουργία προσαρμοσμένου target](#Δημιουργία_προσαρμοσμένου_target)
+    *   [3.3 Πίνακας Targets](#Πίνακας_Targets)
+    *   [3.4 Αλλαγή τρέχοντος target](#Αλλαγή_τρέχοντος_target)
+    *   [3.5 Αλλαγή προεπιλεγμένου target εκκίνησης συστήματος](#Αλλαγή_προεπιλεγμένου_target_εκκίνησης_συστήματος)
 *   [4 Temporary files](#Temporary_files)
 *   [5 Timers](#Timers)
 *   [6 Journal](#Journal)
     *   [6.1 Filtering output](#Filtering_output)
     *   [6.2 Journal size limit](#Journal_size_limit)
     *   [6.3 Journald in conjunction with syslog](#Journald_in_conjunction_with_syslog)
-    *   [6.4 Forward journald to /dev/tty12](#Forward_journald_to_.2Fdev.2Ftty12)
+    *   [6.4 Forward journald to /dev/tty12](#Forward_journald_to_/dev/tty12)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Investigating systemd errors](#Investigating_systemd_errors)
     *   [7.2 Diagnosing boot problems](#Diagnosing_boot_problems)
-    *   [7.3 Shutdown/reboot takes terribly long](#Shutdown.2Freboot_takes_terribly_long)
+    *   [7.3 Shutdown/reboot takes terribly long](#Shutdown/reboot_takes_terribly_long)
     *   [7.4 Short lived processes do not seem to log any output](#Short_lived_processes_do_not_seem_to_log_any_output)
     *   [7.5 Disabling application crash dumps journaling](#Disabling_application_crash_dumps_journaling)
     *   [7.6 Error message on reboot or shutdown](#Error_message_on_reboot_or_shutdown)
-        *   [7.6.1 cgroup : option or name mismatch, new: 0x0 "", old: 0x4 "systemd"](#cgroup_:_option_or_name_mismatch.2C_new:_0x0_.22.22.2C_old:_0x4_.22systemd.22)
-        *   [7.6.2 watchdog watchdog0: watchdog did not stop!](#watchdog_watchdog0:_watchdog_did_not_stop.21)
+        *   [7.6.1 cgroup : option or name mismatch, new: 0x0 "", old: 0x4 "systemd"](#cgroup_:_option_or_name_mismatch,_new:_0x0_"",_old:_0x4_"systemd")
+        *   [7.6.2 watchdog watchdog0: watchdog did not stop!](#watchdog_watchdog0:_watchdog_did_not_stop!)
 *   [8 See also](#See_also)
 
 ## Βασική χρήση της εντολής systemctl
@@ -218,7 +218,7 @@ $ systemctl hybrid-sleep
 
 ## Γράφοντας προσαρμοσμένα .service files
 
-Η σύνταξη του systemd [(χρησιμοποιώντας τις μονάδες)](#.CE.A7.CF.81.CE.B7.CF.83.CE.B9.CE.BC.CE.BF.CF.80.CE.BF.CE.B9.CF.8E.CE.BD.CF.84.CE.B1.CF.82_.CF.84.CE.B9.CF.82_.CE.BC.CE.BF.CE.BD.CE.AC.CE.B4.CE.B5.CF.82_.28units.29) είναι εμπνευσμένη από τα *.desktop* files του XDG Desktop Entry, τα οποία είναι εμπνευσμένα από τα *.ini* files της Microsoft.
+Η σύνταξη του systemd [(χρησιμοποιώντας τις μονάδες)](#Χρησιμοποιώντας_τις_μονάδες_(units)) είναι εμπνευσμένη από τα *.desktop* files του XDG Desktop Entry, τα οποία είναι εμπνευσμένα από τα *.ini* files της Microsoft.
 
 ### Χειρισμός εξαρτήσεων
 
@@ -379,7 +379,7 @@ Systemd can replace cron functionality to a great extent. See [systemd/Timers](/
 
 In Arch Linux, the directory `/var/log/journal/` is a part of the [systemd](https://www.archlinux.org/packages/?name=systemd) package, and the journal (when `Storage=` is set to `auto` in `/etc/systemd/journald.conf`) will write to `/var/log/journal/`. If you or some program delete that directory, systemd will **not** recreate it automatically; however, it will be recreated during the next update of the systemd package. Until then, logs will be written to `/run/systemd/journal`, and logs will be lost on reboot.
 
-**Tip:** If `/var/log/journal/` resides in a [btrfs](/index.php/Btrfs "Btrfs") file system, you should consider disabling Copy-on-Write for the directory. See the main article for details: [Btrfs#Copy-on-Write (CoW)](/index.php/Btrfs#Copy-on-Write_.28CoW.29 "Btrfs").
+**Tip:** If `/var/log/journal/` resides in a [btrfs](/index.php/Btrfs "Btrfs") file system, you should consider disabling Copy-on-Write for the directory. See the main article for details: [Btrfs#Copy-on-Write (CoW)](/index.php/Btrfs#Copy-on-Write_(CoW) "Btrfs").
 
 ### Filtering output
 

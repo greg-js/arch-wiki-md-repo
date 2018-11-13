@@ -15,9 +15,9 @@ Esta página explica como escrever [PKGBUILDs](/index.php/PKGBUILD_(Portugu%C3%A
 
 *   [1 Free Pascal](#Free_Pascal)
     *   [1.1 Nomenclatura do pacote](#Nomenclatura_do_pacote)
-    *   [1.2 Trechos úteis de código](#Trechos_.C3.BAteis_de_c.C3.B3digo)
+    *   [1.2 Trechos úteis de código](#Trechos_úteis_de_código)
     *   [1.3 Empacotamento](#Empacotamento)
-        *   [1.3.1 Compilação cruzada](#Compila.C3.A7.C3.A3o_cruzada)
+        *   [1.3.1 Compilação cruzada](#Compilação_cruzada)
 
 ## Free Pascal
 

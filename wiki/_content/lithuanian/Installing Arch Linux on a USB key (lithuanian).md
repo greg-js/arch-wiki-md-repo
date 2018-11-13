@@ -10,20 +10,20 @@ Related articles
 
 *   [1 Diegimas](#Diegimas)
     *   [1.1 Diegimo patobulinimai](#Diegimo_patobulinimai)
-*   [2 Konfigūracija](#Konfig.C5.ABracija)
+*   [2 Konfigūracija](#Konfigūracija)
     *   [2.1 GRUB legacy](#GRUB_legacy)
     *   [2.2 GRUB](#GRUB)
     *   [2.3 Syslinux](#Syslinux)
 *   [3 Patarimai](#Patarimai)
-    *   [3.1 Jūsų USB dieginio naudojimas keliose mašinose](#J.C5.ABs.C5.B3_USB_dieginio_naudojimas_keliose_ma.C5.A1inose)
-        *   [3.1.1 Įvesties tvarkyklės](#.C4.AEvesties_tvarkykl.C4.97s)
-        *   [3.1.2 Vaizdo tvarkyklės](#Vaizdo_tvarkykl.C4.97s)
-        *   [3.1.3 Nuolatinis blokinio įrenginio pavadinimas](#Nuolatinis_blokinio_.C4.AFrenginio_pavadinimas)
+    *   [3.1 Jūsų USB dieginio naudojimas keliose mašinose](#Jūsų_USB_dieginio_naudojimas_keliose_mašinose)
+        *   [3.1.1 Įvesties tvarkyklės](#Įvesties_tvarkyklės)
+        *   [3.1.2 Vaizdo tvarkyklės](#Vaizdo_tvarkyklės)
+        *   [3.1.3 Nuolatinis blokinio įrenginio pavadinimas](#Nuolatinis_blokinio_įrenginio_pavadinimas)
         *   [3.1.4 Branduolio parametrai](#Branduolio_parametrai)
-        *   [3.1.5 Įkrovimas iš USB 3 laikmenos](#.C4.AEkrovimas_i.C5.A1_USB_3_laikmenos)
+        *   [3.1.5 Įkrovimas iš USB 3 laikmenos](#Įkrovimas_iš_USB_3_laikmenos)
     *   [3.2 Suderinamumas](#Suderinamumas)
     *   [3.3 Disko prieigos minimizacija](#Disko_prieigos_minimizacija)
-*   [4 Taip pat žiūrėkite](#Taip_pat_.C5.BEi.C5.ABr.C4.97kite)
+*   [4 Taip pat žiūrėkite](#Taip_pat_žiūrėkite)
 
 ## Diegimas
 

@@ -16,8 +16,8 @@ Related articles
 ## Contents
 
 *   [1 BIOS systems](#BIOS_systems)
-    *   [1.1 GUID Partition Table (GPT) specific instructions](#GUID_Partition_Table_.28GPT.29_specific_instructions)
-    *   [1.2 Master Boot Record (MBR) specific instructions](#Master_Boot_Record_.28MBR.29_specific_instructions)
+    *   [1.1 GUID Partition Table (GPT) specific instructions](#GUID_Partition_Table_(GPT)_specific_instructions)
+    *   [1.2 Master Boot Record (MBR) specific instructions](#Master_Boot_Record_(MBR)_specific_instructions)
     *   [1.3 Installation](#Installation)
 *   [2 UEFI systems](#UEFI_systems)
     *   [2.1 Installation](#Installation_2)
@@ -31,36 +31,36 @@ Related articles
         *   [4.4.2 Boot partition](#Boot_partition)
     *   [4.5 Boot menu entries](#Boot_menu_entries)
         *   [4.5.1 GRUB commands](#GRUB_commands)
-            *   [4.5.1.1 "Shutdown" menu entry](#.22Shutdown.22_menu_entry)
-            *   [4.5.1.2 "Restart" menu entry](#.22Restart.22_menu_entry)
-            *   [4.5.1.3 "Firmware setup" menu entry (UEFI only)](#.22Firmware_setup.22_menu_entry_.28UEFI_only.29)
+            *   [4.5.1.1 "Shutdown" menu entry](#"Shutdown"_menu_entry)
+            *   [4.5.1.2 "Restart" menu entry](#"Restart"_menu_entry)
+            *   [4.5.1.3 "Firmware setup" menu entry (UEFI only)](#"Firmware_setup"_menu_entry_(UEFI_only))
         *   [4.5.2 EFI binaries](#EFI_binaries)
             *   [4.5.2.1 UEFI Shell](#UEFI_Shell)
             *   [4.5.2.2 gdisk](#gdisk)
             *   [4.5.2.3 Chainloading an Arch Linux .efi file](#Chainloading_an_Arch_Linux_.efi_file)
         *   [4.5.3 Dual-booting](#Dual-booting)
-            *   [4.5.3.1 GNU/Linux menu entry](#GNU.2FLinux_menu_entry)
-            *   [4.5.3.2 Windows installed in UEFI/GPT Mode menu entry](#Windows_installed_in_UEFI.2FGPT_Mode_menu_entry)
-            *   [4.5.3.3 Windows installed in BIOS/MBR mode](#Windows_installed_in_BIOS.2FMBR_mode)
+            *   [4.5.3.1 GNU/Linux menu entry](#GNU/Linux_menu_entry)
+            *   [4.5.3.2 Windows installed in UEFI/GPT Mode menu entry](#Windows_installed_in_UEFI/GPT_Mode_menu_entry)
+            *   [4.5.3.3 Windows installed in BIOS/MBR mode](#Windows_installed_in_BIOS/MBR_mode)
 *   [5 Using the command shell](#Using_the_command_shell)
     *   [5.1 Pager support](#Pager_support)
     *   [5.2 Using the command shell environment to boot operating systems](#Using_the_command_shell_environment_to_boot_operating_systems)
         *   [5.2.1 Chainloading a partition](#Chainloading_a_partition)
-        *   [5.2.2 Chainloading a disk/drive](#Chainloading_a_disk.2Fdrive)
-        *   [5.2.3 Chainloading Windows/Linux installed in UEFI mode](#Chainloading_Windows.2FLinux_installed_in_UEFI_mode)
+        *   [5.2.2 Chainloading a disk/drive](#Chainloading_a_disk/drive)
+        *   [5.2.3 Chainloading Windows/Linux installed in UEFI mode](#Chainloading_Windows/Linux_installed_in_UEFI_mode)
         *   [5.2.4 Normal loading](#Normal_loading)
     *   [5.3 Using the rescue console](#Using_the_rescue_console)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 F2FS and other unsupported file systems](#F2FS_and_other_unsupported_file_systems)
     *   [6.2 Intel BIOS not booting GPT](#Intel_BIOS_not_booting_GPT)
     *   [6.3 Enable debug messages](#Enable_debug_messages)
-    *   [6.4 "No suitable mode found" error](#.22No_suitable_mode_found.22_error)
+    *   [6.4 "No suitable mode found" error](#"No_suitable_mode_found"_error)
     *   [6.5 msdos-style error message](#msdos-style_error_message)
     *   [6.6 UEFI](#UEFI)
         *   [6.6.1 Common installation errors](#Common_installation_errors)
         *   [6.6.2 Drop to rescue shell](#Drop_to_rescue_shell)
         *   [6.6.3 GRUB UEFI not loaded](#GRUB_UEFI_not_loaded)
-        *   [6.6.4 Default/fallback boot path](#Default.2Ffallback_boot_path)
+        *   [6.6.4 Default/fallback boot path](#Default/fallback_boot_path)
     *   [6.7 Invalid signature](#Invalid_signature)
     *   [6.8 Boot freezes](#Boot_freezes)
     *   [6.9 Arch not found from other OS](#Arch_not_found_from_other_OS)
@@ -69,7 +69,7 @@ Related articles
     *   [6.12 error: unknown filesystem](#error:_unknown_filesystem)
     *   [6.13 grub-reboot not resetting](#grub-reboot_not_resetting)
     *   [6.14 Old BTRFS prevents installation](#Old_BTRFS_prevents_installation)
-    *   [6.15 Windows 8/10 not found](#Windows_8.2F10_not_found)
+    *   [6.15 Windows 8/10 not found](#Windows_8/10_not_found)
     *   [6.16 VirtualBox EFI mode](#VirtualBox_EFI_mode)
 *   [7 See also](#See_also)
 
@@ -758,7 +758,7 @@ grub-setup: error: If you really want blocklists, use --force.
 
 ```
 
-This error may occur when you try installing GRUB in a VMware container. Read more about it [here](https://bbs.archlinux.org/viewtopic.php?pid=581760#p581760). It happens when the first partition starts just after the MBR (block 63), without the usual space of 1 MiB (2048 blocks) before the first partition. Read [#Master Boot Record (MBR) specific instructions](#Master_Boot_Record_.28MBR.29_specific_instructions)
+This error may occur when you try installing GRUB in a VMware container. Read more about it [here](https://bbs.archlinux.org/viewtopic.php?pid=581760#p581760). It happens when the first partition starts just after the MBR (block 63), without the usual space of 1 MiB (2048 blocks) before the first partition. Read [#Master Boot Record (MBR) specific instructions](#Master_Boot_Record_(MBR)_specific_instructions)
 
 ### UEFI
 
@@ -858,7 +858,7 @@ GRUB can take a long time to load when disk space is low. Check if you have suff
 
 ### error: unknown filesystem
 
-GRUB may output `error: unknown filesystem` and refuse to boot for a few reasons. If you are certain that all [UUIDs](/index.php/UUID "UUID") are correct and all filesystems are valid and supported, it may be because your [BIOS Boot Partition](#GUID_Partition_Table_.28GPT.29_specific_instructions) is located outside the first 2 TiB of the drive [[2]](https://bbs.archlinux.org/viewtopic.php?id=195948). Use a partitioning tool of your choice to ensure this partition is located fully within the first 2 TiB, then reinstall and reconfigure GRUB.
+GRUB may output `error: unknown filesystem` and refuse to boot for a few reasons. If you are certain that all [UUIDs](/index.php/UUID "UUID") are correct and all filesystems are valid and supported, it may be because your [BIOS Boot Partition](#GUID_Partition_Table_(GPT)_specific_instructions) is located outside the first 2 TiB of the drive [[2]](https://bbs.archlinux.org/viewtopic.php?id=195948). Use a partitioning tool of your choice to ensure this partition is located fully within the first 2 TiB, then reinstall and reconfigure GRUB.
 
 ### grub-reboot not resetting
 
@@ -882,7 +882,7 @@ A setting in Windows 8/10 called "Hiberboot", "Hybrid Boot" or "Fast Boot" can p
 
 ### VirtualBox EFI mode
 
-Install GRUB to the [default/fallback boot path](#Default.2Ffallback_boot_path).
+Install GRUB to the [default/fallback boot path](#Default/fallback_boot_path).
 
 See also [VirtualBox#Installation in EFI mode](/index.php/VirtualBox#Installation_in_EFI_mode "VirtualBox").
 

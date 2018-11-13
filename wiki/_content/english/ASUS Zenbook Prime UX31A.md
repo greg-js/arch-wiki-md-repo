@@ -11,7 +11,7 @@ See previous generation [ASUS Zenbook UX31E](/index.php/ASUS_Zenbook_UX31E "ASUS
     *   [2.2 Keyboard backlight](#Keyboard_backlight)
         *   [2.2.1 Manually setting the brightness](#Manually_setting_the_brightness)
         *   [2.2.2 Using asus-kbd-backlight from AUR](#Using_asus-kbd-backlight_from_AUR)
-        *   [2.2.3 Ambient Light Sensor (ALS)](#Ambient_Light_Sensor_.28ALS.29)
+        *   [2.2.3 Ambient Light Sensor (ALS)](#Ambient_Light_Sensor_(ALS))
             *   [2.2.3.1 ALS Driver](#ALS_Driver)
             *   [2.2.3.2 ALS Controller](#ALS_Controller)
             *   [2.2.3.3 Sample Script](#Sample_Script)
@@ -19,7 +19,7 @@ See previous generation [ASUS Zenbook UX31E](/index.php/ASUS_Zenbook_UX31E "ASUS
 *   [4 Graphics](#Graphics)
 *   [5 Touchpad](#Touchpad)
     *   [5.1 Multitouch gestures](#Multitouch_gestures)
-    *   [5.2 Multi-tap, two-finger scrolling doesn't work](#Multi-tap.2C_two-finger_scrolling_doesn.27t_work)
+    *   [5.2 Multi-tap, two-finger scrolling doesn't work](#Multi-tap,_two-finger_scrolling_doesn't_work)
     *   [5.3 Multitouch gestures in Gnome 3](#Multitouch_gestures_in_Gnome_3)
     *   [5.4 Disable Touchpad While Typing](#Disable_Touchpad_While_Typing)
 *   [6 HDMI plugged at boot](#HDMI_plugged_at_boot)
@@ -205,7 +205,7 @@ To use the Intel graphics card, install the xf86-video-intel package and read [I
 
 ## Touchpad
 
-[Instructions to activate the right button](/index.php/Touchpad_Synaptics#Buttonless_touchpads_.28aka_ClickPads.29 "Touchpad Synaptics"). (As an alternative you cant try [This](http://ubuntuforums.org/showpost.php?p=12110689&postcount=73)).
+[Instructions to activate the right button](/index.php/Touchpad_Synaptics#Buttonless_touchpads_(aka_ClickPads) "Touchpad Synaptics"). (As an alternative you cant try [This](http://ubuntuforums.org/showpost.php?p=12110689&postcount=73)).
 
 Multifinger taps work out of the box.
 

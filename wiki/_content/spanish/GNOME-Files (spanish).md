@@ -15,20 +15,20 @@ Artículos relacionados
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Configuración](#Configuraci.C3.B3n)
-    *   [2.1 Administración del escritorio](#Administraci.C3.B3n_del_escritorio)
+*   [1 Instalación](#Instalación)
+*   [2 Configuración](#Configuración)
+    *   [2.1 Administración del escritorio](#Administración_del_escritorio)
     *   [2.2 Cambiar la vista de elementos por defecto](#Cambiar_la_vista_de_elementos_por_defecto)
     *   [2.3 Eliminar las carpetas desde los lugares de la barra lateral](#Eliminar_las_carpetas_desde_los_lugares_de_la_barra_lateral)
-    *   [2.4 Mostrar siempre la ubicación mediante entradas de texto](#Mostrar_siempre_la_ubicaci.C3.B3n_mediante_entradas_de_texto)
+    *   [2.4 Mostrar siempre la ubicación mediante entradas de texto](#Mostrar_siempre_la_ubicación_mediante_entradas_de_texto)
     *   [2.5 Plugins](#Plugins)
-    *   [2.6 Crear un documento vacío con Nautilus 3.6](#Crear_un_documento_vac.C3.ADo_con_Nautilus_3.6)
+    *   [2.6 Crear un documento vacío con Nautilus 3.6](#Crear_un_documento_vacío_con_Nautilus_3.6)
     *   [2.7 Utilizar la tecla suprimir en Nautilis 3.6 para mover archivos a la papelera](#Utilizar_la_tecla_suprimir_en_Nautilis_3.6_para_mover_archivos_a_la_papelera)
-*   [3 Solución de problemas](#Soluci.C3.B3n_de_problemas)
+*   [3 Solución de problemas](#Solución_de_problemas)
     *   [3.1 Nautilus no puede explorar mis recursos compartidos de red Windows](#Nautilus_no_puede_explorar_mis_recursos_compartidos_de_red_Windows)
     *   [3.2 Nautilus no puede ver los recursos compartidos de red de apple](#Nautilus_no_puede_ver_los_recursos_compartidos_de_red_de_apple)
     *   [3.3 Nautilus ya no es el administrador de archivos por defecto](#Nautilus_ya_no_es_el_administrador_de_archivos_por_defecto)
-    *   [3.4 No se muestran las previsualizaciones de vídeo](#No_se_muestran_las_previsualizaciones_de_v.C3.ADdeo)
+    *   [3.4 No se muestran las previsualizaciones de vídeo](#No_se_muestran_las_previsualizaciones_de_vídeo)
 
 ## Instalación
 

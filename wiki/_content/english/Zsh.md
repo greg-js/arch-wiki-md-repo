@@ -7,10 +7,10 @@ The [Zsh FAQ](http://zsh.sourceforge.net/FAQ/zshfaq01.html#l4) offers more reaso
 *   [1 Installation](#Installation)
     *   [1.1 Initial configuration](#Initial_configuration)
     *   [1.2 Making Zsh your default shell](#Making_Zsh_your_default_shell)
-*   [2 Startup/Shutdown files](#Startup.2FShutdown_files)
+*   [2 Startup/Shutdown files](#Startup/Shutdown_files)
 *   [3 Configure Zsh](#Configure_Zsh)
     *   [3.1 Simple .zshrc](#Simple_.zshrc)
-    *   [3.2 Configuring $PATH](#Configuring_.24PATH)
+    *   [3.2 Configuring $PATH](#Configuring_$PATH)
     *   [3.3 Command completion](#Command_completion)
     *   [3.4 Key bindings](#Key_bindings)
     *   [3.5 History search](#History_search)
@@ -24,7 +24,7 @@ The [Zsh FAQ](http://zsh.sourceforge.net/FAQ/zshfaq01.html#l4) offers more reaso
     *   [3.8 Configuration Frameworks](#Configuration_Frameworks)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Autostart X at login](#Autostart_X_at_login)
-    *   [4.2 The "command not found" hook](#The_.22command_not_found.22_hook)
+    *   [4.2 The "command not found" hook](#The_"command_not_found"_hook)
     *   [4.3 The ttyctl command](#The_ttyctl_command)
     *   [4.4 Remembering recent directories](#Remembering_recent_directories)
         *   [4.4.1 Dirstack](#Dirstack)
@@ -101,7 +101,7 @@ When starting Zsh, it will source the following files in this order by default:
 
 *   The paths used in Arch's [zsh](https://www.archlinux.org/packages/?name=zsh) package are different from the default ones used in the [man pages](/index.php/Man_page "Man page") ([FS#48992](https://bugs.archlinux.org/task/48992)).
 
-*   `/etc/profile` is not a part of the regular list of startup files run for Zsh, but is sourced from `/etc/zsh/zprofile` in the [zsh](https://www.archlinux.org/packages/?name=zsh) package. Users should take note that `/etc/profile` sets the `$PATH` variable which will overwrite any `$PATH` variable set in `$ZDOTDIR/.zshenv`. To prevent this, please [set the $PATH variable](#Configuring_.24PATH) in `$ZDOTDIR/.zprofile`.
+*   `/etc/profile` is not a part of the regular list of startup files run for Zsh, but is sourced from `/etc/zsh/zprofile` in the [zsh](https://www.archlinux.org/packages/?name=zsh) package. Users should take note that `/etc/profile` sets the `$PATH` variable which will overwrite any `$PATH` variable set in `$ZDOTDIR/.zshenv`. To prevent this, please [set the $PATH variable](#Configuring_$PATH) in `$ZDOTDIR/.zprofile`.
 
 **Warning:** It is not recommended to replace the default [one line](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/zprofile?h=packages/zsh) in `/etc/zsh/zprofile` with something other, it will break the integrity of other packages which provide some scripts in `/etc/profile.d/`.
 
@@ -130,7 +130,7 @@ prompt walters
 
 ### Configuring $PATH
 
-See [A User's Guide to the Z-Shell](http://zsh.sourceforge.net/Guide/zshguide02.html#l24) and also the note in [#Startup/Shutdown files](#Startup.2FShutdown_files) for details.
+See [A User's Guide to the Z-Shell](http://zsh.sourceforge.net/Guide/zshguide02.html#l24) and also the note in [#Startup/Shutdown files](#Startup/Shutdown_files) for details.
 
 The incantation `typeset -U path`, where the `-U` stands for unique, tells the shell that it should not add anything to `$PATH` if it's there already:
 

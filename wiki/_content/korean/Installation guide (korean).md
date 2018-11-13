@@ -4,29 +4,29 @@
 
 ## Contents
 
-*   [1 설치에 앞서 할 일](#.EC.84.A4.EC.B9.98.EC.97.90_.EC.95.9E.EC.84.9C_.ED.95.A0_.EC.9D.BC)
-    *   [1.1 키보드 레이아웃 설정](#.ED.82.A4.EB.B3.B4.EB.93.9C_.EB.A0.88.EC.9D.B4.EC.95.84.EC.9B.83_.EC.84.A4.EC.A0.95)
-    *   [1.2 부트 방식 확인](#.EB.B6.80.ED.8A.B8_.EB.B0.A9.EC.8B.9D_.ED.99.95.EC.9D.B8)
-    *   [1.3 인터넷에 연결](#.EC.9D.B8.ED.84.B0.EB.84.B7.EC.97.90_.EC.97.B0.EA.B2.B0)
-    *   [1.4 시스템 시간 설정](#.EC.8B.9C.EC.8A.A4.ED.85.9C_.EC.8B.9C.EA.B0.84_.EC.84.A4.EC.A0.95)
-    *   [1.5 디스크 파티션 나누기](#.EB.94.94.EC.8A.A4.ED.81.AC_.ED.8C.8C.ED.8B.B0.EC.85.98_.EB.82.98.EB.88.84.EA.B8.B0)
-    *   [1.6 파티션 포맷](#.ED.8C.8C.ED.8B.B0.EC.85.98_.ED.8F.AC.EB.A7.B7)
-    *   [1.7 파티션 마운트](#.ED.8C.8C.ED.8B.B0.EC.85.98_.EB.A7.88.EC.9A.B4.ED.8A.B8)
-*   [2 설치](#.EC.84.A4.EC.B9.98)
-    *   [2.1 미러 선택하기](#.EB.AF.B8.EB.9F.AC_.EC.84.A0.ED.83.9D.ED.95.98.EA.B8.B0)
-    *   [2.2 base 패키지 설치하기](#base_.ED.8C.A8.ED.82.A4.EC.A7.80_.EC.84.A4.EC.B9.98.ED.95.98.EA.B8.B0)
-*   [3 시스템 설정하기](#.EC.8B.9C.EC.8A.A4.ED.85.9C_.EC.84.A4.EC.A0.95.ED.95.98.EA.B8.B0)
+*   [1 설치에 앞서 할 일](#설치에_앞서_할_일)
+    *   [1.1 키보드 레이아웃 설정](#키보드_레이아웃_설정)
+    *   [1.2 부트 방식 확인](#부트_방식_확인)
+    *   [1.3 인터넷에 연결](#인터넷에_연결)
+    *   [1.4 시스템 시간 설정](#시스템_시간_설정)
+    *   [1.5 디스크 파티션 나누기](#디스크_파티션_나누기)
+    *   [1.6 파티션 포맷](#파티션_포맷)
+    *   [1.7 파티션 마운트](#파티션_마운트)
+*   [2 설치](#설치)
+    *   [2.1 미러 선택하기](#미러_선택하기)
+    *   [2.2 base 패키지 설치하기](#base_패키지_설치하기)
+*   [3 시스템 설정하기](#시스템_설정하기)
     *   [3.1 Fstab](#Fstab)
     *   [3.2 Chroot](#Chroot)
-    *   [3.3 시간대](#.EC.8B.9C.EA.B0.84.EB.8C.80)
-    *   [3.4 로캘](#.EB.A1.9C.EC.BA.98)
-    *   [3.5 호스트이름](#.ED.98.B8.EC.8A.A4.ED.8A.B8.EC.9D.B4.EB.A6.84)
-    *   [3.6 네트워크 설정](#.EB.84.A4.ED.8A.B8.EC.9B.8C.ED.81.AC_.EC.84.A4.EC.A0.95)
+    *   [3.3 시간대](#시간대)
+    *   [3.4 로캘](#로캘)
+    *   [3.5 호스트이름](#호스트이름)
+    *   [3.6 네트워크 설정](#네트워크_설정)
     *   [3.7 Initramfs](#Initramfs)
-    *   [3.8 루트 비밀번호](#.EB.A3.A8.ED.8A.B8_.EB.B9.84.EB.B0.80.EB.B2.88.ED.98.B8)
-    *   [3.9 부트로더](#.EB.B6.80.ED.8A.B8.EB.A1.9C.EB.8D.94)
-*   [4 재부팅](#.EC.9E.AC.EB.B6.80.ED.8C.85)
-*   [5 설치가 끝난 후](#.EC.84.A4.EC.B9.98.EA.B0.80_.EB.81.9D.EB.82.9C_.ED.9B.84)
+    *   [3.8 루트 비밀번호](#루트_비밀번호)
+    *   [3.9 부트로더](#부트로더)
+*   [4 재부팅](#재부팅)
+*   [5 설치가 끝난 후](#설치가_끝난_후)
 
 ## 설치에 앞서 할 일
 
@@ -209,7 +209,7 @@ UEFI모드가 [UEFI](/index.php/UEFI "UEFI") 마더보드에서 활성화되면 
 
  `/etc/locale.conf`  `LANG=*en_US.UTF-8*` 
 
-[키보도 레이아웃을 설정](#.ED.82.A4.EB.B3.B4.EB.93.9C_.EB.A0.88.EC.9D.B4.EC.95.84.EC.9B.83_.EC.84.A4.EC.A0.95)한다면 [vconsole.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5)에 변경사항을 반영하십시오.
+[키보도 레이아웃을 설정](#키보드_레이아웃_설정)한다면 [vconsole.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5)에 변경사항을 반영하십시오.
 
 예)
 
@@ -241,7 +241,7 @@ UEFI모드가 [UEFI](/index.php/UEFI "UEFI") 마더보드에서 활성화되면 
 
 새로 설치한 시스템에서는 기본적으로 네트워크 연결이 활성화되어 있지 않습니다. [네트워크 관리자](/index.php/Network_configuration#Network_management "Network configuration")를 참고하십시오.
 
-[무선 설정](/index.php/Wireless_configuration "Wireless configuration")을 하려면 [iw](https://www.archlinux.org/packages/?name=iw)와 [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant), 추가로 필요한 [펌웨어 패키지](/index.php/Wireless#Installing_driver.2Ffirmware "Wireless")를 [설치](/index.php/Install "Install")하십시오. *wifi-menu*를 사용하고 싶으면 [dialog](https://www.archlinux.org/packages/?name=dialog)를 설치하십시오.
+[무선 설정](/index.php/Wireless_configuration "Wireless configuration")을 하려면 [iw](https://www.archlinux.org/packages/?name=iw)와 [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant), 추가로 필요한 [펌웨어 패키지](/index.php/Wireless#Installing_driver/firmware "Wireless")를 [설치](/index.php/Install "Install")하십시오. *wifi-menu*를 사용하고 싶으면 [dialog](https://www.archlinux.org/packages/?name=dialog)를 설치하십시오.
 
 ### Initramfs
 

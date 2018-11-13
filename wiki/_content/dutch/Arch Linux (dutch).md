@@ -1,6 +1,6 @@
 ## Contents
 
-*   [1 Wat is Arch Linux?](#Wat_is_Arch_Linux.3F)
+*   [1 Wat is Arch Linux?](#Wat_is_Arch_Linux?)
 *   [2 Voordelen](#Voordelen)
 *   [3 Uniek pakketten-beheer](#Uniek_pakketten-beheer)
 *   [4 Alleen het beste](#Alleen_het_beste)

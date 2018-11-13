@@ -21,9 +21,9 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
     *   [1.2 lspci on a 4231](#lspci_on_a_4231)
 *   [2 Installation](#Installation)
 *   [3 Tweaks](#Tweaks)
-    *   [3.1 Brightness / backlight](#Brightness_.2F_backlight)
+    *   [3.1 Brightness / backlight](#Brightness_/_backlight)
     *   [3.2 Gnome scaling](#Gnome_scaling)
-    *   [3.3 ICC screen calibration (enhanced brightness)](#ICC_screen_calibration_.28enhanced_brightness.29)
+    *   [3.3 ICC screen calibration (enhanced brightness)](#ICC_screen_calibration_(enhanced_brightness))
     *   [3.4 Video driver](#Video_driver)
 *   [4 Issue: Airplane mode after login](#Issue:_Airplane_mode_after_login)
 

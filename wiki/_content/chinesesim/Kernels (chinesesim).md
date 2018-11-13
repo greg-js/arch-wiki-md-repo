@@ -16,14 +16,14 @@
 
 ## Contents
 
-*   [1 官方支持的内核](#.E5.AE.98.E6.96.B9.E6.94.AF.E6.8C.81.E7.9A.84.E5.86.85.E6.A0.B8)
-*   [2 编译](#.E7.BC.96.E8.AF.91)
-    *   [2.1 使用 Arch 构建系统(ABS)(推荐)](#.E4.BD.BF.E7.94.A8_Arch_.E6.9E.84.E5.BB.BA.E7.B3.BB.E7.BB.9F.28ABS.29.28.E6.8E.A8.E8.8D.90.29)
-    *   [2.2 传统方式](#.E4.BC.A0.E7.BB.9F.E6.96.B9.E5.BC.8F)
+*   [1 官方支持的内核](#官方支持的内核)
+*   [2 编译](#编译)
+    *   [2.1 使用 Arch 构建系统(ABS)(推荐)](#使用_Arch_构建系统(ABS)(推荐))
+    *   [2.2 传统方式](#传统方式)
 *   [3 Patches and patchsets](#Patches_and_patchsets)
     *   [3.1 Major patchsets](#Major_patchsets)
     *   [3.2 Other patchsets](#Other_patchsets)
-*   [4 参见](#.E5.8F.82.E8.A7.81)
+*   [4 参见](#参见)
 
 ## 官方支持的内核
 

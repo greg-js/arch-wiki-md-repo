@@ -2,7 +2,7 @@ This article lists [domain name system](https://en.wikipedia.org/wiki/Domain_nam
 
 ## Contents
 
-*   [1 Cisco Umbrella (formerly OpenDNS)](#Cisco_Umbrella_.28formerly_OpenDNS.29)
+*   [1 Cisco Umbrella (formerly OpenDNS)](#Cisco_Umbrella_(formerly_OpenDNS))
 *   [2 Cloudflare](#Cloudflare)
 *   [3 Comodo](#Comodo)
 *   [4 DNS.WATCH](#DNS.WATCH)

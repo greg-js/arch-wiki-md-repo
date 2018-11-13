@@ -14,44 +14,44 @@ Artículos relacionados
 
 *   [1 Sistemas BIOS](#Sistemas_BIOS)
     *   [1.1 Proceso de arranque de Syslinux](#Proceso_de_arranque_de_Syslinux)
-    *   [1.2 Instalación](#Instalaci.C3.B3n)
-        *   [1.2.1 Instalación automática](#Instalaci.C3.B3n_autom.C3.A1tica)
-        *   [1.2.2 Instalación manual](#Instalaci.C3.B3n_manual)
+    *   [1.2 Instalación](#Instalación)
+        *   [1.2.1 Instalación automática](#Instalación_automática)
+        *   [1.2.2 Instalación manual](#Instalación_manual)
             *   [1.2.2.1 Tabla de particiones MBR](#Tabla_de_particiones_MBR)
             *   [1.2.2.2 Tabla de particiones GUID conocida como GPT](#Tabla_de_particiones_GUID_conocida_como_GPT)
 *   [2 Sistemas UEFI](#Sistemas_UEFI)
     *   [2.1 Limitaciones de Syslinux en la modalidad UEFI](#Limitaciones_de_Syslinux_en_la_modalidad_UEFI)
-    *   [2.2 Instalación](#Instalaci.C3.B3n_2)
-*   [3 Configuración](#Configuraci.C3.B3n)
+    *   [2.2 Instalación](#Instalación_2)
+*   [3 Configuración](#Configuración)
     *   [3.1 Ejemplos](#Ejemplos)
         *   [3.1.1 Prompt de arranque](#Prompt_de_arranque)
-        *   [3.1.2 Menú de arranque en modo texto](#Men.C3.BA_de_arranque_en_modo_texto)
-        *   [3.1.3 Menú de arranque en modo gráfico](#Men.C3.BA_de_arranque_en_modo_gr.C3.A1fico)
-    *   [3.2 Parámetros del kernel](#Par.C3.A1metros_del_kernel)
-    *   [3.3 Arranque automático](#Arranque_autom.C3.A1tico)
+        *   [3.1.2 Menú de arranque en modo texto](#Menú_de_arranque_en_modo_texto)
+        *   [3.1.3 Menú de arranque en modo gráfico](#Menú_de_arranque_en_modo_gráfico)
+    *   [3.2 Parámetros del kernel](#Parámetros_del_kernel)
+    *   [3.3 Arranque automático](#Arranque_automático)
     *   [3.4 Seguridad](#Seguridad)
     *   [3.5 Chainloading](#Chainloading)
     *   [3.6 Chainloading de otros sistemas Linux](#Chainloading_de_otros_sistemas_Linux)
     *   [3.7 Usar memtest](#Usar_memtest)
     *   [3.8 HDT](#HDT)
     *   [3.9 Reinicio y apagado](#Reinicio_y_apagado)
-    *   [3.10 Limpiar el menú](#Limpiar_el_men.C3.BA)
-    *   [3.11 Distribución del teclado](#Distribuci.C3.B3n_del_teclado)
-    *   [3.12 Ocultar el menú](#Ocultar_el_men.C3.BA)
+    *   [3.10 Limpiar el menú](#Limpiar_el_menú)
+    *   [3.11 Distribución del teclado](#Distribución_del_teclado)
+    *   [3.12 Ocultar el menú](#Ocultar_el_menú)
     *   [3.13 Pxelinux](#Pxelinux)
-    *   [3.14 Arrancar una imágen ISO9660 con memdisk](#Arrancar_una_im.C3.A1gen_ISO9660_con_memdisk)
-*   [4 Solución de Problemas](#Soluci.C3.B3n_de_Problemas)
+    *   [3.14 Arrancar una imágen ISO9660 con memdisk](#Arrancar_una_imágen_ISO9660_con_memdisk)
+*   [4 Solución de Problemas](#Solución_de_Problemas)
     *   [4.1 Utilizar el prompt de Syslinux](#Utilizar_el_prompt_de_Syslinux)
-    *   [4.2 Fallo de fsck en la partición root](#Fallo_de_fsck_en_la_partici.C3.B3n_root)
+    *   [4.2 Fallo de fsck en la partición root](#Fallo_de_fsck_en_la_partición_root)
     *   [4.3 Default o UI no encontrado en su equipo](#Default_o_UI_no_encontrado_en_su_equipo)
     *   [4.4 Missing operating system](#Missing_operating_system)
-    *   [4.5 ¡Se inicia Windows en vez de Syslinux!](#.C2.A1Se_inicia_Windows_en_vez_de_Syslinux.21)
-    *   [4.6 Entradas del menú sin ningún efecto](#Entradas_del_men.C3.BA_sin_ning.C3.BAn_efecto)
+    *   [4.5 ¡Se inicia Windows en vez de Syslinux!](#¡Se_inicia_Windows_en_vez_de_Syslinux!)
+    *   [4.6 Entradas del menú sin ningún efecto](#Entradas_del_menú_sin_ningún_efecto)
     *   [4.7 Imposible eliminar ldlinux.sys](#Imposible_eliminar_ldlinux.sys)
-    *   [4.8 Se visualiza un cuadrado blanco en el ángulo superior izquierdo cuando se utiliza vesamenu](#Se_visualiza_un_cuadrado_blanco_en_el_.C3.A1ngulo_superior_izquierdo_cuando_se_utiliza_vesamenu)
-    *   [4.9 Cargar Windows no funciona, cuando se instala en otra unidad](#Cargar_Windows_no_funciona.2C_cuando_se_instala_en_otra_unidad)
+    *   [4.8 Se visualiza un cuadrado blanco en el ángulo superior izquierdo cuando se utiliza vesamenu](#Se_visualiza_un_cuadrado_blanco_en_el_ángulo_superior_izquierdo_cuando_se_utiliza_vesamenu)
+    *   [4.9 Cargar Windows no funciona, cuando se instala en otra unidad](#Cargar_Windows_no_funciona,_cuando_se_instala_en_otra_unidad)
     *   [4.10 Leer el registro del gestor de arranque](#Leer_el_registro_del_gestor_de_arranque)
-*   [5 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [5 Véase también](#Véase_también)
 
 ## Sistemas BIOS
 
@@ -96,9 +96,9 @@ El script `syslinux-install_update` se ocupará de la instalación de Syslinux, 
 
     ```
     Esto puede ocurrir, por ejemplo, al actualizar de [LILO](/index.php/LILO "LILO") con un kernel personalizado corriendo, operación que convierte un parámetro de la línea de órdenes del kernel (de ejemplo `root=/dev/sda1`) en su equivalente numérico `root=801`, como se evidencia por las salidas de las órdenes `/proc/cmdline` y `mount`. Es posible remediar este problema ejecutando la instalación manual descrita abajo, cuidando de especificar el parámetro `--device=/dev/sda1` a `extlinux`, o, simplemente, al reiniciar la primera vez el kernel stock de Arch Linux, dado que el uso de su initramfs evita el problema.
-3.  Cree o edite `/boot/syslinux/syslinux.cfg` siguiendo las instrucciones de [#Configuración](#Configuraci.C3.B3n).
+3.  Cree o edite `/boot/syslinux/syslinux.cfg` siguiendo las instrucciones de [#Configuración](#Configuración).
 
-**Advertencia:** Es importante señalar a Syslinux la partición root correcta, o el sistema no arrancará. Véase [#Parámetros del kernel](#Par.C3.A1metros_del_kernel).
+**Advertencia:** Es importante señalar a Syslinux la partición root correcta, o el sistema no arrancará. Véase [#Parámetros del kernel](#Parámetros_del_kernel).
 
 **Nota:**
 
@@ -243,7 +243,7 @@ Si esto no funciona, pruebe con esto:
 
 ```
 
-*   Cree una entrada de arranque para Syslinux utilizando [efibootmgr](#Unified_Extensible_Firmware_Interface.23efibootmgr):
+*   Cree una entrada de arranque para Syslinux utilizando [efibootmgr](#Unified_Extensible_Firmware_Interface#efibootmgr):
 
 ```
 # mount -t efivarfs efivarfs /sys/firmware/efi/efivars
@@ -251,7 +251,7 @@ Si esto no funciona, pruebe con esto:
 
 ```
 
-*   Cree o modifique `$esp/EFI/syslinux/syslinux.cfg` siguiendo las instrucciones de [#Configuración](#Configuraci.C3.B3n).
+*   Cree o modifique `$esp/EFI/syslinux/syslinux.cfg` siguiendo las instrucciones de [#Configuración](#Configuración).
 
 **Nota:** El archivo de configuración de UEFI es `$esp/EFI/syslinux/syslinux.cfg`, no `/boot/syslinux/syslinux.cfg`. Los archivos en `/boot/syslinux/` son específicos de BIOS y no están relacionados con UEFI.
 
@@ -268,7 +268,7 @@ El gestor de arranque buscará el archivo `syslinux.cfg` (preferido) o bien `ext
 
 ### Ejemplos
 
-**Nota:** Cualquier archivo de configuración mostrado en estos ejemplos necesita ser editado para establecer los parámetros adecuados del kernel. Véase la sección [#Parámetros del kernel](#Par.C3.A1metros_del_kernel).
+**Nota:** Cualquier archivo de configuración mostrado en estos ejemplos necesita ser editado para establecer los parámetros adecuados del kernel. Véase la sección [#Parámetros del kernel](#Parámetros_del_kernel).
 
 #### Prompt de arranque
 

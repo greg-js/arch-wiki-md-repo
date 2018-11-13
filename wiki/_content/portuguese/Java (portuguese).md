@@ -11,29 +11,29 @@ Arch Linux oferece suporte oficial às versões de código aberto OpenJDK 7, 8 e
 
 ## Contents
 
-*   [1 Instalação](#Instala.C3.A7.C3.A3o)
+*   [1 Instalação](#Instalação)
 *   [2 Marcando pacotes como desatualizados](#Marcando_pacotes_como_desatualizados)
 *   [3 Alternando entre JVM](#Alternando_entre_JVM)
-    *   [3.1 Listar ambientes Java compatíveis instalados](#Listar_ambientes_Java_compat.C3.ADveis_instalados)
-    *   [3.2 Alterar o ambiente Java padrão](#Alterar_o_ambiente_Java_padr.C3.A3o)
-    *   [3.3 Desconfigurar o ambiente Java padrão](#Desconfigurar_o_ambiente_Java_padr.C3.A3o)
-    *   [3.4 Corrigir o ambiente Java padrão](#Corrigir_o_ambiente_Java_padr.C3.A3o)
-    *   [3.5 Iniciar um aplicativo com uma versão Java não padrão](#Iniciar_um_aplicativo_com_uma_vers.C3.A3o_Java_n.C3.A3o_padr.C3.A3o)
-*   [4 Pré-requisitos de pacote para ter suporte a archlinux-java](#Pr.C3.A9-requisitos_de_pacote_para_ter_suporte_a_archlinux-java)
-*   [5 Solução de problemas](#Solu.C3.A7.C3.A3o_de_problemas)
+    *   [3.1 Listar ambientes Java compatíveis instalados](#Listar_ambientes_Java_compatíveis_instalados)
+    *   [3.2 Alterar o ambiente Java padrão](#Alterar_o_ambiente_Java_padrão)
+    *   [3.3 Desconfigurar o ambiente Java padrão](#Desconfigurar_o_ambiente_Java_padrão)
+    *   [3.4 Corrigir o ambiente Java padrão](#Corrigir_o_ambiente_Java_padrão)
+    *   [3.5 Iniciar um aplicativo com uma versão Java não padrão](#Iniciar_um_aplicativo_com_uma_versão_Java_não_padrão)
+*   [4 Pré-requisitos de pacote para ter suporte a archlinux-java](#Pré-requisitos_de_pacote_para_ter_suporte_a_archlinux-java)
+*   [5 Solução de problemas](#Solução_de_problemas)
     *   [5.1 MySQL](#MySQL)
     *   [5.2 Personificar outro gerenciador de janela](#Personificar_outro_gerenciador_de_janela)
-    *   [5.3 Fontes ilegíveis](#Fontes_ileg.C3.ADveis)
+    *   [5.3 Fontes ilegíveis](#Fontes_ilegíveis)
     *   [5.4 Faltando texto em alguns aplicativos](#Faltando_texto_em_alguns_aplicativos)
-    *   [5.5 Aplicações sem redimensionamento com o WM, menus fechando imediatamente](#Aplica.C3.A7.C3.B5es_sem_redimensionamento_com_o_WM.2C_menus_fechando_imediatamente)
+    *   [5.5 Aplicações sem redimensionamento com o WM, menus fechando imediatamente](#Aplicações_sem_redimensionamento_com_o_WM,_menus_fechando_imediatamente)
     *   [5.6 Sistema congela ao depurar aplicativos JavaFX](#Sistema_congela_ao_depurar_aplicativos_JavaFX)
 *   [6 Dicas e truques](#Dicas_e_truques)
-    *   [6.1 Melhor renderização de fonte](#Melhor_renderiza.C3.A7.C3.A3o_de_fonte)
-    *   [6.2 Silenciar mensagem 'Picked up _JAVA_OPTIONS' na linha de comando](#Silenciar_mensagem_.27Picked_up_JAVA_OPTIONS.27_na_linha_de_comando)
+    *   [6.1 Melhor renderização de fonte](#Melhor_renderização_de_fonte)
+    *   [6.2 Silenciar mensagem 'Picked up _JAVA_OPTIONS' na linha de comando](#Silenciar_mensagem_'Picked_up_JAVA_OPTIONS'_na_linha_de_comando)
     *   [6.3 Visual GTK](#Visual_GTK)
     *   [6.4 Melhor desempenho 2D](#Melhor_desempenho_2D)
-    *   [6.5 Gerenciadores de janela non-reparenting / Janela cinza / Programas não estão sendo desenhados corretamente](#Gerenciadores_de_janela_non-reparenting_.2F_Janela_cinza_.2F_Programas_n.C3.A3o_est.C3.A3o_sendo_desenhados_corretamente)
-*   [7 Veja também](#Veja_tamb.C3.A9m)
+    *   [6.5 Gerenciadores de janela non-reparenting / Janela cinza / Programas não estão sendo desenhados corretamente](#Gerenciadores_de_janela_non-reparenting_/_Janela_cinza_/_Programas_não_estão_sendo_desenhados_corretamente)
+*   [7 Veja também](#Veja_também)
 
 ## Instalação
 
@@ -224,7 +224,7 @@ Isso funciona porque a JVM contém uma lista codificada de gerenciadores de jane
 
 ### Fontes ilegíveis
 
-Além das sugestões mencionadas abaixo em [#Melhor renderização de fonte](#Melhor_renderiza.C3.A7.C3.A3o_de_fonte), algumas fontes ainda pode não estar legíveis depois. Se esse for o caso, há uma grande chance das fontes da Microsoft estarem sendo usadas. Instale [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) do [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)").
+Além das sugestões mencionadas abaixo em [#Melhor renderização de fonte](#Melhor_renderização_de_fonte), algumas fontes ainda pode não estar legíveis depois. Se esse for o caso, há uma grande chance das fontes da Microsoft estarem sendo usadas. Instale [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) do [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)").
 
 ### Faltando texto em alguns aplicativos
 

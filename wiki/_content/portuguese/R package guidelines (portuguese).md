@@ -11,11 +11,11 @@ Este documento abrange padrões e diretrizes para escrever [PKGBUILDs](/index.ph
 ## Contents
 
 *   [1 Nomenclatura de pacote](#Nomenclatura_de_pacote)
-*   [2 Versão de pacote](#Vers.C3.A3o_de_pacote)
+*   [2 Versão de pacote](#Versão_de_pacote)
 *   [3 Arch](#Arch)
-*   [4 Dependências](#Depend.C3.AAncias)
+*   [4 Dependências](#Dependências)
 *   [5 Fonte](#Fonte)
-*   [6 Compilação e empacotamento](#Compila.C3.A7.C3.A3o_e_empacotamento)
+*   [6 Compilação e empacotamento](#Compilação_e_empacotamento)
 *   [7 Exemplos](#Exemplos)
     *   [7.1 RcppEigen](#RcppEigen)
     *   [7.2 XML](#XML)

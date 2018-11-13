@@ -13,7 +13,7 @@ Which way you choose depends heavily on how the new system differs from your old
 
 *   [1 Bottom to Top](#Bottom_to_Top)
     *   [1.1 On the old system](#On_the_old_system)
-        *   [1.1.1 What software?](#What_software.3F)
+        *   [1.1.1 What software?](#What_software?)
         *   [1.1.2 Copy to some backup space.](#Copy_to_some_backup_space.)
     *   [1.2 On the new system](#On_the_new_system)
         *   [1.2.1 Wiki articles](#Wiki_articles)

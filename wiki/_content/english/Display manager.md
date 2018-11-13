@@ -12,7 +12,7 @@ A [display manager](https://en.wikipedia.org/wiki/X_display_manager_(program_typ
 *   [2 Loading the display manager](#Loading_the_display_manager)
     *   [2.1 Using systemd-logind](#Using_systemd-logind)
 *   [3 Session configuration](#Session_configuration)
-    *   [3.1 Run ~/.xinitrc as a session](#Run_.7E.2F.xinitrc_as_a_session)
+    *   [3.1 Run ~/.xinitrc as a session](#Run_~/.xinitrc_as_a_session)
     *   [3.2 Starting applications without a window manager](#Starting_applications_without_a_window_manager)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Autostarting](#Autostarting)

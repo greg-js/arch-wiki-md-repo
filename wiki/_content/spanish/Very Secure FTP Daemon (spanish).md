@@ -4,9 +4,9 @@ Como puede correr con o sin [xinetd](https://es.wikipedia.org/wiki/Xinetd), ser√
 
 ## Contents
 
-*   [1 Sin xinetd (simple)](#Sin_xinetd_.28simple.29)
+*   [1 Sin xinetd (simple)](#Sin_xinetd_(simple))
 *   [2 Usando xinetd](#Usando_xinetd)
-*   [3 PAM with "virtual users"](#PAM_with_.22virtual_users.22)
+*   [3 PAM with "virtual users"](#PAM_with_"virtual_users")
     *   [3.1 Para agregar carpetas privadas para los usuarios virtuales](#Para_agregar_carpetas_privadas_para_los_usuarios_virtuales)
 
 ## Sin xinetd (simple)

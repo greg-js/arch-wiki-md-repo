@@ -8,13 +8,13 @@ Artículos relacionados
 
 ## Contents
 
-*   [1 Configuración desde systemd 206](#Configuraci.C3.B3n_desde_systemd_206)
+*   [1 Configuración desde systemd 206](#Configuración_desde_systemd_206)
     *   [1.1 D-Bus](#D-Bus)
-    *   [1.2 Inicio de sesión automático en Xorg sin gestor de pantallas](#Inicio_de_sesi.C3.B3n_autom.C3.A1tico_en_Xorg_sin_gestor_de_pantallas)
-    *   [1.3 Puesta en marcha automática de instancias de usuario de systemd](#Puesta_en_marcha_autom.C3.A1tica_de_instancias_de_usuario_de_systemd)
-*   [2 Configuración](#Configuraci.C3.B3n)
-    *   [2.1 Utilizar /usr/lib/systemd/systemd --user para gestionar la propia sesión](#Utilizar_.2Fusr.2Flib.2Fsystemd.2Fsystemd_--user_para_gestionar_la_propia_sesi.C3.B3n)
-    *   [2.2 Inicio de sesión automático](#Inicio_de_sesi.C3.B3n_autom.C3.A1tico)
+    *   [1.2 Inicio de sesión automático en Xorg sin gestor de pantallas](#Inicio_de_sesión_automático_en_Xorg_sin_gestor_de_pantallas)
+    *   [1.3 Puesta en marcha automática de instancias de usuario de systemd](#Puesta_en_marcha_automática_de_instancias_de_usuario_de_systemd)
+*   [2 Configuración](#Configuración)
+    *   [2.1 Utilizar /usr/lib/systemd/systemd --user para gestionar la propia sesión](#Utilizar_/usr/lib/systemd/systemd_--user_para_gestionar_la_propia_sesión)
+    *   [2.2 Inicio de sesión automático](#Inicio_de_sesión_automático)
     *   [2.3 Otros casos de uso](#Otros_casos_de_uso)
         *   [2.3.1 Multiplexor de terminal persistente](#Multiplexor_de_terminal_persistente)
             *   [2.3.1.1 Iniciar X](#Iniciar_X)
@@ -23,7 +23,7 @@ Artículos relacionados
     *   [3.2 Ejemplo](#Ejemplo)
     *   [3.3 Ejemplo con variables](#Ejemplo_con_variables)
     *   [3.4 Nota acerca de las aplicaciones X](#Nota_acerca_de_las_aplicaciones_X)
-*   [4 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [4 Véase también](#Véase_también)
 
 ## Configuración desde systemd 206
 

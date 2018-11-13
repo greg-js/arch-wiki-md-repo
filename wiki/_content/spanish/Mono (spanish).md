@@ -7,16 +7,16 @@ De [Wikipedia](https://en.wikipedia.org/wiki/es:Proyecto_Mono "wikipedia:es:Proy
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
 *   [2 Ejecutando aplicaciones Mono](#Ejecutando_aplicaciones_Mono)
 *   [3 Probar Mono](#Probar_Mono)
 *   [4 Desarrollo](#Desarrollo)
-*   [5 Solución de problemas](#Soluci.C3.B3n_de_problemas)
-    *   [5.1 Recibo un error "cannot execute "ruta/a/tu/binario" file name has not been set."](#Recibo_un_error_.22cannot_execute_.22ruta.2Fa.2Ftu.2Fbinario.22_file_name_has_not_been_set..22)
-    *   [5.2 Recibo un error cuando intento ejecutar los binarios de Mono directamente: "cannot execute binary file"](#Recibo_un_error_cuando_intento_ejecutar_los_binarios_de_Mono_directamente:_.22cannot_execute_binary_file.22)
-    *   [5.3 Recibo un error de handshake TLS (o un error basado en un sistema de certificados similar)](#Recibo_un_error_de_handshake_TLS_.28o_un_error_basado_en_un_sistema_de_certificados_similar.29)
-    *   [5.4 Recibo un error al compilar fsharp: "System.TypeInitializationException: The type initializer for 'System.Console' threw an exception"](#Recibo_un_error_al_compilar_fsharp:_.22System.TypeInitializationException:_The_type_initializer_for_.27System.Console.27_threw_an_exception.22)
-*   [6 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [5 Solución de problemas](#Solución_de_problemas)
+    *   [5.1 Recibo un error "cannot execute "ruta/a/tu/binario" file name has not been set."](#Recibo_un_error_"cannot_execute_"ruta/a/tu/binario"_file_name_has_not_been_set.")
+    *   [5.2 Recibo un error cuando intento ejecutar los binarios de Mono directamente: "cannot execute binary file"](#Recibo_un_error_cuando_intento_ejecutar_los_binarios_de_Mono_directamente:_"cannot_execute_binary_file")
+    *   [5.3 Recibo un error de handshake TLS (o un error basado en un sistema de certificados similar)](#Recibo_un_error_de_handshake_TLS_(o_un_error_basado_en_un_sistema_de_certificados_similar))
+    *   [5.4 Recibo un error al compilar fsharp: "System.TypeInitializationException: The type initializer for 'System.Console' threw an exception"](#Recibo_un_error_al_compilar_fsharp:_"System.TypeInitializationException:_The_type_initializer_for_'System.Console'_threw_an_exception")
+*   [6 Véase también](#Véase_también)
 
 ## Instalación
 

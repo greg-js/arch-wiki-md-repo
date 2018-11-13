@@ -7,16 +7,16 @@ Según [Wikipedia](https://en.wikipedia.org/wiki/es:OpenFOAM "wikipedia:es:OpenF
 
 ## Contents
 
-*   [1 Instalación básica](#Instalaci.C3.B3n_b.C3.A1sica)
-*   [2 Instalación para desarrollo](#Instalaci.C3.B3n_para_desarrollo)
+*   [1 Instalación básica](#Instalación_básica)
+*   [2 Instalación para desarrollo](#Instalación_para_desarrollo)
     *   [2.1 Prerrequisitos](#Prerrequisitos)
     *   [2.2 Obtener archivos fuente](#Obtener_archivos_fuente)
-        *   [2.2.1 Última versión estable](#.C3.9Altima_versi.C3.B3n_estable)
+        *   [2.2.1 Última versión estable](#Última_versión_estable)
     *   [2.3 Variables de entorno](#Variables_de_entorno)
-*   [3 Solución de problemas](#Soluci.C3.B3n_de_problemas)
+*   [3 Solución de problemas](#Solución_de_problemas)
     *   [3.1 zsh](#zsh)
     *   [3.2 Paraview no instalado](#Paraview_no_instalado)
-*   [4 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [4 Véase también](#Véase_también)
 
 ## Instalación básica
 

@@ -8,7 +8,7 @@
     *   [3.1 kodi-standalone service](#kodi-standalone_service)
     *   [3.2 Xsession with LightDM](#Xsession_with_LightDM)
     *   [3.3 Socket activation](#Socket_activation)
-    *   [3.4 Start from remote control with LIRC / irexec](#Start_from_remote_control_with_LIRC_.2F_irexec)
+    *   [3.4 Start from remote control with LIRC / irexec](#Start_from_remote_control_with_LIRC_/_irexec)
 *   [4 Using a remote control](#Using_a_remote_control)
     *   [4.1 Using the Android or iOS app](#Using_the_Android_or_iOS_app)
     *   [4.2 Using a physical remote control](#Using_a_physical_remote_control)
@@ -24,7 +24,7 @@
     *   [6.1 Keep a log of what is watched](#Keep_a_log_of_what_is_watched)
     *   [6.2 CLI tool for kodi](#CLI_tool_for_kodi)
     *   [6.3 Hardware video acceleration](#Hardware_video_acceleration)
-    *   [6.4 Adjusting CD/DVD drive speed](#Adjusting_CD.2FDVD_drive_speed)
+    *   [6.4 Adjusting CD/DVD drive speed](#Adjusting_CD/DVD_drive_speed)
     *   [6.5 Use port 80 for webserver](#Use_port_80_for_webserver)
     *   [6.6 Using ALSA](#Using_ALSA)
     *   [6.7 Audio Passthrough](#Audio_Passthrough)
@@ -37,7 +37,7 @@
     *   [7.3 Video tearing on Intel HD Graphics](#Video_tearing_on_Intel_HD_Graphics)
     *   [7.4 Soft subtitles not displaying](#Soft_subtitles_not_displaying)
     *   [7.5 H.264 playback is using only a single core](#H.264_playback_is_using_only_a_single_core)
-    *   [7.6 Kodi hangs on exit, fully occupying one CPU core, UI unresponsive](#Kodi_hangs_on_exit.2C_fully_occupying_one_CPU_core.2C_UI_unresponsive)
+    *   [7.6 Kodi hangs on exit, fully occupying one CPU core, UI unresponsive](#Kodi_hangs_on_exit,_fully_occupying_one_CPU_core,_UI_unresponsive)
 *   [8 See also](#See_also)
 
 ## Installation

@@ -13,16 +13,16 @@ En este artículo se describe la configuración de bajo nivel usando XKB, que es
 
 ## Contents
 
-*   [1 Visualizar la configuración del teclado](#Visualizar_la_configuraci.C3.B3n_del_teclado)
+*   [1 Visualizar la configuración del teclado](#Visualizar_la_configuración_del_teclado)
     *   [1.1 Utilidades de terceros](#Utilidades_de_terceros)
-*   [2 Configurar la distribución del teclado](#Configurar_la_distribuci.C3.B3n_del_teclado)
+*   [2 Configurar la distribución del teclado](#Configurar_la_distribución_del_teclado)
     *   [2.1 Utilizar setxkbmap](#Utilizar_setxkbmap)
-    *   [2.2 Utilizar los archivos de configuración de X](#Utilizar_los_archivos_de_configuraci.C3.B3n_de_X)
+    *   [2.2 Utilizar los archivos de configuración de X](#Utilizar_los_archivos_de_configuración_de_X)
     *   [2.3 Utilizar localectl](#Utilizar_localectl)
 *   [3 Opciones XKB usadas frecuentemente](#Opciones_XKB_usadas_frecuentemente)
     *   [3.1 Alternar entre distintas distribuciones de teclado](#Alternar_entre_distintas_distribuciones_de_teclado)
-    *   [3.2 Terminar Xorg con Ctrl+Alt+Retroceso](#Terminar_Xorg_con_Ctrl.2BAlt.2BRetroceso)
-    *   [3.3 Intercambiar Bloq Mayús con Control Izquierdo](#Intercambiar_Bloq_May.C3.BAs_con_Control_Izquierdo)
+    *   [3.2 Terminar Xorg con Ctrl+Alt+Retroceso](#Terminar_Xorg_con_Ctrl+Alt+Retroceso)
+    *   [3.3 Intercambiar Bloq Mayús con Control Izquierdo](#Intercambiar_Bloq_Mayús_con_Control_Izquierdo)
     *   [3.4 mouse keys](#mouse_keys)
     *   [3.5 Configurar tecla compose](#Configurar_tecla_compose)
         *   [3.5.1 Combinaciones de teclas](#Combinaciones_de_teclas)

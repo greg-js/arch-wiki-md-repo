@@ -9,10 +9,10 @@ El proyecto gEDA se inició debido a la falta de herramientas EDA gratuitas para
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
 *   [2 Primera PCB](#Primera_PCB)
-    *   [2.1 Crear símbolo esquemático](#Crear_s.C3.ADmbolo_esquem.C3.A1tico)
-        *   [2.1.1 Ruta de búsqueda esquemática](#Ruta_de_b.C3.BAsqueda_esquem.C3.A1tica)
+    *   [2.1 Crear símbolo esquemático](#Crear_símbolo_esquemático)
+        *   [2.1.1 Ruta de búsqueda esquemática](#Ruta_de_búsqueda_esquemática)
     *   [2.2 Crear esquema](#Crear_esquema)
     *   [2.3 Crear y enrutar el PCB](#Crear_y_enrutar_el_PCB)
 

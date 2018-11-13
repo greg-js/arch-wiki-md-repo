@@ -14,29 +14,29 @@ Para obtener una lista completa de los modelos GPU-Intel, y los chipsets y CPUs 
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Configuración](#Configuraci.C3.B3n)
-*   [3 KMS (Kernel Mode Setting)](#KMS_.28Kernel_Mode_Setting.29)
-*   [4 Opciones de gestión de energía basadas en el módulo](#Opciones_de_gesti.C3.B3n_de_energ.C3.ADa_basadas_en_el_m.C3.B3dulo)
+*   [1 Instalación](#Instalación)
+*   [2 Configuración](#Configuración)
+*   [3 KMS (Kernel Mode Setting)](#KMS_(Kernel_Mode_Setting))
+*   [4 Opciones de gestión de energía basadas en el módulo](#Opciones_de_gestión_de_energía_basadas_en_el_módulo)
 *   [5 Consejos y trucos](#Consejos_y_trucos)
-    *   [5.1 Elegir el método de aceleración](#Elegir_el_m.C3.A9todo_de_aceleraci.C3.B3n)
-    *   [5.2 Desactivar Vertical Synchronization (VSYNC)](#Desactivar_Vertical_Synchronization_.28VSYNC.29)
+    *   [5.1 Elegir el método de aceleración](#Elegir_el_método_de_aceleración)
+    *   [5.2 Desactivar Vertical Synchronization (VSYNC)](#Desactivar_Vertical_Synchronization_(VSYNC))
     *   [5.3 Ajustar la modalidad de escalado](#Ajustar_la_modalidad_de_escalado)
-    *   [5.4 Problema KMS: la consola está limitada a una pequeña porción de la pantalla](#Problema_KMS:_la_consola_est.C3.A1_limitada_a_una_peque.C3.B1a_porci.C3.B3n_de_la_pantalla)
-    *   [5.5 Decodificación H.264 en el chip GMA 4500](#Decodificaci.C3.B3n_H.264_en_el_chip_GMA_4500)
+    *   [5.4 Problema KMS: la consola está limitada a una pequeña porción de la pantalla](#Problema_KMS:_la_consola_está_limitada_a_una_pequeña_porción_de_la_pantalla)
+    *   [5.5 Decodificación H.264 en el chip GMA 4500](#Decodificación_H.264_en_el_chip_GMA_4500)
     *   [5.6 Establecer el valor gamma y el brillo](#Establecer_el_valor_gamma_y_el_brillo)
-*   [6 Solución de problemas](#Soluci.C3.B3n_de_problemas)
-    *   [6.1 Pantalla vacía durante el inicio, en la fase «Loading modules»](#Pantalla_vac.C3.ADa_durante_el_inicio.2C_en_la_fase_.C2.ABLoading_modules.C2.BB)
-    *   [6.2 Vídeo rasgado](#V.C3.ADdeo_rasgado)
-    *   [6.3 Congelación/bloqueo del servidor X con el controlador intel](#Congelaci.C3.B3n.2Fbloqueo_del_servidor_X_con_el_controlador_intel)
-    *   [6.4 Añadir resoluciones no detectadas](#A.C3.B1adir_resoluciones_no_detectadas)
-    *   [6.5 Lentitud tras una actualización de libGL 9 e Intel-DRI 9](#Lentitud_tras_una_actualizaci.C3.B3n_de_libGL_9_e_Intel-DRI_9)
+*   [6 Solución de problemas](#Solución_de_problemas)
+    *   [6.1 Pantalla vacía durante el inicio, en la fase «Loading modules»](#Pantalla_vacía_durante_el_inicio,_en_la_fase_«Loading_modules»)
+    *   [6.2 Vídeo rasgado](#Vídeo_rasgado)
+    *   [6.3 Congelación/bloqueo del servidor X con el controlador intel](#Congelación/bloqueo_del_servidor_X_con_el_controlador_intel)
+    *   [6.4 Añadir resoluciones no detectadas](#Añadir_resoluciones_no_detectadas)
+    *   [6.5 Lentitud tras una actualización de libGL 9 e Intel-DRI 9](#Lentitud_tras_una_actualización_de_libGL_9_e_Intel-DRI_9)
     *   [6.6 Texturas en negro en videojuegos](#Texturas_en_negro_en_videojuegos)
-    *   [6.7 Colores alterados (problema con el espacio de color)](#Colores_alterados_.28problema_con_el_espacio_de_color.29)
-    *   [6.8 Retroiluminación no ajustable completamente, o no regulable del todo después de la reanudación](#Retroiluminaci.C3.B3n_no_ajustable_completamente.2C_o_no_regulable_del_todo_despu.C3.A9s_de_la_reanudaci.C3.B3n)
-    *   [6.9 Desactivar la compresión del frame buffer](#Desactivar_la_compresi.C3.B3n_del_frame_buffer)
-    *   [6.10 Alteraciones en Chrome/Chromium](#Alteraciones_en_Chrome.2FChromium)
-*   [7 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+    *   [6.7 Colores alterados (problema con el espacio de color)](#Colores_alterados_(problema_con_el_espacio_de_color))
+    *   [6.8 Retroiluminación no ajustable completamente, o no regulable del todo después de la reanudación](#Retroiluminación_no_ajustable_completamente,_o_no_regulable_del_todo_después_de_la_reanudación)
+    *   [6.9 Desactivar la compresión del frame buffer](#Desactivar_la_compresión_del_frame_buffer)
+    *   [6.10 Alteraciones en Chrome/Chromium](#Alteraciones_en_Chrome/Chromium)
+*   [7 Véase también](#Véase_también)
 
 ## Instalación
 
@@ -193,7 +193,7 @@ $ xrandr --output VGA1 --brightness 1.0
 
 ### Pantalla vacía durante el inicio, en la fase «Loading modules»
 
-Si está utilizando el inicio tardío de KMS (*«late start»*), y la pantalla se queda sin mostrar nada durante la fase «Loading modules», puede ser útil agregar `i915` y `intel_agp` al initramfs. Consulte la [sección](#KMS_.28Kernel_Mode_Setting.29) anterior.
+Si está utilizando el inicio tardío de KMS (*«late start»*), y la pantalla se queda sin mostrar nada durante la fase «Loading modules», puede ser útil agregar `i915` y `intel_agp` al initramfs. Consulte la [sección](#KMS_(Kernel_Mode_Setting)) anterior.
 
 Como alternativa, puede intentar resolverlo añadiendo a la línea de comandos del kernel lo que sigue:
 
@@ -357,7 +357,7 @@ La solución es desactivar la compresión del frame buffer, lo cual aumentará l
 
 ### Alteraciones en Chrome/Chromium
 
-Si experimenta alteraciones en Chrome/Chromium establezca AccelMethod a "UXA" [#Elegir el método de aceleración](#Elegir_el_m.C3.A9todo_de_aceleraci.C3.B3n)
+Si experimenta alteraciones en Chrome/Chromium establezca AccelMethod a "UXA" [#Elegir el método de aceleración](#Elegir_el_método_de_aceleración)
 
 ## Véase también
 

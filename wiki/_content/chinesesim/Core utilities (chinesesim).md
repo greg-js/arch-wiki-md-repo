@@ -21,7 +21,7 @@
 
 ## Contents
 
-*   [1 文件管理](#.E6.96.87.E4.BB.B6.E7.AE.A1.E7.90.86)
+*   [1 文件管理](#文件管理)
     *   [1.1 ls](#ls)
     *   [1.2 cat](#cat)
     *   [1.3 less](#less)
@@ -31,24 +31,24 @@
     *   [1.7 find](#find)
     *   [1.8 locate](#locate)
     *   [1.9 diff](#diff)
-*   [2 文本流处理](#.E6.96.87.E6.9C.AC.E6.B5.81.E5.A4.84.E7.90.86)
+*   [2 文本流处理](#文本流处理)
     *   [2.1 grep](#grep)
     *   [2.2 sed](#sed)
     *   [2.3 awk](#awk)
-*   [3 系统管理](#.E7.B3.BB.E7.BB.9F.E7.AE.A1.E7.90.86)
+*   [3 系统管理](#系统管理)
     *   [3.1 sudo](#sudo)
     *   [3.2 which](#which)
     *   [3.3 lsblk](#lsblk)
     *   [3.4 ip](#ip)
     *   [3.5 ss](#ss)
-*   [4 杂项](#.E6.9D.82.E9.A1.B9)
+*   [4 杂项](#杂项)
     *   [4.1 dd](#dd)
     *   [4.2 iconv](#iconv)
     *   [4.3 od](#od)
     *   [4.4 seq](#seq)
     *   [4.5 tar](#tar)
     *   [4.6 wipefs](#wipefs)
-*   [5 参考资料](#.E5.8F.82.E8.80.83.E8.B5.84.E6.96.99)
+*   [5 参考资料](#参考资料)
 
 ## 文件管理
 
@@ -63,7 +63,7 @@
 | ls -al | 显示隐藏文件和文件属性 |
 | mv | 移动文件 | [mv(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mv.1) | mv ~/compressed.zip ~/archive/compressed2.zip |
 | cp | 复制文件 | [cp(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cp.1) | cp ~/.bashrc ~/.bashrc.bak |
-| chmod +x | 设置文件为[可执行文件](/index.php/Help:Reading_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E6.B7.BB.E5.8A.A0.E5.8F.AF.E6.89.A7.E8.A1.8C.E6.9D.83.E9.99.90 "Help:Reading (简体中文)") | [chmod(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1) | chmod +x ~/.local/bin/myscript.sh |
+| chmod +x | 设置文件为[可执行文件](/index.php/Help:Reading_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#添加可执行权限 "Help:Reading (简体中文)") | [chmod(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1) | chmod +x ~/.local/bin/myscript.sh |
 | cat | 显示文件内容 | [cat(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cat.1) | cat /etc/hostname |
 | find | 查找文件 | [find(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/find.1) | find ~ -name myfile |
 
@@ -75,7 +75,7 @@
 
 [exa](https://the.exa.website) 相较于 `ls` 和 `tree` 是一个更加现代的、人性化的选择。它有更多的特性，例如将 [Git](/index.php/Git "Git") 修改和文件名一同显示，在 `--long` 模式中对每列进行不同的着色，或者在 `tree` 视图中显示 `--long` 模式元数据。*exa* 可以在软件包 [exa](https://www.archlinux.org/packages/?name=exa) 中找到。
 
-`-l` 选项（“长格式”）用于显示文件类型、[权限](/index.php/File_permissions_and_attributes_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "File permissions and attributes (简体中文)")、所有者的[用户名](/index.php/Users_and_groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Users and groups (简体中文)")和[用户组](/index.php/Users_and_groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E7.94.A8.E6.88.B7.E7.BB.84.E7.AE.A1.E7.90.86 "Users and groups (简体中文)")、大小、修改时间等等，具体参阅 [info document](https://www.gnu.org/software/coreutils/manual/html_node/What-information-is-listed.html#index-long-ls-format)。
+`-l` 选项（“长格式”）用于显示文件类型、[权限](/index.php/File_permissions_and_attributes_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "File permissions and attributes (简体中文)")、所有者的[用户名](/index.php/Users_and_groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Users and groups (简体中文)")和[用户组](/index.php/Users_and_groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#用户组管理 "Users and groups (简体中文)")、大小、修改时间等等，具体参阅 [info document](https://www.gnu.org/software/coreutils/manual/html_node/What-information-is-listed.html#index-long-ls-format)。
 
 默认情况下，包含空格的文件名和目录名会被单引号引起。要改变这一特性，请使用 `-N` 或 `--quoting-style=literal` 选项。另外，将 `QUOTING_STYLE` [环境变量](/index.php/Environment_variables_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Environment variables (简体中文)") 设置为 `literal` 也可以。[[1]](https://unix.stackexchange.com/questions/258679/why-is-ls-suddenly-surrounding-items-with-spaces-in-single-quotes)
 

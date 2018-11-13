@@ -11,13 +11,13 @@ Os pacotes do [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)") no
 ## Contents
 
 *   [1 URL fonte](#URL_fonte)
-    *   [1.1 Usando tarball de lançamento](#Usando_tarball_de_lan.C3.A7amento)
-    *   [1.2 Usando um commit do repositório Git](#Usando_um_commit_do_reposit.C3.B3rio_Git)
+    *   [1.1 Usando tarball de lançamento](#Usando_tarball_de_lançamento)
+    *   [1.2 Usando um commit do repositório Git](#Usando_um_commit_do_repositório_Git)
 *   [2 Compilando com meson](#Compilando_com_meson)
 *   [3 GConf schemas](#GConf_schemas)
 *   [4 GSettings schemas](#GSettings_schemas)
-*   [5 Documentação do Scrollkeeper](#Documenta.C3.A7.C3.A3o_do_Scrollkeeper)
-*   [6 Cache de ícones do GTK](#Cache_de_.C3.ADcones_do_GTK)
+*   [5 Documentação do Scrollkeeper](#Documentação_do_Scrollkeeper)
+*   [6 Cache de ícones do GTK](#Cache_de_ícones_do_GTK)
 *   [7 Arquivos .desktop](#Arquivos_.desktop)
 *   [8 Arquivos .install](#Arquivos_.install)
 
@@ -67,7 +67,7 @@ Muitos softwares do GNOME migraram o sistema de compilação para o [Meson](http
 
 Para compilar usando o Meson, adicione o pacote [meson](https://www.archlinux.org/packages/?name=meson) para [makedepends](/index.php/PKGBUILD_(Portugu%C3%AAs)#makedepends "PKGBUILD (Português)") e execute seu comando *meson*, incluindo opcionalmente todas as opções desejadas suportadas pelo software alvo. O pacote [ninja](https://www.archlinux.org/packages/?name=ninja) também será usado neste sistema de compilação, mas é uma dependência do [meson](https://www.archlinux.org/packages/?name=meson), então você não precisa incluí-lo no vetor *makedepends*.
 
-As funções [build()](/index.php/Criando_pacotes#build.28.29 "Criando pacotes"), [check()](/index.php/Criando_pacotes#check.28.29 "Criando pacotes") e [package()](/index.php/Criando_pacotes#package.28.29 "Criando pacotes") devem ser parecer com:
+As funções [build()](/index.php/Criando_pacotes#build() "Criando pacotes"), [check()](/index.php/Criando_pacotes#check() "Criando pacotes") e [package()](/index.php/Criando_pacotes#package() "Criando pacotes") devem ser parecer com:
 
  `PKGBUILD` 
 ```

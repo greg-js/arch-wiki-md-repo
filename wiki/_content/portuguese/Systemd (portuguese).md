@@ -19,53 +19,53 @@ De [página web do projeto](http://freedesktop.org/wiki/Software/systemd):
 
 ## Contents
 
-*   [1 Uso básico do systemctl](#Uso_b.C3.A1sico_do_systemctl)
+*   [1 Uso básico do systemctl](#Uso_básico_do_systemctl)
     *   [1.1 Analisando o estado do sistema](#Analisando_o_estado_do_sistema)
     *   [1.2 Usando units](#Usando_units)
     *   [1.3 Gerenciamento de energia](#Gerenciamento_de_energia)
 *   [2 Escrevendo arquivos unit](#Escrevendo_arquivos_unit)
-    *   [2.1 Manuseando dependências](#Manuseando_depend.C3.AAncias)
-    *   [2.2 Tipos de serviços](#Tipos_de_servi.C3.A7os)
+    *   [2.1 Manuseando dependências](#Manuseando_dependências)
+    *   [2.2 Tipos de serviços](#Tipos_de_serviços)
     *   [2.3 Editando units fornecidas](#Editando_units_fornecidas)
-        *   [2.3.1 Arquivos unit de substituição](#Arquivos_unit_de_substitui.C3.A7.C3.A3o)
+        *   [2.3.1 Arquivos unit de substituição](#Arquivos_unit_de_substituição)
         *   [2.3.2 Arquivos drop-in](#Arquivos_drop-in)
-        *   [2.3.3 Reverter para versão do vendor](#Reverter_para_vers.C3.A3o_do_vendor)
+        *   [2.3.3 Reverter para versão do vendor](#Reverter_para_versão_do_vendor)
         *   [2.3.4 Exemplos](#Exemplos)
 *   [3 Targets](#Targets)
     *   [3.1 Obter targets atuais](#Obter_targets_atuais)
     *   [3.2 Criar target personalizado](#Criar_target_personalizado)
-    *   [3.3 Mapeamento entre níveis do SysV e targets do systemd](#Mapeamento_entre_n.C3.ADveis_do_SysV_e_targets_do_systemd)
+    *   [3.3 Mapeamento entre níveis do SysV e targets do systemd](#Mapeamento_entre_níveis_do_SysV_e_targets_do_systemd)
     *   [3.4 Alterar target atual](#Alterar_target_atual)
-    *   [3.5 Alterar target padrão para inicializar](#Alterar_target_padr.C3.A3o_para_inicializar)
-    *   [3.6 Ordem de target padrão](#Ordem_de_target_padr.C3.A3o)
-*   [4 Arquivos temporários](#Arquivos_tempor.C3.A1rios)
+    *   [3.5 Alterar target padrão para inicializar](#Alterar_target_padrão_para_inicializar)
+    *   [3.6 Ordem de target padrão](#Ordem_de_target_padrão)
+*   [4 Arquivos temporários](#Arquivos_temporários)
 *   [5 Timers](#Timers)
 *   [6 Montagem](#Montagem)
-    *   [6.1 Automontagem de partição GPT](#Automontagem_de_parti.C3.A7.C3.A3o_GPT)
+    *   [6.1 Automontagem de partição GPT](#Automontagem_de_partição_GPT)
 *   [7 Journal](#Journal)
-    *   [7.1 Nível de prioridade](#N.C3.ADvel_de_prioridade)
+    *   [7.1 Nível de prioridade](#Nível_de_prioridade)
     *   [7.2 Facilidade](#Facilidade)
-    *   [7.3 Filtrando saída](#Filtrando_sa.C3.ADda)
+    *   [7.3 Filtrando saída](#Filtrando_saída)
     *   [7.4 Limite no tamanho do journal](#Limite_no_tamanho_do_journal)
     *   [7.5 Limpar arquivos de journal manualmente](#Limpar_arquivos_de_journal_manualmente)
     *   [7.6 Journald em conjunto com o syslog](#Journald_em_conjunto_com_o_syslog)
-    *   [7.7 Encaminhar journald para /dev/tty12](#Encaminhar_journald_para_.2Fdev.2Ftty12)
+    *   [7.7 Encaminhar journald para /dev/tty12](#Encaminhar_journald_para_/dev/tty12)
     *   [7.8 Especificar um journal diferente para ver](#Especificar_um_journal_diferente_para_ver)
 *   [8 Dicas e truques](#Dicas_e_truques)
-    *   [8.1 Executando serviços após a rede estar ativa](#Executando_servi.C3.A7os_ap.C3.B3s_a_rede_estar_ativa)
-    *   [8.2 Habilitar units instaladas por padrão](#Habilitar_units_instaladas_por_padr.C3.A3o)
+    *   [8.1 Executando serviços após a rede estar ativa](#Executando_serviços_após_a_rede_estar_ativa)
+    *   [8.2 Habilitar units instaladas por padrão](#Habilitar_units_instaladas_por_padrão)
     *   [8.3 Usando ambientes de aplicativos em *sandbox*](#Usando_ambientes_de_aplicativos_em_sandbox)
-*   [9 Solução de problemas](#Solu.C3.A7.C3.A3o_de_problemas)
+*   [9 Solução de problemas](#Solução_de_problemas)
     *   [9.1 Investigar erros no systemd](#Investigar_erros_no_systemd)
-    *   [9.2 Diagnosticar problemas de inicialização](#Diagnosticar_problemas_de_inicializa.C3.A7.C3.A3o)
-    *   [9.3 Diagnosticar um serviço](#Diagnosticar_um_servi.C3.A7o)
-    *   [9.4 Desligamento/reinicialização demora demais](#Desligamento.2Freinicializa.C3.A7.C3.A3o_demora_demais)
-    *   [9.5 Processos de curta duração não parecem registrar qualquer saída](#Processos_de_curta_dura.C3.A7.C3.A3o_n.C3.A3o_parecem_registrar_qualquer_sa.C3.ADda)
-    *   [9.6 Tempo de inicialização aumentando com o tempo](#Tempo_de_inicializa.C3.A7.C3.A3o_aumentando_com_o_tempo)
-    *   [9.7 systemd-tmpfiles-setup.service não inicia na inicialização do sistema](#systemd-tmpfiles-setup.service_n.C3.A3o_inicia_na_inicializa.C3.A7.C3.A3o_do_sistema)
-    *   [9.8 A versão impressa do systemd na inicialização não é a mesma da versão do pacote instalado](#A_vers.C3.A3o_impressa_do_systemd_na_inicializa.C3.A7.C3.A3o_n.C3.A3o_.C3.A9_a_mesma_da_vers.C3.A3o_do_pacote_instalado)
-    *   [9.9 Desabilitar modo de emergência em máquina remota](#Desabilitar_modo_de_emerg.C3.AAncia_em_m.C3.A1quina_remota)
-*   [10 Veja também](#Veja_tamb.C3.A9m)
+    *   [9.2 Diagnosticar problemas de inicialização](#Diagnosticar_problemas_de_inicialização)
+    *   [9.3 Diagnosticar um serviço](#Diagnosticar_um_serviço)
+    *   [9.4 Desligamento/reinicialização demora demais](#Desligamento/reinicialização_demora_demais)
+    *   [9.5 Processos de curta duração não parecem registrar qualquer saída](#Processos_de_curta_duração_não_parecem_registrar_qualquer_saída)
+    *   [9.6 Tempo de inicialização aumentando com o tempo](#Tempo_de_inicialização_aumentando_com_o_tempo)
+    *   [9.7 systemd-tmpfiles-setup.service não inicia na inicialização do sistema](#systemd-tmpfiles-setup.service_não_inicia_na_inicialização_do_sistema)
+    *   [9.8 A versão impressa do systemd na inicialização não é a mesma da versão do pacote instalado](#A_versão_impressa_do_systemd_na_inicialização_não_é_a_mesma_da_versão_do_pacote_instalado)
+    *   [9.9 Desabilitar modo de emergência em máquina remota](#Desabilitar_modo_de_emergência_em_máquina_remota)
+*   [10 Veja também](#Veja_também)
 
 ## Uso básico do systemctl
 
@@ -304,7 +304,7 @@ Veja a página man [systemd.service(5)](http://www.freedesktop.org/software/syst
 
 ### Editando units fornecidas
 
-Para evitar conflitos com o pacman, arquivos unit fornecidos por pacotes não devem ser editados diretamente. Há duas formas seguras de modificar um unit sem tocar no arquivo original: crie um novo arquivo unit que [se sobreponha ao unit original](#Arquivos_unit_de_substitui.C3.A7.C3.A3o) ou crie [trechos drop-in](#Arquivos_drop-in) que são aplicados sobre o unit original. Para ambos métodos, você deve recarregar o unit em seguida para aplicar suas alterações. Isso pode ser feito editando o unit com `systemctl edit` (que recarrega o unit automaticamente) ou recarregando todos os units com:
+Para evitar conflitos com o pacman, arquivos unit fornecidos por pacotes não devem ser editados diretamente. Há duas formas seguras de modificar um unit sem tocar no arquivo original: crie um novo arquivo unit que [se sobreponha ao unit original](#Arquivos_unit_de_substituição) ou crie [trechos drop-in](#Arquivos_drop-in) que são aplicados sobre o unit original. Para ambos métodos, você deve recarregar o unit em seguida para aplicar suas alterações. Isso pode ser feito editando o unit com `systemctl edit` (que recarrega o unit automaticamente) ou recarregando todos os units com:
 
 ```
 # systemctl daemon-reload
@@ -513,7 +513,7 @@ A automontagem para uma partição pode ser desabilitada alterando o [GUID do ti
 
 No Arch Linux, o diretório `/var/log/journal/` faz parte do pacote *systemd* e o journal (quando `Storage=` está definido para `auto` em `/etc/systemd/journald.conf`) vai escrever para `/var/log/journal/`. Se você ou algum programa excluir esse diretório, systemd **não** vai recriá-lo automaticamente e, em vez disso,vai escrever seus logs em `/run/systemd/journal` em uma forma não persistente. Porém, a pasta será recriada quando você definir `Storage=persistent` e [reiniciar](/index.php/Reiniciar "Reiniciar") `systemd-journald.service` (ou reinicializar o sistema).
 
-O journal do systemd classifica mensagens por [nível de prioridade](#N.C3.ADvel_de_prioridade) e [facilidade](#Facilidade). A classificação de registro de logs corresponde ao clássico protocolo do [Syslog](https://en.wikipedia.org/wiki/pt:Syslog "wikipedia:pt:Syslog") ([RFC 5424](https://tools.ietf.org/html/rfc5424)).
+O journal do systemd classifica mensagens por [nível de prioridade](#Nível_de_prioridade) e [facilidade](#Facilidade). A classificação de registro de logs corresponde ao clássico protocolo do [Syslog](https://en.wikipedia.org/wiki/pt:Syslog "wikipedia:pt:Syslog") ([RFC 5424](https://tools.ietf.org/html/rfc5424)).
 
 ### Nível de prioridade
 
@@ -601,7 +601,7 @@ Ao omitir a opção `S`, a saída estará sob *wrap* em vez de truncamento. Por 
 $ SYSTEMD_LESS=FRXMK journalctl
 
 ```
-Se você quiser definir esse comportamento como padrão, [exporte](/index.php/Vari%C3%A1vel_de_ambiente#Por_usu.C3.A1rio "Variável de ambiente") a variável a partir de `~/.bashrc` ou `~/.zshrc`.
+Se você quiser definir esse comportamento como padrão, [exporte](/index.php/Vari%C3%A1vel_de_ambiente#Por_usuário "Variável de ambiente") a variável a partir de `~/.bashrc` ou `~/.zshrc`.
 
 ### Limite no tamanho do journal
 

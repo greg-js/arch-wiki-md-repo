@@ -9,30 +9,30 @@ Artículos relacionados
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
     *   [1.1 Paquete base](#Paquete_base)
-    *   [1.2 Cliente GTK+](#Cliente_GTK.2B)
+    *   [1.2 Cliente GTK+](#Cliente_GTK+)
     *   [1.3 Cliente KDE](#Cliente_KDE)
     *   [1.4 Notificaciones](#Notificaciones)
     *   [1.5 Alternativa](#Alternativa)
 *   [2 Para empezar](#Para_empezar)
-    *   [2.1 Configuración inicial](#Configuraci.C3.B3n_inicial)
+    *   [2.1 Configuración inicial](#Configuración_inicial)
     *   [2.2 Ejecutar Wicd en un entorno de escritorio](#Ejecutar_Wicd_en_un_entorno_de_escritorio)
     *   [2.3 Ejecutar Wicd en modo texto](#Ejecutar_Wicd_en_modo_texto)
-    *   [2.4 Inicio automático](#Inicio_autom.C3.A1tico)
+    *   [2.4 Inicio automático](#Inicio_automático)
     *   [2.5 Scripts](#Scripts)
         *   [2.5.1 Detener los ataques de ARP spoofing](#Detener_los_ataques_de_ARP_spoofing)
-        *   [2.5.2 Cambiar la dirección MAC con macchanger](#Cambiar_la_direcci.C3.B3n_MAC_con_macchanger)
-*   [3 Solución de problemas](#Soluci.C3.B3n_de_problemas)
-    *   [3.1 Fallo importando pynotify, notificaciones desactivadas](#Fallo_importando_pynotify.2C_notificaciones_desactivadas)
-    *   [3.2 Mensaje de error de conexión con Dbus](#Mensaje_de_error_de_conexi.C3.B3n_con_Dbus)
-    *   [3.3 Problemas después de actualizar el paquete](#Problemas_despu.C3.A9s_de_actualizar_el_paquete)
-    *   [3.4 Algunas notas sobre front-end gráficos para sudo](#Algunas_notas_sobre_front-end_gr.C3.A1ficos_para_sudo)
+        *   [2.5.2 Cambiar la dirección MAC con macchanger](#Cambiar_la_dirección_MAC_con_macchanger)
+*   [3 Solución de problemas](#Solución_de_problemas)
+    *   [3.1 Fallo importando pynotify, notificaciones desactivadas](#Fallo_importando_pynotify,_notificaciones_desactivadas)
+    *   [3.2 Mensaje de error de conexión con Dbus](#Mensaje_de_error_de_conexión_con_Dbus)
+    *   [3.3 Problemas después de actualizar el paquete](#Problemas_después_de_actualizar_el_paquete)
+    *   [3.4 Algunas notas sobre front-end gráficos para sudo](#Algunas_notas_sobre_front-end_gráficos_para_sudo)
     *   [3.5 Configurar wicd para trabajar con eduroam](#Configurar_wicd_para_trabajar_con_eduroam)
-    *   [3.6 Dos procesos wicd-client (y eventualmente dos iconos en la bandeja del sistema)](#Dos_procesos_wicd-client_.28y_eventualmente_dos_iconos_en_la_bandeja_del_sistema.29)
-    *   [3.7 Contraseña incorrecta usando PEAP con TKIP/MSCHAPV2](#Contrase.C3.B1a_incorrecta_usando_PEAP_con_TKIP.2FMSCHAPV2)
-    *   [3.8 Wicd no puede obtener una dirección IP de WLAN](#Wicd_no_puede_obtener_una_direcci.C3.B3n_IP_de_WLAN)
-*   [4 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+    *   [3.6 Dos procesos wicd-client (y eventualmente dos iconos en la bandeja del sistema)](#Dos_procesos_wicd-client_(y_eventualmente_dos_iconos_en_la_bandeja_del_sistema))
+    *   [3.7 Contraseña incorrecta usando PEAP con TKIP/MSCHAPV2](#Contraseña_incorrecta_usando_PEAP_con_TKIP/MSCHAPV2)
+    *   [3.8 Wicd no puede obtener una dirección IP de WLAN](#Wicd_no_puede_obtener_una_dirección_IP_de_WLAN)
+*   [4 Véase también](#Véase_también)
 
 ## Instalación
 
@@ -188,7 +188,7 @@ fi
 
 #### Cambiar la dirección MAC con macchanger
 
-Véase el [artículo relacionado](/index.php/MAC_address_spoofing#systemd_.2B_macchanger_.2B_dhcpcd_.28no_NetworkManager.29 "MAC address spoofing").
+Véase el [artículo relacionado](/index.php/MAC_address_spoofing#systemd_+_macchanger_+_dhcpcd_(no_NetworkManager) "MAC address spoofing").
 
 El siguiente script se puede utilizar para cambiar la dirección MAC de las interfaces de red.
 
@@ -326,7 +326,7 @@ NB. Este ajuste funciona en algunos caso comentando `subject_match`, aunque no e
 
 ### Dos procesos wicd-client (y eventualmente dos iconos en la bandeja del sistema)
 
-Consulte la nota en [#Ejecutar Wicd en modo texto](#Ejecutar_Wicd_en_modo_texto) sobre el archivo autostart en `/etc/xdg/autostart`, consulte el post del foro y envíe los errores a algunos de los [siguientes enlaces](#V.C3.A9ase_tambi.C3.A9n) proporcionados. Resumidamente, si `/etc/xdg/autostart/wicd-tray.desktop` existe, elimínelo. Solo es necesario el servicio `wicd` activado en el sistema.
+Consulte la nota en [#Ejecutar Wicd en modo texto](#Ejecutar_Wicd_en_modo_texto) sobre el archivo autostart en `/etc/xdg/autostart`, consulte el post del foro y envíe los errores a algunos de los [siguientes enlaces](#Véase_también) proporcionados. Resumidamente, si `/etc/xdg/autostart/wicd-tray.desktop` existe, elimínelo. Solo es necesario el servicio `wicd` activado en el sistema.
 
 ### Contraseña incorrecta usando PEAP con TKIP/MSCHAPV2
 

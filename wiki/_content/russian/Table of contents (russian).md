@@ -1,4 +1,4 @@
-| [Русский](/index.php/Category:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9 "Category:Русский") <small>(444)</small> | [English](/index.php/Category:English "Category:English") <small>(2)</small> |
+| [Русский](/index.php/Category:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9 "Category:Русский") <small>(445)</small> | [English](/index.php/Category:English "Category:English") <small>(2)</small> |
 | <small>1.</small> [Об Arch](/index.php/Category:About_Arch_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:About Arch (Русский)") <small>(17)</small> | <small>1.</small> [About Arch](/index.php/Category:About_Arch "Category:About Arch") <small>(17)</small> |
  <small>1.1.</small> [Arch community](/index.php/Category:Arch_community "Category:Arch community") <small>(5)</small> |
  <small>1.1.1.</small> [Classroom](/index.php/Category:Classroom "Category:Classroom") <small>(2)</small> |
@@ -32,7 +32,7 @@
 | <small>2.12.</small> [Multimedia](/index.php/Category:Multimedia_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Multimedia (Русский)") <small>(13)</small> |
 | <small>2.13.</small> [Проигрыватель](/index.php/Category:Multimedia_players_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Multimedia players (Русский)") <small>(4)</small> |
 | <small>2.14.</small> [Мониторинг статуса и уведомления](/index.php/Category:Status_monitoring_and_notification_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Status monitoring and notification (Русский)") <small>(3)</small> |
-| <small>2.15.</small> [Эмуляторы терминала](/index.php/Category:Terminal_emulators_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Terminal emulators (Русский)") <small>(7)</small> |
+| <small>2.15.</small> [Эмуляторы терминала](/index.php/Category:Terminal_emulators_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Terminal emulators (Русский)") <small>(8)</small> |
 | <small>2.16.</small> [Текстовые редакторы](/index.php/Category:Text_editors_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Text editors (Русский)") <small>(3)</small> |
 | <small>2.17.</small> [Wine](/index.php/Category:Wine_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Wine (Русский)") <small>(2)</small> |
 | <small>3.</small> [Разработка](/index.php/Category:Development_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Development (Русский)") <small>(6)</small> | <small>2.</small> [Development](/index.php/Category:Development "Category:Development") <small>(34)</small> |
@@ -216,7 +216,7 @@
  <small>5.1.16.</small> [Simulation](/index.php/Category:Simulation "Category:Simulation") <small>(3)</small> |
 | <small>6.1.14.</small> [Мониторинг статуса и уведомления](/index.php/Category:Status_monitoring_and_notification_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Status monitoring and notification (Русский)") <small>(3)</small> |
  <small>5.1.17.</small> [System monitors](/index.php/Category:System_monitors "Category:System monitors") <small>(10) (also in [Monitoring](/index.php/Category:Monitoring "Category:Monitoring"))</small> |
-| <small>6.1.15.</small> [Эмуляторы терминала](/index.php/Category:Terminal_emulators_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Terminal emulators (Русский)") <small>(7)</small> | <small>5.1.18.</small> [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators") <small>(17) (also in [Command-line](/index.php/Category:Command-line "Category:Command-line"), [Emulation](/index.php/Category:Emulation "Category:Emulation"))</small> |
+| <small>6.1.15.</small> [Эмуляторы терминала](/index.php/Category:Terminal_emulators_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Terminal emulators (Русский)") <small>(8)</small> | <small>5.1.18.</small> [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators") <small>(17) (also in [Command-line](/index.php/Category:Command-line "Category:Command-line"), [Emulation](/index.php/Category:Emulation "Category:Emulation"))</small> |
 | <small>6.1.16.</small> [Текстовые редакторы](/index.php/Category:Text_editors_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Text editors (Русский)") <small>(3)</small> | <small>5.1.19.</small> [Text editors](/index.php/Category:Text_editors "Category:Text editors") <small>(15) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
  <small>5.1.20.</small> [Web applications](/index.php/Category:Web_applications "Category:Web applications") <small>(37) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
  <small>5.1.20.1.</small> [Content management systems](/index.php/Category:Content_management_systems "Category:Content management systems") <small>(4)</small> |
@@ -266,7 +266,7 @@
  <small>5.7.</small> [Software comparisons](/index.php/Category:Software_comparisons "Category:Software comparisons") <small>(4)</small> |
  <small>5.8.</small> [Software projects](/index.php/Category:Software_projects "Category:Software projects") <small>(0)</small> |
  <small>5.8.1.</small> [Apache](/index.php/Category:Apache "Category:Apache") <small>(6)</small> |
- <small>5.8.2.</small> [Arch projects](/index.php/Category:Arch_projects "Category:Arch projects") <small>(8) (also in [DeveloperWiki](/index.php/Category:DeveloperWiki "Category:DeveloperWiki"))</small> |
+ <small>5.8.2.</small> [Arch projects](/index.php/Category:Arch_projects "Category:Arch projects") <small>(9) (also in [DeveloperWiki](/index.php/Category:DeveloperWiki "Category:DeveloperWiki"))</small> |
  <small>5.8.3.</small> [GNOME](/index.php/Category:GNOME "Category:GNOME") <small>(13) (also in [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments"))</small> |
  <small>5.8.4.</small> [GNU](/index.php/Category:GNU "Category:GNU") <small>(11)</small> |
  <small>5.8.5.</small> [KDE](/index.php/Category:KDE "Category:KDE") <small>(12) (also in [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments"))</small> |

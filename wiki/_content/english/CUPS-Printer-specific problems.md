@@ -16,7 +16,7 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
     *   [1.3 Updating the firmware](#Updating_the_firmware)
 *   [2 Canon](#Canon)
     *   [2.1 CARPS](#CARPS)
-    *   [2.2 USB over IP (BJNP)](#USB_over_IP_.28BJNP.29)
+    *   [2.2 USB over IP (BJNP)](#USB_over_IP_(BJNP))
     *   [2.3 cnijfilter](#cnijfilter)
 *   [3 Dell](#Dell)
 *   [4 Epson](#Epson)

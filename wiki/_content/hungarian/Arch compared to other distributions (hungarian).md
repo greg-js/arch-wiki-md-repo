@@ -7,9 +7,9 @@ Ez az oldal megpróbálja felvázolni az Arch Linux és más népszerű GNU/Linu
 
 ## Contents
 
-*   [1 Forráskód alapú disztribúciók](#Forr.C3.A1sk.C3.B3d_alap.C3.BA_disztrib.C3.BAci.C3.B3k)
+*   [1 Forráskód alapú disztribúciók](#Forráskód_alapú_disztribúciók)
     *   [1.1 Gentoo](#Gentoo)
-    *   [1.2 Sorcerer/Lunar-Linux/Source Mage](#Sorcerer.2FLunar-Linux.2FSource_Mage)
+    *   [1.2 Sorcerer/Lunar-Linux/Source Mage](#Sorcerer/Lunar-Linux/Source_Mage)
 *   [2 Minimalista](#Minimalista)
     *   [2.1 LFS](#LFS)
     *   [2.2 CRUX](#CRUX)
@@ -20,14 +20,14 @@ Ez az oldal megpróbálja felvázolni az Arch Linux és más népszerű GNU/Linu
     *   [3.3 Mandriva](#Mandriva)
     *   [3.4 openSUSE](#openSUSE)
     *   [3.5 PCLinuxOS](#PCLinuxOS)
-*   [4 A *BSD-k](#A_.2ABSD-k)
+*   [4 A *BSD-k](#A_*BSD-k)
     *   [4.1 FreeBSD](#FreeBSD)
     *   [4.2 NetBSD](#NetBSD)
     *   [4.3 OpenBSD](#OpenBSD)
-*   [5 Egyéb](#Egy.C3.A9b)
-    *   [5.1 Debian GNU/Linux](#Debian_GNU.2FLinux)
+*   [5 Egyéb](#Egyéb)
+    *   [5.1 Debian GNU/Linux](#Debian_GNU/Linux)
     *   [5.2 Frugalware](#Frugalware)
-*   [6 Külső linkek](#K.C3.BCls.C5.91_linkek)
+*   [6 Külső linkek](#Külső_linkek)
 
 ## Forráskód alapú disztribúciók
 

@@ -4,17 +4,17 @@
 
 ## Contents
 
-*   [1 原因](#.E5.8E.9F.E5.9B.A0)
-*   [2 必要条件](#.E5.BF.85.E8.A6.81.E6.9D.A1.E4.BB.B6)
-*   [3 用法](#.E7.94.A8.E6.B3.95)
-    *   [3.1 使用 arch-chroot](#.E4.BD.BF.E7.94.A8_arch-chroot)
-        *   [3.1.1 运行一个命令并退出](#.E8.BF.90.E8.A1.8C.E4.B8.80.E4.B8.AA.E5.91.BD.E4.BB.A4.E5.B9.B6.E9.80.80.E5.87.BA)
-    *   [3.2 使用 chroot](#.E4.BD.BF.E7.94.A8_chroot)
-*   [4 在 chroot 中运行图形程序](#.E5.9C.A8_chroot_.E4.B8.AD.E8.BF.90.E8.A1.8C.E5.9B.BE.E5.BD.A2.E7.A8.8B.E5.BA.8F)
-*   [5 不使用 root 权限](#.E4.B8.8D.E4.BD.BF.E7.94.A8_root_.E6.9D.83.E9.99.90)
+*   [1 原因](#原因)
+*   [2 必要条件](#必要条件)
+*   [3 用法](#用法)
+    *   [3.1 使用 arch-chroot](#使用_arch-chroot)
+        *   [3.1.1 运行一个命令并退出](#运行一个命令并退出)
+    *   [3.2 使用 chroot](#使用_chroot)
+*   [4 在 chroot 中运行图形程序](#在_chroot_中运行图形程序)
+*   [5 不使用 root 权限](#不使用_root_权限)
     *   [5.1 PRoot](#PRoot)
     *   [5.2 Fakechroot](#Fakechroot)
-*   [6 参阅](#.E5.8F.82.E9.98.85)
+*   [6 参阅](#参阅)
 
 ## 原因
 

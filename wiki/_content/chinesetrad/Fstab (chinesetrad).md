@@ -2,7 +2,7 @@
 
 ## Contents
 
-*   [1 欄位定義](#.E6.AC.84.E4.BD.8D.E5.AE.9A.E7.BE.A9)
+*   [1 欄位定義](#欄位定義)
 *   [2 Example](#Example)
 *   [3 Defining filesystems](#Defining_filesystems)
     *   [3.1 Kernel naming](#Kernel_naming)

@@ -10,7 +10,7 @@ Related articles
 ## Contents
 
 *   [1 Process](#Process)
-    *   [1.1 Who benefits, who does not](#Who_benefits.2C_who_does_not)
+    *   [1.1 Who benefits, who does not](#Who_benefits,_who_does_not)
 *   [2 Installation](#Installation)
 *   [3 Getting it to work](#Getting_it_to_work)
     *   [3.1 e4rat-collect](#e4rat-collect)
@@ -26,7 +26,7 @@ Related articles
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 startup.log is not created](#startup.log_is_not_created)
     *   [7.2 e4rat erroneously reports an ext2 files system](#e4rat_erroneously_reports_an_ext2_files_system)
-    *   [7.3 /var/lib/e4rat/startup.log is not accessible](#.2Fvar.2Flib.2Fe4rat.2Fstartup.log_is_not_accessible)
+    *   [7.3 /var/lib/e4rat/startup.log is not accessible](#/var/lib/e4rat/startup.log_is_not_accessible)
     *   [7.4 Remove annoying message that mess up boot message](#Remove_annoying_message_that_mess_up_boot_message)
 *   [8 See also](#See_also)
 

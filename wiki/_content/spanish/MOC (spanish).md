@@ -8,8 +8,8 @@ Soporta ALSA, OSS y JACK, es altamente configurable, permite reproducir formatos
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Configuración](#Configuraci.C3.B3n)
+*   [1 Instalación](#Instalación)
+*   [2 Configuración](#Configuración)
 *   [3 Uso](#Uso)
 *   [4 Atajos de teclado](#Atajos_de_teclado)
 *   [5 Cerrando moc](#Cerrando_moc)

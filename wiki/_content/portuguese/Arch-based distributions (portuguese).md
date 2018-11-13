@@ -3,11 +3,11 @@
 Artigos relacionados
 
 *   [Arch em comparação com outras distribuições](/index.php/Arch_em_compara%C3%A7%C3%A3o_com_outras_distribui%C3%A7%C3%B5es "Arch em comparação com outras distribuições")
-*   [Archiso](/index.php/Archiso "Archiso")
+*   [Archiso](/index.php/Archiso_(Portugu%C3%AAs) "Archiso (Português)")
 *   [TalkingArch](/index.php/TalkingArch "TalkingArch")
 *   [DeveloperWiki:TrademarkPolicy](/index.php/DeveloperWiki:TrademarkPolicy "DeveloperWiki:TrademarkPolicy")
 
-**Atenção:** **Não** há suporte a distribuições baseadas no Arch pela comunidade ou desenvolvedores do Arch. Veja [Código de conduta#Suporte *apenas* à distribuição Arch Linux](/index.php/C%C3%B3digo_de_conduta#Suporte_.2Aapenas.2A_.C3.A0_distribui.C3.A7.C3.A3o_Arch_Linux "Código de conduta")
+**Atenção:** **Não** há suporte a distribuições baseadas no Arch pela comunidade ou desenvolvedores do Arch. Veja [Código de conduta#Suporte *apenas* à distribuição Arch Linux](/index.php/C%C3%B3digo_de_conduta#Suporte_*apenas*_à_distribuição_Arch_Linux "Código de conduta")
 
 **Nota:** Por favor, use a página de discussão para sugerir edições a este artigo: [Talk:Arch-based distributions](/index.php/Talk:Arch-based_distributions "Talk:Arch-based distributions").
 
@@ -30,7 +30,7 @@ Esta página lista as distribuições do sistema operacional que são derivadas 
     *   [2.11 2007](#2007)
     *   [2.12 2006](#2006)
     *   [2.13 2004](#2004)
-*   [3 Veja também](#Veja_tamb.C3.A9m)
+*   [3 Veja também](#Veja_também)
 
 ## Ativas
 

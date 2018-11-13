@@ -11,11 +11,11 @@ A intenção desta página é desmistificar os termos comumente usados pela comu
 *   [3 Arch Linux Archive](#Arch_Linux_Archive)
 *   [4 AUR](#AUR)
 *   [5 bbs](#bbs)
-*   [6 community/[community]](#community.2F.5Bcommunity.5D)
-*   [7 core/[core]](#core.2F.5Bcore.5D)
-*   [8 custom/user repository](#custom.2Fuser_repository)
+*   [6 community/[community]](#community/[community])
+*   [7 core/[core]](#core/[core])
+*   [8 custom/user repository](#custom/user_repository)
 *   [9 Developer](#Developer)
-*   [10 extra/[extra]](#extra.2F.5Bextra.5D)
+*   [10 extra/[extra]](#extra/[extra])
 *   [11 initramfs](#initramfs)
 *   [12 initrd](#initrd)
 *   [13 KISS](#KISS)
@@ -25,11 +25,11 @@ A intenção desta página é desmistificar os termos comumente usados pela comu
 *   [17 Package maintainer](#Package_maintainer)
 *   [18 pacman](#pacman)
 *   [19 PKGBUILD](#PKGBUILD)
-*   [20 repository/repo](#repository.2Frepo)
+*   [20 repository/repo](#repository/repo)
 *   [21 RTFM](#RTFM)
-*   [22 testing/[testing]](#testing.2F.5Btesting.5D)
+*   [22 testing/[testing]](#testing/[testing])
 *   [23 The Arch Way](#The_Arch_Way)
-*   [24 TU, Trusted User](#TU.2C_Trusted_User)
+*   [24 TU, Trusted User](#TU,_Trusted_User)
 *   [25 udev](#udev)
 *   [26 wiki](#wiki)
 
@@ -178,7 +178,7 @@ Esse é o respositório no qual a maioria dos pacotes ou das atualizações de p
 
 ## The Arch Way
 
-Podendo ser traduzido como "A Forma do Arch" ou "O Jeito do Arch", é um termo extraoficial tradicionalmente usado para se referir aos mais importantes [princípios do Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs)#Princ.C3.ADpios "Arch Linux (Português)").
+Podendo ser traduzido como "A Forma do Arch" ou "O Jeito do Arch", é um termo extraoficial tradicionalmente usado para se referir aos mais importantes [princípios do Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs)#Princípios "Arch Linux (Português)").
 
 ## TU, Trusted User
 

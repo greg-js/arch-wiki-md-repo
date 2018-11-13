@@ -2,7 +2,7 @@ There are several ways to set up a Virtual Private Network through SSH. Note tha
 
 ## Contents
 
-*   [1 OpenSSH's built in tunneling](#OpenSSH.27s_built_in_tunneling)
+*   [1 OpenSSH's built in tunneling](#OpenSSH's_built_in_tunneling)
     *   [1.1 Create tun interfaces using netcfg](#Create_tun_interfaces_using_netcfg)
     *   [1.2 Create tun interfaces using systemd-networkd](#Create_tun_interfaces_using_systemd-networkd)
         *   [1.2.1 Creating interfaces in SSH command](#Creating_interfaces_in_SSH_command)

@@ -15,7 +15,7 @@ This article will show how to enable rudimentary CMYK support in Gimp using the 
 *   [5 About CMYK color and Gimp](#About_CMYK_color_and_Gimp)
 *   [6 Getting the software](#Getting_the_software)
     *   [6.1 Separate plug-in for Gimp](#Separate_plug-in_for_Gimp)
-    *   [6.2 Separate+ plug-in](#Separate.2B_plug-in)
+    *   [6.2 Separate+ plug-in](#Separate+_plug-in)
         *   [6.2.1 Installing using AUR](#Installing_using_AUR)
         *   [6.2.2 Installing manually](#Installing_manually)
     *   [6.3 Install ICC profiles](#Install_ICC_profiles)
@@ -26,8 +26,8 @@ This article will show how to enable rudimentary CMYK support in Gimp using the 
 *   [9 Soft-proofing with Display Filters](#Soft-proofing_with_Display_Filters)
     *   [9.1 Intent](#Intent)
     *   [9.2 Profile](#Profile)
-*   [10 Soft-proofing with Separate's proof function](#Soft-proofing_with_Separate.27s_proof_function)
-*   [11 Soft-proofing with Separate+'s proof function](#Soft-proofing_with_Separate.2B.27s_proof_function)
+*   [10 Soft-proofing with Separate's proof function](#Soft-proofing_with_Separate's_proof_function)
+*   [11 Soft-proofing with Separate+'s proof function](#Soft-proofing_with_Separate+'s_proof_function)
 *   [12 See also](#See_also)
 
 ## Before you read

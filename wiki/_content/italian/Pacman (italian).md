@@ -27,9 +27,9 @@ Pacman è sviluppato in C, e utilizza il formato `.pkg.tar.xz`.
 
 *   [1 Configurazione](#Configurazione)
     *   [1.1 Opzioni generali](#Opzioni_generali)
-        *   [1.1.1 Evitare l'aggiornamento di un pacchetto](#Evitare_l.27aggiornamento_di_un_pacchetto)
-        *   [1.1.2 Evitare l'aggiornamento di un gruppo di pacchetti](#Evitare_l.27aggiornamento_di_un_gruppo_di_pacchetti)
-        *   [1.1.3 Evitare l'installazione di file nel sistema](#Evitare_l.27installazione_di_file_nel_sistema)
+        *   [1.1.1 Evitare l'aggiornamento di un pacchetto](#Evitare_l'aggiornamento_di_un_pacchetto)
+        *   [1.1.2 Evitare l'aggiornamento di un gruppo di pacchetti](#Evitare_l'aggiornamento_di_un_gruppo_di_pacchetti)
+        *   [1.1.3 Evitare l'installazione di file nel sistema](#Evitare_l'installazione_di_file_nel_sistema)
     *   [1.2 Repository](#Repository)
     *   [1.3 Sicurezza dei pacchetti](#Sicurezza_dei_pacchetti)
 *   [2 Uso](#Uso)
@@ -43,23 +43,23 @@ Pacman è sviluppato in C, e utilizza il formato `.pkg.tar.xz`.
     *   [2.6 Gli aggiornamenti parziali non sono supportati](#Gli_aggiornamenti_parziali_non_sono_supportati)
     *   [2.7 Note generali](#Note_generali)
 *   [3 Risoluzione di problemi](#Risoluzione_di_problemi)
-    *   [3.1 L'aggiornamento del pacchetto XYZ ha corrotto il mio sistema!](#L.27aggiornamento_del_pacchetto_XYZ_ha_corrotto_il_mio_sistema.21)
-    *   [3.2 So che un aggiornamento del pacchetto ABC è stato rilasciato, ma pacman mi dice che il mio sistema è aggiornato!](#So_che_un_aggiornamento_del_pacchetto_ABC_.C3.A8_stato_rilasciato.2C_ma_pacman_mi_dice_che_il_mio_sistema_.C3.A8_aggiornato.21)
-    *   [3.3 Aggiornando il sistema ottengo l'errore: "file exists in filesystem"!](#Aggiornando_il_sistema_ottengo_l.27errore:_.22file_exists_in_filesystem.22.21)
-    *   [3.4 Ottengo un errore quando si installa un pacchetto: "not found in sync db"](#Ottengo_un_errore_quando_si_installa_un_pacchetto:_.22not_found_in_sync_db.22)
-    *   [3.5 Ottengo un errore quando si installa un pacchetto: "target not found"](#Ottengo_un_errore_quando_si_installa_un_pacchetto:_.22target_not_found.22)
-    *   [3.6 Pacman mi richiede ripetutamente di aggiornare lo stesso pacchetto!](#Pacman_mi_richiede_ripetutamente_di_aggiornare_lo_stesso_pacchetto.21)
-    *   [3.7 Pacman va in crash durante un aggiornamento!](#Pacman_va_in_crash_durante_un_aggiornamento.21)
-    *   [3.8 Ho installato un programma utilizzando "make install"; questi file non appartengono ad alcun pacchetto!](#Ho_installato_un_programma_utilizzando_.22make_install.22.3B_questi_file_non_appartengono_ad_alcun_pacchetto.21)
-    *   [3.9 Ho bisogno di un pacchetto con un file specifico. Come faccio a sapere da quale viene fornito?](#Ho_bisogno_di_un_pacchetto_con_un_file_specifico._Come_faccio_a_sapere_da_quale_viene_fornito.3F)
-    *   [3.10 Pacman è completamente fuori uso! Come faccio a reinstallarlo?](#Pacman_.C3.A8_completamente_fuori_uso.21_Come_faccio_a_reinstallarlo.3F)
-    *   [3.11 Dopo aver aggiornato il sistema e riavviato, ottengo l'errore "unable to find root device" e il sistema non riesce più ad avviarsi.](#Dopo_aver_aggiornato_il_sistema_e_riavviato.2C_ottengo_l.27errore_.22unable_to_find_root_device.22_e_il_sistema_non_riesce_pi.C3.B9_ad_avviarsi.)
-    *   [3.12 Signature from "User <email@gmail.com>" is unknown trust, installation failed](#Signature_from_.22User_.3Cemail.40gmail.com.3E.22_is_unknown_trust.2C_installation_failed)
-    *   [3.13 Continuo ad ottenere "PackageName: signature from "User <email@archlinux.org>" is invalid"](#Continuo_ad_ottenere_.22PackageName:_signature_from_.22User_.3Cemail.40archlinux.org.3E.22_is_invalid.22)
-    *   [3.14 Continuo ad ottenere l'errore "failed to commit transaction (invalid or corrupted package)"](#Continuo_ad_ottenere_l.27errore_.22failed_to_commit_transaction_.28invalid_or_corrupted_package.29.22)
-    *   [3.15 Ogni volta che uso pacman ottengo l'errore 'warning: current locale is invalid; using default "C" locale'. Cosa faccio?](#Ogni_volta_che_uso_pacman_ottengo_l.27errore_.27warning:_current_locale_is_invalid.3B_using_default_.22C.22_locale.27._Cosa_faccio.3F)
-    *   [3.16 Come posso fare in modo che pacman usi la mia configurazione per un proxy?](#Come_posso_fare_in_modo_che_pacman_usi_la_mia_configurazione_per_un_proxy.3F)
-    *   [3.17 Come reinstallare tutti i pacchetti, mantenendo memoria di quali pacchetti sono installati esplicitamente e quali come dipendenze?](#Come_reinstallare_tutti_i_pacchetti.2C_mantenendo_memoria_di_quali_pacchetti_sono_installati_esplicitamente_e_quali_come_dipendenze.3F)
+    *   [3.1 L'aggiornamento del pacchetto XYZ ha corrotto il mio sistema!](#L'aggiornamento_del_pacchetto_XYZ_ha_corrotto_il_mio_sistema!)
+    *   [3.2 So che un aggiornamento del pacchetto ABC è stato rilasciato, ma pacman mi dice che il mio sistema è aggiornato!](#So_che_un_aggiornamento_del_pacchetto_ABC_è_stato_rilasciato,_ma_pacman_mi_dice_che_il_mio_sistema_è_aggiornato!)
+    *   [3.3 Aggiornando il sistema ottengo l'errore: "file exists in filesystem"!](#Aggiornando_il_sistema_ottengo_l'errore:_"file_exists_in_filesystem"!)
+    *   [3.4 Ottengo un errore quando si installa un pacchetto: "not found in sync db"](#Ottengo_un_errore_quando_si_installa_un_pacchetto:_"not_found_in_sync_db")
+    *   [3.5 Ottengo un errore quando si installa un pacchetto: "target not found"](#Ottengo_un_errore_quando_si_installa_un_pacchetto:_"target_not_found")
+    *   [3.6 Pacman mi richiede ripetutamente di aggiornare lo stesso pacchetto!](#Pacman_mi_richiede_ripetutamente_di_aggiornare_lo_stesso_pacchetto!)
+    *   [3.7 Pacman va in crash durante un aggiornamento!](#Pacman_va_in_crash_durante_un_aggiornamento!)
+    *   [3.8 Ho installato un programma utilizzando "make install"; questi file non appartengono ad alcun pacchetto!](#Ho_installato_un_programma_utilizzando_"make_install";_questi_file_non_appartengono_ad_alcun_pacchetto!)
+    *   [3.9 Ho bisogno di un pacchetto con un file specifico. Come faccio a sapere da quale viene fornito?](#Ho_bisogno_di_un_pacchetto_con_un_file_specifico._Come_faccio_a_sapere_da_quale_viene_fornito?)
+    *   [3.10 Pacman è completamente fuori uso! Come faccio a reinstallarlo?](#Pacman_è_completamente_fuori_uso!_Come_faccio_a_reinstallarlo?)
+    *   [3.11 Dopo aver aggiornato il sistema e riavviato, ottengo l'errore "unable to find root device" e il sistema non riesce più ad avviarsi.](#Dopo_aver_aggiornato_il_sistema_e_riavviato,_ottengo_l'errore_"unable_to_find_root_device"_e_il_sistema_non_riesce_più_ad_avviarsi.)
+    *   [3.12 Signature from "User <email@gmail.com>" is unknown trust, installation failed](#Signature_from_"User_<email@gmail.com>"_is_unknown_trust,_installation_failed)
+    *   [3.13 Continuo ad ottenere "PackageName: signature from "User <email@archlinux.org>" is invalid"](#Continuo_ad_ottenere_"PackageName:_signature_from_"User_<email@archlinux.org>"_is_invalid")
+    *   [3.14 Continuo ad ottenere l'errore "failed to commit transaction (invalid or corrupted package)"](#Continuo_ad_ottenere_l'errore_"failed_to_commit_transaction_(invalid_or_corrupted_package)")
+    *   [3.15 Ogni volta che uso pacman ottengo l'errore 'warning: current locale is invalid; using default "C" locale'. Cosa faccio?](#Ogni_volta_che_uso_pacman_ottengo_l'errore_'warning:_current_locale_is_invalid;_using_default_"C"_locale'._Cosa_faccio?)
+    *   [3.16 Come posso fare in modo che pacman usi la mia configurazione per un proxy?](#Come_posso_fare_in_modo_che_pacman_usi_la_mia_configurazione_per_un_proxy?)
+    *   [3.17 Come reinstallare tutti i pacchetti, mantenendo memoria di quali pacchetti sono installati esplicitamente e quali come dipendenze?](#Come_reinstallare_tutti_i_pacchetti,_mantenendo_memoria_di_quali_pacchetti_sono_installati_esplicitamente_e_quali_come_dipendenze?)
 *   [4 Altre risorse](#Altre_risorse)
 
 ## Configurazione
@@ -557,7 +557,7 @@ Come descritto nel messaggio di errore, il tuo locale non è configurato corrett
 
 ### Come posso fare in modo che pacman usi la mia configurazione per un proxy?
 
-Assicurarsi che le pertinenti variabili d'ambiente (`$http_proxy`, `$ftp_proxy` ecc.) siano configurate. Se si usa pacman con [sudo](/index.php/Sudo_(Italiano) "Sudo (Italiano)"), bisogna configurare sudo affinché [passi queste variabili a pacman](/index.php/Sudo_(Italiano)#Variabili_d.27ambiente "Sudo (Italiano)").
+Assicurarsi che le pertinenti variabili d'ambiente (`$http_proxy`, `$ftp_proxy` ecc.) siano configurate. Se si usa pacman con [sudo](/index.php/Sudo_(Italiano) "Sudo (Italiano)"), bisogna configurare sudo affinché [passi queste variabili a pacman](/index.php/Sudo_(Italiano)#Variabili_d'ambiente "Sudo (Italiano)").
 
 ### Come reinstallare tutti i pacchetti, mantenendo memoria di quali pacchetti sono installati esplicitamente e quali come dipendenze?
 

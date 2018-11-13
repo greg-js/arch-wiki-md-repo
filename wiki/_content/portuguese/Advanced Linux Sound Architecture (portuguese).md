@@ -12,18 +12,18 @@ Artigos relacionados
 ## Contents
 
 *   [1 Sobre este documento](#Sobre_este_documento)
-*   [2 Instalação](#Instala.C3.A7.C3.A3o)
+*   [2 Instalação](#Instalação)
     *   [2.1 Kernel drivers](#Kernel_drivers)
         *   [2.1.1 Kernel 2.4](#Kernel_2.4)
         *   [2.1.2 Kernel 2.6](#Kernel_2.6)
     *   [2.2 Userspace utilities](#Userspace_utilities)
-*   [3 Configuração](#Configura.C3.A7.C3.A3o)
-    *   [3.1 Certificando-se que os modulos do som estão carregados](#Certificando-se_que_os_modulos_do_som_est.C3.A3o_carregados)
+*   [3 Configuração](#Configuração)
+    *   [3.1 Certificando-se que os modulos do som estão carregados](#Certificando-se_que_os_modulos_do_som_estão_carregados)
     *   [3.2 Habilitando canais e testando a placa de som](#Habilitando_canais_e_testando_a_placa_de_som)
-    *   [3.3 Configurando as permissões](#Configurando_as_permiss.C3.B5es)
-    *   [3.4 Restaurando as configurações do mixer durante a inicialização](#Restaurando_as_configura.C3.A7.C3.B5es_do_mixer_durante_a_inicializa.C3.A7.C3.A3o)
-    *   [3.5 Obtendo a saída SPDIF](#Obtendo_a_sa.C3.ADda_SPDIF)
-*   [4 Continua sem som?](#Continua_sem_som.3F)
+    *   [3.3 Configurando as permissões](#Configurando_as_permissões)
+    *   [3.4 Restaurando as configurações do mixer durante a inicialização](#Restaurando_as_configurações_do_mixer_durante_a_inicialização)
+    *   [3.5 Obtendo a saída SPDIF](#Obtendo_a_saída_SPDIF)
+*   [4 Continua sem som?](#Continua_sem_som?)
 *   [5 Configurando o KDE](#Configurando_o_KDE)
 
 ## Sobre este documento

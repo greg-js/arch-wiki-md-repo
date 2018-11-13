@@ -10,11 +10,11 @@ Nel caso si sia interessati ad installare Arch Linux su un supporto USB si veda 
 
 ## Contents
 
-*   [1 Su GNU/Linux](#Su_GNU.2FLinux)
+*   [1 Su GNU/Linux](#Su_GNU/Linux)
     *   [1.1 Sovrascrivendo i dati presenti sul supporto USB](#Sovrascrivendo_i_dati_presenti_sul_supporto_USB)
         *   [1.1.1 Riportare il supporto USB al suo stato originale](#Riportare_il_supporto_USB_al_suo_stato_originale)
     *   [1.2 Senza sovrascrivere tutti i dati presenti sul supporto USB](#Senza_sovrascrivere_tutti_i_dati_presenti_sul_supporto_USB)
-        *   [1.2.1 UNetbootin (Metodo sconsigliato)](#UNetbootin_.28Metodo_sconsigliato.29)
+        *   [1.2.1 UNetbootin (Metodo sconsigliato)](#UNetbootin_(Metodo_sconsigliato))
 *   [2 Su Mac OS X](#Su_Mac_OS_X)
 *   [3 Su Windows](#Su_Windows)
     *   [3.1 Image Writer per Windows](#Image_Writer_per_Windows)
@@ -23,7 +23,7 @@ Nel caso si sia interessati ad installare Arch Linux su un supporto USB si veda 
     *   [3.4 Metodo Flashnul](#Metodo_Flashnul)
     *   [3.5 Metodo Cygwin](#Metodo_Cygwin)
     *   [3.6 dd per Windows](#dd_per_Windows)
-    *   [3.7 Avviare l'intera ISO dalla memoria RAM](#Avviare_l.27intera_ISO_dalla_memoria_RAM)
+    *   [3.7 Avviare l'intera ISO dalla memoria RAM](#Avviare_l'intera_ISO_dalla_memoria_RAM)
 *   [4 Risoluzione problemi](#Risoluzione_problemi)
 *   [5 Vedere Anche](#Vedere_Anche)
 

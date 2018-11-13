@@ -12,17 +12,17 @@ Do [Wikipédia](https://en.wikipedia.org/wiki/pt:Shell_do_Unix "wikipedia:pt:She
 ## Contents
 
 *   [1 Lista de shells](#Lista_de_shells)
-    *   [1.1 Compatíveis com POSIX](#Compat.C3.ADveis_com_POSIX)
+    *   [1.1 Compatíveis com POSIX](#Compatíveis_com_POSIX)
     *   [1.2 Shells alternativos](#Shells_alternativos)
-*   [2 Alterando seu shell padrão](#Alterando_seu_shell_padr.C3.A3o)
-*   [3 Arquivos de configuração](#Arquivos_de_configura.C3.A7.C3.A3o)
-    *   [3.1 /etc/profile](#.2Fetc.2Fprofile)
-*   [4 Entrada e saída](#Entrada_e_sa.C3.ADda)
-*   [5 Veja também](#Veja_tamb.C3.A9m)
+*   [2 Alterando seu shell padrão](#Alterando_seu_shell_padrão)
+*   [3 Arquivos de configuração](#Arquivos_de_configuração)
+    *   [3.1 /etc/profile](#/etc/profile)
+*   [4 Entrada e saída](#Entrada_e_saída)
+*   [5 Veja também](#Veja_também)
 
 ## Lista de shells
 
-Shells que são mais ou menos [compatíveis com POSIX](http://pubs.opengroup.org/onlinepubs/009695399/utilities/xcu_chap02.html) são listados sob [#Compatíveis com POSIX](#Compat.C3.ADveis_com_POSIX), enquanto shells que têm uma sintaxe diferente estão sob [#Shells alternativos](#Shells_alternativos).
+Shells que são mais ou menos [compatíveis com POSIX](http://pubs.opengroup.org/onlinepubs/009695399/utilities/xcu_chap02.html) são listados sob [#Compatíveis com POSIX](#Compatíveis_com_POSIX), enquanto shells que têm uma sintaxe diferente estão sob [#Shells alternativos](#Shells_alternativos).
 
 ### Compatíveis com POSIX
 
@@ -104,7 +104,7 @@ Se você agora você encerrar a sessão e iniciá-la novamente, você será saud
 
 ## Arquivos de configuração
 
-Para iniciar automaticamente programas no console ou no login, você pode usar os arquivos/diretórios de inicialização do shell. Leia a documentação do seu shell, ou seu artigo do ArchWiki, p. ex., [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash") ou [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup.2FShutdown_files "Zsh").
+Para iniciar automaticamente programas no console ou no login, você pode usar os arquivos/diretórios de inicialização do shell. Leia a documentação do seu shell, ou seu artigo do ArchWiki, p. ex., [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash") ou [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup/Shutdown_files "Zsh").
 
 Veja também [Wikipedia:pt:Shell do Unix#Arquivos de configuração](https://en.wikipedia.org/wiki/pt:Shell_do_Unix#Arquivos_de_configura.C3.A7.C3.A3o "wikipedia:pt:Shell do Unix").
 

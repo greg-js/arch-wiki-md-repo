@@ -8,7 +8,7 @@ From the project [home page](http://folding.stanford.edu/):
 *   [2 Configuration](#Configuration)
     *   [2.1 The graphical way](#The_graphical_way)
     *   [2.2 The terminal way](#The_terminal_way)
-    *   [2.3 Run f@h with limited privileges](#Run_f.40h_with_limited_privileges)
+    *   [2.3 Run f@h with limited privileges](#Run_f@h_with_limited_privileges)
 *   [3 Monitoring work-unit progress](#Monitoring_work-unit_progress)
 *   [4 See also](#See_also)
 

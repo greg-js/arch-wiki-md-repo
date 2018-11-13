@@ -12,7 +12,7 @@ A multiboot USB flash drive allows booting multiple ISO files from a single devi
     *   [1.1 Preparation](#Preparation)
     *   [1.2 Installing GRUB](#Installing_GRUB)
         *   [1.2.1 Simple installation](#Simple_installation)
-        *   [1.2.2 Hybrid UEFI GPT + BIOS GPT/MBR boot](#Hybrid_UEFI_GPT_.2B_BIOS_GPT.2FMBR_boot)
+        *   [1.2.2 Hybrid UEFI GPT + BIOS GPT/MBR boot](#Hybrid_UEFI_GPT_+_BIOS_GPT/MBR_boot)
     *   [1.3 Configuring GRUB](#Configuring_GRUB)
         *   [1.3.1 Using a template](#Using_a_template)
         *   [1.3.2 Manual configuration](#Manual_configuration)

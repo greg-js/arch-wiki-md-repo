@@ -9,85 +9,85 @@ Este artículo trata sobre la instalación y configuración de los controladores
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-    *   [1.1 Instalación alternativa: kernel personalizado](#Instalaci.C3.B3n_alternativa:_kernel_personalizado)
-    *   [1.2 Recompilación automatica del modulo NVIDIA para cada actualización en cualquier kernel](#Recompilaci.C3.B3n_automatica_del_modulo_NVIDIA_para_cada_actualizaci.C3.B3n_en_cualquier_kernel)
-*   [2 Configuración](#Configuraci.C3.B3n)
-    *   [2.1 Configuración mínima](#Configuraci.C3.B3n_m.C3.ADnima)
-    *   [2.2 Configuración automática](#Configuraci.C3.B3n_autom.C3.A1tica)
+*   [1 Instalación](#Instalación)
+    *   [1.1 Instalación alternativa: kernel personalizado](#Instalación_alternativa:_kernel_personalizado)
+    *   [1.2 Recompilación automatica del modulo NVIDIA para cada actualización en cualquier kernel](#Recompilación_automatica_del_modulo_NVIDIA_para_cada_actualización_en_cualquier_kernel)
+*   [2 Configuración](#Configuración)
+    *   [2.1 Configuración mínima](#Configuración_mínima)
+    *   [2.2 Configuración automática](#Configuración_automática)
     *   [2.3 Varios monitores](#Varios_monitores)
         *   [2.3.1 TwinView](#TwinView)
-            *   [2.3.1.1 Configuración manual de CLI con xrandr](#Configuraci.C3.B3n_manual_de_CLI_con_xrandr)
+            *   [2.3.1.1 Configuración manual de CLI con xrandr](#Configuración_manual_de_CLI_con_xrandr)
         *   [2.3.2 Utilizar NVIDIA Settings](#Utilizar_NVIDIA_Settings)
         *   [2.3.3 ConnectedMonitor](#ConnectedMonitor)
         *   [2.3.4 Modo mosaic](#Modo_mosaic)
-            *   [2.3.4.1 Mosaic básico](#Mosaic_b.C3.A1sico)
+            *   [2.3.4.1 Mosaic básico](#Mosaic_básico)
             *   [2.3.4.2 Mosaic SLI](#Mosaic_SLI)
-*   [3 Optimización](#Optimizaci.C3.B3n)
+*   [3 Optimización](#Optimización)
     *   [3.1 GUI: nvidia-settings](#GUI:_nvidia-settings)
-    *   [3.2 Activar MSI (Message Signaled Interrupts)](#Activar_MSI_.28Message_Signaled_Interrupts.29)
+    *   [3.2 Activar MSI (Message Signaled Interrupts)](#Activar_MSI_(Message_Signaled_Interrupts))
     *   [3.3 Avanzado: 20-nvidia.conf](#Avanzado:_20-nvidia.conf)
         *   [3.3.1 Activar desktop composition](#Activar_desktop_composition)
-        *   [3.3.2 Desactivar la aparición del logo al iniciar](#Desactivar_la_aparici.C3.B3n_del_logo_al_iniciar)
-        *   [3.3.3 Activar aceleración por hardware](#Activar_aceleraci.C3.B3n_por_hardware)
-        *   [3.3.4 Omitir la detección de monitor](#Omitir_la_detecci.C3.B3n_de_monitor)
+        *   [3.3.2 Desactivar la aparición del logo al iniciar](#Desactivar_la_aparición_del_logo_al_iniciar)
+        *   [3.3.3 Activar aceleración por hardware](#Activar_aceleración_por_hardware)
+        *   [3.3.4 Omitir la detección de monitor](#Omitir_la_detección_de_monitor)
         *   [3.3.5 Activar el triple buffering](#Activar_el_triple_buffering)
         *   [3.3.6 Usar los eventos del sistema](#Usar_los_eventos_del_sistema)
-        *   [3.3.7 Activar el ahorro de energía](#Activar_el_ahorro_de_energ.C3.ADa)
+        *   [3.3.7 Activar el ahorro de energía](#Activar_el_ahorro_de_energía)
         *   [3.3.8 Activar el control del brillo](#Activar_el_control_del_brillo)
         *   [3.3.9 Activar la modalidad SLI](#Activar_la_modalidad_SLI)
-        *   [3.3.10 Forzar el nivel de rendimiento Powermizer (para portátiles)](#Forzar_el_nivel_de_rendimiento_Powermizer_.28para_port.C3.A1tiles.29)
+        *   [3.3.10 Forzar el nivel de rendimiento Powermizer (para portátiles)](#Forzar_el_nivel_de_rendimiento_Powermizer_(para_portátiles))
             *   [3.3.10.1 Dejar que la GPU establezca su propio nivel de rendimiento basado en la temperatura](#Dejar_que_la_GPU_establezca_su_propio_nivel_de_rendimiento_basado_en_la_temperatura)
-        *   [3.3.11 Desactivar vblank interrupts (para portátiles)](#Desactivar_vblank_interrupts_.28para_port.C3.A1tiles.29)
+        *   [3.3.11 Desactivar vblank interrupts (para portátiles)](#Desactivar_vblank_interrupts_(para_portátiles))
         *   [3.3.12 Activar overclocking](#Activar_overclocking)
-            *   [3.3.12.1 Configurar un marcador estático 2D/3D](#Configurar_un_marcador_est.C3.A1tico_2D.2F3D)
+            *   [3.3.12.1 Configurar un marcador estático 2D/3D](#Configurar_un_marcador_estático_2D/3D)
 *   [4 Consejos y trucos](#Consejos_y_trucos)
-    *   [4.1 Ajustar la resolución del terminal de inicio](#Ajustar_la_resoluci.C3.B3n_del_terminal_de_inicio)
-    *   [4.2 Activar Vídeo HD (VDPAU/VAAPI)](#Activar_V.C3.ADdeo_HD_.28VDPAU.2FVAAPI.29)
-    *   [4.3 Decodificar aceleración de vídeo por hardware con XvMC](#Decodificar_aceleraci.C3.B3n_de_v.C3.ADdeo_por_hardware_con_XvMC)
+    *   [4.1 Ajustar la resolución del terminal de inicio](#Ajustar_la_resolución_del_terminal_de_inicio)
+    *   [4.2 Activar Vídeo HD (VDPAU/VAAPI)](#Activar_Vídeo_HD_(VDPAU/VAAPI))
+    *   [4.3 Decodificar aceleración de vídeo por hardware con XvMC](#Decodificar_aceleración_de_vídeo_por_hardware_con_XvMC)
     *   [4.4 Usar la salida de TV](#Usar_la_salida_de_TV)
-    *   [4.5 X con un televisor (DFP) como única pantalla](#X_con_un_televisor_.28DFP.29_como_.C3.BAnica_pantalla)
-    *   [4.6 Comprobar el estado de energía](#Comprobar_el_estado_de_energ.C3.ADa)
+    *   [4.5 X con un televisor (DFP) como única pantalla](#X_con_un_televisor_(DFP)_como_única_pantalla)
+    *   [4.6 Comprobar el estado de energía](#Comprobar_el_estado_de_energía)
     *   [4.7 Visualizar la temperatura de la GPU en la shell](#Visualizar_la_temperatura_de_la_GPU_en_la_shell)
-        *   [4.7.1 Método 1 - nvidia-settings](#M.C3.A9todo_1_-_nvidia-settings)
-        *   [4.7.2 Método 2 - nvidia-smi](#M.C3.A9todo_2_-_nvidia-smi)
-        *   [4.7.3 Método 3 - nvclock](#M.C3.A9todo_3_-_nvclock)
-    *   [4.8 Ajustar la velocidad del ventilador en la sesión](#Ajustar_la_velocidad_del_ventilador_en_la_sesi.C3.B3n)
-    *   [4.9 Orden de instalación/desinstalación para cambiar los controladores](#Orden_de_instalaci.C3.B3n.2Fdesinstalaci.C3.B3n_para_cambiar_los_controladores)
+        *   [4.7.1 Método 1 - nvidia-settings](#Método_1_-_nvidia-settings)
+        *   [4.7.2 Método 2 - nvidia-smi](#Método_2_-_nvidia-smi)
+        *   [4.7.3 Método 3 - nvclock](#Método_3_-_nvclock)
+    *   [4.8 Ajustar la velocidad del ventilador en la sesión](#Ajustar_la_velocidad_del_ventilador_en_la_sesión)
+    *   [4.9 Orden de instalación/desinstalación para cambiar los controladores](#Orden_de_instalación/desinstalación_para_cambiar_los_controladores)
     *   [4.10 Cambiar entre los controladores NVIDIA y nouveau](#Cambiar_entre_los_controladores_NVIDIA_y_nouveau)
-*   [5 Solución de problemas](#Soluci.C3.B3n_de_problemas)
-    *   [5.1 Rendimiento bajo, por ejemplo, rediseño lento al cambiar las pestañas en Chrome](#Rendimiento_bajo.2C_por_ejemplo.2C_redise.C3.B1o_lento_al_cambiar_las_pesta.C3.B1as_en_Chrome)
+*   [5 Solución de problemas](#Solución_de_problemas)
+    *   [5.1 Rendimiento bajo, por ejemplo, rediseño lento al cambiar las pestañas en Chrome](#Rendimiento_bajo,_por_ejemplo,_rediseño_lento_al_cambiar_las_pestañas_en_Chrome)
     *   [5.2 Jugar usando Twinview](#Jugar_usando_Twinview)
-    *   [5.3 Sincronización vertical usando TwinView](#Sincronizaci.C3.B3n_vertical_usando_TwinView)
-    *   [5.4 Antigua configuración de Xorg](#Antigua_configuraci.C3.B3n_de_Xorg)
-    *   [5.5 Pantalla corrupta: el problema de las «seis pantallas»](#Pantalla_corrupta:_el_problema_de_las_.C2.ABseis_pantallas.C2.BB)
-    *   [5.6 Error '/dev/nvidia0' Input/Output](#Error_.27.2Fdev.2Fnvidia0.27_Input.2FOutput)
-    *   [5.7 Errores '/dev/nvidiactl'](#Errores_.27.2Fdev.2Fnvidiactl.27)
+    *   [5.3 Sincronización vertical usando TwinView](#Sincronización_vertical_usando_TwinView)
+    *   [5.4 Antigua configuración de Xorg](#Antigua_configuración_de_Xorg)
+    *   [5.5 Pantalla corrupta: el problema de las «seis pantallas»](#Pantalla_corrupta:_el_problema_de_las_«seis_pantallas»)
+    *   [5.6 Error '/dev/nvidia0' Input/Output](#Error_'/dev/nvidia0'_Input/Output)
+    *   [5.7 Errores '/dev/nvidiactl'](#Errores_'/dev/nvidiactl')
     *   [5.8 Las aplicaciones de 32 bits no se inician](#Las_aplicaciones_de_32_bits_no_se_inician)
-    *   [5.9 Errores después de actualizar el kernel](#Errores_despu.C3.A9s_de_actualizar_el_kernel)
+    *   [5.9 Errores después de actualizar el kernel](#Errores_después_de_actualizar_el_kernel)
     *   [5.10 Fallo general](#Fallo_general)
-    *   [5.11 Inadecuado rendimiento después de instalar una nueva versión del controlador](#Inadecuado_rendimiento_despu.C3.A9s_de_instalar_una_nueva_versi.C3.B3n_del_controlador)
+    *   [5.11 Inadecuado rendimiento después de instalar una nueva versión del controlador](#Inadecuado_rendimiento_después_de_instalar_una_nueva_versión_del_controlador)
     *   [5.12 Picos altos de la CPU con tarjetas de la serie 400](#Picos_altos_de_la_CPU_con_tarjetas_de_la_serie_400)
-    *   [5.13 Portátiles: X se bloquea al iniciar/cerrar sesión, obviado con Ctrl+Alt+Backspace](#Port.C3.A1tiles:_X_se_bloquea_al_iniciar.2Fcerrar_sesi.C3.B3n.2C_obviado_con_Ctrl.2BAlt.2BBackspace)
+    *   [5.13 Portátiles: X se bloquea al iniciar/cerrar sesión, obviado con Ctrl+Alt+Backspace](#Portátiles:_X_se_bloquea_al_iniciar/cerrar_sesión,_obviado_con_Ctrl+Alt+Backspace)
     *   [5.14 Frecuencia de refresco no detectada correctamente por los servicios dependientes de XRandR](#Frecuencia_de_refresco_no_detectada_correctamente_por_los_servicios_dependientes_de_XRandR)
-    *   [5.15 No se encuentran pantallas en un ordenador portátil/NVIDIA Optimus](#No_se_encuentran_pantallas_en_un_ordenador_port.C3.A1til.2FNVIDIA_Optimus)
-        *   [5.15.1 Posible Solución](#Posible_Soluci.C3.B3n)
-    *   [5.16 Pantalla(s) encontrada, pero ninguna configuración utilizable](#Pantalla.28s.29_encontrada.2C_pero_ninguna_configuraci.C3.B3n_utilizable)
-    *   [5.17 Sin control de brillo en los portátiles](#Sin_control_de_brillo_en_los_port.C3.A1tiles)
-    *   [5.18 Barras negras durante la reproducción a pantalla completa de videos flash con la configuración TwinView](#Barras_negras_durante_la_reproducci.C3.B3n_a_pantalla_completa_de_videos_flash_con_la_configuraci.C3.B3n_TwinView)
-    *   [5.19 La retroiluminación no se apaga en algunas ocasiones](#La_retroiluminaci.C3.B3n_no_se_apaga_en_algunas_ocasiones)
-    *   [5.20 Tinte azul en vídeos con Flash](#Tinte_azul_en_v.C3.ADdeos_con_Flash)
+    *   [5.15 No se encuentran pantallas en un ordenador portátil/NVIDIA Optimus](#No_se_encuentran_pantallas_en_un_ordenador_portátil/NVIDIA_Optimus)
+        *   [5.15.1 Posible Solución](#Posible_Solución)
+    *   [5.16 Pantalla(s) encontrada, pero ninguna configuración utilizable](#Pantalla(s)_encontrada,_pero_ninguna_configuración_utilizable)
+    *   [5.17 Sin control de brillo en los portátiles](#Sin_control_de_brillo_en_los_portátiles)
+    *   [5.18 Barras negras durante la reproducción a pantalla completa de videos flash con la configuración TwinView](#Barras_negras_durante_la_reproducción_a_pantalla_completa_de_videos_flash_con_la_configuración_TwinView)
+    *   [5.19 La retroiluminación no se apaga en algunas ocasiones](#La_retroiluminación_no_se_apaga_en_algunas_ocasiones)
+    *   [5.20 Tinte azul en vídeos con Flash](#Tinte_azul_en_vídeos_con_Flash)
     *   [5.21 Bleeding Overlay con Flash](#Bleeding_Overlay_con_Flash)
-    *   [5.22 Congelación completa del sistema utilizando Flash](#Congelaci.C3.B3n_completa_del_sistema_utilizando_Flash)
+    *   [5.22 Congelación completa del sistema utilizando Flash](#Congelación_completa_del_sistema_utilizando_Flash)
     *   [5.23 Xorg falla al cargarse o aparece una pantalla roja](#Xorg_falla_al_cargarse_o_aparece_una_pantalla_roja)
     *   [5.24 Pantalla en negro en sistemas con GPU integrada de Intel](#Pantalla_en_negro_en_sistemas_con_GPU_integrada_de_Intel)
     *   [5.25 Pantalla en negro en sistemas con GPU VIA integrada](#Pantalla_en_negro_en_sistemas_con_GPU_VIA_integrada)
-    *   [5.26 X falla lanzando «no screens found» con una Intel iGPU](#X_falla_lanzando_.C2.ABno_screens_found.C2.BB_con_una_Intel_iGPU)
-*   [6 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+    *   [5.26 X falla lanzando «no screens found» con una Intel iGPU](#X_falla_lanzando_«no_screens_found»_con_una_Intel_iGPU)
+*   [6 Véase también](#Véase_también)
 
 ## Instalación
 
-Estas instrucciones son para aquellos que utilizan el paquete stock [linux](https://www.archlinux.org/packages/?name=linux). Para la configuración de kernel personalizado, vaya a la [sección correspondiente](#Instalaci.C3.B3n_alternativa:_kernel_personalizado).
+Estas instrucciones son para aquellos que utilizan el paquete stock [linux](https://www.archlinux.org/packages/?name=linux). Para la configuración de kernel personalizado, vaya a la [sección correspondiente](#Instalación_alternativa:_kernel_personalizado).
 
 **Sugerencia:** Por lo general es ventajoso [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el controlador NVIDIA en lugar del paquete proporcionado por el sitio web de NVIDIA, dado que permite asegurarse que el controlador se actualice conforme se vaya actualizando el sistema.
 
@@ -112,7 +112,7 @@ Estas instrucciones son para aquellos que utilizan el paquete stock [linux](http
 
 3\. Reinicie. El paquete [nvidia](https://www.archlinux.org/packages/?name=nvidia) contiene un archivo que introduce en blacklist al módulo *nouveau*, por lo que es necesario reiniciar.
 
-Una vez que el controlador ha sido instalado, proceda a su [configuración](#Configuraci.C3.B3n).
+Una vez que el controlador ha sido instalado, proceda a su [configuración](#Configuración).
 
 ### Instalación alternativa: kernel personalizado
 
@@ -189,7 +189,7 @@ El hook invocará la orden **dkms** para actualizar el módulo NVIDIA a la versi
 
 ## Configuración
 
-Es posible que después de instalar el controlador no sea necesario crear un archivo de configuración para el servidor Xorg. Puede realizar [una prueba](/index.php/Xorg#Running "Xorg") para ver si el servidor Xorg funcionará correctamente sin un archivo de configuración. Sin embargo, aún funcionando correctamente, todavía puede ser útil crear un archivo de configuración `/etc/X11/xorg.conf` con el fin de realizar diversos ajustes. Esta configuración puede ser generada por la herramienta de configuración Xorg NVIDIA, o puede ser creado manualmente. Si la crea manualmente, puede consistir en una configuración mínima (en el sentido de que solo suministrarán las opciones básicas para el servidor [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)")), o puede incluir una [serie de ajustes](/index.php/Xorg_(Espa%C3%B1ol)#Configuraci.C3.B3n_manual "Xorg (Español)") más detallados que pueden puentear las opciones preconfiguradas del controlador o las propias de Xorg.
+Es posible que después de instalar el controlador no sea necesario crear un archivo de configuración para el servidor Xorg. Puede realizar [una prueba](/index.php/Xorg#Running "Xorg") para ver si el servidor Xorg funcionará correctamente sin un archivo de configuración. Sin embargo, aún funcionando correctamente, todavía puede ser útil crear un archivo de configuración `/etc/X11/xorg.conf` con el fin de realizar diversos ajustes. Esta configuración puede ser generada por la herramienta de configuración Xorg NVIDIA, o puede ser creado manualmente. Si la crea manualmente, puede consistir en una configuración mínima (en el sentido de que solo suministrarán las opciones básicas para el servidor [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)")), o puede incluir una [serie de ajustes](/index.php/Xorg_(Espa%C3%B1ol)#Configuración_manual "Xorg (Español)") más detallados que pueden puentear las opciones preconfiguradas del controlador o las propias de Xorg.
 
 **Nota:** Desde la versión 1.8.x Xorg utiliza archivos de configuración separados ubicados en `/etc/X11/xorg.conf.d /` - consulte la sección [configuración avanzada](#Avanzado:_20-nvidia.conf).
 

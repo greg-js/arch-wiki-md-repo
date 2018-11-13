@@ -20,7 +20,7 @@ It is simple to configure but it can only start EFI executables such as the Linu
     *   [2.2 Adding loaders](#Adding_loaders)
         *   [2.2.1 EFI Shells or other EFI apps](#EFI_Shells_or_other_EFI_apps)
     *   [2.3 Booting into EFI Firmware Setup](#Booting_into_EFI_Firmware_Setup)
-    *   [2.4 Preparing kernels for /EFI/Linux](#Preparing_kernels_for_.2FEFI.2FLinux)
+    *   [2.4 Preparing kernels for /EFI/Linux](#Preparing_kernels_for_/EFI/Linux)
     *   [2.5 Support hibernation](#Support_hibernation)
     *   [2.6 Kernel parameters editor with password protection](#Kernel_parameters_editor_with_password_protection)
 *   [3 Keys inside the boot menu](#Keys_inside_the_boot_menu)

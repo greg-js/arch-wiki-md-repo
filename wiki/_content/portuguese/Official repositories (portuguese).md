@@ -18,22 +18,22 @@ Pacotes nos repositórios oficiais são atualizados constantemente: quando um pa
 
 ## Contents
 
-*   [1 Repositórios estáveis](#Reposit.C3.B3rios_est.C3.A1veis)
+*   [1 Repositórios estáveis](#Repositórios_estáveis)
     *   [1.1 core](#core)
     *   [1.2 extra](#extra)
     *   [1.3 community](#community)
     *   [1.4 multilib](#multilib)
         *   [1.4.1 Habilitando multilib](#Habilitando_multilib)
         *   [1.4.2 Desabilitando multilib](#Desabilitando_multilib)
-*   [2 Repositórios de teste](#Reposit.C3.B3rios_de_teste)
+*   [2 Repositórios de teste](#Repositórios_de_teste)
     *   [2.1 testing](#testing)
     *   [2.2 community-testing](#community-testing)
     *   [2.3 multilib-testing](#multilib-testing)
     *   [2.4 gnome-unstable](#gnome-unstable)
     *   [2.5 kde-unstable](#kde-unstable)
-    *   [2.6 Desabilitando repositórios de teste](#Desabilitando_reposit.C3.B3rios_de_teste)
-*   [3 Repositórios de staging](#Reposit.C3.B3rios_de_staging)
-*   [4 Revisão histórica](#Revis.C3.A3o_hist.C3.B3rica)
+    *   [2.6 Desabilitando repositórios de teste](#Desabilitando_repositórios_de_teste)
+*   [3 Repositórios de staging](#Repositórios_de_staging)
+*   [4 Revisão histórica](#Revisão_histórica)
 
 ## Repositórios estáveis
 
@@ -53,7 +53,7 @@ assim como as dependências deles (não necessariamente [makedepends](/index.php
 
 *core* possui uma qualidade consideravelmente estrita de requisitos. Desenvolvedores/usuários precisam assinar (como uma confirmação) as atualizações de pacotes antes delas serem aceitas; Para pacotes com baixo uso, um motivo razoável é suficiente: informar pessoas sobre a atualização, requisitar assinaturas, manter no [#testing](#testing) por uma semana dependendo da severidade da alteração, falta de relatórios de erros relevantes, junto com o assinatura implícito do mantenedor do pacote.
 
-**Dica:** Para criar um repositório local com pacotes do *core* (ou outros repositórios) sem uma conexão internet, veja [pacman/Dicas e truques#Instalando pacotes a partir de um CD/DVD ou pendrive](/index.php/Pacman/Dicas_e_truques#Instalando_pacotes_a_partir_de_um_CD.2FDVD_ou_pendrive "Pacman/Dicas e truques")
+**Dica:** Para criar um repositório local com pacotes do *core* (ou outros repositórios) sem uma conexão internet, veja [pacman/Dicas e truques#Instalando pacotes a partir de um CD/DVD ou pendrive](/index.php/Pacman/Dicas_e_truques#Instalando_pacotes_a_partir_de_um_CD/DVD_ou_pendrive "Pacman/Dicas e truques")
 
 ### extra
 

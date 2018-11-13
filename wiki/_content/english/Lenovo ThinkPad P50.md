@@ -6,7 +6,7 @@ The Lenovo P50 is a quad core Intel Skylake Laptop.
 *   [2 Configuration](#Configuration)
     *   [2.1 External video](#External_video)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Sluggish graphics performance with HD Graphics 530 (Skylake GT2)](#Sluggish_graphics_performance_with_HD_Graphics_530_.28Skylake_GT2.29)
+    *   [3.1 Sluggish graphics performance with HD Graphics 530 (Skylake GT2)](#Sluggish_graphics_performance_with_HD_Graphics_530_(Skylake_GT2))
     *   [3.2 High CPU chromium bug](#High_CPU_chromium_bug)
     *   [3.3 High fan speed on low CPU load](#High_fan_speed_on_low_CPU_load)
     *   [3.4 Mouse cursor disappears after screen unlocks](#Mouse_cursor_disappears_after_screen_unlocks)
@@ -15,8 +15,8 @@ The Lenovo P50 is a quad core Intel Skylake Laptop.
     *   [3.7 Video compression artifacts in VLC](#Video_compression_artifacts_in_VLC)
     *   [3.8 Fingeprint Validity Sensor not working](#Fingeprint_Validity_Sensor_not_working)
     *   [3.9 Headsets not working with pulseaudio](#Headsets_not_working_with_pulseaudio)
-    *   [3.10 Wifi failing to come up (Intel 8260)](#Wifi_failing_to_come_up_.28Intel_8260.29)
-    *   [3.11 External monitor can't be detected on Hybrid Graphics](#External_monitor_can.27t_be_detected_on_Hybrid_Graphics)
+    *   [3.10 Wifi failing to come up (Intel 8260)](#Wifi_failing_to_come_up_(Intel_8260))
+    *   [3.11 External monitor can't be detected on Hybrid Graphics](#External_monitor_can't_be_detected_on_Hybrid_Graphics)
 *   [4 lspci](#lspci)
 
 ## Installation

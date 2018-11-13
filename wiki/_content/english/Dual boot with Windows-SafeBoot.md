@@ -10,7 +10,7 @@ This article will explain one method for creating a dual boot setup while leavin
 
 ## Contents
 
-*   [1 Why is a solution needed?](#Why_is_a_solution_needed.3F)
+*   [1 Why is a solution needed?](#Why_is_a_solution_needed?)
 *   [2 Alternatives Considered](#Alternatives_Considered)
 *   [3 The Method Proposed](#The_Method_Proposed)
 *   [4 Step by Step Walkthrough](#Step_by_Step_Walkthrough)

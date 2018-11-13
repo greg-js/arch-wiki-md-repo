@@ -11,10 +11,10 @@ See the [Installation guide](/index.php/Installation_guide "Installation guide")
 *   [5 Keyboard lights](#Keyboard_lights)
 *   [6 Intel powersaving options](#Intel_powersaving_options)
 *   [7 OLED screen brightness](#OLED_screen_brightness)
-*   [8 OLED screen doesn't light up after resume](#OLED_screen_doesn.27t_light_up_after_resume)
+*   [8 OLED screen doesn't light up after resume](#OLED_screen_doesn't_light_up_after_resume)
 *   [9 Switching Windows from RAID to AHCI mode](#Switching_Windows_from_RAID_to_AHCI_mode)
-*   [10 HDMI/Mini-DP audio](#HDMI.2FMini-DP_audio)
-*   [11 R1 freezes on suspend/hibernate](#R1_freezes_on_suspend.2Fhibernate)
+*   [10 HDMI/Mini-DP audio](#HDMI/Mini-DP_audio)
+*   [11 R1 freezes on suspend/hibernate](#R1_freezes_on_suspend/hibernate)
 
 ## Getting Linux to boot
 
@@ -154,7 +154,7 @@ In order to get the most out of your battery life it is recommended to use addit
 
 ```
 
-Refer to [Intel graphics#RC6 sleep modes (enable_rc6)](/index.php/Intel_graphics#RC6_sleep_modes_.28enable_rc6.29 "Intel graphics") and [Dell XPS 13 (9360)#Module-based Powersaving Options](/index.php/Dell_XPS_13_(9360)#Module-based_Powersaving_Options "Dell XPS 13 (9360)") for additional information on each of them.
+Refer to [Intel graphics#RC6 sleep modes (enable_rc6)](/index.php/Intel_graphics#RC6_sleep_modes_(enable_rc6) "Intel graphics") and [Dell XPS 13 (9360)#Module-based Powersaving Options](/index.php/Dell_XPS_13_(9360)#Module-based_Powersaving_Options "Dell XPS 13 (9360)") for additional information on each of them.
 
 ## OLED screen brightness
 

@@ -29,10 +29,10 @@ Related articles
 *   [4 Remove Docker and images](#Remove_Docker_and_images)
 *   [5 Useful tips](#Useful_tips)
 *   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 docker0 Bridge gets no IP / no internet access in containers](#docker0_Bridge_gets_no_IP_.2F_no_internet_access_in_containers)
-    *   [6.2 Default number of allowed processes/threads too low](#Default_number_of_allowed_processes.2Fthreads_too_low)
+    *   [6.1 docker0 Bridge gets no IP / no internet access in containers](#docker0_Bridge_gets_no_IP_/_no_internet_access_in_containers)
+    *   [6.2 Default number of allowed processes/threads too low](#Default_number_of_allowed_processes/threads_too_low)
     *   [6.3 Error initializing graphdriver: devmapper](#Error_initializing_graphdriver:_devmapper)
-    *   [6.4 Failed to create some/path/to/file: No space left on device](#Failed_to_create_some.2Fpath.2Fto.2Ffile:_No_space_left_on_device)
+    *   [6.4 Failed to create some/path/to/file: No space left on device](#Failed_to_create_some/path/to/file:_No_space_left_on_device)
 *   [7 See also](#See_also)
 
 ## Installation

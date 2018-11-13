@@ -2,16 +2,16 @@
 
 ## Contents
 
-*   [1 Instalação](#Instala.C3.A7.C3.A3o)
-*   [2 Utilização](#Utiliza.C3.A7.C3.A3o)
+*   [1 Instalação](#Instalação)
+*   [2 Utilização](#Utilização)
     *   [2.1 Conectando um dispositivo](#Conectando_um_dispositivo)
     *   [2.2 Descobrindo IDs de Dispositivo](#Descobrindo_IDs_de_Dispositivo)
     *   [2.3 Adicionando regras no udev](#Adicionando_regras_no_udev)
     *   [2.4 Configurando o ADB](#Configurando_o_ADB)
     *   [2.5 Detectando o Dispositivo](#Detectando_o_Dispositivo)
     *   [2.6 Transferindo arquivos](#Transferindo_arquivos)
-*   [3 Compilação de ferramentas ADB](#Compila.C3.A7.C3.A3o_de_ferramentas_ADB)
-*   [4 Resolução de problemas](#Resolu.C3.A7.C3.A3o_de_problemas)
+*   [3 Compilação de ferramentas ADB](#Compilação_de_ferramentas_ADB)
+*   [4 Resolução de problemas](#Resolução_de_problemas)
 
 ## Instalação
 
@@ -127,7 +127,7 @@ $ adb pull *<o-que-puxar>* *<diretório-local>*
 
 ```
 
-Veja também [#Compilação de ferramentas ADB](#Compila.C3.A7.C3.A3o_de_ferramentas_ADB).
+Veja também [#Compilação de ferramentas ADB](#Compilação_de_ferramentas_ADB).
 
 ## Compilação de ferramentas ADB
 

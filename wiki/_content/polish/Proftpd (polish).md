@@ -4,8 +4,8 @@
 
 *   [1 Instalacja](#Instalacja)
 *   [2 Konfiguracja](#Konfiguracja)
-    *   [2.1 Dostęp anonimowy](#Dost.C4.99p_anonimowy)
-*   [3 Zobacz również](#Zobacz_r.C3.B3wnie.C5.BC)
+    *   [2.1 Dostęp anonimowy](#Dostęp_anonimowy)
+*   [3 Zobacz również](#Zobacz_również)
 
 ## Instalacja
 

@@ -15,37 +15,37 @@
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 开始](#.E5.BC.80.E5.A7.8B)
-    *   [2.1 自动启动软件](#.E8.87.AA.E5.8A.A8.E5.90.AF.E5.8A.A8.E8.BD.AF.E4.BB.B6)
-*   [3 配置](#.E9.85.8D.E7.BD.AE)
-    *   [3.1 登录页面背景图片](#.E7.99.BB.E5.BD.95.E9.A1.B5.E9.9D.A2.E8.83.8C.E6.99.AF.E5.9B.BE.E7.89.87)
+*   [1 安装](#安装)
+*   [2 开始](#开始)
+    *   [2.1 自动启动软件](#自动启动软件)
+*   [3 配置](#配置)
+    *   [3.1 登录页面背景图片](#登录页面背景图片)
     *   [3.2 DConf configuration](#DConf_configuration)
-        *   [3.2.1 登录页面的logo](#.E7.99.BB.E5.BD.95.E9.A1.B5.E9.9D.A2.E7.9A.84logo)
-        *   [3.2.2 更改光标主题](#.E6.9B.B4.E6.94.B9.E5.85.89.E6.A0.87.E4.B8.BB.E9.A2.98)
-        *   [3.2.3 在登录页面显示大字体](#.E5.9C.A8.E7.99.BB.E5.BD.95.E9.A1.B5.E9.9D.A2.E6.98.BE.E7.A4.BA.E5.A4.A7.E5.AD.97.E4.BD.93)
-        *   [3.2.4 关闭声音](#.E5.85.B3.E9.97.AD.E5.A3.B0.E9.9F.B3)
-        *   [3.2.5 更改电源按钮行为](#.E6.9B.B4.E6.94.B9.E7.94.B5.E6.BA.90.E6.8C.89.E9.92.AE.E8.A1.8C.E4.B8.BA)
-        *   [3.2.6 开启轻触以点击](#.E5.BC.80.E5.90.AF.E8.BD.BB.E8.A7.A6.E4.BB.A5.E7.82.B9.E5.87.BB)
-        *   [3.2.7 开启或关闭无障碍菜单](#.E5.BC.80.E5.90.AF.E6.88.96.E5.85.B3.E9.97.AD.E6.97.A0.E9.9A.9C.E7.A2.8D.E8.8F.9C.E5.8D.95)
-    *   [3.3 键盘布局](#.E9.94.AE.E7.9B.98.E5.B8.83.E5.B1.80)
-    *   [3.4 更改语言](#.E6.9B.B4.E6.94.B9.E8.AF.AD.E8.A8.80)
-    *   [3.5 用户与登录](#.E7.94.A8.E6.88.B7.E4.B8.8E.E7.99.BB.E5.BD.95)
-        *   [3.5.1 自动登录](#.E8.87.AA.E5.8A.A8.E7.99.BB.E5.BD.95)
-        *   [3.5.2 免密登录](#.E5.85.8D.E5.AF.86.E7.99.BB.E5.BD.95)
+        *   [3.2.1 登录页面的logo](#登录页面的logo)
+        *   [3.2.2 更改光标主题](#更改光标主题)
+        *   [3.2.3 在登录页面显示大字体](#在登录页面显示大字体)
+        *   [3.2.4 关闭声音](#关闭声音)
+        *   [3.2.5 更改电源按钮行为](#更改电源按钮行为)
+        *   [3.2.6 开启轻触以点击](#开启轻触以点击)
+        *   [3.2.7 开启或关闭无障碍菜单](#开启或关闭无障碍菜单)
+    *   [3.3 键盘布局](#键盘布局)
+    *   [3.4 更改语言](#更改语言)
+    *   [3.5 用户与登录](#用户与登录)
+        *   [3.5.1 自动登录](#自动登录)
+        *   [3.5.2 免密登录](#免密登录)
         *   [3.5.3 Passwordless shutdown for multiple sessions](#Passwordless_shutdown_for_multiple_sessions)
-        *   [3.5.4 在GDM中开启root登录](#.E5.9C.A8GDM.E4.B8.AD.E5.BC.80.E5.90.AFroot.E7.99.BB.E5.BD.95)
-        *   [3.5.5 在登录列表中隐藏用户](#.E5.9C.A8.E7.99.BB.E5.BD.95.E5.88.97.E8.A1.A8.E4.B8.AD.E9.9A.90.E8.97.8F.E7.94.A8.E6.88.B7)
+        *   [3.5.4 在GDM中开启root登录](#在GDM中开启root登录)
+        *   [3.5.5 在登录列表中隐藏用户](#在登录列表中隐藏用户)
     *   [3.6 Setup default monitor settings](#Setup_default_monitor_settings)
     *   [3.7 Configure X server access permission](#Configure_X_server_access_permission)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Failure to use proprietary NVIDIA driver](#Failure_to_use_proprietary_NVIDIA_driver)
-    *   [4.2 注销失败](#.E6.B3.A8.E9.94.80.E5.A4.B1.E8.B4.A5)
+    *   [4.2 注销失败](#注销失败)
     *   [4.3 Rootless Xorg](#Rootless_Xorg)
-    *   [4.4 使用Xorg作为后端](#.E4.BD.BF.E7.94.A8Xorg.E4.BD.9C.E4.B8.BA.E5.90.8E.E7.AB.AF)
+    *   [4.4 使用Xorg作为后端](#使用Xorg作为后端)
     *   [4.5 Incomplete removal of gdm](#Incomplete_removal_of_gdm)
-    *   [4.6 GDM自动挂起（GNOME 3.28）](#GDM.E8.87.AA.E5.8A.A8.E6.8C.82.E8.B5.B7.EF.BC.88GNOME_3.28.EF.BC.89)
-*   [5 参见](#.E5.8F.82.E8.A7.81)
+    *   [4.6 GDM自动挂起（GNOME 3.28）](#GDM自动挂起（GNOME_3.28）)
+*   [5 参见](#参见)
 
 ## 安装
 
@@ -485,7 +485,7 @@ If you have your monitors setup as you like (orientation, primary and so on) in 
 
 Changes will take effect on logout. This is necessary because GDM does not respect `xorg.conf`.
 
-**Note:** If you use GDM under Wayland, you must also use a `monitors.xml` that was created under Wayland. See [GNOME bug 748098](https://bugzilla.gnome.org/show_bug.cgi?id=748098) for more info. Alternatively, you can force GDM to [#使用Xorg作为后端](#.E4.BD.BF.E7.94.A8Xorg.E4.BD.9C.E4.B8.BA.E5.90.8E.E7.AB.AF), and use a `monitors.xml` that was created under Xorg.
+**Note:** If you use GDM under Wayland, you must also use a `monitors.xml` that was created under Wayland. See [GNOME bug 748098](https://bugzilla.gnome.org/show_bug.cgi?id=748098) for more info. Alternatively, you can force GDM to [#使用Xorg作为后端](#使用Xorg作为后端), and use a `monitors.xml` that was created under Xorg.
 
 ### Configure X server access permission
 

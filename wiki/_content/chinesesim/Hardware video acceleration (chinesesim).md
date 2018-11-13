@@ -14,16 +14,16 @@ Linux 中有多种方式可以实现视频加速:
 
 ## Contents
 
-*   [1 支持的硬件](#.E6.94.AF.E6.8C.81.E7.9A.84.E7.A1.AC.E4.BB.B6)
+*   [1 支持的硬件](#支持的硬件)
     *   [1.1 VA-API](#VA-API)
     *   [1.2 VDPAU](#VDPAU)
-*   [2 支持的格式](#.E6.94.AF.E6.8C.81.E7.9A.84.E6.A0.BC.E5.BC.8F)
+*   [2 支持的格式](#支持的格式)
     *   [2.1 VA-API](#VA-API_2)
     *   [2.2 VDPAU](#VDPAU_2)
-*   [3 配置](#.E9.85.8D.E7.BD.AE)
-    *   [3.1 多显卡显示](#.E5.A4.9A.E6.98.BE.E5.8D.A1.E6.98.BE.E7.A4.BA)
-*   [4 支持的软件](#.E6.94.AF.E6.8C.81.E7.9A.84.E8.BD.AF.E4.BB.B6)
-    *   [4.1 开启软件的硬件加速](#.E5.BC.80.E5.90.AF.E8.BD.AF.E4.BB.B6.E7.9A.84.E7.A1.AC.E4.BB.B6.E5.8A.A0.E9.80.9F)
+*   [3 配置](#配置)
+    *   [3.1 多显卡显示](#多显卡显示)
+*   [4 支持的软件](#支持的软件)
+    *   [4.1 开启软件的硬件加速](#开启软件的硬件加速)
     *   [4.2 GStreamer](#GStreamer)
     *   [4.3 MPlayer](#MPlayer)
     *   [4.4 VLC media player](#VLC_media_player)
@@ -76,7 +76,7 @@ Linux 中有多种方式可以实现视频加速:
 | MPEG2 编码 | -- | Intel Ivy Bridge Graphics 或更新 | -- | -- | -- |
 | H264 编码 | -- | Intel Sandy Bridge Graphics 或更新 | -- | -- | -- |
 
-[libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/) 软件包为其提供支持。具体方法和注意事项参看： [在 GMA 4500 硬解 H.264](/index.php/Intel_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.9C.A8_GMA_4500_.E7.A1.AC.E8.A7.A3_H.264 "Intel (简体中文)")。
+[libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/) 软件包为其提供支持。具体方法和注意事项参看： [在 GMA 4500 硬解 H.264](/index.php/Intel_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#在_GMA_4500_硬解_H.264 "Intel (简体中文)")。
 
 运行下面的命令以查看你的GPU支持哪些功能。这个命令由 [libva-utils](https://www.archlinux.org/packages/?name=libva-utils) 软件包提供:
 
@@ -233,7 +233,7 @@ $ export DRI_PRIME=1
 *   **-vo** - 指定 vaapi 视频输出驱动
 *   **-va** - 指定 vaapi 视频解码驱动
 
-**注意:** 你也可以配合VDPAU后端使用 [mplayer2](https://aur.archlinux.org/packages/mplayer2/) 。详情参看 [MPlayer (简体中文)#启用 VDPAU （适用于新款nVidia显卡）](/index.php/MPlayer_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.90.AF.E7.94.A8_VDPAU_.EF.BC.88.E9.80.82.E7.94.A8.E4.BA.8E.E6.96.B0.E6.AC.BEnVidia.E6.98.BE.E5.8D.A1.EF.BC.89 "MPlayer (简体中文)")。
+**注意:** 你也可以配合VDPAU后端使用 [mplayer2](https://aur.archlinux.org/packages/mplayer2/) 。详情参看 [MPlayer (简体中文)#启用 VDPAU （适用于新款nVidia显卡）](/index.php/MPlayer_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#启用_VDPAU_（适用于新款nVidia显卡） "MPlayer (简体中文)")。
 
 基于 MPlayer 的播放器:
 

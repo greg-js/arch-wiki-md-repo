@@ -17,7 +17,7 @@ From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page):
     *   [2.1 File system on a single device](#File_system_on_a_single_device)
     *   [2.2 Multi-device file system](#Multi-device_file_system)
 *   [3 Configuring the file system](#Configuring_the_file_system)
-    *   [3.1 Copy-on-Write (CoW)](#Copy-on-Write_.28CoW.29)
+    *   [3.1 Copy-on-Write (CoW)](#Copy-on-Write_(CoW))
         *   [3.1.1 Disabling CoW](#Disabling_CoW)
         *   [3.1.2 Creating lightweight copies](#Creating_lightweight_copies)
     *   [3.2 Compression](#Compression)
@@ -31,7 +31,7 @@ From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page):
     *   [3.5 Commit Interval](#Commit_Interval)
     *   [3.6 SSD TRIM](#SSD_TRIM)
 *   [4 Usage](#Usage)
-    *   [4.1 Displaying used/free space](#Displaying_used.2Ffree_space)
+    *   [4.1 Displaying used/free space](#Displaying_used/free_space)
     *   [4.2 Defragmentation](#Defragmentation)
     *   [4.3 RAID](#RAID)
         *   [4.3.1 Scrub](#Scrub)
@@ -39,7 +39,7 @@ From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page):
             *   [4.3.1.2 Start with a service or timer](#Start_with_a_service_or_timer)
         *   [4.3.2 Balance](#Balance)
     *   [4.4 Snapshots](#Snapshots)
-    *   [4.5 Send/receive](#Send.2Freceive)
+    *   [4.5 Send/receive](#Send/receive)
     *   [4.6 Deduplication](#Deduplication)
 *   [5 Known issues](#Known_issues)
     *   [5.1 Encryption](#Encryption)
@@ -47,7 +47,7 @@ From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page):
     *   [5.3 TLP](#TLP)
 *   [6 Tips and tricks](#Tips_and_tricks)
     *   [6.1 Partitionless Btrfs disk](#Partitionless_Btrfs_disk)
-    *   [6.2 Ext3/4 to Btrfs conversion](#Ext3.2F4_to_Btrfs_conversion)
+    *   [6.2 Ext3/4 to Btrfs conversion](#Ext3/4_to_Btrfs_conversion)
     *   [6.3 Checksum hardware acceleration](#Checksum_hardware_acceleration)
     *   [6.4 Corruption recovery](#Corruption_recovery)
     *   [6.5 Booting into snapshots](#Booting_into_snapshots)
@@ -70,7 +70,7 @@ If you need to boot from a Btrfs file system (i.e., your kernel and initramfs re
 
 ## File system creation
 
-The following shows how to create a new Btrfs [file system](/index.php/File_system "File system"). To convert an ext3/4 partition to Btrfs, see [#Ext3/4 to Btrfs conversion](#Ext3.2F4_to_Btrfs_conversion). To use a partitionless setup, see [#Partitionless Btrfs disk](#Partitionless_Btrfs_disk).
+The following shows how to create a new Btrfs [file system](/index.php/File_system "File system"). To convert an ext3/4 partition to Btrfs, see [#Ext3/4 to Btrfs conversion](#Ext3/4_to_Btrfs_conversion). To use a partitionless setup, see [#Partitionless Btrfs disk](#Partitionless_Btrfs_disk).
 
 See [mkfs.btrfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.btrfs.8) for more information.
 

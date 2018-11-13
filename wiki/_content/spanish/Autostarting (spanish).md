@@ -9,12 +9,12 @@ Este artículo se enlaza con varios métodos para iniciar scripts o aplicaciones
 
 ## Contents
 
-*   [1 En el arranque / apagado](#En_el_arranque_.2F_apagado)
-*   [2 En el inicio / fin de sesión](#En_el_inicio_.2F_fin_de_sesi.C3.B3n)
-*   [3 Al enchufar / desenchufar un dispositivo](#Al_enchufar_.2F_desenchufar_un_dispositivo)
+*   [1 En el arranque / apagado](#En_el_arranque_/_apagado)
+*   [2 En el inicio / fin de sesión](#En_el_inicio_/_fin_de_sesión)
+*   [3 Al enchufar / desenchufar un dispositivo](#Al_enchufar_/_desenchufar_un_dispositivo)
 *   [4 En eventos temporales](#En_eventos_temporales)
 *   [5 En eventos de sistemas de archivos](#En_eventos_de_sistemas_de_archivos)
-*   [6 En el inicio / fin del intérprete de comandos](#En_el_inicio_.2F_fin_del_int.C3.A9rprete_de_comandos)
+*   [6 En el inicio / fin del intérprete de comandos](#En_el_inicio_/_fin_del_intérprete_de_comandos)
 *   [7 En el inicio de Xorg](#En_el_inicio_de_Xorg)
 *   [8 En el inicio del entorno de escritorio](#En_el_inicio_del_entorno_de_escritorio)
 *   [9 En el inicio del gestor de ventanas](#En_el_inicio_del_gestor_de_ventanas)
@@ -53,7 +53,7 @@ Utilice un observador de eventor [inotify](https://en.wikipedia.org/wiki/inotify
 
 ## En el inicio / fin del intérprete de comandos
 
-Véase [Command-line shell (Español)#Archivos de configuración](/index.php/Command-line_shell_(Espa%C3%B1ol)#Archivos_de_configuraci.C3.B3n "Command-line shell (Español)").
+Véase [Command-line shell (Español)#Archivos de configuración](/index.php/Command-line_shell_(Espa%C3%B1ol)#Archivos_de_configuración "Command-line shell (Español)").
 
 ## En el inicio de Xorg
 

@@ -4,11 +4,11 @@ Per istruzioni piu` dettagliate sui vari programmi vedere le rispettive [man pag
 
 ## Contents
 
-*   [1 Prima dell'installazione](#Prima_dell.27installazione)
+*   [1 Prima dell'installazione](#Prima_dell'installazione)
     *   [1.1 Impostare il corretto layout della tastiera](#Impostare_il_corretto_layout_della_tastiera)
     *   [1.2 Verificare il boot mode](#Verificare_il_boot_mode)
     *   [1.3 Connettersi ad Internet](#Connettersi_ad_Internet)
-    *   [1.4 Aggiornare l'orologio di sistema](#Aggiornare_l.27orologio_di_sistema)
+    *   [1.4 Aggiornare l'orologio di sistema](#Aggiornare_l'orologio_di_sistema)
     *   [1.5 Partizionare il disco](#Partizionare_il_disco)
     *   [1.6 Formattare le partizioni](#Formattare_le_partizioni)
     *   [1.7 Mount the file systems](#Mount_the_file_systems)

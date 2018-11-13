@@ -8,12 +8,12 @@ HiDPI (High Dots Per Inch) 显示器，指的是在较小尺寸下却拥有较�
 
 ## Contents
 
-*   [1 桌面环境](#.E6.A1.8C.E9.9D.A2.E7.8E.AF.E5.A2.83)
+*   [1 桌面环境](#桌面环境)
     *   [1.1 GNOME](#GNOME)
-        *   [1.1.1 非整数倍缩放](#.E9.9D.9E.E6.95.B4.E6.95.B0.E5.80.8D.E7.BC.A9.E6.94.BE)
+        *   [1.1.1 非整数倍缩放](#非整数倍缩放)
     *   [1.2 KDE](#KDE)
-        *   [1.2.1 非整数倍缩放下的Bug](#.E9.9D.9E.E6.95.B4.E6.95.B0.E5.80.8D.E7.BC.A9.E6.94.BE.E4.B8.8B.E7.9A.84Bug)
-        *   [1.2.2 托盘图标不缩放](#.E6.89.98.E7.9B.98.E5.9B.BE.E6.A0.87.E4.B8.8D.E7.BC.A9.E6.94.BE)
+        *   [1.2.1 非整数倍缩放下的Bug](#非整数倍缩放下的Bug)
+        *   [1.2.2 托盘图标不缩放](#托盘图标不缩放)
     *   [1.3 Xfce](#Xfce)
     *   [1.4 Cinnamon](#Cinnamon)
     *   [1.5 Enlightenment](#Enlightenment)
@@ -21,42 +21,42 @@ HiDPI (High Dots Per Inch) 显示器，指的是在较小尺寸下却拥有较�
 *   [3 X Resources](#X_Resources)
 *   [4 GUI toolkits](#GUI_toolkits)
     *   [4.1 Qt 5](#Qt_5)
-    *   [4.2 GDK 3 (GTK+ 3)](#GDK_3_.28GTK.2B_3.29)
-    *   [4.3 GTK+ 2](#GTK.2B_2)
-    *   [4.4 Elementary (EFL)](#Elementary_.28EFL.29)
-*   [5 引导程序](#.E5.BC.95.E5.AF.BC.E7.A8.8B.E5.BA.8F)
+    *   [4.2 GDK 3 (GTK+ 3)](#GDK_3_(GTK+_3))
+    *   [4.3 GTK+ 2](#GTK+_2)
+    *   [4.4 Elementary (EFL)](#Elementary_(EFL))
+*   [5 引导程序](#引导程序)
     *   [5.1 GRUB](#GRUB)
-        *   [5.1.1 降低帧缓冲分辨率](#.E9.99.8D.E4.BD.8E.E5.B8.A7.E7.BC.93.E5.86.B2.E5.88.86.E8.BE.A8.E7.8E.87)
-        *   [5.1.2 改变GRUB字体大小](#.E6.94.B9.E5.8F.98GRUB.E5.AD.97.E4.BD.93.E5.A4.A7.E5.B0.8F)
-*   [6 应用程序](#.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F)
-    *   [6.1 浏览器](#.E6.B5.8F.E8.A7.88.E5.99.A8)
+        *   [5.1.1 降低帧缓冲分辨率](#降低帧缓冲分辨率)
+        *   [5.1.2 改变GRUB字体大小](#改变GRUB字体大小)
+*   [6 应用程序](#应用程序)
+    *   [6.1 浏览器](#浏览器)
         *   [6.1.1 Firefox](#Firefox)
-        *   [6.1.2 Chromium / Google Chrome](#Chromium_.2F_Google_Chrome)
+        *   [6.1.2 Chromium / Google Chrome](#Chromium_/_Google_Chrome)
         *   [6.1.3 Opera](#Opera)
     *   [6.2 Thunderbird](#Thunderbird)
-    *   [6.3 Wine程序](#Wine.E7.A8.8B.E5.BA.8F)
+    *   [6.3 Wine程序](#Wine程序)
     *   [6.4 Skype](#Skype)
     *   [6.5 Spotify](#Spotify)
-    *   [6.6 Zathura 文档查看器](#Zathura_.E6.96.87.E6.A1.A3.E6.9F.A5.E7.9C.8B.E5.99.A8)
+    *   [6.6 Zathura 文档查看器](#Zathura_文档查看器)
     *   [6.7 Sublime Text 3](#Sublime_Text_3)
     *   [6.8 IntelliJ IDEA](#IntelliJ_IDEA)
     *   [6.9 NetBeans](#NetBeans)
     *   [6.10 Gimp 2.8](#Gimp_2.8)
     *   [6.11 Steam](#Steam)
-        *   [6.11.1 官方 HiDPI支持](#.E5.AE.98.E6.96.B9_HiDPI.E6.94.AF.E6.8C.81)
-        *   [6.11.2 非官方](#.E9.9D.9E.E5.AE.98.E6.96.B9)
-    *   [6.12 Java 程序](#Java_.E7.A8.8B.E5.BA.8F)
-    *   [6.13 Mono 程序](#Mono_.E7.A8.8B.E5.BA.8F)
+        *   [6.11.1 官方 HiDPI支持](#官方_HiDPI支持)
+        *   [6.11.2 非官方](#非官方)
+    *   [6.12 Java 程序](#Java_程序)
+    *   [6.13 Mono 程序](#Mono_程序)
     *   [6.14 MATLAB](#MATLAB)
     *   [6.15 VirtualBox](#VirtualBox)
     *   [6.16 Zoom](#Zoom)
-    *   [6.17 不支持的程序](#.E4.B8.8D.E6.94.AF.E6.8C.81.E7.9A.84.E7.A8.8B.E5.BA.8F)
-*   [7 多显示器](#.E5.A4.9A.E6.98.BE.E7.A4.BA.E5.99.A8)
+    *   [6.17 不支持的程序](#不支持的程序)
+*   [7 多显示器](#多显示器)
     *   [7.1 Side display](#Side_display)
-    *   [7.2 多外部监视器](#.E5.A4.9A.E5.A4.96.E9.83.A8.E7.9B.91.E8.A7.86.E5.99.A8)
-    *   [7.3 镜像](#.E9.95.9C.E5.83.8F)
-*   [8 Linux 控制台](#Linux_.E6.8E.A7.E5.88.B6.E5.8F.B0)
-*   [9 另请参阅](#.E5.8F.A6.E8.AF.B7.E5.8F.82.E9.98.85)
+    *   [7.2 多外部监视器](#多外部监视器)
+    *   [7.3 镜像](#镜像)
+*   [8 Linux 控制台](#Linux_控制台)
+*   [9 另请参阅](#另请参阅)
 
 ## 桌面环境
 
@@ -297,7 +297,7 @@ GRUB_FONT="/boot/grubfont.pf2"
 
 #### Firefox
 
-Firefox 应到使用 [#GDK 3 (GTK+ 3)](#GDK_3_.28GTK.2B_3.29) 的设置。但是，建议的 `GDK_SCALE` 可能会使 Firefox 界面的缩放并不一致，并且不能使用小数.你可以使用`GDK_DPI_SCALE`来代替。
+Firefox 应到使用 [#GDK 3 (GTK+ 3)](#GDK_3_(GTK+_3)) 的设置。但是，建议的 `GDK_SCALE` 可能会使 Firefox 界面的缩放并不一致，并且不能使用小数.你可以使用`GDK_DPI_SCALE`来代替。
 
 要覆盖这些设置，请打开 Firefox 的高级选项页面（`about:config`）并将 `layout.css.devPixelsPerPx` 设置为 `2`（或是其它需要的数值），但这个选项也可能导致 Firefox 界面的缩放不一致。如果 Firefox 没有缩放字体，您可能需要创建 `userChrome.css` 并添加适当的样式。有关 `userChrome.css`，请访问[mozillaZine](http://kb.mozillazine.org/index.php?title=UserChrome.css)。
 
@@ -323,7 +323,7 @@ Firefox 应到使用 [#GDK 3 (GTK+ 3)](#GDK_3_.28GTK.2B_3.29) 的设置。但是
 
 #### Chromium / Google Chrome
 
-Chromium 应当使用[#GDK 3 (GTK+ 3)](#GDK_3_.28GTK.2B_3.29)设置。
+Chromium 应当使用[#GDK 3 (GTK+ 3)](#GDK_3_(GTK+_3))设置。
 
 要覆盖这一选项，请使用`--force-device-scale-factor` flags。这将缩放所有内容。例如：`chromium --force-device-scale-factor=2`。
 
@@ -337,7 +337,7 @@ Chromium 应当使用[#GDK 3 (GTK+ 3)](#GDK_3_.28GTK.2B_3.29)设置。
 
 #### Opera
 
-Opera 应当使用 [#GDK 3 (GTK+ 3)](#GDK_3_.28GTK.2B_3.29) 设置。
+Opera 应当使用 [#GDK 3 (GTK+ 3)](#GDK_3_(GTK+_3)) 设置。
 
 要覆盖这一选项，请使用 `--alt-high-dpi-setting=X` 命令行选项。其中 X 是所需的 DPI。例如，使用 `--alt-high-dpi-setting=144` Opera 将认为 DPI 是 144。在较新版本中，Opera 将使用字体DPI（在 KDE 中可以强制设置字体 DPI）。
 
@@ -358,7 +358,7 @@ $ winecfg
 
 ### Skype
 
-Skype for Linux ([skypeforlinux-stable-bin](https://aur.archlinux.org/packages/skypeforlinux-stable-bin/)) 使用 [#GDK 3 (GTK+ 3)](#GDK_3_.28GTK.2B_3.29)。
+Skype for Linux ([skypeforlinux-stable-bin](https://aur.archlinux.org/packages/skypeforlinux-stable-bin/)) 使用 [#GDK 3 (GTK+ 3)](#GDK_3_(GTK+_3))。
 
 ### Spotify
 
@@ -443,7 +443,7 @@ java -Dsun.java2d.uiScale=2 -jar some_application.jar
 
 ### Mono 程序
 
-根据 [[3]](https://bugzilla.xamarin.com/show_bug.cgi?id=35870)，Mono 程序应像 [GTK3](#GDK_3_.28GTK.2B_3.29) 程序一样缩放。
+根据 [[3]](https://bugzilla.xamarin.com/show_bug.cgi?id=35870)，Mono 程序应像 [GTK3](#GDK_3_(GTK+_3)) 程序一样缩放。
 
 ### MATLAB
 
@@ -459,7 +459,7 @@ java -Dsun.java2d.uiScale=2 -jar some_application.jar
 
 ### VirtualBox
 
-**注意:** 这仅对 KDE 生效。
+**注意:** 仅适用于启用了缩放的 KDE。
 
 VirtualBox 按照系统的缩放级别缩放虚拟监视器，从而降低虚拟机的最大分辨率（参见[[4]](https://www.virtualbox.org/ticket/16604)）。
 
@@ -582,7 +582,7 @@ xrandr --output HDMI --scale 2x2
 
 ## Linux 控制台
 
-默认的 [Linux 控制台](https://en.wikipedia.org/wiki/Linux_console "w:Linux console")在 HiDPI 显示器上太小了。[kbd](https://www.archlinux.org/packages/?name=kbd)中最大的字体是`latarcyrheb-sun32`，其他软件包中包含一些更大的字体，例如[terminus-font](https://www.archlinux.org/packages/?name=terminus-font)中的`ter-132n`和`ter-132b`（粗体）。参阅[Fonts#Console fonts](/index.php/Fonts#Console_fonts "Fonts")获取配置详情。
+默认的 [Linux 控制台](https://en.wikipedia.org/wiki/Linux_console "w:Linux console")在 HiDPI 显示器上太小了。[kbd](https://www.archlinux.org/packages/?name=kbd)中最大的字体是`latarcyrheb-sun32`，其他软件包中包含一些更大的字体，例如[terminus-font](https://www.archlinux.org/packages/?name=terminus-font)中的`ter-132n`和`ter-132b`（粗体）。参阅[Linux console#Fonts](/index.php/Linux_console#Fonts "Linux console")获取配置详情。
 
 在改变字体之后，当您切换到其他控制台时，屏幕上的内容可能无法读取。要修复这一问题，你可以设置[force specific mode](/index.php/Kernel_mode_setting#Forcing_modes_and_EDID "Kernel mode setting")，例如`video=2560x1600@60`（设为您显示器的原生分辨率）并重新启动。
 

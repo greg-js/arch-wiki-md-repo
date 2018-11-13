@@ -42,7 +42,7 @@ Related articles
     *   [4.11 Show FPS overlay in games](#Show_FPS_overlay_in_games)
     *   [4.12 Running Wine under a separate user account](#Running_Wine_under_a_separate_user_account)
     *   [4.13 Temp directory on tmpfs](#Temp_directory_on_tmpfs)
-    *   [4.14 Prevent installing Mono/Gecko](#Prevent_installing_Mono.2FGecko)
+    *   [4.14 Prevent installing Mono/Gecko](#Prevent_installing_Mono/Gecko)
     *   [4.15 Vulkan](#Vulkan)
     *   [4.16 Remove Wine file bindings](#Remove_Wine_file_bindings)
 *   [5 Third-party applications](#Third-party_applications)

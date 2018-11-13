@@ -2,23 +2,23 @@ Di seguito è riportato un elenco di domande frequenti su Arch Linux a 64-bit.
 
 ## Contents
 
-*   [1 Come posso determinare se il mio processore è compatibile con un sistema x86_64?](#Come_posso_determinare_se_il_mio_processore_.C3.A8_compatibile_con_un_sistema_x86_64.3F)
+*   [1 Come posso determinare se il mio processore è compatibile con un sistema x86_64?](#Come_posso_determinare_se_il_mio_processore_è_compatibile_con_un_sistema_x86_64?)
     *   [1.1 Untenti Linux](#Untenti_Linux)
     *   [1.2 Untenti Windows](#Untenti_Windows)
-*   [2 Devo utilizzare una versione a 32-bit o a 64-bit di Arch Linux?](#Devo_utilizzare_una_versione_a_32-bit_o_a_64-bit_di_Arch_Linux.3F)
-*   [3 Come faccio a installare Arch64?](#Come_faccio_a_installare_Arch64.3F)
-*   [4 A che punto è il trasferimento del software?](#A_che_punto_.C3.A8_il_trasferimento_del_software.3F)
-*   [5 Avrò tutti i pacchetti della mia versione 32-bit di Arch che sono abituato ad utilizzare?](#Avr.C3.B2_tutti_i_pacchetti_della_mia_versione_32-bit_di_Arch_che_sono_abituato_ad_utilizzare.3F)
-*   [6 Perché 64-bit?](#Perch.C3.A9_64-bit.3F)
-*   [7 Come faccio a segnalare un bug?](#Come_faccio_a_segnalare_un_bug.3F)
-*   [8 Quali repository dovrei utilizzare per pacman?](#Quali_repository_dovrei_utilizzare_per_pacman.3F)
-*   [9 Come posso modificare i PKGBUILD per usarli con Arch64?](#Come_posso_modificare_i_PKGBUILD_per_usarli_con_Arch64.3F)
-*   [10 Cosa mi mancherà in Arch64?](#Cosa_mi_mancher.C3.A0_in_Arch64.3F)
-*   [11 Posso eseguire applicazioni 32-bit all'interno di Arch64?](#Posso_eseguire_applicazioni_32-bit_all.27interno_di_Arch64.3F)
-*   [12 Posso compilare un pacchetto 32-bit per architettura i686 all'interno di Arch64?](#Posso_compilare_un_pacchetto_32-bit_per_architettura_i686_all.27interno_di_Arch64.3F)
+*   [2 Devo utilizzare una versione a 32-bit o a 64-bit di Arch Linux?](#Devo_utilizzare_una_versione_a_32-bit_o_a_64-bit_di_Arch_Linux?)
+*   [3 Come faccio a installare Arch64?](#Come_faccio_a_installare_Arch64?)
+*   [4 A che punto è il trasferimento del software?](#A_che_punto_è_il_trasferimento_del_software?)
+*   [5 Avrò tutti i pacchetti della mia versione 32-bit di Arch che sono abituato ad utilizzare?](#Avrò_tutti_i_pacchetti_della_mia_versione_32-bit_di_Arch_che_sono_abituato_ad_utilizzare?)
+*   [6 Perché 64-bit?](#Perché_64-bit?)
+*   [7 Come faccio a segnalare un bug?](#Come_faccio_a_segnalare_un_bug?)
+*   [8 Quali repository dovrei utilizzare per pacman?](#Quali_repository_dovrei_utilizzare_per_pacman?)
+*   [9 Come posso modificare i PKGBUILD per usarli con Arch64?](#Come_posso_modificare_i_PKGBUILD_per_usarli_con_Arch64?)
+*   [10 Cosa mi mancherà in Arch64?](#Cosa_mi_mancherà_in_Arch64?)
+*   [11 Posso eseguire applicazioni 32-bit all'interno di Arch64?](#Posso_eseguire_applicazioni_32-bit_all'interno_di_Arch64?)
+*   [12 Posso compilare un pacchetto 32-bit per architettura i686 all'interno di Arch64?](#Posso_compilare_un_pacchetto_32-bit_per_architettura_i686_all'interno_di_Arch64?)
     *   [12.1 Deposito Multilib](#Deposito_Multilib)
     *   [12.2 Chroot](#Chroot)
-*   [13 Posso aggiornare/migrare il mio sistema da i686 a x86_64 senza reinstallare?](#Posso_aggiornare.2Fmigrare_il_mio_sistema_da_i686_a_x86_64_senza_reinstallare.3F)
+*   [13 Posso aggiornare/migrare il mio sistema da i686 a x86_64 senza reinstallare?](#Posso_aggiornare/migrare_il_mio_sistema_da_i686_a_x86_64_senza_reinstallare?)
 
 ## Come posso determinare se il mio processore è compatibile con un sistema x86_64?
 

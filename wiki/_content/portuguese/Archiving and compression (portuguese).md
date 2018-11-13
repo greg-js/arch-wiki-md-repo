@@ -7,25 +7,25 @@ As ferramentas tradicionais de arquivamento e compactação (ou compressão) Uni
 
 Essas ferramentas geralmente são usadas em sequência, criando primeiro um arquivo e, em seguida, compactando-o.
 
-Claro que também existem [ferramentas que fazem ambos](#Arquivamento_e_compress.C3.A3o), que tendem a oferecer adicionalmente criptografia, detecção de erro e recuperação.
+Claro que também existem [ferramentas que fazem ambos](#Arquivamento_e_compressão), que tendem a oferecer adicionalmente criptografia, detecção de erro e recuperação.
 
 ## Contents
 
 *   [1 Arquivamento apenas](#Arquivamento_apenas)
-*   [2 Ferramentas de compressão](#Ferramentas_de_compress.C3.A3o)
-    *   [2.1 Compressão apenas](#Compress.C3.A3o_apenas)
-    *   [2.2 Arquivamento e compressão](#Arquivamento_e_compress.C3.A3o)
-    *   [2.3 Comparação de recursos](#Compara.C3.A7.C3.A3o_de_recursos)
-        *   [2.3.1 Descompressão](#Descompress.C3.A3o)
-*   [3 Comparação de uso](#Compara.C3.A7.C3.A3o_de_uso)
+*   [2 Ferramentas de compressão](#Ferramentas_de_compressão)
+    *   [2.1 Compressão apenas](#Compressão_apenas)
+    *   [2.2 Arquivamento e compressão](#Arquivamento_e_compressão)
+    *   [2.3 Comparação de recursos](#Comparação_de_recursos)
+        *   [2.3.1 Descompressão](#Descompressão)
+*   [3 Comparação de uso](#Comparação_de_uso)
     *   [3.1 Uso para arquivamento apenas](#Uso_para_arquivamento_apenas)
-    *   [3.2 Uso para compressão apenas](#Uso_para_compress.C3.A3o_apenas)
-    *   [3.3 Uso para arquivamento e compressão](#Uso_para_arquivamento_e_compress.C3.A3o)
-*   [4 Ferramentas de conveniência](#Ferramentas_de_conveni.C3.AAncia)
+    *   [3.2 Uso para compressão apenas](#Uso_para_compressão_apenas)
+    *   [3.3 Uso para arquivamento e compressão](#Uso_para_arquivamento_e_compressão)
+*   [4 Ferramentas de conveniência](#Ferramentas_de_conveniência)
 *   [5 Determinando o formato do pacote](#Determinando_o_formato_do_pacote)
-*   [6 Ferramentas esotéricas, raras e obsoletas](#Ferramentas_esot.C3.A9ricas.2C_raras_e_obsoletas)
-*   [7 Bibliotecas de compressão](#Bibliotecas_de_compress.C3.A3o)
-*   [8 Veja também](#Veja_tamb.C3.A9m)
+*   [6 Ferramentas esotéricas, raras e obsoletas](#Ferramentas_esotéricas,_raras_e_obsoletas)
+*   [7 Bibliotecas de compressão](#Bibliotecas_de_compressão)
+*   [8 Veja também](#Veja_também)
 
 ## Arquivamento apenas
 
@@ -35,7 +35,7 @@ Claro que também existem [ferramentas que fazem ambos](#Arquivamento_e_compress
 [bsdcpio(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bsdcpio.1) | Implementação de *tar* e *cpio* que também oferece uma biblioteca. Usado pelo [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") e [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"). |
 | [ar](https://en.wikipedia.org/wiki/ar_(Unix) | [binutils](https://www.archlinux.org/packages/?name=binutils) | [ar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ar.1) | Arquivador legado do Unix antes do *tar*. Hoje usado apenas para criar arquivos de [biblioteca estática](https://en.wikipedia.org/wiki/pt:Biblioteca_est%C3%A1tica "wikipedia:pt:Biblioteca estática"). |
 | [cpio](https://en.wikipedia.org/wiki/pt:cpio "wikipedia:pt:cpio") | [cpio](https://www.archlinux.org/packages/?name=cpio) | [cpio(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cpio.1) | Arquivador de arquivos via stdin/stdout, oferece suporte a formatos cpio e tar. |
-| [DAR](http://dar.linux.free.fr/) | [dar](https://aur.archlinux.org/packages/dar/) | [dar(1)](http://dar.linux.free.fr/doc/man/dar.html) | Arquivador para fazer backup de sistemas de arquivos *live* grandes, lida com links absolutos, [atributos estendidos](/index.php/Extended_attributes "Extended attributes"), arquivos esparsos e tipos de nó-I. |
+| [DAR](http://dar.linux.free.fr/) | [dar](https://aur.archlinux.org/packages/dar/) | [dar(1)](http://dar.linux.free.fr/doc/man/dar.html) | Arquivador para fazer backup de sistemas de arquivos *live* grandes, lida com links absolutos, [atributos estendidos](/index.php/Atributos_estendidos "Atributos estendidos"), arquivos esparsos e tipos de nó-I. |
 
 **Dica:** O GNU tar e o BSD tar fazem automaticamente a delegação de descompactação para arquivos comprimidos bzip2, compress, gzip, lzip, lzma e xz. Ao criar arquivos, ambos oferecem suporte à opção `-a` para filtrar automaticamente o arquivo criado através do programa de compactação correto, com base na extensão do arquivo. Enquanto o BSD reconhece os formatos de compressão baseados no formato, o GNU tar adivinha apenas baseado na extensão do arquivo.
 
@@ -58,7 +58,7 @@ Esses programas de compactação implementam seu próprio formato de arquivo.
 
 *   Implementações paralelas oferecem velocidades aprimoradas usando vários núcleos de CPU.
 *   Extensões de tar fazem referências a arquivos compactados em que o `tar` e a ferramenta de compactação são usados (p.ex., {ic|.tzo}} é `.tar.lzo`.
-*   Veja também [#Uso para compressão apenas](#Uso_para_compress.C3.A3o_apenas).
+*   Veja também [#Uso para compressão apenas](#Uso_para_compressão_apenas).
 
 ### Arquivamento e compressão
 
@@ -69,7 +69,7 @@ Esses programas de compactação implementam seu próprio formato de arquivo.
 | [Unarchiver](https://theunarchiver.com/) | [unarchiver](https://www.archlinux.org/packages/?name=unarchiver) | [unar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/unar.1), [lsar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lsar.1) | *many* | Ferramenta de linha de comando de um aplicativo Mac, suporta mais de 40 formatos de pacote. |
 | [ZPAQ](https://en.wikipedia.org/wiki/ZPAQ "wikipedia:ZPAQ") | [zpaq](https://aur.archlinux.org/packages/zpaq/) | [zpaq(1)](http://mattmahoney.net/dc/zpaqdoc.html) | .zpaq | Um arquivador de alta taxa de compactação escrito em C++, usa vários algoritmos. |
 
-Veja também [#Uso para arquivamento e compressão](#Uso_para_arquivamento_e_compress.C3.A3o).
+Veja também [#Uso para arquivamento e compressão](#Uso_para_arquivamento_e_compressão).
 
 ### Comparação de recursos
 

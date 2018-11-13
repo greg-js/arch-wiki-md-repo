@@ -12,17 +12,17 @@ Os TUs são governados usando as [TU bylaws](https://aur.archlinux.org/trusted-u
 
 *   [1 Lista de tarefas para novos Trusted Users](#Lista_de_tarefas_para_novos_Trusted_Users)
 *   [2 O TU e o AUR](#O_TU_e_o_AUR)
-*   [3 O TU e [community], Diretrizes para Manutenção de Pacotes](#O_TU_e_.5Bcommunity.5D.2C_Diretrizes_para_Manuten.C3.A7.C3.A3o_de_Pacotes)
-    *   [3.1 Regras para a Entrada de Pacotes no Repositório [community]](#Regras_para_a_Entrada_de_Pacotes_no_Reposit.C3.B3rio_.5Bcommunity.5D)
-    *   [3.2 Acessando e Atualizando o Repositório](#Acessando_e_Atualizando_o_Reposit.C3.B3rio)
+*   [3 O TU e [community], Diretrizes para Manutenção de Pacotes](#O_TU_e_[community],_Diretrizes_para_Manutenção_de_Pacotes)
+    *   [3.1 Regras para a Entrada de Pacotes no Repositório [community]](#Regras_para_a_Entrada_de_Pacotes_no_Repositório_[community])
+    *   [3.2 Acessando e Atualizando o Repositório](#Acessando_e_Atualizando_o_Repositório)
     *   [3.3 Abandonando pacotes](#Abandonando_pacotes)
-    *   [3.4 Movendo pacotes do unsupported para [community]](#Movendo_pacotes_do_unsupported_para_.5Bcommunity.5D)
-    *   [3.5 Movendo pacotes do [community] para unsupported](#Movendo_pacotes_do_.5Bcommunity.5D_para_unsupported)
-    *   [3.6 Movendo pacotes do [community-testing] para [community]](#Movendo_pacotes_do_.5Bcommunity-testing.5D_para_.5Bcommunity.5D)
+    *   [3.4 Movendo pacotes do unsupported para [community]](#Movendo_pacotes_do_unsupported_para_[community])
+    *   [3.5 Movendo pacotes do [community] para unsupported](#Movendo_pacotes_do_[community]_para_unsupported)
+    *   [3.6 Movendo pacotes do [community-testing] para [community]](#Movendo_pacotes_do_[community-testing]_para_[community])
     *   [3.7 Excluindo pacotes do unsupported](#Excluindo_pacotes_do_unsupported)
-    *   [3.8 Compilação remota no PKGBUILD.com](#Compila.C3.A7.C3.A3o_remota_no_PKGBUILD.com)
+    *   [3.8 Compilação remota no PKGBUILD.com](#Compilação_remota_no_PKGBUILD.com)
 *   [4 Lista de TODO na retirada de um Trusted User](#Lista_de_TODO_na_retirada_de_um_Trusted_User)
-*   [5 Veja também](#Veja_tamb.C3.A9m)
+*   [5 Veja também](#Veja_também)
 
 ## Lista de tarefas para novos Trusted Users
 
@@ -44,7 +44,7 @@ Os TUs são governados usando as [TU bylaws](https://aur.archlinux.org/trusted-u
     *   para lhe conceder o status de TU no AUR.
     *   para abrir uma nova tarefa no projeto "Keyring" do rastreador de erro seguindo as instruções [nesta mensagem](https://lists.archlinux.org/pipermail/arch-dev-public/2013-September/025456.html) na ordem de ter sua chave PGP assinado pelos três detentores de chave mestre.
 11.  Instalar o pacote [devtools](https://www.archlinux.org/packages/?name=devtools).
-12.  [Configurar sua chave privada ssh](/index.php/Arch_User_Repository_(Portugu%C3%AAs)#Autentica.C3.A7.C3.A3o "Arch User Repository (Português)") para os servidores `orion.archlinux.org` e `repos.archlinux.org`.
+12.  [Configurar sua chave privada ssh](/index.php/Arch_User_Repository_(Portugu%C3%AAs)#Autenticação "Arch User Repository (Português)") para os servidores `orion.archlinux.org` e `repos.archlinux.org`.
 13.  Testar a conexão SSH para seunome@orion.archlinux.org (assim que você tiver permissões).
 14.  Se você não for promovido a um grupo de Trusted User no rastreador de erro em dois dias, relate isso como um bug para arch-dev-public.
 15.  Começar a contribuir!
@@ -82,7 +82,7 @@ Os TUs também estão em uma posição de documentar práticas recomendadas.
 
 ### Acessando e Atualizando o Repositório
 
-O repositório [community] agora usa **devtools**, que é o mesmo sistema usado para enviar pacotes para o [core] e [extra], apesar de usar outro servidor `nymeria.archlinux.org` ao invés de `gerolde.archlinux.org`. Por isso, a maioria das instruções no [Guia do Empacotador](/index.php/DeveloperWiki:HOWTO_Be_A_Packager "DeveloperWiki:HOWTO Be A Packager") funciona sem qualquer outro comentário. Informações que são específicas para o repositório [community] (como URLs alteradas) foram inseridas aqui. O devtools exige que os empacotadores [definam a variável PACKAGER](/index.php/Makepkg_(Portugu%C3%AAs)#Informa.C3.A7.C3.A3o_do_empacotador "Makepkg (Português)") no `makepkg.conf`.
+O repositório [community] agora usa **devtools**, que é o mesmo sistema usado para enviar pacotes para o [core] e [extra], apesar de usar outro servidor `nymeria.archlinux.org` ao invés de `gerolde.archlinux.org`. Por isso, a maioria das instruções no [Guia do Empacotador](/index.php/DeveloperWiki:HOWTO_Be_A_Packager "DeveloperWiki:HOWTO Be A Packager") funciona sem qualquer outro comentário. Informações que são específicas para o repositório [community] (como URLs alteradas) foram inseridas aqui. O devtools exige que os empacotadores [definam a variável PACKAGER](/index.php/Makepkg_(Portugu%C3%AAs)#Informação_do_empacotador "Makepkg (Português)") no `makepkg.conf`.
 
 Inicialmente, você deve fazer um **checkout não-recursivo** do repositório [community]: svn checkout -N svn+ssh://svn-community@repos.archlinux.org/srv/repos/svn-community/svn svn-community
 

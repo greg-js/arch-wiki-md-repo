@@ -10,7 +10,7 @@ L'**Unified Extensible Firmware Interface** (UEFI in breve) è un nuovo firmware
     *   [2.1 Avvio multiplo con UEFI](#Avvio_multiplo_con_UEFI)
         *   [2.1.1 Linux Windows x86_64 UEFI-GPT Multiboot](#Linux_Windows_x86_64_UEFI-GPT_Multiboot)
 *   [3 Processo di boot con UEFI](#Processo_di_boot_con_UEFI)
-*   [4 Identificare l'architettura del firmware UEFI](#Identificare_l.27architettura_del_firmware_UEFI)
+*   [4 Identificare l'architettura del firmware UEFI](#Identificare_l'architettura_del_firmware_UEFI)
 *   [5 Supporto del Kernel Linux per UEFI](#Supporto_del_Kernel_Linux_per_UEFI)
     *   [5.1 Configurazioni del Kernel Linux per UEFI](#Configurazioni_del_Kernel_Linux_per_UEFI)
 *   [6 Supporto per le variabili UEFI](#Supporto_per_le_variabili_UEFI)

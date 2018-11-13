@@ -16,24 +16,24 @@ Es fácil de configurar, pero solo puede iniciar ejecutables EFI, tales como [EF
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
     *   [1.1 Arranque EFI](#Arranque_EFI)
     *   [1.2 Arranque Legacy](#Arranque_Legacy)
     *   [1.3 Actualizar](#Actualizar)
-*   [2 Configuración](#Configuraci.C3.B3n)
-    *   [2.1 Configuración básica](#Configuraci.C3.B3n_b.C3.A1sica)
-    *   [2.2 Añadir entradas de arranque](#A.C3.B1adir_entradas_de_arranque)
-        *   [2.2.1 Instalaciones de root estándar](#Instalaciones_de_root_est.C3.A1ndar)
+*   [2 Configuración](#Configuración)
+    *   [2.1 Configuración básica](#Configuración_básica)
+    *   [2.2 Añadir entradas de arranque](#Añadir_entradas_de_arranque)
+        *   [2.2.1 Instalaciones de root estándar](#Instalaciones_de_root_estándar)
         *   [2.2.2 Instalaciones de root sobre LVM](#Instalaciones_de_root_sobre_LVM)
         *   [2.2.3 Instalaciones de root cifrado](#Instalaciones_de_root_cifrado)
         *   [2.2.4 Instalaciones de root sobre subvolumen btrfs](#Instalaciones_de_root_sobre_subvolumen_btrfs)
         *   [2.2.5 Shells EFI u otras aplicaciones de EFI](#Shells_EFI_u_otras_aplicaciones_de_EFI)
-    *   [2.3 Soporte para hibernación](#Soporte_para_hibernaci.C3.B3n)
-*   [3 Teclas dentro del menú de arranque](#Teclas_dentro_del_men.C3.BA_de_arranque)
-*   [4 Solución de problemas](#Soluci.C3.B3n_de_problemas)
+    *   [2.3 Soporte para hibernación](#Soporte_para_hibernación)
+*   [3 Teclas dentro del menú de arranque](#Teclas_dentro_del_menú_de_arranque)
+*   [4 Solución de problemas](#Solución_de_problemas)
     *   [4.1 Entrada manual utilizando efibootmgr](#Entrada_manual_utilizando_efibootmgr)
-    *   [4.2 El menú no aparece después de actualizar Windows](#El_men.C3.BA_no_aparece_despu.C3.A9s_de_actualizar_Windows)
-*   [5 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+    *   [4.2 El menú no aparece después de actualizar Windows](#El_menú_no_aparece_después_de_actualizar_Windows)
+*   [5 Véase también](#Véase_también)
 
 ## Instalación
 
@@ -48,7 +48,7 @@ Es fácil de configurar, pero solo puede iniciar ejecutables EFI, tales como [EF
     **Nota:** Para obtener una forma de mantener actualizado automáticamente el kernel en la ESP, eche un vistazo al artículo [EFISTUB](/index.php/EFISTUB_(Espa%C3%B1ol)#Utilizar_systemd "EFISTUB (Español)") para conocer algunas unidades de systemd que se pueden adaptar. Si la partición efi utiliza automount, necesita añadir `vfat` a un archivo en `/etc/modules-load.d/` para asegurarse de que el kernel que se está ejecutando ha cargado el módulo `vfat` en el arranque, antes de que ocurra cualquier actualización del kernel que podría remplazar el módulo por la versión actualmente en ejecución, haciendo imposible el montaje de `/boot/efi` hasta el reinicio.
 
 5.  Escriba la siguiente órden para instalar *systemd-boot*: `# bootctl --path=*esp* install` Se copiará el binario *systemd-boot* a la partición EFI System Partition (`*esp*/EFI/systemd/systemd-bootx64.efi` y `*esp*/EFI/Boot/BOOTX64.EFI` —ambos idénticos— en sistemas x64) y añadirá el propio *systemd-boot* como aplicación EFI por defecto (entrada de arranque por defecto) cargada por el gestor de arranque EFI.
-6.  Por último, debe [configurar](#Configuraci.C3.B3n) el gestor de arranque para que funcione correctamente.
+6.  Por último, debe [configurar](#Configuración) el gestor de arranque para que funcione correctamente.
 
 ### Arranque Legacy
 

@@ -34,10 +34,10 @@ Op deze pagina woordt de installatie van een **bedrade** netwerkaansluiting uitg
     *   [5.5 Bonding of LAG](#Bonding_of_LAG)
     *   [5.6 IP adres aliasing](#IP_adres_aliasing)
         *   [5.6.1 Voorbeeld](#Voorbeeld)
-    *   [5.7 MAC/hardware adres wijzigen](#MAC.2Fhardware_adres_wijzigen)
+    *   [5.7 MAC/hardware adres wijzigen](#MAC/hardware_adres_wijzigen)
     *   [5.8 Internet delen](#Internet_delen)
     *   [5.9 Router configuratie](#Router_configuratie)
-    *   [5.10 Promiscuous (willekeurig) mode](#Promiscuous_.28willekeurig.29_mode)
+    *   [5.10 Promiscuous (willekeurig) mode](#Promiscuous_(willekeurig)_mode)
 *   [6 Foutopsporing](#Foutopsporing)
     *   [6.1 Swapping computers on the cable modem](#Swapping_computers_on_the_cable_modem)
     *   [6.2 Het TCP window scaling probleem](#Het_TCP_window_scaling_probleem)
@@ -47,16 +47,16 @@ Op deze pagina woordt de installatie van een **bedrade** netwerkaansluiting uitg
             *   [6.2.2.2 Goed](#Goed)
             *   [6.2.2.3 Best](#Best)
         *   [6.2.3 Aanvullend](#Aanvullend)
-    *   [6.3 Realtek geen link / WOL probleem](#Realtek_geen_link_.2F_WOL_probleem)
+    *   [6.3 Realtek geen link / WOL probleem](#Realtek_geen_link_/_WOL_probleem)
         *   [6.3.1 Activeren van de NIC in Linux](#Activeren_van_de_NIC_in_Linux)
-        *   [6.3.2 Rollback/wijzig de Windows driver](#Rollback.2Fwijzig_de_Windows_driver)
+        *   [6.3.2 Rollback/wijzig de Windows driver](#Rollback/wijzig_de_Windows_driver)
         *   [6.3.3 Activeer WOL in Windows driver](#Activeer_WOL_in_Windows_driver)
         *   [6.3.4 Nieuwe Realtek Linux driver](#Nieuwe_Realtek_Linux_driver)
-        *   [6.3.5 Inschakelen *LAN Boot ROM* in BIOS/CMOS](#Inschakelen_LAN_Boot_ROM_in_BIOS.2FCMOS)
+        *   [6.3.5 Inschakelen *LAN Boot ROM* in BIOS/CMOS](#Inschakelen_LAN_Boot_ROM_in_BIOS/CMOS)
     *   [6.4 No interface with Atheros chipsets](#No_interface_with_Atheros_chipsets)
     *   [6.5 Broadcom BCM57780](#Broadcom_BCM57780)
-    *   [6.6 Realtek RTL8111/8168B](#Realtek_RTL8111.2F8168B)
-    *   [6.7 Gigabyte Motherboard with Realtek 8111/8168/8411](#Gigabyte_Motherboard_with_Realtek_8111.2F8168.2F8411)
+    *   [6.6 Realtek RTL8111/8168B](#Realtek_RTL8111/8168B)
+    *   [6.7 Gigabyte Motherboard with Realtek 8111/8168/8411](#Gigabyte_Motherboard_with_Realtek_8111/8168/8411)
 *   [7 Zie ook](#Zie_ook)
 
 ## Controleer de kabelaansluiting
@@ -332,7 +332,7 @@ Om een tijdelijke hostnaam toe te kennen, totaan een herstart, gebruik [hostname
 
 ```
 
-Om de hostnaam, en andere metadata,te verfraaien, zie [machine-info(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/machine-info.5#https%3A.2F.2Fwww.freedesktop.org.2Fsoftware.2Fsystemd.2Fman.2Fmachine-info.html).
+Om de hostnaam, en andere metadata,te verfraaien, zie [machine-info(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/machine-info.5#https%26%2358%3B%2F%2Fwww.freedesktop.org%2Fsoftware%2Fsystemd%2Fman%2Fmachine-info.html).
 
 ### Lokaal netwerk hostnaam resolutie
 

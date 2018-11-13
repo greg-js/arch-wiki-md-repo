@@ -12,9 +12,9 @@ From the project [home page](http://www.ffmpeg.org/):
     *   [2.3 VOB to any container](#VOB_to_any_container)
     *   [2.4 x264 lossless](#x264_lossless)
     *   [2.5 x265](#x265)
-    *   [2.6 Single-pass MPEG-2 (near lossless)](#Single-pass_MPEG-2_.28near_lossless.29)
+    *   [2.6 Single-pass MPEG-2 (near lossless)](#Single-pass_MPEG-2_(near_lossless))
     *   [2.7 x264: constant rate factor](#x264:_constant_rate_factor)
-    *   [2.8 Two-pass x264 (very high-quality)](#Two-pass_x264_.28very_high-quality.29)
+    *   [2.8 Two-pass x264 (very high-quality)](#Two-pass_x264_(very_high-quality))
     *   [2.9 x264 video stabilization](#x264_video_stabilization)
         *   [2.9.1 First pass](#First_pass)
         *   [2.9.2 Second pass](#Second_pass)
@@ -424,7 +424,7 @@ $ ffmpeg -threads 1 -i file.ext -vaapi_device /dev/dri/renderD128 -vcodec h264_v
 
 #### Nvidia NVENC
 
-NVENC can be used for encoding when using the proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") driver with the [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) package installed. Minimum supported GPUs are from 600 series (see [w:Nvidia NVENC](https://en.wikipedia.org/wiki/Nvidia_NVENC "w:Nvidia NVENC") and [Hardware video acceleration#Formats](/index.php/Hardware_video_acceleration#Formats "Hardware video acceleration")).
+NVENC can be used for encoding when using the proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") driver with the [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) package installed. Minimum supported GPUs are from 600 series (see [w:Nvidia NVENC](https://en.wikipedia.org/wiki/Nvidia_NVENC "w:Nvidia NVENC") and [Hardware video acceleration#Driver support](/index.php/Hardware_video_acceleration#Driver_support "Hardware video acceleration").
 
 See [this gist](https://gist.github.com/Brainiarc7/8b471ff91319483cdb725f615908286e) for some techniques. NVENC is somewhat similar to [CUDA](/index.php/CUDA "CUDA"), thus it works even from terminal session. Depending on hardware NVENC is several times faster than Intel's VA-API encoders.
 
@@ -444,7 +444,7 @@ $ ffmpeg -i source.ext -c:v h264_nvenc -rc constqp -qp 28 output.mkv
 
 #### Nvidia NVDEC
 
-NVDEC can be used for decoding when using the proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") driver with the [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) package installed. Minimum supported GPUs are from 600 series (see [w:Nvidia NVDEC](https://en.wikipedia.org/wiki/Nvidia_NVDEC "w:Nvidia NVDEC") and [Hardware video acceleration#Formats](/index.php/Hardware_video_acceleration#Formats "Hardware video acceleration")).
+NVDEC can be used for decoding when using the proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") driver with the [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) package installed. Minimum supported GPUs are from 600 series (see [w:Nvidia NVDEC](https://en.wikipedia.org/wiki/Nvidia_NVDEC "w:Nvidia NVDEC") and [Hardware video acceleration#Driver support](/index.php/Hardware_video_acceleration#Driver_support "Hardware video acceleration").
 
 ## Preset files
 

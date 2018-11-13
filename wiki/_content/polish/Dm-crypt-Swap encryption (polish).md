@@ -4,10 +4,10 @@ W zależności od wymagań można zastosować różne metody szyfrowania partycj
 
 *   [1 Bez wsparcia dla hibernacji](#Bez_wsparcia_dla_hibernacji)
     *   [1.1 UUID i LABEL](#UUID_i_LABEL)
-*   [2 Z obsługą hibernacji](#Z_obs.C5.82ug.C4.85_hibernacji)
+*   [2 Z obsługą hibernacji](#Z_obsługą_hibernacji)
     *   [2.1 LVM na LUKS](#LVM_na_LUKS)
     *   [2.2 mkinitcpio hook](#mkinitcpio_hook)
-    *   [2.3 Używanie pliku wymiany](#U.C5.BCywanie_pliku_wymiany)
+    *   [2.3 Używanie pliku wymiany](#Używanie_pliku_wymiany)
 *   [3 Znane problemy](#Znane_problemy)
 
 ## Bez wsparcia dla hibernacji
@@ -185,7 +185,7 @@ do otwierania urządzenia wymiennego przez ładowanie pliku z zaszyfrowanego urz
 
 Na niektórych komputerach mogą wystąpić warunki wyścigu, gdy mkinitcpio spróbuje zamontować urządzenie przed procesem odszyfrowywania i wyliczenie urządzenia zostanie zakończone. Skomentowany blok opcjonalny opóźni proces rozruchu do 2 sekund, dopóki urządzenie główne nie będzie gotowe do zamontowania.
 
-**Note:** Jeśli jest wymagana zamiana dysków SSD (Solid State Disk) i Discard / TRIM, opcja `--allow-discards` musi zostać dodana do linii cryptsetup w powyższym haku openswap. Zobacz [Dm-crypt/Specialties#Discard/TRIM support for solid state drives (SSD)](/index.php/Dm-crypt/Specialties#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29 "Dm-crypt/Specialties") lub [SSD](/index.php/SSD "SSD") aby uzyskać więcej informacji na temat discard. Dodatkowo musisz dodać opcję montowania "discard" do wpisu fstab dla urządzenia wymiennego.
+**Note:** Jeśli jest wymagana zamiana dysków SSD (Solid State Disk) i Discard / TRIM, opcja `--allow-discards` musi zostać dodana do linii cryptsetup w powyższym haku openswap. Zobacz [Dm-crypt/Specialties#Discard/TRIM support for solid state drives (SSD)](/index.php/Dm-crypt/Specialties#Discard/TRIM_support_for_solid_state_drives_(SSD) "Dm-crypt/Specialties") lub [SSD](/index.php/SSD "SSD") aby uzyskać więcej informacji na temat discard. Dodatkowo musisz dodać opcję montowania "discard" do wpisu fstab dla urządzenia wymiennego.
 
 Następnie utwórz i edytuj plik konfiguracyjny przechwytywania:
 

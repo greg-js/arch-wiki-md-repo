@@ -16,7 +16,7 @@ Disk encryption should only be viewed as an adjunct to the existing security mec
 
 ## Contents
 
-*   [1 Why use encryption?](#Why_use_encryption.3F)
+*   [1 Why use encryption?](#Why_use_encryption?)
 *   [2 System data encryption](#System_data_encryption)
 *   [3 Available methods](#Available_methods)
     *   [3.1 Stacked filesystem encryption](#Stacked_filesystem_encryption)
@@ -31,7 +31,7 @@ Disk encryption should only be viewed as an adjunct to the existing security mec
     *   [4.4 Preparing the disk](#Preparing_the_disk)
 *   [5 How the encryption works](#How_the_encryption_works)
     *   [5.1 Basic principle](#Basic_principle)
-    *   [5.2 Keys, keyfiles and passphrases](#Keys.2C_keyfiles_and_passphrases)
+    *   [5.2 Keys, keyfiles and passphrases](#Keys,_keyfiles_and_passphrases)
     *   [5.3 Cryptographic metadata](#Cryptographic_metadata)
     *   [5.4 Ciphers and modes of operation](#Ciphers_and_modes_of_operation)
     *   [5.5 Plausible deniability](#Plausible_deniability)
@@ -231,7 +231,7 @@ Chromium OS (encryption of cached user data [[9]](https://www.chromium.org/chrom
 
 ### Choosing a setup
 
-Which disk encryption setup is appropriate for you will depend on your goals (please read [#Why use encryption?](#Why_use_encryption.3F) above) and system parameters.
+Which disk encryption setup is appropriate for you will depend on your goals (please read [#Why use encryption?](#Why_use_encryption?) above) and system parameters.
 
 Among other things, you will need to answer the following questions:
 

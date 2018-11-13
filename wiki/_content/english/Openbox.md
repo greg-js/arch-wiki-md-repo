@@ -51,7 +51,7 @@ Related articles
     *   [7.5 Openbox for multihead users](#Openbox_for_multihead_users)
     *   [7.6 Launch a complex command with hotkey](#Launch_a_complex_command_with_hotkey)
     *   [7.7 Switch desktops using the mouse](#Switch_desktops_using_the_mouse)
-    *   [7.8 Set default applications / file associations](#Set_default_applications_.2F_file_associations)
+    *   [7.8 Set default applications / file associations](#Set_default_applications_/_file_associations)
     *   [7.9 Ad-hoc window transparency](#Ad-hoc_window_transparency)
     *   [7.10 Using obxprop for faster configuration](#Using_obxprop_for_faster_configuration)
     *   [7.11 Xprop values for applications](#Xprop_values_for_applications)

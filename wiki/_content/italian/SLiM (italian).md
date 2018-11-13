@@ -18,17 +18,17 @@ Articoli correlati
 *   [3 Altre opzioni](#Altre_opzioni)
     *   [3.1 Cambiare il cursore](#Cambiare_il_cursore)
     *   [3.2 Condividere lo sfondo tra desktop e Slim](#Condividere_lo_sfondo_tra_desktop_e_Slim)
-    *   [3.3 Spegnere, Riavviare, Sospendere, Uscire, Aprire un terminale da SLiM](#Spegnere.2C_Riavviare.2C_Sospendere.2C_Uscire.2C_Aprire_un_terminale_da_SLiM)
+    *   [3.3 Spegnere, Riavviare, Sospendere, Uscire, Aprire un terminale da SLiM](#Spegnere,_Riavviare,_Sospendere,_Uscire,_Aprire_un_terminale_da_SLiM)
     *   [3.4 Errore di SLiM eseguito come demone](#Errore_di_SLiM_eseguito_come_demone)
     *   [3.5 Errore allo spegnimento con Splashy](#Errore_allo_spegnimento_con_Splashy)
-    *   [3.6 L'icona per lo spegnimento non funziona](#L.27icona_per_lo_spegnimento_non_funziona)
+    *   [3.6 L'icona per lo spegnimento non funziona](#L'icona_per_lo_spegnimento_non_funziona)
     *   [3.7 Informazioni di login](#Informazioni_di_login)
     *   [3.8 Comandi di login personalizzati](#Comandi_di_login_personalizzati)
     *   [3.9 SLiM e Gnome Keyring](#SLiM_e_Gnome_Keyring)
     *   [3.10 Settare DPI di SLiM](#Settare_DPI_di_SLiM)
     *   [3.11 Usare un tema casuale](#Usare_un_tema_casuale)
-    *   [3.12 Spostare l'intera sessione su un altra console](#Spostare_l.27intera_sessione_su_un_altra_console)
-    *   [3.13 Montare /home al login](#Montare_.2Fhome_al_login)
+    *   [3.12 Spostare l'intera sessione su un altra console](#Spostare_l'intera_sessione_su_un_altra_console)
+    *   [3.13 Montare /home al login](#Montare_/home_al_login)
 *   [4 Tutte le opzioni di SLiM](#Tutte_le_opzioni_di_SLiM)
 *   [5 Disinstallazione](#Disinstallazione)
 *   [6 Vedere anche](#Vedere_anche)
@@ -313,7 +313,7 @@ O se si vuole un suono all'avvio di SLiM (il programma beep va installato a part
 
 **Warning:** If auto login is enabled, the GNOME keyring will not be unlocked automatically on login. This will cause dependent applications, such as Chrome/Chromium and NetworkManager, to misbehave (see [https://bbs.archlinux.org/viewtopic.php?id=167579](https://bbs.archlinux.org/viewtopic.php?id=167579)).
 
-See [GNOME Keyring#Use Without GNOME, and without a display manager](/index.php/GNOME_Keyring#Use_Without_GNOME.2C_and_without_a_display_manager "GNOME Keyring") to use GNOME Keyring in a custom session.
+See [GNOME Keyring#Use Without GNOME, and without a display manager](/index.php/GNOME_Keyring#Use_Without_GNOME,_and_without_a_display_manager "GNOME Keyring") to use GNOME Keyring in a custom session.
 
 ### Settare DPI di SLiM
 

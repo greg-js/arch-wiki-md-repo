@@ -4,27 +4,27 @@ Dla dokładniejszych instrukcji, zobacz odpowiednie artykuły [ArchWiki](/index.
 
 ## Contents
 
-*   [1 Przed instalacją](#Przed_instalacj.C4.85)
-    *   [1.1 Układ klawiatury](#Uk.C5.82ad_klawiatury)
-        *   [1.1.1 Polski układ klawiatury](#Polski_uk.C5.82ad_klawiatury)
+*   [1 Przed instalacją](#Przed_instalacją)
+    *   [1.1 Układ klawiatury](#Układ_klawiatury)
+        *   [1.1.1 Polski układ klawiatury](#Polski_układ_klawiatury)
     *   [1.2 Zweryfikuj tryb uruchomionego systemu](#Zweryfikuj_tryb_uruchomionego_systemu)
-    *   [1.3 Połącz się z Internetem](#Po.C5.82.C4.85cz_si.C4.99_z_Internetem)
+    *   [1.3 Połącz się z Internetem](#Połącz_się_z_Internetem)
     *   [1.4 Zaktualizuj systemowy zegar](#Zaktualizuj_systemowy_zegar)
     *   [1.5 Partycjonuj dyski](#Partycjonuj_dyski)
     *   [1.6 Formatowanie partycji](#Formatowanie_partycji)
-    *   [1.7 Zamontuj system plików](#Zamontuj_system_plik.C3.B3w)
+    *   [1.7 Zamontuj system plików](#Zamontuj_system_plików)
 *   [2 Instalacja](#Instalacja)
     *   [2.1 Wybierz serwery lustrzane](#Wybierz_serwery_lustrzane)
-    *   [2.2 Instalacja pakietów z grupy *base*](#Instalacja_pakiet.C3.B3w_z_grupy_base)
+    *   [2.2 Instalacja pakietów z grupy *base*](#Instalacja_pakietów_z_grupy_base)
 *   [3 Konfiguracja systemu](#Konfiguracja_systemu)
     *   [3.1 Fstab](#Fstab)
     *   [3.2 Chroot](#Chroot)
     *   [3.3 Strefa czasowa](#Strefa_czasowa)
-    *   [3.4 Język](#J.C4.99zyk)
+    *   [3.4 Język](#Język)
     *   [3.5 Nazwa hosta](#Nazwa_hosta)
     *   [3.6 Konfiguracja sieci](#Konfiguracja_sieci)
     *   [3.7 Initramfs](#Initramfs)
-    *   [3.8 Hasło użytkownika root](#Has.C5.82o_u.C5.BCytkownika_root)
+    *   [3.8 Hasło użytkownika root](#Hasło_użytkownika_root)
     *   [3.9 Program rozruchowy](#Program_rozruchowy)
 *   [4 Uruchom ponownie](#Uruchom_ponownie)
 *   [5 Po instalacji](#Po_instalacji)
@@ -254,7 +254,7 @@ Zobacz również: [Network configuration#Set the hostname](/index.php/Network_co
 
 Nowo zainstalowany system nie ma żadnego połączenia z siecią uruchomionego domyślnie. Zobacz [Network configuration#Network management](/index.php/Network_configuration#Network_management "Network configuration").
 
-Dla [sieci bezprzewodowych](/index.php/Wireless_configuration "Wireless configuration"), [zainstaluj](/index.php/Install "Install") pakiety [iw](https://www.archlinux.org/packages/?name=iw) i {{Pkg|wpa_supplicant} i wymagane [pakiety firmware](/index.php/Wireless#Installing_driver.2Ffirmware "Wireless"). Opcjonalnie zainstaluj [dialog](https://www.archlinux.org/packages/?name=dialog) dla użycia *wifi-menu*.
+Dla [sieci bezprzewodowych](/index.php/Wireless_configuration "Wireless configuration"), [zainstaluj](/index.php/Install "Install") pakiety [iw](https://www.archlinux.org/packages/?name=iw) i {{Pkg|wpa_supplicant} i wymagane [pakiety firmware](/index.php/Wireless#Installing_driver/firmware "Wireless"). Opcjonalnie zainstaluj [dialog](https://www.archlinux.org/packages/?name=dialog) dla użycia *wifi-menu*.
 
 ### Initramfs
 

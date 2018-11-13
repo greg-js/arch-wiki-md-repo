@@ -2,8 +2,8 @@ Libnotify es una fácil manera de mostrar notificaciones de escritorio e informa
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Configuración](#Configuraci.C3.B3n)
+*   [1 Instalación](#Instalación)
+*   [2 Configuración](#Configuración)
     *   [2.1 Gnome](#Gnome)
     *   [2.2 XFCE](#XFCE)
 *   [3 Trucos y Consejos](#Trucos_y_Consejos)

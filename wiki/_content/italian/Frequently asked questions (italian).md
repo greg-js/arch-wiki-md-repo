@@ -3,49 +3,49 @@ Oltre alle domande seguenti, è possibile trovare utile leggere gli articoli [Il
 ## Contents
 
 *   [1 Generale](#Generale)
-    *   [1.1 D) Cos'è Arch Linux?](#D.29_Cos.27.C3.A8_Arch_Linux.3F)
-    *   [1.2 D) Perchè si dovrebbe voler utilizzare Arch Linux?](#D.29_Perch.C3.A8_si_dovrebbe_voler_utilizzare_Arch_Linux.3F)
-    *   [1.3 D) Perchè non si dovrebbe voler utilizzare Arch Linux?](#D.29_Perch.C3.A8_non_si_dovrebbe_voler_utilizzare_Arch_Linux.3F)
-    *   [1.4 D) Su quale distribuzione GNU/Linux si basa Arch Linux?](#D.29_Su_quale_distribuzione_GNU.2FLinux_si_basa_Arch_Linux.3F)
-    *   [1.5 D) Sono alle prime armi con Linux. Dovrei usare Arch Linux?](#D.29_Sono_alle_prime_armi_con_Linux._Dovrei_usare_Arch_Linux.3F)
-    *   [1.6 D) Arch Linux richiede troppo tempo e troppi sforzi per l'installazione e l'uso. In più la comunità continua a dirmi: "leggi la wiki!" (o RTFM)](#D.29_Arch_Linux_richiede_troppo_tempo_e_troppi_sforzi_per_l.27installazione_e_l.27uso._In_pi.C3.B9_la_comunit.C3.A0_continua_a_dirmi:_.22leggi_la_wiki.21.22_.28o_RTFM.29)
-    *   [1.7 D) Arch è più adatta a server, desktop o workstation?](#D.29_Arch_.C3.A8_pi.C3.B9_adatta_a_server.2C_desktop_o_workstation.3F)
-    *   [1.8 D) Mi piace molto Arch, ma a mio parere i dev dovrebbero aggiungere la *funzionalità X*.](#D.29_Mi_piace_molto_Arch.2C_ma_a_mio_parere_i_dev_dovrebbero_aggiungere_la_funzionalit.C3.A0_X.)
-    *   [1.9 D) Quando uscirà il prossimo rilascio ufficiale?](#D.29_Quando_uscir.C3.A0_il_prossimo_rilascio_ufficiale.3F)
-    *   [1.10 D)Arch è un sistema operativo stabile? Avrò frequentemente problemi](#D.29Arch_.C3.A8_un_sistema_operativo_stabile.3F_Avr.C3.B2_frequentemente_problemi)
-    *   [1.11 D) Cos'è esattamente questo sistema di init 'BSD-style' di cui ho sentito parlare?](#D.29_Cos.27.C3.A8_esattamente_questo_sistema_di_init_.27BSD-style.27_di_cui_ho_sentito_parlare.3F)
-    *   [1.12 D) Arch ha bisogno di più pubblicità](#D.29_Arch_ha_bisogno_di_pi.C3.B9_pubblicit.C3.A0)
-    *   [1.13 D) Arch ha bisogno di più sviluppatori](#D.29_Arch_ha_bisogno_di_pi.C3.B9_sviluppatori)
-    *   [1.14 D) Perchè Arch è così lenta? Pensavo fosse veloce!](#D.29_Perch.C3.A8_Arch_.C3.A8_cos.C3.AC_lenta.3F_Pensavo_fosse_veloce.21)
-    *   [1.15 D)Perchè Internet è così lento in confronto ad altri sistemi operativi?](#D.29Perch.C3.A8_Internet_.C3.A8_cos.C3.AC_lento_in_confronto_ad_altri_sistemi_operativi.3F)
-    *   [1.16 D) Perchè Arch utilizza tutta la mia RAM?](#D.29_Perch.C3.A8_Arch_utilizza_tutta_la_mia_RAM.3F)
-    *   [1.17 D) Dov'è finito tutto il mio spazio libero?](#D.29_Dov.27.C3.A8_finito_tutto_il_mio_spazio_libero.3F)
+    *   [1.1 D) Cos'è Arch Linux?](#D)_Cos'è_Arch_Linux?)
+    *   [1.2 D) Perchè si dovrebbe voler utilizzare Arch Linux?](#D)_Perchè_si_dovrebbe_voler_utilizzare_Arch_Linux?)
+    *   [1.3 D) Perchè non si dovrebbe voler utilizzare Arch Linux?](#D)_Perchè_non_si_dovrebbe_voler_utilizzare_Arch_Linux?)
+    *   [1.4 D) Su quale distribuzione GNU/Linux si basa Arch Linux?](#D)_Su_quale_distribuzione_GNU/Linux_si_basa_Arch_Linux?)
+    *   [1.5 D) Sono alle prime armi con Linux. Dovrei usare Arch Linux?](#D)_Sono_alle_prime_armi_con_Linux._Dovrei_usare_Arch_Linux?)
+    *   [1.6 D) Arch Linux richiede troppo tempo e troppi sforzi per l'installazione e l'uso. In più la comunità continua a dirmi: "leggi la wiki!" (o RTFM)](#D)_Arch_Linux_richiede_troppo_tempo_e_troppi_sforzi_per_l'installazione_e_l'uso._In_più_la_comunità_continua_a_dirmi:_"leggi_la_wiki!"_(o_RTFM))
+    *   [1.7 D) Arch è più adatta a server, desktop o workstation?](#D)_Arch_è_più_adatta_a_server,_desktop_o_workstation?)
+    *   [1.8 D) Mi piace molto Arch, ma a mio parere i dev dovrebbero aggiungere la *funzionalità X*.](#D)_Mi_piace_molto_Arch,_ma_a_mio_parere_i_dev_dovrebbero_aggiungere_la_funzionalità_X.)
+    *   [1.9 D) Quando uscirà il prossimo rilascio ufficiale?](#D)_Quando_uscirà_il_prossimo_rilascio_ufficiale?)
+    *   [1.10 D)Arch è un sistema operativo stabile? Avrò frequentemente problemi](#D)Arch_è_un_sistema_operativo_stabile?_Avrò_frequentemente_problemi)
+    *   [1.11 D) Cos'è esattamente questo sistema di init 'BSD-style' di cui ho sentito parlare?](#D)_Cos'è_esattamente_questo_sistema_di_init_'BSD-style'_di_cui_ho_sentito_parlare?)
+    *   [1.12 D) Arch ha bisogno di più pubblicità](#D)_Arch_ha_bisogno_di_più_pubblicità)
+    *   [1.13 D) Arch ha bisogno di più sviluppatori](#D)_Arch_ha_bisogno_di_più_sviluppatori)
+    *   [1.14 D) Perchè Arch è così lenta? Pensavo fosse veloce!](#D)_Perchè_Arch_è_così_lenta?_Pensavo_fosse_veloce!)
+    *   [1.15 D)Perchè Internet è così lento in confronto ad altri sistemi operativi?](#D)Perchè_Internet_è_così_lento_in_confronto_ad_altri_sistemi_operativi?)
+    *   [1.16 D) Perchè Arch utilizza tutta la mia RAM?](#D)_Perchè_Arch_utilizza_tutta_la_mia_RAM?)
+    *   [1.17 D) Dov'è finito tutto il mio spazio libero?](#D)_Dov'è_finito_tutto_il_mio_spazio_libero?)
 *   [2 Gestione Pacchetti](#Gestione_Pacchetti)
-    *   [2.1 D)Il pacchetto X in quale è contenuto?](#D.29Il_pacchetto_X_in_quale_.C3.A8_contenuto.3F)
-    *   [2.2 D) Ho trovato un errore nel pacchetto X. Che dovrei fare?](#D.29_Ho_trovato_un_errore_nel_pacchetto_X._Che_dovrei_fare.3F)
-    *   [2.3 D) I pacchetti di Arch hanno bisogno di usare un'unica estensione. .pkg.tar.gz e .pkg.tar.xz sono troppo lunghe e/o poco chiare](#D.29_I_pacchetti_di_Arch_hanno_bisogno_di_usare_un.27unica_estensione._.pkg.tar.gz_e_.pkg.tar.xz_sono_troppo_lunghe_e.2Fo_poco_chiare)
-    *   [2.4 D) Pacman ha bisogno di una libreria così che le altre applicazioni possano facilmente accedere alle informazioni sui pacchetti](#D.29_Pacman_ha_bisogno_di_una_libreria_cos.C3.AC_che_le_altre_applicazioni_possano_facilmente_accedere_alle_informazioni_sui_pacchetti)
-    *   [2.5 D) Perchè pacman non ha un front end grafico (GUI)?](#D.29_Perch.C3.A8_pacman_non_ha_un_front_end_grafico_.28GUI.29.3F)
-    *   [2.6 D) Pacman ha bisogno della *caratteristica X!*](#D.29_Pacman_ha_bisogno_della_caratteristica_X.21)
-    *   [2.7 D) Arch ha bisogno di una versione stable](#D.29_Arch_ha_bisogno_di_una_versione_stable)
-    *   [2.8 D) Qual è la differenza fra tutti questi repository?](#D.29_Qual_.C3.A8_la_differenza_fra_tutti_questi_repository.3F)
-    *   [2.9 D) Ho appena installato il pacchetto X. Come lo avvio?](#D.29_Ho_appena_installato_il_pacchetto_X._Come_lo_avvio.3F)
-    *   [2.10 D) Perchè nei repositories c'è solo una versione per ogni libreria?](#D.29_Perch.C3.A8_nei_repositories_c.27.C3.A8_solo_una_versione_per_ogni_libreria.3F)
-    *   [2.11 D) Cosa succede se aggiornando il sistema ricevo aggiornamenti per una libreria e non per le sue dipendenze?](#D.29_Cosa_succede_se_aggiornando_il_sistema_ricevo_aggiornamenti_per_una_libreria_e_non_per_le_sue_dipendenze.3F)
-    *   [2.12 D) È possibile che ci sia un aggiornamento di versione del kernel e al tempo stesso non ci sia un aggiornamento adeguato dei drivers?](#D.29_.C3.88_possibile_che_ci_sia_un_aggiornamento_di_versione_del_kernel_e_al_tempo_stesso_non_ci_sia_un_aggiornamento_adeguato_dei_drivers.3F)
-    *   [2.13 D) Arch usa pacchetti firmati??](#D.29_Arch_usa_pacchetti_firmati.3F.3F)
+    *   [2.1 D)Il pacchetto X in quale è contenuto?](#D)Il_pacchetto_X_in_quale_è_contenuto?)
+    *   [2.2 D) Ho trovato un errore nel pacchetto X. Che dovrei fare?](#D)_Ho_trovato_un_errore_nel_pacchetto_X._Che_dovrei_fare?)
+    *   [2.3 D) I pacchetti di Arch hanno bisogno di usare un'unica estensione. .pkg.tar.gz e .pkg.tar.xz sono troppo lunghe e/o poco chiare](#D)_I_pacchetti_di_Arch_hanno_bisogno_di_usare_un'unica_estensione._.pkg.tar.gz_e_.pkg.tar.xz_sono_troppo_lunghe_e/o_poco_chiare)
+    *   [2.4 D) Pacman ha bisogno di una libreria così che le altre applicazioni possano facilmente accedere alle informazioni sui pacchetti](#D)_Pacman_ha_bisogno_di_una_libreria_così_che_le_altre_applicazioni_possano_facilmente_accedere_alle_informazioni_sui_pacchetti)
+    *   [2.5 D) Perchè pacman non ha un front end grafico (GUI)?](#D)_Perchè_pacman_non_ha_un_front_end_grafico_(GUI)?)
+    *   [2.6 D) Pacman ha bisogno della *caratteristica X!*](#D)_Pacman_ha_bisogno_della_caratteristica_X!)
+    *   [2.7 D) Arch ha bisogno di una versione stable](#D)_Arch_ha_bisogno_di_una_versione_stable)
+    *   [2.8 D) Qual è la differenza fra tutti questi repository?](#D)_Qual_è_la_differenza_fra_tutti_questi_repository?)
+    *   [2.9 D) Ho appena installato il pacchetto X. Come lo avvio?](#D)_Ho_appena_installato_il_pacchetto_X._Come_lo_avvio?)
+    *   [2.10 D) Perchè nei repositories c'è solo una versione per ogni libreria?](#D)_Perchè_nei_repositories_c'è_solo_una_versione_per_ogni_libreria?)
+    *   [2.11 D) Cosa succede se aggiornando il sistema ricevo aggiornamenti per una libreria e non per le sue dipendenze?](#D)_Cosa_succede_se_aggiornando_il_sistema_ricevo_aggiornamenti_per_una_libreria_e_non_per_le_sue_dipendenze?)
+    *   [2.12 D) È possibile che ci sia un aggiornamento di versione del kernel e al tempo stesso non ci sia un aggiornamento adeguato dei drivers?](#D)_È_possibile_che_ci_sia_un_aggiornamento_di_versione_del_kernel_e_al_tempo_stesso_non_ci_sia_un_aggiornamento_adeguato_dei_drivers?)
+    *   [2.13 D) Arch usa pacchetti firmati??](#D)_Arch_usa_pacchetti_firmati??)
 *   [3 Installazione](#Installazione)
-    *   [3.1 D) Arch ha bisogno di un migliore installer. Forse con una interfaccia grafica.](#D.29_Arch_ha_bisogno_di_un_migliore_installer._Forse_con_una_interfaccia_grafica.)
-    *   [3.2 D) Ho installato con successo Arch e sono alla shell di login! ora come devo procedere?](#D.29_Ho_installato_con_successo_Arch_e_sono_alla_shell_di_login.21_ora_come_devo_procedere.3F)
-    *   [3.3 D) Quali desktop environment e window manager posso usare su Arch?](#D.29_Quali_desktop_environment_e_window_manager_posso_usare_su_Arch.3F)
-    *   [3.4 D) Cosa rende Arch diversa da altre distribuzioni "minimaliste"?](#D.29_Cosa_rende_Arch_diversa_da_altre_distribuzioni_.22minimaliste.22.3F)
+    *   [3.1 D) Arch ha bisogno di un migliore installer. Forse con una interfaccia grafica.](#D)_Arch_ha_bisogno_di_un_migliore_installer._Forse_con_una_interfaccia_grafica.)
+    *   [3.2 D) Ho installato con successo Arch e sono alla shell di login! ora come devo procedere?](#D)_Ho_installato_con_successo_Arch_e_sono_alla_shell_di_login!_ora_come_devo_procedere?)
+    *   [3.3 D) Quali desktop environment e window manager posso usare su Arch?](#D)_Quali_desktop_environment_e_window_manager_posso_usare_su_Arch?)
+    *   [3.4 D) Cosa rende Arch diversa da altre distribuzioni "minimaliste"?](#D)_Cosa_rende_Arch_diversa_da_altre_distribuzioni_"minimaliste"?)
 *   [4 Altro](#Altro)
-    *   [4.1 D) Pacman mi restituisce un errore: 'warning: current locale is invalid; using default "C" locale'. Cosa devo fare?](#D.29_Pacman_mi_restituisce_un_errore:_.27warning:_current_locale_is_invalid.3B_using_default_.22C.22_locale.27._Cosa_devo_fare.3F)
-    *   [4.2 D) Come posso connettermi alle reti wifi?](#D.29_Come_posso_connettermi_alle_reti_wifi.3F)
-    *   [4.3 D) Come posso connettermi alle reti cablate](#D.29_Come_posso_connettermi_alle_reti_cablate)
-    *   [4.4 D) Che cos'è questo AUR di cui sento parlare spesso?](#D.29_Che_cos.27.C3.A8_questo_AUR_di_cui_sento_parlare_spesso.3F)
-    *   [4.5 D) Perchè se tento di guardare un video il mio schermo diventa verde?](#D.29_Perch.C3.A8_se_tento_di_guardare_un_video_il_mio_schermo_diventa_verde.3F)
-    *   [4.6 D) Lo spellcheck mi marca tutte le parole come errate](#D.29_Lo_spellcheck_mi_marca_tutte_le_parole_come_errate)
+    *   [4.1 D) Pacman mi restituisce un errore: 'warning: current locale is invalid; using default "C" locale'. Cosa devo fare?](#D)_Pacman_mi_restituisce_un_errore:_'warning:_current_locale_is_invalid;_using_default_"C"_locale'._Cosa_devo_fare?)
+    *   [4.2 D) Come posso connettermi alle reti wifi?](#D)_Come_posso_connettermi_alle_reti_wifi?)
+    *   [4.3 D) Come posso connettermi alle reti cablate](#D)_Come_posso_connettermi_alle_reti_cablate)
+    *   [4.4 D) Che cos'è questo AUR di cui sento parlare spesso?](#D)_Che_cos'è_questo_AUR_di_cui_sento_parlare_spesso?)
+    *   [4.5 D) Perchè se tento di guardare un video il mio schermo diventa verde?](#D)_Perchè_se_tento_di_guardare_un_video_il_mio_schermo_diventa_verde?)
+    *   [4.6 D) Lo spellcheck mi marca tutte le parole come errate](#D)_Lo_spellcheck_mi_marca_tutte_le_parole_come_errate)
 
 ## Generale
 
@@ -82,7 +82,7 @@ Lettura raccomandata: la [Guida per Principianti](/index.php/Guida_per_Principia
 
 ### D) Arch Linux richiede troppo tempo e troppi sforzi per l'installazione e l'uso. In più la comunità continua a dirmi: "leggi la wiki!" (o RTFM)
 
-**R)** Arch Linux è sviluppata e usata da un target specifico di utenti. Se si pensa davvero che gli sforzi richiesti da Arch Linux siano eccessivi è sicuramente meglio cambiare distribuzione, ce ne sono molte. Vedere [sopra](#D.29_Sono_alle_prime_armi_con_Linux._Dovrei_usare_Arch_Linux.3F).
+**R)** Arch Linux è sviluppata e usata da un target specifico di utenti. Se si pensa davvero che gli sforzi richiesti da Arch Linux siano eccessivi è sicuramente meglio cambiare distribuzione, ce ne sono molte. Vedere [sopra](#D)_Sono_alle_prime_armi_con_Linux._Dovrei_usare_Arch_Linux?).
 
 ### D) Arch è più adatta a server, desktop o workstation?
 
@@ -165,7 +165,7 @@ Vedi [questo articolo](http://www.linuxjournal.com/article/2770) ( in inglese) s
 
 ### D) Dov'è finito tutto il mio spazio libero?
 
-**R)** La risposta a questa domanda dipende esclusivamente dal proprio sistema. Ci sono alcuni [tools](/index.php/Common_Applications_(Italiano)#Programmi_per_la_visualizzazione_dell.27uso_del_Disco "Common Applications (Italiano)")che possono aiutare molto.
+**R)** La risposta a questa domanda dipende esclusivamente dal proprio sistema. Ci sono alcuni [tools](/index.php/Common_Applications_(Italiano)#Programmi_per_la_visualizzazione_dell'uso_del_Disco "Common Applications (Italiano)")che possono aiutare molto.
 
 ## Gestione Pacchetti
 

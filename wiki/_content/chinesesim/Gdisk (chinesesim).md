@@ -15,23 +15,23 @@
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 显示分区](#.E6.98.BE.E7.A4.BA.E5.88.86.E5.8C.BA)
-*   [3 备份和恢复分区表](#.E5.A4.87.E4.BB.BD.E5.92.8C.E6.81.A2.E5.A4.8D.E5.88.86.E5.8C.BA.E8.A1.A8)
-*   [4 创建分区表和分区](#.E5.88.9B.E5.BB.BA.E5.88.86.E5.8C.BA.E8.A1.A8.E5.92.8C.E5.88.86.E5.8C.BA)
-    *   [4.1 创建新分区表](#.E5.88.9B.E5.BB.BA.E6.96.B0.E5.88.86.E5.8C.BA.E8.A1.A8)
-    *   [4.2 创建分区](#.E5.88.9B.E5.BB.BA.E5.88.86.E5.8C.BA)
-        *   [4.2.1 分区编号](#.E5.88.86.E5.8C.BA.E7.BC.96.E5.8F.B7)
+*   [1 安装](#安装)
+*   [2 显示分区](#显示分区)
+*   [3 备份和恢复分区表](#备份和恢复分区表)
+*   [4 创建分区表和分区](#创建分区表和分区)
+    *   [4.1 创建新分区表](#创建新分区表)
+    *   [4.2 创建分区](#创建分区)
+        *   [4.2.1 分区编号](#分区编号)
         *   [4.2.2 First and last sector](#First_and_last_sector)
         *   [4.2.3 Partition type](#Partition_type)
     *   [4.3 Write changes to disk](#Write_changes_to_disk)
-*   [5 提示和技巧](#.E6.8F.90.E7.A4.BA.E5.92.8C.E6.8A.80.E5.B7.A7)
-    *   [5.1 在 MBR 和 GPT 之间转换](#.E5.9C.A8_MBR_.E5.92.8C_GPT_.E4.B9.8B.E9.97.B4.E8.BD.AC.E6.8D.A2)
+*   [5 提示和技巧](#提示和技巧)
+    *   [5.1 在 MBR 和 GPT 之间转换](#在_MBR_和_GPT_之间转换)
     *   [5.2 Sort partitions](#Sort_partitions)
     *   [5.3 Recover GPT header](#Recover_GPT_header)
     *   [5.4 Expand a GPT disk](#Expand_a_GPT_disk)
     *   [5.5 Prevent GPT partition automounting](#Prevent_GPT_partition_automounting)
-*   [6 参阅](#.E5.8F.82.E9.98.85)
+*   [6 参阅](#参阅)
 
 ## 安装
 
@@ -157,9 +157,9 @@ code
 | Linux filesystem | Any | `8300` | `0FC63DAF-8483-4772-8E79-3D69D8477DE4` |
 | [EFI system partition](/index.php/EFI_system_partition "EFI system partition") | Any | `ef00` | `C12A7328-F81F-11D2-BA4B-00A0C93EC93B` |
 | [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition") | None | `ef02` | `21686148-6449-6E6F-744E-656564454649` |
-| [Linux x86-64 root (/)](/index.php/Partitioning#.2F "Partitioning") | `/` | `8304` | `4F68BCE3-E8CD-4DB1-96E7-FBCAF984B709` |
+| [Linux x86-64 root (/)](/index.php/Partitioning#/ "Partitioning") | `/` | `8304` | `4F68BCE3-E8CD-4DB1-96E7-FBCAF984B709` |
 | [Linux swap](/index.php/Partitioning#Swap "Partitioning") | `[SWAP]` | `8200` | `0657FD6D-A4AB-43C4-84E5-0933C84B4F4F` |
-| [Linux /home](/index.php/Partitioning#.2Fhome "Partitioning") | `/home` | `8302` | `933AC7E1-2EB4-4F13-B844-0E14E2AEF915` |
+| [Linux /home](/index.php/Partitioning#/home "Partitioning") | `/home` | `8302` | `933AC7E1-2EB4-4F13-B844-0E14E2AEF915` |
 | [Linux /srv](/index.php/Partitioning#Discrete_partitions "Partitioning") | `/srv` | `8306` | `3B8F8425-20E0-4F3B-907F-1A25A76F98E8` |
 | [Linux LVM](/index.php/LVM#Create_partitions "LVM") | Any | `8e00` | `E6D6D379-F507-44C2-A23C-238F2A3DF928` |
 | [Linux RAID](/index.php/RAID#GUID_Partition_Table "RAID") | Any | `fd00` | `A19D880F-05FC-4D3B-A006-743F0F84911E` |

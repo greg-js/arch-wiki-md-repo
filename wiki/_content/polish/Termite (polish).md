@@ -5,15 +5,15 @@ Plik konfiguracyjny umożliwia zmianę kolorów i ustawienia kilkanaście opcji.
 ## Contents
 
 *   [1 Instalacja](#Instalacja)
-*   [2 Używanie](#U.C5.BCywanie)
+*   [2 Używanie](#Używanie)
 *   [3 Konfiguracja](#Konfiguracja)
     *   [3.1 Czcionka](#Czcionka)
     *   [3.2 Kolory](#Kolory)
 *   [4 Transparency](#Transparency)
-*   [5 Rozwiązywanie problemów](#Rozwi.C4.85zywanie_problem.C3.B3w)
-    *   [5.1 Ctrl+Shift+t](#Ctrl.2BShift.2Bt)
-    *   [5.2 Błąd zdalnego SSH](#B.C5.82.C4.85d_zdalnego_SSH)
-*   [6 Zobacz również](#Zobacz_r.C3.B3wnie.C5.BC)
+*   [5 Rozwiązywanie problemów](#Rozwiązywanie_problemów)
+    *   [5.1 Ctrl+Shift+t](#Ctrl+Shift+t)
+    *   [5.2 Błąd zdalnego SSH](#Błąd_zdalnego_SSH)
+*   [6 Zobacz również](#Zobacz_również)
 
 ## Instalacja
 

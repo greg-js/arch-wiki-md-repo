@@ -14,7 +14,7 @@
         *   [3.1.6 Change TCP keepalive parameters](#Change_TCP_keepalive_parameters)
         *   [3.1.7 Enable MTU probing](#Enable_MTU_probing)
         *   [3.1.8 TCP Timestamps](#TCP_Timestamps)
-    *   [3.2 TCP/IP stack hardening](#TCP.2FIP_stack_hardening)
+    *   [3.2 TCP/IP stack hardening](#TCP/IP_stack_hardening)
         *   [3.2.1 TCP SYN cookie protection](#TCP_SYN_cookie_protection)
         *   [3.2.2 TCP rfc1337](#TCP_rfc1337)
         *   [3.2.3 Reverse path filtering](#Reverse_path_filtering)

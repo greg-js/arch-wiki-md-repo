@@ -14,19 +14,19 @@ Hogy megértsük a GPT-t, meg kell értenünk, mi is az MBR és mik a hátránya
 ## Contents
 
 *   [1 Master Boot Record](#Master_Boot_Record)
-    *   [1.1 Az MBR hátrányai](#Az_MBR_h.C3.A1tr.C3.A1nyai)
-*   [2 GUID Partíciós Tábla](#GUID_Part.C3.ADci.C3.B3s_T.C3.A1bla)
-    *   [2.1 A GPT előnyei](#A_GPT_el.C5.91nyei)
-    *   [2.2 Kernel támogatás](#Kernel_t.C3.A1mogat.C3.A1s)
-*   [3 Rendszerbetöltő-támogatás](#Rendszerbet.C3.B6lt.C5.91-t.C3.A1mogat.C3.A1s)
+    *   [1.1 Az MBR hátrányai](#Az_MBR_hátrányai)
+*   [2 GUID Partíciós Tábla](#GUID_Partíciós_Tábla)
+    *   [2.1 A GPT előnyei](#A_GPT_előnyei)
+    *   [2.2 Kernel támogatás](#Kernel_támogatás)
+*   [3 Rendszerbetöltő-támogatás](#Rendszerbetöltő-támogatás)
     *   [3.1 UEFI rendszerek](#UEFI_rendszerek)
     *   [3.2 BIOS rendszerek](#BIOS_rendszerek)
 *   [4 Partitioning Utilities](#Partitioning_Utilities)
     *   [4.1 GPT fdisk](#GPT_fdisk)
-        *   [4.1.1 Az MBR átalakítása GPT-vé](#Az_MBR_.C3.A1talak.C3.ADt.C3.A1sa_GPT-v.C3.A9)
+        *   [4.1.1 Az MBR átalakítása GPT-vé](#Az_MBR_átalakítása_GPT-vé)
     *   [4.2 Util-linux fdisk](#Util-linux_fdisk)
     *   [4.3 GNU Parted](#GNU_Parted)
-*   [5 Lásd még](#L.C3.A1sd_m.C3.A9g)
+*   [5 Lásd még](#Lásd_még)
 
 ## Master Boot Record
 
@@ -81,7 +81,7 @@ Minden UEFI Rendszerbetöltő támogatja a GPT lemezeket, mivel a GPT része az 
 
 **Megjegyzés:** Egyes BIOS rendszerek, mint az Intel Desktop Board alaplapok nem indítanak GPT lemezről, kivéve, ha a protektív MBR partíción "Boot" zászlót állítunk be. Az ilyen BIOS rendszereken az [MBR](/index.php/Master_Boot_Record_(Magyar) "Master Boot Record (Magyar)") (avagy msdos particionálás) javasolt GPT helyett, a kompatibilitás megőrzésének érdekében. Lásd a [http://mjg59.dreamwidth.org/8035.html](http://mjg59.dreamwidth.org/8035.html) és [http://rodsbooks.com/gdisk/bios.html](http://rodsbooks.com/gdisk/bios.html) cikket több információért.
 
-*   A [GRUB](/index.php/GRUB "GRUB") a BIOS rendszereken a `core.img` fájl beágyazásához [BIOS Boot Partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB")-t igényel, melynek mérete (2 [MiB](https://en.wikipedia.org/wiki/MiB "wikipedia:MiB"), nincs fájlrendszere, típusának kódja pedig `EF02` a gdisk szerint, vagy "bios_grub" zászlóval jelölendő a GNU Parted szerint); mivel az GPT lemezen nincs meg az MBR utáni beágyazó rés. A GPT futásidejű (runtime) támogatását a `part_gpt` modul biztosítja, melynek nincs köze a **BIOS Boot Partition** függőséghez.
+*   A [GRUB](/index.php/GRUB "GRUB") a BIOS rendszereken a `core.img` fájl beágyazásához [BIOS Boot Partition](/index.php/GRUB#GUID_Partition_Table_(GPT)_specific_instructions "GRUB")-t igényel, melynek mérete (2 [MiB](https://en.wikipedia.org/wiki/MiB "wikipedia:MiB"), nincs fájlrendszere, típusának kódja pedig `EF02` a gdisk szerint, vagy "bios_grub" zászlóval jelölendő a GNU Parted szerint); mivel az GPT lemezen nincs meg az MBR utáni beágyazó rés. A GPT futásidejű (runtime) támogatását a `part_gpt` modul biztosítja, melynek nincs köze a **BIOS Boot Partition** függőséghez.
 
 *   A [Syslinux](/index.php/Syslinux "Syslinux")-nak szüksége van a `/boot/syslinux/ldlinux.sys`-t tartalmazó partícióra (függetlenül attól, hogy a `/boot` különálló partíción van-e, vagy nem), melyet "Legacy BIOS Bootable" GPT attribútummal kell jelölni (*legacy_boot* zászló a GNU Parted-ben), hogy azonosítani tudja a Syslinux indító állományait tartalmazó partíciót 440 bájtos MBR kódja (`gptmbr.bin`) alapján. Lásd a [Syslinux#GUID Partition Table aka GPT](/index.php/Syslinux#GUID_Partition_Table_aka_GPT "Syslinux") cikket további információkért. Ez az MBR lemezek "boot" zászlójának felel meg.
 
@@ -102,7 +102,7 @@ Csak nyissuk meg az MBR lemezt a gdisk-et használva, és lépjünk ki a "w" opc
 **Megjegyzés:**
 
 *   Emlékezzünk rá, hogy a GTP a másodlagos partíciós táblát a lemez végén tárolja. Ez az adatszerkezet 33 darab 512 bájtos szektort foglal le alapértelmezetten. Az MBR nem rendelkezik ilyesféle adatszerkezettel a lemez végén, ami annyit tesz, hogy az utolsó partíció gyakran a lemez végéig nyújtózik, ezáltal megakadályozva a konverziót. Ebben az esetben vagy el kell felejtenünk az átalakítást, vagy át kell ,méreteznünk az utolsó partíciót, vagy az utolsó partíciót kivéve minden mást át kell alakítanunk.
-*   Ne feledjük, hogy ha a Rendszerbetöltőnk a GRUB, annak szüksége lesz egy [BIOS Boot Partícióra](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB"). Ha az MBR Partíciós Sémánk nem túl régi, jó eséllyel a partíciók eltolása miatt az első partíciónk a 2048-as szektornál kezdődik. Ez annyit tesz, hogy van 1007 [KiB](https://en.wikipedia.org/wiki/KiB "wikipedia:KiB") szabad helyünk a lemez elején, ahol a szükséges bios-boot partíciót létrehozhatjuk . Ehhez először végezzük el az mbr->gpt átalakítást a gdisk-kel a fentiek szerint. Ezek után készítsünk új partíciót a gdisk-kel, és manuálisan adjuk meg, hogy pozíciója a 34-es és a 2047-es között legyen, majd állítsuk be a partíció típusát `EF02`-re.
+*   Ne feledjük, hogy ha a Rendszerbetöltőnk a GRUB, annak szüksége lesz egy [BIOS Boot Partícióra](/index.php/GRUB#GUID_Partition_Table_(GPT)_specific_instructions "GRUB"). Ha az MBR Partíciós Sémánk nem túl régi, jó eséllyel a partíciók eltolása miatt az első partíciónk a 2048-as szektornál kezdődik. Ez annyit tesz, hogy van 1007 [KiB](https://en.wikipedia.org/wiki/KiB "wikipedia:KiB") szabad helyünk a lemez elején, ahol a szükséges bios-boot partíciót létrehozhatjuk . Ehhez először végezzük el az mbr->gpt átalakítást a gdisk-kel a fentiek szerint. Ezek után készítsünk új partíciót a gdisk-kel, és manuálisan adjuk meg, hogy pozíciója a 34-es és a 2047-es között legyen, majd állítsuk be a partíció típusát `EF02`-re.
 
 ### Util-linux fdisk
 

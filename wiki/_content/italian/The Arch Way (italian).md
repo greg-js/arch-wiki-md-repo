@@ -2,7 +2,7 @@ I seguenti cinque princìpi costituiscono ciò che è comunemente detto Il Metod
 
 ## Contents
 
-*   [1 Semplicità](#Semplicit.C3.A0)
+*   [1 Semplicità](#Semplicità)
 *   [2 Correttezza del codice oltre la convenienza](#Correttezza_del_codice_oltre_la_convenienza)
 *   [3 User-centrico](#User-centrico)
 *   [4 Aperto](#Aperto)

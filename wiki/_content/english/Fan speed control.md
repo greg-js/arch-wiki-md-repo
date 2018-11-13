@@ -12,7 +12,7 @@ Fan control can bring various benefits to your system, such as quieter working s
 ## Contents
 
 *   [1 Overview](#Overview)
-*   [2 Fancontrol (lm-sensors)](#Fancontrol_.28lm-sensors.29)
+*   [2 Fancontrol (lm-sensors)](#Fancontrol_(lm-sensors))
     *   [2.1 lm-sensors](#lm-sensors)
         *   [2.1.1 Increasing fan_div](#Increasing_fan_div)
     *   [2.2 Configuration](#Configuration)
@@ -41,15 +41,15 @@ Fan control can bring various benefits to your system, such as quieter working s
 
 ## Overview
 
-**Note:** Laptop users should be aware about how cooling system works in their hardware. Some laptops have single fan for both CPU and GPU and cools both at the same time. Some laptops have two fans for CPU and GPU, but the first fan cools down CPU and GPU at the same time, while the other one cools CPU only. In some cases, you will not be able to use [Fancontrol](#Fancontrol_.28lm-sensors.29) script due to incompatible cooling architecture (e.g. one fan for both GPU and CPU). [Here](https://github.com/daringer/asus-fan/issues/47#issue-232063547) is some more information about this topic.
+**Note:** Laptop users should be aware about how cooling system works in their hardware. Some laptops have single fan for both CPU and GPU and cools both at the same time. Some laptops have two fans for CPU and GPU, but the first fan cools down CPU and GPU at the same time, while the other one cools CPU only. In some cases, you will not be able to use [Fancontrol](#Fancontrol_(lm-sensors)) script due to incompatible cooling architecture (e.g. one fan for both GPU and CPU). [Here](https://github.com/daringer/asus-fan/issues/47#issue-232063547) is some more information about this topic.
 
 There are multiple working solutions for fan control for both desktops and notebooks. Depending on your needs:
 
-*   [Fancontrol (lm-sensors)](#Fancontrol_.28lm-sensors.29) - Script (written in Bash) to configure fan speeds. Most suitable for desktops and laptops with a single fan and without discrete graphics card.
-*   [NoteBook Fan Control (NBFC)](#NBFC) - Cross-platform solution for laptop fan control, written in C# and works under [Mono](/index.php/Mono "Mono") runtime. Most suitable for latest, unsupported by [Fancontrol](#Fancontrol_.28lm-sensors.29) laptops.
+*   [Fancontrol (lm-sensors)](#Fancontrol_(lm-sensors)) - Script (written in Bash) to configure fan speeds. Most suitable for desktops and laptops with a single fan and without discrete graphics card.
+*   [NoteBook Fan Control (NBFC)](#NBFC) - Cross-platform solution for laptop fan control, written in C# and works under [Mono](/index.php/Mono "Mono") runtime. Most suitable for latest, unsupported by [Fancontrol](#Fancontrol_(lm-sensors)) laptops.
 *   [Dell laptops](#Dell_laptops) - Alternative fan control daemon for some Dell laptops.
 *   [ThinkPad laptops](#ThinkPad_laptops) - Fan configuration for some ThinkPad laptops.
-*   [Asus laptops](#Asus_laptops) - Configure some Asus laptops for [Fancontrol](#Fancontrol_.28lm-sensors.29) or manual control.
+*   [Asus laptops](#Asus_laptops) - Configure some Asus laptops for [Fancontrol](#Fancontrol_(lm-sensors)) or manual control.
 
 ## Fancontrol (lm-sensors)
 
@@ -423,7 +423,7 @@ Check if you have any control over both fans:
 
 ```
 
-If everything works, you might want to load this kernel module [on boot](/index.php/Kernel_module#Automatic_module_handling "Kernel module"):
+If everything works, you might want to load this kernel module [on boot](/index.php/Kernel_module#Automatic_module_loading_with_systemd "Kernel module"):
 
  `/etc/modules-load.d/asus_fan.conf` 
 ```

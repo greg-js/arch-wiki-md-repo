@@ -23,7 +23,7 @@ The following are examples of common scenarios of full system encryption with *d
     *   [4.4 Configuring mkinitcpio](#Configuring_mkinitcpio_3)
     *   [4.5 Configuring the boot loader](#Configuring_the_boot_loader_3)
     *   [4.6 Configuring fstab and crypttab](#Configuring_fstab_and_crypttab)
-    *   [4.7 Encrypting logical volume /home](#Encrypting_logical_volume_.2Fhome)
+    *   [4.7 Encrypting logical volume /home](#Encrypting_logical_volume_/home)
 *   [5 LUKS on software RAID](#LUKS_on_software_RAID)
     *   [5.1 Preparing the disks](#Preparing_the_disks)
     *   [5.2 Building the RAID array](#Building_the_RAID_array)
@@ -38,7 +38,7 @@ The following are examples of common scenarios of full system encryption with *d
     *   [6.4 Configuring mkinitcpio](#Configuring_mkinitcpio_4)
     *   [6.5 Configuring the boot loader](#Configuring_the_boot_loader_5)
     *   [6.6 Post-installation](#Post-installation)
-*   [7 Encrypted boot partition (GRUB)](#Encrypted_boot_partition_.28GRUB.29)
+*   [7 Encrypted boot partition (GRUB)](#Encrypted_boot_partition_(GRUB))
     *   [7.1 Preparing the disk](#Preparing_the_disk_5)
     *   [7.2 Preparing the logical volumes](#Preparing_the_logical_volumes_3)
     *   [7.3 Preparing the boot partition](#Preparing_the_boot_partition_5)
@@ -139,7 +139,7 @@ This scenario also employs USB devices for `/boot` and key storage, which may be
 
 *   Data resilience for cases where a LUKS header may be damaged
 *   Allows [Full Disk Encryption](https://en.wikipedia.org/wiki/Disk_encryption#Full_disk_encryption "wikipedia:Disk encryption")
-*   Helps addressing [problems](/index.php/Dm-crypt/Specialties#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29 "Dm-crypt/Specialties") with SSDs
+*   Helps addressing [problems](/index.php/Dm-crypt/Specialties#Discard/TRIM_support_for_solid_state_drives_(SSD) "Dm-crypt/Specialties") with SSDs
 
  | 
 
@@ -147,7 +147,7 @@ This scenario also employs USB devices for `/boot` and key storage, which may be
 *   Single encryption key and no option to change it
 
  |
-| [#Encrypted boot partition (GRUB)](#Encrypted_boot_partition_.28GRUB.29)
+| [#Encrypted boot partition (GRUB)](#Encrypted_boot_partition_(GRUB))
 
 shows how to encrypt the boot partition using the GRUB bootloader.
 This scenario also employs an EFI system partition, which may be applied to the other scenarios.
@@ -170,12 +170,12 @@ shows how to encrypt a [Btrfs](/index.php/Btrfs "Btrfs") system, including the `
 
  | 
 
-*   Similar advantages as [#Encrypted boot partition (GRUB)](#Encrypted_boot_partition_.28GRUB.29)
+*   Similar advantages as [#Encrypted boot partition (GRUB)](#Encrypted_boot_partition_(GRUB))
 *   Availability of Btrfs' features
 
  | 
 
-*   Similar disadvantages as [#Encrypted boot partition (GRUB)](#Encrypted_boot_partition_.28GRUB.29)
+*   Similar disadvantages as [#Encrypted boot partition (GRUB)](#Encrypted_boot_partition_(GRUB))
 
  |
 
@@ -187,7 +187,7 @@ Another area to consider is whether to set up an encrypted swap partition and wh
 
 If you anticipate to protect the system's data not only against physical theft, but also have a requirement of precautions against logical tampering, see [dm-crypt/Specialties#Securing the unencrypted boot partition](/index.php/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition "Dm-crypt/Specialties") for further possibilities after following one of the scenarios.
 
-For [solid state drives](/index.php/Solid_state_drive "Solid state drive") you might want to consider enabling TRIM support, but be warned, there are potential security implications. See [dm-crypt/Specialties#Discard/TRIM support for solid state drives (SSD)](/index.php/Dm-crypt/Specialties#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29 "Dm-crypt/Specialties") for more information.
+For [solid state drives](/index.php/Solid_state_drive "Solid state drive") you might want to consider enabling TRIM support, but be warned, there are potential security implications. See [dm-crypt/Specialties#Discard/TRIM support for solid state drives (SSD)](/index.php/Dm-crypt/Specialties#Discard/TRIM_support_for_solid_state_drives_(SSD) "Dm-crypt/Specialties") for more information.
 
 **Warning:** In any scenario, never use file system repair software such as [fsck](/index.php/Fsck "Fsck") directly on an encrypted volume, or it will destroy any means to recover the key used to decrypt your files. Such tools must be used on the decrypted (opened) device instead.
 
@@ -323,7 +323,7 @@ The disk layout in this example is:
 
 *   Instructions at [dm-crypt/Specialties#Encrypted system using a detached LUKS header](/index.php/Dm-crypt/Specialties#Encrypted_system_using_a_detached_LUKS_header "Dm-crypt/Specialties") use this setup with a detached LUKS header on a USB device to achieve a two factor authentication with it.
 *   Instructions at [Pavel Kogan's blog](https://web.archive.org/web/20180103175714/http://www.pavelkogan.com/2014/05/23/luks-full-disk-encryption/) show how to encrypt the `/boot` partition while keeping it on the main LUKS partition when using GRUB.
-*   Instructions at [dm-crypt/Specialties#Encrypted /boot and a detached LUKS header on USB](/index.php/Dm-crypt/Specialties#Encrypted_.2Fboot_and_a_detached_LUKS_header_on_USB "Dm-crypt/Specialties") use this setup with a detached LUKS header, encrypted `/boot` partition, and encrypted keyfile all on a USB device.
+*   Instructions at [dm-crypt/Specialties#Encrypted /boot and a detached LUKS header on USB](/index.php/Dm-crypt/Specialties#Encrypted_/boot_and_a_detached_LUKS_header_on_USB "Dm-crypt/Specialties") use this setup with a detached LUKS header, encrypted `/boot` partition, and encrypted keyfile all on a USB device.
 
 ### Preparing the disk
 
@@ -513,7 +513,7 @@ Randomise `/dev/sda2` according to [dm-crypt/Drive preparation#dm-crypt wipe on 
 
 ```
 
-More information about the encryption options can be found in [dm-crypt/Device encryption#Encryption options for LUKS mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption"). Note that `/home` will be encrypted in [#Encrypting logical volume /home](#Encrypting_logical_volume_.2Fhome).
+More information about the encryption options can be found in [dm-crypt/Device encryption#Encryption options for LUKS mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption"). Note that `/home` will be encrypted in [#Encrypting logical volume /home](#Encrypting_logical_volume_/home).
 
 **Tip:** If you ever have to access the encrypted root from the Arch-ISO, the above `open` action will allow you to after the [LVM shows up](/index.php/LVM#Logical_Volumes_do_not_show_up "LVM").
 
@@ -757,7 +757,7 @@ Contrary to LUKS, dm-crypt *plain* mode does not require a header on the encrypt
 
 Note that if full-disk encryption is not required, the methods using LUKS described in the sections above are better options for both system encryption and encrypted partitions. LUKS features like key management with multiple passphrases/key-files or re-encrypting a device in-place are unavailable with *plain* mode.
 
-*Plain* dm-crypt encryption can be more resilient to damage than LUKS, because it does not rely on an encryption master-key which can be a single-point of failure if damaged. However, using *plain* mode also requires more manual configuration of encryption options to achieve the same cryptographic strength. See also [Disk encryption#Cryptographic metadata](/index.php/Disk_encryption#Cryptographic_metadata "Disk encryption"). Using *plain* mode could also be considered if concerned with the problems explained in [dm-crypt/Specialties#Discard/TRIM support for solid state drives (SSD)](/index.php/Dm-crypt/Specialties#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29 "Dm-crypt/Specialties").
+*Plain* dm-crypt encryption can be more resilient to damage than LUKS, because it does not rely on an encryption master-key which can be a single-point of failure if damaged. However, using *plain* mode also requires more manual configuration of encryption options to achieve the same cryptographic strength. See also [Disk encryption#Cryptographic metadata](/index.php/Disk_encryption#Cryptographic_metadata "Disk encryption"). Using *plain* mode could also be considered if concerned with the problems explained in [dm-crypt/Specialties#Discard/TRIM support for solid state drives (SSD)](/index.php/Dm-crypt/Specialties#Discard/TRIM_support_for_solid_state_drives_(SSD) "Dm-crypt/Specialties").
 
 **Tip:** If headerless encryption is your goal but you are unsure about the lack of key-derivation with *plain* mode, then two alternatives are:
 
@@ -1166,7 +1166,7 @@ Follow [dm-crypt/Device encryption#Encrypting devices with LUKS mode](/index.php
 
 #### Unlock LUKS container
 
-Now follow [dm-crypt/Device encryption#Unlocking/Mapping LUKS partitions with the device mapper](/index.php/Dm-crypt/Device_encryption#Unlocking.2FMapping_LUKS_partitions_with_the_device_mapper "Dm-crypt/Device encryption") to unlock the LUKS container and map it.
+Now follow [dm-crypt/Device encryption#Unlocking/Mapping LUKS partitions with the device mapper](/index.php/Dm-crypt/Device_encryption#Unlocking/Mapping_LUKS_partitions_with_the_device_mapper "Dm-crypt/Device encryption") to unlock the LUKS container and map it.
 
 #### Format mapped device
 

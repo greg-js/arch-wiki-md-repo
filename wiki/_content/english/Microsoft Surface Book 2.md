@@ -15,8 +15,8 @@ This page contains instructions, tips, pointers, and links for installing and co
 ## Contents
 
 *   [1 Compatibility](#Compatibility)
-    *   [1.1 What works?](#What_works.3F)
-    *   [1.2 What doesn't work?](#What_doesn.27t_work.3F)
+    *   [1.1 What works?](#What_works?)
+    *   [1.2 What doesn't work?](#What_doesn't_work?)
     *   [1.3 Nvidia](#Nvidia)
 *   [2 UEFI Setup and Secure Boot](#UEFI_Setup_and_Secure_Boot)
 *   [3 Booting](#Booting)

@@ -14,7 +14,7 @@ With sftpman, you first setup (define) your remote filesystems and then you moun
 *   [1 Prerequisite](#Prerequisite)
 *   [2 Installation](#Installation)
 *   [3 Defining filesystems](#Defining_filesystems)
-    *   [3.1 Mounting/Unmounting](#Mounting.2FUnmounting)
+    *   [3.1 Mounting/Unmounting](#Mounting/Unmounting)
     *   [3.2 Removing defined filesystems](#Removing_defined_filesystems)
     *   [3.3 Learning more](#Learning_more)
 *   [4 Troubleshooting](#Troubleshooting)
@@ -111,7 +111,7 @@ To see a list of more commands and options that *sftpman* supports, consult the 
 
 ```
 
-If the GUI application does not ask you for a password while mounting (when using password-based authentication or for password-protected ssh keys), you will need to install an ssh askpass tool, see [#Mounting/Unmounting](#Mounting.2FUnmounting).
+If the GUI application does not ask you for a password while mounting (when using password-based authentication or for password-protected ssh keys), you will need to install an ssh askpass tool, see [#Mounting/Unmounting](#Mounting/Unmounting).
 
 **Note:** If mounting a filesystem fails, sftpman will give you the full *sshfs* command and its output. You can then use that command and run it manually (possibly after adding some more debug options to it, so you would see some more output).
 

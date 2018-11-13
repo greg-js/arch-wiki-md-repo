@@ -34,8 +34,8 @@ As of kernel 4.5, the Intel Kaby Lake architecture is supported.
     *   [4.2 Blank screen issue after booting](#Blank_screen_issue_after_booting)
 *   [5 Wireless](#Wireless)
 *   [6 Bluetooth](#Bluetooth)
-*   [7 Thunderbolt 3 / USB 3.1](#Thunderbolt_3_.2F_USB_3.1)
-    *   [7.1 Ethernet repeatedly disconnects/reconnects with Dell USB-C adapter (DA200)](#Ethernet_repeatedly_disconnects.2Freconnects_with_Dell_USB-C_adapter_.28DA200.29)
+*   [7 Thunderbolt 3 / USB 3.1](#Thunderbolt_3_/_USB_3.1)
+    *   [7.1 Ethernet repeatedly disconnects/reconnects with Dell USB-C adapter (DA200)](#Ethernet_repeatedly_disconnects/reconnects_with_Dell_USB-C_adapter_(DA200))
     *   [7.2 USB-C Compatibility Chart](#USB-C_Compatibility_Chart)
     *   [7.3 Thunderbolt Firmware updates](#Thunderbolt_Firmware_updates)
 *   [8 SATA controller](#SATA_controller)
@@ -52,7 +52,7 @@ As of kernel 4.5, the Intel Kaby Lake architecture is supported.
     *   [14.1 EFISTUB does not boot](#EFISTUB_does_not_boot)
     *   [14.2 Not waking from suspend](#Not_waking_from_suspend)
     *   [14.3 Power Drain after waking from standby](#Power_Drain_after_waking_from_standby)
-    *   [14.4 Popping sound on headphones/external speakers](#Popping_sound_on_headphones.2Fexternal_speakers)
+    *   [14.4 Popping sound on headphones/external speakers](#Popping_sound_on_headphones/external_speakers)
     *   [14.5 Crackling sound with screen changes](#Crackling_sound_with_screen_changes)
     *   [14.6 Coil Whine](#Coil_Whine)
     *   [14.7 Freezing after waking from suspend](#Freezing_after_waking_from_suspend)
@@ -191,7 +191,7 @@ The semaphore option is NOT working for kaby lake CPUs and won't enable even if 
 
 ### Blank screen issue after booting
 
-If using "late start" [KMS](/index.php/KMS "KMS") (the default) and the screen goes blank when loading modules, it may help to add `i915` and `intel_agp` to the initramfs or using a special [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"). Consult [Intel graphics#Blank screen during boot, when "Loading modules"](/index.php/Intel_graphics#Blank_screen_during_boot.2C_when_.22Loading_modules.22 "Intel graphics") for more information about the kernel parameter way and have a look at [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting") for a guide on how to setup the modules for the initramfs.
+If using "late start" [KMS](/index.php/KMS "KMS") (the default) and the screen goes blank when loading modules, it may help to add `i915` and `intel_agp` to the initramfs or using a special [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"). Consult [Intel graphics#Blank screen during boot, when "Loading modules"](/index.php/Intel_graphics#Blank_screen_during_boot,_when_"Loading_modules" "Intel graphics") for more information about the kernel parameter way and have a look at [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting") for a guide on how to setup the modules for the initramfs.
 
 ## Wireless
 
@@ -429,7 +429,7 @@ If you're still encountering this issue, try manually applying this patch[[1]](h
 
 ### Coil Whine
 
-Unfortunately Dell still did not fix this issue and the sound for my model was very loud. The issue seems to be connected to the graphic card. For some users, it is possible to reduce it a lot by activating frame buffer compression "enable_fbc=1" [Intel graphics#Framebuffer compression (enable_fbc)](/index.php/Intel_graphics#Framebuffer_compression_.28enable_fbc.29 "Intel graphics"). The coil whine will then start again under heavy graphic load. For the touchscreen model, this may be very often, due to the high resolution screen. In a similar vein, the display can be run at a lower resolution, again reducing the load on the graphics card.
+Unfortunately Dell still did not fix this issue and the sound for my model was very loud. The issue seems to be connected to the graphic card. For some users, it is possible to reduce it a lot by activating frame buffer compression "enable_fbc=1" [Intel graphics#Framebuffer compression (enable_fbc)](/index.php/Intel_graphics#Framebuffer_compression_(enable_fbc) "Intel graphics"). The coil whine will then start again under heavy graphic load. For the touchscreen model, this may be very often, due to the high resolution screen. In a similar vein, the display can be run at a lower resolution, again reducing the load on the graphics card.
 
 ### Freezing after waking from suspend
 

@@ -24,20 +24,20 @@ This article provides information on basic system diagnostics relating to perfor
         *   [2.3.1 Mount options](#Mount_options)
             *   [2.3.1.1 Reiserfs](#Reiserfs)
     *   [2.4 Tuning kernel parameters](#Tuning_kernel_parameters)
-    *   [2.5 Input/output schedulers](#Input.2Foutput_schedulers)
+    *   [2.5 Input/output schedulers](#Input/output_schedulers)
         *   [2.5.1 Background information](#Background_information)
         *   [2.5.2 The scheduling algorithms](#The_scheduling_algorithms)
-        *   [2.5.3 Kernel's I/O schedulers](#Kernel.27s_I.2FO_schedulers)
-        *   [2.5.4 Changing I/O scheduler](#Changing_I.2FO_scheduler)
-        *   [2.5.5 Tuning I/O scheduler](#Tuning_I.2FO_scheduler)
+        *   [2.5.3 Kernel's I/O schedulers](#Kernel's_I/O_schedulers)
+        *   [2.5.4 Changing I/O scheduler](#Changing_I/O_scheduler)
+        *   [2.5.5 Tuning I/O scheduler](#Tuning_I/O_scheduler)
     *   [2.6 Power management configuration](#Power_management_configuration)
-    *   [2.7 Reduce disk reads/writes](#Reduce_disk_reads.2Fwrites)
+    *   [2.7 Reduce disk reads/writes](#Reduce_disk_reads/writes)
         *   [2.7.1 Show disk writes](#Show_disk_writes)
         *   [2.7.2 Relocate files to tmpfs](#Relocate_files_to_tmpfs)
         *   [2.7.3 Compiling in tmpfs](#Compiling_in_tmpfs)
         *   [2.7.4 Optimize the filesystem](#Optimize_the_filesystem)
         *   [2.7.5 Swap space](#Swap_space)
-    *   [2.8 Storage I/O scheduling with ionice](#Storage_I.2FO_scheduling_with_ionice)
+    *   [2.8 Storage I/O scheduling with ionice](#Storage_I/O_scheduling_with_ionice)
 *   [3 CPU](#CPU)
     *   [3.1 Overclocking](#Overclocking)
     *   [3.2 Frequency scaling](#Frequency_scaling)
@@ -57,7 +57,7 @@ This article provides information on basic system diagnostics relating to perfor
     *   [5.2 Root on RAM overlay](#Root_on_RAM_overlay)
     *   [5.3 Zram or zswap](#Zram_or_zswap)
         *   [5.3.1 Swap on zRAM using a udev rule](#Swap_on_zRAM_using_a_udev_rule)
-    *   [5.4 Using the graphic card's RAM](#Using_the_graphic_card.27s_RAM)
+    *   [5.4 Using the graphic card's RAM](#Using_the_graphic_card's_RAM)
 *   [6 Network](#Network)
 *   [7 Watchdogs](#Watchdogs)
 *   [8 See also](#See_also)
@@ -201,7 +201,7 @@ While some of the early algorithms have now been decommissioned, the official Li
     *   [NOOP](https://en.wikipedia.org/wiki/NOOP_scheduler "w:NOOP scheduler") is the simplest scheduler, it inserts all incoming I/O requests into a simple FIFO queue and implements request merging. In this algorithm, there is no re-ordering of the request based on the sector number. Therefore it can be used if the ordering is dealt with at another layer, at the device level for example, or if it does not matter, for SSDs for instance.
     *   *Deadline*
     *   *CFQ*
-*   The **multi-queue scheduler** mode can be activated at boot time as described in [#Changing I/O scheduler](#Changing_I.2FO_scheduler). This [Multi-Queue Block I/O Queuing Mechanism *(blk-mq)*](https://www.thomas-krenn.com/en/wiki/Linux_Multi-Queue_Block_IO_Queueing_Mechanism_(blk-mq)) maps I/O queries to multiple queues, the tasks are distributed across threads and therefore CPU cores. Within this framework the following schedulers are available:
+*   The **multi-queue scheduler** mode can be activated at boot time as described in [#Changing I/O scheduler](#Changing_I/O_scheduler). This [Multi-Queue Block I/O Queuing Mechanism *(blk-mq)*](https://www.thomas-krenn.com/en/wiki/Linux_Multi-Queue_Block_IO_Queueing_Mechanism_(blk-mq)) maps I/O queries to multiple queues, the tasks are distributed across threads and therefore CPU cores. Within this framework the following schedulers are available:
     *   *None*, no queuing algorithm is applied.
     *   *mq-deadline* is the adaptation of the deadline scheduler to multi-threading.
     *   *Kyber*

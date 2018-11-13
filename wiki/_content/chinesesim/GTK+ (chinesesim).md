@@ -14,23 +14,23 @@ GTK+，或称 GIMP Toolkit，最初由[GNU项目](/index.php/GNU_Project "GNU Pr
 
 ## Contents
 
-*   [1 配置工具](#.E9.85.8D.E7.BD.AE.E5.B7.A5.E5.85.B7)
-*   [2 主题](#.E4.B8.BB.E9.A2.98)
-    *   [2.1 GTK+ 1.x](#GTK.2B_1.x)
-    *   [2.2 GTK+ 2.x](#GTK.2B_2.x)
-    *   [2.3 GTK+ 3.x](#GTK.2B_3.x)
-    *   [2.4 GTK+ 与 QT](#GTK.2B_.E4.B8.8E_QT)
-*   [3 配置文件](#.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)
-    *   [3.1 使用自定义键盘快捷键](#.E4.BD.BF.E7.94.A8.E8.87.AA.E5.AE.9A.E4.B9.89.E9.94.AE.E7.9B.98.E5.BF.AB.E6.8D.B7.E9.94.AE)
-    *   [3.2 加速 GNOME 菜单显示](#.E5.8A.A0.E9.80.9F_GNOME_.E8.8F.9C.E5.8D.95.E6.98.BE.E7.A4.BA)
-    *   [3.3 缩小窗口部件](#.E7.BC.A9.E5.B0.8F.E7.AA.97.E5.8F.A3.E9.83.A8.E4.BB.B6)
-*   [4 开发](#.E5.BC.80.E5.8F.91)
-    *   [4.1 编写简单的对话框](#.E7.BC.96.E5.86.99.E7.AE.80.E5.8D.95.E7.9A.84.E5.AF.B9.E8.AF.9D.E6.A1.86)
+*   [1 配置工具](#配置工具)
+*   [2 主题](#主题)
+    *   [2.1 GTK+ 1.x](#GTK+_1.x)
+    *   [2.2 GTK+ 2.x](#GTK+_2.x)
+    *   [2.3 GTK+ 3.x](#GTK+_3.x)
+    *   [2.4 GTK+ 与 QT](#GTK+_与_QT)
+*   [3 配置文件](#配置文件)
+    *   [3.1 使用自定义键盘快捷键](#使用自定义键盘快捷键)
+    *   [3.2 加速 GNOME 菜单显示](#加速_GNOME_菜单显示)
+    *   [3.3 缩小窗口部件](#缩小窗口部件)
+*   [4 开发](#开发)
+    *   [4.1 编写简单的对话框](#编写简单的对话框)
         *   [4.1.1 Bash](#Bash)
         *   [4.1.2 Boo](#Boo)
         *   [4.1.3 C](#C)
-        *   [4.1.4 C++](#C.2B.2B)
-        *   [4.1.5 C#](#C.23)
+        *   [4.1.4 C++](#C++)
+        *   [4.1.5 C#](#C#)
         *   [4.1.6 Genie](#Genie)
         *   [4.1.7 Java](#Java)
         *   [4.1.8 JavaScript](#JavaScript)
@@ -38,7 +38,7 @@ GTK+，或称 GIMP Toolkit，最初由[GNU项目](/index.php/GNU_Project "GNU Pr
         *   [4.1.10 Python](#Python)
         *   [4.1.11 Vala](#Vala)
         *   [4.1.12 Visual Basic .NET](#Visual_Basic_.NET)
-*   [5 相关资源](#.E7.9B.B8.E5.85.B3.E8.B5.84.E6.BA.90)
+*   [5 相关资源](#相关资源)
 
 ## 配置工具
 
@@ -56,7 +56,7 @@ GTK+，或称 GIMP Toolkit，最初由[GNU项目](/index.php/GNU_Project "GNU Pr
 
 ```
 
-另见：[为不同图形库分别设置外观](/index.php/Uniform_look_for_Qt_and_GTK_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E6.80.8E.E6.A0.B7.E4.B8.BA.E6.AF.8F.E4.B8.80.E4.B8.AA.E5.B7.A5.E5.85.B7.E8.AE.BE.E7.BD.AE.E9.A3.8E.E6.A0.BC.3F "Uniform look for Qt and GTK applications (简体中文)")。
+另见：[为不同图形库分别设置外观](/index.php/Uniform_look_for_Qt_and_GTK_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#怎样为每一个工具设置风格? "Uniform look for Qt and GTK applications (简体中文)")。
 
 ## 主题
 

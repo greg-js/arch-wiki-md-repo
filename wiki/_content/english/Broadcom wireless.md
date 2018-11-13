@@ -17,14 +17,14 @@ This article details how to install and setup a Broadcom wireless network device
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Setting broadcom-wl in monitor mode](#Setting_broadcom-wl_in_monitor_mode)
     *   [4.2 Device inaccessible after kernel upgrade](#Device_inaccessible_after_kernel_upgrade)
-    *   [4.3 Device with broadcom-wl driver not working/showing](#Device_with_broadcom-wl_driver_not_working.2Fshowing)
+    *   [4.3 Device with broadcom-wl driver not working/showing](#Device_with_broadcom-wl_driver_not_working/showing)
     *   [4.4 Interfaces swapped with broadcom-wl](#Interfaces_swapped_with_broadcom-wl)
     *   [4.5 Interface is showing but not allowing connections](#Interface_is_showing_but_not_allowing_connections)
     *   [4.6 Suppressing console messages](#Suppressing_console_messages)
     *   [4.7 Device BCM43241 not detected](#Device_BCM43241_not_detected)
     *   [4.8 Missing firmware for Asus PCE-AC88](#Missing_firmware_for_Asus_PCE-AC88)
     *   [4.9 Connection is unstable with some routers](#Connection_is_unstable_with_some_routers)
-    *   [4.10 No 5GHz for BCM4360 (14e4:43a0) devices](#No_5GHz_for_BCM4360_.2814e4:43a0.29_devices)
+    *   [4.10 No 5GHz for BCM4360 (14e4:43a0) devices](#No_5GHz_for_BCM4360_(14e4:43a0)_devices)
     *   [4.11 Device works intermittently](#Device_works_intermittently)
 
 ## History

@@ -21,7 +21,7 @@ This page contains information about running games and related system configurat
     *   [3.7 Tuning PulseAudio](#Tuning_PulseAudio)
         *   [3.7.1 Enabling realtime priority and negative nice level](#Enabling_realtime_priority_and_negative_nice_level)
         *   [3.7.2 Using higher quality remixing for better sound](#Using_higher_quality_remixing_for_better_sound)
-        *   [3.7.3 Matching hardware buffers to Pulse's buffering](#Matching_hardware_buffers_to_Pulse.27s_buffering)
+        *   [3.7.3 Matching hardware buffers to Pulse's buffering](#Matching_hardware_buffers_to_Pulse's_buffering)
     *   [3.8 Double check your CPU frequency scaling settings](#Double_check_your_CPU_frequency_scaling_settings)
 *   [4 Improving framerates and responsiveness with scheduling policies](#Improving_framerates_and_responsiveness_with_scheduling_policies)
     *   [4.1 For Wine programs](#For_Wine_programs)
@@ -30,7 +30,7 @@ This page contains information about running games and related system configurat
         *   [4.2.2 Nice levels](#Nice_levels)
         *   [4.2.3 Core affinity](#Core_affinity)
         *   [4.2.4 General case](#General_case)
-        *   [4.2.5 Optimus, and other helping programs](#Optimus.2C_and_other_helping_programs)
+        *   [4.2.5 Optimus, and other helping programs](#Optimus,_and_other_helping_programs)
 *   [5 Using alternate kernels](#Using_alternate_kernels)
     *   [5.1 Using BFQ](#Using_BFQ)
 

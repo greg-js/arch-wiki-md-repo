@@ -7,11 +7,11 @@ Este artículo explica la instalación del paquete *virtualenv* y de *virtualenv
 *   [1 Entornos virtuales](#Entornos_virtuales)
 *   [2 Virtualenv](#Virtualenv)
     *   [2.1 Installation](#Installation)
-    *   [2.2 Uso básico](#Uso_b.C3.A1sico)
+    *   [2.2 Uso básico](#Uso_básico)
 *   [3 Virtualenvwrapper](#Virtualenvwrapper)
-    *   [3.1 Instalación](#Instalaci.C3.B3n)
-    *   [3.2 Uso básico](#Uso_b.C3.A1sico_2)
-*   [4 Ver también](#Ver_tambi.C3.A9n)
+    *   [3.1 Instalación](#Instalación)
+    *   [3.2 Uso básico](#Uso_básico_2)
+*   [4 Ver también](#Ver_también)
 
 ## Entornos virtuales
 

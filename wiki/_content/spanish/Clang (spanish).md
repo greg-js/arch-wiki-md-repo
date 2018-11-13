@@ -5,10 +5,10 @@ Este artículo es una traducción de [Clang](/index.php/Clang "Clang"), revisada
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
 *   [2 Construir paquetes con Clang](#Construir_paquetes_con_Clang)
-*   [3 Usar el Analizador Estático](#Usar_el_Analizador_Est.C3.A1tico)
-*   [4 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [3 Usar el Analizador Estático](#Usar_el_Analizador_Estático)
+*   [4 Véase también](#Véase_también)
 
 ## Instalación
 

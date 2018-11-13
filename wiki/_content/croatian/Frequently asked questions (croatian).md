@@ -2,12 +2,12 @@ Osim pitanja ispod, možda ćete pronaći nešto korisno na stranicama [Put Arch
 
 ## Contents
 
-*   [1 Uopćeno](#Uop.C4.87eno)
-    *   [1.1 Q) Što je Arch Linux?](#Q.29_.C5.A0to_je_Arch_Linux.3F)
-    *   [1.2 Q) Zašto bih koristio/la Arch Linux?](#Q.29_Za.C5.A1to_bih_koristio.2Fla_Arch_Linux.3F)
-    *   [1.3 Q) Zašto ne bih koristio/la Arch Linux?](#Q.29_Za.C5.A1to_ne_bih_koristio.2Fla_Arch_Linux.3F)
-    *   [1.4 Q) Na kojoj distribuciji se Arch bazira?](#Q.29_Na_kojoj_distribuciji_se_Arch_bazira.3F)
-    *   [1.5 Q) Ja sam potpuni GNU/Linux početnik. Bi li probao/la Arch?](#Q.29_Ja_sam_potpuni_GNU.2FLinux_po.C4.8Detnik._Bi_li_probao.2Fla_Arch.3F)
+*   [1 Uopćeno](#Uopćeno)
+    *   [1.1 Q) Što je Arch Linux?](#Q)_Što_je_Arch_Linux?)
+    *   [1.2 Q) Zašto bih koristio/la Arch Linux?](#Q)_Zašto_bih_koristio/la_Arch_Linux?)
+    *   [1.3 Q) Zašto ne bih koristio/la Arch Linux?](#Q)_Zašto_ne_bih_koristio/la_Arch_Linux?)
+    *   [1.4 Q) Na kojoj distribuciji se Arch bazira?](#Q)_Na_kojoj_distribuciji_se_Arch_bazira?)
+    *   [1.5 Q) Ja sam potpuni GNU/Linux početnik. Bi li probao/la Arch?](#Q)_Ja_sam_potpuni_GNU/Linux_početnik._Bi_li_probao/la_Arch?)
 
 ## Uopćeno
 

@@ -24,10 +24,10 @@ This article describes how to transfer your current Arch Linux installation in o
     *   [2.6 Disable any Xorg-related files](#Disable_any_Xorg-related_files)
     *   [2.7 Re-generate the initramfs image](#Re-generate_the_initramfs_image_2)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 "mount: special device /dev/loop5p1 does not exist"](#.22mount:_special_device_.2Fdev.2Floop5p1_does_not_exist.22)
-    *   [3.2 "Waiting 10 seconds for device /dev/sda1; ERROR: Unable to find root device '/dev/sda1'"](#.22Waiting_10_seconds_for_device_.2Fdev.2Fsda1.3B_ERROR:_Unable_to_find_root_device_.27.2Fdev.2Fsda1.27.22)
-    *   [3.3 "Missing operating system. FATAL: INT18: BOOT FAILURE"](#.22Missing_operating_system._FATAL:_INT18:_BOOT_FAILURE.22)
-    *   [3.4 I'm asked for the root password, for maintenance](#I.27m_asked_for_the_root_password.2C_for_maintenance)
+    *   [3.1 "mount: special device /dev/loop5p1 does not exist"](#"mount:_special_device_/dev/loop5p1_does_not_exist")
+    *   [3.2 "Waiting 10 seconds for device /dev/sda1; ERROR: Unable to find root device '/dev/sda1'"](#"Waiting_10_seconds_for_device_/dev/sda1;_ERROR:_Unable_to_find_root_device_'/dev/sda1'")
+    *   [3.3 "Missing operating system. FATAL: INT18: BOOT FAILURE"](#"Missing_operating_system._FATAL:_INT18:_BOOT_FAILURE")
+    *   [3.4 I'm asked for the root password, for maintenance](#I'm_asked_for_the_root_password,_for_maintenance)
 
 ## Moving out of a VM
 

@@ -5,13 +5,13 @@ Este artículo es una traducción de [Acer Aspire 2930](/index.php/Acer_Aspire_2
 
 *   [1 Hardware](#Hardware)
 *   [2 Ethernet](#Ethernet)
-*   [3 Conexión inalámbrica](#Conexi.C3.B3n_inal.C3.A1mbrica)
+*   [3 Conexión inalámbrica](#Conexión_inalámbrica)
 *   [4 Xorg](#Xorg)
 *   [5 Sonido](#Sonido)
 *   [6 Lector de tarjetas](#Lector_de_tarjetas)
 *   [7 Webcam](#Webcam)
 *   [8 ACPI](#ACPI)
-*   [9 Panel táctil](#Panel_t.C3.A1ctil)
+*   [9 Panel táctil](#Panel_táctil)
 
 ## Hardware
 

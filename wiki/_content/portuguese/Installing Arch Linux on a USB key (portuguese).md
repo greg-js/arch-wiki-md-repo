@@ -10,22 +10,22 @@ Esta página explica como realizar uma instalação normal do Arch em um pendriv
 
 ## Contents
 
-*   [1 Instalação](#Instala.C3.A7.C3.A3o)
-    *   [1.1 Ajustes na instalação](#Ajustes_na_instala.C3.A7.C3.A3o)
-*   [2 Configuração](#Configura.C3.A7.C3.A3o)
+*   [1 Instalação](#Instalação)
+    *   [1.1 Ajustes na instalação](#Ajustes_na_instalação)
+*   [2 Configuração](#Configuração)
     *   [2.1 GRUB legado](#GRUB_legado)
     *   [2.2 GRUB](#GRUB)
     *   [2.3 Syslinux](#Syslinux)
 *   [3 Dicas](#Dicas)
-    *   [3.1 Usando sua instalação USB em múltiplas máquinas](#Usando_sua_instala.C3.A7.C3.A3o_USB_em_m.C3.BAltiplas_m.C3.A1quinas)
+    *   [3.1 Usando sua instalação USB em múltiplas máquinas](#Usando_sua_instalação_USB_em_múltiplas_máquinas)
         *   [3.1.1 Drivers de entrada](#Drivers_de_entrada)
-        *   [3.1.2 Drivers de vídeo](#Drivers_de_v.C3.ADdeo)
+        *   [3.1.2 Drivers de vídeo](#Drivers_de_vídeo)
         *   [3.1.3 Nomenclatura de dispositivos de bloco persistentes](#Nomenclatura_de_dispositivos_de_bloco_persistentes)
-        *   [3.1.4 Parâmetros do kernel](#Par.C3.A2metros_do_kernel)
-        *   [3.1.5 Inicializando de mídia USB 3.0](#Inicializando_de_m.C3.ADdia_USB_3.0)
+        *   [3.1.4 Parâmetros do kernel](#Parâmetros_do_kernel)
+        *   [3.1.5 Inicializando de mídia USB 3.0](#Inicializando_de_mídia_USB_3.0)
     *   [3.2 Compatibilidade](#Compatibilidade)
     *   [3.3 Minimizando o acesso a disco](#Minimizando_o_acesso_a_disco)
-*   [4 Veja também](#Veja_tamb.C3.A9m)
+*   [4 Veja também](#Veja_também)
 
 ## Instalação
 
@@ -40,7 +40,7 @@ Existem várias maneiras de instalar o Arch em um pendrive, dependendo do sistem
 ### Ajustes na instalação
 
 *   Antes de criar o disco de RAM inicial com `# mkinitcpio -p linux`, em `/etc/mkinitcpio.conf` adicione o *hook* `block` ao vetor de *hooks* logo após o udev. Isso é necessário para o carregamento apropriado do módulo desde cedo no espaço do usuário.
-*   É altamente recomendável revisar o artigo wiki sobre [redução leitura/escrita de disco](/index.php/Improving_performance#Reduce_disk_reads.2Fwrites "Improving performance") antes de selecionar um sistema de arquivos. Resumindo, [ext4 sem um jornal](http://fenidik.blogspot.com/2010/03/ext4-disable-journal.html) está bom, o qual pode ser criado com `# mkfs.ext4 -O "^has_journal" /dev/sdXX`. A desvantagem óbvia de usar um sistema de arquivos com o *journaling* desativado é a perda de dados como resultado de uma desmontagem desajeitada. Reconheça que o flash tem um número limitado de gravações, e um sistema de arquivos com *journaling* levará alguns deles à medida que o journal for atualizado. Por esse mesmo motivo, é melhor nem pensar a partição swap. Observe que isso não afeta a instalação em um disco rígido USB.
+*   É altamente recomendável revisar o artigo wiki sobre [redução leitura/escrita de disco](/index.php/Improving_performance#Reduce_disk_reads/writes "Improving performance") antes de selecionar um sistema de arquivos. Resumindo, [ext4 sem um jornal](http://fenidik.blogspot.com/2010/03/ext4-disable-journal.html) está bom, o qual pode ser criado com `# mkfs.ext4 -O "^has_journal" /dev/sdXX`. A desvantagem óbvia de usar um sistema de arquivos com o *journaling* desativado é a perda de dados como resultado de uma desmontagem desajeitada. Reconheça que o flash tem um número limitado de gravações, e um sistema de arquivos com *journaling* levará alguns deles à medida que o journal for atualizado. Por esse mesmo motivo, é melhor nem pensar a partição swap. Observe que isso não afeta a instalação em um disco rígido USB.
 *   Se você quiser continuar a usar o dispositivo UFD como uma unidade removível multiplataforma, isso pode ser feito criando uma partição que hospede um sistema de arquivos apropriado (provavelmente NTFS ou exFAT). Observe que a partição de dados pode precisar ser a primeira partição no dispositivo, pois o Windows pressupõe que só pode haver uma partição em um dispositivo removível e, de outra forma, terá uma montagem automática de uma partição do sistema EFI. Lembre-se de instalar [dosfstools](https://www.archlinux.org/packages/?name=dosfstools) e [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g). Algumas ferramentas estão disponíveis on-line que podem permitir que você mude o bit de mídia removível em seu dispositivo UFD. Isso faria com que os sistemas operacionais tratassem seu dispositivo UFD como um disco rígido externo e permitisse que você usasse qualquer esquema de particionamento escolhido.
 
 **Atenção:** Não é possível mudar o bit de mídia removível em todos os dispositivos UFD e tentar usar software incompatível com o dispositivo pode danificá-lo. A tentativa de mudar o bit de mídia removível **não** é recomendada.

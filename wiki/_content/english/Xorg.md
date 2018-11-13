@@ -53,12 +53,12 @@ From [http://www.x.org/wiki/](http://www.x.org/wiki/):
     *   [7.7 Prevent a user from killing X](#Prevent_a_user_from_killing_X)
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 General](#General)
-    *   [8.2 Black screen, No protocol specified.., Resource temporarily unavailable for all or some users](#Black_screen.2C_No_protocol_specified...2C_Resource_temporarily_unavailable_for_all_or_some_users)
+    *   [8.2 Black screen, No protocol specified.., Resource temporarily unavailable for all or some users](#Black_screen,_No_protocol_specified..,_Resource_temporarily_unavailable_for_all_or_some_users)
     *   [8.3 DRI with Matrox cards stopped working](#DRI_with_Matrox_cards_stopped_working)
     *   [8.4 Frame-buffer mode problems](#Frame-buffer_mode_problems)
-    *   [8.5 Program requests "font '(null)'"](#Program_requests_.22font_.27.28null.29.27.22)
+    *   [8.5 Program requests "font '(null)'"](#Program_requests_"font_'(null)'")
     *   [8.6 Recovery: disabling Xorg before GUI login](#Recovery:_disabling_Xorg_before_GUI_login)
-    *   [8.7 X clients started with "su" fail](#X_clients_started_with_.22su.22_fail)
+    *   [8.7 X clients started with "su" fail](#X_clients_started_with_"su"_fail)
     *   [8.8 X failed to start: Keyboard initialization failed](#X_failed_to_start:_Keyboard_initialization_failed)
     *   [8.9 Rootless Xorg](#Rootless_Xorg)
         *   [8.9.1 Broken redirection](#Broken_redirection)
@@ -255,7 +255,7 @@ See also GPU-specific instructions:
 
 *   [NVIDIA#Multiple monitors](/index.php/NVIDIA#Multiple_monitors "NVIDIA")
 *   [Nouveau#Dual head](/index.php/Nouveau#Dual_head "Nouveau")
-*   [AMD Catalyst#Double Screen (Dual Head / Dual Screen / Xinerama)](/index.php/AMD_Catalyst#Double_Screen_.28Dual_Head_.2F_Dual_Screen_.2F_Xinerama.29 "AMD Catalyst")
+*   [AMD Catalyst#Double Screen (Dual Head / Dual Screen / Xinerama)](/index.php/AMD_Catalyst#Double_Screen_(Dual_Head_/_Dual_Screen_/_Xinerama) "AMD Catalyst")
 *   [ATI#Multihead setup](/index.php/ATI#Multihead_setup "ATI")
 
 #### More than one graphics card

@@ -13,15 +13,15 @@ Esto es una guía para configurar su webcam en Arch Linux.
     *   [2.7 stv680](#stv680)
     *   [2.8 linux-uvc](#linux-uvc)
     *   [2.9 ov51x-jpeg](#ov51x-jpeg)
-    *   [2.10 r5u870 (Ricoh)](#r5u870_.28Ricoh.29)
-    *   [2.11 stk11xx (Syntek)](#stk11xx_.28Syntek.29)
-*   [3 Asegúrese de que el modulo para su webcam está cargado](#Aseg.C3.BArese_de_que_el_modulo_para_su_webcam_est.C3.A1_cargado)
+    *   [2.10 r5u870 (Ricoh)](#r5u870_(Ricoh))
+    *   [2.11 stk11xx (Syntek)](#stk11xx_(Syntek))
+*   [3 Asegúrese de que el modulo para su webcam está cargado](#Asegúrese_de_que_el_modulo_para_su_webcam_está_cargado)
 *   [4 Permisos](#Permisos)
-*   [5 Configuración de la webcam](#Configuraci.C3.B3n_de_la_webcam)
+*   [5 Configuración de la webcam](#Configuración_de_la_webcam)
 *   [6 Consiga que el software use su webcam](#Consiga_que_el_software_use_su_webcam)
     *   [6.1 Cheese](#Cheese)
     *   [6.2 fswebcam](#fswebcam)
-    *   [6.3 GTK+ UVC Viewer (guvcview)](#GTK.2B_UVC_Viewer_.28guvcview.29)
+    *   [6.3 GTK+ UVC Viewer (guvcview)](#GTK+_UVC_Viewer_(guvcview))
     *   [6.4 Kopete](#Kopete)
     *   [6.5 Kamoso](#Kamoso)
     *   [6.6 xawtv](#xawtv)
@@ -32,12 +32,12 @@ Esto es una guía para configurar su webcam en Arch Linux.
     *   [6.11 Sonic-snap](#Sonic-snap)
     *   [6.12 Skype](#Skype)
     *   [6.13 Motion](#Motion)
-*   [7 Solución de problemas](#Soluci.C3.B3n_de_problemas)
-    *   [7.1 Microsoft Lifecam Studio/Cinema](#Microsoft_Lifecam_Studio.2FCinema)
+*   [7 Solución de problemas](#Solución_de_problemas)
+    *   [7.1 Microsoft Lifecam Studio/Cinema](#Microsoft_Lifecam_Studio/Cinema)
 
 ## Soporte para webcams en Linux
 
-Muy probablemente, su webcam funcione sin necesidad de configuraciones previas. Si este es su caso, puede ir directamente a la sección [#Configuración de la webcam](#Configuraci.C3.B3n_de_la_webcam) si desea ajustar el color, el brillo y otros parámetros. En caso contrario, siga los siguientes pasos.
+Muy probablemente, su webcam funcione sin necesidad de configuraciones previas. Si este es su caso, puede ir directamente a la sección [#Configuración de la webcam](#Configuración_de_la_webcam) si desea ajustar el color, el brillo y otros parámetros. En caso contrario, siga los siguientes pasos.
 
 ## Identificar su webcam
 
@@ -182,7 +182,7 @@ Tan solo instale el paquete de AUR [stk11xx](https://aur.archlinux.org/packages/
 
 ## Asegúrese de que el modulo para su webcam está cargado
 
-Añada el [módulo](/index.php/Kernel_modules_(Espa%C3%B1ol)#Cargar_m.C3.B3dulos "Kernel modules (Español)") de su webcam a `/etc/modules-load.d/webcam.conf` para que sea cargado por el kernel durante la fase de arranque.
+Añada el [módulo](/index.php/Kernel_modules_(Espa%C3%B1ol)#Cargar_módulos "Kernel modules (Español)") de su webcam a `/etc/modules-load.d/webcam.conf` para que sea cargado por el kernel durante la fase de arranque.
 
 Si su webcam es USB, el kernel *debería* cargar de forma automática el controlador adecuado. Si este es el caso, compruebe el dmesg tras conectar la webcam. Debería ver algo como esto:
 

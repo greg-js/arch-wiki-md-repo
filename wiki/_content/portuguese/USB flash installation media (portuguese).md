@@ -3,7 +3,7 @@
 Artigos relacionados
 
 *   [CD Burning](/index.php/CD_Burning "CD Burning")
-*   [Archiso](/index.php/Archiso "Archiso")
+*   [Archiso](/index.php/Archiso_(Portugu%C3%AAs) "Archiso (Português)")
 *   [Multiboot USB drive](/index.php/Multiboot_USB_drive "Multiboot USB drive")
 
 Esta página discute vários métodos multiplataforma sobre como criar uma unidade USB do instalador do Arch Linux (também conhecida como *"unidade flash", "pendrive", "USB stick", "flash drive", "USB key"* etc.) para inicializar na BIOS e sistemas UEFI. O resultado será um sistema LiveUSB (similar a LiveCD) que pode ser usado para instalar o Arch Linux, manutenção do sistema ou para fins de recuperação, e que, por causa da natureza do [SquashFS](https://en.wikipedia.org/wiki/SquashFS "wikipedia:SquashFS"), descartará todas as alterações quando o computador for desligado.
@@ -12,9 +12,9 @@ Se você deseja executar uma instalação completa do Arch Linux a partir de uma
 
 ## Contents
 
-*   [1 USB inicializável com BIOS e UEFI](#USB_inicializ.C3.A1vel_com_BIOS_e_UEFI)
-    *   [1.1 Usando ferramentas automáticas](#Usando_ferramentas_autom.C3.A1ticas)
-        *   [1.1.1 No GNU/Linux](#No_GNU.2FLinux)
+*   [1 USB inicializável com BIOS e UEFI](#USB_inicializável_com_BIOS_e_UEFI)
+    *   [1.1 Usando ferramentas automáticas](#Usando_ferramentas_automáticas)
+        *   [1.1.1 No GNU/Linux](#No_GNU/Linux)
             *   [1.1.1.1 Usando dd](#Usando_dd)
             *   [1.1.1.2 Usando etcher](#Usando_etcher)
         *   [1.1.2 No Windows](#No_Windows)
@@ -24,24 +24,24 @@ Se você deseja executar uma instalação completa do Arch Linux a partir de uma
             *   [1.1.2.4 Usando Cygwin](#Usando_Cygwin)
             *   [1.1.2.5 dd para Windows](#dd_para_Windows)
         *   [1.1.3 No macOS](#No_macOS)
-    *   [1.2 Usando formatação manual](#Usando_formata.C3.A7.C3.A3o_manual)
-        *   [1.2.1 No GNU/Linux](#No_GNU.2FLinux_2)
+    *   [1.2 Usando formatação manual](#Usando_formatação_manual)
+        *   [1.2.1 No GNU/Linux](#No_GNU/Linux_2)
         *   [1.2.2 No Windows](#No_Windows_2)
-*   [2 Outros métodos para sistemas BIOS](#Outros_m.C3.A9todos_para_sistemas_BIOS)
-    *   [2.1 No GNU/Linux](#No_GNU.2FLinux_3)
+*   [2 Outros métodos para sistemas BIOS](#Outros_métodos_para_sistemas_BIOS)
+    *   [2.1 No GNU/Linux](#No_GNU/Linux_3)
         *   [2.1.1 Usando uma unidade USB multiboot](#Usando_uma_unidade_USB_multiboot)
-        *   [2.1.2 Usando o utilitário de disco do GNOME](#Usando_o_utilit.C3.A1rio_de_disco_do_GNOME)
+        *   [2.1.2 Usando o utilitário de disco do GNOME](#Usando_o_utilitário_de_disco_do_GNOME)
         *   [2.1.3 Fazendo uma unidade USB-ZIP](#Fazendo_uma_unidade_USB-ZIP)
         *   [2.1.4 Usando UNetbootin](#Usando_UNetbootin)
     *   [2.2 No Windows](#No_Windows_3)
         *   [2.2.1 A forma Flashnul](#A_forma_Flashnul)
-        *   [2.2.2 Carregar a mídia de instalação da RAM](#Carregar_a_m.C3.ADdia_de_instala.C3.A7.C3.A3o_da_RAM)
+        *   [2.2.2 Carregar a mídia de instalação da RAM](#Carregar_a_mídia_de_instalação_da_RAM)
             *   [2.2.2.1 Preparar a unidade flash USB](#Preparar_a_unidade_flash_USB)
-            *   [2.2.2.2 Copiar os arquivos necessários à unidade flash USB](#Copiar_os_arquivos_necess.C3.A1rios_.C3.A0_unidade_flash_USB)
-            *   [2.2.2.3 Criar o arquivo de configuração](#Criar_o_arquivo_de_configura.C3.A7.C3.A3o)
+            *   [2.2.2.2 Copiar os arquivos necessários à unidade flash USB](#Copiar_os_arquivos_necessários_à_unidade_flash_USB)
+            *   [2.2.2.3 Criar o arquivo de configuração](#Criar_o_arquivo_de_configuração)
             *   [2.2.2.4 Etapas finais](#Etapas_finais)
-*   [3 Solução de problemas](#Solu.C3.A7.C3.A3o_de_problemas)
-*   [4 Veja também](#Veja_tamb.C3.A9m)
+*   [3 Solução de problemas](#Solução_de_problemas)
+*   [4 Veja também](#Veja_também)
 
 ## USB inicializável com BIOS e UEFI
 
@@ -51,7 +51,7 @@ Se você deseja executar uma instalação completa do Arch Linux a partir de uma
 
 ##### Usando dd
 
-**Nota:** Este método é recomendado devido à sua simplicidade. Se não funcionar, mude para o método alternativo [#Usando formatação manual](#Usando_formata.C3.A7.C3.A3o_manual) abaixo.
+**Nota:** Este método é recomendado devido à sua simplicidade. Se não funcionar, mude para o método alternativo [#Usando formatação manual](#Usando_formatação_manual) abaixo.
 
 **Atenção:** Isso destruirá irrevogavelmente todos os dados em `/dev/**sdx**`. Para restaurar a unidade USB como um dispositivo de armazenamento utilizável vazio após usar a imagem ISO do Arch, a assinatura do sistema de arquivos ISO 9660 precisa ser removida executando `wipefs --all /dev/**sdx**` como root, antes de [reparticionar](/index.php/Repartition "Repartition") e [reformatar](/index.php/Reformat "Reformat") a unidade USB.
 
@@ -246,7 +246,7 @@ O Syslinux já está pré-instalado em `/mnt/usb/arch/boot/syslinux`. Instale-o 
 *   `>` denota o prompt de comando do Windows.
 
 *   Particione e formate o drive USB usando o [particionador de USB Rufus](https://rufus.akeo.ie/). Selecione a opção de esquema de partição como **MBR para BIOS e UEFI** e sistema de arquivos como **FAT32**. Desmarque a opção "Criar um disco inicializável usando imagem ISO" e "Criar arquivos estendidos de rótulo e ícone".
-*   Altere o **Rótulo do Volume** da unidade flash USB `X:` para corresponder ao LABEL mencionado na parte `archisolabel=` em `<ISO>\loader\entries\archiso-x86_64.conf`. Esta etapa é necessária para o ISO oficial ([Archiso](/index.php/Archiso "Archiso")). Esta etapa também pode ser executada usando o Rufus, durante a etapa anterior de "particionamento e formatação".
+*   Altere o **Rótulo do Volume** da unidade flash USB `X:` para corresponder ao LABEL mencionado na parte `archisolabel=` em `<ISO>\loader\entries\archiso-x86_64.conf`. Esta etapa é necessária para o ISO oficial ([Archiso](/index.php/Archiso_(Portugu%C3%AAs) "Archiso (Português)")). Esta etapa também pode ser executada usando o Rufus, durante a etapa anterior de "particionamento e formatação".
 *   Extraia a ISO (similar a extrair o arquivo ZIP) para a unidade flash USB (usando [7-Zip](https://www.7-zip.org/).
 *   Baixe os binários oficiais Syslinux 6.xx (arquivo zip) de [https://www.kernel.org/pub/linux/utils/boot/syslinux/](https://www.kernel.org/pub/linux/utils/boot/syslinux/) e extrai-a. A versão do Syslinux deve ser a mesma versão usada na imagem ISO.
 

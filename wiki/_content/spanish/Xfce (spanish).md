@@ -12,22 +12,22 @@ De Xfce - [Acerca de](http://www.xfce.org/about):
 
 ## Contents
 
-*   [1 ¿Qué es Xfce?](#.C2.BFQu.C3.A9_es_Xfce.3F)
-*   [2 Instalación](#Instalaci.C3.B3n)
+*   [1 ¿Qué es Xfce?](#¿Qué_es_Xfce?)
+*   [2 Instalación](#Instalación)
 *   [3 Iniciando Xfce](#Iniciando_Xfce)
-    *   [3.1 Automaticámente al Inicio](#Automatic.C3.A1mente_al_Inicio)
+    *   [3.1 Automaticámente al Inicio](#Automaticámente_al_Inicio)
     *   [3.2 Manualmente](#Manualmente)
-    *   [3.3 Apagado, Reinicio y Automontaje en Xfce](#Apagado.2C_Reinicio_y_Automontaje_en_Xfce)
-        *   [3.3.1 Apagado y Reinicio desde el menú usando Systemd](#Apagado_y_Reinicio_desde_el_men.C3.BA_usando_Systemd)
+    *   [3.3 Apagado, Reinicio y Automontaje en Xfce](#Apagado,_Reinicio_y_Automontaje_en_Xfce)
+        *   [3.3.1 Apagado y Reinicio desde el menú usando Systemd](#Apagado_y_Reinicio_desde_el_menú_usando_Systemd)
 *   [4 Trucos y Consejos](#Trucos_y_Consejos)
-    *   [4.1 Configuración mediante Xfconf](#Configuraci.C3.B3n_mediante_Xfconf)
+    *   [4.1 Configuración mediante Xfconf](#Configuración_mediante_Xfconf)
     *   [4.2 Panel](#Panel)
-        *   [4.2.1 Remplazando el applet de menú por defecto](#Remplazando_el_applet_de_men.C3.BA_por_defecto)
-        *   [4.2.2 Cómo remover elementos del Menú del Sistema](#C.C3.B3mo_remover_elementos_del_Men.C3.BA_del_Sistema)
-            *   [4.2.2.1 Método 1](#M.C3.A9todo_1)
-            *   [4.2.2.2 Método 2](#M.C3.A9todo_2)
-            *   [4.2.2.3 Método 3](#M.C3.A9todo_3)
-            *   [4.2.2.4 Método 4](#M.C3.A9todo_4)
+        *   [4.2.1 Remplazando el applet de menú por defecto](#Remplazando_el_applet_de_menú_por_defecto)
+        *   [4.2.2 Cómo remover elementos del Menú del Sistema](#Cómo_remover_elementos_del_Menú_del_Sistema)
+            *   [4.2.2.1 Método 1](#Método_1)
+            *   [4.2.2.2 Método 2](#Método_2)
+            *   [4.2.2.3 Método 3](#Método_3)
+            *   [4.2.2.4 Método 4](#Método_4)
 
 ## ¿Qué es Xfce?
 
@@ -99,7 +99,7 @@ exec startxfce4
 
 ### Apagado, Reinicio y Automontaje en Xfce
 
-Ver [Problemas Comunes#Permisos de sesión](/index.php/Problemas_Comunes#Permisos_de_sesi.C3.B3n "Problemas Comunes").
+Ver [Problemas Comunes#Permisos de sesión](/index.php/Problemas_Comunes#Permisos_de_sesión "Problemas Comunes").
 
 Si no tienes problemas Apagando y Reiniciando, pero no puedes auto-montar medios externos y discos duros, quizá necesites instalar el paquete [gvfs](https://www.archlinux.org/packages/?name=gvfs). Más información en la sección [Medios Extraibles](#Medios_Extraibles).
 

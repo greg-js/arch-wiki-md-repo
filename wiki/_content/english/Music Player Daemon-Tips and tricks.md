@@ -3,17 +3,17 @@ Go back to [Music Player Daemon](/index.php/Music_Player_Daemon "Music Player Da
 ## Contents
 
 *   [1 Organizing library](#Organizing_library)
-*   [2 Last.fm/Libre.fm scrobbling](#Last.fm.2FLibre.fm_scrobbling)
+*   [2 Last.fm/Libre.fm scrobbling](#Last.fm/Libre.fm_scrobbling)
     *   [2.1 mpdas](#mpdas)
     *   [2.2 mpdcron](#mpdcron)
     *   [2.3 mpdscribble](#mpdscribble)
     *   [2.4 Sonata](#Sonata)
 *   [3 Disable resume playback on startup](#Disable_resume_playback_on_startup)
-*   [4 Example configuration: Output with 44.1 KHz at e. g. 16 bit depth, multiple programs at once](#Example_configuration:_Output_with_44.1_KHz_at_e._g._16_bit_depth.2C_multiple_programs_at_once)
+*   [4 Example configuration: Output with 44.1 KHz at e. g. 16 bit depth, multiple programs at once](#Example_configuration:_Output_with_44.1_KHz_at_e._g._16_bit_depth,_multiple_programs_at_once)
 *   [5 Control MPD with lirc](#Control_MPD_with_lirc)
 *   [6 PulseAudio](#PulseAudio)
-    *   [6.1 Local (as your own user)](#Local_.28as_your_own_user.29)
-    *   [6.2 Local (with separate mpd user)](#Local_.28with_separate_mpd_user.29)
+    *   [6.1 Local (as your own user)](#Local_(as_your_own_user))
+    *   [6.2 Local (with separate mpd user)](#Local_(with_separate_mpd_user))
     *   [6.3 Remote](#Remote)
 *   [7 Cue Files](#Cue_Files)
 *   [8 HTTP streaming](#HTTP_streaming)
@@ -26,7 +26,7 @@ Go back to [Music Player Daemon](/index.php/Music_Player_Daemon "Music Player Da
 *   [10 Notifications](#Notifications)
     *   [10.1 musnify-mpd](#musnify-mpd)
     *   [10.2 mpd-notification](#mpd-notification)
-*   [11 Adding a separate volume control (ALSA)](#Adding_a_separate_volume_control_.28ALSA.29)
+*   [11 Adding a separate volume control (ALSA)](#Adding_a_separate_volume_control_(ALSA))
 
 ## Organizing library
 

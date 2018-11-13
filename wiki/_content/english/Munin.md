@@ -23,7 +23,7 @@ You can check out University of Oslo's [Munin install](http://munin.ping.uio.no/
             *   [2.2.4.3 Removing](#Removing)
             *   [2.2.4.4 Debugging](#Debugging)
         *   [2.2.5 Permissions](#Permissions_2)
-*   [3 Web server (optional)](#Web_server_.28optional.29)
+*   [3 Web server (optional)](#Web_server_(optional))
     *   [3.1 Apache](#Apache)
         *   [3.1.1 Apache VirtualHost examples](#Apache_VirtualHost_examples)
         *   [3.1.2 Basic static HTML](#Basic_static_HTML)

@@ -16,7 +16,7 @@ Escrever [PKGBUILDs](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)
 *   [3 Notas](#Notas)
     *   [3.1 Quarry](#Quarry)
 *   [4 Pegadinhas](#Pegadinhas)
-    *   [4.1 Pacote contém referência a $pkgdir](#Pacote_cont.C3.A9m_refer.C3.AAncia_a_.24pkgdir)
+    *   [4.1 Pacote contém referência a $pkgdir](#Pacote_contém_referência_a_$pkgdir)
 
 ## Nomenclatura de pacote
 

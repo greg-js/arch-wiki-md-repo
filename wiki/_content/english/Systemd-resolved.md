@@ -39,7 +39,7 @@ To use *systemd-resolved* [start](/index.php/Start "Start") and [enable](/index.
 
 ### DNS
 
-*systemd-resolved* has four different modes for handling the [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution") (the four modes are described in [systemd-resolved(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8#.2FETC.2FRESOLV.CONF)). We will focus here on the two most relevant modes.
+*systemd-resolved* has four different modes for handling the [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution") (the four modes are described in [systemd-resolved(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8#%2FETC%2FRESOLV.CONF)). We will focus here on the two most relevant modes.
 
 1.  Using the systemd DNS stub file - the systemd DNS stub file `/run/systemd/resolve/stub-resolv.conf` contains the local stub `127.0.0.53` as the only DNS server and a list of search domains. This is the **recommended** mode of operation. The service users are advised to redirect the `/etc/resolv.conf` file to the local stub DNS resolver file `/run/systemd/resolve/stub-resolv.conf` managed by *systemd-resolved*. This propagates the systemd managed configuration to all the clients. This can be done by replacing `/etc/resolv.conf` with a symbolic link to the systemd stub: `# ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf` 
 2.  Preserving *resolv.conf* - this mode preserves `/etc/resolv.conf` and *systemd-resolved* is simply a client of this file. This mode is less disruptive as `/etc/resolv.conf` can continue to be managed by other packages.
@@ -62,7 +62,7 @@ However, if the [DHCP](/index.php/DHCP "DHCP") and [VPN](/index.php/VPN "VPN") c
 
 **Note:**
 
-*   *systemd-resolved* has a limited *resolvconf* interface and may not work with all the clients, see [resolvectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolvectl.1) for more information.
+*   *systemd-resolved* has a limited *resolvconf* interface and may not work with all the clients, see [resolvectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolvectl.1#COMPATIBILITY_WITH_RESOLVCONF%288%29) for more information.
 *   The *resolvconf* interface in systemd 239 does not set nameservers. See [FS#59459](https://bugs.archlinux.org/task/59459) and [systemd issue 9423](https://github.com/systemd/systemd/issues/9423).
 
 ##### Manually

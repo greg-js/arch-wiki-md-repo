@@ -9,56 +9,56 @@ Esta página explica cómo configurar una conexión cableada (**wired**) a una r
 
 ## Contents
 
-*   [1 Comprobar la conexión](#Comprobar_la_conexi.C3.B3n)
+*   [1 Comprobar la conexión](#Comprobar_la_conexión)
 *   [2 Establecer el nombre del equipo](#Establecer_el_nombre_del_equipo)
 *   [3 Controlador del dispositivo](#Controlador_del_dispositivo)
     *   [3.1 Comprobar el estado del controlador](#Comprobar_el_estado_del_controlador)
-    *   [3.2 Cargar el módulo del dispositivo](#Cargar_el_m.C3.B3dulo_del_dispositivo)
+    *   [3.2 Cargar el módulo del dispositivo](#Cargar_el_módulo_del_dispositivo)
 *   [4 Interfaces de red](#Interfaces_de_red)
     *   [4.1 Nombres de los dispositivos](#Nombres_de_los_dispositivos)
         *   [4.1.1 Cambiar el nombre de dispositivo](#Cambiar_el_nombre_de_dispositivo)
     *   [4.2 Establecer el MTU del dispositivo y la longitud de la cola](#Establecer_el_MTU_del_dispositivo_y_la_longitud_de_la_cola)
     *   [4.3 Conocer el nombre actual de los dispositivos](#Conocer_el_nombre_actual_de_los_dispositivos)
-    *   [4.4 Activación y desactivación de las interfaces de red](#Activaci.C3.B3n_y_desactivaci.C3.B3n_de_las_interfaces_de_red)
-*   [5 Configurar la dirección IP](#Configurar_la_direcci.C3.B3n_IP)
-    *   [5.1 Dirección IP dinámica](#Direcci.C3.B3n_IP_din.C3.A1mica)
+    *   [4.4 Activación y desactivación de las interfaces de red](#Activación_y_desactivación_de_las_interfaces_de_red)
+*   [5 Configurar la dirección IP](#Configurar_la_dirección_IP)
+    *   [5.1 Dirección IP dinámica](#Dirección_IP_dinámica)
         *   [5.1.1 Ejecutar manualmente el demonio DHCP Client](#Ejecutar_manualmente_el_demonio_DHCP_Client)
         *   [5.1.2 Ejecutar DHCP durante el arranque](#Ejecutar_DHCP_durante_el_arranque)
-        *   [5.1.3 Enrutamiento estático DHCP](#Enrutamiento_est.C3.A1tico_DHCP)
-    *   [5.2 Dirección IP estática](#Direcci.C3.B3n_IP_est.C3.A1tica)
-        *   [5.2.1 Asignación manual](#Asignaci.C3.B3n_manual)
-        *   [5.2.2 Conexión manual al arranque usando systemd](#Conexi.C3.B3n_manual_al_arranque_usando_systemd)
+        *   [5.1.3 Enrutamiento estático DHCP](#Enrutamiento_estático_DHCP)
+    *   [5.2 Dirección IP estática](#Dirección_IP_estática)
+        *   [5.2.1 Asignación manual](#Asignación_manual)
+        *   [5.2.2 Conexión manual al arranque usando systemd](#Conexión_manual_al_arranque_usando_systemd)
         *   [5.2.3 Calcular direcciones](#Calcular_direcciones)
-*   [6 Cargar la configuración](#Cargar_la_configuraci.C3.B3n)
+*   [6 Cargar la configuración](#Cargar_la_configuración)
 *   [7 Ajustes adicionales](#Ajustes_adicionales)
-    *   [7.1 ifplugd para portátiles](#ifplugd_para_port.C3.A1tiles)
+    *   [7.1 ifplugd para portátiles](#ifplugd_para_portátiles)
     *   [7.2 Bonding o LAG](#Bonding_o_LAG)
     *   [7.3 Aliasing de direcciones IP](#Aliasing_de_direcciones_IP)
         *   [7.3.1 Ejemplo](#Ejemplo)
-    *   [7.4 Cambio de direcciones MAC/hardware](#Cambio_de_direcciones_MAC.2Fhardware)
+    *   [7.4 Cambio de direcciones MAC/hardware](#Cambio_de_direcciones_MAC/hardware)
     *   [7.5 Compartir Internet](#Compartir_Internet)
-    *   [7.6 Configuración del router](#Configuraci.C3.B3n_del_router)
-*   [8 Solución de problemas](#Soluci.C3.B3n_de_problemas)
+    *   [7.6 Configuración del router](#Configuración_del_router)
+*   [8 Solución de problemas](#Solución_de_problemas)
     *   [8.1 Intercambiando ordenadores con cable modem](#Intercambiando_ordenadores_con_cable_modem)
     *   [8.2 El problema con el TCP Window Scaling](#El_problema_con_el_TCP_Window_Scaling)
-        *   [8.2.1 ¿Cómo diagnosticar este problema?](#.C2.BFC.C3.B3mo_diagnosticar_este_problema.3F)
-        *   [8.2.2 ¿Cómo arreglarlo? (El método equivocado)](#.C2.BFC.C3.B3mo_arreglarlo.3F_.28El_m.C3.A9todo_equivocado.29)
-        *   [8.2.3 ¿Cómo arreglarlo? (El método correcto)](#.C2.BFC.C3.B3mo_arreglarlo.3F_.28El_m.C3.A9todo_correcto.29)
-        *   [8.2.4 ¿Cómo arreglarlo? (El método óptimo)](#.C2.BFC.C3.B3mo_arreglarlo.3F_.28El_m.C3.A9todo_.C3.B3ptimo.29)
-        *   [8.2.5 Información adicional sobre este problema](#Informaci.C3.B3n_adicional_sobre_este_problema)
-    *   [8.3 Problema con Realtek: sin Link / WOL](#Problema_con_Realtek:_sin_Link_.2F_WOL)
-        *   [8.3.1 Método 1 - Restaurar el controlador de Windows](#M.C3.A9todo_1_-_Restaurar_el_controlador_de_Windows)
-        *   [8.3.2 Método 2 - Habilitar WOL en el controlador de Windows](#M.C3.A9todo_2_-_Habilitar_WOL_en_el_controlador_de_Windows)
-        *   [8.3.3 Método 3 - Nuevo driver de Realtek para Linux](#M.C3.A9todo_3_-_Nuevo_driver_de_Realtek_para_Linux)
-        *   [8.3.4 Method 4 - Activar *LAN Boot ROM* en la BIOS/CMOS](#Method_4_-_Activar_LAN_Boot_ROM_en_la_BIOS.2FCMOS)
-    *   [8.4 Problemas de DNS con DLink G604T/DLink G502T](#Problemas_de_DNS_con_DLink_G604T.2FDLink_G502T)
-        *   [8.4.1 Cómo diagnosticar el problema](#C.C3.B3mo_diagnosticar_el_problema)
-        *   [8.4.2 Cómo arreglarlo](#C.C3.B3mo_arreglarlo)
-        *   [8.4.3 Más información](#M.C3.A1s_informaci.C3.B3n)
-    *   [8.5 Comprobar problema de DHCP mediante la liberación de la primera IP](#Comprobar_problema_de_DHCP_mediante_la_liberaci.C3.B3n_de_la_primera_IP)
+        *   [8.2.1 ¿Cómo diagnosticar este problema?](#¿Cómo_diagnosticar_este_problema?)
+        *   [8.2.2 ¿Cómo arreglarlo? (El método equivocado)](#¿Cómo_arreglarlo?_(El_método_equivocado))
+        *   [8.2.3 ¿Cómo arreglarlo? (El método correcto)](#¿Cómo_arreglarlo?_(El_método_correcto))
+        *   [8.2.4 ¿Cómo arreglarlo? (El método óptimo)](#¿Cómo_arreglarlo?_(El_método_óptimo))
+        *   [8.2.5 Información adicional sobre este problema](#Información_adicional_sobre_este_problema)
+    *   [8.3 Problema con Realtek: sin Link / WOL](#Problema_con_Realtek:_sin_Link_/_WOL)
+        *   [8.3.1 Método 1 - Restaurar el controlador de Windows](#Método_1_-_Restaurar_el_controlador_de_Windows)
+        *   [8.3.2 Método 2 - Habilitar WOL en el controlador de Windows](#Método_2_-_Habilitar_WOL_en_el_controlador_de_Windows)
+        *   [8.3.3 Método 3 - Nuevo driver de Realtek para Linux](#Método_3_-_Nuevo_driver_de_Realtek_para_Linux)
+        *   [8.3.4 Method 4 - Activar *LAN Boot ROM* en la BIOS/CMOS](#Method_4_-_Activar_LAN_Boot_ROM_en_la_BIOS/CMOS)
+    *   [8.4 Problemas de DNS con DLink G604T/DLink G502T](#Problemas_de_DNS_con_DLink_G604T/DLink_G502T)
+        *   [8.4.1 Cómo diagnosticar el problema](#Cómo_diagnosticar_el_problema)
+        *   [8.4.2 Cómo arreglarlo](#Cómo_arreglarlo)
+        *   [8.4.3 Más información](#Más_información)
+    *   [8.5 Comprobar problema de DHCP mediante la liberación de la primera IP](#Comprobar_problema_de_DHCP_mediante_la_liberación_de_la_primera_IP)
     *   [8.6 Sin eth0 con Atheros AR8161](#Sin_eth0_con_Atheros_AR8161)
     *   [8.7 Sin eth0 con Atheros AR9485](#Sin_eth0_con_Atheros_AR9485)
-    *   [8.8 Sin transporte/sin conexión después de la suspensión](#Sin_transporte.2Fsin_conexi.C3.B3n_despu.C3.A9s_de_la_suspensi.C3.B3n)
+    *   [8.8 Sin transporte/sin conexión después de la suspensión](#Sin_transporte/sin_conexión_después_de_la_suspensión)
     *   [8.9 Broadcom BCM57780](#Broadcom_BCM57780)
 
 ## Comprobar la conexión
@@ -177,7 +177,7 @@ Los usuarios que actualicen desde una versión anterior de systemd tendrán un a
 
 **Sugerencia:** Puede ejecutar las órdenes `ip link` o `ls /sys/class/net` para conocer la lista de todas las interfaces disponibles.
 
-**Nota:** Al cambiar el esquema de nomenclatura de la interfaz, no se olvide de actualizar todos los archivos de configuración relacionados con la red y los archivos de unidad de systemd personalizados para reflejar el cambio. Específicamente, si tiene [perfiles estáticos de netctl](/index.php/Netctl_(Espa%C3%B1ol)#M.C3.A9todo_b.C3.A1sico "Netctl (Español)") activados, ejecute `netctl reenable *perfil*` para actualizar el archivo de servicios generado.
+**Nota:** Al cambiar el esquema de nomenclatura de la interfaz, no se olvide de actualizar todos los archivos de configuración relacionados con la red y los archivos de unidad de systemd personalizados para reflejar el cambio. Específicamente, si tiene [perfiles estáticos de netctl](/index.php/Netctl_(Espa%C3%B1ol)#Método_básico "Netctl (Español)") activados, ejecute `netctl reenable *perfil*` para actualizar el archivo de servicios generado.
 
 #### Cambiar el nombre de dispositivo
 
@@ -518,7 +518,7 @@ Véase [Router](/index.php/Router "Router").
 
 La mayoría de los ISPs domésticos estan configurados para reconocer solo una PC cliente por la dirección MAC de su interfaz de red. Una vez que el cable modem aprendió la dirección MAC de la primera PC que se comunica con el, no responderá a otra dirección MAC de ninguna manera. Entonces si cambias la PC por otra (o por un router), la nueva PC (o router) no funcionará con el cable modem, porque la nueva PC (o router) tiene una dirección MAC distinta a la anterior. Para resetear el cable modem y que este pueda reconocer la nueva PC (o router), debes apagarlo y volverlo a encender. Una vez que el modem se ha reiniciado y se ha conectado completamente (las luces de indicación encendidas), reinicia el nuevo PC (o router) para que haga una petición DHCP, o haz que lo haga manualmente.
 
-Si este método no funciona, tendrá que clonar la dirección MAC de la máquina original. Véase también [Cambiar direcciones MAC/hardware](#Cambio_de_direcciones_MAC.2Fhardware).
+Si este método no funciona, tendrá que clonar la dirección MAC de la máquina original. Véase también [Cambiar direcciones MAC/hardware](#Cambio_de_direcciones_MAC/hardware).
 
 ### El problema con el TCP Window Scaling
 
@@ -657,7 +657,7 @@ DHCPCD_ARGS="-R -t 30 -h $HOSTNAME"
 
 ```
 
-**Nota:** Si está usando [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) >= 4.0.2, el flag `-R` ha quedado en desuso. Por favor, consulte el apartado [Configurar la dirección IP](#Configurar_la_direcci.C3.B3n_IP) para obtener información sobre cómo utilizar un archivo `/etc/resolv.conf` personalizado.
+**Nota:** Si está usando [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) >= 4.0.2, el flag `-R` ha quedado en desuso. Por favor, consulte el apartado [Configurar la dirección IP](#Configurar_la_dirección_IP) para obtener información sobre cómo utilizar un archivo `/etc/resolv.conf` personalizado.
 
 Guarde y cierre el archivo; ahora abra `/etc/resolv.conf`. Debería ver un nombre de servidor único (*nameserver*) (lo más probable 10.1.1.1). Esta es la puerta de entrada (*gateway*) al router, a la cual es necesario conectarse con el fin de obtener los servidores DNS del ISP. Pegue la dirección IP en el navegador y acceda al propio router. Vaya a la sección DNS, donde debería ver una dirección IP en el campo *Primary DNS Server* («Servidor DNS primario»); cópielo y péguelo como un nombre de servidor (*nameserver*) **ARRIBA** de la puerta de entrada (*gateway*) actual.
 

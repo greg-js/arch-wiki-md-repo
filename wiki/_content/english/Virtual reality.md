@@ -18,15 +18,15 @@ A number of peripherals have been released or are about to be released recently 
     *   [2.5 OpenHMD](#OpenHMD)
         *   [2.5.1 Installation](#Installation)
 *   [3 Supported software](#Supported_software)
-    *   [3.1 Dolphin (original VR fork)](#Dolphin_.28original_VR_fork.29)
-    *   [3.2 Dolphin (official OSVR support)](#Dolphin_.28official_OSVR_support.29)
-    *   [3.3 Games/Programs in Wine](#Games.2FPrograms_in_Wine)
+    *   [3.1 Dolphin (original VR fork)](#Dolphin_(original_VR_fork))
+    *   [3.2 Dolphin (official OSVR support)](#Dolphin_(official_OSVR_support))
+    *   [3.3 Games/Programs in Wine](#Games/Programs_in_Wine)
         *   [3.3.1 Unity games](#Unity_games)
-    *   [3.4 Minecrift (Minecraft VR)](#Minecrift_.28Minecraft_VR.29)
+    *   [3.4 Minecrift (Minecraft VR)](#Minecrift_(Minecraft_VR))
     *   [3.5 JanusVR](#JanusVR)
         *   [3.5.1 Leap Motion support](#Leap_Motion_support)
 *   [4 Other notes](#Other_notes)
-    *   [4.1 Enable OpenAL's binaural sound support](#Enable_OpenAL.27s_binaural_sound_support)
+    *   [4.1 Enable OpenAL's binaural sound support](#Enable_OpenAL's_binaural_sound_support)
 
 ## Compatibility matrix
 

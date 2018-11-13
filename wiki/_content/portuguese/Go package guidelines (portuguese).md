@@ -18,9 +18,9 @@ O pacote [go](https://www.archlinux.org/packages/?name=go) contém a ferramenta 
 *   [2 Exemplos de PKGBUILDs](#Exemplos_de_PKGBUILDs)
     *   [2.1 Exemplo de PKGBUILD para um aplicativo escrito em Go](#Exemplo_de_PKGBUILD_para_um_aplicativo_escrito_em_Go)
         *   [2.1.1 Exemplos de pacotes](#Exemplos_de_pacotes)
-    *   [2.2 Exemplo de PKGBUILD para quando apenas um único arquivo fonte está disponível](#Exemplo_de_PKGBUILD_para_quando_apenas_um_.C3.BAnico_arquivo_fonte_est.C3.A1_dispon.C3.ADvel)
+    *   [2.2 Exemplo de PKGBUILD para quando apenas um único arquivo fonte está disponível](#Exemplo_de_PKGBUILD_para_quando_apenas_um_único_arquivo_fonte_está_disponível)
         *   [2.2.1 Exemplos de pacotes](#Exemplos_de_pacotes_2)
-    *   [2.3 Exemplos de PKGBUILDs para bibliotecas Go que também incluem executáveis](#Exemplos_de_PKGBUILDs_para_bibliotecas_Go_que_tamb.C3.A9m_incluem_execut.C3.A1veis)
+    *   [2.3 Exemplos de PKGBUILDs para bibliotecas Go que também incluem executáveis](#Exemplos_de_PKGBUILDs_para_bibliotecas_Go_que_também_incluem_executáveis)
         *   [2.3.1 Usando *go get*](#Usando_go_get)
         *   [2.3.2 Usando *go get*](#Usando_go_get_2)
 

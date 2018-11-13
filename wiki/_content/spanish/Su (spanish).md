@@ -12,11 +12,11 @@ Véase [PAM](/index.php/PAM "PAM") para las formas de configurar el comportamien
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Utilización](#Utilizaci.C3.B3n)
-*   [3 Sudo, una alternativa](#Sudo.2C_una_alternativa)
+*   [1 Instalación](#Instalación)
+*   [2 Utilización](#Utilización)
+*   [3 Sudo, una alternativa](#Sudo,_una_alternativa)
 *   [4 Consejos y trucos](#Consejos_y_trucos)
-    *   [4.1 Shell de inicio de sesión](#Shell_de_inicio_de_sesi.C3.B3n)
+    *   [4.1 Shell de inicio de sesión](#Shell_de_inicio_de_sesión)
     *   [4.2 su y wheel](#su_y_wheel)
 
 ## Instalación

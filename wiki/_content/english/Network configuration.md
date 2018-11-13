@@ -49,16 +49,16 @@ This article explains how to configure a network connection.
             *   [6.2.2.3 Best](#Best)
         *   [6.2.3 More about it](#More_about_it)
     *   [6.3 Explicit Congestion Notification](#Explicit_Congestion_Notification)
-    *   [6.4 Realtek no link / WOL problem](#Realtek_no_link_.2F_WOL_problem)
+    *   [6.4 Realtek no link / WOL problem](#Realtek_no_link_/_WOL_problem)
         *   [6.4.1 Enable the NIC directly in Linux](#Enable_the_NIC_directly_in_Linux)
-        *   [6.4.2 Rollback/change Windows driver](#Rollback.2Fchange_Windows_driver)
+        *   [6.4.2 Rollback/change Windows driver](#Rollback/change_Windows_driver)
         *   [6.4.3 Enable WOL in Windows driver](#Enable_WOL_in_Windows_driver)
         *   [6.4.4 Newer Realtek Linux driver](#Newer_Realtek_Linux_driver)
-        *   [6.4.5 Enable LAN Boot ROM in BIOS/CMOS](#Enable_LAN_Boot_ROM_in_BIOS.2FCMOS)
+        *   [6.4.5 Enable LAN Boot ROM in BIOS/CMOS](#Enable_LAN_Boot_ROM_in_BIOS/CMOS)
     *   [6.5 No interface with Atheros chipsets](#No_interface_with_Atheros_chipsets)
     *   [6.6 Broadcom BCM57780](#Broadcom_BCM57780)
-    *   [6.7 Realtek RTL8111/8168B](#Realtek_RTL8111.2F8168B)
-    *   [6.8 Gigabyte Motherboard with Realtek 8111/8168/8411](#Gigabyte_Motherboard_with_Realtek_8111.2F8168.2F8411)
+    *   [6.7 Realtek RTL8111/8168B](#Realtek_RTL8111/8168B)
+    *   [6.8 Gigabyte Motherboard with Realtek 8111/8168/8411](#Gigabyte_Motherboard_with_Realtek_8111/8168/8411)
 *   [7 See also](#See_also)
 
 ## Check the connection
@@ -73,7 +73,7 @@ To troubleshoot a network connection, go through the following conditions and en
 6.  You can [ping](#Ping) a public IP address (e.g. `8.8.8.8`).
 7.  [Check if you can resolve domain names](/index.php/Check_if_you_can_resolve_domain_names "Check if you can resolve domain names") (e.g. `archlinux.org`).
 
-**Tip:** `8.8.8.8` is Google's DNS server and is easy to remember.
+**Tip:** `8.8.8.8` is a Google DNS server and is a convenient address to test with.
 
 ### Ping
 
@@ -124,7 +124,7 @@ Skip the next section if the driver was loaded successfully. Otherwise, you will
 
 Search in the Internet for the right module/driver for the chipset. Some common modules are `8139too` for cards with a Realtek chipset, or `sis900` for cards with a SiS chipset. Once you know which module to use, try to [load it manually](/index.php/Kernel_modules#Manual_module_handling "Kernel modules"). If you get an error saying that the module was not found, it is possible that the driver is not included in Arch kernel. You may search the [AUR](/index.php/AUR "AUR") for the module name.
 
-If udev is not detecting and loading the proper module automatically during bootup, see [Kernel module#Automatic module handling](/index.php/Kernel_module#Automatic_module_handling "Kernel module").
+If udev is not detecting and loading the proper module automatically during bootup, see [Kernel module#Automatic module loading with systemd](/index.php/Kernel_module#Automatic_module_loading_with_systemd "Kernel module").
 
 ## Network management
 
@@ -183,7 +183,7 @@ To check the status of the interface `eth0`:
 
 The `UP` in `<BROADCAST,MULTICAST,UP,LOWER_UP>` is what indicates the interface is up, not the later `state DOWN`.
 
-**Note:** If your default route is through interface `eth0`, taking it down will also remove the route, and bringing it back up will not automatically reestablish the default route. See [#Routing table](#Routing_table) for reestablishing it.
+**Note:** If your default route is through interface `eth0`, taking it down will also remove the route, and bringing it back up will not automatically re-establish the default route. See [#Routing table](#Routing_table) for re-establishing it.
 
 ### Static IP address
 
@@ -323,7 +323,7 @@ To temporarily set the hostname (until reboot), use [hostname(1)](https://jlk.fj
 
 ```
 
-To set the "pretty" hostname and other machine metadata, see [machine-info(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/machine-info.5#https%3A.2F.2Fwww.freedesktop.org.2Fsoftware.2Fsystemd.2Fman.2Fmachine-info.html).
+To set the "pretty" hostname and other machine metadata, see [machine-info(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/machine-info.5#https%26%2358%3B%2F%2Fwww.freedesktop.org%2Fsoftware%2Fsystemd%2Fman%2Fmachine-info.html).
 
 ### Local hostname resolution
 
@@ -680,7 +680,7 @@ softdep tg3 pre: broadcom
 
 ```
 
-The adapter should be recognized by the `r8169` module. However, with some chip revisions the connection may go off and on all the time. The alternative [r8168](https://www.archlinux.org/packages/?name=r8168) should be used for a reliable connection in this case. [Blacklist](/index.php/Blacklist "Blacklist") `r8169`, if [r8168](https://www.archlinux.org/packages/?name=r8168) is not automatically loaded by [udev](/index.php/Udev "Udev"), see [Kernel modules#Automatic module handling](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules").
+The adapter should be recognized by the `r8169` module. However, with some chip revisions the connection may go off and on all the time. The alternative [r8168](https://www.archlinux.org/packages/?name=r8168) should be used for a reliable connection in this case. [Blacklist](/index.php/Blacklist "Blacklist") `r8169`, if [r8168](https://www.archlinux.org/packages/?name=r8168) is not automatically loaded by [udev](/index.php/Udev "Udev"), see [Kernel modules#Automatic module loading with systemd](/index.php/Kernel_modules#Automatic_module_loading_with_systemd "Kernel modules").
 
 Another fault in the drivers for some revisions of this adapter is poor IPv6 support. [IPv6#Disable functionality](/index.php/IPv6#Disable_functionality "IPv6") can be helpful if you encounter issues such as hanging webpages and slow speeds.
 

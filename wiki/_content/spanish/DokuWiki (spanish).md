@@ -10,18 +10,18 @@ En otras palabras, DokuWiki es un Wiki escrito en PHP y no requiere base de dato
 ## Contents
 
 *   [1 Notas iniciales](#Notas_iniciales)
-*   [2 Instalación](#Instalaci.C3.B3n)
-*   [3 Configuración](#Configuraci.C3.B3n)
+*   [2 Instalación](#Instalación)
+*   [3 Configuración](#Configuración)
     *   [3.1 Apache](#Apache)
     *   [3.2 lighttpd](#lighttpd)
     *   [3.3 nginx](#nginx)
-*   [4 Post-instalación](#Post-instalaci.C3.B3n)
+*   [4 Post-instalación](#Post-instalación)
     *   [4.1 Limpiando](#Limpiando)
-    *   [4.2 Instalación de Plugins](#Instalaci.C3.B3n_de_Plugins)
+    *   [4.2 Instalación de Plugins](#Instalación_de_Plugins)
     *   [4.3 Realizar copias de seguridad](#Realizar_copias_de_seguridad)
 *   [5 Crear enlace en Kde Plasma](#Crear_enlace_en_Kde_Plasma)
 *   [6 Lecturas recomendadas](#Lecturas_recomendadas)
-*   [7 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [7 Véase también](#Véase_también)
 
 ## Notas iniciales
 

@@ -31,7 +31,7 @@ Related articles
             *   [1.2.2.2 Blink-based](#Blink-based)
                 *   [1.2.2.2.1 Chromium spin-offs](#Chromium_spin-offs)
                 *   [1.2.2.2.2 Browsers based on qt5-webengine](#Browsers_based_on_qt5-webengine)
-                *   [1.2.2.2.3 Browsers based on electron/muon](#Browsers_based_on_electron.2Fmuon)
+                *   [1.2.2.2.3 Browsers based on electron/muon](#Browsers_based_on_electron/muon)
             *   [1.2.2.3 WebKit-based](#WebKit-based)
                 *   [1.2.2.3.1 Browsers based on webkit2gtk](#Browsers_based_on_webkit2gtk)
                 *   [1.2.2.3.2 Browsers based on qt5-webkit](#Browsers_based_on_qt5-webkit)
@@ -74,7 +74,7 @@ Related articles
             *   [1.5.4.4 SIP clients](#SIP_clients)
             *   [1.5.4.5 Matrix clients](#Matrix_clients)
             *   [1.5.4.6 Tox clients](#Tox_clients)
-            *   [1.5.4.7 Serverless (decentralized) clients](#Serverless_.28decentralized.29_clients)
+            *   [1.5.4.7 Serverless (decentralized) clients](#Serverless_(decentralized)_clients)
             *   [1.5.4.8 Other IM clients](#Other_IM_clients)
         *   [1.5.5 Instant messaging servers](#Instant_messaging_servers)
             *   [1.5.5.1 IRC servers](#IRC_servers)
@@ -82,7 +82,7 @@ Related articles
             *   [1.5.5.3 SIP servers](#SIP_servers)
             *   [1.5.5.4 Other IM servers](#Other_IM_servers)
         *   [1.5.6 Collaborative software](#Collaborative_software)
-    *   [1.6 News, RSS, and blogs](#News.2C_RSS.2C_and_blogs)
+    *   [1.6 News, RSS, and blogs](#News,_RSS,_and_blogs)
         *   [1.6.1 News aggregators](#News_aggregators)
             *   [1.6.1.1 Console](#Console_8)
             *   [1.6.1.2 Graphical](#Graphical_8)
@@ -183,7 +183,7 @@ Related articles
         *   [3.2.3 File synchronization](#File_synchronization)
         *   [3.2.4 Archiving and compression tools](#Archiving_and_compression_tools)
             *   [3.2.4.1 Archive managers](#Archive_managers)
-        *   [3.2.5 Comparison, diff, merge](#Comparison.2C_diff.2C_merge)
+        *   [3.2.5 Comparison, diff, merge](#Comparison,_diff,_merge)
         *   [3.2.6 Batch renamers](#Batch_renamers)
         *   [3.2.7 File searching](#File_searching)
             *   [3.2.7.1 Console](#Console_17)
@@ -310,7 +310,7 @@ Related articles
         *   [5.8.2 Graphical](#Graphical_23)
     *   [5.9 Cryptography](#Cryptography)
         *   [5.9.1 Hash checkers](#Hash_checkers)
-        *   [5.9.2 Encryption, signing, steganography](#Encryption.2C_signing.2C_steganography)
+        *   [5.9.2 Encryption, signing, steganography](#Encryption,_signing,_steganography)
         *   [5.9.3 Disk encryption](#Disk_encryption)
 *   [6 Science](#Science)
     *   [6.1 Mathematics](#Mathematics)
@@ -391,7 +391,7 @@ Related articles
         *   [7.5.9 Desktop widgets](#Desktop_widgets)
         *   [7.5.10 Desktop notifications](#Desktop_notifications)
         *   [7.5.11 Clipboard managers](#Clipboard_managers)
-*   [8 Taip pat žiūrėti](#Taip_pat_.C5.BEi.C5.ABr.C4.97ti)
+*   [8 Taip pat žiūrėti](#Taip_pat_žiūrėti)
 
 ## Internet
 
@@ -1876,7 +1876,7 @@ See also [Tox](/index.php/Tox "Tox").
 
 ##### Serverless (decentralized) clients
 
-See also [Bonjour](/index.php/Avahi#Link-Local_.28Bonjour.2FZeroconf.29_chat "Avahi"), [Ring](/index.php/Ring "Ring"), [Tox](/index.php/Tox "Tox") and [Wikipedia:Comparison of LAN messengers](https://en.wikipedia.org/wiki/Comparison_of_LAN_messengers "wikipedia:Comparison of LAN messengers").
+See also [Bonjour](/index.php/Avahi#Link-Local_(Bonjour/Zeroconf)_chat "Avahi"), [Ring](/index.php/Ring "Ring"), [Tox](/index.php/Tox "Tox") and [Wikipedia:Comparison of LAN messengers](https://en.wikipedia.org/wiki/Comparison_of_LAN_messengers "wikipedia:Comparison of LAN messengers").
 
 *   **BeeBEEP** — Secure LAN Messenger.
 
@@ -4346,7 +4346,7 @@ See [Optical disc drive#DVD-Video](/index.php/Optical_disc_drive#DVD-Video "Opti
 
 ### Optical disc burning
 
-See [Optical disc drive#Burning CD/DVD/BD with a GUI](/index.php/Optical_disc_drive#Burning_CD.2FDVD.2FBD_with_a_GUI "Optical disc drive").
+See [Optical disc drive#Burning CD/DVD/BD with a GUI](/index.php/Optical_disc_drive#Burning_CD/DVD/BD_with_a_GUI "Optical disc drive").
 
 ## Utilities
 
@@ -4670,7 +4670,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 *   **qtFM** — Small, lightweight filemanager for Linux desktops based on pure Qt.
 
-	[http://www.qtfm.org/](http://www.qtfm.org/) || [qtfm](https://aur.archlinux.org/packages/qtfm/)
+	[http://www.qtfm.eu/](http://www.qtfm.eu/) || [qtfm](https://aur.archlinux.org/packages/qtfm/)
 
 *   **ROX** — Small and fast file manager which can optionally manage the desktop background and panels.
 
@@ -6843,6 +6843,8 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 	[https://github.com/xournalpp/xournalpp](https://github.com/xournalpp/xournalpp) || [xournalpp-git](https://aur.archlinux.org/packages/xournalpp-git/)
 
 ###### Manipulation
+
+This section lists applications dedicated to lossless PDF manipulation. Note that other applications like [LibreOffice](/index.php/LibreOffice "LibreOffice"), [Inkscape](/index.php/Inkscape "Inkscape"), [Gimp](/index.php/Gimp "Gimp") or [krita](https://www.archlinux.org/packages/?name=krita) can also import and export PDFs.
 
 *   **Master PDF Editor** — Functional proprietary PDF editor. Free for non-commercial use.
 

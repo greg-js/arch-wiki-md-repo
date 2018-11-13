@@ -8,20 +8,20 @@
 
 ## Contents
 
-*   [1 Επισκόπηση των init και inittab](#.CE.95.CF.80.CE.B9.CF.83.CE.BA.CF.8C.CF.80.CE.B7.CF.83.CE.B7_.CF.84.CF.89.CE.BD_init_.CE.BA.CE.B1.CE.B9_inittab)
-*   [2 Αλλάζοντας runlevel](#.CE.91.CE.BB.CE.BB.CE.AC.CE.B6.CE.BF.CE.BD.CF.84.CE.B1.CF.82_runlevel)
-    *   [2.1 Μέσω GRUB](#.CE.9C.CE.AD.CF.83.CF.89_GRUB)
-    *   [2.2 Μετά την εκκίνηση](#.CE.9C.CE.B5.CF.84.CE.AC_.CF.84.CE.B7.CE.BD_.CE.B5.CE.BA.CE.BA.CE.AF.CE.BD.CE.B7.CF.83.CE.B7)
+*   [1 Επισκόπηση των init και inittab](#Επισκόπηση_των_init_και_inittab)
+*   [2 Αλλάζοντας runlevel](#Αλλάζοντας_runlevel)
+    *   [2.1 Μέσω GRUB](#Μέσω_GRUB)
+    *   [2.2 Μετά την εκκίνηση](#Μετά_την_εκκίνηση)
 *   [3 inittab](#inittab)
-    *   [3.1 Προκαθορισμένο Runlevel](#.CE.A0.CF.81.CE.BF.CE.BA.CE.B1.CE.B8.CE.BF.CF.81.CE.B9.CF.83.CE.BC.CE.AD.CE.BD.CE.BF_Runlevel)
-    *   [3.2 Κύριες Δέσμες Εντολών Εκκίνησης](#.CE.9A.CF.8D.CF.81.CE.B9.CE.B5.CF.82_.CE.94.CE.AD.CF.83.CE.BC.CE.B5.CF.82_.CE.95.CE.BD.CF.84.CE.BF.CE.BB.CF.8E.CE.BD_.CE.95.CE.BA.CE.BA.CE.AF.CE.BD.CE.B7.CF.83.CE.B7.CF.82)
-    *   [3.3 Εκκίνηση με έναν Χρήστη](#.CE.95.CE.BA.CE.BA.CE.AF.CE.BD.CE.B7.CF.83.CE.B7_.CE.BC.CE.B5_.CE.AD.CE.BD.CE.B1.CE.BD_.CE.A7.CF.81.CE.AE.CF.83.CF.84.CE.B7)
-    *   [3.4 Gettys και Είσοδος στο σύστημα](#Gettys_.CE.BA.CE.B1.CE.B9_.CE.95.CE.AF.CF.83.CE.BF.CE.B4.CE.BF.CF.82_.CF.83.CF.84.CE.BF_.CF.83.CF.8D.CF.83.CF.84.CE.B7.CE.BC.CE.B1)
-    *   [3.5 Ctrl+Alt+Del](#Ctrl.2BAlt.2BDel)
-    *   [3.6 Προγράμματα X](#.CE.A0.CF.81.CE.BF.CE.B3.CF.81.CE.AC.CE.BC.CE.BC.CE.B1.CF.84.CE.B1_X)
-    *   [3.7 Δέσμες ενεργειών Ανίχνευσης Ισχύος](#.CE.94.CE.AD.CF.83.CE.BC.CE.B5.CF.82_.CE.B5.CE.BD.CE.B5.CF.81.CE.B3.CE.B5.CE.B9.CF.8E.CE.BD_.CE.91.CE.BD.CE.AF.CF.87.CE.BD.CE.B5.CF.85.CF.83.CE.B7.CF.82_.CE.99.CF.83.CF.87.CF.8D.CE.BF.CF.82)
-    *   [3.8 Προσαρμοσμένο Αίτημα πληκτρολογίου](#.CE.A0.CF.81.CE.BF.CF.83.CE.B1.CF.81.CE.BC.CE.BF.CF.83.CE.BC.CE.AD.CE.BD.CE.BF_.CE.91.CE.AF.CF.84.CE.B7.CE.BC.CE.B1_.CF.80.CE.BB.CE.B7.CE.BA.CF.84.CF.81.CE.BF.CE.BB.CE.BF.CE.B3.CE.AF.CE.BF.CF.85)
-        *   [3.8.1 Ενεργοποίηση του αιτήματος πληκρολογίου](#.CE.95.CE.BD.CE.B5.CF.81.CE.B3.CE.BF.CF.80.CE.BF.CE.AF.CE.B7.CF.83.CE.B7_.CF.84.CE.BF.CF.85_.CE.B1.CE.B9.CF.84.CE.AE.CE.BC.CE.B1.CF.84.CE.BF.CF.82_.CF.80.CE.BB.CE.B7.CE.BA.CF.81.CE.BF.CE.BB.CE.BF.CE.B3.CE.AF.CE.BF.CF.85)
+    *   [3.1 Προκαθορισμένο Runlevel](#Προκαθορισμένο_Runlevel)
+    *   [3.2 Κύριες Δέσμες Εντολών Εκκίνησης](#Κύριες_Δέσμες_Εντολών_Εκκίνησης)
+    *   [3.3 Εκκίνηση με έναν Χρήστη](#Εκκίνηση_με_έναν_Χρήστη)
+    *   [3.4 Gettys και Είσοδος στο σύστημα](#Gettys_και_Είσοδος_στο_σύστημα)
+    *   [3.5 Ctrl+Alt+Del](#Ctrl+Alt+Del)
+    *   [3.6 Προγράμματα X](#Προγράμματα_X)
+    *   [3.7 Δέσμες ενεργειών Ανίχνευσης Ισχύος](#Δέσμες_ενεργειών_Ανίχνευσης_Ισχύος)
+    *   [3.8 Προσαρμοσμένο Αίτημα πληκτρολογίου](#Προσαρμοσμένο_Αίτημα_πληκτρολογίου)
+        *   [3.8.1 Ενεργοποίηση του αιτήματος πληκρολογίου](#Ενεργοποίηση_του_αιτήματος_πληκρολογίου)
 *   [4 See also](#See_also)
 *   [5 External Links](#External_Links)
 
@@ -59,7 +59,7 @@ id:runlevels:action:process
 
 ### Μέσω GRUB
 
-Για να αλλάξετε το runlevel στο οποίο εκκινεί το σύστημα, απλά προσθέστε τον αναγνωριστικό αριθμό του εκάστοτε runlevel `n` στην γραμμή ορισμού πυρήνα (kernel) του GRUB. Μια συνήθης εφαρμογή της τεχνικής αυτής είναι [Start X at login#/etc/inittab](/index.php/Start_X_at_login#.2Fetc.2Finittab "Start X at login"). Στο αρχείο `/boot/grub/menu.lst` βρείτε το τμήμα που αναφέρεται στο Arch (το προκαθορισμένο είναι '# (0) Arch Linux'):
+Για να αλλάξετε το runlevel στο οποίο εκκινεί το σύστημα, απλά προσθέστε τον αναγνωριστικό αριθμό του εκάστοτε runlevel `n` στην γραμμή ορισμού πυρήνα (kernel) του GRUB. Μια συνήθης εφαρμογή της τεχνικής αυτής είναι [Start X at login#/etc/inittab](/index.php/Start_X_at_login#/etc/inittab "Start X at login"). Στο αρχείο `/boot/grub/menu.lst` βρείτε το τμήμα που αναφέρεται στο Arch (το προκαθορισμένο είναι '# (0) Arch Linux'):
 
 ```
 # (0)  Arch Linux

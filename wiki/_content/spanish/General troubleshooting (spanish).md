@@ -13,33 +13,33 @@ Este artículo explica algunos métodos para solucionar problemas generales. Par
 ## Contents
 
 *   [1 Procedimientos generales](#Procedimientos_generales)
-    *   [1.1 Atención al detalle](#Atenci.C3.B3n_al_detalle)
-    *   [1.2 Preguntas/lista de control](#Preguntas.2Flista_de_control)
+    *   [1.1 Atención al detalle](#Atención_al_detalle)
+    *   [1.2 Preguntas/lista de control](#Preguntas/lista_de_control)
     *   [1.3 Enfoque](#Enfoque)
     *   [1.4 Soporte adicional](#Soporte_adicional)
 *   [2 Problemas de arranque](#Problemas_de_arranque)
     *   [2.1 Mensajes de la consola](#Mensajes_de_la_consola)
         *   [2.1.1 Control de flujo](#Control_de_flujo)
-        *   [2.1.2 Desplazamiento hacia atrás](#Desplazamiento_hacia_atr.C3.A1s)
-        *   [2.1.3 Salida de depuración](#Salida_de_depuraci.C3.B3n)
-    *   [2.2 Intérprete de línea de órdenes de recuperación](#Int.C3.A9rprete_de_l.C3.ADnea_de_.C3.B3rdenes_de_recuperaci.C3.B3n)
-    *   [2.3 Pantalla en blanco con una tarjeta gráfica Intel](#Pantalla_en_blanco_con_una_tarjeta_gr.C3.A1fica_Intel)
+        *   [2.1.2 Desplazamiento hacia atrás](#Desplazamiento_hacia_atrás)
+        *   [2.1.3 Salida de depuración](#Salida_de_depuración)
+    *   [2.2 Intérprete de línea de órdenes de recuperación](#Intérprete_de_línea_de_órdenes_de_recuperación)
+    *   [2.3 Pantalla en blanco con una tarjeta gráfica Intel](#Pantalla_en_blanco_con_una_tarjeta_gráfica_Intel)
     *   [2.4 Atascado mientras se carga el kernel](#Atascado_mientras_se_carga_el_kernel)
     *   [2.5 Sistema no arrancable](#Sistema_no_arrancable)
-    *   [2.6 Depurar los errores de los módulos del kernel](#Depurar_los_errores_de_los_m.C3.B3dulos_del_kernel)
+    *   [2.6 Depurar los errores de los módulos del kernel](#Depurar_los_errores_de_los_módulos_del_kernel)
     *   [2.7 Depurar errores de hardware](#Depurar_errores_de_hardware)
 *   [3 Kernel panics](#Kernel_panics)
-    *   [3.1 Examinar los mensajes de pánico](#Examinar_los_mensajes_de_p.C3.A1nico)
-        *   [3.1.1 Escenario de ejemplo: módulo defectuoso](#Escenario_de_ejemplo:_m.C3.B3dulo_defectuoso)
-    *   [3.2 Reiniciar en un intérprete de línea de órdenes de superusuario y solucionar el problema](#Reiniciar_en_un_int.C3.A9rprete_de_l.C3.ADnea_de_.C3.B3rdenes_de_superusuario_y_solucionar_el_problema)
+    *   [3.1 Examinar los mensajes de pánico](#Examinar_los_mensajes_de_pánico)
+        *   [3.1.1 Escenario de ejemplo: módulo defectuoso](#Escenario_de_ejemplo:_módulo_defectuoso)
+    *   [3.2 Reiniciar en un intérprete de línea de órdenes de superusuario y solucionar el problema](#Reiniciar_en_un_intérprete_de_línea_de_órdenes_de_superusuario_y_solucionar_el_problema)
 *   [4 Administrar paquetes](#Administrar_paquetes)
 *   [5 fuser](#fuser)
-*   [6 Permisos de sesión](#Permisos_de_sesi.C3.B3n)
-*   [7 Mensaje: "error while loading shared libraries"](#Mensaje:_.22error_while_loading_shared_libraries.22)
-*   [8 Mensaje: "file: could not find any magic files!"](#Mensaje:_.22file:_could_not_find_any_magic_files.21.22)
+*   [6 Permisos de sesión](#Permisos_de_sesión)
+*   [7 Mensaje: "error while loading shared libraries"](#Mensaje:_"error_while_loading_shared_libraries")
+*   [8 Mensaje: "file: could not find any magic files!"](#Mensaje:_"file:_could_not_find_any_magic_files!")
     *   [8.1 Problema](#Problema)
-    *   [8.2 Solución](#Soluci.C3.B3n)
-*   [9 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+    *   [8.2 Solución](#Solución)
+*   [9 Véase también](#Véase_también)
 
 ## Procedimientos generales
 
@@ -67,7 +67,7 @@ A continuación se presentan una serie de preguntas que deberá hacerse a sí mi
 
 4.  ¿Cuándo se encontró por primera vez con este problema, y qué cambió entre ese momento y antes de que el sistema comenzase a funcionar erróneamente?
 
-    	Si ocurrió justo después de una actualización, enumere **todos los paquetes que se han actualizado**. Incluya los *números de versión*, copiando toda la actualización de [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)").log (`/var/log/pacman.log`). También tome nota de los estados de *cualquier* servicio necesario para dar soporte a la(s) aplicación(es) que está funcionando mal, usando las herramientas systemctl de [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"). Por ejemplo, para reenviar la salida del siguiente comando de [systemd](/index.php/Systemd_(Espa%C3%B1ol)#Uso_b.C3.A1sico_de_systemctl "Systemd (Español)") a `$HOME/issue.log`:
+    	Si ocurrió justo después de una actualización, enumere **todos los paquetes que se han actualizado**. Incluya los *números de versión*, copiando toda la actualización de [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)").log (`/var/log/pacman.log`). También tome nota de los estados de *cualquier* servicio necesario para dar soporte a la(s) aplicación(es) que está funcionando mal, usando las herramientas systemctl de [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"). Por ejemplo, para reenviar la salida del siguiente comando de [systemd](/index.php/Systemd_(Espa%C3%B1ol)#Uso_básico_de_systemctl "Systemd (Español)") a `$HOME/issue.log`:
 
     	 `$ systemctl status dhcpcd@eth0.service >> $HOME/issue.log` 
 
@@ -89,7 +89,7 @@ Con toda la información delante suya, debe tener una buena idea de lo que está
 
 Si necesita soporte adicional, puede encontrarlo en [los foros](https://bbs.archlinux.org) o el IRC en irc.freenode.net #archlinux. Véase [Canales de IRC](/index.php/IRC_channel_(Espa%C3%B1ol) "IRC channel (Español)") para otras opciones.
 
-**Nota:** [Soporte *solo* para la distribución Arch Linux](/index.php/Code_of_conduct_(Espa%C3%B1ol)#Soporte_.2Asolo.2A_para_la_distribuci.C3.B3n_Arch_Linux "Code of conduct (Español)") y no [Distribuciones basadas en Arch](/index.php/Arch-based_distributions_(Espa%C3%B1ol) "Arch-based distributions (Español)").
+**Nota:** [Soporte *solo* para la distribución Arch Linux](/index.php/Code_of_conduct_(Espa%C3%B1ol)#Soporte_*solo*_para_la_distribución_Arch_Linux "Code of conduct (Español)") y no [Distribuciones basadas en Arch](/index.php/Arch-based_distributions_(Espa%C3%B1ol) "Arch-based distributions (Español)").
 
 Cuando solicite ayuda, publique las salidas/registros completas/os, no solo las secciones que considere importantes. Las fuentes de información incluyen:
 
@@ -104,7 +104,7 @@ Cuando solicite ayuda, publique las salidas/registros completas/os, no solo las 
 *   Xorg: `/var/log/Xorg.0.log`, y registros *(logs)* anteriores si ha sobrescrito el problemático
 *   Pacman: si una actualización reciente rompió algo, busque en `/var/log/pacman.log`
 
-Una de las mejores formas de publicar esta información es usar un *pastebin* en línea. Puede [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [pbpst](https://www.archlinux.org/packages/?name=pbpst) o [gist](https://www.archlinux.org/packages/?name=gist) para enviar información automáticamente. Por ejemplo, para enviar el contenido de su diario systemd desde este arranque, debe hacer lo siguiente:
+Una de las mejores formas de publicar esta información es usar un *pastebin* en línea. Puede [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") el paquete [pbpst](https://www.archlinux.org/packages/?name=pbpst) o [gist](https://www.archlinux.org/packages/?name=gist) para enviar información automáticamente. Por ejemplo, para enviar el contenido de su diario systemd desde este arranque, debe hacer lo siguiente:
 
 ```
 # journalctl -xb | pbpst -S
@@ -160,7 +160,7 @@ Otros parámetros que puede añadir y que podrían ser útiles en ciertas situac
 
 También hay una serie de parámetros de depuración separados para permitir la depuración en subsistemas específicos, poe ejemplo `bootmem_debug`, `sched_debug`. Véase la [documentación de los parámetros del kernel](https://www.kernel.org/doc/Documentation/admin-guide/kernel-parameters.txt) para obtener información específica.
 
-**Nota:** Si no puede desplazarse hacia atrás lo suficiente para ver la salida del arranque deseada, debe aumentar el tamaño del [búfer del desplazamiento hacia atrás](#Desplazamiento_hacia_atr.C3.A1s).
+**Nota:** Si no puede desplazarse hacia atrás lo suficiente para ver la salida del arranque deseada, debe aumentar el tamaño del [búfer del desplazamiento hacia atrás](#Desplazamiento_hacia_atrás).
 
 ### Intérprete de línea de órdenes de recuperación
 
@@ -174,7 +174,7 @@ Otra opción es el intérprete de línea de órdenes de depuración de systemd q
 
 ### Pantalla en blanco con una tarjeta gráfica Intel
 
-Esto es debido muy probablemente a un problema con la [configuración del modo del kernel](/index.php/Kernel_mode_setting_(Espa%C3%B1ol) "Kernel mode setting (Español)"). Pruebe a [desactivar modesetting](/index.php/Kernel_mode_setting_(Espa%C3%B1ol)#Desactivar_modesetting "Kernel mode setting (Español)") o cambiar el [puerto de la tarjeta gráfica](/index.php/Intel_graphics_(Espa%C3%B1ol)#Problema_KMS:_la_consola_est.C3.A1_limitada_a_una_peque.C3.B1a_porci.C3.B3n_de_la_pantalla "Intel graphics (Español)").
+Esto es debido muy probablemente a un problema con la [configuración del modo del kernel](/index.php/Kernel_mode_setting_(Espa%C3%B1ol) "Kernel mode setting (Español)"). Pruebe a [desactivar modesetting](/index.php/Kernel_mode_setting_(Espa%C3%B1ol)#Desactivar_modesetting "Kernel mode setting (Español)") o cambiar el [puerto de la tarjeta gráfica](/index.php/Intel_graphics_(Espa%C3%B1ol)#Problema_KMS:_la_consola_está_limitada_a_una_pequeña_porción_de_la_pantalla "Intel graphics (Español)").
 
 ### Atascado mientras se carga el kernel
 
@@ -186,7 +186,7 @@ Si el sistema no arranca en absoluto, simplemente arranque desde una [imagen liv
 
 ### Depurar los errores de los módulos del kernel
 
-Véase [como obtener información](/index.php/Kernel_modules_(Espa%C3%B1ol)#Obtener_informaci.C3.B3n "Kernel modules (Español)") de los módulos del kernel.
+Véase [como obtener información](/index.php/Kernel_modules_(Espa%C3%B1ol)#Obtener_información "Kernel modules (Español)") de los módulos del kernel.
 
 ### Depurar errores de hardware
 
@@ -292,7 +292,7 @@ Deshabilite el servicio o programa que causa el pánico, invierta una actualizac
 
 ## Administrar paquetes
 
-Véase [solución de problemas con pacman](/index.php/Pacman_(Espa%C3%B1ol)#Soluci.C3.B3n_de_problemas "Pacman (Español)") para los temas más generales, y [solución de problemas de cifrado de paquetes con pacman](/index.php/Pacman/Package_signing_(Espa%C3%B1ol)#Soluci.C3.B3n_de_problemas "Pacman/Package signing (Español)") para los problemas con las claves PGP.
+Véase [solución de problemas con pacman](/index.php/Pacman_(Espa%C3%B1ol)#Solución_de_problemas "Pacman (Español)") para los temas más generales, y [solución de problemas de cifrado de paquetes con pacman](/index.php/Pacman/Package_signing_(Espa%C3%B1ol)#Solución_de_problemas "Pacman/Package signing (Español)") para los problemas con las claves PGP.
 
 ## fuser
 

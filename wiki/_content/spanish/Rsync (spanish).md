@@ -7,17 +7,17 @@ Artículos relacionados
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
 *   [2 Uso](#Uso)
     *   [2.1 Como alternativa a cp](#Como_alternativa_a_cp)
     *   [2.2 Como herramienta para copias de seguridad](#Como_herramienta_para_copias_de_seguridad)
         *   [2.2.1 Automated backup](#Automated_backup)
-        *   [2.2.2 Respaldo automático con SSH](#Respaldo_autom.C3.A1tico_con_SSH)
-        *   [2.2.3 Respaldo automático con NetworkManager](#Respaldo_autom.C3.A1tico_con_NetworkManager)
+        *   [2.2.2 Respaldo automático con SSH](#Respaldo_automático_con_SSH)
+        *   [2.2.3 Respaldo automático con NetworkManager](#Respaldo_automático_con_NetworkManager)
         *   [2.2.4 Copia automatizada con systemd y inotify](#Copia_automatizada_con_systemd_y_inotify)
         *   [2.2.5 Copia de seguridad diferencial en una semana](#Copia_de_seguridad_diferencial_en_una_semana)
-        *   [2.2.6 Instantánea de copia de seguridad](#Instant.C3.A1nea_de_copia_de_seguridad)
-*   [3 Interfaces gráficas](#Interfaces_gr.C3.A1ficas)
+        *   [2.2.6 Instantánea de copia de seguridad](#Instantánea_de_copia_de_seguridad)
+*   [3 Interfaces gráficas](#Interfaces_gráficas)
 
 ## Instalación
 

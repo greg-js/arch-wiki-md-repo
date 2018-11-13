@@ -1,9 +1,9 @@
 ## Contents
 
-*   [1 Sumário](#Sum.C3.A1rio)
-*   [2 Instalação](#Instala.C3.A7.C3.A3o)
-*   [3 Configuração](#Configura.C3.A7.C3.A3o)
-    *   [3.1 Controlador da Frequência do CPU](#Controlador_da_Frequ.C3.AAncia_do_CPU)
+*   [1 Sumário](#Sumário)
+*   [2 Instalação](#Instalação)
+*   [3 Configuração](#Configuração)
+    *   [3.1 Controlador da Frequência do CPU](#Controlador_da_Frequência_do_CPU)
     *   [3.2 Reguladores de Escalonamento](#Reguladores_de_Escalonamento)
     *   [3.3 Modo daemon](#Modo_daemon)
 

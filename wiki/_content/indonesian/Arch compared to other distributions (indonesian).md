@@ -7,9 +7,9 @@ Halaman ini berisi tentang perbandingan antara Archlinux dengan distribusi GNU/L
 
 ## Contents
 
-*   [1 Source-based (Berbasis kode sumber)](#Source-based_.28Berbasis_kode_sumber.29)
+*   [1 Source-based (Berbasis kode sumber)](#Source-based_(Berbasis_kode_sumber))
     *   [1.1 Gentoo](#Gentoo)
-    *   [1.2 Sorcerer/Lunar-Linux/Source Mage](#Sorcerer.2FLunar-Linux.2FSource_Mage)
+    *   [1.2 Sorcerer/Lunar-Linux/Source Mage](#Sorcerer/Lunar-Linux/Source_Mage)
 *   [2 Minimalis](#Minimalis)
     *   [2.1 LFS](#LFS)
     *   [2.2 CRUX](#CRUX)
@@ -20,12 +20,12 @@ Halaman ini berisi tentang perbandingan antara Archlinux dengan distribusi GNU/L
     *   [3.3 Mandriva](#Mandriva)
     *   [3.4 SUSE](#SUSE)
     *   [3.5 PCLinuxOS](#PCLinuxOS)
-*   [4 Keluarga *BSDs](#Keluarga_.2ABSDs)
+*   [4 Keluarga *BSDs](#Keluarga_*BSDs)
     *   [4.1 FreeBSD](#FreeBSD)
     *   [4.2 NetBSD](#NetBSD)
     *   [4.3 OpenBSD](#OpenBSD)
 *   [5 Lainnya](#Lainnya)
-    *   [5.1 Debian GNU/Linux](#Debian_GNU.2FLinux)
+    *   [5.1 Debian GNU/Linux](#Debian_GNU/Linux)
     *   [5.2 Frugalware](#Frugalware)
 *   [6 Pranala eksternal](#Pranala_eksternal)
 

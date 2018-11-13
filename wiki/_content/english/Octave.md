@@ -13,7 +13,7 @@ From the [official website](http://www.gnu.org/software/octave/):
 *   [1 Installation](#Installation)
     *   [1.1 Alternative graphical interfaces](#Alternative_graphical_interfaces)
 *   [2 Octave-Forge](#Octave-Forge)
-    *   [2.1 Using Octave's installer](#Using_Octave.27s_installer)
+    *   [2.1 Using Octave's installer](#Using_Octave's_installer)
     *   [2.2 Using the AUR](#Using_the_AUR)
 *   [3 Plotting](#Plotting)
 *   [4 Reading Microsoft Excel Spreadsheets](#Reading_Microsoft_Excel_Spreadsheets)
@@ -44,7 +44,7 @@ The default *octave* GUI is included in the [octave](https://www.archlinux.org/p
 
 Octave provides a set of packages, similar to Matlab's Toolboxes, through [Octave-Forge](http://octave.sourceforge.net/index.html). The complete list of packages is [here](http://octave.sourceforge.net/packages.php).
 
-Packages can be installed [#Using Octave's installer](#Using_Octave.27s_installer) or [#Using the AUR](#Using_the_AUR).
+Packages can be installed [#Using Octave's installer](#Using_Octave's_installer) or [#Using the AUR](#Using_the_AUR).
 
 ### Using Octave's installer
 

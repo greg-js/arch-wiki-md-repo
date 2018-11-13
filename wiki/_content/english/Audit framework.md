@@ -16,7 +16,7 @@ The audit framework works by listening to the event reported by the kernel and l
     *   [3.1 Using pid](#Using_pid)
     *   [3.2 Using keys](#Using_keys)
     *   [3.3 Look for abnormalies](#Look_for_abnormalies)
-*   [4 Which files or syscalls are worth-auditing?](#Which_files_or_syscalls_are_worth-auditing.3F)
+*   [4 Which files or syscalls are worth-auditing?](#Which_files_or_syscalls_are_worth-auditing?)
 *   [5 Gather logs from different hosts](#Gather_logs_from_different_hosts)
     *   [5.1 Send logfiles](#Send_logfiles)
     *   [5.2 Receive logfiles](#Receive_logfiles)

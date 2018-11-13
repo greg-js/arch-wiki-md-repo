@@ -6,7 +6,7 @@ Related articles
 
 ## Contents
 
-*   [1 IBM/Lenovo](#IBM.2FLenovo)
+*   [1 IBM/Lenovo](#IBM/Lenovo)
     *   [1.1 ThinkPad](#ThinkPad)
         *   [1.1.1 Edge series](#Edge_series)
         *   [1.1.2 E series](#E_series)
@@ -26,7 +26,7 @@ Related articles
     *   [2.6 U Series](#U_Series)
     *   [2.7 V Series](#V_Series)
     *   [2.8 Y series](#Y_series)
-*   [3 Special Notes (*):](#Special_Notes_.28.2A.29:)
+*   [3 Special Notes (*):](#Special_Notes_(*):)
     *   [3.1 Lenovo U31-70](#Lenovo_U31-70)
     *   [3.2 Lenovo B50-70](#Lenovo_B50-70)
         *   [3.2.1 Operation with a HDD caddy](#Operation_with_a_HDD_caddy)

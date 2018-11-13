@@ -40,10 +40,10 @@ In the end, the provided solution will allow you to use the best currently avail
 *   [6 Sidenotes](#Sidenotes)
     *   [6.1 Alternative vmail folder structure](#Alternative_vmail_folder_structure)
 *   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 IMAP/POP3 client failing to receive mails](#IMAP.2FPOP3_client_failing_to_receive_mails)
-    *   [7.2 Roundcube not able to delete emails or view any 'standard' folders](#Roundcube_not_able_to_delete_emails_or_view_any_.27standard.27_folders)
-    *   [7.3 LMTP / Sieve](#LMTP_.2F_Sieve)
-    *   [7.4 Are your emails sent to gmail users ending up in their junk/spam folders?](#Are_your_emails_sent_to_gmail_users_ending_up_in_their_junk.2Fspam_folders.3F)
+    *   [7.1 IMAP/POP3 client failing to receive mails](#IMAP/POP3_client_failing_to_receive_mails)
+    *   [7.2 Roundcube not able to delete emails or view any 'standard' folders](#Roundcube_not_able_to_delete_emails_or_view_any_'standard'_folders)
+    *   [7.3 LMTP / Sieve](#LMTP_/_Sieve)
+    *   [7.4 Are your emails sent to gmail users ending up in their junk/spam folders?](#Are_your_emails_sent_to_gmail_users_ending_up_in_their_junk/spam_folders?)
 *   [8 See also](#See_also)
 
 ## Installation
@@ -110,7 +110,7 @@ Before you copy & paste the configuration below, check if `relay_domains` has al
 
 **Warning:** `relay_domains` can be dangerous. You usually do not want Postfix to forward mail of strangers. `$mydestination` is a sane default value. Double check its value before running postfix! See [http://www.postfix.org/BASIC_CONFIGURATION_README.html#relay_to](http://www.postfix.org/BASIC_CONFIGURATION_README.html#relay_to)
 
-Also follow [Postfix#Secure SMTP (receiving)](/index.php/Postfix#Secure_SMTP_.28receiving.29 "Postfix") pointing to the files you created in [#SSL certificate](#SSL_certificate).
+Also follow [Postfix#Secure SMTP (receiving)](/index.php/Postfix#Secure_SMTP_(receiving) "Postfix") pointing to the files you created in [#SSL certificate](#SSL_certificate).
 
 #### Setting up Postfix
 

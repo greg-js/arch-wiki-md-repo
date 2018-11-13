@@ -9,14 +9,14 @@
 *   [1 Documentos](#Documentos)
     *   [1.1 Lectores de documentos](#Lectores_de_documentos)
         *   [1.1.1 Consola](#Consola)
-        *   [1.1.2 Interfaz gráfica](#Interfaz_gr.C3.A1fica)
-            *   [1.1.2.1 Visores de archivos con extensión CHM](#Visores_de_archivos_con_extensi.C3.B3n_CHM)
-    *   [1.2 Suites de ofimática](#Suites_de_ofim.C3.A1tica)
+        *   [1.1.2 Interfaz gráfica](#Interfaz_gráfica)
+            *   [1.1.2.1 Visores de archivos con extensión CHM](#Visores_de_archivos_con_extensión_CHM)
+    *   [1.2 Suites de ofimática](#Suites_de_ofimática)
     *   [1.3 Indexadores](#Indexadores)
     *   [1.4 Procesadores de texto](#Procesadores_de_texto)
-    *   [1.5 Hojas de cálculo](#Hojas_de_c.C3.A1lculo)
-    *   [1.6 Documentos científicos](#Documentos_cient.C3.ADficos)
-    *   [1.7 Software de reconocimiento óptico de caracteres (siglas en inglés OCR)](#Software_de_reconocimiento_.C3.B3ptico_de_caracteres_.28siglas_en_ingl.C3.A9s_OCR.29)
+    *   [1.5 Hojas de cálculo](#Hojas_de_cálculo)
+    *   [1.6 Documentos científicos](#Documentos_científicos)
+    *   [1.7 Software de reconocimiento óptico de caracteres (siglas en inglés OCR)](#Software_de_reconocimiento_óptico_de_caracteres_(siglas_en_inglés_OCR))
 
 ## Documentos
 

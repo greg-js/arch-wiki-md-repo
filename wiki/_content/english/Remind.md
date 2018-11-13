@@ -6,7 +6,7 @@
 *   [2 Configuration](#Configuration)
     *   [2.1 Include](#Include)
 *   [3 Usage](#Usage)
-    *   [3.1 Postscript/pdf calendars](#Postscript.2Fpdf_calendars)
+    *   [3.1 Postscript/pdf calendars](#Postscript/pdf_calendars)
 *   [4 See also](#See_also)
 
 ## Installation

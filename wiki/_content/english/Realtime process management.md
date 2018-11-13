@@ -18,7 +18,7 @@ The simple solution is to give the audio and video processes a **higher priority
 *   [3 Power is nothing without control](#Power_is_nothing_without_control)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 PAM-enabled login](#PAM-enabled_login)
-    *   [4.2 Console/autologin](#Console.2Fautologin)
+    *   [4.2 Console/autologin](#Console/autologin)
 *   [5 Reference](#Reference)
     *   [5.1 RLIMIT Definitions](#RLIMIT_Definitions)
     *   [5.2 Scheduling policies](#Scheduling_policies)

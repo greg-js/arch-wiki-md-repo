@@ -10,17 +10,17 @@
 
 ## Contents
 
-*   [1 Protótipos](#Prot.C3.B3tipos)
+*   [1 Protótipos](#Protótipos)
 *   [2 Diretrizes](#Diretrizes)
     *   [2.1 Fontes VCS](#Fontes_VCS)
-    *   [2.2 A função pkgver()](#A_fun.C3.A7.C3.A3o_pkgver.28.29)
+    *   [2.2 A função pkgver()](#A_função_pkgver())
         *   [2.2.1 Git](#Git)
         *   [2.2.2 Subversion](#Subversion)
         *   [2.2.3 Mercurial](#Mercurial)
         *   [2.2.4 Bazaar](#Bazaar)
         *   [2.2.5 Reserva](#Reserva)
 *   [3 Dicas](#Dicas)
-    *   [3.1 Submódulos git](#Subm.C3.B3dulos_git)
+    *   [3.1 Submódulos git](#Submódulos_git)
 
 ## Protótipos
 

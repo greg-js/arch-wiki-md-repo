@@ -17,7 +17,7 @@ The [#iw](#iw) section describes how to manually manage your wireless network in
 
 *   [1 Device driver](#Device_driver)
     *   [1.1 Check the driver status](#Check_the_driver_status)
-    *   [1.2 Installing driver/firmware](#Installing_driver.2Ffirmware)
+    *   [1.2 Installing driver/firmware](#Installing_driver/firmware)
 *   [2 Utilities](#Utilities)
     *   [2.1 iw and wireless_tools comparison](#iw_and_wireless_tools_comparison)
 *   [3 iw](#iw)
@@ -29,7 +29,7 @@ The [#iw](#iw) section describes how to manually manage your wireless network in
     *   [3.6 Connect to an access point](#Connect_to_an_access_point)
 *   [4 WPA2 Enterprise](#WPA2_Enterprise)
     *   [4.1 eduroam](#eduroam)
-    *   [4.2 Manual/automatic setup](#Manual.2Fautomatic_setup)
+    *   [4.2 Manual/automatic setup](#Manual/automatic_setup)
         *   [4.2.1 wpa_supplicant](#wpa_supplicant)
         *   [4.2.2 NetworkManager](#NetworkManager)
         *   [4.2.3 connman](#connman)
@@ -47,13 +47,13 @@ The [#iw](#iw) section describes how to manually manage your wireless network in
     *   [6.6 Valid IP address but cannot resolve host](#Valid_IP_address_but_cannot_resolve_host)
     *   [6.7 Setting RTS and fragmentation thresholds](#Setting_RTS_and_fragmentation_thresholds)
     *   [6.8 Random disconnections](#Random_disconnections)
-        *   [6.8.1 Cause #1](#Cause_.231)
-        *   [6.8.2 Cause #2](#Cause_.232)
-        *   [6.8.3 Cause #3](#Cause_.233)
-        *   [6.8.4 Cause #4](#Cause_.234)
+        *   [6.8.1 Cause #1](#Cause_#1)
+        *   [6.8.2 Cause #2](#Cause_#2)
+        *   [6.8.3 Cause #3](#Cause_#3)
+        *   [6.8.4 Cause #4](#Cause_#4)
     *   [6.9 Wi-Fi networks invisible because of incorrect regulatory domain](#Wi-Fi_networks_invisible_because_of_incorrect_regulatory_domain)
 *   [7 Troubleshooting drivers and firmware](#Troubleshooting_drivers_and_firmware)
-    *   [7.1 Ralink/Mediatek](#Ralink.2FMediatek)
+    *   [7.1 Ralink/Mediatek](#Ralink/Mediatek)
         *   [7.1.1 rt2x00](#rt2x00)
         *   [7.1.2 rt3090](#rt3090)
         *   [7.1.3 rt3290](#rt3290)
@@ -62,7 +62,7 @@ The [#iw](#iw) section describes how to manually manage your wireless network in
         *   [7.1.6 mt7612u](#mt7612u)
     *   [7.2 Realtek](#Realtek)
         *   [7.2.1 rtl8192cu](#rtl8192cu)
-        *   [7.2.2 rtl8723ae/rtl8723be](#rtl8723ae.2Frtl8723be)
+        *   [7.2.2 rtl8723ae/rtl8723be](#rtl8723ae/rtl8723be)
         *   [7.2.3 rtl88xxau](#rtl88xxau)
         *   [7.2.4 rtl8822bu](#rtl8822bu)
         *   [7.2.5 rtl8xxxu](#rtl8xxxu)
@@ -77,11 +77,11 @@ The [#iw](#iw) section describes how to manually manage your wireless network in
             *   [7.4.3.1 Bluetooth coexistence](#Bluetooth_coexistence)
         *   [7.4.4 Disabling LED blink](#Disabling_LED_blink)
     *   [7.5 Broadcom](#Broadcom)
-    *   [7.6 Other drivers/devices](#Other_drivers.2Fdevices)
+    *   [7.6 Other drivers/devices](#Other_drivers/devices)
         *   [7.6.1 Tenda w322u](#Tenda_w322u)
         *   [7.6.2 orinoco](#orinoco)
         *   [7.6.3 prism54](#prism54)
-        *   [7.6.4 ACX100/111](#ACX100.2F111)
+        *   [7.6.4 ACX100/111](#ACX100/111)
         *   [7.6.5 zd1211rw](#zd1211rw)
         *   [7.6.6 hostap_cs](#hostap_cs)
     *   [7.7 ndiswrapper](#ndiswrapper)
@@ -92,7 +92,7 @@ The [#iw](#iw) section describes how to manually manage your wireless network in
 
 The default Arch Linux kernel is *modular*, meaning many of the drivers for machine hardware reside on the hard drive and are available as [modules](/index.php/Kernel_modules "Kernel modules"). At boot, [udev](/index.php/Udev "Udev") takes an inventory of your hardware and loads appropriate modules (drivers) for your corresponding hardware, which will in turn allow creation of a network *interface*.
 
-Some wireless chipsets also require firmware, in addition to a corresponding driver. Many firmware images are provided by the [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) package which is installed by default, however, proprietary firmware images are not included and have to be installed separately. This is described in [#Installing driver/firmware](#Installing_driver.2Ffirmware).
+Some wireless chipsets also require firmware, in addition to a corresponding driver. Many firmware images are provided by the [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) package which is installed by default, however, proprietary firmware images are not included and have to be installed separately. This is described in [#Installing driver/firmware](#Installing_driver/firmware).
 
 **Note:** If the proper module is not loaded by udev on boot, simply [load it manually](/index.php/Kernel_modules#Manual_module_handling "Kernel modules"). If udev loads more than one driver for a device, the resulting conflict may prevent successful configuration. Make sure to [blacklist](/index.php/Blacklist "Blacklist") the unwanted module.
 
@@ -483,7 +483,7 @@ See [Power saving#Network interfaces](/index.php/Power_saving#Network_interfaces
 
 ### Failed to get IP address
 
-*   If getting an IP address repeatedly fails using the default [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) client, try installing and using [dhclient](https://www.archlinux.org/packages/?name=dhclient) instead. Do not forget to select *dhclient* as the primary DHCP client in the [connection manager](#Manual.2Fautomatic_setup).
+*   If getting an IP address repeatedly fails using the default [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) client, try installing and using [dhclient](https://www.archlinux.org/packages/?name=dhclient) instead. Do not forget to select *dhclient* as the primary DHCP client in the [connection manager](#Manual/automatic_setup).
 
 *   If you can get an IP address for a wired interface and not for a wireless interface, try disabling the wireless card's [power saving](#Power_saving) features (specify `off` instead of `on`).
 
@@ -855,7 +855,7 @@ $ ndiswrapper -l
 
 ```
 
-Now the ndiswrapper install is almost finished; follow the instructions on [Kernel modules#Automatic module handling](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules") to automatically load the module at boot.
+Now the ndiswrapper install is almost finished; follow the instructions on [Kernel modules#Automatic module loading with systemd](/index.php/Kernel_modules#Automatic_module_loading_with_systemd "Kernel modules") to automatically load the module at boot.
 
 The important part is making sure that ndiswrapper exists on this line, so just add it alongside the other modules. It would be best to test that ndiswrapper will load now, so:
 

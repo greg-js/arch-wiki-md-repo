@@ -1,9 +1,9 @@
 ## Contents
 
-*   [1 Wstęp](#Wst.C4.99p)
+*   [1 Wstęp](#Wstęp)
 *   [2 Instalacja](#Instalacja)
-*   [3 Informacje końcowe](#Informacje_ko.C5.84cowe)
-*   [4 Zobacz również](#Zobacz_r.C3.B3wnie.C5.BC)
+*   [3 Informacje końcowe](#Informacje_końcowe)
+*   [4 Zobacz również](#Zobacz_również)
 
 ## Wstęp
 

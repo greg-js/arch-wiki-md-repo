@@ -7,7 +7,7 @@ Related articles
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Frontends/GUIs](#Frontends.2FGUIs)
+    *   [1.1 Frontends/GUIs](#Frontends/GUIs)
 *   [2 Configuration](#Configuration)
     *   [2.1 Key bindings](#Key_bindings)
 *   [3 Tips and tricks](#Tips_and_tricks)
@@ -28,7 +28,7 @@ Related articles
     *   [4.3 SMPlayer: No video issue](#SMPlayer:_No_video_issue)
     *   [4.4 SMPlayer: fail to resume playback after pause](#SMPlayer:_fail_to_resume_playback_after_pause)
     *   [4.5 SMPlayer: no video when using transparency in GNOME](#SMPlayer:_no_video_when_using_transparency_in_GNOME)
-    *   [4.6 SMPlayer: OSD font too big / subtitle text too small](#SMPlayer:_OSD_font_too_big_.2F_subtitle_text_too_small)
+    *   [4.6 SMPlayer: OSD font too big / subtitle text too small](#SMPlayer:_OSD_font_too_big_/_subtitle_text_too_small)
     *   [4.7 Mplayer shows question marks for some characters on subtitle](#Mplayer_shows_question_marks_for_some_characters_on_subtitle)
     *   [4.8 Choppy audio CD playback](#Choppy_audio_CD_playback)
 *   [5 See also](#See_also)

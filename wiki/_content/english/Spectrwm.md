@@ -10,7 +10,7 @@ Spectrwm is written in C and configured with a text configuration file. It was p
 *   [2 Configuration](#Configuration)
     *   [2.1 Keybindings configuration](#Keybindings_configuration)
 *   [3 Starting](#Starting)
-*   [4 Multiple monitors (Xinerama)](#Multiple_monitors_.28Xinerama.29)
+*   [4 Multiple monitors (Xinerama)](#Multiple_monitors_(Xinerama))
 *   [5 Statusbar configuration](#Statusbar_configuration)
     *   [5.1 Bash scripts](#Bash_scripts)
     *   [5.2 Conky](#Conky)
@@ -19,8 +19,8 @@ Spectrwm is written in C and configured with a text configuration file. It was p
 *   [8 Screen locking](#Screen_locking)
 *   [9 Using spectrwm](#Using_spectrwm)
 *   [10 Troubleshooting](#Troubleshooting)
-    *   [10.1 Help, I just logged in and all I see is a blank screen](#Help.2C_I_just_logged_in_and_all_I_see_is_a_blank_screen)
-    *   [10.2 Why does my window open in a desktop other then the current active one?](#Why_does_my_window_open_in_a_desktop_other_then_the_current_active_one.3F)
+    *   [10.1 Help, I just logged in and all I see is a blank screen](#Help,_I_just_logged_in_and_all_I_see_is_a_blank_screen)
+    *   [10.2 Why does my window open in a desktop other then the current active one?](#Why_does_my_window_open_in_a_desktop_other_then_the_current_active_one?)
 *   [11 See also](#See_also)
 
 ## Installation

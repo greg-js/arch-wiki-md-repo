@@ -14,10 +14,10 @@ Sudo también se puede usar para ejecutar comandos como otros usuarios; además,
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Utilización](#Utilizaci.C3.B3n)
-*   [3 Configuración](#Configuraci.C3.B3n)
-    *   [3.1 Ver la configuración actual](#Ver_la_configuraci.C3.B3n_actual)
+*   [1 Instalación](#Instalación)
+*   [2 Utilización](#Utilización)
+*   [3 Configuración](#Configuración)
+    *   [3.1 Ver la configuración actual](#Ver_la_configuración_actual)
     *   [3.2 Utilizando visudo](#Utilizando_visudo)
     *   [3.3 Ejemplos de entradas](#Ejemplos_de_entradas)
     *   [3.4 Permisos de archivo predeterminados de sudoers](#Permisos_de_archivo_predeterminados_de_sudoers)
@@ -25,24 +25,24 @@ Sudo también se puede usar para ejecutar comandos como otros usuarios; además,
     *   [4.1 Deshabilitar sudo por cada terminal](#Deshabilitar_sudo_por_cada_terminal)
     *   [4.2 Variables de entorno](#Variables_de_entorno)
     *   [4.3 Transferir alias](#Transferir_alias)
-    *   [4.4 Contraseña de superusuario](#Contrase.C3.B1a_de_superusuario)
+    *   [4.4 Contraseña de superusuario](#Contraseña_de_superusuario)
     *   [4.5 Desactivar el acceso de superusuario](#Desactivar_el_acceso_de_superusuario)
         *   [4.5.1 kdesu](#kdesu)
-    *   [4.6 Ejemplo de protección con sudo](#Ejemplo_de_protecci.C3.B3n_con_sudo)
-    *   [4.7 Configurar sudo mediante archivos complementarios en /etc/sudoers.d](#Configurar_sudo_mediante_archivos_complementarios_en_.2Fetc.2Fsudoers.d)
-    *   [4.8 Edición de archivos](#Edici.C3.B3n_de_archivos)
-*   [5 Solución de problemas](#Soluci.C3.B3n_de_problemas)
+    *   [4.6 Ejemplo de protección con sudo](#Ejemplo_de_protección_con_sudo)
+    *   [4.7 Configurar sudo mediante archivos complementarios en /etc/sudoers.d](#Configurar_sudo_mediante_archivos_complementarios_en_/etc/sudoers.d)
+    *   [4.8 Edición de archivos](#Edición_de_archivos)
+*   [5 Solución de problemas](#Solución_de_problemas)
     *   [5.1 Problemas de TTY con SSH](#Problemas_de_TTY_con_SSH)
     *   [5.2 Umask permisiva](#Umask_permisiva)
     *   [5.3 Estructura por defecto](#Estructura_por_defecto)
 
 ## Instalación
 
-[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [sudo](https://www.archlinux.org/packages/?name=sudo).
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") el paquete [sudo](https://www.archlinux.org/packages/?name=sudo).
 
 ## Utilización
 
-Para comenzar a usar `sudo` como un usuario sin privilegios, debe estar configurado correctamente. Véase la sección [configuración](#Configuraci.C3.B3n).
+Para comenzar a usar `sudo` como un usuario sin privilegios, debe estar configurado correctamente. Véase la sección [configuración](#Configuración).
 
 Para usar *sudo*, simplemente anteponga `sudo` y un espacio al comando y sus argumentos:
 

@@ -8,12 +8,12 @@ Debido a la falta de desarrolladores para cuestiones de acceso telefónico, cone
 
 ## Contents
 
-*   [1 Módem analógico](#M.C3.B3dem_anal.C3.B3gico)
+*   [1 Módem analógico](#Módem_analógico)
 *   [2 ISDN](#ISDN)
     *   [2.1 Instalar y configurar el hardware](#Instalar_y_configurar_el_hardware)
     *   [2.2 Instalar y configurar las utilidades ISDN](#Instalar_y_configurar_las_utilidades_ISDN)
-*   [3 DSL (PPPoE)](#DSL_.28PPPoE.29)
-*   [4 Acceso telefónico a redes sin un marcador](#Acceso_telef.C3.B3nico_a_redes_sin_un_marcador)
+*   [3 DSL (PPPoE)](#DSL_(PPPoE))
+*   [4 Acceso telefónico a redes sin un marcador](#Acceso_telefónico_a_redes_sin_un_marcador)
 
 ## Módem analógico
 

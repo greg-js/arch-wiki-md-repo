@@ -19,7 +19,7 @@ This article covers special topics for operating [solid state drives](https://en
         *   [1.1.5 dm-crypt](#dm-crypt)
     *   [1.2 Maximizing performance](#Maximizing_performance)
     *   [1.3 Security](#Security)
-        *   [1.3.1 Hdparm shows "frozen" state](#Hdparm_shows_.22frozen.22_state)
+        *   [1.3.1 Hdparm shows "frozen" state](#Hdparm_shows_"frozen"_state)
         *   [1.3.2 SSD memory cell clearing](#SSD_memory_cell_clearing)
         *   [1.3.3 Hardware encryption](#Hardware_encryption)
 *   [2 Troubleshooting](#Troubleshooting)
@@ -136,11 +136,11 @@ Change the value of `issue_discards` option from 0 to 1 in `/etc/lvm/lvm.conf`.
 
 #### dm-crypt
 
-**Warning:** The discard option allows discard requests to be passed through the encrypted block device. This improves performance on SSD storage but has security implications. See [dm-crypt/Specialties#Discard/TRIM support for solid state drives (SSD)](/index.php/Dm-crypt/Specialties#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29 "Dm-crypt/Specialties") for more information.
+**Warning:** The discard option allows discard requests to be passed through the encrypted block device. This improves performance on SSD storage but has security implications. See [dm-crypt/Specialties#Discard/TRIM support for solid state drives (SSD)](/index.php/Dm-crypt/Specialties#Discard/TRIM_support_for_solid_state_drives_(SSD) "Dm-crypt/Specialties") for more information.
 
 For non-root filesystems, configure `/etc/crypttab` to include `discard` in the list of options for encrypted block devices located on an SSD (see [dm-crypt/System configuration#crypttab](/index.php/Dm-crypt/System_configuration#crypttab "Dm-crypt/System configuration")).
 
-For the root filesystem, follow the instructions from [dm-crypt/Specialties#Discard/TRIM support for solid state drives (SSD)](/index.php/Dm-crypt/Specialties#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29 "Dm-crypt/Specialties") to add the right kernel parameter to the bootloader configuration.
+For the root filesystem, follow the instructions from [dm-crypt/Specialties#Discard/TRIM support for solid state drives (SSD)](/index.php/Dm-crypt/Specialties#Discard/TRIM_support_for_solid_state_drives_(SSD) "Dm-crypt/Specialties") to add the right kernel parameter to the bootloader configuration.
 
 ### Maximizing performance
 
@@ -183,7 +183,7 @@ The reset is easily accomplished in a three step procedure denoted on the [SSD m
 
 #### Hardware encryption
 
-As noted in [#Hdparm shows "frozen" state](#Hdparm_shows_.22frozen.22_state) setting a password for a storage device (SSD/HDD) in the BIOS may also initialize the hardware encryption of devices supporting it. If the device also conforms to the OPAL standard, this may also be achieved without a respective BIOS feature to set the passphrase, see [Self-Encrypting Drives](/index.php/Self-Encrypting_Drives "Self-Encrypting Drives").
+As noted in [#Hdparm shows "frozen" state](#Hdparm_shows_"frozen"_state) setting a password for a storage device (SSD/HDD) in the BIOS may also initialize the hardware encryption of devices supporting it. If the device also conforms to the OPAL standard, this may also be achieved without a respective BIOS feature to set the passphrase, see [Self-Encrypting Drives](/index.php/Self-Encrypting_Drives "Self-Encrypting Drives").
 
 ## Troubleshooting
 

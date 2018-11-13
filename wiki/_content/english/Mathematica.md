@@ -19,10 +19,10 @@ Related articles
     *   [1.5 Mathematica 11](#Mathematica_11)
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 Missing symbols](#Missing_symbols)
-    *   [2.2 HiDPI / Retina Screens](#HiDPI_.2F_Retina_Screens)
+    *   [2.2 HiDPI / Retina Screens](#HiDPI_/_Retina_Screens)
     *   [2.3 Conflicts with system libraries](#Conflicts_with_system_libraries)
-        *   [2.3.1 Symbol lookup error: /usr/lib/libfontconfig.so.1: undefined symbol: FT_Done_MM_Var](#Symbol_lookup_error:_.2Fusr.2Flib.2Flibfontconfig.so.1:_undefined_symbol:_FT_Done_MM_Var)
-        *   [2.3.2 Mathematica/11.3/SystemFiles/Libraries/Linux-x86-64/libz.so.1: version `ZLIB_1.2.9' not found (required by /usr/lib/libpng16.so.16)](#Mathematica.2F11.3.2FSystemFiles.2FLibraries.2FLinux-x86-64.2Flibz.so.1:_version_.60ZLIB_1.2.9.27_not_found_.28required_by_.2Fusr.2Flib.2Flibpng16.so.16.29)
+        *   [2.3.1 Symbol lookup error: /usr/lib/libfontconfig.so.1: undefined symbol: FT_Done_MM_Var](#Symbol_lookup_error:_/usr/lib/libfontconfig.so.1:_undefined_symbol:_FT_Done_MM_Var)
+        *   [2.3.2 Mathematica/11.3/SystemFiles/Libraries/Linux-x86-64/libz.so.1: version `ZLIB_1.2.9' not found (required by /usr/lib/libpng16.so.16)](#Mathematica/11.3/SystemFiles/Libraries/Linux-x86-64/libz.so.1:_version_`ZLIB_1.2.9'_not_found_(required_by_/usr/lib/libpng16.so.16))
 *   [3 See also](#See_also)
 
 ## Installation

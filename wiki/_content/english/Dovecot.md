@@ -23,7 +23,7 @@ This article describes how to set up Dovecot for personal or small office use.
     *   [2.6 PAM Authentication with LDAP](#PAM_Authentication_with_LDAP)
     *   [2.7 Sieve](#Sieve)
         *   [2.7.1 Sieve Interpreter Plugin](#Sieve_Interpreter_Plugin)
-            *   [2.7.1.1 Example: SpamAssassin - move spam to "Junk" folder](#Example:_SpamAssassin_-_move_spam_to_.22Junk.22_folder)
+            *   [2.7.1.1 Example: SpamAssassin - move spam to "Junk" folder](#Example:_SpamAssassin_-_move_spam_to_"Junk"_folder)
         *   [2.7.2 ManageSieve Server](#ManageSieve_Server)
 *   [3 Starting the server](#Starting_the_server)
 *   [4 Tricks](#Tricks)
@@ -46,7 +46,7 @@ This article describes how to set up Dovecot for personal or small office use.
 
 **Warning:** If you deploy [TLS](https://en.wikipedia.org/wiki/TLS "wikipedia:TLS"), be sure to follow [weakdh.org's guide](https://weakdh.org/sysadmin.html) to prevent vulnerabilities. `ssl_min_protocol` defaults to TLSv1\. For more information see [Server-side TLS](/index.php/Server-side_TLS "Server-side TLS").
 
-To obtain a certificate, see [OpenSSL#Certificates](/index.php/OpenSSL#Certificates "OpenSSL").
+To obtain a certificate, see [OpenSSL#Usage](/index.php/OpenSSL#Usage "OpenSSL").
 
 Alternatively you can generate the certificate using a script that comes with the [dovecot](https://www.archlinux.org/packages/?name=dovecot) package:
 

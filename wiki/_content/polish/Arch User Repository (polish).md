@@ -23,7 +23,7 @@ makepkg -sri
 
 [makepkg -sri](/index.php?title=Makepkg_(Polski)&action=edit&redlink=1 "Makepkg (Polski) (page does not exist)") spowoduje ściągnięcie kodu, rozwiązanie zależności przy pomocy [pacman](/index.php/Pacman_(Polski) "Pacman (Polski)"), skompilowanie i zapakowanie go, zainstalowanie paczki. Na samym końcu usuwane są zależności, które były potrzebne tylko na czas instalacji.
 
-Jeśli znasz już zasadę budowania pakietów, możesz zainstalować [program](/index.php/Pacman_(Polski)#Nak.C5.82adki_na_Pacmana "Pacman (Polski)"), który wykona część niezbędnej pracy.
+Jeśli znasz już zasadę budowania pakietów, możesz zainstalować [program](/index.php/Pacman_(Polski)#Nakładki_na_Pacmana "Pacman (Polski)"), który wykona część niezbędnej pracy.
 
 Sporą listę narzędzi wspomagających pracę z pakietami z AUR znajdziesz w angielskojęzycznym artykule [AUR helpers](/index.php/AUR_helpers "AUR helpers").
 

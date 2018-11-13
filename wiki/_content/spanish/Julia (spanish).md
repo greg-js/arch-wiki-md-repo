@@ -7,11 +7,11 @@ Este artículo es una traducción de [Julia](/index.php/Julia "Julia"), revisada
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
 *   [2 IJulia](#IJulia)
-*   [3 Integración con editores](#Integraci.C3.B3n_con_editores)
+*   [3 Integración con editores](#Integración_con_editores)
     *   [3.1 Vim](#Vim)
-        *   [3.1.1 Resaltado de sintaxis y más](#Resaltado_de_sintaxis_y_m.C3.A1s)
+        *   [3.1.1 Resaltado de sintaxis y más](#Resaltado_de_sintaxis_y_más)
         *   [3.1.2 Linting](#Linting)
 *   [4 Rendimiento](#Rendimiento)
 

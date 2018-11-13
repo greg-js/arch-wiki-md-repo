@@ -15,28 +15,28 @@
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 QEMU 的图形前端](#QEMU_.E7.9A.84.E5.9B.BE.E5.BD.A2.E5.89.8D.E7.AB.AF)
-*   [3 创建新虚拟系统](#.E5.88.9B.E5.BB.BA.E6.96.B0.E8.99.9A.E6.8B.9F.E7.B3.BB.E7.BB.9F)
-    *   [3.1 创建硬盘镜像](#.E5.88.9B.E5.BB.BA.E7.A1.AC.E7.9B.98.E9.95.9C.E5.83.8F)
-        *   [3.1.1 上层存储镜像](#.E4.B8.8A.E5.B1.82.E5.AD.98.E5.82.A8.E9.95.9C.E5.83.8F)
-        *   [3.1.2 调整镜像大小](#.E8.B0.83.E6.95.B4.E9.95.9C.E5.83.8F.E5.A4.A7.E5.B0.8F)
-    *   [3.2 准备安装介质](#.E5.87.86.E5.A4.87.E5.AE.89.E8.A3.85.E4.BB.8B.E8.B4.A8)
-*   [4 运行虚拟化的系统](#.E8.BF.90.E8.A1.8C.E8.99.9A.E6.8B.9F.E5.8C.96.E7.9A.84.E7.B3.BB.E7.BB.9F)
-    *   [4.1 启用 KVM](#.E5.90.AF.E7.94.A8_KVM)
-    *   [4.2 Enabling IOMMU (Intel VT-d/AMD-Vi) support](#Enabling_IOMMU_.28Intel_VT-d.2FAMD-Vi.29_support)
-*   [5 宿主机和虚拟机数据交互](#.E5.AE.BF.E4.B8.BB.E6.9C.BA.E5.92.8C.E8.99.9A.E6.8B.9F.E6.9C.BA.E6.95.B0.E6.8D.AE.E4.BA.A4.E4.BA.92)
+*   [1 安装](#安装)
+*   [2 QEMU 的图形前端](#QEMU_的图形前端)
+*   [3 创建新虚拟系统](#创建新虚拟系统)
+    *   [3.1 创建硬盘镜像](#创建硬盘镜像)
+        *   [3.1.1 上层存储镜像](#上层存储镜像)
+        *   [3.1.2 调整镜像大小](#调整镜像大小)
+    *   [3.2 准备安装介质](#准备安装介质)
+*   [4 运行虚拟化的系统](#运行虚拟化的系统)
+    *   [4.1 启用 KVM](#启用_KVM)
+    *   [4.2 Enabling IOMMU (Intel VT-d/AMD-Vi) support](#Enabling_IOMMU_(Intel_VT-d/AMD-Vi)_support)
+*   [5 宿主机和虚拟机数据交互](#宿主机和虚拟机数据交互)
     *   [5.1 Network](#Network)
-    *   [5.2 QEMU's built-in SMB server](#QEMU.27s_built-in_SMB_server)
-    *   [5.3 挂载虚拟硬盘镜像](#.E6.8C.82.E8.BD.BD.E8.99.9A.E6.8B.9F.E7.A1.AC.E7.9B.98.E9.95.9C.E5.83.8F)
+    *   [5.2 QEMU's built-in SMB server](#QEMU's_built-in_SMB_server)
+    *   [5.3 挂载虚拟硬盘镜像](#挂载虚拟硬盘镜像)
         *   [5.3.1 With manually specifying byte offset](#With_manually_specifying_byte_offset)
         *   [5.3.2 With loop module autodetecting partitions](#With_loop_module_autodetecting_partitions)
         *   [5.3.3 With kpartx](#With_kpartx)
-    *   [5.4 挂载 qcow2 镜像](#.E6.8C.82.E8.BD.BD_qcow2_.E9.95.9C.E5.83.8F)
-    *   [5.5 使用物理分区作为硬盘镜像中的唯一主分区](#.E4.BD.BF.E7.94.A8.E7.89.A9.E7.90.86.E5.88.86.E5.8C.BA.E4.BD.9C.E4.B8.BA.E7.A1.AC.E7.9B.98.E9.95.9C.E5.83.8F.E4.B8.AD.E7.9A.84.E5.94.AF.E4.B8.80.E4.B8.BB.E5.88.86.E5.8C.BA)
+    *   [5.4 挂载 qcow2 镜像](#挂载_qcow2_镜像)
+    *   [5.5 使用物理分区作为硬盘镜像中的唯一主分区](#使用物理分区作为硬盘镜像中的唯一主分区)
         *   [5.5.1 By specifying kernel and initrd manually](#By_specifying_kernel_and_initrd_manually)
         *   [5.5.2 Simulate virtual disk with MBR using linear RAID](#Simulate_virtual_disk_with_MBR_using_linear_RAID)
-*   [6 网络](#.E7.BD.91.E7.BB.9C)
+*   [6 网络](#网络)
     *   [6.1 Link-level address caveat](#Link-level_address_caveat)
     *   [6.2 User-mode networking](#User-mode_networking)
     *   [6.3 Tap networking with QEMU](#Tap_networking_with_QEMU)
@@ -46,14 +46,14 @@
         *   [6.3.4 Creating bridge manually](#Creating_bridge_manually)
         *   [6.3.5 Network sharing between physical device and a Tap device through iptables](#Network_sharing_between_physical_device_and_a_Tap_device_through_iptables)
     *   [6.4 Networking with VDE2](#Networking_with_VDE2)
-        *   [6.4.1 What is VDE?](#What_is_VDE.3F)
+        *   [6.4.1 What is VDE?](#What_is_VDE?)
         *   [6.4.2 Basics](#Basics)
         *   [6.4.3 Startup scripts](#Startup_scripts)
         *   [6.4.4 Alternative method](#Alternative_method)
     *   [6.5 VDE2 Bridge](#VDE2_Bridge)
         *   [6.5.1 Basics](#Basics_2)
         *   [6.5.2 Startup scripts](#Startup_scripts_2)
-*   [7 图形](#.E5.9B.BE.E5.BD.A2)
+*   [7 图形](#图形)
     *   [7.1 std](#std)
     *   [7.2 qxl](#qxl)
         *   [7.2.1 SPICE](#SPICE)
@@ -63,7 +63,7 @@
     *   [7.6 none](#none)
     *   [7.7 vnc](#vnc)
 *   [8 Installing virtio drivers](#Installing_virtio_drivers)
-    *   [8.1 Preparing an (Arch) Linux guest](#Preparing_an_.28Arch.29_Linux_guest)
+    *   [8.1 Preparing an (Arch) Linux guest](#Preparing_an_(Arch)_Linux_guest)
     *   [8.2 Preparing a Windows guest](#Preparing_a_Windows_guest)
         *   [8.2.1 Block device drivers](#Block_device_drivers)
             *   [8.2.1.1 New Install of Windows](#New_Install_of_Windows)
@@ -88,10 +88,10 @@
     *   [10.3 Keyboard seems broken or the arrow keys do not work](#Keyboard_seems_broken_or_the_arrow_keys_do_not_work)
     *   [10.4 Virtual machine runs too slowly](#Virtual_machine_runs_too_slowly)
     *   [10.5 Guest display stretches on window resize](#Guest_display_stretches_on_window_resize)
-    *   [10.6 ioctl(KVM_CREATE_VM) failed: 16 Device or resource busy](#ioctl.28KVM_CREATE_VM.29_failed:_16_Device_or_resource_busy)
+    *   [10.6 ioctl(KVM_CREATE_VM) failed: 16 Device or resource busy](#ioctl(KVM_CREATE_VM)_failed:_16_Device_or_resource_busy)
     *   [10.7 libgfapi error message](#libgfapi_error_message)
     *   [10.8 Kernel panic on LIVE-environments](#Kernel_panic_on_LIVE-environments)
-*   [11 参阅](#.E5.8F.82.E9.98.85)
+*   [11 参阅](#参阅)
 
 ## 安装
 
@@ -142,7 +142,7 @@ $ qemu-img create -f raw *image_file* 4G
 
 **Note:** 您也可以通过 `dd` 或 `fallocate` 创建一个所需大小的 *raw* 镜像。
 
-**Warning:** 如果硬盘镜像存储在 [Btrfs](/index.php/Btrfs "Btrfs") 系统上，则应在创建任何映像之前考虑禁用该目录的 [写时复制](/index.php/Btrfs#Copy-on-Write_.28CoW.29 "Btrfs")。
+**Warning:** 如果硬盘镜像存储在 [Btrfs](/index.php/Btrfs "Btrfs") 系统上，则应在创建任何映像之前考虑禁用该目录的 [写时复制](/index.php/Btrfs#Copy-on-Write_(CoW) "Btrfs")。
 
 #### 上层存储镜像
 

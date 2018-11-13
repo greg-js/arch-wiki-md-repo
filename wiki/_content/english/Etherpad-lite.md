@@ -13,7 +13,7 @@ Related articles
 *   [3 Starting](#Starting)
 *   [4 Known issues](#Known_issues)
     *   [4.1 Crashes on some Pads](#Crashes_on_some_Pads)
-        *   [4.1.1 Lighttpd (Solved)](#Lighttpd_.28Solved.29)
+        *   [4.1.1 Lighttpd (Solved)](#Lighttpd_(Solved))
 *   [5 See also](#See_also)
 
 ## Installation

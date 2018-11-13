@@ -2,7 +2,7 @@
 
 ## Contents
 
-*   [1 Método](#M.C3.A9todo)
+*   [1 Método](#Método)
 *   [2 A slightly contrived example](#A_slightly_contrived_example)
     *   [2.1 Generar una lista de los paquetes a descargar](#Generar_una_lista_de_los_paquetes_a_descargar)
     *   [2.2 Descarga de los paquetes y sus dependencias](#Descarga_de_los_paquetes_y_sus_dependencias)

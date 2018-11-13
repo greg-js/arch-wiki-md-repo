@@ -10,33 +10,33 @@
 
 ## Contents
 
-*   [1 安装和配置](#.E5.AE.89.E8.A3.85.E5.92.8C.E9.85.8D.E7.BD.AE)
-*   [2 配置 Live 介质](#.E9.85.8D.E7.BD.AE_Live_.E4.BB.8B.E8.B4.A8)
-    *   [2.1 安装包](#.E5.AE.89.E8.A3.85.E5.8C.85)
-        *   [2.1.1 自定义本地库](#.E8.87.AA.E5.AE.9A.E4.B9.89.E6.9C.AC.E5.9C.B0.E5.BA.93)
-        *   [2.1.2 避免安装属于base组的包](#.E9.81.BF.E5.85.8D.E5.AE.89.E8.A3.85.E5.B1.9E.E4.BA.8Ebase.E7.BB.84.E7.9A.84.E5.8C.85)
+*   [1 安装和配置](#安装和配置)
+*   [2 配置 Live 介质](#配置_Live_介质)
+    *   [2.1 安装包](#安装包)
+        *   [2.1.1 自定义本地库](#自定义本地库)
+        *   [2.1.2 避免安装属于base组的包](#避免安装属于base组的包)
         *   [2.1.3 Installing packages from multilib](#Installing_packages_from_multilib)
-    *   [2.2 向映像里添加文件](#.E5.90.91.E6.98.A0.E5.83.8F.E9.87.8C.E6.B7.BB.E5.8A.A0.E6.96.87.E4.BB.B6)
-    *   [2.3 引导器](#.E5.BC.95.E5.AF.BC.E5.99.A8)
-    *   [2.4 登录管理器](#.E7.99.BB.E5.BD.95.E7.AE.A1.E7.90.86.E5.99.A8)
-    *   [2.5 改变自动登录状态](#.E6.94.B9.E5.8F.98.E8.87.AA.E5.8A.A8.E7.99.BB.E5.BD.95.E7.8A.B6.E6.80.81)
-*   [3 构建ISO](#.E6.9E.84.E5.BB.BAISO)
-    *   [3.1 重建ISO](#.E9.87.8D.E5.BB.BAISO)
-*   [4 使用ISO](#.E4.BD.BF.E7.94.A8ISO)
-*   [5 提示和技巧](#.E6.8F.90.E7.A4.BA.E5.92.8C.E6.8A.80.E5.B7.A7)
-    *   [5.1 在沒有互联网连接的情况下安装 Archiso](#.E5.9C.A8.E6.B2.92.E6.9C.89.E4.BA.92.E8.81.94.E7.BD.91.E8.BF.9E.E6.8E.A5.E7.9A.84.E6.83.85.E5.86.B5.E4.B8.8B.E5.AE.89.E8.A3.85_Archiso)
-        *   [5.1.1 安装 archiso 到新的 root](#.E5.AE.89.E8.A3.85_archiso_.E5.88.B0.E6.96.B0.E7.9A.84_root)
-        *   [5.1.2 Chroot 并配置基本系统](#Chroot_.E5.B9.B6.E9.85.8D.E7.BD.AE.E5.9F.BA.E6.9C.AC.E7.B3.BB.E7.BB.9F)
-            *   [5.1.2.1 恢复 journald 的配置](#.E6.81.A2.E5.A4.8D_journald_.E7.9A.84.E9.85.8D.E7.BD.AE)
-            *   [5.1.2.2 删除特殊的 udev 规则](#.E5.88.A0.E9.99.A4.E7.89.B9.E6.AE.8A.E7.9A.84_udev_.E8.A7.84.E5.88.99)
-            *   [5.1.2.3 禁用和移除 archiso 创建的服务](#.E7.A6.81.E7.94.A8.E5.92.8C.E7.A7.BB.E9.99.A4_archiso_.E5.88.9B.E5.BB.BA.E7.9A.84.E6.9C.8D.E5.8A.A1)
-            *   [5.1.2.4 移除 Live 环境的特殊脚本](#.E7.A7.BB.E9.99.A4_Live_.E7.8E.AF.E5.A2.83.E7.9A.84.E7.89.B9.E6.AE.8A.E8.84.9A.E6.9C.AC)
-            *   [5.1.2.5 导入archlinux密钥](#.E5.AF.BC.E5.85.A5archlinux.E5.AF.86.E9.92.A5)
-            *   [5.1.2.6 配置系统](#.E9.85.8D.E7.BD.AE.E7.B3.BB.E7.BB.9F)
-            *   [5.1.2.7 启用图形登录（可选）](#.E5.90.AF.E7.94.A8.E5.9B.BE.E5.BD.A2.E7.99.BB.E5.BD.95.EF.BC.88.E5.8F.AF.E9.80.89.EF.BC.89)
-*   [6 参阅](#.E5.8F.82.E9.98.85)
-    *   [6.1 文档和教程](#.E6.96.87.E6.A1.A3.E5.92.8C.E6.95.99.E7.A8.8B)
-    *   [6.2 示例自定义模板](#.E7.A4.BA.E4.BE.8B.E8.87.AA.E5.AE.9A.E4.B9.89.E6.A8.A1.E6.9D.BF)
+    *   [2.2 向映像里添加文件](#向映像里添加文件)
+    *   [2.3 引导器](#引导器)
+    *   [2.4 登录管理器](#登录管理器)
+    *   [2.5 改变自动登录状态](#改变自动登录状态)
+*   [3 构建ISO](#构建ISO)
+    *   [3.1 重建ISO](#重建ISO)
+*   [4 使用ISO](#使用ISO)
+*   [5 提示和技巧](#提示和技巧)
+    *   [5.1 在沒有互联网连接的情况下安装 Archiso](#在沒有互联网连接的情况下安装_Archiso)
+        *   [5.1.1 安装 archiso 到新的 root](#安装_archiso_到新的_root)
+        *   [5.1.2 Chroot 并配置基本系统](#Chroot_并配置基本系统)
+            *   [5.1.2.1 恢复 journald 的配置](#恢复_journald_的配置)
+            *   [5.1.2.2 删除特殊的 udev 规则](#删除特殊的_udev_规则)
+            *   [5.1.2.3 禁用和移除 archiso 创建的服务](#禁用和移除_archiso_创建的服务)
+            *   [5.1.2.4 移除 Live 环境的特殊脚本](#移除_Live_环境的特殊脚本)
+            *   [5.1.2.5 导入archlinux密钥](#导入archlinux密钥)
+            *   [5.1.2.6 配置系统](#配置系统)
+            *   [5.1.2.7 启用图形登录（可选）](#启用图形登录（可选）)
+*   [6 参阅](#参阅)
+    *   [6.1 文档和教程](#文档和教程)
+    *   [6.2 示例自定义模板](#示例自定义模板)
 
 ## 安装和配置
 
@@ -57,13 +57,13 @@ Archiso 附带2个预定义配置（profiles）: *releng* 和*baseline*。
 
 ```
 
-*   如果你使用 `releng` 配置文件来创建一个完全自定义的镜像，那么你可以继续到：[#配置 Live 介质](#.E9.85.8D.E7.BD.AE_Live_.E4.BB.8B.E8.B4.A8)。
+*   如果你使用 `releng` 配置文件来创建一个完全自定义的镜像，那么你可以继续到：[#配置 Live 介质](#配置_Live_介质)。
 
-*   如果您使用 `baseline` 配置文件创建一个简易映像，那么你不需要做任何定制，并可以直接继续到 [#构建ISO](#.E6.9E.84.E5.BB.BAISO).
+*   如果您使用 `baseline` 配置文件创建一个简易映像，那么你不需要做任何定制，并可以直接继续到 [#构建ISO](#构建ISO).
 
 ## 配置 Live 介质
 
-本节详细介绍该如何配置您将创建的映像，允许您定义哪些包以及配置将被您的 Live 映像所包含。 在 [#安装和配置](#.E5.AE.89.E8.A3.85.E5.92.8C.E9.85.8D.E7.BD.AE) 中创建的`*archlive*`目录中有许多文件和目录; 我们只关注其中一部分，主要是
+本节详细介绍该如何配置您将创建的映像，允许您定义哪些包以及配置将被您的 Live 映像所包含。 在 [#安装和配置](#安装和配置) 中创建的`*archlive*`目录中有许多文件和目录; 我们只关注其中一部分，主要是
 
 *   `packages.*` - 在这里一行行列出你想要安装的包，和
 *   `airootfs` 目录——这是一个覆盖目录，你将在这里完成所有的定制工作。
@@ -343,7 +343,7 @@ if ! pacman -r "$newroot" -Sy --needed "${pacman_args[@]}"; then
 
 若你想在没有互联网连接或者你不想重复下载你想要的包的情况下安装 archiso（例如[官方的每月发布版](https://www.archlinux.org/download/)）：
 
-首先，按照[安装指南](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installation guide (简体中文)")，并跳过一些步骤（如[连接到因特网](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.BF.9E.E6.8E.A5.E5.88.B0.E5.9B.A0.E7.89.B9.E7.BD.91 "Installation guide (简体中文)")），直到[安装基本系统](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.AE.89.E8.A3.85.E5.9F.BA.E6.9C.AC.E7.B3.BB.E7.BB.9F "Installation guide (简体中文)")之前。
+首先，按照[安装指南](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installation guide (简体中文)")，并跳过一些步骤（如[连接到因特网](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#连接到因特网 "Installation guide (简体中文)")），直到[安装基本系统](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#安装基本系统 "Installation guide (简体中文)")之前。
 
 #### 安装 archiso 到新的 root
 
@@ -419,7 +419,7 @@ if ! pacman -r "$newroot" -Sy --needed "${pacman_args[@]}"; then
 
 ##### 导入archlinux密钥
 
-为了使用官方存储库，我们需要导入 archlinux 主密钥（[Pacman/Package signing (简体中文)#初始化密钥环](/index.php/Pacman/Package_signing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.88.9D.E5.A7.8B.E5.8C.96.E5.AF.86.E9.92.A5.E7.8E.AF "Pacman/Package signing (简体中文)")）。这一步通常是通过 pacstrap 完成的，但是可以通过
+为了使用官方存储库，我们需要导入 archlinux 主密钥（[Pacman/Package signing (简体中文)#初始化密钥环](/index.php/Pacman/Package_signing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#初始化密钥环 "Pacman/Package signing (简体中文)")）。这一步通常是通过 pacstrap 完成的，但是可以通过
 
 ```
 # pacman-key --init
@@ -431,7 +431,7 @@ if ! pacman -r "$newroot" -Sy --needed "${pacman_args[@]}"; then
 
 ##### 配置系统
 
-现在，您可以按照 [Installation guide (简体中文)#配置系统](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E9.85.8D.E7.BD.AE.E7.B3.BB.E7.BB.9F "Installation guide (简体中文)") 中跳过的步骤（设置语言环境，时区，主机名等），并通过创建初始 ramdisk 来完成安装，如 [Installation guide (简体中文)#Initramfs](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#Initramfs "Installation guide (简体中文)")。
+现在，您可以按照 [Installation guide (简体中文)#配置系统](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#配置系统 "Installation guide (简体中文)") 中跳过的步骤（设置语言环境，时区，主机名等），并通过创建初始 ramdisk 来完成安装，如 [Installation guide (简体中文)#Initramfs](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#Initramfs "Installation guide (简体中文)")。
 
 ##### 启用图形登录（可选）
 

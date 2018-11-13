@@ -10,23 +10,23 @@ Artículos relacionados
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Bibliografía altamente recomendada](#Bibliograf.C3.ADa_altamente_recomendada)
-*   [3 Configuración](#Configuraci.C3.B3n)
+*   [1 Instalación](#Instalación)
+*   [2 Bibliografía altamente recomendada](#Bibliografía_altamente_recomendada)
+*   [3 Configuración](#Configuración)
     *   [3.1 Automatizar las conexiones](#Automatizar_las_conexiones)
-        *   [3.1.1 Método básico](#M.C3.A9todo_b.C3.A1sico)
-        *   [3.1.2 Cambio automático de perfiles](#Cambio_autom.C3.A1tico_de_perfiles)
-    *   [3.2 Migración de netcfg a netctl](#Migraci.C3.B3n_de_netcfg_a_netctl)
-    *   [3.3 Contraseñas encriptadas (PSK de 256-bits)](#Contrase.C3.B1as_encriptadas_.28PSK_de_256-bits.29)
-*   [4 Consejos y trucos útiles](#Consejos_y_trucos_.C3.BAtiles)
-    *   [4.1 Sustituir 'netcfg current'](#Sustituir_.27netcfg_current.27)
+        *   [3.1.1 Método básico](#Método_básico)
+        *   [3.1.2 Cambio automático de perfiles](#Cambio_automático_de_perfiles)
+    *   [3.2 Migración de netcfg a netctl](#Migración_de_netcfg_a_netctl)
+    *   [3.3 Contraseñas encriptadas (PSK de 256-bits)](#Contraseñas_encriptadas_(PSK_de_256-bits))
+*   [4 Consejos y trucos útiles](#Consejos_y_trucos_útiles)
+    *   [4.1 Sustituir 'netcfg current'](#Sustituir_'netcfg_current')
     *   [4.2 Eduroam](#Eduroam)
     *   [4.3 Bonding](#Bonding)
         *   [4.3.1 Equilibrar la carga](#Equilibrar_la_carga)
-        *   [4.3.2 Pasar a la conexión inalámbrica cuando la conexión cableada falla](#Pasar_a_la_conexi.C3.B3n_inal.C3.A1mbrica_cuando_la_conexi.C3.B3n_cableada_falla)
+        *   [4.3.2 Pasar a la conexión inalámbrica cuando la conexión cableada falla](#Pasar_a_la_conexión_inalámbrica_cuando_la_conexión_cableada_falla)
     *   [4.4 Quitar direcciones antiguas de dhcpcd](#Quitar_direcciones_antiguas_de_dhcpcd)
     *   [4.5 Problemas de espera con DHCP](#Problemas_de_espera_con_DHCP)
-*   [5 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [5 Véase también](#Véase_también)
 
 ## Instalación
 
@@ -77,9 +77,9 @@ En caso de obtener un error al ejecutar la orden anterior, es posible acceder a 
 
 ### Automatizar las conexiones
 
-Si solo se está usando un perfil de conexión de red (por interfaz) o se desea cambiar de perfil manualmente, el [método básico](#M.C3.A9todo_b.C3.A1sico) es el acertado. Entre los ejemplos más comunes se encuentran los servidores, estaciones de trabajo, routers, etc.
+Si solo se está usando un perfil de conexión de red (por interfaz) o se desea cambiar de perfil manualmente, el [método básico](#Método_básico) es el acertado. Entre los ejemplos más comunes se encuentran los servidores, estaciones de trabajo, routers, etc.
 
-Si se necesita cambiar entre varios perfiles con frecuencia, utilice el método del [cambio automático de perfiles](#Cambio_autom.C3.A1tico_de_perfiles). Los ejemplos más comunes son los ordenadores portátiles.
+Si se necesita cambiar entre varios perfiles con frecuencia, utilice el método del [cambio automático de perfiles](#Cambio_automático_de_perfiles). Los ejemplos más comunes son los ordenadores portátiles.
 
 #### Método básico
 
@@ -132,7 +132,7 @@ Una vez que ha establecido y comprobrado que sus perfiles funcionan correctament
 **Advertencia:**
 
 *   Si alguno de los perfiles contienen errores, como por ejemplo, una variable `Key=` vacía, la unidad no se cargará durante el arranque.
-*   Este método entra en conflicto con el [Método básico](#M.C3.A9todo_b.C3.A1sico). Si ha activado previamente un perfil a través de *netctl*, ejecute `netctl disable *profile*` para evitar que el perfil se cargue dos veces en el arranque.
+*   Este método entra en conflicto con el [Método básico](#Método_básico). Si ha activado previamente un perfil a través de *netctl*, ejecute `netctl disable *profile*` para evitar que el perfil se cargue dos veces en el arranque.
 
 Desde netctl 1.3, es posible controlar manualmente una interfaz gestionada de otra manera por netctl-auto sin tener que detener el servicio netctl-auto. Esto se hace usando la orden netctl-auto. Para obtener una lista de acciones disponibles basta con ejecutar:
 

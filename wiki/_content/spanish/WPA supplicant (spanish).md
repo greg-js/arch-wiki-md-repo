@@ -9,13 +9,13 @@ Artículos relacionados
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Configuración](#Configuraci.C3.B3n)
+*   [1 Instalación](#Instalación)
+*   [2 Configuración](#Configuración)
 *   [3 Utilizar wpa_cli](#Utilizar_wpa_cli)
-    *   [3.1 Añadir nuevas conexiones de red](#A.C3.B1adir_nuevas_conexiones_de_red)
+    *   [3.1 Añadir nuevas conexiones de red](#Añadir_nuevas_conexiones_de_red)
     *   [3.2 Action script](#Action_script)
     *   [3.3 Activar con systemd](#Activar_con_systemd)
-*   [4 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [4 Véase también](#Véase_también)
 
 ## Instalación
 
@@ -73,7 +73,7 @@ Es posible que tenga que especificar un controlador para que funcione. Para obte
 
 ```
 
-Todo lo que queda es simplemente conectarse usando una dirección IP [estática](/index.php/Network_configuration_(Espa%C3%B1ol)#Direcci.C3.B3n_IP_est.C3.A1tica "Network configuration (Español)") o [dinámica](/index.php/Network_configuration_(Espa%C3%B1ol)#Direcci.C3.B3n_IP_din.C3.A1mica "Network configuration (Español)"). Por ejemplo:
+Todo lo que queda es simplemente conectarse usando una dirección IP [estática](/index.php/Network_configuration_(Espa%C3%B1ol)#Dirección_IP_estática "Network configuration (Español)") o [dinámica](/index.php/Network_configuration_(Espa%C3%B1ol)#Dirección_IP_dinámica "Network configuration (Español)"). Por ejemplo:
 
 ```
 # dhcpcd *interfaz*

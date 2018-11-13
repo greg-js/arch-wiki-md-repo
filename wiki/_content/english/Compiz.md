@@ -27,10 +27,10 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Compiz "wikipedia:Compiz"
         *   [3.1.1 Autostarting programs when using a display manager](#Autostarting_programs_when_using_a_display_manager)
     *   [3.2 Starting the session with startx](#Starting_the_session_with_startx)
     *   [3.3 Add a root menu](#Add_a_root_menu)
-    *   [3.4 Allow users to shutdown/reboot](#Allow_users_to_shutdown.2Freboot)
+    *   [3.4 Allow users to shutdown/reboot](#Allow_users_to_shutdown/reboot)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Restoring the native window manager](#Restoring_the_native_window_manager)
-    *   [4.2 Enabling the Alt+F2 run dialog](#Enabling_the_Alt.2BF2_run_dialog)
+    *   [4.2 Enabling the Alt+F2 run dialog](#Enabling_the_Alt+F2_run_dialog)
     *   [4.3 Remove title bar from maximized windows](#Remove_title_bar_from_maximized_windows)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Missing GLX_EXT_texture_from_pixmaps](#Missing_GLX_EXT_texture_from_pixmaps)
@@ -42,13 +42,13 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Compiz "wikipedia:Compiz"
     *   [5.5 Screen flicks with NVIDIA card](#Screen_flicks_with_NVIDIA_card)
     *   [5.6 Video tearing](#Video_tearing)
     *   [5.7 Fusion Icon fails to start](#Fusion_Icon_fails_to_start)
-    *   [5.8 Alt+F4 keybinding not working (Xfce)](#Alt.2BF4_keybinding_not_working_.28Xfce.29)
+    *   [5.8 Alt+F4 keybinding not working (Xfce)](#Alt+F4_keybinding_not_working_(Xfce))
     *   [5.9 Emerald crashes when selecting a theme](#Emerald_crashes_when_selecting_a_theme)
     *   [5.10 No system bell when Compiz is running](#No_system_bell_when_Compiz_is_running)
-    *   [5.11 Compiz crashes when enabling the Gnome Compatibility plugin (GSettings backend)](#Compiz_crashes_when_enabling_the_Gnome_Compatibility_plugin_.28GSettings_backend.29)
+    *   [5.11 Compiz crashes when enabling the Gnome Compatibility plugin (GSettings backend)](#Compiz_crashes_when_enabling_the_Gnome_Compatibility_plugin_(GSettings_backend))
     *   [5.12 Windows lose focus when unminimised](#Windows_lose_focus_when_unminimised)
     *   [5.13 Popout windows are offset when Compiz is running](#Popout_windows_are_offset_when_Compiz_is_running)
-    *   [5.14 Alt-Tab switcher has no background (Emerald)](#Alt-Tab_switcher_has_no_background_.28Emerald.29)
+    *   [5.14 Alt-Tab switcher has no background (Emerald)](#Alt-Tab_switcher_has_no_background_(Emerald))
     *   [5.15 Mouse cursor invisible or X shaped on startup](#Mouse_cursor_invisible_or_X_shaped_on_startup)
 *   [6 Known issues](#Known_issues)
     *   [6.1 Plugins in Compiz 0.8 are not present in Compiz 0.9](#Plugins_in_Compiz_0.8_are_not_present_in_Compiz_0.9)
@@ -335,7 +335,7 @@ To fix this behaviour create the file below:
 
 If you experience video tearing when using Compiz, try enabling the *Workarounds* plugin in CCSM. Once enabled, ensure that the following options are enabled in Workarounds: *Force complete redraw on initial damage*, *Force full screen redraws (buffer swap) on repaint*.
 
-If you are using [Intel graphics](/index.php/Intel_graphics "Intel graphics") and the workaround above does not fix the video tearing, see [Intel graphics#Tear-free video](/index.php/Intel_graphics#Tear-free_video "Intel graphics").
+If you are using [Intel graphics](/index.php/Intel_graphics "Intel graphics") and the workaround above does not fix the video tearing, see [Intel graphics#Tearing](/index.php/Intel_graphics#Tearing "Intel graphics").
 
 Also see, [#Poor performance from capable graphics cards](#Poor_performance_from_capable_graphics_cards).
 

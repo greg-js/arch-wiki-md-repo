@@ -1,12 +1,12 @@
 ## Contents
 
-*   [1 Čo je to Arch Linux?](#.C4.8Co_je_to_Arch_Linux.3F)
-*   [2 Výhody](#V.C3.BDhody)
-*   [3 Jedinečný systém spravovania balíčkov](#Jedine.C4.8Dn.C3.BD_syst.C3.A9m_spravovania_bal.C3.AD.C4.8Dkov)
-*   [4 Len to najlepšie](#Len_to_najlep.C5.A1ie)
-*   [5 Kľúčom je jednoduchosť](#K.C4.BE.C3.BA.C4.8Dom_je_jednoduchos.C5.A5)
-*   [6 Moderné nástroje](#Modern.C3.A9_n.C3.A1stroje)
-*   [7 Ďalšie čítanie](#.C4.8Eal.C5.A1ie_.C4.8D.C3.ADtanie)
+*   [1 Čo je to Arch Linux?](#Čo_je_to_Arch_Linux?)
+*   [2 Výhody](#Výhody)
+*   [3 Jedinečný systém spravovania balíčkov](#Jedinečný_systém_spravovania_balíčkov)
+*   [4 Len to najlepšie](#Len_to_najlepšie)
+*   [5 Kľúčom je jednoduchosť](#Kľúčom_je_jednoduchosť)
+*   [6 Moderné nástroje](#Moderné_nástroje)
+*   [7 Ďalšie čítanie](#Ďalšie_čítanie)
 
 ## Čo je to Arch Linux?
 

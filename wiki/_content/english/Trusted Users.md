@@ -5,7 +5,7 @@ The [Trusted Users](https://www.archlinux.org/people/trusted-users/) serve the f
 
 ## Contents
 
-*   [1 How do I become a TU?](#How_do_I_become_a_TU.3F)
+*   [1 How do I become a TU?](#How_do_I_become_a_TU?)
 *   [2 Active Trusted Users](#Active_Trusted_Users)
 *   [3 Inactive Trusted Users](#Inactive_Trusted_Users)
 *   [4 Some Past Trusted Users](#Some_Past_Trusted_Users)

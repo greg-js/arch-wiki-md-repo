@@ -14,13 +14,13 @@ The main use-case is to enable server-side hardware-accelerated 3D rendering for
     *   [4.1 Confirming that VirtualGL rendering is active](#Confirming_that_VirtualGL_rendering_is_active)
     *   [4.2 Measuring performance](#Measuring_performance)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Problem: vglrun aborts with "Could not open display"](#Problem:_vglrun_aborts_with_.22Could_not_open_display.22)
+    *   [5.1 Problem: vglrun aborts with "Could not open display"](#Problem:_vglrun_aborts_with_"Could_not_open_display")
     *   [5.2 Problem: vglrun seems to have no effect at all](#Problem:_vglrun_seems_to_have_no_effect_at_all)
     *   [5.3 Problem: vglrun fails with ld.so errors](#Problem:_vglrun_fails_with_ld.so_errors)
     *   [5.4 Problem: vglrun fails with ERROR: Could not connect to VGL client.](#Problem:_vglrun_fails_with_ERROR:_Could_not_connect_to_VGL_client.)
-    *   [5.5 Problem: Error messages about /etc/opt/VirtualGL/vgl_xauth_key not existing](#Problem:_Error_messages_about_.2Fetc.2Fopt.2FVirtualGL.2Fvgl_xauth_key_not_existing)
+    *   [5.5 Problem: Error messages about /etc/opt/VirtualGL/vgl_xauth_key not existing](#Problem:_Error_messages_about_/etc/opt/VirtualGL/vgl_xauth_key_not_existing)
     *   [5.6 Problem: vglrun fails with ERROR: VirtualGL attempted to load the real glXCreatePbuffer function and got the fake one instead.](#Problem:_vglrun_fails_with_ERROR:_VirtualGL_attempted_to_load_the_real_glXCreatePbuffer_function_and_got_the_fake_one_instead.)
-    *   [5.7 Problem: rendering glitches, unusually poor performance, or application errors](#Problem:_rendering_glitches.2C_unusually_poor_performance.2C_or_application_errors)
+    *   [5.7 Problem: rendering glitches, unusually poor performance, or application errors](#Problem:_rendering_glitches,_unusually_poor_performance,_or_application_errors)
 *   [6 See also](#See_also)
 
 ## Installation and setup

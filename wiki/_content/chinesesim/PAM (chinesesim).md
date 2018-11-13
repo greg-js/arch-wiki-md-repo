@@ -16,34 +16,34 @@ Linux PAM( Pluggable Authentication Modules ) 提供了一个框架，用于进�
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 配置](#.E9.85.8D.E7.BD.AE)
-    *   [2.1 安全性参数](#.E5.AE.89.E5.85.A8.E6.80.A7.E5.8F.82.E6.95.B0)
-    *   [2.2 PAM 基础配置](#PAM_.E5.9F.BA.E7.A1.80.E9.85.8D.E7.BD.AE)
-        *   [2.2.1 示例](#.E7.A4.BA.E4.BE.8B)
-*   [3 配置方法](#.E9.85.8D.E7.BD.AE.E6.96.B9.E6.B3.95)
-    *   [3.1 安全性参数配置](#.E5.AE.89.E5.85.A8.E6.80.A7.E5.8F.82.E6.95.B0.E9.85.8D.E7.BD.AE)
+*   [1 安装](#安装)
+*   [2 配置](#配置)
+    *   [2.1 安全性参数](#安全性参数)
+    *   [2.2 PAM 基础配置](#PAM_基础配置)
+        *   [2.2.1 示例](#示例)
+*   [3 配置方法](#配置方法)
+    *   [3.1 安全性参数配置](#安全性参数配置)
     *   [3.2 PAM stack and module configuration](#PAM_stack_and_module_configuration)
-*   [4 更多 PAM 包](#.E6.9B.B4.E5.A4.9A_PAM_.E5.8C.85)
-*   [5 相关资源](#.E7.9B.B8.E5.85.B3.E8.B5.84.E6.BA.90)
+*   [4 更多 PAM 包](#更多_PAM_包)
+*   [5 相关资源](#相关资源)
 
 ## 安装
 
 [pam](https://www.archlinux.org/packages/?name=pam) 包是基础安装包，默认已经安装在系统。PAM 模块被放置于 `/usr/lib/security` 目录
 
-软件源中另外还包括其它一些可选的 PAM 包，详见 [#配置方法](#.E9.85.8D.E7.BD.AE.E6.96.B9.E6.B3.95)
+软件源中另外还包括其它一些可选的 PAM 包，详见 [#配置方法](#配置方法)
 
 ## 配置
 
-`/etc` 目录有多个子目录与 PAM 相关，使用命令 `pacman -Ql pam | grep /etc` 查看默认创建的配置文件。这些配置与 [#安全性参数](#.E5.AE.89.E5.85.A8.E6.80.A7.E5.8F.82.E6.95.B0)或 [#PAM 基础配置](#PAM_.E5.9F.BA.E7.A1.80.E9.85.8D.E7.BD.AE) 有关。
+`/etc` 目录有多个子目录与 PAM 相关，使用命令 `pacman -Ql pam | grep /etc` 查看默认创建的配置文件。这些配置与 [#安全性参数](#安全性参数)或 [#PAM 基础配置](#PAM_基础配置) 有关。
 
 ### 安全性参数
 
 `/etc/security` 包含了对认证方法参数的系统级配置，安装后的文件与软件开发方默认配置一致。
 
-注意 Arch Linux 没有对这些文件进行定制。例如 `/etc/security/pwquality.conf` 配置可用于系统级别默认的密码认证方式，但需要手动将 `pam_pwquality.so` 模块加入到 [#PAM 基础配置](#PAM_.E5.9F.BA.E7.A1.80.E9.85.8D.E7.BD.AE) 内。
+注意 Arch Linux 没有对这些文件进行定制。例如 `/etc/security/pwquality.conf` 配置可用于系统级别默认的密码认证方式，但需要手动将 `pam_pwquality.so` 模块加入到 [#PAM 基础配置](#PAM_基础配置) 内。
 
-详见 [#安全性参数配置](#.E5.AE.89.E5.85.A8.E6.80.A7.E5.8F.82.E6.95.B0.E9.85.8D.E7.BD.AE)。
+详见 [#安全性参数配置](#安全性参数配置)。
 
 ### PAM 基础配置
 
@@ -128,7 +128,7 @@ auth      optional  pam_permit.so
 
 ### PAM stack and module configuration
 
-下面的章节说明对于具体的模块，如何修改 [#PAM 基础配置](#PAM_.E5.9F.BA.E7.A1.80.E9.85.8D.E7.BD.AE)
+下面的章节说明对于具体的模块，如何修改 [#PAM 基础配置](#PAM_基础配置)
 
 [Official repositories](/index.php/Official_repositories "Official repositories") PAM 模块:
 

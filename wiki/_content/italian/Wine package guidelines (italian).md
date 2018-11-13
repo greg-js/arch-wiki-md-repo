@@ -5,10 +5,10 @@ Molti programmi per Windows possono essere utili anche su Linux, è quindi possi
 *   [1 Cose da controllare attentamente](#Cose_da_controllare_attentamente)
     *   [1.1 Licenza](#Licenza)
     *   [1.2 Installer](#Installer)
-    *   [1.3 Portabilità e pulizia](#Portabilit.C3.A0_e_pulizia)
+    *   [1.3 Portabilità e pulizia](#Portabilità_e_pulizia)
 *   [2 Breve guida](#Breve_guida)
     *   [2.1 Installazione](#Installazione)
-    *   [2.2 Lo script in /usr/bin](#Lo_script_in_.2Fusr.2Fbin)
+    *   [2.2 Lo script in /usr/bin](#Lo_script_in_/usr/bin)
 *   [3 Esempio](#Esempio)
 *   [4 Gecko](#Gecko)
 

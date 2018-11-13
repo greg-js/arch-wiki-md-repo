@@ -29,7 +29,7 @@ Every breach of policy triggers a message in the system log, and AppArmor can be
     *   [4.1 Get desktop notification on DENIED actions](#Get_desktop_notification_on_DENIED_actions)
     *   [4.2 Speed-up AppArmor start by caching profiles](#Speed-up_AppArmor_start_by_caching_profiles)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Failing to start Samba SMB/CIFS server](#Failing_to_start_Samba_SMB.2FCIFS_server)
+    *   [5.1 Failing to start Samba SMB/CIFS server](#Failing_to_start_Samba_SMB/CIFS_server)
 *   [6 See also](#See_also)
 
 ## Installation

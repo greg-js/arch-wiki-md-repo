@@ -9,14 +9,14 @@ Související články
 
 ## Contents
 
-*   [1 Úvod – co je to repozitář?](#.C3.9Avod_.E2.80.93_co_je_to_repozit.C3.A1.C5.99.3F)
-*   [2 Historické pozadí](#Historick.C3.A9_pozad.C3.AD)
-*   [3 [core]](#.5Bcore.5D)
-*   [4 [extra]](#.5Bextra.5D)
-*   [5 [community]](#.5Bcommunity.5D)
-*   [6 [testing]](#.5Btesting.5D)
-*   [7 [community-testing]](#.5Bcommunity-testing.5D)
-*   [8 AUR nebo-li [unsupported]](#AUR_nebo-li_.5Bunsupported.5D)
+*   [1 Úvod – co je to repozitář?](#Úvod_–_co_je_to_repozitář?)
+*   [2 Historické pozadí](#Historické_pozadí)
+*   [3 [core]](#[core])
+*   [4 [extra]](#[extra])
+*   [5 [community]](#[community])
+*   [6 [testing]](#[testing])
+*   [7 [community-testing]](#[community-testing])
+*   [8 AUR nebo-li [unsupported]](#AUR_nebo-li_[unsupported])
 
 ## Úvod – co je to repozitář?
 

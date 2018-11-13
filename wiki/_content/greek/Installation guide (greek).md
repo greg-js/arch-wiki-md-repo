@@ -4,22 +4,22 @@
 
 ## Contents
 
-*   [1 Λήψη](#.CE.9B.CE.AE.CF.88.CE.B7)
-*   [2 Γλώσσα πληκτρολογίου](#.CE.93.CE.BB.CF.8E.CF.83.CF.83.CE.B1_.CF.80.CE.BB.CE.B7.CE.BA.CF.84.CF.81.CE.BF.CE.BB.CE.BF.CE.B3.CE.AF.CE.BF.CF.85)
-*   [3 Χώρισμα (Partition) δίσκων](#.CE.A7.CF.8E.CF.81.CE.B9.CF.83.CE.BC.CE.B1_.28Partition.29_.CE.B4.CE.AF.CF.83.CE.BA.CF.89.CE.BD)
-*   [4 Διαμόρφωση των partitions](#.CE.94.CE.B9.CE.B1.CE.BC.CF.8C.CF.81.CF.86.CF.89.CF.83.CE.B7_.CF.84.CF.89.CE.BD_partitions)
-*   [5 Προσάρτηση των partitions](#.CE.A0.CF.81.CE.BF.CF.83.CE.AC.CF.81.CF.84.CE.B7.CF.83.CE.B7_.CF.84.CF.89.CE.BD_partitions)
-*   [6 Σύνδεση στο internet](#.CE.A3.CF.8D.CE.BD.CE.B4.CE.B5.CF.83.CE.B7_.CF.83.CF.84.CE.BF_internet)
-    *   [6.1 Ασύρματο](#.CE.91.CF.83.CF.8D.CF.81.CE.BC.CE.B1.CF.84.CE.BF)
-*   [7 Εγκατάσταση βασικού συστήματος](#.CE.95.CE.B3.CE.BA.CE.B1.CF.84.CE.AC.CF.83.CF.84.CE.B1.CF.83.CE.B7_.CE.B2.CE.B1.CF.83.CE.B9.CE.BA.CE.BF.CF.8D_.CF.83.CF.85.CF.83.CF.84.CE.AE.CE.BC.CE.B1.CF.84.CE.BF.CF.82)
-*   [8 Εγκατάσταση του bootloader](#.CE.95.CE.B3.CE.BA.CE.B1.CF.84.CE.AC.CF.83.CF.84.CE.B1.CF.83.CE.B7_.CF.84.CE.BF.CF.85_bootloader)
+*   [1 Λήψη](#Λήψη)
+*   [2 Γλώσσα πληκτρολογίου](#Γλώσσα_πληκτρολογίου)
+*   [3 Χώρισμα (Partition) δίσκων](#Χώρισμα_(Partition)_δίσκων)
+*   [4 Διαμόρφωση των partitions](#Διαμόρφωση_των_partitions)
+*   [5 Προσάρτηση των partitions](#Προσάρτηση_των_partitions)
+*   [6 Σύνδεση στο internet](#Σύνδεση_στο_internet)
+    *   [6.1 Ασύρματο](#Ασύρματο)
+*   [7 Εγκατάσταση βασικού συστήματος](#Εγκατάσταση_βασικού_συστήματος)
+*   [8 Εγκατάσταση του bootloader](#Εγκατάσταση_του_bootloader)
     *   [8.1 GRUB](#GRUB)
     *   [8.2 Syslinux](#Syslinux)
-*   [9 Διαμόρφωση συστήματος](#.CE.94.CE.B9.CE.B1.CE.BC.CF.8C.CF.81.CF.86.CF.89.CF.83.CE.B7_.CF.83.CF.85.CF.83.CF.84.CE.AE.CE.BC.CE.B1.CF.84.CE.BF.CF.82)
-*   [10 Αποπροσάρτηση των partitions και επανεκκίνηση](#.CE.91.CF.80.CE.BF.CF.80.CF.81.CE.BF.CF.83.CE.AC.CF.81.CF.84.CE.B7.CF.83.CE.B7_.CF.84.CF.89.CE.BD_partitions_.CE.BA.CE.B1.CE.B9_.CE.B5.CF.80.CE.B1.CE.BD.CE.B5.CE.BA.CE.BA.CE.AF.CE.BD.CE.B7.CF.83.CE.B7)
-*   [11 Διαμόρφωση του pacman](#.CE.94.CE.B9.CE.B1.CE.BC.CF.8C.CF.81.CF.86.CF.89.CF.83.CE.B7_.CF.84.CE.BF.CF.85_pacman)
-*   [12 Ενημέρωση συστήματος](#.CE.95.CE.BD.CE.B7.CE.BC.CE.AD.CF.81.CF.89.CF.83.CE.B7_.CF.83.CF.85.CF.83.CF.84.CE.AE.CE.BC.CE.B1.CF.84.CE.BF.CF.82)
-*   [13 Προσθήκη χρήστη](#.CE.A0.CF.81.CE.BF.CF.83.CE.B8.CE.AE.CE.BA.CE.B7_.CF.87.CF.81.CE.AE.CF.83.CF.84.CE.B7)
+*   [9 Διαμόρφωση συστήματος](#Διαμόρφωση_συστήματος)
+*   [10 Αποπροσάρτηση των partitions και επανεκκίνηση](#Αποπροσάρτηση_των_partitions_και_επανεκκίνηση)
+*   [11 Διαμόρφωση του pacman](#Διαμόρφωση_του_pacman)
+*   [12 Ενημέρωση συστήματος](#Ενημέρωση_συστήματος)
+*   [13 Προσθήκη χρήστη](#Προσθήκη_χρήστη)
 
 ## Λήψη
 
@@ -88,7 +88,7 @@
 
 ```
 
-*   Εγκατάσταση του GRUB μετά το chrooting (αναφερθείτε στο τμήμα [Διαμόρφωση συστήματος](#.CE.95.CE.BD.CE.B7.CE.BC.CE.AD.CF.81.CF.89.CF.83.CE.B7_.CF.83.CF.85.CF.83.CF.84.CE.AE.CE.BC.CE.B1.CF.84.CE.BF.CF.82)).
+*   Εγκατάσταση του GRUB μετά το chrooting (αναφερθείτε στο τμήμα [Διαμόρφωση συστήματος](#Ενημέρωση_συστήματος)).
 
 ### [Syslinux](/index.php/Syslinux "Syslinux")
 

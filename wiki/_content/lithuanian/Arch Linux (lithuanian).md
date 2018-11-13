@@ -2,7 +2,7 @@
 
 *   [1 Arch Linux](#Arch_Linux)
 *   [2 Privalumai](#Privalumai)
-*   [3 Unikalus paketų tvarkymas](#Unikalus_paket.C5.B3_tvarkymas)
+*   [3 Unikalus paketų tvarkymas](#Unikalus_paketų_tvarkymas)
 *   [4 Modernumas](#Modernumas)
 *   [5 Paprastumas](#Paprastumas)
 *   [6 Tolimesnis skaitymas](#Tolimesnis_skaitymas)

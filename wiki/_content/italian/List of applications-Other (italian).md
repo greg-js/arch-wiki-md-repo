@@ -7,7 +7,7 @@
 ## Contents
 
 *   [1 Varie](#Varie)
-    *   [1.1 Applicazioni per prendere appunti / Organizers](#Applicazioni_per_prendere_appunti_.2F_Organizers)
+    *   [1.1 Applicazioni per prendere appunti / Organizers](#Applicazioni_per_prendere_appunti_/_Organizers)
         *   [1.1.1 Console](#Console)
         *   [1.1.2 Grafiche](#Grafiche)
     *   [1.2 Gestione del tempo](#Gestione_del_tempo)
@@ -16,8 +16,8 @@
     *   [1.3 Traduzione e localizzazione](#Traduzione_e_localizzazione)
     *   [1.4 Ambienti di lavoro](#Ambienti_di_lavoro)
         *   [1.4.1 Shell dei comandi](#Shell_dei_comandi)
-        *   [1.4.2 Ambienti Desktop (De)](#Ambienti_Desktop_.28De.29)
-        *   [1.4.3 Gestori delle finestre (Wm)](#Gestori_delle_finestre_.28Wm.29)
+        *   [1.4.2 Ambienti Desktop (De)](#Ambienti_Desktop_(De))
+        *   [1.4.3 Gestori delle finestre (Wm)](#Gestori_delle_finestre_(Wm))
             *   [1.4.3.1 Console](#Console_3)
             *   [1.4.3.2 Grafici](#Grafici)
         *   [1.4.4 Applicazioni supportate](#Applicazioni_supportate)

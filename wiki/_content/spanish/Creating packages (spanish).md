@@ -16,25 +16,25 @@ Este artículo tiene como objetivo ayudar a los usuarios a crear sus propios paq
 
 *   [1 Resumen](#Resumen)
     *   [1.1 Metapaquetes y grupos](#Metapaquetes_y_grupos)
-*   [2 Preparación](#Preparaci.C3.B3n)
+*   [2 Preparación](#Preparación)
     *   [2.1 Programas necesarios](#Programas_necesarios)
-    *   [2.2 Descargar y probar la instalación](#Descargar_y_probar_la_instalaci.C3.B3n)
+    *   [2.2 Descargar y probar la instalación](#Descargar_y_probar_la_instalación)
 *   [3 Creando el PKGBUILD](#Creando_el_PKGBUILD)
     *   [3.1 Definiendo las variables del PKGBUILD](#Definiendo_las_variables_del_PKGBUILD)
     *   [3.2 Funciones PKGBUILD](#Funciones_PKGBUILD)
-        *   [3.2.1 prepare()](#prepare.28.29)
-        *   [3.2.2 pkgver()](#pkgver.28.29)
-        *   [3.2.3 build()](#build.28.29)
-        *   [3.2.4 check()](#check.28.29)
-        *   [3.2.5 package()](#package.28.29)
+        *   [3.2.1 prepare()](#prepare())
+        *   [3.2.2 pkgver()](#pkgver())
+        *   [3.2.3 build()](#build())
+        *   [3.2.4 check()](#check())
+        *   [3.2.5 package()](#package())
 *   [4 Prueba del PKGBUILD y del paquete](#Prueba_del_PKGBUILD_y_del_paquete)
-    *   [4.1 Comprobación de la sanidad del paquete](#Comprobaci.C3.B3n_de_la_sanidad_del_paquete)
+    *   [4.1 Comprobación de la sanidad del paquete](#Comprobación_de_la_sanidad_del_paquete)
 *   [5 Subir paquetes a AUR](#Subir_paquetes_a_AUR)
 *   [6 Resumen](#Resumen_2)
     *   [6.1 Advertencias](#Advertencias)
-*   [7 Directrices más detalladas](#Directrices_m.C3.A1s_detalladas)
+*   [7 Directrices más detalladas](#Directrices_más_detalladas)
 *   [8 Generadores de PKGBUILD](#Generadores_de_PKGBUILD)
-*   [9 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [9 Véase también](#Véase_también)
 
 ## Resumen
 
@@ -124,13 +124,13 @@ Hay cinco funciones, enumeradas aquí en el orden en que se ejecutan si todas ex
 
 #### prepare()
 
-Esta función, utiliza comandos para preparar las fuentes para la construcción que se ejecuta, como [parches](/index.php/Patching_in_ABS "Patching in ABS"). Esta función se ejecuta justo después de la extracción del paquete, antes de [pkgver()](#pkgver.28.29) y la función de build. Si la extracción se omite (`makepkg -e`), entonces `prepare()` no se ejecuta.
+Esta función, utiliza comandos para preparar las fuentes para la construcción que se ejecuta, como [parches](/index.php/Patching_in_ABS "Patching in ABS"). Esta función se ejecuta justo después de la extracción del paquete, antes de [pkgver()](#pkgver()) y la función de build. Si la extracción se omite (`makepkg -e`), entonces `prepare()` no se ejecuta.
 
 **Nota:** : (Desde [PKGBUILD(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5)) La función se ejecuta en modo `bash -e`, significa que cualquier comando que aparezca con un estado distinto de cero hará que la función termine.
 
 #### pkgver()
 
-`pkgver()` se ejecuta después de la obtención de las fuentes, la extracción y la ejecución de [prepare()](#prepare.28.29). Así que uested puede actualizar la variable pkgver durante la etapa makepkg.
+`pkgver()` se ejecuta después de la obtención de las fuentes, la extracción y la ejecución de [prepare()](#prepare()). Así que uested puede actualizar la variable pkgver durante la etapa makepkg.
 
 Esto es particularmente útil si está haciendo [making git/svn/hg/etc. paquetes](/index.php/VCS_PKGBUILD_Guidelines "VCS PKGBUILD Guidelines"), donde el proceso de construcción puede seguir siendo el mismo, pero el codigo fuente podría ser actualizado todos los días, incluso cada hora. La vieja manera de hacer esto era poner la fecha en el campo del pkgver, donde si el Software no se actualizaba, makepkg aún así lo reconstruiría pensando que la versión había cambiado. Algunos comandos útiles para esto son `git describe`, `hg identify -ni`, etc. Por favor pruebe estos antes de enviar un PKGBUILD, ya que un error en la función `pkgver()` puede detener la compilación.
 

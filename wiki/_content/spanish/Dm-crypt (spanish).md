@@ -24,7 +24,7 @@ dm-crypt es el [mapeador de dispositivos](https://en.wikipedia.org/wiki/device_m
 *   [4 Configurar el sistema](#Configurar_el_sistema)
 *   [5 Cifrar el espacio de intercambio](#Cifrar_el_espacio_de_intercambio)
 *   [6 Especialidades](#Especialidades)
-*   [7 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [7 Véase también](#Véase_también)
 
 ## Escenarios comunes
 
@@ -52,7 +52,7 @@ Consulte [Dm-crypt/Encrypting an entire system](/index.php/Dm-crypt/Encrypting_a
 
 ## Especialidades
 
-[Dm-crypt/Specialties](/index.php/Dm-crypt/Specialties "Dm-crypt/Specialties") tratará sobre operaciones especiales como [proteger la partición de arranque no cifrada](/index.php/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition "Dm-crypt/Specialties"), [utilizar archivos de claves cifrados con GPG o OpenSSL](/index.php/Dm-crypt/Specialties#Using_GPG.2C_LUKS.2C_or_OpenSSL_Encrypted_Keyfiles "Dm-crypt/Specialties"), un método para [arrancar y desbloquear a través de la red](/index.php/Dm-crypt/Specialties#Remote_unlocking_of_the_root_.28or_other.29_partition "Dm-crypt/Specialties"), otro para [configurar discard/TRIM para un disco SSD](/index.php/Dm-crypt/Specialties#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29 "Dm-crypt/Specialties") y secciones que se ocupan del [hook encrypt y múltiples discos](/index.php/Dm-crypt/Specialties#The_encrypt_hook_and_multiple_disks "Dm-crypt/Specialties").
+[Dm-crypt/Specialties](/index.php/Dm-crypt/Specialties "Dm-crypt/Specialties") tratará sobre operaciones especiales como [proteger la partición de arranque no cifrada](/index.php/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition "Dm-crypt/Specialties"), [utilizar archivos de claves cifrados con GPG o OpenSSL](/index.php/Dm-crypt/Specialties#Using_GPG,_LUKS,_or_OpenSSL_Encrypted_Keyfiles "Dm-crypt/Specialties"), un método para [arrancar y desbloquear a través de la red](/index.php/Dm-crypt/Specialties#Remote_unlocking_of_the_root_.28or_other.29_partition "Dm-crypt/Specialties"), otro para [configurar discard/TRIM para un disco SSD](/index.php/Dm-crypt/Specialties#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29 "Dm-crypt/Specialties") y secciones que se ocupan del [hook encrypt y múltiples discos](/index.php/Dm-crypt/Specialties#The_encrypt_hook_and_multiple_disks "Dm-crypt/Specialties").
 
 ## Véase también
 

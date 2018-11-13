@@ -1,5 +1,3 @@
-'
-
 **Status de tradução:** Esse artigo é uma tradução de [Users and groups](/index.php/Users_and_groups "Users and groups"). Data da última tradução: 2018-10-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Users_and_groups&diff=0&oldid=550515) na versão em inglês.
 
 Artigos relacionados
@@ -7,27 +5,27 @@ Artigos relacionados
 *   [DeveloperWiki:UID / GID Database](/index.php/DeveloperWiki:UID_/_GID_Database "DeveloperWiki:UID / GID Database")
 *   [Sudo](/index.php/Sudo "Sudo")
 *   [Polkit](/index.php/Polkit "Polkit")
-*   [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes")
+*   [Permissões e atributos de arquivo](/index.php/Permiss%C3%B5es_e_atributos_de_arquivo "Permissões e atributos de arquivo")
 
 Usuários e grupos são usados no GNU/Linux para [controle de acesso](https://en.wikipedia.org/wiki/pt:Controle_de_acesso#Na_seguran.C3.A7a_da_informa.C3.A7.C3.A3o "wikipedia:pt:Controle de acesso") — isto é, para controlar o acesso aos arquivos, diretórios e periféricos do sistema. O Linux oferece mecanismos de controle de acesso relativamente simples/grosseiros por padrão. Para opções mais avançadas, veja [ACL](/index.php/ACL "ACL") e [PAM#Configuration How-Tos](/index.php/PAM#Configuration_How-Tos "PAM").
 
 ## Contents
 
-*   [1 Visão geral](#Vis.C3.A3o_geral)
-*   [2 Permissões e propriedade](#Permiss.C3.B5es_e_propriedade)
+*   [1 Visão geral](#Visão_geral)
+*   [2 Permissões e propriedade](#Permissões_e_propriedade)
 *   [3 Shadow](#Shadow)
 *   [4 Lista de arquivos](#Lista_de_arquivos)
-*   [5 Gerenciamento de usuário](#Gerenciamento_de_usu.C3.A1rio)
-    *   [5.1 Exemplo de adicionar um usuário](#Exemplo_de_adicionar_um_usu.C3.A1rio)
-    *   [5.2 Exemplo de adicionar um usuário do sistema](#Exemplo_de_adicionar_um_usu.C3.A1rio_do_sistema)
-    *   [5.3 Alterar um nome de login ou diretório home do usuário](#Alterar_um_nome_de_login_ou_diret.C3.B3rio_home_do_usu.C3.A1rio)
-    *   [5.4 Outros exemplos de gerenciamento de usuário](#Outros_exemplos_de_gerenciamento_de_usu.C3.A1rio)
-*   [6 Base de dados de usuários](#Base_de_dados_de_usu.C3.A1rios)
+*   [5 Gerenciamento de usuário](#Gerenciamento_de_usuário)
+    *   [5.1 Exemplo de adicionar um usuário](#Exemplo_de_adicionar_um_usuário)
+    *   [5.2 Exemplo de adicionar um usuário do sistema](#Exemplo_de_adicionar_um_usuário_do_sistema)
+    *   [5.3 Alterar um nome de login ou diretório home do usuário](#Alterar_um_nome_de_login_ou_diretório_home_do_usuário)
+    *   [5.4 Outros exemplos de gerenciamento de usuário](#Outros_exemplos_de_gerenciamento_de_usuário)
+*   [6 Base de dados de usuários](#Base_de_dados_de_usuários)
 *   [7 Gerenciamento de grupo](#Gerenciamento_de_grupo)
 *   [8 Lista de grupos](#Lista_de_grupos)
-    *   [8.1 Grupos de usuário](#Grupos_de_usu.C3.A1rio)
+    *   [8.1 Grupos de usuário](#Grupos_de_usuário)
     *   [8.2 Grupos de sistema](#Grupos_de_sistema)
-    *   [8.3 Grupos pré-systemd](#Grupos_pr.C3.A9-systemd)
+    *   [8.3 Grupos pré-systemd](#Grupos_pré-systemd)
     *   [8.4 Grupos sem uso](#Grupos_sem_uso)
 
 ## Visão geral
@@ -121,7 +119,7 @@ Liste arquivos que pertencem a um usuário ou grupo com o utilitário *find*:
 
 ```
 
-O usuário e o grupo donos de um arquivo podem ser alterados com o comando [chown](/index.php/Chown "Chown") (*change owner* ou mudar o dono). As permissões de acesso a um arquivo podem ser alteradas com o comando [chmod](/index.php/Chmod "Chmod") (*change mode* ou mudar o modo).
+O usuário e o grupo donos de um arquivo podem ser alterados com o comando [chown](/index.php/Chown_(Portugu%C3%AAs) "Chown (Português)") (*change owner* ou mudar o dono). As permissões de acesso a um arquivo podem ser alteradas com o comando [chmod](/index.php/Chmod_(Portugu%C3%AAs) "Chmod (Português)") (*change mode* ou mudar o modo).
 
 Veja [chown(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [chmod(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1) e [Permissões de acesso a arquivos e diretórios](http://www.guiafoca.org/cgs/guia/inic_interm/ch-perm.html) para detalhes adicionais.
 
@@ -131,7 +129,7 @@ As ferramentas de gerenciamento de usuários, grupos e senhas no Arch Linux vem 
 
 ## Lista de arquivos
 
-**Atenção:** Não edite esses arquivos na mão. Há utilitários que lidam corretamente com a trava e evitam invalidar o formato da base de dados. Veja [#Gerenciamento de usuário](#Gerenciamento_de_usu.C3.A1rio) e [#Gerenciamento de grupo](#Gerenciamento_de_grupo) para uma visão geral.
+**Atenção:** Não edite esses arquivos na mão. Há utilitários que lidam corretamente com a trava e evitam invalidar o formato da base de dados. Veja [#Gerenciamento de usuário](#Gerenciamento_de_usuário) e [#Gerenciamento de grupo](#Gerenciamento_de_grupo) para uma visão geral.
 
 | Arquivo | Propósito |
 | `/etc/shadow` | Informações da conta do usuário seguras |
@@ -143,7 +141,7 @@ As ferramentas de gerenciamento de usuários, grupos e senhas no Arch Linux vem 
 
 ## Gerenciamento de usuário
 
-Para listar os usuários conectados no sistema, o comando *who* pode ser usado. Para listar todas as contas de usuários existentes, incluindo suas propriedades armazenadas na base de dados de [usuário](#Base_de_dados_de_usu.C3.A1rios), execute `passwd -Sa` como root. Veja [passwd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/passwd.1) para a descrição do formato de saída.
+Para listar os usuários conectados no sistema, o comando *who* pode ser usado. Para listar todas as contas de usuários existentes, incluindo suas propriedades armazenadas na base de dados de [usuário](#Base_de_dados_de_usuários), execute `passwd -Sa` como root. Veja [passwd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/passwd.1) para a descrição do formato de saída.
 
 Para adicionar um novo usuário, use o comando *useradd*:
 
@@ -170,7 +168,7 @@ Para adicionar um novo usuário, use o comando *useradd*:
 
 **Atenção:** Para ser capaz de se autenticar, o shell de login deve ser um dos listados em `/etc/shells`, do contrário o módulo [PAM](/index.php/PAM "PAM")`pam_shell` vai negar a requisição de login. Em especial, não use o caminho `/usr/bin/bash` em vez de `/bin/bash`, a menos que propriamente configurado em `/etc/shells`.
 
-**Nota:** A senha para o usuário recém criado deve então ser definido, usando *passwd* conforme mostrado em [#Exemplo de adicionar um usuário](#Exemplo_de_adicionar_um_usu.C3.A1rio).
+**Nota:** A senha para o usuário recém criado deve então ser definido, usando *passwd* conforme mostrado em [#Exemplo de adicionar um usuário](#Exemplo_de_adicionar_um_usuário).
 
 Quando o shell de login destina-se a ser não funcional, por exemplo quando a conta de usuário é criada para um serviço específico, `/usr/bin/nologin` pode ser especificado no lugar de uma shell comum para educadamente recusar um login (veja [nologin(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nologin.8)).
 
@@ -209,7 +207,7 @@ Se uma mudança de GID for necessária temporariamente, você também pode usar 
 
 ### Exemplo de adicionar um usuário do sistema
 
-Os usuários do sistema podem ser usados para executar processos/daemons em um usuário diferente, protegendo (por exemplo, com [chown](/index.php/Chown "Chown")) arquivos e/ou diretórios e mais exemplos de *hardening* do computador.
+Os usuários do sistema podem ser usados para executar processos/daemons em um usuário diferente, protegendo (por exemplo, com [chown](/index.php/Chown_(Portugu%C3%AAs) "Chown (Português)")) arquivos e/ou diretórios e mais exemplos de *hardening* do computador.
 
 Com o seguinte comando, um usuário do sistema sem acesso ao shell e sem um diretório `home` é criado (opcionalmente, anexe o parâmetro `-U` para criar um grupo com o mesmo nome que o usuário e adicione o usuário para este grupo):
 
@@ -246,9 +244,9 @@ Para alterar o nome de login de um usuário:
 
 **Atenção:** Certifique-se de que você não está autenticado como o usuário cujo nome você está prestes a mudar. Abra um novo tty (`Ctrl+Alt+F1`) e se autentique como *root* ou como outro usuário e su para *root*. O *usermod* deve evitar que você faça isso por engano.
 
-Alterar um nome de usuário é seguro e fácil quando feito corretamente, basta usar o comando [usermod](#Outros_exemplos_de_gerenciamento_de_usu.C3.A1rio). Se o usuário estiver associado a um grupo com o mesmo nome, você pode renomear isso com o comando [groupmod](#Gerenciamento_de_grupo).
+Alterar um nome de usuário é seguro e fácil quando feito corretamente, basta usar o comando [usermod](#Outros_exemplos_de_gerenciamento_de_usuário). Se o usuário estiver associado a um grupo com o mesmo nome, você pode renomear isso com o comando [groupmod](#Gerenciamento_de_grupo).
 
-Alternativamente, o arquivo `/etc/passwd` pode ser editado diretamente, veja [#Base de dados de usuários](#Base_de_dados_de_usu.C3.A1rios) para uma introdução ao seu formato.
+Alternativamente, o arquivo `/etc/passwd` pode ser editado diretamente, veja [#Base de dados de usuários](#Base_de_dados_de_usuários) para uma introdução ao seu formato.
 
 Também tenha em mente as notas a seguir:
 
@@ -277,7 +275,7 @@ Alternativamente, *gpasswd* pode ser usado, embora o nome de usuário só possa 
 
 ```
 
-Para inserir informações do usuário para o comentário [GECOS](#Base_de_dados_de_usu.C3.A1rios) (ex. o nome completo do usuário), digite:
+Para inserir informações do usuário para o comentário [GECOS](#Base_de_dados_de_usuários) (ex. o nome completo do usuário), digite:
 
 ```
 # chfn *nome_de_usuário*
@@ -335,7 +333,7 @@ Sendo que:
 
 *   `*UID*` é a identificação numérica de usuário. No Arch, o nome do primeiro login (após o *root*) tem UID 1000, por padrão; entradas subsequentes de UID para usuários devem ser maiores que 1000.
 *   `*GID*` é a identificação numérica de grupo primário para o usuário. Valores numéricos para GIDs são listados em [/etc/group](#Gerenciamento_de_grupo).
-*   `*GECOS*` é um campo opcional com propósitos informacionais; geralmente, ele contém o nome completo do usuário, mas também pode ser usado por serviços, como o *finger*, e gerenciado com o comando [chfn](#Outros_exemplos_de_gerenciamento_de_usu.C3.A1rio). Esse campo é opcional e pode ser deixado em branco.
+*   `*GECOS*` é um campo opcional com propósitos informacionais; geralmente, ele contém o nome completo do usuário, mas também pode ser usado por serviços, como o *finger*, e gerenciado com o comando [chfn](#Outros_exemplos_de_gerenciamento_de_usuário). Esse campo é opcional e pode ser deixado em branco.
 *   `*diretório*` é usado pelo comando de login para definir a variável de ambiente `$HOME`. Vários serviços com seus próprios usuários usam `/`, mas os usuários normais costumam definir uma pasta em `/home`.
 *   `*shell*` é o caminho para o [shell de comandos](/index.php/Shell_de_comandos "Shell de comandos") padrão do usuário. Esse campo é opcional e tem como padrão `/bin/bash`.
 
@@ -425,7 +423,7 @@ Se o usuário estiver atualmente autenticado, ele deve encerrar a sessão e entr
 
 O comando *grpck* pode ser usado para verificar a integridade dos arquivos de grupo do sistema.
 
-Atualizações ao pacote [filesystem](https://www.archlinux.org/packages/?name=filesystem) criam arquivos *.pacnew*. Ao contrário dos arquivos *.pacnew* para o [#Gerenciamento de usuário](#Gerenciamento_de_usu.C3.A1rio), essas alterações podem ser ignoradas/removidas, porque o script de instalação adiciona quaisquer novos grupos exigidos.
+Atualizações ao pacote [filesystem](https://www.archlinux.org/packages/?name=filesystem) criam arquivos *.pacnew*. Ao contrário dos arquivos *.pacnew* para o [#Gerenciamento de usuário](#Gerenciamento_de_usuário), essas alterações podem ser ignoradas/removidas, porque o script de instalação adiciona quaisquer novos grupos exigidos.
 
 ## Lista de grupos
 
@@ -493,6 +491,6 @@ Os seguintes grupos estão atualmente sem uso para qualquer propósito:
 | daemon |
 | lock | Usado para acesso a arquivo de trava. Necessário para, por exemplo, [gnokii](https://www.archlinux.org/packages/?name=gnokii). |
 | mem |
-| network | Sem uso por padrão. Pode ser usado, por exemplo, para conceder acesso ao NetworkManager (veja [NetworkManager (Português)#Configurar as permissões de PolicyKit](/index.php/NetworkManager_(Portugu%C3%AAs)#Configurar_as_permiss.C3.B5es_de_PolicyKit "NetworkManager (Português)")). |
+| network | Sem uso por padrão. Pode ser usado, por exemplo, para conceder acesso ao NetworkManager (veja [NetworkManager (Português)#Configurar as permissões de PolicyKit](/index.php/NetworkManager_(Portugu%C3%AAs)#Configurar_as_permissões_de_PolicyKit "NetworkManager (Português)")). |
 | power |
 | uuidd |

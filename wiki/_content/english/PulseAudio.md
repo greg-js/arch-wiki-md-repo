@@ -23,8 +23,8 @@ Related articles
 *   [4 Back-end configuration](#Back-end_configuration)
     *   [4.1 ALSA](#ALSA)
         *   [4.1.1 Enable DTS via ALSA](#Enable_DTS_via_ALSA)
-        *   [4.1.2 Expose PulseAudio sources, sinks and mixers to ALSA](#Expose_PulseAudio_sources.2C_sinks_and_mixers_to_ALSA)
-        *   [4.1.3 ALSA/dmix without grabbing hardware device](#ALSA.2Fdmix_without_grabbing_hardware_device)
+        *   [4.1.2 Expose PulseAudio sources, sinks and mixers to ALSA](#Expose_PulseAudio_sources,_sinks_and_mixers_to_ALSA)
+        *   [4.1.3 ALSA/dmix without grabbing hardware device](#ALSA/dmix_without_grabbing_hardware_device)
     *   [4.2 OSS](#OSS)
         *   [4.2.1 ossp](#ossp)
         *   [4.2.2 padsp wrapper](#padsp_wrapper)
@@ -42,7 +42,7 @@ Related articles
     *   [6.3 XMMS2](#XMMS2)
     *   [6.4 KDE Plasma Workspaces and Qt4](#KDE_Plasma_Workspaces_and_Qt4)
     *   [6.5 Audacious](#Audacious)
-    *   [6.6 Music Player Daemon (MPD)](#Music_Player_Daemon_.28MPD.29)
+    *   [6.6 Music Player Daemon (MPD)](#Music_Player_Daemon_(MPD))
     *   [6.7 MPlayer](#MPlayer)
     *   [6.8 guvcview](#guvcview)
 *   [7 Networked audio](#Networked_audio)
@@ -51,7 +51,7 @@ Related articles
         *   [7.1.2 On the client](#On_the_client)
 *   [8 Tips and tricks](#Tips_and_tricks)
     *   [8.1 Keyboard volume control](#Keyboard_volume_control)
-    *   [8.2 Play sound from a non-interactive shell (systemd service, cron)](#Play_sound_from_a_non-interactive_shell_.28systemd_service.2C_cron.29)
+    *   [8.2 Play sound from a non-interactive shell (systemd service, cron)](#Play_sound_from_a_non-interactive_shell_(systemd_service,_cron))
     *   [8.3 X11 Bell Events](#X11_Bell_Events)
     *   [8.4 Switch on connect](#Switch_on_connect)
     *   [8.5 Script for switching analog outputs](#Script_for_switching_analog_outputs)
@@ -257,7 +257,7 @@ For more information, see [PulseAudio: Running](http://www.freedesktop.org/wiki/
 
 ### ALSA
 
-If you have applications that do not support PulseAudio explicitly but rely on ALSA, these applications will try to access the sound card directly via ALSA and will therefore bypass PulseAudio. PulseAudio will thus not have access to the sound card any more. As a result, all applications relying on PulseAudio will not be working any more, leading to [this issue](/index.php/PulseAudio/Troubleshooting#The_only_device_shown_is_.22dummy_output.22_or_newly_connected_cards_are_not_detected "PulseAudio/Troubleshooting"). To prevent this, you will need to install the [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa) package. It contains the necessary `/etc/asound.conf` for configuring ALSA to use PulseAudio. Also make sure that `~/.asoundrc` does not exist, as it would override the `/etc/asound.conf` file.
+If you have applications that do not support PulseAudio explicitly but rely on ALSA, these applications will try to access the sound card directly via ALSA and will therefore bypass PulseAudio. PulseAudio will thus not have access to the sound card any more. As a result, all applications relying on PulseAudio will not be working any more, leading to [this issue](/index.php/PulseAudio/Troubleshooting#The_only_device_shown_is_"dummy_output"_or_newly_connected_cards_are_not_detected "PulseAudio/Troubleshooting"). To prevent this, you will need to install the [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa) package. It contains the necessary `/etc/asound.conf` for configuring ALSA to use PulseAudio. Also make sure that `~/.asoundrc` does not exist, as it would override the `/etc/asound.conf` file.
 
 Also install [lib32-libpulse](https://www.archlinux.org/packages/?name=lib32-libpulse) and [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins) if you run a x86_64 system and want to have sound for 32-bit [multilib](/index.php/Multilib "Multilib") programs like [Wine](/index.php/Wine "Wine") and [Steam](/index.php/Steam "Steam").
 

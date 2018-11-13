@@ -2,7 +2,7 @@
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
 *   [2 Ejecutando Emacs](#Ejecutando_Emacs)
     *   [2.1 Modo normal](#Modo_normal)
     *   [2.2 Sin colores](#Sin_colores)

@@ -2,12 +2,12 @@ Tato stránka popisuje jak opravit počítač, jehož jádro při náběhu zpani
 
 ## Contents
 
-*   [1 Řešení problému](#.C5.98e.C5.A1en.C3.AD_probl.C3.A9mu)
-*   [2 1\. možnost: Přeinstalace jádra](#1._mo.C5.BEnost:_P.C5.99einstalace_j.C3.A1dra)
-    *   [2.1 Spusťte instalační CD](#Spus.C5.A5te_instala.C4.8Dn.C3.AD_CD)
-    *   [2.2 Chroot do svého kořenového adresáře](#Chroot_do_sv.C3.A9ho_ko.C5.99enov.C3.A9ho_adres.C3.A1.C5.99e)
-    *   [2.3 Návrat k předchozí verzi jádra](#N.C3.A1vrat_k_p.C5.99edchoz.C3.AD_verzi_j.C3.A1dra)
-*   [3 2\. možnost: Ověřte konfiguraci zavaděče](#2._mo.C5.BEnost:_Ov.C4.9B.C5.99te_konfiguraci_zavad.C4.9B.C4.8De)
+*   [1 Řešení problému](#Řešení_problému)
+*   [2 1\. možnost: Přeinstalace jádra](#1._možnost:_Přeinstalace_jádra)
+    *   [2.1 Spusťte instalační CD](#Spusťte_instalační_CD)
+    *   [2.2 Chroot do svého kořenového adresáře](#Chroot_do_svého_kořenového_adresáře)
+    *   [2.3 Návrat k předchozí verzi jádra](#Návrat_k_předchozí_verzi_jádra)
+*   [3 2\. možnost: Ověřte konfiguraci zavaděče](#2._možnost:_Ověřte_konfiguraci_zavaděče)
 *   [4 Restart](#Restart)
 
 ## Řešení problému

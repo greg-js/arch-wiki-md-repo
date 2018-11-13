@@ -15,18 +15,18 @@ BIND (*Berkeley Internet Name Daemon*) es la implementación de referencia del p
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
 *   [2 Redireccionamiento](#Redireccionamiento)
-*   [3 Plantilla de configuración para ejecutar un dominio](#Plantilla_de_configuraci.C3.B3n_para_ejecutar_un_dominio)
+*   [3 Plantilla de configuración para ejecutar un dominio](#Plantilla_de_configuración_para_ejecutar_un_dominio)
     *   [3.1 1\. Crear un archivo de zona](#1._Crear_un_archivo_de_zona)
     *   [3.2 2\. Configurar un servidor maestro](#2._Configurar_un_servidor_maestro)
     *   [3.3 3\. Configurarlo como el servidor DNS por defecto](#3._Configurarlo_como_el_servidor_DNS_por_defecto)
 *   [4 Configurar BIND para servir zonas firmadas con DNSSEC](#Configurar_BIND_para_servir_zonas_firmadas_con_DNSSEC)
-*   [5 Escuchar automáticamente nuevas interfaces](#Escuchar_autom.C3.A1ticamente_nuevas_interfaces)
+*   [5 Escuchar automáticamente nuevas interfaces](#Escuchar_automáticamente_nuevas_interfaces)
 *   [6 Ejecutar BIND en un entorno chroot](#Ejecutar_BIND_en_un_entorno_chroot)
     *   [6.1 Crear un sistema de archivos para la jaula chroot](#Crear_un_sistema_de_archivos_para_la_jaula_chroot)
     *   [6.2 Archivo de servicio](#Archivo_de_servicio)
-*   [7 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [7 Véase también](#Véase_también)
 
 ## Instalación
 
@@ -43,7 +43,7 @@ listen-on { 127.0.0.1; };
 
 Edite [resolv.conf](/index.php/Resolv.conf "Resolv.conf") para usar el servidor local DNS, 127.0.0.1.
 
-Inicie `named.service` con [systemd](/index.php/Systemd_(Espa%C3%B1ol)#Uso_b.C3.A1sico_de_systemctl "Systemd (Español)").
+Inicie `named.service` con [systemd](/index.php/Systemd_(Espa%C3%B1ol)#Uso_básico_de_systemctl "Systemd (Español)").
 
 ## Redireccionamiento
 
@@ -59,7 +59,7 @@ options {
 
 ```
 
-Tras realizar este cambio, es necesario [reiniciar](/index.php/Systemd_(Espa%C3%B1ol)#Uso_b.C3.A1sico_de_systemctl "Systemd (Español)") `named.service`.
+Tras realizar este cambio, es necesario [reiniciar](/index.php/Systemd_(Espa%C3%B1ol)#Uso_básico_de_systemctl "Systemd (Español)") `named.service`.
 
 ## Plantilla de configuración para ejecutar un dominio
 
@@ -116,9 +116,9 @@ zone "domain.tld" IN {
 
 ```
 
-[Inicie](/index.php/Systemd_(Espa%C3%B1ol)#Uso_b.C3.A1sico_de_systemctl "Systemd (Español)") `named.service`.
+[Inicie](/index.php/Systemd_(Espa%C3%B1ol)#Uso_básico_de_systemctl "Systemd (Español)") `named.service`.
 
-Alternativamente, [recargue](/index.php/Systemd_(Espa%C3%B1ol)#Uso_b.C3.A1sico_de_systemctl "Systemd (Español)") los archivos de configuración. Esta última opción mantendrá el servidor disponible mientras se ejecuta el cambio.
+Alternativamente, [recargue](/index.php/Systemd_(Espa%C3%B1ol)#Uso_básico_de_systemctl "Systemd (Español)") los archivos de configuración. Esta última opción mantendrá el servidor disponible mientras se ejecuta el cambio.
 
 ### 3\. Configurarlo como el servidor DNS por defecto
 
@@ -201,7 +201,7 @@ editando cómo el servicio llama a bind.
 
 ```
 
-Ahora, reload systemd `systemctl daemon-reload`. Entonces [inicie](/index.php/Systemd_(Espa%C3%B1ol)#Uso_b.C3.A1sico_de_systemctl "Systemd (Español)") `named-chroot.service`
+Ahora, reload systemd `systemctl daemon-reload`. Entonces [inicie](/index.php/Systemd_(Espa%C3%B1ol)#Uso_básico_de_systemctl "Systemd (Español)") `named-chroot.service`
 
 ## Véase también
 

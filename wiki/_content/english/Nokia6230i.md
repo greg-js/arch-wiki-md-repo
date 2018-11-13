@@ -5,7 +5,7 @@
 *   [2 GPRS](#GPRS)
     *   [2.1 DKU2](#DKU2)
     *   [2.2 Bluetooth](#Bluetooth)
-*   [3 Backup/restore phonebook](#Backup.2Frestore_phonebook)
+*   [3 Backup/restore phonebook](#Backup/restore_phonebook)
     *   [3.1 Backup](#Backup)
     *   [3.2 Restore](#Restore)
 

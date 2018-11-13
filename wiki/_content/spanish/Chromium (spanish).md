@@ -9,17 +9,17 @@ Artículos relacionados
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
     *   [1.1 Aplicaciones por defecto](#Aplicaciones_por_defecto)
     *   [1.2 Complemento Flash Player](#Complemento_Flash_Player)
     *   [1.3 Visor PDF](#Visor_PDF)
     *   [1.4 Certificados](#Certificados)
 *   [2 Consejos y trucos](#Consejos_y_trucos)
-*   [3 Solución de problemas](#Soluci.C3.B3n_de_problemas)
-    *   [3.1 Tipografía](#Tipograf.C3.ADa)
-    *   [3.2 Problemas de representación de tipos de letras en el complemento de PDF](#Problemas_de_representaci.C3.B3n_de_tipos_de_letras_en_el_complemento_de_PDF)
-    *   [3.3 Forzar aceleración 3D](#Forzar_aceleraci.C3.B3n_3D)
-*   [4 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [3 Solución de problemas](#Solución_de_problemas)
+    *   [3.1 Tipografía](#Tipografía)
+    *   [3.2 Problemas de representación de tipos de letras en el complemento de PDF](#Problemas_de_representación_de_tipos_de_letras_en_el_complemento_de_PDF)
+    *   [3.3 Forzar aceleración 3D](#Forzar_aceleración_3D)
+*   [4 Véase también](#Véase_también)
 
 ## Instalación
 

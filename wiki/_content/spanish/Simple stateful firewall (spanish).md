@@ -20,7 +20,7 @@ Esta página explica cómo configurar un cortafuegos [stateful](https://en.wikip
 ## Contents
 
 *   [1 Requisitos previos](#Requisitos_previos)
-*   [2 Cortafuegos para una sola máquina](#Cortafuegos_para_una_sola_m.C3.A1quina)
+*   [2 Cortafuegos para una sola máquina](#Cortafuegos_para_una_sola_máquina)
     *   [2.1 Crear las cadenas necesarias](#Crear_las_cadenas_necesarias)
     *   [2.2 La cadena FORWARD](#La_cadena_FORWARD)
     *   [2.3 La cadena OUTPUT](#La_cadena_OUTPUT)
@@ -29,14 +29,14 @@ Esta página explica cómo configurar un cortafuegos [stateful](https://en.wikip
     *   [2.6 Las cadenas TCP y UDP](#Las_cadenas_TCP_y_UDP)
         *   [2.6.1 Apertura de puertos para conexiones entrantes](#Apertura_de_puertos_para_conexiones_entrantes)
         *   [2.6.2 Golpear puertos](#Golpear_puertos)
-    *   [2.7 Protección contra ataques de suplantación](#Protecci.C3.B3n_contra_ataques_de_suplantaci.C3.B3n)
-    *   [2.8 «Ocultar» el ordenador](#.C2.ABOcultar.C2.BB_el_ordenador)
+    *   [2.7 Protección contra ataques de suplantación](#Protección_contra_ataques_de_suplantación)
+    *   [2.8 «Ocultar» el ordenador](#«Ocultar»_el_ordenador)
         *   [2.8.1 Bloquear solicitudes de ping](#Bloquear_solicitudes_de_ping)
-        *   [2.8.2 Engañar a los analizadores de puertos](#Enga.C3.B1ar_a_los_analizadores_de_puertos)
+        *   [2.8.2 Engañar a los analizadores de puertos](#Engañar_a_los_analizadores_de_puertos)
             *   [2.8.2.1 Escaneos de SYN](#Escaneos_de_SYN)
             *   [2.8.2.2 Escaneos de UDP](#Escaneos_de_UDP)
             *   [2.8.2.3 Restaurar la regla final](#Restaurar_la_regla_final)
-    *   [2.9 Protección contra otros ataques](#Protecci.C3.B3n_contra_otros_ataques)
+    *   [2.9 Protección contra otros ataques](#Protección_contra_otros_ataques)
         *   [2.9.1 Ataques de fuerza bruta](#Ataques_de_fuerza_bruta)
     *   [2.10 IPv6](#IPv6)
     *   [2.11 Guardar las reglas](#Guardar_las_reglas)
@@ -49,7 +49,7 @@ Esta página explica cómo configurar un cortafuegos [stateful](https://en.wikip
         *   [3.2.1 Configurar la cadena POSTROUTING](#Configurar_la_cadena_POSTROUTING)
         *   [3.2.2 Configurar la cadena PREROUTING](#Configurar_la_cadena_PREROUTING)
     *   [3.3 Guardar las reglas](#Guardar_las_reglas_2)
-*   [4 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [4 Véase también](#Véase_también)
 
 ## Requisitos previos
 
@@ -398,7 +398,7 @@ Si se utilizaron uno o ambas de los reglas de escaneo de puertos descritos, esta
 
 ### Protección contra otros ataques
 
-Consulte [sysctl#TCP/IP stack hardening](/index.php/Sysctl#TCP.2FIP_stack_hardening "Sysctl") para conocer los parámetros del kernel más relevantes.
+Consulte [sysctl#TCP/IP stack hardening](/index.php/Sysctl#TCP/IP_stack_hardening "Sysctl") para conocer los parámetros del kernel más relevantes.
 
 #### Ataques de fuerza bruta
 
@@ -502,7 +502,7 @@ Después [active](/index.php/Enable "Enable") e [inicie](/index.php/Start "Start
 
 ## Configurar una puerta de enlace NAT
 
-Esta sección de la guía trata sobre la configuración de una puerta de enlace [NAT](https://en.wikipedia.org/wiki/es:Network_Address_Translation "wikipedia:es:Network Address Translation") (siglas en inglés de Network Address Translation —conversión de direcciones de red—). Se supone que ya ha leído la [primera parte de la guía](#Cortafuegos_para_una_sola_m.C3.A1quina) y configurado las cadenas **INPUT**, **OUTPUT**, **TCP** y **UDP** como se ha descrito anteriormente. Todas las reglas hasta ahora se han creado en la tabla **filter**. En esta sección, también vamos a tener que utilizar la tabla **nat**.
+Esta sección de la guía trata sobre la configuración de una puerta de enlace [NAT](https://en.wikipedia.org/wiki/es:Network_Address_Translation "wikipedia:es:Network Address Translation") (siglas en inglés de Network Address Translation —conversión de direcciones de red—). Se supone que ya ha leído la [primera parte de la guía](#Cortafuegos_para_una_sola_máquina) y configurado las cadenas **INPUT**, **OUTPUT**, **TCP** y **UDP** como se ha descrito anteriormente. Todas las reglas hasta ahora se han creado en la tabla **filter**. En esta sección, también vamos a tener que utilizar la tabla **nat**.
 
 ### Configurar la tabla filter
 

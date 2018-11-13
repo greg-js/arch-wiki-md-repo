@@ -10,9 +10,9 @@ With the [Simple Orca Plugin System](https://github.com/chrys87/simple-orca-plug
 *   [4 Plug-ins](#Plug-ins)
     *   [4.1 Structure of the filename](#Structure_of_the_filename)
     *   [4.2 Run a plug-in](#Run_a_plug-in)
-        *   [4.2.1 Modifiers/ Shortcuts](#Modifiers.2F_Shortcuts)
+        *   [4.2.1 Modifiers/ Shortcuts](#Modifiers/_Shortcuts)
             *   [4.2.1.1 Valid shortcuts](#Valid_shortcuts)
-        *   [4.2.2 Commands/ Preferences](#Commands.2F_Preferences)
+        *   [4.2.2 Commands/ Preferences](#Commands/_Preferences)
         *   [4.2.3 Examples](#Examples)
     *   [4.3 Types of plug-ins](#Types_of_plug-ins)
         *   [4.3.1 Sub process plug-ins](#Sub_process_plug-ins)
@@ -84,10 +84,10 @@ The shortcut, plug-in type and preference of a plug-in are controlled by its fil
 
 There are two different ways to run a plug-in:
 
-*   shortcut (See [#Modifiers/ Shortcuts](#Modifiers.2F_Shortcuts))
-*   exec run once when the plug-in loads. (See [#Commands/ Preferences](#Commands.2F_Preferences))
+*   shortcut (See [#Modifiers/ Shortcuts](#Modifiers/_Shortcuts))
+*   exec run once when the plug-in loads. (See [#Commands/ Preferences](#Commands/_Preferences))
 
-If none of those are present. the plug-in does not load. There are some more [#Commands/ Preferences](#Commands.2F_Preferences) to control the behaviour of a plug-in.
+If none of those are present. the plug-in does not load. There are some more [#Commands/ Preferences](#Commands/_Preferences) to control the behaviour of a plug-in.
 
 #### Modifiers/ Shortcuts
 

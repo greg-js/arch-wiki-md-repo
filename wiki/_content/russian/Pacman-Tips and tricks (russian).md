@@ -9,39 +9,39 @@
 
 ## Contents
 
-*   [1 Красота и комфорт](#.D0.9A.D1.80.D0.B0.D1.81.D0.BE.D1.82.D0.B0_.D0.B8_.D0.BA.D0.BE.D0.BC.D1.84.D0.BE.D1.80.D1.82)
-    *   [1.1 Графические оболочки](#.D0.93.D1.80.D0.B0.D1.84.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B5_.D0.BE.D0.B1.D0.BE.D0.BB.D0.BE.D1.87.D0.BA.D0.B8)
-    *   [1.2 Утилиты](#.D0.A3.D1.82.D0.B8.D0.BB.D0.B8.D1.82.D1.8B)
-*   [2 Обслуживание](#.D0.9E.D0.B1.D1.81.D0.BB.D1.83.D0.B6.D0.B8.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
-    *   [2.1 Список пакетов](#.D0.A1.D0.BF.D0.B8.D1.81.D0.BE.D0.BA_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2)
-        *   [2.1.1 С размером](#.D0.A1_.D1.80.D0.B0.D0.B7.D0.BC.D0.B5.D1.80.D0.BE.D0.BC)
-            *   [2.1.1.1 Индивидуальные пакеты](#.D0.98.D0.BD.D0.B4.D0.B8.D0.B2.D0.B8.D0.B4.D1.83.D0.B0.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D1.8B)
-            *   [2.1.1.2 Пакеты с зависимостями](#.D0.9F.D0.B0.D0.BA.D0.B5.D1.82.D1.8B_.D1.81_.D0.B7.D0.B0.D0.B2.D0.B8.D1.81.D0.B8.D0.BC.D0.BE.D1.81.D1.82.D1.8F.D0.BC.D0.B8)
-        *   [2.1.2 По дате](#.D0.9F.D0.BE_.D0.B4.D0.B0.D1.82.D0.B5)
-        *   [2.1.3 Не принадлежащие определенной группе или репозиторию](#.D0.9D.D0.B5_.D0.BF.D1.80.D0.B8.D0.BD.D0.B0.D0.B4.D0.BB.D0.B5.D0.B6.D0.B0.D1.89.D0.B8.D0.B5_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.BD.D0.BE.D0.B9_.D0.B3.D1.80.D1.83.D0.BF.D0.BF.D0.B5_.D0.B8.D0.BB.D0.B8_.D1.80.D0.B5.D0.BF.D0.BE.D0.B7.D0.B8.D1.82.D0.BE.D1.80.D0.B8.D1.8E)
-        *   [2.1.4 Находящиеся в разработке](#.D0.9D.D0.B0.D1.85.D0.BE.D0.B4.D1.8F.D1.89.D0.B8.D0.B5.D1.81.D1.8F_.D0.B2_.D1.80.D0.B0.D0.B7.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.BA.D0.B5)
-    *   [2.2 Просмотр файлов, принадлежащих пакету с определенным размером](#.D0.9F.D1.80.D0.BE.D1.81.D0.BC.D0.BE.D1.82.D1.80_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2.2C_.D0.BF.D1.80.D0.B8.D0.BD.D0.B0.D0.B4.D0.BB.D0.B5.D0.B6.D0.B0.D1.89.D0.B8.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D1.83_.D1.81_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D0.BC_.D1.80.D0.B0.D0.B7.D0.BC.D0.B5.D1.80.D0.BE.D0.BC)
-    *   [2.3 Поиск файлов, не принадлежащих ни одному пакету](#.D0.9F.D0.BE.D0.B8.D1.81.D0.BA_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2.2C_.D0.BD.D0.B5_.D0.BF.D1.80.D0.B8.D0.BD.D0.B0.D0.B4.D0.BB.D0.B5.D0.B6.D0.B0.D1.89.D0.B8.D1.85_.D0.BD.D0.B8_.D0.BE.D0.B4.D0.BD.D0.BE.D0.BC.D1.83_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D1.83)
-    *   [2.4 Удаление неиспользуемых пакетов](#.D0.A3.D0.B4.D0.B0.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BD.D0.B5.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D1.83.D0.B5.D0.BC.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2)
-    *   [2.5 Удаление всех пакетов, кроме группы base](#.D0.A3.D0.B4.D0.B0.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B2.D1.81.D0.B5.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2.2C_.D0.BA.D1.80.D0.BE.D0.BC.D0.B5_.D0.B3.D1.80.D1.83.D0.BF.D0.BF.D1.8B_base)
-    *   [2.6 Получения списка зависимостей нескольких пакетов](#.D0.9F.D0.BE.D0.BB.D1.83.D1.87.D0.B5.D0.BD.D0.B8.D1.8F_.D1.81.D0.BF.D0.B8.D1.81.D0.BA.D0.B0_.D0.B7.D0.B0.D0.B2.D0.B8.D1.81.D0.B8.D0.BC.D0.BE.D1.81.D1.82.D0.B5.D0.B9_.D0.BD.D0.B5.D1.81.D0.BA.D0.BE.D0.BB.D1.8C.D0.BA.D0.B8.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2)
-    *   [2.7 Построение списка изменённых файлов из резервного копирования](#.D0.9F.D0.BE.D1.81.D1.82.D1.80.D0.BE.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81.D0.BF.D0.B8.D1.81.D0.BA.D0.B0_.D0.B8.D0.B7.D0.BC.D0.B5.D0.BD.D1.91.D0.BD.D0.BD.D1.8B.D1.85_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2_.D0.B8.D0.B7_.D1.80.D0.B5.D0.B7.D0.B5.D1.80.D0.B2.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BA.D0.BE.D0.BF.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F)
-    *   [2.8 Создание резервной копии базы данных Pacman](#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D1.80.D0.B5.D0.B7.D0.B5.D1.80.D0.B2.D0.BD.D0.BE.D0.B9_.D0.BA.D0.BE.D0.BF.D0.B8.D0.B8_.D0.B1.D0.B0.D0.B7.D1.8B_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D1.85_Pacman)
-    *   [2.9 Лёгкий способ проверки списка изменений](#.D0.9B.D1.91.D0.B3.D0.BA.D0.B8.D0.B9_.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1_.D0.BF.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.B8_.D1.81.D0.BF.D0.B8.D1.81.D0.BA.D0.B0_.D0.B8.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B9)
-*   [3 Установка и восстановление](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B8_.D0.B2.D0.BE.D1.81.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5)
-    *   [3.1 Установка пакетов с CD/DVD или USB накопителя](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2_.D1.81_CD.2FDVD_.D0.B8.D0.BB.D0.B8_USB_.D0.BD.D0.B0.D0.BA.D0.BE.D0.BF.D0.B8.D1.82.D0.B5.D0.BB.D1.8F)
-    *   [3.2 Собственный локальный репозиторий](#.D0.A1.D0.BE.D0.B1.D1.81.D1.82.D0.B2.D0.B5.D0.BD.D0.BD.D1.8B.D0.B9_.D0.BB.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D1.8B.D0.B9_.D1.80.D0.B5.D0.BF.D0.BE.D0.B7.D0.B8.D1.82.D0.BE.D1.80.D0.B8.D0.B9)
-    *   [3.3 Общий кэш pacman](#.D0.9E.D0.B1.D1.89.D0.B8.D0.B9_.D0.BA.D1.8D.D1.88_pacman)
-        *   [3.3.1 Только для чтения](#.D0.A2.D0.BE.D0.BB.D1.8C.D0.BA.D0.BE_.D0.B4.D0.BB.D1.8F_.D1.87.D1.82.D0.B5.D0.BD.D0.B8.D1.8F)
-        *   [3.3.2 Чтение-запись](#.D0.A7.D1.82.D0.B5.D0.BD.D0.B8.D0.B5-.D0.B7.D0.B0.D0.BF.D0.B8.D1.81.D1.8C)
+*   [1 Красота и комфорт](#Красота_и_комфорт)
+    *   [1.1 Графические оболочки](#Графические_оболочки)
+    *   [1.2 Утилиты](#Утилиты)
+*   [2 Обслуживание](#Обслуживание)
+    *   [2.1 Список пакетов](#Список_пакетов)
+        *   [2.1.1 С размером](#С_размером)
+            *   [2.1.1.1 Индивидуальные пакеты](#Индивидуальные_пакеты)
+            *   [2.1.1.2 Пакеты с зависимостями](#Пакеты_с_зависимостями)
+        *   [2.1.2 По дате](#По_дате)
+        *   [2.1.3 Не принадлежащие определенной группе или репозиторию](#Не_принадлежащие_определенной_группе_или_репозиторию)
+        *   [2.1.4 Находящиеся в разработке](#Находящиеся_в_разработке)
+    *   [2.2 Просмотр файлов, принадлежащих пакету с определенным размером](#Просмотр_файлов,_принадлежащих_пакету_с_определенным_размером)
+    *   [2.3 Поиск файлов, не принадлежащих ни одному пакету](#Поиск_файлов,_не_принадлежащих_ни_одному_пакету)
+    *   [2.4 Удаление неиспользуемых пакетов](#Удаление_неиспользуемых_пакетов)
+    *   [2.5 Удаление всех пакетов, кроме группы base](#Удаление_всех_пакетов,_кроме_группы_base)
+    *   [2.6 Получения списка зависимостей нескольких пакетов](#Получения_списка_зависимостей_нескольких_пакетов)
+    *   [2.7 Построение списка изменённых файлов из резервного копирования](#Построение_списка_изменённых_файлов_из_резервного_копирования)
+    *   [2.8 Создание резервной копии базы данных Pacman](#Создание_резервной_копии_базы_данных_Pacman)
+    *   [2.9 Лёгкий способ проверки списка изменений](#Лёгкий_способ_проверки_списка_изменений)
+*   [3 Установка и восстановление](#Установка_и_восстановление)
+    *   [3.1 Установка пакетов с CD/DVD или USB накопителя](#Установка_пакетов_с_CD/DVD_или_USB_накопителя)
+    *   [3.2 Собственный локальный репозиторий](#Собственный_локальный_репозиторий)
+    *   [3.3 Общий кэш pacman](#Общий_кэш_pacman)
+        *   [3.3.1 Только для чтения](#Только_для_чтения)
+        *   [3.3.2 Чтение-запись](#Чтение-запись)
         *   [3.3.3 Dynamic reverse proxy cache using nginx](#Dynamic_reverse_proxy_cache_using_nginx)
         *   [3.3.4 Synchronize pacman package cache using BitTorrent Sync](#Synchronize_pacman_package_cache_using_BitTorrent_Sync)
         *   [3.3.5 Preventing unwanted cache purges](#Preventing_unwanted_cache_purges)
     *   [3.4 Recreate a package from the file system](#Recreate_a_package_from_the_file_system)
-    *   [3.5 Резервное копирование и извлечение списка установленных пакетов](#.D0.A0.D0.B5.D0.B7.D0.B5.D1.80.D0.B2.D0.BD.D0.BE.D0.B5_.D0.BA.D0.BE.D0.BF.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B8_.D0.B8.D0.B7.D0.B2.D0.BB.D0.B5.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81.D0.BF.D0.B8.D1.81.D0.BA.D0.B0_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2)
+    *   [3.5 Резервное копирование и извлечение списка установленных пакетов](#Резервное_копирование_и_извлечение_списка_установленных_пакетов)
     *   [3.6 Listing all changed files from packages](#Listing_all_changed_files_from_packages)
-    *   [3.7 Переустановка всех пакетов](#.D0.9F.D0.B5.D1.80.D0.B5.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B2.D1.81.D0.B5.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2)
-    *   [3.8 Restore pacman's local database](#Restore_pacman.27s_local_database)
+    *   [3.7 Переустановка всех пакетов](#Переустановка_всех_пакетов)
+    *   [3.8 Restore pacman's local database](#Restore_pacman's_local_database)
         *   [3.8.1 Generating the package recovery list](#Generating_the_package_recovery_list)
         *   [3.8.2 Performing the recovery](#Performing_the_recovery)
     *   [3.9 Recovering a USB key from existing install](#Recovering_a_USB_key_from_existing_install)
@@ -50,11 +50,11 @@
     *   [3.12 Find applications that use libraries from older packages](#Find_applications_that_use_libraries_from_older_packages)
 *   [4 Performance](#Performance)
     *   [4.1 Database access speeds](#Database_access_speeds)
-    *   [4.2 Увеличение скорости загрузки](#.D0.A3.D0.B2.D0.B5.D0.BB.D0.B8.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81.D0.BA.D0.BE.D1.80.D0.BE.D1.81.D1.82.D0.B8_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8)
+    *   [4.2 Увеличение скорости загрузки](#Увеличение_скорости_загрузки)
         *   [4.2.1 Powerpill](#Powerpill)
         *   [4.2.2 wget](#wget)
         *   [4.2.3 aria2](#aria2)
-        *   [4.2.4 Другие приложения](#.D0.94.D1.80.D1.83.D0.B3.D0.B8.D0.B5_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F)
+        *   [4.2.4 Другие приложения](#Другие_приложения)
 
 ## Красота и комфорт
 
@@ -196,7 +196,7 @@ $ expac --timefmt=%s '%l\t%n' | sort -n | tail -n 20
 
 #### Не принадлежащие определенной группе или репозиторию
 
-**Примечание:** Чтобы получить список пакетов, установленных ранее как зависимости, но теперь никому не принадлежащие, смотрите [#Удаление неиспользуемых пакетов](#.D0.A3.D0.B4.D0.B0.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BD.D0.B5.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D1.83.D0.B5.D0.BC.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2).
+**Примечание:** Чтобы получить список пакетов, установленных ранее как зависимости, но теперь никому не принадлежащие, смотрите [#Удаление неиспользуемых пакетов](#Удаление_неиспользуемых_пакетов).
 
 Следующая команда выведет список всех установленных пакетов, которые не принадлежат [base](https://www.archlinux.org/groups/x86_64/base/) или [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/):
 
@@ -337,7 +337,7 @@ $ tar -cjf pacman_database.tar.bz2 /var/lib/pacman/local
 
 ```
 
-**Примечание:** Если файл с базой данных Pacman повреждён и нет других доступных резервных копий, есть надежда исправить ситуацию путём пересоздания базы данных. Подробнее смотрите тут: [Pacman tips#Restore pacman's local database](/index.php/Pacman_tips#Restore_pacman.27s_local_database "Pacman tips").
+**Примечание:** Если файл с базой данных Pacman повреждён и нет других доступных резервных копий, есть надежда исправить ситуацию путём пересоздания базы данных. Подробнее смотрите тут: [Pacman tips#Restore pacman's local database](/index.php/Pacman_tips#Restore_pacman's_local_database "Pacman tips").
 
 **Совет:** Пакет [pakbak-git](https://aur.archlinux.org/packages/pakbak-git/) предоставляет скрипт и сервис [systemd](/index.php/Systemd "Systemd") для автоматизации этой задачи. Конфигурация доступна в `/etc/pakbak.conf`.
 
@@ -630,7 +630,7 @@ Finally, you may want to remove all the packages on your system that are not men
 
 If you are suspecting file corruption (e.g. by software / hardware failure), but don't know for sure whether / which files really got corrupted, you might want to compare with the hash sums in the packages. This can be done with the following script.
 
-The script depends on the accuracy of pacman's database in `/var/lib/pacman/local/` and the used programs such as *bash*, *grep* and so on. For recovery of the database see [#Restore pacman's local database](#Restore_pacman.27s_local_database). The `mtree` files can also be [extracted as `.MTREE` from the respective package files](#Viewing_a_single_file_inside_a_.pkg_file).
+The script depends on the accuracy of pacman's database in `/var/lib/pacman/local/` and the used programs such as *bash*, *grep* and so on. For recovery of the database see [#Restore pacman's local database](#Restore_pacman's_local_database). The `mtree` files can also be [extracted as `.MTREE` from the respective package files](#Viewing_a_single_file_inside_a_.pkg_file).
 
 **Примечание:**
 

@@ -2,7 +2,7 @@
 
 *   [1 Description](#Description)
     *   [1.1 Configure needed kernel modules](#Configure_needed_kernel_modules)
-    *   [1.2 Install iRiver driver/manager software](#Install_iRiver_driver.2Fmanager_software)
+    *   [1.2 Install iRiver driver/manager software](#Install_iRiver_driver/manager_software)
     *   [1.3 Verify that you can connect to your iRiver device](#Verify_that_you_can_connect_to_your_iRiver_device)
     *   [1.4 Midnight Commander setup](#Midnight_Commander_setup)
     *   [1.5 Setting up udev to automatically assign permissions](#Setting_up_udev_to_automatically_assign_permissions)

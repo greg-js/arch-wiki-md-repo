@@ -35,10 +35,10 @@ This article contains recommendations and best practices for [hardening](https:/
     *   [6.2 Labels MAC](#Labels_MAC)
     *   [6.3 Access Control Lists](#Access_Control_Lists)
 *   [7 Kernel hardening](#Kernel_hardening)
-    *   [7.1 Kernel self-protection / exploit mitigation](#Kernel_self-protection_.2F_exploit_mitigation)
+    *   [7.1 Kernel self-protection / exploit mitigation](#Kernel_self-protection_/_exploit_mitigation)
         *   [7.1.1 Userspace ASLR comparison](#Userspace_ASLR_comparison)
             *   [7.1.1.1 64-bit processes](#64-bit_processes)
-            *   [7.1.1.2 32-bit processes (on an x86_64 kernel)](#32-bit_processes_.28on_an_x86_64_kernel.29)
+            *   [7.1.1.2 32-bit processes (on an x86_64 kernel)](#32-bit_processes_(on_an_x86_64_kernel))
     *   [7.2 Restricting access to kernel logs](#Restricting_access_to_kernel_logs)
     *   [7.3 Restricting access to kernel pointers in the proc filesystem](#Restricting_access_to_kernel_pointers_in_the_proc_filesystem)
     *   [7.4 Keep BPF JIT compiler disabled](#Keep_BPF_JIT_compiler_disabled)
@@ -268,7 +268,7 @@ The root user is, by definition, the most powerful user on a system. Because of 
 
 ### Use sudo instead of su
 
-Using [sudo](/index.php/Sudo "Sudo") for privileged access is preferable to [su](/index.php/Su "Su") for [a number of reasons](/index.php/Su#Sudo.2C_an_alternative "Su").
+Using [sudo](/index.php/Sudo "Sudo") for privileged access is preferable to [su](/index.php/Su "Su") for [a number of reasons](/index.php/Su#Sudo,_an_alternative "Su").
 
 *   It keeps a log of which normal privilege user has run each privileged command.
 *   The root user password need not be given out to each user who requires root access.
@@ -549,7 +549,7 @@ While the stock Arch kernel is capable of using [Netfilter](https://en.wikipedia
 
 ### Kernel parameters
 
-Kernel parameters which affect networking can be set using [Sysctl](/index.php/Sysctl "Sysctl"). For how to do this, see [Sysctl#TCP/IP stack hardening](/index.php/Sysctl#TCP.2FIP_stack_hardening "Sysctl").
+Kernel parameters which affect networking can be set using [Sysctl](/index.php/Sysctl "Sysctl"). For how to do this, see [Sysctl#TCP/IP stack hardening](/index.php/Sysctl#TCP/IP_stack_hardening "Sysctl").
 
 ### SSH
 

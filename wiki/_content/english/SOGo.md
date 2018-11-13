@@ -22,12 +22,12 @@ Related articles
     *   [2.2 nginx](#nginx)
     *   [2.3 Start and test web access](#Start_and_test_web_access)
 *   [3 SOGo database configuration](#SOGo_database_configuration)
-    *   [3.1 MySQL/MariaDB](#MySQL.2FMariaDB)
+    *   [3.1 MySQL/MariaDB](#MySQL/MariaDB)
         *   [3.1.1 Migrating from a previous PostgreSQL configuration](#Migrating_from_a_previous_PostgreSQL_configuration)
     *   [3.2 PostgreSQL](#PostgreSQL)
 *   [4 Configuring user databases](#Configuring_user_databases)
     *   [4.1 Active Directory](#Active_Directory)
-    *   [4.2 MySQL/MariaDB](#MySQL.2FMariaDB_2)
+    *   [4.2 MySQL/MariaDB](#MySQL/MariaDB_2)
         *   [4.2.1 Prerequisites](#Prerequisites_2)
         *   [4.2.2 Creation of the sogo_users table](#Creation_of_the_sogo_users_table)
         *   [4.2.3 Modify SOGo config file](#Modify_SOGo_config_file)
@@ -369,7 +369,7 @@ If problems occure, check via *journalctl -xe*
 
 #### Prerequisites
 
-1.  Ensure the sogo user is created in the database (see [#MySQL/MariaDB](#MySQL.2FMariaDB)).
+1.  Ensure the sogo user is created in the database (see [#MySQL/MariaDB](#MySQL/MariaDB)).
 2.  Ensure that there is a database named sogo with the database scheme utf8 (and not utf8mb4). This is necessary because the automatic creation of the *sogo_sessions_folder* table will fail otherwise:
 
 ```

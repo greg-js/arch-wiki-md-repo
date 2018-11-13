@@ -9,19 +9,19 @@ Artigos relacionados
 
 ## Contents
 
-*   [1 Instalação](#Instala.C3.A7.C3.A3o)
-*   [2 Configuração](#Configura.C3.A7.C3.A3o)
+*   [1 Instalação](#Instalação)
+*   [2 Configuração](#Configuração)
     *   [2.1 Habilitar ccache para makepkg](#Habilitar_ccache_para_makepkg)
     *   [2.2 Habilitar para linha de comando](#Habilitar_para_linha_de_comando)
     *   [2.3 Habilitar com colorgcc](#Habilitar_com_colorgcc)
 *   [3 Diversos](#Diversos)
-    *   [3.1 Alterar o diretório do cache](#Alterar_o_diret.C3.B3rio_do_cache)
-    *   [3.2 Configurar o tamanho máximo do cache](#Configurar_o_tamanho_m.C3.A1ximo_do_cache)
+    *   [3.1 Alterar o diretório do cache](#Alterar_o_diretório_do_cache)
+    *   [3.2 Configurar o tamanho máximo do cache](#Configurar_o_tamanho_máximo_do_cache)
     *   [3.3 Desabilitar o cacho via ambiente](#Desabilitar_o_cacho_via_ambiente)
     *   [3.4 CLI](#CLI)
     *   [3.5 makechrootpkg](#makechrootpkg)
-*   [4 Advertência](#Advert.C3.AAncia)
-*   [5 Veja também](#Veja_tamb.C3.A9m)
+*   [4 Advertência](#Advertência)
+*   [5 Veja também](#Veja_também)
 
 ## Instalação
 

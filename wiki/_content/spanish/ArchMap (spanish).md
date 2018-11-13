@@ -16,7 +16,7 @@ El proyecto **ArchMap** crea un mapa de usuarios de Arch Linux de todo el mundo.
     *   [3.1 OpenStreetMap](#OpenStreetMap)
     *   [3.2 Google Earth](#Google_Earth)
     *   [3.3 Mapas generados por los usuarios](#Mapas_generados_por_los_usuarios)
-*   [4 Alístese](#Al.C3.ADstese)
+*   [4 Alístese](#Alístese)
 
 ## Historia
 

@@ -6,10 +6,10 @@
 *   [2 Configuration](#Configuration)
     *   [2.1 Admin SSH access](#Admin_SSH_access)
     *   [2.2 Create a repository](#Create_a_repository)
-    *   [2.3 Adding http(s) access via Apache (with basic authentication)](#Adding_http.28s.29_access_via_Apache_.28with_basic_authentication.29)
+    *   [2.3 Adding http(s) access via Apache (with basic authentication)](#Adding_http(s)_access_via_Apache_(with_basic_authentication))
 *   [3 Add users](#Add_users)
     *   [3.1 ssh users](#ssh_users)
-    *   [3.2 http(s) users](#http.28s.29_users)
+    *   [3.2 http(s) users](#http(s)_users)
 *   [4 Troubleshooting](#Troubleshooting)
 *   [5 See also](#See_also)
 

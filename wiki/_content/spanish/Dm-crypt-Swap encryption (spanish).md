@@ -11,9 +11,9 @@ Dependiendo de los requisitos, se pueden usar diferentes métodos para cifrar la
 
 ## Contents
 
-*   [1 Sin soporte para suspensión en disco](#Sin_soporte_para_suspensi.C3.B3n_en_disco)
+*   [1 Sin soporte para suspensión en disco](#Sin_soporte_para_suspensión_en_disco)
     *   [1.1 UUID y LABEL](#UUID_y_LABEL)
-*   [2 Con soporte para suspensión en disco](#Con_soporte_para_suspensi.C3.B3n_en_disco)
+*   [2 Con soporte para suspensión en disco](#Con_soporte_para_suspensión_en_disco)
     *   [2.1 LVM sobre LUKS](#LVM_sobre_LUKS)
     *   [2.2 Hook de mkinitcpio](#Hook_de_mkinitcpio)
     *   [2.3 Utilizar un archivo de intercambio](#Utilizar_un_archivo_de_intercambio)
@@ -113,7 +113,7 @@ luego ejecute `grub-mkconfig -o /boot/grub/grub.cfg` para actualizar el archivo 
 
  `/etc/mkinitcpio.conf`  `HOOKS=(... encrypt lvm2 **resume** ... filesystems ...)` 
 
-después [regenere initramfs](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Creaci.C3.B3n_de_la_imagen_y_activaci.C3.B3n "Mkinitcpio (Español)").
+después [regenere initramfs](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Creación_de_la_imagen_y_activación "Mkinitcpio (Español)").
 
 ### Hook de mkinitcpio
 
@@ -157,7 +157,7 @@ Cree un sistema de archivos de intercambio en la partición mapeada:
 
 ```
 
-Ahora tiene que crear un hook para abrir el espacio de intercambio en el momento del arranque. Puede [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") y configurar [mkinitcpio-openswap](https://aur.archlinux.org/packages/mkinitcpio-openswap/), o seguir las siguientes instrucciones. Cree un archivo de hook que contenga la orden de abrir:
+Ahora tiene que crear un hook para abrir el espacio de intercambio en el momento del arranque. Puede [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") y configurar [mkinitcpio-openswap](https://aur.archlinux.org/packages/mkinitcpio-openswap/), o seguir las siguientes instrucciones. Cree un archivo de hook que contenga la orden de abrir:
 
  `/etc/initcpio/hooks/openswap` 
 ```
@@ -194,7 +194,7 @@ para abrir el dispositivo de intercambio cargando un archivo de claves desde un 
 
 En algunos equipos, las condiciones de velocidad pueden hacer que mkinitcpio intente montar el dispositivo antes de que se complete el proceso de descifrado y de numeración del dispositivo. El bloque *Optional* comentado retrasará el proceso de arranque hasta 2 segundos, momento en el que el dispositivo raíz estará listo para montarse.
 
-**Nota:** Si el espacio de intercambio está en un disco de estado sólido (SSD) y se desea utilizar la orden Discard/[TRIM](https://en.wikipedia.org/wiki/es:TRIM "wikipedia:es:TRIM"), la opción `--allow-discards` debe agregarse a la línea de cryptsetup antes del hook openswap. Consulte [Dm-crypt/Specialties#Discard/TRIM support for solid state drives (SSD)](/index.php/Dm-crypt/Specialties#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29 "Dm-crypt/Specialties") o [Solid state drive](/index.php/Solid_state_drive "Solid state drive") para obtener más información sobre «discard». Además, debe agregar la opción de montaje 'discard' a su entrada de fstab para el dispositivo de intercambio.
+**Nota:** Si el espacio de intercambio está en un disco de estado sólido (SSD) y se desea utilizar la orden Discard/[TRIM](https://en.wikipedia.org/wiki/es:TRIM "wikipedia:es:TRIM"), la opción `--allow-discards` debe agregarse a la línea de cryptsetup antes del hook openswap. Consulte [Dm-crypt/Specialties#Discard/TRIM support for solid state drives (SSD)](/index.php/Dm-crypt/Specialties#Discard/TRIM_support_for_solid_state_drives_(SSD) "Dm-crypt/Specialties") o [Solid state drive](/index.php/Solid_state_drive "Solid state drive") para obtener más información sobre «discard». Además, debe agregar la opción de montaje 'discard' a su entrada de fstab para el dispositivo de intercambio.
 
 Luego cree y edite el archivo de configuración del hook:
 
@@ -220,7 +220,7 @@ HOOKS=(... encrypt openswap resume filesystems ...)
 
 ```
 
-[Regenere initramfs](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Creaci.C3.B3n_de_la_imagen_y_activaci.C3.B3n "Mkinitcpio (Español)").
+[Regenere initramfs](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Creación_de_la_imagen_y_activación "Mkinitcpio (Español)").
 
 Añada la partición mapeada a `/etc/fstab` agregando la siguiente línea:
 
@@ -246,7 +246,7 @@ Se puede utilizar un archivo de intercambio para reservar un espacio de intercam
 
 Para crearlo, primero elija una partición mapeada (por ejemplo, `/dev/mapper/rootDevice`) cuyo sistema de archivos montado (por ejemplo, en `/`) contenga suficiente espacio libre como para crear un archivo de intercambio con el tamaño deseado.
 
-Ahora [cree el archivo de intercambio](/index.php/Swap_(Espa%C3%B1ol)#Creaci.C3.B3n_de_un_archivo_swap "Swap (Español)") (por ejemplo, `/swapfile`) dentro del sistema de archivos montado de la partición mapeada elegida. Asegúrese de activarlo con `swapon` y también agrege su archivo a `/etc/fstab` más adelante. Tenga en cuenta que el contenido anterior del archivo de intercambio permanece transparente durante los reinicios.
+Ahora [cree el archivo de intercambio](/index.php/Swap_(Espa%C3%B1ol)#Creación_de_un_archivo_swap "Swap (Español)") (por ejemplo, `/swapfile`) dentro del sistema de archivos montado de la partición mapeada elegida. Asegúrese de activarlo con `swapon` y también agrege su archivo a `/etc/fstab` más adelante. Tenga en cuenta que el contenido anterior del archivo de intercambio permanece transparente durante los reinicios.
 
 Configure su sistema para reanudar desde la partición mapeada elegida. Por ejemplo, si utiliza [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") con soporte para hibernación del kernel, agregue `resume=`*su partición mapeada elegida* y `resume_offset=`*vea el cálculo de la orden siguiente* a la línea del kernel en la configuración de GRUB (generalmente en `/etc/default/grub`). Una línea con una partición raíz encriptada puede verse así:
 
@@ -262,7 +262,7 @@ El `resume_offset` del archivo de intercambio apunta al inicio (extensión cero)
 
 ```
 
-Agregue el hook `resume` al archivo `etc/mkinitcpio.conf` y [regenere initramfs](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Creaci.C3.B3n_de_la_imagen_y_activaci.C3.B3n "Mkinitcpio (Español)") después:
+Agregue el hook `resume` al archivo `etc/mkinitcpio.conf` y [regenere initramfs](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Creación_de_la_imagen_y_activación "Mkinitcpio (Español)") después:
 
 ```
 HOOKS=(... encrypt **resume** ... filesystems ...)

@@ -2,8 +2,8 @@
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Configuración](#Configuraci.C3.B3n)
+*   [1 Instalación](#Instalación)
+*   [2 Configuración](#Configuración)
 *   [3 Instalando Scripts](#Instalando_Scripts)
 *   [4 Enlaces Externos](#Enlaces_Externos)
 

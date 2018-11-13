@@ -7,74 +7,74 @@ Artículos relacionados
 *   [Guía de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)")
 *   [Lista de aplicaciones](/index.php/List_of_applications_(Espa%C3%B1ol) "List of applications (Español)")
 
-Este documento es un índice con anotaciones a otros artículos populares e información importante para mejorar y añadir funcionalidades al sistema Arch instalado. Se supone que los lectores han leído y seguido la [guía de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)") para instalar un sistema básico de Arch Linux. Es necesario haber leído y comprendido los conceptos explicados en [administración del sistema](#Administraci.C3.B3n_del_sistema) y [administración de paquetes](#Administraci.C3.B3n_de_paquetes) antes de continuar con las otras secciones de esta página y de otros artículos de la wiki.
+Este documento es un índice con anotaciones a otros artículos populares e información importante para mejorar y añadir funcionalidades al sistema Arch instalado. Se supone que los lectores han leído y seguido la [guía de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)") para instalar un sistema básico de Arch Linux. Es necesario haber leído y comprendido los conceptos explicados en [administración del sistema](#Administración_del_sistema) y [administración de paquetes](#Administración_de_paquetes) antes de continuar con las otras secciones de esta página y de otros artículos de la wiki.
 
 ## Contents
 
-*   [1 Administración del sistema](#Administraci.C3.B3n_del_sistema)
+*   [1 Administración del sistema](#Administración_del_sistema)
     *   [1.1 Usuarios y grupos](#Usuarios_y_grupos)
     *   [1.2 Escalado de privilegios](#Escalado_de_privilegios)
-    *   [1.3 Administración de servicios](#Administraci.C3.B3n_de_servicios)
+    *   [1.3 Administración de servicios](#Administración_de_servicios)
     *   [1.4 Mantenimiento del sistema](#Mantenimiento_del_sistema)
-*   [2 Administración de paquetes](#Administraci.C3.B3n_de_paquetes)
+*   [2 Administración de paquetes](#Administración_de_paquetes)
     *   [2.1 pacman](#pacman)
     *   [2.2 Repositorios](#Repositorios)
-    *   [2.3 Servidores de réplicas](#Servidores_de_r.C3.A9plicas)
-    *   [2.4 Sistema de construcción de Arch](#Sistema_de_construcci.C3.B3n_de_Arch)
+    *   [2.3 Servidores de réplicas](#Servidores_de_réplicas)
+    *   [2.4 Sistema de construcción de Arch](#Sistema_de_construcción_de_Arch)
     *   [2.5 Repositorio de usuario de Arch](#Repositorio_de_usuario_de_Arch)
 *   [3 Arranque](#Arranque)
-    *   [3.1 Reconocimiento automático del hardware](#Reconocimiento_autom.C3.A1tico_del_hardware)
-    *   [3.2 Microcódigo](#Microc.C3.B3digo)
+    *   [3.1 Reconocimiento automático del hardware](#Reconocimiento_automático_del_hardware)
+    *   [3.2 Microcódigo](#Microcódigo)
     *   [3.3 Conservar los mensajes del arranque](#Conservar_los_mensajes_del_arranque)
     *   [3.4 Activar Bloq Num al inicio](#Activar_Bloq_Num_al_inicio)
-*   [4 Interfaz gráfica de usuario](#Interfaz_gr.C3.A1fica_de_usuario)
+*   [4 Interfaz gráfica de usuario](#Interfaz_gráfica_de_usuario)
     *   [4.1 Servidor de pantalla](#Servidor_de_pantalla)
     *   [4.2 Controladores de pantalla](#Controladores_de_pantalla)
     *   [4.3 Entornos de escritorio](#Entornos_de_escritorio)
     *   [4.4 Administradores de ventanas](#Administradores_de_ventanas)
     *   [4.5 Administradores de pantalla](#Administradores_de_pantalla)
-*   [5 Administración de energía](#Administraci.C3.B3n_de_energ.C3.ADa)
+*   [5 Administración de energía](#Administración_de_energía)
     *   [5.1 Eventos de ACPI](#Eventos_de_ACPI)
-    *   [5.2 Regulación de la frecuencia de la CPU](#Regulaci.C3.B3n_de_la_frecuencia_de_la_CPU)
-    *   [5.3 Portátiles](#Port.C3.A1tiles)
-    *   [5.4 Suspensión e hibernación](#Suspensi.C3.B3n_e_hibernaci.C3.B3n)
+    *   [5.2 Regulación de la frecuencia de la CPU](#Regulación_de_la_frecuencia_de_la_CPU)
+    *   [5.3 Portátiles](#Portátiles)
+    *   [5.4 Suspensión e hibernación](#Suspensión_e_hibernación)
 *   [6 Multimedia](#Multimedia)
     *   [6.1 Sonido](#Sonido)
     *   [6.2 Complementos para el navegador](#Complementos_para_el_navegador)
-    *   [6.3 Códecs](#C.C3.B3decs)
+    *   [6.3 Códecs](#Códecs)
 *   [7 Redes](#Redes)
-    *   [7.1 Sincronización del reloj](#Sincronizaci.C3.B3n_del_reloj)
+    *   [7.1 Sincronización del reloj](#Sincronización_del_reloj)
     *   [7.2 Seguridad DNS](#Seguridad_DNS)
     *   [7.3 Configurar un cortafuegos](#Configurar_un_cortafuegos)
     *   [7.4 Compartir recursos](#Compartir_recursos)
 *   [8 Dispositivos de entrada](#Dispositivos_de_entrada)
     *   [8.1 Distribuciones de teclado](#Distribuciones_de_teclado)
-    *   [8.2 Botones del ratón](#Botones_del_rat.C3.B3n)
-    *   [8.3 Pantalla táctil del portátil](#Pantalla_t.C3.A1ctil_del_port.C3.A1til)
+    *   [8.2 Botones del ratón](#Botones_del_ratón)
+    *   [8.3 Pantalla táctil del portátil](#Pantalla_táctil_del_portátil)
     *   [8.4 TrackPoints](#TrackPoints)
-*   [9 Optimización](#Optimizaci.C3.B3n)
+*   [9 Optimización](#Optimización)
     *   [9.1 Benchmarking](#Benchmarking)
     *   [9.2 Mejorando el rendimiento](#Mejorando_el_rendimiento)
-    *   [9.3 Discos de estado sólido](#Discos_de_estado_s.C3.B3lido)
+    *   [9.3 Discos de estado sólido](#Discos_de_estado_sólido)
 *   [10 Servicios del sistema](#Servicios_del_sistema)
-    *   [10.1 Índice de archivos y búsqueda](#.C3.8Dndice_de_archivos_y_b.C3.BAsqueda)
-    *   [10.2 Entrega de correo electrónico local](#Entrega_de_correo_electr.C3.B3nico_local)
-    *   [10.3 Impresión](#Impresi.C3.B3n)
+    *   [10.1 Índice de archivos y búsqueda](#Índice_de_archivos_y_búsqueda)
+    *   [10.2 Entrega de correo electrónico local](#Entrega_de_correo_electrónico_local)
+    *   [10.3 Impresión](#Impresión)
 *   [11 Apariencia](#Apariencia)
     *   [11.1 Tipos de letra](#Tipos_de_letra)
-    *   [11.2 Temas para GTK+ y Qt](#Temas_para_GTK.2B_y_Qt)
-*   [12 Mejoras para la línea de comandos](#Mejoras_para_la_l.C3.ADnea_de_comandos)
+    *   [11.2 Temas para GTK+ y Qt](#Temas_para_GTK+_y_Qt)
+*   [12 Mejoras para la línea de comandos](#Mejoras_para_la_línea_de_comandos)
     *   [12.1 Mejoras de autocompletado con tabulador](#Mejoras_de_autocompletado_con_tabulador)
     *   [12.2 Alias](#Alias)
-    *   [12.3 Intérpretes de línea de órdenes alternativos](#Int.C3.A9rpretes_de_l.C3.ADnea_de_.C3.B3rdenes_alternativos)
+    *   [12.3 Intérpretes de línea de órdenes alternativos](#Intérpretes_de_línea_de_órdenes_alternativos)
     *   [12.4 Complementos para bash](#Complementos_para_bash)
     *   [12.5 Salida coloreada](#Salida_coloreada)
     *   [12.6 Archivos comprimidos](#Archivos_comprimidos)
-    *   [12.7 Indicador de la línea de comandos](#Indicador_de_la_l.C3.ADnea_de_comandos)
-    *   [12.8 Intérprete de línea de órdenes emacs](#Int.C3.A9rprete_de_l.C3.ADnea_de_.C3.B3rdenes_emacs)
-    *   [12.9 Soporte del ratón](#Soporte_del_rat.C3.B3n)
-    *   [12.10 Búfer de desplazamiento hacia atrás](#B.C3.BAfer_de_desplazamiento_hacia_atr.C3.A1s)
-    *   [12.11 Administración de las sesiones](#Administraci.C3.B3n_de_las_sesiones)
+    *   [12.7 Indicador de la línea de comandos](#Indicador_de_la_línea_de_comandos)
+    *   [12.8 Intérprete de línea de órdenes emacs](#Intérprete_de_línea_de_órdenes_emacs)
+    *   [12.9 Soporte del ratón](#Soporte_del_ratón)
+    *   [12.10 Búfer de desplazamiento hacia atrás](#Búfer_de_desplazamiento_hacia_atrás)
+    *   [12.11 Administración de las sesiones](#Administración_de_las_sesiones)
 
 ## Administración del sistema
 
@@ -82,7 +82,7 @@ Esta sección se ocupa de las tareas administrativas y de gestión del sistema. 
 
 ### Usuarios y grupos
 
-Una instalación nueva deja solamente la cuenta de [superusuario](https://en.wikipedia.org/wiki/es:Root en un servidor, [es inseguro](https://apple.stackexchange.com/questions/192365/is-it-ok-to-use-the-root-user-as-a-normal-user/192422#192422). En su lugar, debe crear y usar cuentas de usuario sin privilegios para la mayoría de las tareas, solo utilizando la cuenta root para la administración del sistema. Véase [Administración de usuarios](/index.php/Users_and_groups_(Espa%C3%B1ol)#Administraci.C3.B3n_de_usuarios "Users and groups (Español)") para obtener más detalles.
+Una instalación nueva deja solamente la cuenta de [superusuario](https://en.wikipedia.org/wiki/es:Root en un servidor, [es inseguro](https://apple.stackexchange.com/questions/192365/is-it-ok-to-use-the-root-user-as-a-normal-user/192422#192422). En su lugar, debe crear y usar cuentas de usuario sin privilegios para la mayoría de las tareas, solo utilizando la cuenta root para la administración del sistema. Véase [Administración de usuarios](/index.php/Users_and_groups_(Espa%C3%B1ol)#Administración_de_usuarios "Users and groups (Español)") para obtener más detalles.
 
 Los usuarios y grupos son un mecanismo para el *control de acceso*; los administradores pueden ajustar la pertenencia y propiedad de grupo para otorgar o denegar a los usuarios y servicios el acceso a los recursos del sistema. Véase [usuarios y grupos](/index.php/Users_and_groups_(Espa%C3%B1ol) "Users and groups (Español)") para más detalles y conocer potenciales riesgos de seguridad.
 
@@ -92,7 +92,7 @@ Los comandos [su](/index.php/Su_(Espa%C3%B1ol) "Su (Español)") y [sudo](/index.
 
 ### Administración de servicios
 
-Arch Linux usa [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") como proceso [init](/index.php/Init "Init"), que es un administrador de sistemas y servicios para Linux. Para el mantenimiento de su instalación de Arch Linux, es una buena idea aprender los conceptos básicos al respecto. La interacción con *systemd* se realiza a través del comando *systemctl*. Véase [uso básico de systemctl](/index.php/Systemd_(Espa%C3%B1ol)#Uso_b.C3.A1sico_de_systemctl "Systemd (Español)") para obtener más información.
+Arch Linux usa [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") como proceso [init](/index.php/Init "Init"), que es un administrador de sistemas y servicios para Linux. Para el mantenimiento de su instalación de Arch Linux, es una buena idea aprender los conceptos básicos al respecto. La interacción con *systemd* se realiza a través del comando *systemctl*. Véase [uso básico de systemctl](/index.php/Systemd_(Espa%C3%B1ol)#Uso_básico_de_systemctl "Systemd (Español)") para obtener más información.
 
 ### Mantenimiento del sistema
 
@@ -100,7 +100,7 @@ Arch es un sistema de lanzamiento continuo y cuenta con una rápida rotación de
 
 ## Administración de paquetes
 
-Esta sección contiene información útil relacionada con la administración de los paquetes. Para más información, véase [Frequently asked questions (Español)#Administración de paquetes](/index.php/Frequently_asked_questions_(Espa%C3%B1ol)#Administraci.C3.B3n_de_paquetes "Frequently asked questions (Español)") y [Category:Package management (Español)](/index.php/Category:Package_management_(Espa%C3%B1ol) "Category:Package management (Español)").
+Esta sección contiene información útil relacionada con la administración de los paquetes. Para más información, véase [Frequently asked questions (Español)#Administración de paquetes](/index.php/Frequently_asked_questions_(Espa%C3%B1ol)#Administración_de_paquetes "Frequently asked questions (Español)") y [Category:Package management (Español)](/index.php/Category:Package_management_(Espa%C3%B1ol) "Category:Package management (Español)").
 
 **Nota:** Es imprescindible mantenerse al día de los cambios en Arch Linux para conocer aquellos que requieren una intervención manual, **antes** de actualizar su sistema. Suscríbase a la [arch-announce mailing list](https://mailman.archlinux.org/mailman/listinfo/arch-announce/) y compruebe la página principal de [Arch news](https://www.archlinux.org/) antes de realizar cualquier actualización. Por otro lado, puede encontrar útil suscribirse a este [RSS feed](https://www.archlinux.org/feeds/news/).
 
@@ -190,7 +190,7 @@ Véase [administración de energía](/index.php/Power_management_(Espa%C3%B1ol) 
 
 ### Eventos de ACPI
 
-Los usuarios pueden configurar cómo reacciona el sistema a los eventos de ACPI, como presionar el botón de encendido o cerrar la tapa del portátil. Para el nuevo método (recomendado) usando [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"), véase [administración de energía con systemd](/index.php/Power_management_(Espa%C3%B1ol)#Administraci.C3.B3n_de_energ.C3.ADa_con_systemd "Power management (Español)"). Para el método anterior, véase [acpid](/index.php/Acpid_(Espa%C3%B1ol) "Acpid (Español)").
+Los usuarios pueden configurar cómo reacciona el sistema a los eventos de ACPI, como presionar el botón de encendido o cerrar la tapa del portátil. Para el nuevo método (recomendado) usando [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"), véase [administración de energía con systemd](/index.php/Power_management_(Espa%C3%B1ol)#Administración_de_energía_con_systemd "Power management (Español)"). Para el método anterior, véase [acpid](/index.php/Acpid_(Espa%C3%B1ol) "Acpid (Español)").
 
 ### Regulación de la frecuencia de la CPU
 
@@ -334,7 +334,7 @@ Crear alias para un comando, o un grupo del mismo, es una forma de ahorrar tiemp
 
 ### Intérpretes de línea de órdenes alternativos
 
-[Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)") es el intérprete de línea de órdenes que está instalado por defecto en un sistema Arch. Sin embargo, los medios de instalación en vivo usan [zsh](/index.php/Zsh_(Espa%C3%B1ol) "Zsh (Español)") con el paquete de complemento [grml-zsh-config](https://www.archlinux.org/packages/?name=grml-zsh-config). Véase el [listado de intérpretes de línea de órdenes](/index.php/Command-line_shell_(Espa%C3%B1ol)#Listado_de_int.C3.A9rpretes_de_l.C3.ADnea_de_.C3.B3rdenes "Command-line shell (Español)") para conocer más alternativas.
+[Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)") es el intérprete de línea de órdenes que está instalado por defecto en un sistema Arch. Sin embargo, los medios de instalación en vivo usan [zsh](/index.php/Zsh_(Espa%C3%B1ol) "Zsh (Español)") con el paquete de complemento [grml-zsh-config](https://www.archlinux.org/packages/?name=grml-zsh-config). Véase el [listado de intérpretes de línea de órdenes](/index.php/Command-line_shell_(Espa%C3%B1ol)#Listado_de_intérpretes_de_línea_de_órdenes "Command-line shell (Español)") para conocer más alternativas.
 
 ### Complementos para bash
 

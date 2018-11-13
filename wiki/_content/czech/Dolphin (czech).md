@@ -3,16 +3,16 @@
 ## Contents
 
 *   [1 Instalace](#Instalace)
-    *   [1.1 Porovnání souborů](#Porovn.C3.A1n.C3.AD_soubor.C5.AF)
-    *   [1.2 Náhledy souborů](#N.C3.A1hledy_soubor.C5.AF)
-*   [2 Použití](#Pou.C5.BEit.C3.AD)
-    *   [2.1 Otvíraný Terminál](#Otv.C3.ADran.C3.BD_Termin.C3.A1l)
+    *   [1.1 Porovnání souborů](#Porovnání_souborů)
+    *   [1.2 Náhledy souborů](#Náhledy_souborů)
+*   [2 Použití](#Použití)
+    *   [2.1 Otvíraný Terminál](#Otvíraný_Terminál)
     *   [2.2 KIO Slaves](#KIO_Slaves)
-*   [3 Řešení problémů](#.C5.98e.C5.A1en.C3.AD_probl.C3.A9m.C5.AF)
-    *   [3.1 Názvy zařízení zobrazené jako "X GiB Harddrive"](#N.C3.A1zvy_za.C5.99.C3.ADzen.C3.AD_zobrazen.C3.A9_jako_.22X_GiB_Harddrive.22)
-    *   [3.2 Transparentní fonty](#Transparentn.C3.AD_fonty)
-    *   [3.3 Nesprávné zobrazení barvy pozadí ve složce](#Nespr.C3.A1vn.C3.A9_zobrazen.C3.AD_barvy_pozad.C3.AD_ve_slo.C5.BEce)
-*   [4 Další zdroje](#Dal.C5.A1.C3.AD_zdroje)
+*   [3 Řešení problémů](#Řešení_problémů)
+    *   [3.1 Názvy zařízení zobrazené jako "X GiB Harddrive"](#Názvy_zařízení_zobrazené_jako_"X_GiB_Harddrive")
+    *   [3.2 Transparentní fonty](#Transparentní_fonty)
+    *   [3.3 Nesprávné zobrazení barvy pozadí ve složce](#Nesprávné_zobrazení_barvy_pozadí_ve_složce)
+*   [4 Další zdroje](#Další_zdroje)
 
 ## Instalace
 

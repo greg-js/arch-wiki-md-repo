@@ -9,17 +9,17 @@ W biologii, [mutualizm](https://en.wikipedia.org/wiki/Mutualism_(biology) jest z
 ## Contents
 
 *   [1 Oficjalne Projekty Arch Linux](#Oficjalne_Projekty_Arch_Linux)
-    *   [1.1 Udzielanie się na forum](#Udzielanie_si.C4.99_na_forum)
-    *   [1.2 Edycja artykułów wiki](#Edycja_artyku.C5.82.C3.B3w_wiki)
-    *   [1.3 Przyłącz się do czatu](#Przy.C5.82.C4.85cz_si.C4.99_do_czatu)
-    *   [1.4 Naprawa i zgłaszanie błędów](#Naprawa_i_zg.C5.82aszanie_b.C5.82.C4.99d.C3.B3w)
-    *   [1.5 Tworzenie i zarządzanie pakietami AUR](#Tworzenie_i_zarz.C4.85dzanie_pakietami_AUR)
-    *   [1.6 Wsparcie oficjalnych projektów](#Wsparcie_oficjalnych_projekt.C3.B3w)
-    *   [1.7 Dotacje pieniężne](#Dotacje_pieni.C4.99.C5.BCne)
-    *   [1.8 Projekty społeczności](#Projekty_spo.C5.82eczno.C5.9Bci)
+    *   [1.1 Udzielanie się na forum](#Udzielanie_się_na_forum)
+    *   [1.2 Edycja artykułów wiki](#Edycja_artykułów_wiki)
+    *   [1.3 Przyłącz się do czatu](#Przyłącz_się_do_czatu)
+    *   [1.4 Naprawa i zgłaszanie błędów](#Naprawa_i_zgłaszanie_błędów)
+    *   [1.5 Tworzenie i zarządzanie pakietami AUR](#Tworzenie_i_zarządzanie_pakietami_AUR)
+    *   [1.6 Wsparcie oficjalnych projektów](#Wsparcie_oficjalnych_projektów)
+    *   [1.7 Dotacje pieniężne](#Dotacje_pieniężne)
+    *   [1.8 Projekty społeczności](#Projekty_społeczności)
         *   [1.8.1 Grupy](#Grupy)
         *   [1.8.2 Oprogramowanie](#Oprogramowanie)
-        *   [1.8.3 Usługi](#Us.C5.82ugi)
+        *   [1.8.3 Usługi](#Usługi)
         *   [1.8.4 Inne](#Inne)
 
 ## Oficjalne Projekty Arch Linux
@@ -38,7 +38,7 @@ Jeśli czujesz się na siłach w [editing wiki pages](/index.php/Help:Editing "H
 
 ### Przyłącz się do czatu
 
-Jako zaawansowany użytkownik Linuksa zawsze możesz pomóc młodym użytkownikom w rozwiązywaniu ich problemów na [IRC channel](/index.php/IRC_channel "IRC channel"). Zanim jednak rozpoczniesz przygodę zalecanym jest zapoznanie się z [rules](/index.php/IRC_channel#.23archlinux_rules "IRC channel") oraz [guidelines](/index.php/IRC_channel#.23archlinux_guidelines "IRC channel"). [Further channels](/index.php/IRC_channels "IRC channels") dostępne są dla poszczególnych tematów.
+Jako zaawansowany użytkownik Linuksa zawsze możesz pomóc młodym użytkownikom w rozwiązywaniu ich problemów na [IRC channel](/index.php/IRC_channel "IRC channel"). Zanim jednak rozpoczniesz przygodę zalecanym jest zapoznanie się z [rules](/index.php/IRC_channel##archlinux_rules "IRC channel") oraz [guidelines](/index.php/IRC_channel##archlinux_guidelines "IRC channel"). [Further channels](/index.php/IRC_channels "IRC channels") dostępne są dla poszczególnych tematów.
 
 ### Naprawa i zgłaszanie błędów
 

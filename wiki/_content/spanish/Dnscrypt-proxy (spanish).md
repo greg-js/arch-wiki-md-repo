@@ -5,17 +5,17 @@ Este artículo es una traducción de [dnscrypt-proxy](/index.php/Dnscrypt-proxy 
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Configuración](#Configuraci.C3.B3n)
+*   [1 Instalación](#Instalación)
+*   [2 Configuración](#Configuración)
     *   [2.1 Poner en marcha](#Poner_en_marcha)
     *   [2.2 Seleccionar clientes DNS](#Seleccionar_clientes_DNS)
     *   [2.3 Desactivar cualquier servicio ligado al puerto 53](#Desactivar_cualquier_servicio_ligado_al_puerto_53)
     *   [2.4 Modificar resolv.conf](#Modificar_resolv.conf)
     *   [2.5 Iniciar el servicio de systemd](#Iniciar_el_servicio_de_systemd)
 *   [3 Consejos y trucos](#Consejos_y_trucos)
-    *   [3.1 Configuración de la caché DNS local](#Configuraci.C3.B3n_de_la_cach.C3.A9_DNS_local)
+    *   [3.1 Configuración de la caché DNS local](#Configuración_de_la_caché_DNS_local)
         *   [3.1.1 Cambiar el puerto](#Cambiar_el_puerto)
-        *   [3.1.2 Ejemplo de configuraciones para una caché DNS local](#Ejemplo_de_configuraciones_para_una_cach.C3.A9_DNS_local)
+        *   [3.1.2 Ejemplo de configuraciones para una caché DNS local](#Ejemplo_de_configuraciones_para_una_caché_DNS_local)
             *   [3.1.2.1 Unbound](#Unbound)
             *   [3.1.2.2 dnsmasq](#dnsmasq)
             *   [3.1.2.3 pdnsd](#pdnsd)
@@ -82,7 +82,7 @@ options edns0 single-request-reopen
 
 ```
 
-Otros programas pueden sobrescribir esta configuración; consulte [resolv.conf#Overwriting of /etc/resolv.conf](/index.php/Resolv.conf#Overwriting_of_.2Fetc.2Fresolv.conf "Resolv.conf") para obtener más detalles.
+Otros programas pueden sobrescribir esta configuración; consulte [resolv.conf#Overwriting of /etc/resolv.conf](/index.php/Resolv.conf#Overwriting_of_/etc/resolv.conf "Resolv.conf") para obtener más detalles.
 
 ### Iniciar el servicio de systemd
 

@@ -165,6 +165,6 @@ Note that when using ipns the address would have an ipns prefix instead of ipfs:
 ## See also
 
 *   [IPFS Homepage](https://ipfs.io)
-*   [IPFS Examples](https://github.com/ipfs/examples/tree/master/examples)
+*   [IPFS Examples](https://github.com/ipfs/website/tree/master/content/docs/examples)
 *   [Awesome IPFS](https://github.com/ipfs/awesome-ipfs)
 *   [IPFS and pacman](https://github.com/ipfs/notes/issues/84)

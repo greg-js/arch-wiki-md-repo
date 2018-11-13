@@ -13,11 +13,11 @@ Because it does not replace any existing window manager, it is an ideal solution
 *   [2 Configuration](#Configuration)
     *   [2.1 Window transparency](#Window_transparency)
 *   [3 Tips and tricks](#Tips_and_tricks)
-    *   [3.1 Start/Stop Xcompmgr on demand](#Start.2FStop_Xcompmgr_on_demand)
+    *   [3.1 Start/Stop Xcompmgr on demand](#Start/Stop_Xcompmgr_on_demand)
     *   [3.2 Toggle Xcompmgr](#Toggle_Xcompmgr)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Mozilla Firefox crashes when entering a Flash site](#Mozilla_Firefox_crashes_when_entering_a_Flash_site)
-    *   [4.2 Background turns light gray briefly after logging in (e.g. in Openbox)](#Background_turns_light_gray_briefly_after_logging_in_.28e.g._in_Openbox.29)
+    *   [4.2 Background turns light gray briefly after logging in (e.g. in Openbox)](#Background_turns_light_gray_briefly_after_logging_in_(e.g._in_Openbox))
     *   [4.3 BadPicture request in awesome](#BadPicture_request_in_awesome)
     *   [4.4 Screen not updating in awesome after resolution change](#Screen_not_updating_in_awesome_after_resolution_change)
 

@@ -4,12 +4,12 @@ Este documento te dice como instalar, configurar y usar **lm_sensors** para que 
 
 ## Contents
 
-*   [1 Aviso para los Kernels >=2.6.31](#Aviso_para_los_Kernels_.3E.3D2.6.31)
+*   [1 Aviso para los Kernels >=2.6.31](#Aviso_para_los_Kernels_>=2.6.31)
 *   [2 Uso](#Uso)
-    *   [2.1 Instalación](#Instalaci.C3.B3n)
+    *   [2.1 Instalación](#Instalación)
     *   [2.2 Configurando lm_sensors](#Configurando_lm_sensors)
     *   [2.3 Probando lm_sensors](#Probando_lm_sensors)
-    *   [2.4 Leyendo los valores SPD desde los modulos de memoria (Opcional)](#Leyendo_los_valores_SPD_desde_los_modulos_de_memoria_.28Opcional.29)
+    *   [2.4 Leyendo los valores SPD desde los modulos de memoria (Opcional)](#Leyendo_los_valores_SPD_desde_los_modulos_de_memoria_(Opcional))
 *   [3 Usando datos del sensor](#Usando_datos_del_sensor)
     *   [3.1 Frontends Graficos](#Frontends_Graficos)
     *   [3.2 Sensord](#Sensord)

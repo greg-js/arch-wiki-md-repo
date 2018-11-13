@@ -5,15 +5,15 @@
 *   [1 Features](#Features)
 *   [2 Webserver](#Webserver)
     *   [2.1 Installation](#Installation)
-    *   [2.2 Nagios Configuration](#Nagios_Configuration)
-    *   [2.3 Apache Configuration](#Apache_Configuration)
-    *   [2.4 Nginx Configuration](#Nginx_Configuration)
-    *   [2.5 Lighttpd Configuration](#Lighttpd_Configuration)
-    *   [2.6 PHP Configuration](#PHP_Configuration)
-    *   [2.7 Final Steps](#Final_Steps)
-*   [3 Monitor an Archlinux host](#Monitor_an_Archlinux_host)
+    *   [2.2 Nagios configuration](#Nagios_configuration)
+    *   [2.3 Apache configuration](#Apache_configuration)
+    *   [2.4 Nginx configuration](#Nginx_configuration)
+    *   [2.5 Lighttpd configuration](#Lighttpd_configuration)
+    *   [2.6 PHP configuration](#PHP_configuration)
+    *   [2.7 Final steps](#Final_steps)
+*   [3 Monitor an Arch Linux host](#Monitor_an_Arch_Linux_host)
 *   [4 Plugin check_rdiff](#Plugin_check_rdiff)
-    *   [4.1 Download and Install](#Download_and_Install)
+    *   [4.1 Download and install](#Download_and_install)
     *   [4.2 Enable sudo for user nagios](#Enable_sudo_for_user_nagios)
     *   [4.3 Integrate check_rdiff plugin into nagios](#Integrate_check_rdiff_plugin_into_nagios)
 *   [5 Forks](#Forks)
@@ -38,13 +38,13 @@ The following installation and configuration were tested using nagios 3.2.0-1, [
 
 ## Webserver
 
-According to the [official documentation](http://nagios.sourceforge.net/docs/3_0/about.html) a webserver is not required, but if you wish to use any of the CGI features then a webserver (apache preferred), PHP ([php-apache](/index.php/Apache#PHP "Apache")) for it and the gd library are required. This is assumed for this installation
+According to the [official documentation](http://nagios.sourceforge.net/docs/3_0/about.html) a webserver is not required, but if you wish to use any of the CGI features then a webserver (apache preferred), PHP ([php-apache](/index.php/Apache#PHP "Apache")) for it and the gd library are required. This is assumed for this installation.
 
 ### Installation
 
 Before installation, it's a good idea to make sure you have prerequisites installed, e.g. if you're using nginx then: nginx, php, php-fpm, fcgiwrap might be a good start.
 
-Install [nagios](https://aur.archlinux.org/packages/nagios/) from the [AUR](/index.php/AUR "AUR").
+Install [nagios](https://aur.archlinux.org/packages/nagios/) package.
 
 Users may also want to install [monitoring-plugins](https://www.archlinux.org/packages/?name=monitoring-plugins). When you do, make sure to edit `/etc/nagios/resource.cfg` later to reflect the new paths:
 
@@ -54,19 +54,19 @@ $USER1$=/usr/lib/monitoring-plugins
 
 ```
 
-### Nagios Configuration
+### Nagios configuration
 
 Copy the sample config files as root:
 
 ```
- cp /etc/nagios/cgi.cfg.sample /etc/nagios/cgi.cfg
- cp /etc/nagios/resource.cfg.sample /etc/nagios/resource.cfg
- cp /etc/nagios/nagios.cfg.sample /etc/nagios/nagios.cfg
- cp /etc/nagios/objects/commands.cfg.sample /etc/nagios/objects/commands.cfg
- cp /etc/nagios/objects/contacts.cfg.sample /etc/nagios/objects/contacts.cfg
- cp /etc/nagios/objects/localhost.cfg.sample /etc/nagios/objects/localhost.cfg
- cp /etc/nagios/objects/templates.cfg.sample /etc/nagios/objects/templates.cfg
- cp /etc/nagios/objects/timeperiods.cfg.sample /etc/nagios/objects/timeperiods.cfg
+cp /etc/nagios/cgi.cfg.sample /etc/nagios/cgi.cfg
+cp /etc/nagios/resource.cfg.sample /etc/nagios/resource.cfg
+cp /etc/nagios/nagios.cfg.sample /etc/nagios/nagios.cfg
+cp /etc/nagios/objects/commands.cfg.sample /etc/nagios/objects/commands.cfg
+cp /etc/nagios/objects/contacts.cfg.sample /etc/nagios/objects/contacts.cfg
+cp /etc/nagios/objects/localhost.cfg.sample /etc/nagios/objects/localhost.cfg
+cp /etc/nagios/objects/templates.cfg.sample /etc/nagios/objects/templates.cfg
+cp /etc/nagios/objects/timeperiods.cfg.sample /etc/nagios/objects/timeperiods.cfg
 
 ```
 
@@ -102,9 +102,9 @@ If the owner/group of the nagios-plugins you installed are root:root, the follow
 
 Once Nagios is configured, it is time to configure the webserver.
 
-### Apache Configuration
+### Apache configuration
 
-Edit `/etc/httpd/conf/httpd.conf`, add the following to the end of the file:
+If using [Apache](/index.php/Apache "Apache") as webserver, edit `/etc/httpd/conf/httpd.conf` and add the following to the end of the file:
 
 ```
 LoadModule php5_module modules/libphp5.so
@@ -112,7 +112,8 @@ Include "conf/extra/nagios.conf"
 Include "conf/extra/php5_module.conf"
 ```
 
-**Note:** For CGI scripts to work, you'll need to uncomment the following.
+If planning to use Nagios CGI scripts, you'll need to uncomment the following:
+
  `LoadModule cgi_module modules/mod_cgi.so` 
 
 Copy configure file:
@@ -122,12 +123,7 @@ Copy configure file:
 
 ```
 
-Add the apache user http to the group nagios, otherwise you will get the following error when using nagios:
-
-```
-Could not open command file '/var/nagios/rw/nagios.cmd' for update!: 
-
-```
+Add the apache user http to the group nagios, otherwise you will get the following error when using nagios: "Could not open command file '/var/nagios/rw/nagios.cmd' for update!"
 
 ```
 # usermod -G nagios -a http
@@ -137,11 +133,11 @@ Could not open command file '/var/nagios/rw/nagios.cmd' for update!:
 If you are still getting this error, you might need to change the rights on the file:
 
 ```
- # chmod 666 /var/nagios/rw/nagios.cmd
+# chmod 666 /var/nagios/rw/nagios.cmd
 
 ```
 
-### Nginx Configuration
+### Nginx configuration
 
 Apart from php and php-fpm, You should have [fcgiwrap](/index.php/Nginx#CGI_implementation "Nginx") installed or else CGI scripts will not run.
 
@@ -186,9 +182,9 @@ server {
 }
 ```
 
-### Lighttpd Configuration
+### Lighttpd configuration
 
-Example for lighttpd:
+Example for [lighttpd](/index.php/Lighttpd "Lighttpd"):
 
 ```
 $HTTP["url"] =~ "^/nagios" {
@@ -212,38 +208,20 @@ $HTTP["url"] =~ "^/nagios" {
 }
 ```
 
-note that mod_setenv, mod_cgi, mod_alias and mod_auth must be allowed.
+Note that mod_setenv, mod_cgi, mod_alias and mod_auth must be allowed.
 
-### PHP Configuration
+### PHP configuration
 
-Edit /etc/php/php.ini to include /usr/share/nagios in the open_basedir directive.
+Edit `/etc/php/php.ini` to include `/usr/share/nagios` in the open_basedir directive.
 
 Example configuration:
 
  `open_basedir = /srv/http/:/home/:/tmp/:/usr/share/pear/:/usr/share/webapps:/etc/webapps:/usr/share/nagios` 
 
-### Final Steps
+### Final steps
 
-Start/Restart nagios:
-
-```
-# systemctl restart nagios
-
-```
-
-Start/Restart apache:
-
-```
-# systemctl restart httpd
-
-```
-
-Or Start/Restart nginx:
-
-```
-# systemctl restart nginx
-
-```
+1.  [Start](/index.php/Start "Start"), or restart, `nagios.service` for Nagios
+2.  [Start](/index.php/Start "Start"), or restart, your webserver: `httpd.service` for Apache, `nginx.service` for Nginx, and `lighttpd.service` for lightttpd.
 
 Now you should be able to access nagios through your webbrowser using the username and password you have created above using htpasswd:
 
@@ -252,15 +230,41 @@ Now you should be able to access nagios through your webbrowser using the userna
 
 ```
 
-## Monitor an Archlinux host
+## Monitor an Arch Linux host
 
-You will need [monitoring-plugins](https://www.archlinux.org/packages/?name=monitoring-plugins) and either [nrpe](https://www.archlinux.org/packages/?name=nrpe) or use check_by_ssh along with passwordless ssh to monitor your host.
+You will need [monitoring-plugins](https://www.archlinux.org/packages/?name=monitoring-plugins) and either [nrpe](https://www.archlinux.org/packages/?name=nrpe) or use *check_by_ssh* along with passwordless ssh to monitor your host.
 
-The nrpe configuration is done in /etc/nrpe/nrpe.cfg and the interesting files to monitor will be in /usr/share/nagios/libexec/ . Do not forget to edit nrpe.cfg as it is mostly empty after install.
+The nrpe configuration is done in `/etc/nrpe/nrpe.cfg` and the interesting files to monitor will be in `/usr/share/nagios/libexec/`. Do not forget to edit `nrpe.cfg` as it is mostly empty after install.
 
-Quick notes on check_by_ssh: On the monitoring system, su to the user account that Nagios/Icinga/whatever runs as, run ssh-keygen. Create a user on the Arch system to be monitored with the same name and a temporary password eg: # useradd -m -d /home/icinga -s /bin/bash -p icinga icinga. From the monitoring system run this: $ ssh-copy-id ip.ad.dr.ess (ie the IP of the client). Back on the client: # passwd -d icinga (ie clear the temporary password). Verify you can login from the server eg $ ssh icinga@ip.ad.dr.ess.
+Quick notes on *check_by_ssh*: On the monitoring system, su to the user account that Nagios/Icinga/whatever runs as, run `ssh-keygen`. Create a user on the Arch system to be monitored with the same name and a temporary password, e.g:
 
-Many non Arch systems install the monitoring plugins to /usr/lib/nagios/plugins but Arch installs them to /usr/lib/monitoring-plugins/. It may be helpful to create /usr/lib/nagios and symlink ../monitoring-plugins to plugins from that directory.
+```
+# useradd -m -d /home/icinga -s /bin/bash -p icinga icinga.
+
+```
+
+From the monitoring system run this (where `*client_ipaddress*` is the IP of the client):
+
+```
+$ ssh-copy-id *client_ipaddess*
+
+```
+
+Back on the client, clear the temporary password:
+
+```
+# passwd -d icinga.
+
+```
+
+Verify you can login from the server with:
+
+```
+$ ssh icinga@*client_ipaddres*
+
+```
+
+Many non Arch systems install the monitoring plugins to `/usr/lib/nagios/plugins` but Arch installs them to `/usr/lib/monitoring-plugins/`. It may be helpful to create `/usr/lib/nagios` and symlink `../monitoring-plugins` to `plugins` from that directory.
 
 Here's an example of a command invocation run from the command line as the monitoring system's user. Given the note on paths mentioned above this should work on nearly any Linux (and probably BSD - it does on FreeNAS) distro:
 
@@ -271,9 +275,9 @@ $ /usr/lib/nagios/plugins/check_by_ssh -E -H 192.168.100.11 -C "/usr/lib/nagios/
 
 ## Plugin check_rdiff
 
-A small guide on monitoring rdiff-backups using a plugin called check_rdiff.
+A small guide on monitoring rdiff-backups using a plugin called *check_rdiff*.
 
-### Download and Install
+### Download and install
 
 You will need perl installed.
 
@@ -288,20 +292,15 @@ chmod 755 /usr/share/nagios/libexec/check_rdiff
 
 ### Enable sudo for user nagios
 
-Since the perl script check_rdiff needs to run as root, you will have to enable sudo for the nagios user:
+[Sudo](/index.php/Sudo "Sudo") must be configured to allow "nagios" user, as the perl script *check_rdiff* needs to run as root.
 
-```
-# visudo
-
-```
-
-This will open the /etc/sudoers file for editing (and protect it from saving errors). then paste the following at the end of the file (you should know how to use the vi editor):
+[Use visudo](/index.php/Sudo#Using_visudo "Sudo") to add the following line to the `/etc/sudoers` file:
 
  `nagios  ALL=(root)NOPASSWD:/usr/share/nagios/libexec/check_rdiff` 
 
 ### Integrate check_rdiff plugin into nagios
 
-Edit /etc/nagios/objects/commands.cfg to include the following command definition:
+Edit `/etc/nagios/objects/commands.cfg` to include the following command definition:
 
 ```
 # check rdiff-backup
@@ -312,7 +311,7 @@ define command{
 
 ```
 
-Edit /etc/nagios/objects/localhost.cfg to include checking of rdiff-backup on localhost, for example:
+Edit `/etc/nagios/objects/localhost.cfg` to include checking of rdiff-backup on localhost, for example:
 
 ```
 define service{
@@ -324,23 +323,17 @@ define service{
 
 ```
 
-Quote from the check_rdiff script content:
+Quote from the *check_rdiff* script content:
 
-*The above command checks the repository (-r) which is defined as the destination of the backup, or more specifically, the directory above the rdiff-backup-data directory. It will return warning if the backup has not finished by 8am and critical by 10am. It will also return warning if the TotalDestinationSizeChange is greater than 500Mb. It also get the period set to 24hrs (-p). This is important as the plugin will throw a critical if the backup does not start in time.*
+	The above command checks the repository (-r) which is defined as the destination of the backup, or more specifically, the directory above the rdiff-backup-data directory. It will return warning if the backup has not finished by 8am and critical by 10am. It will also return warning if the TotalDestinationSizeChange is greater than 500Mb. It also get the period set to 24hrs (-p). This is important as the plugin will throw a critical if the backup does not start in time.
 
-Finally, restart nagios:
-
-```
-# systemctl restart nagios
-
-```
+Finally, [restart](/index.php/Restart "Restart") `nagios.service`.
 
 You can now see the rdiff-backup status by clicking on Services on the left side of the nagios web interface control panel.
 
 ## Forks
 
 *   [Icinga](/index.php/Icinga "Icinga") is a Nagios fork. More details about the fork can be found at [Icinga FAQ: Why a fork?](https://www.icinga.org/icinga/faq/icinga-vs-nagios/)
-
 *   [Naemon](/index.php/Naemon "Naemon") is the new monitoring suite that aims to be faster and more stable, while giving you a clearer view of the state of your network. [Naemon FAQ: Why a fork?](http://www.naemon.org/project.html)
 
 ## See also

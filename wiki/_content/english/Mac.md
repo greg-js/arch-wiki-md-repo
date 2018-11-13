@@ -23,9 +23,9 @@ Installing Arch Linux on a MacBook (12"/Air/Pro) or an iMac is quite similar to 
     *   [3.2 Arch Linux with OS X or other operating systems](#Arch_Linux_with_OS_X_or_other_operating_systems)
         *   [3.2.1 Option 1: EFI](#Option_1:_EFI)
         *   [3.2.2 Option 2: BIOS-compatibility](#Option_2:_BIOS-compatibility)
-    *   [3.3 OS X, Windows XP, and Arch Linux triple boot](#OS_X.2C_Windows_XP.2C_and_Arch_Linux_triple_boot)
+    *   [3.3 OS X, Windows XP, and Arch Linux triple boot](#OS_X,_Windows_XP,_and_Arch_Linux_triple_boot)
 *   [4 Setup bootloader](#Setup_bootloader)
-    *   [4.1 Using the native Apple bootloader with systemd-boot (Recommended)](#Using_the_native_Apple_bootloader_with_systemd-boot_.28Recommended.29)
+    *   [4.1 Using the native Apple bootloader with systemd-boot (Recommended)](#Using_the_native_Apple_bootloader_with_systemd-boot_(Recommended))
     *   [4.2 Using the native Apple bootloader with GRUB](#Using_the_native_Apple_bootloader_with_GRUB)
     *   [4.3 Other methods](#Other_methods)
     *   [4.4 Installing GRUB to EFI partition directly](#Installing_GRUB_to_EFI_partition_directly)
@@ -53,13 +53,13 @@ Installing Arch Linux on a MacBook (12"/Air/Pro) or an iMac is quite similar to 
     *   [6.12 Color Profile](#Color_Profile)
     *   [6.13 Apple Remote](#Apple_Remote)
     *   [6.14 HFS partition sharing](#HFS_partition_sharing)
-    *   [6.15 HFS+ Partitions](#HFS.2B_Partitions)
+    *   [6.15 HFS+ Partitions](#HFS+_Partitions)
         *   [6.15.1 Journaling](#Journaling)
         *   [6.15.2 Yosemite and later](#Yosemite_and_later)
     *   [6.16 Home Sharing](#Home_Sharing)
         *   [6.16.1 In OS X](#In_OS_X)
-            *   [6.16.1.1 Step 1: change UID and GID(s)](#Step_1:_change_UID_and_GID.28s.29)
-            *   [6.16.1.2 Step 2: change "Home" permissions](#Step_2:_change_.22Home.22_permissions)
+            *   [6.16.1.1 Step 1: change UID and GID(s)](#Step_1:_change_UID_and_GID(s))
+            *   [6.16.1.2 Step 2: change "Home" permissions](#Step_2:_change_"Home"_permissions)
         *   [6.16.2 In Arch](#In_Arch)
     *   [6.17 Avoid long EFI wait before booting](#Avoid_long_EFI_wait_before_booting)
     *   [6.18 Mute startup chime](#Mute_startup_chime)
@@ -69,31 +69,31 @@ Installing Arch Linux on a MacBook (12"/Air/Pro) or an iMac is quite similar to 
         *   [7.1.1 Mavericks upgrade breaks Arch boot option](#Mavericks_upgrade_breaks_Arch_boot_option)
 *   [8 Model-specific information](#Model-specific_information)
     *   [8.1 MacBook](#MacBook)
-        *   [8.1.1 April 2016 12" - Version 9,1](#April_2016_12.22_-_Version_9.2C1)
-        *   [8.1.2 Mid 2007 13" - Version 2,1](#Mid_2007_13.22_-_Version_2.2C1)
+        *   [8.1.1 April 2016 12" - Version 9,1](#April_2016_12"_-_Version_9,1)
+        *   [8.1.2 Mid 2007 13" - Version 2,1](#Mid_2007_13"_-_Version_2,1)
     *   [8.2 MacBook Pro](#MacBook_Pro)
-        *   [8.2.1 Early 2015 13"/15" - Version 12,x/11,4+](#Early_2015_13.22.2F15.22_-_Version_12.2Cx.2F11.2C4.2B)
+        *   [8.2.1 Early 2015 13"/15" - Version 12,x/11,4+](#Early_2015_13"/15"_-_Version_12,x/11,4+)
             *   [8.2.1.1 Wireless](#Wireless)
             *   [8.2.1.2 Bluetooth](#Bluetooth_2)
-            *   [8.2.1.3 Suspend & Power Off (11,4+)](#Suspend_.26_Power_Off_.2811.2C4.2B.29)
-            *   [8.2.1.4 Keyboard & Trackpad](#Keyboard_.26_Trackpad)
+            *   [8.2.1.3 Suspend & Power Off (11,4+)](#Suspend_&_Power_Off_(11,4+))
+            *   [8.2.1.4 Keyboard & Trackpad](#Keyboard_&_Trackpad)
             *   [8.2.1.5 Graphics](#Graphics)
         *   [8.2.2 2012 - 2014 models](#2012_-_2014_models)
     *   [8.3 MacBook Air](#MacBook_Air)
-        *   [8.3.1 Early 2014 11" - Version 6,1](#Early_2014_11.22_-_Version_6.2C1)
-        *   [8.3.2 Mid 2013 13" - Version 6,2](#Mid_2013_13.22_-_Version_6.2C2)
+        *   [8.3.1 Early 2014 11" - Version 6,1](#Early_2014_11"_-_Version_6,1)
+        *   [8.3.2 Mid 2013 13" - Version 6,2](#Mid_2013_13"_-_Version_6,2)
             *   [8.3.2.1 Installing and booting](#Installing_and_booting)
             *   [8.3.2.2 Arch Only Installation](#Arch_Only_Installation)
             *   [8.3.2.3 Stability problems](#Stability_problems)
             *   [8.3.2.4 Marvell ATA suspend bugs](#Marvell_ATA_suspend_bugs)
-            *   [8.3.2.5 Suspend/Resume](#Suspend.2FResume)
+            *   [8.3.2.5 Suspend/Resume](#Suspend/Resume)
             *   [8.3.2.6 WiFi](#WiFi)
             *   [8.3.2.7 Touchpad](#Touchpad_2)
             *   [8.3.2.8 Audio](#Audio)
-        *   [8.3.3 Mid 2012 13" — version 5,2](#Mid_2012_13.22_.E2.80.94_version_5.2C2)
-        *   [8.3.4 Mid 2012 11.5" — Version 5,1](#Mid_2012_11.5.22_.E2.80.94_Version_5.2C1)
-        *   [8.3.5 Mid 2011 — version 4,x](#Mid_2011_.E2.80.94_version_4.2Cx)
-        *   [8.3.6 Early 2008 — version 1,1](#Early_2008_.E2.80.94_version_1.2C1)
+        *   [8.3.3 Mid 2012 13" — version 5,2](#Mid_2012_13"_—_version_5,2)
+        *   [8.3.4 Mid 2012 11.5" — Version 5,1](#Mid_2012_11.5"_—_Version_5,1)
+        *   [8.3.5 Mid 2011 — version 4,x](#Mid_2011_—_version_4,x)
+        *   [8.3.6 Early 2008 — version 1,1](#Early_2008_—_version_1,1)
 *   [9 See also](#See_also)
 
 ## Overview
@@ -135,7 +135,7 @@ How to partition depends on how many operating systems you want install. The fol
 
 *   Single boot: [#Arch Linux only](#Arch_Linux_only)
 *   Dual boot: [#Arch Linux with OS X or other operating systems](#Arch_Linux_with_OS_X_or_other_operating_systems) *(recommended so you can still return to OS X when needed)*
-*   Triple boot: [#OS X, Windows XP, and Arch Linux triple boot](#OS_X.2C_Windows_XP.2C_and_Arch_Linux_triple_boot)
+*   Triple boot: [#OS X, Windows XP, and Arch Linux triple boot](#OS_X,_Windows_XP,_and_Arch_Linux_triple_boot)
 
 ### Arch Linux only
 
@@ -408,7 +408,7 @@ If, on the other hand, you are dual/triple booting, then read on.
 
 ### Installing GRUB to EFI partition directly
 
-*   If you would like to use GRUB as your main bootloader and use the "boot while holding the Alt/Option key" method to go back to OS X rather than using alternatives such as rEFIt ([http://refit.sourceforge.net/](http://refit.sourceforge.net/), mentioned previously in [#Option 2: BIOS-compatibility](#Option_2:_BIOS-compatibility) and [#OS X, Windows XP, and Arch Linux triple boot](#OS_X.2C_Windows_XP.2C_and_Arch_Linux_triple_boot)) then you must install [grub](https://www.archlinux.org/packages/?name=grub) to your Mac's **already-existing** EFI partition (see below).
+*   If you would like to use GRUB as your main bootloader and use the "boot while holding the Alt/Option key" method to go back to OS X rather than using alternatives such as rEFIt ([http://refit.sourceforge.net/](http://refit.sourceforge.net/), mentioned previously in [#Option 2: BIOS-compatibility](#Option_2:_BIOS-compatibility) and [#OS X, Windows XP, and Arch Linux triple boot](#OS_X,_Windows_XP,_and_Arch_Linux_triple_boot)) then you must install [grub](https://www.archlinux.org/packages/?name=grub) to your Mac's **already-existing** EFI partition (see below).
 
 **Note:** These instructions are known to work on a MacBook Pro (Early 2011). Please read the procedure carefully **as well as the details following it**.
 

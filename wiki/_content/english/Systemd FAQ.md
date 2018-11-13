@@ -7,17 +7,17 @@ Related articles
 ## Contents
 
 *   [1 FAQ](#FAQ)
-    *   [1.1 Why do I get log messages on my console?](#Why_do_I_get_log_messages_on_my_console.3F)
-    *   [1.2 How do I change the default number of gettys?](#How_do_I_change_the_default_number_of_gettys.3F)
-    *   [1.3 How do I get more verbose output during boot?](#How_do_I_get_more_verbose_output_during_boot.3F)
-    *   [1.4 How do I avoid clearing the console after boot?](#How_do_I_avoid_clearing_the_console_after_boot.3F)
-    *   [1.5 What kernel options are required for systemd?](#What_kernel_options_are_required_for_systemd.3F)
-    *   [1.6 What other units does a unit depend on?](#What_other_units_does_a_unit_depend_on.3F)
-    *   [1.7 My computer shuts down, but the power stays on](#My_computer_shuts_down.2C_but_the_power_stays_on)
-    *   [1.8 After migrating to systemd, why won't my fakeRAID mount?](#After_migrating_to_systemd.2C_why_won.27t_my_fakeRAID_mount.3F)
-    *   [1.9 How can I make a script start during the boot process?](#How_can_I_make_a_script_start_during_the_boot_process.3F)
-    *   [1.10 Status of .service says "active (exited)" in green. (e.g. iptables)](#Status_of_.service_says_.22active_.28exited.29.22_in_green._.28e.g._iptables.29)
-    *   [1.11 "Failed to issue method call: File exists" error](#.22Failed_to_issue_method_call:_File_exists.22_error)
+    *   [1.1 Why do I get log messages on my console?](#Why_do_I_get_log_messages_on_my_console?)
+    *   [1.2 How do I change the default number of gettys?](#How_do_I_change_the_default_number_of_gettys?)
+    *   [1.3 How do I get more verbose output during boot?](#How_do_I_get_more_verbose_output_during_boot?)
+    *   [1.4 How do I avoid clearing the console after boot?](#How_do_I_avoid_clearing_the_console_after_boot?)
+    *   [1.5 What kernel options are required for systemd?](#What_kernel_options_are_required_for_systemd?)
+    *   [1.6 What other units does a unit depend on?](#What_other_units_does_a_unit_depend_on?)
+    *   [1.7 My computer shuts down, but the power stays on](#My_computer_shuts_down,_but_the_power_stays_on)
+    *   [1.8 After migrating to systemd, why won't my fakeRAID mount?](#After_migrating_to_systemd,_why_won't_my_fakeRAID_mount?)
+    *   [1.9 How can I make a script start during the boot process?](#How_can_I_make_a_script_start_during_the_boot_process?)
+    *   [1.10 Status of .service says "active (exited)" in green. (e.g. iptables)](#Status_of_.service_says_"active_(exited)"_in_green._(e.g._iptables))
+    *   [1.11 "Failed to issue method call: File exists" error](#"Failed_to_issue_method_call:_File_exists"_error)
 
 ## FAQ
 

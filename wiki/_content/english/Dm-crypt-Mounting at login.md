@@ -15,7 +15,7 @@ This tutorial assumes you have already created your encrypted partition, as desc
 
 *pam_exec* can be used to unlock the device at login. Edit `/etc/pam.d/system-login` and add the line below emphasized in bold after `auth include system-auth`:
 
-**Note:** GDM, LightDM, and maybe other display managers might require `pam_exec` for `session` as well, see [Talk:Dm-crypt/Mounting at login#pam_exec required for session & using script](/index.php/Talk:Dm-crypt/Mounting_at_login#pam_exec_required_for_session_.26_using_script "Talk:Dm-crypt/Mounting at login").
+**Note:** GDM, LightDM, and maybe other display managers might require `pam_exec` for `session` as well, see [Talk:Dm-crypt/Mounting at login#pam_exec required for session & using script](/index.php/Talk:Dm-crypt/Mounting_at_login#pam_exec_required_for_session_&_using_script "Talk:Dm-crypt/Mounting at login").
  `/etc/pam.d/system-login` 
 ```
 ...

@@ -4,10 +4,10 @@ La comunitat-mantenidora [Arch wiki](/index.php/Main_page "Main page") és un re
 
 ## Contents
 
-*   [1 Descàrrega](#Desc.C3.A0rrega)
-*   [2 Instal·lació](#Instal.C2.B7laci.C3.B3)
-    *   [2.1 Distribució del teclat](#Distribuci.C3.B3_del_teclat)
-    *   [2.2 Partició de disc](#Partici.C3.B3_de_disc)
+*   [1 Descàrrega](#Descàrrega)
+*   [2 Instal·lació](#Instal·lació)
+    *   [2.1 Distribució del teclat](#Distribució_del_teclat)
+    *   [2.2 Partició de disc](#Partició_de_disc)
     *   [2.3 Format the partitions](#Format_the_partitions)
     *   [2.4 Mount the partitions](#Mount_the_partitions)
     *   [2.5 Connect to the internet](#Connect_to_the_internet)
@@ -43,7 +43,7 @@ Hi ha disponibles mapes de teclats apropiats per a molts països, i una comanda 
 
 ### Partició de disc
 
-Vegi [partitioning](/index.php/Partitioning "Partitioning") per a més informació; algunes particions especials poden ser necessàries, vegi [EFI System Partition](/index.php/UEFI#EFI_System_Partition "UEFI") i [GRUB BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB"). Si desitja crear qualsevol dispositiu de blocs apilats (*stacked block devices*) per a [LVM](/index.php/LVM "LVM"), [disk encryption](/index.php/Disk_encryption "Disk encryption") o [RAID](/index.php/RAID "RAID"), faci-ho ara.
+Vegi [partitioning](/index.php/Partitioning "Partitioning") per a més informació; algunes particions especials poden ser necessàries, vegi [EFI System Partition](/index.php/UEFI#EFI_System_Partition "UEFI") i [GRUB BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_(GPT)_specific_instructions "GRUB"). Si desitja crear qualsevol dispositiu de blocs apilats (*stacked block devices*) per a [LVM](/index.php/LVM "LVM"), [disk encryption](/index.php/Disk_encryption "Disk encryption") o [RAID](/index.php/RAID "RAID"), faci-ho ara.
 
 ### Format the partitions
 

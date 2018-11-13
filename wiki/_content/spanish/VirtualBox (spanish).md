@@ -15,70 +15,70 @@ Con el fin de integrar las funciones del sistema anfitrión en los sistemas hué
 
 ## Contents
 
-*   [1 Pasos para preparar Arch Linux como sistema anfitrión](#Pasos_para_preparar_Arch_Linux_como_sistema_anfitri.C3.B3n)
+*   [1 Pasos para preparar Arch Linux como sistema anfitrión](#Pasos_para_preparar_Arch_Linux_como_sistema_anfitrión)
     *   [1.1 Instalar los paquetes principales](#Instalar_los_paquetes_principales)
-    *   [1.2 Firmar los módulos](#Firmar_los_m.C3.B3dulos)
-    *   [1.3 Cargar los módulos del kernel de VirtualBox](#Cargar_los_m.C3.B3dulos_del_kernel_de_VirtualBox)
-    *   [1.4 Acceder al dispositivos USB del anfitrión desde el huésped](#Acceder_al_dispositivos_USB_del_anfitri.C3.B3n_desde_el_hu.C3.A9sped)
-    *   [1.5 Disco de «Guest Additions»](#Disco_de_.C2.ABGuest_Additions.C2.BB)
+    *   [1.2 Firmar los módulos](#Firmar_los_módulos)
+    *   [1.3 Cargar los módulos del kernel de VirtualBox](#Cargar_los_módulos_del_kernel_de_VirtualBox)
+    *   [1.4 Acceder al dispositivos USB del anfitrión desde el huésped](#Acceder_al_dispositivos_USB_del_anfitrión_desde_el_huésped)
+    *   [1.5 Disco de «Guest Additions»](#Disco_de_«Guest_Additions»)
     *   [1.6 Paquete de extensiones](#Paquete_de_extensiones)
     *   [1.7 Utilizar el front-end adecuado](#Utilizar_el_front-end_adecuado)
-*   [2 Pasos para instalar Arch Linux como sistema huésped](#Pasos_para_instalar_Arch_Linux_como_sistema_hu.C3.A9sped)
-    *   [2.1 Instalación en modo EFI](#Instalaci.C3.B3n_en_modo_EFI)
-    *   [2.2 Instalar los «Guest Additions»](#Instalar_los_.C2.ABGuest_Additions.C2.BB)
-    *   [2.3 Establecer la resolución óptima de framebuffer](#Establecer_la_resoluci.C3.B3n_.C3.B3ptima_de_framebuffer)
-    *   [2.4 Cargar los módulos del kernel de VirtualBox](#Cargar_los_m.C3.B3dulos_del_kernel_de_VirtualBox_2)
-    *   [2.5 Lanzar los servicios de VirtualBox en el sistema huésped](#Lanzar_los_servicios_de_VirtualBox_en_el_sistema_hu.C3.A9sped)
+*   [2 Pasos para instalar Arch Linux como sistema huésped](#Pasos_para_instalar_Arch_Linux_como_sistema_huésped)
+    *   [2.1 Instalación en modo EFI](#Instalación_en_modo_EFI)
+    *   [2.2 Instalar los «Guest Additions»](#Instalar_los_«Guest_Additions»)
+    *   [2.3 Establecer la resolución óptima de framebuffer](#Establecer_la_resolución_óptima_de_framebuffer)
+    *   [2.4 Cargar los módulos del kernel de VirtualBox](#Cargar_los_módulos_del_kernel_de_VirtualBox_2)
+    *   [2.5 Lanzar los servicios de VirtualBox en el sistema huésped](#Lanzar_los_servicios_de_VirtualBox_en_el_sistema_huésped)
     *   [2.6 Aceleracion de hardware](#Aceleracion_de_hardware)
     *   [2.7 Activar carpetas compartidas](#Activar_carpetas_compartidas)
         *   [2.7.1 Montaje manual](#Montaje_manual)
-        *   [2.7.2 Montaje automático](#Montaje_autom.C3.A1tico)
+        *   [2.7.2 Montaje automático](#Montaje_automático)
         *   [2.7.3 Montaje durante el arranque](#Montaje_durante_el_arranque)
-    *   [2.8 SSH de anfitrión a huésped](#SSH_de_anfitri.C3.B3n_a_hu.C3.A9sped)
+    *   [2.8 SSH de anfitrión a huésped](#SSH_de_anfitrión_a_huésped)
         *   [2.8.1 SSHFS como alternativa a la carpeta compartida](#SSHFS_como_alternativa_a_la_carpeta_compartida)
 *   [3 Gestionar discos virtuales](#Gestionar_discos_virtuales)
     *   [3.1 Formatos soportados por VirtualBox](#Formatos_soportados_por_VirtualBox)
-    *   [3.2 Conversión de formatos de imagen de disco](#Conversi.C3.B3n_de_formatos_de_imagen_de_disco)
+    *   [3.2 Conversión de formatos de imagen de disco](#Conversión_de_formatos_de_imagen_de_disco)
         *   [3.2.1 QCOW](#QCOW)
     *   [3.3 Montar discos virtuales](#Montar_discos_virtuales)
         *   [3.3.1 VDI](#VDI)
     *   [3.4 Discos virtuales compactos](#Discos_virtuales_compactos)
     *   [3.5 Aumentar discos virtuales](#Aumentar_discos_virtuales)
         *   [3.5.1 Procedimiento general](#Procedimiento_general)
-        *   [3.5.2 Aumentar el tamaño de los discos VDI](#Aumentar_el_tama.C3.B1o_de_los_discos_VDI)
+        *   [3.5.2 Aumentar el tamaño de los discos VDI](#Aumentar_el_tamaño_de_los_discos_VDI)
     *   [3.6 Reemplazar un disco virtual de forma manual desde el archivo .vbox](#Reemplazar_un_disco_virtual_de_forma_manual_desde_el_archivo_.vbox)
-        *   [3.6.1 Transferencia entre el anfitrión de Linux y otro sistema operativo](#Transferencia_entre_el_anfitri.C3.B3n_de_Linux_y_otro_sistema_operativo)
+        *   [3.6.1 Transferencia entre el anfitrión de Linux y otro sistema operativo](#Transferencia_entre_el_anfitrión_de_Linux_y_otro_sistema_operativo)
     *   [3.7 Clonar un disco virtual y asignarle un UUID nuevo](#Clonar_un_disco_virtual_y_asignarle_un_UUID_nuevo)
 *   [4 Consejos y trucos](#Consejos_y_trucos)
-*   [5 Solución de problemas](#Soluci.C3.B3n_de_problemas)
-    *   [5.1 Teclado y ratón bloqueados en la máquina virtual](#Teclado_y_rat.C3.B3n_bloqueados_en_la_m.C3.A1quina_virtual)
+*   [5 Solución de problemas](#Solución_de_problemas)
+    *   [5.1 Teclado y ratón bloqueados en la máquina virtual](#Teclado_y_ratón_bloqueados_en_la_máquina_virtual)
     *   [5.2 No hay opciones del sistema operativo de 64 bits para el cliente](#No_hay_opciones_del_sistema_operativo_de_64_bits_para_el_cliente)
-    *   [5.3 La interfaz gráfica de VirtualBox no coincide con el tema GTK](#La_interfaz_gr.C3.A1fica_de_VirtualBox_no_coincide_con_el_tema_GTK)
-    *   [5.4 No se pueden usar las teclas CTRL+ALT+Fn en la máquina virtual](#No_se_pueden_usar_las_teclas_CTRL.2BALT.2BFn_en_la_m.C3.A1quina_virtual)
+    *   [5.3 La interfaz gráfica de VirtualBox no coincide con el tema GTK](#La_interfaz_gráfica_de_VirtualBox_no_coincide_con_el_tema_GTK)
+    *   [5.4 No se pueden usar las teclas CTRL+ALT+Fn en la máquina virtual](#No_se_pueden_usar_las_teclas_CTRL+ALT+Fn_en_la_máquina_virtual)
     *   [5.5 El subsistema USB no funciona](#El_subsistema_USB_no_funciona)
-    *   [5.6 El módem USB no funciona en el sistema anfitrión](#El_m.C3.B3dem_USB_no_funciona_en_el_sistema_anfitri.C3.B3n)
-    *   [5.7 Acceder al puerto serie desde el sistema huésped](#Acceder_al_puerto_serie_desde_el_sistema_hu.C3.A9sped)
-    *   [5.8 El sistema huésped se congela después de iniciar Xorg](#El_sistema_hu.C3.A9sped_se_congela_despu.C3.A9s_de_iniciar_Xorg)
+    *   [5.6 El módem USB no funciona en el sistema anfitrión](#El_módem_USB_no_funciona_en_el_sistema_anfitrión)
+    *   [5.7 Acceder al puerto serie desde el sistema huésped](#Acceder_al_puerto_serie_desde_el_sistema_huésped)
+    *   [5.8 El sistema huésped se congela después de iniciar Xorg](#El_sistema_huésped_se_congela_después_de_iniciar_Xorg)
     *   [5.9 El modo de pantalla completa muestra la pantalla en blanco](#El_modo_de_pantalla_completa_muestra_la_pantalla_en_blanco)
-    *   [5.10 El sistema anfitrión se congela en el inicio de la máquina virtual](#El_sistema_anfitri.C3.B3n_se_congela_en_el_inicio_de_la_m.C3.A1quina_virtual)
-    *   [5.11 El sistema huésped Linux tiene audio lento/distorsionado](#El_sistema_hu.C3.A9sped_Linux_tiene_audio_lento.2Fdistorsionado)
-    *   [5.12 El micrófono analógico no funciona](#El_micr.C3.B3fono_anal.C3.B3gico_no_funciona)
-    *   [5.13 El micrófono no funciona después de la actualización](#El_micr.C3.B3fono_no_funciona_despu.C3.A9s_de_la_actualizaci.C3.B3n)
-    *   [5.14 Problemas con imágenes convertidas a ISO](#Problemas_con_im.C3.A1genes_convertidas_a_ISO)
-    *   [5.15 Error al crear la interfaz de red única del anfitrión](#Error_al_crear_la_interfaz_de_red_.C3.BAnica_del_anfitri.C3.B3n)
-    *   [5.16 Error al insertar el módulo](#Error_al_insertar_el_m.C3.B3dulo)
-    *   [5.17 VBOX_E_INVALID_OBJECT_STATE (0x80BB0007)](#VBOX_E_INVALID_OBJECT_STATE_.280x80BB0007.29)
-    *   [5.18 «NS_ERROR_FAILURE» y ausencia de elementos del menú](#.C2.ABNS_ERROR_FAILURE.C2.BB_y_ausencia_de_elementos_del_men.C3.BA)
+    *   [5.10 El sistema anfitrión se congela en el inicio de la máquina virtual](#El_sistema_anfitrión_se_congela_en_el_inicio_de_la_máquina_virtual)
+    *   [5.11 El sistema huésped Linux tiene audio lento/distorsionado](#El_sistema_huésped_Linux_tiene_audio_lento/distorsionado)
+    *   [5.12 El micrófono analógico no funciona](#El_micrófono_analógico_no_funciona)
+    *   [5.13 El micrófono no funciona después de la actualización](#El_micrófono_no_funciona_después_de_la_actualización)
+    *   [5.14 Problemas con imágenes convertidas a ISO](#Problemas_con_imágenes_convertidas_a_ISO)
+    *   [5.15 Error al crear la interfaz de red única del anfitrión](#Error_al_crear_la_interfaz_de_red_única_del_anfitrión)
+    *   [5.16 Error al insertar el módulo](#Error_al_insertar_el_módulo)
+    *   [5.17 VBOX_E_INVALID_OBJECT_STATE (0x80BB0007)](#VBOX_E_INVALID_OBJECT_STATE_(0x80BB0007))
+    *   [5.18 «NS_ERROR_FAILURE» y ausencia de elementos del menú](#«NS_ERROR_FAILURE»_y_ausencia_de_elementos_del_menú)
     *   [5.19 Arch: el script pacstrap falla](#Arch:_el_script_pacstrap_falla)
-    *   [5.20 OpenBSD queda inutilizable cuando las instrucciones de virtualización no están disponibles](#OpenBSD_queda_inutilizable_cuando_las_instrucciones_de_virtualizaci.C3.B3n_no_est.C3.A1n_disponibles)
-    *   [5.21 Anfitrión Windows: VERR_ACCESS_DENIED](#Anfitri.C3.B3n_Windows:_VERR_ACCESS_DENIED)
-    *   [5.22 Windows: «La ruta especificada no existe. Verifique la ruta y luego inténtelo nuevamente».](#Windows:_.C2.ABLa_ruta_especificada_no_existe._Verifique_la_ruta_y_luego_int.C3.A9ntelo_nuevamente.C2.BB.)
-    *   [5.23 Código de error 0x000000C4 de Windows 8.x](#C.C3.B3digo_de_error_0x000000C4_de_Windows_8.x)
-    *   [5.24 Windows 8, 8.1 o 10 no se instala, no se inicia o da el error «ERR_DISK_FULL»](#Windows_8.2C_8.1_o_10_no_se_instala.2C_no_se_inicia_o_da_el_error_.C2.ABERR_DISK_FULL.C2.BB)
+    *   [5.20 OpenBSD queda inutilizable cuando las instrucciones de virtualización no están disponibles](#OpenBSD_queda_inutilizable_cuando_las_instrucciones_de_virtualización_no_están_disponibles)
+    *   [5.21 Anfitrión Windows: VERR_ACCESS_DENIED](#Anfitrión_Windows:_VERR_ACCESS_DENIED)
+    *   [5.22 Windows: «La ruta especificada no existe. Verifique la ruta y luego inténtelo nuevamente».](#Windows:_«La_ruta_especificada_no_existe._Verifique_la_ruta_y_luego_inténtelo_nuevamente».)
+    *   [5.23 Código de error 0x000000C4 de Windows 8.x](#Código_de_error_0x000000C4_de_Windows_8.x)
+    *   [5.24 Windows 8, 8.1 o 10 no se instala, no se inicia o da el error «ERR_DISK_FULL»](#Windows_8,_8.1_o_10_no_se_instala,_no_se_inicia_o_da_el_error_«ERR_DISK_FULL»)
     *   [5.25 WinXP: la profundidad de bits no puede ser mayor que 16](#WinXP:_la_profundidad_de_bits_no_puede_ser_mayor_que_16)
-    *   [5.26 Windows: la pantalla parpadea si la aceleración 3D está activada](#Windows:_la_pantalla_parpadea_si_la_aceleraci.C3.B3n_3D_est.C3.A1_activada)
-    *   [5.27 Sin aceleración 3D de hardware en Arch Linux huésped](#Sin_aceleraci.C3.B3n_3D_de_hardware_en_Arch_Linux_hu.C3.A9sped)
-*   [6 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+    *   [5.26 Windows: la pantalla parpadea si la aceleración 3D está activada](#Windows:_la_pantalla_parpadea_si_la_aceleración_3D_está_activada)
+    *   [5.27 Sin aceleración 3D de hardware en Arch Linux huésped](#Sin_aceleración_3D_de_hardware_en_Arch_Linux_huésped)
+*   [6 Véase también](#Véase_también)
 
 ## Pasos para preparar Arch Linux como sistema anfitrión
 
@@ -154,7 +154,7 @@ Por último, puede utilizar [PhpVirtualBox](/index.php/PhpVirtualBox "PhpVirtual
 
 Remítase al [manual de VirtualBox](https://www.virtualbox.org/manual) para aprender cómo crear máquinas virtuales.
 
-**Advertencia:** si va a guardar imágenes de discos virtuales en un sistema de archivos [Btrfs](/index.php/Btrfs "Btrfs"), antes de crear cualquier imagen, debería considerar desactivar [Copy-on-Write](/index.php/Btrfs#Copy-on-Write_.28CoW.29 "Btrfs") para el directorio de destino de estas imágenes.
+**Advertencia:** si va a guardar imágenes de discos virtuales en un sistema de archivos [Btrfs](/index.php/Btrfs "Btrfs"), antes de crear cualquier imagen, debería considerar desactivar [Copy-on-Write](/index.php/Btrfs#Copy-on-Write_(CoW) "Btrfs") para el directorio de destino de estas imágenes.
 
 ## Pasos para instalar Arch Linux como sistema huésped
 
@@ -166,7 +166,7 @@ Si desea instalar Arch Linux en modo EFI en VirtualBox, en la configuración de 
 
 Una vez que el sistema y el cargador de arranque estén instalados, VirtualBox intentará ejecutar primero `/EFI/BOOT/BOOTX64.EFI` desde la partición [EFI system partition (Español)](/index.php/EFI_system_partition_(Espa%C3%B1ol) "EFI system partition (Español)"). Si esa primera opción falla, VirtualBox probará el script del intérprete de órdenes de EFI `startup.nsh` desde la raíz de la ESP. Esto significa que para iniciar el sistema tiene las siguientes opciones:
 
-*   [Inicie el cargador de arranque manualmente](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol)#Lanzar_el_int.C3.A9rprete_de_.C3.B3rdenes_UEFI "Unified Extensible Firmware Interface (Español)") desde el intérprete de órdenes de EFI cada vez;
+*   [Inicie el cargador de arranque manualmente](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol)#Lanzar_el_intérprete_de_órdenes_UEFI "Unified Extensible Firmware Interface (Español)") desde el intérprete de órdenes de EFI cada vez;
 *   Mueva el gestor de arranque a la ruta predeterminada `/EFI/BOOT/BOOTX64.EFI`;
 *   Crea un script que se llame `startup.nsh` en la raíz de la partición ESP que contenga la ruta a la aplicación del cargador de arranque, por ejemplo `\EFI\grub\grubx64.efi`.
 *   Arranque directamente desde la partición ESP usando un [script startup.nsh](/index.php/EFISTUB#Using_a_startup.nsh_script "EFISTUB").
@@ -373,7 +373,7 @@ y luego transferir archivos entre ambos.
 
 ## Gestionar discos virtuales
 
-Véase también [VirtualBox/Tips and tricks (Español)#Importar/exportar máquinas virtuales de VirtualBox a/desde otros hipervisores](/index.php/VirtualBox/Tips_and_tricks_(Espa%C3%B1ol)#Importar.2Fexportar_m.C3.A1quinas_virtuales_de_VirtualBox_a.2Fdesde_otros_hipervisores "VirtualBox/Tips and tricks (Español)").
+Véase también [VirtualBox/Tips and tricks (Español)#Importar/exportar máquinas virtuales de VirtualBox a/desde otros hipervisores](/index.php/VirtualBox/Tips_and_tricks_(Espa%C3%B1ol)#Importar/exportar_máquinas_virtuales_de_VirtualBox_a/desde_otros_hipervisores "VirtualBox/Tips and tricks (Español)").
 
 ### Formatos soportados por VirtualBox
 
@@ -672,7 +672,7 @@ Para una configuración avanzada, vea [VirtualBox/Tips and tricks (Español)](/i
 
 Esto significa que su máquina virtual ha capturado la entrada de su teclado y del ratón. Basta con pulsar la tecla `Ctrl` derecho y su entrada debería volver al control de su sistema anfitrión de nuevo.
 
-Para controlar de forma transparente su máquina virtual con el ratón de modo que este pueda pasear entre esta y el equipo anfitrión sin tener que pulsar ninguna tecla y con una integración perfecta, instale las *guest additions* dentro del sistema huésped. Lea los pasos para [#Instalar complementos para el sistema huésped](#Instalar_complementos_para_el_sistema_hu.C3.A9sped) si su sistema huésped es Arch Linux, en otro caso, lea la ayuda oficial de VirtualBox.
+Para controlar de forma transparente su máquina virtual con el ratón de modo que este pueda pasear entre esta y el equipo anfitrión sin tener que pulsar ninguna tecla y con una integración perfecta, instale las *guest additions* dentro del sistema huésped. Lea los pasos para [#Instalar complementos para el sistema huésped](#Instalar_complementos_para_el_sistema_huésped) si su sistema huésped es Arch Linux, en otro caso, lea la ayuda oficial de VirtualBox.
 
 ### No hay opciones del sistema operativo de 64 bits para el cliente
 
@@ -775,7 +775,7 @@ En este caso, tendrá que usar [CDemu](/index.php/CDemu "CDemu") para Linux dent
 
 ### Error al crear la interfaz de red única del anfitrión
 
-Asegúrese de que todos los módulos del kernel necesarios están cargados. Véase [#Cargar los módulos del kernel de VirtualBox](#Cargar_los_m.C3.B3dulos_del_kernel_de_VirtualBox).
+Asegúrese de que todos los módulos del kernel necesarios están cargados. Véase [#Cargar los módulos del kernel de VirtualBox](#Cargar_los_módulos_del_kernel_de_VirtualBox).
 
 ### Error al insertar el módulo
 
@@ -831,7 +831,7 @@ Salga de VirtualBox, elimine todos los archivos de la nueva máquina y del archi
 
 ### Arch: el script pacstrap falla
 
-Si usó *pacstrap* en [#Pasos para instalar Arch Linux como sistema huésped](#Pasos_para_instalar_Arch_Linux_como_sistema_hu.C3.A9sped) también para [#Instalar los «Guest Additions»](#Instalar_los_.C2.ABGuest_Additions.C2.BB) **antes de** realizar un primer arranque en el nuevo sistema huésped, necesita `umount -l /mnt/dev` como root antes de usar *pacstrap* nuevamente; Si no lo hace, se volverá inutilizable.
+Si usó *pacstrap* en [#Pasos para instalar Arch Linux como sistema huésped](#Pasos_para_instalar_Arch_Linux_como_sistema_huésped) también para [#Instalar los «Guest Additions»](#Instalar_los_«Guest_Additions») **antes de** realizar un primer arranque en el nuevo sistema huésped, necesita `umount -l /mnt/dev` como root antes de usar *pacstrap* nuevamente; Si no lo hace, se volverá inutilizable.
 
 ### OpenBSD queda inutilizable cuando las instrucciones de virtualización no están disponibles
 

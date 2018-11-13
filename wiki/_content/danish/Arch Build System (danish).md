@@ -7,21 +7,21 @@ Related articles
 
 ## Contents
 
-*   [1 Hvad er ABS?](#Hvad_er_ABS.3F)
-    *   [1.1 Hvad er et 'ports'-lignende system?](#Hvad_er_et_.27ports.27-lignende_system.3F)
+*   [1 Hvad er ABS?](#Hvad_er_ABS?)
+    *   [1.1 Hvad er et 'ports'-lignende system?](#Hvad_er_et_'ports'-lignende_system?)
     *   [1.2 **ABS** er et lignende koncept.](#ABS_er_et_lignende_koncept.)
     *   [1.3 Hurtig gennemgang](#Hurtig_gennemgang)
-    *   [1.4 Er det det hele?](#Er_det_det_hele.3F)
+    *   [1.4 Er det det hele?](#Er_det_det_hele?)
     *   [1.5 ABS - Systemoversigt](#ABS_-_Systemoversigt)
-*   [2 Hvorfor skulle jeg bruge ABS?](#Hvorfor_skulle_jeg_bruge_ABS.3F)
-*   [3 Kom igang! Installér pakker](#Kom_igang.21_Install.C3.A9r_pakker)
-*   [4 /etc/abs.conf](#.2Fetc.2Fabs.conf)
-*   [5 Opret ABS-træet](#Opret_ABS-tr.C3.A6et)
-*   [6 /etc/makepkg.conf](#.2Fetc.2Fmakepkg.conf)
-*   [7 ABS-træet](#ABS-tr.C3.A6et)
+*   [2 Hvorfor skulle jeg bruge ABS?](#Hvorfor_skulle_jeg_bruge_ABS?)
+*   [3 Kom igang! Installér pakker](#Kom_igang!_Installér_pakker)
+*   [4 /etc/abs.conf](#/etc/abs.conf)
+*   [5 Opret ABS-træet](#Opret_ABS-træet)
+*   [6 /etc/makepkg.conf](#/etc/makepkg.conf)
+*   [7 ABS-træet](#ABS-træet)
     *   [7.1 Opret en mappe til bygning af pakker](#Opret_en_mappe_til_bygning_af_pakker)
 *   [8 Byggefunktionen - traditionel metode](#Byggefunktionen_-_traditionel_metode)
-*   [9 Byggefunktionen - ABS-måden](#Byggefunktionen_-_ABS-m.C3.A5den)
+*   [9 Byggefunktionen - ABS-måden](#Byggefunktionen_-_ABS-måden)
 *   [10 Yderligere ABS-information](#Yderligere_ABS-information)
 
 #### Hvad er ABS?

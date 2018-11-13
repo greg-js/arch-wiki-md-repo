@@ -14,39 +14,39 @@ Az i3 céljai a letisztult dokumentáció, több monitor megfelelő támogatása
 
 ## Contents
 
-*   [1 Telepítés](#Telep.C3.ADt.C3.A9s)
+*   [1 Telepítés](#Telepítés)
     *   [1.1 Display manager](#Display_manager)
     *   [1.2 xinitrc](#xinitrc)
-*   [2 Használat](#Haszn.C3.A1lat)
-    *   [2.1 Billentyűk](#Billenty.C5.B1k)
-    *   [2.2 Tárolók](#T.C3.A1rol.C3.B3k)
-    *   [2.3 Alkalmazásindító](#Alkalmaz.C3.A1sind.C3.ADt.C3.B3)
-*   [3 Beállítás](#Be.C3.A1ll.C3.ADt.C3.A1s)
-    *   [3.1 Konfiguráció varázsló és alternatív billentyűzetkiosztások](#Konfigur.C3.A1ci.C3.B3_var.C3.A1zsl.C3.B3_.C3.A9s_alternat.C3.ADv_billenty.C5.B1zetkioszt.C3.A1sok)
-    *   [3.2 Színsémák](#Sz.C3.ADns.C3.A9m.C3.A1k)
+*   [2 Használat](#Használat)
+    *   [2.1 Billentyűk](#Billentyűk)
+    *   [2.2 Tárolók](#Tárolók)
+    *   [2.3 Alkalmazásindító](#Alkalmazásindító)
+*   [3 Beállítás](#Beállítás)
+    *   [3.1 Konfiguráció varázsló és alternatív billentyűzetkiosztások](#Konfiguráció_varázsló_és_alternatív_billentyűzetkiosztások)
+    *   [3.2 Színsémák](#Színsémák)
     *   [3.3 i3bar](#i3bar)
-        *   [3.3.1 i3bar alternatívák](#i3bar_alternat.C3.ADv.C3.A1k)
+        *   [3.3.1 i3bar alternatívák](#i3bar_alternatívák)
     *   [3.4 i3status](#i3status)
-        *   [3.4.1 i3status helyettesítők](#i3status_helyettes.C3.ADt.C5.91k)
+        *   [3.4.1 i3status helyettesítők](#i3status_helyettesítők)
         *   [3.4.2 i3status wrapper-ek](#i3status_wrapper-ek)
-        *   [3.4.3 Ikonszerű betűk az állapotsoron](#Ikonszer.C5.B1_bet.C5.B1k_az_.C3.A1llapotsoron)
-    *   [3.5 Terminál emulátorok](#Termin.C3.A1l_emul.C3.A1torok)
+        *   [3.4.3 Ikonszerű betűk az állapotsoron](#Ikonszerű_betűk_az_állapotsoron)
+    *   [3.5 Terminál emulátorok](#Terminál_emulátorok)
 *   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 Fejlett ablak-navigálás](#Fejlett_ablak-navig.C3.A1l.C3.A1s)
-    *   [4.2 Megnyitott ablakra ugrás](#Megnyitott_ablakra_ugr.C3.A1s)
-    *   [4.3 Ugrás sürgős ablakra](#Ugr.C3.A1s_s.C3.BCrg.C5.91s_ablakra)
+    *   [4.1 Fejlett ablak-navigálás](#Fejlett_ablak-navigálás)
+    *   [4.2 Megnyitott ablakra ugrás](#Megnyitott_ablakra_ugrás)
+    *   [4.3 Ugrás sürgős ablakra](#Ugrás_sürgős_ablakra)
     *   [4.4 Save and restore the window layout](#Save_and_restore_the_window_layout)
-        *   [4.4.1 Egy munkaterület ablak-elrendezésének mentése](#Egy_munkater.C3.BClet_ablak-elrendez.C3.A9s.C3.A9nek_ment.C3.A9se)
+        *   [4.4.1 Egy munkaterület ablak-elrendezésének mentése](#Egy_munkaterület_ablak-elrendezésének_mentése)
         *   [4.4.2 Restore the window layout of the workspace](#Restore_the_window_layout_of_the_workspace)
-    *   [4.5 Scratchpad tárolók](#Scratchpad_t.C3.A1rol.C3.B3k)
-    *   [4.6 Képernyővédő, és energiagazdálkodás](#K.C3.A9perny.C5.91v.C3.A9d.C5.91.2C_.C3.A9s_energiagazd.C3.A1lkod.C3.A1s)
-    *   [4.7 Kikapcsolás, újraindítás, képernyővédő](#Kikapcsol.C3.A1s.2C_.C3.BAjraind.C3.ADt.C3.A1s.2C_k.C3.A9perny.C5.91v.C3.A9d.C5.91)
+    *   [4.5 Scratchpad tárolók](#Scratchpad_tárolók)
+    *   [4.6 Képernyővédő, és energiagazdálkodás](#Képernyővédő,_és_energiagazdálkodás)
+    *   [4.7 Kikapcsolás, újraindítás, képernyővédő](#Kikapcsolás,_újraindítás,_képernyővédő)
     *   [4.8 External displays manual management](#External_displays_manual_management)
     *   [4.9 Tabbed or stacked web-browsing](#Tabbed_or_stacked_web-browsing)
     *   [4.10 Workspace variables](#Workspace_variables)
     *   [4.11 Correct handling of floating dialogs](#Correct_handling_of_floating_dialogs)
-    *   [4.12 Network Download/Upload speed on statusbar](#Network_Download.2FUpload_speed_on_statusbar)
-    *   [4.13 Multimédia Billentyűk](#Multim.C3.A9dia_Billenty.C5.B1k)
+    *   [4.12 Network Download/Upload speed on statusbar](#Network_Download/Upload_speed_on_statusbar)
+    *   [4.13 Multimédia Billentyűk](#Multimédia_Billentyűk)
 *   [5 Patch-ek](#Patch-ek)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 General](#General)
@@ -94,7 +94,7 @@ Az i3-ban a parancsok egy úgynevezett módosító billentyűvel hajthatók vég
 
 Lásd az [i3 referencia kártyát](http://i3wm.org/docs/refcard.html) és az [i3 használatát](http://i3wm.org/docs/userguide.html#_using_i3) az alapértelmezett értékekért. Lásd a [billentyű hozzárendeléseket](http://i3wm.org/docs/userguide.html#keybindings) új gyorsbillentyűk hozzáadásához.
 
-A nem Querty billentyűzetet használók előnyben részesíthetik a "beállítás varázsló" megkerülését, [lásd lejjebb](#Konfigur.C3.A1ci.C3.B3_var.C3.A1zsl.C3.B3_.C3.A9s_alternat.C3.ADv_billenty.C5.B1zetkioszt.C3.A1sok).
+A nem Querty billentyűzetet használók előnyben részesíthetik a "beállítás varázsló" megkerülését, [lásd lejjebb](#Konfiguráció_varázsló_és_alternatív_billentyűzetkiosztások).
 
 ### Tárolók
 
@@ -412,7 +412,7 @@ xautolock -time 10 -locker "i3lock -i 'background_image.png'" &
 
 ```
 
-Egy [systemd](/index.php/Systemd "Systemd") fájl használható a képernyő zárolására, mielőtt a rendszer alvó, vagy hibernált állapotba kerül. Lásd [Power management#Suspend/resume service files](/index.php/Power_management#Suspend.2Fresume_service_files "Power management"). Figyelj arra, hogy az i3lock-nak szükséges, hogy a service `forking` típusú legyen.
+Egy [systemd](/index.php/Systemd "Systemd") fájl használható a képernyő zárolására, mielőtt a rendszer alvó, vagy hibernált állapotba kerül. Lásd [Power management#Suspend/resume service files](/index.php/Power_management#Suspend/resume_service_files "Power management"). Figyelj arra, hogy az i3lock-nak szükséges, hogy a service `forking` típusú legyen.
 
 Lásd még [DPMS](/index.php/DPMS "DPMS").
 

@@ -6,7 +6,7 @@ L'IDE di Eclipse è scritto per la maggior parte in Java ma può essere usato pe
 
 *   [1 Installazione](#Installazione)
 *   [2 Plugins](#Plugins)
-    *   [2.1 Supporto C/C++](#Supporto_C.2FC.2B.2B)
+    *   [2.1 Supporto C/C++](#Supporto_C/C++)
         *   [2.1.1 Eclipse CDT](#Eclipse_CDT)
     *   [2.2 Supporto Perl](#Supporto_Perl)
         *   [2.2.1 EPIC](#EPIC)
@@ -16,7 +16,7 @@ L'IDE di Eclipse è scritto per la maggior parte in Java ma può essere usato pe
         *   [2.3.3 Aptana PHP](#Aptana_PHP)
     *   [2.4 Supporto Python](#Supporto_Python)
         *   [2.4.1 PyDev](#PyDev)
-    *   [2.5 Web development (HTML, CSS, JavaScript...)](#Web_development_.28HTML.2C_CSS.2C_JavaScript....29)
+    *   [2.5 Web development (HTML, CSS, JavaScript...)](#Web_development_(HTML,_CSS,_JavaScript...))
         *   [2.5.1 Aptana Studio](#Aptana_Studio)
     *   [2.6 Supporto SVN](#Supporto_SVN)
         *   [2.6.1 Subclipse](#Subclipse)
@@ -24,12 +24,12 @@ L'IDE di Eclipse è scritto per la maggior parte in Java ma può essere usato pe
     *   [2.7 Supporto Git](#Supporto_Git)
         *   [2.7.1 EGit](#EGit)
 *   [3 Aggiornamenti](#Aggiornamenti)
-*   [4 Abilitare l'integrazione di javadoc](#Abilitare_l.27integrazione_di_javadoc)
+*   [4 Abilitare l'integrazione di javadoc](#Abilitare_l'integrazione_di_javadoc)
     *   [4.1 Versione online](#Versione_online)
     *   [4.2 Versione offline](#Versione_offline)
 *   [5 Risoluzione dei problemi](#Risoluzione_dei_problemi)
     *   [5.1 Crash di autocompletamento e javadoc render](#Crash_di_autocompletamento_e_javadoc_render)
-    *   [5.2 Crash al primo avvio o scegliendo "Help -> Welcome"](#Crash_al_primo_avvio_o_scegliendo_.22Help_-.3E_Welcome.22)
+    *   [5.2 Crash al primo avvio o scegliendo "Help -> Welcome"](#Crash_al_primo_avvio_o_scegliendo_"Help_->_Welcome")
 
 ## Installazione
 

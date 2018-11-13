@@ -3,8 +3,8 @@ With a bit of work, nearly all features can be made to work correctly. HDMI out,
 ## Contents
 
 *   [1 Hardware Details](#Hardware_Details)
-    *   [1.1 Output from 'lspci -k'](#Output_from_.27lspci_-k.27)
-    *   [1.2 Output from 'lsusb'](#Output_from_.27lsusb.27)
+    *   [1.1 Output from 'lspci -k'](#Output_from_'lspci_-k')
+    *   [1.2 Output from 'lsusb'](#Output_from_'lsusb')
 *   [2 Setup](#Setup)
     *   [2.1 Grub and Framebuffer Modes](#Grub_and_Framebuffer_Modes)
     *   [2.2 Audio](#Audio)

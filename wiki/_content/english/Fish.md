@@ -24,7 +24,7 @@
     *   [4.7 Put git status in prompt](#Put_git_status_in_prompt)
     *   [4.8 Color the hostname in the prompt in SSH](#Color_the_hostname_in_the_prompt_in_SSH)
     *   [4.9 Evaluate ssh-agent](#Evaluate_ssh-agent)
-    *   [4.10 The "command not found" hook](#The_.22command_not_found.22_hook)
+    *   [4.10 The "command not found" hook](#The_"command_not_found"_hook)
     *   [4.11 Remove a process from the list of jobs](#Remove_a_process_from_the_list_of_jobs)
     *   [4.12 Set a persistent alias](#Set_a_persistent_alias)
 *   [5 See also](#See_also)

@@ -3,8 +3,8 @@ The [Open Sound System](https://en.wikipedia.org/wiki/Open_Sound_System "wikiped
 ## Contents
 
 *   [1 Comparisons with ALSA](#Comparisons_with_ALSA)
-    *   [1.1 OSS Advantages (users)](#OSS_Advantages_.28users.29)
-    *   [1.2 OSS Advantages (developers)](#OSS_Advantages_.28developers.29)
+    *   [1.1 OSS Advantages (users)](#OSS_Advantages_(users))
+    *   [1.2 OSS Advantages (developers)](#OSS_Advantages_(developers))
     *   [1.3 ALSA advantages over OSS](#ALSA_advantages_over_OSS)
 *   [2 Install](#Install)
 *   [3 Testing](#Testing)

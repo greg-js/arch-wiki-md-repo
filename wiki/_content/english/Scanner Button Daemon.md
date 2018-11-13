@@ -1,8 +1,8 @@
 ## Contents
 
 *   [1 Introduction](#Introduction)
-    *   [1.1 What is scanbd good for?](#What_is_scanbd_good_for.3F)
-    *   [1.2 How does it work?](#How_does_it_work.3F)
+    *   [1.1 What is scanbd good for?](#What_is_scanbd_good_for?)
+    *   [1.2 How does it work?](#How_does_it_work?)
 *   [2 Installation](#Installation)
     *   [2.1 Sane configuration](#Sane_configuration)
     *   [2.2 scanbd configuration](#scanbd_configuration)

@@ -21,7 +21,7 @@ Related articles
         *   [6.1.1 Missing firmware file](#Missing_firmware_file)
         *   [6.1.2 Wrong firmware file permissions](#Wrong_firmware_file_permissions)
         *   [6.1.3 Multiple backends claim scanner](#Multiple_backends_claim_scanner)
-        *   [6.1.4 Communication via xHCI not working (older scanner models)](#Communication_via_xHCI_not_working_.28older_scanner_models.29)
+        *   [6.1.4 Communication via xHCI not working (older scanner models)](#Communication_via_xHCI_not_working_(older_scanner_models))
     *   [6.2 Slow startup](#Slow_startup)
     *   [6.3 Device busy](#Device_busy)
     *   [6.4 Permission problem](#Permission_problem)

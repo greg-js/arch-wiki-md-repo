@@ -23,7 +23,7 @@ For an overview about Secure Boot in Linux see [Rodsbooks' Secure Boot](http://w
         *   [3.1.2 Updating keys](#Updating_keys)
     *   [3.2 Signing bootloader and kernel](#Signing_bootloader_and_kernel)
         *   [3.2.1 Signing kernel with pacman hook](#Signing_kernel_with_pacman_hook)
-    *   [3.3 Put firmware in "Setup Mode"](#Put_firmware_in_.22Setup_Mode.22)
+    *   [3.3 Put firmware in "Setup Mode"](#Put_firmware_in_"Setup_Mode")
     *   [3.4 Enroll keys in firmware](#Enroll_keys_in_firmware)
         *   [3.4.1 Using firmware setup utility](#Using_firmware_setup_utility)
         *   [3.4.2 Using KeyTool](#Using_KeyTool)

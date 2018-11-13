@@ -16,12 +16,12 @@ Maple es un software propietario producido por Maplesoft y requiere una licencia
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Solución de problemas](#Soluci.C3.B3n_de_problemas)
+*   [1 Instalación](#Instalación)
+*   [2 Solución de problemas](#Solución_de_problemas)
     *   [2.1 Error al determinar el ID de host del servidor de licencias](#Error_al_determinar_el_ID_de_host_del_servidor_de_licencias)
     *   [2.2 Ventana principal en blanco con gestores de ventanas de mosaico](#Ventana_principal_en_blanco_con_gestores_de_ventanas_de_mosaico)
     *   [2.3 Los diagramas 3D fallan](#Los_diagramas_3D_fallan)
-    *   [2.4 Activación offline](#Activaci.C3.B3n_offline)
+    *   [2.4 Activación offline](#Activación_offline)
 
 ## Instalación
 
@@ -39,7 +39,7 @@ Para que Maple acepte su código de activación, es posible que deba [instalar](
 
 ### Ventana principal en blanco con gestores de ventanas de mosaico
 
-Véase [Java#Non-reparenting window managers / Grey window / Programs not drawing properly](/index.php/Java#Non-reparenting_window_managers_.2F_Grey_window_.2F_Programs_not_drawing_properly "Java")
+Véase [Java#Non-reparenting window managers / Grey window / Programs not drawing properly](/index.php/Java#Non-reparenting_window_managers_/_Grey_window_/_Programs_not_drawing_properly "Java")
 
 ### Los diagramas 3D fallan
 

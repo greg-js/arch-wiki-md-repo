@@ -10,17 +10,17 @@ En este artículo se explica qué es RAID y cómo crear/administrar una matriz R
 
 ## Contents
 
-*   [1 Introducción](#Introducci.C3.B3n)
-    *   [1.1 Niveles RAID estándar](#Niveles_RAID_est.C3.A1ndar)
+*   [1 Introducción](#Introducción)
+    *   [1.1 Niveles RAID estándar](#Niveles_RAID_estándar)
     *   [1.2 Niveles RAID anidados](#Niveles_RAID_anidados)
-    *   [1.3 Comparación de niveles RAID](#Comparaci.C3.B3n_de_niveles_RAID)
-*   [2 Implementación](#Implementaci.C3.B3n)
-    *   [2.1 ¿Qué tipo de RAID tengo?](#.C2.BFQu.C3.A9_tipo_de_RAID_tengo.3F)
-*   [3 Instalación](#Instalaci.C3.B3n)
+    *   [1.3 Comparación de niveles RAID](#Comparación_de_niveles_RAID)
+*   [2 Implementación](#Implementación)
+    *   [2.1 ¿Qué tipo de RAID tengo?](#¿Qué_tipo_de_RAID_tengo?)
+*   [3 Instalación](#Instalación)
     *   [3.1 Preparar los dispositivos](#Preparar_los_dispositivos)
     *   [3.2 Crear la tabla de particiones](#Crear_la_tabla_de_particiones)
     *   [3.3 Compilar la matriz](#Compilar_la_matriz)
-    *   [3.4 Actualizar archivo de configuración](#Actualizar_archivo_de_configuraci.C3.B3n)
+    *   [3.4 Actualizar archivo de configuración](#Actualizar_archivo_de_configuración)
     *   [3.5 Ensamblar la matriz](#Ensamblar_la_matriz)
     *   [3.6 Formatear RAID con un sistema de archivos](#Formatear_RAID_con_un_sistema_de_archivos)
         *   [3.6.1 Calcular el stride y stripe-width](#Calcular_el_stride_y_stripe-width)
@@ -28,29 +28,29 @@ En este artículo se explica qué es RAID y cómo crear/administrar una matriz R
             *   [3.6.1.2 Ejemplo 2\. RAID5](#Ejemplo_2._RAID5)
 *   [4 Montar desde un CD live](#Montar_desde_un_CD_live)
 *   [5 Instalar Arch Linux en RAID](#Instalar_Arch_Linux_en_RAID)
-    *   [5.1 Actualizar archivo de configuración](#Actualizar_archivo_de_configuraci.C3.B3n_2)
-    *   [5.2 Añadir el hook mdadm a mkinitcpio.conf](#A.C3.B1adir_el_hook_mdadm_a_mkinitcpio.conf)
+    *   [5.1 Actualizar archivo de configuración](#Actualizar_archivo_de_configuración_2)
+    *   [5.2 Añadir el hook mdadm a mkinitcpio.conf](#Añadir_el_hook_mdadm_a_mkinitcpio.conf)
     *   [5.3 Configurar syslinux](#Configurar_syslinux)
 *   [6 Mantenimiento de RAID](#Mantenimiento_de_RAID)
-    *   [6.1 Depuración](#Depuraci.C3.B3n)
-        *   [6.1.1 Notas generales sobre la depuración](#Notas_generales_sobre_la_depuraci.C3.B3n)
-        *   [6.1.2 Notas sobre la depuración de RAID1 y RAID10](#Notas_sobre_la_depuraci.C3.B3n_de_RAID1_y_RAID10)
-    *   [6.2 Extracción de dispositivos de una matriz](#Extracci.C3.B3n_de_dispositivos_de_una_matriz)
-    *   [6.3 Adición de un nuevo dispositivo a una matriz](#Adici.C3.B3n_de_un_nuevo_dispositivo_a_una_matriz)
+    *   [6.1 Depuración](#Depuración)
+        *   [6.1.1 Notas generales sobre la depuración](#Notas_generales_sobre_la_depuración)
+        *   [6.1.2 Notas sobre la depuración de RAID1 y RAID10](#Notas_sobre_la_depuración_de_RAID1_y_RAID10)
+    *   [6.2 Extracción de dispositivos de una matriz](#Extracción_de_dispositivos_de_una_matriz)
+    *   [6.3 Adición de un nuevo dispositivo a una matriz](#Adición_de_un_nuevo_dispositivo_a_una_matriz)
         *   [6.3.1 Para matrices RAID0](#Para_matrices_RAID0)
-*   [7 Monitorización](#Monitorizaci.C3.B3n)
+*   [7 Monitorización](#Monitorización)
     *   [7.1 Observar estado con mdstat](#Observar_estado_con_mdstat)
-    *   [7.2 Seguimiento E/S con iotop](#Seguimiento_E.2FS_con_iotop)
-    *   [7.3 Seguimiento E/S con iostat](#Seguimiento_E.2FS_con_iostat)
+    *   [7.2 Seguimiento E/S con iotop](#Seguimiento_E/S_con_iotop)
+    *   [7.3 Seguimiento E/S con iostat](#Seguimiento_E/S_con_iostat)
     *   [7.4 Correos sobre eventos](#Correos_sobre_eventos)
-        *   [7.4.1 Método alternativo](#M.C3.A9todo_alternativo)
-*   [8 Solución de problemas](#Soluci.C3.B3n_de_problemas)
-    *   [8.1 Error: «invalid raid superblock magic»](#Error:_.C2.ABinvalid_raid_superblock_magic.C2.BB)
-    *   [8.2 Error: «kernel: ataX.00: revalidation failed»](#Error:_.C2.ABkernel:_ataX.00:_revalidation_failed.C2.BB)
+        *   [7.4.1 Método alternativo](#Método_alternativo)
+*   [8 Solución de problemas](#Solución_de_problemas)
+    *   [8.1 Error: «invalid raid superblock magic»](#Error:_«invalid_raid_superblock_magic»)
+    *   [8.2 Error: «kernel: ataX.00: revalidation failed»](#Error:_«kernel:_ataX.00:_revalidation_failed»)
     *   [8.3 Iniciar matrices en solo lectura](#Iniciar_matrices_en_solo_lectura)
-    *   [8.4 Recuperación de una unidad rota o ausente en el raid](#Recuperaci.C3.B3n_de_una_unidad_rota_o_ausente_en_el_raid)
+    *   [8.4 Recuperación de una unidad rota o ausente en el raid](#Recuperación_de_una_unidad_rota_o_ausente_en_el_raid)
 *   [9 Benchmarking](#Benchmarking)
-*   [10 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [10 Véase también](#Véase_también)
 
 ## Introducción
 
@@ -301,7 +301,7 @@ Los usuarios que quieran montar la partición RAID desde un CD live, escriban:
 
 **Nota:** La siguiente sección se aplica solo si el sistema de archivos raíz reside en la matriz. Los usuarios pueden saltarse esta sección si la matriz contiene una partición(s) de datos.
 
-Se debe crear la matriz RAID entre los pasos de [particionar](/index.php/Partitioning_(Espa%C3%B1ol) "Partitioning (Español)") y [formatear](/index.php/File_systems_(Espa%C3%B1ol)#Crear_un_sistema_de_archivos "File systems (Español)") del proceso de instalación. En lugar de formatear directamente una partición para que sea su sistema de archivos raíz, ello se hará sobre la matriz RAID. Siga la sección [#Instalación](#Instalaci.C3.B3n) para crear la matriz RAID. Luego, continúe con el procedimiento de instalación hasta que se complete el paso pacstrap. Al usar [arranque UEFI](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface"), consulte también [ESP en RAID](/index.php/EFI_system_partition#ESP_on_RAID "EFI system partition").
+Se debe crear la matriz RAID entre los pasos de [particionar](/index.php/Partitioning_(Espa%C3%B1ol) "Partitioning (Español)") y [formatear](/index.php/File_systems_(Espa%C3%B1ol)#Crear_un_sistema_de_archivos "File systems (Español)") del proceso de instalación. En lugar de formatear directamente una partición para que sea su sistema de archivos raíz, ello se hará sobre la matriz RAID. Siga la sección [#Instalación](#Instalación) para crear la matriz RAID. Luego, continúe con el procedimiento de instalación hasta que se complete el paso pacstrap. Al usar [arranque UEFI](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface"), consulte también [ESP en RAID](/index.php/EFI_system_partition#ESP_on_RAID "EFI system partition").
 
 ### Actualizar archivo de configuración
 
@@ -627,7 +627,7 @@ Si escribe:
 
 es probable que vea que el raid ya está activo y en reconstrucción.
 
-También puede actualizar su configuración (ver: [#Actualizar archivo de configuración](#Actualizar_archivo_de_configuraci.C3.B3n)).
+También puede actualizar su configuración (ver: [#Actualizar archivo de configuración](#Actualizar_archivo_de_configuración)).
 
 ## Benchmarking
 

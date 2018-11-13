@@ -16,7 +16,7 @@ From the project's [git repository](http://cgit.freedesktop.org/~dvdhrm/kmscon/t
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Problems with switching between Xorg and kmscon](#Problems_with_switching_between_Xorg_and_kmscon)
     *   [4.2 No audio control](#No_audio_control)
-    *   [4.3 Vim doesn't clear terminal output](#Vim_doesn.27t_clear_terminal_output)
+    *   [4.3 Vim doesn't clear terminal output](#Vim_doesn't_clear_terminal_output)
 
 ## Features
 

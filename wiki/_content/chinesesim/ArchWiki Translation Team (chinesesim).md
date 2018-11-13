@@ -1,19 +1,19 @@
 Arch Wiki 上有许多中文页面，这其中大部分是从外文翻译过来的，这些页面是无数中文志愿者劳动的结晶。随着时间推移，有些页面因为没有及时维护，内容严重过时。而目前的翻译工作缺少组织，效率偏低。所以参照西班牙和意大利翻译组的做法，添加这个页面。
 
-如果你希望对Arch Wiki做贡献，参与Wiki建设，比如翻译英文页面和对已翻译过的中文页面进行维护，只需要编辑下面的[#页面维护列表](#.E9.A1.B5.E9.9D.A2.E7.BB.B4.E6.8A.A4.E5.88.97.E8.A1.A8)，添加相应的条目，并将自己加为相关页面的维护者。如果你在列表中还没有找到想要翻译的页面，可以自行添加。另外，如果因为时间原因无法再维护页面，请及时将自己从维护者列表中删除。
+如果你希望对Arch Wiki做贡献，参与Wiki建设，比如翻译英文页面和对已翻译过的中文页面进行维护，只需要编辑下面的[#页面维护列表](#页面维护列表)，添加相应的条目，并将自己加为相关页面的维护者。如果你在列表中还没有找到想要翻译的页面，可以自行添加。另外，如果因为时间原因无法再维护页面，请及时将自己从维护者列表中删除。
 
 ## Contents
 
-*   [1 创建翻译](#.E5.88.9B.E5.BB.BA.E7.BF.BB.E8.AF.91)
+*   [1 创建翻译](#创建翻译)
 *   [2 Templates](#Templates)
-*   [3 完善翻译](#.E5.AE.8C.E5.96.84.E7.BF.BB.E8.AF.91)
-*   [4 更新过期页面](#.E6.9B.B4.E6.96.B0.E8.BF.87.E6.9C.9F.E9.A1.B5.E9.9D.A2)
-*   [5 翻译任务](#.E7.BF.BB.E8.AF.91.E4.BB.BB.E5.8A.A1)
-    *   [5.1 模板 Article summary 变更为 Related](#.E6.A8.A1.E6.9D.BF_Article_summary_.E5.8F.98.E6.9B.B4.E4.B8.BA_Related)
-*   [6 维护翻译](#.E7.BB.B4.E6.8A.A4.E7.BF.BB.E8.AF.91)
-    *   [6.1 页面认领](#.E9.A1.B5.E9.9D.A2.E8.AE.A4.E9.A2.86)
-    *   [6.2 翻译状态模板](#.E7.BF.BB.E8.AF.91.E7.8A.B6.E6.80.81.E6.A8.A1.E6.9D.BF)
-    *   [6.3 页面维护列表](#.E9.A1.B5.E9.9D.A2.E7.BB.B4.E6.8A.A4.E5.88.97.E8.A1.A8)
+*   [3 完善翻译](#完善翻译)
+*   [4 更新过期页面](#更新过期页面)
+*   [5 翻译任务](#翻译任务)
+    *   [5.1 模板 Article summary 变更为 Related](#模板_Article_summary_变更为_Related)
+*   [6 维护翻译](#维护翻译)
+    *   [6.1 页面认领](#页面认领)
+    *   [6.2 翻译状态模板](#翻译状态模板)
+    *   [6.3 页面维护列表](#页面维护列表)
 
 ## 创建翻译
 
@@ -22,7 +22,7 @@ Arch Wiki 上有许多中文页面，这其中大部分是从外文翻译过来�
 1.  如果还不知道如何编辑 wiki，请阅读 [编辑帮助](/index.php/Help:Editing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Help:Editing (简体中文)")。
 2.  阅读 [i18n帮助](/index.php/Help:I18n_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Help:I18n (简体中文)")，文章给出了 ArchWiki 国际化和本地化的指南。
 3.  [登录](/index.php/Special:UserLogin "Special:UserLogin") 以进行编辑。
-4.  选择要翻译的页面，例如从 [随机页面](/index.php/Special:Random "Special:Random") 或[页面维护列表](#.E9.A1.B5.E9.9D.A2.E7.BB.B4.E6.8A.A4.E5.88.97.E8.A1.A8) 中选择一个未翻译完成的页面。假设要翻译 [Some Page](/index.php?title=Some_Page&action=edit&redlink=1 "Some Page (page does not exist)").
+4.  选择要翻译的页面，例如从 [随机页面](/index.php/Special:Random "Special:Random") 或[页面维护列表](#页面维护列表) 中选择一个未翻译完成的页面。假设要翻译 [Some Page](/index.php?title=Some_Page&action=edit&redlink=1 "Some Page (page does not exist)").
 5.  进入选择的英文页面，点击页面顶部的 **编辑**。
 6.  添加要翻译文件的语言间链接, 简体中文的话加入[[zh-hans:Some Page]]，其它语言参见[Help:i18n#Interlanguage links](/index.php/Help:I18n#Interlanguage_links "Help:I18n"))。
 7.  复制所有页面代码。

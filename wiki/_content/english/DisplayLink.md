@@ -5,21 +5,21 @@ Also be warned that even over USB 3.0, a DisplayLink monitor may exhibit noticea
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 USB 2.0 DL-1x5, DL-1x0 Devices](#USB_2.0_DL-1x5.2C_DL-1x0_Devices)
-    *   [1.2 USB 3.0 DL-6xxx, DL-5xxx, DL-41xx, DL-3xxx Devices](#USB_3.0_DL-6xxx.2C_DL-5xxx.2C_DL-41xx.2C_DL-3xxx_Devices)
+    *   [1.1 USB 2.0 DL-1x5, DL-1x0 Devices](#USB_2.0_DL-1x5,_DL-1x0_Devices)
+    *   [1.2 USB 3.0 DL-6xxx, DL-5xxx, DL-41xx, DL-3xxx Devices](#USB_3.0_DL-6xxx,_DL-5xxx,_DL-41xx,_DL-3xxx_Devices)
     *   [1.3 Setting up X Displays](#Setting_up_X_Displays)
 *   [2 Configuration](#Configuration)
     *   [2.1 Load the framebuffer device](#Load_the_framebuffer_device)
     *   [2.2 Configuring X Server](#Configuring_X_Server)
         *   [2.2.1 xrandr](#xrandr)
         *   [2.2.2 Enabling DVI output on startup](#Enabling_DVI_output_on_startup)
-        *   [2.2.3 Switching between displaylink and nvidia/nouveau driver](#Switching_between_displaylink_and_nvidia.2Fnouveau_driver)
+        *   [2.2.3 Switching between displaylink and nvidia/nouveau driver](#Switching_between_displaylink_and_nvidia/nouveau_driver)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Not working configuration](#Not_working_configuration)
     *   [3.2 Screen redraw is broken](#Screen_redraw_is_broken)
     *   [3.3 DisplayLink refresh rate is extremely slow with gnome 3](#DisplayLink_refresh_rate_is_extremely_slow_with_gnome_3)
-    *   [3.4 Slow redraw/Unresponsiveness in Google Chrome and Webkit2-based Applications](#Slow_redraw.2FUnresponsiveness_in_Google_Chrome_and_Webkit2-based_Applications)
-    *   [3.5 Impossible to activate displaylink's screen](#Impossible_to_activate_displaylink.27s_screen)
+    *   [3.4 Slow redraw/Unresponsiveness in Google Chrome and Webkit2-based Applications](#Slow_redraw/Unresponsiveness_in_Google_Chrome_and_Webkit2-based_Applications)
+    *   [3.5 Impossible to activate displaylink's screen](#Impossible_to_activate_displaylink's_screen)
     *   [3.6 Suspend problem](#Suspend_problem)
     *   [3.7 DisplayLink is not working when usb hot plugged](#DisplayLink_is_not_working_when_usb_hot_plugged)
     *   [3.8 DisplayLink driver does not work with Intel GPUs after recent X upgrades](#DisplayLink_driver_does_not_work_with_Intel_GPUs_after_recent_X_upgrades)
@@ -98,7 +98,7 @@ To automatically load `udl` at boot, create the file `udl.conf` in `/etc/modules
 
  `/etc/modules-load.d/udl.conf`  `udl` 
 
-For more information on loading kernel modules, see [Kernel modules#Automatic module handling](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules").
+For more information on loading kernel modules, see [Kernel modules#Automatic module loading with systemd](/index.php/Kernel_modules#Automatic_module_loading_with_systemd "Kernel modules").
 
 ### Configuring X Server
 

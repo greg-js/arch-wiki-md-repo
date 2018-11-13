@@ -24,26 +24,26 @@ Se o sistema hospedeiro funciona no Arch Linux, isso pode ser conseguido simples
 
 ## Contents
 
-*   [1 Backup e preparação](#Backup_e_prepara.C3.A7.C3.A3o)
+*   [1 Backup e preparação](#Backup_e_preparação)
 *   [2 De um host executando o Arch Linux](#De_um_host_executando_o_Arch_Linux)
-*   [3 De um host executando outra distribuição Linux](#De_um_host_executando_outra_distribui.C3.A7.C3.A3o_Linux)
+*   [3 De um host executando outra distribuição Linux](#De_um_host_executando_outra_distribuição_Linux)
     *   [3.1 Usando pacman do sistema hospedeiro](#Usando_pacman_do_sistema_hospedeiro)
     *   [3.2 Criando um chroot](#Criando_um_chroot)
-        *   [3.2.1 Método A: Usando a imagem do bootstrap (recomendado)](#M.C3.A9todo_A:_Usando_a_imagem_do_bootstrap_.28recomendado.29)
-        *   [3.2.2 Método B: Usando a imagem LiveCD](#M.C3.A9todo_B:_Usando_a_imagem_LiveCD)
+        *   [3.2.1 Método A: Usando a imagem do bootstrap (recomendado)](#Método_A:_Usando_a_imagem_do_bootstrap_(recomendado))
+        *   [3.2.2 Método B: Usando a imagem LiveCD](#Método_B:_Usando_a_imagem_LiveCD)
     *   [3.3 Usando um ambiente chroot](#Usando_um_ambiente_chroot)
         *   [3.3.1 Inicializando o chaveiro do pacman](#Inicializando_o_chaveiro_do_pacman)
-        *   [3.3.2 Selecionando um espelho e baixando ferramentas básicas](#Selecionando_um_espelho_e_baixando_ferramentas_b.C3.A1sicas)
-    *   [3.4 Dicas de instalação](#Dicas_de_instala.C3.A7.C3.A3o)
+        *   [3.3.2 Selecionando um espelho e baixando ferramentas básicas](#Selecionando_um_espelho_e_baixando_ferramentas_básicas)
+    *   [3.4 Dicas de instalação](#Dicas_de_instalação)
         *   [3.4.1 Host baseado no debian](#Host_baseado_no_debian)
-            *   [3.4.1.1 /dev/shm](#.2Fdev.2Fshm)
-            *   [3.4.1.2 /dev/pts](#.2Fdev.2Fpts)
+            *   [3.4.1.1 /dev/shm](#/dev/shm)
+            *   [3.4.1.2 /dev/pts](#/dev/pts)
             *   [3.4.1.3 lvmetad](#lvmetad)
         *   [3.4.2 Host baseado no Fedora](#Host_baseado_no_Fedora)
 *   [4 Coisas para verificar antes de reiniciar](#Coisas_para_verificar_antes_de_reiniciar)
 *   [5 Substituindo o sistema existente sem um LiveCD](#Substituindo_o_sistema_existente_sem_um_LiveCD)
-    *   [5.1 Defina a partição antiga de swap como nova partição raiz](#Defina_a_parti.C3.A7.C3.A3o_antiga_de_swap_como_nova_parti.C3.A7.C3.A3o_raiz)
-    *   [5.2 Instalação](#Instala.C3.A7.C3.A3o)
+    *   [5.1 Defina a partição antiga de swap como nova partição raiz](#Defina_a_partição_antiga_de_swap_como_nova_partição_raiz)
+    *   [5.2 Instalação](#Instalação)
 
 ## Backup e preparação
 
@@ -66,7 +66,7 @@ Instale o pacote [arch-install-scripts](https://www.archlinux.org/packages/?name
 
 Siga [Guia de instalação#Montar os sistemas de arquivos](/index.php/Guia_de_instala%C3%A7%C3%A3o#Montar_os_sistemas_de_arquivos "Guia de instalação"). Se você já usa o diretório `/mnt` para alguma outra coisa, basta criar outro diretório como `/mnt/install` e usá-lo.
 
-Então, siga [Guia de instalação#Instalação](/index.php/Guia_de_instala%C3%A7%C3%A3o#Instala.C3.A7.C3.A3o "Guia de instalação"). Você pode pular [Guia de instalação#Selecionar os espelhos](/index.php/Guia_de_instala%C3%A7%C3%A3o#Selecionar_os_espelhos "Guia de instalação"), já que o host já deve ter a lista de espelhos correta.
+Então, siga [Guia de instalação#Instalação](/index.php/Guia_de_instala%C3%A7%C3%A3o#Instalação "Guia de instalação"). Você pode pular [Guia de instalação#Selecionar os espelhos](/index.php/Guia_de_instala%C3%A7%C3%A3o#Selecionar_os_espelhos "Guia de instalação"), já que o host já deve ter a lista de espelhos correta.
 
 **Dica:** Para evitar baixar novamente todos os pacotes, considere seguir [Pacman/Dicas e truques#Cache do pacman compartilhado na rede](/index.php/Pacman/Dicas_e_truques#Cache_do_pacman_compartilhado_na_rede "Pacman/Dicas e truques") ou usara opção `-c` do *pacstrap*.
 
@@ -187,11 +187,11 @@ Antes de iniciar a instalação, as chaves do pacman precisam ser configuradas. 
 
 #### Selecionando um espelho e baixando ferramentas básicas
 
-Após [selecionar um espelho](/index.php/Espelhos#Habilitando_um_espelho_espec.C3.ADfico "Espelhos"), [renove as listas de pacotes](/index.php/Espelhos#For.C3.A7ar_o_pacman_a_renovar_as_listas_de_pacotes "Espelhos") e [instale](/index.php/Instale "Instale") o que você precisa: [base](https://www.archlinux.org/groups/x86_64/base/), [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), [parted](https://www.archlinux.org/packages/?name=parted) etc.
+Após [selecionar um espelho](/index.php/Espelhos#Habilitando_um_espelho_específico "Espelhos"), [renove as listas de pacotes](/index.php/Espelhos#Forçar_o_pacman_a_renovar_as_listas_de_pacotes "Espelhos") e [instale](/index.php/Instale "Instale") o que você precisa: [base](https://www.archlinux.org/groups/x86_64/base/), [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), [parted](https://www.archlinux.org/packages/?name=parted) etc.
 
 ### Dicas de instalação
 
-Você pode prosseguir agora para [Guia de instalação#Partição dos discos](/index.php/Guia_de_instala%C3%A7%C3%A3o#Parti.C3.A7.C3.A3o_dos_discos "Guia de instalação") e seguir o resto do [Guia de instalação](/index.php/Guia_de_instala%C3%A7%C3%A3o "Guia de instalação").
+Você pode prosseguir agora para [Guia de instalação#Partição dos discos](/index.php/Guia_de_instala%C3%A7%C3%A3o#Partição_dos_discos "Guia de instalação") e seguir o resto do [Guia de instalação](/index.php/Guia_de_instala%C3%A7%C3%A3o "Guia de instalação").
 
 Alguns sistemas hospedeiros ou configurações podem exigir determinadas etapas adicionais. Veja as seções abaixo para obter dicas.
 

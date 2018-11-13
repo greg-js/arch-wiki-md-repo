@@ -5,7 +5,7 @@
 *   [1 Installing](#Installing)
 *   [2 Starting](#Starting)
 *   [3 Configuration](#Configuration)
-    *   [3.1 wincmd plugin (show desktop button)](#wincmd_plugin_.28show_desktop_button.29)
+    *   [3.1 wincmd plugin (show desktop button)](#wincmd_plugin_(show_desktop_button))
 
 ## Installing
 

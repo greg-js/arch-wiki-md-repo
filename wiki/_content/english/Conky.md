@@ -16,7 +16,7 @@ Related articles
     *   [3.1 Symbolic Fonts](#Symbolic_Fonts)
 *   [4 Autostart](#Autostart)
 *   [5 Trouble Shooting](#Trouble_Shooting)
-    *   [5.1 Conky starts and doesn't display anything on the screen](#Conky_starts_and_doesn.27t_display_anything_on_the_screen)
+    *   [5.1 Conky starts and doesn't display anything on the screen](#Conky_starts_and_doesn't_display_anything_on_the_screen)
     *   [5.2 Transparency](#Transparency)
         *   [5.2.1 Pseudo-transparency](#Pseudo-transparency)
         *   [5.2.2 Enable real transparency](#Enable_real_transparency)

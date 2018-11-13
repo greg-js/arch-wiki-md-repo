@@ -10,13 +10,13 @@ Una variable de entorno es un objeto con nombre que contiene información usada 
 ## Contents
 
 *   [1 Utilidades](#Utilidades)
-*   [2 Cómo definir variables](#C.C3.B3mo_definir_variables)
+*   [2 Cómo definir variables](#Cómo_definir_variables)
     *   [2.1 Globalmente](#Globalmente)
     *   [2.2 Por usuario](#Por_usuario)
-        *   [2.2.1 Aplicaciones gráficas](#Aplicaciones_gr.C3.A1ficas)
-    *   [2.3 Por sesión](#Por_sesi.C3.B3n)
+        *   [2.2.1 Aplicaciones gráficas](#Aplicaciones_gráficas)
+    *   [2.3 Por sesión](#Por_sesión)
 *   [3 Ejemplos](#Ejemplos)
-*   [4 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [4 Véase también](#Véase_también)
 
 ## Utilidades
 
@@ -51,7 +51,7 @@ Los siguientes archivos deben ser usados para definir variables de entorno globa
 
 *   `/etc/environment` es usado por el módulo pam_env y es independiente del lenguaje del intérprete de línea de órdenes, por lo que no se deben insertar scritps. Este archivo solamente acepta pares de la forma `*variable=valor*`. Para más detalles se pueden consultar los manuales [pam_env(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.8) o [pam_env.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.conf.5).
 
-*   Los archivos de configuración global del [intérprete de línea de órdenes](/index.php/Shell_(Espa%C3%B1ol) "Shell (Español)") inicializan variables y ejecutan scripts. Por ejemplo [Bash (Español)#Archivos de configuración](/index.php/Bash_(Espa%C3%B1ol)#Archivos_de_configuraci.C3.B3n "Bash (Español)") o [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup.2FShutdown_files "Zsh").
+*   Los archivos de configuración global del [intérprete de línea de órdenes](/index.php/Shell_(Espa%C3%B1ol) "Shell (Español)") inicializan variables y ejecutan scripts. Por ejemplo [Bash (Español)#Archivos de configuración](/index.php/Bash_(Espa%C3%B1ol)#Archivos_de_configuración "Bash (Español)") o [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup/Shutdown_files "Zsh").
 
 *   `/etc/profile` inicializa variables para los intérpretes de línea de órdenes con inicio de sesión solamente. Este archivo sí permite scripts y puede ser usado por todos los intérpretes de línea de órdenes compatibles con [Bash](https://en.wikipedia.org/wiki/Bourne_shell "wikipedia:Bourne shell").
 
@@ -76,7 +76,7 @@ No siempre se requiere definir una variable de entorno de manera global. Por eje
 
 *   `~/.pam_environment` es el archivo de usuario equivalente a `/etc/security/pam_env.conf` [[2]](https://github.com/linux-pam/linux-pam/issues/6), usado por el módulo pam_env. Detalles en [pam_env(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.8) y [pam_env.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.conf.5).
 
-*   Archivos de configuración de usuario del [intérprete de línea de órdenes](/index.php/Shell_(Espa%C3%B1ol) "Shell (Español)"), por ejemplo [Bash (Español)#Archivos de configuración](/index.php/Bash_(Espa%C3%B1ol)#Archivos_de_configuraci.C3.B3n "Bash (Español)") o [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup.2FShutdown_files "Zsh").
+*   Archivos de configuración de usuario del [intérprete de línea de órdenes](/index.php/Shell_(Espa%C3%B1ol) "Shell (Español)"), por ejemplo [Bash (Español)#Archivos de configuración](/index.php/Bash_(Espa%C3%B1ol)#Archivos_de_configuración "Bash (Español)") o [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup/Shutdown_files "Zsh").
 
 *   `~/.profile` es usado por muchos intérpretes de línea de órdenes como alternativa por defecto, [wikipedia:Unix shell#Configuration files](https://en.wikipedia.org/wiki/Unix_shell#Configuration_files "wikipedia:Unix shell").
 

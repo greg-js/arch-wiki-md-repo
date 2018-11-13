@@ -2,7 +2,7 @@
 
 *   Pokud nejste zaregistrovaní zde na ArchWiki, zaregistrujte se.
 *   [Přihlašte se](/index.php/Special:UserLogin "Special:UserLogin"), abyste mohli editovat wiki.
-*   Zvolte si stránku, kterou chcete přeložit. Pokud ještě nevíte, kterou stránku budete překládat, můžete využít [náhodný výběr](/index.php/Special:Random "Special:Random") nebo začít překládat některou ze stránek uvedených [zde](#Seznam_prioritn.C3.ADch_str.C3.A1nek). Zvolíme si tedy stránku `Some Page`.
+*   Zvolte si stránku, kterou chcete přeložit. Pokud ještě nevíte, kterou stránku budete překládat, můžete využít [náhodný výběr](/index.php/Special:Random "Special:Random") nebo začít překládat některou ze stránek uvedených [zde](#Seznam_prioritních_stránek). Zvolíme si tedy stránku `Some Page`.
 *   Přejdeme na ni a v horním horizontálním menu zvolíme položku *editovat*.
 *   Zkopírujte si kompletní zdrojový text stránky.
 *   Následně přejdeme na stránku `Some Page (Jazyk)`, a to tak, že zadáte následující URL ve svém prohlížeči (lze zadat bez podtržítek). *Jazyk* je zde název [jazyka](/index.php/Help:I18n#Languages "Help:I18n"), do kterého stránku překládáme. `https://wiki.archlinux.org/index.php/Some_Page_(Jazyk)` 

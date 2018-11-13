@@ -28,8 +28,8 @@
     *   [6.1 Version 1.6](#Version_1.6)
     *   [6.2 Consistent naming of Arduino devices](#Consistent_naming_of_Arduino_devices)
     *   [6.3 Error opening serial port](#Error_opening_serial_port)
-    *   [6.4 Working with Uno/Mega2560](#Working_with_Uno.2FMega2560)
-    *   [6.5 Application not resizing with WM, menus immediately closing](#Application_not_resizing_with_WM.2C_menus_immediately_closing)
+    *   [6.4 Working with Uno/Mega2560](#Working_with_Uno/Mega2560)
+    *   [6.5 Application not resizing with WM, menus immediately closing](#Application_not_resizing_with_WM,_menus_immediately_closing)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -308,7 +308,7 @@ You can perform a general function test of the Uno by putting it in loopback mod
 
 ### Application not resizing with WM, menus immediately closing
 
-see [Java#Applications not resizing with WM, menus immediately closing](/index.php/Java#Applications_not_resizing_with_WM.2C_menus_immediately_closing "Java")
+see [Java#Applications not resizing with WM, menus immediately closing](/index.php/Java#Applications_not_resizing_with_WM,_menus_immediately_closing "Java")
 
 ## See also
 

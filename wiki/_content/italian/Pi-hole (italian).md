@@ -20,7 +20,7 @@ Articoli correlati
     *   [1.3 Far usare Pi-hole ai propri apparati](#Far_usare_Pi-hole_ai_propri_apparati)
         *   [1.3.1 Risoluzione dei problemi](#Risoluzione_dei_problemi)
     *   [1.4 Usare Pi-hole attraverso OpenVPN](#Usare_Pi-hole_attraverso_OpenVPN)
-    *   [1.5 Proteggere con password l'interfaccia web](#Proteggere_con_password_l.27interfaccia_web)
+    *   [1.5 Proteggere con password l'interfaccia web](#Proteggere_con_password_l'interfaccia_web)
 *   [2 Pi-hole Standalone](#Pi-hole_Standalone)
     *   [2.1 Installazione](#Installazione_2)
     *   [2.2 Configurazione iniziale](#Configurazione_iniziale_2)

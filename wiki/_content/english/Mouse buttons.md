@@ -19,19 +19,19 @@ This article describes how to configure a mouse with more than 3 buttons.
     *   [4.5 xmodmap tweaking](#xmodmap_tweaking)
     *   [4.6 xinput tweaking](#xinput_tweaking)
 *   [5 Alternate methods](#Alternate_methods)
-    *   [5.1 IMPS/2](#IMPS.2F2)
-    *   [5.2 ExplorerPS/2](#ExplorerPS.2F2)
+    *   [5.1 IMPS/2](#IMPS/2)
+    *   [5.2 ExplorerPS/2](#ExplorerPS/2)
     *   [5.3 Auto](#Auto)
     *   [5.4 easystroke](#easystroke)
 *   [6 Binding keyboard to mouse buttons](#Binding_keyboard_to_mouse_buttons)
     *   [6.1 xvkbd and xbindkeys](#xvkbd_and_xbindkeys)
     *   [6.2 evrouter](#evrouter)
-    *   [6.3 Binding + and - in Logitech G5 mouse](#Binding_.2B_and_-_in_Logitech_G5_mouse)
+    *   [6.3 Binding + and - in Logitech G5 mouse](#Binding_+_and_-_in_Logitech_G5_mouse)
 *   [7 User tools](#User_tools)
 *   [8 Device Specific Configuration Files](#Device_Specific_Configuration_Files)
     *   [8.1 Logitech G600](#Logitech_G600)
     *   [8.2 Mad Catz Mouse](#Mad_Catz_Mouse)
-    *   [8.3 Logitech M560/M545/M546](#Logitech_M560.2FM545.2FM546)
+    *   [8.3 Logitech M560/M545/M546](#Logitech_M560/M545/M546)
 
 ## Prerequisites
 

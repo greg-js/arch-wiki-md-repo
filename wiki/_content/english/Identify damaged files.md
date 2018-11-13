@@ -8,7 +8,7 @@ For most of these commands you will have to be either root or a user that has di
 *   [2 Filesystems](#Filesystems)
     *   [2.1 btrfs](#btrfs)
         *   [2.1.1 Find damaged files](#Find_damaged_files)
-    *   [2.2 Ext2, ext3, and ext4](#Ext2.2C_ext3.2C_and_ext4)
+    *   [2.2 Ext2, ext3, and ext4](#Ext2,_ext3,_and_ext4)
         *   [2.2.1 Debug the filesystem](#Debug_the_filesystem)
         *   [2.2.2 Find damaged files](#Find_damaged_files_2)
     *   [2.3 JFS](#JFS)

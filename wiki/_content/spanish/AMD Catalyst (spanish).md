@@ -13,60 +13,60 @@ En comparación con el controlador de código abierto, Catalyst tiene peor rendi
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
     *   [1.1 Instalar el controlador](#Instalar_el_controlador)
         *   [1.1.1 Instalar desde el repositorio no oficial](#Instalar_desde_el_repositorio_no_oficial)
         *   [1.1.2 Instalar desde AUR](#Instalar_desde_AUR)
     *   [1.2 Configurar el controlador](#Configurar_el_controlador)
         *   [1.2.1 Configurar X](#Configurar_X)
-        *   [1.2.2 Cargar los módulos al arrancar](#Cargar_los_m.C3.B3dulos_al_arrancar)
+        *   [1.2.2 Cargar los módulos al arrancar](#Cargar_los_módulos_al_arrancar)
         *   [1.2.3 Desactivar kernel mode setting](#Desactivar_kernel_mode_setting)
-        *   [1.2.4 Comprobación del funcionamiento](#Comprobaci.C3.B3n_del_funcionamiento)
+        *   [1.2.4 Comprobación del funcionamiento](#Comprobación_del_funcionamiento)
     *   [1.3 Kernels personalizados](#Kernels_personalizados)
     *   [1.4 Apoyo a PowerXpress](#Apoyo_a_PowerXpress)
-        *   [1.4.1 Ejecutar dos servidores X (uno usando el controlador Intel, el otro usando fglrx) simultáneamente](#Ejecutar_dos_servidores_X_.28uno_usando_el_controlador_Intel.2C_el_otro_usando_fglrx.29_simult.C3.A1neamente)
-        *   [1.4.2 Problemas con PowerXpress en portátiles ejecutándose en modalidad AMD (pxp_switch_catalyst amd) con monitor externo / secundario](#Problemas_con_PowerXpress_en_port.C3.A1tiles_ejecut.C3.A1ndose_en_modalidad_AMD_.28pxp_switch_catalyst_amd.29_con_monitor_externo_.2F_secundario)
+        *   [1.4.1 Ejecutar dos servidores X (uno usando el controlador Intel, el otro usando fglrx) simultáneamente](#Ejecutar_dos_servidores_X_(uno_usando_el_controlador_Intel,_el_otro_usando_fglrx)_simultáneamente)
+        *   [1.4.2 Problemas con PowerXpress en portátiles ejecutándose en modalidad AMD (pxp_switch_catalyst amd) con monitor externo / secundario](#Problemas_con_PowerXpress_en_portátiles_ejecutándose_en_modalidad_AMD_(pxp_switch_catalyst_amd)_con_monitor_externo_/_secundario)
 *   [2 Repositorios Xorg](#Repositorios_Xorg)
-    *   [2.1 [xorg114]](#.5Bxorg114.5D)
-    *   [2.2 [xorg113]](#.5Bxorg113.5D)
-    *   [2.3 [xorg112]](#.5Bxorg112.5D)
+    *   [2.1 [xorg114]](#[xorg114])
+    *   [2.2 [xorg113]](#[xorg113])
+    *   [2.3 [xorg112]](#[xorg112])
 *   [3 Herramientas](#Herramientas)
     *   [3.1 Catalyst-hook](#Catalyst-hook)
     *   [3.2 Catalyst-generator](#Catalyst-generator)
-*   [4 Características](#Caracter.C3.ADsticas)
-    *   [4.1 Prestación «Tear Free»](#Prestaci.C3.B3n_.C2.ABTear_Free.C2.BB)
-    *   [4.2 Aceleración de vídeo](#Aceleraci.C3.B3n_de_v.C3.ADdeo)
-    *   [4.3 Frecuencia GPU/Mem, Temperatura, Velocidad del ventilador, utilidades Overclocking](#Frecuencia_GPU.2FMem.2C_Temperatura.2C_Velocidad_del_ventilador.2C_utilidades_Overclocking)
-    *   [4.4 Doble Pantalla (Dual Head / Dual Screen / Xinerama)](#Doble_Pantalla_.28Dual_Head_.2F_Dual_Screen_.2F_Xinerama.29)
-        *   [4.4.1 Introducción](#Introducci.C3.B3n)
+*   [4 Características](#Características)
+    *   [4.1 Prestación «Tear Free»](#Prestación_«Tear_Free»)
+    *   [4.2 Aceleración de vídeo](#Aceleración_de_vídeo)
+    *   [4.3 Frecuencia GPU/Mem, Temperatura, Velocidad del ventilador, utilidades Overclocking](#Frecuencia_GPU/Mem,_Temperatura,_Velocidad_del_ventilador,_utilidades_Overclocking)
+    *   [4.4 Doble Pantalla (Dual Head / Dual Screen / Xinerama)](#Doble_Pantalla_(Dual_Head_/_Dual_Screen_/_Xinerama))
+        *   [4.4.1 Introducción](#Introducción)
         *   [4.4.2 ATI Catalyst Control Center](#ATI_Catalyst_Control_Center)
-        *   [4.4.3 Instalación](#Instalaci.C3.B3n_2)
-        *   [4.4.4 Configuración](#Configuraci.C3.B3n)
-*   [5 Desinstalación](#Desinstalaci.C3.B3n)
-*   [6 Solución de problemas](#Soluci.C3.B3n_de_problemas)
+        *   [4.4.3 Instalación](#Instalación_2)
+        *   [4.4.4 Configuración](#Configuración)
+*   [5 Desinstalación](#Desinstalación)
+*   [6 Solución de problemas](#Solución_de_problemas)
     *   [6.1 Aplicaciones 3D en Wine congeladas](#Aplicaciones_3D_en_Wine_congeladas)
-    *   [6.2 Problemas con los colores de vídeo](#Problemas_con_los_colores_de_v.C3.ADdeo)
+    *   [6.2 Problemas con los colores de vídeo](#Problemas_con_los_colores_de_vídeo)
     *   [6.3 KWin y composite](#KWin_y_composite)
     *   [6.4 Pantalla en negro con bloqueos completos al reiniciar el sistema o startx](#Pantalla_en_negro_con_bloqueos_completos_al_reiniciar_el_sistema_o_startx)
         *   [6.4.1 Llamadas hardware ACPI defectuosa](#Llamadas_hardware_ACPI_defectuosa)
-    *   [6.5 KDM desaparece después de cerrar la sesión](#KDM_desaparece_despu.C3.A9s_de_cerrar_la_sesi.C3.B3n)
+    *   [6.5 KDM desaparece después de cerrar la sesión](#KDM_desaparece_después_de_cerrar_la_sesión)
     *   [6.6 Direct Rendering no funciona](#Direct_Rendering_no_funciona)
-    *   [6.7 Problemas con la hibernación y la suspensión](#Problemas_con_la_hibernaci.C3.B3n_y_la_suspensi.C3.B3n)
-        *   [6.7.1 Vídeo no reanuda desde suspend2ram](#V.C3.ADdeo_no_reanuda_desde_suspend2ram)
-    *   [6.8 Bloqueo del sistema/Hard lock](#Bloqueo_del_sistema.2FHard_lock)
+    *   [6.7 Problemas con la hibernación y la suspensión](#Problemas_con_la_hibernación_y_la_suspensión)
+        *   [6.7.1 Vídeo no reanuda desde suspend2ram](#Vídeo_no_reanuda_desde_suspend2ram)
+    *   [6.8 Bloqueo del sistema/Hard lock](#Bloqueo_del_sistema/Hard_lock)
     *   [6.9 Conflictos con el hardware](#Conflictos_con_el_hardware)
-    *   [6.10 Bloqueos temporales durante la reproducción de vídeo](#Bloqueos_temporales_durante_la_reproducci.C3.B3n_de_v.C3.ADdeo)
-    *   [6.11 «aticonfig: No supported adaptaters detected»](#.C2.ABaticonfig:_No_supported_adaptaters_detected.C2.BB)
+    *   [6.10 Bloqueos temporales durante la reproducción de vídeo](#Bloqueos_temporales_durante_la_reproducción_de_vídeo)
+    *   [6.11 «aticonfig: No supported adaptaters detected»](#«aticonfig:_No_supported_adaptaters_detected»)
     *   [6.12 Soporte WebGL en Chromium](#Soporte_WebGL_en_Chromium)
-    *   [6.13 Retardos y bloqueos en vídeos flash con el flashplugin de Adobe](#Retardos_y_bloqueos_en_v.C3.ADdeos_flash_con_el_flashplugin_de_Adobe)
+    *   [6.13 Retardos y bloqueos en vídeos flash con el flashplugin de Adobe](#Retardos_y_bloqueos_en_vídeos_flash_con_el_flashplugin_de_Adobe)
     *   [6.14 Retardos en el movimiento de ventanas en GNOME3](#Retardos_en_el_movimiento_de_ventanas_en_GNOME3)
-    *   [6.15 Imposible utilizar pantalla completa con resolución 1920x1080](#Imposible_utilizar_pantalla_completa_con_resoluci.C3.B3n_1920x1080)
-    *   [6.16 Configuración de pantalla dual: problemas generales con aceleración, OpenGL, composición, funcionamiento](#Configuraci.C3.B3n_de_pantalla_dual:_problemas_generales_con_aceleraci.C3.B3n.2C_OpenGL.2C_composici.C3.B3n.2C_funcionamiento)
-    *   [6.17 Desactivar características VariBright](#Desactivar_caracter.C3.ADsticas_VariBright)
-    *   [6.18 Hybrid/PowerXpress: apagar la GPU dedicada](#Hybrid.2FPowerXpress:_apagar_la_GPU_dedicada)
-    *   [6.19 Al intercambiar desde una sesión X a TTY nos da una pantalla en blanco](#Al_intercambiar_desde_una_sesi.C3.B3n_X_a_TTY_nos_da_una_pantalla_en_blanco)
-    *   [6.20 Error: 30 FPS / Tear-Free / V-Sync](#Error:_30_FPS_.2F_Tear-Free_.2F_V-Sync)
-*   [7 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+    *   [6.15 Imposible utilizar pantalla completa con resolución 1920x1080](#Imposible_utilizar_pantalla_completa_con_resolución_1920x1080)
+    *   [6.16 Configuración de pantalla dual: problemas generales con aceleración, OpenGL, composición, funcionamiento](#Configuración_de_pantalla_dual:_problemas_generales_con_aceleración,_OpenGL,_composición,_funcionamiento)
+    *   [6.17 Desactivar características VariBright](#Desactivar_características_VariBright)
+    *   [6.18 Hybrid/PowerXpress: apagar la GPU dedicada](#Hybrid/PowerXpress:_apagar_la_GPU_dedicada)
+    *   [6.19 Al intercambiar desde una sesión X a TTY nos da una pantalla en blanco](#Al_intercambiar_desde_una_sesión_X_a_TTY_nos_da_una_pantalla_en_blanco)
+    *   [6.20 Error: 30 FPS / Tear-Free / V-Sync](#Error:_30_FPS_/_Tear-Free_/_V-Sync)
+*   [7 Véase también](#Véase_también)
 
 ## Instalación
 
@@ -177,7 +177,7 @@ Dichos repositorios también contienen algunos paquetes adicionales que pueden s
 *   *catalyst-generator* - este paquete es capaz de generar módulos `fglrx` empaquetados para ser accesibles por pacman -paquete más seguro y compatible, aunque tiene que ser realizado manualmente-. Se describe en [#Catalyst-generator](#Catalyst-generator)
 *   *catalyst-hook* - un servicio de systemd que actualizará automáticamente el módulo `fglrx`, mientras que el sistema se apaga o se reinicia. Se describe en [#Catalyst-hook](#Catalyst-hook)
 
-Encontrará más detalles acerca de estos paquetes en la sección [Herramientas](#Herramientas). Por último, ambos repositorios también contienen el paquete [xvba-video](https://aur.archlinux.org/packages/xvba-video/), que permiten la aceleración de vídeo descrita [aquí](#Aceleraci.C3.B3n_de_v.C3.ADdeo) y el paquete **AMDOverdriveCtrl**, que es una GUI para controlar over- y underclocking. Consulte [esta sección](#Frecuencia_GPU.2FMem.2C_Temperatura.2C_Velocidad_del_ventilador.2C_utilidades_Overclocking).
+Encontrará más detalles acerca de estos paquetes en la sección [Herramientas](#Herramientas). Por último, ambos repositorios también contienen el paquete [xvba-video](https://aur.archlinux.org/packages/xvba-video/), que permiten la aceleración de vídeo descrita [aquí](#Aceleración_de_vídeo) y el paquete **AMDOverdriveCtrl**, que es una GUI para controlar over- y underclocking. Consulte [esta sección](#Frecuencia_GPU/Mem,_Temperatura,_Velocidad_del_ventilador,_utilidades_Overclocking).
 
 #### Instalar desde AUR
 
@@ -233,7 +233,7 @@ Ahora, hay que configurar Catalyst.
 
 	 `# aticonfig --initial=dual-head --screen-layout=above` 
 
-**Nota:** Consulte [esta sección](#Doble_Pantalla_.28Dual_Head_.2F_Dual_Screen_.2F_Xinerama.29) para obtener más información sobre la configuración de dos monitores.
+**Nota:** Consulte [esta sección](#Doble_Pantalla_(Dual_Head_/_Dual_Screen_/_Xinerama)) para obtener más información sobre la configuración de dos monitores.
 
 Puede comparar el archivo generado con uno de los [ejemplos Xorg.conf](/index.php/Xorg#Sample_xorg.conf_Files "Xorg") (listado de ejemplos que figuran en la página de Xorg).
 
@@ -323,7 +323,7 @@ $ fgl_glxgears
 
 como test alternativo de fglrx para `glxgears`.
 
-**Advertencia:** En las últimas versiones de Xorg, las rutas de las bibliotecas han cambiado. De modo que, a veces `libGL.so` no se puede cargar correctamente incluso si está instalado. No descarte esta opción si su GL no está funcionando. Por favor, lea [#Solución de problemas](#Soluci.C3.B3n_de_problemas) para obtener más detalles.
+**Advertencia:** En las últimas versiones de Xorg, las rutas de las bibliotecas han cambiado. De modo que, a veces `libGL.so` no se puede cargar correctamente incluso si está instalado. No descarte esta opción si su GL no está funcionando. Por favor, lea [#Solución de problemas](#Solución_de_problemas) para obtener más detalles.
 
 ### Kernels personalizados
 
@@ -700,7 +700,7 @@ También puede seguir estos pasos:
 *   Asegúrese de quitar el antiguo `/etc/X11/xorg.conf`
 *   Si ha instalado el paquete [catalyst-hook](https://aur.archlinux.org/packages/catalyst-hook/), asegúrese de desactivar el servicio de systemd.
 
-*   Si utiliza la opción `nomodese` en su [archivo de configuración](/index.php/Boot_loader#Configuration_files "Boot loader") en la línea de parámetros del kernel y va a utilizar [KMS](#Kernel_mode-setting_.28KMS.29), retírelo.
+*   Si utiliza la opción `nomodese` en su [archivo de configuración](/index.php/Boot_loader#Configuration_files "Boot loader") en la línea de parámetros del kernel y va a utilizar [KMS](#Kernel_mode-setting_(KMS)), retírelo.
 *   **Reinicie** antes de instalar el otro controlador.
 
 ## Solución de problemas

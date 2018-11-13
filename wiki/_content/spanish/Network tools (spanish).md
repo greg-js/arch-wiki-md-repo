@@ -15,7 +15,7 @@ Esta página lista varias herramientas de red. *ping* e *ip* son cubiertos en [C
 *   [2 Netcat](#Netcat)
 *   [3 Whois](#Whois)
 *   [4 inetd](#inetd)
-*   [5 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [5 Véase también](#Véase_también)
 
 ## Traceroute
 

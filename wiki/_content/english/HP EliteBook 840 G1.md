@@ -18,13 +18,13 @@
 
 *   [1 Configuration](#Configuration)
     *   [1.1 UEFI Setup](#UEFI_Setup)
-        *   [1.1.1 Using the "Customized Boot" path option (recommended)](#Using_the_.22Customized_Boot.22_path_option_.28recommended.29)
+        *   [1.1.1 Using the "Customized Boot" path option (recommended)](#Using_the_"Customized_Boot"_path_option_(recommended))
         *   [1.1.2 Change the OS boot loader path to match the hard coded path](#Change_the_OS_boot_loader_path_to_match_the_hard_coded_path)
     *   [1.2 Encryption](#Encryption)
     *   [1.3 AMD Graphics](#AMD_Graphics)
     *   [1.4 Audio](#Audio)
     *   [1.5 Wireless](#Wireless)
-    *   [1.6 Resume / wake on lid open](#Resume_.2F_wake_on_lid_open)
+    *   [1.6 Resume / wake on lid open](#Resume_/_wake_on_lid_open)
 *   [2 See also](#See_also)
 
 ## Configuration

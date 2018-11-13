@@ -4,11 +4,11 @@ Esta página describe cómo hacer funcionar los adaptadores gráficos [Silicon I
 
 *   [1 Paquetes](#Paquetes)
 *   [2 lspci](#lspci)
-*   [3 Módulos y rc.conf](#M.C3.B3dulos_y_rc.conf)
+*   [3 Módulos y rc.conf](#Módulos_y_rc.conf)
 *   [4 xorg.conf](#xorg.conf)
     *   [4.1 Activar SSE](#Activar_SSE)
     *   [4.2 Tarjeta SiS 671](#Tarjeta_SiS_671)
-    *   [4.3 Configuración para Monitor extendido](#Configuraci.C3.B3n_para_Monitor_extendido)
+    *   [4.3 Configuración para Monitor extendido](#Configuración_para_Monitor_extendido)
 
 ## Paquetes
 

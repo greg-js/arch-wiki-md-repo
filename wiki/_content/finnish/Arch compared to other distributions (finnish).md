@@ -2,9 +2,9 @@ Tämä sivu kiteyttää joitakin yhtäläisyyksiä ja eroja Arch Linuksin ja mui
 
 ## Contents
 
-*   [1 Lähdekoodipohjainen](#L.C3.A4hdekoodipohjainen)
+*   [1 Lähdekoodipohjainen](#Lähdekoodipohjainen)
     *   [1.1 Arch vs Gentoo](#Arch_vs_Gentoo)
-    *   [1.2 Arch vs Sorcerer/Lunar-linux/Sourcemage](#Arch_vs_Sorcerer.2FLunar-linux.2FSourcemage)
+    *   [1.2 Arch vs Sorcerer/Lunar-linux/Sourcemage](#Arch_vs_Sorcerer/Lunar-linux/Sourcemage)
     *   [1.3 Arch vs Rock](#Arch_vs_Rock)
 *   [2 Minimalistinen](#Minimalistinen)
     *   [2.1 Arch vs Crux](#Arch_vs_Crux)
@@ -16,12 +16,12 @@ Tämä sivu kiteyttää joitakin yhtäläisyyksiä ja eroja Arch Linuksin ja mui
     *   [3.4 Arch vs Mandriva](#Arch_vs_Mandriva)
     *   [3.5 Arch vs SUSE](#Arch_vs_SUSE)
     *   [3.6 Arch vs PCLinuxOS](#Arch_vs_PCLinuxOS)
-*   [4 The *BSDt](#The_.2ABSDt)
+*   [4 The *BSDt](#The_*BSDt)
     *   [4.1 Arch vs FreeBSD](#Arch_vs_FreeBSD)
     *   [4.2 Arch vs NetBSD](#Arch_vs_NetBSD)
     *   [4.3 Arch vs OpenBSD](#Arch_vs_OpenBSD)
 *   [5 Muut](#Muut)
-    *   [5.1 Arch vs Debian GNU/Linux](#Arch_vs_Debian_GNU.2FLinux)
+    *   [5.1 Arch vs Debian GNU/Linux](#Arch_vs_Debian_GNU/Linux)
     *   [5.2 Arch vs Frugalware](#Arch_vs_Frugalware)
     *   [5.3 Arch vs Gobolinux](#Arch_vs_Gobolinux)
     *   [5.4 Arch vs Minix 3](#Arch_vs_Minix_3)

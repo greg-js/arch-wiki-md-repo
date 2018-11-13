@@ -18,16 +18,16 @@
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 配置](#.E9.85.8D.E7.BD.AE)
+*   [1 安装](#安装)
+*   [2 配置](#配置)
     *   [2.1 xinitrc](#xinitrc)
     *   [2.2 xserverrc](#xserverrc)
-*   [3 使用](#.E4.BD.BF.E7.94.A8)
-*   [4 在启动时自动启用 X](#.E5.9C.A8.E5.90.AF.E5.8A.A8.E6.97.B6.E8.87.AA.E5.8A.A8.E5.90.AF.E7.94.A8_X)
-*   [5 提示和技巧](#.E6.8F.90.E7.A4.BA.E5.92.8C.E6.8A.80.E5.B7.A7)
-    *   [5.1 从命令行覆盖 xinitrc](#.E4.BB.8E.E5.91.BD.E4.BB.A4.E8.A1.8C.E8.A6.86.E7.9B.96_xinitrc)
-    *   [5.2 Switching between desktop environments/window managers](#Switching_between_desktop_environments.2Fwindow_managers)
-    *   [5.3 不启动窗口管理器，直接启动程序](#.E4.B8.8D.E5.90.AF.E5.8A.A8.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8.EF.BC.8C.E7.9B.B4.E6.8E.A5.E5.90.AF.E5.8A.A8.E7.A8.8B.E5.BA.8F)
+*   [3 使用](#使用)
+*   [4 在启动时自动启用 X](#在启动时自动启用_X)
+*   [5 提示和技巧](#提示和技巧)
+    *   [5.1 从命令行覆盖 xinitrc](#从命令行覆盖_xinitrc)
+    *   [5.2 Switching between desktop environments/window managers](#Switching_between_desktop_environments/window_managers)
+    *   [5.3 不启动窗口管理器，直接启动程序](#不启动窗口管理器，直接启动程序)
     *   [5.4 Output redirection using startx](#Output_redirection_using_startx)
 
 ## 安装

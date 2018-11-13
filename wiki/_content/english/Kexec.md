@@ -11,8 +11,10 @@ Related articles
     *   [2.1 Manually](#Manually)
     *   [2.2 Systemd](#Systemd)
         *   [2.2.1 Custom unit file](#Custom_unit_file)
-        *   [2.2.2 Separate /boot partition](#Separate_.2Fboot_partition)
-*   [3 See also](#See_also)
+        *   [2.2.2 Separate /boot partition](#Separate_/boot_partition)
+*   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 System hangs or reboots after "kexec_core: Starting new kernel"](#System_hangs_or_reboots_after_"kexec_core:_Starting_new_kernel")
+*   [4 See also](#See_also)
 
 ## Installation
 
@@ -115,6 +117,14 @@ WantedBy=basic.target
 ```
 
 Note that Conflicts=shutdown.target is not really needed, as it's implicitly guaranteed by strict ordering on systinit.target which itself Conflicts= with shutdown.target.
+
+## Troubleshooting
+
+### System hangs or reboots after "kexec_core: Starting new kernel"
+
+In this case, the troubleshooting information on [General_troubleshooting#Boot_problems](/index.php/General_troubleshooting#Boot_problems "General troubleshooting") may be helpful for diagnosing the problem.
+
+In particular, if adding the `acpi=off` kernel parameter makes kexec work correctly, adding the `acpi_rsdp` kernel parameter on the kexec command line as explained in [[1]](https://github.com/coreos/bugs/issues/167) may solve the issue [in some cases](https://bbs.archlinux.org/viewtopic.php?id=219878) without the need to completely disable ACPI.
 
 ## See also
 

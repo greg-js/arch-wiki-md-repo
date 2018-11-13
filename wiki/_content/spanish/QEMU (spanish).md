@@ -11,46 +11,46 @@ QEMU puede usar hipervisores como [Xen](/index.php/Xen "Xen") o [KVM](/index.php
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
 *   [2 front-ends para QEMU](#front-ends_para_QEMU)
 *   [3 Creando un nuevo sistema virtualizado](#Creando_un_nuevo_sistema_virtualizado)
     *   [3.1 Creando una imagen de disco duro](#Creando_una_imagen_de_disco_duro)
-        *   [3.1.1 Superposición de imágenes de almacenamiento](#Superposici.C3.B3n_de_im.C3.A1genes_de_almacenamiento)
-        *   [3.1.2 Cambiar el tamaño de una imagen](#Cambiar_el_tama.C3.B1o_de_una_imagen)
-    *   [3.2 Preparando el medio de instalación](#Preparando_el_medio_de_instalaci.C3.B3n)
+        *   [3.1.1 Superposición de imágenes de almacenamiento](#Superposición_de_imágenes_de_almacenamiento)
+        *   [3.1.2 Cambiar el tamaño de una imagen](#Cambiar_el_tamaño_de_una_imagen)
+    *   [3.2 Preparando el medio de instalación](#Preparando_el_medio_de_instalación)
     *   [3.3 Instalando el sistema operativo](#Instalando_el_sistema_operativo)
-*   [4 Ejecución del sistema virtualizado](#Ejecuci.C3.B3n_del_sistema_virtualizado)
+*   [4 Ejecución del sistema virtualizado](#Ejecución_del_sistema_virtualizado)
     *   [4.1 Activar KVM](#Activar_KVM)
-    *   [4.2 Habilitar soporte IOMMU (Intel VT-d/AMD-Vi)](#Habilitar_soporte_IOMMU_.28Intel_VT-d.2FAMD-Vi.29)
-*   [5 Mover datos entre el host y el Sistema Operativo huésped](#Mover_datos_entre_el_host_y_el_Sistema_Operativo_hu.C3.A9sped)
+    *   [4.2 Habilitar soporte IOMMU (Intel VT-d/AMD-Vi)](#Habilitar_soporte_IOMMU_(Intel_VT-d/AMD-Vi))
+*   [5 Mover datos entre el host y el Sistema Operativo huésped](#Mover_datos_entre_el_host_y_el_Sistema_Operativo_huésped)
     *   [5.1 Red](#Red)
     *   [5.2 Servidor SMB incorporado de QEMU](#Servidor_SMB_incorporado_de_QEMU)
-    *   [5.3 Montaje de una partición dentro de una imagen de disco raw](#Montaje_de_una_partici.C3.B3n_dentro_de_una_imagen_de_disco_raw)
-        *   [5.3.1 Con la especificación manual del desplazamiento de bytes](#Con_la_especificaci.C3.B3n_manual_del_desplazamiento_de_bytes)
-        *   [5.3.2 Con las particiones autodetecting del módulo de bucle (loop)](#Con_las_particiones_autodetecting_del_m.C3.B3dulo_de_bucle_.28loop.29)
+    *   [5.3 Montaje de una partición dentro de una imagen de disco raw](#Montaje_de_una_partición_dentro_de_una_imagen_de_disco_raw)
+        *   [5.3.1 Con la especificación manual del desplazamiento de bytes](#Con_la_especificación_manual_del_desplazamiento_de_bytes)
+        *   [5.3.2 Con las particiones autodetecting del módulo de bucle (loop)](#Con_las_particiones_autodetecting_del_módulo_de_bucle_(loop))
         *   [5.3.3 Con kpartx](#Con_kpartx)
-    *   [5.4 Montar una partición dentro de una imagen qcow2](#Montar_una_partici.C3.B3n_dentro_de_una_imagen_qcow2)
-    *   [5.5 Utilizar cualquier partición real como la única partición primaria de una imagen de disco duro](#Utilizar_cualquier_partici.C3.B3n_real_como_la_.C3.BAnica_partici.C3.B3n_primaria_de_una_imagen_de_disco_duro)
+    *   [5.4 Montar una partición dentro de una imagen qcow2](#Montar_una_partición_dentro_de_una_imagen_qcow2)
+    *   [5.5 Utilizar cualquier partición real como la única partición primaria de una imagen de disco duro](#Utilizar_cualquier_partición_real_como_la_única_partición_primaria_de_una_imagen_de_disco_duro)
         *   [5.5.1 Especificar el kernel y el initrd manualmente](#Especificar_el_kernel_y_el_initrd_manualmente)
         *   [5.5.2 Simular disco virtual con MBR usando RAID lineal](#Simular_disco_virtual_con_MBR_usando_RAID_lineal)
 *   [6 Redes](#Redes)
-    *   [6.1 Advertencia de dirección a nivel de enlace](#Advertencia_de_direcci.C3.B3n_a_nivel_de_enlace)
+    *   [6.1 Advertencia de dirección a nivel de enlace](#Advertencia_de_dirección_a_nivel_de_enlace)
     *   [6.2 Redes en modo de usuario](#Redes_en_modo_de_usuario)
     *   [6.3 Tap de red con QEMU](#Tap_de_red_con_QEMU)
         *   [6.3.1 Red de host solamente](#Red_de_host_solamente)
         *   [6.3.2 Red interna](#Red_interna)
         *   [6.3.3 Redes puenteadas usando qemu-bridge-helper](#Redes_puenteadas_usando_qemu-bridge-helper)
-        *   [6.3.4 Creación manual del puente](#Creaci.C3.B3n_manual_del_puente)
-        *   [6.3.5 Compartición de red entre dispositivo físico y un dispositivo de toque a través de iptables](#Compartici.C3.B3n_de_red_entre_dispositivo_f.C3.ADsico_y_un_dispositivo_de_toque_a_trav.C3.A9s_de_iptables)
+        *   [6.3.4 Creación manual del puente](#Creación_manual_del_puente)
+        *   [6.3.5 Compartición de red entre dispositivo físico y un dispositivo de toque a través de iptables](#Compartición_de_red_entre_dispositivo_físico_y_un_dispositivo_de_toque_a_través_de_iptables)
     *   [6.4 Trabajo en red con VDE2](#Trabajo_en_red_con_VDE2)
-        *   [6.4.1 ¿Qué es VDE?](#.C2.BFQu.C3.A9_es_VDE.3F)
+        *   [6.4.1 ¿Qué es VDE?](#¿Qué_es_VDE?)
         *   [6.4.2 Basics](#Basics)
         *   [6.4.3 Startup scripts](#Startup_scripts)
-        *   [6.4.4 Método alternativo](#M.C3.A9todo_alternativo)
+        *   [6.4.4 Método alternativo](#Método_alternativo)
     *   [6.5 Puente VDE2](#Puente_VDE2)
-        *   [6.5.1 Conceptos básicos](#Conceptos_b.C3.A1sicos)
+        *   [6.5.1 Conceptos básicos](#Conceptos_básicos)
         *   [6.5.2 Startup scripts](#Startup_scripts_2)
-*   [7 Gráficos](#Gr.C3.A1ficos)
+*   [7 Gráficos](#Gráficos)
     *   [7.1 std](#std)
     *   [7.2 qxl](#qxl)
         *   [7.2.1 SPICE](#SPICE)
@@ -62,37 +62,37 @@ QEMU puede usar hipervisores como [Xen](/index.php/Xen "Xen") o [KVM](/index.php
 *   [8 Audio](#Audio)
     *   [8.1 Host](#Host)
     *   [8.2 Invitado](#Invitado)
-*   [9 Instalación de controladores virtio](#Instalaci.C3.B3n_de_controladores_virtio)
+*   [9 Instalación de controladores virtio](#Instalación_de_controladores_virtio)
     *   [9.1 Preparando a Arch Linux como invitado](#Preparando_a_Arch_Linux_como_invitado)
     *   [9.2 Preparar un invitado de Windows](#Preparar_un_invitado_de_Windows)
         *   [9.2.1 Bloquear controladores de dispositivo](#Bloquear_controladores_de_dispositivo)
-            *   [9.2.1.1 Nueva instalación de Windows](#Nueva_instalaci.C3.B3n_de_Windows)
-            *   [9.2.1.2 Cambiar la máquina virtual existente de Windows para utilizar virtio](#Cambiar_la_m.C3.A1quina_virtual_existente_de_Windows_para_utilizar_virtio)
+            *   [9.2.1.1 Nueva instalación de Windows](#Nueva_instalación_de_Windows)
+            *   [9.2.1.2 Cambiar la máquina virtual existente de Windows para utilizar virtio](#Cambiar_la_máquina_virtual_existente_de_Windows_para_utilizar_virtio)
         *   [9.2.2 Controladores de red](#Controladores_de_red)
-    *   [9.3 Preparación de FreeBSD como invitado](#Preparaci.C3.B3n_de_FreeBSD_como_invitado)
+    *   [9.3 Preparación de FreeBSD como invitado](#Preparación_de_FreeBSD_como_invitado)
 *   [10 Consejos y trucos](#Consejos_y_trucos)
-    *   [10.1 Inicio de las máquinas virtuales QEMU en el arranque](#Inicio_de_las_m.C3.A1quinas_virtuales_QEMU_en_el_arranque)
+    *   [10.1 Inicio de las máquinas virtuales QEMU en el arranque](#Inicio_de_las_máquinas_virtuales_QEMU_en_el_arranque)
         *   [10.1.1 Con libvirt](#Con_libvirt)
         *   [10.1.2 Script personalizado](#Script_personalizado)
-    *   [10.2 Integración del ratón](#Integraci.C3.B3n_del_rat.C3.B3n)
+    *   [10.2 Integración del ratón](#Integración_del_ratón)
     *   [10.3 Dispositivo USB del host de paso](#Dispositivo_USB_del_host_de_paso)
     *   [10.4 Habilitar KSM](#Habilitar_KSM)
     *   [10.5 Multi-monitor support](#Multi-monitor_support)
     *   [10.6 Copiar y pegar](#Copiar_y_pegar)
-    *   [10.7 Notas específicas de Windows](#Notas_espec.C3.ADficas_de_Windows)
-        *   [10.7.1 Inicio rápido](#Inicio_r.C3.A1pido)
+    *   [10.7 Notas específicas de Windows](#Notas_específicas_de_Windows)
+        *   [10.7.1 Inicio rápido](#Inicio_rápido)
         *   [10.7.2 Protocolo de escritorio remoto](#Protocolo_de_escritorio_remoto)
-*   [11 Solución de problemas](#Soluci.C3.B3n_de_problemas)
-    *   [11.1 La máquina virtual virtual corre muy lento](#La_m.C3.A1quina_virtual_virtual_corre_muy_lento)
-    *   [11.2 El cursor del ratón está nervioso o errático](#El_cursor_del_rat.C3.B3n_est.C3.A1_nervioso_o_err.C3.A1tico)
+*   [11 Solución de problemas](#Solución_de_problemas)
+    *   [11.1 La máquina virtual virtual corre muy lento](#La_máquina_virtual_virtual_corre_muy_lento)
+    *   [11.2 El cursor del ratón está nervioso o errático](#El_cursor_del_ratón_está_nervioso_o_errático)
     *   [11.3 El cursor no es visible](#El_cursor_no_es_visible)
-    *   [11.4 No se puede mover / adjuntar el cursor](#No_se_puede_mover_.2F_adjuntar_el_cursor)
-    *   [11.5 El teclado parece roto ó las teclas de flecha no funcionan](#El_teclado_parece_roto_.C3.B3_las_teclas_de_flecha_no_funcionan)
-    *   [11.6 Pantalla de invitado estirada en el tamaño de la ventana](#Pantalla_de_invitado_estirada_en_el_tama.C3.B1o_de_la_ventana)
-    *   [11.7 ioctl(KVM_CREATE_VM) failed: 16 Device or resource busy](#ioctl.28KVM_CREATE_VM.29_failed:_16_Device_or_resource_busy)
+    *   [11.4 No se puede mover / adjuntar el cursor](#No_se_puede_mover_/_adjuntar_el_cursor)
+    *   [11.5 El teclado parece roto ó las teclas de flecha no funcionan](#El_teclado_parece_roto_ó_las_teclas_de_flecha_no_funcionan)
+    *   [11.6 Pantalla de invitado estirada en el tamaño de la ventana](#Pantalla_de_invitado_estirada_en_el_tamaño_de_la_ventana)
+    *   [11.7 ioctl(KVM_CREATE_VM) failed: 16 Device or resource busy](#ioctl(KVM_CREATE_VM)_failed:_16_Device_or_resource_busy)
     *   [11.8 Mensaje de error libgfapi](#Mensaje_de_error_libgfapi)
     *   [11.9 Kernel panic en entornos live](#Kernel_panic_en_entornos_live)
-*   [12 Ver también](#Ver_tambi.C3.A9n)
+*   [12 Ver también](#Ver_también)
 
 ## Instalación
 
@@ -137,7 +137,7 @@ Se puede uiltizar `-f qcow2` para crear un disco *qcow2* en su lugar.
 
 También puedes simplemente crear una imagen "cruda" meidante la creación de un archivo del tamaño necesitado usando `dd` ó `fallocate`.}}
 
-**Advertencia:** Si almacenas una imágen de disco en un sistema de archivos [Btrfs](/index.php/Btrfs "Btrfs"), deberías considerar deshabilitar [Copy-on-Write](/index.php/Btrfs#Copy-on-Write_.28CoW.29 "Btrfs") para el directorio antes de crear imágenes.
+**Advertencia:** Si almacenas una imágen de disco en un sistema de archivos [Btrfs](/index.php/Btrfs "Btrfs"), deberías considerar deshabilitar [Copy-on-Write](/index.php/Btrfs#Copy-on-Write_(CoW) "Btrfs") para el directorio antes de crear imágenes.
 
 #### Superposición de imágenes de almacenamiento
 
@@ -147,7 +147,7 @@ Para crear una imagen de superposición, ingrese el comando:
 
  $ Qemu-img create -o backing_file = *img1.raw* , backing_fmt = *raw* -f *qcow2* *img1.cow*
 
-Después de eso, puede ejecutar su máquina virtual como de costumbre (ver [#Ejecución del sistema virtualizado](#Ejecuci.C3.B3n_del_sistema_virtualizado)):
+Después de eso, puede ejecutar su máquina virtual como de costumbre (ver [#Ejecución del sistema virtualizado](#Ejecución_del_sistema_virtualizado)):
 
  $ Qemu-system-i386 *img1.cow*
 
@@ -192,9 +192,9 @@ Por ejemplo, en invitados i386, para instalar desde un archivo ISO de arranque c
 
  $ Qemu-system-i386 -cdrom *iso_image* - orden de arranque = d -drive file = *disk_image* , format = raw
 
-Consulte `qemu (1)` para obtener más información sobre cómo cargar otros tipos de medios (como disquetes, imágenes de disco o unidades físicas) y [#Ejecución del sistema virtualizado](#Ejecuci.C3.B3n_del_sistema_virtualizado) para otras opciones útiles.
+Consulte `qemu (1)` para obtener más información sobre cómo cargar otros tipos de medios (como disquetes, imágenes de disco o unidades físicas) y [#Ejecución del sistema virtualizado](#Ejecución_del_sistema_virtualizado) para otras opciones útiles.
 
-Una vez que el sistema operativo haya finalizado de instalar, la imagen de QEMU se puede iniciar directamente (ver [#Ejecución del sistema virtualizado](#Ejecuci.C3.B3n_del_sistema_virtualizado)).
+Una vez que el sistema operativo haya finalizado de instalar, la imagen de QEMU se puede iniciar directamente (ver [#Ejecución del sistema virtualizado](#Ejecución_del_sistema_virtualizado)).
 
 **Advertencia:** De forma predeterminada, sólo se asignan 128 MB de memoria a la máquina. La cantidad de memoria se puede ajustar con el interruptor `-m`, por ejemplo `-m 512M` o `-m 2G`.
 
@@ -424,7 +424,7 @@ Por supuesto, puede configurar con seguridad cualquier cargador de arranque en e
 
 El rendimiento de la red virtual debería ser mejor con los dispositivos de derivación (tap) y puentes que con la red en modo de usuario o vde porque los dispositivos de derivación y los puentes se implementan en el kernel.
 
-Además, el rendimiento de la red se puede mejorar asignando a las máquinas virtuales un dispositivo de red [virtio](http://wiki.libvirt.org/page/Virtio) en lugar de la emulación predeterminada de una NIC e1000\. Consulte [#Instalación de controladores virtio](#Instalaci.C3.B3n_de_controladores_virtio) para obtener más información.
+Además, el rendimiento de la red se puede mejorar asignando a las máquinas virtuales un dispositivo de red [virtio](http://wiki.libvirt.org/page/Virtio) en lugar de la emulación predeterminada de una NIC e1000\. Consulte [#Instalación de controladores virtio](#Instalación_de_controladores_virtio) para obtener más información.
 
 ### Advertencia de dirección a nivel de enlace
 
@@ -1043,7 +1043,7 @@ Esto es como un PC que no tiene tarjeta VGA en absoluto. Ni siquiera podrías ac
 
 ### vnc
 
-Dado que usó la opción `-nographic`, puede agregar la opción `-vnc display` para que QEMU escuche en `display` y redirigir la pantalla VGA a la sesión VNC . Hay un ejemplo de esto en las configuraciones de ejemplo de la sección [#Inicio de las máquinas virtuales QEMU en el arranque](#Inicio_de_las_m.C3.A1quinas_virtuales_QEMU_en_el_arranque).
+Dado que usó la opción `-nographic`, puede agregar la opción `-vnc display` para que QEMU escuche en `display` y redirigir la pantalla VGA a la sesión VNC . Hay un ejemplo de esto en las configuraciones de ejemplo de la sección [#Inicio de las máquinas virtuales QEMU en el arranque](#Inicio_de_las_máquinas_virtuales_QEMU_en_el_arranque).
 
 ```
 $ qemu-system-i386 -vga std -nographic -vnc :0
@@ -1309,7 +1309,7 @@ $ qemu-system-i386 -hda *disk_image* -m 512 -vga std -usbdevice tablet
 
 ```
 
-If that does not work, try the tip at [#El cursor del ratón está nervioso o errático](#El_cursor_del_rat.C3.B3n_est.C3.A1_nervioso_o_err.C3.A1tico).
+If that does not work, try the tip at [#El cursor del ratón está nervioso o errático](#El_cursor_del_ratón_está_nervioso_o_errático).
 
 ### Dispositivo USB del host de paso
 

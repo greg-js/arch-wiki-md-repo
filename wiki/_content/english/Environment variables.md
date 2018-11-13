@@ -49,7 +49,7 @@ Most Linux distributions tell you to change or add environment variable definiti
 The following files should be used for defining global environment variables on your system: `/etc/environment`, `/etc/profile` and shell specific configuration files. Each of these files has different limitations, so you should carefully select the appropriate one for your purposes.
 
 *   `/etc/environment` is used by the pam_env module and is shell agnostic so scripting or glob expansion cannot be used. The file only accepts `*variable=value*` pairs. See [pam_env(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.8) and [pam_env.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.conf.5) for details.
-*   Global configuration files of your [shell](/index.php/Shell "Shell"), initializes variables and runs scripts. For example [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash") or [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup.2FShutdown_files "Zsh").
+*   Global configuration files of your [shell](/index.php/Shell "Shell"), initializes variables and runs scripts. For example [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash") or [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup/Shutdown_files "Zsh").
 *   `/etc/profile` initializes variables for login shells *only*. It does, however, run scripts and can be used by all [Bourne shell](https://en.wikipedia.org/wiki/Bourne_shell "wikipedia:Bourne shell") compatible shells.
 
 In this example, we add `~/bin` directory to the `PATH` for respective user. To do this, just put this in your preferred global environment variable config file (`/etc/profile` or `/etc/bash.bashrc`):
@@ -71,7 +71,7 @@ fi
 You do not always want to define an environment variable globally. For instance, you might want to add `/home/my_user/bin` to the `PATH` variable but do not want all other users on your system to have that in their `PATH` too. Local environment variables can be defined in many different files:
 
 *   `~/.pam_environment` is the user specific equivalent of `/etc/security/pam_env.conf` [[1]](https://github.com/linux-pam/linux-pam/issues/6), used by pam_env module. See [pam_env(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.8) and [pam_env.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.conf.5) for details.
-*   User configuration files of your [shell](/index.php/Shell "Shell"), for example [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash") or [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup.2FShutdown_files "Zsh").
+*   User configuration files of your [shell](/index.php/Shell "Shell"), for example [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash") or [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup/Shutdown_files "Zsh").
 *   `~/.profile` is used by many shells as fallback, see [wikipedia:Unix shell#Configuration files](https://en.wikipedia.org/wiki/Unix_shell#Configuration_files "wikipedia:Unix shell").
 *   [systemd](/index.php/Systemd "Systemd") will load environment variables from `~/.config/environment.d/*.conf` see [environment.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/environment.d.5) and [https://wiki.gnome.org/Initiatives/Wayland/SessionStart](https://wiki.gnome.org/Initiatives/Wayland/SessionStart).
 

@@ -10,7 +10,7 @@ Related articles
 *   [2 Kernels and related packages](#Kernels_and_related_packages)
 *   [3 Selecting the correct CPU optimized package](#Selecting_the_correct_CPU_optimized_package)
     *   [3.1 Speed benefits of CPU optimized packages](#Speed_benefits_of_CPU_optimized_packages)
-*   [4 BFQ I/O scheduler](#BFQ_I.2FO_scheduler)
+*   [4 BFQ I/O scheduler](#BFQ_I/O_scheduler)
 *   [5 Repository statistics](#Repository_statistics)
 *   [6 Mirrors](#Mirrors)
 *   [7 Troubleshooting](#Troubleshooting)
@@ -115,7 +115,7 @@ Extensive testing comparing the effect of GCC compile options show varying resul
 
 ## BFQ I/O scheduler
 
-See [Improving performance#Input/output schedulers](/index.php/Improving_performance#Input.2Foutput_schedulers "Improving performance").
+See [Improving performance#Input/output schedulers](/index.php/Improving_performance#Input/output_schedulers "Improving performance").
 
 ## Repository statistics
 

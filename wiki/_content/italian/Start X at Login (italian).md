@@ -75,7 +75,7 @@ WantedBy=graphical.target
 
 Assicurarsi che `~.xinitrc` esista e sia configurato in modo corretto.
 
-Si abiliti ed [attivi](/index.php/Systemd_(Italiano)#Usare_le_unit.C3.A0 "Systemd (Italiano)") quindi il servizio.
+Si abiliti ed [attivi](/index.php/Systemd_(Italiano)#Usare_le_unità "Systemd (Italiano)") quindi il servizio.
 
 **Suggerimento:** Rimuovere `>/dev/null 2>&1` per effettuare il debug.
 
@@ -89,7 +89,7 @@ Si abiliti ed [attivi](/index.php/Systemd_(Italiano)#Usare_le_unit.C3.A0 "System
 
 	 `alias startx='startx & > ~/.xlog'` 
 
-**Nota:** la ridirezione dello *stderr* (`startx &>`) crea problemi all'avvio di X da utente normale. Si veda a tal proposito [Xorg#Rootless Xorg (v1.16)](/index.php/Xorg#Rootless_Xorg_.28v1.16.29 "Xorg").
+**Nota:** la ridirezione dello *stderr* (`startx &>`) crea problemi all'avvio di X da utente normale. Si veda a tal proposito [Xorg#Rootless Xorg (v1.16)](/index.php/Xorg#Rootless_Xorg_(v1.16) "Xorg").
 
 ## Riferimenti
 

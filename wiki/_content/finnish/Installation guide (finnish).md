@@ -1,12 +1,12 @@
 ## Contents
 
 *   [1 Johdanto](#Johdanto)
-    *   [1.1 Mikä on Arch Linux?](#Mik.C3.A4_on_Arch_Linux.3F)
+    *   [1.1 Mikä on Arch Linux?](#Mikä_on_Arch_Linux?)
 *   [2 Lisenssi](#Lisenssi)
 *   [3 Ennen asennusta](#Ennen_asennusta)
     *   [3.1 Arkkitehtuurit](#Arkkitehtuurit)
     *   [3.2 Saatavat levykuvatiedostot](#Saatavat_levykuvatiedostot)
-    *   [3.3 AIF, asennustyökalu](#AIF.2C_asennusty.C3.B6kalu)
+    *   [3.3 AIF, asennustyökalu](#AIF,_asennustyökalu)
     *   [3.4 Arch Linuxin hankinta](#Arch_Linuxin_hankinta)
     *   [3.5 Asennusmedian valmistaminen](#Asennusmedian_valmistaminen)
 

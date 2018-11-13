@@ -13,7 +13,7 @@ Related articles
 
 ## Contents
 
-*   [1 独立工具](#.E7.8B.AC.E7.AB.8B.E5.B7.A5.E5.85.B7)
+*   [1 独立工具](#独立工具)
     *   [1.1 glxgears](#glxgears)
     *   [1.2 UnixBench](#UnixBench)
     *   [1.3 interbench](#interbench)
@@ -21,19 +21,19 @@ Related articles
     *   [1.5 iperf](#iperf)
     *   [1.6 time](#time)
     *   [1.7 hdparm](#hdparm)
-    *   [1.8 Unigine 引擎](#Unigine_.E5.BC.95.E6.93.8E)
+    *   [1.8 Unigine 引擎](#Unigine_引擎)
     *   [1.9 gnome-disks](#gnome-disks)
     *   [1.10 systemd-analyze](#systemd-analyze)
     *   [1.11 dd](#dd)
     *   [1.12 dcfldd](#dcfldd)
-*   [2 软件集](#.E8.BD.AF.E4.BB.B6.E9.9B.86)
-    *   [2.1 Bonnie++](#Bonnie.2B.2B)
+*   [2 软件集](#软件集)
+    *   [2.1 Bonnie++](#Bonnie++)
     *   [2.2 IOzone](#IOzone)
     *   [2.3 HardInfo](#HardInfo)
-    *   [2.4 Phoronix测试集](#Phoronix.E6.B5.8B.E8.AF.95.E9.9B.86)
+    *   [2.4 Phoronix测试集](#Phoronix测试集)
     *   [2.5 S](#S)
-*   [3 闪存介质](#.E9.97.AA.E5.AD.98.E4.BB.8B.E8.B4.A8)
-*   [4 参阅](#.E5.8F.82.E9.98.85)
+*   [3 闪存介质](#闪存介质)
+*   [4 参阅](#参阅)
 
 ## 独立工具
 

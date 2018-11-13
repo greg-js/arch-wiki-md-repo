@@ -20,9 +20,9 @@ From [Wikipedia:Simple Desktop Display Manager](https://en.wikipedia.org/wiki/Si
     *   [2.3 Theme settings](#Theme_settings)
         *   [2.3.1 Current theme](#Current_theme)
         *   [2.3.2 Editing themes](#Editing_themes)
-        *   [2.3.3 Testing (Previewing) a Theme](#Testing_.28Previewing.29_a_Theme)
+        *   [2.3.3 Testing (Previewing) a Theme](#Testing_(Previewing)_a_Theme)
         *   [2.3.4 Mouse cursor](#Mouse_cursor)
-        *   [2.3.5 User Icon (Avatar)](#User_Icon_.28Avatar.29)
+        *   [2.3.5 User Icon (Avatar)](#User_Icon_(Avatar))
     *   [2.4 Numlock](#Numlock)
     *   [2.5 Rotate display](#Rotate_display)
     *   [2.6 DPI settings](#DPI_settings)
@@ -98,7 +98,7 @@ The default SDDM theme directory is `/usr/share/sddm/themes/`. You can add your 
 You can preview an SDDM theme if needed. This is especially helpful if you are not sure how the theme would look if selected or just edited a theme and want to see how it would look without logging out. You can run something like this:
 
 ```
-$ sddm-greeter --theme /usr/share/sddm/themes/breeze
+$ sddm-greeter --test-mode --theme /usr/share/sddm/themes/breeze
 
 ```
 

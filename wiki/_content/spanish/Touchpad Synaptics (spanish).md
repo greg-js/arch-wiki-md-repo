@@ -10,46 +10,46 @@ Este artículo detalla el proceso de instalación y configuración de ***Synapti
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Configuración](#Configuraci.C3.B3n)
-    *   [2.1 Opciones de uso más frecuentes](#Opciones_de_uso_m.C3.A1s_frecuentes)
+*   [1 Instalación](#Instalación)
+*   [2 Configuración](#Configuración)
+    *   [2.1 Opciones de uso más frecuentes](#Opciones_de_uso_más_frecuentes)
     *   [2.2 Otras opciones](#Otras_opciones)
-    *   [2.3 GNOME/Cinnamon](#GNOME.2FCinnamon)
+    *   [2.3 GNOME/Cinnamon](#GNOME/Cinnamon)
     *   [2.4 MATE](#MATE)
-    *   [2.5 Configuración sobre la marcha](#Configuraci.C3.B3n_sobre_la_marcha)
+    *   [2.5 Configuración sobre la marcha](#Configuración_sobre_la_marcha)
         *   [2.5.1 Herramientas de consola](#Herramientas_de_consola)
-        *   [2.5.2 Herramientas gráficas](#Herramientas_gr.C3.A1ficas)
-*   [3 Configuración avanzada](#Configuraci.C3.B3n_avanzada)
-    *   [3.1 Usar xinput para determinar las capacidades del panel táctil](#Usar_xinput_para_determinar_las_capacidades_del_panel_t.C3.A1ctil)
+        *   [2.5.2 Herramientas gráficas](#Herramientas_gráficas)
+*   [3 Configuración avanzada](#Configuración_avanzada)
+    *   [3.1 Usar xinput para determinar las capacidades del panel táctil](#Usar_xinput_para_determinar_las_capacidades_del_panel_táctil)
     *   [3.2 Synclient](#Synclient)
     *   [3.3 evtest](#evtest)
     *   [3.4 Desplazamiento circular](#Desplazamiento_circular)
     *   [3.5 Desplazamiento natural](#Desplazamiento_natural)
     *   [3.6 Software para intercambiar](#Software_para_intercambiar)
-    *   [3.7 Desactivar el panel táctil al escribir](#Desactivar_el_panel_t.C3.A1ctil_al_escribir)
-        *   [3.7.1 Usar la detección automática de la palma](#Usar_la_detecci.C3.B3n_autom.C3.A1tica_de_la_palma)
+    *   [3.7 Desactivar el panel táctil al escribir](#Desactivar_el_panel_táctil_al_escribir)
+        *   [3.7.1 Usar la detección automática de la palma](#Usar_la_detección_automática_de_la_palma)
         *   [3.7.2 Usar .xinitrc](#Usar_.xinitrc)
         *   [3.7.3 Usar un gestor de inicio](#Usar_un_gestor_de_inicio)
-    *   [3.8 Desactivar el panel táctil cuando se detecta un ratón externo](#Desactivar_el_panel_t.C3.A1ctil_cuando_se_detecta_un_rat.C3.B3n_externo)
-*   [4 Solución de problemas](#Soluci.C3.B3n_de_problemas)
-    *   [4.1 xorg.conf.d/50-synaptics.conf no parece aplicarse en GNOME y MATE](#xorg.conf.d.2F50-synaptics.conf_no_parece_aplicarse_en_GNOME_y_MATE)
-    *   [4.2 Paneles táctiles ALPS](#Paneles_t.C3.A1ctiles_ALPS)
-    *   [4.3 El panel táctil no funciona, Xorg.0.log muestra «Query no Synaptics: 6003C8»](#El_panel_t.C3.A1ctil_no_funciona.2C_Xorg.0.log_muestra_.C2.ABQuery_no_Synaptics:_6003C8.C2.BB)
-    *   [4.4 Panel táctil detectado como ratón «PS/2 Generic» o «Logitech PS/2»](#Panel_t.C3.A1ctil_detectado_como_rat.C3.B3n_.C2.ABPS.2F2_Generic.C2.BB_o_.C2.ABLogitech_PS.2F2.C2.BB)
-    *   [4.5 Habilidades especiales de synaptics que no funcionan (multitoque, desplazamiento, etc.)](#Habilidades_especiales_de_synaptics_que_no_funcionan_.28multitoque.2C_desplazamiento.2C_etc..29)
+    *   [3.8 Desactivar el panel táctil cuando se detecta un ratón externo](#Desactivar_el_panel_táctil_cuando_se_detecta_un_ratón_externo)
+*   [4 Solución de problemas](#Solución_de_problemas)
+    *   [4.1 xorg.conf.d/50-synaptics.conf no parece aplicarse en GNOME y MATE](#xorg.conf.d/50-synaptics.conf_no_parece_aplicarse_en_GNOME_y_MATE)
+    *   [4.2 Paneles táctiles ALPS](#Paneles_táctiles_ALPS)
+    *   [4.3 El panel táctil no funciona, Xorg.0.log muestra «Query no Synaptics: 6003C8»](#El_panel_táctil_no_funciona,_Xorg.0.log_muestra_«Query_no_Synaptics:_6003C8»)
+    *   [4.4 Panel táctil detectado como ratón «PS/2 Generic» o «Logitech PS/2»](#Panel_táctil_detectado_como_ratón_«PS/2_Generic»_o_«Logitech_PS/2»)
+    *   [4.5 Habilidades especiales de synaptics que no funcionan (multitoque, desplazamiento, etc.)](#Habilidades_especiales_de_synaptics_que_no_funcionan_(multitoque,_desplazamiento,_etc.))
     *   [4.6 El cursor salta](#El_cursor_salta)
-    *   [4.7 El dispositivo touchpad no se encuentra en /dev/input/*](#El_dispositivo_touchpad_no_se_encuentra_en_.2Fdev.2Finput.2F.2A)
-    *   [4.8 Firefox y eventos especiales para el panel táctil](#Firefox_y_eventos_especiales_para_el_panel_t.C3.A1ctil)
+    *   [4.7 El dispositivo touchpad no se encuentra en /dev/input/*](#El_dispositivo_touchpad_no_se_encuentra_en_/dev/input/*)
+    *   [4.8 Firefox y eventos especiales para el panel táctil](#Firefox_y_eventos_especiales_para_el_panel_táctil)
     *   [4.9 Opera: problemas de desplazamiento horizontal](#Opera:_problemas_de_desplazamiento_horizontal)
-    *   [4.10 Desplazamiento y acciones múltiples con Synaptics en portátiles LG](#Desplazamiento_y_acciones_m.C3.BAltiples_con_Synaptics_en_port.C3.A1tiles_LG)
+    *   [4.10 Desplazamiento y acciones múltiples con Synaptics en portátiles LG](#Desplazamiento_y_acciones_múltiples_con_Synaptics_en_portátiles_LG)
     *   [4.11 Otros problemas con ratones externos](#Otros_problemas_con_ratones_externos)
-    *   [4.12 Problemas de sincronización del panel táctil](#Problemas_de_sincronizaci.C3.B3n_del_panel_t.C3.A1ctil)
-    *   [4.13 Retardo entre la presión al pulsar y el clic efectivo](#Retardo_entre_la_presi.C3.B3n_al_pulsar_y_el_clic_efectivo)
-    *   [4.14 Xorg.log.0 muestra que el touchpad synaptics SynPS/2 no puede asociarse a los eventos del dispositivo, errno=16](#Xorg.log.0_muestra_que_el_touchpad_synaptics_SynPS.2F2_no_puede_asociarse_a_los_eventos_del_dispositivo.2C_errno.3D16)
-    *   [4.15 Synaptics pierde la detección del multitoque después de reiniciar desde Windows](#Synaptics_pierde_la_detecci.C3.B3n_del_multitoque_despu.C3.A9s_de_reiniciar_desde_Windows)
-    *   [4.16 Panel táctil sin botones (o ClickPads)](#Panel_t.C3.A1ctil_sin_botones_.28o_ClickPads.29)
-    *   [4.17 Panel táctil detectado como ratón (paneles táctiles elantech)](#Panel_t.C3.A1ctil_detectado_como_rat.C3.B3n_.28paneles_t.C3.A1ctiles_elantech.29)
-*   [5 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+    *   [4.12 Problemas de sincronización del panel táctil](#Problemas_de_sincronización_del_panel_táctil)
+    *   [4.13 Retardo entre la presión al pulsar y el clic efectivo](#Retardo_entre_la_presión_al_pulsar_y_el_clic_efectivo)
+    *   [4.14 Xorg.log.0 muestra que el touchpad synaptics SynPS/2 no puede asociarse a los eventos del dispositivo, errno=16](#Xorg.log.0_muestra_que_el_touchpad_synaptics_SynPS/2_no_puede_asociarse_a_los_eventos_del_dispositivo,_errno=16)
+    *   [4.15 Synaptics pierde la detección del multitoque después de reiniciar desde Windows](#Synaptics_pierde_la_detección_del_multitoque_después_de_reiniciar_desde_Windows)
+    *   [4.16 Panel táctil sin botones (o ClickPads)](#Panel_táctil_sin_botones_(o_ClickPads))
+    *   [4.17 Panel táctil detectado como ratón (paneles táctiles elantech)](#Panel_táctil_detectado_como_ratón_(paneles_táctiles_elantech))
+*   [5 Véase también](#Véase_también)
 
 ## Instalación
 
@@ -336,7 +336,7 @@ Es posible activar el desplazamiento natural a través de Synaptics. Solo tenemo
 
 ### Software para intercambiar
 
-Puede que le resulte útil disponer de un software que le permita alternar la activación o desactivación del panel táctil, sobre todo si este es muy sensible y si escribe con mucha frecuencia. Véase también cómo [desactivar el panel táctil al detectar el ratón externo](#Desactivar_el_panel_t.C3.A1ctil_cuando_se_detecta_un_rat.C3.B3n_externo), dado que esta última puede ser una mejor solución, en cualquier caso es una cuestión de elección. La ventaja aquí es que se tiene el control, mientras que la otra solución utiliza un demonio para determinar cuándo apagar el panel táctil.
+Puede que le resulte útil disponer de un software que le permita alternar la activación o desactivación del panel táctil, sobre todo si este es muy sensible y si escribe con mucha frecuencia. Véase también cómo [desactivar el panel táctil al detectar el ratón externo](#Desactivar_el_panel_táctil_cuando_se_detecta_un_ratón_externo), dado que esta última puede ser una mejor solución, en cualquier caso es una cuestión de elección. La ventaja aquí es que se tiene el control, mientras que la otra solución utiliza un demonio para determinar cuándo apagar el panel táctil.
 
 Si va a probar este método, debe instalar [xbindkeys](/index.php/Xbindkeys "Xbindkeys"), en el caso de no disponer aún de un software que gestione la combinación de teclas.
 
@@ -585,7 +585,7 @@ Más información sobre el tema en [este hilo](https://bbs.archlinux.org/viewtop
 
 ### Habilidades especiales de synaptics que no funcionan (multitoque, desplazamiento, etc.)
 
-En algunos casos el panel táctil Synaptics solo funciona parcialmente. Características tales como desplazarse con dos dedos o el clic central con dos dedos no funcionan correctamente, incluso si dichas opciones están habilitadas en su configuración. Esto está probablemente relacionado con [el panel táctil no funciona](#El_panel_t.C3.A1ctil_no_funciona.2C_Xorg.0.log_muestra_.C2.ABQuery_no_Synaptics:_6003C8.C2.BB) antes mencionado. Se resuelve de la misma manera, evitando la doble carga del módulo.
+En algunos casos el panel táctil Synaptics solo funciona parcialmente. Características tales como desplazarse con dos dedos o el clic central con dos dedos no funcionan correctamente, incluso si dichas opciones están habilitadas en su configuración. Esto está probablemente relacionado con [el panel táctil no funciona](#El_panel_táctil_no_funciona,_Xorg.0.log_muestra_«Query_no_Synaptics:_6003C8») antes mencionado. Se resuelve de la misma manera, evitando la doble carga del módulo.
 
 Si impidiendo que el módulo se cargue dos veces no se soluciona el problema, pruebe comentando la opción "MatchIsTouchpad" (que ahora se incluye por defecto en la configuración de synaptics).
 

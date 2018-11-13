@@ -15,15 +15,15 @@ Este artigo descreve os conceitos básicos do console do Linux e como configurar
 
 ## Contents
 
-*   [1 Implementação](#Implementa.C3.A7.C3.A3o)
+*   [1 Implementação](#Implementação)
     *   [1.1 Consoles virtuais](#Consoles_virtuais)
     *   [1.2 Modo de texto](#Modo_de_texto)
     *   [1.3 Console framebuffer](#Console_framebuffer)
 *   [2 Atalhos de teclado](#Atalhos_de_teclado)
 *   [3 Fontes](#Fontes)
-    *   [3.1 Visualizar alterações e alterações temporárias](#Visualizar_altera.C3.A7.C3.B5es_e_altera.C3.A7.C3.B5es_tempor.C3.A1rias)
-    *   [3.2 Configuração persistente](#Configura.C3.A7.C3.A3o_persistente)
-*   [4 Veja também](#Veja_tamb.C3.A9m)
+    *   [3.1 Visualizar alterações e alterações temporárias](#Visualizar_alterações_e_alterações_temporárias)
+    *   [3.2 Configuração persistente](#Configuração_persistente)
+*   [4 Veja também](#Veja_também)
 
 ## Implementação
 

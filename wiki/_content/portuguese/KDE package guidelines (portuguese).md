@@ -10,24 +10,24 @@ Os pacotes do [KDE](/index.php/KDE "KDE") no Arch Linux seguem um certo esquema.
 
 ## Contents
 
-*   [1 Diretório de compilação](#Diret.C3.B3rio_de_compila.C3.A7.C3.A3o)
-*   [2 Prefixo de instalação](#Prefixo_de_instala.C3.A7.C3.A3o)
-*   [3 Tipo de compilação](#Tipo_de_compila.C3.A7.C3.A3o)
-*   [4 Forçar Qt4](#For.C3.A7ar_Qt4)
+*   [1 Diretório de compilação](#Diretório_de_compilação)
+*   [2 Prefixo de instalação](#Prefixo_de_instalação)
+*   [3 Tipo de compilação](#Tipo_de_compilação)
+*   [4 Forçar Qt4](#Forçar_Qt4)
     *   [4.1 KDE4](#KDE4)
     *   [4.2 KF5](#KF5)
 *   [5 Nomenclatura de pacote KDE4](#Nomenclatura_de_pacote_KDE4)
-    *   [5.1 Módulo de Configuração do KDE](#M.C3.B3dulo_de_Configura.C3.A7.C3.A3o_do_KDE)
+    *   [5.1 Módulo de Configuração do KDE](#Módulo_de_Configuração_do_KDE)
     *   [5.2 Widgets do Plasma](#Widgets_do_Plasma)
     *   [5.3 Executores](#Executores)
-    *   [5.4 Menus de serviço](#Menus_de_servi.C3.A7o)
+    *   [5.4 Menus de serviço](#Menus_de_serviço)
     *   [5.5 Temas](#Temas)
 *   [6 Nomenclatura de pacote KF5](#Nomenclatura_de_pacote_KF5)
     *   [6.1 Widgets de plasma](#Widgets_de_plasma)
     *   [6.2 Executores](#Executores_2)
-    *   [6.3 Menus de serviço](#Menus_de_servi.C3.A7o_2)
+    *   [6.3 Menus de serviço](#Menus_de_serviço_2)
     *   [6.4 Temas](#Temas_2)
-*   [7 Instalação de arquivos de ícones e .desktop](#Instala.C3.A7.C3.A3o_de_arquivos_de_.C3.ADcones_e_.desktop)
+*   [7 Instalação de arquivos de ícones e .desktop](#Instalação_de_arquivos_de_ícones_e_.desktop)
 
 ## Diretório de compilação
 

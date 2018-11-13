@@ -2,10 +2,10 @@ Existen muchos temas de cursores disponibles para el sistema de ventanas X11 ade
 
 ## Contents
 
-*   [1 Obtener temas de cursor para el ratón](#Obtener_temas_de_cursor_para_el_rat.C3.B3n)
-*   [2 Instalar temas de cursor para el ratón](#Instalar_temas_de_cursor_para_el_rat.C3.B3n)
+*   [1 Obtener temas de cursor para el ratón](#Obtener_temas_de_cursor_para_el_ratón)
+*   [2 Instalar temas de cursor para el ratón](#Instalar_temas_de_cursor_para_el_ratón)
 *   [3 Configurando temas de cursor](#Configurando_temas_de_cursor)
-*   [4 Más información](#M.C3.A1s_informaci.C3.B3n)
+*   [4 Más información](#Más_información)
 
 ## Obtener temas de cursor para el ratón
 

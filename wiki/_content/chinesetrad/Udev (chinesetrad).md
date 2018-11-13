@@ -7,16 +7,16 @@
 
 ## Contents
 
-*   [1 安裝 udev 套件](#.E5.AE.89.E8.A3.9D_udev_.E5.A5.97.E4.BB.B6)
-*   [2 編輯 /etc/fstab](#.E7.B7.A8.E8.BC.AF_.2Fetc.2Ffstab)
-*   [3 重新開機](#.E9.87.8D.E6.96.B0.E9.96.8B.E6.A9.9F)
-    *   [3.1 警告 : 無法開啟一個 initial console](#.E8.AD.A6.E5.91.8A_:_.E7.84.A1.E6.B3.95.E9.96.8B.E5.95.9F.E4.B8.80.E5.80.8B_initial_console)
-    *   [3.2 系統一直連續重啟不停](#.E7.B3.BB.E7.B5.B1.E4.B8.80.E7.9B.B4.E9.80.A3.E7.BA.8C.E9.87.8D.E5.95.9F.E4.B8.8D.E5.81.9C)
-*   [4 使用者自訂 Udev](#.E4.BD.BF.E7.94.A8.E8.80.85.E8.87.AA.E8.A8.82_Udev)
-*   [5 下面這一部份只適用於 udev >= 053](#.E4.B8.8B.E9.9D.A2.E9.80.99.E4.B8.80.E9.83.A8.E4.BB.BD.E5.8F.AA.E9.81.A9.E7.94.A8.E6.96.BC_udev_.3E.3D_053)
-    *   [5.1 編輯權限和規則](#.E7.B7.A8.E8.BC.AF.E6.AC.8A.E9.99.90.E5.92.8C.E8.A6.8F.E5.89.87)
+*   [1 安裝 udev 套件](#安裝_udev_套件)
+*   [2 編輯 /etc/fstab](#編輯_/etc/fstab)
+*   [3 重新開機](#重新開機)
+    *   [3.1 警告 : 無法開啟一個 initial console](#警告_:_無法開啟一個_initial_console)
+    *   [3.2 系統一直連續重啟不停](#系統一直連續重啟不停)
+*   [4 使用者自訂 Udev](#使用者自訂_Udev)
+*   [5 下面這一部份只適用於 udev >= 053](#下面這一部份只適用於_udev_>=_053)
+    *   [5.1 編輯權限和規則](#編輯權限和規則)
 *   [6 Symlinking devices](#Symlinking_devices)
-*   [7 相關資料](#.E7.9B.B8.E9.97.9C.E8.B3.87.E6.96.99)
+*   [7 相關資料](#相關資料)
 
 ## 安裝 udev 套件
 

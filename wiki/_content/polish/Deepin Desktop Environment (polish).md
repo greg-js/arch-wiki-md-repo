@@ -9,11 +9,11 @@ Related articles
 ## Contents
 
 *   [1 Instalacja](#Instalacja)
-*   [2 Uruchamianie środowiska graficznego Deepin](#Uruchamianie_.C5.9Brodowiska_graficznego_Deepin)
-    *   [2.1 Poprzez menadżer logowania](#Poprzez_menad.C5.BCer_logowania)
-*   [3 Rozwiązywanie problemów](#Rozwi.C4.85zywanie_problem.C3.B3w)
-    *   [3.1 Brak tła po powrocie ze stanu wstrzymania](#Brak_t.C5.82a_po_powrocie_ze_stanu_wstrzymania)
-*   [4 Raportowanie błędów](#Raportowanie_b.C5.82.C4.99d.C3.B3w)
+*   [2 Uruchamianie środowiska graficznego Deepin](#Uruchamianie_środowiska_graficznego_Deepin)
+    *   [2.1 Poprzez menadżer logowania](#Poprzez_menadżer_logowania)
+*   [3 Rozwiązywanie problemów](#Rozwiązywanie_problemów)
+    *   [3.1 Brak tła po powrocie ze stanu wstrzymania](#Brak_tła_po_powrocie_ze_stanu_wstrzymania)
+*   [4 Raportowanie błędów](#Raportowanie_błędów)
 
 ## Instalacja
 

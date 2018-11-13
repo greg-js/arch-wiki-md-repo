@@ -4,16 +4,16 @@ Del [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ) de Bumblebee:
 
 ## Contents
 
-*   [1 Bumblebee: Tecnología Optimus para Linux](#Bumblebee:_Tecnolog.C3.ADa_Optimus_para_Linux)
-*   [2 Instalación](#Instalaci.C3.B3n)
-    *   [2.1 Instalar Bumblebee con Intel/NVIDIA](#Instalar_Bumblebee_con_Intel.2FNVIDIA)
-    *   [2.2 Instalar Bumblebee con Intel/Nouveau](#Instalar_Bumblebee_con_Intel.2FNouveau)
+*   [1 Bumblebee: Tecnología Optimus para Linux](#Bumblebee:_Tecnología_Optimus_para_Linux)
+*   [2 Instalación](#Instalación)
+    *   [2.1 Instalar Bumblebee con Intel/NVIDIA](#Instalar_Bumblebee_con_Intel/NVIDIA)
+    *   [2.2 Instalar Bumblebee con Intel/Nouveau](#Instalar_Bumblebee_con_Intel/Nouveau)
 *   [3 Iniciar Bumblebee](#Iniciar_Bumblebee)
 *   [4 Uso](#Uso)
-*   [5 Configuración](#Configuraci.C3.B3n)
+*   [5 Configuración](#Configuración)
     *   [5.1 Optimizar la velocidad cuando se utiliza VirtualGL como puente](#Optimizar_la_velocidad_cuando_se_utiliza_VirtualGL_como_puente)
-    *   [5.2 Administración de energía](#Administraci.C3.B3n_de_energ.C3.ADa)
-        *   [5.2.1 Estado de energía predeterminado de la tarjeta NVIDIA](#Estado_de_energ.C3.ADa_predeterminado_de_la_tarjeta_NVIDIA)
+    *   [5.2 Administración de energía](#Administración_de_energía)
+        *   [5.2.1 Estado de energía predeterminado de la tarjeta NVIDIA](#Estado_de_energía_predeterminado_de_la_tarjeta_NVIDIA)
         *   [5.2.2 Activar la tarjeta NVIDIA durante el apagado](#Activar_la_tarjeta_NVIDIA_durante_el_apagado)
     *   [5.3 Varios monitores](#Varios_monitores)
         *   [5.3.1 Salidas conectadas al chip de Intel](#Salidas_conectadas_al_chip_de_Intel)
@@ -21,16 +21,16 @@ Del [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ) de Bumblebee:
             *   [5.3.2.1 xf86-video-intel-virtual-crtc y hybrid-screenclone](#xf86-video-intel-virtual-crtc_y_hybrid-screenclone)
 *   [6 Cambiar entre tarjeta dedicada e integrada como Windows](#Cambiar_entre_tarjeta_dedicada_e_integrada_como_Windows)
 *   [7 CUDA sin Bumblebee](#CUDA_sin_Bumblebee)
-*   [8 Solución de problemas](#Soluci.C3.B3n_de_problemas)
-    *   [8.1 [VGL] ERROR: Could not open display :8](#.5BVGL.5D_ERROR:_Could_not_open_display_:8)
-    *   [8.2 [ERROR]Cannot access secondary GPU](#.5BERROR.5DCannot_access_secondary_GPU)
-        *   [8.2.1 Ningún dispositivo detectado](#Ning.C3.BAn_dispositivo_detectado)
-        *   [8.2.2 NVIDIA(0): Failed to assign any connected display devices to X screen 0](#NVIDIA.280.29:_Failed_to_assign_any_connected_display_devices_to_X_screen_0)
-    *   [8.3 ERROR: ld.so: object 'libdlfaker.so' from LD_PRELOAD cannot be preloaded: ignored.](#ERROR:_ld.so:_object_.27libdlfaker.so.27_from_LD_PRELOAD_cannot_be_preloaded:_ignored.)
-    *   [8.4 Fatal IO error 11 (Recurso temporalmente no disponible) en el servidor X](#Fatal_IO_error_11_.28Recurso_temporalmente_no_disponible.29_en_el_servidor_X)
-    *   [8.5 Vídeo rasgado](#V.C3.ADdeo_rasgado)
+*   [8 Solución de problemas](#Solución_de_problemas)
+    *   [8.1 [VGL] ERROR: Could not open display :8](#[VGL]_ERROR:_Could_not_open_display_:8)
+    *   [8.2 [ERROR]Cannot access secondary GPU](#[ERROR]Cannot_access_secondary_GPU)
+        *   [8.2.1 Ningún dispositivo detectado](#Ningún_dispositivo_detectado)
+        *   [8.2.2 NVIDIA(0): Failed to assign any connected display devices to X screen 0](#NVIDIA(0):_Failed_to_assign_any_connected_display_devices_to_X_screen_0)
+    *   [8.3 ERROR: ld.so: object 'libdlfaker.so' from LD_PRELOAD cannot be preloaded: ignored.](#ERROR:_ld.so:_object_'libdlfaker.so'_from_LD_PRELOAD_cannot_be_preloaded:_ignored.)
+    *   [8.4 Fatal IO error 11 (Recurso temporalmente no disponible) en el servidor X](#Fatal_IO_error_11_(Recurso_temporalmente_no_disponible)_en_el_servidor_X)
+    *   [8.5 Vídeo rasgado](#Vídeo_rasgado)
     *   [8.6 Bumblebee no puede conectarse al socket](#Bumblebee_no_puede_conectarse_al_socket)
-*   [9 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [9 Véase también](#Véase_también)
 
 ## Bumblebee: Tecnología Optimus para Linux
 
@@ -39,7 +39,7 @@ La [Tecnología Optimus](http://www.nvidia.com/object/optimus_technology.html) e
 Bumblebee es una implementación de software que se comprende de dos partes:
 
 *   Procesa programas fuera de pantalla utilizando la tarjeta de vídeo dedicada y los visualiza en la pantalla con la tarjeta de vídeo integrada. Este puente es proporcionado por VirtualGL o primus (leer más adelante) y se conecta a un servidor X iniciado por la tarjeta de video dedicada.
-*   Deshabilita la tarjeta de vídeo dedicada cuando no está en uso (véase el apartado [#Administración de energía](#Administraci.C3.B3n_de_energ.C3.ADa))
+*   Deshabilita la tarjeta de vídeo dedicada cuando no está en uso (véase el apartado [#Administración de energía](#Administración_de_energía))
 
 Se trata de imitar el comportamiento de la tecnología Optimus, utilizando la GPU dedicada para aprovechar sus prestaciones cuando sea necesario y apagarla cuando no esté en uso. Las versiones actuales solo soportan las prestaciones a petición, mientras que no está implementado aún el que un programa se inicie automáticamente con la tarjeta de video dedicada en función de la carga de trabajo.
 
@@ -92,7 +92,7 @@ donde `$USER` es el nombre de inicio de sesión del usuario. A continuación, ci
 
 Terminado, reinicie el sistema y utilice el programa `[optirun](#Uso)` para disfrutar de la tecnología NVIDIA Optimus para el *rendering*.
 
-Si simplemente desea desactivar su tarjeta NVIDIA, esto debería ser todo lo que se necesita, además de tener instalado `bbswitch`. El demonio bumblebeed, de forma predeterminada, instruye a bbswitch para desactivar la tarjeta cuando se inicia. Consulte también la sección [administración de energíam](#Administraci.C3.B3n_de_energ.C3.ADa)ás abajo.
+Si simplemente desea desactivar su tarjeta NVIDIA, esto debería ser todo lo que se necesita, además de tener instalado `bbswitch`. El demonio bumblebeed, de forma predeterminada, instruye a bbswitch para desactivar la tarjeta cuando se inicia. Consulte también la sección [administración de energíam](#Administración_de_energía)ás abajo.
 
 ## Uso
 

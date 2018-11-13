@@ -5,8 +5,8 @@ Este artículo es una traducción de [FuseISO](/index.php/FuseISO "FuseISO"), re
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Utilización](#Utilizaci.C3.B3n)
+*   [1 Instalación](#Instalación)
+*   [2 Utilización](#Utilización)
     *   [2.1 Montaje](#Montaje)
     *   [2.2 Desmontaje](#Desmontaje)
 *   [3 Desmontaje](#Desmontaje_2)
@@ -15,7 +15,7 @@ Este artículo es una traducción de [FuseISO](/index.php/FuseISO "FuseISO"), re
 
 ## Instalación
 
-[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [fuseiso](https://www.archlinux.org/packages/?name=fuseiso).
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") el paquete [fuseiso](https://www.archlinux.org/packages/?name=fuseiso).
 
 ## Utilización
 

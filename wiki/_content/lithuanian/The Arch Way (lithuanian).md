@@ -3,10 +3,10 @@
 ## Contents
 
 *   [1 Paprastumas](#Paprastumas)
-*   [2 Programinio teksto korektiškumas svarbiau už patogumą](#Programinio_teksto_korekti.C5.A1kumas_svarbiau_u.C5.BE_patogum.C4.85)
-*   [3 Orientaciją į naudotoją](#Orientacij.C4.85_.C4.AF_naudotoj.C4.85)
+*   [2 Programinio teksto korektiškumas svarbiau už patogumą](#Programinio_teksto_korektiškumas_svarbiau_už_patogumą)
+*   [3 Orientaciją į naudotoją](#Orientaciją_į_naudotoją)
 *   [4 Atvirumas](#Atvirumas)
-*   [5 Laisvė](#Laisv.C4.97)
+*   [5 Laisvė](#Laisvė)
 
 ## Paprastumas
 

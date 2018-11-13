@@ -5,8 +5,8 @@ Este artículo es una traducción de [Fzf](/index.php/Fzf "Fzf"), revisada por �
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Configuración](#Configuraci.C3.B3n)
+*   [1 Instalación](#Instalación)
+*   [2 Configuración](#Configuración)
     *   [2.1 Shells](#Shells)
         *   [2.1.1 bash](#bash)
         *   [2.1.2 zsh](#zsh)

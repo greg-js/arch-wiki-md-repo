@@ -1,6 +1,6 @@
 ## Contents
 
-*   [1 GPT / MBR Partition Table](#GPT_.2F_MBR_Partition_Table)
+*   [1 GPT / MBR Partition Table](#GPT_/_MBR_Partition_Table)
 *   [2 Wifi issues](#Wifi_issues)
 *   [3 Nvidia Optimus Setup](#Nvidia_Optimus_Setup)
     *   [3.1 Bumblebee](#Bumblebee)

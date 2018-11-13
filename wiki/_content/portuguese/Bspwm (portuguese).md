@@ -7,24 +7,24 @@ Related articles
 
 ## Contents
 
-*   [1 Instalação](#Instala.C3.A7.C3.A3o)
+*   [1 Instalação](#Instalação)
 *   [2 Iniciando](#Iniciando)
-*   [3 Configuração](#Configura.C3.A7.C3.A3o)
-    *   [3.1 Para múltiplos monitores](#Para_m.C3.BAltiplos_monitores)
+*   [3 Configuração](#Configuração)
+    *   [3.1 Para múltiplos monitores](#Para_múltiplos_monitores)
     *   [3.2 Regras](#Regras)
-    *   [3.3 Painéis](#Pain.C3.A9is)
+    *   [3.3 Painéis](#Painéis)
         *   [3.3.1 Usando lemonbar](#Usando_lemonbar)
         *   [3.3.2 Usando polybar](#Usando_polybar)
     *   [3.4 Scratchpad](#Scratchpad)
-    *   [3.5 Configurações diferentes de monitores para diferentes máquinas](#Configura.C3.A7.C3.B5es_diferentes_de_monitores_para_diferentes_m.C3.A1quinas)
-    *   [3.6 Configurar um desktop onde todas as janelas estão flutuando](#Configurar_um_desktop_onde_todas_as_janelas_est.C3.A3o_flutuando)
-*   [4 Solução de problemas](#Solu.C3.A7.C3.A3o_de_problemas)
-    *   [4.1 Tela em branco e atalhos de teclado não funcionam](#Tela_em_branco_e_atalhos_de_teclado_n.C3.A3o_funcionam)
-    *   [4.2 Caixa de janela maior que a aplicação real](#Caixa_de_janela_maior_que_a_aplica.C3.A7.C3.A3o_real)
-    *   [4.3 Problemas com aplicações java](#Problemas_com_aplica.C3.A7.C3.B5es_java)
+    *   [3.5 Configurações diferentes de monitores para diferentes máquinas](#Configurações_diferentes_de_monitores_para_diferentes_máquinas)
+    *   [3.6 Configurar um desktop onde todas as janelas estão flutuando](#Configurar_um_desktop_onde_todas_as_janelas_estão_flutuando)
+*   [4 Solução de problemas](#Solução_de_problemas)
+    *   [4.1 Tela em branco e atalhos de teclado não funcionam](#Tela_em_branco_e_atalhos_de_teclado_não_funcionam)
+    *   [4.2 Caixa de janela maior que a aplicação real](#Caixa_de_janela_maior_que_a_aplicação_real)
+    *   [4.3 Problemas com aplicações java](#Problemas_com_aplicações_java)
     *   [4.4 Problemas com atalhos de teclado usando fish](#Problemas_com_atalhos_de_teclado_usando_fish)
-    *   [4.5 Mensagens de erro "Não foi possível pegar a chave 43 com modfield 68" no início](#Mensagens_de_erro_.22N.C3.A3o_foi_poss.C3.ADvel_pegar_a_chave_43_com_modfield_68.22_no_in.C3.ADcio)
-*   [5 Veja também](#Veja_tamb.C3.A9m)
+    *   [4.5 Mensagens de erro "Não foi possível pegar a chave 43 com modfield 68" no início](#Mensagens_de_erro_"Não_foi_possível_pegar_a_chave_43_com_modfield_68"_no_início)
+*   [5 Veja também](#Veja_também)
 
 ## Instalação
 
@@ -235,7 +235,7 @@ Isso pode acontecer se você estiver usando aplicativos GTK3 e, geralmente, para
 
 ### Problemas com aplicações java
 
-Se você tiver problemas com o aplicações Java, tal como a janela não está redimensionando ou os menus fecham imediatamente após o clique, consulte [Java (Português)#Aplicações sem redimensionamento com o WM, menus fechando imediatamente](/index.php/Java_(Portugu%C3%AAs)#Aplica.C3.A7.C3.B5es_sem_redimensionamento_com_o_WM.2C_menus_fechando_imediatamente "Java (Português)").
+Se você tiver problemas com o aplicações Java, tal como a janela não está redimensionando ou os menus fecham imediatamente após o clique, consulte [Java (Português)#Aplicações sem redimensionamento com o WM, menus fechando imediatamente](/index.php/Java_(Portugu%C3%AAs)#Aplicações_sem_redimensionamento_com_o_WM,_menus_fechando_imediatamente "Java (Português)").
 
 ### Problemas com atalhos de teclado usando fish
 

@@ -5,15 +5,15 @@ Este artículo es una traducción de [Bash/Functions](/index.php/Bash/Functions 
 
 ## Contents
 
-*   [1 Mostrar códigos de error](#Mostrar_c.C3.B3digos_de_error)
-*   [2 Compilar y ejecutar una código fuente en C sobre la marcha](#Compilar_y_ejecutar_una_c.C3.B3digo_fuente_en_C_sobre_la_marcha)
+*   [1 Mostrar códigos de error](#Mostrar_códigos_de_error)
+*   [2 Compilar y ejecutar una código fuente en C sobre la marcha](#Compilar_y_ejecutar_una_código_fuente_en_C_sobre_la_marcha)
 *   [3 Extraer](#Extraer)
 *   [4 cd y ls en uno](#cd_y_ls_en_uno)
 *   [5 Tomador de notas simple](#Tomador_de_notas_simple)
 *   [6 Utilidad de tarea simple](#Utilidad_de_tarea_simple)
 *   [7 Calculadora](#Calculadora)
 *   [8 Kingbash](#Kingbash)
-*   [9 Información IP](#Informaci.C3.B3n_IP)
+*   [9 Información IP](#Información_IP)
 
 ## Mostrar códigos de error
 

@@ -16,21 +16,21 @@ Tomado de la [página de GNOME](http://www.gnome.org/about/%7Cla):
 
 ## Contents
 
-*   [1 Introducción](#Introducci.C3.B3n)
-*   [2 Instalación](#Instalaci.C3.B3n)
+*   [1 Introducción](#Introducción)
+*   [2 Instalación](#Instalación)
     *   [2.1 Iniciar GNOME](#Iniciar_GNOME)
 *   [3 Usar la shell](#Usar_la_shell)
     *   [3.1 Hoja de trucos y atajos de GNOME](#Hoja_de_trucos_y_atajos_de_GNOME)
     *   [3.2 Reiniciar la shell](#Reiniciar_la_shell)
     *   [3.3 La shell se bloquea](#La_shell_se_bloquea)
     *   [3.4 La shell se congela](#La_shell_se_congela)
-*   [4 Integración de pacman: GNOME PackageKit](#Integraci.C3.B3n_de_pacman:_GNOME_PackageKit)
+*   [4 Integración de pacman: GNOME PackageKit](#Integración_de_pacman:_GNOME_PackageKit)
     *   [4.1 Notificaciones de actualizaciones de paquetes](#Notificaciones_de_actualizaciones_de_paquetes)
 *   [5 Personalizar la apariencia de GNOME](#Personalizar_la_apariencia_de_GNOME)
     *   [5.1 Apariencia general](#Apariencia_general)
         *   [5.1.1 Gsettings](#Gsettings)
         *   [5.1.2 GNOME Tweak Tool](#GNOME_Tweak_Tool)
-        *   [5.1.3 Temas GTK3 a través de settings.ini](#Temas_GTK3_a_trav.C3.A9s_de_settings.ini)
+        *   [5.1.3 Temas GTK3 a través de settings.ini](#Temas_GTK3_a_través_de_settings.ini)
         *   [5.1.4 Temas para iconos](#Temas_para_iconos)
     *   [5.2 Totem](#Totem)
     *   [5.3 Panel de GNOME](#Panel_de_GNOME)
@@ -38,80 +38,80 @@ Tomado de la [página de GNOME](http://www.gnome.org/about/%7Cla):
         *   [5.3.2 Ocultar iconos en la barra superior](#Ocultar_iconos_en_la_barra_superior)
             *   [5.3.2.1 Ocultar iconos con las extensiones shell](#Ocultar_iconos_con_las_extensiones_shell)
             *   [5.3.2.2 Modificar manualmente el script del panel de GNOME](#Modificar_manualmente_el_script_del_panel_de_GNOME)
-        *   [5.3.3 Mostrar el icono de la batería](#Mostrar_el_icono_de_la_bater.C3.ADa)
+        *   [5.3.3 Mostrar el icono de la batería](#Mostrar_el_icono_de_la_batería)
         *   [5.3.4 Eliminar la demora al salir](#Eliminar_la_demora_al_salir)
         *   [5.3.5 Mostrar el monitor del sistema](#Mostrar_el_monitor_del_sistema)
-        *   [5.3.6 Mostrar información meteorológica](#Mostrar_informaci.C3.B3n_meteorol.C3.B3gica)
+        *   [5.3.6 Mostrar información meteorológica](#Mostrar_información_meteorológica)
     *   [5.4 Vista de actividades](#Vista_de_actividades)
         *   [5.4.1 Eliminar entradas de la vista de Aplicaciones](#Eliminar_entradas_de_la_vista_de_Aplicaciones)
-        *   [5.4.2 Quitar lanzadores de Wine desde el menú de Aplicaciones](#Quitar_lanzadores_de_Wine_desde_el_men.C3.BA_de_Aplicaciones)
-        *   [5.4.3 Cambiar el tamaño de los iconos de las aplicaciones](#Cambiar_el_tama.C3.B1o_de_los_iconos_de_las_aplicaciones)
-        *   [5.4.4 Cambiar el tamaño de los iconos del menú izquierdo](#Cambiar_el_tama.C3.B1o_de_los_iconos_del_men.C3.BA_izquierdo)
-        *   [5.4.5 Cambiar el tamaño de iconos con el alternador (alt-tab)](#Cambiar_el_tama.C3.B1o_de_iconos_con_el_alternador_.28alt-tab.29)
-        *   [5.4.6 Cambiar el tamaño de los iconos de la bandeja del sistema](#Cambiar_el_tama.C3.B1o_de_los_iconos_de_la_bandeja_del_sistema)
-        *   [5.4.7 Desactivar la esquina flotante del menú Actividades](#Desactivar_la_esquina_flotante_del_men.C3.BA_Actividades)
+        *   [5.4.2 Quitar lanzadores de Wine desde el menú de Aplicaciones](#Quitar_lanzadores_de_Wine_desde_el_menú_de_Aplicaciones)
+        *   [5.4.3 Cambiar el tamaño de los iconos de las aplicaciones](#Cambiar_el_tamaño_de_los_iconos_de_las_aplicaciones)
+        *   [5.4.4 Cambiar el tamaño de los iconos del menú izquierdo](#Cambiar_el_tamaño_de_los_iconos_del_menú_izquierdo)
+        *   [5.4.5 Cambiar el tamaño de iconos con el alternador (alt-tab)](#Cambiar_el_tamaño_de_iconos_con_el_alternador_(alt-tab))
+        *   [5.4.6 Cambiar el tamaño de los iconos de la bandeja del sistema](#Cambiar_el_tamaño_de_los_iconos_de_la_bandeja_del_sistema)
+        *   [5.4.7 Desactivar la esquina flotante del menú Actividades](#Desactivar_la_esquina_flotante_del_menú_Actividades)
         *   [5.4.8 Desactivar bandeja de mensajes flotante](#Desactivar_bandeja_de_mensajes_flotante)
     *   [5.5 Barra de titulo](#Barra_de_titulo)
-        *   [5.5.1 Reducir el tamaño de la barra de titulo](#Reducir_el_tama.C3.B1o_de_la_barra_de_titulo)
+        *   [5.5.1 Reducir el tamaño de la barra de titulo](#Reducir_el_tamaño_de_la_barra_de_titulo)
         *   [5.5.2 Reordenar los botones de la barra de titulo](#Reordenar_los_botones_de_la_barra_de_titulo)
-        *   [5.5.3 Ocultar la barra de títulos cuando se maximiza](#Ocultar_la_barra_de_t.C3.ADtulos_cuando_se_maximiza)
+        *   [5.5.3 Ocultar la barra de títulos cuando se maximiza](#Ocultar_la_barra_de_títulos_cuando_se_maximiza)
     *   [5.6 Pantalla de acceso](#Pantalla_de_acceso)
         *   [5.6.1 Imagen de fondo de la pantalla de acceso](#Imagen_de_fondo_de_la_pantalla_de_acceso)
-        *   [5.6.2 Fuentes más grandes para la pantalla de acceso](#Fuentes_m.C3.A1s_grandes_para_la_pantalla_de_acceso)
+        *   [5.6.2 Fuentes más grandes para la pantalla de acceso](#Fuentes_más_grandes_para_la_pantalla_de_acceso)
         *   [5.6.3 Apagar el sonido](#Apagar_el_sonido)
-        *   [5.6.4 Hacer interactivo el botón de encendido](#Hacer_interactivo_el_bot.C3.B3n_de_encendido)
-        *   [5.6.5 Distribución del teclado GDM](#Distribuci.C3.B3n_del_teclado_GDM)
-    *   [5.7 Gestión de energía](#Gesti.C3.B3n_de_energ.C3.ADa)
-        *   [5.7.1 Evitar suspender en la RAM (S3) al cerrar la tapa](#Evitar_suspender_en_la_RAM_.28S3.29_al_cerrar_la_tapa)
-        *   [5.7.2 Sin reacción al cerrar la tapa](#Sin_reacci.C3.B3n_al_cerrar_la_tapa)
-        *   [5.7.3 Cambiar la acción del nivel de batería crítico (para portátiles)](#Cambiar_la_acci.C3.B3n_del_nivel_de_bater.C3.ADa_cr.C3.ADtico_.28para_port.C3.A1tiles.29)
+        *   [5.6.4 Hacer interactivo el botón de encendido](#Hacer_interactivo_el_botón_de_encendido)
+        *   [5.6.5 Distribución del teclado GDM](#Distribución_del_teclado_GDM)
+    *   [5.7 Gestión de energía](#Gestión_de_energía)
+        *   [5.7.1 Evitar suspender en la RAM (S3) al cerrar la tapa](#Evitar_suspender_en_la_RAM_(S3)_al_cerrar_la_tapa)
+        *   [5.7.2 Sin reacción al cerrar la tapa](#Sin_reacción_al_cerrar_la_tapa)
+        *   [5.7.3 Cambiar la acción del nivel de batería crítico (para portátiles)](#Cambiar_la_acción_del_nivel_de_batería_crítico_(para_portátiles))
     *   [5.8 Otros consejos](#Otros_consejos)
 *   [6 Ajustes diversos](#Ajustes_diversos)
     *   [6.1 Revertir el comportamiento de la barra de desplazamiento](#Revertir_el_comportamiento_de_la_barra_de_desplazamiento)
-    *   [6.2 Lanzar programas automáticamente al iniciar sesión](#Lanzar_programas_autom.C3.A1ticamente_al_iniciar_sesi.C3.B3n)
-    *   [6.3 Editar el menú de aplicaciones](#Editar_el_men.C3.BA_de_aplicaciones)
-    *   [6.4 Algunas «configuraciones del sistema» no permanecen](#Algunas_.C2.ABconfiguraciones_del_sistema.C2.BB_no_permanecen)
+    *   [6.2 Lanzar programas automáticamente al iniciar sesión](#Lanzar_programas_automáticamente_al_iniciar_sesión)
+    *   [6.3 Editar el menú de aplicaciones](#Editar_el_menú_de_aplicaciones)
+    *   [6.4 Algunas «configuraciones del sistema» no permanecen](#Algunas_«configuraciones_del_sistema»_no_permanecen)
     *   [6.5 Borde interno en el Terminal de Gnome](#Borde_interno_en_el_Terminal_de_Gnome)
     *   [6.6 Desactivar el cursor intermitente en la Terminal](#Desactivar_el_cursor_intermitente_en_la_Terminal)
-    *   [6.7 Hacer nuevas pestañas que hereden los directorios en curso presentes en el Terminal de Gnome (3.8+)](#Hacer_nuevas_pesta.C3.B1as_que_hereden_los_directorios_en_curso_presentes_en_el_Terminal_de_Gnome_.283.8.2B.29)
-    *   [6.8 Mover ventanas de diálogo](#Mover_ventanas_de_di.C3.A1logo)
-    *   [6.9 Mostrar iconos del menú contextual](#Mostrar_iconos_del_men.C3.BA_contextual)
+    *   [6.7 Hacer nuevas pestañas que hereden los directorios en curso presentes en el Terminal de Gnome (3.8+)](#Hacer_nuevas_pestañas_que_hereden_los_directorios_en_curso_presentes_en_el_Terminal_de_Gnome_(3.8+))
+    *   [6.8 Mover ventanas de diálogo](#Mover_ventanas_de_diálogo)
+    *   [6.9 Mostrar iconos del menú contextual](#Mostrar_iconos_del_menú_contextual)
     *   [6.10 Extensiones de GNOME shell](#Extensiones_de_GNOME_shell)
-    *   [6.11 Gestor de archivos por defecto/sustituir Nautilus](#Gestor_de_archivos_por_defecto.2Fsustituir_Nautilus)
+    *   [6.11 Gestor de archivos por defecto/sustituir Nautilus](#Gestor_de_archivos_por_defecto/sustituir_Nautilus)
     *   [6.12 Visor PDF predeterminado](#Visor_PDF_predeterminado)
     *   [6.13 Terminal predeterminado](#Terminal_predeterminado)
     *   [6.14 Aplicaciones predeterminadas](#Aplicaciones_predeterminadas)
     *   [6.15 Navegador web predeterminado](#Navegador_web_predeterminado)
-    *   [6.16 Emulación del botón central del ratón](#Emulaci.C3.B3n_del_bot.C3.B3n_central_del_rat.C3.B3n)
+    *   [6.16 Emulación del botón central del ratón](#Emulación_del_botón_central_del_ratón)
     *   [6.17 Atenuar la pantalla](#Atenuar_la_pantalla)
-*   [7 Características ocultas](#Caracter.C3.ADsticas_ocultas)
-    *   [7.1 Cambiar teclas de acceso rápido](#Cambiar_teclas_de_acceso_r.C3.A1pido)
+*   [7 Características ocultas](#Características_ocultas)
+    *   [7.1 Cambiar teclas de acceso rápido](#Cambiar_teclas_de_acceso_rápido)
         *   [7.1.1 Nautilus 3.4 y posterior](#Nautilus_3.4_y_posterior)
     *   [7.2 Grabar lo que visualiza en la pantalla](#Grabar_lo_que_visualiza_en_la_pantalla)
-    *   [7.3 Modificar la distribución del teclado con XkbOptions](#Modificar_la_distribuci.C3.B3n_del_teclado_con_XkbOptions)
+    *   [7.3 Modificar la distribución del teclado con XkbOptions](#Modificar_la_distribución_del_teclado_con_XkbOptions)
     *   [7.4 Alternar distribuciones de teclado](#Alternar_distribuciones_de_teclado)
-*   [8 Mensajería integrada (Empathy)](#Mensajer.C3.ADa_integrada_.28Empathy.29)
-*   [9 Solución de problemas](#Soluci.C3.B3n_de_problemas)
+*   [8 Mensajería integrada (Empathy)](#Mensajería_integrada_(Empathy))
+*   [9 Solución de problemas](#Solución_de_problemas)
     *   [9.1 No se pueden establecer ajustes en Dconf-Editor](#No_se_pueden_establecer_ajustes_en_Dconf-Editor)
-    *   [9.2 Cuando una extensión rompe GNOME](#Cuando_una_extensi.C3.B3n_rompe_GNOME)
-    *   [9.3 Las extensiones no funcionan después de actualizar GNOME 3](#Las_extensiones_no_funcionan_despu.C3.A9s_de_actualizar_GNOME_3)
-    *   [9.4 La tecla «Windows»](#La_tecla_.C2.ABWindows.C2.BB)
+    *   [9.2 Cuando una extensión rompe GNOME](#Cuando_una_extensión_rompe_GNOME)
+    *   [9.3 Las extensiones no funcionan después de actualizar GNOME 3](#Las_extensiones_no_funcionan_después_de_actualizar_GNOME_3)
+    *   [9.4 La tecla «Windows»](#La_tecla_«Windows»)
     *   [9.5 Quitar extensiones de Gnome Shell](#Quitar_extensiones_de_Gnome_Shell)
-    *   [9.6 Los atajos del teclado no funcionan cuando únicamente se ejecuta conky](#Los_atajos_del_teclado_no_funcionan_cuando_.C3.BAnicamente_se_ejecuta_conky)
+    *   [9.6 Los atajos del teclado no funcionan cuando únicamente se ejecuta conky](#Los_atajos_del_teclado_no_funcionan_cuando_únicamente_se_ejecuta_conky)
     *   [9.7 La nueva ventana se abre detras de otras ventanas cuando se utilizan varios monitores](#La_nueva_ventana_se_abre_detras_de_otras_ventanas_cuando_se_utilizan_varios_monitores)
-    *   [9.8 Varios monitores y la extensión dock](#Varios_monitores_y_la_extensi.C3.B3n_dock)
-    *   [9.9 Gnome establece la distribución del teclado de EE.UU. después de cada inicio de sesión](#Gnome_establece_la_distribuci.C3.B3n_del_teclado_de_EE.UU._despu.C3.A9s_de_cada_inicio_de_sesi.C3.B3n)
-    *   [9.10 El acceso directo «Mostrar Escritorio» no funciona](#El_acceso_directo_.C2.ABMostrar_Escritorio.C2.BB_no_funciona)
+    *   [9.8 Varios monitores y la extensión dock](#Varios_monitores_y_la_extensión_dock)
+    *   [9.9 Gnome establece la distribución del teclado de EE.UU. después de cada inicio de sesión](#Gnome_establece_la_distribución_del_teclado_de_EE.UU._después_de_cada_inicio_de_sesión)
+    *   [9.10 El acceso directo «Mostrar Escritorio» no funciona](#El_acceso_directo_«Mostrar_Escritorio»_no_funciona)
     *   [9.11 Nautilus no se inicia](#Nautilus_no_se_inicia)
-    *   [9.12 «No se puede aplicar la configuración guardada para los monitores»](#.C2.ABNo_se_puede_aplicar_la_configuraci.C3.B3n_guardada_para_los_monitores.C2.BB)
-    *   [9.13 El botón de bloqueo del touchpad falla al reactivarlo](#El_bot.C3.B3n_de_bloqueo_del_touchpad_falla_al_reactivarlo)
+    *   [9.12 «No se puede aplicar la configuración guardada para los monitores»](#«No_se_puede_aplicar_la_configuración_guardada_para_los_monitores»)
+    *   [9.13 El botón de bloqueo del touchpad falla al reactivarlo](#El_botón_de_bloqueo_del_touchpad_falla_al_reactivarlo)
     *   [9.14 No es posible conectarse a redes Wi-Fi protegidas](#No_es_posible_conectarse_a_redes_Wi-Fi_protegidas)
-    *   [9.15 «Cualquier orden viene definida como 33»](#.C2.ABCualquier_orden_viene_definida_como_33.C2.BB)
+    *   [9.15 «Cualquier orden viene definida como 33»](#«Cualquier_orden_viene_definida_como_33»)
     *   [9.16 GDM y GNOME utilizan los cursores de X11](#GDM_y_GNOME_utilizan_los_cursores_de_X11)
-    *   [9.17 Tracker & Documentos no enumeran todos los archivos locales](#Tracker_.26_Documentos_no_enumeran_todos_los_archivos_locales)
-    *   [9.18 Las contraseñas no se recuerdan](#Las_contrase.C3.B1as_no_se_recuerdan)
-    *   [9.19 Las ventanas no se pueden modificar con la tecla Alt + botón del ratón](#Las_ventanas_no_se_pueden_modificar_con_la_tecla_Alt_.2B_bot.C3.B3n_del_rat.C3.B3n)
-    *   [9.20 Gnome-shell 3.8.x falla al cargarse con una pantalla en negro + el cursor](#Gnome-shell_3.8.x_falla_al_cargarse_con_una_pantalla_en_negro_.2B_el_cursor)
+    *   [9.17 Tracker & Documentos no enumeran todos los archivos locales](#Tracker_&_Documentos_no_enumeran_todos_los_archivos_locales)
+    *   [9.18 Las contraseñas no se recuerdan](#Las_contraseñas_no_se_recuerdan)
+    *   [9.19 Las ventanas no se pueden modificar con la tecla Alt + botón del ratón](#Las_ventanas_no_se_pueden_modificar_con_la_tecla_Alt_+_botón_del_ratón)
+    *   [9.20 Gnome-shell 3.8.x falla al cargarse con una pantalla en negro + el cursor](#Gnome-shell_3.8.x_falla_al_cargarse_con_una_pantalla_en_negro_+_el_cursor)
     *   [9.21 Los elementos de la interfaz de usuario de Gnome 3.10 tienen una escala incorrecta](#Los_elementos_de_la_interfaz_de_usuario_de_Gnome_3.10_tienen_una_escala_incorrecta)
 *   [10 Enlaces externos](#Enlaces_externos)
 
@@ -127,13 +127,13 @@ Ambos usan GNOME Shell y el gestor de ventanas Mutter. Mutter actúa como un ges
 
 ## Instalación
 
-GNOME 3 está disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") y puede ser [instalado](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") con dos grupos de paquetes:
+GNOME 3 está disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") y puede ser [instalado](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") con dos grupos de paquetes:
 
 *   [gnome](https://www.archlinux.org/groups/x86_64/gnome/) contiene el entorno de escritorio básico y aplicaciones necesarias para la experiencia estándar de GNOME.
 
 *   [gnome-extra](https://www.archlinux.org/groups/x86_64/gnome-extra/) contiene varias herramientas opcionales, como un reproductor multimedia, una calculadora, un editor y otras aplicaciones no problemáticas que van bien con el escritorio GNOME. La instalación de este grupo es opcional.
 
-**Nota:** Tenga en cuenta que la instalación únicamente del grupo [gnome-extra](https://www.archlinux.org/groups/x86_64/gnome-extra/) no instala el grupo [gnome](https://www.archlinux.org/groups/x86_64/gnome/) como dependencia: si realmente lo quiere todo debe [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") ambos grupos de forma explícita.
+**Nota:** Tenga en cuenta que la instalación únicamente del grupo [gnome-extra](https://www.archlinux.org/groups/x86_64/gnome-extra/) no instala el grupo [gnome](https://www.archlinux.org/groups/x86_64/gnome/) como dependencia: si realmente lo quiere todo debe [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") ambos grupos de forma explícita.
 
 ### Iniciar GNOME
 
@@ -222,7 +222,7 @@ Puede cambiar la operación `remove` de -Rc a -Rsc estableciendo la clave DConf 
 
 ### Notificaciones de actualizaciones de paquetes
 
-Si quiere que GNOME compruebe automáticamente si hay actualizaciones, debe [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [gnome-settings-daemon-updates](https://aur.archlinux.org/packages/gnome-settings-daemon-updates/) desde AUR. La dependencia opcional [polkit-gnome](https://www.archlinux.org/packages/?name=polkit-gnome) **es requerida** si ejecuta GNOME como usuario normal.
+Si quiere que GNOME compruebe automáticamente si hay actualizaciones, debe [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") [gnome-settings-daemon-updates](https://aur.archlinux.org/packages/gnome-settings-daemon-updates/) desde AUR. La dependencia opcional [polkit-gnome](https://www.archlinux.org/packages/?name=polkit-gnome) **es requerida** si ejecuta GNOME como usuario normal.
 
 ## Personalizar la apariencia de GNOME
 
@@ -284,7 +284,7 @@ gtk-icon-theme-name = mi_tema_de_iconos
 
 ### Totem
 
-Para reproducir vídeos h.264, es necesario [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [gst-libav](https://www.archlinux.org/packages/?name=gst-libav)
+Para reproducir vídeos h.264, es necesario [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") [gst-libav](https://www.archlinux.org/packages/?name=gst-libav)
 
 Para obtener más información sobre la aceleración de hardware de gstreamer, véase [Gstreamer: Hardware Acceleration](/index.php/GStreamer#Hardware_video_acceleration "GStreamer").
 
@@ -719,7 +719,7 @@ GNOME Shell se puede personalizar con extensiones. Estas proporcionan caracterí
 
 Muchas extensiones son recogidas y auspiciadas por [extensions.gnome.org](https://extensions.gnome.org/). Se pueden realizar búsquedas e instalarlas simplemente activándolas a través del navegador. Más información acerca de las extensiones de la shell de gnome se pueden encontrar [aquí](https://extensions.gnome.org/about/).
 
-Véase [cuando una extensión rompe GNOME](#Cuando_una_extensi.C3.B3n_rompe_GNOME) para información sobre solución de problemas.
+Véase [cuando una extensión rompe GNOME](#Cuando_una_extensión_rompe_GNOME) para información sobre solución de problemas.
 
 ### Gestor de archivos por defecto/sustituir Nautilus
 
@@ -857,7 +857,7 @@ Gnome no considera ninguna configuración establecida en `/etc/X11/conf.d/*.conf
 
 ## Mensajería integrada (Empathy)
 
-Empathy, el motor de mensajería integrada, y todos los ajustes del sistema basados en cuentas de mensajería, no se mostrarán a menos que el grupo de paquetes [telepathy](https://www.archlinux.org/groups/x86_64/telepathy/) o, al menos, uno de los backends ([telepathy-gabble](https://www.archlinux.org/packages/?name=telepathy-gabble) o [telepathy-haze](https://www.archlinux.org/packages/?name=telepathy-haze), por ejemplo) estén [instalados](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)").
+Empathy, el motor de mensajería integrada, y todos los ajustes del sistema basados en cuentas de mensajería, no se mostrarán a menos que el grupo de paquetes [telepathy](https://www.archlinux.org/groups/x86_64/telepathy/) o, al menos, uno de los backends ([telepathy-gabble](https://www.archlinux.org/packages/?name=telepathy-gabble) o [telepathy-haze](https://www.archlinux.org/packages/?name=telepathy-haze), por ejemplo) estén [instalados](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)").
 
 Estos paquetes no están incluidos, por defecto, en la instalación de GNOME que instala Arch. Puede instalar Telepathy y, opcionalmente, algún backends con:
 
@@ -1028,11 +1028,11 @@ $ xinput set-prop "SynPS/2 Synaptics TouchPad" "Device Enabled" 1
 
 ### No es posible conectarse a redes Wi-Fi protegidas
 
-Es posible que se encuentre en la situación de que puede ver la lista de conexiones de red, pero al elegir una red cifrada no se muestra el cuadro de diálogo para ingresar la clave. Puede que tenga que [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet). Véase [configurar NetworkManager en GNOME](/index.php/NetworkManager_(Espa%C3%B1ol)#GNOME "NetworkManager (Español)").
+Es posible que se encuentre en la situación de que puede ver la lista de conexiones de red, pero al elegir una red cifrada no se muestra el cuadro de diálogo para ingresar la clave. Puede que tenga que [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet). Véase [configurar NetworkManager en GNOME](/index.php/NetworkManager_(Espa%C3%B1ol)#GNOME "NetworkManager (Español)").
 
 ### «Cualquier orden viene definida como 33»
 
-Cuando se pulsa la tecla `Imprimir Pantalla` (a veces etiquetada como `PrntScr` o `PrtSc`) para tomar una captura de pantalla, y obtiene el mensaje *«Any command has been defined 33»*, [instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [metacity](https://www.archlinux.org/packages/?name=metacity).
+Cuando se pulsa la tecla `Imprimir Pantalla` (a veces etiquetada como `PrntScr` o `PrtSc`) para tomar una captura de pantalla, y obtiene el mensaje *«Any command has been defined 33»*, [instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") [metacity](https://www.archlinux.org/packages/?name=metacity).
 
 ### GDM y GNOME utilizan los cursores de X11
 
@@ -1047,11 +1047,11 @@ Inherits=Adwaita
 
 **Nota:** En lugar de «Adwaita», puede elegir otro tema para el cursor (por ejemplo, Human).
 
-También puede [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [gnome-cursors-fix](https://aur.archlinux.org/packages/gnome-cursors-fix/) desde [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)").
+También puede [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") [gnome-cursors-fix](https://aur.archlinux.org/packages/gnome-cursors-fix/) desde [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)").
 
 ### Tracker & Documentos no enumeran todos los archivos locales
 
-Para que Tracker (y, por lo tanto, los Documentos) puedan detectar los archivos locales, los mismos deben ser guardados en carpetas conocidas por ellos. Si sus documentos están contenidos en uno de los directorios estándar de XDG habituales (por ejemplo, «Documentos» o «Música»), debe [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [xdg-user-dirs](https://www.archlinux.org/packages/?name=xdg-user-dirs) y ejecutar:
+Para que Tracker (y, por lo tanto, los Documentos) puedan detectar los archivos locales, los mismos deben ser guardados en carpetas conocidas por ellos. Si sus documentos están contenidos en uno de los directorios estándar de XDG habituales (por ejemplo, «Documentos» o «Música»), debe [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") [xdg-user-dirs](https://www.archlinux.org/packages/?name=xdg-user-dirs) y ejecutar:
 
 ```
  # xdg-user-dirs-update

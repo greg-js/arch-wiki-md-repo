@@ -12,39 +12,39 @@
 
 ## Contents
 
-*   [1 UEFI 发展历史](#UEFI_.E5.8F.91.E5.B1.95.E5.8E.86.E5.8F.B2)
-*   [2 UEFI 固件架构](#UEFI_.E5.9B.BA.E4.BB.B6.E6.9E.B6.E6.9E.84)
-    *   [2.1 非 Macs 系统](#.E9.9D.9E_Macs_.E7.B3.BB.E7.BB.9F)
+*   [1 UEFI 发展历史](#UEFI_发展历史)
+*   [2 UEFI 固件架构](#UEFI_固件架构)
+    *   [2.1 非 Macs 系统](#非_Macs_系统)
     *   [2.2 Apple Mac](#Apple_Mac)
-*   [3 Linux 内核中有关 UEFI 的配置选项](#Linux_.E5.86.85.E6.A0.B8.E4.B8.AD.E6.9C.89.E5.85.B3_UEFI_.E7.9A.84.E9.85.8D.E7.BD.AE.E9.80.89.E9.A1.B9)
-*   [4 UEFI 变量](#UEFI_.E5.8F.98.E9.87.8F)
-    *   [4.1 Linux 内核中的 UEFI 变量支持](#Linux_.E5.86.85.E6.A0.B8.E4.B8.AD.E7.9A.84_UEFI_.E5.8F.98.E9.87.8F.E6.94.AF.E6.8C.81)
-        *   [4.1.1 efivarfs 和 sysfs-efivars 的不一致](#efivarfs_.E5.92.8C_sysfs-efivars_.E7.9A.84.E4.B8.8D.E4.B8.80.E8.87.B4)
-    *   [4.2 UEFI 变量正常工作的需求](#UEFI_.E5.8F.98.E9.87.8F.E6.AD.A3.E5.B8.B8.E5.B7.A5.E4.BD.9C.E7.9A.84.E9.9C.80.E6.B1.82)
-        *   [4.2.1 挂载 efivarfs](#.E6.8C.82.E8.BD.BD_efivarfs)
-    *   [4.3 用户空间工具](#.E7.94.A8.E6.88.B7.E7.A9.BA.E9.97.B4.E5.B7.A5.E5.85.B7)
+*   [3 Linux 内核中有关 UEFI 的配置选项](#Linux_内核中有关_UEFI_的配置选项)
+*   [4 UEFI 变量](#UEFI_变量)
+    *   [4.1 Linux 内核中的 UEFI 变量支持](#Linux_内核中的_UEFI_变量支持)
+        *   [4.1.1 efivarfs 和 sysfs-efivars 的不一致](#efivarfs_和_sysfs-efivars_的不一致)
+    *   [4.2 UEFI 变量正常工作的需求](#UEFI_变量正常工作的需求)
+        *   [4.2.1 挂载 efivarfs](#挂载_efivarfs)
+    *   [4.3 用户空间工具](#用户空间工具)
         *   [4.3.1 efibootmgr](#efibootmgr)
 *   [5 UEFI Shell](#UEFI_Shell)
-    *   [5.1 获取 UEFI Shell](#.E8.8E.B7.E5.8F.96_UEFI_Shell)
-    *   [5.2 启动 UEFI Shell](#.E5.90.AF.E5.8A.A8_UEFI_Shell)
-    *   [5.3 重要 UEFI Shell 命令](#.E9.87.8D.E8.A6.81_UEFI_Shell_.E5.91.BD.E4.BB.A4)
+    *   [5.1 获取 UEFI Shell](#获取_UEFI_Shell)
+    *   [5.2 启动 UEFI Shell](#启动_UEFI_Shell)
+    *   [5.3 重要 UEFI Shell 命令](#重要_UEFI_Shell_命令)
         *   [5.3.1 bcfg](#bcfg)
         *   [5.3.2 map](#map)
         *   [5.3.3 edit](#edit)
-*   [6 UEFI 可启动介质](#UEFI_.E5.8F.AF.E5.90.AF.E5.8A.A8.E4.BB.8B.E8.B4.A8)
-    *   [6.1 从 ISO 创建 UEFI 可启动 USB](#.E4.BB.8E_ISO_.E5.88.9B.E5.BB.BA_UEFI_.E5.8F.AF.E5.90.AF.E5.8A.A8_USB)
-    *   [6.2 从光学介质里移除 UEFI 启动支持](#.E4.BB.8E.E5.85.89.E5.AD.A6.E4.BB.8B.E8.B4.A8.E9.87.8C.E7.A7.BB.E9.99.A4_UEFI_.E5.90.AF.E5.8A.A8.E6.94.AF.E6.8C.81)
-*   [7 原生无支持情况下测试 UEFI](#.E5.8E.9F.E7.94.9F.E6.97.A0.E6.94.AF.E6.8C.81.E6.83.85.E5.86.B5.E4.B8.8B.E6.B5.8B.E8.AF.95_UEFI)
-    *   [7.1 虚拟机使用 OVMF](#.E8.99.9A.E6.8B.9F.E6.9C.BA.E4.BD.BF.E7.94.A8_OVMF)
-    *   [7.2 使用虚拟机](#.E4.BD.BF.E7.94.A8.E8.99.9A.E6.8B.9F.E6.9C.BA)
-    *   [7.3 仅 BIOS 的系统使用 DUET](#.E4.BB.85_BIOS_.E7.9A.84.E7.B3.BB.E7.BB.9F.E4.BD.BF.E7.94.A8_DUET)
-*   [8 疑难问题](#.E7.96.91.E9.9A.BE.E9.97.AE.E9.A2.98)
-    *   [8.1 Windows 7 无法以 UEFI 模式启动](#Windows_7_.E6.97.A0.E6.B3.95.E4.BB.A5_UEFI_.E6.A8.A1.E5.BC.8F.E5.90.AF.E5.8A.A8)
-    *   [8.2 Windows 改变了启动次序](#Windows_.E6.94.B9.E5.8F.98.E4.BA.86.E5.90.AF.E5.8A.A8.E6.AC.A1.E5.BA.8F)
-    *   [8.3 USB 介质卡在黑屏界面](#USB_.E4.BB.8B.E8.B4.A8.E5.8D.A1.E5.9C.A8.E9.BB.91.E5.B1.8F.E7.95.8C.E9.9D.A2)
-    *   [8.4 在 32 位 UEFI 上启动 64 位内核](#.E5.9C.A8_32_.E4.BD.8D_UEFI_.E4.B8.8A.E5.90.AF.E5.8A.A8_64_.E4.BD.8D.E5.86.85.E6.A0.B8)
-        *   [8.4.1 使用 GRUB](#.E4.BD.BF.E7.94.A8_GRUB)
-*   [9 参阅](#.E5.8F.82.E9.98.85)
+*   [6 UEFI 可启动介质](#UEFI_可启动介质)
+    *   [6.1 从 ISO 创建 UEFI 可启动 USB](#从_ISO_创建_UEFI_可启动_USB)
+    *   [6.2 从光学介质里移除 UEFI 启动支持](#从光学介质里移除_UEFI_启动支持)
+*   [7 原生无支持情况下测试 UEFI](#原生无支持情况下测试_UEFI)
+    *   [7.1 虚拟机使用 OVMF](#虚拟机使用_OVMF)
+    *   [7.2 使用虚拟机](#使用虚拟机)
+    *   [7.3 仅 BIOS 的系统使用 DUET](#仅_BIOS_的系统使用_DUET)
+*   [8 疑难问题](#疑难问题)
+    *   [8.1 Windows 7 无法以 UEFI 模式启动](#Windows_7_无法以_UEFI_模式启动)
+    *   [8.2 Windows 改变了启动次序](#Windows_改变了启动次序)
+    *   [8.3 USB 介质卡在黑屏界面](#USB_介质卡在黑屏界面)
+    *   [8.4 在 32 位 UEFI 上启动 64 位内核](#在_32_位_UEFI_上启动_64_位内核)
+        *   [8.4.1 使用 GRUB](#使用_GRUB)
+*   [9 参阅](#参阅)
 
 ## UEFI 发展历史
 
@@ -66,7 +66,7 @@ x86_64 EFI 不能兼容 32 位 EFI 程序。所以 UEFI 应用程序必须依固
 
 检查目录 `/sys/firmware/efi` 是否存在，如果存在，内核就是以 EFI 模式启用，UEFI 架构和内核一致(i686 或 x86_64)。
 
-**Note:** 有些 Intel Atom 系统使用 32-bit UEFI，请参考[#在 32 位 UEFI 上启动 64 位内核](#.E5.9C.A8_32_.E4.BD.8D_UEFI_.E4.B8.8A.E5.90.AF.E5.8A.A8_64_.E4.BD.8D.E5.86.85.E6.A0.B8) 以及 [此博客](https://blogs.intel.com/evangelists/2015/07/22/why-cheap-systems-run-32-bit-uefi-on-x64-systems/).
+**Note:** 有些 Intel Atom 系统使用 32-bit UEFI，请参考[#在 32 位 UEFI 上启动 64 位内核](#在_32_位_UEFI_上启动_64_位内核) 以及 [此博客](https://blogs.intel.com/evangelists/2015/07/22/why-cheap-systems-run-32-bit-uefi-on-x64-systems/).
 
 ### Apple Mac
 
@@ -172,7 +172,7 @@ Linux 内核通过两个接口来把 EFI 变量数据传递给用户空间:
 2.  内核应以 EFI 模式(通过 [EFISTUB](/index.php/EFISTUB "EFISTUB") 或 [EFI 引导器](/index.php/Boot_loader "Boot loader")，而不是 BIOS/CSM 或者同为 BIOS/CSM 的"bootcamp")启动。
 3.  EFI 运行时服务支持应出现在内核中 (`CONFIG_EFI=y`, 运行 `zgrep CONFIG_EFI /proc/config.gz` 来核对是否共存 ).
 4.  EFI 运行时服务在内核命令行中**不应被禁用**，即**不应使用**内核参数 `noefi`.
-5.  `efivarfs` 文件系统应被挂载在 `/sys/firmware/efi/efivars`, 否则参考下文 [#挂载 efivarfs](#.E6.8C.82.E8.BD.BD_efivarfs) 部分。
+5.  `efivarfs` 文件系统应被挂载在 `/sys/firmware/efi/efivars`, 否则参考下文 [#挂载 efivarfs](#挂载_efivarfs) 部分。
 6.  `efivar` 应无错列出 (选项 `-l`) EFI 变量。参见输出内容 [#Sample_List_of_UEFI_Variables](#Sample_List_of_UEFI_Variables).
 
 如果 EFI 变量支持在满足以上条件后仍有问题，尝试以下解决方案:

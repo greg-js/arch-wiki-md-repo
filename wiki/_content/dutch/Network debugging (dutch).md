@@ -14,7 +14,7 @@ Dit artikel behandelt de basis stappen voor het troubleshooten van netwerk conne
 *   [4 IP adres](#IP_adres)
 *   [5 Route table](#Route_table)
 *   [6 DNS Servers](#DNS_Servers)
-*   [7 Ping & Tracepath/Traceroute](#Ping_.26_Tracepath.2FTraceroute)
+*   [7 Ping & Tracepath/Traceroute](#Ping_&_Tracepath/Traceroute)
 
 ## iproute2
 

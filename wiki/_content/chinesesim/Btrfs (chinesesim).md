@@ -19,52 +19,52 @@
 **Warning:**
 
 *   Btrfs 有一些功能被认为是实验性的特性，可参见内核百科的 [Btrfs 稳定性状态报告](https://btrfs.wiki.kernel.org/index.php/Main_Page#Stability_status)，[Btrfs 足够稳定了吗？](https://btrfs.wiki.kernel.org/index.php/FAQ#Is_btrfs_stable.3F)和[开始使用 Btrfs](https://btrfs.wiki.kernel.org/index.php/Getting_started)。
-*   了解当前的[局限性](#.E5.B1.80.E9.99.90.E6.80.A7).
+*   了解当前的[局限性](#局限性).
 
 ## Contents
 
-*   [1 准备工作](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C)
-*   [2 分区](#.E5.88.86.E5.8C.BA)
-*   [3 创建文件系统](#.E5.88.9B.E5.BB.BA.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F)
-    *   [3.1 新建文件系统](#.E6.96.B0.E5.BB.BA.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F)
-        *   [3.1.1 单一设备上的文件系统](#.E5.8D.95.E4.B8.80.E8.AE.BE.E5.A4.87.E4.B8.8A.E7.9A.84.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F)
-        *   [3.1.2 多设备文件系统](#.E5.A4.9A.E8.AE.BE.E5.A4.87.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F)
-    *   [3.2 从 Ext3/4 转换](#.E4.BB.8E_Ext3.2F4_.E8.BD.AC.E6.8D.A2)
-*   [4 设置文件系统](#.E8.AE.BE.E7.BD.AE.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F)
-    *   [4.1 写时复制 (CoW)](#.E5.86.99.E6.97.B6.E5.A4.8D.E5.88.B6_.28CoW.29)
-        *   [4.1.1 停用 CoW](#.E5.81.9C.E7.94.A8_CoW)
-        *   [4.1.2 强制启用写时复制](#.E5.BC.BA.E5.88.B6.E5.90.AF.E7.94.A8.E5.86.99.E6.97.B6.E5.A4.8D.E5.88.B6)
-    *   [4.2 压缩](#.E5.8E.8B.E7.BC.A9)
-    *   [4.3 子卷](#.E5.AD.90.E5.8D.B7)
-        *   [4.3.1 创建子卷](#.E5.88.9B.E5.BB.BA.E5.AD.90.E5.8D.B7)
-        *   [4.3.2 列出子卷列表](#.E5.88.97.E5.87.BA.E5.AD.90.E5.8D.B7.E5.88.97.E8.A1.A8)
-        *   [4.3.3 删除子卷](#.E5.88.A0.E9.99.A4.E5.AD.90.E5.8D.B7)
-        *   [4.3.4 挂载子卷](#.E6.8C.82.E8.BD.BD.E5.AD.90.E5.8D.B7)
-            *   [4.3.4.1 更改子卷的挂载选项](#.E6.9B.B4.E6.94.B9.E5.AD.90.E5.8D.B7.E7.9A.84.E6.8C.82.E8.BD.BD.E9.80.89.E9.A1.B9)
-        *   [4.3.5 改变默认子卷](#.E6.94.B9.E5.8F.98.E9.BB.98.E8.AE.A4.E5.AD.90.E5.8D.B7)
+*   [1 准备工作](#准备工作)
+*   [2 分区](#分区)
+*   [3 创建文件系统](#创建文件系统)
+    *   [3.1 新建文件系统](#新建文件系统)
+        *   [3.1.1 单一设备上的文件系统](#单一设备上的文件系统)
+        *   [3.1.2 多设备文件系统](#多设备文件系统)
+    *   [3.2 从 Ext3/4 转换](#从_Ext3/4_转换)
+*   [4 设置文件系统](#设置文件系统)
+    *   [4.1 写时复制 (CoW)](#写时复制_(CoW))
+        *   [4.1.1 停用 CoW](#停用_CoW)
+        *   [4.1.2 强制启用写时复制](#强制启用写时复制)
+    *   [4.2 压缩](#压缩)
+    *   [4.3 子卷](#子卷)
+        *   [4.3.1 创建子卷](#创建子卷)
+        *   [4.3.2 列出子卷列表](#列出子卷列表)
+        *   [4.3.3 删除子卷](#删除子卷)
+        *   [4.3.4 挂载子卷](#挂载子卷)
+            *   [4.3.4.1 更改子卷的挂载选项](#更改子卷的挂载选项)
+        *   [4.3.5 改变默认子卷](#改变默认子卷)
     *   [4.4 Commit intervals setting](#Commit_intervals_setting)
-    *   [4.5 Checkpoint 间隔](#Checkpoint_.E9.97.B4.E9.9A.94)
+    *   [4.5 Checkpoint 间隔](#Checkpoint_间隔)
     *   [4.6 SSD TRIM](#SSD_TRIM)
-*   [5 使用](#.E4.BD.BF.E7.94.A8)
-    *   [5.1 显示已使用的/空闲空间](#.E6.98.BE.E7.A4.BA.E5.B7.B2.E4.BD.BF.E7.94.A8.E7.9A.84.2F.E7.A9.BA.E9.97.B2.E7.A9.BA.E9.97.B4)
-    *   [5.2 碎片整理](#.E7.A2.8E.E7.89.87.E6.95.B4.E7.90.86)
+*   [5 使用](#使用)
+    *   [5.1 显示已使用的/空闲空间](#显示已使用的/空闲空间)
+    *   [5.2 碎片整理](#碎片整理)
     *   [5.3 Scrub](#Scrub)
     *   [5.4 Balance](#Balance)
     *   [5.5 RAID](#RAID)
-    *   [5.6 快照](#.E5.BF.AB.E7.85.A7)
-    *   [5.7 发送和接收](#.E5.8F.91.E9.80.81.E5.92.8C.E6.8E.A5.E6.94.B6)
-*   [6 局限性](#.E5.B1.80.E9.99.90.E6.80.A7)
-    *   [6.1 加密](#.E5.8A.A0.E5.AF.86)
-    *   [6.2 交换文件](#.E4.BA.A4.E6.8D.A2.E6.96.87.E4.BB.B6)
-    *   [6.3 Linux-rt 内核](#Linux-rt_.E5.86.85.E6.A0.B8)
-*   [7 提示和技巧](#.E6.8F.90.E7.A4.BA.E5.92.8C.E6.8A.80.E5.B7.A7)
-*   [8 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
+    *   [5.6 快照](#快照)
+    *   [5.7 发送和接收](#发送和接收)
+*   [6 局限性](#局限性)
+    *   [6.1 加密](#加密)
+    *   [6.2 交换文件](#交换文件)
+    *   [6.3 Linux-rt 内核](#Linux-rt_内核)
+*   [7 提示和技巧](#提示和技巧)
+*   [8 故障排除](#故障排除)
     *   [8.1 GRUB](#GRUB)
-        *   [8.1.1 分区偏移](#.E5.88.86.E5.8C.BA.E5.81.8F.E7.A7.BB)
+        *   [8.1.1 分区偏移](#分区偏移)
         *   [8.1.2 Missing root](#Missing_root)
     *   [8.2 BTRFS: open_ctree failed](#BTRFS:_open_ctree_failed)
-    *   [8.3 检查 btrfs 文件系统](#.E6.A3.80.E6.9F.A5_btrfs_.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F)
-*   [9 另见](#.E5.8F.A6.E8.A7.81)
+    *   [8.3 检查 btrfs 文件系统](#检查_btrfs_文件系统)
+*   [9 另见](#另见)
 
 ## 准备工作
 
@@ -289,7 +289,7 @@ Btrfs支持透明压缩，这意味着分区里的每个文件都被自动压缩
 
 ```
 
-*subvolume-id* 可以通过[#列出子卷列表](#.E5.88.97.E5.87.BA.E5.AD.90.E5.8D.B7.E5.88.97.E8.A1.A8)获得.
+*subvolume-id* 可以通过[#列出子卷列表](#列出子卷列表)获得.
 
 **Note:** 在安装了 [GRUB](/index.php/GRUB "GRUB") 的系统上,在改变默认子卷以后不要忘记运行 `grub-install` . 参见 [this forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1615373).
 
@@ -403,7 +403,7 @@ btrfs 支持在线碎片整理,要整理根文件夹:
 
 ### RAID
 
-Btrfs 提供对 RAID 一类的 [#多设备文件系统](#.E5.A4.9A.E8.AE.BE.E5.A4.87.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F)的原生支持.参阅 [the Btrfs wiki page](https://btrfs.wiki.kernel.org/index.php/Using_Btrfs_with_Multiple_Devices) 获得更多信息. [Btrfs 管理员手册](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#RAID_and_data_replication) 提供了技术背景信息.
+Btrfs 提供对 RAID 一类的 [#多设备文件系统](#多设备文件系统)的原生支持.参阅 [the Btrfs wiki page](https://btrfs.wiki.kernel.org/index.php/Using_Btrfs_with_Multiple_Devices) 获得更多信息. [Btrfs 管理员手册](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#RAID_and_data_replication) 提供了技术背景信息.
 
 ### 快照
 

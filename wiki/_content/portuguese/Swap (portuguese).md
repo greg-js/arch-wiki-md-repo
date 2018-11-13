@@ -19,13 +19,13 @@ Suporte para swap é fornecido pelo kernel Linux e utilitários de espaço de us
 
 ## Contents
 
-*   [1 Espaço swap](#Espa.C3.A7o_swap)
-*   [2 Partição swap](#Parti.C3.A7.C3.A3o_swap)
-    *   [2.1 Ativação por systemd](#Ativa.C3.A7.C3.A3o_por_systemd)
+*   [1 Espaço swap](#Espaço_swap)
+*   [2 Partição swap](#Partição_swap)
+    *   [2.1 Ativação por systemd](#Ativação_por_systemd)
     *   [2.2 Desabilitando swap](#Desabilitando_swap)
 *   [3 Arquivo swap](#Arquivo_swap)
     *   [3.1 Manualmente](#Manualmente)
-        *   [3.1.1 Criação de arquivo swap](#Cria.C3.A7.C3.A3o_de_arquivo_swap)
+        *   [3.1.1 Criação de arquivo swap](#Criação_de_arquivo_swap)
         *   [3.1.2 Remover arquivo swap](#Remover_arquivo_swap)
     *   [3.2 Automatizado](#Automatizado)
         *   [3.2.1 systemd-swap](#systemd-swap)
@@ -33,10 +33,10 @@ Suporte para swap é fornecido pelo kernel Linux e utilitários de espaço de us
 *   [5 Criptografia swap](#Criptografia_swap)
 *   [6 Desempenho](#Desempenho)
     *   [6.1 Swappiness](#Swappiness)
-    *   [6.2 Pressão de cache VFS](#Press.C3.A3o_de_cache_VFS)
+    *   [6.2 Pressão de cache VFS](#Pressão_de_cache_VFS)
     *   [6.3 Prioridade](#Prioridade)
     *   [6.4 Usando zswap ou zram](#Usando_zswap_ou_zram)
-    *   [6.5 Distribuição](#Distribui.C3.A7.C3.A3o)
+    *   [6.5 Distribuição](#Distribuição)
 
 ## Espaço swap
 
@@ -107,7 +107,7 @@ lsblk -no UUID /dev/sd*xy*
 
 ### Ativação por systemd
 
-O [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") ativa partições swap com base em dois mecanismos diferentes. Ambos são executáveis em `/usr/lib/systemd/system-generators`. Os geradores são executados na inicialização e criam unidades systemd nativas para montagens. O primeiro, `systemd-fstab-generator`, lê o fstab para gerar unidades, incluindo uma unidade para swap. O segundo, `systemd-gpt-auto-generator` inspeciona o disco raiz para gerar unidades. Ele opera somente nos discos GPT e pode identificar as partições swap pelo tipo GUID, consulte [systemd (Português)#Automontagem de partição GPT](/index.php/Systemd_(Portugu%C3%AAs)#Automontagem_de_parti.C3.A7.C3.A3o_GPT "Systemd (Português)") para obter mais informações.
+O [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") ativa partições swap com base em dois mecanismos diferentes. Ambos são executáveis em `/usr/lib/systemd/system-generators`. Os geradores são executados na inicialização e criam unidades systemd nativas para montagens. O primeiro, `systemd-fstab-generator`, lê o fstab para gerar unidades, incluindo uma unidade para swap. O segundo, `systemd-gpt-auto-generator` inspeciona o disco raiz para gerar unidades. Ele opera somente nos discos GPT e pode identificar as partições swap pelo tipo GUID, consulte [systemd (Português)#Automontagem de partição GPT](/index.php/Systemd_(Portugu%C3%AAs)#Automontagem_de_partição_GPT "Systemd (Português)") para obter mais informações.
 
 ### Desabilitando swap
 
@@ -193,7 +193,7 @@ Graças à modularidade oferecida pelo Linux, podemos ter várias partições de
 *   Um dispositivo USB possivelmente é mais lento que um disco rígido
 *   A memória flash possui um número limitado de ciclos de gravação. Usá-lo como uma partição swap pode matá-lo rapidamente
 
-Para adicionar um dispositivo USB à swap, primeiro pegue uma unidade flash USB e particione-a para a swap, conforme descrito em [#Partição swap](#Parti.C3.A7.C3.A3o_swap).
+Para adicionar um dispositivo USB à swap, primeiro pegue uma unidade flash USB e particione-a para a swap, conforme descrito em [#Partição swap](#Partição_swap).
 
 Em seguida, abra `/etc/fstab` e adicione
 

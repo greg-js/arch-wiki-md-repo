@@ -4,18 +4,18 @@ O Arch Linux é uma distribuição [GNU](/index.php/GNU_(Portugu%C3%AAs) "GNU (P
 
 ## Contents
 
-*   [1 Princípios](#Princ.C3.ADpios)
+*   [1 Princípios](#Princípios)
     *   [1.1 Simplicidade](#Simplicidade)
     *   [1.2 Modernidade](#Modernidade)
     *   [1.3 Pragmatismo](#Pragmatismo)
-    *   [1.4 Centrado no usuário](#Centrado_no_usu.C3.A1rio)
+    *   [1.4 Centrado no usuário](#Centrado_no_usuário)
     *   [1.5 Versatilidade](#Versatilidade)
-*   [2 História](#Hist.C3.B3ria)
+*   [2 História](#História)
     *   [2.1 Os primeiros anos](#Os_primeiros_anos)
-    *   [2.2 Os anos médios](#Os_anos_m.C3.A9dios)
+    *   [2.2 Os anos médios](#Os_anos_médios)
     *   [2.3 Nascimento do ArchWiki](#Nascimento_do_ArchWiki)
     *   [2.4 O alvorecer da era A. Griffin](#O_alvorecer_da_era_A._Griffin)
-    *   [2.5 Scripts de instalação do Arch](#Scripts_de_instala.C3.A7.C3.A3o_do_Arch)
+    *   [2.5 Scripts de instalação do Arch](#Scripts_de_instalação_do_Arch)
     *   [2.6 A era do systemd](#A_era_do_systemd)
     *   [2.7 Fim do suporte a i686](#Fim_do_suporte_a_i686)
 
@@ -67,7 +67,7 @@ A comunidade inicial do Arch cresceu firmemente, como evidencia [esse gráfico d
 
 ### Nascimento do ArchWiki
 
-Em 2005-07-08 o ArchWiki foi [configurado](/index.php/ArchWiki:About_(Portugu%C3%AAs)#Hist.C3.B3ria "ArchWiki:About (Português)") pela primeira vez no motor do MediaWiki.
+Em 2005-07-08 o ArchWiki foi [configurado](/index.php/ArchWiki:About_(Portugu%C3%AAs)#História "ArchWiki:About (Português)") pela primeira vez no motor do MediaWiki.
 
 ### O alvorecer da era A. Griffin
 

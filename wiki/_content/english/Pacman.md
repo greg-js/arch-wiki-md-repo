@@ -48,25 +48,25 @@ The [pacman](https://www.archlinux.org/pacman/) [package manager](https://en.wik
     *   [2.2 Repositories and mirrors](#Repositories_and_mirrors)
         *   [2.2.1 Package security](#Package_security)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 "Failed to commit transaction (conflicting files)" error](#.22Failed_to_commit_transaction_.28conflicting_files.29.22_error)
-    *   [3.2 "Failed to commit transaction (invalid or corrupted package)" error](#.22Failed_to_commit_transaction_.28invalid_or_corrupted_package.29.22_error)
-    *   [3.3 "Failed to init transaction (unable to lock database)" error](#.22Failed_to_init_transaction_.28unable_to_lock_database.29.22_error)
+    *   [3.1 "Failed to commit transaction (conflicting files)" error](#"Failed_to_commit_transaction_(conflicting_files)"_error)
+    *   [3.2 "Failed to commit transaction (invalid or corrupted package)" error](#"Failed_to_commit_transaction_(invalid_or_corrupted_package)"_error)
+    *   [3.3 "Failed to init transaction (unable to lock database)" error](#"Failed_to_init_transaction_(unable_to_lock_database)"_error)
     *   [3.4 Packages cannot be retrieved on installation](#Packages_cannot_be_retrieved_on_installation)
     *   [3.5 Manually reinstalling pacman](#Manually_reinstalling_pacman)
     *   [3.6 Pacman crashes during an upgrade](#Pacman_crashes_during_an_upgrade)
-    *   [3.7 "Unable to find root device" error after rebooting](#.22Unable_to_find_root_device.22_error_after_rebooting)
-    *   [3.8 Signature from "User <email@example.org>" is unknown trust, installation failed](#Signature_from_.22User_.3Cemail.40example.org.3E.22_is_unknown_trust.2C_installation_failed)
+    *   [3.7 "Unable to find root device" error after rebooting](#"Unable_to_find_root_device"_error_after_rebooting)
+    *   [3.8 Signature from "User <email@example.org>" is unknown trust, installation failed](#Signature_from_"User_<email@example.org>"_is_unknown_trust,_installation_failed)
     *   [3.9 Request on importing PGP keys](#Request_on_importing_PGP_keys)
-    *   [3.10 Error: key "0123456789ABCDEF" could not be looked up remotely](#Error:_key_.220123456789ABCDEF.22_could_not_be_looked_up_remotely)
-    *   [3.11 Signature from "User <email@archlinux.org>" is invalid, installation failed](#Signature_from_.22User_.3Cemail.40archlinux.org.3E.22_is_invalid.2C_installation_failed)
-    *   [3.12 "Warning: current locale is invalid; using default "C" locale" error](#.22Warning:_current_locale_is_invalid.3B_using_default_.22C.22_locale.22_error)
+    *   [3.10 Error: key "0123456789ABCDEF" could not be looked up remotely](#Error:_key_"0123456789ABCDEF"_could_not_be_looked_up_remotely)
+    *   [3.11 Signature from "User <email@archlinux.org>" is invalid, installation failed](#Signature_from_"User_<email@archlinux.org>"_is_invalid,_installation_failed)
+    *   [3.12 "Warning: current locale is invalid; using default "C" locale" error](#"Warning:_current_locale_is_invalid;_using_default_"C"_locale"_error)
     *   [3.13 Pacman does not honor proxy settings](#Pacman_does_not_honor_proxy_settings)
-    *   [3.14 How do I reinstall all packages, retaining information on whether something was explicitly installed or as a dependency?](#How_do_I_reinstall_all_packages.2C_retaining_information_on_whether_something_was_explicitly_installed_or_as_a_dependency.3F)
-    *   [3.15 "Cannot open shared object file" error](#.22Cannot_open_shared_object_file.22_error)
+    *   [3.14 How do I reinstall all packages, retaining information on whether something was explicitly installed or as a dependency?](#How_do_I_reinstall_all_packages,_retaining_information_on_whether_something_was_explicitly_installed_or_as_a_dependency?)
+    *   [3.15 "Cannot open shared object file" error](#"Cannot_open_shared_object_file"_error)
     *   [3.16 Freeze of package downloads](#Freeze_of_package_downloads)
-    *   [3.17 Failed retrieving file 'core.db' from mirror](#Failed_retrieving_file_.27core.db.27_from_mirror)
+    *   [3.17 Failed retrieving file 'core.db' from mirror](#Failed_retrieving_file_'core.db'_from_mirror)
 *   [4 Understanding](#Understanding)
-    *   [4.1 What happens during package install/upgrade/removal](#What_happens_during_package_install.2Fupgrade.2Fremoval)
+    *   [4.1 What happens during package install/upgrade/removal](#What_happens_during_package_install/upgrade/removal)
 *   [5 See also](#See_also)
 
 ## Usage
@@ -123,7 +123,7 @@ This can be expanded to however many levels needed:
 
 #### Installing package groups
 
-Some packages belong to a [group of packages](/index.php/Creating_packages#Meta_packages_and_groups "Creating packages") that can all be installed simultaneously. For example, issuing the command:
+Some packages belong to a [group of packages](/index.php/Package_group "Package group") that can all be installed simultaneously. For example, issuing the command:
 
 ```
 # pacman -S gnome
@@ -649,7 +649,7 @@ Firstly, ensure the package actually exists. If certain the package exists, your
 
 It could also be that the repository containing the package is not enabled on your system, e.g. the package could be in the [multilib](/index.php/Multilib "Multilib") repository, but *multilib* is not enabled in your `pacman.conf`.
 
-See also [FAQ#Why is there only a single version of each shared library in the official repositories?](/index.php/FAQ#Why_is_there_only_a_single_version_of_each_shared_library_in_the_official_repositories.3F "FAQ").
+See also [FAQ#Why is there only a single version of each shared library in the official repositories?](/index.php/FAQ#Why_is_there_only_a_single_version_of_each_shared_library_in_the_official_repositories? "FAQ").
 
 ### Manually reinstalling pacman
 
@@ -731,11 +731,11 @@ You can try to either:
 
 ### Request on importing PGP keys
 
-If [installing](/index.php/Installation_guide "Installation guide") Arch with an outdated ISO, you are likely prompted to import PGP keys. Agree to download the key to proceed. If you are unable to add the PGP key successfully, update the keyring or upgrade [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) (see [above](#Signature_from_.22User_.3Cemail.40example.org.3E.22_is_unknown_trust.2C_installation_failed)).
+If [installing](/index.php/Installation_guide "Installation guide") Arch with an outdated ISO, you are likely prompted to import PGP keys. Agree to download the key to proceed. If you are unable to add the PGP key successfully, update the keyring or upgrade [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) (see [above](#Signature_from_"User_<email@example.org>"_is_unknown_trust,_installation_failed)).
 
 ### Error: key "0123456789ABCDEF" could not be looked up remotely
 
-If packages are signed with new keys, which were only recently added to [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring), these keys are not locally available during update (chicken-egg-problem). The installed [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) does not contain the key, until it is updated. Pacman tries to bypass this by a lookup through a key-server, which might not be possible e.g. behind proxys or firewalls and results in the stated error. Upgrade [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) first as shown [above](#Signature_from_.22User_.3Cemail.40example.org.3E.22_is_unknown_trust.2C_installation_failed).
+If packages are signed with new keys, which were only recently added to [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring), these keys are not locally available during update (chicken-egg-problem). The installed [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) does not contain the key, until it is updated. Pacman tries to bypass this by a lookup through a key-server, which might not be possible e.g. behind proxys or firewalls and results in the stated error. Upgrade [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) first as shown [above](#Signature_from_"User_<email@example.org>"_is_unknown_trust,_installation_failed).
 
 ### Signature from "User <email@archlinux.org>" is invalid, installation failed
 

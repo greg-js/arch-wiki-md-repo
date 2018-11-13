@@ -9,34 +9,34 @@ Arch Linux puede ejecutarse en cualquier máquina compatible [x86_64](https://en
 
 ## Contents
 
-*   [1 Preinstalación](#Preinstalaci.C3.B3n)
-    *   [1.1 Definir la distribución del teclado en el entorno live](#Definir_la_distribuci.C3.B3n_del_teclado_en_el_entorno_live)
+*   [1 Preinstalación](#Preinstalación)
+    *   [1.1 Definir la distribución del teclado en el entorno live](#Definir_la_distribución_del_teclado_en_el_entorno_live)
     *   [1.2 Verificar la modalidad de arranque](#Verificar_la_modalidad_de_arranque)
     *   [1.3 Conectarse a Internet](#Conectarse_a_Internet)
     *   [1.4 Actualizar el reloj del sistema](#Actualizar_el_reloj_del_sistema)
     *   [1.5 Particionar el disco](#Particionar_el_disco)
     *   [1.6 Formatear las particiones](#Formatear_las_particiones)
     *   [1.7 Montar los sistemas de archivos](#Montar_los_sistemas_de_archivos)
-*   [2 Instalación](#Instalaci.C3.B3n)
-    *   [2.1 Seleccionar los servidores de réplica](#Seleccionar_los_servidores_de_r.C3.A9plica)
+*   [2 Instalación](#Instalación)
+    *   [2.1 Seleccionar los servidores de réplica](#Seleccionar_los_servidores_de_réplica)
     *   [2.2 Instalar los paquetes del sistema base](#Instalar_los_paquetes_del_sistema_base)
-*   [3 Configuración del sistema](#Configuraci.C3.B3n_del_sistema)
+*   [3 Configuración del sistema](#Configuración_del_sistema)
     *   [3.1 Fstab](#Fstab)
     *   [3.2 Chroot](#Chroot)
     *   [3.3 Zona horaria](#Zona_horaria)
     *   [3.4 Idioma del sistema](#Idioma_del_sistema)
     *   [3.5 Configurar la red](#Configurar_la_red)
     *   [3.6 Initramfs](#Initramfs)
-    *   [3.7 Contraseña de root](#Contrase.C3.B1a_de_root)
+    *   [3.7 Contraseña de root](#Contraseña_de_root)
     *   [3.8 Instalar gestor de arranque](#Instalar_gestor_de_arranque)
 *   [4 Reiniciar](#Reiniciar)
-*   [5 Posinstalación](#Posinstalaci.C3.B3n)
+*   [5 Posinstalación](#Posinstalación)
 
 ## Preinstalación
 
 Descargue e inicie el soporte de instalación como se explica en [obtener e instalar Arch](/index.php/Getting_and_installing_Arch_(Espa%C3%B1ol) "Getting and installing Arch (Español)"). Se iniciará sesión en la primera [consola virtual](https://en.wikipedia.org/wiki/es:Consola_Virtual "wikipedia:es:Consola Virtual") como superusuario *(root)*, y se le presentará un intérprete de órdenes [Zsh](/index.php/Zsh "Zsh").
 
-Para cambiar a una consola diferente —por ejemplo, para ver esta guía con [ELinks](/index.php/ELinks "ELinks") junto con la instalación— utilice el [atajo](/index.php/Keyboard_shortcuts "Keyboard shortcuts") `Alt+*flecha*`. Para [editar](/index.php/Textedit "Textedit") archivos de configuración, dispone de [nano](/index.php/Nano_(Espa%C3%B1ol)#Uso "Nano (Español)"), [vi](https://en.wikipedia.org/wiki/es:vi "wikipedia:es:vi") y [vim](/index.php/Vim_(Espa%C3%B1ol)#Gu.C3.ADa_r.C3.A1pida_de_VIM "Vim (Español)").
+Para cambiar a una consola diferente —por ejemplo, para ver esta guía con [ELinks](/index.php/ELinks "ELinks") junto con la instalación— utilice el [atajo](/index.php/Keyboard_shortcuts "Keyboard shortcuts") `Alt+*flecha*`. Para [editar](/index.php/Textedit "Textedit") archivos de configuración, dispone de [nano](/index.php/Nano_(Espa%C3%B1ol)#Uso "Nano (Español)"), [vi](https://en.wikipedia.org/wiki/es:vi "wikipedia:es:vi") y [vim](/index.php/Vim_(Espa%C3%B1ol)#Guía_rápida_de_VIM "Vim (Español)").
 
 ### Definir la distribución del teclado en el entorno live
 
@@ -171,7 +171,7 @@ Utilice el script [pacstrap](https://projects.archlinux.org/arch-install-scripts
 
 Este grupo de paquetes no incluye todas las herramientas disponibles en el entorno live de instalación, como son los casos de [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) o firmware inalámbrico específico; consulte [paquetes.x86_64](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) para ver la comparación.
 
-Para [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") otros paquetes o grupos de paquetes, como [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), en el nuevo sistema, añada sus nombres a la orden *pacstrap* (separados por un espacio)o, posteriormente a la etapa de [#Chroot](#Chroot) , con órdenes individuales con [pacman (Español)](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)").
+Para [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") otros paquetes o grupos de paquetes, como [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), en el nuevo sistema, añada sus nombres a la orden *pacstrap* (separados por un espacio)o, posteriormente a la etapa de [#Chroot](#Chroot) , con órdenes individuales con [pacman (Español)](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)").
 
 ## Configuración del sistema
 
@@ -228,7 +228,7 @@ Defina la [variable](/index.php/Environment_variables_(Espa%C3%B1ol) "Environmen
 
  `/etc/locale.conf`  `LANG=*es_ES.UTF-8*` 
 
-Si fuese necesario, defina la [distribución de teclado](#Definir_la_distribuci.C3.B3n_del_teclado_en_el_entorno_live) en [vconsole.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5) para que permanezca en cada reinicio:
+Si fuese necesario, defina la [distribución de teclado](#Definir_la_distribución_del_teclado_en_el_entorno_live) en [vconsole.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5) para que permanezca en cada reinicio:
 
  `/etc/vconsole.conf`  `KEYMAP=*es*` 
 

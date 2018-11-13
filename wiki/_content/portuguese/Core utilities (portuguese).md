@@ -15,14 +15,14 @@ A maioria das interfaces de linha de comando está documentada em [páginas man]
 ## Contents
 
 *   [1 Essenciais](#Essenciais)
-*   [2 Não essenciais](#N.C3.A3o_essenciais)
+*   [2 Não essenciais](#Não_essenciais)
 *   [3 Alternativas](#Alternativas)
     *   [3.1 Alternativas ao find](#Alternativas_ao_find)
     *   [3.2 Alternativas ao diff](#Alternativas_ao_diff)
     *   [3.3 Alternativas ao grep](#Alternativas_ao_grep)
-        *   [3.3.1 Pesquisadores de código](#Pesquisadores_de_c.C3.B3digo)
+        *   [3.3.1 Pesquisadores de código](#Pesquisadores_de_código)
     *   [3.4 Filtros interativos](#Filtros_interativos)
-*   [4 Veja também](#Veja_tamb.C3.A9m)
+*   [4 Veja também](#Veja_também)
 
 ## Essenciais
 
@@ -38,8 +38,8 @@ A tabela a seguir lista alguns utilitários importantes com os quais os usuário
 | cp | copia arquivos ou diretórios | [cp(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cp.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/cp-invocation.html) |
 | mv | move arquivos ou diretórios | [mv(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mv.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/mv-invocation.html) |
 | ln | cria links absolutos ou simbólicos | [ln(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ln.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/ln-invocation.html) |
-| [chown](/index.php/Chown "Chown") | altera dono e grupo de arquivo | [chown(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/chown-invocation.html) | [chgrp(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chgrp.1) |
-| [chmod](/index.php/Chmod "Chmod") | altera permissões de arquivo | [chmod(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/chmod-invocation.html) |
+| [chown](/index.php/Chown_(Portugu%C3%AAs) "Chown (Português)") | altera dono e grupo de arquivo | [chown(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/chown-invocation.html) | [chgrp(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chgrp.1) |
+| [chmod](/index.php/Chmod_(Portugu%C3%AAs) "Chmod (Português)") | altera permissões de arquivo | [chmod(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/chmod-invocation.html) |
 | [dd](/index.php/Dd "Dd") | converte e copia um arquivo | [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/dd-invocation.html) |
 | df | relata uso de espaço em disco pelos sistemas de arquivos | [df(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/df.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/df-invocation.html) |
 | GNU [tar](https://www.archlinux.org/packages/?name=tar) | [tar](/index.php/Tar_(Portugu%C3%AAs) "Tar (Português)") | arquivador tar | [tar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tar.1), [info](https://www.gnu.org/software/tar/manual/html_chapter/index.html) | [arquivadores](/index.php/Arquivador "Arquivador") |
@@ -123,7 +123,7 @@ Enquanto [diffutils](https://www.archlinux.org/packages/?name=diffutils) não of
 
 	[https://github.com/junghans/cwdiff](https://github.com/junghans/cwdiff) || [cwdiff](https://aur.archlinux.org/packages/cwdiff/), [cwdiff-git](https://aur.archlinux.org/packages/cwdiff-git/)
 
-Veja também [List of applications/Utilities#Comparison, diff, merge](/index.php/List_of_applications/Utilities#Comparison.2C_diff.2C_merge "List of applications/Utilities").
+Veja também [List of applications/Utilities#Comparison, diff, merge](/index.php/List_of_applications/Utilities#Comparison,_diff,_merge "List of applications/Utilities").
 
 ### Alternativas ao grep
 

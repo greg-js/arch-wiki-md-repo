@@ -7,14 +7,14 @@ Related articles
 
 **翻译状态：** 本文是英文页面 [Arch-based distributions](/index.php/Arch-based_distributions "Arch-based distributions") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-09-01，点击[这里](https://wiki.archlinux.org/index.php?title=Arch-based+distributions&diff=0&oldid=488263)可以查看翻译后英文页面的改动。
 
-**警告:** 基于 Arch 的发行版，**并不被** Arch 社区或开发者支持，请参考 [Code of conduct#Arch Linux distribution support *only*](/index.php/Code_of_conduct#Arch_Linux_distribution_support_.2Aonly.2A "Code of conduct")
+**警告:** 基于 Arch 的发行版，**并不被** Arch 社区或开发者支持，请参考 [Code of conduct#Arch Linux distribution support *only*](/index.php/Code_of_conduct#Arch_Linux_distribution_support_*only* "Code of conduct")
 
 下面是一些[基于](/index.php/DeveloperWiki:TrademarkPolicy "DeveloperWiki:TrademarkPolicy") Arch Linux 发行版的列表。
 
 ## Contents
 
-*   [1 活跃发行版](#.E6.B4.BB.E8.B7.83.E5.8F.91.E8.A1.8C.E7.89.88)
-*   [2 不活跃](#.E4.B8.8D.E6.B4.BB.E8.B7.83)
+*   [1 活跃发行版](#活跃发行版)
+*   [2 不活跃](#不活跃)
     *   [2.1 2016](#2016)
     *   [2.2 2015](#2015)
     *   [2.3 2014](#2014)

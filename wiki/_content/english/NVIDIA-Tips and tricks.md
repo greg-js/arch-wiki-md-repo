@@ -2,7 +2,7 @@
 
 *   [1 Fixing terminal resolution](#Fixing_terminal_resolution)
 *   [2 Using TV-out](#Using_TV-out)
-*   [3 X with a TV (DFP) as the only display](#X_with_a_TV_.28DFP.29_as_the_only_display)
+*   [3 X with a TV (DFP) as the only display](#X_with_a_TV_(DFP)_as_the_only_display)
 *   [4 Check the power source](#Check_the_power_source)
 *   [5 Listening to ACPI events](#Listening_to_ACPI_events)
 *   [6 Displaying GPU temperature in the shell](#Displaying_GPU_temperature_in_the_shell)
@@ -16,7 +16,7 @@
     *   [8.3 Enabling brightness control](#Enabling_brightness_control)
     *   [8.4 Enabling SLI](#Enabling_SLI)
     *   [8.5 Enabling overclocking](#Enabling_overclocking)
-        *   [8.5.1 Setting static 2D/3D clocks](#Setting_static_2D.2F3D_clocks)
+        *   [8.5.1 Setting static 2D/3D clocks](#Setting_static_2D/3D_clocks)
         *   [8.5.2 Allow change to highest Performance Mode](#Allow_change_to_highest_Performance_Mode)
 
 ## Fixing terminal resolution

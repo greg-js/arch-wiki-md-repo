@@ -13,12 +13,12 @@ KMS permite la resolución nativa en el framebuffer y permite al instante una co
 ## Contents
 
 *   [1 Antecedentes](#Antecedentes)
-*   [2 Instalación](#Instalaci.C3.B3n)
+*   [2 Instalación](#Instalación)
     *   [2.1 Iniciar KMS con retardo](#Iniciar_KMS_con_retardo)
     *   [2.2 Iniciar KMS tempranamente](#Iniciar_KMS_tempranamente)
-*   [3 Solución de problemas](#Soluci.C3.B3n_de_problemas)
-    *   [3.1 Tipos de letras demasiado pequeñas](#Tipos_de_letras_demasiado_peque.C3.B1as)
-    *   [3.2 Cuestión sobre bootloading y dmesg](#Cuesti.C3.B3n_sobre_bootloading_y_dmesg)
+*   [3 Solución de problemas](#Solución_de_problemas)
+    *   [3.1 Tipos de letras demasiado pequeñas](#Tipos_de_letras_demasiado_pequeñas)
+    *   [3.2 Cuestión sobre bootloading y dmesg](#Cuestión_sobre_bootloading_y_dmesg)
 *   [4 Forzar modos y EDID](#Forzar_modos_y_EDID)
 *   [5 Desactivar modesetting](#Desactivar_modesetting)
 

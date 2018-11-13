@@ -9,8 +9,8 @@ Los ayudantes de AUR están creados para automatizar ciertas tareas para el [Arc
 
 *   [1 Construir y buscar](#Construir_y_buscar)
     *   [1.1 Activo](#Activo)
-    *   [1.2 Sólo búsqueda](#S.C3.B3lo_b.C3.BAsqueda)
-    *   [1.3 Descontinuado o problemático](#Descontinuado_o_problem.C3.A1tico)
+    *   [1.2 Sólo búsqueda](#Sólo_búsqueda)
+    *   [1.3 Descontinuado o problemático](#Descontinuado_o_problemático)
 *   [2 Bibliotecas](#Bibliotecas)
 *   [3 Mantenimiento](#Mantenimiento)
 *   [4 Subida](#Subida)

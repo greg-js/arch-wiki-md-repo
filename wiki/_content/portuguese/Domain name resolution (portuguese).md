@@ -10,16 +10,16 @@ Em geral, um [nome de domínio](https://en.wikipedia.org/wiki/pt:Dom%C3%ADnio "w
 ## Contents
 
 *   [1 Name Service Switch](#Name_Service_Switch)
-    *   [1.1 Resolva um nome de domínio usando NSS](#Resolva_um_nome_de_dom.C3.ADnio_usando_NSS)
+    *   [1.1 Resolva um nome de domínio usando NSS](#Resolva_um_nome_de_domínio_usando_NSS)
 *   [2 Resolvedor do glibc](#Resolvedor_do_glibc)
-    *   [2.1 Sobrescrita do /etc/resolv.conf](#Sobrescrita_do_.2Fetc.2Fresolv.conf)
+    *   [2.1 Sobrescrita do /etc/resolv.conf](#Sobrescrita_do_/etc/resolv.conf)
     *   [2.2 Limitar o tempo de pesquisa](#Limitar_o_tempo_de_pesquisa)
     *   [2.3 Pesquisa de hostname atrasada com IPv6](#Pesquisa_de_hostname_atrasada_com_IPv6)
-    *   [2.4 Nomes de domínio local](#Nomes_de_dom.C3.ADnio_local)
+    *   [2.4 Nomes de domínio local](#Nomes_de_domínio_local)
 *   [3 Resolvedores](#Resolvedores)
 *   [4 Privacidade](#Privacidade)
-*   [5 Utilitários de pesquisa](#Utilit.C3.A1rios_de_pesquisa)
-*   [6 Veja também](#Veja_tamb.C3.A9m)
+*   [5 Utilitários de pesquisa](#Utilitários_de_pesquisa)
+*   [6 Veja também](#Veja_também)
 
 ## Name Service Switch
 
@@ -31,7 +31,7 @@ O recurso [Name Service Switch](https://en.wikipedia.org/wiki/pt:Name_Service_Sw
 [Systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") fornece três serviços NSS para resolução de hostname:
 
 *   [nss-resolve(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nss-resolve.8) - um resolvedor de tronco de DNS em cache, descrito em [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved")
-*   [nss-myhostname(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nss-myhostname.8) - fornece resolução de hostname sem ter que editar `/etc/hosts`, descrito em [Configuração de rede#Resolução de hostname local](/index.php/Configura%C3%A7%C3%A3o_de_rede#Resolu.C3.A7.C3.A3o_de_hostname_local "Configuração de rede")
+*   [nss-myhostname(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nss-myhostname.8) - fornece resolução de hostname sem ter que editar `/etc/hosts`, descrito em [Configuração de rede#Resolução de hostname local](/index.php/Configura%C3%A7%C3%A3o_de_rede#Resolução_de_hostname_local "Configuração de rede")
 *   [nss-mymachines(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nss-mymachines.8) - fornece resolução de hostname para os nomes de contêineres locais de [systemd-machined(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-machined.8)
 
 ### Resolva um nome de domínio usando NSS
@@ -43,7 +43,7 @@ $ getent hosts *nome_domínio*
 
 ```
 
-**Nota:** Enquanto a maioria dos programas resolve nomes de domínio usando NSS, alguns podem ler `/etc/resolv.conf` e/ou `/etc/hosts` diretamente. Veja [Configuração de rede#Resolução de hostname local](/index.php/Configura%C3%A7%C3%A3o_de_rede#Resolu.C3.A7.C3.A3o_de_hostname_local "Configuração de rede").
+**Nota:** Enquanto a maioria dos programas resolve nomes de domínio usando NSS, alguns podem ler `/etc/resolv.conf` e/ou `/etc/hosts` diretamente. Veja [Configuração de rede#Resolução de hostname local](/index.php/Configura%C3%A7%C3%A3o_de_rede#Resolução_de_hostname_local "Configuração de rede").
 
 ## Resolvedor do glibc
 
@@ -63,7 +63,7 @@ Servidores de nome *(nameservers)* listados primeiros são tentados primeiro, at
 *   [netctl#resolv.conf](/index.php/Netctl#resolv.conf "Netctl")
 *   [NetworkManager (Português)#resolv.conf](/index.php/NetworkManager_(Portugu%C3%AAs)#resolv.conf "NetworkManager (Português)")
 
-Para evitar que programas sobrescrevam `/etc/resolv.conf`, você também pode protegê-lo contra gravação definindo o [atributo de arquivo](/index.php/File_attribute "File attribute") imutável:
+Para evitar que programas sobrescrevam `/etc/resolv.conf`, você também pode protegê-lo contra gravação definindo o [atributo de arquivo](/index.php/Atributos_de_arquivo "Atributos de arquivo") imutável:
 
 ```
 # chattr +i /etc/resolv.conf
@@ -107,7 +107,7 @@ O resolvedor do Glibc fornece apenas as necessidades mais básicas, não armazen
 
 **Dica:**
 
-*   Os [utilitários de pesquisa](#Utilit.C3.A1rios_de_pesquisa) *drill* ou *dig* relatam o tempo de consulta.
+*   Os [utilitários de pesquisa](#Utilitários_de_pesquisa) *drill* ou *dig* relatam o tempo de consulta.
 *   Um roteador geralmente configura seu próprio resolvedor de cache como o servidor DNS da rede, fornecendo assim o cache DNS para toda a rede.
 *   Se demorar muito para mudar para o próximo servidor DNS, você pode tentar [diminuir o tempo limite](#Limitar_o_tempo_de_pesquisa).
 

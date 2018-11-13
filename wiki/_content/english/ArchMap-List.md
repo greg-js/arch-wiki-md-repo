@@ -1061,7 +1061,7 @@ You can use the following website to get your device's coordinates along with a 
 47.547837,-121.995722 "jrmasters" # Issaquah, Washington, USA
 39.45326,-0.46449 "manolollr" # Alaquàs, València, Spain
 31.796213,-106.445323 "Germanicus" # El Paso, Texas, USA
-19.419813, -154.894952 "Tydyn Rain St. Clair (tydynrain)" # Puna District, Pāhoa, Hawai'i, USA
+19.504614, -154.875437 "Tydyn Rain St. Clair (tydynrain)" # Lower Puna District, Hawai'i, USA
 9.197134,-79.281094 "c4explosive" # Panama, Panama
 -6.776242,-79.839255 "Joaking" # Chiclayo, Peru
 55.395959,10.388148 "Perrito" # Odense, Denmark 

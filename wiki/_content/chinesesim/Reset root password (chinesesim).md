@@ -6,10 +6,10 @@
 
 ## Contents
 
-*   [1 使用LiveCD](#.E4.BD.BF.E7.94.A8LiveCD)
+*   [1 使用LiveCD](#使用LiveCD)
     *   [1.1 Change Root](#Change_Root)
-*   [2 使用GRUB调用Bash](#.E4.BD.BF.E7.94.A8GRUB.E8.B0.83.E7.94.A8Bash)
-*   [3 参阅](#.E5.8F.82.E9.98.85)
+*   [2 使用GRUB调用Bash](#使用GRUB调用Bash)
+*   [3 参阅](#参阅)
 
 ## 使用LiveCD
 

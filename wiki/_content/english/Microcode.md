@@ -10,7 +10,7 @@ Users of CPUs belonging to the Intel Haswell and Broadwell processor families in
         *   [2.1.1 Automatic method](#Automatic_method)
         *   [2.1.2 Manual method](#Manual_method)
     *   [2.2 systemd-boot](#systemd-boot)
-    *   [2.3 EFI boot stub / EFI handover](#EFI_boot_stub_.2F_EFI_handover)
+    *   [2.3 EFI boot stub / EFI handover](#EFI_boot_stub_/_EFI_handover)
     *   [2.4 rEFInd](#rEFInd)
     *   [2.5 Syslinux](#Syslinux)
     *   [2.6 LILO](#LILO)

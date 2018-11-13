@@ -8,21 +8,21 @@ Related articles
 ## Contents
 
 *   [1 Overview](#Overview)
-*   [2 Styles for both Qt and GTK+](#Styles_for_both_Qt_and_GTK.2B)
+*   [2 Styles for both Qt and GTK+](#Styles_for_both_Qt_and_GTK+)
     *   [2.1 Breeze](#Breeze)
     *   [2.2 Adwaita](#Adwaita)
 *   [3 Theme engines](#Theme_engines)
     *   [3.1 QGtkStyle](#QGtkStyle)
     *   [3.2 QGnomePlatform](#QGnomePlatform)
 *   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 KDE file dialogs for GTK+ applications](#KDE_file_dialogs_for_GTK.2B_applications)
-    *   [4.2 Using a GTK+ icon theme in Qt apps](#Using_a_GTK.2B_icon_theme_in_Qt_apps)
+    *   [4.1 KDE file dialogs for GTK+ applications](#KDE_file_dialogs_for_GTK+_applications)
+    *   [4.2 Using a GTK+ icon theme in Qt apps](#Using_a_GTK+_icon_theme_in_Qt_apps)
     *   [4.3 Add Title bar and frame to GTK3 applications under KDE Plasma](#Add_Title_bar_and_frame_to_GTK3_applications_under_KDE_Plasma)
     *   [4.4 Improve subpixel rendering of GTK apps under KDE Plasma](#Improve_subpixel_rendering_of_GTK_apps_under_KDE_Plasma)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Qt applications do not use QGtkStyle](#Qt_applications_do_not_use_QGtkStyle)
-    *   [5.2 Themes not working in GTK+ apps](#Themes_not_working_in_GTK.2B_apps)
-    *   [5.3 GTK+ apps don't use svg (breeze) icons after system upgrade](#GTK.2B_apps_don.27t_use_svg_.28breeze.29_icons_after_system_upgrade)
+    *   [5.2 Themes not working in GTK+ apps](#Themes_not_working_in_GTK+_apps)
+    *   [5.3 GTK+ apps don't use svg (breeze) icons after system upgrade](#GTK+_apps_don't_use_svg_(breeze)_icons_after_system_upgrade)
 
 ## Overview
 
@@ -35,7 +35,7 @@ To get a similar look between the toolkits, you will most likely have to modify 
 
 You can choose various approaches:
 
-*   Modify [GTK+ and Qt styles](#Styles_for_both_Qt_and_GTK.2B) separately with the tools listed below for each toolkit and aim for choosing similarly looking themes (style, colors, icons, cursors, fonts).
+*   Modify [GTK+ and Qt styles](#Styles_for_both_Qt_and_GTK+) separately with the tools listed below for each toolkit and aim for choosing similarly looking themes (style, colors, icons, cursors, fonts).
 *   Use a special [theme engine](#Theme_engines), which intermediates the modification of the other graphical toolkit to match your main toolkit.
 
 ## Styles for both Qt and GTK+
@@ -102,7 +102,7 @@ For full uniformity, make sure that the configured [GTK+ theme](/index.php/GTK%2
 
 ### QGnomePlatform
 
-This Qt 5 platform theme applies the appearance settings of GNOME for Qt applications. It can be installed with the [qgnomeplatform](https://aur.archlinux.org/packages/qgnomeplatform/) package or the [qgnomeplatform-git](https://aur.archlinux.org/packages/qgnomeplatform-git/) package for the development version. It does not provide a Qt style itself, instead it requires a [style that support both Qt and GTK+](#Styles_for_both_Qt_and_GTK.2B).
+This Qt 5 platform theme applies the appearance settings of GNOME for Qt applications. It can be installed with the [qgnomeplatform](https://aur.archlinux.org/packages/qgnomeplatform/) package or the [qgnomeplatform-git](https://aur.archlinux.org/packages/qgnomeplatform-git/) package for the development version. It does not provide a Qt style itself, instead it requires a [style that support both Qt and GTK+](#Styles_for_both_Qt_and_GTK+).
 
 This platform theme is enabled automatically in GNOME since version 3.20\. For other systems, it can be enabled by setting the following [environment variable](/index.php/Environment_variables#Graphical_applications "Environment variables"): `QT_QPA_PLATFORMTHEME=qgnomeplatform`.
 
@@ -168,7 +168,7 @@ See [Font configuration#LCD filter](/index.php/Font_configuration#LCD_filter "Fo
 
 ### Qt applications do not use QGtkStyle
 
-Qt will not apply QGtkStyle correctly if GTK+ is using the [GTK+-Qt Engine](#GTK.2B-Qt_Engine). Qt determines whether the GTK+-Qt Engine is in use by reading the GTK+ configuration files listed in the environmental variable `GTK2_RC_FILES`. If the environmental variable is not set properly, Qt assumes you are using the engine, sets QGtkStyle to use the style GTK+ style *Clearlooks*, and outputs an error message:
+Qt will not apply QGtkStyle correctly if GTK+ is using the [GTK+-Qt Engine](#GTK+-Qt_Engine). Qt determines whether the GTK+-Qt Engine is in use by reading the GTK+ configuration files listed in the environmental variable `GTK2_RC_FILES`. If the environmental variable is not set properly, Qt assumes you are using the engine, sets QGtkStyle to use the style GTK+ style *Clearlooks*, and outputs an error message:
 
 ```
 QGtkStyle cannot be used together with the GTK_Qt engine.

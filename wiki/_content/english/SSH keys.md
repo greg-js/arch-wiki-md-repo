@@ -15,7 +15,7 @@ This article assumes you already have a basic understanding of the [Secure Shell
         *   [2.1.2 ECDSA](#ECDSA)
         *   [2.1.3 Ed25519](#Ed25519)
     *   [2.2 Choosing the key location and passphrase](#Choosing_the_key_location_and_passphrase)
-        *   [2.2.1 Changing the private key's passphrase without changing the key](#Changing_the_private_key.27s_passphrase_without_changing_the_key)
+        *   [2.2.1 Changing the private key's passphrase without changing the key](#Changing_the_private_key's_passphrase_without_changing_the_key)
         *   [2.2.2 Managing multiple keys](#Managing_multiple_keys)
 *   [3 Copying the public key to the remote server](#Copying_the_public_key_to_the_remote_server)
     *   [3.1 Simple method](#Simple_method)

@@ -4,12 +4,12 @@
 
 *   [1 Instalacja](#Instalacja)
 *   [2 Konfiguracja](#Konfiguracja)
-*   [3 Rozszerzone użycie](#Rozszerzone_u.C5.BCycie)
+*   [3 Rozszerzone użycie](#Rozszerzone_użycie)
     *   [3.1 Poprawki i dodatkowe funkcje](#Poprawki_i_dodatkowe_funkcje)
     *   [3.2 Korzystanie z kart](#Korzystanie_z_kart)
-*   [4 Rozwiązywanie problemów](#Rozwi.C4.85zywanie_problem.C3.B3w)
-    *   [4.1 Niewyraźna czcionka na GitHubie](#Niewyra.C5.BAna_czcionka_na_GitHubie)
-*   [5 Zobacz również](#Zobacz_r.C3.B3wnie.C5.BC)
+*   [4 Rozwiązywanie problemów](#Rozwiązywanie_problemów)
+    *   [4.1 Niewyraźna czcionka na GitHubie](#Niewyraźna_czcionka_na_GitHubie)
+*   [5 Zobacz również](#Zobacz_również)
 
 ## Instalacja
 

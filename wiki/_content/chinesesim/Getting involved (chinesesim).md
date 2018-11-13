@@ -6,25 +6,25 @@
 
 ## Contents
 
-*   [1 Arch Linux 官方项目](#Arch_Linux_.E5.AE.98.E6.96.B9.E9.A1.B9.E7.9B.AE)
-    *   [1.1 论坛发帖](#.E8.AE.BA.E5.9D.9B.E5.8F.91.E5.B8.96)
-    *   [1.2 完善维基](#.E5.AE.8C.E5.96.84.E7.BB.B4.E5.9F.BA)
-    *   [1.3 加入聊天室](#.E5.8A.A0.E5.85.A5.E8.81.8A.E5.A4.A9.E5.AE.A4)
-    *   [1.4 报告安装的软件](#.E6.8A.A5.E5.91.8A.E5.AE.89.E8.A3.85.E7.9A.84.E8.BD.AF.E4.BB.B6)
-    *   [1.5 报告和修正 bug](#.E6.8A.A5.E5.91.8A.E5.92.8C.E4.BF.AE.E6.AD.A3_bug)
-    *   [1.6 安全问题](#.E5.AE.89.E5.85.A8.E9.97.AE.E9.A2.98)
-    *   [1.7 创建或维护 AUR 软件包](#.E5.88.9B.E5.BB.BA.E6.88.96.E7.BB.B4.E6.8A.A4_AUR_.E8.BD.AF.E4.BB.B6.E5.8C.85)
-    *   [1.8 Arch 官方软件项目](#Arch_.E5.AE.98.E6.96.B9.E8.BD.AF.E4.BB.B6.E9.A1.B9.E7.9B.AE)
-    *   [1.9 捐款](#.E6.8D.90.E6.AC.BE)
-*   [2 社区项目](#.E7.A4.BE.E5.8C.BA.E9.A1.B9.E7.9B.AE)
-    *   [2.1 团体](#.E5.9B.A2.E4.BD.93)
-    *   [2.2 软件](#.E8.BD.AF.E4.BB.B6)
-        *   [2.2.1 ArchWiki 浏览器](#ArchWiki_.E6.B5.8F.E8.A7.88.E5.99.A8)
-    *   [2.3 其他](#.E5.85.B6.E4.BB.96)
+*   [1 Arch Linux 官方项目](#Arch_Linux_官方项目)
+    *   [1.1 论坛发帖](#论坛发帖)
+    *   [1.2 完善维基](#完善维基)
+    *   [1.3 加入聊天室](#加入聊天室)
+    *   [1.4 报告安装的软件](#报告安装的软件)
+    *   [1.5 报告和修正 bug](#报告和修正_bug)
+    *   [1.6 安全问题](#安全问题)
+    *   [1.7 创建或维护 AUR 软件包](#创建或维护_AUR_软件包)
+    *   [1.8 Arch 官方软件项目](#Arch_官方软件项目)
+    *   [1.9 捐款](#捐款)
+*   [2 社区项目](#社区项目)
+    *   [2.1 团体](#团体)
+    *   [2.2 软件](#软件)
+        *   [2.2.1 ArchWiki 浏览器](#ArchWiki_浏览器)
+    *   [2.3 其他](#其他)
 *   [3 FAQ](#FAQ)
-    *   [3.1 怎样才能成为 Arch 开发者?](#.E6.80.8E.E6.A0.B7.E6.89.8D.E8.83.BD.E6.88.90.E4.B8.BA_Arch_.E5.BC.80.E5.8F.91.E8.80.85.3F)
-    *   [3.2 如何成为 Trusted User?](#.E5.A6.82.E4.BD.95.E6.88.90.E4.B8.BA_Trusted_User.3F)
-    *   [3.3 作为艺术爱好者，我可以做什么?](#.E4.BD.9C.E4.B8.BA.E8.89.BA.E6.9C.AF.E7.88.B1.E5.A5.BD.E8.80.85.EF.BC.8C.E6.88.91.E5.8F.AF.E4.BB.A5.E5.81.9A.E4.BB.80.E4.B9.88.3F)
+    *   [3.1 怎样才能成为 Arch 开发者?](#怎样才能成为_Arch_开发者?)
+    *   [3.2 如何成为 Trusted User?](#如何成为_Trusted_User?)
+    *   [3.3 作为艺术爱好者，我可以做什么?](#作为艺术爱好者，我可以做什么?)
 
 ## Arch Linux 官方项目
 
@@ -173,7 +173,7 @@ Arch 拥有一个充满活力的用户社区。如果您的项目想参与到社
 
 ### 如何成为 Trusted User?
 
-请阅读 [Trusted Users#How do I become a TU?](/index.php/Trusted_Users#How_do_I_become_a_TU.3F "Trusted Users").
+请阅读 [Trusted Users#How do I become a TU?](/index.php/Trusted_Users#How_do_I_become_a_TU? "Trusted Users").
 
 ### 作为艺术爱好者，我可以做什么?
 

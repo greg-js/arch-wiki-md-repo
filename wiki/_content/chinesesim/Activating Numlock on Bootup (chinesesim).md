@@ -2,13 +2,13 @@
 
 ## Contents
 
-*   [1 控制台](#.E6.8E.A7.E5.88.B6.E5.8F.B0)
-    *   [1.1 使用单独服务](#.E4.BD.BF.E7.94.A8.E5.8D.95.E7.8B.AC.E6.9C.8D.E5.8A.A1)
-    *   [1.2 扩展getty@.service](#.E6.89.A9.E5.B1.95getty.40.service)
+*   [1 控制台](#控制台)
+    *   [1.1 使用单独服务](#使用单独服务)
+    *   [1.2 扩展getty@.service](#扩展getty@.service)
     *   [1.3 Bash alternative](#Bash_alternative)
 *   [2 X window](#X_window)
     *   [2.1 startx](#startx)
-    *   [2.2 KDE Plasma 用户](#KDE_Plasma_.E7.94.A8.E6.88.B7)
+    *   [2.2 KDE Plasma 用户](#KDE_Plasma_用户)
     *   [2.3 GDM](#GDM)
     *   [2.4 GNOME](#GNOME)
     *   [2.5 Xfce](#Xfce)
@@ -176,7 +176,7 @@ numlockx &
 
 ### LightDM
 
-参见 [LightDM (简体中文)#默认打开小键盘](/index.php/LightDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E9.BB.98.E8.AE.A4.E6.89.93.E5.BC.80.E5.B0.8F.E9.94.AE.E7.9B.98 "LightDM (简体中文)").
+参见 [LightDM (简体中文)#默认打开小键盘](/index.php/LightDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#默认打开小键盘 "LightDM (简体中文)").
 
 ### LXDM
 

@@ -7,7 +7,7 @@
 *   [1 Status](#Status)
 *   [2 Installation](#Installation)
 *   [3 Starting](#Starting)
-    *   [3.1 From a TTY, on login](#From_a_TTY.2C_on_login)
+    *   [3.1 From a TTY](#From_a_TTY)
     *   [3.2 From a display manager](#From_a_display_manager)
 *   [4 Configuration](#Configuration)
     *   [4.1 Keymap](#Keymap)
@@ -16,9 +16,10 @@
     *   [4.4 Input devices](#Input_devices)
     *   [4.5 HiDPI](#HiDPI)
     *   [4.6 Custom keybindings](#Custom_keybindings)
-    *   [4.7 .Xresources](#.Xresources)
+    *   [4.7 Xresources](#Xresources)
 *   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 dmenu replacement](#dmenu_replacement)
+    *   [5.1 Autostart on login](#Autostart_on_login)
+    *   [5.2 dmenu replacement](#dmenu_replacement)
 *   [6 Known issues](#Known_issues)
     *   [6.1 Using i3-dmenu-desktop](#Using_i3-dmenu-desktop)
     *   [6.2 VirtualBox](#VirtualBox)
@@ -39,9 +40,9 @@ A detailed accounting of what features have been implemented and what features a
 
 ## Installation
 
-*sway* can be [installed](/index.php/Install "Install") with the [sway](https://www.archlinux.org/packages/?name=sway) package. This will install the stable, but abandoned, *0.15* version which is based on the (also abandoned) [wlc](https://github.com/Cloudef/wlc) library.
+*sway* can be [installed](/index.php/Install "Install") with the [sway](https://www.archlinux.org/packages/?name=sway) package. This will install the stable (but abandoned) *0.15* version which is based on the (also abandoned) [wlc](https://github.com/Cloudef/wlc) library.
 
-At the time of writing, *sway 1.0-beta* - based on the new [wlroots](https://github.com/swaywm/wlroots) library - is under active development and quite stable. Install the following two [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") packages instead: [wlroots-git](https://aur.archlinux.org/packages/wlroots-git/) and [sway-git](https://aur.archlinux.org/packages/sway-git/).
+At the time of writing, *sway 1.0-beta* (based on the new [wlroots](https://github.com/swaywm/wlroots) library) is under active development and quite stable. Install the following two [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") packages instead: [wlroots-git](https://aur.archlinux.org/packages/wlroots-git/) and [sway-git](https://aur.archlinux.org/packages/sway-git/).
 
 It's advisable to always update *wlroots* when you update *sway*, due to tight dependencies.
 
@@ -49,17 +50,9 @@ It's advisable to always update *wlroots* when you update *sway*, due to tight d
 
 **Tip:** See [Wayland#GUI libraries](/index.php/Wayland#GUI_libraries "Wayland") for appropriate environment variables to set for window decoration libraries.
 
-### From a TTY, on login
+### From a TTY
 
-You can start sway by simply typing *sway* from your TTY. To start sway from tty1 on login with default US keyboard edit `.bash_profile` use this code:
-
- `~/.bash_profile` 
-```
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
-  XKB_DEFAULT_LAYOUT=us exec sway
-fi
-
-```
+To start Sway, simply type *sway* from a TTY.
 
 ### From a display manager
 
@@ -73,7 +66,7 @@ If you already use i3, then copy your i3 configuration to `~/.config/sway/config
 
 ### Keymap
 
-By default, sway starts with the US QWERTY keymap. You can override this behaviour by starting sway with
+By default, sway starts with the US QWERTY keymap. You can override this behaviour by starting sway with:
 
 ```
 $ export XKB_DEFAULT_LAYOUT=gb; export XKB_DEFAULT_VARIANT=colemak; export XKB_DEFAULT_MODEL=pc101; sway
@@ -82,35 +75,18 @@ $ export XKB_DEFAULT_LAYOUT=gb; export XKB_DEFAULT_VARIANT=colemak; export XKB_D
 
 This will launch sway with the keyboard set to the Colemak variant of the British keymap with the 101-key keyboard model.
 
-If you are using a display manager, you can not simply prepend the above line to the `sway.desktop` file. As root, create the following file:
+See [alias](/index.php/Alias "Alias") to simplify starting from a tty and [desktop entries#Modify environment variables](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries") to start [#From a display manager](#From_a_display_manager).
 
- `/usr/bin/sway-gb-ck` 
-```
-#!/bin/sh
-XKB_DEFAULT_LAYOUT=gb XKB_DEFAULT_VARIANT=colemak XKB_DEFAULT_MODEL=pc101 sway
-```
-
-Then, create a `sway-gb-ck.desktop` file that starts the above script:
-
- `/usr/share/wayland-sessions/sway-gb-ck.desktop` 
-```
-[Desktop Entry]
-Name=Sway British(Colemak)
-Comment=SirCmpwn's Wayland window manager with the British Colemak keyboard layout
-Exec=sway-gb-ck
-Type=Application
-```
-
-If none of the above solutions worked for you, you may want to add
+If none of the above worked, you could add:
 
 ```
-$ export XKB_DEFAULT_LAYOUT=gb; export XKB_DEFAULT_VARIANT=colemak; export XKB_DEFAULT_MODEL=pc101
+export XKB_DEFAULT_LAYOUT=gb; export XKB_DEFAULT_VARIANT=colemak; export XKB_DEFAULT_MODEL=pc101
 
 ```
 
-to either your `.bash_profile` or `.zprofile`.
+to either your `.bash_profile` or `.zprofile` (or similar).
 
-If you want multiple keyboard layouts at startup edit `.bash_profile` and add, for example US English and German layouts, switchable by Mod+Space:
+If you want multiple keyboard layouts at startup edit `.bash_profile` and add, for example US English and German layouts, switchable by `Mod+Space`:
 
  `~/.bash_profile` 
 ```
@@ -122,7 +98,7 @@ fi
 
 ```
 
-Other options for switching keyboard layout is Alt+Shift: *grp:alt_shift_toggle*
+Another option for switching keyboard layout is `Alt`+`Shift`: `grp:alt_shift_toggle`.
 
 ### Statusbar
 
@@ -215,25 +191,39 @@ swaymsg -t get_outputs
 
 ```
 
-To control brightness you can use [brightnessctl](https://aur.archlinux.org/packages/brightnessctl/). For a list of utilities to control brightness and color correction see [Backlight](/index.php/Backlight "Backlight")
+To control brightness you can use [brightnessctl](https://aur.archlinux.org/packages/brightnessctl/). For a list of utilities to control brightness and color correction see [Backlight](/index.php/Backlight "Backlight").
 
-### .Xresources
+### Xresources
 
-Copy `.Xresources` to `.Xdefaults` to use them in sway.
+Copy `~/.Xresources` to `~/.Xdefaults` to use them in Sway.
 
 ## Tips and tricks
 
+### Autostart on login
+
+To start sway from tty1 on login with default US keyboard, edit:
+
+ `~/.bash_profile` 
+```
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+  XKB_DEFAULT_LAYOUT=us exec sway
+fi
+
+```
+
 ### dmenu replacement
 
-As dmenu runs on XWayland, the applicions tends to become unresponsive if the focus is moved elsewhere, requiring a sway restart, to fix the broken, always visible and unresponsive dmenu. Rofi is a nice option, yet, to automatically focus rofi as a menu, it needs to be run from urxvt or other non-wayland-native virtual terminal. Invoking it as menu in sway will not focus on the menu (you have to hover the mouse on rofi, for rofi to grab your input) One of the best workarounds could be found [https://github.com/swaywm/sway/issues/1367#issuecomment-332910152](https://github.com/swaywm/sway/issues/1367#issuecomment-332910152) :
+As dmenu runs on XWayland, the applicions tends to become unresponsive if the focus is moved elsewhere, requiring a sway restart, to fix the broken, always visible and unresponsive dmenu.
+
+Rofi is a nice option, yet, to automatically focus rofi as a menu, it needs to be run from urxvt or other non-wayland-native virtual terminal. Invoking it as menu in sway will not focus on the menu (you have to hover the mouse on rofi, for rofi to grab your input).
+
+One of the best workarounds can be found [here](https://github.com/swaywm/sway/issues/1367#issuecomment-332910152).
 
 ## Known issues
 
 ### Using i3-dmenu-desktop
 
-i3-dmenu-desktop is not usable directly from sway, but a patch is available here: [https://github.com/i3/i3/pull/2265/files](https://github.com/i3/i3/pull/2265/files) Unfortunately, the patch cannot be merged because it breaks when used from i3 in some corner cases.
-
-See here for more information: [https://github.com/SirCmpwn/sway/issues/521](https://github.com/SirCmpwn/sway/issues/521)
+i3-dmenu-desktop is not usable directly from sway, but a patch is available [here](https://github.com/i3/i3/pull/2265/files). Unfortunately, the patch cannot be merged because it breaks when used from i3 in some corner cases. See [[1]](https://github.com/SirCmpwn/sway/issues/521) for more information.
 
 You can still apply the patch manually through installing [sway-dmenu-desktop](https://aur.archlinux.org/packages/sway-dmenu-desktop/). This creates a new binary called `sway-dmenu-desktop` to be using within sway.
 
@@ -245,7 +235,7 @@ Sway doesn't work well (or at all) under [VirtualBox](/index.php/VirtualBox "Vir
 
 ### Sway Socket Not Detected
 
-Using a `swaymsg` argument, such as `swaymsg -t get_outputs`, will sometimes return the message
+Using a `swaymsg` argument, such as `swaymsg -t get_outputs`, will sometimes return the message:
 
 ```
 sway socket not detected.

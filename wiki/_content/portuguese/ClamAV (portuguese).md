@@ -4,23 +4,23 @@
 
 ## Contents
 
-*   [1 Instalação](#Instala.C3.A7.C3.A3o)
+*   [1 Instalação](#Instalação)
 *   [2 Atualizando o banco de dados](#Atualizando_o_banco_de_dados)
 *   [3 Iniciando o daemon](#Iniciando_o_daemon)
 *   [4 Testando o software](#Testando_o_software)
-*   [5 Adicionando mais repositórios de bancos de dados/assinaturas](#Adicionando_mais_reposit.C3.B3rios_de_bancos_de_dados.2Fassinaturas)
+*   [5 Adicionando mais repositórios de bancos de dados/assinaturas](#Adicionando_mais_repositórios_de_bancos_de_dados/assinaturas)
     *   [5.1 Configure clamav-unofficial-sigs](#Configure_clamav-unofficial-sigs)
         *   [5.1.1 Banco de dados MalwarePatrol](#Banco_de_dados_MalwarePatrol)
-*   [6 Varrendo por vírus](#Varrendo_por_v.C3.ADrus)
+*   [6 Varrendo por vírus](#Varrendo_por_vírus)
 *   [7 Usando o milter](#Usando_o_milter)
 *   [8 OnAccessScan](#OnAccessScan)
-*   [9 Solução de programas](#Solu.C3.A7.C3.A3o_de_programas)
+*   [9 Solução de programas](#Solução_de_programas)
     *   [9.1 Erro: Clamd was NOT notified](#Erro:_Clamd_was_NOT_notified)
     *   [9.2 Erro: No supported database files found](#Erro:_No_supported_database_files_found)
-    *   [9.3 Erro: Can't create temporary directory](#Erro:_Can.27t_create_temporary_directory)
+    *   [9.3 Erro: Can't create temporary directory](#Erro:_Can't_create_temporary_directory)
 *   [10 Dicas e truques](#Dicas_e_truques)
-    *   [10.1 Executar em múltiplas threads](#Executar_em_m.C3.BAltiplas_threads)
-*   [11 Veja também](#Veja_tamb.C3.A9m)
+    *   [10.1 Executar em múltiplas threads](#Executar_em_múltiplas_threads)
+*   [11 Veja também](#Veja_também)
 
 ## Instalação
 

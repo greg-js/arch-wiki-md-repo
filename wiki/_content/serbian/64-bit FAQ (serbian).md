@@ -2,16 +2,16 @@ Below is a list of frequently asked questions about Arch64.
 
 ## Contents
 
-*   [1 Kako da instalirate Arch64?](#Kako_da_instalirate_Arch64.3F)
-*   [2 Koliko je potpun port?](#Koliko_je_potpun_port.3F)
-*   [3 Hoću li imati sve pakete kao na 32-bitnom Archu koji sam imao?](#Ho.C4.87u_li_imati_sve_pakete_kao_na_32-bitnom_Archu_koji_sam_imao.3F)
-*   [4 Da li 64-bita znače veliko brzinsko poboljšanje?](#Da_li_64-bita_zna.C4.8De_veliko_brzinsko_pobolj.C5.A1anje.3F)
-*   [5 Kako mogu prijavit greške?](#Kako_mogu_prijavit_gre.C5.A1ke.3F)
-*   [6 Koje riznice bi trebao koristit u pacmanu?](#Koje_riznice_bi_trebao_koristit_u_pacmanu.3F)
-*   [7 Kako prepraviti postojeće PKGBUILDs da bi se koristili u Arch64?](#Kako_prepraviti_postoje.C4.87e_PKGBUILDs_da_bi_se_koristili_u_Arch64.3F)
-*   [8 Mogu li graditi 32-bitne pakete za i686 unutar Arch64?](#Mogu_li_graditi_32-bitne_pakete_za_i686_unutar_Arch64.3F)
-*   [9 Mogu li pokrenuti 32-bitne aplikacije unutar Arch64?](#Mogu_li_pokrenuti_32-bitne_aplikacije_unutar_Arch64.3F)
-*   [10 Mogu li nadograditi / promeniti moj sistem od i686 bez ponovno instalirajte na x86_64?](#Mogu_li_nadograditi_.2F_promeniti_moj_sistem_od_i686_bez_ponovno_instalirajte_na_x86_64.3F)
+*   [1 Kako da instalirate Arch64?](#Kako_da_instalirate_Arch64?)
+*   [2 Koliko je potpun port?](#Koliko_je_potpun_port?)
+*   [3 Hoću li imati sve pakete kao na 32-bitnom Archu koji sam imao?](#Hoću_li_imati_sve_pakete_kao_na_32-bitnom_Archu_koji_sam_imao?)
+*   [4 Da li 64-bita znače veliko brzinsko poboljšanje?](#Da_li_64-bita_znače_veliko_brzinsko_poboljšanje?)
+*   [5 Kako mogu prijavit greške?](#Kako_mogu_prijavit_greške?)
+*   [6 Koje riznice bi trebao koristit u pacmanu?](#Koje_riznice_bi_trebao_koristit_u_pacmanu?)
+*   [7 Kako prepraviti postojeće PKGBUILDs da bi se koristili u Arch64?](#Kako_prepraviti_postojeće_PKGBUILDs_da_bi_se_koristili_u_Arch64?)
+*   [8 Mogu li graditi 32-bitne pakete za i686 unutar Arch64?](#Mogu_li_graditi_32-bitne_pakete_za_i686_unutar_Arch64?)
+*   [9 Mogu li pokrenuti 32-bitne aplikacije unutar Arch64?](#Mogu_li_pokrenuti_32-bitne_aplikacije_unutar_Arch64?)
+*   [10 Mogu li nadograditi / promeniti moj sistem od i686 bez ponovno instalirajte na x86_64?](#Mogu_li_nadograditi_/_promeniti_moj_sistem_od_i686_bez_ponovno_instalirajte_na_x86_64?)
 
 ## Kako da instalirate Arch64?
 

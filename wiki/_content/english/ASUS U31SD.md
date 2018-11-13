@@ -2,12 +2,12 @@
 
 *   [1 System specification](#System_specification)
 *   [2 What does **not** work out of the box](#What_does_not_work_out_of_the_box)
-*   [3 What works out of the box / with default configuration](#What_works_out_of_the_box_.2F_with_default_configuration)
+*   [3 What works out of the box / with default configuration](#What_works_out_of_the_box_/_with_default_configuration)
 *   [4 Not tested](#Not_tested)
-*   [5 Input/touchpad](#Input.2Ftouchpad)
+*   [5 Input/touchpad](#Input/touchpad)
 *   [6 Bluetooth](#Bluetooth)
-*   [7 Nvidia GPU (Optimus)](#Nvidia_GPU_.28Optimus.29)
-*   [8 Suspend/hibernate](#Suspend.2Fhibernate)
+*   [7 Nvidia GPU (Optimus)](#Nvidia_GPU_(Optimus))
+*   [8 Suspend/hibernate](#Suspend/hibernate)
 *   [9 Fn multimedia keys](#Fn_multimedia_keys)
 *   [10 Optimize power consumption](#Optimize_power_consumption)
 

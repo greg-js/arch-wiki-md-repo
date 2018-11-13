@@ -11,12 +11,12 @@ Un [gestor de ventanas](https://en.wikipedia.org/wiki/es:Gestor_de_ventanas (sig
 ## Contents
 
 *   [1 X Window System](#X_Window_System)
-*   [2 Window managers (gestores de ventanas)](#Window_managers_.28gestores_de_ventanas.29)
+*   [2 Window managers (gestores de ventanas)](#Window_managers_(gestores_de_ventanas))
     *   [2.1 Tipos](#Tipos)
 *   [3 Listado de gestores de ventanas](#Listado_de_gestores_de_ventanas)
-    *   [3.1 Stacking WMs (Gestores de Ventanas Superpuestas)](#Stacking_WMs_.28Gestores_de_Ventanas_Superpuestas.29)
-    *   [3.2 Tiling window managers (Gestores de Ventanas tipo Mosaico)](#Tiling_window_managers_.28Gestores_de_Ventanas_tipo_Mosaico.29)
-    *   [3.3 Dynamic window managers (Gestores de Ventanas Dinámicas)](#Dynamic_window_managers_.28Gestores_de_Ventanas_Din.C3.A1micas.29)
+    *   [3.1 Stacking WMs (Gestores de Ventanas Superpuestas)](#Stacking_WMs_(Gestores_de_Ventanas_Superpuestas))
+    *   [3.2 Tiling window managers (Gestores de Ventanas tipo Mosaico)](#Tiling_window_managers_(Gestores_de_Ventanas_tipo_Mosaico))
+    *   [3.3 Dynamic window managers (Gestores de Ventanas Dinámicas)](#Dynamic_window_managers_(Gestores_de_Ventanas_Dinámicas))
 *   [4 Enlaces externos](#Enlaces_externos)
 
 ## X Window System

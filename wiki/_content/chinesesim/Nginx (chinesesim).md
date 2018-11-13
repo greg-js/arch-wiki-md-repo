@@ -2,21 +2,21 @@
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 启动服务](#.E5.90.AF.E5.8A.A8.E6.9C.8D.E5.8A.A1)
-*   [3 配置](#.E9.85.8D.E7.BD.AE)
+*   [1 安装](#安装)
+*   [2 启动服务](#启动服务)
+*   [3 配置](#配置)
     *   [3.1 FastCGI](#FastCGI)
-        *   [3.1.1 PHP 集成](#PHP_.E9.9B.86.E6.88.90)
-            *   [3.1.1.1 第一步: PHP 配置](#.E7.AC.AC.E4.B8.80.E6.AD.A5:_PHP_.E9.85.8D.E7.BD.AE)
-            *   [3.1.1.2 第二步: php-fpm](#.E7.AC.AC.E4.BA.8C.E6.AD.A5:_php-fpm)
-            *   [3.1.1.3 第三步: Nginx 配置](#.E7.AC.AC.E4.B8.89.E6.AD.A5:_Nginx_.E9.85.8D.E7.BD.AE)
-    *   [3.2 安装 phpMyAdmin](#.E5.AE.89.E8.A3.85_phpMyAdmin)
-*   [4 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
-    *   [4.1 访问本地的IP重定向到本地主机](#.E8.AE.BF.E9.97.AE.E6.9C.AC.E5.9C.B0.E7.9A.84IP.E9.87.8D.E5.AE.9A.E5.90.91.E5.88.B0.E6.9C.AC.E5.9C.B0.E4.B8.BB.E6.9C.BA)
-    *   [4.2 Error: 403 (Permission error)](#Error:_403_.28Permission_error.29)
+        *   [3.1.1 PHP 集成](#PHP_集成)
+            *   [3.1.1.1 第一步: PHP 配置](#第一步:_PHP_配置)
+            *   [3.1.1.2 第二步: php-fpm](#第二步:_php-fpm)
+            *   [3.1.1.3 第三步: Nginx 配置](#第三步:_Nginx_配置)
+    *   [3.2 安装 phpMyAdmin](#安装_phpMyAdmin)
+*   [4 疑难解答](#疑难解答)
+    *   [4.1 访问本地的IP重定向到本地主机](#访问本地的IP重定向到本地主机)
+    *   [4.2 Error: 403 (Permission error)](#Error:_403_(Permission_error))
     *   [4.3 Error: The page you are looking for is temporarily unavailable. Please try again later.](#Error:_The_page_you_are_looking_for_is_temporarily_unavailable._Please_try_again_later.)
     *   [4.4 Error: No input file specified](#Error:_No_input_file_specified)
-*   [5 参见](#.E5.8F.82.E8.A7.81)
+*   [5 参见](#参见)
 
 ## 安装
 

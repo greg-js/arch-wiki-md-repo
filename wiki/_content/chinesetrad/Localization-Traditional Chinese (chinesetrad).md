@@ -8,23 +8,23 @@
 
 ## Contents
 
-*   [1 基本中文語系環境](#.E5.9F.BA.E6.9C.AC.E4.B8.AD.E6.96.87.E8.AA.9E.E7.B3.BB.E7.92.B0.E5.A2.83)
-    *   [1.1 locale 設置](#locale_.E8.A8.AD.E7.BD.AE)
-        *   [1.1.1 安裝中文 locale](#.E5.AE.89.E8.A3.9D.E4.B8.AD.E6.96.87_locale)
-        *   [1.1.2 啟動中文 locale](#.E5.95.9F.E5.8B.95.E4.B8.AD.E6.96.87_locale)
-        *   [1.1.3 在圖形介面中啟用中文 locale](#.E5.9C.A8.E5.9C.96.E5.BD.A2.E4.BB.8B.E9.9D.A2.E4.B8.AD.E5.95.9F.E7.94.A8.E4.B8.AD.E6.96.87_locale)
-    *   [1.2 中文字體](#.E4.B8.AD.E6.96.87.E5.AD.97.E9.AB.94)
-    *   [1.3 中文輸入法](#.E4.B8.AD.E6.96.87.E8.BC.B8.E5.85.A5.E6.B3.95)
-*   [2 終端機的中文化](#.E7.B5.82.E7.AB.AF.E6.A9.9F.E7.9A.84.E4.B8.AD.E6.96.87.E5.8C.96)
-*   [3 軟體的中文化](#.E8.BB.9F.E9.AB.94.E7.9A.84.E4.B8.AD.E6.96.87.E5.8C.96)
-    *   [3.1 桌面環境](#.E6.A1.8C.E9.9D.A2.E7.92.B0.E5.A2.83)
+*   [1 基本中文語系環境](#基本中文語系環境)
+    *   [1.1 locale 設置](#locale_設置)
+        *   [1.1.1 安裝中文 locale](#安裝中文_locale)
+        *   [1.1.2 啟動中文 locale](#啟動中文_locale)
+        *   [1.1.3 在圖形介面中啟用中文 locale](#在圖形介面中啟用中文_locale)
+    *   [1.2 中文字體](#中文字體)
+    *   [1.3 中文輸入法](#中文輸入法)
+*   [2 終端機的中文化](#終端機的中文化)
+*   [3 軟體的中文化](#軟體的中文化)
+    *   [3.1 桌面環境](#桌面環境)
     *   [3.2 Firefox](#Firefox)
     *   [3.3 LibreOffice](#LibreOffice)
-    *   [3.4 Calligra (原 KOffice)](#Calligra_.28.E5.8E.9F_KOffice.29)
-    *   [3.5 PDF 閱讀器](#PDF_.E9.96.B1.E8.AE.80.E5.99.A8)
+    *   [3.4 Calligra (原 KOffice)](#Calligra_(原_KOffice))
+    *   [3.5 PDF 閱讀器](#PDF_閱讀器)
     *   [3.6 Vim](#Vim)
-*   [4 其他中文化問題](#.E5.85.B6.E4.BB.96.E4.B8.AD.E6.96.87.E5.8C.96.E5.95.8F.E9.A1.8C)
-    *   [4.1 MS Windows 底下的中文檔案名亂碼](#MS_Windows_.E5.BA.95.E4.B8.8B.E7.9A.84.E4.B8.AD.E6.96.87.E6.AA.94.E6.A1.88.E5.90.8D.E4.BA.82.E7.A2.BC)
+*   [4 其他中文化問題](#其他中文化問題)
+    *   [4.1 MS Windows 底下的中文檔案名亂碼](#MS_Windows_底下的中文檔案名亂碼)
 
 ## 基本中文語系環境
 

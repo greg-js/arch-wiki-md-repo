@@ -2,10 +2,10 @@
 
 ## Contents
 
-*   [1 Ξεκινώντας από το CD εγκατάστασης](#.CE.9E.CE.B5.CE.BA.CE.B9.CE.BD.CF.8E.CE.BD.CF.84.CE.B1.CF.82_.CE.B1.CF.80.CF.8C_.CF.84.CE.BF_CD_.CE.B5.CE.B3.CE.BA.CE.B1.CF.84.CE.AC.CF.83.CF.84.CE.B1.CF.83.CE.B7.CF.82)
-*   [2 Κάνοντας chroot στην κανονική σας εγκατάσταση](#.CE.9A.CE.AC.CE.BD.CE.BF.CE.BD.CF.84.CE.B1.CF.82_chroot_.CF.83.CF.84.CE.B7.CE.BD_.CE.BA.CE.B1.CE.BD.CE.BF.CE.BD.CE.B9.CE.BA.CE.AE_.CF.83.CE.B1.CF.82_.CE.B5.CE.B3.CE.BA.CE.B1.CF.84.CE.AC.CF.83.CF.84.CE.B1.CF.83.CE.B7)
-*   [3 Επιστροφή σε προηγούμενη έκδοση πυρήνα](#.CE.95.CF.80.CE.B9.CF.83.CF.84.CF.81.CE.BF.CF.86.CE.AE_.CF.83.CE.B5_.CF.80.CF.81.CE.BF.CE.B7.CE.B3.CE.BF.CF.8D.CE.BC.CE.B5.CE.BD.CE.B7_.CE.AD.CE.BA.CE.B4.CE.BF.CF.83.CE.B7_.CF.80.CF.85.CF.81.CE.AE.CE.BD.CE.B1)
-*   [4 Επανεκκίνηση](#.CE.95.CF.80.CE.B1.CE.BD.CE.B5.CE.BA.CE.BA.CE.AF.CE.BD.CE.B7.CF.83.CE.B7)
+*   [1 Ξεκινώντας από το CD εγκατάστασης](#Ξεκινώντας_από_το_CD_εγκατάστασης)
+*   [2 Κάνοντας chroot στην κανονική σας εγκατάσταση](#Κάνοντας_chroot_στην_κανονική_σας_εγκατάσταση)
+*   [3 Επιστροφή σε προηγούμενη έκδοση πυρήνα](#Επιστροφή_σε_προηγούμενη_έκδοση_πυρήνα)
+*   [4 Επανεκκίνηση](#Επανεκκίνηση)
 
 ## Ξεκινώντας από το CD εγκατάστασης
 

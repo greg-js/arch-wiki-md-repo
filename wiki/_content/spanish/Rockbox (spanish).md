@@ -13,7 +13,7 @@ Artículos relacionados
 ## Contents
 
 *   [1 Dispositivos compatibles](#Dispositivos_compatibles)
-*   [2 Instalación](#Instalaci.C3.B3n)
+*   [2 Instalación](#Instalación)
     *   [2.1 Utilidad Rockbox](#Utilidad_Rockbox)
     *   [2.2 Intalar Rockbox en el dispositivo](#Intalar_Rockbox_en_el_dispositivo)
         *   [2.2.1 Cargador de arranque](#Cargador_de_arranque)

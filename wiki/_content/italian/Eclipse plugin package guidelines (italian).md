@@ -17,7 +17,7 @@ Ci sono numerosi modi per installare un plugin funzionante di [Eclipse](/index.p
         *   [2.3.2 File](#File)
             *   [2.3.2.1 Estrazione](#Estrazione)
             *   [2.3.2.2 Posizione](#Posizione)
-        *   [2.3.3 La funzione build()](#La_funzione_build.28.29)
+        *   [2.3.3 La funzione build()](#La_funzione_build())
 
 ## Struttura ed installazione dei plugin di Eclipse
 

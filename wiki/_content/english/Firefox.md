@@ -19,7 +19,7 @@ Related articles
     *   [3.1 Multimedia playback](#Multimedia_playback)
         *   [3.1.1 Open-with extension](#Open-with_extension)
     *   [3.2 Dictionaries for spell checking](#Dictionaries_for_spell_checking)
-    *   [3.3 KDE/GNOME integration](#KDE.2FGNOME_integration)
+    *   [3.3 KDE/GNOME integration](#KDE/GNOME_integration)
     *   [3.4 Smooth Scrolling](#Smooth_Scrolling)
 *   [4 Plugins](#Plugins)
 *   [5 Tips and tricks](#Tips_and_tricks)
@@ -31,12 +31,12 @@ Related articles
     *   [6.2 Font troubleshooting](#Font_troubleshooting)
     *   [6.3 Setting an email client](#Setting_an_email_client)
     *   [6.4 File association](#File_association)
-    *   [6.5 Firefox keeps creating ~/Desktop even when this is not desired](#Firefox_keeps_creating_.7E.2FDesktop_even_when_this_is_not_desired)
+    *   [6.5 Firefox keeps creating ~/Desktop even when this is not desired](#Firefox_keeps_creating_~/Desktop_even_when_this_is_not_desired)
     *   [6.6 Make plugins respect blocked pop-ups](#Make_plugins_respect_blocked_pop-ups)
     *   [6.7 Middle-click behavior](#Middle-click_behavior)
-    *   [6.8 Backspace does not work as the 'Back' button](#Backspace_does_not_work_as_the_.27Back.27_button)
+    *   [6.8 Backspace does not work as the 'Back' button](#Backspace_does_not_work_as_the_'Back'_button)
     *   [6.9 Firefox does not remember login information](#Firefox_does_not_remember_login_information)
-    *   [6.10 "Do you want Firefox to save your tabs for the next time it starts?" dialog does not appear](#.22Do_you_want_Firefox_to_save_your_tabs_for_the_next_time_it_starts.3F.22_dialog_does_not_appear)
+    *   [6.10 "Do you want Firefox to save your tabs for the next time it starts?" dialog does not appear](#"Do_you_want_Firefox_to_save_your_tabs_for_the_next_time_it_starts?"_dialog_does_not_appear)
     *   [6.11 Silently fails when installing desktop apps from marketplace](#Silently_fails_when_installing_desktop_apps_from_marketplace)
     *   [6.12 Firefox detects the wrong version of my plugin](#Firefox_detects_the_wrong_version_of_my_plugin)
     *   [6.13 Javascript context menu does not appear on some sites](#Javascript_context_menu_does_not_appear_on_some_sites)
@@ -68,7 +68,7 @@ Other alternatives include:
 
 	[https://www.mozilla.org/firefox/channel/desktop/#nightly](https://www.mozilla.org/firefox/channel/desktop/#nightly) || [firefox-nightly](https://aur.archlinux.org/packages/firefox-nightly/)
 
-*   **Firefox KDE** — Version of Firefox that incorporates an OpenSUSE patch for better [KDE integration](#KDE.2FGNOME_integration) than is possible through simple Firefox plugins.
+*   **Firefox KDE** — Version of Firefox that incorporates an OpenSUSE patch for better [KDE integration](#KDE/GNOME_integration) than is possible through simple Firefox plugins.
 
 	[https://build.opensuse.org/package/show/mozilla:Factory/MozillaFirefox](https://build.opensuse.org/package/show/mozilla:Factory/MozillaFirefox) || [firefox-kde-opensuse](https://aur.archlinux.org/packages/firefox-kde-opensuse/)
 
@@ -391,7 +391,7 @@ In Arch Linux, these fonts are provided by [texlive-core](https://www.archlinux.
 
 ### Tearing video in fullscreen mode
 
-If you are using the Xorg Intel or Nouveau drivers and experience tearing video in fullscreen mode, try [Firefox tweaks#Enable OpenGL Off-Main-Thread Compositing (OMTC)](/index.php/Firefox_tweaks#Enable_OpenGL_Off-Main-Thread_Compositing_.28OMTC.29 "Firefox tweaks").
+If you are using the Xorg Intel or Nouveau drivers and experience tearing video in fullscreen mode, try [Firefox tweaks#Enable OpenGL Off-Main-Thread Compositing (OMTC)](/index.php/Firefox_tweaks#Enable_OpenGL_Off-Main-Thread_Compositing_(OMTC) "Firefox tweaks").
 
 ### Firefox WebRTC module cannot detect a microphone
 
@@ -405,7 +405,7 @@ WebRTC applications for instance [Firefox WebRTC getUserMedia test page](https:/
 
 You can try setting `media.navigator.audio.full_duplex` property to `false` at `about:config` Firefox page and restart Firefox.
 
-This can also help if you are using the PulseAudio [module-echo-cancel](/index.php/PulseAudio/Troubleshooting#Enable_Echo.2FNoise-Cancellation "PulseAudio/Troubleshooting"), and Firefox does not recognise the virtual echo canceling source.
+This can also help if you are using the PulseAudio [module-echo-cancel](/index.php/PulseAudio/Troubleshooting#Enable_Echo/Noise-Cancellation "PulseAudio/Troubleshooting"), and Firefox does not recognise the virtual echo canceling source.
 
 ## See also
 

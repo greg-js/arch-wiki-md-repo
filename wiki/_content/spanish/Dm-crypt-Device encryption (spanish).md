@@ -11,9 +11,9 @@ Esta sección explica cómo utilizar manualmente *dm-crypt* desde la línea de �
 
 ## Contents
 
-*   [1 Preparación](#Preparaci.C3.B3n)
-*   [2 Utilización de cryptsetup](#Utilizaci.C3.B3n_de_cryptsetup)
-    *   [2.1 Contraseñas y claves de cryptsetup](#Contrase.C3.B1as_y_claves_de_cryptsetup)
+*   [1 Preparación](#Preparación)
+*   [2 Utilización de cryptsetup](#Utilización_de_cryptsetup)
+    *   [2.1 Contraseñas y claves de cryptsetup](#Contraseñas_y_claves_de_cryptsetup)
 *   [3 Opciones de cifrado con dm-crypt](#Opciones_de_cifrado_con_dm-crypt)
     *   [3.1 Opciones de cifrado para la modalidad LUKS](#Opciones_de_cifrado_para_la_modalidad_LUKS)
     *   [3.2 Opciones de cifrado para la modalidad plain](#Opciones_de_cifrado_para_la_modalidad_plain)
@@ -21,24 +21,24 @@ Esta sección explica cómo utilizar manualmente *dm-crypt* desde la línea de �
     *   [4.1 Cifrar dispositivos con la modalidad LUKS](#Cifrar_dispositivos_con_la_modalidad_LUKS)
         *   [4.1.1 Formatear particiones LUKS](#Formatear_particiones_LUKS)
             *   [4.1.1.1 Utilizar LUKS para formatear particiones con un archivo de claves](#Utilizar_LUKS_para_formatear_particiones_con_un_archivo_de_claves)
-        *   [4.1.2 Desbloquear/mapear particiones LUKS con el mapeador de dispositivos](#Desbloquear.2Fmapear_particiones_LUKS_con_el_mapeador_de_dispositivos)
+        *   [4.1.2 Desbloquear/mapear particiones LUKS con el mapeador de dispositivos](#Desbloquear/mapear_particiones_LUKS_con_el_mapeador_de_dispositivos)
     *   [4.2 Cifrar dispositivos con la modalidad plain](#Cifrar_dispositivos_con_la_modalidad_plain)
-*   [5 Acciones de cryptsetup específicas para LUKS](#Acciones_de_cryptsetup_espec.C3.ADficas_para_LUKS)
-    *   [5.1 Gestión de claves](#Gesti.C3.B3n_de_claves)
-        *   [5.1.1 Añadir claves LUKS](#A.C3.B1adir_claves_LUKS)
+*   [5 Acciones de cryptsetup específicas para LUKS](#Acciones_de_cryptsetup_específicas_para_LUKS)
+    *   [5.1 Gestión de claves](#Gestión_de_claves)
+        *   [5.1.1 Añadir claves LUKS](#Añadir_claves_LUKS)
         *   [5.1.2 Eliminar claves LUKS](#Eliminar_claves_LUKS)
-    *   [5.2 Copia de seguridad y restauración](#Copia_de_seguridad_y_restauraci.C3.B3n)
+    *   [5.2 Copia de seguridad y restauración](#Copia_de_seguridad_y_restauración)
         *   [5.2.1 Realizar copia de seguridad utilizando cryptsetup](#Realizar_copia_de_seguridad_utilizando_cryptsetup)
         *   [5.2.2 Restaurar utilizando cryptsetup](#Restaurar_utilizando_cryptsetup)
-        *   [5.2.3 Copia de seguridad y restauración manuales](#Copia_de_seguridad_y_restauraci.C3.B3n_manuales)
+        *   [5.2.3 Copia de seguridad y restauración manuales](#Copia_de_seguridad_y_restauración_manuales)
     *   [5.3 Volver a cifrar dispositivos](#Volver_a_cifrar_dispositivos)
         *   [5.3.1 Cifrar un sistema de archivos no cifrado](#Cifrar_un_sistema_de_archivos_no_cifrado)
-        *   [5.3.2 Recifrar una partición LUKS existente](#Recifrar_una_partici.C3.B3n_LUKS_existente)
-*   [6 Cambiar el tamaño de dispositivos cifrados](#Cambiar_el_tama.C3.B1o_de_dispositivos_cifrados)
+        *   [5.3.2 Recifrar una partición LUKS existente](#Recifrar_una_partición_LUKS_existente)
+*   [6 Cambiar el tamaño de dispositivos cifrados](#Cambiar_el_tamaño_de_dispositivos_cifrados)
     *   [6.1 Sistema de archivos de loopback](#Sistema_de_archivos_de_loopback)
 *   [7 Archivos de claves](#Archivos_de_claves)
     *   [7.1 Tipos de archivos de claves](#Tipos_de_archivos_de_claves)
-        *   [7.1.1 Frase de contraseña](#Frase_de_contrase.C3.B1a)
+        *   [7.1.1 Frase de contraseña](#Frase_de_contraseña)
         *   [7.1.2 Texto aleatorio](#Texto_aleatorio)
         *   [7.1.3 Binario](#Binario)
     *   [7.2 Crear un archivo claves con caracteres aleatorios](#Crear_un_archivo_claves_con_caracteres_aleatorios)
@@ -46,12 +46,12 @@ Esta sección explica cómo utilizar manualmente *dm-crypt* desde la línea de �
             *   [7.2.1.1 Sobrescribir de forma segura los archivos de claves almacenados](#Sobrescribir_de_forma_segura_los_archivos_de_claves_almacenados)
         *   [7.2.2 Almacenar el archivo de claves en ramfs](#Almacenar_el_archivo_de_claves_en_ramfs)
     *   [7.3 Configurar LUKS para que haga uso del archivo de claves](#Configurar_LUKS_para_que_haga_uso_del_archivo_de_claves)
-    *   [7.4 Desbloquear manualmente una partición usando un archivo de claves](#Desbloquear_manualmente_una_partici.C3.B3n_usando_un_archivo_de_claves)
-    *   [7.5 Desbloquear una partición secundaria en el arranque](#Desbloquear_una_partici.C3.B3n_secundaria_en_el_arranque)
-    *   [7.6 Desbloquear la partición raíz en el arranque](#Desbloquear_la_partici.C3.B3n_ra.C3.ADz_en_el_arranque)
+    *   [7.4 Desbloquear manualmente una partición usando un archivo de claves](#Desbloquear_manualmente_una_partición_usando_un_archivo_de_claves)
+    *   [7.5 Desbloquear una partición secundaria en el arranque](#Desbloquear_una_partición_secundaria_en_el_arranque)
+    *   [7.6 Desbloquear la partición raíz en el arranque](#Desbloquear_la_partición_raíz_en_el_arranque)
         *   [7.6.1 Con un archivo de claves almacenado en un medio externo](#Con_un_archivo_de_claves_almacenado_en_un_medio_externo)
             *   [7.6.1.1 Configurar mkinitcpio](#Configurar_mkinitcpio)
-            *   [7.6.1.2 Configurar parámetros del kernel](#Configurar_par.C3.A1metros_del_kernel)
+            *   [7.6.1.2 Configurar parámetros del kernel](#Configurar_parámetros_del_kernel)
         *   [7.6.2 Con un archivo de clave incrustado en initramfs](#Con_un_archivo_de_clave_incrustado_en_initramfs)
 
 ## Preparación
@@ -156,7 +156,7 @@ Los valores predeterminados se comparan con un ejemplo de especificación cripto
 
 -h
 
- | `sha256` | `sha512` | Algoritmo de hash utilizado para [derivación de clave](/index.php/Disk_encryption_(Espa%C3%B1ol)#Metadatos_criptogr.C3.A1ficos "Disk encryption (Español)"). La versión 1.7.0 cambió los valores predeterminados de `sha1` a `sha256` «*no por razones de seguridad [sino] principalmente para evitar problemas de compatibilidad en sistemas endurecidos donde SHA1 ya está [siendo] eliminado*»[[1]](https://www.kernel.org/pub/linux/utils/cryptsetup/v1.7/v1.7.0-ReleaseNotes). El antiguo valor predeterminado de `sha1` todavía se puede utilizar para la compatibilidad con versiones anteriores de *cryptsetup*, ya que es [considerado seguro](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#5-security-aspects) (ver elemento 5.20). |
+ | `sha256` | `sha512` | Algoritmo de hash utilizado para [derivación de clave](/index.php/Disk_encryption_(Espa%C3%B1ol)#Metadatos_criptográficos "Disk encryption (Español)"). La versión 1.7.0 cambió los valores predeterminados de `sha1` a `sha256` «*no por razones de seguridad [sino] principalmente para evitar problemas de compatibilidad en sistemas endurecidos donde SHA1 ya está [siendo] eliminado*»[[1]](https://www.kernel.org/pub/linux/utils/cryptsetup/v1.7/v1.7.0-ReleaseNotes). El antiguo valor predeterminado de `sha1` todavía se puede utilizar para la compatibilidad con versiones anteriores de *cryptsetup*, ya que es [considerado seguro](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#5-security-aspects) (ver elemento 5.20). |
 | --iter-time
 
 -i
@@ -196,7 +196,7 @@ Al ejecutarlo se le pedirá una contraseña, que debería tener una entropía mu
 
 -c
 
- | `aes-cbc-essiv:sha256` | `twofish-xts-plain64` | El cifrado consta de tres partes: generador cipher-chainmode-IV (vector de inicialización). Consulte [Disk encryption (Español)#Algoritmos de cifrado y modalidades de operación](/index.php/Disk_encryption_(Espa%C3%B1ol)#Algoritmos_de_cifrado_y_modalidades_de_operaci.C3.B3n "Disk encryption (Español)") para obtener una explicación de esta configuración, y la [DMCrypt documentación](https://gitlab.com/cryptsetup/cryptsetup/wikis/DMCrypt) para algunas de las opciones disponibles. |
+ | `aes-cbc-essiv:sha256` | `twofish-xts-plain64` | El cifrado consta de tres partes: generador cipher-chainmode-IV (vector de inicialización). Consulte [Disk encryption (Español)#Algoritmos de cifrado y modalidades de operación](/index.php/Disk_encryption_(Espa%C3%B1ol)#Algoritmos_de_cifrado_y_modalidades_de_operación "Disk encryption (Español)") para obtener una explicación de esta configuración, y la [DMCrypt documentación](https://gitlab.com/cryptsetup/cryptsetup/wikis/DMCrypt) para algunas de las opciones disponibles. |
 | --key-size
 
 -s
@@ -239,7 +239,7 @@ Debería existir una entrada para `/dev/mapper/enc`.
 
 Esta sección muestra cómo emplear las opciones para crear nuevos dispositivos de bloques encriptados y acceder a ellos manualmente.
 
-**Advertencia:** GRUB no admite encabezados LUKS2\. Por lo tanto, si planea [desbloquear con GRUB una partición de arranque cifrada](/index.php/GRUB_(Espa%C3%B1ol)#Partici.C3.B3n_de_arranque "GRUB (Español)"), no especifique `luks2` para el tipo de parámetro de cifrado en particiones de arranque.
+**Advertencia:** GRUB no admite encabezados LUKS2\. Por lo tanto, si planea [desbloquear con GRUB una partición de arranque cifrada](/index.php/GRUB_(Espa%C3%B1ol)#Partición_de_arranque "GRUB (Español)"), no especifique `luks2` para el tipo de parámetro de cifrado en particiones de arranque.
 
 ### Cifrar dispositivos con la modalidad LUKS
 
@@ -287,7 +287,7 @@ Consulte [#Archivos de claves](#Archivos_de_claves) para obtener instrucciones s
 
 Una vez que se han creado las particiones LUKS, se pueden desbloquear.
 
-El proceso de desbloqueo asignará a las particiones un nuevo nombre de dispositivo utilizando el mapeador de dispositivos («*device mapper*»). Esto alerta al kernel de que el `*dispositivo*` es, en realidad, un dispositivo cifrado y debe redireccionarlo a través de LUKS utilizando `/dev/mapper/*nombre_dispositivo_mapeado*` para no sobrescribir los datos encriptados. Para protegerse contra la sobrescritura accidental, lea acerca de las posibilidades para [realizar una copia de seguridad del encabezado cifrado](#Copia_de_seguridad_y_restauraci.C3.B3n) después de finalizar la configuración.
+El proceso de desbloqueo asignará a las particiones un nuevo nombre de dispositivo utilizando el mapeador de dispositivos («*device mapper*»). Esto alerta al kernel de que el `*dispositivo*` es, en realidad, un dispositivo cifrado y debe redireccionarlo a través de LUKS utilizando `/dev/mapper/*nombre_dispositivo_mapeado*` para no sobrescribir los datos encriptados. Para protegerse contra la sobrescritura accidental, lea acerca de las posibilidades para [realizar una copia de seguridad del encabezado cifrado](#Copia_de_seguridad_y_restauración) después de finalizar la configuración.
 
 Para abrir una partición cifrada con LUKS ejecute:
 
@@ -630,7 +630,7 @@ Luego, se puede realizar una restauración utilizando los mismos valores que los
 
 El paquete [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) contiene la herramienta *cryptsetup-reencrypt*. Se puede usar para convertir un sistema de archivos sin cifrar existente a uno LUKS cifrado (opción `--new`) y eliminar permanentemente el cifrado LUKS (`--decrypt`) de un dispositivo. Como su nombre sugiere, también se puede usar para volver a cifrar un dispositivo cifrado con LUKS existente, sin embargo, no es posible volver a cifrarlo para un encabezado LUKS separado u otras modalidades de cifrado (por ejemplo, modo plain). Para volver a cifrar es posible cambiar las [#Opciones de cifrado para la modalidad LUKS](#Opciones_de_cifrado_para_la_modalidad_LUKS). Las acciones *cryptsetup-reencrypt* solo se pueden realizar en dispositivos sin montar. Consulte [cryptsetup-reencrypt(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cryptsetup-reencrypt.8) para obtener más información.
 
-Una aplicación del recifrado puede ser asegurar los datos nuevamente después de que una frase de contraseña o [#Archivos de claves](#Archivos_de_claves) hayan sido comprometidos *y* no se puede estar seguro de que no se haya obtenido una copia del encabezado LUKS. Por ejemplo, si solo se ha utilizado el sistema cifrado por una frase de contraseña pero no se ha tenido acceso físico/lógico al dispositivo, sería suficiente cambiar solo la frase de contraseña/clave respectiva ([#Gestión de claves](#Gesti.C3.B3n_de_claves).
+Una aplicación del recifrado puede ser asegurar los datos nuevamente después de que una frase de contraseña o [#Archivos de claves](#Archivos_de_claves) hayan sido comprometidos *y* no se puede estar seguro de que no se haya obtenido una copia del encabezado LUKS. Por ejemplo, si solo se ha utilizado el sistema cifrado por una frase de contraseña pero no se ha tenido acceso físico/lógico al dispositivo, sería suficiente cambiar solo la frase de contraseña/clave respectiva ([#Gestión de claves](#Gestión_de_claves).
 
 **Advertencia:** ¡Asegúrese siempre de que esté disponible una **copia de seguridad confiable** y verifique las opciones que especifique antes de usar la herramienta!
 
@@ -792,7 +792,7 @@ Ahora puede montar el contenedor de nuevo:
 
 ## Archivos de claves
 
-**Nota:** Esta sección describe el uso de un archivo de claves de texto plano. Si desea cifrar su archivo de claves dándole una autenticación de dos factores, consulte [Using GPG or OpenSSL Encrypted Keyfiles](/index.php/Dm-crypt/Specialties#Using_GPG.2C_LUKS.2C_or_OpenSSL_Encrypted_Keyfiles "Dm-crypt/Specialties") para obtener más información, pero no deje de leer esta sección.
+**Nota:** Esta sección describe el uso de un archivo de claves de texto plano. Si desea cifrar su archivo de claves dándole una autenticación de dos factores, consulte [Using GPG or OpenSSL Encrypted Keyfiles](/index.php/Dm-crypt/Specialties#Using_GPG,_LUKS,_or_OpenSSL_Encrypted_Keyfiles "Dm-crypt/Specialties") para obtener más información, pero no deje de leer esta sección.
 
 **¿Qué es un archivo de claves?**
 
@@ -954,7 +954,7 @@ En este ejemplo, se supone que utiliza una unidad USB con formato FAT (módulo `
 
 Si tiene un teclado no estadounidense, puede resultar útil cargar la distribución del teclado antes de que se le solicite ingresar la contraseña para desbloquear la partición raíz en el inicio. Para esto, necesitará el hook `keymap` antes de `encrypt`.
 
-[regenere initramfs](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Creaci.C3.B3n_de_la_imagen_y_activaci.C3.B3n "Mkinitcpio (Español)").
+[regenere initramfs](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Creación_de_la_imagen_y_activación "Mkinitcpio (Español)").
 
 ##### Configurar parámetros del kernel
 
@@ -993,7 +993,7 @@ El hook `encrypt` permite al usuario especificar un archivo de claves con el par
 
 Si usa `sd-encrypt` en lugar de `encrypt`, especifique la ubicación del archivo de claves con el parámetro del kernel `rd.luks.key`. Consulte [dm-crypt/System configuration#rd.luks.key](/index.php/Dm-crypt/System_configuration#rd.luks.key "Dm-crypt/System configuration").
 
-[Genere el archivo de claves](#Crear_un_archivo_claves_con_caracteres_aleatorios), otórguele los permisos adecuados y [agréguelo como una clave LUKS](#A.C3.B1adir_claves_LUKS):
+[Genere el archivo de claves](#Crear_un_archivo_claves_con_caracteres_aleatorios), otórguele los permisos adecuados y [agréguelo como una clave LUKS](#Añadir_claves_LUKS):
 
 ```
 # dd bs=512 count=4 if=/dev/random of=/crypto_keyfile.bin
@@ -1009,7 +1009,7 @@ Incluya la clave en la [matriz de FILES de mkinitcpio](/index.php/Mkinitcpio_(Es
 
  `/etc/mkinitcpio.conf`  `FILES=(/crypto_keyfile.bin)` 
 
-Finalmente [regenere initramfs](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Creaci.C3.B3n_de_la_imagen_y_activaci.C3.B3n "Mkinitcpio (Español)").
+Finalmente [regenere initramfs](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Creación_de_la_imagen_y_activación "Mkinitcpio (Español)").
 
 En el siguiente reinicio, solo debe ingresar la frase de contraseña de descifrado del contenedor una vez.
 

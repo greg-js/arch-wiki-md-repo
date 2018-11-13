@@ -12,13 +12,13 @@ Related articles
 *   [1 Installation](#Installation)
 *   [2 Basic configuration](#Basic_configuration)
     *   [2.1 Main parameters](#Main_parameters)
-    *   [2.2 TLS, security & authentication](#TLS.2C_security_.26_authentication)
-    *   [2.3 Routing, transport & retry](#Routing.2C_transport_.26_retry)
+    *   [2.2 TLS, security & authentication](#TLS,_security_&_authentication)
+    *   [2.3 Routing, transport & retry](#Routing,_transport_&_retry)
         *   [2.3.1 Use manualroute](#Use_manualroute)
     *   [2.4 ACL: Access Control Lists](#ACL:_Access_Control_Lists)
     *   [2.5 Hide machine name](#Hide_machine_name)
     *   [2.6 Startup](#Startup)
-*   [3 Dovecot LMTP delivery & SASL authentication](#Dovecot_LMTP_delivery_.26_SASL_authentication)
+*   [3 Dovecot LMTP delivery & SASL authentication](#Dovecot_LMTP_delivery_&_SASL_authentication)
 *   [4 Using Gmail as smarthost](#Using_Gmail_as_smarthost)
 *   [5 Hardening](#Hardening)
     *   [5.1 Rate limits](#Rate_limits)
@@ -67,7 +67,7 @@ timeout_frozen_after = 7d
 
 **Warning:** If you deploy [TLS](https://en.wikipedia.org/wiki/TLS "wikipedia:TLS"), be sure to follow [Server-side TLS](/index.php/Server-side_TLS "Server-side TLS") to prevent vulnerabilities.
 
-To obtain a certificate, see [OpenSSL#Certificates](/index.php/OpenSSL#Certificates "OpenSSL").
+To obtain a certificate, see [OpenSSL#Usage](/index.php/OpenSSL#Usage "OpenSSL").
 
 The first part of the following options are still part of the first configuration section in Exim. Starting with "begin authenticators" the first special section in Exim configuration begins. There will be more such sections later. Below some very basic security related options are defined, TLS is set up & a plain text authenticator using a user password lookup is introduced.
 

@@ -5,12 +5,12 @@ Este artículo es una traducción de [Incron](/index.php/Incron "Incron"), revis
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Activación e inicio automático](#Activaci.C3.B3n_e_inicio_autom.C3.A1tico)
-*   [3 Configuración](#Configuraci.C3.B3n)
+*   [1 Instalación](#Instalación)
+*   [2 Activación e inicio automático](#Activación_e_inicio_automático)
+*   [3 Configuración](#Configuración)
     *   [3.1 Usar incrontab](#Usar_incrontab)
     *   [3.2 Formato Incrontab](#Formato_Incrontab)
-        *   [3.2.1 Tipos de máscara](#Tipos_de_m.C3.A1scara)
+        *   [3.2.1 Tipos de máscara](#Tipos_de_máscara)
 
 ## Instalación
 

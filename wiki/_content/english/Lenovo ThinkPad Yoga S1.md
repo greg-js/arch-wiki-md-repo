@@ -30,7 +30,7 @@ Battery functions like charging thresholds can be controlled using the script [t
 
 ### Graphics
 
-The graphics driver is provided by the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) package from the [Official repositories](/index.php/Official_repositories "Official repositories"). Unfortunately screen is very PWMed, so you might need to [fix](/index.php/Backlight#Backlight_PWM_modulation_frequency_.28Intel_i915_only.29 "Backlight") it. Also [TearFree video](/index.php/Intel_graphics#Tear-free_video "Intel graphics") works great
+The graphics driver is provided by the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) package from the [Official repositories](/index.php/Official_repositories "Official repositories"). Unfortunately screen is very PWMed, so you might need to [fix](/index.php/Backlight#Backlight_PWM_modulation_frequency_.28Intel_i915_only.29 "Backlight") it. Also [TearFree video](/index.php/Intel_graphics#Tearing "Intel graphics") works great
 
 ### Touchscreen and Stylus
 

@@ -39,7 +39,7 @@ As a result:
         *   [5.2.1 SLOG](#SLOG)
         *   [5.2.2 L2ARC](#L2ARC)
     *   [5.3 Database](#Database)
-    *   [5.4 /tmp](#.2Ftmp)
+    *   [5.4 /tmp](#/tmp)
     *   [5.5 ZVOLs](#ZVOLs)
         *   [5.5.1 RAIDZ and Advanced Format physical disks](#RAIDZ_and_Advanced_Format_physical_disks)
 *   [6 Usage](#Usage)
@@ -60,12 +60,12 @@ As a result:
     *   [7.2 ZFS is using too much RAM](#ZFS_is_using_too_much_RAM)
     *   [7.3 Does not contain an EFI label](#Does_not_contain_an_EFI_label)
     *   [7.4 No hostid found](#No_hostid_found)
-    *   [7.5 Pool cannot be found while booting from SAS/SCSI devices](#Pool_cannot_be_found_while_booting_from_SAS.2FSCSI_devices)
-    *   [7.6 On boot the zfs pool does not mount stating: "pool may be in use from other system"](#On_boot_the_zfs_pool_does_not_mount_stating:_.22pool_may_be_in_use_from_other_system.22)
+    *   [7.5 Pool cannot be found while booting from SAS/SCSI devices](#Pool_cannot_be_found_while_booting_from_SAS/SCSI_devices)
+    *   [7.6 On boot the zfs pool does not mount stating: "pool may be in use from other system"](#On_boot_the_zfs_pool_does_not_mount_stating:_"pool_may_be_in_use_from_other_system")
         *   [7.6.1 Unexported pool](#Unexported_pool)
         *   [7.6.2 Incorrect hostid](#Incorrect_hostid)
     *   [7.7 Devices have different sector alignment](#Devices_have_different_sector_alignment)
-    *   [7.8 Pool resilvering stuck/restarting/slow?](#Pool_resilvering_stuck.2Frestarting.2Fslow.3F)
+    *   [7.8 Pool resilvering stuck/restarting/slow?](#Pool_resilvering_stuck/restarting/slow?)
     *   [7.9 Fix slow boot caused by failed import of unavailable pools in the initramfs zpool.cache](#Fix_slow_boot_caused_by_failed_import_of_unavailable_pools_in_the_initramfs_zpool.cache)
 *   [8 Tips and tricks](#Tips_and_tricks)
     *   [8.1 Embed the archzfs packages into an archiso](#Embed_the_archzfs_packages_into_an_archiso)
@@ -73,8 +73,8 @@ As a result:
     *   [8.3 Emergency chroot repair with archzfs](#Emergency_chroot_repair_with_archzfs)
     *   [8.4 Bind mount](#Bind_mount)
         *   [8.4.1 fstab](#fstab)
-    *   [8.5 Monitoring / Mailing on Events](#Monitoring_.2F_Mailing_on_Events)
-    *   [8.6 Wrap shell commands in pre & post snapshots](#Wrap_shell_commands_in_pre_.26_post_snapshots)
+    *   [8.5 Monitoring / Mailing on Events](#Monitoring_/_Mailing_on_Events)
+    *   [8.6 Wrap shell commands in pre & post snapshots](#Wrap_shell_commands_in_pre_&_post_snapshots)
 *   [9 See also](#See_also)
 
 ## Installation
@@ -633,7 +633,7 @@ To find the name of the pool, see [#Check zfs pool status](#Check_zfs_pool_statu
 
 If a storage pool is to be used on another system, it will first need to be exported. It is also necessary to export a pool if it has been imported from the archiso as the hostid is different in the archiso as it is in the booted system. The zpool command will refuse to import any storage pools that have not been exported. It is possible to force the import with the `-f` argument, but this is considered bad form.
 
-Any attempts made to import an un-exported storage pool will result in an error stating the storage pool is in use by another system. This error can be produced at boot time abruptly abandoning the system in the busybox console and requiring an archiso to do an emergency repair by either exporting the pool, or adding the `zfs_force=1` to the kernel boot parameters (which is not ideal). See [#On boot the zfs pool does not mount stating: "pool may be in use from other system"](#On_boot_the_zfs_pool_does_not_mount_stating:_.22pool_may_be_in_use_from_other_system.22)
+Any attempts made to import an un-exported storage pool will result in an error stating the storage pool is in use by another system. This error can be produced at boot time abruptly abandoning the system in the busybox console and requiring an archiso to do an emergency repair by either exporting the pool, or adding the `zfs_force=1` to the kernel boot parameters (which is not ideal). See [#On boot the zfs pool does not mount stating: "pool may be in use from other system"](#On_boot_the_zfs_pool_does_not_mount_stating:_"pool_may_be_in_use_from_other_system")
 
 To export a pool:
 

@@ -10,23 +10,23 @@
 
 ## Contents
 
-*   [1 准备](#.E5.87.86.E5.A4.87)
-*   [2 安装](#.E5.AE.89.E8.A3.85)
-*   [3 配置](#.E9.85.8D.E7.BD.AE)
+*   [1 准备](#准备)
+*   [2 安装](#安装)
+*   [3 配置](#配置)
     *   [3.1 GRUB legacy](#GRUB_legacy)
     *   [3.2 GRUB](#GRUB)
     *   [3.3 Syslinux](#Syslinux)
-*   [4 小技巧](#.E5.B0.8F.E6.8A.80.E5.B7.A7)
-    *   [4.1 在多个机器上使用优盘](#.E5.9C.A8.E5.A4.9A.E4.B8.AA.E6.9C.BA.E5.99.A8.E4.B8.8A.E4.BD.BF.E7.94.A8.E4.BC.98.E7.9B.98)
-        *   [4.1.1 架构](#.E6.9E.B6.E6.9E.84)
-        *   [4.1.2 输入设备](#.E8.BE.93.E5.85.A5.E8.AE.BE.E5.A4.87)
-        *   [4.1.3 显卡驱动](#.E6.98.BE.E5.8D.A1.E9.A9.B1.E5.8A.A8)
-    *   [4.2 兼容性](#.E5.85.BC.E5.AE.B9.E6.80.A7)
-        *   [4.2.1 持久块设备命名](#.E6.8C.81.E4.B9.85.E5.9D.97.E8.AE.BE.E5.A4.87.E5.91.BD.E5.90.8D)
-        *   [4.2.2 内核参数](#.E5.86.85.E6.A0.B8.E5.8F.82.E6.95.B0)
-        *   [4.2.3 从USB3.0 介质中启动](#.E4.BB.8EUSB3.0_.E4.BB.8B.E8.B4.A8.E4.B8.AD.E5.90.AF.E5.8A.A8)
-    *   [4.3 最小化磁盘访问](#.E6.9C.80.E5.B0.8F.E5.8C.96.E7.A3.81.E7.9B.98.E8.AE.BF.E9.97.AE)
-*   [5 参阅](#.E5.8F.82.E9.98.85)
+*   [4 小技巧](#小技巧)
+    *   [4.1 在多个机器上使用优盘](#在多个机器上使用优盘)
+        *   [4.1.1 架构](#架构)
+        *   [4.1.2 输入设备](#输入设备)
+        *   [4.1.3 显卡驱动](#显卡驱动)
+    *   [4.2 兼容性](#兼容性)
+        *   [4.2.1 持久块设备命名](#持久块设备命名)
+        *   [4.2.2 内核参数](#内核参数)
+        *   [4.2.3 从USB3.0 介质中启动](#从USB3.0_介质中启动)
+    *   [4.3 最小化磁盘访问](#最小化磁盘访问)
+*   [5 参阅](#参阅)
 
 ## 准备
 
@@ -47,7 +47,7 @@
 按照[安装指南](/index.php/Installation_guide "Installation guide")进行安装，仅需注意以下几点：
 
 *   如果 cfdisk 由于 "Partition ends in the final partial cylinder" 这个错误失败，唯一的解决方法就是干掉U盘上的所有分区。打开另一个终端(Alt+F2)，输入 fdisk /dev/sdX (sdX 对应你的 U盘)，显示分区表(p)，查看，删除掉已存在的分区(d)然后保存修改(w)。最后，再进 cfdisk。
-*   强烈建议，关于如何选择文件系统的问题，请先阅读一下 [SSD](/index.php/SSD "SSD") 这篇文章 [关于优化 SSD 固态硬盘读写的技巧](/index.php/SSD#Tips_for_minimizing_disk_reads.2Fwrites "SSD")，总地来说，不带日志(journal)功能的 ext4 是比较通用的优选方案。可以用这样的命令来创建：`# mkfs.ext4 -O "^has_journal" /dev/sdXX`。因为带日志功能的文件系统日志更新会在一定程度上消耗闪存有限的写入寿命。由于同样的原因，最好放弃 swap 分区。注意这个建议并不适用于安装在 USB(机械)硬盘的情况。
+*   强烈建议，关于如何选择文件系统的问题，请先阅读一下 [SSD](/index.php/SSD "SSD") 这篇文章 [关于优化 SSD 固态硬盘读写的技巧](/index.php/SSD#Tips_for_minimizing_disk_reads/writes "SSD")，总地来说，不带日志(journal)功能的 ext4 是比较通用的优选方案。可以用这样的命令来创建：`# mkfs.ext4 -O "^has_journal" /dev/sdXX`。因为带日志功能的文件系统日志更新会在一定程度上消耗闪存有限的写入寿命。由于同样的原因，最好放弃 swap 分区。注意这个建议并不适用于安装在 USB(机械)硬盘的情况。
 *   用 `# mkinitcpio -p linux`创建 RAM Disk 前，在修改 `/etc/mkinitcpio.conf`，将 `block` 添加到紧挨 udev 的后面. 只有这样早期用户空间才能正确的装入模块。
 *   如果想在其它操作系统上继续使用优盘，可以使用 NTFS 或 exFAT 创建数据分区. 数据分区需要是设备的第一个分区，因为 Windows 会假定移动设备仅有一个分区。需要安装 [dosfstools](https://www.archlinux.org/packages/?name=dosfstools) 和 [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g).网上有一些工具可以翻转U盘的可移动媒体位使得操作系统把它当作额外的硬盘，这样你就可以使用你选择的任意磁盘划分方式。
 

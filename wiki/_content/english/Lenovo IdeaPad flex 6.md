@@ -2,7 +2,7 @@ The Lenovo Flex 6 is a flexible dual-mode laptop computer.
 
 ## Contents
 
-*   [1 PCI Devices (AMD)](#PCI_Devices_.28AMD.29)
+*   [1 PCI Devices (AMD)](#PCI_Devices_(AMD))
 *   [2 USB Devices](#USB_Devices)
 *   [3 Hardware Support](#Hardware_Support)
     *   [3.1 UEFI](#UEFI)

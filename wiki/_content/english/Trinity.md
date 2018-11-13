@@ -6,11 +6,11 @@ TDE still depends on an old version of Qt, which they now maintain themselves, s
 
 *   [1 Install binary packages](#Install_binary_packages)
 *   [2 Build from source](#Build_from_source)
-*   [3 Building with Michael's PKGBUILD files](#Building_with_Michael.27s_PKGBUILD_files)
+*   [3 Building with Michael's PKGBUILD files](#Building_with_Michael's_PKGBUILD_files)
 *   [4 Start and configuration](#Start_and_configuration)
     *   [4.1 Enable tdm.service in systemd to start tdm at boot](#Enable_tdm.service_in_systemd_to_start_tdm_at_boot)
     *   [4.2 Configure to work with startx](#Configure_to_work_with_startx)
-*   [5 Trinity "Kicker" panel with other desktop environments](#Trinity_.22Kicker.22_panel_with_other_desktop_environments)
+*   [5 Trinity "Kicker" panel with other desktop environments](#Trinity_"Kicker"_panel_with_other_desktop_environments)
 *   [6 See also](#See_also)
 
 ## Install binary packages

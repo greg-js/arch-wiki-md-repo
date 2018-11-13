@@ -9,12 +9,12 @@ A Master Boot Record (MBR) egy tárolóeszköz első 512 bájtja. Az MBR nem val
 
 ## Contents
 
-*   [1 Rendszerindítás (Boot)](#Rendszerind.C3.ADt.C3.A1s_.28Boot.29)
-*   [2 Történet](#T.C3.B6rt.C3.A9net)
-*   [3 Mentés és helyreállítás](#Ment.C3.A9s_.C3.A9s_helyre.C3.A1ll.C3.ADt.C3.A1s)
-*   [4 A Windows boot record helyreállítása](#A_Windows_boot_record_helyre.C3.A1ll.C3.ADt.C3.A1sa)
-*   [5 TestDisk MBR Kód](#TestDisk_MBR_K.C3.B3d)
-*   [6 Lásd még](#L.C3.A1sd_m.C3.A9g)
+*   [1 Rendszerindítás (Boot)](#Rendszerindítás_(Boot))
+*   [2 Történet](#Történet)
+*   [3 Mentés és helyreállítás](#Mentés_és_helyreállítás)
+*   [4 A Windows boot record helyreállítása](#A_Windows_boot_record_helyreállítása)
+*   [5 TestDisk MBR Kód](#TestDisk_MBR_Kód)
+*   [6 Lásd még](#Lásd_még)
 
 ## Rendszerindítás (Boot)
 

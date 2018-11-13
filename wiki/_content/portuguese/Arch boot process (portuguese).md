@@ -18,21 +18,21 @@ Para inicializar o Arch Linux, um carregador [gerenciador de boot](#Gerenciador_
 *   [1 Tipos de firmware](#Tipos_de_firmware)
     *   [1.1 BIOS](#BIOS)
     *   [1.2 UEFI](#UEFI)
-*   [2 Inicialização do sistema](#Inicializa.C3.A7.C3.A3o_do_sistema)
+*   [2 Inicialização do sistema](#Inicialização_do_sistema)
     *   [2.1 Na BIOS](#Na_BIOS)
     *   [2.2 No UEFI](#No_UEFI)
     *   [2.3 Multiboot no UEFI](#Multiboot_no_UEFI)
 *   [3 Gerenciador de boot](#Gerenciador_de_boot)
-*   [4 Comparação de recursos](#Compara.C3.A7.C3.A3o_de_recursos)
+*   [4 Comparação de recursos](#Comparação_de_recursos)
 *   [5 Kernel](#Kernel)
 *   [6 initramfs](#initramfs)
 *   [7 Processo init](#Processo_init)
 *   [8 Getty](#Getty)
-*   [9 Gerenciador de exibição](#Gerenciador_de_exibi.C3.A7.C3.A3o)
+*   [9 Gerenciador de exibição](#Gerenciador_de_exibição)
 *   [10 Login](#Login)
 *   [11 Shell](#Shell)
-*   [12 GUI, xinit ou wayland](#GUI.2C_xinit_ou_wayland)
-*   [13 Veja também](#Veja_tamb.C3.A9m)
+*   [12 GUI, xinit ou wayland](#GUI,_xinit_ou_wayland)
+*   [13 Veja também](#Veja_também)
 
 ## Tipos de firmware
 
@@ -54,7 +54,7 @@ O UEFI inicia aplicativos EFI, por exemplo [gerenciadores de boot](#Gerenciador_
 
 1.  Sistema ligado, o [power-on self-test (POST)](https://en.wikipedia.org/wiki/pt:Power_On_Self_Test "wikipedia:pt:Power On Self Test") (*autoteste de inicialização*) é executado.
 2.  Após o POST, a BIOS inicializa o hardware de sistema necessário para inicializar (disco, controladores de teclado etc.).
-3.  A BIOS inicia os primeiros 440 bytes ([a área de código de bootstrap do Master Boot Record](/index.php/Partitioning#Master_Boot_Record_.28bootstrap_code.29 "Partitioning")) do primeiro disco na ordem de disco da BIOS.
+3.  A BIOS inicia os primeiros 440 bytes ([a área de código de bootstrap do Master Boot Record](/index.php/Partitioning#Master_Boot_Record_(bootstrap_code) "Partitioning")) do primeiro disco na ordem de disco da BIOS.
 4.  O primeiro estágio do gerenciador de boot no código de inicialização da MBR, então, inicia o código de seu segundo estágio (se houver) de:
     *   próximos setores de disco após o MBR, ou seja, o chamado intervalo pós-MBR (somente em uma tabela de partição MBR).
     *   um [registro de inicialização de volume (VBR)](https://en.wikipedia.org/wiki/Volume_boot_record "wikipedia:Volume boot record") do disco com partição ou sem partição.

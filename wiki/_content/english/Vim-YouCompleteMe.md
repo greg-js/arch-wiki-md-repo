@@ -13,17 +13,17 @@
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 C/C++](#C.2FC.2B.2B)
+    *   [2.1 C/C++](#C/C++)
         *   [2.1.1 Extra conf structure](#Extra_conf_structure)
         *   [2.1.2 Extra conf location](#Extra_conf_location)
     *   [2.2 Java](#Java)
-    *   [2.3 C#](#C.23)
+    *   [2.3 C#](#C#)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 E764: Option 'omnifunc' is not set](#E764:_Option_.27omnifunc.27_is_not_set)
+    *   [3.1 E764: Option 'omnifunc' is not set](#E764:_Option_'omnifunc'_is_not_set)
     *   [3.2 No completion in Java files](#No_completion_in_Java_files)
-    *   [3.3 URLError: <urlopen error [Errno 111] Connection refused>](#URLError:_.3Curlopen_error_.5BErrno_111.5D_Connection_refused.3E)
+    *   [3.3 URLError: <urlopen error [Errno 111] Connection refused>](#URLError:_<urlopen_error_[Errno_111]_Connection_refused>)
     *   [3.4 RuntimeError: Error starting OmniSharp server: no solutionfile found](#RuntimeError:_Error_starting_OmniSharp_server:_no_solutionfile_found)
-    *   [3.5 Ctrl+space does not trigger the completion anymore in terminal vim](#Ctrl.2Bspace_does_not_trigger_the_completion_anymore_in_terminal_vim)
+    *   [3.5 Ctrl+space does not trigger the completion anymore in terminal vim](#Ctrl+space_does_not_trigger_the_completion_anymore_in_terminal_vim)
 *   [4 See also](#See_also)
 
 ## Installation

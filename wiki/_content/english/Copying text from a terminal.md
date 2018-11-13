@@ -4,7 +4,7 @@ Most mature terminal emulators permit users to copy or save their contents.
 
 *   [1 General approach](#General_approach)
     *   [1.1 Terminals without CLIPBOARD selection](#Terminals_without_CLIPBOARD_selection)
-    *   [1.2 Intercepting commands’s output](#Intercepting_commands.E2.80.99s_output)
+    *   [1.2 Intercepting commands’s output](#Intercepting_commands’s_output)
     *   [1.3 Accessing Linux terminal backlog](#Accessing_Linux_terminal_backlog)
 *   [2 Comparison of common emulators](#Comparison_of_common_emulators)
 *   [3 Special cases](#Special_cases)
@@ -18,7 +18,7 @@ In graphical terminal emulators, contents are typically selectable by mouse, and
 
 ### Terminals without CLIPBOARD selection
 
-Some emulators do not support the [CLIPBOARD selection](/index.php/Clipboard#Background "Clipboard") natively, and copy data to the PRIMARY selection. For them [xclip](https://www.archlinux.org/packages/?name=xclip) may be used:
+Some emulators do not support the [CLIPBOARD selection](/index.php/Clipboard#Selections "Clipboard") natively, and copy data to the PRIMARY selection. For them [xclip](https://www.archlinux.org/packages/?name=xclip) may be used:
 
 ```
 $ xclip -o | xclip -selection clipboard -i

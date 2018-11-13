@@ -18,7 +18,7 @@ This page aims to document all relevant information on getting Arch Linux workin
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Invalid signature detected check secure boot policy in setup](#Invalid_signature_detected_check_secure_boot_policy_in_setup)
     *   [4.2 Keyboard Cover not working](#Keyboard_Cover_not_working)
-    *   [4.3 Pen/Touchscreen issues in Xournal](#Pen.2FTouchscreen_issues_in_Xournal)
+    *   [4.3 Pen/Touchscreen issues in Xournal](#Pen/Touchscreen_issues_in_Xournal)
 
 ## Booting into the installer
 

@@ -24,7 +24,7 @@ Related articles
     *   [2.1 Fan throttling](#Fan_throttling)
     *   [2.2 Intel CPU microcode](#Intel_CPU_microcode)
     *   [2.3 Network](#Network)
-        *   [2.3.1 WLAN BIOS whitelist workaround (experimental)](#WLAN_BIOS_whitelist_workaround_.28experimental.29)
+        *   [2.3.1 WLAN BIOS whitelist workaround (experimental)](#WLAN_BIOS_whitelist_workaround_(experimental))
     *   [2.4 Bluetooth](#Bluetooth)
         *   [2.4.1 hciconfig -a](#hciconfig_-a)
     *   [2.5 Graphics](#Graphics)

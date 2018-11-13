@@ -4,9 +4,9 @@ Eclipse IDE написана, в основном, на Java. Однако, он
 
 ## Contents
 
-*   [1 Установка Eclipse](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_Eclipse)
-*   [2 Плагины](#.D0.9F.D0.BB.D0.B0.D0.B3.D0.B8.D0.BD.D1.8B)
-    *   [2.1 C/C++](#C.2FC.2B.2B)
+*   [1 Установка Eclipse](#Установка_Eclipse)
+*   [2 Плагины](#Плагины)
+    *   [2.1 C/C++](#C/C++)
         *   [2.1.1 Eclipse CDT](#Eclipse_CDT)
     *   [2.2 perl](#perl)
         *   [2.2.1 EPIC](#EPIC)
@@ -15,7 +15,7 @@ Eclipse IDE написана, в основном, на Java. Однако, он
         *   [2.3.2 PHPEclipse](#PHPEclipse)
     *   [2.4 Python](#Python)
         *   [2.4.1 PyDev](#PyDev)
-    *   [2.5 Веб-разработка (HTML, CSS, JavaScript...)](#.D0.92.D0.B5.D0.B1-.D1.80.D0.B0.D0.B7.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.BA.D0.B0_.28HTML.2C_CSS.2C_JavaScript....29)
+    *   [2.5 Веб-разработка (HTML, CSS, JavaScript...)](#Веб-разработка_(HTML,_CSS,_JavaScript...))
         *   [2.5.1 Aptana Studio](#Aptana_Studio)
     *   [2.6 Subversion](#Subversion)
         *   [2.6.1 Subclipse](#Subclipse)
@@ -26,11 +26,11 @@ Eclipse IDE написана, в основном, на Java. Однако, он
         *   [2.8.1 MercurialEclipse](#MercurialEclipse)
     *   [2.9 LaTeX support](#LaTeX_support)
         *   [2.9.1 TeXlipse](#TeXlipse)
-*   [3 Настройка Eclipse](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_Eclipse)
-    *   [3.1 Включение обновлений](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BE.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B9)
-*   [4 Интеграция с javadoc](#.D0.98.D0.BD.D1.82.D0.B5.D0.B3.D1.80.D0.B0.D1.86.D0.B8.D1.8F_.D1.81_javadoc)
-    *   [4.1 Онлайн Версия](#.D0.9E.D0.BD.D0.BB.D0.B0.D0.B9.D0.BD_.D0.92.D0.B5.D1.80.D1.81.D0.B8.D1.8F)
-    *   [4.2 Оффлайн Версия](#.D0.9E.D1.84.D1.84.D0.BB.D0.B0.D0.B9.D0.BD_.D0.92.D0.B5.D1.80.D1.81.D0.B8.D1.8F)
+*   [3 Настройка Eclipse](#Настройка_Eclipse)
+    *   [3.1 Включение обновлений](#Включение_обновлений)
+*   [4 Интеграция с javadoc](#Интеграция_с_javadoc)
+    *   [4.1 Онлайн Версия](#Онлайн_Версия)
+    *   [4.2 Оффлайн Версия](#Оффлайн_Версия)
 
 ## Установка Eclipse
 

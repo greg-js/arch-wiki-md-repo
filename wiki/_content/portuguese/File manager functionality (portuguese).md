@@ -11,25 +11,25 @@ Este artigo descreve os pacotes de software adicionais necessários para expandi
 
 ## Contents
 
-*   [1 Visão geral](#Vis.C3.A3o_geral)
+*   [1 Visão geral](#Visão_geral)
 *   [2 Recursos adicionais](#Recursos_adicionais)
     *   [2.1 Montando](#Montando)
         *   [2.1.1 Daemon de gerenciador de arquivos](#Daemon_de_gerenciador_de_arquivos)
-        *   [2.1.2 Autônomo](#Aut.C3.B4nomo)
+        *   [2.1.2 Autônomo](#Autônomo)
     *   [2.2 Redes](#Redes)
         *   [2.2.1 Acesso a Windows](#Acesso_a_Windows)
         *   [2.2.2 Acesso a Apple](#Acesso_a_Apple)
-    *   [2.3 Visualização de miniaturas](#Visualiza.C3.A7.C3.A3o_de_miniaturas)
-        *   [2.3.1 Gerenciadores de arquivo além do Dolphin e Konqueror](#Gerenciadores_de_arquivo_al.C3.A9m_do_Dolphin_e_Konqueror)
-        *   [2.3.2 Dolphin e Konqueror (KDE)](#Dolphin_e_Konqueror_.28KDE.29)
+    *   [2.3 Visualização de miniaturas](#Visualização_de_miniaturas)
+        *   [2.3.1 Gerenciadores de arquivo além do Dolphin e Konqueror](#Gerenciadores_de_arquivo_além_do_Dolphin_e_Konqueror)
+        *   [2.3.2 Dolphin e Konqueror (KDE)](#Dolphin_e_Konqueror_(KDE))
     *   [2.4 Arquivos de pacotes](#Arquivos_de_pacotes)
-    *   [2.5 Suporte a leitura/escrita de NTFS](#Suporte_a_leitura.2Fescrita_de_NTFS)
-    *   [2.6 Notificações de desktop](#Notifica.C3.A7.C3.B5es_de_desktop)
-    *   [2.7 Habilitar funcionalidade de lixeira em sistemas diferentes (unidades externas)](#Habilitar_funcionalidade_de_lixeira_em_sistemas_diferentes_.28unidades_externas.29)
-*   [3 Solução de problemas](#Solu.C3.A7.C3.A3o_de_problemas)
-    *   [3.1 "Not Authorized" ao tentar montar as unidades](#.22Not_Authorized.22_ao_tentar_montar_as_unidades)
-    *   [3.2 Senhas necessária para acessar partições](#Senhas_necess.C3.A1ria_para_acessar_parti.C3.A7.C3.B5es)
-    *   [3.3 Diretórios não são abertos no gerenciador de arquivos](#Diret.C3.B3rios_n.C3.A3o_s.C3.A3o_abertos_no_gerenciador_de_arquivos)
+    *   [2.5 Suporte a leitura/escrita de NTFS](#Suporte_a_leitura/escrita_de_NTFS)
+    *   [2.6 Notificações de desktop](#Notificações_de_desktop)
+    *   [2.7 Habilitar funcionalidade de lixeira em sistemas diferentes (unidades externas)](#Habilitar_funcionalidade_de_lixeira_em_sistemas_diferentes_(unidades_externas))
+*   [3 Solução de problemas](#Solução_de_problemas)
+    *   [3.1 "Not Authorized" ao tentar montar as unidades](#"Not_Authorized"_ao_tentar_montar_as_unidades)
+    *   [3.2 Senhas necessária para acessar partições](#Senhas_necessária_para_acessar_partições)
+    *   [3.3 Diretórios não são abertos no gerenciador de arquivos](#Diretórios_não_são_abertos_no_gerenciador_de_arquivos)
 
 ## Visão geral
 

@@ -1,39 +1,39 @@
 ## Contents
 
 *   [1 Zabezpieczanie niezaszyfrowanej partycji rozruchowej](#Zabezpieczanie_niezaszyfrowanej_partycji_rozruchowej)
-    *   [1.1 Uruchamianie z urządzenia wymiennego](#Uruchamianie_z_urz.C4.85dzenia_wymiennego)
+    *   [1.1 Uruchamianie z urządzenia wymiennego](#Uruchamianie_z_urządzenia_wymiennego)
     *   [1.2 chkboot](#chkboot)
     *   [1.3 mkinitcpio-chkcryptoboot](#mkinitcpio-chkcryptoboot)
         *   [1.3.1 Instalacja](#Instalacja)
         *   [1.3.2 Technical Overview](#Technical_Overview)
     *   [1.4 Inne metody](#Inne_metody)
-*   [2 Używanie zaszyfrowanych plików kluczy GPG, LUKS lub OpenSSL](#U.C5.BCywanie_zaszyfrowanych_plik.C3.B3w_kluczy_GPG.2C_LUKS_lub_OpenSSL)
-*   [3 Zdalne odblokowanie partycji root (lub innej)](#Zdalne_odblokowanie_partycji_root_.28lub_innej.29)
-    *   [3.1 Zdalne odblokowanie (haki: systemd, systemd-tool)](#Zdalne_odblokowanie_.28haki:_systemd.2C_systemd-tool.29)
-    *   [3.2 Zdalne odblokowanie (haki: netconf, dropbear, tinyssh, ppp)](#Zdalne_odblokowanie_.28haki:_netconf.2C_dropbear.2C_tinyssh.2C_ppp.29)
-    *   [3.3 Zdalne odblokowanie przez Wi-Fi (haki: buduj własne)](#Zdalne_odblokowanie_przez_Wi-Fi_.28haki:_buduj_w.C5.82asne.29)
-*   [4 Obsługa Discard / TRIM dla dysków półprzewodnikowych (SSD)](#Obs.C5.82uga_Discard_.2F_TRIM_dla_dysk.C3.B3w_p.C3.B3.C5.82przewodnikowych_.28SSD.29)
-*   [5 Szyfrowanie hakiem i wiele dysków](#Szyfrowanie_hakiem_i_wiele_dysk.C3.B3w)
+*   [2 Używanie zaszyfrowanych plików kluczy GPG, LUKS lub OpenSSL](#Używanie_zaszyfrowanych_plików_kluczy_GPG,_LUKS_lub_OpenSSL)
+*   [3 Zdalne odblokowanie partycji root (lub innej)](#Zdalne_odblokowanie_partycji_root_(lub_innej))
+    *   [3.1 Zdalne odblokowanie (haki: systemd, systemd-tool)](#Zdalne_odblokowanie_(haki:_systemd,_systemd-tool))
+    *   [3.2 Zdalne odblokowanie (haki: netconf, dropbear, tinyssh, ppp)](#Zdalne_odblokowanie_(haki:_netconf,_dropbear,_tinyssh,_ppp))
+    *   [3.3 Zdalne odblokowanie przez Wi-Fi (haki: buduj własne)](#Zdalne_odblokowanie_przez_Wi-Fi_(haki:_buduj_własne))
+*   [4 Obsługa Discard / TRIM dla dysków półprzewodnikowych (SSD)](#Obsługa_Discard_/_TRIM_dla_dysków_półprzewodnikowych_(SSD))
+*   [5 Szyfrowanie hakiem i wiele dysków](#Szyfrowanie_hakiem_i_wiele_dysków)
     *   [5.1 Rozszerzanie LVM na wielu dyskach](#Rozszerzanie_LVM_na_wielu_dyskach)
         *   [5.1.1 Dodanie nowego dysku](#Dodanie_nowego_dysku)
         *   [5.1.2 Rozszerzanie woluminu logicznego](#Rozszerzanie_woluminu_logicznego)
-    *   [5.2 Modyfikowanie haków szyfrowania dla wielu partycji](#Modyfikowanie_hak.C3.B3w_szyfrowania_dla_wielu_partycji)
-        *   [5.2.1 Główny system plików obejmujący wiele partycji](#G.C5.82.C3.B3wny_system_plik.C3.B3w_obejmuj.C4.85cy_wiele_partycji)
-        *   [5.2.2 Wiele partycji innych niż root](#Wiele_partycji_innych_ni.C5.BC_root)
-*   [6 Szyfrowany system za pomocą oddzielnego nagłówka LUKS](#Szyfrowany_system_za_pomoc.C4.85_oddzielnego_nag.C5.82.C3.B3wka_LUKS)
-    *   [6.1 Używanie haka systemd](#U.C5.BCywanie_haka_systemd)
+    *   [5.2 Modyfikowanie haków szyfrowania dla wielu partycji](#Modyfikowanie_haków_szyfrowania_dla_wielu_partycji)
+        *   [5.2.1 Główny system plików obejmujący wiele partycji](#Główny_system_plików_obejmujący_wiele_partycji)
+        *   [5.2.2 Wiele partycji innych niż root](#Wiele_partycji_innych_niż_root)
+*   [6 Szyfrowany system za pomocą oddzielnego nagłówka LUKS](#Szyfrowany_system_za_pomocą_oddzielnego_nagłówka_LUKS)
+    *   [6.1 Używanie haka systemd](#Używanie_haka_systemd)
     *   [6.2 Modyfikowanie haka szyfrowania](#Modyfikowanie_haka_szyfrowania)
-*   [7 Szyfrowanie /boot i odłączony nagłówek LUKS na USB](#Szyfrowanie_.2Fboot_i_od.C5.82.C4.85czony_nag.C5.82.C3.B3wek_LUKS_na_USB)
-    *   [7.1 Przygotowywanie urządzeń dyskowych](#Przygotowywanie_urz.C4.85dze.C5.84_dyskowych)
+*   [7 Szyfrowanie /boot i odłączony nagłówek LUKS na USB](#Szyfrowanie_/boot_i_odłączony_nagłówek_LUKS_na_USB)
+    *   [7.1 Przygotowywanie urządzeń dyskowych](#Przygotowywanie_urządzeń_dyskowych)
         *   [7.1.1 Przygotowanie klucza USB](#Przygotowanie_klucza_USB)
-        *   [7.1.2 Główny napęd](#G.C5.82.C3.B3wny_nap.C4.99d)
+        *   [7.1.2 Główny napęd](#Główny_napęd)
     *   [7.2 Procedura instalacji i niestandardowe szyfrowanie hook](#Procedura_instalacji_i_niestandardowe_szyfrowanie_hook)
         *   [7.2.1 Boot Loader](#Boot_Loader)
     *   [7.3 Zmiana pliku klucza LUKS](#Zmiana_pliku_klucza_LUKS)
 
 ## Zabezpieczanie niezaszyfrowanej partycji rozruchowej
 
-Partycja `/boot` i [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") to dwa obszary dysku, które nie są zaszyfrowane, nawet w [encrypted root](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system"). Zwykle nie można ich zaszyfrować, ponieważ [boot loader](/index.php/Boot_loader "Boot loader") i BIOS (odpowiednio) nie mogą odblokować kontenera dm-crypt, aby kontynuować proces uruchamiania. Wyjątkiem jest [GRUB](/index.php/GRUB "GRUB"), który uzyskał funkcję odblokowania LUKSa zaszyfrowanego `/boot` - patrz [dm-crypt/Encrypting an entire system#Encrypted boot partition (GRUB)](/index.php/Dm-crypt/Encrypting_an_entire_system#Encrypted_boot_partition_.28GRUB.29 "Dm-crypt/Encrypting an entire system").
+Partycja `/boot` i [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") to dwa obszary dysku, które nie są zaszyfrowane, nawet w [encrypted root](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system"). Zwykle nie można ich zaszyfrować, ponieważ [boot loader](/index.php/Boot_loader "Boot loader") i BIOS (odpowiednio) nie mogą odblokować kontenera dm-crypt, aby kontynuować proces uruchamiania. Wyjątkiem jest [GRUB](/index.php/GRUB "GRUB"), który uzyskał funkcję odblokowania LUKSa zaszyfrowanego `/boot` - patrz [dm-crypt/Encrypting an entire system#Encrypted boot partition (GRUB)](/index.php/Dm-crypt/Encrypting_an_entire_system#Encrypted_boot_partition_(GRUB) "Dm-crypt/Encrypting an entire system").
 
 W tej sekcji opisano kroki, które można podjąć w celu zwiększenia bezpieczeństwa procesu rozruchu.
 
@@ -193,7 +193,7 @@ następujące posty na forum podają instrukcje użycia uwierzytelniania dwuetap
 *   GnuPG: [Post regarding GPG encrypted keys](https://bbs.archlinux.org/viewtopic.php?pid=943338#p943338) Ten post zawiera ogólne instrukcje.
 *   OpenSSL: [Post regarding OpenSSL encrypted keys](https://bbs.archlinux.org/viewtopic.php?pid=947805#p947805) Ten post ma tylko `ssldec` haki.
 *   OpenSSL: [Post regarding OpenSSL salted bf-cbc encrypted keys](https://bbs.archlinux.org/viewtopic.php?id=155393) Ten post ma `bfkf` initcpio przechwytuje, instaluje i zaszyfrowane skrypty generujące skrypty keyfile.
-*   LUKS: [Post regarding LUKS encrypted keys](https://bbs.archlinux.org/viewtopic.php?pid=1502651#p1502651) z `lukskey` hakiem initcpio. Lub [#Encrypted /boot and a detached LUKS header on USB](#Encrypted_.2Fboot_and_a_detached_LUKS_header_on_USB) poniżej z niestandardowym hakiem do szyfrowania dla initcpio.
+*   LUKS: [Post regarding LUKS encrypted keys](https://bbs.archlinux.org/viewtopic.php?pid=1502651#p1502651) z `lukskey` hakiem initcpio. Lub [#Encrypted /boot and a detached LUKS header on USB](#Encrypted_/boot_and_a_detached_LUKS_header_on_USB) poniżej z niestandardowym hakiem do szyfrowania dla initcpio.
 
 Zauważ, że:
 
@@ -505,9 +505,9 @@ kernel /boot/vmlinuz-linux root=/dev/md0 ro md=0,/dev/sda1,/dev/sdb1 md=1,/dev/s
 
 ## Szyfrowany system za pomocą oddzielnego nagłówka LUKS
 
-Ten przykład jest zgodny z tym samym ustawieniem, co w [dm-crypt/Encrypting an entire system (Polski)#Zwykły dm-crypt](/index.php/Dm-crypt/Encrypting_an_entire_system_(Polski)#Zwyk.C5.82y_dm-crypt "Dm-crypt/Encrypting an entire system (Polski)"), które należy przeczytać najpierw przed wykonaniem tego przewodnika.
+Ten przykład jest zgodny z tym samym ustawieniem, co w [dm-crypt/Encrypting an entire system (Polski)#Zwykły dm-crypt](/index.php/Dm-crypt/Encrypting_an_entire_system_(Polski)#Zwykły_dm-crypt "Dm-crypt/Encrypting an entire system (Polski)"), które należy przeczytać najpierw przed wykonaniem tego przewodnika.
 
-Używając oddzielnego nagłówka, zaszyfrowane urządzenie blokowe przenosi tylko zaszyfrowane dane, co daje [dyskretne szyfrowanie](https://en.wikipedia.org/wiki/Deniable_encryption "wikipedia:Deniable encryption"), o ile istnienie nagłówka nie jest znane atakującym. Jest podobne do używania [Zwykły dm-crypt](/index.php/Dm-crypt/Encrypting_an_entire_system_(Polski)#Zwyk.C5.82y_dm-crypt "Dm-crypt/Encrypting an entire system (Polski)"), ale z zaletami LUKS, takimi jak wielokrotne hasła dla klucza głównego i pochodnej klucza.Co więcej, użycie oddzielnego nagłówka oferuje formę uwierzytelniania dwuskładnikowego z łatwiejszą konfiguracją niż [przy użyciu zaszyfrowanych plików kluczy GPG lub OpenSSL](#Using_GPG.2C_LUKS.2C_or_OpenSSL_Encrypted_Keyfiles), a jednocześnie ma wbudowane zapytanie o hasło dla wielokrotnych prób. Zobacz [Disk encryption#Cryptographic metadata](/index.php/Disk_encryption#Cryptographic_metadata "Disk encryption") po więcej informacji.
+Używając oddzielnego nagłówka, zaszyfrowane urządzenie blokowe przenosi tylko zaszyfrowane dane, co daje [dyskretne szyfrowanie](https://en.wikipedia.org/wiki/Deniable_encryption "wikipedia:Deniable encryption"), o ile istnienie nagłówka nie jest znane atakującym. Jest podobne do używania [Zwykły dm-crypt](/index.php/Dm-crypt/Encrypting_an_entire_system_(Polski)#Zwykły_dm-crypt "Dm-crypt/Encrypting an entire system (Polski)"), ale z zaletami LUKS, takimi jak wielokrotne hasła dla klucza głównego i pochodnej klucza.Co więcej, użycie oddzielnego nagłówka oferuje formę uwierzytelniania dwuskładnikowego z łatwiejszą konfiguracją niż [przy użyciu zaszyfrowanych plików kluczy GPG lub OpenSSL](#Using_GPG,_LUKS,_or_OpenSSL_Encrypted_Keyfiles), a jednocześnie ma wbudowane zapytanie o hasło dla wielokrotnych prób. Zobacz [Disk encryption#Cryptographic metadata](/index.php/Disk_encryption#Cryptographic_metadata "Disk encryption") po więcej informacji.
 
 Zobacz [dm-crypt/Device encryption (Polski)#Opcje szyfrowania dla trybu LUKS](/index.php/Dm-crypt/Device_encryption_(Polski)#Opcje_szyfrowania_dla_trybu_LUKS "Dm-crypt/Device encryption (Polski)") dla opcji szyfrowania przed wykonaniem pierwszego kroku, aby skonfigurować zaszyfrowaną partycję systemową i utworzyć plik nagłówkowy do użycia z `cryptsetup`:
 
@@ -526,7 +526,7 @@ Otwórz kontener:
 
 ```
 
-Teraz postępuj zgodnie z [LVM na konfiguracji LUKS](/index.php/Dm-crypt/Encrypting_an_entire_system_(Polski)#Przygotowywanie_partycji.2C_kt.C3.B3re_nie_s.C4.85_uruchomione "Dm-crypt/Encrypting an entire system (Polski)") do swoich wymagań. To samo dotyczy [przygotowywania partycji rozruchowej](/index.php/Dm-crypt/Encrypting_an_entire_system_(Polski)#Przygotowanie_partycji_rozruchowej_4 "Dm-crypt/Encrypting an entire system (Polski)") na urządzeniu wymiennym (ponieważ w przeciwnym razie nie ma sensu posiadanie oddzielnego pliku nagłówkowego do odblokowania zaszyfrowanego dysku). Następnie przenieś plik `header.img`:
+Teraz postępuj zgodnie z [LVM na konfiguracji LUKS](/index.php/Dm-crypt/Encrypting_an_entire_system_(Polski)#Przygotowywanie_partycji,_które_nie_są_uruchomione "Dm-crypt/Encrypting an entire system (Polski)") do swoich wymagań. To samo dotyczy [przygotowywania partycji rozruchowej](/index.php/Dm-crypt/Encrypting_an_entire_system_(Polski)#Przygotowanie_partycji_rozruchowej_4 "Dm-crypt/Encrypting an entire system (Polski)") na urządzeniu wymiennym (ponieważ w przeciwnym razie nie ma sensu posiadanie oddzielnego pliku nagłówkowego do odblokowania zaszyfrowanego dysku). Następnie przenieś plik `header.img`:
 
 ```
 # mv header.img /mnt/boot
@@ -646,7 +646,7 @@ Number  Start (sector)    End (sector)  Size       Code  Name
 
 ```
 
-Przed uruchomieniem `cryptsetup` najpierw sprawdź [opcje Szyfrowania dla LUKS](/index.php/Dm-crypt/Device_encryption_(Polski)#Opcje_szyfrowania_dla_trybu_LUKS "Dm-crypt/Device encryption (Polski)") i [Szyfrów oraz tryby działania](/index.php/Disk_encryption_(Polski)#Szyfry_i_tryby_dzia.C5.82ania "Disk encryption (Polski)"), aby wybrać pożądane ustawienia.
+Przed uruchomieniem `cryptsetup` najpierw sprawdź [opcje Szyfrowania dla LUKS](/index.php/Dm-crypt/Device_encryption_(Polski)#Opcje_szyfrowania_dla_trybu_LUKS "Dm-crypt/Device encryption (Polski)") i [Szyfrów oraz tryby działania](/index.php/Disk_encryption_(Polski)#Szyfry_i_tryby_działania "Disk encryption (Polski)"), aby wybrać pożądane ustawienia.
 
 [Przygotuj partycję rozruchową](/index.php/Dm-crypt/Encrypting_an_entire_system#Preparing_the_boot_partition_5 "Dm-crypt/Encrypting an entire system"), ale nie `mount` jeszcze żadnej partycji i [sformatuj partycję systemową EFI](/index.php/EFI_system_partition#Format_the_partition "EFI system partition").
 
@@ -681,7 +681,7 @@ Wybierz *offset* i rozmiar w bajtach (8192 bajty to maksymalny rozmiar pliku klu
 
 ```
 
-Wykonaj czynności [Przygotowywanie woluminów logicznych](/index.php/Dm-crypt/Encrypting_an_entire_system_(Polski)#Przygotowywanie_wolumin.C3.B3w_logicznych "Dm-crypt/Encrypting an entire system (Polski)") w celu skonfigurowania LVM na LUKS.
+Wykonaj czynności [Przygotowywanie woluminów logicznych](/index.php/Dm-crypt/Encrypting_an_entire_system_(Polski)#Przygotowywanie_woluminów_logicznych "Dm-crypt/Encrypting an entire system (Polski)") w celu skonfigurowania LVM na LUKS.
 
 Zobacz [Partitioning#Discrete partitions](/index.php/Partitioning#Discrete_partitions "Partitioning") dla zaleceń dotyczących rozmiaru twoich partycji.
 

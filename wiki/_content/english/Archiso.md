@@ -62,7 +62,7 @@ Generally, every administrative task that you would normally do after a fresh in
 
 ### Installing packages
 
-[Edit](/index.php/Edit "Edit") the lists of packages in `packages.x86_64` to indicate which packages are to be installed on the live medium.
+Edit the lists of packages in `packages.x86_64` to indicate which packages are to be installed on the live medium.
 
 **Note:** If you want to use a [window manager](/index.php/Window_manager "Window manager") in the Live CD then you must add the necessary and correct [video drivers](/index.php/Video_drivers "Video drivers"), or the WM may freeze on loading.
 

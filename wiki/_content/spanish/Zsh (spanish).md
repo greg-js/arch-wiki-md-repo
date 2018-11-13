@@ -10,22 +10,22 @@ El [FAQ de Zsh](http://zsh.sourceforge.net/FAQ/zshfaq01.html#l4) aporta más raz
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-    *   [1.1 Configuración Inicial](#Configuraci.C3.B3n_Inicial)
+*   [1 Instalación](#Instalación)
+    *   [1.1 Configuración Inicial](#Configuración_Inicial)
     *   [1.2 Hacer que Zsh sea la shell por defecto](#Hacer_que_Zsh_sea_la_shell_por_defecto)
-*   [2 Archivos de configuración](#Archivos_de_configuraci.C3.B3n)
-    *   [2.1 Archivos de configuración global](#Archivos_de_configuraci.C3.B3n_global)
+*   [2 Archivos de configuración](#Archivos_de_configuración)
+    *   [2.1 Archivos de configuración global](#Archivos_de_configuración_global)
 *   [3 Configurar Zsh](#Configurar_Zsh)
     *   [3.1 Fichero .zshrc minimalista](#Fichero_.zshrc_minimalista)
-    *   [3.2 Configurar el $PATH](#Configurar_el_.24PATH)
+    *   [3.2 Configurar el $PATH](#Configurar_el_$PATH)
     *   [3.3 Autocompletado de comandos](#Autocompletado_de_comandos)
-    *   [3.4 El gancho de "comando no encontrado"](#El_gancho_de_.22comando_no_encontrado.22)
-    *   [3.5 Prevenir líneas duplicadas en el historial](#Prevenir_l.C3.ADneas_duplicadas_en_el_historial)
+    *   [3.4 El gancho de "comando no encontrado"](#El_gancho_de_"comando_no_encontrado")
+    *   [3.5 Prevenir líneas duplicadas en el historial](#Prevenir_líneas_duplicadas_en_el_historial)
     *   [3.6 Asociaciones de teclas](#Asociaciones_de_teclas)
         *   [3.6.1 Asociar combinaciones de teclas con aplicaciones ncurses](#Asociar_combinaciones_de_teclas_con_aplicaciones_ncurses)
-        *   [3.6.2 Otra forma de asociar una aplicación ncurses](#Otra_forma_de_asociar_una_aplicaci.C3.B3n_ncurses)
+        *   [3.6.2 Otra forma de asociar una aplicación ncurses](#Otra_forma_de_asociar_una_aplicación_ncurses)
         *   [3.6.3 Asociaciones de teclas de gestor de archivos](#Asociaciones_de_teclas_de_gestor_de_archivos)
-    *   [3.7 Búsqueda en el historial](#B.C3.BAsqueda_en_el_historial)
+    *   [3.7 Búsqueda en el historial](#Búsqueda_en_el_historial)
     *   [3.8 Prompts](#Prompts)
     *   [3.9 Personalizando el prompt](#Personalizando_el_prompt)
         *   [3.9.1 Colores](#Colores)
@@ -34,11 +34,11 @@ El [FAQ de Zsh](http://zsh.sourceforge.net/FAQ/zshfaq01.html#l4) aporta más raz
     *   [3.11 Comado de ayuda](#Comado_de_ayuda)
     *   [3.12 Resaltado de sintaxis estilo Fish](#Resaltado_de_sintaxis_estilo_Fish)
     *   [3.13 Archivos .zshrc de muestra](#Archivos_.zshrc_de_muestra)
-    *   [3.14 Frameworks de configuración](#Frameworks_de_configuraci.C3.B3n)
+    *   [3.14 Frameworks de configuración](#Frameworks_de_configuración)
     *   [3.15 Autoinicio de aplicaciones](#Autoinicio_de_aplicaciones)
     *   [3.16 Rehash persistente](#Rehash_persistente)
-*   [4 Desinstalación](#Desinstalaci.C3.B3n)
-*   [5 Vea también](#Vea_tambi.C3.A9n)
+*   [4 Desinstalación](#Desinstalación)
+*   [5 Vea también](#Vea_también)
 
 ## Instalación
 
@@ -79,7 +79,7 @@ Al iniciar Zsh, Este cargará información de los siguiente archivos en el sigui
 
 	`/etc/zsh/zshenv`
 
-	Este archivo debería contener comandos para establecer la [ruta de búsqueda de comandos](#Configurar_el_.24PATH) global y otras variables de entorno a nivel de todo el sistema; no debería contener comandos que produzcan salidas por consola o que asuma que la shell está conectada a una tty.
+	Este archivo debería contener comandos para establecer la [ruta de búsqueda de comandos](#Configurar_el_$PATH) global y otras variables de entorno a nivel de todo el sistema; no debería contener comandos que produzcan salidas por consola o que asuma que la shell está conectada a una tty.
 
 	`~/.zshenv`
 
@@ -87,7 +87,7 @@ Al iniciar Zsh, Este cargará información de los siguiente archivos en el sigui
 
 	`/etc/zsh/zprofile`
 
-	Este es un archivo de configuración global, Se cargará al iniciar la sesión. Usado por norma general para ejecutar algunos comandos generales en el inicio de sesión. Por favor, dése cuenta de que en Arch Linux, por defecto contiene [una linea](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/zprofile?h=packages/zsh) que carga `/etc/profile`, véase [abajo](#Archivos_de_configuraci.C3.B3n_global) para más detalles.
+	Este es un archivo de configuración global, Se cargará al iniciar la sesión. Usado por norma general para ejecutar algunos comandos generales en el inicio de sesión. Por favor, dése cuenta de que en Arch Linux, por defecto contiene [una linea](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/zprofile?h=packages/zsh) que carga `/etc/profile`, véase [abajo](#Archivos_de_configuración_global) para más detalles.
 
 	`/etc/profile`
 
@@ -176,7 +176,7 @@ typeset -U path
 path=(~/bin /otras/cosas/en/la/ruta $path)
 ```
 
-Véase también la nota en [#Archivos de configuración](#Archivos_de_configuraci.C3.B3n).
+Véase también la nota en [#Archivos de configuración](#Archivos_de_configuración).
 
 ### Autocompletado de comandos
 

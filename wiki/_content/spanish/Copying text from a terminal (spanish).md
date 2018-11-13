@@ -1,15 +1,15 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Copying text from a terminal](/index.php/Copying_text_from_a_terminal "Copying text from a terminal"), revisada por última vez el **2018-11-08**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Copying_text_from_a_terminal&diff=0&oldid=552587) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Copying text from a terminal](/index.php/Copying_text_from_a_terminal "Copying text from a terminal"), revisada por última vez el **2018-11-13**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Copying_text_from_a_terminal&diff=0&oldid=554909) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 La mayoría de los emuladores de terminal maduros permiten a los usuarios copiar o guardar sus contenidos.
 
 ## Contents
 
 *   [1 Enfoque general](#Enfoque_general)
-    *   [1.1 Terminales sin selección de PORTAPAPELES](#Terminales_sin_selecci.C3.B3n_de_PORTAPAPELES)
+    *   [1.1 Terminales sin selección de PORTAPAPELES](#Terminales_sin_selección_de_PORTAPAPELES)
     *   [1.2 Interceptar la salida de los comandos](#Interceptar_la_salida_de_los_comandos)
     *   [1.3 Acceder al backlog de una terminal Linux](#Acceder_al_backlog_de_una_terminal_Linux)
-*   [2 Comparación de emuladores comunes](#Comparaci.C3.B3n_de_emuladores_comunes)
+*   [2 Comparación de emuladores comunes](#Comparación_de_emuladores_comunes)
 *   [3 Casos especiales](#Casos_especiales)
     *   [3.1 putty](#putty)
     *   [3.2 urxvt](#urxvt)
@@ -21,7 +21,7 @@ En los emuladores gráficos de terminal, los contenidos generalmente se seleccio
 
 ### Terminales sin selección de PORTAPAPELES
 
-Algunos emuladores no admiten la [selección de PORTAPAPELES](/index.php/Clipboard_(Espa%C3%B1ol) "Clipboard (Español)") de forma nativa, y copian los datos a la selección PRIMARIA. Para ellos se puede usar [xclip](https://www.archlinux.org/packages/?name=xclip):
+Algunos emuladores no admiten la [selección de PORTAPAPELES](/index.php/Clipboard_(Espa%C3%B1ol)#Bases "Clipboard (Español)") de manera nativa, y copian los datos a la selección PRIMARIA. Para ellos se puede usar [xclip](https://www.archlinux.org/packages/?name=xclip):
 
 ```
 $ xclip -o | xclip -selection clipboard -i
@@ -88,7 +88,7 @@ A menos que la columna "Combinación de teclas" indique lo contrario, la combina
 
 ### putty
 
-El [enfoque xclip](#Terminales_sin_selecci.C3.B3n_de_PORTAPAPELES) funciona para *putty*: solo hay que recordar que la invocación *xclip* debe realizarse en el ordenador local (en otra terminal), no en la máquina remota a la que está conectada *putty*.
+El [enfoque xclip](#Terminales_sin_selección_de_PORTAPAPELES) funciona para *putty*: solo hay que recordar que la invocación *xclip* debe realizarse en el ordenador local (en otra terminal), no en la máquina remota a la que está conectada *putty*.
 
 ### urxvt
 

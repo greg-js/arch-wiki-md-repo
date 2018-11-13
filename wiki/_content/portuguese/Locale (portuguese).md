@@ -11,20 +11,20 @@ Locales, por vezes chamados em português de *localidades*, são usados pelo [gl
 *   [1 Gerando locales](#Gerando_locales)
 *   [2 Configurando o locale](#Configurando_o_locale)
     *   [2.1 Configurando o locale do sistema](#Configurando_o_locale_do_sistema)
-    *   [2.2 Sobrepondo locale do sistema por sessão de usuário](#Sobrepondo_locale_do_sistema_por_sess.C3.A3o_de_usu.C3.A1rio)
-    *   [2.3 Fazer alterações de locale imediatas](#Fazer_altera.C3.A7.C3.B5es_de_locale_imediatas)
+    *   [2.2 Sobrepondo locale do sistema por sessão de usuário](#Sobrepondo_locale_do_sistema_por_sessão_de_usuário)
+    *   [2.3 Fazer alterações de locale imediatas](#Fazer_alterações_de_locale_imediatas)
     *   [2.4 Outros usos](#Outros_usos)
-*   [3 Variáveis](#Vari.C3.A1veis)
-    *   [3.1 LANG: locale padrão](#LANG:_locale_padr.C3.A3o)
+*   [3 Variáveis](#Variáveis)
+    *   [3.1 LANG: locale padrão](#LANG:_locale_padrão)
     *   [3.2 LANGUAGE: locales reservas](#LANGUAGE:_locales_reservas)
     *   [3.3 LC_TIME: formato de data e hora](#LC_TIME:_formato_de_data_e_hora)
-    *   [3.4 LC_COLLATE: colação](#LC_COLLATE:_cola.C3.A7.C3.A3o)
-    *   [3.5 LC_ALL: solução de problemas](#LC_ALL:_solu.C3.A7.C3.A3o_de_problemas)
-*   [4 Solução de problemas](#Solu.C3.A7.C3.A3o_de_problemas)
-    *   [4.1 Meu terminal não possui suporte a UTF-8](#Meu_terminal_n.C3.A3o_possui_suporte_a_UTF-8)
+    *   [3.4 LC_COLLATE: colação](#LC_COLLATE:_colação)
+    *   [3.5 LC_ALL: solução de problemas](#LC_ALL:_solução_de_problemas)
+*   [4 Solução de problemas](#Solução_de_problemas)
+    *   [4.1 Meu terminal não possui suporte a UTF-8](#Meu_terminal_não_possui_suporte_a_UTF-8)
         *   [4.1.1 Gnome-terminal ou rxvt-unicode](#Gnome-terminal_ou_rxvt-unicode)
-    *   [4.2 Meu sistema ainda está usando o idioma errado](#Meu_sistema_ainda_est.C3.A1_usando_o_idioma_errado)
-*   [5 Veja também](#Veja_tamb.C3.A9m)
+    *   [4.2 Meu sistema ainda está usando o idioma errado](#Meu_sistema_ainda_está_usando_o_idioma_errado)
+*   [5 Veja também](#Veja_também)
 
 ## Gerando locales
 
@@ -37,7 +37,7 @@ $ locale -a
 
 ```
 
-Antes que um locale possa ser habilitado no sistema, ele deve ser gerado. Isso pode ser alcançado descomentando as entradas corretas em `/etc/locale.gen` e executando *locale-gen*. Da mesma forma, comentar entradas desabilita seus respectivos locales. Ao fazer alterações, considere quaisquer localizações necessárias para outros usuários no sistema, bem como [#Variáveis](#Vari.C3.A1veis) específicas.
+Antes que um locale possa ser habilitado no sistema, ele deve ser gerado. Isso pode ser alcançado descomentando as entradas corretas em `/etc/locale.gen` e executando *locale-gen*. Da mesma forma, comentar entradas desabilita seus respectivos locales. Ao fazer alterações, considere quaisquer localizações necessárias para outros usuários no sistema, bem como [#Variáveis](#Variáveis) específicas.
 
 Por exemplo, descomente `pt_BR.UTF-8 UTF-8` para português brasileiro:
 
@@ -101,7 +101,7 @@ Alternativamente, execute:
 
 ```
 
-Veja [#Variáveis](#Vari.C3.A1veis) e [locale.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5) para detalhes.
+Veja [#Variáveis](#Variáveis) e [locale.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5) para detalhes.
 
 ### Sobrepondo locale do sistema por sessão de usuário
 
@@ -148,10 +148,10 @@ $ export LANG=C
 
 Os arquivos `locale.conf` oferecem suporte às seguintes variáveis de ambiente:
 
-*   [LANG](#LANG:_locale_padr.C3.A3o)
+*   [LANG](#LANG:_locale_padrão)
 *   [LANGUAGE](#LANGUAGE:_locales_reservas)
 *   `LC_ADDRESS`
-*   [LC_COLLATE](#LC_COLLATE:_cola.C3.A7.C3.A3o)
+*   [LC_COLLATE](#LC_COLLATE:_colação)
 *   `LC_CTYPE`
 *   `LC_IDENTIFICATION`
 *   `LC_MEASUREMENT`
@@ -225,7 +225,7 @@ Você precisa iniciar esses aplicativos a partir de um locale UTF-8 ou eles não
 
 ### Meu sistema ainda está usando o idioma errado
 
-É possível que as variáveis de ambiente sejam redefinidas em outros arquivos além de `locale.conf`, por exemplo `~/.pam_environment`. Veja [Variáveis de ambiente#Definindo variáveis](/index.php/Vari%C3%A1veis_de_ambiente#Definindo_vari.C3.A1veis "Variáveis de ambiente") para detalhes.
+É possível que as variáveis de ambiente sejam redefinidas em outros arquivos além de `locale.conf`, por exemplo `~/.pam_environment`. Veja [Variáveis de ambiente#Definindo variáveis](/index.php/Vari%C3%A1veis_de_ambiente#Definindo_variáveis "Variáveis de ambiente") para detalhes.
 
 Se você está usando um ambiente gráfico, como o [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)"), suas configurações de idioma podem estar sobrescrevendo as configurações em `locale.conf`.
 

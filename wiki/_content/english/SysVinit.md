@@ -22,7 +22,7 @@ Although a SysVinit-based Arch system does use init, most of the work is delegat
     *   [4.2 Main Boot Scripts](#Main_Boot_Scripts)
     *   [4.3 Single User Boot](#Single_User_Boot)
     *   [4.4 Gettys and Login](#Gettys_and_Login)
-    *   [4.5 Ctrl+Alt+Del](#Ctrl.2BAlt.2BDel)
+    *   [4.5 Ctrl+Alt+Del](#Ctrl+Alt+Del)
     *   [4.6 X Programs](#X_Programs)
     *   [4.7 Power-Sensing Scripts](#Power-Sensing_Scripts)
     *   [4.8 Custom Keyboard Request](#Custom_Keyboard_Request)
@@ -37,7 +37,7 @@ Although a SysVinit-based Arch system does use init, most of the work is delegat
     *   [6.3 Runlevel invocation](#Runlevel_invocation)
     *   [6.4 Adding runlevels](#Adding_runlevels)
         *   [6.4.1 First method](#First_method)
-        *   [6.4.2 Another way, without adding any symlink](#Another_way.2C_without_adding_any_symlink)
+        *   [6.4.2 Another way, without adding any symlink](#Another_way,_without_adding_any_symlink)
     *   [6.5 Other distributions](#Other_distributions)
 *   [7 See also](#See_also)
 

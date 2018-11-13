@@ -17,50 +17,50 @@
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 升级到 GRUB2](#.E5.8D.87.E7.BA.A7.E5.88.B0_GRUB2)
-    *   [2.1 必须升级吗?](#.E5.BF.85.E9.A1.BB.E5.8D.87.E7.BA.A7.E5.90.97.3F)
-    *   [2.2 如何升级](#.E5.A6.82.E4.BD.95.E5.8D.87.E7.BA.A7)
-    *   [2.3 区别](#.E5.8C.BA.E5.88.AB)
-        *   [2.3.1 备份重要数据](#.E5.A4.87.E4.BB.BD.E9.87.8D.E8.A6.81.E6.95.B0.E6.8D.AE)
-    *   [2.4 把 GRUB Legacy 的配置文件转换为新格式](#.E6.8A.8A_GRUB_Legacy_.E7.9A.84.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6.E8.BD.AC.E6.8D.A2.E4.B8.BA.E6.96.B0.E6.A0.BC.E5.BC.8F)
-    *   [2.5 恢复 GRUB Legacy](#.E6.81.A2.E5.A4.8D_GRUB_Legacy)
-*   [3 配置](#.E9.85.8D.E7.BD.AE)
-    *   [3.1 寻找 GRUB 的根分区](#.E5.AF.BB.E6.89.BE_GRUB_.E7.9A.84.E6.A0.B9.E5.88.86.E5.8C.BA)
-    *   [3.2 双启动到 Windows](#.E5.8F.8C.E5.90.AF.E5.8A.A8.E5.88.B0_Windows)
-    *   [3.3 双启动到 GNU/Linux](#.E5.8F.8C.E5.90.AF.E5.8A.A8.E5.88.B0_GNU.2FLinux)
-    *   [3.4 chainloader 和 configfile](#chainloader_.E5.92.8C_configfile)
-    *   [3.5 双启动 GNU/Linux (GRUB2)](#.E5.8F.8C.E5.90.AF.E5.8A.A8_GNU.2FLinux_.28GRUB2.29)
-*   [4 安装启动器](#.E5.AE.89.E8.A3.85.E5.90.AF.E5.8A.A8.E5.99.A8)
-    *   [4.1 手动恢复 GRUB 库](#.E6.89.8B.E5.8A.A8.E6.81.A2.E5.A4.8D_GRUB_.E5.BA.93)
-    *   [4.2 安装 GRUB 的常识](#.E5.AE.89.E8.A3.85_GRUB_.E7.9A.84.E5.B8.B8.E8.AF.86)
-    *   [4.3 安装到 MBR](#.E5.AE.89.E8.A3.85.E5.88.B0_MBR)
-    *   [4.4 安装到分区](#.E5.AE.89.E8.A3.85.E5.88.B0.E5.88.86.E5.8C.BA)
-    *   [4.5 备选方案 (grub-install)](#.E5.A4.87.E9.80.89.E6.96.B9.E6.A1.88_.28grub-install.29)
-*   [5 小技巧](#.E5.B0.8F.E6.8A.80.E5.B7.A7)
-    *   [5.1 图形化启动](#.E5.9B.BE.E5.BD.A2.E5.8C.96.E5.90.AF.E5.8A.A8)
-    *   [5.2 Framebuffer 分辨率](#Framebuffer_.E5.88.86.E8.BE.A8.E7.8E.87)
-        *   [5.2.1 GRUB 可识别的值](#GRUB_.E5.8F.AF.E8.AF.86.E5.88.AB.E7.9A.84.E5.80.BC)
+*   [1 安装](#安装)
+*   [2 升级到 GRUB2](#升级到_GRUB2)
+    *   [2.1 必须升级吗?](#必须升级吗?)
+    *   [2.2 如何升级](#如何升级)
+    *   [2.3 区别](#区别)
+        *   [2.3.1 备份重要数据](#备份重要数据)
+    *   [2.4 把 GRUB Legacy 的配置文件转换为新格式](#把_GRUB_Legacy_的配置文件转换为新格式)
+    *   [2.5 恢复 GRUB Legacy](#恢复_GRUB_Legacy)
+*   [3 配置](#配置)
+    *   [3.1 寻找 GRUB 的根分区](#寻找_GRUB_的根分区)
+    *   [3.2 双启动到 Windows](#双启动到_Windows)
+    *   [3.3 双启动到 GNU/Linux](#双启动到_GNU/Linux)
+    *   [3.4 chainloader 和 configfile](#chainloader_和_configfile)
+    *   [3.5 双启动 GNU/Linux (GRUB2)](#双启动_GNU/Linux_(GRUB2))
+*   [4 安装启动器](#安装启动器)
+    *   [4.1 手动恢复 GRUB 库](#手动恢复_GRUB_库)
+    *   [4.2 安装 GRUB 的常识](#安装_GRUB_的常识)
+    *   [4.3 安装到 MBR](#安装到_MBR)
+    *   [4.4 安装到分区](#安装到分区)
+    *   [4.5 备选方案 (grub-install)](#备选方案_(grub-install))
+*   [5 小技巧](#小技巧)
+    *   [5.1 图形化启动](#图形化启动)
+    *   [5.2 Framebuffer 分辨率](#Framebuffer_分辨率)
+        *   [5.2.1 GRUB 可识别的值](#GRUB_可识别的值)
         *   [5.2.2 hwinfo](#hwinfo)
-    *   [5.3 给分区命名](#.E7.BB.99.E5.88.86.E5.8C.BA.E5.91.BD.E5.90.8D)
-        *   [5.3.1 按盘符](#.E6.8C.89.E7.9B.98.E7.AC.A6)
-        *   [5.3.2 按 UUID](#.E6.8C.89_UUID)
-    *   [5.4 以 root 身份启动 (单用户模式)](#.E4.BB.A5_root_.E8.BA.AB.E4.BB.BD.E5.90.AF.E5.8A.A8_.28.E5.8D.95.E7.94.A8.E6.88.B7.E6.A8.A1.E5.BC.8F.29)
-    *   [5.5 密码保护](#.E5.AF.86.E7.A0.81.E4.BF.9D.E6.8A.A4)
-    *   [5.6 启动命名过的引导选项](#.E5.90.AF.E5.8A.A8.E5.91.BD.E5.90.8D.E8.BF.87.E7.9A.84.E5.BC.95.E5.AF.BC.E9.80.89.E9.A1.B9)
-    *   [5.7 LILO 和 GRUB 相互配合](#LILO_.E5.92.8C_GRUB_.E7.9B.B8.E4.BA.92.E9.85.8D.E5.90.88)
-    *   [5.8 GRUB 启动盘](#GRUB_.E5.90.AF.E5.8A.A8.E7.9B.98)
-    *   [5.9 隐藏 GRUB 菜单](#.E9.9A.90.E8.97.8F_GRUB_.E8.8F.9C.E5.8D.95)
-*   [6 进一步排除 bug](#.E8.BF.9B.E4.B8.80.E6.AD.A5.E6.8E.92.E9.99.A4_bug)
-*   [7 疑难问题](#.E7.96.91.E9.9A.BE.E9.97.AE.E9.A2.98)
+    *   [5.3 给分区命名](#给分区命名)
+        *   [5.3.1 按盘符](#按盘符)
+        *   [5.3.2 按 UUID](#按_UUID)
+    *   [5.4 以 root 身份启动 (单用户模式)](#以_root_身份启动_(单用户模式))
+    *   [5.5 密码保护](#密码保护)
+    *   [5.6 启动命名过的引导选项](#启动命名过的引导选项)
+    *   [5.7 LILO 和 GRUB 相互配合](#LILO_和_GRUB_相互配合)
+    *   [5.8 GRUB 启动盘](#GRUB_启动盘)
+    *   [5.9 隐藏 GRUB 菜单](#隐藏_GRUB_菜单)
+*   [6 进一步排除 bug](#进一步排除_bug)
+*   [7 疑难问题](#疑难问题)
     *   [7.1 GRUB Error 17](#GRUB_Error_17)
-    *   [7.2 /boot/grub/stage1 not read correctly](#.2Fboot.2Fgrub.2Fstage1_not_read_correctly)
-    *   [7.3 意外安装到了 Windows 分区](#.E6.84.8F.E5.A4.96.E5.AE.89.E8.A3.85.E5.88.B0.E4.BA.86_Windows_.E5.88.86.E5.8C.BA)
-    *   [7.4 在引导菜单中编辑 GRUB 条目](#.E5.9C.A8.E5.BC.95.E5.AF.BC.E8.8F.9C.E5.8D.95.E4.B8.AD.E7.BC.96.E8.BE.91_GRUB_.E6.9D.A1.E7.9B.AE)
+    *   [7.2 /boot/grub/stage1 not read correctly](#/boot/grub/stage1_not_read_correctly)
+    *   [7.3 意外安装到了 Windows 分区](#意外安装到了_Windows_分区)
+    *   [7.4 在引导菜单中编辑 GRUB 条目](#在引导菜单中编辑_GRUB_条目)
     *   [7.5 device.map error](#device.map_error)
-    *   [7.6 KDE 重启后下拉菜单失效](#KDE_.E9.87.8D.E5.90.AF.E5.90.8E.E4.B8.8B.E6.8B.89.E8.8F.9C.E5.8D.95.E5.A4.B1.E6.95.88)
-    *   [7.7 GRUB 无法找到或安装到 virtio */dev/vd** 或其他非 BIOS 设备](#GRUB_.E6.97.A0.E6.B3.95.E6.89.BE.E5.88.B0.E6.88.96.E5.AE.89.E8.A3.85.E5.88.B0_virtio_.2Fdev.2Fvd.2A_.E6.88.96.E5.85.B6.E4.BB.96.E9.9D.9E_BIOS_.E8.AE.BE.E5.A4.87)
-*   [8 另见](#.E5.8F.A6.E8.A7.81)
+    *   [7.6 KDE 重启后下拉菜单失效](#KDE_重启后下拉菜单失效)
+    *   [7.7 GRUB 无法找到或安装到 virtio */dev/vd** 或其他非 BIOS 设备](#GRUB_无法找到或安装到_virtio_/dev/vd*_或其他非_BIOS_设备)
+*   [8 另见](#另见)
 
 ## 安装
 
@@ -112,7 +112,7 @@ MBR 只有 446B 包含引导代码，接下来的 64B 包含分区表。如果�
 
 ```
 
-如果无法正常安装 GRUB2 , 见[恢复 GRUB Legacy](#.E6.81.A2.E5.A4.8D_GRUB_Legacy).
+如果无法正常安装 GRUB2 , 见[恢复 GRUB Legacy](#恢复_GRUB_Legacy).
 
 ### 把 GRUB Legacy 的配置文件转换为新格式
 
@@ -352,7 +352,7 @@ GRUB 会找到这个文件，然后输出 `stage1` 文件的位置。例如:
 
 ```
 
-**注意:** 也许需要额外的选项，同时也可能不需要使用初始化内存盘。检查一下另一个发行版的 `/boot/grub/menu.lst` 来得到启动选项，或者参考 [#chainloader 和 configfile](#chainloader_.E5.92.8C_configfile) (推荐)。
+**注意:** 也许需要额外的选项，同时也可能不需要使用初始化内存盘。检查一下另一个发行版的 `/boot/grub/menu.lst` 来得到启动选项，或者参考 [#chainloader 和 configfile](#chainloader_和_configfile) (推荐)。
 
 ### chainloader 和 configfile
 
@@ -450,8 +450,8 @@ GRUB 有可以一个单独的介质安装(例如:一张 LiveCD),或者直接从�
 
 在重装或安装之前，请注意以下几点:
 
-*   在进行操作之前确保你的GRUB配置文件是正确的 (`/boot/grub/menu.lst`)。请参考[#寻找 GRUB 的根分区](#.E5.AF.BB.E6.89.BE_GRUB_.E7.9A.84.E6.A0.B9.E5.88.86.E5.8C.BA)以确认你的设备被正确的定义。
-*   GRUB 必须安装在 [MBR](/index.php/MBR "MBR") (硬盘的第一扇区)，或者在能被大多数 BIOS 识别的第一个存储设备的第一个分区。为了满足个人的多系统引导需求，GRUB 的多重设置就起作用了，请参考[#chainloader 和 configfile](#chainloader_.E5.92.8C_configfile).
+*   在进行操作之前确保你的GRUB配置文件是正确的 (`/boot/grub/menu.lst`)。请参考[#寻找 GRUB 的根分区](#寻找_GRUB_的根分区)以确认你的设备被正确的定义。
+*   GRUB 必须安装在 [MBR](/index.php/MBR "MBR") (硬盘的第一扇区)，或者在能被大多数 BIOS 识别的第一个存储设备的第一个分区。为了满足个人的多系统引导需求，GRUB 的多重设置就起作用了，请参考[#chainloader 和 configfile](#chainloader_和_configfile).
 *   在安装 GRUB 启动引导器时可能需要在 `chroot` 过的环境下完成 (例如：通过安装光盘 chroot 安装的系统)，比如你编辑RAID的配置文件或者你忘记安装或者破坏了你的 GRUB, 你都需要通过一张 LiveCD 或者其他的 Linux 操作系统 [Change root](/index.php/Change_root "Change root") (即更改root目录).
 
 首先，进入 GRUB shell:
@@ -461,7 +461,7 @@ GRUB 有可以一个单独的介质安装(例如:一张 LiveCD),或者直接从�
 
 ```
 
-使用 `root` 命令配合 `find` 的输出 (见 [#寻找 GRUB 的根分区](#.E5.AF.BB.E6.89.BE_GRUB_.E7.9A.84.E6.A0.B9.E5.88.86.E5.8C.BA))，以告诉 GRUB 哪个分区包含了 stage1 (同理还有 `/boot`):
+使用 `root` 命令配合 `find` 的输出 (见 [#寻找 GRUB 的根分区](#寻找_GRUB_的根分区))，以告诉 GRUB 哪个分区包含了 stage1 (同理还有 `/boot`):
 
 ```
 grub> root (hd1,0)
@@ -610,7 +610,7 @@ kernel /boot/vmlinuz-linux root=UUID=*uuid_number*
 
 ```
 
-然后会以单用户模式 (init 1) 启动，即没有输入密码前会停止在 root 提示。 这对设置 root 密码等恢复操作有用。 然而，如果你没有为 GRUB 设置[#密码保护](#.E5.AF.86.E7.A0.81.E4.BF.9D.E6.8A.A4)的话这是一个巨大的安全漏洞。
+然后会以单用户模式 (init 1) 启动，即没有输入密码前会停止在 root 提示。 这对设置 root 密码等恢复操作有用。 然而，如果你没有为 GRUB 设置[#密码保护](#密码保护)的话这是一个巨大的安全漏洞。
 
 ### 密码保护
 
@@ -902,7 +902,7 @@ quit
 
 ```
 
-**5.** 如果 GRUB 没有错误提示，那么就差不多完成了。你还要往 ramdisk 加入合适的模块。更多信息参见 [QEMU#Preparing an (Arch) Linux guest](/index.php/QEMU#Preparing_an_.28Arch.29_Linux_guest "QEMU").
+**5.** 如果 GRUB 没有错误提示，那么就差不多完成了。你还要往 ramdisk 加入合适的模块。更多信息参见 [QEMU#Preparing an (Arch) Linux guest](/index.php/QEMU#Preparing_an_(Arch)_Linux_guest "QEMU").
 
 ## 另见
 

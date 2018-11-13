@@ -17,7 +17,7 @@ Articoli correlati
     *   [2.3 FireTray - Tray icon](#FireTray_-_Tray_icon)
 *   [3 Impostazioni Varie](#Impostazioni_Varie)
     *   [3.1 Impostare il browser predefinito](#Impostare_il_browser_predefinito)
-    *   [3.2 Impostare la modalità del testo e font uniformi](#Impostare_la_modalit.C3.A0_del_testo_e_font_uniformi)
+    *   [3.2 Impostare la modalità del testo e font uniformi](#Impostare_la_modalità_del_testo_e_font_uniformi)
     *   [3.3 Webmail con Thunderbird](#Webmail_con_Thunderbird)
 *   [4 Risoluzione dei Problemi](#Risoluzione_dei_Problemi)
 

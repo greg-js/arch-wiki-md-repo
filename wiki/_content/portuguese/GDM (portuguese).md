@@ -11,37 +11,37 @@ Do [GDM - GNOME Display Manager](https://wiki.gnome.org/Projects/GDM): "O Gerenc
 
 ## Contents
 
-*   [1 Instalação](#Instala.C3.A7.C3.A3o)
-*   [2 Inicialização](#Inicializa.C3.A7.C3.A3o)
+*   [1 Instalação](#Instalação)
+*   [2 Inicialização](#Inicialização)
     *   [2.1 Inicializando aplicativos automaticamente](#Inicializando_aplicativos_automaticamente)
-*   [3 Configuração](#Configura.C3.A7.C3.A3o)
-    *   [3.1 Imagem de plano de fundo na tela de autenticação](#Imagem_de_plano_de_fundo_na_tela_de_autentica.C3.A7.C3.A3o)
-    *   [3.2 Configuração no DConf](#Configura.C3.A7.C3.A3o_no_DConf)
-        *   [3.2.1 Logo da tela de autenticação](#Logo_da_tela_de_autentica.C3.A7.C3.A3o)
+*   [3 Configuração](#Configuração)
+    *   [3.1 Imagem de plano de fundo na tela de autenticação](#Imagem_de_plano_de_fundo_na_tela_de_autenticação)
+    *   [3.2 Configuração no DConf](#Configuração_no_DConf)
+        *   [3.2.1 Logo da tela de autenticação](#Logo_da_tela_de_autenticação)
         *   [3.2.2 Alterando o tema do cursor](#Alterando_o_tema_do_cursor)
-        *   [3.2.3 Fonte maior para a tela de autenticação](#Fonte_maior_para_a_tela_de_autentica.C3.A7.C3.A3o)
+        *   [3.2.3 Fonte maior para a tela de autenticação](#Fonte_maior_para_a_tela_de_autenticação)
         *   [3.2.4 Desligando o som](#Desligando_o_som)
-        *   [3.2.5 Configurando o comportamento do botão de energia](#Configurando_o_comportamento_do_bot.C3.A3o_de_energia)
+        *   [3.2.5 Configurando o comportamento do botão de energia](#Configurando_o_comportamento_do_botão_de_energia)
         *   [3.2.6 Habilitando tap-to-click](#Habilitando_tap-to-click)
-        *   [3.2.7 Desabilitar/Habilitar o menu de acessibilidade](#Desabilitar.2FHabilitar_o_menu_de_acessibilidade)
+        *   [3.2.7 Desabilitar/Habilitar o menu de acessibilidade](#Desabilitar/Habilitar_o_menu_de_acessibilidade)
     *   [3.3 Layout do teclado](#Layout_do_teclado)
     *   [3.4 Alterar o idioma](#Alterar_o_idioma)
-    *   [3.5 Usuários e autenticação](#Usu.C3.A1rios_e_autentica.C3.A7.C3.A3o)
-        *   [3.5.1 Autenticação automática](#Autentica.C3.A7.C3.A3o_autom.C3.A1tica)
-        *   [3.5.2 Autenticação sem senha](#Autentica.C3.A7.C3.A3o_sem_senha)
-        *   [3.5.3 Desligamento sem senha para várias sessões](#Desligamento_sem_senha_para_v.C3.A1rias_sess.C3.B5es)
-        *   [3.5.4 Habilitar autenticação como root no GDM](#Habilitar_autentica.C3.A7.C3.A3o_como_root_no_GDM)
-        *   [3.5.5 Ocultar usuário da lista de login](#Ocultar_usu.C3.A1rio_da_lista_de_login)
-    *   [3.6 Definir as configurações de monitor padrão](#Definir_as_configura.C3.A7.C3.B5es_de_monitor_padr.C3.A3o)
-    *   [3.7 Configurar permissão de acesso do servidor X](#Configurar_permiss.C3.A3o_de_acesso_do_servidor_X)
-*   [4 Solução de problemas](#Solu.C3.A7.C3.A3o_de_problemas)
-    *   [4.1 Wayland e o driver proprietário da NVIDIA](#Wayland_e_o_driver_propriet.C3.A1rio_da_NVIDIA)
-    *   [4.2 Falha no encerramento da sessão](#Falha_no_encerramento_da_sess.C3.A3o)
+    *   [3.5 Usuários e autenticação](#Usuários_e_autenticação)
+        *   [3.5.1 Autenticação automática](#Autenticação_automática)
+        *   [3.5.2 Autenticação sem senha](#Autenticação_sem_senha)
+        *   [3.5.3 Desligamento sem senha para várias sessões](#Desligamento_sem_senha_para_várias_sessões)
+        *   [3.5.4 Habilitar autenticação como root no GDM](#Habilitar_autenticação_como_root_no_GDM)
+        *   [3.5.5 Ocultar usuário da lista de login](#Ocultar_usuário_da_lista_de_login)
+    *   [3.6 Definir as configurações de monitor padrão](#Definir_as_configurações_de_monitor_padrão)
+    *   [3.7 Configurar permissão de acesso do servidor X](#Configurar_permissão_de_acesso_do_servidor_X)
+*   [4 Solução de problemas](#Solução_de_problemas)
+    *   [4.1 Wayland e o driver proprietário da NVIDIA](#Wayland_e_o_driver_proprietário_da_NVIDIA)
+    *   [4.2 Falha no encerramento da sessão](#Falha_no_encerramento_da_sessão)
     *   [4.3 Xorg sem senha](#Xorg_sem_senha)
     *   [4.4 Usar backend do Xorg](#Usar_backend_do_Xorg)
-    *   [4.5 Remoção incompleta do gdm](#Remo.C3.A7.C3.A3o_incompleta_do_gdm)
-    *   [4.6 Suspensão automática do GDM (GNOME 3.28)](#Suspens.C3.A3o_autom.C3.A1tica_do_GDM_.28GNOME_3.28.29)
-*   [5 Veja também](#Veja_tamb.C3.A9m)
+    *   [4.5 Remoção incompleta do gdm](#Remoção_incompleta_do_gdm)
+    *   [4.6 Suspensão automática do GDM (GNOME 3.28)](#Suspensão_automática_do_GDM_(GNOME_3.28))
+*   [5 Veja também](#Veja_também)
 
 ## Instalação
 
@@ -295,7 +295,7 @@ sendo *ação* uma entre `nothing`, `suspend` ou `hibernate`.
 
 Tap-to-click (em português, "tocar para clicar") está desabilitado no GDM (e no GNOME) por padrão, mas você pode facilmente habilitá-lo com uma configuração no dconf.
 
-**Nota:** Se você quiser fazer isso no X, você precisa primeiro configurar as permissões corretas de acesso ao servidor X - veja [#Configurar permissão de acesso do servidor X](#Configurar_permiss.C3.A3o_de_acesso_do_servidor_X).
+**Nota:** Se você quiser fazer isso no X, você precisa primeiro configurar as permissões corretas de acesso ao servidor X - veja [#Configurar permissão de acesso do servidor X](#Configurar_permissão_de_acesso_do_servidor_X).
 
 Para habilitar tap-to-click diretamente, use:
 
@@ -549,7 +549,7 @@ Para remover esse aviso, autentique-se como root e exclua o usuário primário "
 
 ```
 
-Verifique se gdm foi removido com sucesso via `pwck` e `grpck`. Para completar, você pode querer se certificar que não há arquivos [arquivos sem dono](/index.php/Pacman/Dicas_e_truques#Identificar_arquivos_que_perten.C3.A7am_a_nenhum_pacote "Pacman/Dicas e truques") por restos do gdm.
+Verifique se gdm foi removido com sucesso via `pwck` e `grpck`. Para completar, você pode querer se certificar que não há arquivos [arquivos sem dono](/index.php/Pacman/Dicas_e_truques#Identificar_arquivos_que_pertençam_a_nenhum_pacote "Pacman/Dicas e truques") por restos do gdm.
 
 ### Suspensão automática do GDM (GNOME 3.28)
 

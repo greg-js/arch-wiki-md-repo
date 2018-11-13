@@ -1,12 +1,12 @@
 ## Contents
 
 *   [1 Zhrnutie](#Zhrnutie)
-*   [2 Nahrať modul zariadenia](#Nahra.C5.A5_modul_zariadenia)
-*   [3 Konfigurovať IP](#Konfigurova.C5.A5_IP)
+*   [2 Nahrať modul zariadenia](#Nahrať_modul_zariadenia)
+*   [3 Konfigurovať IP](#Konfigurovať_IP)
     *   [3.1 Pre DHCP IP](#Pre_DHCP_IP)
-    *   [3.2 Pre statickú IP](#Pre_statick.C3.BA_IP)
-*   [4 Nastaviť meno počítača](#Nastavi.C5.A5_meno_po.C4.8D.C3.ADta.C4.8Da)
-*   [5 Nastaviť meno hostiteľa/ip](#Nastavi.C5.A5_meno_hostite.C4.BEa.2Fip)
+    *   [3.2 Pre statickú IP](#Pre_statickú_IP)
+*   [4 Nastaviť meno počítača](#Nastaviť_meno_počítača)
+*   [5 Nastaviť meno hostiteľa/ip](#Nastaviť_meno_hostiteľa/ip)
 
 ## Zhrnutie
 

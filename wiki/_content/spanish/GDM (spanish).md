@@ -11,31 +11,31 @@ Los [gestores de pantallas](/index.php/Display_manager_(Espa%C3%B1ol) "Display m
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
     *   [1.1 GDM como la pantalla de bienvenida predeterminada](#GDM_como_la_pantalla_de_bienvenida_predeterminada)
-*   [2 Configuración](#Configuraci.C3.B3n)
+*   [2 Configuración](#Configuración)
     *   [2.1 GDM 3.10](#GDM_3.10)
-        *   [2.1.1 Herramienta gráfica de configuración](#Herramienta_gr.C3.A1fica_de_configuraci.C3.B3n)
+        *   [2.1.1 Herramienta gráfica de configuración](#Herramienta_gráfica_de_configuración)
         *   [2.1.2 Cambiar el idioma](#Cambiar_el_idioma)
-    *   [2.2 Configuración antigua](#Configuraci.C3.B3n_antigua)
-    *   [2.3 Iniciar sesión automáticamente](#Iniciar_sesi.C3.B3n_autom.C3.A1ticamente)
-    *   [2.4 Iniciar sesión sin contraseña](#Iniciar_sesi.C3.B3n_sin_contrase.C3.B1a)
-    *   [2.5 Cerrar sin contraseña](#Cerrar_sin_contrase.C3.B1a)
-    *   [2.6 Cambiar la sesión predeterminada de GDM](#Cambiar_la_sesi.C3.B3n_predeterminada_de_GDM)
+    *   [2.2 Configuración antigua](#Configuración_antigua)
+    *   [2.3 Iniciar sesión automáticamente](#Iniciar_sesión_automáticamente)
+    *   [2.4 Iniciar sesión sin contraseña](#Iniciar_sesión_sin_contraseña)
+    *   [2.5 Cerrar sin contraseña](#Cerrar_sin_contraseña)
+    *   [2.6 Cambiar la sesión predeterminada de GDM](#Cambiar_la_sesión_predeterminada_de_GDM)
     *   [2.7 GDM antiguo](#GDM_antiguo)
-*   [3 Solución de problemas](#Soluci.C3.B3n_de_problemas)
+*   [3 Solución de problemas](#Solución_de_problemas)
     *   [3.1 GDM falla al registrase](#GDM_falla_al_registrase)
     *   [3.2 gconf-sanity-check-2 sale con el estado 256](#gconf-sanity-check-2_sale_con_el_estado_256)
-    *   [3.3 Iniciar sesión como root en GDM](#Iniciar_sesi.C3.B3n_como_root_en_GDM)
-    *   [3.4 GDM utiliza por defecto la distribución del teclado de Estados Unidos](#GDM_utiliza_por_defecto_la_distribuci.C3.B3n_del_teclado_de_Estados_Unidos)
+    *   [3.3 Iniciar sesión como root en GDM](#Iniciar_sesión_como_root_en_GDM)
+    *   [3.4 GDM utiliza por defecto la distribución del teclado de Estados Unidos](#GDM_utiliza_por_defecto_la_distribución_del_teclado_de_Estados_Unidos)
         *   [3.4.1 GDM 2.x](#GDM_2.x)
         *   [3.4.2 GDM 3.x](#GDM_3.x)
-        *   [3.4.3 GDM no se carga después de intentar configurar el inicio de sesión automático](#GDM_no_se_carga_despu.C3.A9s_de_intentar_configurar_el_inicio_de_sesi.C3.B3n_autom.C3.A1tico)
-        *   [3.4.4 GDM no arranca después de actualizar a la versión 3.8 si se utiliza una tarjeta gráfica Intel](#GDM_no_arranca_despu.C3.A9s_de_actualizar_a_la_versi.C3.B3n_3.8_si_se_utiliza_una_tarjeta_gr.C3.A1fica_Intel)
+        *   [3.4.3 GDM no se carga después de intentar configurar el inicio de sesión automático](#GDM_no_se_carga_después_de_intentar_configurar_el_inicio_de_sesión_automático)
+        *   [3.4.4 GDM no arranca después de actualizar a la versión 3.8 si se utiliza una tarjeta gráfica Intel](#GDM_no_arranca_después_de_actualizar_a_la_versión_3.8_si_se_utiliza_una_tarjeta_gráfica_Intel)
 
 ## Instalación
 
-GDM (que también forma parte de [gnome](https://www.archlinux.org/groups/x86_64/gnome/)) puede ser [instalado](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") con el paquete [gdm](https://www.archlinux.org/packages/?name=gdm), disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
+GDM (que también forma parte de [gnome](https://www.archlinux.org/groups/x86_64/gnome/)) puede ser [instalado](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") con el paquete [gdm](https://www.archlinux.org/packages/?name=gdm), disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
 ### GDM como la pantalla de bienvenida predeterminada
 
@@ -69,7 +69,7 @@ xsetroot -solid black              # Establece el fondo en negro
 
 #### Herramienta gráfica de configuración
 
-Puede [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [gdm3setup](https://aur.archlinux.org/packages/gdm3setup/) desde AUR para configurar GDM. Se le permitirá cambiar algunas opciones de configuración, como el tema, la conexión automática o el formato de fecha, etc.
+Puede [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") [gdm3setup](https://aur.archlinux.org/packages/gdm3setup/) desde AUR para configurar GDM. Se le permitirá cambiar algunas opciones de configuración, como el tema, la conexión automática o el formato de fecha, etc.
 
 Sin embargo, no tiene la opción de cambiar el idioma.
 

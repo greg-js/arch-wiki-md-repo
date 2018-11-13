@@ -5,10 +5,10 @@ Arch Linux je nezávisle vyvinutá komunitní distribuce GNU/Linuxu pro architek
 *   [1 Historie](#Historie)
 *   [2 Jednoduchost](#Jednoduchost)
 *   [3 Modernost](#Modernost)
-*   [4 Balíčkovací systém](#Bal.C3.AD.C4.8Dkovac.C3.AD_syst.C3.A9m)
-*   [5 Integrita balíčků](#Integrita_bal.C3.AD.C4.8Dk.C5.AF)
+*   [4 Balíčkovací systém](#Balíčkovací_systém)
+*   [5 Integrita balíčků](#Integrita_balíčků)
 *   [6 Komunita](#Komunita)
-*   [7 Shrnutí](#Shrnut.C3.AD)
+*   [7 Shrnutí](#Shrnutí)
 
 ## Historie
 

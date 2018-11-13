@@ -37,7 +37,7 @@ This article describes how to set up nginx and how to optionally integrate it wi
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Configuration validation](#Configuration_validation)
     *   [6.2 Accessing local IP redirects to localhost](#Accessing_local_IP_redirects_to_localhost)
-    *   [6.3 Error: The page you are looking for is temporarily unavailable. Please try again later. (502 Bad Gateway)](#Error:_The_page_you_are_looking_for_is_temporarily_unavailable._Please_try_again_later._.28502_Bad_Gateway.29)
+    *   [6.3 Error: The page you are looking for is temporarily unavailable. Please try again later. (502 Bad Gateway)](#Error:_The_page_you_are_looking_for_is_temporarily_unavailable._Please_try_again_later._(502_Bad_Gateway))
     *   [6.4 Error: No input file specified](#Error:_No_input_file_specified)
     *   [6.5 Warning: Could not build optimal types_hash](#Warning:_Could_not_build_optimal_types_hash)
 *   [7 See also](#See_also)

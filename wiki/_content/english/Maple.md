@@ -36,7 +36,7 @@ In order to get Maple to accept your activation code, you may need to [install](
 
 ### Blank main window with tiling window managers
 
-See [Java#Non-reparenting window managers / Grey window / Programs not drawing properly](/index.php/Java#Non-reparenting_window_managers_.2F_Grey_window_.2F_Programs_not_drawing_properly "Java")
+See [Java#Non-reparenting window managers / Grey window / Programs not drawing properly](/index.php/Java#Non-reparenting_window_managers_/_Grey_window_/_Programs_not_drawing_properly "Java")
 
 ### 3D plots failing
 

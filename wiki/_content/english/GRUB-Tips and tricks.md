@@ -163,7 +163,7 @@ Following package may be installed:
 
 ## Visual configuration
 
-In GRUB it is possible, by default, to change the look of the menu. Make sure to initialize, if not done already, GRUB graphical terminal, gfxterm, with proper video mode, gfxmode, in GRUB. This can be seen in the section [GRUB#"No suitable mode found" error](/index.php/GRUB#.22No_suitable_mode_found.22_error "GRUB"). This video mode is passed by GRUB to the linux kernel via 'gfxpayload' so any visual configurations need this mode in order to be in effect.
+In GRUB it is possible, by default, to change the look of the menu. Make sure to initialize, if not done already, GRUB graphical terminal, gfxterm, with proper video mode, gfxmode, in GRUB. This can be seen in the section [GRUB#"No suitable mode found" error](/index.php/GRUB#"No_suitable_mode_found"_error "GRUB"). This video mode is passed by GRUB to the linux kernel via 'gfxpayload' so any visual configurations need this mode in order to be in effect.
 
 ### Setting the framebuffer resolution
 

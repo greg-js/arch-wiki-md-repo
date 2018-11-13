@@ -9,24 +9,24 @@ Related articles
 
 ## Contents
 
-*   [1 Επίσημα έργα του Arch Linux](#.CE.95.CF.80.CE.AF.CF.83.CE.B7.CE.BC.CE.B1_.CE.AD.CF.81.CE.B3.CE.B1_.CF.84.CE.BF.CF.85_Arch_Linux)
-    *   [1.1 Δημοσίευση στο φόρουμ](#.CE.94.CE.B7.CE.BC.CE.BF.CF.83.CE.AF.CE.B5.CF.85.CF.83.CE.B7_.CF.83.CF.84.CE.BF_.CF.86.CF.8C.CF.81.CE.BF.CF.85.CE.BC)
-    *   [1.2 Βελτίωση αυτό του wiki](#.CE.92.CE.B5.CE.BB.CF.84.CE.AF.CF.89.CF.83.CE.B7_.CE.B1.CF.85.CF.84.CF.8C_.CF.84.CE.BF.CF.85_wiki)
-    *   [1.3 Συμμετοχή στο chatroom](#.CE.A3.CF.85.CE.BC.CE.BC.CE.B5.CF.84.CE.BF.CF.87.CE.AE_.CF.83.CF.84.CE.BF_chatroom)
-    *   [1.4 Αναφορά εγκατεστημένων πακέτων](#.CE.91.CE.BD.CE.B1.CF.86.CE.BF.CF.81.CE.AC_.CE.B5.CE.B3.CE.BA.CE.B1.CF.84.CE.B5.CF.83.CF.84.CE.B7.CE.BC.CE.AD.CE.BD.CF.89.CE.BD_.CF.80.CE.B1.CE.BA.CE.AD.CF.84.CF.89.CE.BD)
-    *   [1.5 Διόρθωση και αναφορά σφαλμάτων](#.CE.94.CE.B9.CF.8C.CF.81.CE.B8.CF.89.CF.83.CE.B7_.CE.BA.CE.B1.CE.B9_.CE.B1.CE.BD.CE.B1.CF.86.CE.BF.CF.81.CE.AC_.CF.83.CF.86.CE.B1.CE.BB.CE.BC.CE.AC.CF.84.CF.89.CE.BD)
-    *   [1.6 Δημιουργία και υιοθέτηση AUR πακέτων](#.CE.94.CE.B7.CE.BC.CE.B9.CE.BF.CF.85.CF.81.CE.B3.CE.AF.CE.B1_.CE.BA.CE.B1.CE.B9_.CF.85.CE.B9.CE.BF.CE.B8.CE.AD.CF.84.CE.B7.CF.83.CE.B7_AUR_.CF.80.CE.B1.CE.BA.CE.AD.CF.84.CF.89.CE.BD)
-    *   [1.7 Επίσημη έργα λογισμικού](#.CE.95.CF.80.CE.AF.CF.83.CE.B7.CE.BC.CE.B7_.CE.AD.CF.81.CE.B3.CE.B1_.CE.BB.CE.BF.CE.B3.CE.B9.CF.83.CE.BC.CE.B9.CE.BA.CE.BF.CF.8D)
-    *   [1.8 Δωρεά χρημάτων](#.CE.94.CF.89.CF.81.CE.B5.CE.AC_.CF.87.CF.81.CE.B7.CE.BC.CE.AC.CF.84.CF.89.CE.BD)
-*   [2 Κοινοτικά έργα](#.CE.9A.CE.BF.CE.B9.CE.BD.CE.BF.CF.84.CE.B9.CE.BA.CE.AC_.CE.AD.CF.81.CE.B3.CE.B1)
-    *   [2.1 Ομάδες](#.CE.9F.CE.BC.CE.AC.CE.B4.CE.B5.CF.82)
-    *   [2.2 Λογισμικό](#.CE.9B.CE.BF.CE.B3.CE.B9.CF.83.CE.BC.CE.B9.CE.BA.CF.8C)
-    *   [2.3 Υπηρεσίες](#.CE.A5.CF.80.CE.B7.CF.81.CE.B5.CF.83.CE.AF.CE.B5.CF.82)
-    *   [2.4 Άλλα](#.CE.86.CE.BB.CE.BB.CE.B1)
+*   [1 Επίσημα έργα του Arch Linux](#Επίσημα_έργα_του_Arch_Linux)
+    *   [1.1 Δημοσίευση στο φόρουμ](#Δημοσίευση_στο_φόρουμ)
+    *   [1.2 Βελτίωση αυτό του wiki](#Βελτίωση_αυτό_του_wiki)
+    *   [1.3 Συμμετοχή στο chatroom](#Συμμετοχή_στο_chatroom)
+    *   [1.4 Αναφορά εγκατεστημένων πακέτων](#Αναφορά_εγκατεστημένων_πακέτων)
+    *   [1.5 Διόρθωση και αναφορά σφαλμάτων](#Διόρθωση_και_αναφορά_σφαλμάτων)
+    *   [1.6 Δημιουργία και υιοθέτηση AUR πακέτων](#Δημιουργία_και_υιοθέτηση_AUR_πακέτων)
+    *   [1.7 Επίσημη έργα λογισμικού](#Επίσημη_έργα_λογισμικού)
+    *   [1.8 Δωρεά χρημάτων](#Δωρεά_χρημάτων)
+*   [2 Κοινοτικά έργα](#Κοινοτικά_έργα)
+    *   [2.1 Ομάδες](#Ομάδες)
+    *   [2.2 Λογισμικό](#Λογισμικό)
+    *   [2.3 Υπηρεσίες](#Υπηρεσίες)
+    *   [2.4 Άλλα](#Άλλα)
 *   [3 FAQ](#FAQ)
-    *   [3.1 Πώς μπορώ να γίνω προγραμματιστής του Arch;](#.CE.A0.CF.8E.CF.82_.CE.BC.CF.80.CE.BF.CF.81.CF.8E_.CE.BD.CE.B1_.CE.B3.CE.AF.CE.BD.CF.89_.CF.80.CF.81.CE.BF.CE.B3.CF.81.CE.B1.CE.BC.CE.BC.CE.B1.CF.84.CE.B9.CF.83.CF.84.CE.AE.CF.82_.CF.84.CE.BF.CF.85_Arch.3B)
-    *   [3.2 Πώς μπορώ να γίνω Trusted User (Έμπιστος Χρήστης);](#.CE.A0.CF.8E.CF.82_.CE.BC.CF.80.CE.BF.CF.81.CF.8E_.CE.BD.CE.B1_.CE.B3.CE.AF.CE.BD.CF.89_Trusted_User_.28.CE.88.CE.BC.CF.80.CE.B9.CF.83.CF.84.CE.BF.CF.82_.CE.A7.CF.81.CE.AE.CF.83.CF.84.CE.B7.CF.82.29.3B)
-    *   [3.3 Τι μπορώ να κάνω ως καλλιτέχνης;](#.CE.A4.CE.B9_.CE.BC.CF.80.CE.BF.CF.81.CF.8E_.CE.BD.CE.B1_.CE.BA.CE.AC.CE.BD.CF.89_.CF.89.CF.82_.CE.BA.CE.B1.CE.BB.CE.BB.CE.B9.CF.84.CE.AD.CF.87.CE.BD.CE.B7.CF.82.3B)
+    *   [3.1 Πώς μπορώ να γίνω προγραμματιστής του Arch;](#Πώς_μπορώ_να_γίνω_προγραμματιστής_του_Arch;)
+    *   [3.2 Πώς μπορώ να γίνω Trusted User (Έμπιστος Χρήστης);](#Πώς_μπορώ_να_γίνω_Trusted_User_(Έμπιστος_Χρήστης);)
+    *   [3.3 Τι μπορώ να κάνω ως καλλιτέχνης;](#Τι_μπορώ_να_κάνω_ως_καλλιτέχνης;)
 
 ## Επίσημα έργα του Arch Linux
 
@@ -42,7 +42,7 @@ Related articles
 
 ### Συμμετοχή στο chatroom
 
-Μπορείτε να βοηθήσετε άλλους χρήστες στην επίλυση των προβλημάτων τους στο [IRC Κανάλι](/index.php/IRC_channel "IRC channel"). Είναι ζωτικής σημασίας ωστόσο,να διαβάσετε τους [κανόνες](/index.php/IRC_channel#.23archlinux_rules "IRC channel") και τις [κατευθυντήριες γραμμές](/index.php/IRC_channel#.23archlinux_guidelines "IRC channel") πριν από τη συμμετοχή.[Περαιτέρω κανάλια](/index.php/IRC_channels "IRC channels") είναι διαθέσιμα για συγκεκριμένα θέματα.
+Μπορείτε να βοηθήσετε άλλους χρήστες στην επίλυση των προβλημάτων τους στο [IRC Κανάλι](/index.php/IRC_channel "IRC channel"). Είναι ζωτικής σημασίας ωστόσο,να διαβάσετε τους [κανόνες](/index.php/IRC_channel##archlinux_rules "IRC channel") και τις [κατευθυντήριες γραμμές](/index.php/IRC_channel##archlinux_guidelines "IRC channel") πριν από τη συμμετοχή.[Περαιτέρω κανάλια](/index.php/IRC_channels "IRC channels") είναι διαθέσιμα για συγκεκριμένα θέματα.
 
 ### Αναφορά εγκατεστημένων πακέτων
 
@@ -173,7 +173,7 @@ H κοινότητα του Arch διατηρεί πολλά έργα. Μη δι
 
 ### Πώς μπορώ να γίνω Trusted User (Έμπιστος Χρήστης);
 
-Παρακαλούμε διαβάστε [Trusted Users#How do I become a TU?](/index.php/Trusted_Users#How_do_I_become_a_TU.3F "Trusted Users").
+Παρακαλούμε διαβάστε [Trusted Users#How do I become a TU?](/index.php/Trusted_Users#How_do_I_become_a_TU? "Trusted Users").
 
 ### Τι μπορώ να κάνω ως καλλιτέχνης;
 

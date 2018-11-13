@@ -8,12 +8,12 @@
         *   [1.3.2 Technical Overview](#Technical_Overview)
     *   [1.4 AIDE](#AIDE)
     *   [1.5 STARK](#STARK)
-*   [2 Using GPG, LUKS, or OpenSSL Encrypted Keyfiles](#Using_GPG.2C_LUKS.2C_or_OpenSSL_Encrypted_Keyfiles)
-*   [3 Remote unlocking of the root (or other) partition](#Remote_unlocking_of_the_root_.28or_other.29_partition)
-    *   [3.1 Remote unlocking (hooks: systemd, systemd-tool)](#Remote_unlocking_.28hooks:_systemd.2C_systemd-tool.29)
-    *   [3.2 Remote unlocking (hooks: netconf, dropbear, tinyssh, ppp)](#Remote_unlocking_.28hooks:_netconf.2C_dropbear.2C_tinyssh.2C_ppp.29)
-    *   [3.3 Remote unlock via wifi (hooks: build your own)](#Remote_unlock_via_wifi_.28hooks:_build_your_own.29)
-*   [4 Discard/TRIM support for solid state drives (SSD)](#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29)
+*   [2 Using GPG, LUKS, or OpenSSL Encrypted Keyfiles](#Using_GPG,_LUKS,_or_OpenSSL_Encrypted_Keyfiles)
+*   [3 Remote unlocking of the root (or other) partition](#Remote_unlocking_of_the_root_(or_other)_partition)
+    *   [3.1 Remote unlocking (hooks: systemd, systemd-tool)](#Remote_unlocking_(hooks:_systemd,_systemd-tool))
+    *   [3.2 Remote unlocking (hooks: netconf, dropbear, tinyssh, ppp)](#Remote_unlocking_(hooks:_netconf,_dropbear,_tinyssh,_ppp))
+    *   [3.3 Remote unlock via wifi (hooks: build your own)](#Remote_unlock_via_wifi_(hooks:_build_your_own))
+*   [4 Discard/TRIM support for solid state drives (SSD)](#Discard/TRIM_support_for_solid_state_drives_(SSD))
 *   [5 The encrypt hook and multiple disks](#The_encrypt_hook_and_multiple_disks)
     *   [5.1 Expanding LVM on multiple disks](#Expanding_LVM_on_multiple_disks)
         *   [5.1.1 Adding a new drive](#Adding_a_new_drive)
@@ -24,7 +24,7 @@
 *   [6 Encrypted system using a detached LUKS header](#Encrypted_system_using_a_detached_LUKS_header)
     *   [6.1 Using systemd hook](#Using_systemd_hook)
     *   [6.2 Modifying encrypt hook](#Modifying_encrypt_hook)
-*   [7 Encrypted /boot and a detached LUKS header on USB](#Encrypted_.2Fboot_and_a_detached_LUKS_header_on_USB)
+*   [7 Encrypted /boot and a detached LUKS header on USB](#Encrypted_/boot_and_a_detached_LUKS_header_on_USB)
     *   [7.1 Preparing the disk devices](#Preparing_the_disk_devices)
         *   [7.1.1 Preparing the USB key](#Preparing_the_USB_key)
         *   [7.1.2 The main drive](#The_main_drive)
@@ -34,7 +34,7 @@
 
 ## Securing the unencrypted boot partition
 
-The `/boot` partition and the [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") are the two areas of the disk that are not encrypted, even in an [encrypted root](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system") configuration. They cannot usually be encrypted because the [boot loader](/index.php/Boot_loader "Boot loader") and BIOS (respectively) are unable to unlock a dm-crypt container in order to continue the boot process. An exception is [GRUB](/index.php/GRUB "GRUB"), which gained a feature to unlock a LUKS encrypted `/boot` - see [dm-crypt/Encrypting an entire system#Encrypted boot partition (GRUB)](/index.php/Dm-crypt/Encrypting_an_entire_system#Encrypted_boot_partition_.28GRUB.29 "Dm-crypt/Encrypting an entire system").
+The `/boot` partition and the [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") are the two areas of the disk that are not encrypted, even in an [encrypted root](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system") configuration. They cannot usually be encrypted because the [boot loader](/index.php/Boot_loader "Boot loader") and BIOS (respectively) are unable to unlock a dm-crypt container in order to continue the boot process. An exception is [GRUB](/index.php/GRUB "GRUB"), which gained a feature to unlock a LUKS encrypted `/boot` - see [dm-crypt/Encrypting an entire system#Encrypted boot partition (GRUB)](/index.php/Dm-crypt/Encrypting_an_entire_system#Encrypted_boot_partition_(GRUB) "Dm-crypt/Encrypting an entire system").
 
 This section describes steps that can be taken to make the boot process more secure.
 
@@ -143,7 +143,7 @@ echo "Pacman update [3] All done, let us roll on ..."
 
 **Warning:** This hook does **not** encrypt [GRUB](/index.php/GRUB "GRUB")'s core (MBR) code or EFI stub, nor does it protect against situations where an attacker is able to modify the behaviour of the bootloader to compromise the kernel and/or initramfs at run-time.
 
-[mkinitcpio-chkcryptoboot](https://aur.archlinux.org/packages/mkinitcpio-chkcryptoboot/) is a [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") hook that performs integrity checks during early-userspace and advises the user not to enter his root partition password if the system appears to have been compromised. Security is achieved through an [encrypted boot partition](/index.php/Dm-crypt/Encrypting_an_entire_system#Encrypted_boot_partition_.28GRUB.29 "Dm-crypt/Encrypting an entire system"), which is unlocked using [GRUB](/index.php/GRUB#Boot_partition "GRUB")'s `cryptodisk.mod` module, and a root filesystem partition, which is encrypted with a password different from the former. This way, the [initramfs](/index.php/Initramfs "Initramfs") and [kernel](/index.php/Kernel "Kernel") are secured against offline tampering, and the root partition can remain secure even if the `/boot` partition password is entered on a compromised machine (provided that the chkcryptoboot hook detects the compromise, and is not itself compromised at run-time).
+[mkinitcpio-chkcryptoboot](https://aur.archlinux.org/packages/mkinitcpio-chkcryptoboot/) is a [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") hook that performs integrity checks during early-userspace and advises the user not to enter his root partition password if the system appears to have been compromised. Security is achieved through an [encrypted boot partition](/index.php/Dm-crypt/Encrypting_an_entire_system#Encrypted_boot_partition_(GRUB) "Dm-crypt/Encrypting an entire system"), which is unlocked using [GRUB](/index.php/GRUB#Boot_partition "GRUB")'s `cryptodisk.mod` module, and a root filesystem partition, which is encrypted with a password different from the former. This way, the [initramfs](/index.php/Initramfs "Initramfs") and [kernel](/index.php/Kernel "Kernel") are secured against offline tampering, and the root partition can remain secure even if the `/boot` partition password is entered on a compromised machine (provided that the chkcryptoboot hook detects the compromise, and is not itself compromised at run-time).
 
 This hook requires [grub](https://www.archlinux.org/packages/?name=grub) release >=2.00 to function, and a dedicated, LUKS encrypted `/boot` partition with its own password in order to be secure.
 
@@ -190,7 +190,7 @@ The following forum posts give instructions to use two factor authentication, gp
 *   GnuPG: [Post regarding GPG encrypted keys](https://bbs.archlinux.org/viewtopic.php?pid=943338#p943338) This post has the generic instructions.
 *   OpenSSL: [Post regarding OpenSSL encrypted keys](https://bbs.archlinux.org/viewtopic.php?pid=947805#p947805) This post only has the `ssldec` hooks.
 *   OpenSSL: [Post regarding OpenSSL salted bf-cbc encrypted keys](https://bbs.archlinux.org/viewtopic.php?id=155393) This post has the `bfkf` initcpio hooks, install, and encrypted keyfile generator scripts.
-*   LUKS: [Post regarding LUKS encrypted keys](https://bbs.archlinux.org/viewtopic.php?pid=1502651#p1502651) with a `lukskey` initcpio hook. Or [#Encrypted /boot and a detached LUKS header on USB](#Encrypted_.2Fboot_and_a_detached_LUKS_header_on_USB) below with a custom encrypt hook for initcpio.
+*   LUKS: [Post regarding LUKS encrypted keys](https://bbs.archlinux.org/viewtopic.php?pid=1502651#p1502651) with a `lukskey` initcpio hook. Or [#Encrypted /boot and a detached LUKS header on USB](#Encrypted_/boot_and_a_detached_LUKS_header_on_USB) below with a custom encrypt hook for initcpio.
 
 Note that:
 
@@ -503,7 +503,7 @@ kernel /boot/vmlinuz-linux root=/dev/md0 ro md=0,/dev/sda1,/dev/sdb1 md=1,/dev/s
 
 This example follows the same setup as in [dm-crypt/Encrypting an entire system#Plain dm-crypt](/index.php/Dm-crypt/Encrypting_an_entire_system#Plain_dm-crypt "Dm-crypt/Encrypting an entire system"), which should be read first before following this guide.
 
-By using a detached header the encrypted blockdevice itself only carries encrypted data, which gives [deniable encryption](https://en.wikipedia.org/wiki/Deniable_encryption "wikipedia:Deniable encryption") as long as the existence of a header is unknown to the attackers. It is similar to using [plain dm-crypt](/index.php/Dm-crypt/Encrypting_an_entire_system#Plain_dm-crypt "Dm-crypt/Encrypting an entire system"), but with the LUKS advantages such as multiple passphrases for the masterkey and key derivation. Further, using a detached header offers a form of two factor authentication with an easier setup than [using GPG or OpenSSL encrypted keyfiles](#Using_GPG.2C_LUKS.2C_or_OpenSSL_Encrypted_Keyfiles), while still having a built-in password prompt for multiple retries. See [Disk encryption#Cryptographic metadata](/index.php/Disk_encryption#Cryptographic_metadata "Disk encryption") for more information.
+By using a detached header the encrypted blockdevice itself only carries encrypted data, which gives [deniable encryption](https://en.wikipedia.org/wiki/Deniable_encryption "wikipedia:Deniable encryption") as long as the existence of a header is unknown to the attackers. It is similar to using [plain dm-crypt](/index.php/Dm-crypt/Encrypting_an_entire_system#Plain_dm-crypt "Dm-crypt/Encrypting an entire system"), but with the LUKS advantages such as multiple passphrases for the masterkey and key derivation. Further, using a detached header offers a form of two factor authentication with an easier setup than [using GPG or OpenSSL encrypted keyfiles](#Using_GPG,_LUKS,_or_OpenSSL_Encrypted_Keyfiles), while still having a built-in password prompt for multiple retries. See [Disk encryption#Cryptographic metadata](/index.php/Disk_encryption#Cryptographic_metadata "Disk encryption") for more information.
 
 See [dm-crypt/Device encryption#Encryption options for LUKS mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") for encryption options before performing the first step to setup the encrypted system partition and creating a header file to use with `cryptsetup`:
 

@@ -1,13 +1,13 @@
 ## Contents
 
-*   [1 Úvod](#.C3.9Avod)
-*   [2 Instalace balíčků](#Instalace_bal.C3.AD.C4.8Dk.C5.AF)
-*   [3 Co je to balíček ?](#Co_je_to_bal.C3.AD.C4.8Dek_.3F)
-*   [4 Co je PKGBUILD a co obsahuje?](#Co_je_PKGBUILD_a_co_obsahuje.3F)
+*   [1 Úvod](#Úvod)
+*   [2 Instalace balíčků](#Instalace_balíčků)
+*   [3 Co je to balíček ?](#Co_je_to_balíček_?)
+*   [4 Co je PKGBUILD a co obsahuje?](#Co_je_PKGBUILD_a_co_obsahuje?)
 *   [5 Funkce build](#Funkce_build)
 *   [6 Strom ABS](#Strom_ABS)
-*   [7 První použití ABS : přizpůsobení balíčku](#Prvn.C3.AD_pou.C5.BEit.C3.AD_ABS_:_p.C5.99izp.C5.AFsoben.C3.AD_bal.C3.AD.C4.8Dku)
-*   [8 Compiler Flags a úpravy makepkg](#Compiler_Flags_a_.C3.BApravy_makepkg)
+*   [7 První použití ABS : přizpůsobení balíčku](#První_použití_ABS_:_přizpůsobení_balíčku)
+*   [8 Compiler Flags a úpravy makepkg](#Compiler_Flags_a_úpravy_makepkg)
 
 #### Úvod
 

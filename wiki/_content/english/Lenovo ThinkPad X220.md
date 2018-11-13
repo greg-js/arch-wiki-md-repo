@@ -9,12 +9,12 @@ The Lenovo ThinkPad X220 is a small-form-factor laptop with Intel Mobile i5/i7 C
     *   [1.4 Trackpoint and Clickpad](#Trackpoint_and_Clickpad)
     *   [1.5 Dock](#Dock)
 *   [2 Troubleshooting](#Troubleshooting)
-    *   [2.1 Boot fails (BIOS/GPT)](#Boot_fails_.28BIOS.2FGPT.29)
+    *   [2.1 Boot fails (BIOS/GPT)](#Boot_fails_(BIOS/GPT))
     *   [2.2 Reboot loop after resume from suspend](#Reboot_loop_after_resume_from_suspend)
     *   [2.3 Microphone](#Microphone)
     *   [2.4 Multi-monitor setups with X](#Multi-monitor_setups_with_X)
     *   [2.5 Backlight](#Backlight)
-    *   [2.6 X220 Touchpad cursor jump/imprecise](#X220_Touchpad_cursor_jump.2Fimprecise)
+    *   [2.6 X220 Touchpad cursor jump/imprecise](#X220_Touchpad_cursor_jump/imprecise)
 *   [3 See also](#See_also)
 
 ## Configuration

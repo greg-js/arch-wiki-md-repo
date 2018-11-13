@@ -6,11 +6,11 @@ The Oculus Rift is a virtual reality head-mounted display developed by [Oculus V
     *   [1.1 Hardware](#Hardware)
     *   [1.2 SDK](#SDK)
     *   [1.3 Video Mode](#Video_Mode)
-        *   [1.3.1 Manually, using xrandr](#Manually.2C_using_xrandr)
+        *   [1.3.1 Manually, using xrandr](#Manually,_using_xrandr)
 *   [2 Working applications](#Working_applications)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Kernel log spamming by DK2 camera](#Kernel_log_spamming_by_DK2_camera)
-    *   [3.2 Camera misbehaving after suspend/resume](#Camera_misbehaving_after_suspend.2Fresume)
+    *   [3.2 Camera misbehaving after suspend/resume](#Camera_misbehaving_after_suspend/resume)
     *   [3.3 Inaccurate latency readings for legacy applications](#Inaccurate_latency_readings_for_legacy_applications)
     *   [3.4 Oculus DK1 not showing as monitor or showing disconnected when running xrandr](#Oculus_DK1_not_showing_as_monitor_or_showing_disconnected_when_running_xrandr)
 

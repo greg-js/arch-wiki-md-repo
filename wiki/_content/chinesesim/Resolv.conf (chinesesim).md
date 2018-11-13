@@ -8,19 +8,19 @@ DNS 解析的配置文件是 `/etc/resolv.conf`，根据[resolv.conf(5) 手册�
 
 ## Contents
 
-*   [1 DNS 解析](#DNS_.E8.A7.A3.E6.9E.90)
-*   [2 选择其它 DNS 服务器](#.E9.80.89.E6.8B.A9.E5.85.B6.E5.AE.83_DNS_.E6.9C.8D.E5.8A.A1.E5.99.A8)
+*   [1 DNS 解析](#DNS_解析)
+*   [2 选择其它 DNS 服务器](#选择其它_DNS_服务器)
     *   [2.1 OpenNIC](#OpenNIC)
     *   [2.2 OpenDNS](#OpenDNS)
     *   [2.3 Google](#Google)
     *   [2.4 Comodo](#Comodo)
     *   [2.5 Yandex](#Yandex)
     *   [2.6 UncensoredDNS](#UncensoredDNS)
-*   [3 保护 DNS 设置](#.E4.BF.9D.E6.8A.A4_DNS_.E8.AE.BE.E7.BD.AE)
-    *   [3.1 修改dhcpcd配置](#.E4.BF.AE.E6.94.B9dhcpcd.E9.85.8D.E7.BD.AE)
-    *   [3.2 使用resolv.conf.head](#.E4.BD.BF.E7.94.A8resolv.conf.head)
-    *   [3.3 给/etc/resolv.conf添加写保护](#.E7.BB.99.2Fetc.2Fresolv.conf.E6.B7.BB.E5.8A.A0.E5.86.99.E4.BF.9D.E6.8A.A4)
-    *   [3.4 使用 timeout 选项减少主机名查找时间](#.E4.BD.BF.E7.94.A8_timeout_.E9.80.89.E9.A1.B9.E5.87.8F.E5.B0.91.E4.B8.BB.E6.9C.BA.E5.90.8D.E6.9F.A5.E6.89.BE.E6.97.B6.E9.97.B4)
+*   [3 保护 DNS 设置](#保护_DNS_设置)
+    *   [3.1 修改dhcpcd配置](#修改dhcpcd配置)
+    *   [3.2 使用resolv.conf.head](#使用resolv.conf.head)
+    *   [3.3 给/etc/resolv.conf添加写保护](#给/etc/resolv.conf添加写保护)
+    *   [3.4 使用 timeout 选项减少主机名查找时间](#使用_timeout_选项减少主机名查找时间)
 
 ## DNS 解析
 

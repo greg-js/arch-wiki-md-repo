@@ -4,15 +4,15 @@ Audacious有著Winamp風格且支援面板更換，使用過WinAMP的人應該�
 
 ## Contents
 
-*   [1 特性](#.E7.89.B9.E6.80.A7)
-*   [2 安裝](#.E5.AE.89.E8.A3.9D)
+*   [1 特性](#特性)
+*   [2 安裝](#安裝)
 *   [3 Audtool](#Audtool)
 *   [4 GTK UI](#GTK_UI)
-*   [5 標準 UI 面板](#.E6.A8.99.E6.BA.96_UI_.E9.9D.A2.E6.9D.BF)
-    *   [5.1 使用 Winamp 面板](#.E4.BD.BF.E7.94.A8_Winamp_.E9.9D.A2.E6.9D.BF)
-    *   [5.2 加入Winamp面板](#.E5.8A.A0.E5.85.A5Winamp.E9.9D.A2.E6.9D.BF)
-*   [6 音樂 CD](#.E9.9F.B3.E6.A8.82_CD)
-*   [7 OSS 支援](#OSS_.E6.94.AF.E6.8F.B4)
+*   [5 標準 UI 面板](#標準_UI_面板)
+    *   [5.1 使用 Winamp 面板](#使用_Winamp_面板)
+    *   [5.2 加入Winamp面板](#加入Winamp面板)
+*   [6 音樂 CD](#音樂_CD)
+*   [7 OSS 支援](#OSS_支援)
 
 # 特性
 

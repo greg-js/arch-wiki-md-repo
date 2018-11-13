@@ -14,7 +14,7 @@ Quoting authors of the [project](http://www.celeryproject.org/):
     *   [3.2 Test run](#Test_run)
     *   [3.3 Prepare module for Celery service](#Prepare_module_for_Celery_service)
     *   [3.4 Run tasks periodically](#Run_tasks_periodically)
-*   [4 Run Celery in chroot (experimental)](#Run_Celery_in_chroot_.28experimental.29)
+*   [4 Run Celery in chroot (experimental)](#Run_Celery_in_chroot_(experimental))
     *   [4.1 Create chroot directory and devices](#Create_chroot_directory_and_devices)
     *   [4.2 Create necessary directories](#Create_necessary_directories)
     *   [4.3 Populate chroot](#Populate_chroot)

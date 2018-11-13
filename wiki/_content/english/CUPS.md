@@ -128,7 +128,7 @@ If you have set up [Avahi](/index.php/Avahi "Avahi") as in [#Network](#Network),
 
 The URI can also be generated manually, without using [Avahi](/index.php/Avahi "Avahi"). A list of the available URI schemes for networked printers is available in the [CUPS documentation](https://www.cups.org/doc/network.html#PROTOCOLS). As exact details of the URIs differ between printers, check either the manual of the printer or [CUPS/Printer-specific problems](/index.php/CUPS/Printer-specific_problems "CUPS/Printer-specific problems").
 
-Remote CUPS print servers can be accessed through a URI of the form `ipp://*hostname*:631/printers/*queue_name*`. See [CUPS/Printer sharing#Between GNU/Linux systems](/index.php/CUPS/Printer_sharing#Between_GNU.2FLinux_systems "CUPS/Printer sharing") for details on setting up the remote print server.
+Remote CUPS print servers can be accessed through a URI of the form `ipp://*hostname*:631/printers/*queue_name*`. See [CUPS/Printer sharing#Between GNU/Linux systems](/index.php/CUPS/Printer_sharing#Between_GNU/Linux_systems "CUPS/Printer sharing") for details on setting up the remote print server.
 
 See [CUPS/Troubleshooting#Networking issues](/index.php/CUPS/Troubleshooting#Networking_issues "CUPS/Troubleshooting") for additional issues and solutions.
 

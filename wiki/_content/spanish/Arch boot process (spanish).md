@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Arch boot process](/index.php/Arch_boot_process "Arch boot process"), revisada por última vez el **2018-10-08**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Arch_boot_process&diff=0&oldid=546665) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Arch boot process](/index.php/Arch_boot_process "Arch boot process"), revisada por última vez el **2018-11-11**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Arch_boot_process&diff=0&oldid=554647) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -19,21 +19,21 @@ Para iniciar Arch Linux, debe configurarse un [gestor de arranque](#Gestor_de_ar
 *   [1 Tipos de firmware](#Tipos_de_firmware)
     *   [1.1 BIOS](#BIOS)
     *   [1.2 UEFI](#UEFI)
-*   [2 Inicialización del sistema](#Inicializaci.C3.B3n_del_sistema)
+*   [2 Inicialización del sistema](#Inicialización_del_sistema)
     *   [2.1 Bajo BIOS](#Bajo_BIOS)
     *   [2.2 Bajo UEFI](#Bajo_UEFI)
-    *   [2.3 Arranque múltiple en UEFI](#Arranque_m.C3.BAltiple_en_UEFI)
+    *   [2.3 Arranque múltiple en UEFI](#Arranque_múltiple_en_UEFI)
 *   [3 Gestor de arranque](#Gestor_de_arranque)
-    *   [3.1 Comparación de características](#Comparaci.C3.B3n_de_caracter.C3.ADsticas)
+    *   [3.1 Comparación de características](#Comparación_de_características)
 *   [4 Kernel](#Kernel)
 *   [5 initramfs](#initramfs)
-*   [6 Proceso de inicio (Init)](#Proceso_de_inicio_.28Init.29)
+*   [6 Proceso de inicio (Init)](#Proceso_de_inicio_(Init))
 *   [7 Getty](#Getty)
 *   [8 Gestor de pantallas](#Gestor_de_pantallas)
-*   [9 Inicio de sesión](#Inicio_de_sesi.C3.B3n)
-*   [10 Intérprete de órdenes](#Int.C3.A9rprete_de_.C3.B3rdenes)
-*   [11 GUI, xinit o wayland](#GUI.2C_xinit_o_wayland)
-*   [12 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [9 Inicio de sesión](#Inicio_de_sesión)
+*   [10 Intérprete de órdenes](#Intérprete_de_órdenes)
+*   [11 GUI, xinit o wayland](#GUI,_xinit_o_wayland)
+*   [12 Véase también](#Véase_también)
 
 ## Tipos de firmware
 
@@ -47,7 +47,7 @@ Una [BIOS](https://en.wikipedia.org/wiki/es:BIOS "wikipedia:es:BIOS") o sistema 
 
 La especificación UEFI exige el soporte para los sistemas de archivos [FAT12, FAT16, y FAT32](/index.php/FAT "FAT") (véase [Especificación UEFI versión 2.7, sección 13.3.1.1](http://www.uefi.org/sites/default/files/resources/UEFI%20Spec%202_7_A%20Sept%206.pdf#G17.1019485)), pero cualquier proveedor puede añadir opcionalmente soporte para sistemas de archivos adicionales; por ejemplo, Apple [Mac](/index.php/Mac "Mac") admite (y de forma predeterminada) sus propios controladores de sistema de archivos HFS+. Las implementaciones UEFI también son compatibles con ISO-9660 para discos ópticos.
 
-UEFI lanza aplicaciones EFI, por ejemplo. [gestores de arranque](#Gestor_de_arranque), [intérpretes de órdenes UEFI](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol)#Int.C3.A9rprete_de_.C3.B3rdenes_UEFI "Unified Extensible Firmware Interface (Español)"), etc. Estas aplicaciones generalmente se almacenan como archivos en la [partición del sistema EFI](/index.php/EFI_system_partition_(Espa%C3%B1ol) "EFI system partition (Español)"). Cada proveedor puede almacenar sus archivos en la partición del sistema EFI en la carpeta `/EFI/*nombre del proveedor*`. Las aplicaciones se pueden iniciar añadiendo una entrada de arranque a la NVRAM o desde el intérprete de órdenes UEFI.
+UEFI lanza aplicaciones EFI, por ejemplo. [gestores de arranque](#Gestor_de_arranque), [intérpretes de órdenes UEFI](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol)#Intérprete_de_órdenes_UEFI "Unified Extensible Firmware Interface (Español)"), etc. Estas aplicaciones generalmente se almacenan como archivos en la [partición del sistema EFI](/index.php/EFI_system_partition_(Espa%C3%B1ol) "EFI system partition (Español)"). Cada proveedor puede almacenar sus archivos en la partición del sistema EFI en la carpeta `/EFI/*nombre del proveedor*`. Las aplicaciones se pueden iniciar añadiendo una entrada de arranque a la NVRAM o desde el intérprete de órdenes UEFI.
 
 ## Inicialización del sistema
 
@@ -55,7 +55,7 @@ UEFI lanza aplicaciones EFI, por ejemplo. [gestores de arranque](#Gestor_de_arra
 
 1.  Encendido del sistema, se ejecuta la [autoprueba de encendido (POST)](https://en.wikipedia.org/wiki/es:POST "wikipedia:es:POST").
 2.  Después del POST, la BIOS inicializa el hardware del sistema necesario para el inicio (disco, controladores de teclado, etc.).
-3.  BIOS inicia los primeros 440 bytes ([el área del código de arranque del MBR](/index.php/Partitioning#Master_Boot_Record_.28bootstrap_code.29 "Partitioning")) del primer disco según el orden de la BIOS.
+3.  BIOS inicia los primeros 440 bytes ([el área del código de arranque del MBR](/index.php/Partitioning#Master_Boot_Record_(bootstrap_code) "Partitioning")) del primer disco según el orden de la BIOS.
 4.  La primera etapa del cargador de arranque en el código de arranque del MBR, luego inicia el código de su segunda etapa (si existe) desde:
     *   sectores de discos siguientes tras el MBR, por ejemplo la denominada brecha posterior al MBR (solo en la tabla de particiones MBR).
     *   un disco de partición o un disco sin partición [volume boot record (VBR)](https://en.wikipedia.org/wiki/Volume_boot_record "wikipedia:Volume boot record").
@@ -68,7 +68,7 @@ UEFI lanza aplicaciones EFI, por ejemplo. [gestores de arranque](#Gestor_de_arra
 1.  Encendido del sistema, se ejecuta la [autoprueba de encendido (POST)](https://en.wikipedia.org/wiki/es:POST "wikipedia:es:POST").
 2.  UEFI inicializa el hardware requerido para el arranque.
 3.  El firmware lee las entradas de arranque en la NVRAM para determinar qué aplicación EFI se lanzará y desde dónde (por ejemplo, desde qué disco y partición).
-    *   Una entrada de arranque podría simplemente ser un disco. En este caso, el firmware busca una [partición del sistema EFI](/index.php/EFI_system_partition_(Espa%C3%B1ol) "EFI system partition (Español)") en ese disco e intenta encontrar una aplicación EFI en la ruta de arranque alternativa `\EFI\BOOT\BOOTX64.EFI` (`BOOTIA32.EFI` en [IA32 (32 bits) sistemas EFI](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol)#Firmware_de_UEFI "Unified Extensible Firmware Interface (Español)")). Así es como funcionan los medios extraíbles de arranque UEFI.
+    *   Una entrada de arranque podría simplemente ser un disco. En este caso, el firmware busca una [partición del sistema EFI](/index.php/EFI_system_partition_(Espa%C3%B1ol) "EFI system partition (Español)") en ese disco e intenta encontrar una aplicación EFI en la ruta de arranque alternativa `\EFI\BOOT\BOOTX64.EFI` (`BOOTIA32.EFI` en [sistemas con UEFI IA32 (32 bits)](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol)#Firmware_de_UEFI "Unified Extensible Firmware Interface (Español)")). Así es como funcionan los medios extraíbles de arranque UEFI.
 4.  El firmware lanza la aplicación EFI.
     *   Podría ser un [gestor de arranque](#Gestor_de_arranque) o el [kernel](/index.php/Kernel_(Espa%C3%B1ol) "Kernel (Español)") de Arch usando [EFISTUB](/index.php/EFISTUB_(Espa%C3%B1ol) "EFISTUB (Español)").
     *   Podría ser alguna otra aplicación EFI, como un intérprete de órdenes UEFI o un [gestor de arranque](#Gestor_de_arranque) como [systemd-boot](/index.php/Systemd-boot_(Espa%C3%B1ol) "Systemd-boot (Español)") o [rEFInd](/index.php/REFInd "REFInd").
@@ -127,7 +127,7 @@ En la etapa final del espacio de usuario inicial, la verdadera raíz se monta y 
 
 ## Getty
 
-[init](/index.php/Init "Init") llama a [getty](/index.php/Getty_(Espa%C3%B1ol) "Getty (Español)") una vez por cada [terminal virtual](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") (típicamente seis de ellos), lo que inicializa cada tty y solicita un nombre de usuario y una contraseña. Una vez que se proporcionan el nombre de usuario y la contraseña, getty los compara con `/etc/passwd` y `/etc/shadow`, luego llama al [inicio de sesión](#Inicio_de_sesi.C3.B3n). Alternativamente, getty puede iniciar un gestor de pantalla si hay uno presente en el sistema.
+[init](/index.php/Init "Init") llama a [getty](/index.php/Getty_(Espa%C3%B1ol) "Getty (Español)") una vez por cada [terminal virtual](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") (típicamente seis de ellos), lo que inicializa cada tty y solicita un nombre de usuario y una contraseña. Una vez que se proporcionan el nombre de usuario y la contraseña, getty los compara con `/etc/passwd` y `/etc/shadow`, luego llama al [inicio de sesión](#Inicio_de_sesión). Alternativamente, getty puede iniciar un gestor de pantalla si hay uno presente en el sistema.
 
 ## Gestor de pantallas
 

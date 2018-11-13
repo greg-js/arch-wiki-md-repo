@@ -14,7 +14,7 @@ This article aims to help in creating a debugging Arch package and using it to p
     *   [3.1 General](#General)
     *   [3.2 Qt4](#Qt4)
     *   [3.3 Qt5](#Qt5)
-    *   [3.4 CMAKE (KDE) applications](#CMAKE_.28KDE.29_applications)
+    *   [3.4 CMAKE (KDE) applications](#CMAKE_(KDE)_applications)
 *   [4 Building and installing the package](#Building_and_installing_the_package)
 *   [5 Getting the trace](#Getting_the_trace)
 *   [6 Conclusion](#Conclusion)

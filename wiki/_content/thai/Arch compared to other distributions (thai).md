@@ -2,20 +2,20 @@
 
 ## Contents
 
-*   [1 Arch กับ Gentoo](#Arch_.E0.B8.81.E0.B8.B1.E0.B8.9A_Gentoo)
-*   [2 Arch กับ Crux](#Arch_.E0.B8.81.E0.B8.B1.E0.B8.9A_Crux)
-*   [3 Arch กับ Sorcerer/Lunar-linux/Sourcemage](#Arch_.E0.B8.81.E0.B8.B1.E0.B8.9A_Sorcerer.2FLunar-linux.2FSourcemage)
-*   [4 Arch กับ Rock](#Arch_.E0.B8.81.E0.B8.B1.E0.B8.9A_Rock)
-*   [5 Arch กับ T2](#Arch_.E0.B8.81.E0.B8.B1.E0.B8.9A_T2)
-*   [6 Arch กับ Distro ที่เป็น Graphic](#Arch_.E0.B8.81.E0.B8.B1.E0.B8.9A_Distro_.E0.B8.97.E0.B8.B5.E0.B9.88.E0.B9.80.E0.B8.9B.E0.B9.87.E0.B8.99_Graphic)
-*   [7 Arch กับ Slackware](#Arch_.E0.B8.81.E0.B8.B1.E0.B8.9A_Slackware)
-*   [8 Arch กับ Debian](#Arch_.E0.B8.81.E0.B8.B1.E0.B8.9A_Debian)
-*   [9 Arch กับ Ubuntu](#Arch_.E0.B8.81.E0.B8.B1.E0.B8.9A_Ubuntu)
-*   [10 Arch กับ RPM-based Distros](#Arch_.E0.B8.81.E0.B8.B1.E0.B8.9A_RPM-based_Distros)
-*   [11 Arch กับ Fedora](#Arch_.E0.B8.81.E0.B8.B1.E0.B8.9A_Fedora)
-*   [12 Arch กับ Mandriva](#Arch_.E0.B8.81.E0.B8.B1.E0.B8.9A_Mandriva)
-*   [13 Arch กับ SUSE](#Arch_.E0.B8.81.E0.B8.B1.E0.B8.9A_SUSE)
-*   [14 Arch กับ Frugalware](#Arch_.E0.B8.81.E0.B8.B1.E0.B8.9A_Frugalware)
+*   [1 Arch กับ Gentoo](#Arch_กับ_Gentoo)
+*   [2 Arch กับ Crux](#Arch_กับ_Crux)
+*   [3 Arch กับ Sorcerer/Lunar-linux/Sourcemage](#Arch_กับ_Sorcerer/Lunar-linux/Sourcemage)
+*   [4 Arch กับ Rock](#Arch_กับ_Rock)
+*   [5 Arch กับ T2](#Arch_กับ_T2)
+*   [6 Arch กับ Distro ที่เป็น Graphic](#Arch_กับ_Distro_ที่เป็น_Graphic)
+*   [7 Arch กับ Slackware](#Arch_กับ_Slackware)
+*   [8 Arch กับ Debian](#Arch_กับ_Debian)
+*   [9 Arch กับ Ubuntu](#Arch_กับ_Ubuntu)
+*   [10 Arch กับ RPM-based Distros](#Arch_กับ_RPM-based_Distros)
+*   [11 Arch กับ Fedora](#Arch_กับ_Fedora)
+*   [12 Arch กับ Mandriva](#Arch_กับ_Mandriva)
+*   [13 Arch กับ SUSE](#Arch_กับ_SUSE)
+*   [14 Arch กับ Frugalware](#Arch_กับ_Frugalware)
 
 ## Arch กับ Gentoo
 

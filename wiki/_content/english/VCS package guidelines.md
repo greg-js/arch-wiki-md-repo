@@ -11,7 +11,7 @@
 *   [1 Prototypes](#Prototypes)
 *   [2 Guidelines](#Guidelines)
     *   [2.1 VCS sources](#VCS_sources)
-    *   [2.2 The pkgver() function](#The_pkgver.28.29_function)
+    *   [2.2 The pkgver() function](#The_pkgver()_function)
         *   [2.2.1 Git](#Git)
         *   [2.2.2 Subversion](#Subversion)
         *   [2.2.3 Mercurial](#Mercurial)

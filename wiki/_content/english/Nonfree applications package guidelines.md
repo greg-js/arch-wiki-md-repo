@@ -18,7 +18,7 @@ For many applications (most of which are Windows ones) there are neither sources
 *   [3 Package naming](#Package_naming)
 *   [4 File placement](#File_placement)
 *   [5 Missing files](#Missing_files)
-    *   [5.1 Files can only be obtained in an distributed archive/installer](#Files_can_only_be_obtained_in_an_distributed_archive.2Finstaller)
+    *   [5.1 Files can only be obtained in an distributed archive/installer](#Files_can_only_be_obtained_in_an_distributed_archive/installer)
     *   [5.2 Files can only be obtained in an distributed compact-disk or other type of optical disk media](#Files_can_only_be_obtained_in_an_distributed_compact-disk_or_other_type_of_optical_disk_media)
     *   [5.3 Files can be obtained from several ways](#Files_can_be_obtained_from_several_ways)
 *   [6 Advanced topics](#Advanced_topics)

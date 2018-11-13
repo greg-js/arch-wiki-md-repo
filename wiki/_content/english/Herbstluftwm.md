@@ -10,7 +10,7 @@
 *   [5 Commands](#Commands)
 *   [6 Scripts and Hooks](#Scripts_and_Hooks)
     *   [6.1 Script to switch to the next empty tag](#Script_to_switch_to_the_next_empty_tag)
-    *   [6.2 Script to cycle though paddings (or other settings)](#Script_to_cycle_though_paddings_.28or_other_settings.29)
+    *   [6.2 Script to cycle though paddings (or other settings)](#Script_to_cycle_though_paddings_(or_other_settings))
     *   [6.3 Script to change decoration per-tag](#Script_to_change_decoration_per-tag)
 *   [7 See also](#See_also)
 

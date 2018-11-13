@@ -9,10 +9,10 @@ Vncserver es un demonio de visualización remota que permite a usuarios situados
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Ejecutar vncserver para sesiones (sin cabeza) virtuales](#Ejecutar_vncserver_para_sesiones_.28sin_cabeza.29_virtuales)
+*   [1 Instalación](#Instalación)
+*   [2 Ejecutar vncserver para sesiones (sin cabeza) virtuales](#Ejecutar_vncserver_para_sesiones_(sin_cabeza)_virtuales)
     *   [2.1 Ajustes iniciales](#Ajustes_iniciales)
-        *   [2.1.1 Crear archivos de entorno y contraseña](#Crear_archivos_de_entorno_y_contrase.C3.B1a)
+        *   [2.1.1 Crear archivos de entorno y contraseña](#Crear_archivos_de_entorno_y_contraseña)
         *   [2.1.2 Editar el archivo xstartup](#Editar_el_archivo_xstartup)
         *   [2.1.3 Permisos](#Permisos)
     *   [2.2 Iniciar el servidor](#Iniciar_el_servidor)
@@ -20,16 +20,16 @@ Vncserver es un demonio de visualización remota que permite a usuarios situados
     *   [3.1 Usar x0vncserver de tigervnc](#Usar_x0vncserver_de_tigervnc)
     *   [3.2 Usar x11vnc](#Usar_x11vnc)
 *   [4 Conectar a vncserver](#Conectar_a_vncserver)
-    *   [4.1 Autenticación sin contraseña](#Autenticaci.C3.B3n_sin_contrase.C3.B1a)
-    *   [4.2 Ejemplo de clientes basados en interfaz gráfica](#Ejemplo_de_clientes_basados_en_interfaz_gr.C3.A1fica)
-*   [5 Asegurar vncserver por túneles SSH](#Asegurar_vncserver_por_t.C3.BAneles_SSH)
+    *   [4.1 Autenticación sin contraseña](#Autenticación_sin_contraseña)
+    *   [4.2 Ejemplo de clientes basados en interfaz gráfica](#Ejemplo_de_clientes_basados_en_interfaz_gráfica)
+*   [5 Asegurar vncserver por túneles SSH](#Asegurar_vncserver_por_túneles_SSH)
     *   [5.1 En el servidor](#En_el_servidor)
     *   [5.2 En el cliente](#En_el_cliente)
-    *   [5.3 Conectar a un vncserver desde dispositivos Android a través de SSH](#Conectar_a_un_vncserver_desde_dispositivos_Android_a_trav.C3.A9s_de_SSH)
+    *   [5.3 Conectar a un vncserver desde dispositivos Android a través de SSH](#Conectar_a_un_vncserver_desde_dispositivos_Android_a_través_de_SSH)
 *   [6 Consejos y trucos](#Consejos_y_trucos)
-    *   [6.1 Iniciar y detener vncserver en el arranque y apagado a través de systemd](#Iniciar_y_detener_vncserver_en_el_arranque_y_apagado_a_trav.C3.A9s_de_systemd)
-    *   [6.2 Copiar contenidos del portapapeles desde la máquina remota a la local](#Copiar_contenidos_del_portapapeles_desde_la_m.C3.A1quina_remota_a_la_local)
-    *   [6.3 Arreglo cuando no hay ningún cursor del ratón](#Arreglo_cuando_no_hay_ning.C3.BAn_cursor_del_rat.C3.B3n)
+    *   [6.1 Iniciar y detener vncserver en el arranque y apagado a través de systemd](#Iniciar_y_detener_vncserver_en_el_arranque_y_apagado_a_través_de_systemd)
+    *   [6.2 Copiar contenidos del portapapeles desde la máquina remota a la local](#Copiar_contenidos_del_portapapeles_desde_la_máquina_remota_a_la_local)
+    *   [6.3 Arreglo cuando no hay ningún cursor del ratón](#Arreglo_cuando_no_hay_ningún_cursor_del_ratón)
     *   [6.4 Conectar a un sistema OS X](#Conectar_a_un_sistema_OS_X)
 
 ## Instalación

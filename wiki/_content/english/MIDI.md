@@ -14,7 +14,7 @@ The scope of this article, however, will mainly focus on the usage of MIDI in co
         *   [3.2.2 GStreamer-based players](#GStreamer-based_players)
         *   [3.2.3 VLC](#VLC)
         *   [3.2.4 Audacious](#Audacious)
-        *   [3.2.5 TiMidity++](#TiMidity.2B.2B)
+        *   [3.2.5 TiMidity++](#TiMidity++)
         *   [3.2.6 FluidSynth](#FluidSynth)
 
 ## MIDI file

@@ -1,28 +1,28 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Unofficial mirrors](/index.php/Unofficial_mirrors "Unofficial mirrors"), revisada por última vez el **2018-11-08**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Unofficial_mirrors&diff=0&oldid=551973) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Unofficial mirrors](/index.php/Unofficial_mirrors "Unofficial mirrors"), revisada por última vez el **2018-11-11**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Unofficial_mirrors&diff=0&oldid=551973) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Estos [mirrors](/index.php/Mirrors_(Espa%C3%B1ol) "Mirrors (Español)") *no* están listados en `/etc/pacman.d/mirrorlist`.
 
 ## Contents
 
-*   [1 Canadá](#Canad.C3.A1)
+*   [1 Canadá](#Canadá)
 *   [2 China](#China)
 *   [3 Francia](#Francia)
 *   [4 Indonesia](#Indonesia)
-*   [5 Irán](#Ir.C3.A1n)
+*   [5 Irán](#Irán)
 *   [6 Italia](#Italia)
-*   [7 Japón](#Jap.C3.B3n)
+*   [7 Japón](#Japón)
 *   [8 Malasia](#Malasia)
-*   [9 Países Bajos](#Pa.C3.ADses_Bajos)
+*   [9 Países Bajos](#Países_Bajos)
 *   [10 Nueva Zelanda](#Nueva_Zelanda)
 *   [11 Polonia](#Polonia)
 *   [12 Rusia](#Rusia)
-*   [13 Sudáfrica](#Sud.C3.A1frica)
+*   [13 Sudáfrica](#Sudáfrica)
 *   [14 Suecia](#Suecia)
 *   [15 Tailandia](#Tailandia)
-*   [16 Turquía](#Turqu.C3.ADa)
+*   [16 Turquía](#Turquía)
 *   [17 EEUU](#EEUU)
-*   [18 Sourceforge (ISOs antiguos)](#Sourceforge_.28ISOs_antiguos.29)
+*   [18 Sourceforge (ISOs antiguos)](#Sourceforge_(ISOs_antiguos))
 
 ## Canadá
 
@@ -50,6 +50,7 @@ Estos [mirrors](/index.php/Mirrors_(Espa%C3%B1ol) "Mirrors (Español)") *no* est
 *   [http://mirrors.6.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.6.tuna.tsinghua.edu.cn/archlinux/) *(solo ipv6)*
 *   [http://mirror.lzu.edu.cn/archlinux/](http://mirror.lzu.edu.cn/archlinux/) - *Universidad de Lanzhou*
 *   [https://mirrors.nju.edu.cn/archlinux/](https://mirrors.nju.edu.cn/archlinux/) - *Universidad de Nanjing*
+*   [https://mirrors.zzu.edu.cn/archlinux/](https://mirrors.zzu.edu.cn/archlinux/) - *Universidad de Zhengzhou*
 
 ## Francia
 

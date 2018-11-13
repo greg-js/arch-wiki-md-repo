@@ -11,7 +11,7 @@ Related articles
 *   [1 Installation](#Installation)
 *   [2 Setup](#Setup)
 *   [3 Running sensors](#Running_sensors)
-    *   [3.1 Reading SPD values from memory modules (optional)](#Reading_SPD_values_from_memory_modules_.28optional.29)
+    *   [3.1 Reading SPD values from memory modules (optional)](#Reading_SPD_values_from_memory_modules_(optional))
 *   [4 Using sensor data](#Using_sensor_data)
     *   [4.1 Graphical front-ends](#Graphical_front-ends)
     *   [4.2 sensord](#sensord)
@@ -23,7 +23,7 @@ Related articles
     *   [5.2 Automatic lm_sensors deployment](#Automatic_lm_sensors_deployment)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 K10Temp module](#K10Temp_module)
-    *   [6.2 Asus Z97/Z190 motherboards](#Asus_Z97.2FZ190_motherboards)
+    *   [6.2 Asus Z97/Z190 motherboards](#Asus_Z97/Z190_motherboards)
     *   [6.3 Gigabyte GA-J1900N-D3V](#Gigabyte_GA-J1900N-D3V)
     *   [6.4 Laptop screen issues after running sensors-detect](#Laptop_screen_issues_after_running_sensors-detect)
 

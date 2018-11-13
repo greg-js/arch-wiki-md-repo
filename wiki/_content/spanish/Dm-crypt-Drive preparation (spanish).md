@@ -17,16 +17,16 @@ Antes de cifrar una unidad, es recomendable realizar un borrado seguro del disco
 ## Contents
 
 *   [1 Borrar de forma segura la unidad de disco duro](#Borrar_de_forma_segura_la_unidad_de_disco_duro)
-    *   [1.1 Métodos genéricos](#M.C3.A9todos_gen.C3.A9ricos)
-    *   [1.2 Métodos específicos de dm-crypt](#M.C3.A9todos_espec.C3.ADficos_de_dm-crypt)
-        *   [1.2.1 Limpiar un disco o partición vacíos con dm-crypt](#Limpiar_un_disco_o_partici.C3.B3n_vac.C3.ADos_con_dm-crypt)
-        *   [1.2.2 Limpiar espacio libre con dm-crypt después de la instalación](#Limpiar_espacio_libre_con_dm-crypt_despu.C3.A9s_de_la_instalaci.C3.B3n)
+    *   [1.1 Métodos genéricos](#Métodos_genéricos)
+    *   [1.2 Métodos específicos de dm-crypt](#Métodos_específicos_de_dm-crypt)
+        *   [1.2.1 Limpiar un disco o partición vacíos con dm-crypt](#Limpiar_un_disco_o_partición_vacíos_con_dm-crypt)
+        *   [1.2.2 Limpiar espacio libre con dm-crypt después de la instalación](#Limpiar_espacio_libre_con_dm-crypt_después_de_la_instalación)
         *   [1.2.3 Limpiar el encabezado LUKS](#Limpiar_el_encabezado_LUKS)
 *   [2 Particionar](#Particionar)
-    *   [2.1 Particiones físicas](#Particiones_f.C3.ADsicas)
+    *   [2.1 Particiones físicas](#Particiones_físicas)
     *   [2.2 Dispositivos de bloques apilados](#Dispositivos_de_bloques_apilados)
-    *   [2.3 Subvolúmenes Btrfs](#Subvol.C3.BAmenes_Btrfs)
-    *   [2.4 Partición de arranque (GRUB)](#Partici.C3.B3n_de_arranque_.28GRUB.29)
+    *   [2.3 Subvolúmenes Btrfs](#Subvolúmenes_Btrfs)
+    *   [2.4 Partición de arranque (GRUB)](#Partición_de_arranque_(GRUB))
 
 ## Borrar de forma segura la unidad de disco duro
 
@@ -85,7 +85,7 @@ Finalmente, cierre el contenedor temporal:
 
 ```
 
-Al cifrar un sistema completo, el siguiente paso es [#Particionar](#Particionar). Si acaba de cifrar una partición, continúe en [Dm-crypt/Encrypting a non-root file system (Español)#Partición](/index.php/Dm-crypt/Encrypting_a_non-root_file_system_(Espa%C3%B1ol)#Partici.C3.B3n "Dm-crypt/Encrypting a non-root file system (Español)").
+Al cifrar un sistema completo, el siguiente paso es [#Particionar](#Particionar). Si acaba de cifrar una partición, continúe en [Dm-crypt/Encrypting a non-root file system (Español)#Partición](/index.php/Dm-crypt/Encrypting_a_non-root_file_system_(Espa%C3%B1ol)#Partición "Dm-crypt/Encrypting a non-root file system (Español)").
 
 #### Limpiar espacio libre con dm-crypt después de la instalación
 
@@ -139,7 +139,7 @@ Al limpiar el encabezado con datos aleatorios, todo lo que queda en el dispositi
 
 Esta sección solo se aplica cuando se cifra un sistema completo. Después de que se haya sobrescrito de forma segura la unidad o los discos, se tendrá que elegir adecuadamente un esquema de particionado, teniendo en cuenta los requisitos de dm-crypt y los efectos que tendrán las diversas opciones en la gestión del sistema resultante.
 
-Es importante tener en cuenta que en [casi](#Partici.C3.B3n_de_arranque_.28GRUB.29) todos los casos debe haber una partición separada para `/boot` que debe permanecer sin cifrar, ya que el gestor de arranque necesita acceder al directorio `/boot` donde se cargarán los módulos de encriptación y de initramfs necesarios para iniciar el resto del sistema (vea [mkinitcpio (Español)](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") para más detalles). Si esto plantea problemas de seguridad, vea [dm-crypt/Specialties#Securing the unencrypted boot partition](/index.php/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition "Dm-crypt/Specialties").
+Es importante tener en cuenta que en [casi](#Partición_de_arranque_(GRUB)) todos los casos debe haber una partición separada para `/boot` que debe permanecer sin cifrar, ya que el gestor de arranque necesita acceder al directorio `/boot` donde se cargarán los módulos de encriptación y de initramfs necesarios para iniciar el resto del sistema (vea [mkinitcpio (Español)](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") para más detalles). Si esto plantea problemas de seguridad, vea [dm-crypt/Specialties#Securing the unencrypted boot partition](/index.php/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition "Dm-crypt/Specialties").
 
 Otro factor importante a tener en cuenta es cómo se manejarán el espacio de swap y la suspensión del sistema, vea [dm-crypt/Swap encryption](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption").
 
@@ -156,8 +156,8 @@ Sin embargo, si se necesita más flexibilidad, dm-crypt puede coexistir con otro
 
 ### Subvolúmenes Btrfs
 
-Las [características de subvolumes](/index.php/Btrfs#Subvolumes "Btrfs") integradas en el sistema de archivos [Btrfs](/index.php/Btrfs "Btrfs") se pueden usar con dm-crypt, reemplazando completamente la necesidad de LVM si no se requieren otros sistemas de archivos. Sin embargo, tenga en cuenta que los archivos de intercambio [no son soportados](https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F) por brtrfs, por lo que es necesaria una partición [de intercambio](/index.php/Encrypted_swap "Encrypted swap") cifrada si se desea un espacio de [intercambio](/index.php/Swap_(Espa%C3%B1ol) "Swap (Español)"). Vea también [Dm-crypt/Encrypting an entire system (Español)#Subvolúmenes btrfs con espacio de intercambio](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol)#Subvol.C3.BAmenes_btrfs_con_espacio_de_intercambio "Dm-crypt/Encrypting an entire system (Español)").
+Las [características de subvolumes](/index.php/Btrfs#Subvolumes "Btrfs") integradas en el sistema de archivos [Btrfs](/index.php/Btrfs "Btrfs") se pueden usar con dm-crypt, reemplazando completamente la necesidad de LVM si no se requieren otros sistemas de archivos. Sin embargo, tenga en cuenta que los archivos de intercambio [no son soportados](https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F) por brtrfs, por lo que es necesaria una partición [de intercambio](/index.php/Encrypted_swap "Encrypted swap") cifrada si se desea un espacio de [intercambio](/index.php/Swap_(Espa%C3%B1ol) "Swap (Español)"). Vea también [Dm-crypt/Encrypting an entire system (Español)#Subvolúmenes btrfs con espacio de intercambio](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol)#Subvolúmenes_btrfs_con_espacio_de_intercambio "Dm-crypt/Encrypting an entire system (Español)").
 
 ### Partición de arranque (GRUB)
 
-Véase [dm-crypt/Encrypting an entire system (Español)#Cifrar partición de arranque (GRUB)](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol)#Cifrar_partici.C3.B3n_de_arranque_.28GRUB.29 "Dm-crypt/Encrypting an entire system (Español)").
+Véase [dm-crypt/Encrypting an entire system (Español)#Cifrar partición de arranque (GRUB)](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol)#Cifrar_partición_de_arranque_(GRUB) "Dm-crypt/Encrypting an entire system (Español)").

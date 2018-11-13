@@ -8,14 +8,14 @@ Se vuoi soltanto creare un live media base, senza pacchetti pacchetti pre-instal
 
 ## Contents
 
-*   [1 Creare un live media di Arch Linux Personalizzato. (configs/relengs)](#Creare_un_live_media_di_Arch_Linux_Personalizzato._.28configs.2Frelengs.29)
-*   [2 Creare il live media di Arch Linux base. (configs/baseline)](#Creare_il_live_media_di_Arch_Linux_base._.28configs.2Fbaseline.29)
-*   [3 Flusso di lavoro generale (metodo manuale)](#Flusso_di_lavoro_generale_.28metodo_manuale.29)
-*   [4 Creare una "pendrive" avviabile che ha più cose di "Arch Linux"](#Creare_una_.22pendrive.22_avviabile_che_ha_pi.C3.B9_cose_di_.22Arch_Linux.22)
+*   [1 Creare un live media di Arch Linux Personalizzato. (configs/relengs)](#Creare_un_live_media_di_Arch_Linux_Personalizzato._(configs/relengs))
+*   [2 Creare il live media di Arch Linux base. (configs/baseline)](#Creare_il_live_media_di_Arch_Linux_base._(configs/baseline))
+*   [3 Flusso di lavoro generale (metodo manuale)](#Flusso_di_lavoro_generale_(metodo_manuale))
+*   [4 Creare una "pendrive" avviabile che ha più cose di "Arch Linux"](#Creare_una_"pendrive"_avviabile_che_ha_più_cose_di_"Arch_Linux")
 *   [5 Configurare il live media](#Configurare_il_live_media)
     *   [5.1 Installare i pacchetti](#Installare_i_pacchetti)
     *   [5.2 Aggiungere un utente](#Aggiungere_un_utente)
-    *   [5.3 Popolare la cartella /home dell'utente](#Popolare_la_cartella_.2Fhome_dell.27utente)
+    *   [5.3 Popolare la cartella /home dell'utente](#Popolare_la_cartella_/home_dell'utente)
     *   [5.4 mkinitcpio.conf](#mkinitcpio.conf)
     *   [5.5 aitab](#aitab)
     *   [5.6 Boot Loader](#Boot_Loader)

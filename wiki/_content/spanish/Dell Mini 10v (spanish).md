@@ -1,10 +1,10 @@
 ## Contents
 
-*   [1 Introducción](#Introducci.C3.B3n)
+*   [1 Introducción](#Introducción)
 *   [2 Hardware](#Hardware)
     *   [2.1 Video](#Video)
     *   [2.2 Audio](#Audio)
-    *   [2.3 Tarjeta Inalámbrica](#Tarjeta_Inal.C3.A1mbrica)
+    *   [2.3 Tarjeta Inalámbrica](#Tarjeta_Inalámbrica)
     *   [2.4 Webcam](#Webcam)
 *   [3 Extras](#Extras)
     *   [3.1 Synaptics](#Synaptics)

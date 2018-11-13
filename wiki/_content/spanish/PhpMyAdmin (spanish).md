@@ -1,13 +1,13 @@
 ## Contents
 
-*   [1 Pre-Instalación](#Pre-Instalaci.C3.B3n)
-*   [2 Instalación](#Instalaci.C3.B3n)
-*   [3 Configuración](#Configuraci.C3.B3n)
-    *   [3.1 Añadir contraseña de blowfish_secret](#A.C3.B1adir_contrase.C3.B1a_de_blowfish_secret)
-*   [4 Accediendo a tu instalación de phpMyAdmin](#Accediendo_a_tu_instalaci.C3.B3n_de_phpMyAdmin)
-*   [5 Configuración de Lighttpd](#Configuraci.C3.B3n_de_Lighttpd)
-*   [6 Configuración de NGINX](#Configuraci.C3.B3n_de_NGINX)
-*   [7 Otra información (Antigua)](#Otra_informaci.C3.B3n_.28Antigua.29)
+*   [1 Pre-Instalación](#Pre-Instalación)
+*   [2 Instalación](#Instalación)
+*   [3 Configuración](#Configuración)
+    *   [3.1 Añadir contraseña de blowfish_secret](#Añadir_contraseña_de_blowfish_secret)
+*   [4 Accediendo a tu instalación de phpMyAdmin](#Accediendo_a_tu_instalación_de_phpMyAdmin)
+*   [5 Configuración de Lighttpd](#Configuración_de_Lighttpd)
+*   [6 Configuración de NGINX](#Configuración_de_NGINX)
+*   [7 Otra información (Antigua)](#Otra_información_(Antigua))
 
 ## Pre-Instalación
 

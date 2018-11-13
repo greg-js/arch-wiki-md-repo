@@ -12,7 +12,7 @@ This section covers how to manually utilize *dm-crypt* from the command line to 
     *   [4.1 Encrypting devices with LUKS mode](#Encrypting_devices_with_LUKS_mode)
         *   [4.1.1 Formatting LUKS partitions](#Formatting_LUKS_partitions)
             *   [4.1.1.1 Using LUKS to format partitions with a keyfile](#Using_LUKS_to_format_partitions_with_a_keyfile)
-        *   [4.1.2 Unlocking/Mapping LUKS partitions with the device mapper](#Unlocking.2FMapping_LUKS_partitions_with_the_device_mapper)
+        *   [4.1.2 Unlocking/Mapping LUKS partitions with the device mapper](#Unlocking/Mapping_LUKS_partitions_with_the_device_mapper)
     *   [4.2 Encrypting devices with plain mode](#Encrypting_devices_with_plain_mode)
 *   [5 Cryptsetup actions specific for LUKS](#Cryptsetup_actions_specific_for_LUKS)
     *   [5.1 Key management](#Key_management)
@@ -783,7 +783,7 @@ You can now mount the container again:
 
 ## Keyfiles
 
-**Note:** This section describes using a plaintext keyfile. If you want to encrypt your keyfile giving you two factor authentication see [Using GPG or OpenSSL Encrypted Keyfiles](/index.php/Dm-crypt/Specialties#Using_GPG.2C_LUKS.2C_or_OpenSSL_Encrypted_Keyfiles "Dm-crypt/Specialties") for details, but please still read this section.
+**Note:** This section describes using a plaintext keyfile. If you want to encrypt your keyfile giving you two factor authentication see [Using GPG or OpenSSL Encrypted Keyfiles](/index.php/Dm-crypt/Specialties#Using_GPG,_LUKS,_or_OpenSSL_Encrypted_Keyfiles "Dm-crypt/Specialties") for details, but please still read this section.
 
 **What is a keyfile?**
 

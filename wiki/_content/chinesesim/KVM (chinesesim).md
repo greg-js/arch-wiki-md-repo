@@ -6,17 +6,17 @@ KVM, Xen, VMware, 和 QEMU 的不同，请看这里[KVM FAQ](http://www.linux-kv
 
 ## Contents
 
-*   [1 检查是否支持KVM](#.E6.A3.80.E6.9F.A5.E6.98.AF.E5.90.A6.E6.94.AF.E6.8C.81KVM)
-    *   [1.1 硬件支持](#.E7.A1.AC.E4.BB.B6.E6.94.AF.E6.8C.81)
-    *   [1.2 内核支持](#.E5.86.85.E6.A0.B8.E6.94.AF.E6.8C.81)
-    *   [1.3 KVM模块](#KVM.E6.A8.A1.E5.9D.97)
+*   [1 检查是否支持KVM](#检查是否支持KVM)
+    *   [1.1 硬件支持](#硬件支持)
+    *   [1.2 内核支持](#内核支持)
+    *   [1.3 KVM模块](#KVM模块)
 *   [2 Para-virtualized devices](#Para-virtualized_devices)
     *   [2.1 VIRTIO modules](#VIRTIO_modules)
-    *   [2.2 加载内核模块](#.E5.8A.A0.E8.BD.BD.E5.86.85.E6.A0.B8.E6.A8.A1.E5.9D.97)
+    *   [2.2 加载内核模块](#加载内核模块)
     *   [2.3 List of para-virtualized devices](#List_of_para-virtualized_devices)
-*   [3 如何使用KVM](#.E5.A6.82.E4.BD.95.E4.BD.BF.E7.94.A8KVM)
-*   [4 小贴士与小技巧](#.E5.B0.8F.E8.B4.B4.E5.A3.AB.E4.B8.8E.E5.B0.8F.E6.8A.80.E5.B7.A7)
-    *   [4.1 嵌套虚拟化](#.E5.B5.8C.E5.A5.97.E8.99.9A.E6.8B.9F.E5.8C.96)
+*   [3 如何使用KVM](#如何使用KVM)
+*   [4 小贴士与小技巧](#小贴士与小技巧)
+    *   [4.1 嵌套虚拟化](#嵌套虚拟化)
 
 ## 检查是否支持KVM
 
@@ -82,7 +82,7 @@ $ lsmod | grep virtio
 
 ```
 
-上面的命令如果没有返回内容，那么你需要[手动加载](/index.php/Kernel_modules_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E6.89.8B.E5.8A.A8.E5.8A.A0.E8.BD.BD.E5.8D.B8.E8.BD.BD "Kernel modules (简体中文)") 内核模块。
+上面的命令如果没有返回内容，那么你需要[手动加载](/index.php/Kernel_modules_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#手动加载卸载 "Kernel modules (简体中文)") 内核模块。
 
 **Tip:** 如果 `kvm_intel` 或 `kvm_amd` 加载失败但是`kvm` 加载成功， (`lscpu`可检查硬件支持情况)检查你的BIOS设置。一些品牌机 (尤其时笔记本电脑) 默认关闭了这个功能，请确保是否是硬件支持该功能，但在BIOS中它被关闭了，在`dmesg`的提示信息中会展示出相关的警告信息。
 

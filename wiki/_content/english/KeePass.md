@@ -8,7 +8,7 @@ There are two versions of the format: *KeePass 1.x (Classic)* and *KeePass 2.x*
 *   [2 Integration](#Integration)
     *   [2.1 Plugin Installation](#Plugin_Installation)
     *   [2.2 Firefox](#Firefox)
-    *   [2.3 Chrome/Chromium](#Chrome.2FChromium)
+    *   [2.3 Chrome/Chromium](#Chrome/Chromium)
     *   [2.4 Nextcloud](#Nextcloud)
     *   [2.5 Yubikey](#Yubikey)
 *   [3 Tips and tricks](#Tips_and_tricks)

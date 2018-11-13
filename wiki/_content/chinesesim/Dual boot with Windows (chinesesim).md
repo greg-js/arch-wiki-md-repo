@@ -8,24 +8,24 @@ Related articles
 
 ## Contents
 
-*   [1 重要信息](#.E9.87.8D.E8.A6.81.E4.BF.A1.E6.81.AF)
-    *   [1.1 Windows UEFI 和 BIOS 启动限制](#Windows_UEFI_.E5.92.8C_BIOS_.E5.90.AF.E5.8A.A8.E9.99.90.E5.88.B6)
-    *   [1.2 安装介质限制](#.E5.AE.89.E8.A3.85.E4.BB.8B.E8.B4.A8.E9.99.90.E5.88.B6)
-    *   [1.3 UEFI / BIOS 启动管理器限制](#UEFI_.2F_BIOS_.E5.90.AF.E5.8A.A8.E7.AE.A1.E7.90.86.E5.99.A8.E9.99.90.E5.88.B6)
-    *   [1.4 UEFI 安全启动](#UEFI_.E5.AE.89.E5.85.A8.E5.90.AF.E5.8A.A8)
-    *   [1.5 快速启动](#.E5.BF.AB.E9.80.9F.E5.90.AF.E5.8A.A8)
-    *   [1.6 Windows 中的文件名限制](#Windows_.E4.B8.AD.E7.9A.84.E6.96.87.E4.BB.B6.E5.90.8D.E9.99.90.E5.88.B6)
-*   [2 安装](#.E5.AE.89.E8.A3.85)
-    *   [2.1 BIOS 系统](#BIOS_.E7.B3.BB.E7.BB.9F)
-        *   [2.1.1 使用 Linux 启动管理器](#.E4.BD.BF.E7.94.A8_Linux_.E5.90.AF.E5.8A.A8.E7.AE.A1.E7.90.86.E5.99.A8)
-        *   [2.1.2 使用 Windows 启动管理器](#.E4.BD.BF.E7.94.A8_Windows_.E5.90.AF.E5.8A.A8.E7.AE.A1.E7.90.86.E5.99.A8)
-            *   [2.1.2.1 Windows Vista/7/8/8.1/10 的启动管理器](#Windows_Vista.2F7.2F8.2F8.1.2F10_.E7.9A.84.E5.90.AF.E5.8A.A8.E7.AE.A1.E7.90.86.E5.99.A8)
-    *   [2.2 UEFI 系统](#UEFI_.E7.B3.BB.E7.BB.9F)
-    *   [2.3 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
-        *   [2.3.1 Couldn't create a new partition or locate an existing one (无法创建或者定位分区)](#Couldn.27t_create_a_new_partition_or_locate_an_existing_one_.28.E6.97.A0.E6.B3.95.E5.88.9B.E5.BB.BA.E6.88.96.E8.80.85.E5.AE.9A.E4.BD.8D.E5.88.86.E5.8C.BA.29)
-        *   [2.3.2 安装 Windows 后无法再引导 Linux](#.E5.AE.89.E8.A3.85_Windows_.E5.90.8E.E6.97.A0.E6.B3.95.E5.86.8D.E5.BC.95.E5.AF.BC_Linux)
-*   [3 时间标准](#.E6.97.B6.E9.97.B4.E6.A0.87.E5.87.86)
-*   [4 另见](#.E5.8F.A6.E8.A7.81)
+*   [1 重要信息](#重要信息)
+    *   [1.1 Windows UEFI 和 BIOS 启动限制](#Windows_UEFI_和_BIOS_启动限制)
+    *   [1.2 安装介质限制](#安装介质限制)
+    *   [1.3 UEFI / BIOS 启动管理器限制](#UEFI_/_BIOS_启动管理器限制)
+    *   [1.4 UEFI 安全启动](#UEFI_安全启动)
+    *   [1.5 快速启动](#快速启动)
+    *   [1.6 Windows 中的文件名限制](#Windows_中的文件名限制)
+*   [2 安装](#安装)
+    *   [2.1 BIOS 系统](#BIOS_系统)
+        *   [2.1.1 使用 Linux 启动管理器](#使用_Linux_启动管理器)
+        *   [2.1.2 使用 Windows 启动管理器](#使用_Windows_启动管理器)
+            *   [2.1.2.1 Windows Vista/7/8/8.1/10 的启动管理器](#Windows_Vista/7/8/8.1/10_的启动管理器)
+    *   [2.2 UEFI 系统](#UEFI_系统)
+    *   [2.3 疑难解答](#疑难解答)
+        *   [2.3.1 Couldn't create a new partition or locate an existing one (无法创建或者定位分区)](#Couldn't_create_a_new_partition_or_locate_an_existing_one_(无法创建或者定位分区))
+        *   [2.3.2 安装 Windows 后无法再引导 Linux](#安装_Windows_后无法再引导_Linux)
+*   [3 时间标准](#时间标准)
+*   [4 另见](#另见)
 
 ## 重要信息
 
@@ -189,7 +189,7 @@ Reboot and enjoy. In my case I'm using the Windows boot loader so that I can map
 
 选择一个合适的启动管理器, [systemd-boot](/index.php/Systemd-boot "Systemd-boot") 和 [rEFInd](/index.php/REFInd "REFInd") 可以自动检测 *Windows Boot Manager* (`\EFI\Microsoft\Boot\bootmgfw.efi`) 并为它添加启动项.
 
-[GRUB](/index.php/GRUB "GRUB") 用户请参阅 [GRUB#Windows installed in UEFI/GPT Mode menu entry](/index.php/GRUB#Windows_installed_in_UEFI.2FGPT_Mode_menu_entry "GRUB"). Syslinux (version 6.02 和 6.03-pre9) 和 ELILO 不支持链式加载 EFI 可执行文件,所以不能引导 `\EFI\Microsoft\Boot\bootmgfw.efi`.
+[GRUB](/index.php/GRUB "GRUB") 用户请参阅 [GRUB#Windows installed in UEFI/GPT Mode menu entry](/index.php/GRUB#Windows_installed_in_UEFI/GPT_Mode_menu_entry "GRUB"). Syslinux (version 6.02 和 6.03-pre9) 和 ELILO 不支持链式加载 EFI 可执行文件,所以不能引导 `\EFI\Microsoft\Boot\bootmgfw.efi`.
 
 对于打开 [安全启动](/index.php/Secure_Boot "Secure Boot") 的电脑,你可能需要更多的步骤(关闭安全启动或是使安装介质支持安全启动,参见前面的链接).
 
@@ -197,7 +197,7 @@ Reboot and enjoy. In my case I'm using the Windows boot loader so that I can map
 
 #### Couldn't create a new partition or locate an existing one (无法创建或者定位分区)
 
-Windows 的安装介质应该格式化为与硬盘分区表相同的模式,见上文 [#Windows UEFI 和 BIOS 启动限制](#Windows_UEFI_.E5.92.8C_BIOS_.E5.90.AF.E5.8A.A8.E9.99.90.E5.88.B6).
+Windows 的安装介质应该格式化为与硬盘分区表相同的模式,见上文 [#Windows UEFI 和 BIOS 启动限制](#Windows_UEFI_和_BIOS_启动限制).
 
 #### 安装 Windows 后无法再引导 Linux
 

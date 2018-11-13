@@ -8,28 +8,28 @@ Arch Linux deve funcionar em qualquer máquina compatível com [x86_64](https://
 
 ## Contents
 
-*   [1 Pré-instalação](#Pr.C3.A9-instala.C3.A7.C3.A3o)
+*   [1 Pré-instalação](#Pré-instalação)
     *   [1.1 Definir o layout do teclado](#Definir_o_layout_do_teclado)
-    *   [1.2 Verificar o modo de inicialização](#Verificar_o_modo_de_inicializa.C3.A7.C3.A3o)
-    *   [1.3 Conectar à Internet](#Conectar_.C3.A0_Internet)
-    *   [1.4 Atualizar o relógio do sistema](#Atualizar_o_rel.C3.B3gio_do_sistema)
-    *   [1.5 Partição dos discos](#Parti.C3.A7.C3.A3o_dos_discos)
-    *   [1.6 Formatar as partições](#Formatar_as_parti.C3.A7.C3.B5es)
+    *   [1.2 Verificar o modo de inicialização](#Verificar_o_modo_de_inicialização)
+    *   [1.3 Conectar à Internet](#Conectar_à_Internet)
+    *   [1.4 Atualizar o relógio do sistema](#Atualizar_o_relógio_do_sistema)
+    *   [1.5 Partição dos discos](#Partição_dos_discos)
+    *   [1.6 Formatar as partições](#Formatar_as_partições)
     *   [1.7 Montar os sistemas de arquivos](#Montar_os_sistemas_de_arquivos)
-*   [2 Instalação](#Instala.C3.A7.C3.A3o)
+*   [2 Instalação](#Instalação)
     *   [2.1 Selecionar os espelhos](#Selecionar_os_espelhos)
     *   [2.2 Instalar os pacotes base](#Instalar_os_pacotes_base)
 *   [3 Configurar o sistema](#Configurar_o_sistema)
     *   [3.1 Fstab](#Fstab)
     *   [3.2 Chroot](#Chroot)
-    *   [3.3 Fuso horário](#Fuso_hor.C3.A1rio)
-    *   [3.4 Localização](#Localiza.C3.A7.C3.A3o)
-    *   [3.5 Configuração de rede](#Configura.C3.A7.C3.A3o_de_rede)
+    *   [3.3 Fuso horário](#Fuso_horário)
+    *   [3.4 Localização](#Localização)
+    *   [3.5 Configuração de rede](#Configuração_de_rede)
     *   [3.6 Initramfs](#Initramfs)
     *   [3.7 Senha do root](#Senha_do_root)
     *   [3.8 Gerenciador de boot](#Gerenciador_de_boot)
 *   [4 Reiniciar](#Reiniciar)
-*   [5 Pós-instalação](#P.C3.B3s-instala.C3.A7.C3.A3o)
+*   [5 Pós-instalação](#Pós-instalação)
 
 ## Pré-instalação
 
@@ -57,7 +57,7 @@ Para modificar o layout, acrescente um nome de arquivo ao [loadkeys(1)](https://
 
 ### Verificar o modo de inicialização
 
-Se o modo UEFI estiver disponível em uma placa-mãe [UEFI](/index.php/UEFI "UEFI"), [Archiso](/index.php/Archiso "Archiso") vai [inicializar](/index.php/Inicializar "Inicializar") o Arch Linux adequadamente via [systemd-boot](/index.php/Systemd-boot "Systemd-boot"). Para verificar isso, liste o diretório [efivars](/index.php/UEFI#UEFI_variables "UEFI"):
+Se o modo UEFI estiver disponível em uma placa-mãe [UEFI](/index.php/UEFI "UEFI"), [Archiso](/index.php/Archiso_(Portugu%C3%AAs) "Archiso (Português)") vai [inicializar](/index.php/Inicializar "Inicializar") o Arch Linux adequadamente via [systemd-boot](/index.php/Systemd-boot "Systemd-boot"). Para verificar isso, liste o diretório [efivars](/index.php/UEFI#UEFI_variables "UEFI"):
 
 ```
 # ls /sys/firmware/efi/efivars

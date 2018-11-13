@@ -1,8 +1,8 @@
 ## Contents
 
 *   [1 Preface](#Preface)
-*   [2 Instalación](#Instalaci.C3.B3n)
-*   [3 Corrector ortográfico](#Corrector_ortogr.C3.A1fico)
+*   [2 Instalación](#Instalación)
+*   [3 Corrector ortográfico](#Corrector_ortográfico)
 *   [4 Corregir el sonido](#Corregir_el_sonido)
 *   [5 Corregir el Error de Navegador](#Corregir_el_Error_de_Navegador)
 *   [6 IRC](#IRC)

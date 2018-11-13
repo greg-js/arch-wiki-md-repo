@@ -11,7 +11,7 @@ FrankenWM is a dynamic tiling [window manager](/index.php/Window_manager "Window
 *   [4 Panels](#Panels)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 I do not see anything](#I_do_not_see_anything)
-    *   [5.2 I cannot open a terminal/menu](#I_cannot_open_a_terminal.2Fmenu)
+    *   [5.2 I cannot open a terminal/menu](#I_cannot_open_a_terminal/menu)
 
 ## Installation
 

@@ -21,14 +21,14 @@ Alternatives for using containers are [systemd-nspawn](/index.php/Systemd-nspawn
     *   [1.1 An example to illustrate unprivileged containers](#An_example_to_illustrate_unprivileged_containers)
 *   [2 Setup](#Setup)
     *   [2.1 Required software](#Required_software)
-        *   [2.1.1 Enable support to run unprivileged containers (optional)](#Enable_support_to_run_unprivileged_containers_.28optional.29)
+        *   [2.1.1 Enable support to run unprivileged containers (optional)](#Enable_support_to_run_unprivileged_containers_(optional))
     *   [2.2 Host network configuration](#Host_network_configuration)
     *   [2.3 Alternate Network - Bridge on same network as host](#Alternate_Network_-_Bridge_on_same_network_as_host)
     *   [2.4 Container creation](#Container_creation)
     *   [2.5 Container configuration](#Container_configuration)
         *   [2.5.1 Basic config with networking](#Basic_config_with_networking)
         *   [2.5.2 Mounts within the container](#Mounts_within_the_container)
-        *   [2.5.3 Xorg program considerations (optional)](#Xorg_program_considerations_.28optional.29)
+        *   [2.5.3 Xorg program considerations (optional)](#Xorg_program_considerations_(optional))
         *   [2.5.4 OpenVPN considerations](#OpenVPN_considerations)
 *   [3 Managing containers](#Managing_containers)
     *   [3.1 Basic usage](#Basic_usage)
@@ -42,7 +42,7 @@ Alternatives for using containers are [systemd-nspawn](/index.php/Systemd-nspawn
     *   [5.3 Error: unknown command](#Error:_unknown_command)
     *   [5.4 Error: Failed at step KEYRING spawning...](#Error:_Failed_at_step_KEYRING_spawning...)
     *   [5.5 Errors due to mknod changes in linux 4.18 kernel](#Errors_due_to_mknod_changes_in_linux_4.18_kernel)
-    *   [5.6 Error: Failed to initialize cgroup driver / PAM unable to open pam_cgfs.so](#Error:_Failed_to_initialize_cgroup_driver_.2F_PAM_unable_to_open_pam_cgfs.so)
+    *   [5.6 Error: Failed to initialize cgroup driver / PAM unable to open pam_cgfs.so](#Error:_Failed_to_initialize_cgroup_driver_/_PAM_unable_to_open_pam_cgfs.so)
 *   [6 See also](#See_also)
 
 ## Privileged containers or unprivileged containers
@@ -276,7 +276,7 @@ For other distros, invoke like this and select options from the supported distro
 
 ### Container configuration
 
-The examples below can be used with *privileged* and *unprivileged* containers alike. Note that for unprivileged containers, additional lines will be present by default which are not shown in the examples, including the `lxc.idmap = u 0 100000 65536` and the `lxc.idmap = g 0 100000 65536` values optionally defined in the [#Enable support to run unprivileged containers (optional)](#Enable_support_to_run_unprivileged_containers_.28optional.29) section.
+The examples below can be used with *privileged* and *unprivileged* containers alike. Note that for unprivileged containers, additional lines will be present by default which are not shown in the examples, including the `lxc.idmap = u 0 100000 65536` and the `lxc.idmap = g 0 100000 65536` values optionally defined in the [#Enable support to run unprivileged containers (optional)](#Enable_support_to_run_unprivileged_containers_(optional)) section.
 
 #### Basic config with networking
 
@@ -430,7 +430,7 @@ Systemd units and wrapper scripts to manage snapshots for [pi-hole](/index.php/P
 
 ### Converting a privileged container to an unprivileged container
 
-Once the system has been configured to use unprivileged containers (see, [#Enable support to run unprivileged containers (optional)](#Enable_support_to_run_unprivileged_containers_.28optional.29)), [nsexec-bzr](https://aur.archlinux.org/packages/nsexec-bzr/) contains a utility called `uidmapshift` which is able to convert an existing *privileged* container to an *unprivileged* container to avoid a total rebuild of the image.
+Once the system has been configured to use unprivileged containers (see, [#Enable support to run unprivileged containers (optional)](#Enable_support_to_run_unprivileged_containers_(optional))), [nsexec-bzr](https://aur.archlinux.org/packages/nsexec-bzr/) contains a utility called `uidmapshift` which is able to convert an existing *privileged* container to an *unprivileged* container to avoid a total rebuild of the image.
 
 **Warning:**
 

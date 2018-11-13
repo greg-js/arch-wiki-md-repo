@@ -10,15 +10,15 @@ Artículos relacionados
 ## Contents
 
 *   [1 Requisitos](#Requisitos)
-*   [2 Instalación](#Instalaci.C3.B3n)
-*   [3 Utilización](#Utilizaci.C3.B3n)
+*   [2 Instalación](#Instalación)
+*   [3 Utilización](#Utilización)
 *   [4 Weston](#Weston)
-    *   [4.1 Instalación](#Instalaci.C3.B3n_2)
-    *   [4.2 Utilización](#Utilizaci.C3.B3n_2)
-    *   [4.3 Configuración](#Configuraci.C3.B3n)
+    *   [4.1 Instalación](#Instalación_2)
+    *   [4.2 Utilización](#Utilización_2)
+    *   [4.3 Configuración](#Configuración)
         *   [4.3.1 XWayland](#XWayland)
 *   [5 Bibliotecas GUI](#Bibliotecas_GUI)
-    *   [5.1 GTK+](#GTK.2B)
+    *   [5.1 GTK+](#GTK+)
     *   [5.2 Qt5](#Qt5)
     *   [5.3 Clutter](#Clutter)
     *   [5.4 SDL](#SDL)
@@ -28,13 +28,13 @@ Artículos relacionados
     *   [6.2 GNOME](#GNOME)
     *   [6.3 i3](#i3)
     *   [6.4 Wayland puro](#Wayland_puro)
-        *   [6.4.1 Wayland, DRM, Pixman, libxkbcommon](#Wayland.2C_DRM.2C_Pixman.2C_libxkbcommon)
+        *   [6.4.1 Wayland, DRM, Pixman, libxkbcommon](#Wayland,_DRM,_Pixman,_libxkbcommon)
         *   [6.4.2 Mesa](#Mesa)
         *   [6.4.3 cairo](#cairo)
         *   [6.4.4 weston](#weston_2)
-*   [7 Solución de problemas](#Soluci.C3.B3n_de_problemas)
+*   [7 Solución de problemas](#Solución_de_problemas)
     *   [7.1 LLVM assertion failure](#LLVM_assertion_failure)
-*   [8 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [8 Véase también](#Véase_también)
 
 ## Requisitos
 

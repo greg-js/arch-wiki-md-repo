@@ -31,14 +31,14 @@ Related articles
             *   [4.4.4.3 Option 3: gkgetsecret.py](#Option_3:_gkgetsecret.py)
         *   [4.4.5 python2-keyring](#python2-keyring)
         *   [4.4.6 Emacs EasyPG](#Emacs_EasyPG)
-        *   [4.4.7 KeePass / KeePassX](#KeePass_.2F_KeePassX)
+        *   [4.4.7 KeePass / KeePassX](#KeePass_/_KeePassX)
             *   [4.4.7.1 Old kdb format](#Old_kdb_format)
     *   [4.5 Kerberos authentication](#Kerberos_authentication)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Overriding UI and autorefresh settings](#Overriding_UI_and_autorefresh_settings)
     *   [5.2 Folder could not be created](#Folder_could_not_be_created)
     *   [5.3 SSL fingerprint does not match](#SSL_fingerprint_does_not_match)
-    *   [5.4 Copying message, connection closed](#Copying_message.2C_connection_closed)
+    *   [5.4 Copying message, connection closed](#Copying_message,_connection_closed)
 *   [6 See also](#See_also)
 
 ## Installation

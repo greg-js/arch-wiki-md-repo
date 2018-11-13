@@ -12,14 +12,14 @@ Artigos relacionados
 
 ## Contents
 
-*   [1 Instalação](#Instala.C3.A7.C3.A3o)
+*   [1 Instalação](#Instalação)
 *   [2 Iniciar o daemon](#Iniciar_o_daemon)
-*   [3 Configuração](#Configura.C3.A7.C3.A3o)
+*   [3 Configuração](#Configuração)
     *   [3.1 Servidor DNS](#Servidor_DNS)
-        *   [3.1.1 Arquivo de endereços DNS e encaminhamento](#Arquivo_de_endere.C3.A7os_DNS_e_encaminhamento)
+        *   [3.1.1 Arquivo de endereços DNS e encaminhamento](#Arquivo_de_endereços_DNS_e_encaminhamento)
             *   [3.1.1.1 openresolv](#openresolv)
             *   [3.1.1.2 Encaminhamento manual](#Encaminhamento_manual)
-        *   [3.1.2 Adicionando um domínio personalizado](#Adicionando_um_dom.C3.ADnio_personalizado)
+        *   [3.1.2 Adicionando um domínio personalizado](#Adicionando_um_domínio_personalizado)
         *   [3.1.3 Testar](#Testar)
     *   [3.2 Servidor DHCP](#Servidor_DHCP)
         *   [3.2.1 Testar](#Testar_2)
@@ -27,11 +27,11 @@ Artigos relacionados
     *   [3.4 Servidor PXE](#Servidor_PXE)
 *   [4 Dicas e truques](#Dicas_e_truques)
     *   [4.1 Evitar que o OpenDNS redirecione as consultas do Google](#Evitar_que_o_OpenDNS_redirecione_as_consultas_do_Google)
-    *   [4.2 Substituir endereços](#Substituir_endere.C3.A7os)
-    *   [4.3 Mais de uma instância](#Mais_de_uma_inst.C3.A2ncia)
-        *   [4.3.1 Estático](#Est.C3.A1tico)
-        *   [4.3.2 Dinâmico](#Din.C3.A2mico)
-*   [5 Veja também](#Veja_tamb.C3.A9m)
+    *   [4.2 Substituir endereços](#Substituir_endereços)
+    *   [4.3 Mais de uma instância](#Mais_de_uma_instância)
+        *   [4.3.1 Estático](#Estático)
+        *   [4.3.2 Dinâmico](#Dinâmico)
+*   [5 Veja também](#Veja_também)
 
 ## Instalação
 
@@ -139,7 +139,7 @@ nameserver 127.0.0.1
 
 ```
 
-Veja [Resolução de nome de domínio#Sobrescrita do /etc/resolv.conf](/index.php/Resolu%C3%A7%C3%A3o_de_nome_de_dom%C3%ADnio#Sobrescrita_do_.2Fetc.2Fresolv.conf "Resolução de nome de domínio") sobre como proteger `/etc/resolv.conf` contra modificação.
+Veja [Resolução de nome de domínio#Sobrescrita do /etc/resolv.conf](/index.php/Resolu%C3%A7%C3%A3o_de_nome_de_dom%C3%ADnio#Sobrescrita_do_/etc/resolv.conf "Resolução de nome de domínio") sobre como proteger `/etc/resolv.conf` contra modificação.
 
 Os endereços de servidor DNS upstream devem então ser especificados no arquivo de configuração do dnsmasq como `server=*endereço_servidor*`. Também adicione `no-resolv` para que o dnsmasq não leia desnecessariamente `/etc/resolv.conf` que contém apenas os endereços de host local de si mesmo.
 
@@ -249,7 +249,7 @@ O dnsmasq tem um servidor [TFTP](/index.php/TFTP_(Portugu%C3%AAs) "TFTP (Portugu
 
 Para usá-lo, crie um diretório para a raiz do TFTP (p.ex., `/srv/tftp`) para colocar arquivos transferíveis nele.
 
-Para aumentar a segurança, é aconselhável usar o modo seguro de TFTP do dnsmasq. No modo seguro, apenas os arquivos pertencentes ao usuário `dnsmasq` serão atendidos pelo TFTP. Você precisará fazer [chown](/index.php/Chown "Chown") na raiz do TFTP e todos os arquivos nele para o usuário `dnsmasq` usar este recurso.
+Para aumentar a segurança, é aconselhável usar o modo seguro de TFTP do dnsmasq. No modo seguro, apenas os arquivos pertencentes ao usuário `dnsmasq` serão atendidos pelo TFTP. Você precisará fazer [chown](/index.php/Chown_(Portugu%C3%AAs) "Chown (Português)") na raiz do TFTP e todos os arquivos nele para o usuário `dnsmasq` usar este recurso.
 
 Habilite o TFTP:
 

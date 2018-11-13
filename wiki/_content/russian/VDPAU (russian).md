@@ -9,11 +9,11 @@
 
 ## Contents
 
-*   [1 Поддерживаемые видеокарты](#.D0.9F.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.B8.D0.B2.D0.B0.D0.B5.D0.BC.D1.8B.D0.B5_.D0.B2.D0.B8.D0.B4.D0.B5.D0.BE.D0.BA.D0.B0.D1.80.D1.82.D1.8B)
-    *   [1.1 Поддерживаемые форматы](#.D0.9F.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.B8.D0.B2.D0.B0.D0.B5.D0.BC.D1.8B.D0.B5_.D1.84.D0.BE.D1.80.D0.BC.D0.B0.D1.82.D1.8B)
-    *   [1.2 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
-        *   [1.2.1 Гибридная графика](#.D0.93.D0.B8.D0.B1.D1.80.D0.B8.D0.B4.D0.BD.D0.B0.D1.8F_.D0.B3.D1.80.D0.B0.D1.84.D0.B8.D0.BA.D0.B0)
-*   [2 Поддерживаемое программное обеспечение](#.D0.9F.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.B8.D0.B2.D0.B0.D0.B5.D0.BC.D0.BE.D0.B5_.D0.BF.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D0.BD.D0.BE.D0.B5_.D0.BE.D0.B1.D0.B5.D1.81.D0.BF.D0.B5.D1.87.D0.B5.D0.BD.D0.B8.D0.B5)
+*   [1 Поддерживаемые видеокарты](#Поддерживаемые_видеокарты)
+    *   [1.1 Поддерживаемые форматы](#Поддерживаемые_форматы)
+    *   [1.2 Настройка](#Настройка)
+        *   [1.2.1 Гибридная графика](#Гибридная_графика)
+*   [2 Поддерживаемое программное обеспечение](#Поддерживаемое_программное_обеспечение)
 
 ## Поддерживаемые видеокарты
 
@@ -94,9 +94,9 @@ $ vdpauinfo
 
 ### Настройка
 
-**Note:** Можно не экспортировать переменную `VDPAU_DRIVER`, так как большинство (современных) приложений и сред умеют находить библиотеку VDPAU [автоматически](#.D0.9F.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.B0)
+**Note:** Можно не экспортировать переменную `VDPAU_DRIVER`, так как большинство (современных) приложений и сред умеют находить библиотеку VDPAU [автоматически](#Проверка)
 
-В переменной окружения `VDPAU_DRIVER` должен быть указан файл драйвера. Вы можете установить [переменную окружения](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Environment variables (Русский)") [глобально](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9D.D0.B0_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.BD.D0.BE.D0.BC_.D1.83.D1.80.D0.BE.D0.B2.D0.BD.D0.B5 "Environment variables (Русский)") или [для отдельного пользователя](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9D.D0.B0_.D1.83.D1.80.D0.BE.D0.B2.D0.BD.D0.B5_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8F "Environment variables (Русский)").
+В переменной окружения `VDPAU_DRIVER` должен быть указан файл драйвера. Вы можете установить [переменную окружения](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Environment variables (Русский)") [глобально](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#На_системном_уровне "Environment variables (Русский)") или [для отдельного пользователя](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#На_уровне_пользователя "Environment variables (Русский)").
 
 Корректное название драйвера зависит от вашей конфигурации:
 
@@ -139,15 +139,15 @@ $ export DRI_PRIME=1
 
 	|| [gnome-mplayer](https://www.archlinux.org/packages/?name=gnome-mplayer)
 
-*   **[MPlayer](/index.php/MPlayer_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "MPlayer (Русский)") или [mplayer2](http://www.mplayer2.org/)** — смотрите раздел [MPlayer (Русский)#Использование vdpau (только для новых видеокарт nVidia)](/index.php/MPlayer_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_vdpau_.28.D1.82.D0.BE.D0.BB.D1.8C.D0.BA.D0.BE_.D0.B4.D0.BB.D1.8F_.D0.BD.D0.BE.D0.B2.D1.8B.D1.85_.D0.B2.D0.B8.D0.B4.D0.B5.D0.BE.D0.BA.D0.B0.D1.80.D1.82_nVidia.29 "MPlayer (Русский)")
+*   **[MPlayer](/index.php/MPlayer_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "MPlayer (Русский)") или [mplayer2](http://www.mplayer2.org/)** — смотрите раздел [MPlayer (Русский)#Использование vdpau (только для новых видеокарт nVidia)](/index.php/MPlayer_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Использование_vdpau_(только_для_новых_видеокарт_nVidia) "MPlayer (Русский)")
 
 	|| [mplayer](https://www.archlinux.org/packages/?name=mplayer) [mplayer2](https://aur.archlinux.org/packages/mplayer2/)
 
-*   **[mpv](/index.php/Mpv_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Mpv (Русский)")** — смотрите раздел [Mpv (Русский)#Аппаратное декодирование](/index.php/Mpv_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.90.D0.BF.D0.BF.D0.B0.D1.80.D0.B0.D1.82.D0.BD.D0.BE.D0.B5_.D0.B4.D0.B5.D0.BA.D0.BE.D0.B4.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5 "Mpv (Русский)")
+*   **[mpv](/index.php/Mpv_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Mpv (Русский)")** — смотрите раздел [Mpv (Русский)#Аппаратное декодирование](/index.php/Mpv_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Аппаратное_декодирование "Mpv (Русский)")
 
 	|| [mpv](https://www.archlinux.org/packages/?name=mpv)
 
-*   **[SMplayer](/index.php/MPlayer_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC "MPlayer (Русский)")** — чтобы включить аппаратное ускорение зайдите в *Options > Preferences > General > Video* и установите параметр `vdpau` в положение *Output driver*
+*   **[SMplayer](/index.php/MPlayer_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Решение_проблем "MPlayer (Русский)")** — чтобы включить аппаратное ускорение зайдите в *Options > Preferences > General > Video* и установите параметр `vdpau` в положение *Output driver*
 
 	|| [smplayer](https://www.archlinux.org/packages/?name=smplayer)
 

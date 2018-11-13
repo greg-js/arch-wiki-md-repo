@@ -1,7 +1,7 @@
 ## Contents
 
 *   [1 Sommario](#Sommario)
-*   [2 Quali sono i moduli disponibili?](#Quali_sono_i_moduli_disponibili.3F)
+*   [2 Quali sono i moduli disponibili?](#Quali_sono_i_moduli_disponibili?)
 *   [3 Come scegliere i moduli corretti](#Come_scegliere_i_moduli_corretti)
 *   [4 Aggiornamento dalla versione 2.6.24](#Aggiornamento_dalla_versione_2.6.24)
 *   [5 Risoluzione dei problemi](#Risoluzione_dei_problemi)

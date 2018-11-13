@@ -12,9 +12,9 @@ USB 驱动器，也被称为闪存驱动器、USB记忆棒、U盘等。可以从
 
 ## Contents
 
-*   [1 BIOS 和 UEFI 可启动 USB](#BIOS_.E5.92.8C_UEFI_.E5.8F.AF.E5.90.AF.E5.8A.A8_USB)
+*   [1 BIOS 和 UEFI 可启动 USB](#BIOS_和_UEFI_可启动_USB)
     *   [1.1 dd](#dd)
-        *   [1.1.1 GNU/Linux](#GNU.2FLinux)
+        *   [1.1.1 GNU/Linux](#GNU/Linux)
         *   [1.1.2 Windows](#Windows)
             *   [1.1.2.1 Rufus](#Rufus)
             *   [1.1.2.2 USBwriter](#USBwriter)
@@ -22,11 +22,11 @@ USB 驱动器，也被称为闪存驱动器、USB记忆棒、U盘等。可以从
             *   [1.1.2.4 Cygwin](#Cygwin)
             *   [1.1.2.5 dd for Windows](#dd_for_Windows)
         *   [1.1.3 macOS](#macOS)
-    *   [1.2 手动方法](#.E6.89.8B.E5.8A.A8.E6.96.B9.E6.B3.95)
-        *   [1.2.1 GNU/Linux](#GNU.2FLinux_2)
+    *   [1.2 手动方法](#手动方法)
+        *   [1.2.1 GNU/Linux](#GNU/Linux_2)
         *   [1.2.2 Windows](#Windows_2)
-*   [2 BIOS 系统的其他方法](#BIOS_.E7.B3.BB.E7.BB.9F.E7.9A.84.E5.85.B6.E4.BB.96.E6.96.B9.E6.B3.95)
-    *   [2.1 GNU/Linux](#GNU.2FLinux_3)
+*   [2 BIOS 系统的其他方法](#BIOS_系统的其他方法)
+    *   [2.1 GNU/Linux](#GNU/Linux_3)
         *   [2.1.1 Using GNOME Disk Utility](#Using_GNOME_Disk_Utility)
         *   [2.1.2 Making an USB-ZIP drive](#Making_an_USB-ZIP_drive)
         *   [2.1.3 UNetbootin](#UNetbootin)
@@ -34,19 +34,19 @@ USB 驱动器，也被称为闪存驱动器、USB记忆棒、U盘等。可以从
         *   [2.2.1 Win32 Disk Imager](#Win32_Disk_Imager)
         *   [2.2.2 USBWriter for Windows](#USBWriter_for_Windows)
         *   [2.2.3 Flashnul](#Flashnul)
-        *   [2.2.4 在内存加载安装介质](#.E5.9C.A8.E5.86.85.E5.AD.98.E5.8A.A0.E8.BD.BD.E5.AE.89.E8.A3.85.E4.BB.8B.E8.B4.A8)
-            *   [2.2.4.1 准备 U 盘](#.E5.87.86.E5.A4.87_U_.E7.9B.98)
-            *   [2.2.4.2 复制需要的文件到 U 盘](#.E5.A4.8D.E5.88.B6.E9.9C.80.E8.A6.81.E7.9A.84.E6.96.87.E4.BB.B6.E5.88.B0_U_.E7.9B.98)
-            *   [2.2.4.3 创建配置文件](#.E5.88.9B.E5.BB.BA.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)
-            *   [2.2.4.4 最后的步骤](#.E6.9C.80.E5.90.8E.E7.9A.84.E6.AD.A5.E9.AA.A4)
-*   [3 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
-*   [4 参见](#.E5.8F.82.E8.A7.81)
+        *   [2.2.4 在内存加载安装介质](#在内存加载安装介质)
+            *   [2.2.4.1 准备 U 盘](#准备_U_盘)
+            *   [2.2.4.2 复制需要的文件到 U 盘](#复制需要的文件到_U_盘)
+            *   [2.2.4.3 创建配置文件](#创建配置文件)
+            *   [2.2.4.4 最后的步骤](#最后的步骤)
+*   [3 故障排除](#故障排除)
+*   [4 参见](#参见)
 
 ## BIOS 和 UEFI 可启动 USB
 
 ### dd
 
-**注意:** 推荐该方法是因为它简单。如果没有效果，请使用下面介绍的方法 [#手动方法](#.E6.89.8B.E5.8A.A8.E6.96.B9.E6.B3.95)。
+**注意:** 推荐该方法是因为它简单。如果没有效果，请使用下面介绍的方法 [#手动方法](#手动方法)。
 
 **警告:** 这种方法会删除 `/dev/sd**x**` 上的所有数据且不可逆。要在使用 Arch ISO 之后释放空间，还原 USB 为原始状态，需要以 root 权限执行`wipefs --all /dev/**sdx**` 命令删除 iso9660 文件系统标记，然后再 [重新分区](/index.php/Repartition "Repartition") 和 [重新格式化](/index.php/Reformat "Reformat") USB。
 
@@ -418,7 +418,7 @@ DEFAULT arch_iso
 
 ## 故障排除
 
-*   对于 [MEMDISK 方法](#.E5.9C.A8.E5.86.85.E5.AD.98.E5.8A.A0.E8.BD.BD.E5.AE.89.E8.A3.85.E4.BB.8B.E8.B4.A8)，如果你尝试引导 i686 版本的系统时碰到了著名的 *30 seconds error*，那么在 `Boot Arch Linux (i686)` 条目上按 `Tab` 键，然后在末尾添加 `vmalloc=448M`。参考： *如果你的映像大于 128MiB 且你使用的是32位操作系统，你必须增加最大内存使用参数vmalloc*。[(*)](http://www.syslinux.org/wiki/index.php/MEMDISK#-_memdiskfind_in_combination_with_phram_and_mtdblock)
+*   对于 [MEMDISK 方法](#在内存加载安装介质)，如果你尝试引导 i686 版本的系统时碰到了著名的 *30 seconds error*，那么在 `Boot Arch Linux (i686)` 条目上按 `Tab` 键，然后在末尾添加 `vmalloc=448M`。参考： *如果你的映像大于 128MiB 且你使用的是32位操作系统，你必须增加最大内存使用参数vmalloc*。[(*)](http://www.syslinux.org/wiki/index.php/MEMDISK#-_memdiskfind_in_combination_with_phram_and_mtdblock)
 
 *   如果你碰到因 `/dev/disk/by-label/ARCH_XXXXXX` 未挂载而导致的 *30 seconds error*，可尝试重命名你的 USB 媒介为 `ARCH_XXXXXX`（例如 `ARCH_201501`）。
 

@@ -1,14 +1,14 @@
 ## Contents
 
-*   [1 Wstęp](#Wst.C4.99p)
+*   [1 Wstęp](#Wstęp)
 *   [2 Instalacja](#Instalacja)
-*   [3 Zarządzanie dyskami](#Zarz.C4.85dzanie_dyskami)
+*   [3 Zarządzanie dyskami](#Zarządzanie_dyskami)
     *   [3.1 Montowanie z udisks](#Montowanie_z_udisks)
     *   [3.2 Montowanie z gvfs](#Montowanie_z_gvfs)
-    *   [3.3 Montowanie jako normalny użytkownik](#Montowanie_jako_normalny_u.C5.BCytkownik)
+    *   [3.3 Montowanie jako normalny użytkownik](#Montowanie_jako_normalny_użytkownik)
 *   [4 Wsparcie NTFS](#Wsparcie_NTFS)
-*   [5 Informacje końcowe](#Informacje_ko.C5.84cowe)
-*   [6 Zobacz również](#Zobacz_r.C3.B3wnie.C5.BC)
+*   [5 Informacje końcowe](#Informacje_końcowe)
+*   [6 Zobacz również](#Zobacz_również)
 
 ## Wstęp
 

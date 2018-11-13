@@ -8,12 +8,12 @@
 
 ## Contents
 
-*   [1 概况](#.E6.A6.82.E5.86.B5)
-*   [2 桌面环境列表](#.E6.A1.8C.E9.9D.A2.E7.8E.AF.E5.A2.83.E5.88.97.E8.A1.A8)
-    *   [2.1 官方支持](#.E5.AE.98.E6.96.B9.E6.94.AF.E6.8C.81)
-    *   [2.2 非官方支持](#.E9.9D.9E.E5.AE.98.E6.96.B9.E6.94.AF.E6.8C.81)
-*   [3 自己打造桌面环境](#.E8.87.AA.E5.B7.B1.E6.89.93.E9.80.A0.E6.A1.8C.E9.9D.A2.E7.8E.AF.E5.A2.83)
-    *   [3.1 使用其它窗口管理器](#.E4.BD.BF.E7.94.A8.E5.85.B6.E5.AE.83.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8)
+*   [1 概况](#概况)
+*   [2 桌面环境列表](#桌面环境列表)
+    *   [2.1 官方支持](#官方支持)
+    *   [2.2 非官方支持](#非官方支持)
+*   [3 自己打造桌面环境](#自己打造桌面环境)
+    *   [3.1 使用其它窗口管理器](#使用其它窗口管理器)
 
 ## 概况
 
@@ -113,7 +113,7 @@
 
 ## 自己打造桌面环境
 
-桌面环境是安装完整图形环境的最简单的方法。但是，如果主流桌面环境并不能满足用户的需求，那么用户也可以通过多种方法来构建和定制他们自己的图形环境。通常，构建一个自定义的环境包括选择一个合适的[窗口管理器](/index.php/%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E5%99%A8 "窗口管理器")，一个[任务栏](/index.php/List_of_applications#Taskbars_.2F_panels_.2F_docks "List of applications")以及一些应用程序(一个极简的应用程序选择方案至少包括一个终端模拟器([terminal emulator](/index.php/Terminal_emulator "Terminal emulator"))，文件管理器([file manager](/index.php/File_manager "File manager"))和文本编辑器([text editor](/index.php/Text_editor "Text editor")))。
+桌面环境是安装完整图形环境的最简单的方法。但是，如果主流桌面环境并不能满足用户的需求，那么用户也可以通过多种方法来构建和定制他们自己的图形环境。通常，构建一个自定义的环境包括选择一个合适的[窗口管理器](/index.php/%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E5%99%A8 "窗口管理器")，一个[任务栏](/index.php/List_of_applications#Taskbars_/_panels_/_docks "List of applications")以及一些应用程序(一个极简的应用程序选择方案至少包括一个终端模拟器([terminal emulator](/index.php/Terminal_emulator "Terminal emulator"))，文件管理器([file manager](/index.php/File_manager "File manager"))和文本编辑器([text editor](/index.php/Text_editor "Text editor")))。
 
 通常由桌面环境提供的其它应用程序有：
 

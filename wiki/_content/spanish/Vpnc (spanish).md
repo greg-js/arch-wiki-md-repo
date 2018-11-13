@@ -5,10 +5,10 @@ Este artículo es una traducción de [Vpnc](/index.php/Vpnc "Vpnc"), revisada po
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Configuración](#Configuraci.C3.B3n)
+*   [1 Instalación](#Instalación)
+*   [2 Configuración](#Configuración)
 *   [3 Inicio](#Inicio)
-*   [4 Solución de problemas](#Soluci.C3.B3n_de_problemas)
+*   [4 Solución de problemas](#Solución_de_problemas)
 
 ## Instalación
 

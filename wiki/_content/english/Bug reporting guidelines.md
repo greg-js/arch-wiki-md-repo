@@ -12,8 +12,8 @@ See also: [How to Report Bugs Effectively](https://www.chiark.greenend.org.uk/~s
 
 *   [1 Before reporting](#Before_reporting)
     *   [1.1 Search for duplicates](#Search_for_duplicates)
-    *   [1.2 Upstream or Arch?](#Upstream_or_Arch.3F)
-    *   [1.3 Bug or feature?](#Bug_or_feature.3F)
+    *   [1.2 Upstream or Arch?](#Upstream_or_Arch?)
+    *   [1.3 Bug or feature?](#Bug_or_feature?)
         *   [1.3.1 Reasons for not being a bug](#Reasons_for_not_being_a_bug)
         *   [1.3.2 Reasons for not being a feature](#Reasons_for_not_being_a_feature)
     *   [1.4 Gather useful information](#Gather_useful_information)

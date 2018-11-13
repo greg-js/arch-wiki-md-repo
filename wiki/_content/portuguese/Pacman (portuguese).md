@@ -27,7 +27,7 @@ O *pacman* é escrito na linguagem de programação C e usa o formato [tar](http
 
 *   [1 Uso](#Uso)
     *   [1.1 Instalando pacotes](#Instalando_pacotes)
-        *   [1.1.1 Instalando pacotes específicos](#Instalando_pacotes_espec.C3.ADficos)
+        *   [1.1.1 Instalando pacotes específicos](#Instalando_pacotes_específicos)
         *   [1.1.2 Instalando grupos de pacotes](#Instalando_grupos_de_pacotes)
     *   [1.2 Removendo pacotes](#Removendo_pacotes)
     *   [1.3 Atualizando pacotes](#Atualizando_pacotes)
@@ -36,40 +36,40 @@ O *pacman* é escrito na linguagem de programação C e usa o formato [tar](http
         *   [1.4.2 Estrutura da base de dados](#Estrutura_da_base_de_dados)
     *   [1.5 Limpando o cache de pacotes](#Limpando_o_cache_de_pacotes)
     *   [1.6 Comandos adicionais](#Comandos_adicionais)
-    *   [1.7 Motivo de instalação](#Motivo_de_instala.C3.A7.C3.A3o)
-    *   [1.8 Pesquisar por um pacote que contenha um arquivo específico](#Pesquisar_por_um_pacote_que_contenha_um_arquivo_espec.C3.ADfico)
-*   [2 Configuração](#Configura.C3.A7.C3.A3o)
-    *   [2.1 Opções gerais](#Op.C3.A7.C3.B5es_gerais)
-        *   [2.1.1 Comparando versões antes de atualizar](#Comparando_vers.C3.B5es_antes_de_atualizar)
-        *   [2.1.2 Pular pacotes para não serem atualizados](#Pular_pacotes_para_n.C3.A3o_serem_atualizados)
-        *   [2.1.3 Pular um grupos de pacotes para não serem atualizados](#Pular_um_grupos_de_pacotes_para_n.C3.A3o_serem_atualizados)
-        *   [2.1.4 Pular arquivos para não serem instalados](#Pular_arquivos_para_n.C3.A3o_serem_instalados)
-        *   [2.1.5 Pular arquivos para não serem instalados no sistema](#Pular_arquivos_para_n.C3.A3o_serem_instalados_no_sistema)
-        *   [2.1.6 Manter vários arquivos de configuração](#Manter_v.C3.A1rios_arquivos_de_configura.C3.A7.C3.A3o)
+    *   [1.7 Motivo de instalação](#Motivo_de_instalação)
+    *   [1.8 Pesquisar por um pacote que contenha um arquivo específico](#Pesquisar_por_um_pacote_que_contenha_um_arquivo_específico)
+*   [2 Configuração](#Configuração)
+    *   [2.1 Opções gerais](#Opções_gerais)
+        *   [2.1.1 Comparando versões antes de atualizar](#Comparando_versões_antes_de_atualizar)
+        *   [2.1.2 Pular pacotes para não serem atualizados](#Pular_pacotes_para_não_serem_atualizados)
+        *   [2.1.3 Pular um grupos de pacotes para não serem atualizados](#Pular_um_grupos_de_pacotes_para_não_serem_atualizados)
+        *   [2.1.4 Pular arquivos para não serem instalados](#Pular_arquivos_para_não_serem_instalados)
+        *   [2.1.5 Pular arquivos para não serem instalados no sistema](#Pular_arquivos_para_não_serem_instalados_no_sistema)
+        *   [2.1.6 Manter vários arquivos de configuração](#Manter_vários_arquivos_de_configuração)
         *   [2.1.7 Hooks](#Hooks)
-    *   [2.2 Repositórios e espelhos](#Reposit.C3.B3rios_e_espelhos)
-        *   [2.2.1 Segurança de pacote](#Seguran.C3.A7a_de_pacote)
-*   [3 Solução de problemas](#Solu.C3.A7.C3.A3o_de_problemas)
-    *   [3.1 Erro "falha em submeter a transação (arquivos conflitantes)"](#Erro_.22falha_em_submeter_a_transa.C3.A7.C3.A3o_.28arquivos_conflitantes.29.22)
-    *   [3.2 Erro "falha em submeter a transação (pacote inválido ou corrompido)"](#Erro_.22falha_em_submeter_a_transa.C3.A7.C3.A3o_.28pacote_inv.C3.A1lido_ou_corrompido.29.22)
-    *   [3.3 Erro "falha ao iniciar a transação (não foi possível travar a base de dados)"](#Erro_.22falha_ao_iniciar_a_transa.C3.A7.C3.A3o_.28n.C3.A3o_foi_poss.C3.ADvel_travar_a_base_de_dados.29.22)
-    *   [3.4 Pacotes não podem ser obtidos na instalação](#Pacotes_n.C3.A3o_podem_ser_obtidos_na_instala.C3.A7.C3.A3o)
-    *   [3.5 Reinstalação manual do pacman](#Reinstala.C3.A7.C3.A3o_manual_do_pacman)
-    *   [3.6 pacman trava durante uma atualização](#pacman_trava_durante_uma_atualiza.C3.A7.C3.A3o)
-    *   [3.7 Erro "Unable to find root device" após a reinicialização](#Erro_.22Unable_to_find_root_device.22_ap.C3.B3s_a_reinicializa.C3.A7.C3.A3o)
-    *   [3.8 Assinatura de "<email@exemplo.org>" tem confiança desconhecida, falha na instalação](#Assinatura_de_.22.3Cemail.40exemplo.org.3E.22_tem_confian.C3.A7a_desconhecida.2C_falha_na_instala.C3.A7.C3.A3o)
-    *   [3.9 Solicitação de importação de chaves PGP](#Solicita.C3.A7.C3.A3o_de_importa.C3.A7.C3.A3o_de_chaves_PGP)
-    *   [3.10 Erro: chave "0123456789ABCDEF" não pôde ser procurado remotamente](#Erro:_chave_.220123456789ABCDEF.22_n.C3.A3o_p.C3.B4de_ser_procurado_remotamente)
-    *   [3.11 Assinatura de "Usuário <email@archlinux.org>" é inválida, falha na instalação](#Assinatura_de_.22Usu.C3.A1rio_.3Cemail.40archlinux.org.3E.22_.C3.A9_inv.C3.A1lida.2C_falha_na_instala.C3.A7.C3.A3o)
-    *   [3.12 Erro 'aviso: locale atual é inválida; usando locale padrão "C"'](#Erro_.27aviso:_locale_atual_.C3.A9_inv.C3.A1lida.3B_usando_locale_padr.C3.A3o_.22C.22.27)
-    *   [3.13 pacman não respeita as configurações de proxy](#pacman_n.C3.A3o_respeita_as_configura.C3.A7.C3.B5es_de_proxy)
-    *   [3.14 Como faço para reinstalar todos os pacotes, mantendo informações sobre se algo foi explicitamente instalado ou como uma dependência?](#Como_fa.C3.A7o_para_reinstalar_todos_os_pacotes.2C_mantendo_informa.C3.A7.C3.B5es_sobre_se_algo_foi_explicitamente_instalado_ou_como_uma_depend.C3.AAncia.3F)
-    *   [3.15 Erro "cannot open shared object file"](#Erro_.22cannot_open_shared_object_file.22)
+    *   [2.2 Repositórios e espelhos](#Repositórios_e_espelhos)
+        *   [2.2.1 Segurança de pacote](#Segurança_de_pacote)
+*   [3 Solução de problemas](#Solução_de_problemas)
+    *   [3.1 Erro "falha em submeter a transação (arquivos conflitantes)"](#Erro_"falha_em_submeter_a_transação_(arquivos_conflitantes)")
+    *   [3.2 Erro "falha em submeter a transação (pacote inválido ou corrompido)"](#Erro_"falha_em_submeter_a_transação_(pacote_inválido_ou_corrompido)")
+    *   [3.3 Erro "falha ao iniciar a transação (não foi possível travar a base de dados)"](#Erro_"falha_ao_iniciar_a_transação_(não_foi_possível_travar_a_base_de_dados)")
+    *   [3.4 Pacotes não podem ser obtidos na instalação](#Pacotes_não_podem_ser_obtidos_na_instalação)
+    *   [3.5 Reinstalação manual do pacman](#Reinstalação_manual_do_pacman)
+    *   [3.6 pacman trava durante uma atualização](#pacman_trava_durante_uma_atualização)
+    *   [3.7 Erro "Unable to find root device" após a reinicialização](#Erro_"Unable_to_find_root_device"_após_a_reinicialização)
+    *   [3.8 Assinatura de "<email@exemplo.org>" tem confiança desconhecida, falha na instalação](#Assinatura_de_"<email@exemplo.org>"_tem_confiança_desconhecida,_falha_na_instalação)
+    *   [3.9 Solicitação de importação de chaves PGP](#Solicitação_de_importação_de_chaves_PGP)
+    *   [3.10 Erro: chave "0123456789ABCDEF" não pôde ser procurado remotamente](#Erro:_chave_"0123456789ABCDEF"_não_pôde_ser_procurado_remotamente)
+    *   [3.11 Assinatura de "Usuário <email@archlinux.org>" é inválida, falha na instalação](#Assinatura_de_"Usuário_<email@archlinux.org>"_é_inválida,_falha_na_instalação)
+    *   [3.12 Erro 'aviso: locale atual é inválida; usando locale padrão "C"'](#Erro_'aviso:_locale_atual_é_inválida;_usando_locale_padrão_"C"')
+    *   [3.13 pacman não respeita as configurações de proxy](#pacman_não_respeita_as_configurações_de_proxy)
+    *   [3.14 Como faço para reinstalar todos os pacotes, mantendo informações sobre se algo foi explicitamente instalado ou como uma dependência?](#Como_faço_para_reinstalar_todos_os_pacotes,_mantendo_informações_sobre_se_algo_foi_explicitamente_instalado_ou_como_uma_dependência?)
+    *   [3.15 Erro "cannot open shared object file"](#Erro_"cannot_open_shared_object_file")
     *   [3.16 Congelamento de downloads de pacote](#Congelamento_de_downloads_de_pacote)
-    *   [3.17 Falha ao obter arquivo 'core.db' do espelho](#Falha_ao_obter_arquivo_.27core.db.27_do_espelho)
+    *   [3.17 Falha ao obter arquivo 'core.db' do espelho](#Falha_ao_obter_arquivo_'core.db'_do_espelho)
 *   [4 Entendendo](#Entendendo)
-    *   [4.1 O que acontece durante a instalação/atualização/remoção de pacote](#O_que_acontece_durante_a_instala.C3.A7.C3.A3o.2Fatualiza.C3.A7.C3.A3o.2Fremo.C3.A7.C3.A3o_de_pacote)
-*   [5 Veja também](#Veja_tamb.C3.A9m)
+    *   [4.1 O que acontece durante a instalação/atualização/remoção de pacote](#O_que_acontece_durante_a_instalação/atualização/remoção_de_pacote)
+*   [5 Veja também](#Veja_também)
 
 ## Uso
 
@@ -82,9 +82,9 @@ O que se segue é apenas uma pequena amostra das operações que o *pacman* pode
 **Nota:**
 
 *   Alguns pacotes muitas vezes têm [dependências opcionais](/index.php/PKGBUILD_(Portugu%C3%AAs)#optdepends "PKGBUILD (Português)") de pacotes que fornecem funcionalidades adicionais para o aplicativo, apesar de não serem estritamente necessárias para executá-lo. Ao instalar um pacote, o *pacman* irá listar as dependências opcionais do pacote, porém elas não serão encontradas no arquivo `pacman.log`. Utilize o comando [#Consultando base de dados de pacotes](#Consultando_base_de_dados_de_pacotes) para visualizar as dependências opcionais de um pacote.
-*   Ao instalar um pacote que requer apenas uma dependência (opcional) de algum outro pacote (isto é, necessário por você), é recomendado usar a opção `--asdeps`. Para detalhes, veja a seção [#Motivo de instalação](#Motivo_de_instala.C3.A7.C3.A3o).
+*   Ao instalar um pacote que requer apenas uma dependência (opcional) de algum outro pacote (isto é, necessário por você), é recomendado usar a opção `--asdeps`. Para detalhes, veja a seção [#Motivo de instalação](#Motivo_de_instalação).
 
-**Atenção:** Ao instalar pacotes no Arch, evite atualizar a lista de pacotes sem [atualizar o sistema](#Atualizando_pacotes) (por exemplo, quando um [pacote não é encontrado](#Pacotes_n.C3.A3o_podem_ser_obtidos_na_instala.C3.A7.C3.A3o) nos repositórios oficiais). Na prática, **não** execute o comando `pacman -Sy *nome_pacote*`, pois isso poderia levar para problemas de dependências. Veja [Manutenção do sistema#Sem suporte a atualizações parciais](/index.php/Manuten%C3%A7%C3%A3o_do_sistema#Sem_suporte_a_atualiza.C3.A7.C3.B5es_parciais "Manutenção do sistema") e [BBS#89328](https://bbs.archlinux.org/viewtopic.php?id=89328).
+**Atenção:** Ao instalar pacotes no Arch, evite atualizar a lista de pacotes sem [atualizar o sistema](#Atualizando_pacotes) (por exemplo, quando um [pacote não é encontrado](#Pacotes_não_podem_ser_obtidos_na_instalação) nos repositórios oficiais). Na prática, **não** execute o comando `pacman -Sy *nome_pacote*`, pois isso poderia levar para problemas de dependências. Veja [Manutenção do sistema#Sem suporte a atualizações parciais](/index.php/Manuten%C3%A7%C3%A3o_do_sistema#Sem_suporte_a_atualizações_parciais "Manutenção do sistema") e [BBS#89328](https://bbs.archlinux.org/viewtopic.php?id=89328).
 
 #### Instalando pacotes específicos
 
@@ -209,7 +209,7 @@ O *pacman* salva arquivos de configuração importantes ao remover certos aplica
 **Atenção:**
 
 *   Os usuários devem seguir as orientações em [Manutenção do sistema#Atualizando o sistema](/index.php/Manuten%C3%A7%C3%A3o_do_sistema#Atualizando_o_sistema "Manutenção do sistema") para atualizar os seus sistemas regularmente e nao executar o seguinte comando as cegas.
-*   Arch suporta apenas atualizações completa de sistema. Veja [Manutenção do sistema#Sem suporte a atualizações parciais](/index.php/Manuten%C3%A7%C3%A3o_do_sistema#Sem_suporte_a_atualiza.C3.A7.C3.B5es_parciais "Manutenção do sistema") e [#Instalando pacotes](#Instalando_pacotes) para mais detalhes.
+*   Arch suporta apenas atualizações completa de sistema. Veja [Manutenção do sistema#Sem suporte a atualizações parciais](/index.php/Manuten%C3%A7%C3%A3o_do_sistema#Sem_suporte_a_atualizações_parciais "Manutenção do sistema") e [#Instalando pacotes](#Instalando_pacotes) para mais detalhes.
 
 O *pacman* pode atualizar todos os pacotes no sistema com apenas um comando. Isso pode demorar um pouco dependendo de como anda a atualização do sistema. Este comando pode sincronizar as bases de dados do repositório *e* atualizar os pacotes do sistema (excluindo pacotes "locais" que não estão nos repositórios configurados):
 
@@ -452,7 +452,7 @@ Ao instalar um pacote, é possível forçar o motivo da instalação da *depend�
 
 ```
 
-**Dica:** A instalação de dependências opcionais com `--asdeps` fará com que, se você [remover pacotes órfãos](/index.php/Pacman/Dicas_e_truques#Removendo_pacotes_n.C3.A3o_usados_.28.C3.B3rf.C3.A3os.29 "Pacman/Dicas e truques"), o *pacman* também removerá as dependências opcionais.
+**Dica:** A instalação de dependências opcionais com `--asdeps` fará com que, se você [remover pacotes órfãos](/index.php/Pacman/Dicas_e_truques#Removendo_pacotes_não_usados_(órfãos) "Pacman/Dicas e truques"), o *pacman* também removerá as dependências opcionais.
 
 Ao **re**instalar um pacote, o motivo dessa instalação atual é preservado por padrão.
 
@@ -583,7 +583,7 @@ Para mais informações sobre hooks do alpm, veja [alpm-hooks(5)](https://jlk.fj
 
 ### Repositórios e espelhos
 
-Além da seção especial [[options]](#Op.C3.A7.C3.B5es_gerais), cada outra `[section]` no `pacman.conf` define um repositório de pacote a ser usado. Um *repositório* é uma coleção *lógica* de pacotes, que são armazenados *fisicamente* em um ou mais servidores: por esse motivo, cada servidor é chamado de um *espelho* para o repositório.
+Além da seção especial [[options]](#Opções_gerais), cada outra `[section]` no `pacman.conf` define um repositório de pacote a ser usado. Um *repositório* é uma coleção *lógica* de pacotes, que são armazenados *fisicamente* em um ou mais servidores: por esse motivo, cada servidor é chamado de um *espelho* para o repositório.
 
 Repositórios são distinguidos entre [oficial](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais") e [não oficiais](/index.php/Unofficial_user_repositories "Unofficial user repositories"). A ordem de repositórios no arquivo de configuração importa; repositórios listados primeiro terão precedências sobre os listados posteriormente quando pacotes nos dois repositórios tiverem nomes idênticos, independentemente do número da versão. Para usar um repositório após adicioná-lo, você precisará [atualizar](#Atualizando_pacotes) todo o sistema primeiro.
 
@@ -611,7 +611,7 @@ Isso aconteceu porque o *pacman* detectou um conflito de arquivo e, por design, 
 
 O problema geralmente é trivial de resolver. Uma maneira segura é primeiro verificar se outro pacote possui o arquivo (`pacman -Qo */caminho/para/arquivo*`). Se o arquivo for de propriedade de outro pacote, [preencha um relatório de erro](/index.php/Diretrizes_de_relat%C3%B3rios_de_erro "Diretrizes de relatórios de erro"). Se o arquivo não for de outro pacote, renomeie o arquivo que "existe no sistema de arquivos" e execute novamente o comando de atualização. Se tudo correr bem, o arquivo pode então ser removido.
 
-Se você instalou um programa manualmente sem usar o *pacman*, (p.ex.: por meio de `make install`), você tem que remover/instalar esse programa com seus arquivos. Veja também [Pacman/Dicas e truques#Identificar arquivos que pertençam a nenhum pacote](/index.php/Pacman/Dicas_e_truques#Identificar_arquivos_que_perten.C3.A7am_a_nenhum_pacote "Pacman/Dicas e truques").
+Se você instalou um programa manualmente sem usar o *pacman*, (p.ex.: por meio de `make install`), você tem que remover/instalar esse programa com seus arquivos. Veja também [Pacman/Dicas e truques#Identificar arquivos que pertençam a nenhum pacote](/index.php/Pacman/Dicas_e_truques#Identificar_arquivos_que_pertençam_a_nenhum_pacote "Pacman/Dicas e truques").
 
 Todo pacote instalado fornece um arquivo `/var/lib/pacman/local/*$pacote-$versão*/files` que contém metadados sobre esse pacote. Se o arquivo ficar corrompido, vazio ou desaparecer, ele resulta em erros de `existe no sistema de arquivos` ao tentar atualizar o pacote. Tal erro geralmente está relacionado a um pacote. Em vez de renomear manualmente e posteriormente remover todos os arquivos que pertencem ao pacote em questão, você pode tentar executar explicitamente `pacman -S --overwrite *glob* *pacote*` para forçar o *pacman* a sobrescrever arquivos que correspondem a `*glob*`.
 
@@ -641,15 +641,15 @@ Se o *pacman* for interrompido enquanto altera a base de dados, esse arquivo de 
 
 Esse erro se manifesta como `não encontrado na base de dados de sincronização`, `alvo não encontrado` ou `falha ao obter o arquivo`.
 
-Primeiramente, assegure-se de que o pacote realmente existe. Se você tem certeza que o pacote existe, sua lista de pacote pode estar desatualizada. Tente execute `pacman -Syyu` para forçar uma atualização de todas as listas de pacote e atualize. Também certifique-se que os [espelhos](/index.php/Espelhos "Espelhos") selecionados estejam atualizados e [repositórios](#Reposit.C3.B3rios_e_espelhos) são configurados corretamente.
+Primeiramente, assegure-se de que o pacote realmente existe. Se você tem certeza que o pacote existe, sua lista de pacote pode estar desatualizada. Tente execute `pacman -Syyu` para forçar uma atualização de todas as listas de pacote e atualize. Também certifique-se que os [espelhos](/index.php/Espelhos "Espelhos") selecionados estejam atualizados e [repositórios](#Repositórios_e_espelhos) são configurados corretamente.
 
 Pode ser também que aquele repositório contendo o pacote não está habilidade no seu sistema. Por exemplo, o pacote pode estar no repositório [multilib](/index.php/Multilib_(Portugu%C3%AAs) "Multilib (Português)"), mas o *multilib* não está habilitado em seu `pacman.conf`.
 
-Veja também [FAQ (Português)#Por que há uma única versão de cada biblioteca compartilhada nos repositórios oficiais?](/index.php/FAQ_(Portugu%C3%AAs)#Por_que_h.C3.A1_uma_.C3.BAnica_vers.C3.A3o_de_cada_biblioteca_compartilhada_nos_reposit.C3.B3rios_oficiais.3F "FAQ (Português)").
+Veja também [FAQ (Português)#Por que há uma única versão de cada biblioteca compartilhada nos repositórios oficiais?](/index.php/FAQ_(Portugu%C3%AAs)#Por_que_há_uma_única_versão_de_cada_biblioteca_compartilhada_nos_repositórios_oficiais? "FAQ (Português)").
 
 ### Reinstalação manual do pacman
 
-**Atenção:** É extremamente fácil quebrar seu sistema ainda mais, usando essa abordagem. Use isso apenas como um último recurso se o método do [#pacman trava durante uma atualização](#pacman_trava_durante_uma_atualiza.C3.A7.C3.A3o) não for uma opção.
+**Atenção:** É extremamente fácil quebrar seu sistema ainda mais, usando essa abordagem. Use isso apenas como um último recurso se o método do [#pacman trava durante uma atualização](#pacman_trava_durante_uma_atualização) não for uma opção.
 
 Mesmo se o *pacman* estiver terrivelmente quebrado, você pode corrigi-lo manualmente baixando os últimos pacotes e extraindo-os para os locais corretos. Os passos difíceis a se executar são:
 
@@ -710,7 +710,7 @@ Se isso não funcionar, de uma versão atual do Arch (CD/DVD ou pendrive USB), [
 **Nota:**
 
 *   Se você não tem uma versão atual ou se tem apenas alguma outra distribuição Linux "live", você pode fazer [chroot](/index.php/Chroot_(Portugu%C3%AAs) "Chroot (Português)") usando o jeito antigo. Obviamente, terá que digitar mais do que simplesmente executar o script `arch-chroot`.
-*   Se *pacman* falhar com `não foi possível resolver máquina`, por favor [verifique sua conexão com a Internet](/index.php/Configura%C3%A7%C3%A3o_de_rede#Verificar_a_conex.C3.A3o "Configuração de rede").
+*   Se *pacman* falhar com `não foi possível resolver máquina`, por favor [verifique sua conexão com a Internet](/index.php/Configura%C3%A7%C3%A3o_de_rede#Verificar_a_conexão "Configuração de rede").
 *   Se você não conseguir entrar no ambiente do arch-chroot ou chroot, mas precisa reinstalar os pacotes, você pode usar o comando `pacman --sysroot /mnt -Syu foo bar` para usar o *pacman* em sua partição raiz.
 
 A reinstalação do kernel (o pacote [linux](https://www.archlinux.org/packages/?name=linux)) vai gerar automaticamente a imagem com `mkinitcpio -p linux`. Não precisa fazer separadamente.
@@ -727,11 +727,11 @@ Você pode tentar:
 
 ### Solicitação de importação de chaves PGP
 
-Se estiver [instalando](/index.php/Guia_de_instala%C3%A7%C3%A3o "Guia de instalação") o Arch com uma ISO desatualizado, você provavelmente terá que importar chaves PGP. Concorde com baixar a chave para proceder. Se você não consegue adicionar a chave PGP com sucesso, atualizar o chaveiro ou atualizar [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) (veja [acima](#Assinatura_de_.22.3Cemail.40exemplo.org.3E.22_tem_confian.C3.A7a_desconhecida.2C_falha_na_instala.C3.A7.C3.A3o)).
+Se estiver [instalando](/index.php/Guia_de_instala%C3%A7%C3%A3o "Guia de instalação") o Arch com uma ISO desatualizado, você provavelmente terá que importar chaves PGP. Concorde com baixar a chave para proceder. Se você não consegue adicionar a chave PGP com sucesso, atualizar o chaveiro ou atualizar [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) (veja [acima](#Assinatura_de_"<email@exemplo.org>"_tem_confiança_desconhecida,_falha_na_instalação)).
 
 ### Erro: chave "0123456789ABCDEF" não pôde ser procurado remotamente
 
-Se pacotes forem assinados com novas chaves, que foram adicionadas apenas recentemente ao [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring), essas chaves não estão disponível localmente durante a atualização (problema [ovo ou galinha](https://en.wikipedia.org/wiki/pt:o_ovo_ou_a_galinha "w:pt:o ovo ou a galinha")). O [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) instalado não contém a chave até estar atualizado. Pacman tenta contornar isso procurando em um servidor de chaves, o que pode não ser possível, por exemplo, atrás de proxys ou firewall e resulta no erro informado. Atualize o [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) primeiro como mostrado [acima](#Assinatura_de_.22.3Cemail.40exemplo.org.3E.22_tem_confian.C3.A7a_desconhecida.2C_falha_na_instala.C3.A7.C3.A3o).
+Se pacotes forem assinados com novas chaves, que foram adicionadas apenas recentemente ao [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring), essas chaves não estão disponível localmente durante a atualização (problema [ovo ou galinha](https://en.wikipedia.org/wiki/pt:o_ovo_ou_a_galinha "w:pt:o ovo ou a galinha")). O [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) instalado não contém a chave até estar atualizado. Pacman tenta contornar isso procurando em um servidor de chaves, o que pode não ser possível, por exemplo, atrás de proxys ou firewall e resulta no erro informado. Atualize o [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) primeiro como mostrado [acima](#Assinatura_de_"<email@exemplo.org>"_tem_confiança_desconhecida,_falha_na_instalação).
 
 ### Assinatura de "Usuário <email@archlinux.org>" é inválida, falha na instalação
 
@@ -766,7 +766,7 @@ Parece que uma transição anterior do *pacman* removeu ou corrompeu as bibliote
 
 Para recuperar dessa situação, você precisa desempacotar manualmente as bibliotecas necessárias para seu sistema. Primeiro descubra qual pacote contém a biblioteca em falta e, então, localize-o no cache do *pacman* (`/var/cache/pacman/pkg/`). Desempacote a biblioteca compartilhada necessária no sistema de arquivos. Isso vai permitir executar o *pacman*.
 
-Agora, você precisa [reinstalar](#Instalando_pacotes_espec.C3.ADficos) o pacote quebrado. Note que você precisa usar a opção `--overwrite`, pois você acabou de desempacotar arquivos de sistema e o*pacman* não tem conhecimento deles. O *pacman* vai substituir corretamente nosso arquivo de biblioteca compartilhada com o do pacote.
+Agora, você precisa [reinstalar](#Instalando_pacotes_específicos) o pacote quebrado. Note que você precisa usar a opção `--overwrite`, pois você acabou de desempacotar arquivos de sistema e o*pacman* não tem conhecimento deles. O *pacman* vai substituir corretamente nosso arquivo de biblioteca compartilhada com o do pacote.
 
 É isso. Atualize o resto do sistema.
 

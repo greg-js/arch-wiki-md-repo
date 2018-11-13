@@ -3,7 +3,7 @@
 ## Contents
 
 *   [1 Installation Instructions](#Installation_Instructions)
-*   [2 Older Versions (Not fully working)](#Older_Versions_.28Not_fully_working.29)
+*   [2 Older Versions (Not fully working)](#Older_Versions_(Not_fully_working))
     *   [2.1 Kinetic](#Kinetic)
 *   [3 catkin_make](#catkin_make)
 *   [4 catkin build](#catkin_build)

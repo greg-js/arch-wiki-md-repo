@@ -11,38 +11,38 @@
 
 ## Contents
 
-*   [1 BIOS 和 UEFI 可開機 USB](#BIOS_.E5.92.8C_UEFI_.E5.8F.AF.E9.96.8B.E6.A9.9F_USB)
-    *   [1.1 使用 dd](#.E4.BD.BF.E7.94.A8_dd)
-        *   [1.1.1 GNU/Linux](#GNU.2FLinux)
+*   [1 BIOS 和 UEFI 可開機 USB](#BIOS_和_UEFI_可開機_USB)
+    *   [1.1 使用 dd](#使用_dd)
+        *   [1.1.1 GNU/Linux](#GNU/Linux)
         *   [1.1.2 Windows](#Windows)
-            *   [1.1.2.1 使用 Cygwin](#.E4.BD.BF.E7.94.A8_Cygwin)
-            *   [1.1.2.2 Windows 下使用 dd](#Windows_.E4.B8.8B.E4.BD.BF.E7.94.A8_dd)
+            *   [1.1.2.1 使用 Cygwin](#使用_Cygwin)
+            *   [1.1.2.2 Windows 下使用 dd](#Windows_下使用_dd)
         *   [1.1.3 Mac OS X](#Mac_OS_X)
-        *   [1.1.4 如何還原 USB 裝置](#.E5.A6.82.E4.BD.95.E9.82.84.E5.8E.9F_USB_.E8.A3.9D.E7.BD.AE)
-    *   [1.2 手動格式化](#.E6.89.8B.E5.8B.95.E6.A0.BC.E5.BC.8F.E5.8C.96)
-        *   [1.2.1 GNU/Linux](#GNU.2FLinux_2)
+        *   [1.1.4 如何還原 USB 裝置](#如何還原_USB_裝置)
+    *   [1.2 手動格式化](#手動格式化)
+        *   [1.2.1 GNU/Linux](#GNU/Linux_2)
         *   [1.2.2 Windows](#Windows_2)
-*   [2 適用於 BIOS 系統的其他方式](#.E9.81.A9.E7.94.A8.E6.96.BC_BIOS_.E7.B3.BB.E7.B5.B1.E7.9A.84.E5.85.B6.E4.BB.96.E6.96.B9.E5.BC.8F)
-    *   [2.1 GNU/Linux](#GNU.2FLinux_3)
-        *   [2.1.1 使用 UNetbootin](#.E4.BD.BF.E7.94.A8_UNetbootin)
+*   [2 適用於 BIOS 系統的其他方式](#適用於_BIOS_系統的其他方式)
+    *   [2.1 GNU/Linux](#GNU/Linux_3)
+        *   [2.1.1 使用 UNetbootin](#使用_UNetbootin)
     *   [2.2 Windows](#Windows_3)
         *   [2.2.1 Win32 Disk Imager](#Win32_Disk_Imager)
-        *   [2.2.2 Windows 下的 USBWriter](#Windows_.E4.B8.8B.E7.9A.84_USBWriter)
-        *   [2.2.3 Flashnul 方式](#Flashnul_.E6.96.B9.E5.BC.8F)
-        *   [2.2.4 從 RAM 載入安裝媒體](#.E5.BE.9E_RAM_.E8.BC.89.E5.85.A5.E5.AE.89.E8.A3.9D.E5.AA.92.E9.AB.94)
-            *   [2.2.4.1 準備 USB 隨身碟](#.E6.BA.96.E5.82.99_USB_.E9.9A.A8.E8.BA.AB.E7.A2.9F)
-            *   [2.2.4.2 將所需檔案複製到 USB 隨身碟](#.E5.B0.87.E6.89.80.E9.9C.80.E6.AA.94.E6.A1.88.E8.A4.87.E8.A3.BD.E5.88.B0_USB_.E9.9A.A8.E8.BA.AB.E7.A2.9F)
-            *   [2.2.4.3 建立設定檔案](#.E5.BB.BA.E7.AB.8B.E8.A8.AD.E5.AE.9A.E6.AA.94.E6.A1.88)
-            *   [2.2.4.4 最後步驟](#.E6.9C.80.E5.BE.8C.E6.AD.A5.E9.A9.9F)
+        *   [2.2.2 Windows 下的 USBWriter](#Windows_下的_USBWriter)
+        *   [2.2.3 Flashnul 方式](#Flashnul_方式)
+        *   [2.2.4 從 RAM 載入安裝媒體](#從_RAM_載入安裝媒體)
+            *   [2.2.4.1 準備 USB 隨身碟](#準備_USB_隨身碟)
+            *   [2.2.4.2 將所需檔案複製到 USB 隨身碟](#將所需檔案複製到_USB_隨身碟)
+            *   [2.2.4.3 建立設定檔案](#建立設定檔案)
+            *   [2.2.4.4 最後步驟](#最後步驟)
         *   [2.2.5 Universal USB Installer](#Universal_USB_Installer)
-*   [3 疑難排解](#.E7.96.91.E9.9B.A3.E6.8E.92.E8.A7.A3)
-*   [4 另請參閱](#.E5.8F.A6.E8.AB.8B.E5.8F.83.E9.96.B1)
+*   [3 疑難排解](#疑難排解)
+*   [4 另請參閱](#另請參閱)
 
 ## BIOS 和 UEFI 可開機 USB
 
 ### 使用 dd
 
-**註記:** 建議使用這個方式，因為比較簡單。如果沒有用，改用下一個方式：[#手動格式化](#.E6.89.8B.E5.8B.95.E6.A0.BC.E5.BC.8F.E5.8C.96)。
+**註記:** 建議使用這個方式，因為比較簡單。如果沒有用，改用下一個方式：[#手動格式化](#手動格式化)。
 
 **警告:** 這會摧毀 `/dev/sd**x**` 上所有的資料，無法還原！
 
@@ -310,7 +310,7 @@ append initrd=/arch/boot/i686/archiso.img archisodevice=/dev/sd**x1** ../../
 
 **提示：** 預設 Win32 Disk Imager 的檔案瀏覽會認為映像檔的副檔名為 `.img`。您可以輕易將 `Files of type` (檔案類型) 下拉選單改為 `*.*`，再選擇 Arch Linux ISO。
 
-**註記:** 安裝完成後，若需要還原 USB 裝置，請依照[這裡](#.E5.A6.82.E4.BD.95.E9.82.84.E5.8E.9F_USB_.E8.A3.9D.E7.BD.AE)所寫的步驟進行。
+**註記:** 安裝完成後，若需要還原 USB 裝置，請依照[這裡](#如何還原_USB_裝置)所寫的步驟進行。
 
 #### Windows 下的 USBWriter
 
@@ -402,7 +402,7 @@ Windows 下有個工具 [[1]](http://www.pendrivelinux.com/universal-usb-install
 
 ## 疑難排解
 
-*   若您使用 [MEMDISK 方法](#.E5.BE.9E_RAM_.E8.BC.89.E5.85.A5.E5.AE.89.E8.A3.9D.E5.AA.92.E9.AB.94)，在啟動 i686 版本時發生惡名昭彰的「30 秒」錯誤，在 `Boot Arch Linux (i686)` 選項上按下 `Tab` 鍵，在結尾加上 `vmalloc=448M`。也請參考：「若映像大於 128MiB 且使用 32 位元 OS，應增加 vmalloc 的最大記憶體用量」。[[2]](http://www.syslinux.org/wiki/index.php/MEMDISK#-_memdiskfind_in_combination_with_phram_and_mtdblock)
+*   若您使用 [MEMDISK 方法](#從_RAM_載入安裝媒體)，在啟動 i686 版本時發生惡名昭彰的「30 秒」錯誤，在 `Boot Arch Linux (i686)` 選項上按下 `Tab` 鍵，在結尾加上 `vmalloc=448M`。也請參考：「若映像大於 128MiB 且使用 32 位元 OS，應增加 vmalloc 的最大記憶體用量」。[[2]](http://www.syslinux.org/wiki/index.php/MEMDISK#-_memdiskfind_in_combination_with_phram_and_mtdblock)
 
 *   若「30 秒」錯誤是肇因於 `/dev/disk/by-label/ARCH_XXXXXX` 未被掛載，試著重新命名 USB 媒體為 `ARCH_XXXXXX` (如 `ARCH_201302`)。
 

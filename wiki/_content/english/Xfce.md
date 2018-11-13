@@ -66,7 +66,7 @@ Related articles
     *   [5.10 Laptop lid settings ignored](#Laptop_lid_settings_ignored)
     *   [5.11 User switching action button is greyed out](#User_switching_action_button_is_greyed_out)
     *   [5.12 Macros in .Xresources not working](#Macros_in_.Xresources_not_working)
-    *   [5.13 Cursor theme doesn't change on login](#Cursor_theme_doesn.27t_change_on_login)
+    *   [5.13 Cursor theme doesn't change on login](#Cursor_theme_doesn't_change_on_login)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -398,7 +398,7 @@ If [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver) is inst
 
 	xset
 
-If neither of the above applications are running, then blanking and DPMS settings can be controlled using the *xset* command, see [DPMS#Modifying DPMS and screensaver settings using xset](/index.php/DPMS#Modifying_DPMS_and_screensaver_settings_using_xset "DPMS").
+If neither of the above applications are running, then blanking and DPMS settings can be controlled using the *xset* command, see [DPMS#Modify DPMS and screensaver settings with a command](/index.php/DPMS#Modify_DPMS_and_screensaver_settings_with_a_command "DPMS").
 
 **Note:** There are some issues associated with blanking and resuming from blanking in some configurations. See [[1]](https://bbs.archlinux.org/viewtopic.php?id=194313&p=2)[[2]](https://bugzilla.xfce.org/show_bug.cgi?id=11107).
 

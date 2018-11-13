@@ -7,11 +7,11 @@ Feh es un potente y ligero visor de imágenes que también puede ser utilizado p
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
 *   [2 Modo de uso](#Modo_de_uso)
-    *   [2.1 Navegador de imágenes](#Navegador_de_im.C3.A1genes)
+    *   [2.1 Navegador de imágenes](#Navegador_de_imágenes)
     *   [2.2 Fondo de pantalla](#Fondo_de_pantalla)
-    *   [2.3 Imágenes SVG](#Im.C3.A1genes_SVG)
+    *   [2.3 Imágenes SVG](#Imágenes_SVG)
     *   [2.4 Fondo de pantalla aleatorio](#Fondo_de_pantalla_aleatorio)
 
 ## Instalación

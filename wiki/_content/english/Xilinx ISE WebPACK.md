@@ -23,7 +23,7 @@ While Arch Linux is not one of the officially supported distributions, many feat
     *   [2.4 License Installation](#License_Installation)
     *   [2.5 Node-Locked Licenses](#Node-Locked_Licenses)
 *   [3 Post-Installation Fixes and Tweaks](#Post-Installation_Fixes_and_Tweaks)
-    *   [3.1 Dynamic Library Fix (libstdc++.so)](#Dynamic_Library_Fix_.28libstdc.2B.2B.so.29)
+    *   [3.1 Dynamic Library Fix (libstdc++.so)](#Dynamic_Library_Fix_(libstdc++.so))
     *   [3.2 Digilent USB-JTAG Drivers](#Digilent_USB-JTAG_Drivers)
     *   [3.3 Xilinx Platform Cable USB-JTAG Drivers](#Xilinx_Platform_Cable_USB-JTAG_Drivers)
     *   [3.4 Locale Issues](#Locale_Issues)

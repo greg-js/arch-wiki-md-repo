@@ -14,7 +14,7 @@ Related articles
     *   [1.1 Support](#Support)
     *   [1.2 Fingerprint Reader](#Fingerprint_Reader)
     *   [1.3 Bug: Fans blowing at max speed after resuming](#Bug:_Fans_blowing_at_max_speed_after_resuming)
-    *   [1.4 Bug: Trackpoint/Trackpad not working](#Bug:_Trackpoint.2FTrackpad_not_working)
+    *   [1.4 Bug: Trackpoint/Trackpad not working](#Bug:_Trackpoint/Trackpad_not_working)
         *   [1.4.1 Solution 1](#Solution_1)
         *   [1.4.2 Solution 2](#Solution_2)
     *   [1.5 Bug: TrackPoint stops working after waking up from suspend](#Bug:_TrackPoint_stops_working_after_waking_up_from_suspend)
@@ -29,7 +29,7 @@ Related articles
         *   [2.6.1 Ethernet](#Ethernet)
         *   [2.6.2 USB](#USB)
     *   [2.7 HP Thunderbolt 3 Dock](#HP_Thunderbolt_3_Dock)
-    *   [2.8 Lenovo p27h-10 (USB Type C)](#Lenovo_p27h-10_.28USB_Type_C.29)
+    *   [2.8 Lenovo p27h-10 (USB Type C)](#Lenovo_p27h-10_(USB_Type_C))
 
 ## Model description
 

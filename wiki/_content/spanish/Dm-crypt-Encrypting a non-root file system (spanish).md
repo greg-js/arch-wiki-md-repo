@@ -11,12 +11,12 @@ Los siguientes son ejemplos de encriptación de un sistema de archivos secundari
 
 ## Contents
 
-*   [1 Descripción general](#Descripci.C3.B3n_general)
-*   [2 Partición](#Partici.C3.B3n)
+*   [1 Descripción general](#Descripción_general)
+*   [2 Partición](#Partición)
     *   [2.1 Montaje y desmontaje manual](#Montaje_y_desmontaje_manual)
     *   [2.2 Desbloqueo y montaje automatizados](#Desbloqueo_y_montaje_automatizados)
         *   [2.2.1 En el momento del arranque](#En_el_momento_del_arranque)
-        *   [2.2.2 En el inicio de sesión del usuario](#En_el_inicio_de_sesi.C3.B3n_del_usuario)
+        *   [2.2.2 En el inicio de sesión del usuario](#En_el_inicio_de_sesión_del_usuario)
 *   [3 Dispositivo loop](#Dispositivo_loop)
     *   [3.1 Sin losetup](#Sin_losetup)
     *   [3.2 Con losetup](#Con_losetup)
@@ -26,7 +26,7 @@ Los siguientes son ejemplos de encriptación de un sistema de archivos secundari
 
 El cifrado de un sistema de archivos secundario generalmente protege solo los datos confidenciales, mientras deja el sistema operativo y los archivos de programa sin cifrar. Esto es útil para cifrar un medio externo, como una unidad USB, de modo que se pueda mover a diferentes equipos de forma segura. También se podría optar por encriptar conjuntos de datos por separado según quién tenga acceso a ellos.
 
-Como dm-crypt es una capa de cifrado de [nivel de bloque](/index.php/Disk_encryption_(Espa%C3%B1ol)#Cifrar_dispositivos_de_bloques "Disk encryption (Español)"), solo cifra dispositivos completos, [#Partición](#Partici.C3.B3n) completa y [#Dispositivo loop](#Dispositivo_loop). Para cifrar archivos individuales se requiere una capa de cifrado de nivel de sistema de archivos, como [eCryptfs](/index.php/ECryptfs "ECryptfs") o [EncFS](/index.php/EncFS "EncFS"). Consulte [Disk encryption (Español)](/index.php/Disk_encryption_(Espa%C3%B1ol) "Disk encryption (Español)") para obtener información general sobre cómo proteger datos privados.
+Como dm-crypt es una capa de cifrado de [nivel de bloque](/index.php/Disk_encryption_(Espa%C3%B1ol)#Cifrar_dispositivos_de_bloques "Disk encryption (Español)"), solo cifra dispositivos completos, [#Partición](#Partición) completa y [#Dispositivo loop](#Dispositivo_loop). Para cifrar archivos individuales se requiere una capa de cifrado de nivel de sistema de archivos, como [eCryptfs](/index.php/ECryptfs "ECryptfs") o [EncFS](/index.php/EncFS "EncFS"). Consulte [Disk encryption (Español)](/index.php/Disk_encryption_(Espa%C3%B1ol) "Disk encryption (Español)") para obtener información general sobre cómo proteger datos privados.
 
 ## Partición
 
@@ -112,9 +112,9 @@ La utilización de losetup directamente se puede evitar completamente haciendo l
 # cryptsetup --align-payload=1 luksFormat key.img
 ```
 
-Antes de ejecutar `cryptsetup`, mire primero las [opciones de cifrado para la modalidad LUKS](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") y los [algoritmos de cifrado y modalidades de operación](/index.php/Disk_encryption_(Espa%C3%B1ol)#Algoritmos_de_cifrado_y_modalidades_de_operaci.C3.B3n "Disk encryption (Español)") para seleccionar la configuración adicional deseada.
+Antes de ejecutar `cryptsetup`, mire primero las [opciones de cifrado para la modalidad LUKS](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") y los [algoritmos de cifrado y modalidades de operación](/index.php/Disk_encryption_(Espa%C3%B1ol)#Algoritmos_de_cifrado_y_modalidades_de_operación "Disk encryption (Español)") para seleccionar la configuración adicional deseada.
 
-Las instrucciones para abrir el dispositivo y el [sistema de archivos](/index.php/File_systems_(Espa%C3%B1ol) "File systems (Español)") son las mismas que para [#Partición](#Partici.C3.B3n).
+Las instrucciones para abrir el dispositivo y el [sistema de archivos](/index.php/File_systems_(Espa%C3%B1ol) "File systems (Español)") son las mismas que para [#Partición](#Partición).
 
 Tener un archivo demasiado pequeño le dará un error `Requested offset is beyond real size of device /dev/loop0`, pero, como referencia aproximada, la creación de un archivo 4 MiB lo encriptará con éxito. [[2]](http://archive.is/VOh2p)
 
@@ -146,7 +146,7 @@ A continuación, cree el nodo del dispositivo `/dev/loop0`,de modo que podamos m
 
 **Nota:** Si le da el error `/dev/loop0: No such file or directory`, primero debe cargar el módulo del kernel con `modprobe loop`. En estos tiempos (Kernel 3.2) se crean dispositivos loop bajo demanda. Solicite un nuevo dispositivo loop con `# losetup -f`.
 
-A partir de ahora, el procedimiento es el mismo que para [#Partición](#Partici.C3.B3n), excepto por el hecho de que el contenedor ya está asignado al azar y no necesitará otro borrado seguro.
+A partir de ahora, el procedimiento es el mismo que para [#Partición](#Partición), excepto por el hecho de que el contenedor ya está asignado al azar y no necesitará otro borrado seguro.
 
 **Sugerencia:** Los contenedores con *dm-crypt* pueden ser muy flexibles. Eche un vistazo a las características y documentación de [Tomb](/index.php/Tomb "Tomb"). Proporciona un script de *dm-crypt* para un manejo rápido y flexible.
 

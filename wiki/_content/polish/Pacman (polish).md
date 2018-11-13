@@ -1,20 +1,20 @@
 ## Contents
 
-*   [1 Wstęp](#Wst.C4.99p)
-*   [2 Instalacja pakietów](#Instalacja_pakiet.C3.B3w)
-*   [3 Usuwanie pakietów](#Usuwanie_pakiet.C3.B3w)
+*   [1 Wstęp](#Wstęp)
+*   [2 Instalacja pakietów](#Instalacja_pakietów)
+*   [3 Usuwanie pakietów](#Usuwanie_pakietów)
 *   [4 Aktualizacja systemu](#Aktualizacja_systemu)
 *   [5 Zapytania do bazy danych](#Zapytania_do_bazy_danych)
-*   [6 Inne użycie](#Inne_u.C5.BCycie)
-*   [7 Downgrade pakietów](#Downgrade_pakiet.C3.B3w)
+*   [6 Inne użycie](#Inne_użycie)
+*   [7 Downgrade pakietów](#Downgrade_pakietów)
 *   [8 Konfiguracja Pacmana](#Konfiguracja_Pacmana)
     *   [8.1 Podstawowe opcje](#Podstawowe_opcje)
     *   [8.2 Repozytoria](#Repozytoria)
     *   [8.3 Optymalizacja Pacmana](#Optymalizacja_Pacmana)
 *   [9 Pacman GUI](#Pacman_GUI)
-*   [10 Nakładki na Pacmana](#Nak.C5.82adki_na_Pacmana)
+*   [10 Nakładki na Pacmana](#Nakładki_na_Pacmana)
     *   [10.1 Powerpill](#Powerpill)
-*   [11 Narzędzia Pacmana](#Narz.C4.99dzia_Pacmana)
+*   [11 Narzędzia Pacmana](#Narzędzia_Pacmana)
 
 ## Wstęp
 

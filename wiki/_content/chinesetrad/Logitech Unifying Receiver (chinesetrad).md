@@ -2,8 +2,8 @@
 
 ## Contents
 
-*   [1 編譯 unifying_pair](#.E7.B7.A8.E8.AD.AF_unifying_pair)
-*   [2 相容裝置配對](#.E7.9B.B8.E5.AE.B9.E8.A3.9D.E7.BD.AE.E9.85.8D.E5.B0.8D)
+*   [1 編譯 unifying_pair](#編譯_unifying_pair)
+*   [2 相容裝置配對](#相容裝置配對)
 *   [3 Known Problems](#Known_Problems)
     *   [3.1 Keyboard Layout via xorg.conf](#Keyboard_Layout_via_xorg.conf)
 

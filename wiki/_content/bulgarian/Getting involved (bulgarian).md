@@ -7,7 +7,7 @@ Related articles
 
 ## Contents
 
-*   [1 Форуми](#.D0.A4.D0.BE.D1.80.D1.83.D0.BC.D0.B8)
+*   [1 Форуми](#Форуми)
 *   [2 Wiki](#Wiki)
 *   [3 Bugs](#Bugs)
 *   [4 AUR](#AUR)
@@ -17,8 +17,8 @@ Related articles
     *   [5.3 Pacman GUI Frontends](#Pacman_GUI_Frontends)
     *   [5.4 Other](#Other)
 *   [6 As a developer...](#As_a_developer...)
-    *   [6.1 What can I do?](#What_can_I_do.3F)
-    *   [6.2 How can I become an Arch developer?](#How_can_I_become_an_Arch_developer.3F)
+    *   [6.1 What can I do?](#What_can_I_do?)
+    *   [6.2 How can I become an Arch developer?](#How_can_I_become_an_Arch_developer?)
 *   [7 As an artist...](#As_an_artist...)
 
 ## Форуми

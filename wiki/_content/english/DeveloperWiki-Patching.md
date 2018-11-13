@@ -2,8 +2,8 @@
 
 *   [1 Patching](#Patching)
     *   [1.1 Vanilla Packages](#Vanilla_Packages)
-    *   [1.2 When is patching acceptable?](#When_is_patching_acceptable.3F)
-    *   [1.3 When is patching discouraged?](#When_is_patching_discouraged.3F)
+    *   [1.2 When is patching acceptable?](#When_is_patching_acceptable?)
+    *   [1.3 When is patching discouraged?](#When_is_patching_discouraged?)
 
 # Patching
 

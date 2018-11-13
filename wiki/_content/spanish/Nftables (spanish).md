@@ -13,9 +13,9 @@ Para obtener más información también puede visitar la [página oficial de la 
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Utilización](#Utilizaci.C3.B3n)
-*   [3 Configuración](#Configuraci.C3.B3n)
+*   [1 Instalación](#Instalación)
+*   [2 Utilización](#Utilización)
+*   [3 Configuración](#Configuración)
     *   [3.1 Tablas](#Tablas)
         *   [3.1.1 Crear una tabla](#Crear_una_tabla)
         *   [3.1.2 Listar las tablas](#Listar_las_tablas)
@@ -31,22 +31,22 @@ Para obtener más información también puede visitar la [página oficial de la 
         *   [3.2.4 Borrar una cadena](#Borrar_una_cadena)
         *   [3.2.5 Eliminar las reglas de una cadena](#Eliminar_las_reglas_de_una_cadena)
     *   [3.3 Reglas](#Reglas)
-        *   [3.3.1 Añadir una regla](#A.C3.B1adir_una_regla)
+        *   [3.3.1 Añadir una regla](#Añadir_una_regla)
             *   [3.3.1.1 Expresiones](#Expresiones)
-        *   [3.3.2 Eliminación](#Eliminaci.C3.B3n)
+        *   [3.3.2 Eliminación](#Eliminación)
     *   [3.4 Recargar todo](#Recargar_todo)
 *   [4 Ejemplos](#Ejemplos)
-    *   [4.1 Estación de trabajo](#Estaci.C3.B3n_de_trabajo)
-    *   [4.2 Cortafuegos simple con IPv4/IPv6](#Cortafuegos_simple_con_IPv4.2FIPv6)
-    *   [4.3 Tipo de límite del cortafuegos IPv4/IPv6](#Tipo_de_l.C3.ADmite_del_cortafuegos_IPv4.2FIPv6)
+    *   [4.1 Estación de trabajo](#Estación_de_trabajo)
+    *   [4.2 Cortafuegos simple con IPv4/IPv6](#Cortafuegos_simple_con_IPv4/IPv6)
+    *   [4.3 Tipo de límite del cortafuegos IPv4/IPv6](#Tipo_de_límite_del_cortafuegos_IPv4/IPv6)
     *   [4.4 Jump](#Jump)
     *   [4.5 Diferentes reglas para diferentes interfaces](#Diferentes_reglas_para_diferentes_interfaces)
     *   [4.6 Enmascaramiento](#Enmascaramiento)
 *   [5 Consejos y trucos](#Consejos_y_trucos)
     *   [5.1 Cortafuegos stateful simple](#Cortafuegos_stateful_simple)
-        *   [5.1.1 Proteger un único equipo](#Proteger_un_.C3.BAnico_equipo)
+        *   [5.1.1 Proteger un único equipo](#Proteger_un_único_equipo)
     *   [5.2 Evitar ataques de fuerza bruta](#Evitar_ataques_de_fuerza_bruta)
-*   [6 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [6 Véase también](#Véase_también)
 
 ## Instalación
 

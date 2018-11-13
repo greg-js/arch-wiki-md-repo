@@ -4,10 +4,10 @@ Esse artigo é sobre gerenciamento básico de som. Para tópicos avançados, vej
 
 ## Contents
 
-*   [1 Informações gerais](#Informa.C3.A7.C3.B5es_gerais)
+*   [1 Informações gerais](#Informações_gerais)
 *   [2 Drivers e interface](#Drivers_e_interface)
 *   [3 Servidores de som](#Servidores_de_som)
-*   [4 Veja também](#Veja_tamb.C3.A9m)
+*   [4 Veja também](#Veja_também)
 
 ## Informações gerais
 

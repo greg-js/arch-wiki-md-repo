@@ -9,15 +9,15 @@ En un sistema operativo, el reloj (*«clock»*) está determinado por cuatro par
 *   [1 Reloj del hardware y reloj del sistema](#Reloj_del_hardware_y_reloj_del_sistema)
     *   [1.1 Leer el reloj](#Leer_el_reloj)
     *   [1.2 Ajustar el reloj](#Ajustar_el_reloj)
-    *   [1.3 Reloj RTC (Reloj en Tiempo Real)](#Reloj_RTC_.28Reloj_en_Tiempo_Real.29)
-*   [2 Hora estándar](#Hora_est.C3.A1ndar)
+    *   [1.3 Reloj RTC (Reloj en Tiempo Real)](#Reloj_RTC_(Reloj_en_Tiempo_Real))
+*   [2 Hora estándar](#Hora_estándar)
     *   [2.1 UTC en Windows](#UTC_en_Windows)
 *   [3 Huso horario](#Huso_horario)
-*   [4 Desviación del horario](#Desviaci.C3.B3n_del_horario)
-*   [5 Sincronización del reloj](#Sincronizaci.C3.B3n_del_reloj)
-*   [6 Solución de problemas](#Soluci.C3.B3n_de_problemas)
+*   [4 Desviación del horario](#Desviación_del_horario)
+*   [5 Sincronización del reloj](#Sincronización_del_reloj)
+*   [6 Solución de problemas](#Solución_de_problemas)
     *   [6.1 El reloj muestra un valor que no es ni UTC ni hora local](#El_reloj_muestra_un_valor_que_no_es_ni_UTC_ni_hora_local)
-*   [7 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [7 Véase también](#Véase_también)
 
 ## Reloj del hardware y reloj del sistema
 
@@ -173,7 +173,7 @@ Cuando el reloj del hardware está configurado con `hwclock`, la aplicación cal
 
 **Nota:** Si el reloj del ordenador se ha ajustado de nuevo en menos de 24 horas desde el anterior ajuste, la desviación no se recalcula, al considerar `hwclock` que el período de tiempo transcurrido es demasiado corto como para calcular la derivación con precisión.
 
-Si el reloj de hardware mantiene pérdidas o incrementos de tiempo grandes, es posible que se haya registrado una deriva inválida (pero esto solo es aplicable si el demonio hwclock se está ejecutando). Esto puede suceder si se ha ajustado la hora del reloj del hardware incorrectamente o el [horario estándar](#Hora_est.C3.A1ndar) no está sincronizado con una instalación de Windows o Mac OS. El valor de desviación se puede quitar, eliminando el archivo `/etc/adjtime`, y, después, ajustando correctamente el reloj del hardware y la hora del reloj del sistema, y verificando si el [horario estándar](#Hora_est.C3.A1ndar) es correcto.
+Si el reloj de hardware mantiene pérdidas o incrementos de tiempo grandes, es posible que se haya registrado una deriva inválida (pero esto solo es aplicable si el demonio hwclock se está ejecutando). Esto puede suceder si se ha ajustado la hora del reloj del hardware incorrectamente o el [horario estándar](#Hora_estándar) no está sincronizado con una instalación de Windows o Mac OS. El valor de desviación se puede quitar, eliminando el archivo `/etc/adjtime`, y, después, ajustando correctamente el reloj del hardware y la hora del reloj del sistema, y verificando si el [horario estándar](#Hora_estándar) es correcto.
 
 **Nota:** Para los que utilizan systemd, pero desean hacer uso del valor de desviación guardado en `/etc/adjtime` (es decir, si tal vez no quieren usar NTP), tienen que ejecutar `hwclock --adjust` de manera regular, quizás mediante la creación de una tarea cron.
 

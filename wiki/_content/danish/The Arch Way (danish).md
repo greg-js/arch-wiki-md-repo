@@ -4,7 +4,7 @@ Dette beskrives lettest med akronymet **KISS** - **K**eep **I**t **S**imple, **S
 ## Contents
 
 *   [1 Enkelthed](#Enkelthed)
-*   [2 Åben](#.C3.85ben)
+*   [2 Åben](#Åben)
 *   [3 Brugerkoncentreret](#Brugerkoncentreret)
 *   [4 Fri](#Fri)
 

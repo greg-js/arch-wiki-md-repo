@@ -11,10 +11,10 @@ Escrita de [PKGBUILDs](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Portuguê
 ## Contents
 
 *   [1 Nomenclatura de pacote](#Nomenclatura_de_pacote)
-*   [2 Colocação de arquivos](#Coloca.C3.A7.C3.A3o_de_arquivos)
+*   [2 Colocação de arquivos](#Colocação_de_arquivos)
     *   [2.1 Bibliotecas](#Bibliotecas)
     *   [2.2 OASIS](#OASIS)
-*   [3 Níveis e bytecode OCaml](#N.C3.ADveis_e_bytecode_OCaml)
+*   [3 Níveis e bytecode OCaml](#Níveis_e_bytecode_OCaml)
 *   [4 Exemplo de PKGBUILD](#Exemplo_de_PKGBUILD)
 
 ## Nomenclatura de pacote

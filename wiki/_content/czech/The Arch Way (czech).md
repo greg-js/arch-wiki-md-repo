@@ -3,9 +3,9 @@ Následujících pět principů obsahuje to, co se obvykle označuje jako *Cesta
 ## Contents
 
 *   [1 Jednoduchost](#Jednoduchost)
-*   [2 Správnost kódu před pohodlím](#Spr.C3.A1vnost_k.C3.B3du_p.C5.99ed_pohodl.C3.ADm)
-*   [3 Zaměření na uživatele](#Zam.C4.9B.C5.99en.C3.AD_na_u.C5.BEivatele)
-*   [4 Otevřenost](#Otev.C5.99enost)
+*   [2 Správnost kódu před pohodlím](#Správnost_kódu_před_pohodlím)
+*   [3 Zaměření na uživatele](#Zaměření_na_uživatele)
+*   [4 Otevřenost](#Otevřenost)
 *   [5 Svoboda](#Svoboda)
 
 ## Jednoduchost

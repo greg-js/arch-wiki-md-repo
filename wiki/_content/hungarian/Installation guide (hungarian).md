@@ -4,19 +4,19 @@ A közösség által karbantartott [Arch wiki](/index.php/Main_page "Main page")
 
 ## Contents
 
-*   [1 Letöltés](#Let.C3.B6lt.C3.A9s)
-*   [2 Telepítés](#Telep.C3.ADt.C3.A9s)
-    *   [2.1 Billentyűzetkiosztás](#Billenty.C5.B1zetkioszt.C3.A1s)
-    *   [2.2 Lemezek particionálása](#Lemezek_particion.C3.A1l.C3.A1sa)
-    *   [2.3 Partíciók formázása](#Part.C3.ADci.C3.B3k_form.C3.A1z.C3.A1sa)
-    *   [2.4 Partíciók csatolása](#Part.C3.ADci.C3.B3k_csatol.C3.A1sa)
-    *   [2.5 Kapcsolódás az internetre](#Kapcsol.C3.B3d.C3.A1s_az_internetre)
-        *   [2.5.1 Vezeték nélküli hálózat](#Vezet.C3.A9k_n.C3.A9lk.C3.BCli_h.C3.A1l.C3.B3zat)
-    *   [2.6 Az alaprendszer telepítése](#Az_alaprendszer_telep.C3.ADt.C3.A9se)
-    *   [2.7 A rendszer beállítása](#A_rendszer_be.C3.A1ll.C3.ADt.C3.A1sa)
-    *   [2.8 Boot loader telepítése és beállítása](#Boot_loader_telep.C3.ADt.C3.A9se_.C3.A9s_be.C3.A1ll.C3.ADt.C3.A1sa)
-    *   [2.9 Leválasztás és újraindítás](#Lev.C3.A1laszt.C3.A1s_.C3.A9s_.C3.BAjraind.C3.ADt.C3.A1s)
-*   [3 Telepítés után](#Telep.C3.ADt.C3.A9s_ut.C3.A1n)
+*   [1 Letöltés](#Letöltés)
+*   [2 Telepítés](#Telepítés)
+    *   [2.1 Billentyűzetkiosztás](#Billentyűzetkiosztás)
+    *   [2.2 Lemezek particionálása](#Lemezek_particionálása)
+    *   [2.3 Partíciók formázása](#Partíciók_formázása)
+    *   [2.4 Partíciók csatolása](#Partíciók_csatolása)
+    *   [2.5 Kapcsolódás az internetre](#Kapcsolódás_az_internetre)
+        *   [2.5.1 Vezeték nélküli hálózat](#Vezeték_nélküli_hálózat)
+    *   [2.6 Az alaprendszer telepítése](#Az_alaprendszer_telepítése)
+    *   [2.7 A rendszer beállítása](#A_rendszer_beállítása)
+    *   [2.8 Boot loader telepítése és beállítása](#Boot_loader_telepítése_és_beállítása)
+    *   [2.9 Leválasztás és újraindítás](#Leválasztás_és_újraindítás)
+*   [3 Telepítés után](#Telepítés_után)
 
 ## Letöltés
 

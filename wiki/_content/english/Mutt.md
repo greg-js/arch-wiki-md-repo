@@ -2,7 +2,7 @@ Related articles
 
 *   [fdm](/index.php/Fdm "Fdm")
 *   [msmtp](/index.php/Msmtp "Msmtp")
-*   [offlineimap](/index.php/Offlineimap "Offlineimap")
+*   [OfflineIMAP](/index.php/OfflineIMAP "OfflineIMAP")
 *   [isync](/index.php/Isync "Isync")
 
 [Mutt](http://www.mutt.org/) is a text-based mail client renowned for its powerful features. Though over 2 decades old, Mutt remains the mail client of choice for a great number of power-users.
@@ -40,7 +40,7 @@ This article covers using both native IMAP sending and retrieval, and a setup de
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Key bindings](#Key_bindings)
     *   [3.2 Composition](#Composition)
-        *   [3.2.1 Encrypt and sign mail (GnuPG)](#Encrypt_and_sign_mail_.28GnuPG.29)
+        *   [3.2.1 Encrypt and sign mail (GnuPG)](#Encrypt_and_sign_mail_(GnuPG))
         *   [3.2.2 E-mail character encoding](#E-mail_character_encoding)
         *   [3.2.3 Custom mail headers](#Custom_mail_headers)
         *   [3.2.4 Signature block](#Signature_block)
@@ -61,7 +61,7 @@ This article covers using both native IMAP sending and retrieval, and a setup de
     *   [3.6 Display settings](#Display_settings)
         *   [3.6.1 Colors](#Colors)
         *   [3.6.2 Index Format](#Index_Format)
-        *   [3.6.3 Display recipient instead of sender in "Sent" folder view](#Display_recipient_instead_of_sender_in_.22Sent.22_folder_view)
+        *   [3.6.3 Display recipient instead of sender in "Sent" folder view](#Display_recipient_instead_of_sender_in_"Sent"_folder_view)
         *   [3.6.4 Variable column width](#Variable_column_width)
         *   [3.6.5 Sidebar](#Sidebar)
         *   [3.6.6 Display the index above the pager view](#Display_the_index_above_the_pager_view)
@@ -72,7 +72,7 @@ This article covers using both native IMAP sending and retrieval, and a setup de
         *   [3.7.4 Khard](#Khard)
     *   [3.8 Manage multiple sender accounts](#Manage_multiple_sender_accounts)
     *   [3.9 Request IMAP mail retrieval manually](#Request_IMAP_mail_retrieval_manually)
-    *   [3.10 Avoiding slow index on large (IMAP) folders due to coloring](#Avoiding_slow_index_on_large_.28IMAP.29_folders_due_to_coloring)
+    *   [3.10 Avoiding slow index on large (IMAP) folders due to coloring](#Avoiding_slow_index_on_large_(IMAP)_folders_due_to_coloring)
     *   [3.11 Speed up folders switch](#Speed_up_folders_switch)
     *   [3.12 Archive treated e-mails](#Archive_treated_e-mails)
     *   [3.13 Migrating mails from one computer to another](#Migrating_mails_from_one_computer_to_another)
@@ -84,8 +84,8 @@ This article covers using both native IMAP sending and retrieval, and a setup de
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Backspace does not work in Mutt](#Backspace_does_not_work_in_Mutt)
     *   [4.2 The *change-folder* function always prompt for the same mailbox](#The_change-folder_function_always_prompt_for_the_same_mailbox)
-    *   [4.3 I cannot change folder when using Mutt read-only (Mutt -R)](#I_cannot_change_folder_when_using_Mutt_read-only_.28Mutt_-R.29)
-    *   [4.4 Error sending message, child exited 127 (Exec error.).](#Error_sending_message.2C_child_exited_127_.28Exec_error..29.)
+    *   [4.3 I cannot change folder when using Mutt read-only (Mutt -R)](#I_cannot_change_folder_when_using_Mutt_read-only_(Mutt_-R))
+    *   [4.4 Error sending message, child exited 127 (Exec error.).](#Error_sending_message,_child_exited_127_(Exec_error.).)
     *   [4.5 Character encoding problems](#Character_encoding_problems)
     *   [4.6 Unable to login with GMail](#Unable_to_login_with_GMail)
     *   [4.7 Not possible to open too long URLs with urlview](#Not_possible_to_open_too_long_URLs_with_urlview)
@@ -118,7 +118,7 @@ NeoMutt can be installed with the [neomutt](https://www.archlinux.org/packages/?
 
 This section covers [#IMAP](#IMAP), [#POP3](#POP3), [#Maildir](#Maildir) and [#SMTP](#SMTP) configuration.
 
-Mutt will, by default, search six locations for its configuration file; `~/.muttrc`, `~/.mutt/muttrc`, and `$XDG_CONFIG_HOME/mutt/muttrc`, first with `-MUTT_VERSION` appended, then without. Any of these locations will work. In case you decide to put the initialization file somewhere else, use `$ mutt -F /path/to/.muttrc`. You should also know some prerequisite for Mutt configuration. Its syntax is very close to the Bourne Shell. For example, you can get the content of another config file:
+Mutt will, by default, search six locations for its configuration file; `~/.muttrc`, `~/.mutt/muttrc`, and `$XDG_CONFIG_HOME/mutt/muttrc`, first with `-MUTT_VERSION` appended, then without. Any of these locations will work. In case you decide to put the initialization file somewhere else, use `$ mutt -F /path/to/.muttrc`. You should also know some prerequisite for Mutt configuration. Its syntax is very close to the Bourne Shell. For example, you can get the content of another configuration file:
 
 ```
 source /path/to/other/config/file
@@ -383,7 +383,7 @@ For testing purposes, address the letter to yourself. After you have written the
 
 Now you should have a working configuration for one account at least. You might wonder how to use several accounts, since we put everything into a single file.
 
-Well all you need is to write account-specific parameters to their respective files and source them. All the IMAP/POP3/SMTP config for each account should go to its respective folder.
+Well all you need is to write account-specific parameters to their respective files and source them. All the IMAP/POP3/SMTP configuration for each account should go to its respective folder.
 
 **Warning:** When one account is setting a variable that is not specified for other accounts, you **must unset** it for them, otherwise configuration will overlap and you will most certainly experience unexpected behaviour.
 

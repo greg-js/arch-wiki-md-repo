@@ -28,7 +28,7 @@ The X.Org input driver supports most regular [Xorg#Input devices](/index.php/Xor
         *   [3.5.3 GnomeExtendedGestures](#GnomeExtendedGestures)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Touchpad not working in GNOME](#Touchpad_not_working_in_GNOME)
-    *   [4.2 Touchpad settings not taking effect in KDE's Touchpad KCM](#Touchpad_settings_not_taking_effect_in_KDE.27s_Touchpad_KCM)
+    *   [4.2 Touchpad settings not taking effect in KDE's Touchpad KCM](#Touchpad_settings_not_taking_effect_in_KDE's_Touchpad_KCM)
     *   [4.3 Touchpad not detected at all](#Touchpad_not_detected_at_all)
 *   [5 See also](#See_also)
 

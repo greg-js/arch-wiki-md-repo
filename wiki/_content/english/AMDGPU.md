@@ -11,7 +11,7 @@ Related articles
 
 *   [1 Selecting the right driver](#Selecting_the_right_driver)
 *   [2 Installation](#Installation)
-    *   [2.1 Enable Southern Islands (SI) and Sea Islands (CIK) support](#Enable_Southern_Islands_.28SI.29_and_Sea_Islands_.28CIK.29_support)
+    *   [2.1 Enable Southern Islands (SI) and Sea Islands (CIK) support](#Enable_Southern_Islands_(SI)_and_Sea_Islands_(CIK)_support)
         *   [2.1.1 Set required module parameters](#Set_required_module_parameters)
     *   [2.2 AMD DC](#AMD_DC)
     *   [2.3 AMDGPU PRO](#AMDGPU_PRO)
@@ -25,11 +25,11 @@ Related articles
     *   [5.2 Overclocking](#Overclocking)
     *   [5.3 Enable GPU display scaling](#Enable_GPU_display_scaling)
 *   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Xorg or applications won't start](#Xorg_or_applications_won.27t_start)
+    *   [6.1 Xorg or applications won't start](#Xorg_or_applications_won't_start)
     *   [6.2 Screen artifacts and frequency problem](#Screen_artifacts_and_frequency_problem)
     *   [6.3 Screen flickering](#Screen_flickering)
-    *   [6.4 R9 390 series Poor Performance and/or Instability](#R9_390_series_Poor_Performance_and.2For_Instability)
-    *   [6.5 Freezes with "[drm] IP block:gmc_v8_0 is hung!" kernel error](#Freezes_with_.22.5Bdrm.5D_IP_block:gmc_v8_0_is_hung.21.22_kernel_error)
+    *   [6.4 R9 390 series Poor Performance and/or Instability](#R9_390_series_Poor_Performance_and/or_Instability)
+    *   [6.5 Freezes with "[drm] IP block:gmc_v8_0 is hung!" kernel error](#Freezes_with_"[drm]_IP_block:gmc_v8_0_is_hung!"_kernel_error)
 
 ## Selecting the right driver
 
@@ -101,7 +101,7 @@ The `amdgpu` kernel module should load fine automatically on system boot.
 
 If it does not happen, then:
 
-*   Make sure to [#Enable Southern Islands (SI) and Sea Islands (CIK) support](#Enable_Southern_Islands_.28SI.29_and_Sea_Islands_.28CIK.29_support) when needed.
+*   Make sure to [#Enable Southern Islands (SI) and Sea Islands (CIK) support](#Enable_Southern_Islands_(SI)_and_Sea_Islands_(CIK)_support) when needed.
 *   Make sure you have the latest [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) package installed. This driver requires the latest firmware for each model to successfully boot.
 *   Make sure you do **not** have `nomodeset` or `vga=` as a [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"), since `amdgpu` requires [KMS](/index.php/KMS "KMS").
 *   Check that you have not disabled `amdgpu` by using any [kernel module blacklisting](/index.php/Kernel_modules#Blacklisting "Kernel modules").

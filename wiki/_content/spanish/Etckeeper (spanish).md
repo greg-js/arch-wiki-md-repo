@@ -10,15 +10,15 @@ Artículos relacionados
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Configuración](#Configuraci.C3.B3n)
-*   [3 Utilización](#Utilizaci.C3.B3n)
+*   [1 Instalación](#Instalación)
+*   [2 Configuración](#Configuración)
+*   [3 Utilización](#Utilización)
     *   [3.1 systemd](#systemd)
     *   [3.2 Cron](#Cron)
     *   [3.3 Incron](#Incron)
-    *   [3.4 Escritura automática en un repositorio remoto](#Escritura_autom.C3.A1tica_en_un_repositorio_remoto)
+    *   [3.4 Escritura automática en un repositorio remoto](#Escritura_automática_en_un_repositorio_remoto)
         *   [3.4.1 Utilizando el hook proporcionado por etckeeper](#Utilizando_el_hook_proporcionado_por_etckeeper)
-        *   [3.4.2 A través de un hook personalizado](#A_trav.C3.A9s_de_un_hook_personalizado)
+        *   [3.4.2 A través de un hook personalizado](#A_través_de_un_hook_personalizado)
     *   [3.5 Script contenedor](#Script_contenedor)
 
 ## Instalación

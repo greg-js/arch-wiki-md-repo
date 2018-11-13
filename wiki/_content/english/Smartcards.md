@@ -11,10 +11,10 @@ This page explains how to setup your system in order to use a [smart card](https
 *   [3 Configuration](#Configuration)
     *   [3.1 Mozilla Firefox](#Mozilla_Firefox)
 *   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 Smargo/TV Card reader](#Smargo.2FTV_Card_reader)
+    *   [4.1 Smargo/TV Card reader](#Smargo/TV_Card_reader)
     *   [4.2 p11tool](#p11tool)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Firefox can't access data](#Firefox_can.27t_access_data)
+    *   [5.1 Firefox can't access data](#Firefox_can't_access_data)
 *   [6 See also](#See_also)
 
 ## Installation

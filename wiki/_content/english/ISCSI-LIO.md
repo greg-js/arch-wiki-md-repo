@@ -7,7 +7,7 @@
     *   [2.1 Authentication](#Authentication)
         *   [2.1.1 Disable Authentication](#Disable_Authentication)
         *   [2.1.2 Set Credentials](#Set_Credentials)
-*   [3 Tips & Tricks](#Tips_.26_Tricks)
+*   [3 Tips & Tricks](#Tips_&_Tricks)
 *   [4 See also](#See_also)
 
 ## Installation

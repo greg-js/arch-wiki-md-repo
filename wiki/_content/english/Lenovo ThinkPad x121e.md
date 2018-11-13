@@ -51,7 +51,7 @@ Untested:
 *   [1 Arch user blogs about the x121e](#Arch_user_blogs_about_the_x121e)
 *   [2 Power saving options for the x121e](#Power_saving_options_for_the_x121e)
 *   [3 Bluetooth](#Bluetooth)
-*   [4 Broadcom BCM43224 a/b/g/n wifi](#Broadcom_BCM43224_a.2Fb.2Fg.2Fn_wifi)
+*   [4 Broadcom BCM43224 a/b/g/n wifi](#Broadcom_BCM43224_a/b/g/n_wifi)
 *   [5 Arch Forums x121e related threads](#Arch_Forums_x121e_related_threads)
 
 ## Arch user blogs about the x121e

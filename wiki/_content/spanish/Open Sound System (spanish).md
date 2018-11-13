@@ -3,11 +3,11 @@ El [Open Sound System](https://es.wikipedia.org/wiki/Open_Sound_System) (**OSS**
 ## Contents
 
 *   [1 Comparaciones con ALSA](#Comparaciones_con_ALSA)
-    *   [1.1 Ventajas de OSS (usuarios)](#Ventajas_de_OSS_.28usuarios.29)
-    *   [1.2 Ventajas de OSS (desarrolladores)](#Ventajas_de_OSS_.28desarrolladores.29)
+    *   [1.1 Ventajas de OSS (usuarios)](#Ventajas_de_OSS_(usuarios))
+    *   [1.2 Ventajas de OSS (desarrolladores)](#Ventajas_de_OSS_(desarrolladores))
     *   [1.3 Ventajas de ALSA sobre OSS](#Ventajas_de_ALSA_sobre_OSS)
 *   [2 Instalacion](#Instalacion)
-*   [3 Comprobación](#Comprobaci.C3.B3n)
+*   [3 Comprobación](#Comprobación)
 *   [4 Control del Volumen con el Mezclador](#Control_del_Volumen_con_el_Mezclador)
     *   [4.1 Definiciones de los Colores](#Definiciones_de_los_Colores)
     *   [4.2 Guardar los Niveles del Mezclador](#Guardar_los_Niveles_del_Mezclador)
@@ -31,19 +31,19 @@ El [Open Sound System](https://es.wikipedia.org/wiki/Open_Sound_System) (**OSS**
         *   [6.4.1 KDE](#KDE)
         *   [6.4.2 Gnome](#Gnome)
     *   [6.5 Guardar la salida de audio de un programa](#Guardar_la_salida_de_audio_de_un_programa)
-    *   [6.6 Suspensión e hibernación](#Suspensi.C3.B3n_e_hibernaci.C3.B3n)
+    *   [6.6 Suspensión e hibernación](#Suspensión_e_hibernación)
     *   [6.7 Cambiar la salida de sonido predeterminada](#Cambiar_la_salida_de_sonido_predeterminada)
     *   [6.8 Creative Sound Blaster X-Fi Surround 5.1 USB SB1090](#Creative_Sound_Blaster_X-Fi_Surround_5.1_USB_SB1090)
     *   [6.9 Emular ALSA](#Emular_ALSA)
         *   [6.9.1 Instrucciones](#Instrucciones)
-    *   [6.10 Configurar el controlador específico](#Configurar_el_controlador_espec.C3.ADfico)
-*   [7 Solución de problemas](#Soluci.C3.B3n_de_problemas)
-    *   [7.1 Solución de problemas con dispositivos HD Audio](#Soluci.C3.B3n_de_problemas_con_dispositivos_HD_Audio)
+    *   [6.10 Configurar el controlador específico](#Configurar_el_controlador_específico)
+*   [7 Solución de problemas](#Solución_de_problemas)
+    *   [7.1 Solución de problemas con dispositivos HD Audio](#Solución_de_problemas_con_dispositivos_HD_Audio)
         *   [7.1.1 Conocer la causa del problema](#Conocer_la_causa_del_problema)
-        *   [7.1.2 Cómo resolverlo](#C.C3.B3mo_resolverlo)
+        *   [7.1.2 Cómo resolverlo](#Cómo_resolverlo)
     *   [7.2 Sonido distorsionado con los MMS en Totem](#Sonido_distorsionado_con_los_MMS_en_Totem)
-    *   [7.3 El Micrófono funciona a través de los altavoces](#El_Micr.C3.B3fono_funciona_a_trav.C3.A9s_de_los_altavoces)
-*   [8 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+    *   [7.3 El Micrófono funciona a través de los altavoces](#El_Micrófono_funciona_a_través_de_los_altavoces)
+*   [8 Véase también](#Véase_también)
 
 ## Comparaciones con ALSA
 
@@ -113,7 +113,7 @@ $ osstest
 
 ```
 
-Debería oir música durante la prueba. Si no hay sonido, trate de ajustar el nivel del volumen o consulte la sección de [solución de problemas](#Soluci.C3.B3n_de_problemas).
+Debería oir música durante la prueba. Si no hay sonido, trate de ajustar el nivel del volumen o consulte la sección de [solución de problemas](#Solución_de_problemas).
 
 Para escuchar sonidos procedentes de más de una aplicación simultáneamente es necesario usar `vmix`, el software de mezcla de OSS.
 

@@ -6,18 +6,18 @@ From the project [home page](http://www.ffmpeg.org/):
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 编码例子](#.E7.BC.96.E7.A0.81.E4.BE.8B.E5.AD.90)
-    *   [2.1 屏幕捕获（录屏）](#.E5.B1.8F.E5.B9.95.E6.8D.95.E8.8E.B7.EF.BC.88.E5.BD.95.E5.B1.8F.EF.BC.89)
+*   [1 安装](#安装)
+*   [2 编码例子](#编码例子)
+    *   [2.1 屏幕捕获（录屏）](#屏幕捕获（录屏）)
     *   [2.2 Recording webcam](#Recording_webcam)
     *   [2.3 VOB to any container](#VOB_to_any_container)
     *   [2.4 x264 lossless](#x264_lossless)
     *   [2.5 x265](#x265)
-    *   [2.6 Single-pass MPEG-2 (near lossless)](#Single-pass_MPEG-2_.28near_lossless.29)
+    *   [2.6 Single-pass MPEG-2 (near lossless)](#Single-pass_MPEG-2_(near_lossless))
     *   [2.7 x264: constant rate factor](#x264:_constant_rate_factor)
     *   [2.8 YouTube](#YouTube)
-    *   [2.9 Two-pass x264 (very high-quality)](#Two-pass_x264_.28very_high-quality.29)
-    *   [2.10 Two-pass MPEG-4 (very high-quality)](#Two-pass_MPEG-4_.28very_high-quality.29)
+    *   [2.9 Two-pass x264 (very high-quality)](#Two-pass_x264_(very_high-quality))
+    *   [2.10 Two-pass MPEG-4 (very high-quality)](#Two-pass_MPEG-4_(very_high-quality))
         *   [2.10.1 Determining bitrates with fixed output file sizes](#Determining_bitrates_with_fixed_output_file_sizes)
     *   [2.11 x264 video stabilization](#x264_video_stabilization)
         *   [2.11.1 First pass](#First_pass)
@@ -32,7 +32,7 @@ From the project [home page](http://www.ffmpeg.org/):
 *   [3 Preset files](#Preset_files)
     *   [3.1 Using preset files](#Using_preset_files)
         *   [3.1.1 libavcodec-vhq.ffpreset](#libavcodec-vhq.ffpreset)
-            *   [3.1.1.1 Two-pass MPEG-4 (very high quality)](#Two-pass_MPEG-4_.28very_high_quality.29)
+            *   [3.1.1.1 Two-pass MPEG-4 (very high quality)](#Two-pass_MPEG-4_(very_high_quality))
 *   [4 Package removal](#Package_removal)
 *   [5 See also](#See_also)
 

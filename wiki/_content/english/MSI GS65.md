@@ -35,14 +35,14 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
     *   [2.1 Webcam is not detected](#Webcam_is_not_detected)
 *   [3 Tips and Tricks](#Tips_and_Tricks)
 *   [4 Known Issues](#Known_Issues)
-    *   [4.1 Lockup Issue (lspci and poweroff hang)](#Lockup_Issue_.28lspci_and_poweroff_hang.29)
+    *   [4.1 Lockup Issue (lspci and poweroff hang)](#Lockup_Issue_(lspci_and_poweroff_hang))
     *   [4.2 Cheese Hangs While Opening Camera](#Cheese_Hangs_While_Opening_Camera)
-    *   [4.3 Wifi is hardblocked (airplane mode) after waking up from suspend](#Wifi_is_hardblocked_.28airplane_mode.29_after_waking_up_from_suspend)
+    *   [4.3 Wifi is hardblocked (airplane mode) after waking up from suspend](#Wifi_is_hardblocked_(airplane_mode)_after_waking_up_from_suspend)
     *   [4.4 System freeze](#System_freeze)
-    *   [4.5 Display outputs don't work after suspend](#Display_outputs_don.27t_work_after_suspend)
+    *   [4.5 Display outputs don't work after suspend](#Display_outputs_don't_work_after_suspend)
 *   [5 More Information](#More_Information)
     *   [5.1 MS-16Q2](#MS-16Q2)
-        *   [5.1.1 Microarchitecture, Processor and Platform](#Microarchitecture.2C_Processor_and_Platform)
+        *   [5.1.1 Microarchitecture, Processor and Platform](#Microarchitecture,_Processor_and_Platform)
         *   [5.1.2 PCI Devices](#PCI_Devices)
         *   [5.1.3 USB Devices](#USB_Devices)
         *   [5.1.4 Input Devices](#Input_Devices)
@@ -200,7 +200,7 @@ If `/dev/video0` is unavailable and `lsusb` does not list the webcam, make sure 
 *   lspci hangs
 *   poweroff hangs
 
-**Applies to**: Arch boot ISO and systems with nouveau or without nvidia driver installed. See [NVIDIA Optimus#Lockup issue (lspci hangs)](/index.php/NVIDIA_Optimus#Lockup_issue_.28lspci_hangs.29 "NVIDIA Optimus").
+**Applies to**: Arch boot ISO and systems with nouveau or without nvidia driver installed. See [NVIDIA Optimus#Lockup issue (lspci hangs)](/index.php/NVIDIA_Optimus#Lockup_issue_(lspci_hangs) "NVIDIA Optimus").
 
 **Solutions**:
 

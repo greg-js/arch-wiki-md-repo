@@ -6,7 +6,7 @@
     *   [2.2 Intel HD 4000](#Intel_HD_4000)
     *   [2.3 NVIDIA NVS 5400M](#NVIDIA_NVS_5400M)
 *   [3 Input](#Input)
-    *   [3.1 Hotkeys (Media Keys)](#Hotkeys_.28Media_Keys.29)
+    *   [3.1 Hotkeys (Media Keys)](#Hotkeys_(Media_Keys))
 *   [4 Networking](#Networking)
 *   [5 Backlight Brightness with the Nvidia driver](#Backlight_Brightness_with_the_Nvidia_driver)
     *   [5.1 Ericsson H5321 GW Mobile Broadband modem](#Ericsson_H5321_GW_Mobile_Broadband_modem)

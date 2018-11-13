@@ -4,7 +4,7 @@
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 GTK+ customization](#GTK.2B_customization)
+    *   [2.1 GTK+ customization](#GTK+_customization)
 *   [3 Key commands](#Key_commands)
 *   [4 Managing profiles](#Managing_profiles)
     *   [4.1 Drag and Drop](#Drag_and_Drop)

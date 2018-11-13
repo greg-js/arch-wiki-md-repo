@@ -1,6 +1,6 @@
 **翻译状态：** 本文是英文页面 [AUR helpers](/index.php/AUR_helpers "AUR helpers") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-08-10，点击[这里](https://wiki.archlinux.org/index.php?title=AUR+helpers&diff=0&oldid=532394)可以查看翻译后英文页面的改动。
 
-**警告:** 这些工具都不是官方支持的,参见 [[1]](https://bbs.archlinux.org/viewtopic.php?pid=828310#p828310)。用户应当熟悉 [手动构建过程](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.AE.89.E8.A3.85.E8.BD.AF.E4.BB.B6.E5.8C.85 "Arch User Repository (简体中文)")，以方便排查问题。
+**警告:** 这些工具都不是官方支持的,参见 [[1]](https://bbs.archlinux.org/viewtopic.php?pid=828310#p828310)。用户应当熟悉 [手动构建过程](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#安装软件包 "Arch User Repository (简体中文)")，以方便排查问题。
 
 在使用[Arch用户软件仓库](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)")时，AUR工具可以自动完成某些任务。大多数工具可以自动下载包的PKGBUILD并构建软件包。大多数情况下，[pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")不会为AUR软件包检查更新，所以一些工具也可以自动从AUR检查更新并再次构建新版本的软件包。请注意，即使软件包自身并没有更新，但由于某些库文件的更新，您可能仍需重新构建某些软件包、
 
@@ -8,14 +8,14 @@
 
 ## Contents
 
-*   [1 构建和搜索](#.E6.9E.84.E5.BB.BA.E5.92.8C.E6.90.9C.E7.B4.A2)
-    *   [1.1 开发中](#.E5.BC.80.E5.8F.91.E4.B8.AD)
-    *   [1.2 仅搜索](#.E4.BB.85.E6.90.9C.E7.B4.A2)
-    *   [1.3 开发停止或有问题](#.E5.BC.80.E5.8F.91.E5.81.9C.E6.AD.A2.E6.88.96.E6.9C.89.E9.97.AE.E9.A2.98)
-*   [2 图形化工具](#.E5.9B.BE.E5.BD.A2.E5.8C.96.E5.B7.A5.E5.85.B7)
-*   [3 库](#.E5.BA.93)
-*   [4 维护](#.E7.BB.B4.E6.8A.A4)
-*   [5 上传](#.E4.B8.8A.E4.BC.A0)
+*   [1 构建和搜索](#构建和搜索)
+    *   [1.1 开发中](#开发中)
+    *   [1.2 仅搜索](#仅搜索)
+    *   [1.3 开发停止或有问题](#开发停止或有问题)
+*   [2 图形化工具](#图形化工具)
+*   [3 库](#库)
+*   [4 维护](#维护)
+*   [5 上传](#上传)
 
 ## 构建和搜索
 
@@ -79,11 +79,11 @@
 | [auracle-git](https://aur.archlinux.org/packages/auracle-git/) | C++ | 是 | 是 | 是 | 否 | - | 显示构建顺序 |
 | [cower](https://aur.archlinux.org/packages/cower/) | C | 是 | 是 | – | 否 | bash/zsh | 支持正则表达式，按票数受欢迎度排序 |
 | [package-query](https://aur.archlinux.org/packages/package-query/) | C | 是 | 否 [[2]](https://github.com/archlinuxfr/package-query/issues/135) | – | – | - | - |
-| [repoctl](https://aur.archlinux.org/packages/repoctl/) | Go | 是 | 是 [[3]](https://github.com/goulash/pacman/blob/master/aur/aur.go) | – | 否 | zsh | 支持[本地仓库](/index.php/Pacman/Tips_and_tricks_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.87.AA.E5.BB.BA.E6.9C.AC.E5.9C.B0.E4.BB.93.E5.BA.93 "Pacman/Tips and tricks (简体中文)") |
+| [repoctl](https://aur.archlinux.org/packages/repoctl/) | Go | 是 | 是 [[3]](https://github.com/goulash/pacman/blob/master/aur/aur.go) | – | 否 | zsh | 支持[本地仓库](/index.php/Pacman/Tips_and_tricks_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#自建本地仓库 "Pacman/Tips and tricks (简体中文)") |
 
 ### 开发停止或有问题
 
-此表中的是已经停止开发的，或是在过去6个月内有未处理的**文件检查**，**Clean build**或是**原生pacman**的问题（查看[#构建和搜索](#.E6.9E.84.E5.BB.BA.E5.92.8C.E6.90.9C.E7.B4.A2))的项目。
+此表中的是已经停止开发的，或是在过去6个月内有未处理的**文件检查**，**Clean build**或是**原生pacman**的问题（查看[#构建和搜索](#构建和搜索))的项目。
 
 | 名称 | 语言 | 原生pacman | 文件检查 | Clean build | 可靠的语法分析器 | 可靠的求解器 | 拆分包 | Git clone | 差异比较 | 批量处理 | 命令补全 | 特性 |
 | [aurel](https://aur.archlinux.org/packages/aurel/) [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1522459#p1522459) | Emacs Lisp | – | 是 | – | – | – | – | 否 | – | – | – | Emacs插件，不自动构建 |

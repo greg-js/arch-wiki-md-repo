@@ -5,7 +5,7 @@
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
 *   [3 Extended usage](#Extended_usage)
-    *   [3.1 Patches & additional features](#Patches_.26_additional_features)
+    *   [3.1 Patches & additional features](#Patches_&_additional_features)
     *   [3.2 Tabbed browsing](#Tabbed_browsing)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Fuzzy font in Github](#Fuzzy_font_in_Github)

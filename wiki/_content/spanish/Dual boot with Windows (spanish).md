@@ -2,24 +2,24 @@ Este es una artículo simple que detalla los diferentes métodos de coexistencia
 
 ## Contents
 
-*   [1 Información Importante](#Informaci.C3.B3n_Importante)
+*   [1 Información Importante](#Información_Importante)
     *   [1.1 Limitaciones UEFI vs. BIOS en Windows](#Limitaciones_UEFI_vs._BIOS_en_Windows)
-    *   [1.2 Limitiaciones del medio de instalación](#Limitiaciones_del_medio_de_instalaci.C3.B3n)
-    *   [1.3 Limitaciones de los cargadores de arranque UEFI v/s BIOS](#Limitaciones_de_los_cargadores_de_arranque_UEFI_v.2Fs_BIOS)
+    *   [1.2 Limitiaciones del medio de instalación](#Limitiaciones_del_medio_de_instalación)
+    *   [1.3 Limitaciones de los cargadores de arranque UEFI v/s BIOS](#Limitaciones_de_los_cargadores_de_arranque_UEFI_v/s_BIOS)
     *   [1.4 Arranque seguro UEFI](#Arranque_seguro_UEFI)
-    *   [1.5 Arranque rápido](#Arranque_r.C3.A1pido)
+    *   [1.5 Arranque rápido](#Arranque_rápido)
     *   [1.6 Limitaciones de nombres de archivos en Windows](#Limitaciones_de_nombres_de_archivos_en_Windows)
-*   [2 Instalación](#Instalaci.C3.B3n)
+*   [2 Instalación](#Instalación)
     *   [2.1 Sistemas BIOS](#Sistemas_BIOS)
         *   [2.1.1 Utilizando un cargador de arranque Linux](#Utilizando_un_cargador_de_arranque_Linux)
         *   [2.1.2 Utilizando un cargador de aranque Windows](#Utilizando_un_cargador_de_aranque_Windows)
-            *   [2.1.2.1 Cargador de arranque de Windows Vista/7/8/8.1](#Cargador_de_arranque_de_Windows_Vista.2F7.2F8.2F8.1)
-            *   [2.1.2.2 Cargador de arranque de Windows 2000/XP](#Cargador_de_arranque_de_Windows_2000.2FXP)
+            *   [2.1.2.1 Cargador de arranque de Windows Vista/7/8/8.1](#Cargador_de_arranque_de_Windows_Vista/7/8/8.1)
+            *   [2.1.2.2 Cargador de arranque de Windows 2000/XP](#Cargador_de_arranque_de_Windows_2000/XP)
     *   [2.2 Sistema UEFI](#Sistema_UEFI)
-    *   [2.3 Solución de Problemas](#Soluci.C3.B3n_de_Problemas)
-        *   [2.3.1 No es posible crear una nueva partición ni localizar la existente](#No_es_posible_crear_una_nueva_partici.C3.B3n_ni_localizar_la_existente)
+    *   [2.3 Solución de Problemas](#Solución_de_Problemas)
+        *   [2.3.1 No es posible crear una nueva partición ni localizar la existente](#No_es_posible_crear_una_nueva_partición_ni_localizar_la_existente)
 *   [3 Estandares de Tiempo](#Estandares_de_Tiempo)
-*   [4 Ver también](#Ver_tambi.C3.A9n)
+*   [4 Ver también](#Ver_también)
 
 ## Información Importante
 
@@ -157,7 +157,7 @@ Para más información de este método vea [http://www.geocities.com/epark/linux
 
 Tanto [systemd-boot](/index.php/Systemd-boot "Systemd-boot") (anteriormente llamado **gummiboot**) como [rEFInd](/index.php/REFInd "REFInd") detectan automáticamente el **cargador de arranque Windows** `\EFI\Microsoft\Boot\bootmgfw.efi` y lo muestran en su menu de inicio, por lo que no es necesario realizar ninguna configuración manual.
 
-Para utilizar [GRUB](/index.php/GRUB "GRUB") siga la guía en [GRUB#Windows installed in UEFI/GPT Mode menu entry](/index.php/GRUB#Windows_installed_in_UEFI.2FGPT_Mode_menu_entry "GRUB").
+Para utilizar [GRUB](/index.php/GRUB "GRUB") siga la guía en [GRUB#Windows installed in UEFI/GPT Mode menu entry](/index.php/GRUB#Windows_installed_in_UEFI/GPT_Mode_menu_entry "GRUB").
 
 Tanto Syslinux (version 6.02 y 6.03-pre9) como ELILO no soportan el arranque en cadena de otras aplicaciones EFI, por lo que no pueden ser utilizadas para el arranque en cadena de `\EFI\Microsoft\Boot\bootmgfw.efi`.
 

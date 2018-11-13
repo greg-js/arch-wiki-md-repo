@@ -21,7 +21,7 @@ CloudCross can be used in different situations when necessary to synchronize loc
 *   [2 Usage](#Usage)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Delete files instead of downloading](#Delete_files_instead_of_downloading)
-    *   [3.2 Constant upload / download office files](#Constant_upload_.2F_download_office_files)
+    *   [3.2 Constant upload / download office files](#Constant_upload_/_download_office_files)
 *   [4 See also](#See_also)
 
 ## Installation

@@ -4,22 +4,22 @@
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 运行](#.E8.BF.90.E8.A1.8C)
+*   [1 安装](#安装)
+*   [2 运行](#运行)
     *   [2.1 PHP](#PHP)
     *   [2.2 Apache](#Apache)
     *   [2.3 Lighttpd](#Lighttpd)
     *   [2.4 Nginx](#Nginx)
-        *   [2.4.1 子域名](#.E5.AD.90.E5.9F.9F.E5.90.8D)
-        *   [2.4.2 子目录](#.E5.AD.90.E7.9B.AE.E5.BD.95)
-*   [3 配置](#.E9.85.8D.E7.BD.AE)
-    *   [3.1 使用安装脚本](#.E4.BD.BF.E7.94.A8.E5.AE.89.E8.A3.85.E8.84.9A.E6.9C.AC)
-    *   [3.2 添加blowfish_secret passphrase](#.E6.B7.BB.E5.8A.A0blowfish_secret_passphrase)
-    *   [3.3 启用配置存储](#.E5.90.AF.E7.94.A8.E9.85.8D.E7.BD.AE.E5.AD.98.E5.82.A8)
-        *   [3.3.1 创建数据库](#.E5.88.9B.E5.BB.BA.E6.95.B0.E6.8D.AE.E5.BA.93)
-        *   [3.3.2 创建数据库用户](#.E5.88.9B.E5.BB.BA.E6.95.B0.E6.8D.AE.E5.BA.93.E7.94.A8.E6.88.B7)
-    *   [3.4 启用templates catching](#.E5.90.AF.E7.94.A8templates_catching)
-*   [4 参见](#.E5.8F.82.E8.A7.81)
+        *   [2.4.1 子域名](#子域名)
+        *   [2.4.2 子目录](#子目录)
+*   [3 配置](#配置)
+    *   [3.1 使用安装脚本](#使用安装脚本)
+    *   [3.2 添加blowfish_secret passphrase](#添加blowfish_secret_passphrase)
+    *   [3.3 启用配置存储](#启用配置存储)
+        *   [3.3.1 创建数据库](#创建数据库)
+        *   [3.3.2 创建数据库用户](#创建数据库用户)
+    *   [3.4 启用templates catching](#启用templates_catching)
+*   [4 参见](#参见)
 
 ## 安装
 
@@ -29,7 +29,7 @@
 
 ### PHP
 
-确保PHP的[MySQL](/index.php/PHP_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#MySQL.2FMariaDB "PHP (简体中文)")扩展已经被启用。
+确保PHP的[MySQL](/index.php/PHP_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#MySQL/MariaDB "PHP (简体中文)")扩展已经被启用。
 
 你也可以启用`bz2`和`zip`扩展以支持压缩。
 
@@ -58,7 +58,7 @@ Include conf/extra/phpmyadmin.conf
 
 ```
 
-**注意:** 默认情况下，每个可以访问Web服务器的人都可以通过这个URL访问phpMyAdmin登录页面。要改变此设置，编辑`/etc/httpd/conf/extra/phpmyadmin.conf`。例如，你只想从本地访问phpMyAdmin，将`Require all granted`改为`Require local`。注意，这将禁止远程访问phpMyAdmin，如果你想安全地远程访问phpMyAdmin，你可以设置一个[加密的SOCKS通道](/index.php/Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.8A.A0.E5.AF.86_Socks_.E9.80.9A.E9.81.93 "Secure Shell (简体中文)")。
+**注意:** 默认情况下，每个可以访问Web服务器的人都可以通过这个URL访问phpMyAdmin登录页面。要改变此设置，编辑`/etc/httpd/conf/extra/phpmyadmin.conf`。例如，你只想从本地访问phpMyAdmin，将`Require all granted`改为`Require local`。注意，这将禁止远程访问phpMyAdmin，如果你想安全地远程访问phpMyAdmin，你可以设置一个[加密的SOCKS通道](/index.php/Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#加密_Socks_通道 "Secure Shell (简体中文)")。
 
 ### Lighttpd
 

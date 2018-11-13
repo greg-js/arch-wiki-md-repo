@@ -2,75 +2,75 @@
 
 开放虚拟机固件（Open Virtual Machine Firmware, [OVMF](https://github.com/tianocore/tianocore.github.io/wiki/OVMF))是一个为虚拟机启用 UEFI 支持的项目。Linux 内核 3.9 之后的版本 和近期版本的 [QEMU](/index.php/QEMU "QEMU") ，支持将显卡直通给虚拟机，让虚拟机在执行图形密集型任务的时候有接近实体机的图形性能。
 
-如果你可以为宿主机准备一张备用的显卡（无论是集成显卡还是独立显卡，还是旧的 OEM 卡都可以，品牌不需要一致），并且你的硬件支持 PCI 直通（参见 [#硬件要求](#.E7.A1.AC.E4.BB.B6.E8.A6.81.E6.B1.82)），那么任何操作系统的虚拟机都可以使用一张专用显卡并得到接近于原生的图形性能。请参阅[这篇演讲(PDF)](https://www.linux-kvm.org/images/b/b3/01x09b-VFIOandYou-small.pdf)了解有关技术的更多信息。
+如果你可以为宿主机准备一张备用的显卡（无论是集成显卡还是独立显卡，还是旧的 OEM 卡都可以，品牌不需要一致），并且你的硬件支持 PCI 直通（参见 [#硬件要求](#硬件要求)），那么任何操作系统的虚拟机都可以使用一张专用显卡并得到接近于原生的图形性能。请参阅[这篇演讲(PDF)](https://www.linux-kvm.org/images/b/b3/01x09b-VFIOandYou-small.pdf)了解有关技术的更多信息。
 
 ## Contents
 
-*   [1 硬件要求](#.E7.A1.AC.E4.BB.B6.E8.A6.81.E6.B1.82)
-*   [2 设置IOMMU](#.E8.AE.BE.E7.BD.AEIOMMU)
-    *   [2.1 启用IOMMU](#.E5.90.AF.E7.94.A8IOMMU)
-    *   [2.2 确保组有效](#.E7.A1.AE.E4.BF.9D.E7.BB.84.E6.9C.89.E6.95.88)
-    *   [2.3 注意](#.E6.B3.A8.E6.84.8F)
-        *   [2.3.1 如果客户机所用显卡插在 CPU 提供的 PCI-E 插槽中](#.E5.A6.82.E6.9E.9C.E5.AE.A2.E6.88.B7.E6.9C.BA.E6.89.80.E7.94.A8.E6.98.BE.E5.8D.A1.E6.8F.92.E5.9C.A8_CPU_.E6.8F.90.E4.BE.9B.E7.9A.84_PCI-E_.E6.8F.92.E6.A7.BD.E4.B8.AD)
-*   [3 隔离GPU](#.E9.9A.94.E7.A6.BBGPU)
-*   [4 设置 OVMF 虚拟机](#.E8.AE.BE.E7.BD.AE_OVMF_.E8.99.9A.E6.8B.9F.E6.9C.BA)
-    *   [4.1 配置libvirt](#.E9.85.8D.E7.BD.AElibvirt)
-    *   [4.2 安装客户机系统](#.E5.AE.89.E8.A3.85.E5.AE.A2.E6.88.B7.E6.9C.BA.E7.B3.BB.E7.BB.9F)
-    *   [4.3 附加PCI设备](#.E9.99.84.E5.8A.A0PCI.E8.AE.BE.E5.A4.87)
-    *   [4.4 注意](#.E6.B3.A8.E6.84.8F_2)
-        *   [4.4.1 OVMF虚拟机不能引导非EFI镜像](#OVMF.E8.99.9A.E6.8B.9F.E6.9C.BA.E4.B8.8D.E8.83.BD.E5.BC.95.E5.AF.BC.E9.9D.9EEFI.E9.95.9C.E5.83.8F)
-*   [5 性能调整](#.E6.80.A7.E8.83.BD.E8.B0.83.E6.95.B4)
-    *   [5.1 CPU核心固定](#CPU.E6.A0.B8.E5.BF.83.E5.9B.BA.E5.AE.9A)
-        *   [5.1.1 CPU 拓扑](#CPU_.E6.8B.93.E6.89.91)
-        *   [5.1.2 XML 示例](#XML_.E7.A4.BA.E4.BE.8B)
-            *   [5.1.2.1 4c/1t 无超线程的例子](#4c.2F1t_.E6.97.A0.E8.B6.85.E7.BA.BF.E7.A8.8B.E7.9A.84.E4.BE.8B.E5.AD.90)
-            *   [5.1.2.2 6c/2t Intel CPU 固定的例子](#6c.2F2t_Intel_CPU_.E5.9B.BA.E5.AE.9A.E7.9A.84.E4.BE.8B.E5.AD.90)
-            *   [5.1.2.3 4c/2t AMD CPU 的例子](#4c.2F2t_AMD_CPU_.E7.9A.84.E4.BE.8B.E5.AD.90)
-    *   [5.2 内存大分页](#.E5.86.85.E5.AD.98.E5.A4.A7.E5.88.86.E9.A1.B5)
-        *   [5.2.1 透明大分页](#.E9.80.8F.E6.98.8E.E5.A4.A7.E5.88.86.E9.A1.B5)
+*   [1 硬件要求](#硬件要求)
+*   [2 设置IOMMU](#设置IOMMU)
+    *   [2.1 启用IOMMU](#启用IOMMU)
+    *   [2.2 确保组有效](#确保组有效)
+    *   [2.3 注意](#注意)
+        *   [2.3.1 如果客户机所用显卡插在 CPU 提供的 PCI-E 插槽中](#如果客户机所用显卡插在_CPU_提供的_PCI-E_插槽中)
+*   [3 隔离GPU](#隔离GPU)
+*   [4 设置 OVMF 虚拟机](#设置_OVMF_虚拟机)
+    *   [4.1 配置libvirt](#配置libvirt)
+    *   [4.2 安装客户机系统](#安装客户机系统)
+    *   [4.3 附加PCI设备](#附加PCI设备)
+    *   [4.4 注意](#注意_2)
+        *   [4.4.1 OVMF虚拟机不能引导非EFI镜像](#OVMF虚拟机不能引导非EFI镜像)
+*   [5 性能调整](#性能调整)
+    *   [5.1 CPU核心固定](#CPU核心固定)
+        *   [5.1.1 CPU 拓扑](#CPU_拓扑)
+        *   [5.1.2 XML 示例](#XML_示例)
+            *   [5.1.2.1 4c/1t 无超线程的例子](#4c/1t_无超线程的例子)
+            *   [5.1.2.2 6c/2t Intel CPU 固定的例子](#6c/2t_Intel_CPU_固定的例子)
+            *   [5.1.2.3 4c/2t AMD CPU 的例子](#4c/2t_AMD_CPU_的例子)
+    *   [5.2 内存大分页](#内存大分页)
+        *   [5.2.1 透明大分页](#透明大分页)
         *   [5.2.2 Static huge pages](#Static_huge_pages)
         *   [5.2.3 Dynamic huge pages](#Dynamic_huge_pages)
-    *   [5.3 CPU调速器](#CPU.E8.B0.83.E9.80.9F.E5.99.A8)
-    *   [5.4 高DPC延迟](#.E9.AB.98DPC.E5.BB.B6.E8.BF.9F)
-        *   [5.4.1 使用isolcpus固定CPU核心](#.E4.BD.BF.E7.94.A8isolcpus.E5.9B.BA.E5.AE.9ACPU.E6.A0.B8.E5.BF.83)
-    *   [5.5 提高AMD CPU的性能](#.E6.8F.90.E9.AB.98AMD_CPU.E7.9A.84.E6.80.A7.E8.83.BD)
-    *   [5.6 进一步调整](#.E8.BF.9B.E4.B8.80.E6.AD.A5.E8.B0.83.E6.95.B4)
-*   [6 特殊步骤](#.E7.89.B9.E6.AE.8A.E6.AD.A5.E9.AA.A4)
-    *   [6.1 宿主机和客户机使用相同的GPU](#.E5.AE.BF.E4.B8.BB.E6.9C.BA.E5.92.8C.E5.AE.A2.E6.88.B7.E6.9C.BA.E4.BD.BF.E7.94.A8.E7.9B.B8.E5.90.8C.E7.9A.84GPU)
-        *   [6.1.1 脚本示例](#.E8.84.9A.E6.9C.AC.E7.A4.BA.E4.BE.8B)
-            *   [6.1.1.1 直通除了启动时所用GPU之外的所有GPU](#.E7.9B.B4.E9.80.9A.E9.99.A4.E4.BA.86.E5.90.AF.E5.8A.A8.E6.97.B6.E6.89.80.E7.94.A8GPU.E4.B9.8B.E5.A4.96.E7.9A.84.E6.89.80.E6.9C.89GPU)
-            *   [6.1.1.2 直通选定的GPU](#.E7.9B.B4.E9.80.9A.E9.80.89.E5.AE.9A.E7.9A.84GPU)
-        *   [6.1.2 脚本安装](#.E8.84.9A.E6.9C.AC.E5.AE.89.E8.A3.85)
-    *   [6.2 直通启动时所用的GPU](#.E7.9B.B4.E9.80.9A.E5.90.AF.E5.8A.A8.E6.97.B6.E6.89.80.E7.94.A8.E7.9A.84GPU)
-    *   [6.3 使用Looking Glass将客户机画面流式传输到宿主机](#.E4.BD.BF.E7.94.A8Looking_Glass.E5.B0.86.E5.AE.A2.E6.88.B7.E6.9C.BA.E7.94.BB.E9.9D.A2.E6.B5.81.E5.BC.8F.E4.BC.A0.E8.BE.93.E5.88.B0.E5.AE.BF.E4.B8.BB.E6.9C.BA)
-        *   [6.3.1 将IVSHMEM设备添加到虚拟机](#.E5.B0.86IVSHMEM.E8.AE.BE.E5.A4.87.E6.B7.BB.E5.8A.A0.E5.88.B0.E8.99.9A.E6.8B.9F.E6.9C.BA)
-        *   [6.3.2 将IVSHMEM主机安装到Windows客户机](#.E5.B0.86IVSHMEM.E4.B8.BB.E6.9C.BA.E5.AE.89.E8.A3.85.E5.88.B0Windows.E5.AE.A2.E6.88.B7.E6.9C.BA)
-        *   [6.3.3 安装客户端](#.E5.AE.89.E8.A3.85.E5.AE.A2.E6.88.B7.E7.AB.AF)
-    *   [6.4 热切换外围设备](#.E7.83.AD.E5.88.87.E6.8D.A2.E5.A4.96.E5.9B.B4.E8.AE.BE.E5.A4.87)
-    *   [6.5 分离IOMMU组(ACS补丁)](#.E5.88.86.E7.A6.BBIOMMU.E7.BB.84.28ACS.E8.A1.A5.E4.B8.81.29)
-*   [7 仅使用QEMU不使用libvirt](#.E4.BB.85.E4.BD.BF.E7.94.A8QEMU.E4.B8.8D.E4.BD.BF.E7.94.A8libvirt)
-*   [8 直通其它设备](#.E7.9B.B4.E9.80.9A.E5.85.B6.E5.AE.83.E8.AE.BE.E5.A4.87)
-    *   [8.1 USB控制器](#USB.E6.8E.A7.E5.88.B6.E5.99.A8)
-    *   [8.2 使用PulseAudio将虚拟机音频传递给宿主机](#.E4.BD.BF.E7.94.A8PulseAudio.E5.B0.86.E8.99.9A.E6.8B.9F.E6.9C.BA.E9.9F.B3.E9.A2.91.E4.BC.A0.E9.80.92.E7.BB.99.E5.AE.BF.E4.B8.BB.E6.9C.BA)
-    *   [8.3 物理磁盘/分区](#.E7.89.A9.E7.90.86.E7.A3.81.E7.9B.98.2F.E5.88.86.E5.8C.BA)
-    *   [8.4 注意](#.E6.B3.A8.E6.84.8F_3)
-        *   [8.4.1 直通不支持Reset的设备](#.E7.9B.B4.E9.80.9A.E4.B8.8D.E6.94.AF.E6.8C.81Reset.E7.9A.84.E8.AE.BE.E5.A4.87)
-*   [9 完整的例子](#.E5.AE.8C.E6.95.B4.E7.9A.84.E4.BE.8B.E5.AD.90)
-*   [10 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
-    *   [10.1 Nvidia GPU直通到Windows 虚拟机时发生"错误43:驱动程序加载失败”](#Nvidia_GPU.E7.9B.B4.E9.80.9A.E5.88.B0Windows_.E8.99.9A.E6.8B.9F.E6.9C.BA.E6.97.B6.E5.8F.91.E7.94.9F.22.E9.94.99.E8.AF.AF43:.E9.A9.B1.E5.8A.A8.E7.A8.8B.E5.BA.8F.E5.8A.A0.E8.BD.BD.E5.A4.B1.E8.B4.A5.E2.80.9D)
-    *   [10.2 在启动虚拟机后在dmesg中看到"BAR 3: cannot reserve [mem]"错误](#.E5.9C.A8.E5.90.AF.E5.8A.A8.E8.99.9A.E6.8B.9F.E6.9C.BA.E5.90.8E.E5.9C.A8dmesg.E4.B8.AD.E7.9C.8B.E5.88.B0.22BAR_3:_cannot_reserve_.5Bmem.5D.22.E9.94.99.E8.AF.AF)
-    *   [10.3 VBIOS的UEFI (OVMF) 兼容](#VBIOS.E7.9A.84UEFI_.28OVMF.29_.E5.85.BC.E5.AE.B9)
-    *   [10.4 HDMI音频不同步或是有噼啪声](#HDMI.E9.9F.B3.E9.A2.91.E4.B8.8D.E5.90.8C.E6.AD.A5.E6.88.96.E6.98.AF.E6.9C.89.E5.99.BC.E5.95.AA.E5.A3.B0)
-    *   [10.5 intel_iommu启用之后主机没有HDMI音频输出](#intel_iommu.E5.90.AF.E7.94.A8.E4.B9.8B.E5.90.8E.E4.B8.BB.E6.9C.BA.E6.B2.A1.E6.9C.89HDMI.E9.9F.B3.E9.A2.91.E8.BE.93.E5.87.BA)
-    *   [10.6 启用vfio_pci后X无法启动](#.E5.90.AF.E7.94.A8vfio_pci.E5.90.8EX.E6.97.A0.E6.B3.95.E5.90.AF.E5.8A.A8)
-    *   [10.7 Chromium忽略集成图形加速](#Chromium.E5.BF.BD.E7.95.A5.E9.9B.86.E6.88.90.E5.9B.BE.E5.BD.A2.E5.8A.A0.E9.80.9F)
-    *   [10.8 虚拟机只使用一个核心](#.E8.99.9A.E6.8B.9F.E6.9C.BA.E5.8F.AA.E4.BD.BF.E7.94.A8.E4.B8.80.E4.B8.AA.E6.A0.B8.E5.BF.83)
-    *   [10.9 直通貌似工作但没有输出](#.E7.9B.B4.E9.80.9A.E8.B2.8C.E4.BC.BC.E5.B7.A5.E4.BD.9C.E4.BD.86.E6.B2.A1.E6.9C.89.E8.BE.93.E5.87.BA)
-    *   [10.10 virt-manager 遇到权限问题](#virt-manager_.E9.81.87.E5.88.B0.E6.9D.83.E9.99.90.E9.97.AE.E9.A2.98)
-    *   [10.11 虚拟机关闭之后宿主机核心无响应](#.E8.99.9A.E6.8B.9F.E6.9C.BA.E5.85.B3.E9.97.AD.E4.B9.8B.E5.90.8E.E5.AE.BF.E4.B8.BB.E6.9C.BA.E6.A0.B8.E5.BF.83.E6.97.A0.E5.93.8D.E5.BA.94)
-    *   [10.12 客户机在宿主机休眠眠情况下运行导致死机](#.E5.AE.A2.E6.88.B7.E6.9C.BA.E5.9C.A8.E5.AE.BF.E4.B8.BB.E6.9C.BA.E4.BC.91.E7.9C.A0.E7.9C.A0.E6.83.85.E5.86.B5.E4.B8.8B.E8.BF.90.E8.A1.8C.E5.AF.BC.E8.87.B4.E6.AD.BB.E6.9C.BA)
-    *   [10.13 AMD显卡直通后无法重启虚拟机](#AMD.E6.98.BE.E5.8D.A1.E7.9B.B4.E9.80.9A.E5.90.8E.E6.97.A0.E6.B3.95.E9.87.8D.E5.90.AF.E8.99.9A.E6.8B.9F.E6.9C.BA)
-*   [11 另请参阅](#.E5.8F.A6.E8.AF.B7.E5.8F.82.E9.98.85)
+    *   [5.3 CPU调速器](#CPU调速器)
+    *   [5.4 高DPC延迟](#高DPC延迟)
+        *   [5.4.1 使用isolcpus固定CPU核心](#使用isolcpus固定CPU核心)
+    *   [5.5 提高AMD CPU的性能](#提高AMD_CPU的性能)
+    *   [5.6 进一步调整](#进一步调整)
+*   [6 特殊步骤](#特殊步骤)
+    *   [6.1 宿主机和客户机使用相同的GPU](#宿主机和客户机使用相同的GPU)
+        *   [6.1.1 脚本示例](#脚本示例)
+            *   [6.1.1.1 直通除了启动时所用GPU之外的所有GPU](#直通除了启动时所用GPU之外的所有GPU)
+            *   [6.1.1.2 直通选定的GPU](#直通选定的GPU)
+        *   [6.1.2 脚本安装](#脚本安装)
+    *   [6.2 直通启动时所用的GPU](#直通启动时所用的GPU)
+    *   [6.3 使用Looking Glass将客户机画面流式传输到宿主机](#使用Looking_Glass将客户机画面流式传输到宿主机)
+        *   [6.3.1 将IVSHMEM设备添加到虚拟机](#将IVSHMEM设备添加到虚拟机)
+        *   [6.3.2 将IVSHMEM主机安装到Windows客户机](#将IVSHMEM主机安装到Windows客户机)
+        *   [6.3.3 安装客户端](#安装客户端)
+    *   [6.4 热切换外围设备](#热切换外围设备)
+    *   [6.5 分离IOMMU组(ACS补丁)](#分离IOMMU组(ACS补丁))
+*   [7 仅使用QEMU不使用libvirt](#仅使用QEMU不使用libvirt)
+*   [8 直通其它设备](#直通其它设备)
+    *   [8.1 USB控制器](#USB控制器)
+    *   [8.2 使用PulseAudio将虚拟机音频传递给宿主机](#使用PulseAudio将虚拟机音频传递给宿主机)
+    *   [8.3 物理磁盘/分区](#物理磁盘/分区)
+    *   [8.4 注意](#注意_3)
+        *   [8.4.1 直通不支持Reset的设备](#直通不支持Reset的设备)
+*   [9 完整的例子](#完整的例子)
+*   [10 疑难解答](#疑难解答)
+    *   [10.1 Nvidia GPU直通到Windows 虚拟机时发生"错误43:驱动程序加载失败”](#Nvidia_GPU直通到Windows_虚拟机时发生"错误43:驱动程序加载失败”)
+    *   [10.2 在启动虚拟机后在dmesg中看到"BAR 3: cannot reserve [mem]"错误](#在启动虚拟机后在dmesg中看到"BAR_3:_cannot_reserve_[mem]"错误)
+    *   [10.3 VBIOS的UEFI (OVMF) 兼容](#VBIOS的UEFI_(OVMF)_兼容)
+    *   [10.4 HDMI音频不同步或是有噼啪声](#HDMI音频不同步或是有噼啪声)
+    *   [10.5 intel_iommu启用之后主机没有HDMI音频输出](#intel_iommu启用之后主机没有HDMI音频输出)
+    *   [10.6 启用vfio_pci后X无法启动](#启用vfio_pci后X无法启动)
+    *   [10.7 Chromium忽略集成图形加速](#Chromium忽略集成图形加速)
+    *   [10.8 虚拟机只使用一个核心](#虚拟机只使用一个核心)
+    *   [10.9 直通貌似工作但没有输出](#直通貌似工作但没有输出)
+    *   [10.10 virt-manager 遇到权限问题](#virt-manager_遇到权限问题)
+    *   [10.11 虚拟机关闭之后宿主机核心无响应](#虚拟机关闭之后宿主机核心无响应)
+    *   [10.12 客户机在宿主机休眠眠情况下运行导致死机](#客户机在宿主机休眠眠情况下运行导致死机)
+    *   [10.13 AMD显卡直通后无法重启虚拟机](#AMD显卡直通后无法重启虚拟机)
+*   [11 另请参阅](#另请参阅)
 
 ## 硬件要求
 
@@ -156,7 +156,7 @@ IOMMU Group 3 00:1a.0 USB controller [0c03]: Intel Corporation 6 Series/C200 Ser
 
 ```
 
-一个 IOMMU 组是将物理设备直通给虚拟机的最小单位（这不意味着您必须直通整个 USB 控制器，单独的 USB 设备，如键盘鼠标，可以单独设置直通）。例如，在上面的例子中，在 06:00.0 上的显卡和在6:00.1上的音频控制器被分配到13组，它们必须一起直通给虚拟机。前置 USB 控制器被分在了单独的一组（第2组），并不和 USB 扩展控制器（第10组）和后置USB控制器（第4组）分在一组，这意味着它们都可以在[不影响其它设备的情况下直通给虚拟机](#USB.E6.8E.A7.E5.88.B6.E5.99.A8)。
+一个 IOMMU 组是将物理设备直通给虚拟机的最小单位（这不意味着您必须直通整个 USB 控制器，单独的 USB 设备，如键盘鼠标，可以单独设置直通）。例如，在上面的例子中，在 06:00.0 上的显卡和在6:00.1上的音频控制器被分配到13组，它们必须一起直通给虚拟机。前置 USB 控制器被分在了单独的一组（第2组），并不和 USB 扩展控制器（第10组）和后置USB控制器（第4组）分在一组，这意味着它们都可以在[不影响其它设备的情况下直通给虚拟机](#USB控制器)。
 
 ### 注意
 
@@ -171,7 +171,7 @@ IOMMU Group 1 01:00.1 Audio device: NVIDIA Corporation Device 0fbc (rev a1)
 
 ```
 
-如果上一节的脚本输出类似这样，那么您的 PCI-E 插槽就属于上面所述的情况。根据您在 PCI-E 插槽上连接的设备和PCI-E插槽是由PCH还是CPU提供的，您可能发现在需要被直通的组中还有其它的设备，您必须将整个组中的设备全部直通给虚拟机。如果您愿意这样做的话，那么就可以继续。否则，您需要尝试将显卡插入其他的 PCI-E 插槽（如果有的话）并查看这些插槽是否能正确隔离。您也可以安装 ACS 补丁来绕过这个限制，不过这也有相应的缺点。要获得关于 ACS 补丁的更多信息，请参阅[#分离IOMMU组(ACS补丁)](#.E5.88.86.E7.A6.BBIOMMU.E7.BB.84.28ACS.E8.A1.A5.E4.B8.81.29)
+如果上一节的脚本输出类似这样，那么您的 PCI-E 插槽就属于上面所述的情况。根据您在 PCI-E 插槽上连接的设备和PCI-E插槽是由PCH还是CPU提供的，您可能发现在需要被直通的组中还有其它的设备，您必须将整个组中的设备全部直通给虚拟机。如果您愿意这样做的话，那么就可以继续。否则，您需要尝试将显卡插入其他的 PCI-E 插槽（如果有的话）并查看这些插槽是否能正确隔离。您也可以安装 ACS 补丁来绕过这个限制，不过这也有相应的缺点。要获得关于 ACS 补丁的更多信息，请参阅[#分离IOMMU组(ACS补丁)](#分离IOMMU组(ACS补丁))
 
 **注意:** 如果您需要直通的设备像这样和其他的设备分在一组，那么PCI根设备 （pci root ports） 和 PCI Bridge **不**应在启动时绑定到vfio，也**不**应添加到虚拟机。
 
@@ -204,12 +204,12 @@ IOMMU Group 13 06:00.1 Audio device: NVIDIA Corporation GM204 High Definition Au
 
 ```
 
-**注意:** 如果宿主机和客户机所使用的GPU设备ID相同（例如是同一型号）那么就不能使用供应商-设备ID来指定需要隔离的设备。如果是这种情况，参见 [#宿主机和客户机使用相同的GPU](#.E5.AE.BF.E4.B8.BB.E6.9C.BA.E5.92.8C.E5.AE.A2.E6.88.B7.E6.9C.BA.E4.BD.BF.E7.94.A8.E7.9B.B8.E5.90.8C.E7.9A.84GPU)。
+**注意:** 如果宿主机和客户机所使用的GPU设备ID相同（例如是同一型号）那么就不能使用供应商-设备ID来指定需要隔离的设备。如果是这种情况，参见 [#宿主机和客户机使用相同的GPU](#宿主机和客户机使用相同的GPU)。
 
 您需要加载`vfio-pci`，并将设备-供应商ID参数传递给内核。
 
  `/etc/modprobe.d/vfio.conf`  `options vfio-pci ids=10de:13c2,10de:0fbb` 
-**注意:** 像上面提到过的一样，[#如果客户机所用显卡插在 CPU 提供的 PCI-E 插槽中](#.E5.A6.82.E6.9E.9C.E5.AE.A2.E6.88.B7.E6.9C.BA.E6.89.80.E7.94.A8.E6.98.BE.E5.8D.A1.E6.8F.92.E5.9C.A8_CPU_.E6.8F.90.E4.BE.9B.E7.9A.84_PCI-E_.E6.8F.92.E6.A7.BD.E4.B8.AD)，并且 PCI 根设备是 IOMMU 组的一部分，**不**要将根设备的 ID 传递给`vfio-pci`，因为他需要连接到宿主机以保持正常运行。但是，该组中的任何其它设备都应该绑定到`vfio-pci`。
+**注意:** 像上面提到过的一样，[#如果客户机所用显卡插在 CPU 提供的 PCI-E 插槽中](#如果客户机所用显卡插在_CPU_提供的_PCI-E_插槽中)，并且 PCI 根设备是 IOMMU 组的一部分，**不**要将根设备的 ID 传递给`vfio-pci`，因为他需要连接到宿主机以保持正常运行。但是，该组中的任何其它设备都应该绑定到`vfio-pci`。
 
 但是，这并不能保证`vfio-pci`会在其它图形驱动之前加载。为了确保这一点，我们需要在initramfs中静态绑定它和它的依赖项。按照`vfio_pci`，`vfio`，`vfio_iommu_type1`，`vfio_virqfd` 的顺序添加到[mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")：
 
@@ -436,7 +436,7 @@ CPU NODE SOCKET CORE L1d:L1i:L2:L3 ONLINE MAXMHZ    MINMHZ
 
 #### 透明大分页
 
-QEMU 将在 QEMU 或 Libvirt 中自动使用 2 MiB 大小的透明大分页，但这可能并不那么顺利，在使用 VFIO 时，页面会在启动时锁定，并且在虚拟机首次启动时会预先分配透明的大分页。如果内存高度碎片化，或者虚拟机正在使用大部分剩余内存，则内核可能没有足够的2 MiB 页面来完全满足分配。在这种情况下，将会混合使用使用 2 MiB 和 4 KiB 分页，从而无法得到足够的性能提升。由于分页在 VFIO 模式下被锁定，因此内核无法在虚拟机启动后将这些 4 KiB 分页转换为大分页。THP（透明大分页）可用的 2 MiB 大页面数量与通过以下各节中描述的[#内存大分页](#.E5.86.85.E5.AD.98.E5.A4.A7.E5.88.86.E9.A1.B5)机制相同。
+QEMU 将在 QEMU 或 Libvirt 中自动使用 2 MiB 大小的透明大分页，但这可能并不那么顺利，在使用 VFIO 时，页面会在启动时锁定，并且在虚拟机首次启动时会预先分配透明的大分页。如果内存高度碎片化，或者虚拟机正在使用大部分剩余内存，则内核可能没有足够的2 MiB 页面来完全满足分配。在这种情况下，将会混合使用使用 2 MiB 和 4 KiB 分页，从而无法得到足够的性能提升。由于分页在 VFIO 模式下被锁定，因此内核无法在虚拟机启动后将这些 4 KiB 分页转换为大分页。THP（透明大分页）可用的 2 MiB 大页面数量与通过以下各节中描述的[#内存大分页](#内存大分页)机制相同。
 
 要查看全局使用的 THP 内存量：
 
@@ -454,7 +454,7 @@ AnonHugePages:   8087552 kB
 
 ```
 
-在这个例子中，虚拟机分配了 8388608 KiB 的内存，但只有 8087552 KiB 可通过 THP 获得。 剩下的301056KiB被分配为 4 KiB 分页。没有任何警告提示使用了 4 KiB 分页。因此，THP 的有效性在很大程度上取决于虚拟机启动时宿主机系统的内存碎片。如果这是不可接受的，建议使用[#内存大分页](#.E5.86.85.E5.AD.98.E5.A4.A7.E5.88.86.E9.A1.B5)。
+在这个例子中，虚拟机分配了 8388608 KiB 的内存，但只有 8087552 KiB 可通过 THP 获得。 剩下的301056KiB被分配为 4 KiB 分页。没有任何警告提示使用了 4 KiB 分页。因此，THP 的有效性在很大程度上取决于虚拟机启动时宿主机系统的内存碎片。如果这是不可接受的，建议使用[#内存大分页](#内存大分页)。
 
 Arch 内核已经编译并默认启用了 THP，默认为 `madvise` 模式。可在 `/sys/kernel/mm/transparent_hugepage/enabled` 查看。
 
@@ -810,7 +810,7 @@ virsh attach-device win10 /home/ajmar/.VFIOinput/input_keyboard.xml
 
 **提示：**
 
-*   （译注）如果您配置了Polkit无密码授权，那么这个脚本也可以使用您自己的用户来执行。参见[Libvirt (简体中文)#设置授权](/index.php/Libvirt_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.AE.BE.E7.BD.AE.E6.8E.88.E6.9D.83 "Libvirt (简体中文)")和[Polkit (简体中文)#跳过口令提示](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.B7.B3.E8.BF.87.E5.8F.A3.E4.BB.A4.E6.8F.90.E7.A4.BA "Polkit (简体中文)").
+*   （译注）如果您配置了Polkit无密码授权，那么这个脚本也可以使用您自己的用户来执行。参见[Libvirt (简体中文)#设置授权](/index.php/Libvirt_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#设置授权 "Libvirt (简体中文)")和[Polkit (简体中文)#跳过口令提示](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#跳过口令提示 "Polkit (简体中文)").
 *   （译注）您也可以使用Windows 10 自带的 OpenSSH，使用方法和Linux下相同，参见[Secure Shell#OpenSSH](/index.php/Secure_Shell#OpenSSH "Secure Shell")。
 
 ### 分离IOMMU组(ACS补丁)
@@ -842,7 +842,7 @@ pcie_acs_override =
 
 如果不想在libvirt的帮助下设置虚拟机，可以使用具有自定义参数的普通QEMU命令来运行要使用PCI直通的虚拟机，这对于脚本等一些用例来说是十分理想的，可以灵活地搭配其他脚本。
 
-先完成[#设置IOMMU](#.E8.AE.BE.E7.BD.AEIOMMU)和[#隔离GPU](#.E9.9A.94.E7.A6.BBGPU)，接着配置好[QEMU](/index.php/QEMU "QEMU")虚拟化环境,[启用KVM](/index.php/QEMU#Enabling_KVM "QEMU")并使用`-device vfio-pci,host=07:00.0`选项，将`07:00.0`替换为您先前隔离的设备ID。
+先完成[#设置IOMMU](#设置IOMMU)和[#隔离GPU](#隔离GPU)，接着配置好[QEMU](/index.php/QEMU "QEMU")虚拟化环境,[启用KVM](/index.php/QEMU#Enabling_KVM "QEMU")并使用`-device vfio-pci,host=07:00.0`选项，将`07:00.0`替换为您先前隔离的设备ID。
 
 要使用OVMF固件，确保已安装[ovmf](https://www.archlinux.org/packages/?name=ovmf)，将UEFI固件从`/usr/share/ovmf/x64/OVMF_VARS.fd`复制到临时位置，如`/tmp/MY_VARS.fd`。最后指定OVMF路径。使用如下的参数（注意顺序）：
 
@@ -867,7 +867,7 @@ pcie_acs_override =
 
 与GPU不同，大多数USB控制器的驱动程序不需要任何特定配置即可在VM上运行，并且通常可以在主机和客户机系统之间来回传递控制而不会产生任何副作用。
 
-**警告:** 确保您的USB控制器支持Reset。[#直通不支持Reset的设备](#.E7.9B.B4.E9.80.9A.E4.B8.8D.E6.94.AF.E6.8C.81Reset.E7.9A.84.E8.AE.BE.E5.A4.87)
+**警告:** 确保您的USB控制器支持Reset。[#直通不支持Reset的设备](#直通不支持Reset的设备)
 
 您可以使用以下命令找出哪个PCI设备对应于哪个控制器以及每个端口和设备对应哪个控制器：
 
@@ -927,7 +927,7 @@ user = "dave"
 
 [重启](/index.php/Restart "Restart") `libvirtd.service` 和 [用户服务](/index.php/Systemd/User "Systemd/User") `pulseaudio.service`。
 
-现在，虚拟机音频将作为应用程序传递给宿主机。[pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol)可用于控制输出设备。请注意，在Windows客户机上，[不使用消息信号中断可能会导致出现噼啪声](#HDMI.E9.9F.B3.E9.A2.91.E4.B8.8D.E5.90.8C.E6.AD.A5.E6.88.96.E6.98.AF.E6.9C.89.E5.99.BC.E5.95.AA.E5.A3.B0)。
+现在，虚拟机音频将作为应用程序传递给宿主机。[pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol)可用于控制输出设备。请注意，在Windows客户机上，[不使用消息信号中断可能会导致出现噼啪声](#HDMI音频不同步或是有噼啪声)。
 
 ### 物理磁盘/分区
 
@@ -949,7 +949,7 @@ user = "dave"
 
 ```
 
-在Windows客户机上需要安装驱动程序才能工作，请参阅[#安装客户机系统](#.E5.AE.89.E8.A3.85.E5.AE.A2.E6.88.B7.E6.9C.BA.E7.B3.BB.E7.BB.9F)。
+在Windows客户机上需要安装驱动程序才能工作，请参阅[#安装客户机系统](#安装客户机系统)。
 
 ### 注意
 
@@ -983,7 +983,7 @@ IOMMU group 13
 
 这表示`00：14.0`中的xHCI USB控制器无法Reset，将导致虚拟机无法正常关闭，而在`00：1b.0`中的集成声卡和在`00：1a.0`和`00:1d.0`中的其他两个控制器没有这个问题，可以毫无问题地直通。
 
-**注意:** 如果你的AMD显卡无法正常Reset，参阅[#AMD显卡直通后无法重启虚拟机](#AMD.E6.98.BE.E5.8D.A1.E7.9B.B4.E9.80.9A.E5.90.8E.E6.97.A0.E6.B3.95.E9.87.8D.E5.90.AF.E8.99.9A.E6.8B.9F.E6.9C.BA)。
+**注意:** 如果你的AMD显卡无法正常Reset，参阅[#AMD显卡直通后无法重启虚拟机](#AMD显卡直通后无法重启虚拟机)。
 
 ## 完整的例子
 

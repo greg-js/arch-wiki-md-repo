@@ -22,7 +22,7 @@ The Xorg server uses the [X keyboard extension](/index.php/X_keyboard_extension 
         *   [2.2.1 Using localectl](#Using_localectl)
 *   [3 Frequently used XKB options](#Frequently_used_XKB_options)
     *   [3.1 Switching between keyboard layouts](#Switching_between_keyboard_layouts)
-    *   [3.2 Terminating Xorg with Ctrl+Alt+Backspace](#Terminating_Xorg_with_Ctrl.2BAlt.2BBackspace)
+    *   [3.2 Terminating Xorg with Ctrl+Alt+Backspace](#Terminating_Xorg_with_Ctrl+Alt+Backspace)
     *   [3.3 Swapping Caps Lock with Left Control](#Swapping_Caps_Lock_with_Left_Control)
     *   [3.4 Enabling mouse keys](#Enabling_mouse_keys)
     *   [3.5 Configuring compose key](#Configuring_compose_key)

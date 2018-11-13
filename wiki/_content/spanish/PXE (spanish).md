@@ -10,15 +10,15 @@ En esta guía, PXE se usa para arrancar los medios de instalación con una Optio
 
 ## Contents
 
-*   [1 Preparación](#Preparaci.C3.B3n)
-*   [2 Instalación del servidor](#Instalaci.C3.B3n_del_servidor)
+*   [1 Preparación](#Preparación)
+*   [2 Instalación del servidor](#Instalación_del_servidor)
     *   [2.1 Red](#Red)
-    *   [2.2 DHCP + TFTP](#DHCP_.2B_TFTP)
+    *   [2.2 DHCP + TFTP](#DHCP_+_TFTP)
     *   [2.3 HTTP](#HTTP)
-*   [3 Instalación](#Instalaci.C3.B3n)
+*   [3 Instalación](#Instalación)
     *   [3.1 Arranque](#Arranque)
     *   [3.2 Tras el arranque](#Tras_el_arranque)
-*   [4 Métodos Alternativos](#M.C3.A9todos_Alternativos)
+*   [4 Métodos Alternativos](#Métodos_Alternativos)
     *   [4.1 NFS](#NFS)
     *   [4.2 NBD](#NBD)
     *   [4.3 Memoria baja](#Memoria_baja)
@@ -160,7 +160,7 @@ Por estar implicado con el menú syslinux, hay varias alternativas más:
 
 ### NFS
 
-Necesitarás instalar un [servidor NFS](/index.php/NFS "NFS") exportando la raíz a la raíz de tu medio de instalación montado —sería `/mnt/archiso` si seguiste las [primeras secciones](#Preparaci.C3.B3n) de esta guía—. Después de configurar el servidor, agregue la siguiente línea a su archivo `/etc/exports`:
+Necesitarás instalar un [servidor NFS](/index.php/NFS "NFS") exportando la raíz a la raíz de tu medio de instalación montado —sería `/mnt/archiso` si seguiste las [primeras secciones](#Preparación) de esta guía—. Después de configurar el servidor, agregue la siguiente línea a su archivo `/etc/exports`:
 
  `/etc/exports`  `/mnt/archiso 192.168.0.0/24(ro,no_subtree_check)` 
 

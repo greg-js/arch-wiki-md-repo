@@ -10,10 +10,10 @@ No momento, há relativamente poucos pacotes [Lisp](https://en.wikipedia.org/wik
 
 ## Contents
 
-*   [1 Nomenclatura e estrutura de diretórios](#Nomenclatura_e_estrutura_de_diret.C3.B3rios)
+*   [1 Nomenclatura e estrutura de diretórios](#Nomenclatura_e_estrutura_de_diretórios)
 *   [2 ASDF](#ASDF)
-*   [3 Empacotamento específico do Lisp](#Empacotamento_espec.C3.ADfico_do_Lisp)
-*   [4 Coisas que você, o leitor, pode fazer](#Coisas_que_voc.C3.AA.2C_o_leitor.2C_pode_fazer)
+*   [3 Empacotamento específico do Lisp](#Empacotamento_específico_do_Lisp)
+*   [4 Coisas que você, o leitor, pode fazer](#Coisas_que_você,_o_leitor,_pode_fazer)
 
 ## Nomenclatura e estrutura de diretórios
 

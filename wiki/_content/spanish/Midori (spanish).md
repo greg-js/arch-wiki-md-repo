@@ -20,17 +20,17 @@ Algunas de sus características son:
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
 *   [2 Extensiones](#Extensiones)
     *   [2.1 AdBlock](#AdBlock)
-    *   [2.2 Motores de búsqueda](#Motores_de_b.C3.BAsqueda)
+    *   [2.2 Motores de búsqueda](#Motores_de_búsqueda)
     *   [2.3 Scripts de usuarios](#Scripts_de_usuarios)
     *   [2.4 Plugin flash](#Plugin_flash)
 *   [3 Trucos y consejos](#Trucos_y_consejos)
     *   [3.1 Flash Block](#Flash_Block)
     *   [3.2 Filtros de AdBlock personalizados](#Filtros_de_AdBlock_personalizados)
     *   [3.3 Corregir fuentes pixeladas](#Corregir_fuentes_pixeladas)
-*   [4 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [4 Véase también](#Véase_también)
 
 ## Instalación
 

@@ -10,20 +10,23 @@ This article explains how to configure a VLAN using [iproute2](https://www.archl
 
 ## Contents
 
-*   [1 Configuration](#Configuration)
+*   [1 Instant Configuration](#Instant_Configuration)
     *   [1.1 Create the VLAN device](#Create_the_VLAN_device)
     *   [1.2 Add an IP](#Add_an_IP)
     *   [1.3 Turning down the device](#Turning_down_the_device)
     *   [1.4 Removing the device](#Removing_the_device)
-    *   [1.5 Starting at boot](#Starting_at_boot)
-        *   [1.5.1 systemd-networkd single interface](#systemd-networkd_single_interface)
-        *   [1.5.2 systemd-networkd bonded interface](#systemd-networkd_bonded_interface)
-        *   [1.5.3 netctl](#netctl)
-    *   [1.6 Setting bridge IP](#Setting_bridge_IP)
-*   [2 Troubleshooting](#Troubleshooting)
-    *   [2.1 udev renames the virtual devices](#udev_renames_the_virtual_devices)
+*   [2 Persistent Configuration](#Persistent_Configuration)
+    *   [2.1 systemd-networkd](#systemd-networkd)
+        *   [2.1.1 Single interface](#Single_interface)
+        *   [2.1.2 Single interface with multiple VLANs each with its own gateway](#Single_interface_with_multiple_VLANs_each_with_its_own_gateway)
+            *   [2.1.2.1 Checks](#Checks)
+        *   [2.1.3 Bonded interface](#Bonded_interface)
+    *   [2.2 netctl](#netctl)
+    *   [2.3 Setting bridge IP](#Setting_bridge_IP)
+*   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 udev renames the virtual devices](#udev_renames_the_virtual_devices)
 
-## Configuration
+## Instant Configuration
 
 Previously Arch Linux used the `vconfig` command to setup VLANs. This had been superseded by the `ip` command. Make sure you have [iproute2](https://www.archlinux.org/packages/?name=iproute2) installed.
 
@@ -83,9 +86,11 @@ Removing a VLAN interface is significantly less convoluted
 
  `# ip link delete eth0.100` 
 
-### Starting at boot
+## Persistent Configuration
 
-#### systemd-networkd single interface
+### systemd-networkd
+
+#### Single interface
 
 Use the following configuration files (Remember that systemd config files are case sensitive!):
 
@@ -122,7 +127,7 @@ Id=200
 
 ```
 
-You'll have to have associated .network files for each .netdev to handle addressing and routing. For example, to set the eno1.100 interface with a static IP and the eno1.200 interface with DHCP (but ignoring the supplied default route), use:
+You will have to have associated .network files for each .netdev to handle addressing and routing. For example, to set the eno1.100 interface with a static IP and the eno1.200 interface with DHCP (but ignoring the supplied default route), use:
 
  `/etc/systemd/network/*eno1.100*.network` 
 ```
@@ -151,9 +156,106 @@ UseRoutes=false
 
 Then [enable](/index.php/Enable "Enable") `systemd-networkd.service`. See [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") for details.
 
-#### systemd-networkd bonded interface
+#### Single interface with multiple VLANs each with its own gateway
 
-Similar to above, you're just going to stack more of the concepts in place. You'll want to ensure that you've got a bond set up in your switch and also make sure its a trunk with tagged vlans corresponding to what you create below. Convention would be to create a bond interface with the name `bond0`, however there is a known issue where the `bonding` module, when loaded, creates a bond device of the name `bond0` which systemd then refuses to configure (as systemd tries to respectfully leave alone any device it did not create).
+Each vlan gets its own routing table and a RoutingPolicyRule that specifies which source ip addresses this routing applies to.
+
+ `/etc/systemd/network/*eno1.network*` 
+```
+[Match]
+Name=eno1
+
+[Network]
+VLAN=eno1.10
+VLAN=eno1.11
+DNS=192.168.100.101
+DNS=192.168.100.102
+
+```
+ `/etc/systemd/network/*eno1.10.netdev*` 
+```
+[NetDev]
+Name=eno1.10
+Kind=vlan
+
+[VLAN]
+Id=10
+
+```
+ `/etc/systemd/network/*eno1.10.network*` 
+```
+[Match]
+Name=eno1.10
+
+[Network]
+Address=192.168.1.14/24
+Address=192.168.1.24/24
+
+[Route]
+Gateway=192.168.1.1
+Table=10
+
+[RoutingPolicyRule]
+From=192.168.1.0/24
+Table=10
+
+```
+ `/etc/systemd/network/*eno1.11.netdev*` 
+```
+[NetDev]
+Name=eno1.11
+Kind=vlan
+
+[VLAN]
+Id=11
+
+```
+ `/etc/systemd/network/*eno1.11.network*` 
+```
+[Match]
+Name=eth0.11
+
+[Network]
+Address=192.168.100.54/24
+
+[Route]
+Gateway=192.168.100.1
+Table=11
+
+[RoutingPolicyRule]
+From=192.168.100.0/24
+Table=11
+
+```
+
+##### Checks
+
+ `# ip rule` 
+```
+0:      from all lookup local
+0:      from 192.168.1.0/24 lookup 10
+0:      from 192.168.100.0/24 lookup 11
+32766:  from all lookup main
+32767:  from all lookup default
+
+```
+
+Use `ip route list table`. E.g.:
+
+ `# ip route list table 10` 
+```
+default via 192.168.1.1 dev enp1.10 proto static
+
+```
+ `# ip route list table 11` 
+```
+default via 192.168.100.1 dev enp1.11 proto static
+
+```
+
+#### Bonded interface
+
+Similar to above, you are just going to stack more of the concepts in place. You will want to ensure that you have got a bond set up in your switch and also make sure its a trunk with tagged vlans corresponding to what you create below. Convention would be to create a bond interface with the name `bond0`, however there is a known issue where the `bonding` module, when loaded, creates a bond device of the name `bond0` which systemd then refuses to configure (as systemd tries to respectfully leave alone any device it did not create).
 
 **Tip:** To prevent the `bonding` module to create an initial `bond0` interface, set the `max_bonds` option of the bonding module to `0` (default value is `1`): `/etc/modprobe.d/bonding.conf`  `options bonding max_bonds=0` See [Kernel modules#Setting module options](/index.php/Kernel_modules#Setting_module_options "Kernel modules") and [Linux Ethernet Bonding Driver HOWTO (Kernel Documentation)](https://www.kernel.org/doc/Documentation/networking/bonding.txt)for details.
 
@@ -172,7 +274,7 @@ Mode=802.3ad
 LACPTransmitRate=fast
 ```
 
-Now create a .network directive that references the vlans and interface carriers. In this case we'll use the convention for a dual port fiber module:
+Now create a .network directive that references the vlans and interface carriers. In this case we will use the convention for a dual port fiber module:
 
  `/etc/systemd/network/*bondname*.network` 
 ```
@@ -186,9 +288,9 @@ VLAN=vlan30
 BindCarrier=*enp3s0f0 enp3s0f1*
 ```
 
-We're using the vlan<number> naming convention here, you can use something else but realize that this is a named reference so you'll have to have a corresponding set of files with the same name.
+We are using the vlan<number> naming convention here, you can use something else but realize that this is a named reference so you will have to have a corresponding set of files with the same name.
 
-We'll now set up the physical network interfaces:
+We will now set up the physical network interfaces:
 
  `/etc/systemd/network/*enp3s0f0*.network` 
 ```
@@ -209,7 +311,7 @@ Bond=*bondname*
 
 At this time you could reboot, and likely should, because the bonded interface is created at boot time. Restarting systemd-networkd will consume changes from these files typically, but device creation seems to occur at startup.
 
-We will now set up the VLANs. You should be aware that having multiple VLANs can result in a situation where your machine has multiple default routes, so you'll need to specify a Destination directive in the network directives to ensure that only one VLAN is being used for a default route. In this case we'll use the VLAN with an ID of 10 as our default route.
+We will now set up the VLANs. You should be aware that having multiple VLANs can result in a situation where your machine has multiple default routes, so you will need to specify a Destination directive in the network directives to ensure that only one VLAN is being used for a default route. In this case we will use the VLAN with an ID of 10 as our default route.
 
  `/etc/systemd/network/*vlan10*.netdev` 
 ```
@@ -239,7 +341,7 @@ Destination=0.0.0.0/0
 Gateway=10.10.10.1
 ```
 
-We'll create a similar pair of files for the VLAN with an ID of 20:
+We will create a similar pair of files for the VLAN with an ID of 20:
 
  `/etc/systemd/network/*vlan20*.netdev` 
 ```
@@ -295,7 +397,7 @@ Gateway=10.10.30.1
 
 Note that the Destination on `vlan10` is set to `0.0.0.0/0`, which will match all outbound, becoming the default route.
 
-#### netctl
+### netctl
 
 You can use [netctl](/index.php/Netctl "Netctl") for this purpose, see the self-explanatory example profiles in {{ic|/etc/netctl/examples/vlan-{dhcp,static} }}.
 

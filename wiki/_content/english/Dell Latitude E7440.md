@@ -8,7 +8,7 @@ The Dell Latitude E7440 is a business Ultrabook™. Generally speaking, it has n
 *   [4 Drivers](#Drivers)
 *   [5 What does not work](#What_does_not_work)
 *   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 "Invalid partition table!" when booting](#.22Invalid_partition_table.21.22_when_booting)
+    *   [6.1 "Invalid partition table!" when booting](#"Invalid_partition_table!"_when_booting)
     *   [6.2 Keyboard inputs the same character multiple times on one keypress](#Keyboard_inputs_the_same_character_multiple_times_on_one_keypress)
     *   [6.3 SSD in the mSATA slot is only recognized after waking from susped](#SSD_in_the_mSATA_slot_is_only_recognized_after_waking_from_susped)
     *   [6.4 Freeze before going to suspend when lid is closed](#Freeze_before_going_to_suspend_when_lid_is_closed)

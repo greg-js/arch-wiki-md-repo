@@ -6,50 +6,50 @@
 
 ## Contents
 
-*   [1 浏览安卓设备](#.E6.B5.8F.E8.A7.88.E5.AE.89.E5.8D.93.E8.AE.BE.E5.A4.87)
-*   [2 安卓开发](#.E5.AE.89.E5.8D.93.E5.BC.80.E5.8F.91)
-    *   [2.1 安卓 SDK 核心组件](#.E5.AE.89.E5.8D.93_SDK_.E6.A0.B8.E5.BF.83.E7.BB.84.E4.BB.B6)
-    *   [2.2 获取 Android SDK 特定平台 API](#.E8.8E.B7.E5.8F.96_Android_SDK_.E7.89.B9.E5.AE.9A.E5.B9.B3.E5.8F.B0_API)
-    *   [2.3 开发环境](#.E5.BC.80.E5.8F.91.E7.8E.AF.E5.A2.83)
+*   [1 浏览安卓设备](#浏览安卓设备)
+*   [2 安卓开发](#安卓开发)
+    *   [2.1 安卓 SDK 核心组件](#安卓_SDK_核心组件)
+    *   [2.2 获取 Android SDK 特定平台 API](#获取_Android_SDK_特定平台_API)
+    *   [2.3 开发环境](#开发环境)
         *   [2.3.1 Android Studio](#Android_Studio)
         *   [2.3.2 Eclipse](#Eclipse)
         *   [2.3.3 Netbeans](#Netbeans)
-    *   [2.4 安卓调试桥 (ADB)](#.E5.AE.89.E5.8D.93.E8.B0.83.E8.AF.95.E6.A1.A5_.28ADB.29)
-        *   [2.4.1 连接设备](#.E8.BF.9E.E6.8E.A5.E8.AE.BE.E5.A4.87)
-        *   [2.4.2 手动查找设备 ID](#.E6.89.8B.E5.8A.A8.E6.9F.A5.E6.89.BE.E8.AE.BE.E5.A4.87_ID)
-        *   [2.4.3 添加 udev 规则](#.E6.B7.BB.E5.8A.A0_udev_.E8.A7.84.E5.88.99)
-        *   [2.4.4 配置 adb](#.E9.85.8D.E7.BD.AE_adb)
-        *   [2.4.5 检测设备](#.E6.A3.80.E6.B5.8B.E8.AE.BE.E5.A4.87)
-        *   [2.4.6 使用方法](#.E4.BD.BF.E7.94.A8.E6.96.B9.E6.B3.95)
-        *   [2.4.7 注意事项和疑难杂症](#.E6.B3.A8.E6.84.8F.E4.BA.8B.E9.A1.B9.E5.92.8C.E7.96.91.E9.9A.BE.E6.9D.82.E7.97.87)
-    *   [2.5 NVIDIA Tegra 平台专用工具](#NVIDIA_Tegra_.E5.B9.B3.E5.8F.B0.E4.B8.93.E7.94.A8.E5.B7.A5.E5.85.B7)
-*   [3 构建 Android](#.E6.9E.84.E5.BB.BA_Android)
-    *   [3.1 OS 位数](#OS_.E4.BD.8D.E6.95.B0)
-    *   [3.2 需要的软件包](#.E9.9C.80.E8.A6.81.E7.9A.84.E8.BD.AF.E4.BB.B6.E5.8C.85)
+    *   [2.4 安卓调试桥 (ADB)](#安卓调试桥_(ADB))
+        *   [2.4.1 连接设备](#连接设备)
+        *   [2.4.2 手动查找设备 ID](#手动查找设备_ID)
+        *   [2.4.3 添加 udev 规则](#添加_udev_规则)
+        *   [2.4.4 配置 adb](#配置_adb)
+        *   [2.4.5 检测设备](#检测设备)
+        *   [2.4.6 使用方法](#使用方法)
+        *   [2.4.7 注意事项和疑难杂症](#注意事项和疑难杂症)
+    *   [2.5 NVIDIA Tegra 平台专用工具](#NVIDIA_Tegra_平台专用工具)
+*   [3 构建 Android](#构建_Android)
+    *   [3.1 OS 位数](#OS_位数)
+    *   [3.2 需要的软件包](#需要的软件包)
     *   [3.3 Java Development Kit](#Java_Development_Kit)
-    *   [3.4 配置构建环境](#.E9.85.8D.E7.BD.AE.E6.9E.84.E5.BB.BA.E7.8E.AF.E5.A2.83)
-    *   [3.5 下载源代码](#.E4.B8.8B.E8.BD.BD.E6.BA.90.E4.BB.A3.E7.A0.81)
-    *   [3.6 开始构建](#.E5.BC.80.E5.A7.8B.E6.9E.84.E5.BB.BA)
-    *   [3.7 测试镜像](#.E6.B5.8B.E8.AF.95.E9.95.9C.E5.83.8F)
-    *   [3.8 创建可烧录镜像](#.E5.88.9B.E5.BB.BA.E5.8F.AF.E7.83.A7.E5.BD.95.E9.95.9C.E5.83.8F)
-*   [4 恢复 Android](#.E6.81.A2.E5.A4.8D_Android)
+    *   [3.4 配置构建环境](#配置构建环境)
+    *   [3.5 下载源代码](#下载源代码)
+    *   [3.6 开始构建](#开始构建)
+    *   [3.7 测试镜像](#测试镜像)
+    *   [3.8 创建可烧录镜像](#创建可烧录镜像)
+*   [4 恢复 Android](#恢复_Android)
     *   [4.1 Fastboot](#Fastboot)
     *   [4.2 Samsung](#Samsung)
         *   [4.2.1 Heimdall](#Heimdall)
-        *   [4.2.2 Odin (Virtualbox)](#Odin_.28Virtualbox.29)
-*   [5 其它连接方法](#.E5.85.B6.E5.AE.83.E8.BF.9E.E6.8E.A5.E6.96.B9.E6.B3.95)
+        *   [4.2.2 Odin (Virtualbox)](#Odin_(Virtualbox))
+*   [5 其它连接方法](#其它连接方法)
     *   [5.1 adb-sync](#adb-sync)
     *   [5.2 AirDroid](#AirDroid)
     *   [5.3 AndroidScreencast](#AndroidScreencast)
     *   [5.4 FTP](#FTP)
     *   [5.5 KDE Connect](#KDE_Connect)
-    *   [5.6 SSH 服务器](#SSH_.E6.9C.8D.E5.8A.A1.E5.99.A8)
+    *   [5.6 SSH 服务器](#SSH_服务器)
     *   [5.7 Samba](#Samba)
-*   [6 技巧和提示](#.E6.8A.80.E5.B7.A7.E5.92.8C.E6.8F.90.E7.A4.BA)
-    *   [6.1 调试时出现 "Source not found"](#.E8.B0.83.E8.AF.95.E6.97.B6.E5.87.BA.E7.8E.B0_.22Source_not_found.22)
-    *   [6.2 在 sd 卡上安装 Linux 发行版](#.E5.9C.A8_sd_.E5.8D.A1.E4.B8.8A.E5.AE.89.E8.A3.85_Linux_.E5.8F.91.E8.A1.8C.E7.89.88)
-*   [7 疑难杂症](#.E7.96.91.E9.9A.BE.E6.9D.82.E7.97.87)
-    *   [7.1 Android Studio: Android Virtual Devices show 'failed to load'.](#Android_Studio:_Android_Virtual_Devices_show_.27failed_to_load.27.)
+*   [6 技巧和提示](#技巧和提示)
+    *   [6.1 调试时出现 "Source not found"](#调试时出现_"Source_not_found")
+    *   [6.2 在 sd 卡上安装 Linux 发行版](#在_sd_卡上安装_Linux_发行版)
+*   [7 疑难杂症](#疑难杂症)
+    *   [7.1 Android Studio: Android Virtual Devices show 'failed to load'.](#Android_Studio:_Android_Virtual_Devices_show_'failed_to_load'.)
     *   [7.2 aapt: No such file or directory](#aapt:_No_such_file_or_directory)
     *   [7.3 ValueError: unsupported pickle protocol](#ValueError:_unsupported_pickle_protocol)
 
@@ -58,12 +58,12 @@
 有多种方法浏览安卓设备：
 
 *   [MTP](/index.php/MTP "MTP") 协议可以用USB传输文件。
-*   [其它连接方法](#.E5.85.B6.E5.AE.83.E8.BF.9E.E6.8E.A5.E6.96.B9.E6.B3.95) (比如 FTP, SSH)。
+*   [其它连接方法](#其它连接方法) (比如 FTP, SSH)。
 
 更高阶的用法，开发、刷入固件和恢复固件等：
 
-*   [ADB 工具包](#.E5.AE.89.E5.8D.93.E8.B0.83.E8.AF.95.E6.A1.A5_.28ADB.29) 广泛用于开发。
-*   [恢复 Android](#.E6.81.A2.E5.A4.8D_Android) 用于刷入和恢复安卓固件（包括 fastboot）。
+*   [ADB 工具包](#安卓调试桥_(ADB)) 广泛用于开发。
+*   [恢复 Android](#恢复_Android) 用于刷入和恢复安卓固件（包括 fastboot）。
 
 ## 安卓开发
 
@@ -219,7 +219,7 @@ Tools -> Options -> Miscellaneous -> Android
 5.  将用户加入组 *adbusers*。
 6.  gpasswd -a *username* adbusers
 
-如果 [ADB 能识别你的设备](#.E6.A3.80.E6.B5.8B.E8.AE.BE.E5.A4.87) (在IDE中可以看见和访问）就行了，否则见下面的内容。
+如果 [ADB 能识别你的设备](#检测设备) (在IDE中可以看见和访问）就行了，否则见下面的内容。
 
 #### 手动查找设备 ID
 

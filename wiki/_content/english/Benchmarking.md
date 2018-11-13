@@ -27,7 +27,7 @@ Many tools can be used to determine system performance, the following provides a
     *   [1.11 dd](#dd)
     *   [1.12 dcfldd](#dcfldd)
 *   [2 Software suites](#Software_suites)
-    *   [2.1 Bonnie++](#Bonnie.2B.2B)
+    *   [2.1 Bonnie++](#Bonnie++)
     *   [2.2 IOzone](#IOzone)
     *   [2.3 HardInfo](#HardInfo)
     *   [2.4 Phoronix Test Suite](#Phoronix_Test_Suite)

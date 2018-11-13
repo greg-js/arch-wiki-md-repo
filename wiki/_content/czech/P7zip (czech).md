@@ -3,9 +3,9 @@ p7zip je port příkazového řádku [7-Zip](https://en.wikipedia.org/wiki/7zip 
 ## Contents
 
 *   [1 Instalace](#Instalace)
-*   [2 Příklady](#P.C5.99.C3.ADklady)
-*   [3 Rozdíly mezi binárními soubory 7z, 7za a 7zr](#Rozd.C3.ADly_mezi_bin.C3.A1rn.C3.ADmi_soubory_7z.2C_7za_a_7zr)
-*   [4 Další zdroje](#Dal.C5.A1.C3.AD_zdroje)
+*   [2 Příklady](#Příklady)
+*   [3 Rozdíly mezi binárními soubory 7z, 7za a 7zr](#Rozdíly_mezi_binárními_soubory_7z,_7za_a_7zr)
+*   [4 Další zdroje](#Další_zdroje)
 
 ## Instalace
 

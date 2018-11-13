@@ -1,9 +1,9 @@
 ## Contents
 
-*   [1 Introducción](#Introducci.C3.B3n)
-*   [2 Arrancar desde el soporte de instalación](#Arrancar_desde_el_soporte_de_instalaci.C3.B3n)
+*   [1 Introducción](#Introducción)
+*   [2 Arrancar desde el soporte de instalación](#Arrancar_desde_el_soporte_de_instalación)
 *   [3 Configurar el entorno live para usar SSH](#Configurar_el_entorno_live_para_usar_SSH)
-*   [4 Conectar al PC de destino a través de SSH](#Conectar_al_PC_de_destino_a_trav.C3.A9s_de_SSH)
+*   [4 Conectar al PC de destino a través de SSH](#Conectar_al_PC_de_destino_a_través_de_SSH)
     *   [4.1 Notas](#Notas)
 *   [5 Siguientes pasos](#Siguientes_pasos)
 

@@ -3,7 +3,7 @@
 *   [1 Introduction](#Introduction)
 *   [2 Ideas and Suggestions](#Ideas_and_Suggestions)
     *   [2.1 OpenID](#OpenID)
-    *   [2.2 Developer/Fellows profiles](#Developer.2FFellows_profiles)
+    *   [2.2 Developer/Fellows profiles](#Developer/Fellows_profiles)
     *   [2.3 Navbar for internal Arch sites](#Navbar_for_internal_Arch_sites)
     *   [2.4 ~~Embed Ads by Google into content~~](#Embed_Ads_by_Google_into_content)
     *   [2.5 URI Linking](#URI_Linking)
@@ -73,6 +73,12 @@ On the ArchWiki we can only link to packages using the package search, for examp
 	--[Larivact](/index.php/User:Larivact "User:Larivact") ([talk](/index.php/User_talk:Larivact "User talk:Larivact")) 06:47, 11 November 2018 (UTC)
 
 	Figuring out if a pkgname is unique or not is very easy [in SQL](https://git.archlinux.org/archweb.git/tree/main/models.py#n88) - just `SELECT pkgname, repo, arch FROM Package WHERE pkgname = ?` and if you get just 1 result, you can show the package view, otherwise you have to show the package search view. -- [Lahwaacz](/index.php/User:Lahwaacz "User:Lahwaacz") ([talk](/index.php/User_talk:Lahwaacz "User talk:Lahwaacz")) 08:30, 11 November 2018 (UTC)
+
+	I think you misunderstood, this is not about changing the search to redirect if there is only one result, this is about introducing a new API specifically for [Template:Pkg](/index.php/Template:Pkg "Template:Pkg"). We only link packages in the stable repositories, where pkgnames should be unique, so we can do:
+
+	`SELECT pkgname, repo FROM packages INNER JOIN repos ON repo=packages.id WHERE pkgname = ? AND testing = false AND staging = false`
+
+	--[Larivact](/index.php/User:Larivact "User:Larivact") ([talk](/index.php/User_talk:Larivact "User talk:Larivact")) 09:01, 11 November 2018 (UTC)
 
 ### Adopting archweb_manpages
 

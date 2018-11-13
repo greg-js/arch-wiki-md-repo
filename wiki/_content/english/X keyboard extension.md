@@ -25,7 +25,7 @@ This article describes how to modify and create keyboard layouts. If you are loo
     *   [5.3 Additional symbols](#Additional_symbols)
         *   [5.3.1 Compose key](#Compose_key)
         *   [5.3.2 Level3](#Level3)
-    *   [5.4 Meta, Super and Hyper](#Meta.2C_Super_and_Hyper)
+    *   [5.4 Meta, Super and Hyper](#Meta,_Super_and_Hyper)
         *   [5.4.1 Real modifiers](#Real_modifiers)
         *   [5.4.2 Keysym tracking](#Keysym_tracking)
 *   [6 Preset configuration](#Preset_configuration)

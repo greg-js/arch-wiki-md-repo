@@ -9,7 +9,7 @@ Designed to be cross-platform, it is known to work on Linux (x86, PowerPC and AR
 *   [1 Installation](#Installation)
 *   [2 Integration](#Integration)
     *   [2.1 PulseAudio](#PulseAudio)
-    *   [2.2 KDE / Phonon integration](#KDE_.2F_Phonon_integration)
+    *   [2.2 KDE / Phonon integration](#KDE_/_Phonon_integration)
     *   [2.3 Hardware video acceleration](#Hardware_video_acceleration)
 *   [3 See also](#See_also)
 

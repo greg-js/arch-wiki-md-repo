@@ -11,20 +11,20 @@ GNU Parted 是创建和处理分区表的工具，[GParted](/index.php/GParted "
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 使用](#.E4.BD.BF.E7.94.A8)
+*   [2 使用](#使用)
     *   [2.1 Command line mode](#Command_line_mode)
     *   [2.2 Interactive mode](#Interactive_mode)
 *   [3 Rounding](#Rounding)
 *   [4 Partitioning](#Partitioning)
-    *   [4.1 创建新分区表](#.E5.88.9B.E5.BB.BA.E6.96.B0.E5.88.86.E5.8C.BA.E8.A1.A8)
-    *   [4.2 分区方案](#.E5.88.86.E5.8C.BA.E6.96.B9.E6.A1.88)
-        *   [4.2.1 UEFI/GPT 示例](#UEFI.2FGPT_.E7.A4.BA.E4.BE.8B)
-        *   [4.2.2 BIOS/MBR 示例](#BIOS.2FMBR_.E7.A4.BA.E4.BE.8B)
+    *   [4.1 创建新分区表](#创建新分区表)
+    *   [4.2 分区方案](#分区方案)
+        *   [4.2.1 UEFI/GPT 示例](#UEFI/GPT_示例)
+        *   [4.2.2 BIOS/MBR 示例](#BIOS/MBR_示例)
     *   [4.3 Resizing Partitions](#Resizing_Partitions)
         *   [4.3.1 Growing partitions](#Growing_partitions)
         *   [4.3.2 Shrinking partitions](#Shrinking_partitions)
-*   [5 警告](#.E8.AD.A6.E5.91.8A)
-    *   [5.1 分区对齐](#.E5.88.86.E5.8C.BA.E5.AF.B9.E9.BD.90)
+*   [5 警告](#警告)
+    *   [5.1 分区对齐](#分区对齐)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -128,7 +128,7 @@ As of parted-2.4, when you specify start and/or end values using IEC binary unit
 您可以决定磁盘应该分为多少个区，每个分区又挂载在系统的哪个目录。将分区如何映射至目录（一般称此为挂载点），取决于您的[分区方案](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.88.86.E5.8C.BA.E6.96.B9.E6.A1.88 "Partitioning (简体中文)")。需要满足：
 
 *   至少需要创建一个 `/` (*root*) 目录，有些分区类型和 [启动加载器](/index.php/Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Boot loaders (简体中文)")组合有额外的分区要求：
-*   BIOS/GPT + [GRUB](/index.php/GRUB "GRUB"): 需要按照 [BIOS 启动分区设置](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB") 的方式创建一个 1M 或 2M 的 `EF02` 类型分区.
+*   BIOS/GPT + [GRUB](/index.php/GRUB "GRUB"): 需要按照 [BIOS 启动分区设置](/index.php/GRUB#GUID_Partition_Table_(GPT)_specific_instructions "GRUB") 的方式创建一个 1M 或 2M 的 `EF02` 类型分区.
 *   UEFI 的主板，需要一个 [EFI 系统分区](/index.php/Unified_Extensible_Firmware_Interface#EFI_System_Partition "Unified Extensible Firmware Interface").
 *   如果您需要[加密磁盘](/index.php/Disk_encryption "Disk encryption")，则必须加以调整分区方案。系统安装后，也可以再配置加密文件夹，容器或 home 目录。
 
@@ -169,7 +169,7 @@ Ignore/Cancel?
 
 ```
 
-表示分区没 [对齐](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.88.86.E5.8C.BA.E5.AF.B9.E9.BD.90 "Partitioning (简体中文)")，请按照 [分区对齐](#.E5.88.86.E5.8C.BA.E5.AF.B9.E9.BD.90) 进行修正。
+表示分区没 [对齐](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#分区对齐 "Partitioning (简体中文)")，请按照 [分区对齐](#分区对齐) 进行修正。
 
 下面命令设置 `/boot` 为启动目录：
 

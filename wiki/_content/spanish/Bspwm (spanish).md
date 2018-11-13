@@ -8,18 +8,18 @@ Artículos relacionados
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Configuración](#Configuraci.C3.B3n)
-    *   [2.1 Para múltiples monitores](#Para_m.C3.BAltiples_monitores)
+*   [1 Instalación](#Instalación)
+*   [2 Configuración](#Configuración)
+    *   [2.1 Para múltiples monitores](#Para_múltiples_monitores)
     *   [2.2 Reglas](#Reglas)
     *   [2.3 Paneles](#Paneles)
     *   [2.4 Scratchpad](#Scratchpad)
     *   [2.5 *bspwmrc* como script](#bspwmrc_como_script)
-*   [3 Solución de problemas](#Soluci.C3.B3n_de_problemas)
+*   [3 Solución de problemas](#Solución_de_problemas)
     *   [3.1 Aparece una pantalla negra y las combinaciones de teclas no funcionan](#Aparece_una_pantalla_negra_y_las_combinaciones_de_teclas_no_funcionan)
-    *   [3.2 Una aplicación no ocupa todo el espacio de su ventana](#Una_aplicaci.C3.B3n_no_ocupa_todo_el_espacio_de_su_ventana)
+    *   [3.2 Una aplicación no ocupa todo el espacio de su ventana](#Una_aplicación_no_ocupa_todo_el_espacio_de_su_ventana)
     *   [3.3 Problemas con aplicaciones Java](#Problemas_con_aplicaciones_Java)
-*   [4 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [4 Véase también](#Véase_también)
 
 ## Instalación
 
@@ -220,7 +220,7 @@ Esto puede pasar si está usando aplicaciones GTK3, y especialmente en el caso d
 
 ### Problemas con aplicaciones Java
 
-Si, por ejemplo, las aplicaciones Java no pueden cambiar de tamaño o sus menús se cierran espontáneamente, véase [Java#Applications not resizing with WM, menus immediately closing](/index.php/Java#Applications_not_resizing_with_WM.2C_menus_immediately_closing "Java").
+Si, por ejemplo, las aplicaciones Java no pueden cambiar de tamaño o sus menús se cierran espontáneamente, véase [Java#Applications not resizing with WM, menus immediately closing](/index.php/Java#Applications_not_resizing_with_WM,_menus_immediately_closing "Java").
 
 ## Véase también
 

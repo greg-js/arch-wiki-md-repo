@@ -11,18 +11,18 @@ Related articles
 
 ## Contents
 
-*   [1 Οδηγός συσκευής](#.CE.9F.CE.B4.CE.B7.CE.B3.CF.8C.CF.82_.CF.83.CF.85.CF.83.CE.BA.CE.B5.CF.85.CE.AE.CF.82)
-    *   [1.1 Έλεγχος κατάστασης οδηγού](#.CE.88.CE.BB.CE.B5.CE.B3.CF.87.CE.BF.CF.82_.CE.BA.CE.B1.CF.84.CE.AC.CF.83.CF.84.CE.B1.CF.83.CE.B7.CF.82_.CE.BF.CE.B4.CE.B7.CE.B3.CE.BF.CF.8D)
-    *   [1.2 Εγκατάσταση οδηγού/firmware](#.CE.95.CE.B3.CE.BA.CE.B1.CF.84.CE.AC.CF.83.CF.84.CE.B1.CF.83.CE.B7_.CE.BF.CE.B4.CE.B7.CE.B3.CE.BF.CF.8D.2Ffirmware)
-*   [2 Διαχείριση ασύρματης σύνδεσης](#.CE.94.CE.B9.CE.B1.CF.87.CE.B5.CE.AF.CF.81.CE.B9.CF.83.CE.B7_.CE.B1.CF.83.CF.8D.CF.81.CE.BC.CE.B1.CF.84.CE.B7.CF.82_.CF.83.CF.8D.CE.BD.CE.B4.CE.B5.CF.83.CE.B7.CF.82)
-    *   [2.1 Χειροκίνητη ρύθμιση](#.CE.A7.CE.B5.CE.B9.CF.81.CE.BF.CE.BA.CE.AF.CE.BD.CE.B7.CF.84.CE.B7_.CF.81.CF.8D.CE.B8.CE.BC.CE.B9.CF.83.CE.B7)
-        *   [2.1.1 Λήψη ορισμένων χρήσιμων πληροφοριών](#.CE.9B.CE.AE.CF.88.CE.B7_.CE.BF.CF.81.CE.B9.CF.83.CE.BC.CE.AD.CE.BD.CF.89.CE.BD_.CF.87.CF.81.CE.AE.CF.83.CE.B9.CE.BC.CF.89.CE.BD_.CF.80.CE.BB.CE.B7.CF.81.CE.BF.CF.86.CE.BF.CF.81.CE.B9.CF.8E.CE.BD)
-        *   [2.1.2 Ενεργοποίηση διεπαφής](#.CE.95.CE.BD.CE.B5.CF.81.CE.B3.CE.BF.CF.80.CE.BF.CE.AF.CE.B7.CF.83.CE.B7_.CE.B4.CE.B9.CE.B5.CF.80.CE.B1.CF.86.CE.AE.CF.82)
-        *   [2.1.3 Εύρεση Access point](#.CE.95.CF.8D.CF.81.CE.B5.CF.83.CE.B7_Access_point)
-        *   [2.1.4 Τρόπος λειτουργίας (Operating mode)](#.CE.A4.CF.81.CF.8C.CF.80.CE.BF.CF.82_.CE.BB.CE.B5.CE.B9.CF.84.CE.BF.CF.85.CF.81.CE.B3.CE.AF.CE.B1.CF.82_.28Operating_mode.29)
-        *   [2.1.5 Σύνδεση (Association)](#.CE.A3.CF.8D.CE.BD.CE.B4.CE.B5.CF.83.CE.B7_.28Association.29)
+*   [1 Οδηγός συσκευής](#Οδηγός_συσκευής)
+    *   [1.1 Έλεγχος κατάστασης οδηγού](#Έλεγχος_κατάστασης_οδηγού)
+    *   [1.2 Εγκατάσταση οδηγού/firmware](#Εγκατάσταση_οδηγού/firmware)
+*   [2 Διαχείριση ασύρματης σύνδεσης](#Διαχείριση_ασύρματης_σύνδεσης)
+    *   [2.1 Χειροκίνητη ρύθμιση](#Χειροκίνητη_ρύθμιση)
+        *   [2.1.1 Λήψη ορισμένων χρήσιμων πληροφοριών](#Λήψη_ορισμένων_χρήσιμων_πληροφοριών)
+        *   [2.1.2 Ενεργοποίηση διεπαφής](#Ενεργοποίηση_διεπαφής)
+        *   [2.1.3 Εύρεση Access point](#Εύρεση_Access_point)
+        *   [2.1.4 Τρόπος λειτουργίας (Operating mode)](#Τρόπος_λειτουργίας_(Operating_mode))
+        *   [2.1.5 Σύνδεση (Association)](#Σύνδεση_(Association))
         *   [2.1.6 Getting an IP address](#Getting_an_IP_address)
-        *   [2.1.7 Custom startup scripts/services](#Custom_startup_scripts.2Fservices)
+        *   [2.1.7 Custom startup scripts/services](#Custom_startup_scripts/services)
             *   [2.1.7.1 Manual wireless connection at boot using systemd and dhcpcd](#Manual_wireless_connection_at_boot_using_systemd_and_dhcpcd)
             *   [2.1.7.2 Systemd with wpa_supplicant and static IP](#Systemd_with_wpa_supplicant_and_static_IP)
     *   [2.2 Automatic setup](#Automatic_setup)
@@ -40,8 +40,8 @@ Related articles
         *   [3.5.2 Lowering the txpower](#Lowering_the_txpower)
         *   [3.5.3 Setting rts and fragmentation thresholds](#Setting_rts_and_fragmentation_thresholds)
     *   [3.6 Random disconnections](#Random_disconnections)
-        *   [3.6.1 Cause #1](#Cause_.231)
-        *   [3.6.2 Cause #2](#Cause_.232)
+        *   [3.6.1 Cause #1](#Cause_#1)
+        *   [3.6.2 Cause #2](#Cause_#2)
 *   [4 Troubleshooting drivers and firmware](#Troubleshooting_drivers_and_firmware)
     *   [4.1 Ralink](#Ralink)
         *   [4.1.1 rt2x00](#rt2x00)
@@ -64,11 +64,11 @@ Related articles
         *   [4.4.4 Disabling LED blink](#Disabling_LED_blink)
         *   [4.4.5 Other Notes](#Other_Notes)
     *   [4.5 Broadcom](#Broadcom)
-    *   [4.6 Other drivers/devices](#Other_drivers.2Fdevices)
+    *   [4.6 Other drivers/devices](#Other_drivers/devices)
         *   [4.6.1 Tenda w322u](#Tenda_w322u)
         *   [4.6.2 orinoco](#orinoco)
         *   [4.6.3 prism54](#prism54)
-        *   [4.6.4 ACX100/111](#ACX100.2F111)
+        *   [4.6.4 ACX100/111](#ACX100/111)
         *   [4.6.5 zd1211rw](#zd1211rw)
         *   [4.6.6 hostap_cs](#hostap_cs)
     *   [4.7 ndiswrapper](#ndiswrapper)
@@ -79,7 +79,7 @@ Related articles
 
 Ο προεπιλεγμένος πυρήνας του Arch Linux είναι *αρθρωτός*, που σημαίνει πως πολλοί από τους απαιτούμενους από το υλικό σας οδηγοί βρίσκονται στον σκληρό δίσκο σας μετά την εγκατάσταση και είναι διαθέσιμοι ως [modules](/index.php/Kernel_modules "Kernel modules"). Κατά την εκκίνηση o [udev](/index.php/Udev "Udev") παίρνει έναν κατάλογο του υλικού σας και φορτώνει τα απαραίτητα για την λειτουργία του modules (οδηγοί), τα οποία επιτρέπουν την δημιουργία της *διεπαφής* δικτύου.
 
-Ορισμένες υλοποιήσεις ασύρματης κάρτας απαιτούν και την ύπαρξη υλικολογισμικού (firmware) επιπροσθέτως του οδηγού. Πολλά τέτοια υλικολογισμικά πακέτα παρέχονται από το πακέτο [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) το οποίο εγκαθίσταται από προεπιλογή, αλλά αν πρόκειται περί ιδιοταγούς-κλειστού, δεν παρέχεται και θα πρέπει να εγκατασταθεί ξεχωριστά. Η διαδικασία αυτή περιγράφεται στο [#Installing driver/firmware](#Installing_driver.2Ffirmware).
+Ορισμένες υλοποιήσεις ασύρματης κάρτας απαιτούν και την ύπαρξη υλικολογισμικού (firmware) επιπροσθέτως του οδηγού. Πολλά τέτοια υλικολογισμικά πακέτα παρέχονται από το πακέτο [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) το οποίο εγκαθίσταται από προεπιλογή, αλλά αν πρόκειται περί ιδιοταγούς-κλειστού, δεν παρέχεται και θα πρέπει να εγκατασταθεί ξεχωριστά. Η διαδικασία αυτή περιγράφεται στο [#Installing driver/firmware](#Installing_driver/firmware).
 
 **Σημείωση:**
 

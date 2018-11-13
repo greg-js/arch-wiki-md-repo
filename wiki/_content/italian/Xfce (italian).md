@@ -23,7 +23,7 @@ Xfce è un [ambiente Desktop](/index.php/Desktop_environment_(Italiano) "Desktop
     *   [3.1 Impostazioni di Xfconf](#Impostazioni_di_Xfconf)
         *   [3.1.1 Comandi per il gestore delle configurazioni](#Comandi_per_il_gestore_delle_configurazioni)
     *   [3.2 Menu](#Menu)
-        *   [3.2.1 Sostituire l'applet del menu](#Sostituire_l.27applet_del_menu)
+        *   [3.2.1 Sostituire l'applet del menu](#Sostituire_l'applet_del_menu)
         *   [3.2.2 Come rimuovere le voci dal menu di sistema](#Come_rimuovere_le_voci_dal_menu_di_sistema)
             *   [3.2.2.1 Metodo 1](#Metodo_1)
             *   [3.2.2.2 Metodo 2](#Metodo_2)
@@ -43,13 +43,13 @@ Xfce è un [ambiente Desktop](/index.php/Desktop_environment_(Italiano) "Desktop
         *   [3.4.4 Rimpiazzare il gestore delle finestre nativo](#Rimpiazzare_il_gestore_delle_finestre_nativo)
             *   [3.4.4.1 Riattivazione degli effetti del Compositing](#Riattivazione_degli_effetti_del_Compositing)
     *   [3.5 Sessione](#Sessione)
-        *   [3.5.1 Personalizzare l'avvio delle Applicazioni](#Personalizzare_l.27avvio_delle_Applicazioni)
+        *   [3.5.1 Personalizzare l'avvio delle Applicazioni](#Personalizzare_l'avvio_delle_Applicazioni)
             *   [3.5.1.1 Attraverso il menu delle impostazioni](#Attraverso_il_menu_delle_impostazioni)
             *   [3.5.1.2 Attraverso uno script di avvio](#Attraverso_uno_script_di_avvio)
         *   [3.5.2 Bloccare lo schermo](#Bloccare_lo_schermo)
         *   [3.5.3 Cambiare utente](#Cambiare_utente)
         *   [3.5.4 Modificare le impostazioni dei file XML direttamente](#Modificare_le_impostazioni_dei_file_XML_direttamente)
-    *   [3.6 Migliorare l'aspetto](#Migliorare_l.27aspetto)
+    *   [3.6 Migliorare l'aspetto](#Migliorare_l'aspetto)
         *   [3.6.1 Come aggiungere temi a Xfce](#Come_aggiungere_temi_a_Xfce)
         *   [3.6.2 Integrazione dei temi delle applicazioni](#Integrazione_dei_temi_delle_applicazioni)
         *   [3.6.3 Cursori](#Cursori)
@@ -65,9 +65,9 @@ Xfce è un [ambiente Desktop](/index.php/Desktop_environment_(Italiano) "Desktop
             *   [3.7.3.4 Xfce4-volumed](#Xfce4-volumed)
             *   [3.7.3.5 Volumeicon](#Volumeicon)
             *   [3.7.3.6 Tasti extra della tastiera](#Tasti_extra_della_tastiera)
-        *   [3.7.4 Aggiungere un suono all'avvio/boot](#Aggiungere_un_suono_all.27avvio.2Fboot)
+        *   [3.7.4 Aggiungere un suono all'avvio/boot](#Aggiungere_un_suono_all'avvio/boot)
 *   [4 Trucchi e Consigli](#Trucchi_e_Consigli)
-    *   [4.1 Integrazione xdg-open (Applicazioni preferite)](#Integrazione_xdg-open_.28Applicazioni_preferite.29)
+    *   [4.1 Integrazione xdg-open (Applicazioni preferite)](#Integrazione_xdg-open_(Applicazioni_preferite))
     *   [4.2 Catturare schermate](#Catturare_schermate)
         *   [4.2.1 Catturare lo schermo col tasto stamp](#Catturare_lo_schermo_col_tasto_stamp)
     *   [4.3 Disabilitare le scorciatoie F1 e F11 del terminale](#Disabilitare_le_scorciatoie_F1_e_F11_del_terminale)
@@ -80,10 +80,10 @@ Xfce è un [ambiente Desktop](/index.php/Desktop_environment_(Italiano) "Desktop
     *   [4.6 Monitor multipli](#Monitor_multipli)
     *   [4.7 Cartelle utente XDG](#Cartelle_utente_XDG)
     *   [4.8 SSH Agents](#SSH_Agents)
-    *   [4.9 Funzionalità Bluetooth](#Funzionalit.C3.A0_Bluetooth)
-    *   [4.10 Scorrere una finestra di sfondo , senza azionare il focus su di esso](#Scorrere_una_finestra_di_sfondo_.2C_senza_azionare_il_focus_su_di_esso)
+    *   [4.9 Funzionalità Bluetooth](#Funzionalità_Bluetooth)
+    *   [4.10 Scorrere una finestra di sfondo , senza azionare il focus su di esso](#Scorrere_una_finestra_di_sfondo_,_senza_azionare_il_focus_su_di_esso)
 *   [5 Risoluzione dei problemi](#Risoluzione_dei_problemi)
-    *   [5.1 Operazioni " Non Autorizzato" quando si tenta di montare un dispositivo con un file manager](#Operazioni_.22_Non_Autorizzato.22_quando_si_tenta_di_montare_un_dispositivo_con_un_file_manager)
+    *   [5.1 Operazioni " Non Autorizzato" quando si tenta di montare un dispositivo con un file manager](#Operazioni_"_Non_Autorizzato"_quando_si_tenta_di_montare_un_dispositivo_con_un_file_manager)
     *   [5.2 xfce4-power-manager](#xfce4-power-manager)
     *   [5.3 xfce4 continua a spegnere il monitor](#xfce4_continua_a_spegnere_il_monitor)
     *   [5.4 xfce4-xkb-plugin](#xfce4-xkb-plugin)
@@ -93,11 +93,11 @@ Xfce è un [ambiente Desktop](/index.php/Desktop_environment_(Italiano) "Desktop
     *   [5.8 NVIDIA e xfce4-sensors-plugin](#NVIDIA_e_xfce4-sensors-plugin)
     *   [5.9 Fallimento della sessione](#Fallimento_della_sessione)
     *   [5.10 Le preferenze per le applicazioni preferite non hanno effetto](#Le_preferenze_per_le_applicazioni_preferite_non_hanno_effetto)
-    *   [5.11 Pulsanti di azione/icone mancanti](#Pulsanti_di_azione.2Ficone_mancanti)
-    *   [5.12 Abilitare cedilla ç/Ç al posto di of ć/Ć](#Abilitare_cedilla_.C3.A7.2F.C3.87_al_posto_di_of_.C4.87.2F.C4.86)
-    *   [5.13 Caratteri non ASCII al montaggio di penne USB =](#Caratteri_non_ASCII_al_montaggio_di_penne_USB_.3D)
-    *   [5.14 Video tearing quando il composite Xfwm è abilitato](#Video_tearing_quando_il_composite_Xfwm_.C3.A8_abilitato)
-    *   [5.15 Caratteri sfocati e distorti quando compositing è abilitato (schede Intel)](#Caratteri_sfocati_e_distorti_quando_compositing_.C3.A8_abilitato_.28schede_Intel.29)
+    *   [5.11 Pulsanti di azione/icone mancanti](#Pulsanti_di_azione/icone_mancanti)
+    *   [5.12 Abilitare cedilla ç/Ç al posto di of ć/Ć](#Abilitare_cedilla_ç/Ç_al_posto_di_of_ć/Ć)
+    *   [5.13 Caratteri non ASCII al montaggio di penne USB =](#Caratteri_non_ASCII_al_montaggio_di_penne_USB_=)
+    *   [5.14 Video tearing quando il composite Xfwm è abilitato](#Video_tearing_quando_il_composite_Xfwm_è_abilitato)
+    *   [5.15 Caratteri sfocati e distorti quando compositing è abilitato (schede Intel)](#Caratteri_sfocati_e_distorti_quando_compositing_è_abilitato_(schede_Intel))
     *   [5.16 I temi GTK non funzionano su monitor multipli](#I_temi_GTK_non_funzionano_su_monitor_multipli)
 *   [6 Fonti Esterne](#Fonti_Esterne)
 
@@ -441,7 +441,7 @@ Le applicazioni non hanno sempre un aspetto coerente . Ci sono due possibili rag
 
 Per ottenere un aspetto uniforme per tutte le applicazioni, è consigliabile utilizzare un tema aggiornato GTK+3 come Advaita, che come tema GTK+3 ha il supporto integrato per le applicazioni GKT+2 . Advaita può essere installato dal pacchetto [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard). Le applicazioni basate sul toolkit Qt sono in grado di simulare l'attuale tema GTK+ usando { {ic|qtconfig-qt4}} .
 
-per maggiori informazioni consultare [GTK+#GTK+ 3.x](/index.php/GTK%2B#GTK.2B_3.x "GTK+") per GTK3 e [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications") per Qt.
+per maggiori informazioni consultare [GTK+#GTK+ 3.x](/index.php/GTK%2B#GTK+_3.x "GTK+") per GTK3 e [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications") per Qt.
 
 #### Cursori
 
@@ -993,7 +993,7 @@ $ rm -r ~/.cache/sessions/
 
 ### Le preferenze per le applicazioni preferite non hanno effetto
 
-Se avete impostato le vostre applicazioni preferite con exo-preferred-applications, ma non sembrano essere prese in considerazione, vedere [#Integrazione xdg-open (Applicazioni preferite)](#Integrazione_xdg-open_.28Applicazioni_preferite.29).
+Se avete impostato le vostre applicazioni preferite con exo-preferred-applications, ma non sembrano essere prese in considerazione, vedere [#Integrazione xdg-open (Applicazioni preferite)](#Integrazione_xdg-open_(Applicazioni_preferite)).
 
 ### Pulsanti di azione/icone mancanti
 

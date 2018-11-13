@@ -16,15 +16,15 @@ La mayoría de las interfaces de línea de órdenes están documentadas en las [
 ## Contents
 
 *   [1 Esenciales](#Esenciales)
-    *   [1.1 Previniendo la pérdida de datos](#Previniendo_la_p.C3.A9rdida_de_datos)
+    *   [1.1 Previniendo la pérdida de datos](#Previniendo_la_pérdida_de_datos)
 *   [2 No esenciales](#No_esenciales)
 *   [3 Alternativas](#Alternativas)
     *   [3.1 Alternativas a find](#Alternativas_a_find)
     *   [3.2 Alternativas a diff](#Alternativas_a_diff)
     *   [3.3 Alternativas a grep](#Alternativas_a_grep)
-        *   [3.3.1 Buscadores de código](#Buscadores_de_c.C3.B3digo)
+        *   [3.3.1 Buscadores de código](#Buscadores_de_código)
         *   [3.3.2 Filtros interactivos](#Filtros_interactivos)
-*   [4 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [4 Véase también](#Véase_también)
 
 ## Esenciales
 
@@ -127,7 +127,7 @@ Mientras que [diffutils](https://www.archlinux.org/packages/?name=diffutils) no 
 
 	[Https://github.com/junghans/cwdiff](Https://github.com/junghans/cwdiff) || [cwdiff](https://aur.archlinux.org/packages/cwdiff/), [cwdiff-git](https://aur.archlinux.org/packages/cwdiff-git/)
 
-Véase también [List of applications/Utilities#Comparison, diff, merge](/index.php/List_of_applications/Utilities#Comparison.2C_diff.2C_merge "List of applications/Utilities").
+Véase también [List of applications/Utilities#Comparison, diff, merge](/index.php/List_of_applications/Utilities#Comparison,_diff,_merge "List of applications/Utilities").
 
 ### Alternativas a grep
 

@@ -16,10 +16,10 @@ De la página web del [proyecto](http://freedesktop.org/wiki/Software/systemd):
 
 ## Contents
 
-*   [1 Uso básico de systemctl](#Uso_b.C3.A1sico_de_systemctl)
+*   [1 Uso básico de systemctl](#Uso_básico_de_systemctl)
     *   [1.1 Analizar el estado del sistema](#Analizar_el_estado_del_sistema)
     *   [1.2 Usar las unidades](#Usar_las_unidades)
-    *   [1.3 Gestionar la energía](#Gestionar_la_energ.C3.ADa)
+    *   [1.3 Gestionar la energía](#Gestionar_la_energía)
 *   [2 Escribir archivos .service personalizados](#Escribir_archivos_.service_personalizados)
     *   [2.1 Manejar las dependencias](#Manejar_las_dependencias)
     *   [2.2 Type](#Type)
@@ -35,19 +35,19 @@ De la página web del [proyecto](http://freedesktop.org/wiki/Software/systemd):
 *   [5 Temporizadores](#Temporizadores)
 *   [6 Journal](#Journal)
     *   [6.1 Filtrar la salida](#Filtrar_la_salida)
-    *   [6.2 Límite del tamaño de journal](#L.C3.ADmite_del_tama.C3.B1o_de_journal)
+    *   [6.2 Límite del tamaño de journal](#Límite_del_tamaño_de_journal)
     *   [6.3 Journald coexistiendo con syslog](#Journald_coexistiendo_con_syslog)
-    *   [6.4 Reenviar journald a /dev/tty12](#Reenviar_journald_a_.2Fdev.2Ftty12)
-*   [7 Solución de problemas](#Soluci.C3.B3n_de_problemas)
+    *   [6.4 Reenviar journald a /dev/tty12](#Reenviar_journald_a_/dev/tty12)
+*   [7 Solución de problemas](#Solución_de_problemas)
     *   [7.1 Investigar errores de systemd](#Investigar_errores_de_systemd)
     *   [7.2 Diagnosticar problemas de arranque](#Diagnosticar_problemas_de_arranque)
-    *   [7.3 Apagar/reiniciar se hace terriblemente largo](#Apagar.2Freiniciar_se_hace_terriblemente_largo)
-    *   [7.4 Los procesos de corta duración parecen no registrar ninguna salida](#Los_procesos_de_corta_duraci.C3.B3n_parecen_no_registrar_ninguna_salida)
+    *   [7.3 Apagar/reiniciar se hace terriblemente largo](#Apagar/reiniciar_se_hace_terriblemente_largo)
+    *   [7.4 Los procesos de corta duración parecen no registrar ninguna salida](#Los_procesos_de_corta_duración_parecen_no_registrar_ninguna_salida)
     *   [7.5 Desactivar el volcado de sucesos de journal respecto de las aplicaciones](#Desactivar_el_volcado_de_sucesos_de_journal_respecto_de_las_aplicaciones)
     *   [7.6 Mensaje de error al reiniciar o apagar](#Mensaje_de_error_al_reiniciar_o_apagar)
-        *   [7.6.1 cgroup : option or name mismatch, new: 0x0 "", old: 0x4 "systemd"](#cgroup_:_option_or_name_mismatch.2C_new:_0x0_.22.22.2C_old:_0x4_.22systemd.22)
-        *   [7.6.2 watchdog watchdog0: watchdog did not stop!](#watchdog_watchdog0:_watchdog_did_not_stop.21)
-*   [8 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+        *   [7.6.1 cgroup : option or name mismatch, new: 0x0 "", old: 0x4 "systemd"](#cgroup_:_option_or_name_mismatch,_new:_0x0_"",_old:_0x4_"systemd")
+        *   [7.6.2 watchdog watchdog0: watchdog did not stop!](#watchdog_watchdog0:_watchdog_did_not_stop!)
+*   [8 Véase también](#Véase_también)
 
 ## Uso básico de systemctl
 
@@ -321,7 +321,7 @@ Desde la versión 38, *systemd* tiene un sistema de registro (*«log»*) propio 
 
 Por defecto, (cuando `Storage=` está definido como `auto` en `/etc/systemd/journald.conf`), journal escribe en `/var/log/journal/`. Si el directorio `/var/log/journal/` no existe (por ejemplo, si lo ha eliminado usted o algún programa), systemd **no** lo crea de forma automática, sino que escribe los registros en `/run/systemd/journal`. Esto significa que los registros se perderán al reiniciar.
 
-**Sugerencia:** Si `/var/log/journal/` reside en un sistema de archivos [btrfs](/index.php/Btrfs "Btrfs") debería considerar la opción de desactivar [Copy-on-Write](/index.php/Btrfs#Copy-on-Write_.28CoW.29 "Btrfs") para el directorio:
+**Sugerencia:** Si `/var/log/journal/` reside en un sistema de archivos [btrfs](/index.php/Btrfs "Btrfs") debería considerar la opción de desactivar [Copy-on-Write](/index.php/Btrfs#Copy-on-Write_(CoW) "Btrfs") para el directorio:
 ```
 # chattr +C /var/log/journal
 

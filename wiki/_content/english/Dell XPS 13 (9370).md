@@ -36,7 +36,7 @@ The installation process for Arch on the XPS 13 does not differ from any other P
 *   [8 Power Management](#Power_Management)
 *   [9 Firmware Updates](#Firmware_Updates)
 *   [10 Thermal Throttling](#Thermal_Throttling)
-*   [11 Thermal Modes / Fan profiles](#Thermal_Modes_.2F_Fan_profiles)
+*   [11 Thermal Modes / Fan profiles](#Thermal_Modes_/_Fan_profiles)
 *   [12 Power Saving](#Power_Saving)
 *   [13 Touchpad](#Touchpad)
     *   [13.1 Cursor Jump](#Cursor_Jump)

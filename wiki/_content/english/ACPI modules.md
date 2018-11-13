@@ -11,7 +11,7 @@ ACPI modules are kernel modules for different ACPI parts. They enable special AC
 
 ## Contents
 
-*   [1 Which modules are available?](#Which_modules_are_available.3F)
+*   [1 Which modules are available?](#Which_modules_are_available?)
 *   [2 How to select the correct ones](#How_to_select_the_correct_ones)
 *   [3 Getting information](#Getting_information)
 *   [4 Troubleshooting](#Troubleshooting)
@@ -91,7 +91,7 @@ $ dmesg | grep acpi
 
 ```
 
-Add the working ones to configuration files in `/etc/modules-load.d`. `/etc/modules-load.d` is described in [Kernel modules#Automatic module handling](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules").
+Add the working ones to configuration files in `/etc/modules-load.d`. `/etc/modules-load.d` is described in [Kernel modules#Automatic module loading with systemd](/index.php/Kernel_modules#Automatic_module_loading_with_systemd "Kernel modules").
 
 ## Getting information
 

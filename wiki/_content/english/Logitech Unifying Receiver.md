@@ -10,11 +10,11 @@ The [Logitech Unifying Receiver](http://www.logitech.com/349/6072) is a wireless
     *   [2.2 Solaar](#Solaar)
     *   [2.3 pairingtool](#pairingtool)
 *   [3 Known Problems](#Known_Problems)
-    *   [3.1 Wrong device (pairing tool only)](#Wrong_device_.28pairing_tool_only.29)
+    *   [3.1 Wrong device (pairing tool only)](#Wrong_device_(pairing_tool_only))
     *   [3.2 Keyboard layout via xorg.conf](#Keyboard_layout_via_xorg.conf)
     *   [3.3 Logitech touchpad keyboard K400r with unifying receiver M325](#Logitech_touchpad_keyboard_K400r_with_unifying_receiver_M325)
-    *   [3.4 Solaar 'Permission denied'](#Solaar_.27Permission_denied.27)
-    *   [3.5 Wireless Keyboard doesn't work while booting (can't enter luks passphrase)](#Wireless_Keyboard_doesn.27t_work_while_booting_.28can.27t_enter_luks_passphrase.29)
+    *   [3.4 Solaar 'Permission denied'](#Solaar_'Permission_denied')
+    *   [3.5 Wireless Keyboard doesn't work while booting (can't enter luks passphrase)](#Wireless_Keyboard_doesn't_work_while_booting_(can't_enter_luks_passphrase))
 
 ## Installation
 

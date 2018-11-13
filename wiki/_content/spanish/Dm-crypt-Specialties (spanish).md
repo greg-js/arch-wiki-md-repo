@@ -9,41 +9,41 @@ Este artículo es una traducción de [Dm-crypt/Specialties](/index.php/Dm-crypt/
 
 ## Contents
 
-*   [1 Asegurar la partición de arranque no cifrada](#Asegurar_la_partici.C3.B3n_de_arranque_no_cifrada)
-    *   [1.1 Arrancar desde un dispositivo extraíble](#Arrancar_desde_un_dispositivo_extra.C3.ADble)
+*   [1 Asegurar la partición de arranque no cifrada](#Asegurar_la_partición_de_arranque_no_cifrada)
+    *   [1.1 Arrancar desde un dispositivo extraíble](#Arrancar_desde_un_dispositivo_extraíble)
     *   [1.2 chkboot](#chkboot)
     *   [1.3 mkinitcpio-chkcryptoboot](#mkinitcpio-chkcryptoboot)
-        *   [1.3.1 Instalación](#Instalaci.C3.B3n)
-        *   [1.3.2 Descripción técnica](#Descripci.C3.B3n_t.C3.A9cnica)
+        *   [1.3.1 Instalación](#Instalación)
+        *   [1.3.2 Descripción técnica](#Descripción_técnica)
     *   [1.4 AIDE](#AIDE)
     *   [1.5 STARK](#STARK)
-*   [2 Utilizar archivos de claves cifrados con GPG, LUKS o OpenSSL](#Utilizar_archivos_de_claves_cifrados_con_GPG.2C_LUKS_o_OpenSSL)
-*   [3 Desbloqueo remoto de la partición (u otro volumen) raíz](#Desbloqueo_remoto_de_la_partici.C3.B3n_.28u_otro_volumen.29_ra.C3.ADz)
-    *   [3.1 Desbloqueo remoto (hooks: systemd, systemd-tool)](#Desbloqueo_remoto_.28hooks:_systemd.2C_systemd-tool.29)
-    *   [3.2 Desbloqueo remoto (hooks: netconf, dropbear, tinyssh, ppp)](#Desbloqueo_remoto_.28hooks:_netconf.2C_dropbear.2C_tinyssh.2C_ppp.29)
-    *   [3.3 Desbloqueo remoto a través de wifi (hooks: construya el suyo propio)](#Desbloqueo_remoto_a_trav.C3.A9s_de_wifi_.28hooks:_construya_el_suyo_propio.29)
-*   [4 Soporte Discard/TRIM para unidades de estado sólido (SSD)](#Soporte_Discard.2FTRIM_para_unidades_de_estado_s.C3.B3lido_.28SSD.29)
+*   [2 Utilizar archivos de claves cifrados con GPG, LUKS o OpenSSL](#Utilizar_archivos_de_claves_cifrados_con_GPG,_LUKS_o_OpenSSL)
+*   [3 Desbloqueo remoto de la partición (u otro volumen) raíz](#Desbloqueo_remoto_de_la_partición_(u_otro_volumen)_raíz)
+    *   [3.1 Desbloqueo remoto (hooks: systemd, systemd-tool)](#Desbloqueo_remoto_(hooks:_systemd,_systemd-tool))
+    *   [3.2 Desbloqueo remoto (hooks: netconf, dropbear, tinyssh, ppp)](#Desbloqueo_remoto_(hooks:_netconf,_dropbear,_tinyssh,_ppp))
+    *   [3.3 Desbloqueo remoto a través de wifi (hooks: construya el suyo propio)](#Desbloqueo_remoto_a_través_de_wifi_(hooks:_construya_el_suyo_propio))
+*   [4 Soporte Discard/TRIM para unidades de estado sólido (SSD)](#Soporte_Discard/TRIM_para_unidades_de_estado_sólido_(SSD))
 *   [5 El hook encrypt y varios discos](#El_hook_encrypt_y_varios_discos)
     *   [5.1 Expandir LVM en varios discos](#Expandir_LVM_en_varios_discos)
-        *   [5.1.1 Añadir una nueva unidad](#A.C3.B1adir_una_nueva_unidad)
-        *   [5.1.2 Extender el volumen lógico](#Extender_el_volumen_l.C3.B3gico)
+        *   [5.1.1 Añadir una nueva unidad](#Añadir_una_nueva_unidad)
+        *   [5.1.2 Extender el volumen lógico](#Extender_el_volumen_lógico)
     *   [5.2 Modificar el hook encrypt para varias particiones](#Modificar_el_hook_encrypt_para_varias_particiones)
-        *   [5.2.1 Sistema de archivos raíz que abarca múltiples particiones](#Sistema_de_archivos_ra.C3.ADz_que_abarca_m.C3.BAltiples_particiones)
-        *   [5.2.2 Múltiples particiones no root](#M.C3.BAltiples_particiones_no_root)
+        *   [5.2.1 Sistema de archivos raíz que abarca múltiples particiones](#Sistema_de_archivos_raíz_que_abarca_múltiples_particiones)
+        *   [5.2.2 Múltiples particiones no root](#Múltiples_particiones_no_root)
 *   [6 Sistema cifrado usando un encabezado LUKS separado](#Sistema_cifrado_usando_un_encabezado_LUKS_separado)
     *   [6.1 Utilizar el hook systemd](#Utilizar_el_hook_systemd)
     *   [6.2 Modificar el hook encrypt](#Modificar_el_hook_encrypt)
-*   [7 Cifrado/arranque y un encabezado LUKS separado en USB](#Cifrado.2Farranque_y_un_encabezado_LUKS_separado_en_USB)
+*   [7 Cifrado/arranque y un encabezado LUKS separado en USB](#Cifrado/arranque_y_un_encabezado_LUKS_separado_en_USB)
     *   [7.1 Preparar las particiones de los discos](#Preparar_las_particiones_de_los_discos)
         *   [7.1.1 Preparar la llave USB](#Preparar_la_llave_USB)
         *   [7.1.2 Preparar la unidad principal](#Preparar_la_unidad_principal)
-    *   [7.2 Procedimiento de instalación y personalización del hook encrypt](#Procedimiento_de_instalaci.C3.B3n_y_personalizaci.C3.B3n_del_hook_encrypt)
+    *   [7.2 Procedimiento de instalación y personalización del hook encrypt](#Procedimiento_de_instalación_y_personalización_del_hook_encrypt)
         *   [7.2.1 Cargador de arranque](#Cargador_de_arranque)
     *   [7.3 Cambiar el archivo de claves LUKS](#Cambiar_el_archivo_de_claves_LUKS)
 
 ## Asegurar la partición de arranque no cifrada
 
-La partición `/boot` y el [Master Boot Record](/index.php/Partitioning_(Espa%C3%B1ol)#Master_Boot_Record "Partitioning (Español)") son ​​las dos áreas del disco que no están cifradas, incluso en una configuración de [raíz cifrada](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol) "Dm-crypt/Encrypting an entire system (Español)"). Por lo general, no se pueden cifrar porque el [gestor de arranque](/index.php/Boot_loader_(Espa%C3%B1ol) "Boot loader (Español)") y la BIOS (respectivamente) no pueden desbloquear un contenedor dm-crypt para continuar el proceso de arranque. Una excepción es [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)"), que tiene una función para desbloquear `/boot` cifrado —véase [dm-crypt/Encrypting an entire system (Español)#Cifrar partición de arranque (GRUB)](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol)#Cifrar_partici.C3.B3n_de_arranque_.28GRUB.29 "Dm-crypt/Encrypting an entire system (Español)")—.
+La partición `/boot` y el [Master Boot Record](/index.php/Partitioning_(Espa%C3%B1ol)#Master_Boot_Record "Partitioning (Español)") son ​​las dos áreas del disco que no están cifradas, incluso en una configuración de [raíz cifrada](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol) "Dm-crypt/Encrypting an entire system (Español)"). Por lo general, no se pueden cifrar porque el [gestor de arranque](/index.php/Boot_loader_(Espa%C3%B1ol) "Boot loader (Español)") y la BIOS (respectivamente) no pueden desbloquear un contenedor dm-crypt para continuar el proceso de arranque. Una excepción es [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)"), que tiene una función para desbloquear `/boot` cifrado —véase [dm-crypt/Encrypting an entire system (Español)#Cifrar partición de arranque (GRUB)](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol)#Cifrar_partición_de_arranque_(GRUB) "Dm-crypt/Encrypting an entire system (Español)")—.
 
 Esta sección describe los pasos que se pueden tomar para hacer que el proceso de arranque sea más seguro.
 
@@ -106,7 +106,7 @@ Reinicie y pruebe la nueva configuración. Recuerde configurar en la BIOS o en [
 
 Remitiéndonos al artículo de ct-magazine (Número 3/12, página 146, 01.16.2012, [[2]](http://www.heise.de/ct/inhalt/2012/03/6/)), el siguiente script comprueba los archivos presentes en `/boot` para cambios de [hash](https://en.wikipedia.org/wiki/es:Funci%C3%B3n_hash "wikipedia:es:Función hash") [SHA-1](https://en.wikipedia.org/wiki/es:Secure_Hash_Algorithm#SHA-1 "wikipedia:es:Secure Hash Algorithm"), [inodo](https://en.wikipedia.org/wiki/es:Inodo "wikipedia:es:Inodo") y bloques ocupados en el disco duro. También verifica el [Master Boot Record](/index.php/Partitioning_(Espa%C3%B1ol)#Master_Boot_Record "Partitioning (Español)"). El script no puede evitar cierto tipo de ataques, pero otros muchos los hace más difíciles. Ninguna configuración del script en sí misma se almacena en `/boot` que no está cifrado. Con un sistema cifrado bloqueado/apagado, esto hace que sea más difícil para algunos atacantes porque no es evidente que se realice una comparación de suma de comprobación automática de la partición en el arranque. Sin embargo, un atacante que anticipe estas precauciones puede manipular el firmware para ejecutar su propio código en la parte superior del kernel e interceptar el acceso al sistema de archivos, por ejemplo, a `boot`, y este le presente los archivos no protegidos. En general, ninguna medida de seguridad por debajo del nivel del firmware puede garantizar la fiabilidad y la evidencia de falsificación.
 
-El script con instrucciones de instalación está [disponible](ftp://ftp.heise.de/pub/ct/listings/1203-146.zip) (Author: Juergen Schmidt, ju at heisec.de; License: GPLv2), También hay un paquete [chkboot](https://aur.archlinux.org/packages/chkboot/) para [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)").
+El script con instrucciones de instalación está [disponible](ftp://ftp.heise.de/pub/ct/listings/1203-146.zip) (Author: Juergen Schmidt, ju at heisec.de; License: GPLv2), También hay un paquete [chkboot](https://aur.archlinux.org/packages/chkboot/) para [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)").
 
 Después de la instalación, agregue un archivo de servicio (el paquete incluye uno basado en lo siguiente) y [actívelo](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)"):
 
@@ -152,13 +152,13 @@ echo "Pacman update [3] All done, let us roll on ..."
 
 **Advertencia:** este hook no cifra el código [GRUB](/index.php/GRUB "GRUB"), el código (MBR) o el apéndice EFI, ni protege contra situaciones en las que un atacante puede modificar el comportamiento del cargador de arranque para comprometer el kernel y/o initramfs en tiempo de ejecución.
 
-[mkinitcpio-chkcryptoboot](https://aur.archlinux.org/packages/mkinitcpio-chkcryptoboot/) es un hook de [mkinitcpio (Español)](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") que realiza verificaciones de integridad durante el primer espacio de usuario y aconseja al usuario que no ingrese su contraseña para desbloquear la partición raíz si el sistema parece estar comprometido. La seguridad se logra a través de una [partición de arranque cifrada](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol)#Cifrar_partici.C3.B3n_de_arranque_.28GRUB.29 "Dm-crypt/Encrypting an entire system (Español)"), que se desbloquea utilizando el módulo `cryptodisk.mod` para [GRUB](/index.php/GRUB_(Espa%C3%B1ol)#Partici.C3.B3n_de_arranque "GRUB (Español)"), y una partición del sistema de archivos raíz, que se cifra con una contraseña diferente de la anterior. De esta manera, [Initramfs (Español)](/index.php/Initramfs_(Espa%C3%B1ol) "Initramfs (Español)") y el [kernel (Español)](/index.php/Kernel_(Espa%C3%B1ol) "Kernel (Español)") están protegidos contra la manipulación fuera de línea, y la partición raíz puede permanecer segura incluso si la contraseña de la partición `/boot` se ingresa en un equipo comprometido (siempre que el hook chkcryptoboot detecte que el equipo se ha visto comprometido, y el mismo no se ha visto comprometido en tiempo de ejecución).
+[mkinitcpio-chkcryptoboot](https://aur.archlinux.org/packages/mkinitcpio-chkcryptoboot/) es un hook de [mkinitcpio (Español)](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") que realiza verificaciones de integridad durante el primer espacio de usuario y aconseja al usuario que no ingrese su contraseña para desbloquear la partición raíz si el sistema parece estar comprometido. La seguridad se logra a través de una [partición de arranque cifrada](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol)#Cifrar_partición_de_arranque_(GRUB) "Dm-crypt/Encrypting an entire system (Español)"), que se desbloquea utilizando el módulo `cryptodisk.mod` para [GRUB](/index.php/GRUB_(Espa%C3%B1ol)#Partición_de_arranque "GRUB (Español)"), y una partición del sistema de archivos raíz, que se cifra con una contraseña diferente de la anterior. De esta manera, [Initramfs (Español)](/index.php/Initramfs_(Espa%C3%B1ol) "Initramfs (Español)") y el [kernel (Español)](/index.php/Kernel_(Espa%C3%B1ol) "Kernel (Español)") están protegidos contra la manipulación fuera de línea, y la partición raíz puede permanecer segura incluso si la contraseña de la partición `/boot` se ingresa en un equipo comprometido (siempre que el hook chkcryptoboot detecte que el equipo se ha visto comprometido, y el mismo no se ha visto comprometido en tiempo de ejecución).
 
 Este hook requiere la versión >=2.00 del paquete [grub](https://www.archlinux.org/packages/?name=grub) para que funcione, y una partición dedicada, `/boot` cifrada con LUKS con su propia contraseña para que sea seguro.
 
 #### Instalación
 
-[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") [mkinitcpio-chkcryptoboot](https://aur.archlinux.org/packages/mkinitcpio-chkcryptoboot/) y edite `/etc/default/chkcryptoboot.conf`. Si desea disponer de la capacidad de detectar si su partición de arranque se baipaseó (o puenteó), modifique las variables `CMDLINE_NAME` y `CMDLINE_VALUE` con valores que solo usted conozca. Puede seguir el consejo de usar dos funciones de hash como se sugiere, inmediatamente después de la instalación. Además, asegúrese de hacer los cambios apropiados en la [línea de órdenes del kernel](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)") en `/etc/default/grub`. Edite la línea `HOOKS=` en `/etc/mkinitcpio.conf`, e inserte el hook `chkcryptoboot` **antes** de `encrypt`. Cuando haya terminado, [regenere initramfs](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Creaci.C3.B3n_de_la_imagen_y_activaci.C3.B3n "Mkinitcpio (Español)").
+[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") [mkinitcpio-chkcryptoboot](https://aur.archlinux.org/packages/mkinitcpio-chkcryptoboot/) y edite `/etc/default/chkcryptoboot.conf`. Si desea disponer de la capacidad de detectar si su partición de arranque se baipaseó (o puenteó), modifique las variables `CMDLINE_NAME` y `CMDLINE_VALUE` con valores que solo usted conozca. Puede seguir el consejo de usar dos funciones de hash como se sugiere, inmediatamente después de la instalación. Además, asegúrese de hacer los cambios apropiados en la [línea de órdenes del kernel](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)") en `/etc/default/grub`. Edite la línea `HOOKS=` en `/etc/mkinitcpio.conf`, e inserte el hook `chkcryptoboot` **antes** de `encrypt`. Cuando haya terminado, [regenere initramfs](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Creación_de_la_imagen_y_activación "Mkinitcpio (Español)").
 
 #### Descripción técnica
 
@@ -199,7 +199,7 @@ Las siguientes publicaciones del foro brindan instrucciones para usar dos factor
 *   GnuPG: [Post regarding GPG encrypted keys](https://bbs.archlinux.org/viewtopic.php?pid=943338#p943338) Esta publicación tiene las instrucciones genéricas.
 *   OpenSSL: [Post regarding OpenSSL encrypted keys](https://bbs.archlinux.org/viewtopic.php?pid=947805#p947805) Esta publicación solo tiene los hooks `ssldec`.
 *   OpenSSL: [Post regarding OpenSSL salted bf-cbc encrypted keys](https://bbs.archlinux.org/viewtopic.php?id=155393) Esta publicación tiene los hooks `bfkf` de initcpio, install y el script generador del archivo de claves cifrado.
-*   LUKS: [Post regarding LUKS encrypted keys](https://bbs.archlinux.org/viewtopic.php?pid=1502651#p1502651) con un hook `lukskey` de initcpio. O [#Cifrado/arranque y un encabezado LUKS separado en USB](#Cifrado.2Farranque_y_un_encabezado_LUKS_separado_en_USB) a continuación con un hook encrypt personalizado para initcpio.
+*   LUKS: [Post regarding LUKS encrypted keys](https://bbs.archlinux.org/viewtopic.php?pid=1502651#p1502651) con un hook `lukskey` de initcpio. O [#Cifrado/arranque y un encabezado LUKS separado en USB](#Cifrado/arranque_y_un_encabezado_LUKS_separado_en_USB) a continuación con un hook encrypt personalizado para initcpio.
 
 Tenga en cuenta que:
 
@@ -215,7 +215,7 @@ Si desea poder reiniciar un sistema totalmente cifrado con LUKS de forma remota,
 **Nota:**
 
 *   Tenga en cuenta que debe usar los nombres de dispositivos del kernel para la interfaz de red (por ejemplo, `eth0`) y no uno de [udev (Español)](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)") (por ejemplo, `enp1s0`), ya que no funcionarán.
-*   Podría ser necesario agregar [el módulo de su tarjeta de red](/index.php/Network_configuration_(Espa%C3%B1ol)#Controlador_del_dispositivo "Network configuration (Español)") a la matriz [MODULES](/index.php/Mkinitcpio_(Espa%C3%B1ol)#M.C3.93DULOS "Mkinitcpio (Español)").
+*   Podría ser necesario agregar [el módulo de su tarjeta de red](/index.php/Network_configuration_(Espa%C3%B1ol)#Controlador_del_dispositivo "Network configuration (Español)") a la matriz [MODULES](/index.php/Mkinitcpio_(Espa%C3%B1ol)#MÓDULOS "Mkinitcpio (Español)").
 
 ### Desbloqueo remoto (hooks: systemd, systemd-tool)
 
@@ -253,15 +253,15 @@ Otra combinación de paquetes que proporciona inicios de sesión remotos para in
     **Nota:** `tinyssh` solo admite los tipos de claves [Ed25519](/index.php/SSH_keys#Ed25519 "SSH keys") y [ECDSA](/index.php/SSH_keys#ECDSA "SSH keys"). Si elige usar [mkinitcpio-tinyssh](https://aur.archlinux.org/packages/mkinitcpio-tinyssh/), necesitará crear/usar una de estas.
 
 2.  Inserte su clave pública SSH (es decir, la que normalmente coloca en los hosts para poder ingresar sin contraseña, o la que acaba de crear y que termina en *.pub* ) en el archivo `/etc/dropbear/root_key` o `/etc/tinyssh/root_key` del equipo remoto.
-    **Sugerencia:** este método se puede usar más adelante para agregar otras claves públicas SSH según sea necesario; en el caso de que simplemente esté copiando el contenido el archivo `~/.ssh/authorized_keys` remoto, asegúrese de verificar que solo contenga las claves que desea utilizar para desbloquear la máquina remota. Si agrega claves adicionales, regenere initrd también usando `mkinitcpio`. Vea también [Secure Shell (Español)#Protección](/index.php/Secure_Shell_(Espa%C3%B1ol)#Protecci.C3.B3n "Secure Shell (Español)").
+    **Sugerencia:** este método se puede usar más adelante para agregar otras claves públicas SSH según sea necesario; en el caso de que simplemente esté copiando el contenido el archivo `~/.ssh/authorized_keys` remoto, asegúrese de verificar que solo contenga las claves que desea utilizar para desbloquear la máquina remota. Si agrega claves adicionales, regenere initrd también usando `mkinitcpio`. Vea también [Secure Shell (Español)#Protección](/index.php/Secure_Shell_(Espa%C3%B1ol)#Protección "Secure Shell (Español)").
 
-3.  Agregue los tres [hooks](/index.php/Mkinitcpio_(Espa%C3%B1ol)#HOOKS "Mkinitcpio (Español)"),`<netconf y/o ppp> <dropbear o tinyssh> encryptssh` antes de `filesystems` dentro de la matriz «HOOKS» en `/etc/mkinitcpio.conf` (el hook `encryptssh` reemplaza al hook `encrypt`). Después [regenere initramfs](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Creaci.C3.B3n_de_la_imagen_y_activaci.C3.B3n "Mkinitcpio (Español)").
+3.  Agregue los tres [hooks](/index.php/Mkinitcpio_(Espa%C3%B1ol)#HOOKS "Mkinitcpio (Español)"),`<netconf y/o ppp> <dropbear o tinyssh> encryptssh` antes de `filesystems` dentro de la matriz «HOOKS» en `/etc/mkinitcpio.conf` (el hook `encryptssh` reemplaza al hook `encrypt`). Después [regenere initramfs](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Creación_de_la_imagen_y_activación "Mkinitcpio (Español)").
     **Nota:** El hook `net` proporcionado por [mkinitcpio-nfs-utils](https://www.archlinux.org/packages/?name=mkinitcpio-nfs-utils) **no** es necesario.
 
 4.  Configure el [parámetro](/index.php/Dm-crypt/System_configuration_(Espa%C3%B1ol)#Cargador_de_arranque "Dm-crypt/System configuration (Español)") `cryptdevice=` requerido y agregue el [parámetro del kernel](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)") `ip=` a la configuración de su gestor de arranque con los argumentos apropiados. Por ejemplo, si el servidor DHCP no atribuye una IP estática a su sistema remoto, lo que dificultaría el acceso con SSH a través de reinicios, puede indicar explícitamente la IP que desea usar: `ip=192.168.1.1:::::eth0:none` Alternativamente, también puede especificar la máscara de subred y la puerta de enlace requeridas por la red: `ip=192.168.1.1::192.168.1.254:255.255.255.0::eth0:none` 
     **Nota:** a partir de la versión 0.0.4 de [mkinitcpio-netconf](https://aur.archlinux.org/packages/mkinitcpio-netconf/), puede anidar múltiples parámetros `ip=` con el fin de configurar múltiples interfaces. No puede mezclarlo con `ip=dhcp` (`ip=:::::eth0:dhcp`) solo. Se debe especificar una interfaz.
      `ip=ip=192.168.1.1:::::eth0:none:ip=172.16.1.1:::::eth1:none` Para una descripción detallada eche un vistazo a [la sección de mkinitcpio](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Usar_la_red "Mkinitcpio (Español)"). Cuando termine, actualice la configuración de su [gestor de arranque](/index.php/Arch_boot_process_(Espa%C3%B1ol)#Gestor_de_arranque "Arch boot process (Español)").
-5.  Finalmente, reinicie el sistema remoto e intente ejecutar [ssh para él](/index.php/Secure_Shell_(Espa%C3%B1ol)#Cliente "Secure Shell (Español)"), **indicando explícitamente el nombre de usuario «root»** (incluso si la cuenta de root está desactivada en la máquina, ya que este usuario root se utiliza solo en initrd con el propósito de desbloquear el sistema remoto). Si está utilizando el paquete [mkinitcpio-dropbear](https://aur.archlinux.org/packages/mkinitcpio-dropbear/) y también tiene el paquete [openssh](https://www.archlinux.org/packages/?name=openssh) instalado, lo más probable es que no reciba ninguna advertencia antes de iniciar sesión, ya que convierte y usa el mismo juego de claves openssh del host (excepto las claves Ed25519, ya que dropbear no las admite). En caso de que esté utilizando [mkinitcpio-tinyssh](https://aur.archlinux.org/packages/mkinitcpio-tinyssh/), tiene la opción de instalar [tinyssh-convert](https://aur.archlinux.org/packages/tinyssh-convert/) o [tinyssh-convert-git](https://aur.archlinux.org/packages/tinyssh-convert-git/) para que pueda usar las mismas claves que su instalación [openssh](https://www.archlinux.org/packages/?name=openssh) (actualmente solo son claves Ed25519). En cualquier caso, debería haber ejecutado [el demonio ssh](/index.php/Secure_Shell_(Espa%C3%B1ol)#Gesti.C3.B3n_del_Demonio "Secure Shell (Español)") al menos una vez, utilizando las unidades systemd suministradas, para que las claves se puedan generar primero. Después de reiniciar la máquina, se le solicitará que introduzca la contraseña para desbloquear el dispositivo raíz. El sistema completará su proceso de arranque y luego puede iniciar sesión en él [como lo haría normalmente](/index.php/Secure_Shell_(Espa%C3%B1ol)#Cliente "Secure Shell (Español)") (con el usuario remoto que elija).
+5.  Finalmente, reinicie el sistema remoto e intente ejecutar [ssh para él](/index.php/Secure_Shell_(Espa%C3%B1ol)#Cliente "Secure Shell (Español)"), **indicando explícitamente el nombre de usuario «root»** (incluso si la cuenta de root está desactivada en la máquina, ya que este usuario root se utiliza solo en initrd con el propósito de desbloquear el sistema remoto). Si está utilizando el paquete [mkinitcpio-dropbear](https://aur.archlinux.org/packages/mkinitcpio-dropbear/) y también tiene el paquete [openssh](https://www.archlinux.org/packages/?name=openssh) instalado, lo más probable es que no reciba ninguna advertencia antes de iniciar sesión, ya que convierte y usa el mismo juego de claves openssh del host (excepto las claves Ed25519, ya que dropbear no las admite). En caso de que esté utilizando [mkinitcpio-tinyssh](https://aur.archlinux.org/packages/mkinitcpio-tinyssh/), tiene la opción de instalar [tinyssh-convert](https://aur.archlinux.org/packages/tinyssh-convert/) o [tinyssh-convert-git](https://aur.archlinux.org/packages/tinyssh-convert-git/) para que pueda usar las mismas claves que su instalación [openssh](https://www.archlinux.org/packages/?name=openssh) (actualmente solo son claves Ed25519). En cualquier caso, debería haber ejecutado [el demonio ssh](/index.php/Secure_Shell_(Espa%C3%B1ol)#Gestión_del_Demonio "Secure Shell (Español)") al menos una vez, utilizando las unidades systemd suministradas, para que las claves se puedan generar primero. Después de reiniciar la máquina, se le solicitará que introduzca la contraseña para desbloquear el dispositivo raíz. El sistema completará su proceso de arranque y luego puede iniciar sesión en él [como lo haría normalmente](/index.php/Secure_Shell_(Espa%C3%B1ol)#Cliente "Secure Shell (Español)") (con el usuario remoto que elija).
 
 **Sugerencia:** si simplemente desea una buena solución para montar otras particiones cifradas (como `/home`) de forma remota, puede consultar [este hilo del foro](https://bbs.archlinux.org/viewtopic.php?pid=880484).
 
@@ -332,7 +332,7 @@ El siguiente ejemplo muestra una configuración utilizando un adaptador wifi USB
 
 4.  Agregue `ip=:::::wlan0:dhcp` a los [parámetros del kernel](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)"). Elimine `ip=:::::eth0:dhcp` para que no entre en conflicto.
 5.  Opcionalmente, cree una entrada de arranque adicional con el parámetro del kernel `ip=:::::eth0:dhcp`.
-6.  [Regenere initramfs](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Creaci.C3.B3n_de_la_imagen_y_activaci.C3.B3n "Mkinitcpio (Español)").
+6.  [Regenere initramfs](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Creación_de_la_imagen_y_activación "Mkinitcpio (Español)").
 7.  Actualice la configuración de su [cargador de arranque](/index.php/Arch_boot_process_(Espa%C3%B1ol)#Gestor_de_arranque "Arch boot process (Español)").
 
 Recuerde configurar [wifi](/index.php/Wireless_network_configuration_(Espa%C3%B1ol) "Wireless network configuration (Español)"), de modo que pueda iniciar sesión una vez que el sistema haya arrancado completamente. En caso de que no pueda conectarse a la red wifi, intente aumentar los tiempos de demora un poco.
@@ -351,7 +351,7 @@ Se distinguen los siguientes casos:
 
 	Véase también [Securely wipe disk#Flash memory](/index.php/Securely_wipe_disk#Flash_memory "Securely wipe disk").
 
-*   El dispositivo está cifrado con la modalidad plain de dm-crypt, o el encabezado LUKS se almacena [por separado](#Cifrado.2Farranque_y_un_encabezado_LUKS_separado_en_USB):
+*   El dispositivo está cifrado con la modalidad plain de dm-crypt, o el encabezado LUKS se almacena [por separado](#Cifrado/arranque_y_un_encabezado_LUKS_separado_en_USB):
     *   Si se requiere una [negación plausible](https://en.wikipedia.org/wiki/es:Cifrado_negable "wikipedia:es:Cifrado negable"), TRIM **nunca** debe ser usado debido a las consideraciones dadas en la parte superior de esta sección, o el uso del cifrado se dará a conocer.
     *   Si no se requiere una negación plausible, se puede usar TRIM por sus mejoras de rendimiento, siempre que los peligros de seguridad descritos en la parte superior de esta sección no sean motivo de preocupación.
 
@@ -531,7 +531,7 @@ Abra el contenedor:
 
 ```
 
-Ahora siga los pasos de la [configuración de LVM sobre LUKS](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol)#Preparar_las_particiones_que_no_son_de_arranque_.28boot.29 "Dm-crypt/Encrypting an entire system (Español)") según sus necesidades. Lo mismo se aplica a la [preparación de la partición de arranque](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol)#_Preparar_la_partici.C3.B3n_de_arranque_4 "Dm-crypt/Encrypting an entire system (Español)") en el dispositivo extraíble (porque de lo contrario, no tiene sentido tener un archivo de encabezado separado para desbloquear el cifrado disco). Luego mueva el `header.img` sobre él:
+Ahora siga los pasos de la [configuración de LVM sobre LUKS](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol)#Preparar_las_particiones_que_no_son_de_arranque_(boot) "Dm-crypt/Encrypting an entire system (Español)") según sus necesidades. Lo mismo se aplica a la [preparación de la partición de arranque](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol)#_Preparar_la_partición_de_arranque_4 "Dm-crypt/Encrypting an entire system (Español)") en el dispositivo extraíble (porque de lo contrario, no tiene sentido tener un archivo de encabezado separado para desbloquear el cifrado disco). Luego mueva el `header.img` sobre él:
 
 ```
 # mv header.img /mnt/boot
@@ -550,7 +550,7 @@ Primero cree `/etc/crypttab.initramfs` y agregue el dispositivo cifrado a él. L
 
  `/etc/crypttab.initramfs`  `enc	/dev/disk/by-id/*your-disk_id*	none	header=/boot/header.img` 
 
-Modifique `/etc/mkinitcpio.conf` [para usar systemd](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Hooks_m.C3.A1s_comunes "Mkinitcpio (Español)") y agregue la imagen header a `FILES`.
+Modifique `/etc/mkinitcpio.conf` [para usar systemd](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Hooks_más_comunes "Mkinitcpio (Español)") y agregue la imagen header a `FILES`.
 
  `/etc/mkinitcpio.conf` 
 ```
@@ -561,7 +561,7 @@ HOOKS=(base **systemd** autodetect **keyboard** **sd-vconsole** modconf block **
 ...
 ```
 
-[Regenerar initramfs](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Creaci.C3.B3n_de_la_imagen_y_activaci.C3.B3n "Mkinitcpio (Español)") y listo.
+[Regenerar initramfs](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Creación_de_la_imagen_y_activación "Mkinitcpio (Español)") y listo.
 
 **Nota:** no es necesario pasar ningún parámetro cryptsetup a la línea de órdenes del kernel, ya que `/etc/crypttab.initramfs` se agregará como `/etc/crypttab` en initramfs. Si desea especificarlos en la línea de órdenes del kernel, consulte [dm-crypt/System configuration (Español)#Utilizar el hook sd-encrypt](/index.php/Dm-crypt/System_configuration_(Espa%C3%B1ol)#Utilizar_el_hook_sd-encrypt "Dm-crypt/System configuration (Español)") para ver las opciones admitidas.
 
@@ -616,7 +616,7 @@ HOOKS=(base udev autodetect **keyboard** **keymap** consolefont modconf block **
 ...
 ```
 
-Esto es necesario para que el encabezado LUKS esté disponible en el arranque y permita el descifrado del sistema, eximiéndonos de una configuración más complicada como montar otro dispositivo USB separado para acceder al encabezado. Después de esta configuración se creará [initramfs](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Creaci.C3.B3n_de_la_imagen_y_activaci.C3.B3n "Mkinitcpio (Español)").
+Esto es necesario para que el encabezado LUKS esté disponible en el arranque y permita el descifrado del sistema, eximiéndonos de una configuración más complicada como montar otro dispositivo USB separado para acceder al encabezado. Después de esta configuración se creará [initramfs](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Creación_de_la_imagen_y_activación "Mkinitcpio (Español)").
 
 A continuación, [configure el cargador de arranque](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol)#Configurar_el_gestor_de_arranque_4 "Dm-crypt/Encrypting an entire system (Español)") para especificar `cryptdevice=` pasando también la nueva opción `header` a dicha configuración:
 
@@ -625,7 +625,7 @@ cryptdevice=/dev/disk/by-id/*your-disk_id*:enc:header
 
 ```
 
-Para finalizar, seguimos [dm-crypt/Encrypting an entire system (Español)#Posinstalación](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol)#Posinstalaci.C3.B3n "Dm-crypt/Encrypting an entire system (Español)") que es particularmente útil con una partición `/boot` en un medio de almacenamiento USB.
+Para finalizar, seguimos [dm-crypt/Encrypting an entire system (Español)#Posinstalación](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol)#Posinstalación "Dm-crypt/Encrypting an entire system (Español)") que es particularmente útil con una partición `/boot` en un medio de almacenamiento USB.
 
 ## Cifrado/arranque y un encabezado LUKS separado en USB
 
@@ -651,9 +651,9 @@ Number  Start (sector)    End (sector)  Size       Code  Name
 
 ```
 
-Antes de ejecutar `cryptsetup`, consulte [opciones de cifrado para la modalidad LUKS](/index.php/Dm-crypt/Device_encryption_(Espa%C3%B1ol)#_Opciones_de_cifrado_para_la_modalidad_LUKS "Dm-crypt/Device encryption (Español)") y [algoritmos de cifrado y modalidades de operación](/index.php/Disk_encryption_(Espa%C3%B1ol)#Algoritmos_de_cifrado_y_modalidades_de_operaci.C3.B3n "Disk encryption (Español)") .
+Antes de ejecutar `cryptsetup`, consulte [opciones de cifrado para la modalidad LUKS](/index.php/Dm-crypt/Device_encryption_(Espa%C3%B1ol)#_Opciones_de_cifrado_para_la_modalidad_LUKS "Dm-crypt/Device encryption (Español)") y [algoritmos de cifrado y modalidades de operación](/index.php/Disk_encryption_(Espa%C3%B1ol)#Algoritmos_de_cifrado_y_modalidades_de_operación "Disk encryption (Español)") .
 
-[Prepare la partición de arranque](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol)#Preparar_la_partici.C3.B3n_de_arranque_5 "Dm-crypt/Encrypting an entire system (Español)") pero no ejecute `mount` sobre ninguna partición todavía y [formatee la partición del sistema EFI](/index.php/EFI_system_partition_(Espa%C3%B1ol)#Formatear_la_partici.C3.B3n "EFI system partition (Español)").
+[Prepare la partición de arranque](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol)#Preparar_la_partición_de_arranque_5 "Dm-crypt/Encrypting an entire system (Español)") pero no ejecute `mount` sobre ninguna partición todavía y [formatee la partición del sistema EFI](/index.php/EFI_system_partition_(Espa%C3%B1ol)#Formatear_la_partición "EFI system partition (Español)").
 
 ```
 # mount /dev/mapper/cryptboot /mnt
@@ -686,7 +686,7 @@ Elija un *desplazamiento* y un *tamaño* en bytes (8192 bytes es el tamaño máx
 
 ```
 
-Siga con los pasos para la [preparación de los volúmenes lógicos](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol)#Preparar_los_vol.C3.BAmenes_l.C3.B3gicos "Dm-crypt/Encrypting an entire system (Español)") para configurar LVM sobre LUKS.
+Siga con los pasos para la [preparación de los volúmenes lógicos](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol)#Preparar_los_volúmenes_lógicos "Dm-crypt/Encrypting an entire system (Español)") para configurar LVM sobre LUKS.
 
 Consulte [Partitioning (Español)#Particiones dedicadas](/index.php/Partitioning_(Espa%C3%B1ol)#Particiones_dedicadas "Partitioning (Español)") para obtener recomendaciones sobre el tamaño de sus particiones.
 

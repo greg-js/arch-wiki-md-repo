@@ -1,6 +1,6 @@
 ## Contents
 
-*   [1 Wstęp](#Wst.C4.99p)
+*   [1 Wstęp](#Wstęp)
 *   [2 Dystrybucje graficzne](#Dystrybucje_graficzne)
     *   [2.1 Ubuntu](#Ubuntu)
     *   [2.2 Fedora](#Fedora)
@@ -9,7 +9,7 @@
     *   [2.5 openSUSE](#openSUSE)
     *   [2.6 Fedora](#Fedora_2)
     *   [2.7 PCLinuxOS](#PCLinuxOS)
-*   [3 Dystrybucje źródłowo-bazowe](#Dystrybucje_.C5.BAr.C3.B3d.C5.82owo-bazowe)
+*   [3 Dystrybucje źródłowo-bazowe](#Dystrybucje_źródłowo-bazowe)
     *   [3.1 Gentoo](#Gentoo)
 *   [4 Dystrybucje minimalistyczne](#Dystrybucje_minimalistyczne)
     *   [4.1 CRUX](#CRUX)

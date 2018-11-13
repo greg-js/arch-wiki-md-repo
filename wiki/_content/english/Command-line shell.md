@@ -14,7 +14,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Unix_shell "wikipedia:Unix shell"
     *   [1.2 Alternative shells](#Alternative_shells)
 *   [2 Changing your default shell](#Changing_your_default_shell)
 *   [3 Configuration files](#Configuration_files)
-    *   [3.1 /etc/profile](#.2Fetc.2Fprofile)
+    *   [3.1 /etc/profile](#/etc/profile)
 *   [4 Input and output](#Input_and_output)
 *   [5 See also](#See_also)
 
@@ -102,7 +102,7 @@ If you now log out and log in again, you will be greeted by the other shell.
 
 ## Configuration files
 
-To autostart programs in console or upon login, you can use shell startup files/directories. Read the documentation for your shell, or its ArchWiki article, e.g. [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash") or [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup.2FShutdown_files "Zsh").
+To autostart programs in console or upon login, you can use shell startup files/directories. Read the documentation for your shell, or its ArchWiki article, e.g. [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash") or [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup/Shutdown_files "Zsh").
 
 See also [Wikipedia:Unix shell#Configuration files](https://en.wikipedia.org/wiki/Unix_shell#Configuration_files "wikipedia:Unix shell").
 

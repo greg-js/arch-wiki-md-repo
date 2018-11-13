@@ -2,7 +2,7 @@ Related articles
 
 *   [pacman/Package signing](/index.php/Pacman/Package_signing "Pacman/Package signing")
 *   [Disk encryption](/index.php/Disk_encryption "Disk encryption")
-*   [List of applications/Security#Encryption, signing, steganography](/index.php/List_of_applications/Security#Encryption.2C_signing.2C_steganography "List of applications/Security")
+*   [List of applications/Security#Encryption, signing, steganography](/index.php/List_of_applications/Security#Encryption,_signing,_steganography "List of applications/Security")
 
 According to the [official website](https://www.gnupg.org/):
 
@@ -48,16 +48,16 @@ According to the [official website](https://www.gnupg.org/):
         *   [6.6.4 Using a PGP key for SSH authentication](#Using_a_PGP_key_for_SSH_authentication)
 *   [7 Smartcards](#Smartcards)
     *   [7.1 GnuPG only setups](#GnuPG_only_setups)
-    *   [7.2 GnuPG with pcscd (PCSC Lite)](#GnuPG_with_pcscd_.28PCSC_Lite.29)
+    *   [7.2 GnuPG with pcscd (PCSC Lite)](#GnuPG_with_pcscd_(PCSC_Lite))
         *   [7.2.1 Always use pcscd](#Always_use_pcscd)
 *   [8 Tips and tricks](#Tips_and_tricks)
     *   [8.1 Different algorithm](#Different_algorithm)
     *   [8.2 Encrypt a password](#Encrypt_a_password)
     *   [8.3 Revoking a key](#Revoking_a_key)
     *   [8.4 Change trust model](#Change_trust_model)
-    *   [8.5 Hide all recipient id's](#Hide_all_recipient_id.27s)
+    *   [8.5 Hide all recipient id's](#Hide_all_recipient_id's)
     *   [8.6 Using caff for keysigning parties](#Using_caff_for_keysigning_parties)
-    *   [8.7 Always show long ID's and fingerprints](#Always_show_long_ID.27s_and_fingerprints)
+    *   [8.7 Always show long ID's and fingerprints](#Always_show_long_ID's_and_fingerprints)
     *   [8.8 Custom capabilities](#Custom_capabilities)
 *   [9 Troubleshooting](#Troubleshooting)
     *   [9.1 Not enough random bytes available](#Not_enough_random_bytes_available)
@@ -66,10 +66,10 @@ According to the [official website](https://www.gnupg.org/):
     *   [9.4 KGpg configuration permissions](#KGpg_configuration_permissions)
     *   [9.5 GNOME on Wayland overrides SSH agent socket](#GNOME_on_Wayland_overrides_SSH_agent_socket)
     *   [9.6 mutt](#mutt)
-    *   [9.7 "Lost" keys, upgrading to gnupg version 2.1](#.22Lost.22_keys.2C_upgrading_to_gnupg_version_2.1)
-    *   [9.8 gpg hanged for all keyservers (when trying to receive keys)](#gpg_hanged_for_all_keyservers_.28when_trying_to_receive_keys.29)
+    *   [9.7 "Lost" keys, upgrading to gnupg version 2.1](#"Lost"_keys,_upgrading_to_gnupg_version_2.1)
+    *   [9.8 gpg hanged for all keyservers (when trying to receive keys)](#gpg_hanged_for_all_keyservers_(when_trying_to_receive_keys))
     *   [9.9 Smartcard not detected](#Smartcard_not_detected)
-    *   [9.10 server 'gpg-agent' is older than us (x < y)](#server_.27gpg-agent.27_is_older_than_us_.28x_.3C_y.29)
+    *   [9.10 server 'gpg-agent' is older than us (x < y)](#server_'gpg-agent'_is_older_than_us_(x_<_y))
     *   [9.11 IPC connect call failed](#IPC_connect_call_failed)
 *   [10 See also](#See_also)
 
@@ -79,7 +79,7 @@ According to the [official website](https://www.gnupg.org/):
 
 This will also install [pinentry](https://www.archlinux.org/packages/?name=pinentry), a collection of simple PIN or passphrase entry dialogs which GnuPG uses for passphrase entry. The shell script `/usr/bin/pinentry` determines which *pinentry* dialog is used, in the order described at [#pinentry](#pinentry).
 
-If you want to use a graphical frontend or program that integrates with GnuPG, see [List of applications/Security#Encryption, signing, steganography](/index.php/List_of_applications/Security#Encryption.2C_signing.2C_steganography "List of applications/Security").
+If you want to use a graphical frontend or program that integrates with GnuPG, see [List of applications/Security#Encryption, signing, steganography](/index.php/List_of_applications/Security#Encryption,_signing,_steganography "List of applications/Security").
 
 ## Configuration
 

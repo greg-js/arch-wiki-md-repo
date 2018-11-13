@@ -6,7 +6,7 @@ Este documento describe cómo usar las populares memorias USB con Linux. No obst
 
 ## Contents
 
-*   [1 Cargar el módulo "usb_storage" en el kernel](#Cargar_el_m.C3.B3dulo_.22usb_storage.22_en_el_kernel)
+*   [1 Cargar el módulo "usb_storage" en el kernel](#Cargar_el_módulo_"usb_storage"_en_el_kernel)
 *   [2 Montar la memoria USB](#Montar_la_memoria_USB)
 *   [3 Reparticionar la memoria USB](#Reparticionar_la_memoria_USB)
 *   [4 Montar el dispositivo USB como un usuario normal](#Montar_el_dispositivo_USB_como_un_usuario_normal)

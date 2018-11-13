@@ -1,7 +1,7 @@
 ## Contents
 
 *   [1 Introduzione](#Introduzione)
-*   [2 Configurare l'ambiente live per usare SSH](#Configurare_l.27ambiente_live_per_usare_SSH)
+*   [2 Configurare l'ambiente live per usare SSH](#Configurare_l'ambiente_live_per_usare_SSH)
 *   [3 Collegarsi al PC di destinazione tramite SSH](#Collegarsi_al_PC_di_destinazione_tramite_SSH)
     *   [3.1 Note](#Note)
 *   [4 Passi successivi](#Passi_successivi)

@@ -9,29 +9,29 @@ De [JACK Audio Connection Kit](https://en.wikipedia.org/wiki/JACK_Audio_Connecti
 
 ## Contents
 
-*   [1 Instalacción](#Instalacci.C3.B3n)
+*   [1 Instalacción](#Instalacción)
     *   [1.1 JACK2](#JACK2)
         *   [1.1.1 JACK2 D-Bus](#JACK2_D-Bus)
     *   [1.2 JACK](#JACK)
     *   [1.3 GUI](#GUI)
-*   [2 Configuración básica](#Configuraci.C3.B3n_b.C3.A1sica)
-    *   [2.1 Descripción general](#Descripci.C3.B3n_general)
-    *   [2.2 Una configuración de ejemplo basada en shell](#Una_configuraci.C3.B3n_de_ejemplo_basada_en_shell)
-        *   [2.2.1 Detalles de la configuración de ejemplo basada en shell](#Detalles_de_la_configuraci.C3.B3n_de_ejemplo_basada_en_shell)
-    *   [2.3 Una configuración de ejemplo basada en GUI](#Una_configuraci.C3.B3n_de_ejemplo_basada_en_GUI)
+*   [2 Configuración básica](#Configuración_básica)
+    *   [2.1 Descripción general](#Descripción_general)
+    *   [2.2 Una configuración de ejemplo basada en shell](#Una_configuración_de_ejemplo_basada_en_shell)
+        *   [2.2.1 Detalles de la configuración de ejemplo basada en shell](#Detalles_de_la_configuración_de_ejemplo_basada_en_shell)
+    *   [2.3 Una configuración de ejemplo basada en GUI](#Una_configuración_de_ejemplo_basada_en_GUI)
     *   [2.4 Jugando bien con ALSA](#Jugando_bien_con_ALSA)
     *   [2.5 GStreamer](#GStreamer)
     *   [2.6 PulseAudio](#PulseAudio)
     *   [2.7 Firewire](#Firewire)
 *   [3 MIDI](#MIDI)
-*   [4 Solución de problemas](#Soluci.C3.B3n_de_problemas)
-    *   [4.1 Mensaje de "No se puede bloquear el área de memoria (No se puede asignar memoria)" en el inicio](#Mensaje_de_.22No_se_puede_bloquear_el_.C3.A1rea_de_memoria_.28No_se_puede_asignar_memoria.29.22_en_el_inicio)
+*   [4 Solución de problemas](#Solución_de_problemas)
+    *   [4.1 Mensaje de "No se puede bloquear el área de memoria (No se puede asignar memoria)" en el inicio](#Mensaje_de_"No_se_puede_bloquear_el_área_de_memoria_(No_se_puede_asignar_memoria)"_en_el_inicio)
     *   [4.2 Jack2-dbus y qjackctl errores](#Jack2-dbus_y_qjackctl_errores)
-    *   [4.3 Error "ALSA: no se puede establecer el número de canales en 1 para la captura" en los registros](#Error_.22ALSA:_no_se_puede_establecer_el_n.C3.BAmero_de_canales_en_1_para_la_captura.22_en_los_registros)
+    *   [4.3 Error "ALSA: no se puede establecer el número de canales en 1 para la captura" en los registros](#Error_"ALSA:_no_se_puede_establecer_el_número_de_canales_en_1_para_la_captura"_en_los_registros)
     *   [4.4 Crackling y chasquidos en audio](#Crackling_y_chasquidos_en_audio)
-    *   [4.5 Problemas con aplicaciones específicas.](#Problemas_con_aplicaciones_espec.C3.ADficas.)
-        *   [4.5.1 VLC - no hay audio después de iniciar JACK](#VLC_-_no_hay_audio_despu.C3.A9s_de_iniciar_JACK)
-*   [5 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+    *   [4.5 Problemas con aplicaciones específicas.](#Problemas_con_aplicaciones_específicas.)
+        *   [4.5.1 VLC - no hay audio después de iniciar JACK](#VLC_-_no_hay_audio_después_de_iniciar_JACK)
+*   [5 Véase también](#Véase_también)
 
 ## Instalacción
 
@@ -43,7 +43,7 @@ Hay dos implementaciones de JACK, consulte [esta comparación](https://github.co
 
 ### JACK2
 
-**JACK2** Es una implementación de C++ con soporte SMP. [instálalo](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") con el paquete [jack2](https://www.archlinux.org/packages/?name=jack2) Si está en una instalación de 64 bits y necesita ejecutar aplicaciones de 32 bits que requieren JACK, también instale el paquete [lib32-jack2](https://www.archlinux.org/packages/?name=lib32-jack2) desde el repositorio [multilib](/index.php/Official_repositories_(Espa%C3%B1ol)#multilib "Official repositories (Español)").
+**JACK2** Es una implementación de C++ con soporte SMP. [instálalo](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") con el paquete [jack2](https://www.archlinux.org/packages/?name=jack2) Si está en una instalación de 64 bits y necesita ejecutar aplicaciones de 32 bits que requieren JACK, también instale el paquete [lib32-jack2](https://www.archlinux.org/packages/?name=lib32-jack2) desde el repositorio [multilib](/index.php/Official_repositories_(Espa%C3%B1ol)#multilib "Official repositories (Español)").
 
 #### JACK2 D-Bus
 
@@ -63,7 +63,7 @@ jack_control dps period 256  -  establecer el período de parámetros del contro
 
 ### JACK
 
-utiliza una API de C y admite más de una tarjeta de sonido en Linux (más MIDI). [instálalo](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") con el paquete [jack](https://www.archlinux.org/packages/?name=jack). Si está en una instalación de 64 bits y necesita ejecutar aplicaciones de 32 bits que requieren JACK, también instale el paquete [lib32-jack](https://www.archlinux.org/packages/?name=lib32-jack) desde el repositorio [multilib](/index.php/Official_repositories_(Espa%C3%B1ol)#multilib "Official repositories (Español)").
+utiliza una API de C y admite más de una tarjeta de sonido en Linux (más MIDI). [instálalo](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") con el paquete [jack](https://www.archlinux.org/packages/?name=jack). Si está en una instalación de 64 bits y necesita ejecutar aplicaciones de 32 bits que requieren JACK, también instale el paquete [lib32-jack](https://www.archlinux.org/packages/?name=lib32-jack) desde el repositorio [multilib](/index.php/Official_repositories_(Espa%C3%B1ol)#multilib "Official repositories (Español)").
 
 ### GUI
 
@@ -263,7 +263,7 @@ autospawn = no
 
 ```
 
-*Si desea que ambos se reproduzcan, consulte: [PulseAudio/Examples#PulseAudio a través de JACK](/index.php/PulseAudio/Examples#PulseAudio_a_trav.C3.A9s_de_JACK "PulseAudio/Examples")*
+*Si desea que ambos se reproduzcan, consulte: [PulseAudio/Examples#PulseAudio a través de JACK](/index.php/PulseAudio/Examples#PulseAudio_a_través_de_JACK "PulseAudio/Examples")*
 
 ### Firewire
 

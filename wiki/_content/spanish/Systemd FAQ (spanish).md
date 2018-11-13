@@ -1,16 +1,16 @@
 ## Contents
 
 *   [1 FAQ](#FAQ)
-    *   [1.1 ¿Por qué recibo mensajes de registro en mi consola?](#.C2.BFPor_qu.C3.A9_recibo_mensajes_de_registro_en_mi_consola.3F)
-    *   [1.2 ¿Cómo puedo cambiar el número de gettys ejecutadas por defecto?](#.C2.BFC.C3.B3mo_puedo_cambiar_el_n.C3.BAmero_de_gettys_ejecutadas_por_defecto.3F)
-    *   [1.3 ¿Cómo puedo obtener una salida con información más detallada durante el arranque?](#.C2.BFC.C3.B3mo_puedo_obtener_una_salida_con_informaci.C3.B3n_m.C3.A1s_detallada_durante_el_arranque.3F)
-    *   [1.4 ¿Cómo evitar que se borre la consola después del arranque?](#.C2.BFC.C3.B3mo_evitar_que_se_borre_la_consola_despu.C3.A9s_del_arranque.3F)
-    *   [1.5 ¿Qué opciones del kernel tengo que activar en caso de que no utilice el kernel oficial de Arch?](#.C2.BFQu.C3.A9_opciones_del_kernel_tengo_que_activar_en_caso_de_que_no_utilice_el_kernel_oficial_de_Arch.3F)
-    *   [1.6 ¿Qué otras unidades dependen de una unidad?](#.C2.BFQu.C3.A9_otras_unidades_dependen_de_una_unidad.3F)
-    *   [1.7 Mi ordenador se apaga, pero el power permanece encendido.](#Mi_ordenador_se_apaga.2C_pero_el_power_permanece_encendido.)
-    *   [1.8 Después de migrar a systemd, ¿por qué no funciona el montaje de fakeRAID?](#Despu.C3.A9s_de_migrar_a_systemd.2C_.C2.BFpor_qu.C3.A9_no_funciona_el_montaje_de_fakeRAID.3F)
-    *   [1.9 ¿Cómo puedo hacer un script de inicio durante el proceso de arranque?](#.C2.BFC.C3.B3mo_puedo_hacer_un_script_de_inicio_durante_el_proceso_de_arranque.3F)
-    *   [1.10 El estado de .service dice «active (exited)» en verde (por ejemplo, iptables)](#El_estado_de_.service_dice_.C2.ABactive_.28exited.29.C2.BB_en_verde_.28por_ejemplo.2C_iptables.29)
+    *   [1.1 ¿Por qué recibo mensajes de registro en mi consola?](#¿Por_qué_recibo_mensajes_de_registro_en_mi_consola?)
+    *   [1.2 ¿Cómo puedo cambiar el número de gettys ejecutadas por defecto?](#¿Cómo_puedo_cambiar_el_número_de_gettys_ejecutadas_por_defecto?)
+    *   [1.3 ¿Cómo puedo obtener una salida con información más detallada durante el arranque?](#¿Cómo_puedo_obtener_una_salida_con_información_más_detallada_durante_el_arranque?)
+    *   [1.4 ¿Cómo evitar que se borre la consola después del arranque?](#¿Cómo_evitar_que_se_borre_la_consola_después_del_arranque?)
+    *   [1.5 ¿Qué opciones del kernel tengo que activar en caso de que no utilice el kernel oficial de Arch?](#¿Qué_opciones_del_kernel_tengo_que_activar_en_caso_de_que_no_utilice_el_kernel_oficial_de_Arch?)
+    *   [1.6 ¿Qué otras unidades dependen de una unidad?](#¿Qué_otras_unidades_dependen_de_una_unidad?)
+    *   [1.7 Mi ordenador se apaga, pero el power permanece encendido.](#Mi_ordenador_se_apaga,_pero_el_power_permanece_encendido.)
+    *   [1.8 Después de migrar a systemd, ¿por qué no funciona el montaje de fakeRAID?](#Después_de_migrar_a_systemd,_¿por_qué_no_funciona_el_montaje_de_fakeRAID?)
+    *   [1.9 ¿Cómo puedo hacer un script de inicio durante el proceso de arranque?](#¿Cómo_puedo_hacer_un_script_de_inicio_durante_el_proceso_de_arranque?)
+    *   [1.10 El estado de .service dice «active (exited)» en verde (por ejemplo, iptables)](#El_estado_de_.service_dice_«active_(exited)»_en_verde_(por_ejemplo,_iptables))
     *   [1.11 Error Failed to issue method call: File exists](#Error_Failed_to_issue_method_call:_File_exists)
 
 ## FAQ

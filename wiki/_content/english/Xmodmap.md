@@ -27,8 +27,8 @@ Related articles
 *   [8 Templates](#Templates)
     *   [8.1 Spanish](#Spanish)
     *   [8.2 Turn CapsLock into Control](#Turn_CapsLock_into_Control)
-    *   [8.3 Turn CapsLock into Control, and LeftControl into Hyper](#Turn_CapsLock_into_Control.2C_and_LeftControl_into_Hyper)
-    *   [8.4 Switch every number key N with Shift-N and vice-versa, for Croatian layout](#Switch_every_number_key_N_with_Shift-N_and_vice-versa.2C_for_Croatian_layout)
+    *   [8.3 Turn CapsLock into Control, and LeftControl into Hyper](#Turn_CapsLock_into_Control,_and_LeftControl_into_Hyper)
+    *   [8.4 Switch every number key N with Shift-N and vice-versa, for Croatian layout](#Switch_every_number_key_N_with_Shift-N_and_vice-versa,_for_Croatian_layout)
 *   [9 See also](#See_also)
 
 ## Introduction

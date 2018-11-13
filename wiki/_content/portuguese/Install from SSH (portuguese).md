@@ -12,7 +12,7 @@ Este artigo possui o intuito de mostrar aos usuários como instalar o Arch atrav
 
 Inicie a máquina destino em um ambiente Arch *live* por meio de uma [imagem CD/USB Live](/index.php/Obtendo_e_instalando_o_Arch "Obtendo e instalando o Arch"): isso vai autenticar o usuário como root.
 
-Neste ponto, configure a rede na máquina destino como, por exemplo, sugerido no [Guia de instalação#Conectar à Internet](/index.php/Guia_de_instala%C3%A7%C3%A3o#Conectar_.C3.A0_Internet "Guia de instalação").
+Neste ponto, configure a rede na máquina destino como, por exemplo, sugerido no [Guia de instalação#Conectar à Internet](/index.php/Guia_de_instala%C3%A7%C3%A3o#Conectar_à_Internet "Guia de instalação").
 
 Em seguida, configure uma senha de root que é necessária para uma conexão SSH, já que a senha padrão do Arch para root é vazia:
 

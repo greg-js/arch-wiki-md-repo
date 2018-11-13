@@ -20,7 +20,7 @@ From the [Redshift project web page](http://jonls.dk/redshift/):
     *   [3.3 Use real screen brightness](#Use_real_screen_brightness)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Screen 1 could not be found](#Screen_1_could_not_be_found)
-    *   [4.2 Left/right clicking the tray icon does not work](#Left.2Fright_clicking_the_tray_icon_does_not_work)
+    *   [4.2 Left/right clicking the tray icon does not work](#Left/right_clicking_the_tray_icon_does_not_work)
     *   [4.3 Redshift makes the screen quickly flicker between the set color value of the screen and the default color value](#Redshift_makes_the_screen_quickly_flicker_between_the_set_color_value_of_the_screen_and_the_default_color_value)
     *   [4.4 Redshift works fine when invoked as a command but fails when run as a systemd service](#Redshift_works_fine_when_invoked_as_a_command_but_fails_when_run_as_a_systemd_service)
     *   [4.5 Redshift temporarily resets using some wine apps that reset gamma values](#Redshift_temporarily_resets_using_some_wine_apps_that_reset_gamma_values)

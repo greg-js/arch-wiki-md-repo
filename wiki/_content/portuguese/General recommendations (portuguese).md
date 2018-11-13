@@ -6,74 +6,74 @@ Artigos relacionados
 *   [Guia de instalação](/index.php/Guia_de_instala%C3%A7%C3%A3o "Guia de instalação")
 *   [Lista de aplicativos](/index.php/List_of_applications "List of applications")
 
-Esse documento é um índice anotado de artigos populares e informações importantes para melhorar e adicionar funcionalidades ao sistema Arch instalado. Presume-se aqui que os leitores leram e seguiram o [Guia de instalação](/index.php/Guia_de_instala%C3%A7%C3%A3o "Guia de instalação") para obter uma instalação básica do Arch Linux. Ter lido e entendido os conceitos explicados em [#Administração do sistema](#Administra.C3.A7.C3.A3o_do_sistema) e [#Gerenciamento de pacote](#Gerenciamento_de_pacote) é *obrigatório* para seguir as outras seções desta página e outros artigos no wiki.
+Esse documento é um índice anotado de artigos populares e informações importantes para melhorar e adicionar funcionalidades ao sistema Arch instalado. Presume-se aqui que os leitores leram e seguiram o [Guia de instalação](/index.php/Guia_de_instala%C3%A7%C3%A3o "Guia de instalação") para obter uma instalação básica do Arch Linux. Ter lido e entendido os conceitos explicados em [#Administração do sistema](#Administração_do_sistema) e [#Gerenciamento de pacote](#Gerenciamento_de_pacote) é *obrigatório* para seguir as outras seções desta página e outros artigos no wiki.
 
 ## Contents
 
-*   [1 Administração do sistema](#Administra.C3.A7.C3.A3o_do_sistema)
-    *   [1.1 Usuários e grupos](#Usu.C3.A1rios_e_grupos)
-    *   [1.2 Escalação de privilégios](#Escala.C3.A7.C3.A3o_de_privil.C3.A9gios)
-    *   [1.3 Gerenciamento de serviço](#Gerenciamento_de_servi.C3.A7o)
-    *   [1.4 Manutenção de sistema](#Manuten.C3.A7.C3.A3o_de_sistema)
+*   [1 Administração do sistema](#Administração_do_sistema)
+    *   [1.1 Usuários e grupos](#Usuários_e_grupos)
+    *   [1.2 Escalação de privilégios](#Escalação_de_privilégios)
+    *   [1.3 Gerenciamento de serviço](#Gerenciamento_de_serviço)
+    *   [1.4 Manutenção de sistema](#Manutenção_de_sistema)
 *   [2 Gerenciamento de pacote](#Gerenciamento_de_pacote)
     *   [2.1 pacman](#pacman)
-    *   [2.2 Repositórios](#Reposit.C3.B3rios)
+    *   [2.2 Repositórios](#Repositórios)
     *   [2.3 Espelhos](#Espelhos)
     *   [2.4 Arch Build System](#Arch_Build_System)
     *   [2.5 Arch User Repository](#Arch_User_Repository)
-*   [3 Inicialização](#Inicializa.C3.A7.C3.A3o)
+*   [3 Inicialização](#Inicialização)
     *   [3.1 Autorreconhecimento de hardware](#Autorreconhecimento_de_hardware)
-    *   [3.2 Microcódigo](#Microc.C3.B3digo)
-    *   [3.3 Retendo mensagens de inicialização](#Retendo_mensagens_de_inicializa.C3.A7.C3.A3o)
-    *   [3.4 Ativação de Num Lock](#Ativa.C3.A7.C3.A3o_de_Num_Lock)
-*   [4 Interface gráfica de usuário](#Interface_gr.C3.A1fica_de_usu.C3.A1rio)
-    *   [4.1 Servidor de exibição](#Servidor_de_exibi.C3.A7.C3.A3o)
-    *   [4.2 Drivers de exibição](#Drivers_de_exibi.C3.A7.C3.A3o)
-    *   [4.3 Ambientes gráficos](#Ambientes_gr.C3.A1ficos)
+    *   [3.2 Microcódigo](#Microcódigo)
+    *   [3.3 Retendo mensagens de inicialização](#Retendo_mensagens_de_inicialização)
+    *   [3.4 Ativação de Num Lock](#Ativação_de_Num_Lock)
+*   [4 Interface gráfica de usuário](#Interface_gráfica_de_usuário)
+    *   [4.1 Servidor de exibição](#Servidor_de_exibição)
+    *   [4.2 Drivers de exibição](#Drivers_de_exibição)
+    *   [4.3 Ambientes gráficos](#Ambientes_gráficos)
     *   [4.4 Gerenciadores de janela](#Gerenciadores_de_janela)
-    *   [4.5 Gerenciadores de exibição](#Gerenciadores_de_exibi.C3.A7.C3.A3o)
+    *   [4.5 Gerenciadores de exibição](#Gerenciadores_de_exibição)
 *   [5 Gerenciamento de energia](#Gerenciamento_de_energia)
     *   [5.1 Eventos de ACPI](#Eventos_de_ACPI)
-    *   [5.2 Escala de frequência de CPU](#Escala_de_frequ.C3.AAncia_de_CPU)
+    *   [5.2 Escala de frequência de CPU](#Escala_de_frequência_de_CPU)
     *   [5.3 Laptops](#Laptops)
-    *   [5.4 Suspensão e hibernação](#Suspens.C3.A3o_e_hiberna.C3.A7.C3.A3o)
-*   [6 Multimídia](#Multim.C3.ADdia)
+    *   [5.4 Suspensão e hibernação](#Suspensão_e_hibernação)
+*   [6 Multimídia](#Multimídia)
     *   [6.1 Som](#Som)
     *   [6.2 Plugins de navegadores](#Plugins_de_navegadores)
     *   [6.3 Codecs](#Codecs)
 *   [7 Conectividade](#Conectividade)
-    *   [7.1 Sincronização de relógio](#Sincroniza.C3.A7.C3.A3o_de_rel.C3.B3gio)
-    *   [7.2 Segurança de DNS](#Seguran.C3.A7a_de_DNS)
-    *   [7.3 Configuração de um firewall](#Configura.C3.A7.C3.A3o_de_um_firewall)
+    *   [7.1 Sincronização de relógio](#Sincronização_de_relógio)
+    *   [7.2 Segurança de DNS](#Segurança_de_DNS)
+    *   [7.3 Configuração de um firewall](#Configuração_de_um_firewall)
     *   [7.4 Compartilhamento de recurso](#Compartilhamento_de_recurso)
 *   [8 Dispositivos de entrada](#Dispositivos_de_entrada)
     *   [8.1 Layouts de teclado](#Layouts_de_teclado)
-    *   [8.2 Botões de mouse](#Bot.C3.B5es_de_mouse)
+    *   [8.2 Botões de mouse](#Botões_de_mouse)
     *   [8.3 Touchpads de laptop](#Touchpads_de_laptop)
     *   [8.4 TrackPoints](#TrackPoints)
-*   [9 Otimizações](#Otimiza.C3.A7.C3.B5es)
+*   [9 Otimizações](#Otimizações)
     *   [9.1 Benchmarking](#Benchmarking)
     *   [9.2 Melhorando o desempenho](#Melhorando_o_desempenho)
     *   [9.3 Solid state drives](#Solid_state_drives)
-*   [10 Serviço de sistema](#Servi.C3.A7o_de_sistema)
-    *   [10.1 Índice e pesquisa por arquivo](#.C3.8Dndice_e_pesquisa_por_arquivo)
+*   [10 Serviço de sistema](#Serviço_de_sistema)
+    *   [10.1 Índice e pesquisa por arquivo](#Índice_e_pesquisa_por_arquivo)
     *   [10.2 Entrega local de correio](#Entrega_local_de_correio)
-    *   [10.3 Impressão](#Impress.C3.A3o)
-*   [11 Aparência](#Apar.C3.AAncia)
+    *   [10.3 Impressão](#Impressão)
+*   [11 Aparência](#Aparência)
     *   [11.1 Fontes](#Fontes)
-    *   [11.2 Temas GTK+ e Qt](#Temas_GTK.2B_e_Qt)
+    *   [11.2 Temas GTK+ e Qt](#Temas_GTK+_e_Qt)
 *   [12 Melhorias no console](#Melhorias_no_console)
-    *   [12.1 Melhorias na completação por Tab](#Melhorias_na_completa.C3.A7.C3.A3o_por_Tab)
+    *   [12.1 Melhorias na completação por Tab](#Melhorias_na_completação_por_Tab)
     *   [12.2 Aliases](#Aliases)
     *   [12.3 Shells alternativos](#Shells_alternativos)
-    *   [12.4 Adições ao Bash](#Adi.C3.A7.C3.B5es_ao_Bash)
-    *   [12.5 Saída colorida](#Sa.C3.ADda_colorida)
+    *   [12.4 Adições ao Bash](#Adições_ao_Bash)
+    *   [12.5 Saída colorida](#Saída_colorida)
     *   [12.6 Arquivos compactados](#Arquivos_compactados)
     *   [12.7 Prompt de console](#Prompt_de_console)
     *   [12.8 Shell do emacs](#Shell_do_emacs)
     *   [12.9 Suporte a mouse](#Suporte_a_mouse)
     *   [12.10 Buffer de scrollback](#Buffer_de_scrollback)
-    *   [12.11 Gerenciamento de sessão](#Gerenciamento_de_sess.C3.A3o)
+    *   [12.11 Gerenciamento de sessão](#Gerenciamento_de_sessão)
 
 ## Administração do sistema
 
@@ -81,7 +81,7 @@ Essa seção lida com tarefas administrativas e gerenciamento do sistema. Para m
 
 ### Usuários e grupos
 
-Uma nova instalação deixa você com apenas a conta de [superusuário](https://en.wikipedia.org/wiki/Superuser "wikipedia:Superuser"), mais conhecida como "root". Se autenticar como root por períodos prolongados de tempo, possivelmente expondo-o via [SSH](/index.php/SSH "SSH") em um servidor, [é inseguro](https://apple.stackexchange.com/questions/192365/is-it-ok-to-use-the-root-user-as-a-normal-user/192422#192422). Em vez disso, você deve criar e usar uma conta de usuário desprivilegiada para a maioria das tarefas, apenas usando a conta root para administração do sistema. Veja [Usuários e grupos#Gerenciamento de usuário](/index.php/Usu%C3%A1rios_e_grupos#Gerenciamento_de_usu.C3.A1rio "Usuários e grupos") para detalhes.
+Uma nova instalação deixa você com apenas a conta de [superusuário](https://en.wikipedia.org/wiki/Superuser "wikipedia:Superuser"), mais conhecida como "root". Se autenticar como root por períodos prolongados de tempo, possivelmente expondo-o via [SSH](/index.php/SSH "SSH") em um servidor, [é inseguro](https://apple.stackexchange.com/questions/192365/is-it-ok-to-use-the-root-user-as-a-normal-user/192422#192422). Em vez disso, você deve criar e usar uma conta de usuário desprivilegiada para a maioria das tarefas, apenas usando a conta root para administração do sistema. Veja [Usuários e grupos#Gerenciamento de usuário](/index.php/Usu%C3%A1rios_e_grupos#Gerenciamento_de_usuário "Usuários e grupos") para detalhes.
 
 Usuários e grupos são mecanismo para *controle de acesso*; administradores podem ajustar participação e posse de grupos para conceder ou negar a usuários e serviços acesso a recursos do sistema. Leia o artigo [Usuários e grupos](/index.php/Usu%C3%A1rios_e_grupos "Usuários e grupos") para detalhes e riscos de segurança em potencial.
 
@@ -91,7 +91,7 @@ Os comandos [su](/index.php/Su "Su") e [sudo](/index.php/Sudo "Sudo") permitem q
 
 ### Gerenciamento de serviço
 
-Arch Linux usa [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") como o processo [init](/index.php/Init "Init"), que é um gerenciador de sistema e serviço para Linux. Para dar manutenção em sua instalação do Arch Linux, é uma boa ideia aprender os básicos sobre ele. Interação com o *systemd* é feita com o comando *systemctl*. Leia o [systemd (Português)#Uso básico do systemctl](/index.php/Systemd_(Portugu%C3%AAs)#Uso_b.C3.A1sico_do_systemctl "Systemd (Português)") para mais informações.
+Arch Linux usa [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") como o processo [init](/index.php/Init "Init"), que é um gerenciador de sistema e serviço para Linux. Para dar manutenção em sua instalação do Arch Linux, é uma boa ideia aprender os básicos sobre ele. Interação com o *systemd* é feita com o comando *systemctl*. Leia o [systemd (Português)#Uso básico do systemctl](/index.php/Systemd_(Portugu%C3%AAs)#Uso_básico_do_systemctl "Systemd (Português)") para mais informações.
 
 ### Manutenção de sistema
 

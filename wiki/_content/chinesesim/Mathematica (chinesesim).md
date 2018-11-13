@@ -10,22 +10,22 @@
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
+*   [1 安装](#安装)
     *   [1.1 Mathematica 6](#Mathematica_6)
-        *   [1.1.1 挂载 iso 文件](#.E6.8C.82.E8.BD.BD_iso_.E6.96.87.E4.BB.B6)
-        *   [1.1.2 运行安装程序](#.E8.BF.90.E8.A1.8C.E5.AE.89.E8.A3.85.E7.A8.8B.E5.BA.8F)
-        *   [1.1.3 字体](#.E5.AD.97.E4.BD.93)
+        *   [1.1.1 挂载 iso 文件](#挂载_iso_文件)
+        *   [1.1.2 运行安装程序](#运行安装程序)
+        *   [1.1.3 字体](#字体)
     *   [1.2 Mathematica 7](#Mathematica_7)
     *   [1.3 Mathematica 8](#Mathematica_8)
     *   [1.4 Mathematica 10](#Mathematica_10)
     *   [1.5 Mathematica 11](#Mathematica_11)
-*   [2 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
-    *   [2.1 "Missing symbols" 错误](#.22Missing_symbols.22_.E9.94.99.E8.AF.AF)
-    *   [2.2 HiDPI / Retina 屏幕](#HiDPI_.2F_Retina_.E5.B1.8F.E5.B9.95)
-    *   [2.3 与系统库冲突导致的问题](#.E4.B8.8E.E7.B3.BB.E7.BB.9F.E5.BA.93.E5.86.B2.E7.AA.81.E5.AF.BC.E8.87.B4.E7.9A.84.E9.97.AE.E9.A2.98)
-        *   [2.3.1 Symbol lookup error: /usr/lib/libfontconfig.so.1: undefined symbol: FT_Done_MM_Var](#Symbol_lookup_error:_.2Fusr.2Flib.2Flibfontconfig.so.1:_undefined_symbol:_FT_Done_MM_Var)
-        *   [2.3.2 Mathematica/11.3/SystemFiles/Libraries/Linux-x86-64/libz.so.1: version `ZLIB_1.2.9' not found (required by /usr/lib/libpng16.so.16)](#Mathematica.2F11.3.2FSystemFiles.2FLibraries.2FLinux-x86-64.2Flibz.so.1:_version_.60ZLIB_1.2.9.27_not_found_.28required_by_.2Fusr.2Flib.2Flibpng16.so.16.29)
-*   [3 参阅](#.E5.8F.82.E9.98.85)
+*   [2 故障排除](#故障排除)
+    *   [2.1 "Missing symbols" 错误](#"Missing_symbols"_错误)
+    *   [2.2 HiDPI / Retina 屏幕](#HiDPI_/_Retina_屏幕)
+    *   [2.3 与系统库冲突导致的问题](#与系统库冲突导致的问题)
+        *   [2.3.1 Symbol lookup error: /usr/lib/libfontconfig.so.1: undefined symbol: FT_Done_MM_Var](#Symbol_lookup_error:_/usr/lib/libfontconfig.so.1:_undefined_symbol:_FT_Done_MM_Var)
+        *   [2.3.2 Mathematica/11.3/SystemFiles/Libraries/Linux-x86-64/libz.so.1: version `ZLIB_1.2.9' not found (required by /usr/lib/libpng16.so.16)](#Mathematica/11.3/SystemFiles/Libraries/Linux-x86-64/libz.so.1:_version_`ZLIB_1.2.9'_not_found_(required_by_/usr/lib/libpng16.so.16))
+*   [3 参阅](#参阅)
 
 ## 安装
 

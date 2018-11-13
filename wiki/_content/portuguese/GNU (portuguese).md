@@ -16,9 +16,9 @@ Porque o kernel do GNU, [Hurd](https://www.gnu.org/s/hurd/hurd.html), não está
 *   [1 Texinfo](#Texinfo)
 *   [2 Sistema base](#Sistema_base)
 *   [3 Conjunto de ferramentas](#Conjunto_de_ferramentas)
-    *   [3.1 Sistema de compilação](#Sistema_de_compila.C3.A7.C3.A3o)
+    *   [3.1 Sistema de compilação](#Sistema_de_compilação)
 *   [4 Outros softwares](#Outros_softwares)
-*   [5 Veja também](#Veja_tamb.C3.A9m)
+*   [5 Veja também](#Veja_também)
 
 ## Texinfo
 

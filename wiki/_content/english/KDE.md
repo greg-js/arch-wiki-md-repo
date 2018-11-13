@@ -26,7 +26,7 @@ KDE is a software project currently comprising a [desktop environment](/index.ph
     *   [3.1 Personalization](#Personalization)
         *   [3.1.1 Plasma desktop](#Plasma_desktop)
             *   [3.1.1.1 Themes](#Themes)
-                *   [3.1.1.1.1 Qt and GTK+ Applications Appearance](#Qt_and_GTK.2B_Applications_Appearance)
+                *   [3.1.1.1.1 Qt and GTK+ Applications Appearance](#Qt_and_GTK+_Applications_Appearance)
             *   [3.1.1.2 Faces](#Faces)
             *   [3.1.1.3 Widgets](#Widgets)
             *   [3.1.1.4 Sound applet in the system tray](#Sound_applet_in_the_system_tray)
@@ -36,12 +36,12 @@ KDE is a software project currently comprising a [desktop environment](/index.ph
         *   [3.1.4 Space efficiency](#Space_efficiency)
         *   [3.1.5 Thumbnail generation](#Thumbnail_generation)
     *   [3.2 Printing](#Printing)
-    *   [3.3 Samba/Windows support](#Samba.2FWindows_support)
+    *   [3.3 Samba/Windows support](#Samba/Windows_support)
     *   [3.4 KDE Desktop activities](#KDE_Desktop_activities)
     *   [3.5 Power management](#Power_management)
     *   [3.6 Autostart](#Autostart)
     *   [3.7 Phonon](#Phonon)
-        *   [3.7.1 Which backend should I choose?](#Which_backend_should_I_choose.3F)
+        *   [3.7.1 Which backend should I choose?](#Which_backend_should_I_choose?)
 *   [4 Applications](#Applications)
     *   [4.1 System administration](#System_administration)
         *   [4.1.1 Terminate Xorg server through KDE System Settings](#Terminate_Xorg_server_through_KDE_System_Settings)
@@ -58,10 +58,10 @@ KDE is a software project currently comprising a [desktop environment](/index.ph
     *   [4.6 KDE Connect](#KDE_Connect)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Use a different window manager](#Use_a_different_window_manager)
-        *   [5.1.1 KDE/Openbox session](#KDE.2FOpenbox_session)
+        *   [5.1.1 KDE/Openbox session](#KDE/Openbox_session)
         *   [5.1.2 Re-enabling compositing effects](#Re-enabling_compositing_effects)
-    *   [5.2 Configuring monitor resolution / multiple monitors](#Configuring_monitor_resolution_.2F_multiple_monitors)
-    *   [5.3 Disable opening application launcher with Super key (Windows key)](#Disable_opening_application_launcher_with_Super_key_.28Windows_key.29)
+    *   [5.2 Configuring monitor resolution / multiple monitors](#Configuring_monitor_resolution_/_multiple_monitors)
+    *   [5.3 Disable opening application launcher with Super key (Windows key)](#Disable_opening_application_launcher_with_Super_key_(Windows_key))
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Fonts](#Fonts)
         *   [6.1.1 Fonts in a Plasma session look poor](#Fonts_in_a_Plasma_session_look_poor)
@@ -80,14 +80,14 @@ KDE is a software project currently comprising a [desktop environment](/index.ph
         *   [6.4.1 No sound after suspend](#No_sound_after_suspend)
         *   [6.4.2 MP3 files cannot be played when using the GStreamer Phonon backend](#MP3_files_cannot_be_played_when_using_the_GStreamer_Phonon_backend)
     *   [6.5 Power management](#Power_management_2)
-        *   [6.5.1 No Suspend/Hibernate options](#No_Suspend.2FHibernate_options)
+        *   [6.5.1 No Suspend/Hibernate options](#No_Suspend/Hibernate_options)
     *   [6.6 KMail](#KMail)
         *   [6.6.1 Clean akonadi configuration to fix KMail](#Clean_akonadi_configuration_to_fix_KMail)
         *   [6.6.2 Empty IMAP inbox in KMail](#Empty_IMAP_inbox_in_KMail)
     *   [6.7 Networking](#Networking)
         *   [6.7.1 Freezes when using Automount on a NFS volume](#Freezes_when_using_Automount_on_a_NFS_volume)
     *   [6.8 Aggressive QXcbConnection journal logging](#Aggressive_QXcbConnection_journal_logging)
-    *   [6.9 KF5/Qt 5 applications do not display icons in i3/FVWM/awesome](#KF5.2FQt_5_applications_do_not_display_icons_in_i3.2FFVWM.2Fawesome)
+    *   [6.9 KF5/Qt 5 applications do not display icons in i3/FVWM/awesome](#KF5/Qt_5_applications_do_not_display_icons_in_i3/FVWM/awesome)
     *   [6.10 Problems with saving credentials and persistently occurring KWallet dialogs](#Problems_with_saving_credentials_and_persistently_occurring_KWallet_dialogs)
     *   [6.11 Discover does not show any applications](#Discover_does_not_show_any_applications)
     *   [6.12 High CPU usage of kscreenlocker_greet with NVIDIA drivers](#High_CPU_usage_of_kscreenlocker_greet_with_NVIDIA_drivers)
@@ -387,11 +387,11 @@ The following web browsers can integrate with Plasma:
 
 	[https://www.chromium.org/](https://www.chromium.org/) || [chromium](https://www.archlinux.org/packages/?name=chromium)
 
-*   **[Firefox](/index.php/Firefox "Firefox")** — Firefox can be configured to better integrate with Plasma. See [Firefox KDE integration](/index.php/Firefox#KDE.2FGNOME_integration "Firefox") for details.
+*   **[Firefox](/index.php/Firefox "Firefox")** — Firefox can be configured to better integrate with Plasma. See [Firefox KDE integration](/index.php/Firefox#KDE/GNOME_integration "Firefox") for details.
 
 	[https://mozilla.org/firefox](https://mozilla.org/firefox) || [firefox](https://www.archlinux.org/packages/?name=firefox)
 
-**Tip:** Starting from Plasma 5.13, one can integrate [Firefox](/index.php/Firefox "Firefox") or [Chrome](/index.php/Chrome "Chrome") with Plasma: providing media playback control from the Plasma tray, download notifications and find open tabs in KRunner. [Install](/index.php/Install "Install") [plasma-browser-integration](https://www.archlinux.org/packages/?name=plasma-browser-integration) and the corresponding browser add-on. Chrome/Chromium support should already be included, for Firefox add-on see [Firefox#KDE/GNOME integration](/index.php/Firefox#KDE.2FGNOME_integration "Firefox").
+**Tip:** Starting from Plasma 5.13, one can integrate [Firefox](/index.php/Firefox "Firefox") or [Chrome](/index.php/Chrome "Chrome") with Plasma: providing media playback control from the Plasma tray, download notifications and find open tabs in KRunner. [Install](/index.php/Install "Install") [plasma-browser-integration](https://www.archlinux.org/packages/?name=plasma-browser-integration) and the corresponding browser add-on. Chrome/Chromium support should already be included, for Firefox add-on see [Firefox#KDE/GNOME integration](/index.php/Firefox#KDE/GNOME_integration "Firefox").
 
 ### PIM
 
@@ -610,7 +610,7 @@ In *System Settings > Display and Monitor > Compositor*, uncheck *Allow applicat
 
 #### Screen tearing with NVIDIA
 
-See [NVIDIA/Troubleshooting#Avoid screen tearing in KDE (KWin)](/index.php/NVIDIA/Troubleshooting#Avoid_screen_tearing_in_KDE_.28KWin.29 "NVIDIA/Troubleshooting").
+See [NVIDIA/Troubleshooting#Avoid screen tearing in KDE (KWin)](/index.php/NVIDIA/Troubleshooting#Avoid_screen_tearing_in_KDE_(KWin) "NVIDIA/Troubleshooting").
 
 #### Plasma cursor sometimes shown incorrectly
 
@@ -686,7 +686,7 @@ Using [Fstab#Automount with systemd](/index.php/Fstab#Automount_with_systemd "Fs
 
 ### Aggressive QXcbConnection journal logging
 
-See [Qt#Disable/Change Qt journal logging behaviour](/index.php/Qt#Disable.2FChange_Qt_journal_logging_behaviour "Qt").
+See [Qt#Disable/Change Qt journal logging behaviour](/index.php/Qt#Disable/Change_Qt_journal_logging_behaviour "Qt").
 
 ### KF5/Qt 5 applications do not display icons in i3/FVWM/awesome
 

@@ -13,10 +13,10 @@ De [Wikipedia:Tabla de asignación de archivos](https://en.wikipedia.org/wiki/es
 
 ## Contents
 
-*   [1 Creación del sistema de archivos](#Creaci.C3.B3n_del_sistema_de_archivos)
-*   [2 Configuración del kernel](#Configuraci.C3.B3n_del_kernel)
+*   [1 Creación del sistema de archivos](#Creación_del_sistema_de_archivos)
+*   [2 Configuración del kernel](#Configuración_del_kernel)
 *   [3 Escribir en FAT32 como usuario normal](#Escribir_en_FAT32_como_usuario_normal)
-*   [4 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [4 Véase también](#Véase_también)
 
 ## Creación del sistema de archivos
 

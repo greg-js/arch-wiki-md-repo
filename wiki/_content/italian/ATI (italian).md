@@ -17,7 +17,7 @@ In caso si incertezza, provare in primo luogo i driver open source; sono adatti 
 *   [3 Installazione](#Installazione)
     *   [3.1 Installazione di xf86-video-ati](#Installazione_di_xf86-video-ati)
 *   [4 Configurazione](#Configurazione)
-*   [5 Kernel mode-setting (KMS)](#Kernel_mode-setting_.28KMS.29)
+*   [5 Kernel mode-setting (KMS)](#Kernel_mode-setting_(KMS))
     *   [5.1 Abilitare KMS](#Abilitare_KMS)
         *   [5.1.1 Avvio rapido](#Avvio_rapido)
         *   [5.1.2 Avvio ritardato](#Avvio_ritardato)
@@ -31,24 +31,24 @@ In caso si incertezza, provare in primo luogo i driver open source; sono adatti 
     *   [7.1 Con KMS abilitato](#Con_KMS_abilitato)
     *   [7.2 Senza KMS](#Senza_KMS)
 *   [8 Uscita TV](#Uscita_TV)
-    *   [8.1 Forzare l'utilizzo dell'uscita TV con KMS](#Forzare_l.27utilizzo_dell.27uscita_TV_con_KMS)
+    *   [8.1 Forzare l'utilizzo dell'uscita TV con KMS](#Forzare_l'utilizzo_dell'uscita_TV_con_KMS)
 *   [9 Audio su HDMI](#Audio_su_HDMI)
-*   [10 Configurare la modalità Dual Head](#Configurare_la_modalit.C3.A0_Dual_Head)
+*   [10 Configurare la modalità Dual Head](#Configurare_la_modalità_Dual_Head)
     *   [10.1 Schermi indipendenti sotto X](#Schermi_indipendenti_sotto_X)
-*   [11 Abilitare l'accelerazione video](#Abilitare_l.27accelerazione_video)
+*   [11 Abilitare l'accelerazione video](#Abilitare_l'accelerazione_video)
 *   [12 Disabilitare il vsync](#Disabilitare_il_vsync)
 *   [13 Risoluzione dei problemi](#Risoluzione_dei_problemi)
     *   [13.1 Rilevo artefatti quando effettuo il login nel mio DE o WM](#Rilevo_artefatti_quando_effettuo_il_login_nel_mio_DE_o_WM)
     *   [13.2 Aggiungere risoluzioni non rilevate](#Aggiungere_risoluzioni_non_rilevate)
     *   [13.3 Performance scadenti con driver libero](#Performance_scadenti_con_driver_libero)
-    *   [13.4 L'AGP è disabilitato (con il KMS)](#L.27AGP_.C3.A8_disabilitato_.28con_il_KMS.29)
+    *   [13.4 L'AGP è disabilitato (con il KMS)](#L'AGP_è_disabilitato_(con_il_KMS))
     *   [13.5 Collegando un TV viene mostrato un bordo nero attorno allo schermo](#Collegando_un_TV_viene_mostrato_un_bordo_nero_attorno_allo_schermo)
     *   [13.6 Schermo nero con cursore del mouse visibile al resume dalla sospensione](#Schermo_nero_con_cursore_del_mouse_visibile_al_resume_dalla_sospensione)
     *   [13.7 Nessun effetto desktop in KDE4 con la X1300 ed i driver Radeon](#Nessun_effetto_desktop_in_KDE4_con_la_X1300_ed_i_driver_Radeon)
-    *   [13.8 Schermo nero e nessuna console visualizzata, ma X funzionante sotto KMS](#Schermo_nero_e_nessuna_console_visualizzata.2C_ma_X_funzionante_sotto_KMS)
+    *   [13.8 Schermo nero e nessuna console visualizzata, ma X funzionante sotto KMS](#Schermo_nero_e_nessuna_console_visualizzata,_ma_X_funzionante_sotto_KMS)
     *   [13.9 Alcune applicazioni 3d vanno in crash o mostrano alcune textures completamente nere](#Alcune_applicazioni_3d_vanno_in_crash_o_mostrano_alcune_textures_completamente_nere)
-    *   [13.10 Prestazioni 2D (ad esempio lo scroll) scadenti](#Prestazioni_2D_.28ad_esempio_lo_scroll.29_scadenti)
-    *   [13.11 Applicazioni 3d mostrano finestra nera su ATI X1600 (RV530)](#Applicazioni_3d_mostrano_finestra_nera_su_ATI_X1600_.28RV530.29)
+    *   [13.10 Prestazioni 2D (ad esempio lo scroll) scadenti](#Prestazioni_2D_(ad_esempio_lo_scroll)_scadenti)
+    *   [13.11 Applicazioni 3d mostrano finestra nera su ATI X1600 (RV530)](#Applicazioni_3d_mostrano_finestra_nera_su_ATI_X1600_(RV530))
 
 ## Convenzione dei nomi
 
@@ -120,7 +120,7 @@ KMS per le schede video ATI richiede il driver opensource di [Xorg (Italiano)](/
 *   Se si utilizza un kernel differente da quello stock `-ARCH` (ad es. linux-zen), ricordarsi di utilizzare un file di configurazione di *mkinitcpio* separato (ad es. `/etc/mkinitcpio-zen.conf`) e non `/etc/mkinitcpio.conf`.
 *   Rimuovere ogni modulo relativo al framebuffer dal proprio mkinitcpio.
 *   Aggiungere `radeon` alla stringa MODULES del proprio file di configurazione di mkinitcpio.conf. A seconda dal chipset della scheda madre, può essere necessario aggiungere `intel_agp` (o `ali_agp`, `ati_agp`, `amd_agp`, `amd64_agp` etc.) prima del modulo `radeon`.
-*   Rigenerare [initramfs](/index.php/Mkinitcpio_(Italiano)#Creazione_dell.27immagine_ed_attivazione "Mkinitcpio (Italiano)"):
+*   Rigenerare [initramfs](/index.php/Mkinitcpio_(Italiano)#Creazione_dell'immagine_ed_attivazione "Mkinitcpio (Italiano)"):
 *   **Riavviare** il sistema.
 
 #### Avvio ritardato
@@ -456,11 +456,11 @@ LABEL arch
 
 ```
 
-Se l'audio HDMI non dovesse completamente funzionare dopo l'installazione del driver, verificare la propria configurazione seguendo la procedura proposta [qui](/index.php/Advanced_Linux_Sound_Architecture_(Italiano)#L.27uscita_HDMI_non_funziona "Advanced Linux Sound Architecture (Italiano)").
+Se l'audio HDMI non dovesse completamente funzionare dopo l'installazione del driver, verificare la propria configurazione seguendo la procedura proposta [qui](/index.php/Advanced_Linux_Sound_Architecture_(Italiano)#L'uscita_HDMI_non_funziona "Advanced Linux Sound Architecture (Italiano)").
 
 **Nota:** Al momento della stesura di questo articolo (2013-05-20), i driver per le [schede Southern Islands](http://www.x.org/wiki/RadeonFeature#Decoder_ring_for_engineering_vs_marketing_names) non supportano l'audio HDMI.
 
-*   Il modulo del kernel `radeon.audio` funziona solo se il [#Kernel mode-setting (KMS)](#Kernel_mode-setting_.28KMS.29) è abilitato. Di default **xf86-video-ati** abilita il KMS.
+*   Il modulo del kernel `radeon.audio` funziona solo se il [#Kernel mode-setting (KMS)](#Kernel_mode-setting_(KMS)) è abilitato. Di default **xf86-video-ati** abilita il KMS.
 *   Se il suono risultasse distorto, provare [a impostare tsched=0](/index.php/PulseAudio_(Italiano)#Artefatti_sonori.2C_audio_intermittente_o_gracchiante "PulseAudio (Italiano)") ed assicurarsi che il demone `rtkit` sia avviato.
 
 ## Configurare la modalità Dual Head
@@ -552,7 +552,7 @@ Questo problema è affrontato nella pagina di [Xrandr](/index.php/Xrandr#Adding_
 
 ### Performance scadenti con driver libero
 
-Alcune schede video possono essere installate di base provando ad usare [KMS](/index.php/ATI#AMD.2FAti_cards_and_kernel_mode-setting_.28KMS.29 "ATI"). È possibile verificare se è questo il caso lanciando:
+Alcune schede video possono essere installate di base provando ad usare [KMS](/index.php/ATI#AMD/Ati_cards_and_kernel_mode-setting_(KMS) "ATI"). È possibile verificare se è questo il caso lanciando:
 
 ```
 dmesg | egrep "drm|radeon"

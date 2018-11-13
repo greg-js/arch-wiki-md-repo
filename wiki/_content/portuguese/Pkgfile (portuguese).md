@@ -6,14 +6,14 @@ Artigos relacionados
 
 **pkgfile** é uma ferramenta para pesquisar por arquivos de pacotes nos [repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais").
 
-**Dica:** [pacman](https://www.archlinux.org/packages/?name=pacman) possui [uma funcionalidade similar embutida](/index.php/Pacman_(Portugu%C3%AAs)#Pesquisar_por_um_pacote_que_contenha_um_arquivo_espec.C3.ADfico "Pacman (Português)").
+**Dica:** [pacman](https://www.archlinux.org/packages/?name=pacman) possui [uma funcionalidade similar embutida](/index.php/Pacman_(Portugu%C3%AAs)#Pesquisar_por_um_pacote_que_contenha_um_arquivo_específico "Pacman (Português)").
 
 ## Contents
 
-*   [1 Instalação](#Instala.C3.A7.C3.A3o)
+*   [1 Instalação](#Instalação)
 *   [2 Uso](#Uso)
-*   [3 Comando não localizado](#Comando_n.C3.A3o_localizado)
-*   [4 Atualizações automáticas](#Atualiza.C3.A7.C3.B5es_autom.C3.A1ticas)
+*   [3 Comando não localizado](#Comando_não_localizado)
+*   [4 Atualizações automáticas](#Atualizações_automáticas)
 
 ## Instalação
 
@@ -49,7 +49,7 @@ Esse último é comparável com `pacman -Ql` (veja [pacman (Português)#Consulta
 
 ## Comando não localizado
 
-Veja [Bash#Command not found](/index.php/Bash#Command_not_found "Bash"), [Zsh#The "command not found" hook](/index.php/Zsh#The_.22command_not_found.22_hook "Zsh") e [Fish#The "command not found" hook](/index.php/Fish#The_.22command_not_found.22_hook "Fish").
+Veja [Bash#Command not found](/index.php/Bash#Command_not_found "Bash"), [Zsh#The "command not found" hook](/index.php/Zsh#The_"command_not_found"_hook "Zsh") e [Fish#The "command not found" hook](/index.php/Fish#The_"command_not_found"_hook "Fish").
 
 ## Atualizações automáticas
 

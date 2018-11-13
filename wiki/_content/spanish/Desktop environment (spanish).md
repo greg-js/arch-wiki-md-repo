@@ -13,7 +13,7 @@ Un [entorno de escritorio](https://en.wikipedia.org/wiki/es:Desktop_environment 
     *   [2.1 Lista de entornos de escritorio](#Lista_de_entornos_de_escritorio)
         *   [2.1.1 Soportados oficialmente](#Soportados_oficialmente)
         *   [2.1.2 Sin soporte oficial](#Sin_soporte_oficial)
-    *   [2.2 Comparación de entornos de escritorio](#Comparaci.C3.B3n_de_entornos_de_escritorio)
+    *   [2.2 Comparación de entornos de escritorio](#Comparación_de_entornos_de_escritorio)
         *   [2.2.1 Uso de los recursos](#Uso_de_los_recursos)
         *   [2.2.2 Entornos familiares](#Entornos_familiares)
 *   [3 Entornos personalizados](#Entornos_personalizados)

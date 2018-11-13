@@ -6,7 +6,7 @@ Netboot atvaizdai tai ypač maži (<1MB) atvaizdai, kurie gali būti naudojami p
     *   [1.1 ipxe.lkrn naudojimas](#ipxe.lkrn_naudojimas)
     *   [1.2 ipxe.pxe naudojimas](#ipxe.pxe_naudojimas)
 *   [2 UEFI](#UEFI)
-    *   [2.1 Įdiegimas su efibootmgr](#.C4.AEdiegimas_su_efibootmgr)
+    *   [2.1 Įdiegimas su efibootmgr](#Įdiegimas_su_efibootmgr)
 
 ## BIOS
 

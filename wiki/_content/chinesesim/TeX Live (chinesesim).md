@@ -15,19 +15,19 @@ Tex Live是[LaTeX](https://en.wikipedia.org/wiki/LaTeX "wikipedia:LaTeX")， [Co
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-    *   [1.1 手动安装TeXLive](#.E6.89.8B.E5.8A.A8.E5.AE.89.E8.A3.85TeXLive)
-*   [2 使用](#.E4.BD.BF.E7.94.A8)
-    *   [2.1 纸张大小](#.E7.BA.B8.E5.BC.A0.E5.A4.A7.E5.B0.8F)
-    *   [2.2 升级时出现 "formats not generated" 错误](#.E5.8D.87.E7.BA.A7.E6.97.B6.E5.87.BA.E7.8E.B0_.22formats_not_generated.22_.E9.94.99.E8.AF.AF)
-    *   [2.3 字体](#.E5.AD.97.E4.BD.93)
-*   [3 中文化](#.E4.B8.AD.E6.96.87.E5.8C.96)
+*   [1 安装](#安装)
+    *   [1.1 手动安装TeXLive](#手动安装TeXLive)
+*   [2 使用](#使用)
+    *   [2.1 纸张大小](#纸张大小)
+    *   [2.2 升级时出现 "formats not generated" 错误](#升级时出现_"formats_not_generated"_错误)
+    *   [2.3 字体](#字体)
+*   [3 中文化](#中文化)
 *   [4 TeXLive Local Manager](#TeXLive_Local_Manager)
-*   [5 安装 .sty 文件](#.E5.AE.89.E8.A3.85_.sty_.E6.96.87.E4.BB.B6)
-    *   [5.1 手工安装](#.E6.89.8B.E5.B7.A5.E5.AE.89.E8.A3.85)
-    *   [5.2 使用 PKGBUILD 安装](#.E4.BD.BF.E7.94.A8_PKGBUILD_.E5.AE.89.E8.A3.85)
-*   [6 更新 babelbib 语言定义](#.E6.9B.B4.E6.96.B0_babelbib_.E8.AF.AD.E8.A8.80.E5.AE.9A.E4.B9.89)
-*   [7 更多信息](#.E6.9B.B4.E5.A4.9A.E4.BF.A1.E6.81.AF)
+*   [5 安装 .sty 文件](#安装_.sty_文件)
+    *   [5.1 手工安装](#手工安装)
+    *   [5.2 使用 PKGBUILD 安装](#使用_PKGBUILD_安装)
+*   [6 更新 babelbib 语言定义](#更新_babelbib_语言定义)
+*   [7 更多信息](#更多信息)
 
 ## 安装
 

@@ -15,13 +15,13 @@ OpenVPN is designed to work with the [TUN/TAP](https://en.wikipedia.org/wiki/TUN
 *   [1 Installation](#Installation)
 *   [2 Kernel configuration](#Kernel_configuration)
 *   [3 Connect to a VPN provided by a third party](#Connect_to_a_VPN_provided_by_a_third_party)
-*   [4 Create a Public Key Infrastructure (PKI) from scratch](#Create_a_Public_Key_Infrastructure_.28PKI.29_from_scratch)
+*   [4 Create a Public Key Infrastructure (PKI) from scratch](#Create_a_Public_Key_Infrastructure_(PKI)_from_scratch)
 *   [5 A basic L3 IP routing configuration](#A_basic_L3_IP_routing_configuration)
     *   [5.1 Example configuration](#Example_configuration)
     *   [5.2 The server configuration file](#The_server_configuration_file)
         *   [5.2.1 Hardening the server](#Hardening_the_server)
         *   [5.2.2 Enabling compression](#Enabling_compression)
-        *   [5.2.3 Deviating from the standard port and/or protocol](#Deviating_from_the_standard_port_and.2For_protocol)
+        *   [5.2.3 Deviating from the standard port and/or protocol](#Deviating_from_the_standard_port_and/or_protocol)
         *   [5.2.4 Running multiple instances of OpenVPN on different ports on the physical machine](#Running_multiple_instances_of_OpenVPN_on_different_ports_on_the_physical_machine)
     *   [5.3 The client config profile](#The_client_config_profile)
         *   [5.3.1 Run as unprivileged user](#Run_as_unprivileged_user)
@@ -365,7 +365,7 @@ In order to enable Dual Stack for OpenVPN, change `proto udp` to `proto udp6` in
 
 #### Provide IPv6 inside the tunnel
 
-In order to provide IPv6 inside the tunnel, have an IPv6 prefix routed to the OpenVPN server. Either set up a static route on the gateway (if a static block is assigned), or use a DHCPv6 client to get a prefix with DHCPv6 Prefix delegation (see [IPv6 Prefix delegation](/index.php/IPv6#Prefix_delegation_.28DHCPv6-PD.29 "IPv6") for details). Also consider using a unique local address from the address block fc00::/7\. Both methods have advantages and disadvantages:
+In order to provide IPv6 inside the tunnel, have an IPv6 prefix routed to the OpenVPN server. Either set up a static route on the gateway (if a static block is assigned), or use a DHCPv6 client to get a prefix with DHCPv6 Prefix delegation (see [IPv6 Prefix delegation](/index.php/IPv6#Prefix_delegation_(DHCPv6-PD) "IPv6") for details). Also consider using a unique local address from the address block fc00::/7\. Both methods have advantages and disadvantages:
 
 *   Many ISPs only provide dynamically changing IPv6 prefixes. OpenVPN does not support prefix changes, so change the server.conf every time the prefix is changed (Maybe can be automated with a script).
 *   ULA addresses are not routed to the Internet, and setting up NAT is not as straightforward as with IPv4\. This means one cannot route the entire traffic over the tunnel. Those wanting to connect two sites via IPv6, without the need to connect to the Internet over the tunnel, may want to use the ULA addresses for ease.
@@ -493,7 +493,7 @@ COMMIT
 Make sure to open the chosen OpenVPN port (default 1194/udp):
 
 ```
-# ufw allow 1194 udp
+# ufw allow 1194/udp
 
 ```
 

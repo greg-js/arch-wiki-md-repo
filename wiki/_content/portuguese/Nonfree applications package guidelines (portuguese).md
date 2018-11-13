@@ -14,19 +14,19 @@ Para muitos aplicativos (a maioria dos quais são do Windows), não há fontes n
 
 *   [1 Motivo](#Motivo)
 *   [2 Regras comuns](#Regras_comuns)
-    *   [2.1 Evite software não livre quando possível](#Evite_software_n.C3.A3o_livre_quando_poss.C3.ADvel)
-    *   [2.2 Use variantes de código aberto quando possível](#Use_variantes_de_c.C3.B3digo_aberto_quando_poss.C3.ADvel)
+    *   [2.1 Evite software não livre quando possível](#Evite_software_não_livre_quando_possível)
+    *   [2.2 Use variantes de código aberto quando possível](#Use_variantes_de_código_aberto_quando_possível)
     *   [2.3 Mantenha simples](#Mantenha_simples)
 *   [3 Nomenclatura de pacotes](#Nomenclatura_de_pacotes)
-*   [4 Colocação de arquivos](#Coloca.C3.A7.C3.A3o_de_arquivos)
+*   [4 Colocação de arquivos](#Colocação_de_arquivos)
 *   [5 Arquivos em falta](#Arquivos_em_falta)
-    *   [5.1 Os arquivos só podem ser obtidos em um pacote/instalador distribuído](#Os_arquivos_s.C3.B3_podem_ser_obtidos_em_um_pacote.2Finstalador_distribu.C3.ADdo)
-    *   [5.2 Os arquivos só podem ser obtidos em um CD distribuído ou outro tipo de mídia de disco ótico](#Os_arquivos_s.C3.B3_podem_ser_obtidos_em_um_CD_distribu.C3.ADdo_ou_outro_tipo_de_m.C3.ADdia_de_disco_.C3.B3tico)
-    *   [5.3 Os arquivos podem ser obtidos de várias maneiras](#Os_arquivos_podem_ser_obtidos_de_v.C3.A1rias_maneiras)
-*   [6 Tópicos avançados](#T.C3.B3picos_avan.C3.A7ados)
+    *   [5.1 Os arquivos só podem ser obtidos em um pacote/instalador distribuído](#Os_arquivos_só_podem_ser_obtidos_em_um_pacote/instalador_distribuído)
+    *   [5.2 Os arquivos só podem ser obtidos em um CD distribuído ou outro tipo de mídia de disco ótico](#Os_arquivos_só_podem_ser_obtidos_em_um_CD_distribuído_ou_outro_tipo_de_mídia_de_disco_ótico)
+    *   [5.3 Os arquivos podem ser obtidos de várias maneiras](#Os_arquivos_podem_ser_obtidos_de_várias_maneiras)
+*   [6 Tópicos avançados](#Tópicos_avançados)
     *   [6.1 DLAGENTS personalizados](#DLAGENTS_personalizados)
     *   [6.2 Desempacotamento](#Desempacotamento)
-    *   [6.3 Obtendo ícones para arquivos .desktop](#Obtendo_.C3.ADcones_para_arquivos_.desktop)
+    *   [6.3 Obtendo ícones para arquivos .desktop](#Obtendo_ícones_para_arquivos_.desktop)
 
 ## Motivo
 

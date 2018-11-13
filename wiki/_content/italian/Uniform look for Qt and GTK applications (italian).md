@@ -7,11 +7,11 @@ Questo articolo descrive la configurazione dettagliata delle Qt e GTK+ per assic
 ## Contents
 
 *   [1 Introduzione](#Introduzione)
-*   [2 Stile per Qt e GTK+](#Stile_per_Qt_e_GTK.2B)
+*   [2 Stile per Qt e GTK+](#Stile_per_Qt_e_GTK+)
     *   [2.1 KDE4 Oxygen](#KDE4_Oxygen)
     *   [2.2 QtCurve](#QtCurve)
     *   [2.3 Altri](#Altri)
-*   [3 Come posso configurare lo stile per ogni toolkit?](#Come_posso_configurare_lo_stile_per_ogni_toolkit.3F)
+*   [3 Come posso configurare lo stile per ogni toolkit?](#Come_posso_configurare_lo_stile_per_ogni_toolkit?)
     *   [3.1 Stili QT3](#Stili_QT3)
     *   [3.2 Stili QT4](#Stili_QT4)
     *   [3.3 Stili GTK2](#Stili_GTK2)

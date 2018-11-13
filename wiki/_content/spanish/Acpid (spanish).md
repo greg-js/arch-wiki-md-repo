@@ -17,9 +17,9 @@ Related articles
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Configuración](#Configuraci.C3.B3n)
-    *   [2.1 Configuración alternativa](#Configuraci.C3.B3n_alternativa)
+*   [1 Instalación](#Instalación)
+*   [2 Configuración](#Configuración)
+    *   [2.1 Configuración alternativa](#Configuración_alternativa)
 *   [3 Consejos y trucos](#Consejos_y_trucos)
     *   [3.1 Eventos de ejemplo](#Eventos_de_ejemplo)
     *   [3.2 Activar el control del volumen](#Activar_el_control_del_volumen)
@@ -27,7 +27,7 @@ Related articles
     *   [3.4 Habilitar el control Wi-Fi](#Habilitar_el_control_Wi-Fi)
     *   [3.5 Obtener el nombre de usuario de la pantalla actual](#Obtener_el_nombre_de_usuario_de_la_pantalla_actual)
         *   [3.5.1 Conectar a un socket acpid](#Conectar_a_un_socket_acpid)
-*   [4 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [4 Véase también](#Véase_también)
 
 ## Instalación
 
@@ -253,7 +253,7 @@ Véase [[3]](https://gist.githubusercontent.com/AladW/de1c5676d93d05a5a0e1/raw/1
 
 **Nota:**
 
-*   Si la luz de fondo de la pantalla LCD no se apaga cuando la tapa está cerrada, puede hacerlo manualmente ejecutando `getXuser xset dpms force off` y `getXuser xset dpms force on` en los eventos de tapa cerrada y abierta respectivamente. Si la pantalla está en blanco pero la luz de fondo encendida, en su lugar utilice [vbetool](https://www.archlinux.org/packages/?name=vbetool) con `betool dpms off` y `vbetool dpms on`. Véase también [Configuración de XScreenSaver](/index.php/XScreenSaver_(Espa%C3%B1ol)#Configuraci.C3.B3n "XScreenSaver (Español)").
+*   Si la luz de fondo de la pantalla LCD no se apaga cuando la tapa está cerrada, puede hacerlo manualmente ejecutando `getXuser xset dpms force off` y `getXuser xset dpms force on` en los eventos de tapa cerrada y abierta respectivamente. Si la pantalla está en blanco pero la luz de fondo encendida, en su lugar utilice [vbetool](https://www.archlinux.org/packages/?name=vbetool) con `betool dpms off` y `vbetool dpms on`. Véase también [Configuración de XScreenSaver](/index.php/XScreenSaver_(Espa%C3%B1ol)#Configuración "XScreenSaver (Español)").
 *   Cuando utilice *who* o *w*, asegúrese de que se cree `/run/utmp` en el momento del arranque. Véase [utmp(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/utmp.5) para más detalles.
 
 #### Conectar a un socket acpid

@@ -8,8 +8,8 @@ Arch Linux is not officially supported by [Lattice Diamond](http://www.latticese
 *   [2 Installation](#Installation)
     *   [2.1 Licensing](#Licensing)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Place & Route fails](#Place_.26_Route_fails)
-    *   [3.2 Programming with FTDI cables doesn't work](#Programming_with_FTDI_cables_doesn.27t_work)
+    *   [3.1 Place & Route fails](#Place_&_Route_fails)
+    *   [3.2 Programming with FTDI cables doesn't work](#Programming_with_FTDI_cables_doesn't_work)
     *   [3.3 Diamond crashes when FTDI based serial interface exists on a Lattice starter kit](#Diamond_crashes_when_FTDI_based_serial_interface_exists_on_a_Lattice_starter_kit)
 
 ## Prerequisites

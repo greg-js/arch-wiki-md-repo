@@ -12,7 +12,7 @@ Un [repositorio de software](https://en.wikipedia.org/wiki/es:Repositorio "wikip
 
 ## Contents
 
-*   [1 Antecedentes históricos](#Antecedentes_hist.C3.B3ricos)
+*   [1 Antecedentes históricos](#Antecedentes_históricos)
 *   [2 core](#core)
 *   [3 extra](#extra)
 *   [4 community](#community)

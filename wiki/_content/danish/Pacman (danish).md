@@ -8,7 +8,7 @@ Pacman kan holde et system opdateret ved at synkronisere dets pakkeliste med hov
 *   [2 Anvendelse](#Anvendelse)
     *   [2.1 Installere og fjerne pakker](#Installere_og_fjerne_pakker)
     *   [2.2 Opgradering af systemet](#Opgradering_af_systemet)
-    *   [2.3 Forespørgsler i pakkedatabasen](#Foresp.C3.B8rgsler_i_pakkedatabasen)
+    *   [2.3 Forespørgsler i pakkedatabasen](#Forespørgsler_i_pakkedatabasen)
     *   [2.4 Anden anvendelse](#Anden_anvendelse)
 *   [3 Konfiguration](#Konfiguration_2)
     *   [3.1 Generelle valgmuligheder](#Generelle_valgmuligheder)

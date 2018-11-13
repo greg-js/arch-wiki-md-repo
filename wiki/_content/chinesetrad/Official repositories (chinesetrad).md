@@ -18,7 +18,7 @@
 
 ## Contents
 
-*   [1 軟體倉庫](#.E8.BB.9F.E9.AB.94.E5.80.89.E5.BA.AB)
+*   [1 軟體倉庫](#軟體倉庫)
     *   [1.1 core](#core)
     *   [1.2 extra](#extra)
     *   [1.3 community](#community)
@@ -26,8 +26,8 @@
     *   [1.5 testing](#testing)
         *   [1.5.1 community-testing](#community-testing)
         *   [1.5.2 multilib-testing](#multilib-testing)
-*   [2 歷史背景](#.E6.AD.B7.E5.8F.B2.E8.83.8C.E6.99.AF)
-    *   [2.1 official、unofficial、current 和 extra](#official.E3.80.81unofficial.E3.80.81current_.E5.92.8C_extra)
+*   [2 歷史背景](#歷史背景)
+    *   [2.1 official、unofficial、current 和 extra](#official、unofficial、current_和_extra)
 
 ## 軟體倉庫
 

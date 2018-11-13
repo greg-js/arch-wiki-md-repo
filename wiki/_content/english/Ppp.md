@@ -141,7 +141,7 @@ The resulting configuration can be called using `pon` and discarded using `poff`
 
 ### Starting pppd on boot
 
-*   Configure the `ppp_generic` module to load on boot. See [Kernel modules#Automatic module handling](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules") for more information.
+*   Configure the `ppp_generic` module to load on boot. See [Kernel modules#Automatic module loading with systemd](/index.php/Kernel_modules#Automatic_module_loading_with_systemd "Kernel modules") for more information.
 *   [Enable](/index.php/Enable "Enable") the systemd service `ppp@*your_provider*.service`.
 
 ## Tips and tricks

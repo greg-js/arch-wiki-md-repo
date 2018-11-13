@@ -2,16 +2,16 @@
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Interfaces/GUIs](#Interfaces.2FGUIs)
-*   [3 Integración en Navegadores](#Integraci.C3.B3n_en_Navegadores)
+*   [1 Instalación](#Instalación)
+*   [2 Interfaces/GUIs](#Interfaces/GUIs)
+*   [3 Integración en Navegadores](#Integración_en_Navegadores)
     *   [3.1 Firefox](#Firefox)
     *   [3.2 Konqueror](#Konqueror)
     *   [3.3 Chromium](#Chromium)
-*   [4 Configuración](#Configuraci.C3.B3n)
+*   [4 Configuración](#Configuración)
     *   [4.1 Atajos del teclado](#Atajos_del_teclado)
 *   [5 Tips and Tricks](#Tips_and_Tricks)
-*   [6 Continuación de reproducción automática](#Continuaci.C3.B3n_de_reproducci.C3.B3n_autom.C3.A1tica)
+*   [6 Continuación de reproducción automática](#Continuación_de_reproducción_automática)
 
 ## Instalación
 

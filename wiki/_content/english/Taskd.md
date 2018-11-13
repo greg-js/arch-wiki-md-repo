@@ -11,7 +11,7 @@
     *   [2.2 Using the Android Taskwarrior app](#Using_the_Android_Taskwarrior_app)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Unreachable Server](#Unreachable_Server)
-    *   [3.2 "Bad Key"](#.22Bad_Key.22)
+    *   [3.2 "Bad Key"](#"Bad_Key")
     *   [3.3 taskd.service fails to start on boot](#taskd.service_fails_to_start_on_boot)
 
 ## Server

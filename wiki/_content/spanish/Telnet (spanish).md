@@ -1,32 +1,33 @@
-[Telnet](https://en.wikipedia.org/wiki/es:Telnet "wikipedia:es:Telnet") es el protocolo tradicional para hacer conexiones de consola remotas con TCP. Telnet **no es seguro** y se usa mas que todo para conectar equipos antiguos. Para una alternativa segura vea [SSH](/index.php/Secure_Shell_(Espa%C3%B1ol) "Secure Shell (Español)").
+**Estado de la traducción**
+Este artículo es una traducción de [Telnet](/index.php/Telnet "Telnet"), revisada por última vez el **2018-11-12**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Telnet&diff=0&oldid=549518) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
+[Telnet](https://en.wikipedia.org/wiki/es:Telnet o tunelizada a través de una VPN. Para una alternativa segura véase [SSH](/index.php/SSH_(Espa%C3%B1ol) "SSH (Español)").
 
 ## Instalación
 
-Para usar el cliente de telnet para conectar a otras maquinas [instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [inetutils](https://www.archlinux.org/packages/?name=inetutils), disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
+El paquete [inetutils](https://www.archlinux.org/packages/?name=inetutils), parte del [grupo base](/index.php/Base_group "Base group"), incluye un cliente telnet.
 
-Un servidor de telnet puede ser configurado con sockets de [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") o xinetd.
-
-telnetd con systemd solo requiere el paquete [inetutils](https://www.archlinux.org/packages/?name=inetutils), mientras que la configuracion de un servidor de telnet con xinetd requiere la instalacion de [xinetd](https://www.archlinux.org/packages/?name=xinetd).
+Un servidor telnet puede configurarse con sockets de [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") o xinetd. Telnetd via systemd requiere solo el paquete inetutils. Para configurar un servidor telnet con xinetd, instale también [xinetd](https://www.archlinux.org/packages/?name=xinetd).
 
 ## Configuración
 
-Para habilitar un servidor de telnet con systemd, [active inicio automático](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") en la unidad `telnet.socket`. Si el servidor de telnet se debe activar en cada inicio del sistema, o [active](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") la unidad `telnet.socket` para comprobar conectividad.
+Para habilitar las conexiones del servidor telnet en systemd, [habilite](/index.php/Enable_(Espa%C3%B1ol) "Enable (Español)") `telnet.socket` (si desea que el servidor telnet arranque en cada inicio), e [inicie](/index.php/Start_(Espa%C3%B1ol) "Start (Español)") `telnet.socket` para probar la conectividad.
 
-Para habilitar unn servidor de telnet con xinetd, edite `/etc/xinetd.d/telnet`, cambie`disable = yes` por `disable = no` y [reinicie](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") el servicio de `xinetd.service`.
+Para habilitar las conexiones del servidor telnet en xinetd, edite `/etc/xinetd.d/telnet`, cambie `disable = yes` a `disable = no` y reinicie el servicio xinetd.
 
-[Active inicio automático](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") del servicio `xinetd.service` si desea iniciarlo con el sistema.
+[Habilite](/index.php/Enable_(Espa%C3%B1ol) "Enable (Español)") systemd xinetd service si desea iniciarlo en el momento del arranque.
 
-### Comprobando el sistema
+### Probando la configuración
 
-Intente abrir una conexión con su servidor:
+Intente abrir una conexión telnet a su servidor:
 
 ```
 $ telnet localhost
 
 ```
 
-Intente iniciar sesión como root para comprobar si la configuración lo permite y las implicaciones de seguridad que esto conlleva.
+Intente un inicio de sesión root para ver si su configuración lo permite y las implicaciones de seguridad que eso conlleva.
 
-Si la sesión se desconecta antes de abrir una consola, intente instalar [inetutils-git](https://aur.archlinux.org/packages/inetutils-git/) en lugar de [inetutils](https://www.archlinux.org/packages/?name=inetutils) y reinicie `telnet.socket`.
+Si la sesión se desconecta antes de recibir un mensaje de inicio de sesión, intente instalar [inetutils-git](https://aur.archlinux.org/packages/inetutils-git/) en lugar del inetutils actual y reinicie telnet.socket.
 
-**Sugerencia:** Si se reciben caracteres no legibles en la consola en la conexión con un servidor remoto que envía no-ascii y no-unicode, intente instalar [xorg-luit](https://www.archlinux.org/packages/?name=xorg-luit) para solucionar este problema.
+**Sugerencia:** Si recibe código no deseado de un servidor telnet remoto que envía caracteres que no son ascii con una codificación que no es unicode, es posible que desee instalar [xorg-luit](https://www.archlinux.org/packages/?name=xorg-luit) para resolver este problema.

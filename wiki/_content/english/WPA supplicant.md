@@ -16,12 +16,12 @@ Related articles
     *   [5.1 Configuration](#Configuration)
     *   [5.2 Connection](#Connection)
         *   [5.2.1 Manual](#Manual)
-        *   [5.2.2 At boot (systemd)](#At_boot_.28systemd.29)
-            *   [5.2.2.1 802.1x/radius](#802.1x.2Fradius)
+        *   [5.2.2 At boot (systemd)](#At_boot_(systemd))
+            *   [5.2.2.1 802.1x/radius](#802.1x/radius)
     *   [5.3 wpa_cli action script](#wpa_cli_action_script)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 nl80211 driver not supported on some hardware](#nl80211_driver_not_supported_on_some_hardware)
-    *   [6.2 Problem with mounted network shares (cifs) and shutdown](#Problem_with_mounted_network_shares_.28cifs.29_and_shutdown)
+    *   [6.2 Problem with mounted network shares (cifs) and shutdown](#Problem_with_mounted_network_shares_(cifs)_and_shutdown)
     *   [6.3 Password-related problems](#Password-related_problems)
     *   [6.4 Problems with eduroam and other MSCHAPv2 connections](#Problems_with_eduroam_and_other_MSCHAPv2_connections)
 *   [7 See also](#See_also)
@@ -218,7 +218,7 @@ network={
 
 ```
 
-Once you have finished the configuration file, you can optionally use it as a system-wide or per-interface default configuration by naming it according to the paths listed in [#At boot (systemd)](#At_boot_.28systemd.29). This also applies if you use additional network manager tools, which may rely on the paths (for example [Dhcpcd#10-wpa_supplicant](/index.php/Dhcpcd#10-wpa_supplicant "Dhcpcd")).
+Once you have finished the configuration file, you can optionally use it as a system-wide or per-interface default configuration by naming it according to the paths listed in [#At boot (systemd)](#At_boot_(systemd)). This also applies if you use additional network manager tools, which may rely on the paths (for example [Dhcpcd#10-wpa_supplicant](/index.php/Dhcpcd#10-wpa_supplicant "Dhcpcd")).
 
 **Tip:** To configure a network block to a hidden wireless *SSID*, which by definition will not turn up in a regular scan, the option `scan_ssid=1` has to be defined in the network block.
 

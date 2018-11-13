@@ -11,7 +11,7 @@ At the moment, there are relatively few [Lisp](https://en.wikipedia.org/wiki/Lis
 *   [1 Directory structure and naming](#Directory_structure_and_naming)
 *   [2 ASDF](#ASDF)
 *   [3 Lisp-specific packaging](#Lisp-specific_packaging)
-*   [4 Things you, the reader, can do](#Things_you.2C_the_reader.2C_can_do)
+*   [4 Things you, the reader, can do](#Things_you,_the_reader,_can_do)
 
 ## Directory structure and naming
 

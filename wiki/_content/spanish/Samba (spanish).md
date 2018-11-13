@@ -2,22 +2,22 @@
 
 ## Contents
 
-*   [1 Introducción](#Introducci.C3.B3n)
-*   [2 Instalación](#Instalaci.C3.B3n)
-*   [3 Configuración](#Configuraci.C3.B3n)
+*   [1 Introducción](#Introducción)
+*   [2 Instalación](#Instalación)
+*   [3 Configuración](#Configuración)
     *   [3.1 Iniciando el demonio](#Iniciando_el_demonio)
-    *   [3.2 SWAT: Herramienta de administración web de Samba](#SWAT:_Herramienta_de_administraci.C3.B3n_web_de_Samba)
-    *   [3.3 Añadiendo usuarios](#A.C3.B1adiendo_usuarios)
+    *   [3.2 SWAT: Herramienta de administración web de Samba](#SWAT:_Herramienta_de_administración_web_de_Samba)
+    *   [3.3 Añadiendo usuarios](#Añadiendo_usuarios)
 *   [4 Accediendo a los intercambios Samba](#Accediendo_a_los_intercambios_Samba)
     *   [4.1 Desde Gnome](#Desde_Gnome)
-    *   [4.2 Desde otros entornos gráficos](#Desde_otros_entornos_gr.C3.A1ficos)
+    *   [4.2 Desde otros entornos gráficos](#Desde_otros_entornos_gráficos)
     *   [4.3 Desde una consola](#Desde_una_consola)
-    *   [4.4 Montando una compartición de Samba](#Montando_una_compartici.C3.B3n_de_Samba)
+    *   [4.4 Montando una compartición de Samba](#Montando_una_compartición_de_Samba)
     *   [4.5 Agregando una comparticion a fstab](#Agregando_una_comparticion_a_fstab)
-*   [5 Compartiendo archivos en tu LAN sin usuario y contraseña](#Compartiendo_archivos_en_tu_LAN_sin_usuario_y_contrase.C3.B1a)
-    *   [5.1 Ejemplo de archivo de configuración](#Ejemplo_de_archivo_de_configuraci.C3.B3n)
-*   [6 Solución de problemas](#Soluci.C3.B3n_de_problemas)
-*   [7 Ver también](#Ver_tambi.C3.A9n)
+*   [5 Compartiendo archivos en tu LAN sin usuario y contraseña](#Compartiendo_archivos_en_tu_LAN_sin_usuario_y_contraseña)
+    *   [5.1 Ejemplo de archivo de configuración](#Ejemplo_de_archivo_de_configuración)
+*   [6 Solución de problemas](#Solución_de_problemas)
+*   [7 Ver también](#Ver_también)
 *   [8 Mas Recursos](#Mas_Recursos)
 
 ## Introducción
@@ -139,7 +139,7 @@ Failed to modify password entry for user "<user>"
 
 ```
 
-Puedes añadir un nuevo usuario con [adduser](/index.php/Users_and_groups_(Espa%C3%B1ol)#Administraci.C3.B3n_de_usuarios "Users and groups (Español)").
+Puedes añadir un nuevo usuario con [adduser](/index.php/Users_and_groups_(Espa%C3%B1ol)#Administración_de_usuarios "Users and groups (Español)").
 
 ## Accediendo a los intercambios Samba
 

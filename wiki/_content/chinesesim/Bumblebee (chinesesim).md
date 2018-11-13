@@ -13,40 +13,40 @@
 
 ## Contents
 
-*   [1 Bumblebee: Linux上的 Optimus](#Bumblebee:_Linux.E4.B8.8A.E7.9A.84_Optimus)
-*   [2 安装](#.E5.AE.89.E8.A3.85)
-*   [3 用法](#.E7.94.A8.E6.B3.95)
-    *   [3.1 测试](#.E6.B5.8B.E8.AF.95)
-    *   [3.2 一般用法](#.E4.B8.80.E8.88.AC.E7.94.A8.E6.B3.95)
-*   [4 配置](#.E9.85.8D.E7.BD.AE)
-    *   [4.1 速度优化](#.E9.80.9F.E5.BA.A6.E4.BC.98.E5.8C.96)
-        *   [4.1.1 使用VirtualGL作为桥接](#.E4.BD.BF.E7.94.A8VirtualGL.E4.BD.9C.E4.B8.BA.E6.A1.A5.E6.8E.A5)
+*   [1 Bumblebee: Linux上的 Optimus](#Bumblebee:_Linux上的_Optimus)
+*   [2 安装](#安装)
+*   [3 用法](#用法)
+    *   [3.1 测试](#测试)
+    *   [3.2 一般用法](#一般用法)
+*   [4 配置](#配置)
+    *   [4.1 速度优化](#速度优化)
+        *   [4.1.1 使用VirtualGL作为桥接](#使用VirtualGL作为桥接)
         *   [4.1.2 Primusrun](#Primusrun)
-    *   [4.2 电源管理](#.E7.94.B5.E6.BA.90.E7.AE.A1.E7.90.86)
-        *   [4.2.1 使用bbswitch时默认的 NVIDIA 电源状态](#.E4.BD.BF.E7.94.A8bbswitch.E6.97.B6.E9.BB.98.E8.AE.A4.E7.9A.84_NVIDIA_.E7.94.B5.E6.BA.90.E7.8A.B6.E6.80.81)
-        *   [4.2.2 关机时启用NVIDIA显卡](#.E5.85.B3.E6.9C.BA.E6.97.B6.E5.90.AF.E7.94.A8NVIDIA.E6.98.BE.E5.8D.A1)
-    *   [4.3 多显示器](#.E5.A4.9A.E6.98.BE.E7.A4.BA.E5.99.A8)
-        *   [4.3.1 显示器连接在 Intel 显卡上](#.E6.98.BE.E7.A4.BA.E5.99.A8.E8.BF.9E.E6.8E.A5.E5.9C.A8_Intel_.E6.98.BE.E5.8D.A1.E4.B8.8A)
-        *   [4.3.2 显示器连接在 NVIDIA 显卡上](#.E6.98.BE.E7.A4.BA.E5.99.A8.E8.BF.9E.E6.8E.A5.E5.9C.A8_NVIDIA_.E6.98.BE.E5.8D.A1.E4.B8.8A)
-            *   [4.3.2.1 xf86-video-intel-virtual-crtc 和 hybrid-screenclone](#xf86-video-intel-virtual-crtc_.E5.92.8C_hybrid-screenclone)
-*   [5 如 Windows 一般在集显和独显间切换](#.E5.A6.82_Windows_.E4.B8.80.E8.88.AC.E5.9C.A8.E9.9B.86.E6.98.BE.E5.92.8C.E7.8B.AC.E6.98.BE.E9.97.B4.E5.88.87.E6.8D.A2)
-*   [6 不依赖Bumblebee来使用CUDA](#.E4.B8.8D.E4.BE.9D.E8.B5.96Bumblebee.E6.9D.A5.E4.BD.BF.E7.94.A8CUDA)
-*   [7 疑难问题](#.E7.96.91.E9.9A.BE.E9.97.AE.E9.A2.98)
-    *   [7.1 [VGL] ERROR: Could not open display :8](#.5BVGL.5D_ERROR:_Could_not_open_display_:8)
-    *   [7.2 [ERROR]Cannot access secondary GPU: No devices detected](#.5BERROR.5DCannot_access_secondary_GPU:_No_devices_detected)
-        *   [7.2.1 NVIDIA(0): Failed to assign any connected display devices to X screen 0](#NVIDIA.280.29:_Failed_to_assign_any_connected_display_devices_to_X_screen_0)
+    *   [4.2 电源管理](#电源管理)
+        *   [4.2.1 使用bbswitch时默认的 NVIDIA 电源状态](#使用bbswitch时默认的_NVIDIA_电源状态)
+        *   [4.2.2 关机时启用NVIDIA显卡](#关机时启用NVIDIA显卡)
+    *   [4.3 多显示器](#多显示器)
+        *   [4.3.1 显示器连接在 Intel 显卡上](#显示器连接在_Intel_显卡上)
+        *   [4.3.2 显示器连接在 NVIDIA 显卡上](#显示器连接在_NVIDIA_显卡上)
+            *   [4.3.2.1 xf86-video-intel-virtual-crtc 和 hybrid-screenclone](#xf86-video-intel-virtual-crtc_和_hybrid-screenclone)
+*   [5 如 Windows 一般在集显和独显间切换](#如_Windows_一般在集显和独显间切换)
+*   [6 不依赖Bumblebee来使用CUDA](#不依赖Bumblebee来使用CUDA)
+*   [7 疑难问题](#疑难问题)
+    *   [7.1 [VGL] ERROR: Could not open display :8](#[VGL]_ERROR:_Could_not_open_display_:8)
+    *   [7.2 [ERROR]Cannot access secondary GPU: No devices detected](#[ERROR]Cannot_access_secondary_GPU:_No_devices_detected)
+        *   [7.2.1 NVIDIA(0): Failed to assign any connected display devices to X screen 0](#NVIDIA(0):_Failed_to_assign_any_connected_display_devices_to_X_screen_0)
         *   [7.2.2 systemd-logind: failed to get session: PID XXX does not belong to any known session](#systemd-logind:_failed_to_get_session:_PID_XXX_does_not_belong_to_any_known_session)
-        *   [7.2.3 Failed to initialize the NVIDIA GPU at PCI:1:0:0 (GPU fallen off the bus / RmInitAdapter failed!)](#Failed_to_initialize_the_NVIDIA_GPU_at_PCI:1:0:0_.28GPU_fallen_off_the_bus_.2F_RmInitAdapter_failed.21.29)
+        *   [7.2.3 Failed to initialize the NVIDIA GPU at PCI:1:0:0 (GPU fallen off the bus / RmInitAdapter failed!)](#Failed_to_initialize_the_NVIDIA_GPU_at_PCI:1:0:0_(GPU_fallen_off_the_bus_/_RmInitAdapter_failed!))
         *   [7.2.4 Could not load GPU driver](#Could_not_load_GPU_driver)
-        *   [7.2.5 NOUVEAU(0): [drm] failed to set drm interface version](#NOUVEAU.280.29:_.5Bdrm.5D_failed_to_set_drm_interface_version)
-    *   [7.3 /dev/dri/card0: failed to set DRM interface version 1.4: Permission denied](#.2Fdev.2Fdri.2Fcard0:_failed_to_set_DRM_interface_version_1.4:_Permission_denied)
-    *   [7.4 ERROR: ld.so: object 'libdlfaker.so' from LD_PRELOAD cannot be preloaded: ignored](#ERROR:_ld.so:_object_.27libdlfaker.so.27_from_LD_PRELOAD_cannot_be_preloaded:_ignored)
-    *   [7.5 Fatal IO error 11 (Resource temporarily unavailable) on X server](#Fatal_IO_error_11_.28Resource_temporarily_unavailable.29_on_X_server)
-    *   [7.6 视频撕裂](#.E8.A7.86.E9.A2.91.E6.92.95.E8.A3.82)
+        *   [7.2.5 NOUVEAU(0): [drm] failed to set drm interface version](#NOUVEAU(0):_[drm]_failed_to_set_drm_interface_version)
+    *   [7.3 /dev/dri/card0: failed to set DRM interface version 1.4: Permission denied](#/dev/dri/card0:_failed_to_set_DRM_interface_version_1.4:_Permission_denied)
+    *   [7.4 ERROR: ld.so: object 'libdlfaker.so' from LD_PRELOAD cannot be preloaded: ignored](#ERROR:_ld.so:_object_'libdlfaker.so'_from_LD_PRELOAD_cannot_be_preloaded:_ignored)
+    *   [7.5 Fatal IO error 11 (Resource temporarily unavailable) on X server](#Fatal_IO_error_11_(Resource_temporarily_unavailable)_on_X_server)
+    *   [7.6 视频撕裂](#视频撕裂)
     *   [7.7 Bumblebee cannot connect to socket](#Bumblebee_cannot_connect_to_socket)
-    *   [7.8 Running X.org from console after login (rootless X.org)](#Running_X.org_from_console_after_login_.28rootless_X.org.29)
-    *   [7.9 Primusrun 鼠标延迟/禁用 VSYNC](#Primusrun_.E9.BC.A0.E6.A0.87.E5.BB.B6.E8.BF.9F.2F.E7.A6.81.E7.94.A8_VSYNC)
-*   [8 另见](#.E5.8F.A6.E8.A7.81)
+    *   [7.8 Running X.org from console after login (rootless X.org)](#Running_X.org_from_console_after_login_(rootless_X.org))
+    *   [7.9 Primusrun 鼠标延迟/禁用 VSYNC](#Primusrun_鼠标延迟/禁用_VSYNC)
+*   [8 另见](#另见)
 
 ## Bumblebee: Linux上的 Optimus
 
@@ -55,7 +55,7 @@
 Bumblebee 通过软件来实现它的功能，包括两个部分：
 
 *   利用独立显卡渲染程序，并通过集成显卡将图像显示在屏幕上。这是利用 VirtualGL 或 primus （见后面小节）实现的，相当于连接到了一个供独立显卡使用的 X 服务器。
-*   独立显卡空闲的时候会被禁用。（参见 [#电源管理](#.E7.94.B5.E6.BA.90.E7.AE.A1.E7.90.86) ）
+*   独立显卡空闲的时候会被禁用。（参见 [#电源管理](#电源管理) ）
 
 Bumblebee 试图模拟 Optimus 技术的行为；当需要的时候，使用独立显卡进行渲染，不使用的时候则关闭。当前的版本仅支持按需渲染，高负荷程序自动调用独立显卡的功能仍然在开发之中。
 
@@ -82,7 +82,7 @@ Bumblebee 试图模拟 Optimus 技术的行为；当需要的时候，使用独�
 
 ```
 
-并 [启用](/index.php/Enable "Enable") `bumblebeed.service`。重启系统并参考[#用法](#.E7.94.A8.E6.B3.95)。
+并 [启用](/index.php/Enable "Enable") `bumblebeed.service`。重启系统并参考[#用法](#用法)。
 
 ## 用法
 
@@ -235,7 +235,7 @@ $ optirun -b primus glxgears
 
 或者，在 `/etc/bumblebee/bumblebee.conf` 中设置 `Bridge=primus` 使其永久生效。
 
-**提示：** 如果要禁用 `VSYNC` 请参考 [#Primusrun mouse delay (disable VSYNC)](#Primusrun_mouse_delay_.28disable_VSYNC.29)。这也可以取消鼠标延迟并轻微提高性能。
+**提示：** 如果要禁用 `VSYNC` 请参考 [#Primusrun mouse delay (disable VSYNC)](#Primusrun_mouse_delay_(disable_VSYNC))。这也可以取消鼠标延迟并轻微提高性能。
 
 ### 电源管理
 
@@ -689,7 +689,7 @@ $ optirun nvidia-settings -c :8
 
 `X Server XVideo Settings -> Sync to VBlank` 以及 `OpenGL Settings -> Sync to VBlank` 应该都是已经启用状态。 Intel 显卡通常有比较少的撕裂，所以应该作为视频回放设备。特别是使用 VA-API 编码视频的时候（比如：`mplayer-vaapi` 以及 `-vsync` 参数）。
 
-参考[Intel](/index.php/Intel_graphics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E9.81.BF.E5.85.8D.E6.92.AD.E6.94.BE.E8.A7.86.E9.A2.91.E6.97.B6.E5.B1.8F.E5.B9.95.E6.92.95.E8.A3.82 "Intel graphics (简体中文)")了解如何修复 Intel 显卡的视频撕裂。
+参考[Intel](/index.php/Intel_graphics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#避免播放视频时屏幕撕裂 "Intel graphics (简体中文)")了解如何修复 Intel 显卡的视频撕裂。
 
 如果仍然无效，尝试从桌面环境禁用 compositing。同时可尝试禁用 triple buffering.
 
@@ -715,7 +715,7 @@ $ optirun glxspheres64
 
 ### Running X.org from console after login (rootless X.org)
 
-见 [Xorg#Rootless Xorg (v1.16)](/index.php/Xorg#Rootless_Xorg_.28v1.16.29 "Xorg").
+见 [Xorg#Rootless Xorg (v1.16)](/index.php/Xorg#Rootless_Xorg_(v1.16) "Xorg").
 
 ### Primusrun 鼠标延迟/禁用 VSYNC
 

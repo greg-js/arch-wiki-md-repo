@@ -8,8 +8,8 @@ Related articles
 
 *   [1 Instalacja](#Instalacja)
 *   [2 Konfiguracja](#Konfiguracja)
-*   [3 Ikony programów](#Ikony_program.C3.B3w)
-*   [4 Rofi jak zastępca dmenu](#Rofi_jak_zast.C4.99pca_dmenu)
+*   [3 Ikony programów](#Ikony_programów)
+*   [4 Rofi jak zastępca dmenu](#Rofi_jak_zastępca_dmenu)
 *   [5 Niestandardowe motywy](#Niestandardowe_motywy)
     *   [5.1 Oficjalne motywy](#Oficjalne_motywy)
 

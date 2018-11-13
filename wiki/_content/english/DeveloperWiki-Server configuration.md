@@ -2,16 +2,16 @@ This page provides an overview of the Arch servers and their functions. Details 
 
 ## Contents
 
-*   [1 Main development server (formerly gerolde)](#Main_development_server_.28formerly_gerolde.29)
+*   [1 Main development server (formerly gerolde)](#Main_development_server_(formerly_gerolde))
     *   [1.1 dom0.archlinux.org](#dom0.archlinux.org)
     *   [1.2 gerolde.archlinux.org](#gerolde.archlinux.org)
     *   [1.3 gudrun.archlinux.org](#gudrun.archlinux.org)
     *   [1.4 Resource Allocation](#Resource_Allocation)
 *   [2 nymeria.archlinux.org](#nymeria.archlinux.org)
 *   [3 luna.archlinux.org](#luna.archlinux.org)
-*   [4 Releng server (alberich)](#Releng_server_.28alberich.29)
+*   [4 Releng server (alberich)](#Releng_server_(alberich))
     *   [4.1 alberich.archlinux.org](#alberich.archlinux.org)
-*   [5 Build Server (celestia)](#Build_Server_.28celestia.29)
+*   [5 Build Server (celestia)](#Build_Server_(celestia))
     *   [5.1 pkgbuild.com](#pkgbuild.com)
 *   [6 dragon.archlinux.org](#dragon.archlinux.org)
 *   [7 Other servers](#Other_servers)

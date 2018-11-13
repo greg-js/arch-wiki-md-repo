@@ -12,25 +12,25 @@ Related articles
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 配置](#.E9.85.8D.E7.BD.AE)
-    *   [2.1 使用 xinput](#.E4.BD.BF.E7.94.A8_xinput)
-    *   [2.2 使用 Xorg 配置文件](#.E4.BD.BF.E7.94.A8_Xorg_.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)
-    *   [2.3 图形工具](#.E5.9B.BE.E5.BD.A2.E5.B7.A5.E5.85.B7)
+*   [1 安装](#安装)
+*   [2 配置](#配置)
+    *   [2.1 使用 xinput](#使用_xinput)
+    *   [2.2 使用 Xorg 配置文件](#使用_Xorg_配置文件)
+    *   [2.3 图形工具](#图形工具)
 *   [3 Tips and tricks](#Tips_and_tricks)
-    *   [3.1 按键映射](#.E6.8C.89.E9.94.AE.E6.98.A0.E5.B0.84)
-    *   [3.2 设置按键映射](#.E8.AE.BE.E7.BD.AE.E6.8C.89.E9.94.AE.E6.98.A0.E5.B0.84)
-    *   [3.3 更改触摸板灵敏度](#.E6.9B.B4.E6.94.B9.E8.A7.A6.E6.91.B8.E6.9D.BF.E7.81.B5.E6.95.8F.E5.BA.A6)
-    *   [3.4 禁用触摸板](#.E7.A6.81.E7.94.A8.E8.A7.A6.E6.91.B8.E6.9D.BF)
-    *   [3.5 手势操作](#.E6.89.8B.E5.8A.BF.E6.93.8D.E4.BD.9C)
+    *   [3.1 按键映射](#按键映射)
+    *   [3.2 设置按键映射](#设置按键映射)
+    *   [3.3 更改触摸板灵敏度](#更改触摸板灵敏度)
+    *   [3.4 禁用触摸板](#禁用触摸板)
+    *   [3.5 手势操作](#手势操作)
         *   [3.5.1 libinput-gestures](#libinput-gestures)
         *   [3.5.2 fusuma](#fusuma)
         *   [3.5.3 GnomeExtendedGestures](#GnomeExtendedGestures)
-*   [4 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
-    *   [4.1 触摸板在 GNOME 中无法工作](#.E8.A7.A6.E6.91.B8.E6.9D.BF.E5.9C.A8_GNOME_.E4.B8.AD.E6.97.A0.E6.B3.95.E5.B7.A5.E4.BD.9C)
-    *   [4.2 KDE's Touchpad KCM 对触摸板设置不起作用](#KDE.27s_Touchpad_KCM_.E5.AF.B9.E8.A7.A6.E6.91.B8.E6.9D.BF.E8.AE.BE.E7.BD.AE.E4.B8.8D.E8.B5.B7.E4.BD.9C.E7.94.A8)
-    *   [4.3 触摸板没有被检测到](#.E8.A7.A6.E6.91.B8.E6.9D.BF.E6.B2.A1.E6.9C.89.E8.A2.AB.E6.A3.80.E6.B5.8B.E5.88.B0)
-*   [5 参阅](#.E5.8F.82.E9.98.85)
+*   [4 疑难解答](#疑难解答)
+    *   [4.1 触摸板在 GNOME 中无法工作](#触摸板在_GNOME_中无法工作)
+    *   [4.2 KDE's Touchpad KCM 对触摸板设置不起作用](#KDE's_Touchpad_KCM_对触摸板设置不起作用)
+    *   [4.3 触摸板没有被检测到](#触摸板没有被检测到)
+*   [5 参阅](#参阅)
 
 ## 安装
 
@@ -238,13 +238,13 @@ To make it permanent, see [Autostarting](/index.php/Autostarting "Autostarting")
 
 ### 手势操作
 
-While the libinput driver already contains logic to process advanced multitouch events like swipe and pinch [gestures](https://wayland.freedesktop.org/libinput/doc/latest/gestures.html), the [Desktop environment](/index.php/Desktop_environment "Desktop environment") or [Window manager](/index.php/Window_manager "Window manager") might not have implemented actions for all of them yet.
+虽然 libinput 已经提供了[手势操作](https://wayland.freedesktop.org/libinput/doc/latest/gestures.html)，比如：捏，滑。但 [Desktop environment](/index.php/Desktop_environment "Desktop environment") 和 [Window manager](/index.php/Window_manager "Window manager") 可能还没有使用这些功能。
 
 #### libinput-gestures
 
-For [EWMH](https://en.wikipedia.org/wiki/Extended_Window_Manager_Hints "w:Extended Window Manager Hints") (see also [wm-spec](https://www.freedesktop.org/wiki/Specifications/wm-spec/)) compliant window managers, the [libinput-gestures](https://github.com/bulletmark/libinput-gestures) utility can be used meanwhile. The program reads libinput gestures (through `libinput debug-events`) from the touchpad and maps them to gestures according to a configuration file. Hence, it offers some flexibility within the boundaries of libinput's built-in recognition.
+对于 [EWMH](https://en.wikipedia.org/wiki/Extended_Window_Manager_Hints "w:Extended Window Manager Hints") (see also [wm-spec](https://www.freedesktop.org/wiki/Specifications/wm-spec/)) 兼容的窗口界面, 可以使用 [libinput-gestures](https://github.com/bulletmark/libinput-gestures) 。 这个程序读取 libinput 在触摸板的手势 (通过 `libinput debug-events`) ，然后根据设置映射成相对应的行为。这个程序提供了相当多了可自定义的功能。
 
-To use [libinput-gestures](https://github.com/bulletmark/libinput-gestures), install the [libinput-gestures](https://aur.archlinux.org/packages/libinput-gestures/) package. You can use the default system-wide configured swipe and pinch gestures or define your own in a personal configuration file, see the [README](https://github.com/bulletmark/libinput-gestures/blob/master/README.md) for details.
+要使用 [libinput-gestures](https://github.com/bulletmark/libinput-gestures), 请安装 [libinput-gestures](https://aur.archlinux.org/packages/libinput-gestures/) 。 你能使用很多系统级别的手势操作，也能自定义配置文件，详情请看 [README](https://github.com/bulletmark/libinput-gestures/blob/master/README.md) 。
 
 #### fusuma
 

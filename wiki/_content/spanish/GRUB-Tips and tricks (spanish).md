@@ -1,41 +1,41 @@
 ## Contents
 
-*   [1 Métodos alternativos de instalación](#M.C3.A9todos_alternativos_de_instalaci.C3.B3n)
+*   [1 Métodos alternativos de instalación](#Métodos_alternativos_de_instalación)
     *   [1.1 Instalar en un dispositivo USB externo](#Instalar_en_un_dispositivo_USB_externo)
         *   [1.1.1 BIOS](#BIOS)
         *   [1.1.2 EFI](#EFI)
     *   [1.2 Instalar en un disco con o sin particiones](#Instalar_en_un_disco_con_o_sin_particiones)
-    *   [1.3 Generar sólo core.img](#Generar_s.C3.B3lo_core.img)
-*   [2 Herramientas GUI de configuración](#Herramientas_GUI_de_configuraci.C3.B3n)
-*   [3 Configuración del aspecto](#Configuraci.C3.B3n_del_aspecto)
-    *   [3.1 Ajustar la resolución del framebuffer](#Ajustar_la_resoluci.C3.B3n_del_framebuffer)
+    *   [1.3 Generar sólo core.img](#Generar_sólo_core.img)
+*   [2 Herramientas GUI de configuración](#Herramientas_GUI_de_configuración)
+*   [3 Configuración del aspecto](#Configuración_del_aspecto)
+    *   [3.1 Ajustar la resolución del framebuffer](#Ajustar_la_resolución_del_framebuffer)
     *   [3.2 Introducir 915resolution](#Introducir_915resolution)
     *   [3.3 Imagen de fondo y fuentes bitmap](#Imagen_de_fondo_y_fuentes_bitmap)
     *   [3.4 Temas](#Temas)
-    *   [3.5 Colores del menú](#Colores_del_men.C3.BA)
-    *   [3.6 Menú oculto](#Men.C3.BA_oculto)
+    *   [3.5 Colores del menú](#Colores_del_menú)
+    *   [3.6 Menú oculto](#Menú_oculto)
     *   [3.7 Desactivar framebuffer](#Desactivar_framebuffer)
 *   [4 Iniciar una imagen ISO9660 directamente desde GRUB](#Iniciar_una_imagen_ISO9660_directamente_desde_GRUB)
 *   [5 Nomenclatura permanente de dispositivos de bloque](#Nomenclatura_permanente_de_dispositivos_de_bloque)
 *   [6 Utilizar etiquetas](#Utilizar_etiquetas)
-*   [7 Proteger con contraseña el menú de GRUB](#Proteger_con_contrase.C3.B1a_el_men.C3.BA_de_GRUB)
-    *   [7.1 Protección con contraseña sólo para las opciones de edición y consola de GRUB](#Protecci.C3.B3n_con_contrase.C3.B1a_s.C3.B3lo_para_las_opciones_de_edici.C3.B3n_y_consola_de_GRUB)
-*   [8 Ocultar GRUB y hacerlo aparecer mediante la tecla Mayús](#Ocultar_GRUB_y_hacerlo_aparecer_mediante_la_tecla_May.C3.BAs)
-*   [9 Combinar la utilización de UUID con scripts](#Combinar_la_utilizaci.C3.B3n_de_UUID_con_scripts)
-*   [10 Creación manual de grub.cfg](#Creaci.C3.B3n_manual_de_grub.cfg)
-*   [11 Múltiples entradas](#M.C3.BAltiples_entradas)
-    *   [11.1 Desactivar submenú](#Desactivar_submen.C3.BA)
-    *   [11.2 Recordar el último sistema arrancado](#Recordar_el_.C3.BAltimo_sistema_arrancado)
-    *   [11.3 Cambiar la entrada por defecto del menú](#Cambiar_la_entrada_por_defecto_del_men.C3.BA)
+*   [7 Proteger con contraseña el menú de GRUB](#Proteger_con_contraseña_el_menú_de_GRUB)
+    *   [7.1 Protección con contraseña sólo para las opciones de edición y consola de GRUB](#Protección_con_contraseña_sólo_para_las_opciones_de_edición_y_consola_de_GRUB)
+*   [8 Ocultar GRUB y hacerlo aparecer mediante la tecla Mayús](#Ocultar_GRUB_y_hacerlo_aparecer_mediante_la_tecla_Mayús)
+*   [9 Combinar la utilización de UUID con scripts](#Combinar_la_utilización_de_UUID_con_scripts)
+*   [10 Creación manual de grub.cfg](#Creación_manual_de_grub.cfg)
+*   [11 Múltiples entradas](#Múltiples_entradas)
+    *   [11.1 Desactivar submenú](#Desactivar_submenú)
+    *   [11.2 Recordar el último sistema arrancado](#Recordar_el_último_sistema_arrancado)
+    *   [11.3 Cambiar la entrada por defecto del menú](#Cambiar_la_entrada_por_defecto_del_menú)
     *   [11.4 Efectuar el arranque de una entrada no predeterminada por una sola vez](#Efectuar_el_arranque_de_una_entrada_no_predeterminada_por_una_sola_vez)
-*   [12 Tocar una melodía](#Tocar_una_melod.C3.ADa)
-*   [13 Configuración manual de la imagen del núcleo para un arranque rápido](#Configuraci.C3.B3n_manual_de_la_imagen_del_n.C3.BAcleo_para_un_arranque_r.C3.A1pido)
+*   [12 Tocar una melodía](#Tocar_una_melodía)
+*   [13 Configuración manual de la imagen del núcleo para un arranque rápido](#Configuración_manual_de_la_imagen_del_núcleo_para_un_arranque_rápido)
 *   [14 Lecturas adicionales de UEFI](#Lecturas_adicionales_de_UEFI)
-    *   [14.1 Método de instalación alternativo](#M.C3.A9todo_de_instalaci.C3.B3n_alternativo)
-    *   [14.2 Solución al firmware de UEFI](#Soluci.C3.B3n_al_firmware_de_UEFI)
+    *   [14.1 Método de instalación alternativo](#Método_de_instalación_alternativo)
+    *   [14.2 Solución al firmware de UEFI](#Solución_al_firmware_de_UEFI)
     *   [14.3 Crear una entrada GRUB en el gestor de arranque del firmware](#Crear_una_entrada_GRUB_en_el_gestor_de_arranque_del_firmware)
     *   [14.4 GRUB independiente](#GRUB_independiente)
-    *   [14.5 Información técnica](#Informaci.C3.B3n_t.C3.A9cnica)
+    *   [14.5 Información técnica](#Información_técnica)
 
 ## Métodos alternativos de instalación
 
@@ -163,7 +163,7 @@ Es posible obtener estas herramientas gráficas instalando los siguientes paquet
 
 ## Configuración del aspecto
 
-En GRUB puede cambiar el aspecto del menú. Asegúrese de haber inicializado el terminal gráfico de GRUB (gfxterm), utilizando una modalidad de vídeo adecuado (gfxmode). Para más información se puede consultar este [apartado](/index.php/GRUB_(Espa%C3%B1ol)#Corregir_el_error_de_GRUB:_.C2.ABno_suitable_mode_found.C2.BB "GRUB (Español)"). La modalidad de vídeo establecida a continuación, se pasará al kernel a través de «gfxpayload», por lo tanto, esta solicitud asegurará que cada configuración del aspecto tenga efecto.
+En GRUB puede cambiar el aspecto del menú. Asegúrese de haber inicializado el terminal gráfico de GRUB (gfxterm), utilizando una modalidad de vídeo adecuado (gfxmode). Para más información se puede consultar este [apartado](/index.php/GRUB_(Espa%C3%B1ol)#Corregir_el_error_de_GRUB:_«no_suitable_mode_found» "GRUB (Español)"). La modalidad de vídeo establecida a continuación, se pasará al kernel a través de «gfxpayload», por lo tanto, esta solicitud asegurará que cada configuración del aspecto tenga efecto.
 
 ### Ajustar la resolución del framebuffer
 
@@ -218,7 +218,7 @@ GRUB es compatible con imágenes de fondo y fuentes de mapa de bits en el format
 
 Los formatos de imagen soportados incluyen tga, png e jpeg, siempre que los respectivos módulos se carguen. La resolución máxima aplicable depende del hardware en uso.
 
-Antes de continuar, siga las disposiciones indicadas en [resolución del framebuffer](#Ajustar_la_resoluci.C3.B3n_del_framebuffer).
+Antes de continuar, siga las disposiciones indicadas en [resolución del framebuffer](#Ajustar_la_resolución_del_framebuffer).
 
 A continuación, edite el archivo `/etc/default/grub` como sigue:
 
@@ -231,7 +231,7 @@ GRUB_FONT="/ruta/a/font.pf2"
 
 **Nota:** Si ha instalado GRUB en una partición separada, `/boot/grub/mi_imagen` automáticamente se convierte en `/grub/mi_imagen` en `grub.cfg`.
 
-[Regenere](/index.php/GRUB_(Espa%C3%B1ol)#Generar_el_archivo_de_configuraci.C3.B3n_principal "GRUB (Español)") `grub.cfg` para aplicar los cambios. Si la inserción de la imagen se realiza correctamente, debería ver el mensaje `Found background image...`, al ejecutar la orden anterior. Si no, quiere decir que la imagen no se ha incorporado en el archivo `grub.cfg`.
+[Regenere](/index.php/GRUB_(Espa%C3%B1ol)#Generar_el_archivo_de_configuración_principal "GRUB (Español)") `grub.cfg` para aplicar los cambios. Si la inserción de la imagen se realiza correctamente, debería ver el mensaje `Found background image...`, al ejecutar la orden anterior. Si no, quiere decir que la imagen no se ha incorporado en el archivo `grub.cfg`.
 
 En este caso, compruebe que:
 
@@ -253,7 +253,7 @@ GRUB_THEME="/boot/grub/themes/starfield/theme.txt"
 
 ```
 
-[Regenere](/index.php/GRUB_(Espa%C3%B1ol)#Generar_el_archivo_de_configuraci.C3.B3n_principal "GRUB (Español)") `grub.cfg` para aplicar los cambios. Si el tema se ha configurado correctamente, aparecerá en el terminal el mensaje `Found theme: /boot/grub/themes/starfield/theme.txt`.
+[Regenere](/index.php/GRUB_(Espa%C3%B1ol)#Generar_el_archivo_de_configuración_principal "GRUB (Español)") `grub.cfg` para aplicar los cambios. Si el tema se ha configurado correctamente, aparecerá en el terminal el mensaje `Found theme: /boot/grub/themes/starfield/theme.txt`.
 
 La imagen de fondo, por lo general, no se visualiza cuando se utiliza un tema.
 

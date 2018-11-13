@@ -6,11 +6,11 @@ Related articles
 
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+*   [1 Instalación](#Instalación)
 *   [2 Uso](#Uso)
     *   [2.1 Seleccionando un fondo de escritorio](#Seleccionando_un_fondo_de_escritorio)
     *   [2.2 Restaurando imagen de fondo](#Restaurando_imagen_de_fondo)
-*   [3 Solución de problemas](#Soluci.C3.B3n_de_problemas)
+*   [3 Solución de problemas](#Solución_de_problemas)
     *   [3.1 Congelamiento con dos monitores](#Congelamiento_con_dos_monitores)
 
 ## Instalación

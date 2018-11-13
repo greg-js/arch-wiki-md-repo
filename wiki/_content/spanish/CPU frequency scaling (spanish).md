@@ -9,9 +9,9 @@ Artículos relacionados
 *   [1 Herramientas del espacio de usuario](#Herramientas_del_espacio_de_usuario)
     *   [1.1 thermald](#thermald)
     *   [1.2 cpupower](#cpupower)
-*   [2 Configuración](#Configuraci.C3.B3n)
+*   [2 Configuración](#Configuración)
     *   [2.1 Controlador de frecuencia de la UCP](#Controlador_de_frecuencia_de_la_UCP)
-    *   [2.2 Reguladores de ajuste (Esquemas de potencia de la UCP)](#Reguladores_de_ajuste_.28Esquemas_de_potencia_de_la_UCP.29)
+    *   [2.2 Reguladores de ajuste (Esquemas de potencia de la UCP)](#Reguladores_de_ajuste_(Esquemas_de_potencia_de_la_UCP))
     *   [2.3 Modo demonio](#Modo_demonio)
 *   [3 Otros recursos](#Otros_recursos)
 
