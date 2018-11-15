@@ -15,20 +15,20 @@ Related articles
 
 ## Contents
 
-*   [1 持久化命名的方法](#.E6.8C.81.E4.B9.85.E5.8C.96.E5.91.BD.E5.90.8D.E7.9A.84.E6.96.B9.E6.B3.95)
+*   [1 持久化命名的方法](#持久化命名的方法)
     *   [1.1 by-label](#by-label)
     *   [1.2 by-uuid](#by-uuid)
-    *   [1.3 by-id 和 by-path](#by-id_.E5.92.8C_by-path)
+    *   [1.3 by-id 和 by-path](#by-id_和_by-path)
     *   [1.4 by-partlabel](#by-partlabel)
     *   [1.5 by-partuuid](#by-partuuid)
-    *   [1.6 使用 Udev 静态设备名](#.E4.BD.BF.E7.94.A8_Udev_.E9.9D.99.E6.80.81.E8.AE.BE.E5.A4.87.E5.90.8D)
-*   [2 使用持久名称](#.E4.BD.BF.E7.94.A8.E6.8C.81.E4.B9.85.E5.90.8D.E7.A7.B0)
+    *   [1.6 使用 Udev 静态设备名](#使用_Udev_静态设备名)
+*   [2 使用持久名称](#使用持久名称)
     *   [2.1 fstab](#fstab)
-    *   [2.2 引导管理器](#.E5.BC.95.E5.AF.BC.E7.AE.A1.E7.90.86.E5.99.A8)
+    *   [2.2 引导管理器](#引导管理器)
 
 ## 持久化命名的方法
 
-有四种持久化命名方案：[by-label](#by-label)、[by-uuid](#by-uuid)、[by-id 和 by-path](#by-id_.E5.92.8C_by-path)。对于那些使用[GUID 分区表(GPT)](/index.php/GUID_Partition_Table "GUID Partition Table")的磁盘，还有额外的两种方案，[by-partlabel](#by-partlabel) 和 [by-partuuid](#by-partuuid)。你也可以[使用 Udev 静态设备名](#.E4.BD.BF.E7.94.A8_Udev_.E9.9D.99.E6.80.81.E8.AE.BE.E5.A4.87.E5.90.8D)方案。
+有四种持久化命名方案：[by-label](#by-label)、[by-uuid](#by-uuid)、[by-id 和 by-path](#by-id_和_by-path)。对于那些使用[GUID 分区表(GPT)](/index.php/GUID_Partition_Table "GUID Partition Table")的磁盘，还有额外的两种方案，[by-partlabel](#by-partlabel) 和 [by-partuuid](#by-partuuid)。你也可以[使用 Udev 静态设备名](#使用_Udev_静态设备名)方案。
 
 下面讲解各种命名方案及其用法。
 
@@ -191,7 +191,7 @@ lrwxrwxrwx 1 root root 10 May 27 23:31 d0d0d110-0a71-4ed6-936a-304969ea36af -> .
 
 ### 使用 Udev 静态设备名
 
-参考 [设置静态设备名](/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.AE.BE.E7.BD.AE.E9.9D.99.E6.80.81.E8.AE.BE.E5.A4.87.E5.90.8D "Udev (简体中文)")。
+参考 [设置静态设备名](/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#设置静态设备名 "Udev (简体中文)")。
 
 ## 使用持久名称
 
@@ -199,13 +199,13 @@ lrwxrwxrwx 1 root root 10 May 27 23:31 d0d0d110-0a71-4ed6-936a-304969ea36af -> .
 
 ### fstab
 
-参考 [fstab#UUIDs](/index.php/Fstab#UUIDs "Fstab")
+参考 [fstab#Identifying filesystems](/index.php/Fstab#Identifying_filesystems "Fstab")
 
 ### 引导管理器
 
 要在引导管理器中使用持久化名称，需要满足下列先决条件：
 
-*   使用 [mkinitcpio](/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E9.85.8D.E7.BD.AE "Mkinitcpio (简体中文)") 初始化 RAM 磁盘镜像
+*   使用 [mkinitcpio](/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#配置 "Mkinitcpio (简体中文)") 初始化 RAM 磁盘镜像
 *   在 `/etc/mkinitcpio.conf` 中启用了 udev
 
 在上面的例子中，`/dev/sda1` 是引导分区。在 [GRUB](/index.php/GRUB "GRUB") 的 `grub.cfg` 文件中，*linux* 这行如下：

@@ -101,7 +101,7 @@ lsblk -no UUID /dev/sd*xy*
 **Примечание:**
 
 *   Эта fstab запись необязательна если раздел подкачки находится на устройстве, использующий GPT разметку, см. следующий подраздел.
-*   Если используется SSD с поддержкой [TRIM](/index.php/Solid_State_Drives_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#TRIM "Solid State Drives (Русский)"), учтите использование `defaults,discard` в [fstab](/index.php/Fstab_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fstab (Русский)") строке подключения подкачки. Если в ручную активировать подкачку с помощью *swapon*, используйте параметр `-d`/`--discard`, который делает тоже самое. Подробности смотри в [swapon(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/swapon.8).
+*   Если используется SSD с поддержкой [TRIM](/index.php/Solid_State_Drives_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#TRIM "Solid State Drives (Русский)"), учтите использование `defaults,discard` в [fstab](/index.php/Fstab_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fstab (Русский)") строке подключения подкачки. Если вручную активировать подкачку с помощью *swapon*, используйте параметр `-d`/`--discard`, который делает тоже самое. Подробности смотри в [swapon(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/swapon.8).
 
 **Важно:** Включение discard в RAID установке с использованием mdadm, приведёт к блокировке системы при загрузке и во время выполнения, если использовать swapon.
 

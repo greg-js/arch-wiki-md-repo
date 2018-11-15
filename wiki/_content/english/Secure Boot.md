@@ -247,8 +247,10 @@ Target = linux
 [Action]
 Description = Signing kernel with Machine Owner Key for Secure Boot
 When = PostTransaction
-Exec = /usr/bin/find /boot/ -maxdepth 1 -name 'vmlinuz-*' -exec /usr/bin/sh -c 'if ! /usr/bin/sbverify --list {} 2>/dev/null | /usr/bin/grep -q "signature certificates"; then /usr/bin/sbsign --key MOK.key --cert MOK.crt --output {} {}; fi' \;
-Depends = sbsigntools findutils grep
+Exec = /usr/bin/find /boot/ -maxdepth 1 -name 'vmlinuz-*' -exec /usr/bin/sh -c 'if ! /usr/bin/sbverify --list {} 2>/dev/null | /usr/bin/grep -q "signature certificates"; then /usr/bin/sbsign --key MOK.key --cert MOK.crt --output {} {}; fi' ;
+Depends = sbsigntools
+Depends = findutils
+Depends = grep
 ```
 
 Copy `MOK.cer` to a [FAT](/index.php/FAT "FAT") formatted file system (you can use [EFI system partition](/index.php/EFI_system_partition "EFI system partition")).
@@ -429,8 +431,10 @@ Target = linux
 [Action]
 Description = Signing Kernel for SecureBoot
 When = PostTransaction
-Exec = /usr/bin/find /boot/ -maxdepth 1 -name 'vmlinuz-*' -exec /usr/bin/sh -c 'if ! /usr/bin/sbverify --list {} 2>/dev/null | /usr/bin/grep -q "signature certificates"; then /usr/bin/sbsign --key db.key --cert db.crt --output {} {}; fi' \;
-Depends = sbsigntools findutils grep
+Exec = /usr/bin/find /boot/ -maxdepth 1 -name 'vmlinuz-*' -exec /usr/bin/sh -c 'if ! /usr/bin/sbverify --list {} 2>/dev/null | /usr/bin/grep -q "signature certificates"; then /usr/bin/sbsign --key db.key --cert db.crt --output {} {}; fi' \ ;
+Depends = sbsigntools
+Depends = findutils
+Depends = grep
 ```
 
 ### Put firmware in "Setup Mode"

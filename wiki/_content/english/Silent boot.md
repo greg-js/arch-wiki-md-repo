@@ -127,11 +127,11 @@ Lastly, regenerate `grub.cfg` file.
 
 Modern UEFI systems display a vendor logo on boot until handing over control to the bootloader; e.g. Lenovo laptops display a bright red Lenovo logo. This vendor logo is typically blanked by the bootloader (if standard GRUB is used) or by the kernel.
 
-To prevent the kernel from blanking the vendor logo, Linux 4.19 introduced a new configuration option `FRAMEBUFFER_CONSOLE_DEFERRED_TAKEOVER` that retains the contents of the framebuffer until text needs to be printed on the framebuffer console. When combined with a low loglevel (to prevent text from being printed), the vendor logo can be retained while the system is initialized.
+To prevent the kernel from blanking the vendor logo, Linux 4.19 introduced a new configuration option `FRAMEBUFFER_CONSOLE_DEFERRED_TAKEOVER` that retains the contents of the framebuffer until text needs to be printed on the framebuffer console. At the time of writing, the official Arch Linux kernels are compiled with `CONFIG_FRAMEBUFFER_CONSOLE_DEFERRED_TAKEOVER=y`.
+
+When combined with a low loglevel (to prevent text from being printed), the vendor logo can be retained while the system is initialized. Note that GRUB in the standard configuration blanks the screen; consider using [EFISTUB](/index.php/EFISTUB "EFISTUB") booting instead to boot directly into the kernel and thus leverage deferred takeover.
 
 [Video demonstration](https://www.youtube.com/watch?v=5DW2JgJmsuY)
-
-At the time of writing, Linux 4.19 is available in the [testing](/index.php/Testing "Testing") repository and is compiled with `CONFIG_FRAMEBUFFER_CONSOLE_DEFERRED_TAKEOVER=y`.
 
 The kernel command line should use `loglevel=3` or `rd.udev.log_priority=3` as mentioned above. Note that if you often receive `Core temperature above threshold, cpu clock throttled` messages in the kernel log, you need to use log level 2 to silence these at boot time. Alternatively, if you compile your own kernel, adjust the log level of the message in `arch/x86/kernel/cpu/mcheck/therm_throt.c`.
 

@@ -54,9 +54,10 @@ More details about LightDM's design can be found [here](http://www.freedesktop.o
     *   [6.3 LightDM freezes on login attempt](#LightDM_freezes_on_login_attempt)
     *   [6.4 LightDM displaying in wrong monitor](#LightDM_displaying_in_wrong_monitor)
     *   [6.5 LightDM does not appear or monitor only displays TTY output](#LightDM_does_not_appear_or_monitor_only_displays_TTY_output)
-    *   [6.6 Pulseaudio not starting automatically](#Pulseaudio_not_starting_automatically)
-    *   [6.7 Long pause before LightDM shows up when home is encrypted](#Long_pause_before_LightDM_shows_up_when_home_is_encrypted)
-    *   [6.8 Boot hangs on "[ OK ] Reached target Graphical Interface."](#Boot_hangs_on_"[_OK_]_Reached_target_Graphical_Interface.")
+    *   [6.6 LightDM is running with low FPS on Intel Graphics](#LightDM_is_running_with_low_FPS_on_Intel_Graphics)
+    *   [6.7 Pulseaudio not starting automatically](#Pulseaudio_not_starting_automatically)
+    *   [6.8 Long pause before LightDM shows up when home is encrypted](#Long_pause_before_LightDM_shows_up_when_home_is_encrypted)
+    *   [6.9 Boot hangs on "[ OK ] Reached target Graphical Interface."](#Boot_hangs_on_"[_OK_]_Reached_target_Graphical_Interface.")
 *   [7 See also](#See_also)
 
 ## Installation
@@ -474,6 +475,23 @@ It may happen that your system boots so fast that LightDM service is started bef
 ```
 
 This setting will tell LightDM to wait until graphics devices are ready before spawning greeters/autostarting sessions on them.
+
+### LightDM is running with low FPS on Intel Graphics
+
+In case you are using Intel Graphics it may happen that you have low FPS.
+
+Add the option `AccelMethod` to `uxa` in your xorg configuration file.
+
+ `/etc/X11/xorg.conf.d/20-intel.conf` 
+```
+Section "Device"
+        Identifier "intel"
+        Driver "intel"
+        BusID "PCI:0:2:0"
+        Option "AccelMethod" "sna"
+        Option "TearFree" "true"
+EndSection
+```
 
 ### Pulseaudio not starting automatically
 

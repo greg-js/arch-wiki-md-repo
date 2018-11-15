@@ -22,15 +22,16 @@
     *   [5.4 Cloning the configuration to other nodes on the network](#Cloning_the_configuration_to_other_nodes_on_the_network)
 *   [6 Tips and Tricks](#Tips_and_Tricks)
     *   [6.1 Keep a log of what is watched](#Keep_a_log_of_what_is_watched)
-    *   [6.2 CLI tool for kodi](#CLI_tool_for_kodi)
-    *   [6.3 Hardware video acceleration](#Hardware_video_acceleration)
-    *   [6.4 Adjusting CD/DVD drive speed](#Adjusting_CD/DVD_drive_speed)
-    *   [6.5 Use port 80 for webserver](#Use_port_80_for_webserver)
-    *   [6.6 Using ALSA](#Using_ALSA)
-    *   [6.7 Audio Passthrough](#Audio_Passthrough)
-        *   [6.7.1 Fix for delayed startup on wifi](#Fix_for_delayed_startup_on_wifi)
-    *   [6.8 Run kodi in a window manager](#Run_kodi_in_a_window_manager)
-    *   [6.9 USB DAC not working](#USB_DAC_not_working)
+    *   [6.2 Speedup video playback (synchronized audio and video) up to 1.5x](#Speedup_video_playback_(synchronized_audio_and_video)_up_to_1.5x)
+    *   [6.3 CLI tool for kodi](#CLI_tool_for_kodi)
+    *   [6.4 Hardware video acceleration](#Hardware_video_acceleration)
+    *   [6.5 Adjusting CD/DVD drive speed](#Adjusting_CD/DVD_drive_speed)
+    *   [6.6 Use port 80 for webserver](#Use_port_80_for_webserver)
+    *   [6.7 Using ALSA](#Using_ALSA)
+    *   [6.8 Audio Passthrough](#Audio_Passthrough)
+        *   [6.8.1 Fix for delayed startup on wifi](#Fix_for_delayed_startup_on_wifi)
+    *   [6.9 Run kodi in a window manager](#Run_kodi_in_a_window_manager)
+    *   [6.10 USB DAC not working](#USB_DAC_not_working)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Accessing Kodi logs](#Accessing_Kodi_logs)
     *   [7.2 Fullscreen mode stretches Kodi across multiple displays](#Fullscreen_mode_stretches_Kodi_across_multiple_displays)
@@ -340,6 +341,35 @@ To set up another Kodi node on the network to use this library, simply copy `~/.
 ### Keep a log of what is watched
 
 Keep track of every video watched on kodi with [kodi-logger](https://aur.archlinux.org/packages/kodi-logger/).
+
+### Speedup video playback (synchronized audio and video) up to 1.5x
+
+To enable speed-up and slow-down with audio/video sync (0.8x - 1.5x) do the following:
+
+*   Create the following file that will map the `[` and `]` keys to the `tempo down` and `tempo up` actions, respectively:
+
+ `~/.kodi/userdata/keymaps/custom.xml` 
+```
+<keymap>
+  <FullscreenVideo>
+    <keyboard>
+      <opensquarebracket>PlayerControl(tempodown)</opensquarebracket>
+      <closesquarebracket>PlayerControl(tempoup)</closesquarebracket>
+    </keyboard>
+  </FullscreenVideo>
+  <VideoMenu>
+    <keyboard>
+      <opensquarebracket>PlayerControl(tempodown)</opensquarebracket>
+      <closesquarebracket>PlayerControl(tempoup)</closesquarebracket>
+    </keyboard>
+  </VideoMenu>
+</keymap>
+```
+
+*   Restart kodi which will read in these changes.
+*   Navigate to *System > Player > Videos > Playback* and enable "Sync playback to display" option.
+
+Play some video content and enjoy the ability to adjust the speed using the keys discussed above.
 
 ### CLI tool for kodi
 

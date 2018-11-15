@@ -470,7 +470,7 @@ Setting `kernel.kptr_restrict` to 2 will hide kernel symbol addresses in `/proc/
 
 The Linux kernel includes the ability to compile BPF/Seccomp rule sets to native code as a performance optimization. The `net.core.bpf_jit_enable` flag should be left at 0 for a maximum level of security.
 
-This can be helpful in specific domains, but is not usually useful. A JIT compiler opens up the possibility for an attacker to perform a heap spraying attack, where they fill the kernel's heap with malicious code. This code can then potentially be executed via another exploit, like an incorrect function pointer dereference.
+This can be helpful in specific domains, such as dynamic servers (e.g. orchestration platforms like Mesos and Kubernetes). It is not usually useful for desktop users or for static servers. A JIT compiler opens up the possibility for an attacker to perform a heap spraying attack, where they fill the kernel's heap with malicious code. This code can then potentially be executed via another exploit, like an incorrect function pointer dereference.
 
 ### ptrace scope
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Code of conduct](/index.php/Code_of_conduct "Code of conduct"). Data da última tradução: 2018-11-06\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Code_of_conduct&diff=0&oldid=552385) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Code of conduct](/index.php/Code_of_conduct "Code of conduct"). Data da última tradução: 2018-11-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Code_of_conduct&diff=0&oldid=554662) na versão em inglês.
 
 A comunidade Arch é uma comunidade técnica cujo propósito compartilhado é oferecer suporte e melhoria do Arch Linux.
 
@@ -8,7 +8,7 @@ Se familiarizar com os princípios e diretrizes aqui é uma cortesia para a comu
 
 ## Contents
 
-*   [1 Introdução ao Senso Comum](#Introdução_ao_Senso_Comum)
+*   [1 Introdução ao senso comum](#Introdução_ao_senso_comum)
 *   [2 Código de conduta](#Código_de_conduta)
     *   [2.1 Respeito](#Respeito)
         *   [2.1.1 Respeite outros usuários](#Respeite_outros_usuários)
@@ -37,7 +37,7 @@ Se familiarizar com os princípios e diretrizes aqui é uma cortesia para a comu
         *   [3.1.6 Proibição de tópicos vazios/*power-posting*](#Proibição_de_tópicos_vazios/power-posting)
         *   [3.1.7 *Bumping*](#Bumping)
         *   [3.1.8 Publicação cruzada](#Publicação_cruzada)
-        *   [3.1.9 Espoliação(Hijacking) de Tópicos](#Espoliação(Hijacking)_de_Tópicos)
+        *   [3.1.9 Espoliação (*Hijacking*) de tópicos](#Espoliação_(Hijacking)_de_tópicos)
         *   [3.1.10 Política da caixa de lixo (*marked for deletion*)](#Política_da_caixa_de_lixo_(marked_for_deletion))
     *   [3.2 Listas de discussão](#Listas_de_discussão)
         *   [3.2.1 *Top posting*](#Top_posting)
@@ -50,7 +50,7 @@ Se familiarizar com os princípios e diretrizes aqui é uma cortesia para a comu
 *   [4 Cumprimento](#Cumprimento)
 *   [5 Contatando a equipe](#Contatando_a_equipe)
 
-## Introdução ao Senso Comum
+## Introdução ao senso comum
 
 *   Se você escolheu usar o Arch Linux, seja bem-vindo e encorajado a abraçar [os princípios do Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs)#Princípios "Arch Linux (Português)").
 *   Quando buscares ajuda, leia o manual, faça suas pesquisas primeiro e exiba detalhes daquilo que está buscando ajuda.
@@ -114,7 +114,7 @@ Publicidade, se relacionadas ao Arch (como projeto ou comunidade) ou a GNU/Linux
 
 ### Correção
 
-A comunidade do Arch Linux valoriza o estado de correção técnica. Quando estiver buscando, ou dando, ajuda lembre-se de se empenhar pela precisão, integridade e correção. Uma introdução excelente às expectativas da comunidade do Arch é [Como Fazer Perguntas Inteligentes](http://clipart-library.com/perguntas.html) do ESR.
+A comunidade do Arch Linux valoriza o estado de correção técnica. Quando estiver buscando ou dando ajuda lembre-se de se empenhar pela precisão, integridade e correção. Uma introdução excelente às expectativas da comunidade do Arch é [Como Fazer Perguntas Inteligentes](http://clipart-library.com/perguntas.html) do ESR.
 
 Outras considerações nesta categoria incluem:
 
@@ -124,7 +124,7 @@ Distribuições baseadas no Arch têm seus próprios fóruns de suporte e usuár
 
 #### Tópicos pessoais/retóricos
 
-Tópicos retóricos e "choromingos" não são bem vistos e serão fechados assim que descobertos. Este tipo de conteúdo é melhor aproveitado em blogs pessoas ou outros espaços na web e são considerados indesejáveis na comunidade Arch. Suas contribuições devem ser abertas, produtivas e convidativas para todos os participantes. Veja também [#Respeite outros sistemas operacionais e projetos](#Respeite_outros_sistemas_operacionais_e_projetos).
+Tópicos retóricos e "choromingos" não são bem vistos e serão fechados assim que descobertos. Este tipo de conteúdo é melhor aproveitado em blogs pessoas ou outros espaços na web e é considerado indesejável na comunidade Arch. Suas contribuições devem ser abertas, produtivas e convidativas para todos os participantes. Veja também [#Respeite outros sistemas operacionais e projetos](#Respeite_outros_sistemas_operacionais_e_projetos).
 
 #### Evite controvérsia/tópicos controversos
 
@@ -140,13 +140,15 @@ Se você possui algum questionamento sobre a equipe de desenvolvimento do Arch, 
 
 ### Liberdade
 
-A troca livre e aberta de assistência, fala, ideias e opiniões é altamente considerado e encorajado nos fóruns, porém, note que esta liberdade garantida é uma *liberdade relativa*. Ela existe dentro dos limites das linhas gerais e princípios descritos acima. Reclamações de censura são então infundados, pois esta é uma implementação figura necessária limitação para uma razoável para a solução de conflitos. Para ilustrar, estamos cientes das leis físicas que governam a energia, e mesmo assim não reclamamos de sua opressão. Ao invés disto, reconhecemos que tais leis são essenciais para nosso bem-estar. Portanto, os altos padrões da comunidade Arch refletidos nestas diretrizes regulam a liberdade da comunidade pelo bem comum e proteção de todos. A chave então, para a liberdade verdadeira nos fóruns é o cultivo da benevolência aos outros e harmonização da atitude com a filosofia Arch trazendo apenas benefícios aos envolvidos. Adicionalmente, isto permite que membros satisfaçam todos os impulsos de contribuição sem agravarem ou invadirem a liberdade de outros. Aderindo os princípios e obedecendo as diretrizes do fórum, beneficia a comunidade provando que a liberdade pode trazer consequências negativas e prejudiciais em uma visão mais caótica.
+A troca livre e aberta de assistência, fala, ideias e opiniões é altamente considerado e encorajado nos fóruns, porém, note que esta liberdade garantida é uma *liberdade relativa*. Ela existe dentro dos limites das linhas gerais e princípios descritos acima. Reclamações de censura são então infundados, pois esta é uma implementação figura necessária limitação para uma razoável para a solução de conflitos. Para ilustrar, estamos cientes das leis físicas que governam a energia, e mesmo assim não reclamamos de sua opressão. Ao invés disto, reconhecemos que tais leis são essenciais para nosso bem-estar. Portanto, os altos padrões da comunidade Arch refletidos nestas diretrizes regulam a liberdade da comunidade pelo bem comum e proteção de todos. A chave então, para a liberdade verdadeira nos fóruns é o cultivo da benevolência aos outros e harmonização da atitude com a filosofia Arch trazendo apenas benefício aos envolvidos. Adicionalmente, isto permite que membros satisfaçam todos os impulsos de contribuição sem agravarem ou invadirem a liberdade de outros. Aderindo os princípios e obedecendo as diretrizes do fórum, beneficia a comunidade provando que a liberdade pode trazer consequências negativas e prejudiciais em uma visão mais caótica.
 
 ## Diretrizes específicas para fóruns
 
 Além do [código comum](#Código_de_conduta), cada um dos fóruns possui suas próprias diretrizes específicas resumidas nas subseções a seguir.
 
-### [Fóruns](https://bbs.archlinux.org/)
+### Fóruns
+
+Diretrizes específicas para o [fórum do Arch](https://bbs.archlinux.org/).
 
 #### Como publicar
 
@@ -163,13 +165,13 @@ Além do [código comum](#Código_de_conduta), cada um dos fóruns possui suas p
 
 #### Colando imagens e código
 
-Utilize a tag [code] quando colando pedaços de informação do console. Utilize o [cliente pastebin](/index.php/Pastebin#Pastebin_clients "Pastebin") quando for postar grandes quantias de código. **Não** use [pastebin.com](http://pastebin.com/)—ele é bloqueado por alguns usuários e tem um histórico de problemas irritantes (javascript, propagandas, formatação ruim, etc). Para usuários de localização não-Inglesa: Prefixe o `LC_ALL=C` para postar comandos de forma que a saída será em inglês. Não poste imagens de tela cheia; ao invés disto utilize thumbnails. Quaisquer imagens com resolução maior que 250x250px e maior que 50kb de tamanho serão removidas. **Não** publique capturas de tela de saída de tela; publique [o texto](/index.php/Copying_text_from_a_terminal "Copying text from a terminal").
+Utilize a tag [code] quando colando pedaços de informação do console. Utilize o [cliente pastebin](/index.php/Pastebin#Pastebin_clients "Pastebin") quando for postar grandes quantias de código. **Não** use [pastebin.com](http://pastebin.com/)—ele é bloqueado por alguns usuários e tem um histórico de problemas irritantes (javascript, propagandas, formatação ruim, etc). Para usuários de localização não-Inglesa: Prefixe o `LC_ALL=C` para postar comandos de forma que a saída será em inglês. Não poste imagens de tela cheia; ao invés disto utilize thumbnails. Quaisquer imagens com resolução maior que 250x250px e maior que 50 kB de tamanho serão removidas. **Não** publique capturas de tela de saída de tela; publique [o texto](/index.php/Copying_text_from_a_terminal "Copying text from a terminal").
 
 #### A vida é uma via de mão dupla
 
 Uma simples e irrefutável verdade. Tenha a certeza de que seus tópicos incluem detalhes e informações que outros acharão útil. Compartilhe os seus achados com a comunidade. Compartilhe também suas falhas. Postagens do tipo "Deixa pra lá, corrigi - Nevermind, I fixed it" em seus tópicos ou deletar suas próprias postagens por razões similares enquadra não apenas egoísmo e má utilização da comunidade, mas uma completa perda de tempo por todas pessoas e recursos envolvidos. Demonstrar também impaciência óbvia para a resolução de algo também é indesejado por aqui. O Arch é constituído por uma comunidade de voluntários. O Arch enfatiza e encoraja as pessoas a fazer pesquisas, tentativas, comentários de volta ao tópico, ajudar os outros e contribuir com a comunidade.
 
-Por favor, não seja um ["vampiro de ajudas".](http://slash7.com/2006/12/22/vampires/)
+Por favor, não seja um ["vampiro de ajuda".](http://slash7.com/2006/12/22/vampires/)
 
 #### Requisições de recomendação de produtos
 
@@ -201,7 +203,7 @@ Postar uma única palavra sem significado para atrair a atenção de um tópico 
 
 É o tipo de postagem onde a mesma pergunta é feita em diferentes subfóruns (por exemplo, postando no "Newbie Corner" e em "Installation"). Figura desperdício de recursos e não é permitido. Qualquer tópico que seja enquadrado como postagem cruzada será imediatamente trancado ou deletado.
 
-#### Espoliação(Hijacking) de Tópicos
+#### Espoliação (*Hijacking*) de tópicos
 
 Este processo consiste em responde um tópico existente com um outro assunto diferente. Este tipo de atitude é desencorajada. É preferível que se inicie um novo tópico caso você tenha um problema que é relacionado a um problema já postado mas que claramente difere. Postar desta forma insere off-topic, que é tolerado porém geralmente desencorajado, dentro de tópicos sérios.
 
@@ -209,9 +211,9 @@ Este processo consiste em responde um tópico existente com um outro assunto dif
 
 Quaisquer tópicos que estão trancados/fechados por conterem informação já documentada na Wiki ou por inconsistência com as políticas do fórum e filosofias do Arch poderão ir para o caixote de lixo(Dust/troll-bin). Após um período de cinco dias, tópicos lá depositados serão deletados. O Moderador responsável irá claramente marcar tais tópicos como "Binned" ou "For deletion".
 
-### [Listas de discussão](https://lists.archlinux.org//listinfo/)
+### Listas de discussão
 
-Veja [estilo de publicação da lista de discussão](https://lists.archlinux.org/pipermail/arch-general/2014-August/036950.html).
+Diretrizes para as [listas de discussão](https://lists.archlinux.org/listinfo/). Veja também o [estilo de publicação da lista de discussão](https://lists.archlinux.org/pipermail/arch-general/2014-August/036950.html).
 
 #### *Top posting*
 
@@ -225,16 +227,16 @@ Cite apenas os elementos necessários de um e-mail anterior. Citar blocos inteir
 
 Texto simples é o padrão de Unix e de e-mail. HTML é desnecessário e, para aqueles usando clientes de linha de comando, indesejável. Por favor, mantenha o comprimento das linhas em tamanho razoável: 72 caracteres é considerado o padrão.
 
-### [AUR](https://aur.archlinux.org/)
+### AUR
 
-Diretrizes para o Arch User Repository podem ser encontradas aqui:
+Diretrizes para o [Arch User Repository](https://aur.archlinux.org/) podem ser encontradas aqui:
 
 *   [AUR (Português)#Regras de envio](/index.php/AUR_(Portugu%C3%AAs)#Regras_de_envio "AUR (Português)")
 *   [AUR (Português)#Outras requisições](/index.php/AUR_(Portugu%C3%AAs)#Outras_requisições "AUR (Português)")
 
-### [IRC](/index.php/IRC_(Portugu%C3%AAs) "IRC (Português)")
+### IRC
 
-Todos canais IRC do Arch Linux estão na rede irc do freenode. Usuários do freenode devem seguir a [política da rede](https://freenode.net/policies) e [diretrizes do canal](https://freenode.net/changuide) do freenode.
+Todos [canais IRC do Arch](/index.php/Canais_IRC_do_Arch "Canais IRC do Arch") estão na rede irc do freenode. Usuários do freenode devem seguir a [política da rede](https://freenode.net/policies) e [diretrizes do canal](https://freenode.net/changuide) do freenode.
 
 O idioma oficial do canal **#archlinux** é o inglês. Se você precisar de ajuda em outro idioma, pesquise pelos [canais internacionais do arch](/index.php/IRC_channel_(Portugu%C3%AAs)#Canais_IRC_internacionais "IRC channel (Português)").
 
@@ -264,20 +266,20 @@ Diretrizes para o [wiki](/index.php/ArchWiki:About_(Portugu%C3%AAs) "ArchWiki:Ab
 *   [Help:Style (Português)](/index.php/Help:Style_(Portugu%C3%AAs) "Help:Style (Português)")
 *   [Help:Discussion (Português)](/index.php/Help:Discussion_(Portugu%C3%AAs) "Help:Discussion (Português)")
 
-### [Rastreador de erros](https://bugs.archlinux.org/)
+### Rastreador de erros
 
-Veja a página principal: [Diretrizes de relatórios de erro](/index.php/Diretrizes_de_relat%C3%B3rios_de_erro "Diretrizes de relatórios de erro").
+Diretrizes para o [rastreador de erros](https://bugs.archlinux.org/) podem ser encontradas em [Diretrizes de relatórios de erro](/index.php/Diretrizes_de_relat%C3%B3rios_de_erro "Diretrizes de relatórios de erro").
 
 ## Cumprimento
 
-Se um moderador do a equipe Arch Linux sentir que o comportamento de um membro é inaceitável e necessitar intervenção, uma notificação privada será disparada, a menos que a ocorrência seja julgado um flagrante de maios gravidade, onde um banimento poderá ser executado. Notificações não serão discutidas no fóruns, canais do IRC ou listas de discussão de email pela equipe de Moderação. Caso um aviso seja despercebido ou ignorado, ações posteriores serão tomadas. Elas podem variar de um simples bloqueio da conta de usuário ofensivo até a exclusão ou banimento do usuário, a fim de manter o ambiente pacífico para a comunidade utilizadora do fórum. Todas as ações são julgadas caso a caso.
+Se um moderador do a equipe Arch Linux considerar que o comportamento de um membro é inaceitável e necessitar intervenção, uma notificação privada será disparada, a menos que a ocorrência seja julgado um flagrante de maios gravidade, onde um banimento poderá ser executado. Notificações não serão discutidas no fóruns, canais do IRC ou listas de discussão de email pela equipe de Moderação. Caso um aviso seja despercebido ou ignorado, ações posteriores serão tomadas. Elas podem variar de um simples bloqueio da conta de usuário ofensivo até a exclusão ou banimento do usuário, a fim de manter o ambiente pacífico para a comunidade utilizadora do fórum. Todas as ações são julgadas caso a caso.
 
-Em casos onde o usuário deseja promover a conciliação, e se interesse em uma solução pacifica e deseja ter sua conta restaurada, um consenso geral será formado pela equipe de moderação, ou um "não" poderá ser a resposta a tal requisição.
+Cada um dos fóruns tem um processo de apelação e alguém que acredite ser sido tratado injustamente, é encorajado a pleitear seu caso para a reintegração através do canal apropriado (veja abaixo).
 
 ## Contatando a equipe
 
-Se você sente que uma negligência flagrante foi feita ou que você precisa alertar a equipe sobre um comportamento abusivo, Há diversas formas pelas quais você pode buscar assistência ou reparação. Essas incluem:
+Se você sentir que foi cometido um equívoco flagrante ou se precisar alertar a equipe sobre qualquer comportamento abusivo, há várias maneiras de solicitar assistência ou reparação. Esses incluem:
 
 *   Para os Fóruns: use o botão "Report" localizado em baixo de toda caixa de texto ou envie um e-mail para [forum@archlinux.org](mailto:forum@archlinux.org) para contatar os administradores do fórum.
-*   Para o Wiki: contate os [ArchWiki:Administrators](/index.php/ArchWiki:Administrators "ArchWiki:Administrators")
+*   Para o Wiki: contate a [ArchWiki:Maintenance Team (Português)](/index.php/ArchWiki:Maintenance_Team_(Portugu%C3%AAs) "ArchWiki:Maintenance Team (Português)")
 *   Para os canais IRC: contate [um dos operadores](/index.php/IRC_channel_(Portugu%C3%AAs)#Operadores_do_canal "IRC channel (Português)")

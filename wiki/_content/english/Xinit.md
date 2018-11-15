@@ -97,7 +97,7 @@ $ xinit -- :1
 
 ```
 
-**Note:** *xinit* does not handle multiple displays when another X server is already started. For that you must specify the display by appending `-- :*display_number*`, where *display_number* is 1 or more.
+**Note:** *xinit* does not handle multiple displays when another X server is already started. For that you must specify the display by appending `-- :*display_number*`, where `*display_number*` is `1` or more.
 
 Your window manager (or desktop environment) of choice should now start correctly.
 

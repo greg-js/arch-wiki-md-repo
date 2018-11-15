@@ -8,15 +8,18 @@ From the [WireGuard](https://www.wireguard.com/) project homepage:
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
-    *   [2.1 Peer A setup](#Peer_A_setup)
-    *   [2.2 Peer B setup](#Peer_B_setup)
-    *   [2.3 Basic checkups](#Basic_checkups)
-    *   [2.4 Persistent configuration](#Persistent_configuration)
-    *   [2.5 Example peer configuration](#Example_peer_configuration)
-    *   [2.6 Example configuration for systemd-networkd](#Example_configuration_for_systemd-networkd)
+    *   [2.1 Key generation](#Key_generation)
+    *   [2.2 Peer A setup](#Peer_A_setup)
+    *   [2.3 Peer B setup](#Peer_B_setup)
+    *   [2.4 Basic checkups](#Basic_checkups)
+    *   [2.5 Persistent configuration](#Persistent_configuration)
+    *   [2.6 Example peer configuration](#Example_peer_configuration)
+    *   [2.7 Example configuration for systemd-networkd](#Example_configuration_for_systemd-networkd)
 *   [3 Setup a VPN server](#Setup_a_VPN_server)
     *   [3.1 Server](#Server)
-    *   [3.2 Client (tunnel all traffic)](#Client_(tunnel_all_traffic))
+        *   [3.1.1 Key generation](#Key_generation_2)
+        *   [3.1.2 Server config](#Server_config)
+        *   [3.1.3 Client config](#Client_config)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Routes are periodically reset](#Routes_are_periodically_reset)
     *   [4.2 Connection loss with NetworkManager](#Connection_loss_with_NetworkManager)
@@ -28,18 +31,11 @@ From the [WireGuard](https://www.wireguard.com/) project homepage:
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [wireguard-tools](https://www.archlinux.org/packages/?name=wireguard-tools) package, which pulls in the [wireguard-dkms](https://www.archlinux.org/packages/?name=wireguard-dkms) package.
+[Install](/index.php/Install "Install") the [wireguard-tools](https://www.archlinux.org/packages/?name=wireguard-tools) package.
 
-You also need the header files for your [Linux kernel](/index.php/Linux_kernel "Linux kernel"), for example [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) or [linux-lts-headers](https://www.archlinux.org/packages/?name=linux-lts-headers), otherwise you will not be able to load the `wireguard` module of the *wireguard-dkms* package.
+**Note:** WireGuard is not yet mainlined and the required kernel module will be built using [dkms](/index.php/Dkms "Dkms"). As such, be sure to have the corresponding kernel-headers package installed.
 
 ## Usage
-
-To create a public and private key on a peer:
-
-```
-$ wg genkey | tee privatekey | wg pubkey > publickey
-
-```
 
 Below commands will demonstrate how to setup a basic tunnel between two peers with the following settings:
 
@@ -49,6 +45,45 @@ Below commands will demonstrate how to setup a basic tunnel between two peers wi
 | wireguard listening port | UDP/48574 | UDP/39814 |
 
 The external addresses should already exist. For example, peer A should be able to ping peer B via `ping 10.10.10.2`, and vice versa. The internal addresses will be new addresses created by the *ip* commands below and will be shared internally within the new WireGuard network. The `/24` in the IP addresses is the [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation "wikipedia:Classless Inter-Domain Routing").
+
+#### Key generation
+
+To create a private key:
+
+```
+$ wg genkey
+
+```
+
+You can save it to a file:
+
+**Note:** It's recommended to save the private key file with strict permissions. `wg` will complain if you try to save the file with too open permissions. You can use `umask 077` to ensure only the owner has access to the key file.
+
+```
+$ (umask 077 && wg genkey > privatekey)
+
+```
+
+To create a public key:
+
+```
+$ wg pubkey < privatekey
+
+```
+
+You can also save it to a file:
+
+```
+$ wg pubkey < privatekey > publickey
+
+```
+
+Of course, you can do this all at once:
+
+```
+$ wg genkey | (umask 077 && tee privatekey) | wg pubkey > publickey
+
+```
 
 #### Peer A setup
 
@@ -164,25 +199,11 @@ Destination = 10.0.0.0/24
 
 ## Setup a VPN server
 
-Wireguard comes with a tool to quickly get started with Wireguard: *wg-quick*. Note that the configuration file used here is not a valid configuration file that can be used with `wg setconf`, and that you will possibly have to change at least the interface from `eth0` to the one you use.
+The purpose of this section is to setup an Arch WireGuard "server" and a generic "client" to enable access to the server/network resources. The WireGuard Project offer clients ("apps") for popular mobile devices on both iOS and Android platforms in addition to the Linux-native and MacOS software. See the official project [install link](https://www.wireguard.com/install/) for more.
 
-#### Server
+### Server
 
- `/etc/wireguard/wg0server.conf` 
-```
-[Interface]
-Address = 10.0.0.1/24  # This is the virtual IP address, with the subnet mask we will use for the VPN
-PostUp   = iptables -A FORWARD -i %i -j ACCEPT; iptables -A FORWARD -o %i -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
-PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -D FORWARD -o %i -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
-ListenPort = 51820
-PrivateKey = [SERVER PRIVATE KEY]
-
-[Peer]
-PublicKey = [CLIENT PUBLIC KEY]
-AllowedIPs = 10.0.0.2/32  # This denotes the clients IP with a /32: the client only has ONE IP.
-```
-
-In order for the iptables rules to work, IPv4 forwarding should be enabled:
+On the machine acting as the server, first enable IPv4 forwarding:
 
 ```
 # sysctl net.ipv4.ip_forward=1
@@ -191,33 +212,88 @@ In order for the iptables rules to work, IPv4 forwarding should be enabled:
 
 To make the change permanent, add `net.ipv4.ip_forward = 1` to `/etc/sysctl.d/99-sysctl.conf`.
 
-Bring the interface up by using `wg-quick up wg0server`, and use `wg-quick down wg0server` to bring it down.
+A properly configured [firewall](/index.php/Firewall "Firewall") is *HIGHLY recommended* for any Internet-facing device. The following are needed:
 
-#### Client (tunnel all traffic)
+1.  Allowing UDP traffic on the specified port(s) on which WireGuard will be running (for example allowing traffic on 51820/udp).
+2.  Setting up the forwarding policy for the firewall (for example, see: [Uncomplicated_Firewall#Forward_policy](/index.php/Uncomplicated_Firewall#Forward_policy "Uncomplicated Firewall")).
+
+Finally, WireGuard port(s) need to be forwarded to the server from the network router so they can be accessed from the WAN.
+
+#### Key generation
+
+Generate public/private keys for the server and for each client. In this example, only 2 key pairs are created, one for the "server" and one for a "client." Repeat as needed for additional clients:
+
+```
+# cd /etc/wireguard
+# wg genkey | tee server.priv | wg pubkey > server.pub
+# wg genkey | tee client.priv | wg pubkey > client.pub
+
+```
+
+#### Server config
+
+Create the server config file that minimally, defines the private IP range to use for the tunnel, defines the port on which to route traffic, and defines the needed public/private pairings to allow successful authentication.
+
+In the example below:
+
+*   [SERVER PRIVATE KEY] is the string contained in `/etc/wireguard/server.priv`
+*   [CLIENT PUBLIC KEY] is the string contained in `/etc/wireguard/client.pub`
 
  `/etc/wireguard/wg0.conf` 
 ```
 [Interface]
-Address = 10.0.0.2/24  # The client IP from wg0server.conf with the same subnet mask
+Address = 10.200.200.1/24
+SaveConfig = true
+ListenPort = 51820
+PrivateKey = [SERVER PRIVATE KEY]
+
+[Peer]
+PublicKey = [CLIENT PUBLIC KEY]
+AllowedIPs = 10.200.200.2/32
+```
+
+**Note:** Additional peers can be listed in the same format as needed.
+
+The interface can be managed manually or by systemctl. For example: bring the interface up by using `wg-quick up wg0` and bring it down by using `wg-quick down wg0`.
+
+Alternatively, systemctl can be used to manage the interface. [Start](/index.php/Start "Start") and optionally [enable](/index.php/Enable "Enable") it via `wg-quick@.service` where the server config name is inserted after the "@" symbol. For example:
+
+```
+# systemctl start wg-quick@wg0
+
+```
+
+#### Client config
+
+Create the matching client config file. In the example below:
+
+*   [CLIENT PRIVATE KEY] is the string contained in `/etc/wireguard/client.priv`
+*   [SERVER PUBLICKEY] is the string contained in `/etc/wireguard/server.pub`
+
+ `/etc/wireguard/client.conf` 
+```
+[Interface]
+Address = 10.200.200.2/24
 PrivateKey = [CLIENT PRIVATE KEY]
-DNS = 10.0.0.1
+DNS = 10.200.200.1
 
 [Peer]
 PublicKey = [SERVER PUBLICKEY]
-AllowedIPs = 0.0.0.0/0, ::/0
-Endpoint = [SERVER ENDPOINT]:51820
+AllowedIPs = 0.0.0.0/0
+Endpoint = my.ddns.address.com:51820
 PersistentKeepalive = 25
 ```
 
-Bring this interface up by using `wg-quick up wg0`, and use `wg-quick down wg0` to bring it down.
+If the client is a mobile device such as a phone, [qrencode](https://www.archlinux.org/packages/?name=qrencode) can be used to share the config with the client:
 
-To bring this up automatically one can use `systemctl enable wg-quick@wg0`
+```
+# qrencode -t ansiutf8 < /etc/wireguard/client.conf
 
-If you use [NetworkManager](/index.php/NetworkManager "NetworkManager"), it may be necessary to also enable NetworkManager-wait-online.service `systemctl enable NetworkManager-wait-online.service`
+```
 
-or if you're using systemd-networkd, to enable systemd-networkd-wait-online.service `systemctl enable systemd-networkd-wait-online.service`
+If running an Linux, `wg-quick` or the corresponding systemd server unit can manage the interface.
 
-to wait until devices are network ready before attempting wireguard connection.
+**Note:** Users of [NetworkManager](/index.php/NetworkManager "NetworkManager"), may need to [enable](/index.php/Enable "Enable") the `NetworkManager-wait-online.service` and users of [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") may need to [enable](/index.php/Enable "Enable") the `systemd-networkd-wait-online.service` to wait until devices are network ready before attempting wireguard connection.
 
 ## Troubleshooting
 

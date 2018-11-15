@@ -33,6 +33,7 @@ Related articles
     *   [6.2 Default number of allowed processes/threads too low](#Default_number_of_allowed_processes/threads_too_low)
     *   [6.3 Error initializing graphdriver: devmapper](#Error_initializing_graphdriver:_devmapper)
     *   [6.4 Failed to create some/path/to/file: No space left on device](#Failed_to_create_some/path/to/file:_No_space_left_on_device)
+    *   [6.5 Invalid cross-device link in kernel 4.19.1](#Invalid_cross-device_link_in_kernel_4.19.1)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -371,6 +372,17 @@ when building or running a Docker image, even though you do have enough disk spa
 *   XFS quota mount options (`uquota`, `gquota`, `prjquota`, etc.) fail during re-mount of the file system. To enable quota for root file system, the mount option must be passed to initramfs as a [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `rootflags=`. Subsequently, it should not be listed among mount options in `/etc/fstab` for the root (`/`) filesystem.
 
 **Note:** There are some differences of XFS Quota compared to standard Linux [Disk quota](/index.php/Disk_quota "Disk quota"), [[1]](http://inai.de/linux/adm_quota) may be worth reading.
+
+### Invalid cross-device link in kernel 4.19.1
+
+If commands like *dpkg* fail to run in docker, e.g:
+
+```
+dpkg: error: error creating new backup file '/var/lib/dpkg/status-old': Invalid cross-device link
+
+```
+
+Downgrade to 4.18.x until [this issue](https://github.com/docker/for-linux/issues/480) is resolved. More info in the [Arch forum](https://bbs.archlinux.org/viewtopic.php?id=241866).
 
 ## See also
 

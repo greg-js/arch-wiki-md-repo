@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes"). Data da última tradução: 2018-11-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=File_permissions_and_attributes&diff=0&oldid=554967) na versão em inglês.
+
 Artigos relacionados
 
 *   [Usuários e grupos](/index.php/Usu%C3%A1rios_e_grupos "Usuários e grupos")
@@ -355,27 +357,27 @@ Por exemplo, `chmod 2777 *nome_do_arquivo*` vai definir bits de leitura/escrita/
 
 ### chmod em lote
 
-Generally directories and files should not have the same permissions. If it is necessary to bulk modify a directory tree, use [find](/index.php/Find "Find") to selectively modify one or the other.
+Geralmente, os diretórios e arquivos não devem ter as mesmas permissões. Se for necessário modificar em massa uma árvore de diretórios, use [find](/index.php/Find_(Portugu%C3%AAs) "Find (Português)") para modificar seletivamente um ou o outro.
 
-To *chmod* only directories to 755:
-
-```
-$ find *directory* -type d -exec chmod 755 {} +
+Para usar *chmod* para modificar permissões apenas de diretórios para 755:
 
 ```
-
-To *chmod* only files to 644:
+$ find *diretório* -type d -exec chmod 755 {} +
 
 ```
-$ find *directory* -type f -exec chmod 644 {} +
+
+Para usar *chmod* para modificar permissões apenas de arquivos para 644:
+
+```
+$ find *diretório* -type f -exec chmod 644 {} +
 
 ```
 
 ## Alterando o proprietário
 
-[chown](https://en.wikipedia.org/wiki/chown "wikipedia:chown") changes the owner of a file or directory, which is quicker and easier than altering the permissions in some cases.
+O [chown](https://en.wikipedia.org/wiki/pt:chown "wikipedia:pt:chown") altera o proprietário de um arquivo ou diretório, o que é mais rápido e mais fácil do que alterar as permissões em alguns casos.
 
-Consider the following example, making a new partition with [GParted](/index.php/GParted "GParted") for backup data. Gparted does this all as root so everything belongs to root by default. This is all well and good but when it comes to writing data to the mounted partition, permission is denied for regular users.
+Considere o exemplo a seguir, criando uma nova partição com [GParted](/index.php/GParted "GParted") para dados de backup. O Gparted faz isso tudo como root, então tudo pertence à raiz por padrão. Tudo isso é bom, mas quando se trata de escrever dados na partição montada, a permissão é negada para usuários comuns.
 
 ```
 brw-rw---- 1 root disk 8,    9 Jul  6 16:02 sda9
@@ -383,84 +385,84 @@ drwxr-xr-x 5 root root    4096 Jul  6 16:01 Backup
 
 ```
 
-As you can see the device in `/dev` is owned by root, as is the mount location (`/media/Backup`). To change the owner of the mount location one can do the following:
+Como você pode ver, o dispositivo em `/dev` pertence ao root, assim como o local de montagem (`/media/Backup`). Para alterar o proprietário do local de montagem, é possível fazer o seguinte:
 
-Before: `drwxr-xr-x 5 root root 4096 Jul 6 16:01 Backup`
+Antes: `drwxr-xr-x 5 root root 4096 Jul 6 16:01 Backup`
 
 ```
 # chown archie /media/Backup
 
 ```
 
-After: `drwxr-xr-x 5 archie root 4096 Jul 6 16:01 Backup`
+Após: `drwxr-xr-x 5 archie root 4096 Jul 6 16:01 Backup`
 
-Now the partition can have data written to it by the new owner, archie, without altering the permissions (as the owner triad already had `rwx` permissions).
+Agora a partição pode ter dados gravados pelo novo proprietário, archie, sem alterar as permissões (já que a tríade do proprietário já tinha permissões `rwx`).
 
-**Note:**
+**Nota:**
 
-*   `chown` always clears the setuid and setgid bits.
-*   Non-root users cannot use `chown` to "give away" files they own to another user.
+*   `chown` sempre limpa os bits de setuid e setgid.
+*   Além root, nenhum usuário pode usar `chown` para "dar" arquivos que lhe pertence para outro usuário.
 
 ## Listas de Controle de Acesso
 
-[Access Control Lists](/index.php/Access_Control_Lists "Access Control Lists") provides an additional, more flexible permission mechanism for file systems by allowing to set permissions for any user or group to any file.
+[Access Control Lists](/index.php/Access_Control_Lists "Access Control Lists") fornece um mecanismo de permissão adicional e mais flexível para sistemas de arquivos, permitindo definir permissões para qualquer usuário ou grupo para qualquer arquivo.
 
 ## Umask
 
-The [umask](/index.php/Umask "Umask") utility is used to control the file-creation mode mask, which determines the initial value of file permission bits for newly created files.
+O utilitário [umask](/index.php/Umask_(Portugu%C3%AAs) "Umask (Português)") é usado para controlar a máscara do modo de criação de arquivo, que determina o valor inicial dos bits de permissão de arquivo para arquivos recém-criados.
 
 ## Atributos de arquivos
 
-Apart from the file mode bits that control [user and group](/index.php/Users_and_groups "Users and groups") read, write and execute permissions, several [file systems](/index.php/File_systems "File systems") support file attributes that enable further customization of allowable file operations. This section describes some of these attributes and how to work with them.
+Além dos bits do modo de arquivo que controlam [usuário e grupo](/index.php/Usu%C3%A1rios_e_grupos "Usuários e grupos") permissões de leitura, gravação e execução, vários [sistemas de arquivos](/index.php/File_systems "File systems") suportam atributos de arquivo que permitem uma personalização adicional das operações de arquivo permitidas. Esta seção descreve alguns desses atributos e como trabalhar com eles.
 
-**Warning:** By default, file attributes are not preserved by [cp](/index.php/Cp "Cp"), [rsync](/index.php/Rsync "Rsync"), and other similar programs.
+**Atenção:** Por padrão, atributos de arquivo não são preservados por [cp](/index.php/Cp_(Portugu%C3%AAs) "Cp (Português)"), [rsync](/index.php/Rsync "Rsync") e outros programas similares.
 
 ### chattr e lsattr
 
-For ext2 and [ext3](/index.php/Ext3 "Ext3") file systems, the [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) package contains the programs [lsattr](https://en.wikipedia.org/wiki/lsattr "wikipedia:lsattr") and [chattr](https://en.wikipedia.org/wiki/chattr "wikipedia:chattr") that list and change a file's attributes, respectively. Though some are not honored by all file systems, the available attributes are:
+Para sistemas de arquivos ext2 e [ext3](/index.php/Ext3 "Ext3"), o pacote [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) contém os programas [lsattr](https://en.wikipedia.org/wiki/lsattr "wikipedia:lsattr") e [chattr](https://en.wikipedia.org/wiki/chattr "wikipedia:chattr") que listam e alteram os atributos de um arquivo, respectivamente. Embora alguns não sejam respeitados por todos os sistemas de arquivos, os atributos disponíveis são:
 
-*   `a`: append only
-*   `c`: compressed
-*   `d`: no dump
-*   `e`: extent format
-*   `i`: immutable
-*   `j`: data journalling
-*   `s`: secure deletion
-*   `t`: no tail-merging
-*   `u`: undeletable
-*   `A`: no atime updates
-*   `C`: no copy on write
-*   `D`: synchronous directory updates
-*   `S`: synchronous updates
-*   `T`: top of directory hierarchy
+*   `a`: anexar apenas
+*   `c`: compactado
+*   `d`: sem despejo
+*   `e`: formato estendido
+*   `i`: imutável
+*   `j`: journalling de dados
+*   `s`: exclusão segura
+*   `t`: sem tail-merging
+*   `u`: não excluível
+*   `A`: sem atualizações atime
+*   `C`: sem cópia ao escrever
+*   `D`: atualizações de diretório síncronas
+*   `S`: atualizações síncronas
+*   `T`: topo da hierarquia de diretório
 
-For example, if you want to set the immutable bit on some file, use the following command:
-
-```
-# chattr +i */path/to/file*
+Por exemplo, se você deseja definir o bit imutável em alguns arquivos, use o seguinte comando:
 
 ```
+# chattr +i */caminho/para/arquivo*
 
-To remove an attribute on a file just change `+` to `-`.
+```
+
+Para remover um atributo em um arquivo, basta alterar `+` para `-`.
 
 ## Atributos estendidos
 
-From [attr(5)](https://linux.die.net/man/5/attr): "Extended attributes are name:value pairs associated permanently with files and directories". There are four extended attribute classes: security, system, trusted and user.
+Do [attr(5)](https://linux.die.net/man/5/attr): "Atributos estendidos são pares nome:valor associados permanentemente a arquivos e diretórios". Existem quatro classes de atributos estendidos: segurança, sistema, confiável e usuário.
 
-**Warning:** By default, extended attributes are not preserved by [cp](/index.php/Cp "Cp"), [rsync](/index.php/Rsync "Rsync"), and other similar programs, see [#Preserving extended attributes](#Preserving_extended_attributes).
+**Atenção:** Por padrão, atributos estendidos não são preservados por [cp](/index.php/Cp_(Portugu%C3%AAs) "Cp (Português)"), [rsync](/index.php/Rsync "Rsync") e outros programas similares, veja [#Preservando atributos estendidos](#Preservando_atributos_estendidos).
 
-Extended attributes are also used to set [Capabilities](/index.php/Capabilities "Capabilities").
+Atributos estendidos também são usados para definir [Capacidades](/index.php/Capabilities "Capabilities").
 
 ### Atributos estendidos de usuário
 
-User extended attributes can be used to store arbitrary information about a file. To create one:
+Os atributos estendidos do usuário podem ser usados para armazenar informações arbitrárias sobre um arquivo. Para criar um:
 
 ```
 $ setfattr -n user.checksum -v "3baf9ebce4c664ca8d9e5f6314fb47fb" foo.txt
 
 ```
 
-Use getfattr to display extended attributes:
+Use getfattr para exibir atributos estendidos:
 
  `$ getfattr -d foo.txt` 
 ```
@@ -470,29 +472,29 @@ user.checksum="3baf9ebce4c664ca8d9e5f6314fb47fb"
 
 ### Preservando atributos estendidos
 
-| Command | Required flag |
+| Comando | Sinalizador necessário |
 | `cp` | `--preserve=mode,ownership,timestamps,xattr` |
-| `mv` | preserves by default |
-| `tar` | `--xattrs` for creation and extraction |
-| `bsdtar` | `-p` for extraction |
+| `mv` | preserva, por padrão |
+| `tar` | `--xattrs` para criação e extração |
+| `bsdtar` | `-p` para extração |
 | [rsync](/index.php/Rsync "Rsync") | `--xattrs` |
 
-1.  mv silently discards extended attributes when the target file system does not support them.
+1.  mv descarta silenciosamente atributos quando o sistema de arquivos alvo não tiver suporte a eles.
 
-To preserve extended attributes with [text editors](/index.php/Text_editor "Text editor") you need to configure them to truncate files on saving instead of using [rename(2)](https://jlk.fjfi.cvut.cz/arch/manpages/man/rename.2).[[1]](https://unix.stackexchange.com/questions/45407)
+Para preservar atributos estendidos com [editores de texto](/index.php/Text_editor "Text editor"), você precisa configurá-los para truncar arquivos ao salvar em vez de usar [rename(2)](https://jlk.fjfi.cvut.cz/arch/manpages/man/rename.2).[[1]](https://unix.stackexchange.com/questions/45407)
 
 ## Dicas e truques
 
 ### Preservar root
 
-Use the `--preserve-root` flag to prevent `chmod` from acting recursively on `/`. This can, for example, prevent one from removing the executable bit systemwide and thus breaking the system. To use this flag every time, set it within an [alias](/index.php/Alias "Alias"). See also [[2]](https://www.reddit.com/r/linux/comments/4ni3xe/tifu_sudo_chmod_644/).
+Use o sinalizador `--preserve-root` para impedir que `chmod` atue recursivamente em `/`. Isso pode, por exemplo, impedir que um remova o bit executável em todo o sistema e, assim, quebre o sistema. Para usar esse sinalizador todas as vezes, defina-o em um [alias](/index.php/Alias "Alias"). Veja também [[2]](https://www.reddit.com/r/linux/comments/4ni3xe/tifu_sudo_chmod_644/).
 
 ## Veja também
 
-*   [wikipedia:Chattr](https://en.wikipedia.org/wiki/Chattr "wikipedia:Chattr")
-*   [Linux File Permission Confusion](http://www.hackinglinuxexposed.com/articles/20030417.html)
-*   [Linux File Permission Confusion part 2](http://www.hackinglinuxexposed.com/articles/20030424.html)
+*   [wikipedia:pt:Chattr](https://en.wikipedia.org/wiki/pt:Chattr "wikipedia:pt:Chattr")
+*   [Confusão nas Permissões de Arquivos no Linux](http://www.hackinglinuxexposed.com/articles/20030417.html)
+*   [Confusão nas Permissões de Arquivos no Linux parte 2](http://www.hackinglinuxexposed.com/articles/20030424.html)
 *   [wikipedia:Extended file attributes#Linux](https://en.wikipedia.org/wiki/Extended_file_attributes#Linux "wikipedia:Extended file attributes")
-*   [Extended attributes: the good, the not so good, the bad.](http://www.lesbonscomptes.com/pages/extattrs.html)
-*   [Backup and restore file permissions in Linux](http://www.concrete5.org/documentation/how-tos/designers/backup-and-restore-file-permissions-in-linux/)
-*   [Why is “chmod -R 777 /” destructive?](https://serverfault.com/questions/364677/why-is-chmod-r-777-destructive)
+*   [Atributos estendidos: o bom, o não tão bom, o mal.](http://www.lesbonscomptes.com/pages/extattrs.html)
+*   [Faça backup e restaure permissões de arquivos no Linux](http://www.concrete5.org/documentation/how-tos/designers/backup-and-restore-file-permissions-in-linux/)
+*   [Por que “chmod -R 777 /” é destrutivo?](https://serverfault.com/questions/364677/why-is-chmod-r-777-destructive)

@@ -221,10 +221,10 @@ $ cargo install racer
 
 #### Clippy
 
-[Clippy](https://github.com/Manishearth/rust-clippy) takes advantage of compiler plugin support in Nightly builds of Rust to provide a large number of additional lints for detecting and warning about a larger variety of errors and non-idiomatic Rust. Because it requires support for compiler plugins in order to operate, clippy will not work when compiling with the stable Rust compiler.
+[Clippy](https://github.com/Manishearth/rust-clippy) takes advantage of compiler plugin support in Nightly builds of Rust to provide a large number of additional lints for detecting and warning about a larger variety of errors and non-idiomatic Rust. Install clippy using rustup with:
 
 ```
-$ cargo +nightly install clippy
+$ rustup component add clippy-preview
 
 ```
 

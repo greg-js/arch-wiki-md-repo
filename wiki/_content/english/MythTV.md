@@ -231,13 +231,13 @@ SUBSYSTEM=="firewire", TAG+="systemd"
 
 ```
 
-*   Override systemd's defaults by [creating](/index.php/Edit "Edit") file `/etc/systemd/system/mythbackend.service.d/override.conf`:
+*   Create a [drop-in unit file](/index.php/Drop-in_unit_file "Drop-in unit file") for `mythbackend.service` as follows:
 
+ `/etc/systemd/system/mythbackend.service.d/override.conf` 
 ```
 # [Unit]
 # After=dev-dvb-adapter0-frontend0.device
 # Wants=dev-dvb-adapter0-frontend0.device
-
 ```
 
 See MythTV wiki's page [Systemd mythbackend Configuration](https://www.mythtv.org/wiki/Systemd_mythbackend_Configuration#Delay_starting_the_backend_until_tuners_have_initialized) for further details.

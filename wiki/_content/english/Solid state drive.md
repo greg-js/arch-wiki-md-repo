@@ -344,7 +344,9 @@ Finally reboot.
 
 ### SanDisk
 
-SanDisk makes **ISO firmware images** to allow SSD firmware update on operating systems that are unsupported by their SanDisk SSD Toolkit. One must choose the firmware for the right *SSD model*, as well as for the *capacity* that it has (e.g. 60GB, **or** 256GB). After burning the adequate ISO firmware image, simply restart the PC to boot with the newly created CD/DVD boot disk (may work from a USB stick).
+SanDisk makes ISO firmware images to allow SSD firmware update on operating systems that are unsupported by their SanDisk SSD Toolkit.
+
+One must choose the firmware for the correct *SSD model*, **and** the correct *capacity* that it has (e.g. 60GB, **or** 256GB). After burning the ISO firmware image, simply restart the PC to boot with the newly created CD/DVD boot disk (may work from a USB stick).
 
 The iso images just contain a linux kernel and an initrd. Extract them to `/boot` partition and boot them with [GRUB](/index.php/GRUB "GRUB") or [Syslinux](/index.php/Syslinux "Syslinux") to update the firmware.
 
@@ -353,6 +355,8 @@ See also:
 SanDisk Extreme SSD [Firmware Release notes](https://kb.sandisk.com/app/answers/detail/a_id/10127) and [Manual Firmware update version R211](https://kb.sandisk.com/app/answers/detail/a_id/10476)
 
 SanDisk Ultra SSD [Firmware release notes](https://kb.sandisk.com/app/answers/detail/a_id/10192) and [Manual Firmware update version 365A13F0](https://kb.sandisk.com/app/answers/detail/a_id/10477)
+
+SanDisk Ultra+ SSD [Firmware release notes](https://kb.sandisk.com/app/answers/detail/a_id/12763) and [Manual Firmware update version X2316RL](https://kb.sandisk.com/app/answers/detail/a_id/12762) - use `smartctl -a /dev/sdX` to determine if a "H2" or "HP" model is used.
 
 ## See also
 

@@ -58,13 +58,14 @@ Version: ThinkPad X1 Carbon 6th
     *   [4.2 Special buttons](#Special_buttons)
     *   [4.3 Bind special keys](#Bind_special_keys)
     *   [4.4 HDR Display Color Calibration](#HDR_Display_Color_Calibration)
-*   [5 TrackPoint and Touchpad issues](#TrackPoint_and_Touchpad_issues)
-*   [6 Full-disk encryption](#Full-disk_encryption)
-    *   [6.1 Ramdisk module](#Ramdisk_module)
-*   [7 Tools](#Tools)
-    *   [7.1 Diagnostics](#Diagnostics)
-*   [8 References](#References)
-*   [9 Additional resources](#Additional_resources)
+*   [5 Intel Graphics UHD 620 issues](#Intel_Graphics_UHD_620_issues)
+*   [6 TrackPoint and Touchpad issues](#TrackPoint_and_Touchpad_issues)
+*   [7 Full-disk encryption](#Full-disk_encryption)
+    *   [7.1 Ramdisk module](#Ramdisk_module)
+*   [8 Tools](#Tools)
+    *   [8.1 Diagnostics](#Diagnostics)
+*   [9 References](#References)
+*   [10 Additional resources](#Additional_resources)
 
 ## BIOS
 
@@ -220,6 +221,23 @@ And finally activate the profile and set it as the default for this display:
 ```
 
 You can verify the profile is active by running `colormgr get-devices`.
+
+## Intel Graphics UHD 620 issues
+
+[Enable GuC/HuC firmware loading](https://wiki.archlinux.org/index.php/Intel_graphics#Enable_GuC_/_HuC_firmware_loading) suggests to load GPU firmware with warning. However, on Wayland for Carbon X1 gen 6 it cause GPU hang problem. Issues can be reflected as: a) crashing GPU process of Chrome / Chromium / Electron apps and subsequent host freezing; b) crashing of Gnome / Wayland with possibility to reboot via second virtual terminal; c) just host freezing. In dmesg the following can be observed:
+
+```
+ kernel: [drm] GPU HANG: ecode 9:0:0x85dffffd, in chrome [18418], reason: hang on rcs0, action: reset
+ kernel: [drm] GPU hangs can indicate a bug anywhere in the entire gfx stack, including userspace.
+ kernel: [drm] Please file a _new_ bug report on bugs.freedesktop.org against DRI -> DRM/Intel
+ kernel: [drm] drm/i915 developers can then reassign to the right component if it's not a kernel issue.
+ kernel: [drm] The gpu crash dump is required to analyze gpu hangs, so please always attach it.
+ kernel: [drm] GPU crash dump saved to /sys/class/drm/card0/error
+ kernel: i915 0000:00:02.0: Resetting rcs0 for hang on rcs0
+
+```
+
+Note that, first line changes depending on the source of crashing application, but the result is the same, so issue is with GPU / firmware. Basically don't enable GuC / HuC firmware loading, at least if on Wayland. There are a number of similar issues reported including [#108717](https://bugs.freedesktop.org/show_bug.cgi?id=108717).
 
 ## TrackPoint and Touchpad issues
 

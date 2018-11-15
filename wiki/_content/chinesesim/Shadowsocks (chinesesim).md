@@ -56,6 +56,7 @@ shadowsocks以[json](https://en.wikipedia.org/wiki/JSON "wikipedia:JSON")为配�
 | password | 用以加密的密匙 |
 | timeout | 超时时间（秒） |
 | method | 参阅 [加密](https://github.com/shadowsocks/shadowsocks/wiki/Encryption) |
+| mode | 设置为tcp或udp或tcp_and_udp |
 | fast_open | 是否启用[TCP-Fast-Open](https://github.com/clowwindy/shadowsocks/wiki/TCP-Fast-Open) |
 | wokers | worker数量，如果不理解含义请不要改 |
 

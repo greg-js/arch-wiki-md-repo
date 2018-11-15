@@ -50,6 +50,7 @@ According to the [official website](https://www.gnupg.org/):
     *   [7.1 GnuPG only setups](#GnuPG_only_setups)
     *   [7.2 GnuPG with pcscd (PCSC Lite)](#GnuPG_with_pcscd_(PCSC_Lite))
         *   [7.2.1 Always use pcscd](#Always_use_pcscd)
+        *   [7.2.2 Shared access with pcscd](#Shared_access_with_pcscd)
 *   [8 Tips and tricks](#Tips_and_tricks)
     *   [8.1 Different algorithm](#Different_algorithm)
     *   [8.2 Encrypt a password](#Encrypt_a_password)
@@ -669,6 +670,12 @@ disable-ccid
 ```
 
 Please check [scdaemon(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/scdaemon.1) if you do not use OpenSC.
+
+#### Shared access with pcscd
+
+GnuPG `scdaemon` is the only popular `pcscd` client that uses `PCSC_SHARE_EXCLUSIVE` flag when connecting to `pcscd`. Other clients like OpenSC PKCS#11 that are used by browsers and programs listed in [Electronic_identification](/index.php/Electronic_identification "Electronic identification") are using `PCSC_SHARE_SHARED` that allows simultaneous access to single smartcard. `pcscd` will not give exclusive access to smartcard while there are other clients connected. This means that to use GnuPG smartcard features you must before have to close all your open browser windows or do some other inconvenient operations. There is a out of tree patch in [GPGTools/MacGPG2](https://github.com/GPGTools/MacGPG2/blob/dev/patches/gnupg/scdaemon_shared-access.patch) git repo that enables `scdaemon` to use shared access but GnuPG developers are against allowing this because when one `pcscd` client authenticates the smartcard then some other malicious `pcscd` clients could do authenticated operations with the card without you knowing. You can read full mailing list thread [here](https://lists.gnupg.org/pipermail/gnupg-devel/2015-September/030247.html).
+
+If you accept the security risk then you can use the patch from [GPGTools/MacGPG2](https://github.com/GPGTools/MacGPG2/blob/dev/patches/gnupg/scdaemon_shared-access.patch) git repo or use [gnupg-scdaemon-shared-access](https://aur.archlinux.org/packages/gnupg-scdaemon-shared-access/) package. After patching your `scdaemon` you can enable shared access by modifying your `scdaemon.conf` file and adding `shared-access` line end of it.
 
 ## Tips and tricks
 

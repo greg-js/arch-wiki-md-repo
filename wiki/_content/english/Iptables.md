@@ -8,8 +8,6 @@ Related articles
 
 *iptables* is a command line utility for configuring Linux kernel [firewall](/index.php/Firewall "Firewall") implemented within the [Netfilter](https://en.wikipedia.org/wiki/Netfilter "wikipedia:Netfilter") project. The term *iptables* is also commonly used to refer to this kernel-level firewall. It can be configured directly with iptables, or by using one of the many [console](#Console) and [graphical](#Graphical) front-ends. *iptables* is used for [IPv4](https://en.wikipedia.org/wiki/IPv4 "wikipedia:IPv4") and *ip6tables* is used for [IPv6](/index.php/IPv6 "IPv6"). Both *iptables* and *ip6tables* have the same syntax, but some options are specific to either IPv4 or IPv6.
 
-[nftables](/index.php/Nftables "Nftables") was released in [release with Linux kernel 3.13](http://www.phoronix.com/scan.php?page=news_item&px=MTQ5MDU), and will one day replace iptables as the main Linux firewall utility.
-
 ## Contents
 
 *   [1 Installation](#Installation)
@@ -91,11 +89,11 @@ The stock Arch Linux kernel is compiled with iptables support. You will only nee
 
 *   **[Gufw](/index.php/Uncomplicated_Firewall#Gufw "Uncomplicated Firewall")** — GTK-based front-end to [ufw](https://www.archlinux.org/packages/?name=ufw) which happens to be a CLI front-end to iptables (gufw->ufw->iptables), is super easy and super simple to use.
 
-	[http://gufw.org/](http://gufw.org/) || [gufw](https://www.archlinux.org/packages/?name=gufw)
+	[https://gufw.org/](https://gufw.org/) || [gufw](https://www.archlinux.org/packages/?name=gufw)
 
 *   **[PeerGuardian](/index.php/PeerGuardian_Linux "PeerGuardian Linux") GUI (pglgui)** — Privacy oriented firewall application. It blocks connections to and from hosts specified in huge block lists (thousands or millions of IP ranges).
 
-	[http://sourceforge.net/projects/peerguardian/](http://sourceforge.net/projects/peerguardian/) || [pgl](https://aur.archlinux.org/packages/pgl/)
+	[https://sourceforge.net/projects/peerguardian/](https://sourceforge.net/projects/peerguardian/) || [pgl](https://aur.archlinux.org/packages/pgl/)
 
 ## Basic concepts
 

@@ -119,7 +119,7 @@ seq 0 3 | xargs -l1 -I@ compton -b -d :0.@
 
 ## Troubleshooting
 
-Recent versions of compton do not work correctly with DRI2 acceleration and may exhibit severe flickering when DRI2 is in use ([compton bug](https://github.com/yshui/compton/issues/47), [mesa bug](https://bugs.freedesktop.org/show_bug.cgi?id=108651)). DRI3 is unaffected by this particular issue.
+Recent versions of compton had some problem with DRI2 acceleration and exhibited severe flickering when DRI2 is in use ([compton bug](https://github.com/yshui/compton/issues/47), [mesa bug](https://bugs.freedesktop.org/show_bug.cgi?id=108651)). This has been worked around and reported to be working, but may still affect some users. DRI3 is unaffected by this particular issue.
 
 The use of compositing effects may on occasion cause issues such as visual glitches when not configured correctly for use with other applications and programs.
 

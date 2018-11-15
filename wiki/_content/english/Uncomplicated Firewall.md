@@ -11,17 +11,18 @@ From the project [home page](https://launchpad.net/ufw):
 
 *   [1 Installation](#Installation)
 *   [2 Basic configuration](#Basic_configuration)
-*   [3 Adding other applications](#Adding_other_applications)
-*   [4 Deleting applications](#Deleting_applications)
-*   [5 Black listing IP addresses](#Black_listing_IP_addresses)
-*   [6 Rate limiting with ufw](#Rate_limiting_with_ufw)
-*   [7 User rules](#User_rules)
-*   [8 Tips and tricks](#Tips_and_tricks)
-    *   [8.1 Disable remote ping](#Disable_remote_ping)
-    *   [8.2 Disable UFW logging](#Disable_UFW_logging)
-*   [9 GUI frontends](#GUI_frontends)
-    *   [9.1 Gufw](#Gufw)
-*   [10 See also](#See_also)
+*   [3 Forward policy](#Forward_policy)
+*   [4 Adding other applications](#Adding_other_applications)
+*   [5 Deleting applications](#Deleting_applications)
+*   [6 Black listing IP addresses](#Black_listing_IP_addresses)
+*   [7 Rate limiting with ufw](#Rate_limiting_with_ufw)
+*   [8 User rules](#User_rules)
+*   [9 Tips and tricks](#Tips_and_tricks)
+    *   [9.1 Disable remote ping](#Disable_remote_ping)
+    *   [9.2 Disable UFW logging](#Disable_UFW_logging)
+*   [10 GUI frontends](#GUI_frontends)
+    *   [10.1 Gufw](#Gufw)
+*   [11 See also](#See_also)
 
 ## Installation
 
@@ -80,6 +81,10 @@ may be used, as well as further reports listed in the manpage. Since these repor
 While this works just fine for reporting, keep in mind not to enable the `iptables` service as long as you use `ufw` for managing it.
 
 **Note:** If special network variables are set on the system in `/etc/sysctl.d/*`, it may be necessary to update `/etc/ufw/sysctl.conf` accordingly since this configuration overrides the default settings.
+
+## Forward policy
+
+Users needing to run a [VPN](/index.php/VPN "VPN") such as [OpenVPN](/index.php/OpenVPN "OpenVPN") or [WireGuard](/index.php/WireGuard "WireGuard") will need to adjust the **DEFAULT_FORWARD_POLICY** variable in `/etc/default/ufw` from a value of **"DROP"** to **"ACCEPT"** for proper VPN operation.
 
 ## Adding other applications
 

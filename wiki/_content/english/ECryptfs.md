@@ -56,7 +56,7 @@ Before using eCryptfs, the following disadvantages should be checked for applica
 
 *   Network storage mounts
 
-	eCryptfs has long-standing [bugs](https://bugs.launchpad.net/ecryptfs/+bug/277578) when used on top of NFS and possibly other networked filesystems. It is always possible to use eCryptfs on a local directory and then copy the encrypted files from the local directory to a network host. However, if you want to set up eCryptfs directly on top of an NFS mount, with no local copy of the files, eCryptfs may crash or behave incorrectly. If in doubt, [EncFS](/index.php/EncFS "EncFS") may be a better choice in this case.
+	eCryptfs has long-standing [bugs](https://bugs.launchpad.net/ecryptfs/+bug/277578) when used on top of NFS and possibly other networked filesystems, for example, [#Mounting may fail on a remote host when connecting via Mosh](#Mounting_may_fail_on_a_remote_host_when_connecting_via_Mosh). It is always possible to use eCryptfs on a local directory and then copy the encrypted files from the local directory to a network host. However, if you want to set up eCryptfs directly on top of an NFS mount, with no local copy of the files, eCryptfs may crash or behave incorrectly. If in doubt, [EncFS](/index.php/EncFS "EncFS") may be a better choice in this case.
 
 *   Sparse files
 

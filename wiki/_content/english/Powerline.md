@@ -37,6 +37,15 @@ POWERLINE_BASH_SELECT=1
 
 Close and reopen your terminal and it should be working. If not, check the [Powerline bash prompt](https://powerline.readthedocs.io/en/latest/usage/shell-prompts.html#bash-prompt) usage instructions to ensure that it has not changed.
 
+You can also enter:
+
+```
+source ~/.bashrc
+
+```
+
+if you don't want to close and re-open your terminal.
+
 ### Zsh
 
 Add the following to your **~/.zshrc**:
@@ -73,6 +82,13 @@ Install [powerline-vim](https://www.archlinux.org/packages/?name=powerline-vim)
 For detailed usage instructions, such as configuring your system to use Powerline with other shells, window manager widgets, etc., please refer to the [Usage section](https://powerline.readthedocs.io/en/latest/usage.html#usage) of the [Powerline documentation](https://powerline.readthedocs.io/en/latest/index.html).
 
 ## Customizing
+
+The official [Powerline docs](https://powerline.readthedocs.io/en/master/) refer to "powerline_root", which for Arch Linux is the following:
+
+```
+/usr/lib/python3.7/site-packages/powerline
+
+```
 
 To customize powerline, copy a default config to $XDG_CONFIG_HOME/powerline/... Then edit the file to your liking.
 
@@ -116,4 +132,4 @@ A reduced set of fonts for the text console are available in [powerline-console-
 
 There is currently one known alternative to Powerline - [Vim-airline](https://github.com/vim-airline). It is a part of [vim-plugins](https://www.archlinux.org/groups/x86_64/vim-plugins/) and can be installed separately as [vim-airline](https://www.archlinux.org/packages/?name=vim-airline). Optionally, install [vim-airline-themes](https://www.archlinux.org/packages/?name=vim-airline-themes).
 
-**Warning:** In [vim-airline](https://www.archlinux.org/packages/?name=vim-airline), showing the current git branch relies on [vim-fugitive](https://www.archlinux.org/packages/?name=vim-fugitive). vim-fugitive v2.4 made a change that broke this feature. [Upstream will not tag a new release](https://github.com/vim-airline/vim-airline/issues/1815) with the single commit that fixes compatibility with vim-fugitive v2.4\. Until then, if you want to see the current git branch, you have to: use [vim-airline-git](https://aur.archlinux.org/packages/vim-airline-git/); downgrade vim-fugitive to v2.3; or make your own vim-airline v0.9.0, cherry-picking [upstream's fixing commit](https://github.com/vim-airline/vim-airline/commit/30a3c4f54948bc2692a6e218a600d1ebea42f94d). If you decide to cherry-pick, it doesn't apply cleanly, so you'll need to fix that too.
+**Note:** In [vim-airline](https://www.archlinux.org/packages/?name=vim-airline), showing the current git branch relies on [vim-fugitive](https://www.archlinux.org/packages/?name=vim-fugitive). vim-fugitive v2.4 made a change that broke this feature. [Upstream will not tag a new release](https://github.com/vim-airline/vim-airline/issues/1815) with the single commit that fixes compatibility with vim-fugitive v2.4\. Until then, if you want to see the current git branch, you have to: use [vim-airline-git](https://aur.archlinux.org/packages/vim-airline-git/); downgrade vim-fugitive to v2.3; or make your own vim-airline v0.9.0, cherry-picking [upstream's fixing commit](https://github.com/vim-airline/vim-airline/commit/30a3c4f54948bc2692a6e218a600d1ebea42f94d). If you decide to cherry-pick, it doesn't apply cleanly, so you'll need to fix that too.

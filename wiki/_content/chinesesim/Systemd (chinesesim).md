@@ -8,7 +8,7 @@
 *   [Improve Boot Performance (简体中文)](/index.php/Improve_Boot_Performance_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Improve Boot Performance (简体中文)")
 *   [Allow users to shutdown](/index.php/Allow_users_to_shutdown "Allow users to shutdown")
 
-**翻译状态：** 本文是英文页面 [Systemd](/index.php/Systemd "Systemd") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-05-09，点击[这里](https://wiki.archlinux.org/index.php?title=Systemd&diff=0&oldid=517689)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Systemd](/index.php/Systemd "Systemd") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-11-14，点击[这里](https://wiki.archlinux.org/index.php?title=Systemd&diff=0&oldid=555139)可以查看翻译后英文页面的改动。
 
 摘自[项目主页](http://freedesktop.org/wiki/Software/systemd)：
 
@@ -36,9 +36,11 @@
     *   [3.3 "SysV 运行级别" 与 "systemd 目标" 对照表](#"SysV_运行级别"_与_"systemd_目标"_对照表)
     *   [3.4 切换当前运行目标](#切换当前运行目标)
     *   [3.5 更改开机默认启动目标](#更改开机默认启动目标)
+    *   [3.6 默认目标顺序](#默认目标顺序)
 *   [4 临时文件](#临时文件)
 *   [5 定时器](#定时器)
 *   [6 挂载](#挂载)
+    *   [6.1 GPT 分区自动挂载](#GPT_分区自动挂载)
 *   [7 日志](#日志)
     *   [7.1 优先级](#优先级)
     *   [7.2 功能](#功能)
@@ -216,7 +218,7 @@ $ systemctl is-enabled <单元>
 
 ```
 
-重新载入 systemd，扫描新的或有变动的单元：
+重新载入 systemd 系统配置，扫描单元文件的变动。注意这里不会重新加载变更的单元文件。参考上面的 `reload` 示例。
 
 ```
 # systemctl daemon-reload
@@ -312,7 +314,6 @@ $ systemctl hybrid-sleep
 
 *   `systemd-delta` 命令用来查看哪些单元文件被覆盖、哪些被修改。系统维护的时候需要及时了解哪些单元已经有了更新。
 *   使用 `systemctl cat *unit*` 可以查看单元的内容和所有相关的片段.
-*   安装 [vim-systemd](https://www.archlinux.org/packages/?name=vim-systemd) 软件包，可以使单元配置文件在 [Vim](/index.php/Vim "Vim") 下支持语法高亮。
 
 #### 替换单元文件
 
@@ -430,7 +431,7 @@ systemd中，运行目标通过“目标单元”访问。通过如下命令切�
 
 开机启动的目标是 `default.target`，默认链接到 `graphical.target` （大致相当于原来的运行级别5）。
 
-用 *systemctl* 验证当前的默认启动目标：
+用 *systemctl* 检查当前的默认启动目标：
 
 ```
 # systemctl get-default
@@ -449,6 +450,14 @@ Created symlink /etc/systemd/system/default.target -> /usr/lib/systemd/system/gr
 
 *   `systemd.unit=multi-user.target` （大致相当于运行级别3）
 *   `systemd.unit=rescue.target` （大致相当于运行级别1）
+
+### 默认目标顺序
+
+Systemd 根据下面顺序选择 `default.target`：
+
+1.  上面的内核参数
+2.  `/etc/systemd/system/default.target` 软链接
+3.  `/usr/lib/systemd/system/default.target` 软链接
 
 ## 临时文件
 
@@ -487,6 +496,12 @@ w /proc/acpi/wakeup - - - - USBE
 *systemd* 扩展了 [fstab](/index.php/Fstab "Fstab") 的传统功能，提供了额外的挂载选项。例如可以确保一个挂载仅在网络已经连接时进行，或者仅当另外一个分区已挂载时再挂载。这些选项通常以 `x-systemd.` 开头，[systemd.mount(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.mount.5#FSTAB) 中包含了完整说明。
 
 *automounting* 也是一个例子，可以在使用时，而不是启动时挂载分区，详情请参考 [fstab#Automount with systemd](/index.php/Fstab#Automount_with_systemd "Fstab")。
+
+### GPT 分区自动挂载
+
+在 [GPT](/index.php/GPT "GPT") 分区磁盘系统上，[systemd-gpt-auto-generator(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-gpt-auto-generator.8) 会按照 [可探测分区规范](https://www.freedesktop.org/wiki/Specifications/DiscoverablePartitionsSpec/) 进行挂载。可以在 `fstab` 中忽略。
+
+要禁用自动挂载，请修改分区的 [类型 GUID](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table") 或设置分区属性 63 位 "不自动挂载"，详情参考 [gdisk#Prevent GPT partition automounting](/index.php/Gdisk#Prevent_GPT_partition_automounting "Gdisk")。
 
 ## 日志
 
@@ -589,9 +604,10 @@ So, useful facilities to watch: 0,1,3,4,9,10,15.
 *   显示最新信息 `# journalctl -f` 
 *   显示特定程序的所有消息: `# journalctl /usr/lib/systemd/systemd` 
 *   显示特定进程的所有消息: `# journalctl _PID=1` 
-*   显示指定单元的所有消息： `# journalctl -u netcfg` 
+*   显示指定单元的所有消息： `# journalctl -u man-db.service` 
 *   显示内核环缓存消息r: `# journalctl -k` 
 *   Show auth.log equivalent by filtering on syslog facility: `# journalctl -f -l SYSLOG_FACILITY=10` 
+*   If your journal directory (by default located under `/var/log/journal`) contains huge amount of log data then `journalctl` can take several minutes in filtering output. You can speed it up significantly by using `--file` option to force `journalctl` to look only into most recent journal: `# journalctl --file /var/log/journal/*/system.journal -f` 
 
 详情参阅[journalctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1)、[systemd.journal-fields(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.journal-fields.7)，以及 Lennert 的这篇[博文](http://0pointer.de/blog/projects/journalctl.html)。
 
@@ -781,7 +797,7 @@ Aug 25 11:48:13 mypc systemd-modules-load[15630]: **Failed to find module 'insta
 **6.** 最后重新启动 `systemd-modules-load` 服务:
 
 ```
-$ systemctl start systemd-modules-load
+# systemctl start systemd-modules-load
 
 ```
 

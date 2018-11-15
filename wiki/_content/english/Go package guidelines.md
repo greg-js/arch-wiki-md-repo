@@ -46,7 +46,7 @@ We create a directory `$srcdir/gopath` for [$GOPATH](/index.php/Go#$GOPATH "Go")
 ```
 prepare(){
   mkdir -p "gopath/src/github.com/pkgbuild-example"
-  ln -rTsf "${pkgname}-${pkgver}" "gopath/src/github.com/pkgbuild-example"
+  ln -rTsf "${pkgname}-${pkgver}" "gopath/src/github.com/pkgbuild-example/$pkgname"
 
   # the dependencies can be fetched here if needed
   cd "gopath/src/github.com/pkgbuild-example/$pkgname"
@@ -93,7 +93,7 @@ When building go packages with [$GOPATH](/index.php/Go#$GOPATH "Go") there are a
 ```
 prepare(){
   mkdir -p "gopath/src/github.com/pkgbuild-example"
-  ln -rTsf "${pkgname}-${pkgver}" "gopath/src/github.com/pkgbuild-example/$pkgbuild"
+  ln -rTsf "${pkgname}-${pkgver}" "gopath/src/github.com/pkgbuild-example/$pkgname"
 
   # the dependencies can be fetched here if needed
   cd "gopath/src/github.com/pkgbuild-example/$pkgname"

@@ -38,7 +38,7 @@ As is, nullidentdmod will return a random userid.
 
 ### Customization
 
-**1.** [Edit](/index.php/Edit "Edit") the unit with systemctl command:
+**1.** Create a [replacement unit file](/index.php/Replacement_unit_file "Replacement unit file") for `nullidentdmod@.service`:
 
 ```
 # systemctl edit --full nullidentdmod@.service

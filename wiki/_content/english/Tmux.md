@@ -293,7 +293,7 @@ bind B source-file ~/.tmux/bar
 
 **Tip:** The tmux plugin [tmux-yank](https://github.com/tmux-plugins/tmux-yank) provides similar functionality.
 
-It is possible to copy tmux selection to X clipboard (and to X primary/secondary selection) and in reverse direction. The following tmux config file snippet effectively integrates X clipboard/selection with the current tmux selection using the program [xsel](https://www.archlinux.org/packages/?name=xsel):
+It is possible to copy a tmux selection to the X clipboard (and to X primary/secondary selections), and paste from the X clipboard into tmux. The following tmux config file snippet integrates the X clipboard/selection with the current tmux selection using the program [xsel](https://www.archlinux.org/packages/?name=xsel):
 
 ```
 # Emacs style
@@ -309,7 +309,9 @@ bind-key p run "xsel -o | tmux load-buffer - ; tmux paste-buffer"
 
 ```
 
-[xclip](https://www.archlinux.org/packages/?name=xclip) could also be used for that purpose, unlike xsel it works better on printing raw bitstream that doesn't fit the current locale. Nevertheless, it is neater to use `xsel` instead of `xclip`, because xclip does not close STDOUT after it has read from tmux's buffer. As such, tmux doesn't know that the copy task has completed, and continues to wait for xclip's termination, thereby rendering tmux unresponsive. A workaround is to redirect `STDOUT` of `xclip` to `/dev/null`, like in the following:
+Note that it may be necessary to unbind the previous window shortcut with `unbind p` for the latter to work.
+
+[xclip](https://www.archlinux.org/packages/?name=xclip) could also be used for this purpose. Unlike xsel, it works better when printing a raw bitstream that does not fit the current locale. Nevertheless, it is neater to use xsel because xclip does not close `STDOUT` after it has read from the tmux buffer. As such, tmux does not know that the copy task has completed, and continues to wait for xclip to terminate, thereby rendering tmux unresponsive. A workaround is to redirect {{ic|STDOUT} to `/dev/null`:
 
 ```
 # Vim style

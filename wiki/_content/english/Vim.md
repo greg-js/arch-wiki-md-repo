@@ -344,7 +344,7 @@ Vim 8 added the possibility to load natively third-party plugins. It is possible
 
 #### Using a plugin manager
 
-A plugin manager allows to install and manage Vim plugins in a similar way independently on which platform you are running Vim. It is a plugin that acts as a package manager for other Vim plugins.
+A plugin manager installs and manages Vim plugins in a similar way independent of which platform on you are running Vim. It is a plugin that acts as a package manager for other Vim plugins.
 
 *   [Vundle](https://github.com/gmarik/Vundle.vim) is currently the most popular plugin manager for Vim.
 *   [Vim-plug](https://github.com/junegunn/vim-plug) is a minimalist Vim plugin manager with many features like on-demand plugin loading and parallel updating.

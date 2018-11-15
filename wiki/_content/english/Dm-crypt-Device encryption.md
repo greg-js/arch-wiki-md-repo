@@ -97,6 +97,7 @@ An important distinction of *LUKS* to note at this point is that the key is used
 
 The other ones are
 
+*   `--type luks2` for a new version of header format that allows additional extensions like different PBKDF algorithm or authenticated encryption,
 *   `--type plain` for using dm-crypt plain mode,
 *   `--type loopaes` for a loopaes legacy mode, and
 *   `--type tcrypt` for a [TrueCrypt](/index.php/TrueCrypt "TrueCrypt") compatibility mode.
@@ -653,13 +654,13 @@ The filesystem on /dev/sdaX is now 26347 (4k) blocks long.
 
 ```
 
-Now we encrypt it, using the default cipher we do not have to specify it explicitly. Note there is no option (yet) to double-check the passphrase before encryption starts, be careful not to mistype:
+Now we encrypt it, using the default cipher we do not have to specify it explicitly:
 
  `# cryptsetup-reencrypt /dev/sdaX --new  --reduce-device-size 4096S` 
 ```
-WARNING: this is experimental code, it can completely break your data.
 Enter new passphrase: 
-Progress: 100,0%, ETA 00:00, 2596 MiB written, speed  37,6 MiB/s
+Verify passphrase: 
+Finished, time 00:05.126,  952 MiB written, speed 185,7 MiB/s
 
 ```
 
@@ -690,14 +691,12 @@ and are done.
 
 In this example an existing LUKS device is re-encrypted.
 
-**Warning:** Double-check you specify encryption options for *cryptsetup-reencrypt* correctly and *never* re-encrypt without a **reliable backup**! As of September 2015 the tool **does** accept invalid options and damage the LUKS header, if not used correctly!
+**Warning:** Double-check you specify encryption options for *cryptsetup-reencrypt* correctly and *never* re-encrypt without a **reliable backup**!
 
 In order to re-encrypt a device with its existing encryption options, they do not need to be specified. A simple:
 
  `# cryptsetup-reencrypt /dev/sdaX` 
 ```
-
-WARNING: this is experimental code, it can completely break your data.
 Enter passphrase for key slot 0: 
 Progress: 100,0%, ETA 00:00, 2596 MiB written, speed  36,5 MiB/s
 

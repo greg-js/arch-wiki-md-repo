@@ -1,190 +1,33 @@
-Esto es una guía para configurar su webcam en Arch Linux.
+**Estado de la traducción**
+Este artículo es una traducción de [Webcam setup](/index.php/Webcam_setup "Webcam setup"), revisada por última vez el **2018-11-13**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Webcam_setup&diff=0&oldid=550828) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
+Esta es una guía para configurar su webcam en Arch Linux.
+
+Lo más probable es que su webcam funcione sin necesidad de configuración. Los permisos para acceder a los dispositivos de vídeo (por ejemplo, `/dev/video0`) son manejados por [udev](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)"), no es necesaria ninguna configuración.
 
 ## Contents
 
-*   [1 Soporte para webcams en Linux](#Soporte_para_webcams_en_Linux)
-*   [2 Identificar su webcam](#Identificar_su_webcam)
-    *   [2.1 pwc](#pwc)
-    *   [2.2 qc-usb](#qc-usb)
-    *   [2.3 qc-usb-messenger](#qc-usb-messenger)
-    *   [2.4 zr364xx](#zr364xx)
-    *   [2.5 sn9c102](#sn9c102)
-    *   [2.6 gspca](#gspca)
-    *   [2.7 stv680](#stv680)
-    *   [2.8 linux-uvc](#linux-uvc)
-    *   [2.9 ov51x-jpeg](#ov51x-jpeg)
-    *   [2.10 r5u870 (Ricoh)](#r5u870_(Ricoh))
-    *   [2.11 stk11xx (Syntek)](#stk11xx_(Syntek))
-*   [3 Asegúrese de que el modulo para su webcam está cargado](#Asegúrese_de_que_el_modulo_para_su_webcam_está_cargado)
-*   [4 Permisos](#Permisos)
-*   [5 Configuración de la webcam](#Configuración_de_la_webcam)
-*   [6 Consiga que el software use su webcam](#Consiga_que_el_software_use_su_webcam)
-    *   [6.1 Cheese](#Cheese)
-    *   [6.2 fswebcam](#fswebcam)
-    *   [6.3 GTK+ UVC Viewer (guvcview)](#GTK+_UVC_Viewer_(guvcview))
-    *   [6.4 Kopete](#Kopete)
-    *   [6.5 Kamoso](#Kamoso)
-    *   [6.6 xawtv](#xawtv)
-    *   [6.7 VLC](#VLC)
-    *   [6.8 MPlayer](#MPlayer)
-    *   [6.9 FFmpeg](#FFmpeg)
-    *   [6.10 ekiga](#ekiga)
-    *   [6.11 Sonic-snap](#Sonic-snap)
-    *   [6.12 Skype](#Skype)
-    *   [6.13 Motion](#Motion)
-*   [7 Solución de problemas](#Solución_de_problemas)
-    *   [7.1 Microsoft Lifecam Studio/Cinema](#Microsoft_Lifecam_Studio/Cinema)
+*   [1 Cargar](#Cargar)
+*   [2 Configuración](#Configuración)
+*   [3 Aplicaciones](#Aplicaciones)
+    *   [3.1 xawtv](#xawtv)
+    *   [3.2 VLC](#VLC)
+    *   [3.3 MPlayer](#MPlayer)
+    *   [3.4 mpv](#mpv)
+    *   [3.5 FFmpeg](#FFmpeg)
+*   [4 Solución de problemas](#Solución_de_problemas)
+    *   [4.1 Soporte V4L1](#Soporte_V4L1)
+    *   [4.2 Microsoft Lifecam Studio/Cinema](#Microsoft_Lifecam_Studio/Cinema)
+    *   [4.3 Skype](#Skype)
+    *   [4.4 Comprobar el ancho de banda utilizado por las webcams USB](#Comprobar_el_ancho_de_banda_utilizado_por_las_webcams_USB)
 
-## Soporte para webcams en Linux
+## Cargar
 
-Muy probablemente, su webcam funcione sin necesidad de configuraciones previas. Si este es su caso, puede ir directamente a la sección [#Configuración de la webcam](#Configuración_de_la_webcam) si desea ajustar el color, el brillo y otros parámetros. En caso contrario, siga los siguientes pasos.
+Identifique el nombre de su webcam (utilizando, por ejemplo, `lsusb`) y encuentre el controlador adecuado. Véase [dispositivos webcam](https://www.linuxtv.org/wiki/index.php/Webcam_devices) para obtener detalles sobre los controladores.
 
-## Identificar su webcam
+Agregue el [módulo del kernel](/index.php/Kernel_module_(Espa%C3%B1ol) "Kernel module (Español)") de su webcam a `/etc/modules-load.d/webcam.conf` para que se cargue en el kernel durante la etapa inicial del arranque.
 
-Identifique el nombre de su webcam (usando, por ejemplo, `lsusb`) y busque un controlador apropiado. A continuación se listan algunas webcams, junto con el controlador apropiado. Si consigue poner a funcionar su webcam, ¡Añada el nombre de la webcam junto con el controlador a la lista!
-
-### pwc
-
-*   Creative Labs Webcam Pro Ex
-*   Logitech QuickCam Notebook Pro (Solo los modelos "Pro")
-*   Logitech Quickcam Pro 4000
-*   Philips ToUCams (Sin confirmar por lo pronto, pero usa el controlador pwc si no recuerdo mal)
-*   Philips SPC900NC
-
-### qc-usb
-
-*   Dexxa Webcam
-*   Labtec Webcam (modelo antiguo)
-*   LegoCam
-*   Logitech Quickcam Express (modelo antiguo)
-*   Logitech QuickCam Notebook (no los modelos "Pro")
-*   Logitech Quickcam Web
-
-### qc-usb-messenger
-
-*   Logitech Quickcam Messenger
-*   Logitech Quickcam Communicate (para el Communicate MP/S5500 o para el "for business" vea la sección linux-uvc más abajo)
-
-Ahora esta en el repositorio community.
-
-**Nota:**
-
-*   Si qc-usb-messenger no funciona, use el módulo gspca instalando para ello el paquete gspcav1.
-*   Ahora el controlador es un módulo incluido en el kernel 2.6.27.
-
-### zr364xx
-
-Este driver puede usarse con muchas webcams como:
-
-*   Aiptek PocketDV 3300
-*   Creative PC-CAM 880
-*   Konica Revio 2
-*   Genius Digital Camera
-*   Maxell Maxcam PRO DV3
-
-Puede encontrar una lista completa de los dispositivos soportados [aquí](http://royale.zerezo.com/zr364xx/). También puede encontrar un PKGBUILD para este controlador en [AUR](/index.php/Arch_User_Repository "Arch User Repository").
-
-### sn9c102
-
-*   Trust Spacecam series
-*   Maxell Smartcam (para notebooks): 352x288 máx. resolución a 3fps
-
-### gspca
-
-Una extensa lista de webcams soportadas está disponible en [[1]](http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=blob;f=Documentation/video4linux/gspca.txt;hb=HEAD).
-
-**Nota:** Este controlador no tiene soporte para V4L1.
-
-### stv680
-
-Muchas cámaras baratas sin nombre que vinieron de Asia en el último par de años usan el chipset stv680\. La mayoría de estas cámaras fueron artículos novedosos (p. ej. Pencam, SpyC@m y LegoCam).
-
-*   Aiptek PenCam series
-*   Digitaldream series
-*   Dolphin Peripherals series
-*   Lego LegoCam
-*   Trust SpyC@m series
-*   Welback Coolcam
-
-Una lista más completa de webcams que usen el chipset stv680 está disponible [aquí](http://webcam-osx.sourceforge.net/cameras/index.php?orderBy=controller).
-
-### linux-uvc
-
-*   Genius iLook 1321
-*   Logitech Webcam C210
-*   Logitech Webcam C250
-*   Logitech Webcam C270
-*   Logitech Webcam C600
-*   Logitech HD Webcam C525
-*   Logitech HD Pro Webcam C920
-*   Logitech Quickcam Pro 5000
-*   Logitech Quickcam Pro 9000
-*   Logitech Quickcam Orbit AF
-*   Logitech Quickcam Orbit MP
-*   Logitech Quickcam S5500
-*   Microdia Pavilion Webcam (on MSI PR200)
-*   Logitech Quickcam Communicate MP/S5500 o "for business"
-*   Chicony Electronics CNF7051
-
-Puede encontrar una lista completa de los dispositivos UVC soportados [aquí](http://www.ideasonboard.org/uvc/).
-
-A partir del kernel 2.6.26 linux-uvc forma parte del mismo kernel. Tan solo cargue el módulo uvcvideo.
-
-**Nota:**
-
-*   Este controlador no tiene soporte para V4L1.
-*   Con la WebCam SCB-0385N (usb ID 2232:1005), la WebCam SC-0311139N (usb ID 2232:1020) y la WebCam SC-03FFL11939N (usb ID 2232:1028), puede que necesite añadir alguna configuración extra al módulo si al usar la cámara el sistema se congela:
-
- `/etc/modprobe.d/uvcvideo.conf`  `options uvcvideo nodrop=1` 
-
-### ov51x-jpeg
-
-*   Sony EyeToy
-*   Chicony DC-2120
-*   Chicony DC-2120 pro
-*   Trust Spacecam 320
-*   Hercules Webcam Deluxe
-*   Hercules Webcam Classic
-*   Creative Live! Cam Notebook Pro VF0400
-*   Creative Live! Cam Vista IM
-*   Creative Live! Cam Vista IM VF0420
-*   Creative Vista Webcam VF0330
-*   ASUS webcam Model?
-*   Philips PCVC820K/00
-*   NGS showtime plus
-*   HP VGA Webcam con micrófono integrado
-
-Este es un módulo del kernel encontrado en el AUR con algunos añadidos con respecto al controlador original que provee de capacidades para la descompresión de jpeg.
-
-En mi caso, para hacer que mi "Creative Live! Cam Vista IM" funcionase con Skype, tuve que añadir esta línea a `/etc/modprobe.d/modprobe.conf`:
-
-```
-options ov51x-jpeg forceblock=1
-
-```
-
-### r5u870 (Ricoh)
-
-*   HP Pavilion Webcam
-*   HP Webcam 1000
-*   Sony VAIO VGP-VCCx
-
-La webcam Ricoh está integrada en la mayoría de los nuevos portátiles Sony.
-
-Instale [r5u87x-hg](https://aur.archlinux.org/packages/r5u87x-hg/) (contiene también el firmware) y ejecute el comando `loader`.
-
-### stk11xx (Syntek)
-
-*   Cámara integrada En la mayoría de los portátiles Asus.
-*   Asus A8J, F3S, F5R, F5GL, F9E, VX2S, V1S, A6T.
-
-Tan solo instale el paquete de AUR [stk11xx](https://aur.archlinux.org/packages/stk11xx/). Contiene el módulo del kernel adecuado.
-
-## Asegúrese de que el modulo para su webcam está cargado
-
-Añada el [módulo](/index.php/Kernel_modules_(Espa%C3%B1ol)#Cargar_módulos "Kernel modules (Español)") de su webcam a `/etc/modules-load.d/webcam.conf` para que sea cargado por el kernel durante la fase de arranque.
-
-Si su webcam es USB, el kernel *debería* cargar de forma automática el controlador adecuado. Si este es el caso, compruebe el dmesg tras conectar la webcam. Debería ver algo como esto:
+Si su webcam funciona por USB, el kernel *debería* cargar automáticamente el controlador adecuado. Si este es el caso, compruebe dmesg después de conectar su webcam. Debería ver algo así:
 
  `$ dmesg|tail` 
 ```
@@ -198,101 +41,24 @@ usbcore: registered new driver sn9c102
 
 ```
 
-## Permisos
+## Configuración
 
-Los permisos para acceder a dispositivos de video (p. ej. `/dev/video0`) los maneja [udev (Español)](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)"), no se necesita ninguna configuración.
+Si desea configurar el brillo, el color y otros parámetros de la webcam (por ejemplo, en el caso de que los colores sin necesidad de configuración sean demasiado azulados/rojizos/verdosos) puede usar **Qt V4L2 Test Bench** (*qv4l2*), disponible en el paquete [v4l-utils](https://www.archlinux.org/packages/?name=v4l-utils). Simplemente instálelo y ejecútelo, y le presentará una lista de ajustes configurables. Cambiar estos ajustes afectará a todas las aplicaciones.
 
-## Configuración de la webcam
+## Aplicaciones
 
-Si desea configurar el brillo, el color y otros parámetros de la webcam (p. ej. cuando los colores de la webcam al usarla por primera vez son muy azules/rojizos/verduscos) puede usar [GTK+ UVC Viewer](http://guvcview.berlios.de/) (guvcview), disponible en los [Repositorio oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") como el paquete [guvcview](https://www.archlinux.org/packages/?name=guvcview). Tan solo instálelo y láncelo, y le mostrará una serie de ajustes configurables. Cambiar estos ajustes afectarán a todas las aplicaciones que hagan uso de la webcam (p. ej. Skype).
-
-## Consiga que el software use su webcam
-
-La versión 2.6.27 del kernel de linux soporta [muchos controladores nuevos de webcams](http://mxhaard.free.fr/spca5xx.html). Se ha eliminado el soporte para versiones antiguas de la API de Video4Linux API, y estos controladores solo soportan ahora la versión 2 de Video4Linux. La decodificación de formato de píxel se ha pasado a espacio de usuario, ya que Video4Linux en su versión 2 no soporta decodificación en espacio de kernel. La librería libv4l proporciona aplicaciones de espacio de usuario con servicios de decodificación de píxeles y será usado por la mayoría de los programas. Otras capas de compatibilidad también están disponibles.
-
-**Si su dispositivo es creado pero la imagen se ve rara (la mía se veía completamente verde), probablemente necesite esto.**
-
-Si la aplicación tiene soporte para V4L2 pero no tiene soporte para formato de píxel (ej: cheese), use entonces el siguiente comando:
-
-```
-LD_PRELOAD=/usr/lib/libv4l/v4l2convert.so cheese
-
-```
-
-Si la aplicación solo soporta versiones antiguas de V4L (Skype es el más popular de este tipo de software) use entonces este comando:
-
-```
-LD_PRELOAD=/usr/lib/libv4l/v4l1compat.so skype
-
-```
-
-**Sugerencia:** Puede que quiera añadir línea como la siguiente en `/etc/profile` o en [xprofile (Español)](/index.php/Xprofile_(Espa%C3%B1ol) "Xprofile (Español)") para no tener que escribir un comando tan largo cada vez: `export LD_PRELOAD=/usr/'$LIB'/libv4l/v4l2convert.so` 
-
-o
-
- `export LD_PRELOAD=/usr/'$LIB'/libv4l/v4l1compat.so` 
-
-Para aplicaciones de 32 bits (p. ej. Skype) en Arch64, instale el paquete [lib32-v4l-utils](https://www.archlinux.org/packages/?name=lib32-v4l-utils).
-
-Si la webcam funciona bien en guvcview, pero no funciona en Skype, puede que también tenga que establecer
-
-```
-export XLIB_SKIP_ARGB_VISUALS=1
-
-```
-
-antes de iniciarlo.
-
-### Cheese
-
-Cheese es el cliente para captura de fotos/vídeos de GNOME. Es similar a Photo Booth de Mac OS X. Esta en los repositorios oficiales.
-
-En caso de tener el siguiente error:
-
-```
-Error during camera setup: One or more needed GStreamer elements are missing: cluttervideosink.
-
-```
-
-Primero cierre cheese, y luego ejecute los siguientes comandos:
-
-```
-# pacman -R clutter-gst
-$ rm -r ~/.cache/gstreamer-1.0/
-
-```
-
-Inicie nuevamente cheese.
-
-### fswebcam
-
-fswebcam es una aplicación de webcam pequeña y flexible que puede lanzarse desde la línea de comandos. Instálela desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") con el paquete [fswebcam](https://aur.archlinux.org/packages/fswebcam/).
-
-### GTK+ UVC Viewer (guvcview)
-
-Además de ser una manera muy práctica de configurar su webcam, [guvcview](http://guvcview.sourceforge.net/) permite capturar (¡con sonido!) y visualizar video desde dispositivos soportados por el controlador de linux UVC. Disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") con el paquete [guvcview](https://www.archlinux.org/packages/?name=guvcview). Tan solo instálelo y láncelo, y le mostrará una serie de ajustes configurables. Cambiar estos ajustes afectarán a todas las aplicaciones que hagan uso de la webcam (p. ej. Skype).
-
-### Kopete
-
-Kopete es el cliente de mensajería instantánea (MI) de [KDE (Español)](/index.php/KDE_(Espa%C3%B1ol) "KDE (Español)"). A partir de KDE 3.5, tiene soporte para webcams de MSN y Yahoo!, pero no todas las cámaras funcionan aún. Está incluido en el paquete kdenetwork.
-
-### Kamoso
-
-Aplicación para tomar fotos y grabar vídeos usando la webcam para KDE. Disponible en AUR:
-
-*   KDE4: [kamoso](https://www.archlinux.org/packages/?name=kamoso)
-*   KDE Plasma 5: [kamoso-git](https://aur.archlinux.org/packages/kamoso-git/)
+Véase también [Lista de aplicaciones/Multimedia#Webcam](/index.php/List_of_applications/Multimedia#Webcam "List of applications/Multimedia").
 
 ### xawtv
 
-Esto es un visor de dispositivos v4l básico, y aunque su propósito es trabajar con tarjetas sintonizadoras de televisión, funciona muy bien con webcams. Mostrará lo que ve su webcam en pantalla. Instale ([xawtv](https://www.archlinux.org/packages/?name=xawtv)) y ejecútelo con:
+Este es un visor de dispositivo v4l básico, y aunque está diseñado para usarse con tarjetas sintonizadoras de TV, funciona bien con webcams. Mostrará lo que ve su webcam en una ventana. Instálelo ([xawtv](https://www.archlinux.org/packages/?name=xawtv)) y ejecútelo con:
 
 ```
 $ xawtv -c /dev/video0
 
 ```
 
-Si está usando una gráfica nVidia, y le sale un error como este
+Si está utilizando una tarjeta gráfica nVidia, y obtiene un error como
 
 ```
 X Error of failed request:  XF86DGANoDirectVideoMode
@@ -303,7 +69,7 @@ X Error of failed request:  XF86DGANoDirectVideoMode
 
 ```
 
-debería ejecutarlo en su lugar con:
+en su lugar debería ejecutarlo como:
 
 ```
 $ xawtv -nodga
@@ -312,14 +78,14 @@ $ xawtv -nodga
 
 ### VLC
 
-[VLC](/index.php/VLC_(Espa%C3%B1ol) "VLC (Español)") puede usarse también para grabar y ver con su webcam. en el menú archivo de VLC, abra el diálogo 'Dispositivo de captura...' e introduzca los dispositivos de audio y video. O,desde la línea de comandos, ejecute:
+[VLC](/index.php/VLC_(Espa%C3%B1ol) "VLC (Español)") también se puede usar para ver y grabar su webcam. En el menú "Medio" de VLC, abra el cuadro de diálogo 'Dispositivo de captura ...' e ingrese los archivos del dispositivo de vídeo y audio. O desde la línea de comando, haga:
 
 ```
 $ vlc v4l:// :v4l-vdev="/dev/video0" :v4l-adev="/dev/audio2"
 
 ```
 
-Esto hará que VLC muestre lo que ve su webcam. Para sacar capturas, simplemente dele a 'Capturar pantalla' en el menú 'Video'. Para grabar, añada un argumento `--sout`, p. ej:
+Esto hará que VLC refleje su webcam. Para tomar instantáneas, simplemente elija 'Instantánea' en el menú 'Vídeo'. Para grabar una transmisión, agregue un argumento `--sout`. Por ejemplo:
 
 ```
 $ vlc v4l:// :v4l-vdev="/dev/video0" :v4l-adev="/dev/audio2" \ 
@@ -327,25 +93,25 @@ $ vlc v4l:// :v4l-vdev="/dev/video0" :v4l-adev="/dev/audio2" \
 
 ```
 
-(Obviamente un poco exagerados los bitrates pero esta bien para pruebas.) Dese cuenta de que esto no mostrará lo que está grabando en pantalla - para ello, debería añadir la pantalla como argumento de destino:
+(Obviamente, es un poco exagerado con respecto a las tasas de bits, pero está bien para propósitos de testeo). Tenga en cuenta que esto no producirá un espejo en la pantalla - para ver lo que está grabando, deberá agregar el monitor como un argumento de destino:
 
 ```
 ... :duplicate{dst=display,dst=std{access= ....
 
 ```
 
-(Aunque esto puede resultar un poco duro para máquinas con hardware antiguo...)
+(Aunque esto puede cargar un poco el hardware antiguo...)
 
 ### MPlayer
 
-Para usar [MPlayer](/index.php/MPlayer "MPlayer") para tomar instantáneas desde su webcam ejecute este comando desde la terminal:
+Para usar [MPlayer](/index.php/MPlayer_(Espa%C3%B1ol) "MPlayer (Español)") para tomar instantáneas de su webcam, ejecute este comando desde el terminal:
 
 ```
 $ mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0 -fps 15 -vf screenshot
 
 ```
 
-Desde aquí usted deber presionar `s` para tomar una instantánea. La instantánea se guardará en el directorio donde abrió el programa como **shotXXXX.png**. Si desea grabar un video:
+Desde aquí, debe pulsar `s` para tomar la instantánea. La instantánea se guardará en su carpeta actual como **shotXXXX.png**. Si desea grabar un vídeo continuo:
 
 ```
 $ mencoder tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0:forceaudio:adevice=/dev/dsp -ovc lavc -oac mp3lame -lameopts cbr:br=64:mode=3 -o *filename*.avi
@@ -354,48 +120,70 @@ $ mencoder tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0:forceau
 
 Presione `Ctrl+c` para finalizar la grabación.
 
+### mpv
+
+Para usar [mpv](/index.php/Mpv_(Espa%C3%B1ol) "Mpv (Español)") para tomar instantáneas de su webcam, ejecute este comando desde el terminal:
+
+```
+$ mpv av://v4l2:/dev/video0
+
+```
+
+Desde aquí, debe pulsar `s` para tomar la instantánea. La instantánea se guardará en su carpeta actual como **mpv-shotNNNN.jpg**.
+
 ### FFmpeg
 
-Vea [FFmpeg(Español)#Grabando webcam](/index.php?title=FFmpeg(Espa%C3%B1ol)&action=edit&redlink=1 "FFmpeg(Español) (page does not exist)").
-
-### ekiga
-
-Esta aplicación es muy parecida a Microsoft NetMeeting. Instale el paquete [ekiga](https://www.archlinux.org/packages/?name=ekiga) desde los repositorios oficiales. El druida de configuración ajustará todo lo demás por usted.
-
-### Sonic-snap
-
-Sonic-snap [[2]](http://www.stolk.org/sonic-snap/) es un visor/capturador para webcams basada **únicamente** en sn9c102. [sonic-snap](https://aur.archlinux.org/packages/sonic-snap/) está disponible en AUR.
-
-### Skype
-
-La nueva versión de [Skype (Español)](/index.php?title=Skype_(Espa%C3%B1ol)&action=edit&redlink=1 "Skype (Español) (page does not exist)") tiene soporte para video. Compruebe dispositivos de video en las opciones para una imagen de prueba a la cual puede hacer doble clic para ponerla a pantalla completa. Instale el paquete [skype](https://aur.archlinux.org/packages/skype/). Si ve una imagen verde o distorsionada con skype, lea la sección [#Consiga que el software use su webcam](#Consiga_que_el_software_use_su_webcam) más arriba.
-
-Si su sistema es x86-64, debería instalar [lib32-v4l-utils](https://www.archlinux.org/packages/?name=lib32-v4l-utils) y ejecutar skype con
-
-```
-LD_PRELOAD=/usr/lib32/libv4l/v4l1compat.so skype
-
-```
-
-Puede tanto establecer un alias para skype, o renombrar el binario de skype original en `/usr/bin` y crear un script que contenga el comando de arriba, o puede simplemente configurar la opción de línea de comandos en el icono de skype de su entorno de escritorio favorito.
-
-### Motion
-
-	*Motion es un programa que monitoriza la señal de video de cámaras. Es capaz de detectar si una parte significativa de la imagen a cambiado; es decir, puede detectar el movimiento.*
-
-[motion](https://aur.archlinux.org/packages/motion/) solo maneja dispositivos v4l2, por lo que si su cámara solo está soportada por controladores para v4l1 necesita precargar v4l1compat.so como se mencionó anteriormente. De otra manera le aparecerán muchos errores de motion acerca de no poder encontrar una paleta adecuada.
-
-**Sugerencia:** Si necesita cargar webcams en un orden determinado (p. ej. cargar los dispositivos /dev/video0..n en orden) o establecer el propietario o los permisos, eche un vistazo a como [escribir reglas para udev](/index.php/Udev_(Espa%C3%B1ol)#Escribir_reglas_udev "Udev (Español)").
+Véase [FFmpeg#Grabación de la webcam](/index.php/FFmpeg#Recording_webcam "FFmpeg").
 
 ## Solución de problemas
 
+### Soporte V4L1
+
+La versión 2.6.27 del kernel de Linux eliminó la compatibilidad con la API de Video4Linux (1) heredada. La decodificación en formato de píxeles se ha insertado en el espacio del usuario, ya que la versión 2 de Video4Linux no admite la decodificación del espacio del kernel. La librería libv4l proporciona aplicaciones de usuario con servicios de decodificación de píxeles y será utilizada por la mayoría de los programas. Otras capas de compatibilidad también están disponibles.
+
+**Si su dispositivo está creado pero la imagen se ve extraña (por ejemplo, casi completamente verde), probablemente necesite esto.**
+
+Si la aplicación es compatible con V4L2 pero no es compatible con pixelformat, use el siguiente comando:
+
+```
+LD_PRELOAD=/usr/lib/libv4l/v4l2convert.so application
+
+```
+
+Si la aplicación solo admite la versión antigua de V4L, use este comando:
+
+```
+LD_PRELOAD=/usr/lib/libv4l/v4l1compat.so application
+
+```
+
+**Sugerencia:** También le convendría agregar la siguiente línea a `/etc/profile` o [xprofile](/index.php/Xprofile_(Espa%C3%B1ol) "Xprofile (Español)") para que no tenga que escribir ese largo comando todo el rato: `export LD_PRELOAD=/usr/lib/libv4l/v4l2convert.so` 
+
+o
+
+ `export LD_PRELOAD=/usr/lib/libv4l/v4l1compat.so` 
+
+Para aplicaciones [multilib](/index.php/Official_repositories_(Espa%C3%B1ol)#multilib "Official repositories (Español)") de 32 bits, instale el paquete [lib32-v4l-utils](https://www.archlinux.org/packages/?name=lib32-v4l-utils) y reemplace `/usr/lib/libv4l/` por `/usr/lib32/libv4l/` en los comandos anteriores.
+
 ### Microsoft Lifecam Studio/Cinema
 
-Bajo determinadas condiciones, el Microsoft lifecam studio/cinema puede pedir ancho de banda usb en exceso y fallar [vea el FAQ de Uvcvideo](http://www.ideasonboard.org/uvc/#footnote-13). En este caso intente cargar el controlador `uvcvideo` con `quirks=0x80`. Añádalo a `/etc/modprobe.d/uvcvideo.conf` :
+Bajo ciertas configuraciones, Microsoft lifecam studio/cinema puede solicitar demasiado ancho de banda de usb y fallar. [Véase las preguntas frecuentes sobre Uvcvideo](http://www.ideasonboard.org/uvc/#footnote-13). En este caso, cambie el búfer cargando el controlador `uvcvideo` con `quirks=0x80`. Agréguelo a `/etc/modprobe.d/uvcvideo.conf`:
 
  `/etc/modprobe.d/uvcvideo.conf` 
 ```
-## Apaño para el problema de ancho de banda para lifecam studio/cinema
+## fix bandwidth issue for lifecam studio/cinema
 options uvcvideo quirks=0x80
-
 ```
+
+**Nota:** Si los retrasos son visibles en los registros, o la cámara funciona periódicamente, esta solución debería aplicarse en general. Valores más grandes como `quirks=0x100` son posibles.
+
+### Skype
+
+Al probar la webcam, tenga en cuenta lo siguiente:
+
+*   Echobot no soporta vídeochat. No lo use para probar su webcam.
+*   Skype puede reconocer diferentes dispositivos de vídeo/cámara (/dev/video*). Se enumerarán y nombrarán algo así como "cámara integrada ..." en un menú desplegable en la configuración de la cámara. Pruebe cada cámara y espere unos segundos, porque lleva tiempo cambiar a una cámara distinta.
+
+### Comprobar el ancho de banda utilizado por las webcams USB
+
+Cuando se ejecutan varias webcams en un único bus USB, pueden llegar a saturar el ancho de banda del bus USB y dejar de funcionar correctamente. Esto puede ser diagnosticado con la herramienta *usbtop* del paquete [usbtop](https://aur.archlinux.org/packages/usbtop/).

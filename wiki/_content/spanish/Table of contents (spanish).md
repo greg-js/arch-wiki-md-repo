@@ -32,27 +32,28 @@
 | <small>3.</small> [Hardware](/index.php/Category:Hardware_(Espa%C3%B1ol) "Category:Hardware (Español)") <small>(1)</small> |
 | <small>3.1.</small> [Bluetooth](/index.php/Category:Bluetooth_(Espa%C3%B1ol) "Category:Bluetooth (Español)") <small>(1)</small> |
 | <small>3.2.</small> [CPU](/index.php/Category:CPU_(Espa%C3%B1ol) "Category:CPU (Español)") <small>(3)</small> |
-| <small>3.3.</small> [Gráficos](/index.php/Category:Graphics_(Espa%C3%B1ol) "Category:Graphics (Español)") <small>(7)</small> |
-| <small>3.4.</small> [Detección de hardware y solución de problemas](/index.php/Category:Hardware_detection_and_troubleshooting_(Espa%C3%B1ol) "Category:Hardware detection and troubleshooting (Español)") <small>(3)</small> |
-| <small>3.5.</small> [Imágenes](/index.php/Category:Imaging_(Espa%C3%B1ol) "Category:Imaging (Español)") <small>(3)</small> |
-| <small>3.6.</small> [Dispositivos de entrada](/index.php/Category:Input_devices_(Espa%C3%B1ol) "Category:Input devices (Español)") <small>(3)</small> |
-| <small>3.6.1.</small> [Teclados](/index.php/Category:Keyboards_(Espa%C3%B1ol) "Category:Keyboards (Español)") <small>(2)</small> |
-| <small>3.6.1.1.</small> [Configuración de teclado](/index.php/Category:Keyboard_configuration_(Espa%C3%B1ol) "Category:Keyboard configuration (Español)") <small>(1) (también en [Administración del sistema](/index.php/Category:System_administration_(Espa%C3%B1ol) "Category:System administration (Español)"))</small> |
-| <small>3.6.2.</small> [Ratones](/index.php/Category:Mice_(Espa%C3%B1ol) "Category:Mice (Español)") <small>(1)</small> |
-| <small>3.7.</small> [Portátiles](/index.php/Category:Laptops_(Espa%C3%B1ol) "Category:Laptops (Español)") <small>(1)</small> |
-| <small>3.7.1.</small> [Acer](/index.php/Category:Acer_(Espa%C3%B1ol) "Category:Acer (Español)") <small>(2)</small> |
-| <small>3.7.2.</small> [Dell](/index.php/Category:Dell_(Espa%C3%B1ol) "Category:Dell (Español)") <small>(1)</small> |
-| <small>3.7.3.</small> [HP](/index.php/Category:HP_(Espa%C3%B1ol) "Category:HP (Español)") <small>(2)</small> |
-| <small>3.7.4.</small> [Lenovo](/index.php/Category:Lenovo_(Espa%C3%B1ol) "Category:Lenovo (Español)") <small>(1)</small> |
-| <small>3.7.5.</small> [MSI](/index.php/Category:MSI_(Espa%C3%B1ol) "Category:MSI (Español)") <small>(1)</small> |
-| <small>3.8.</small> [Placas base y BIOS](/index.php/Category:Mainboards_and_BIOS_(Espa%C3%B1ol) "Category:Mainboards and BIOS (Español)") <small>(1)</small> |
-| <small>3.9.</small> [Dispositivos móviles](/index.php/Category:Mobile_devices_(Espa%C3%B1ol) "Category:Mobile devices (Español)") <small>(1)</small> |
-| <small>3.9.1.</small> [Android](/index.php/Category:Android_(Espa%C3%B1ol) "Category:Android (Español)") <small>(2)</small> |
-| <small>3.10.</small> [Módems](/index.php/Category:Modems_(Espa%C3%B1ol) "Category:Modems (Español)") <small>(5) (también en [Administración de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)"))</small> |
-| <small>3.11.</small> [Impresoras](/index.php/Category:Printers_(Espa%C3%B1ol) "Category:Printers (Español)") <small>(1)</small> |
-| <small>3.12.</small> [Sonido](/index.php/Category:Sound_(Espa%C3%B1ol) "Category:Sound (Español)") <small>(6) (también en [Multimedia](/index.php/Category:Multimedia_(Espa%C3%B1ol) "Category:Multimedia (Español)"))</small> |
-| <small>3.13.</small> [Almacenamiento](/index.php/Category:Storage_(Espa%C3%B1ol) "Category:Storage (Español)") <small>(2)</small> |
-| <small>3.13.1.</small> [Disco óptico](/index.php/Category:Optical_disc_(Espa%C3%B1ol) "Category:Optical disc (Español)") <small>(1)</small> |
+| <small>3.3.</small> [Digital imaging](/index.php/Category:Digital_imaging_(Espa%C3%B1ol) "Category:Digital imaging (Español)") <small>(1)</small> |
+| <small>3.4.</small> [Gráficos](/index.php/Category:Graphics_(Espa%C3%B1ol) "Category:Graphics (Español)") <small>(7)</small> |
+| <small>3.5.</small> [Detección de hardware y solución de problemas](/index.php/Category:Hardware_detection_and_troubleshooting_(Espa%C3%B1ol) "Category:Hardware detection and troubleshooting (Español)") <small>(3)</small> |
+| <small>3.6.</small> [Imágenes](/index.php/Category:Imaging_(Espa%C3%B1ol) "Category:Imaging (Español)") <small>(2)</small> |
+| <small>3.7.</small> [Dispositivos de entrada](/index.php/Category:Input_devices_(Espa%C3%B1ol) "Category:Input devices (Español)") <small>(3)</small> |
+| <small>3.7.1.</small> [Teclados](/index.php/Category:Keyboards_(Espa%C3%B1ol) "Category:Keyboards (Español)") <small>(2)</small> |
+| <small>3.7.1.1.</small> [Configuración de teclado](/index.php/Category:Keyboard_configuration_(Espa%C3%B1ol) "Category:Keyboard configuration (Español)") <small>(1) (también en [Administración del sistema](/index.php/Category:System_administration_(Espa%C3%B1ol) "Category:System administration (Español)"))</small> |
+| <small>3.7.2.</small> [Ratones](/index.php/Category:Mice_(Espa%C3%B1ol) "Category:Mice (Español)") <small>(1)</small> |
+| <small>3.8.</small> [Portátiles](/index.php/Category:Laptops_(Espa%C3%B1ol) "Category:Laptops (Español)") <small>(1)</small> |
+| <small>3.8.1.</small> [Acer](/index.php/Category:Acer_(Espa%C3%B1ol) "Category:Acer (Español)") <small>(2)</small> |
+| <small>3.8.2.</small> [Dell](/index.php/Category:Dell_(Espa%C3%B1ol) "Category:Dell (Español)") <small>(1)</small> |
+| <small>3.8.3.</small> [HP](/index.php/Category:HP_(Espa%C3%B1ol) "Category:HP (Español)") <small>(2)</small> |
+| <small>3.8.4.</small> [Lenovo](/index.php/Category:Lenovo_(Espa%C3%B1ol) "Category:Lenovo (Español)") <small>(1)</small> |
+| <small>3.8.5.</small> [MSI](/index.php/Category:MSI_(Espa%C3%B1ol) "Category:MSI (Español)") <small>(1)</small> |
+| <small>3.9.</small> [Placas base y BIOS](/index.php/Category:Mainboards_and_BIOS_(Espa%C3%B1ol) "Category:Mainboards and BIOS (Español)") <small>(1)</small> |
+| <small>3.10.</small> [Dispositivos móviles](/index.php/Category:Mobile_devices_(Espa%C3%B1ol) "Category:Mobile devices (Español)") <small>(1)</small> |
+| <small>3.10.1.</small> [Android](/index.php/Category:Android_(Espa%C3%B1ol) "Category:Android (Español)") <small>(2)</small> |
+| <small>3.11.</small> [Módems](/index.php/Category:Modems_(Espa%C3%B1ol) "Category:Modems (Español)") <small>(5) (también en [Administración de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)"))</small> |
+| <small>3.12.</small> [Impresoras](/index.php/Category:Printers_(Espa%C3%B1ol) "Category:Printers (Español)") <small>(1)</small> |
+| <small>3.13.</small> [Sonido](/index.php/Category:Sound_(Espa%C3%B1ol) "Category:Sound (Español)") <small>(6) (también en [Multimedia](/index.php/Category:Multimedia_(Espa%C3%B1ol) "Category:Multimedia (Español)"))</small> |
+| <small>3.14.</small> [Almacenamiento](/index.php/Category:Storage_(Espa%C3%B1ol) "Category:Storage (Español)") <small>(2)</small> |
+| <small>3.14.1.</small> [Disco óptico](/index.php/Category:Optical_disc_(Espa%C3%B1ol) "Category:Optical disc (Español)") <small>(1)</small> |
 | <small>4.</small> [Administración de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)") <small>(6)</small> |
 | <small>4.1.</small> [Servicios de directorio](/index.php/Category:Directory_services_(Espa%C3%B1ol) "Category:Directory services (Español)") <small>(0)</small> |
 | <small>4.1.1.</small> [Sistema de nombres de dominio (DNS)](/index.php/Category:Domain_Name_System_(Espa%C3%B1ol) "Category:Domain Name System (Español)") <small>(6) (también en [Protocolos](/index.php/Category:Protocols_(Espa%C3%B1ol) "Category:Protocols (Español)"), [Servidores](/index.php/Category:Servers_(Espa%C3%B1ol) "Category:Servers (Español)"))</small> |
