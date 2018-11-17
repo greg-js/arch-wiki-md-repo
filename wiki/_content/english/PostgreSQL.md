@@ -449,15 +449,17 @@ Rename the databases cluster directory, and create an empty one:
 
 ```
 
-Upgrade the cluster:
+Upgrade the cluster, replacing `*PG_VERSION*` with the old PostgreSQL version number (e.g `10`):
 
 ```
 [postgres]$ cd /var/lib/postgres/tmp
-[postgres]$ pg_upgrade -b /opt/pgsql-9.6/bin -B /usr/bin -d /var/lib/postgres/olddata -D /var/lib/postgres/data
+[postgres]$ pg_upgrade -b /opt/pgsql-*PG_VERSION*/bin -B /usr/bin -d /var/lib/postgres/olddata -D /var/lib/postgres/data
 
 ```
 
 `pg_upgrade` will perform the upgrade and create some scripts in `/var/lib/postgres/tmp/`. Follow the instructions given on screen and act accordingly. You may delete the `/var/lib/postgres/tmp` directory once the upgrade is completely over.
+
+If necessary, adjust the configuration files of new cluster (e.g. `pg_hba.conf` and `postgresql.conf`) to match the old cluster.
 
 Start the cluster:
 

@@ -22,6 +22,8 @@ Related articles
 *   [2 UEFI systems](#UEFI_systems)
     *   [2.1 Installation](#Installation_2)
 *   [3 Generate the main configuration file](#Generate_the_main_configuration_file)
+    *   [3.1 Dual booting/Multiple operating systems](#Dual_booting/Multiple_operating_systems)
+        *   [3.1.1 MS Windows](#MS_Windows)
 *   [4 Configuration](#Configuration)
     *   [4.1 Additional arguments](#Additional_arguments)
     *   [4.2 LVM](#LVM)
@@ -173,14 +175,22 @@ Use the *grub-mkconfig* tool to generate `grub.cfg`:
 
 ```
 
-By default the generation scripts automatically add menu entries for Arch Linux to any generated configuration. See [Multiboot USB drive#Boot entries](/index.php/Multiboot_USB_drive#Boot_entries "Multiboot USB drive") and [#Dual-booting](#Dual-booting) for custom menu entries for other systems.
+To automatically add entries for other installed operating systems, see [#Dual booting/Multiple operating systems](#Dual_booting/Multiple_operating_systems).
 
-**Tip:** To have *grub-mkconfig* search for other installed systems and automatically add them to the menu, [install](/index.php/Install "Install") the [os-prober](https://www.archlinux.org/packages/?name=os-prober) package and [mount](/index.php/Mount "Mount") the partitions that contain other systems.
+By default the generation scripts automatically add menu entries for Arch Linux to any generated configuration. See [Multiboot USB drive#Boot entries](/index.php/Multiboot_USB_drive#Boot_entries "Multiboot USB drive") and [#Dual-booting](#Dual-booting) for custom menu entries for other systems.
 
 **Note:**
 
 *   The default file path is `/boot/grub/grub.cfg`, not `/boot/grub/i386-pc/grub.cfg`. The [grub](https://www.archlinux.org/packages/?name=grub) package includes a sample `/boot/grub/grub.cfg`; ensure your intended changes are written to this file.
 *   If you are trying to run *grub-mkconfig* in a chroot or *systemd-nspawn* container, you might notice that it does not work, complaining that *grub-probe* cannot get the "canonical path of /dev/sdaX". In this case, try using *arch-chroot* as described in the [BBS post](https://bbs.archlinux.org/viewtopic.php?pid=1225067#p1225067).
+
+### Dual booting/Multiple operating systems
+
+To have *grub-mkconfig* search for other installed systems and automatically add them to the menu, [install](/index.php/Install "Install") the [os-prober](https://www.archlinux.org/packages/?name=os-prober) package and [mount](/index.php/Mount "Mount") the partitions that contain the other systems. Then re-run *grub-mkconfig*.
+
+#### MS Windows
+
+Partitions containing Windows should be automatically discovered by [os-prober](https://www.archlinux.org/packages/?name=os-prober). However, if the partition is encrypted, you may need to decrypt the partition before mounting. For BitLocker, this can be done with [dislocker](https://aur.archlinux.org/packages/dislocker/). This should be sufficient for [os-prober](https://www.archlinux.org/packages/?name=os-prober) to add the correct entry.
 
 ## Configuration
 

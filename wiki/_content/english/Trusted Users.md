@@ -35,6 +35,7 @@ For more information, see the [Trusted User Bylaws](https://aur.archlinux.org/tr
 ## Active Trusted Users
 
 | Nick | Name | E-Mail |
+| [ainola](https://aur.archlinux.org/packages/?K=ainola&SeB=m) | Brett Cornwall | oergg@v--o.pbz (rot13) |
 | [alad](https://aur.archlinux.org/packages/?K=Alad&SeB=m) | [Alad Wenter](/index.php/User:Alad "User:Alad") | alad@archlinux.org |
 | [alucryd](https://aur.archlinux.org/packages.php?K=alucryd&SeB=m) | Maxime Gauduin | alucryd@archlinux.org |
 | [anatolik](https://aur.archlinux.org/packages.php?K=anatolik&SeB=m) | Anatol Pomozov | anatol dot pomozov + arch at gmail |

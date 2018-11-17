@@ -21,18 +21,18 @@ Related articles
     *   [2.6 数据库后端](#数据库后端)
         *   [2.6.1 PostgreSQL](#PostgreSQL)
         *   [2.6.2 MariaDB](#MariaDB)
-    *   [2.7 Firewall](#Firewall)
-    *   [2.8 Initialize Gitlab database](#Initialize_Gitlab_database)
-    *   [2.9 Adjust modifier bits](#Adjust_modifier_bits)
-*   [3 Start and test GitLab](#Start_and_test_GitLab)
-*   [4 Upgrade database on updates](#Upgrade_database_on_updates)
-*   [5 Advanced Configuration](#Advanced_Configuration)
-    *   [5.1 Basic SSH](#Basic_SSH)
-    *   [5.2 Custom SSH Connection](#Custom_SSH_Connection)
+    *   [2.7 防火墙](#防火墙)
+    *   [2.8 初始化Gitlab数据库](#初始化Gitlab数据库)
+    *   [2.9 调整修改位](#调整修改位)
+*   [3 开始并测试Gitlab](#开始并测试Gitlab)
+*   [4 每次更新时升级数据库](#每次更新时升级数据库)
+*   [5 更多配置](#更多配置)
+    *   [5.1 基本的 SSH](#基本的_SSH)
+    *   [5.2 自定义SSH连接](#自定义SSH连接)
     *   [5.3 HTTPS/SSL](#HTTPS/SSL)
-        *   [5.3.1 Change GitLab configs](#Change_GitLab_configs)
-        *   [5.3.2 Let's Encrypt](#Let's_Encrypt)
-    *   [5.4 Web server configuration](#Web_server_configuration)
+        *   [5.3.1 改变Gitlab配置](#改变Gitlab配置)
+        *   [5.3.2 Let's Encrypt(让我们加密吧)](#Let's_Encrypt(让我们加密吧))
+    *   [5.4 Web服务器配置](#Web服务器配置)
         *   [5.4.1 Node.js](#Node.js)
         *   [5.4.2 Nginx](#Nginx)
         *   [5.4.3 Apache](#Apache)
@@ -218,9 +218,9 @@ production:
 
 #### MariaDB
 
-**Warning:** Using GitLab with MariaDB is [not recommended](https://docs.gitlab.com/ce/install/database_mysql.html). You may run into issues like `Specified key was too long; max key length is 767 bytes` when trying to use [MariaDB](/index.php/MariaDB "MariaDB").
+**Warning:** 通过MariaDB使用Gitlab是 [不推荐的](https://docs.gitlab.com/ce/install/database_mysql.html). 你可能会碰到像 `Specified key was too long; max key length is 767 bytes` 的问题，当你试图使用[MariaDB](/index.php/MariaDB "MariaDB").
 
-To set up MySQL (MariaDB) you need to create a database called `gitlabhq_production` along with a user (default: `gitlab`) who has full privileges to the database:
+为了设置 MySQL (MariaDB) 你需要创建一个数据库叫做`gitlabhq_production` ，和一个对数据库有全部权限的用户一起 (默认: `gitlab`) :
 
  `$ mysql -u root -p` 
 ```
@@ -230,21 +230,21 @@ mysql> GRANT ALL ON `gitlabhq_production`.* TO 'gitlab'@'localhost';
 mysql> \q
 ```
 
-Try connecting to the new database with the new user:
+用新用户连接新数据库:
 
 ```
 $ mysql -u **gitlab** -p -D gitlabhq_production
 
 ```
 
-Copy the MySQL template file before configuring it:
+在配置MySQL模板文件前复制它:
 
 ```
 # cp /usr/share/doc/gitlab/database.yml.mysql /etc/webapps/gitlab/database.yml
 
 ```
 
-Next you will need to open `/etc/webapps/gitlab/database.yml` and set `username:` and `password:` for the `gitlabhq_production`:
+下一步你需要打开 `/etc/webapps/gitlab/database.yml` 并为 `gitlabhq_production`设置 `username:` 和 `password:` :
 
  `/etc/webapps/gitlab/database.yml` 
 ```
@@ -266,7 +266,7 @@ production:
 
 ```
 
-It should not be set as world readable, e.g. only processes running under the `gitlab` user should have read/write access:
+它不应该被设为全局可读，比如只有运行在`gitlab`下的进程才有读/写权限:
 
 ```
 # chmod 600 /etc/webapps/gitlab/database.yml
@@ -274,38 +274,38 @@ It should not be set as world readable, e.g. only processes running under the `g
 
 ```
 
-For more info and other ways to create/manage MySQL databases, see the [MariaDB documentation](https://mariadb.org/docs/) and the [GitLab official (generic) install guide](https://github.com/gitlabhq/gitlabhq/blob/master/doc/install/installation.md).
+获取更多信息和其它创建/管理MySQL数据库的办法, 查阅 [MariaDB documentation](https://mariadb.org/docs/) 和 [GitLab official (generic) install guide](https://github.com/gitlabhq/gitlabhq/blob/master/doc/install/installation.md).
 
-### Firewall
+### 防火墙
 
-If you want to give direct access to your Gitlab installation through an [iptables](/index.php/Iptables "Iptables") firewall, you may need to adjust the port and the network address:
+如果你想通过[iptables](/index.php/Iptables "Iptables") 防火墙给予Gitlab安装过程直接权限, 你可能需要调整端口和网络地址:
 
 ```
 # iptables -A tcp_inbound -p TCP -s **192.168.1.0/24** --destination-port **80** -j ACCEPT
 
 ```
 
-To enable API-access:
+启用 API-access:
 
 ```
 # iptables -A tcp_inbound -p TCP -s **192.168.1.0/24** --destination-port **8080** -j ACCEPT
 
 ```
 
-If you are behind a router, do not forget to forward this port to the running GitLab server host, if you want to allow WAN-access.
+如果你在一个路由器后面, 别忘了转发这个端口到Gitlab服务器端口, 如果你想运行 WAN-access的话.
 
-### Initialize Gitlab database
+### 初始化Gitlab数据库
 
-Start the [Redis](/index.php/Redis "Redis") server and the `gitlab-gitaly.service` before initializing the database.
+在初始化数据库之前开启 [Redis](/index.php/Redis "Redis") 服务器和 `gitlab-gitaly.service` .
 
-Initialize the database and activate advanced features:
+初始化数据库并激活更多特性:
 
 ```
 # su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle-2.3 exec rake gitlab:setup RAILS_ENV=production"
 
 ```
 
-Finally run the following commands to check your installation:
+最后运行下面的命令来检查你的安装:
 
 ```
 # su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle-2.3 exec rake gitlab:env:info RAILS_ENV=production"
@@ -315,12 +315,12 @@ Finally run the following commands to check your installation:
 
 **Note:**
 
-*   The *gitlab:env:info* and *gitlab:check* commands will show a fatal error related to git. This is OK.
-*   The *gitlab:check* will complain about missing initscripts. This is nothing to worry about, as [systemd](/index.php/Systemd "Systemd") service files are used instead (which GitLab does not recognize).
+*   *gitlab:env:info* 和 *gitlab:check* 命令会显示一个和Git相关的严重的错误. 这是正常的.
+*   *gitlab:check* 会显示缺少初始化脚本. 这也没什么好担心的, 因为 [systemd](/index.php/Systemd "Systemd") 服务文件会被相应使用 (而这Gitlab无法识别).
 
-### Adjust modifier bits
+### 调整修改位
 
-(The gitlab check won't pass if the user and group ownership isn't configured properly)
+(如果用户和组所有权没有正确配置的话Gitlab检查不会通过)
 
 ```
 # chmod -R ug+rwX,o-rwx /var/lib/gitlab/repositories/
@@ -329,13 +329,13 @@ Finally run the following commands to check your installation:
 
 ```
 
-## Start and test GitLab
+## 开始并测试Gitlab
 
-Make sure [MySQL](/index.php/MySQL "MySQL") or [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") and [Redis](/index.php/Redis "Redis") are running and setup correctly.
+确定 [MySQL](/index.php/MySQL "MySQL")或 [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") 和 [Redis](/index.php/Redis "Redis") 运行和设置正确.
 
-Then [start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `gitlab.target`.
+然后 [start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `gitlab.target`.
 
-Now test your GitLab instance by visiting [http://localhost:8080](http://localhost:8080) or [http://yourdomain.com](http://yourdomain.com), you should be prompted to create a password:
+现在你可以通过访问 [http://localhost:8080](http://localhost:8080) 或者 [http://yourdomain.com来测试你的Gitlab](http://yourdomain.com来测试你的Gitlab), 你可能会被提示创建密码:
 
 ```
 username: root
@@ -343,18 +343,18 @@ password: You'll be prompted to create one on your first visit.
 
 ```
 
-See [#Troubleshooting](#Troubleshooting) and log files inside the `/usr/share/webapps/gitlab/log/` directory for troubleshooting.
+查阅[#Troubleshooting](#Troubleshooting) 和在 `/usr/share/webapps/gitlab/log/` 目录下的日志文件来 排除故障.
 
-## Upgrade database on updates
+## 每次更新时升级数据库
 
-After updating the [gitlab](https://www.archlinux.org/packages/?name=gitlab) package, it is required to upgrade the database:
+在更新 [gitlab](https://www.archlinux.org/packages/?name=gitlab) 包后, 需要升级数据库:
 
 ```
 # su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle-2.3 exec rake db:migrate RAILS_ENV=production"
 
 ```
 
-Afterwards, restart gitlab-related services:
+之后, 之后重启Gitlab相关服务:
 
 ```
 # systemctl daemon-reload
@@ -362,15 +362,15 @@ Afterwards, restart gitlab-related services:
 
 ```
 
-## Advanced Configuration
+## 更多配置
 
-### Basic SSH
+### 基本的 SSH
 
-After completing the basic installation, set up SSH access for users. Configuration for [OpenSSH](/index.php/OpenSSH "OpenSSH") is described below. [Other SSH clients and servers](/index.php/Secure_Shell#Other_SSH_clients_and_servers "Secure Shell") will require different modifications.
+在完成了基本安装后, 为用户设置ssh权限. [OpenSSH](/index.php/OpenSSH "OpenSSH")的配置会在下面描述. [其它SSH客户端和服务器](/index.php/Secure_Shell#Other_SSH_clients_and_servers "Secure Shell") 需要不同的调整.
 
-For tips on adding user SSH keys, the process is well-documented on the [GitLab](https://docs.gitlab.com/ee/ssh/) website. You can check the administrator logs at `/var/lib/gitlab/log/gitlab-shell.log` to confirm user SSH keys are being submitted properly. Behind the scenes, GitLab adds these keys to its *authorized_keys* file in `/var/lib/gitlab/.ssh/authorized_keys`.
+获取添加用户SSH秘钥的建议，过程在[GitLab](https://docs.gitlab.com/ee/ssh/) 网站里描述的很好了. 你可以在 `/var/lib/gitlab/log/gitlab-shell.log`检查管理员日志来确认用户SSH秘钥被正确提交了. 在这些事件之后, GitLab 添加这些秘钥到*authorized_keys* 文件里，它在 `/var/lib/gitlab/.ssh/authorized_keys`.
 
-The common method of testing keys (ex: `$ ssh -T git@*YOUR_SERVER*`) requires a bit of extra configuration to work correctly. The user configured in `/etc/webapps/gitlab/gitlab.yml` (default user: `gitlab`) must be added to the server's sshd configuration file, in addition to a handful of other changes:
+测试秘钥的常见方法 (比如: `$ ssh -T git@*YOUR_SERVER*`) 需要一点额外配置才能正常工作. 在 `/etc/webapps/gitlab/gitlab.yml` (默认用户: `gitlab`)里配置的用户必须添加到服务器的sshd配置文件,除此之外还有几个其它改变 :
 
  `/etc/ssh/sshd_config` 
 ```
@@ -379,23 +379,23 @@ AuthorizedKeysFile     %h/.ssh/authorized_keys
 
 ```
 
-After updating the configuration file, restart the ssh daemon:
+更新配置文件之后, 重启ssh守护进程:
 
 ```
 # systemctl restart sshd
 
 ```
 
-Test user SSH keys (optionally add -v to see extra information):
+测试用户SSH米哟啊 (可选添加 -v 来查看额外信息):
 
 ```
 $ ssh -T **gitlab**@*YOUR_SERVER*
 
 ```
 
-### Custom SSH Connection
+### 自定义SSH连接
 
-If you are running SSH on a non-standard port, you must change the GitLab user's SSH config:
+如果你在一个非标准端口运行SSH，你必须改变Gitlab用户的SSH配置:
 
  `/var/lib/gitlab/.ssh/config` 
 ```
@@ -405,23 +405,23 @@ port 2222           # Your port number
 hostname 127.0.0.1; # Your server name or IP
 ```
 
-You also need to change the corresponding options (e.g. ssh_user, ssh_host, admin_uri) in the `/etc/webapps/gitlab/gitlab.yml` file.
+你还必须在 `/etc/webapps/gitlab/gitlab.yml` 文件里改变相应的选项 (比如. ssh_user, ssh_host, admin_uri) .
 
 ### HTTPS/SSL
 
-#### Change GitLab configs
+#### 改变Gitlab配置
 
-Modify `/etc/webapps/gitlab/shell.yml` so the url to your GitLab site starts with `https://`. Modify `/etc/webapps/gitlab/gitlab.yml` so that `https:` setting is set to `true`.
+修改 `/etc/webapps/gitlab/shell.yml` 那样到你的Gitlab站点的URL就会以 `https://`开头. 修改 `/etc/webapps/gitlab/gitlab.yml` 那样 `https:` 设置就会被设为 `true`.
 
-See also [Apache HTTP Server#TLS](/index.php/Apache_HTTP_Server#TLS "Apache HTTP Server") and [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt").
+查阅 [Apache HTTP Server#TLS](/index.php/Apache_HTTP_Server#TLS "Apache HTTP Server") 和 [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt").
 
-#### Let's Encrypt
+#### Let's Encrypt(让我们加密吧)
 
-To validate your URL, the Let's Encrypt process will try to access your gitlab server with something like `https://gitlab.*YOUR_SERVER_FQDN*/.well-known/acme-challenge/*A_LONG_ID*`. But, due to gitlab configuration, every request to `gitlab.*YOUR_SERVER_FQDN*` will be redirected to a proxy (gitlab-workhorse) that will not be able to deal with this URL.
+验证你的URL, Let's Encrypt的过程会试图用像 `https://gitlab.*YOUR_SERVER_FQDN*/.well-known/acme-challenge/*A_LONG_ID*`的东西连接你的Gitlab服务器. 但是, 因为Gitlab配置, 每个到 `gitlab.*YOUR_SERVER_FQDN*` 的请求会被重定向到一个代理 (gitlab-workhorse) 而它无法处理这个URL.
 
-To bypass this issue, you can use the Let's Encrypt webroot configuration, setting the webroot at `/srv/http/letsencrypt/`.
+为了绕过这个问题, 你可以使用 Let's Encrypt的webroot配置, 在 `/srv/http/letsencrypt/`设置webroot.
 
-Additionally, force the Let's Encrypt request for gitlab to be redirected to this webroot by adding the following:
+除此之外, 强迫到Gitlab的Let's Encrypt请求重定向到这个webroot可通过添加下面的:
 
  `/etc/http/conf/extra/gitlab.conf` 
 ```
@@ -430,19 +430,19 @@ RewriteCond   %{REQUEST_URI}  !/\.well-known/.*
 
 ```
 
-### Web server configuration
+### Web服务器配置
 
-If you want to integrate Gitlab into a running web server instead of using its build-in http server Unicorn, then follow these instructions.
+如果你想把Gitlab集成进一个运行的服务器而不是用它的内置http服务器Unicorn，那么按照这些说明操作.
 
 ##### Node.js
 
-You can easily set up an http proxy on port 443 to proxy traffic to the GitLab application on port 8080 using http-master for Node.js. After you have created your domain's OpenSSL keys and have gotten you CA certificate (or self signed it), then go to [https://github.com/CodeCharmLtd/http-master](https://github.com/CodeCharmLtd/http-master) to learn how easy it is to proxy requests to GitLab using HTTPS. http-master is built on top of [node-http-proxy](https://github.com/nodejitsu/node-http-proxy).
+你可以轻松在443端口设置http代理来代理到8080端口的Gitlab程序的流量，通过为Node.js使用http-master. 在你创建你的域名的 OpenSSL 秘钥并获取你的CA 证书 (或自己设置的)后, 然后去 [https://github.com/CodeCharmLtd/http-master](https://github.com/CodeCharmLtd/http-master) 来学习使用https代理到Gitlab的请求多容易. http-master 建立在 [node-http-proxy](https://github.com/nodejitsu/node-http-proxy)之上.
 
 #### Nginx
 
-See [Nginx#Configuration](/index.php/Nginx#Configuration "Nginx") for basic *nginx* configuration and [Nginx#TLS](/index.php/Nginx#TLS "Nginx") for enabling HTTPS. The sample in this section also assumes that server blocks are managed with [Nginx#Managing server entries](/index.php/Nginx#Managing_server_entries "Nginx").
+查阅 [Nginx#Configuration](/index.php/Nginx#Configuration "Nginx") 获取基本的 *nginx* 配置信息和 [Nginx#TLS](/index.php/Nginx#TLS "Nginx") 来启用 HTTPS. 在这个部分的例子假设服务器区块是用 [Nginx#Managing server entries](/index.php/Nginx#Managing_server_entries "Nginx")管理的.
 
-Create and edit the configuration based on the following snippet. See the [upstream GitLab repository](https://gitlab.com/gitlab-org/gitlab-ce/tree/master/lib/support/nginx) for more examples.
+创建和编辑基于下面代码的配置. 查阅 [upstream GitLab repository](https://gitlab.com/gitlab-org/gitlab-ce/tree/master/lib/support/nginx)获取更多例子.
 
  `/etc/nginx/servers-available/gitlab` 
 ```
@@ -491,9 +491,9 @@ server {
 
 #### Apache
 
-Install and configure the [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server"). You can use these [upstream recipes](https://gitlab.com/gitlab-org/gitlab-recipes/tree/master/web-server/apache) to get started with the configuration file for GitLab's virtual host.
+安装并配置 [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server"). 你可以使用这些 [upstream recipes](https://gitlab.com/gitlab-org/gitlab-recipes/tree/master/web-server/apache) 来开始Gitlab虚拟主机的配置文件.
 
-For the SSL configuration see [Apache HTTP Server#TLS](/index.php/Apache_HTTP_Server#TLS "Apache HTTP Server"). If you do not need it, remove it. Notice that the SSL virtual host needs a specific IP instead of generic. Also if you set a custom port for Unicorn, do not forget to set it at the `BalanceMember` line.
+对于SSL配置查阅 [Apache HTTP Server#TLS](/index.php/Apache_HTTP_Server#TLS "Apache HTTP Server"). 如果你不需要它, 移除它. 注意到SSL虚拟主机需要特定IP而不是通用IP. 同样如果你为Unicorn设置了自定义端口, 不要忘了在 `BalanceMember` 行也设置它.
 
 ### Gitlab-workhorse
 

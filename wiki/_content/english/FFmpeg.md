@@ -508,6 +508,7 @@ $ ffmpeg -i file.ext -an -s 319x180 -vf fps=1/**100** -qscale:v 75 %03d.jpg
 ## See also
 
 *   [FFmpeg documentation](http://ffmpeg.org/ffmpeg.html) - official documentation
+*   [Encoding](https://trac.ffmpeg.org/wiki#Encoding) - FFmpeg wiki
 *   [Encoding with the x264 codec](http://www.mplayerhq.hu/DOCS/HTML/en/menc-feat-x264.html) - MEncoder documentation
 *   [H.264 encoding guide](http://avidemux.org/admWiki/doku.php?id=tutorial:h.264) - Avidemux wiki
 *   [Using FFmpeg](http://howto-pages.org/ffmpeg/) - Linux how to pages

@@ -932,12 +932,14 @@ To check you zpool.cache for pools you don't want imported at boot. If this comm
 
 ```
 
-To clear the zpool.cache of any pools other than zroot, then rebuild your initramfs:
+To clear the zpool.cache of any pools other than the pool named zroot. Sometimes there is no need to refresh your zpool.cache, but instead all you need to do is rebuild your initramfs:
 
 ```
 # mkinitcpio -p linux
 
 ```
+
+Or **linux-lts**, dependent upon the kernel variant you are running.
 
 ## Tips and tricks
 

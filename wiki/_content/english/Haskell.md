@@ -15,7 +15,7 @@
         *   [3.2.2 Installing packages user-wide](#Installing_packages_user-wide)
         *   [3.2.3 Sandboxes](#Sandboxes)
         *   [3.2.4 Removing packages](#Removing_packages)
-    *   [3.3 stack](#stack)
+    *   [3.3 Stack](#Stack)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -200,7 +200,7 @@ One thing to make your life easier is use zsh auto completion to find all the Ha
 
 If you want/can fix/reinstall whole user-wide Haskell package system - remove `~/.cabal` and `~/.ghc` and start from scratch. This is often necessary when GHC is upgraded.
 
-### stack
+### Stack
 
 [Stack](https://haskellstack.org) is a build tool that focuses on automatically curated, consistent package sets rather than dependency resolution. This means it's easy to install a set of packages without concern of version conflicts as long as they coexist within a given Stackage snapshot. It can be installed through either [stack](https://www.archlinux.org/packages/?name=stack), [stack-static](https://aur.archlinux.org/packages/stack-static/) or [stack-bin](https://aur.archlinux.org/packages/stack-bin/). The latter provides statically linked binaries, thereby avoiding dozens of `haskell-*` dependencies. More information can be found at [§ Install/upgrade # Arch Linux](https://docs.haskellstack.org/en/stable/install_and_upgrade/#arch-linux).
 

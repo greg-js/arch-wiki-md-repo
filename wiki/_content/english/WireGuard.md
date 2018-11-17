@@ -21,11 +21,12 @@ From the [WireGuard](https://www.wireguard.com/) project homepage:
         *   [3.1.2 Server config](#Server_config)
         *   [3.1.3 Client config](#Client_config)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Routes are periodically reset](#Routes_are_periodically_reset)
-    *   [4.2 Connection loss with NetworkManager](#Connection_loss_with_NetworkManager)
-        *   [4.2.1 Using resolvconf](#Using_resolvconf)
-        *   [4.2.2 Using dnsmasq](#Using_dnsmasq)
-        *   [4.2.3 Using systemd-resolved](#Using_systemd-resolved)
+    *   [4.1 PresharedKey bug with iOS client](#PresharedKey_bug_with_iOS_client)
+    *   [4.2 Routes are periodically reset](#Routes_are_periodically_reset)
+    *   [4.3 Connection loss with NetworkManager](#Connection_loss_with_NetworkManager)
+        *   [4.3.1 Using resolvconf](#Using_resolvconf)
+        *   [4.3.2 Using dnsmasq](#Using_dnsmasq)
+        *   [4.3.3 Using systemd-resolved](#Using_systemd-resolved)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Store private keys in encrypted form](#Store_private_keys_in_encrypted_form)
 
@@ -48,40 +49,26 @@ The external addresses should already exist. For example, peer A should be able 
 
 #### Key generation
 
+**Note:** It's recommended to save the private key file with strict permissions such as `600`.
+
 To create a private key:
 
 ```
-$ wg genkey
-
-```
-
-You can save it to a file:
-
-**Note:** It's recommended to save the private key file with strict permissions. `wg` will complain if you try to save the file with too open permissions. You can use `umask 077` to ensure only the owner has access to the key file.
-
-```
-$ (umask 077 && wg genkey > privatekey)
+$ wg genkey > privatekey
 
 ```
 
 To create a public key:
 
 ```
-$ wg pubkey < privatekey
-
-```
-
-You can also save it to a file:
-
-```
 $ wg pubkey < privatekey > publickey
 
 ```
 
-Of course, you can do this all at once:
+Alternatively, do this all at once:
 
 ```
-$ wg genkey | (umask 077 && tee privatekey) | wg pubkey > publickey
+$ wg genkey | tee privatekey | wg pubkey > publickey
 
 ```
 
@@ -212,21 +199,34 @@ On the machine acting as the server, first enable IPv4 forwarding:
 
 To make the change permanent, add `net.ipv4.ip_forward = 1` to `/etc/sysctl.d/99-sysctl.conf`.
 
-A properly configured [firewall](/index.php/Firewall "Firewall") is *HIGHLY recommended* for any Internet-facing device. The following are needed:
+A properly configured [firewall](/index.php/Firewall "Firewall") is *HIGHLY recommended* for any Internet-facing device. Be sure to:
 
-1.  Allowing UDP traffic on the specified port(s) on which WireGuard will be running (for example allowing traffic on 51820/udp).
-2.  Setting up the forwarding policy for the firewall (for example, see: [Uncomplicated_Firewall#Forward_policy](/index.php/Uncomplicated_Firewall#Forward_policy "Uncomplicated Firewall")).
+*   Allow UDP traffic on the specified port(s) on which WireGuard will be running (for example allowing traffic on 51820/udp).
+*   Setting up the forwarding policy for the firewall if it is not included in the WireGuard config for the interface itself `/etc/wireguard/wg0.conf`. The example below should work as-is.
 
 Finally, WireGuard port(s) need to be forwarded to the server from the network router so they can be accessed from the WAN.
 
 #### Key generation
 
-Generate public/private keys for the server and for each client. In this example, only 2 key pairs are created, one for the "server" and one for a "client." Repeat as needed for additional clients:
+Generate public/private keys for the server and for each client. In this example, only 2 key pairs are created, one for the "server" and one for "client1" ... repeat as needed for additional clients:
 
 ```
 # cd /etc/wireguard
 # wg genkey | tee server.priv | wg pubkey > server.pub
-# wg genkey | tee client.priv | wg pubkey > client.pub
+
+```
+
+The client keys can be stored anywhere.
+
+```
+$ wg genkey | tee client1.priv | wg pubkey > client1.pub
+
+```
+
+One can optionally generate a pre-shared key to increase security:
+
+```
+# wg genpsk > preshared.priv
 
 ```
 
@@ -236,8 +236,9 @@ Create the server config file that minimally, defines the private IP range to us
 
 In the example below:
 
-*   [SERVER PRIVATE KEY] is the string contained in `/etc/wireguard/server.priv`
-*   [CLIENT PUBLIC KEY] is the string contained in `/etc/wireguard/client.pub`
+*   [SERVER PRIVATE KEY] is the string contained in `server.priv`
+*   [CLIENT PUBLIC KEY] is the string contained in `client1.pub`
+*   One may omit the [PRE-SHARED KEY] entirely, but if retained, it is the string contained in `preshared.priv`
 
  `/etc/wireguard/wg0.conf` 
 ```
@@ -247,8 +248,13 @@ SaveConfig = true
 ListenPort = 51820
 PrivateKey = [SERVER PRIVATE KEY]
 
+# note - substitute *eth0* in the following lines to match the Internet-facing interface
+PostUp = iptables -A FORWARD -i %i -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
+
 [Peer]
 PublicKey = [CLIENT PUBLIC KEY]
+PresharedKey = [PRE-SHARED KEY]
 AllowedIPs = 10.200.200.2/32
 ```
 
@@ -267,10 +273,11 @@ Alternatively, systemctl can be used to manage the interface. [Start](/index.php
 
 Create the matching client config file. In the example below:
 
-*   [CLIENT PRIVATE KEY] is the string contained in `/etc/wireguard/client.priv`
-*   [SERVER PUBLICKEY] is the string contained in `/etc/wireguard/server.pub`
+*   [CLIENT PRIVATE KEY] is the string contained in `client1.priv`
+*   [SERVER PUBLICKEY] is the string contained in `server.pub`
+*   One may omit the [PRE-SHARED KEY] entirely, but if retained, it is the string contained in `preshared.priv`
 
- `/etc/wireguard/client.conf` 
+ `/etc/wireguard/client1.conf` 
 ```
 [Interface]
 Address = 10.200.200.2/24
@@ -279,23 +286,27 @@ DNS = 10.200.200.1
 
 [Peer]
 PublicKey = [SERVER PUBLICKEY]
+PresharedKey = [PRE-SHARED KEY]
 AllowedIPs = 0.0.0.0/0
 Endpoint = my.ddns.address.com:51820
-PersistentKeepalive = 25
 ```
 
 If the client is a mobile device such as a phone, [qrencode](https://www.archlinux.org/packages/?name=qrencode) can be used to share the config with the client:
 
 ```
-# qrencode -t ansiutf8 < /etc/wireguard/client.conf
+$ qrencode -t ansiutf8 < client1.conf
 
 ```
 
-If running an Linux, `wg-quick` or the corresponding systemd server unit can manage the interface.
+Either `wg-quick` or the corresponding systemd server unit can manage the interface.
 
 **Note:** Users of [NetworkManager](/index.php/NetworkManager "NetworkManager"), may need to [enable](/index.php/Enable "Enable") the `NetworkManager-wait-online.service` and users of [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") may need to [enable](/index.php/Enable "Enable") the `systemd-networkd-wait-online.service` to wait until devices are network ready before attempting wireguard connection.
 
 ## Troubleshooting
+
+### PresharedKey bug with iOS client
+
+The iOS client (v0.0.20181104) has a bug where config files containing a PresharedKey field fail to get imported correctly via QR codes. All the other fields are successfully transferred *except* for the PresharedKey. One can manually edit the imported file and type it resulting in a functional config.
 
 ### Routes are periodically reset
 
@@ -315,7 +326,7 @@ By default *wg-quick* uses a resolvconf provider such as [openresolv](/index.php
 
 #### Using resolvconf
 
-If resolvconf is already used by the system and you still experience connection loss, make sure NetworkManager is configured to use it: [NetworkManager#Use openresolv](/index.php/NetworkManager#Use_openresolv "NetworkManager").
+If resolvconf is already used by the system and connection losses persist, make sure NetworkManager is configured to use it: [NetworkManager#Use openresolv](/index.php/NetworkManager#Use_openresolv "NetworkManager").
 
 #### Using dnsmasq
 

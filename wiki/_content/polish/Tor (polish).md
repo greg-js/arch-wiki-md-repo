@@ -5,12 +5,12 @@
 *   [1 Wprowadzenie](#Wprowadzenie)
 *   [2 Instalacja](#Instalacja)
 *   [3 Konfiguracja](#Konfiguracja)
-    *   [3.1 Konfiguracja przekaźnika](#Konfiguracja_przeka.C5.BAnika)
+    *   [3.1 Konfiguracja przekaźnika](#Konfiguracja_przekaźnika)
 *   [4 Uruchamianie Tora w Chroot](#Uruchamianie_Tora_w_Chroot)
 *   [5 Uruchamianie Tora w kontenerze systemd-nspawn z wirtualnym interfejsem sieciowym](#Uruchamianie_Tora_w_kontenerze_systemd-nspawn_z_wirtualnym_interfejsem_sieciowym)
     *   [5.1 Instalacja i konfiguracja hosta](#Instalacja_i_konfiguracja_hosta)
         *   [5.1.1 Wirtualny interfejs sieciowy](#Wirtualny_interfejs_sieciowy)
-        *   [5.1.2 Uruchom i włącz systemd-nspawn](#Uruchom_i_w.C5.82.C4.85cz_systemd-nspawn)
+        *   [5.1.2 Uruchom i włącz systemd-nspawn](#Uruchom_i_włącz_systemd-nspawn)
 *   [6 Usage](#Usage)
 *   [7 Web browsing](#Web_browsing)
     *   [7.1 Firefox](#Firefox)
@@ -29,14 +29,14 @@
 *   [12 Uruchamianie serwera Tor](#Uruchamianie_serwera_Tor)
     *   [12.1 Uruchamianie mostka Tora](#Uruchamianie_mostka_Tora)
         *   [12.1.1 Konfiguracja](#Konfiguracja_2)
-    *   [12.2 Uruchamianie przekaźnika Tora](#Uruchamianie_przeka.C5.BAnika_Tora)
+    *   [12.2 Uruchamianie przekaźnika Tora](#Uruchamianie_przekaźnika_Tora)
         *   [12.2.1 Konfiguracja](#Konfiguracja_3)
-    *   [12.3 Uruchomienie węzła wyjściowego Tora](#Uruchomienie_w.C4.99z.C5.82a_wyj.C5.9Bciowego_Tora)
+    *   [12.3 Uruchomienie węzła wyjściowego Tora](#Uruchomienie_węzła_wyjściowego_Tora)
         *   [12.3.1 Konfiguracja](#Konfiguracja_4)
-        *   [12.3.2 +100Mbps Exit Relay configuration example](#.2B100Mbps_Exit_Relay_configuration_example)
+        *   [12.3.2 +100Mbps Exit Relay configuration example](#+100Mbps_Exit_Relay_configuration_example)
             *   [12.3.2.1 Tor](#Tor)
-                *   [12.3.2.1.1 Podnieś maksymalną liczbę otwartych deskryptorów plików](#Podnie.C5.9B_maksymaln.C4.85_liczb.C4.99_otwartych_deskryptor.C3.B3w_plik.C3.B3w)
-                *   [12.3.2.1.2 Uruchom tor.service jako root, aby powiązać Tora z portami uprzywilejowanymi](#Uruchom_tor.service_jako_root.2C_aby_powi.C4.85za.C4.87_Tora_z_portami_uprzywilejowanymi)
+                *   [12.3.2.1.1 Podnieś maksymalną liczbę otwartych deskryptorów plików](#Podnieś_maksymalną_liczbę_otwartych_deskryptorów_plików)
+                *   [12.3.2.1.2 Uruchom tor.service jako root, aby powiązać Tora z portami uprzywilejowanymi](#Uruchom_tor.service_jako_root,_aby_powiązać_Tora_z_portami_uprzywilejowanymi)
                 *   [12.3.2.1.3 Konfiguracja Tora](#Konfiguracja_Tora)
             *   [12.3.2.2 arm](#arm)
             *   [12.3.2.3 iptables](#iptables)
@@ -44,13 +44,13 @@
             *   [12.3.2.5 pdnsd](#pdnsd)
                 *   [12.3.2.5.1 Nieocenzurowany DNS](#Nieocenzurowany_DNS)
 *   [13 TorDNS](#TorDNS)
-    *   [13.1 Używanie TorDNS do wszystkich zapytań DNS](#U.C5.BCywanie_TorDNS_do_wszystkich_zapyta.C5.84_DNS)
+    *   [13.1 Używanie TorDNS do wszystkich zapytań DNS](#Używanie_TorDNS_do_wszystkich_zapytań_DNS)
 *   [14 Torsocks](#Torsocks)
 *   [15 Transparent Torification](#Transparent_Torification)
-*   [16 Porady i wskazówki](#Porady_i_wskaz.C3.B3wki)
-    *   [16.1 Możliwości jądra](#Mo.C5.BCliwo.C5.9Bci_j.C4.85dra)
-*   [17 Rozwiązywanie problemów](#Rozwi.C4.85zywanie_problem.C3.B3w)
-    *   [17.1 Problem z wartością użytkownika](#Problem_z_warto.C5.9Bci.C4.85_u.C5.BCytkownika)
+*   [16 Porady i wskazówki](#Porady_i_wskazówki)
+    *   [16.1 Możliwości jądra](#Możliwości_jądra)
+*   [17 Rozwiązywanie problemów](#Rozwiązywanie_problemów)
+    *   [17.1 Problem z wartością użytkownika](#Problem_z_wartością_użytkownika)
 
 ## Wprowadzenie
 
@@ -489,7 +489,7 @@ User=root
 
 ###### Konfiguracja Tora
 
-Aby nasłuchiwać na portach 80 i 443, usługa musi być uruchomiona jako `root`, jak opisano w [#Uruchom tor.service jako root, aby powiązać Tora z portami uprzywilejowanymi](#Uruchom_tor.service_jako_root.2C_aby_powi.C4.85za.C4.87_Tora_z_portami_uprzywilejowanymi). Użyj opcji User tor w `/etc/tor/torrc`, aby właściwie zmniejszyć uprawnienia Tora.
+Aby nasłuchiwać na portach 80 i 443, usługa musi być uruchomiona jako `root`, jak opisano w [#Uruchom tor.service jako root, aby powiązać Tora z portami uprzywilejowanymi](#Uruchom_tor.service_jako_root,_aby_powiązać_Tora_z_portami_uprzywilejowanymi). Użyj opcji User tor w `/etc/tor/torrc`, aby właściwie zmniejszyć uprawnienia Tora.
 
  `/etc/tor/torrc` 
 ```
@@ -542,7 +542,7 @@ Tor domyślnie otwiera proxy soks dla portu 9050 - nawet jeśli go nie skonfigur
 
 Jeśli `# cat /proc/cpuinfo` zwraca, że twój procesor obsługuje instrukcje AES i `# lsmod` zwraca, że moduł jest załadowany, możesz określić `HardwareAccel 1` która próbuje "użyć wbudowanej (statycznej) akceleracji sprzętowej kryptografii, gdy jest dostępna", zobacz [http://www.torservers.net/wiki/setup/server#aes-ni_crypto_acceleration](http://www.torservers.net/wiki/setup/server#aes-ni_crypto_acceleration).
 
-`ORPort 443`, `DirPort 80` i `DisableAllSwap 1` wymaga uruchomienia usługi Tora jako `root` as described in [#Uruchom tor.service jako root, aby powiązać Tora z portami uprzywilejowanymi](#Uruchom_tor.service_jako_root.2C_aby_powi.C4.85za.C4.87_Tora_z_portami_uprzywilejowanymi). Użyj `User tor` opcja właściwego zmniejszenia uprawnień Tora.
+`ORPort 443`, `DirPort 80` i `DisableAllSwap 1` wymaga uruchomienia usługi Tora jako `root` as described in [#Uruchom tor.service jako root, aby powiązać Tora z portami uprzywilejowanymi](#Uruchom_tor.service_jako_root,_aby_powiązać_Tora_z_portami_uprzywilejowanymi). Użyj `User tor` opcja właściwego zmniejszenia uprawnień Tora.
 
 ##### arm
 

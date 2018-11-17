@@ -42,28 +42,29 @@ Installing Arch Linux on a MacBook (12"/Air/Pro) or an iMac is quite similar to 
     *   [6.4 Wi-Fi](#Wi-Fi)
     *   [6.5 Power management](#Power_management)
         *   [6.5.1 Suspend and Hibernate](#Suspend_and_Hibernate)
-    *   [6.6 Light sensor](#Light_sensor)
-    *   [6.7 Sound](#Sound)
-    *   [6.8 Bluetooth](#Bluetooth)
-    *   [6.9 Magic Mouse](#Magic_Mouse)
-    *   [6.10 Webcam](#Webcam)
-        *   [6.10.1 iSight](#iSight)
-        *   [6.10.2 Facetime HD](#Facetime_HD)
-    *   [6.11 Temperature Sensors](#Temperature_Sensors)
-    *   [6.12 Color Profile](#Color_Profile)
-    *   [6.13 Apple Remote](#Apple_Remote)
-    *   [6.14 HFS partition sharing](#HFS_partition_sharing)
-    *   [6.15 HFS+ Partitions](#HFS+_Partitions)
-        *   [6.15.1 Journaling](#Journaling)
-        *   [6.15.2 Yosemite and later](#Yosemite_and_later)
-    *   [6.16 Home Sharing](#Home_Sharing)
-        *   [6.16.1 In OS X](#In_OS_X)
-            *   [6.16.1.1 Step 1: change UID and GID(s)](#Step_1:_change_UID_and_GID(s))
-            *   [6.16.1.2 Step 2: change "Home" permissions](#Step_2:_change_"Home"_permissions)
-        *   [6.16.2 In Arch](#In_Arch)
-    *   [6.17 Avoid long EFI wait before booting](#Avoid_long_EFI_wait_before_booting)
-    *   [6.18 Mute startup chime](#Mute_startup_chime)
-    *   [6.19 kworker using high CPU](#kworker_using_high_CPU)
+    *   [6.6 Wake Up After Suspend](#Wake_Up_After_Suspend)
+    *   [6.7 Light sensor](#Light_sensor)
+    *   [6.8 Sound](#Sound)
+    *   [6.9 Bluetooth](#Bluetooth)
+    *   [6.10 Magic Mouse](#Magic_Mouse)
+    *   [6.11 Webcam](#Webcam)
+        *   [6.11.1 iSight](#iSight)
+        *   [6.11.2 Facetime HD](#Facetime_HD)
+    *   [6.12 Temperature Sensors](#Temperature_Sensors)
+    *   [6.13 Color Profile](#Color_Profile)
+    *   [6.14 Apple Remote](#Apple_Remote)
+    *   [6.15 HFS partition sharing](#HFS_partition_sharing)
+    *   [6.16 HFS+ Partitions](#HFS+_Partitions)
+        *   [6.16.1 Journaling](#Journaling)
+        *   [6.16.2 Yosemite and later](#Yosemite_and_later)
+    *   [6.17 Home Sharing](#Home_Sharing)
+        *   [6.17.1 In OS X](#In_OS_X)
+            *   [6.17.1.1 Step 1: change UID and GID(s)](#Step_1:_change_UID_and_GID(s))
+            *   [6.17.1.2 Step 2: change "Home" permissions](#Step_2:_change_"Home"_permissions)
+        *   [6.17.2 In Arch](#In_Arch)
+    *   [6.18 Avoid long EFI wait before booting](#Avoid_long_EFI_wait_before_booting)
+    *   [6.19 Mute startup chime](#Mute_startup_chime)
+    *   [6.20 kworker using high CPU](#kworker_using_high_CPU)
 *   [7 rEFIt](#rEFIt)
     *   [7.1 Problems with rEFIt](#Problems_with_rEFIt)
         *   [7.1.1 Mavericks upgrade breaks Arch boot option](#Mavericks_upgrade_breaks_Arch_boot_option)
@@ -760,6 +761,47 @@ SUBSYSTEM=="pci", KERNEL=="0000:03:00.0", ATTR{power/wakeup}="disabled"
 ```
 
 If this still does not work, try disabling LID0. This way suspending via lid-closing should be made impossible, so you might want to follow the instructions in [this forum post](https://bbs.archlinux.org/viewtopic.php?pid=1556046#p1556046) to make suspending via both lid-closing and systemd possible, by using systemd services.
+
+### Wake Up After Suspend
+
+Occasionally the Macboook Air may wake up immediately after suspend. To fix this:
+
+```
+cat /proc/acpi/wakeup
+
+```
+
+Check to see that XHC1 and LID0 are enabled. If they are, disabling them will fix the problem. After disabling them, the only way to wake up your computer from suspend is by using the power button.
+
+To do this type to following command (vim can be any cli editor)
+
+```
+sudo vim /etc/systemd/system/suspend-fix.service
+
+```
+
+Then add the following text and save:
+
+```
+[Unit]
+Description=Fix for the suspend issue
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c "echo XHC1 > /proc/acpi/wakeup && echo LID0 > /proc/acpi/wakeup"
+[Install]
+WantedBy=multi-user.target
+
+```
+
+And then run the following:
+
+```
+systemctl enable suspend-fix.service
+systemctl start suspend-fix.service
+
+```
+
+Disabling only XHC1 is not recommended if you have this bug, since it may result in glitchy behavior.
 
 ### Light sensor
 

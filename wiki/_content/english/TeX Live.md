@@ -43,7 +43,7 @@ To determine which [CTAN](https://www.ctan.org/) packages are included in each *
 
 ### tllocalmgr
 
-The `tllocalmgr` utility, provided by [texlive-localmanager-git](https://aur.archlinux.org/packages/texlive-localmanager-git/), lets you install (and update) packages from CTAN as [pacman](/index.php/Pacman "Pacman") packages, see [its usage](https://git.archlinux.org/users/remy/texlive-localmanager.git/tree/tllocalmgr#n809) (`-h`) for details.
+The *tllocalmgr* utility, provided by [texlive-localmanager-git](https://aur.archlinux.org/packages/texlive-localmanager-git/), lets you install (and update) packages from CTAN as [pacman](/index.php/Pacman "Pacman") packages, see [its usage](https://git.archlinux.org/users/remy/texlive-localmanager.git/tree/tllocalmgr#n809) (`-h`) for details.
 
 ### Package documentation
 

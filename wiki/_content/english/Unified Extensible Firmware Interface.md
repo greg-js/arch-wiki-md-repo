@@ -15,8 +15,9 @@ It is distinct from the commonly used "[MBR boot code](/index.php/Partitioning#M
 
 *   [1 UEFI versions](#UEFI_versions)
 *   [2 UEFI firmware bitness](#UEFI_firmware_bitness)
-    *   [2.1 Non Macs](#Non_Macs)
-    *   [2.2 Apple Macs](#Apple_Macs)
+    *   [2.1 Checking the firmware bitness](#Checking_the_firmware_bitness)
+        *   [2.1.1 From Linux](#From_Linux)
+        *   [2.1.2 From Mac OS](#From_Mac_OS)
 *   [3 Linux kernel config options for UEFI](#Linux_kernel_config_options_for_UEFI)
 *   [4 UEFI variables](#UEFI_variables)
     *   [4.1 UEFI variables support in Linux kernel](#UEFI_variables_support_in_Linux_kernel)
@@ -59,19 +60,28 @@ The latest UEFI specification can be found at [https://uefi.org/specifications](
 
 Under UEFI, every program whether it is an OS loader or a utility (e.g. a memory testing app or recovery tool), should be a EFI application corresponding to the UEFI firmware bitness/architecture.
 
-The vast majority of UEFI firmwares, including recent Apple Macs, use x86_64 UEFI firmware. The only known devices that use IA32 (32-bit) UEFI are older (pre 2008) Apple Macs, some Intel Cloverfield ultrabooks and some older Intel server boards that are known to operate on Intel EFI 1.10 firmware.
+The vast majority of UEFI firmwares, including recent Apple Macs, use x86_64 UEFI firmware. The only known devices that use IA32 (32-bit) UEFI are older (pre 2008) Apple Macs, Intel Atom System-on-Chip systems (as on 2 November 2013)[[1]](https://software.intel.com/en-us/blogs/2015/07/22/why-cheap-systems-run-32-bit-uefi-on-x64-systems) and some older Intel server boards that are known to operate on Intel EFI 1.10 firmware.
 
 An x86_64 UEFI firmware does not include support for launching 32-bit EFI applications (unlike x86_64 Linux and Windows versions which include such support). Therefore the EFI application must be compiled for that specific firmware processor bitness/architecture.
 
 **Note:** The official ISO does not support booting on 32-bit (IA32) UEFI systems, see [#Booting 64-bit kernel on 32-bit UEFI](#Booting_64-bit_kernel_on_32-bit_UEFI) for available workarounds.
 
-### Non Macs
+### Checking the firmware bitness
 
-The UEFI firmware bitness can be found via the kernel's sysfs interface. Run `cat /sys/firmware/efi/fw_platform_size`, it will return `64` for a 64-bit (x86_64) UEFI or `32` for a 32-bit (IA32) UEFI. If the file does not exist, then you have not booted in UEFI mode.
+The firmware bitness can be checked from a booted operating system.
 
-**Note:** Intel Atom System-on-Chip systems ship with 32-bit UEFI (as on 2 November 2013). See [this Intel blog post](https://software.intel.com/en-us/blogs/2015/07/22/why-cheap-systems-run-32-bit-uefi-on-x64-systems).
+#### From Linux
 
-### Apple Macs
+The UEFI firmware bitness can be found via the kernel's sysfs interface. Run:
+
+```
+$ cat /sys/firmware/efi/fw_platform_size
+
+```
+
+It will return `64` for a 64-bit (x86_64) UEFI or `32` for a 32-bit (IA32) UEFI. If the file does not exist, then you have not booted in UEFI mode.
+
+#### From Mac OS
 
 Pre-2008 [Macs](/index.php/Mac "Mac") mostly have IA32 EFI firmware while >=2008 Macs have mostly x86_64 EFI. All Macs capable of running Mac OS X Snow Leopard 64-bit Kernel have x86_64 EFI 1.x firmware.
 
@@ -82,11 +92,11 @@ $ ioreg -l -p IODeviceTree | grep firmware-abi
 
 ```
 
-If the command returns EFI32 then it is IA32 (32-bit) EFI firmware. If it returns EFI64 then it is x86_64 EFI firmware. Most of the Macs do not have UEFI 2.x firmware as Apple's EFI implementation is not fully compliant with UEFI 2.x specification.
+If the command returns `EFI32` then it is IA32 (32-bit) EFI firmware. If it returns `EFI64` then it is x86_64 EFI firmware. Most of the Macs do not have UEFI 2.x firmware as Apple's EFI implementation is not fully compliant with UEFI 2.x specification.
 
 ## Linux kernel config options for UEFI
 
-The required Linux Kernel configuration options[[1]](https://www.kernel.org/doc/Documentation/x86/x86_64/uefi.txt) for UEFI systems are:
+The required Linux Kernel configuration options[[2]](https://www.kernel.org/doc/Documentation/x86/x86_64/uefi.txt) for UEFI systems are:
 
 ```
 CONFIG_RELOCATABLE=y

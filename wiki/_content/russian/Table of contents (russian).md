@@ -1,4 +1,4 @@
-| [Русский](/index.php/Category:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9 "Category:Русский") <small>(445)</small> | [English](/index.php/Category:English "Category:English") <small>(2)</small> |
+| [Русский](/index.php/Category:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9 "Category:Русский") <small>(446)</small> | [English](/index.php/Category:English "Category:English") <small>(2)</small> |
 | <small>1.</small> [Об Arch](/index.php/Category:About_Arch_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:About Arch (Русский)") <small>(17)</small> | <small>1.</small> [About Arch](/index.php/Category:About_Arch "Category:About Arch") <small>(17)</small> |
  <small>1.1.</small> [Arch community](/index.php/Category:Arch_community "Category:Arch community") <small>(5)</small> |
  <small>1.1.1.</small> [Classroom](/index.php/Category:Classroom "Category:Classroom") <small>(2)</small> |
@@ -51,7 +51,7 @@
 | <small>4.</small> [Аппаратная часть](/index.php/Category:Hardware_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Hardware (Русский)") <small>(3)</small> | <small>3.</small> [Hardware](/index.php/Category:Hardware "Category:Hardware") <small>(3)</small> |
 | <small>4.1.</small> [Архитектура ARM](/index.php/Category:ARM_architecture_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:ARM architecture (Русский)") <small>(1)</small> | <small>3.1.</small> [ARM architecture](/index.php/Category:ARM_architecture "Category:ARM architecture") <small>(6)</small> |
 | <small>4.2.</small> [Bluetooth](/index.php/Category:Bluetooth_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Bluetooth (Русский)") <small>(4)</small> | <small>3.2.</small> [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth") <small>(6) (also in [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking"))</small> |
-| <small>4.3.</small> [Процессор](/index.php/Category:CPU_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:CPU (Русский)") <small>(4)</small> | <small>3.3.</small> [CPU](/index.php/Category:CPU "Category:CPU") <small>(10)</small> |
+| <small>4.3.</small> [Процессор](/index.php/Category:CPU_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:CPU (Русский)") <small>(5)</small> | <small>3.3.</small> [CPU](/index.php/Category:CPU "Category:CPU") <small>(10)</small> |
  <small>3.4.</small> [Digital imaging](/index.php/Category:Digital_imaging "Category:Digital imaging") <small>(6)</small> |
  <small>3.5.</small> [Displays](/index.php/Category:Displays "Category:Displays") <small>(3)</small> |
 | <small>4.4.</small> [Видеокарты](/index.php/Category:Graphics_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Graphics (Русский)") <small>(15)</small> | <small>3.6.</small> [Graphics](/index.php/Category:Graphics "Category:Graphics") <small>(31)</small> |
@@ -231,10 +231,11 @@
  <small>5.2.2.1.</small> [Console applications](/index.php/Category:Console_applications "Category:Console applications") <small>(20) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
  <small>5.2.2.2.</small> [Download utilities](/index.php/Category:Download_utilities "Category:Download utilities") <small>(6) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
  <small>5.2.2.3.</small> [Mail retrieval agents](/index.php/Category:Mail_retrieval_agents "Category:Mail retrieval agents") <small>(5) (also in [Email clients](/index.php/Category:Email_clients "Category:Email clients"))</small> |
- <small>5.2.2.4.</small> [Shell builtins](/index.php/Category:Shell_builtins "Category:Shell builtins") <small>(3)</small> |
- <small>5.2.2.5.</small> [Superseded commands](/index.php/Category:Superseded_commands "Category:Superseded commands") <small>(5)</small> |
- <small>5.2.2.6.</small> [Terminal multiplexers](/index.php/Category:Terminal_multiplexers "Category:Terminal multiplexers") <small>(3)</small> |
- <small>5.2.2.7.</small> [Xorg commands](/index.php/Category:Xorg_commands "Category:Xorg commands") <small>(11) (also in [X server](/index.php/Category:X_server "Category:X server"))</small> |
+ <small>5.2.2.4.</small> [Package managers](/index.php/Category:Package_managers "Category:Package managers") <small>(8)</small> |
+ <small>5.2.2.5.</small> [Shell builtins](/index.php/Category:Shell_builtins "Category:Shell builtins") <small>(4)</small> |
+ <small>5.2.2.6.</small> [Superseded commands](/index.php/Category:Superseded_commands "Category:Superseded commands") <small>(5)</small> |
+ <small>5.2.2.7.</small> [Terminal multiplexers](/index.php/Category:Terminal_multiplexers "Category:Terminal multiplexers") <small>(3)</small> |
+ <small>5.2.2.8.</small> [Xorg commands](/index.php/Category:Xorg_commands "Category:Xorg commands") <small>(11) (also in [X server](/index.php/Category:X_server "Category:X server"))</small> |
  <small>5.2.3.</small> [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators") <small>(17) (also in [Applications](/index.php/Category:Applications "Category:Applications"), [Emulation](/index.php/Category:Emulation "Category:Emulation"))</small> |
 | <small>6.3.</small> [Daemons](/index.php/Category:Daemons_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Daemons (Русский)") <small>(8) (Также в [Администрирование](/index.php/Category:System_administration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:System administration (Русский)"))</small> | <small>5.3.</small> [Daemons](/index.php/Category:Daemons "Category:Daemons") <small>(16) (also in [System administration](/index.php/Category:System_administration "Category:System administration"))</small> |
 | <small>6.3.1.</small> [Servers](/index.php/Category:Servers_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Servers (Русский)") <small>(4) (Также в [Сетевое оборудование](/index.php/Category:Networking_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Networking (Русский)"))</small> | <small>5.3.1.</small> [Servers](/index.php/Category:Servers "Category:Servers") <small>(9) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
@@ -285,10 +286,11 @@
  <small>6.3.2.1.</small> [Console applications](/index.php/Category:Console_applications "Category:Console applications") <small>(20) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
  <small>6.3.2.2.</small> [Download utilities](/index.php/Category:Download_utilities "Category:Download utilities") <small>(6) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
  <small>6.3.2.3.</small> [Mail retrieval agents](/index.php/Category:Mail_retrieval_agents "Category:Mail retrieval agents") <small>(5) (also in [Email clients](/index.php/Category:Email_clients "Category:Email clients"))</small> |
- <small>6.3.2.4.</small> [Shell builtins](/index.php/Category:Shell_builtins "Category:Shell builtins") <small>(3)</small> |
- <small>6.3.2.5.</small> [Superseded commands](/index.php/Category:Superseded_commands "Category:Superseded commands") <small>(5)</small> |
- <small>6.3.2.6.</small> [Terminal multiplexers](/index.php/Category:Terminal_multiplexers "Category:Terminal multiplexers") <small>(3)</small> |
- <small>6.3.2.7.</small> [Xorg commands](/index.php/Category:Xorg_commands "Category:Xorg commands") <small>(11) (also in [X server](/index.php/Category:X_server "Category:X server"))</small> |
+ <small>6.3.2.4.</small> [Package managers](/index.php/Category:Package_managers "Category:Package managers") <small>(8)</small> |
+ <small>6.3.2.5.</small> [Shell builtins](/index.php/Category:Shell_builtins "Category:Shell builtins") <small>(4)</small> |
+ <small>6.3.2.6.</small> [Superseded commands](/index.php/Category:Superseded_commands "Category:Superseded commands") <small>(5)</small> |
+ <small>6.3.2.7.</small> [Terminal multiplexers](/index.php/Category:Terminal_multiplexers "Category:Terminal multiplexers") <small>(3)</small> |
+ <small>6.3.2.8.</small> [Xorg commands](/index.php/Category:Xorg_commands "Category:Xorg commands") <small>(11) (also in [X server](/index.php/Category:X_server "Category:X server"))</small> |
  <small>6.3.3.</small> [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators") <small>(17) (also in [Applications](/index.php/Category:Applications "Category:Applications"), [Emulation](/index.php/Category:Emulation "Category:Emulation"))</small> |
 | <small>7.3.</small> [Configuration files](/index.php/Category:Configuration_files_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Configuration files (Русский)") <small>(1)</small> | <small>6.4.</small> [Configuration files](/index.php/Category:Configuration_files "Category:Configuration files") <small>(11)</small> |
  <small>6.5.</small> [Configuration management](/index.php/Category:Configuration_management "Category:Configuration management") <small>(8)</small> |
@@ -355,7 +357,7 @@
  <small>6.17.2.</small> [System monitors](/index.php/Category:System_monitors "Category:System monitors") <small>(10) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
  <small>6.18.</small> [Notification](/index.php/Category:Notification "Category:Notification") <small>(2)</small> |
 | <small>7.14.</small> [Управление пакетами](/index.php/Category:Package_management_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Package management (Русский)") <small>(20)</small> | <small>6.19.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(31)</small> |
-| <small>7.15.</small> [Управление питанием](/index.php/Category:Power_management_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Power management (Русский)") <small>(8)</small> | <small>6.20.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(19)</small> |
+| <small>7.15.</small> [Управление питанием](/index.php/Category:Power_management_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Power management (Русский)") <small>(9)</small> | <small>6.20.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(19)</small> |
 | <small>7.16.</small> [Скрипты](/index.php/Category:Scripts_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Scripts (Русский)") <small>(2)</small> |
 | <small>7.17.</small> [Безопасность](/index.php/Category:Security_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Security (Русский)") <small>(20)</small> | <small>6.21.</small> [Security](/index.php/Category:Security "Category:Security") <small>(36)</small> |
  <small>6.21.1.</small> [Access control](/index.php/Category:Access_control "Category:Access control") <small>(5)</small> |

@@ -97,24 +97,7 @@ $ export TERM=xterm-color
 
 ```
 
-Alternatively, follow the instructions on Termite's [GitHub](https://github.com/thestinger/termite#terminfo), as below. This will allow you to use all of Termite's features when using SSH, whereas the above may not. [[2]](https://github.com/thestinger/termite/issues/229#issuecomment-250659169)
-
-Install the termite terminfo on your remote system.
-
-On Arch Linux:
-
-```
-pacman -S termite-terminfo
-
-```
-
-On other systems:
-
-```
-wget [https://raw.githubusercontent.com/thestinger/termite/master/termite.terminfo](https://raw.githubusercontent.com/thestinger/termite/master/termite.terminfo)
-tic -x termite.terminfo
-
-```
+Alternatively, follow the instructions on Termite's [GitHub](https://github.com/thestinger/termite#terminfo). This will allow you to use all of Termite's features when using SSH, whereas the above may not. [[2]](https://github.com/thestinger/termite/issues/229#issuecomment-250659169)
 
 ## See also
 

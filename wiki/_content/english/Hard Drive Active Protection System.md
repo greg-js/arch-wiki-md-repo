@@ -1,4 +1,4 @@
-**H**ard **D**rive **A**ctive **P**rotection **S**ystem (**HDAPS**) protects your hard drive from sudden shocks (such as dropping or banging your laptop on a desk). It does this by parking the disk heads, so that shocks do not cause them to crash into the drive's platters. Hopefully, this will prevent catastrophic failure.
+Hard Drive Active Protection System (**HDAPS**) protects your hard drive from sudden shocks (such as dropping or banging your laptop on a desk). It does this by parking the disk heads, so that shocks do not cause them to crash into the drive's platters. Hopefully, this will prevent catastrophic failure.
 
 **Note:** [SSD](/index.php/SSD "SSD") drives do not need HDAPS as they lack any mechanical components.
 

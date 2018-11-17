@@ -205,7 +205,7 @@ Some limitations up to at least 31.4.0-1: only the "tmp" and "cur" directories a
 
 ### Spell checking
 
-[Install](/index.php/Install "Install") [hunspell](https://www.archlinux.org/packages/?name=hunspell) and a [hunspell language dictionary](https://www.archlinux.org/packages/?q=hunspell+dict) and restart Thunderbird.
+Install [hunspell](https://www.archlinux.org/packages/?name=hunspell) and a [hunspell language dictionary](https://www.archlinux.org/packages/?q=hunspell+dict) and restart Thunderbird.
 
 See the Firefox article for [how to set the default spell checking language](/index.php/Firefox#Firefox_does_not_remember_default_spell_check_language "Firefox").
 
@@ -215,7 +215,7 @@ Enable `mail.biff.use_system_alert` in the [#Config Editor](#Config_Editor). Thi
 
 ### Theming tweaks
 
-Thunderbird will generally follow [GTK](/index.php/GTK "GTK") theming in use on your system. However, two tweaks are desirable for full consistency. These are most beneficial for dark themes.
+Thunderbird should conform to [GTK#Themes](/index.php/GTK#Themes "GTK") as defined on your system. However, two tweaks are desirable for full consistency. These are most beneficial for dark themes.
 
 1.  To view the body of emails with colors following your theme:
     1.  Go to *Preferences*

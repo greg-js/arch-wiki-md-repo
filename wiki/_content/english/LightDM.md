@@ -478,20 +478,7 @@ This setting will tell LightDM to wait until graphics devices are ready before s
 
 ### LightDM is running with low FPS on Intel Graphics
 
-In case you are using Intel Graphics it may happen that you have low FPS.
-
-Add the option `AccelMethod` to `uxa` in your xorg configuration file.
-
- `/etc/X11/xorg.conf.d/20-intel.conf` 
-```
-Section "Device"
-        Identifier "intel"
-        Driver "intel"
-        BusID "PCI:0:2:0"
-        Option "AccelMethod" "sna"
-        Option "TearFree" "true"
-EndSection
-```
+See [Intel_graphics#SNA_issues](/index.php/Intel_graphics#SNA_issues "Intel graphics").
 
 ### Pulseaudio not starting automatically
 

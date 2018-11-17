@@ -91,43 +91,40 @@ An important distinction of *LUKS* to note at this point is that the key is used
 
 ## Encryption options with dm-crypt
 
-*Cryptsetup* supports different encryption operating modes to use with *dm-crypt*. The most common (and default) is
+*Cryptsetup* supports different encryption operating modes to use with *dm-crypt*:
 
-*   `--type luks`
-
-The other ones are
-
-*   `--type luks2` for a new version of header format that allows additional extensions like different PBKDF algorithm or authenticated encryption,
+*   `--type luks` for using the default and most common one,
+*   `--type luks2` for using the latest available version of luks that allows additional extensions,
 *   `--type plain` for using dm-crypt plain mode,
-*   `--type loopaes` for a loopaes legacy mode, and
+*   `--type loopaes` for a loopaes legacy mode,
 *   `--type tcrypt` for a [TrueCrypt](/index.php/TrueCrypt "TrueCrypt") compatibility mode.
 
-The basic cryptographic options for encryption cipher and hashes available can be used for all modes and rely on the kernel cryptographic backend features. All that are loaded at runtime can be viewed with
+The basic cryptographic options for encryption cipher and hashes available can be used for all modes and rely on the kernel cryptographic backend features. All that are loaded and available to use as options at runtime can be viewed with:
 
 ```
 $ less /proc/crypto 
 
 ```
 
-and are available to use as options. If the list is short, execute `cryptsetup benchmark` which will trigger loading available modules.
+**Tip:** If the list is short, execute `$ cryptsetup benchmark` which will trigger loading available modules.
 
-The following introduces encryption options for the first two modes. Note that the tables list options used in the respective examples in this article and not all available ones.
+The following introduces encryption options for the `luks`, `luks2` and `plain` modes. Note that the tables list options used in the respective examples in this article and not all available ones.
 
 ### Encryption options for LUKS mode
 
 The *cryptsetup* action to set up a new dm-crypt device in LUKS encryption mode is *luksFormat*. Unlike the name implies, it does not format the device, but sets up the LUKS device header and encrypts the master-key with the desired cryptographic options.
 
-As LUKS is the default encryption mode,
+As LUKS is the default encryption mode, all that is needed to create a new LUKS device with default parameters (`-v` is optional):
 
 ```
 # cryptsetup -v luksFormat *device*
 
 ```
 
-is all that is needed to create a new LUKS device with default parameters (`-v` is optional). For comparison, we can specify the default options manually too:
+For comparison, one can specify the default options manually too:
 
 ```
-# cryptsetup -v --cipher aes-xts-plain64 --key-size 256 --hash sha256 --iter-time 2000 --use-urandom --verify-passphrase luksFormat *device*
+# cryptsetup -v --type luks --cipher aes-xts-plain64 --key-size 256 --hash sha256 --iter-time 2000 --use-urandom --verify-passphrase luksFormat *device*
 
 ```
 
@@ -161,9 +158,9 @@ Defaults are compared with a cryptographically higher specification example in t
 
  | Yes | - | Default only for luksFormat and luksAddKey. No need to type for Arch Linux with LUKS mode at the moment. |
 
-If you want to deep-dive into cryptographic features of LUKS, the [LUKS specification](https://gitlab.com/cryptsetup/cryptsetup/wikis/Specification) (e.g. its appendices) is a resource.
+The properties of LUKS features and options are described in the [LUKS1](https://gitlab.com/cryptsetup/cryptsetup/wikis/Specification) (pdf) and [LUKS2](https://gitlab.com/cryptsetup/cryptsetup/blob/master/docs/on-disk-format-luks2.pdf) (pdf) specifications.
 
-**Tip:** It is anticipated that the LUKS header receives another major revision in due course. If you are interested in the plans, the developers' [devconfcz2016](https://mbroz.fedorapeople.org/talks/DevConf2016/devconf2016-luks2.pdf) (pdf) presentation summarizes.
+**Tip:** The project developers' [devconfcz2016](https://mbroz.fedorapeople.org/talks/DevConf2016/devconf2016-luks2.pdf) (pdf) presentation summarizes the motivation for the major specification update to LUKS2.
 
 ### Encryption options for plain mode
 

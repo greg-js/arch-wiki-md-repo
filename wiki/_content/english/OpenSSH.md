@@ -75,6 +75,7 @@ An SSH server, by default, listens on the standard TCP port 22\. An SSH client p
     *   [6.8 tmux/screen session killed when disconnecting from SSH](#tmux/screen_session_killed_when_disconnecting_from_SSH)
     *   [6.9 SSH session stops responding](#SSH_session_stops_responding)
     *   [6.10 Broken pipe](#Broken_pipe)
+    *   [6.11 Slow daemon startup after reboot](#Slow_daemon_startup_after_reboot)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -986,6 +987,10 @@ Host *
 ```
 
 The `reliability` (`0x04`) type-of-service should resolve the issue, as well as `0x00` and `throughput` (`0x08`).
+
+### Slow daemon startup after reboot
+
+If you are experiencing excessively long daemon startup times after reboots (e.g. several minutes before the daemon starts accepting connections), especially on headless or virtualized servers, it may be due to a lack of entropy.[[8]](https://bbs.archlinux.org/viewtopic.php?id=241954) This can be remedied by installing either [Rng-tools](/index.php/Rng-tools "Rng-tools") or [Haveged](/index.php/Haveged "Haveged"), as appropriate for your system. However, take note of the associated security implications discussed in each package's respective wiki page.
 
 ## See also
 

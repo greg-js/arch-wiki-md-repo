@@ -170,7 +170,7 @@ Also see [this thread](https://bbs.archlinux.org/viewtopic.php?id=118026) for a 
 
 ## HDMI output configuration
 
-As outlined in [ftp://download.nvidia.com/XFree86/gpu-hdmi-audio-document/gpu-hdmi-audio.html#_issues_in_pulseaudio](ftp://download.nvidia.com/XFree86/gpu-hdmi-audio-document/gpu-hdmi-audio.html#_issues_in_pulseaudio) unless the HDMI port is the first output, PulseAudio will not be able to have any audio when using certain graphics cards with HDMI audio support. This is because of a bug in PulseAudio where it will only select the first HDMI output on a device. A work around posted further down is to first find which HDMI output is working by using the aplay utility from ALSA.
+As outlined in [https://download.nvidia.com/XFree86/gpu-hdmi-audio-document/index.html#_issues_in_pulseaudio](https://download.nvidia.com/XFree86/gpu-hdmi-audio-document/index.html#_issues_in_pulseaudio) unless the HDMI port is the first output, PulseAudio will not be able to have any audio when using certain graphics cards with HDMI audio support. This is because of a bug in PulseAudio where it will only select the first HDMI output on a device. A work around posted further down is to first find which HDMI output is working by using the aplay utility from ALSA.
 
 The original title for this section indicated the problem is specific to nVidia cards. As seen in [this forum thread](https://bbs.archlinux.org/viewtopic.php?id=133222) other cards are affected as well. The rest of the section will use an nVidia card as a case-study but the solution should carry over for people using other affected cards.
 

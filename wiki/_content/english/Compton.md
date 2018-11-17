@@ -5,6 +5,7 @@
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 Disable shadows for some windows](#Disable_shadows_for_some_windows)
+    *   [2.2 Opacity](#Opacity)
 *   [3 Usage](#Usage)
 *   [4 Multihead](#Multihead)
 *   [5 Troubleshooting](#Troubleshooting)
@@ -17,7 +18,7 @@
     *   [5.7 Fullscreen tearing](#Fullscreen_tearing)
     *   [5.8 Lag when using xft fonts](#Lag_when_using_xft_fonts)
     *   [5.9 Screen artifacts/screenshot issues when using AMD's Catalyst driver](#Screen_artifacts/screenshot_issues_when_using_AMD's_Catalyst_driver)
-    *   [5.10 Tabbed windows](#Tabbed_windows)
+    *   [5.10 Tabbed windows (shadows and transparency)](#Tabbed_windows_(shadows_and_transparency))
     *   [5.11 Unable to change the background color with xsetroot](#Unable_to_change_the_background_color_with_xsetroot)
     *   [5.12 Screentearing with NVIDIA's proprietary drivers](#Screentearing_with_NVIDIA's_proprietary_drivers)
     *   [5.13 Lag with Nvidia proprietary drivers and FullCompositionPipeline](#Lag_with_Nvidia_proprietary_drivers_and_FullCompositionPipeline)
@@ -51,6 +52,20 @@ popup_menu    = { shadow = false; };
 utility       = { shadow = false; };
 
 ```
+
+### Opacity
+
+To set opacity (in effect transparency) for focused and unfocused windows (for example terminal emulators), add the following to your `compton.conf`:
+
+```
+opacity-rule = [
+  "90:class_g = 'URxvt' && focused",
+  "60:class_g = 'URxvt' && !focused"
+];
+
+```
+
+See also [#Tabbed windows (shadows and transparency)](#Tabbed_windows_(shadows_and_transparency)).
 
 ## Usage
 
@@ -237,7 +252,7 @@ See [[3]](https://github.com/chjj/compton/issues/402) for more information.
 
 ### Fullscreen tearing
 
-If you observe screen tearing of video playback only in fullscreen mode see [#Flicker](#Flicker).
+If you observe screen tearing of video playback only in fullscreen, see [#Flicker](#Flicker).
 
 ### Lag when using xft fonts
 
@@ -272,7 +287,7 @@ to your `compton.conf` file.
 
 See [[5]](https://github.com/chjj/compton/issues/208) for more information.
 
-### Tabbed windows
+### Tabbed windows (shadows and transparency)
 
 When windows with transparency are tabbed, the underlying tabbed windows are still visible because of transparency. Each tabbed window also draws its own shadow resulting in multiple shadows.
 

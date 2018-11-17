@@ -1,6 +1,6 @@
 | [Português](/index.php/Category:Portugu%C3%AAs "Category:Português") <small>(5)</small> |
-| <small>1.</small> [Sobre o Arch](/index.php/Category:About_Arch_(Portugu%C3%AAs) "Category:About Arch (Português)") <small>(15)</small> |
-| <small>1.1.</small> [Arch community](/index.php/Category:Arch_community_(Portugu%C3%AAs) "Category:Arch community (Português)") <small>(2)</small> |
+| <small>1.</small> [Sobre o Arch](/index.php/Category:About_Arch_(Portugu%C3%AAs) "Category:About Arch (Português)") <small>(14)</small> |
+| <small>1.1.</small> [Arch community](/index.php/Category:Arch_community_(Portugu%C3%AAs) "Category:Arch community (Português)") <small>(3)</small> |
 | <small>1.2.</small> [Desenvolvimento do Arch](/index.php/Category:Arch_development_(Portugu%C3%AAs) "Category:Arch development (Português)") <small>(4) (também em [Development](/index.php/Category:Development_(Portugu%C3%AAs) "Category:Development (Português)"))</small> |
 | <small>1.2.1.</small> [Desenvolvimento de pacotes](/index.php/Category:Package_development_(Portugu%C3%AAs) "Category:Package development (Português)") <small>(11)</small> |
 | <small>1.2.1.1.</small> [Arch package guidelines](/index.php/Category:Arch_package_guidelines_(Portugu%C3%AAs) "Category:Arch package guidelines (Português)") <small>(24)</small> |

@@ -1,9 +1,9 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Xinit](/index.php/Xinit "Xinit"), revisada por última vez el **2018-11-11**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Xinit&diff=0&oldid=554642) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Xinit](/index.php/Xinit "Xinit"), revisada por última vez el **2018-11-15**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Xinit&diff=0&oldid=555003) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
-*   [Administrador de pantalla](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)")
+*   [Gestor de pantalla](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)")
 *   [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)")
 *   [xprofile](/index.php/Xprofile_(Espa%C3%B1ol) "Xprofile (Español)")
 *   [Xresources](/index.php/Xresources "Xresources")
@@ -12,7 +12,7 @@ De [Wikipedia](https://en.wikipedia.org/wiki/es:xinit "wikipedia:es:xinit"):
 
 	El programa **xinit** permite a un usuario iniciar manualmente un servidor de pantalla [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)"). El script [startx(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/startx.1) es un front-end para [xinit(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xinit.1).
 
-*xinit* se utiliza normalmente para iniciar [administradores de ventanas](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)") o [entornos de escritorio](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)"). Aunque también puede utilizar *xinit* para ejecutar aplicaciones gráficas sin un administrador de ventanas, muchas aplicaciones gráficas esperan un administrador de ventanas compatible con [Wikipedia:Extended Window Manager Hints](https://en.wikipedia.org/wiki/Extended_Window_Manager_Hints inician [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)") y, generalmente, [xprofile](/index.php/Xprofile_(Espa%C3%B1ol) "Xprofile (Español)").
+*xinit* se utiliza normalmente para iniciar [gestores de ventanas](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)") o [entornos de escritorio](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)"). Aunque también puede utilizar *xinit* para ejecutar aplicaciones gráficas sin un gestor de ventanas, muchas aplicaciones gráficas esperan un gestor de ventanas compatible con [Wikipedia:Extended Window Manager Hints](https://en.wikipedia.org/wiki/Extended_Window_Manager_Hints inician [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)") y, generalmente, [xprofile](/index.php/Xprofile_(Espa%C3%B1ol) "Xprofile (Español)").
 
 ## Contents
 
@@ -21,11 +21,11 @@ De [Wikipedia](https://en.wikipedia.org/wiki/es:xinit "wikipedia:es:xinit"):
     *   [2.1 xinitrc](#xinitrc)
     *   [2.2 xserverrc](#xserverrc)
 *   [3 Utilización](#Utilización)
-*   [4 Inicio automático de X al inicio de sesión](#Inicio_automático_de_X_al_inicio_de_sesión)
-*   [5 Consejos y trucos](#Consejos_y_trucos)
-    *   [5.1 Sobrescribir xinitrc desde la línea de órdenes](#Sobrescribir_xinitrc_desde_la_línea_de_órdenes)
+*   [4 Consejos y trucos](#Consejos_y_trucos)
+*   [5 Inicio automático de X al inicio de sesión](#Inicio_automático_de_X_al_inicio_de_sesión)
+    *   [5.1 Sobrescribir xinitrc](#Sobrescribir_xinitrc)
     *   [5.2 Cambio entre entornos de escritorio/gestores de ventanas](#Cambio_entre_entornos_de_escritorio/gestores_de_ventanas)
-    *   [5.3 Inicio de aplicaciones sin un administrador de ventanas](#Inicio_de_aplicaciones_sin_un_administrador_de_ventanas)
+    *   [5.3 Iniciar solo aplicaciones](#Iniciar_solo_aplicaciones)
     *   [5.4 Redirección de salida utilizando startx.](#Redirección_de_salida_utilizando_startx.)
 
 ## Instalación
@@ -34,7 +34,7 @@ De [Wikipedia](https://en.wikipedia.org/wiki/es:xinit "wikipedia:es:xinit"):
 
 ## Configuración
 
-*xinit* y *startx* toman un argumento opcional de la aplicación cliente, véase [#Sobrescribir xinitrc desde la línea de órdenes](#Sobrescribir_xinitrc_desde_la_línea_de_órdenes). Si no proporciona uno, buscarán `~/.xinitrc` para ejecutarse como un script del intérprete de línea de órdenes para iniciar las aplicaciones cliente.
+*xinit* y *startx* toman un argumento opcional de la aplicación cliente, véase [#Sobrescribir xinitrc](#Sobrescribir_xinitrc). Si no proporciona uno, buscarán `~/.xinitrc` para ejecutarse como un script del intérprete de línea de órdenes para iniciar las aplicaciones cliente.
 
 ### xinitrc
 
@@ -42,7 +42,7 @@ De [Wikipedia](https://en.wikipedia.org/wiki/es:xinit "wikipedia:es:xinit"):
 
 **Nota:** *Xinit* tiene su propio comportamiento predeterminado en lugar de ejecutar el archivo. Véase [xinit(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xinit.1) para más detalles.
 
-Este xinitrc predeterminado iniciará un entorno básico con [Twm](/index.php/Twm "Twm"), [xorg-xclock](https://www.archlinux.org/packages/?name=xorg-xclock) y [Xterm](/index.php/Xterm "Xterm") (asumiendo que los paquetes necesarios estén instalados). Por lo tanto, para iniciar un administrador de ventanas o un entorno de escritorio diferente, primero cree una copia del `xinitrc` predeterminado en su directorio personal:
+Este xinitrc predeterminado iniciará un entorno básico con [Twm](/index.php/Twm "Twm"), [xorg-xclock](https://www.archlinux.org/packages/?name=xorg-xclock) y [Xterm](/index.php/Xterm "Xterm") (asumiendo que los paquetes necesarios estén instalados). Por lo tanto, para iniciar un gestor de ventanas o un entorno de escritorio diferente, primero cree una copia del `xinitrc` predeterminado en su directorio personal:
 
 ```
 $ cp /etc/X11/xinit/xinitrc ~/.xinitrc
@@ -60,7 +60,7 @@ exec openbox-session
 
 **Nota:** Por lo menos, asegúrese de que el último bloque if en `/etc/X11/xinit/xinitrc` esté presente en su archivo `~/.xinitrc` para asegurarse de que los scripts en `/etc/X11/xinit/xinitrc.d` son ejecutados.
 
-Los programas de ejecución prolongada que se inician antes que el administrador de ventanas, como un salvapantallas y una aplicación de fondo de pantalla, deben bifurcarse (*fork*) o ejecutarse en segundo plano añadiendo un signo `&`. De lo contrario, el script se detendría y esperaría a que cada programa terminase antes de ejecutar el administrador de ventanas o el entorno de escritorio. Tenga en cuenta que algunos programas no deben ser bifurcados, para evitar errores de secuencia (*race bugs*), como es el caso de [xrdb](/index.php/Xrdb "Xrdb"). Antes de pasar `exec` se reemplazará el proceso del script con el proceso del administrador de ventanas, de modo que X no salga incluso si este proceso se bifurca en segundo plano.
+Los programas de ejecución prolongada que se inician antes que el gestor de ventanas, como un salvapantallas y una aplicación de fondo de pantalla, deben bifurcarse (*fork*) o ejecutarse en segundo plano añadiendo un signo `&`. De lo contrario, el script se detendría y esperaría a que cada programa terminase antes de ejecutar el gestor de ventanas o el entorno de escritorio. Tenga en cuenta que algunos programas no deben ser bifurcados, para evitar errores de secuencia (*race bugs*), como es el caso de [xrdb](/index.php/Xrdb "Xrdb"). Antes de pasar `exec` se reemplazará el proceso del script con el proceso del gestor de ventanas, de modo que X no salga incluso si este proceso se bifurca en segundo plano.
 
 ### xserverrc
 
@@ -93,7 +93,7 @@ $ startx
 
 ```
 
-o
+O si está configurado [#xserverrc](#xserverrc):
 
 ```
 $ xinit -- :1
@@ -102,20 +102,24 @@ $ xinit -- :1
 
 **Nota:** *xinit* no soporta múltiples pantallas cuando ya se ha iniciado otro servidor X. Para ello debe especificar la pantalla añadiendo `-- :*número_de_pantalla*`, donde `*número_de_pantalla*` es 1 o más.
 
-Su administrador de ventanas (o entorno de escritorio) elegido debería comenzar ahora correctamente.
+Su gestor de ventanas (o entorno de escritorio) elegido debería comenzar ahora correctamente.
 
-Para salir de X, ejecute la función de salida de su administrador de ventanas (asumiendo que tiene una). Si carece de dicha funcionalidad, ejecute:
+Para salir de X, ejecute la función de salida de su gestor de ventanas (asumiendo que tiene una). Si carece de dicha funcionalidad, ejecute:
 
 ```
 $ pkill -15 Xorg
 
 ```
 
-**Nota:** *pkill* eliminará todas las instancias de X en ejecución. Para terminar específicamente el administrador de ventanas en el terminal virtual actual, ejecute:
+**Nota:** *pkill* eliminará todas las instancias de X en ejecución. Para terminar específicamente el gestor de ventanas en el terminal virtual actual, ejecute:
 ```
 $ pkill -15 -t tty"$XDG_VTNR" Xorg
 
 ```
+
+Véase también [signal(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/signal.7).
+
+## Consejos y trucos
 
 ## Inicio automático de X al inicio de sesión
 
@@ -140,25 +144,23 @@ Véase también [Fish#Start X at login](/index.php/Fish#Start_X_at_login "Fish")
 
 **Sugerencia:** Este método se puede combinar con el [inicio de sesión automático a la consola virtual](/index.php/Automatic_login_to_virtual_console_(Espa%C3%B1ol) "Automatic login to virtual console (Español)").
 
-## Consejos y trucos
+### Sobrescribir xinitrc
 
-### Sobrescribir xinitrc desde la línea de órdenes
-
-Si tiene un `~/.xinitrc` en funcionamiento, pero solo desea probar otro administrador de ventanas o entorno de escritorio, puede ejecutarlo introduciendo *startx* seguido de la ruta al administrador de ventanas:
+Si tiene un `~/.xinitrc` en funcionamiento pero solo desea probar otro gestor de ventanas o entorno de escritorio, puede ejecutarlo introduciendo *startx* seguido de la ruta al gestor de ventanas:
 
 ```
 $ startx /usr/bin/i3
 
 ```
 
-Si el administrador de ventanas tiene argumentos, deben citarse para ser reconocidos como parte del primer parámetro de *startx*:
+Si el binario tiene argumentos, deben citarse para ser reconocidos como parte del primer parámetro de *startx*:
 
 ```
 $ startx "/usr/bin/*gestor-de-ventanas* --*key value*"
 
 ```
 
-Tenga en cuenta que se **requiere** la ruta completa. Opcionalmente, también puede especificar opciones personalizadas para el script [#xserverrc](#xserverrc) añadiéndolas después de `--`, por ejemplo:
+Tenga en cuenta que se **requiere** la ruta completa. También puede especificar opciones personalizadas para el script [#xserverrc](#xserverrc) añadiéndolas después del signo de guión doble `--`:
 
 ```
 $ startx /usr/bin/enlightenment -- -br +bs -dpi 96
@@ -167,13 +169,13 @@ $ startx /usr/bin/enlightenment -- -br +bs -dpi 96
 
 Véase también [startx(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/startx.1).
 
-**Sugerencia:** Esto se puede utilizar incluso para iniciar un programa gráfico normal pero sin ninguna de las funciones del administrador de ventanas. Véase también [#Inicio de aplicaciones sin un administrador de ventanas](#Inicio_de_aplicaciones_sin_un_administrador_de_ventanas) y [Ejecutando programa en una pantalla X separada](/index.php/Running_program_in_separate_X_display "Running program in separate X display")
+**Sugerencia:** Esto se puede utilizar para iniciar programas gráficos normales pero sin ninguna de las funciones del gestor de ventanas básico. Véase también [#Iniciar solo aplicaciones](#Iniciar_solo_aplicaciones) y [Ejecutando programa en una pantalla X separada](/index.php/Running_program_in_separate_X_display "Running program in separate X display")
 
 ### Cambio entre entornos de escritorio/gestores de ventanas
 
-Si está cambiando con frecuencia entre diferentes entornos de escritorio o administradores de ventanas, es conveniente utilizar un [administrador de pantalla](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)") o expandir `~/.xinitrc` para hacer posible el cambio.
+Si está cambiando con frecuencia entre diferentes entornos de escritorio o gestores de ventanas, es conveniente utilizar un [gestor de pantalla](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)") o expandir `~/.xinitrc` para hacer posible el cambio.
 
-El siguiente `~/.xinitrc` de ejemplo muestra como iniciar un entorno de escritorio o administrador de ventanas en particular con un argumento:
+El siguiente ejemplo muestra como iniciar un entorno de escritorio o gestor de ventanas en particular con un argumento:
 
  `~/.xinitrc` 
 ```
@@ -206,9 +208,9 @@ $ startx ~/.xinitrc *session*
 
 ```
 
-### Inicio de aplicaciones sin un administrador de ventanas
+### Iniciar solo aplicaciones
 
-Es posible iniciar solo aplicaciones específicas sin un administrador de ventanas, aunque lo más probable es que esto solo sea útil con una sola aplicación que se muestre en modo de pantalla completa. Por ejemplo:
+Es posible iniciar solo aplicaciones específicas sin un gestor de ventanas, aunque lo más probable es que esto solo sea útil con una sola aplicación que se muestre en modo de pantalla completa. Por ejemplo:
 
  `~/.xinitrc` 
 ```
@@ -218,9 +220,11 @@ exec chromium
 
 ```
 
+Alternativamente, se puede llamar al binario directamente desde el símbolo del sistema como se describe en [#Sobrescribir xinitrc](#Sobrescribir_xinitrc).
+
 Con este método, debe establecer la geometría de cada ventana de la aplicación a través de sus propios archivos de configuración, si es posible.
 
-**Sugerencia:** Este método puede ser útil para lanzar juegos gráficos, especialmente en sistemas donde excluir el uso de la memoria o la CPU de un administrador de ventanas o entorno de escritorio, y posibles aplicaciones accesorias, puede ayudar a mejorar el rendimiento del juego.
+**Sugerencia:** Esto puede ser útil para lanzar juegos gráficos, donde excluir la sobrecarga de un compositor puede ayudar a mejorar el rendimiento del juego.
 
 Véase también [Display manager#Starting applications without a window manager](/index.php/Display_manager#Starting_applications_without_a_window_manager "Display manager").
 

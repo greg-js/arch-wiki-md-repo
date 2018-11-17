@@ -12,6 +12,7 @@ From [Wikipedia:TeamSpeak](https://en.wikipedia.org/wiki/TeamSpeak "wikipedia:Te
     *   [2.2 First startup](#First_startup)
     *   [2.3 Regular startup](#Regular_startup)
     *   [2.4 Re-Initialising Teamspeak](#Re-Initialising_Teamspeak)
+    *   [2.5 Starting Teamspeak with disabled IPv6 stack](#Starting_Teamspeak_with_disabled_IPv6_stack)
 *   [3 See also](#See_also)
 
 ## Installation
@@ -107,6 +108,16 @@ $ rm /var/log/teamspeak3-server/*.log
 ```
 
 *   Now follow the same instructions for a first time setup.
+
+### Starting Teamspeak with disabled IPv6 stack
+
+When booting your system with the `ipv6.disable=1` [Kernel Parameter](https://wiki.archlinux.org/index.php/Kernel_parameters) to [disable the IPv6 stack](https://wiki.archlinux.org/index.php/IPv6#Disable_functionality), Teamspeak wont be able to start with the default configuration. Edit `/etc/teamspeak3-server.ini` to change the listening IPs.
+
+ `/etc/teamspeak3-server.ini` 
+```
+# query_ip=0.0.0.0, ::
+query_ip=0.0.0.0
+```
 
 ## See also
 

@@ -190,10 +190,11 @@
 | <small>5.2.2.1.</small> [Console applications](/index.php/Category:Console_applications "Category:Console applications") <small>(20) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
 | <small>5.2.2.2.</small> [Download utilities](/index.php/Category:Download_utilities "Category:Download utilities") <small>(6) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
 | <small>5.2.2.3.</small> [Mail retrieval agents](/index.php/Category:Mail_retrieval_agents "Category:Mail retrieval agents") <small>(5) (also in [Email clients](/index.php/Category:Email_clients "Category:Email clients"))</small> |
-| <small>5.2.2.4.</small> [Shell builtins](/index.php/Category:Shell_builtins "Category:Shell builtins") <small>(3)</small> |
-| <small>5.2.2.5.</small> [Superseded commands](/index.php/Category:Superseded_commands "Category:Superseded commands") <small>(5)</small> |
-| <small>5.2.2.6.</small> [Terminal multiplexers](/index.php/Category:Terminal_multiplexers "Category:Terminal multiplexers") <small>(3)</small> |
-| <small>5.2.2.7.</small> [Xorg commands](/index.php/Category:Xorg_commands "Category:Xorg commands") <small>(11) (also in [X server](/index.php/Category:X_server "Category:X server"))</small> |
+| <small>5.2.2.4.</small> [Package managers](/index.php/Category:Package_managers "Category:Package managers") <small>(8)</small> |
+| <small>5.2.2.5.</small> [Shell builtins](/index.php/Category:Shell_builtins "Category:Shell builtins") <small>(4)</small> |
+| <small>5.2.2.6.</small> [Superseded commands](/index.php/Category:Superseded_commands "Category:Superseded commands") <small>(5)</small> |
+| <small>5.2.2.7.</small> [Terminal multiplexers](/index.php/Category:Terminal_multiplexers "Category:Terminal multiplexers") <small>(3)</small> |
+| <small>5.2.2.8.</small> [Xorg commands](/index.php/Category:Xorg_commands "Category:Xorg commands") <small>(11) (also in [X server](/index.php/Category:X_server "Category:X server"))</small> |
 | <small>5.2.3.</small> [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators") <small>(17) (also in [Applications](/index.php/Category:Applications "Category:Applications"), [Emulation](/index.php/Category:Emulation "Category:Emulation"))</small> |
 | <small>5.3.</small> [Daemons](/index.php/Category:Daemons "Category:Daemons") <small>(16) (also in [System administration](/index.php/Category:System_administration "Category:System administration"))</small> |
 | <small>5.3.1.</small> [Servers](/index.php/Category:Servers "Category:Servers") <small>(9) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
@@ -244,10 +245,11 @@
 | <small>6.3.2.1.</small> [Console applications](/index.php/Category:Console_applications "Category:Console applications") <small>(20) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
 | <small>6.3.2.2.</small> [Download utilities](/index.php/Category:Download_utilities "Category:Download utilities") <small>(6) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
 | <small>6.3.2.3.</small> [Mail retrieval agents](/index.php/Category:Mail_retrieval_agents "Category:Mail retrieval agents") <small>(5) (also in [Email clients](/index.php/Category:Email_clients "Category:Email clients"))</small> |
-| <small>6.3.2.4.</small> [Shell builtins](/index.php/Category:Shell_builtins "Category:Shell builtins") <small>(3)</small> |
-| <small>6.3.2.5.</small> [Superseded commands](/index.php/Category:Superseded_commands "Category:Superseded commands") <small>(5)</small> |
-| <small>6.3.2.6.</small> [Terminal multiplexers](/index.php/Category:Terminal_multiplexers "Category:Terminal multiplexers") <small>(3)</small> |
-| <small>6.3.2.7.</small> [Xorg commands](/index.php/Category:Xorg_commands "Category:Xorg commands") <small>(11) (also in [X server](/index.php/Category:X_server "Category:X server"))</small> |
+| <small>6.3.2.4.</small> [Package managers](/index.php/Category:Package_managers "Category:Package managers") <small>(8)</small> |
+| <small>6.3.2.5.</small> [Shell builtins](/index.php/Category:Shell_builtins "Category:Shell builtins") <small>(4)</small> |
+| <small>6.3.2.6.</small> [Superseded commands](/index.php/Category:Superseded_commands "Category:Superseded commands") <small>(5)</small> |
+| <small>6.3.2.7.</small> [Terminal multiplexers](/index.php/Category:Terminal_multiplexers "Category:Terminal multiplexers") <small>(3)</small> |
+| <small>6.3.2.8.</small> [Xorg commands](/index.php/Category:Xorg_commands "Category:Xorg commands") <small>(11) (also in [X server](/index.php/Category:X_server "Category:X server"))</small> |
 | <small>6.3.3.</small> [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators") <small>(17) (also in [Applications](/index.php/Category:Applications "Category:Applications"), [Emulation](/index.php/Category:Emulation "Category:Emulation"))</small> |
 | <small>6.4.</small> [Configuration files](/index.php/Category:Configuration_files "Category:Configuration files") <small>(11)</small> |
 | <small>6.5.</small> [Configuration management](/index.php/Category:Configuration_management "Category:Configuration management") <small>(8)</small> |

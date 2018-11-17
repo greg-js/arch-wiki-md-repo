@@ -482,6 +482,8 @@ You will need to install KDE Connect both on your computer and on your Android. 
 
 It is possible to use KDE Connect even if you do not use the Plasma desktop. For desktop environments that use AppIndicators, such as Unity, install [indicator-kdeconnect](https://aur.archlinux.org/packages/indicator-kdeconnect/) package as well. For GNOME users, better integration can be achieved by installing [gnome-shell-extension-gsconnect](https://aur.archlinux.org/packages/gnome-shell-extension-gsconnect/) instead of [kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect).
 
+If you use a [firewall](/index.php/Firewall "Firewall"), you need to open UDP and TCP ports `1714` through `1764`. See [https://community.kde.org/KDEConnect#Troubleshooting](https://community.kde.org/KDEConnect#Troubleshooting).
+
 ## Tips and tricks
 
 ### Use a different window manager

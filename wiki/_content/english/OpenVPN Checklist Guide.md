@@ -38,7 +38,7 @@ This article summarizes the install process required for OpenVPN. See [OpenVPN](
 
  `# easyrsa build-client-full *<client-name>* nopass` 
 
-All certificates are stored in `keys` directory. If you mess up, you can start all over by doing a `easyrsa clean-all`
+All certificates are stored in `pki` directory. If you mess up, you can start all over by doing a `easyrsa clean-all`
 
 Copy to each client the `ca.crt`, and their respective crt and key files.
 

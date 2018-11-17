@@ -132,7 +132,7 @@ sigok.verteiltesysteme.net: 134.91.78.139
 
 **Warning:** As of version 239:
 
-*   Only opportunistic mode is supported making *systemd-resolved* vulnerable to downgrade attacks.
+*   Only opportunistic mode is supported making *systemd-resolved* vulnerable to downgrade attacks. See [systemd issue 10755](https://github.com/systemd/systemd/issues/10755).
 *   DNS server certificates are not checked making *systemd-resolved* vulnerable to man-in-the-middle attacks. See [systemd issue 9397](https://github.com/systemd/systemd/issues/9397).
 
 DNS over TLS is disabled by default. To enable it change the `DNSOverTLS=` setting in the `[Resolve]` section in [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5).

@@ -36,15 +36,14 @@ Related articles
     *   [4.5 Prevent new Wine file associations](#Prevent_new_Wine_file_associations)
     *   [4.6 Execute Windows binaries with Wine implicitly](#Execute_Windows_binaries_with_Wine_implicitly)
     *   [4.7 Dual Head with different resolutions](#Dual_Head_with_different_resolutions)
-    *   [4.8 16-bit programs](#16-bit_programs)
-    *   [4.9 Burning optical media](#Burning_optical_media)
-    *   [4.10 Proper mounting of optical media images](#Proper_mounting_of_optical_media_images)
-    *   [4.11 Show FPS overlay in games](#Show_FPS_overlay_in_games)
-    *   [4.12 Running Wine under a separate user account](#Running_Wine_under_a_separate_user_account)
-    *   [4.13 Temp directory on tmpfs](#Temp_directory_on_tmpfs)
-    *   [4.14 Prevent installing Mono/Gecko](#Prevent_installing_Mono/Gecko)
-    *   [4.15 Vulkan](#Vulkan)
-    *   [4.16 Remove Wine file bindings](#Remove_Wine_file_bindings)
+    *   [4.8 Burning optical media](#Burning_optical_media)
+    *   [4.9 Proper mounting of optical media images](#Proper_mounting_of_optical_media_images)
+    *   [4.10 Show FPS overlay in games](#Show_FPS_overlay_in_games)
+    *   [4.11 Running Wine under a separate user account](#Running_Wine_under_a_separate_user_account)
+    *   [4.12 Temp directory on tmpfs](#Temp_directory_on_tmpfs)
+    *   [4.13 Prevent installing Mono/Gecko](#Prevent_installing_Mono/Gecko)
+    *   [4.14 Vulkan](#Vulkan)
+    *   [4.15 Remove Wine file bindings](#Remove_Wine_file_bindings)
 *   [5 Third-party applications](#Third-party_applications)
 *   [6 See also](#See_also)
 
@@ -433,28 +432,6 @@ The [wine](https://www.archlinux.org/packages/?name=wine) package installs a *bi
 If you have issues with dual-head setups and different display resolutions you are probably missing [lib32-libxrandr](https://www.archlinux.org/packages/?name=lib32-libxrandr).
 
 Also installing [lib32-libxinerama](https://www.archlinux.org/packages/?name=lib32-libxinerama) might fix dual-head issues with wine.
-
-### 16-bit programs
-
-Upon running older Windows 9x programs, the following error may be encountered:
-
-```
-modify_ldt: Invalid argument
-err:winediag:build_module Failed to create module for "krnl386.exe",
-16-bit LDT support may be missing.
-err:module:attach_process_dlls "krnl386.exe16" failed to initialize,
-aborting
-
-```
-
-If you need to run these programs under Wine, you will have to [compile and install a custom kernel](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System") (unless bug [FS#57408](https://bugs.archlinux.org/task/57408) is fixed). Your kernel config will need the following options:
-
-```
-CONFIG_X86_16BIT=y
-CONFIG_X86_ESPFIX64=y
-CONFIG_MODIFY_LDT_SYSCALL=y
-
-```
 
 ### Burning optical media
 

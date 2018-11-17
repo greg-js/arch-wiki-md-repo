@@ -102,7 +102,7 @@ $ sddm-greeter --test-mode --theme /usr/share/sddm/themes/breeze
 
 ```
 
-This should open a new window and show a preview of the theme.
+This should open a new window for every monitor you have connected and show a preview of the theme.
 
 **Note:** This is just a preview. In this mode, some actions like shutdown, suspend or login will have no effect.
 

@@ -1,4 +1,4 @@
-Scissy is a standalone and minimal git hosting service.
+[Scissy](https://github.com/abique/scissy) is a standalone and minimal git hosting service.
 
 ## Contents
 

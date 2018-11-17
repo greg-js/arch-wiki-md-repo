@@ -2,34 +2,34 @@
 
 ## Contents
 
-*   [1 Принцип работы](#.D0.9F.D1.80.D0.B8.D0.BD.D1.86.D0.B8.D0.BF_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D1.8B)
-*   [2 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-*   [3 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
-    *   [3.1 Настройка Tor Relay](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_Tor_Relay)
-*   [4 Запуск Tor в Chroot](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_Tor_.D0.B2_Chroot)
-*   [5 Запуск Tor в systemd-nspawn контейнере с виртуальным сетевым интерфейсом](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_Tor_.D0.B2_systemd-nspawn_.D0.BA.D0.BE.D0.BD.D1.82.D0.B5.D0.B9.D0.BD.D0.B5.D1.80.D0.B5_.D1.81_.D0.B2.D0.B8.D1.80.D1.82.D1.83.D0.B0.D0.BB.D1.8C.D0.BD.D1.8B.D0.BC_.D1.81.D0.B5.D1.82.D0.B5.D0.B2.D1.8B.D0.BC_.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.84.D0.B5.D0.B9.D1.81.D0.BE.D0.BC)
-    *   [5.1 Установка и настройка хоста](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B8_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.85.D0.BE.D1.81.D1.82.D0.B0)
-        *   [5.1.1 Виртуальный сетевой интерфейс](#.D0.92.D0.B8.D1.80.D1.82.D1.83.D0.B0.D0.BB.D1.8C.D0.BD.D1.8B.D0.B9_.D1.81.D0.B5.D1.82.D0.B5.D0.B2.D0.BE.D0.B9_.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.84.D0.B5.D0.B9.D1.81)
-        *   [5.1.2 Запуск и включение systemd-nspawn](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D0.B8_.D0.B2.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_systemd-nspawn)
-    *   [5.2 Настройка контейнера](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.BA.D0.BE.D0.BD.D1.82.D0.B5.D0.B9.D0.BD.D0.B5.D1.80.D0.B0)
-        *   [5.2.1 Запуск и включение systemd-networkd](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D0.B8_.D0.B2.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_systemd-networkd)
-    *   [5.3 Настройка Tor](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_Tor)
-*   [6 Использование](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
-*   [7 Веб-сёрфинг](#.D0.92.D0.B5.D0.B1-.D1.81.D1.91.D1.80.D1.84.D0.B8.D0.BD.D0.B3)
+*   [1 Принцип работы](#Принцип_работы)
+*   [2 Установка](#Установка)
+*   [3 Настройка](#Настройка)
+    *   [3.1 Настройка Tor Relay](#Настройка_Tor_Relay)
+*   [4 Запуск Tor в Chroot](#Запуск_Tor_в_Chroot)
+*   [5 Запуск Tor в systemd-nspawn контейнере с виртуальным сетевым интерфейсом](#Запуск_Tor_в_systemd-nspawn_контейнере_с_виртуальным_сетевым_интерфейсом)
+    *   [5.1 Установка и настройка хоста](#Установка_и_настройка_хоста)
+        *   [5.1.1 Виртуальный сетевой интерфейс](#Виртуальный_сетевой_интерфейс)
+        *   [5.1.2 Запуск и включение systemd-nspawn](#Запуск_и_включение_systemd-nspawn)
+    *   [5.2 Настройка контейнера](#Настройка_контейнера)
+        *   [5.2.1 Запуск и включение systemd-networkd](#Запуск_и_включение_systemd-networkd)
+    *   [5.3 Настройка Tor](#Настройка_Tor)
+*   [6 Использование](#Использование)
+*   [7 Веб-сёрфинг](#Веб-сёрфинг)
     *   [7.1 Firefox](#Firefox)
     *   [7.2 Chromium](#Chromium)
-*   [8 Tor и HTTP прокси](#Tor_.D0.B8_HTTP_.D0.BF.D1.80.D0.BE.D0.BA.D1.81.D0.B8)
+*   [8 Tor и HTTP прокси](#Tor_и_HTTP_прокси)
     *   [8.1 Polipo](#Polipo)
     *   [8.2 Privoxy](#Privoxy)
-        *   [8.2.1 Tor и Privoxy в Firefox](#Tor_.D0.B8_Privoxy_.D0.B2_Firefox)
-        *   [8.2.2 Tor и Privoxy в других приложениях](#Tor_.D0.B8_Privoxy_.D0.B2_.D0.B4.D1.80.D1.83.D0.B3.D0.B8.D1.85_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F.D1.85)
-*   [9 Запуск сервера Tor](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D1.81.D0.B5.D1.80.D0.B2.D0.B5.D1.80.D0.B0_Tor)
-    *   [9.1 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_2)
+        *   [8.2.1 Tor и Privoxy в Firefox](#Tor_и_Privoxy_в_Firefox)
+        *   [8.2.2 Tor и Privoxy в других приложениях](#Tor_и_Privoxy_в_других_приложениях)
+*   [9 Запуск сервера Tor](#Запуск_сервера_Tor)
+    *   [9.1 Настройка](#Настройка_2)
 *   [10 TorDNS](#TorDNS)
-*   [11 "Торификация"](#.22.D0.A2.D0.BE.D1.80.D0.B8.D1.84.D0.B8.D0.BA.D0.B0.D1.86.D0.B8.D1.8F.22)
-*   [12 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
-    *   [12.1 Проблема с пользовательским значением](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D0.B0_.D1.81_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D1.81.D0.BA.D0.B8.D0.BC_.D0.B7.D0.BD.D0.B0.D1.87.D0.B5.D0.BD.D0.B8.D0.B5.D0.BC)
-*   [13 Внешние ссылки](#.D0.92.D0.BD.D0.B5.D1.88.D0.BD.D0.B8.D0.B5_.D1.81.D1.81.D1.8B.D0.BB.D0.BA.D0.B8)
+*   [11 "Торификация"](#"Торификация")
+*   [12 Решение проблем](#Решение_проблем)
+    *   [12.1 Проблема с пользовательским значением](#Проблема_с_пользовательским_значением)
+*   [13 Внешние ссылки](#Внешние_ссылки)
 
 ## Принцип работы
 
@@ -156,7 +156,7 @@ KillSignal=SIGINT
 
 ```
 
-[установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2 "Pacman (Русский)") [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts).
+[установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_определенных_пакетов "Pacman (Русский)") [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts).
 
 Установите [base](https://www.archlinux.org/groups/x86_64/base/), [tor](https://www.archlinux.org/packages/?name=tor) и [arm](https://www.archlinux.org/packages/?name=arm) и отмените [linux](https://www.archlinux.org/packages/?name=linux), подробнее [Systemd-nspawn#Installation with pacstrap](/index.php/Systemd-nspawn#Installation_with_pacstrap "Systemd-nspawn"):
 

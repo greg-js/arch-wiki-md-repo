@@ -107,7 +107,7 @@ These are limitations of Windows and not NTFS: any other OS using the NTFS parti
 
 ## Installation
 
-The recommended way to setup a Linux/Windows dual booting system is to first install Windows, only using part of the disk for its partitions. When you have finished the Windows setup, boot into the Linux install environment where you can create additional partitions for Linux while leaving the existing Windows partitions untouched. The Windows installation will create the EFI System Partition which can be used by your Linux bootloader.
+The recommended way to setup a Linux/Windows dual booting system is to first install Windows, only using part of the disk for its partitions. When you have finished the Windows setup, boot into the Linux install environment where you can create and resize partitions for Linux while leaving the existing Windows partitions untouched. The Windows installation will create the EFI System Partition which can be used by your Linux bootloader.
 
 ### BIOS systems
 
