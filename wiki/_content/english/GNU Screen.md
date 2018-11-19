@@ -19,7 +19,7 @@ See the official overview [GNU Screen manual](https://www.gnu.org/software/scree
     *   [3.6 Use 256 colors](#Use_256_colors)
     *   [3.7 Informative statusbar](#Informative_statusbar)
     *   [3.8 Turn welcome message off](#Turn_welcome_message_off)
-    *   [3.9 Turn your hardstatus line into a dynamic urxvt|xterm|aterm window title](#Turn_your_hardstatus_line_into_a_dynamic_urxvt.7Cxterm.7Caterm_window_title)
+    *   [3.9 Turn your hardstatus line into a dynamic urxvt|xterm|aterm window title](#Turn_your_hardstatus_line_into_a_dynamic_urxvt|xterm|aterm_window_title)
     *   [3.10 Use X scrolling mechanism](#Use_X_scrolling_mechanism)
     *   [3.11 Attach an existing running program to screen](#Attach_an_existing_running_program_to_screen)
     *   [3.12 Setting a different bash prompt while in screen](#Setting_a_different_bash_prompt_while_in_screen)
@@ -27,7 +27,7 @@ See the official overview [GNU Screen manual](https://www.gnu.org/software/scree
     *   [3.14 Getting rid of the vertical and horizontal bars](#Getting_rid_of_the_vertical_and_horizontal_bars)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Fix for residual editor text](#Fix_for_residual_editor_text)
-    *   [4.2 Fix for Name column in windowlist only show "bash"](#Fix_for_Name_column_in_windowlist_only_show_.22bash.22)
+    *   [4.2 Fix for Name column in windowlist only show "bash"](#Fix_for_Name_column_in_windowlist_only_show_"bash")
 *   [5 See also](#See_also)
 
 ## Installation

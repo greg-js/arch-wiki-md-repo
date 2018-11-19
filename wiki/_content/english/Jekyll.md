@@ -28,7 +28,7 @@ Jekyll can be installed in Arch Linux with the [RubyGems](https://en.wikipedia.o
 
 **Note:** RubyGems 1.8 and above are displaying [numerous uncritical warnings](https://github.com/rspec/rspec-core/issues/345).
 
-The best way to install Jekyll is with [RubyGems](/index.php/Ruby#RubyGems "Ruby"), which is a package manager for the [Ruby](/index.php/Ruby "Ruby") programming language. RubyGems comes with the [ruby](https://www.archlinux.org/packages/?name=ruby) package. Jekyll can then be installed for all users on the machine using the `gem` command as root. Alternative installation methods are available on the [Ruby](/index.php/Ruby#RubyGems "Ruby") page.
+The best way to install Jekyll is with [RubyGems](/index.php/RubyGems "RubyGems"), which is a package manager for the [Ruby](/index.php/Ruby "Ruby") programming language. RubyGems comes with the [ruby](https://www.archlinux.org/packages/?name=ruby) package. Jekyll can then be installed for all users on the machine using the `gem` command as root. Alternative installation methods are available on the [Ruby](/index.php/Ruby#RubyGems "Ruby") page.
 
 Before installing Jekyll make sure to update RubyGems.
 

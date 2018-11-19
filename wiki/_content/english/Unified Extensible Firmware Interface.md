@@ -18,6 +18,7 @@ It is distinct from the commonly used "[MBR boot code](/index.php/Partitioning#M
     *   [2.1 Checking the firmware bitness](#Checking_the_firmware_bitness)
         *   [2.1.1 From Linux](#From_Linux)
         *   [2.1.2 From Mac OS](#From_Mac_OS)
+        *   [2.1.3 From Microsoft Windows](#From_Microsoft_Windows)
 *   [3 Linux kernel config options for UEFI](#Linux_kernel_config_options_for_UEFI)
 *   [4 UEFI variables](#UEFI_variables)
     *   [4.1 UEFI variables support in Linux kernel](#UEFI_variables_support_in_Linux_kernel)
@@ -72,7 +73,7 @@ The firmware bitness can be checked from a booted operating system.
 
 #### From Linux
 
-The UEFI firmware bitness can be found via the kernel's sysfs interface. Run:
+On distributions running Linux kernel 4.0 or newer, the UEFI firmware bitness can be found via the sysfs interface. Run:
 
 ```
 $ cat /sys/firmware/efi/fw_platform_size
@@ -94,6 +95,14 @@ $ ioreg -l -p IODeviceTree | grep firmware-abi
 
 If the command returns `EFI32` then it is IA32 (32-bit) EFI firmware. If it returns `EFI64` then it is x86_64 EFI firmware. Most of the Macs do not have UEFI 2.x firmware as Apple's EFI implementation is not fully compliant with UEFI 2.x specification.
 
+#### From Microsoft Windows
+
+64-bit versions of Windows do not support booting on a 32-bit UEFI. So, if you have a 32-bit version of Windows booted in UEFI mode, you have a 32-bit UEFI.
+
+To check the bitness run `msinfo32.exe`. In the *System Summary* section look at the values of "System Type" and "BIOS mode".
+
+For a 64-bit Windows on a 64-bit UEFI it will be `System Type: x64-based PC` and `BIOS mode: UEFI`, for a 32-bit Windows on a 32-bit UEFI - `System Type: x86-based PC` and `BIOS mode: UEFI`. If the "BIOS mode" is not `UEFI`, then Windows is not installed in UEFI mode.
+
 ## Linux kernel config options for UEFI
 
 The required Linux Kernel configuration options[[2]](https://www.kernel.org/doc/Documentation/x86/x86_64/uefi.txt) for UEFI systems are:
@@ -102,7 +111,8 @@ The required Linux Kernel configuration options[[2]](https://www.kernel.org/doc/
 CONFIG_RELOCATABLE=y
 CONFIG_EFI=y
 CONFIG_EFI_STUB=y
-CONFIG_FB_EFI=y
+CONFIG_X86_SYSFB=y
+CONFIG_FB_SIMPLE=y
 CONFIG_FRAMEBUFFER_CONSOLE=y
 
 ```

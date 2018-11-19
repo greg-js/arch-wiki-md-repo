@@ -713,7 +713,7 @@ awful.rules.rules = {
 When using [scrot](https://en.wikipedia.org/wiki/Scrot "w:Scrot"), you may have problems at assigning a keyboard shortcut to the mouse selection option (formally `scrot -s`). To fix it, add the following line to your `rc.lua`:
 
 ```
-awful.key( { modkey,	 }, <shortcut>, nil, function () awful.util.spawn_with_shell("scrot -s") end)
+awful.key( { modkey,	 }, <shortcut>, nil, function () awful.spawn("scrot -s") end)
 
 ```
 

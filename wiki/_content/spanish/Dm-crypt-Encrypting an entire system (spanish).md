@@ -5,7 +5,7 @@
 [Preparar dispositivo](/index.php/Dm-crypt/Drive_preparation_(Espa%C3%B1ol) "Dm-crypt/Drive preparation (Español)") – [Cifrar dispositivo](/index.php/Dm-crypt/Device_encryption_(Espa%C3%B1ol) "Dm-crypt/Device encryption (Español)") – [Cifrar sistema de archivos no root](/index.php/Dm-crypt/Encrypting_a_non-root_file_system_(Espa%C3%B1ol) "Dm-crypt/Encrypting a non-root file system (Español)") – <a class="mw-selflink selflink">Cifrar un sistema completo</a> – [Cifrar espacio de intercambio](/index.php/Dm-crypt/Swap_encryption_(Espa%C3%B1ol) "Dm-crypt/Swap encryption (Español)") – [Montar y acceder a /home cifrado](/index.php/Dm-crypt/Mounting_at_login_(Espa%C3%B1ol) "Dm-crypt/Mounting at login (Español)") – [Configurar el sistema](/index.php/Dm-crypt/System_configuration_(Espa%C3%B1ol) "Dm-crypt/System configuration (Español)") – [Especialidades](/index.php/Dm-crypt/Specialties_(Espa%C3%B1ol) "Dm-crypt/Specialties (Español)")
 
 **Estado de la traducción**
-Este artículo es una traducción de [Dm-crypt/Encrypting an entire system](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system"), revisada por última vez el **2018-10-01**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Dm-crypt/Encrypting_an_entire_system&diff=0&oldid=543729) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Dm-crypt/Encrypting an entire system](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system"), revisada por última vez el **2018-11-18**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Dm-crypt/Encrypting_an_entire_system&diff=0&oldid=553778) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Los siguientes son ejemplos de escenarios comunes en el cifrado completo de un sistema con *dm-crypt*. Se explican todas las adaptaciones que se necesitan introducir en el [proceso de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)"). Todas las herramientas necesarias para ello están presentes en la [imagen de instalación](https://www.archlinux.org/download/).
 
@@ -139,7 +139,7 @@ utiliza dm-crypt solo después de configurar RAID.
 *   Similar a [#LUKS sobre LVM](#LUKS_sobre_LVM)
 
  |
-| [#Plain dm-crypt](#Plain_dm-crypt)
+| [#Modalidad plain de dm-crypt](#Modalidad_plain_de_dm-crypt)
 
 utiliza la modalidad plain de dm-crypt, es decir, sin una cabecera LUKS y sus opciones para múltiples claves.
 Este escenario también permite emplear dispositivos USB para `/boot` y almacenamiento de claves, que se puede aplicar a los otros escenarios.
@@ -501,7 +501,7 @@ Esquema de particionado:
 
 ```
 
-Escriba aleatóriamente la partición `/dev/sda2` como indica el artículo [dm-crypt/Drive preparation (Español)#Limpiar un disco o partición vacía con dm-crypt](/index.php/Dm-crypt/Drive_preparation_(Espa%C3%B1ol)#Limpiar_un_disco_o_partición_vacía_con_dm-crypt "Dm-crypt/Drive preparation (Español)").
+Escriba aleatóriamente la partición `/dev/sda2` como indica el artículo [dm-crypt/Drive preparation (Español)#Limpiar un disco o partición vacíos con dm-crypt](/index.php/Dm-crypt/Drive_preparation_(Espa%C3%B1ol)#Limpiar_un_disco_o_partición_vacíos_con_dm-crypt "Dm-crypt/Drive preparation (Español)").
 
 ### Preparar los volúmenes lógicos
 
@@ -560,7 +560,7 @@ Véase [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_con
 Con el fin de desbloquear en el arranque la partición raíz cifrada, es necesario pasar los siguientes parámetros del kernel al gestor de arranque:
 
 ```
-cryptdevice=/dev/MyVolGroup/cryptroot:root root=/dev/mapper/root
+cryptdevice=UUID=*device-UUID*:root root=/dev/mapper/root
 
 ```
 
@@ -796,12 +796,12 @@ El esquema de particionado del disco es:
 
 **Sugerencia:**
 
-*   También es posible utilizar una sola llave USB mediante la copia del archivo de claves a la initram directamente. Un ejemplo de archivo de claves `/etc/keyfile` copiado a la imagen initram se hace estableciendo `FILES="/etc/keyfile"` en `/etc/mkinitcpio.conf`. La manera de instruir al hook `encrypt` para que lea el archivo de claves en la imagen initram es utilizando el prefijo `rootfs:` delante del nombre del archivo, por ejemplo `cryptkey=rootfs:/etc/keyfile`.
+*   También es posible utilizar una sola llave USB mediante la copia del archivo de claves a la initramfs directamente. Un ejemplo de archivo de claves `/etc/keyfile` copiado a la imagen initramfs se hace estableciendo `FILES="/etc/keyfile"` en `/etc/mkinitcpio.conf`. La manera de instruir al hook `encrypt` para que lea el archivo de claves en la imagen initramfs es utilizando el prefijo `rootfs:` delante del nombre del archivo, por ejemplo `cryptkey=rootfs:/etc/keyfile`.
 *   Otra opción es usar una frase de acceso con buena [entropía](/index.php/Disk_encryption_(Espa%C3%B1ol)#Elegir_una_frase_de_acceso_sólida "Disk encryption (Español)").
 
 ### Preparar el disco
 
-Es de vital importancia que el dispositivo mapeado está lleno de datos. En particular, esto se aplica al caso que nos afecta.
+Es de vital importancia que el dispositivo mapeado está lleno de datos aleatorios. En particular, esto se aplica al caso que nos afecta.
 
 Véase [Dm-crypt/Drive preparation (Español)](/index.php/Dm-crypt/Drive_preparation_(Espa%C3%B1ol) "Dm-crypt/Drive preparation (Español)") y [Dm-crypt/Drive preparation (Español)#Métodos específicos de dm-crypt](/index.php/Dm-crypt/Drive_preparation_(Espa%C3%B1ol)#Métodos_específicos_de_dm-crypt "Dm-crypt/Drive preparation (Español)")
 
@@ -824,6 +824,8 @@ Ahora podemos comprobar que se ha realizado una entrada de mapeo para `/dev/mapp
 # fdisk -l
 
 ```
+
+{{Sugerencia | Una alternativa más simple al uso de LVM, recomendada en las FAQ de cryptsetup para los casos en que LVM no es necesario, es simplemente crear un sistema de archivos en la totalidad del dispositivo mapeado con dm-crypt.}
 
 A continuación, configuramos volúmenes lógicos [LVM (Español)](/index.php/LVM_(Espa%C3%B1ol) "LVM (Español)") en el dispositivo mapeado. Consulte [LVM (Español)#Instalar Arch Linux sobre LVM](/index.php/LVM_(Espa%C3%B1ol)#Instalar_Arch_Linux_sobre_LVM "LVM (Español)") para obtener más detalles:
 
@@ -875,10 +877,10 @@ Véase [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_con
 
 ### Configurar el gestor de arranque
 
-Con el fin de desbloquear la partición raíz cifrada en el arranque, es necesario pasar los siguientes parámetros del kernel al gestor de arranque:
+Con el fin de desbloquear la partición raíz cifrada en el arranque, es necesario pasar los siguientes parámetros del kernel al gestor de arranque (tenga en cuenta que 64 es el número de bytes en 512 bits)::
 
 ```
-cryptdevice=/dev/disk/by-id/*disk-ID-of-sda*:cryptlvm cryptkey=/dev/disk/by-id/*disk-ID-of-sdc*:0:512 crypto=sha512:twofish-xts-plain64:512:0:
+cryptdevice=/dev/disk/by-id/*disk-ID-of-sda*:cryptlvm cryptkey=/dev/disk/by-id/*disk-ID-of-sdc*:0:64 crypto=:twofish-xts-plain64:512:0:
 
 ```
 
@@ -1092,14 +1094,14 @@ Genere el archivo de [configuration](/index.php/GRUB_(Espa%C3%B1ol)#Generar_el_a
 
 ```
 
-[Instale GRUB](/index.php/GRUB_(Espa%C3%B1ol)#Instalación_2 "GRUB (Español)") con la ESP montada para arrancar UEFI:
+[Instale GRUB](/index.php/GRUB_(Espa%C3%B1ol)#Instalación "GRUB (Español)") con la ESP montada para arrancar UEFI:
 
 ```
 # grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB --recheck
 
 ```
 
-[Instale GRUB](/index.php/GRUB#Instalación "GRUB") en el disco para arrancar BIOS:
+[Instale GRUB](/index.php/GRUB_(Espa%C3%B1ol)#Instalación_2 "GRUB (Español)") en el disco para arrancar BIOS:
 
 ```
 # grub-install --target=i386-pc --recheck /dev/sda
@@ -1272,7 +1274,7 @@ Después de crear, agregar e incrustar la clave como se describe arriba, añada 
 
 ### Configurar el gestor de arranque
 
-Instale [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") en `/dev/sda`. A continuación, modifique `/etc/default/grub` como se indica en el artículo [GRUB (Español)# Encriptación](/index.php/GRUB_(Espa%C3%B1ol)#_Encriptación "GRUB (Español)"), siguiendo las instrucciones de una partición raíz y de arranque cifrada. Finalmente, genere el archivo de configuración GRUB.
+Instale [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") en `/dev/sda`. A continuación, modifique `/etc/default/grub` como se indica en el artículo [GRUB (Español)#Encriptación](/index.php/GRUB_(Espa%C3%B1ol)#Encriptación "GRUB (Español)"), siguiendo las instrucciones de una partición raíz y de arranque cifradas. Finalmente, genere el archivo de configuración GRUB.
 
 ### Configurar el espacio de intercambio
 

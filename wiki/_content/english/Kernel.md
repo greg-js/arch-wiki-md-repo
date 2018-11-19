@@ -3,7 +3,6 @@ Related articles
 *   [Kernel modules](/index.php/Kernel_modules "Kernel modules")
 *   [Compile kernel module](/index.php/Compile_kernel_module "Compile kernel module")
 *   [Kernel Panics](/index.php/Kernel_Panics "Kernel Panics")
-*   [Linux-ck](/index.php/Linux-ck "Linux-ck")
 *   [sysctl](/index.php/Sysctl "Sysctl")
 
 According to [Wikipedia](https://en.wikipedia.org/wiki/Linux_kernel "wikipedia:Linux kernel"):
@@ -16,26 +15,27 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Linux_kernel "wikipedia:L
 
 *   [1 Officially supported kernels](#Officially_supported_kernels)
 *   [2 Compilation](#Compilation)
-*   [3 Patches and patchsets](#Patches_and_patchsets)
-    *   [3.1 Major patchsets](#Major_patchsets)
-    *   [3.2 Other patchsets](#Other_patchsets)
-*   [4 See also](#See_also)
+*   [3 kernel.org kernels](#kernel.org_kernels)
+*   [4 Patches and patchsets](#Patches_and_patchsets)
+    *   [4.1 Major patchsets](#Major_patchsets)
+    *   [4.2 Other patchsets](#Other_patchsets)
+*   [5 See also](#See_also)
 
 ## Officially supported kernels
 
-*   **[Stable](https://www.kernel.org/category/releases.html)** — Vanilla Linux kernel and modules, with a few patches applied.
+*   **Stable** — Vanilla Linux kernel and modules, with a few patches applied.
 
 	[https://www.kernel.org/](https://www.kernel.org/) || [linux](https://www.archlinux.org/packages/?name=linux)
 
-*   **[Hardened](https://kernsec.org/wiki/index.php/Kernel_Self_Protection_Project)** — A security-focused Linux kernel applying a set of hardening patches to mitigate kernel and userspace exploits. It also enables more upstream kernel hardening features than [linux](https://www.archlinux.org/packages/?name=linux) along [AppArmor](/index.php/AppArmor "AppArmor") and [SELinux](/index.php/SELinux "SELinux").
+*   **Hardened** — A security-focused Linux kernel applying a set of hardening patches to mitigate kernel and userspace exploits. It also enables more upstream kernel hardening features than [linux](https://www.archlinux.org/packages/?name=linux) along [AppArmor](/index.php/AppArmor "AppArmor") and [SELinux](/index.php/SELinux "SELinux").
 
 	[https://github.com/anthraxx/linux-hardened](https://github.com/anthraxx/linux-hardened) || [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened)
 
-*   **[Longterm](https://www.kernel.org/category/releases.html)** — Long-term support (LTS) Linux kernel and modules.
+*   **Longterm** — Long-term support (LTS) Linux kernel and modules.
 
 	[https://www.kernel.org/](https://www.kernel.org/) || [linux-lts](https://www.archlinux.org/packages/?name=linux-lts)
 
-*   **[ZEN Kernel](https://github.com/zen-kernel/zen-kernel)** — Result of a collaborative effort of kernel hackers to provide the best Linux kernel possible for everyday systems. Some more details can be found on [https://liquorix.net](https://liquorix.net) (which provides kernel binaries based on ZEN for Debian).
+*   **ZEN Kernel** — Result of a collaborative effort of kernel hackers to provide the best Linux kernel possible for everyday systems. Some more details can be found on [https://liquorix.net](https://liquorix.net) (which provides kernel binaries based on ZEN for Debian).
 
 	[https://github.com/zen-kernel/zen-kernel](https://github.com/zen-kernel/zen-kernel) || [linux-zen](https://www.archlinux.org/packages/?name=linux-zen)
 
@@ -50,6 +50,32 @@ Arch Linux provides two methods of kernel compilation.
 	[/Traditional compilation](/index.php/Kernel/Traditional_compilation "Kernel/Traditional compilation")
 
 	Involves manually downloading a source tarball, and compiling in your home directory as a normal user.
+
+## kernel.org kernels
+
+*   **Git** — Linux kernel and modules built using sources from Linus Torvalds' Git repository
+
+	[https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git) || [linux-git](https://aur.archlinux.org/packages/linux-git/)
+
+*   **Mainline** — Kernels where all new features are introduced, released every 2-3 months.
+
+	[https://www.kernel.org/](https://www.kernel.org/) || [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/)
+
+*   **Next** — Bleeding edge kernels with features pending to be merged into next mainline release.
+
+	[https://www.kernel.org/doc/man-pages/linux-next.html](https://www.kernel.org/doc/man-pages/linux-next.html) || [linux-next-git](https://aur.archlinux.org/packages/linux-next-git/)
+
+*   **Longterm 3.16** — Long-term support (LTS) Linux 3.16 kernel and modules.
+
+	[https://www.kernel.org/](https://www.kernel.org/) || [linux-lts316](https://aur.archlinux.org/packages/linux-lts316/)
+
+*   **Longterm 4.4** — Long-term support (LTS) Linux 4.4 kernel and modules.
+
+	[https://www.kernel.org/](https://www.kernel.org/) || [linux-lts44](https://aur.archlinux.org/packages/linux-lts44/)
+
+*   **Longterm 4.9** — Long-term support (LTS) Linux 4.9 kernel and modules.
+
+	[https://www.kernel.org/](https://www.kernel.org/) || [linux-lts49](https://aur.archlinux.org/packages/linux-lts49/)
 
 ## Patches and patchsets
 
@@ -67,13 +93,9 @@ If you have not actually patched or customized a kernel before it is not that ha
 
 *   **[Linux-ck](/index.php/Linux-ck "Linux-ck")** — Contains patches by Con Kolivas designed to improve system responsiveness with specific emphasis on the desktop, but suitable to any workload.
 
-	[http://ck.kolivas.org/patches/](http://ck.kolivas.org/patches/) || [linux-ck](https://aur.archlinux.org/packages/linux-ck/)
+	[http://ck.kolivas.org/](http://ck.kolivas.org/) || [linux-ck](https://aur.archlinux.org/packages/linux-ck/)
 
-*   **[Intel Clearlinux patches](https://github.com/clearlinux-pkgs/linux/)** — Maintained by Intel. The patches optimize kernel for performance and security, from the Cloud to the Edge, designed for customization, and manageability. It also provides [WireGuard](/index.php/WireGuard "WireGuard") as its module.
-
-	[https://github.com/clearlinux-pkgs/linux](https://github.com/clearlinux-pkgs/linux) || [linux-clear](https://aur.archlinux.org/packages/linux-clear/)
-
-*   **[pf-kernel](https://gitlab.com/post-factum/pf-kernel/)** — Provides you with a handful of awesome features not merged into mainline. It is based on neither existing Linux fork nor patchset, although some unofficial ports may be used if required patches have not been released officially. The most prominent patches of linux-pf are PDS CPU scheduler and UKSM.
+*   **pf-kernel** — Provides you with a handful of awesome features not merged into mainline. It is based on neither existing Linux fork nor patchset, although some unofficial ports may be used if required patches have not been released officially. The most prominent patches of linux-pf are PDS CPU scheduler and UKSM.
 
 	[https://gitlab.com/post-factum/pf-kernel/wikis/README](https://gitlab.com/post-factum/pf-kernel/wikis/README) || Packages:
 
@@ -88,21 +110,21 @@ If you have not actually patched or customized a kernel before it is not that ha
 
 Some of the listed packages may also be available as binary packages via [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories").
 
-*   **AppArmor** — The [Mandatory Access Control](https://en.wikipedia.org/wiki/Mandatory_access_control "wikipedia:Mandatory access control") (MAC) system, implemented upon the [Linux Security Modules](https://en.wikipedia.org/wiki/Linux_Security_Modules "wikipedia:Linux Security Modules") (LSM). While [linux](https://www.archlinux.org/packages/?name=linux) supports apparmor this kernel has the required [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") enabled by default.
+*   **[AppArmor](/index.php/AppArmor "AppArmor")** — The [Mandatory Access Control](https://en.wikipedia.org/wiki/Mandatory_access_control "wikipedia:Mandatory access control") (MAC) system, implemented upon the [Linux Security Modules](https://en.wikipedia.org/wiki/Linux_Security_Modules "wikipedia:Linux Security Modules") (LSM). While [linux](https://www.archlinux.org/packages/?name=linux) supports apparmor this kernel has the required [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") enabled by default.
 
-	[AppArmor](/index.php/AppArmor "AppArmor") || [linux-apparmor](https://aur.archlinux.org/packages/linux-apparmor/)
+	[https://gitlab.com/apparmor/apparmor/wikis/About](https://gitlab.com/apparmor/apparmor/wikis/About) || [linux-apparmor](https://aur.archlinux.org/packages/linux-apparmor/)
 
 *   **Aufs** — The aufs-compatible linux kernel and modules, useful when using [docker](/index.php/Docker "Docker").
 
-	[http://aufs.sourceforge.net/](http://aufs.sourceforge.net/) || [linux-aufs_friendly](https://aur.archlinux.org/packages/linux-aufs_friendly/)
+	[http://aufs.sourceforge.net/](http://aufs.sourceforge.net/) ||
 
-*   **BLD** — Best described as a O(1) CPU picking technique. Which is done by reordering CPU runqueues based on runqueue loads. In other words, it keeps the scheduler aware of the load changes, which helps scheduler to keep runqueues in an order. This technique does not depend on scheduler ticks. The two most simple things in this technique are: load tracking and runqueue ordering; these are relatively simpler operations. Load tracking will be done whenever a load change happens on the system and based on this load change runqueue will be ordered. So, if we have an ordered runqueue from lowest to highest, then picking the less (or even busiest) runqueue is easy. Scheduler can pick the lowest runqueue without calculation and comparison at the time of placing a task in a runqueue. And while trying to distribute load at sched_exec and sched_fork our best choice is to pick the lowest busiest runqueue of the system. And in this way, system remains balanced without doing any load balancing. At the time of try_to_wake_up picking the idlest runqueue is topmost priority but it has been done as per domain basis to utilize CPU cache properly and it's an area where more concentration is requires.
+*   **BLD** — Provides alternate CPU load distribution technique for task scheduler.
 
-	[https://github.com/rmullick/bld-patches](https://github.com/rmullick/bld-patches) || [linux-bld](https://aur.archlinux.org/packages/linux-bld/)
+	[https://github.com/rmullick/bld-patches/wiki](https://github.com/rmullick/bld-patches/wiki) || [linux-bld](https://aur.archlinux.org/packages/linux-bld/)
 
-*   **Git** — Linux kernel and modules built using sources from Linus Torvalds' Git repository
+*   **Clear** — Patches from Intel's Clear Linux project. Provides performance and security optimizations; [WireGuard](/index.php/WireGuard "WireGuard") module.
 
-	[https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git) || [linux-git](https://aur.archlinux.org/packages/linux-git/)
+	[https://github.com/clearlinux-pkgs/linux](https://github.com/clearlinux-pkgs/linux) || [linux-clear](https://aur.archlinux.org/packages/linux-clear/)
 
 *   **Libre** — The Linux Kernels without "binary blobs".
 
@@ -111,14 +133,6 @@ Some of the listed packages may also be available as binary packages via [Unoffi
 *   **Liquorix** — Kernel replacement built using Debian-targeted configuration and the ZEN kernel sources. Designed for desktop, multimedia, and gaming workloads, it is often used as a Debian Linux performance replacement kernel. Damentz, the maintainer of the Liquorix patchset, is a developer for the ZEN patchset as well.
 
 	[https://liquorix.net](https://liquorix.net) || [linux-lqx](https://aur.archlinux.org/packages/linux-lqx/)
-
-*   **Longterm 4.4** — Long-term support (LTS) Linux 4.4 kernel and modules.
-
-	[https://www.kernel.org/](https://www.kernel.org/) || [linux-lts44](https://aur.archlinux.org/packages/linux-lts44/)
-
-*   **Mainline** — The Mainline Linux Kernel and modules.
-
-	[https://www.kernel.org/](https://www.kernel.org/) || [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/)
 
 *   **MultiPath TCP** — The Linux Kernel and modules with Multipath TCP support.
 

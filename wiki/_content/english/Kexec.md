@@ -122,7 +122,7 @@ Note that Conflicts=shutdown.target is not really needed, as it's implicitly gua
 
 ### System hangs or reboots after "kexec_core: Starting new kernel"
 
-In this case, the troubleshooting information on [General_troubleshooting#Boot_problems](/index.php/General_troubleshooting#Boot_problems "General troubleshooting") may be helpful for diagnosing the problem.
+In this case, the troubleshooting information on [General troubleshooting#Boot problems](/index.php/General_troubleshooting#Boot_problems "General troubleshooting") may be helpful for diagnosing the problem.
 
 In particular, if adding the `acpi=off` kernel parameter makes kexec work correctly, adding the `acpi_rsdp` kernel parameter on the kexec command line as explained in [[1]](https://github.com/coreos/bugs/issues/167) may solve the issue [in some cases](https://bbs.archlinux.org/viewtopic.php?id=219878) without the need to completely disable ACPI.
 

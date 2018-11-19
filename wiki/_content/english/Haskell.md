@@ -139,7 +139,7 @@ Many Haskell libraries and executables are grouped in packages. They are all ava
 
 *   [Official repositories](/index.php/Official_repositories "Official repositories")
 *   [cabal-install](#cabal-install)
-*   [stack](#stack)
+*   [stack](#Stack)
 *   [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")
 
 [cblrepo](https://github.com/magthe/cblrepo) is a tool used for maintaining Haskell packages for Linux distributions. A wrapper around this, [cabal2pkgbuild-git](https://aur.archlinux.org/packages/cabal2pkgbuild-git/), can create PKGBUILD files from Hackage packages. See [Haskell package guidelines](/index.php/Haskell_package_guidelines "Haskell package guidelines") for more information on *creating new* Haskell packages.
@@ -151,7 +151,7 @@ The following table documents the advantages and disadvantages of different pack
 | **Method** | **Pros** | **Cons** |
 | [Official repositories](/index.php/Official_repositories "Official repositories") | Provided by ArchLinux developers, consistent versions of packages, already compiled | Only a few packages available, only dynamic libraries available |
 | [cabal-install](#cabal-install) | All packages available, root not required | Installed in home directory, [failures in dependency resolution](http://www.haskell.org/haskellwiki/Cabal/Survival#What_is_the_difficulty_caused_by_Cabal-install.3F), difficult to remove specific packages |
-| [stack](#stack) | All packages available (favors Stackage), root not required | Installed in home directory, versions are pinned to snapshot, difficult to remove specific packages |
+| [stack](#Stack) | All packages available (favors Stackage), root not required | Installed in home directory, versions are pinned to snapshot, difficult to remove specific packages |
 | [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") | Simple to get started | Risk of unmaintained or orphaned packages, incompatible versions of packages possible |
 
 ### cabal-install

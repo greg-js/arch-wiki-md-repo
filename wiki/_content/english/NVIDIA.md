@@ -35,8 +35,7 @@ This article covers the proprietary [NVIDIA](http://www.nvidia.com) graphics car
         *   [2.5.4 Mosaic mode](#Mosaic_mode)
             *   [2.5.4.1 Base Mosaic](#Base_Mosaic)
             *   [2.5.4.2 SLI Mosaic](#SLI_Mosaic)
-    *   [2.6 Custom TDP Limit](#Custom_TDP_Limit)
-    *   [2.7 Driver persistence](#Driver_persistence)
+    *   [2.6 Driver persistence](#Driver_persistence)
 *   [3 See also](#See_also)
 
 ## Installation
@@ -463,41 +462,6 @@ If you have an SLI configuration and each GPU is a Quadro FX 5800, Quadro Fermi 
 ```
 $ nvidia-xconfig --sli=Mosaic --metamodes="GPU-0.DFP-0: 1920x1024+0+0, GPU-0.DFP-1: 1920x1024+1920+0, GPU-1.DFP-0: 1920x1024+0+1024, GPU-1.DFP-1: 1920x1024+1920+1024"
 
-```
-
-### Custom TDP Limit
-
-Modern Nvidia graphics cards throttle frequency to stay in their TDP and temperature limits. To increase performance it's possible to change the TDP Limit which will result in higher temperatures and higher power consumption.
-
-The package nvidia-smi is required.
-
-Example: (Set powerlimit to 160.30W)
-
-```
-nvidia-smi -pl 160.30
-
-```
-
-Set powerlimit on boot (without driver persistence) :
-
- `/usr/lib/systemd/system/nvidia-tdp.timer` 
-```
-[Unit]
-Description=Set nvidia power limit on boot
-
-[Timer]
-OnBootSec=5
-
-[Install]
-WantedBy=timers.target
-```
- `/usr/lib/systemd/system/nvidia-tdp.timer` 
-```
-Description=Nvidia Powerlimit
-
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/nvidia-smi -pl 160.30
 ```
 
 ### Driver persistence

@@ -11,7 +11,7 @@
 *   [Trinity](/index.php/Trinity "Trinity")
 *   [Uniform Look for Qt and GTK Applications (Русский)](/index.php/Uniform_Look_for_Qt_and_GTK_Applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Uniform Look for Qt and GTK Applications (Русский)")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [KDE](/index.php/KDE "KDE"). Дата последней синхронизации: 10 ноября 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=554306).
+**Состояние перевода:** На этой странице представлен перевод статьи [KDE](/index.php/KDE "KDE"). Дата последней синхронизации: 17 ноября 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=555447).
 
 KDE — проект, в настоящее время состоящий из [среды рабочего стола](/index.php/Desktop_environment_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop environment (Русский)") (KDE Plasma), набора библиотек и фреймворков (KDE Frameworks), а также набора приложений (KDE Applications).
 
@@ -492,6 +492,8 @@ Name=/home/*username*/.local/share/akonadi/akonadi.db
 Вам нужно будет установить KDE Connect как на компьютере (пакет [kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect)), так и на Android-смартфоне (приложение из [Google Play](https://play.google.com/store/apps/details?id=org.kde.kdeconnect_tp) или [F-Droid](https://f-droid.org/packages/org.kde.kdeconnect_tp/)).
 
 KDE Connect можно использовать и с другими средами рабочего стола. Для тех, которые используют AppIndicators (например, Unity) [установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") также пакет [indicator-kdeconnect](https://aur.archlinux.org/packages/indicator-kdeconnect/). Для пользователей GNOME, лучшей интеграции можно достичь установкой [gnome-shell-extension-gsconnect](https://aur.archlinux.org/packages/gnome-shell-extension-gsconnect/) вместо [kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect).
+
+Если вы используете [межсетевой экран](/index.php/%D0%9C%D0%B5%D0%B6%D1%81%D0%B5%D1%82%D0%B5%D0%B2%D0%BE%D0%B9_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD "Межсетевой экран"), вам потребуется открыть TCP- и UDP-порты от `1714` до `1764`. Смотрите [https://community.kde.org/KDEConnect#Troubleshooting](https://community.kde.org/KDEConnect#Troubleshooting).
 
 ## Советы и рекомендации
 

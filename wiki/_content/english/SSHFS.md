@@ -263,4 +263,3 @@ To be able to run `mount -av` and see the debug output, remove the following:
 ## See also
 
 *   [How to mount chrooted SSH filesystem](http://wiki.gilug.org/index.php/How_to_mount_SFTP_accesses), with special care with owners and permissions questions.
-*   [SSHFS – Installation and Performance](http://www.admin-magazine.com/HPC/Articles/Sharing-Data-with-SSHFS) — Comparison with NFS and optimization tips.

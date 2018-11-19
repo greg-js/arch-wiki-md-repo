@@ -6,7 +6,7 @@
 | <small>1.2.1.</small> [Disambiguation pages](/index.php/Category:Disambiguation_pages "Category:Disambiguation pages") <small>(26)</small> |
 | <small>1.2.2.</small> [Help](/index.php/Category:Help "Category:Help") <small>(15)</small> |
 | <small>1.2.3.</small> [Lists](/index.php/Category:Lists "Category:Lists") <small>(6)</small> |
-| <small>1.2.3.1.</small> [Lists of software](/index.php/Category:Lists_of_software "Category:Lists of software") <small>(23) (also in [Software](/index.php/Category:Software "Category:Software"))</small> |
+| <small>1.2.3.1.</small> [Lists of software](/index.php/Category:Lists_of_software "Category:Lists of software") <small>(24) (also in [Software](/index.php/Category:Software "Category:Software"))</small> |
 | <small>1.3.</small> [Installation process](/index.php/Category:Installation_process "Category:Installation process") <small>(31)</small> |
 | <small>1.4.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems "Category:Live Arch systems") <small>(5)</small> |
 | <small>1.5.</small> [Teams](/index.php/Category:Teams "Category:Teams") <small>(6)</small> |
@@ -157,15 +157,15 @@
 | <small>5.1.10.11.</small> [Usenet clients](/index.php/Category:Usenet_clients "Category:Usenet clients") <small>(4)</small> |
 | <small>5.1.10.12.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(25) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
 | <small>5.1.11.</small> [Multimedia](/index.php/Category:Multimedia "Category:Multimedia") <small>(21)</small> |
-| <small>5.1.11.1.</small> [Audio](/index.php/Category:Audio "Category:Audio") <small>(9) (also in [File formats](/index.php/Category:File_formats "Category:File formats"))</small> |
+| <small>5.1.11.1.</small> [Audio](/index.php/Category:Audio "Category:Audio") <small>(9)</small> |
 | <small>5.1.11.1.1.</small> [Music](/index.php/Category:Music "Category:Music") <small>(27)</small> |
-| <small>5.1.11.2.</small> [Image](/index.php/Category:Image "Category:Image") <small>(9) (also in [File formats](/index.php/Category:File_formats "Category:File formats"))</small> |
+| <small>5.1.11.2.</small> [Image](/index.php/Category:Image "Category:Image") <small>(9)</small> |
 | <small>5.1.11.3.</small> [Media servers](/index.php/Category:Media_servers "Category:Media servers") <small>(12) (also in [Servers](/index.php/Category:Servers "Category:Servers"), [Streaming](/index.php/Category:Streaming "Category:Streaming"))</small> |
 | <small>5.1.11.3.1.</small> [Home theater](/index.php/Category:Home_theater "Category:Home theater") <small>(4)</small> |
 | <small>5.1.11.4.</small> [Sound](/index.php/Category:Sound "Category:Sound") <small>(17) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |
 | <small>5.1.11.5.</small> [Television](/index.php/Category:Television "Category:Television") <small>(4)</small> |
 | <small>5.1.11.5.1.</small> [TV cards](/index.php/Category:TV_cards "Category:TV cards") <small>(11) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |
-| <small>5.1.11.6.</small> [Video](/index.php/Category:Video "Category:Video") <small>(6) (also in [File formats](/index.php/Category:File_formats "Category:File formats"))</small> |
+| <small>5.1.11.6.</small> [Video](/index.php/Category:Video "Category:Video") <small>(6)</small> |
 | <small>5.1.12.</small> [Office](/index.php/Category:Office "Category:Office") <small>(17)</small> |
 | <small>5.1.12.1.</small> [TeX](/index.php/Category:TeX "Category:TeX") <small>(3)</small> |
 | <small>5.1.13.</small> [Password managers](/index.php/Category:Password_managers "Category:Password managers") <small>(2) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
@@ -184,9 +184,9 @@
 | <small>5.1.20.3.</small> [Web admin interfaces](/index.php/Category:Web_admin_interfaces "Category:Web admin interfaces") <small>(5)</small> |
 | <small>5.1.20.4.</small> [Web frameworks](/index.php/Category:Web_frameworks "Category:Web frameworks") <small>(2) (also in [Frameworks](/index.php/Category:Frameworks "Category:Frameworks"))</small> |
 | <small>5.1.20.5.</small> [Wiki software](/index.php/Category:Wiki_software "Category:Wiki software") <small>(6)</small> |
-| <small>5.2.</small> [Command-line](/index.php/Category:Command-line "Category:Command-line") <small>(2) (also in [System administration](/index.php/Category:System_administration "Category:System administration"))</small> |
+| <small>5.2.</small> [Command-line](/index.php/Category:Command-line "Category:Command-line") <small>(5) (also in [System administration](/index.php/Category:System_administration "Category:System administration"))</small> |
 | <small>5.2.1.</small> [Command shells](/index.php/Category:Command_shells "Category:Command shells") <small>(10) (also in [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages"))</small> |
-| <small>5.2.2.</small> [Commands](/index.php/Category:Commands "Category:Commands") <small>(86)</small> |
+| <small>5.2.2.</small> [Commands](/index.php/Category:Commands "Category:Commands") <small>(83)</small> |
 | <small>5.2.2.1.</small> [Console applications](/index.php/Category:Console_applications "Category:Console applications") <small>(20) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
 | <small>5.2.2.2.</small> [Download utilities](/index.php/Category:Download_utilities "Category:Download utilities") <small>(6) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
 | <small>5.2.2.3.</small> [Mail retrieval agents](/index.php/Category:Mail_retrieval_agents "Category:Mail retrieval agents") <small>(5) (also in [Email clients](/index.php/Category:Email_clients "Category:Email clients"))</small> |
@@ -212,12 +212,8 @@
 | <small>5.3.1.9.</small> [WebDAV](/index.php/Category:WebDAV "Category:WebDAV") <small>(7) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
 | <small>5.3.1.10.</small> [XMPP](/index.php/Category:XMPP "Category:XMPP") <small>(5) (also in [Instant messaging](/index.php/Category:Instant_messaging "Category:Instant messaging"), [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
 | <small>5.4.</small> [File formats](/index.php/Category:File_formats "Category:File formats") <small>(7)</small> |
-| <small>5.4.1.</small> [Audio](/index.php/Category:Audio "Category:Audio") <small>(9) (also in [Multimedia](/index.php/Category:Multimedia "Category:Multimedia"))</small> |
-| <small>5.4.1.1.</small> [Music](/index.php/Category:Music "Category:Music") <small>(27)</small> |
-| <small>5.4.2.</small> [Image](/index.php/Category:Image "Category:Image") <small>(9) (also in [Multimedia](/index.php/Category:Multimedia "Category:Multimedia"))</small> |
-| <small>5.4.3.</small> [PDF](/index.php/Category:PDF "Category:PDF") <small>(4)</small> |
-| <small>5.4.4.</small> [Video](/index.php/Category:Video "Category:Video") <small>(6) (also in [Multimedia](/index.php/Category:Multimedia "Category:Multimedia"))</small> |
-| <small>5.5.</small> [Lists of software](/index.php/Category:Lists_of_software "Category:Lists of software") <small>(23) (also in [Lists](/index.php/Category:Lists "Category:Lists"))</small> |
+| <small>5.4.1.</small> [PDF](/index.php/Category:PDF "Category:PDF") <small>(4)</small> |
+| <small>5.5.</small> [Lists of software](/index.php/Category:Lists_of_software "Category:Lists of software") <small>(24) (also in [Lists](/index.php/Category:Lists "Category:Lists"))</small> |
 | <small>5.6.</small> [Software companies](/index.php/Category:Software_companies "Category:Software companies") <small>(0)</small> |
 | <small>5.6.1.</small> [Canonical](/index.php/Category:Canonical "Category:Canonical") <small>(3)</small> |
 | <small>5.6.2.</small> [Google](/index.php/Category:Google "Category:Google") <small>(5)</small> |
@@ -228,7 +224,7 @@
 | <small>5.8.1.</small> [Apache](/index.php/Category:Apache "Category:Apache") <small>(6)</small> |
 | <small>5.8.2.</small> [Arch projects](/index.php/Category:Arch_projects "Category:Arch projects") <small>(9) (also in [DeveloperWiki](/index.php/Category:DeveloperWiki "Category:DeveloperWiki"))</small> |
 | <small>5.8.3.</small> [GNOME](/index.php/Category:GNOME "Category:GNOME") <small>(13) (also in [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments"))</small> |
-| <small>5.8.4.</small> [GNU](/index.php/Category:GNU "Category:GNU") <small>(11)</small> |
+| <small>5.8.4.</small> [GNU](/index.php/Category:GNU "Category:GNU") <small>(14)</small> |
 | <small>5.8.5.</small> [KDE](/index.php/Category:KDE "Category:KDE") <small>(12) (also in [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments"))</small> |
 | <small>5.8.6.</small> [Mozilla](/index.php/Category:Mozilla "Category:Mozilla") <small>(5)</small> |
 | <small>5.8.7.</small> [OpenBSD](/index.php/Category:OpenBSD "Category:OpenBSD") <small>(4)</small> |
@@ -239,9 +235,9 @@
 | <small>6.2.1.</small> [Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") <small>(10)</small> |
 | <small>6.2.2.</small> [Bootsplash](/index.php/Category:Bootsplash "Category:Bootsplash") <small>(2) (also in [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy"))</small> |
 | <small>6.2.3.</small> [Init](/index.php/Category:Init "Category:Init") <small>(8)</small> |
-| <small>6.3.</small> [Command-line](/index.php/Category:Command-line "Category:Command-line") <small>(2) (also in [Software](/index.php/Category:Software "Category:Software"))</small> |
+| <small>6.3.</small> [Command-line](/index.php/Category:Command-line "Category:Command-line") <small>(5) (also in [Software](/index.php/Category:Software "Category:Software"))</small> |
 | <small>6.3.1.</small> [Command shells](/index.php/Category:Command_shells "Category:Command shells") <small>(10) (also in [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages"))</small> |
-| <small>6.3.2.</small> [Commands](/index.php/Category:Commands "Category:Commands") <small>(86)</small> |
+| <small>6.3.2.</small> [Commands](/index.php/Category:Commands "Category:Commands") <small>(83)</small> |
 | <small>6.3.2.1.</small> [Console applications](/index.php/Category:Console_applications "Category:Console applications") <small>(20) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
 | <small>6.3.2.2.</small> [Download utilities](/index.php/Category:Download_utilities "Category:Download utilities") <small>(6) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
 | <small>6.3.2.3.</small> [Mail retrieval agents](/index.php/Category:Mail_retrieval_agents "Category:Mail retrieval agents") <small>(5) (also in [Email clients](/index.php/Category:Email_clients "Category:Email clients"))</small> |

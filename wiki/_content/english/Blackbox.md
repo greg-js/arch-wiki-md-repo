@@ -9,7 +9,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") [blackbox](https://www.archlinux.org/packages/?name=blackbox).
+[Install](/index.php/Install "Install") the [blackbox](https://www.archlinux.org/packages/?name=blackbox) package.
 
 ## Starting
 

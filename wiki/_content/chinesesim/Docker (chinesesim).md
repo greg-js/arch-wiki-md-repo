@@ -35,6 +35,7 @@ Related articles
     *   [6.2 默认的允许的进程/线程数太少](#默认的允许的进程/线程数太少)
     *   [6.3 初始化显卡驱动错误: devmapper](#初始化显卡驱动错误:_devmapper)
     *   [6.4 无法创建到某文件的路径: 设备没有多余的空间了](#无法创建到某文件的路径:_设备没有多余的空间了)
+    *   [6.5 kernel 4.19.1下无效的跨设备链接](#kernel_4.19.1下无效的跨设备链接)
 *   [7 查阅更多](#查阅更多)
 
 ## 安装
@@ -373,6 +374,17 @@ ERROR: Failed to create some/path/to/file: No space left on device
 *   XFS 的配额挂载选项在文件系统重新挂载时 (`uquota`, `gquota`, `prjquota`, 等等.) 失败了. 为了为root文件系统启用配额挂载选项必须作为 [Kernel parameters (简体中文)](/index.php/Kernel_parameters_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel parameters (简体中文)") `rootflags=`传递到initramfs. 之后, 它就不应该在 `/etc/fstab`中的挂载选项中列出root (`/`) 文件系统.
 
 **注意:** XFS配额和标准Linux[Disk quota](/index.php/Disk_quota "Disk quota"), [[1]](http://inai.de/linux/adm_quota) 是有区别的。这里值得一读.
+
+### kernel 4.19.1下无效的跨设备链接
+
+如果像 *dpkg* 这样的命令在docker运行失败, 比如:
+
+```
+dpkg: error: error creating new backup file '/var/lib/dpkg/status-old': Invalid cross-device link
+
+```
+
+降级到 4.18.x 直到 [这个问题](https://github.com/docker/for-linux/issues/480) 解决. 更多信息可查阅 [Arch forum](https://bbs.archlinux.org/viewtopic.php?id=241866).
 
 ## 查阅更多
 

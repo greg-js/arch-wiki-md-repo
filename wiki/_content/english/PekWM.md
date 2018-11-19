@@ -17,14 +17,14 @@
 *   [4 Themes](#Themes)
 *   [5 Setting a Wallpaper](#Setting_a_Wallpaper)
 *   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 When using Nvidia TwinView, windows maximize across both screens](#When_using_Nvidia_TwinView.2C_windows_maximize_across_both_screens)
-    *   [6.2 Compositing/transparency does not work properly](#Compositing.2Ftransparency_does_not_work_properly)
-    *   [6.3 Scrolling doesn't work in GTK 3 applications](#Scrolling_doesn.27t_work_in_GTK_3_applications)
+    *   [6.1 When using Nvidia TwinView, windows maximize across both screens](#When_using_Nvidia_TwinView,_windows_maximize_across_both_screens)
+    *   [6.2 Compositing/transparency does not work properly](#Compositing/transparency_does_not_work_properly)
+    *   [6.3 Scrolling doesn't work in GTK 3 applications](#Scrolling_doesn't_work_in_GTK_3_applications)
 *   [7 See also](#See_also)
 
 ## Installation
 
-[Install](/index.php/Install "Install") [pekwm](https://www.archlinux.org/packages/?name=pekwm).
+[Install](/index.php/Install "Install") the [pekwm](https://www.archlinux.org/packages/?name=pekwm) package.
 
 ## Starting
 

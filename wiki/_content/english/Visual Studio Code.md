@@ -14,7 +14,7 @@
 
 The following packages provide VSCode:
 
-*   [code](https://www.archlinux.org/packages/?name=code) (out of date)
+*   [code](https://www.archlinux.org/packages/?name=code)
 *   [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin/)
 *   [code-git](https://aur.archlinux.org/packages/code-git/)
 

@@ -1,35 +1,38 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Getting involved](/index.php/Getting_involved "Getting involved"), revisada por última vez el **2018-11-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Getting_involved&diff=0&oldid=552751) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Getting involved](/index.php/Getting_involved "Getting involved"), revisada por última vez el **2018-11-17**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Getting_involved&diff=0&oldid=555594) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
+Artículos relacionados
+
+*   [FAQ](/index.php/FAQ_(Espa%C3%B1ol) "FAQ (Español)")
+*   [ArchWiki:Contribuir](/index.php/ArchWiki:Contributing_(Espa%C3%B1ol) "ArchWiki:Contributing (Español)")
 
 En biología evolutiva, la [cooperation](https://en.wikipedia.org/wiki/Co-operation_(evolution) describe las interacciones donde un individuo que paga un pequeño coste produce un beneficio mayor para otro u otros. Si es correspondido, de esta contribución costosa pueden beneficiarse todos los involucrados enormemente. Este principio también se aplica a los miembros proactivos de la comunidad de Arch que quieran involucrarse y colaborar con su distribución de Linux preferida. Esta participación no solo beneficia a los miembros de la comunidad y sus compañeros Archers, sino también a todos los usuarios del [software libre y de código abierto](https://en.wikipedia.org/wiki/es:Software_libre_y_de_c%C3%B3digo_abierto "wikipedia:es:Software libre y de código abierto").
 
-En este artículo se describe cómo los usuarios nuevos o experimentados en Arch, pueden contribuir a la comunidad. Tenga en cuenta que esto no es una lista exhaustiva.
+En este artículo se describe cómo los usuarios nuevos o experimentados en Arch, pueden contribuir a la comunidad. Tenga en cuenta que esto no es una lista exhaustiva. Antes de contribuir, por favor acostúmbrese al [código de conducta](/index.php/Code_of_conduct_(Espa%C3%B1ol) "Code of conduct (Español)").
 
 ## Contents
 
-*   [1 Proyectos oficiales de Arch Linux](#Proyectos_oficiales_de_Arch_Linux)
+*   [1 Comunidad](#Comunidad)
     *   [1.1 Publicar en los foros](#Publicar_en_los_foros)
     *   [1.2 Mejorar esta wiki](#Mejorar_esta_wiki)
     *   [1.3 Unirse a la sala de chat](#Unirse_a_la_sala_de_chat)
-    *   [1.4 Informar sobre los paquetes instalados](#Informar_sobre_los_paquetes_instalados)
-    *   [1.5 Arreglar y reportar bugs](#Arreglar_y_reportar_bugs)
-    *   [1.6 Informar sobre problemas de seguridad](#Informar_sobre_problemas_de_seguridad)
-    *   [1.7 Ayudar a probar paquetes](#Ayudar_a_probar_paquetes)
-    *   [1.8 Crear y adoptar paquetes de AUR](#Crear_y_adoptar_paquetes_de_AUR)
-    *   [1.9 Proyectos oficiales de software](#Proyectos_oficiales_de_software)
-    *   [1.10 Donar dinero](#Donar_dinero)
-*   [2 Proyectos de la comunidad](#Proyectos_de_la_comunidad)
-    *   [2.1 Grupos](#Grupos)
-    *   [2.2 Software](#Software)
-    *   [2.3 Otros](#Otros)
-*   [3 FAQ](#FAQ)
-    *   [3.1 ¿Cómo puedo convertirme en un desarrollador de Arch?](#¿Cómo_puedo_convertirme_en_un_desarrollador_de_Arch?)
-    *   [3.2 ¿Cómo puedo ser un usuario de confianza?](#¿Cómo_puedo_ser_un_usuario_de_confianza?)
-    *   [3.3 ¿Cómo puedo ser un artista?](#¿Cómo_puedo_ser_un_artista?)
+*   [2 Empaquetado](#Empaquetado)
+    *   [2.1 Informar sobre los paquetes instalados](#Informar_sobre_los_paquetes_instalados)
+    *   [2.2 Arreglar y reportar bugs](#Arreglar_y_reportar_bugs)
+    *   [2.3 Informar sobre problemas de seguridad](#Informar_sobre_problemas_de_seguridad)
+    *   [2.4 Ayudar a probar paquetes](#Ayudar_a_probar_paquetes)
+    *   [2.5 Crear y adoptar paquetes de AUR](#Crear_y_adoptar_paquetes_de_AUR)
+*   [3 Proyectos software](#Proyectos_software)
+*   [4 Donar dinero](#Donar_dinero)
+*   [5 Proyectos no oficiales](#Proyectos_no_oficiales)
+    *   [5.1 Grupos](#Grupos)
+    *   [5.2 Programas](#Programas)
+*   [6 FAQ](#FAQ)
+    *   [6.1 ¿Cómo puedo convertirme en un desarrollador de Arch?](#¿Cómo_puedo_convertirme_en_un_desarrollador_de_Arch?)
+    *   [6.2 ¿Cómo puedo ser un usuario de confianza?](#¿Cómo_puedo_ser_un_usuario_de_confianza?)
+    *   [6.3 ¿Cómo puedo ser un artista?](#¿Cómo_puedo_ser_un_artista?)
 
-## Proyectos oficiales de Arch Linux
-
-Por favor, familiarícese con el [código de conducta](/index.php/Code_of_conduct_(Espa%C3%B1ol) "Code of conduct (Español)").
+## Comunidad
 
 ### Publicar en los foros
 
@@ -42,6 +45,8 @@ Una de las maneras más fáciles de colaborar es participando en los [Foros de A
 ### Unirse a la sala de chat
 
 Puede ayudar a otros usuarios a resolver problemas a través del [canal IRC](/index.php/IRC_channel "IRC channel"). Es muy importante, sin embargo, que lea las secciones dedicadas a las [reglas de los canales](/index.php/Code_of_conduct_(Espa%C3%B1ol)#IRC "Code of conduct (Español)") antes de participar. Hay [más canales](/index.php/IRC_channel#Other_channels "IRC channel") disponibles para temas específicos.
+
+## Empaquetado
 
 ### Informar sobre los paquetes instalados
 
@@ -63,23 +68,23 @@ Los paquetes en los repositorios de prueba deben probarse y firmarse antes de se
 
 ### Crear y adoptar paquetes de AUR
 
-El repositorio [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)") contiene los scripts de los paquetes realizados por la comunidad para que los usuarios pueden instalar fácilmente software que no está en los repositorios oficiales. Los paquetes más populares terminan incluyéndose en el [repositorio oficial de la comunidad](/index.php/Official_repositories_(Espa%C3%B1ol)#community "Official repositories (Español)").
+El [repositorio de usuario de Arch](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)") contiene los scripts de los paquetes realizados por la comunidad, permitiendo que los usuarios puedan instalar fácilmente programas que no son parte de los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). Los paquetes más populares terminan incluyéndose en el [repositorio oficial de la comunidad](/index.php/Official_repositories_(Espa%C3%B1ol)#community "Official repositories (Español)").
 
-Se puede ayudar mediante la creación y adopción de paquetes.
+[aurphan](https://www.archlinux.org/packages/?name=aurphan) puede ayudarle a identificar los paquetes huérfanos que utilice, para que pueda adoptarlos.
 
-[aurphan](https://www.archlinux.org/packages/?name=aurphan) puede ayudarle a identificar los paquetes huérfanos que use, para que pueda adoptarlos.
+## Proyectos software
 
-### Proyectos oficiales de software
+La distribución [Arch Linux](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)") se compone de muchos componentes, como el gestor de paquetes [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)"), el sitio web [archlinux.org](https://archlinux.org) (*archweb*), o el sistema de soporte para el [repositorio de usuario de Arch](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)") (*aurweb*). Cada uno de estos proyectos puede ser contribuido individualmente.
 
-Puede contribuir en el desarrollo de los [proyectos de programas oficiales de Arch Linux](https://git.archlinux.org/).
+Véase [DeveloperWiki:Projects](/index.php/DeveloperWiki:Projects "DeveloperWiki:Projects") para obtener una descripción general de los miembros del equipo, los canales de comunicación y los lenguajes de programación utilizados. Los proyectos en sí están alojados con [git](/index.php/Git_(Espa%C3%B1ol) "Git (Español)") en [git.archlinux.org](https://git.archlinux.org).
 
-### Donar dinero
+## Donar dinero
 
 Puede encontrar la manera de ayudar a sostener los gastos del servidor en la ficha [official Arch Linux donate page](https://www.archlinux.org/donate/).
 
-## Proyectos de la comunidad
+## Proyectos no oficiales
 
-**Nota:** Todos los proyectos que figuran en esta lista son proyectos comunitarios. Ninguno de estos proyectos se consideran proyectos *oficiales* de Arch.
+**Nota:** La entradas listadas aquí *no* son parte del proyecto [Arch Linux](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)").
 
 La comunidad de Arch mantiene muchos proyectos. ¡Siéntase libre de incluir el tuyo!
 
@@ -89,11 +94,7 @@ Grupos específicos de Arch en los que puede participar.
 
 	[ArchMap](/index.php/ArchMap_(Espa%C3%B1ol) "ArchMap (Español)")
 
-	Mapa de usuarios de Arch en Google Earth.
-
-	[ArchAudio](http://archaudio.org)
-
-	Un repositorio de paquetes de terceros y foro de discusión en línea para los usuarios de Arch Linux que se dedican profesionalmente al audio.
+	El proyecto ArchMap crea un mapa de usuarios de Arch Linux en todo el mundo.
 
 	[Arch Linux Subreddit](http://www.reddit.com/r/archlinux/)
 
@@ -107,23 +108,9 @@ Grupos específicos de Arch en los que puede participar.
 
 	Grupo con la intención de resolver los obstáculos posibles para las usuarias femeninas de Arch ([hilo del foro](https://bbs.archlinux.org/viewtopic.php?id=136184)).
 
-	[Grupo LinkedIn](http://www.linkedin.com/groups?gid=1399787)
+#### Programas
 
-	Grupo Arch Linux para usuarios y profesionales.
-
-#### Software
-
-Software desarrollado por la comunidad centrado en Arch Linux.
-
-	[Repositorio de usuario de Arch](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)")
-
-	Un gran repositorio impulsado por la comunidad de usuarios de Arch.
-
-	[Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories")
-
-	Repositorios de binarios no oficiales mantenidos por miembros de la comunidad.
-
-### Otros
+Programas desarrollados por la comunidad centrado en Arch Linux.
 
 	[Xyne's Arch Linux Projects](http://xyne.archlinux.ca/projects/)
 

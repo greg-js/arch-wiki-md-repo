@@ -65,7 +65,7 @@
 
 ### ميلاد مشروع موسوعة آرتش
 
-[أُطلِقَ](/index.php/ArchWiki:About#History "ArchWiki:About") مشروع موسوعة آرتش لأوَّل مرَّة في 2005/07/08 مُعتمداً على برمجية [ميدياويكي](https://ar.wikipedia.org/wiki/ميدياويكي).
+[أُطلِقَ](/index.php/ArchWiki:About#Early_history "ArchWiki:About") مشروع موسوعة آرتش لأوَّل مرَّة في 2005/07/08 مُعتمداً على برمجية [ميدياويكي](https://ar.wikipedia.org/wiki/ميدياويكي).
 
 ### قيادة هارون غريفين للمشروع
 

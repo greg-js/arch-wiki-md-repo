@@ -224,7 +224,7 @@ You can verify the profile is active by running `colormgr get-devices`.
 
 ## Intel Graphics UHD 620 issues
 
-[Enable GuC/HuC firmware loading](https://wiki.archlinux.org/index.php/Intel_graphics#Enable_GuC_/_HuC_firmware_loading) suggests to load GPU firmware with warning. However, on Wayland for Carbon X1 gen 6 it cause GPU hang problem. Issues can be reflected as: a) crashing GPU process of Chrome / Chromium / Electron apps and subsequent host freezing; b) crashing of Gnome / Wayland with possibility to reboot via second virtual terminal; c) just host freezing. In dmesg the following can be observed:
+[Enable GuC/HuC firmware loading](/index.php/Intel_graphics#Enable_GuC_/_HuC_firmware_loading "Intel graphics") suggests to load GPU firmware with warning. However, on Wayland for Carbon X1 gen 6 it cause GPU hang problem. Issues can be reflected as: a) crashing GPU process of Chrome / Chromium / Electron apps and subsequent host freezing; b) crashing of Gnome / Wayland with possibility to reboot via second virtual terminal; c) just host freezing. In dmesg the following can be observed:
 
 ```
  kernel: [drm] GPU HANG: ecode 9:0:0x85dffffd, in chrome [18418], reason: hang on rcs0, action: reset

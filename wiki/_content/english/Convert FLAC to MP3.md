@@ -6,22 +6,47 @@ This article presents ways of doing audio transcoding between FLAC and MP3 audio
 
 ## Contents
 
-*   [1 Scripts](#Scripts)
-    *   [1.1 With FFmpeg](#With_FFmpeg)
-        *   [1.1.1 Parallel version](#Parallel_version)
-        *   [1.1.2 Makefile for incremental recursive transcoding](#Makefile_for_incremental_recursive_transcoding)
-    *   [1.2 Without FFmpeg](#Without_FFmpeg)
-    *   [1.3 Recursively](#Recursively)
-    *   [1.4 Usage](#Usage)
-    *   [1.5 Packages](#Packages)
+*   [1 Packages](#Packages)
 *   [2 Graphical applications](#Graphical_applications)
-*   [3 See also](#See_also)
+*   [3 Scripts](#Scripts)
+    *   [3.1 Usage](#Usage)
+    *   [3.2 With FFmpeg](#With_FFmpeg)
+        *   [3.2.1 Parallel version](#Parallel_version)
+        *   [3.2.2 Makefile for incremental recursive transcoding](#Makefile_for_incremental_recursive_transcoding)
+    *   [3.3 Without FFmpeg](#Without_FFmpeg)
+    *   [3.4 Recursively](#Recursively)
+*   [4 See also](#See_also)
+
+## Packages
+
+*   [whatmp3](https://aur.archlinux.org/packages/whatmp3/) - A small Python script that accepts a list of directories containing FLAC files as arguments and converts them to MP3 with the specified options.
+*   [flac2all](https://aur.archlinux.org/packages/flac2all/) - Audio converter of FLAC to either Ogg Vorbis or MP3 retaining all tags and metadata.
+*   [flac2mp3-bash](https://aur.archlinux.org/packages/flac2mp3-bash/) - Bash script to convert Flac to Mp3 easily.
+*   [audiotools](https://aur.archlinux.org/packages/audiotools/) - Transcode between different formats and keep tags with `track2track`, can encode from CDDA with `cdda2track`, has an optional Ncurses GUI.
+
+## Graphical applications
+
+*   **SoundConverter** — A dedicated audio transcoding utility built for the [GNOME](/index.php/GNOME "GNOME") desktop and relying on GStreamer. It can make use of [GNOME Audio Profiles](http://library.gnome.org/users/gnome-audio-profiles/stable/gnome-audio-profiles-usage.html.en) and features multithreaded conversions. It can also extract the audio from videos.
+
+	[http://soundconverter.org/](http://soundconverter.org/) || [soundconverter](https://www.archlinux.org/packages/?name=soundconverter)
+
+*   **soundKonverter** — A Qt graphical frontend to various audio manipulation programs. Features conversion, ripping and other audio manipulation functionalities.
+
+	[https://github.com/HessiJames/soundkonverter/wiki](https://github.com/HessiJames/soundkonverter/wiki) || [soundkonverter](https://www.archlinux.org/packages/?name=soundkonverter)
+
+*   **[WinFF](https://en.wikipedia.org/wiki/FFmpeg#Projects_using_FFmpeg "wikipedia:FFmpeg")** — A GUI for the powerful multimedia converter FFmpeg. Features dedicated profiles for audio transcoding.
+
+	[https://github.com/WinFF/winff//](https://github.com/WinFF/winff//) || [winff](https://aur.archlinux.org/packages/winff/)
 
 ## Scripts
 
 In these two examples, FLAC files in current directory are encoded by the LAME MP3 encoder. Both scripts pass the ID3 tags from the FLAC files to the resulting MP3 files, and encode to MP3 V0\. V0 results in a variable bitrate usually between 220-260 kbps. The audio of a V0 file is transparent, meaning one cannot tell the difference between the lossy file and the original source (compact disc/lossless), but yet the file size is significantly reduced. For more information on LAME switches/settings such as V0, visit the [Hydrogenaudio LAME Wiki](http://wiki.hydrogenaudio.org/index.php?title=LAME).
 
 The original `.flac` files are not modified and the resulting `.mp3`s will be in the same directory. All files with extensions not matching `*.flac` in the working directory (`.nfo`, images, `.sfv`, etc.) are ignored.
+
+### Usage
+
+For ease of use, add the script to your `PATH`. Open up a terminal, `cd` to the directory of FLAC files that you wish to convert, and invoke `flac2mp3` (or whatever you named the script). You will see the verbose decoding/encoding process in the terminal which may take a few moments. Done! At this point, it is trivial to `mv *.mp3` all your new MP3s wherever you wish.
 
 ### With FFmpeg
 
@@ -113,31 +138,6 @@ A useful extension of the above scripts is to let them recurse into all subdirec
 find -type f -name "*.flac" -print0 | while read -d $'\0' a; do
 
 ```
-
-### Usage
-
-For ease of use, add the script to your `PATH`. Open up a terminal, `cd` to the directory of FLAC files that you wish to convert, and invoke `flac2mp3` (or whatever you named the script). You will see the verbose decoding/encoding process in the terminal which may take a few moments. Done! At this point, it is trivial to `mv *.mp3` all your new MP3s wherever you wish.
-
-### Packages
-
-*   [whatmp3](https://aur.archlinux.org/packages/whatmp3/) - A small Python script that accepts a list of directories containing FLAC files as arguments and converts them to MP3 with the specified options.
-*   [flac2all](https://aur.archlinux.org/packages/flac2all/) - Audio converter of FLAC to either Ogg Vorbis or MP3 retaining all tags and metadata.
-*   [flac2mp3-bash](https://aur.archlinux.org/packages/flac2mp3-bash/) - Bash script to convert Flac to Mp3 easily.
-*   [audiotools](https://aur.archlinux.org/packages/audiotools/) - Transcode between different formats and keep tags with `track2track`, can encode from CDDA with `cdda2track`, has an optional Ncurses GUI.
-
-## Graphical applications
-
-*   **SoundConverter** — A dedicated audio transcoding utility built for the [GNOME](/index.php/GNOME "GNOME") desktop and relying on GStreamer. It can make use of [GNOME Audio Profiles](http://library.gnome.org/users/gnome-audio-profiles/stable/gnome-audio-profiles-usage.html.en) and features multithreaded conversions. It can also extract the audio from videos.
-
-	[http://soundconverter.org/](http://soundconverter.org/) || [soundconverter](https://www.archlinux.org/packages/?name=soundconverter)
-
-*   **soundKonverter** — A Qt graphical frontend to various audio manipulation programs. Features conversion, ripping and other audio manipulation functionalities.
-
-	[https://github.com/HessiJames/soundkonverter/wiki](https://github.com/HessiJames/soundkonverter/wiki) || [soundkonverter](https://www.archlinux.org/packages/?name=soundkonverter)
-
-*   **[WinFF](https://en.wikipedia.org/wiki/FFmpeg#Projects_using_FFmpeg "wikipedia:FFmpeg")** — A GUI for the powerful multimedia converter FFmpeg. Features dedicated profiles for audio transcoding.
-
-	[https://github.com/WinFF/winff//](https://github.com/WinFF/winff//) || [winff](https://aur.archlinux.org/packages/winff/)
 
 ## See also
 

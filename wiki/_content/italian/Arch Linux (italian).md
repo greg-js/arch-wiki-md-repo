@@ -61,7 +61,7 @@ La crescita della comunità di Arch Linux tra 2002 e 2011 è stata costante, com
 
 ### Nascita di ArchWiki
 
-L'8 luglio 2005 nasce [ArchWiki](/index.php/ArchWiki:About#History "ArchWiki:About") su piattaforma MediaWiki.
+L'8 luglio 2005 nasce [ArchWiki](/index.php/ArchWiki:About#Early_history "ArchWiki:About") su piattaforma MediaWiki.
 
 ### L'era di Griffin
 

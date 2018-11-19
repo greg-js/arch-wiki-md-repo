@@ -11,8 +11,8 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [2.3 Gotchas](#Gotchas)
         *   [2.3.1 Plugging your guest GPU in an unisolated CPU-based PCIe slot](#Plugging_your_guest_GPU_in_an_unisolated_CPU-based_PCIe_slot)
 *   [3 Isolating the GPU](#Isolating_the_GPU)
-    *   [3.1 With vfio-pci built into the kernel (4.18.16.arch1 onwards)](#With_vfio-pci_built_into_the_kernel_(4.18.16.arch1_onwards))
-    *   [3.2 With vfio-pci loaded as a module](#With_vfio-pci_loaded_as_a_module)
+    *   [3.1 With vfio-pci loaded as a module](#With_vfio-pci_loaded_as_a_module)
+    *   [3.2 With vfio-pci built into the kernel](#With_vfio-pci_built_into_the_kernel)
     *   [3.3 Verifying that the configuration worked](#Verifying_that_the_configuration_worked)
 *   [4 Setting up an OVMF-based guest VM](#Setting_up_an_OVMF-based_guest_VM)
     *   [4.1 Configuring libvirt](#Configuring_libvirt)
@@ -200,22 +200,9 @@ IOMMU Group 13 06:00.1 Audio device: NVIDIA Corporation GM204 High Definition Au
 
 **Note:** If, as noted in [#Plugging your guest GPU in an unisolated CPU-based PCIe slot](#Plugging_your_guest_GPU_in_an_unisolated_CPU-based_PCIe_slot), your pci root port is part of your IOMMU group, you **must not** pass its ID to `vfio-pci`, as it needs to remain attached to the host to function properly. Any other device within that group, however, should be left for `vfio-pci` to bind with.
 
-### With vfio-pci built into the kernel (4.18.16.arch1 onwards)
-
-Starting with version 4.18.16, the stock Arch Linux kernel comes with vfio-pci compiled within, as opposed to having it compiled it alongside the kernel but leaving it to be loaded as a module. This means all that should be required to isolate the GPU is to pass the device IDs as [kernel parameters](/index.php/Kernel_parameter "Kernel parameter"), like so:
-
- `/etc/default/grub`  `GRUB_CMDLINE_LINUX_DEFAULT=... vfio-pci.ids=10de:13c2,10de:0fbb` 
-
-In the case of GRUB, since the configuration has been changed, its config file must also be regenerated.
-
-```
- # grub-mkconfig -o /boot/grub/grub.cfg
-
-```
-
 ### With vfio-pci loaded as a module
 
-If your kernel image does not include vfio-pci as a built-in module, the configuration differs slightly. First, the vendor-device ID pairs must be specified as default parameters passed to vfio-pci whenever it is inserted into the kernel.
+[linux](https://www.archlinux.org/packages/?name=linux) kernel does not include vfio-pci as a built-in module and therefore needs to be loaded en configured separately like so. First, the vendor-device ID pairs must be specified as default parameters passed to vfio-pci whenever it is inserted into the kernel.
 
  `/etc/modprobe.d/vfio.conf`  `options vfio-pci ids=10de:13c2,10de:0fbb` 
 
@@ -229,6 +216,15 @@ Also, ensure that the modconf hook is included in the HOOKS list of `mkinitcpio.
  `/etc/mkinitcpio.conf`  `HOOKS=(... modconf ...)` 
 
 Since new modules have been added to the initramfs configuration, you must [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs"). Should you change the IDs of the devices in `/etc/modprobe.d/vfio.conf`, you will also have to regenerate it, as those parameters must be specified in the initramfs to be known during the early boot stages.
+
+### With vfio-pci built into the kernel
+
+If your kernel comes with the vfio-pci module built in, as opposed to it being a module that needs to be loaded separately. All that should be required to isolate the GPU is to pass the device IDs as [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") like so:
+
+```
+vfio-pci.ids=10de:13c2,10de:0fbb
+
+```
 
 ### Verifying that the configuration worked
 
@@ -363,7 +359,7 @@ CPU NODE SOCKET CORE L1d:L1i:L2:L3 ONLINE MAXMHZ    MINMHZ
 
 As we see above, with AMD **Core 0** is sequential with **CPU 0 & 1**, whereas Intel places **Core 0** on **CPU 0 & 6**.
 
-If you don't need all cores for the guest, it would then be preferable to leave at the very least one core for the host. Choosing which cores one to use for the host or guest should be based on the specific hardware characteristics of your CPU, however **Core 0** is a good choice for the host in most cases. If any cores are reserved for the host, it is recommended to pin the emulator and iothreads, if used, to the host cores rather than the VCPUs. This may improve performance and reduce latency for the guest since those threads will not pollute the cache or contend for scheduling with the guest VCPU threads. If all cores are passed to the guest, there is no need or benefit to pinning the emulator or iothreads.
+If you do not need all cores for the guest, it would then be preferable to leave at the very least one core for the host. Choosing which cores one to use for the host or guest should be based on the specific hardware characteristics of your CPU, however **Core 0** is a good choice for the host in most cases. If any cores are reserved for the host, it is recommended to pin the emulator and iothreads, if used, to the host cores rather than the VCPUs. This may improve performance and reduce latency for the guest since those threads will not pollute the cache or contend for scheduling with the guest VCPU threads. If all cores are passed to the guest, there is no need or benefit to pinning the emulator or iothreads.
 
 #### XML examples
 
@@ -527,14 +523,11 @@ Depending on the way your [CPU governor](/index.php/CPU_frequency_scaling "CPU f
 
 ### CPU pinning with isolcpus
 
-Alternatively, make sure that you have isolated CPUs properly. In this example, let us assume you are using CPUs 4-7. Use the kernel parameters `isolcpus nohz_full rcu_nocbs` to completely isolate the CPUs from the kernel.
+Alternatively, make sure that you have isolated CPUs properly. In this example, let us assume you are using CPUs 4-7. Use the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") `isolcpus nohz_full rcu_nocbs` to completely isolate the CPUs from the kernel. For example:
 
- `/etc/defaults/grub` 
 ```
-...
-GRUB_CMDLINE_LINUX="..your other params.. isolcpus=4-7 nohz_full=4-7 rcu_nocbs=4-7"
-...
-</nowiki>
+isolcpus=4-7 nohz_full=4-7 rcu_nocbs=4-7
+
 ```
 
 Then, run `qemu-system-x86_64` with taskset and chrt:

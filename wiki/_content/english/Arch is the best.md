@@ -2038,6 +2038,27 @@ Arch es una mazza!!
 
 ```
 
+	Spanish (Perú)
+
+```
+¡Arch es bravazo!
+
+```
+
+	Spanish (Perú pituco)
+
+```
+¡Oe ese Arch es bien paja brother!
+
+```
+
+	Spanish (Perú piraña)
+
+```
+03 k4vz4 3s3 4rch 3s l4 kg4d4 j3j3j3!!!!
+
+```
+
 	Spanish (Chile)
 
 ```

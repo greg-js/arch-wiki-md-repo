@@ -133,7 +133,7 @@ The first and last sectors of the partition can be specified in sector numbers o
 
 The position can be specified in:
 
-*   absolute terms from the star of the disk. E.g. `40M` as a first sector specifies a position 40 MiB from the start of the disk.
+*   absolute terms from the start of the disk. E.g. `40M` as a first sector specifies a position 40 MiB from the start of the disk.
 *   relative terms by preceding the size with `**+***size*` or `**-***size*`. E.g. `+2G` to specify a point 2 GiB after the default start sector, or `-200M` to specify a point 200 MiB before the last available sector.
 
 Pressing the `Enter` key with no input specifies the default value, which is the start of the largest available block for the first sector and the end of the same block for the last sector.

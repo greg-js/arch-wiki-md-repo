@@ -382,7 +382,7 @@ dpkg: error: error creating new backup file '/var/lib/dpkg/status-old': Invalid 
 
 ```
 
-Downgrade to 4.18.x until [this issue](https://github.com/docker/for-linux/issues/480) is resolved. More info in the [Arch forum](https://bbs.archlinux.org/viewtopic.php?id=241866).
+Either add a `overlay.metacopy=N` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") or downgrade to 4.18.x until [this issue](https://github.com/docker/for-linux/issues/480) is resolved. More info in the [Arch forum](https://bbs.archlinux.org/viewtopic.php?id=241866).
 
 ## See also
 

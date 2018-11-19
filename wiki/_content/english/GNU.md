@@ -66,7 +66,7 @@ Most tools of the [GNU toolchain](https://en.wikipedia.org/wiki/GNU_toolchain "w
 
 	[https://www.gnu.org/software/binutils/](https://www.gnu.org/software/binutils/) || [binutils](https://www.archlinux.org/packages/?name=binutils)
 
-*   **[GNU bison](https://en.wikipedia.org/wiki/GNU_bison "wikipedia:GNU bison")** — The GNU general-purpose parser generator.
+*   **[GNU Bison](https://en.wikipedia.org/wiki/GNU_Bison "wikipedia:GNU Bison")** — The GNU general-purpose parser generator.
 
 	[https://www.gnu.org/software/bison/bison.html](https://www.gnu.org/software/bison/bison.html) || [bison](https://www.archlinux.org/packages/?name=bison)
 

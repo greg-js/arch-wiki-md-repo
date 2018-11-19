@@ -152,7 +152,7 @@
 | <small>5.1.11.3.</small> [Servidores multimedia](/index.php/Category:Media_servers_(Espa%C3%B1ol) "Category:Media servers (Español)") <small>(1) (también en [Servidores](/index.php/Category:Servers_(Espa%C3%B1ol) "Category:Servers (Español)"), [Retransmisión digital](/index.php/Category:Streaming_(Espa%C3%B1ol) "Category:Streaming (Español)"))</small> |
 | <small>5.1.11.4.</small> [Música](/index.php/Category:Music_(Espa%C3%B1ol) "Category:Music (Español)") <small>(4)</small> |
 | <small>5.1.11.5.</small> [Sonido](/index.php/Category:Sound_(Espa%C3%B1ol) "Category:Sound (Español)") <small>(6) (también en [Hardware](/index.php/Category:Hardware_(Espa%C3%B1ol) "Category:Hardware (Español)"))</small> |
-| <small>5.1.11.6.</small> [Video](/index.php/Category:Video_(Espa%C3%B1ol) "Category:Video (Español)") <small>(3) (también en [File formats](/index.php/Category:File_formats_(Espa%C3%B1ol) "Category:File formats (Español)"))</small> |
+| <small>5.1.11.6.</small> [Video](/index.php/Category:Video_(Espa%C3%B1ol) "Category:Video (Español)") <small>(3)</small> |
 | <small>5.1.12.</small> [Ofimática](/index.php/Category:Office_(Espa%C3%B1ol) "Category:Office (Español)") <small>(4)</small> |
 | <small>5.1.12.1.</small> [TeX](/index.php/Category:TeX_(Espa%C3%B1ol) "Category:TeX (Español)") <small>(1)</small> |
 | <small>5.1.13.</small> [Science](/index.php/Category:Science_(Espa%C3%B1ol) "Category:Science (Español)") <small>(6)</small> |
@@ -167,9 +167,9 @@
 | <small>5.1.19.1.</small> [Sistemas de gestión de contenidos](/index.php/Category:Content_management_systems_(Espa%C3%B1ol) "Category:Content management systems (Español)") <small>(1)</small> |
 | <small>5.1.19.2.</small> [Interfaces de administración web](/index.php/Category:Web_admin_interfaces_(Espa%C3%B1ol) "Category:Web admin interfaces (Español)") <small>(1)</small> |
 | <small>5.1.19.3.</small> [Programas para Wiki](/index.php/Category:Wiki_software_(Espa%C3%B1ol) "Category:Wiki software (Español)") <small>(1)</small> |
-| <small>5.2.</small> [Línea de órdenes](/index.php/Category:Command-line_(Espa%C3%B1ol) "Category:Command-line (Español)") <small>(2) (también en [Administración del sistema](/index.php/Category:System_administration_(Espa%C3%B1ol) "Category:System administration (Español)"))</small> |
+| <small>5.2.</small> [Línea de órdenes](/index.php/Category:Command-line_(Espa%C3%B1ol) "Category:Command-line (Español)") <small>(3) (también en [Administración del sistema](/index.php/Category:System_administration_(Espa%C3%B1ol) "Category:System administration (Español)"))</small> |
 | <small>5.2.1.</small> [Intérpretes de órdenes](/index.php/Category:Command_shells_(Espa%C3%B1ol) "Category:Command shells (Español)") <small>(5) (también en [Lenguaje de programación](/index.php/Category:Programming_languages_(Espa%C3%B1ol) "Category:Programming languages (Español)"))</small> |
-| <small>5.2.2.</small> [Órdenes](/index.php/Category:Commands_(Espa%C3%B1ol) "Category:Commands (Español)") <small>(42)</small> |
+| <small>5.2.2.</small> [Órdenes](/index.php/Category:Commands_(Espa%C3%B1ol) "Category:Commands (Español)") <small>(41)</small> |
 | <small>5.2.2.1.</small> [Console applications](/index.php/Category:Console_applications_(Espa%C3%B1ol) "Category:Console applications (Español)") <small>(8) (también en [Aplicaciones](/index.php/Category:Applications_(Espa%C3%B1ol) "Category:Applications (Español)"))</small> |
 | <small>5.2.2.2.</small> [Utilidades de descarga](/index.php/Category:Download_utilities_(Espa%C3%B1ol) "Category:Download utilities (Español)") <small>(2) (también en [Aplicaciones de internet](/index.php/Category:Internet_applications_(Espa%C3%B1ol) "Category:Internet applications (Español)"))</small> |
 | <small>5.2.2.3.</small> [Agentes de recuperación de correo](/index.php/Category:Mail_retrieval_agents_(Espa%C3%B1ol) "Category:Mail retrieval agents (Español)") <small>(1) (también en [Clientes de correo electrónico](/index.php/Category:Email_clients_(Espa%C3%B1ol) "Category:Email clients (Español)"))</small> |
@@ -194,7 +194,6 @@
 | <small>5.4.</small> [File formats](/index.php/Category:File_formats_(Espa%C3%B1ol) "Category:File formats (Español)") <small>(3)</small> |
 | <small>5.4.1.</small> [Audio](/index.php/Category:Audio_(Espa%C3%B1ol) "Category:Audio (Español)") <small>(1) (también en [Multimedia](/index.php/Category:Multimedia_(Espa%C3%B1ol) "Category:Multimedia (Español)"))</small> |
 | <small>5.4.2.</small> [Image](/index.php/Category:Image_(Espa%C3%B1ol) "Category:Image (Español)") <small>(2) (también en [Multimedia](/index.php/Category:Multimedia_(Espa%C3%B1ol) "Category:Multimedia (Español)"))</small> |
-| <small>5.4.3.</small> [Video](/index.php/Category:Video_(Espa%C3%B1ol) "Category:Video (Español)") <small>(3) (también en [Multimedia](/index.php/Category:Multimedia_(Espa%C3%B1ol) "Category:Multimedia (Español)"))</small> |
 | <small>5.5.</small> [Listados de programas](/index.php/Category:Lists_of_software_(Espa%C3%B1ol) "Category:Lists of software (Español)") <small>(21) (también en [Listados](/index.php/Category:Lists_(Espa%C3%B1ol) "Category:Lists (Español)"))</small> |
 | <small>5.6.</small> [Software companies](/index.php/Category:Software_companies_(Espa%C3%B1ol) "Category:Software companies (Español)") <small>(0)</small> |
 | <small>5.6.1.</small> [Canonical](/index.php/Category:Canonical_(Espa%C3%B1ol) "Category:Canonical (Español)") <small>(2)</small> |
@@ -217,9 +216,9 @@
 | <small>6.2.1.</small> [Cargadores de arranque](/index.php/Category:Boot_loaders_(Espa%C3%B1ol) "Category:Boot loaders (Español)") <small>(6)</small> |
 | <small>6.2.2.</small> [Arranque gráfico](/index.php/Category:Bootsplash_(Espa%C3%B1ol) "Category:Bootsplash (Español)") <small>(2) (también en [Mejoras visuales](/index.php/Category:Eye_candy_(Espa%C3%B1ol) "Category:Eye candy (Español)"))</small> |
 | <small>6.2.3.</small> [Init](/index.php/Category:Init_(Espa%C3%B1ol) "Category:Init (Español)") <small>(2)</small> |
-| <small>6.3.</small> [Línea de órdenes](/index.php/Category:Command-line_(Espa%C3%B1ol) "Category:Command-line (Español)") <small>(2) (también en [Software](/index.php/Category:Software_(Espa%C3%B1ol) "Category:Software (Español)"))</small> |
+| <small>6.3.</small> [Línea de órdenes](/index.php/Category:Command-line_(Espa%C3%B1ol) "Category:Command-line (Español)") <small>(3) (también en [Software](/index.php/Category:Software_(Espa%C3%B1ol) "Category:Software (Español)"))</small> |
 | <small>6.3.1.</small> [Intérpretes de órdenes](/index.php/Category:Command_shells_(Espa%C3%B1ol) "Category:Command shells (Español)") <small>(5) (también en [Lenguaje de programación](/index.php/Category:Programming_languages_(Espa%C3%B1ol) "Category:Programming languages (Español)"))</small> |
-| <small>6.3.2.</small> [Órdenes](/index.php/Category:Commands_(Espa%C3%B1ol) "Category:Commands (Español)") <small>(42)</small> |
+| <small>6.3.2.</small> [Órdenes](/index.php/Category:Commands_(Espa%C3%B1ol) "Category:Commands (Español)") <small>(41)</small> |
 | <small>6.3.2.1.</small> [Console applications](/index.php/Category:Console_applications_(Espa%C3%B1ol) "Category:Console applications (Español)") <small>(8) (también en [Aplicaciones](/index.php/Category:Applications_(Espa%C3%B1ol) "Category:Applications (Español)"))</small> |
 | <small>6.3.2.2.</small> [Utilidades de descarga](/index.php/Category:Download_utilities_(Espa%C3%B1ol) "Category:Download utilities (Español)") <small>(2) (también en [Aplicaciones de internet](/index.php/Category:Internet_applications_(Espa%C3%B1ol) "Category:Internet applications (Español)"))</small> |
 | <small>6.3.2.3.</small> [Agentes de recuperación de correo](/index.php/Category:Mail_retrieval_agents_(Espa%C3%B1ol) "Category:Mail retrieval agents (Español)") <small>(1) (también en [Clientes de correo electrónico](/index.php/Category:Email_clients_(Espa%C3%B1ol) "Category:Email clients (Español)"))</small> |

@@ -19,7 +19,7 @@ Un [display manager](https://en.wikipedia.org/wiki/X_display_manager_(program_ty
     *   [3.3 Avvio automatico](#Avvio_automatico)
     *   [3.4 Impostazione della lingua](#Impostazione_della_lingua)
 *   [4 Problemi noti](#Problemi_noti)
-    *   [4.1 Incompatibilità con systemd](#Incompatibilit.C3.A0_con_systemd)
+    *   [4.1 Incompatibilità con systemd](#Incompatibilità_con_systemd)
 
 ## Lista dei display manager disponibili
 
@@ -81,7 +81,7 @@ Un [display manager](https://en.wikipedia.org/wiki/X_display_manager_(program_ty
 
 ## Avviare il display manager
 
-Per abilitare il login grafico, si [attivi](/index.php/Systemd_(Italiano)#Usare_le_unit.C3.A0 "Systemd (Italiano)") il relativo servizio di systemd. Ad esempio, per KDM, attivare `kdm.service`.
+Per abilitare il login grafico, si [attivi](/index.php/Systemd_(Italiano)#Usare_le_unità "Systemd (Italiano)") il relativo servizio di systemd. Ad esempio, per KDM, attivare `kdm.service`.
 
 Il comando di cui sopra dovrebbe funzionare senza problemi. Se così non fosse, probabilmente si è creato il file `default.target` manualmente o come residuo di precedenti installazioni:
 

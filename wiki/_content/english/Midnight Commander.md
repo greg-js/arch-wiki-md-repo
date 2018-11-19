@@ -47,11 +47,7 @@ Additional third-party skins can be installed separately:
 
 	[https://launchpad.net/debian/+source/mc/3:4.8.13-3](https://launchpad.net/debian/+source/mc/3:4.8.13-3) || [mc-skin-modarin-debian](https://aur.archlinux.org/packages/mc-skin-modarin-debian/)
 
-*   **mc-skin-candy** — Candy color scheme (256color)
-
-	[candy256.ini](https://raw.githubusercontent.com/izmntuk/archiso/testing/configs/alter/airootfs/usr/share/mc/skins/candy256.ini) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
-
-See also `**Skins**` in [mc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mc.1).
+See also [mc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mc.1#Skins).
 
 ## Usage
 

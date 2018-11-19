@@ -21,6 +21,8 @@
 
 [Install](/index.php/Install "Install") [powerline](https://www.archlinux.org/packages/?name=powerline) and [powerline-fonts](https://www.archlinux.org/packages/?name=powerline-fonts) from the [official repositories](/index.php/Official_repositories "Official repositories")
 
+**Note:** Installing [powerline-fonts](https://www.archlinux.org/packages/?name=powerline-fonts) does not provide any of the patched fonts from [powerline-fonts-git](https://aur.archlinux.org/packages/powerline-fonts-git/)
+
 ## Usage
 
 ### Bash
@@ -71,11 +73,11 @@ source /usr/lib/python3.7/site-packages/powerline/bindings/tmux/powerline.conf
 
 Install [powerline-vim](https://www.archlinux.org/packages/?name=powerline-vim)
 
-**Note:** If you have more than one version of python installed, add `let g:powerline_pycmd="py3"` or `let g:powerline_pycmd="py"` to your vimrc.
+**Note:** If you have more than one version of python installed, add `let g:powerline_pycmd="py3"` or `let g:powerline_pycmd="py"` to your `.vimrc`.
 
 **Tip:** By default, the statusline (and therefore Powerline) only appears when there are multiple windows open. To show it all the time, use `:set laststatus=2`
 
-**Tip:** This package installs Powerline to `/usr/share/vim/vimfiles/plugin`, which vim is configured to check by default, meaning this will install Powerline in vim for all users and may require additional configuration. If this is not intended, consider either using a vim plugin manager, or installing the [powerline](https://www.archlinux.org/packages/?name=powerline) package and adding `set rtp+=/usr/lib/python3.7/site-packages/powerline/bindings/vim` to your vimrc.
+**Tip:** This package installs Powerline to `/usr/share/vim/vimfiles/plugin`, which vim is configured to check by default, meaning this will install Powerline in vim for all users and may require additional configuration. If this is not intended, consider either using a vim plugin manager, or installing the [powerline](https://www.archlinux.org/packages/?name=powerline) package and adding `set rtp+=/usr/lib/python3.7/site-packages/powerline/bindings/vim` to your `.vimrc`.
 
 ### Detailed Usage
 
@@ -110,7 +112,7 @@ cp /usr/lib/python3.7/site-packages/powerline/config_files/themes/tmux/default.j
 
 #### Using a vim plugin manager
 
-There are many vim plugin managers available which are able to install and update Powerline, assuming you are using a version of vim with Python support or you install [python](https://www.archlinux.org/packages/?name=python). For example, using [vim-plug](https://aur.archlinux.org/packages/vim-plug/) from the [AUR](/index.php/AUR "AUR"), add the following to your vimrc file:
+There are many vim plugin managers available which are able to install and update Powerline, assuming you are using a version of vim with Python support or you install [python](https://www.archlinux.org/packages/?name=python). For example, using [vim-plug](https://aur.archlinux.org/packages/vim-plug/) from the [AUR](/index.php/AUR "AUR"), add the following to your `.vimrc` file:
 
  `~/.vimrc` 
 ```

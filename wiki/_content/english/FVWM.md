@@ -48,7 +48,7 @@ Related articles
 
 ## Installing
 
-[Install](/index.php/Install "Install") [fvwm](https://www.archlinux.org/packages/?name=fvwm) or [fvwm-git](https://aur.archlinux.org/packages/fvwm-git/) (for the development version). Alternatively, you can install [fvwm+](https://aur.archlinux.org/packages/fvwm%2B/) which provides a patched version of FVWM.
+[Install](/index.php/Install "Install") the [fvwm](https://www.archlinux.org/packages/?name=fvwm) package or [fvwm-git](https://aur.archlinux.org/packages/fvwm-git/) for the development version. Alternatively, you can install [fvwm+](https://aur.archlinux.org/packages/fvwm%2B/) which provides a patched version of FVWM.
 
 The following packages provide themes and icons for FVWM: [fvwm-crystal](https://www.archlinux.org/packages/?name=fvwm-crystal), [fvwm-icons](https://aur.archlinux.org/packages/fvwm-icons/), [fvwm-themes](https://aur.archlinux.org/packages/fvwm-themes/), [fvwm-themes-extra](https://aur.archlinux.org/packages/fvwm-themes-extra/). FVWM Crystal provides a separate session for a desktop environment like experience.
 

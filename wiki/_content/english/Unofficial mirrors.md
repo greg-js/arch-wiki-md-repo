@@ -3,27 +3,32 @@ These [mirrors](/index.php/Mirrors "Mirrors") are *not* listed in `/etc/pacman.d
 ## Contents
 
 *   [1 Canada](#Canada)
-*   [2 China](#China)
-*   [3 France](#France)
-*   [4 Indonesia](#Indonesia)
-*   [5 Iran](#Iran)
-*   [6 Italy](#Italy)
-*   [7 Japan](#Japan)
-*   [8 Malaysia](#Malaysia)
-*   [9 Netherlands](#Netherlands)
-*   [10 New Zealand](#New_Zealand)
-*   [11 Poland](#Poland)
-*   [12 Russia](#Russia)
-*   [13 South Africa](#South_Africa)
-*   [14 Sweden](#Sweden)
-*   [15 Thailand](#Thailand)
-*   [16 Turkey](#Turkey)
-*   [17 United States](#United_States)
-*   [18 Sourceforge (old ISOs)](#Sourceforge_(old_ISOs))
+*   [2 Chile](#Chile)
+*   [3 China](#China)
+*   [4 France](#France)
+*   [5 Indonesia](#Indonesia)
+*   [6 Iran](#Iran)
+*   [7 Italy](#Italy)
+*   [8 Japan](#Japan)
+*   [9 Malaysia](#Malaysia)
+*   [10 Netherlands](#Netherlands)
+*   [11 New Zealand](#New_Zealand)
+*   [12 Poland](#Poland)
+*   [13 Russia](#Russia)
+*   [14 South Africa](#South_Africa)
+*   [15 Sweden](#Sweden)
+*   [16 Thailand](#Thailand)
+*   [17 Turkey](#Turkey)
+*   [18 United States](#United_States)
+*   [19 Sourceforge (old ISOs)](#Sourceforge_(old_ISOs))
 
 ## Canada
 
 *   [https://na.mirrors.coltondrg.com/archlinux/](https://na.mirrors.coltondrg.com/archlinux/)
+
+## Chile
+
+*   [http://ip62.inf.utfsm.cl/](http://ip62.inf.utfsm.cl/) *UTFSM #62*
 
 ## China
 

@@ -11,6 +11,7 @@ Related articles
 *   [2 Usage](#Usage)
     *   [2.1 Format selection](#Format_selection)
     *   [2.2 Extract audio](#Extract_audio)
+    *   [2.3 Subtitles](#Subtitles)
 *   [3 Configuration](#Configuration)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Faster downloads](#Faster_downloads)
@@ -20,7 +21,7 @@ Related articles
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [youtube-dl](https://www.archlinux.org/packages/?name=youtube-dl) package, or [youtube-dl-git](https://aur.archlinux.org/packages/youtube-dl-git/) for the development version. It is recommended to also install [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) as it is used for muxing for some sites.
+[Install](/index.php/Install "Install") the [youtube-dl](https://www.archlinux.org/packages/?name=youtube-dl) package, or [youtube-dl-git](https://aur.archlinux.org/packages/youtube-dl-git/) for the development version. It is recommended to also install [FFmpeg](/index.php/FFmpeg "FFmpeg") as it is used for muxing for some sites.
 
 ## Usage
 
@@ -57,6 +58,22 @@ Use `-x` for audio-only downloads (requires [FFmpeg](/index.php/FFmpeg "FFmpeg")
 
 ```
 $ youtube-dl -x -f bestaudio *URL*
+
+```
+
+### Subtitles
+
+To see which languages are available:
+
+```
+$ youtube-dl --list-subs *URL*
+
+```
+
+To download a video with selected subtitles (comma separated):
+
+```
+$ youtube-dl --write-sub --sub-lang *LANG* *URL*
 
 ```
 

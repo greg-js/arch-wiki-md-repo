@@ -990,7 +990,7 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 ###### Manipulation
 
-This section lists applications dedicated to lossless PDF manipulation. Note that other applications like [LibreOffice](/index.php/LibreOffice "LibreOffice"), [Inkscape](/index.php/Inkscape "Inkscape"), [Gimp](/index.php/Gimp "Gimp") or [krita](https://www.archlinux.org/packages/?name=krita) can also import and export PDFs.
+This section lists applications dedicated to lossless PDF manipulation. Note that other applications like [LibreOffice](/index.php/LibreOffice "LibreOffice"), [Inkscape](/index.php/Inkscape "Inkscape"), [GIMP](/index.php/GIMP "GIMP") or [krita](https://www.archlinux.org/packages/?name=krita) can also import and export PDFs.
 
 *   **Master PDF Editor** — Functional proprietary PDF editor. Free for non-commercial use.
 
@@ -1512,9 +1512,9 @@ See also [Wikipedia:Comparison of computer-assisted translation tools](https://e
 
 	[http://omegat.org](http://omegat.org) || [omegat](https://aur.archlinux.org/packages/omegat/)
 
-*   **[Poedit](https://en.wikipedia.org/wiki/Poedit "wikipedia:Poedit")** — Simple gettext/po-based translation tool.
+*   **[Poedit](https://en.wikipedia.org/wiki/Poedit "wikipedia:Poedit")** — Simple translation editor for gettext (PO, POT) and XLIFF.
 
-	[http://poedit.net](http://poedit.net) || [poedit](https://www.archlinux.org/packages/?name=poedit)
+	[https://poedit.net](https://poedit.net) || [poedit](https://www.archlinux.org/packages/?name=poedit)
 
 *   **Pology** — Set of Python tools for dealing with gettext/po-files.
 

@@ -9,6 +9,7 @@ This page is for those who prefer to limit the verbosity of their system to a st
 *   [5 fsck](#fsck)
 *   [6 Make GRUB silent](#Make_GRUB_silent)
 *   [7 Retaining the vendor logo from BIOS](#Retaining_the_vendor_logo_from_BIOS)
+    *   [7.1 Disabling deferred takeover](#Disabling_deferred_takeover)
 
 ## Kernel parameters
 
@@ -127,7 +128,7 @@ Lastly, regenerate `grub.cfg` file.
 
 Modern UEFI systems display a vendor logo on boot until handing over control to the bootloader; e.g. Lenovo laptops display a bright red Lenovo logo. This vendor logo is typically blanked by the bootloader (if standard GRUB is used) or by the kernel.
 
-To prevent the kernel from blanking the vendor logo, Linux 4.19 introduced a new configuration option `FRAMEBUFFER_CONSOLE_DEFERRED_TAKEOVER` that retains the contents of the framebuffer until text needs to be printed on the framebuffer console. At the time of writing, the official Arch Linux kernels are compiled with `CONFIG_FRAMEBUFFER_CONSOLE_DEFERRED_TAKEOVER=y`.
+To prevent the kernel from blanking the vendor logo, Linux 4.19 introduced a new configuration option `FRAMEBUFFER_CONSOLE_DEFERRED_TAKEOVER` that retains the contents of the framebuffer until text needs to be printed on the framebuffer console. As of November 2018 (Linux 4.19.1), the official Arch Linux kernels are compiled with `CONFIG_FRAMEBUFFER_CONSOLE_DEFERRED_TAKEOVER=y`.
 
 When combined with a low loglevel (to prevent text from being printed), the vendor logo can be retained while the system is initialized. Note that GRUB in the standard configuration blanks the screen; consider using [EFISTUB](/index.php/EFISTUB "EFISTUB") booting instead to boot directly into the kernel and thus leverage deferred takeover.
 
@@ -141,3 +142,7 @@ If you use [Intel graphics](/index.php/Intel_graphics "Intel graphics"), set `i9
 
 *   [Phoronix: Linux 4.19 Adds Deferred Console Takeover Support For FBDEV - Cleaner Boot Process](https://www.phoronix.com/scan.php?page=news_item&px=Linux-4.19-FBDEV-Defer-Console)
 *   [Hans de Goede: Adding deferred fbcon console takeover to the Fedora kernels](https://lists.fedoraproject.org/archives/list/kernel@lists.fedoraproject.org/thread/3MWCKJ2DVJPC4INXPKB4ECFZLA7X5RTI/)
+
+### Disabling deferred takeover
+
+If the new behavior leads to issues, you can disable deferred takeover by using the `fbcon=nodefer` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter").

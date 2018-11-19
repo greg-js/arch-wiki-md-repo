@@ -753,6 +753,10 @@ There are other downloading applications that you can use with *pacman*. Here th
 
 	[https://github.com/wesbarnett/snap-pac](https://github.com/wesbarnett/snap-pac) || [snap-pac](https://www.archlinux.org/packages/?name=snap-pac)
 
+*   **vrms-arch** — A virtual Richard M. Stallman to tell you which non-free packages are installed.
+
+	[https://github.com/orospakr/vrms-arch](https://github.com/orospakr/vrms-arch) || [vrms-arch](https://aur.archlinux.org/packages/vrms-arch/)
+
 ### Graphical
 
 **Warning:** PackageKit opens up system permissions by default, and is otherwise not recommended for general usage. See [FS#50459](https://bugs.archlinux.org/task/50459) and [FS#57943](https://bugs.archlinux.org/task/57943).

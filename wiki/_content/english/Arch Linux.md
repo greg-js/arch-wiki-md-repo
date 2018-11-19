@@ -65,7 +65,7 @@ The early Arch community grew steadily, as evidenced by [this chart of forum pos
 
 ### Birth of the ArchWiki
 
-On 2005-07-08 the ArchWiki was first [set up](/index.php/ArchWiki:About#History "ArchWiki:About") on the MediaWiki engine.
+On 2005-07-08 the ArchWiki was first [set up](/index.php/ArchWiki:About#Early_history "ArchWiki:About") on the MediaWiki engine.
 
 ### The dawning of the age of A. Griffin
 

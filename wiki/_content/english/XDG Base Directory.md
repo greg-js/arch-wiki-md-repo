@@ -105,7 +105,7 @@ Supported only in Git master branch, there's no updated stable release yet.
 
  |
 | [citra-git](https://aur.archlinux.org/packages/citra-git/) | `~/.citra-emu` | [f7c3193](https://github.com/citra-emu/citra/commit/f7c3193) | [[8]](https://github.com/citra-emu/citra/pull/575) |
-| [Composer](/index.php/PHP#Composer "PHP") | `~/.composer` | [1.0.0-beta1](https://github.com/composer/composer/releases/tag/1.0.0-beta1) | [[9]](https://github.com/composer/composer/pull/1407) |
+| [Composer](/index.php/Composer "Composer") | `~/.composer` | [1.0.0-beta1](https://github.com/composer/composer/releases/tag/1.0.0-beta1) | [[9]](https://github.com/composer/composer/pull/1407) |
 | [cower](https://aur.archlinux.org/packages/cower/) | [8b70805](https://github.com/falconindy/cower/commit/8b70805) |
 | [d-feet](https://www.archlinux.org/packages/?name=d-feet) | `~/.d-feet` | [7f6104b](https://gitlab.gnome.org/GNOME/d-feet/commit/7f6104b) |
 | [dconf](https://www.archlinux.org/packages/?name=dconf) |
@@ -574,7 +574,7 @@ $ export GEM_SPEC_CACHE="$XDG_CACHE_HOME"/gem`
 
  | [[99]](https://github.com/sbt/sbt/issues/3681) | `$ sbt -ivy "$XDG_DATA_HOME"/ivy2 -sbt-dir "$XDG_DATA_HOME"/sbt` (beware [[100]](https://github.com/sbt/sbt/issues/3598)) |
 | [GNU Screen](/index.php/GNU_Screen "GNU Screen") | `~/.screenrc` | `$ export SCREENRC="$XDG_CONFIG_HOME"/screen/screenrc` |
-| [Haskell#stack](/index.php/Haskell#stack "Haskell") | `~/.stack` | [[101]](https://github.com/commercialhaskell/stack/issues/342) | `$ export STACK_ROOT="$XDG_DATA_HOME"/stack` |
+| [Haskell#Stack](/index.php/Haskell#Stack "Haskell") | `~/.stack` | [[101]](https://github.com/commercialhaskell/stack/issues/342) | `$ export STACK_ROOT="$XDG_DATA_HOME"/stack` |
 | [subversion](/index.php/Subversion "Subversion") | `~/.subversion` | [[102]](https://issues.apache.org/jira/browse/SVN-4599) [[103]](https://mail-archives.apache.org/mod_mbox/subversion-users/201204.mbox/%3c4F8FBCC6.4080205@ritsuka.org%3e)[[104]](http://mail-archives.apache.org/mod_mbox/subversion-dev/201509.mbox/%3c20150917222954.GA20331@teapot%3e) | `$ svn --config-dir "$XDG_CONFIG_HOME"/subversion` |
 | [task](https://www.archlinux.org/packages/?name=task) | 
 

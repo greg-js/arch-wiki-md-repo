@@ -49,7 +49,7 @@ You can also visit the [official nftables wiki page](https://wiki.nftables.org/w
 
 [Install](/index.php/Install "Install") the userspace utilities package [nftables](https://www.archlinux.org/packages/?name=nftables) or the git version [nftables-git](https://aur.archlinux.org/packages/nftables-git/).
 
-Some [iptables#front-ends](/index.php/Iptables#front-ends "Iptables") support nftables.
+Some [iptables#Front-ends](/index.php/Iptables#Front-ends "Iptables") support nftables.
 
 ## Usage
 

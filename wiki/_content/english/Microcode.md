@@ -35,7 +35,7 @@ Microcode must be loaded by the [boot loader](/index.php/Boot_loader "Boot loade
 
 These updates must be enabled by adding `/boot/amd-ucode.img` or `/boot/intel-ucode.img` as the **first initrd in the bootloader config file**. This is in addition to the normal initrd file. See below for instructions for common bootloaders.
 
-**Note:** In the following sections replace `*cpu_manufacturer*` with your CPU manufacturer, .i.e `amd` or `intel`.
+**Note:** In the following sections replace `*cpu_manufacturer*` with your CPU manufacturer, i.e. `amd` or `intel`.
 
 ### GRUB
 

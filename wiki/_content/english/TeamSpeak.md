@@ -111,7 +111,7 @@ $ rm /var/log/teamspeak3-server/*.log
 
 ### Starting Teamspeak with disabled IPv6 stack
 
-When booting your system with the `ipv6.disable=1` [Kernel Parameter](https://wiki.archlinux.org/index.php/Kernel_parameters) to [disable the IPv6 stack](https://wiki.archlinux.org/index.php/IPv6#Disable_functionality), Teamspeak wont be able to start with the default configuration. Edit `/etc/teamspeak3-server.ini` to change the listening IPs.
+When booting your system with the `ipv6.disable=1` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") to [disable the IPv6 stack](/index.php/IPv6#Disable_functionality "IPv6"), Teamspeak wont be able to start with the default configuration. Edit `/etc/teamspeak3-server.ini` to change the listening IPs.
 
  `/etc/teamspeak3-server.ini` 
 ```

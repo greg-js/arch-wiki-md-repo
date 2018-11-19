@@ -623,7 +623,7 @@ See also [Wikipedia:List of massively multiplayer online games](https://en.wikip
 
 *   **Speed Dreams** — Fork of Torcs, aiming to implement exciting new features as well as improving realism.
 
-	[http://speed-dreams.org/](http://speed-dreams.org/) || [speed-dreams](https://www.archlinux.org/packages/?name=speed-dreams)
+	[http://speed-dreams.org/](http://speed-dreams.org/) || [speed-dreams-svn](https://aur.archlinux.org/packages/speed-dreams-svn/)
 
 *   **Stunt Rally** — Racing game with rally style of driving, mostly on gravel.
 

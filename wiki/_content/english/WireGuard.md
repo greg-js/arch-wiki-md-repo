@@ -1,13 +1,13 @@
 From the [WireGuard](https://www.wireguard.com/) project homepage:
 
-	Wireguard is an extremely simple yet fast and modern VPN that utilizes state-of-the-art cryptography. It aims to be faster, simpler, leaner, and more useful than IPSec, while avoiding the massive headache. It intends to be considerably more performant than OpenVPN. WireGuard is designed as a general purpose VPN for running on embedded interfaces and super computers alike, fit for many different circumstances. Initially released for the Linux kernel, it plans to be cross-platform and widely deployable. It is currently under heavy development, but already it might be regarded as the most secure, easiest to use, and simplest VPN solution in the industry.
+	Wireguard is an extremely simple yet fast and modern VPN that utilizes state-of-the-art cryptography. It aims to be faster, simpler, leaner, and more useful than IPSec, while avoiding the massive headache. It intends to be considerably more performant than OpenVPN. WireGuard is designed as a general purpose VPN for running on embedded interfaces and super computers alike, fit for many different circumstances. Initially released for the Linux kernel, it plans to be cross-platform and widely deployable.
 
 **Warning:** WireGuard has not undergone proper degrees of security auditing and the protocol is still subject to change.[[1]](https://www.wireguard.com/#work-in-progress)
 
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Usage](#Usage)
+*   [2 Raw usage](#Raw_usage)
     *   [2.1 Key generation](#Key_generation)
     *   [2.2 Peer A setup](#Peer_A_setup)
     *   [2.3 Peer B setup](#Peer_B_setup)
@@ -15,11 +15,11 @@ From the [WireGuard](https://www.wireguard.com/) project homepage:
     *   [2.5 Persistent configuration](#Persistent_configuration)
     *   [2.6 Example peer configuration](#Example_peer_configuration)
     *   [2.7 Example configuration for systemd-networkd](#Example_configuration_for_systemd-networkd)
-*   [3 Setup a VPN server](#Setup_a_VPN_server)
+*   [3 Specific use-case: setup a VPN server](#Specific_use-case:_setup_a_VPN_server)
     *   [3.1 Server](#Server)
-        *   [3.1.1 Key generation](#Key_generation_2)
-        *   [3.1.2 Server config](#Server_config)
-        *   [3.1.3 Client config](#Client_config)
+    *   [3.2 Key generation](#Key_generation_2)
+    *   [3.3 Server config](#Server_config)
+    *   [3.4 Client config](#Client_config)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 PresharedKey bug with iOS client](#PresharedKey_bug_with_iOS_client)
     *   [4.2 Routes are periodically reset](#Routes_are_periodically_reset)
@@ -34,9 +34,9 @@ From the [WireGuard](https://www.wireguard.com/) project homepage:
 
 [Install](/index.php/Install "Install") the [wireguard-tools](https://www.archlinux.org/packages/?name=wireguard-tools) package.
 
-**Note:** WireGuard is not yet mainlined and the required kernel module will be built using [dkms](/index.php/Dkms "Dkms"). As such, be sure to have the corresponding kernel-headers package installed.
+**Note:** WireGuard is not yet mainlined and the required kernel module will be built using [DKMS](/index.php/DKMS "DKMS"). As such, be sure to have the corresponding kernel-headers package installed.
 
-## Usage
+## Raw usage
 
 Below commands will demonstrate how to setup a basic tunnel between two peers with the following settings:
 
@@ -69,6 +69,13 @@ Alternatively, do this all at once:
 
 ```
 $ wg genkey | tee privatekey | wg pubkey > publickey
+
+```
+
+One can also create a pre-shared key for added security.
+
+```
+# wg genpsk > preshared
 
 ```
 
@@ -184,9 +191,9 @@ Gateway = 10.0.0.1
 Destination = 10.0.0.0/24
 ```
 
-## Setup a VPN server
+## Specific use-case: setup a VPN server
 
-The purpose of this section is to setup an Arch WireGuard "server" and a generic "client" to enable access to the server/network resources. The WireGuard Project offer clients ("apps") for popular mobile devices on both iOS and Android platforms in addition to the Linux-native and MacOS software. See the official project [install link](https://www.wireguard.com/install/) for more.
+The purpose of this section is to setup a WireGuard "server" and generic "clients" to enable access to the server/network resources through an encrypted and secured tunnel like [OpenVPN](/index.php/OpenVPN "OpenVPN") and others. The "server" runs on Linux and the "clients" can run any any number of platforms (the WireGuard Project offers apps on both iOS and Android platforms in addition to Linux-native and MacOS). See the official project [install link](https://www.wireguard.com/install/) for more.
 
 ### Server
 
@@ -206,40 +213,15 @@ A properly configured [firewall](/index.php/Firewall "Firewall") is *HIGHLY reco
 
 Finally, WireGuard port(s) need to be forwarded to the server from the network router so they can be accessed from the WAN.
 
-#### Key generation
+### Key generation
 
-Generate public/private keys for the server and for each client. In this example, only 2 key pairs are created, one for the "server" and one for "client1" ... repeat as needed for additional clients:
+Generate public/private key pairs for the server and for each client as explained in [#Key generation](#Key_generation). Optionally, generate a preshared key for all peers to share.
 
-```
-# cd /etc/wireguard
-# wg genkey | tee server.priv | wg pubkey > server.pub
+### Server config
 
-```
+Create the server config file:
 
-The client keys can be stored anywhere.
-
-```
-$ wg genkey | tee client1.priv | wg pubkey > client1.pub
-
-```
-
-One can optionally generate a pre-shared key to increase security:
-
-```
-# wg genpsk > preshared.priv
-
-```
-
-#### Server config
-
-Create the server config file that minimally, defines the private IP range to use for the tunnel, defines the port on which to route traffic, and defines the needed public/private pairings to allow successful authentication.
-
-In the example below:
-
-*   [SERVER PRIVATE KEY] is the string contained in `server.priv`
-*   [CLIENT PUBLIC KEY] is the string contained in `client1.pub`
-*   One may omit the [PRE-SHARED KEY] entirely, but if retained, it is the string contained in `preshared.priv`
-
+**Note:** The *PresharedKey* line is optional. If retained, the server and each client are required to have it in their respective config files. See the wg manpage for more.
  `/etc/wireguard/wg0.conf` 
 ```
 [Interface]
@@ -253,14 +235,23 @@ PostUp = iptables -A FORWARD -i %i -j ACCEPT; iptables -t nat -A POSTROUTING -o
 PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
 
 [Peer]
-PublicKey = [CLIENT PUBLIC KEY]
+# client foo
+PublicKey = [FOO's PUBLIC KEY]
 PresharedKey = [PRE-SHARED KEY]
 AllowedIPs = 10.200.200.2/32
+
+[Peer]
+# client bar
+PublicKey = [BAR's PUBLIC KEY]
+PresharedKey = [PRE-SHARED KEY]
+AllowedIPs = 10.200.200.3/32
 ```
 
 **Note:** Additional peers can be listed in the same format as needed.
 
-The interface can be managed manually or by systemctl. For example: bring the interface up by using `wg-quick up wg0` and bring it down by using `wg-quick down wg0`.
+The interface can be managed manually or by systemctl.
+
+For example: bring the interface up by using `wg-quick up wg0` and bring it down by using `wg-quick down wg0`.
 
 Alternatively, systemctl can be used to manage the interface. [Start](/index.php/Start "Start") and optionally [enable](/index.php/Enable "Enable") it via `wg-quick@.service` where the server config name is inserted after the "@" symbol. For example:
 
@@ -269,19 +260,28 @@ Alternatively, systemctl can be used to manage the interface. [Start](/index.php
 
 ```
 
-#### Client config
+### Client config
 
-Create the matching client config file. In the example below:
+Create the corresponding client config file(s):
 
-*   [CLIENT PRIVATE KEY] is the string contained in `client1.priv`
-*   [SERVER PUBLICKEY] is the string contained in `server.pub`
-*   One may omit the [PRE-SHARED KEY] entirely, but if retained, it is the string contained in `preshared.priv`
-
- `/etc/wireguard/client1.conf` 
+ `foo.conf` 
 ```
 [Interface]
 Address = 10.200.200.2/24
-PrivateKey = [CLIENT PRIVATE KEY]
+PrivateKey = [FOO's PRIVATE KEY]
+DNS = 10.200.200.1
+
+[Peer]
+PublicKey = [SERVER PUBLICKEY]
+PresharedKey = [PRE-SHARED KEY]
+AllowedIPs = 0.0.0.0/0
+Endpoint = my.ddns.address.com:51820
+```
+ `bar.conf` 
+```
+[Interface]
+Address = 10.200.200.3/24
+PrivateKey = [BAR's PRIVATE KEY]
 DNS = 10.200.200.1
 
 [Peer]
@@ -291,14 +291,14 @@ AllowedIPs = 0.0.0.0/0
 Endpoint = my.ddns.address.com:51820
 ```
 
+**Warning:** When setting up config files, both the public/private keys and the *Address =* values MUST to match for both the client and server pairs.
+
 If the client is a mobile device such as a phone, [qrencode](https://www.archlinux.org/packages/?name=qrencode) can be used to share the config with the client:
 
 ```
-$ qrencode -t ansiutf8 < client1.conf
+$ qrencode -t ansiutf8 < foo.conf
 
 ```
-
-Either `wg-quick` or the corresponding systemd server unit can manage the interface.
 
 **Note:** Users of [NetworkManager](/index.php/NetworkManager "NetworkManager"), may need to [enable](/index.php/Enable "Enable") the `NetworkManager-wait-online.service` and users of [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") may need to [enable](/index.php/Enable "Enable") the `systemd-networkd-wait-online.service` to wait until devices are network ready before attempting wireguard connection.
 

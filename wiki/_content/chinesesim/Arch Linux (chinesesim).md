@@ -72,7 +72,7 @@ Arch 开发者都是不收工资的志愿者，目前也没有通过 Arch Linux 
 
 ### ArchWiki 的诞生
 
-2005年7月8日，用 MediaWiki 搭建的 ArchWiki [开始运行](/index.php/ArchWiki:About#History "ArchWiki:About")。
+2005年7月8日，用 MediaWiki 搭建的 ArchWiki [开始运行](/index.php/ArchWiki:About#Early_history "ArchWiki:About")。
 
 ### A. Griffin 时代
 

@@ -1,7 +1,6 @@
 Related articles
 
 *   [Systemd/Tаймеры](/index.php/Systemd/T%D0%B0%D0%B9%D0%BC%D0%B5%D1%80%D1%8B "Systemd/Tаймеры")
-*   [Update packages from crontab](/index.php/Update_packages_from_crontab "Update packages from crontab")
 
 Из [Википедии](https://ru.wikipedia.org/wiki/Cron):
 

@@ -1,59 +1,75 @@
+**Estado de la traducción**
+Este artículo es una traducción de [Pacman/Package signing](/index.php/Pacman/Package_signing "Pacman/Package signing"), revisada por última vez el **2018-11-18**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Pacman/Package_signing&diff=0&oldid=551079) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
 Artículos relacionados
 
 *   [GnuPG (Español)](/index.php/GnuPG_(Espa%C3%B1ol) "GnuPG (Español)")
+*   [DeveloperWiki:Package signing](/index.php/DeveloperWiki:Package_signing "DeveloperWiki:Package signing")
 
-La herramienta pacman-key se usa tanto para configurar como para administrar las firmas de los paquetes con los que trabaja [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)"), el gestor de paquetes de Arch Linux, mediante claves [PGP](https://es.wikipedia.org/wiki/Pretty_Good_Privacy).
-
-## Contents
-
-*   [1 Introducción](#Introducción)
-*   [2 Instalación](#Instalación)
-    *   [2.1 Configuración de pacman](#Configuración_de_pacman)
-    *   [2.2 Inicializar el archivo de claves o *keyring*](#Inicializar_el_archivo_de_claves_o_keyring)
-*   [3 Gestión del archivo de claves](#Gestión_del_archivo_de_claves)
-    *   [3.1 Verificación de las cinco Claves Maestras](#Verificación_de_las_cinco_Claves_Maestras)
-    *   [3.2 Añadir claves de Desarrolladores](#Añadir_claves_de_Desarrolladores)
-    *   [3.3 Añadir claves no oficiales](#Añadir_claves_no_oficiales)
-    *   [3.4 Using gpg](#Using_gpg)
-*   [4 Solución de problemas](#Solución_de_problemas)
-    *   [4.1 No puedo importar llaves](#No_puedo_importar_llaves)
-    *   [4.2 Desactivar la comprobación de firmas](#Desactivar_la_comprobación_de_firmas)
-    *   [4.3 Restablecer todas las llaves](#Restablecer_todas_las_llaves)
-    *   [4.4 Eliminar paquetes inservibles](#Eliminar_paquetes_inservibles)
-*   [5 Bibliografía complementaria](#Bibliografía_complementaria)
-
-## Introducción
-
-Pacman se sirve de [claves GnuPG](http://www.gnupg.org/) siguiendo el modelo de la [red de confianza](http://www.gnupg.org/gph/en/manual.html#AEN385) para comprobar la autenticidad de los paquetes. Actualmente hay cinco [Claves Maestras de firmado](https://www.archlinux.org/master-keys/). Se usan por lo menos tres de esas Claves Maestras para firmar los paquetes de los desarrolladores oficiales y las subclaves de los usuarios de confianza o TUs —del inglés: *trusted user*— con las que estos firman sus paquetes. El usuario también posee una clave PGP exclusiva que se genera cuando se configura pacman-key. La clave del usuario queda enlazada por tanto a las cinco Claves Maestras.
+*pacman* se sirve de [claves GnuPG](http://www.gnupg.org/) siguiendo el modelo de la [red de confianza](http://www.gnupg.org/gph/en/manual.html#AEN385) para comprobar la autenticidad de los paquetes. Actualmente hay cinco claves maestras que se encuentran [aquí](https://www.archlinux.org/master-keys/). Se usan por lo menos tres de esas Claves Maestras para firmar los paquetes de los desarrolladores oficiales y las subclaves de los usuarios de confianza o TUs —del inglés: *trusted user*— con las que estos firman sus paquetes. El usuario también posee una clave PGP exclusiva que se genera cuando se configura pacman-key. La clave del usuario queda enlazada por tanto a las cinco Claves Maestras.
 
 Ejemplos de redes de confianza:
 
-*   **Paquetes propios**: el usuario elabora el paquete y lo firma con su clave personal.
-*   **Paquetes no oficiales**: paquetes creados y firmados por desarrolladores. El usuario usa su clave personal para firmar las de cada uno de esos desarrolladores.
-*   **Paquetes oficiales**: paquetes creados y firmados por desarrolladores. Las claves de esos desarrolladores se firmaron previamente usando las claves maestras de Arch Linux. El usuario usa su clave para firmar las claves maestras y, por tanto, tiene plena confianza en los desarrolladores.
+*   **paquetes personalizados**: el usuario elabora el paquete y lo firma con su clave personal.
+*   **paquetes no oficiales**: paquetes creados y firmados por desarrolladores. El usuario usa su clave personal para firmar las de cada uno de esos desarrolladores.
+*   **paquetes oficiales**: paquetes creados y firmados por desarrolladores. Las claves de esos desarrolladores se firmaron previamente usando las claves maestras de Arch Linux. El usuario usa su clave para firmar las claves maestras y, por tanto, tiene plena confianza en los desarrolladores.
 
-**Nota:** el protocolo HKP usa el puerto 11371 para establecer la conexión. Este puerto es necesario para obtener las claves firmadas de los servidores mediante pacman-key.
+**Nota:** el protocolo HKP utiliza el puerto 11371/tcp para establecer la conexión. Este puerto es necesario para obtener las claves firmadas de los servidores mediante pacman-key.
 
-## Instalación
+## Contents
 
-### Configuración de pacman
+*   [1 Configuración](#Configuración)
+    *   [1.1 Configurar pacman](#Configurar_pacman)
+    *   [1.2 Inicializar el depósito de claves](#Inicializar_el_depósito_de_claves)
+*   [2 Gestionar el depósito de claves](#Gestionar_el_depósito_de_claves)
+    *   [2.1 Verificar las claves maestras](#Verificar_las_claves_maestras)
+    *   [2.2 Añadir las claves de los desarrolladores](#Añadir_las_claves_de_los_desarrolladores)
+    *   [2.3 Añadir claves no oficiales](#Añadir_claves_no_oficiales)
+    *   [2.4 Depurar errores con gpg](#Depurar_errores_con_gpg)
+*   [3 Solución de problemas](#Solución_de_problemas)
+    *   [3.1 No se pueden importar las claves](#No_se_pueden_importar_las_claves)
+    *   [3.2 Desactivar la comprobación de las firmas](#Desactivar_la_comprobación_de_las_firmas)
+    *   [3.3 Restablecer todas las claves](#Restablecer_todas_las_claves)
+    *   [3.4 Eliminar paquetes inservibles](#Eliminar_paquetes_inservibles)
+    *   [3.5 La firma es de confianza desconocida](#La_firma_es_de_confianza_desconocida)
+    *   [3.6 Actualizar claves a través de proxy](#Actualizar_claves_a_través_de_proxy)
+*   [4 Véase también](#Véase_también)
 
-La opción `SigLevel` en `/etc/pacman.conf` será la que determine el nivel de confianza a la hora de instalar un paquete. Para una explicación más detallada de SigLevel, consultar la [página man de pacman.conf](https://www.archlinux.org/pacman/pacman.conf.5.html#_package_and_database_signature_checking) y los comentarios en la misma. La comprobación del firmado de claves se puede establecer de forma global o por repositorio. En caso de configurar SigLevel globalmente en la sección [options] para exigir que todos los paquetes estén firmados, los paquetes que el usuario compile también tendrán que estar firmados usando `makepkg`.
+## Configuración
 
-**Nota:** aunque todos los paquetes oficiales están firmados; a fecha de junio de 2012, la firma de la bases de datos de paquetes está todavía en proceso. Si se especifica `Required` entonces también hay que poner `DatabaseOptional`. Por ejemplo: `SigLevel = Required DatabaseOptional TrustedOnly` Pacman instalará así tan sólo aquellos paquetes que estén firmados con claves que sean de confianza.
+### Configurar pacman
 
-**Nota:** parece ser que `SigLevel = PackageRequired` va a ser el estándar para verificar paquetes oficiales::
+La opción `SigLevel` en `/etc/pacman.conf` será la que determine el nivel de confianza a la hora de instalar un paquete. Para una explicación más detallada de SigLevel, consulte el [manual de pacman.conf](https://www.archlinux.org/pacman/pacman.conf.5.html#_package_and_database_signature_checking) y los comentarios del mismo. La comprobación del firmado de claves se puede establecer de forma global o por repositorio. En caso de configurar SigLevel globalmente en la sección [options] para exigir que todos los paquetes estén firmados, los paquetes que el usuario compile también tendrán que estar firmados usando `makepkg`.
+
+{{Nota|aunque todos los paquetes oficiales están firmados; a fecha de junio de 2012, la firma de la bases de datos de paquetes está todavía en proceso. Si se especifica `Required` entonces también hay que poner `DatabaseOptional`.
+
+Se puede usar una configuración predeterminada para instalar únicamente paquetes firmados por claves de confianza:
+
+ `/etc/pacman.conf`  `SigLevel = Required DatabaseOptional` 
+
+Esto se debe a que `TrustedOnly` es un parámetro *pacman* predeterminado en su compilación. Así que lo anterior conduce al mismo resultado que el ajuste global de:
+
+```
+SigLevel = Required DatabaseOptional TrustedOnly
+
+```
+
+Lo anterior también se puede lograr en un nivel más abajo del repositorio en la configuración del archivo, por ejemplo:
+
 ```
 [core]
 SigLevel = PackageRequired
 Include = /etc/pacman.d/mirrorlist
+
 ```
 
-**Advertencia:** la opción `TrustAll` solamente existe para fines de depuración de código y hace que sea muy fácil confiar en claves que no se han verificado. Hay que usar `TrustedOnly` sólo para los repositorios oficiales.
+agrega explícitamente la comprobación de firmas para los paquetes en cuestión del repositorio, pero no requiere que la base de datos esté firmada. `Optional` aquí desactivaría un `Required` global para este repositorio.
 
-### Inicializar el archivo de claves o *keyring*
+**Advertencia:** la opción `TrustAll` de SigLevel solamente existe para fines de depuración de código y hace que sea muy fácil confiar en claves que no se han verificado. Hay que usar `TrustedOnly` solo para los repositorios oficiales.
 
-Para configurar el archivo de claves de pacman hay que ejecutar:
+### Inicializar el depósito de claves
+
+Para configurar el depósito de claves de *pacman* hay que ejecutar:
 
 ```
 # pacman-key --init
@@ -64,26 +80,11 @@ Arch Linux necesita [entropía](https://es.wikipedia.org/wiki/Entrop%C3%ADa_%28c
 
 La aleatoriedad que se crea se usa para configurar un archivo de claves (`/etc/pacman.d/gnupg`) y la firma de la clave GPG del sistema.
 
-**Nota:** si se quiere ejecutar `pacman-key --init` de forma remota a través de SSH, hay que instalar el paquete [haveged](https://www.archlinux.org/packages/?name=haveged) en el equipo en el que se está configurando el archivo de claves. Hay que conectarse usando SSH y ejecutar lo siguiente:
-```
-# haveged -w 1024
-# pacman-key --init
+**Nota:** si necesita ejecutar `pacman-key --init` en un equipo que no genere mucha entropía (por ejemplo, un servidor sin encabezado), la generación de claves puede llevar mucho tiempo. Para generar una pseudo-entropía, instale [haveged](/index.php/Haveged "Haveged") o [rng-tools](/index.php/Rng-tools "Rng-tools") en el equipo de destino e inicie el servicio correspondiente antes de ejecutar `pacman-key --init`.
 
-```
+## Gestionar el depósito de claves
 
-Tan sólo hay que detener y eliminar haveged cuando pacman-key esté funcionando.
-
-```
-# pkill haveged
-# pacman -Rs haveged
-
-```
-
-Usar [haveged](https://www.archlinux.org/packages/?name=haveged) no sirve sólo para cuando se instala a través de SSH; es una buena forma de generar entropía rápidamente. Si el usuario nota que el proceso de `pacman-key --init` tarda demasiado en completarse, es buena idea usarlo.
-
-## Gestión del archivo de claves
-
-### Verificación de las cinco Claves Maestras
+### Verificar las claves maestras
 
 Para empezar a configurar las claves hay que ejecutar:
 
@@ -92,96 +93,150 @@ Para empezar a configurar las claves hay que ejecutar:
 
 ```
 
-No hay que tener prisa a la hora de verificar las [Claves Maestras](https://www.archlinux.org/master-keys/) cuando el sistema pregunte por ellas puesto que son las que se van a usar para firmar y, por ende, validar las claves de todos los demás paquetes.
+No hay que tener prisa a la hora de verificar las [claves de firmas maestras](https://www.archlinux.org/master-keys/) cuando el sistema pregunte por ellas puesto que son las que se van a usar para firmar y, por ende, validar las claves de todos los demás paquetes.
 
-Las llaves PGP son demasiado extensas (2048 bits o más) para que las personas trabajen con ellas. Es por esto que normalmente se reducen a un código hash para crear una huella de 40 dígitos hexadecimales que puede usarse para comparar manualmente que dos claves son exactamente iguales. Los últimos 8 dígitos son el 'nombre' la clave y se les conoce como el ID de la clave (key ID).
+Las llaves PGP son demasiado extensas (2048 bits o más) para que las personas trabajen con ellas. Es por esto que normalmente se reducen a un código hash para crear una huella de 40 dígitos hexadecimales que puede usarse para comparar manualmente que dos claves son exactamente iguales. Los últimos 8 dígitos son el «nombre» de la clave y se les conoce como el ID breve de la clave (key ID —short—) (los últimos dieciséis dígitos de la huella digital supondría la «ID larga de la clave»).
 
-### Añadir claves de Desarrolladores
+### Añadir las claves de los desarrolladores
 
 Las claves oficiales de los desarrolladores y las de los TUs se firman con las claves maestras por lo que no es necesario que el usuario las firme por si mismo haciendo uso de la herramienta pacman-key. Cuando pacman se encuentra con una clave que no reconoce, pedirá descargarla del `keyserver` establecido en `/etc/pacman.d/gnupg/gpg.conf` (o usando la opción `--keyserver` en la consola). En la Wikipedia se puede encontrar una [lista de servidores de claves](https://en.wikipedia.org/wiki/Key_server_(cryptographic) "wikipedia:Key server (cryptographic)").
 
 Una vez que se ha descargado una clave de un desarrollador no es necesario descargarla de nuevo. Además, se puede usar para verificar otros paquetes que ese desarrollador haya firmado.
 
-**Nota:** el paquete [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring), que figura entre las dependencias de pacman, contiene las claves actualizadas. En cualquier caso, es posible actualizarlas ejecutando:
-```
-# pacman-key --refresh-keys
-
-```
-Al ejecutar pacman-key con la opción `--refresh-keys`, se buscará la clave local en el servidor de claves remoto y aparecerá un mensaje alertando de que no ha sido posible encontrar dicha clave. Esto es normal y no es algo por lo que haya que preocuparse.
+**Nota:** el paquete [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring), que figura entre las dependencias de pacman, contiene las claves actualizadas. En cualquier caso, es posible actualizarlas ejecutando `pacman-key --refresh-keys` (como root). Al ejecutar pacman-key con la opción `--refresh-keys`, se buscará la clave local en el servidor de claves remoto y aparecerá un mensaje alertando de que no ha sido posible encontrar dicha clave. Esto es normal y no es algo por lo que haya que preocuparse.
 
 ### Añadir claves no oficiales
 
-Lo primero es obtener la ID del dueño de la clave. Ejecutar para ello:
+Este método se puede utilizar, por ejemplo, para agregar su propia clave al depósito de claves de *pacman*, o para activar los [unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories") firmados.
 
- `# pacman-key -r <keyid>` 
+Primero, obtenga el **ID de la clave** (`*keyid*`) de su propiedad. Luego agréguelo al depósito de claves usando uno de los dos métodos siguientes:
 
-para descargarla de un servidor de claves. Hay que asegurarse de verificar la huella; como si de una clave maestra o cualquier otra clave que se va a firmar se tratase. Una vez verificada la huella hay que firmar esta clave en el sistema:
+1.  Si la clave se encuentra en un servidor de claves, impórtela con: `# pacman-key --recv-keys *keyid*` 
+2.  De lo contrario, será facilitado un enlace a un archivo de claves, descárguelo y ejecute: `# pacman-key --add */path/to/downloaded/keyfile*` 
 
- `# pacman-key --lsign-key <keyid>` 
-
-Ahora se confía en esta clave para firmar paquetes.
-
-### Using gpg
-
-Si pacman-key no es suficiente, se puede administrar el archivo de claves de pacman con **gpg**:
+Se recomienda verificar la huella digital, como con cualquier clave maestra o cualquier otra clave que vaya a firmar:
 
 ```
-# gpg --homedir /etc/pacman.d/gnupg $OPTIONS
+$ pacman-key --finger *keyid*
 
 ```
 
-o con
+Por último, debe firmar localmente la clave importada:
 
 ```
-# env GNUPGHOME=/etc/pacman.d/gnupg gpg $OPTIONS
+# pacman-key --lsign-key *keyid*
+
+```
+
+Ahora otórguele el nivel de confianza a esta clave para firmar paquetes.
+
+### Depurar errores con gpg
+
+Con el propósito de depurar errores, puede acceder al depósito de claves de *pacman* directamente con *gpg*, por ejemplo:
+
+```
+# gpg --homedir /etc/pacman.d/gnupg --list-keys
 
 ```
 
 ## Solución de problemas
 
 **Advertencia:** pacman-key depende de [system time](/index.php/System_time "System time"). Si la hora del sistema no es la correcta, aparecerá lo siguiente:
+```
+error: PackageName: signature from "User <email@archlinux.org>" is invalid
+error: failed to commit transaction (invalid or corrupted package (PGP signature))
+Errors occured, no packages were upgraded.
 
-	error: PackageName: signature from "User <email@archlinux.org>" is invalid
+```
 
-	error: failed to commit transaction (invalid or corrupted package (PGP signature))
+### No se pueden importar las claves
 
-	Errors occured, no packages were upgraded.
+Existen varias causas posibles de este problema:
 
-### No puedo importar llaves
+*   Un paquete [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) desactualizado.
+*   Fecha incorrecta.
+*   Su ISP bloqueó el puerto utilizado para importar claves PGP.
+*   La memoria caché de *pacman* contiene copia de paquetes sin firmar de intentos anteriores.
+*   `dirmngr` no está configurado correctamente
 
-Algunos proveedores de internet o ISPs —del inglés: *Internet Service Provider*— bloquean el puerto que se usa para importar las claves PGP. Una forma de solventar este problema es usar el servidor de claves MIT, el cual se sirve de un puerto alternativo. Para ello hay que editar el fichero `/etc/pacman.d/gnupg/gpg.conf` y cambiar la línea del servidor de claves por:
+Es posible que se quede bloqueado debido a que el paquete [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) no se haya actualizado al realizar una actualización del sistema. Pruebe [actualizar el sistema de nuevo](/index.php/Pacman#Upgrading_packages "Pacman") para ver si así se arregla. Si el problema persiste, asegúrese de que existe el siguiente archivo `/root/.gnupg/dirmngr_ldapservers.conf` y que puede ejecutar con éxito `# dirmngr`. Cree un archivo vacío si no tiene éxito y ejecute `#dirmngr` nuevamente.
 
- `keyserver hkp://pgp.mit.edu:11371` 
+Si esto tampoco funciona y la fecha del equipo es correcta, podría intentar cambiar al servidor de claves MIT, que proporciona un puerto alternativo. Para hacer esto, edite `/etc/pacman.d/gnupg/gpg.conf` y cambie la línea `keyserver` a:
 
-En caso de olvidar ejecutar `pacman-key --populate archlinux`, cabe la posibilidad de encontrarse con algunos errores al importar las claves.
+```
+keyserver hkp://pgp.mit.edu:11371
 
-### Desactivar la comprobación de firmas
+```
 
-**Advertencia:** usar con precaución. Desactivar las firmas de los paquetes hará que pacman instale automáticamente paquetes de fuentes no confiables.
+Si ni siquiera el puerto 80 funciona (por ejemplo, cuando la empresa utiliza algún tipo de proxy «transparente» solo para http, en lugar de enrutamiento), lo siguiente podría funcionar:
 
-Si no se está interesado en el firmado de paquetes, se puede desactivar la comprobación de las claves PGP por completo. Editar el fichero`/etc/pacman.conf` y descomentar la siguiente lína en [options]:
+```
+keyserver hkps://hkps.pool.sks-keyservers.net:443
+
+```
+
+Si tiene IPv6 desactivada, *gpg* fallará cuando encuentre alguna dirección IPv6\. En este caso, intente con un servidor de claves solo para IPv4, como:
+
+```
+keyserver hkp://ipv4.pool.sks-keyservers.net:11371
+
+```
+
+Si olvida ejecutar `pacman-key --populate archlinux`, es posible que obtenga algunos errores al importar las claves.
+
+Si nada de lo anterior ayuda, la memoria caché de *pacman*, ubicada en `/var/cache/pacman/pkg/` puede contener paquetes sin firmar de intentos anteriores. Intente limpiar la memoria caché manualmente o ejecute:
+
+```
+# pacman -Sc
+
+```
+
+que elimina todos los paquetes de la caché que no se han instalado.
+
+### Desactivar la comprobación de las firmas
+
+**Advertencia:** utilice esta opción con precaución. Desactivar las firmas de los paquetes hará que pacman instale automáticamente paquetes de fuentes no confiables.
+
+Si no se está interesado en el firmado de paquetes, se puede desactivar la comprobación de las claves PGP por completo. Edite el fichero `/etc/pacman.conf` y descomente la siguiente lína en `[options]`:
 
 ```
 SigLevel = Never
 
 ```
 
-Hay que descomentar las opciones específicas de SigLevel de cada repositorio también ya que ignoran la configuración global. Esto hará que no haya comprobación alguna de firmas de claves; así es como se procedía habitualmente antes de la llegada de pacman 4\. No es necesario configurar el archivo de claves con pacman-key si se decide optar por esta opción. Esta opción se puede modificar más adelante sin problema alguno si se decide activar la verificación de paquetes.
+Hay que descomentar las opciones específicas de SigLevel de cada repositorio también ya que ignoran la configuración global. Esto hará que no haya comprobación alguna de firmas de claves; así es como se procedía habitualmente antes de la llegada de pacman 4\. No es necesario configurar el archivo de claves con *pacman-key* si se decide optar por esta opción. Esta opción se puede modificar más adelante sin problema alguno si se decide activar la verificación de paquetes.
 
-### Restablecer todas las llaves
+### Restablecer todas las claves
 
-Para eliminar o restablecer todas las claves instaladas en el sistema, eliminar el directorio `/etc/pacman.d/gnupg` como root y volver a ejecutar `pacman-key --init` . Una vez hecho esto, se pueden añadir las claves que se consideren necesarias.
+Para eliminar o restablecer todas las claves instaladas en el sistema, elimine el directorio `/etc/pacman.d/gnupg` como root y vuelva a ejecutar `pacman-key --init`. Una vez hecho esto, se pueden añadir las claves que se consideren necesarias.
 
 ### Eliminar paquetes inservibles
 
-Si hay paquetes que siguen dando error y se está seguro de haber configurado correctamente pacman-key, entonces hay que probar a eliminarlos como por ejemplo con `rm /var/cache/pacman/pkg/paqueteconflictivo*` para que se vuelvan a descargar.
+Si hay paquetes que siguen dando error y se está seguro de haber configurado correctamente *pacman-key*, entonces hay que probar a eliminarlos como por ejemplo con `rm /var/cache/pacman/pkg/*badpackage**` para que se vuelvan a descargar.
 
-Probablemente esta sea la solución al problema del mensaje que aparece al actualizar `error: linux: signature from "Some Person <Some.Person@example.com>" is invalid`; o parecido. Esto no tiene por qué significar que se esté siendo de un ataque; ni mucho menos. Es tan sólo que el fichero descargargado está corrupto.
+Probablemente esta sea la solución al problema del mensaje que aparece al intentar actualizar (`error: linux: signature from "Some Person <Some.Person@example.com>" is invalid`, o parecido). Esto no tiene por qué significar que se esté siendo víctima de un ataque [MITM](https://en.wikipedia.org/wiki/es:Ataque_de_intermediario "wikipedia:es:Ataque de intermediario"), ni mucho menos; indica tan sólo que el archivo descargargado está corrupto.
 
-## Bibliografía complementaria
+### La firma es de confianza desconocida
 
-*   [DeveloperWiki:Package Signing Proposal for Pacman](/index.php/Package_Signing_Proposal_for_Pacman "Package Signing Proposal for Pacman")
-*   [El cifrado de paquetes de pacman – 1: Makepkg y Repo-add](http://allanmcrae.com/2011/08/pacman-package-signing-1-makepkg-and-repo-add/)
-*   [El cifrado de paquetes de pacman – 2: Pacman-key](http://allanmcrae.com/2011/08/pacman-package-signing-2-pacman-key/)
-*   [El cifrado de paquetes de pacman – 3: Pacman](http://allanmcrae.com/2011/08/pacman-package-signing-3-pacman/)
-*   [El cifrado de paquetes de pacman – 4: Arch Linux](http://allanmcrae.com/2011/12/pacman-package-signing-4-arch-linux/)
+A veces, al ejecutar `pacman -Suy` puede encontrar este error:
+
+```
+error: *package-name*: signature from "*packager*" is unknown trust
+
+```
+
+Esto ocurre porque la clave de `*packager*` utilizada en el paquete `*package-name*` no está presente y/o no es de confianza en la base de datos gpg local de pacman-key. Al parecer pacman no siempre puede verificar si la clave fue recibida y marcada como confiable antes de continuar. Mitigue esto [firmando manualmente la clave no confiable localmente](#Adding_unofficial_keys) o [restableciendo todas las claves](#Resetting_all_the_keys).
+
+### Actualizar claves a través de proxy
+
+Para usar un proxy al actualizar las claves, la opción `honor-http-proxy` debe configurarse tanto en `/etc/gnupg/dirmngr.conf` como en `/etc/pacman.d/gnupg/dirmngr.conf`. Vea [GnuPG#Use a keyserver](/index.php/GnuPG#Use_a_keyserver "GnuPG") para más información.
+
+**Nota:** si se usa *pacman-key* sin la opción `honor-http-proxy` y falla, un reinicio puede resolver el problema.
+
+## Véase también
+
+*   [DeveloperWiki:Package Signing Proposal for Pacman](/index.php/DeveloperWiki:Package_Signing_Proposal_for_Pacman "DeveloperWiki:Package Signing Proposal for Pacman")
+*   [Pacman Package Signing – 1: Makepkg and Repo-add](http://allanmcrae.com/2011/08/pacman-package-signing-1-makepkg-and-repo-add/)
+*   [Pacman Package Signing – 2: Pacman-key](http://allanmcrae.com/2011/08/pacman-package-signing-2-pacman-key/)
+*   [Pacman Package Signing – 3: Pacman](http://allanmcrae.com/2011/08/pacman-package-signing-3-pacman/)
+*   [Pacman Package Signing – 4: Arch Linux](http://allanmcrae.com/2011/12/pacman-package-signing-4-arch-linux/)

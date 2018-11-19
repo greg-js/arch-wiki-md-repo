@@ -46,7 +46,7 @@ The following shows an example of user *archie* creating a backup of `/home/arch
 First, *archie* creates an empty directory for the encrypted view:
 
 ```
-$ mkdir /tmp/*crypt.archie*
+$ mkdir /tmp/*crypt*
 
 ```
 
@@ -54,8 +54,8 @@ Second, user *archie* creates an encrypted view of the home directory:
 
  `/home/archie` 
 ```
-$ gocryptfs -reverse /home/*archie* /tmp/*crypt.archie*
-Password: 
+$ gocryptfs -reverse /home/*archie* /tmp/*crypt*
+Password:
 Decrypting master key
 
 Your master key is:
@@ -67,7 +67,7 @@ $
 Third, *archie* creates a backup of the encrypted directory, a simple local copy for this example:
 
 ```
-$ cp -a /tmp/*crypt.archie* /tmp/*backup.archie*
+$ cp -a /tmp/*crypt* /tmp/*backup*
 
 ```
 
@@ -76,16 +76,16 @@ and done.
 The encrypted directory can stay mounted for the user session, or be unmounted manually:
 
 ```
-$ fusermount -u /tmp/*crypt.archie*
-$ rmdir /tmp/*crypt.archie*
+$ fusermount -u /tmp/*crypt*
+$ rmdir /tmp/*crypt*
 
 ```
 
 To restore from the encrypted backup, a plain-text view is mounted using gocryptfs's normal mode:
 
 ```
-$ mkdir /tmp/*restore.archie*
-$ gocryptfs /tmp/*backup.archie* /tmp/*restore.archie*
+$ mkdir /tmp/*restore*
+$ gocryptfs /tmp/*backup*/ /tmp/*restore*
 Password: 
 Decrypting master key
 ...

@@ -5,9 +5,10 @@
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 Running Polybar](#Running_Polybar)
-    *   [2.2 Running with WM](#Running_with_WM)
-        *   [2.2.1 bspwm](#bspwm)
-        *   [2.2.2 i3](#i3)
+    *   [2.2 Sample Config](#Sample_Config)
+    *   [2.3 Running with WM](#Running_with_WM)
+        *   [2.3.1 bspwm](#bspwm)
+        *   [2.3.2 i3](#i3)
 *   [3 See also](#See_also)
 
 ## Installation
@@ -40,6 +41,25 @@ Usage: polybar [OPTION]... BAR
 
 However you will probably want to run Polybar with your Window Managers bootstrap routine. See [#Running with WM](#Running_with_WM)
 
+#### Sample Config
+
+A very basic polybar config may look like this:
+
+```
+[bar/mybar]
+modules-right = date
+
+[module/date]
+type = internal/date
+date = %Y-%m-%d%
+```
+
+It defines a bar named `mybar` with a module called `date`.
+
+By default polybar will also install a sample configuration with many preconfigured modules in `/usr/share/doc/polybar/config`
+
+**Note:** The sample config is not designed to work out of the box for everyone, you will need to modify it to match your setup
+
 #### Running with WM
 
 Create an [executable](/index.php/Executable "Executable") file containing the startup logic, for example `$HOME/.config/polybar/launch.sh`:
@@ -54,25 +74,13 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch Polybar, using default config location ~/.config/polybar/config
-polybar &
+polybar mybar &
 
 echo "Polybar launched..."
 
 ```
 
-This script will mean that restarting your WM will also restart Polybar. You can add additional syntax here as well, such as:
-
-```
-MONITOR=HDMI-A-1 polybar &
-
-```
-
-This will display Polybar on the specified monitor, of which the name can be found out using the command `[xrandr](/index.php/Xrandr "Xrandr")`. You can also specify the position of Polybar:
-
-```
-polybar top &
-
-```
+This script will mean that restarting your WM will also restart Polybar.
 
 ###### bspwm
 

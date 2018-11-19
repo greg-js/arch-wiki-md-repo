@@ -37,16 +37,16 @@ Related articles
         *   [5.4.2 Nginx](#Nginx)
         *   [5.4.3 Apache](#Apache)
     *   [5.5 Gitlab-workhorse](#Gitlab-workhorse)
-*   [6 Useful Tips](#Useful_Tips)
-    *   [6.1 Hidden options](#Hidden_options)
-    *   [6.2 Backup and restore](#Backup_and_restore)
-    *   [6.3 Sending mails from Gitlab via SMTP](#Sending_mails_from_Gitlab_via_SMTP)
-*   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 HTTPS is not green (gravatar not using https)](#HTTPS_is_not_green_(gravatar_not_using_https))
-    *   [7.2 Errors after updating](#Errors_after_updating)
-    *   [7.3 Gitlab-Unicorn cannot access non-default repositories directory](#Gitlab-Unicorn_cannot_access_non-default_repositories_directory)
-    *   [7.4 Failed to connect to Gitaly](#Failed_to_connect_to_Gitaly)
-*   [8 See also](#See_also)
+*   [6 有用的建议](#有用的建议)
+    *   [6.1 隐藏选项](#隐藏选项)
+    *   [6.2 备份和恢复](#备份和恢复)
+    *   [6.3 通过SMTP从Gitlab发送邮件](#通过SMTP从Gitlab发送邮件)
+*   [7 故障排除](#故障排除)
+    *   [7.1 HTTPS不是绿色 (gravatar不使用 https)](#HTTPS不是绿色_(gravatar不使用_https))
+    *   [7.2 更新后的错误](#更新后的错误)
+    *   [7.3 Gitlab-Unicorn 无法访问非默认的从库目录](#Gitlab-Unicorn_无法访问非默认的从库目录)
+    *   [7.4 无法连接到 Gitaly](#无法连接到_Gitaly)
+*   [8 也可查阅](#也可查阅)
 
 ## 安装
 
@@ -497,13 +497,13 @@ server {
 
 ### Gitlab-workhorse
 
-Since 8.0 GitLab uses separate HTTP server [gitlab-workhorse](https://www.archlinux.org/packages/?name=gitlab-workhorse) for large HTTP requests like Git push/pull. If you want to use this instead of SSH, install the [gitlab-workhorse](https://www.archlinux.org/packages/?name=gitlab-workhorse) package, enable `gitlab-workhorse.service` and configure web server for this. [gitlab-workhorse](https://www.archlinux.org/packages/?name=gitlab-workhorse) should now be preferred over `gitlab-unicorn` according to the GitLab team: [https://gitlab.com/gitlab-org/gitlab-ce/issues/22528#note_16036216](https://gitlab.com/gitlab-org/gitlab-ce/issues/22528#note_16036216)
+Gitlab8.0以后使用分开的http服务器[gitlab-workhorse](https://www.archlinux.org/packages/?name=gitlab-workhorse)来应对大量的http请求比如 Git 推送/拉取. 如果你想使用这个而不是 SSH, 安装 [gitlab-workhorse](https://www.archlinux.org/packages/?name=gitlab-workhorse) 包, 启用 `gitlab-workhorse.service` 并为它配置web服务器. [gitlab-workhorse](https://www.archlinux.org/packages/?name=gitlab-workhorse) 优先级应高于 `gitlab-unicorn` 根据 GitLab 的建议: [https://gitlab.com/gitlab-org/gitlab-ce/issues/22528#note_16036216](https://gitlab.com/gitlab-org/gitlab-ce/issues/22528#note_16036216)
 
-**Note:** Unicorn is still needed so don't disable or stop `gitlab-unicorn.service`.
+**Note:** Unicorn还是需要所以不要disable或者stop它 `gitlab-unicorn.service`.
 
-By default [gitlab-workhorse](https://www.archlinux.org/packages/?name=gitlab-workhorse) listens on `/run/gitlab/gitlab-workhorse.socket`. You can [edit](/index.php/Edit "Edit") `gitlab-workhorse.service` and change the parameter `-listenAddr` to make it listen on an address, for example `-listenAddr 127.0.0.1:8181`. If listening on an address you also need to set the network type to `-listenNetwork tcp`
+默认 [gitlab-workhorse](https://www.archlinux.org/packages/?name=gitlab-workhorse) 监听 `/run/gitlab/gitlab-workhorse.socket`. 你可以 [edit](/index.php/Edit "Edit") `gitlab-workhorse.service` 并改变参数 `-listenAddr` 来让它监听一个地址, 例如 `-listenAddr 127.0.0.1:8181`. 如果你监听一个地址的话你也要把网络类型设置为 `-listenNetwork tcp`
 
-When using nginx remember to edit your nginx configuration file. To switch from gitlab-unicorn to gitlab-workhorse edit the two following settings accordingly
+当你使用nginx时记得修改你的nginx配置文件. 从gitlab-unicorn 转换到 gitlab-workhorse 相应的编辑以下两个设置
 
  `/etc/nginx/servers-available/gitlab` 
 ```
@@ -518,18 +518,18 @@ upstream gitlab {
 }
 ```
 
-## Useful Tips
+## 有用的建议
 
-### Hidden options
+### 隐藏选项
 
-Go to Gitlab's home directory:
+到Gitlab的家目录:
 
 ```
 # cd /usr/share/webapps/gitlab
 
 ```
 
-and run:
+并运行:
 
  `# rake -T | grep gitlab` 
 ```
@@ -563,29 +563,29 @@ rake setup                                    # GITLAB | Setup gitlab db
 
 ```
 
-### Backup and restore
+### 备份和恢复
 
-Create a backup of the gitlab system:
+创建Gitlab系统的备份:
 
 ```
 # sudo -u gitlab -H rake RAILS_ENV=production gitlab:backup:create
 
 ```
 
-Restore the previously created backup file `/home/gitlab/gitlab/tmp/backups/20130125_11h35_1359131740_gitlab_backup.tar`:
+从之前创建的备份文件恢复 `/home/gitlab/gitlab/tmp/backups/20130125_11h35_1359131740_gitlab_backup.tar`:
 
 ```
 # sudo -u gitlab -H rake RAILS_ENV=production gitlab:backup:restore BACKUP=/home/gitlab/gitlab/tmp/backups/20130125_11h35_1359131740
 
 ```
 
-**Note:** Backup folder is set in `config/gitlab.yml`. GitLab backup and restore is documented [here](https://github.com/gitlabhq/gitlabhq/blob/master/doc/raketasks/backup_restore.md).
+**Note:** 备份文件夹在 `config/gitlab.yml`设置. GitLab 备份和恢复记录在 [这里](https://github.com/gitlabhq/gitlabhq/blob/master/doc/raketasks/backup_restore.md).
 
-### Sending mails from Gitlab via SMTP
+### 通过SMTP从Gitlab发送邮件
 
-You might want to use a gmail (or other mail service) to send mails from your gitlab server. This avoids the need to install a mail daemon on the gitlab server.
+你可能想用 gmail (或者其它邮件服务) 从你的Gitlab寄邮件. 这能避免在Gitlab服务器上安装邮件守护进程的需要.
 
-Adjust `smtp_settings.rb` according to your mail server settings:
+根据你的邮件服务器设置调整 `smtp_settings.rb` :
 
  `/usr/share/webapps/gitlab/config/initializers/smtp_settings.rb` 
 ```
@@ -605,13 +605,13 @@ if Rails.env.production?
 end
 ```
 
-Gmail will reject mails received this way (and send you a mail that it did). You will need to disable secure authentication (follow the link in the rejection mail) to work around this. The more secure approach is to enable two-factor authentication for username@gmail.com and to set up an application password for this configuration file.
+Gmail 会拒绝这样接受的邮件 (并会邮寄给你一个邮件它拒绝了). 你需要关闭安全认证 (按照拒绝邮件中的链接) 来解决这个问题. 更安全的办法是为username@gmail.com开启双因素认证并为这个配置文件设置应用密码.
 
-## Troubleshooting
+## 故障排除
 
-### HTTPS is not green (gravatar not using https)
+### HTTPS不是绿色 (gravatar不使用 https)
 
-Redis caches gravatar images, so if you have visited your GitLab with http, then enabled https, gravatar will load up the non-secure images. You can clear the cache by doing
+Redis 缓存了 gravatar 图像, 如果你用http拜访 GitLab, 那么启用 https, gravatar 会加载不安全的图像. 你可以清楚这些缓存通过执行以下命令
 
 ```
 cd /usr/share/webapps/gitlab
@@ -619,54 +619,54 @@ RAILS_ENV=production bundle-2.3 exec rake cache:clear
 
 ```
 
-as the gitlab user.
+以Gitlab用户的身份.
 
-### Errors after updating
+### 更新后的错误
 
-After updating the package from the AUR, the database migrations and asset updates will sometimes fail. These steps may resolve the issue, if a simple reboot does not.
+从AUR更新安装包后, 数据库迁移和资源更新有时候会失败. 这些步骤可以解决这些问题, 如果简单的开关机不行的话.
 
-First, move to the gitlab installation directory.
+首先, 移动到Gitlab安装目录.
 
 ```
 # cd /usr/share/webapps/gitlab
 
 ```
 
-If every gitlab page gives a 500 error, then the database migrations and the assets are probably stale. If not, skip this step.
+如果每个Gitlab页面都给了一个500页面, 那么数据库迁移和资源可能太陈旧了. 如果不是的话, 跳过这步.
 
 ```
 # su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle-2.3 exec rake db:migrate RAILS_ENV=production"
 
 ```
 
-If gitlab is constantly waiting for the deployment to finish, then the assets have probably not been recompiled.
+如果Gitlab一直在等待布置完成的话, 那么资源可能没有被重新编译.
 
 ```
 # su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle-2.3 exec rake gitlab:assets:clean gitlab:assets:compile cache:clear RAILS_ENV=production"
 
 ```
 
-Finally, restart the gitlab services and test your site.
+最后, 重启Gitlab服务再测试你的网站.
 
 ```
 # systemctl restart gitlab-unicorn gitlab-sidekiq gitlab-workhorse
 
 ```
 
-### Gitlab-Unicorn cannot access non-default repositories directory
+### Gitlab-Unicorn 无法访问非默认的从库目录
 
-If a custom repository storage directory is set in `/home`, disable the `ProtectHome=true` parameter in the `gitlab-unicorn.service` (see [Systemd#Drop-in files](/index.php/Systemd#Drop-in_files "Systemd") and the [relevant forum thread on gitlab.com](https://forum.gitlab.com/t/cannot-change-repositores-location/9634/2)).
+如果自定义的仓库存储目录被设置在 `/home`, 在`gitlab-unicorn.service`禁用 `ProtectHome=true` 参数 (查阅 [Systemd#Drop-in files](/index.php/Systemd#Drop-in_files "Systemd") 和 [github.com上的相关论坛帖子](https://forum.gitlab.com/t/cannot-change-repositores-location/9634/2)).
 
-### Failed to connect to Gitaly
+### 无法连接到 Gitaly
 
-Sometimes, the Gitaly service won't get started, leaving GitLab unable to connect to Gitaly. The solution is simple:
+有时候, Gitaly服务无法开始, 让gitlab无法连接到gitlay. 解决办法很简单:
 
 ```
 # systemctl start gitlab-gitaly
 
 ```
 
-## See also
+## 也可查阅
 
 *   [Official installation documentation](https://docs.gitlab.com/ce/install/installation.html)
 *   [GitLab recipes with further documentation on running it with several web servers](https://gitlab.com/gitlab-org/gitlab-recipes)

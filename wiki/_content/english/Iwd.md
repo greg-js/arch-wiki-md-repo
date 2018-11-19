@@ -18,7 +18,8 @@ IWD can work in standalone mode or in combination with comprehensive network man
     *   [3.2 TLS Based EAP Methods](#TLS_Based_EAP_Methods)
 *   [4 Optional configuration](#Optional_configuration)
     *   [4.1 Disable auto-connect for a particular network](#Disable_auto-connect_for_a_particular_network)
-    *   [4.2 Deny console (local) user from modifying the settings](#Deny_console_(local)_user_from_modifying_the_settings)
+    *   [4.2 Disable periodic scan for available networks](#Disable_periodic_scan_for_available_networks)
+    *   [4.3 Deny console (local) user from modifying the settings](#Deny_console_(local)_user_from_modifying_the_settings)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -81,7 +82,7 @@ To disconnect from a network:
 
 **Note:**
 
-*   `iwd` automatically stores network passphrases (as encrypted `PreSharedKey`) in the `/var/lib/iwd` directory and uses them to auto-connect in the future.
+*   `iwd` automatically stores network passphrases in the `/var/lib/iwd` directory and uses them to auto-connect in the future. See [#Optional configuration](#Optional_configuration).
 *   To connect to a network with spaces in the SSID, the network name should be double quoted when connecting.
 *   IWD only supports PSK pass-phrases from 8 to 63 ASCII-encoded characters. The following error message will be given if the requirements are not met: "PMK generation failed. Ensure Crypto Engine is properly configured"
 
@@ -162,16 +163,28 @@ Example configuration files for these network types can be found in subdirectori
 
 File `/etc/iwd/main.conf` can be used for main configuration.
 
-Directory `/var/lib/iwd` can be used for network (SSID) configuration.
+By default, `iwd` stores the network configuration in `/var/lib/iwd` directory. The configuration file is named as `*network*.*type*` where *network* is network SSID and *type* is network type i.e. one of "open", "wep", "psk", "8021x". The file is used to store the encrypted `PreSharedKey` and the cleartext `Passphrase` and can be created by the user without invoking `iwctl`. The file can also be used for other configuration pertaining to that network SSID.
 
 ### Disable auto-connect for a particular network
 
-Create / edit file `/var/lib/iwd/*network*.*type*`, where *network* is network SSID and *type* is network type i.e. one of "open", "wep", "psk", "8021x". Add the following section to it:
+Create / edit file `/var/lib/iwd/*network*.*type*`. Add the following section to it:
 
  `/var/lib/iwd/spaceship.psk (for example)` 
 ```
 [Settings]
 Autoconnect=false
+
+```
+
+### Disable periodic scan for available networks
+
+By default when `iwd` is in disconnected state, it periodically scans for available networks. To disable periodic scan (so as to always scan manually), create / edit file `/etc/iwd/main.conf` and add the following section to it:
+
+ `/etc/iwd/main.conf` 
+```
+# Upcoming iwd version 0.13 and above
+[Scan]
+disable_periodic_scan=true
 
 ```
 

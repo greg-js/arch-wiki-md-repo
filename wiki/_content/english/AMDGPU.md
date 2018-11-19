@@ -297,7 +297,9 @@ If you experience flickering [[6]](https://bugzilla.kernel.org/show_bug.cgi?id=1
 
 ### R9 390 series Poor Performance and/or Instability
 
-If you experience issues [[7]](https://bugs.freedesktop.org/show_bug.cgi?id=91880) with a AMD R9 390 series graphics card, set `radeon.cik_support=0 amdgpu.cik_support=1 amdgpu.dpm=1 amdgpu.dc=1` as [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to force DPM support.
+If you experience issues [[7]](https://bugs.freedesktop.org/show_bug.cgi?id=91880) with a AMD R9 390 series graphics card, set `radeon.cik_support=0 radeon.si_support=0 amdgpu.cik_support=1 amdgpu.si_support=1 amdgpu.dpm=1 amdgpu.dc=1` as [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to force the use of amdgpu driver instead of radeon.
+
+If it still does not work, try disabling DPM, by setting the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to: `radeon.cik_support=0 radeon.si_support=0 amdgpu.sik_support=1 amdgpu.si_support=1`
 
 ### Freezes with "[drm] IP block:gmc_v8_0 is hung!" kernel error
 

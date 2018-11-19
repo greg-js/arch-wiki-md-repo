@@ -50,7 +50,7 @@ A version overview, both past and future, can be read on [MozillaWiki:Releases](
 
 ## Securing
 
-*   Thunderbird may send your system's (internal) IP address as reply to HELO/ELHO requesting SMTP servers. See [[1]](http://kb.mozillazine.org/Replace_IP_address_with_name_in_headers).
+*   Thunderbird sends your system's internal IP address to the configured SMTP server as an argument to the HELO/ELHO SMTP command. This value can be overridden by setting `mail.smtpserver.default.hello_argument` to, for example, `localhost`. Setting this value may increase the spam score of messages you send. See [[1]](http://kb.mozillazine.org/Replace_IP_address_with_name_in_headers) and [[2]](http://kb.mozillazine.org/Mail_and_news_settings).
 
 *   To hide Thunderbird's [User Agent](https://developer.mozilla.org/en-US/docs/Web/HTTP/Gecko_user_agent_string_reference#Linux), create a new empty `general.useragent.override` string entry in the [#Config Editor](#Config_Editor).
 

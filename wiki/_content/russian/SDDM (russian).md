@@ -3,13 +3,13 @@
 *   [Экранный менеджер](/index.php/%D0%AD%D0%BA%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Экранный менеджер")
 *   [KDE (Русский)](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [SDDM](/index.php/SDDM "SDDM"). Дата последней синхронизации: 11 ноября 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=SDDM&diff=0&oldid=554663).
+**Состояние перевода:** На этой странице представлен перевод статьи [SDDM](/index.php/SDDM "SDDM"). Дата последней синхронизации: 17 ноября 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=SDDM&diff=0&oldid=555360).
 
 [Simple Desktop Display Manager](https://github.com/sddm/sddm/) (SDDM) – это предпочтительный [экранный менеджер](/index.php/%D0%AD%D0%BA%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Экранный менеджер") для [KDE](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)") Plasma.
 
 Из [Википедии](https://en.wikipedia.org/wiki/ru:Simple_Desktop_Display_Manager "wikipedia:ru:Simple Desktop Display Manager"):
 
-	*Simple Desktop Display Manager (SDDM) — это дисплейный менеджер (программа для графического логин скрина) для X11 . SDDM был написан с нуля на языке C++11 и поддерживает установку тем через QML. SDDM является заменой устаревшему KDE Display Manager и интегрируется в KDE Frameworks 5, KDE Plasma 5 и KDE Applications 5.*
+	*Simple Desktop Display Manager (SDDM) — это дисплейный менеджер (программа для графического логин скрина) для X11\. SDDM был написан с нуля на языке C++11 и поддерживает установку тем через QML. SDDM является заменой устаревшему KDE Display Manager и интегрируется в KDE Frameworks 5, KDE Plasma 5 и KDE Applications 5.*
 
 **Примечание:** Протокол Wayland поддерживается не полностью [[1]](https://github.com/sddm/sddm/issues/440). Сеансы Wayland отображаются в списке, но сам SDDM использует X11.
 
@@ -104,7 +104,7 @@ $ sddm-greeter --test-mode --theme /usr/share/sddm/themes/breeze
 
 ```
 
-Эта команда должна открыть новое окно с предварительным просмотром темы.
+Эта команда откроет новое окно для каждого подключённого монитора с предварительным просмотром темы.
 
 **Примечание:** Это лишь предварительный просмотр. В этом режиме не работают некоторые функции, например, выключение, переход в режим сна или вход в систему.
 

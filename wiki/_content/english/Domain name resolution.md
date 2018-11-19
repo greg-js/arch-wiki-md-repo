@@ -132,7 +132,7 @@ In the table below, the columns have the following meaning:
 1.  Implements a [DNSCrypt](https://en.wikipedia.org/wiki/DNSCrypt "wikipedia:DNSCrypt") protocol client.
 2.  Can use the subscribers of dnsmasq, pdns and unbound.[[2]](https://github.com/shuLhan/rescached-go#integration-with-openresolv)
 3.  Only forwards using DNS over HTTPS when Rescached itself is queried using DNS over HTTPS.[[3]](https://github.com/shuLhan/rescached-go#integration-with-dns-over-https)
-4.  From [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5): *Note as the resolver is not capable of authenticating the server, it is vulnerable for "man-in-the-middle" attacks.*[[4]](https://github.com/systemd/systemd/issues/9397) Also, the only supported mode is "opportunistic", which *makes DNS-over-TLS vulnerable to "downgrade" attacks*.
+4.  From [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5): *Note as the resolver is not capable of authenticating the server, it is vulnerable for "man-in-the-middle" attacks.*[[4]](https://github.com/systemd/systemd/issues/9397) Also, the only supported mode is "opportunistic", which *makes DNS-over-TLS vulnerable to "downgrade" attacks*.[[5]](https://github.com/systemd/systemd/issues/10755)
 
 ## Privacy
 

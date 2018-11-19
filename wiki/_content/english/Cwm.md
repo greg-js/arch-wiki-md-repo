@@ -12,7 +12,7 @@ cwm is developed as part of the OpenBSD base system. A “portable” version wh
 
 ## Installation
 
-The [cwm](https://aur.archlinux.org/packages/cwm/) package is available in the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") the [cwm](https://aur.archlinux.org/packages/cwm/) package available in the [AUR](/index.php/AUR "AUR").
 
 ## Configuration
 

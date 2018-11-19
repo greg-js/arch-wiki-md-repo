@@ -121,7 +121,7 @@ zone "domain.tld" IN {
 
 ## Allow recursion
 
-If you are running your own DNS server, you might as well use it for all DNS lookups. This will require the ability to do *recursive* lookups. In order to prevent [DNS Amplification Attacks](https://www.us-cert.gov/ncas/alerts/TA13-088A), recursion is turned off by default for most resolvers. The default Arch `/etc/named.conf` file allows for recursion only on the loopback interface:
+If you are running your own DNS server, you might as well use it for all DNS lookups, or even locally serve the root-zone yourself following [RFC:7706](https://tools.ietf.org/html/rfc7706 "rfc:7706"). The former will require the ability to do *recursive* lookups. In order to prevent [DNS Amplification Attacks](https://www.us-cert.gov/ncas/alerts/TA13-088A), recursion is turned off by default for most resolvers. The default Arch `/etc/named.conf` file allows for recursion only on the loopback interface:
 
 ```
 allow-recursion { 127.0.0.1; };
@@ -137,12 +137,12 @@ allow-recursion { 192.168.0.0/24; 127.0.0.1; };
 
 ## Configuring BIND to serve DNSSEC signed zones
 
-*   [http://www.dnssec.net/practical-documents](http://www.dnssec.net/practical-documents)
-    *   [http://www.cymru.com/Documents/secure-bind-template.html](http://www.cymru.com/Documents/secure-bind-template.html) **(configuration template!)**
-    *   [http://www.bind9.net/manuals](http://www.bind9.net/manuals)
-    *   [http://www.bind9.net/BIND-FAQ](http://www.bind9.net/BIND-FAQ)
-*   [http://blog.techscrawl.com/2009/01/13/enabling-dnssec-on-bind/](http://blog.techscrawl.com/2009/01/13/enabling-dnssec-on-bind/)
-*   Or use an external mechanisms such as OpenDNSSEC (fully-automatic key rollover)
+*   [DNSSEC](http://www.dnssec.net/practical-documents)
+*   [a BIND configuration template](http://www.cymru.com/Documents/secure-bind-template.html)
+*   [man bind](http://www.bind9.net/manuals)
+*   [bind FAQ](http://www.bind9.net/BIND-FAQ)
+
+There are external mechanisms such as OpenDNSSEC with fully-automatic key rollover available.
 
 ## Automatically listen on new interfaces
 
@@ -205,8 +205,8 @@ Now, restart the systemd service.
 
 *   [BIND 9 Administrator Reference Manual](https://www.isc.org/downloads/bind/doc/)
 *   [BIND 9 DNS Administration Reference Book](http://www.reedmedia.net/books/bind-dns/)
-*   [DNS and BIND by Cricket Liu and Paul Albitz](http://shop.oreilly.com/product/9780596100575.do)
-*   [Pro DNS and BIND](http://www.netwidget.net/books/apress/dns/intro.html)
+*   [DNS and BIND by Liu and Albitz](http://shop.oreilly.com/product/9780596100575.do)
+*   [Pro DNS and BIND](http://www.netwidget.net/books/apress/dns/intro.html) with [abbreviated version online](http://www.zytrax.com/books/dns/)
 *   [Internet Systems Consortium, Inc. (ISC)](http://www.isc.org/)
-*   [DNS Glossary](http://www.menandmice.com/knowledgehub/dnsglossary)
+*   [DNS Glossary](https://cira.ca/domain-name-system-dns-glossary)
 *   [Archived mailing list discussion on BIND's future](https://lists.archlinux.org/pipermail/arch-dev-public/2013-March/024588.html)

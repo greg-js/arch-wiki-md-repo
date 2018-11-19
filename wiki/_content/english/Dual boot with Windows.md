@@ -32,12 +32,12 @@ This is an article detailing different methods of Arch/Windows coexistence.
 
 Microsoft imposes limitations on which firmware boot mode and partitioning style can be supported based on the version of Windows used:
 
-*   **Windows XP** both **x86 32-bit** and **x86_64** (also called x64) (RTM and all Service Packs) versions do not support booting in UEFI mode (IA32 or x86_64) from any disk (MBR or GPT) OR in BIOS mode from GPT disk. They support only BIOS boot and only from MBR/msdos disk.
-*   **Windows Vista** or **7** **x86 32-bit** (RTM and all Service Packs) versions support booting in BIOS mode from MBR/msdos disks only, not from GPT disks. They do not support x86_64 UEFI or IA32 (x86 32-bit) UEFI boot. They support only BIOS boot and only from MBR/msdos disk.
-*   **Windows Vista RTM x86_64** (only RTM) version support booting in BIOS mode from MBR/msdos disks only, not from GPT disks. It does not support x86_64 UEFI or IA32 (x86 32-bit) UEFI boot. It supports only BIOS boot and only from MBR/msdos disk.
-*   **Windows Vista** (SP1 and above, not RTM) and **Windows 7** **x86_64** versions support booting in x86_64 UEFI mode from GPT disk only, OR in BIOS mode from MBR/msdos disk only. They do not support IA32 (x86 32-bit) UEFI boot from GPT/MBR disk, x86_64 UEFI boot from MBR/msdos disk, or BIOS boot from GPT disk.
-*   **Windows 8/8.1 x86 32-bit** support booting in IA32 UEFI mode from GPT disk only, OR in BIOS mode from MBR/msdos disk only. They do not support x86_64 UEFI boot from GPT/MBR disk, x86_64 UEFI boot from MBR/msdos disk, or BIOS boot from GPT disk. On market, the only systems known to ship with IA32 (U)EFI are some old Intel Macs (pre-2010 models?) and Intel Atom System-on-Chip (Clover trail and Bay Trail) Windows Tablets. in which it boots ONLY in IA32 UEFI mode and ONLY from GPT disk.
-*   **Windows 8/8.1** **x86_64** versions support booting in x86_64 UEFI mode from GPT disk only, OR in BIOS mode from MBR/msdos disk only. They do not support IA32 UEFI boot, x86_64 UEFI boot from MBR/msdos disk, or BIOS boot from GPT disk.
+*   **Windows XP** both **x86 32-bit** and **x86_64** (also called x64) (RTM and all Service Packs) versions do not support booting in UEFI mode (IA32 or x86_64) from any disk (MBR or GPT) OR in BIOS mode from GPT disk. They support only BIOS boot and only from MBR disk.
+*   **Windows Vista** or **7** **x86 32-bit** (RTM and all Service Packs) versions support booting in BIOS mode from MBR disks only, not from GPT disks. They do not support x86_64 UEFI or IA32 (x86 32-bit) UEFI boot. They support only BIOS boot and only from MBR disk.
+*   **Windows Vista RTM x86_64** (only RTM) version support booting in BIOS mode from MBR disks only, not from GPT disks. It does not support x86_64 UEFI or IA32 (x86 32-bit) UEFI boot. It supports only BIOS boot and only from MBR disk.
+*   **Windows Vista** (SP1 and above, not RTM) and **Windows 7** **x86_64** versions support booting in x86_64 UEFI mode from GPT disk only, OR in BIOS mode from MBR disk only. They do not support IA32 (x86 32-bit) UEFI boot from GPT/MBR disk, x86_64 UEFI boot from MBR disk, or BIOS boot from GPT disk.
+*   **Windows 8/8.1 x86 32-bit** support booting in IA32 UEFI mode from GPT disk only, OR in BIOS mode from MBR disk only. They do not support x86_64 UEFI boot from GPT/MBR disk, x86_64 UEFI boot from MBR disk, or BIOS boot from GPT disk. On market, the only systems known to ship with IA32 (U)EFI are some old Intel Macs (pre-2010 models?) and Intel Atom System-on-Chip (Clover trail and Bay Trail) Windows Tablets. in which it boots ONLY in IA32 UEFI mode and ONLY from GPT disk.
+*   **Windows 8/8.1** **x86_64** versions support booting in x86_64 UEFI mode from GPT disk only, OR in BIOS mode from MBR disk only. They do not support IA32 UEFI boot, x86_64 UEFI boot from MBR disk, or BIOS boot from GPT disk.
 
 In case of pre-installed Systems:
 
@@ -45,37 +45,37 @@ In case of pre-installed Systems:
 *   MOST of the systems pre-installed with Windows 7 x86_64, irrespective of Service Pack level, bitness or edition (SKU), boot in BIOS/MBR mode by default. Very few recent systems pre-installed with Windows 7 are known to boot in x86_64 UEFI/GPT mode by default.
 *   ALL systems pre-installed with Windows 8/8.1 boot in UEFI/GPT mode. The firmware bitness matches the bitness of Windows, ie. x86_64 Windows 8/8.1 boot in x86_64 UEFI mode and 32-bit Windows 8/8.1 boot in IA32 UEFI mode.
 
-The best way to detect the boot mode of Windows is to do the following (info from [here](http://www.eightforums.com/tutorials/29504-bios-mode-see-if-windows-boot-uefi-legacy-mode.html)):
+The best way to detect the boot mode of Windows is to do the following[[1]](http://www.eightforums.com/tutorials/29504-bios-mode-see-if-windows-boot-uefi-legacy-mode.html):
 
 *   Boot into Windows
-*   Press Win key and 'R' to start the Run dialog
-*   In the Run dialog type "msinfo32" and press Enter
-*   In the **System Information** windows, select **System Summary** on the left and check the value of **BIOS mode** item on the right
-*   If the value is **UEFI**, Windows boots in UEFI/GPT mode. If the value is **Legacy**, Windows boots in BIOS/MBR mode.
+*   Press `Win+R` keys to start the Run dialog
+*   In the Run dialog type `msinfo32.exe` and press Enter
+*   In the **System Information** windows, select *System Summary* on the left and check the value of **BIOS mode** item on the right
+*   If the value is `UEFI`, Windows boots in UEFI/GPT mode. If the value is `Legacy`, Windows boots in BIOS/MBR mode.
 
-In general, Windows forces type of partitioning depending on the firmware mode used, i.e. if Windows is booted in UEFI mode, it can be installed only to a GPT disk. If the Windows is booted in Legacy BIOS mode, it can be installed only to a MBR (also called **msdos** style partitioning) disk. This is a limitation enforced by Windows installer, and as of April 2014 there is no officially (Microsoft) supported way of installing Windows in UEFI/MBR or BIOS/GPT configuration. Thus Windows only supports either UEFI/GPT boot or BIOS/MBR configuration.
+In general, Windows forces type of partitioning depending on the firmware mode used, i.e. if Windows is booted in UEFI mode, it can be installed only to a GPT disk. If the Windows is booted in Legacy BIOS mode, it can be installed only to a MBR disk. This is a limitation enforced by Windows installer, and as of April 2014 there is no officially (Microsoft) supported way of installing Windows in UEFI/MBR or BIOS/GPT configuration. Thus Windows only supports either UEFI/GPT boot or BIOS/MBR configuration.
 
-Such a limitation is not enforced by the Linux kernel, but can depend on which bootloader is used and/or how the bootloader is configured. The Windows limitation should be considered if the user wishes to boot Windows and Linux from the same disk, since installation procedure of bootloader depends on the firmware type and disk partitioning configuration. In case where Windows and Linux dual boot from the same disk, it is advisable to follow the method used by Windows, ie. either go for UEFI/GPT boot or BIOS/MBR boot. See [http://support.microsoft.com/kb/2581408](http://support.microsoft.com/kb/2581408) for more info.
+Such a limitation is not enforced by the Linux kernel, but can depend on which [boot loader](/index.php/Boot_loader "Boot loader") is used and/or how the boot loader is configured. The Windows limitation should be considered if the user wishes to boot Windows and Linux from the same disk, since installation procedure of boot loader depends on the firmware type and disk [partitioning](/index.php/Partitioning "Partitioning") configuration. In case where Windows and Linux dual boot from the same disk, it is advisable to follow the method used by Windows, ie. either go for UEFI/GPT boot or BIOS/MBR boot. See [http://support.microsoft.com/kb/2581408](http://support.microsoft.com/kb/2581408) for more information.
 
 ### Install media limitations
 
-Intel Atom System-on-Chip Tablets (Clover trail and Bay Trail) provide only IA32 UEFI firmware WITHOUT Legacy BIOS (CSM) support (unlike most of the x86_64 UEFI systems), due to Microsoft Connected Standby Guidelines for OEMs. Due to lack of Legacy BIOS support in these systems, and the lack of 32-bit UEFI boot in Arch Official Install ISO or the Archboot iso (as of April 2014), these install media cannot boot in Atom SoC tablets pre-installed with Windows 8/8.1 32-bit.
+Intel Atom System-on-Chip Tablets (Clover trail and Bay Trail) provide only IA32 UEFI firmware without Legacy BIOS (CSM) support (unlike most of the x86_64 UEFI systems), due to Microsoft Connected Standby Guidelines for OEMs. Due to lack of Legacy BIOS support in these systems, and the lack of 32-bit UEFI boot in Arch Official Install ISO ([FS#53182](https://bugs.archlinux.org/task/53182)), the official install media cannot boot on these systems. See [Unified Extensible Firmware Interface#UEFI firmware bitness](/index.php/Unified_Extensible_Firmware_Interface#UEFI_firmware_bitness "Unified Extensible Firmware Interface") for more information and available workarounds.
 
 ### Bootloader UEFI vs BIOS limitations
 
 Most of the linux bootloaders installed for one firmware type cannot launch or chainload bootloaders of other firmware type. That is, if Arch is installed in UEFI/GPT or UEFI/MBR mode in one disk and Windows is installed in BIOS/MBR mode in another disk, the UEFI bootloader used by Arch cannot chainload the BIOS installed Windows in the other disk. Similarly if Arch is installed in BIOS/MBR or BIOS/GPT mode in one disk and Windows is installed in UEFI/GPT in another disk , the BIOS bootloader used by Arch cannot chainload UEFI installed Windows in the other disk.
 
-The only exceptions to this are [GRUB](/index.php/GRUB "GRUB") in Apple Macs in which EFI installed grub(2) can boot BIOS installed OS via **appleloader** command (does not work in non-Apple systems), and [rEFInd](/index.php/REFInd "REFInd") which technically supports booting legacy BIOS OS from UEFI systems, but [does not always work in non-Apple UEFI systems](http://rodsbooks.com/refind/using.html#legacy) as per its author Rod Smith.
+The only exceptions to this are [GRUB](/index.php/GRUB "GRUB") in Apple Macs in which GRUB in UEFI mode can boot BIOS installed OS via `appleloader` command (does not work in non-Apple systems), and [rEFInd](/index.php/REFInd "REFInd") which technically supports booting legacy BIOS OS from UEFI systems, but [does not always work in non-Apple UEFI systems](http://rodsbooks.com/refind/using.html#legacy) as per its author Rod Smith.
 
-However if Arch is installed in BIOS/GPT in one disk and Windows is installed in BIOS/MBR mode in another disk, then the BIOS bootloader used by Arch CAN boot the Windows in the other disk, if the bootloader itself has the ability to chainload from another disk.
+However if Arch is installed in BIOS/GPT in one disk and Windows is installed in BIOS/MBR mode in another disk, then the BIOS boot loader used by Arch CAN boot the Windows in the other disk, if the boot loader itself has the ability to chainload from another disk.
 
-**Note:** If Arch and Windows are dual-booting from same disk, then Arch SHOULD follow the same firmware boot mode and partitioning combination used by the installed Windows in the disk.
+**Note:** If Arch and Windows are dual-booting from same disk, then Arch should follow the same firmware boot mode and partitioning combination used by the installed Windows in the disk.
 
 ### UEFI Secure Boot
 
 All pre-installed Windows 8/8.1 systems by default boot in UEFI/GPT mode and have UEFI Secure Boot enabled by default. This is mandated by Microsoft for all OEM pre-installed systems.
 
-Arch Linux install media currently supports Secure Boot. See [Secure Boot#Booting archiso](/index.php/Secure_Boot#Booting_archiso "Secure Boot").
+Arch Linux install media does not support Secure Boot. See [Secure Boot#Booting archiso](/index.php/Secure_Boot#Booting_archiso "Secure Boot").
 
 It is advisable to disable UEFI Secure Boot in the firmware setup manually before attempting to boot Arch Linux. Windows 8/8.1 SHOULD continue to boot fine even if Secure boot is disabled. The only issue with regards to disabling UEFI Secure Boot support is that it requires physical access to the system to disable secure boot option in the firmware setup, as Microsoft has explicitly forbidden presence of any method to remotely or programmatically (from within OS) disable secure boot in all Windows 8/8.1 pre-installed systems
 
@@ -91,15 +91,15 @@ Windows is limited to filepaths being shorter than [260 characters](http://blogs
 
 Windows also puts [certain characters off limits](http://msdn.microsoft.com/en-us/library/aa365247(VS.85).aspx#naming_conventions) in filenames for reasons that run all the way back to DOS:
 
-*   < (less than)
-*   > (greater than)
-*   : (colon)
-*   " (double quote)
-*   / (forward slash)
-*   \ (backslash)
-*   | (vertical bar or pipe)
-*   ? (question mark)
-*   * (asterisk)
+*   `<` (less than)
+*   `>` (greater than)
+*   `:` (colon)
+*   `"` (double quote)
+*   `/` (forward slash)
+*   `\` (backslash)
+*   `|` (vertical bar or pipe)
+*   `?` (question mark)
+*   `*` (asterisk)
 
 These are limitations of Windows and not NTFS: any other OS using the NTFS partition will be fine. Windows will fail to detect these files and running `chkdsk` will most likely cause them to be deleted. This can lead to potential data-loss.
 
@@ -107,13 +107,13 @@ These are limitations of Windows and not NTFS: any other OS using the NTFS parti
 
 ## Installation
 
-The recommended way to setup a Linux/Windows dual booting system is to first install Windows, only using part of the disk for its partitions. When you have finished the Windows setup, boot into the Linux install environment where you can create and resize partitions for Linux while leaving the existing Windows partitions untouched. The Windows installation will create the EFI System Partition which can be used by your Linux bootloader.
+The recommended way to setup a Linux/Windows dual booting system is to first install Windows, only using part of the disk for its partitions. When you have finished the Windows setup, boot into the Linux install environment where you can create and resize partitions for Linux while leaving the existing Windows partitions untouched. The Windows installation will create the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") which can be used by your Linux [boot loader](/index.php/Boot_loader "Boot loader").
 
 ### BIOS systems
 
 #### Using a Linux boot loader
 
-You may use [GRUB](/index.php/GRUB#Dual-booting "GRUB") or [Syslinux](/index.php/Syslinux#Chainloading "Syslinux").
+You may use any multi-boot supporting BIOS [boot loader](/index.php/Boot_loader "Boot loader").
 
 #### Using Windows boot loader
 
@@ -162,14 +162,21 @@ Reboot and enjoy. In my case I'm using the Windows boot loader so that I can map
 
 If you already have Windows installed, it will already have created some partitions on a [GPT](/index.php/GPT "GPT")-formatted disk:
 
-*   a partition of type `ef00 EFI System` and filesystem `FAT32`,
-*   a partition of type `0c01 Microsoft reserved`, generally of size `128 MiB`,
-*   a partition of type `0700 Microsoft basic data` and of filesystem `NTFS`, which corresponds to `C:\`,
-*   potentially system recovery and backup partitions and/or secondary data partitions (corresponding often to `D:\` and above).
+*   a [Windows Recovery Environment](https://en.wikipedia.org/wiki/Windows_Recovery_Environment "wikipedia:Windows Recovery Environment") partition, generally of size 499 MiB, containing the files required to boot Windows (i.e. the equivalent of Linux's `/boot`),
+*   an [EFI system partition](/index.php/EFI_system_partition "EFI system partition") with a [FAT32](/index.php/FAT32 "FAT32") filesystem,
+*   a [Microsoft Reserved Partition](https://en.wikipedia.org/wiki/Microsoft_Reserved_Partition "wikipedia:Microsoft Reserved Partition"), generally of size 128 MiB,
+*   a Microsoft basic data partition with a NTFS filesystem, which corresponds to `C:`,
+*   potentially system recovery and backup partitions and/or secondary data partitions (corresponding often to `D:` and above).
 
-Using the Disk Management utility in Windows, check how the partitions are labelled and which type gets reported. This will help you understand which partitions are essential to Windows, and which others you might repurpose: the first 3 bullets in the above list are essential, do not delete them.
+Using the Disk Management utility in Windows, check how the partitions are labelled and which type gets reported. This will help you understand which partitions are essential to Windows, and which others you might repurpose.
 
-You can then proceed with [partitioning](/index.php/Partitioning "Partitioning"), depending on your needs. Mind that there is no need to create an additional EFI System Partition, since it already exists (see above). [rEFInd](/index.php/REFInd "REFInd") and [systemd-boot](/index.php/Systemd-boot "Systemd-boot") autodetect *Windows Boot Manager* (`\EFI\Microsoft\Boot\bootmgfw.efi`) and show it in their boot menu automatically. For [GRUB](/index.php/GRUB "GRUB") follow [GRUB#Windows installed in UEFI/GPT Mode menu entry](/index.php/GRUB#Windows_installed_in_UEFI/GPT_Mode_menu_entry "GRUB"). The bootloader needs to support chainloading other EFI applications to do dual boot windows / linux.
+**Warning:** The first 4 partitions in the above list are essential, do not delete them.
+
+You can then proceed with [partitioning](/index.php/Partitioning "Partitioning"), depending on your needs. Mind that there is no need to create an additional EFI system partition, since it already exists. Simply [mount the existing partition](/index.php/EFI_system_partition#Mount_the_partition "EFI system partition").
+
+The boot loader needs to support chainloading other EFI applications to do dual boot Windows / Linux.
+
+**Tip:** [rEFInd](/index.php/REFInd "REFInd") and [systemd-boot](/index.php/Systemd-boot "Systemd-boot") will autodetect *Windows Boot Manager* (`\EFI\Microsoft\Boot\bootmgfw.efi`) and show it in their boot menu automatically. For [GRUB](/index.php/GRUB "GRUB") follow [GRUB#Windows installed in UEFI/GPT Mode menu entry](/index.php/GRUB#Windows_installed_in_UEFI/GPT_Mode_menu_entry "GRUB").
 
 Computers that come with newer versions of Windows often have [Secure Boot](/index.php/Secure_Boot "Secure Boot") enabled. You will need to take extra steps to either disable Secure Boot or to make your installation media compatible with secure boot (see above and in the linked page).
 
@@ -181,7 +188,7 @@ See [#Windows UEFI vs BIOS limitations](#Windows_UEFI_vs_BIOS_limitations).
 
 #### Cannot boot Linux after installing Windows
 
-See [UEFI#Windows changes boot order](/index.php/UEFI#Windows_changes_boot_order "UEFI").
+See [Unified Extensible Firmware Interface#Windows changes boot order](/index.php/Unified_Extensible_Firmware_Interface#Windows_changes_boot_order "Unified Extensible Firmware Interface").
 
 #### Restoring a Windows boot record
 
@@ -217,8 +224,7 @@ Then, write the new boot sector (boot record):
 ## Time standard
 
 *   Recommended: Set both Arch Linux and Windows to use UTC, following [System time#UTC in Windows](/index.php/System_time#UTC_in_Windows "System time"). Some versions of Windows revert the hardware clock back to *localtime* if they are set to synchronize the time online. This issue appear to be fixed in Windows 10.
-
-*   Not recommended: Set Arch Linux to *localtime* and disable any time-related services, like [NTPd](/index.php/NTPd "NTPd") . This will let Windows take care of hardware clock corrections and you will need to remember to boot into Windows at least two times a year (in Spring and Autumn) when [DST](https://en.wikipedia.org/wiki/Daylight_saving_time "wikipedia:Daylight saving time") kicks in. So please do not ask on the forums why the clock is one hour behind or ahead if you usually go for days or weeks without booting into Windows.
+*   Not recommended: Set Arch Linux to *localtime* and disable all [time synchronization daemons](/index.php/System_time#Time_synchronization "System time"). This will let Windows take care of hardware clock corrections and you will need to remember to boot into Windows at least two times a year (in Spring and Autumn) when [DST](https://en.wikipedia.org/wiki/Daylight_saving_time "wikipedia:Daylight saving time") kicks in. So please do not ask on the forums why the clock is one hour behind or ahead if you usually go for days or weeks without booting into Windows.
 
 ## See also
 

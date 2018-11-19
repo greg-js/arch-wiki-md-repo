@@ -18,6 +18,8 @@
     *   [8.5 Enabling overclocking](#Enabling_overclocking)
         *   [8.5.1 Setting static 2D/3D clocks](#Setting_static_2D/3D_clocks)
         *   [8.5.2 Allow change to highest Performance Mode](#Allow_change_to_highest_Performance_Mode)
+    *   [8.6 Custom TDP Limit](#Custom_TDP_Limit)
+    *   [8.7 Kernel module parameters](#Kernel_module_parameters)
 
 ## Fixing terminal resolution
 
@@ -432,3 +434,48 @@ sudo nvidia-smi -i 0 -ac memratemax,clockratemax
 ```
 
 After setting the rates the max. Performance Mode works in nvidia-settings and you can overclock graphics-clock and Memory Transfer Rate.
+
+### Custom TDP Limit
+
+Modern Nvidia graphics cards throttle frequency to stay in their TDP and temperature limits. To increase performance it is possible to change the TDP limit, which will result in higher temperatures and higher power consumption.
+
+For example, to set the power limit to 160.30W:
+
+```
+# nvidia-smi -pl 160.30
+
+```
+
+To set the power limit on boot (without driver persistence):
+
+ `/etc/systemd/system/nvidia-tdp.timer` 
+```
+[Unit]
+Description=Set NVIDIA power limit on boot
+
+[Timer]
+OnBootSec=5
+
+[Install]
+WantedBy=timers.target
+```
+ `/etc/systemd/system/nvidia-tdp.service` 
+```
+Description=Set NVIDIA power limit
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/nvidia-smi -pl 160.30
+```
+
+### Kernel module parameters
+
+Some options can be set as kernel module parameters, a full list can be obtained by running `modinfo nvidia` or looking at `nv-reg.h`. See [the Gentoo wiki](https://wiki.gentoo.org/wiki/NVidia/nvidia-drivers#Kernel_module_parameters) as well.
+
+For example, enabling the following will turn on kernel mode setting (see above) and enable the PAT feature supported by most newer CPUs, which affects how memory is allocated. If your system can support this feature it should improve performance.
+
+ `/etc/modprobe.d/nvidia.conf` 
+```
+options nvidia-drm modeset=1 
+options nvidia NVreg_UsePageAttributeTable=1
+```

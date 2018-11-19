@@ -478,7 +478,7 @@ This setting will tell LightDM to wait until graphics devices are ready before s
 
 ### LightDM is running with low FPS on Intel Graphics
 
-See [Intel_graphics#SNA_issues](/index.php/Intel_graphics#SNA_issues "Intel graphics").
+See [Intel graphics#SNA issues](/index.php/Intel_graphics#SNA_issues "Intel graphics").
 
 ### Pulseaudio not starting automatically
 

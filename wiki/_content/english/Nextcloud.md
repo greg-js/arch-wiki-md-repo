@@ -471,7 +471,7 @@ If you have customized your Nextcloud installation and your filepaths are differ
 
 ### Desktop
 
-The official client can be installed with the [owncloud-client](https://www.archlinux.org/packages/?name=owncloud-client) or [nextcloud-client](https://aur.archlinux.org/packages/nextcloud-client/) package. Alternative versions are available in the [AUR](/index.php/AUR "AUR"): [owncloud-client-git](https://aur.archlinux.org/packages/owncloud-client-git/).
+The official client can be installed with the [owncloud-client](https://www.archlinux.org/packages/?name=owncloud-client) or [nextcloud-client](https://www.archlinux.org/packages/?name=nextcloud-client) package. Alternative versions are available in the [AUR](/index.php/AUR "AUR"): [owncloud-client-git](https://aur.archlinux.org/packages/owncloud-client-git/).
 
 #### Calendar
 

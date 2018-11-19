@@ -25,9 +25,9 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Icewm "wikipedia:Icewm"):
 
 ## Installation
 
-IceWM can be [installed](/index.php/Install "Install") with the [icewm](https://www.archlinux.org/packages/?name=icewm) package.
+[install](/index.php/Install "Install") the [icewm](https://www.archlinux.org/packages/?name=icewm) package.
 
-A forked version of IceWM exists on [GitHub](https://github.com/bbidulock/icewm). It can be installed from either of the following: [icewm2](https://aur.archlinux.org/packages/icewm2/), [icewm-git](https://aur.archlinux.org/packages/icewm-git/).
+A forked version of IceWM exists on [GitHub](https://github.com/bbidulock/icewm). It can be installed with [icewm2](https://aur.archlinux.org/packages/icewm2/) or [icewm-git](https://aur.archlinux.org/packages/icewm-git/).
 
 ## Starting
 

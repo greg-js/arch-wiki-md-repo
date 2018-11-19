@@ -44,20 +44,35 @@ Read more regarding the sleep variants on the kernel documentation [[1]](https:/
 
 ## Graphics
 
+The nouveau module is known to cause kernel panics and freezes on this model. One way to mitigate this is by adding `nomodeset` to the kernel options, however it's best if you completely disable it.
+
+ `/etc/modprobe.d/blacklist.conf` 
+```
+blacklist nouveau
+blacklist rivafb
+blacklist nvidiafb
+blacklist rivatv
+blacklist nv
+blacklist uvcvideo
+```
+
+And make sure the discrete GPU powers off by default on boot.
+
+ `/etc/tmpfiles.d/nvidia_pm.conf`  `w /sys/bus/pci/devices/0000:01:00.0/power/control - - - - auto` 
+
 Integrated graphics works well out of the box.
 
 ### Optimus Nvidia
 
 Works but additional configuration is needed. (see *[[2]](https://github.com/Bumblebee-Project/bbswitch/issues/140#issuecomment-394180574))
 
-*   Add pcie_port_pm=on to kernel options
 *   If tlp is installed, add the graphic card to **RUNTIME_PM_BLACKLIST**
 *   Uninstall or disable bbswitch
 *   Install bumblebee and set **PMMethod=none** in nvidia section
 *   Install nvidia driver
 *   Reboot
 
-Note: This is just one configuration that worked. There are more configurations that might work just as well or even better. Sometimes nvidia driver can not be unloaded because some process is still using it. However even if the driver is loaded power saving still works.
+Note: This is just one configuration that worked. There are more configurations that might work just as well or even better. Sometimes nvidia driver can not be unloaded because some process is still using it.
 
 ### bbswitch
 

@@ -104,7 +104,7 @@ The Wifi adapter contains a Qualcomm Atheros QCA6174 module. It should work out 
 
 ## Bluetooth
 
-The Bluetooth adapter sometimes becomes unavailable after waking up from suspend and can even stay deactivated and invisible after a warm reboot.
+The Bluetooth adapter sometimes becomes unavailable after waking up from suspend and can even stay deactivated and invisible after a warm reboot. End of October 2018 [a kernel patch was announced by Dell](https://www.dell.com/community/Linux-Developer-Systems/XPS-13-9370-no-bluetooth-after-suspend/m-p/6204559#M8744). However the issue appears to remain unresolved for at least some users.
 
 ## Keyboard
 

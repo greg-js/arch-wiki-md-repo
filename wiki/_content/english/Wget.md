@@ -61,7 +61,7 @@ XferCommand = /usr/bin/wget --proxy-user "domain\user" --proxy-password="passwor
 
 ```
 
-**Warning:** be aware that storing passwords in plain text is not safe. Make sure that only root can read this file with `chmod 600 /etc/pacman.conf`.
+**Warning:** Be aware that storing passwords in plain text is not safe. Make sure that only root can read this file with `chmod 600 /etc/pacman.conf`.
 
 ## Usage
 
