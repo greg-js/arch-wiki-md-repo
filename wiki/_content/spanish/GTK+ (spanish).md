@@ -355,7 +355,7 @@ Abra el selector de archivos dentro del **directorio de trabajo actual** y no en
 
 **GTK+ 3**
 
-Cambie el [ajuste](/index.php/GNOME#Configuration "GNOME") con la orden siguiente:
+Cambie el [ajuste](/index.php/GNOME_(Espa%C3%B1ol)#Configuración "GNOME (Español)") con la orden siguiente:
 
 ```
 $ gsettings set org.gtk.Settings.FileChooser startup-mode cwd

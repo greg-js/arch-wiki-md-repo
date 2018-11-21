@@ -8,6 +8,7 @@
 *   [4 Starting](#Starting)
 *   [5 Content Filtering](#Content_Filtering)
 *   [6 Frontend](#Frontend)
+    *   [6.1 Squid 4.x not supported in Webmin](#Squid_4.x_not_supported_in_Webmin)
 *   [7 Ad blocking with adzapper](#Ad_blocking_with_adzapper)
     *   [7.1 Installation](#Installation_2)
     *   [7.2 Configuration](#Configuration_2)
@@ -162,6 +163,17 @@ If you're looking for a content filtering solution to work with Squid, you shoul
 ## Frontend
 
 If you'd like a web-based frontend for managing Squid, [Webmin](/index.php/Webmin "Webmin") is your best bet.
+
+### Squid 4.x not supported in Webmin
+
+If you receive an error indicating your version of webmin is unsupported:
+
+```
+Your version of Squid is not supported by Webmin. Only versions from 1.1 to 3.4 are supported by this module.
+
+```
+
+you will need to modify the file `/opt/webmin/squid/index.cgi` ([see issue #952](https://github.com/webmin/webmin/issues/952))
 
 ## Ad blocking with adzapper
 

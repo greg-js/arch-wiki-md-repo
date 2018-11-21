@@ -8,11 +8,11 @@ Related articles
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Usage](#Usage)
-    *   [2.1 Format selection](#Format_selection)
-    *   [2.2 Extract audio](#Extract_audio)
-    *   [2.3 Subtitles](#Subtitles)
-*   [3 Configuration](#Configuration)
+*   [2 Configuration](#Configuration)
+*   [3 Usage](#Usage)
+    *   [3.1 Format selection](#Format_selection)
+    *   [3.2 Extract audio](#Extract_audio)
+    *   [3.3 Subtitles](#Subtitles)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Faster downloads](#Faster_downloads)
     *   [4.2 Trim (partial download)](#Trim_(partial_download))
@@ -22,6 +22,21 @@ Related articles
 ## Installation
 
 [Install](/index.php/Install "Install") the [youtube-dl](https://www.archlinux.org/packages/?name=youtube-dl) package, or [youtube-dl-git](https://aur.archlinux.org/packages/youtube-dl-git/) for the development version. It is recommended to also install [FFmpeg](/index.php/FFmpeg "FFmpeg") as it is used for muxing for some sites.
+
+## Configuration
+
+The system-wide configuration file is `/etc/youtube-dl.conf` and the user-specific configuration file is `~/.config/youtube-dl/config`. The syntax is simply one command-line option per line. Example configuration:
+
+ `~/.config/youtube-dl/config` 
+```
+# Save in ~/Videos
+-o ~/Videos/%(title)s.%(ext)s
+
+# Prefer 1080p or lower resolutions
+-f (bestvideo[height<=1080]/bestvideo)+bestaudio/best[height<=1080]/best
+```
+
+See [[1]](https://github.com/rg3/youtube-dl/blob/master/README.md#configuration) for more information.
 
 ## Usage
 
@@ -77,21 +92,6 @@ $ youtube-dl --write-sub --sub-lang *LANG* *URL*
 
 ```
 
-## Configuration
-
-The system-wide configuration file is `/etc/youtube-dl.conf` and the user-specific configuration file is `~/.config/youtube-dl/config`. The syntax is simply one command-line option per line. Example configuration:
-
- `~/.config/youtube-dl/config` 
-```
-# Save in ~/Videos
--o ~/Videos/%(title)s.%(ext)s
-
-# Prefer 1080p or lower resolutions
--f (bestvideo[height<=1080]/bestvideo)+bestaudio/best[height<=1080]/best
-```
-
-See [[1]](https://github.com/rg3/youtube-dl/blob/master/README.md#configuration) for more information.
-
 ## Tips and tricks
 
 ### Faster downloads
@@ -109,7 +109,7 @@ Parts of videos can be downloaded by using the output of `youtube-dl -g -f *form
 
 ### URL from clipboard
 
-A shell [alias](/index.php/Alias "Alias") or a keyboard shortcut can be set to download a video (or audio) of a selected (or copied) URL by outputting it from the [X selection](https://en.wikipedia.org/wiki/X_Window_selection "wikipedia:X Window selection"). See [Clipboard#Tools](/index.php/Clipboard#Tools "Clipboard").
+A shell [alias](/index.php/Alias "Alias"), a [desktop launcher](/index.php/Desktop_launcher "Desktop launcher") or a keyboard shortcut can be set to download a video (or audio) of a selected (or copied) URL by outputting it from the [X selection](https://en.wikipedia.org/wiki/X_Window_selection "wikipedia:X Window selection"). See [Clipboard#Tools](/index.php/Clipboard#Tools "Clipboard").
 
 ## See also
 

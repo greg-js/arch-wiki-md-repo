@@ -29,7 +29,14 @@
 To change the default shell for *st*, edit this line:
 
 ```
- static char *shell = "/bin/sh";
+static char *shell = "/bin/sh";
+
+```
+
+Or start *st* with the desired shell as last argument:
+
+```
+st *options* fish
 
 ```
 
@@ -65,7 +72,7 @@ $ st -f 'Liberation Mono-12'
 
 ### Colors
 
-Edit the following lines to set *foreground*, *background*, and *cursor* colors:
+Edit the following lines to set foreground, background, and cursor colors:
 
 ```
 unsigned int defaultfg = 7;
@@ -74,7 +81,7 @@ static unsigned int defaultcs = 256;
 
 ```
 
-The values refer to the `*colorname[]` array in the same file; you can use default color or add yours in `#rrggbb`, for example:
+The values refer to the `*colorname[]` array in the config file. You can use the default colors or add yours in `#rrggbb`:
 
 ```
 static const char *colorname[] = {
@@ -116,30 +123,30 @@ static unsigned int defaultcs = 256;
 
 ```
 
-Tools exists to facilitate the creation of color palettes. For example [terminal.sexy](http://terminal.sexy) has a set of pre-made ones and exports directly to *st'*s format.
+Tools exists to facilitate the creation of color palettes. For example [terminal sexy](http://terminal.sexy) has a set of pre-made ones and exports directly to *st'*s format (see [[1]](https://github.com/stayradiated/terminal.sexy/issues/22#issuecomment-430629424)).
 
-There is a patch for the solarized color scheme that implements it. See [suckless.org](https://st.suckless.org/patches/solarized/) or the [st-solarized](https://aur.archlinux.org/packages/st-solarized/) package.
+There is a patch for the Solarized color scheme. See [[2]](https://st.suckless.org/patches/solarized/) or [st-solarized](https://aur.archlinux.org/packages/st-solarized/) to install it.
 
 ### Desktop entry
 
-To simplify launching *st* with a decent font e.g. [adobe-source-code-pro-fonts](https://www.archlinux.org/packages/?name=adobe-source-code-pro-fonts), you can also create a [desktop entry](/index.php/Desktop_entry "Desktop entry"):
+To simplify launching *st* with a decent font (e.g. [adobe-source-code-pro-fonts](https://www.archlinux.org/packages/?name=adobe-source-code-pro-fonts)) in a [desktop environment](/index.php/Desktop_environment "Desktop environment"), you can also create a [desktop entry](/index.php/Desktop_entry "Desktop entry"):
 
- `~/.local/share/applications/simple-terminal.desktop` 
+ `~/.local/share/applications/st.desktop` 
 ```
 [Desktop Entry]
 Name=Simple Terminal
 GenericName=Terminal
-Comment=standard terminal emulator for the X window system
-Exec=st -t "Suckless Terminal" -f "Source Code Pro:style=Semibold:size=12" -g "80x24"
+Comment=Suckless terminal emulator for X
+Exec=st -t "Simple Terminal" -f "Source Code Pro:style=Semibold:size=12"
 Terminal=false
 Type=Application
 Encoding=UTF-8
-Icon=terminal
+Icon=utilities-terminal
 Categories=System;TerminalEmulator;
 Keywords=shell;prompt;command;commandline;cmd;
 ```
 
-The menu entry will appear as **Simple Terminal** in the *System Tools* application list.
+The menu entry will appear as *Simple Terminal* in the *System Tools* application list.
 
 ## Troubleshooting
 

@@ -1,32 +1,37 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Unofficial mirrors](/index.php/Unofficial_mirrors "Unofficial mirrors"), revisada por última vez el **2018-11-11**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Unofficial_mirrors&diff=0&oldid=551973) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Unofficial mirrors](/index.php/Unofficial_mirrors "Unofficial mirrors"), revisada por última vez el **2018-11-20**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Unofficial_mirrors&diff=0&oldid=551973) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Estos [mirrors](/index.php/Mirrors_(Espa%C3%B1ol) "Mirrors (Español)") *no* están listados en `/etc/pacman.d/mirrorlist`.
 
 ## Contents
 
 *   [1 Canadá](#Canadá)
-*   [2 China](#China)
-*   [3 Francia](#Francia)
-*   [4 Indonesia](#Indonesia)
-*   [5 Irán](#Irán)
-*   [6 Italia](#Italia)
-*   [7 Japón](#Japón)
-*   [8 Malasia](#Malasia)
-*   [9 Países Bajos](#Países_Bajos)
-*   [10 Nueva Zelanda](#Nueva_Zelanda)
-*   [11 Polonia](#Polonia)
-*   [12 Rusia](#Rusia)
-*   [13 Sudáfrica](#Sudáfrica)
-*   [14 Suecia](#Suecia)
-*   [15 Tailandia](#Tailandia)
-*   [16 Turquía](#Turquía)
-*   [17 EEUU](#EEUU)
-*   [18 Sourceforge (ISOs antiguos)](#Sourceforge_(ISOs_antiguos))
+*   [2 Chile](#Chile)
+*   [3 China](#China)
+*   [4 Francia](#Francia)
+*   [5 Indonesia](#Indonesia)
+*   [6 Irán](#Irán)
+*   [7 Italia](#Italia)
+*   [8 Japón](#Japón)
+*   [9 Malasia](#Malasia)
+*   [10 Países Bajos](#Países_Bajos)
+*   [11 Nueva Zelanda](#Nueva_Zelanda)
+*   [12 Polonia](#Polonia)
+*   [13 Rusia](#Rusia)
+*   [14 Sudáfrica](#Sudáfrica)
+*   [15 Suecia](#Suecia)
+*   [16 Tailandia](#Tailandia)
+*   [17 Turquía](#Turquía)
+*   [18 EEUU](#EEUU)
+*   [19 Sourceforge (ISOs antiguos)](#Sourceforge_(ISOs_antiguos))
 
 ## Canadá
 
 *   [https://na.mirrors.coltondrg.com/archlinux/](https://na.mirrors.coltondrg.com/archlinux/)
+
+## Chile
+
+*   [http://ip62.inf.utfsm.cl/](http://ip62.inf.utfsm.cl/) *UTFSM #62*
 
 ## China
 

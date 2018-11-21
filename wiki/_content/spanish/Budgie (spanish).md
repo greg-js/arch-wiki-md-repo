@@ -1,12 +1,12 @@
+**Estado de la traducción**
+Este artículo es una traducción de [Budgie](/index.php/Budgie "Budgie"), revisada por última vez el **2018-11-09**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Budgie&diff=0&oldid=534157) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
 Artículos relacionados
 
 *   [Entornos de escritorio](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)")
 *   [Gestor de pantallas](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)")
 *   [Gestor de ventanas](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)")
 *   [GTK+](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)")
-
-**Estado de la traducción**
-Este artículo es una traducción de [Budgie](/index.php/Budgie "Budgie"), revisada por última vez el **2018-11-09**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Budgie&diff=0&oldid=534157) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 [Budgie](https://budgie-desktop.org/home/) es el escritorio predeterminado de Solus Operating System, escrito desde cero. Además de un diseño más moderno, Budgie puede emular la apariencia y la sensación del escritorio GNOME 2.
 
@@ -59,7 +59,7 @@ gsettings set com.solus-project.budgie-helper.workarounds fix-button-layout 'clo
 
 ### Usar un gestor de ventanas distinto
 
-Es posible utilizar un [gestor de ventanas](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)") alternativo con Budgie. O bien defina una [sesión personalizada de GNOME](/index.php/GNOME/Tips_and_tricks#Custom_GNOME_sessions "GNOME/Tips and tricks") que reemplaze a *budgie-wm* con otro gestor de ventanas o bien [autoinicie](/index.php/GNOME#Autostart "GNOME") `*my-wm* --replace` donde *my-wm* es el nombre ejecutable del gestor de ventanas que desea usar.
+Es posible utilizar un [gestor de ventanas](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)") alternativo con Budgie. O bien defina una [sesión personalizada de GNOME](/index.php/GNOME/Tips_and_tricks#Custom_GNOME_sessions "GNOME/Tips and tricks") que reemplaze a *budgie-wm* con otro gestor de ventanas o bien [autoinicie](/index.php/GNOME_(Espa%C3%B1ol)#Inicio_automático "GNOME (Español)") `*my-wm* --replace` donde *my-wm* es el nombre ejecutable del gestor de ventanas que desea usar.
 
 ## Véase también
 

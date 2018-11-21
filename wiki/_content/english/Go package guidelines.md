@@ -10,16 +10,15 @@ This document covers standards and guidelines on writing [PKGBUILDs](/index.php/
 
 *   [1 General guidelines](#General_guidelines)
     *   [1.1 Package naming](#Package_naming)
-*   [2 Dependencies](#Dependencies)
-    *   [2.1 Prepare](#Prepare)
-*   [3 Building](#Building)
-    *   [3.1 Flags and build options](#Flags_and_build_options)
-    *   [3.2 Pre 1.11 building](#Pre_1.11_building)
-    *   [3.3 Post 1.11 building](#Post_1.11_building)
-*   [4 Sample PKGBUILDs](#Sample_PKGBUILDs)
-    *   [4.1 Basic PKGBUILD](#Basic_PKGBUILD)
-    *   [4.2 PKGBUILD with GOPATH and dep](#PKGBUILD_with_GOPATH_and_dep)
-*   [5 Example Packages](#Example_Packages)
+    *   [1.2 Instructions for alternative dependency managers](#Instructions_for_alternative_dependency_managers)
+*   [2 Building](#Building)
+    *   [2.1 Flags and build options](#Flags_and_build_options)
+    *   [2.2 Modern Go projects (for Go >=1.11)](#Modern_Go_projects_(for_Go_>=1.11))
+*   [3 Sample PKGBUILDs](#Sample_PKGBUILDs)
+    *   [3.1 Basic PKGBUILD](#Basic_PKGBUILD)
+    *   [3.2 PKGBUILD with GOPATH and dep](#PKGBUILD_with_GOPATH_and_dep)
+*   [4 Example Packages](#Example_Packages)
+*   [5 Notes about dependencies and dependency managers](#Notes_about_dependencies_and_dependency_managers)
 
 ## General guidelines
 
@@ -29,19 +28,14 @@ For [Go](/index.php/Go "Go") library modules, use `go-*modulename*`. Also use th
 
 **Note:** The package name should be entirely lowercase.
 
-## Dependencies
+### Instructions for alternative dependency managers
 
-Go packages currently use the `vendor/` folder to handle dependencies in projects. These are usually managed by one of several dependency manager projects. If one is used for the package, this step should be performed in the [prepare()](/index.php/Creating_packages#prepare.28.29 "Creating packages") function of the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD").
+This is not needed for Go 1.11 and later, unless an alternative dependency manager is required by the Go project you are packaging.
 
-	Dependency managers in the repositories
+When preparing the sources before building, the following may be needed:
 
-*   [dep](https://www.archlinux.org/packages/?name=dep)
-*   [godep](https://www.archlinux.org/packages/?name=godep)
-*   [glide](https://www.archlinux.org/packages/?name=glide)
-
-### Prepare
-
-We create a directory `$srcdir/gopath` for [$GOPATH](/index.php/Go#$GOPATH "Go") and copy over the source to this directory. It should be noted that this step might not be needed if the project provides a sane `Makefile` for the project and sets this up.
+*   Create a directory `$srcdir/gopath` for [$GOPATH](/index.php/Go#$GOPATH "Go") and copy over the source to this directory.
+*   It should be noted that this step might not be needed if the project provides a `Makefile` for the project that sets this up.
 
 ```
 prepare(){
@@ -84,13 +78,25 @@ go build \
 
 **Note:** For the sake of brevity, these flags are omitted in the examples below.
 
-### Pre 1.11 building
+### Modern Go projects (for Go >=1.11)
 
-When building go packages with [$GOPATH](/index.php/Go#$GOPATH "Go") there are a few problems one can encounter. Usually the project delivers a `Makefile` that can be used and should be used. There are cases where you still need to setup a `$GOPATH` in the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"). The following snippet sets up an appropriate `GOPATH` inside `$srcdir/gopath` one can use to build packages. A new directory is used as some go dependency managers does wierd things if it discovers the project in the root of the `$GOPATH`.
+Go 1.11 introduces [go modules](https://github.com/golang/go/wiki/Modules). This omits the need to setup `GOPATH` and we can build directly in the directory.
 
-**Note:** These builds should have `$GOPATH` stripped from the binary.
+Projects like these have a `go.mod` and a `go.sum` file.
+
+**Note:** These builds needs `$PWD` stripped from the binary.
 
 ```
+build(){
+  cd "$pkgname-$pkgver"
+  go build .
+}
+
+=== Old Go projects (for Go <1.11) ===
+
+When building go packages with [[Go#$GOPATH|$GOPATH]] there are a few problems one can encounter. Usually the project delivers a {{ic|Makefile}} that can be used and should be used. There are cases where you still need to setup a {{ic|$GOPATH}} in the [[PKGBUILD]]. The following snippet sets up an appropriate {{ic|GOPATH}} inside {{ic|$srcdir/gopath}} one can use to build packages. A new directory is used as some go dependency managers does wierd things if it discovers the project in the root of the {{ic|$GOPATH}}.
+{{Note| These builds should have {{ic|$GOPATH}} stripped from the binary.}}
+{{bc|<nowiki>
 prepare(){
   mkdir -p "gopath/src/github.com/pkgbuild-example"
   ln -rTsf "${pkgname}-${pkgver}" "gopath/src/github.com/pkgbuild-example/$pkgname"
@@ -108,21 +114,7 @@ build(){
 
 ```
 
-Note that `install` and `build` and can do recursive builds if you have a `cmd/` subdirectory with multiple binaries: `go install -v github.com/pkgbuild-example/cmd/...`
-
-### Post 1.11 building
-
-Go 1.11 introduces [go modules](https://github.com/golang/go/wiki/Modules). This omits the need to setup `GOPATH` and we can build directly in the directory. Projects like these have a `go.mod` and `go.sum` file defined.
-
-**Note:** These builds needs `$PWD` stripped from the binary.
-
-```
-build(){
-  cd "$pkgname-$pkgver"
-  go build .
-}
-
-```
+Note that `install` and `build` and can do recursive builds if you have a `cmd/` subdirectory with multiple binaries: `go install -v github.com/pkgbuild-example/cmd/...` </nowiki>}}
 
 ## Sample PKGBUILDs
 
@@ -132,20 +124,20 @@ build(){
 pkgname=foo
 pkgver=0.0.1
 pkgrel=1
-pkgdesc="Go PKGBUILD Example"
-arch=('x86_64' 'i686')
-url="http://example.org/$pkgname/"
+pkgdesc='Go PKGBUILD Example'
+arch=('x86_64')
+url='https://example.org/$pkgname'
 license=('GPL')
 makedepends=('go-pie')
-source=("http://example.org/$pkgname/$pkgname-$pkgver.tar.gz")
-sha256sums=('00112233445566778899aabbccddeeff')
+source=("$url/$pkgname-$pkgver.tar.gz")
+sha256sums=('1337deadbeef')
 
 build() {
   cd "$pkgname-$pkgver"
   go build \
-    -gcflags "all=-trimpath=${PWD}" \
-    -asmflags "all=-trimpath=${PWD}" \
-    -ldflags "-extldflags ${LDFLAGS}" \
+    -gcflags "all=-trimpath=$PWD" \
+    -asmflags "all=-trimpath=$PWD" \
+    -ldflags "-extldflags $LDFLAGS" \
     -o "$pkgname" .
 }
 
@@ -162,18 +154,17 @@ package() {
 pkgname=foo
 pkgver=0.0.1
 pkgrel=1
-pkgdesc="Go PKGBUILD Example"
-arch=('x86_64' 'i686')
-url="http://example.org/$pkgname/"
+pkgdesc='Go PKGBUILD Example'
+arch=('x86_64')
+url='https://example.org/$pkgname'
 license=('GPL')
 makedepends=('go-pie' 'dep')
-source=("http://example.org/$pkgname/$pkgname-$pkgver.tar.gz")
-sha256sums=('00112233445566778899aabbccddeeff')
+source=("$url/$pkgname-$pkgver.tar.gz")
+sha256sums=('1337deadbeef')
 
 prepare(){
   mkdir -p gopath/src/example.org/foo
-  ln -rTsf "${pkgname}-${pkgver}" gopath/src/example.org/foo
-
+  ln -rTsf "$pkgname-$pkgver" gopath/src/example.org/foo
   cd "gopath/src/example.org/foo"
   dep ensure
 }
@@ -182,9 +173,9 @@ build() {
   export GOPATH="$srcdir/gopath"
   cd "$GOPATH/src/example.org/foo
   go install \
-    -gcflags "all=-trimpath=${GOPATH}" \
-    -asmflags "all=-trimpath=${GOPATH}" \
-    -ldflags "-extldflags ${LDFLAGS}" \
+    -gcflags "all=-trimpath=$GOPATH" \
+    -asmflags "all=-trimpath=$GOPATH" \
+    -ldflags "-extldflags $LDFLAGS" \
     -v ./...
 }
 
@@ -207,3 +198,15 @@ package() {
 *   [delve](https://www.archlinux.org/packages/?name=delve)
 *   [gitea](https://www.archlinux.org/packages/?name=gitea)
 *   [git-lfs](https://www.archlinux.org/packages/?name=git-lfs)
+
+## Notes about dependencies and dependency managers
+
+Go packages currently use the `vendor/` folder to handle dependencies in projects. These are usually managed by one of several dependency manager projects. If one is used for the package, this step should be performed in the [prepare()](/index.php/Creating_packages#prepare.28.29 "Creating packages") function of the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD").
+
+Dependencies are normally managed by the `go mod` command, that comes with Go 1.11 or later.
+
+There are also alternative dependency managers:
+
+*   [dep](https://www.archlinux.org/packages/?name=dep)
+*   [godep](https://www.archlinux.org/packages/?name=godep)
+*   [glide](https://www.archlinux.org/packages/?name=glide)

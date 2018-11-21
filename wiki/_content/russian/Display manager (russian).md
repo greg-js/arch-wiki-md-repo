@@ -59,7 +59,7 @@
 
 *   **[XDM](/index.php/XDM "XDM")** — экранный менеджер с поддержкой XDMCP.
 
-	[xdm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdm.1) || [xorg-xdm](https://www.archlinux.org/packages/?name=xorg-xdm)
+	[xdm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdm.8) || [xorg-xdm](https://www.archlinux.org/packages/?name=xorg-xdm)
 
 ## Запуск экранного менеджера
 

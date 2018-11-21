@@ -7,7 +7,7 @@ Hardware video acceleration makes it possible for the video card to decode/encod
 There are several ways to achieve this on Linux:
 
 *   [Video Acceleration API](https://www.freedesktop.org/wiki/Software/vaapi/) (VA-API) is a specification and open source library to provide both hardware accelerated video encoding and decoding, developed by Intel.
-*   [Video Decode and Presentation API for Unix](https://www.freedesktop.org/wiki/Software/VDPAU/) (VDPAU) is an open source library and API to offload portions of the video decoding process and video post-processing to the GPU video-hardware, developed by NVIDIA.
+*   [Video Decode and Presentation API for Unix](https://www.freedesktop.org/wiki/Software/VDPAU/) (VDPAU) is an open source library and API to offload portions of the video decoding process and video post-processing to the GPU video-hardware, developed by NVIDIA. VDPAU has not been updated since September 2015.
 *   [NVDECODE/NVENCODE](https://developer.nvidia.com/nvidia-video-codec-sdk) - proprietary APIs for hardware video acceleration used by NVIDIA Fermi, Kepler, Maxwell and Pascal generation GPUs.
 
 For pre-2007 video cards see [XvMC](/index.php/XvMC "XvMC").
@@ -17,7 +17,7 @@ For pre-2007 video cards see [XvMC](/index.php/XvMC "XvMC").
 *   [1 Driver support](#Driver_support)
     *   [1.1 VA-API](#VA-API)
     *   [1.2 VDPAU](#VDPAU)
-    *   [1.3 NVDEC/NVENC](#NVDEC/NVENC)
+    *   [1.3 NVDECODE/NVENCODE](#NVDECODE/NVENCODE)
 *   [2 Software support](#Software_support)
 *   [3 Installation](#Installation)
     *   [3.1 Intel](#Intel)
@@ -95,10 +95,10 @@ GeForce 9300 and newer | GeForce 8 and newer |
 *   NVIDIA implementation is limited to 8-bit streams [[10]](https://devtalk.nvidia.com/default/topic/940228/vdpau-expose-hevc-main10-support-where-available-on-die/) [[11]](https://us.download.nvidia.com/XFree86/Linux-x86_64/410.57/README/vdpausupport.html#vdpau-implementation-limits).
 *   [Except](https://en.wikipedia.org/wiki/Nvidia_PureVideo "wikipedia:Nvidia PureVideo") GeForce 8800 Ultra, 8800 GTX, 8800 GTS (320/640 MB).
 
-### NVDEC/NVENC
+### NVDECODE/NVENCODE
 
 | Codec | [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) |
-| [Decoding (NVDEC)](https://developer.nvidia.com/nvidia-video-codec-sdk#NVDECFeatures) | [Encoding (NVENC)](https://developer.nvidia.com/nvidia-video-codec-sdk#NVENCFeatures) |
+| [Decoding](https://developer.nvidia.com/nvidia-video-codec-sdk#NVDECFeatures) | [Encoding](https://developer.nvidia.com/nvidia-video-codec-sdk#NVENCFeatures) |
 | MPEG-2 | Kepler and newer | No |
 | VC-1 |
 | AVC (H.264) | Kepler and newer |
@@ -113,7 +113,7 @@ GeForce 9300 and newer | GeForce 8 and newer |
 
 ## Software support
 
- VA-API | VDPAU | NVDEC/NVENC | Documentation |
+ VA-API | VDPAU | NVDECODE | Documentation |
 | [FFmpeg](/index.php/FFmpeg "FFmpeg") | Yes | Yes | Yes | [FFmpeg#Hardware video acceleration](/index.php/FFmpeg#Hardware_video_acceleration "FFmpeg") |
 | [GStreamer](/index.php/GStreamer "GStreamer") | Yes, via [gstreamer-vaapi](https://www.archlinux.org/packages/?name=gstreamer-vaapi) | Yes, via [gst-plugins-bad](https://www.archlinux.org/packages/?name=gst-plugins-bad) | Yes, via [gst-plugins-bad](https://www.archlinux.org/packages/?name=gst-plugins-bad) | [GStreamer#Hardware video acceleration](/index.php/GStreamer#Hardware_video_acceleration "GStreamer") |
 | [Kodi](/index.php/Kodi "Kodi") | Yes | Yes | Yes | [Kodi#Hardware video acceleration](/index.php/Kodi#Hardware_video_acceleration "Kodi") |
@@ -339,9 +339,7 @@ The correct driver name depends on your setup:
 
 ### Failed to open VDPAU backend
 
-This happens when you use [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl) without overriding `VDPAU_DRIVER`. VDPAU does not know what driver to use in this case for some reason and guesses wrongly. See [#Configuring VDPAU](#Configuring_VDPAU).
-
-However you may want to configure your media player to use VA-API instead, getting far better results. See [#Software support](#Software_support).
+You need to set `VDPAU_DRIVER` variable to point to correct driver. See [#Configuring VDPAU](#Configuring_VDPAU).
 
 ### VAAPI init failed
 

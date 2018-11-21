@@ -16,7 +16,7 @@ This article describes configuration & troubleshooting steps specific to Bluetoo
     *   [2.2 Problems with the USB dongle](#Problems_with_the_USB_dongle)
     *   [2.3 Mouse always disconnect](#Mouse_always_disconnect)
     *   [2.4 Thinkpad Bluetooth Laser Mouse problems](#Thinkpad_Bluetooth_Laser_Mouse_problems)
-    *   [2.5 Problems with the Logitech BLE mouse (M590, anywhere mouse 2, etc)](#Problems_with_the_Logitech_BLE_mouse_(M590,_anywhere_mouse_2,_etc))
+    *   [2.5 Problems with the Logitech BLE mouse (M557, M590, anywhere mouse 2, etc)](#Problems_with_the_Logitech_BLE_mouse_(M557,_M590,_anywhere_mouse_2,_etc))
 
 ## Configuration
 
@@ -119,17 +119,17 @@ UserspaceHID=true
 
 These changes will prevent device timeout in order to remain connected. The second setting enables userspace HID handling for bluetooth devices. Restart `bluetooth.service` to test changes. You also may need a reboot and to re-pair the device.
 
-### Problems with the Logitech BLE mouse (M590, anywhere mouse 2, etc)
+### Problems with the Logitech BLE mouse (M557, M590, anywhere mouse 2, etc)
 
-In some case, the mouse is paired but not moving when used. The device add to be trusted and unblocked. First of all, unpair the mouse then open a Terminal and use `bluetoothctl`.
+In some case, the mouse is paired but not moving when used. The device add to be trusted and unblocked. First of all open a terminal and run `bluetoothctl`
 
 1.  Power off the bluetooth: `[bluetooth] # power off` 
 2.  Power on the bluetooth, then enable the pairing method on the mouse if needed" `[bluetooth] # power on` 
 3.  List the available bluetooth devices, you have to copy the mouse device ID *XX:XX:XX:XX:XX:XX*: `[bluetooth] # scan on` 
-4.  Connect the computer with the mouse: `[bluetooth] # connect *XX:XX:XX:XX:XX:XX*` 
-5.  **Trust** the device: `[M585/M590] # trust` 
-6.  Reconnect again: `[M585/M590] # connect *XX:XX:XX:XX:XX:XX*` 
-7.  Pair the mouse with the computer: `[M585/M590] # pair` 
+4.  Unpair the device if already paired: `[bluetooth] # remove *XX:XX:XX:XX:XX:XX*` 
+5.  **Trust** the device: `[bluetooth] # trust *XX:XX:XX:XX:XX:XX*` 
+6.  Pair the mouse with the computer: `[bluetooth] # pair *XX:XX:XX:XX:XX:XX*` 
+7.  Connect the computer with the mouse: `[bluetooth] # connect *XX:XX:XX:XX:XX:XX*` 
 8.  **Unblock** the device control: `[M585/M590] # unblock` 
 9.  Power the bluetooth off and on.
 

@@ -18,18 +18,19 @@ Related articles
     *   [3.4 Scratchpad](#Scratchpad)
     *   [3.5 Different monitor configurations for different machines](#Different_monitor_configurations_for_different_machines)
     *   [3.6 Set up a desktop where all windows are floating](#Set_up_a_desktop_where_all_windows_are_floating)
+    *   [3.7 Keyboard](#Keyboard)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Blank screen and keybindings don't work](#Blank_screen_and_keybindings_don.27t_work)
+    *   [4.1 Blank screen and keybindings don't work](#Blank_screen_and_keybindings_don't_work)
     *   [4.2 Window box larger than the actual application](#Window_box_larger_than_the_actual_application)
     *   [4.3 Problems with Java applications](#Problems_with_Java_applications)
     *   [4.4 Problems with keybindings using fish](#Problems_with_keybindings_using_fish)
-    *   [4.5 Error messages "Could not grab key 43 with modfield 68" on start](#Error_messages_.22Could_not_grab_key_43_with_modfield_68.22_on_start)
+    *   [4.5 Error messages "Could not grab key 43 with modfield 68" on start](#Error_messages_"Could_not_grab_key_43_with_modfield_68"_on_start)
     *   [4.6 Firefox context menu automatically selects first option on right click](#Firefox_context_menu_automatically_selects_first_option_on_right_click)
 *   [5 See also](#See_also)
 
 ## Installation
 
-[Install](/index.php/Install "Install") [bspwm](https://www.archlinux.org/packages/?name=bspwm), or [bspwm-git](https://aur.archlinux.org/packages/bspwm-git/) for the development version. Bspwm does not handle any keyboard input and instead provides the `bspc` program as its interface. For keyboard shortcuts you will have to setup a hotkey daemon like [sxhkd](https://www.archlinux.org/packages/?name=sxhkd) ([sxhkd-git](https://aur.archlinux.org/packages/sxhkd-git/) for the development version).
+[Install](/index.php/Install "Install") the [bspwm](https://www.archlinux.org/packages/?name=bspwm) package or [bspwm-git](https://aur.archlinux.org/packages/bspwm-git/) for the development version.
 
 ## Starting
 
@@ -39,7 +40,9 @@ Run `bspwm` using [xinit](/index.php/Xinit "Xinit").
 
 **Important:** Make sure your environment variable $XDG_CONFIG_HOME is set or your bspwmrc will not be found. This can be done by adding `XDG_CONFIG_HOME="$HOME/.config"` and `export XDG_CONFIG_HOME` to your `~/.profile`.
 
-The example configuration is located in `/usr/share/doc/bspwm/examples/`. Copy `bspwmrc` from there into `~/.config/bspwm/` and `sxhkdrc` into `~/.config/sxhkd/`.
+The example configuration is located in `/usr/share/doc/bspwm/examples/`.
+
+Copy `bspwmrc` from there into `~/.config/bspwm/` and `sxhkdrc` into `~/.config/sxhkd/`.
 
 These two files are where you will be setting wm settings and keybindings, respectively.
 
@@ -196,6 +199,12 @@ Put this script somewhere in your $PATH and call it from .xinitrc or similar (wi
 
 ([source](https://github.com/baskerville/bspwm/issues/428#issuecomment-199985423))
 
+### Keyboard
+
+Bspwm does not handle any keyboard input and instead provides the `bspc` program as its interface.
+
+For keyboard shortcuts you will have to setup a hotkey daemon like [sxhkd](https://www.archlinux.org/packages/?name=sxhkd) ([sxhkd-git](https://aur.archlinux.org/packages/sxhkd-git/) for the development version).
+
 ## Troubleshooting
 
 ### Blank screen and keybindings don't work
@@ -225,7 +234,7 @@ This can happen if you are using GTK3 apps and usually for dialog windows. The f
 
 ### Problems with Java applications
 
-If you have problems, like Java application Windows not resizing, or menus immediately closing after you click, see [Java#Applications not resizing with WM, menus immediately closing](/index.php/Java#Applications_not_resizing_with_WM.2C_menus_immediately_closing "Java").
+If you have problems, like Java application Windows not resizing, or menus immediately closing after you click, see [Java#Applications not resizing with WM, menus immediately closing](/index.php/Java#Applications_not_resizing_with_WM,_menus_immediately_closing "Java").
 
 ### Problems with keybindings using fish
 

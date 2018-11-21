@@ -22,7 +22,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/xinit "wikipedia:xinit"):
     *   [4.1 Autostart X at login](#Autostart_X_at_login)
     *   [4.2 Override xinitrc](#Override_xinitrc)
     *   [4.3 Switching between desktop environments/window managers](#Switching_between_desktop_environments/window_managers)
-    *   [4.4 Start applications only](#Start_applications_only)
+    *   [4.4 Starting applications without a window manager](#Starting_applications_without_a_window_manager)
     *   [4.5 Output redirection using startx](#Output_redirection_using_startx)
 
 ## Installation
@@ -166,7 +166,9 @@ $ startx /usr/bin/enlightenment -- -br +bs -dpi 96
 
 See also [startx(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/startx.1).
 
-**Tip:** This can be used to start regular GUI programs but without any of the basic window manager features. See also [#Start applications only](#Start_applications_only) and [Running program in separate X display](/index.php/Running_program_in_separate_X_display "Running program in separate X display").
+**Note:** May lack some functionality. [[2]](https://bbs.archlinux.org/viewtopic.php?id=202812)
+
+**Tip:** This can be used to start regular GUI programs but without any of the basic window manager features. See also [#Starting applications without a window manager](#Starting_applications_without_a_window_manager) and [Running program in separate X display](/index.php/Running_program_in_separate_X_display "Running program in separate X display").
 
 ### Switching between desktop environments/window managers
 
@@ -205,7 +207,7 @@ $ startx ~/.xinitrc *session*
 
 ```
 
-### Start applications only
+### Starting applications without a window manager
 
 It is possible to start only specific applications without a window manager, although most likely this is only useful with a single application shown in full-screen mode. For example:
 

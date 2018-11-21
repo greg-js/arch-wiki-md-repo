@@ -7,7 +7,7 @@
     *   [2.1 Resource file settings](#Resource_file_settings)
         *   [2.1.1 TERM Environmental Variable](#TERM_Environmental_Variable)
         *   [2.1.2 UTF-8](#UTF-8)
-        *   [2.1.3 Make 'Alt' key behave as on other terminal emulators](#Make_.27Alt.27_key_behave_as_on_other_terminal_emulators)
+        *   [2.1.3 Make 'Alt' key behave as on other terminal emulators](#Make_'Alt'_key_behave_as_on_other_terminal_emulators)
         *   [2.1.4 Fix the backspace key](#Fix_the_backspace_key)
         *   [2.1.5 Key binding](#Key_binding)
     *   [2.2 Scrolling](#Scrolling)
@@ -220,6 +220,8 @@ The fleeting nature of the PRIMARY selection, where copied text is lost as soon 
 #### PRIMARY and CLIPBOARD
 
 With the above setting you can select if you want to use PRIMARY or CLIPBOARD, but you can also hack it to add the selection to both. Just override the [#Key binding](#Key_binding) for releasing the left mouse button:
+
+**Warning:** As of xterm-336, this method no longer works reliably - see [https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=901249#35](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=901249#35)
 
 ```
 <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0)

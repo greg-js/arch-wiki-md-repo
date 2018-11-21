@@ -46,7 +46,7 @@ Además, las aplicaciones proporcionadas por los DE tienden a integrarse mejor c
 
 	[http://www.enlightenment.org/](http://www.enlightenment.org/) || [enlightenment17](https://www.archlinux.org/packages/?name=enlightenment17)
 
-*   **[GNOME](/index.php/GNOME "GNOME")** — El proyecto GNOME proporciona dos cosas: El entorno de escritorio GNOME, un escritorio intuitivo y atractivo para los usuarios, y la plataforma de desarrollo GNOME, un amplio marco para la creación de aplicaciones que se integran en el resto del escritorio. GNOME es libre, usable, accesible, internacional, amistoso para el desarrollador, organizado, sostenido por la comunidad.
+*   **[GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)")** — El proyecto GNOME proporciona dos cosas: El entorno de escritorio GNOME, un escritorio intuitivo y atractivo para los usuarios, y la plataforma de desarrollo GNOME, un amplio marco para la creación de aplicaciones que se integran en el resto del escritorio. GNOME es libre, usable, accesible, internacional, amistoso para el desarrollador, organizado, sostenido por la comunidad.
 
 	[http://www.gnome.org/about/](http://www.gnome.org/about/) || [gnome](https://www.archlinux.org/groups/x86_64/gnome/)
 
@@ -196,7 +196,7 @@ Ver también [Wikipedia:es:Comparación de entornos de escritorios de X Window S
 [rage](https://aur.archlinux.org/packages/rage/) | Elbow
 [elbow-git](https://aur.archlinux.org/packages/elbow-git/) | [XDM](/index.php/XDM "XDM")
 [xorg-xdm](https://www.archlinux.org/packages/?name=xorg-xdm) |
-| [GNOME](/index.php/GNOME "GNOME") | [GTK+](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)") 3
+| [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)") | [GTK+](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)") 3
 [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Mutter](https://en.wikipedia.org/wiki/Mutter_(window_manager) "wikipedia:Mutter (window manager)")
 [mutter](https://www.archlinux.org/packages/?name=mutter) | [GNOME Shell](https://en.wikipedia.org/wiki/GNOME_Shell "wikipedia:GNOME Shell")
 [gnome-shell](https://www.archlinux.org/packages/?name=gnome-shell) | [GNOME Terminal](https://en.wikipedia.org/wiki/GNOME_Terminal "wikipedia:GNOME Terminal")

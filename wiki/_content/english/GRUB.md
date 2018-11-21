@@ -284,15 +284,21 @@ To enable this feature encrypt the partition with `/boot` residing on it using [
 
  `/etc/default/grub`  `GRUB_ENABLE_CRYPTODISK=y` 
 
-Be sure to [#Generate the main configuration file](#Generate_the_main_configuration_file) while the partition containing `/boot` is mounted.
+This option is used by grub-install to generate the grub `core.img`, so make sure to [install grub](#Installation) after modifying this option.
 
 Without further changes you will be prompted twice for a passhrase: the first for GRUB to unlock the `/boot` mount point in early boot, the second to unlock the root filesystem itself as described in [#Root partition](#Root_partition). You can use a [keyfile](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption") to avoid this.
+
+**Warning:**
+
+*   If you want to [generate the main configuration file](#Generate_the_main_configuration_file), make sure that `/boot` is mounted.
+*   In order to perform system updates involving the `/boot` mount point, ensure that the encrypted `/boot` is unlocked and mounted before performing an update. With a separate `/boot` partition, this may be accomplished automatically on boot by using [crypttab](/index.php/Crypttab "Crypttab") with a [keyfile](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption").
 
 **Note:**
 
 *   If you use a special keymap, a default GRUB installation will not know it. This is relevant for how to enter the passphrase to unlock the LUKS blockdevice.
-*   In order to perform system updates involving the `/boot` mount point, ensure that the encrypted `/boot` is unlocked and mounted before performing an update. With a separate `/boot` partition, this may be accomplished automatically on boot by using [crypttab](/index.php/Crypttab "Crypttab") with a [keyfile](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption").
 *   If you experience issues getting the prompt for a password to display (errors regarding cryptouuid, cryptodisk, or "device not found"), try reinstalling GRUB and appending `--modules="part_gpt part_msdos"` to the end of your `grub-install` command.
+
+**Tip:** You can use [pacman hooks](https://bbs.archlinux.org/viewtopic.php?id=234607)to automount your `/boot` when upgrades need to access related files.
 
 ### Boot menu entries
 

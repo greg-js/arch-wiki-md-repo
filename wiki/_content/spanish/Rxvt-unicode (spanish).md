@@ -174,7 +174,7 @@ Para los usuarios no familiarizados con el modo de transferencia de datos de [Xo
 
 *   [autocutsel](http://www.nongnu.org/autocutsel/)provee de interfaz en línea de comandos y demonio para sincronizar los portapapeles.
 
-*   [Glipper](http://glipper.sourceforge.net/) es un applet para el panel de [GNOME](/index.php/GNOME "GNOME") con antiguas versiones que pueden ser usadas en escritorios no GNOME.
+*   [Glipper](http://glipper.sourceforge.net/) es un applet para el panel de [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)") con antiguas versiones que pueden ser usadas en escritorios no GNOME.
 
 *   [Clipman](http://goodies.xfce.org/projects/panel-plugins/xfce4-clipman-plugin) (xfce-clipman-plugin) es un gestor de portapapeles grafico para el panel de [Xfce](/index.php/Xfce "Xfce") (xfpanel).
 

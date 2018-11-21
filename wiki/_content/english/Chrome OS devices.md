@@ -358,6 +358,8 @@ To fix suspend, the general idea is to disable the EHCI_PCI module, which interf
 
 #### With kernel parameters
 
+**Note:** Blacklisting ehci_pci has no effect on dmesg ehci errors as of kernel 4.18.11
+
 Add the following to your GRUB configuration:-
 
  `/etc/default/grub`  `GRUB_CMDLINE_LINUX_DEFAULT="modprobe.blacklist=ehci_pci"` 

@@ -169,3 +169,4 @@ Family - protection from dangerous sites and sites with adult content:
 ## See also
 
 *   [Wikipedia:Public recursive name server#List of public DNS service operators](https://en.wikipedia.org/wiki/Public_recursive_name_server#List_of_public_DNS_service_operators "wikipedia:Public recursive name server")
+*   [RFC:7706](https://tools.ietf.org/html/rfc7706 "rfc:7706") - Decreasing Access Time to Root Servers by Running One on Loopback

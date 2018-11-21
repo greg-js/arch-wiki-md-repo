@@ -15,6 +15,7 @@ This document covers standards and guidelines on writing [PKGBUILDs](/index.php/
     *   [4.1 distutils](#distutils)
     *   [4.2 setuptools](#setuptools)
     *   [4.3 pip](#pip)
+    *   [4.4 Build-time 2to3 translation](#Build-time_2to3_translation)
 *   [5 Check](#Check)
 *   [6 Notes](#Notes)
 
@@ -113,6 +114,42 @@ python -O -m compileall "${pkgdir}/path/to/module"
 ```
 
 **Warning:** Use of *pip* and/or wheel packages is discouraged in favor of setuptools source packages, and should only be used when the latter is not a viable option (for example, packages which **only** come with wheel sources, and therefore cannot be installed using setuptools).
+
+### Build-time 2to3 translation
+
+Most Python projects target either Python 2 or Python 3, or target both using compatibility layers like [six](https://pythonhosted.org/six/). However, some use the deprecated 2to3 keyword in setuptools to heuristically convert the source code from Python 2 to Python 3 at build time. As a result, the same source directories cannot be used to build both Python 2 and Python 3 split packages.
+
+For packages that do this, we need a [prepare()](/index.php/Creating_packages#prepare.28.29 "Creating packages") function that copies the source before it is built. Then the Python 2 and Python 3 packages can be converted and built independently without overriding each other.
+
+```
+makedepends=("python" "python-setuptools"
+             "python2" "python2-setuptools")
+
+prepare() {
+  cp -a foo-$pkgver{,-py2}
+}
+
+build() {
+    cd "$srcdir/foo-$pkgver"
+    python setup.py build
+
+    cd "$srcdir/foo-$pkgver-py2"
+    python2 setup.py build
+}
+
+package_python-foo() {
+    depends=("python2")
+    cd "$srcdir/foo-$pkgver"
+    python setup.py install --root="$pkgdir/" --optimize=1 --skip-build
+}
+
+package_python2-foo() {
+    depends=("python2")
+    cd "$srcdir/foo-$pkgver-py2"
+    python2 setup.py install --root="$pkgdir/" --optimize=1 --skip-build
+}
+
+```
 
 ## Check
 

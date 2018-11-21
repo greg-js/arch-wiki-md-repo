@@ -97,7 +97,7 @@ $ glxinfo | grep direct
 La manera mas simple y eficiente de mejorar el desempeño general es correr aplicaciones y un entorno liviano.
 
 *   Use un [administrador de ventanas](/index.php/Window_manager "Window manager") en vez de un [entorno de escritorio](/index.php/Desktop_environment "Desktop environment").
-*   Use un [entorno de escritorio](/index.php/Desktop_environment "Desktop environment") minimalista en vez de [GNOME](/index.php/GNOME "GNOME") y [KDE](/index.php/KDE "KDE"). La elección puede incluir [LXDE](/index.php/LXDE "LXDE") o [Xfce](/index.php/Xfce "Xfce").
+*   Use un [entorno de escritorio](/index.php/Desktop_environment "Desktop environment") minimalista en vez de [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)") y [KDE](/index.php/KDE "KDE"). La elección puede incluir [LXDE](/index.php/LXDE "LXDE") o [Xfce](/index.php/Xfce "Xfce").
 *   Use aplicaciones livianas. Revise la [lista de aplicaciones](/index.php/List_of_applications "List of applications") y las que los usuarios del foro recomiendan[2007](https://bbs.archlinux.org/viewtopic.php?id=41168), [2008](https://bbs.archlinux.org/viewtopic.php?id=67951), [2009](https://bbs.archlinux.org/viewtopic.php?id=78490),[2010](https://bbs.archlinux.org/viewtopic.php?id=88515), and [2011](https://bbs.archlinux.org/viewtopic.php?id=111878).
 *   Remueva los DEMONIOS innecesarios y mande a segundo plano todos los que pueda en el archivo `/etc/rc.conf`.
 

@@ -2249,7 +2249,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	[https://code.google.com/p/chmsee/](https://code.google.com/p/chmsee/) || [chmsee](https://aur.archlinux.org/packages/chmsee/)
 
-*   **GnoCHM** — Visor CHM pensado para integrarse con [GNOME](/index.php/GNOME "GNOME"), basado en pychm.
+*   **GnoCHM** — Visor CHM pensado para integrarse con [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)"), basado en pychm.
 
 	[http://gnochm.sourceforge.net/](http://gnochm.sourceforge.net/) || [gnochm](https://aur.archlinux.org/packages/gnochm/)
 

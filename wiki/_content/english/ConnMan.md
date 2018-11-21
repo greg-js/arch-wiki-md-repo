@@ -233,7 +233,7 @@ WantedBy=multi-user.target
 
 Then [enable](/index.php/Enable "Enable")/[start](/index.php/Start "Start") the `connman_iwd` service.
 
-Advantage of using [iwd](https://www.archlinux.org/packages/?name=iwd) instead of [[2]](https://www.archlinux.org/packages/?name=) is, that the ping times seem to be much more consistent and the connection seems to be more reliable.
+Advantage of using [iwd](https://www.archlinux.org/packages/?name=iwd) instead of [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) is, that the ping times seem to be much more consistent and the connection seems to be more reliable.
 
 ### Settings
 
@@ -287,7 +287,7 @@ $ connmanctl disable wifi
 
 ```
 
-**Warning:** connman grabs rfkill events. It is most likely impossible to use `rfkill` or `bluetoothctl` to (un)block devices, yet hardware keys may still work.[[3]](https://git.kernel.org/cgit/network/connman/connman.git/tree/doc/overview-api.txt#n406) Always use `connmanctl enable|disable`
+**Warning:** connman grabs rfkill events. It is most likely impossible to use `rfkill` or `bluetoothctl` to (un)block devices, yet hardware keys may still work.[[2]](https://git.kernel.org/cgit/network/connman/connman.git/tree/doc/overview-api.txt#n406) Always use `connmanctl enable|disable`
 
 ## Tips and tricks
 
@@ -346,7 +346,7 @@ Passphrase=*password*
 
 **Note:**
 
-*   Options are case-sensitive, e.g. `EAP = ttls` instead of `EAP = TTLS`.[[4]](https://together.jolla.com/question/55969/connman-fails-due-to-case-sensitive-settings/)
+*   Options are case-sensitive, e.g. `EAP = ttls` instead of `EAP = TTLS`.[[3]](https://together.jolla.com/question/55969/connman-fails-due-to-case-sensitive-settings/)
 *   Consult the institution hosting the eduroam network for various settings such as username, password, `EAP`, `Phase2output`, and needed certificates.
 
 For more information, see [connman-service.config(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/connman-service.config.5) and [Wireless network configuration#eduroam](/index.php/Wireless_network_configuration#eduroam "Wireless network configuration").
@@ -393,7 +393,7 @@ Once `connman.service` has been [restarted](/index.php/Systemd#Using_units "Syst
 
 ### Error /net/connman/technology/wifi: Not supported
 
-Currently, connman doesn't support scanning for WiFi networks with [iwd](https://www.archlinux.org/packages/?name=iwd), at the moment this functionality is available with `wpa_supplicant` only (see [[5]](https://lists.01.org/pipermail/connman/2018-August/022915.html)). In order to have Wifi Scanning support from within connman, install [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) and then [restart](/index.php/Restart "Restart") `connman.service` after you stop `iwd.service`.
+Currently, connman doesn't support scanning for WiFi networks with [iwd](https://www.archlinux.org/packages/?name=iwd), at the moment this functionality is available with `wpa_supplicant` only (see [[4]](https://lists.01.org/pipermail/connman/2018-August/022915.html)). In order to have Wifi Scanning support from within connman, install [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) and then [restart](/index.php/Restart "Restart") `connman.service` after you stop `iwd.service`.
 
 ### Error /net/connman/technology/wifi: No carrier
 
@@ -404,7 +404,7 @@ $ connmanctl enable wifi
 
 ```
 
-If wireless scanning leads to above error, this may be due to an unresolved bug.[[6]](https://01.org/jira/browse/CM-670) If it does not resolve even though wireless [preconditions](https://lists.01.org/pipermail/connman/2014-December/019203.html) are met, try again after disabling competing network managers and rebooting.
+If wireless scanning leads to above error, this may be due to an unresolved bug.[[5]](https://01.org/jira/browse/CM-670) If it does not resolve even though wireless [preconditions](https://lists.01.org/pipermail/connman/2014-December/019203.html) are met, try again after disabling competing network managers and rebooting.
 
 This may also simply be caused by the wireless interface being blocked by [rfkill](/index.php/Rfkill "Rfkill"), which can occur after restarting wpa_supplicant. Use `rfkill list` to check.
 
@@ -450,7 +450,7 @@ connmand[473]: wlp2s0 {del} route 82.165.8.211 gw 10.20.30.4 scope 0 <UNIVERSE>
 
 ```
 
-It likely is Connman performing a connectivity check to the ipv4.connman.net host (which resolves to the IP address `82.165.8.211` at current).[[7]](https://01.org/jira/browse/CM-657) See the [Connman README](http://git.kernel.org/cgit/network/connman/connman.git/tree/README#n358) for more information on why and what - apart from the connecting IP - it transmits. This behaviour can be prevented by adding the following to `/etc/connman/main.conf`:
+It likely is Connman performing a connectivity check to the ipv4.connman.net host (which resolves to the IP address `82.165.8.211` at current).[[6]](https://01.org/jira/browse/CM-657) See the [Connman README](http://git.kernel.org/cgit/network/connman/connman.git/tree/README#n358) for more information on why and what - apart from the connecting IP - it transmits. This behaviour can be prevented by adding the following to `/etc/connman/main.conf`:
 
 ```
 [General]
@@ -458,7 +458,7 @@ EnableOnlineCheck=false
 
 ```
 
-This setting will cause that the default device will not switch to ONLINE, but stay in READY state.[[8]](https://www.mankier.com/5/connman.conf) However, the connection will still be functional.
+This setting will cause that the default device will not switch to ONLINE, but stay in READY state.[[7]](https://www.mankier.com/5/connman.conf) However, the connection will still be functional.
 
 The connection itself is also functional (unless behind a captive portal) if the check is blocked by a firewall rule:
 
@@ -470,7 +470,7 @@ The connection itself is also functional (unless behind a captive portal) if the
 
 ### File /proc/net/pnp doesn't exist
 
-If you see this in your error log it is caused by bug in connman [[9]](https://bbs.archlinux.org/viewtopic.php?id=227689#p1766928) and can be ignored. [Bug Report](https://01.org/jira/browse/CM-690)
+If you see this in your error log it is caused by bug in connman [[8]](https://bbs.archlinux.org/viewtopic.php?id=227689#p1766928) and can be ignored. [Bug Report](https://01.org/jira/browse/CM-690)
 
 ## See also
 

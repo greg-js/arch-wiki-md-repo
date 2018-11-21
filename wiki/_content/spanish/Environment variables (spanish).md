@@ -114,7 +114,7 @@ $ export PATH="${PATH}:/home/nombre_de_usuario/tmp/usr/bin"
 
 Esta sección enlista algunas variables de entorno comunes usadas por un sistema Linux y describe sus valores.
 
-*   `DE` indica el entorno de escritorio que está siendo usado (por sus siglas en inglés, *D*esktop *E*nviroment). [xdg-open](/index.php/Xdg-open "Xdg-open") la usa para seleccionar las aplicaciones por defecto según el entorno. Para usar esta característica se necesitan instalar algunos paquetes adicionales: para [GNOME](/index.php/GNOME "GNOME"), [libgnome](https://aur.archlinux.org/packages/libgnome/); para [Xfce](/index.php/Xfce "Xfce"), [exo](https://www.archlinux.org/packages/?name=exo). Algunos valores comunes para la variable `DE` son: `gnome`, `kde`, `xfce`, `lxde` and `mate`.
+*   `DE` indica el entorno de escritorio que está siendo usado (por sus siglas en inglés, *D*esktop *E*nviroment). [xdg-open](/index.php/Xdg-open "Xdg-open") la usa para seleccionar las aplicaciones por defecto según el entorno. Para usar esta característica se necesitan instalar algunos paquetes adicionales: para [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)"), [libgnome](https://aur.archlinux.org/packages/libgnome/); para [Xfce](/index.php/Xfce "Xfce"), [exo](https://www.archlinux.org/packages/?name=exo). Algunos valores comunes para la variable `DE` son: `gnome`, `kde`, `xfce`, `lxde` and `mate`.
 
 	La variable de entorno `DE` necesita ser exportada antes de iniciar el administrador de ventanas. Por ejemplo:
 

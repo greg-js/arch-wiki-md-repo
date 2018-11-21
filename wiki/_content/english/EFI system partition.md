@@ -18,7 +18,7 @@ The UEFI specification mandates support for the FAT12, FAT16, and FAT32 filesyst
     *   [4.1 Alternative mount points](#Alternative_mount_points)
         *   [4.1.1 Using bind mount](#Using_bind_mount)
         *   [4.1.2 Using systemd](#Using_systemd)
-        *   [4.1.3 Using incron](#Using_incron)
+        *   [4.1.3 Using filesystem events](#Using_filesystem_events)
         *   [4.1.4 Using mkinitcpio hook](#Using_mkinitcpio_hook)
         *   [4.1.5 Using mkinitcpio hook (2)](#Using_mkinitcpio_hook_(2))
         *   [4.1.6 Using pacman hook](#Using_pacman_hook)
@@ -187,9 +187,9 @@ Then [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") 
 
 **Tip:** For [Secure Boot](/index.php/Secure_Boot "Secure Boot") with your own keys, you can set up the service to also sign the image using [sbsigntools](https://www.archlinux.org/packages/?name=sbsigntools): `ExecStart=/usr/bin/sbsign --key */path/to/db.key* --cert */path/to/db.crt* --output *esp*/EFI/arch/vmlinuz-linux /boot/vmlinuz-linux` 
 
-#### Using incron
+#### Using filesystem events
 
-[incron](https://www.archlinux.org/packages/?name=incron) can be used to run a script syncing the EFISTUB Kernel after kernel updates.
+[Filesystem events](/index.php/Autostarting#On_filesystem_events "Autostarting") can be used to run a script syncing the EFISTUB Kernel after kernel updates. An example with [incron](/index.php/Incron "Incron") follows.
 
  `/usr/local/bin/efistub-update` 
 ```

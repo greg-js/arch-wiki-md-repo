@@ -43,17 +43,19 @@ The [reverse mode](https://nuetzlich.net/gocryptfs/reverse_mode/) of gocryptfs i
 
 The following shows an example of user *archie* creating a backup of `/home/archie`:
 
-First, *archie* creates an empty directory for the encrypted view:
+First, *archie* initializes the configuration for the home directory:
+
+ `$ gocryptfs -init -reverse /home/archie` 
+```
+Choose a password for protecting your files.
+Password:
+...
+```
+
+Second, an empty directory for the encrypted view of the home directory is created and mounted:
 
 ```
 $ mkdir /tmp/*crypt*
-
-```
-
-Second, user *archie* creates an encrypted view of the home directory:
-
- `/home/archie` 
-```
 $ gocryptfs -reverse /home/*archie* /tmp/*crypt*
 Password:
 Decrypting master key
@@ -63,6 +65,8 @@ Your master key is:
 Filesystem mounted and ready.
 $
 ```
+
+**Tip:** The `-exclude *folder*` option is available during the mount. Note that with software like *rsync* errors or warnings may occur if exclusions are done later only.[[1]](https://github.com/rfjakob/gocryptfs/issues/235#issuecomment-410506242)
 
 Third, *archie* creates a backup of the encrypted directory, a simple local copy for this example:
 

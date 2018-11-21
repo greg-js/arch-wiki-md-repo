@@ -149,7 +149,7 @@ He aquí [un ejemplo](/index.php?title=Touchpad_Synaptics/10-synaptics.conf_exam
 
 ### GNOME/Cinnamon
 
-Los usuarios de [GNOME](/index.php/GNOME "GNOME") pueden tener que modificar su configuración, ya que, por defecto, está desactivado tocar para hacer clic, el desplazamiento horizontal y no permite deshabilitar el panel táctil mientras se escribe.
+Los usuarios de [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)") pueden tener que modificar su configuración, ya que, por defecto, está desactivado tocar para hacer clic, el desplazamiento horizontal y no permite deshabilitar el panel táctil mientras se escribe.
 
 Para cambiar esta configuración en **Gnome 2**:
 
@@ -181,7 +181,7 @@ Ahora se respetará la configuración existente para synaptics.
 
 ### MATE
 
-Al igual que con [GNOME](/index.php/GNOME "GNOME"), es posible configurar el proyecto MATE para manejar el panel táctil:
+Al igual que con [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)"), es posible configurar el proyecto MATE para manejar el panel táctil:
 
 1.  Ejecute `mateconf-editor`
 2.  Edite las claves en la carpeta `desktop/mate/peripherals/touchpad/`.
@@ -482,7 +482,7 @@ Si *syndaemon* se inicia automáticamente con la omisión del ratón, entonces s
 
 ### xorg.conf.d/50-synaptics.conf no parece aplicarse en GNOME y MATE
 
-[GNOME](/index.php/GNOME "GNOME") y [MATE](/index.php/MATE "MATE"), de forma predeterminada, sobrescribe varias opciones para su panel táctil. Esto incluye características configurables para los que no hay ajustes gráficos en el panel de control del sistema de GNOME. Ello puede causar que lo que aparece en `/etc/X11/xorg.conf.d/50-synaptics.conf` no se aplique. Por favor, remítase a la sección de GNOME de este artículo para evitar este comportamiento.
+[GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)") y [MATE](/index.php/MATE "MATE"), de forma predeterminada, sobrescribe varias opciones para su panel táctil. Esto incluye características configurables para los que no hay ajustes gráficos en el panel de control del sistema de GNOME. Ello puede causar que lo que aparece en `/etc/X11/xorg.conf.d/50-synaptics.conf` no se aplique. Por favor, remítase a la sección de GNOME de este artículo para evitar este comportamiento.
 
 *   [#GNOME](#GNOME)
 

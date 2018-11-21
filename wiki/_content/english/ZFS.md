@@ -55,6 +55,8 @@ As a result:
     *   [6.10 Automatic snapshots](#Automatic_snapshots)
         *   [6.10.1 ZFS Automatic Snapshot Service for Linux](#ZFS_Automatic_Snapshot_Service_for_Linux)
         *   [6.10.2 ZFS Snapshot Manager](#ZFS_Snapshot_Manager)
+    *   [6.11 Creating a share](#Creating_a_share)
+        *   [6.11.1 NFS](#NFS)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Creating a zpool fails](#Creating_a_zpool_fails)
     *   [7.2 ZFS is using too much RAM](#ZFS_is_using_too_much_RAM)
@@ -721,6 +723,41 @@ To prevent a dataset from being snapshotted at all, set `com.sun:auto-snapshot=f
 The [zfs-snap-manager](https://aur.archlinux.org/packages/zfs-snap-manager/) package from [AUR](/index.php/AUR "AUR") provides a python service that takes daily snapshots from a configurable set of ZFS datasets and cleans them out in a ["Grandfather-father-son"](https://en.wikipedia.org/wiki/Backup_rotation_scheme#Grandfather-father-son "wikipedia:Backup rotation scheme") scheme. It can be configured to e.g. keep 7 daily, 5 weekly, 3 monthly and 2 yearly snapshots.
 
 The package also supports configurable replication to other machines running ZFS by means of `zfs send` and `zfs receive`. If the destination machine runs this package as well, it could be configured to keep these replicated snapshots for a longer time. This allows a setup where a source machine has only a few daily snapshots locally stored, while on a remote storage server a much longer retention is available.
+
+### Creating a share
+
+ZFS has support for creating shares by SMB or [NFS](/index.php/NFS "NFS").
+
+#### NFS
+
+When sharing from zfs there is no need to edit the `/etc/exports` file. For sharing with NFS make sure to [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the services `nfs-server.service` and `zfs-share.service`. Next, to enable sharing over NFS, available to the whole network:
+
+```
+# zfs set sharenfs=on <nameofzpool>/<nameofdataset>
+
+```
+
+To enable read/write access for a specific ip-range:
+
+```
+# zfs set sharenfs="rw=@192.168.11.0/24 <nameofzpool>/<nameofdataset>
+
+```
+
+To check if the dataset is shared succesfully:
+
+```
+# showmount -e `hostname`
+
+```
+
+It should return something like this:
+
+```
+Export list for hostname:
+/dataset 192.168.11.0/24
+
+```
 
 ## Troubleshooting
 

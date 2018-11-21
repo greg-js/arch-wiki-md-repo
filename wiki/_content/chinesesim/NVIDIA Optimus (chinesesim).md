@@ -23,24 +23,24 @@ NVIDIA Optimus是一种允许 Intel 集成 GPU 和 NVIDIA GPU 建成并通过一
 
 ## Contents
 
-*   [1 禁用可交换显卡](#.E7.A6.81.E7.94.A8.E5.8F.AF.E4.BA.A4.E6.8D.A2.E6.98.BE.E5.8D.A1)
-*   [2 使用 nvidia](#.E4.BD.BF.E7.94.A8_nvidia)
-    *   [2.1 可选配置](#.E5.8F.AF.E9.80.89.E9.85.8D.E7.BD.AE)
-    *   [2.2 显示管理器](#.E6.98.BE.E7.A4.BA.E7.AE.A1.E7.90.86.E5.99.A8)
+*   [1 禁用可交换显卡](#禁用可交换显卡)
+*   [2 使用 nvidia](#使用_nvidia)
+    *   [2.1 可选配置](#可选配置)
+    *   [2.2 显示管理器](#显示管理器)
         *   [2.2.1 LightDM](#LightDM)
         *   [2.2.2 SDDM](#SDDM)
         *   [2.2.3 GDM](#GDM)
-    *   [2.3 检验 3D](#.E6.A3.80.E9.AA.8C_3D)
-    *   [2.4 更多信息](#.E6.9B.B4.E5.A4.9A.E4.BF.A1.E6.81.AF)
-*   [3 疑难问题](#.E7.96.91.E9.9A.BE.E9.97.AE.E9.A2.98)
-    *   [3.1 垂直同步撕裂](#.E5.9E.82.E7.9B.B4.E5.90.8C.E6.AD.A5.E6.92.95.E8.A3.82)
-    *   [3.2 Failed to initialize the NVIDIA GPU at PCI:1:0:0 (GPU fallen off the bus / RmInitAdapter failed!)](#Failed_to_initialize_the_NVIDIA_GPU_at_PCI:1:0:0_.28GPU_fallen_off_the_bus_.2F_RmInitAdapter_failed.21.29)
-    *   [3.3 分辨率和屏幕扫描错误“EDID errors in Xorg.log”](#.E5.88.86.E8.BE.A8.E7.8E.87.E5.92.8C.E5.B1.8F.E5.B9.95.E6.89.AB.E6.8F.8F.E9.94.99.E8.AF.AF.E2.80.9CEDID_errors_in_Xorg.log.E2.80.9D)
-    *   [3.4 锁定问题(lspci 挂起)](#.E9.94.81.E5.AE.9A.E9.97.AE.E9.A2.98.28lspci_.E6.8C.82.E8.B5.B7.29)
-    *   [3.5 笔记本电脑未发现屏幕/NVIDIA Optimus](#.E7.AC.94.E8.AE.B0.E6.9C.AC.E7.94.B5.E8.84.91.E6.9C.AA.E5.8F.91.E7.8E.B0.E5.B1.8F.E5.B9.95.2FNVIDIA_Optimus)
-*   [4 使用 nouveau](#.E4.BD.BF.E7.94.A8_nouveau)
-*   [5 使用 Bumblebee](#.E4.BD.BF.E7.94.A8_Bumblebee)
-*   [6 使用 nvidia-xrun](#.E4.BD.BF.E7.94.A8_nvidia-xrun)
+    *   [2.3 检验 3D](#检验_3D)
+    *   [2.4 更多信息](#更多信息)
+*   [3 疑难问题](#疑难问题)
+    *   [3.1 垂直同步撕裂](#垂直同步撕裂)
+    *   [3.2 Failed to initialize the NVIDIA GPU at PCI:1:0:0 (GPU fallen off the bus / RmInitAdapter failed!)](#Failed_to_initialize_the_NVIDIA_GPU_at_PCI:1:0:0_(GPU_fallen_off_the_bus_/_RmInitAdapter_failed!))
+    *   [3.3 分辨率和屏幕扫描错误“EDID errors in Xorg.log”](#分辨率和屏幕扫描错误“EDID_errors_in_Xorg.log”)
+    *   [3.4 锁定问题(lspci 挂起)](#锁定问题(lspci_挂起))
+    *   [3.5 笔记本电脑未发现屏幕/NVIDIA Optimus](#笔记本电脑未发现屏幕/NVIDIA_Optimus)
+*   [4 使用 nouveau](#使用_nouveau)
+*   [5 使用 Bumblebee](#使用_Bumblebee)
+*   [6 使用 nvidia-xrun](#使用_nvidia-xrun)
 
 ## 禁用可交换显卡
 
@@ -65,7 +65,7 @@ $ lspci | grep -E "VGA|3D"
 
 PCI 地址是提到 NVIDIA 的输出行的前7个字符，看起来像 `01:00.0`. 在 `xorg.conf` 中，需转换为 `#:#:#` 格式；例如 `01:00.0` 应该写成 `1:0:0`.
 
-**注意:** 在一些设置中，此设置要通过对NVIDIA的驱动程序通过EDID文件来中断对显示器值的自动检测。可查看该文章——[#Resolution, screen scan wrong. EDID errors in Xorg.log](#Resolution.2C_screen_scan_wrong._EDID_errors_in_Xorg.log)以了解详情
+**注意:** 在一些设置中，此设置要通过对NVIDIA的驱动程序通过EDID文件来中断对显示器值的自动检测。可查看该文章——[#分辨率和屏幕扫描错误“EDID errors in Xorg.log”](#分辨率和屏幕扫描错误“EDID_errors_in_Xorg.log”)以了解详情
 
 如果安装了1.17.2或者更高版本的X服务([[1]](http://us.download.nvidia.com/XFree86/Linux-x86/358.16/README/randr14.html))
 
@@ -101,7 +101,7 @@ xrandr --auto
 
 如果在启动 X 时黑屏，确保 `~/.xinitrc` 的两个 `xrandr` 命令后没有 `&` 符号；如果有，可能是窗口管理器在 `xrandr` 命令执行完成之前启动导致了黑屏。
 
-如果依然黑屏，参考下文[#可选配置](#.E5.8F.AF.E9.80.89.E9.85.8D.E7.BD.AE)
+如果依然黑屏，参考下文[#可选配置](#可选配置)
 
 ### 可选配置
 

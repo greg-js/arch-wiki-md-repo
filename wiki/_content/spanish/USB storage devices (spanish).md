@@ -36,7 +36,7 @@ La opción -t especifica el tipo de sistema de archivos. Si el dispositivo está
 
 Nota: the directory you mount the stick into must exist before you issue the mount command.
 
-If you use [KDE](/index.php/KDE "KDE") or [GNOME](/index.php/GNOME "GNOME"), they should show you the inserted device right on your desktop so you don't need to mount it manually.
+If you use [KDE](/index.php/KDE "KDE") or [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)"), they should show you the inserted device right on your desktop so you don't need to mount it manually.
 
 **Nota:** Si obtiene un mensaje de error como "Error org.freedesktop.DBus.Error.AccessDenied.", pruebe a añadir su usuario al grupo 'storage'.
 

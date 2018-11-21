@@ -11,7 +11,7 @@ The Lenovo ThinkPad X1 Carbon, 6th generation is an ultrabook introduced in earl
 To ensure you have this version, [install](/index.php/Install "Install") the package [dmidecode](https://www.archlinux.org/packages/?name=dmidecode) and run:
 
 ```
-# dmidecode -t system | grep Version
+# sudo dmidecode -t system | grep Version
 
 Version: ThinkPad X1 Carbon 6th
 
@@ -32,11 +32,13 @@ Version: ThinkPad X1 Carbon 6th
 | microSD card reader | Yes | scsi_mod |
 | Keyboard Backlight | Yes | thinkpad_acpi |
 | Function/Multimedia Keys | Yes | ? |
+| Thunderbolt 3 eGPU | Yes⁴ | nvidia |
 | 
 
 1.  No working Linux driver for Fibocom L850-GL. See [this thread](https://forums.lenovo.com/t5/Linux-Discussion/X1C-gen-6-Fibocom-L850-GL-Ubuntu-18-04/m-p/4078413) and [this thread](https://forums.lenovo.com/t5/Linux-Discussion/Linux-support-for-WWAN-LTE-L850-GL-on-T580-T480/td-p/4067969) for more info.
 2.  [The Validity90 project](https://github.com/nmikhailov/Validity90) began reverse engineering the reader, but updates have stopped recently.
 3.  S3 suspend requires changes to BIOS settings - see section on [suspend issues](#Suspend_issues).
+4.  Internal monitor acceleration does not appear to be supported.
 
  |
 

@@ -6,7 +6,7 @@ This page deals with setting up Arch Linux on the Dell Vostro 1710 laptop. This 
 *   [2 Network](#Network)
     *   [2.1 Ethernet](#Ethernet)
     *   [2.2 Wireless](#Wireless)
-        *   [2.2.1 mini Dell Wireless / Broadcom based cards](#mini_Dell_Wireless_.2F_Broadcom_based_cards)
+        *   [2.2.1 mini Dell Wireless / Broadcom based cards](#mini_Dell_Wireless_/_Broadcom_based_cards)
         *   [2.2.2 Intel based cards](#Intel_based_cards)
 *   [3 Touchpad](#Touchpad)
 

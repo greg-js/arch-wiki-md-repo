@@ -29,8 +29,6 @@ The following tips and tricks should work for both Chromium and Chrome unless ex
         *   [3.2.3 Example 2: Using Firefox to isolate the certificate from TomatoUSB](#Example_2:_Using_Firefox_to_isolate_the_certificate_from_TomatoUSB)
     *   [3.3 Canvas Fingerprinting](#Canvas_Fingerprinting)
     *   [3.4 Privacy extensions](#Privacy_extensions)
-        *   [3.4.1 ScriptBlock](#ScriptBlock)
-        *   [3.4.2 Vanilla Cookie Manager](#Vanilla_Cookie_Manager)
     *   [3.5 Do Not Track](#Do_Not_Track)
     *   [3.6 Force a password store](#Force_a_password_store)
 *   [4 Making flags persistent](#Making_flags_persistent)
@@ -300,27 +298,9 @@ To confirm this is working run [this test](https://panopticlick.eff.org) and mak
 
 ### Privacy extensions
 
-See [Browser extensions#Privacy](/index.php/Browser_extensions#Privacy "Browser extensions") for general advise and cross-browser privacy extensions.
+See [Browser extensions#Privacy](/index.php/Browser_extensions#Privacy "Browser extensions").
 
-**Tip:** Installing too many extensions might take up much space in the toolbar. Those extensions which you wouldn't interact with anyway (e.g. [HTTPS Everywhere](https://chrome.google.com/webstore/detail/gcbommkclmclpchllfjekcdonpmejbdp)) can be hidden by right-clicking on the extension and choosing **Hide in Chromium menu**.
-
-#### ScriptBlock
-
-[ScriptBlock](https://github.com/compvid30/scriptblock) is similar to NoScript, which is a Firefox add-on. Both extensions stop a website from executing any kind of JavaScript. However, ScriptBlock is a much simpler design thus it's easier to use. It blocks JavaScript by default. You can allow and temporary allow JavaScripts. Once you allow them to run, it lets all the JavaScripts run on that page so you might want ScriptBlock to work in conjunction with [Privacy Badger](https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp?hl=en).
-
-It's also worth checking it's default whitelist, which might be permissive to you.
-
-[Chrome Web Store](https://chrome.google.com/webstore/detail/scriptblock/hcdjknjpbnhdoabbngpmfekaecnpajba)
-
-#### Vanilla Cookie Manager
-
-[Vanilla Cookie Manager](https://github.com/laktak/vanilla-chrome) is a cookie whitelist manager that automatically removes unwanted cookies. Cookies can be used for authentication, storing your site preferences or anything else that can be saved as text data. Unfortunately they can also be used to track you.
-
-You could turn off cookies completely or just shut off third-party cookies. But that would also keep out useful cookies that many web apps rely upon to work (like Google Mail or Calendar).
-
-With Vanilla you can select which cookies you want to keep on a whitelist. All unwanted cookies are deleted automatically (or manually if you prefer).
-
-[Chrome Web Store](https://chrome.google.com/webstore/detail/vanilla-cookie-manager/gieohaicffldbmiilohhggbidhephnjj)
+**Tip:** Installing too many extensions might take up much space in the toolbar. Those extensions which you wouldn't interact with anyway (e.g. [HTTPS Everywhere](https://chrome.google.com/webstore/detail/gcbommkclmclpchllfjekcdonpmejbdp)) can be hidden by right-clicking on the extension and choosing *Hide in Chromium menu*.
 
 ### Do Not Track
 

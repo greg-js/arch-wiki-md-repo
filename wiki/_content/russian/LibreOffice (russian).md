@@ -4,33 +4,31 @@
 
 ## Contents
 
-*   [1 LibreOffice в Arch Linux](#LibreOffice_.D0.B2_Arch_Linux)
-*   [2 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-*   [3 Темы оформления](#.D0.A2.D0.B5.D0.BC.D1.8B_.D0.BE.D1.84.D0.BE.D1.80.D0.BC.D0.BB.D0.B5.D0.BD.D0.B8.D1.8F)
-    *   [3.1 Темы Firefox](#.D0.A2.D0.B5.D0.BC.D1.8B_Firefox)
-    *   [3.2 Отключение логотипа запуска](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BB.D0.BE.D0.B3.D0.BE.D1.82.D0.B8.D0.BF.D0.B0_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0)
-*   [4 Управление расширениями](#.D0.A3.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D1.81.D1.88.D0.B8.D1.80.D0.B5.D0.BD.D0.B8.D1.8F.D0.BC.D0.B8)
-*   [5 Проверка правописания](#.D0.9F.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.B0_.D0.BF.D1.80.D0.B0.D0.B2.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D1.8F)
-*   [6 Правила переноса](#.D0.9F.D1.80.D0.B0.D0.B2.D0.B8.D0.BB.D0.B0_.D0.BF.D0.B5.D1.80.D0.B5.D0.BD.D0.BE.D1.81.D0.B0)
-*   [7 Тезаурус](#.D0.A2.D0.B5.D0.B7.D0.B0.D1.83.D1.80.D1.83.D1.81)
-*   [8 Установка макросов](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BC.D0.B0.D0.BA.D1.80.D0.BE.D1.81.D0.BE.D0.B2)
-*   [9 Запуск LibreOffice](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_LibreOffice)
-*   [10 Ускоряем LibreOffice](#.D0.A3.D1.81.D0.BA.D0.BE.D1.80.D1.8F.D0.B5.D0.BC_LibreOffice)
-*   [11 Устранение несправностей](#.D0.A3.D1.81.D1.82.D1.80.D0.B0.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BD.D0.B5.D1.81.D0.BF.D1.80.D0.B0.D0.B2.D0.BD.D0.BE.D1.81.D1.82.D0.B5.D0.B9)
-    *   [11.1 Шрифт подстановки](#.D0.A8.D1.80.D0.B8.D1.84.D1.82_.D0.BF.D0.BE.D0.B4.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B8)
-    *   [11.2 Сглаживание](#.D0.A1.D0.B3.D0.BB.D0.B0.D0.B6.D0.B8.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
-    *   [11.3 Проблемы с проверкой правописания](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_.D0.BF.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.BE.D0.B9_.D0.BF.D1.80.D0.B0.D0.B2.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D1.8F)
-    *   [11.4 Темные темы GTK, иконки и gtk-qt-engine](#.D0.A2.D0.B5.D0.BC.D0.BD.D1.8B.D0.B5_.D1.82.D0.B5.D0.BC.D1.8B_GTK.2C_.D0.B8.D0.BA.D0.BE.D0.BD.D0.BA.D0.B8_.D0.B8_gtk-qt-engine)
-    *   [11.5 Особенности при использовании сетевых папок](#.D0.9E.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D0.BF.D1.80.D0.B8_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B8_.D1.81.D0.B5.D1.82.D0.B5.D0.B2.D1.8B.D1.85_.D0.BF.D0.B0.D0.BF.D0.BE.D0.BA)
-    *   [11.6 Исправляем Java Framework Error](#.D0.98.D1.81.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D1.8F.D0.B5.D0.BC_Java_Framework_Error)
-    *   [11.7 LibreOffice не находит мои сертификаты](#LibreOffice_.D0.BD.D0.B5_.D0.BD.D0.B0.D1.85.D0.BE.D0.B4.D0.B8.D1.82_.D0.BC.D0.BE.D0.B8_.D1.81.D0.B5.D1.80.D1.82.D0.B8.D1.84.D0.B8.D0.BA.D0.B0.D1.82.D1.8B)
-    *   [11.8 LibreOffice не открывает документы расположенные в сети через Dolphin в KDE](#LibreOffice_.D0.BD.D0.B5_.D0.BE.D1.82.D0.BA.D1.80.D1.8B.D0.B2.D0.B0.D0.B5.D1.82_.D0.B4.D0.BE.D0.BA.D1.83.D0.BC.D0.B5.D0.BD.D1.82.D1.8B_.D1.80.D0.B0.D1.81.D0.BF.D0.BE.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.BD.D1.8B.D0.B5_.D0.B2_.D1.81.D0.B5.D1.82.D0.B8_.D1.87.D0.B5.D1.80.D0.B5.D0.B7_Dolphin_.D0.B2_KDE)
+*   [1 LibreOffice в Arch Linux](#LibreOffice_в_Arch_Linux)
+*   [2 Установка](#Установка)
+*   [3 Темы оформления](#Темы_оформления)
+    *   [3.1 Темы Firefox](#Темы_Firefox)
+    *   [3.2 Отключение логотипа запуска](#Отключение_логотипа_запуска)
+*   [4 Управление расширениями](#Управление_расширениями)
+*   [5 Проверка правописания](#Проверка_правописания)
+*   [6 Правила переноса](#Правила_переноса)
+*   [7 Тезаурус](#Тезаурус)
+*   [8 Установка макросов](#Установка_макросов)
+*   [9 Запуск LibreOffice](#Запуск_LibreOffice)
+*   [10 Ускоряем LibreOffice](#Ускоряем_LibreOffice)
+*   [11 Устранение несправностей](#Устранение_несправностей)
+    *   [11.1 Шрифт подстановки](#Шрифт_подстановки)
+    *   [11.2 Сглаживание](#Сглаживание)
+    *   [11.3 Проблемы с проверкой правописания](#Проблемы_с_проверкой_правописания)
+    *   [11.4 Темные темы GTK, иконки и gtk-qt-engine](#Темные_темы_GTK,_иконки_и_gtk-qt-engine)
+    *   [11.5 Особенности при использовании сетевых папок](#Особенности_при_использовании_сетевых_папок)
+    *   [11.6 Исправляем Java Framework Error](#Исправляем_Java_Framework_Error)
+    *   [11.7 LibreOffice не находит мои сертификаты](#LibreOffice_не_находит_мои_сертификаты)
+    *   [11.8 LibreOffice не открывает документы расположенные в сети через Dolphin в KDE](#LibreOffice_не_открывает_документы_расположенные_в_сети_через_Dolphin_в_KDE)
 
 ## LibreOffice в Arch Linux
 
-LibreOffice - это официально поддерживаемый офисный пакет, который является заменой OpenOffice. ([[arch-general](https://mailman.archlinux.org/pipermail/arch-general/2011-March/018819.html) Dropping Oracle OpenOffice])
-
-LibreOffice доступен в репозитории [[extra](https://www.archlinux.org/packages/?q=libreoffice)].
+LibreOffice - это официально поддерживаемый офисный пакет, который является заменой OpenOffice. ([[arch-general](https://mailman.archlinux.org/pipermail/arch-general/2011-March/018819.html) Dropping Oracle OpenOffice]) and main article LibreOffice доступен в репозитории [[extra](https://www.archlinux.org/packages/?q=libreoffice)].
 
 ## Установка
 

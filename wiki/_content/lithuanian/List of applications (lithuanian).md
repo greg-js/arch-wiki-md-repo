@@ -2330,7 +2330,7 @@ See also [Wikipedia:Blog software](https://en.wikipedia.org/wiki/Blog_software "
 
 *   **Pelican** — A static site generator, powered by Python.
 
-	[http://docs.getpelican.com/en/3.5.0/](http://docs.getpelican.com/en/3.5.0/) || [pelican](https://www.archlinux.org/packages/?name=pelican)
+	[http://docs.getpelican.com/](http://docs.getpelican.com/) || [pelican](https://www.archlinux.org/packages/?name=pelican)
 
 *   **[Wordpress](/index.php/Wordpress "Wordpress")** — Blog tool and publishing platform.
 

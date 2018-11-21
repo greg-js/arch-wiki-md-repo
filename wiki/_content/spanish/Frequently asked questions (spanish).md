@@ -165,7 +165,7 @@ Sin embargo, la mejor manera de obtener una característica adicional a pacman o
 
 ### Acabo de instalar el paquete X. ¿Cómo empiezo?
 
-Si está utilizando un entorno de escritorio como [KDE](/index.php/KDE "KDE") o [GNOME](/index.php/GNOME "GNOME"), el programa automáticamente debería aparecer en el menú. Si está tratando de ejecutar el programa desde un terminal y no sabe el nombre del archivo binario, utilice:
+Si está utilizando un entorno de escritorio como [KDE](/index.php/KDE "KDE") o [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)"), el programa automáticamente debería aparecer en el menú. Si está tratando de ejecutar el programa desde un terminal y no sabe el nombre del archivo binario, utilice:
 
 ```
 $ pacman -Qlq *nombre_del_paquete* | grep /usr/bin/

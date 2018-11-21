@@ -420,7 +420,7 @@ Luego de instalarlo, cierre su sesión de X y recarguela a partir de ahora se le
 
 ### GNOME Keyring (llavero)
 
-Si usa el escritorio [GNOME](/index.php/GNOME "GNOME"), la herramienta [Gnome Keyring](/index.php/Gnome_Keyring "Gnome Keyring") puede ser usada como un agente de SSH. Visite el articulo [Gnome Keyring](/index.php/Gnome_Keyring "Gnome Keyring").
+Si usa el escritorio [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)"), la herramienta [Gnome Keyring](/index.php/Gnome_Keyring "Gnome Keyring") puede ser usada como un agente de SSH. Visite el articulo [Gnome Keyring](/index.php/Gnome_Keyring "Gnome Keyring").
 
 ## Resolución de problemas
 

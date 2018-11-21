@@ -173,54 +173,58 @@ export LC_ALL="zh_CN.UTF-8"
 noto-fonts-cjk用户：
 
 ```
- <?xml version="1.0"?>
- <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
- <fontconfig>
- <alias>
- <family>sans-serif</family>
- <prefer>
- <family>Noto Sans CJK SC</family>
- <family>Noto Sans CJK TC</family>
- <family>Noto Sans CJK JP</family>
- </prefer>
- </alias>
- <alias>
- <family>monospace</family>
- <prefer>
- <family>Noto Sans Mono CJK SC</family>
- <family>Noto Sans Mono CJK TC</family>
- <family>Noto Sans Mono CJK JP</family>
- </prefer>
- </alias>
- </fontconfig>
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+  <alias>
+    <family>sans-serif</family>
+    <prefer>
+      <family>Noto Sans CJK SC</family>
+      <family>Noto Sans CJK TC</family>
+      <family>Noto Sans CJK JP</family>
+    </prefer>
+  </alias>
+  <!--以上为设置无衬线字体优先度-->
+  <alias>
+    <family>monospace</family>
+    <prefer>
+      <family>Noto Sans Mono CJK SC</family>
+      <family>Noto Sans Mono CJK TC</family>
+      <family>Noto Sans Mono CJK JP</family>
+    </prefer>
+  </alias>
+  <!--以上为设置等宽字体优先度-->
+</fontconfig>
 
 ```
 
 adobe-source-han-sans-otc-fonts用户：
 
 ```
- <?xml version="1.0"?>
- <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
- <fontconfig>
- <alias>
- <family>sans-serif</family>
- <prefer>
- <family>Source Han Sans SC</family>
- <family>Source Han Sans TC</family>
- <family>Source Han Sans HW</family>
- <family>Source Han Sans K</family>
- </prefer>
- </alias>
- <alias>
- <family>monospace</family>
- <prefer>
- <family>Source Han Sans SC</family>
- <family>Source Han Sans TC</family>
- <family>Source Han Sans HW</family>
- <family>Source Han Sans K</family>
- </prefer>
- </alias>
- </fontconfig>
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+  <alias>
+    <family>sans-serif</family>
+    <prefer>
+      <family>Source Han Sans SC</family>
+      <family>Source Han Sans TC</family>
+      <family>Source Han Sans HW</family>
+      <family>Source Han Sans K</family>
+    </prefer>
+  </alias>
+  <!--以上为设置无衬线字体优先度-->
+  <alias>
+    <family>monospace</family>
+    <prefer>
+      <family>Source Han Sans SC</family>
+      <family>Source Han Sans TC</family>
+      <family>Source Han Sans HW</family>
+      <family>Source Han Sans K</family>
+    </prefer>
+  </alias>
+  <!--以上为设置等宽字体优先度-->
+</fontconfig>
 
 ```
 

@@ -431,7 +431,27 @@ Where the options are `-b` (`--broadcast`) to use broadcast instead of using the
 
 You may need to [start](/index.php/Start "Start") `winbind.service` in order to resolve host names with e.g., `mount.cifs`
 
+If you are using apparmor and are unable to start winbind, you may need to add the below two lines to the apparmor profile for winbind:
+
+ `/etc/apparmor.d/usr.sbin.winbindd` 
+```
+...
+  /var/cache/samba/msg.lock/* rwk, 
+  /run/winbindd.pid rwk,
+  ...
+}
+```
+
 The [smbclient](https://www.archlinux.org/packages/?name=smbclient) package provides a driver to resolve host names using WINS. To enable it, add `wins` to the “hosts” line in `/etc/nsswitch.conf`.
+
+If it is not already there, add it to look roughly like this:
+
+ `/etc/nsswitch.conf` 
+```
+...
+ hosts: files mymachines myhostname mdns_minimal [NOTFOUND=return] resolve [!UNAVAIL=return] dns wins
+ ...
+```
 
 You can test WINS resolution with `nmblookup`. Note that WINS resolution requires incoming traffic originating from port 137.
 

@@ -109,6 +109,8 @@ $ flatpak install *remote* *name*
 
 where *remote* is the name of the remote repository, and *name* is the name of the application or runtime to install.
 
+**Tip:** If you have at least Flatpak version 1.1.0, you can use the syntax `flatpak install partial-name` (for example `flatpak install libreoffice`)
+
 ### List installed runtimes and applications
 
 To list installed runtimes and applications do:

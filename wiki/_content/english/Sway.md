@@ -19,7 +19,8 @@
     *   [4.7 Xresources](#Xresources)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Autostart on login](#Autostart_on_login)
-    *   [5.2 dmenu replacement](#dmenu_replacement)
+    *   [5.2 Backlight toggle](#Backlight_toggle)
+    *   [5.3 dmenu replacement](#dmenu_replacement)
 *   [6 Known issues](#Known_issues)
     *   [6.1 Using i3-dmenu-desktop](#Using_i3-dmenu-desktop)
     *   [6.2 VirtualBox](#VirtualBox)
@@ -75,7 +76,7 @@ $ export XKB_DEFAULT_LAYOUT=gb; export XKB_DEFAULT_VARIANT=colemak; export XKB_D
 
 This will launch sway with the keyboard set to the Colemak variant of the British keymap with the 101-key keyboard model.
 
-See [alias](/index.php/Alias "Alias") to simplify starting from a tty and [desktop entries#Modify environment variables](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries") to start [#From a display manager](#From_a_display_manager).
+See [alias](/index.php/Alias "Alias") to simplify starting from a tty and [Desktop entries#Modify environment variables](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries") to start [#From a display manager](#From_a_display_manager).
 
 If none of the above worked, you could add:
 
@@ -208,6 +209,23 @@ To start sway from tty1 on login with default US keyboard, edit:
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
   XKB_DEFAULT_LAYOUT=us exec sway
 fi
+
+```
+
+### Backlight toggle
+
+To turn off (and on) your displays with a key (e.g. `Pause`) bind the following in your Sway `config`:
+
+```
+#!/usr/bin/dash
+read lcd < /tmp/lcd
+    if [ "$lcd" -eq "0" ]; then
+        swaymsg "output * dpms on"
+        echo 1 > /tmp/lcd
+    else
+        swaymsg "output * dpms off"
+        echo 0 > /tmp/lcd
+    fi
 
 ```
 

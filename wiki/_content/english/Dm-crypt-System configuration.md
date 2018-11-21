@@ -84,7 +84,7 @@ root=*device*
 *   If a LVM gets activated first and contains an [encrypted logical rootvolume](/index.php/Dm-crypt/Encrypting_an_entire_system#LUKS_on_LVM "Dm-crypt/Encrypting an entire system"), the above form applies as well.
 *   If the root file system is contained in a logical volume of a fully [encrypted LVM](/index.php/Encrypted_LVM "Encrypted LVM"), the device mapper for it will be in the general form of `root=/dev/*volumegroup*/*logicalvolume*`.
 
-**Tip:** This parameter is not needed to be specified manually when using [GRUB](/index.php/GRUB "GRUB"). Executing *grub-mkconfig* is meant to determine the correct UUID of the decrypted root filesystem and specify it in the generated `grub.cfg` automatically.
+**Tip:** When using [GRUB](/index.php/GRUB "GRUB") and generating `grub.cfg` with *grub-mkconfig*, this parameter does not need to be specified manually. *grub-mkconfig* will determine the correct UUID of the decrypted root filesystem and add it to `grub.cfg` automatically.
 
 #### resume
 
@@ -153,8 +153,6 @@ cryptkey=rootfs:*path*
 Example: `cryptkey=rootfs:/secretkey`
 
 Also note that if `cryptkey` is not specified, it defaults to `/crypto_keyfile.bin` (in the initramfs).[[2]](https://git.archlinux.org/svntogit/packages.git/tree/trunk/hooks-encrypt?h=packages/cryptsetup#n8)
-
-**Note:** If USB hard drive initialization fails on boot, add `usb_storage` to the `MODULES` array of [mkinitcpio](/index.php/Mkinitcpio#MODULES "Mkinitcpio") [[3]](https://bugs.archlinux.org/task/60272).
 
 See also [dm-crypt/Device encryption#Keyfiles](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption").
 

@@ -45,8 +45,6 @@ GStreamer will automatically detect and use the correct API [[1]](https://gstrea
 *   [gstreamer-vaapi](https://www.archlinux.org/packages/?name=gstreamer-vaapi) for VA-API support.
 *   [gst-plugins-bad](https://www.archlinux.org/packages/?name=gst-plugins-bad) for VDPAU and NVDEC support. (NVDEC is currently broken, [fixed](https://bugzilla.gnome.org/show_bug.cgi?id=791724) in GStreamer 1.15)
 
-**Note:** Enabling VA-API support on computers with Intel GPUs may cause issues with thumbnailing of video files. See [GNOME Files#Thumbnailing not working for video files](/index.php/GNOME_Files#Thumbnailing_not_working_for_video_files "GNOME Files") for details.
-
 ## See also
 
 *   [Sound system](/index.php/Sound_system "Sound system")

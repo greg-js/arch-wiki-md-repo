@@ -223,7 +223,7 @@ Los niveles del mezclador se guardan cuando se apaga el equipo. Si desea guardar
 
 Otras mixer soportados por OSS:
 
-*   **Gnome Volume Control** — para [GNOME](/index.php/GNOME "GNOME").
+*   **Gnome Volume Control** — para [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)").
 
 	[http://library.gnome.org/users/gnome-volume-control/stable/](http://library.gnome.org/users/gnome-volume-control/stable/) || [gnome](https://www.archlinux.org/groups/x86_64/gnome/)
 

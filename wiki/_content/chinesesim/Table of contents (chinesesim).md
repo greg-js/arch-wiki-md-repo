@@ -3,17 +3,18 @@
 目前因为中文文档和分类尚不齐全，有需要的请浏览英语语种的网页。
 
 | [简体中文](/index.php/Category:%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87 "Category:简体中文") <small>(160)</small> |
-| <small>1.</small> [关于Arch](/index.php/Category:About_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:About Arch (简体中文)") <small>(18)</small> |
-| <small>1.1.</small> [Arch开发](/index.php/Category:Arch_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Arch development (简体中文)") <small>(1) (同时还属于 [开发](/index.php/Category:Development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Development (简体中文)"))</small> |
-| <small>1.1.1.</small> [软件包开发](/index.php/Category:Package_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Package development (简体中文)") <small>(19)</small> |
-| <small>1.1.2.</small> [Pacman开发](/index.php/Category:Pacman_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Pacman development (简体中文)") <small>(1)</small> |
-| <small>1.2.</small> [Arch projects](/index.php/Category:Arch_projects_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Arch projects (简体中文)") <small>(1)</small> |
-| <small>1.3.</small> [ArchWiki](/index.php/Category:ArchWiki_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:ArchWiki (简体中文)") <small>(6)</small> |
-| <small>1.3.1.</small> [Lists](/index.php/Category:Lists_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Lists (简体中文)") <small>(0)</small> |
-| <small>1.3.1.1.</small> [Lists of software](/index.php/Category:Lists_of_software_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Lists of software (简体中文)") <small>(2)</small> |
-| <small>1.3.2.</small> [Software comparisons](/index.php/Category:Software_comparisons_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Software comparisons (简体中文)") <small>(1) (同时还属于 [应用程序](/index.php/Category:Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Applications (简体中文)"))</small> |
-| <small>1.4.</small> [Installation process](/index.php/Category:Installation_process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Installation process (简体中文)") <small>(18)</small> |
-| <small>1.5.</small> [Live Arch系统](/index.php/Category:Live_Arch_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Live Arch systems (简体中文)") <small>(2)</small> |
+| <small>1.</small> [关于Arch](/index.php/Category:About_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:About Arch (简体中文)") <small>(17)</small> |
+| <small>1.1.</small> [Arch community](/index.php/Category:Arch_community_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Arch community (简体中文)") <small>(1)</small> |
+| <small>1.2.</small> [Arch开发](/index.php/Category:Arch_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Arch development (简体中文)") <small>(1) (同时还属于 [开发](/index.php/Category:Development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Development (简体中文)"))</small> |
+| <small>1.2.1.</small> [软件包开发](/index.php/Category:Package_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Package development (简体中文)") <small>(19)</small> |
+| <small>1.2.2.</small> [Pacman开发](/index.php/Category:Pacman_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Pacman development (简体中文)") <small>(1)</small> |
+| <small>1.3.</small> [Arch projects](/index.php/Category:Arch_projects_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Arch projects (简体中文)") <small>(1)</small> |
+| <small>1.4.</small> [ArchWiki](/index.php/Category:ArchWiki_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:ArchWiki (简体中文)") <small>(6)</small> |
+| <small>1.4.1.</small> [Lists](/index.php/Category:Lists_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Lists (简体中文)") <small>(0)</small> |
+| <small>1.4.1.1.</small> [Lists of software](/index.php/Category:Lists_of_software_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Lists of software (简体中文)") <small>(2)</small> |
+| <small>1.4.2.</small> [Software comparisons](/index.php/Category:Software_comparisons_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Software comparisons (简体中文)") <small>(1) (同时还属于 [应用程序](/index.php/Category:Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Applications (简体中文)"))</small> |
+| <small>1.5.</small> [Installation process](/index.php/Category:Installation_process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Installation process (简体中文)") <small>(18)</small> |
+| <small>1.6.</small> [Live Arch系统](/index.php/Category:Live_Arch_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Live Arch systems (简体中文)") <small>(2)</small> |
 | <small>2.</small> [应用程序](/index.php/Category:Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Applications (简体中文)") <small>(6)</small> |
 | <small>2.1.</small> [程序启动器](/index.php/Category:Application_launchers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Application launchers (简体中文)") <small>(2)</small> |
 | <small>2.2.</small> [Command-line](/index.php/Category:Command-line_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Command-line (简体中文)") <small>(3) (同时还属于 [系统管理](/index.php/Category:System_administration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:System administration (简体中文)"))</small> |
@@ -76,7 +77,7 @@
 | <small>4.14.</small> [存储设备](/index.php/Category:Storage_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Storage (简体中文)") <small>(5)</small> |
 | <small>4.14.1.</small> [Optical disc](/index.php/Category:Optical_disc_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Optical disc (简体中文)") <small>(2)</small> |
 | <small>5.</small> [帮助](/index.php/Category:Help_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Help (简体中文)") <small>(10)</small> |
-| <small>6.</small> [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)") <small>(35)</small> |
+| <small>6.</small> [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)") <small>(36)</small> |
 | <small>6.1.</small> [域名解析](/index.php/Category:Domain_Name_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Domain Name System (简体中文)") <small>(5)</small> |
 | <small>6.2.</small> [FTP](/index.php/Category:File_Transfer_Protocol_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:File Transfer Protocol (简体中文)") <small>(1)</small> |
 | <small>6.2.1.</small> [FTP servers](/index.php/Category:FTP_servers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:FTP servers (简体中文)") <small>(1) (同时还属于 [Servers](/index.php/Category:Servers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Servers (简体中文)"))</small> |

@@ -83,6 +83,8 @@ Categories=Education;Languages;Java;
 
 ```
 
+**Note:** Only `Type` and `Name` are required.
+
 ### Key definition
 
 All recognized entries can be found on the [freedesktop](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#recognized-keys) site. For example, the `Type` key defines three types of desktop entries: Application (type 1), Link (type 2) and Directory (type 3).
@@ -201,7 +203,7 @@ The [freedesktop.org standard](http://standards.freedesktop.org/icon-theme-spec/
 
 [gendesk](https://www.archlinux.org/packages/?name=gendesk) started as an Arch Linux-specific tool for generating .desktop files by fetching the needed information directly from PKGBUILD files. Now it is a general tool that takes command-line arguments.
 
-Icons can be automatically downloaded from [openiconlibrary](http://openiconlibrary.sourceforge.net/), if available. (The source for icons can easily be changed in the future).
+Icons can be automatically downloaded from [openiconlibrary](http://openiconlibrary.sourceforge.net/), if available. (The source for icons is configurable).
 
 #### How to use
 

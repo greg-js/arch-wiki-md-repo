@@ -136,8 +136,8 @@ To learn how to use the GNOME shell effectively read the [GNOME Shell Cheat Shee
 
 *   `Super` + `m`: show message tray
 *   `Super` + `a`: show applications menu
-*   `Alt-` + `Tab`: cycle active applications
-*   `Alt-` + ``` (the key above `Tab` on US keyboard layouts): cycle windows of the application in the foreground
+*   `Alt` + `Tab`: cycle active applications
+*   `Alt` + ``` (the key above `Tab` on US keyboard layouts): cycle windows of the application in the foreground
 *   `Alt` + `F2`, then enter `r` or `restart`: restart the shell in case of graphical shell problems (only in X/legacy mode, not in Wayland mode).
 
 ## Legacy names
@@ -351,7 +351,7 @@ $ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/But
 
 #### Apps grid folders
 
-**Tip:** The [gnome-catgen](https://github.com/prurigro/gnome-catgen) ([gnome-catgen-git](https://aur.archlinux.org/packages/gnome-catgen-git/)) script allows you to manage folders through the creation of files in `~/.local/share/applications-categories` named after each category and containing a list of the desktop files belonging to apps you would like to have inside. Optionally, you can have it cycle through each app without a folder and input the desired category until you ctrl-c or run out of apps.
+**Tip:** The [gnome-catgen](https://github.com/prurigro/gnome-catgen) ([gnome-catgen-git](https://aur.archlinux.org/packages/gnome-catgen-git/)) script allows you to manage folders through the creation of files in `~/.local/share/applications-categories` named after each category and containing a list of the desktop files belonging to apps you would like to have inside. Optionally, you can have it cycle through each app without a folder and input the desired category until you `Ctrl-c` or run out of apps.
 
 In the **dconf-editor** navigate to `org.gnome.desktop.app-folders` and set the value of `folder-children` to an array of comma separated folder names:
 
@@ -419,7 +419,7 @@ $ gsettings set org.gnome.desktop.background picture-uri 'file:///path/to/my/pic
 
 ```
 
-For the lock screen background
+For the lock screen background:
 
 ```
 $ gsettings set org.gnome.desktop.screensaver picture-uri 'file:///path/to/my/picture.jpg'

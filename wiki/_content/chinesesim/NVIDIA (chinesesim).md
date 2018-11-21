@@ -3,67 +3,67 @@
 *   [Nouveau](/index.php/Nouveau "Nouveau")
 *   [Xorg (简体中文)](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)")
 
-本文包含安装和配置 [NVIDIA](http://www.nvidia.com) *专有* 显卡驱动的信息。想要了解开源驱动的信息，参见 [Nouveau](/index.php/Nouveau "Nouveau").
+本文包含安装和配置 [NVIDIA](http://www.nvidia.com) *专有* 显卡驱动的信息。想要了解开源驱动的信息，参见 [Nouveau](/index.php/Nouveau "Nouveau").如果您使用基于 hybrid Intel/NVIDIA的双显卡笔记本, 参见 [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus") 内容.
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-    *   [1.1 备用安装：定制内核](#.E5.A4.87.E7.94.A8.E5.AE.89.E8.A3.85.EF.BC.9A.E5.AE.9A.E5.88.B6.E5.86.85.E6.A0.B8)
-*   [2 配置](#.E9.85.8D.E7.BD.AE)
-    *   [2.1 自动配置](#.E8.87.AA.E5.8A.A8.E9.85.8D.E7.BD.AE)
-    *   [2.2 最小配置模式](#.E6.9C.80.E5.B0.8F.E9.85.8D.E7.BD.AE.E6.A8.A1.E5.BC.8F)
-    *   [2.3 多台显示器](#.E5.A4.9A.E5.8F.B0.E6.98.BE.E7.A4.BA.E5.99.A8)
+*   [1 安装](#安装)
+    *   [1.1 备用安装：定制内核](#备用安装：定制内核)
+*   [2 配置](#配置)
+    *   [2.1 自动配置](#自动配置)
+    *   [2.2 最小配置模式](#最小配置模式)
+    *   [2.3 多台显示器](#多台显示器)
         *   [2.3.1 TwinView](#TwinView)
-        *   [2.3.2 使用 NVIDIA Settings](#.E4.BD.BF.E7.94.A8_NVIDIA_Settings)
-*   [3 调整](#.E8.B0.83.E6.95.B4)
-    *   [3.1 图形用户界面：nvidia-settings](#.E5.9B.BE.E5.BD.A2.E7.94.A8.E6.88.B7.E7.95.8C.E9.9D.A2.EF.BC.9Anvidia-settings)
-        *   [3.1.1 启用桌面组合](#.E5.90.AF.E7.94.A8.E6.A1.8C.E9.9D.A2.E7.BB.84.E5.90.88)
-        *   [3.1.2 关闭启动时的Logo](#.E5.85.B3.E9.97.AD.E5.90.AF.E5.8A.A8.E6.97.B6.E7.9A.84Logo)
-        *   [3.1.3 启用硬件加速](#.E5.90.AF.E7.94.A8.E7.A1.AC.E4.BB.B6.E5.8A.A0.E9.80.9F)
-        *   [3.1.4 覆盖显示器检测](#.E8.A6.86.E7.9B.96.E6.98.BE.E7.A4.BA.E5.99.A8.E6.A3.80.E6.B5.8B)
-        *   [3.1.5 启用三重缓存](#.E5.90.AF.E7.94.A8.E4.B8.89.E9.87.8D.E7.BC.93.E5.AD.98)
-        *   [3.1.6 使用系统级事件](#.E4.BD.BF.E7.94.A8.E7.B3.BB.E7.BB.9F.E7.BA.A7.E4.BA.8B.E4.BB.B6)
-        *   [3.1.7 启用省电功能](#.E5.90.AF.E7.94.A8.E7.9C.81.E7.94.B5.E5.8A.9F.E8.83.BD)
-        *   [3.1.8 启用亮度控制](#.E5.90.AF.E7.94.A8.E4.BA.AE.E5.BA.A6.E6.8E.A7.E5.88.B6)
-        *   [3.1.9 启用SLI](#.E5.90.AF.E7.94.A8SLI)
-        *   [3.1.10 强制Powermizer性能水平(适用于笔记本)](#.E5.BC.BA.E5.88.B6Powermizer.E6.80.A7.E8.83.BD.E6.B0.B4.E5.B9.B3.28.E9.80.82.E7.94.A8.E4.BA.8E.E7.AC.94.E8.AE.B0.E6.9C.AC.29)
-            *   [3.1.10.1 让GPU根据温度来设置自己的性能水平](#.E8.AE.A9GPU.E6.A0.B9.E6.8D.AE.E6.B8.A9.E5.BA.A6.E6.9D.A5.E8.AE.BE.E7.BD.AE.E8.87.AA.E5.B7.B1.E7.9A.84.E6.80.A7.E8.83.BD.E6.B0.B4.E5.B9.B3)
-        *   [3.1.11 禁用vblank中断(适用于笔记本)](#.E7.A6.81.E7.94.A8vblank.E4.B8.AD.E6.96.AD.28.E9.80.82.E7.94.A8.E4.BA.8E.E7.AC.94.E8.AE.B0.E6.9C.AC.29)
-        *   [3.1.12 启用超频](#.E5.90.AF.E7.94.A8.E8.B6.85.E9.A2.91)
-            *   [3.1.12.1 设置静态的2D/3D时钟](#.E8.AE.BE.E7.BD.AE.E9.9D.99.E6.80.81.E7.9A.842D.2F3D.E6.97.B6.E9.92.9F)
-        *   [3.1.13 通过XRandR启用屏幕旋转](#.E9.80.9A.E8.BF.87XRandR.E5.90.AF.E7.94.A8.E5.B1.8F.E5.B9.95.E6.97.8B.E8.BD.AC)
-*   [4 提示和技巧](#.E6.8F.90.E7.A4.BA.E5.92.8C.E6.8A.80.E5.B7.A7)
-    *   [4.1 启用 Pure Video HD 高清视频解码(VDPAU/VAAPI)](#.E5.90.AF.E7.94.A8_Pure_Video_HD_.E9.AB.98.E6.B8.85.E8.A7.86.E9.A2.91.E8.A7.A3.E7.A0.81.28VDPAU.2FVAAPI.29)
-    *   [4.2 使用电视输出](#.E4.BD.BF.E7.94.A8.E7.94.B5.E8.A7.86.E8.BE.93.E5.87.BA)
-    *   [4.3 使用一台电视(DFP)作为X的唯一输出](#.E4.BD.BF.E7.94.A8.E4.B8.80.E5.8F.B0.E7.94.B5.E8.A7.86.28DFP.29.E4.BD.9C.E4.B8.BAX.E7.9A.84.E5.94.AF.E4.B8.80.E8.BE.93.E5.87.BA)
-    *   [4.4 检查电源状态](#.E6.A3.80.E6.9F.A5.E7.94.B5.E6.BA.90.E7.8A.B6.E6.80.81)
-    *   [4.5 在shell显示GPU温度](#.E5.9C.A8shell.E6.98.BE.E7.A4.BAGPU.E6.B8.A9.E5.BA.A6)
-        *   [4.5.1 途径一 - nvidia-settings](#.E9.80.94.E5.BE.84.E4.B8.80_-_nvidia-settings)
-        *   [4.5.2 途径二 - nvidia-smi](#.E9.80.94.E5.BE.84.E4.BA.8C_-_nvidia-smi)
-        *   [4.5.3 途径三 - nvclock](#.E9.80.94.E5.BE.84.E4.B8.89_-_nvclock)
-    *   [4.6 登录时设置风扇速度](#.E7.99.BB.E5.BD.95.E6.97.B6.E8.AE.BE.E7.BD.AE.E9.A3.8E.E6.89.87.E9.80.9F.E5.BA.A6)
-    *   [4.7 改变驱动程序的安装/反安装顺序](#.E6.94.B9.E5.8F.98.E9.A9.B1.E5.8A.A8.E7.A8.8B.E5.BA.8F.E7.9A.84.E5.AE.89.E8.A3.85.2F.E5.8F.8D.E5.AE.89.E8.A3.85.E9.A1.BA.E5.BA.8F)
-    *   [4.8 在nvidia和nouveau之间切换](#.E5.9C.A8nvidia.E5.92.8Cnouveau.E4.B9.8B.E9.97.B4.E5.88.87.E6.8D.A2)
-*   [5 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
-    *   [5.1 游戏中使用双头显示输出](#.E6.B8.B8.E6.88.8F.E4.B8.AD.E4.BD.BF.E7.94.A8.E5.8F.8C.E5.A4.B4.E6.98.BE.E7.A4.BA.E8.BE.93.E5.87.BA)
-    *   [5.2 旧的Xorg的设置](#.E6.97.A7.E7.9A.84Xorg.E7.9A.84.E8.AE.BE.E7.BD.AE)
-    *   [5.3 屏幕损坏："六屏"问题](#.E5.B1.8F.E5.B9.95.E6.8D.9F.E5.9D.8F.EF.BC.9A.22.E5.85.AD.E5.B1.8F.22.E9.97.AE.E9.A2.98)
-    *   [5.4 '/dev/nvidia0' Input/Output error](#.27.2Fdev.2Fnvidia0.27_Input.2FOutput_error)
-    *   [5.5 '/dev/nvidiactl' errors](#.27.2Fdev.2Fnvidiactl.27_errors)
-    *   [5.6 32位应用程序无法启动](#32.E4.BD.8D.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F.E6.97.A0.E6.B3.95.E5.90.AF.E5.8A.A8)
-    *   [5.7 更新内核之后的错误](#.E6.9B.B4.E6.96.B0.E5.86.85.E6.A0.B8.E4.B9.8B.E5.90.8E.E7.9A.84.E9.94.99.E8.AF.AF)
-    *   [5.8 通常奔溃的问题](#.E9.80.9A.E5.B8.B8.E5.A5.94.E6.BA.83.E7.9A.84.E9.97.AE.E9.A2.98)
-    *   [5.9 安装新版本的驱动后性能很糟糕](#.E5.AE.89.E8.A3.85.E6.96.B0.E7.89.88.E6.9C.AC.E7.9A.84.E9.A9.B1.E5.8A.A8.E5.90.8E.E6.80.A7.E8.83.BD.E5.BE.88.E7.B3.9F.E7.B3.95)
-    *   [5.10 400系列显卡与CPU峰值](#400.E7.B3.BB.E5.88.97.E6.98.BE.E5.8D.A1.E4.B8.8ECPU.E5.B3.B0.E5.80.BC)
-    *   [5.11 X在登入/注销时挂起，用Ctrl+Alt+Backspace来实现](#X.E5.9C.A8.E7.99.BB.E5.85.A5.2F.E6.B3.A8.E9.94.80.E6.97.B6.E6.8C.82.E8.B5.B7.EF.BC.8C.E7.94.A8Ctrl.2BAlt.2BBackspace.E6.9D.A5.E5.AE.9E.E7.8E.B0)
-    *   [5.12 XRandR检测的刷新率不正确依赖实用工具](#XRandR.E6.A3.80.E6.B5.8B.E7.9A.84.E5.88.B7.E6.96.B0.E7.8E.87.E4.B8.8D.E6.AD.A3.E7.A1.AE.E4.BE.9D.E8.B5.96.E5.AE.9E.E7.94.A8.E5.B7.A5.E5.85.B7)
-    *   [5.13 No screens found on a laptop / Nvidia Optimus](#No_screens_found_on_a_laptop_.2F_Nvidia_Optimus)
-    *   [5.14 没有笔记本电脑上的亮度控制](#.E6.B2.A1.E6.9C.89.E7.AC.94.E8.AE.B0.E6.9C.AC.E7.94.B5.E8.84.91.E4.B8.8A.E7.9A.84.E4.BA.AE.E5.BA.A6.E6.8E.A7.E5.88.B6)
-*   [6 一些额外的链接](#.E4.B8.80.E4.BA.9B.E9.A2.9D.E5.A4.96.E7.9A.84.E9.93.BE.E6.8E.A5)
+        *   [2.3.2 使用 NVIDIA Settings](#使用_NVIDIA_Settings)
+*   [3 调整](#调整)
+    *   [3.1 图形用户界面：nvidia-settings](#图形用户界面：nvidia-settings)
+        *   [3.1.1 启用桌面组合](#启用桌面组合)
+        *   [3.1.2 关闭启动时的Logo](#关闭启动时的Logo)
+        *   [3.1.3 启用硬件加速](#启用硬件加速)
+        *   [3.1.4 覆盖显示器检测](#覆盖显示器检测)
+        *   [3.1.5 启用三重缓存](#启用三重缓存)
+        *   [3.1.6 使用系统级事件](#使用系统级事件)
+        *   [3.1.7 启用省电功能](#启用省电功能)
+        *   [3.1.8 启用亮度控制](#启用亮度控制)
+        *   [3.1.9 启用SLI](#启用SLI)
+        *   [3.1.10 强制Powermizer性能水平(适用于笔记本)](#强制Powermizer性能水平(适用于笔记本))
+            *   [3.1.10.1 让GPU根据温度来设置自己的性能水平](#让GPU根据温度来设置自己的性能水平)
+        *   [3.1.11 禁用vblank中断(适用于笔记本)](#禁用vblank中断(适用于笔记本))
+        *   [3.1.12 启用超频](#启用超频)
+            *   [3.1.12.1 设置静态的2D/3D时钟](#设置静态的2D/3D时钟)
+        *   [3.1.13 通过XRandR启用屏幕旋转](#通过XRandR启用屏幕旋转)
+*   [4 提示和技巧](#提示和技巧)
+    *   [4.1 启用 Pure Video HD 高清视频解码(VDPAU/VAAPI)](#启用_Pure_Video_HD_高清视频解码(VDPAU/VAAPI))
+    *   [4.2 使用电视输出](#使用电视输出)
+    *   [4.3 使用一台电视(DFP)作为X的唯一输出](#使用一台电视(DFP)作为X的唯一输出)
+    *   [4.4 检查电源状态](#检查电源状态)
+    *   [4.5 在shell显示GPU温度](#在shell显示GPU温度)
+        *   [4.5.1 途径一 - nvidia-settings](#途径一_-_nvidia-settings)
+        *   [4.5.2 途径二 - nvidia-smi](#途径二_-_nvidia-smi)
+        *   [4.5.3 途径三 - nvclock](#途径三_-_nvclock)
+    *   [4.6 登录时设置风扇速度](#登录时设置风扇速度)
+    *   [4.7 改变驱动程序的安装/反安装顺序](#改变驱动程序的安装/反安装顺序)
+    *   [4.8 在nvidia和nouveau之间切换](#在nvidia和nouveau之间切换)
+*   [5 故障排除](#故障排除)
+    *   [5.1 游戏中使用双头显示输出](#游戏中使用双头显示输出)
+    *   [5.2 旧的Xorg的设置](#旧的Xorg的设置)
+    *   [5.3 屏幕损坏："六屏"问题](#屏幕损坏："六屏"问题)
+    *   [5.4 '/dev/nvidia0' Input/Output error](#'/dev/nvidia0'_Input/Output_error)
+    *   [5.5 '/dev/nvidiactl' errors](#'/dev/nvidiactl'_errors)
+    *   [5.6 32位应用程序无法启动](#32位应用程序无法启动)
+    *   [5.7 更新内核之后的错误](#更新内核之后的错误)
+    *   [5.8 通常奔溃的问题](#通常奔溃的问题)
+    *   [5.9 安装新版本的驱动后性能很糟糕](#安装新版本的驱动后性能很糟糕)
+    *   [5.10 400系列显卡与CPU峰值](#400系列显卡与CPU峰值)
+    *   [5.11 X在登入/注销时挂起，用Ctrl+Alt+Backspace来实现](#X在登入/注销时挂起，用Ctrl+Alt+Backspace来实现)
+    *   [5.12 XRandR检测的刷新率不正确依赖实用工具](#XRandR检测的刷新率不正确依赖实用工具)
+    *   [5.13 No screens found on a laptop / Nvidia Optimus](#No_screens_found_on_a_laptop_/_Nvidia_Optimus)
+    *   [5.14 没有笔记本电脑上的亮度控制](#没有笔记本电脑上的亮度控制)
+*   [6 一些额外的链接](#一些额外的链接)
 
 ## 安装
 
-该部分仅适用于 [linux](https://www.archlinux.org/packages/?name=linux) 内核包，定制内核请[略过](#.E5.A4.87.E7.94.A8.E5.AE.89.E8.A3.85.EF.BC.9A.E5.AE.9A.E5.88.B6.E5.86.85.E6.A0.B8)该小节。
+该部分仅适用于 [linux](https://www.archlinux.org/packages/?name=linux) 内核包，定制内核请[略过](#备用安装：定制内核)该小节。
 
 **提示：** 您最好是使用ArchLinux的[pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")来安装驱动，而不是直接到[英伟达官网](http://www.nvidia.cn)去下载驱动，因为这样会在更新系统时同时更新。
 
@@ -95,7 +95,7 @@
 
 5\. **重新启动您的计算机**， 以使得nouveau加入模块的黑名单生效。
 
-一旦驱动安装完毕，就可以进入下一步了：[配置英伟达驱动](#.E9.85.8D.E7.BD.AE)。
+一旦驱动安装完毕，就可以进入下一步了：[配置英伟达驱动](#配置)。
 
 ### 备用安装：定制内核
 
@@ -206,7 +206,7 @@ EndSection
 
 ```
 
-**提示：** 假如您已经预先安装了开源驱动nouveau，请确定已经从`/etc/mkinitcpio.conf`里面去除"nouveau"。您也可以通过使用[这些脚本](#.E5.9C.A8nvidia.E5.92.8Cnouveau.E4.B9.8B.E9.97.B4.E5.88.87.E6.8D.A2)来在开源和闭源驱动之间进行切换。
+**提示：** 假如您已经预先安装了开源驱动nouveau，请确定已经从`/etc/mkinitcpio.conf`里面去除"nouveau"。您也可以通过使用[这些脚本](#在nvidia和nouveau之间切换)来在开源和闭源驱动之间进行切换。
 
 ### 多台显示器
 

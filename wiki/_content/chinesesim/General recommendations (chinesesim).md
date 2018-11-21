@@ -490,7 +490,7 @@ alias hosts='sudo wget [https://raw.githubusercontent.com/googlehosts/hosts/mast
 
 * * *
 
-尝试寻找第三方客户端使用（解决成功率不高），如[drcom](https://github.com/searchtf8=✓&q=drcom&type=Repositories&ref=searchresults)，锐捷用户可参照[MentoHUST (简体中文)](/index.php/MentoHUST_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "MentoHUST (简体中文)") 指导您通过借助 MentoHUST 进行锐捷拨号。
+Drcom用户可参考[Drcom](/index.php/Drcom_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Drcom (简体中文)")，锐捷用户可参照[MentoHUST (简体中文)](/index.php/MentoHUST_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "MentoHUST (简体中文)") 指导您通过借助 MentoHUST 进行锐捷拨号。
 
 * * *
 

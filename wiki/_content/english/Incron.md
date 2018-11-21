@@ -1,4 +1,4 @@
-[incron](http://inotify.aiken.cz/?section=incron&page=about&lang=en) is a daemon which monitors filesystem events and executes commands defined in system and user tables.
+[incron](http://inotify.aiken.cz/?section=incron&page=about&lang=en) is a daemon which monitors [filesystem events](/index.php/Autostarting#On_filesystem_events "Autostarting") and executes commands defined in system and user tables.
 
 ## Contents
 

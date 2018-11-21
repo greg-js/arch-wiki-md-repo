@@ -72,6 +72,7 @@ For more information, see the [Trusted User Bylaws](https://aur.archlinux.org/tr
 | [keenerd](https://aur.archlinux.org/packages.php?K=keenerd&SeB=m) | Kyle Keen | keenerd@gmail.com |
 | [Kyrias](https://aur.archlinux.org/packages.php?K=Kyrias&SeB=m) | [Johannes Löthberg](/index.php/User:Kyrias "User:Kyrias") | johannes@kyriasis.com |
 | [Lordheavy](https://aur.archlinux.org/packages.php?K=lordheavy&SeB=m) | [Laurent Carlier](/index.php/User:Lordheavy "User:Lordheavy") | lordheavym at gmail com |
+| [maximbaz](https://aur.archlinux.org/packages.php?K=maximbaz&SeB=m) | Maxim Baz | archlinux at maximbaz dot com |
 | [mtorromeo](https://aur.archlinux.org/packages.php?K=mtorromeo&SeB=m) | Massimiliano Torromeo | massimiliano.torromeo@gmail.com |
 | [Muflone](https://aur.archlinux.org/packages.php?K=Muflone&SeB=m) | Fabio Castelli | webreg (at) vbsimple.net |
 | [NicoHood](https://aur.archlinux.org/packages.php?K=NicoHood&SeB=m) | NicoHood | archlinux (cat) nicohood (dog) de |

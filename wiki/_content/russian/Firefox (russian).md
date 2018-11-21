@@ -1,39 +1,46 @@
+Ссылки по теме
+
+*   [Плагины для веб-браузеров](/index.php/Browser_plugins "Browser plugins")
+*   [Хитрости Firefox](/index.php/Firefox_tweaks "Firefox tweaks")
+*   [Chromium (Русский)](/index.php/Chromium_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Chromium (Русский)")
+*   [Opera](/index.php/Opera "Opera")
+
 [Firefox](http://www.firefox.com) — графический веб-браузер с открытым исходным кодом, основанный на движке [Gecko](https://en.wikipedia.org/wiki/Gecko_(layout_engine) "wikipedia:Gecko (layout engine)"), разрабатываемый [Mozilla](http://www.mozilla.com).
 
 ## Contents
 
-*   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-    *   [1.1 Вариации](#.D0.92.D0.B0.D1.80.D0.B8.D0.B0.D1.86.D0.B8.D0.B8)
-*   [2 Локализация](#.D0.9B.D0.BE.D0.BA.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F)
-*   [3 Дополнения](#.D0.94.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B5.D0.BD.D0.B8.D1.8F)
-*   [4 Плагины](#.D0.9F.D0.BB.D0.B0.D0.B3.D0.B8.D0.BD.D1.8B)
-    *   [4.1 Словари проверки орфографии](#.D0.A1.D0.BB.D0.BE.D0.B2.D0.B0.D1.80.D0.B8_.D0.BF.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.B8_.D0.BE.D1.80.D1.84.D0.BE.D0.B3.D1.80.D0.B0.D1.84.D0.B8.D0.B8)
-    *   [4.2 Инструменты поиска](#.D0.98.D0.BD.D1.81.D1.82.D1.80.D1.83.D0.BC.D0.B5.D0.BD.D1.82.D1.8B_.D0.BF.D0.BE.D0.B8.D1.81.D0.BA.D0.B0)
-        *   [4.2.1 Удобный поиск по AUR/Wiki/Форуму Arch Linux с помощью arch-firefox-search](#.D0.A3.D0.B4.D0.BE.D0.B1.D0.BD.D1.8B.D0.B9_.D0.BF.D0.BE.D0.B8.D1.81.D0.BA_.D0.BF.D0.BE_AUR.2FWiki.2F.D0.A4.D0.BE.D1.80.D1.83.D0.BC.D1.83_Arch_Linux_.D1.81_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D1.8C.D1.8E_arch-firefox-search)
-    *   [4.3 Включение проигрывания мультимедиа HTML5](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B8.D0.B3.D1.80.D1.8B.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F_.D0.BC.D1.83.D0.BB.D1.8C.D1.82.D0.B8.D0.BC.D0.B5.D0.B4.D0.B8.D0.B0_HTML5)
-*   [5 Советы и полезности](#.D0.A1.D0.BE.D0.B2.D0.B5.D1.82.D1.8B_.D0.B8_.D0.BF.D0.BE.D0.BB.D0.B5.D0.B7.D0.BD.D0.BE.D1.81.D1.82.D0.B8)
-*   [6 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
-    *   [6.1 Выбор клиента электронной почты](#.D0.92.D1.8B.D0.B1.D0.BE.D1.80_.D0.BA.D0.BB.D0.B8.D0.B5.D0.BD.D1.82.D0.B0_.D1.8D.D0.BB.D0.B5.D0.BA.D1.82.D1.80.D0.BE.D0.BD.D0.BD.D0.BE.D0.B9_.D0.BF.D0.BE.D1.87.D1.82.D1.8B)
-    *   [6.2 Ассоциации файлов](#.D0.90.D1.81.D1.81.D0.BE.D1.86.D0.B8.D0.B0.D1.86.D0.B8.D0.B8_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2)
-        *   [6.2.1 Проблемы, связанные с ассоциациями файлов](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B.2C_.D1.81.D0.B2.D1.8F.D0.B7.D0.B0.D0.BD.D0.BD.D1.8B.D0.B5_.D1.81_.D0.B0.D1.81.D1.81.D0.BE.D1.86.D0.B8.D0.B0.D1.86.D0.B8.D1.8F.D0.BC.D0.B8_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2)
-    *   [6.3 Firefox каждый раз самопроизвольно создаёт директорию ~/Desktop](#Firefox_.D0.BA.D0.B0.D0.B6.D0.B4.D1.8B.D0.B9_.D1.80.D0.B0.D0.B7_.D1.81.D0.B0.D0.BC.D0.BE.D0.BF.D1.80.D0.BE.D0.B8.D0.B7.D0.B2.D0.BE.D0.BB.D1.8C.D0.BD.D0.BE_.D1.81.D0.BE.D0.B7.D0.B4.D0.B0.D1.91.D1.82_.D0.B4.D0.B8.D1.80.D0.B5.D0.BA.D1.82.D0.BE.D1.80.D0.B8.D1.8E_.7E.2FDesktop)
-    *   [6.4 Плагины и блокирование всплывающих окон (pop-up)](#.D0.9F.D0.BB.D0.B0.D0.B3.D0.B8.D0.BD.D1.8B_.D0.B8_.D0.B1.D0.BB.D0.BE.D0.BA.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B2.D1.81.D0.BF.D0.BB.D1.8B.D0.B2.D0.B0.D1.8E.D1.89.D0.B8.D1.85_.D0.BE.D0.BA.D0.BE.D0.BD_.28pop-up.29)
-    *   [6.5 Ошибки по нажатию средней кнопки мыши](#.D0.9E.D1.88.D0.B8.D0.B1.D0.BA.D0.B8_.D0.BF.D0.BE_.D0.BD.D0.B0.D0.B6.D0.B0.D1.82.D0.B8.D1.8E_.D1.81.D1.80.D0.B5.D0.B4.D0.BD.D0.B5.D0.B9_.D0.BA.D0.BD.D0.BE.D0.BF.D0.BA.D0.B8_.D0.BC.D1.8B.D1.88.D0.B8)
-    *   [6.6 Клавиша *Backspace* не выполняет функцию 'Назад'](#.D0.9A.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B0_Backspace_.D0.BD.D0.B5_.D0.B2.D1.8B.D0.BF.D0.BE.D0.BB.D0.BD.D1.8F.D0.B5.D1.82_.D1.84.D1.83.D0.BD.D0.BA.D1.86.D0.B8.D1.8E_.27.D0.9D.D0.B0.D0.B7.D0.B0.D0.B4.27)
-    *   [6.7 Firefox не запоминает авторизацию на сайте](#Firefox_.D0.BD.D0.B5_.D0.B7.D0.B0.D0.BF.D0.BE.D0.BC.D0.B8.D0.BD.D0.B0.D0.B5.D1.82_.D0.B0.D0.B2.D1.82.D0.BE.D1.80.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8E_.D0.BD.D0.B0_.D1.81.D0.B0.D0.B9.D1.82.D0.B5)
-    *   [6.8 Unreadable input fields with dark GTK+ themes](#Unreadable_input_fields_with_dark_GTK.2B_themes)
-    *   [6.9 "Do you want Firefox to save your tabs for the next time it starts?" dialog does not appear](#.22Do_you_want_Firefox_to_save_your_tabs_for_the_next_time_it_starts.3F.22_dialog_does_not_appear)
+*   [1 Установка](#Установка)
+    *   [1.1 Вариации](#Вариации)
+*   [2 Локализация](#Локализация)
+*   [3 Дополнения](#Дополнения)
+*   [4 Плагины](#Плагины)
+    *   [4.1 Словари проверки орфографии](#Словари_проверки_орфографии)
+    *   [4.2 Инструменты поиска](#Инструменты_поиска)
+        *   [4.2.1 Удобный поиск по AUR/Wiki/Форуму Arch Linux с помощью arch-firefox-search](#Удобный_поиск_по_AUR/Wiki/Форуму_Arch_Linux_с_помощью_arch-firefox-search)
+    *   [4.3 Включение проигрывания мультимедиа HTML5](#Включение_проигрывания_мультимедиа_HTML5)
+*   [5 Советы и полезности](#Советы_и_полезности)
+*   [6 Решение проблем](#Решение_проблем)
+    *   [6.1 Выбор клиента электронной почты](#Выбор_клиента_электронной_почты)
+    *   [6.2 Ассоциации файлов](#Ассоциации_файлов)
+        *   [6.2.1 Проблемы, связанные с ассоциациями файлов](#Проблемы,_связанные_с_ассоциациями_файлов)
+    *   [6.3 Firefox каждый раз самопроизвольно создаёт директорию ~/Desktop](#Firefox_каждый_раз_самопроизвольно_создаёт_директорию_~/Desktop)
+    *   [6.4 Плагины и блокирование всплывающих окон (pop-up)](#Плагины_и_блокирование_всплывающих_окон_(pop-up))
+    *   [6.5 Ошибки по нажатию средней кнопки мыши](#Ошибки_по_нажатию_средней_кнопки_мыши)
+    *   [6.6 Клавиша *Backspace* не выполняет функцию 'Назад'](#Клавиша_Backspace_не_выполняет_функцию_'Назад')
+    *   [6.7 Firefox не запоминает авторизацию на сайте](#Firefox_не_запоминает_авторизацию_на_сайте)
+    *   [6.8 Unreadable input fields with dark GTK+ themes](#Unreadable_input_fields_with_dark_GTK+_themes)
+    *   [6.9 "Do you want Firefox to save your tabs for the next time it starts?" dialog does not appear](#"Do_you_want_Firefox_to_save_your_tabs_for_the_next_time_it_starts?"_dialog_does_not_appear)
     *   [6.10 Firefox uses ugly fonts for its interface](#Firefox_uses_ugly_fonts_for_its_interface)
     *   [6.11 Firefox uses ugly fonts on certain web pages](#Firefox_uses_ugly_fonts_on_certain_web_pages)
-        *   [6.11.1 Terminus & Dina](#Terminus_.26_Dina)
-    *   [6.12 Устранение проблем с шрифтами от Google в Firefox](#.D0.A3.D1.81.D1.82.D1.80.D0.B0.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC_.D1.81_.D1.88.D1.80.D0.B8.D1.84.D1.82.D0.B0.D0.BC.D0.B8_.D0.BE.D1.82_Google_.D0.B2_Firefox)
+        *   [6.11.1 Terminus & Dina](#Terminus_&_Dina)
+    *   [6.12 Устранение проблем с шрифтами от Google в Firefox](#Устранение_проблем_с_шрифтами_от_Google_в_Firefox)
     *   [6.13 The menu cannot pop-up after updating to Firefox 13](#The_menu_cannot_pop-up_after_updating_to_Firefox_13)
     *   [6.14 HTML5 MP3 audio](#HTML5_MP3_audio)
-*   [7 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
+*   [7 Смотрите также](#Смотрите_также)
 
 ## Установка
 
-[Установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2 "Pacman (Русский)") пакет [firefox](https://www.archlinux.org/packages/?name=firefox) из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)").
+[Установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_определенных_пакетов "Pacman (Русский)") пакет [firefox](https://www.archlinux.org/packages/?name=firefox) из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)").
 
 Несколько альтернатив доступные в [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)"):
 
@@ -70,7 +77,7 @@
 
 ## Локализация
 
-Для русификации необходимо установить пакет локализации [firefox-i18n-ru](https://www.archlinux.org/packages/?name=firefox-i18n-ru) из [официального репозитория](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)") с помощью [pacman](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2 "Pacman (Русский)").
+Для русификации необходимо установить пакет локализации [firefox-i18n-ru](https://www.archlinux.org/packages/?name=firefox-i18n-ru) из [официального репозитория](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)") с помощью [pacman](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_определенных_пакетов "Pacman (Русский)").
 
 После чего выбрать русский язык в `Меню` → `Дополнения` → `Языки` и перезапустить Firefox.
 

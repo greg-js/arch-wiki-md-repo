@@ -46,7 +46,6 @@ exec tdm --xstart
 **Note:** Since version 1.3.0, `tdm` follows the XDG base directory specification. By default, `$XDG_CONFIG_HOME` is set to `$HOME/.config`.
 
 **Warning:** Since support for `~/.tdm` will eventually be dropped, consider moving your configuration to `$XDG_CONFIG_HOME/tdm`. You can use `tdmctl migrate` to automatically migrate your configuration.
-.
 
 You should copy the links to your WM/DE starter to `$XDG_CONFIG_HOME/tdm/sessions`, and links to non-X programs to `$XDG_CONFIG_HOME/tdm/extra`. For convenience, you can just run `tdmctl init`.
 

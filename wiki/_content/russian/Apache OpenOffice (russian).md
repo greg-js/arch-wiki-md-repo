@@ -2,16 +2,16 @@
 
 ## Contents
 
-*   [1 Введение](#.D0.92.D0.B2.D0.B5.D0.B4.D0.B5.D0.BD.D0.B8.D0.B5)
-*   [2 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-    *   [2.1 Управление расширениями и проверка правописания в OpenOffice 3.x](#.D0.A3.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D1.81.D1.88.D0.B8.D1.80.D0.B5.D0.BD.D0.B8.D1.8F.D0.BC.D0.B8_.D0.B8_.D0.BF.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.B0_.D0.BF.D1.80.D0.B0.D0.B2.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D1.8F_.D0.B2_OpenOffice_3.x)
+*   [1 Введение](#Введение)
+*   [2 Установка](#Установка)
+    *   [2.1 Управление расширениями и проверка правописания в OpenOffice 3.x](#Управление_расширениями_и_проверка_правописания_в_OpenOffice_3.x)
         *   [2.1.1 French dictionary](#French_dictionary)
-    *   [2.2 Настройка переменных окружения OOo](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.BF.D0.B5.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.BD.D1.8B.D1.85_.D0.BE.D0.BA.D1.80.D1.83.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_OOo)
-        *   [2.2.1 Глобальная конфигурация](#.D0.93.D0.BB.D0.BE.D0.B1.D0.B0.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D0.BA.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D1.8F)
+    *   [2.2 Настройка переменных окружения OOo](#Настройка_переменных_окружения_OOo)
+        *   [2.2.1 Глобальная конфигурация](#Глобальная_конфигурация)
         *   [2.2.2 Environment variable scripts](#Environment_variable_scripts)
-    *   [2.3 KDE4 look & feel для OpenOffice](#KDE4_look_.26_feel_.D0.B4.D0.BB.D1.8F_OpenOffice)
-*   [3 Запуск OpenOffice](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_OpenOffice)
-*   [4 Известные проблемы](#.D0.98.D0.B7.D0.B2.D0.B5.D1.81.D1.82.D0.BD.D1.8B.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B)
+    *   [2.3 KDE4 look & feel для OpenOffice](#KDE4_look_&_feel_для_OpenOffice)
+*   [3 Запуск OpenOffice](#Запуск_OpenOffice)
+*   [4 Известные проблемы](#Известные_проблемы)
 
 ## Введение
 

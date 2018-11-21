@@ -52,7 +52,7 @@ Para una interfaz KDE, instale [wicd-kde](https://aur.archlinux.org/packages/wic
 
 Para activar las notificaciones visuales sobre el estado de la red, es necesario instalar [notification-daemon](https://www.archlinux.org/packages/?name=notification-daemon).
 
-Si no está usando [GNOME](/index.php/GNOME "GNOME"), instale [xfce4-notifyd](https://www.archlinux.org/packages/?name=xfce4-notifyd), en lugar de notification-daemon, ya que demanda muchos paquetes GNOME innecesarios.
+Si no está usando [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)"), instale [xfce4-notifyd](https://www.archlinux.org/packages/?name=xfce4-notifyd), en lugar de notification-daemon, ya que demanda muchos paquetes GNOME innecesarios.
 
 ### Alternativa
 

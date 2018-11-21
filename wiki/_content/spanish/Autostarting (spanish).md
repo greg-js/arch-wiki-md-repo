@@ -66,7 +66,7 @@ Muchos [entornos de escritorio](/index.php/Desktop_environment_(Espa%C3%B1ol) "D
 
 Si los entornos de escritorio tienen un artículo, véase su sección *Inicio automático*.
 
-*   [GNOME#Autostart](/index.php/GNOME#Autostart "GNOME")
+*   [GNOME (Español)#Inicio automático](/index.php/GNOME_(Espa%C3%B1ol)#Inicio_automático "GNOME (Español)")
 *   [KDE#Autostart](/index.php/KDE#Autostart "KDE")
 *   [Xfce#Autostart](/index.php/Xfce#Autostart "Xfce")
 *   [LXDE#Autostart](/index.php/LXDE#Autostart "LXDE")

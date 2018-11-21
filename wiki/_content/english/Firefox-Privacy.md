@@ -24,9 +24,6 @@ This article overviews how to configure Firefox to enhance security and privacy.
     *   [1.10 Disable Safe Browsing service](#Disable_Safe_Browsing_service)
     *   [1.11 Disable WebGL](#Disable_WebGL)
 *   [2 Extensions](#Extensions)
-    *   [2.1 NoScript](#NoScript)
-    *   [2.2 RequestPolicy Continued](#RequestPolicy_Continued)
-    *   [2.3 CanvasBlocker](#CanvasBlocker)
 *   [3 Remove system-wide hidden extensions](#Remove_system-wide_hidden_extensions)
 *   [4 See also](#See_also)
 
@@ -137,29 +134,7 @@ WebGL is a potential security risk.[[1]](http://security.stackexchange.com/quest
 
 ## Extensions
 
-This section lists Firefox-only privacy extensions, for cross-browser privacy extensions, see [Browser extensions#Privacy](/index.php/Browser_extensions#Privacy "Browser extensions").
-
-### NoScript
-
-[NoScript](http://noscript.net/) is an extension which disables JavaScript and Flash on any website not specifically whitelisted by the user. This extension will protect you from exploitation of security vulnerabilities by not letting anything but trusted sites (e.g: your bank, webmail) serve you executable content.
-
-Once installed you can configure settings for NoScript by either clicking its icon on the toolbar or right clicking a page and navigating to NoScript. You will then have the option to enable/disable scripts for the current page, as well as any third party scripts that the page is linking to. Alternatively you can choose to enable scripts temporarily for that session only.
-
-Be aware a lot of modern websites use scripts for layout purposes, hence content may look different. For example, failed rendering due to missing fonts might occur on websites that load fonts at runtime via scripts, which were blocked by NoScript.
-
-For more detailed configuration see the [NoScript FAQ](http://noscript.net/faq).
-
-### RequestPolicy Continued
-
-[RequestPolicy Continued](https://addons.mozilla.org/firefox/addon/requestpolicy-continued/) (a successor to the original [RequestPolicy](https://addons.mozilla.org/firefox/addon/requestpolicy/)) is an extension for Mozilla browsers which lets you have control over cross-site requests. It also lets you blacklist or whitelist requests by default. Disabling unnecessary cross-site requests leads to better privacy, safety and faster browsing.
-
-**Note:** This addon is currently [in the process of being updated](https://github.com/RequestPolicyContinued/requestpolicy/issues/704) for use on modern versions of Firefox (57+).
-
-### CanvasBlocker
-
-[CanvasBlocker](https://addons.mozilla.org/firefox/addon/canvasblocker/) Blocks or fakes the JS-API for modifying <canvas> to prevent Canvas-Fingerprinting.</canvas>
-
-**Tip:** Firefox has a built-in anti-fingerprinting feature that can be enabled by setting `privacy.resistFingerprinting` to `true` in `about:config`.
+See [Browser extensions#Privacy](/index.php/Browser_extensions#Privacy "Browser extensions").
 
 ## Remove system-wide hidden extensions
 

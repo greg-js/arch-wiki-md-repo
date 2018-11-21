@@ -33,7 +33,7 @@ Related articles
 
 [Start/enable](/index.php/Start/enable "Start/enable") the `named.service` systemd unit.
 
-To use the DNS server locally, use the `127.0.0.1` nameserver, see [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution"). This will however require you to [#Allow recursion](#Allow_recursion).
+To use the DNS server locally, use the `127.0.0.1` nameserver (meaning clients like firefox resolve via 127.0.0.1), see [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution"). This will however require you to [#Allow recursion](#Allow_recursion) while a firewall might block outside queries to your local named.
 
 ## Configuration
 
@@ -43,9 +43,7 @@ BIND is configured in `/etc/named.conf`. The available options are documented in
 
 ### Restrict access to localhost
 
-BIND by defaults listens on all interfaces and IP addresses.
-
-To only allow connections from localhost add the following line to the options section in `/etc/named.conf`:
+BIND by defaults listens on [port](/index.php?title=Port&action=edit&redlink=1 "Port (page does not exist)") 53 of all interfaces and IP addresses. To only allow connections from localhost add the following line to the options section in `/etc/named.conf`:
 
 ```
 listen-on { 127.0.0.1; };
@@ -65,11 +63,9 @@ forwarders { 8.8.8.8; 8.8.4.4; };
 
 ## A configuration template for running a domain
 
-This is a simple tutorial in howto setup a simple home network DNS-server with bind. In our example we use "domain.tld" as our domain.
+Following is a simple home nameserver being set up, using *domain.tld* as the domain being served world-wide like this wiki's *archlinux.org* domain is.
 
-For a more elaborate example see [Two-in-one DNS server with BIND9](http://www.howtoforge.com/two_in_one_dns_bind9_views).
-
-Another guide at [Linux Home Server HOWTO - Domain name system (BIND): Adding your domain](http://www.brennan.id.au/08-Domain_Name_System_BIND.html#yourdomain) will show you how to set up internal network name resolution in no time; short, on-point and very informative.
+A more elaborate example is [DNS server with BIND9](http://www.howtoforge.com/two_in_one_dns_bind9_views), while [this shows](http://www.brennan.id.au/08-Domain_Name_System_BIND.html#yourdomain) how to set up internal network name resolution.
 
 ### Creating a zonefile
 
@@ -79,7 +75,7 @@ Create `/var/named/domain.tld.zone`.
 $TTL 7200
 ; domain.tld
 @       IN      SOA     ns01.domain.tld. postmaster.domain.tld. (
-                                        2007011601 ; Serial
+                                        2018111111 ; Serial
                                         28800      ; Refresh
                                         1800       ; Retry
                                         604800     ; Expire - 1 week
@@ -99,9 +95,9 @@ mail            IN      A       0.0.0.0
 
 ```
 
-$TTL defines the default time-to-live in seconds for all record types. In this example it is 2 hours.
+$TTL defines the default time-to-live in seconds for all record types. Here it is 2 hours.
 
-**Serial must be incremented manually before restarting named every time you change a resource record for the zone.** If you forget to do it slaves will not re-transfer the zone: they only do it if the serial is greater than that of the last time they transferred the zone.
+Serial must be **incremented** manually before restarting named every time you change a resource record for the zone. Otherwise slaves will not re-transfer the zone: they only do it if the serial is **greater** than that of the last time they transferred the zone.
 
 ### Configuring master server
 
@@ -146,7 +142,7 @@ There are external mechanisms such as OpenDNSSEC with fully-automatic key rollov
 
 ## Automatically listen on new interfaces
 
-By default bind scan for new interfaces and stop listening on interfaces which no longer exist every hours. You can tune this value by adding :
+By default bind scan for new interfaces and stop listening on interfaces which no longer exist every hour. You can tune this value by adding :
 
 ```
 interface-interval <rescan-timeout-in-minutes>;
@@ -210,3 +206,4 @@ Now, restart the systemd service.
 *   [Internet Systems Consortium, Inc. (ISC)](http://www.isc.org/)
 *   [DNS Glossary](https://cira.ca/domain-name-system-dns-glossary)
 *   [Archived mailing list discussion on BIND's future](https://lists.archlinux.org/pipermail/arch-dev-public/2013-March/024588.html)
+*   [root zone transfer made simple - serve root@home](https://www.heise.de/netze/rfc/rfcs/rfc7706.shtml#page-9) copy the /etc/named.conf , restart BIND & enjoy!

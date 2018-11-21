@@ -682,7 +682,7 @@ Also make sure that the relevant folders in `$HOME` are owned by the user starti
 
 ### Fonts in window title crashing xfce4-title
 
-[Install](/index.php/Install "Install") [ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid) and [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu). See also [FS#44382](https://bugs.archlinux.org/task/44382).
+Install [ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid) and [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu). See also [FS#44382](https://bugs.archlinux.org/task/44382).
 
 ### Laptop lid settings ignored
 

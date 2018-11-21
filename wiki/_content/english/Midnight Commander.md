@@ -51,17 +51,17 @@ See also [mc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mc.1#Skins).
 
 ## Usage
 
-The below section provides a short overview on usage of Midnight commander. References to [mc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mc.1) and the Help function (`F1`, available in every dialog) are made in this article as `**Section**`.
+The below section provides a short overview on usage of Midnight commander.
 
 **Tip:** All hints are available in `/usr/share/mc/hints/`.
 
 ### Interface
 
-In prominent view are two vertical panes. Either can list directory contents, show a plain text preview, file details, or a directory tree (see `**Directory Tree**`). File operations are accessible through the function keys or the mouse. More options are visible in a dynamic user menu (`F2`) and option menu (`F9`). Keys above `F12` (`F13` up to `F20`) are accessible through `Shift`. Menu and dialog options have one letter highlighted - pressing this letter (or `Alt+*Letter*` inside a text entry) directly activates the respective option.
+In prominent view are two vertical panes. Either can list directory contents, show a plain text preview, file details, or a directory tree (see [mc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mc.1#Directory_Tree)). File operations are accessible through the function keys or the mouse. More options are visible in a dynamic user menu (`F2`) and option menu (`F9`). Keys above `F12` (`F13` up to `F20`) are accessible through `Shift`. Menu and dialog options have one letter highlighted - pressing this letter (or `Alt+*Letter*` inside a text entry) directly activates the respective option.
 
-Below, a command line is visible, connected to a subshell. This shell is generally of the same type *mc* was launched from, and may be switched to at will (`Ctrl-O`), see `**The subshell support**`. On this command line, *cd* is interpreted by Midnight Commander, and not passed to the shell for execution. As such, special completion (such as from [Zsh](/index.php/Zsh "Zsh")) is unavailable. Files in the pane interact with the command line; for example, `Alt+Enter` copies the name of a (selected) file to the command line.
+Below, a command line is visible, connected to a subshell. This shell is generally of the same type *mc* was launched from, and may be switched to at will (`Ctrl-O`), see [mc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mc.1#The_subshell_support). On this command line, *cd* is interpreted by Midnight Commander, and not passed to the shell for execution. As such, special completion (such as from [Zsh](/index.php/Zsh "Zsh")) is unavailable. Files in the pane interact with the command line; for example, `Alt+Enter` copies the name of a (selected) file to the command line.
 
-Keybindings are generally similar to [GNU Emacs](/index.php/GNU_Emacs "GNU Emacs"). A more strict emacs keymap can be enabled (see `**Redefine hotkey bindings**`). New users may however use Lynx-like (arrow) keybindings (enabled in *Options > Panel options*) and mouse clicks for navigation.
+Keybindings are generally similar to [GNU Emacs](/index.php/GNU_Emacs "GNU Emacs"). A more strict emacs keymap can be enabled (see [mc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mc.1#Redefine_hotkey_bindings)). New users may however use Lynx-like (arrow) keybindings (enabled in *Options > Panel options*) and mouse clicks for navigation.
 
 ### Modules
 
@@ -71,15 +71,15 @@ These can be called via the *mc* interface (with *Use internal* enabled in *Opti
 *   *mcview* - Text and hex viewer with goto marks and regex search
 *   *mcdiff* - Compares and edits two files in-place (`C-x d`)
 
-Per `mc` instance, multiple modules can be run concurrently (`Ctrl-``) (see `**Screen selector**`). External editors may be used instead, and parameters configured accordingly.
+Per `mc` instance, multiple modules can be run concurrently (`Ctrl-``) (see [mc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mc.1#Screen_selector)). External editors may be used instead, and parameters configured accordingly.
 
 ## Configuration
 
-Most of the Midnight Commander settings can be changed from the menus. However, a small number of settings such as clipboard commands, codeset detection and parameters for external editors can only be changed from `~/.config/mc/ini`. See `**Special Settings**` and following for a complete description of options.
+Most of the Midnight Commander settings can be changed from the menus. However, a small number of settings such as clipboard commands, codeset detection and parameters for external editors can only be changed from `~/.config/mc/ini`. See [mc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mc.1#Special_Settings) and following for a complete description of options.
 
 Additionally, the following environment variables are respected: `MC_SKIN`, `MC_KEYMAP`, `MC_XDG_OPEN`, `MC_COLOR_TABLE`, `MC_DATADIR`, `MC_HOME`, `KEYBOARD_KEY_TIMEOUT_US`, `PAGER`, `EDITOR`, `VIEWER`.
 
-See also `**Files**`.
+See also [mc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mc.1#FILES).
 
 ### extfs
 

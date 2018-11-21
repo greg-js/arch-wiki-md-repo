@@ -46,7 +46,7 @@ Nautilus es fácil de configurar gráficamente, pero no todas las configuracione
 
 Nautilus, por defecto, ya no controla fondos/escritorio en gnome-shell. No obstante, si le gusta tener iconos en el escritorio o disfrutar de la función de arrastrar y soltar, puede configurar fácilmente nautilus para manejar el escritorio.
 
-Instale el paquete [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) y ejecútelo. Haga click en la opción "Escritorio" de la lista, y pinche en "Tener administrador de archivos para manejar el escritorio" deslizando la opción a "on". Puede que tenga que reiniciar nautilus ejecutando `killall nautilus;nautilus` o resetear [GNOME](/index.php/GNOME "GNOME"), presionando `ALT+F2`, escribiendo `r`, y pulsando `Intro`.
+Instale el paquete [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) y ejecútelo. Haga click en la opción "Escritorio" de la lista, y pinche en "Tener administrador de archivos para manejar el escritorio" deslizando la opción a "on". Puede que tenga que reiniciar nautilus ejecutando `killall nautilus;nautilus` o resetear [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)"), presionando `ALT+F2`, escribiendo `r`, y pulsando `Intro`.
 
 ### Cambiar la vista de elementos por defecto
 

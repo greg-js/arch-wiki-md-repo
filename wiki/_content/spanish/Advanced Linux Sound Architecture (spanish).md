@@ -631,7 +631,7 @@ slave {
 
 ### Problemas de reproducción simultánea
 
-Si está teniendo problemas de reproducción simultánea, y si [PulseAudio](/index.php/PulseAudio "PulseAudio") se ha instalado (por ejemplo, utilizando [GNOME](/index.php/GNOME "GNOME")), su configuración por defecto está ajustada para «secuestrar» a favor de pulseadio la tarjeta de sonido. Algunos usuarios de ALSA no desean utilizar [PulseAudio](/index.php/PulseAudio "PulseAudio") y están bastante satisfechos con su actual configuración de ALSA. Una solución para resolver el problema es editar `/etc/asound.conf` y comentar las siguientes líneas:
+Si está teniendo problemas de reproducción simultánea, y si [PulseAudio](/index.php/PulseAudio "PulseAudio") se ha instalado (por ejemplo, utilizando [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)")), su configuración por defecto está ajustada para «secuestrar» a favor de pulseadio la tarjeta de sonido. Algunos usuarios de ALSA no desean utilizar [PulseAudio](/index.php/PulseAudio "PulseAudio") y están bastante satisfechos con su actual configuración de ALSA. Una solución para resolver el problema es editar `/etc/asound.conf` y comentar las siguientes líneas:
 
 ```
 # Use PulseAudio by default

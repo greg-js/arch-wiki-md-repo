@@ -8,10 +8,9 @@ Web is the default web browser for [GNOME](/index.php/GNOME "GNOME"). Web provid
 *   [2 Configuration](#Configuration)
     *   [2.1 Blocking advertisements](#Blocking_advertisements)
     *   [2.2 Web applications](#Web_applications)
-    *   [2.3 Plugins](#Plugins)
-    *   [2.4 Custom stylesheet](#Custom_stylesheet)
-    *   [2.5 Fonts](#Fonts)
-    *   [2.6 Video](#Video)
+    *   [2.3 Custom stylesheet](#Custom_stylesheet)
+    *   [2.4 Fonts](#Fonts)
+    *   [2.5 Video](#Video)
 *   [3 See also](#See_also)
 
 ## Installation
@@ -45,14 +44,6 @@ See [EasyList](https://easylist.to/) and [Known Adblock Plus subscriptions](http
 ### Web applications
 
 Web can create web applications out of websites and add them to desktop menu. To configure and remove them enter `about:applications` in the address bar.
-
-### Plugins
-
-Web uses NPAPI plugins, see the main article: [Browser plugins](/index.php/Browser_plugins "Browser plugins")
-
-**Note:** Epiphany doesn't support 'windowed plugins', which use X11 calls under wayland [[1]](https://wiki.gnome.org/Apps/Web/Docs/FrequentlyAskedQuestions#Does_Epiphany_support_plugins.3F).
-
-To find out what plugins are installed/enabled, enter `about:plugins` in the address bar.
 
 ### Custom stylesheet
 

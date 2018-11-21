@@ -23,7 +23,7 @@ MuPDF supports all static functions required by PDF 1.7 and is a lightweight alt
 
 ## Usage
 
-See [mupdf(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mupdf.1) or `mupdf --help` and [mutool(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mutool.1) for more information.
+See `mupdf --help` or [mupdf(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mupdf.1) and [mutool(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mutool.1) for more information.
 
 **Note:** Options for [mupdf](https://www.archlinux.org/packages/?name=mupdf) and [mupdf-gl](https://www.archlinux.org/packages/?name=mupdf-gl) may differ.
 
@@ -41,7 +41,7 @@ When zoomed in, the document can be moved by using the left mouse button. Pressi
 
 ### MuPDF GL
 
-Press `I` to invert colours. See [[1]](https://mupdf.com/docs/manual-mupdf-gl.html) for the manual.
+Press `I` to invert colours. See [[1]](https://mupdf.com/docs/manual-mupdf-gl.html) for the manual or press `F1` for help.
 
 ## See also
 

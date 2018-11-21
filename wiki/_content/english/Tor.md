@@ -53,7 +53,7 @@ Related articles
                 *   [13.3.2.1.1 Raise maximum number of open file descriptors](#Raise_maximum_number_of_open_file_descriptors)
                 *   [13.3.2.1.2 Start tor.service as root to bind Tor to privileged ports](#Start_tor.service_as_root_to_bind_Tor_to_privileged_ports)
                 *   [13.3.2.1.3 Tor configuration](#Tor_configuration)
-            *   [13.3.2.2 arm](#arm)
+            *   [13.3.2.2 nyx](#nyx)
             *   [13.3.2.3 iptables](#iptables)
             *   [13.3.2.4 Haveged](#Haveged)
             *   [13.3.2.5 pdnsd](#pdnsd)
@@ -84,7 +84,7 @@ See [Wikipedia:Tor (anonymity network)](https://en.wikipedia.org/wiki/Tor_(anony
 
 Usually, you will access Tor using Tor Browser, available as the [tor-browser](https://aur.archlinux.org/packages/tor-browser/) package or a [portable executable](https://www.torproject.org/projects/torbrowser.html.en).
 
-The [arm](https://www.archlinux.org/packages/?name=arm) (Anonymizing Relay Monitor) package provides a terminal status monitor for bandwidth usage, connection details and more.
+The [nyx](https://www.archlinux.org/packages/?name=nyx) (previously named arm - Anonymizing Relay Monitor) package provides a terminal status monitor for bandwidth usage, connection details and more.
 
 ## Configuration
 
@@ -346,10 +346,10 @@ In this example the container will reside in `/srv/container`:
 
 [Install](/index.php/Install "Install") the [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts).
 
-Install [base](https://www.archlinux.org/groups/x86_64/base/), [tor](https://www.archlinux.org/packages/?name=tor) and [arm](https://www.archlinux.org/packages/?name=arm) and deselect [linux](https://www.archlinux.org/packages/?name=linux) as per [Systemd-nspawn#Create and boot a minimal Arch Linux distribution in a container](/index.php/Systemd-nspawn#Create_and_boot_a_minimal_Arch_Linux_distribution_in_a_container "Systemd-nspawn"):
+Install [base](https://www.archlinux.org/groups/x86_64/base/), [tor](https://www.archlinux.org/packages/?name=tor) and [nyx](https://www.archlinux.org/packages/?name=nyx) and deselect [linux](https://www.archlinux.org/packages/?name=linux) as per [Systemd-nspawn#Create and boot a minimal Arch Linux distribution in a container](/index.php/Systemd-nspawn#Create_and_boot_a_minimal_Arch_Linux_distribution_in_a_container "Systemd-nspawn"):
 
 ```
-# pacstrap -i -c -d /srv/container/tor-exit base tor arm
+# pacstrap -i -c -d /srv/container/tor-exit base tor nyx
 
 ```
 
@@ -703,8 +703,8 @@ SocksPort 0                                       ## Pure relay configuration wi
 
 Log notice stdout                                 ## Default Tor behavior
 
-ControlPort 9051                                  ## For arm connection
-CookieAuthentication 1                            ## For arm connection
+ControlPort 9051                                  ## For nyx connection
+CookieAuthentication 1                            ## For nyx connection
 
 ORPort 443                                        ## Service must be started as root
 
@@ -725,7 +725,7 @@ ExitPolicy reject XXX.XXX.XXX.XXX/XX:*            ## Block domain of public IP i
 
 User tor                                          ## Return to tor user after service started as root to listen on privileged ports
 
-DisableDebuggerAttachment 0                       ## For arm connection
+DisableDebuggerAttachment 0                       ## For nyx connection
 
 ### Performance related options ###
 AvoidDiskWrites 1                                 ## Reduce wear on SSD
@@ -738,7 +738,7 @@ This configuration is based on the [Tor Manual](https://www.torproject.org/docs/
 
 Tor opens a socks proxy on port 9050 by default -- even if you do not configure one. Set `SocksPort 0` if you plan to run Tor only as a relay, and not make any local application connections yourself.
 
-`Log notice stdout` changes logging to stdout, which is also the Tor default. `ControlPort 9051`, `CookieAuthentication 1` and `DisableDebuggerAttachment 0` enables [arm](https://www.archlinux.org/packages/?name=arm) to connect to Tor and display connections.
+`Log notice stdout` changes logging to stdout, which is also the Tor default. `ControlPort 9051`, `CookieAuthentication 1` and `DisableDebuggerAttachment 0` enables [nyx](https://www.archlinux.org/packages/?name=nyx) to connect to Tor and display connections.
 
 `ORPort 443` and `DirPort 80` lets Tor listen on port 443 and 80 and `DirPortFrontPage` displays the [tor-exit-notice.html](https://gitweb.torproject.org/tor.git/plain/contrib/operator-tools/tor-exit-notice.html) on port 80.
 
@@ -750,11 +750,11 @@ If `# cat /proc/cpuinfo` returns that your CPU supports AES instructions and `# 
 
 `ORPort 443`, `DirPort 80` and `DisableAllSwap 1` require that you start the Tor service as `root` as described in [#Start tor.service as root to bind Tor to privileged ports](#Start_tor.service_as_root_to_bind_Tor_to_privileged_ports). Use the `User tor` option to properly reduce Tor’s privileges.
 
-##### arm
+##### nyx
 
-If `ControlPort 9051` and `CookieAuthentication 1` is specified in `/etc/tor/torrc`, [arm](https://www.archlinux.org/packages/?name=arm) can be started with `sudo -u tor arm`. If you want to watch Tor connections in [arm](https://www.archlinux.org/packages/?name=arm) `DisableDebuggerAttachment 0` must also be specified.
+If `ControlPort 9051` and `CookieAuthentication 1` is specified in `/etc/tor/torrc`, [nyx](https://www.archlinux.org/packages/?name=nyx) can be started with `sudo -u tor nyx`. If you want to watch Tor connections in [nyx](https://www.archlinux.org/packages/?name=nyx) `DisableDebuggerAttachment 0` must also be specified.
 
-If you want to run `arm` as a different user than `tor`, read section [#Set a Tor Control cookie file](#Set_a_Tor_Control_cookie_file)
+If you want to run `nyx` as a different user than `tor`, read section [#Set a Tor Control cookie file](#Set_a_Tor_Control_cookie_file)
 
 ##### iptables
 

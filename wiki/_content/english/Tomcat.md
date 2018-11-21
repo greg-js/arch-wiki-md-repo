@@ -7,8 +7,8 @@ Tomcat is an open source Java [Servlet container](https://en.wikipedia.org/wiki/
 *   [1 Installation](#Installation)
     *   [1.1 Filesystem hierarchy](#Filesystem_hierarchy)
 *   [2 Initial configuration](#Initial_configuration)
-*   [3 Start/stop Tomcat](#Start.2Fstop_Tomcat)
-    *   [3.1 Alternate "manual" way](#Alternate_.22manual.22_way)
+*   [3 Start/stop Tomcat](#Start/stop_Tomcat)
+    *   [3.1 Alternate "manual" way](#Alternate_"manual"_way)
 *   [4 Deploy and handle web applications](#Deploy_and_handle_web_applications)
     *   [4.1 The GUI way](#The_GUI_way)
     *   [4.2 The CLI way](#The_CLI_way)
@@ -16,16 +16,16 @@ Tomcat is an open source Java [Servlet container](https://en.wikipedia.org/wiki/
 *   [5 Logging](#Logging)
 *   [6 Further setup](#Further_setup)
     *   [6.1 Migrating from previous versions of Tomcat](#Migrating_from_previous_versions_of_Tomcat)
-    *   [6.2 Using Tomcat with a different JRE/JDK](#Using_Tomcat_with_a_different_JRE.2FJDK)
+    *   [6.2 Using Tomcat with a different JRE/JDK](#Using_Tomcat_with_a_different_JRE/JDK)
     *   [6.3 Security configuration](#Security_configuration)
 *   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 Tomcat service is started, but page is not loaded](#Tomcat_service_is_started.2C_but_page_is_not_loaded)
+    *   [7.1 Tomcat service is started, but page is not loaded](#Tomcat_service_is_started,_but_page_is_not_loaded)
 
 ## Installation
 
-Install one of [tomcat7](https://www.archlinux.org/packages/?name=tomcat7), or [tomcat8](https://www.archlinux.org/packages/?name=tomcat8).
+Install one of [tomcat7](https://www.archlinux.org/packages/?name=tomcat7), [tomcat8](https://www.archlinux.org/packages/?name=tomcat8), or tomcat9.
 
-If deploying Tomcat onto a production environment, consider installing [tomcat-native](https://www.archlinux.org/packages/?name=tomcat-native). The native library for Tomcat configures the server to use the Apache Portable Runtime (APR) library's network connection (socket) and RNG implementations. It uses native 32- or 64-bit code to enhance performance and is sometimes used in production environments where speed is crucial. No configuration is necessary for default Tomcat installations. More information is availble in the [official Tomcat docs](http://tomcat.apache.org/native-doc/).
+If deploying Tomcat onto a production environment, consider installing [tomcat-native](https://www.archlinux.org/packages/?name=tomcat-native). The native library for Tomcat configures the server to use the Apache Portable Runtime (APR) library's network connection (socket) and RNG implementations. It uses native 32- or 64-bit code to enhance performance and is sometimes used in production environments where speed is crucial. No configuration is necessary for default Tomcat installations. More information is availble in the [official Tomcat docs](http://tomcat.apache.org/native-doc/). To install Tomcat in version 9 witch is needed for servlet specification 4.0 is at the moment missing and will come soon as possible. To install tomcat in version 9 follow the instructions in the [official Tomcat 9 docs](https://tomcat.apache.org/tomcat-9.0-doc/index.html).
 
 Using tomcat-native will remove the following warning in `catalina.err`:
 

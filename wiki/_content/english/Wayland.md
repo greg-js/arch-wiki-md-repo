@@ -3,7 +3,7 @@ Related articles
 *   [KMS](/index.php/KMS "KMS")
 *   [Xorg](/index.php/Xorg "Xorg")
 
-[Wayland](http://wayland.freedesktop.org/) is a protocol for a [compositing window manager](https://en.wikipedia.org/wiki/Compositing_window_manager "wikipedia:Compositing window manager") to talk to its clients, as well as a library implementing the protocol. It is supported on some desktop environments like [GNOME](/index.php/GNOME "GNOME") and [KDE](/index.php/KDE "KDE"). There is also a compositor reference implementation called Weston. XWayland implements a compatibility layer to seamlessly run legacy [X11](/index.php/X11 "X11") applications on Wayland.
+[Wayland](http://wayland.freedesktop.org/) is a protocol for a [compositing window manager](https://en.wikipedia.org/wiki/Compositing_window_manager "wikipedia:Compositing window manager") to talk to its clients, as well as a library implementing the protocol. It is supported on some desktop environments like [GNOME](/index.php/GNOME "GNOME") and [KDE](/index.php/KDE "KDE"). There is also a compositor reference implementation called Weston. XWayland provides a compatibility layer to seamlessly run legacy [X11](/index.php/X11 "X11") applications in Wayland.
 
 ## Contents
 
@@ -29,17 +29,18 @@ Related articles
     *   [3.7 EFL](#EFL)
 *   [4 Compositors](#Compositors)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Running graphical applications as root](#Running_graphical_applications_as_root)
-    *   [5.2 LLVM assertion failure](#LLVM_assertion_failure)
-    *   [5.3 Slow motion, graphical glitches, and crashes](#Slow_motion,_graphical_glitches,_and_crashes)
-    *   [5.4 X11 on tty1, Wayland on tty2](#X11_on_tty1,_Wayland_on_tty2)
-    *   [5.5 GNOME Wayland on tty1, Weston on tty2](#GNOME_Wayland_on_tty1,_Weston_on_tty2)
-    *   [5.6 Electron based applications / VS Code](#Electron_based_applications_/_VS_Code)
-    *   [5.7 weston-terminal](#weston-terminal)
-    *   [5.8 screen recording](#screen_recording)
-    *   [5.9 remote display](#remote_display)
-    *   [5.10 Input grabbing in games, remote desktop and VM windows](#Input_grabbing_in_games,_remote_desktop_and_VM_windows)
-        *   [5.10.1 wlroots input inhibitor protocol](#wlroots_input_inhibitor_protocol)
+    *   [5.1 Gamma](#Gamma)
+    *   [5.2 Running graphical applications as root](#Running_graphical_applications_as_root)
+    *   [5.3 LLVM assertion failure](#LLVM_assertion_failure)
+    *   [5.4 Slow motion, graphical glitches, and crashes](#Slow_motion,_graphical_glitches,_and_crashes)
+    *   [5.5 X11 on tty1, Wayland on tty2](#X11_on_tty1,_Wayland_on_tty2)
+    *   [5.6 GNOME Wayland on tty1, Weston on tty2](#GNOME_Wayland_on_tty1,_Weston_on_tty2)
+    *   [5.7 Electron based applications / VS Code](#Electron_based_applications_/_VS_Code)
+    *   [5.8 Weston terminal](#Weston_terminal)
+    *   [5.9 Screen recording](#Screen_recording)
+    *   [5.10 Remote display](#Remote_display)
+    *   [5.11 Input grabbing in games, remote desktop and VM windows](#Input_grabbing_in_games,_remote_desktop_and_VM_windows)
+        *   [5.11.1 wlroots input inhibitor protocol](#wlroots_input_inhibitor_protocol)
 *   [6 See also](#See_also)
 
 ## Requirements
@@ -156,10 +157,8 @@ focus-animation=dim-layer
 #binding-modifier=ctrl
 num-workspaces=6
 locking=false
-
-# for cursor themes install xcursor-themes pkg from Extra
-#cursor-theme=whiteglass
-#cursor-size=24
+cursor-theme=Adwaita
+cursor-size=24
 
 # tablet options
 #lockscreen-icon=/usr/share/icons/gnome/256x256/actions/lock.png
@@ -213,9 +212,9 @@ path=/usr/bin/weston-flower
 icon=/usr/share/icons/gnome/32x32/apps/utilities-terminal.png
 path=/usr/bin/weston-terminal --shell=/usr/bin/bash
 
-[launcher]
-icon=/usr/share/icons/gnome/32x32/apps/utilities-terminal.png
-path=/usr/bin/gnome-terminal
+#[launcher]
+#icon=/usr/share/icons/gnome/32x32/apps/utilities-terminal.png
+#path=/usr/bin/gnome-terminal
 
 [launcher]
 icon=/usr/share/icons/hicolor/32x32/apps/firefox.png
@@ -227,7 +226,7 @@ path=MOZ_GTK_TITLEBAR_DECORATION=client /usr/bin/firefox
 
 ```
 
-Minimal `weston.ini` :
+Minimal `weston.ini`:
 
  `~/.config/weston.ini` 
 ```
@@ -385,6 +384,15 @@ Some of the above may support [display managers](/index.php/Display_manager "Dis
 
 ## Troubleshooting
 
+### Gamma
+
+While [Redshift](/index.php/Redshift "Redshift") doesn't support Wayland (without a patch) it is possible to apply the desired temperature in tty before starting a compositor. For example:
+
+```
+redshift -m drm -PO 3000
+
+```
+
 ### Running graphical applications as root
 
 See [Running GUI apps as root](/index.php/Running_GUI_apps_as_root "Running GUI apps as root").
@@ -417,19 +425,19 @@ Gnome-shell users may experience display issues when they switch to Wayland from
 Try running with GDK_BACKEND=x11\. Example alias:
 
 ```
- $ alias code='GDK_BACKEND=x11 /usr/bin/code 2>/dev/null'
+$ alias code='GDK_BACKEND=x11 /usr/bin/code 2>/dev/null'
 
 ```
 
-### weston-terminal
+### Weston terminal
 
 (20161229) core dump when started on gnome
 
-### screen recording
+### Screen recording
 
 Currently only [green-recorder](https://aur.archlinux.org/packages/green-recorder/) supports screen recording on Wayland (requires a GNOME session).
 
-### remote display
+### Remote display
 
 *   (20180401) mutter has now remote desktop enabled at compile time, see [https://wiki.gnome.org/Projects/Mutter/RemoteDesktop](https://wiki.gnome.org/Projects/Mutter/RemoteDesktop) and [gnome-remote-desktop](https://www.archlinux.org/packages/?name=gnome-remote-desktop) for details.
 *   (20161229) there was a merge of FreeRDP into Weston in 2013, enabled via a compile flag. The [weston](https://www.archlinux.org/packages/?name=weston) package does not have it enabled.

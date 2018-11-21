@@ -35,7 +35,7 @@ $ sr duckduckgo *topic_name*
 
 ```
 
-You can also add surfraw to your `$PATH` to call the elvi directly.
+You can also add `/usr/lib/surfraw` to your `$PATH` to call the elvi directly.
 
 There are over 100 elvi available for searching the web, e.g. from amazon:
 
@@ -58,4 +58,4 @@ sr archwiki *article_name*
 
 ```
 
-For a full list of web site search scripts see: [List of Elvi](http://surfraw.alioth.debian.org/#elvilist)
+For a full list of web site search scripts see: [List of Elvi](https://gitlab.com/surfraw/Surfraw/wikis/current-elvi)

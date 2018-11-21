@@ -17,8 +17,8 @@ This article describes how to set up Dovecot for personal or small office use.
 *   [2 Configuration](#Configuration)
     *   [2.1 Assumptions](#Assumptions)
     *   [2.2 Create the TLS certificate](#Create_the_TLS_certificate)
-    *   [2.3 Generate DH parameters](#Generate_DH_parameters)
-    *   [2.4 Dovecot configuration](#Dovecot_configuration)
+    *   [2.3 Dovecot configuration](#Dovecot_configuration)
+    *   [2.4 Generate DH parameters](#Generate_DH_parameters)
     *   [2.5 PAM Authentication](#PAM_Authentication)
     *   [2.6 PAM Authentication with LDAP](#PAM_Authentication_with_LDAP)
     *   [2.7 Sieve](#Sieve)
@@ -58,6 +58,20 @@ The certificate/key pair is created as `/etc/ssl/certs/dovecot.pem` and `/etc/ss
 
 Run `cp /etc/ssl/certs/dovecot.pem /etc/ca-certificates/trust-source/anchors/dovecot.crt` and then `# trust extract-compat` whenever you have changed your certificate.
 
+### Dovecot configuration
+
+*   Copy the `dovecot.conf` and `conf.d/*` configuration files from `/usr/share/doc/dovecot/example-config` to `/etc/dovecot`:
+
+```
+# cp /usr/share/doc/dovecot/example-config/dovecot.conf /etc/dovecot
+# cp -r /usr/share/doc/dovecot/example-config/conf.d /etc/dovecot
+
+```
+
+The default configuration is ok for most systems, but make sure to read through the configuration files to see what options are available. See the [quick configuration guide](http://wiki2.dovecot.org/QuickConfiguration) and [dovecot configuration](http://wiki2.dovecot.org/#Dovecot_configuration) for more instructions.
+
+By default dovecot will try to detect what mail storage system is in use on the system. To use the Maildir format edit `/etc/dovecot/conf.d/10-mail.conf` to set `mail_location = maildir:~/Maildir`.
+
 ### Generate DH parameters
 
 To generate a new DH parameters file (this will take very long):
@@ -73,20 +87,6 @@ then add the file to `/etc/dovecot/conf.d/10-ssl.conf`
 ssl_dh = </etc/dovecot/dh.pem
 
 ```
-
-### Dovecot configuration
-
-*   Copy the `dovecot.conf` and `conf.d/*` configuration files from `/usr/share/doc/dovecot/example-config` to `/etc/dovecot`:
-
-```
-# cp /usr/share/doc/dovecot/example-config/dovecot.conf /etc/dovecot
-# cp -r /usr/share/doc/dovecot/example-config/conf.d /etc/dovecot
-
-```
-
-The default configuration is ok for most systems, but make sure to read through the configuration files to see what options are available. See the [quick configuration guide](http://wiki2.dovecot.org/QuickConfiguration) and [dovecot configuration](http://wiki2.dovecot.org/#Dovecot_configuration) for more instructions.
-
-By default dovecot will try to detect what mail storage system is in use on the system. To use the Maildir format edit `/etc/dovecot/conf.d/10-mail.conf` to set `mail_location = maildir:~/Maildir`.
 
 ### PAM Authentication
 

@@ -363,7 +363,7 @@ Individual rules can only be deleted by their handles. The `nft --handle list` c
 
 The following determines the handle for a rule and then deletes it. The `--number` argument is useful for viewing some numeric output, like unresolved IP addresses.
 
- `# nft --handle --numeric list chain filter input` 
+ `# nft --handle --numeric list chain inet filter input` 
 ```
 table ip fltrTable {
      chain input {
@@ -375,7 +375,7 @@ table ip fltrTable {
 ```
 
 ```
-# nft delete rule fltrTable input handle 10
+# nft delete rule inet fltrTable input handle 10
 
 ```
 
