@@ -3116,7 +3116,7 @@ Vea el artículo principal: [Xorg#Composite](/index.php/Xorg_(Espa%C3%B1ol)#Comp
 
 	[http://fbpanel.sourceforge.net/](http://fbpanel.sourceforge.net/) || [fbpanel](https://aur.archlinux.org/packages/fbpanel/)
 
-*   **[GNOME Panel](https://en.wikipedia.org/wiki/GNOME_Panel "wikipedia:GNOME Panel")** — Panel incluido en el escritorio [GNOME Flashback](/index.php?title=GNOME_Flashback_(Espa%C3%B1ol)&action=edit&redlink=1 "GNOME Flashback (Español) (page does not exist)").
+*   **[GNOME Panel](https://en.wikipedia.org/wiki/GNOME_Panel "wikipedia:GNOME Panel")** — Panel incluido en el escritorio [GNOME Flashback](/index.php/GNOME/Flashback "GNOME/Flashback").
 
 	[https://wiki.gnome.org/GnomePanel](https://wiki.gnome.org/GnomePanel) || [gnome-panel](https://www.archlinux.org/packages/?name=gnome-panel)
 
@@ -3228,7 +3228,7 @@ Véase también [Wikipedia:Comparison of desktop application launchers](https://
 
 	[http://davedavenport.github.io/rofi/](http://davedavenport.github.io/rofi/) || [rofi](https://www.archlinux.org/packages/?name=rofi)
 
-*   **slingshot** — Un lanzador de aplicaciones con estilo que forma parte del entorno de escritorio [pantheon](/index.php?title=Pantheon_(Espa%C3%B1ol)&action=edit&redlink=1 "Pantheon (Español) (page does not exist)").
+*   **slingshot** — Un lanzador de aplicaciones con estilo que forma parte del entorno de escritorio [pantheon](/index.php/Pantheon "Pantheon").
 
 	[https://launchpad.net/slingshot](https://launchpad.net/slingshot) || [slingshot-launcher](https://aur.archlinux.org/packages/slingshot-launcher/)
 

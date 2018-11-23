@@ -515,7 +515,7 @@ It is possible to control both volume and media playback via a combination of am
    end),
    awful.key({}, "XF86AudioPrev", function()
      awful.util.spawn("playerctl previous", false)
-   end)
+   end),
 
 ```
 

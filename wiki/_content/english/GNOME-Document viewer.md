@@ -11,7 +11,7 @@ Document viewer uses the poppler library as a backend.
     *   [2.1 Printer does not show up](#Printer_does_not_show_up)
     *   [2.2 Zoom-in is limited](#Zoom-in_is_limited)
     *   [2.3 PDF texts is not show correctly](#PDF_texts_is_not_show_correctly)
-    *   [2.4 Inverse search with SyncTeX doesn't work](#Inverse_search_with_SyncTeX_doesn.27t_work)
+    *   [2.4 Inverse search with SyncTeX doesn't work](#Inverse_search_with_SyncTeX_doesn't_work)
 *   [3 See also](#See_also)
 
 ## Installation
@@ -24,7 +24,7 @@ For a standalone version install [evince-no-gnome](https://aur.archlinux.org/pac
 
 ### Printer does not show up
 
-Upgrade [gtk3](https://www.archlinux.org/packages/?name=gtk3) to version `3.22.26+47+g3a1a7135a2-1` or higher. In previous GTK+ 3 versions, the printer GTK+ printer backends were included in a separate package. [[1]](https://git.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/gtk3&id=54e7af64837e18355122e62ff565970620db3537)
+Upgrade [gtk3](https://www.archlinux.org/packages/?name=gtk3) to version `3.22.26+47+g3a1a7135a2-1` or higher. In previous GTK+ 3 versions, the GTK+ printer backends were included in a separate package. [[1]](https://git.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/gtk3&id=54e7af64837e18355122e62ff565970620db3537)
 
 ### Zoom-in is limited
 
@@ -39,7 +39,7 @@ $ gsettings set org.gnome.Evince page-cache-size 'uint32 1000'
 
 ### PDF texts is not show correctly
 
-try setting `override-restrictions` parameter to false:
+Try setting `override-restrictions` parameter to false:
 
 ```
 $ gsettings set org.gnome.Evince override-restrictions false
@@ -48,7 +48,7 @@ $ gsettings set org.gnome.Evince override-restrictions false
 
 ### Inverse search with SyncTeX doesn't work
 
-Check that [python-dbus](https://www.archlinux.org/packages/?name=python-dbus) is installed. After that ctrl+click should work.
+Check that [python-dbus](https://www.archlinux.org/packages/?name=python-dbus) is [installed](/index.php/Install "Install"). After that `Ctrl+click` should work.
 
 ## See also
 

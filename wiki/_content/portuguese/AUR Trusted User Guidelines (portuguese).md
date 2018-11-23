@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [AUR Trusted User Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines"). Data da última tradução: 2018-09-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AUR_Trusted_User_Guidelines&diff=0&oldid=542576) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [AUR Trusted User Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines"). Data da última tradução: 2018-11-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AUR_Trusted_User_Guidelines&diff=0&oldid=554812) na versão em inglês.
 
 Artigos relacionados
 
@@ -33,6 +33,7 @@ Os TUs são governados usando as [TU bylaws](https://aur.archlinux.org/trusted-u
 5.  Se inscrever na lista de discussão pública de desenvolvimento do Arch Linux, [arch-dev-public](https://lists.archlinux.org/listinfo/arch-dev-public).
 6.  Lembrar um [administrador do BBS](https://bbs.archlinux.org/userlist.php?username=&show_group=1&sort_by=username&sort_dir=ASC&search=Submit) de alterar sua conta nos fóruns.
 7.  Perguntar a algum TU pela chave do #archlinux-tu@freenode e se fazer presente no canal. Você não tem que fazer isso, mas seria interessante já que é lá que a maioria dos segredos ocultos são apresentados e é onde muitas novas ideias são concebidas.
+    *   Se você precisar de um bouncer, peça ao heftig por um convite de [Matrix](/index.php/Matrix "Matrix") ou execute `givemequassel` no servidor *soyuz.archlinux.org*, então autentique-se usando [Quassel](/index.php/Quassel "Quassel").
     *   Uma vez no canal, se você quiser uma manta de @archlinux/trusteduser/*, peça ao nosso [contato no grupo](https://freenode.net/groupreg#two-types-of-group-contacts-exist-for-freenode), ioni, para obter uma.
 8.  Criar uma chave PGP para [assinatura de pacotes](/index.php/Assinatura_de_pacote "Assinatura de pacote") ou usar sua chave PGP existente. Certifique-se de que a chave também contém uma subchave criptográfica de forma você possa receber tokens de verificação criptografados.
 9.  Enviar um e-mail assinado para Florian Pritz (bluewind@xinu.at) ou Bartłomiej Piotrowski (bpiotrowski@archlinux.org):

@@ -4,16 +4,15 @@ WvDial is a Point-to-Point Protocol dialer: it dials a modem and starts [ppp](/i
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-*   [3 Using wvdial](#Using_wvdial)
-    *   [3.1 Using suid](#Using_suid)
-    *   [3.2 Using a dialout group](#Using_a_dialout_group)
-    *   [3.3 Using sudo](#Using_sudo)
+*   [3 Usage](#Usage)
+    *   [3.1 suid](#suid)
+    *   [3.2 A group](#A_group)
+    *   [3.3 sudo](#sudo)
 *   [4 Tips and Tricks](#Tips_and_Tricks)
     *   [4.1 Low connection speed](#Low_connection_speed)
-        *   [4.1.1 QoS parameter](#QoS_parameter)
-        *   [4.1.2 Baud parameter](#Baud_parameter)
     *   [4.2 Auto Reconnect](#Auto_Reconnect)
     *   [4.3 Multiple devices](#Multiple_devices)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -61,7 +60,7 @@ Init3 = AT+CGDCONT=1,"IP","apn.thenet.net"
 Init4 = AT+CPIN=1234
 ```
 
-## Using wvdial
+## Usage
 
 There are a few different ways of giving regular users the ability to use **wvdial** to dial a ppp connection. This document describes three different ways, each of them differ in difficulty to set up and the implication on security.
 
@@ -79,7 +78,7 @@ Leave <section> blank if you have not added a section or if `/etc/wvdial.conf` i
 
 ```
 
-### Using suid
+### suid
 
 **Warning:** This is arguable the easiest setup but has major impact on system security since it means that **every user can run `wvdial` as root**. Please consider using one of the other solutions instead.
 
@@ -98,7 +97,7 @@ You should see the following permissions:
 
 ```
 
-### Using a dialout group
+### A group
 
 Another, slightly more secure way is to set up a group called **dialout** (call the group as prefered) and give members of this group permission to run `wvdial` as root.
 
@@ -128,9 +127,7 @@ The files should have the following permissions:
 
 ```
 
-### Using sudo
-
-	*See main article: [sudo](/index.php/Sudo "Sudo")*
+### sudo
 
 [sudo](/index.php/Sudo "Sudo") arguably offers the most secure option to allow regular users to establish dial-up connections using `wvdial`. It can be used to give permission both on a per-user and group basis. Another benefit of using `sudo` is that it is only needed to do the setup once; both previous solutions will be "undone" when a new package of `wvdial` is installed.
 
@@ -163,30 +160,7 @@ The following are applicable to USB modems.
 
 ### Low connection speed
 
-Someone claims that the connection speed under linux is lower than Windows. [https://bbs.archlinux.org/viewtopic.php?id=111513](https://bbs.archlinux.org/viewtopic.php?id=111513)
-
-A short summary for possible solutions which are not fully verified. In most of conditions, the low speed is caused by bad receiver signals and too many people in cell. But you still could use the following method to try to improve the connection speed.
-
-#### QoS parameter
-
-AT+CGEQMIN and AT+CGEQREQ command could used to set the Qos command. And also it should be possible to used to decrease and limit the connect speed. Add the following Init command in `/etc/wvdial.conf`.
-
-```
-Init6 = AT+CGEQMIN=1,4,64,640,64,640
-Init7 = AT+CGEQREQ=1,4,64,640,64,640
-
-```
-
-#### Baud parameter
-
-Baud parameter in `/etc/wvdial.conf` could be used to increase the connection speed.
-
-```
-Baud = 460800
-
-```
-
-It is advisable to see the baud rate set by the official modem application under Windows.
+See [USB 3G Modem#Low connection speed](/index.php/USB_3G_Modem#Low_connection_speed "USB 3G Modem").
 
 ### Auto Reconnect
 
@@ -226,3 +200,7 @@ wvdial thenet
 where VVVV is the hexadecimal vendor ID from lsusb, MMMM is the hexadecimal product ID *when in modem mode*, and "thenet" is the name of the section in wvdial.conf which you wish to use. The maxSize option may or may not be necessary. It simplifies matters if you disable the SIM PIN, but if you require it, run "wvdial mypin" before "wvdial thenet".
 
 The final wvdial command should start pppd and the obained IP address should be visible in the terminal output. At that point the internet connection should be live, which can be easily checked with a web browser or by pinging an external IP address.
+
+## See also
+
+*   [GitHub repository](https://github.com/wlach/wvdial)

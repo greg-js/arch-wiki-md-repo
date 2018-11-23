@@ -97,7 +97,7 @@ Los ejemplos de las secciones siguientes producirán el mismo resultado, esto es
 
 ### Utilizar setxkbmap
 
-La herramienta *setxkbmap* establece la distribución del teclado para un servidor X activo y mantiene la configuración solo durante la sesión en curso. No obstante, puede utilizarse [xinitrc](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)") para hacer que la configuración se mantenga después de los reinicios. Esto último es útil para establecer una configuración específica para nuestra sesión de usuario distinta de la establecida para todo el sistema por los [archivos de configuración de X](#Using_X_configuration_files).
+La herramienta *setxkbmap* establece la distribución del teclado para un servidor X activo y mantiene la configuración solo durante la sesión en curso. No obstante, puede utilizarse [xinitrc](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)") para hacer que la configuración se mantenga después de los reinicios. Esto último es útil para establecer una configuración específica para nuestra sesión de usuario distinta de la establecida para todo el sistema por los [archivos de configuración de X](#Utilizar_los_archivos_de_configuración_de_X).
 
 Su uso es como sigue:
 
@@ -210,7 +210,7 @@ Puede definir sus propias combinaciones de la tecla compose copiando el archivo 
 
 No obstante lo anterior, GTK no utiliza [XIM](https://en.wikipedia.org/wiki/X_Input_Method "wikipedia:X Input Method") de forma predeterminada, por lo que no lee las teclas de `~/.XCompose`. Esto se puede solucionar obligando a GTK a utilizar XIM añadiendo `export GTK_IM_MODULE=xim` y/o `export XMODIFIERS="@im=none"` a `~/.xprofile`.
 
-**Sugerencia:** XIM es muy antiguo, es posible que tenga más suerte con otros métodos de entrada: [SCIM](https://en.wikipedia.org/wiki/Smart_Common_Input_Method "wikipedia:Smart Common Input Method"), [uim](https://en.wikipedia.org/wiki/Uim "wikipedia:Uim"), [IBus](https://en.wikipedia.org/wiki/Intelligent_Input_Bus "wikipedia:Intelligent Input Bus") etc. Véase [Internationalization#Input methods in Xorg](/index.php/Internationalization#Input_methods_in_Xorg "Internationalization") para conocer más detalles.
+**Sugerencia:** XIM es muy antiguo, es posible que tenga más suerte con otros métodos de entrada: [SCIM](https://en.wikipedia.org/wiki/Smart_Common_Input_Method "wikipedia:Smart Common Input Method"), [uim](https://en.wikipedia.org/wiki/Uim "wikipedia:Uim"), [IBus](https://en.wikipedia.org/wiki/Intelligent_Input_Bus "wikipedia:Intelligent Input Bus") etc. Véase [Internationalization#Input methods](/index.php/Internationalization#Input_methods "Internationalization") para conocer más detalles.
 
 ## Otros ajustes
 

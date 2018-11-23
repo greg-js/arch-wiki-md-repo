@@ -5,7 +5,7 @@
     *   [2.1 Quick Start](#Quick_Start)
         *   [2.1.1 Easy Install using Network Manager](#Easy_Install_using_Network_Manager)
         *   [2.1.2 Bare Naked](#Bare_Naked)
-        *   [2.1.3 Configure n' Dial](#Configure_n.27_Dial)
+        *   [2.1.3 Configure n' Dial](#Configure_n'_Dial)
         *   [2.1.4 If using PIN code add this before Init2](#If_using_PIN_code_add_this_before_Init2)
     *   [2.2 Slow Start](#Slow_Start)
 *   [3 Extras](#Extras)

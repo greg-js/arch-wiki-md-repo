@@ -22,17 +22,18 @@ Táto stránka popisuje postup rozbehania čítačky a aplikácie eID klient pre
 
 ## Inštalácia
 
-1\. Balíčky zo štandardných repozitárov [glibc](https://www.archlinux.org/packages/?name=glibc), [chrpath](https://www.archlinux.org/packages/?name=chrpath), [openssl](https://www.archlinux.org/packages/?name=openssl), [qt4](https://www.archlinux.org/packages/?name=qt4), [pcsclite](https://www.archlinux.org/packages/?name=pcsclite), [pcsc-tools](https://www.archlinux.org/packages/?name=pcsc-tools), [openssl](https://www.archlinux.org/packages/?name=openssl), [xterm](https://www.archlinux.org/packages/?name=xterm), [qt5-imageformats](https://www.archlinux.org/packages/?name=qt5-imageformats), [ccid](https://www.archlinux.org/packages/?name=ccid):
+1\. Balíčky zo štandardných repozitárov [glibc](https://www.archlinux.org/packages/?name=glibc), [chrpath](https://www.archlinux.org/packages/?name=chrpath), [openssl](https://www.archlinux.org/packages/?name=openssl), [qt4](https://www.archlinux.org/packages/?name=qt4), [pcsclite](https://www.archlinux.org/packages/?name=pcsclite), [pcsc-tools](https://www.archlinux.org/packages/?name=pcsc-tools), [openssl](https://www.archlinux.org/packages/?name=openssl), [xterm](https://www.archlinux.org/packages/?name=xterm), [qt5-imageformats](https://www.archlinux.org/packages/?name=qt5-imageformats), [ccid](https://www.archlinux.org/packages/?name=ccid), [openssl-1.0](https://www.archlinux.org/packages/?name=openssl-1.0), [libcurl-compat](https://www.archlinux.org/packages/?name=libcurl-compat):
 
 ```
-sudo pacman -S glibc chrpath openssl qt4 pcsclite pcsc-tools openssl xterm qt5-imageformats ccid
+sudo pacman -S glibc chrpath openssl qt4 pcsclite pcsc-tools openssl xterm qt5-imageformats ccid openssl-1.0 libcurl-compat
 
 ```
 
-2\. AUR balíček [debtap](https://aur.archlinux.org/packages/debtap/):
+2\. AUR balíček [debtap](https://aur.archlinux.org/packages/debtap/), [libcurl-openssl-1.0](https://aur.archlinux.org/packages/libcurl-openssl-1.0/):
 
 ```
 yaourt debtap
+yaourt libcurl-openssl-1.0
 
 ```
 
@@ -51,12 +52,12 @@ sudo debtap -u
 tar -zxf Aplikacia_pre_eID_*_debian.tar.gz
 sudo debtap -u
 debtap Aplikacia_pre_eID_*_debian.deb
-                 `**# Prve dve otázky pri spustení tohto príkazu stačí iba odklepnúť enterom.**`
+                 `**# Prve dve otázky pri spustení tohto príkazu stačí odklepnúť enterom.**`
                  `**# Následne je potreba upraviť ".PKGINFO":**`
                                    `**# V default vygenerovanom ".PKGINFO" sa objaví min. 6x "Carriage return" (^M), ktorý je potrebné odstrániť zo všetkých riadkov.**`
                                    `**# Taktiež doporučujem opraviť "pkgname = eac-mw-klient" na "pkgname = eidklient".**`
                                    `**# Následne ".PKGINFO" uložiť a preskociť dalšie zmeny v zostávajucich súboroch.**`
-sudo pacman -U *.pkg.tar.xz
+sudo pacman -U eidklient*.pkg.tar.xz
 
 ```
 
@@ -94,6 +95,19 @@ cp /usr/lib/eac_mw_klient/*.desktop ~/Desktop
 
 ```
 
+9\. eIDklient verzia 3 disig-web-designer (pre online nahrávanie certifikátov na občianske preukazy s čipom) [balíček Debian 8/9 32-bit](https://download.disigcdn.sk/cdn/products/websigner/disig-web-signer-1-0-7_1.1.5-1.debian_i386.deb) alebo [balíček Debian 8/9 64-bit](https://download.disigcdn.sk/cdn/products/websigner/disig-web-signer-1-0-7_1.1.5-1.debian_amd64.deb)
+
+```
+debtap disig-web-signer-*.debian_amd64.deb
+                 `**# Prve dve otázky pri spustení tohto príkazu stačí odklepnúť enterom.**`
+                 `**# Následne je potreba upraviť ".PKGINFO":**`
+                                   `**# Úplne vymazať riadok obsahujúci "depend = gdebi".**`
+                                   `**# Riadok obsahujúci "depend = libgl1-mesa-glx" možno nahradiť nasledujúcim "depend = mesa".**`
+                                   `**# Následne ".PKGINFO" uložiť a preskociť dalšie zmeny v zostávajucich súboroch.**`
+sudo pacman -U disig-web-signer*.pkg.tar.xz
+
+```
+
 ## Oficiálna príručka
 
 Na stánkach [Min. vnútra SR](https://eidas.minv.sk/TCTokenService/download/) alebo [slovensko.sk](https://www.slovensko.sk/sk/na-stiahnutie)
@@ -103,7 +117,7 @@ Na stánkach [Min. vnútra SR](https://eidas.minv.sk/TCTokenService/download/) a
 ### Prvé spustenie
 
 ```
-EAC_MW_klient
+LD_PRELOAD=/usr/lib/libcurl-openssl-1.0.so EAC_MW_klient
 
 ```
 

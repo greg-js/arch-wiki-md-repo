@@ -7,6 +7,7 @@
     *   [2.1 Apache](#Apache)
     *   [2.2 PHP](#PHP)
     *   [2.3 MySQL](#MySQL)
+        *   [2.3.1 Security](#Security)
     *   [2.4 Starting](#Starting)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Flushing application data](#Flushing_application_data)
@@ -51,13 +52,13 @@ Include conf/extra/httpd-zoneminder.conf
 Edit `/etc/php/php.ini`. Ensure the following extensions are enabled by uncommenting these lines:
 
 ```
- extension=ftp
- extension=gd
- extension=gettext
- extension=mcrypt
- extension=pdo_mysql
- extension=sockets
- extension=zip
+extension=apcu
+extension=ftp
+extension=gd
+extension=gettext
+extension=pdo_mysql
+extension=sockets
+extension=zip
 
 ```
 
@@ -69,6 +70,31 @@ date.timezone = "Australia/Sydney"
 ```
 
 See [http://php.net/manual/en/timezones.php](http://php.net/manual/en/timezones.php) for a list of timezones.
+
+Sometimes, the /etc/php/conf.d/zoneminder.ini file may appear:
+
+```
+ extension = apcu
+ extension = ftp
+ extension = gd
+ extension = gettext
+ extension = pdo_mysql
+ extension = sockets
+ extension = zip
+
+```
+
+```
+ date.timezone = PLACEHOLDER
+
+```
+
+if the zone is not logged, run:
+
+```
+ sed -i 's | PLACEHOLDER |' `timedatectl | grep "Time zone" | tr -s * | cut -f4 -d * `'| g' /etc/php/conf.d/zoneminder.ini
+
+```
 
 ### MySQL
 
@@ -99,15 +125,32 @@ ZM_DB_USER=zmuser
 ZM_DB_PASS=chosen_password
 ```
 
+#### Security
+
+To increase security, you need to set a password for the root user:
+
+```
+/usr/bin/mysqladmin' -u root password 'new-password'
+/usr/bin/mysqladmin' -u root -h lilya-x64 password 'new-password'
+
+```
+
+In addition, you can run:
+
+```
+ /usr/bin/mysql_secure_installation
+
+```
+
 ### Starting
 
-[Start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `httpd.service` and `zoneminder.service`.
+[Start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `httpd.service`, `zoneminder.service` and `php-fpm.service`.
 
 ## Troubleshooting
 
 Logs by default are kept in `/var/log/zoneminder`. You can also inspect the log within the web interface.
 
-See the upstream wiki page, [Troubleshooting](http://www.zoneminder.com/wiki/index.php/Troubleshooting).
+See the upstream wiki page: [Troubleshooting](http://www.zoneminder.com/wiki/index.php/Troubleshooting).
 
 ### Flushing application data
 
@@ -143,7 +186,7 @@ $ mysql -u root -p zm < /usr/share/zoneminder/db/zm_create.sql
 
 #### Flush the cache folders
 
-Note: this removes all images and events!
+**Warning:** This removes all images and events.
 
 ```
 $ rm -Rf /var/cache/zoneminder/events/* /var/cache/zoneminder/images/* /var/cache/zoneminder/temp/*
@@ -158,6 +201,13 @@ It is important that the user running httpd (usually **http**) can access your c
 
 That is, add the **http** user to the **video** group.
 
+To add a user to the group run the command:
+
+```
+usermod -aG video http
+
+```
+
 ### Multiple local USB cameras
 
 If you observe an error like, **libv4l2: error turning on stream: No space left on device** when using multiple USB video devices (such as multiple webcams), you may need to increase the bandwidth on the bus.
@@ -170,7 +220,7 @@ $ modprobe uvcvideo quirks=128
 
 ```
 
-Start `zoneminder.service` and if the issue is resolved, persist the change by adding the module option to `/etc/modprobe.d/uvcvideo.conf`. for example:
+Start `zoneminder.service` and if the issue is resolved, persist the change by adding the module option to `/etc/modprobe.d/uvcvideo.conf`. For example:
 
 ```
 options uvcvideo nodrop=1 quirks=128

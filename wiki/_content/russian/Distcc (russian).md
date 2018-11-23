@@ -7,23 +7,23 @@ Distcc это программа, предназначенная для расп
 
 ## Contents
 
-*   [1 Условия](#.D0.A3.D1.81.D0.BB.D0.BE.D0.B2.D0.B8.D1.8F)
-*   [2 Приступая к работе](#.D0.9F.D1.80.D0.B8.D1.81.D1.82.D1.83.D0.BF.D0.B0.D1.8F_.D0.BA_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B5)
-*   [3 Конфигурация](#.D0.9A.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D1.8F)
-    *   [3.1 Ведомый (Slaves)](#.D0.92.D0.B5.D0.B4.D0.BE.D0.BC.D1.8B.D0.B9_.28Slaves.29)
-    *   [3.2 Мастер](#.D0.9C.D0.B0.D1.81.D1.82.D0.B5.D1.80)
-        *   [3.2.1 Для использования с makepkg](#.D0.94.D0.BB.D1.8F_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F_.D1.81_makepkg)
+*   [1 Условия](#Условия)
+*   [2 Приступая к работе](#Приступая_к_работе)
+*   [3 Конфигурация](#Конфигурация)
+    *   [3.1 Ведомый (Slaves)](#Ведомый_(Slaves))
+    *   [3.2 Мастер](#Мастер)
+        *   [3.2.1 Для использования с makepkg](#Для_использования_с_makepkg)
         *   [3.2.2 For use without makepkg](#For_use_without_makepkg)
 *   [4 Compile](#Compile)
     *   [4.1 With makepkg](#With_makepkg)
     *   [4.2 Without makepkg](#Without_makepkg)
 *   [5 Monitoring progress](#Monitoring_progress)
-*   [6 "Cross Compiling" with distcc](#.22Cross_Compiling.22_with_distcc)
+*   [6 "Cross Compiling" with distcc](#"Cross_Compiling"_with_distcc)
     *   [6.1 X86](#X86)
-        *   [6.1.1 Chroot method (preferred)](#Chroot_method_.28preferred.29)
+        *   [6.1.1 Chroot method (preferred)](#Chroot_method_(preferred))
             *   [6.1.1.1 Add port numbers to DISTCC_HOSTS on the i686 chroot](#Add_port_numbers_to_DISTCC_HOSTS_on_the_i686_chroot)
             *   [6.1.1.2 Invoke makepkg from the Native Environment](#Invoke_makepkg_from_the_Native_Environment)
-        *   [6.1.2 Multilib GCC method (not recommended)](#Multilib_GCC_method_.28not_recommended.29)
+        *   [6.1.2 Multilib GCC method (not recommended)](#Multilib_GCC_method_(not_recommended))
     *   [6.2 Other architectures](#Other_architectures)
         *   [6.2.1 Arch ARM](#Arch_ARM)
         *   [6.2.2 Additional toolchains](#Additional_toolchains)
@@ -31,7 +31,7 @@ Distcc это программа, предназначенная для расп
     *   [7.1 Journalctl](#Journalctl)
     *   [7.2 code 110](#code_110)
     *   [7.3 Adjust log level](#Adjust_log_level)
-    *   [7.4 Limit HDD/SSD usage by relocating $HOME/.distcc](#Limit_HDD.2FSSD_usage_by_relocating_.24HOME.2F.distcc)
+    *   [7.4 Limit HDD/SSD usage by relocating $HOME/.distcc](#Limit_HDD/SSD_usage_by_relocating_$HOME/.distcc)
 
 ## Условия
 

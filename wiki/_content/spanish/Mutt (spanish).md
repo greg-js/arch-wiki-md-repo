@@ -39,7 +39,7 @@ Mutt se enfoca en ser un *Mail User Agent*, y fue originalmente escrito sólo pa
 
 De todos modos, el paquete [mutt](https://www.archlinux.org/packages/?name=mutt) de Arch ha sido compilado con soporte para IMAP, POP3 y SMTP, y por tanto no requiere programas externos para tratar con el correo.
 
-Este articulo cubrirá el envío/recepción con el IMAP nativo, y una configuración dependiente de [OfflineIMAP](/index.php?title=OfflineIMAP_(Espa%C3%B1ol)&action=edit&redlink=1 "OfflineIMAP (Español) (page does not exist)") o [getmail](/index.php?title=Getmail_(Espa%C3%B1ol)&action=edit&redlink=1 "Getmail (Español) (page does not exist)") (POP3) para recuperar correo, [procmail](/index.php?title=Procmail_(Espa%C3%B1ol)&action=edit&redlink=1 "Procmail (Español) (page does not exist)") para filtrarlo en el caso de POP3, y [msmtp](/index.php?title=Msmtp_(Espa%C3%B1ol)&action=edit&redlink=1 "Msmtp (Español) (page does not exist)") para enviarlo.
+Este articulo cubrirá el envío/recepción con el IMAP nativo, y una configuración dependiente de [OfflineIMAP](/index.php/OfflineIMAP "OfflineIMAP") o [getmail](/index.php/Getmail "Getmail") (POP3) para recuperar correo, [procmail](/index.php/Procmail "Procmail") para filtrarlo en el caso de POP3, y [msmtp](/index.php/Msmtp "Msmtp") para enviarlo.
 
 ## Instalación
 
@@ -227,7 +227,7 @@ Ahora ejecute getmail. Si funciona bien, puede crear un cronjob para getmail que
 
 #### Ordenando correo
 
-[Procmail](/index.php?title=Procmail_(Espa%C3%B1ol)&action=edit&redlink=1 "Procmail (Español) (page does not exist)") es una herramienta de ordenamiento extremadamente poderosa. Para los propósitos de este wiki se harán algunos orednamientos primitivos para comenzar.
+[Procmail](/index.php/Procmail "Procmail") es una herramienta de ordenamiento extremadamente poderosa. Para los propósitos de este wiki se harán algunos orednamientos primitivos para comenzar.
 
 Debe editar su getmailrc para pasar el correo recuperado a procmail:
 
@@ -290,7 +290,7 @@ set ssl_force_tls = yes
 
 #### Soporte externo de SMTP
 
-Se puede utilizar un agente SMTP externo como [msmtp](/index.php?title=Msmtp_(Espa%C3%B1ol)&action=edit&redlink=1 "Msmtp (Español) (page does not exist)") o [SSMTP](/index.php?title=SSMTP_(Espa%C3%B1ol)&action=edit&redlink=1 "SSMTP (Español) (page does not exist)"). Esta sección cubre exclusivamente la configuración de Mutt para msmtp.
+Se puede utilizar un agente SMTP externo como [msmtp](/index.php/Msmtp "Msmtp") o [SSMTP](/index.php?title=SSMTP_(Espa%C3%B1ol)&action=edit&redlink=1 "SSMTP (Español) (page does not exist)"). Esta sección cubre exclusivamente la configuración de Mutt para msmtp.
 
 Edite el archivo de configuración de Mutt o creelo si no está presente:
 

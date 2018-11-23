@@ -70,8 +70,6 @@ En la versión actual de systemd, las opciones `Handle*` se aplican a todo el si
 
 ### Sleep hooks
 
-Systemd no utiliza [pm-utils](/index.php/Pm-utils "Pm-utils") para poner la máquina en reposo cuando usa `systemctl suspend`, `systemctl hibernate` o `systemctl hybrid-sleep`; los hooks *pm-utils*, incluyendo cualesquiera [hooks personalizados](/index.php/Pm-utils#Creating_your_own_hooks "Pm-utils") que se hayan creado, no se ejecutarán. Sin embargo, systemd proporciona dos mecanismos similares para ejecutar scripts personalizados para estos eventos.
-
 #### Archivos de servicios para suspender/reanudar
 
 Los archivos de servicios pueden ser asociados a suspend.target, hibernate.target y sleep.target para ejecutar acciones antes o después de suspender/hibernar. Deben crearse archivos separados para las acciones del usuario y las acciones de root/sistema. Para activar los archivos de servicios del usuario, ejecute: `# systemctl enable suspend@<usuario> && systemctl enable resume@<usuario>`. Ejemplos:

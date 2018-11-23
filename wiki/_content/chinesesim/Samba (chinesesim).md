@@ -8,27 +8,27 @@
 
 ## Contents
 
-*   [1 服务器配置](#.E6.9C.8D.E5.8A.A1.E5.99.A8.E9.85.8D.E7.BD.AE)
-    *   [1.1 建立共享](#.E5.BB.BA.E7.AB.8B.E5.85.B1.E4.BA.AB)
-    *   [1.2 启动服务](#.E5.90.AF.E5.8A.A8.E6.9C.8D.E5.8A.A1)
-    *   [1.3 建立 Usershare 路径](#.E5.BB.BA.E7.AB.8B_Usershare_.E8.B7.AF.E5.BE.84)
-    *   [1.4 添加用户](#.E6.B7.BB.E5.8A.A0.E7.94.A8.E6.88.B7)
-    *   [1.5 更改 samba 用户的密码](#.E6.9B.B4.E6.94.B9_samba_.E7.94.A8.E6.88.B7.E7.9A.84.E5.AF.86.E7.A0.81)
-    *   [1.6 端口设置](#.E7.AB.AF.E5.8F.A3.E8.AE.BE.E7.BD.AE)
-    *   [1.7 验证配置](#.E9.AA.8C.E8.AF.81.E9.85.8D.E7.BD.AE)
-*   [2 客户端配置](#.E5.AE.A2.E6.88.B7.E7.AB.AF.E9.85.8D.E7.BD.AE)
-    *   [2.1 显示可用共享](#.E6.98.BE.E7.A4.BA.E5.8F.AF.E7.94.A8.E5.85.B1.E4.BA.AB)
-    *   [2.2 WINS 主机名](#WINS_.E4.B8.BB.E6.9C.BA.E5.90.8D)
-    *   [2.3 手动挂载](#.E6.89.8B.E5.8A.A8.E6.8C.82.E8.BD.BD)
-        *   [2.3.1 保存共享密码](#.E4.BF.9D.E5.AD.98.E5.85.B1.E4.BA.AB.E5.AF.86.E7.A0.81)
-    *   [2.4 自动挂载](#.E8.87.AA.E5.8A.A8.E6.8C.82.E8.BD.BD)
+*   [1 服务器配置](#服务器配置)
+    *   [1.1 建立共享](#建立共享)
+    *   [1.2 启动服务](#启动服务)
+    *   [1.3 建立 Usershare 路径](#建立_Usershare_路径)
+    *   [1.4 添加用户](#添加用户)
+    *   [1.5 更改 samba 用户的密码](#更改_samba_用户的密码)
+    *   [1.6 端口设置](#端口设置)
+    *   [1.7 验证配置](#验证配置)
+*   [2 客户端配置](#客户端配置)
+    *   [2.1 显示可用共享](#显示可用共享)
+    *   [2.2 WINS 主机名](#WINS_主机名)
+    *   [2.3 手动挂载](#手动挂载)
+        *   [2.3.1 保存共享密码](#保存共享密码)
+    *   [2.4 自动挂载](#自动挂载)
         *   [2.4.1 As mount entry](#As_mount_entry)
         *   [2.4.2 As systemd unit](#As_systemd_unit)
         *   [2.4.3 smbnetfs](#smbnetfs)
             *   [2.4.3.1 Daemon](#Daemon)
         *   [2.4.4 autofs](#autofs)
-    *   [2.5 文件管理器配置](#.E6.96.87.E4.BB.B6.E7.AE.A1.E7.90.86.E5.99.A8.E9.85.8D.E7.BD.AE)
-        *   [2.5.1 GNOME Files, Nemo, Caja, Thunar and PCManFM](#GNOME_Files.2C_Nemo.2C_Caja.2C_Thunar_and_PCManFM)
+    *   [2.5 文件管理器配置](#文件管理器配置)
+        *   [2.5.1 GNOME Files, Nemo, Caja, Thunar and PCManFM](#GNOME_Files,_Nemo,_Caja,_Thunar_and_PCManFM)
         *   [2.5.2 KDE](#KDE)
         *   [2.5.3 Other graphical environments](#Other_graphical_environments)
 *   [3 Tips and tricks](#Tips_and_tricks)
@@ -39,20 +39,20 @@
         *   [3.4.1 Sample Passwordless Configuration](#Sample_Passwordless_Configuration)
     *   [3.5 Build Samba without CUPS](#Build_Samba_without_CUPS)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Failed to start Samba SMB/CIFS server](#Failed_to_start_Samba_SMB.2FCIFS_server)
-    *   [4.2 Unable to overwrite files, permissions errors](#Unable_to_overwrite_files.2C_permissions_errors)
+    *   [4.1 Failed to start Samba SMB/CIFS server](#Failed_to_start_Samba_SMB/CIFS_server)
+    *   [4.2 Unable to overwrite files, permissions errors](#Unable_to_overwrite_files,_permissions_errors)
     *   [4.3 Windows clients keep asking for password even if Samba shares are created with guest permissions](#Windows_clients_keep_asking_for_password_even_if_Samba_shares_are_created_with_guest_permissions)
-    *   [4.4 Windows 7 connectivity problems - mount error(12): cannot allocate memory](#Windows_7_connectivity_problems_-_mount_error.2812.29:_cannot_allocate_memory)
+    *   [4.4 Windows 7 connectivity problems - mount error(12): cannot allocate memory](#Windows_7_connectivity_problems_-_mount_error(12):_cannot_allocate_memory)
     *   [4.5 Trouble accessing a password-protected share from Windows](#Trouble_accessing_a_password-protected_share_from_Windows)
     *   [4.6 Getting a dialog box up takes a long time](#Getting_a_dialog_box_up_takes_a_long_time)
     *   [4.7 Error: Failed to retrieve printer list: NT_STATUS_UNSUCCESSFUL](#Error:_Failed_to_retrieve_printer_list:_NT_STATUS_UNSUCCESSFUL)
     *   [4.8 Sharing a folder fails](#Sharing_a_folder_fails)
-    *   [4.9 "Browsing" network fails with "Failed to retrieve share list from server"](#.22Browsing.22_network_fails_with_.22Failed_to_retrieve_share_list_from_server.22)
+    *   [4.9 "Browsing" network fails with "Failed to retrieve share list from server"](#"Browsing"_network_fails_with_"Failed_to_retrieve_share_list_from_server")
     *   [4.10 You are not the owner of the folder](#You_are_not_the_owner_of_the_folder)
     *   [4.11 protocol negotiation failed: NT_STATUS_INVALID_NETWORK_RESPONSE](#protocol_negotiation_failed:_NT_STATUS_INVALID_NETWORK_RESPONSE)
-    *   [4.12 Connection to SERVER failed: (Error NT_STATUS_UNSUCCESSFUL)](#Connection_to_SERVER_failed:_.28Error_NT_STATUS_UNSUCCESSFUL.29)
-    *   [4.13 Connection to SERVER failed: (Error NT_STATUS_CONNECTION_REFUSED)](#Connection_to_SERVER_failed:_.28Error_NT_STATUS_CONNECTION_REFUSED.29)
-*   [5 参阅](#.E5.8F.82.E9.98.85)
+    *   [4.12 Connection to SERVER failed: (Error NT_STATUS_UNSUCCESSFUL)](#Connection_to_SERVER_failed:_(Error_NT_STATUS_UNSUCCESSFUL))
+    *   [4.13 Connection to SERVER failed: (Error NT_STATUS_CONNECTION_REFUSED)](#Connection_to_SERVER_failed:_(Error_NT_STATUS_CONNECTION_REFUSED))
+*   [5 参阅](#参阅)
 
 ## 服务器配置
 
@@ -66,6 +66,13 @@ Samba 服务的配置文件是 `/etc/samba/smb.conf`，如果没有则 smbd 无�
 # wget "[https://git.samba.org/samba.git/?p=samba.git;a=blob_plain;f=examples/smb.conf.default;hb=HEAD](https://git.samba.org/samba.git/?p=samba.git;a=blob_plain;f=examples/smb.conf.default;hb=HEAD)" -O /etc/samba/smb.conf
 
 ```
+
+**注意:**
+
+*   从上面载回来的默认配置文件里把日志`log file`设置到了一个不能写的地方, 这会导致出错。 下面的办法可以解决这个问题:
+    *   把日志文件放到可写的路径: `log file = /var/log/samba/%m.log`
+    *   把日志存到非文件后端的解决方案里: `logging = syslog` 配合 `syslog only = yes`, 或者使用 `logging = systemd`
+*   如果需要的话; 在`[global]`部份中指定的 `workgroup` 需要对应windows工作组的名称 (默认是 `WORKGROUP`).
 
 ### 建立共享
 
@@ -199,7 +206,7 @@ Samba 需要 Linux 账户才能使用 - 可以使用已有账户或 [创建新�
 
 要使用类似 ftp 的命令行界面，请安装软件包 [smbclient](https://www.archlinux.org/packages/?name=smbclient)。常用命令请参考 [smbclient(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smbclient.1)。
 
-[桌面环境](/index.php/Desktop_environment "Desktop environment") 可能提供了图形界面，参考[#文件管理器配置](#.E6.96.87.E4.BB.B6.E7.AE.A1.E7.90.86.E5.99.A8.E9.85.8D.E7.BD.AE).
+[桌面环境](/index.php/Desktop_environment "Desktop environment") 可能提供了图形界面，参考[#文件管理器配置](#文件管理器配置).
 
 **Note:** 安装 [cifs-utils](https://www.archlinux.org/packages/?name=cifs-utils) 或 [smbclient](https://www.archlinux.org/packages/?name=smbclient) 后，请加载 `cifs` [内核模块](/index.php/Kernel_module "Kernel module") 或重启以避免挂载失败。
 
@@ -264,7 +271,7 @@ $ smbtree -b -N
 
 *   结尾不要加 `/`. `//*SERVER*/*sharename***/**` 无法工作.
 *   如果挂载工作不稳定，出现死机和掉线问题，请尝试用 `vers=` 设置不同的 SMB 协议版本。例如， 挂载 Vista 用 `vers=2.0`.
-*   如果挂载了 cifs 机器上出现关机超时，请参考 [WPA supplicant#Problem with mounted network shares (cifs) and shutdown](/index.php/WPA_supplicant#Problem_with_mounted_network_shares_.28cifs.29_and_shutdown "WPA supplicant").
+*   如果挂载了 cifs 机器上出现关机超时，请参考 [WPA supplicant#Problem with mounted network shares (cifs) and shutdown](/index.php/WPA_supplicant#Problem_with_mounted_network_shares_(cifs)_and_shutdown "WPA supplicant").
 
 ##### 保存共享密码
 

@@ -162,16 +162,16 @@ $ gunzip pba.img.gz
 Use the output of `lsblk --fs` to help identify the correct drive.
 
 ```
-# sedutil-cli --initialsetup <password> <drive>
-# sedutil-cli --loadPBAimage <password> <pba_file> <drive>
-# sedutil-cli --setMBREnable on <password> <drive>
+# sedutil-cli --initialsetup *password drive*
+# sedutil-cli --loadPBAimage *password pba_file drive*
+# sedutil-cli --setMBREnable on *password drive*
 
 ```
 
 ### Enable locking
 
 ```
-# sedutil-cli --enableLockingRange 0 <password> <drive>
+# sedutil-cli --enableLockingRange 0 *password* *drive*
 
 ```
 
@@ -186,8 +186,9 @@ The easiest way is to boot the encrypted SSD first, in order to run the shadow M
 Another way is to directly boot into the live distro and use sedutil to unlock the SSD:
 
 ```
-# sedutil-cli --setlockingrange 0 rw <password> <drive>
-# sedutil-cli --setmbrdone on <password> <drive>
+# sedutil-cli --setlockingrange 0 rw *password drive*
+# sedutil-cli --setmbrdone on *password drive*
+# partprobe *drive*
 
 ```
 
@@ -198,8 +199,8 @@ Another way is to directly boot into the live distro and use sedutil to unlock t
 If you want to turn off Locking and the PBA:
 
 ```
-# sedutil-cli --disableLockingRange 0 <password> <drive>
-# sedutil-cli --setMBREnable off <password> <drive>
+# sedutil-cli --disableLockingRange 0 *password drive*
+# sedutil-cli --setMBREnable off *password drive*
 
 ```
 
@@ -208,9 +209,9 @@ If you want to turn off Locking and the PBA:
 You can later re-enable locking and the PBA using this command sequence
 
 ```
-# sedutil-cli --enableLockingRange 0 <password> <drive>
-# sedutil-cli --setMBRDone on <password> <drive>
-# sedutil-cli --setMBREnable on <password> <drive>
+# sedutil-cli --enableLockingRange 0 *password drive*
+# sedutil-cli --setMBRDone on *password drive*
+# sedutil-cli --setMBREnable on *password drive*
 
 ```
 
@@ -219,7 +220,7 @@ You can later re-enable locking and the PBA using this command sequence
 A non-root drive does not require loading a PBA. So, activating the encryption is as simple as running:
 
 ```
-# sedutil-cli --initialsetup <password> <drive>
+# sedutil-cli --initialsetup *password drive*
 
 ```
 
@@ -228,8 +229,8 @@ A non-root drive does not require loading a PBA. So, activating the encryption i
 Changing the passphrase does *not* lose existing data on the drive, and does not require re-encryption of data.
 
 ```
-# sedutil-cli --setSIDPassword <password> <newpassword> <device>
-# sedutil-cli --setAdmin1Pwd <password> <newpassword> <device>
+# sedutil-cli --setSIDPassword *password newpassword device*
+# sedutil-cli --setAdmin1Pwd *password newpassword device*
 
 ```
 

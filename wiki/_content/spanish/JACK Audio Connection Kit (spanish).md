@@ -263,7 +263,7 @@ autospawn = no
 
 ```
 
-*Si desea que ambos se reproduzcan, consulte: [PulseAudio/Examples#PulseAudio a través de JACK](/index.php/PulseAudio/Examples#PulseAudio_a_través_de_JACK "PulseAudio/Examples")*
+*Si desea que ambos se reproduzcan, consulte: [PulseAudio/Examples#PulseAudio through JACK](/index.php/PulseAudio/Examples#PulseAudio_through_JACK "PulseAudio/Examples")*
 
 ### Firewire
 

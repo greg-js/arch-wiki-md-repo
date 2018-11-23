@@ -68,7 +68,7 @@ Véase también [Wikipedia:es:GUID Partition Table](https://en.wikipedia.org/wik
 
 ### Particionado con Btrfs
 
-Btrfs pueden ocupar todo un dispositivo de almacenamiento de datos y reemplazar los esquemas de particionado [MBR](/index.php/MBR "MBR") o [GPT](/index.php/GPT "GPT"). Véanse las instrucciones de [Btrfs Partitioning](/index.php/Btrfs#Partitioning "Btrfs") para conocer más detalles.
+Btrfs pueden ocupar todo un dispositivo de almacenamiento de datos y reemplazar los esquemas de particionado [MBR](/index.php/MBR "MBR") o [GPT](/index.php/GPT "GPT"). Véanse las instrucciones de [Partitionless Btrfs disk](/index.php/Btrfs#Partitionless_Btrfs_disk "Btrfs") para conocer más detalles.
 
 Véase también [Wikipedia:es:Btrfs](https://en.wikipedia.org/wiki/es:Btrfs "wikipedia:es:Btrfs").
 

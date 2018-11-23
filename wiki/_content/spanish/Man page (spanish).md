@@ -4,25 +4,25 @@ Contrario a su ámbito, las páginas del manual están diseñadas para ser docum
 
 ## Contents
 
-*   [1 Acceder a las páginas del manual](#Acceder_a_las_p.C3.A1ginas_del_manual)
+*   [1 Acceder a las páginas del manual](#Acceder_a_las_páginas_del_manual)
 *   [2 Formato](#Formato)
 *   [3 Buscando manuales](#Buscando_manuales)
-*   [4 Páginas del manual coloreadas](#P.C3.A1ginas_del_manual_coloreadas)
-    *   [4.1 Usando less (Recomendado)](#Usando_less_.28Recomendado.29)
-    *   [4.2 Usando most (No recomendado)](#Usando_most_.28No_recomendado.29)
-    *   [4.3 Páginas del manual a color en xterm o rxvt-unicode](#P.C3.A1ginas_del_manual_a_color_en_xterm_o_rxvt-unicode)
+*   [4 Páginas del manual coloreadas](#Páginas_del_manual_coloreadas)
+    *   [4.1 Usando less (Recomendado)](#Usando_less_(Recomendado))
+    *   [4.2 Usando most (No recomendado)](#Usando_most_(No_recomendado))
+    *   [4.3 Páginas del manual a color en xterm o rxvt-unicode](#Páginas_del_manual_a_color_en_xterm_o_rxvt-unicode)
         *   [4.3.1 xterm](#xterm)
         *   [4.3.2 rxvt-unicode](#rxvt-unicode)
-*   [5 Leyendo páginas del manual locales](#Leyendo_p.C3.A1ginas_del_manual_locales)
+*   [5 Leyendo páginas del manual locales](#Leyendo_páginas_del_manual_locales)
     *   [5.1 Convertir a HTML legible por el navegador](#Convertir_a_HTML_legible_por_el_navegador)
         *   [5.1.1 mandoc](#mandoc)
         *   [5.1.2 man2html](#man2html)
         *   [5.1.3 man -H](#man_-H)
         *   [5.1.4 roffit](#roffit)
     *   [5.2 Convertir a PDF](#Convertir_a_PDF)
-*   [6 Páginas del manual online](#P.C3.A1ginas_del_manual_online)
-*   [7 Páginas del manual de especial interés](#P.C3.A1ginas_del_manual_de_especial_inter.C3.A9s)
-*   [8 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [6 Páginas del manual online](#Páginas_del_manual_online)
+*   [7 Páginas del manual de especial interés](#Páginas_del_manual_de_especial_interés)
+*   [8 Véase también](#Véase_también)
 
 ## Acceder a las páginas del manual
 
@@ -155,7 +155,7 @@ Para ver los cambios en las páginas del manual (sin reiniciar bash o linux), pu
 
 ```
 
-Para [Fish](/index.php?title=Fish_(Espa%C3%B1ol)&action=edit&redlink=1 "Fish (Español) (page does not exist)") un fichero de configuración sería:
+Para [Fish](/index.php/Fish "Fish") un fichero de configuración sería:
 
  `~/.config/fish/config.fish` 
 ```

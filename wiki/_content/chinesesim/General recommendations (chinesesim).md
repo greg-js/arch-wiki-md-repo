@@ -4,9 +4,9 @@
 *   [安装指南](/index.php/Installation_Guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installation Guide (简体中文)")
 *   [软件列表](/index.php/List_of_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of applications (简体中文)")
 
-本文是各种重要或常用的文章的详细索引。阅读本文前，读者应该先通过 [官方安装指南](/index.php/%E5%AE%98%E6%96%B9%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97 "官方安装指南") 安装 Arch Linux 基本系统。
+**翻译状态：** 本文是英文页面 [General recommendations](/index.php/General_recommendations "General recommendations") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-11-23，点击[这里](https://wiki.archlinux.org/index.php?title=General+recommendations&diff=0&oldid=549342)可以查看翻译后英文页面的改动。
 
-在阅读并理解 [#系统管理](#系统管理) 和 [#软件包管理](#软件包管理) 中解释的概念后，可以帮助你阅读wiki中的其它文章。
+本文是各种重要或常用的文章的详细索引。阅读本文前，读者应该先通过 [官方安装指南](/index.php/%E5%AE%98%E6%96%B9%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97 "官方安装指南") 安装 Arch Linux 基本系统。然后理解系统管理和软件包管理中解释的概念，再阅读 wiki 中的其它文章。
 
 **注意:** 中国用户可以特别留意 [#中国大陆用户的推荐解决方案](#中国大陆用户的推荐解决方案) 内容。
 
@@ -15,20 +15,19 @@
 *   [1 系统管理](#系统管理)
     *   [1.1 用户和用户组](#用户和用户组)
     *   [1.2 权限提升](#权限提升)
-    *   [1.3 系统服务](#系统服务)
+    *   [1.3 服务管理](#服务管理)
     *   [1.4 系统维护](#系统维护)
 *   [2 软件包管理](#软件包管理)
     *   [2.1 Pacman](#Pacman)
-    *   [2.2 软件仓库镜像](#软件仓库镜像)
-    *   [2.3 软件仓库](#软件仓库)
+    *   [2.2 软件仓库](#软件仓库)
+    *   [2.3 软件仓库镜像](#软件仓库镜像)
     *   [2.4 Arch编译系统（ABS）](#Arch编译系统（ABS）)
     *   [2.5 Arch用户软件源（AUR）](#Arch用户软件源（AUR）)
 *   [3 启动](#启动)
     *   [3.1 硬件自动探测](#硬件自动探测)
     *   [3.2 Microcode](#Microcode)
     *   [3.3 保留启动信息](#保留启动信息)
-    *   [3.4 开机启动 X](#开机启动_X)
-    *   [3.5 开机时打开 Num Lock](#开机时打开_Num_Lock)
+    *   [3.4 开机时打开 Num Lock](#开机时打开_Num_Lock)
 *   [4 图形界面](#图形界面)
     *   [4.1 显示服务](#显示服务)
     *   [4.2 显卡驱动](#显卡驱动)
@@ -59,25 +58,26 @@
     *   [9.1 性能测试](#性能测试)
     *   [9.2 性能最大化](#性能最大化)
     *   [9.3 固态硬盘](#固态硬盘)
-*   [10 系统服务](#系统服务_2)
+*   [10 系统服务](#系统服务)
     *   [10.1 文件索引和搜索](#文件索引和搜索)
     *   [10.2 打印](#打印)
     *   [10.3 本地邮件交换](#本地邮件交换)
 *   [11 外观美化](#外观美化)
     *   [11.1 字体](#字体)
-    *   [11.2 GTK and Qt themes](#GTK_and_Qt_themes)
+    *   [11.2 GTK 和 Qt 主题](#GTK_和_Qt_主题)
 *   [12 控制台优化](#控制台优化)
-    *   [12.1 别名](#别名)
-    *   [12.2 命令别名](#命令别名)
-    *   [12.3 其它 shells](#其它_shells)
-    *   [12.4 Bash 增强功能](#Bash_增强功能)
-    *   [12.5 彩色输出](#彩色输出)
-    *   [12.6 压缩文件](#压缩文件)
-        *   [12.6.1 控制台提示符](#控制台提示符)
-        *   [12.6.2 Emacs shell](#Emacs_shell)
-    *   [12.7 鼠标支持](#鼠标支持)
-    *   [12.8 页面回滚缓冲](#页面回滚缓冲)
-    *   [12.9 会话管理](#会话管理)
+    *   [12.1 Tab 自动补全](#Tab_自动补全)
+    *   [12.2 别名](#别名)
+    *   [12.3 命令别名](#命令别名)
+    *   [12.4 其它 shells](#其它_shells)
+    *   [12.5 Bash 增强功能](#Bash_增强功能)
+    *   [12.6 彩色输出](#彩色输出)
+    *   [12.7 压缩文件](#压缩文件)
+        *   [12.7.1 控制台提示符](#控制台提示符)
+        *   [12.7.2 Emacs shell](#Emacs_shell)
+    *   [12.8 鼠标支持](#鼠标支持)
+    *   [12.9 页面回滚缓冲](#页面回滚缓冲)
+    *   [12.10 会话管理](#会话管理)
 *   [13 系统中文化](#系统中文化)
 *   [14 中国大陆用户的推荐解决方案](#中国大陆用户的推荐解决方案)
     *   [14.1 办公](#办公)
@@ -90,35 +90,21 @@
 
 ## 系统管理
 
-这一部分提供系统管理方面的信息。更多内容，参见：[系统管理分类](/index.php/Category:System_administration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:System administration (简体中文)") 和 [System maintenance](/index.php/System_maintenance "System maintenance")。
+这一部分提供系统管理方面的信息。更多内容，参见：[系统管理分类](/index.php/Category:System_administration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:System administration (简体中文)")。
 
 ### 用户和用户组
 
-新安装的系统只有一个超级用户，即 root。使用root进行日常操作是不安全的做法。用户应当[创建](/index.php/User_Management_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "User Management (简体中文)")一个普通用户进行日常操作，而仅仅在管理系统时使用root。也不要在服务器上给 root 开放[SSH](/index.php/SSH "SSH")登录权限。普通用户的创建方法请参阅 [用户和用户组](/index.php/Users_and_groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Users and groups (简体中文)")。
+新安装的系统只有一个[超级用户](https://en.wikipedia.org/wiki/Superuser "wikipedia:Superuser")，即 root。使用 root 进行日常操作是不安全的。应当[创建](/index.php/User_Management_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "User Management (简体中文)")普通用户进行日常操作，仅在管理系统时使用 root。不要在服务器上给 root 开放[SSH](/index.php/SSH "SSH")登录权限。普通用户的创建方法请参阅 [用户和用户组](/index.php/Users_and_groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Users and groups (简体中文)")。
 
 [用户和用户组](/index.php/Users_and_groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Users and groups (简体中文)")是GNU/Linux 权限控制机制的基础。管理员通过调整用户组的成员、所有者，可以控制用户使用系统资源。
 
-一个典型的桌面系统普通用户示例；创建一个名为`archie`的用户，并使用[zsh](/index.php/Zsh_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Zsh (简体中文)")作默认shell（在此之前，请不要忘记安装zsh：`pacman -S zsh`）：
-
-```
-# useradd -m -g users -G wheel -s /bin/zsh archie
-
-```
-
-并为所创建用户设定密码：
-
-```
-# passwd archie
-
-```
-
 ### 权限提升
 
-使用 [su](/index.php/Su_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Su (简体中文)") 命令可以方便的切换用户，而[sudo](/index.php/Sudo_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Sudo (简体中文)")命令则是更为简单的选择。
+使用 [su](/index.php/Su_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Su (简体中文)") 命令可以方便的切换用户，而[sudo](/index.php/Sudo_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Sudo (简体中文)")命令则是更为简单的选择。默认配置时，*su* 将改用 root 用户登录 shell，而 *sudo* 会给单个命令临时的超级用户权限。
 
-### 系统服务
+### 服务管理
 
-这一部分涉及[守护进程](/index.php/%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B "守护进程")（daemon）。Arch Linux 使用 [systemd (简体中文)](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)") 管理系统服务。新用户有必要了解其基本使用方法。通常使用 `# systemctl` 命令进行系统管理，参见[此文](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#systemd_基本工具 "Systemd (简体中文)").
+Arch Linux 使用 [systemd (简体中文)](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)") 管理系统服务。新用户有必要了解其基本使用方法。通常使用 `# systemctl` 命令进行系统管理，参见[此文](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#systemd_基本工具 "Systemd (简体中文)").
 
 ### 系统维护
 
@@ -126,7 +112,7 @@ Arch 是滚动发行系统，软件包的更新速度很快，用户需要花些
 
 ## 软件包管理
 
-此部分提供了软件包管理的信息，参见：[Category:Package management (简体中文)](/index.php/Category:Package_management_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Package management (简体中文)")。
+此部分提供了软件包管理的信息，参见：[FAQ#Package management](/index.php/FAQ#Package_management "FAQ") 和 [Category:Package management (简体中文)](/index.php/Category:Package_management_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Package management (简体中文)")。
 
 **注意:** Arch 的升级有时候需要手动处理。请订阅[arch-announce 邮件列表](https://mailman.archlinux.org/mailman/listinfo/arch-announce/) ，每次升级前查看 [Arch 新闻](https://www.archlinux.org/)或者订阅 [RSS feed](https://www.archlinux.org/feeds/news/)。
 
@@ -136,29 +122,29 @@ Pacman 是 Arch 的软件包管理器。[pacman](/index.php/Pacman_(%E7%AE%80%E4
 
 [Pacman tips (简体中文)](/index.php/Pacman_tips_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman tips (简体中文)")中有很多方便 pacman 使用的技巧。
 
-### 软件仓库镜像
-
-参见[软件仓库镜像](/index.php/Mirrors_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Mirrors (简体中文)")一文，获取寻找更快更新pacman镜像的方法。此外，可以查看[镜像状态](https://www.archlinux.org/mirrors/status/)获取最新镜像站点同步信息。
-
 ### 软件仓库
 
 [官方软件仓库](/index.php/%E5%AE%98%E6%96%B9%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93 "官方软件仓库")包含了各个仓库的详细介绍。[非官方软件仓库](/index.php/%E9%9D%9E%E5%AE%98%E6%96%B9%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93 "非官方软件仓库")包含很多个人维护的软件仓库。
 
-如果安装的是 Arch Linux x86_64，并计划使用 32 位程序，建议[启用 [multilib] 仓库](/index.php/Multilib "Multilib")。
+如果计划使用 32 位程序，建议启用 [multilib](/index.php/Multilib "Multilib") 仓库。
 
-你可能想要安装[pkgstats](/index.php/Pkgstats "Pkgstats")，让软件使用情况的统计更加准确。
+安装 [pkgstats](/index.php/Pkgstats "Pkgstats")，可以让软件开发人员统计软件包的使用情况。
+
+### 软件仓库镜像
+
+参见[软件仓库镜像](/index.php/Mirrors_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Mirrors (简体中文)")一文，获取寻找更快更新pacman镜像的方法。此外，可以查看[镜像状态](https://www.archlinux.org/mirrors/status/)获取最新镜像站点同步信息。
 
 ### Arch编译系统（ABS）
 
-**Ports**是BSD发行版最初使用的一套系统，它是本地系统中包含各种软件编译脚本的目录树。
+**Ports**是 BSD 发行版最初使用的一套系统，它是本地系统中包含各种软件编译脚本的目录树。
 
-[ABS](/index.php/ABS_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ABS (简体中文)")系统相当于Arch的Ports，其中提供Arch官方仓库软件包的编译脚本——[PKGBUILD](/index.php/PKGBUILD_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PKGBUILD (简体中文)")。编译脚本提供了哈希验证、软件主页、版本、协议、编译步骤等信息。通过[makepkg](/index.php/Makepkg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Makepkg (简体中文)")从编译脚本生成软件包，然后用pacman安装。
+[ABS](/index.php/ABS_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ABS (简体中文)")系统相当于 Arch 的 Ports，包含 Arch 官方软件包的编译脚本——[PKGBUILD](/index.php/PKGBUILD_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PKGBUILD (简体中文)")。编译脚本提供了哈希验证、软件主页、版本、协议、编译步骤等信息。通过 [makepkg](/index.php/Makepkg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Makepkg (简体中文)") 从编译脚本生成软件包，然后用 pacman 安装。
 
-实际上，Arch的所有软件包（包括官方库、AUR）都是通过makepkg生成的。
+实际上，Arch 的所有软件包（包括官方库、AUR）都是通过 makepkg 生成的。
 
 ### Arch用户软件源（AUR）
 
-[ABS](/index.php/ABS_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ABS (简体中文)")提供了编译官方库软件的脚本，而[AUR](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)")则提供了用户提交的、非官方的软件包编译脚本。这是一个基于[web界面](https://aur.archlinux.org/index.php) 或通过[AUR工具](/index.php/AUR_helper_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR helper (简体中文)") 访问的非官方软件仓库。
+Arch 编译系统提供了编译官方库软件的脚本，而 [AUR](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)") 则提供了用户提交的、非官方的软件包编译脚本。这是一个基于 [web 界面](https://aur.archlinux.org/index.php)或通过 [AUR 工具](/index.php/AUR_helper_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR helper (简体中文)")访问的非官方软件仓库。
 
 ## 启动
 
@@ -166,7 +152,7 @@ Pacman 是 Arch 的软件包管理器。[pacman](/index.php/Pacman_(%E7%AE%80%E4
 
 ### 硬件自动探测
 
-默认情况下，[udev](/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Udev (简体中文)")会在开机时自动探测硬件。禁止加载某些内核模块、手动选择要使用的模块。此外，[Xorg](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)")也使用udev探测硬件，用户也可以调整这方面配置。
+默认情况下，[udev](/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Udev (简体中文)")会在开机时自动探测硬件。禁止加载某些内核模块、手动选择要使用的模块。此外，[Xorg](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)") 也使用 udev 探测硬件，用户也可以调整这方面配置。
 
 ### Microcode
 
@@ -174,11 +160,7 @@ Pacman 是 Arch 的软件包管理器。[pacman](/index.php/Pacman_(%E7%AE%80%E4
 
 ### 保留启动信息
 
-当系统启动完毕，启动信息会被清除并显示登录提示符，使得用户无法获得启动进程的反馈信息，[Disable clearing of boot messages](/index.php/Disable_clearing_of_boot_messages "Disable clearing of boot messages") 教会你如何解决这个问题。
-
-### 开机启动 X
-
-Linux下，一般由[X图形服务器](/index.php/X_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "X (简体中文)")提供图形用户界面。如果想在开机时加载图形用户界面，可以使用[登陆管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display manager (简体中文)")或者[开机时直接启动X](/index.php/Start_X_at_Login_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Start X at Login (简体中文)")。
+当系统启动完毕，启动信息会被清除并显示登录提示符，使得用户无法获得启动进程的反馈信息，[Disable clearing of boot messages](/index.php/Disable_clearing_of_boot_messages "Disable clearing of boot messages") 可以解决这个问题。
 
 ### 开机时打开 Num Lock
 
@@ -358,13 +340,17 @@ Linux下，一般由[X图形服务器](/index.php/X_(%E7%AE%80%E4%BD%93%E4%B8%AD
 
 对于经常使用虚拟终端的用户，可以通过配置字体提高可读性，参见：[Fonts#Console fonts](/index.php/Fonts#Console_fonts "Fonts")。
 
-### GTK and Qt themes
+### GTK 和 Qt 主题
 
 Linux 下的图形界面基本都使用 [GTK+](/index.php/GTK%2B "GTK+") 或者 [Qt](/index.php/Qt "Qt") 工具集。这些文章和 [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications") 提供了让程序更美观的方法。
 
 ## 控制台优化
 
 本部分包括控制台的优化和微调方法。参阅 [Category:Command shells](/index.php/Category:Command_shells "Category:Command shells").
+
+### Tab 自动补全
+
+建议参考所选 shell 的文档，立即设置增强的 [Tab 自动补全](https://en.wikipedia.org/wiki/Command-line_completion "wikipedia:Command-line completion")。
 
 ### 别名
 
@@ -422,15 +408,13 @@ Emacs除了用作编辑器，其高级功能更为出名，其中一项就是把
 
 ### 办公
 
-[WPS Office (简体中文)](/index.php/WPS_Office_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "WPS Office (简体中文)")
-
-[LibreOffice (简体中文)](/index.php/LibreOffice_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LibreOffice (简体中文)")
+*   [WPS Office (简体中文)](/index.php/WPS_Office_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "WPS Office (简体中文)")
+*   [LibreOffice (简体中文)](/index.php/LibreOffice_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LibreOffice (简体中文)")
 
 一些在线办公套件网站可以提供基础的办公功能:
 
-[Office Online](https://en.wikipedia.org/wiki/Office_Online "wikipedia:Office Online"): Microsoft提供的Office办公套件的网页版
-
-[Google Docs, Sheets and Slides](https://en.wikipedia.org/wiki/Google_Docs,_Sheets_and_Slides "wikipedia:Google Docs, Sheets and Slides"): Google提供的在线文字处理、电子制表和演示程序。
+*   [Office Online](https://en.wikipedia.org/wiki/Office_Online "wikipedia:Office Online"): Microsoft提供的Office办公套件的网页版
+*   [Google Docs, Sheets and Slides](https://en.wikipedia.org/wiki/Google_Docs,_Sheets_and_Slides "wikipedia:Google Docs, Sheets and Slides"): Google提供的在线文字处理、电子制表和演示程序。
 
 ### 中文输入法
 
@@ -486,16 +470,8 @@ alias hosts='sudo wget [https://raw.githubusercontent.com/googlehosts/hosts/mast
 
 ### 校园网
 
-中国大陆众多高校采用各种客户端拨号上网，如城市热点drcom，锐捷。一些学校提供有网页登录或者linux版客户端，可参照相关说明文档安装使用。 ~未提供网页登录以及客户端者
+中国大陆众多高校采用各种客户端拨号上网，如城市热点drcom，锐捷。一些学校提供有网页登录或者linux版客户端，可参照相关说明文档安装使用。对于未提供网页登录以及客户端者：
 
-* * *
-
-Drcom用户可参考[Drcom](/index.php/Drcom_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Drcom (简体中文)")，锐捷用户可参照[MentoHUST (简体中文)](/index.php/MentoHUST_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "MentoHUST (简体中文)") 指导您通过借助 MentoHUST 进行锐捷拨号。
-
-* * *
-
-借助[wine](/index.php/Wine_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wine (简体中文)")尝试安装使用。
-
-* * *
-
-使用虚拟机运行，可在虚拟机中登录客户端上网，虚拟机开启桥接，安装ssh服务端，在linux下ssh登录虚拟机上网。
+*   Drcom用户可参考[Drcom](/index.php/Drcom_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Drcom (简体中文)")，锐捷用户可参照[MentoHUST (简体中文)](/index.php/MentoHUST_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "MentoHUST (简体中文)") 指导您通过借助 MentoHUST 进行锐捷拨号。
+*   借助[wine](/index.php/Wine_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wine (简体中文)")尝试安装使用。
+*   使用虚拟机运行，可在虚拟机中登录客户端上网，虚拟机开启桥接，安装ssh服务端，在linux下ssh登录虚拟机上网。

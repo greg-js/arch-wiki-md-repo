@@ -21,7 +21,7 @@ Third-party apps will also be available through a marketplace soon.
 
 ## Installation
 
-Install the [cozy-stack](https://www.archlinux.org/packages/?name=cozy-stack) package. It provides the core plus related configuration files, as well as the minimum required dependencies.
+[Install](/index.php/Install "Install") the [cozy-stack](https://www.archlinux.org/packages/?name=cozy-stack) package. It provides the core plus related configuration files, as well as the minimum required dependencies.
 
 You might also want to install [nsjail](https://www.archlinux.org/packages/?name=nsjail) to run Konnectors in isolated environments, as well as an SMTP server to let Cozy send emails to your users.
 

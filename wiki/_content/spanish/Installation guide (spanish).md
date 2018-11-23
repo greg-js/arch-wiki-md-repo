@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Installation guide](/index.php/Installation_guide "Installation guide"), revisada por última vez el **2018-10-01**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=543745) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Installation guide](/index.php/Installation_guide "Installation guide"), revisada por última vez el **2018-11-22**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=549392) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Este documento es una guía para la instalación de [Arch Linux (Español)](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)") desde un sistema live arrancado con la imagen de instalación oficial. Antes de proceder a la instalación, es recomendable que eche un vistazo a las [Frequently asked questions (Español)](/index.php/Frequently_asked_questions_(Espa%C3%B1ol) "Frequently asked questions (Español)"). Para conocer las convenciones utilizadas en este documento, consulte [Help:Reading (Español)](/index.php/Help:Reading_(Espa%C3%B1ol) "Help:Reading (Español)"). En particular, los ejemplos de código pueden contener marcadores de posición (resaltados en `*cursiva*`) que deberán reemplazarse manualmente.
 
@@ -197,12 +197,10 @@ Compruebe el archivo resultante e `/mnt/etc/fstab` después, y modifíquelo en c
 
 ### Zona horaria
 
-Defina su [zona horaria](/index.php/Time_(Espa%C3%B1ol)#Huso_horario "Time (Español)"):
+Defina su [zona horaria](/index.php/System_time_(Espa%C3%B1ol)#Huso_horario "System time (Español)"):
 
-# ln -sf /usr/share/zoneinfo/*Región*/*Ciudad* /etc/localtime
-**Nota:** *(del traductor)* para España —excepto en las islas Canarias— sería:
 ```
-# ln -sf /usr/share/zoneinfo/Europe/Madrid /etc/localtime
+# ln -sf /usr/share/zoneinfo/*Región*/*Ciudad* /etc/localtime
 
 ```
 

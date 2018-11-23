@@ -15,7 +15,7 @@ PostGIS adds support for geographic objects in the PostgreSQL database. This doc
 
 ## Installing PostGIS Extension
 
-Since [[PostgreSQL 9.1][[1]](http://postgis.net/docs/postgis_installation.html#make_install_postgis_extensions)], the preferred approach is to install PostGIS and enable postgis extension for each spatial database.
+Since [PostgreSQL 9.1](http://postgis.net/docs/postgis_installation.html#make_install_postgis_extensions), the preferred approach is to install PostGIS and enable postgis extension for each spatial database.
 
 ```
 $ psql

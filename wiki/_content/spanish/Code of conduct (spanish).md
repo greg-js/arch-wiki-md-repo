@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Code of conduct](/index.php/Code_of_conduct "Code of conduct"), revisada por última vez el **2018-11-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Code_of_conduct&diff=0&oldid=554455) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Code of conduct](/index.php/Code_of_conduct "Code of conduct"), revisada por última vez el **2018-11-21**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Code_of_conduct&diff=0&oldid=554662) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 La comunidad de Arch es una comunidad técnica cuyo propósito común es apoyar y mejorar Arch Linux.
 
@@ -115,7 +115,7 @@ La publicidad si se relaciona con Arch (como un proyecto o de la comunidad) o GN
 
 ### Exactitud
 
-El valor de la comunidad de Arch Linux reside en la precisión técnica. Cuando se busca, se da o se ayuda, recuerde luchar por la exactitud, la integridad y la precisión. Una excelente introducción a las expectativas de la comunidad de Arch es [Cómo hacer preguntas de forma inteligente](http://www.catb.org/~esr/faqs/smart-questions.html) de ESR.
+El valor de la comunidad de Arch Linux reside en la precisión técnica. Cuando se solicita o se presta ayuda, recuerde luchar por la exactitud, la integridad y la precisión. Una excelente introducción a las expectativas de la comunidad de Arch es [Cómo hacer preguntas de forma inteligente](http://www.catb.org/~esr/faqs/smart-questions.html) de ESR.
 
 Otras consideraciones en esta categoría incluyen:
 
@@ -125,7 +125,7 @@ Las distribuciones basadas en Arch tienen sus propios foros de soporte y los usu
 
 #### Temas personales/fuera de tono
 
-Las discusiones fuera de tono y las quejas no son bien vistas y pueden cerrarse cuando sean descubiertas. Los mensajes de este tipo son mucho más adecuados para un blog u otro espacio web personal, y no son tolerados en la comunidad de Arch. Vea también [Respete otros sistemas operativos y proyectos]].
+Las discusiones fuera de tono y las quejas no son bien vistas y pueden cerrarse cuando sean descubiertas. Los mensajes de este tipo son mucho más adecuados para un blog u otro espacio web personal, y no es tolerado en la comunidad de Arch. Vea también [Respete otros sistemas operativos y proyectos]].
 
 #### Evite la controversia/temas polémicos
 
@@ -145,9 +145,11 @@ El intercambio libre y abierto de asistencia, debates, ideas y opiniones es muy 
 
 ## Reglas específicas del foro
 
-Además del [código común](#Código_de_conducta_(Español)), cada uno de los foros tiene sus propias directrices específicas, que se resumen en las siguientes subsecciones.
+Además del [código común](#Código_de_conducta), cada uno de los foros tiene sus propias directrices específicas, que se resumen en las siguientes subsecciones.
 
-### [Foros](https://bbs.archlinux.org/)
+### Foros
+
+Directrices específicas para los [foros de Arch](https://bbs.archlinux.org/).
 
 #### Cómo publicar
 
@@ -210,9 +212,9 @@ Publicar una sola palabra o mensaje inútil (*«bumping»* -golpear-) para atrae
 
 Los temas que estén bloqueados/cerrados, ya sea porque estén documentados en las bases o la Wiki, ya sea por que son incompatibles con la filosofía de Arch, se moverán a *«Dust/troll-bin»*. Después de un período de cinco días, el tema será borrado. El Moderador responsable marcará claramente el hilo como *«Binned»* o *«For deletion»*.
 
-### [Listas de correo](https://lists.archlinux.org//listinfo/)
+### Listas de correo
 
-Véase el [estilo de publicación de la lista de correo](https://lists.archlinux.org/pipermail/arch-general/2014-August/036950.html).
+Pautas para las [listas de correo](https://lists.archlinux.org/listinfo/). Véase también el [estilo de publicación de la lista de correo](https://lists.archlinux.org/pipermail/arch-general/2014-August/036950.html).
 
 #### Publicar por encima
 
@@ -226,16 +228,16 @@ Cite solamente los elementos necesarios de un correo electrónico anterior. Cita
 
 El texto plano es el estándar de Unix y del correo electrónico. El lenguaje HTML es innecesario y, para aquellos que utilizan clientes de línea de órdenes, no deseado. Por favor, mantenga unas longitudes de línea razonables: 72 caracteres se considera el valor por defecto para explicarse.
 
-### [AUR](https://aur.archlinux.org/)
+### AUR
 
-Directrices para el *«Arch User Repository»* se pueden encontrar aquí:
+Directrices para el [Arch User Repository](https://aur.archlinux.org/) se pueden encontrar aquí:
 
 *   [AUR#Rules of submission](/index.php/AUR#Rules_of_submission "AUR")
 *   [AUR#Other requests](/index.php/AUR#Other_requests "AUR")
 
-### [IRC](/index.php/IRC "IRC")
+### IRC
 
-Todos los canales de IRC de Arch Linux están en la red irc de freenode. Los usuarios en freenode deben seguir la [política de la red](https://freenode.net/policies) y las [directrices del canal](https://freenode.net/changuide) de freenode.
+Todos los [canales de IRC](/index.php/Arch_IRC_channels_(Espa%C3%B1ol) "Arch IRC channels (Español)") de Arch Linux están en la red irc de freenode. Los usuarios en freenode deben seguir la [política de la red](https://freenode.net/policies) y las [directrices del canal](https://freenode.net/changuide) de freenode.
 
 El idioma oficial del canal **#archlinux** es el inglés. Si necesita ayuda en otro idioma, busque en los [canales de arch internacionales](/index.php/IRC_channels#International_IRC_channels "IRC channels").
 
@@ -265,7 +267,9 @@ Directrices para la [wiki](/index.php/ArchWiki:About_(Espa%C3%B1ol) "ArchWiki:Ab
 *   [Help:Style](/index.php/Help:Style "Help:Style")
 *   [Help:Discussion](/index.php/Help:Discussion "Help:Discussion")
 
-### [Seguimiento de errores](https://bugs.archlinux.org/)
+### Seguimiento de errores
+
+Las pautas para el [Seguimiento de errores](https://bugs.archlinux.org/) se pueden encontrar en [Pautas de informe de errores](/index.php/Bug_reporting_guidelines "Bug reporting guidelines").
 
 Ver la página principal: [Reporting bug guidelines](/index.php/Reporting_bug_guidelines "Reporting bug guidelines").
 
@@ -277,7 +281,7 @@ Cada uno de los foros tiene un proceso de apelación y si alguien siente que fue
 
 ## Ponerse en contacto con el personal técnico
 
-Si piensa que se ha producido un agravio notorio o necesita alertar al personal de una conducta abusiva, hay una serie de vías a las que puede recurrir para obtener reparación o asistencia. Estas incluyen:
+Si piensa que se ha producido un agravio notorio o si necesita alertar al personal de cualquier conducta abusiva, hay una serie de formas para solicitar asistencia o rectificaciones. Estas incluyen:
 
 *   Para los foros: utilice el botón «Report» que se encuentra debajo de cada cuadro de texto, o el correo electrónico [forum@archlinux.org](mailto:forum@archlinux.org) para ponerse en contacto con los administradores del foro.
 *   Para la Wiki: contacte con el [equipo de mantenimiento](/index.php/ArchWiki:Maintenance_Team_(Espa%C3%B1ol) "ArchWiki:Maintenance Team (Español)").

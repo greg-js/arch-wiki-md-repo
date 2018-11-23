@@ -5,7 +5,7 @@
 [Preparar dispositivo](/index.php/Dm-crypt/Drive_preparation_(Espa%C3%B1ol) "Dm-crypt/Drive preparation (Español)") – <a class="mw-selflink selflink">Cifrar dispositivo</a> – [Cifrar sistema de archivos no root](/index.php/Dm-crypt/Encrypting_a_non-root_file_system_(Espa%C3%B1ol) "Dm-crypt/Encrypting a non-root file system (Español)") – [Cifrar un sistema completo](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol) "Dm-crypt/Encrypting an entire system (Español)") – [Cifrar espacio de intercambio](/index.php/Dm-crypt/Swap_encryption_(Espa%C3%B1ol) "Dm-crypt/Swap encryption (Español)") – [Montar y acceder a /home cifrado](/index.php/Dm-crypt/Mounting_at_login_(Espa%C3%B1ol) "Dm-crypt/Mounting at login (Español)") – [Configurar el sistema](/index.php/Dm-crypt/System_configuration_(Espa%C3%B1ol) "Dm-crypt/System configuration (Español)") – [Especialidades](/index.php/Dm-crypt/Specialties_(Espa%C3%B1ol) "Dm-crypt/Specialties (Español)")
 
 **Estado de la traducción**
-Este artículo es una traducción de [Dm-crypt/Device encryption](/index.php/Dm-crypt/Device_encryption "Dm-crypt/Device encryption"), revisada por última vez el **2018-11-13**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Dm-crypt/Device_encryption&diff=0&oldid=555038) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Dm-crypt/Device encryption](/index.php/Dm-crypt/Device_encryption "Dm-crypt/Device encryption"), revisada por última vez el **2018-11-22**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Dm-crypt/Device_encryption&diff=0&oldid=555421) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Esta sección explica cómo utilizar manualmente *dm-crypt* desde la línea de órdenes para cifrar un sistema.
 
@@ -100,42 +100,39 @@ Una distinción importante de *LUKS* que se debe tener en cuenta en este punto e
 
 ## Opciones de cifrado con dm-crypt
 
-*Cryptsetup* admite diferentes modos de operación de cifrado para usar con *dm-crypt*. El más común (y por defecto) es:
+*Cryptsetup* admite diferentes modos de operación de cifrado para usar con *dm-crypt*:
 
-*   `--type luks`
-
-Los otros son:
-
-*   `--type luks2` para una nueva versión de formato de encabezado que permite extensiones adicionales como diferentes algoritmos PBKDF o cifrado autenticado,
-*   `--type loopaes`, para un modo heredado de loopaes, y
+*   `--type luks` para usarlo por defecto y el más común,
+*   `--type luks2` para usar la última versión disponible de luks que permite extensiones adicionales,
+*   `--type loopaes`, para un modo heredado de loopaes,
 *   `--type tcrypt`, para un modo de compatibilidad con [TrueCrypt](/index.php/TrueCrypt "TrueCrypt").
 
-Las opciones criptográficas básicas para algoritmo de cifrado y [funciones hash](https://en.wikipedia.org/wiki/es:Funci%C3%B3n_hash "wikipedia:es:Función hash") disponibles se pueden utilizar para todos las modalidades y se basan en las características del [backend](https://en.wikipedia.org/wiki/es:Front-end_y_back-end "wikipedia:es:Front-end y back-end") [criptográfico](https://en.wikipedia.org/wiki/es:Criptograf%C3%ADa "wikipedia:es:Criptografía") del kernel. Todos los que se cargan en tiempo de ejecución se pueden ver con:
+Las opciones criptográficas básicas para algoritmo de cifrado y [funciones hash](https://en.wikipedia.org/wiki/es:Funci%C3%B3n_hash "wikipedia:es:Función hash") disponibles se pueden utilizar para todos las modalidades y se basan en las características del [backend](https://en.wikipedia.org/wiki/es:Front-end_y_back-end "wikipedia:es:Front-end y back-end") [criptográfico](https://en.wikipedia.org/wiki/es:Criptograf%C3%ADa "wikipedia:es:Criptografía") del kernel. Todos los que se cargan en tiempo de ejecución y disponible para usar como opciones se pueden ver con:
 
 ```
 $ less /proc/crypto 
 
 ```
 
-y están disponibles para usar como opciones. Si la lista es corta, ejecute `cryptsetup benchmark` que activará la carga de los módulos disponibles.
+**Sugerencia:** si la lista es corta, ejecute `$ cryptsetup benchmark` que activará la carga de los módulos disponibles.
 
-A continuación se presentan las opciones de cifrado para los dos primeros modos. Tenga en cuenta que las tablas enumeran las opciones utilizadas en los ejemplos respectivos de este artículo y no todas las disponibles.
+A continuación se presentan las opciones de cifrado para los modos `luks`, `luks2` y `plain`. Tenga en cuenta que las tablas enumeran las opciones utilizadas en los ejemplos respectivos de este artículo y no todas las disponibles.
 
 ### Opciones de cifrado para la modalidad LUKS
 
 La acción *cryptsetup* para configurar un nuevo dispositivo dm-crypt en la modalidad de cifrado LUKS es *luksFormat*. El nombre es engañoso pues no formatea el dispositivo, pero configura el encabezado del dispositivo LUKS y cifra la clave maestra con las opciones criptográficas deseadas.
 
-Como LUKS es el modo de cifrado predeterminado:
+Como LUKS es el modo de cifrado predeterminado, todo lo que necesita para crear un nuevo dispositivo LUKS con parámetros predeterminados (`-v` es opcional) es:
 
 ```
 # cryptsetup -v luksFormat *dispositivo*
 
 ```
 
-es todo lo que se necesita para crear un nuevo dispositivo LUKS con parámetros predeterminados (`-v` es opcional). Para que sirva de comparación, podemos especificar las opciones predeterminadas manualmente también:
+Para que sirva de comparación, podemos especificar las opciones predeterminadas manualmente también:
 
 ```
-# cryptsetup -v --cipher aes-xts-plain64 --key-size 256 --hash sha256 --iter-time 2000 --use-urandom --verify-passphrase luksFormat *dispositivo*
+# cryptsetup -v --type luks --cipher aes-xts-plain64 --key-size 256 --hash sha256 --iter-time 2000 --use-urandom --verify-passphrase luksFormat *dispositivo*
 
 ```
 
@@ -169,9 +166,9 @@ Los valores predeterminados se comparan con un ejemplo de especificación cripto
 
  | Yes | - | Por defecto solo para luksFormat y luksAddKey. No hay necesidad de escribir para Arch Linux con la modalidad LUKS en este momento. |
 
-Si desea profundizar en las características criptográficas de LUKS, la [especificación LUKS](https://gitlab.com/cryptsetup/cryptsetup/wikis/Specification) (por ejemplo, sus apéndices) son un buen recurso.
+Las propiedades y características de LUKS se describen en la [especificación de LUKS1](https://gitlab.com/cryptsetup/cryptsetup/wikis/Specification) (pdf) y en las especificaciones de [LUKS2](https://gitlab.com/cryptsetup/cryptsetup/blob/master/docs/on-disk-format-luks2.pdf) (pdf).
 
-**Sugerencia:** Se anticipa que el encabezado LUKS recibirá otra revisión importante a su debido tiempo. Si está interesado en los planes, he aquí la presentación resumida de los desarrolladores [devconfcz2016](https://mbroz.fedorapeople.org/talks/DevConf2016/devconf2016-luks2.pdf) (pdf).
+**Sugerencia:** he aquí la presentación resumida del proyecto de los desarrolladores [devconfcz2016](https://mbroz.fedorapeople.org/talks/DevConf2016/devconf2016-luks2.pdf) (pdf) que motiva la actualización de la especificación principal a LUKS2.
 
 ### Opciones de cifrado para la modalidad plain
 
@@ -632,7 +629,7 @@ El paquete [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) con
 
 Una aplicación del recifrado puede ser asegurar los datos nuevamente después de que una frase de contraseña o [#Archivos de claves](#Archivos_de_claves) hayan sido comprometidos *y* no se puede estar seguro de que no se haya obtenido una copia del encabezado LUKS. Por ejemplo, si solo se ha utilizado el sistema cifrado por una frase de contraseña pero no se ha tenido acceso físico/lógico al dispositivo, sería suficiente cambiar solo la frase de contraseña/clave respectiva ([#Gestión de claves](#Gestión_de_claves).
 
-**Advertencia:** ¡Asegúrese siempre de que esté disponible una **copia de seguridad confiable** y verifique las opciones que especifique antes de usar la herramienta!
+**Advertencia:** ¡Asegúrese siempre de que esté disponible una **copia de seguridad fiable** y verifique las opciones que especifique antes de usar la herramienta!
 
 A continuación se muestra un ejemplo para cifrar una partición del sistema de archivos sin cifrar, así como un nuevo cifrado de un dispositivo cifrado con LUKS existente.
 
@@ -662,13 +659,13 @@ The filesystem on /dev/sdaX is now 26347 (4k) blocks long.
 
 ```
 
-Ahora lo ciframos, utilizando el algoritmo de cifrado predeterminado, el cual no tenemos que especificarlo explícitamente. Tenga en cuenta que no hay una opción (todavía) para volver a verificar la frase de contraseña antes de que comience el cifrado, de modo que tenga cuidado de no escribirla mal:
+Ahora lo ciframos, utilizando el algoritmo de cifrado predeterminado, el cual no tenemos que especificarlo explícitamente.
 
  `# cryptsetup-reencrypt /dev/sdaX --new  --reduce-device-size 4096S` 
 ```
-WARNING: this is experimental code, it can completely break your data.
 Enter new passphrase: 
-Progress: 100,0%, ETA 00:00, 2596 MiB written, speed  37,6 MiB/s
+Verify passphrase:
+Finished, time 00:05.126,  952 MiB written, speed 185,7 MiB/s
 
 ```
 
@@ -699,14 +696,12 @@ y ya estará hecho.
 
 En este ejemplo, se vuelve a cifrar un dispositivo LUKS existente.
 
-**Advertencia:** ¡Vuelva a verificar que se han especificado las opciones de cifrado para *cryptsetup-reencrypt* correctamente y *nunca* recifre sin tener una **copia de seguridad confiable**! A partir de septiembre de 2015, la herramienta **no** acepta opciones no válidas y daña el encabezado LUKS, si no se usa correctamente.
+**Advertencia:** ¡Vuelva a verificar que se han especificado las opciones de cifrado para *cryptsetup-reencrypt* correctamente y *nunca* recifre sin tener una **copia de seguridad fiable**!
 
 Para volver a cifrar un dispositivo con sus opciones de cifrado existentes, no es necesario especificarlas. Un simple:
 
  `# cryptsetup-reencrypt /dev/sdaX` 
 ```
-
-WARNING: this is experimental code, it can completely break your data.
 Enter passphrase for key slot 0: 
 Progress: 100,0%, ETA 00:00, 2596 MiB written, speed  36,5 MiB/s
 
@@ -981,7 +976,7 @@ cryptkey=/dev/sdb1:offset:size
 
 Como ventaja, es más difícil eliminar la clave accidentalmente.
 
-No se garantiza que la denominación de nodos de dispositivos como `/dev/sdb1` permanezca igual en todos los reinicios. En su lugar, es más confiable acceder al dispositivo con los [nombre de dispositivo de bloque persistente](/index.php/Persistent_block_device_naming_(Espa%C3%B1ol) "Persistent block device naming (Español)") de udev. Para asegurarse de que el hook `encrypt` encuentre su archivo de claves al leerlo desde un dispositivo de almacenamiento externo, se deben usar nombres de dispositivos de bloques persistentes. Consulte el artículo [persistent block device naming (Español)](/index.php/Persistent_block_device_naming_(Espa%C3%B1ol) "Persistent block device naming (Español)").
+No se garantiza que la denominación de nodos de dispositivos como `/dev/sdb1` permanezca igual en todos los reinicios. En su lugar, es más fiable acceder al dispositivo con los [nombre de dispositivo de bloque persistente](/index.php/Persistent_block_device_naming_(Espa%C3%B1ol) "Persistent block device naming (Español)") de udev. Para asegurarse de que el hook `encrypt` encuentre su archivo de claves al leerlo desde un dispositivo de almacenamiento externo, se deben usar nombres de dispositivos de bloques persistentes. Consulte el artículo [persistent block device naming (Español)](/index.php/Persistent_block_device_naming_(Espa%C3%B1ol) "Persistent block device naming (Español)").
 
 #### Con un archivo de clave incrustado en initramfs
 

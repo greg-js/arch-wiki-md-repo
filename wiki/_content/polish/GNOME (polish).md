@@ -1,6 +1,6 @@
 Related articles
 
-*   [GTK+ (Polski)](/index.php?title=GTK%2B_(Polski)&action=edit&redlink=1 "GTK+ (Polski) (page does not exist)")
+*   [GTK+ (Polski)](/index.php/GTK%2B_(Polski) "GTK+ (Polski)")
 *   [KDE (Polski)](/index.php/KDE_(Polski) "KDE (Polski)")
 *   [Xfce (Polski)](/index.php/Xfce_(Polski) "Xfce (Polski)")
 

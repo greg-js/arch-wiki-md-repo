@@ -159,17 +159,18 @@ install CD version
 | [Lenovo ThinkPad X201](/index.php/Lenovo_ThinkPad_X201 "Lenovo ThinkPad X201") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Not tested |
 | [Lenovo ThinkPad X220](/index.php/Lenovo_ThinkPad_X220 "Lenovo ThinkPad X220") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes) |
 | [Lenovo ThinkPad X230](/index.php/Lenovo_ThinkPad_X230 "Lenovo ThinkPad X230") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes), UMTS Modem (Yes) |
-| [Lenovo ThinkPad X240](/index.php/Lenovo_ThinkPad_X240 "Lenovo ThinkPad X240") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | WWAN LTE (yes) | SD card (Yes), Webcam (Yes), Fingerprint (yes) |
-| [Lenovo ThinkPad X250](/index.php/Lenovo_ThinkPad_X250 "Lenovo ThinkPad X250") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes), Fingerprint (yes) |
-| [Lenovo ThinkPad X260](/index.php/Lenovo_ThinkPad_X260 "Lenovo ThinkPad X260") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes), Fingerprint (yes) |
-| Lenovo ThinkPad X270 | Yes | Yes | Yes | Yes | Yes | Not tested | Yes | NA | Webcam (yes) |
-| Lenovo ThinkPad X280 | Yes | Yes | Yes | Yes | Yes | Not tested | Yes | NA | Webcam (yes) |
+| [Lenovo ThinkPad X240](/index.php/Lenovo_ThinkPad_X240 "Lenovo ThinkPad X240") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | WWAN LTE (yes) | SD card (Yes), Webcam (Yes), Fingerprint (Yes) |
+| [Lenovo ThinkPad X250](/index.php/Lenovo_ThinkPad_X250 "Lenovo ThinkPad X250") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes), Fingerprint (Yes) |
+| [Lenovo ThinkPad X260](/index.php/Lenovo_ThinkPad_X260 "Lenovo ThinkPad X260") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes), Fingerprint (Yes) |
+| Lenovo ThinkPad X270 | Yes | Yes | Yes | Yes | Yes | Not tested | Yes | NA | Webcam (Yes) |
+| Lenovo ThinkPad X280 | Yes | Yes | Yes | Yes | Yes | Not tested | Yes | NA | Webcam (Yes) |
 | [Lenovo ThinkPad X1 Carbon](/index.php/Lenovo_ThinkPad_X1_Carbon "Lenovo ThinkPad X1 Carbon") | NA | Yes | Yes | Yes | Yes | Proprietary/nonfree | Yes | NA |
 | [Lenovo ThinkPad X1 Carbon (Gen 2)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_2) "Lenovo ThinkPad X1 Carbon (Gen 2)") | NA | Yes | Yes | Yes | Yes | Yes | Yes | NA |
 | [Lenovo ThinkPad X1 Carbon (Gen 3)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_3) "Lenovo ThinkPad X1 Carbon (Gen 3)") | NA | Yes | Yes | Yes | Yes | Yes | Yes | NA |
 | [Lenovo ThinkPad X1 Carbon (Gen 4)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_4) "Lenovo ThinkPad X1 Carbon (Gen 4)") | NA | Yes | Yes | Yes | Yes | Yes | Yes | NA |
 | [Lenovo ThinkPad X1 Carbon (Gen 5)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_5) "Lenovo ThinkPad X1 Carbon (Gen 5)") | NA | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
-| [Lenovo ThinkPad X1 Carbon (Gen 6)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_6) "Lenovo ThinkPad X1 Carbon (Gen 6)") | NA | Yes | Yes | Yes | Yes | Yes | Yes | Yes | _ |
+| [Lenovo ThinkPad X1 Carbon (Gen 6)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_6) "Lenovo ThinkPad X1 Carbon (Gen 6)") | NA | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
+| [Lenovo ThinkPad X1 Yoga (Gen 3)](/index.php/Lenovo_ThinkPad_X1_Yoga_(Gen_3) "Lenovo ThinkPad X1 Yoga (Gen 3)") | NA | Yes | Yes | Yes | Yes | Yes | Partial | NA | SD card (Yes), Webcam (Yes), Fingerprint (No), Touchscreen (Yes), Accelerometer (Yes) | _ |
 
 #### Yoga Series
 

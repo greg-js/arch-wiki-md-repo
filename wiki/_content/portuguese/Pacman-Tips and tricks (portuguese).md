@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks"). Data da última tradução: 2018-11-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&diff=0&oldid=553033) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks"). Data da última tradução: 2018-11-22\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&diff=0&oldid=555776) na versão em inglês.
 
 Artigos relacionados
 
@@ -19,12 +19,13 @@ Para métodos gerais para melhorar a flexibilidade das dicas fornecidas ou do *p
         *   [1.1.4 Pacotes de desenvolvimento](#Pacotes_de_desenvolvimento)
     *   [1.2 Listando arquivos pertencentes a um pacote com tamanho](#Listando_arquivos_pertencentes_a_um_pacote_com_tamanho)
     *   [1.3 Identificar arquivos que pertençam a nenhum pacote](#Identificar_arquivos_que_pertençam_a_nenhum_pacote)
-    *   [1.4 Removendo pacotes não usados (órfãos)](#Removendo_pacotes_não_usados_(órfãos))
-    *   [1.5 Removendo tudo exceto o grupo base](#Removendo_tudo_exceto_o_grupo_base)
-    *   [1.6 Obtendo a lista de dependências de vários pacotes](#Obtendo_a_lista_de_dependências_de_vários_pacotes)
-    *   [1.7 Listando arquivos backup modificados](#Listando_arquivos_backup_modificados)
-    *   [1.8 Fazer backup da base de dados do pacman](#Fazer_backup_da_base_de_dados_do_pacman)
-    *   [1.9 Verificar changelogs facilmente](#Verificar_changelogs_facilmente)
+    *   [1.4 Rastreando arquivos sem donos criados criados por pacotes](#Rastreando_arquivos_sem_donos_criados_criados_por_pacotes)
+    *   [1.5 Removendo pacotes não usados (órfãos)](#Removendo_pacotes_não_usados_(órfãos))
+    *   [1.6 Removendo tudo exceto o grupo base](#Removendo_tudo_exceto_o_grupo_base)
+    *   [1.7 Obtendo a lista de dependências de vários pacotes](#Obtendo_a_lista_de_dependências_de_vários_pacotes)
+    *   [1.8 Listando arquivos backup modificados](#Listando_arquivos_backup_modificados)
+    *   [1.9 Fazer backup da base de dados do pacman](#Fazer_backup_da_base_de_dados_do_pacman)
+    *   [1.10 Verificar changelogs facilmente](#Verificar_changelogs_facilmente)
 *   [2 Instalação e recuperação](#Instalação_e_recuperação)
     *   [2.1 Instalando pacotes a partir de um CD/DVD ou pendrive](#Instalando_pacotes_a_partir_de_um_CD/DVD_ou_pendrive)
     *   [2.2 Repositório local personalizado](#Repositório_local_personalizado)
@@ -197,13 +198,46 @@ $ pacman -Qlq *pacote* | grep -v '/$' | xargs du -h | sort -h
 
 Se seu arquivo possui arquivos não pertencentes a qualquer pacote (um caso comum se você não [usa o gerenciador de pacotes para instalar softwares](/index.php/Manuten%C3%A7%C3%A3o_do_sistema#Use_o_gerenciador_de_pacotes_para_instalar_softwares "Manutenção do sistema")), você pode querer descobrir quais são esses arquivos para limpá-los. O processo geral para fazer isso:
 
-1.  Crie uma lista ordenada dos arquivos que você deseja verificar quem é o dono: `$ find /etc /opt /usr | sort > todos_arquivos.txt` 
-2.  Crie uma lista ordenada dos arquivos rastreados pelo *pacman* (e remova as barras ao final dos diretórios): `$ pacman -Qlq | sed 's|/$||' | sort > donos_arquivos.txt` 
-3.  Encontre linhas na primeira lista que não estão na segunda: `$ comm -23 todos_arquivos.txt donos_arquivos.txt` 
+Um método é usar `# pacreport --unowned-files` do [pacutils](https://www.archlinux.org/packages/?name=pacutils), o qual vai listar arquivos sem dono entre outros detalhes.
 
-Este processo é complicado na prática porque muitos arquivos importantes não fazem parte de nenhum pacote (por exemplo, arquivos gerados em tempo de execução, configurações personalizadas) e, portanto, serão incluídos na saída final, dificultando a escolha dos arquivos que podem ser excluídos com segurança.
+Outro é listar todos os arquivos de seu interesse e verificá-los com o pacman:
 
-**Dica:** O script [lostfiles](https://www.archlinux.org/packages/?name=lostfiles) realizar etapas similares, mas também inclui uma lista negra extensa para remover falso-positivos comuns da saída. [aconfmgr](https://github.com/CyberShadow/aconfmgr) ([aconfmgr-git](https://aur.archlinux.org/packages/aconfmgr-git/)) também permite rastrear arquivos órfãos usando um script de configuração.
+```
+# find /etc /usr /opt /var | LC_ALL=C pacman -Qqo - 2>&1 > /dev/null | cut -d ' ' -f 5-
+
+```
+
+**Dica:** O script [lostfiles](https://www.archlinux.org/packages/?name=lostfiles) realizar etapas similares, mas também inclui uma lista negra extensa para remover falso-positivos comuns da saída. [aconfmgr](https://github.com/CyberShadow/aconfmgr) ([aconfmgr-git](https://aur.archlinux.org/packages/aconfmgr-git/)) permite rastrear arquivos órfãos usando um script de configuração.
+
+### Rastreando arquivos sem donos criados criados por pacotes
+
+A maioria dos sistemas vão aos poucos coletando diversos arquivos [fantasmas](http://ftp.rpm.org/max-rpm/s1-rpm-inside-files-list-directives.html#S3-RPM-INSIDE-FLIST-GHOST-DIRECTIVE) tal como arquivos de estado, logs, índices, etc. pelo curso de operação comum.
+
+`pacreport` do [pacutils](https://www.archlinux.org/packages/?name=pacutils) pode ser usado para rastrear esses arquivos e suas associações via `/etc/pacreport.conf` (veja [pacreport(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacreport.1#FILES)).
+
+Um exemplo pode se parecer com algo como isso (resumido):
+
+ `/etc/pacreport.conf` 
+```
+[Options]
+IgnoreUnowned = usr/share/applications/mimeinfo.cache
+
+[PkgIgnoreUnowned]
+alsa-utils = var/lib/alsa/asound.state
+bluez = var/lib/bluetooth
+ca-certificates = etc/ca-certificates/trust-source/*
+dbus = var/lib/dbus/machine-id
+glibc = etc/ld.so.cache
+grub = boot/grub/*
+linux = boot/initramfs-linux.img
+pacman = var/lib/pacman/local
+update-mime-database = usr/share/mime/magic
+
+```
+
+Então, ao usar `# pacreport --unowned-files`, todos os arquivos sem dono serão listados se o pacote associado não estiver mais instalado (ou se algum arquivo novo tiver sido criado).
+
+Adicionalmente, [aconfmgr](https://github.com/CyberShadow/aconfmgr) ([aconfmgr-git](https://aur.archlinux.org/packages/aconfmgr-git/)) permite rastrear arquivos modificados e órfãos usando um script de configuração.
 
 ### Removendo pacotes não usados (órfãos)
 
@@ -720,6 +754,10 @@ Existem outros aplicativos de download que você pode usar com *pacman*. Aqui es
 *   **[snap-pac](/index.php/Snapper#Wrapping_pacman_transactions_in_snapshots "Snapper")** — Faz o *pacman* usar automaticamente o snapper para criar snapshots pré/pós como o YaST do openSUSE.
 
 	[https://github.com/wesbarnett/snap-pac](https://github.com/wesbarnett/snap-pac) || [snap-pac](https://www.archlinux.org/packages/?name=snap-pac)
+
+*   **vrms-arch** — Um Richard M. Stallman virtual para lhe dizer quis pacotes não livres estão instalados.
+
+	[https://github.com/orospakr/vrms-arch](https://github.com/orospakr/vrms-arch) || [vrms-arch](https://aur.archlinux.org/packages/vrms-arch/)
 
 ### Gráficos
 

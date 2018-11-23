@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Disk encryption](/index.php/Disk_encryption "Disk encryption"), revisada por última vez el **2018-10-03**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Disk_encryption&diff=0&oldid=543198) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Disk encryption](/index.php/Disk_encryption "Disk encryption"), revisada por última vez el **2018-11-22**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Disk_encryption&diff=0&oldid=555962) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -471,9 +471,9 @@ El algoritmo real utilizado para servir de traductor entre las piezas de datos n
 El cifrado de discos emplea «algoritmos de cifrado de bloques», que operan sobre bloques de datos de una longitud fija, por ejemplo 16 bytes (128 bits). En el momento de escribir estas líneas, los más usados son:
 
  tamaño bloque | tamaño clave | comentario |
-| [AES](https://en.wikipedia.org/wiki/es:Advanced_Encryption_Standard "wikipedia:es:Advanced Encryption Standard") | 128 bits | 128, 192 o 256 bits | *aprobado por la NSA para la protección de información clasificada «SECRET» y «TOP SECRET» por el gobierno de EE.UU. (cuando se utiliza con un tamaño de clave de 192 o 256 bits)* |
-| [Blowfish](https://en.wikipedia.org/wiki/es:Blowfish "wikipedia:es:Blowfish") | 64 bits | 32–448 bits | *uno de los primeros sistemas de cifrado seguro con licencia libre que se puso a disposición del público, por lo tanto, muy bien consolidado en Linux* |
-| [Twofish](https://en.wikipedia.org/wiki/Twofish "wikipedia:Twofish") | 128 bits | 128, 192 o 256 bits | *desarrollado como sucesor de Blowfish, pero sin haber alcanzado un uso tan amplio* |
+| [AES](https://en.wikipedia.org/wiki/es:Advanced_Encryption_Standard "wikipedia:es:Advanced Encryption Standard") | 128 bits | 128, 192 o 256 bits | aprobado por la NSA para la protección de información clasificada «SECRET» y «TOP SECRET» por el gobierno de EE.UU. (cuando se utiliza con un tamaño de clave de 192 o 256 bits) |
+| [Blowfish](https://en.wikipedia.org/wiki/es:Blowfish "wikipedia:es:Blowfish") | 64 bits | 32–448 bits | uno de los primeros sistemas de cifrado seguro con licencia libre que se puso a disposición del público, por lo tanto, muy bien consolidado en Linux |
+| [Twofish](https://en.wikipedia.org/wiki/Twofish "wikipedia:Twofish") | 128 bits | 128, 192 o 256 bits | desarrollado como sucesor de Blowfish, pero sin haber alcanzado un uso tan amplio |
 | [Serpent](https://en.wikipedia.org/wiki/es:Serpent "wikipedia:es:Serpent") | 128 bits | 128, 192 o 256 bits | Considerado el más seguro de los cinco finalistas de la competición AES[[10]](http://csrc.nist.gov/archive/aes/round2/r2report.pdf)[[11]](https://www.cl.cam.ac.uk/~rja14/Papers/serpentcase.pdf)[[12]](https://www.cl.cam.ac.uk/~rja14/Papers/serpent.pdf). |
 
 Cifrar/descifrar un sector ([véase más arriba](#Principio_básico)) se consigue mediante su división en pequeños bloques, haciéndolos coincidir con el tamaño del bloque cifrado, y siguiendo, después, cierto conjunto de reglas (que antes hemos llamado «**modalidad de operación**») que informan sobre cómo aplicar el algoritmo de cifrado a los bloques individuales.

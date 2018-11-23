@@ -7294,7 +7294,7 @@ See also [#Markdown editors](#Markdown_editors) and [Wikipedia:Full-screen writi
 
 *   **GoldenDict** — Feature-rich dictionary lookup program.
 
-	[https://wiki.gnome.org/Dictionary](https://wiki.gnome.org/Dictionary) || [goldendict](https://www.archlinux.org/packages/?name=goldendict)
+	[http://www.goldendict.org/](http://www.goldendict.org/) || [goldendict](https://www.archlinux.org/packages/?name=goldendict)
 
 *   **Kiten** — Japanese reference and study tool. Part of [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
 

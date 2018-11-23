@@ -185,8 +185,8 @@ Display dimming: works
  | No | Hotkeys: works
 Webcam: works
 Card reader: not tested | Can't set mute-key led light. |
-| HP ENVY 13-ad140ng | 2017.12 | Intel UHD Graphics 620 | *hdajackretask* should be used to enable the top speaker *0x14* override to *Internal Speaker*, *0x17* override to *Internal Speaker Back* | No | Intel Wireless 7265 | not tested | not tested | No modem installed | Webcam: works | Can't set mute-key led light. |
-| [HP ProBook 450 G5](/index.php?title=HP_ProBook_450_G5&action=edit&redlink=1 "HP ProBook 450 G5 (page does not exist)") | 2018.03 | Intel Core i5-8250u, Intel HD Graphics 620 (*i915*) | Intel sound card: *snd-hda-intel* | RTL8111\. Driver: *r8169* | Intel 8265/8275\. Driver: *iwlwifi* | not tested | ACPI: works
+| HP ENVY 13-ad140ng | 2017.12 | Intel UHD Graphics 620 | *hdajackretask* should be used to enable the top speaker *0x14* override to *Internal Speaker*, *0x17* override to *Internal Speaker Back* | Not present | Intel Wireless 7265 | Yes | not tested | No modem installed | Webcam: works | Can't set mute-key led light. |
+| HP ProBook 450 G5 | 2018.03 | Intel Core i5-8250u, Intel HD Graphics 620 (*i915*) | Intel sound card: *snd-hda-intel* | RTL8111\. Driver: *r8169* | Intel 8265/8275\. Driver: *iwlwifi* | not tested | ACPI: works
 Suspend to RAM: works
 Suspend to Disk: not tested
 Battery: works
@@ -196,6 +196,16 @@ Webcam: Works
 Card reader: not tested
 Fingerprint scanner: not tested
 Keyboard backlit: works | Secure boot works with GRUB, coexists with Windows Pro. Windows partition is accessible disabling Bitlocker. (installed from Archiso) -- |
+| HP EliteBook 830 G5 | 2018.11 | Intel Core i5-8250u, Intel UHD Graphics 620 (*i915*) | Intel sound card: *snd-hda-intel* | Intel(R) PRO/1000 *e1000e* | Intel 8265/8275\. Driver: *iwlwifi* | Yes | ACPI: works
+Suspend to RAM: works
+Suspend to Disk: work
+Battery: works
+Display dimming: works
+CPU frequency scaling: works
+Ambiant light sensor: works with iio-sensor-proxy | Not tested | Hot keys: Works
+Webcam: Works
+Fingerprint scanner: not tested
+Keyboard backlight: works | Secure boot works with SYSLINUX. (installed from Archiso) -- |
 | Model version | Arch Linux Install CD version | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other | Remarks |
 | Hardware support |
 

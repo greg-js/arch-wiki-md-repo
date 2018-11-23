@@ -267,7 +267,7 @@ OCZ has a [Command Line Online Update Tool (CLOUT)](https://www.ocz.com/us/downl
 
 ### Samsung
 
-Samsung notes that update methods other than using their Magician Software are "not supported," but it is possible. The Magician Software can be used to make a USB drive bootable with the firmware update. Samsung provides pre-made [bootable ISO images](https://www.samsung.com/semiconductor/minisite/ssd/download/tools.html) that can be used to update the firmware. Another option is to use Samsung's [samsung_magician](https://aur.archlinux.org/packages/samsung_magician/), which is available in the AUR. Magician only supports Samsung-branded SSDs; those manufactured by Samsung for OEMs (e.g., Lenovo) are not supported.
+Samsung notes that update methods other than using their Magician Software are "not supported," but it is possible. The Magician Software can be used to make a USB drive bootable with the firmware update. Samsung provides pre-made [bootable ISO images](https://www.samsung.com/semiconductor/minisite/ssd/download/tools.html) that can be used to update the firmware. Another option is to use Samsung's [samsung_magician-consumer-ssd](https://aur.archlinux.org/packages/samsung_magician-consumer-ssd/), which is available in the AUR. Magician only supports Samsung-branded SSDs; those manufactured by Samsung for OEMs (e.g., Lenovo) are not supported.
 
 **Note:** Samsung does not make it obvious at all that they actually provide these. They seem to have 4 different firmware update pages, and each references different ways of doing things.
 

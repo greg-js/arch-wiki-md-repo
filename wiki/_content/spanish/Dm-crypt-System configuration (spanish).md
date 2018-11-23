@@ -5,7 +5,7 @@
 [Preparar dispositivo](/index.php/Dm-crypt/Drive_preparation_(Espa%C3%B1ol) "Dm-crypt/Drive preparation (Español)") – [Cifrar dispositivo](/index.php/Dm-crypt/Device_encryption_(Espa%C3%B1ol) "Dm-crypt/Device encryption (Español)") – [Cifrar sistema de archivos no root](/index.php/Dm-crypt/Encrypting_a_non-root_file_system_(Espa%C3%B1ol) "Dm-crypt/Encrypting a non-root file system (Español)") – [Cifrar un sistema completo](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol) "Dm-crypt/Encrypting an entire system (Español)") – [Cifrar espacio de intercambio](/index.php/Dm-crypt/Swap_encryption_(Espa%C3%B1ol) "Dm-crypt/Swap encryption (Español)") – [Montar y acceder a /home cifrado](/index.php/Dm-crypt/Mounting_at_login_(Espa%C3%B1ol) "Dm-crypt/Mounting at login (Español)") – <a class="mw-selflink selflink">Configurar el sistema</a> – [Especialidades](/index.php/Dm-crypt/Specialties_(Espa%C3%B1ol) "Dm-crypt/Specialties (Español)")
 
 **Estado de la traducción**
-Este artículo es una traducción de [Dm-crypt/System configuration](/index.php/Dm-crypt/System_configuration "Dm-crypt/System configuration"), revisada por última vez el **2018-10-26**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Dm-crypt/System_configuration&diff=0&oldid=551201) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Dm-crypt/System configuration](/index.php/Dm-crypt/System_configuration "Dm-crypt/System configuration"), revisada por última vez el **2018-11-22**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Dm-crypt/System_configuration&diff=0&oldid=555873) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 **Sugerencia:** Si necesita desbloquear de forma remota la raíz u otros sistemas de archivos de arranque temprano (máquinas sin encabezados, servidores distantes ...), siga las instrucciones específicas de [dm-crypt/Specialties (Español)#Desbloqueo remoto de la partición (u otro volumen) raíz](/index.php/Dm-crypt/Specialties_(Espa%C3%B1ol)#Desbloqueo_remoto_de_la_partición_(u_otro_volumen)_raíz "Dm-crypt/Specialties (Español)").
 
@@ -93,7 +93,7 @@ root=*dispositivo*
 *   Si un LVM se activa primero y contiene un [volumen lógico raíz cifrado](/index.php/Dm-crypt/Encrypting_an_entire_system#LUKS_on_LVM "Dm-crypt/Encrypting an entire system"), el formato anterior se aplica igual.
 *   Si el sistema de archivos raíz está contenido en un volumen lógico de un [LVM cifrado](/index.php/Encrypted_LVM "Encrypted LVM"), el mapeador de dispositivos para él vendrá formulado de forma general como `root=/dev/*grupo de volúmenes*/*volumen lógico*`.
 
-**Sugerencia:** No es necesario especificar este parámetro manualmente cuando utiliza [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)"). Al ejecutar el script *grub-mkconfig*, este determinará el UUID correcto del sistema de archivos descifrado y lo especificará en el archivo `grub.cfg` generado automáticamente.
+**Sugerencia:** No es necesario especificar este parámetro manualmente cuando utiliza [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") y se genera `grub.cfg` con *grub-mkconfig*. Al ejecutar el script *grub-mkconfig*, este determinará el UUID correcto del sistema de archivos descifrado y lo añadirá al archivo `grub.cfg` automáticamente.
 
 #### resume
 
@@ -162,8 +162,6 @@ cryptkey=rootfs:*ruta'*
 Ejemplo: `cryptkey=rootfs:/secretkey`
 
 También tenga en cuenta que si `cryptkey` no se especifica, por defecto es `/crypto_keyfile.bin` (en initramfs).[[2]](https://git.archlinux.org/svntogit/packages.git/tree/trunk/hooks-encrypt?h=packages/cryptsetup#n8)
-
-**Nota:** Si la inicialización del disco duro USB falla en el arranque, agregue `usb_storage` a la matriz `MODULES` de [mkinitcpio](/index.php/Mkinitcpio_(Espa%C3%B1ol)#MÓDULOS "Mkinitcpio (Español)") [[3]](https://bugs.archlinux.org/task/60272).
 
 Véase también [dm-crypt/Device encryption (Español)#Archivos de claves](/index.php/Dm-crypt/Device_encryption_(Espa%C3%B1ol)#Archivos_de_claves "Dm-crypt/Device encryption (Español)").
 
@@ -394,4 +392,4 @@ $ systemctl list-unit-files | grep systemd-cryptsetup
 
 ### El espacio del sistema en el arranque/solicitud de contraseña no se muestra
 
-Si está usando [Plymouth (Español)](/index.php/Plymouth_(Espa%C3%B1ol) "Plymouth (Español)"), asegúrese de cargar los módulos correctos (vea: [Plymouth#El hook plymouth](/index.php/Plymouth#El_hook_plymouth "Plymouth")) o desactívelos. De lo contrario, Plymouth no asumirá la solicitud de contraseña, haciendo imposible el inicio del sistema.
+Si está usando [Plymouth (Español)](/index.php/Plymouth_(Espa%C3%B1ol) "Plymouth (Español)"), asegúrese de cargar los módulos correctos (vea: [Plymouth#The plymouth hook](/index.php/Plymouth#The_plymouth_hook "Plymouth")) o desactívelos. De lo contrario, Plymouth no asumirá la solicitud de contraseña, haciendo imposible el inicio del sistema.

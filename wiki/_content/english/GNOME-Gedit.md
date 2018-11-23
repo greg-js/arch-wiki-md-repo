@@ -1,6 +1,8 @@
+[gedit](https://en.wikipedia.org/wiki/gedit "w:gedit") is a general-purpose text editor for GNOME.
+
 ## Contents
 
-*   [1 Installing](#Installing)
+*   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 Do not end files with a new line](#Do_not_end_files_with_a_new_line)
     *   [2.2 Save backup versions of edited files](#Save_backup_versions_of_edited_files)
@@ -9,7 +11,7 @@
     *   [4.1 Adding and making custom plugins](#Adding_and_making_custom_plugins)
 *   [5 See also](#See_also)
 
-## Installing
+## Installation
 
 [Install](/index.php/Install "Install") the [gedit](https://www.archlinux.org/packages/?name=gedit) package.
 

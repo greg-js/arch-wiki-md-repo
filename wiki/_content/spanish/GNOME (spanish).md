@@ -9,11 +9,11 @@ Related articles
 *   [GNOME/Troubleshooting](/index.php/GNOME/Troubleshooting "GNOME/Troubleshooting")
 *   [GNOME/Files](/index.php/GNOME/Files "GNOME/Files")
 *   [GNOME/Gedit](/index.php/GNOME/Gedit "GNOME/Gedit")
-*   [GNOME/Web](/index.php/GNOME/Web "GNOME/Web")
+*   [GNOME/Web](/index.php/GNOME/Web_(Espa%C3%B1ol) "GNOME/Web (Español)")
 *   [GNOME/Evolution](/index.php/GNOME/Evolution "GNOME/Evolution")
 *   [GNOME/Flashback](/index.php/GNOME/Flashback "GNOME/Flashback")
 *   [GNOME/Keyring](/index.php/GNOME/Keyring "GNOME/Keyring")
-*   [GNOME/Document viewer](/index.php/GNOME/Document_viewer "GNOME/Document viewer")
+*   [GNOME/Visor de documentos](/index.php/GNOME/Document_viewer_(Espa%C3%B1ol) "GNOME/Document viewer (Español)")
 *   [Official repositories#gnome-unstable](/index.php/Official_repositories#gnome-unstable "Official repositories")
 
 [GNOME](https://en.wikipedia.org/wiki/es:GNOME que pretende ser simple y fácil de utilizar. Está diseñado por [el Proyecto GNOME](https://en.wikipedia.org/wiki/The_GNOME_Project en lugar de [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)").

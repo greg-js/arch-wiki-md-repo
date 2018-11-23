@@ -166,7 +166,7 @@ $ startx /usr/bin/enlightenment -- -br +bs -dpi 96
 
 See also [startx(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/startx.1).
 
-**Note:** May lack some functionality. [[2]](https://bbs.archlinux.org/viewtopic.php?id=202812)
+**Note:** Display needs to be specified (as loading `/etc/X11/xinit/xinitrc.d/` is skipped) for some operations to work (e.g. notification daemons). [[2]](https://bbs.archlinux.org/viewtopic.php?id=202812)
 
 **Tip:** This can be used to start regular GUI programs but without any of the basic window manager features. See also [#Starting applications without a window manager](#Starting_applications_without_a_window_manager) and [Running program in separate X display](/index.php/Running_program_in_separate_X_display "Running program in separate X display").
 

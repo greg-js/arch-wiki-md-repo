@@ -19,14 +19,13 @@ A number of mobile telephone networks around the world offer mobile internet con
     *   [4.4 netctl](#netctl)
     *   [4.5 libmbim](#libmbim)
     *   [4.6 sakis3g](#sakis3g)
-    *   [4.7 Low connection speed](#Low_connection_speed)
-        *   [4.7.1 QoS parameter](#QoS_parameter)
-        *   [4.7.2 Baud parameter](#Baud_parameter)
-    *   [4.8 Monitor used bandwith](#Monitor_used_bandwith)
-    *   [4.9 Connection halts after few minutes running](#Connection_halts_after_few_minutes_running)
-*   [5 Reading SMS](#Reading_SMS)
-    *   [5.1 command line script](#command_line_script)
-*   [6 Fix image quality](#Fix_image_quality)
+    *   [4.7 Connection halts after few minutes running](#Connection_halts_after_few_minutes_running)
+*   [5 Tips and Tricks](#Tips_and_Tricks)
+    *   [5.1 AT commands](#AT_commands)
+    *   [5.2 Low connection speed](#Low_connection_speed)
+    *   [5.3 Monitor used bandwidth](#Monitor_used_bandwidth)
+    *   [5.4 Reading SMS](#Reading_SMS)
+    *   [5.5 Fix image quality](#Fix_image_quality)
 
 ## Remove the PIN
 
@@ -129,39 +128,6 @@ Install `libmbim` from the official repositories. To bring up the modem you can 
 
 There may be the chance that the modem stick is supported by [sakis3g](http://www.sakis3g.com/) which is an all in one command line script and automates all the steps above. Install [sakis3g](https://aur.archlinux.org/packages/sakis3g/) from the [AUR](/index.php/AUR "AUR").
 
-### Low connection speed
-
-Someone claims that the connection speed under Linux is lower than Windows: [[1]](https://bbs.archlinux.org/viewtopic.php?id=111513)
-
-A short summary for possible solutions which are not fully verified. In most of conditions, the low speed is caused by bad receiver signals and too many people in cell. But you still could use the following method to try to improve the connection speed.
-
-#### QoS parameter
-
-The `AT+CGEQMIN` and `AT+CGEQREQ` commands can be used to set the QoS. It is also possible to decrease and limit the connect speed. Add the following `Init` command in `/etc/wvdial.conf`:
-
-```
-Init6 = AT+CGEQMIN=1,4,64,640,64,640
-Init7 = AT+CGEQREQ=1,4,64,640,64,640
-
-```
-
-#### Baud parameter
-
-Baud parameter in wvdial.conf could be used to increase the connection speed.
-
-```
-Baud = 460800
-
-```
-
-But the official Huawei E261 windows application set the Baud=9600 under Windows Vista. More verifications are needed to double check this point.
-
-### Monitor used bandwith
-
-Frequently a 3G connection obtained via a mobile phone operator comes with restricted bandwidth, so that you are only allowed to use a certain bandwidth per time (e.g. 1GB per month). While it is quite straight-forward to know which type of network applications are pretty bandwidth extensive (e.g. video streaming, gaming, torrent, etc.), it may be difficult to keep an overview about overall consumed bandwidth.
-
-A number of tools are available to help with that. Two console tools are [vnstat](https://www.archlinux.org/packages/?name=vnstat), which allows to keep track of bandwith over time, and [iftop](https://www.archlinux.org/packages/?name=iftop) to monitor bandwidth of individual sessions. If you are a [KDE](/index.php/KDE "KDE") user, [knemo](https://www.archlinux.org/packages/?name=knemo) might help. All are available in the [official repositories](/index.php/Official_repositories "Official repositories").
-
 ### Connection halts after few minutes running
 
 This problem occurs on some modems which locked by a mobile operator. You can successfully connect to the internet but after few minutes connection halts and your modem reboots. That happens because an operator built a some checks into modem firmware so a modem checks if a branded software is running on your pc, but usually that software is Windows-only, and obviously you don't use it. Fix (it works on ZTE-mf190 at least) is simple - send this command through serial port (use minicom or similar soft):
@@ -173,7 +139,120 @@ AT+ZCDRUN=E\r
 
 This command will delete a NODOWNLOAD.FLG file in the modem's filesystem - it will disable such checks.
 
-## Reading SMS
+## Tips and Tricks
+
+### AT commands
+
+There are some useful commands:
+
+*   AT^U2DIAG=0 - the device is only Modem
+*   AT^U2DIAG=1 - device is in modem mode + CD ROM
+*   AT^U2DIAG=255 - the device in modem mode + CD ROM + Card Reader
+*   AT^U2DIAG=256 - the device in modem mode + Card Reader
+*   AT+CPIN=<PIN-CODE> - enter PIN-code
+*   AT+CUSD=1,<PDU-encoded-USSD-code>,15 - USSD request, result can be found (probably) in /dev/ttyUSB2.
+
+Encode "*100#" to PDU format:
+
+```
+perl -e '@a=split(//,unpack("b*","*100#")); for ($i=7; $i < $#a; $i+=8) { $a[$i]="" } print uc(unpack("H*", pack("b*", join("", @a))))."
+"'
+
+```
+
+Decode "AA180C3602" from PDU format:
+
+```
+perl -e '@a=split(//,unpack("b*", pack("H*","AA180C3602"))); for ($i=6; $i < $#a; $i+=7) {$a[$i].="0" } print pack("b*", join("", @a)).""'
+
+```
+
+Answer decoding (this example is balance response: 151.25):
+
+```
+perl -e 'print pack("H*", "003100350031002C003200350020044004430431002E0020");'
+
+```
+
+Some operators return USSD result in PDU encoding, so you should check proper decoding method.
+
+*   AT+CSQ - get signal quality (AT+CSQ=?)
+*   AT+GMI - get manufacturer
+*   AT+GMM - get model
+*   AT+GMR - get revision
+*   AT+GMN - get IMEI
+*   AT+COPS? - get operator info
+*   AT^CARDLOCK="NCK-code" - unlock modem. NCK-code should be calculated by IMEI. After that modem can work with any GSM-provider.
+*   AT^SYSCFG=mode, order, band, roaming, domain - System Config
+
+Mode:
+
+*   2 Automatic search
+*   13 2G ONLY
+*   14 3G ONLY
+*   16 No change
+
+Order:
+
+*   0 Automatic search
+*   1 2G first, then 3G
+*   2 3G first, then 2G
+*   3 No change
+
+Band:
+
+*   80 GSM DCS systems
+*   100 Extended GSM 900
+*   200 Primary GSM 900
+*   200000 GSM PCS
+*   400000 WCDMA IMT 2000
+*   3FFFFFFF Any band
+*   40000000 No change of band
+
+Roaming:
+
+*   0 Not supported
+*   1 Roaming is supported
+*   2 No change
+
+Domain:
+
+*   0 CS_ONLY
+*   1 PS_ONLY
+*   2 CS_PS
+*   3 ANY
+*   4 No change
+
+### Low connection speed
+
+Someone claims that the connection speed under linux is lower than Windows [[1]](https://bbs.archlinux.org/viewtopic.php?id=111513). This is a short summary for possible solutions which are not fully verified.
+
+In most of conditions, the low speed is caused by bad receiver signals and too many people in cell. But you still could use the following method to try to improve the connection speed:
+
+*   QoS parameter can be set with the `AT+CGEQMIN` and `AT+CGEQREQ` commands. It should also be possible to decrease and limit the connection speed. Add the following `Init` command in `/etc/wvdial.conf`:
+
+```
+Init6 = AT+CGEQMIN=1,4,64,640,64,640
+Init7 = AT+CGEQREQ=1,4,64,640,64,640
+
+```
+
+*   Baud parameter in `/etc/wvdial.conf` could be used to increase the connection speed:
+
+```
+Baud = 460800
+
+```
+
+It is advisable to see the baud rate set by the official modem application for Windows (possibly `9600` on Vista).
+
+### Monitor used bandwidth
+
+Frequently a 3G connection obtained via a mobile phone operator comes with restricted bandwidth, so that you are only allowed to use a certain bandwidth per time (e.g. 1GB per month). While it is quite straight-forward to know which type of network applications are pretty bandwidth extensive (e.g. video streaming, gaming, torrent, etc.), it may be difficult to keep an overview about overall consumed bandwidth.
+
+A number of tools are available to help with that. Two console tools are [vnstat](https://www.archlinux.org/packages/?name=vnstat), which allows to keep track of bandwith over time, and [iftop](https://www.archlinux.org/packages/?name=iftop) to monitor bandwidth of individual sessions. If you are a [KDE](/index.php/KDE "KDE") user, [knemo](https://www.archlinux.org/packages/?name=knemo) might help. All are available in the [official repositories](/index.php/Official_repositories "Official repositories").
+
+### Reading SMS
 
 This was tested on a Huawei EM770W (GTM382E) 3g card integrated into an Acer Aspire AS3810TG laptop.
 
@@ -190,7 +269,7 @@ $ cp /etc/gnokiirc ~/.config/gnokii/config
 
 ```
 
-edit `~/.config/gnokii/config` as follows:
+Edit `~/.config/gnokii/config` as follows:
 
  `port = /dev/ttyUSB0` 
 
@@ -220,12 +299,12 @@ $ xgnokii
 
 Click on the "SMS" icon button, a window opens up. Then click: "messages->activate sms reading". Your messages will show up in the window.
 
-### command line script
+**Command line script**:
 
 A small command line script using gnokii to read SMS on your SIM card (not phone memory) without having to start a GUI:
 
 ```
-$  gnokii --getsms SM 0 end 2>&1|grep Text -A1 -B3|grep -v Text
+$ gnokii --getsms SM 0 end 2>&1|grep Text -A1 -B3|grep -v Text
 
 ```
 
@@ -243,7 +322,7 @@ gnokii # invoke gnokii
 
 Granted this does not work very well if your SMS contains the word "Text", but you may adapt the script to your liking.
 
-## Fix image quality
+### Fix image quality
 
 If you are getting low quality images while browsing the web over a mobile broadband connection with the hints "shift+r improves the quality of this image" and "shift+a improves the quality of all images on this page", follow these instructions:
 

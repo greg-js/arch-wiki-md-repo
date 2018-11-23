@@ -6,11 +6,10 @@
     *   [2.2 Driver loading](#Driver_loading)
     *   [2.3 Optional: device naming](#Optional:_device_naming)
 *   [3 Connecting internet](#Connecting_internet)
-*   [4 AT commands](#AT_commands)
-*   [5 Sending SMS](#Sending_SMS)
-*   [6 USSD Requests](#USSD_Requests)
-*   [7 Success Stories](#Success_Stories)
-*   [8 References](#References)
+*   [4 Sending SMS](#Sending_SMS)
+*   [5 USSD Requests](#USSD_Requests)
+*   [6 Success Stories](#Success_Stories)
+*   [7 References](#References)
 
 ## Introduction
 
@@ -91,88 +90,6 @@ For a Huawei device which identifies with the USB ID 12D1:1003 after modeswitchi
 Now you have new 2 or 3 /dev/ttyUSB* devices.Most likely first of them (ttyUSB0 if you had not such devices before) is PPP compatible modem. Use it as usual with pppd, kppp, gnome-ppp, network-manager, etc.
 
 **Note:** If you want to use your 3G modem with [NetworkManager](/index.php/NetworkManager "NetworkManager"), you have to install the package [modemmanager](https://www.archlinux.org/packages/?name=modemmanager) and then [restart](/index.php/Restart "Restart") the `NetworkManager.service`. Now you can 'Enable Mobile Broadband' in the networkmanager applet.
-
-## AT commands
-
-There are some useful commands:
-
-*   AT^U2DIAG=0 - the device is only Modem
-*   AT^U2DIAG=1 - device is in modem mode + CD ROM
-*   AT^U2DIAG=255 - the device in modem mode + CD ROM + Card Reader
-*   AT^U2DIAG=256 - the device in modem mode + Card Reader
-*   AT+CPIN=<PIN-CODE> - enter PIN-code
-*   AT+CUSD=1,<PDU-encoded-USSD-code>,15 - USSD request, result can be found (probably) in /dev/ttyUSB2.
-
-Encode "*100#" to PDU format:
-
-```
- perl -e '@a=split(//,unpack("b*","*100#")); for ($i=7; $i < $#a; $i+=8) { $a[$i]="" } print uc(unpack("H*", pack("b*", join("", @a))))."
-"'
-
-```
-
-Decode "AA180C3602" from PDU format:
-
-```
- perl -e '@a=split(//,unpack("b*", pack("H*","AA180C3602"))); for ($i=6; $i < $#a; $i+=7) {$a[$i].="0" } print pack("b*", join("", @a)).""'
-
-```
-
-Answer decoding (this example is balance response: 151.25):
-
-```
- perl -e 'print pack("H*", "003100350031002C003200350020044004430431002E0020");'
-
-```
-
-Some operators return USSD result in PDU encoding, so you should check proper decoding method.
-
-*   AT+CSQ - get signal quality (AT+CSQ=?)
-*   AT+GMI - get manufacturer
-*   AT+GMM - get model
-*   AT+GMR - get revision
-*   AT+GMN - get IMEI
-*   AT+COPS? - get operator info
-*   AT^CARDLOCK="NCK-code" - unlock modem. NCK-code should be calculated by IMEI. After that modem can work with any GSM-provider.
-*   AT^SYSCFG=mode, order, band, roaming, domain - System Config
-
-Mode:
-
-*   2 Automatic search
-*   13 2G ONLY
-*   14 3G ONLY
-*   16 No change
-
-Order:
-
-*   0 Automatic search
-*   1 2G first, then 3G
-*   2 3G first, then 2G
-*   3 No change
-
-Band:
-
-*   80 GSM DCS systems
-*   100 Extended GSM 900
-*   200 Primary GSM 900
-*   200000 GSM PCS
-*   400000 WCDMA IMT 2000
-*   3FFFFFFF Any band
-*   40000000 No change of band
-
-Roaming:
-
-*   0 Not supported
-*   1 Roaming is supported
-*   2 No change
-
-Domain:
-
-*   0 CS_ONLY
-*   1 PS_ONLY
-*   2 CS_PS
-*   3 ANY
-*   4 No change
 
 ## Sending SMS
 

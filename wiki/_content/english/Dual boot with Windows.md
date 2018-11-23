@@ -63,7 +63,7 @@ Intel Atom System-on-Chip Tablets (Clover trail and Bay Trail) provide only IA32
 
 ### Bootloader UEFI vs BIOS limitations
 
-Most of the linux bootloaders installed for one firmware type cannot launch or chainload bootloaders of other firmware type. That is, if Arch is installed in UEFI/GPT or UEFI/MBR mode in one disk and Windows is installed in BIOS/MBR mode in another disk, the UEFI bootloader used by Arch cannot chainload the BIOS installed Windows in the other disk. Similarly if Arch is installed in BIOS/MBR or BIOS/GPT mode in one disk and Windows is installed in UEFI/GPT in another disk , the BIOS bootloader used by Arch cannot chainload UEFI installed Windows in the other disk.
+Most of the linux bootloaders installed for one firmware type cannot launch or chainload bootloaders of the other firmware type. That is, if Arch is installed in UEFI/GPT or UEFI/MBR mode in one disk and Windows is installed in BIOS/MBR mode in another disk, the UEFI bootloader used by Arch cannot chainload the BIOS installed Windows in the other disk. Similarly if Arch is installed in BIOS/MBR or BIOS/GPT mode in one disk and Windows is installed in UEFI/GPT in another disk , the BIOS bootloader used by Arch cannot chainload UEFI installed Windows in the other disk.
 
 The only exceptions to this are [GRUB](/index.php/GRUB "GRUB") in Apple Macs in which GRUB in UEFI mode can boot BIOS installed OS via `appleloader` command (does not work in non-Apple systems), and [rEFInd](/index.php/REFInd "REFInd") which technically supports booting legacy BIOS OS from UEFI systems, but [does not always work in non-Apple UEFI systems](http://rodsbooks.com/refind/using.html#legacy) as per its author Rod Smith.
 

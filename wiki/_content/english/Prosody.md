@@ -7,7 +7,8 @@ From the [official website](https://prosody.im/):
 *   [1 Installation](#Installation)
     *   [1.1 Optional dependencies](#Optional_dependencies)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Logging](#Logging)
+    *   [2.1 Authentication](#Authentication)
+    *   [2.2 Logging](#Logging)
 *   [3 Operation](#Operation)
     *   [3.1 Security](#Security)
         *   [3.1.1 User registration](#User_registration)
@@ -42,16 +43,10 @@ Prosody has optional depedencies that although not strictly required for its ope
 	Allow Prosody to use a MySQL/mariadb/Postgresql backend for better scaling and performance.
 *Requires:* [lua51-dbi](https://www.archlinux.org/packages/?name=lua51-dbi)
 
-**Warning:** [lua51-dbi](https://www.archlinux.org/packages/?name=lua51-dbi) is currently without upstream! See [FS#53081](https://bugs.archlinux.org/task/53081)
-
-**Warning:** If enabled, Prosody will store passwords in plaintext within the database by default. It is recommended to use a hashed authentication module such as [mod_auth_internal_hashed](https://prosody.im/doc/modules/mod_auth_internal_hashed)
-
 	Better Connection Scaling (Recommended)
 
 	Allow Prosody to use [libevent](http://www.monkey.org/~provos/libevent/) to handle a greater number of simultaneous connections.
 *Requires:* [lua51-event](https://aur.archlinux.org/packages/lua51-event/)
-
-**Warning:** Due to an open issue, when enabled luaevent, all s2s functionality breaks. A fix is expected in v0.10 [[1]](https://prosody.im/issues/issue/555)
 
 	Stream Compression
 
@@ -80,6 +75,10 @@ The main configuration file is located at `/etc/prosody/prosody.cfg.lua`. Inform
 ```
 
 No output means the syntax is correct.
+
+### Authentication
+
+The default configuration uses [mod_auth_internal_hashed](https://prosody.im/doc/modules/mod_auth_internal_hashed). If you remove the line, it will default to [mod_auth_internal_plain](https://prosody.im/doc/modules/mod_auth_internal_plain).
 
 ### Logging
 

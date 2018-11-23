@@ -2,21 +2,19 @@
 
 ## Contents
 
-*   [1 Preparación](#Preparaci.C3.B3n)
-*   [2 Instalación](#Instalaci.C3.B3n)
-*   [3 Configuración](#Configuraci.C3.B3n)
+*   [1 Preparación](#Preparación)
+*   [2 Instalación](#Instalación)
+*   [3 Configuración](#Configuración)
     *   [3.1 Incluir plymouth en initcpio](#Incluir_plymouth_en_initcpio)
-    *   [3.2 En la línea de órdenes del kernel](#En_la_l.C3.ADnea_de_.C3.B3rdenes_del_kernel)
+    *   [3.2 En la línea de órdenes del kernel](#En_la_línea_de_órdenes_del_kernel)
     *   [3.3 Cambiar el tema](#Cambiar_el_tema)
-*   [4 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [4 Véase también](#Véase_también)
 
 ## Preparación
 
-**Advertencia:** Plymouth se encuentra actualmente en fase de desarrollo fuerte y puede contener errores.
+Plymouth utiliza principalmente [KMS](/index.php/KMS "KMS") (Kernel Mode Setting) para mostrar gráficos. Si no puede usar KMS por ejemplo, porque esté usando un controlador propietario, o si no desea utilizar EFI framebuffer, se recomienda utilizar [Uvesafb](/index.php/Uvesafb "Uvesafb") ya que puede funcionar con resoluciones de pantalla ancha.
 
-Plymouth utiliza principalmente [KMS](/index.php/KMS "KMS") (Kernel Mode Setting) para mostrar gráficos. Si no puede usar KMS (por ejemplo, porque esté usando un controlador propietario) tendrá que usar [framebuffer](/index.php/Framebuffer#Framebuffer_Resolution "Framebuffer") en su lugar. Se recomienda uvesafb ya que puede funcionar con resoluciones de pantalla ancha.
-
-Si no puede usar KMS, ni framebuffer, Plymouth caerá y la pantalla volverá de nuevo a modo de texto.
+Si no puede usar KMS, ni framebuffer, *Plymouth* caerá y la pantalla volverá de nuevo a modo de texto.
 
 ## Instalación
 

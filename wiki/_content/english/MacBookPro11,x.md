@@ -170,7 +170,7 @@ Additionally, you might want to have a look at the [Power management](/index.php
 
 ### Kernel parameters
 
-**Warning:** Since Kernel version 4.17.2-1 adding `acpi_osi` parameter with an empty value causes battery to be undetectable. See this [forum thread](https://bbs.archlinux.org/viewtopic.php?id=238194) for more information.
+**Warning:** Since Kernel version 4.17.2-1 adding `acpi_osi` parameter with an empty value causes battery to be undetectable. See this [forum thread](https://bbs.archlinux.org/viewtopic.php?id=238194) for more information. It's required to specify `acpi_osi=Darwin` as a kernel boot parameter in order to let suspension/hibernation work properly.
 
 Due to [this bug](https://bugzilla.kernel.org/show_bug.cgi?id=177151), it might be required to add `acpi_osi=` as a kernel boot parameter in order to improve battery life.
 
