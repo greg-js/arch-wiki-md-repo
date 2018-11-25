@@ -25,5 +25,5 @@
 | <small>13.1.</small> [Package management](/index.php/Category:Package_management_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:Package management (Српски)") <small>(3)</small> |
 | <small>14.</small> [Utilities](/index.php/Category:Utilities_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:Utilities (Српски)") <small>(2)</small> |
 | <small>15.</small> [Web server](/index.php/Category:Web_server_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:Web server (Српски)") <small>(2)</small> |
-| <small>16.</small> [Wine](/index.php/Category:Wine_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:Wine (Српски)") <small>(1)</small> |
+| <small>16.</small> [Wine](/index.php/Category:Wine_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:Wine (Српски)") <small>(0)</small> |
 | <small>17.</small> [X server](/index.php/Category:X_server_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:X server (Српски)") <small>(4)</small> |

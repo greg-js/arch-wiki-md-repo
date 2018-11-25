@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [List of applications#PDF and DjVu](/index.php/List_of_applications#PDF_and_DjVu "List of applications")
+*   [PDF, PS and DjVu](/index.php/PDF,_PS_and_DjVu "PDF, PS and DjVu")

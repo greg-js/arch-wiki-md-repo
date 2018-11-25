@@ -61,7 +61,7 @@ It also assume that you are using Funkwhale on a local network. See the official
 
 ### Host config
 
-Make sure your `/etc/hosts` file is setup correctly. The Funkwhale server is running on `127.0.0.2` with alias `funkwhale.local`, not to conflict with existing web applications already configured on `120.0.0.1`, by this can be changed.
+Make sure your `/etc/hosts` file is setup correctly. The Funkwhale server is running on `127.0.0.2` with alias `funkwhale.local`, not to conflict with existing web applications already configured on `127.0.0.1`, but this can be changed.
 
 Your `/etc/hosts` file should look something like the following,
 
@@ -194,14 +194,14 @@ Upstream provides systemd services that are already installed by the AUR package
 To start the instance, just run:
 
 ```
-$ systemctl start funckwhale.target
+$ systemctl start funkwhale.service
 
 ```
 
 This starts three services, you can check their status with:
 
 ```
-$ systemctl status funckwhale-\*
+$ systemctl status funkwhale-\*
 
 ```
 

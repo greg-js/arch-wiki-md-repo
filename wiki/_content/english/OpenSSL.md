@@ -12,6 +12,7 @@
     *   [2.1 Generate an RSA private key](#Generate_an_RSA_private_key)
     *   [2.2 Generate a certificate signing request](#Generate_a_certificate_signing_request)
     *   [2.3 Generate a self-signed certificate](#Generate_a_self-signed_certificate)
+    *   [2.4 Generate Diffie–Hellman parameters](#Generate_Diffie–Hellman_parameters)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 "bad decrypt" while decrypting](#"bad_decrypt"_while_decrypting)
 *   [4 See also](#See_also)
@@ -57,15 +58,26 @@ $ openssl req -new -sha256 -key *private_key* -out *filename*
 ### Generate a self-signed certificate
 
 ```
-$ openssl req -key *private_key* -x509 -new -days *days* -out *file*
+$ openssl req -key *private_key* -x509 -new -days *days* -out *filename*
 
 ```
+
+### Generate Diffie–Hellman parameters
+
+See [Diffie–Hellman key exchange](https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange "wikipedia:Diffie–Hellman key exchange") for more information.
+
+```
+$ openssl dhparam -out *filename* *2048*
+
+```
+
+**Tip:** To speed up generating, especially when not on high-end hardware, add the `-dsaparam` option [[1]](https://security.stackexchange.com/questions/95178/diffie-hellman-parameters-still-calculating-after-24-hours/95184#95184).
 
 ## Troubleshooting
 
 ### "bad decrypt" while decrypting
 
-OpenSSL 1.1.0 changed the default digest algorithm for the dgst and enc commands from MD5 to SHA256\. [[1]](https://www.openssl.org/news/changelog.html#x6)
+OpenSSL 1.1.0 changed the default digest algorithm for the dgst and enc commands from MD5 to SHA256\. [[2]](https://www.openssl.org/news/changelog.html#x6)
 
 Therefore if a file has been encrypted using OpenSSL 1.0.2 or older, trying to decrypt it with an up to date version may result in an error like:
 

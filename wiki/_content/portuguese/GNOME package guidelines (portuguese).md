@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [GNOME package guidelines](/index.php/GNOME_package_guidelines "GNOME package guidelines"). Data da última tradução: 2018-10-31\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNOME_package_guidelines&diff=0&oldid=549983) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [GNOME package guidelines](/index.php/GNOME_package_guidelines "GNOME package guidelines"). Data da última tradução: 2018-11-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNOME_package_guidelines&diff=0&oldid=554280) na versão em inglês.
 
 **[Diretrizes de criação de pacotes](/index.php/Padr%C3%B5es_de_empacotamento_do_Arch "Padrões de empacotamento do Arch")**
 
@@ -65,7 +65,7 @@ Note que já que o fonte é baixado com *git*, então [git](https://www.archlinu
 
 Muitos softwares do GNOME migraram o sistema de compilação para o [Meson](https://mesonbuild.com/), consequentemente descartando o suporte a [GNU Autotools](/index.php/Sistema_de_Compila%C3%A7%C3%A3o_do_GNU "Sistema de Compilação do GNU"). Isso significa que você usará *./configure* e *make* neste caso.
 
-Para compilar usando o Meson, adicione o pacote [meson](https://www.archlinux.org/packages/?name=meson) para [makedepends](/index.php/PKGBUILD_(Portugu%C3%AAs)#makedepends "PKGBUILD (Português)") e execute seu comando *meson*, incluindo opcionalmente todas as opções desejadas suportadas pelo software alvo. O pacote [ninja](https://www.archlinux.org/packages/?name=ninja) também será usado neste sistema de compilação, mas é uma dependência do [meson](https://www.archlinux.org/packages/?name=meson), então você não precisa incluí-lo no vetor *makedepends*.
+Para compilar usando o Meson, adicione o pacote [meson](https://www.archlinux.org/packages/?name=meson) para [makedepends](/index.php/Makedepends_(Portugu%C3%AAs) "Makedepends (Português)") e execute seu comando *meson*, incluindo opcionalmente todas as opções desejadas suportadas pelo software alvo. O pacote [ninja](https://www.archlinux.org/packages/?name=ninja) também será usado neste sistema de compilação, mas é uma dependência do [meson](https://www.archlinux.org/packages/?name=meson), então você não precisa incluí-lo no vetor *makedepends*.
 
 As funções [build()](/index.php/Criando_pacotes#build() "Criando pacotes"), [check()](/index.php/Criando_pacotes#check() "Criando pacotes") e [package()](/index.php/Criando_pacotes#package() "Criando pacotes") devem ser parecer com:
 

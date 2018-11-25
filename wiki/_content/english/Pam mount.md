@@ -7,7 +7,7 @@ Related articles
 
 **Warning:** *pam_mount* can also unmount your partitions when you close your last session but this does not work out of the box due to the use of `pam_systemd.so` in the pam stack, see [Talk:Pam mount#automatic unmounting and systemd](/index.php/Talk:Pam_mount#automatic_unmounting_and_systemd "Talk:Pam mount").
 
-**Note:** The official release version of pam_mount in [community] does not yet support luks2 encrypted partitions. A workaround could be to use [pam_mount-git](https://aur.archlinux.org/packages/pam_mount-git/) instead, but keep in mind only the [community] version is officially supported.
+**Note:** As at November 2018, [pam_mount](https://www.archlinux.org/packages/?name=pam_mount) does not yet support luks2 encrypted partitions. A workaround could be to use [pam_mount-git](https://aur.archlinux.org/packages/pam_mount-git/), see [[1]](https://bbs.archlinux.org/viewtopic.php?id=242131).
 
 ## Contents
 

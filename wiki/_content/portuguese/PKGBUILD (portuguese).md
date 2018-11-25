@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"). Data da última tradução: 2018-10-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=PKGBUILD&diff=0&oldid=544905) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"). Data da última tradução: 2018-11-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=PKGBUILD&diff=0&oldid=556019) na versão em inglês.
 
 Artigos relacionados
 
@@ -159,7 +159,7 @@ Informações e perspectivas adicionais sobre licenças de software aberto e liv
 
 ### groups
 
-O [grupo](/index.php/Criando_pacotes#Pacotes_meta_e_grupos "Criando pacotes") ao qual o pacote pertence. Por exemplo, ao instalar o pacote [kdebase](https://www.archlinux.org/groups/x86_64/kdebase/), ele instala todos os pacotes pertencentes àquele grupo.
+O [grupo](/index.php/Grupo_de_pacotes "Grupo de pacotes") ao qual o pacote pertence. Por exemplo, ao instalar o pacote [kdebase](https://www.archlinux.org/groups/x86_64/kdebase/), ele instala todos os pacotes pertencentes àquele grupo.
 
 ## Dependências
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Systemd](/index.php/Systemd "Systemd"). Data da última tradução: 2018-11-05\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Systemd&diff=0&oldid=552652) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Systemd](/index.php/Systemd "Systemd"). Data da última tradução: 2018-11-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Systemd&diff=0&oldid=555139) na versão em inglês.
 
 Artigos relacionados
 

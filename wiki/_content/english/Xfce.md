@@ -93,7 +93,7 @@ See [Xdg-menu](/index.php/Xdg-menu "Xdg-menu") for more info on using the Free D
 
 #### Whisker menu
 
-[xfce4-whiskermenu-plugin](https://www.archlinux.org/packages/?name=xfce4-whiskermenu-plugin) (also part of [xfce4-goodies](https://www.archlinux.org/groups/x86_64/xfce4-goodies/)) is an alternative application launcher. It shows a list of favorites, browses through all installed applications through category buttons, and supports fuzzy searching. After package being installed, it can replace 'Applications Menu' as first item in Panel 1 (in 'Settings/Panel/Items' add 'Whisker Menu'...).
+[xfce4-whiskermenu-plugin](https://www.archlinux.org/packages/?name=xfce4-whiskermenu-plugin) (also part of [xfce4-goodies](https://www.archlinux.org/groups/x86_64/xfce4-goodies/)) is an alternative application launcher. It shows a list of favorites, browses through all installed applications through category buttons, and supports fuzzy searching. After package being installed, it can replace *Applications Menu* as first item in Panel 1 (in *Settings > Panel > Items* add *Whisker Menu*).
 
 #### Edit entries
 
@@ -218,11 +218,11 @@ To add the shortcut, use *Settings > Keyboard* or an application like [xbindkeys
 
 To launch custom applications when Xfce starts up, click the *Applications Menu > Settings > Settings Manager* and then choose the *Session and Startup* option and click the tab *Application Autostart*. You will see a list of programs that get launched on startup. To add an entry, click the *Add* button and fill out the form, specifying the path to an executable you want to run.
 
-Autostart applications are stored as *.desktop* files in *~/.config/autostart/*.
+Autostart applications are stored as `*name*.desktop` in `~/.config/autostart/`.
 
 Alternatively, add the commands you wish to run (including setting environment variables) to [xinitrc](/index.php/Xinitrc "Xinitrc") (or [xprofile](/index.php/Xprofile "Xprofile") when a [display manager](/index.php/Display_manager "Display manager") is being used).
 
-**Tip:** Sometimes it might be useful to **delay the startup of an application**. Note that specifying under *Application Autostart* a command such as `sleep 3 && *command*` does not work; a workaround is to use the syntax `sh -c "sleep 3 && *command*"`
+**Tip:** Sometimes it might be useful to **delay the startup of an application**. Note that specifying under *Application > Autostart* a command such as `sleep 3 && *command*` does not work; a workaround is to use the syntax `sh -c "sleep 3 && *command*"`
 
 #### Lock the screen
 
@@ -232,14 +232,16 @@ The [List of applications/Security#Screen lockers](/index.php/List_of_applicatio
 
 In particular, [light-locker](https://www.archlinux.org/packages/?name=light-locker) integrates well with [xfce4-power-manager](https://www.archlinux.org/packages/?name=xfce4-power-manager): once installed, Xfce Power Manager's setting gains an additional *Security* tab to configure *light-locker* and the existing *Lock screen when system is going for sleep* setting is relocated under this tab. It is then possible to set in this GUI whether the session should be locked upon screensaver activity or whenever the system goes to sleep.
 
-To have *xflock4* **run *light-locker* or any custom session locker** not among the four cited above, some steps are required. The latest 4.13 version of [xfce4-session](https://www.archlinux.org/packages/?name=xfce4-session), not available in the official repositories yet, eases the integration of custom screen lockers with *xflock4* (see the [latest xflock4 on git.xfce.org](https://git.xfce.org/xfce/xfce4-session/tree/scripts/xflock4)) by checking first for the `LockCommand` set in the session's xfconf channel. Therefore to use a custom locker with *xflock4* one can follow the two steps below:
+To have *xflock4* run *light-locker* or any custom session locker, not among the four cited above, some steps are required:
 
-1.  Use the command line below to set `LockCommand`, here for example to use *light-locker*: `$ xfconf-query -c xfce4-session -p /general/LockCommand -s "**light-locker-command --lock**" --create -t string` The command inside the quotes can be adapted accordingly for other screen lockers.
+The latest 4.13 version of [xfce4-session](https://www.archlinux.org/packages/?name=xfce4-session), not available in the official repositories yet, eases the integration of custom screen lockers with *xflock4* (see the [latest xflock4 on git.xfce.org](https://git.xfce.org/xfce/xfce4-session/tree/scripts/xflock4)) by checking first for the `LockCommand` set in the session's xfconf channel. Therefore to use a custom locker with *xflock4* one can follow the two steps below (the command inside the quotes can be adapted accordingly for other screen lockers):
+
+1.  Use the command line below to set `LockCommand`, here for example to use *light-locker*: `$ xfconf-query -c xfce4-session -p /general/LockCommand -s "*light-locker-command --lock*" --create -t string` 
 2.  Enhance the *xflock4* script with either one of the following methods:
     1.  Replace manually `/usr/bin/xflock4` with the latest version of the script, so that it calls the command specified in `LockCommand`.
     2.  Install [xfce4-session-git](https://aur.archlinux.org/packages/xfce4-session-git/) in order to replace the official repository package with the updated 4.13 version which takes into account `LockCommand`.
 
-The **panel lock button** in the *Action Buttons* panel simply executes `/usr/bin/xflock4`. It should work as expected as long as *xflock4* is functioning i.e. one of the native lockers is installed or a custom locker is configured to integrate with it as proposed above.
+The panel lock button in the *Action Buttons* panel simply executes `/usr/bin/xflock4`. It should work as expected as long as *xflock4* is functioning i.e. one of the native lockers is installed or a custom locker is configured to integrate with it as proposed above.
 
 #### Suspend
 
@@ -315,22 +317,22 @@ The files specifying the default window manager are found in the following locat
 The default window manager for the user can be set easily using *xfconf-query*:
 
 ```
-$ xfconf-query -c xfce4-session -p /sessions/Failsafe/Client0_Command -t string -sa **wm_name**
+$ xfconf-query -c xfce4-session -p /sessions/Failsafe/Client0_Command -t string -sa *wm_name*
 
 ```
 
 If you want to start the window manager with command line options, see the command below:
 
 ```
-$ xfconf-query -c xfce4-session -p /sessions/Failsafe/Client0_Command -t string -t string -s **wm_name** -s **--wm-option**
+$ xfconf-query -c xfce4-session -p /sessions/Failsafe/Client0_Command -t string -t string -s *wm_name* -s *--wm-option*
 
 ```
 
-If you need more command line options, simply add more `-t string` and `-s **--wm-option**` arguments to the command.
+If you need more command line options, simply add more `-t string` and `-s *--wm-option*` arguments to the command.
 
-If you want to change the default window manager systemwide, edit the file specified above manually, changing *xfwm4* to the preferred window manager and adding more `<value type="string" value="**--wm-option**"/>` lines for extra command line options if needed.
+If you want to change the default window manager systemwide, edit the file specified above manually, changing *xfwm4* to the preferred window manager and adding more `<value type="string" value="*--wm-option*"/>` lines for extra command line options if needed.
 
-You can also change the window manager by autostarting `**wm_name** --replace` using the autostart facility or by running `**wm_name** --replace &` in a terminal and making sure the session is saved on logout. Be aware though that this method does not truly change the default manager, it merely replaces it at login. Note that if you are using the autostart facility, you should disable saved sessions as this could lead to the new window manager being started twice after the default window manager.
+You can also change the window manager by autostarting `*wm_name* --replace` using the autostart facility or by running `*wm_name* --replace &` in a terminal and making sure the session is saved on logout. Be aware though that this method does not truly change the default manager, it merely replaces it at login. Note that if you are using the autostart facility, you should disable saved sessions as this could lead to the new window manager being started twice after the default window manager.
 
 ### Theming
 

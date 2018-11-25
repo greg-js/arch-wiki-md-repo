@@ -92,7 +92,7 @@ For more extensions, check the [AUR](/index.php/AUR "AUR"), the built-in LibreOf
 
 ### Spell checking
 
-For spell checking, please make sure [hunspell](https://www.archlinux.org/packages/?name=hunspell) is properly installed; this should be the case for both still and fresh LibreOffice versions. Then install a language dictionary for hunspell like [hunspell-en](https://www.archlinux.org/packages/?name=hunspell-en) for English, [hunspell-de](https://www.archlinux.org/packages/?name=hunspell-de) for German, etc. Then enable the Writing aids by selecting the check-box in *Tools -> Options -> Language Settings -> Writing Aids -> Hunspell SpellChecker* after restarting LibreOffice.
+For spell checking, please make sure [hunspell](https://www.archlinux.org/packages/?name=hunspell) is properly installed; this should be the case for both still and fresh LibreOffice versions. Then install a language dictionary for hunspell like [hunspell-en_US](https://www.archlinux.org/packages/?name=hunspell-en_US) for American English, [hunspell-de](https://www.archlinux.org/packages/?name=hunspell-de) for German, etc. Then enable the Writing aids by selecting the check-box in *Tools > Options > Language Settings > Writing Aids > Hunspell SpellChecker* after restarting LibreOffice.
 
 	Finnish
 

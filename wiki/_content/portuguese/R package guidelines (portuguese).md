@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [R package guidelines](/index.php/R_package_guidelines "R package guidelines"). Data da última tradução: 2018-11-04\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=R_package_guidelines&diff=0&oldid=553077) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [R package guidelines](/index.php/R_package_guidelines "R package guidelines"). Data da última tradução: 2018-11-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=R_package_guidelines&diff=0&oldid=554369) na versão em inglês.
 
 **[Diretrizes de criação de pacotes](/index.php/Padr%C3%B5es_de_empacotamento_do_Arch "Padrões de empacotamento do Arch")**
 
@@ -40,7 +40,7 @@ Os pacotes R listados em `Suggests` devem ser listados como [optdepends](/index.
 
 Alguns pacotes requerem ferramentas externas, estas estão listadas em `SystemRequirements`.
 
-O [gcc-fortran](https://www.archlinux.org/packages/?name=gcc-fortran) é necessário como [makedepends](/index.php/PKGBUILD_(Portugu%C3%AAs)#makedepends "PKGBUILD (Português)") para alguns pacotes, mas nem sempre é listado no arquivo `DESCRIPTION`.
+O [gcc-fortran](https://www.archlinux.org/packages/?name=gcc-fortran) é necessário como [makedepends](/index.php/Makedepends_(Portugu%C3%AAs) "Makedepends (Português)") para alguns pacotes, mas nem sempre é listado no arquivo `DESCRIPTION`.
 
 ## Fonte
 

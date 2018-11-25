@@ -147,14 +147,15 @@ To learn how to use the GNOME shell effectively read the [GNOME Shell Cheat Shee
 **Tip:** Searching for the legacy name of an application in the Shell search bar will successfully return the application in question. For instance, searching for *nautilus* will return *Files*.
 
 | Current | Legacy |
-| [Files](/index.php/Files "Files") | Nautilus |
+| [Files](/index.php/GNOME/Files "GNOME/Files") | Nautilus |
 | [Web](/index.php/GNOME/Web "GNOME/Web") | Epiphany |
 | Videos | Totem |
 | Main Menu | Alacarte |
-| Document Viewer | Evince |
-| Disk Usage Analyser | Baobab |
+| [Document Viewer](/index.php/GNOME/Document_viewer "GNOME/Document viewer") | Evince |
+| Disk Usage Analyzer | Baobab |
 | Image Viewer | EoG (Eye of GNOME) |
 | [Passwords and Keys](/index.php/GNOME/Keyring "GNOME/Keyring") | Seahorse |
+| GNOME Translation Editor | Gtranslator |
 
 ## Configuration
 
@@ -329,9 +330,7 @@ $ gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximi
 ##### Hide titlebar when maximized
 
 *   [Install](/index.php/Install "Install") [gnome-shell-extension-no-title-bar](https://aur.archlinux.org/packages/gnome-shell-extension-no-title-bar/) or [gnome-shell-extension-no-title-bar](https://aur.archlinux.org/packages/gnome-shell-extension-no-title-bar/). Maximized windows get the title bar merged into the activity bar.
-
 *   [Install](/index.php/Install "Install") [mutter-hide-legacy-decorations](https://aur.archlinux.org/packages/mutter-hide-legacy-decorations/). It changes a default setting in the window manager, so as to automatically hide the titlebar on legacy (non-headerbar) apps when they are maximized or tiled to the side.
-
 *   [Install](/index.php/Install "Install") [gnome-shell-extension-pixel-saver-git](https://aur.archlinux.org/packages/gnome-shell-extension-pixel-saver-git/) or [gnome-shell-extension-pixel-saver](https://aur.archlinux.org/packages/gnome-shell-extension-pixel-saver/). Maximized windows get the title bar merged into the activity bar, saving precious pixels.
 
 ##### GNOME Shell themes

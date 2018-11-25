@@ -68,7 +68,7 @@ A [display manager](https://en.wikipedia.org/wiki/X_display_manager_(program_typ
 
 To enable graphical login, [enable](/index.php/Enable "Enable") the appropriate systemd service. For example, for [SDDM](/index.php/SDDM "SDDM"), enable `sddm.service`.
 
-This should work out of the box. If not, you might have to reset a custom `default.target` symlink to point to the default `graphical.target`.
+This should work out of the box. If not, you might have to reset a custom `default.target` symlink to point to the default `graphical.target`. See [systemd#Change default target to boot into](/index.php/Systemd#Change_default_target_to_boot_into "Systemd").
 
 After enabling [SDDM](/index.php/SDDM "SDDM") a symlink `display-manager.service` should be set in `/etc/systemd/system/`. You may need to use `--force` to override old symlinks.
 

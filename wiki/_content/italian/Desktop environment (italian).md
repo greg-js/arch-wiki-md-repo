@@ -15,7 +15,7 @@ Un [Desktop environment](https://en.wikipedia.org/wiki/it:Desktop_environment "w
         *   [2.1.2 Non supportati ufficialmente](#Non_supportati_ufficialmente)
     *   [2.2 Comparazione tra i vari Ambienti Desktop](#Comparazione_tra_i_vari_Ambienti_Desktop)
         *   [2.2.1 Peso delle risorse di sistema](#Peso_delle_risorse_di_sistema)
-        *   [2.2.2 Familiarità degli Ambienti Desktop](#Familiarit.C3.A0_degli_Ambienti_Desktop)
+        *   [2.2.2 Familiarità degli Ambienti Desktop](#Familiarità_degli_Ambienti_Desktop)
 *   [3 Ambienti Personalizzati](#Ambienti_Personalizzati)
 
 ## X Window System

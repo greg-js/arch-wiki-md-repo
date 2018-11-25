@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [GNOME](/index.php/GNOME "GNOME"). Data da última tradução: 2018-10-05\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=551660) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [GNOME](/index.php/GNOME "GNOME"). Data da última tradução: 2018-11-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=556961) na versão em inglês.
 
 Artigos relacionados
 
@@ -138,8 +138,8 @@ Para aprender como usar o GNOME Shell efetivamente, leia a [folha de dicas do GN
 
 *   `Super` + `m`: mostra a área de notificação
 *   `Super` + `a`: mostra o menu de aplicativos
-*   `Alt-` + `Tab`: alterna entre aplicativos ativos
-*   `Alt-` + ``` (a tecla logo acima de `Tab` nos teclados americanos): alterna entre janelas do aplicativo em primeiro plano
+*   `Alt` + `Tab`: alterna entre aplicativos ativos
+*   `Alt` + ``` (a tecla logo acima de `Tab` nos teclados americanos): alterna entre janelas do aplicativo em primeiro plano
 *   `Alt` + `F2`, e depois insira `r` ou `restart`: reinicia o shell no caso de problemas no shell gráfico (apenas no modo X/legado, não no modo Wayland).
 
 ## Nomes legados
@@ -149,14 +149,15 @@ Para aprender como usar o GNOME Shell efetivamente, leia a [folha de dicas do GN
 **Dica:** Pesquisar pelo nome legado de um aplicativo na barra de pesquisa do Shell retornará com sucesso o aplicativo em questão. Por exemplo, pesquisar por *nautilus* vai retornar *Arquivos*.
 
 | Atual | Legado |
-| [Arquivos](/index.php/Files "Files") | Nautilus |
+| [Arquivos](/index.php/GNOME/Files "GNOME/Files") | Nautilus |
 | [Web](/index.php/GNOME/Web "GNOME/Web") | Epiphany |
 | Vídeos | Totem |
 | Menu principal | Alacarte |
-| Visualizador de documentos | Evince |
+| [Visualizador de documentos](/index.php/GNOME/Document_viewer "GNOME/Document viewer") | Evince |
 | Analisador de uso de disco | Baobab |
 | Visualizador de imagens | EoG (Eye of GNOME) |
 | [Chaves e senhas](/index.php/GNOME/Keyring "GNOME/Keyring") | Seahorse |
+| Editor de Tradução do GNOME | Gtranslator |
 
 ## Configuração
 
@@ -330,11 +331,9 @@ $ gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximi
 
 ##### Ocultar barra de título quando maximizado
 
-*   [Instale](/index.php/Instale "Instale") [gnome-shell-extension-pixel-saver-git](https://aur.archlinux.org/packages/gnome-shell-extension-pixel-saver-git/) ou [gnome-shell-extension-pixel-saver](https://aur.archlinux.org/packages/gnome-shell-extension-pixel-saver/). Janelas maximizadas mesclam a barra de título com a barra de atividade, salvando pixels preciosos.
-
+*   [Instale](/index.php/Instale "Instale") [gnome-shell-extension-no-title-bar](https://aur.archlinux.org/packages/gnome-shell-extension-no-title-bar/) ou [gnome-shell-extension-no-title-bar](https://aur.archlinux.org/packages/gnome-shell-extension-no-title-bar/). Janelas maximizadas mesclam a barra de título com a barra de atividade, salvando pixels preciosos.
 *   [Instale](/index.php/Instale "Instale") [mutter-hide-legacy-decorations](https://aur.archlinux.org/packages/mutter-hide-legacy-decorations/). Isso altera a configuração padrão no gerenciador de janelas, assim como oculta automaticamente a barra de título em aplicativos legados (sem barra de título) quando eles são maximizados ou colados lado a lado na lateral.
-
-*   [Instale](/index.php/Instale "Instale") [maximus](https://aur.archlinux.org/packages/maximus/). Para começar o aplicativo, execute *maximus* de um terminal. Ao executar, o daemon vai maximizar janelas automaticamente. Isso vai retirar decoração de janelas maximizadas e vai redecorá-las quando elas tiverem seu tamanho anterior restaurado. Se você não deseja que todas as janelas iniciem maximizadas, execute `maximus -m`. Note que isso só vai funcionar com janelas decoradas pelo gerenciador de janelas; aplicativos que usam decoração no lado do cliente, tal como o [GNOME Arquivos](/index.php/GNOME_Files "GNOME Files"), não terão decoração retirada ao maximizar.
+*   [Instale](/index.php/Instale "Instale") [gnome-shell-extension-pixel-saver-git](https://aur.archlinux.org/packages/gnome-shell-extension-pixel-saver-git/) ou [gnome-shell-extension-pixel-saver](https://aur.archlinux.org/packages/gnome-shell-extension-pixel-saver/). Janelas maximizadas mesclam a barra de título com a barra de atividade, salvando pixels preciosos.
 
 ##### Temas do GNOME Shell
 
@@ -353,7 +352,7 @@ $ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/But
 
 #### Pastas de grade de aplicativos
 
-**Dica:** O scripts [gnome-catgen](https://github.com/prurigro/gnome-catgen) ([gnome-catgen-git](https://aur.archlinux.org/packages/gnome-catgen-git/)) permite que você gerencie pastas por meio da criação de arquivos em `~/.local/share/applications-categories` nomeados conforme cada categoria e contendo uma lista dos arquivos de área de trabalho pertencentes aos aplicativos que você gostaria de ter dentro. Opcionalmente, você pode fazer com que ele circule por cada aplicativo sem uma pasta e insira a categoria desejada até você Ctrl-C ou ficar sem aplicativos.
+**Dica:** O scripts [gnome-catgen](https://github.com/prurigro/gnome-catgen) ([gnome-catgen-git](https://aur.archlinux.org/packages/gnome-catgen-git/)) permite que você gerencie pastas por meio da criação de arquivos em `~/.local/share/applications-categories` nomeados conforme cada categoria e contendo uma lista dos arquivos de área de trabalho pertencentes aos aplicativos que você gostaria de ter dentro. Opcionalmente, você pode fazer com que ele circule por cada aplicativo sem uma pasta e insira a categoria desejada até você `Ctrl-c` ou ficar sem aplicativos.
 
 No **dconf-editor**, navegue para `org.gnome.desktop.app-folders` e defina o valor de `folder-children` para um vetor de nomes de pastas separados por vírgula:
 

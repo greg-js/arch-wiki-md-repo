@@ -243,7 +243,7 @@ import XMonad
 import XMonad.Hooks.ManageDocks
 
 main=do
-  xmonad $ defaultConfig
+  xmonad $ docks def
     { ...
     , layoutHook=avoidStruts $ layoutHook defaultConfig
     , manageHook=manageHook defaultConfig <+> manageDocks

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [GNU](/index.php/GNU "GNU"). Data da última tradução: 2018-10-26\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNU&diff=0&oldid=550124) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [GNU](/index.php/GNU "GNU"). Data da última tradução: 2018-11-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNU&diff=0&oldid=555726) na versão em inglês.
 
 Artigos relacionados
 
@@ -68,7 +68,7 @@ A maioria das ferramentas do [conjunto de ferrtamentas do GNU](https://en.wikipe
 
 	[https://www.gnu.org/software/binutils/](https://www.gnu.org/software/binutils/) || [binutils](https://www.archlinux.org/packages/?name=binutils)
 
-*   **[GNU bison](https://en.wikipedia.org/wiki/GNU_bison "wikipedia:GNU bison")** — O gerador de analisador de propósito geral do GNU.
+*   **[GNU Bison](https://en.wikipedia.org/wiki/GNU_Bison "wikipedia:GNU Bison")** — O gerador de analisador de propósito geral do GNU.
 
 	[https://www.gnu.org/software/bison/bison.html](https://www.gnu.org/software/bison/bison.html) || [bison](https://www.archlinux.org/packages/?name=bison)
 

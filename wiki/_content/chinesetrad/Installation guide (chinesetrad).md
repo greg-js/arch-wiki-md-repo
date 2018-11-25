@@ -1,24 +1,18 @@
-**翻譯狀態：** 本文章是 [Installation_guide](/index.php/Installation_guide "Installation guide") 的翻譯版本。最近一次的翻譯時間：2018-09-19。點擊[本連結](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid={{{3}}})查看英文頁面之後的變更。
+**翻譯狀態：** 本文章是 [Installation_guide](/index.php/Installation_guide "Installation guide") 的翻譯版本。最近一次的翻譯時間：2018-11-25。點擊[本連結](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid={{{3}}})查看英文頁面之後的變更。
 
-This document is a guide for installing [Arch Linux](/index.php/Arch_Linux "Arch Linux") from the live system booted with the official installation image. Before installing, it would be advised to view the [FAQ](/index.php/FAQ "FAQ"). For conventions used in this document, see [Help:Reading](/index.php/Help:Reading "Help:Reading"). In particular, code examples may contain placeholders (formatted in `*italics*`) that must be replaced manually.
+此文件是個引導你透過官方安裝映像的 Live 系統安裝 [Arch Linux](/index.php/Arch_Linux "Arch Linux") 的教學。在安裝前，建議先閱讀 [FAQ](/index.php/FAQ "FAQ")。關於此文件使用的慣例字詞，請閱讀 [Help:Reading](/index.php/Help:Reading "Help:Reading")。一些情況下，範例程式碼可能包含佔位符（以`*斜體*`格式化），其需要手動替換。
 
-此文件是個引導你透過官方安裝映像的 Live 系統安裝 [Arch Linux](/index.php/Arch_Linux "Arch Linux") 的教學。在安裝前，建議先閱讀 [FAQ](/index.php/FAQ "FAQ")。關於此文件使用的慣例，請閱讀 [Help:Reading](/index.php/Help:Reading "Help:Reading")。一些情況下，範例程式碼可能包含佔位符（以 `*italics*` 格式化），其需要手動替換。
+更詳細的資源可以參考 [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") 文章，或者閱讀該命令的 [man page](/index.php/Man_page "Man page")。如需要互動式幫助，可以使用 [IRC channel](/index.php/IRC_channel "IRC channel") 及 [英文論壇](https://bbs.archlinux.org/)。
 
-For more detailed instructions, see the respective [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") articles or the various programs' [man pages](/index.php/Man_page "Man page"), both linked from this guide. For interactive help, the [IRC channel](/index.php/IRC_channel "IRC channel") and the [forums](https://bbs.archlinux.org/) are also available.
-
-更詳細的資源，可以參考 [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") 文章，或者閱讀該命令的 [man page](/index.php/Man_page "Man page")。如需要互動式幫助，可透過 [IRC channel](/index.php/IRC_channel "IRC channel") 及 [forums](https://bbs.archlinux.org/)。
-
-Arch Linux should run on any [x86_64](https://en.wikipedia.org/wiki/X86-64 "wikipedia:X86-64")-compatible machine with a minimum of 512 MB RAM. A basic installation with all packages from the [base](https://www.archlinux.org/groups/x86_64/base/) group should take less than 800 MB of disk space. As the installation process needs to retrieve packages from a remote repository, this guide assumes a working internet connection is available.
-
-Arch Linux 可在任何 RAM 不小於 512MB 的 [x86_64](https://en.wikipedia.org/wiki/X86-64 "wikipedia:X86-64") 相容機上運行。用 [base](https://www.archlinux.org/groups/x86_64/base/) 套件組內的所有套件進行基本安裝將占用小於 800MB 的硬碟空間。由於安裝過程中需要從遠程存儲庫獲取軟件包，機器需要連結到網際網路。
+Arch Linux 可在任何 RAM 不小於 512MB 的 [x86_64](https://en.wikipedia.org/wiki/X86-64 "wikipedia:X86-64") 相容機器上運作。用 [base](https://www.archlinux.org/groups/x86_64/base/) 軟體包群組內的所有軟體包進行基本安裝將佔用小於 800MB 的硬碟空間。由於安裝過程中需要從遠端軟體庫取得軟體包，因此需要連線到網際網路。
 
 ## Contents
 
-*   [1 Pre-installation 安裝前的準備](#Pre-installation_安裝前的準備)
-    *   [1.1 Set the keyboard layout 設置鍵盤配置](#Set_the_keyboard_layout_設置鍵盤配置)
-    *   [1.2 Verify the boot mode 確認啟動模式（待翻譯）](#Verify_the_boot_mode_確認啟動模式（待翻譯）)
-    *   [1.3 Connect to the Internet 連接到網際網路（待翻譯）](#Connect_to_the_Internet_連接到網際網路（待翻譯）)
-    *   [1.4 Update the system clock 更新系統時間](#Update_the_system_clock_更新系統時間)
+*   [1 安裝前的準備](#安裝前的準備)
+    *   [1.1 設定鍵盤配置](#設定鍵盤配置)
+    *   [1.2 確認啟動模式](#確認啟動模式)
+    *   [1.3 連線到網際網路](#連線到網際網路)
+    *   [1.4 更新系統時間](#更新系統時間)
     *   [1.5 Partition the disks 分割硬碟（待翻譯）](#Partition_the_disks_分割硬碟（待翻譯）)
     *   [1.6 Format the partitions 格式化分割](#Format_the_partitions_格式化分割)
     *   [1.7 Mount the file systems 掛載檔案系統](#Mount_the_file_systems_掛載檔案系統)
@@ -37,65 +31,53 @@ Arch Linux 可在任何 RAM 不小於 512MB 的 [x86_64](https://en.wikipedia.or
 *   [4 Reboot 重新啟動](#Reboot_重新啟動)
 *   [5 Post-installation 安裝後](#Post-installation_安裝後)
 
-## Pre-installation 安裝前的準備
+## 安裝前的準備
 
-Download and boot the installation medium as explained in [Getting and installing Arch](/index.php/Getting_and_installing_Arch "Getting and installing Arch"). You will be logged in on the first [virtual console](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") as the root user, and presented with a [Zsh](/index.php/Zsh "Zsh") shell prompt.
+根據[取得並安裝 Arch *(英文)*](/index.php/Getting_and_installing_Arch "Getting and installing Arch")中所述，下載並引導安裝媒介。啟動完成後將會自動以 root 使用者身份登入虛擬終端器（[virtual console](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console")）並進入 [Zsh](/index.php/Zsh "Zsh") 命令解譯器。
 
-根據 [Getting and installing Arch](/index.php/Getting_and_installing_Arch "Getting and installing Arch") 中所述，下載並引導安裝媒介。啟動完成後將會自動以 root 身份登錄虛擬控制台（[virtual console](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console")）並進入 [Zsh](/index.php/Zsh "Zsh") 命令解譯器。
+欲切換至其它的虛擬終端器，例如在安裝過程使用 [ELinks](/index.php/ELinks "ELinks") 來查看本篇指南，使用 `Alt+*arrow*` 快捷鍵（[shortcut](/index.php/Keyboard_shortcuts "Keyboard shortcuts")）。可使用 [nano](/index.php/Nano#Usage "Nano")、[vi](https://en.wikipedia.org/wiki/vi "wikipedia:vi") 或 [vim](/index.php/Vim#Usage "Vim") 來編輯（[edit](/index.php/Textedit "Textedit")）設定檔案。
 
-To switch to a different console—for example, to view this guide with [ELinks](/index.php/ELinks "ELinks") alongside the installation—use the `Alt+*arrow*` [shortcut](/index.php/Keyboard_shortcuts "Keyboard shortcuts"). To [edit](/index.php/Textedit "Textedit") configuration files, [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "wikipedia:vi") and [vim](/index.php/Vim#Usage "Vim") are available.
+### 設定鍵盤配置
 
-欲切換至其它的虛擬終端，例如使用 [ELinks](/index.php/ELinks "ELinks") 來查看本篇指南，使用 `Alt+*arrow*` 快捷鍵（[shortcut](/index.php/Keyboard_shortcuts "Keyboard shortcuts")）。可使用 [nano](/index.php/Nano#Usage "Nano")，[vi](https://en.wikipedia.org/wiki/vi "wikipedia:vi") 或 [vim](/index.php/Vim#Usage "Vim") 來編輯（[edit](/index.php/Textedit "Textedit")）配置文件。
-
-### Set the keyboard layout 設置鍵盤配置
-
-The default [console keymap](/index.php/Console_keymap "Console keymap") is [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "wikipedia:File:KB United States-NoAltGr.svg"). Available layouts can be listed with:
-
-預設的鍵盤配置（[console keymap](/index.php/Console_keymap "Console keymap")）為 [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "wikipedia:File:KB United States-NoAltGr.svg")。執行以下命令以列出所有配置：
+預設的鍵盤配置（[console keymap](/index.php/Console_keymap "Console keymap")）為 [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "wikipedia:File:KB United States-NoAltGr.svg") 配置。可使用以下指令列出所有配置：
 
 ```
 # ls /usr/share/kbd/keymaps/**/*.map.gz
 
 ```
 
-To modify the layout, append a corresponding file name to [loadkeys(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1), omitting path and file extension. For example, to set a [German](https://en.wikipedia.org/wiki/File:KB_Germany.svg "wikipedia:File:KB Germany.svg") keyboard layout:
-
-欲更改鍵盤配置，需將對應的文件名添加經 [loadkeys(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1)，並省略路徑和副檔名。例如，欲添加 [German](https://en.wikipedia.org/wiki/File:KB_Germany.svg "wikipedia:File:KB Germany.svg") 鍵盤配置：
+欲更改鍵盤配置，需將對應的檔案名稱，省略路徑和副檔名附加到 [loadkeys(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1) 中。例如，要附加 [German](https://en.wikipedia.org/wiki/File:KB_Germany.svg "wikipedia:File:KB Germany.svg") 鍵盤配置：
 
 ```
 # loadkeys de-latin1
 
 ```
 
-[Console fonts](/index.php/Console_fonts "Console fonts") are located in `/usr/share/kbd/consolefonts/` and can likewise be set with [setfont(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/setfont.8).
+[終端字體](/index.php/Console_fonts "Console fonts")位於 `/usr/share/kbd/consolefonts/`，設定方式請參考 [setfont(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/setfont.8)。
 
-[Console fonts](/index.php/Console_fonts "Console fonts") 位於 {{ic|/usr/share/kbd/consolefonts/}，設置方式請參考 [setfont(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/setfont.8)。
+### 確認啟動模式
 
-### Verify the boot mode 確認啟動模式（待翻譯）
-
-If UEFI mode is enabled on an [UEFI](/index.php/UEFI "UEFI") motherboard, [Archiso](/index.php/Archiso "Archiso") will [boot](/index.php/Boot "Boot") Arch Linux accordingly via [systemd-boot](/index.php/Systemd-boot "Systemd-boot"). To verify this, list the [efivars](/index.php/UEFI#UEFI_variables "UEFI") directory:
+如果在 [UEFI](/index.php/UEFI "UEFI") 主機板上有啟用 UEFI 模式的話，[Archiso](/index.php/Archiso "Archiso") 將會根據 [systemd-boot](/index.php/Systemd-boot "Systemd-boot") 給出的設定[引導](/index.php/Boot "Boot") Arch Linux。若要驗證是否啟用，請使用 ls 指令列出 [efivars](/index.php/UEFI#UEFI_variables "UEFI") 資料夾：
 
 ```
 # ls /sys/firmware/efi/efivars
 
 ```
 
-If the directory does not exist, the system may be booted in [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") or CSM mode. Refer to your motherboard's manual for details.
+如果資料夾不存在，系統可能將會以 [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") 或 CSM 模式啟動。參閱您的主機板說明了解詳細資訊。
 
-### Connect to the Internet 連接到網際網路（待翻譯）
+### 連線到網際網路
 
-The installation image enables the [dhcpcd](/index.php/Dhcpcd "Dhcpcd") daemon for [wired network devices](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) on boot. The connection may be verified with [ping](https://en.wikipedia.org/wiki/ping_(networking_utility) "wikipedia:ping (networking utility)"):
+安裝媒體啟用了 [dhcpcd](/index.php/Dhcpcd "Dhcpcd") 守護程序用來在開機時連線[有線網路裝置](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules)。若要確認是否連上網路，可使用 [ping](https://en.wikipedia.org/wiki/ping_(networking_utility) 檢查：
 
 ```
 # ping archlinux.org
 
 ```
 
-If no connection is available, [stop](/index.php/Stop "Stop") the *dhcpcd* service with `systemctl stop dhcpcd@*interface*` where the `*interface*` name can be [tab-completed](https://en.wikipedia.org/wiki/Command-line_completion "wikipedia:Command-line completion"). Proceed to configure the network as described in [Network configuration](/index.php/Network_configuration "Network configuration").
+如果沒有網路，則請使用 `systemctl stop dhcpcd@*interface*` [停止](/index.php/Stop "Stop") *dhcpcd* 服務，`*interface*` 名稱可以[用 Tab 自動完成](https://en.wikipedia.org/wiki/Command-line_completion "wikipedia:Command-line completion")。
 
-### Update the system clock 更新系統時間
-
-Use [timedatectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/timedatectl.1) to ensure the system clock is accurate:
+### 更新系統時間
 
 執行 [timedatectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/timedatectl.1) 確保系統時間是準確的：
 
@@ -103,8 +85,6 @@ Use [timedatectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/timedatectl.1) t
 # timedatectl set-ntp true
 
 ```
-
-To check the service status, use `timedatectl status`.
 
 可以執行 `timedatectl status` 檢查系統時間的服務狀態。
 

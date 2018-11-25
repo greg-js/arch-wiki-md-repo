@@ -96,7 +96,7 @@ See also [Wikipedia:Comparison of packet analyzers](https://en.wikipedia.org/wik
 
 *   **[netsniff-ng](https://en.wikipedia.org/wiki/netsniff-ng "wikipedia:netsniff-ng")** — High performance Linux network sniffer for packet inspection.
 
-	[http://netsniff-ng.org/](http://netsniff-ng.org/) || [netsniff-ng](https://aur.archlinux.org/packages/netsniff-ng/)
+	[http://netsniff-ng.org/](http://netsniff-ng.org/) || [netsniff-ng](https://www.archlinux.org/packages/?name=netsniff-ng)
 
 *   **[ngrep](https://en.wikipedia.org/wiki/ngrep "wikipedia:ngrep")** — grep-like utility that allows you to search for network packets on an interface.
 

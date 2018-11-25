@@ -103,7 +103,7 @@ Create the zm database and user with appropriate permissions and password :
  `$ mysql -u root -p` 
 ```
 CREATE DATABASE zm;
-CREATE USER 'zmuser'@'localhost' IDENTIFIED BY 'choose_password';
+CREATE USER 'zmuser'@'localhost' IDENTIFIED BY 'zmpass';
 GRANT ALL ON zm.* TO 'zmuser'@'localhost';
 exit
 ```
@@ -122,7 +122,7 @@ Update the ZoneMinder config with your new parameters:
 ZM_DB_HOST=localhost
 ZM_DB_NAME=zm
 ZM_DB_USER=zmuser
-ZM_DB_PASS=chosen_password
+ZM_DB_PASS=zmpass
 ```
 
 #### Security
@@ -144,7 +144,7 @@ In addition, you can run:
 
 ### Starting
 
-[Start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `httpd.service`, `zoneminder.service` and `php-fpm.service`.
+[Start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `httpd.service`, `zoneminder.service`, `fcgiwrap-multiwatch` and `php-fpm.service`.
 
 ## Troubleshooting
 
@@ -172,7 +172,7 @@ Recreate the database and user:
  `$ mysql -u root -p` 
 ```
 CREATE DATABASE zm;
-CREATE USER 'zmuser'@'localhost' IDENTIFIED BY 'choose_password';
+CREATE USER 'zmuser'@'localhost' IDENTIFIED BY 'zmpass';
 GRANT CREATE, INSERT, SELECT, DELETE, UPDATE ON zm.* TO 'zmuser'@'localhost';
 exit
 ```

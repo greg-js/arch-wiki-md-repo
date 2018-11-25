@@ -6,18 +6,20 @@ The ZTE MF626 / MF636 is a USB modem which combines 3G+/3G with EDGE/GPRS in one
 
 ## Contents
 
-*   [1 Disable CD mode on the device](#Disable_CD_mode_on_the_device)
-*   [2 Disable CD mode on the device with wvdial](#Disable_CD_mode_on_the_device_with_wvdial)
-*   [3 Setup udev rules](#Setup_udev_rules)
-*   [4 Create a wvdial configuration](#Create_a_wvdial_configuration)
-*   [5 Create a wvdial configuration (extracted from sakis3g, the above config didn't work for me)](#Create_a_wvdial_configuration_.28extracted_from_sakis3g.2C_the_above_config_didn.27t_work_for_me.29)
-*   [6 Connect to the internet](#Connect_to_the_internet)
-*   [7 Tips & Tricks](#Tips_.26_Tricks)
-*   [8 Acknowledgements](#Acknowledgements)
+*   [1 Configuration](#Configuration)
+    *   [1.1 Disable CD mode on the device](#Disable_CD_mode_on_the_device)
+    *   [1.2 Disable CD mode on the device with wvdial](#Disable_CD_mode_on_the_device_with_wvdial)
+    *   [1.3 Setup udev rules](#Setup_udev_rules)
+    *   [1.4 Create a wvdial configuration](#Create_a_wvdial_configuration)
+*   [2 Connect to the internet](#Connect_to_the_internet)
+*   [3 Tips and tricks](#Tips_and_tricks)
+*   [4 See also](#See_also)
 
-## Disable CD mode on the device
+## Configuration
 
-Using a Windows machine, plug in the USB device and go through the short install wizard. Once done, close the Rogers app that starts up, then head into the Device Manager (Control Panel -> System -> Hardware -> Device Manager). Under the Ports section, find the COM port that's connected to the USB modem (ignore the Diagnostics mode). Connect to that COM port through Hyperterminal, found in the Accessories area of the Start Menu. Connection parameters are:
+### Disable CD mode on the device
+
+Using a Windows machine, plug in the USB device and go through the short install wizard. Once done, close the Rogers app that starts up, then head into the Device Manager (*Control Panel > System > Hardware > Device Manager*). Under the Ports section, find the COM port that's connected to the USB modem (ignore the Diagnostics mode). Connect to that COM port through Hyperterminal, found in the Accessories area of the Start Menu. Connection parameters are:
 
 ```
 Bits per Second: 115200
@@ -36,19 +38,19 @@ AT+ZCDRUN=8
 
 ```
 
-This tells the modem not to use CD mode when it's first plugged into a computer. Now exit Hypterterminal and remove the USB modem. You're done with Windows.
+This tells the modem not to use CD mode when it is first plugged into a computer. Now exit Hyperterminal and remove the USB modem. You are done with Windows.
 
-## Disable CD mode on the device with wvdial
+### Disable CD mode on the device with wvdial
 
-First remove usb-storage then modprobe usbserial
-
-```
-rmmod usb_storage
-modprobe usbserial
+First, remove the module `usb-storage` then load the `usbserial` module:
 
 ```
+# rmmod usb_storage
+# modprobe usbserial
 
-Edit /etc/wvdial.conf :
+```
+
+Edit `/etc/wvdial.conf`:
 
 ```
 [Dialer Defaults]
@@ -60,23 +62,17 @@ Init2 = AT+ZCDRUN=8
 
 ```
 
-Run wvdial, it should use those commands and fail to connect.
+Execute *wvdial*, it should use those commands and fail to connect. Once it exits, unplug the stick and plug it back in and it should be recognized as a modem.
 
-Once it exits, unplug the stick and plug it back in and it should be seen as a modem.
-
-## Setup udev rules
+### Setup udev rules
 
 Create the following [udev](/index.php/Udev "Udev") rule:
 
- `/etc/udev/rules.d/90-zte.conf.rules` 
-```
-ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="19d2", ATTRS{idProduct}=="0031", RUN+="/sbin/modprobe usbserial vendor=0x19d2 product=0x0031", MODE="660", GROUP="network"
+ `/etc/udev/rules.d/90-zte.conf.rules`  `ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="19d2", ATTRS{idProduct}=="0031", RUN+="/sbin/modprobe usbserial vendor=0x19d2 product=0x0031", MODE="660", GROUP="network"` 
 
-```
+### Create a wvdial configuration
 
-## Create a wvdial configuration
-
-[Wvdial](/index.php/Wvdial "Wvdial") is an easy-to-use frontend to PPPd. The configuration is fairly easy to comprehend. This one is probably longer than it needs to be, but I'll include it all. Make sure you replace the /dev/ttyUSB0 line with the node that your USB modem is connected to, you can see that with dmesg. Save as /etc/wvdial.conf.
+[Wvdial](/index.php/Wvdial "Wvdial") is an easy-to-use frontend to PPPd. Make sure you replace the `/dev/ttyUSB0` line with the node that your USB modem is connected to, you can see that with dmesg. Save as `/etc/wvdial.conf`.
 
 ```
 [Dialer Defaults]
@@ -115,9 +111,9 @@ Auto DNS = on
 
 ```
 
-## Create a wvdial configuration (extracted from sakis3g, the above config didn't work for me)
+If the above does not work, try the following (extracted from sakis3g):
 
-This is for Etisalat Misr, but I imagine it should work for all the other networks that use the same stick.
+This is for Etisalat Misr, but should work for all the other networks that use the same device.
 
 ```
 [Dialer Defaults]
@@ -139,7 +135,7 @@ Init7 = AT+CGEQREQ=1,4,64,640,64,640
 
 ## Connect to the internet
 
-Now just run wvdial to connect
+Now just run *wvdial* to connect
 
 ```
 # wvdial
@@ -148,7 +144,7 @@ Now just run wvdial to connect
 
 If you see output reporting your PPP local and endpoint IP addresses, then it worked.
 
-## Tips & Tricks
+## Tips and tricks
 
 All steps above may be obsolete if the modem stick is supported by [sakis3g](http://www.sakis3g.org/) which is an all in one command line script and automatises all the steps above. The installation steps are as follows:
 
@@ -160,11 +156,7 @@ chmod +x sakis3g
 
 ```
 
-## Acknowledgements
+## See also
 
-Thanks to the following webpages that gave me all this information:
-
-*   [http://www.zeroflux.org/blog/post/255](http://www.zeroflux.org/blog/post/255)
-*   [http://www.matt-barrett.com/?p=5](http://www.matt-barrett.com/?p=5)
-*   [http://ubuntuforums.org/showthread.php?t=1005910](http://ubuntuforums.org/showthread.php?t=1005910)
-*   [http://ubuntuforums.org/showthread.php?t=1065934](http://ubuntuforums.org/showthread.php?t=1065934)
+*   [Ubuntu forum post 1](http://ubuntuforums.org/showthread.php?t=1005910) - further details
+*   [Ubuntu forum post 2](http://ubuntuforums.org/showthread.php?t=1065934) - further details

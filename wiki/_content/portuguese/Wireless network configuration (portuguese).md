@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration"). Data da última tradução: 2018-09-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&diff=0&oldid=543345) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration"). Data da última tradução: 2018-11-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&diff=0&oldid=554905) na versão em inglês.
 
 Artigos relacionados
 
@@ -878,7 +878,7 @@ $ ndiswrapper -l
 
 ```
 
-Agora a instalação do ndiswrapper está quase concluída; siga as instruções em [Kernel modules#Automatic module handling](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules") para carregar automaticamente o módulo na inicialização.
+Agora a instalação do ndiswrapper está quase concluída; siga as instruções em [Kernel modules#Automatic loading with systemd](/index.php/Kernel_modules#Automatic_loading_with_systemd "Kernel modules") para carregar automaticamente o módulo na inicialização.
 
 A parte importante é certificar-se de que ndiswrapper existe nesta linha, por isso basta adicioná-lo ao lado dos outros módulos. Seria melhor testar se o ndiswrapper será carregado agora, então:
 

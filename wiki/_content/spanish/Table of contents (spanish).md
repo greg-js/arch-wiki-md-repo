@@ -205,7 +205,7 @@
 | <small>5.8.</small> [Software projects](/index.php/Category:Software_projects_(Espa%C3%B1ol) "Category:Software projects (Español)") <small>(0)</small> |
 | <small>5.8.1.</small> [Apache](/index.php/Category:Apache_(Espa%C3%B1ol) "Category:Apache (Español)") <small>(3)</small> |
 | <small>5.8.2.</small> [Proyectos de Arch](/index.php/Category:Arch_projects_(Espa%C3%B1ol) "Category:Arch projects (Español)") <small>(6) (también en [DeveloperWiki](/index.php/Category:DeveloperWiki_(Espa%C3%B1ol) "Category:DeveloperWiki (Español)"))</small> |
-| <small>5.8.3.</small> [GNOME](/index.php/Category:GNOME_(Espa%C3%B1ol) "Category:GNOME (Español)") <small>(5) (también en [Entornos de escritorios](/index.php/Category:Desktop_environments_(Espa%C3%B1ol) "Category:Desktop environments (Español)"))</small> |
+| <small>5.8.3.</small> [GNOME](/index.php/Category:GNOME_(Espa%C3%B1ol) "Category:GNOME (Español)") <small>(6) (también en [Entornos de escritorios](/index.php/Category:Desktop_environments_(Espa%C3%B1ol) "Category:Desktop environments (Español)"))</small> |
 | <small>5.8.4.</small> [GNU](/index.php/Category:GNU_(Espa%C3%B1ol) "Category:GNU (Español)") <small>(9)</small> |
 | <small>5.8.5.</small> [KDE](/index.php/Category:KDE_(Espa%C3%B1ol) "Category:KDE (Español)") <small>(2) (también en [Entornos de escritorios](/index.php/Category:Desktop_environments_(Espa%C3%B1ol) "Category:Desktop environments (Español)"))</small> |
 | <small>5.8.6.</small> [Mozilla](/index.php/Category:Mozilla_(Espa%C3%B1ol) "Category:Mozilla (Español)") <small>(1)</small> |
@@ -254,7 +254,7 @@
 | <small>6.10.</small> [Freedesktop.org](/index.php/Category:Freedesktop.org_(Espa%C3%B1ol) "Category:Freedesktop.org (Español)") <small>(1)</small> |
 | <small>6.11.</small> [Interfaz gráfico de usuario](/index.php/Category:Graphical_user_interfaces_(Espa%C3%B1ol) "Category:Graphical user interfaces (Español)") <small>(4)</small> |
 | <small>6.11.1.</small> [Entornos de escritorios](/index.php/Category:Desktop_environments_(Espa%C3%B1ol) "Category:Desktop environments (Español)") <small>(5)</small> |
-| <small>6.11.1.1.</small> [GNOME](/index.php/Category:GNOME_(Espa%C3%B1ol) "Category:GNOME (Español)") <small>(5) (también en [Software projects](/index.php/Category:Software_projects_(Espa%C3%B1ol) "Category:Software projects (Español)"))</small> |
+| <small>6.11.1.1.</small> [GNOME](/index.php/Category:GNOME_(Espa%C3%B1ol) "Category:GNOME (Español)") <small>(6) (también en [Software projects](/index.php/Category:Software_projects_(Espa%C3%B1ol) "Category:Software projects (Español)"))</small> |
 | <small>6.11.1.2.</small> [KDE](/index.php/Category:KDE_(Espa%C3%B1ol) "Category:KDE (Español)") <small>(2) (también en [Software projects](/index.php/Category:Software_projects_(Espa%C3%B1ol) "Category:Software projects (Español)"))</small> |
 | <small>6.11.1.3.</small> [Xfce](/index.php/Category:Xfce_(Espa%C3%B1ol) "Category:Xfce (Español)") <small>(1)</small> |
 | <small>6.11.2.</small> [Gestores de inicio de sesión](/index.php/Category:Display_managers_(Espa%C3%B1ol) "Category:Display managers (Español)") <small>(3)</small> |
@@ -272,7 +272,7 @@
 | <small>6.16.</small> [Logging](/index.php/Category:Logging_(Espa%C3%B1ol) "Category:Logging (Español)") <small>(1)</small> |
 | <small>6.17.</small> [Monitoring](/index.php/Category:Monitoring_(Espa%C3%B1ol) "Category:Monitoring (Español)") <small>(0)</small> |
 | <small>6.17.1.</small> [System monitors](/index.php/Category:System_monitors_(Espa%C3%B1ol) "Category:System monitors (Español)") <small>(1) (también en [Aplicaciones](/index.php/Category:Applications_(Espa%C3%B1ol) "Category:Applications (Español)"))</small> |
-| <small>6.18.</small> [Gestión de paquetes](/index.php/Category:Package_management_(Espa%C3%B1ol) "Category:Package management (Español)") <small>(19)</small> |
+| <small>6.18.</small> [Gestión de paquetes](/index.php/Category:Package_management_(Espa%C3%B1ol) "Category:Package management (Español)") <small>(20)</small> |
 | <small>6.19.</small> [Gestión de energía](/index.php/Category:Power_management_(Espa%C3%B1ol) "Category:Power management (Español)") <small>(4)</small> |
 | <small>6.20.</small> [Seguridad](/index.php/Category:Security_(Espa%C3%B1ol) "Category:Security (Español)") <small>(10)</small> |
 | <small>6.20.1.</small> [Redes de anonimato](/index.php/Category:Anonymity_networks_(Espa%C3%B1ol) "Category:Anonymity networks (Español)") <small>(3) (también en [Aplicaciones de internet](/index.php/Category:Internet_applications_(Espa%C3%B1ol) "Category:Internet applications (Español)"))</small> |

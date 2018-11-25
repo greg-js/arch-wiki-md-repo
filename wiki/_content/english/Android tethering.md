@@ -182,4 +182,4 @@ Follow the instructions under **Using the Socks Proxy** on [[1]](http://graha.ms
 
 #### Proxoid
 
-Follow the instructions demonstrated in the following [link](http://androidcommunity.com/forums/f23/android-usb-tethering-for-linux-using-proxoid-24875/)
+Follow the instructions demonstrated in the following [link](http://www.linux-magazine.com/Online/Blogs/Productivity-Sauce/Tether-an-Android-Phone-Using-Proxoid).

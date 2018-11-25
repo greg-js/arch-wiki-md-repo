@@ -3,7 +3,7 @@ Related articles
 *   [DeveloperWiki:Building in a clean chroot](/index.php/DeveloperWiki:Building_in_a_clean_chroot "DeveloperWiki:Building in a clean chroot")
 *   [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")
 
-[makepkg-optimize](https://aur.archlinux.org/packages/makepkg-optimize/) is a collection of supplemental `build_env` and `tidy` scripts for [pacman-buildenv_ext-git](https://aur.archlinux.org/packages/pacman-buildenv_ext-git/). They provide macros to [makepkg](/index.php/Makepkg "Makepkg") for several kinds of optimization in `build()` and `package()` stages, both in response to [the simplification of makepkg](https://lists.archlinux.org/pipermail/pacman-dev/2016-February/020826.html) and as a proposal [for a future version of pacman](https://lists.archlinux.org/pipermail/pacman-dev/2018-May/022498.html).
+[makepkg-optimize](https://aur.archlinux.org/packages/makepkg-optimize/) is a collection of supplemental `build_env` and `tidy` scripts for [pacman-buildenv_ext-git](https://aur.archlinux.org/packages/pacman-buildenv_ext-git/). They provide macros to [makepkg](/index.php/Makepkg "Makepkg") for several kinds of optimization in `build()` and `package()` stages, both in response to [the simplification of makepkg](https://lists.archlinux.org/pipermail/pacman-dev/2016-February/020826.html) and as a proposal [for a future version of pacman](https://lists.archlinux.org/pipermail/pacman-dev/2018-November/022933.html).
 
 **Warning:** Arch Linux only has official support for [pacman](https://www.archlinux.org/packages/?name=pacman) from [core](/index.php/Core "Core"). When using an alternate version, please mention so in support requests.
 
@@ -107,11 +107,13 @@ After the first building phase, bind the [PGO cache](#Create_a_profile-guided_op
 
 ```
 
+**Tip:** Alternatively, use [fstab](/index.php/Fstab "Fstab") to bind these folders persistently.
+
 Once the package is [installed](/index.php/Pacman#Additional_commands "Pacman"), test-run its executables.
 
-For the second building phase, do *not* pass `-c` to `makechrootpkg`, but clean `$srcdir` and overwrite the previous package by passing `-Cf` to `makepkg`:
+**Note:** Profiles are generated on `exit()`. Persistent daemons, such as [systemd](/index.php/Systemd "Systemd"), may require a reboot to produce profiles; if you have rebooted, be sure to rebind the PGO cache before rebuilding.
 
-**Note:** If you have rebooted, be sure to rebind the PGO cache before rebuilding. Alternatively, use [fstab](/index.php/Fstab "Fstab") to bind these folders persistently.
+For the second building phase, do *not* pass `-c` to `makechrootpkg`, but clean `$srcdir` and overwrite the previous package by passing `-Cf` to `makepkg`:
 
 ```
 $ makechrootpkg -r "$CHROOT" -- -Cf --config /etc/makepkg-optimize.conf

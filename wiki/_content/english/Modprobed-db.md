@@ -76,22 +76,19 @@ As mentioned earlier, this script is meant to be used in concert with the **make
 
 #### Using the Official Arch kernel PKGBUILD
 
-The official Arch kernel's PKGBUILD does not have native support for this, but it is easily modified as follows:
+The official Arch kernel PKGBUILD does not have native support, but it is easily modified in the *prepare* section as follows:
 
 ```
  ...
-  # get kernel version
-  make prepare
+    msg2 "Applying patch $src..."
+    patch -Np1 < "../$src"
+  done
 
   make LSMOD=$HOME/.config/modprobed.db localmodconfig                      # <---- insert this line
 
-  # load configuration
-  # Configure the kernel. Replace the line below with one of your choice.
-  #make menuconfig # CLI menu for configuration
-  #make nconfig # new CLI menu for configuration
-  #make xconfig # X-based configuration
-  #make oldconfig # using old config from previous kernel version
-  # ... or manually edit .config
+  msg2 "Setting config..."
+  cp ../config .config
+  make olddefconfig
  ...
 ```
 

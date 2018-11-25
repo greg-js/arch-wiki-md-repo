@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch boot process](/index.php/Arch_boot_process "Arch boot process"). Data da última tradução: 2018-10-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_boot_process&diff=0&oldid=546665) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch boot process](/index.php/Arch_boot_process "Arch boot process"). Data da última tradução: 2018-11-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_boot_process&diff=0&oldid=554647) na versão em inglês.
 
 Artigos relacionados
 
@@ -67,7 +67,7 @@ O UEFI inicia aplicativos EFI, por exemplo [gerenciadores de boot](#Gerenciador_
 1.  Sistema ligado, o [power-on self-test (POST)](https://en.wikipedia.org/wiki/pt:Power_On_Self_Test "wikipedia:pt:Power On Self Test") (*autoteste de inicialização*) é executado.
 2.  O UEFI inicializa o hardware necessário para carregar o sistema.
 3.  O firmware lê as entradas de inicialização na NVRAM para determinar qual aplicativo EFI deve ser iniciado e de onde (por exemplo, de qual disco e partição).
-    *   Uma entrada de inicialização pode ser simplesmente um disco. Nesse caso, o firmware procura uma [Partição de Sistema EFI](/index.php/EFI_system_partition "EFI system partition") nesse disco e tenta localizar o aplicativo EFI no caminho reserva de inicialização `\EFI\BOOT\BOOTX64.EFI` (`BOOTIA32.EFI` em sistemas EFI [IA32 (32 bits)](/index.php/Unified_Extensible_Firmware_Interface#UEFI_firmware_bitness "Unified Extensible Firmware Interface")). É assim que as mídias removíveis inicializáveis UEFI funcionam.
+    *   Uma entrada de inicialização pode ser simplesmente um disco. Nesse caso, o firmware procura uma [Partição de Sistema EFI](/index.php/EFI_system_partition "EFI system partition") nesse disco e tenta localizar o aplicativo EFI no caminho reserva de inicialização `\EFI\BOOT\BOOTX64.EFI` (`BOOTIA32.EFI` em [sistemas com um IA32 (32 bits)](/index.php/Unified_Extensible_Firmware_Interface#UEFI_firmware_bitness "Unified Extensible Firmware Interface")). É assim que as mídias removíveis inicializáveis UEFI funcionam.
 4.  O firmware inicia o aplicativo EFI.
     *   Isso poderia ser um [gerenciador de boot](#Gerenciador_de_boot) ou o [kernel](/index.php/Kernel "Kernel") do Arch usando [EFISTUB](/index.php/EFISTUB "EFISTUB")
     *   Ele poderia ser algum aplicativo EFI como um shell UEFI ou um [gerenciador de boot](#Gerenciador_de_boot), como [systemd-boot](/index.php/Systemd-boot "Systemd-boot") ou [rEFInd](/index.php/REFInd "REFInd").

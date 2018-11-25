@@ -189,23 +189,28 @@ If you anticipate to protect the system's data not only against physical theft, 
 
 For [solid state drives](/index.php/Solid_state_drive "Solid state drive") you might want to consider enabling TRIM support, but be warned, there are potential security implications. See [dm-crypt/Specialties#Discard/TRIM support for solid state drives (SSD)](/index.php/Dm-crypt/Specialties#Discard/TRIM_support_for_solid_state_drives_(SSD) "Dm-crypt/Specialties") for more information.
 
-**Warning:** In any scenario, never use file system repair software such as [fsck](/index.php/Fsck "Fsck") directly on an encrypted volume, or it will destroy any means to recover the key used to decrypt your files. Such tools must be used on the decrypted (opened) device instead.
+**Warning:**
+
+*   In any scenario, never use file system repair software such as [fsck](/index.php/Fsck "Fsck") directly on an encrypted volume, or it will destroy any means to recover the key used to decrypt your files. Such tools must be used on the decrypted (opened) device instead.
+*   For the LUKS2 format:
+    *   [GRUB](/index.php/GRUB "GRUB") does not support LUKS2\. Do not use LUKS2 on partitions that GRUB needs to access.
+    *   The LUKS2 format has a high RAM usage per design, defaulting to 1GB per encrypted mapper. Machines with low RAM and/or multiple LUKS2 partitions unlocked in parallel may error on boot. See the `--pbkdf-memory` option to control memory usage.[[1]](https://gitlab.com/cryptsetup/cryptsetup/issues/372)
 
 ## Simple partition layout with LUKS
 
 This example covers a full system encryption with *dmcrypt* + LUKS in a simple partition layout:
 
 ```
-+-----------------------+-----------------------+-----------------------+
-| Boot partition        | LUKS encrypted system | Optional free space   |
-|                       | partition             | for additional        |
-|                       |                       | partitions or swap    |
-| /boot                 | /                     | to be setup later     |
-|                       |                       |                       |
-|                       | /dev/mapper/cryptroot |                       |
-|                       |-----------------------|                       |
-| /dev/sda1             | /dev/sda2             |                       |
-+-----------------------+-----------------------+-----------------------+
++-----------------------+------------------------+-----------------------+
+| Boot partition        | LUKS2 encrypted system | Optional free space   |
+|                       | partition              | for additional        |
+|                       |                        | partitions or swap    |
+| /boot                 | /                      | to be setup later     |
+|                       |                        |                       |
+|                       | /dev/mapper/cryptroot  |                       |
+|                       |------------------------|                       |
+| /dev/sda1             | /dev/sda2              |                       |
++-----------------------+------------------------+-----------------------+
 
 ```
 
@@ -311,7 +316,7 @@ The disk layout in this example is:
 | /dev/MyVolGroup/swap  | /dev/MyVolGroup/root  | /dev/MyVolGroup/home  | |                |
 |_ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _| | (may be on     |
 |                                                                       | | other device)  |
-|                         LUKS encrypted partition                      | |                |
+|                         LUKS2 encrypted partition                     | |                |
 |                           /dev/sda1                                   | | /dev/sdb1      |
 +-----------------------------------------------------------------------+ +----------------+
 
@@ -476,7 +481,7 @@ Partitioning scheme:
 
 ```
 +----------------+-------------------------------------------------------------------------------------------------+
-| Boot partition | dm-crypt plain encrypted volume | LUKS encrypted volume         | LUKS encrypted volume         |
+| Boot partition | dm-crypt plain encrypted volume | LUKS2 encrypted volume        | LUKS2 encrypted volume        |
 |                |                                 |                               |                               |
 | /boot          | [SWAP]                          | /                             | /home                         |
 |                |                                 |                               |                               |
@@ -912,11 +917,11 @@ The disk layout in this example is:
 +---------------------+----------------------+----------------+----------------------+----------------------+----------------------+
 | BIOS boot partition | EFI system partition | Boot partition | Logical volume 1     | Logical volume 2     | Logical volume 3     |
 |                     |                      |                |                      |                      |                      |
-|                     | /efi                 | /boot          | /root                | [SWAP]               | /home                |
+|                     | /efi                 | /boot          | /                    | [SWAP]               | /home                |
 |                     |                      |                |                      |                      |                      |
 |                     |                      |                | /dev/MyVolGroup/root | /dev/MyVolGroup/swap | /dev/MyVolGroup/home |
 | /dev/sda1           | /dev/sda2            | /dev/sda3      +----------------------+----------------------+----------------------+
-| unencrypted         | unencrypted          | LUKS encrypted | /dev/sda4 encrypted using LVM on LUKS                              |
+| unencrypted         | unencrypted          | LUKS encrypted | /dev/sda4 encrypted using LVM on LUKS2                             |
 +---------------------+----------------------+----------------+--------------------------------------------------------------------+
 
 ```
@@ -1133,7 +1138,7 @@ The following example creates a full system encryption with LUKS using [Btrfs](/
 
 If using UEFI, an [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (ESP) is required. `/boot` itself may reside on `/` and be encrypted; however, the ESP itself cannot be encrypted. In this example layout, the ESP is `/dev/sda1` and is mounted at `/efi`. `/boot` itself is located on the system partition, `/dev/sda2`.
 
-Since `/boot` resides on the encrypted `/`, [GRUB](/index.php/GRUB "GRUB") must be used as the bootloader because only GRUB can load modules necessary to decrypt `/boot` (e.g., crypto.mod, cryptodisk.mod and luks.mod) [[1]](http://www.pavelkogan.com/2014/05/23/luks-full-disk-encryption/).
+Since `/boot` resides on the encrypted `/`, [GRUB](/index.php/GRUB "GRUB") must be used as the bootloader because only GRUB can load modules necessary to decrypt `/boot` (e.g., crypto.mod, cryptodisk.mod and luks.mod) [[2]](http://www.pavelkogan.com/2014/05/23/luks-full-disk-encryption/).
 
 Additionally an optional plain-encrypted [swap](/index.php/Swap "Swap") partition is shown.
 
@@ -1142,7 +1147,7 @@ Additionally an optional plain-encrypted [swap](/index.php/Swap "Swap") partitio
 ```
 +----------------------+----------------------+----------------------+
 | EFI system partition | System partition     | Swap partition       |
-| unencrypted          | LUKS-encrypted       | plain-encrypted      |
+| unencrypted          | LUKS2-encrypted      | plain-encrypted      |
 |                      |                      |                      |
 | /efi                 | /                    | [SWAP]               |
 | /dev/sda1            | /dev/sda2            | /dev/sda3            |

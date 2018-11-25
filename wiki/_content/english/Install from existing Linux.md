@@ -8,7 +8,7 @@ Installing Arch Linux from a running Linux is useful for:
 
 *   remotely installing Arch Linux, e.g. a (virtual) root server
 *   replacing an existing Linux without a LiveCD (see [#Replacing the existing system without a LiveCD](#Replacing_the_existing_system_without_a_LiveCD))
-*   creating a new Linux distribution or LiveCD based on Arch Linux
+*   creating a new Linux distribution or [LiveMedia based on Arch Linux](/index.php/Arch-based_distributions "Arch-based distributions")
 *   creating an Arch Linux chroot environment, e.g. for a Docker base container
 *   [rootfs-over-NFS for diskless machines](/index.php/Diskless_network_boot_NFS_root "Diskless network boot NFS root")
 

@@ -114,7 +114,7 @@ See [Flash DRM content](/index.php/Flash_DRM_content "Flash DRM content").
 
 ### Shumway
 
-[Shumway](http://mozilla.github.io/shumway/) is a [discontinued](https://github.com/mozilla/shumway/issues/2420) HTML5 technology experiment that explores building a faithful and efficient renderer for the SWF file format without native code assistance. The plugin may be installed directly from [Mozilla's github.io site](http://mozilla.github.io/shumway/).
+[Shumway](http://mozilla.github.io/shumway/) is a [discontinued](https://github.com/mozilla/shumway/issues/2420) HTML5 technology experiment that explores building a faithful and efficient renderer for the SWF file format without native code assistance. The plugin may be installed directly from [Mozilla's github.io site](http://mozilla.github.io/shumway/) or with [firefox-extension-shumway](https://aur.archlinux.org/packages/firefox-extension-shumway/).
 
 ### Gnash
 

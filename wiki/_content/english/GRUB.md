@@ -276,7 +276,9 @@ For further information about bootloader configuration for encrypted devices, se
 
 #### Boot partition
 
-GRUB can be set to ask for a password to open a [LUKS](/index.php/LUKS "LUKS") blockdevice in order to read its configuration and load any [initramfs](/index.php/Initramfs "Initramfs") and [kernel](/index.php/Kernel "Kernel") from it. This option tries to solve the issue of having an [unencrypted boot partition](/index.php/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition "Dm-crypt/Specialties"). `/boot` is **not** required to be kept in a separate partition; it may also stay under the system's root `/` directory tree.
+GRUB can be set to ask for a password to open a [LUKS](/index.php/LUKS "LUKS") blockdevice in order to read its configuration and load any [initramfs](/index.php/Initramfs "Initramfs") and [kernel](/index.php/Kernel "Kernel") from it. This option tries to solve the issue of having an [unencrypted boot partition](/index.php/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition "Dm-crypt/Specialties").
+
+**Note:** `/boot` is **not** required to be kept in a separate partition; it may also stay under the system's root `/` directory tree.
 
 **Warning:** GRUB does not support LUKS2 headers. Make sure you do not specify `luks2` for the type parameter when creating the encrypted partition using `cryptsetup luksFormat`.
 

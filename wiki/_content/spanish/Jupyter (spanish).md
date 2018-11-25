@@ -22,7 +22,7 @@ Jupyter Notebook es la aplicación tradicional y la más estable . [JupyterLab](
 
 Para obtener Jupyter Notebook, [instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquete [jupyter-notebook](https://www.archlinux.org/packages/?name=jupyter-notebook).
 
-Para obtener JupyterLab, [instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquete [jupyterlab](https://aur.archlinux.org/packages/jupyterlab/).
+Para obtener JupyterLab, [instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquete [jupyterlab](https://www.archlinux.org/packages/?name=jupyterlab).
 
 Después de la instalación, ejecute lo siguiente para habilitar los widgets interactivos de Javascript en los notebooks; de lo contrario, los widgets serán deshabilitados.
 

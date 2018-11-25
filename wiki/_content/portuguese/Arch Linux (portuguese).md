@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch Linux](/index.php/Arch_Linux "Arch Linux"). Data da última tradução: 2018-08-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_Linux&diff=0&oldid=536968) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch Linux](/index.php/Arch_Linux "Arch Linux"). Data da última tradução: 2018-11-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_Linux&diff=0&oldid=556870) na versão em inglês.
 
 O Arch Linux é uma distribuição [GNU](/index.php/GNU_(Portugu%C3%AAs) "GNU (Português)")/Linux x86_64 de uso geral desenvolvida independentemente que se empenha em fornecer as últimas versões estáveis da maioria dos softwares seguindo um modelo de lançamento contínuo (*rolling-release*). A instalação padrão é um sistema base mínimo, configurado pelo usuário para adicionar apenas o que é propositalmente necessário.
 
@@ -15,7 +15,7 @@ O Arch Linux é uma distribuição [GNU](/index.php/GNU_(Portugu%C3%AAs) "GNU (P
     *   [2.2 Os anos médios](#Os_anos_médios)
     *   [2.3 Nascimento do ArchWiki](#Nascimento_do_ArchWiki)
     *   [2.4 O alvorecer da era A. Griffin](#O_alvorecer_da_era_A._Griffin)
-    *   [2.5 Scripts de instalação do Arch](#Scripts_de_instalação_do_Arch)
+    *   [2.5 Arch Install Scripts](#Arch_Install_Scripts)
     *   [2.6 A era do systemd](#A_era_do_systemd)
     *   [2.7 Fim do suporte a i686](#Fim_do_suporte_a_i686)
 
@@ -73,9 +73,9 @@ Em 2005-07-08 o ArchWiki foi [configurado](/index.php/ArchWiki:About_(Portugu%C3
 
 No fim de 2007, Judd Vinet se afastou da participação ativa como desenvolvedor do Arch, e [transferiu sem problemas](https://bbs.archlinux.org/viewtopic.php?id=38024) o reinado para o programador americano Aaron Griffin, também conhecido como Phrakture.
 
-### Scripts de instalação do Arch
+### Arch Install Scripts
 
-O lançamento de 2012-07-15 da imagem de instalação tornou [obsoleto](http://www.archlinux-br.org/noticias/192/) o sistema de menus Arch Installation Framework em favor dos Scripts de Instalação do Arch.
+O lançamento de 2012-07-15 da imagem de instalação tornou [obsoleto](http://www.archlinux-br.org/noticias/192/) o sistema de menus *Arch Installation Framework* (AIF) em favor dos *Arch Install Scripts*.
 
 ### A era do systemd
 

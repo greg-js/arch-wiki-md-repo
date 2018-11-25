@@ -1,13 +1,12 @@
 ## Contents
 
 *   [1 Introduction](#Introduction)
-*   [2 Plugging In](#Plugging_In)
-    *   [2.1 Quick Start](#Quick_Start)
-        *   [2.1.1 Easy Install using Network Manager](#Easy_Install_using_Network_Manager)
-        *   [2.1.2 Bare Naked](#Bare_Naked)
-        *   [2.1.3 Configure n' Dial](#Configure_n'_Dial)
-        *   [2.1.4 If using PIN code add this before Init2](#If_using_PIN_code_add_this_before_Init2)
-    *   [2.2 Slow Start](#Slow_Start)
+*   [2 Configuration](#Configuration)
+    *   [2.1 Network Manager](#Network_Manager)
+    *   [2.2 Bare Naked](#Bare_Naked)
+    *   [2.3 Configure and Dial](#Configure_and_Dial)
+    *   [2.4 PIN code](#PIN_code)
+    *   [2.5 Slow Start](#Slow_Start)
 *   [3 Extras](#Extras)
     *   [3.1 Port Testing](#Port_Testing)
 *   [4 Troubleshooting](#Troubleshooting)
@@ -23,11 +22,9 @@ Marketed by various telecommunications companies in several countries, the [E220
 
 However, as support for it was added in 2.6.20 via modules *usb-storage* and *usbserial*, getting it to work is as simple as plugging it in and dialling up (the above statement is of no concern to us as we can load and unload modules at will, it was probably meant for pre-packaged GNU and Linux distributions). In fact, using the modem under Linux proves to be more reliable as there are no uncalled-for disconnections. This is probably due to the fact that we are communicating directly with the modem, whereas in Windows or Mac OS X drivers are installed on first run (that is what the storage portion is for) and connection is achieved through a thick software layer every time, leaving room for possible interferences and conflicts.
 
-## Plugging In
+## Configuration
 
-### Quick Start
-
-#### Easy Install using Network Manager
+### Network Manager
 
 If you are using network-manager then this modem should be plug 'n play. I tested using Huawei E270, but since lsusb said that my modem is E220/E270, I assume it is the same. (Note: You can follow these instructions too if lsusb detects your Huawei E180 as E220.)
 
@@ -39,7 +36,7 @@ Activate the connection by choosing it on the Network Manager applet. If it is n
 
 For *Vodafone* brands of this device, you can use [vodafone-mccd](https://aur.archlinux.org/packages.php?ID=32986) which is the [Vodafone Mobile Connect Card Driver for Linux](http://forge.vodafonebetavine.net/projects/vodafonemobilec/). The official name is very long, yes.
 
-#### Bare Naked
+### Bare Naked
 
 You can just try *Plug 'n Dial* first to see if it works (I will give you free beer if it does!). After hooking up to the USB port (some say an upright position is best; let it hang over the edge of the desk), check to make sure it is detected.
 
@@ -66,7 +63,7 @@ You should see three renditions of **ttyUSB**. If not, we will get to that later
 
 Now you need a dialler. Most convenient of all would be [wvdial](/index.php/Wvdial "Wvdial"), so install it. You should have *ppp* already, if not just pull them both in by [installing](/index.php/Install "Install") the [wvdial](https://www.archlinux.org/packages/?name=wvdial) and [ppp](https://www.archlinux.org/packages/?name=ppp) packages.
 
-#### Configure n' Dial
+### Configure and Dial
 
 Most SIM and data services provided together with the device do not require special settings and work with similar configuration to get connected. They are almost "Plug n' Play", a special trait of Linux. Edit */etc/wvdial.conf* and use something like the following:
 
@@ -88,10 +85,10 @@ Modem Type = Analog Modem
 
 For providers that do require a specific Init string and user/password combination, [mkwvconf-git](https://aur.archlinux.org/packages/mkwvconf-git/) in AUR can help generate a wvdial configuration (based on the [mobile-broadband-provider-info-git](https://aur.archlinux.org/packages/mobile-broadband-provider-info-git/) package).
 
-#### If using PIN code add this before Init2
+### PIN code
 
 ```
- Init1 = AT+CPIN=9999
+Init1 = AT+CPIN=9999
 
 ```
 
@@ -213,7 +210,10 @@ Then you add default route and dns as usually:
 
 ## See also
 
-[http://wwwu.uni-klu.ac.at/agebhard/HuaweiE220/](http://wwwu.uni-klu.ac.at/agebhard/HuaweiE220/)
-[http://oozie.fm.interia.pl/pro/huawei-e220/](http://oozie.fm.interia.pl/pro/huawei-e220/)
-[http://mybroadband.co.za/vb/showthread.php?t=21726](http://mybroadband.co.za/vb/showthread.php?t=21726)
-[USB 3G Modem](/index.php/USB_3G_Modem "USB 3G Modem")
+*   [USB 3G Modem](/index.php/USB_3G_Modem "USB 3G Modem")
+*   [USB mode switch](/index.php/USB_3G_Modem#Mode_switching "USB 3G Modem")
+*   [http://wwwu.uni-klu.ac.at/agebhard/HuaweiE220/](http://wwwu.uni-klu.ac.at/agebhard/HuaweiE220/)
+
+*   [http://oozie.fm.interia.pl/pro/huawei-e220/](http://oozie.fm.interia.pl/pro/huawei-e220/)
+
+*   [http://mybroadband.co.za/vb/showthread.php?t=21726](http://mybroadband.co.za/vb/showthread.php?t=21726)

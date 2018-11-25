@@ -36,10 +36,10 @@ Server = http://repo-ck.com/$arch
 
 ```
 
-Update your sync database:
+Update your sync database and install the chosen kernel variant:
 
 ```
-# pacman -Syy
+# pacman -Syu linux-ck
 
 ```
 

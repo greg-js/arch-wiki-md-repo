@@ -45,6 +45,8 @@ As a result:
 *   [6 Usage](#Usage)
     *   [6.1 Native encryption](#Native_encryption)
     *   [6.2 Scrub](#Scrub)
+        *   [6.2.1 How often should I do this?](#How_often_should_I_do_this?)
+        *   [6.2.2 How do I do this?](#How_do_I_do_this?)
     *   [6.3 Check zfs pool status](#Check_zfs_pool_status)
     *   [6.4 Destroy a storage pool](#Destroy_a_storage_pool)
     *   [6.5 Exporting a storage pool](#Exporting_a_storage_pool)
@@ -588,7 +590,23 @@ The Before= reference to systemd-user-sessions.service ensures that systemd-ask-
 
 ### Scrub
 
-ZFS pools should be scrubbed at least once a week. To scrub the pool:
+Whenever data is read and ZFS encounters an error, it is silently repaired when possible, rewritten back to disk and logged so you can obtain an overview of errors on your pools. There is no fsck or equivalent tool for ZFS. Instead, ZFS supports a feature known as scrubbing. This traverses through all the data in a pool and verifies that all blocks can be read.
+
+#### How often should I do this?
+
+From the Oracle blog post [Disk Scrub - Why and When?](https://blogs.oracle.com/wonders-of-zfs-storage/disk-scrub-why-and-when-v2):
+
+	This question is challenging for Support to answer, because as always the true answer is "It Depends". So before I offer a general guideline, here are a few tips to help you create an answer more tailored to your use pattern.
+
+*   What is the expiration of your oldest backup? You should probably scrub your data at least as often as your oldest tapes expire so that you have a known-good restore point.
+*   How often are you experiencing disk failures? While the recruitment of a hot-spare disk invokes a "resilver" -- a targeted scrub of just the VDEV which lost a disk -- you should probably scrub at least as often as you experience disk failures on average in your specific environment.
+*   How often is the oldest piece of data on your disk read? You should scrub occasionally to prevent very old, very stale data from experiencing bit-rot and dying without you knowing it.
+
+	If any of your answers to the above are "I don't know", I'll provide a general guideline: you should probably be scrubbing your zpool at least once per month. It's a schedule that works well for most use cases, provides enough time for scrubs to complete before starting up again on all but the busiest & most heavily-loaded systems, and even on very large zpools (192+ disks) should complete fairly often between disk failures.
+
+In the [ZFS Administration Guide](https://pthree.org/2012/12/11/zfs-administration-part-vi-scrub-and-resilver/) by Aaron Toponce, he advises to scrub consumer disks once a week.
+
+#### How do I do this?
 
 ```
 # zpool scrub <pool>
@@ -606,6 +624,13 @@ To do automatic scrubbing once a week, set the following line in the root cronta
 ```
 
 Replace `<pool>` with the name of the ZFS pool.
+
+You can cancel a running scrub with the comand:
+
+```
+# zpool scrub -s <pool>
+
+```
 
 ### Check zfs pool status
 

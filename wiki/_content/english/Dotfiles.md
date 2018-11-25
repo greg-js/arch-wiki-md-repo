@@ -145,6 +145,7 @@ clean = "sed -e 's/^password=.*/#password=TODO/'"
 | [meskarune](https://github.com/meskarune/.dotfiles) | bash | herbstluftwm | vim | rxvt-unicode | screen | conky | weechat |
 | [neersighted](https://github.com/neersighted/dotfiles) | zsh | i3 | vim | rxvt-unicode | tmux | ncmpcpp | htop | mutt | irssi |
 | [OK100](https://github.com/ok100/configs) | bash | dwm | vim | rxvt-unicode | cmus | conky, dzen | mutt | weechat |
+| [pablox-cl](https://github.com/pablox-cl/dotfiles) | zsh (zplug) | gnome3 | neovim | kitty |
 | [reisub0](https://github.com/reisub0/dot) | bash | awesome | neovim | termite | mpd | conky |
 | [sistematico](https://github.com/sistematico/majestic) | zsh/fish/bash | [i3-gaps](https://github.com/Airblader/i3) | vim/nano | termite | tmux | ncmpcpp | polybar | mutt | weechat |
 | [sitilge](https://git.sitilge.id.lv/sitilge/dotfiles) | zsh | awesome | neovim | termite | thunderbird |

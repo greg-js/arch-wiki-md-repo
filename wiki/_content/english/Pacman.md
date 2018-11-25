@@ -645,7 +645,7 @@ If *pacman* is interrupted while changing the database, this stale lock file can
 
 This error manifests as `Not found in sync db`, `Target not found` or `Failed retrieving file`.
 
-Firstly, ensure the package actually exists. If certain the package exists, your package list may be out-of-date. Try running `pacman -Syyu` to force a refresh of all package lists and upgrade. Also make sure the selected [mirrors](/index.php/Mirrors "Mirrors") are up-to-date and [repositories](#Repositories_and_mirrors) are correctly configured.
+Firstly, ensure the package actually exists. If certain the package exists, your package list may be out-of-date. Try running `pacman -Syu` to force a refresh of all package lists and upgrade. Also make sure the selected [mirrors](/index.php/Mirrors "Mirrors") are up-to-date and [repositories](#Repositories_and_mirrors) are correctly configured.
 
 It could also be that the repository containing the package is not enabled on your system, e.g. the package could be in the [multilib](/index.php/Multilib "Multilib") repository, but *multilib* is not enabled in your `pacman.conf`.
 
@@ -686,7 +686,7 @@ In the case that *pacman* crashes with a "database write" error while removing p
 1.  Boot using the Arch installation media. Preferably use a recent media so that the *pacman* version matches/is newer than the system.
 2.  Mount the system's root filesystem, e.g. `mount /dev/sdaX /mnt` as root, and check the mount has sufficient space with `df -h`
 3.  Mount the proc, sys and dev filesystems as well: `mount -t proc proc /mnt/proc; mount --rbind /sys /mnt/sys; mount --rbind /dev /mnt/dev`
-4.  If the system uses default database and directory locations, you can now update the system's *pacman* database and upgrade it via `pacman --sysroot /mnt -Syyu` as root.
+4.  If the system uses default database and directory locations, you can now update the system's *pacman* database and upgrade it via `pacman --sysroot /mnt -Syu` as root.
 5.  After the upgrade, one way to double-check for not upgraded but still broken packages: `find /mnt/usr/lib -size 0`
 6.  Followed by a re-install of any still broken package via `pacman --sysroot /mnt -S *package*`.
 

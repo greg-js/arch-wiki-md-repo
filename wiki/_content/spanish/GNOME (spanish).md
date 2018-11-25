@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [GNOME](/index.php/GNOME "GNOME"), revisada por última vez el **2018-11-20**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=556231) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [GNOME](/index.php/GNOME "GNOME"), revisada por última vez el **2018-11-24**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=556961) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Related articles
 
@@ -150,14 +150,15 @@ Para aprender a utilizar GNOME Shell, lea [GNOME Shell Cheat Sheet](https://wiki
 **Sugerencia:** La búsqueda del nombre heredado de una aplicación en la barra de búsqueda de GNOME Shell devolverá con éxito la aplicación en cuestión. Por ejemplo, la búsqueda de *nautilus* devolverá *Archivos*.
 
 | Actual | Antiguo |
-| [Archivos](/index.php?title=Archivos&action=edit&redlink=1 "Archivos (page does not exist)") | Nautilus |
+| [[GNOME/Files | Archivos]] | Nautilus |
 | [Web](/index.php/GNOME/Web "GNOME/Web") | Epiphany |
 | Vídeos | Tótem |
 | Menú principal | Alacarte |
-| Visor de documentos | Evince |
+| [Visor de documentos](/index.php/GNOME/Document_viewer "GNOME/Document viewer") | Evince |
 | Analizador de uso de disco | Baobab |
 | Visor de imágenes | EoG (Ojo de GNOME) |
 | [Contraseñas y claves](/index.php/GNOME/Keyring "GNOME/Keyring") | Seahorse |
+| Editor de traducciones de GNOME | Gtranslator |
 
 ## Configuración
 
@@ -332,9 +333,7 @@ $ gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximi
 ##### Ocultar la barra de título cuando está maximizado
 
 *   [Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") [gnome-shell-extension-no-title-bar](https://aur.archlinux.org/packages/gnome-shell-extension-no-title-bar/) o [gnome-shell-extension-no-title-bar](https://aur.archlinux.org/packages/gnome-shell-extension-no-title-bar/). Las ventanas maximizadas obtienen la barra de título fusionada en la barra de actividad.
-
 *   [Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") [mutter-hide-legacy-decorations](https://aur.archlinux.org/packages/mutter-hide-legacy-decorations/). Cambia una configuración predeterminada en el gestor de ventanas, a fin de ocultar automáticamente la barra de título en aplicaciones heredadas (sin barra de encabezado) cuando están maximizadas o en mosaico en el lateral.
-
 *   [Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") [gnome-shell-extension-pixel-saver-git](https://aur.archlinux.org/packages/gnome-shell-extension-pixel-saver-git/) o [gnome-shell-extension-pixel-saver](https://aur.archlinux.org/packages/gnome-shell-extension-pixel-saver/). Las ventanas maximizadas obtienen la barra de título fusionada en la barra de actividad, ahorrando píxeles valiosos.
 
 ##### Temas de GNOME Shell

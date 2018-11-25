@@ -40,6 +40,7 @@ This article describes how to set up nginx and how to optionally integrate it wi
     *   [6.3 Error: The page you are looking for is temporarily unavailable. Please try again later. (502 Bad Gateway)](#Error:_The_page_you_are_looking_for_is_temporarily_unavailable._Please_try_again_later._(502_Bad_Gateway))
     *   [6.4 Error: No input file specified](#Error:_No_input_file_specified)
     *   [6.5 Warning: Could not build optimal types_hash](#Warning:_Could_not_build_optimal_types_hash)
+    *   [6.6 Cannot assign requested address](#Cannot_assign_requested_address)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -905,6 +906,19 @@ http {
 }
 
 ```
+
+### Cannot assign requested address
+
+The full error from `systemctl status nginx.service` is
+
+```
+[emerg] 460#460: bind() to A.B.C.D:443 failed (99: Cannot assign requested address)
+
+```
+
+Even, if your nginx unit-file is configured to run after `network.target` with systemd, nginx may attempt to listen at an address that is configured but not added to any interface yet. Verify that this the case by manually running [start](/index.php/Start "Start") for nginx (thereby showing the IP address is configured properly). Configuring nginx to listen to any address will resolve this issue. Now if your use case requires listening to a specific address, one possible solution is to reconfigure systemd.
+
+To start nginx after all configured network devices are up and assigned an IP address, append `network-online.target` to `After=` within `nginx.service` and [start/enable](/index.php/Start/enable "Start/enable") `systemd-networkd-wait-online.service`.
 
 ## See also
 

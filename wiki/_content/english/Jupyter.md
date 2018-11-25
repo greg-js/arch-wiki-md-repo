@@ -19,7 +19,7 @@ Jupyter Notebook is the traditional and most stable application. [JupyterLab](ht
 
 For Jupyter Notebook, [install](/index.php/Install "Install") the [jupyter-notebook](https://www.archlinux.org/packages/?name=jupyter-notebook) package.
 
-For JupyterLab, [install](/index.php/Install "Install") the [jupyterlab](https://aur.archlinux.org/packages/jupyterlab/) package.
+For JupyterLab, [install](/index.php/Install "Install") the [jupyterlab](https://www.archlinux.org/packages/?name=jupyterlab) package.
 
 After installation, run the following to enable interactive Javascript widgets in the notebooks; otherwise, widgets will be disabled.
 

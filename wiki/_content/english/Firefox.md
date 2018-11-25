@@ -18,7 +18,7 @@ Related articles
 *   [3 Configuration](#Configuration)
     *   [3.1 Multimedia playback](#Multimedia_playback)
         *   [3.1.1 Open-with extension](#Open-with_extension)
-    *   [3.2 Dictionaries for spell checking](#Dictionaries_for_spell_checking)
+    *   [3.2 Spell checking](#Spell_checking)
     *   [3.3 KDE/GNOME integration](#KDE/GNOME_integration)
     *   [3.4 Smooth Scrolling](#Smooth_Scrolling)
 *   [4 Plugins](#Plugins)
@@ -170,11 +170,9 @@ If you have no audio even when using *apulse*, try adding `16` to `security.sand
 
 The same procedure can be used to associate video downloaders such as *youtube-dl*.
 
-### Dictionaries for spell checking
+### Spell checking
 
 Install the [hunspell](https://www.archlinux.org/packages/?name=hunspell) package. You also need to install dictionaries for your language, such as [hunspell-fr](https://www.archlinux.org/packages/?name=hunspell-fr) (for the French language) or [hunspell-he](https://www.archlinux.org/packages/?name=hunspell-he) (for Hebrew).
-
-By default, Firefox will try to symlink all your hunspell dictionaries in `/usr/lib/firefox/dictionaries/`. If you want to have less dictionaries offered to you in Firefox, you can remove some of those links. Be aware that it may not stand an upgrade of Firefox.
 
 To enable spell checking for a specific language right click on any text field and check the *Check Spelling* box. To select a language for spell checking to you have right click again and select your language from the *Languages* sub-menu.
 
@@ -247,18 +245,18 @@ If a dark [GTK](/index.php/GTK "GTK") theme is in use (e.g. Arc Dark), it is rec
 
 ### Screenshot of webpage
 
-You can *Take a Screenshot* by either clicking the *Page actions* button (the three horizontal dots) in the address bar or by right-clicking on the webpage. See [[2]](https://support.mozilla.org/en-US/kb/firefox-screenshots) for more information.
+You can *Take a Screenshot* by either clicking the *Page actions* button (the three horizontal dots) in the address bar or by right-clicking on the webpage. See [[1]](https://support.mozilla.org/en-US/kb/firefox-screenshots) for more information.
 
 **Note:**
 
-*   The *Save* button misleadingly uploads your screenshot to a firefox.com subdomain. Set `extensions.screenshots.upload-disabled` to `true` to disable this behaviour. [[3]](https://github.com/mozilla-services/screenshots/issues/3503)
+*   The *Save* button misleadingly uploads your screenshot to a firefox.com subdomain. Set `extensions.screenshots.upload-disabled` to `true` to disable this behaviour. [[2]](https://github.com/mozilla-services/screenshots/issues/3503)
 *   If [privacy.resistFingerprinting](/index.php/Firefox/Privacy#Anti-fingerprinting "Firefox/Privacy") is enabled, to take a screenshot of a website using the above method, you need to grant it *Extract Canvas Data* permission.
 
 As an alternative you can use the full-page screenshot button in the *Developer Tools*, which you can open with `F12` (you might need to enable the button first).
 
 ### Window manager rules
 
-To apply different configurations to Firefox windows, change the WM_CLASS string by using Firefox's `--class` option, to a custom one. [[4]](https://developer.mozilla.org/en-US/docs/Mozilla/Command_Line_Options#X11_options)
+To apply different configurations to Firefox windows, change the WM_CLASS string by using Firefox's `--class` option, to a custom one. [[3]](https://developer.mozilla.org/en-US/docs/Mozilla/Command_Line_Options#X11_options)
 
 To start new Firefox instances, multiple profiles are required. To create a new profile:
 
@@ -363,7 +361,7 @@ When you close Firefox, the latter saves the current timestamp and version of yo
 
 If you upgraded your plugin when Firefox was still running, you will thus have the wrong information inside that file. The next time you will restart Firefox you will get that message `Firefox has prevented the outdated plugin "XXXX" from running on ...` when you will be trying to open content dedicated to that plugin on the web. This problem often appears with the official [Adobe Flash Player plugin](/index.php/Browser_plugins#Adobe_Flash_Player "Browser plugins") which has been upgraded while Firefox was still running.
 
-The solution is to remove the file `pluginreg.dat` from your profile and that is it. Firefox will not complain about the missing file as it will be recreated the next time Firefox will be closed. [[5]](https://bugzilla.mozilla.org/show_bug.cgi?id=1109795#c16)
+The solution is to remove the file `pluginreg.dat` from your profile and that is it. Firefox will not complain about the missing file as it will be recreated the next time Firefox will be closed. [[4]](https://bugzilla.mozilla.org/show_bug.cgi?id=1109795#c16)
 
 ### Javascript context menu does not appear on some sites
 
@@ -379,13 +377,13 @@ The default spell checking language can be set as follows:
 
 When you only have system wide dictionaries installed with [hunspell](https://www.archlinux.org/packages/?name=hunspell), Firefox might not remember your default dictionary language settings. This can be fixed by having at least one [dictionary](https://addons.mozilla.org/firefox/language-tools/) installed as a Firefox plugin. Notice that now you will also have a tab **Dictionaries** in **add-ons**.
 
-Related questions on the **StackExchange** platform: [[6]](https://stackoverflow.com/questions/26936792/change-firefox-spell-check-default-language/29446115), [[7]](https://stackoverflow.com/questions/21542515/change-default-language-on-firefox/29446353), [[8]](https://askubuntu.com/questions/184300/how-can-i-change-firefoxs-default-dictionary/576877)
+Related questions on the **StackExchange** platform: [[5]](https://stackoverflow.com/questions/26936792/change-firefox-spell-check-default-language/29446115), [[6]](https://stackoverflow.com/questions/21542515/change-default-language-on-firefox/29446353), [[7]](https://askubuntu.com/questions/184300/how-can-i-change-firefoxs-default-dictionary/576877)
 
 Related bug reports: [Bugzilla 776028](https://bugzilla.mozilla.org/show_bug.cgi?id=776028), [Ubuntu bug 1026869](https://bugs.launchpad.net/ubuntu/+source/firefox/+bug/1026869)
 
 ### Some MathML symbols are missing
 
-You need some Math fonts, namely Latin Modern Math and STIX (see this MDN page: [[9]](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/Fonts#Linux)), to display MathML correctly.
+You need some Math fonts, namely Latin Modern Math and STIX (see this MDN page: [[8]](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/Fonts#Linux)), to display MathML correctly.
 
 In Arch Linux, these fonts are provided by [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) **and** [texlive-fontsextra](https://www.archlinux.org/packages/?name=texlive-fontsextra), but they are not available to fontconfig by default. See [TeX Live#Making fonts available to Fontconfig](/index.php/TeX_Live#Making_fonts_available_to_Fontconfig "TeX Live") for details. You can also try other [Math fonts](/index.php/Fonts#Math "Fonts").
 

@@ -73,7 +73,7 @@ In late 2007, Judd Vinet retired from active participation as an Arch developer,
 
 ### Arch Install Scripts
 
-The 2012-07-15 release of the installation image [deprecated](https://www.archlinux.org/news/install-media-20120715-released/) the menu-driven Arch Installation Framework in favor of the Arch Install Scripts.
+The 2012-07-15 release of the installation image [deprecated](https://www.archlinux.org/news/install-media-20120715-released/) the menu-driven *Arch Installation Framework* (AIF) in favor of the *Arch Install Scripts*.
 
 ### The systemd era
 

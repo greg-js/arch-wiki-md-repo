@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Mail server](/index.php/Mail_server "Mail server"). Data da última tradução: 2018-10-30\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Mail_server&diff=0&oldid=551124) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Mail server](/index.php/Mail_server "Mail server"). Data da última tradução: 2018-11-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Mail_server&diff=0&oldid=554897) na versão em inglês.
 
 Um servidor de e-mail consiste em vários componentes. Um [agente de transferência de e-mail](https://en.wikipedia.org/wiki/pt:Mail_transfer_agent "wikipedia:pt:Mail transfer agent") (MTA) recebe e envia e-mails via [SMTP](https://en.wikipedia.org/wiki/pt:Simple_Mail_Transfer_Protocol "wikipedia:pt:Simple Mail Transfer Protocol"). E-mails recebidos e aceitos são então passados para um [agente de entrega de e-mail](https://en.wikipedia.org/wiki/Mail_delivery_agent "wikipedia:Mail delivery agent") (MDA), que armazena o e-mail em uma caixa de correio (geralmente nos formatos [mbox](https://en.wikipedia.org/wiki/mbox "wikipedia:mbox") ou [Maildir](https://en.wikipedia.org/wiki/Maildir "wikipedia:Maildir")). Se você quiser que os usuários possam acessar remotamente seus e-mails usando [clientes de e-mail](/index.php/Email_client "Email client") (MUA), será necessário executar um servidor [POP3](https://en.wikipedia.org/wiki/pt:Post_Office_Protocol "wikipedia:pt:Post Office Protocol") e/ou [IMAP](https://en.wikipedia.org/wiki/pt:Internet_Message_Access_Protocol "wikipedia:pt:Internet Message Access Protocol").
 
@@ -99,7 +99,7 @@ Hospedar um servidor de e-mail requer um [nome de domínio](https://en.wikipedia
 
 **Atenção:** Se você implementar [TLS](https://en.wikipedia.org/wiki/pt:Transport_Layer_Security "wikipedia:pt:Transport Layer Security"), certifique-se de seguir [TLS do lado do servidor](/index.php/Server-side_TLS "Server-side TLS") para evitar vulnerabilidades.
 
-Para obter um certificado, veja [OpenSSL#Certificates](/index.php/OpenSSL#Certificates "OpenSSL").
+Para obter um certificado, veja [OpenSSL#Usage](/index.php/OpenSSL#Usage "OpenSSL").
 
 ## Autenticação
 

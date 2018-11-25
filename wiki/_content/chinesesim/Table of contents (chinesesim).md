@@ -33,7 +33,7 @@
 | <small>2.10.4.</small> [IRC](/index.php/Category:Internet_Relay_Chat_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Internet Relay Chat (简体中文)") <small>(3)</small> |
 | <small>2.10.5.</small> [网页浏览器](/index.php/Category:Web_browser_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Web browser (简体中文)") <small>(5)</small> |
 | <small>2.11.</small> [数学和自然科学](/index.php/Category:Mathematics_and_science_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Mathematics and science (简体中文)") <small>(7)</small> |
-| <small>2.12.</small> [播放器](/index.php/Category:Multimedia_players_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Multimedia players (简体中文)") <small>(5)</small> |
+| <small>2.12.</small> [播放器](/index.php/Category:Multimedia_players_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Multimedia players (简体中文)") <small>(4)</small> |
 | <small>2.13.</small> [办公](/index.php/Category:Office_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Office (简体中文)") <small>(3)</small> |
 | <small>2.13.1.</small> [TeX](/index.php/Category:TeX_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:TeX (简体中文)") <small>(1)</small> |
 | <small>2.14.</small> [Software comparisons](/index.php/Category:Software_comparisons_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Software comparisons (简体中文)") <small>(1) (同时还属于 [ArchWiki](/index.php/Category:ArchWiki_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:ArchWiki (简体中文)"))</small> |
@@ -139,6 +139,8 @@
 | <small>8.8.</small> [Linux console](/index.php/Category:Linux_console_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Linux console (简体中文)") <small>(1)</small> |
 | <small>8.9.</small> [Logging](/index.php/Category:Logging_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Logging (简体中文)") <small>(1)</small> |
 | <small>8.10.</small> [Multimedia](/index.php/Category:Multimedia_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Multimedia (简体中文)") <small>(10)</small> |
+| <small>8.10.1.</small> [Audio](/index.php/Category:Audio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Audio (简体中文)") <small>(1)</small> |
+| <small>8.10.2.</small> [Video](/index.php/Category:Video_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Video (简体中文)") <small>(1)</small> |
 | <small>8.11.</small> [脚本](/index.php/Category:Scripts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Scripts (简体中文)") <small>(2)</small> |
 | <small>8.12.</small> [安全](/index.php/Category:Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Security (简体中文)") <small>(17)</small> |
 | <small>8.12.1.</small> [加密](/index.php/Category:Encryption_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Encryption (简体中文)") <small>(3)</small> |

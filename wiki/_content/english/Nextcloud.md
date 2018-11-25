@@ -128,7 +128,7 @@ An SQL database must be setup and used for your Nextcloud installation. After se
 
 #### MariaDB
 
-It is recommended to setup an own database and user when using [MariaDB](/index.php/MariaDB "MariaDB"):
+It is recommended to set up an own database and user when using [MariaDB](/index.php/MariaDB "MariaDB"):
 
  `$ mysql -u root -p` 
 ```

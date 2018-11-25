@@ -12,7 +12,7 @@ Um recurso adicional do Archiso Offline é que os pacotes AUR podem ser incluíd
 
 *   [1 Configuração](#Configuração)
     *   [1.1 Instalando pacotes](#Instalando_pacotes)
-*   [2 Compilar a ISO](#Compilar_a_ISO)
+*   [2 Compilando a ISO](#Compilando_a_ISO)
     *   [2.1 Exemplo de processo de compilação](#Exemplo_de_processo_de_compilação)
 *   [3 Veja também](#Veja_também)
     *   [3.1 Documentação e tutoriais](#Documentação_e_tutoriais)
@@ -40,9 +40,9 @@ Siga o mesmo procedimento descrito em [Archiso (Português)#Instalando pacotes](
 
 **Nota:** Se os pacotes do AUR forem encontrados pelo processo de compilação, um usuário de compilação será criado automaticamente com a permissão `"%wheel ALL=(ALL) NO"` no sudoers. É um problema conhecido e uma solução ruim a longo prazo. Certifique-se de que o arquivo sudoers esteja correto depois de criar sua ISO off-line por enquanto.
 
-## Compilar a ISO
+## Compilando a ISO
 
-Novamente, supondo que você tenha seguido a documentação do [Archiso](/index.php/Archiso_(Portugu%C3%AAs) "Archiso (Português)"), mais especificamente as etapas [Archiso (Português)#Compilar a ISO](/index.php/Archiso_(Portugu%C3%AAs)#Compilar_a_ISO "Archiso (Português)"), você deve ter uma ISO em:
+Novamente, supondo que você tenha seguido a documentação do [Archiso](/index.php/Archiso_(Portugu%C3%AAs) "Archiso (Português)"), mais especificamente as etapas em [Archiso (Português)#Compilando a ISO](/index.php/Archiso_(Portugu%C3%AAs)#Compilando_a_ISO "Archiso (Português)"), você deve ter uma ISO em:
 
 ```
 # ~/archlive/out/

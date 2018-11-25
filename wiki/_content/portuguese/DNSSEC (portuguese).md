@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [DNSSEC](/index.php/DNSSEC "DNSSEC"). Data da última tradução: 2018-08-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=DNSSEC&diff=0&oldid=533577) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [DNSSEC](/index.php/DNSSEC "DNSSEC"). Data da última tradução: 2018-11-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=DNSSEC&diff=0&oldid=554637) na versão em inglês.
 
 Artigos relacionados
 
@@ -14,18 +14,20 @@ Do [artigo do Wikipédia sobre o DNSSEC](https://en.wikipedia.org/wiki/Domain_Na
     *   [1.1 Instalação](#Instalação)
     *   [1.2 Consulta com validação DNSSEC](#Consulta_com_validação_DNSSEC)
     *   [1.3 Testando](#Testando)
-*   [2 Instalar um servidor recursivo de validação compatível com DNSSEC](#Instalar_um_servidor_recursivo_de_validação_compatível_com_DNSSEC)
+*   [2 Instalar um resolvedor de validação de DNSSEC](#Instalar_um_resolvedor_de_validação_de_DNSSEC)
 *   [3 Habilitar DNSSEC em um software específico](#Habilitar_DNSSEC_em_um_software_específico)
 *   [4 Hardware de DNSSEC](#Hardware_de_DNSSEC)
 *   [5 Veja também](#Veja_também)
 
 ## Validação básica de DNSSEC
 
-**Nota:** É necessária uma configuração adicional para as suas lookups de DNS DNSSEC por padrão. Veja [#Instalar um servidor recursivo de validação compatível com DNSSEC](#Instalar_um_servidor_recursivo_de_validação_compatível_com_DNSSEC) e [#Habilitar DNSSEC em um software específico](#Habilitar_DNSSEC_em_um_software_específico).
+**Nota:** É necessária uma configuração adicional para as suas lookups de DNS DNSSEC por padrão. Veja [#Instalar um resolvedor de validação de DNSSEC](#Instalar_um_resolvedor_de_validação_de_DNSSEC) e [#Habilitar DNSSEC em um software específico](#Habilitar_DNSSEC_em_um_software_específico).
 
 ### Instalação
 
 A ferramenta *drill* pode ser usada para validação básica de DNSSEC. Para usar o *drill*, [instale](/index.php/Instale "Instale") o pacote [ldns](https://www.archlinux.org/packages/?name=ldns).
+
+Para outras ferramentas disponíveis, veja [Resolução de nome de domínio#Utilitários de pesquisa](/index.php/Resolu%C3%A7%C3%A3o_de_nome_de_dom%C3%ADnio#Utilitários_de_pesquisa "Resolução de nome de domínio").
 
 ### Consulta com validação DNSSEC
 
@@ -69,15 +71,15 @@ O resultado deve terminar com as seguintes linhas, indicando que a assinatura é
 
 ```
 
-## Instalar um servidor recursivo de validação compatível com DNSSEC
+## Instalar um resolvedor de validação de DNSSEC
 
-Para usar o DNSSEC em todo o sistema, você pode usar um resolvedor recursivo de validação que seja compatível com DNSSEC, para que todas as pesquisas de DNS passem pelo resolvedor recursivo. Veja [Resolução de nome de domínio#Resolvedores](/index.php/Resolu%C3%A7%C3%A3o_de_nome_de_dom%C3%ADnio#Resolvedores "Resolução de nome de domínio") para as opções disponíveis. Observe que cada um requer opções específicas para ativar seu recurso de validação do DNSSEC.
+Para usar o DNSSEC em todo o sistema, você pode usar um resolvedor de DNS que seja capaz de validar registros de DNSSEC, para que todas as pesquisas de DNS passem por ele. Veja [Resolução de nome de domínio#Resolvedores](/index.php/Resolu%C3%A7%C3%A3o_de_nome_de_dom%C3%ADnio#Resolvedores "Resolução de nome de domínio") para as opções disponíveis. Observe que cada um requer opções específicas para ativar seu recurso de validação do DNSSEC.
 
 Se você tentar visitar um site com um endereço IP falso *(spoofed)*, o resolvedor de validação impedirá que você receba os dados DNS inválidos e seu navegador (ou outro aplicativo) será informado de que não existe esse host. Como todas as pesquisas de DNS passam pelo resolvedor de validação, você não precisa de um software que tenha suporte a DNSSEC integrado ao usar essa opção.
 
 ## Habilitar DNSSEC em um software específico
 
-Se você optar por não [#Instalar um servidor recursivo de validação compatível com DNSSEC](#Instalar_um_servidor_recursivo_de_validação_compatível_com_DNSSEC), será necessário usar o software que possui suporte a DNSSEC integrado para usar seus recursos. Muitas vezes isso significa que você deve corrigir o software sozinho. Uma lista de vários aplicativos corrigidos é encontrada [aqui](https://www.dnssec-tools.org/wiki/index.php?title=DNSSEC_Applications). Além disso, alguns navegadores web têm extensões ou complementos que podem ser instalados para implementar o DNSSEC sem corrigir o programa.
+Se você optar por não [#Instalar um resolvedor de validação de DNSSEC](#Instalar_um_resolvedor_de_validação_de_DNSSEC), será necessário usar o software que possui suporte a DNSSEC integrado para usar seus recursos. Muitas vezes isso significa que você deve corrigir o software sozinho. Uma lista de vários aplicativos corrigidos é encontrada [aqui](https://www.dnssec-tools.org/wiki/index.php?title=DNSSEC_Applications). Além disso, alguns navegadores web têm extensões ou complementos que podem ser instalados para implementar o DNSSEC sem corrigir o programa.
 
 ## Hardware de DNSSEC
 

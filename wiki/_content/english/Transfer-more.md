@@ -1,6 +1,6 @@
 Related articles
 
-[Transfer More](https://up.sceptique.eu) is an open-source upload http server, written in [Crystal](/index.php/Crystal "Crystal"), and based on Kemal.
+[Transfer More](https://up.sceptique.eu) is an minimalist open-source upload http server to store and share files temporarily, written in [Crystal](/index.php/Crystal "Crystal"), and based on Kemal [[1]](https://kemalcr.com/).
 
 ## Contents
 
@@ -18,7 +18,7 @@ Related articles
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [transfer-more](https://aur.archlinux.org/packages/transfer-more/) package.
+[Install](/index.php/Install "Install") the [transfer-more](https://aur.archlinux.org/packages/transfer-more/) package. It only requires [crystal](https://www.archlinux.org/packages/?name=crystal) and [shards](https://www.archlinux.org/packages/?name=shards) in order to compile the initial binary, because pre-built binaries are not provided. There is not 3rd database or service dependencies.
 
 ## Running
 
@@ -74,4 +74,4 @@ You could configure your nginx with a **/etc/nginx/servers-enabled/some-file.con
 
 ### Others
 
-See [[1]](https://github.com/Nephos/transfer_more#usage) to get the last version of the documentation. See [[2]](https://kemalcr.com/guide/) to understand how the web framework behind transfer-more works.
+See [[2]](https://github.com/Nephos/transfer_more#usage) to get the last version of the documentation. See [[3]](https://kemalcr.com/guide/) to understand how the web framework behind transfer-more works.

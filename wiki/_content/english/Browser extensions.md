@@ -4,19 +4,28 @@ Related articles
 
 This article lists some [browser extensions](https://en.wikipedia.org/wiki/Browser_extension "wikipedia:Browser extension") available for [Firefox](/index.php/Firefox "Firefox") and/or [Chromium](/index.php/Chromium "Chromium").
 
-Note that this article intentionally does not link browser extension stores to facilitate maintenance.
-
 ## Contents
 
-*   [1 Privacy](#Privacy)
-    *   [1.1 Content blockers](#Content_blockers)
-    *   [1.2 Advanced control](#Advanced_control)
-    *   [1.3 Automatic tracker blockers](#Automatic_tracker_blockers)
-    *   [1.4 Noise generators](#Noise_generators)
-    *   [1.5 Miscellaneous](#Miscellaneous)
-*   [2 Website customization](#Website_customization)
-*   [3 Keyboard shortcuts](#Keyboard_shortcuts)
-*   [4 Edit text with external text editor](#Edit_text_with_external_text_editor)
+*   [1 Installation](#Installation)
+*   [2 Privacy](#Privacy)
+    *   [2.1 Content blockers](#Content_blockers)
+    *   [2.2 Advanced control](#Advanced_control)
+    *   [2.3 Automatic tracker blockers](#Automatic_tracker_blockers)
+    *   [2.4 Noise generators](#Noise_generators)
+    *   [2.5 Miscellaneous](#Miscellaneous)
+*   [3 Website customization](#Website_customization)
+*   [4 Keyboard shortcuts](#Keyboard_shortcuts)
+*   [5 Edit text with external text editor](#Edit_text_with_external_text_editor)
+
+## Installation
+
+Firefox extensions can be installed from [addons.mozilla.org](https://addons.mozilla.org/firefox/) and managed at `about:addons`.
+
+Chrome extensions can be installed from the [Chrome Web Store](https://chrome.google.com/webstore/category/extensions) and managed at `chrome://extensions/`.
+
+Additionally a few Firefox extensions can be found in the [the official repositories](https://www.archlinux.org/packages/?q=firefox-extension) and some more in the [AUR](https://aur.archlinux.org/packages/?K=firefox-extension).
+
+To simplify maintenance this article does not link store pages or [AUR](/index.php/AUR "AUR") packages of extensions. Readers are advised to obtain extensions through the linked official websites if no package is available.
 
 ## Privacy
 
@@ -64,7 +73,7 @@ See also [Firefox/Privacy](/index.php/Firefox/Privacy "Firefox/Privacy") and [Ch
 
 *   **Privacy Badger** — Monitors third-party trackers loaded with web content. It blocks trackers once they appear on different sites. It does not block advertisements in the first place, but since a lot of ads are served based on tracking information these are blocked as well. For more information on the mechanism, see its [FAQ](https://www.eff.org/privacybadger#faq-How-is-Privacy-Badger-different-to-Disconnect,-Adblock-Plus,-Ghostery,-and-other-blocking-extensions?).
 
-	[https://www.eff.org/privacybadger](https://www.eff.org/privacybadger) || [Firefox](/index.php/Firefox "Firefox"), [Chromium](/index.php/Chromium "Chromium")
+	[https://www.eff.org/privacybadger](https://www.eff.org/privacybadger) || [firefox-extension-privacybadger](https://www.archlinux.org/packages/?name=firefox-extension-privacybadger), [Chromium](/index.php/Chromium "Chromium")
 
 *   **Disconnect** — Aims to stop 2,000 third-party sites from tracking the user. It encrypts data sent to popular sites and claims to loads web pages 27 percent faster. Disconnect shows its users, in real time, how many tracking attempts from Google, Twitter, Facebook, and more are stopped. It categorizes tracking attempts into advertising, analytical, social, and content, which makes it easy to monitor how one is being tracked. Disconnect can also stop side-jacking, which utilizes stolen cookies to steal personal data. It is easy to use and well supported. Firefox gained a feature based on the Disconnect list, see [Firefox/Privacy#Tracking protection](/index.php/Firefox/Privacy#Tracking_protection "Firefox/Privacy").
 
@@ -84,7 +93,7 @@ See also [Firefox/Privacy](/index.php/Firefox/Privacy "Firefox/Privacy") and [Ch
 
 *   **HTTPS Everywhere** — Encrypts your communication with a website. It forces a connection over HTTPS instead of HTTP wherever possible. HTTPS Everywhere will be automatically configured and enabled upon restarting Firefox. For information on how to set up your own rules for different websites please visit [the official website](https://www.eff.org/https-everywhere/rulesets). HTTPS Everywhere does not magically enable HTTPS for every site on the internet. The site needs to support HTTPS and HTTPS Everywhere should have a ruleset configured for that site.
 
-	[https://www.eff.org/https-everywhere](https://www.eff.org/https-everywhere) || [Firefox](/index.php/Firefox "Firefox"), [Chromium](/index.php/Chromium "Chromium")
+	[https://www.eff.org/https-everywhere](https://www.eff.org/https-everywhere) || [firefox-extension-https-everywhere](https://www.archlinux.org/packages/?name=firefox-extension-https-everywhere), [Chromium](/index.php/Chromium "Chromium")
 
 *   **Decentraleyes** — Protects you against tracking through "free", centralized, content delivery. It prevents a lot of requests from reaching networks like Google Hosted Libraries, and serves local files to keep sites from breaking. Complements regular content blockers.
 

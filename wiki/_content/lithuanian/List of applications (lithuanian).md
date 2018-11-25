@@ -35,7 +35,8 @@ Related articles
             *   [1.2.2.3 WebKit-based](#WebKit-based)
                 *   [1.2.2.3.1 Browsers based on webkit2gtk](#Browsers_based_on_webkit2gtk)
                 *   [1.2.2.3.2 Browsers based on qt5-webkit](#Browsers_based_on_qt5-webkit)
-            *   [1.2.2.4 Other](#Other)
+            *   [1.2.2.4 Vi-like web browsers](#Vi-like_web_browsers)
+            *   [1.2.2.5 Other](#Other)
     *   [1.3 Web servers](#Web_servers)
         *   [1.3.1 Static web servers](#Static_web_servers)
         *   [1.3.2 Specialized web servers](#Specialized_web_servers)
@@ -267,36 +268,33 @@ Related articles
     *   [4.4 Document converters](#Document_converters)
     *   [4.5 Bibliographic reference managers](#Bibliographic_reference_managers)
     *   [4.6 Readers and viewers](#Readers_and_viewers)
-        *   [4.6.1 E-book](#E-book)
-        *   [4.6.2 PDF and DjVu](#PDF_and_DjVu)
-            *   [4.6.2.1 Console](#Console_20)
-            *   [4.6.2.2 Graphical](#Graphical_20)
-                *   [4.6.2.2.1 Annotation](#Annotation)
-                *   [4.6.2.2.2 Manipulation](#Manipulation)
-        *   [4.6.3 CHM](#CHM)
-        *   [4.6.4 Comic book](#Comic_book)
-    *   [4.7 Scanning software](#Scanning_software)
-    *   [4.8 OCR software](#OCR_software)
-        *   [4.8.1 OCR engines](#OCR_engines)
-        *   [4.8.2 Layout analyzers](#Layout_analyzers)
-    *   [4.9 Notes](#Notes)
-        *   [4.9.1 Note-taking software](#Note-taking_software)
-            *   [4.9.1.1 Console](#Console_21)
-            *   [4.9.1.2 Graphical](#Graphical_21)
-        *   [4.9.2 Diary](#Diary)
-        *   [4.9.3 Mind-mapping](#Mind-mapping)
-        *   [4.9.4 Sticky notes](#Sticky_notes)
-    *   [4.10 Special writing environments](#Special_writing_environments)
-        *   [4.10.1 Distraction-free writing](#Distraction-free_writing)
-        *   [4.10.2 Story writing](#Story_writing)
-        *   [4.10.3 Screenwriting](#Screenwriting)
-    *   [4.11 Language](#Language)
-        *   [4.11.1 Dictionary and thesaurus](#Dictionary_and_thesaurus)
-        *   [4.11.2 Spell checkers](#Spell_checkers)
-        *   [4.11.3 Translation and localization](#Translation_and_localization)
-    *   [4.12 Barcode generators and readers](#Barcode_generators_and_readers)
-        *   [4.12.1 Console](#Console_22)
-        *   [4.12.2 Graphical](#Graphical_22)
+        *   [4.6.1 PDF and DjVu](#PDF_and_DjVu)
+        *   [4.6.2 E-book](#E-book)
+        *   [4.6.3 Comic book](#Comic_book)
+        *   [4.6.4 CHM](#CHM)
+    *   [4.7 Document managers](#Document_managers)
+    *   [4.8 Scanning software](#Scanning_software)
+    *   [4.9 OCR software](#OCR_software)
+        *   [4.9.1 OCR engines](#OCR_engines)
+        *   [4.9.2 Layout analyzers](#Layout_analyzers)
+    *   [4.10 Notes](#Notes)
+        *   [4.10.1 Note-taking software](#Note-taking_software)
+            *   [4.10.1.1 Console](#Console_20)
+            *   [4.10.1.2 Graphical](#Graphical_20)
+        *   [4.10.2 Diary](#Diary)
+        *   [4.10.3 Mind-mapping](#Mind-mapping)
+        *   [4.10.4 Sticky notes](#Sticky_notes)
+    *   [4.11 Special writing environments](#Special_writing_environments)
+        *   [4.11.1 Distraction-free writing](#Distraction-free_writing)
+        *   [4.11.2 Story writing](#Story_writing)
+        *   [4.11.3 Screenwriting](#Screenwriting)
+    *   [4.12 Language](#Language)
+        *   [4.12.1 Dictionary and thesaurus](#Dictionary_and_thesaurus)
+        *   [4.12.2 Spell checkers](#Spell_checkers)
+        *   [4.12.3 Translation and localization](#Translation_and_localization)
+    *   [4.13 Barcode generators and readers](#Barcode_generators_and_readers)
+        *   [4.13.1 Console](#Console_21)
+        *   [4.13.2 Graphical](#Graphical_21)
 *   [5 Security](#Security)
     *   [5.1 Network security](#Network_security)
     *   [5.2 Firewall management](#Firewall_management)
@@ -306,8 +304,8 @@ Related articles
     *   [5.6 Backup programs](#Backup_programs)
     *   [5.7 Screen lockers](#Screen_lockers)
     *   [5.8 Password managers](#Password_managers)
-        *   [5.8.1 Console](#Console_23)
-        *   [5.8.2 Graphical](#Graphical_23)
+        *   [5.8.1 Console](#Console_22)
+        *   [5.8.2 Graphical](#Graphical_22)
     *   [5.9 Cryptography](#Cryptography)
         *   [5.9.1 Hash checkers](#Hash_checkers)
         *   [5.9.2 Encryption, signing, steganography](#Encryption,_signing,_steganography)
@@ -353,12 +351,12 @@ Related articles
     *   [7.1 Organization](#Organization)
         *   [7.1.1 Personal information managers](#Personal_information_managers)
         *   [7.1.2 Time management](#Time_management)
-            *   [7.1.2.1 Console](#Console_24)
-            *   [7.1.2.2 Graphical](#Graphical_24)
+            *   [7.1.2.1 Console](#Console_23)
+            *   [7.1.2.2 Graphical](#Graphical_23)
         *   [7.1.3 Time trackers](#Time_trackers)
         *   [7.1.4 Task management](#Task_management)
-            *   [7.1.4.1 Console](#Console_25)
-            *   [7.1.4.2 Graphical](#Graphical_25)
+            *   [7.1.4.1 Console](#Console_24)
+            *   [7.1.4.2 Graphical](#Graphical_24)
         *   [7.1.5 Contacts management](#Contacts_management)
         *   [7.1.6 Financial management](#Financial_management)
         *   [7.1.7 Cryptocurrency](#Cryptocurrency)
@@ -366,8 +364,8 @@ Related articles
     *   [7.2 Education](#Education)
         *   [7.2.1 Flashcards](#Flashcards)
         *   [7.2.2 Touch typing](#Touch_typing)
-            *   [7.2.2.1 Console](#Console_26)
-            *   [7.2.2.2 Graphical](#Graphical_26)
+            *   [7.2.2.1 Console](#Console_25)
+            *   [7.2.2.2 Graphical](#Graphical_25)
         *   [7.2.3 Recipe management](#Recipe_management)
         *   [7.2.4 Education management engines](#Education_management_engines)
     *   [7.3 Accessibility](#Accessibility)
@@ -378,8 +376,8 @@ Related articles
     *   [7.4 Display managers](#Display_managers)
     *   [7.5 Desktop environments](#Desktop_environments)
         *   [7.5.1 Window managers](#Window_managers)
-            *   [7.5.1.1 Console](#Console_27)
-            *   [7.5.1.2 Graphical](#Graphical_27)
+            *   [7.5.1.1 Console](#Console_26)
+            *   [7.5.1.2 Graphical](#Graphical_26)
             *   [7.5.1.3 Composite managers](#Composite_managers)
         *   [7.5.2 Window tilers](#Window_tilers)
         *   [7.5.3 Taskbars](#Taskbars)
@@ -446,6 +444,10 @@ See also [Network configuration#Network managers](/index.php/Network_configurati
 *   **Libreswan** — A free software implementation of the most widely supported and standarized VPN protocol based on ("IPsec") and the Internet Key Exchange ("IKE").
 
 	[https://libreswan.org/](https://libreswan.org/) || [libreswan](https://aur.archlinux.org/packages/libreswan/)
+
+*   **[NetworkManager](/index.php/NetworkManager "NetworkManager")** — Supports a variety of protocols (e.g. MS, Cisco, Fortinet) via a plugin system.
+
+	[https://wiki.gnome.org/Projects/NetworkManager/VPN](https://wiki.gnome.org/Projects/NetworkManager/VPN) || [networkmanager](https://www.archlinux.org/packages/?name=networkmanager)
 
 *   **[OpenConnect](/index.php/OpenConnect "OpenConnect")** — Supports Cisco and Juniper VPNs.
 
@@ -739,7 +741,7 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 *   **[Otter Browser](/index.php/Otter_Browser "Otter Browser")** — Browser aiming to recreate classic Opera (12.x) UI using Qt5.
 
-	[http://otter-browser.org/](http://otter-browser.org/) || [otter-browser](https://aur.archlinux.org/packages/otter-browser/)
+	[https://otter-browser.org/](https://otter-browser.org/) || [otter-browser](https://aur.archlinux.org/packages/otter-browser/)
 
 *   **[qutebrowser](/index.php/Qutebrowser "Qutebrowser")** — A keyboard-driven, [vim](/index.php/Vim "Vim")-like browser based on PyQt5 with QtWebKit as an available backend.
 
@@ -752,6 +754,20 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 *   **WCGBrowser** — A web browser for kiosk systems.
 
 	[http://www.alandmoore.com/wcgbrowser/wcgbrowser.html](http://www.alandmoore.com/wcgbrowser/wcgbrowser.html) || [wcgbrowser-git](https://aur.archlinux.org/packages/wcgbrowser-git/)
+
+##### Vi-like web browsers
+
+*   **[Luakit](/index.php/Luakit "Luakit")** — Fast, small, webkit based browser framework extensible by Lua.
+
+	[https://luakit.github.io/](https://luakit.github.io/) || [luakit](https://aur.archlinux.org/packages/luakit/)
+
+*   **Vimb** — A Vim-like web browser that is inspired by Pentadactyl and Vimprobable.
+
+	[https://fanglingsu.github.io/vimb/](https://fanglingsu.github.io/vimb/) || [vimb](https://aur.archlinux.org/packages/vimb/)
+
+*   **[qutebrowser](/index.php/Qutebrowser "Qutebrowser")** — A keyboard-driven, [vim](/index.php/Vim "Vim")-like browser based on PyQt5 and QtWebEngine.
+
+	[https://qutebrowser.org/](https://qutebrowser.org/) || [qutebrowser](https://www.archlinux.org/packages/?name=qutebrowser)
 
 ##### Other
 
@@ -1094,7 +1110,7 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 *   **[Nextcloud](/index.php/Nextcloud "Nextcloud") Client** — Desktop client for Nextcloud.
 
-	[https://nextcloud.com/](https://nextcloud.com/) || [nextcloud-client](https://aur.archlinux.org/packages/nextcloud-client/)
+	[https://nextcloud.com/](https://nextcloud.com/) || [nextcloud-client](https://www.archlinux.org/packages/?name=nextcloud-client)
 
 *   **Nutstore** — Desktop client for Nutstore.
 
@@ -6684,9 +6700,13 @@ See also [Wikipedia:Comparison of reference management software](https://en.wiki
 
 ### Readers and viewers
 
+#### PDF and DjVu
+
+See [PDF, PS and DjVu](/index.php/PDF,_PS_and_DjVu "PDF, PS and DjVu").
+
 #### E-book
 
-**Note:** Some [PDF and DjVu viewers](#PDF_and_DjVu) also support other e-book formats.
+**Note:** Some [PDF and DjVu viewers](/index.php/PDF,_PS_and_DjVu#Viewers "PDF, PS and DjVu") also support other e-book formats.
 
 *   **Bookworm** — Simple, focused e-book reader for Elementary OS with EPUB, PDF, Mobipocket and Comicbook support.
 
@@ -6716,180 +6736,6 @@ See also [Wikipedia:Comparison of reference management software](https://en.wiki
 
 	[https://sigil-ebook.com/](https://sigil-ebook.com/) || [sigil](https://www.archlinux.org/packages/?name=sigil)
 
-#### PDF and DjVu
-
-**Note:** [PDF forms](https://en.wikipedia.org/wiki/Portable_Document_Format#Interactive_elements "wikipedia:Portable Document Format") support:
-
-*   [acroread](https://aur.archlinux.org/packages/acroread/) is able to save both AcroForms and XFA forms into PDF files.
-*   Poppler-based readers such as [evince](https://www.archlinux.org/packages/?name=evince) and [okular](https://www.archlinux.org/packages/?name=okular) support AcroForms, but not full XFA forms. [[3]](https://bugs.freedesktop.org/show_bug.cgi?id=18935) [[4]](https://bugs.launchpad.net/ubuntu/+source/poppler/+bug/321720)
-*   For CJK(Chinese, Japanese, Korean) support in poppler-based readers such as [evince](https://www.archlinux.org/packages/?name=evince) and [okular](https://www.archlinux.org/packages/?name=okular), install [poppler-data](https://www.archlinux.org/packages/?name=poppler-data). poppler-data is an optional dependency of poppler which is an indirect dependency of evince and okular.
-
-See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_PDF_software "wikipedia:List of PDF software") and [Wikipedia:DjVu](https://en.wikipedia.org/wiki/DjVu "wikipedia:DjVu").
-
-##### Console
-
-*   **fbgs** — Poor man's PostScript/pdf viewer for the linux framebuffer console.
-
-	[https://www.kraxel.org/blog/linux/fbida/](https://www.kraxel.org/blog/linux/fbida/) || [fbida](https://www.archlinux.org/packages/?name=fbida)
-
-*   **fbpdf** — Small framebuffer PDF and DjVu viewer based off of MuPDF, with [Vim](/index.php/Vim "Vim") keybindings and written in C
-
-	[http://repo.or.cz/w/fbpdf.git](http://repo.or.cz/w/fbpdf.git) || [fbpdf-git](https://aur.archlinux.org/packages/fbpdf-git/)
-
-*   **[Ghostscript](https://en.wikipedia.org/wiki/Ghostscript "wikipedia:Ghostscript")** — convert into PDF, reduce size of PDF documents with eg `gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=output.pdf input.pdf`
-
-	[https://www.ghostscript.com/](https://www.ghostscript.com/) || [ghostscript](https://www.archlinux.org/packages/?name=ghostscript)
-
-*   **JFBView** — Framebuffer PDF and image viewer. Features include Vim-like controls, zoom-to-fit, a TOC (outline) view, fast multi-threaded rendering and asynchronous pre-caching. Originally a fork of *fbpdf* called *jfbpdf*, now completely rewritten.
-
-	[https://seasonofcode.com/pages/jfbview.html](https://seasonofcode.com/pages/jfbview.html) || [jfbview](https://aur.archlinux.org/packages/jfbview/)
-
-*   **pdfgrep** — Commandline utility to search text in PDF files.
-
-	[https://pdfgrep.org/](https://pdfgrep.org/) || [pdfgrep](https://www.archlinux.org/packages/?name=pdfgrep)
-
-*   **pdf2djvu** — Creates DjVu files from PDF files.
-
-	[https://jwilk.net/software/pdf2djvu](https://jwilk.net/software/pdf2djvu) || [pdf2djvu](https://www.archlinux.org/packages/?name=pdf2djvu)
-
-*   **pdf2svg** — Convert PDF files to SVG files.
-
-	[http://www.cityinthesky.co.uk/opensource/pdf2svg/](http://www.cityinthesky.co.uk/opensource/pdf2svg/) || [pdf2svg](https://www.archlinux.org/packages/?name=pdf2svg)
-
-##### Graphical
-
-**Note:** Some [web browsers](/index.php/List_of_applications/Internet#Web_browsers "List of applications/Internet") have support for displaying PDF files, either built-in or via plugin.
-
-*   **[Adobe Reader](https://en.wikipedia.org/wiki/Adobe_Reader "wikipedia:Adobe Reader")** — Proprietary PDF file viewer offered by Adobe. Development stopped for Linux.
-
-	[http://www.adobe.com/products/reader.html](http://www.adobe.com/products/reader.html) || [acroread](https://aur.archlinux.org/packages/acroread/)
-
-*   **apvlv** — Lightweight document viewer with [Vim](/index.php/Vim "Vim") keybindings. Supports PDF, DjVu, UMD and TXT.
-
-	[https://naihe2010.github.io/apvlv/](https://naihe2010.github.io/apvlv/) || [apvlv](https://aur.archlinux.org/packages/apvlv/)
-
-*   **Atril** — Simple multi-page document viewer for MATE. Supports DjVu, DVI, EPS, EPUB, PDF, PostScript, TIFF, XPS and Comicbook.
-
-	[https://github.com/mate-desktop/atril](https://github.com/mate-desktop/atril) || [atril](https://www.archlinux.org/packages/?name=atril)
-
-*   **DjView** — Viewer for DjVu documents.
-
-	[http://djvu.sourceforge.net/djview4.html](http://djvu.sourceforge.net/djview4.html) || [djview](https://www.archlinux.org/packages/?name=djview)
-
-*   **ePDFView** — Lightweight PDF document viewer using the Poppler and GTK+ libraries. Development stopped.
-
-	[http://freecode.com/projects/epdfview](http://freecode.com/projects/epdfview) || [epdfview](https://www.archlinux.org/packages/?name=epdfview)
-
-*   **[Evince](https://en.wikipedia.org/wiki/Evince "wikipedia:Evince")** — Document viewer for GNOME. Supports DjVu, DVI, EPS, PDF, PostScript, TIFF, XPS and Comicbook.
-
-	[https://wiki.gnome.org/Apps/Evince](https://wiki.gnome.org/Apps/Evince) || [evince](https://www.archlinux.org/packages/?name=evince)
-
-*   **[Foxit Reader](https://en.wikipedia.org/wiki/Foxit_Reader "wikipedia:Foxit Reader")** — Small, fast (compared to Acrobat) proprietary PDF viewer.
-
-	[https://www.foxitsoftware.com/pdf-reader/](https://www.foxitsoftware.com/pdf-reader/) || [foxitreader](https://aur.archlinux.org/packages/foxitreader/)
-
-*   **GNOME Documents** — Document manager application for GNOME with PDF, DVI, XPS, PostScript, Microsoft Office, LibreOffice and Google Docs support.
-
-	[https://wiki.gnome.org/Apps/Documents](https://wiki.gnome.org/Apps/Documents) || [gnome-documents](https://www.archlinux.org/packages/?name=gnome-documents)
-
-*   **gv** — Graphical user interface for the Ghostscript interpreter that allows to view and navigate through PostScript and PDF documents.
-
-	[https://www.gnu.org/software/gv/](https://www.gnu.org/software/gv/) || [gv](https://www.archlinux.org/packages/?name=gv)
-
-*   **[llpp](/index.php/Llpp "Llpp")** — Very fast PDF reader based off of MuPDF, that supports continuous page scrolling, bookmarking, and text search through the whole document.
-
-	[http://repo.or.cz/w/llpp.git](http://repo.or.cz/w/llpp.git) || [llpp](https://www.archlinux.org/packages/?name=llpp)
-
-*   **[MuPDF](/index.php/MuPDF "MuPDF")** — Very fast EPUB, FictionBook, PDF, XPS and Comicbook viewer written in portable C. Features CJK font support.
-
-	[https://mupdf.com/](https://mupdf.com/) || [mupdf](https://www.archlinux.org/packages/?name=mupdf)
-
-*   **[Okular](https://en.wikipedia.org/wiki/Okular "wikipedia:Okular")** — Universal document viewer for KDE. Supports CHM, Comicbook, DjVu, DVI, EPUB, FictionBook, Mobipocket, ODT, PDF, Plucker, PostScript, TIFF and XPS.
-
-	[https://okular.kde.org/](https://okular.kde.org/) || [okular](https://www.archlinux.org/packages/?name=okular)
-
-*   **pdfpc** — Presenter console with multi-monitor support for PDF files.
-
-	[https://pdfpc.github.io/](https://pdfpc.github.io/) || [pdfpc](https://www.archlinux.org/packages/?name=pdfpc)
-
-*   **qpdfview** — Tabbed document viewer. It uses Poppler for PDF support, libspectre for PS support, DjVuLibre for DjVu support, CUPS for printing support and the Qt toolkit for its interface.
-
-	[https://launchpad.net/qpdfview](https://launchpad.net/qpdfview) || [qpdfview](https://www.archlinux.org/packages/?name=qpdfview)
-
-*   **[Xpdf](https://en.wikipedia.org/wiki/Xpdf "wikipedia:Xpdf")** — Viewer that can decode LZW and read encrypted PDFs.
-
-	[http://www.xpdfreader.com/](http://www.xpdfreader.com/) || [xpdf](https://www.archlinux.org/packages/?name=xpdf)
-
-*   **Xreader** — Document viewer part of the X-Apps Project. Supports DjVu, DVI, EPUB, PDF, PostScript, TIFF, XPS, Comicbook.
-
-	[https://github.com/linuxmint/xreader/](https://github.com/linuxmint/xreader/) || [xreader](https://www.archlinux.org/packages/?name=xreader)
-
-*   **[Zathura](/index.php/Zathura "Zathura")** — Highly customizable and functional document viewer (plugin based). Supports PDF, DjVu, PostScript and Comicbook.
-
-	[https://pwmt.org/projects/zathura/](https://pwmt.org/projects/zathura/) || [zathura](https://www.archlinux.org/packages/?name=zathura)
-
-###### Annotation
-
-*   **Cournal** — Collaborative note taking and journal application using a stylus. It allows multiple users to annotate PDF files in real-time.
-
-	[https://github.com/flyser/cournal](https://github.com/flyser/cournal) || [cournal](https://aur.archlinux.org/packages/cournal/)
-
-*   **Xournal** — Application for notetaking, sketching and keeping a journal using a stylus. Capable of annotating existing PDF files as well.
-
-	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://www.archlinux.org/packages/?name=xournal)
-
-*   **Xournal++** — Notetaking software designed around a tablet. C++ rewrite of Xournal with PDF annotation support.
-
-	[https://github.com/xournalpp/xournalpp](https://github.com/xournalpp/xournalpp) || [xournalpp-git](https://aur.archlinux.org/packages/xournalpp-git/)
-
-###### Manipulation
-
-This section lists applications dedicated to lossless PDF manipulation. Note that other applications like [LibreOffice](/index.php/LibreOffice "LibreOffice"), [Inkscape](/index.php/Inkscape "Inkscape"), [GIMP](/index.php/GIMP "GIMP") or [krita](https://www.archlinux.org/packages/?name=krita) can also import and export PDFs.
-
-*   **Master PDF Editor** — Functional proprietary PDF editor. Free for non-commercial use.
-
-	[https://code-industry.net/free-pdf-editor/](https://code-industry.net/free-pdf-editor/) || [masterpdfeditor](https://aur.archlinux.org/packages/masterpdfeditor/)
-
-*   **PDF Chain** — Graphical interface allowing to manipulate PDF documents (concatenate, burst, watermark, attach files...).
-
-	[http://pdfchain.sourceforge.net/](http://pdfchain.sourceforge.net/) || [pdfchain](https://aur.archlinux.org/packages/pdfchain/)
-
-*   **PDF Mix Tool** — Application to split, merge, rotate and mix PDF files.
-
-	[https://scarpetta.eu/pdfmixtool/](https://scarpetta.eu/pdfmixtool/) || [pdfmixtool](https://aur.archlinux.org/packages/pdfmixtool/)
-
-*   **PDF Mod** — Reorder, rotate, and remove pages, export images from a document, edit the title, subject, author, and keywords, and combine documents via drag and drop.
-
-	[https://wiki.gnome.org/Apps/PdfMod](https://wiki.gnome.org/Apps/PdfMod) || [pdfmod](https://www.archlinux.org/packages/?name=pdfmod)
-
-*   **PDFsam** — Merge, split, rotate, convert, edit, sign PDF files.
-
-	[https://pdfsam.org/](https://pdfsam.org/) || [pdfsam](https://www.archlinux.org/packages/?name=pdfsam)
-
-*   **PDF-Shuffler** — Combine, split, rotate and reorder PDF documents. Uses Python and GTK2.
-
-	[https://sourceforge.net/projects/pdfshuffler/](https://sourceforge.net/projects/pdfshuffler/) || [pdfshuffler](https://www.archlinux.org/packages/?name=pdfshuffler)
-
-*   **PDF Studio** — All-in-one proprietary PDF editor similar to Adobe Acrobat.
-
-	[https://www.qoppa.com/pdfstudio/](https://www.qoppa.com/pdfstudio/) || [pdfstudio](https://aur.archlinux.org/packages/pdfstudio/)
-
-#### CHM
-
-See also [Wikipedia:Microsoft Compiled HTML Help](https://en.wikipedia.org/wiki/Microsoft_Compiled_HTML_Help "wikipedia:Microsoft Compiled HTML Help").
-
-*   **Archmage** — Extensible reader and decompiler for files in the CHM format.
-
-	[https://github.com/dottedmag/archmage](https://github.com/dottedmag/archmage) || [archmage](https://aur.archlinux.org/packages/archmage/)
-
-*   **Kchmviewer** — Qt-based CHM viewer that uses chmlib and borrows some ideas from xchm. It does not depend on [KDE](/index.php/KDE "KDE"), but it can be compiled to integrate with it.
-
-	[http://www.ulduzsoft.com/linux/kchmviewer/](http://www.ulduzsoft.com/linux/kchmviewer/) || [kchmviewer](https://www.archlinux.org/packages/?name=kchmviewer)
-
-*   **[xCHM](https://en.wikipedia.org/wiki/xCHM "wikipedia:xCHM")** — Lightweight CHM viewer, based on chmlib.
-
-	[http://xchm.sourceforge.net/](http://xchm.sourceforge.net/) || [xchm](https://www.archlinux.org/packages/?name=xchm)
-
 #### Comic book
 
 *   **Buoh** — Online strips comics reader for GNOME.
@@ -6911,6 +6757,32 @@ See also [Wikipedia:Microsoft Compiled HTML Help](https://en.wikipedia.org/wiki/
 *   **YACReader** — Comic book viewer written in C++ and Qt5\. Comes with YACReaderLibrary for managing comics.
 
 	[http://yacreader.com/](http://yacreader.com/) || [yacreader](https://aur.archlinux.org/packages/yacreader/)
+
+#### CHM
+
+See also [Wikipedia:Microsoft Compiled HTML Help](https://en.wikipedia.org/wiki/Microsoft_Compiled_HTML_Help "wikipedia:Microsoft Compiled HTML Help").
+
+*   **Archmage** — Extensible reader and decompiler for files in the CHM format.
+
+	[https://github.com/dottedmag/archmage](https://github.com/dottedmag/archmage) || [archmage](https://aur.archlinux.org/packages/archmage/)
+
+*   **Kchmviewer** — Qt-based CHM viewer that uses chmlib and borrows some ideas from xchm. It does not depend on [KDE](/index.php/KDE "KDE"), but it can be compiled to integrate with it.
+
+	[http://www.ulduzsoft.com/linux/kchmviewer/](http://www.ulduzsoft.com/linux/kchmviewer/) || [kchmviewer](https://www.archlinux.org/packages/?name=kchmviewer)
+
+*   **[xCHM](https://en.wikipedia.org/wiki/xCHM "wikipedia:xCHM")** — Lightweight CHM viewer, based on chmlib.
+
+	[http://xchm.sourceforge.net/](http://xchm.sourceforge.net/) || [xchm](https://www.archlinux.org/packages/?name=xchm)
+
+### Document managers
+
+*   **GNOME Documents** — Document manager application for GNOME with PDF, DVI, XPS, PostScript, Microsoft Office, LibreOffice and Google Docs support.
+
+	[https://wiki.gnome.org/Apps/Documents](https://wiki.gnome.org/Apps/Documents) || [gnome-documents](https://www.archlinux.org/packages/?name=gnome-documents)
+
+*   **Paperwork** — Personal document manager. It manages scanned documents and PDFs.
+
+	[https://openpaper.work/](https://openpaper.work/) || [paperwork](https://aur.archlinux.org/packages/paperwork/)
 
 ### Scanning software
 
@@ -6972,7 +6844,7 @@ See also [Wikipedia:Comparison of optical character recognition software](https:
 
 #### Note-taking software
 
-See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/wiki/Comparison_of_notetaking_software "wikipedia:Comparison of notetaking software").
+See also [PDF, PS and DjVu#Annotation](/index.php/PDF,_PS_and_DjVu#Annotation "PDF, PS and DjVu") and [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/wiki/Comparison_of_notetaking_software "wikipedia:Comparison of notetaking software").
 
 ##### Console
 
@@ -7326,21 +7198,7 @@ See also [#Markdown editors](#Markdown_editors) and [Wikipedia:Full-screen writi
 
 #### Spell checkers
 
-*   **[Aspell](/index.php/Aspell "Aspell")** — Spell checker designed to eventually replace Ispell.
-
-	[http://aspell.net/](http://aspell.net/) || [aspell](https://www.archlinux.org/packages/?name=aspell)
-
-*   **[Enchant](https://en.wikipedia.org/wiki/Enchant_(software) "wikipedia:Enchant (software)")** — Wrapper library for generic spell checking.
-
-	[https://abiword.github.io/enchant/](https://abiword.github.io/enchant/) || [enchant](https://www.archlinux.org/packages/?name=enchant)
-
-*   **[Hunspell](https://en.wikipedia.org/wiki/Hunspell "wikipedia:Hunspell")** — Spell checker and morphological analyzer library and program.
-
-	[https://hunspell.github.io/](https://hunspell.github.io/) || [hunspell](https://www.archlinux.org/packages/?name=hunspell)
-
-*   **[Ispell](https://en.wikipedia.org/wiki/Ispell "wikipedia:Ispell")** — Interactive spell-checking program for Unix.
-
-	[https://www.cs.hmc.edu/~geoff/ispell.html](https://www.cs.hmc.edu/~geoff/ispell.html) || [ispell](https://www.archlinux.org/packages/?name=ispell)
+See [Language checking](/index.php/Language_checking "Language checking").
 
 #### Translation and localization
 
@@ -7518,7 +7376,7 @@ See also [Wikipedia:Comparison of packet analyzers](https://en.wikipedia.org/wik
 
 *   **[netsniff-ng](https://en.wikipedia.org/wiki/netsniff-ng "wikipedia:netsniff-ng")** — High performance Linux network sniffer for packet inspection.
 
-	[http://netsniff-ng.org/](http://netsniff-ng.org/) || [netsniff-ng](https://aur.archlinux.org/packages/netsniff-ng/)
+	[http://netsniff-ng.org/](http://netsniff-ng.org/) || [netsniff-ng](https://www.archlinux.org/packages/?name=netsniff-ng)
 
 *   **[ngrep](https://en.wikipedia.org/wiki/ngrep "wikipedia:ngrep")** — grep-like utility that allows you to search for network packets on an interface.
 

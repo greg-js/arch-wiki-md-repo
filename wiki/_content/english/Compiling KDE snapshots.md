@@ -3,7 +3,7 @@ This article provides step-by-step guide how to compile your own KDE git/svn sna
 ## Contents
 
 *   [1 Introduction](#Introduction)
-*   [2 Why?](#Why.3F)
+*   [2 Why?](#Why?)
 *   [3 Preparations](#Preparations)
     *   [3.1 Preparing build chroot](#Preparing_build_chroot)
         *   [3.1.1 pacman.conf](#pacman.conf)
@@ -65,7 +65,7 @@ To prepare 32bit chroot, run
 ```
 $ CHROOTDIR=/home/build/chroots/i686
 $ mkdir -p ${CHROOTDIR}{/var/lib/pacman,home/build}
-$ pacman -Syy  -r ${CHROOTDIR} -b ${CHROOTDIR}/var/lib/pacman \
+$ pacman -Sy  -r ${CHROOTDIR} -b ${CHROOTDIR}/var/lib/pacman \
 >               --arch i686 --ignore linux \
 >               base base-devel cmake sudo svn git
 

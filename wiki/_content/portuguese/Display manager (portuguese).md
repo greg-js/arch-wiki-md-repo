@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Display manager](/index.php/Display_manager "Display manager"). Data da última tradução: 2018-10-26\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Display_manager&diff=0&oldid=548090) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Display manager](/index.php/Display_manager "Display manager"). Data da última tradução: 2018-11-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Display_manager&diff=0&oldid=556894) na versão em inglês.
 
 Artigos relacionados
 
@@ -70,7 +70,7 @@ Um [gerenciador de exibição](https://en.wikipedia.org/wiki/X_display_manager_(
 
 Para ativar o login gráfico, [habilite](/index.php/Habilite "Habilite") o serviço systemd apropriado. Por exemplo, para [SDDM](/index.php/SDDM "SDDM"), habilite `sddm.service`.
 
-Isso deve funcionar sem configurações extras. Caso contrário, talvez seja necessário redefinir um link simbólico personalizado `default.target` para apontar para o `graphical.target` padrão.
+Isso deve funcionar sem configurações extras. Caso contrário, talvez seja necessário redefinir um link simbólico personalizado `default.target` para apontar para o `graphical.target` padrão. Veja [systemd (Português)#Alterar target padrão para inicializar](/index.php/Systemd_(Portugu%C3%AAs)#Alterar_target_padrão_para_inicializar "Systemd (Português)").
 
 Depois de habilitar o [SDDM](/index.php/SDDM "SDDM"), um link simbólico `display-manager.service` deve ser configurado em `/etc/systemd/system/`. Você pode precisar usar `--force` para substituir os links simbólicos antigos.
 

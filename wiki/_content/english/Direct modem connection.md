@@ -12,7 +12,7 @@ Due to a lack of developers for dialup issues, connecting Arch to the Internet w
 *   [2 ISDN](#ISDN)
     *   [2.1 Install and configure hardware](#Install_and_configure_hardware)
     *   [2.2 Install and configure the ISDN utilities](#Install_and_configure_the_ISDN_utilities)
-*   [3 DSL (PPPoE)](#DSL_.28PPPoE.29)
+*   [3 DSL (PPPoE)](#DSL_(PPPoE))
 *   [4 Dial-up without a dialer](#Dial-up_without_a_dialer)
 
 ## Analog modem
@@ -84,7 +84,7 @@ If you want to automatically 'dial in' at boot, issue command [enable](/index.ph
 
 ## Dial-up without a dialer
 
-This page tells you how you can execute `pppd` directly without using dialer software such as `pon`/`poff`, `wvdial`, `kppp`, etc. It stays connected throughout X server shutdowns and is extremely simple, in accordance with Arch philosophy.
+This page tells you how you can execute *pppd* directly without using dialer software such as *pon*, *poff*, *wvdial*, *kppp*, etc. It stays connected throughout X server shutdowns and is extremely simple.
 
 *   Back up `/etc/ppp/options`
 
@@ -108,7 +108,7 @@ connect 'chat -t60 \"\" ATZ OK ATX3 OK ATDT<NUMBER> CONNECT'
 
 ```
 
-Replace </dev/DEVICE> with your modem device. For comparison with another operating system device, take a good look at the next table,
+Replace `/dev/*DEVICE*` with your modem device. For comparison with another operating system device, take a good look at the next table,
 
 ```
 Windows        GNU/Linux
@@ -124,13 +124,11 @@ Edit to point device to your modem device, to use your dial-up account username,
 *   Edit `/etc/ppp/chap-secrets`. See [The PAP/CHAP secrets file](http://www.tldp.org/HOWTO/PPP-HOWTO/x1005.html) for more details.
 
 ```
-"USERNAME" * "PASSWORD"
+"*USERNAME*" * "*PASSWORD*"
 
 ```
 
-*   Now you are ready to connect. Connect (as root) using `pppd /dev/modem` (or whatever device your modem is connected as).
-
-To disconnect, use `killall pppd`.
+*   Now you are ready to connect. Connect (as root) using `pppd /dev/*modem*` (or whatever device your modem is connected as). To disconnect, use `pkill -3 pppd`.
 
 If you wish to connect as user, you can use [sudo](https://www.archlinux.org/packages/?name=sudo). Configure sudo to call the above commands for your user, and you can use the following aliases in your `~/.bashrc` (or `/etc/bash.bashrc` for system-wide availability):
 

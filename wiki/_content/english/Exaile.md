@@ -3,14 +3,14 @@
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Enabling cover art, lyrics, and guitar tablature](#Enabling_cover_art.2C_lyrics.2C_and_guitar_tablature)
+    *   [1.1 Enabling cover art, lyrics, and guitar tablature](#Enabling_cover_art,_lyrics,_and_guitar_tablature)
     *   [1.2 Playing audio CDs](#Playing_audio_CDs)
-*   [2 Enabling multimedia keys irrespective of DE/WM](#Enabling_multimedia_keys_irrespective_of_DE.2FWM)
+*   [2 Enabling multimedia keys irrespective of DE/WM](#Enabling_multimedia_keys_irrespective_of_DE/WM)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Progress bar stuck at 0:00](#Progress_bar_stuck_at_0:00)
-    *   [3.2 "Playback error encountered! Configured audiosink bin0 is not working"](#.22Playback_error_encountered.21_Configured_audiosink_bin0_is_not_working.22)
-    *   [3.3 "Last.fm Loved Tracks" plugin not working](#.22Last.fm_Loved_Tracks.22_plugin_not_working)
-    *   [3.4 "Playback error encountered! No suitable plugins found"](#.22Playback_error_encountered.21_No_suitable_plugins_found.22)
+    *   [3.2 "Playback error encountered! Configured audiosink bin0 is not working"](#"Playback_error_encountered!_Configured_audiosink_bin0_is_not_working")
+    *   [3.3 "Last.fm Loved Tracks" plugin not working](#"Last.fm_Loved_Tracks"_plugin_not_working)
+    *   [3.4 "Playback error encountered! No suitable plugins found"](#"Playback_error_encountered!_No_suitable_plugins_found")
 *   [4 Known issues](#Known_issues)
     *   [4.1 Playing from SMB share](#Playing_from_SMB_share)
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes"). Data da última tradução: 2018-11-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=File_permissions_and_attributes&diff=0&oldid=554967) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes"). Data da última tradução: 2018-11-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=File_permissions_and_attributes&diff=0&oldid=555714) na versão em inglês.
 
 Artigos relacionados
 

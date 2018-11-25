@@ -139,6 +139,6 @@ Os pacotes de temas de plasma devem ser nomeados `plasma5-themes-*nome_do_tema*`
 
 ## Instalação de arquivos de ícones e .desktop
 
-Alguns softwares do [KDE](/index.php/KDE "KDE") fornecem ícones em arquivos de *hicolor icon theme* e `.desktop`, os quais devem ser instalados via [hooks do pacman](/index.php/Pacman_(Portugu%C3%AAs)#Hooks "Pacman (Português)"). Evite usar comando de instalação para esses tipos de arquivos em um `.install`, pois resultaria em desnecessária execução duplicada.
+Alguns softwares do [KDE](/index.php/KDE "KDE") fornecem ícones em arquivos de *hicolor icon theme* e `.desktop`, os quais devem ser instalados via [hooks do pacman](/index.php/Hooks_do_pacman "Hooks do pacman"). Evite usar comando de instalação para esses tipos de arquivos em um `.install`, pois resultaria em desnecessária execução duplicada.
 
 O pacote [qt4](https://www.archlinux.org/packages/?name=qt4) já depende de [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils), [hicolor-icon-theme](https://www.archlinux.org/packages/?name=hicolor-icon-theme) e [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils), então se seu pacote depender do [qt4](https://www.archlinux.org/packages/?name=qt4), nenhuma outra ação deve ser necessária (isto é, desnecessário adicionar esses pacotes ao vetor de `depends`).

@@ -34,6 +34,7 @@ Related articles
     *   [7.2 Black rectangle instead of window](#Black_rectangle_instead_of_window)
     *   [7.3 No mouse cursor](#No_mouse_cursor)
     *   [7.4 Copying clipboard content from the remote machine](#Copying_clipboard_content_from_the_remote_machine)
+    *   [7.5 "Authentication is required to create a color managed device" dialog when launching GNOME 3](#"Authentication_is_required_to_create_a_color_managed_device"_dialog_when_launching_GNOME_3)
 *   [8 See also](#See_also)
 
 ## Installation
@@ -432,6 +433,25 @@ $ autocutsel -fork
 Now press F8 to display the VNC menu popup, and select `Clipboard: local -> remote` option.
 
 One can put the above command in `~/.vnc/xstartup` to have it run automatically when vncserver is started.
+
+### "Authentication is required to create a color managed device" dialog when launching GNOME 3
+
+A workaround is to create a "vnc" group and add the gdm user and any other users using vnc to that group. Modify `/etc/polkit-1/rules.d/gnome-vnc.rules` with the following[[3]](https://github.com/TurboVNC/turbovnc/issues/47):
+
+```
+   polkit.addRule(function(action, subject) {
+      if ((action.id == "org.freedesktop.color-manager.create-device" ||
+           action.id == "org.freedesktop.color-manager.create-profile" ||
+           action.id == "org.freedesktop.color-manager.delete-device" ||
+           action.id == "org.freedesktop.color-manager.delete-profile" ||
+           action.id == "org.freedesktop.color-manager.modify-device" ||
+           action.id == "org.freedesktop.color-manager.modify-profile") &&
+          subject.isInGroup("vnc")) {
+         return polkit.Result.YES;
+      }
+   });
+
+```
 
 ## See also
 

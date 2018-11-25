@@ -233,7 +233,7 @@ ADATA has a utility available for Linux (i686) on their [support page](http://ww
 
 Crucial provides an option for updating the firmware with an ISO image. These images can be found after selecting the product on their [SSD support page](http://www.crucial.com/usa/en/support-ssd) and downloading the "Manual Boot File."
 
-**Note:** ISO images provided by Crucial does not seem to be hybrid. If you will use just the `dd` command to copy the image to some device, the [MBR](/index.php/MBR "MBR") will not be present, making such device unbootable.
+**Note:** ISO images provided by Crucial do not seem to be hybrid. If you will use just the `dd` command to copy the image to some device, the [MBR](/index.php/MBR "MBR") will not be present, making such device unbootable.
 
 Owners of an M4 Crucial model, may check if a firmware upgrade is needed with `smartctl`.
 

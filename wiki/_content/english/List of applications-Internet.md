@@ -20,7 +20,8 @@
             *   [1.2.2.3 WebKit-based](#WebKit-based)
                 *   [1.2.2.3.1 Browsers based on webkit2gtk](#Browsers_based_on_webkit2gtk)
                 *   [1.2.2.3.2 Browsers based on qt5-webkit](#Browsers_based_on_qt5-webkit)
-            *   [1.2.2.4 Other](#Other)
+            *   [1.2.2.4 Vi-like web browsers](#Vi-like_web_browsers)
+            *   [1.2.2.5 Other](#Other)
     *   [1.3 Web servers](#Web_servers)
         *   [1.3.1 Static web servers](#Static_web_servers)
         *   [1.3.2 Specialized web servers](#Specialized_web_servers)
@@ -138,6 +139,10 @@ See also [Network configuration#Network managers](/index.php/Network_configurati
 *   **Libreswan** — A free software implementation of the most widely supported and standarized VPN protocol based on ("IPsec") and the Internet Key Exchange ("IKE").
 
 	[https://libreswan.org/](https://libreswan.org/) || [libreswan](https://aur.archlinux.org/packages/libreswan/)
+
+*   **[NetworkManager](/index.php/NetworkManager "NetworkManager")** — Supports a variety of protocols (e.g. MS, Cisco, Fortinet) via a plugin system.
+
+	[https://wiki.gnome.org/Projects/NetworkManager/VPN](https://wiki.gnome.org/Projects/NetworkManager/VPN) || [networkmanager](https://www.archlinux.org/packages/?name=networkmanager)
 
 *   **[OpenConnect](/index.php/OpenConnect "OpenConnect")** — Supports Cisco and Juniper VPNs.
 
@@ -431,7 +436,7 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 *   **[Otter Browser](/index.php/Otter_Browser "Otter Browser")** — Browser aiming to recreate classic Opera (12.x) UI using Qt5.
 
-	[http://otter-browser.org/](http://otter-browser.org/) || [otter-browser](https://aur.archlinux.org/packages/otter-browser/)
+	[https://otter-browser.org/](https://otter-browser.org/) || [otter-browser](https://aur.archlinux.org/packages/otter-browser/)
 
 *   **[qutebrowser](/index.php/Qutebrowser "Qutebrowser")** — A keyboard-driven, [vim](/index.php/Vim "Vim")-like browser based on PyQt5 with QtWebKit as an available backend.
 
@@ -444,6 +449,20 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 *   **WCGBrowser** — A web browser for kiosk systems.
 
 	[http://www.alandmoore.com/wcgbrowser/wcgbrowser.html](http://www.alandmoore.com/wcgbrowser/wcgbrowser.html) || [wcgbrowser-git](https://aur.archlinux.org/packages/wcgbrowser-git/)
+
+##### Vi-like web browsers
+
+*   **[Luakit](/index.php/Luakit "Luakit")** — Fast, small, webkit based browser framework extensible by Lua.
+
+	[https://luakit.github.io/](https://luakit.github.io/) || [luakit](https://aur.archlinux.org/packages/luakit/)
+
+*   **Vimb** — A Vim-like web browser that is inspired by Pentadactyl and Vimprobable.
+
+	[https://fanglingsu.github.io/vimb/](https://fanglingsu.github.io/vimb/) || [vimb](https://aur.archlinux.org/packages/vimb/)
+
+*   **[qutebrowser](/index.php/Qutebrowser "Qutebrowser")** — A keyboard-driven, [vim](/index.php/Vim "Vim")-like browser based on PyQt5 and QtWebEngine.
+
+	[https://qutebrowser.org/](https://qutebrowser.org/) || [qutebrowser](https://www.archlinux.org/packages/?name=qutebrowser)
 
 ##### Other
 
@@ -786,7 +805,7 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 *   **[Nextcloud](/index.php/Nextcloud "Nextcloud") Client** — Desktop client for Nextcloud.
 
-	[https://nextcloud.com/](https://nextcloud.com/) || [nextcloud-client](https://aur.archlinux.org/packages/nextcloud-client/)
+	[https://nextcloud.com/](https://nextcloud.com/) || [nextcloud-client](https://www.archlinux.org/packages/?name=nextcloud-client)
 
 *   **Nutstore** — Desktop client for Nutstore.
 

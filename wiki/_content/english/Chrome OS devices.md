@@ -1,5 +1,6 @@
 Related articles
 
+*   [Chrome OS devices/Crostini](/index.php/Chrome_OS_devices/Crostini "Chrome OS devices/Crostini")
 *   [Chrome OS devices/Chromebook](/index.php/Chrome_OS_devices/Chromebook "Chrome OS devices/Chromebook")
 *   [Chrome OS devices/Custom firmware](/index.php/Chrome_OS_devices/Custom_firmware "Chrome OS devices/Custom firmware")
 *   [Installation guide](/index.php/Installation_guide "Installation guide")
@@ -8,6 +9,8 @@ Related articles
 **Warning:** This article relies on third-party scripts and modifications, and may irreparably damage your hardware or data. Proceed at your own risk.
 
 This article was created to provide information on how to get Arch installed on the series of Chrome OS devices built by Acer, HP, Samsung, Toshiba, and Google. Currently this page is being overhauled, and more model specific pages are being built with some of the information listed below.
+
+**Note:** This article describes how to install Arch Linux by activating developer mode. For instructions on how to install Arch Linux in a ChromeOS container without having to enable developer mode see [Crostini](/index.php/Chrome_OS_devices/Crostini "Chrome OS devices/Crostini")
 
 ## Contents
 

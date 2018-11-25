@@ -70,7 +70,8 @@ install CD version
 install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
-| Lenovo ThinkPad E485 | 2018-10-01 | Yes | Yes | Yes | Yes | Not tested | Not tested | N/A | if screen stays black immediately after boot, add `iommu=soft` in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") |
+| Lenovo ThinkPad E485 | 2018-10-01 | Yes | Yes | Yes | Yes | Yes | Yes | N/A | Missing IVRS map in ACPI Table, add `amd_iommu=pt ivrs_ioapic[32]=00:14.0` in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") |
+| Lenovo ThinkPad E585 | 2018-11-01 | Yes | Yes | Yes | Yes | Yes | Yes | N/A | Missing IVRS map in ACPI Table, add `amd_iommu=pt ivrs_ioapic[32]=00:14.0` in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") |
 
 #### L series
 

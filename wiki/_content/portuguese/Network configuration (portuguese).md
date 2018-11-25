@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Network configuration](/index.php/Network_configuration "Network configuration"). Data da última tradução: 2018-11-05\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Network_configuration&diff=0&oldid=553184) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Network configuration](/index.php/Network_configuration "Network configuration"). Data da última tradução: 2018-11-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Network_configuration&diff=0&oldid=554914) na versão em inglês.
 
 Artigos relacionados
 
@@ -75,7 +75,7 @@ Para solucionar problemas de uma conexão de rede, siga as seguintes condições
 6.  Você pode [pingar](#Ping) um endereço IP público (por exemplo, `8.8.8.8`).
 7.  [Verifique se você consegue resolver nomes de domínio](/index.php/Verifique_se_voc%C3%AA_consegue_resolver_nomes_de_dom%C3%ADnio "Verifique se você consegue resolver nomes de domínio") (por exemplo, `archlinux.org`).
 
-**Dica:** `8.8.8.8` é o endereço de um servidor DNS do Google e é fácil de memorizar.
+**Dica:** `8.8.8.8` é um servidor DNS do Google e é um endereço conveniente para se usar em um teste.
 
 ### Ping
 
@@ -126,7 +126,7 @@ Pule para a próxima sessão caso o driver tenha sido carregado com sucesso. Cas
 
 Pesquise na internet pelo modelo/driver para o seu chipset. Algumas módulos comuns são `8139too` para as placas com um chipset da Realtek, ou `sis900` para placas com um chipset da SiS. Assim que descobrir qual módulo deve usar, tente [carregar o módulo manualmente](/index.php/Kernel_modules#Manual_module_handling "Kernel modules"). Caso você esbarre com algum erro dizendo que o módulo não foi encontrado, é possível que o driver não foi incluído no kernel do Arch Linux. Tente procurar no [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)") pelo nome do módulo.
 
-Caso o udev não detecte ou não carregue o módulo de forma apropriada e automaticamente durante o boot, veja [Kernel modules#Automatic module handling](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules").
+Caso o udev não detecte ou não carregue o módulo de forma apropriada e automaticamente durante o boot, veja [Kernel modules#Automatic loading with systemd](/index.php/Kernel_modules#Automatic_loading_with_systemd "Kernel modules").
 
 ## Gerenciamento de rede
 
@@ -680,7 +680,7 @@ softdep tg3 pre: broadcom
 
 ```
 
-O adaptador deve ser reconhecido pelo módulo `r8169`. No entanto, com algumas revisões de chips, a conexão pode cair e voltar o tempo todo. A alternativa [r8168](https://www.archlinux.org/packages/?name=r8168) deve ser usada para uma conexão confiável neste caso. [Lista negra](/index.php/Blacklist "Blacklist") `r8169`, se [r8168](https://www.archlinux.org/packages/?name=r8168) não for carregado automaticamente pelo [udev](/index.php/Udev "Udev"), veja [Kernel modules#Automatic module handling](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules").
+O adaptador deve ser reconhecido pelo módulo `r8169`. No entanto, com algumas revisões de chips, a conexão pode cair e voltar o tempo todo. A alternativa [r8168](https://www.archlinux.org/packages/?name=r8168) deve ser usada para uma conexão confiável neste caso. [Lista negra](/index.php/Blacklist "Blacklist") `r8169`, se [r8168](https://www.archlinux.org/packages/?name=r8168) não for carregado automaticamente pelo [udev](/index.php/Udev "Udev"), veja [Kernel modules#Automatic loading with systemd](/index.php/Kernel_modules#Automatic_loading_with_systemd "Kernel modules").
 
 Outra falha nos drivers para algumas revisões deste adaptador é um suporte fraco de IPv6\. [IPv6#Disable functionality](/index.php/IPv6#Disable_functionality "IPv6") pode ser útil se você encontrar problemas como pendurar páginas da web e velocidades lentas.
 

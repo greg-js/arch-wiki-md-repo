@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Pacman](/index.php/Pacman "Pacman"). Data da última tradução: 2018-10-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman&diff=0&oldid=549334) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Pacman](/index.php/Pacman "Pacman"). Data da última tradução: 2018-11-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman&diff=0&oldid=554980) na versão em inglês.
 
 Artigos relacionados
 
@@ -125,7 +125,7 @@ Isso pode ser expandido para quaisquer níveis sejam necessários:
 
 #### Instalando grupos de pacotes
 
-Alguns pacotes pertencem a um [grupo de pacotes](/index.php/Criando_pacotes#Pacotes_meta_e_grupos "Criando pacotes") que podem ser instalados simultaneamente. Por exemplo, o comando:
+Alguns pacotes pertencem a um [grupo de pacotes](/index.php/Grupo_de_pacotes "Grupo de pacotes") que podem ser instalados simultaneamente. Por exemplo, o comando:
 
 ```
 # pacman -S gnome

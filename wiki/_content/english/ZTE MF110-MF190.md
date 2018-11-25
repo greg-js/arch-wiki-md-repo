@@ -1,21 +1,22 @@
 ## Contents
 
 *   [1 Introduction](#Introduction)
-*   [2 Switch from CD mode to modem mode on the device](#Switch_from_CD_mode_to_modem_mode_on_the_device)
-*   [3 Disable CD mode on the device](#Disable_CD_mode_on_the_device)
-*   [4 Disable CD mode on the device with wvdial](#Disable_CD_mode_on_the_device_with_wvdial)
-*   [5 Setup udev rules](#Setup_udev_rules)
-*   [6 Create a wvdial configuration](#Create_a_wvdial_configuration)
-*   [7 Connect to the internet](#Connect_to_the_internet)
-*   [8 Acknowledgements](#Acknowledgements)
+*   [2 Configuration](#Configuration)
+    *   [2.1 Switch from CD mode to modem mode on the device](#Switch_from_CD_mode_to_modem_mode_on_the_device)
+    *   [2.2 Disable CD mode on the device](#Disable_CD_mode_on_the_device)
+    *   [2.3 Disable CD mode on the device with wvdial](#Disable_CD_mode_on_the_device_with_wvdial)
+    *   [2.4 Setup udev rules](#Setup_udev_rules)
+    *   [2.5 Create a wvdial configuration](#Create_a_wvdial_configuration)
+*   [3 Connect to the internet](#Connect_to_the_internet)
+*   [4 See also](#See_also)
 
 ## Introduction
 
-See also [USB 3G Modem](/index.php/USB_3G_Modem "USB 3G Modem").
-
 The ZTE MF110 / MF190 is a USB modem which combines 3G+/3G with EDGE/GPRS in one compact device. It has an integrated micro-SD card reader. It can send data at speeds up to 4.5 Mbps on 3G+ networks and receive data at speeds of up to 7.2 Mbps.
 
-## Switch from CD mode to modem mode on the device
+## Configuration
+
+### Switch from CD mode to modem mode on the device
 
 When you first plug the device, it is identified as a USB SCSI CDROM. You can find out the name of the device by using this:
 
@@ -52,7 +53,7 @@ Bus 001 Device 005: ID 19d2:**0124** ZTE WCDMA Technologies MSM
 
 ```
 
-## Disable CD mode on the device
+### Disable CD mode on the device
 
 Using a Windows machine, plug in the USB device and go through the short install wizard. Once done, close the Rogers app that starts up, then head into the Device Manager (Control Panel -> System -> Hardware -> Device Manager). Under the Ports section, find the COM port that's connected to the USB modem (ignore the Diagnostics mode). Connect to that COM port through Hyperterminal, found in the Accessories area of the Start Menu. Connection parameters are:
 
@@ -75,9 +76,9 @@ AT+ZCDRUN=8
 
 This tells the modem not to use CD mode when it's first plugged into a computer. Now exit Hypterterminal and remove the USB modem. You're done with Windows.
 
-## Disable CD mode on the device with wvdial
+### Disable CD mode on the device with wvdial
 
-First remove usb-storage then modprobe usbserial
+First remove usb-storage then modprobe usbserial:
 
 ```
 rmmod usb_storage
@@ -85,7 +86,7 @@ modprobe usbserial
 
 ```
 
-Edit /etc/wvdial.conf :
+Edit /etc/wvdial.conf:
 
 ```
 [Dialer Defaults]
@@ -97,27 +98,22 @@ Init2 = AT+ZCDRUN=8
 
 ```
 
-Run wvdial, it should use those commands and fail to connect.
+Run wvdial, it should use those commands and fail to connect. Once it exits, unplug the stick and plug it back in and it should be seen as a modem.
 
-Once it exits, unplug the stick and plug it back in and it should be seen as a modem.
-
-## Setup udev rules
+### Setup udev rules
 
 Create the following [udev](/index.php/Udev "Udev") rule:
 
- `/etc/udev/rules.d/90-zte.conf.rules` 
 ```
- # This is the Modem part of the card, let's load usbserial with the correct vendor and product IDs so we get our usb serial devices
- ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="19d2", ATTRS{idProduct}=="0124", RUN+="/sbin/modprobe usbserial vendor=0x19d2 product=0x0124", MODE="660", GROUP="network"
-
- # This is the ZeroCD part of the card, remove the usb_storage kernel module so it does not get treated like a storage device
- #ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="19d2", ATTRS{idProduct}=="0150", RUN+="/sbin/rmmod usb_storage"
- # This is the ZeroCD part of the card
- ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="19d2", ATTRS{idProduct}=="0150", RUN+="/usr/bin/eject /dev/sr1"
-
+# This is the Modem part of the card, let's load usbserial with the correct vendor and product IDs so we get our usb serial devices
+ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="19d2", ATTRS{idProduct}=="0124", RUN+="/sbin/modprobe usbserial vendor=0x19d2 product=0x0124", MODE="660", GROUP="network"
+# This is the ZeroCD part of the card, remove the usb_storage kernel module so it does not get treated like a storage device
+#ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="19d2", ATTRS{idProduct}=="0150", RUN+="/sbin/rmmod usb_storage"
+# This is the ZeroCD part of the card
+ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="19d2", ATTRS{idProduct}=="0150", RUN+="/usr/bin/eject /dev/sr1"
 ```
 
-## Create a wvdial configuration
+### Create a wvdial configuration
 
 [Wvdial](/index.php/Wvdial "Wvdial") is an easy-to-use frontend to PPPd. The configuration is fairly easy to comprehend. Make sure you replace the /dev/ttyUSB2 line with the node that your USB modem is connected to, you can see that with dmesg. Save as /etc/wvdial.conf.
 
@@ -159,13 +155,8 @@ Now just run wvdial to connect
 
 If you see output reporting your PPP local and endpoint IP addresses, then it worked.
 
-## Acknowledgements
+## See also
 
-Thanks to the following web pages that gave me all this information:
-
-```
-   * [http://blog.ufsoft.org/zte-mf622-usb-modem-under-linux](http://blog.ufsoft.org/zte-mf622-usb-modem-under-linux)
-   * [ZTE MF626 / MF636](/index.php/ZTE_MF626_/_MF636 "ZTE MF626 / MF636")
-   * [http://wiki.bandaancha.st/APN_de_las_operadoras_para_configurar_el_módem_de_Internet_móvil_3G](http://wiki.bandaancha.st/APN_de_las_operadoras_para_configurar_el_módem_de_Internet_móvil_3G)
-
-```
+*   [USB 3G Modem](/index.php/USB_3G_Modem "USB 3G Modem")
+*   [ZTE MF626 / MF636](/index.php/ZTE_MF626_/_MF636 "ZTE MF626 / MF636")
+*   Thanks to the following web pages that gave me all this information: [[1]](http://blog.ufsoft.org/zte-mf622-usb-modem-under-linux)[[2]](http://wiki.bandaancha.st/APN_de_las_operadoras_para_configurar_el_módem_de_Internet_móvil_3G)

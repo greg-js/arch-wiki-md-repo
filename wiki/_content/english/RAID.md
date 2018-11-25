@@ -854,7 +854,7 @@ There are several tools for benchmarking a RAID. The most notable improvement is
 
 ## See also
 
-*   [Software RAID in the new Linux 2.4 kernel, Part 1](http://www.gentoo.org/doc/en/articles/software-raid-p1.xml) and [Part 2](http://www.gentoo.org/doc/en/articles/software-raid-p2.xml) in the Gentoo Linux Docs
+*   [Linux Software RAID](https://www.thomas-krenn.com/en/wiki/Linux_Software_RAID) (thomas-krenn.com)
 *   [Linux RAID wiki entry](http://raid.wiki.kernel.org/index.php/Linux_Raid) on The Linux Kernel Archives
 *   [How Bitmaps Work](https://raid.wiki.kernel.org/index.php/Write-intent_bitmap)
 *   [Chapter 15: Redundant Array of Independent Disks (RAID)](http://docs.redhat.com/docs/en-US/Red_Hat_Enterprise_Linux/6/html/Storage_Administration_Guide/ch-raid.html) of Red Hat Enterprise Linux 6 Documentation

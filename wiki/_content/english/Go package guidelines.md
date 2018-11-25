@@ -19,7 +19,7 @@ This document covers standards and guidelines on writing [PKGBUILDs](/index.php/
 *   [3 Sample PKGBUILDs](#Sample_PKGBUILDs)
     *   [3.1 Basic PKGBUILD](#Basic_PKGBUILD)
     *   [3.2 PKGBUILD with GOPATH and dep](#PKGBUILD_with_GOPATH_and_dep)
-*   [4 Example Packages](#Example_Packages)
+*   [4 Example packages](#Example_packages)
 
 ## General guidelines
 
@@ -208,7 +208,7 @@ package() {
 
 ```
 
-## Example Packages
+## Example packages
 
 *   [dep](https://www.archlinux.org/packages/?name=dep)
 *   [gopass](https://www.archlinux.org/packages/?name=gopass)

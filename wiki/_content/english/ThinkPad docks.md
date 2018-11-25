@@ -78,6 +78,7 @@ As of dockd 1.21, you can define some hooks that run when the ThinkPad is docked
 
 For example, to disable WiFi when docking and enable it when undocking:
 
+**Note:** dockd runs as non-root, so these scripts have to be executable by the user.
  `/etc/dockd/dock.hook`  `nmcli radio wifi off`  `/etc/dockd/undock.hook`  `nmcli radio wifi on` 
 
 ## See also

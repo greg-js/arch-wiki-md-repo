@@ -178,23 +178,7 @@ Though [Mozc](https://aur.archlinux.org/packages/Mozc/) adapts to only ibus inpu
 
 **Note:** This does not support the kill_line feature of uim-mozc.
 
-You can install this from the unofficial `pnsft-pur` user repository. Add the following into your /etc/pacman.conf to add the repository:
-
-```
-[pnsft-pur]
-SigLevel = Optional TrustAll
-Server = [http://downloads.sourceforge.net/project/pnsft-aur/pur/$arch](http://downloads.sourceforge.net/project/pnsft-aur/pur/$arch)
-
-```
-
-**Note:** This repository only provides x86_64 packages.
-
-And refresh the package database:
-
-```
-# pacman -Syy
-
-```
+You can install this from the unofficial [pnsft-pur](/index.php/Unofficial_user_repositories#pnsft-pur "Unofficial user repositories") user repository.
 
 You can choose to install all packages in the `mozc-im` group by specifying the group name as follows:
 

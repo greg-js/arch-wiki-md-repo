@@ -300,14 +300,12 @@ LABEL archfallback
 
 #### Text boot menu
 
-Syslinux also allows you to use a boot menu. To use it, copy the `menu` module to your Syslinux directory:
+Syslinux also allows you to use a boot menu. To use it, copy the `menu` and `libutil` modules to your Syslinux directory:
 
 ```
-# cp /usr/lib/syslinux/bios/menu.c32 /boot/syslinux/
+# cp /usr/lib/syslinux/bios/{menu,libutil}.c32 /boot/syslinux/
 
 ```
-
-Copying additional `lib*.c32` library modules might be needed too.
 
 Configuration:
 

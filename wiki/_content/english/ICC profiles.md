@@ -14,17 +14,17 @@ As it pertains to general desktop use, an [ICC profile](https://en.wikipedia.org
         *   [2.7.1 Manually](#Manually)
     *   [2.8 LPROF ICC Profiler](#LPROF_ICC_Profiler)
         *   [2.8.1 Monitor calibration](#Monitor_calibration)
-            *   [2.8.1.1 Contrast/Brightness](#Contrast.2FBrightness)
+            *   [2.8.1.1 Contrast/Brightness](#Contrast/Brightness)
             *   [2.8.1.2 Color temperature](#Color_temperature)
         *   [2.8.2 Monitor profiling without additional calibration hardware](#Monitor_profiling_without_additional_calibration_hardware)
     *   [2.9 ThinkPads](#ThinkPads)
 *   [3 Loading ICC profiles](#Loading_ICC_profiles)
     *   [3.1 xcalib](#xcalib)
         *   [3.1.1 Xinitrc example](#Xinitrc_example)
-        *   [3.1.2 JWM <StartupCommand> example](#JWM_.3CStartupCommand.3E_example)
+        *   [3.1.2 JWM <StartupCommand> example](#JWM_<StartupCommand>_example)
     *   [3.2 dispwin](#dispwin)
         *   [3.2.1 Xinitrc example](#Xinitrc_example_2)
-        *   [3.2.2 JWM <StartupCommand> example](#JWM_.3CStartupCommand.3E_example_2)
+        *   [3.2.2 JWM <StartupCommand> example](#JWM_<StartupCommand>_example_2)
 *   [4 Applications that support ICC profiles](#Applications_that_support_ICC_profiles)
 *   [5 See also](#See_also)
 
@@ -180,11 +180,11 @@ See [color profiles](http://www.thinkwiki.org/wiki/Colour_profile) for IBM/Lenov
 
 ## Loading ICC profiles
 
-ICC profiles are loaded either by the session daemon or by a dedicated ICC loader. Both Gnome and KDE have daemons capable of loading ICC profiles from [colord](https://www.archlinux.org/packages/?name=colord). If you use colord in combination with either [gnome-settings-daemon](https://www.archlinux.org/packages/?name=gnome-settings-daemon) or [colord-kde](https://www.archlinux.org/packages/?name=colord-kde), the profile will be loaded automatically. If you're not using neither Gnome nor KDE, you may install an independent daemon, [xiccd](https://github.com/agalakhov/xiccd), which does the same but does not depend on your desktop environment. Do not start two ICC-capable daemons (e.g. gnome-settings-daemon and xiccd) at the same time.
+ICC profiles are loaded either by the session daemon or by a dedicated ICC loader. Both Gnome and KDE have daemons capable of loading ICC profiles from [colord](https://www.archlinux.org/packages/?name=colord). If you use colord in combination with either [gnome-settings-daemon](https://www.archlinux.org/packages/?name=gnome-settings-daemon) or [colord-kde](https://www.archlinux.org/packages/?name=colord-kde), the profile will be loaded automatically. If you're not using either Gnome or KDE, you may install an independent daemon, [xiccd](https://github.com/agalakhov/xiccd), which does the same but does not depend on your desktop environment. Do not start two ICC-capable daemons (e.g. gnome-settings-daemon and xiccd) at the same time.
 
-If you're not using any ICC-capable session daemon, make sure you use only one ICC loader - either xcalib, dispwin, dispcalGUI-apply-profiles or others, otherwise you easily end up with uncontrolled environment. (The most recently run loader set the calibration, and the earlier loaded calibration is overwritten.)
+If you're not using any ICC-capable session daemon, make sure you use only one ICC loader - either xcalib, dispwin, dispcalGUI-apply-profiles or others. Otherwise, you can easily end up with an uncontrolled environment. (The most recently run loader sets the calibration, and the earlier loaded calibration is overwritten.)
 
-Before using a particular ICC loader, you should understand that some tools set only the calibration curves (e.g. xcalib), other tools set only the display profile to X.org _ICC_PROFILE atom (e.g. xicc) and other tools do both tasks at once (e.g. dispwin, dispcalGUI-apply-profiles).
+Before using a particular ICC loader, you should understand that some tools set only the calibration curves (e.g. xcalib), some tools set only the display profile to X.org _ICC_PROFILE atom (e.g. xicc), and other tools do both tasks at once (e.g. dispwin, dispcalGUI-apply-profiles).
 
 ### xcalib
 

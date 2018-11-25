@@ -42,9 +42,9 @@ Related articles
 
 ## 配置
 
-For [Wayland](/index.php/Wayland "Wayland"), there is no libinput configuration file. The configurable options depend on the progress of your desktop environment's support for them; see [#Graphical tools](#Graphical_tools).
+在 [Wayland](/index.php/Wayland "Wayland") 上, 这里没有配置文件。 是否可配置这是由你的桌面环境开发者所决定的。详情请看 [#Graphical tools](#Graphical_tools).
 
-For [Xorg](/index.php/Xorg "Xorg"), a default configuration file for the wrapper is installed to `/usr/share/X11/xorg.conf.d/40-libinput.conf`. No extra configuration is necessary for it to autodetect keyboards, touchpads, trackpointers and supported touchscreens.
+对于 [Xorg](/index.php/Xorg "Xorg"), 默认的配置文件在 `/usr/share/X11/xorg.conf.d/40-libinput.conf`. 没必要用额外的配置文件来自动检测键盘，触摸板，小红点和触摸屏。
 
 ### 使用 xinput
 

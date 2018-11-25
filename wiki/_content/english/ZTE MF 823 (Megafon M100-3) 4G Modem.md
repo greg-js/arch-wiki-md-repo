@@ -155,6 +155,6 @@ Now the device should act as a ethernet interface no matter which system you plu
 
 ## See also
 
-[ZTE MF823 Modem - Linux & Serial Diags](http://forums.whirlpool.net.au/archive/2212748)
+[whirlpool.net.au](http://forums.whirlpool.net.au/archive/2212748) - Linux & Serial Diags
 
-[Gsmforum.ru - ZTE MF823 thread (in Russian), check #7 thread for unlock instructions](http://www.gsmforum.ru/threads/188925-ZTE-MF823-%D0%B8-%D0%B2%D1%81%D1%91-%D1%87%D1%82%D0%BE-%D1%81-%D0%BD%D0%B8%D0%BC-%D1%81%D0%B2%D1%8F%D0%B7%D0%B0%D0%BD%D0%BE)
+[gsmforum.ru](http://www.gsmforum.ru/threads/188925-ZTE-MF823-%D0%B8-%D0%B2%D1%81%D1%91-%D1%87%D1%82%D0%BE-%D1%81-%D0%BD%D0%B8%D0%BC-%D1%81%D0%B2%D1%8F%D0%B7%D0%B0%D0%BD%D0%BE?p=934477&viewfull=1#post934477) - ZTE MF823 thread (in Russian)

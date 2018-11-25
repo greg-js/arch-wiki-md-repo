@@ -8,7 +8,7 @@ Related articles
 
 From [MATE homepage](https://mate-desktop.org/):
 
-	*The MATE Desktop Environment is the continuation of GNOME 2\. It provides an intuitive and attractive desktop environment using traditional metaphors for Linux and other Unix-like operating systems. MATE is [under active development](https://github.com/mate-desktop) to add support for new technologies while preserving a traditional desktop experience.*
+	The MATE Desktop Environment is the continuation of GNOME 2\. It provides an intuitive and attractive desktop environment using traditional metaphors for Linux and other Unix-like operating systems. MATE is [under active development](https://github.com/mate-desktop) to add support for new technologies while preserving a traditional desktop experience.
 
 ## Contents
 
@@ -445,5 +445,5 @@ Since the migration to GTK+3 this feature is not working.[[4]](https://github.co
 
 *   [MATE homepage](https://mate-desktop.org)
 *   [MATE wiki for Arch Linux](https://wiki.mate-desktop.org/archlinux_custom_repo)
-*   [*MATE desktop screenshots*](https://mate-desktop.org/gallery/1.8/)
-*   [*The MATE Desktop Environment*](https://bbs.archlinux.org/viewtopic.php?pid=1018647) - Arch Linux forum discussion about MATE
+*   [MATE desktop screenshots](https://mate-desktop.org/gallery/1.8/)
+*   [The MATE Desktop Environment](https://bbs.archlinux.org/viewtopic.php?pid=1018647) - Arch Linux forum discussion about MATE

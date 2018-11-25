@@ -6,7 +6,7 @@
 | <small>1.2.1.</small> [Disambiguation pages](/index.php/Category:Disambiguation_pages "Category:Disambiguation pages") <small>(26)</small> |
 | <small>1.2.2.</small> [Help](/index.php/Category:Help "Category:Help") <small>(15)</small> |
 | <small>1.2.3.</small> [Lists](/index.php/Category:Lists "Category:Lists") <small>(6)</small> |
-| <small>1.2.3.1.</small> [Lists of software](/index.php/Category:Lists_of_software "Category:Lists of software") <small>(24) (also in [Software](/index.php/Category:Software "Category:Software"))</small> |
+| <small>1.2.3.1.</small> [Lists of software](/index.php/Category:Lists_of_software "Category:Lists of software") <small>(26) (also in [Software](/index.php/Category:Software "Category:Software"))</small> |
 | <small>1.3.</small> [Installation process](/index.php/Category:Installation_process "Category:Installation process") <small>(31)</small> |
 | <small>1.4.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems "Category:Live Arch systems") <small>(5)</small> |
 | <small>1.5.</small> [Teams](/index.php/Category:Teams "Category:Teams") <small>(6)</small> |
@@ -32,7 +32,7 @@
 | <small>3.8.</small> [Input devices](/index.php/Category:Input_devices "Category:Input devices") <small>(15) (also in [Input](/index.php/Category:Input "Category:Input"))</small> |
 | <small>3.8.1.</small> [Keyboards](/index.php/Category:Keyboards "Category:Keyboards") <small>(7)</small> |
 | <small>3.8.2.</small> [Mice](/index.php/Category:Mice "Category:Mice") <small>(15)</small> |
-| <small>3.9.</small> [Laptops](/index.php/Category:Laptops "Category:Laptops") <small>(21)</small> |
+| <small>3.9.</small> [Laptops](/index.php/Category:Laptops "Category:Laptops") <small>(22)</small> |
 | <small>3.9.1.</small> [Acer](/index.php/Category:Acer "Category:Acer") <small>(33)</small> |
 | <small>3.9.2.</small> [Alienware](/index.php/Category:Alienware "Category:Alienware") <small>(4)</small> |
 | <small>3.9.3.</small> [Apple](/index.php/Category:Apple "Category:Apple") <small>(12)</small> |
@@ -44,7 +44,7 @@
 | <small>3.9.9.</small> [HASEE](/index.php/Category:HASEE "Category:HASEE") <small>(1)</small> |
 | <small>3.9.10.</small> [HP](/index.php/Category:HP "Category:HP") <small>(56)</small> |
 | <small>3.9.11.</small> [IBM](/index.php/Category:IBM "Category:IBM") <small>(2)</small> |
-| <small>3.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(88)</small> |
+| <small>3.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(89)</small> |
 | <small>3.9.13.</small> [MSI](/index.php/Category:MSI "Category:MSI") <small>(6)</small> |
 | <small>3.9.14.</small> [Samsung](/index.php/Category:Samsung "Category:Samsung") <small>(6)</small> |
 | <small>3.9.15.</small> [Sony](/index.php/Category:Sony "Category:Sony") <small>(10)</small> |
@@ -128,7 +128,7 @@
 | <small>4.18.</small> [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking") <small>(8)</small> |
 | <small>4.18.1.</small> [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth") <small>(6) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |
 | <small>5.</small> [Software](/index.php/Category:Software "Category:Software") <small>(0)</small> |
-| <small>5.1.</small> [Applications](/index.php/Category:Applications "Category:Applications") <small>(14)</small> |
+| <small>5.1.</small> [Applications](/index.php/Category:Applications "Category:Applications") <small>(16)</small> |
 | <small>5.1.1.</small> [Accessibility](/index.php/Category:Accessibility "Category:Accessibility") <small>(7)</small> |
 | <small>5.1.2.</small> [Application launchers](/index.php/Category:Application_launchers "Category:Application launchers") <small>(12)</small> |
 | <small>5.1.3.</small> [Console applications](/index.php/Category:Console_applications "Category:Console applications") <small>(20) (also in [Commands](/index.php/Category:Commands "Category:Commands"))</small> |
@@ -166,7 +166,7 @@
 | <small>5.1.11.5.</small> [Television](/index.php/Category:Television "Category:Television") <small>(4)</small> |
 | <small>5.1.11.5.1.</small> [TV cards](/index.php/Category:TV_cards "Category:TV cards") <small>(11) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |
 | <small>5.1.11.6.</small> [Video](/index.php/Category:Video "Category:Video") <small>(6)</small> |
-| <small>5.1.12.</small> [Office](/index.php/Category:Office "Category:Office") <small>(17)</small> |
+| <small>5.1.12.</small> [Office](/index.php/Category:Office "Category:Office") <small>(16)</small> |
 | <small>5.1.12.1.</small> [TeX](/index.php/Category:TeX "Category:TeX") <small>(3)</small> |
 | <small>5.1.13.</small> [Password managers](/index.php/Category:Password_managers "Category:Password managers") <small>(2) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
 | <small>5.1.14.</small> [Science](/index.php/Category:Science "Category:Science") <small>(11)</small> |
@@ -212,14 +212,14 @@
 | <small>5.3.1.9.</small> [WebDAV](/index.php/Category:WebDAV "Category:WebDAV") <small>(7) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
 | <small>5.3.1.10.</small> [XMPP](/index.php/Category:XMPP "Category:XMPP") <small>(5) (also in [Instant messaging](/index.php/Category:Instant_messaging "Category:Instant messaging"), [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
 | <small>5.4.</small> [File formats](/index.php/Category:File_formats "Category:File formats") <small>(7)</small> |
-| <small>5.4.1.</small> [PDF](/index.php/Category:PDF "Category:PDF") <small>(4)</small> |
-| <small>5.5.</small> [Lists of software](/index.php/Category:Lists_of_software "Category:Lists of software") <small>(24) (also in [Lists](/index.php/Category:Lists "Category:Lists"))</small> |
+| <small>5.4.1.</small> [PDF](/index.php/Category:PDF "Category:PDF") <small>(3)</small> |
+| <small>5.5.</small> [Lists of software](/index.php/Category:Lists_of_software "Category:Lists of software") <small>(26) (also in [Lists](/index.php/Category:Lists "Category:Lists"))</small> |
 | <small>5.6.</small> [Software companies](/index.php/Category:Software_companies "Category:Software companies") <small>(0)</small> |
 | <small>5.6.1.</small> [Canonical](/index.php/Category:Canonical "Category:Canonical") <small>(3)</small> |
 | <small>5.6.2.</small> [Google](/index.php/Category:Google "Category:Google") <small>(5)</small> |
 | <small>5.6.3.</small> [Oracle](/index.php/Category:Oracle "Category:Oracle") <small>(6)</small> |
 | <small>5.6.4.</small> [Red Hat](/index.php/Category:Red_Hat "Category:Red Hat") <small>(4)</small> |
-| <small>5.7.</small> [Software comparisons](/index.php/Category:Software_comparisons "Category:Software comparisons") <small>(4)</small> |
+| <small>5.7.</small> [Software comparisons](/index.php/Category:Software_comparisons "Category:Software comparisons") <small>(5)</small> |
 | <small>5.8.</small> [Software projects](/index.php/Category:Software_projects "Category:Software projects") <small>(0)</small> |
 | <small>5.8.1.</small> [Apache](/index.php/Category:Apache "Category:Apache") <small>(6)</small> |
 | <small>5.8.2.</small> [Arch projects](/index.php/Category:Arch_projects "Category:Arch projects") <small>(9) (also in [DeveloperWiki](/index.php/Category:DeveloperWiki "Category:DeveloperWiki"))</small> |

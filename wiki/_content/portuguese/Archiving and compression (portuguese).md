@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Archiving and compression](/index.php/Archiving_and_compression "Archiving and compression"). Data da última tradução: 2018-10-31\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Archiving_and_compression&diff=0&oldid=549382) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Archiving and compression](/index.php/Archiving_and_compression "Archiving and compression"). Data da última tradução: 2018-11-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Archiving_and_compression&diff=0&oldid=555712) na versão em inglês.
 
 As ferramentas tradicionais de arquivamento e compactação (ou compressão) Unix são separadas de acordo com a [filosofia Unix](https://en.wikipedia.org/wiki/pt:Filosofia_Unix "wikipedia:pt:Filosofia Unix"):
 

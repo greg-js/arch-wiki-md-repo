@@ -146,23 +146,29 @@ ZM_DB_PASS=zmpass
 
 ### Запуск
 
-[Запустите](/index.php/%D0%97%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D0%B5 "Запустите")/[включите](/index.php/%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Включите") службы `httpd.service`, `zoneminder.service` и `php-fpm.service`.
+[Запустите](/index.php/%D0%97%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D0%B5 "Запустите")/[включите](/index.php/%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Включите") службы `httpd.service`, `zoneminder.service`, `fcgiwrap-multiwatch` и `php-fpm.service`.
 
 ```
 systemctl start php-fpm
-systemctl status php-fpm 
+systemctl enable php-fpm 
 
 ```
 
 ```
 systemctl start httpd
-systemctl status httpd 
+systemctl enable httpd 
 
 ```
 
 ```
 systemctl start zoneminder
-systemctl status zoneminder
+systemctl enable zoneminder
+
+```
+
+```
+systemctl start fcgiwrap-multiwatch
+systemctl enable fcgiwrap-multiwatch
 
 ```
 

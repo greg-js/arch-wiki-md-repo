@@ -43,6 +43,7 @@ Related articles
     *   [5.7 netctl-auto does not automatically unblock a wireless card to use an interface](#netctl-auto_does_not_automatically_unblock_a_wireless_card_to_use_an_interface)
     *   [5.8 RTNETLINK answers: File exists (with multiple NICs)](#RTNETLINK_answers:_File_exists_(with_multiple_NICs))
     *   [5.9 Problems with eduroam and other MSCHAPv2 connections](#Problems_with_eduroam_and_other_MSCHAPv2_connections)
+    *   [5.10 Journal warnings for profiles using .include directives](#Journal_warnings_for_profiles_using_.include_directives)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -610,6 +611,26 @@ WantedBy=network-online.target
 ### Problems with eduroam and other MSCHAPv2 connections
 
 See [WPA supplicant#Problems with eduroam and other MSCHAPv2 connections](/index.php/WPA_supplicant#Problems_with_eduroam_and_other_MSCHAPv2_connections "WPA supplicant").
+
+### Journal warnings for profiles using .include directives
+
+Profiles still using systemd's old `.include` directives will produce journal warnings, for example:
+
+```
+systemd[1]: /etc/systemd/system/netctl@<profile>.service:1: .include directives are deprecated, and support for them will be removed in a future version of systemd. Please use drop-in files instead.
+
+```
+
+See [FS#59494](https://bugs.archlinux.org/task/59494) for details.
+
+Executing
+
+```
+netctl reenable *profile*
+
+```
+
+will update the profile to the new [drop-in unit file](/index.php/Drop-in_unit_file "Drop-in unit file") format.
 
 ## See also
 

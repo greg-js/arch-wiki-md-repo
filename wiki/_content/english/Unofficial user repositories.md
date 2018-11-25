@@ -39,27 +39,28 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
     *   [2.22 linux-macbook](#linux-macbook)
     *   [2.23 llvm-svn](#llvm-svn)
     *   [2.24 markzz](#markzz)
-    *   [2.25 miffe](#miffe)
-    *   [2.26 mikelpint](#mikelpint)
-    *   [2.27 Minerva W Science](#Minerva_W_Science)
-    *   [2.28 mobile](#mobile)
-    *   [2.29 nah](#nah)
-    *   [2.30 nexus](#nexus)
-    *   [2.31 pkgbuilder](#pkgbuilder)
-    *   [2.32 post-factum kernels](#post-factum_kernels)
-    *   [2.33 QOwnNotes](#QOwnNotes)
-    *   [2.34 qt-debug](#qt-debug)
-    *   [2.35 quarry](#quarry)
-    *   [2.36 repo-ck](#repo-ck)
-    *   [2.37 seblu](#seblu)
-    *   [2.38 seiichiro](#seiichiro)
-    *   [2.39 sergej-repo](#sergej-repo)
-    *   [2.40 siosm-aur](#siosm-aur)
-    *   [2.41 sublime-text](#sublime-text)
-    *   [2.42 subtitlecomposer](#subtitlecomposer)
-    *   [2.43 trinity](#trinity)
-    *   [2.44 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
-    *   [2.45 xyne-x86_64](#xyne-x86_64)
+    *   [2.25 maximbaz](#maximbaz)
+    *   [2.26 miffe](#miffe)
+    *   [2.27 mikelpint](#mikelpint)
+    *   [2.28 Minerva W Science](#Minerva_W_Science)
+    *   [2.29 mobile](#mobile)
+    *   [2.30 nah](#nah)
+    *   [2.31 nexus](#nexus)
+    *   [2.32 pkgbuilder](#pkgbuilder)
+    *   [2.33 post-factum kernels](#post-factum_kernels)
+    *   [2.34 QOwnNotes](#QOwnNotes)
+    *   [2.35 qt-debug](#qt-debug)
+    *   [2.36 quarry](#quarry)
+    *   [2.37 repo-ck](#repo-ck)
+    *   [2.38 seblu](#seblu)
+    *   [2.39 seiichiro](#seiichiro)
+    *   [2.40 sergej-repo](#sergej-repo)
+    *   [2.41 siosm-aur](#siosm-aur)
+    *   [2.42 sublime-text](#sublime-text)
+    *   [2.43 subtitlecomposer](#subtitlecomposer)
+    *   [2.44 trinity](#trinity)
+    *   [2.45 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
+    *   [2.46 xyne-x86_64](#xyne-x86_64)
 *   [3 Unsigned](#Unsigned)
     *   [3.1 alucryd](#alucryd)
     *   [3.2 alucryd-multilib](#alucryd-multilib)
@@ -365,12 +366,12 @@ Server = https://ivasilev.net/pacman/$arch
 
 *   **Maintainer:** [Jakub Klinkovský](/index.php/User:Lahwaacz "User:Lahwaacz")
 *   **Description:** Various packages from the ABS and AUR. Modified packages are in the `modified` group.
-*   **Upstream page:** [http://jlk.fjfi.cvut.cz/arch/repo/README.html](http://jlk.fjfi.cvut.cz/arch/repo/README.html)
+*   **Upstream page:** [https://jlk.fjfi.cvut.cz/arch/repo/README.html](https://jlk.fjfi.cvut.cz/arch/repo/README.html)
 *   **Key-ID:** 932BA3FA0C86812A32D1F54DAB5964AEB9FEDDDC
 
 ```
 [jlk]
-Server = http://jlk.fjfi.cvut.cz/arch/repo
+Server = https://jlk.fjfi.cvut.cz/arch/repo
 
 ```
 
@@ -410,6 +411,18 @@ Server = https://repos.uni-plovdiv.net/archlinux/$repo/$arch
 ```
 [markzz]
 Server = https://repo.markzz.com/arch/$repo/$arch
+
+```
+
+### maximbaz
+
+*   **Maintainer:** [Maxim Baz](https://www.archlinux.org/people/trusted-users/#maximbaz)
+*   **Description:** Personal repo with AUR packages (notably [chromium-vaapi](https://aur.archlinux.org/packages/chromium-vaapi/)).
+*   **Key-ID:** 12C87A28FEAC6B20
+
+```
+[maximbaz]
+Server = https://pkgbuild.com/~maximbaz/repo/
 
 ```
 
@@ -633,7 +646,7 @@ Server = https://download.sublimetext.com/arch/stable/x86_64
 
 ```
 [subtitlecomposer]
-Server = http://smoothware.net/$repo/$arch
+Server = https://smoothware.net/$repo/$arch
 
 ```
 

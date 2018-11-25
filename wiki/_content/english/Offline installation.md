@@ -17,7 +17,6 @@ First, follow the [Installation guide](/index.php/Installation_guide "Installati
     *   [2.4 Remove special scripts of the Live environment](#Remove_special_scripts_of_the_Live_environment)
     *   [2.5 Importing archlinux keys](#Importing_archlinux_keys)
     *   [2.6 Configure the system](#Configure_the_system)
-    *   [2.7 Enable graphical login (optional)](#Enable_graphical_login_(optional))
 
 ## Install the archiso to the new root
 
@@ -106,13 +105,3 @@ In order to use the official repositories, we need to import the archlinux maste
 ### Configure the system
 
 Now you can follow the skipped steps of the [Installation guide#Configure the system](/index.php/Installation_guide#Configure_the_system "Installation guide") section (setting a locale, timezone, hostname, etc.) and finish the installation by creating an initial ramdisk as described in [Installation guide#Initramfs](/index.php/Installation_guide#Initramfs "Installation guide").
-
-### Enable graphical login (optional)
-
-If using a display manager like GDM, you may want to change the systemd default target from multi-user.target to one that allows graphical login.
-
-```
-# systemctl disable multi-user.target
-# systemctl enable graphical.target
-
-```
