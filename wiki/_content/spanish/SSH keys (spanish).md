@@ -352,7 +352,7 @@ WantedBy=*default*.target
 
 Agregue `SSH_AUTH_SOCK DEFAULT="${XDG_RUNTIME_DIR}/ssh-agent.socket"` al archivo `~/.pam_environment`. Después [active](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") o [active inicio automatico](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") de la unidad.
 
-**Nota:** SI esta usando GNOME, esta variable de entorno es sobre escrita por defecto. Vea [GNOME/Keyring#Disable keyring daemon components](/index.php/GNOME/Keyring#Disable_keyring_daemon_components "GNOME/Keyring").
+**Nota:** SI esta usando GNOME, esta variable de entorno es sobre escrita por defecto. Véase [GNOME/Keyring#Disable keyring daemon components](/index.php/GNOME/Keyring#Disable_keyring_daemon_components "GNOME/Keyring").
 
 ### Agente GnuPG
 
@@ -420,7 +420,7 @@ Luego de instalarlo, cierre su sesión de X y recarguela a partir de ahora se le
 
 ### GNOME Keyring (llavero)
 
-Si usa el escritorio [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)"), la herramienta [Gnome Keyring](/index.php/Gnome_Keyring "Gnome Keyring") puede ser usada como un agente de SSH. Visite el articulo [Gnome Keyring](/index.php/Gnome_Keyring "Gnome Keyring").
+Si usa el escritorio [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)"), la herramienta [GNOME Keyring](/index.php/GNOME/Keyring_(Espa%C3%B1ol) "GNOME/Keyring (Español)") puede ser usada como un agente de SSH. Véase [GNOME Keyring](/index.php/GNOME/Keyring_(Espa%C3%B1ol) "GNOME/Keyring (Español)").
 
 ## Resolución de problemas
 

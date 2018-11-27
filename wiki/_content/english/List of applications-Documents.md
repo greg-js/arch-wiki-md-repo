@@ -27,10 +27,10 @@
     *   [1.4 Document converters](#Document_converters)
     *   [1.5 Bibliographic reference managers](#Bibliographic_reference_managers)
     *   [1.6 Readers and viewers](#Readers_and_viewers)
-        *   [1.6.1 E-book](#E-book)
-        *   [1.6.2 PDF and DjVu](#PDF_and_DjVu)
-        *   [1.6.3 CHM](#CHM)
-        *   [1.6.4 Comic book](#Comic_book)
+        *   [1.6.1 PDF and DjVu](#PDF_and_DjVu)
+        *   [1.6.2 E-book](#E-book)
+        *   [1.6.3 Comic book](#Comic_book)
+        *   [1.6.4 CHM](#CHM)
     *   [1.7 Document managers](#Document_managers)
     *   [1.8 Scanning software](#Scanning_software)
     *   [1.9 OCR software](#OCR_software)
@@ -827,9 +827,13 @@ See also [Wikipedia:Comparison of reference management software](https://en.wiki
 
 ### Readers and viewers
 
+#### PDF and DjVu
+
+See [PDF, PS and DjVu](/index.php/PDF,_PS_and_DjVu "PDF, PS and DjVu").
+
 #### E-book
 
-**Note:** Some [PDF and DjVu viewers](#PDF_and_DjVu) also support other e-book formats.
+**Note:** Some [PDF and DjVu viewers](/index.php/PDF,_PS_and_DjVu#Viewers "PDF, PS and DjVu") also support other e-book formats.
 
 *   **Bookworm** — Simple, focused e-book reader for Elementary OS with EPUB, PDF, Mobipocket and Comicbook support.
 
@@ -859,26 +863,6 @@ See also [Wikipedia:Comparison of reference management software](https://en.wiki
 
 	[https://sigil-ebook.com/](https://sigil-ebook.com/) || [sigil](https://www.archlinux.org/packages/?name=sigil)
 
-#### PDF and DjVu
-
-See [PDF, PS and DjVu](/index.php/PDF,_PS_and_DjVu "PDF, PS and DjVu").
-
-#### CHM
-
-See also [Wikipedia:Microsoft Compiled HTML Help](https://en.wikipedia.org/wiki/Microsoft_Compiled_HTML_Help "wikipedia:Microsoft Compiled HTML Help").
-
-*   **Archmage** — Extensible reader and decompiler for files in the CHM format.
-
-	[https://github.com/dottedmag/archmage](https://github.com/dottedmag/archmage) || [archmage](https://aur.archlinux.org/packages/archmage/)
-
-*   **Kchmviewer** — Qt-based CHM viewer that uses chmlib and borrows some ideas from xchm. It does not depend on [KDE](/index.php/KDE "KDE"), but it can be compiled to integrate with it.
-
-	[http://www.ulduzsoft.com/linux/kchmviewer/](http://www.ulduzsoft.com/linux/kchmviewer/) || [kchmviewer](https://www.archlinux.org/packages/?name=kchmviewer)
-
-*   **[xCHM](https://en.wikipedia.org/wiki/xCHM "wikipedia:xCHM")** — Lightweight CHM viewer, based on chmlib.
-
-	[http://xchm.sourceforge.net/](http://xchm.sourceforge.net/) || [xchm](https://www.archlinux.org/packages/?name=xchm)
-
 #### Comic book
 
 *   **Buoh** — Online strips comics reader for GNOME.
@@ -900,6 +884,22 @@ See also [Wikipedia:Microsoft Compiled HTML Help](https://en.wikipedia.org/wiki/
 *   **YACReader** — Comic book viewer written in C++ and Qt5\. Comes with YACReaderLibrary for managing comics.
 
 	[http://yacreader.com/](http://yacreader.com/) || [yacreader](https://aur.archlinux.org/packages/yacreader/)
+
+#### CHM
+
+See also [Wikipedia:Microsoft Compiled HTML Help](https://en.wikipedia.org/wiki/Microsoft_Compiled_HTML_Help "wikipedia:Microsoft Compiled HTML Help").
+
+*   **Archmage** — Extensible reader and decompiler for files in the CHM format.
+
+	[https://github.com/dottedmag/archmage](https://github.com/dottedmag/archmage) || [archmage](https://aur.archlinux.org/packages/archmage/)
+
+*   **Kchmviewer** — Qt-based CHM viewer that uses chmlib and borrows some ideas from xchm. It does not depend on [KDE](/index.php/KDE "KDE"), but it can be compiled to integrate with it.
+
+	[http://www.ulduzsoft.com/linux/kchmviewer/](http://www.ulduzsoft.com/linux/kchmviewer/) || [kchmviewer](https://www.archlinux.org/packages/?name=kchmviewer)
+
+*   **[xCHM](https://en.wikipedia.org/wiki/xCHM "wikipedia:xCHM")** — Lightweight CHM viewer, based on chmlib.
+
+	[http://xchm.sourceforge.net/](http://xchm.sourceforge.net/) || [xchm](https://www.archlinux.org/packages/?name=xchm)
 
 ### Document managers
 

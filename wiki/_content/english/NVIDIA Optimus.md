@@ -32,8 +32,9 @@ These options are explained in detail below.
     *   [3.1 Tearing/Broken VSync](#Tearing/Broken_VSync)
     *   [3.2 Failed to initialize the NVIDIA GPU at PCI:1:0:0 (GPU fallen off the bus / RmInitAdapter failed!)](#Failed_to_initialize_the_NVIDIA_GPU_at_PCI:1:0:0_(GPU_fallen_off_the_bus_/_RmInitAdapter_failed!))
     *   [3.3 Resolution, screen scan wrong. EDID errors in Xorg.log](#Resolution,_screen_scan_wrong._EDID_errors_in_Xorg.log)
-    *   [3.4 Lockup issue (lspci hangs)](#Lockup_issue_(lspci_hangs))
-    *   [3.5 No screens found on a laptop/NVIDIA Optimus](#No_screens_found_on_a_laptop/NVIDIA_Optimus)
+    *   [3.4 Wrong resolution without EDID errors](#Wrong_resolution_without_EDID_errors)
+    *   [3.5 Lockup issue (lspci hangs)](#Lockup_issue_(lspci_hangs))
+    *   [3.6 No screens found on a laptop/NVIDIA Optimus](#No_screens_found_on_a_laptop/NVIDIA_Optimus)
 *   [4 Using nouveau](#Using_nouveau)
 *   [5 Using Bumblebee](#Using_Bumblebee)
 *   [6 Using nvidia-xrun](#Using_nvidia-xrun)
@@ -208,6 +209,10 @@ EndSection
 If Xorg wont start try swapping out all references of CRT to DFB. card0 is the identifier for the intel card to which the display is connected via LVDS. The edid binary is in this directory. If the hardware arrangement is different, the value for CustomEDID might vary but yet this has to be confirmed. The path will start in any case with /sys/class/drm.
 
 Alternatively you can generate your edid with tools like [read-edid](https://www.archlinux.org/packages/?name=read-edid) and point the driver to this file. Even modelines can be used, but then be sure to change "UseEDID" and "IgnoreEDID".
+
+### Wrong resolution without EDID errors
+
+Using `nvidia-xconfig`, incorrect information might be generated in Xorg.conf and in particular wrong monitor refresh rates that restruct the possible resolutions. Try commenting out the `HorizSync`/`VertRefresh` lines. If this helps, you can probably also remove everything else not mentioned in this article.
 
 ### Lockup issue (lspci hangs)
 

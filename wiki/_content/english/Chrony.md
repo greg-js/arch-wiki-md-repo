@@ -1,4 +1,4 @@
-This article describes how to set up and run [chrony](http://chrony.tuxfamily.org/), an alternative NTP client and server that is roaming friendly and designed specifically for systems that are not online all the time.
+This article describes how to set up and run [chrony](http://chrony.tuxfamily.org/), an alternative [NTP](/index.php/Time_synchronization "Time synchronization") client and server that is roaming friendly and designed specifically for systems that are not online all the time.
 
 ## Contents
 
@@ -139,7 +139,7 @@ You can either use *chronyc* to notify *chrony* that your network configuration 
 
 ### NetworkManager
 
-*chronyd* can be go into online/offline mode along with a network connection through the use of [NetworkManager's dispatcher scripts](/index.php/NetworkManager#Network_services_with_NetworkManager_dispatcher "NetworkManager"). You can install [networkmanager-dispatcher-chrony](https://aur.archlinux.org/packages/networkmanager-dispatcher-chrony/) from the AUR.
+*chronyd* can go into online/offline mode along with a network connection through the use of [NetworkManager's dispatcher scripts](/index.php/NetworkManager#Network_services_with_NetworkManager_dispatcher "NetworkManager"). You can install [networkmanager-dispatcher-chrony](https://aur.archlinux.org/packages/networkmanager-dispatcher-chrony/) from the AUR.
 
 ### netctl
 

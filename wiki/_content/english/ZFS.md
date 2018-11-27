@@ -222,6 +222,8 @@ Drives partitioned with GPT have labels and UUID that look like this.
 
 ```
 
+**Tip:** To minimize typing and copy/paste errors, set a local variable with the target PARTUUID: `$ UUID=$( lsblk --noheadings --output PARTUUID /dev/sd*XY* )`
+
 Now, finally, create the ZFS pool:
 
 ```
@@ -269,6 +271,8 @@ Create pool with two mirror vdevs:
 ### Advanced Format disks
 
 At pool creation, **ashift=12** should always be used, except with SSDs that have 8k sectors where **ashift=13** is correct. A vdev of 512 byte disks using 4k sectors will not experience performance issues, but a 4k disk using 512 byte sectors will. Since **ashift** cannot be changed after pool creation, even a pool with only 512 byte disks should use 4k because those disks may need to be replaced with 4k disks or the pool may be expanded by adding a vdev composed of 4k disks. Because correct detection of 4k disks is not reliabile, `-o ashift=12` should always be specified during pool creation. See the [ZFS on Linux FAQ](https://github.com/zfsonlinux/zfs/wiki/faq#advanced-format-disks) for more details.
+
+**Tip:** Use [blockdev(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/blockdev.8) (part of [util-linux](https://www.archlinux.org/packages/?name=util-linux)) to print the sector size reported by the device's ioctls: `# blockdev --getpbsz /dev/sd*XY*`
 
 Create pool with ashift=12 and single raidz vdev:
 

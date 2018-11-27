@@ -184,7 +184,7 @@ See [Kernel modules#Obtaining information](/index.php/Kernel_modules#Obtaining_i
 
 *   You can display extra debugging information about your hardware by following [udev#Debug output](/index.php/Udev#Debug_output "Udev").
 *   Ensure that [Microcode](/index.php/Microcode "Microcode") updates are applied on your system.
-*   Test your device's RAM with [Memtest86+](http://www.memtest.org/). Unstable RAM may lead to some extremely odd issues, ranging from random crashes to data corruption.
+*   Test your device's RAM with [memtest86+](https://www.archlinux.org/packages/?name=memtest86%2B). Unstable RAM may lead to some extremely odd issues, ranging from random crashes to data corruption. [memtester](https://www.archlinux.org/packages/?name=memtester) performs similar tests, but it can't test the whole RAM.
 
 ## Kernel panics
 

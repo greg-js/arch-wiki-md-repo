@@ -85,7 +85,7 @@ Para configurar y acceder fácilmente a NetworkManager la mayoría de los usuari
 
 El applet de GNOME [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) (anteriormente gnome-network-manager) es lo suficientemente ligero y funciona en todos los entornos.
 
-Si desea guardar los datos de autentificación (Wireless/DSL) y activar la configuración global de las conexiones, es decir, «disponible para todos los usuarios» instale y configure [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring").
+Si desea guardar los datos de autentificación (Wireless/DSL) y activar la configuración global de las conexiones, es decir, «disponible para todos los usuarios» instale y configure [GNOME Keyring](/index.php/GNOME/Keyring_(Espa%C3%B1ol) "GNOME/Keyring (Español)").
 
 ### KDE
 
@@ -127,7 +127,7 @@ Si nm-applet no le pide la contraseña cuando se conecta a las nuevas redes wifi
 
 Para que NetworkManager funcione correctamente en Openbox, el applet de GNOME requiere el demonio de notificación [xfce4-notifyd](https://www.archlinux.org/packages/?name=xfce4-notifyd), por la misma razón que en XFCE, y el paquete [gnome-icon-theme](https://www.archlinux.org/packages/?name=gnome-icon-theme) para poder mostrar el applet en la bandeja del sistema.
 
-Si desea guardar los datos de autentificación (Wireless/DSL) instale y configure [gnome-keyring](/index.php/Gnome-keyring "Gnome-keyring").
+Si desea guardar los datos de autentificación (Wireless/DSL) instale y configure [GNOME Keyring](/index.php/GNOME/Keyring_(Espa%C3%B1ol) "GNOME/Keyring (Español)").
 
 `nm-applet` instala el archivo autostart en `/etc/xdg/autostart/nm-applet.desktop`. Si tiene problemas con él (por ejemplo, `nm-applet` se inicia dos veces o no se inicia en absoluto), consulte [[Openbox#autostart] o [[1]](https://bbs.archlinux.org/viewtopic.php?pid=993738) para conocer la solución.
 
@@ -135,7 +135,7 @@ Si desea guardar los datos de autentificación (Wireless/DSL) instale y configur
 
 En todos los demás casos, se recomienda usar el applet de GNOME. Deberá asegurarse que tiene instalado el paquete [gnome-icon-theme](https://www.archlinux.org/packages/?name=gnome-icon-theme) para poder ver el applet.
 
-Para guardar información confidencial sobre las conexiones instale y configure [gnome-keyring](/index.php/Gnome-keyring "Gnome-keyring").
+Para guardar información confidencial sobre las conexiones instale y configure [GNOME Keyring](/index.php/GNOME/Keyring_(Espa%C3%B1ol) "GNOME/Keyring (Español)").
 
 Para ejecutar `nm-applet` en un entorno sin una bandeja de sistema, puede utilizar [trayer](https://www.archlinux.org/packages/?name=trayer) o [stalonetray](https://www.archlinux.org/packages/?name=stalonetray). Por ejemplo, puede agregar un script como este a su propia ruta:
 
@@ -289,7 +289,7 @@ esac
 
 #### Montar carpeta remota con sshfs
 
-Dado que el script viene ejecutado en un entorno muy restrictivo, es necesario exportar la variable `SSH_AUTH_SOCK` para poder conectarse al propio agente SSH. Hay diferentes maneras para lograr esto, vea [este enlace](https://bbs.archlinux.org/viewtopic.php?pid=1042030#p1042030) para más información. El siguiente ejemplo funciona con [gnome-keyring](/index.php/Gnome-keyring "Gnome-keyring"), y le pedirá la contraseña si no está desbloqueada ya. En caso de que NetworkManager se conecte automáticamente al iniciar sesión, es probable gnome-keyring aún no se haya iniciado, de modo que la exportación fallará (de ahí que entre en modo de espera). Conocer la `UUID` necesaria para comprobar que coincide se puede encontrar con la orden `nmcli con status` o `nmcli con list`.
+Dado que el script viene ejecutado en un entorno muy restrictivo, es necesario exportar la variable `SSH_AUTH_SOCK` para poder conectarse al propio agente SSH. Hay diferentes maneras para lograr esto, vea [este enlace](https://bbs.archlinux.org/viewtopic.php?pid=1042030#p1042030) para más información. El siguiente ejemplo funciona con [GNOME Keyring](/index.php/GNOME/Keyring_(Espa%C3%B1ol) "GNOME/Keyring (Español)"), y le pedirá la contraseña si no está desbloqueada ya. En caso de que NetworkManager se conecte automáticamente al iniciar sesión, es probable que GNOME Keyring aún no se haya iniciado, de modo que la exportación fallará (de ahí que entre en modo de espera). Conocer la `UUID` necesaria para comprobar que coincide se puede encontrar con la orden `nmcli con status` o `nmcli con list`.
 
 ```
 #!/bin/sh

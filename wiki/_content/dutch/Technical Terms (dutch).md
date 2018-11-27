@@ -5,11 +5,11 @@
 *   [2 Partities](#Partities)
     *   [2.1 Standaard Mappen structuur](#Standaard_Mappen_structuur)
     *   [2.2 Partitie Layout](#Partitie_Layout)
-        *   [2.2.1 Shadowhands's Layout](#Shadowhands.27s_Layout)
-        *   [2.2.2 Romashka's Layout](#Romashka.27s_Layout)
+        *   [2.2.1 Shadowhands's Layout](#Shadowhands's_Layout)
+        *   [2.2.2 Romashka's Layout](#Romashka's_Layout)
 *   [3 Apparaat namen](#Apparaat_namen)
     *   [3.1 Harde schijven](#Harde_schijven)
-    *   [3.2 CD/DVD apparaten](#CD.2FDVD_apparaten)
+    *   [3.2 CD/DVD apparaten](#CD/DVD_apparaten)
     *   [3.3 USB schijven](#USB_schijven)
 
 ## Introductie
@@ -90,7 +90,9 @@ Verklaring en details (optioneel)
     *   var — **4G** *(reiserfs)*
     *   media — **140G** *(ext3)*
 
-Alle ext3 partities gebruiken ook <tt>dir_index</tt> ([Details](https://bbs.archlinux.org/viewtopic.php?p=124880#124880)). Ik verkies ext3 over ext2 voor <tt>/boot<tt> omdat ext3 ook als ext2 gemount kan worden en het biedt betere opties voor data recovery. Ik gebruik reiserfs voor <tt>/var</tt> omdat reiserfs goed is met kleine bestanden (<16K), waaruit <tt>/var</tt> voor het meeste bestaat. Ik sla al mijn muziek, spellen, films etc. in <tt>/media</tt> op, omdat ik mijn home-map alleen gebruik voor persoonlijke bestanden.
+Alle ext3 partities gebruiken ook <tt>dir_index</tt> ([Details](https://bbs.archlinux.org/viewtopic.php?p=124880#124880)). Ik verkies ext3 over ext2 voor <tt>/boot <tt>omdat ext3 ook als ext2 gemount kan worden en het biedt betere opties voor data recovery. Ik gebruik reiserfs voor <tt>/var</tt> omdat reiserfs goed is met kleine bestanden (<16K), waaruit <tt>/var</tt> voor het meeste bestaat. Ik sla al mijn muziek, spellen, films etc. in <tt>/media</tt> op, omdat ik mijn home-map alleen gebruik voor persoonlijke bestanden.</tt></tt>
+
+<tt><tt>
 
 #### Romashka's Layout
 
@@ -158,3 +160,4 @@ In de volgende lijst is X de apparaat-letter (a-z)
 Nog te doen
 
 ```
+</tt></tt>

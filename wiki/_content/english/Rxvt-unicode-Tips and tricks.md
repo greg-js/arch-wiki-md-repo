@@ -411,7 +411,7 @@ urxvt -pe bidi
 
 ```
 
-**Note:** The font you're using should support your language. For example, for viewing Hebrew you should a font like terminus.
+**Note:** The font you're using should support your language. For example, for viewing Hebrew you should use a font like terminus.
 
 ## Bell Command
 

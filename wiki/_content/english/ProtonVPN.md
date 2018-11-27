@@ -2,7 +2,7 @@ Related articles
 
 *   [openvpn](/index.php/Openvpn "Openvpn")
 
-[ProtonVPN](https://www.protonvpn.com) is a VPN provider that utilizes OpenVPN protocol.
+[ProtonVPN](https://www.protonvpn.com) is a VPN provider that utilizes the OpenVPN protocol.
 
 In order to use this tutorial, one must have a protonvpn account.
 

@@ -122,8 +122,7 @@ Most Python projects target either Python 2 or Python 3, or target both using co
 For packages that do this, we need a [prepare()](/index.php/Creating_packages#prepare.28.29 "Creating packages") function that copies the source before it is built. Then the Python 2 and Python 3 packages can be converted and built independently without overriding each other.
 
 ```
-makedepends=("python" "python-setuptools"
-             "python2" "python2-setuptools")
+makedepends=("python-setuptools" "python2-setuptools")
 
 prepare() {
   cp -a foo-$pkgver{,-py2}

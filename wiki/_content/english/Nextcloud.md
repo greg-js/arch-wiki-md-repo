@@ -5,7 +5,7 @@ Related articles
 *   [OpenSSL](/index.php/OpenSSL "OpenSSL")
 *   [WebDAV](/index.php/WebDAV "WebDAV")
 
-From [Wikipedia](https://en.wikipedia.org/wiki/Nextcloud "wikipedia:Nextcloud"):
+From [Wikipedia:Nextcloud](https://en.wikipedia.org/wiki/Nextcloud "wikipedia:Nextcloud"):
 
 	Nextcloud is a suite of client-server software for creating and using file hosting services. It is functionally similar to Dropbox, although Nextcloud is free and open-source, allowing anyone to install and operate it on a private server. In contrast to proprietary services like Dropbox, the open architecture allows adding additional functionality to the server in form of applications.
 
@@ -69,7 +69,7 @@ Nextcloud is a fork of ownCloud. For differences between the two, see [wikipedia
 
 ## Prerequisites
 
-Nextcloud requires several components:[[1]](https://docs.nextcloud.com/server/13/admin_manual/installation/system_requirements.html#server)
+Nextcloud requires several components:[[1]](https://docs.nextcloud.com/server/14/admin_manual/installation/system_requirements.html#server)
 
 *   A web server: [Apache](/index.php/Apache "Apache") or [nginx](/index.php/Nginx "Nginx")
 *   A database: [MariaDB](/index.php/MariaDB "MariaDB")/MySQL, [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") or [Oracle](/index.php/Oracle "Oracle")
@@ -108,9 +108,9 @@ Exec = /usr/bin/runuser -u http -- /usr/bin/php /usr/share/webapps/nextcloud/occ
 
 ### PHP setup
 
-**Tip:** For all prerequisite PHP modules, see upstream documentation: [Nextcloud 13.0](https://docs.nextcloud.com/server/13/admin_manual/installation/source_installation.html#prerequisites-label).
+**Tip:** For all prerequisite PHP modules, see upstream documentation: [Nextcloud 14.0](https://docs.nextcloud.com/server/14/admin_manual/installation/source_installation.html#prerequisites-label).
 
-Install [PHP#gd](/index.php/PHP#gd "PHP") and [php-intl](https://www.archlinux.org/packages/?name=php-intl) as additional modules. Configure [OPcache](/index.php/PHP#OPCache "PHP") as recommended by [the documentation](https://docs.nextcloud.com/server/13/go.php?to=admin-php-opcache).
+Install [PHP#gd](/index.php/PHP#gd "PHP") and [php-intl](https://www.archlinux.org/packages/?name=php-intl) as additional modules. Configure [OPcache](/index.php/PHP#OPCache "PHP") as recommended by [the documentation](https://docs.nextcloud.com/server/14/admin_manual/configuration_server/server_tuning.html#enable-php-opcache).
 
 Some apps (*News* for example) require the `iconv` extension, if you wish to use these apps, uncomment the extension in `/etc/php/php.ini`.
 
@@ -120,7 +120,7 @@ Depending on which database backend will be used:
 *   For [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"), see [PHP#PostgreSQL](/index.php/PHP#PostgreSQL "PHP").
 *   For [SQLite](/index.php/SQLite "SQLite"), see [PHP#Sqlite](/index.php/PHP#Sqlite "PHP").
 
-Performance may be improved through the implementation of [caching](/index.php/PHP#Caching "PHP"), see [Configuring Memory Caching](https://docs.nextcloud.com/server/13/admin_manual/configuration_server/caching_configuration.html) on the official documentation for details.
+Performance may be improved through the implementation of [caching](/index.php/PHP#Caching "PHP"), see [Configuring Memory Caching](https://docs.nextcloud.com/server/14/admin_manual/configuration_server/caching_configuration.html) on the official documentation for details.
 
 ### Database setup
 
@@ -138,20 +138,20 @@ mysql> GRANT ALL PRIVILEGES ON `**nextcloud**`.* TO `**nextcloud**`@`localhost`;
 mysql> \q
 ```
 
-**Note:** Create or convert the database with MySQL 4-byte support in order to use Emojis (textbased smilies) on your Nextcloud server [[2]](https://docs.nextcloud.com/server/13/admin_manual/configuration_database/mysql_4byte_support.html).
+**Note:** Create or convert the database with MySQL 4-byte support in order to use Emojis (textbased smilies) on your Nextcloud server [[2]](https://docs.nextcloud.com/server/14/admin_manual/configuration_database/mysql_4byte_support.html).
 
 #### PostgreSQL
 
 The following is an example of setting up a [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") user and database:
 
- `$ sudo -u postgres createuser -h localhost -P nextcloud` 
+ `[postgres]$ createuser -h localhost -P nextcloud` 
 ```
 Enter password for new role:
 Enter it again:
 ```
 
 ```
-$ sudo -u postgres createdb -O nextcloud nextcloud
+[postgres]$ createdb -O nextcloud nextcloud
 
 ```
 
@@ -163,7 +163,7 @@ Depending on which [web server](/index.php/Web_server "Web server") you are usin
 
 #### Apache
 
-If you haven't already, install [Apache](/index.php/Apache "Apache") and install and enable [Apache's PHP module](/index.php/Apache#PHP "Apache")
+If you have not already, install [Apache](/index.php/Apache "Apache") and install and enable [Apache's PHP module](/index.php/Apache#PHP "Apache")
 
 Copy the Apache configuration file to the configuration directory:
 
@@ -193,7 +193,7 @@ Nextcloud comes with its own [WebDAV](/index.php/WebDAV "WebDAV") implementation
 
 Make sure PHP-FPM has been configured correctly as described in [Nginx#FastCGI](/index.php/Nginx#FastCGI "Nginx"). Uncomment `env[PATH]` in `/etc/php/php-fpm.d/www.conf` as it is required by Nextcloud.
 
-Create a [server block](/index.php/Nginx#Server_blocks "Nginx") and add the content according to the [Nextcloud documentation](https://docs.nextcloud.com/server/13/admin_manual/installation/nginx.html):
+Create a [server block](/index.php/Nginx#Server_blocks "Nginx") and add the content according to the [Nextcloud documentation](https://docs.nextcloud.com/server/14/admin_manual/installation/nginx.html):
 
 **Note:** Use `/usr/share/webapps/nextcloud` as `root` location when using [nextcloud](https://www.archlinux.org/packages/?name=nextcloud).
 
@@ -265,11 +265,11 @@ If you have set `open_basedir` in your PHP/web server configuration file (e.g. `
 
 ### Configure caching
 
-It is recommended to [enable caching](https://docs.nextcloud.com/server/13/admin_manual/configuration_server/caching_configuration.html). The Nextcloud documentation provides instructions on [Redis](/index.php/Redis "Redis"), Memcached and [APCu](/index.php/PHP#APCu "PHP").
+It is recommended to [enable caching](https://docs.nextcloud.com/server/14/admin_manual/configuration_server/caching_configuration.html). The Nextcloud documentation provides instructions on [Redis](/index.php/Redis "Redis"), Memcached and [APCu](/index.php/PHP#APCu "PHP").
 
 ## Security Hardening
 
-See the [Nextcloud documentation](https://docs.nextcloud.com/server/13/admin_manual/configuration_server/harden_server.html) and [Security](/index.php/Security "Security"). Nextcloud additionally provides a [Security scanner](https://scan.nextcloud.com/).
+See the [Nextcloud documentation](https://docs.nextcloud.com/server/14/admin_manual/configuration_server/harden_server.html) and [Security](/index.php/Security "Security"). Nextcloud additionally provides a [Security scanner](https://scan.nextcloud.com/).
 
 ### uWSGI
 
@@ -392,25 +392,13 @@ cron2 = minute=-15,unique=1 /usr/bin/php -f /usr/share/webapps/nextcloud/cron.ph
 *   The [open_basedir](/index.php/PHP#Configuration "PHP") directive is optional and commented out. You can uncomment to harden security. Be aware that it may [occasionally break things](https://github.com/owncloud/core/search?q=open_basedir&type=Issues).
 *   Use `php-docroot = /usr/share/webapps` if placing nextcloud in /nextcloud subdirectory.
 
-**Warning:** The way the [Nextcloud background job](https://docs.nextcloud.com/server/13/admin_manual/configuration_server/background_jobs_configuration.html) is currently set up with [uWSGI cron](https://uwsgi-docs.readthedocs.org/en/latest/Cron.html) will make use of the default global configuration from `/etc/php/php.ini`. This means that none of the specific parameters defined (e.g. required modules) will be enabled, [leading to various issues](https://github.com/owncloud/core/issues/12678#issuecomment-66114448). One solution is to copy `/etc/php/php.ini` to e.g. `/etc/uwsgi/cron-php.ini`, make the required modifications there (mirroring `/etc/uwsgi/nextcloud.ini` parameters) and referencing it in the cron directive by adding the `-c /etc/uwsgi/cron-php.ini` option to *php* invocation.
+**Warning:** The way the [Nextcloud background job](https://docs.nextcloud.com/server/14/admin_manual/configuration_server/background_jobs_configuration.html) is currently set up with [uWSGI cron](https://uwsgi-docs.readthedocs.org/en/latest/Cron.html) will make use of the default global configuration from `/etc/php/php.ini`. This means that none of the specific parameters defined (e.g. required modules) will be enabled, [leading to various issues](https://github.com/owncloud/core/issues/12678#issuecomment-66114448). One solution is to copy `/etc/php/php.ini` to e.g. `/etc/uwsgi/cron-php.ini`, make the required modifications there (mirroring `/etc/uwsgi/nextcloud.ini` parameters) and referencing it in the cron directive by adding the `-c /etc/uwsgi/cron-php.ini` option to *php* invocation.
 
 #### Activation
 
-[uWSGI](/index.php/UWSGI "UWSGI") provides a [template unit](/index.php/Systemd#Using_units "Systemd") that allows to start and enable application using their configuration file name as instance identifier. For example:
+[uWSGI](/index.php/UWSGI "UWSGI") provides a [template unit](/index.php/Systemd#Using_units "Systemd") that allows to start and enable application using their configuration file name as instance identifier. For example, [starting](/index.php/Start "Start") `uwsgi@nextcloud.socket` would start it on demand referencing the configuration file `/etc/uwsgi/nextcloud.ini`.
 
-```
-# systemctl start uwsgi@nextcloud.socket
-
-```
-
-would start it on demand referencing the configuration file `/etc/uwsgi/nextcloud.ini`.
-
-To enable the uwsgi service by default at start-up, run:
-
-```
-# systemctl enable uwsgi@nextcloud.socket
-
-```
+To enable the uwsgi service by default at start-up, [enable](/index.php/Enable "Enable") `uwsgi@nextcloud.socket`.
 
 **Note:** Here we make use of [systemd socket activation](http://0pointer.de/blog/projects/socket-activation.html) to prevent unnecessary resources consumption when no connections are made to the instance. If you would rather have it constantly active, simply remove the `.socket` part to start and enable the service instead.
 
@@ -489,11 +477,11 @@ https://ADDRESS/remote.php/caldav
 
 ```
 
-For details see the [official documentation](https://docs.nextcloud.com/server/13/user_manual/pim/index.html).
+For details see the [official documentation](https://docs.nextcloud.com/server/14/user_manual/pim/index.html).
 
 #### Contacts
 
-To sync contacts with [Thunderbird](/index.php/Thunderbird "Thunderbird"), see [these instructions](https://docs.nextcloud.com/server/13/user_manual/pim/sync_thunderbird.html) from the official doc.
+To sync contacts with [Thunderbird](/index.php/Thunderbird "Thunderbird"), see [these instructions](https://docs.nextcloud.com/server/14/user_manual/pim/sync_thunderbird.html) from the official doc.
 
 #### Mounting files with davfs2
 
@@ -542,7 +530,7 @@ Download the official Nextcloud app from the [App Store](https://itunes.apple.co
 
 ### Environment variables not available
 
-Uncomment the line in `/etc/php/php-fpm.d/www.conf` as per [Nextcloud documentation](https://docs.nextcloud.com/server/13/go.php?to=admin-php-fpm):
+Uncomment the line in `/etc/php/php-fpm.d/www.conf` as per [Nextcloud documentation](https://docs.nextcloud.com/server/14/admin_manual/installation/source_installation.html#php-fpm-tips-label):
 
 ```
  env[PATH] = /usr/local/bin:/usr/bin:/bin
@@ -588,15 +576,15 @@ Restart the httpd service to activate your certificate.
 Once you have followed the setup for SSL, as on [Apache HTTP Server#TLS](/index.php/Apache_HTTP_Server#TLS "Apache HTTP Server") for example, early versions of DAVdroid will reject the connection because the certificate is not trusted. A certificate can be made as follows on your server:
 
 ```
- # openssl x509 -req -days 365 -in /etc/httpd/conf/server.csr -signkey /etc/httpd/conf/server.key -extfile android.txt -out CA.crt
- # openssl x509 -inform PEM -outform DER -in CA.crt -out CA.der.crt 
+# openssl x509 -req -days 365 -in /etc/httpd/conf/server.csr -signkey /etc/httpd/conf/server.key -extfile android.txt -out CA.crt
+# openssl x509 -inform PEM -outform DER -in CA.crt -out CA.der.crt 
 
 ```
 
 The file `android.txt` should contain the following:
 
 ```
- basicConstraints=CA:true
+basicConstraints=CA:true
 
 ```
 
@@ -631,7 +619,7 @@ This is most likely a certificate issue. Recreate it, and do not leave the commo
 
 ### Seeing white page after login
 
-The cause is probably a new app that you installed. To fix that, you can use the occ command as described [here](https://docs.nextcloud.com/server/13/admin_manual/configuration_server/occ_command.html). So with
+The cause is probably a new app that you installed. To fix that, you can use the occ command as described [here](https://docs.nextcloud.com/server/14/admin_manual/configuration_server/occ_command.html). So with
 
 ```
 sudo -u http php /usr/share/webapps/nextcloud/occ app:list
@@ -671,7 +659,7 @@ You may see the following error in the ownCloud sync client:
 
 ```
 
-This is caused by an issue with the File Locking app, which is often not sufficient to keep conflicts from occurring on some webserver configurations. A more complete [Transactional File Locking](https://docs.nextcloud.com/server/13/admin_manual/configuration_files/files_locking_transactional.html) is available that rids these errors, but you must be using the Redis php-caching method. Install [redis](https://www.archlinux.org/packages/?name=redis) and [php-redis](https://aur.archlinux.org/packages/php-redis/), comment out your current php-cache mechanism, and then in `/etc/php/conf.d/redis.ini` uncomment `extension=redis`. Then in `config.php` make the following changes:
+This is caused by an issue with the File Locking app, which is often not sufficient to keep conflicts from occurring on some webserver configurations. A more complete [Transactional File Locking](https://docs.nextcloud.com/server/14/admin_manual/configuration_files/files_locking_transactional.html) is available that rids these errors, but you must be using the Redis php-caching method. Install [redis](https://www.archlinux.org/packages/?name=redis) and [php-redis](https://aur.archlinux.org/packages/php-redis/), comment out your current php-cache mechanism, and then in `/etc/php/conf.d/redis.ini` uncomment `extension=redis`. Then in `config.php` make the following changes:
 
 ```
    'memcache.local' => '\OC\Memcache\Redis',
@@ -693,7 +681,7 @@ If everything is working, you should see 'Transactional File Locking Enabled' un
 
 ### "Cannot write into apps directory"
 
-As mentioned in the [official admin manual](https://docs.nextcloud.com/server/13/admin_manual/installation/apps_management_installation.html), either you need an apps directory that is writable by the http user, or you need to set `appstoreenabled` to `false`.
+As mentioned in the [official admin manual](https://docs.nextcloud.com/server/14/admin_manual/installation/apps_management_installation.html), either you need an apps directory that is writable by the http user, or you need to set `appstoreenabled` to `false`.
 
 If you have set `open_basedir` in your PHP/web server configuration file (e.g. `/etc/httpd/conf/extra/nextcloud.conf`), it may be necessary to add your */path/to/data* directory to the string on the line starting with `php_admin_value open_basedir` :
 
@@ -701,7 +689,7 @@ If you have set `open_basedir` in your PHP/web server configuration file (e.g. `
 
 ### Installed apps get blocked because of MIME type error
 
-If you're putting your apps folder outside of the nextcloud installation directory make sure your webserver serves it properly.
+If you are putting your apps folder outside of the nextcloud installation directory make sure your webserver serves it properly.
 
 In nginx this is accomplished by adding a location block to the nginx configuration as the folder will not be included in it by default.
 
@@ -714,7 +702,7 @@ location ~ /apps2/(.*)$ {
 
 ### Security warnings even though the recommended settings have been included in nginx.conf
 
-At the top of the admin page there might be a warning to set the `Strict-Transport-Security`, `X-Content-Type-Options`, `X-Frame-Options`, `X-XSS-Protection` and `X-Robots-Tag` according to [https://docs.nextcloud.com/server/13/admin_manual/configuration_server/harden_server.html](https://docs.nextcloud.com/server/13/admin_manual/configuration_server/harden_server.html) even though they are already set like that.
+At the top of the admin page there might be a warning to set the `Strict-Transport-Security`, `X-Content-Type-Options`, `X-Frame-Options`, `X-XSS-Protection` and `X-Robots-Tag` according to [https://docs.nextcloud.com/server/14/admin_manual/configuration_server/harden_server.html](https://docs.nextcloud.com/server/14/admin_manual/configuration_server/harden_server.html) even though they are already set like that.
 
 A possible cause could be that because owncloud sets those settings, uwsgi passed them along and nginx added them again:
 
@@ -730,6 +718,7 @@ X-Content-Type-Options: nosniff
 X-Frame-Options: SAMEORIGIN
 X-XSS-Protection: 1; mode=block
 X-Robots-Tag: none
+
 ```
 
 While the fast_cgi sample config has a parameter to avoid that ( `fastcgi_param modHeadersAvailable true; #Avoid sending the security headers twice` ), when using uwsgi and nginx the following modification of the uwsgi part in nginx.conf could help:
@@ -752,6 +741,7 @@ While the fast_cgi sample config has a parameter to avoid that ( `fastcgi_param 
             #uwsgi_pass 127.0.0.1:3001;
         }
 ...
+
 ```
 
 ### "Reading from keychain failed with error: 'No keychain service available'"
@@ -776,28 +766,10 @@ Starting with php 7.2 the extension mcrypt was removed.[[6]](https://wiki.php.ne
 
 To fix the error about mcrypt in Nextcloud logs, a version of this extension compatible with php 7.2 can be installed via PECL.
 
-1\. Install [php-pear](https://aur.archlinux.org/packages/php-pear/) if you don't have it already
-
-2\. Update PECL channels
-
-```
-# pecl channel-update pecl.php.net
-
-```
-
-3\. Install mcrypt 1.0.1
-
-```
-# pecl install mcrypt-1.0.1
-
-```
-
-4\. Uncomment this line in /etc/php/php.conf
-
-```
-;extension=mcrypt.so
-
-```
+1.  Install [php-pear](https://aur.archlinux.org/packages/php-pear/) if you do not have it already
+2.  Update PECL channels: `# pecl channel-update pecl.php.net` 
+3.  Install mcrypt 1.0.1: `# pecl install mcrypt-1.0.1` 
+4.  Uncomment this line in `/etc/php/php.conf`: `;extension=mcrypt.so` 
 
 ## Tips and tricks
 
@@ -881,13 +853,13 @@ location ^~ /owncloud {
     add_header X-Robots-Tag none;
     add_header X-Download-Options noopen;
     add_header X-Permitted-Cross-Domain-Policies none;
-    # Optional: Don't log access to assets
+    # Optional: Do not log access to assets
     access_log off;
   }
 
   location ~* \.(?:svg|gif|png|html|ttf|woff|ico|jpg|jpeg) {
     try_files $uri /owncloud/index.php$uri$is_args$args;
-    # Optional: Don't log access to other assets
+    # Optional: Do not log access to other assets
     access_log off;
   }
 }
@@ -962,13 +934,7 @@ Confirm that it is running by running
 
 The first, install a [docker](https://www.archlinux.org/packages/?name=docker) package to provide collabora files and setup a Collabora server.
 
-[Start/enable](/index.php/Start/enable "Start/enable") docker.service
-
-```
-# systemctl enable docker.service
-# systemctl start docker.service
-
-```
+[Start/enable](/index.php/Start/enable "Start/enable") `docker.service`.
 
 Then, download the required binares :
 
@@ -984,7 +950,7 @@ And, installing a Collabora server. Make sure `cloud//.example//.com` is your ne
 
 ```
 
-Also make sure to escape all dots with double backslashes (\), since this string will be evaluated as a regular expression (and your bash 'eats' the first backslash.) If you want to use the docker container with more than one Nextcloud, you'll need to use 'domain=cloud\\.example\\.com\|second\\.example\\.com' instead. (All hosts are separated by \|.) When using `localhost` as domain for testing you need to add {ic|--net host}} to ensure the docker container can access your Nextcloud server.
+Also make sure to escape all dots with double backslashes (\), since this string will be evaluated as a regular expression (and your bash 'eats' the first backslash.) If you want to use the docker container with more than one Nextcloud, you will need to use 'domain=cloud\\.example\\.com\|second\\.example\\.com' instead. (All hosts are separated by \|.) When using `localhost` as domain for testing you need to add {ic|--net host}} to ensure the docker container can access your Nextcloud server.
 
 If you need to delete or reinstall Collabora server use:
 
@@ -1007,7 +973,7 @@ Futher, follow the instruction of webserver you are using:
 
 **Nginx setup example:**
 
-Add following to your nextcloud domain config or add new config file in /etc/nginx/conf.d/ directory, (Don't forget to change `office.example.com` and `ssl_certificate` to the right values:
+Add following to your nextcloud domain config or add new config file in /etc/nginx/conf.d/ directory, (Do not forget to change `office.example.com` and `ssl_certificate` to the right values:
 
  `/etc/nginx/conf.d/example.conf` 
 ```
@@ -1069,16 +1035,11 @@ Restart a nginx:
 
 ```
 
-or
-
-```
-# systemctl restart nginx.service
-
-```
+or [restart](/index.php/Restart "Restart") `nginx.service`.
 
 **Apache setup example:**
 
-Add following to nextcloud config file. Don't forget to change to the right values
+Add following to nextcloud config file. Do not forget to change to the right values
 
  `/etc/httpd/conf/extra/nextcloud.conf` 
 ```
@@ -1128,12 +1089,7 @@ ProxyPassReverse    /lool https://127.0.0.1:9980/lool
 
 ```
 
-After configuring these do restart your apache:
-
-```
-# systemctl restart httpd
-
-```
+After configuring these do restart your apache by [restarting](/index.php/Restart "Restart") `httpd.service`.
 
 **Install the Nextcloud app**
 
@@ -1153,10 +1109,10 @@ Alter the `/etc/loolwsd/loolwsd.xml` file, so that:
 
 Then:
 
-*   start and enable `loolwsd.service`;
+*   [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `loolwsd.service`;
 *   configure Nginx as showed in /usr/share/doc/loolwsd/example.nginx.conf, and restart it.
 
 ## See also
 
 *   [nextcloud official website](https://docs.nextcloud.com/)
-*   [nextcloud 13.0 Admin Documentation](https://docs.nextcloud.com/server/13/admin_manual/)
+*   [nextcloud 14.0 Admin Documentation](https://docs.nextcloud.com/server/14/admin_manual/)

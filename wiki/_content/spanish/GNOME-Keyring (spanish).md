@@ -13,7 +13,7 @@ Este artículo es una traducción de [GNOME/Keyring](/index.php/GNOME/Keyring "G
         *   [3.1.2 Inicio de sesión de consola](#Inicio_de_sesión_de_consola)
             *   [3.1.2.1 Método PAM](#Método_PAM)
             *   [3.1.2.2 Método xinitrc](#Método_xinitrc)
-    *   [3.2 With a display manager](#With_a_display_manager)
+    *   [3.2 Con un gestor de pantalla](#Con_un_gestor_de_pantalla)
 *   [4 SSH keys](#SSH_keys)
     *   [4.1 Start SSH and Secrets components of keyring daemon](#Start_SSH_and_Secrets_components_of_keyring_daemon)
     *   [4.2 Disable keyring daemon components](#Disable_keyring_daemon_components)
@@ -138,18 +138,18 @@ exec i3
 
 ```
 
-### With a display manager
+### Con un gestor de pantalla
 
-When using a display manager, the keyring works out of the box for most cases. The following display managers automatically unlock the keyring once you log in:
+Cuando se utiliza un gestor de pantalla, el llavero funciona de manera inmediata para la mayoría de los casos. Los siguientes gestores de pantalla desbloquean automáticamente el llavero una vez que inicie sesión:
 
-*   [GDM](/index.php/GDM "GDM")
-*   [LightDM](/index.php/LightDM "LightDM")
+*   [GDM](/index.php/GDM_(Espa%C3%B1ol) "GDM (Español)")
+*   [LightDM](/index.php/LightDM_(Espa%C3%B1ol) "LightDM (Español)")
 *   [LXDM](/index.php/LXDM "LXDM")
 *   [SDDM](/index.php/SDDM "SDDM")
 
-For GDM and LightDM, note the keyring [must be](https://wiki.gnome.org/Projects/GnomeKeyring/Pam) named *login* to be automatically unlocked.
+En GDM y LightDM, advierta que el llavero [debe ser](https://wiki.gnome.org/Projects/GnomeKeyring/Pam) nombrado como *login* para ser desbloqueado automáticamente.
 
-To enable the keyring for applications run through the terminal, such as SSH, add the following to your `~/.bash_profile`, `~/.zshenv`, or similar:
+Para activar el llavero para las aplicaciones que se ejecutan a través del terminal, como SSH, añada lo siguiente a su `~/.bash_profile`, `~/.zshenv`, o similar:
 
  `~/.bash_profile` 
 ```

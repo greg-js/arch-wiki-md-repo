@@ -70,8 +70,8 @@ install CD version
 install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
-| Lenovo ThinkPad E485 | 2018-10-01 | Yes | Yes | Yes | Yes | Yes | Yes | N/A | Missing IVRS map in ACPI Table, add `amd_iommu=pt ivrs_ioapic[32]=00:14.0` in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") |
-| Lenovo ThinkPad E585 | 2018-11-01 | Yes | Yes | Yes | Yes | Yes | Yes | N/A | Missing IVRS map in ACPI Table, add `amd_iommu=pt ivrs_ioapic[32]=00:14.0` in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") |
+| Lenovo ThinkPad E485 | 2018-10-01 | Yes | Yes | Yes | Yes | Yes | Yes | N/A | Missing IVRS map in ACPI Table, add `amd_iommu=pt ivrs_ioapic[32]=00:14.0` in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). In order to get microsd (SDHCI) working, `echo 'options sdhci debug_quirks2="0x8000"' > /etc/modprobe.d/sdhci.conf` and change module load order `MODULES=(sdhci sdhci_pci)` in `/etc/mkinitcpio.conf` (line 7). Don't forget to run `mkinitcpio -p linux` afterwards. |
+| Lenovo ThinkPad E585 | 2018-11-01 | Yes | Yes | Yes | Yes | Yes | Yes | N/A | Missing IVRS map in ACPI Table, add `amd_iommu=pt ivrs_ioapic[32]=00:14.0` in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") In order to get microsd (SDHCI) working, `echo 'options sdhci debug_quirks2="0x8000"' > /etc/modprobe.d/sdhci.conf` and change module load order `MODULES=(sdhci sdhci_pci)` in `/etc/mkinitcpio.conf` (line 7). Don't forget to run `mkinitcpio -p linux` afterwards. |
 
 #### L series
 

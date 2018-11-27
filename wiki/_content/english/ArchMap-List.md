@@ -1090,5 +1090,6 @@ You can use the following website to get your device's coordinates along with a 
 42.815365, -1.659304 "tuxpain" # Pamplona, Spain
 40.954970, 17.297039 "max.bra" # Monopoli, Italy
 -33.8888, 18.507 "Storm" # Cape Town, South Africa
+49.0610688, 33.40288 "stanislav_sizonov" # Kremenchuk, Ukraine
 
 ```

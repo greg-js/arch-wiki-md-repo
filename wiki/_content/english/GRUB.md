@@ -29,8 +29,7 @@ Related articles
     *   [4.2 LVM](#LVM)
     *   [4.3 RAID](#RAID)
     *   [4.4 Encryption](#Encryption)
-        *   [4.4.1 Root partition](#Root_partition)
-        *   [4.4.2 Boot partition](#Boot_partition)
+        *   [4.4.1 Boot partition](#Boot_partition)
     *   [4.5 Boot menu entries](#Boot_menu_entries)
         *   [4.5.1 GRUB commands](#GRUB_commands)
             *   [4.5.1.1 "Shutdown" menu entry](#"Shutdown"_menu_entry)
@@ -252,31 +251,13 @@ Where the RAID 1 array housing `/boot` is housed on `/dev/sda` and `/dev/sdb`.
 
 ### Encryption
 
-#### Root partition
-
-To encrypt a root filesystem to be used with GRUB, add the `encrypt` hook or the `sd-encrypt` hook (if using systemd hooks) to [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"). See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for details, and [mkinitcpio#Common hooks](/index.php/Mkinitcpio#Common_hooks "Mkinitcpio") for alternative encryption hooks.
-
-If using the `encrypt` hook, add the `cryptdevice` parameter to `/etc/default/grub`.
-
- `/etc/default/grub`  `GRUB_CMDLINE_LINUX="cryptdevice=UUID=*device-UUID*:cryptroot"` 
-
-If using the `sd-encrypt` hook, add `rd.luks.name`:
-
- `/etc/default/grub`  `GRUB_CMDLINE_LINUX="rd.luks.name=*device-UUID*=cryptroot"` 
-
-where *device-UUID* is the UUID of the LUKS-encrypted device.
+In order to boot an encrypted root filesystem, see [dm-crypt/System configuration](/index.php/Dm-crypt/System_configuration "Dm-crypt/System configuration") and add the necessary kernel parameters to `GRUB_CMDLINE_LINUX`.
 
 Be sure to [generate the main configuration file](#Generate_the_main_configuration_file) when done.
 
-For further information about bootloader configuration for encrypted devices, see [dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration").
-
-**Note:** If you wish to encrypt `/boot` either as a separate partition or part of the `/` partition, further setup is required. See [#Boot partition](#Boot_partition).
-
-**Tip:** If you are upgrading from a working GRUB Legacy configuration, check `/boot/grub/menu.lst.pacsave` for the correct device/label to add. Look for them after the text `kernel /vmlinuz-linux`.
-
 #### Boot partition
 
-GRUB can be set to ask for a password to open a [LUKS](/index.php/LUKS "LUKS") blockdevice in order to read its configuration and load any [initramfs](/index.php/Initramfs "Initramfs") and [kernel](/index.php/Kernel "Kernel") from it. This option tries to solve the issue of having an [unencrypted boot partition](/index.php/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition "Dm-crypt/Specialties").
+GRUB also has special support for booting with an encrypted `/boot`. This is done by unlocking a [LUKS](/index.php/LUKS "LUKS") blockdevice in order to read its configuration and load any [initramfs](/index.php/Initramfs "Initramfs") and [kernel](/index.php/Kernel "Kernel") from it. This option tries to solve the issue of having an [unencrypted boot partition](/index.php/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition "Dm-crypt/Specialties").
 
 **Note:** `/boot` is **not** required to be kept in a separate partition; it may also stay under the system's root `/` directory tree.
 
@@ -288,7 +269,7 @@ To enable this feature encrypt the partition with `/boot` residing on it using [
 
 This option is used by grub-install to generate the grub `core.img`, so make sure to [install grub](#Installation) after modifying this option.
 
-Without further changes you will be prompted twice for a passhrase: the first for GRUB to unlock the `/boot` mount point in early boot, the second to unlock the root filesystem itself as described in [#Root partition](#Root_partition). You can use a [keyfile](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption") to avoid this.
+Without further changes you will be prompted twice for a passhrase: the first for GRUB to unlock the `/boot` mount point in early boot, the second to unlock the root filesystem itself as implemented by the initramfs. You can use a [keyfile](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption") to avoid this.
 
 **Warning:**
 

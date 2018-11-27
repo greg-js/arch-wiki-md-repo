@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Python package guidelines](/index.php/Python_package_guidelines "Python package guidelines"). Data da última tradução: 2018-11-02\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Python_package_guidelines&diff=0&oldid=552495) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Python package guidelines](/index.php/Python_package_guidelines "Python package guidelines"). Data da última tradução: 2018-11-26\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Python_package_guidelines&diff=0&oldid=557376) na versão em inglês.
 
 **[Diretrizes de criação de pacotes](/index.php/Padr%C3%B5es_de_empacotamento_do_Arch "Padrões de empacotamento do Arch")**
 
@@ -17,6 +17,7 @@ Esse documento cobre padrões e diretrizes na escrita de [PKGBUILDs](/index.php/
     *   [2.1 distutils](#distutils)
     *   [2.2 setuptools](#setuptools)
     *   [2.3 pip](#pip)
+    *   [2.4 Tradução 2to3 em tempo de compilação](#Tradução_2to3_em_tempo_de_compilação)
 *   [3 Verificação](#Verificação)
 *   [4 Notas](#Notas)
 
@@ -115,6 +116,41 @@ python -O -m compileall "${pkgdir}/caminho/para/o/módulo"
 ```
 
 **Atenção:** O uso de pacotes *pip* e/ou de wheel é desencorajado em favor dos pacotes fonte setuptools, e deve ser usado somente quando o último não é uma opção viável (por exemplo, pacotes que **somente** vêm com roda fontes e, portanto, não pode ser instalado usando setuptools).
+
+### Tradução 2to3 em tempo de compilação
+
+A maioria dos projetos em Python tem como alvo o Python 2 ou o Python 3, ou ambos usam camadas de compatibilidade como [six](https://pythonhosted.org/six/). No entanto, alguns usam a palavra-chave 2to3 reprovada em setuptools para converter heuristicamente o código-fonte do Python 2 para o Python 3 no momento da criação. Como resultado, os mesmos diretórios de origem não podem ser usados para construir os pacotes divididos do Python 2 e do Python 3.
+
+Para pacotes que fazem isso, precisamos de uma função [prepare()](/index.php/Criando_pacotes#prepare() "Criando pacotes") que copie a fonte antes que ela seja construída. Em seguida, os pacotes do Python 2 e do Python 3 podem ser convertidos e construídos independentemente, sem se sobreporem uns aos outros.
+
+```
+makedepends=("python-setuptools" "python2-setuptools")
+
+prepare() {
+  cp -a foo-$pkgver{,-py2}
+}
+
+build() {
+    cd "$srcdir/foo-$pkgver"
+    python setup.py build
+
+    cd "$srcdir/foo-$pkgver-py2"
+    python2 setup.py build
+}
+
+package_python-foo() {
+    depends=("python2")
+    cd "$srcdir/foo-$pkgver"
+    python setup.py install --root="$pkgdir/" --optimize=1 --skip-build
+}
+
+package_python2-foo() {
+    depends=("python2")
+    cd "$srcdir/foo-$pkgver-py2"
+    python2 setup.py install --root="$pkgdir/" --optimize=1 --skip-build
+}
+
+```
 
 ## Verificação
 

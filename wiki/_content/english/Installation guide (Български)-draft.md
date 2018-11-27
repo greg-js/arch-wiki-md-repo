@@ -1,6 +1,8 @@
+**Note:** Use this page to apply updates from the main [EN](/index.php/Installation_guide "Installation guide") article before a sync with the [BG](/index.php/Installation_guide_(%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D1%81%D0%BA%D0%B8) "Installation guide (Български)") article.
+
 Тази страница е ръководство за исталирането на [Arch Linux](/index.php/Arch_Linux "Arch Linux") от “живия“ диск зареден от официалния инсталационен образ. Преди инсталиране е препорачително да погледнете [често задаваните въпроси](/index.php/FAQ "FAQ"). За нормите използвани в този документ вижте [Help:Reading](/index.php/Help:Reading "Help:Reading"). В частност , примери форматирани с `*курсив*` трябва да бъдат заменени.
 
-За по обстойни иструкции вижте съответните [ArchWiki](/index.php/ArchWiki "ArchWiki") страници или [man page](/index.php/Man_page "Man page") ръководства на самите програми, връзки и за двете от които са налични на тази страница. При нужда от помощ може да се обърнете към [чат-а](/index.php/IRC_channel "IRC channel") или да оставите своите въпроси във [форума](https://bbs.archlinux.org/).
+За по обстойни иструкции вижте съответните [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") страници или [man page](/index.php/Man_page "Man page") ръководства на самите програми, връзки и за двете от които са налични на тази страница. При нужда от помощ може да се обърнете към [чат-а](/index.php/IRC_channel "IRC channel") или да оставите своите въпроси във [форума](https://bbs.archlinux.org/).
 
 Arch Linux би трябвало да работи на всяка [x86_64](https://en.wikipedia.org/wiki/X86-64 "wikipedia:X86-64") съвместима машина с поне 512 MB RAM. Основна инсталация с всички пакети от група [base](https://www.archlinux.org/groups/x86_64/base/) може да заеме по-малко от 800 MB of дисково пространство. Тъй като инсталационният процес трябва да вземе пакети от външни хранилища, това ръководство приема, че е налична работеща интернет връзка.
 
@@ -125,7 +127,7 @@ The live environment can be booted from a [USB flash drive](/index.php/USB_flash
 Следните *дялове* са **необходими** за избраното устройство:
 
 *   Един дял за root директорията `/`.
-*   Ако [UEFI](/index.php/UEFI "UEFI") е включено, и [системен дял](/index.php/EFI_system_partition "EFI system partition").
+*   Ако [UEFI](/index.php/UEFI "UEFI") е включено, и [системен дял](/index.php/EFI_System_Partition "EFI System Partition").
 
 **Note:** [Swap](/index.php/Swap "Swap") може да бъде отделен дял или [файл](/index.php/Swap_file "Swap file").
 

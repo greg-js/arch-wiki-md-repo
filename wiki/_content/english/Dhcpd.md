@@ -22,7 +22,7 @@ dhcpd is the [Internet Systems Consortium](http://www.isc.org/downloads/dhcp/) D
 
 ## Usage
 
-*dhcpd* includes a unit file `dhcpd.service`, which can be used to [control](/index.php/Enable "Enable") the daemon. It starts the daemon for *all* [network interfaces](/index.php/Network_interfaces "Network interfaces"). See [#Listening on only one interface](#Listening_on_only_one_interface) for alternative.
+*dhcpd* includes two unit files `dhcpd4.service` and `dhcpd6.service`, which can be used to [control](/index.php/Enable "Enable") the daemon. They start the daemon on *all* [network interfaces](/index.php/Network_interfaces "Network interfaces") for IPv4 and IPv6 respectively. See [#Listening on only one interface](#Listening_on_only_one_interface) for an alternative.
 
 ## Configuration
 

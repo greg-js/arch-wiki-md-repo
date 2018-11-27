@@ -6,7 +6,8 @@
 *   [2 Latitude](#Latitude)
 *   [3 Precision](#Precision)
 *   [4 Studio](#Studio)
-*   [5 XPS](#XPS)
+*   [5 Vostro](#Vostro)
+*   [6 XPS](#XPS)
 
 ## Inspiron
 
@@ -74,6 +75,14 @@ install CD version
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | Studio 1749 | 2013.01.04 | Radeon HD 5650M, `xf86-video-ati` is almost flawless (just slower 3D), `catalyst` is faster but has various issues. | HDA Intel MID, works with ALSA after adding `options snd-hda-intel index=0 model=dell-m6-dmic` to `/etc/modprobe.d/alsa-base.conf`. HDMI audio has some issues. | Yes | BCM43224, brcmsmac and [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl) both work | N/A | Suspend works; hibernate untested. | N/A | SD card reader works, media keys work, web cam, and microphone both work. | Flawless except for poor 3D performance and battery life. |
 | Studio XPS M1640 | (2009.08) | ATI HD4670 Mobile works with [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) (see the forums for 3D support); Catalyst drivers untested | Works with Intel HD Audio and ALSA. | Yes | Works with iwlagn | Bluetooth works | Works but when using [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati), there is video corruption upon boot | N/A | Web cam works, media keys work with the `dell_laptop` kernel module, IR works, card reader works | Everything basically worked out-of-the-box |
+
+## Vostro
+
+| Model version | Arch Linux
+install CD version
+ | Hardware support | Remarks |
+| Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
+| Vostro 1710 | – | – | – | Yes, RTL8111/8168B | Works (Broadcom BCM4328) | – | – | – | – | AlpsPS/2 ALPS GlidePoint |
 
 ## XPS
 

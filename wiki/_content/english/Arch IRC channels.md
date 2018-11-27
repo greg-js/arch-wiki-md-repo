@@ -6,7 +6,7 @@ Related articles
 
 **Note:** Do not edit this page unless you are a channel op in #archlinux. You are welcome to use the discussion page.
 
-To use [Internet Relay Chat](https://en.wikipedia.org/wiki/Internet_Relay_Chat "wikipedia:Internet Relay Chat") (IRC), you need an [IRC client](/index.php/IRC_client "IRC client"). The [installation live environment](/index.php/Getting_and_installing_Arch "Getting and installing Arch") includes the [Irssi](/index.php/Irssi "Irssi") client.
+To use [Internet Relay Chat](https://en.wikipedia.org/wiki/Internet_Relay_Chat "wikipedia:Internet Relay Chat") (IRC), you need an [IRC client](/index.php/IRC_client "IRC client"). The [installation live environment](/index.php/Installation_guide "Installation guide") includes the [Irssi](/index.php/Irssi "Irssi") client.
 
 You are expected to familiarize yourself with our [Code of conduct](/index.php/Code_of_conduct "Code of conduct") and [Code of conduct#IRC](/index.php/Code_of_conduct#IRC "Code of conduct") before joining any of the official channels. For a list of commonly used abbreviations, see [Arch terminology](/index.php/Arch_terminology "Arch terminology") and [IRC Jargon](http://www.ircbeginner.com/ircinfo/abbreviations.html).
 

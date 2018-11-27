@@ -18,7 +18,7 @@ Si necesita soporte RDP, instale también de manera opcional [freerdp](https://w
 
 *   Si la opción RDP no está disponible en el menú desplegable de Remmina después de instalar [freerdp](https://www.archlinux.org/packages/?name=freerdp), asegúrese de salir de Remmina primero: ejecute `killall remmina`. Cuando reinicie Remmina, RDP debería estar disponible.
 *   A partir de Remmina 1.2.0, algunos usuarios han informado que las conexiones RDP que utilizan freerdp sufren frecuentes desconexiones no solicitadas, pero que las conexiones RDP de rdesktop son más estables.
-*   El almacenamiento de la contraseña depende de [GNOME-Keyring](/index.php/GNOME/Keyring "GNOME/Keyring")
+*   El almacenamiento de la contraseña depende de [GNOME Keyring](/index.php/GNOME/Keyring_(Espa%C3%B1ol) "GNOME/Keyring (Español)")
 
 ## Utilización
 

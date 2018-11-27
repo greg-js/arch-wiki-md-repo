@@ -12,7 +12,7 @@ Related articles
 *   [GNOME/Web](/index.php/GNOME/Web_(Espa%C3%B1ol) "GNOME/Web (Español)")
 *   [GNOME/Evolution](/index.php/GNOME/Evolution "GNOME/Evolution")
 *   [GNOME/Flashback](/index.php/GNOME/Flashback "GNOME/Flashback")
-*   [GNOME/Keyring](/index.php/GNOME/Keyring "GNOME/Keyring")
+*   [GNOME/Keyring](/index.php/GNOME/Keyring_(Espa%C3%B1ol) "GNOME/Keyring (Español)")
 *   [GNOME/Visor de documentos](/index.php/GNOME/Document_viewer_(Espa%C3%B1ol) "GNOME/Document viewer (Español)")
 *   [Official repositories#gnome-unstable](/index.php/Official_repositories#gnome-unstable "Official repositories")
 
@@ -150,14 +150,14 @@ Para aprender a utilizar GNOME Shell, lea [GNOME Shell Cheat Sheet](https://wiki
 **Sugerencia:** La búsqueda del nombre heredado de una aplicación en la barra de búsqueda de GNOME Shell devolverá con éxito la aplicación en cuestión. Por ejemplo, la búsqueda de *nautilus* devolverá *Archivos*.
 
 | Actual | Antiguo |
-| [[GNOME/Files | Archivos]] | Nautilus |
+| [Archivos](/index.php/GNOME/Files "GNOME/Files") | Nautilus |
 | [Web](/index.php/GNOME/Web "GNOME/Web") | Epiphany |
 | Vídeos | Tótem |
 | Menú principal | Alacarte |
 | [Visor de documentos](/index.php/GNOME/Document_viewer "GNOME/Document viewer") | Evince |
 | Analizador de uso de disco | Baobab |
 | Visor de imágenes | EoG (Ojo de GNOME) |
-| [Contraseñas y claves](/index.php/GNOME/Keyring "GNOME/Keyring") | Seahorse |
+| [Contraseñas y claves](/index.php/GNOME/Keyring_(Espa%C3%B1ol) "GNOME/Keyring (Español)") | Seahorse |
 | Editor de traducciones de GNOME | Gtranslator |
 
 ## Configuración

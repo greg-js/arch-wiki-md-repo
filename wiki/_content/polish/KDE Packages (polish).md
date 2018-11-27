@@ -1,19 +1,23 @@
+Related articles
+
+*   [KDE](/index.php/KDE "KDE")
+
 Od wersji KDE SC 4.3, dla każdej aplikacji dostarczane są oddzielne pakiety. W artykule opisano koncepcję grup i meta-pakietów.
 
 ## Contents
 
 *   [1 Terminologia](#Terminologia)
-*   [2 Korzystanie z grup pakietów](#Korzystanie_z_grup_pakiet.C3.B3w)
-    *   [2.1 Dlaczego warto korzystać z grup?](#Dlaczego_warto_korzysta.C4.87_z_grup.3F)
+*   [2 Korzystanie z grup pakietów](#Korzystanie_z_grup_pakietów)
+    *   [2.1 Dlaczego warto korzystać z grup?](#Dlaczego_warto_korzystać_z_grup?)
         *   [2.1.1 Zalety](#Zalety)
         *   [2.1.2 Wady](#Wady)
-    *   [2.2 Kto powinien korzystać z grup?](#Kto_powinien_korzysta.C4.87_z_grup.3F)
-*   [3 Korzystanie z meta-pakietów](#Korzystanie_z_meta-pakiet.C3.B3w)
-    *   [3.1 Dlaczego warto korzystać z meta-pakietów?](#Dlaczego_warto_korzysta.C4.87_z_meta-pakiet.C3.B3w.3F)
+    *   [2.2 Kto powinien korzystać z grup?](#Kto_powinien_korzystać_z_grup?)
+*   [3 Korzystanie z meta-pakietów](#Korzystanie_z_meta-pakietów)
+    *   [3.1 Dlaczego warto korzystać z meta-pakietów?](#Dlaczego_warto_korzystać_z_meta-pakietów?)
         *   [3.1.1 Zalety](#Zalety_2)
         *   [3.1.2 Wady](#Wady_2)
-    *   [3.2 Kto powinien korzystać z meta-pakietów?](#Kto_powinien_korzysta.C4.87_z_meta-pakiet.C3.B3w.3F)
-*   [4 Listy pakietów członkowskich.](#Listy_pakiet.C3.B3w_cz.C5.82onkowskich.)
+    *   [3.2 Kto powinien korzystać z meta-pakietów?](#Kto_powinien_korzystać_z_meta-pakietów?)
+*   [4 Listy pakietów członkowskich.](#Listy_pakietów_członkowskich.)
 
 ## Terminologia
 

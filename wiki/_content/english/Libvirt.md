@@ -23,7 +23,7 @@ Some of the major libvirt features are:
         *   [2.1.1 Using polkit](#Using_polkit)
         *   [2.1.2 Authenticate with file-based permissions](#Authenticate_with_file-based_permissions)
     *   [2.2 Daemon](#Daemon)
-    *   [2.3 Unencrypt TCP/IP sockets](#Unencrypt_TCP.2FIP_sockets)
+    *   [2.3 Unencrypt TCP/IP sockets](#Unencrypt_TCP/IP_sockets)
     *   [2.4 Access virtual machines using their hostnames](#Access_virtual_machines_using_their_hostnames)
 *   [3 Test](#Test)
 *   [4 Management](#Management)
@@ -64,7 +64,9 @@ Because of its daemon/client architecture, libvirt needs only be installed on th
 
 For network connectivity, install:
 
-*   [ebtables](https://www.archlinux.org/packages/?name=ebtables) **and** [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) for the [default](http://wiki.libvirt.org/page/VirtualNetworking#The_default_configuration) NAT/DHCP networking.
+**Note:** As of libvirt 4.8.0 you need to change the firewall backend in `/etc/firewalld/firewalld.conf` from nftables to iptables.
+
+*   [firewalld](https://www.archlinux.org/packages/?name=firewalld), [ebtables](https://www.archlinux.org/packages/?name=ebtables), and [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) for the [default](http://wiki.libvirt.org/page/VirtualNetworking#The_default_configuration) NAT/DHCP networking.
 *   [bridge-utils](https://www.archlinux.org/packages/?name=bridge-utils) for bridged networking.
 *   [openbsd-netcat](https://www.archlinux.org/packages/?name=openbsd-netcat) for remote management over [SSH](/index.php/SSH "SSH").
 

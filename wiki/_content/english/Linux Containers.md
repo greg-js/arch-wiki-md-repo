@@ -100,11 +100,12 @@ Installing [lxc](https://www.archlinux.org/packages/?name=lxc) and [arch-install
 
 Users wishing to run *unprivileged* containers need to complete several additional setup steps.
 
-Firstly, a kernel is required that has support for **User Namespaces** (a kernel with `CONFIG_USER_NS`). All Arch Linux kernels have support for `CONFIG_USER_NS`. However, due to more general security concerns, the default Arch kernel does ship with User Namespaces enabled only for the *root* user. You have multiple options to create *unprivileged* containers:
+Firstly, a kernel is required that has support for **User Namespaces** (a kernel with `CONFIG_USER_NS`). All Arch Linux kernels have support for `CONFIG_USER_NS`. However, due to more general security concerns, the default Arch kernel does ship with User Namespaces enabled only for the *root* user. You have two options to create *unprivileged* containers:
 
 *   Start your unprivileged containers only as *root*.
 *   Enable the *sysctl* setting `kernel.unprivileged_userns_clone` to allow normal users to run unprivileged containers. This can be done for the current session with `sysctl kernel.unprivileged_userns_clone=1` and can be made permanent with [sysctl.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sysctl.d.5).
-*   Enable the cgfs pam module by modifying `/etc/pam.d/system-login` to **additionally** contain the following line:
+
+Enable the [control groups](/index.php/Control_groups "Control groups") [PAM](/index.php/PAM "PAM") module by modifying `/etc/pam.d/system-login` to **additionally** contain the following line:
 
 ```
 session optional pam_cgfs.so -c freezer,memory,name=systemd,unified

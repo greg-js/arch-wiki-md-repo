@@ -6,9 +6,9 @@ Tento článek popisuje konfiguraci témat GTK+ aplikací. GTK+ (GIMP Toolkit) j
 
 ## Contents
 
-*   [1 Témata](#T.C3.A9mata)
-    *   [1.1 GTK+ 1.x](#GTK.2B_1.x)
-    *   [1.2 GTK+ 2.x](#GTK.2B_2.x)
+*   [1 Témata](#Témata)
+    *   [1.1 GTK+ 1.x](#GTK+_1.x)
+    *   [1.2 GTK+ 2.x](#GTK+_2.x)
     *   [1.3 GTK a QT](#GTK_a_QT)
 *   [2 Zdroje](#Zdroje)
 

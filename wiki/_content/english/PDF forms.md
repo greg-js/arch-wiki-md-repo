@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [PDF, PS and DjVu](/index.php/PDF,_PS_and_DjVu "PDF, PS and DjVu")
+*   [PDF, PS and DjVu#Viewers](/index.php/PDF,_PS_and_DjVu#Viewers "PDF, PS and DjVu")

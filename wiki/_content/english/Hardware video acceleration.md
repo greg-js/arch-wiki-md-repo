@@ -306,16 +306,21 @@ This does not represent the *configuration* however. The values above will not c
 
 You can override the [driver](http://www.freedesktop.org/wiki/Software/vaapi/#driversback-endsthatimplementva-api) for VA-API by using the `LIBVA_DRIVER_NAME` [environment variable](/index.php/Environment_variable "Environment variable"):
 
-*   For Intel Graphics use `i965` or `iHD`.
-*   For the open source Nouveau driver use `nouveau`.
-*   For the proprietary NVIDIA driver use `vdpau`.
-*   For the open source AMD driver use `radeonsi`.
-*   For the proprietary AMD Catalyst use `fglrx`.
+*   [Intel Graphics](/index.php/Intel_Graphics "Intel Graphics"):
+    *   For [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) use `i965`.
+    *   For [intel-media-driver](https://www.archlinux.org/packages/?name=intel-media-driver) use `iHD`.
+*   NVIDIA:
+    *   For [Nouveau](/index.php/Nouveau "Nouveau") use `nouveau`.
+    *   For [NVIDIA](/index.php/NVIDIA "NVIDIA") use `vdpau`.
+*   ATI/AMD:
+    *   For [AMDGPU](/index.php/AMDGPU "AMDGPU") driver use `radeonsi`.
+    *   For [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") use `fglrx`.
 
 **Note:**
 
 *   You can find the installed drivers in `/usr/lib/dri/`. They are used as `/usr/lib/dri/**${LIBVA_DRIVER_NAME}**_drv_video.so`.
 *   Some drivers are installed several times under different names for compatibility reasons. You can see which by running `sha1sum /usr/lib/dri/*`.
+*   `LIBVA_DRIVERS_PATH` can be used to overrule the VA-API drivers location.
 *   Since version 12.0.1 [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver) provides `radeonsi` instead of `gallium`.
 
 ### Configuring VDPAU

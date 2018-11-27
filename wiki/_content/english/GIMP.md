@@ -83,7 +83,7 @@ See [fonts-conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fonts-conf.5) and
 
 ### PDF files
 
-GIMP requires the [poppler-glib](https://www.archlinux.org/packages/?name=poppler-glib) library to open PDF files. Without this library GIMP will say that a PDF file is "unrecognized" when attempting to open a PDF file.
+GIMP requires the [poppler-glib](https://www.archlinux.org/packages/?name=poppler-glib) library to open PDF files or it will report that they are unrecognised.
 
 Since GIMP rasterizes PDF files right from the start, it will not exploit intrinsic PDF capabilities while editing them. Other programs (like [LibreOffice Draw](/index.php/LibreOffice "LibreOffice")) can be used to better edit PDF files.
 
@@ -91,4 +91,5 @@ Since GIMP rasterizes PDF files right from the start, it will not exploit intrin
 
 *   [Official website](https://www.gimp.org/)
 *   [debian:GIMP](https://wiki.debian.org/GIMP "debian:GIMP")
-*   [Resources | GIMP Magazine](https://gimpmagazine.org/resources/) - Index of GIMP resources, tutorials, communities
+*   [GIMP Magazine](https://gimpmagazine.org/resources/) - Index of GIMP resources, tutorials, communities
+*   [GIMP Forum](http://gimp-forum.net/)

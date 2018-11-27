@@ -333,6 +333,10 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 
 	[https://gitlab.gnome.org/Archive/billreminder](https://gitlab.gnome.org/Archive/billreminder) || [billreminder](https://www.archlinux.org/packages/?name=billreminder)
 
+*   **Eqonomize!** — Cross-platform personal accounting software, with focus on efficiency and ease of use for the small household economy.
+
+	[https://eqonomize.github.io/](https://eqonomize.github.io/) || [eqonomize-bin](https://aur.archlinux.org/packages/eqonomize-bin/)
+
 *   **esniper** — Simple, lightweight tool for [sniping](https://en.wikipedia.org/wiki/Auction_sniping "wikipedia:Auction sniping") eBay auctions.
 
 	[http://esniper.sourceforge.net/](http://esniper.sourceforge.net/) || [esniper](https://aur.archlinux.org/packages/esniper/)

@@ -17,13 +17,14 @@ According to the [official website](https://www.gnupg.org/):
     *   [2.3 Default options for new users](#Default_options_for_new_users)
 *   [3 Usage](#Usage)
     *   [3.1 Create a key pair](#Create_a_key_pair)
-    *   [3.2 List keys](#List_keys)
-    *   [3.3 Export your public key](#Export_your_public_key)
-    *   [3.4 Import a public key](#Import_a_public_key)
-    *   [3.5 Use a keyserver](#Use_a_keyserver)
-    *   [3.6 Encrypt and decrypt](#Encrypt_and_decrypt)
-        *   [3.6.1 Asymmetric](#Asymmetric)
-        *   [3.6.2 Symmetric](#Symmetric)
+    *   [3.2 Generate Revocation Key](#Generate_Revocation_Key)
+    *   [3.3 List keys](#List_keys)
+    *   [3.4 Export your public key](#Export_your_public_key)
+    *   [3.5 Import a public key](#Import_a_public_key)
+    *   [3.6 Use a keyserver](#Use_a_keyserver)
+    *   [3.7 Encrypt and decrypt](#Encrypt_and_decrypt)
+        *   [3.7.1 Asymmetric](#Asymmetric)
+        *   [3.7.2 Symmetric](#Symmetric)
 *   [4 Key maintenance](#Key_maintenance)
     *   [4.1 Backup your private key](#Backup_your_private_key)
     *   [4.2 Edit your key](#Edit_your_key)
@@ -136,6 +137,21 @@ The command will prompt for answers to several questions. For general use most p
 *   [a secure passphrase](/index.php/Security#Choosing_secure_passwords "Security").
 
 **Note:** The name and email address you enter here will be seen by anybody who imports your key.
+
+### Generate Revocation Key
+
+After generating your key, one of the first things you should do is create a revocation certificate:
+
+```
+$ gpg --gen-revoke --armor --output=RevocationCertificate.asc <user-id>
+
+```
+
+This certificate can be used to revoke your key if it is ever lost or compromised. Do not neglect this step! Print it out, save it on a disk, and store it safely. It will be short enough that you can type it back in by hand without much effort if you just print it out.
+
+If you lose your secret key or it is compromised, you will want to revoke your key by uploading the revocation certificate to a public keyserver (assuming you uploaded your public key to a public keyserver in the first place).
+
+Protect your revocation key like you protect your secret keys.
 
 ### List keys
 
@@ -311,6 +327,8 @@ Some useful commands in the edit key sub menu:
 > revkey       # revoke a key
 > addkey       # add a subkey to this key
 > expire       # change the key expiration time
+> adduid       # add additional names, comments, and email addresses
+> addphoto     # add photo to key (must be JPG, 240x288 recommended, enter full path to image when prompted)
 
 ```
 
@@ -904,6 +922,7 @@ Test that gpg-agent starts successfully with `gpg-agent --daemon`.
 ## See also
 
 *   [GNU Privacy Guard Homepage](https://gnupg.org/)
+*   [Alan Eliasen's GPG Tutorial](https://futureboy.us/pgp.html)
 *   [RFC4880 "OpenPGP Message Format"](https://tools.ietf.org/html/rfc4880)
 *   [gpg.conf recommendations and best practices](https://help.riseup.net/en/security/message-security/openpgp/gpg-best-practices)
 *   [Creating GPG Keys (Fedora)](https://fedoraproject.org/wiki/Creating_GPG_Keys)

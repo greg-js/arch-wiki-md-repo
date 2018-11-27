@@ -15,7 +15,7 @@ Sugar ha una speciale tassonomia per nominare le parti del suo sistema. Il deskt
     *   [1.2 Compilare da un Bundle](#Compilare_da_un_Bundle)
     *   [1.3 Albero delle dipendenze](#Albero_delle_dipendenze)
     *   [1.4 Compilare tramite gruppi modulari](#Compilare_tramite_gruppi_modulari)
-*   [2 Attività](#Attivit.C3.A0)
+*   [2 Attività](#Attività)
     *   [2.1 Fruttosio](#Fruttosio)
     *   [2.2 Etoys](#Etoys)
     *   [2.3 Compilazione](#Compilazione)

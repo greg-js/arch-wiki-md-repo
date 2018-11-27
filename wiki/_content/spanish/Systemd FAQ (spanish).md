@@ -1,3 +1,12 @@
+**Estado de la traducción**
+Este artículo es una traducción de [Systemd FAQ](/index.php/Systemd_FAQ "Systemd FAQ"), revisada por última vez el **2018-11-25**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Systemd_FAQ&diff=0&oldid=550510) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
+Artículos relacionados
+
+*   [systemd (Español)](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)")
+*   [systemd/User (Español)](/index.php/Systemd/User_(Espa%C3%B1ol) "Systemd/User (Español)")
+*   [Daemons (Español)#Listado de demonios](/index.php/Daemons_(Espa%C3%B1ol)#Listado_de_demonios "Daemons (Español)")
+
 ## Contents
 
 *   [1 FAQ](#FAQ)
@@ -5,25 +14,33 @@
     *   [1.2 ¿Cómo puedo cambiar el número de gettys ejecutadas por defecto?](#¿Cómo_puedo_cambiar_el_número_de_gettys_ejecutadas_por_defecto?)
     *   [1.3 ¿Cómo puedo obtener una salida con información más detallada durante el arranque?](#¿Cómo_puedo_obtener_una_salida_con_información_más_detallada_durante_el_arranque?)
     *   [1.4 ¿Cómo evitar que se borre la consola después del arranque?](#¿Cómo_evitar_que_se_borre_la_consola_después_del_arranque?)
-    *   [1.5 ¿Qué opciones del kernel tengo que activar en caso de que no utilice el kernel oficial de Arch?](#¿Qué_opciones_del_kernel_tengo_que_activar_en_caso_de_que_no_utilice_el_kernel_oficial_de_Arch?)
+    *   [1.5 ¿Qué opciones del kernel son requeridas por systemd?](#¿Qué_opciones_del_kernel_son_requeridas_por_systemd?)
     *   [1.6 ¿Qué otras unidades dependen de una unidad?](#¿Qué_otras_unidades_dependen_de_una_unidad?)
-    *   [1.7 Mi ordenador se apaga, pero el power permanece encendido.](#Mi_ordenador_se_apaga,_pero_el_power_permanece_encendido.)
+    *   [1.7 Mi ordenador se apaga, pero el *power* permanece encendido.](#Mi_ordenador_se_apaga,_pero_el_power_permanece_encendido.)
     *   [1.8 Después de migrar a systemd, ¿por qué no funciona el montaje de fakeRAID?](#Después_de_migrar_a_systemd,_¿por_qué_no_funciona_el_montaje_de_fakeRAID?)
-    *   [1.9 ¿Cómo puedo hacer un script de inicio durante el proceso de arranque?](#¿Cómo_puedo_hacer_un_script_de_inicio_durante_el_proceso_de_arranque?)
+    *   [1.9 ¿Cómo puedo hacer un script que se inicie durante el proceso de arranque?](#¿Cómo_puedo_hacer_un_script_que_se_inicie_durante_el_proceso_de_arranque?)
     *   [1.10 El estado de .service dice «active (exited)» en verde (por ejemplo, iptables)](#El_estado_de_.service_dice_«active_(exited)»_en_verde_(por_ejemplo,_iptables))
-    *   [1.11 Error Failed to issue method call: File exists](#Error_Failed_to_issue_method_call:_File_exists)
+    *   [1.11 Error «Failed to issue method call: File exists»](#Error_«Failed_to_issue_method_call:_File_exists»)
 
 ## FAQ
 
-Para obtener una lista actualizada de problemas conocidos, consulte el upstream [TODO](http://cgit.freedesktop.org/systemd/systemd/tree/TODO).
+Para obtener una lista actualizada de problemas conocidos, consulte [TODO](http://cgit.freedesktop.org/systemd/systemd/tree/TODO) de los desarrolladores.
 
 ### ¿Por qué recibo mensajes de registro en mi consola?
 
-Debe establecer el nivel del registro del propio kernel. Históricamente, `/etc/rc.sysinit` hacía esto por nosotros y establecía el nivel del registro de dmesg a `3`, que era un *loglevel* razonablemente *moderado*. O bien, añada `loglevel=3` o `quiet` en los [parámetros del kernel](/index.php/Kernel_parameters "Kernel parameters").
+Debe establecer el nivel del registro del propio kernel. Históricamente, `/etc/rc.sysinit` hacía esto por nosotros y establecía el nivel del registro de dmesg a `3`, que era un nivel de registro razonablemente moderado. O bien, añada `loglevel=3` o `quiet` en los [parámetros del kernel](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)").
 
 ### ¿Cómo puedo cambiar el número de gettys ejecutadas por defecto?
 
-Para agregar otra getty, solo tiene que colocar otro enlace simbólico para crear instancias a otra getty en la carpeta `/etc/systemd/system/getty.target.wants/`:
+Actualmente, solo un [getty](https://en.wikipedia.org/wiki/esTerminal_(inform%C3%A1tica) (abreviatura de «*get teletype*») se inicia de forma predeterminada. Si cambia a otra tty, se lanzará un getty allí (estilo de activación por socket). En otras palabras, [Ctl] [Alt] [F2] lanzará un nuevo getty en tty2.
+
+Por defecto, el número de gettys autoactivados está limitado a seis. Por lo tanto [F7] a [F12] no lanzará un getty.
+
+Si desea cambiar este comportamiento, edite `/etc/systemd/logind.conf` y cambie el valor de `NAutoVTs`. Si desea que todas las teclas [F*x*] inicien un getty, aumente el valor de NAutoVTs a 12\. Si está [reenviando journald a tty12](/index.php/Systemd_(Espa%C3%B1ol)#Reenviar_journald_a_/dev/tty12 "Systemd (Español)"), ponga el valor de NAutoVTs a 11 (dejando tty12 libre).
+
+También puede preactivar gettys para que se ejecuten desde el arranque.
+
+Para agregar otro getty preactivada, solo tiene que colocar otro enlace simbólico para crear instancias a otro getty en la carpeta `/etc/systemd/system/getty.target.wants/`:
 
 ```
 # ln -sf /usr/lib/systemd/system/getty@.service /etc/systemd/system/getty.target.wants/getty@tty9.service
@@ -31,7 +48,7 @@ Para agregar otra getty, solo tiene que colocar otro enlace simbólico para crea
 
 ```
 
-Para eliminar una getty, simplemente elimine los enlaces simbólicos de la getty de la que quiera deshacerse en la carpeta `/etc/systemd/system/getty.target.wants/`:
+Para eliminar un getty, simplemente elimine los enlaces simbólicos del getty de la que quiera deshacerse en la carpeta `/etc/systemd/system/getty.target.wants/`:
 
 ```
 # rm /etc/systemd/system/getty.target.wants/getty@{tty5,tty6}.service
@@ -39,9 +56,7 @@ Para eliminar una getty, simplemente elimine los enlaces simbólicos de la getty
 
 ```
 
-Los usuarios también pueden cambiar el número de gettys, editando `/etc/systemd/logind.conf` y cambiando el valor de `NAutoVTs`. Al hacer esto, la activación bajo demanda se conserva, mientras que con el método anterior simplemente tendrá las gettys funcionando desde el arranque. systemd no utiliza el archivo `/etc/inittab`.
-
-**Nota:** A partir de systemd 30, sólo una getty se pondrá en marcha de forma predeterminada. Si cambia a otra tty, una nueva getty se lanzará allí (socket-activation style). Aún entonces puede forzar procesos agetty adicionales utilizando los métodos anteriores.
+systemd no usa el archivo `/etc/inittab`.
 
 ### ¿Cómo puedo obtener una salida con información más detallada durante el arranque?
 
@@ -51,37 +66,23 @@ Los mensajes se registrarán en el log del sistema y si quiere indagar sobre del
 
 ### ¿Cómo evitar que se borre la consola después del arranque?
 
-Cree un archivo personalizado `getty@tty1.service` para copiar `/usr/lib/systemd/system/getty@.service` a `/etc/systemd/system/getty@tty1.service` y cambie `TTYVTDisallocate` a `no`.
+Cree un directorio llamado `/etc/systemd/system/getty@.service.d` y coloque `nodisallocate.conf` allí para [sobrescribir](/index.php/Systemd_(Espa%C3%B1ol)#Modificar_los_archivos_de_unidad_suministrados "Systemd (Español)") la opción `TTYVTDisallocate` a `no`.
 
-### ¿Qué opciones del kernel tengo que activar en caso de que no utilice el kernel oficial de Arch?
-
-Los Kernels anteriores a 2.6.39 no son compatibles.
-
-Esta es una lista parcial de las opciones requeridas/recomendadas, podría haber más:
-
+ `/etc/systemd/system/getty@.service.d/nodisallocate.conf` 
 ```
-**General setup**
- CONFIG_FHANDLE=y
- CONFIG_AUDIT=y (recommended)
- CONFIG_AUDIT_LOGINUID_IMMUTABLE=y (not required, may break sysvinit compatibility)
- CONFIG_CGROUPS=y
- **-> Namespaces support**
-    CONFIG_NET_NS=y (for private network)
-**Networking support -> Networking options**
- CONFIG_IPV6=[y|m] (highly recommended)
-**Device Drivers**
- **-> Generic Driver Options**
-    CONFIG_UEVENT_HELPER_PATH=""
-    CONFIG_DEVTMPFS=y
-    CONFIG_DEVTMPFS_MOUNT=y (required if you don't use an initramfs)
- **-> Real Time Clock**
-    CONFIG_RTC_DRV_CMOS=y (highly recommended)
-**File systems**
- CONFIG_FANOTIFY=y (required for readahead)
- CONFIG_AUTOFS4_FS=[y|m]
- **-> Pseudo filesystems**
-    CONFIG_TMPFS_POSIX_ACL=y (recommended, if you want to use pam_systemd.so)
+[Service]
+TTYVTDisallocate=no
 ```
+
+### ¿Qué opciones del kernel son requeridas por systemd?
+
+Los Kernels anteriores a 3.0 no son compatibles.
+
+Si usa un kernel personalizado, deberá asegurarse de que las opciones de systemd estén seleccionadas.
+
+Si está compilando un nuevo kernel para usar con una versión instalada de systemd, las opciones requeridas y recomendadas se enumeran en el archivo README de systemd `/usr/share/doc/systemd/README`.
+
+Si se está preparando para instalar una nueva versión de systemd y está ejecutando un kernel personalizado, la versión más reciente del archivo se puede encontrar en [the systemd git](http://cgit.freedesktop.org/systemd/systemd/tree/README).
 
 ### ¿Qué otras unidades dependen de una unidad?
 
@@ -91,27 +92,24 @@ Por ejemplo, si desea averiguar qué servicios activa un target como `multi-user
 
 En lugar de `Wants` también podría probar `WantedBy`, `Requires`, `RequiredBy`, `Conflicts`, `ConflictedBy`, `Before`, `After` para conocer los correspondientes tipos de dependencias y viceversa.
 
-### Mi ordenador se apaga, pero el power permanece encendido.
+### Mi ordenador se apaga, pero el *power* permanece encendido.
 
-Utilice:
-
-```
-$ systemctl poweroff
-
-```
-
-En lugar de `systemctl halt`.
+Utilice `systemctl poweroff`, en lugar de `systemctl halt`.
 
 ### Después de migrar a systemd, ¿por qué no funciona el montaje de fakeRAID?
 
 Asegúrese de usar:
 
- `# systemctl enable dmraid.service` 
+```
+# systemctl enable dmraid.service
 
-### ¿Cómo puedo hacer un script de inicio durante el proceso de arranque?
+```
 
-Cree un nuevo archivo `/etc/systemd/system` (por ejemplo, *myscript*.service) y añada el siguiente contenido:
+### ¿Cómo puedo hacer un script que se inicie durante el proceso de arranque?
 
+Cree un nuevo archivo como `/etc/systemd/system/myscript.service` y añada el siguiente contenido:
+
+ `/etc/systemd/system/*myscript*.service` 
 ```
 [Unit]
 Description=My script
@@ -120,34 +118,14 @@ Description=My script
 ExecStart=/usr/bin/my-script
 
 [Install]
-WantedBy=multi-user.target 
-
+WantedBy=multi-user.target
 ```
 
-Luego:
+Este ejemplo asume que quiere que el script arranque cuando el target multi-user sea lanzado. Asegúrese de hacer [ejecutable](/index.php/Executable "Executable") el script.
 
-```
-# systemctl enable *myscript*.service
+[Active](/index.php/Enable_(Espa%C3%B1ol) "Enable (Español)") *myscript*.service para iniciar el servicio en el arranque.
 
-```
-
-Este ejemplo asume que quiere que el script arranque cuando el target multi-user sea lanzado.
-
-**Nota:** En el caso de que desee iniciar un script de shell, asegúrese que tiene:
-
-```
-#!/bin/sh
-
-```
-
-en la primera línea del script. No escriba algo como:
-
-```
-ExecStart=/bin/sh /path/to/script.sh # NO FUNCIONA
-
-```
-
-porque eso no va a funcionar.
+**Nota:** en el caso de que desee iniciar un script de intérprete de órdenes, asegúrese que tiene `#!/bin/sh` en la primera línea del script. **No** escriba algo como `ExecStart=/bin/sh /path/to/script.sh` porque eso no va a funcionar.
 
 ### El estado de .service dice «active (exited)» en verde (por ejemplo, iptables)
 
@@ -155,10 +133,13 @@ Esto es perfectamente normal. En el caso de las iptables es porque no hay ningú
 
 Para comprobar si las reglas iptables se han cargado correctamente:
 
- `# iptables --list` 
+```
+# iptables --list
 
-### Error `Failed to issue method call: File exists`
+```
 
-Esto sucede cuando se utiliza `systemctl enable` y el enlace simbólico que trata de crear en `/etc/systemd/system/` ya existe. Normalmente esto sucede cuando se cambia de un gestor de pantalla a otro (por ejemplo de GDM a KDM, que se pueden activar con `gdm.service` y `kdm.service`, respectivamente) y el enlace correspondiente `/etc/systemd/system/display-manager.service` ya existe.
+### Error «Failed to issue method call: File exists»
+
+Esto sucede cuando se utiliza `systemctl enable` y el enlace simbólico que trata de crear en `/etc/systemd/system/` ya existe. Normalmente esto pasa cuando se cambia de un gestor de pantalla a otro (por ejemplo de GDM a KDM, que se pueden activar con `gdm.service` y `kdm.service`, respectivamente) y el enlace correspondiente `/etc/systemd/system/display-manager.service` ya existe.
 
 Para resolver este problema, utilice `systemctl -f enable` para sobreescribir el enlace simbólico existente.

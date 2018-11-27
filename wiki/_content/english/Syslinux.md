@@ -120,8 +120,6 @@ This can happen, for example, when upgrading from [LILO](/index.php/LILO "LILO")
 
 #### Manual install
 
-**Tip:** If you are unsure of which partition table you are using (MBR or GPT), you can check using `blkid -s PTTYPE -o value /dev/sda`
-
 **Note:** If you are trying to rescue an installed system with a live CD, be sure to [chroot](/index.php/Chroot "Chroot") into it before executing these commands. If you do not chroot first, you must prepend all file paths (not `/dev/` paths) with the mount point.
 
 Your boot partition, on which you plan to install Syslinux, must contain a FAT, ext2, ext3, ext4, or Btrfs file system. You do not have to install it on the root directory of a file system, e.g., with device `/dev/sda1` mounted on `/boot`. For example, you can install Syslinux in the `syslinux` subdirectory:
@@ -152,13 +150,22 @@ Alternatively, for a FAT boot partition use *syslinux*, where the device is **un
 
 ```
 
-After this, proceed to install the Syslinux boot code (`mbr.bin` or `gptmbr.bin`) to the [Master Boot Record 440-byte boot code region](/index.php/Partitioning#Master_Boot_Record_(bootstrap_code) "Partitioning") (not to be confused with [MBR aka msdos partition table](/index.php/Partitioning#Master_Boot_Record_(partition_table) "Partitioning")) of the disk, as described in the next sections, respectively.
+After this, proceed to install the Syslinux bootstrap code appropriate for the partition table:
+
+*   `mbr.bin` will be installed for an [#MBR partition table](#MBR_partition_table), or
+*   `gptmbr.bin` will be installed for a [#GUID partition table](#GUID_partition_table)
+
+as described in the next sections.
+
+See [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") for further general information.
+
+**Tip:** If you are unsure of which partition table you are using (MBR or GPT), you can check using `blkid -s PTTYPE -o value /dev/sda`.
 
 **Note:** For a partitionless install, there is no need to install the Syslinux boot code to the MBR. You could skip below and jump to [#Configuration](#Configuration). See [[2]](https://unix.stackexchange.com/questions/103501/boot-partiotionless-disk-with-syslinux).
 
 ##### MBR partition table
 
-For an [MBR](/index.php/MBR "MBR") partition table, ensure your boot partition is marked as "active" in your partition table (the "boot" flag is set). Applications capable of doing this include [fdisk](/index.php/Fdisk "Fdisk") and [parted](/index.php/Parted "Parted"). It should look like this:
+For an [MBR partition table](/index.php/Partitioning#Master_Boot_Record_(partition_table) "Partitioning"), ensure your boot partition is marked as "active" in your partition table (the "boot" flag is set). Applications capable of doing this include [fdisk](/index.php/Fdisk "Fdisk") and [parted](/index.php/Parted "Parted"). It should look like this:
 
  `# fdisk -l /dev/sda` 
 ```
@@ -187,7 +194,7 @@ In this case, a single byte of value 5 (hexadecimal) is appended to the contents
 
 ##### GUID partition table
 
-For a [GPT](/index.php/GPT "GPT"), ensure that attribute bit 2 "Legacy BIOS bootable" is set for the `/boot` partition. For Parted it can be set using the "legacy_boot" flag. Using [sgdisk](/index.php/Sgdisk "Sgdisk") the command to set the attribute is:
+For a [GPT](/index.php/GPT "GPT"), ensure that attribute bit 2 "Legacy BIOS bootable" is set for the `/boot` partition. For [Parted](/index.php/Parted "Parted") it can be set using the "legacy_boot" flag. Using [sgdisk](/index.php/Sgdisk "Sgdisk") the command to set the attribute is:
 
 ```
 # sgdisk /dev/sda --attributes=1:set:2
@@ -306,6 +313,8 @@ Syslinux also allows you to use a boot menu. To use it, copy the `menu` and `lib
 # cp /usr/lib/syslinux/bios/{menu,libutil}.c32 /boot/syslinux/
 
 ```
+
+Copying additional `lib*.c32` library modules might be needed too. See [the Syslinux wiki](https://www.syslinux.org/wiki/index.php?title=Library_modules#Syslinux_modules_working_dependencies) for the current module dependency tree.
 
 Configuration:
 

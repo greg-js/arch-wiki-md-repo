@@ -434,26 +434,26 @@ One can observe FREE space are split across the volume. To shrink the physical v
 
 Here, the first free segment is from 0 to 153600 and leaves us with 153601 free extents. We can now move this segment number from the last physical extent to the first extent. The command will thus be:
 
- `# pvmove --alloc anywhere /dev/sdd1:307201-399668 /dev/sdd1:0-92466` 
+ `# pvmove --alloc anywhere /dev/sdd1:307201-399668 /dev/sdd1:0-92467` 
 ```
 /dev/sdd1: Moved: 0.1 %
 /dev/sdd1: Moved: 0.2 %
 ...
 /dev/sdd1: Moved: 99.9 %
-/dev/sdd1: Moved: 100,0%
+/dev/sdd1: Moved: 100.0 %
 
 ```
 
 **Note:**
 
-*   this command moves 92468 PEs (399668-307200) **from** the last segment **to** the first segment. This is possible as the first segment encloses 153600 free PEs, which can contain the 92467 moved PEs.
+*   this command moves 399668 - 307201 + 1 = 92468 PEs **from** the last segment **to** the first segment. This is possible as the first segment encloses 153600 free PEs, which can contain the 92467 - 0 + 1 = 92468 moved PEs.
 *   the `--alloc anywhere` option is used as we move PEs inside the same partition. In case of different partitions, the command would look something like this: `# pvmove /dev/sdb1:1000-1999 /dev/sdc1:0-999` 
 *   this command may take a long time (one to two hours) in case of large volumes. It might be a good idea to run this command in a [Tmux](/index.php/Tmux "Tmux") or [GNU Screen](/index.php/GNU_Screen "GNU Screen") session. Any unwanted stop of the process could be fatal.
 *   once the operation is complete, run [fsck](/index.php/Fsck "Fsck") to make sure your file system is valid.
 
 ###### Resize physical volume
 
-Once all your free physical segments are on the last physical extent, run `vgdisplay` and see your free PE.
+Once all your free physical segments are on the last physical extents, run `vgdisplay` and see your free PE.
 
 Then you can now run again the command:
 

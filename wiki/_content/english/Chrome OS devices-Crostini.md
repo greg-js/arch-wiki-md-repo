@@ -69,23 +69,7 @@ First open a console session the the Arch Linux container.
 
 ```
 
-I installed an AUR helper to install Crostini tools:
-
-```
-   $ pacman -S base-devel
-   $ git clone [https://aur.archlinux.org/yay.git](https://aur.archlinux.org/yay.git)
-   $ cd yay
-   $ makepkg -si
-
-```
-
-Then used it to install Crostini container tools, and enable the userland service for GUI tools to work:
-
-```
-   $ sudo pacman -S wayland xwayland
-   $ yay -S cros-container-guest-tools-git
-
-```
+[Install](/index.php/Install "Install") the [cros-container-guest-tools-git](https://aur.archlinux.org/packages/cros-container-guest-tools-git/) package. Additionally install [wayland](https://www.archlinux.org/packages/?name=wayland) and [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) to be able to use GUI tools.
 
 At present (11-24-2018) xkeyboard-config 2.24 break the sommelier-x service. Workaround is to comment out two lines starting with "<i372>" and "<i374>" in /usr/share/X11/xkb/keycodes/evdev. Then enable and start the services.
 

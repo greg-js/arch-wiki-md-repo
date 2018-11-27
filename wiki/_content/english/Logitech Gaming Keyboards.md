@@ -6,6 +6,7 @@ Some Logitech Gaming Keyboards can work on Linux through Unofficial drivers. The
 *   [https://github.com/Wattos/logitech-g710-linux-driver](https://github.com/Wattos/logitech-g710-linux-driver)
 *   [https://github.com/MatMoul/g810-led](https://github.com/MatMoul/g810-led)
 *   [https://github.com/spectras/keyleds](https://github.com/spectras/keyleds)
+*   Gkeys support for G910: [https://github.com/JSubelj/g910-gkey-macro-support](https://github.com/JSubelj/g910-gkey-macro-support)
 
 ## Install
 

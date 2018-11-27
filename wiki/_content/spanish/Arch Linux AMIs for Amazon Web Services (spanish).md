@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Arch Linux AMIs for Amazon Web Services](/index.php/Arch_Linux_AMIs_for_Amazon_Web_Services "Arch Linux AMIs for Amazon Web Services"), revisada por última vez el **2018-11-24**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Arch_Linux_AMIs_for_Amazon_Web_Services&diff=0&oldid=543723) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Arch Linux AMIs for Amazon Web Services](/index.php/Arch_Linux_AMIs_for_Amazon_Web_Services "Arch Linux AMIs for Amazon Web Services"), revisada por última vez el **2018-11-26**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Arch_Linux_AMIs_for_Amazon_Web_Services&diff=0&oldid=543723) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 ## Contents
 
@@ -12,18 +12,18 @@ Este artículo es una traducción de [Arch Linux AMIs for Amazon Web Services](/
 
 ### Imágenes AMI de Uplink Labs
 
-Uplink Labs crea nuevas imágenes aproximadamente dos veces al mes. Se están compilando imágenes para una serie de regiones, y cubrir las siguientes configuraciones:
+Uplink Labs crea nuevas imágenes aproximadamente dos veces al mes. Las imágenes se compilan para varias regiones y cubren las siguientes configuraciones:
 
 *   ebs hvm x86_64 lts
 *   s3 hvm x86_64 lts
 *   ebs hvm x86_64 stable
 *   s3 hvm x86_64 stable
 
-Los enlaces de AMI y más información están disponibles en [https://www.uplinklabs.net/projects/arch-linux-on-ec2/](https://www.uplinklabs.net/projects/arch-linux-on-ec2/).
+Los enlaces de las AMIs y más información se encuentra disponible en [https://www.uplinklabs.net/projects/arch-linux-on-ec2/](https://www.uplinklabs.net/projects/arch-linux-on-ec2/).
 
 ### Otras AMIs
 
-Las AMI públicas verificadas de Linux en funcionamiento se encuentran a continuación
+Las AMIs públicas, en funcionamiento y verificadas de arch linux se encuentran a continuación
 
 ```
 AMI          Store Build   Release     Kernel Last verified
@@ -34,14 +34,14 @@ ami-38e81451  EBS  32 bit  2011-04-15  2.6    2012-01-14
 
 ```
 
-Estos AMIs se expiden con los núcleos de Arch linux que se arrancan mediante PV-GRUB.
+Estas AMIs se expiden con kernels de Arch linux que se arrancan mediante PV-GRUB.
 
-(2012-01-14) Las AMIs de 64 bits fallaron consistentemente en el arranque en las instancias Micro en us-east-1a y us-east-1d. En us-east-1b y us-east-1c, las AMIs ocasionalmente fallan al arrancar. Detenga e inicie la instancia para reasignarle una máquina aleatoria en estos casos.
+(2012-01-14) Las AMIs de 64 bits fallaron sistemáticamente en el arranque en las instancias Micro en us-east-1a y us-east-1d. En us-east-1b y us-east-1c, las AMIs ocasionalmente no arrancan. Detenga e inicie la instancia para reasignarle una máquina aleatoria en estos casos.
 
-Esto puede ser un problema si Amazon ejecuta diferentes versiones de Xen en diferentes máquinas / zonas de disponibilidad más antiguas.
+Esto puede ser un problema asociado a que Amazon ejecuta diferentes versiones de Xen en diferentes máquinas / zonas de disponibilidad más antiguas.
 
 ## Compilar AMIs de Arch
 
-[linux-ec2](https://aur.archlinux.org/packages/linux-ec2/) en [AUR](/index.php/AUR_(Espa%C3%B1ol) "AUR (Español)") compila el kernel de Arch linux para AWS con los módulos Xen habilitados y el parche XSAVE aplicado.
+[linux-ec2](https://aur.archlinux.org/packages/linux-ec2/) disponible en [AUR](/index.php/AUR_(Espa%C3%B1ol) "AUR (Español)") compila el kernel de Arch linux para AWS con los módulos Xen habilitados y el parche XSAVE aplicado.
 
-La página web de Uplink Labs mencionada anteriormente también tiene un manual sobre el proceso de compilación.
+La página web de Uplink Labs mencionada anteriormente también contiene un manual sobre el proceso de compilación.

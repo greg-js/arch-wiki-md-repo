@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [KDE](/index.php/KDE "KDE"), revisada por última vez el **2018-11-20**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=555447) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [KDE](/index.php/KDE "KDE"), revisada por última vez el **2018-11-25**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=555447) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -62,7 +62,7 @@ KDE es un proyecto de software que actualmente comprende un [entorno de escritor
 *   [5 Consejos y trucos](#Consejos_y_trucos)
     *   [5.1 Usar un gestor de ventanas diferente](#Usar_un_gestor_de_ventanas_diferente)
         *   [5.1.1 Sesión KDE/Openbox](#Sesión_KDE/Openbox)
-        *   [5.1.2 Re-habilitar efectos de composición](#Re-habilitar_efectos_de_composición)
+        *   [5.1.2 Rehabilitar efectos de composición](#Rehabilitar_efectos_de_composición)
     *   [5.2 Configurar la resolución del monitor / múltiples monitores](#Configurar_la_resolución_del_monitor_/_múltiples_monitores)
     *   [5.3 Deshabilitar la apertura del lanzador de aplicaciones con la tecla Super (tecla Windows)](#Deshabilitar_la_apertura_del_lanzador_de_aplicaciones_con_la_tecla_Super_(tecla_Windows))
 *   [6 Solución de problemas](#Solución_de_problemas)
@@ -104,13 +104,13 @@ KDE es un proyecto de software que actualmente comprende un [entorno de escritor
 
 Antes de instalar Plasma, asegúrese de tener una instalación [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)") en funcionamiento en su sistema.
 
-[Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el meta-paquete [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) o el grupo [plasma](https://www.archlinux.org/groups/x86_64/plasma/). Para conocer las diferencias entre [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) y [plasma](https://www.archlinux.org/groups/x86_64/plasma/) véase [grupo de paquetes](/index.php/Package_group "Package group"). Alternativamente, para una instalación de Plasma más minimalista, instale el paquete [plasma-desktop](https://www.archlinux.org/packages/?name=plasma-desktop).
+[Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el metapaquete [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) o el grupo [plasma](https://www.archlinux.org/groups/x86_64/plasma/). Para conocer las diferencias entre [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) y [plasma](https://www.archlinux.org/groups/x86_64/plasma/) véase [grupo de paquetes](/index.php/Package_group "Package group"). Alternativamente, para una instalación de Plasma más minimalista, instale el paquete [plasma-desktop](https://www.archlinux.org/packages/?name=plasma-desktop).
 
 Para habilitar el soporte para [Wayland](/index.php/Wayland_(Espa%C3%B1ol) "Wayland (Español)") en Plasma, instale también el paquete [plasma-wayland-session](https://www.archlinux.org/packages/?name=plasma-wayland-session).
 
 ### Aplicaciones KDE
 
-Para instalar el conjunto completo de aplicaciones KDE, instale el grupo [kde-applications](https://www.archlinux.org/groups/x86_64/kde-applications/) o el meta-paquete [kde-applications-meta](https://www.archlinux.org/packages/?name=kde-applications-meta). Tenga en cuenta que esto solo instalará aplicaciones, no instalará ninguna versión de Plasma.
+Para instalar el conjunto completo de aplicaciones KDE, instale el grupo [kde-applications](https://www.archlinux.org/groups/x86_64/kde-applications/) o el metapaquete [kde-applications-meta](https://www.archlinux.org/packages/?name=kde-applications-meta). Tenga en cuenta que esto solo instalará aplicaciones, no instalará ninguna versión de Plasma.
 
 ### Lanzamientos inestables
 
@@ -398,7 +398,7 @@ Los siguientes navegadores web pueden integrarse con Plasma:
 
 ### PIM
 
-KDE ofrece su propia pila para la gestión de información personal. Esto incluye emails, contactos, calendario, etc. Para instalar todos los paquetes PIM, puede usar el meta-paquete [kdepim-meta](https://www.archlinux.org/packages/?name=kdepim-meta).
+KDE ofrece su propia pila para la gestión de información personal. Esto incluye emails, contactos, calendario, etc. Para instalar todos los paquetes PIM, puede usar el metapaquete [kdepim-meta](https://www.archlinux.org/packages/?name=kdepim-meta).
 
 #### Akonadi
 
@@ -511,7 +511,7 @@ exec openbox-kde-session
 
 ```
 
-#### Re-habilitar efectos de composición
+#### Rehabilitar efectos de composición
 
 Al reemplazar Kwin con un gestor de ventanas que no proporciona un Compositor (como Openbox), se perderá cualquier efecto de composición del escritorio, por ejemplo, la transparencia. En este caso, instale y ejecute un gestor de Composite separado para proporcionar los efectos como [Xcompmgr](/index.php/Xcompmgr_(Espa%C3%B1ol) "Xcompmgr (Español)") o [Compton](/index.php/Compton "Compton").
 
@@ -556,7 +556,7 @@ Muchos problemas en KDE están relacionados con su configuración.
 
 Los problemas en Plasma son generalmente causados por *elementos gráficos* inestables (llamados coloquialmente *plasmoides*) o *temas de Plasma* Primero, encuentre cuál fue el último elemento gráfico o tema que instaló y deshabilítelo o desinstálelo.
 
-Por lo tanto, si su escritorio muestra repentinamente un "bloqueo", es probable que esto se deba a un elemento gráfico instalado defectuoso. Si no puede recordar qué elemento gráfico instaló antes de que comenzara el problema (a veces puede ser un problema irregular), intente localizarlo eliminando cada elemento gráfico hasta que el problema cese. Luego, puede desinstalar el elemento gráfico y presentar un informe de error en el [seguimiento de errores de KDE](https://bugs.kde.org/) **solo si es un elemento gráfico oficial**. Si no lo es, se recomienda buscar la entrada en la [KDE Store](https://store.kde.org/) e informar al desarrollador de ese elemento gráfico sobre el problema (detallando los pasos para reproducirlo, etc.).
+Por lo tanto, si su escritorio muestra repentinamente un «bloqueo», es probable que esto se deba a un elemento gráfico instalado defectuoso. Si no puede recordar qué elemento gráfico instaló antes de que comenzara el problema (a veces puede ser un problema irregular), intente localizarlo eliminando cada elemento gráfico hasta que el problema cese. Luego, puede desinstalar el elemento gráfico y presentar un informe de error en el [seguimiento de errores de KDE](https://bugs.kde.org/) **solo si es un elemento gráfico oficial**. Si no lo es, se recomienda buscar la entrada en la [KDE Store](https://store.kde.org/) e informar al desarrollador de ese elemento gráfico sobre el problema (detallando los pasos para reproducirlo, etc.).
 
 Si no puede encontrar el problema, pero no quiere que se pierdan *todos* los ajustes, vaya a `~/.config/` y ejecute el siguiente comando:
 
@@ -736,5 +736,5 @@ Esto se debe a la problemática manera en que GTK3 maneja los eventos de desplaz
 ## Véase también
 
 *   [Página web de KDE](https://www.kde.org/)
-*   [seguimiento de errores de KDE](https://bugs.kde.org/)
+*   [Seguimiento de errores de KDE](https://bugs.kde.org/)
 *   [Blog de Martin Graesslin](https://blog.martin-graesslin.com/blog/kategorien/kde/)

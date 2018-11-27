@@ -7,13 +7,15 @@ Arch Linux should run on any [x86_64](https://en.wikipedia.org/wiki/X86-64 "wiki
 ## Contents
 
 *   [1 Pre-installation](#Pre-installation)
-    *   [1.1 Set the keyboard layout](#Set_the_keyboard_layout)
-    *   [1.2 Verify the boot mode](#Verify_the_boot_mode)
-    *   [1.3 Connect to the Internet](#Connect_to_the_Internet)
-    *   [1.4 Update the system clock](#Update_the_system_clock)
-    *   [1.5 Partition the disks](#Partition_the_disks)
-    *   [1.6 Format the partitions](#Format_the_partitions)
-    *   [1.7 Mount the file systems](#Mount_the_file_systems)
+    *   [1.1 Verify signature](#Verify_signature)
+    *   [1.2 Boot the live environment](#Boot_the_live_environment)
+    *   [1.3 Set the keyboard layout](#Set_the_keyboard_layout)
+    *   [1.4 Verify the boot mode](#Verify_the_boot_mode)
+    *   [1.5 Connect to the Internet](#Connect_to_the_Internet)
+    *   [1.6 Update the system clock](#Update_the_system_clock)
+    *   [1.7 Partition the disks](#Partition_the_disks)
+    *   [1.8 Format the partitions](#Format_the_partitions)
+    *   [1.9 Mount the file systems](#Mount_the_file_systems)
 *   [2 Installation](#Installation)
     *   [2.1 Select the mirrors](#Select_the_mirrors)
     *   [2.2 Install the base packages](#Install_the_base_packages)
@@ -31,7 +33,30 @@ Arch Linux should run on any [x86_64](https://en.wikipedia.org/wiki/X86-64 "wiki
 
 ## Pre-installation
 
-Download and boot the installation medium as explained in [Getting and installing Arch](/index.php/Getting_and_installing_Arch "Getting and installing Arch"). You will be logged in on the first [virtual console](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") as the root user, and presented with a [Zsh](/index.php/Zsh "Zsh") shell prompt.
+The installation media and their [GnuPG](/index.php/GnuPG "GnuPG") signatures can be acquired from the [Download](https://archlinux.org/download/) page.
+
+### Verify signature
+
+It is recommended to verify the image signature before use, especially when downloading from an *HTTP mirror*, where downloads are generally prone to be intercepted to [serve malicious images](http://www.cs.arizona.edu/stork/packagemanagersecurity/attacks-on-package-managers.html#explanation).
+
+On a system with [GnuPG](/index.php/GnuPG "GnuPG") installed, do this by downloading the *PGP signature* (under *Checksums*) to the ISO directory, and [verifying](/index.php/GnuPG#Verify_a_signature "GnuPG") it with `gpg --keyserver pgp.mit.edu --keyserver-options auto-key-retrieve --verify archlinux-<version>-x86_64.iso.sig`.
+
+Alternatively, run `pacman-key -v archlinux-<version>-x86_64.iso.sig` from an existing Arch Linux installation as root.
+
+**Note:**
+
+*   The signature itself could be manipulated if it is downloaded from a mirror site, instead of from [archlinux.org](https://archlinux.org/download/) as above. In this case, ensure that the public key, which is used to decode the signature, is signed by another, trustworthy key. The `gpg` command will output the fingerprint of the public key.
+*   Another method to verify the authenticity of the signature is to ensure that the public key's fingerprint is identical to the key fingerprint of the [Arch Linux developer](https://www.archlinux.org/people/developers/) who signed the ISO-file. See [Wikipedia:Public-key_cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography "wikipedia:Public-key cryptography") for more information on the public-key process to authenticate keys.
+
+### Boot the live environment
+
+The live environment can be booted from a [USB flash drive](/index.php/USB_flash_installation_media "USB flash installation media"), an [optical disc](/index.php/Optical_disc_drive#Burning "Optical disc drive") or a network with [PXE](/index.php/PXE "PXE"). For alternative means of installation, see [Category:Installation process](/index.php/Category:Installation_process "Category:Installation process").
+
+*   Pointing the current boot device to a drive containing the Arch installation media is typically achieved by pressing a key during the [POST](https://en.wikipedia.org/wiki/Power-on_self_test "w:Power-on self test") phase, as indicated on the splash screen. Refer to your motherboard's manual for details.
+*   When the Arch menu appears, select *Boot Arch Linux* and press `Enter` to enter the installation environment.
+*   See [README.bootparams](https://projects.archlinux.org/archiso.git/tree/docs/README.bootparams) for a list of [boot parameters](/index.php/Kernel_parameters#Configuration "Kernel parameters"), and [packages.x86_64](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) for a list of included packages.
+
+You will be logged in on the first [virtual console](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") as the root user, and presented with a [Zsh](/index.php/Zsh "Zsh") shell prompt.
 
 To switch to a different console—for example, to view this guide with [ELinks](/index.php/ELinks "ELinks") alongside the installation—use the `Alt+*arrow*` [shortcut](/index.php/Keyboard_shortcuts "Keyboard shortcuts"). To [edit](/index.php/Textedit "Textedit") configuration files, [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "wikipedia:vi") and [vim](/index.php/Vim#Usage "Vim") are available.
 
