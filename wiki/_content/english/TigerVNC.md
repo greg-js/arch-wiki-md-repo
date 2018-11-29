@@ -129,9 +129,9 @@ alwaysshared
 
 #### User mode
 
-**Note:** In order to keep the vncserver alive when the user logs out (physically or via ssh), one must enable the linger option for loginctl like this: `# loginctl enable-linger username` Failure to do so will result in the vncserver getting killed when the user logs off the machine.
-
 [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the service `vncserver@:1.service` in [Systemd/User](/index.php/Systemd/User "Systemd/User") mode, i.e. with the `--user` parameter.
+
+**Note:** The vncserver will get killed when the user logs off the machine, see [Systemd/User#Automatic start-up of systemd user instances](/index.php/Systemd/User#Automatic_start-up_of_systemd_user_instances "Systemd/User") for related configuration.
 
 #### System mode
 
@@ -236,6 +236,8 @@ ExecStart=/usr/bin/x0vncserver -rfbauth /home/${USER}/.vnc/passwd
 [Install]
 WantedBy=default.target
 ```
+
+[Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the service `x0vncserver.service` in [Systemd/User](/index.php/Systemd/User "Systemd/User") mode, i.e. with the `--user` parameter.
 
 **Note:**
 

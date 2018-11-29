@@ -23,7 +23,6 @@
     *   [3.2 No completion in Java files](#No_completion_in_Java_files)
     *   [3.3 URLError: <urlopen error [Errno 111] Connection refused>](#URLError:_<urlopen_error_[Errno_111]_Connection_refused>)
     *   [3.4 RuntimeError: Error starting OmniSharp server: no solutionfile found](#RuntimeError:_Error_starting_OmniSharp_server:_no_solutionfile_found)
-    *   [3.5 Ctrl+space does not trigger the completion anymore in terminal vim](#Ctrl+space_does_not_trigger_the_completion_anymore_in_terminal_vim)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -38,7 +37,9 @@ YCM uses a python script called `.ycm_extra_conf.py` to set project wide setting
 
 #### Extra conf structure
 
-A sample `.ycm_extra_conf.py` may be found [here](https://github.com/Valloric/YouCompleteMe/blob/master/.ycm_extra_conf.py). You should save a copy of this file in your project folder and customize it with adequate settings for your source files. The most important settings (which usually suffices for a minimal configuration) are the `-x` and `--std` options, which respectively tells the syntax checker the language used in the project and the [standard](https://en.wikipedia.org/wiki/ISO/IEC_JTC_1/SC_22 "wikipedia:ISO/IEC JTC 1/SC 22") followed. The `-x` value may be set to `c` or `c++`, while common values for the `--std` are `--std=c89`, `--std=c99`, `--std=c11`, `--std=c14` and their respective c++ version. The standard parameter will determine the warning and the errors in the syntax check (e.g., a line commented with `//` will be marked as unallowed in C89, but not under following versions of the standard).
+A sample `.ycm_extra_conf.py` may be found in [[1]](https://github.com/Valloric/ycmd/blob/master/.ycm_extra_conf.py). You should save a copy of this file in your project folder and customize it with adequate settings for your source files.
+
+The most important settings (which usually suffices for a minimal configuration) are the `-x` and `--std` options, which respectively tells the syntax checker the language used in the project and the [standard](https://en.wikipedia.org/wiki/ISO/IEC_JTC_1/SC_22 "wikipedia:ISO/IEC JTC 1/SC 22") followed. The `-x` value may be set to `c` or `c++`, while common values for the `--std` are `--std=c89`, `--std=c99`, `--std=c11`, `--std=c14` and their respective c++ version. The standard parameter will determine the warning and the errors in the syntax check (e.g., a line commented with `//` will be marked as unallowed in C89, but not under following versions of the standard).
 
 A third party script and vim plugin for the automatic generation of the `.ycm_extra_conf.py` is available on [this repo](https://github.com/rdnetto/YCM-Generator).
 
@@ -223,12 +224,6 @@ This error appears when you do not have a `.sln` file in current or parent direc
 ### RuntimeError: Error starting OmniSharp server: no solutionfile found
 
 Same as above.
-
-### Ctrl+space does not trigger the completion anymore in terminal vim
-
-Due to [a bug](https://bugs.kde.org/show_bug.cgi?id=341157) in KDE Framework5/Qt5, the `Ctrl+space` key combination is not recognized by Konsole5\. A temporary workaround may be to set another trigger for YouCompleteMe completion, changing the value of the variable `ycm_key_invoke_completion`, e.g. to use `Ctrl-b` instead of `Ctrl-space` add the following to the `~/.vimrc` config file:
-
- `~/.vimrc`  `let g:ycm_key_invoke_completion = '<C-b>'` 
 
 ## See also
 

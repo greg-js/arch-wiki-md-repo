@@ -36,7 +36,7 @@ MariaDB - так именуется форк популярного сервер
 
 	[http://www.percona.com/software/percona-server/](http://www.percona.com/software/percona-server/) || [percona-server](https://www.archlinux.org/packages/?name=percona-server)
 
-**Tip:** Если база данных, размещаемая в каталоге `/var/lib/mysql`, расположена на разделе с файловой системой [btrfs](/index.php/Btrfs "Btrfs"), то необходимо отключить механизм [Copy-on-Write](/index.php/Btrfs#Copy-on-Write_(CoW) "Btrfs") для этого каталога перед тем как создавать новую базу данных:
+**Tip:** Если база данных, размещаемая в каталоге `/var/lib/mysql` и расположена в разделе с файловой системой [btrfs](/index.php/Btrfs "Btrfs"), то необходимо отключить механизм [Copy-on-Write](/index.php/Btrfs#Copy-on-Write_(CoW) "Btrfs") для этого каталога перед тем как создавать новую базу данных:
 
 `# chattr +C /var/lib/mysql`
 
@@ -47,14 +47,12 @@ MariaDB - так именуется форк популярного сервер
 
 ```
 
-[Запустите](/index.php/Daemons#Starting_manually "Daemons") демон `mysqld` и выполните настроечный скрипт:
+Следующая команда в интерактивном режиме проведет Вас по ряду рекомендуемых мер безопасности для базы данных:
 
 ```
 # mysql_secure_installation
 
 ```
-
-и [перезапустите](/index.php/%D0%9F%D0%B5%D1%80%D0%B5%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D0%B5 "Перезапустите") `mysqld`.
 
 При MariaDB по стандарту запустится только так:
 

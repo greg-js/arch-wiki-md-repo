@@ -90,6 +90,8 @@ $ localectl set-keymap --no-convert *keymap*
 
 The `--no-convert` option can be used to prevent `localectl` from automatically changing the [Xorg keymap](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg") to the nearest match. See [localectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/localectl.1) for more information.
 
+If required, the keymap from `/etc/vconsole.conf` can be loaded during early userspace by the `keymap` [mkinitcpio hook](/index.php/Mkinitcpio#Common_hooks "Mkinitcpio").
+
 ### Creating a custom keymap
 
 When using the console, you can use hotkeys to print a specific character. Moreover we can also print a sequence of characters and some escape sequences. Thus, if we print the sequence of characters constituting a command and afterwards an escape character for a new line, that command will be executed.

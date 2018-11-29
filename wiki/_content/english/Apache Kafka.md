@@ -6,7 +6,7 @@
 
 ## Installation
 
-Install the [kafka](https://aur.archlinux.org/packages/kafka/) package. Start `kafka.service` with systemctl which should also atomatically enable/start `zookeeper@kafka.service` as well.
+Install the [kafka](https://aur.archlinux.org/packages/kafka/) package. Start `kafka.service` with systemctl which should also automatically enable/start `zookeeper@kafka.service` as well.
 
 ## Usage
 

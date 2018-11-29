@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Kernels/Arch_Build_System](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-02-10，点击[这里](https://wiki.archlinux.org/index.php?title=Kernels%2FArch_Build_System&diff=0&oldid=508497)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Kernels/Arch Build System](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-11-27，点击[这里](https://wiki.archlinux.org/index.php?title=Kernels%2FArch+Build+System&diff=0&oldid=545354)可以查看翻译后英文页面的改动。
 
 参阅 [Kernels (简体中文)](/index.php/Kernels_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernels (简体中文)"). 利用 [Arch 编译系统](/index.php/Arch_Build_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Build System (简体中文)")，可以基于官方的 [linux](https://www.archlinux.org/packages/?name=linux) 包编译自定义内核。这种编译方法可以自动化整个过程，并且是基于一个已经经过详细测试过的内核包。你可以编辑 PKGBUILD 来使用一个自定义内核配置或者添加附加的补丁。
 
@@ -30,6 +30,7 @@
 首先需要一个原始内核作为自定义的基础，从 ABS 获取内核包文件，并放到编译目录：
 
 ```
+$ asp update linux
 $ asp checkout linux
 
 ```
@@ -51,8 +52,6 @@ $ asp checkout linux
 
 可以在这里打上需要的补丁，并修改内核配置文件。
 
-修改或用已经有的`.config`内核配置文件覆盖`config.x86_64`(64位系统) 或 `config`(32位系统)
-
 或用 GUI 调整编译选项。从 PKGBUILD 的 prepare() 函数中选择一种方式，取消前面的注释：
 
  `PKGBUILD` 
@@ -70,6 +69,8 @@ $ asp checkout linux
 ```
 
 ### 生成新校验和
+
+[安装](/index.php/Install "Install") 软件包 [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib)。
 
 如果修改了 config 文件，需要生成新的校验和：
 

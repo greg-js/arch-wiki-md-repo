@@ -711,7 +711,7 @@ GRUB_ENABLE_CRYPTODISK=y
 
 ```
 
-See [dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") and [GRUB#Boot partition](/index.php/GRUB#Boot_partition "GRUB") for details.
+See [dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") and [GRUB#Encrypted /boot](/index.php/GRUB#Encrypted_/boot "GRUB") for details.
 
 Complete the GRUB install to both SSDs (in reality, installing only to `/dev/sda` will work).
 
@@ -909,7 +909,7 @@ However, when an update to the kernel or bootloader is required, the `/boot` par
 
 ## Encrypted boot partition (GRUB)
 
-This setup utilizes the same partition layout and configuration for the system's root partition as the previous [#LVM on LUKS](#LVM_on_LUKS) section, with the difference that a special feature of the [GRUB](/index.php/GRUB "GRUB") bootloader is used to additionally encrypt the boot partition `/boot`. See also [GRUB#Boot partition](/index.php/GRUB#Boot_partition "GRUB").
+This setup utilizes the same partition layout and configuration for the system's root partition as the previous [#LVM on LUKS](#LVM_on_LUKS) section, with the difference that a special feature of the [GRUB](/index.php/GRUB "GRUB") bootloader is used to additionally encrypt the boot partition `/boot`. See also [GRUB#Encrypted /boot](/index.php/GRUB#Encrypted_/boot "GRUB").
 
 The disk layout in this example is:
 
@@ -1080,7 +1080,7 @@ GRUB_CMDLINE_LINUX="... rd.luks.name=*device-UUID*=cryptlvm" ...
 GRUB_ENABLE_CRYPTODISK=y
 ```
 
-See [dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") and [GRUB#Boot partition](/index.php/GRUB#Boot_partition "GRUB") for details. The `*device-UUID*` refers to the UUID of `/dev/sda4` (the partition which holds the lvm containing the root filesystem). See [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").
+See [dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") and [GRUB#Encrypted /boot](/index.php/GRUB#Encrypted_/boot "GRUB") for details. The `*device-UUID*` refers to the UUID of `/dev/sda4` (the partition which holds the lvm containing the root filesystem). See [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").
 
 Generate GRUB's [configuration](/index.php/GRUB#Generate_the_main_configuration_file "GRUB") file:
 
@@ -1269,7 +1269,7 @@ After creating, adding, and embedding the key as described above, add the `encry
 
 ### Configuring the boot loader
 
-Install [GRUB](/index.php/GRUB "GRUB") to `/dev/sda`. Then, edit `/etc/default/grub` as instructed in the [GRUB#Encryption](/index.php/GRUB#Encryption "GRUB") article, following both the instructions for an encrypted root and boot partition. Finally, generate the GRUB configuration file.
+Install [GRUB](/index.php/GRUB "GRUB") to `/dev/sda`. Then, edit `/etc/default/grub` as instructed in the [GRUB#Additional arguments](/index.php/GRUB#Additional_arguments "GRUB") and [GRUB#Encrypted /boot](/index.php/GRUB#Encrypted_/boot "GRUB"), following both the instructions for an encrypted root and boot partition. Finally, generate the GRUB configuration file.
 
 ### Configuring swap
 

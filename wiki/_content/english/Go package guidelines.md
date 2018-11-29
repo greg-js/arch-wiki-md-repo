@@ -143,24 +143,24 @@ pkgver=0.0.1
 pkgrel=1
 pkgdesc='Go PKGBUILD Example'
 arch=('x86_64')
-url='https://example.org/$pkgname'
+url="https://example.org/$pkgname"
 license=('GPL')
 makedepends=('go-pie')
 source=("$url/$pkgname-$pkgver.tar.gz")
 sha256sums=('1337deadbeef')
 
 build() {
-  cd "$pkgname-$pkgver"
+  cd $pkgname-$pkgver
   go build \
     -gcflags "all=-trimpath=$PWD" \
     -asmflags "all=-trimpath=$PWD" \
     -ldflags "-extldflags $LDFLAGS" \
-    -o "$pkgname" .
+    -o $pkgname .
 }
 
 package() {
-  cd "$pkgname-$pkgver"
-  install -Dm755 "$pkgname" "$pkgdir/usr/bin/$pkgname"
+  cd $pkgname-$pkgver
+  install -Dm755 $pkgname -t "$pkgdir"/usr/bin/
 }
 
 ```

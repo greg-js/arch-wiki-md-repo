@@ -17,6 +17,7 @@ Related articles
         *   [1.2.2 Web server](#Web_server)
             *   [1.2.2.1 Lighttpd](#Lighttpd)
             *   [1.2.2.2 Nginx](#Nginx)
+        *   [1.2.3 /etc/hosts](#/etc/hosts)
     *   [1.3 Making devices use Pi-hole](#Making_devices_use_Pi-hole)
         *   [1.3.1 Troubleshooting](#Troubleshooting)
     *   [1.4 Using Pi-hole together with OpenVPN](#Using_Pi-hole_together_with_OpenVPN)
@@ -142,6 +143,18 @@ Copy the package provided default config for Pi-hole:
 
 [Enable](/index.php/Enable "Enable") `nginx.service` `php-fpm.service` and re/start them.
 
+#### /etc/hosts
+
+[filesystem](https://www.archlinux.org/packages/?name=filesystem) ships with an empty `/etc/hosts` file which is known to prevent Pi-hole from fetching block lists. One must append the following to this file to insure correct operation, noting that *ip.address.of.pihole* should be the actual IP address of the machine running Pi-hole (eg 192.168.1.250) and *myhostname* should be the actual hostname of the machine running Pi-hole.
+
+```
+127.0.0.1              localhost
+ip.address.of.pihole   pi.hole myhostname
+
+```
+
+For more, see [Issue#1800](https://github.com/pi-hole/pi-hole/issues/1800).
+
 ### Making devices use Pi-hole
 
 [The upstream documentation](https://discourse.pi-hole.net/t/how-do-i-configure-my-devices-to-use-pi-hole-as-their-dns-server/245) documents four different methods:
@@ -156,8 +169,6 @@ Copy the package provided default config for Pi-hole:
 *   If you setup a DHCP-based method and ad blocking does not work on a device, it might still have an outdated DHCP lease. If you do not know how to renew your DHCP lease, try restarting the device.
 *   A simple check to see that the router is setup correctly is to first renew a DHCP lease, then inspect the contents of `/etc/resolv.conf` on a Linux client. One should see the IP address of the Pi-hole box, not the IP address of the router.
 *   If you are having problems with method 2, try disabling the `dns-rebind` feature on the router (if present).
-*   If `pihole -g` or updating lists from the web UI fail with `DNS Resolution is Currently Unavailable`, adding `127.0.0.1 pi.hole` to `/etc/hosts` [may fix it](https://github.com/pi-hole/pi-hole/issues/1800).
-    *   This might also fix DNS performance issues, where clients have to wait few seconds to get reply from the pi-hole DNS server.
 
 ### Using Pi-hole together with OpenVPN
 

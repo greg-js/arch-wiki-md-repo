@@ -160,6 +160,7 @@ Enlightenment provides a notification server through its Notification extension.
 
 More themes to customize the look of Enlightenment are available from:
 
+*   [extra.enlightenment.org](https://extra.enlightenment.org/themes/)
 *   [enlightenment-themes.org](https://www.enlightenment-themes.org/)
 *   [relighted.c0n.de](http://relighted.c0n.de/#100) for the default theme in 200 different colors
 *   [git.enlightenment.org](http://git.enlightenment.org/themes) (git clone the theme you like, run 'make' and you end up with a .edj theme file)

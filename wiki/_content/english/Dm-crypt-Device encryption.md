@@ -228,7 +228,7 @@ An entry should now exist for `/dev/mapper/enc`.
 
 This section shows how to employ the options for creating new encrypted blockdevices and accessing them manually.
 
-**Warning:** GRUB does not support LUKS2 headers. Therefore, if you plan to [unlock an encrypted boot partition with GRUB](/index.php/GRUB#Boot_partition "GRUB"), do not specify `luks2` for the type parameter on encrypted boot partitions.
+**Warning:** GRUB does not support LUKS2 headers. Therefore, if you plan to [unlock an encrypted boot partition with GRUB](/index.php/GRUB#Encrypted_/boot "GRUB"), do not specify `luks2` for the type parameter on encrypted boot partitions.
 
 ### Encrypting devices with LUKS mode
 
@@ -974,7 +974,7 @@ The naming of device nodes like `/dev/sdb1` is not guaranteed to stay the same a
 
 **Warning:** Use an embedded keyfile **only** if you have some form of authentication mechanism beforehand that protects the keyfile sufficiently. Otherwise auto-decryption will occur, defeating completely the purpose of block device encryption.
 
-This method allows to use a specially named keyfile that will be embedded in the [initramfs](/index.php/Initramfs "Initramfs") and picked up by the `encrypt` [hook](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") to unlock the root filesystem (`cryptdevice`) automatically. It may be useful to apply when using the [GRUB early cryptodisk](/index.php/GRUB#Boot_partition "GRUB") feature, in order to avoid entering two passphrases during boot.
+This method allows to use a specially named keyfile that will be embedded in the [initramfs](/index.php/Initramfs "Initramfs") and picked up by the `encrypt` [hook](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") to unlock the root filesystem (`cryptdevice`) automatically. It may be useful to apply when using the [GRUB early cryptodisk](/index.php/GRUB#Encrypted_/boot "GRUB") feature, in order to avoid entering two passphrases during boot.
 
 The `encrypt` hook lets the user specify a keyfile with the `cryptkey` kernel parameter: in the case of initramfs, the syntax is `rootfs:*path*`. See [dm-crypt/System configuration#cryptkey](/index.php/Dm-crypt/System_configuration#cryptkey "Dm-crypt/System configuration"). Besides, this kernel parameter defaults to use `/crypto_keyfile.bin`, and if the initramfs contains a valid key with this name, decryption will occur automatically without the need to configure the `cryptkey` parameter.
 

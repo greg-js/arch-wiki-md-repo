@@ -36,6 +36,7 @@
 *   [ArchLinuxUser](/index.php/User:ArchLinuxUser "User:ArchLinuxUser") ([обсуждение](/index.php/User_talk:ArchLinuxUser "User talk:ArchLinuxUser")|[вклад](/index.php/Special:Contributions/ArchLinuxUser "Special:Contributions/ArchLinuxUser"))
 *   [MrReDoX](/index.php/User:MrReDoX "User:MrReDoX") ([обсуждение](/index.php/User_talk:MrReDoX "User talk:MrReDoX")|[вклад](/index.php/Special:Contributions/MrReDoX "Special:Contributions/MrReDoX"))
 *   [SlavMetal](/index.php/User:SlavMetal "User:SlavMetal") ([обсуждение](/index.php/User_talk:SlavMetal "User talk:SlavMetal")|[вклад](/index.php/Special:Contributions/SlavMetal "Special:Contributions/SlavMetal"))
+*   [Elnee](/index.php/User:Elnee "User:Elnee") ([обсуждение](/index.php/User_talk:Elnee "User talk:Elnee")|[вклад](/index.php/Special:Contributions/Elnee "Special:Contributions/Elnee"))
 
 Неактивны (менее 5 правок за последние 30 дней):
 
@@ -242,6 +243,7 @@
 | [Unity3D (Русский)](/index.php/Unity3D_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Unity3D (Русский)") | Не требуется | [ArchLinuxUser](/index.php/User:ArchLinuxUser "User:ArchLinuxUser") | - |
 | [Video game platform emulators (Русский)](/index.php/Video_game_platform_emulators_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Video game platform emulators (Русский)") | [Эмуляторы игровых приставок](/index.php/%D0%AD%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D1%8B_%D0%B8%D0%B3%D1%80%D0%BE%D0%B2%D1%8B%D1%85_%D0%BF%D1%80%D0%B8%D1%81%D1%82%D0%B0%D0%B2%D0%BE%D0%BA "Эмуляторы игровых приставок") | [SlavMetal](/index.php/User:SlavMetal "User:SlavMetal") | - |
 | [Vim (Русский)](/index.php/Vim_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Vim (Русский)") | Не требуется | [MrReDoX](/index.php/User:MrReDoX "User:MrReDoX") | - |
+| [Vim/YouCompleteMe (Русский)](/index.php/Vim/YouCompleteMe_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Vim/YouCompleteMe (Русский)") | Не требуется | [Elnee](/index.php/User:Elnee "User:Elnee") | - |
 | [Xcompmgr (Русский)](/index.php/Xcompmgr_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xcompmgr (Русский)") | Не требуется | [MrReDoX](/index.php/User:MrReDoX "User:MrReDoX") | - |
 | [xinitrc (Русский)](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xinitrc (Русский)") | Не требуется | [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") | - |
 | [Xorg (Русский)](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)") | Не требуется | [ArchLinuxUser](/index.php/User:ArchLinuxUser "User:ArchLinuxUser") | - |

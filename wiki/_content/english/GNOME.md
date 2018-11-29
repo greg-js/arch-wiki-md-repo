@@ -55,7 +55,7 @@ Related articles
         *   [6.2.6 Fonts](#Fonts)
         *   [6.2.7 Input methods](#Input_methods)
         *   [6.2.8 Power](#Power)
-            *   [6.2.8.1 Configure behaviour on lid switch close](#Configure_behaviour_on_lid_switch_close)
+            *   [6.2.8.1 Don't suspend, when laptop lid is closed](#Don't_suspend,_when_laptop_lid_is_closed)
             *   [6.2.8.2 Change critical battery level action](#Change_critical_battery_level_action)
     *   [6.3 Use a different window manager](#Use_a_different_window_manager)
 *   [7 See also](#See_also)
@@ -490,11 +490,11 @@ org.gnome.settings-daemon.plugins.power critical-battery-action
 
 ```
 
-##### Configure behaviour on lid switch close
+##### Don't suspend, when laptop lid is closed
 
-The GNOME Tweaks can optionally *inhibit* the *systemd* setting for the lid close ACPI event.[[7]](http://ftp.gnome.org/pub/GNOME/sources/gnome-tweak-tool/3.17/gnome-tweak-tool-3.17.1.news) To *inhibit* the setting, start the tweaks tool and, under the power tab, check the *Don't suspend on lid close* option. This means that the system will do nothing on lid close instead of suspending - the default behaviour. Checking the setting creates `~/.config/autostart/ignore-lid-switch-tweak.desktop` which will autostart the Tweaks's inhibitor.
+The settings panel of GNOME doesn't provide an option for the user, to change the action, when laptop lid is closed. However [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks) can override the setting applied by [systemd](https://www.archlinux.org/packages/?name=systemd), on the tab *General* turn off the switch *Suspend when laptop lid is closed*. The system will therefore not *Suspend to RAM (S3)* on lid close.
 
-If you do not want the system to suspend or do nothing on lid close, you will need to ensure that the setting described above is **not** checked and then configure *systemd* with `HandleLidSwitch=*preferred_behaviour*` as described in [Power management#ACPI events](/index.php/Power_management#ACPI_events "Power management").
+To change the lid switch action system-wide, ensure that the setting described above is **not turned off** and edit the systemd settings in `/etc/systemd/logind.conf`. To turn of suspend on lid close, set `HandleLidSwitch=ignore`, as described in [Power management#ACPI events](/index.php/Power_management#ACPI_events "Power management").
 
 ##### Change critical battery level action
 

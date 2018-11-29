@@ -17,6 +17,7 @@ Articoli correlati
         *   [1.2.2 Web Server](#Web_Server)
             *   [1.2.2.1 Lighttpd](#Lighttpd)
             *   [1.2.2.2 Nginx](#Nginx)
+        *   [1.2.3 /etc/hosts](#/etc/hosts)
     *   [1.3 Far usare Pi-hole ai propri apparati](#Far_usare_Pi-hole_ai_propri_apparati)
         *   [1.3.1 Risoluzione dei problemi](#Risoluzione_dei_problemi)
     *   [1.4 Usare Pi-hole attraverso OpenVPN](#Usare_Pi-hole_attraverso_OpenVPN)
@@ -44,7 +45,7 @@ Installa il pacchetto [pi-hole-server](https://aur.archlinux.org/packages/pi-hol
 
 #### FTL
 
-[motore Pi-hole FTL](https://github.com/pi-hole/Il) ([pi-hole-ftl](https://aur.archlinux.org/packages/pi-hole-ftl/)) è una dipendenza del progetto Pi-hole.
+[Pi-hole FTL](https://github.com/pi-hole/FTL) ([pi-hole-ftl](https://aur.archlinux.org/packages/pi-hole-ftl/)) è una dipendenza del progetto Pi-hole.
 
 FTL è un DNS server/forwarder e una interfaccia simil-database/fornitore di API che si occupa del salvataggio a lungo termine delle richieste che gli utenti possono richiedere "long-term data" section of the WebGUI. To be clear, data are collected and stored in two places:
 
@@ -55,7 +56,7 @@ FTL è un DNS server/forwarder e una interfaccia simil-database/fornitore di API
 
 **Tip:** Se Pi-hole è installato su una unità a stato solito (SD dei mini PC, SSD, unità M.2/NVMe, etc...) si raccomanda di settare il valore di DBINTERVAL almeno a 60.0 per minimizzare le scritture sul database.
 
-**Note:** Dalla versione 4.0, Pi-hole-FTL integra un fork private di dnsmasq. L'originale pacchetto [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) ora confligge con [pi-hole-ftl](https://aur.archlinux.org/packages/pi-hole-ftl/) e sarà disinstallato su aggiornamento da una precedente versione. E' ancora possibile usare i precedenti file di configurazione di dnsmasq, assicurati solamente che la riga `conf-dir=/etc/dnsmasq.d/,*.conf` nel file originale `/etc/dnsmasq.conf` non sia commentata.
+**Note:** Dalla versione 4.0, Pi-hole-FTL integra un fork privato di dnsmasq. Il pacchetto originale [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) ora confligge con [pi-hole-ftl](https://aur.archlinux.org/packages/pi-hole-ftl/) e sarà disinstallato su aggiornamento da una precedente versione. E' ancora possibile usare i precedenti file di configurazione di dnsmasq, assicurati solamente che la riga `conf-dir=/etc/dnsmasq.d/,*.conf` nel file originale `/etc/dnsmasq.conf` non sia commentata.
 
 #### Web Server
 
@@ -141,6 +142,18 @@ Copia il file di configurazione fornito dal pacchetto:
 ```
 
 Abilita `nginx.service` `php-fpm.service` e ri/avvia i servizi.
+
+#### /etc/hosts
+
+[filesystem](https://www.archlinux.org/packages/?name=filesystem) contiene il file `/etc/hosts` vuoto, condizione nota ad impossibilitare Pi-hole il recupero delle liste. E' possibile risolvere aggiungendovi quanto segue assicurando il corretto funzionamento, notando bene che *indirizzo.ip.di.pihole* dovrà essere l'attuale indirizzo IP della macchina che esegue Pi-hole (es. 192.168.1.250) e *myhostname* il suo relativo hostname.
+
+```
+127.0.0.1                localhost
+indirizzo.ip.di.pihole   pi.hole myhostname
+
+```
+
+Per approfondire, leggi [Issue#1800](https://github.com/pi-hole/pi-hole/issues/1800).
 
 ### Far usare Pi-hole ai propri apparati
 

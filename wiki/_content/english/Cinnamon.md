@@ -31,9 +31,10 @@ Related articles
     *   [4.11 Screenshot](#Screenshot)
     *   [4.12 Prevent Cinnamon from overriding xrandr/xinput configuration](#Prevent_Cinnamon_from_overriding_xrandr/xinput_configuration)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 cinnamon-settings: No module named Image](#cinnamon-settings:_No_module_named_Image)
-    *   [5.2 Video tearing](#Video_tearing)
-    *   [5.3 Disable the NetworkManager applet](#Disable_the_NetworkManager_applet)
+    *   [5.1 Debugging](#Debugging)
+    *   [5.2 cinnamon-settings: No module named Image](#cinnamon-settings:_No_module_named_Image)
+    *   [5.3 Video tearing](#Video_tearing)
+    *   [5.4 Disable the NetworkManager applet](#Disable_the_NetworkManager_applet)
 
 ## Installation
 
@@ -241,6 +242,16 @@ cinnamon-settings-daemon-xrandr.desktop
 ```
 
 ## Troubleshooting
+
+### Debugging
+
+You can use the `cinnamon-looking-glass` tool (Melange - Cinnamon Debugger) to inspect various things about the Cinnamon environment:
+
+*   a list of currently-open windows
+*   a list of currently-loaded extensions (applets, desklets, etc.)
+*   logs
+
+The "logs" feature is especially useful if you're encountering crashes (often happening due to extensions no being compatible or buggy).
 
 ### cinnamon-settings: No module named Image
 

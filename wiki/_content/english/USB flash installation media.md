@@ -66,7 +66,7 @@ See [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1) for more informatio
 
 ##### Using etcher
 
-[Etcher](https://etcher.io/) is a OS image flasher built with node.js and Electron, capable of flashing an SDCard or USB drive. It protects you from accidentally writing to your hard-drives and ensures every byte of data was written correctly.
+[Etcher](https://etcher.io/) is a OS image flasher built with node.js and Electron, capable of flashing an SDCard or USB drive. It protects you from accidentally writing to your hard-drives and ensures every byte of data was written correctly. There are 6 related packages in the AUR.
 
 #### In Windows
 
@@ -243,7 +243,7 @@ Syslinux is already preinstalled in `/mnt/usb/arch/boot/syslinux`. Install it co
 
 *   Partition and format the USB drive using [Rufus USB partitioner](https://rufus.akeo.ie/). Select partition scheme option as **MBR for BIOS and UEFI** and File system as **FAT32**. Uncheck "Create a bootable disk using ISO image" and "Create extended label and icon files" options.
 *   Change the **Volume Label** of the USB flash drive `X:` to match the LABEL mentioned in the `archisolabel=` part in `<ISO>\loader\entries\archiso-x86_64.conf`. This step is required for Official ISO ([Archiso](/index.php/Archiso "Archiso")). This step can be also performed using Rufus, during the prior "partition and format" step.
-*   Extract the ISO (similar to extracting ZIP archive) to the USB flash drive (using [7-Zip](https://www.7-zip.org/).
+*   Extract the ISO (similar to extracting ZIP archive) to the USB flash drive using [7-Zip](https://www.7-zip.org/).
 *   Download official Syslinux 6.xx binaries (zip file) from [https://www.kernel.org/pub/linux/utils/boot/syslinux/](https://www.kernel.org/pub/linux/utils/boot/syslinux/) and extract it. The version of Syslinux should be the same version used in the ISO image.
 
 *   Run the following command (in Windows cmd prompt, as admin):

@@ -326,6 +326,8 @@ See [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and 
 
 #### Pactree
 
+**Note:** *pactree* is not part of the [pacman](https://www.archlinux.org/packages/?name=pacman) package anymore. Instead it can be found in [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib).
+
 To view the dependency tree of a package:
 
 ```

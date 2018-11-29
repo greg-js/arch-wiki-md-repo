@@ -23,6 +23,7 @@
 *   [2 Graphics](#Graphics)
     *   [2.1 Optimus Nvidia](#Optimus_Nvidia)
     *   [2.2 bbswitch](#bbswitch)
+    *   [2.3 nvidia-xrun](#nvidia-xrun)
 *   [3 EFI firmware updates](#EFI_firmware_updates)
 
 ## Suspend
@@ -76,7 +77,16 @@ Note: This is just one configuration that worked. There are more configurations 
 
 ### bbswitch
 
-Discrete (GeForce GTX 1050 Ti) graphics card do not work well with bbswich. It won't power on/off (see *[[3]](https://bbs.archlinux.org/viewtopic.php?id=238389))
+Discrete (GeForce GTX 1050 Ti) graphics card do not work well with bbswich. It won't power on/off (see *[[3]](https://bbs.archlinux.org/viewtopic.php?id=238389)).
+
+### nvidia-xrun
+
+The [nvidia-xrun](https://aur.archlinux.org/packages/nvidia-xrun/) package will not work because it relies on bbswitch, that is broken. The [nvidia-xrun-pm](https://aur.archlinux.org/packages/nvidia-xrun-pm/) package provides an alternative version that works with this card. After installing the package a service can be enabled to automatically bring the card down during boot:
+
+```
+ systemctl enable nvidia-xrun-pm
+
+```
 
 ## EFI firmware updates
 

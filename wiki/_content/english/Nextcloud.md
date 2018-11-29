@@ -915,7 +915,7 @@ WantedBy=timers.target
 
 #### AUR package
 
-Install [nextcloud-systemd-cron](https://aur.archlinux.org/packages/nextcloud-systemd-cron/).
+Install [nextcloud-systemd-timers](https://aur.archlinux.org/packages/nextcloud-systemd-timers/).
 
 #### Activate timer
 

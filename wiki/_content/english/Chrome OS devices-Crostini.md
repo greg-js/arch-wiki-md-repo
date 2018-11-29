@@ -1,3 +1,5 @@
+[Crostini](https://chromium.googlesource.com/chromiumos/docs/+/master/containers_and_vms.md) is Google's umbrella term for making Linux application support easy to use and integrating well with Chrome OS.
+
 This article describes how to install Arch Linux on a Chromebook in a container (via Crostini), without needing to enable developer mode, allowing apps to run alongside other Chrome/Android apps.
 
 	Advantages

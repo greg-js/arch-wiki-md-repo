@@ -43,7 +43,7 @@ It is also needed to set the following settings [[2]](https://www.dell.com/commu
 **Note:**
 
 *   Some changes in BIOS might reset other settings. Check your BIOS settings twice.
-*   Those settings are working as of 2018/10/06
+*   Those settings are working as of 2018/11/28
 
 ## Troubleshooting
 

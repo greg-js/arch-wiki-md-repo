@@ -283,9 +283,7 @@ A network manager lets you manage network connection settings in so called netwo
 
 **Note:** There are many solutions to choose from, but remember that all of them are mutually exclusive; you should not run two daemons simultaneously.
 
-**Warning:** The dhcp6 client of systemd has a buffer overflow vulnerability.[[3]](https://nvd.nist.gov/vuln/detail/CVE-2018-15688)
-
-| Network manager | GUI | [Archiso](/index.php/Archiso "Archiso") [[4]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) | CLI tools | [PPP](https://en.wikipedia.org/wiki/Point-to-Point_Protocol "wikipedia:Point-to-Point Protocol") support
+| Network manager | GUI | [Archiso](/index.php/Archiso "Archiso") [[3]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) | CLI tools | [PPP](https://en.wikipedia.org/wiki/Point-to-Point_Protocol "wikipedia:Point-to-Point Protocol") support
 (e.g. 3G modem) | [DHCP client](#DHCP) | Systemd units |
 | [ConnMan](/index.php/ConnMan "ConnMan") | 8 unofficial | No | [connmanctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/connmanctl.1) | Yes | internal | `connman.service` |
 | [netctl](/index.php/Netctl "Netctl") | 2 unofficial | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | [netctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.1), wifi-menu | Yes | [dhcpcd](/index.php/Dhcpcd "Dhcpcd") or [dhclient](https://www.archlinux.org/packages/?name=dhclient) | `netctl-ifplugd@*interface*.service`, `netctl-auto@*interface*.service` |
@@ -329,7 +327,7 @@ To set the "pretty" hostname and other machine metadata, see [machine-info(5)](h
 
 The `myhostname` [Name Service Switch](/index.php/Name_Service_Switch "Name Service Switch") (NSS) module of [systemd](/index.php/Systemd "Systemd") provides local hostname resolution without having to edit `/etc/hosts` ([hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5)). It is enabled by default.
 
-Some clients may however still rely on `/etc/hosts`, see [[5]](https://lists.debian.org/debian-devel/2013/07/msg00809.html) [[6]](https://bugzilla.mozilla.org/show_bug.cgi?id=87717#c55) for examples.
+Some clients may however still rely on `/etc/hosts`, see [[4]](https://lists.debian.org/debian-devel/2013/07/msg00809.html) [[5]](https://bugzilla.mozilla.org/show_bug.cgi?id=87717#c55) for examples.
 
 To configure the hosts file, add the following line to `/etc/hosts`:
 
@@ -568,7 +566,7 @@ There are also several relevant threads on the LKML.
 
 ### Explicit Congestion Notification
 
-[Explicit Congestion Notification](https://en.wikipedia.org/wiki/Explicit_Congestion_Notification "wikipedia:Explicit Congestion Notification") (ECN) may cause traffic problems with old/bad routers [[7]](https://bbs.archlinux.org/viewtopic.php?id=239892). As of [systemd 239](https://github.com/systemd/systemd/issues/9748), it is enabled for both ingoing and outgoing traffic.
+[Explicit Congestion Notification](https://en.wikipedia.org/wiki/Explicit_Congestion_Notification "wikipedia:Explicit Congestion Notification") (ECN) may cause traffic problems with old/bad routers [[6]](https://bbs.archlinux.org/viewtopic.php?id=239892). As of [systemd 239](https://github.com/systemd/systemd/issues/9748), it is enabled for both ingoing and outgoing traffic.
 
 To enable ECN only when requested by incoming connections (the reasonably safe, kernel default):
 

@@ -21,58 +21,59 @@ Related articles
     *   [1.3 Installation](#Installation)
 *   [2 UEFI systems](#UEFI_systems)
     *   [2.1 Installation](#Installation_2)
-*   [3 Generate the main configuration file](#Generate_the_main_configuration_file)
-    *   [3.1 Dual booting/Multiple operating systems](#Dual_booting/Multiple_operating_systems)
-        *   [3.1.1 MS Windows](#MS_Windows)
-*   [4 Configuration](#Configuration)
-    *   [4.1 Additional arguments](#Additional_arguments)
-    *   [4.2 LVM](#LVM)
-    *   [4.3 RAID](#RAID)
-    *   [4.4 Encryption](#Encryption)
-        *   [4.4.1 Boot partition](#Boot_partition)
-    *   [4.5 Boot menu entries](#Boot_menu_entries)
-        *   [4.5.1 GRUB commands](#GRUB_commands)
-            *   [4.5.1.1 "Shutdown" menu entry](#"Shutdown"_menu_entry)
-            *   [4.5.1.2 "Restart" menu entry](#"Restart"_menu_entry)
-            *   [4.5.1.3 "Firmware setup" menu entry (UEFI only)](#"Firmware_setup"_menu_entry_(UEFI_only))
-        *   [4.5.2 EFI binaries](#EFI_binaries)
-            *   [4.5.2.1 UEFI Shell](#UEFI_Shell)
-            *   [4.5.2.2 gdisk](#gdisk)
-            *   [4.5.2.3 Chainloading an Arch Linux .efi file](#Chainloading_an_Arch_Linux_.efi_file)
-        *   [4.5.3 Dual-booting](#Dual-booting)
-            *   [4.5.3.1 GNU/Linux menu entry](#GNU/Linux_menu_entry)
-            *   [4.5.3.2 Windows installed in UEFI/GPT Mode menu entry](#Windows_installed_in_UEFI/GPT_Mode_menu_entry)
-            *   [4.5.3.3 Windows installed in BIOS/MBR mode](#Windows_installed_in_BIOS/MBR_mode)
-*   [5 Using the command shell](#Using_the_command_shell)
-    *   [5.1 Pager support](#Pager_support)
-    *   [5.2 Using the command shell environment to boot operating systems](#Using_the_command_shell_environment_to_boot_operating_systems)
-        *   [5.2.1 Chainloading a partition](#Chainloading_a_partition)
-        *   [5.2.2 Chainloading a disk/drive](#Chainloading_a_disk/drive)
-        *   [5.2.3 Chainloading Windows/Linux installed in UEFI mode](#Chainloading_Windows/Linux_installed_in_UEFI_mode)
-        *   [5.2.4 Normal loading](#Normal_loading)
-    *   [5.3 Using the rescue console](#Using_the_rescue_console)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 F2FS and other unsupported file systems](#F2FS_and_other_unsupported_file_systems)
-    *   [6.2 Intel BIOS not booting GPT](#Intel_BIOS_not_booting_GPT)
-    *   [6.3 Enable debug messages](#Enable_debug_messages)
-    *   [6.4 "No suitable mode found" error](#"No_suitable_mode_found"_error)
-    *   [6.5 msdos-style error message](#msdos-style_error_message)
-    *   [6.6 UEFI](#UEFI)
-        *   [6.6.1 Common installation errors](#Common_installation_errors)
-        *   [6.6.2 Drop to rescue shell](#Drop_to_rescue_shell)
-        *   [6.6.3 GRUB UEFI not loaded](#GRUB_UEFI_not_loaded)
-        *   [6.6.4 Default/fallback boot path](#Default/fallback_boot_path)
-    *   [6.7 Invalid signature](#Invalid_signature)
-    *   [6.8 Boot freezes](#Boot_freezes)
-    *   [6.9 Arch not found from other OS](#Arch_not_found_from_other_OS)
-    *   [6.10 Warning when installing in chroot](#Warning_when_installing_in_chroot)
-    *   [6.11 GRUB loads slowly](#GRUB_loads_slowly)
-    *   [6.12 error: unknown filesystem](#error:_unknown_filesystem)
-    *   [6.13 grub-reboot not resetting](#grub-reboot_not_resetting)
-    *   [6.14 Old BTRFS prevents installation](#Old_BTRFS_prevents_installation)
-    *   [6.15 Windows 8/10 not found](#Windows_8/10_not_found)
-    *   [6.16 VirtualBox EFI mode](#VirtualBox_EFI_mode)
-*   [7 See also](#See_also)
+*   [3 Configuration](#Configuration)
+    *   [3.1 Generated grub.cfg](#Generated_grub.cfg)
+        *   [3.1.1 Generate the main configuration file](#Generate_the_main_configuration_file)
+        *   [3.1.2 Detecting other operating systems](#Detecting_other_operating_systems)
+            *   [3.1.2.1 MS Windows](#MS_Windows)
+        *   [3.1.3 Additional arguments](#Additional_arguments)
+        *   [3.1.4 LVM](#LVM)
+        *   [3.1.5 RAID](#RAID)
+        *   [3.1.6 Encrypted /boot](#Encrypted_/boot)
+    *   [3.2 Custom grub.cfg](#Custom_grub.cfg)
+        *   [3.2.1 Boot menu entries](#Boot_menu_entries)
+            *   [3.2.1.1 GRUB commands](#GRUB_commands)
+                *   [3.2.1.1.1 "Shutdown" menu entry](#"Shutdown"_menu_entry)
+                *   [3.2.1.1.2 "Restart" menu entry](#"Restart"_menu_entry)
+                *   [3.2.1.1.3 "Firmware setup" menu entry (UEFI only)](#"Firmware_setup"_menu_entry_(UEFI_only))
+            *   [3.2.1.2 EFI binaries](#EFI_binaries)
+                *   [3.2.1.2.1 UEFI Shell](#UEFI_Shell)
+                *   [3.2.1.2.2 gdisk](#gdisk)
+                *   [3.2.1.2.3 Chainloading an Arch Linux .efi file](#Chainloading_an_Arch_Linux_.efi_file)
+            *   [3.2.1.3 Dual-booting](#Dual-booting)
+                *   [3.2.1.3.1 GNU/Linux menu entry](#GNU/Linux_menu_entry)
+                *   [3.2.1.3.2 Windows installed in UEFI/GPT Mode menu entry](#Windows_installed_in_UEFI/GPT_Mode_menu_entry)
+                *   [3.2.1.3.3 Windows installed in BIOS/MBR mode](#Windows_installed_in_BIOS/MBR_mode)
+*   [4 Using the command shell](#Using_the_command_shell)
+    *   [4.1 Pager support](#Pager_support)
+    *   [4.2 Using the command shell environment to boot operating systems](#Using_the_command_shell_environment_to_boot_operating_systems)
+        *   [4.2.1 Chainloading a partition](#Chainloading_a_partition)
+        *   [4.2.2 Chainloading a disk/drive](#Chainloading_a_disk/drive)
+        *   [4.2.3 Chainloading Windows/Linux installed in UEFI mode](#Chainloading_Windows/Linux_installed_in_UEFI_mode)
+        *   [4.2.4 Normal loading](#Normal_loading)
+    *   [4.3 Using the rescue console](#Using_the_rescue_console)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 F2FS and other unsupported file systems](#F2FS_and_other_unsupported_file_systems)
+    *   [5.2 Intel BIOS not booting GPT](#Intel_BIOS_not_booting_GPT)
+    *   [5.3 Enable debug messages](#Enable_debug_messages)
+    *   [5.4 "No suitable mode found" error](#"No_suitable_mode_found"_error)
+    *   [5.5 msdos-style error message](#msdos-style_error_message)
+    *   [5.6 UEFI](#UEFI)
+        *   [5.6.1 Common installation errors](#Common_installation_errors)
+        *   [5.6.2 Drop to rescue shell](#Drop_to_rescue_shell)
+        *   [5.6.3 GRUB UEFI not loaded](#GRUB_UEFI_not_loaded)
+        *   [5.6.4 Default/fallback boot path](#Default/fallback_boot_path)
+    *   [5.7 Invalid signature](#Invalid_signature)
+    *   [5.8 Boot freezes](#Boot_freezes)
+    *   [5.9 Arch not found from other OS](#Arch_not_found_from_other_OS)
+    *   [5.10 Warning when installing in chroot](#Warning_when_installing_in_chroot)
+    *   [5.11 GRUB loads slowly](#GRUB_loads_slowly)
+    *   [5.12 error: unknown filesystem](#error:_unknown_filesystem)
+    *   [5.13 grub-reboot not resetting](#grub-reboot_not_resetting)
+    *   [5.14 Old BTRFS prevents installation](#Old_BTRFS_prevents_installation)
+    *   [5.15 Windows 8/10 not found](#Windows_8/10_not_found)
+    *   [5.16 VirtualBox EFI mode](#VirtualBox_EFI_mode)
+*   [6 See also](#See_also)
 
 ## BIOS systems
 
@@ -83,12 +84,13 @@ On a BIOS/[GPT](/index.php/GPT "GPT") configuration, a [BIOS boot partition](htt
 **Note:**
 
 *   Before attempting this method keep in mind that not all systems will be able to support this partitioning scheme. Read more on [Partitioning#GUID Partition Table](/index.php/Partitioning#GUID_Partition_Table "Partitioning").
-*   This additional partition is only needed on a GRUB, BIOS/GPT partitioning scheme. Previously, for a GRUB, BIOS/MBR partitioning scheme, GRUB used the post-MBR gap for the embedding the `core.img`). On GPT, however, there is no guaranteed unused space before the first partition.
+*   The BIOS boot partition is only needed by GRUB on a BIOS/GPT setup. On a BIOS/MBR setup, GRUB uses the post-MBR gap for the embedding the `core.img`. On GPT, however, there is no guaranteed unused space before the first partition.
 *   For [UEFI](/index.php/UEFI "UEFI") systems this extra partition is not required, since no embedding of boot sectors takes place in that case. However, UEFI systems still require an [EFI system partition](/index.php/EFI_system_partition "EFI system partition").
 
 Create a mebibyte partition (`+1M` with *fdisk* or *gdisk*) on the disk with no file system and with partition type GUID `21686148-6449-6E6F-744E-656564454649`.
 
-*   Select partition type `BIOS boot` for [fdisk](/index.php/Fdisk "Fdisk"), `ef02` for [gdisk](/index.php/Gdisk "Gdisk").
+*   Select partition type `BIOS boot` for [fdisk](/index.php/Fdisk "Fdisk").
+*   Select partition type code `ef02` for [gdisk](/index.php/Gdisk "Gdisk").
 *   For [parted](/index.php/Parted "Parted") set/activate the flag `bios_grub` on the partition.
 
 This partition can be in any position order but has to be on the first 2 TiB of the disk. This partition needs to be created before GRUB installation. When the partition is ready, install the bootloader as per the instructions below.
@@ -97,7 +99,7 @@ The space before the first partition can also be used as the BIOS boot partition
 
 ### Master Boot Record (MBR) specific instructions
 
-Usually the post-[MBR](/index.php/MBR "MBR") gap (after the 512 byte MBR region and before the start of the first partition) in many MBR (or 'msdos' disklabel) partitioned systems is 31 KiB when DOS compatibility cylinder alignment issues are satisfied in the partition table. However a post-MBR gap of about 1 to 2 MiB is recommended to provide sufficient room for embedding GRUB's `core.img` ([FS#24103](https://bugs.archlinux.org/task/24103)). It is advisable to use a partitioning tool that supports 1 MiB partition alignment to obtain this space as well as to satisfy other non-512 byte sector issues (which are unrelated to embedding of `core.img`).
+Usually the post-MBR gap (after the 512 byte [MBR](/index.php/MBR "MBR") region and before the start of the first partition) in many MBR partitioned systems is 31 KiB when DOS compatibility cylinder alignment issues are satisfied in the partition table. However a post-MBR gap of about 1 to 2 MiB is recommended to provide sufficient room for embedding GRUB's `core.img` ([FS#24103](https://bugs.archlinux.org/task/24103)). It is advisable to use a partitioning tool that supports 1 MiB [partition alignment](/index.php/Partitioning#Partition_alignment "Partitioning") to obtain this space as well as to satisfy other non-512-byte-sector issues (which are unrelated to embedding of `core.img`).
 
 ### Installation
 
@@ -123,7 +125,7 @@ See [grub-install(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/grub-install.8)
 **Note:**
 
 *   It is recommended to read and understand the [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface"), [Partitioning#GUID Partition Table](/index.php/Partitioning#GUID_Partition_Table "Partitioning") and [Arch boot process#Under UEFI](/index.php/Arch_boot_process#Under_UEFI "Arch boot process") pages.
-*   When installing to use UEFI it is important to start the install with your machine in UEFI mode. The Arch Linux install media must be UEFI bootable.
+*   When installing to use UEFI it is important to boot the installation media in UEFI mode, otherwise *efibootmgr* will not be able to add the GRUB UEFI boot entry. Installing to the [fallback boot path](#Default/fallback_boot_path) will still work even in BIOS mode since it does not touch the NVRAM.
 *   To boot from a disk using UEFI, an EFI system partition is required. Follow [EFI system partition#Check for an existing partition](/index.php/EFI_system_partition#Check_for_an_existing_partition "EFI system partition") to find out if you have one already, otherwise you need to create it.
 
 ### Installation
@@ -138,7 +140,7 @@ First, [install](/index.php/Install "Install") the packages [grub](https://www.a
 Then follow the below steps to install GRUB:
 
 1.  [Mount the EFI system partition](/index.php/EFI_system_partition#Mount_the_partition "EFI system partition") and in the remainder of this section, substitute `*esp*` with its mount point.
-2.  Choose a bootloader identifier, here named `GRUB`. A directory of that name will be created to store the EFI binary in the ESP and this is the name that will appear in the UEFI boot menu to identify the GRUB boot entry.
+2.  Choose a bootloader identifier, here named `GRUB`. A directory of that name will be created in `*esp*/EFI/` to store the EFI binary and this is the name that will appear in the UEFI boot menu to identify the GRUB boot entry.
 3.  Execute the following command to install the GRUB EFI application `grubx64.efi` to `*esp*/EFI/GRUB/` and install its modules to `/boot/grub/x86_64-efi/`.
 
 ```
@@ -148,9 +150,9 @@ Then follow the below steps to install GRUB:
 
 After the above install completed the main GRUB directory is located at `/boot/grub/`. Note that `grub-install` also tries to [create an entry in the firmware boot manager](/index.php/GRUB/Tips_and_tricks#Create_a_GRUB_entry_in_the_firmware_boot_manager "GRUB/Tips and tricks"), named `GRUB` in the above example.
 
-Remember to [#Generate the main configuration file](#Generate_the_main_configuration_file) after finalizing [#Configuration](#Configuration).
+Remember to [#Generate the main configuration file](#Generate_the_main_configuration_file) after finalizing the configuration.
 
-**Tip:** If you use the option `--removable` then GRUB will be installed to `*esp*/EFI/BOOT/BOOTX64.EFI` (or `*esp*/EFI/BOOT/BOOTIA32.EFI` for the `i386-efi` target) and you will have the additional ability of being able to boot from the drive in case EFI variables are reset or you move the drive to another computer. Usually you can do this by selecting the drive itself similar to how you would using BIOS. If dual booting with Windows, be aware Windows usually has a `BOOT` folder inside the `EFI` folder of the EFI system partition, but its only purpose is to recreate the UEFI boot entry for Windows.
+**Tip:** If you use the option `--removable` then GRUB will be installed to `*esp*/EFI/BOOT/BOOTX64.EFI` (or `*esp*/EFI/BOOT/BOOTIA32.EFI` for the `i386-efi` target) and you will have the additional ability of being able to boot from the drive in case EFI variables are reset or you move the drive to another computer. Usually you can do this by selecting the drive itself similar to how you would using BIOS. If dual booting with Windows, be aware Windows usually places an EFI executable there, but its only purpose is to recreate the UEFI boot entry for Windows.
 
 **Note:**
 
@@ -159,15 +161,25 @@ Remember to [#Generate the main configuration file](#Generate_the_main_configura
 
 See [UEFI troubleshooting](#UEFI) in case of problems. Additionally see [GRUB/Tips and tricks#UEFI further reading](/index.php/GRUB/Tips_and_tricks#UEFI_further_reading "GRUB/Tips and tricks").
 
-## Generate the main configuration file
+## Configuration
 
-After the installation, the main configuration file `grub.cfg` needs to be generated. The generation process can be influenced by a variety of options in `/etc/default/grub` and scripts in `/etc/grub.d/`; see [#Configuration](#Configuration).
+On an installed system, GRUB loads the `/boot/grub/grub.cfg` configuration file each boot. You can use a [#Generated grub.cfg](#Generated_grub.cfg) or create a [#Custom grub.cfg](#Custom_grub.cfg) manually.
+
+### Generated grub.cfg
+
+This section only covers editing the `/etc/default/grub` configuration file. See [GRUB/Tips and tricks](/index.php/GRUB/Tips_and_tricks "GRUB/Tips and tricks") for more information.
+
+Remember to always [#Generate the main configuration file](#Generate_the_main_configuration_file) after making changes to `/etc/default/grub` and/or files in `/etc/grub.d/`.
+
+#### Generate the main configuration file
+
+After the installation, the main configuration file `/boot/grub/grub.cfg` needs to be generated. The generation process can be influenced by a variety of options in `/etc/default/grub` and scripts in `/etc/grub.d/`.
 
 If you have not done additional configuration, the automatic generation will determine the root filesystem of the system to boot for the configuration file. For that to succeed it is important that the system is either booted or chrooted into.
 
-**Note:** Remember that `grub.cfg` has to be re-generated after any change to `/etc/default/grub` or files in `/etc/grub.d/`.
+**Note:** Remember that `/boot/grub/grub.cfg` has to be re-generated after any change to `/etc/default/grub` or files in `/etc/grub.d/`.
 
-Use the *grub-mkconfig* tool to generate `grub.cfg`:
+Use the *grub-mkconfig* tool to generate `/boot/grub/grub.cfg`:
 
 ```
 # grub-mkconfig -o /boot/grub/grub.cfg
@@ -183,21 +195,15 @@ By default the generation scripts automatically add menu entries for Arch Linux 
 *   The default file path is `/boot/grub/grub.cfg`, not `/boot/grub/i386-pc/grub.cfg`. The [grub](https://www.archlinux.org/packages/?name=grub) package includes a sample `/boot/grub/grub.cfg`; ensure your intended changes are written to this file.
 *   If you are trying to run *grub-mkconfig* in a chroot or *systemd-nspawn* container, you might notice that it does not work, complaining that *grub-probe* cannot get the "canonical path of /dev/sdaX". In this case, try using *arch-chroot* as described in the [BBS post](https://bbs.archlinux.org/viewtopic.php?pid=1225067#p1225067).
 
-### Dual booting/Multiple operating systems
+#### Detecting other operating systems
 
 To have *grub-mkconfig* search for other installed systems and automatically add them to the menu, [install](/index.php/Install "Install") the [os-prober](https://www.archlinux.org/packages/?name=os-prober) package and [mount](/index.php/Mount "Mount") the partitions that contain the other systems. Then re-run *grub-mkconfig*.
 
-#### MS Windows
+##### MS Windows
 
 Partitions containing Windows should be automatically discovered by [os-prober](https://www.archlinux.org/packages/?name=os-prober). However, if the partition is encrypted, you may need to decrypt the partition before mounting. For BitLocker, this can be done with [dislocker](https://aur.archlinux.org/packages/dislocker/). This should be sufficient for [os-prober](https://www.archlinux.org/packages/?name=os-prober) to add the correct entry.
 
-## Configuration
-
-This section only covers editing the `/etc/default/grub` configuration file. See [GRUB/Tips and tricks](/index.php/GRUB/Tips_and_tricks "GRUB/Tips and tricks") for more information.
-
-Remember to always [#Generate the main configuration file](#Generate_the_main_configuration_file) after making changes to `/etc/default/grub`.
-
-### Additional arguments
+#### Additional arguments
 
 To pass custom additional arguments to the Linux image, you can set the `GRUB_CMDLINE_LINUX` + `GRUB_CMDLINE_LINUX_DEFAULT` variables in `/etc/default/grub`. The two are appended to each other and passed to kernel when generating regular boot entries. For the *recovery* boot entry, only `GRUB_CMDLINE_LINUX` is used in the generation.
 
@@ -209,7 +215,7 @@ For generating the GRUB recovery entry you have to ensure that `GRUB_DISABLE_REC
 
 See [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") for more info.
 
-### LVM
+#### LVM
 
 **Warning:** GRUB does not support thin-provisioned logical volumes.
 
@@ -217,7 +223,7 @@ If you use [LVM](/index.php/LVM "LVM") for your `/boot` or `/` root partition, m
 
  `/etc/default/grub`  `GRUB_PRELOAD_MODULES="... lvm"` 
 
-### RAID
+#### RAID
 
 GRUB provides convenient handling of [RAID](/index.php/RAID "RAID") volumes. You need to load GRUB modules `mdraid09` or `mdraid1x` to allow you to address the volume natively:
 
@@ -249,13 +255,7 @@ Where the RAID 1 array housing `/boot` is housed on `/dev/sda` and `/dev/sdb`.
 
 **Note:** GRUB supports booting from [Btrfs](/index.php/Btrfs "Btrfs") RAID 0/1/10, but *not* RAID 5/6\. You may use [mdadm](/index.php/Mdadm "Mdadm") for RAID 5/6, which is supported by GRUB.
 
-### Encryption
-
-In order to boot an encrypted root filesystem, see [dm-crypt/System configuration](/index.php/Dm-crypt/System_configuration "Dm-crypt/System configuration") and add the necessary kernel parameters to `GRUB_CMDLINE_LINUX`.
-
-Be sure to [generate the main configuration file](#Generate_the_main_configuration_file) when done.
-
-#### Boot partition
+#### Encrypted /boot
 
 GRUB also has special support for booting with an encrypted `/boot`. This is done by unlocking a [LUKS](/index.php/LUKS "LUKS") blockdevice in order to read its configuration and load any [initramfs](/index.php/Initramfs "Initramfs") and [kernel](/index.php/Kernel "Kernel") from it. This option tries to solve the issue of having an [unencrypted boot partition](/index.php/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition "Dm-crypt/Specialties").
 
@@ -283,15 +283,27 @@ Without further changes you will be prompted twice for a passhrase: the first fo
 
 **Tip:** You can use [pacman hooks](https://bbs.archlinux.org/viewtopic.php?id=234607)to automount your `/boot` when upgrades need to access related files.
 
-### Boot menu entries
+### Custom grub.cfg
 
-The best way to add other entries is editing `/etc/grub.d/40_custom` or `/boot/grub/custom.cfg`. The entries in this file will be automatically added after rerunning `grub-mkconfig`.
+This section describes the manual creation of GRUB boot entries in `/boot/grub/grub.cfg` instead of relying on *grub-mkconfig*.
+
+A basic GRUB config file uses the following options:
+
+*   `(hd*X*,*Y*)` is the partition *Y* on disk *X*, partition numbers starting at 1, disk numbers starting at 0
+*   `set default=*N*` is the default boot entry that is chosen after timeout for user action
+*   `set timeout=*M*` is the time *M* to wait in seconds for a user selection before default is booted
+*   `menuentry "title" {entry options}` is a boot entry titled `title`
+*   `set root=(hd*X*,*Y*)` sets the boot partition, where the kernel and GRUB modules are stored (boot need not be a separate partition, and may simply be a directory under the "root" partition (`/`)
+
+#### Boot menu entries
+
+**Tip:** These boot entries can also be used when generating the `/boot/grub/grub.cfg` file with *grub-mkconfig*. Add them to `/etc/grub.d/40_custom` or `/boot/grub/custom.cfg` and [regenerate the main configuration file](#Generate_the_main_configuration_file).
 
 For tips on managing multiple GRUB entries, for example when using both [linux](https://www.archlinux.org/packages/?name=linux) and [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernels, see [GRUB/Tips and tricks#Multiple entries](/index.php/GRUB/Tips_and_tricks#Multiple_entries "GRUB/Tips and tricks").
 
-#### GRUB commands
+##### GRUB commands
 
-##### "Shutdown" menu entry
+###### "Shutdown" menu entry
 
 ```
 menuentry "System shutdown" {
@@ -301,7 +313,7 @@ menuentry "System shutdown" {
 
 ```
 
-##### "Restart" menu entry
+###### "Restart" menu entry
 
 ```
 menuentry "System restart" {
@@ -311,7 +323,7 @@ menuentry "System restart" {
 
 ```
 
-##### "Firmware setup" menu entry (UEFI only)
+###### "Firmware setup" menu entry (UEFI only)
 
 ```
 if [ ${grub_platform} == "efi" ]; then
@@ -321,7 +333,7 @@ if [ ${grub_platform} == "efi" ]; then
 fi
 ```
 
-#### EFI binaries
+##### EFI binaries
 
 When launched in UEFI mode, GRUB can chainload other EFI binaries.
 
@@ -332,7 +344,7 @@ if [ ${grub_platform} == "efi" ]; then
 fi
 ```
 
-##### UEFI Shell
+###### UEFI Shell
 
 You can launch [UEFI Shell](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Shell "Unified Extensible Firmware Interface") by using placing it in the root of the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") and adding this menu entry:
 
@@ -344,7 +356,7 @@ menuentry "UEFI Shell" {
 }
 ```
 
-##### gdisk
+###### gdisk
 
 Download the [gdisk EFI application](/index.php/Gdisk#gdisk_EFI_application "Gdisk") and copy `gdisk_x64.efi` to `*esp*/EFI/tools/`.
 
@@ -356,7 +368,7 @@ menuentry "gdisk" {
 }
 ```
 
-##### Chainloading an Arch Linux .efi file
+###### Chainloading an Arch Linux .efi file
 
 If you have an *.efi* file generated from following [Secure Boot](/index.php/Secure_Boot "Secure Boot") or other means, you can add it to the boot menu. For example:
 
@@ -368,9 +380,9 @@ menuentry "Arch Linux .efi" {
 }
 ```
 
-#### Dual-booting
+##### Dual-booting
 
-##### GNU/Linux menu entry
+###### GNU/Linux menu entry
 
 Assuming that the other distribution is on partition `sda2`:
 
@@ -397,7 +409,7 @@ menuentry "Other Linux" {
 }
 ```
 
-##### Windows installed in UEFI/GPT Mode menu entry
+###### Windows installed in UEFI/GPT Mode menu entry
 
 This mode determines where the Windows bootloader resides and chain-loads it after Grub when the menu entry is selected. The main task here is finding the EFI system partition and running the bootloader from it.
 
@@ -430,7 +442,7 @@ The `$hints_string` command will determine the location of the EFI system partit
 
 These two commands assume the ESP Windows uses is mounted at `*esp*`. There might be case differences in the path to Windows's EFI file, what with being Windows, and all.
 
-##### Windows installed in BIOS/MBR mode
+###### Windows installed in BIOS/MBR mode
 
 **Note:** GRUB supports booting `bootmgr` directly and [chainloading](https://www.gnu.org/software/grub/manual/grub.html#Chain_002dloading) of partition boot sector is no longer required to boot Windows in a BIOS/MBR setup.
 

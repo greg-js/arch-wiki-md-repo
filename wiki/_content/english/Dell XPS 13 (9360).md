@@ -70,7 +70,7 @@ To test if your XPS 13 is affected by the CABC, go to this [test page](http://ty
 2.  Download a Windows 10 ISO from [Microsoft's website](https://www.microsoft.com/en-in/software-download/windows10ISO)
 3.  Create a portable Windows 10 installation [using woeusb](https://www.addictivetips.com/ubuntu-linux-tips/make-windows-usb-drive-on-linux-woeusb/)
 4.  Boot the XPS 13 from your Windows 10 USB device (F12)
-5.  In Windows, download and install the latest driver for the [Intel Graphics controller](http://www.dell.com/support/home/us/en/04/drivers/driversdetails?driverId=M10YG)
+5.  In Windows, download and install the latest driver for the [Intel Graphics controller](https://www.dell.com/support/home/us/en/04/drivers/driversdetails?driverId=RFGHP)
 6.  Then download and install [this tool](http://www.dell.com/support/home/us/en/04/drivers/driversdetails?driverId=312K3) to update the panel firmware. The tool gives you the option to disable CABC
 7.  Reboot (from USB)
 8.  Reboot to Arch Linux and rerun the [test](http://tylerwatt12.com/dc/)

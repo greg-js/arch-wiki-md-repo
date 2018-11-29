@@ -7,11 +7,11 @@
 | Touchscreen | Not working |
 | Camera | Working | linux-uvc |
 
-Currently not listed on the HP site, but basically a lower-spec version of [HP ENVY 13-ah0003na](https://store.hp.com/UKStore/Merch/Product.aspx?id=4EY21EA&opt=ABU&sel=NTB), ie 256 GB SSD, 8GB RAM, Core i5.
+Currently not listed on the HP site, but basically a lower-spec version of [HP ENVY 13-ah0003na](https://store.hp.com/UKStore/Merch/Product.aspx?id=4EY21EA&opt=ABU&sel=NTB), i.e. 256 GB SSD, 8GB RAM, Core i5.
 
 ## Contents
 
-*   [1 Pre-Installation](#Pre-Installation)
+*   [1 Installation](#Installation)
     *   [1.1 Video](#Video)
         *   [1.1.1 Drivers](#Drivers)
     *   [1.2 Audio](#Audio)
@@ -19,11 +19,10 @@ Currently not listed on the HP site, but basically a lower-spec version of [HP E
         *   [1.3.1 Brightness](#Brightness)
     *   [1.4 Touchpad](#Touchpad)
     *   [1.5 Touchscreen](#Touchscreen)
-*   [2 Troubleshooting](#Troubleshooting)
 
-## Pre-Installation
+## Installation
 
-Disable Secure Boot in BIOS by pressing Esc after pressing the power button until the BIOS appears.
+To start, you best disable Secure Boot in the BIOS by pressing `Esc` after pressing the power button until the BIOS appears.
 
 ### Video
 
@@ -50,7 +49,3 @@ Install [libinput](/index.php/Libinput "Libinput"). If there are any problems, t
 ### Touchscreen
 
 Definitely works on Windows, but is apparently not even detected as a USB device.
-
-## Troubleshooting
-
-* * *

@@ -22,20 +22,19 @@
     *   [7.1 Password protection of GRUB edit and console options only](#Password_protection_of_GRUB_edit_and_console_options_only)
 *   [8 Hide GRUB unless the Shift key is held down](#Hide_GRUB_unless_the_Shift_key_is_held_down)
 *   [9 Combining the use of UUIDs and basic scripting](#Combining_the_use_of_UUIDs_and_basic_scripting)
-*   [10 Manually creating grub.cfg](#Manually_creating_grub.cfg)
-*   [11 Multiple entries](#Multiple_entries)
-    *   [11.1 Disable submenu](#Disable_submenu)
-    *   [11.2 Recall previous entry](#Recall_previous_entry)
-    *   [11.3 Changing the default menu entry](#Changing_the_default_menu_entry)
-    *   [11.4 Boot non-default entry only once](#Boot_non-default_entry_only_once)
-*   [12 Play a tune](#Play_a_tune)
-*   [13 Manual configuration of core image for early boot](#Manual_configuration_of_core_image_for_early_boot)
-*   [14 UEFI further reading](#UEFI_further_reading)
-    *   [14.1 Alternative install method](#Alternative_install_method)
-    *   [14.2 UEFI firmware workaround](#UEFI_firmware_workaround)
-    *   [14.3 Create a GRUB entry in the firmware boot manager](#Create_a_GRUB_entry_in_the_firmware_boot_manager)
-    *   [14.4 GRUB standalone](#GRUB_standalone)
-    *   [14.5 Technical information](#Technical_information)
+*   [10 Multiple entries](#Multiple_entries)
+    *   [10.1 Disable submenu](#Disable_submenu)
+    *   [10.2 Recall previous entry](#Recall_previous_entry)
+    *   [10.3 Changing the default menu entry](#Changing_the_default_menu_entry)
+    *   [10.4 Boot non-default entry only once](#Boot_non-default_entry_only_once)
+*   [11 Play a tune](#Play_a_tune)
+*   [12 Manual configuration of core image for early boot](#Manual_configuration_of_core_image_for_early_boot)
+*   [13 UEFI further reading](#UEFI_further_reading)
+    *   [13.1 Alternative install method](#Alternative_install_method)
+    *   [13.2 UEFI firmware workaround](#UEFI_firmware_workaround)
+    *   [13.3 Create a GRUB entry in the firmware boot manager](#Create_a_GRUB_entry_in_the_firmware_boot_manager)
+    *   [13.4 GRUB standalone](#GRUB_standalone)
+    *   [13.5 Technical information](#Technical_information)
 
 ## Alternative installation methods
 
@@ -425,16 +424,6 @@ menuentry "Arch Linux 64" {
 }
 
 ```
-
-## Manually creating grub.cfg
-
-A basic GRUB config file uses the following options:
-
-*   `(hd*X*,*Y*)` is the partition *Y* on disk *X*, partition numbers starting at 1, disk numbers starting at 0
-*   `set default=*N*` is the default boot entry that is chosen after timeout for user action
-*   `set timeout=*M*` is the time *M* to wait in seconds for a user selection before default is booted
-*   `menuentry "title" {entry options}` is a boot entry titled `title`
-*   `set root=(hd*X*,*Y*)` sets the boot partition, where the kernel and GRUB modules are stored (boot need not be a separate partition, and may simply be a directory under the "root" partition (`/`)
 
 ## Multiple entries
 

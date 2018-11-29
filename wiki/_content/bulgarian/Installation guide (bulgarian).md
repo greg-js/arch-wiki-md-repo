@@ -8,7 +8,7 @@ Arch Linux би трябвало да работи на всяка [x86_64](http
 
 *   [1 Преди инсталацията](#Преди_инсталацията)
     *   [1.1 Verify signature](#Verify_signature)
-    *   [1.2 Boot the live environment](#Boot_the_live_environment)
+    *   [1.2 Включете живата среда](#Включете_живата_среда)
     *   [1.3 Изберете клавиатурна подредба](#Изберете_клавиатурна_подредба)
     *   [1.4 Проверете boot режима](#Проверете_boot_режима)
     *   [1.5 Свързване с интернет](#Свързване_с_интернет)
@@ -48,13 +48,13 @@ Alternatively, run `pacman-key -v archlinux-<version>-x86_64.iso.sig` from an ex
 *   The signature itself could be manipulated if it is downloaded from a mirror site, instead of from [archlinux.org](https://archlinux.org/download/) as above. In this case, ensure that the public key, which is used to decode the signature, is signed by another, trustworthy key. The `gpg` command will output the fingerprint of the public key.
 *   Another method to verify the authenticity of the signature is to ensure that the public key's fingerprint is identical to the key fingerprint of the [Arch Linux developer](https://www.archlinux.org/people/developers/) who signed the ISO-file. See [Wikipedia:Public-key_cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography "wikipedia:Public-key cryptography") for more information on the public-key process to authenticate keys.
 
-### Boot the live environment
+### Включете живата среда
 
-The live environment can be booted from a [USB flash drive](/index.php/USB_flash_installation_media "USB flash installation media"), an [optical disc](/index.php/Optical_disc_drive#Burning "Optical disc drive") or a network with [PXE](/index.php/PXE "PXE"). For alternative means of installation, see [Category:Installation process](/index.php/Category:Installation_process "Category:Installation process").
+„Живата“ среда може да бъде включена от [USB флашка](/index.php/USB_flash_installation_media "USB flash installation media"), [компакт диск](/index.php/Optical_disc_drive#Burning "Optical disc drive") или по мрежа с [PXE](/index.php/PXE "PXE"). За други инсталационни начини, вижте [Category:Installation process](/index.php/Category:Installation_process "Category:Installation process").
 
 *   Pointing the current boot device to a drive containing the Arch installation media is typically achieved by pressing a key during the [POST](https://en.wikipedia.org/wiki/Power-on_self_test "w:Power-on self test") phase, as indicated on the splash screen. Refer to your motherboard's manual for details.
-*   When the Arch menu appears, select *Boot Arch Linux* and press `Enter` to enter the installation environment.
-*   See [README.bootparams](https://projects.archlinux.org/archiso.git/tree/docs/README.bootparams) for a list of [boot parameters](/index.php/Kernel_parameters#Configuration "Kernel parameters"), and [packages.x86_64](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) for a list of included packages.
+*   Щом се появи менюто на Arch, изберете *Boot Arch Linux* и натиснете `Enter` за да влезете в инсталационната среда.
+*   Вижте [README.bootparams](https://projects.archlinux.org/archiso.git/tree/docs/README.bootparams) за списък с [boot параметри](/index.php/Kernel_parameters#Configuration "Kernel parameters"), и [x86_64](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) за списък с включените пакети.
 
 Ще бъдете логнати в първата [виртуална конзола](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") като root потребител със [Zsh](/index.php/Zsh "Zsh") шел.
 
@@ -254,7 +254,7 @@ The live environment can be booted from a [USB flash drive](/index.php/USB_flash
 
  `/etc/locale.conf`  `LANG=*en_US.UTF-8*` 
 
-Ако сте променили подредбата на [конзолната клавиатура](#.D0.98.D0.B7.D0.B1.D0.B5.D1.80.D0.B5.D1.82.D0.B5_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D0.BD.D0.B0_.D0.BF.D0.BE.D0.B4.D1.80.D0.B5.D0.B4.D0.B1.D0.B0), може да направите промените постоянни във [vconsole.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5):
+Ако сте променили подредбата на [конзолната клавиатура](#Изберете_клавиатурна_подредба), може да направите промените постоянни във [vconsole.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5):
 
  `/etc/vconsole.conf`  `KEYMAP=*de-latin1*` 
 

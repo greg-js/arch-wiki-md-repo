@@ -26,7 +26,7 @@ To mount an overlay use the following `mount` options:
 
 ```
 
-**Note:** The working directory (`workdir`) needs to be on the same filesystem mount as the upper directory.
+**Note:** The working directory (`workdir`) needs to be an empty directory on the same filesystem mount as the upper directory.
 
 The lower directory can actually be a list of directories separated by `:`, all changes in the `merged` directory are still reflected in `upper`.
 

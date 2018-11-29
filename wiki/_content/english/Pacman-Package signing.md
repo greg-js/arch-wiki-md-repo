@@ -38,7 +38,7 @@ Examples of webs of trust:
 
 The `SigLevel` option in `/etc/pacman.conf` determines how much trust is required to install a package. For a detailed explanation of `SigLevel` see the [pacman.conf man page](https://www.archlinux.org/pacman/pacman.conf.5.html#_package_and_database_signature_checking) and the comments in the file itself. Signature checking may be set globally or per repository. If `SigLevel` is set globally in the `[options]` section to require all packages to be signed, then packages you build will also need to be signed using *makepkg*.
 
-**Note:** Although all official packages are now signed, as of June 2012 signing of the databases is a work in progress. If `Required` is set then `DatabaseOptional` should also be set.
+**Note:** Although all official packages are now signed, as of November 2018 signing of the databases is a [work in progress](https://bbs.archlinux.org/viewtopic.php?id=242258). If `Required` is set then `DatabaseOptional` should also be set.
 
 A default configuration can be used to only install packages that are signed by trusted keys:
 

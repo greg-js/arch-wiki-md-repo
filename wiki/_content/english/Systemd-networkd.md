@@ -1,5 +1,3 @@
-**Warning:** The dhcp6 client of systemd has a buffer overflow vulnerability.[[1]](https://nvd.nist.gov/vuln/detail/CVE-2018-15688)
-
 Related articles
 
 *   [systemd](/index.php/Systemd "Systemd")
@@ -184,14 +182,14 @@ There are three types of configuration files. They all use a format similar to [
 They all follow the same rules:
 
 *   If **all** conditions in the `[Match]` section are matched, the profile will be activated
-*   an empty `[Match]` section means the profile will apply in any case (can be compared to the `*` joker)
+*   an empty `[Match]` section means the profile will apply in any case (can be compared to the `*` wildcard)
 *   all configuration files are collectively sorted and processed in lexical order, regardless of the directory in which they live
 *   files with identical name replace each other
 
 **Tip:**
 
 *   To override a system-supplied file in `/usr/lib/systemd/network` in a permanent manner (i.e even after upgrade), place a file with same name in `/etc/systemd/network` and symlink it to `/dev/null`
-*   The `*` joker can be used in `VALUE` (e.g `en*` will match any Ethernet device), a boolean can be simple written as `yes` or `no`.
+*   The `*` wildcard can be used in `VALUE` (e.g `en*` will match any Ethernet device), a boolean can be simple written as `yes` or `no`.
 *   Following this [Arch-general thread](https://mailman.archlinux.org/pipermail/arch-general/2014-March/035381.html), the best practice is to setup specific container network settings *inside the container* with **networkd** configuration files.
 
 ### network files

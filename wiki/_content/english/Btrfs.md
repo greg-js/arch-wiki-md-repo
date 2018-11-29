@@ -177,7 +177,7 @@ To enable compression when installing Arch to an empty Btrfs partition, use the 
 **Warning:**
 
 *   Systems using older kernels or [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) without `zstd` support may be unable to read or repair your filesystem if you use this option.
-*   [GRUB](/index.php/GRUB "GRUB") and [rEFInd](/index.php/REFInd "REFInd") currently lack support for *zstd*, either use a separate boot partition without *zstd* or reset compression of boot files to something supported using for example the command: `$ btrfs filesystem defragment -v -clzo /boot/*` 
+*   Stable [GRUB](/index.php/GRUB "GRUB") and [rEFInd](/index.php/REFInd "REFInd") currently lack support for *zstd*, either switch to [grub-git](https://aur.archlinux.org/packages/grub-git/), use a separate boot partition without *zstd* or reset compression of boot files to something supported using for example the command: `$ btrfs filesystem defragment -v -clzo /boot/*` 
 
 ### Subvolumes
 

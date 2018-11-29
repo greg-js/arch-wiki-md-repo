@@ -2,8 +2,9 @@ Related articles
 
 *   [Font configuration](/index.php/Font_configuration "Font configuration")
 *   [Linux console#Fonts](/index.php/Linux_console#Fonts "Linux console")
-*   [Java Runtime Environment Fonts](/index.php/Java_Runtime_Environment_Fonts "Java Runtime Environment Fonts")
+*   [Java Runtime Environment fonts](/index.php/Java_Runtime_Environment_fonts "Java Runtime Environment fonts")
 *   [Metric-compatible fonts](/index.php/Metric-compatible_fonts "Metric-compatible fonts")
+*   [Microsoft fonts](/index.php/Microsoft_fonts "Microsoft fonts")
 
 From [Wikipedia:Computer font](https://en.wikipedia.org/wiki/Computer_font "wikipedia:Computer font"): "A computer font (or font) is an electronic data file containing a set of glyphs, characters, or symbols such as dingbats."
 

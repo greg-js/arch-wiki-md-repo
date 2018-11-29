@@ -74,6 +74,10 @@ Some programs can add extra functionality to Files. Here are a few packages in t
 
 	[https://wiki.gnome.org/Apps/FileRoller](https://wiki.gnome.org/Apps/FileRoller) || [file-roller](https://www.archlinux.org/packages/?name=file-roller)
 
+*   **Python bindings for the Nautilus Extension API** — With these bindings, you can write extensions for the Nautilus in python.
+
+	[https://wiki.gnome.org/Projects/NautilusPython](https://wiki.gnome.org/Projects/NautilusPython) || [python-nautilus](https://www.archlinux.org/packages/?name=python-nautilus) or [python2-nautilus](https://www.archlinux.org/packages/?name=python2-nautilus)
+
 ## Configuration
 
 Files is simple to configure graphically, but not all options are available in the preferences menu. More options are available with *dconf-editor* under `org.gnome.nautilus`.
