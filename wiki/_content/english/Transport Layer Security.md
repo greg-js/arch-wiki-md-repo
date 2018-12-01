@@ -52,6 +52,8 @@ With TLS you trust in a set of [certificate authorities](https://en.wikipedia.or
 
 ## Trust management
 
+See [Security#Managing SSL certificates](/index.php/Security#Managing_SSL_certificates "Security") on how to distrust/blacklist a certificate authority.
+
 ### Trust a certificate authority system-wide
 
 **Warning:** This allows anyone with access to the private key to intercept all of your TLS traffic.

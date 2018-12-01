@@ -4,7 +4,7 @@
 
 *   [1 Installation](#Installation)
 *   [2 Examples](#Examples)
-*   [3 Differences between 7z, 7za and 7zr binaries](#Differences_between_7z.2C_7za_and_7zr_binaries)
+*   [3 Differences between 7z, 7za and 7zr binaries](#Differences_between_7z,_7za_and_7zr_binaries)
 *   [4 See also](#See_also)
 
 ## Installation

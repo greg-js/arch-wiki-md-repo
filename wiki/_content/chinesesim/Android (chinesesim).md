@@ -597,7 +597,7 @@ Window -> Preferences -> Java -> Debug -> Step Filtering
 
 ### aapt: No such file or directory
 
-安装工具包含 32 位程序，需要 32 位的库。如果是手动安装 SDK，还需要安装 multilib/[lib32-libstdc++5](https://www.archlinux.org/packages/?name=lib32-libstdc%2B%2B5) 和 multilib/[lib32-zlib](https://www.archlinux.org/packages/?name=lib32-zlib)。
+安装工具包含 32 位程序，需要 32 位的库。如果是手动安装 SDK，还需要安装 multilib/[lib32-libstdc++5](https://aur.archlinux.org/packages/lib32-libstdc%2B%2B5/) 和 multilib/[lib32-zlib](https://www.archlinux.org/packages/?name=lib32-zlib)。
 
 ### ValueError: unsupported pickle protocol
 

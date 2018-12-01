@@ -377,7 +377,7 @@ escputil является частью пакета [gutenprint](https://www.arc
 
 "Исходный" код драйвера доступен на [веб-сайте avasys](http://www.avasys.jp) с японским языком. Он содержит 32-битный двоичный код, который вызовет проблему в 64-битной системе.
 
-*   [Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакеты [psutils](https://www.archlinux.org/packages/?name=psutils), [bc](https://www.archlinux.org/packages/?name=bc), [libstdc++5](https://www.archlinux.org/packages/?name=libstdc%2B%2B5) ([lib32-libstdc++5](https://www.archlinux.org/packages/?name=lib32-libstdc%2B%2B5) для 64-битной).
+*   [Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакеты [psutils](https://www.archlinux.org/packages/?name=psutils), [bc](https://www.archlinux.org/packages/?name=bc), [libstdc++5](https://www.archlinux.org/packages/?name=libstdc%2B%2B5) ([lib32-libstdc++5](https://aur.archlinux.org/packages/lib32-libstdc%2B%2B5/) для 64-битной).
 
 *   Загрузите исходный код драйвера.
 *   Скомпилируйте и установите драйвер.

@@ -911,6 +911,6 @@ Server = http://repository.pietma.com/nexus/content/repositories/archlinux/$arch
 
 ```
 [pnsft-pur]
-Server = https://downloads.sourceforge.net/project/pnsft-aur/pur/x86_64
+Server = https://osdn.net/projects/ponsfoot-aur/storage/pur/x86_64/
 
 ```

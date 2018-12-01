@@ -444,7 +444,7 @@ To change the default target to boot into, change the `default.target` symlink. 
  `# systemctl set-default multi-user.target` 
 ```
 Removed /etc/systemd/system/default.target.
-Created symlink /etc/systemd/system/default.target -> /usr/lib/systemd/system/graphical.target.
+Created symlink /etc/systemd/system/default.target -> /usr/lib/systemd/system/multi-user.target.
 ```
 
 Alternatively, append one of the following [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to your bootloader:

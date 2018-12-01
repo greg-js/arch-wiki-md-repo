@@ -25,6 +25,7 @@ Files is the default file manager for [GNOME](https://wiki.gnome.org/). Files at
     *   [3.2 Create an empty document in Files 3.6 and above](#Create_an_empty_document_in_Files_3.6_and_above)
     *   [3.3 Music files metadata in list view](#Music_files_metadata_in_list_view)
     *   [3.4 Hiding files](#Hiding_files)
+    *   [3.5 Open current directory in Tilix](#Open_current_directory_in_Tilix)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Files is no longer the default file manager](#Files_is_no_longer_the_default_file_manager)
     *   [4.2 Freezes for a few seconds after every copy operation](#Freezes_for_a_few_seconds_after_every_copy_operation)
@@ -159,6 +160,10 @@ The new columns should now have been added. To enable them, navigate to Preferen
 Like most other file managers GNOME Files hides files with names starting with a dot by default.
 
 GNOME Files additionally hides files when their names are listed in a `.hidden` file in the same directory (one filename per line).
+
+### Open current directory in Tilix
+
+If you're using [tilix](https://www.archlinux.org/packages/?name=tilix) terminal you can easily add "Open in Tilix" option to the context menu of GNOME Files by installing its optional dependency [python-nautilus](https://www.archlinux.org/packages/?name=python-nautilus).
 
 ## Troubleshooting
 

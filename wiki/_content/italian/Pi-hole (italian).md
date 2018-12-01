@@ -145,7 +145,7 @@ Abilita `nginx.service` `php-fpm.service` e ri/avvia i servizi.
 
 #### /etc/hosts
 
-[filesystem](https://www.archlinux.org/packages/?name=filesystem) contiene il file `/etc/hosts` vuoto, condizione nota ad impossibilitare Pi-hole il recupero delle liste. E' possibile risolvere aggiungendovi quanto segue assicurando il corretto funzionamento, notando bene che *indirizzo.ip.di.pihole* dovrà essere l'attuale indirizzo IP della macchina che esegue Pi-hole (es. 192.168.1.250) e *myhostname* il suo relativo hostname.
+[filesystem](https://www.archlinux.org/packages/?name=filesystem) contiene il file `/etc/hosts` vuoto, condizione nota ad impedire a Pi-hole il recupero delle liste. E' possibile risolvere aggiungendovi quanto segue assicurando il corretto funzionamento, notando bene che *indirizzo.ip.di.pihole* dovrà essere l'attuale indirizzo IP della macchina che esegue Pi-hole (es. 192.168.1.250) e *myhostname* il suo relativo hostname.
 
 ```
 127.0.0.1                localhost

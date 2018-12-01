@@ -204,6 +204,8 @@ Versions which include a discrete Nvidia GPU should need additional configuratio
     *   The [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) driver has been crashing a lot.
     *   The [nvidia](https://www.archlinux.org/packages/?name=nvidia) driver seems to be super stable, but GNOME desktop won't like to start, showing you a "Oh no! Something has gone wrong" message. Cinnamon Desktop is buttery smooth with the nvidia driver, and if you want your GNOME desktop, you can run `gnome-shell --relace &` while in cinnamon desktop to switch to Gnome Shell as a workaround.
 
+Note that the video output ports (HDMI and DisplayPort) are hardwired to the Nvidia GPU, so they will not work if you use the Intel GPU and power off the Nvidia GPU. Switching GPUs requires a reboot, so if you primarily keep the laptop docked at a desk, configuring switchable graphics may not be worth the hassle of setting it up and then rebooting every time you need to switch. However, the Nvidia GPU does use significantly more power than the Intel one, so you will take a significant hit to battery life.
+
 #### Getting the integrated intel card to work on 11,3
 
 By default the integrated card is powered off. To fix this we need a grub function called "apple_set_os". This function has not officially been merged yet, so we need to build grub ourselves. Download the [grub-git](https://aur.archlinux.org/packages/grub-git/) package from the AUR. Using something like:

@@ -4,7 +4,7 @@
 
 *   [1 Unlock KDE Wallet automatically on login](#Unlock_KDE_Wallet_automatically_on_login)
     *   [1.1 Configure display manager](#Configure_display_manager)
-*   [2 Using the KDE Wallet to store ssh key passhprases](#Using_the_KDE_Wallet_to_store_ssh_key_passhprases)
+*   [2 Using the KDE Wallet to store ssh key passphrases](#Using_the_KDE_Wallet_to_store_ssh_key_passphrases)
 *   [3 KDE Wallet for Firefox](#KDE_Wallet_for_Firefox)
 *   [4 KDE Wallet for Chrome and Chromium](#KDE_Wallet_for_Chrome_and_Chromium)
 *   [5 See also](#See_also)
@@ -54,7 +54,7 @@ session         include         system-login
 **session         optional        pam_kwallet5.so auto_start**
 ```
 
-## Using the KDE Wallet to store ssh key passhprases
+## Using the KDE Wallet to store ssh key passphrases
 
 **Note:** A [SSH agent](/index.php/SSH_agent "SSH agent") should be up and running.
 

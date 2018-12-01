@@ -21,15 +21,15 @@ Mezi jeho hlavní přednosti patří:
 ## Contents
 
 *   [1 Instalace](#Instalace)
-*   [2 Rozšíření](#Roz.C5.A1.C3.AD.C5.99en.C3.AD)
+*   [2 Rozšíření](#Rozšíření)
     *   [2.1 AdBlock](#AdBlock)
-    *   [2.2 Vyhledávání](#Vyhled.C3.A1v.C3.A1n.C3.AD)
-    *   [2.3 Uživatelské skripty](#U.C5.BEivatelsk.C3.A9_skripty)
+    *   [2.2 Vyhledávání](#Vyhledávání)
+    *   [2.3 Uživatelské skripty](#Uživatelské_skripty)
     *   [2.4 Flash plugin](#Flash_plugin)
 *   [3 Tipy a Triky](#Tipy_a_Triky)
     *   [3.1 Flash Block](#Flash_Block)
-    *   [3.2 Osobní filtry pro rozšíření AdBlock](#Osobn.C3.AD_filtry_pro_roz.C5.A1.C3.AD.C5.99en.C3.AD_AdBlock)
-*   [4 Další informace](#Dal.C5.A1.C3.AD_informace)
+    *   [3.2 Osobní filtry pro rozšíření AdBlock](#Osobní_filtry_pro_rozšíření_AdBlock)
+*   [4 Další informace](#Další_informace)
 
 ## Instalace
 

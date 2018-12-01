@@ -223,7 +223,8 @@ Example fonts.conf which also specifies a default font for the Japanese locale (
 <!-- Default monospace fonts -->
  <match target="pattern">
    <test qual="any" name="family"><string>monospace</string></test>
-   <edit name="family" mode="prepend" binding="same"><string>Inconsolatazi4</string></edit>
+   <edit name="family" mode="prepend" binding="same"><string>Noto Sans Mono</string></edit>
+   <edit name="family" mode="append" binding="same"><string>Inconsolatazi4</string></edit>
    <edit name="family" mode="append" binding="same"><string>IPAGothic</string></edit>
  </match>
 
@@ -255,6 +256,7 @@ Example fonts.conf which also specifies a default font for the Japanese locale (
  <alias>
   <family>monospace</family>
   <prefer>
+   <family>Noto Sans Mono</family>
    <family>Inconsolatazi4</family>
    <family>Ubuntu Mono</family>
    <family>Droid Sans Mono</family>

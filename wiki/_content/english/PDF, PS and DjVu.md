@@ -88,21 +88,11 @@ The proprietary and deprecated [XFA](https://en.wikipedia.org/wiki/PDF#Adobe_XML
 
 ## Annotation
 
-*   **Cournal** — Collaborative note taking and journal application using a stylus. It allows multiple users to annotate PDF files in real-time.
-
-	[https://github.com/flyser/cournal](https://github.com/flyser/cournal) || [cournal](https://aur.archlinux.org/packages/cournal/)
-
 *   **flpsed** — A PostScript and PDF annotator, only supports text boxes.
 
 	[http://flpsed.org/flpsed.html](http://flpsed.org/flpsed.html) || [flpsed](https://aur.archlinux.org/packages/flpsed/)
 
-*   **Xournal** — Application for notetaking, sketching and keeping a journal using a stylus. Capable of annotating existing PDF files as well.
-
-	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://www.archlinux.org/packages/?name=xournal)
-
-*   **Xournal++** — Notetaking software designed around a tablet. C++ rewrite of Xournal with PDF annotation support.
-
-	[https://github.com/xournalpp/xournalpp](https://github.com/xournalpp/xournalpp) || [xournalpp-git](https://aur.archlinux.org/packages/xournalpp-git/)
+See also [List of applications/Documents#Stylus note-taking](/index.php/List_of_applications/Documents#Stylus_note-taking "List of applications/Documents").
 
 ## Graphical PDF editing
 
@@ -110,11 +100,11 @@ The proprietary and deprecated [XFA](https://en.wikipedia.org/wiki/PDF#Adobe_XML
 
 ### Simple editors
 
-*   **PDF Chain** — Graphical interface allowing to manipulate PDF documents (concatenate, burst, watermark, attach files...).
+*   **PDF Chain** — GTK front-end for [PDFtk](#Command-line_tools), written in C++, supporting concatenation, burst, watermarks, attaching files and more.
 
 	[http://pdfchain.sourceforge.net/](http://pdfchain.sourceforge.net/) || [pdfchain](https://aur.archlinux.org/packages/pdfchain/)
 
-*   **PDF Mix Tool** — Application to split, merge, rotate and mix PDF files.
+*   **PDF Mix Tool** — Qt front-end for [PoDoFo](#Libraries), written in C++, supports splitting, merging, rotating and mixing PDF files.
 
 	[https://scarpetta.eu/pdfmixtool/](https://scarpetta.eu/pdfmixtool/) || [pdfmixtool](https://aur.archlinux.org/packages/pdfmixtool/)
 
@@ -122,7 +112,7 @@ The proprietary and deprecated [XFA](https://en.wikipedia.org/wiki/PDF#Adobe_XML
 
 	[https://wiki.gnome.org/Apps/PdfMod](https://wiki.gnome.org/Apps/PdfMod) || [pdfmod](https://www.archlinux.org/packages/?name=pdfmod)
 
-*   **PDF-Shuffler** — Combine, split, rotate and reorder PDF documents. Uses Python and GTK2.
+*   **PDF-Shuffler** — GTK2 front-end for [pyPdf](#Python), written in Python, supports concatenation, splitting, rotation and reordering.
 
 	[https://sourceforge.net/projects/pdfshuffler/](https://sourceforge.net/projects/pdfshuffler/) || [pdfshuffler](https://www.archlinux.org/packages/?name=pdfshuffler)
 
@@ -132,7 +122,7 @@ The proprietary and deprecated [XFA](https://en.wikipedia.org/wiki/PDF#Adobe_XML
 
 	[https://code-industry.net/free-pdf-editor/](https://code-industry.net/free-pdf-editor/) || [masterpdfeditor](https://aur.archlinux.org/packages/masterpdfeditor/), [masterpdfeditor-qt4](https://aur.archlinux.org/packages/masterpdfeditor-qt4/) for older version without restrictions
 
-*   **PDFsam** — Merge, split, rotate, convert, edit, sign PDF files.
+*   **PDFsam** — Open source application, written in Java, supports merging, splitting, rotating and some premium features.
 
 	[https://pdfsam.org/](https://pdfsam.org/) || [pdfsam](https://www.archlinux.org/packages/?name=pdfsam)
 
@@ -142,11 +132,15 @@ The proprietary and deprecated [XFA](https://en.wikipedia.org/wiki/PDF#Adobe_XML
 
 ## Command-line tools
 
-*   **[PDFtk](https://en.wikipedia.org/wiki/PDFtk "wikipedia:PDFtk")** — Pdftk is a simple tool for doing everyday things with PDF documents
+*   **[PDFtk](https://en.wikipedia.org/wiki/PDFtk "wikipedia:PDFtk")** — Simple tool for doing everyday things with PDF documents
 
 	[http://www.pdfhacks.com/pdftk](http://www.pdfhacks.com/pdftk) || [pdftk](https://aur.archlinux.org/packages/pdftk/), [pdftk-bin](https://aur.archlinux.org/packages/pdftk-bin/)
 
-*   **[QPDF](https://en.wikipedia.org/wiki/QPDF "wikipedia:QPDF")** — A content-preserving PDF transformation system.
+*   **Stapler** — Light alternative to PDFtk using the [PyPDF2](#Python) library.
+
+	[https://github.com/hellerbarde/stapler](https://github.com/hellerbarde/stapler) || [stapler](https://aur.archlinux.org/packages/stapler/), [stapler-git](https://aur.archlinux.org/packages/stapler-git/)
+
+*   **[QPDF](https://en.wikipedia.org/wiki/QPDF "wikipedia:QPDF")** — Content-preserving PDF transformation system.
 
 	[https://github.com/qpdf/qpdf](https://github.com/qpdf/qpdf) || [qpdf](https://www.archlinux.org/packages/?name=qpdf)
 
@@ -163,9 +157,6 @@ The proprietary and deprecated [XFA](https://en.wikipedia.org/wiki/PDF#Adobe_XML
 	[https://mupdf.com](https://mupdf.com) || [mupdf-tools](https://www.archlinux.org/packages/?name=mupdf-tools)
 
 *   [gs(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gs.1) from [Ghostscript](#Engines), see also `/usr/share/doc/ghostscript/*/Use.htm` ([online](https://ghostscript.com/doc/current/Use.htm)). Ghostscript also provides many wrapper scripts like *ps2pdf* and *pdf2ps*.
-*   **Stapler** — Light alternative to pdftk using the PyPDF2 library.
-
-	[https://github.com/hellerbarde/stapler](https://github.com/hellerbarde/stapler) || [stapler](https://aur.archlinux.org/packages/stapler/), [stapler-git](https://aur.archlinux.org/packages/stapler-git/)
 
 ### DjVu tools
 
@@ -313,13 +304,21 @@ $ pdftoppm -jpeg -r *dpi* in.pdf -f *page* -singlefile *infile*.pdf *outfileroot
 
 	[https://github.com/libharu/libharu](https://github.com/libharu/libharu) || [libharu](https://www.archlinux.org/packages/?name=libharu), Lua binding: [lua-hpdf](https://aur.archlinux.org/packages/lua-hpdf/)
 
+*   **PoDoFo** — A C++ library to work with the PDF file format.
+
+	[http://podofo.sourceforge.net](http://podofo.sourceforge.net) || [podofo](https://www.archlinux.org/packages/?name=podofo)
+
 ### Python
 
 *   **pdfrw** — A pure Python library that reads and writes PDFs.
 
 	[https://github.com/pmaupin/pdfrw](https://github.com/pmaupin/pdfrw) || [python-pdfrw](https://www.archlinux.org/packages/?name=python-pdfrw), [python2-pdfrw](https://www.archlinux.org/packages/?name=python2-pdfrw)
 
-*   **PyPDF2** — PDF toolkit
+*   **pyPdf** — Discontinued predecessor of PyPDF2.
+
+	[http://pybrary.net/pyPdf](http://pybrary.net/pyPdf) || [python2-pypdf](https://www.archlinux.org/packages/?name=python2-pypdf)
+
+*   **PyPDF2** — A pure-Python library built as a PDF toolkit.
 
 	[https://mstamy2.github.com/PyPDF2](https://mstamy2.github.com/PyPDF2) || [python-pypdf2](https://aur.archlinux.org/packages/python-pypdf2/), [python2-pypdf2](https://aur.archlinux.org/packages/python2-pypdf2/)
 

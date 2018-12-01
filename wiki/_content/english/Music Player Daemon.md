@@ -171,7 +171,7 @@ The following tool provides assistance for MPD configuration:
 
 *   **[mpd-configure](http://lacocina.nl/audiophile-mpd)** — Create a MPD configuration optimized for [bit perfect](https://www.musicpd.org/doc/user/advanced_usage.html#bit_perfect) audio playback, without any resampling or conversion, using the ALSA interface hardware address (hw:x,y)
 
-	[https://github.com/ronalde/mpd-configure](https://github.com/ronalde/mpd-configure) || no package
+	[https://gitlab.com/ronalde/mpd-configure](https://gitlab.com/ronalde/mpd-configure) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 ### System-wide configuration
 

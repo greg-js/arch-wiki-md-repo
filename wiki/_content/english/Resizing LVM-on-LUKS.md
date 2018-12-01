@@ -236,7 +236,7 @@ Note the free extents at the end of the PV. Calculate the size difference by tak
 Now we are going to resize the second logical volume (LV), in this case containing the /home partition, by the size of the free physical extents minus some safety space:
 
 ```
-# lvresize -L +119G
+# lvresize -L +119G /dev/CryptVolumeGroup/home
 
 ```
 

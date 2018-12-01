@@ -932,13 +932,13 @@ case "$1" in
   stop)
         echo -n "Stopping VDE network for QEMU: "
         # Delete the NAT rules
-        iptables -t nat -D POSTROUTING "$TAP_NETWORK"/"$TAP_MASK" -o "$NIC" -j MASQUERADE
+        iptables -t nat -D POSTROUTING -s "$TAP_NETWORK"/"$TAP_MASK" -o "$NIC" -j MASQUERADE
 
         # Bring tap interface down
         ip link set "$TAP_DEV" down
 
         # Kill VDE switch
-        pgrep -f vde_switch | xargs kill -TERM
+        pgrep vde_switch | xargs kill -TERM
         ;;
   restart|reload)
         $0 stop

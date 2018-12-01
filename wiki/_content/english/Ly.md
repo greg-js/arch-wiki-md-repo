@@ -6,7 +6,7 @@
 
 ## Configuration
 
-*Ly* is configured through its `config.h` file, consider maintaining your own [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") with your `config.h`.
+All the configuration takes place in `/etc/ly/config.ini`. The file is commented, and includes useful defaults.
 
 ## Usage
 

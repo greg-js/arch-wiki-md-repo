@@ -17,24 +17,24 @@
 *   [nvidia](https://www.archlinux.org/packages/?name=nvidia)
 *   [bbswitch](https://www.archlinux.org/packages/?name=bbswitch)
 *   [nvidia-xrun](https://aur.archlinux.org/packages/nvidia-xrun/) or [nvidia-xrun-git](https://aur.archlinux.org/packages/nvidia-xrun-git/)
-*   a [Window manager](/index.php/Window_manager "Window manager"), such as [openbox](https://www.archlinux.org/packages/?name=openbox) if only for running applications，because running some applications (such as Steam) directly with nvidia-xrun does not work well, using a window manager like openbox will work better.
+*   a [Window manager](/index.php/Window_manager "Window manager"), such as [openbox](https://www.archlinux.org/packages/?name=openbox) if only for running applications，because running some applications (such as Steam) directly with *nvidia-xrun* does not work well, using a window manager like [openbox](/index.php/Openbox "Openbox") will work better.
 
 ## Configuration
 
 ### Setting the right bus id
 
-If you install nvidia-xrun from [AUR](/index.php/AUR "AUR"),you can skip this step,the bus id has been already set in `/etc/X11/nvidia-xorg.conf`
+If you install nvidia-xrun from [AUR](/index.php/AUR "AUR"), you can skip this step, as the bus id has been already set in `/etc/X11/nvidia-xorg.conf`.
 
-If you down nvidia-xrun form [nvidia-xrun github repo],perhaps you should set the bus id.
+If you download nvidia-xrun from [nvidia-xrun github repo], perhaps you should set the bus id.
 
-check your display device's bus id
+Check your display device's bus id
 
 ```
  $ lspci | grep NVIDIA
 
 ```
 
-You will find your bus id.Usually the 1:0:0 bus is correct. If this is not your case(you can find out through lspci or bbswitch output mesages) you can create a conf script for example nano /etc/X11/nvidia-xorg.conf.d/30-nvidia.conf to set the proper bus id:
+You will find your bus id. Usually the `1:0:0` bus is correct. If this is not your case (you can find out through *lspci* or *bbswitch* output messages) you can create a script for example `/etc/X11/nvidia-xorg.conf.d/30-nvidia.conf` to set the proper bus id:
 
  `/etc/X11/nvidia-xorg.conf.d/30-nvidia.conf` 
 ```
@@ -59,23 +59,23 @@ EndSection
 
 ### Automatically run window manager
 
-For convenience you can create nano ~/.nvidia-xinitrc and put there your favourite window manager:
+For convenience you can create an `~/.nvidia-xinitrc` file with your favourite window manager:
 
 ```
- openbox-session
+openbox-session
 
 ```
 
-With this you do not need to specify the app and you can simply run:
+With it you do not need to specify the app and can simply execute:
 
 ```
- nvidia-xrun
+nvidia-xrun
 
 ```
 
 ### Use bbswitch to manage nvidia
 
-When the nvidia card is not needed, bbswitch can be used to turn it off. The nvidia-xrun script will automatically take care of running a window manager and waking up the nvidia card. To achieve that, you need to:
+When the nvidia card is not needed, *bbswitch* can be used to turn it off. The *nvidia-xrun* script will automatically take care of running a window manager and waking up the nvidia card. To achieve that, you need to:
 
 *   Load bbswitch module on boot
 
@@ -106,7 +106,7 @@ To force the card to turn on/off respectively run:
 
 ```
 
-For more about bbswitch see [Bumblebee-Project/bbswitch](https://github.com/Bumblebee-Project/bbswitch)
+For more about bbswitch see [Bumblebee-Project/bbswitch](https://github.com/Bumblebee-Project/bbswitch).
 
 ## Usage
 
@@ -116,4 +116,4 @@ For more about bbswitch see [Bumblebee-Project/bbswitch](https://github.com/Bumb
 
 ## Troubleshooting
 
-Running Steam directly with nvidia-xrun does not work well, use some window manager like openbox will be better.
+Running Steam directly with *nvidia-xrun* does not work well, usage via a window manager, like openbox, will be better.

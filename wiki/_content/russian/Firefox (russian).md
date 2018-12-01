@@ -10,9 +10,10 @@
 ## Contents
 
 *   [1 Установка](#Установка)
-    *   [1.1 Вариации](#Вариации)
 *   [2 Локализация](#Локализация)
 *   [3 Дополнения](#Дополнения)
+    *   [3.1 Добавление движков поиска](#Добавление_движков_поиска)
+        *   [3.1.1 arch-firefox-search](#arch-firefox-search)
 *   [4 Плагины](#Плагины)
     *   [4.1 Словари проверки орфографии](#Словари_проверки_орфографии)
     *   [4.2 Инструменты поиска](#Инструменты_поиска)
@@ -40,40 +41,31 @@
 
 ## Установка
 
-[Установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_определенных_пакетов "Pacman (Русский)") пакет [firefox](https://www.archlinux.org/packages/?name=firefox) из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)").
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [firefox](https://www.archlinux.org/packages/?name=firefox).
 
-Несколько альтернатив доступные в [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)"):
+Альтернативы:
 
-*   [firefox-esr-bin](https://aur.archlinux.org/packages/firefox-esr-bin/) (версия с [длительным сроком](https://www.mozilla.org/en-US/firefox/organizations/) поддержки)
-*   [firefox-beta-bin](https://aur.archlinux.org/packages/firefox-beta-bin/) (официальная [версия для тестирования](https://www.mozilla.org/en-US/firefox/channel/) от Mozilla)
-*   [firefox-aurora](https://aur.archlinux.org/packages/firefox-aurora/) ([альфа-версия](http://www.mozilla.org/en-US/firefox/aurora/), эквивалентная Thunderbird Earlybird)
-*   [firefox-nightly](https://aur.archlinux.org/packages/firefox-nightly/) (частообновляющаяся ["ночная"](https://nightly.mozilla.org/) версия)
+*   **Firefox Developer Edition** — для разработчиков
 
-Обзор релизов от Mozilla доступен [тут](https://wiki.mozilla.org/Releases).
+	[https://www.mozilla.org/firefox/developer/](https://www.mozilla.org/firefox/developer/) || [firefox-developer-edition](https://www.archlinux.org/packages/?name=firefox-developer-edition)
 
-Если в Firefox не работает сглаживание шрифтов, попробуйте установить [ttf-win7-fonts](https://aur.archlinux.org/packages/ttf-win7-fonts/) (рекомендуется) или [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) и смотрите страницу [Настройка шрифтов](/index.php/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D1%88%D1%80%D0%B8%D1%84%D1%82%D0%BE%D0%B2 "Настройка шрифтов").
+*   **Firefox Extended Support Release** — версия с длительной поддержкой
 
-### Вариации
+	[https://www.mozilla.org/firefox/organizations/](https://www.mozilla.org/firefox/organizations/) || [firefox-esr](https://aur.archlinux.org/packages/firefox-esr/) or [firefox-esr-bin](https://aur.archlinux.org/packages/firefox-esr-bin/)
 
-*   **[Iceweasel](https://en.wikipedia.org/wiki/Iceweasel "wikipedia:Iceweasel")** — Форк Firefox от Debian, основное отличие которого заключается в отсутствии элементов, связанных с торговыми марками Mozilla.
+*   **Firefox Beta** — бета версия
 
-	[http://wiki.debian.org/Iceweasel](http://wiki.debian.org/Iceweasel) || [iceweasel](https://aur.archlinux.org/packages/iceweasel/)
+	[https://www.mozilla.org/firefox/channel/desktop/#beta](https://www.mozilla.org/firefox/channel/desktop/#beta) || [firefox-beta](https://aur.archlinux.org/packages/firefox-beta/) или [firefox-beta-bin](https://aur.archlinux.org/packages/firefox-beta-bin/)
 
-*   **[GNU/IceCat](https://en.wikipedia.org/wiki/GNU_IceCat "wikipedia:GNU IceCat")** — Форк Firefox от проекта GNU, использующий исключительно свободные компоненты. Он совместим почти со всеми дополнениями Firefox.
+*   **Firefox Nightly** — самые свежие билды для тестирования ([experimental features](https://developer.mozilla.org/Firefox/Experimental_features))
 
-	[http://www.gnu.org/software/gnuzilla/](http://www.gnu.org/software/gnuzilla/) || [icecat](https://aur.archlinux.org/packages/icecat/)
+	[https://www.mozilla.org/firefox/channel/desktop/#nightly](https://www.mozilla.org/firefox/channel/desktop/#nightly) || [firefox-nightly](https://aur.archlinux.org/packages/firefox-nightly/)
 
-*   **Firefox KDE** — Версия Firefox с патчем от OpenSUSE для лучшей интеграции с KDE, чем это возможно с помощью обычных плагинов.
+*   **Firefox KDE** — версия, в которую встроены патчи OpenSUSE для лучшей - большей, чем через плагины - [интеграции в KDE](#KDE/GNOME_integration).
 
-	[http://gitorious.org/firefox-kde-opensuse](http://gitorious.org/firefox-kde-opensuse) || [firefox-kde-opensuse](https://aur.archlinux.org/packages/firefox-kde-opensuse/)
+	[https://build.opensuse.org/package/show/mozilla:Factory/MozillaFirefox](https://build.opensuse.org/package/show/mozilla:Factory/MozillaFirefox) || [firefox-kde-opensuse](https://aur.archlinux.org/packages/firefox-kde-opensuse/)
 
-*   **Firefox GTK3** — Версия Firefox с интеграцией в GTK3.
-
-	|| [firefox-gtk3-bin](https://aur.archlinux.org/packages/firefox-gtk3-bin/)
-
-*   **[Pale Moon](https://en.wikipedia.org/wiki/ru:Pale_Moon "wikipedia:ru:Pale Moon")** — Форк Firefox, основанный на Firefox ESR, с классическим интерфейсом.
-
-	[http://www.palemoon.org/](http://www.palemoon.org/) || [palemoon-bin](https://aur.archlinux.org/packages/palemoon-bin/)
+*   Несмотря на различные каналы распространения Mozilla, существуют форки, в которых присутствуют свои фичи. Смотрите [List of applications#Gecko-based](/index.php/List_of_applications#Gecko-based "List of applications").
 
 ## Локализация
 
@@ -89,7 +81,19 @@
 
 Firefox имеет большую библиотеку дополнений, значительно способные расширить функционал. Дополнения можно найти с помощью инструмента "Дополнения" в Firefox.
 
-См. также список [дополнений, отсортированный по популярности](https://addons.mozilla.org/ru-RU/firefox/extensions/?sort=список).
+См. также список [дополнений, отсортированный по популярности](https://addons.mozilla.org/ru-RU/firefox/extensions/?sort=список). См. также [список дополнений Firefox](https://en.wikipedia.org/wiki/List_of_Firefox_extensions "wikipedia:List of Firefox extensions") на Wikipedia.
+
+### Добавление движков поиска
+
+Движки поиска могут быть добавлены посредством дополнений. Смотрите [эту страницу](https://addons.mozilla.org/firefox/search-tools/).
+
+Большой список движков поиска может быть найдет на сайте [Mycroft Project](http://mycroftproject.com/).
+
+Вы можете использовать дополнение [add-to-searchbar](https://firefox.maltekraus.de/extensions/add-to-search-bar), чтобы добавлять движки поиска с любого сайта, просто нажав правой кнопкой мышки на соответствующее поле, а затем выбрав нужный пункт в меню.
+
+#### arch-firefox-search
+
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [arch-firefox-search](https://www.archlinux.org/packages/?name=arch-firefox-search), чтобы добавить специфичные для Arch движки поиска (AUR, wiki, форум и т.д.).
 
 ## Плагины
 

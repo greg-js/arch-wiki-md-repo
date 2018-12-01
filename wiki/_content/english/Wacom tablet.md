@@ -630,6 +630,7 @@ InputDevice    "Mouse1" "CorePointer"
 
 ## See also
 
+*   [List of applications/Documents#Stylus note-taking](/index.php/List_of_applications/Documents#Stylus_note-taking "List of applications/Documents")
 *   [input-wacom Wiki](https://github.com/linuxwacom/input-wacom/wiki)
 *   [xf86-input-wacom Wiki](https://github.com/linuxwacom/xf86-input-wacom/wiki) (out of date)
 *   [GIMP Talk - Community - Install Guide: Getting Wacom Drawing Tablets To Work In Gimp](http://www.gimptalk.com/forum/topic.php?t=17992&start=1)

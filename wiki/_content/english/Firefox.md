@@ -92,7 +92,7 @@ Also, you can use the [add-to-searchbar](https://firefox.maltekraus.de/extension
 
 #### arch-firefox-search
 
-Install the [arch-firefox-search](https://www.archlinux.org/packages/?name=arch-firefox-search) package to add Arch-specific searches (AUR, wiki, forum, etc, as specified by user) to the Firefox search toolbar.
+[Install](/index.php/Install "Install") the [arch-firefox-search](https://www.archlinux.org/packages/?name=arch-firefox-search) package to add Arch-specific searches (AUR, wiki, forum, etc, as specified by user) to the Firefox search toolbar.
 
 ## Configuration
 

@@ -29,6 +29,8 @@ For AMD processors, [install](/index.php/Install "Install") the [amd-ucode](http
 
 For Intel processors, [install](/index.php/Install "Install") the [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) package.
 
+If your Arch installation is [on a removable drive](/index.php/Installing_Arch_Linux_on_a_USB_key "Installing Arch Linux on a USB key") that needs to have microcode for both manufacturer processors, install both of the packages.
+
 ## Enabling early microcode updates
 
 Microcode must be loaded by the [boot loader](/index.php/Boot_loader "Boot loader"). Because of the wide variability in users' early-boot configuration, microcode updates may not be triggered automatically by Arch's default configuration. Many AUR kernels have followed the path of the official Arch [kernels](/index.php/Kernels "Kernels") in this regard.
@@ -36,6 +38,8 @@ Microcode must be loaded by the [boot loader](/index.php/Boot_loader "Boot loade
 These updates must be enabled by adding `/boot/amd-ucode.img` or `/boot/intel-ucode.img` as the **first initrd in the bootloader config file**. This is in addition to the normal initrd file. See below for instructions for common bootloaders.
 
 **Note:** In the following sections replace `*cpu_manufacturer*` with your CPU manufacturer, i.e. `amd` or `intel`.
+
+**Tip:** For [Arch Linux on a removable drive](/index.php/Installing_Arch_Linux_on_a_USB_key "Installing Arch Linux on a USB key") add both microcode files as `initrd` to the boot loader configuration. Their order does not matter as long as they both are specified before the real initramfs image.
 
 ### GRUB
 
@@ -113,7 +117,7 @@ options  "root=root=UUID=(...) rw add_efi_memmap **initrd=/boot/*cpu_manufacture
 
 ### Syslinux
 
-**Note:** There must be no spaces between the `*cpu_manufacturer*-ucode.img` and `initramfs-linux.img` initrd files. The period signs also do not signify any shorthand or missing code; the `INITRD` line must be exactly as illustrated below.
+**Note:** There must be no spaces between the `*cpu_manufacturer*-ucode.img` and `initramfs-linux.img` initrd files. The `INITRD` line must be exactly as illustrated below.
 
 Multiple initrd's can be separated by commas in `/boot/syslinux/syslinux.cfg`:
 

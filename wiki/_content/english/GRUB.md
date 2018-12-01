@@ -41,8 +41,8 @@ Related articles
                 *   [3.2.1.2.2 gdisk](#gdisk)
                 *   [3.2.1.2.3 Chainloading an Arch Linux .efi file](#Chainloading_an_Arch_Linux_.efi_file)
             *   [3.2.1.3 Dual-booting](#Dual-booting)
-                *   [3.2.1.3.1 GNU/Linux menu entry](#GNU/Linux_menu_entry)
-                *   [3.2.1.3.2 Windows installed in UEFI/GPT Mode menu entry](#Windows_installed_in_UEFI/GPT_Mode_menu_entry)
+                *   [3.2.1.3.1 GNU/Linux](#GNU/Linux)
+                *   [3.2.1.3.2 Windows installed in UEFI/GPT mode](#Windows_installed_in_UEFI/GPT_mode)
                 *   [3.2.1.3.3 Windows installed in BIOS/MBR mode](#Windows_installed_in_BIOS/MBR_mode)
 *   [4 Using the command shell](#Using_the_command_shell)
     *   [4.1 Pager support](#Pager_support)
@@ -133,7 +133,7 @@ See [grub-install(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/grub-install.8)
 **Note:**
 
 *   UEFI firmwares are not implemented consistently across manufacturers. The procedure described below is intended to work on a wide range of UEFI systems but those experiencing problems despite applying this method are encouraged to share detailed information, and if possible the turnarounds found, for their hardware-specific case. A [GRUB/EFI examples](/index.php/GRUB/EFI_examples "GRUB/EFI examples") article has been provided for such cases.
-*   The section assumes you are installing GRUB for x86_64 systems. For IA32 (32-bit) EFI systems (not to be confused with 32-bit CPUs), replace `x86_64-efi` with `i386-efi` where appropriate.
+*   The section assumes you are installing GRUB for x86_64 systems. For IA32 (32-bit) UEFI systems (not to be confused with 32-bit CPUs), replace `x86_64-efi` with `i386-efi` where appropriate.
 
 First, [install](/index.php/Install "Install") the packages [grub](https://www.archlinux.org/packages/?name=grub) and [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr): *GRUB* is the bootloader while *efibootmgr* is used by the GRUB installation script to write boot entries to NVRAM.
 
@@ -163,7 +163,7 @@ See [UEFI troubleshooting](#UEFI) in case of problems. Additionally see [GRUB/Ti
 
 ## Configuration
 
-On an installed system, GRUB loads the `/boot/grub/grub.cfg` configuration file each boot. You can use a [#Generated grub.cfg](#Generated_grub.cfg) or create a [#Custom grub.cfg](#Custom_grub.cfg) manually.
+On an installed system, GRUB loads the `/boot/grub/grub.cfg` configuration file each boot. You can follow [#Generated grub.cfg](#Generated_grub.cfg) for using a tool, or [#Custom grub.cfg](#Custom_grub.cfg) for a manual creation.
 
 ### Generated grub.cfg
 
@@ -177,7 +177,11 @@ After the installation, the main configuration file `/boot/grub/grub.cfg` needs 
 
 If you have not done additional configuration, the automatic generation will determine the root filesystem of the system to boot for the configuration file. For that to succeed it is important that the system is either booted or chrooted into.
 
-**Note:** Remember that `/boot/grub/grub.cfg` has to be re-generated after any change to `/etc/default/grub` or files in `/etc/grub.d/`.
+**Note:**
+
+*   Remember that `/boot/grub/grub.cfg` has to be re-generated after any change to `/etc/default/grub` or files in `/etc/grub.d/`.
+*   The default file path is `/boot/grub/grub.cfg`, not `/boot/grub/i386-pc/grub.cfg`.
+*   If you are trying to run *grub-mkconfig* in a chroot or *systemd-nspawn* container, you might notice that it does not work, complaining that *grub-probe* cannot get the "canonical path of /dev/sdaX". In this case, try using *arch-chroot* as described in the [BBS post](https://bbs.archlinux.org/viewtopic.php?pid=1225067#p1225067).
 
 Use the *grub-mkconfig* tool to generate `/boot/grub/grub.cfg`:
 
@@ -186,14 +190,20 @@ Use the *grub-mkconfig* tool to generate `/boot/grub/grub.cfg`:
 
 ```
 
-To automatically add entries for other installed operating systems, see [#Dual booting/Multiple operating systems](#Dual_booting/Multiple_operating_systems).
+By default the generation scripts automatically add menu entries for Arch Linux and all installed [kernels](/index.php/Kernel "Kernel") to the generated configuration.
 
-By default the generation scripts automatically add menu entries for Arch Linux to any generated configuration. See [Multiboot USB drive#Boot entries](/index.php/Multiboot_USB_drive#Boot_entries "Multiboot USB drive") and [#Dual-booting](#Dual-booting) for custom menu entries for other systems.
+**Tip:**
 
-**Note:**
+*   After installing or removing a [kernel](/index.php/Kernel "Kernel"), you just need to re-run the above *grub-mkconfig* command.
+*   For tips on managing multiple GRUB entries, for example when using both [linux](https://www.archlinux.org/packages/?name=linux) and [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernels, see [GRUB/Tips and tricks#Multiple entries](/index.php/GRUB/Tips_and_tricks#Multiple_entries "GRUB/Tips and tricks").
 
-*   The default file path is `/boot/grub/grub.cfg`, not `/boot/grub/i386-pc/grub.cfg`. The [grub](https://www.archlinux.org/packages/?name=grub) package includes a sample `/boot/grub/grub.cfg`; ensure your intended changes are written to this file.
-*   If you are trying to run *grub-mkconfig* in a chroot or *systemd-nspawn* container, you might notice that it does not work, complaining that *grub-probe* cannot get the "canonical path of /dev/sdaX". In this case, try using *arch-chroot* as described in the [BBS post](https://bbs.archlinux.org/viewtopic.php?pid=1225067#p1225067).
+To automatically add entries for other installed operating systems, see [#Detecting other operating systems](#Detecting_other_operating_systems).
+
+You can add additional custom menu entries by editing `/etc/grub.d/40_custom` and re-generating `/boot/grub/grub.cfg`. Or you can create `/boot/grub/custom.cfg` and add them there. Changes to `/boot/grub/custom.cfg` do not require re-running *grub-mkconfig*, since `/etc/grub.d/40_custom` adds the necessary `source` statement to the generated configuration file.
+
+**Tip:** `/etc/grub.d/40_custom` can be used as a template to create `/etc/grub.d/*nn*_custom`. Where `*nn*` defines the precedence, indicating the order the script is executed. The order scripts are executed determine the placement in the GRUB boot menu. `*nn*` should be greater than `06` to ensure necessary scripts are executed first.
+
+See [#Boot menu entries](#Boot_menu_entries) for custom menu entry examples.
 
 #### Detecting other operating systems
 
@@ -297,9 +307,11 @@ A basic GRUB config file uses the following options:
 
 #### Boot menu entries
 
-**Tip:** These boot entries can also be used when generating the `/boot/grub/grub.cfg` file with *grub-mkconfig*. Add them to `/etc/grub.d/40_custom` or `/boot/grub/custom.cfg` and [regenerate the main configuration file](#Generate_the_main_configuration_file).
+**Tip:** These boot entries can also be used when using a `/boot/grub/grub.cfg` generated by *grub-mkconfig*. Add them to `/etc/grub.d/40_custom` and [re-generate the main configuration file](#Generate_the_main_configuration_file) or add them to `/boot/grub/custom.cfg`.
 
 For tips on managing multiple GRUB entries, for example when using both [linux](https://www.archlinux.org/packages/?name=linux) and [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernels, see [GRUB/Tips and tricks#Multiple entries](/index.php/GRUB/Tips_and_tricks#Multiple_entries "GRUB/Tips and tricks").
+
+For [Archiso](/index.php/Archiso "Archiso") and [Archboot](/index.php/Archboot "Archboot") boot menu entries see [Multiboot USB drive#Boot entries](/index.php/Multiboot_USB_drive#Boot_entries "Multiboot USB drive").
 
 ##### GRUB commands
 
@@ -382,7 +394,7 @@ menuentry "Arch Linux .efi" {
 
 ##### Dual-booting
 
-###### GNU/Linux menu entry
+###### GNU/Linux
 
 Assuming that the other distribution is on partition `sda2`:
 
@@ -409,9 +421,9 @@ menuentry "Other Linux" {
 }
 ```
 
-###### Windows installed in UEFI/GPT Mode menu entry
+###### Windows installed in UEFI/GPT mode
 
-This mode determines where the Windows bootloader resides and chain-loads it after Grub when the menu entry is selected. The main task here is finding the EFI system partition and running the bootloader from it.
+This mode determines where the Windows bootloader resides and chain-loads it after GRUB when the menu entry is selected. The main task here is finding the EFI system partition and running the bootloader from it.
 
 **Note:** This menuentry will work only in UEFI boot mode and only if the Windows bitness matches the UEFI bitness. It will not work in BIOS installed GRUB. See [Dual boot with Windows#Windows UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Windows_UEFI_vs_BIOS_limitations "Dual boot with Windows") and [Dual boot with Windows#Bootloader UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Bootloader_UEFI_vs_BIOS_limitations "Dual boot with Windows") for more information.
 
@@ -448,7 +460,7 @@ These two commands assume the ESP Windows uses is mounted at `*esp*`. There migh
 
 **Warning:** It is the **system partition** that has `/bootmgr`, not your "real" Windows partition (usually `C:`). In `blkid` output, the system partition is the one with `LABEL="SYSTEM RESERVED"` or `LABEL="SYSTEM"` and is only about 100 to 200 MiB in size (much like the boot partition for Arch). See [Wikipedia:System partition and boot partition](https://en.wikipedia.org/wiki/System_partition_and_boot_partition "wikipedia:System partition and boot partition") for more info.
 
-Throughout this section, it is assumed your Windows partition is `/dev/sda1`. A different partition will change every instance of `hd0,msdos1`. Add the below code to `/etc/grub.d/40_custom` or `/boot/grub/custom.cfg` and regenerate `grub.cfg` with `grub-mkconfig` as explained above to boot Windows (XP, Vista, 7, 8 or 10) installed in BIOS/MBR mode:
+Throughout this section, it is assumed your Windows partition is `/dev/sda1`. A different partition will change every instance of `hd0,msdos1`.
 
 **Note:** These menu entries will work only in BIOS boot mode. It will not work in UEFI installed GRUB. See [Dual boot with Windows#Windows UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Windows_UEFI_vs_BIOS_limitations "Dual boot with Windows") and [Dual boot with Windows#Bootloader UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Bootloader_UEFI_vs_BIOS_limitations "Dual boot with Windows") .
 
@@ -492,10 +504,6 @@ X:\> bootrec.exe /RebuildBcd
 ```
 
 Do **not** use `bootrec.exe /Fixmbr` because it will wipe GRUB out. Or you can use Boot Repair function in the Troubleshooting menu - it will not wipe out GRUB but will fix most errors. Also you would better keep plugged in both the target hard drive and your bootable device **ONLY**. Windows usually fails to repair boot information if any other devices are connected.
-
-`/etc/grub.d/40_custom` can be used as a template to create `/etc/grub.d/*nn*_custom`. Where `*nn*` defines the precedence, indicating the order the script is executed. The order scripts are executed determine the placement in the grub boot menu.
-
-**Note:** `nn` should be greater than 06 to ensure necessary scripts are executed first.
 
 ## Using the command shell
 

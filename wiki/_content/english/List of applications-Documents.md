@@ -38,8 +38,9 @@
         *   [1.9.2 Layout analyzers](#Layout_analyzers)
     *   [1.10 Notes](#Notes)
         *   [1.10.1 Note-taking software](#Note-taking_software)
-            *   [1.10.1.1 Console](#Console_2)
-            *   [1.10.1.2 Graphical](#Graphical_2)
+            *   [1.10.1.1 Stylus note-taking](#Stylus_note-taking)
+            *   [1.10.1.2 Console](#Console_2)
+            *   [1.10.1.3 Graphical](#Graphical_2)
         *   [1.10.2 Diary](#Diary)
         *   [1.10.3 Mind-mapping](#Mind-mapping)
         *   [1.10.4 Sticky notes](#Sticky_notes)
@@ -972,6 +973,24 @@ See also [Wikipedia:Comparison of optical character recognition software](https:
 #### Note-taking software
 
 See also [PDF, PS and DjVu#Annotation](/index.php/PDF,_PS_and_DjVu#Annotation "PDF, PS and DjVu") and [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/wiki/Comparison_of_notetaking_software "wikipedia:Comparison of notetaking software").
+
+##### Stylus note-taking
+
+*   **Cournal** — Collaborative note taking and journal application using a stylus. It allows multiple users to annotate PDF files in real-time.
+
+	[https://github.com/flyser/cournal](https://github.com/flyser/cournal) || [cournal](https://aur.archlinux.org/packages/cournal/)
+
+*   **Write** — A proprietary word processor for handwriting.
+
+	[http://www.styluslabs.com/](http://www.styluslabs.com/) || [write_stylus](https://aur.archlinux.org/packages/write_stylus/)
+
+*   **Xournal** — Application for notetaking, sketching and keeping a journal using a stylus. Capable of annotating existing PDF files as well.
+
+	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://www.archlinux.org/packages/?name=xournal)
+
+*   **Xournal++** — Notetaking software designed around a tablet. C++ rewrite of Xournal with PDF annotation support.
+
+	[https://github.com/xournalpp/xournalpp](https://github.com/xournalpp/xournalpp) || [xournalpp-git](https://aur.archlinux.org/packages/xournalpp-git/)
 
 ##### Console
 

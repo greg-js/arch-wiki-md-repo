@@ -1976,7 +1976,7 @@ As discussed in the Steam store page, remove `bin/libstdc++.so.6` from the game 
 
 Dependencies:
 
-*   [lib32-libstdc++5](https://www.archlinux.org/packages/?name=lib32-libstdc%2B%2B5)
+*   [lib32-libstdc++5](https://aur.archlinux.org/packages/lib32-libstdc%2B%2B5/)
 *   [lib32-libxcursor](https://www.archlinux.org/packages/?name=lib32-libxcursor)
 *   [lib32-libxrandr](https://www.archlinux.org/packages/?name=lib32-libxrandr)
 

@@ -58,5 +58,4 @@ Include = /etc/pacman.d/mirrorlist
 
 ## Смотрите также
 
-*   [Multilib Project](/index.php/64-bit_FAQ_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Репозиторий_Multilib "64-bit FAQ (Русский)")
 *   [arch-multilib](//mailman.archlinux.org/mailman/listinfo/arch-multilib) список рассылки

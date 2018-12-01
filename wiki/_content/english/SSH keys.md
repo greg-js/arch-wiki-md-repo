@@ -579,7 +579,7 @@ If you use the [GNOME](/index.php/GNOME "GNOME") desktop, the [GNOME Keyring](/i
 
 ### Store SSH keys with Kwallet
 
-For instructions on how to use kwallet to store your SSH keys, see [KDE Wallet#Using the KDE Wallet to store ssh key passhprases](/index.php/KDE_Wallet#Using_the_KDE_Wallet_to_store_ssh_key_passhprases "KDE Wallet").
+For instructions on how to use kwallet to store your SSH keys, see [KDE Wallet#Using the KDE Wallet to store ssh key passphrases](/index.php/KDE_Wallet#Using_the_KDE_Wallet_to_store_ssh_key_passphrases "KDE Wallet").
 
 ### KeePass2 with KeeAgent plugin
 

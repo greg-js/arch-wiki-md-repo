@@ -274,7 +274,7 @@ GPU超频要比CPU超频简单得多，通过软件可以实时调整GPU时钟�
 
 #### Go-preload
 
-[Go-preload](https://aur.archlinux.org/packages/Go-preload/)是来自gentoo的一个预读服务。安装后，通过下列命令采集预读信息：
+[gopreload-git](https://aur.archlinux.org/packages/gopreload-git/)是来自gentoo的一个预读服务。安装后，通过下列命令采集预读信息：
 
 ```
 # gopreload-prepare program

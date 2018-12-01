@@ -279,8 +279,9 @@ Related articles
         *   [4.9.2 Layout analyzers](#Layout_analyzers)
     *   [4.10 Notes](#Notes)
         *   [4.10.1 Note-taking software](#Note-taking_software)
-            *   [4.10.1.1 Console](#Console_20)
-            *   [4.10.1.2 Graphical](#Graphical_20)
+            *   [4.10.1.1 Stylus note-taking](#Stylus_note-taking)
+            *   [4.10.1.2 Console](#Console_20)
+            *   [4.10.1.3 Graphical](#Graphical_20)
         *   [4.10.2 Diary](#Diary)
         *   [4.10.3 Mind-mapping](#Mind-mapping)
         *   [4.10.4 Sticky notes](#Sticky_notes)
@@ -823,11 +824,11 @@ See also [Category:Web server](/index.php/Category:Web_server "Category:Web serv
 
 #### Static web servers
 
-*   **darkhttpd** — A small and secure static web server, does not support HTTPS.
+*   **darkhttpd** — A small and secure static web server, written in C, does not support HTTPS or Auth.
 
 	[https://unix4lyfe.org/darkhttpd/](https://unix4lyfe.org/darkhttpd/) || [darkhttpd](https://www.archlinux.org/packages/?name=darkhttpd)
 
-*   **KatWeb** — A lightweight static web server and reverse proxy designed for the modern web.
+*   **KatWeb** — A lightweight static web server and reverse proxy, written in Go, designed for the modern web.
 
 	[https://github.com/kittyhacker101/KatWeb](https://github.com/kittyhacker101/KatWeb) || [katweb](https://aur.archlinux.org/packages/katweb/)
 
@@ -6845,6 +6846,24 @@ See also [Wikipedia:Comparison of optical character recognition software](https:
 #### Note-taking software
 
 See also [PDF, PS and DjVu#Annotation](/index.php/PDF,_PS_and_DjVu#Annotation "PDF, PS and DjVu") and [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/wiki/Comparison_of_notetaking_software "wikipedia:Comparison of notetaking software").
+
+##### Stylus note-taking
+
+*   **Cournal** — Collaborative note taking and journal application using a stylus. It allows multiple users to annotate PDF files in real-time.
+
+	[https://github.com/flyser/cournal](https://github.com/flyser/cournal) || [cournal](https://aur.archlinux.org/packages/cournal/)
+
+*   **Write** — A proprietary word processor for handwriting.
+
+	[http://www.styluslabs.com/](http://www.styluslabs.com/) || [write_stylus](https://aur.archlinux.org/packages/write_stylus/)
+
+*   **Xournal** — Application for notetaking, sketching and keeping a journal using a stylus. Capable of annotating existing PDF files as well.
+
+	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://www.archlinux.org/packages/?name=xournal)
+
+*   **Xournal++** — Notetaking software designed around a tablet. C++ rewrite of Xournal with PDF annotation support.
+
+	[https://github.com/xournalpp/xournalpp](https://github.com/xournalpp/xournalpp) || [xournalpp-git](https://aur.archlinux.org/packages/xournalpp-git/)
 
 ##### Console
 

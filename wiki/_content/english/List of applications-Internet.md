@@ -518,11 +518,11 @@ See also [Category:Web server](/index.php/Category:Web_server "Category:Web serv
 
 #### Static web servers
 
-*   **darkhttpd** — A small and secure static web server, does not support HTTPS.
+*   **darkhttpd** — A small and secure static web server, written in C, does not support HTTPS or Auth.
 
 	[https://unix4lyfe.org/darkhttpd/](https://unix4lyfe.org/darkhttpd/) || [darkhttpd](https://www.archlinux.org/packages/?name=darkhttpd)
 
-*   **KatWeb** — A lightweight static web server and reverse proxy designed for the modern web.
+*   **KatWeb** — A lightweight static web server and reverse proxy, written in Go, designed for the modern web.
 
 	[https://github.com/kittyhacker101/KatWeb](https://github.com/kittyhacker101/KatWeb) || [katweb](https://aur.archlinux.org/packages/katweb/)
 

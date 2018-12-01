@@ -40,7 +40,7 @@ Install a [Java](/index.php/Java "Java") runtime environment, like [jre10-openjd
 
 From the [AUR](/index.php/AUR "AUR"), install [ksh](https://aur.archlinux.org/packages/ksh/) (other implementations like [these](/index.php/Ksh "Ksh") may work), [beecrypt](https://aur.archlinux.org/packages/beecrypt/) and [rpm-org](https://aur.archlinux.org/packages/rpm-org/).
 
-Oracle database 32-bit requires [lib32-unixodbc](https://aur.archlinux.org/packages/lib32-unixodbc/), [lib32-libaio](https://www.archlinux.org/packages/?name=lib32-libaio), [lib32-libstdc++5](https://www.archlinux.org/packages/?name=lib32-libstdc%2B%2B5), [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc) and [lib32-gcc-libs](https://www.archlinux.org/packages/?name=lib32-gcc-libs).
+Oracle database 32-bit requires [lib32-unixodbc](https://aur.archlinux.org/packages/lib32-unixodbc/), [lib32-libaio](https://www.archlinux.org/packages/?name=lib32-libaio), [lib32-libstdc++5](https://aur.archlinux.org/packages/lib32-libstdc%2B%2B5/), [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc) and [lib32-gcc-libs](https://www.archlinux.org/packages/?name=lib32-gcc-libs).
 
 #### Configuration
 

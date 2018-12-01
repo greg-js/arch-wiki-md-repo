@@ -82,13 +82,17 @@ Most executables of the Java installation are provided by direct links in `/usr/
 
 	[https://openjdk.java.net/projects/openjfx/](https://openjdk.java.net/projects/openjfx/) || [java-openjfx](https://www.archlinux.org/packages/?name=java-openjfx), [java-openjfx-doc](https://www.archlinux.org/packages/?name=java-openjfx-doc), [java-openjfx-src](https://www.archlinux.org/packages/?name=java-openjfx-src)
 
-**OpenJDK EA** — Oracle's OpenJDK Early-Access Build for latest development version.
+**OpenJFX** — Latest OpenJFX community build.
 
-	[https://jdk.java.net](https://jdk.java.net) || [openjdk-devel](https://aur.archlinux.org/packages/openjdk-devel/)
+	[https://openjfx.io/](https://openjfx.io/) || [java-openjfx-bin](https://aur.archlinux.org/packages/java-openjfx-bin/)
 
-**OpenJFX EA** — Oracle's OpenJFX Early-Access Build for latest development version.
+**OpenJDK EA** — OpenJDK Early-Access Build for latest development version.
 
-	[https://jdk.java.net/openjfx/](https://jdk.java.net/openjfx/) || [java-openjfx-devel](https://aur.archlinux.org/packages/java-openjfx-devel/)
+	[https://jdk.java.net](https://jdk.java.net) || [java-openjdk-ea-bin](https://aur.archlinux.org/packages/java-openjdk-ea-bin/)
+
+**OpenJFX EA** — OpenJFX Early-Access Build for latest development version.
+
+	[https://openjfx.io/](https://openjfx.io/) || [java-openjfx-ea-bin](https://aur.archlinux.org/packages/java-openjfx-ea-bin/)
 
 ### Other implementations
 

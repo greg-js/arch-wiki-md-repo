@@ -22,6 +22,7 @@
     *   [3.6 Cloud Pinyin configuration](#Cloud_Pinyin_configuration)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Clipboard Access](#Clipboard_Access)
+    *   [4.2 fcitx-remote](#fcitx-remote)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Disable or change *Extra key for trigger input method* [sic]](#Disable_or_change_Extra_key_for_trigger_input_method_[sic])
     *   [5.2 Diagnose the problem](#Diagnose_the_problem)
@@ -148,7 +149,13 @@ In order to enable spell checking, press `Ctrl+Alt+h` when fcitx is on an input 
 
 ### Input methods configuration
 
-You can add/remove input methods in the GUI tools. Set the first item to Keyboard layout (e.g. *Keyboard - English*) if you want to enable/disable other input methods quickly.
+You can add/remove input methods in the GUI tools. Note that the search is case sensitive.
+
+The first set input method is the inactive state, while all the rest will be active states. You generally want the inactive state to be one of the *Keyboard* options (e.g. "Keyboard - English (US)"). These options just input based on the keyboard layout in the name.
+
+Under *Global Config*, the *Trigger Input Method* shortcut will only switch between the inactive and last used active state. The *Scroll between Input Methods* will by default only scroll between different active states, but can also be set to include the inactive state in the advanced settings. Furthermore, the *Scroll between Input Methods* shortcut has to be pressed in order, e.g. `ALT_SHIFT` will only activate if `alt` is pressed before `shift`.
+
+Configuration settings for IME's can be found by by setting the keyboard to the desired IME and right-clicking the tray icon.
 
 ### Change default UI
 
@@ -190,6 +197,12 @@ You can use fcitx to input text in you clipboard (as well as a short clipboard h
 **Note:** This is NOT a clipboard manager, it doesn't hold the selection or change its content as what a clipboard manager is supposed to do. It can only be used to input from the clipboard.
 
 **Warning:** Some clients do not support multi-line input, so you may see the multi-line clipboard content pasted as a single line using fcitx-clipboard. This is either a bug or feature of the program being used and it is not something fcitx is able to help with.
+
+### fcitx-remote
+
+*fcitx-remote* is a commandline tool that can be used to control the fcitx state. It is installed with the [fcitx](https://www.archlinux.org/packages/?name=fcitx) package.
+
+One option worth elaborating upon here is `fcitx-remote -s *imname*`, which switches to the input method identified by `*imname*`. The correct `*imname*` for an in use input method can be found by executing *fcitx-diagnose*, and looking under the "## Input Methods:" section.
 
 ## Troubleshooting
 
@@ -271,9 +284,9 @@ At this point you should have working layouts, native KDE layouts switch icon sh
 
 ### Input method switched to English unintentionally
 
-For instance, in XMind, when the user presses Enter to create a node, input method is always switched to English, and has to be switched back to Chinese manually.
+For instance, in XMind, when the user presses `Enter` to create a node, input method is always switched to English, and has to be switched back to Chinese manually.
 
-To fix this issue, open the fcitx GUI configuration tool (provided by [fcitx-configtool](https://www.archlinux.org/packages/?name=fcitx-configtool)), switch to tab *Global Config*, in dropdown menu *Share State Among Window*, select *PerProgram* or *All*.
+To fix this issue, open the *fcitx* GUI configuration tool (provided by [fcitx-configtool](https://www.archlinux.org/packages/?name=fcitx-configtool)), switch to tab *Global Config*, in dropdown menu *Share State Among Window*, select *PerProgram* or *All*.
 
 ### xmodmap settings being overwritten
 
