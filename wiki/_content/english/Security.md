@@ -163,25 +163,25 @@ Certain programs, like [dm-crypt](/index.php/Dm-crypt "Dm-crypt"), allow the use
 
 The kernel now prevents security issues related to hardlinks and symlinks if the `fs.protected_hardlinks` and `fs.protected_symlinks` sysctl switches are enabled, so there is no longer a major security benefit from separating out world-writable directories.
 
-Partitions containing world-writable directories can still be kept separate as a coarse way of limiting the damage from disk space exhaustion. However, filling a partition like `/var` or `/tmp` is enough to take down services. More flexible mechanisms for dealing with this concern exist (like quotas), and some filesystems include related features themselves (btrfs has quotas on subvolumes).
+File systems containing world-writable directories can still be kept separate as a coarse way of limiting the damage from disk space exhaustion. However, filling `/var` or `/tmp` is enough to take down services. More flexible mechanisms for dealing with this concern exist (like [quotas](/index.php/Disk_quota "Disk quota")), and some [file systems](/index.php/File_systems "File systems") include related features themselves (Btrfs has quotas on subvolumes).
 
 #### Mount options
 
-Following the principle of least privilege, filesystems should be mounted with the most restrictive mount options possible (without losing functionality).
+Following the principle of least privilege, file systems should be mounted with the most restrictive mount options possible (without losing functionality).
 
 Relevant mount options are:
 
 *   `nodev`: Do not interpret character or block special devices on the file system.
 *   `nosuid`: Do not allow set-user-identifier or set-group-identifier bits to take effect.
-*   `noexec`: Do not allow direct execution of any binaries on the mounted filesystem.
+*   `noexec`: Do not allow direct execution of any binaries on the mounted file system.
     *   Setting `noexec` on `/home` disallows executable scripts and breaks [Wine](/index.php/Wine "Wine")* and [Steam](/index.php/Steam "Steam").
     *   Some packages (building [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) for example) may require `exec` on `/var`.
 
-**Note:** Wine doesn't need exec flag for opening windows executables. It' only needed when wine itself is installed in /home
+**Note:** Wine does not need the `exec` flag for opening Windows executables. It is only needed when Wine itself is installed in `/home`.
 
-Partitions used for data should always be mounted with `nodev`, `nosuid` and `noexec`.
+File systems used for data should always be mounted with `nodev`, `nosuid` and `noexec`.
 
-Potential partitions:
+Potential file system mounts to consider:
 
 *   `/var`
 *   `/home`
@@ -470,7 +470,7 @@ Setting `kernel.kptr_restrict` to 2 will hide kernel symbol addresses in `/proc/
 
 The Linux kernel includes the ability to compile BPF/Seccomp rule sets to native code as a performance optimization. The `net.core.bpf_jit_enable` flag should be set to `0` for a maximum level of security.
 
-This can be helpful in specific domains, such as dynamic servers (e.g. orchestration platforms like Mesos and Kubernetes). It is not usually useful for desktop users or for static servers. A JIT compiler opens up the possibility for an attacker to perform a heap spraying attack, where they fill the kernel's heap with malicious code. This code can then potentially be executed via another exploit, like an incorrect function pointer dereference. The [Spectre](https://en.wikipedia.org/wiki/Spectre_(security_vulnerability) attacks, published early 2018, are prominent respective exploits.
+BPF/Seccomp compilation can be useful in specific domains, such as dynamic servers (e.g. orchestration platforms like Mesos and Kubernetes). It is not usually useful for desktop users or for static servers. A JIT compiler opens up the possibility for an attacker to perform a heap spraying attack, where they fill the kernel's heap with malicious code. This code can then potentially be executed via another exploit, like an incorrect function pointer dereference. The [Spectre](https://en.wikipedia.org/wiki/Spectre_(security_vulnerability) attacks, published early 2018, are prominent respective exploits.
 
 ### ptrace scope
 
@@ -623,7 +623,7 @@ Syslinux supports [password-protecting your bootloader](/index.php/Syslinux#Secu
 
 #### GRUB
 
-[GRUB](/index.php/GRUB "GRUB") supports bootloader passwords as well. See [GRUB/Tips and tricks#Password protection of GRUB menu](/index.php/GRUB/Tips_and_tricks#Password_protection_of_GRUB_menu "GRUB/Tips and tricks") for details. It also has support for [encrypted boot partitions](/index.php/GRUB#Boot_partition "GRUB"), which only leaves some parts of the bootloader code unencrypted. GRUB's configuration, [kernel](/index.php/Kernel "Kernel") and [initramfs](/index.php/Initramfs "Initramfs") are encrypted.
+[GRUB](/index.php/GRUB "GRUB") supports bootloader passwords as well. See [GRUB/Tips and tricks#Password protection of GRUB menu](/index.php/GRUB/Tips_and_tricks#Password_protection_of_GRUB_menu "GRUB/Tips and tricks") for details. It also has support for [encrypted /boot](/index.php/GRUB#Encrypted_/boot "GRUB"), which only leaves some parts of the bootloader code unencrypted. GRUB's configuration, [kernel](/index.php/Kernel "Kernel") and [initramfs](/index.php/Initramfs "Initramfs") are encrypted.
 
 ### Boot partition on removable flash drive
 

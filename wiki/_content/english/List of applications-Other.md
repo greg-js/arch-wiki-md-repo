@@ -613,7 +613,7 @@ See also [Wikipedia:Comparison of speech synthesizers](https://en.wikipedia.org/
 
 See also [Wikipedia:Speech recognition software for Linux](https://en.wikipedia.org/wiki/Speech_recognition_software_for_Linux "wikipedia:Speech recognition software for Linux").
 
-*   **Blather** — Speech recognizer that will run commands when a user speaks preset commands.
+*   **Blather** — Speech recognizer that will run commands when a user speaks preset commands, uses PocketSphinx.
 
 	[https://gitlab.com/jezra/blather](https://gitlab.com/jezra/blather) || [blather-git](https://aur.archlinux.org/packages/blather-git/)
 

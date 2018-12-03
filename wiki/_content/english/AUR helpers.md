@@ -12,6 +12,9 @@ Since AUR helpers are unsupported, they are not present in the [official reposit
 
 *   [1 Legend](#Legend)
 *   [2 Comparison table](#Comparison_table)
+    *   [2.1 Search and download](#Search_and_download)
+    *   [2.2 Download and build](#Download_and_build)
+    *   [2.3 Pacman wrappers](#Pacman_wrappers)
 *   [3 Graphical](#Graphical)
 *   [4 Maintenance](#Maintenance)
 *   [5 Other](#Other)
@@ -73,7 +76,7 @@ The [#Comparison table](#Comparison_table) columns have the following meaning:
 
 ## Comparison table
 
-	Search and download
+### Search and download
 
 | Name | Written in | File review | Git clone | Reliable parser | Reliable solver | Shell completion | Specificity |
 | [auracle-git](https://aur.archlinux.org/packages/auracle-git/) | C++ | Yes | [Yes](https://github.com/falconindy/auracle/commit/c73bbee) | Yes | Yes | bash | print build order |
@@ -85,7 +88,7 @@ The [#Comparison table](#Comparison_table) columns have the following meaning:
 | [cower](https://aur.archlinux.org/packages/cower/)
 <small>([discontinued](https://github.com/falconindy/cower#description))</small> | C | Yes | No | Yes | – | bash, zsh | regex support |
 
-	Download and build
+### Download and build
 
 | Name | Written in | File review | Diff view | Git clone | Reliable parser | Reliable solver | Split packages | Clean build | Batch interaction | Shell completion | Specificity |
 | [aurutils](https://aur.archlinux.org/packages/aurutils/) | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | Yes | 1 | zsh | [vifm](/index.php/Vifm "Vifm"), [local repository](/index.php/Local_repository "Local repository"), [package signing](/index.php/Package_signing "Package signing"), [clean chroot](/index.php/DeveloperWiki:Building_in_a_clean_chroot "DeveloperWiki:Building in a clean chroot") support |
@@ -102,7 +105,7 @@ The [#Comparison table](#Comparison_table) columns have the following meaning:
 | [burgaur](https://aur.archlinux.org/packages/burgaur/)
 <small>([discontinued](https://github.com/m45t3r/burgaur/issues/7#issuecomment-365599675))</small> | Python/C | Optional | No | No | No | No | No | Yes | – | – | wrapper for *cower* |
 
-	Pacman wrappers
+### Pacman wrappers
 
 **Warning:** [pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8) wrappers abstract the work of the package manager. They may (optionally or by default) introduce [unsafe flags](/index.php/System_maintenance#Avoid_certain_pacman_commands "System maintenance"), or other unexpected behavior leading to a defective system.
 
@@ -121,7 +124,7 @@ The [#Comparison table](#Comparison_table) columns have the following meaning:
 [--ask](https://github.com/rmarquis/pacaur/commit/12707cc) | 1, 3 | bash, zsh | multilingual |
 | [wrapaur](https://aur.archlinux.org/packages/wrapaur/)
 <small>(stalled)</small> | Bash | Yes | No | Yes | No | No | No | Yes | – | – | – | mirror updates, print news and AUR comments |
-| [packer-aur](https://aur.archlinux.org/packages/packer-aur/)
+| [packer-aur-git](https://aur.archlinux.org/packages/packer-aur-git/)
 <small>(stalled)</small> | Bash | No | No | No | No | No | No | Yes | – | – | – | – |
 | [yaourt](https://aur.archlinux.org/packages/yaourt/)
 <small>([discontinued](https://github.com/archlinuxfr/yaourt/issues/382#issuecomment-437461631))</small> | Bash/C | [No](https://github.com/archlinuxfr/yaourt/blob/34b5c0b/src/lib/aur.sh#L54-L72) | Optional | Optional | No | [No](https://github.com/archlinuxfr/yaourt/issues/186) | [No](https://github.com/archlinuxfr/yaourt/issues/85) | [No](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | [-Sy](https://github.com/archlinuxfr/yaourt/blob/d30823e/yaourt/yaourt#L1773) | 2 | bash, fish, zsh | ABS support, print AUR comments, multilingual |

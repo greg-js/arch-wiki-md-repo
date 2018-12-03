@@ -87,7 +87,7 @@ This package has the advantage that the various Rust executables live in `/usr/b
 You might need to manually install a toolchain, e.g. `stable`, `beta`, `nightly` or `1.23.0`. You also need to do this if you want to use/test another toolchain.
 
 ```
-$ rustup install *toolchain*
+$ rustup toolchain install *toolchain*
 
 ```
 

@@ -190,7 +190,7 @@ Use the *grub-mkconfig* tool to generate `/boot/grub/grub.cfg`:
 
 ```
 
-By default the generation scripts automatically add menu entries for Arch Linux and all installed [kernels](/index.php/Kernel "Kernel") to the generated configuration.
+By default the generation scripts automatically add menu entries for all installed Arch Linux [kernels](/index.php/Kernel "Kernel") to the generated configuration.
 
 **Tip:**
 
@@ -271,7 +271,7 @@ GRUB also has special support for booting with an encrypted `/boot`. This is don
 
 **Note:** `/boot` is **not** required to be kept in a separate partition; it may also stay under the system's root `/` directory tree.
 
-**Warning:** GRUB does not support LUKS2 headers. Make sure you do not specify `luks2` for the type parameter when creating the encrypted partition using `cryptsetup luksFormat`.
+**Warning:** GRUB does not support LUKS2 headers; see [GRUB bug #55093](https://savannah.gnu.org/bugs/?55093). Make sure you do not specify `luks2` for the type parameter when creating the encrypted partition using `cryptsetup luksFormat`.
 
 To enable this feature encrypt the partition with `/boot` residing on it using [LUKS](/index.php/LUKS "LUKS") as normal. Then add the following option to `/etc/default/grub`:
 
@@ -362,8 +362,9 @@ You can launch [UEFI Shell](/index.php/Unified_Extensible_Firmware_Interface#UEF
 
 ```
 menuentry "UEFI Shell" {
+	insmod fat
 	insmod chain
-	search --set=root --file /shellx64.efi
+	search --no-floppy --set=root --file /shellx64.efi
 	chainloader /shellx64.efi
 }
 ```
@@ -374,8 +375,9 @@ Download the [gdisk EFI application](/index.php/Gdisk#gdisk_EFI_application "Gdi
 
 ```
 menuentry "gdisk" {
+	insmod fat
 	insmod chain
-	search --set=root --file /EFI/tools/gdisk_x64.efi
+	search --no-floppy --set=root --file /EFI/tools/gdisk_x64.efi
 	chainloader /EFI/tools/gdisk_x64.efi
 }
 ```
@@ -386,8 +388,9 @@ If you have an *.efi* file generated from following [Secure Boot](/index.php/Sec
 
 ```
 menuentry "Arch Linux .efi" {
+	insmod fat
 	insmod chain
-	search --set=root --fs-uuid *FILESYSTEM_UUID*
+	search --no-floppy --set=root --fs-uuid *FILESYSTEM_UUID*
 	chainloader /EFI/arch/vmlinuz.efi
 }
 ```
@@ -411,10 +414,10 @@ Alternatively let GRUB search for the right partition by *UUID* or *label*:
 ```
 menuentry "Other Linux" {
         # assuming that UUID is 763A-9CB6
-	search --set=root --fs-uuid 763A-9CB6
+	search --no-floppy --set=root --fs-uuid 763A-9CB6
 
         # search by label OTHER_LINUX (make sure that partition label is unambiguous)
-        #search --set=root --label OTHER_LINUX
+        #search --no-floppy --set=root --label OTHER_LINUX
 
 	linux /boot/vmlinuz (add other options here as required, for example: root=UUID=763A-9CB6)
 	initrd /boot/initrd.img (if the other kernel uses/needs one)
@@ -432,9 +435,8 @@ if [ "${grub_platform}" == "efi" ]; then
 	menuentry "Microsoft Windows Vista/7/8/8.1 UEFI/GPT" {
 		insmod part_gpt
 		insmod fat
-		insmod search_fs_uuid
 		insmod chain
-		search --fs-uuid --set=root $hints_string $fs_uuid
+		search --no-floppy --fs-uuid --set=root $hints_string $fs_uuid
 		chainloader /EFI/Microsoft/Boot/bootmgfw.efi
 	}
 fi
@@ -458,7 +460,7 @@ These two commands assume the ESP Windows uses is mounted at `*esp*`. There migh
 
 **Note:** GRUB supports booting `bootmgr` directly and [chainloading](https://www.gnu.org/software/grub/manual/grub.html#Chain_002dloading) of partition boot sector is no longer required to boot Windows in a BIOS/MBR setup.
 
-**Warning:** It is the **system partition** that has `/bootmgr`, not your "real" Windows partition (usually `C:`). In `blkid` output, the system partition is the one with `LABEL="SYSTEM RESERVED"` or `LABEL="SYSTEM"` and is only about 100 to 200 MiB in size (much like the boot partition for Arch). See [Wikipedia:System partition and boot partition](https://en.wikipedia.org/wiki/System_partition_and_boot_partition "wikipedia:System partition and boot partition") for more info.
+**Warning:** It is the **system partition** that has `/bootmgr`, not your "real" Windows partition (usually `C:`). The system partition's [filesystem label](/index.php/Persistent_block_device_naming#by-label "Persistent block device naming") is `System Reserved` or `SYSTEM` and the partition is only about 100 to 549 MiB in size. See [Wikipedia:System partition and boot partition](https://en.wikipedia.org/wiki/System_partition_and_boot_partition "wikipedia:System partition and boot partition") for more information.
 
 Throughout this section, it is assumed your Windows partition is `/dev/sda1`. A different partition will change every instance of `hd0,msdos1`.
 
@@ -473,9 +475,8 @@ if [ "${grub_platform}" == "pc" ]; then
 	menuentry "Microsoft Windows Vista/7/8/8.1/10 BIOS/MBR" {
 		insmod part_msdos
 		insmod ntfs
-		insmod search_fs_uuid
 		insmod ntldr     
-		search --fs-uuid --set=root --hint-bios=hd0,msdos1 --hint-efi=hd0,msdos1 --hint-baremetal=ahci0,msdos1 *XXXXXXXXXXXXXXXX*
+		search --no-floppy --fs-uuid --set=root --hint-bios=hd0,msdos1 --hint-efi=hd0,msdos1 --hint-baremetal=ahci0,msdos1 *XXXXXXXXXXXXXXXX*
 		ntldr /bootmgr
 	}
 fi
@@ -488,9 +489,8 @@ if [ "${grub_platform}" == "pc" ]; then
 	menuentry "Microsoft Windows XP" {
 		insmod part_msdos
 		insmod ntfs
-		insmod search_fs_uuid
 		insmod ntldr     
-		search --fs-uuid --set=root --hint-bios=hd0,msdos1 --hint-efi=hd0,msdos1 --hint-baremetal=ahci0,msdos1 *XXXXXXXXXXXXXXXX*
+		search --no-floppy --fs-uuid --set=root --hint-bios=hd0,msdos1 --hint-efi=hd0,msdos1 --hint-baremetal=ahci0,msdos1 *XXXXXXXXXXXXXXXX*
 		ntldr /ntldr
 	}
 fi
@@ -588,14 +588,14 @@ boot
 #### Chainloading Windows/Linux installed in UEFI mode
 
 ```
-insmod ntfs
+insmod fat
 set root=(hd0,gpt4)
 chainloader (${root})/EFI/Microsoft/Boot/bootmgfw.efi
 boot
 
 ```
 
-`insmod ntfs` is used for loading the ntfs file system module for loading Windows. (hd0,gpt4) or /dev/sda4 is my EFI system partition (ESP). The entry in the *chainloader* line specifies the path of the *.efi* file to be chain-loaded.
+`insmod fat` is used for loading the FAT file system module for accessing the Windows bootloader on the EFI system partition. `(hd0,gpt4)` or `/dev/sda4` is the EFI system partition in this example. The entry in the `chainloader` line specifies the path of the *.efi* file to be chain-loaded.
 
 #### Normal loading
 
@@ -732,40 +732,16 @@ If `/usr/share/grub/unicode.pf2` does not exist, install [bdf-unifont](https://w
 
 Then, in the `grub.cfg` file, add the following lines to enable GRUB to pass the video mode correctly to the kernel, without of which you will only get a black screen (no output) but booting (actually) proceeds successfully without any system hang.
 
-BIOS systems:
-
-```
-insmod vbe
-
-```
-
-UEFI systems:
-
-```
-insmod efi_gop
-insmod efi_uga
-
-```
-
 After that add the following code (common to both BIOS and UEFI):
 
 ```
-insmod font
-
+loadfont "unicode"
+set gfxmode=auto
+set gfxpayload=keep
+insmod all_video
+insmod gfxterm
+terminal_output gfxterm
 ```
-
-```
-if loadfont ${prefix}/fonts/unicode.pf2
-then
-    insmod gfxterm
-    set gfxmode=auto
-    set gfxpayload=keep
-    terminal_output gfxterm
-fi
-
-```
-
-As you can see for gfxterm (graphical terminal) to function properly, `unicode.pf2` font file should exist in `${GRUB_PREFIX_DIR`}.
 
 ### msdos-style error message
 

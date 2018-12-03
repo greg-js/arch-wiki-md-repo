@@ -49,7 +49,7 @@ Depending on the PKGBUILD you may have to also rename `linux.install` to match t
 
 ### Changing prepare()
 
-In prepare function, you can apply needed kernel patch or change kernel build configuration.
+In `prepare()` function, you can [apply needed kernel patches](/index.php/Patching_packages#Applying_patches "Patching packages") or change kernel build configuration.
 
 If you need to change a few config options you can edit config file in the source.
 

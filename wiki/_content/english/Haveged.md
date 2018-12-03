@@ -16,7 +16,9 @@ The [haveged project](http://www.issihosts.com/haveged/) is an attempt to provid
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [haveged](https://www.archlinux.org/packages/?name=haveged) package. [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `haveged.service`.
+[Install](/index.php/Install "Install") the [haveged](https://www.archlinux.org/packages/?name=haveged) package.
+
+[Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `haveged.service`.
 
 ## List available entropy
 
@@ -43,5 +45,5 @@ To disable the virtualization of the rdtsc instruction in VMware ESXi, add the s
 
 ## See also
 
-*   [http://www.issihosts.com/haveged](http://www.issihosts.com/haveged)
-*   [http://www.digitalocean.com/community/tutorials/how-to-setup-additional-entropy-for-cloud-servers-using-haveged](http://www.digitalocean.com/community/tutorials/how-to-setup-additional-entropy-for-cloud-servers-using-haveged)
+*   [Official website](http://www.issihosts.com/haveged)
+*   [DigitalOcean's article on haveged](https://www.digitalocean.com/community/tutorials/how-to-setup-additional-entropy-for-cloud-servers-using-haveged)

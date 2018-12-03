@@ -27,13 +27,15 @@ Related articles
 
 The system-wide configuration file is `/etc/youtube-dl.conf` and the user-specific configuration file is `~/.config/youtube-dl/config`. The syntax is simply one command-line option per line. Example configuration:
 
- `~/.config/youtube-dl/config` 
 ```
+--ignore-errors
+
 # Save in ~/Videos
 -o ~/Videos/%(title)s.%(ext)s
 
 # Prefer 1080p or lower resolutions
--f (bestvideo[height<=1080]/bestvideo)+bestaudio/best[height<=1080]/best
+-f bestvideo[ext=mp4][height<1200]+bestaudio[ext=m4a]/bestvideo[ext=webm][height<1200]+bestaudio[ext=webm]/bestvideo[height<1200]+bestaudio/best[height<1200]/best
+
 ```
 
 See [[1]](https://github.com/rg3/youtube-dl/blob/master/README.md#configuration) for more information.

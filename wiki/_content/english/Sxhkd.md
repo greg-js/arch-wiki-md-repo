@@ -87,7 +87,7 @@ Edit `$XDG_CONFIG_HOME/sxhkd/sxhkdrc`
 # On mouse button 1 press Alt_R+F1
 button1
  xte "keydown Alt_R" "keydown F1" "keyup Alt_R" "keyup F1"
-# On mosue button 2 pause 3 seconds then press Alt_R+F2
+# On mouse button 2 pause 3 seconds then press Alt_R+F2
 button2
  xte "sleep 3" "keydown Alt_R" "keydown F2" "keyup Alt_R" "keyup F2"
 

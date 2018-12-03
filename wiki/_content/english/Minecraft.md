@@ -13,7 +13,7 @@
         *   [2.2.3 Server management script](#Server_management_script)
         *   [2.2.4 Tweaking](#Tweaking)
     *   [2.3 Alternative servers](#Alternative_servers)
-        *   [2.3.1 Spigot (respectively Craftbukkit)](#Spigot_.28respectively_Craftbukkit.29)
+        *   [2.3.1 Spigot (respectively Craftbukkit)](#Spigot_(respectively_Craftbukkit))
         *   [2.3.2 Cuberite](#Cuberite)
     *   [2.4 Additional notes](#Additional_notes)
 *   [3 Minecraft mod launchers](#Minecraft_mod_launchers)
@@ -28,7 +28,7 @@
 
 ### Installation
 
-Minecraft client can be installed as a [minecraft-launcher](https://aur.archlinux.org/packages/minecraft-launcher/) package. It provides the official game launcher, a script to launch it and a proper `.desktop` file.
+Minecraft client can be installed as a [minecraft-launcher](https://aur.archlinux.org/packages/minecraft-launcher/) package. It provides the official game launcher, a script to launch it and a proper `.desktop` file. This package is officially recommended by Mojang on their website.
 
 Alternatively, it can also be installed as a [minecraft](https://aur.archlinux.org/packages/minecraft/) package.
 

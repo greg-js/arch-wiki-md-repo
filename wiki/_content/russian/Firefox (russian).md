@@ -1,43 +1,35 @@
 Ссылки по теме
 
-*   [Плагины для веб-браузеров](/index.php/Browser_plugins "Browser plugins")
-*   [Хитрости Firefox](/index.php/Firefox_tweaks "Firefox tweaks")
+*   [Плагины для браузеров](/index.php/%D0%9F%D0%BB%D0%B0%D0%B3%D0%B8%D0%BD%D1%8B_%D0%B4%D0%BB%D1%8F_%D0%B1%D1%80%D0%B0%D1%83%D0%B7%D0%B5%D1%80%D0%BE%D0%B2 "Плагины для браузеров")
+*   [Firefox/Tweaks](/index.php/Firefox/Tweaks "Firefox/Tweaks")
+*   [Firefox/Profile on RAM (Русский)](/index.php/Firefox/Profile_on_RAM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Firefox/Profile on RAM (Русский)")
+*   [Firefox/Privacy](/index.php/Firefox/Privacy "Firefox/Privacy")
 *   [Chromium (Русский)](/index.php/Chromium_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Chromium (Русский)")
 *   [Opera](/index.php/Opera "Opera")
 
-[Firefox](http://www.firefox.com) — графический веб-браузер с открытым исходным кодом, основанный на движке [Gecko](https://en.wikipedia.org/wiki/Gecko_(layout_engine) "wikipedia:Gecko (layout engine)"), разрабатываемый [Mozilla](http://www.mozilla.com).
+[Firefox](https://www.mozilla.org/ru/firefox/) — популярный графический веб-браузер с открытым исходным кодом, разрабатываемый [Mozilla](https://www.mozilla.org/ru/).
 
 ## Contents
 
 *   [1 Установка](#Установка)
-*   [2 Локализация](#Локализация)
-*   [3 Дополнения](#Дополнения)
-    *   [3.1 Добавление движков поиска](#Добавление_движков_поиска)
-        *   [3.1.1 arch-firefox-search](#arch-firefox-search)
-*   [4 Плагины](#Плагины)
-    *   [4.1 Словари проверки орфографии](#Словари_проверки_орфографии)
-    *   [4.2 Инструменты поиска](#Инструменты_поиска)
-        *   [4.2.1 Удобный поиск по AUR/Wiki/Форуму Arch Linux с помощью arch-firefox-search](#Удобный_поиск_по_AUR/Wiki/Форуму_Arch_Linux_с_помощью_arch-firefox-search)
-    *   [4.3 Включение проигрывания мультимедиа HTML5](#Включение_проигрывания_мультимедиа_HTML5)
-*   [5 Советы и полезности](#Советы_и_полезности)
-*   [6 Решение проблем](#Решение_проблем)
-    *   [6.1 Выбор клиента электронной почты](#Выбор_клиента_электронной_почты)
-    *   [6.2 Ассоциации файлов](#Ассоциации_файлов)
-        *   [6.2.1 Проблемы, связанные с ассоциациями файлов](#Проблемы,_связанные_с_ассоциациями_файлов)
-    *   [6.3 Firefox каждый раз самопроизвольно создаёт директорию ~/Desktop](#Firefox_каждый_раз_самопроизвольно_создаёт_директорию_~/Desktop)
-    *   [6.4 Плагины и блокирование всплывающих окон (pop-up)](#Плагины_и_блокирование_всплывающих_окон_(pop-up))
-    *   [6.5 Ошибки по нажатию средней кнопки мыши](#Ошибки_по_нажатию_средней_кнопки_мыши)
-    *   [6.6 Клавиша *Backspace* не выполняет функцию 'Назад'](#Клавиша_Backspace_не_выполняет_функцию_'Назад')
-    *   [6.7 Firefox не запоминает авторизацию на сайте](#Firefox_не_запоминает_авторизацию_на_сайте)
-    *   [6.8 Unreadable input fields with dark GTK+ themes](#Unreadable_input_fields_with_dark_GTK+_themes)
-    *   [6.9 "Do you want Firefox to save your tabs for the next time it starts?" dialog does not appear](#"Do_you_want_Firefox_to_save_your_tabs_for_the_next_time_it_starts?"_dialog_does_not_appear)
-    *   [6.10 Firefox uses ugly fonts for its interface](#Firefox_uses_ugly_fonts_for_its_interface)
-    *   [6.11 Firefox uses ugly fonts on certain web pages](#Firefox_uses_ugly_fonts_on_certain_web_pages)
-        *   [6.11.1 Terminus & Dina](#Terminus_&_Dina)
-    *   [6.12 Устранение проблем с шрифтами от Google в Firefox](#Устранение_проблем_с_шрифтами_от_Google_в_Firefox)
-    *   [6.13 The menu cannot pop-up after updating to Firefox 13](#The_menu_cannot_pop-up_after_updating_to_Firefox_13)
-    *   [6.14 HTML5 MP3 audio](#HTML5_MP3_audio)
-*   [7 Смотрите также](#Смотрите_также)
+*   [2 Дополнения](#Дополнения)
+    *   [2.1 Добавление движков поиска](#Добавление_движков_поиска)
+        *   [2.1.1 arch-firefox-search](#arch-firefox-search)
+*   [3 Плагины](#Плагины)
+    *   [3.1 Словари проверки орфографии](#Словари_проверки_орфографии)
+    *   [3.2 Инструменты поиска](#Инструменты_поиска)
+        *   [3.2.1 Удобный поиск по AUR/Wiki/Форуму Arch Linux с помощью arch-firefox-search](#Удобный_поиск_по_AUR/Wiki/Форуму_Arch_Linux_с_помощью_arch-firefox-search)
+*   [4 Советы и полезности](#Советы_и_полезности)
+*   [5 Решение проблем](#Решение_проблем)
+    *   [5.1 Выбор клиента электронной почты](#Выбор_клиента_электронной_почты)
+    *   [5.2 Ассоциации файлов](#Ассоциации_файлов)
+    *   [5.3 Firefox каждый раз самопроизвольно создаёт директорию ~/Desktop](#Firefox_каждый_раз_самопроизвольно_создаёт_директорию_~/Desktop)
+    *   [5.4 Плагины и блокирование всплывающих окон (pop-up)](#Плагины_и_блокирование_всплывающих_окон_(pop-up))
+    *   [5.5 Ошибки по нажатию средней кнопки мыши](#Ошибки_по_нажатию_средней_кнопки_мыши)
+    *   [5.6 Клавиша *Backspace* не выполняет функцию 'Назад'](#Клавиша_Backspace_не_выполняет_функцию_'Назад')
+    *   [5.7 Firefox не запоминает авторизацию на сайте](#Firefox_не_запоминает_авторизацию_на_сайте)
+    *   [5.8 "Do you want Firefox to save your tabs for the next time it starts?" dialog does not appear](#"Do_you_want_Firefox_to_save_your_tabs_for_the_next_time_it_starts?"_dialog_does_not_appear)
+*   [6 Смотрите также](#Смотрите_также)
 
 ## Установка
 
@@ -47,35 +39,27 @@
 
 *   **Firefox Developer Edition** — для разработчиков
 
-	[https://www.mozilla.org/firefox/developer/](https://www.mozilla.org/firefox/developer/) || [firefox-developer-edition](https://www.archlinux.org/packages/?name=firefox-developer-edition)
+	[https://www.mozilla.org/ru/firefox/developer/](https://www.mozilla.org/ru/firefox/developer/) || [firefox-developer-edition](https://www.archlinux.org/packages/?name=firefox-developer-edition)
 
-*   **Firefox Extended Support Release** — версия с длительной поддержкой
+*   **Firefox Extended Support Release** — версия с длительным сроком поддержки
 
-	[https://www.mozilla.org/firefox/organizations/](https://www.mozilla.org/firefox/organizations/) || [firefox-esr](https://aur.archlinux.org/packages/firefox-esr/) or [firefox-esr-bin](https://aur.archlinux.org/packages/firefox-esr-bin/)
+	[https://www.mozilla.org/firefox/organizations/](https://www.mozilla.org/firefox/organizations/) || [firefox-esr](https://aur.archlinux.org/packages/firefox-esr/) или [firefox-esr-bin](https://aur.archlinux.org/packages/firefox-esr-bin/)
 
-*   **Firefox Beta** — бета версия
+*   **Firefox Beta** — бета-версия
 
-	[https://www.mozilla.org/firefox/channel/desktop/#beta](https://www.mozilla.org/firefox/channel/desktop/#beta) || [firefox-beta](https://aur.archlinux.org/packages/firefox-beta/) или [firefox-beta-bin](https://aur.archlinux.org/packages/firefox-beta-bin/)
+	[https://www.mozilla.org/ru/firefox/channel/desktop/#beta](https://www.mozilla.org/ru/firefox/channel/desktop/#beta) || [firefox-beta](https://aur.archlinux.org/packages/firefox-beta/) или [firefox-beta-bin](https://aur.archlinux.org/packages/firefox-beta-bin/)
 
-*   **Firefox Nightly** — самые свежие билды для тестирования ([experimental features](https://developer.mozilla.org/Firefox/Experimental_features))
+*   **Firefox Nightly** — ночные сборки для тестирования [экспериментальных возможностей](https://developer.mozilla.org/Firefox/Experimental_features)
 
-	[https://www.mozilla.org/firefox/channel/desktop/#nightly](https://www.mozilla.org/firefox/channel/desktop/#nightly) || [firefox-nightly](https://aur.archlinux.org/packages/firefox-nightly/)
+	[https://www.mozilla.org/ru/firefox/channel/desktop/#nightly](https://www.mozilla.org/ru/firefox/channel/desktop/#nightly) || [firefox-nightly](https://aur.archlinux.org/packages/firefox-nightly/)
 
-*   **Firefox KDE** — версия, в которую встроены патчи OpenSUSE для лучшей - большей, чем через плагины - [интеграции в KDE](#KDE/GNOME_integration).
+*   **Firefox KDE** — версия с патчем от OpenSUSE для лучшей [интеграции с KDE](/index.php/Firefox#KDE/GNOME_integration "Firefox"), чем это возможно сделать с помощью простых дополнений для Firefox.
 
 	[https://build.opensuse.org/package/show/mozilla:Factory/MozillaFirefox](https://build.opensuse.org/package/show/mozilla:Factory/MozillaFirefox) || [firefox-kde-opensuse](https://aur.archlinux.org/packages/firefox-kde-opensuse/)
 
-*   Несмотря на различные каналы распространения Mozilla, существуют форки, в которых присутствуют свои фичи. Смотрите [List of applications#Gecko-based](/index.php/List_of_applications#Gecko-based "List of applications").
+*   Кроме различных каналов распространения Mozilla, существуют также форки, в которых присутствуют свои особенности. Смотрите [Список приложений#Основанные на Gecko](/index.php/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9#Основанные_на_Gecko "Список приложений").
 
-## Локализация
-
-Для русификации необходимо установить пакет локализации [firefox-i18n-ru](https://www.archlinux.org/packages/?name=firefox-i18n-ru) из [официального репозитория](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)") с помощью [pacman](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_определенных_пакетов "Pacman (Русский)").
-
-После чего выбрать русский язык в `Меню` → `Дополнения` → `Языки` и перезапустить Firefox.
-
-Локализации других языков можно найти [тут](https://www.archlinux.org/packages/?sort=&q=firefox-i18n&maintainer=&last_update=&flagged=&limit=100) или командой:
-
- `$ pacman -Ss firefox-i18n` 
+Кроме языка по умолчанию, английского, для Firefox также доступен ряд языковых пакетов. Обычно они называются `firefox-i18n-*languagecode*` (где `*languagecode*` может быть любым кодом языка, например, **ru**, **de**, **ja**, **fr** и так далее). Для получения списка доступных языковых пакетов смотрите [firefox-i18n](https://www.archlinux.org/packages/extra/any/firefox-i18n/) для [firefox](https://www.archlinux.org/packages/?name=firefox) и [firefox-developer-edition-i18n](https://www.archlinux.org/packages/community/any/firefox-developer-edition-i18n/) для [firefox-developer-edition](https://www.archlinux.org/packages/?name=firefox-developer-edition).
 
 ## Дополнения
 
@@ -121,20 +105,6 @@ Firefox имеет большую библиотеку дополнений, з�
 
  `# pacman -S arch-firefox-search` 
 
-### Включение проигрывания мультимедиа HTML5
-
-Если опция `media.gstreamer.enabled` включена на странице `about:config`, Firefox будет пытаться использовать [GStreamer](/index.php/GStreamer "GStreamer") для проигрывания мультимедиа в элементах HTML5 `<audio>` и `<video>`. Для их работы необходимо установить:
-
-*   [gstreamer0.10-base-plugins](https://aur.archlinux.org/packages/gstreamer0.10-base-plugins/): декодирование vorbis, демультиплексирование ogg
-*   [gstreamer0.10-good-plugins](https://aur.archlinux.org/packages/gstreamer0.10-good-plugins/): демультиплексирование webm и mp4
-*   [gstreamer0.10-bad-plugins](https://aur.archlinux.org/packages/gstreamer0.10-bad-plugins/): aac, vp8 и opus
-*   [gstreamer0.10-ugly-plugins](https://aur.archlinux.org/packages/gstreamer0.10-ugly-plugins/): декодирование h.264 и mp3
-*   [gstreamer0.10-ffmpeg](https://aur.archlinux.org/packages/gstreamer0.10-ffmpeg/): больше дополнительных декодеров
-
-Перезапустите Firefox и перейдите на [HTML5 страницу YouTube](https://www.youtube.com/html5) или [сюда](http://www.quirksmode.org/html5/tests/video.html) чтобы убедиться, что всё установлено и работает правильно.
-
-Как альтернатива, можно принудить Firefox использовать Adobe Flash Player для проигрывания HTML5 аудио. Для этого измените значение `media.gstreamer.enabled` на `false` на странице `about:config`.
-
 ## Советы и полезности
 
 См. основную статью: [Firefox tweaks](/index.php/Firefox_tweaks "Firefox tweaks")
@@ -147,20 +117,7 @@ Firefox по умолчанию открывает `mailto` ссылки веб-
 
 ### Ассоциации файлов
 
-Смотрите [Default applications](/index.php/Default_applications "Default applications").
-
-#### Проблемы, связанные с ассоциациями файлов
-
-For non-[GNOME](/index.php/GNOME_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNOME (Русский)") users, Firefox may not associate file types properly or at all (in the "Open With" part of the download dialog). Installing [libgnome](https://aur.archlinux.org/packages/libgnome/) from the [official repositories (Русский)](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)") amends the problem.
-
-If you are using [KDE](/index.php/KDE "KDE") you can also do the following:
-
-```
-ln -s ~/.local/share/applications/mimeapps.list ~/.local/share/applications/mimeinfo.cache
-
-```
-
-From now on Firefox should use the applications which are explicitly set in KDE.
+Смотрите [Приложения по умолчанию](/index.php/%D0%9F%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BF%D0%BE_%D1%83%D0%BC%D0%BE%D0%BB%D1%87%D0%B0%D0%BD%D0%B8%D1%8E "Приложения по умолчанию").
 
 ### Firefox каждый раз самопроизвольно создаёт директорию ~/Desktop
 
@@ -230,155 +187,20 @@ $ rm -f cookies.sqlite
 
 **Примечание:** *xxxxxxxx* — случайно сгенерированная строка из 8 символов.
 
-### Unreadable input fields with dark GTK+ themes
-
-When using a dark [GTK+](/index.php/GTK%2B "GTK+") theme, one might encounter Internet pages with unreadable input and text fields (e.g. Amazon can have white text on white background). This can happen because the site only sets either background or text color, and Firefox takes the other one from the theme.
-
-A work around is to explicitly setting standard colors for all web pages in `~/.mozilla/firefox/xxxxxxxx.default/chrome/userContent.css`.
-
-The following sets input fields to standard black text / white background; both can be overridden by the displayed site, so that colors are seen as intended:
-
-```
-input {
-    -moz-appearance: none !important;
-    background-color: white;
-    color: black;
-}
-
-textarea {
-    -moz-appearance: none !important;
-    background-color: white;
-    color: black;
-}
-
-select {
-    -moz-appearance: none !important;
-    background-color: white;
-    color: black;
-}
-
-```
-
-This will force the colors ("Allow pages to choose their own colors..." checkbox in the *Preferences > Content > Color* dialog):
-
-```
-input {
-    -moz-appearance: none !important;
-    background-color: pink !important;
-    color: green !important;
-}
-
-textarea {
-    -moz-appearance: none !important;
-    background-color: pink !important;
-    color: green !important;
-}
-
-select {
-    -moz-appearance: none !important;
-    background-color: pink !important;
-    color: green !important;
-}
-
-```
-
-Change color values to suit, or use an add-on like [Stylish](https://addons.mozilla.org/en-US/firefox/addon/2108).
-
 ### "Do you want Firefox to save your tabs for the next time it starts?" dialog does not appear
 
-From the [Mozilla support](http://support.mozilla.com/en-US/questions/767751) site:
+From the [Mozilla support](https://support.mozilla.com/en-US/questions/767751) site:
 
 1.  Type `about:config` in the address bar.
-2.  Set `browser.warnOnQuit` to **true**.
-3.  Set `browser.showQuitWarning` to **true**.
-
-### Firefox uses ugly fonts for its interface
-
-If the fonts in the menu bar look ugly to you, chances are you're missing better looking fonts for Firefox to use. As a quick remedy, just install Type 1 fonts from the [xorg-fonts-type1](https://www.archlinux.org/packages/?name=xorg-fonts-type1) package, available in the official repositories.
-
-### Firefox uses ugly fonts on certain web pages
-
-When Firefox uses bitmap fonts, it can happen that on certain web pages the fonts are very ugly (compared to Google Chrome for example):
-
-[http://i.imgur.com/SMVdi.png](http://i.imgur.com/SMVdi.png) vs [http://i.imgur.com/jNmxU.png](http://i.imgur.com/jNmxU.png)
-
-To fix that, just disable bitmap fonts for X:
-
-```
-# ln -s /etc/fonts/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
-
-```
-
-#### Terminus & Dina
-
-To disable all bitmap fonts but Terminus create a `fonts.conf` as below:
-
- `~/.config/fontconfig/fonts.conf` 
-```
-<?xml version="1.0"?>
-<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
-<fontconfig>
-    <!-- reject all bitmap fonts, with the exception of 'terminus' & 'dina' -->
-    <selectfont>
-        <acceptfont>
-            <pattern>
-                <patelt name="family"> <string>Terminus</string> </patelt>
-            </pattern>
-            <pattern>
-                <patelt name="family"> <string>Dina</string> </patelt>
-            </pattern>
-        </acceptfont>
-        <rejectfont>
-            <pattern>
-                <patelt name="scalable"> <bool>false</bool> </patelt>
-            </pattern>
-        </rejectfont>
-    </selectfont>
-</fontconfig>
-
-```
-
-### Устранение проблем с шрифтами от Google в Firefox
-
-Некоторые проблемы, связанные с шрифтами в Firefox, могут также быть исправлены установкой шрифтов от Google: [ttf-google-fonts-hg](https://aur.archlinux.org/packages/ttf-google-fonts-hg/) или [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/). Установка этих шрифтов также улучшит визуальный вид [Google Drive](/index.php/Google_Drive "Google Drive").
-
-### The menu cannot pop-up after updating to Firefox 13
-
-This problem is most probably related to this [bug](https://bugzilla.mozilla.org/show_bug.cgi?id=787943) and it may affect any user that sets
-
-```
-GTK_IM_MODULE=xim
-
-```
-
-while configuring their input method.
-
-It appears to happen especially to those who are using [Fcitx](/index.php/Fcitx "Fcitx") 4.0.x (at that time Fcitx only supported XIM). With newer version of Fcitx, XIM is discouraged and you should set:
-
-```
-GTK_IM_MODULE=fcitx
-
-```
-
-For more information see the [Fcitx](/index.php/Fcitx "Fcitx") page.
-
-### HTML5 MP3 audio
-
-Firefox experiences problems with playback of MP3 files inside HTML5 `<audio>` elements. You can verify this by checking for these messages in the debug console:
-
-```
- Media resource [http://www.jorickvanhees.com/SoundTest/brothersinarms320.mp3](http://www.jorickvanhees.com/SoundTest/brothersinarms320.mp3) could not be decoded.
-
-```
-
-A workaround to make sites like SoundCloud use the Adobe Flash Player instead of relying on HTML5 audio is to set `media.gstreamer.enabled` to `false` in your `about:config`. According to this [bug](https://bugzilla.mozilla.org/show_bug.cgi?id=919572), it should be fixed with FF 26, but it still appears to be a problem for some users.
+2.  Set `browser.warnOnQuit` to `true`.
+3.  Set `browser.showQuitWarning` to `true`.
 
 ## Смотрите также
 
-*   [Факты о Debian и Mozilla® Firefox](http://web.glandium.org/blog/?p=97)
-
-	Отчёт о проблемах с товарным знаком от сопровождающего пакета Firefox для Debian.
-
-*   [Gnuzilla и IceWeasel](http://www.gnu.org/software/gnuzilla/)
-
-	Официальный сайт форков GNU Mozilla.
+*   [Официальный веб-сайт](https://www.mozilla.org/ru/firefox/)
+*   [Mozilla Foundation](https://www.mozilla.org/ru/)
+*   [MozillaWiki:Firefox](https://wiki.mozilla.org/Firefox "mozillawiki:Firefox")
+*   [Дополнения для Firefox](https://addons.mozilla.org/ru/firefox/)
+*   [Темы для Firefox](https://addons.mozilla.org/ru/firefox/themes/)
+*   [Wikipedia:ru:Mozilla Firefox](https://en.wikipedia.org/wiki/ru:Mozilla_Firefox "wikipedia:ru:Mozilla Firefox")
+*   [mozillaZine](http://forums.mozillazine.org/) — Неофициальный форум

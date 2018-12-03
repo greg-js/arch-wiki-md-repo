@@ -21,7 +21,7 @@ Related articles
             *   [2.2.2.1 Socket activation](#Socket_activation)
         *   [2.2.3 User id startup workflow](#User_id_startup_workflow)
     *   [2.3 Multi-MPD setup](#Multi-MPD_setup)
-        *   [2.3.1 Running an icecast server](#Running_an_icecast_server)
+        *   [2.3.1 Running an Icecast server](#Running_an_Icecast_server)
         *   [2.3.2 Satellite setup](#Satellite_setup)
 *   [3 Clients](#Clients)
     *   [3.1 Console](#Console)
@@ -225,15 +225,15 @@ MPD should never run as *root*, you may use the `user` option in the configurati
 
 ### Multi-MPD setup
 
-#### Running an icecast server
+#### Running an Icecast server
 
-For a second MPD (e.g., with icecast output to share music over the network) using the same music and playlist as the one above, simply copy the above configuration file and make a new file (e.g., `/home/username/.mpd/config-icecast`), and only change the log_file, error_file, pid_file, and state_file parameters (e.g., `mpd-icecast.log`, `mpd-icecast.error`, and so on); using the same directory paths for the music and playlist directories would ensure that this second MPD would use the same music collection as the first one e.g., creating and editing a playlist under the first daemon would affect the second daemon as well. Users do not have to create the same playlists all over again for the second daemon. Call this second daemon the same way from `~/.xinitrc` above. (Just be sure to have a different port number, so as to not conflict with the first MPD daemon).
+For a second MPD (e.g. with [Icecast](/index.php/Icecast "Icecast") output to share music over the network) using the same music and playlist as the one above, simply copy the above configuration file and make a new file (e.g., `/home/username/.mpd/config-icecast`), and only change the `log_file`, `error_file`, `pid_file`, and `state_file` parameters (e.g. `mpd-icecast.log`, `mpd-icecast.error`, and so on). Using the same directory paths for the music and playlist directories would ensure that this second MPD uses the same music collection as the first one, e.g. creating and editing a playlist under the first daemon would affect the second daemon as well. Users do not have to create the same playlists all over again for the second daemon. Call this second daemon the same way from `~/.xinitrc` above - but be sure to have a different port number, avoiding a conflict with the first MPD daemon.
 
 #### Satellite setup
 
-The method above works, but at least in theory could lead to issues with the database, when both MPD instances try to write to the same database file. MPD has a [satellite mode](http://www.musicpd.org/doc/user/advanced_config.html#satellite) where one instance can receive the database from an already running MPD instance.
+The method described in [#Running an Icecast server](#Running_an_Icecast_server) works, but at least in theory could lead to issues with the database, when both MPD instances try to write to the same database file concurrently. MPD has a [satellite mode](http://www.musicpd.org/doc/user/advanced_config.html#satellite) where one instance can receive the database from an already running MPD instance.
 
-in your config-icecast add this, where host and port reflect your primary MPD server.
+In your `config-icecast` add this, where host and port reflect your primary MPD server:
 
 ```
 database {

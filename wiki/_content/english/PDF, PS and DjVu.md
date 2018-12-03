@@ -13,12 +13,14 @@ This article covers software to view, edit and convert [PDF](https://en.wikipedi
     *   [4.2 Advanced editors](#Advanced_editors)
 *   [5 Command-line tools](#Command-line_tools)
     *   [5.1 DjVu tools](#DjVu_tools)
-    *   [5.2 Optimize a PDF](#Optimize_a_PDF)
-    *   [5.3 Encrypt a PDF](#Encrypt_a_PDF)
-    *   [5.4 Decrypt a PDF](#Decrypt_a_PDF)
-    *   [5.5 Concatenate PDFs](#Concatenate_PDFs)
-    *   [5.6 Extract page range from PDF](#Extract_page_range_from_PDF)
-    *   [5.7 Rasterize a PDF](#Rasterize_a_PDF)
+    *   [5.2 Create a PDF from images](#Create_a_PDF_from_images)
+    *   [5.3 Inspecting metadata](#Inspecting_metadata)
+    *   [5.4 Optimize a PDF](#Optimize_a_PDF)
+    *   [5.5 Encrypt a PDF](#Encrypt_a_PDF)
+    *   [5.6 Decrypt a PDF](#Decrypt_a_PDF)
+    *   [5.7 Concatenate PDFs](#Concatenate_PDFs)
+    *   [5.8 Extract page range from PDF](#Extract_page_range_from_PDF)
+    *   [5.9 Rasterize a PDF](#Rasterize_a_PDF)
 *   [6 Libraries](#Libraries)
     *   [6.1 Python](#Python)
 *   [7 See also](#See_also)
@@ -96,7 +98,10 @@ See also [List of applications/Documents#Stylus note-taking](/index.php/List_of_
 
 ## Graphical PDF editing
 
-[LibreOffice Draw](/index.php/LibreOffice "LibreOffice") can import and export PDFs but the fonts will most likely be messed up. [Inkscape](/index.php/Inkscape "Inkscape") can import a single page from a PDF and export as PDF. Graphics editors like [GIMP](/index.php/GIMP "GIMP") and [krita](https://www.archlinux.org/packages/?name=krita) can also import and export PDFs at the cost of rasterization. For lossless PDF manipulation there are the following applications available:
+*   [Scribus](/index.php/Scribus "Scribus") can import and export PDF; text is imported as polygons.[[3]](https://wiki.scribus.net/canvas/Importing_PDF_files_as_Vector_Graphics)
+*   [LibreOffice Draw](/index.php/LibreOffice "LibreOffice") can import and export PDF; text is imported as text; embedded fonts are substituted.[[4]](https://bugs.documentfoundation.org/show_bug.cgi?id=82163)[[5]](https://ask.libreoffice.org/en/question/38991/garbled-text-when-opening-pdfs-in-draw/)
+*   [Inkscape](/index.php/Inkscape "Inkscape") can import a single page from a PDF and export to PDF; text is imported as cloned glyphs or text; with the latter embedded fonts are substituted.
+*   Graphics editors like [GIMP](/index.php/GIMP "GIMP") and [krita](https://www.archlinux.org/packages/?name=krita) can also import and export PDFs at the cost of [rasterization](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics").
 
 ### Simple editors
 
@@ -169,6 +174,31 @@ See also [List of applications/Documents#Stylus note-taking](/index.php/List_of_
 
 	[https://github.com/ashipunov/img2djvu](https://github.com/ashipunov/img2djvu) || [img2djvu-git](https://aur.archlinux.org/packages/img2djvu-git/)
 
+### Create a PDF from images
+
+With [GraphicsMagick](/index.php/GraphicsMagick "GraphicsMagick"):
+
+```
+$ gm convert one.jpg two.jpg three.jpg out.pdf
+
+```
+
+### Inspecting metadata
+
+With Poppler:
+
+```
+$ pdfinfo file.pdf
+
+```
+
+With [ExifTool](/index.php/ExifTool "ExifTool"):
+
+```
+$ exiftool file.pdf
+
+```
+
 ### Optimize a PDF
 
 With Ghostscript:
@@ -190,6 +220,13 @@ With PDFtk:
 
 ```
 $ pdftk in.pdf output out.pdf user_pw *password*
+
+```
+
+With [PoDoFo](#Libraries):
+
+```
+$ podofoencrypt -u *user_password* -o *owner_password* in.pdf out.pdf
 
 ```
 

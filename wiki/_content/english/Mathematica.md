@@ -99,7 +99,7 @@ An issue with Mathematica 8 is a reproducible crash when performing WolframAlpha
 
 ### Mathematica 11
 
-[Install](/index.php/Install "Install") [mathematica](https://aur.archlinux.org/packages/mathematica/). Obtain `Mathematica_11.XX.YY_LINUX.sh` from Wolfram Research, along with an activation key. Successful install may throw non-critical errors: xdg-icon-resource, mkdir, xdg-desktop-menu.
+[Install](/index.php/Install "Install") [mathematica](https://aur.archlinux.org/packages/mathematica/). Obtain `Mathematica_11.XX.YY_LINUX.sh` from Wolfram Research, along with an activation key, and save it to the package build directory. Successful install may throw non-critical errors: xdg-icon-resource, mkdir, xdg-desktop-menu. For more details see the [mathematica PKGBUILD file](https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=mathematica).
 
 Mathematica 11 automatically creates a document folder 'Wolfram Mathematica' in [$UserDocumentsDirectory](https://reference.wolfram.com/language/ref/$UserDocumentsDirectory.html), which is set by Mathematica according to [XDG user directories](/index.php/XDG_user_directories "XDG user directories").
 

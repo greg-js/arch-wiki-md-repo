@@ -117,6 +117,7 @@
 | Английский | Русский | Допустимое (в особых случаях) |
 | Alias | Псевдоним | Псевдоним (алиас) |
 | Backend | Бэкенд | - |
+| Benchmarking | Тестирование производительности | Бенчмаркинг |
 | Binary (n.) | Двоичный файл | Бинарный файл |
 | Bug report | Отчет об ошибке | Отчет об ошибке (баг-репорт) |
 | Crash (ing) | Рушить/Нарушить | Нарушать работу |
@@ -174,7 +175,8 @@
 | 1 | [NVIDIA/Решение проблем](/index.php/NVIDIA/%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC "NVIDIA/Решение проблем") | 2/21 | Синхронизирована -- [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") ([talk](/index.php/User_talk:Vladimir_Shatalin "User talk:Vladimir Shatalin")) 12:08, 9 Декабря 2016 |
 | 1 | [systemd/Пользователь](/index.php/Systemd/%D0%9F%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C "Systemd/Пользователь") | 1, 2/6 | Синхронизирована. Переводит Ilya -- [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") ([talk](/index.php/User_talk:Vladimir_Shatalin "User talk:Vladimir Shatalin")) 11:43, 9 Декабря 2016 |
 | 1 | [pacman/Советы и приёмы](/index.php/Pacman/%D0%A1%D0%BE%D0%B2%D0%B5%D1%82%D1%8B_%D0%B8_%D0%BF%D1%80%D0%B8%D1%91%D0%BC%D1%8B "Pacman/Советы и приёмы") | 1-3.3.1; 3.7; 4.2.2-4.2.4 | Нужно синхронизировать и перевести. -- [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") ([talk](/index.php/User_talk:Vladimir_Shatalin "User talk:Vladimir Shatalin")) 12:43, 30 октября 2016 |
-| 1 | [Миграция между архитектурами](/index.php/%D0%9C%D0%B8%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D1%8F_%D0%BC%D0%B5%D0%B6%D0%B4%D1%83_%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0%D0%BC%D0%B8 "Миграция между архитектурами") | 4/4 | Переведена полностью, нужно синхронизировать 28.06.18 |
+| 1 | [Миграция между архитектурами](/index.php/%D0%9C%D0%B8%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D1%8F_%D0%BC%D0%B5%D0%B6%D0%B4%D1%83_%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0%D0%BC%D0%B8 "Миграция между архитектурами") | 4/4 | Переведена полностью, нужно синхронизировать 28.06.18
+Закончил синхронизацию, [проверьте](https://wiki.archlinux.org/index.php?title=Migrating_between_architectures_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&diff=prev&oldid=558025) --[Elnee](/index.php/User:Elnee "User:Elnee") ([talk](/index.php/User_talk:Elnee "User talk:Elnee")) 19:20, 1 December 2018 (UTC) |
 
 ## Список страниц с сопроводителем
 

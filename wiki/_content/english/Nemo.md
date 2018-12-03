@@ -6,7 +6,7 @@ Related articles
 *   [Thunar](/index.php/Thunar "Thunar")
 *   [PCManFM](/index.php/PCManFM "PCManFM")
 
-[Nemo](https://github.com/linuxmint/nemo) is a fork of [GNOME Files](/index.php/GNOME_Files "GNOME Files") (formerly known as as Nautilus). It is also the default file manager of the [Cinnamon](/index.php/Cinnamon "Cinnamon") desktop. Nemo is based on the Files 3.4 code. It was created as a response to the changes in Files 3.6 which saw features such as type ahead find and split pane view removed.
+[Nemo](https://github.com/linuxmint/nemo) is a fork of [GNOME Files](/index.php/GNOME_Files "GNOME Files") (formerly known as Nautilus). It is also the default file manager of the [Cinnamon](/index.php/Cinnamon "Cinnamon") desktop. Nemo is based on the Files 3.4 code. It was created as a response to the changes in Files 3.6 which saw features such as type ahead find and split pane view removed.
 
 ## Contents
 

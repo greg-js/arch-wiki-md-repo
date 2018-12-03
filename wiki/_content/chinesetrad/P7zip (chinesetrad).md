@@ -2,10 +2,10 @@ p7zip 是 [7-Zip](https://en.wikipedia.org/wiki/7zip "wikipedia:7zip") 的 [POSI
 
 ## Contents
 
-*   [1 安裝＆使用](#.E5.AE.89.E8.A3.9D.EF.BC.86.E4.BD.BF.E7.94.A8)
-*   [2 範例](#.E7.AF.84.E4.BE.8B)
-*   [3 7z, 7za 與 7zr 之差異](#7z.2C_7za_.E8.88.87_7zr_.E4.B9.8B.E5.B7.AE.E7.95.B0)
-*   [4 參見](#.E5.8F.83.E8.A6.8B)
+*   [1 安裝＆使用](#安裝＆使用)
+*   [2 範例](#範例)
+*   [3 7z, 7za 與 7zr 之差異](#7z,_7za_與_7zr_之差異)
+*   [4 參見](#參見)
 
 ## 安裝＆使用
 

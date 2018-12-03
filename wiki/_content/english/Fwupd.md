@@ -12,8 +12,9 @@ Supported devices are listed [here](https://fwupd.org/lvfs/devicelist) and [more
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
 *   [3 Setup for UEFI BIOS upgrade](#Setup_for_UEFI_BIOS_upgrade)
-    *   [3.1 Secure Boot](#Secure_Boot)
-        *   [3.1.1 Using your own keys](#Using_your_own_keys)
+    *   [3.1 Reinstall bootloader](#Reinstall_bootloader)
+    *   [3.2 Secure Boot](#Secure_Boot)
+        *   [3.2.1 Using your own keys](#Using_your_own_keys)
 
 ## Installation
 
@@ -62,6 +63,17 @@ $ fwupdmgr update
 1.  Make sure you are booted in UEFI mode.
 2.  Verify [your EFI variables are accessible](/index.php/Unified_Extensible_Firmware_Interface#Requirements_for_UEFI_variable_support "Unified Extensible Firmware Interface").
 3.  Mount your [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (ESP) properly. `*esp*` is used to denote the mountpoint in this article.
+
+### Reinstall bootloader
+
+If after updating the firmware you find the Arch boot entry is missing you can add it back with [efibootmgr](/index.php/Efibootmgr "Efibootmgr"). For example, if you use GRUB:
+
+```
+$ efibootmgr --create --disk /dev/nvme0n1 --part 1 --loader /EFI/GRUB/grubx64.efi --label "Arch Linux"
+
+```
+
+(It is just the UEFI entry missing, so it should be possible to restore it with any UEFI shell, such as those in the BIOS setup utility?)
 
 ### Secure Boot
 

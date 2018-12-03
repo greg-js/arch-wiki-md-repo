@@ -648,7 +648,7 @@ See also [Wikipedia:Comparison of EDA software](https://en.wikipedia.org/wiki/Co
 
 Digital logic software are mainly simple educational tools that intended for only designing and simulating logic circuits.
 
-*   **glogic** — An educational graphical logic circuit simulator.
+*   **glogic** — An educational graphical logic circuit simulator, written in Python.
 
 	[https://launchpad.net/glogic](https://launchpad.net/glogic) || [glogic](https://aur.archlinux.org/packages/glogic/)
 
@@ -666,11 +666,11 @@ Digital logic software are mainly simple educational tools that intended for onl
 
 *   **PulseView** — Logic analyzer, oscilloscope and MSO GUI.
 
-	[http://sigrok.org/wiki/PulseView](http://sigrok.org/wiki/PulseView) || [pulseview](https://www.archlinux.org/packages/?name=pulseview)
+	[https://sigrok.org/wiki/PulseView](https://sigrok.org/wiki/PulseView) || [pulseview](https://www.archlinux.org/packages/?name=pulseview)
 
 *   **SmartSim** — Simple and beautiful digital logic circuit design and simulation software, mainly target teachers and students, very lightweight and cross platform, GPL licensed, written in Vala.
 
-	[http://smartsim.org.uk](http://smartsim.org.uk) || [smartsim-git](https://aur.archlinux.org/packages/smartsim-git/)
+	[https://smartsim.org.uk](https://smartsim.org.uk) || [smartsim-git](https://aur.archlinux.org/packages/smartsim-git/)
 
 ##### HDL
 

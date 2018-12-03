@@ -45,7 +45,7 @@ Related articles
 
 ```
 
-Note that starting the docker service may fail if you have an active vpn connection. If this is the case, try disconnecting the vpn before starting the docker service. You may reconnect the vpn immediately afterwards.
+Note that starting the docker service may fail if you have an active VPN connection due to IP conflicts between the VPN and Docker's bridge and overlay networks. If this is the case, try disconnecting the VPN before starting the docker service. You may reconnect the VPN immediately afterwards. [You can also try to deconflict the networks.](https://stackoverflow.com/questions/45692255/how-make-openvpn-work-with-docker)
 
 If you want to be able to run docker as a regular user, add your user to the `docker` [user group](/index.php/User_group "User group").
 

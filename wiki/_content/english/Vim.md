@@ -466,7 +466,7 @@ nnoremap <C-l> :TlistToggle<CR>
 ### Configuration
 
 *   [nion's](https://web.archive.org/web/20131020125020/http://nion.modprobe.de/setup/vimrc)
-*   [A detailed configuration from Amir Salihefendic](http://amix.dk/vim/vimrc.html)
+*   [A detailed configuration from Amir Salihefendic](https://web.archive.org/web/20170222115910/http://amix.dk/vim/vimrc.html)
 *   [Bart Trojanowski](https://web.archive.org/web/20131004071740/http://www.jukie.net/~bart/conf/vimrc)
 *   [Steve Francia's Vim Distribution](https://github.com/spf13/spf13-vim)
 *   [Vim Awesome](http://vimawesome.com/) - Vim Plugins

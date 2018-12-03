@@ -23,7 +23,7 @@
 *   [6 Tips and Tricks](#Tips_and_Tricks)
     *   [6.1 Keep a log of what is watched](#Keep_a_log_of_what_is_watched)
     *   [6.2 Speedup video playback (synchronized audio and video) up to 1.5x](#Speedup_video_playback_(synchronized_audio_and_video)_up_to_1.5x)
-    *   [6.3 CLI tool for kodi](#CLI_tool_for_kodi)
+    *   [6.3 CLI for kodi](#CLI_for_kodi)
     *   [6.4 Hardware video acceleration](#Hardware_video_acceleration)
     *   [6.5 Adjusting CD/DVD drive speed](#Adjusting_CD/DVD_drive_speed)
     *   [6.6 Use port 80 for webserver](#Use_port_80_for_webserver)
@@ -371,9 +371,11 @@ To enable speed-up and slow-down with audio/video sync (0.8x - 1.5x) do the foll
 
 Play some video content and enjoy the ability to adjust the speed using the keys discussed above.
 
-### CLI tool for kodi
+### CLI for kodi
 
-A powerful CLI tool for use with kodi is [texturecache](https://aur.archlinux.org/packages/texturecache/). Users can accomplish many tasks from library management to querying what is currently playing.
+*   [kodi-eventclients](https://www.archlinux.org/packages/?name=kodi-eventclients) package provides `kodi-send` which can send valid [kodi action](https://kodi.wiki/view/Action_IDs) or [kodi function](https://kodi.wiki/view/List_of_built-in_functions#List_of_functions) to kodi from the shell.
+
+*   [texturecache](https://aur.archlinux.org/packages/texturecache/) can handle many aspects of library management, from clean-up of unused images, to searching, to querying what is currently playing.
 
 ### Hardware video acceleration
 

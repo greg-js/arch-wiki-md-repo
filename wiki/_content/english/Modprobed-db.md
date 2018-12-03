@@ -68,15 +68,13 @@ $ systemctl --user list-timers
 
 ### Data Recall
 
-As mentioned earlier, this script is meant to be used in concert with the **make localmodconfig** step of compiling a kernel. After the database has been adequately populated, simply invoke `/usr/bin/modprobed-db recall` prior to compiling a kernel to load all modules followed by the **make localmodconfig** to do the magic.
+As mentioned earlier, this script is meant to be used in concert with the **make localmodconfig** step of compiling a kernel. After the database has been adequately populated, simply invoke `/usr/bin/modprobed-db recall` (as the root user) prior to compiling a kernel to load all modules followed by the **make localmodconfig** to do the magic.
 
-**Note:** Since `/usr/bin/modprobe` requires root privileges, `/usr/bin/modprobed-db` needs to be called as root or via sudo when users wish to recall the database.
-
-**Note:** While using **sudo** is recommended, it is not necessary as the same effect can be achieved with `make LSMOD=$HOME/.config/modprobed.db localmodconfig`, this will also avoid polluting your kernel space with unnecessary modules. The downside to this that it will try to build out of tree modules that modprobed has picked up.
+**Warning:** Previous recommendation was to execute the following rather than calling `modprobed-db recall` BUT doing so gives kernel packages missing modules. It is therefore recommended NOT to build like this: `make LSMOD=$HOME/.config/modprobed.db localmodconfig`.
 
 #### Using the Official Arch kernel PKGBUILD
 
-The official Arch kernel PKGBUILD does not have native support, but it is easily modified in the *prepare* section as follows:
+If your user has sudo rights to call `/usr/bin/modprobed-db`, the official Arch kernel PKGBUILD can be modified as shown to do this automatically. If not, remember to manually run the script in recall mode before starting the build:
 
 ```
  ...
@@ -84,7 +82,8 @@ The official Arch kernel PKGBUILD does not have native support, but it is easily
     patch -Np1 < "../$src"
   done
 
-  make LSMOD=$HOME/.config/modprobed.db localmodconfig                      # <---- insert this line
+  sudo modprobed-db recall                      # <---- insert this line
+  make localmodconfig                           # <---- insert this line
 
   msg2 "Setting config..."
   cp ../config .config

@@ -13,7 +13,7 @@ Related articles
 *   [1 BIOS Systems](#BIOS_Systems)
     *   [1.1 Boot process overview](#Boot_process_overview)
     *   [1.2 Installation on BIOS](#Installation_on_BIOS)
-        *   [1.2.1 Automatic Install](#Automatic_Install)
+        *   [1.2.1 Automatic install](#Automatic_install)
         *   [1.2.2 Manual install](#Manual_install)
             *   [1.2.2.1 MBR partition table](#MBR_partition_table)
             *   [1.2.2.2 GUID partition table](#GUID_partition_table)
@@ -78,12 +78,12 @@ Related articles
 
 **Note:**
 
-*   [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) is required for [GPT](https://en.wikipedia.org/wiki/GUID_Partition_Table "wikipedia:GUID Partition Table") support using the automated script.
+*   [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) is required for [GPT](/index.php/GPT "GPT") support following the [#Automatic install](#Automatic_install) section.
 *   If your boot partition is [FAT](/index.php/FAT "FAT"), you will also need [mtools](https://www.archlinux.org/packages/?name=mtools).
 
 Installing the package is not the same as installing the bootloader. After installing the relevant package(s), the bootloader code itself needs to be installed (to the adequate area, usually the VBR) so to be able to boot the system; the following sections provide alternative instructions depending on the characteristics of your particular system.
 
-#### Automatic Install
+#### Automatic install
 
 **Note:** The `syslinux-install_update` script is Arch specific, and is not provided/supported by Syslinux upstream. Please direct any bug reports specific to the script to the [Arch Bug Tracker](https://bugs.archlinux.org/) and not upstream.
 
@@ -91,7 +91,7 @@ Installing the package is not the same as installing the bootloader. After insta
 
 **Warning:** The `syslinux-install_update` script sets a default root partition that possibly will not match your particular system. It is important to point Syslinux to the correct root partition by editing `/boot/syslinux/syslinux.cfg`, or the OS will fail to boot. See [#Kernel parameters](#Kernel_parameters).
 
-The `syslinux-install_update` script will install Syslinux, copy `*.c32` modules to `/boot/syslinux/`, set the boot flag and install the boot code in the MBR. It can handle [MBR](/index.php/MBR "MBR") and [GPT](/index.php/GPT "GPT") disks along with software RAID:
+The `syslinux-install_update` script will install the bootloader code (usually to the VBR), copy `*.c32` modules to `/boot/syslinux/`, set the boot flag and install the boot code in the MBR. It can handle [MBR](/index.php/MBR "MBR") and [GPT](/index.php/GPT "GPT") disks along with software RAID:
 
 If you use a separate boot partition, make sure that it is mounted. Check with `lsblk`; if you do not see a `/boot` mountpoint, mount it before you go any further.
 

@@ -349,7 +349,18 @@ With that, Steam should no longer crash when trying to launch a game through in-
 
 ### Hardware decoding not available
 
-In-home streaming hardware decoding uses `vaapi`, so it needs to be installed (or wrapped around `vdpau`). See [hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration"). Remember to install the `lib32` versions as well.
+In-home streaming hardware decoding uses `vaapi`, but steam requires `libva1` where arch now defaults to `libva2`. This means the libva1 package set is required, including the `lib32` versions as well.
+
+As a basic set, this is [libva1](https://www.archlinux.org/packages/?name=libva1) and [lib32-libva1](https://www.archlinux.org/packages/?name=lib32-libva1). Intel graphics users will also require both [libva1-intel-driver](https://www.archlinux.org/packages/?name=libva1-intel-driver) and [lib32-libva1-intel-driver](https://www.archlinux.org/packages/?name=lib32-libva1-intel-driver). For more information about vaapi see [hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
+
+It may also be necessary to remove the steam runtime version of libva, in order to force it to use system libraries. The current library in use can be found by using:
+
+```
+pgrep steam | xargs -I {} cat /proc/{}/maps | grep libva
+
+```
+
+If this shows locations in `~/.local/Share/steam` steam is still using it's packaged version of libva. This can be rectified by deleting the libva library files at `~/.local/share/Steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/libva*`, so that steam falls back to the system libraries.
 
 ### Big Picture Mode minimizes itself after losing focus
 

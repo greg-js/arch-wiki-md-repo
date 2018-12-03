@@ -1064,6 +1064,20 @@ See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_config
 
 ### Configuring the boot loader
 
+[install GRUB](/index.php/GRUB#Installation_2 "GRUB") to the mounted ESP for UEFI booting:
+
+```
+# grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB --recheck
+
+```
+
+[install GRUB](/index.php/GRUB#Installation "GRUB") to the disk for BIOS booting:
+
+```
+# grub-install --target=i386-pc --recheck /dev/sda
+
+```
+
 Configure GRUB to recognize the LUKS encrypted `/boot` partition and unlock the encrypted root partition at boot:
 
  `/etc/default/grub` 
@@ -1089,21 +1103,7 @@ Generate GRUB's [configuration](/index.php/GRUB#Generate_the_main_configuration_
 
 ```
 
-[install GRUB](/index.php/GRUB#Installation_2 "GRUB") to the mounted ESP for UEFI booting:
-
-```
-# grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB --recheck
-
-```
-
-[install GRUB](/index.php/GRUB#Installation "GRUB") to the disk for BIOS booting:
-
-```
-# grub-install --target=i386-pc --recheck /dev/sda
-
-```
-
-If this finished without errors, GRUB should prompt for the passphrase to unlock the `/boot` partition after the next reboot.
+If all commands finished without errors, GRUB should prompt for the passphrase to unlock the `/boot` partition after the next reboot.
 
 ### Configuring fstab and crypttab
 

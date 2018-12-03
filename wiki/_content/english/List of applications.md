@@ -710,6 +710,10 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 	[http://midori-browser.org/](http://midori-browser.org/) || [midori](https://www.archlinux.org/packages/?name=midori)
 
+*   **Next** — Keyboard-oriented, infinitely extensible browser.
+
+	[https://next.atlas.engineer/](https://next.atlas.engineer/) || [next-browser-git](https://aur.archlinux.org/packages/next-browser-git/)
+
 *   **Poseidon** — Fast, minimal and lightweight browser, written in Python.
 
 	[https://github.com/sidus-dev/poseidon](https://github.com/sidus-dev/poseidon) || [poseidon](https://aur.archlinux.org/packages/poseidon/)
@@ -8443,7 +8447,7 @@ See also [Wikipedia:Comparison of EDA software](https://en.wikipedia.org/wiki/Co
 
 Digital logic software are mainly simple educational tools that intended for only designing and simulating logic circuits.
 
-*   **glogic** — An educational graphical logic circuit simulator.
+*   **glogic** — An educational graphical logic circuit simulator, written in Python.
 
 	[https://launchpad.net/glogic](https://launchpad.net/glogic) || [glogic](https://aur.archlinux.org/packages/glogic/)
 
@@ -8461,11 +8465,11 @@ Digital logic software are mainly simple educational tools that intended for onl
 
 *   **PulseView** — Logic analyzer, oscilloscope and MSO GUI.
 
-	[http://sigrok.org/wiki/PulseView](http://sigrok.org/wiki/PulseView) || [pulseview](https://www.archlinux.org/packages/?name=pulseview)
+	[https://sigrok.org/wiki/PulseView](https://sigrok.org/wiki/PulseView) || [pulseview](https://www.archlinux.org/packages/?name=pulseview)
 
 *   **SmartSim** — Simple and beautiful digital logic circuit design and simulation software, mainly target teachers and students, very lightweight and cross platform, GPL licensed, written in Vala.
 
-	[http://smartsim.org.uk](http://smartsim.org.uk) || [smartsim-git](https://aur.archlinux.org/packages/smartsim-git/)
+	[https://smartsim.org.uk](https://smartsim.org.uk) || [smartsim-git](https://aur.archlinux.org/packages/smartsim-git/)
 
 ##### HDL
 
@@ -9147,7 +9151,7 @@ See also [Wikipedia:Comparison of speech synthesizers](https://en.wikipedia.org/
 
 See also [Wikipedia:Speech recognition software for Linux](https://en.wikipedia.org/wiki/Speech_recognition_software_for_Linux "wikipedia:Speech recognition software for Linux").
 
-*   **Blather** — Speech recognizer that will run commands when a user speaks preset commands.
+*   **Blather** — Speech recognizer that will run commands when a user speaks preset commands, uses PocketSphinx.
 
 	[https://gitlab.com/jezra/blather](https://gitlab.com/jezra/blather) || [blather-git](https://aur.archlinux.org/packages/blather-git/)
 

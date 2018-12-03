@@ -63,6 +63,8 @@ Below, a command line is visible, connected to a subshell. This shell is general
 
 Keybindings are generally similar to [GNU Emacs](/index.php/GNU_Emacs "GNU Emacs"). A more strict emacs keymap can be enabled (see [mc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mc.1#Redefine_hotkey_bindings)). New users may however use Lynx-like (arrow) keybindings (enabled in *Options > Panel options*) and mouse clicks for navigation.
 
+Mouse support for Linux virtual consoles can be enabled with [General purpose mouse](/index.php/General_purpose_mouse "General purpose mouse").
+
 ### Modules
 
 These can be called via the *mc* interface (with *Use internal* enabled in *Options > Configuration), or separately as symbolic links to the* mc *binary.*

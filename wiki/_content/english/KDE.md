@@ -76,6 +76,7 @@ KDE is a software project currently comprising a [desktop environment](/index.ph
         *   [6.3.4 Flickering in fullscreen when compositing is enabled](#Flickering_in_fullscreen_when_compositing_is_enabled)
         *   [6.3.5 Screen tearing with NVIDIA](#Screen_tearing_with_NVIDIA)
         *   [6.3.6 Plasma cursor sometimes shown incorrectly](#Plasma_cursor_sometimes_shown_incorrectly)
+        *   [6.3.7 Unusable screen resolution set](#Unusable_screen_resolution_set)
     *   [6.4 Sound problems](#Sound_problems)
         *   [6.4.1 No sound after suspend](#No_sound_after_suspend)
         *   [6.4.2 MP3 files cannot be played when using the GStreamer Phonon backend](#MP3_files_cannot_be_played_when_using_the_GStreamer_Phonon_backend)
@@ -630,6 +631,10 @@ Execute the following command:
 $ ln -s /usr/share/icons/breeze_cursors/cursors ~/.icons/default/cursors
 
 ```
+
+#### Unusable screen resolution set
+
+Your local configs for kscreen can override those set in xorg.conf. Look for kscreen configs in `~/.local/share/kscreen/` and check if mode is being set to a resolution that isn't supported by your monitor.
 
 ### Sound problems
 

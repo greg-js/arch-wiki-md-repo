@@ -1,3 +1,7 @@
+Related articles
+
+*   [Transport Layer Security](/index.php/Transport_Layer_Security "Transport Layer Security")
+
 [OpenSSL](http://www.openssl.org) is an open-source implementation of the SSL and [TLS](/index.php/TLS "TLS") protocols, designed to be as flexible as possible. It is supported on a variety of platforms, including BSD, Linux, OpenVMS, Solaris and Windows.
 
 [openssl](https://www.archlinux.org/packages/?name=openssl) is installed by default on Arch Linux (as a dependency of [coreutils](https://www.archlinux.org/packages/?name=coreutils)).
