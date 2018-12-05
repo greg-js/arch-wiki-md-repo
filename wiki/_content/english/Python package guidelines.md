@@ -155,45 +155,44 @@ package_python2-foo() {
 Most python projects providing a testsuite use nosetests or pytest to run tests with `test` in the name of the file or directory containing the testsuite. In general, simply running `nosetests` or `pytest` is enough to run the testsuite.
 
 ```
- check(){
-   cd "$srcdir/foo-$pkgver"
+check(){
+    cd "$srcdir/foo-$pkgver"
 
-   # For nosetests
-   nosetests
+    # For nosetests
+    nosetests
 
-   # For pytest
-   pytest
- }
+    # For pytest
+    pytest
+}
 
 ```
 
 If there is a compiled C extension, the tests need to be run using a `$PYTHONPATH` hack in order to find and load it.
 
 ```
- check(){
-   cd "$srcdir/foo-$pkgver"
+check(){
+    cd "$srcdir/foo-$pkgver"
 
-   # For nosetests
-   PYTHONPATH="$PWD/build/lib.linux-$CARCH-3.7" nosetests
+    # For nosetests
+    PYTHONPATH="$PWD/build/lib.linux-$CARCH-3.7" nosetests
 
-   # For pytest
-   PYTHONPATH="$PWD/build/lib.linux-$CARCH-3.7" pytest
- }
-
+    # For pytest
+    PYTHONPATH="$PWD/build/lib.linux-$CARCH-3.7" pytest
+}
 ```
 
 Some projects provide `setup.py` entry points for running the test. This works for both `pytest` and `nosetests`.
 
 ```
- check(){
-   cd "$srcdir/foo-$pkgver"
+check(){
+    cd "$srcdir/foo-$pkgver"
 
-   # For nosetests
-   python setup.py nosetests
+    # For nosetests
+    python setup.py nosetests
 
-   # For pytest - needs python-pytest-runner
-   python setup.py pytest
- }
+    # For pytest - needs python-pytest-runner
+    python setup.py pytest
+}
 
 ```
 

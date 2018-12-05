@@ -53,7 +53,7 @@ If your [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") includes
 
 ### The kernel command line
 
-You now need to set the `quiet splash` [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). See [Silent boot](/index.php/Silent_boot "Silent boot") for other parameters to limit the output to the console.
+You now need to set the `quiet splash vt.global_cursor_default=0` [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). See [Silent boot](/index.php/Silent_boot "Silent boot") for other parameters to limit the output to the console.
 
 Rebuild your initrd image (see [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") article for details), for example:
 

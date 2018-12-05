@@ -24,6 +24,7 @@ Related articles
     *   [3.1 Configuration using xrandr](#Configuration_using_xrandr)
         *   [3.1.1 VGA1 left of HDMI1 at their preferred resolutions](#VGA1_left_of_HDMI1_at_their_preferred_resolutions)
         *   [3.1.2 VGA1 right of HDMI1 at fixed resolutions](#VGA1_right_of_HDMI1_at_fixed_resolutions)
+        *   [3.1.3 Combine screens into virtual display](#Combine_screens_into_virtual_display)
     *   [3.2 Configuration using xorg.conf](#Configuration_using_xorg.conf)
         *   [3.2.1 Example: dualhead configuration using relative coordinates](#Example:_dualhead_configuration_using_relative_coordinates)
         *   [3.2.2 Example: dualhead configuration using relative coordinates with custom resolutions](#Example:_dualhead_configuration_using_relative_coordinates_with_custom_resolutions)
@@ -100,6 +101,23 @@ $ xrandr --output VGA1 --mode 1024x768 --output HDMI1 --mode 1920x1080 --left-of
 ```
 
 `--left-of` places the previous screen (`HDMI1`) to the left of the specified screen (`VGA1`).
+
+#### Combine screens into virtual display
+
+Since randr version 1.5 it has been possible to combine monitors into one virtual display. This is an updated version of what was possible with Xinerama and works with open source drivers and does not require an xorg restart. Some desktop environments do not support this feature yet. [Openbox](/index.php/Openbox "Openbox") has been tested and works with this feature.
+
+Get monitor list by doing `xrandr --listmonitors`
+
+```
+0: +*DisplayPort-4 1920/518x1200/324+1920+0  DisplayPort-4
+1: +DisplayPort-3 1920/518x1200/324+0+0  DisplayPort-3
+2: +HDMI-A-0 1920/518x1200/324+3840+0  HDMI-A-0
+
+```
+
+Create virtual display `xrandr --setmonitor SomeName auto DiplayPort-4,DisplayPort-3,HDMI-A-0`. `auto` determines the size of the virtual display, setting this to auto will automatically create the correct size of the display array. Monitor order in this command does not matter and the monitors need to be rearranged correctly after or before this command is executed.
+
+For a more detailed explanation see [this page](http://www.straightrunning.com/tools/xrandr.html#sect3).
 
 ### Configuration using xorg.conf
 

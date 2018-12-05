@@ -278,7 +278,7 @@ This increases the speed of the initial bootstrap, since it does not have to dow
 
 ## Using the ISO
 
-See the [Getting and installing Arch#Installation methods](/index.php/Getting_and_installing_Arch#Installation_methods "Getting and installing Arch") section for various options.
+See the [Installation guide](/index.php/Installation_guide "Installation guide") article for various options.
 
 ## See also
 

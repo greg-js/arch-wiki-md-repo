@@ -13,6 +13,7 @@ Related articles
         *   [2.1.1 With TCP socket](#With_TCP_socket)
         *   [2.1.2 With Unix socket](#With_Unix_socket)
     *   [2.2 MariaDB/MySQL](#MariaDB/MySQL)
+    *   [2.3 Configure nginx as reverse proxy](#Configure_nginx_as_reverse_proxy)
 *   [3 Usage](#Usage)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Enable SSH Support](#Enable_SSH_Support)
@@ -20,9 +21,8 @@ Related articles
         *   [4.1.2 Setup git user](#Setup_git_user)
         *   [4.1.3 Configure SSH](#Configure_SSH)
     *   [4.2 Disable HTTP protocol](#Disable_HTTP_protocol)
-    *   [4.3 Configure nginx as reverse proxy](#Configure_nginx_as_reverse_proxy)
-    *   [4.4 Binding on restricted ports](#Binding_on_restricted_ports)
-    *   [4.5 Enable Dark Theme](#Enable_Dark_Theme)
+    *   [4.3 Binding on restricted ports](#Binding_on_restricted_ports)
+    *   [4.4 Enable Dark Theme](#Enable_Dark_Theme)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Database error on startup after upgrade to 1.5.0](#Database_error_on_startup_after_upgrade_to_1.5.0)
 *   [6 See also](#See_also)
@@ -168,6 +168,42 @@ USER     = *gitea*
 PASSWD   = **password**
 ```
 
+### Configure nginx as reverse proxy
+
+The following is an example of using [nginx](/index.php/Nginx#Managing_server_entries "Nginx") as reverse proxy for Gitea over unix socket (you need to [provide the SSL certificate](/index.php/Transport_Layer_Security#Obtaining_a_certificate "Transport Layer Security")):
+
+ `/etc/nginx/servers-available/gitea.conf` 
+```
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name git.domain.tld;
+
+    ssl_certificate /path/to/fullchain.pem;
+    ssl_certificate_key /path/to/privkey.pem;
+
+    location / {
+        proxy_pass [http://unix:/run/gitea/gitea.socket](http://unix:/run/gitea/gitea.socket);
+    }
+}
+```
+
+Update the `[server]` section of `app.ini`:
+
+ `/etc/gitea/app.ini` 
+```
+[server]
+PROTOCOL                   = unix
+DOMAIN                     = git.domain.tld
+ROOT_URL                   = [https://git.domain.tld](https://git.domain.tld)
+HTTP_ADDR                  = /run/gitea/gitea.socket
+LOCAL_ROOT_URL             =
+```
+
+**Note:** You do not need to activate any SSL certificate options in `/etc/gitea/app.ini`.
+
+Finally update the *cookie* section - set `COOKIE_SECURE` to `true`.
+
 ## Usage
 
 [Start/enable](/index.php/Start/enable "Start/enable") `gitea.service`, the webinterface should listen on `[http://localhost:3000](http://localhost:3000)`.
@@ -217,42 +253,6 @@ AllowUsers archie **git**
 ### Disable HTTP protocol
 
 By default, the ability to interact with repositories by HTTP protocol is enabled. You may want to disable HTTP-support if using [SSH](/index.php/SSH "SSH"), by setting `DISABLE_HTTP_GIT` to `true`.
-
-### Configure nginx as reverse proxy
-
-The following is an example of using [nginx](/index.php/Nginx#Managing_server_entries "Nginx") as reverse proxy for Gitea over unix socket (you need to [provide the SSL certificate](/index.php/Transport_Layer_Security#Obtaining_a_certificate "Transport Layer Security")):
-
- `/etc/nginx/servers-available/gitea.conf` 
-```
-server {
-    listen 443 ssl http2;
-    listen [::]:443 ssl http2;
-    server_name git.domain.tld;
-
-    ssl_certificate /path/to/fullchain.pem;
-    ssl_certificate_key /path/to/privkey.pem;
-
-    location / {
-        proxy_pass [http://unix:/run/gitea/gitea.socket](http://unix:/run/gitea/gitea.socket);
-    }
-}
-```
-
-Update the `[server]` section of `app.ini`:
-
- `/etc/gitea/app.ini` 
-```
-[server]
-PROTOCOL                   = unix
-DOMAIN                     = git.domain.tld
-ROOT_URL                   = [https://git.domain.tld](https://git.domain.tld)
-HTTP_ADDR                  = /run/gitea/gitea.socket
-LOCAL_ROOT_URL             =
-```
-
-**Note:** You do not need to activate any SSL certificate options in `/etc/gitea/app.ini`.
-
-Finally update the *cookie* section - set `COOKIE_SECURE` to `true`.
 
 ### Binding on restricted ports
 

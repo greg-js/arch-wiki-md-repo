@@ -224,7 +224,8 @@ To add a new boot option using *efibootmgr* you need to know three things:
 
 1.  The disk containing the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (ESP): `/dev/sd*X*`
 2.  The partition number of the ESP on that disk: the `*Y*` in `/dev/sdX*Y*`
-3.  The path to the EFI application (relative to the root of the ESP)
+3.  For an NVME `/dev/nvme0n1p*Y*`
+4.  The path to the EFI application (relative to the root of the ESP)
 
 For example, if you want to add a boot option for `/efi/EFI/refind/refind_x64.efi` where `/efi` is the mount point of the ESP, run
 
@@ -238,6 +239,11 @@ In this example, this indicates that the ESP is on disk `/dev/sda` and has parti
 
 ```
 # efibootmgr --create --disk /dev/sda --part 1 --loader /EFI/refind/refind_x64.efi --label "rEFInd Boot Manager" --verbose
+
+```
+
+```
+# efibootmgr --create --disk /dev/nvme0n1p1 --loader /EFI/refind/refind_x64.efi --label "rEFINd Boot Manager" --verbose
 
 ```
 

@@ -2,7 +2,7 @@ Related articles
 
 *   [Environment variables](/index.php/Environment_variables "Environment variables")
 
-Locales are used by [glibc](https://www.archlinux.org/packages/?name=glibc) and other locale-aware programs or libraries for rendering text, correctly displaying regional monetary values, time and date formats, alphabetic idiosyncrasies, and other locale-specific standards.
+[Locales](https://en.wikipedia.org/wiki/Locale_(computer_software) "w:Locale (computer software)") are used by [glibc](https://www.archlinux.org/packages/?name=glibc) and other locale-aware programs or libraries for rendering text, correctly displaying regional monetary values, time and date formats, alphabetic idiosyncrasies, and other locale-specific standards.
 
 ## Contents
 

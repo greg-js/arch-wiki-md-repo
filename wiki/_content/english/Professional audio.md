@@ -33,11 +33,10 @@ Modern Linux systems are more than capable of supporting your (semi-)professiona
     *   [6.6 RME Babyface](#RME_Babyface)
 *   [7 Restricted software](#Restricted_software)
     *   [7.1 Steinberg's SDKs](#Steinberg's_SDKs)
-*   [8 Arch Linux Pro Audio Project](#Arch_Linux_Pro_Audio_Project)
-*   [9 Linux and Arch Linux Pro Audio in the news](#Linux_and_Arch_Linux_Pro_Audio_in_the_news)
-*   [10 Mailing lists](#Mailing_lists)
-*   [11 IRC](#IRC)
-*   [12 See also](#See_also)
+*   [8 Linux and Arch Linux Pro Audio in the news](#Linux_and_Arch_Linux_Pro_Audio_in_the_news)
+*   [9 Mailing lists](#Mailing_lists)
+*   [10 IRC](#IRC)
+*   [11 See also](#See_also)
 
 ## Getting started
 
@@ -540,18 +539,6 @@ With that said, if you are building a program which would host native *.so* VST 
 
 *Note: Steinberg does not forbid redistribution of resulting products, nor dictate what license they can be under. There are many GPL-licensed VST plug-ins. As such, distributing binary packages of software built with these restricted headers is **not** a problem, because the headers are simply **buildtime dependencies**.*
 
-## Arch Linux Pro Audio Project
-
-Yes, we have one. Think of "Planet CCRMA" or "Pro Audio Overlay", less the academic connotations of the former: [ArchAudio](http://archaudio.org).
-
-What this means is that the repositories are add-ons, i.e you need to have a running, sane Arch Linux installation.
-
-It is a relatively new effort although the initiative has been around since 2006/2007\.
-
-History: [https://bbs.archlinux.org/viewtopic.php?id=30547](https://bbs.archlinux.org/viewtopic.php?id=30547)
-
-For all your Arch- and ArchAudio-related audio issues hop on to **IRC**: #archaudio @ Freenode
-
 ## Linux and Arch Linux Pro Audio in the news
 
 *   [Build a Serious Multimedia Production Workstation with Arch](https://www.linux.com/learn/tutorials/607117-build-a-serious-multimedia-production-workstation-with-arch-linux) - Linux.com article, July 2012
@@ -577,3 +564,4 @@ For all your Arch- and ArchAudio-related audio issues hop on to **IRC**: #archau
 *   [Realtime kernel](/index.php/Realtime_kernel "Realtime kernel")
 *   [awesome-linuxaudio](https://github.com/nodiscc/awesome-linuxaudio) A list of software and resources for professional audio/video/live events production on the Linux platform
 *   [Realtime](https://wiki.linuxfoundation.org/realtime/start) The Linux Foundation wiki on the PREEMPT_RT patches
+*   [ArchAudio](http://archaudio.org) - the now legacy - pro-audio related package repository overlay ([some history](https://bbs.archlinux.org/viewtopic.php?id=30547))

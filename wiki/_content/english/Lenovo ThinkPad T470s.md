@@ -44,7 +44,7 @@ On [gnome-shell](https://www.archlinux.org/packages/?name=gnome-shell) via [wayl
 
 ## mobile broadband
 
-The mobile broadband card is a [Sierra EM7455](https://www.sierrawireless.com/products-and-solutions/embedded-solutions/networking-modules/), which can be seen below in the lsusb. We have confirmed working with with [Google's Project Fi](https://fi.google.com).
+The mobile broadband card is a [Sierra EM7455](https://www.sierrawireless.com/products-and-solutions/embedded-solutions/networking-modules/), which can be seen below in the lsusb. We have confirmed working with [Google's Project Fi](https://fi.google.com).
 
 ## lspci and lsusb
 

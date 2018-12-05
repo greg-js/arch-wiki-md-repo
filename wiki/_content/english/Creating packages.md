@@ -111,7 +111,7 @@ There are five functions, listed here in the order they are executed. Beside the
 
 #### prepare()
 
-This function, commands that are used to prepare sources for building are run, such as [patching](/index.php/Patching_in_ABS "Patching in ABS"). This function runs right after package extraction, before [pkgver()](#pkgver()) and the build function. If extraction is skipped (`makepkg -e`), then `prepare()` is not run.
+With this function, commands that are used to prepare sources for building are run, such as [patching](/index.php/Patching_in_ABS "Patching in ABS"). This function runs right after package extraction, before [pkgver()](#pkgver()) and the build function. If extraction is skipped (`makepkg -e`), then `prepare()` is not run.
 
 **Note:** (From [PKGBUILD(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5)) The function is run in `bash -e` mode, meaning any command that exits with a non-zero status will cause the function to exit.
 

@@ -75,12 +75,11 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
     *   [3.11 home-thaodan](#home-thaodan)
     *   [3.12 jkanetwork](#jkanetwork)
     *   [3.13 mesa-git](#mesa-git)
-    *   [3.14 mingw-w64](#mingw-w64)
-    *   [3.15 minzord](#minzord)
-    *   [3.16 ownstuff](#ownstuff)
-    *   [3.17 pantheon](#pantheon)
-    *   [3.18 pietma](#pietma)
-    *   [3.19 pnsft-pur](#pnsft-pur)
+    *   [3.14 minzord](#minzord)
+    *   [3.15 ownstuff](#ownstuff)
+    *   [3.16 pantheon](#pantheon)
+    *   [3.17 pietma](#pietma)
+    *   [3.18 pnsft-pur](#pnsft-pur)
 
 ## Adding your repository to this page
 
@@ -841,20 +840,6 @@ Server = http://repo.jkanetwork.com/repo/$repo/
 ```
 [mesa-git]
 Server = https://pkgbuild.com/~lcarlier/$repo/$arch
-
-```
-
-### mingw-w64
-
-*   **Maintainer:** [Philip](https://aur.archlinux.org/account/ant32) and [Jeromy](https://aur.archlinux.org/account/nic96) Reimer
-*   **Description:** Almost all mingw-w64 packages in the AUR.
-
-**Note:** This repo is not actively maintained anymore. It has not been updated since 2016-01-04.
-
-```
-[mingw-w64]
-Server = https://downloads.sourceforge.net/project/mingw-w64-archlinux/$arch
-#Server = http://amr.linuxd.org/archlinux/$repo/os/$arch
 
 ```
 

@@ -392,7 +392,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 	[https://github.com/elementary/files](https://github.com/elementary/files) || [pantheon-files](https://www.archlinux.org/packages/?name=pantheon-files)
 
-*   **[PathFinder](https://en.wikipedia.org/wiki/Fox_toolkit "wikipedia:Fox toolkit")** — File browser that comes with the FOX toolkit.
+*   **PathFinder** — File browser that comes with the [FOX toolkit](https://en.wikipedia.org/wiki/Fox_toolkit "wikipedia:Fox toolkit").
 
 	[http://fox-toolkit.org/](http://fox-toolkit.org/) || [fox](https://www.archlinux.org/packages/?name=fox)
 

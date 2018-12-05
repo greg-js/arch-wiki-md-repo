@@ -160,7 +160,7 @@ If *su* starts with Bash because Bash is the target user's (*root* if no usernam
  `~/.config/fish/functions/su.fish` 
 ```
 function su
-   /bin/su --shell=/usr/bin/fish $argv
+   command su --shell=/usr/bin/fish $argv
 end
 ```
 

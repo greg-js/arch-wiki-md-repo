@@ -6,22 +6,21 @@ From the project [home page](http://www.webmin.com/):
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-*   [3 Starting](#Starting)
-*   [4 Usage](#Usage)
+*   [3 Usage](#Usage)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Missing Authen::PAM module](#Missing_Authen::PAM_module)
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [webmin](https://aur.archlinux.org/packages/webmin/) package from the [AUR](/index.php/AUR "AUR"). Webmin requires [perl-net-ssleay](https://www.archlinux.org/packages/?name=perl-net-ssleay) for [HTTPS](https://en.wikipedia.org/wiki/https "wikipedia:https") support.
+[Install](/index.php/Install "Install") the [webmin](https://aur.archlinux.org/packages/webmin/) package from the [AUR](/index.php/AUR "AUR").
 
 ## Configuration
 
 To allow access to Webmin from a remote computer, configure your firewall to allow access to TCP port 10000\. You may want to configure firewall to restrict access only from certain IP addresses.
 
-## Starting
-
-Start webmin [service](/index.php/Daemon "Daemon") using [systemd](/index.php/Systemd "Systemd"). Enable it if you wish to load webmin at boot.
-
 ## Usage
+
+[Start](/index.php/Start "Start") `webmin.service` or [enable](/index.php/Enable "Enable") it if you wish to load webmin at boot.
 
 In a web browser, enter the https address of the server with the port number 10000 to access Webmin:
 
@@ -31,3 +30,16 @@ https://*host*:10000
 ```
 
 You will need to enter the root password of the server running Webmin to use the Webmin interface and administer the server.
+
+## Troubleshooting
+
+### Missing Authen::PAM module
+
+If you did not install [webmin](https://aur.archlinux.org/packages/webmin/) via AUR then you may get an error when launching webmin such as
+
+```
+Perl module Authen::PAM needed for PAM is not installed : Can't locate Authen/PAM.pm in @INC (you may need to install the Authen::PAM module)
+
+```
+
+Install [perl-authen-pam](https://aur.archlinux.org/packages/perl-authen-pam/).

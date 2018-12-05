@@ -23,8 +23,6 @@ The package provides a configuration sample. It is a good idea to start from the
 
 ## Scripts
 
-By default Demlo only previews changes. Use the `-p` commandline flag to confirm.
-
 Demlo runs a chain of Lua scripts of the files passed as arguments. You can select which scripts from the config file or at run-time.
 
 Each script can access an `input` table and modify an `output` table with information such as the path, tags, covers and encoding properties.
@@ -46,58 +44,62 @@ The user script folder has precedence over the system script folder: if two scri
 
 ## Usage
 
+By default Demlo only previews changes. Use the `-p` commandline flag to confirm processing.
+
+See `demlo -h` for all options and parameters, the [demlo manual](https://godoc.org/gitlab.com/ambrevar/demlo) is also available.
+
+Usage examples:
+
 Run Demlo over a set of file to preview the changes:
 
 ```
- $ demlo *.ogg album/ other-album/*.flac
+ $ demlo *.ogg *album*/ *other-album*/*.flac
 
 ```
 
 Set the script chain to change the result:
 
 ```
- $ demlo -s tag -s ./my-script.lua -s encoding <input-files>
+ $ demlo -s tag -s ./my-script.lua -s encoding *input-files*
 
 ```
 
 If you need fine-grained tuning, you can run Lua commands before and after the script chain from command line:
 
 ```
- $ demlo -pre 'o.artist="John Doe";o.disc=output.filename:match("Disc (\d+)")' -post 'output.format="ogg"' <input-files>
+ $ demlo -pre 'o.artist="John Doe";o.disc=output.filename:match("Disc (\d+)")' -post 'output.format="ogg"' *input-files*
 
 ```
 
 To process the files, use the `-p` parameter. Demlo uses all available cores by default. You can restrict it:
 
 ```
- $ demlo -cores 2 -p <input-files>
+ $ demlo -cores 2 -p *input-files*
 
 ```
 
 If you just want to fetch covers online:
 
 ```
- $ demlo -c -s cover -s 90-rmsrc -p <input-files>
+ $ demlo -c -s cover -s 90-rmsrc -p *input-files*
 
 ```
 
 If you want to edit tags or properties manually (in case scripts would not be able to fix them automatically), you can export the changes to an index file:
 
 ```
- $ demlo <some-tuning> <input-files> >> ./index.json
+ $ demlo *some-tuning* *input-files* >> ./index.json
 
 ```
 
 You can stack different output to the same index file, Demlo does not mind. You can edit this file with your favorite editor. To apply the changes, call Demlo over the desired set of files with the `-i` option. Scripts can still be called or they can be left out if you do not want to perform any additional change.
 
 ```
- $ demlo -i ./index.json -r * -post 'o.artist,o.album_artist=o.album_artist,artist' <input-files>*
+ $ demlo -i ./index.json -r '' -post 'o.artist,o.album_artist=o.album_artist,artist' *input-files*
 
 ```
 
 Index files can be used to interface Demlo with other programs, both as input and output.
-
-See `demlo -h` and the [demlo manual](https://godoc.org/bitbucket.org/ambrevar/demlo).
 
 ## See also
 

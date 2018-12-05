@@ -52,6 +52,7 @@ According to the [official website](https://www.gnupg.org/):
     *   [7.2 GnuPG with pcscd (PCSC Lite)](#GnuPG_with_pcscd_(PCSC_Lite))
         *   [7.2.1 Always use pcscd](#Always_use_pcscd)
         *   [7.2.2 Shared access with pcscd](#Shared_access_with_pcscd)
+            *   [7.2.2.1 Multi applet smart cards](#Multi_applet_smart_cards)
 *   [8 Tips and tricks](#Tips_and_tricks)
     *   [8.1 Different algorithm](#Different_algorithm)
     *   [8.2 Encrypt a password](#Encrypt_a_password)
@@ -343,7 +344,7 @@ If you plan to use the same key across multiple devices, you may want to strip o
 First, find out which subkey you want to export.
 
 ```
-$ gpg -K
+$ gpg --list-secret-keys
 
 ```
 
@@ -416,7 +417,7 @@ Signatures certify and timestamp documents. If the document is modified, verific
 To sign a file use the `--sign` or `-s` flag:
 
 ```
- $ gpg --output *doc*.sig --sign *doc*
+$ gpg --output *doc*.sig --sign *doc*
 
 ```
 
@@ -427,7 +428,7 @@ To sign a file use the `--sign` or `-s` flag:
 To sign a file without compressing it into binary format use:
 
 ```
- $ gpg --output *doc*.sig --clearsign *doc*
+$ gpg --output *doc*.sig --clearsign *doc*
 
 ```
 
@@ -438,7 +439,7 @@ Here both the content of the original file `*doc*` and the signature are stored 
 To create a separate signature file to be distributed separately from the document or file itself, use the `--detach-sig` flag:
 
 ```
- $ gpg --output *doc*.sig --detach-sig *doc*
+$ gpg --output *doc*.sig --detach-sig *doc*
 
 ```
 
@@ -449,7 +450,7 @@ Here the signature is stored in `*doc*.sig`, but the contents of `*doc*` are not
 To verify a signature use the `--verify` flag:
 
 ```
- $ gpg --verify *doc*.sig
+$ gpg --verify *doc*.sig
 
 ```
 
@@ -458,7 +459,7 @@ where `*doc*.sig` is the signed file containing the signature you wish to verify
 If you are verifying a detached signature, both the signed data file and the signature file must be present when verifying. For example, to verify Arch Linux's latest iso you would do:
 
 ```
- $ gpg --verify archlinux-*version*.iso.sig
+$ gpg --verify archlinux-*version*.iso.sig
 
 ```
 
@@ -467,7 +468,7 @@ where `archlinux-*version*.iso` must be located in the same directory.
 You can also specify the signed data file with a second argument:
 
 ```
- $ gpg --verify archlinux-*version*.iso.sig */path/to/*archlinux-*version*.iso
+$ gpg --verify archlinux-*version*.iso.sig */path/to/*archlinux-*version*.iso
 
 ```
 
@@ -694,6 +695,12 @@ Please check [scdaemon(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/scdaemon.1
 GnuPG `scdaemon` is the only popular `pcscd` client that uses `PCSC_SHARE_EXCLUSIVE` flag when connecting to `pcscd`. Other clients like OpenSC PKCS#11 that are used by browsers and programs listed in [Electronic identification](/index.php/Electronic_identification "Electronic identification") are using `PCSC_SHARE_SHARED` that allows simultaneous access to single smartcard. `pcscd` will not give exclusive access to smartcard while there are other clients connected. This means that to use GnuPG smartcard features you must before have to close all your open browser windows or do some other inconvenient operations. There is a out of tree patch in [GPGTools/MacGPG2](https://github.com/GPGTools/MacGPG2/blob/dev/patches/gnupg/scdaemon_shared-access.patch) git repo that enables `scdaemon` to use shared access but GnuPG developers are against allowing this because when one `pcscd` client authenticates the smartcard then some other malicious `pcscd` clients could do authenticated operations with the card without you knowing. You can read full mailing list thread [here](https://lists.gnupg.org/pipermail/gnupg-devel/2015-September/030247.html).
 
 If you accept the security risk then you can use the patch from [GPGTools/MacGPG2](https://github.com/GPGTools/MacGPG2/blob/dev/patches/gnupg/scdaemon_shared-access.patch) git repo or use [gnupg-scdaemon-shared-access](https://aur.archlinux.org/packages/gnupg-scdaemon-shared-access/) package. After patching your `scdaemon` you can enable shared access by modifying your `scdaemon.conf` file and adding `shared-access` line end of it.
+
+##### Multi applet smart cards
+
+When using [Yubikeys](/index.php/Yubikey "Yubikey") or other multi applet USB dongles with OpenSC PKCS#11 may run into problems where OpenSC switches your Yubikey from OpenPGP to PIV applet, breaking the `scdaemon`.
+
+You can hack around the problem by forcing OpenSC to also use the OpenPGP applet. Open `/etc/opensc.conf` file, search for Yubikey and change the `driver = "PIV-II";` line to `driver = "openpgp";`. After that you can test with `pkcs11-tool -O --login` that the OpenPGP applet is selected by default. Other PKCS#11 clients like browsers may need to be restarted for that change to be applied.
 
 ## Tips and tricks
 

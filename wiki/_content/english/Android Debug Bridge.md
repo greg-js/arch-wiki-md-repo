@@ -112,6 +112,15 @@ HT07VHL00676    device
 
 ```
 
+If adb still does not detect the device after plugging your device back in, kill and restart the adb server as root and check devices again:
+
+```
+$ sudo adb kill-server
+$ sudo adb start-server
+$ adb devices
+
+```
+
 ### Transferring files
 
 You can now use adb to transfer files between the device and your computer. To transfer files to the device, use

@@ -220,7 +220,7 @@ Most monitors manufactured today use the Red, Green, Blue (RGB) specification. F
 
 [Subpixel rendering](https://en.wikipedia.org/wiki/Subpixel_rendering "wikipedia:Subpixel rendering") is a technique to improve sharpness of font rendering by effectively tripling the horizontal (or vertical) resolution through the use of subpixels. On Windows machines, this technique is called "ClearType".
 
-FreeType implements it's own LCD-optimized rendering called [Harmony](http://lists.gnu.org/archive/html/freetype-commit/2017-03/msg00012.html). With this FreeType LCD rendering technology, the resulting output does not require additional LCD filtering, unlike Microsoft's patented Cleartype subpixel rendering where an LCD filter is recommended. See section below on how to enable LCD filter and it's benefits.
+FreeType implements its own LCD-optimized rendering called [Harmony](http://lists.gnu.org/archive/html/freetype-commit/2017-03/msg00012.html). With this FreeType LCD rendering technology, the resulting output does not require additional LCD filtering, unlike Microsoft's patented Cleartype subpixel rendering where an LCD filter is recommended. See section below on how to enable LCD filter and its benefits.
 
 Cleartype subpixel rendering is covered by Microsoft patents and **disabled** by default on Arch Linux. To enable it, you have to re-compile [freetype2](https://www.archlinux.org/packages/?name=freetype2) and define the `FT_CONFIG_OPTION_SUBPIXEL_RENDERING` macro, or use e.g. the AUR package [freetype2-cleartype](https://aur.archlinux.org/packages/freetype2-cleartype/).
 

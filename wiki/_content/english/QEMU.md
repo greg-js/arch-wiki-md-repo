@@ -280,6 +280,7 @@ To start QEMU in KVM mode, append `-enable-kvm` to the additional start options.
 
 **Note:**
 
+*   The argument `accel=kvm` of the `-machine` option is equivalent to the `-enable-kvm` option.
 *   If you start your VM with a GUI tool and experience very bad performance, you should check for proper KVM support, as QEMU may be falling back to software emulation.
 *   KVM needs to be enabled in order to start Windows 7 and Windows 8 properly without a *blue screen*.
 

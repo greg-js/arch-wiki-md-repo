@@ -43,6 +43,8 @@ To make the change permanent add `mem_sleep_default=deep` to your kernel paramet
 
 Read more regarding the sleep variants on the kernel documentation [[1]](https://www.kernel.org/doc/html/v4.18/admin-guide/pm/sleep-states.html).
 
+**Warning:** Some users have reported a problem where the CPUs get stuck in a high power state after resuming from S3 (deep) suspension [[2]](https://www.reddit.com/r/Dell/comments/91313h/xps_15_9570_c_state_bug_after_s3_sleep_and_modern/).
+
 ## Graphics
 
 The nouveau module is known to cause kernel panics and freezes on this model. One way to mitigate this is by adding `nomodeset` to the kernel options, however it's best if you completely disable it.
@@ -65,7 +67,7 @@ Integrated graphics works well out of the box.
 
 ### Optimus Nvidia
 
-Works but additional configuration is needed. (see *[[2]](https://github.com/Bumblebee-Project/bbswitch/issues/140#issuecomment-394180574))
+Works but additional configuration is needed. (see *[[3]](https://github.com/Bumblebee-Project/bbswitch/issues/140#issuecomment-394180574))
 
 *   If tlp is installed, add the graphic card to **RUNTIME_PM_BLACKLIST**
 *   Uninstall or disable bbswitch
@@ -77,7 +79,7 @@ Note: This is just one configuration that worked. There are more configurations 
 
 ### bbswitch
 
-Discrete (GeForce GTX 1050 Ti) graphics card do not work well with bbswich. It won't power on/off (see *[[3]](https://bbs.archlinux.org/viewtopic.php?id=238389)).
+Discrete (GeForce GTX 1050 Ti) graphics card do not work well with bbswich. It won't power on/off (see *[[4]](https://bbs.archlinux.org/viewtopic.php?id=238389)).
 
 ### nvidia-xrun
 

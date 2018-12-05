@@ -29,6 +29,7 @@ From the [WireGuard](https://www.wireguard.com/) project homepage:
         *   [4.3.3 Using systemd-resolved](#Using_systemd-resolved)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Store private keys in encrypted form](#Store_private_keys_in_encrypted_form)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -366,3 +367,8 @@ It may be desirable to store private keys in encrypted form, such as through use
 ```
 
 where user is your username. See the [wg-quick(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wg-quick.8) man page for more details.
+
+## See also
+
+*   [Presentations by Jason Donenfeld](https://www.wireguard.com/presentations/).
+*   [Mailing list](https://lists.zx2c4.com/mailman/listinfo/wireguard)

@@ -18,10 +18,10 @@ Related articles
 *   [1 安装](#安装)
 *   [2 配置](#配置)
     *   [2.1 别名 Aliases](#别名_Aliases)
-    *   [2.2 Local mail](#Local_mail)
-    *   [2.3 Virtual mail](#Virtual_mail)
-    *   [2.4 Check configuration](#Check_configuration)
-*   [3 Start Postfix](#Start_Postfix)
+    *   [2.2 系统本地用户邮件(Local mail)](#系统本地用户邮件(Local_mail))
+    *   [2.3 虚拟用户邮件(Virtual mail)](#虚拟用户邮件(Virtual_mail))
+    *   [2.4 检查配置 Check configuration](#检查配置_Check_configuration)
+*   [3 启动 Postfix](#启动_Postfix)
 *   [4 TLS](#TLS)
     *   [4.1 Secure SMTP (sending)](#Secure_SMTP_(sending))
     *   [4.2 Secure SMTP (receiving)](#Secure_SMTP_(receiving))
@@ -98,9 +98,9 @@ user@localhost
 
 ```
 
-### Local mail
+### 系统本地用户邮件(Local mail)
 
-To only deliver mail to local system users (that are in `/etc/passwd`) update `/etc/postfix/main.cf` to reflect the following configuration. Uncomment, change, or add the following lines:
+要仅向本地系统用户（也就是`/etc/passwd`中存在的用户）发送邮件，请更新配置文件：`/etc/postfix/main.cf`中的以下配置行（取消注释，更改或添加）:
 
 ```
 myhostname = localhost
@@ -112,25 +112,25 @@ default_transport = error: outside mail is not deliverable
 
 ```
 
-All other settings may remain unchanged. After setting up the above configuration file, you may wish to set up some [#Aliases](#Aliases) and then [#Start Postfix](#Start_Postfix).
+所有其他设置维持不变。 完成上面这个配置后，你可能还想配置一些[#别名 Aliases](#别名_Aliases)参数，然后[#启动 Postfix](#启动_Postfix)。
 
-### Virtual mail
+### 虚拟用户邮件(Virtual mail)
 
-Virtual mail is mail that does not map to a user account (`/etc/passwd`).
+虚拟用户邮件的邮件账户不存储在本地系统的(`/etc/passwd`文件中。可以配合数据库完成对用户账户的存储。
 
-See [Virtual user mail system with Postfix, Dovecot and Roundcube](/index.php/Virtual_user_mail_system_with_Postfix,_Dovecot_and_Roundcube "Virtual user mail system with Postfix, Dovecot and Roundcube") for a comprehensive guide how to set it up.
+请参见 [Virtual user mail system with Postfix, Dovecot and Roundcube](/index.php/Virtual_user_mail_system_with_Postfix,_Dovecot_and_Roundcube "Virtual user mail system with Postfix, Dovecot and Roundcube")（英文） 那是一个如果设置的详细介绍。
 
-### Check configuration
+### 检查配置 Check configuration
 
-Run the `postfix check` command. It should output anything that you might have done wrong in a config file.
+运行`postfix check` 命令来完成配置检查。它会输出所有你在配置文件中可能写错的东西。
 
-To see all of your configs, type `postconf`. To see how you differ from the defaults, try `postconf -n`.
+运行`postconf`命令可以查看所有的配置。运行`postconf -n`命令可以查看与默认配置的区别。
 
-## Start Postfix
+## 启动 Postfix
 
-**Note:** You must run `newaliases` at least once for Postfix to run, even if you did not set up any [#Aliases](#Aliases).
+**注意:** 即使你没有设置任何[#别名 Aliases](#别名_Aliases)，也需要至少运行一次`newaliases`命令才能让 Postfix 正常运行。
 
-[Start/enable](/index.php/Start/enable "Start/enable") the `postfix.service`.
+[启动](/index.php/Start/enable "Start/enable") `postfix.service` 服务。
 
 ## TLS
 

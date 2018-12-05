@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Julia](/index.php/Julia "Julia"), revisada por última vez el **2018-11-09**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Julia&diff=0&oldid=551946) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Julia](/index.php/Julia "Julia"), revisada por última vez el **2018-12-04**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Julia&diff=0&oldid=558306) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 **Nota:** [https://julialang.org/](https://julialang.org/) contiene una documentación magnífica y de código abierto. La información no específica a Arch debería aportarse allí.
 
@@ -9,11 +9,13 @@ Este artículo es una traducción de [Julia](/index.php/Julia "Julia"), revisada
 
 *   [1 Instalación](#Instalación)
 *   [2 IJulia](#IJulia)
-*   [3 Integración con editores](#Integración_con_editores)
-    *   [3.1 Vim](#Vim)
-        *   [3.1.1 Resaltado de sintaxis y más](#Resaltado_de_sintaxis_y_más)
-        *   [3.1.2 Linting](#Linting)
-*   [4 Rendimiento](#Rendimiento)
+*   [3 Errores de compilación del paquete](#Errores_de_compilación_del_paquete)
+    *   [3.1 Arpack](#Arpack)
+*   [4 Integración con editores](#Integración_con_editores)
+    *   [4.1 Vim](#Vim)
+        *   [4.1.1 Resaltado de sintaxis y más](#Resaltado_de_sintaxis_y_más)
+        *   [4.1.2 Linting](#Linting)
+*   [5 Rendimiento](#Rendimiento)
 
 ## Instalación
 
@@ -22,6 +24,29 @@ Este artículo es una traducción de [Julia](/index.php/Julia "Julia"), revisada
 ## IJulia
 
 Si intenta instalar [ijulia](https://github.com/JuliaLang/IJulia.jl) ejecutando `Pkg.add("IJulia")` y aparece la advertencia `MbedTLS had build errors.`, puede que necesite instalar el paquete [mbedtls](https://www.archlinux.org/packages/?name=mbedtls).
+
+## Errores de compilación del paquete
+
+### Arpack
+
+La compilación del paquete Arpack puede generar un error como el que se muestra a continuación (se ha omitido el stacktrace):
+
+ `julia> Pkg.build("Arpack")` 
+```
+  Building Arpack → `~/.julia/packages/Arpack/UiiMc/deps/build.log`
+┌ Error: Error building `Arpack`:
+│ ERROR: LoadError: LibraryProduct(nothing, ["libarpack"], :libarpack, "Prefix(~/.julia/packages/Arpack/UiiMc/deps/usr)") is not satisfied, cannot generate deps.jl!
+```
+
+[Se ha presentado un problema](https://github.com/JuliaLinearAlgebra/Arpack.jl/issues/5).
+
+Arpack empaqueta su propio `libarpack.so` que requiere que el DSO `libopenblas64_.so.0` esté presente en el sistema:
+
+ `$ ldd ~/packages/Arpack/UiiMc/deps/usr/lib/libarpack.so | grep 'not found'`  `        libopenblas64_.so.0 => not found` 
+
+La parte `UiiMc` de la ruta puede ser diferente en su sistema. Tal y como se muestra, el DSO requerido no está presente en el sistema, lo que causa el error de compilación.
+
+El DSO `/usr/lib/libopenblas.so` del paquete [openblas](https://www.archlinux.org/packages/?name=openblas) probablemente no funcione de manera estable como reemplazo directo, dado que [el sufijo 64 parece usarse para indicar una diferencia en la interfaz](https://github.com/xianyi/OpenBLAS/issues/1763) y [el sufijo 64 indica una versión diferente en lugar de una diferencia en la arquitectura de destino](http://numpy-discussion.10968.n7.nabble.com/Linking-Numpy-with-parallel-OpenBLAS-td41590.html).
 
 ## Integración con editores
 

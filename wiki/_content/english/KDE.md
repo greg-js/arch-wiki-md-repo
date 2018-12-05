@@ -634,7 +634,7 @@ $ ln -s /usr/share/icons/breeze_cursors/cursors ~/.icons/default/cursors
 
 #### Unusable screen resolution set
 
-Your local configs for kscreen can override those set in xorg.conf. Look for kscreen configs in `~/.local/share/kscreen/` and check if mode is being set to a resolution that isn't supported by your monitor.
+Your local configuration settings for kscreen can override those set in `xorg.conf`. Look for kscreen configuration files in `~/.local/share/kscreen/` and check if mode is being set to a resolution that is not supported by your monitor.
 
 ### Sound problems
 

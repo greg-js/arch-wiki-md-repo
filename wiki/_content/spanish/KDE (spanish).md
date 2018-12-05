@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [KDE](/index.php/KDE "KDE"), revisada por última vez el **2018-11-25**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=555447) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [KDE](/index.php/KDE "KDE"), revisada por última vez el **2018-12-04**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=558213) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -79,6 +79,7 @@ KDE es un proyecto de software que actualmente comprende un [entorno de escritor
         *   [6.3.4 Parpadeo en pantalla completa cuando la composición está habilitada](#Parpadeo_en_pantalla_completa_cuando_la_composición_está_habilitada)
         *   [6.3.5 Screen tearing con NVIDIA](#Screen_tearing_con_NVIDIA)
         *   [6.3.6 El cursor de Plasma a veces se muestra incorrectamente](#El_cursor_de_Plasma_a_veces_se_muestra_incorrectamente)
+        *   [6.3.7 Se ha establecido una resolución de pantalla inutilizable](#Se_ha_establecido_una_resolución_de_pantalla_inutilizable)
     *   [6.4 Problemas de sonido](#Problemas_de_sonido)
         *   [6.4.1 No hay sonido después de suspender](#No_hay_sonido_después_de_suspender)
         *   [6.4.2 Los archivos MP3 no se pueden reproducir cuando se utiliza el backend GStreamer Phonon](#Los_archivos_MP3_no_se_pueden_reproducir_cuando_se_utiliza_el_backend_GStreamer_Phonon)
@@ -633,6 +634,10 @@ Ejecute el siguiente comando:
 $ ln -s /usr/share/icons/breeze_cursors/cursors ~/.icons/default/cursors
 
 ```
+
+#### Se ha establecido una resolución de pantalla inutilizable
+
+Sus ajustes de configuración locales para kscreen pueden anular aquellos establecidos en `xorg.conf`. Busque los archivos de configuración de kscreen en `~/.local/share/kscreen/` y revise si el modo está establecido en una resolución que no es compatible con su monitor.
 
 ### Problemas de sonido
 

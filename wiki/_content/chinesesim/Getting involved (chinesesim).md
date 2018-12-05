@@ -1,34 +1,35 @@
-**翻译状态：** 本文是英文页面 [Getting Involved](/index.php/Getting_Involved "Getting Involved") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-10-20，点击[这里](https://wiki.archlinux.org/index.php?title=Getting+Involved&diff=0&oldid=493583)可以查看翻译后英文页面的改动。
+相关文章
+
+*   [FAQ (简体中文)](/index.php/FAQ_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "FAQ (简体中文)")
+*   [ArchWiki:Contributing (简体中文)](/index.php/ArchWiki:Contributing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki:Contributing (简体中文)")
+
+**翻译状态：** 本文是英文页面 [Getting Involved](/index.php/Getting_Involved "Getting Involved") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-12-05，点击[这里](https://wiki.archlinux.org/index.php?title=Getting+Involved&diff=0&oldid=555594)可以查看翻译后英文页面的改动。
 
 在进化生物学中，[合作](https://en.wikipedia.org/wiki/Co-operation_(evolution) "wikipedia:Co-operation (evolution)")是指个体付出一个小成本，可以为其他同胞带来更大的收益，而其他个体也一样提供回报，这样每个参与者都会获得非常大的收益。Arch 社区也是如此，很多成员希望为自己喜爱的 GNU/Linux 发行版做出贡献。大家的参与，不仅有利于 Archer 同胞，还能造福[自由软件和开源软件](https://en.wikipedia.org/wiki/zh:%E8%87%AA%E7%94%B1%E5%8F%8A%E5%BC%80%E6%94%BE%E6%BA%90%E4%BB%A3%E7%A0%81%E8%BD%AF%E4%BB%B6 "wikipedia:zh:自由及开放源代码软件")的全体爱好者。
 
-本文简单介绍了 Archer 为 Arch 社团做贡献的若干途径。
+本文简单介绍了 Archer 为 Arch 社团做贡献的若干途径。开始贡献前请先熟悉一下 [行为守则](/index.php/Code_of_conduct_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Code of conduct (简体中文)").
 
 ## Contents
 
-*   [1 Arch Linux 官方项目](#Arch_Linux_官方项目)
+*   [1 社区](#社区)
     *   [1.1 论坛发帖](#论坛发帖)
     *   [1.2 完善维基](#完善维基)
     *   [1.3 加入聊天室](#加入聊天室)
-    *   [1.4 报告安装的软件](#报告安装的软件)
-    *   [1.5 报告和修正 bug](#报告和修正_bug)
-    *   [1.6 安全问题](#安全问题)
-    *   [1.7 创建或维护 AUR 软件包](#创建或维护_AUR_软件包)
-    *   [1.8 Arch 官方软件项目](#Arch_官方软件项目)
-    *   [1.9 捐款](#捐款)
-*   [2 社区项目](#社区项目)
-    *   [2.1 团体](#团体)
-    *   [2.2 软件](#软件)
-        *   [2.2.1 ArchWiki 浏览器](#ArchWiki_浏览器)
-    *   [2.3 其他](#其他)
-*   [3 FAQ](#FAQ)
-    *   [3.1 怎样才能成为 Arch 开发者?](#怎样才能成为_Arch_开发者?)
-    *   [3.2 如何成为 Trusted User?](#如何成为_Trusted_User?)
-    *   [3.3 作为艺术爱好者，我可以做什么?](#作为艺术爱好者，我可以做什么?)
+*   [2 打包](#打包)
+    *   [2.1 报告安装的软件](#报告安装的软件)
+    *   [2.2 报告和修正 bug](#报告和修正_bug)
+    *   [2.3 安全问题](#安全问题)
+    *   [2.4 帮助测试软件包](#帮助测试软件包)
+    *   [2.5 创建或维护 AUR 软件包](#创建或维护_AUR_软件包)
+*   [3 软件项目](#软件项目)
+    *   [3.1 捐款](#捐款)
+*   [4 非官方项目](#非官方项目)
+*   [5 FAQ](#FAQ)
+    *   [5.1 怎样才能成为 Arch 开发者?](#怎样才能成为_Arch_开发者?)
+    *   [5.2 如何成为 Trusted User?](#如何成为_Trusted_User?)
+    *   [5.3 作为艺术爱好者，我可以做什么?](#作为艺术爱好者，我可以做什么?)
 
-## Arch Linux 官方项目
-
-请遵守 [行为守则](/index.php/Code_of_conduct_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Code of conduct (简体中文)").
+## 社区
 
 ### 论坛发帖
 
@@ -41,6 +42,8 @@
 ### 加入聊天室
 
 可以在 [IRC 频道](/index.php/IRC_channel "IRC channel") 中帮助新人解决问题。进入前请先阅读[讨论规则](/index.php/Code_of_conduct#IRC "Code of conduct")。[有许多频道](/index.php/IRC_channels "IRC channels")专门用来讨论不同的问题。
+
+## 打包
 
 ### 报告安装的软件
 
@@ -56,37 +59,39 @@
 
 新的漏洞不停出现，帮助 [Arch 安全小组](/index.php/Arch_Security_Team "Arch Security Team") 追踪新的漏洞。
 
+### 帮助测试软件包
+
+测试仓库中的软件包需要进行测试后才会进入主仓库。请帮助 [Arch 测试组](/index.php/Arch_Testing_Team "Arch Testing Team") 测试新软件包。
+
 ### 创建或维护 AUR 软件包
 
 [Arch 用户软件仓库](/index.php/Arch_User_Repository "Arch User Repository")是一个大众主导的软件仓库，包含了大量用户提交的 PKGBUILD。与官方软件库二进制包的形式不同，AUR 中的软件包将以 PKGBUILD 的形式供用户使用，并全由用户自行编译。用户可通过 AUR 分享软件，其中一些热门软件会选入官方的`[community]`软件仓库。
 
 [aurphan](https://www.archlinux.org/packages/?name=aurphan) 可以找到您系统上无人维护的软件包，已方便您找到想要接收的软件包。
 
-### Arch 官方软件项目
+## 软件项目
 
-此表列举了 Arch 官方的一些 Git 托管项目：[Arch 官方项目](https://git.archlinux.org/)。
+[Arch Linux](/index.php/Arch_Linux "Arch Linux") 发行版包含了很多组件，例如软件包管理器 [pacman](/index.php/Pacman "Pacman")，[archlinux.org](https://archlinux.org) 网站(*archweb*)，[Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") 支持系统 (*aurweb*)。可以单独参与到某个项目。
+
+[DeveloperWiki:Projects](/index.php/DeveloperWiki:Projects "DeveloperWiki:Projects") 包含了项目组成员、交流取到和所用编程语言。项目代码托管在 [git.archlinux.org](https://git.archlinux.org).
 
 ### 捐款
 
 Arch Linux 的生命力源于开发者和社区成员的无私奉献。我们的工作是无偿的，没有维持服务器运营的私人基金，因此也需要您的[资金支持](https://www.archlinux.org/donate/)。
 
-## 社区项目
-
-Arch 拥有一个充满活力的用户社区。如果您的项目想参与到社区中，**请在对应的英文页面**加入：项目地址、项目开始时间和一两句项目简介。
+## 非官方项目
 
 **注意:** 下列所有项目都是社区支持的，即**非官方**。
 
-### 团体
-
-可以加入如下用户组：
+Arch 拥有一个充满活力的用户社区。如果您的项目想参与到社区中，**请在对应的英文页面**加入：项目地址、项目开始时间和一两句项目简介。
 
 	[ArchMap](/index.php/ArchMap "ArchMap")
 
 	ArchMap 计划生成 Arch Linux 用户全球分布图
 
-	[ArchAudio](http://archaudio.org)
+	[Arch Linux Subreddit](http://www.reddit.com/r/archlinux/)
 
-	Arch Linux 高级音频用户的三方源和论坛
+	reddit 中讨论 Arch 的地方.
 
 	[Arch Linux User Group](/index.php/Arch_Linux_User_Group "Arch Linux User Group")
 
@@ -95,56 +100,6 @@ Arch 拥有一个充满活力的用户社区。如果您的项目想参与到社
 	[Arch Women](http://archwomen.org/)
 
 	为 Arch 女性用户提供的团体（[论坛帖子](https://bbs.archlinux.org/viewtopic.php?id=136184)）
-
-	[LinkedIn 组](http://www.linkedin.com/groups?gid=1399787)
-
-	Arch Linux 用户和专家组
-
-### 软件
-
-面向 Arch Linux 的社区软件项目：
-
-	[Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")
-
-	一家由 Arch Linux 用户推动的大规模民间仓库。
-
-	[Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories")
-
-	由社群成员维护的非官方二进制仓库。
-
-	[Arch based distributions](/index.php/Arch_based_distributions "Arch based distributions")
-
-	基于 Arch 的其他发行版。
-
-	[AUR helpers](/index.php/AUR_helpers "AUR helpers")
-
-	方便用户使用[AUR](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)")的工具。
-
-	[Pacman GUI Frontends](/index.php/Pacman_GUI_Frontends "Pacman GUI Frontends")
-
-	[pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)") 的图形前端。
-
-#### ArchWiki 浏览器
-
-以下向您提供了四种访问 ArchWiki 的不同途径：
-
-	[arch-wiki-docs](https://github.com/lahwaacz/arch-wiki-docs)
-
-	专为离线浏览而优化的 ArchWiki [arch-wiki-docs](https://www.archlinux.org/packages/?name=arch-wiki-docs).
-
-	[arch-wiki-lite](http://kmkeen.com/arch-wiki-lite/)
-
-	Arch-wiki-lite 针对不方便上网，或缺乏图形化的网络浏览器的用户而设计，提供了尽可能极佳的体验。[arch-wiki-lite](https://www.archlinux.org/packages/?name=arch-wiki-lite)
-
-	[ArchWiki Viewer for Android](https://bbs.archlinux.org/viewtopic.php?id=150538)
-
-	ArchLinux wiki 的简单浏览器，网页格式针对移动端而优化。
-
-	[Wikicurses](https://bbs.archlinux.org/viewtopic.php?id=187864)
-
-	一个简单的基于 curses 的阅读器，可以阅读 ArchWiki 或 Wikipedia 等 MediaWiki 网站，软件包：[wikicurses](https://www.archlinux.org/packages/?name=wikicurses), [wikicurses-git](https://aur.archlinux.org/packages/wikicurses-git/).
-
-### 其他
 
 *   [Xyne 的 Arch Linux 贡献](http://xyne.archlinux.ca)
 

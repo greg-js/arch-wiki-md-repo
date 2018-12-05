@@ -40,21 +40,21 @@ This article covers software to view, edit and convert [PDF](https://en.wikipedi
 **Note:** Some [web browsers](/index.php/Web_browser "Web browser") can display PDF files, for example with [PDF.js](/index.php/Browser_plugins#PDF.js "Browser plugins").
 
 | Name | Package | PDF | PostScript | DjVu | PDF forms | License | Note |
-| [apvlv](https://naihe2010.github.io/apvlv/) | [apvlv](https://aur.archlinux.org/packages/apvlv/) | Poppler | No | DjVuLibre | No | GPLv2 | Has [Vim](/index.php/Vim "Vim") keybindings, supports UMD and TXT files. |
-| [Atril](https://github.com/mate-desktop/atril) | [atril](https://www.archlinux.org/packages/?name=atril) | Poppler | libspectre | DjVuLibre | Yes | GPLv2 | Fork of Evince, part of [MATE](/index.php/MATE "MATE"), supports DVI, EPS, EPUB, TIFF, XPS and Comicbook. |
-| [DjView](http://djvu.sourceforge.net/djview4.html) | [djview](https://www.archlinux.org/packages/?name=djview) | No | No | DjVuLibre | No | GPLv2 | By the developers of DjVuLibre. |
-| [Emacs](/index.php/Emacs "Emacs") | [emacs](https://www.archlinux.org/packages/?name=emacs) | Ghostscript* | DjVuLibre* | No | GPLv3 | See also [pdf-tools](https://github.com/politza/pdf-tools) for improved pdf support and the [djvu package](https://elpa.gnu.org/packages/djvu.html) for djvu support. |
-| [Evince](https://en.wikipedia.org/wiki/Evince "wikipedia:Evince") | [evince](https://www.archlinux.org/packages/?name=evince) | Poppler | libspectre | DjVuLibre | Yes | GPLv2 | Part of [GNOME](/index.php/GNOME "GNOME"), supports DVI, EPS, TIFF, XPS and Comicbook. |
-| [Foxit Reader](https://en.wikipedia.org/wiki/Foxit_Reader "wikipedia:Foxit Reader") | [foxitreader](https://aur.archlinux.org/packages/foxitreader/) | custom | No | No | Yes | proprietary | Small and fast (compared to Acrobat) proprietary PDF viewer. |
-| [gv](https://www.gnu.org/software/gv/) | [gv](https://www.archlinux.org/packages/?name=gv) | Ghostscript | No | No | GPLv3 | Graphical user interface for the Ghostscript interpreter. |
-| [llpp](/index.php/Llpp "Llpp") | [llpp](https://www.archlinux.org/packages/?name=llpp) | libmupdf | No | No | Yes | GPLv3 | Based on MuPDF, supports continuous page scrolling and bookmarking. |
-| [MuPDF](/index.php/MuPDF "MuPDF") | [mupdf](https://www.archlinux.org/packages/?name=mupdf) | custom | No | No | Yes | AGPLv3 | Supports EPUB, FictionBook, XPS, Comicbook and CJK. |
-| [Okular](https://en.wikipedia.org/wiki/Okular "wikipedia:Okular") | [okular](https://www.archlinux.org/packages/?name=okular) | Poppler | libspectre | DjVuLibre | Yes | GPL, LGPL | Part of [KDE](/index.php/KDE "KDE"), supports CHM, Comicbook, DVI, EPUB, FictionBook, Mobipocket, ODT, Plucker, TIFF and XPS. |
-| [pdfpc](https://pdfpc.github.io/) | [pdfpc](https://www.archlinux.org/packages/?name=pdfpc) | Poppler | No | No | No | GPLv2 | Presenter console with multi-monitor support for PDF files. |
-| [qpdfview](https://launchpad.net/qpdfview) | [qpdfview](https://www.archlinux.org/packages/?name=qpdfview) | Poppler | libspectre* | DjVuLibre* | Yes | GPLv2 | Tabbed Qt interface, supports CUPS printing. |
-| [Xpdf](https://en.wikipedia.org/wiki/Xpdf "wikipedia:Xpdf") | [xpdf](https://www.archlinux.org/packages/?name=xpdf) | custom | No | No | No | GPLv3 | Can decode LZW and read encrypted PDFs. |
-| [Xreader](https://github.com/linuxmint/xreader/) | [xreader](https://www.archlinux.org/packages/?name=xreader) | Poppler | libspectre* | DjVuLibre* | Yes | GPLv2 | Fork of Evince, developed by Linux Mint, supports DVI, EPUB, TIFF, XPS and Comicbook. |
-| [Zathura](/index.php/Zathura "Zathura") | [zathura](https://www.archlinux.org/packages/?name=zathura) | Poppler* / libmupdf* | libspectre* | DjVuLibre* | Yes | zlib | Customizable with plugins, functional, supports Comicbook. |
+| [apvlv](https://naihe2010.github.io/apvlv/) | [apvlv](https://aur.archlinux.org/packages/apvlv/) | Poppler | ✘ | DjVuLibre | ✘ | GPLv2 | Has [Vim](/index.php/Vim "Vim") keybindings, supports UMD and TXT files. |
+| [Atril](https://github.com/mate-desktop/atril) | [atril](https://www.archlinux.org/packages/?name=atril) | Poppler | libspectre | DjVuLibre | ✔ | GPLv2 | Fork of Evince, part of [MATE](/index.php/MATE "MATE"), supports DVI, EPS, EPUB, TIFF, XPS and Comicbook. |
+| [DjView](http://djvu.sourceforge.net/djview4.html) | [djview](https://www.archlinux.org/packages/?name=djview) | ✘ | ✘ | DjVuLibre | ✔ | GPLv2 | By the developers of DjVuLibre. |
+| [Emacs](/index.php/Emacs "Emacs") | [emacs](https://www.archlinux.org/packages/?name=emacs) | Ghostscript* | DjVuLibre* | ✘ | GPLv3 | See also [pdf-tools](https://github.com/politza/pdf-tools) for improved pdf support and the [djvu package](https://elpa.gnu.org/packages/djvu.html) for djvu support. |
+| [Evince](https://en.wikipedia.org/wiki/Evince "wikipedia:Evince") | [evince](https://www.archlinux.org/packages/?name=evince) | Poppler | libspectre | DjVuLibre | ✔ | GPLv2 | Part of [GNOME](/index.php/GNOME "GNOME"), supports DVI, EPS, TIFF, XPS and Comicbook. |
+| [Foxit Reader](https://en.wikipedia.org/wiki/Foxit_Reader "wikipedia:Foxit Reader") | [foxitreader](https://aur.archlinux.org/packages/foxitreader/) | custom | ✘ | ✘ | ✔ | proprietary | Small and fast (compared to Acrobat) proprietary PDF viewer. |
+| [gv](https://www.gnu.org/software/gv/) | [gv](https://www.archlinux.org/packages/?name=gv) | Ghostscript | ✘ | ✘ | GPLv3 | Graphical user interface for the Ghostscript interpreter. |
+| [llpp](/index.php/Llpp "Llpp") | [llpp](https://www.archlinux.org/packages/?name=llpp) | libmupdf | ✘ | ✘ | ✔ | GPLv3 | Based on MuPDF, supports continuous page scrolling and bookmarking. |
+| [MuPDF](/index.php/MuPDF "MuPDF") | [mupdf](https://www.archlinux.org/packages/?name=mupdf) | custom | ✘ | ✘ | ✔ | AGPLv3 | Supports EPUB, FictionBook, XPS, Comicbook and CJK. |
+| [Okular](https://en.wikipedia.org/wiki/Okular "wikipedia:Okular") | [okular](https://www.archlinux.org/packages/?name=okular) | Poppler | libspectre | DjVuLibre | ✔ | GPL, LGPL | Part of [KDE](/index.php/KDE "KDE"), supports CHM, Comicbook, DVI, EPUB, FictionBook, Mobipocket, ODT, Plucker, TIFF and XPS. |
+| [pdfpc](https://pdfpc.github.io/) | [pdfpc](https://www.archlinux.org/packages/?name=pdfpc) | Poppler | ✘ | ✘ | ✘ | GPLv2 | Presenter console with multi-monitor support for PDF files. |
+| [qpdfview](https://launchpad.net/qpdfview) | [qpdfview](https://www.archlinux.org/packages/?name=qpdfview) | Poppler | libspectre* | DjVuLibre* | ✔ | GPLv2 | Tabbed Qt interface, supports CUPS printing. |
+| [Xpdf](https://en.wikipedia.org/wiki/Xpdf "wikipedia:Xpdf") | [xpdf](https://www.archlinux.org/packages/?name=xpdf) | custom | ✘ | ✘ | ✘ | GPLv3 | Can decode LZW and read encrypted PDFs. |
+| [Xreader](https://github.com/linuxmint/xreader/) | [xreader](https://www.archlinux.org/packages/?name=xreader) | Poppler | libspectre* | DjVuLibre* | ✔ | GPLv2 | Fork of Evince, developed by Linux Mint, supports DVI, EPUB, TIFF, XPS and Comicbook. |
+| [Zathura](/index.php/Zathura "Zathura") | [zathura](https://www.archlinux.org/packages/?name=zathura) | Poppler* / libmupdf* | libspectre* | DjVuLibre* | ✔ | zlib | Customizable with plugins, functional, supports Comicbook. |
 
 	(* means optional)
 

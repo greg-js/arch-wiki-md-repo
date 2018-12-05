@@ -6,11 +6,13 @@
 
 *   [1 Installation](#Installation)
 *   [2 IJulia](#IJulia)
-*   [3 Integration with editors](#Integration_with_editors)
-    *   [3.1 Vim](#Vim)
-        *   [3.1.1 Syntax highlighting and more](#Syntax_highlighting_and_more)
-        *   [3.1.2 Linting](#Linting)
-*   [4 Performance](#Performance)
+*   [3 Package build errors](#Package_build_errors)
+    *   [3.1 Arpack](#Arpack)
+*   [4 Integration with editors](#Integration_with_editors)
+    *   [4.1 Vim](#Vim)
+        *   [4.1.1 Syntax highlighting and more](#Syntax_highlighting_and_more)
+        *   [4.1.2 Linting](#Linting)
+*   [5 Performance](#Performance)
 
 ## Installation
 
@@ -19,6 +21,29 @@
 ## IJulia
 
 If attempting to install [ijulia](https://github.com/JuliaLang/IJulia.jl) by running `Pkg.add("IJulia")` gives the warning `MbedTLS had build errors.` you might need to install the [mbedtls](https://www.archlinux.org/packages/?name=mbedtls) package.
+
+## Package build errors
+
+### Arpack
+
+Building the Arpack package can result in an error like shown below (stacktrace omitted):
+
+ `julia> Pkg.build("Arpack")` 
+```
+  Building Arpack → `~/.julia/packages/Arpack/UiiMc/deps/build.log`
+┌ Error: Error building `Arpack`:
+│ ERROR: LoadError: LibraryProduct(nothing, ["libarpack"], :libarpack, "Prefix(~/.julia/packages/Arpack/UiiMc/deps/usr)") is not satisfied, cannot generate deps.jl!
+```
+
+[An issue has been filed](https://github.com/JuliaLinearAlgebra/Arpack.jl/issues/5).
+
+Arpack packages its own `libarpack.so` that requires the DSO `libopenblas64_.so.0` to be present on the system:
+
+ `$ ldd ~/packages/Arpack/UiiMc/deps/usr/lib/libarpack.so | grep 'not found'`  `        libopenblas64_.so.0 => not found` 
+
+The `UiiMc` part of the path may be different on your system. As shown, the required DSO is not present on the system, causing the build error.
+
+The DSO `/usr/lib/libopenblas.so` from the package [openblas](https://www.archlinux.org/packages/?name=openblas) probably cannot function stably as drop-in replacement, since [the 64 suffix seems to be used to indicate a difference in interface](https://github.com/xianyi/OpenBLAS/issues/1763) and [the 64 suffix does indicate a different version rather than a difference in target architecture](http://numpy-discussion.10968.n7.nabble.com/Linking-Numpy-with-parallel-OpenBLAS-td41590.html).
 
 ## Integration with editors
 

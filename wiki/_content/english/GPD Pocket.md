@@ -111,7 +111,7 @@ ACTION=="add|change", KERNEL=="event[0-9]*", ATTRS{name}=="Goodix Capacitive Tou
 
 ##### Right Click Emulation
 
-The above configuration for mouse scroll emulation only works for Xorg. Under Wayland, such configuration is supposed to be exposed by the compositor, and unfortunately, some compositors (e.g. GNOME Wayland) does not expose these configurations properly. However, the regarding functionality is still available in `libinput`. Since these compositors normally loads `/etc/profile.d`, `LD_PRELOAD` can be used to hook into `libinput` and force apply these configurations.
+Unlike Xorg, under which right click emulation can be enabled by the standard Xorg configuration files, under Wayland, such configuration is supposed to be exposed by the compositor, and unfortunately, some compositors (e.g. GNOME Wayland) does not expose these configurations properly. However, the regarding functionality is still available in `libinput`. Since these compositors normally loads `/etc/profile.d`, `LD_PRELOAD` can be used to hook into `libinput` and force apply these configurations.
 
 A sample implementation of this approach is available [here](https://github.com/PeterCxy/scroll-emulation).
 

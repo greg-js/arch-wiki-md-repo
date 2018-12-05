@@ -564,13 +564,9 @@ If running services like [Samba](/index.php/Samba "Samba")/[NFS](/index.php/NFS 
 
 ### systemd-resolve not searching the local domain
 
-[systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") may not search the local domain when given just the hostname, even when `UseDomains=yes` or `Domains=[domain-list]` is present in the appropriate *.network* file, and that file produces the expected `search [domain-list]` in `resolv.conf`. If you run into this problem:
+[systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") may not search the local domain when given just the hostname, even when `UseDomains=yes` or `Domains=[domain-list]` is present in the appropriate *.network* file, and that file produces the expected `search [domain-list]` in `resolv.conf`. You can run `networkctl status` or `resolvectl status` to check if the search domains are actually being picked up.
 
-*   Be sure [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") is actually running, and `/etc/resolv.conf` is a symlink to `/run/systemd/resolve/resolv.conf`
-*   Run `networkctl status` or `resolvectl status` and confirm the search domains are actually being picked up
-*   Make sure `dhcpcd` or another client is not running and overwriting `/etc/resolv.conf` with its own values
-
-If none of these work, you can try the following workarounds, some of which involve disabling parts of systemd-resolved:
+Possible workarounds:
 
 *   Trim `/etc/nsswitch.conf`'s `hosts` database (e.g., by removing `[!UNAVAIL=return]` option after `resolve` service)
 *   Switch to using fully-qualified domain names

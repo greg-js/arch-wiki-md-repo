@@ -107,7 +107,7 @@ After the first building phase, bind the [PGO cache](#Create_a_PGO_cache):
 
 Once the package is [installed](/index.php/Pacman#Additional_commands "Pacman"), test-run its executables.
 
-**Note:** Profiles are generated on `exit()`. Persistent daemons, such as [systemd](/index.php/Systemd "Systemd"), may require a reboot to produce profiles; if you have rebooted, be sure to rebind the PGO cache before rebuilding.
+**Note:** Profiles are generated on program `exit()`. Persistent daemons, such as [systemd](/index.php/Systemd "Systemd"), may require a reboot to produce profiles. If you have rebooted, be sure to rebind the PGO cache before rebuilding.
 
 For the second building phase, do *not* pass `-c` to `makechrootpkg`, but clean `$srcdir` and overwrite the previous package by passing `-Cf` to `makepkg`:
 

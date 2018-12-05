@@ -71,12 +71,14 @@ $ youtube-dl -f *format* *URL*
 
 ### Extract audio
 
-Use `-x` for audio-only downloads (requires [FFmpeg](/index.php/FFmpeg "FFmpeg")).
+Use `-x` for audio-only downloads (requires [FFmpeg](/index.php/FFmpeg "FFmpeg")):
 
 ```
 $ youtube-dl -x -f bestaudio *URL*
 
 ```
+
+Depending on the available source streams, this will often correct the audio-only container. If an audio-only stream is not available, exclude `-f bestaudio` from the example above. This will download the video and copy its audio as post process. By default this will remove the downloaded video, include `-k` to keep it.
 
 ### Subtitles
 
