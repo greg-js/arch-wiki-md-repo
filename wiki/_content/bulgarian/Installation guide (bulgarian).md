@@ -52,7 +52,7 @@ Alternatively, run `pacman-key -v archlinux-<version>-x86_64.iso.sig` from an ex
 
 „Живата“ среда може да бъде включена от [USB флашка](/index.php/USB_flash_installation_media "USB flash installation media"), [компакт диск](/index.php/Optical_disc_drive#Burning "Optical disc drive") или по мрежа с [PXE](/index.php/PXE "PXE"). За други инсталационни начини, вижте [Category:Installation process](/index.php/Category:Installation_process "Category:Installation process").
 
-*   Pointing the current boot device to a drive containing the Arch installation media is typically achieved by pressing a key during the [POST](https://en.wikipedia.org/wiki/Power-on_self_test "w:Power-on self test") phase, as indicated on the splash screen. Refer to your motherboard's manual for details.
+*   За да изберете носителя с Arch, вероятно трябва да натиснете клавиш по време на [автоматичения тест при включване](https://en.wikipedia.org/wiki/Power-on_self_test "w:Power-on self test"). Погледнете ръководството на дънната платка на компютъра Ви за повече информация.
 *   Щом се появи менюто на Arch, изберете *Boot Arch Linux* и натиснете `Enter` за да влезете в инсталационната среда.
 *   Вижте [README.bootparams](https://projects.archlinux.org/archiso.git/tree/docs/README.bootparams) за списък с [boot параметри](/index.php/Kernel_parameters#Configuration "Kernel parameters"), и [x86_64](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) за списък с включените пакети.
 

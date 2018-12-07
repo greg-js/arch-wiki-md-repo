@@ -126,7 +126,16 @@ $ mpv av://v4l2:/dev/video0
 
 ```
 
-From here you have to press `s` to take the snapshot. The snapshot will be saved in your current folder as **mpv-shotNNNN.jpg**.
+To use MJPEG as the pixelformat instead of the default (in many cases YUYV), you can do the following:
+
+```
+$ mpv --demuxer-lavf-format video4linux2 --demuxer-lavf-o-set input_format=mjpeg /dev/video0
+
+```
+
+In some cases this can lead to drastic improvements in quality and performance (5FPS -> 30FPS for example).
+
+From here you have to press `s` to take the snapshot. The snapshot will be saved in your current folder as `mpv-shot*NNNN*.jpg`.
 
 ### FFmpeg
 

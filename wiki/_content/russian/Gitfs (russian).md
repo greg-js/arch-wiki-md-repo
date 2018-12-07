@@ -13,7 +13,7 @@ From [gitfs](https://www.presslabs.org/gitfs/docs/):
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Write access to /var/lib/gitfs](#Write_access_to_.2Fvar.2Flib.2Fgitfs)
+    *   [3.1 Write access to /var/lib/gitfs](#Write_access_to_/var/lib/gitfs)
     *   [3.2 Write access to pygit2](#Write_access_to_pygit2)
     *   [3.3 Options for use with ssh key](#Options_for_use_with_ssh_key)
 

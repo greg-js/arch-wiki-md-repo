@@ -23,7 +23,6 @@ This article builds upon [Mail server](/index.php/Mail_server "Mail server"). Th
 *   [4 TLS](#TLS)
     *   [4.1 Secure SMTP (sending)](#Secure_SMTP_(sending))
     *   [4.2 Secure SMTP (receiving)](#Secure_SMTP_(receiving))
-        *   [4.2.1 SMTPS (port 465)](#SMTPS_(port_465))
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Blacklist incoming emails](#Blacklist_incoming_emails)
     *   [5.2 Hide the sender's IP and user agent in the Received header](#Hide_the_sender's_IP_and_user_agent_in_the_Received_header)
@@ -132,10 +131,6 @@ To see all of your configs, type `postconf`. To see how you differ from the defa
 
 ## TLS
 
-**Warning:** If you deploy [TLS](https://en.wikipedia.org/wiki/TLS "wikipedia:TLS"), be sure to follow [weakdh.org's guide](https://weakdh.org/sysadmin.html) to prevent FREAK/Logjam. Since mid-2015, the default settings have been safe against [POODLE](https://en.wikipedia.org/wiki/POODLE "wikipedia:POODLE"). For more information see [Server-side TLS](/index.php/Server-side_TLS "Server-side TLS").
-
-You need to [obtain a certificate](/index.php/Obtain_a_certificate "Obtain a certificate").
-
 For more information, see [Postfix TLS Support](http://www.postfix.org/TLS_README.html).
 
 ### Secure SMTP (sending)
@@ -148,9 +143,11 @@ To *enforce* TLS (and fail when the remote server does not support it), change `
 
 ### Secure SMTP (receiving)
 
+**Warning:** If you deploy [TLS](https://en.wikipedia.org/wiki/TLS "wikipedia:TLS"), be sure to follow [weakdh.org's guide](https://weakdh.org/sysadmin.html) to prevent FREAK/Logjam. Since mid-2015, the default settings have been safe against [POODLE](https://en.wikipedia.org/wiki/POODLE "wikipedia:POODLE"). For more information see [Server-side TLS](/index.php/Server-side_TLS "Server-side TLS").
+
 By default, Postfix will not accept secure mail.
 
-To enable STARTTLS over SMTP (port 587, the proper way of securing SMTP), add the following lines to `main.cf`
+You need to [obtain a certificate](/index.php/Obtain_a_certificate "Obtain a certificate"). Point Postfix to your TLS certificates by adding the following lines to `main.cf`:
 
  `/etc/postfix/main.cf` 
 ```
@@ -159,7 +156,9 @@ smtpd_tls_cert_file = **/path/to/cert.pem**
 smtpd_tls_key_file = **/path/to/key.pem**
 ```
 
-In `master.cf`, find and uncomment the following lines to enable the service on that port with the correct settings:
+There are two ways to accept secure mail. STARTTLS over SMTP (port 587) and SMTPS (port 465). The latter was previously deprecated but was reinstated by [RFC:8314](https://tools.ietf.org/html/rfc8314 "rfc:8314").
+
+To enable STARTTLS over SMTP (port 587), uncomment the following lines in `master.cf`:
 
  `/etc/postfix/master.cf` 
 ```
@@ -179,17 +178,11 @@ submission inet n       -       n       -       -       smtpd
 
 The `smtpd_*_restrictions` options remain commented because `$mua_*_restrictions` are not defined in main.cf by default. If you do decide to set any of `$mua_*_restrictions`, uncomment those lines too.
 
-If you need support for the deprecated SMTPS port 465, also follow the next section.
-
-#### SMTPS (port 465)
-
-The deprecated method of securing SMTP is using the **wrapper mode** which uses the system service **smtps** as a non-standard service and runs on port 465.
-
-To enable it, uncomment the following lines in `master.cf`:
+To enable SMTPS (port 465), uncomment the following lines in `master.cf`:
 
  `/etc/postfix/master.cf` 
 ```
-smtps     inet  n       -       n       -       -       smtpd
+**smtps**     inet  n       -       n       -       -       smtpd
   -o syslog_name=postfix/smtps
   -o smtpd_tls_wrappermode=yes
   -o smtpd_sasl_auth_enable=yes
@@ -203,20 +196,20 @@ smtps     inet  n       -       n       -       -       smtpd
 
 ```
 
+And in the first line, replace `**smtps**` with `submissions`. (this is the official service name according to [IANA](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.txt); Postfix still references the old name)
+
 The rationale surrounding the `$smtpd_*_restrictions` lines is the same as above.
 
-After this, verify that these lines are in `/etc/services`:
-
+**Note:** If you get an error message like `postfix/master[5309]: fatal: 0.0.0.0:smtps: Servname not supported for ai_socktype`, make sure that you have the following line in `postfix/master.cf`:
 ```
-smtps 465/tcp # Secure SMTP
-smtps 465/udp # Secure SMTP
+submissions inet n       -       n       -       -       smtpd
 
 ```
 
-If they are not there, go ahead and add them (replace the other listing for port 465). Otherwise Postfix will not start and you will get the following error:
+Also make sure that `/etc/services` is up to date and includes the following line:
 
 ```
-*postfix/master[5309]: fatal: 0.0.0.0:smtps: Servname not supported for ai_socktype*
+submissions 465/tcp
 
 ```
 

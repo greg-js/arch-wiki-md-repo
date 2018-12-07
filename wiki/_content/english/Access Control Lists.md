@@ -50,21 +50,30 @@ Using the default mount options instead of an entry in `/etc/fstab` is very usef
 
 The ACL can be modified using the *setfacl* command.
 
-To add permissions for a user (`*user*` is either the user name or ID):
+**Tip:** You can list file/directory permission changes without modifying the permissions (i.e. dry-run) by appending the `--test` flag.
+
+To set permissions for a user (`*user*` is either the user name or ID):
 
 ```
 # setfacl -m "u:*user:permissions*" <file/dir>
 
 ```
 
-To add permissions for a group (`*group*` is either the group name or ID):
+To set permissions for a group (`*group*` is either the group name or ID):
 
 ```
 # setfacl -m "g:*group:permissions*" <file/dir>
 
 ```
 
-To allow all files or directories to inherit ACL entries from the directory it is within:
+To set permissions for others:
+
+```
+# setfacl -m "other:*permissions*" <file/dir>
+
+```
+
+To allow all *newly created* files or directories to inherit entries from the parent directory (this will not affect files which will be *copied* into the directory):
 
 ```
 # setfacl -dm "*entry*" <dir>
@@ -78,12 +87,23 @@ To remove a specific entry:
 
 ```
 
-To remove all entries:
+To remove the default entries:
+
+```
+# setfacl -k <file/dir>
+
+```
+
+To remove all entries (entries of the owner, group and others are retained):
 
 ```
 # setfacl -b <file/dir>
 
 ```
+
+**Note:** The default behavior of *setfacl* is to recalculate the ACL mask entry, unless a `--mask` entry was explicitly given. The mask entry is set to the union of all permissions of the owning group, and all named user and group entries (These are exactly the entries affected by the mask entry).
+
+**Tip:** To apply operations to all files and directories recursively, append the `-R` argument.
 
 ### Show ACL
 
@@ -189,16 +209,16 @@ The following technique describes how a process like a [web server](/index.php/W
 
 In the following we assume that the web server runs as the user `http` and grant it access to `geoffrey`'s home directory `/home/geoffrey`.
 
-The first step is granting execution permission to `http` so it can access `geoffrey`'s home:
+The first step is granting execution permissions for the user `http`:
 
 ```
 # setfacl -m "u:http:--x" /home/geoffrey
 
 ```
 
-*Remember*: Execution permissions to a directory are necessary for a process to list the directory's content.
+**Note:** Execution permissions to a directory are necessary for a process to list the directory's content.
 
-Since `http` is now able to access files in `/home/geoffrey`, `other` no longer needs access, so it can be safely removed:
+Since the user `http` is now able to access files in `/home/geoffrey`, others no longer need access:
 
 ```
 # chmod o-rx /home/geoffrey
@@ -222,6 +242,12 @@ other::---
 ```
 
 As the above output shows, `other`'s no longer have any permissions, but the user `http` is still able to access the files, thus security might be considered increased.
+
+**Note:** One may need to give write access for the user `http` on specific directories and/or files:
+```
+# setfacl -dm "u:http:rwx" /home/geoffrey/project1/cache
+
+```
 
 ## See also
 

@@ -5,13 +5,15 @@ Related articles
 *   [OpenDMARC](/index.php/OpenDMARC "OpenDMARC")
 *   [OpenDKIM](/index.php/OpenDKIM "OpenDKIM")
 
-[Postfix](https://en.wikipedia.org/wiki/Postfix_(software) 是一个邮件传输代理软件（ 请参见（英文）： [mail transfer agent](/index.php/Mail_transfer_agent "Mail transfer agent") ） 。按照其[官方网站](http://www.postfix.org/)的说法:
+**翻译状态：** 本文是英文页面 [Postfix](/index.php/Postfix "Postfix") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-12-06，点击[这里](https://wiki.archlinux.org/index.php?title=Postfix&diff=0&oldid=558391)可以查看翻译后英文页面的改动。
+
+[Postfix](https://en.wikipedia.org/wiki/Postfix_(software) 是[邮件传输代理软件](/index.php/Mail_transfer_agent "Mail transfer agent")。按照其 [官方网站](http://www.postfix.org/)的说法:
 
 	attempts to be fast, easy to administer, and secure, while at the same time being sendmail compatible enough to not upset existing users. Thus, the outside has a sendmail-ish flavor, but the inside is completely different.
 
 	快速、管理简单、安全， 同时足够兼容[Sendmail (简体中文)](/index.php/Sendmail_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Sendmail (简体中文)")，从而不会影响现有用户。 因此，从外面看是sendmail-ish风格，但内部是完全不同的。
 
-本文基于邮件服务器（[Mail server](/index.php/Mail_server "Mail server")（英文））。 本文的目标是设置Postfix并解释基本配置文件的功能。 这里有两种交付方式的设置说明：本地系统用户方式 和 虚拟用户方式。
+本文基于 [邮件服务器](/index.php/Mail_server "Mail server")。 本文的目标是设置Postfix并解释基本配置文件的功能。 这里有两种交付方式的设置说明：本地系统用户方式 和 虚拟用户方式。
 
 ## Contents
 
@@ -52,20 +54,20 @@ Related articles
 
 ## 安装
 
-安装（[Install](/index.php/Install "Install")（英文）） [postfix](https://www.archlinux.org/packages/?name=postfix) 软件包。
+[安装](/index.php/Install "Install") 软件包 [postfix](https://www.archlinux.org/packages/?name=postfix)。
 
 ## 配置
 
-请参照软件开发者提供的： [Postfix Basic Configuration 基础配置项（英文）](http://www.postfix.org/BASIC_CONFIGURATION_README.html). 默认的配置文件位于`/etc/postfix` 。 其中两个非常重要的文件是:
+请参照软件开发者提供的： [Postfix Basic Configuration 基础配置项](http://www.postfix.org/BASIC_CONFIGURATION_README.html). 默认的配置文件位于`/etc/postfix` 。 其中两个非常重要的文件是:
 
 *   `master.cf`, defines what Postfix services are enabled an what how clients connect to them, see [master(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/master.5)
 *   `main.cf`, 主配置文件，请参照 [postconf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/postconf.5)（英文）
 
-配置文件更改过后需要重新加载（[reload](/index.php/Reload "Reload")（英文））主服务（ `postfix.service`（英文））来使其生效。
+配置文件更改过后需要 [重新加载](/index.php/Reload "Reload") 主服务 `postfix.service`。
 
 ### 别名 Aliases
 
-请参照在线man文件： [aliases(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/postfix/aliases.5.en)（英文）。
+请参照在线 man 文件： [aliases(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/postfix/aliases.5.en)。
 
 别名配置文件： `/etc/postfix/aliases`。你可以在这个文件里指定别名 (有时候也被称为 forwarders ) 。
 

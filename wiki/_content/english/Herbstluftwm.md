@@ -50,50 +50,48 @@ The main way to control herbstluftwm is though commands to herbstclient. Since h
 
 ### Script to switch to the next empty tag
 
-The following ruby script allows you to switch to the (next or previous) (full or empty) tag. Call it with the arguments (+1 or -1) and (full or empty). For example, if you save the script to herbst-move.rb, then
+The following ruby script allows you to switch to the (next or previous) (full or empty) tag. Call it with the arguments (+1 or -1) and (full or empty). For example, if you save the script to herbst-move.py, then
 
 ```
-ruby herbst-move.rb +1 full
+python3 herbst-move.py +1 full
 
 ```
 
 will move you to the next full tag. I use the following key bindings.
 
 ```
-hc keybind $Mod-Left  spawn ruby /home/carl/Ruby/herbst-move.rb -1 empty
-hc keybind $Mod-Right spawn ruby /home/carl/herbst-move.rb +1 empty
-hc keybind $Mod-Up spawn ruby /home/carl/Ruby/herbst-move.rb -1 full
-hc keybind $Mod-Down spawn ruby /home/carl/Ruby/herbst-move.rb +1 full
+hc keybind $Mod-Left  spawn herbst-move.py -1 empty
+hc keybind $Mod-Right spawn herbst-move.py +1 empty
+hc keybind $Mod-Up spawn herbst-move.py -1 full
+hc keybind $Mod-Down spawn herbst-move.py +1 full
 
 ```
 
 And here is the script.
 
 ```
-#!/usr/local/bin/ruby
+#!/usr/bin/env python3
+def run(*cmd):
+    from subprocess import Popen, PIPE
+    proc = Popen(cmd, shell=False, stderr=PIPE, stdout=PIPE)
+    return proc.stdout.read()
 
-incr, type = ARGV
-
-d = incr.to_i
-if type == 'full'
-  ch = '.'
-else
-  ch = ':'
-end
-
-array = `herbstclient tag_status 0`.scan(/[:\.\#][^\t]*/)
-len = array.length
-orig = array.find_index{|e| e[0] == '#'}
-
-i = (orig+d) % len
-while 
-  array[i][0] == ch
-  i = (i+d) % len
-end
-
-if i != orig
-  system "herbstclient use_index #{i}"
-end
+import sys
+tag_offset, mode = sys.argv[1:]
+tag_offset = int(tag_offset)
+if mode == 'full':
+    ch = {'.'}
+elif mode == 'empty':
+    ch = {':', '!'}
+else:
+    raise Exception('Unknown type ' + mode)
+tag_list = run('herbstclient', 'tag_status', '0').strip().decode('ascii').split('\t')
+tag_curr = int(run('herbstclient', 'attr', 'tags.focus.index').strip())
+tag_next = (tag_curr + tag_offset) % len(tag_list)
+while (tag_next != tag_curr) and (tag_list[tag_next][0] in ch):
+    tag_next = (tag_next + tag_offset) % len(tag_list)
+if tag_next != tag_curr:
+    run('herbstclient', 'use_index', str(tag_next))
 
 ```
 

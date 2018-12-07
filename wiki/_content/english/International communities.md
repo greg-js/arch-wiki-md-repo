@@ -19,20 +19,19 @@ This list is by no means complete. If you know of a community that is not listed
 *   [3 French](#French)
 *   [4 German](#German)
 *   [5 Greek](#Greek)
-*   [6 Hungarian](#Hungarian)
-*   [7 Italian](#Italian)
-*   [8 Japanese](#Japanese)
-*   [9 Lithuanian](#Lithuanian)
-*   [10 Persian](#Persian)
-*   [11 Polish](#Polish)
-*   [12 Portuguese](#Portuguese)
-*   [13 Russian](#Russian)
-*   [14 Serbian](#Serbian)
-*   [15 Spanish](#Spanish)
-*   [16 Swedish](#Swedish)
-*   [17 Turkish](#Turkish)
-*   [18 Ukrainian](#Ukrainian)
-*   [19 Vietnamese](#Vietnamese)
+*   [6 Italian](#Italian)
+*   [7 Japanese](#Japanese)
+*   [8 Lithuanian](#Lithuanian)
+*   [9 Persian](#Persian)
+*   [10 Polish](#Polish)
+*   [11 Portuguese](#Portuguese)
+*   [12 Russian](#Russian)
+*   [13 Serbian](#Serbian)
+*   [14 Spanish](#Spanish)
+*   [15 Swedish](#Swedish)
+*   [16 Turkish](#Turkish)
+*   [17 Ukrainian](#Ukrainian)
+*   [18 Vietnamese](#Vietnamese)
 
 ## Chinese
 
@@ -75,12 +74,6 @@ This list is by no means complete. If you know of a community that is not listed
 
 *   Homepage: [http://archlinux.gr](http://archlinux.gr)
 *   Wiki: [Main page (Ελληνικά)](/index.php/Main_page_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Main page (Ελληνικά)")
-
-## Hungarian
-
-*   Homepage: [http://archlinux.hu/](http://archlinux.hu/)
-*   Forum: [http://archlinux.hu/forum](http://archlinux.hu/forum)
-*   Wiki: [hu:Main page](https://wiki.archlinux.org/index.php/Main_page_(Magyar) "hu:Main page")
 
 ## Italian
 

@@ -19,7 +19,7 @@ This page documents two potential methods of migrating installed systems from i6
         *   [3.1.3 Change Pacman architecture](#Change_Pacman_architecture)
         *   [3.1.4 Download new packages](#Download_new_packages)
     *   [3.2 Package installation](#Package_installation)
-        *   [3.2.1 Install kernel (64-bit)](#Install_kernel_.2864-bit.29)
+        *   [3.2.1 Install kernel (64-bit)](#Install_kernel_(64-bit))
         *   [3.2.2 Install lib32-glibc](#Install_lib32-glibc)
         *   [3.2.3 Reboot](#Reboot)
         *   [3.2.4 Switch to Console Terminal](#Switch_to_Console_Terminal)
@@ -96,7 +96,9 @@ Another package is [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-
 
 ```
 
-	8\. You could run the command twice, because many packages fail to run their post-install scripts first time. This is due to sed, grep, perl, etc. being of the wrong architecture. Or you can make note of any individual package-re-install that throws an error and then go back after the upgrade completes to re-install just those packages. Also, if you see an error about not enough disk space, you can filter the package list alphabetically and upgrade in stages, with for instance `...| grep '^[a-k]' |...`, then perhaps `'^l'` and `'^[m-z]'`. In this case you would also have to run `pacman --root /mnt -Scc` after each install stage to free disk space. Or since all package are downloaded in the livecd ramfs , you can also mount a partition or make a symlink pointing to /var/cache/pacman/pkg (ex: `ln -s /mnt/var/cache/pacman/pkg /var/cache/pacman/pkg`)
+	8\. You could run the command twice, because many packages fail to run their post-install scripts first time. This is due to sed, grep, perl, etc. being of the wrong architecture. Or you can make note of any individual package-re-install that throws an error and then go back after the upgrade completes to re-install just those packages.
+
+	Also, if you see an error about not enough disk space, you can filter the package list alphabetically and upgrade in stages, with for instance `...| grep '^[a-k]' |...`, then perhaps `'^l'` and `'^[m-z]'`. In this case you would also have to run `pacman --root /mnt -Scc` after each install stage to free disk space. Or since all packages are downloaded in the Live CD ramfs, you can also mount a partition or make a symlink pointing to `/var/cache/pacman/pkg` (e.g. `ln -s /mnt/var/cache/pacman/pkg /var/cache/pacman/pkg`).
 
 	9\. Finally, run
 
@@ -113,7 +115,7 @@ Another package is [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-
 
 ```
 
-	11\. After rebooting to your new 64-bit system, edit and then move `/etc/makepkg.conf.pacnew` to `/etc/makepkg.conf`, to migrate the cpu architecture. Then rebuild the "foreign" packages, which will include packages from the AUR.
+	11\. After rebooting to your new 64-bit system, edit and then move `/etc/makepkg.conf.pacnew` to `/etc/makepkg.conf`, to migrate the CPU architecture. Then rebuild the "foreign" packages, which will include packages from the [AUR](/index.php/AUR "AUR").
 
 	You might first want to remove certain orphaned foreign packages before trying to rebuild them. Run this command to find out what 32-bit binaries you still have and reinstall them:
 
@@ -144,7 +146,7 @@ If you do not have all your installed packages in your cache, download them (for
 
 ```
 
-or use bacman from [pacman](https://www.archlinux.org/packages/?name=pacman) package to generate them.
+or use [fakepkg](https://aur.archlinux.org/packages/fakepkg/) package to generate them.
 
 #### Install busybox
 

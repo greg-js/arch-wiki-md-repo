@@ -6,7 +6,7 @@
 
 **翻译状态：** 本文是英文页面 [Official_Repositories](/index.php/Official_Repositories "Official Repositories") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2013-12-21，点击[这里](https://wiki.archlinux.org/index.php?title=Official_Repositories&diff=0&oldid=286771)可以查看翻译后英文页面的改动。
 
-[软件仓库](https://en.wikipedia.org/wiki/software_repository "wikipedia:software repository")（在Debian系发行版中，又叫做“软件源”）是软件包存储的地方。通常我们所说的软件仓库指**在线软件仓库**，亦即用户从互联网获取软件的地方。Arch Linux [软件包维护员](/index.php/Package_Maintainer "Package Maintainer")（包括开发人员以及[受信用户](/index.php/Trusted_Users "Trusted Users")）对基本的、常用的或者流行的软件包进行维护，用户则可以通过[pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")软件包管理器安装使用这写软件。本文将带你了解我们的官方软件仓库。
+[软件仓库](https://en.wikipedia.org/wiki/software_repository "wikipedia:software repository")（在Debian系发行版中，又叫做“软件源”）是软件包存储的地方。通常我们所说的软件仓库指**在线软件仓库**，亦即用户从互联网获取软件的地方。Arch Linux [软件包维护员](/index.php/Package_Maintainer "Package Maintainer")（包括开发人员以及[受信用户](/index.php/Trusted_Users "Trusted Users")）对基本的、常用的或者流行的软件包进行维护，用户则可以通过[pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")软件包管理器安装使用这些软件。本文将带你了解我们的官方软件仓库。
 
 ## Contents
 

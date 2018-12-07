@@ -1,19 +1,22 @@
+**Estado de la traducción**
+Este artículo es una traducción de [ASUS A55VJ](/index.php/ASUS_A55VJ "ASUS A55VJ"), revisada por última vez el **2018-12-05**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=ASUS_A55VJ&diff=0&oldid=558368) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
 ## Contents
 
-*   [1 Model A55VJ-SXH161 (also K55VJ):](#Model_A55VJ-SXH161_(also_K55VJ):)
+*   [1 Modelo A55VJ-SXH161 (también K55VJ):](#Modelo_A55VJ-SXH161_(también_K55VJ):)
     *   [1.1 Hardware](#Hardware)
     *   [1.2 lspci](#lspci)
-    *   [1.3 Graphics](#Graphics)
-    *   [1.4 Touchpad](#Touchpad)
-    *   [1.5 Cardreader](#Cardreader)
+    *   [1.3 Gráficos](#Gráficos)
+    *   [1.4 Panel táctil](#Panel_táctil)
+    *   [1.5 Lector de tarjetas](#Lector_de_tarjetas)
 
-## Model A55VJ-SXH161 (also K55VJ):
+## Modelo A55VJ-SXH161 (también K55VJ):
 
 ### Hardware
 
-*   **Processor:** Intel Core i7-3630QM
-*   **Display:** 15.4" 1366x768
-*   **Graphics:** Intel with NVIDIA GeForce GT 635M
+*   **Procesador:** Intel Core i7-3630QM
+*   **Monitor:** 15.4" 1366x768
+*   **Gráficos:** Intel with NVIDIA GeForce GT 635M
 *   **WLAN:** Intel Wireless-N 2230 802.11b/g/n
 *   **LAN:** Realtek RTL8111/8168 Gigabit Ethernet controller
 
@@ -41,14 +44,14 @@
 
 ```
 
-### Graphics
+### Gráficos
 
-Works with [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel). NVIDIA GT635M works with [Bumblebee](/index.php/Bumblebee "Bumblebee").
+Funciona con [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel). NVIDIA GT635M funciona con [Bumblebee](/index.php/Bumblebee_(Espa%C3%B1ol) "Bumblebee (Español)").
 
-### Touchpad
+### Panel táctil
 
-Works fine, use [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) for better control. Add i8042.nomux=1 to kernel line, seems to help with jittery touchpad.
+Funciona correctamente, utilize [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) para un mejor control. Agregue i8042.nomux=1 a la línea del kernel, parece ayudar con el temblor del panel táctil.
 
-### Cardreader
+### Lector de tarjetas
 
-Works with [rts_bpp-dkms-git](https://aur.archlinux.org/packages/rts_bpp-dkms-git/), remember to blacklist existing mmc modules.
+Funciona con [rts_bpp-dkms-git](https://aur.archlinux.org/packages/rts_bpp-dkms-git/), recuerde poner en lista negra los módulos mmc existentes.

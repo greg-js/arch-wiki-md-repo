@@ -124,7 +124,7 @@ You can now disable scanning again and exit the program:
 
 #### Setting up auto connection
 
-To make your headset auto connect you need to enable PulseAudio's switch-on-connect module. Do this by adding the following lines to your the following to your `/etc/pulse/default.pa`:
+To make your headset auto connect you need to enable PulseAudio's switch-on-connect module. Do this by adding the following lines to `/etc/pulse/default.pa`:
 
  `/etc/pulse/default.pa` 
 ```

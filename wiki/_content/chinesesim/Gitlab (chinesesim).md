@@ -3,6 +3,8 @@ Related articles
 *   [Gitolite](/index.php/Gitolite "Gitolite")
 *   [Ruby on Rails](/index.php/Ruby_on_Rails "Ruby on Rails")
 
+**翻译状态：** 本文是英文页面 [Gitlab](/index.php/Gitlab "Gitlab") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-12-06，点击[这里](https://wiki.archlinux.org/index.php?title=Gitlab&diff=0&oldid=555172)可以查看翻译后英文页面的改动。
+
 这是来自 [Gitlab的主页](https://about.gitlab.com/):
 
 	GitLab 提供 git 仓储管理、代码查阅、问题追踪、动态监控和维基. 企业在本地安装Gitlab并用LDAP和活动目录服务器连接以进行安全的身份验证和授权。单个GitLab服务器可以处理超过25,000个用户，但也可以使用多个活动服务器创建高可用性设置。

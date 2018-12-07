@@ -48,7 +48,7 @@ apt download (bypass the package cache) | zypper --download-only | emerge --fetc
 
 | **<font color="#707070">Action</font>** | **Arch** | **Red Hat/Fedora** | **Debian/Ubuntu** | **SLES/openSUSE** | **Gentoo** |
 | Show all or most information about a package. The tools' verbosity for the default command vary. But with options, the tools are on par with each other. | pacman -[S|Q]i | dnf list, dnf info | apt show / apt-cache policy | zypper info zypper if | emerge -S; emerge -pv; eix |
-| Display local package information: Name, version, description, etc. | pacman -Qi | rpm -qi | dpkg -s / aptitude show | zypper info; rpm -qi | emerge -pv and emerge -S |
+| Display local package information: Name, version, description, etc. | pacman -Qi | rpm -qi / dnf info installed | dpkg -s / aptitude show | zypper info; rpm -qi | emerge -pv and emerge -S |
 | Display remote package information: Name, version, description, etc. | pacman -Si | dnf info | apt-cache show / aptitude show | zypper info | emerge -pv and emerge -S or equery m (meta) |
 | Display files provided by local package | pacman -Ql | rpm -ql | dpkg -L | rpm -Ql | equery files |
 | Display files provided by a remote package | pacman -Fl | dnf repoquery -l or repoquery -l (from package yum-utils) | apt-file list $pattern | pfl |

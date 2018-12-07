@@ -222,10 +222,9 @@ There are few tools that can access/modify the UEFI variables, namely
 
 To add a new boot option using *efibootmgr* you need to know three things:
 
-1.  The disk containing the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (ESP): `/dev/sd*X*`
-2.  The partition number of the ESP on that disk: the `*Y*` in `/dev/sdX*Y*`
-3.  For an NVME `/dev/nvme0n1p*Y*`
-4.  The path to the EFI application (relative to the root of the ESP)
+1.  The disk containing the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (ESP). E.g.: `/dev/sda`, `/dev/nvme0n1`.
+2.  The partition number of the ESP on that disk. The `*Y*` in `/dev/sda*Y*` or `/dev/nvme0n1p*Y*`.
+3.  The path to the EFI application (relative to the root of the ESP)
 
 For example, if you want to add a boot option for `/efi/EFI/refind/refind_x64.efi` where `/efi` is the mount point of the ESP, run
 
@@ -273,7 +272,7 @@ Few Asus and other AMI Aptio x86_64 UEFI firmware based motherboards (from Sandy
 
 Systems with Phoenix SecureCore Tiano UEFI firmware are known to have embedded UEFI Shell which can be launched using either `F6`, `F11` or `F12` key.
 
-**Note:** If you are unable to launch UEFI Shell from the firmware directly using any of the above mentioned methods, create a FAT32 USB pen drive with `Shell.efi` copied as `(USB)/efi/boot/bootx64.efi`. This USB should come up in the firmware boot menu. Launching this option will launch the UEFI Shell for you.
+**Note:** If you are unable to launch UEFI Shell from the firmware directly using any of the above mentioned methods, create a FAT32 USB pen drive with `Shell.efi` copied as `(USB)/EFI/BOOT/BOOTx64.EFI`. This USB should come up in the firmware boot menu. Launching this option will launch the UEFI Shell for you.
 
 ### Important UEFI Shell commands
 

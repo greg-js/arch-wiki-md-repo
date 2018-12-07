@@ -5,15 +5,15 @@ Related articles
 *   [Postfix](/index.php/Postfix "Postfix")
 *   [SOGo](/index.php/SOGo "SOGo")
 
-This article describes how to set up a virtual user mail system, i.e. where the senders and recipients do not correspond to the Linux system users.
+这篇文章主要介绍怎么配置一个使用虚拟用户的邮件系统。例如：些邮件系统的发信人、收信人并不是linux的系统用户（不存在于`/etc/passwd`中）。
 
-Roughly, the components used in this article are [Postfix](/index.php/Postfix "Postfix") as the mail server, [Dovecot](/index.php/Dovecot "Dovecot") as the IMAP server, [Roundcube](/index.php/Roundcube "Roundcube") as the webmail interface and PostfixAdmin as the administration interface to manage it all.
+概略来讲，本文使用[Postfix](/index.php/Postfix_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Postfix (简体中文)")提供邮件发送服务， 使用[Dovecot](/index.php/Dovecot "Dovecot")提供IMAP接收服务， 使用[Roundcube](/index.php/Roundcube "Roundcube")作为邮件的web前端， 使用[PostfixAdmin](/index.php/PostfixAdmin "PostfixAdmin")作为管理界面来管控这一整套系统。
 
-In the end, the provided solution will allow you to use the best currently available security mechanisms, you will be able to send mails using SMTP and SMTPS and receive mails using POP3, POP3S, IMAP and IMAPS. Additionally, configuration will be easy thanks to PostfixAdmin and users will be able to login using Roundcube.
+本文提供的解决方案将允许您使用当前最好的安全机制，您将能够使用SMTP和SMTPS发送邮件，并使用POP3，POP3S，IMAP和IMAPS接收邮件。 此外，由于使用了PostfixAdmin，配置将很容易，用户将能够使用Roundcube登录。
 
 ## Contents
 
-*   [1 Installation](#Installation)
+*   [1 安装](#安装)
 *   [2 Configuration](#Configuration)
     *   [2.1 User](#User)
     *   [2.2 Database](#Database)
@@ -46,7 +46,7 @@ In the end, the provided solution will allow you to use the best currently avail
     *   [7.4 Are your emails sent to gmail users ending up in their junk/spam folders?](#Are_your_emails_sent_to_gmail_users_ending_up_in_their_junk/spam_folders?)
 *   [8 See also](#See_also)
 
-## Installation
+## 安装
 
 Before you start, you must have both a working MySQL server as described in [MySQL](/index.php/MySQL "MySQL") and a working Postfix server as described in [Postfix](/index.php/Postfix "Postfix").
 
@@ -387,7 +387,10 @@ While running the installer ...
 
 *   For the address of the IMAP host, use `ssl://localhost/` or `tls://localhost/` and not just `localhost`.
 *   Use port `993`. Likewise with SMTP.
-*   For the address of the SMTP host, use `tls://localhost/` and port `587` if you used STARTTLS. Use `ssl://localhost/` with port `465` if you used SMTPS.
+*   For the address of the SMTP host, use `tls://localhost/` and port `587` if you used the proper TLS mode.
+
+	(use `ssl://localhost/` with port `465` if you used the wrapper mode)
+
 *   See [#Postfix](#Postfix) for an explanation on that.
 
 The post install process is similar to any other webapp like [PhpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin") or PostFixAdmin. The configuration file is in `/etc/webapps/roundcubemail/config/config.inc.php` which works as an override over `default.inc.php`.

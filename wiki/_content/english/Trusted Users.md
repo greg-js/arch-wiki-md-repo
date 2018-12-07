@@ -76,6 +76,7 @@ For more information, see the [Trusted User Bylaws](https://aur.archlinux.org/tr
 | [mtorromeo](https://aur.archlinux.org/packages.php?K=mtorromeo&SeB=m) | Massimiliano Torromeo | massimiliano.torromeo@gmail.com |
 | [Muflone](https://aur.archlinux.org/packages.php?K=Muflone&SeB=m) | Fabio Castelli | webreg (at) vbsimple.net |
 | [NicoHood](https://aur.archlinux.org/packages.php?K=NicoHood&SeB=m) | NicoHood | archlinux (cat) nicohood (dog) de |
+| [polyzen](https://aur.archlinux.org/packages.php?K=polyzen&SeB=m) | Daniel M. Capella | polycitizen@gmail.com |
 | [sangy](https://aur.archlinux.org/packages.php?K=sangy&SeB=m) | Santiago Torres-Arias | santiago ＠ archlinux ⇶ org |
 | [schivmeister](https://aur.archlinux.org/packages.php?K=schivmeister&SeB=m) | [Ray Rashif](/index.php/User:Schivmeister "User:Schivmeister") | schiv archlinux org |
 | [schuay](https://aur.archlinux.org/packages.php?K=schuay&SeB=m) | Jakob Gruber | jakob.gruber@gmail.com |

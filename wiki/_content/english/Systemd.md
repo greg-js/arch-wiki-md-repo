@@ -130,7 +130,7 @@ To be more accurate, *before* trying to instantiate the `name@.suffix` template 
 **Tip:**
 
 *   Most of the following commands also work if multiple units are specified, see [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) for more information.
-*   The `--now` switch can be used in conjunction with `enable`, `disable`, and `mask` to respectively start, stop, or mask immediately the unit rather than after the next boot.
+*   The `--now` switch can be used in conjunction with `enable`, `disable`, and `mask` to respectively start, stop, or mask the unit *immediately* rather than after rebooting.
 *   A package may offer units for different purposes. If you just installed a package, `pacman -Qql *package* | grep -Fe .service -e .socket` can be used to check and find them.
 
 **Start** a unit immediately:

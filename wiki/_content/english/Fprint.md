@@ -49,7 +49,7 @@ auth      include   system-login
 
 ```
 
-This tries to use fingerprint login first, and if it fails or if it finds no fingerprint signatures in the give user's home directory, it proceeds to password login.
+This tries to use fingerprint login first, and if it fails or if it finds no fingerprint signatures in the given user's home directory, it proceeds to password login.
 
 You can also modify other files in `/etc/pam.d/` in the same way, for example `/etc/pam.d/polkit-1` for GNOME polkit authentication.
 

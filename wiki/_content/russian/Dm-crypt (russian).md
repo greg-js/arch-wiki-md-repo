@@ -4,12 +4,12 @@ Device-mapper - это инфраструктура в ядре Linux 2.6 и 3.x
 
 ## Contents
 
-*   [1 Общие сценарии](#.D0.9E.D0.B1.D1.89.D0.B8.D0.B5_.D1.81.D1.86.D0.B5.D0.BD.D0.B0.D1.80.D0.B8.D0.B8)
-*   [2 Подготовка устройств](#.D0.9F.D0.BE.D0.B4.D0.B3.D0.BE.D1.82.D0.BE.D0.B2.D0.BA.D0.B0_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2)
-*   [3 Шифрование устройства](#.D0.A8.D0.B8.D1.84.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0)
-*   [4 Конфигурация системы](#.D0.9A.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D1.8F_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B)
-*   [5 Шифрование подкачки](#.D0.A8.D0.B8.D1.84.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE.D0.B4.D0.BA.D0.B0.D1.87.D0.BA.D0.B8)
-*   [6 Детали](#.D0.94.D0.B5.D1.82.D0.B0.D0.BB.D0.B8)
+*   [1 Общие сценарии](#Общие_сценарии)
+*   [2 Подготовка устройств](#Подготовка_устройств)
+*   [3 Шифрование устройства](#Шифрование_устройства)
+*   [4 Конфигурация системы](#Конфигурация_системы)
+*   [5 Шифрование подкачки](#Шифрование_подкачки)
+*   [6 Детали](#Детали)
 
 ## Общие сценарии
 
@@ -37,4 +37,4 @@ Device-mapper - это инфраструктура в ядре Linux 2.6 и 3.x
 
 ## Детали
 
-[Dm-crypt/Specialties](/index.php/Dm-crypt/Specialties "Dm-crypt/Specialties") занимается специальными операциями, такими как [Защита незашифрованного загрузочного раздела](/index.php/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition "Dm-crypt/Specialties"), [использование зашифрованных ключей GPG или OpenSSL](/index.php/Dm-crypt/Specialties#Using_GPG.2C_LUKS.2C_or_OpenSSL_Encrypted_Keyfiles "Dm-crypt/Specialties"), метод [загрузки и разблокировки через сеть](/index.php/Dm-crypt/Specialties#Remote_unlocking_of_the_root_.28or_other.29_partition "Dm-crypt/Specialties"), так же для [настройка опции монтирования discard для функции TRIM в SSD дисках](/index.php/Dm-crypt/Specialties#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29 "Dm-crypt/Specialties") и разделы, посвященные [хукам шифрования при нескольких дисках](/index.php/Dm-crypt/Specialties#The_encrypt_hook_and_multiple_disks "Dm-crypt/Specialties").
+[Dm-crypt/Specialties](/index.php/Dm-crypt/Specialties "Dm-crypt/Specialties") занимается специальными операциями, такими как [Защита незашифрованного загрузочного раздела](/index.php/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition "Dm-crypt/Specialties"), [использование зашифрованных ключей GPG или OpenSSL](/index.php/Dm-crypt/Specialties#Using_GPG,_LUKS,_or_OpenSSL_Encrypted_Keyfiles "Dm-crypt/Specialties"), метод [загрузки и разблокировки через сеть](/index.php/Dm-crypt/Specialties#Remote_unlocking_of_the_root_.28or_other.29_partition "Dm-crypt/Specialties"), так же для [настройка опции монтирования discard для функции TRIM в SSD дисках](/index.php/Dm-crypt/Specialties#Discard/TRIM_support_for_solid_state_drives_(SSD) "Dm-crypt/Specialties") и разделы, посвященные [хукам шифрования при нескольких дисках](/index.php/Dm-crypt/Specialties#The_encrypt_hook_and_multiple_disks "Dm-crypt/Specialties").

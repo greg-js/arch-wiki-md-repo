@@ -100,7 +100,7 @@ $ youtube-dl --write-sub --sub-lang *LANG* *URL*
 
 ### Faster downloads
 
-Some websites throttle transfer speeds. You can often get around this by using [Aria2](/index.php/Aria2 "Aria2"), an external downloader which supports multi-connection downloads. For example:
+Some websites throttle transfer speeds. You can often get around this by using [aria2](/index.php/Aria2 "Aria2"), an external downloader which supports multi-connection downloads. For example:
 
 ```
 $ youtube-dl --external-downloader aria2c --external-downloader-args '-c -j 3 -x 3 -s 3 -k 1M' *URL*

@@ -520,11 +520,7 @@ CleanMethod = KeepCurrent
 
 ### Recreate a package from the file system
 
-To recreate a package from the file system, use *bacman* (included with *pacman*). Files from the system are taken as they are, hence any modifications will be present in the assembled package. Distributing the recreated package is therefore discouraged; see [ABS](/index.php/ABS "ABS") and [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive") for alternatives.
-
-**Tip:** *bacman* honours the `PACKAGER`, `PKGDEST` and `PKGEXT` options from `makepkg.conf`. Bacman does not currently honor the `COMPRESS` options in `makepkg.conf`.
-
-An alternative tool would be [fakepkg](https://aur.archlinux.org/packages/fakepkg/). It supports parallelization and can handle multiple input packages in one command, which *bacman* both does not support.
+To recreate a package from the file system, use [fakepkg](https://aur.archlinux.org/packages/fakepkg/). Files from the system are taken as they are, hence any modifications will be present in the assembled package. Distributing the recreated package is therefore discouraged; see [ABS](/index.php/ABS "ABS") and [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive") for alternatives.
 
 ### List of installed packages
 

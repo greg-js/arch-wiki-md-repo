@@ -349,12 +349,14 @@ Now it comes in, that we will have to configure the several server daemons. Cour
 
 Since we like to use SMTP*Auth instead if a IP/Domain based SMTP authentication we need to activate the AUTH*REQUIRED option in esmtpd. Also we activate the CRAM-MD5 challenge method for authorization. NOTE: this setup definitely keeps Outlook losers out. For these buggy and old fashioned clients you will need to use way less restrictive settings!
 
-In `/etc/courier/esmtpd`:
+In `/etc/courier/esmtpd-ssl`:
 
 ```
 AUTH_REQUIRED=1
 ESMTPAUTH="CRAM-MD5"
 ```
+
+**Warning:** Setting AUTH_REQUIRED=1 in `/etc/courier/esmtpd` prevents receiving email from foreign mail servers via smtp
 
 In `/etc/courier/pop3d`:
 

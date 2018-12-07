@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Julia](/index.php/Julia "Julia"), revisada por última vez el **2018-12-04**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Julia&diff=0&oldid=558306) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Julia](/index.php/Julia "Julia"), revisada por última vez el **2018-12-05**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Julia&diff=0&oldid=558306) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 **Nota:** [https://julialang.org/](https://julialang.org/) contiene una documentación magnífica y de código abierto. La información no específica a Arch debería aportarse allí.
 
@@ -9,7 +9,7 @@ Este artículo es una traducción de [Julia](/index.php/Julia "Julia"), revisada
 
 *   [1 Instalación](#Instalación)
 *   [2 IJulia](#IJulia)
-*   [3 Errores de compilación del paquete](#Errores_de_compilación_del_paquete)
+*   [3 Errores de compilación de paquetes](#Errores_de_compilación_de_paquetes)
     *   [3.1 Arpack](#Arpack)
 *   [4 Integración con editores](#Integración_con_editores)
     *   [4.1 Vim](#Vim)
@@ -25,7 +25,7 @@ Este artículo es una traducción de [Julia](/index.php/Julia "Julia"), revisada
 
 Si intenta instalar [ijulia](https://github.com/JuliaLang/IJulia.jl) ejecutando `Pkg.add("IJulia")` y aparece la advertencia `MbedTLS had build errors.`, puede que necesite instalar el paquete [mbedtls](https://www.archlinux.org/packages/?name=mbedtls).
 
-## Errores de compilación del paquete
+## Errores de compilación de paquetes
 
 ### Arpack
 

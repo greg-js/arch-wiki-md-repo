@@ -46,8 +46,8 @@ domainlist local_domains = @ : mydomain.tld
 domainlist relay_to_domains =
 hostlist relay_from_hosts = 
 
-# serve the 2 ports 25 and 587; don't use 465 - it's not an official port
-daemon_smtp_ports = 25 : 587
+# serve the on all used ports
+daemon_smtp_ports = 25 : 465 : 587
 
 # do a reverse name lookup for all incoming connections
 host_lookup = *
@@ -89,8 +89,8 @@ tls_privatekey = /path/to/exim/only/privkey.pem
 tls_require_ciphers = ${if =={$received_port}{25} \
 				{DEFAULT} {HIGH:!MD5:!SHA1:!SHA2}}
 
-# we don't use port 465, so we don't activate TLS on it
-#tls_on_connect_ports = 465
+# traffic on port 465 always uses TLS
+tls_on_connect_ports = 465
 
 # special sections always start with a "begin"
 begin authenticators

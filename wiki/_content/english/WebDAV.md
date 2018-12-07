@@ -210,3 +210,5 @@ Do not forget to restart apache after making changes:
 # systemctl restart httpd
 
 ```
+
+**Note:** If you get an 405 error with apache use `DirectoryIndex disabled` in your Directory config

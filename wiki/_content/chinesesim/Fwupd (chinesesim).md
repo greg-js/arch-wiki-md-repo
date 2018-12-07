@@ -3,6 +3,8 @@ Related articles
 *   [Secure Boot](/index.php/Secure_Boot "Secure Boot")
 *   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
 
+**翻译状态：** 本文是英文页面 [Fwupd](/index.php/Fwupd "Fwupd") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-12-06，点击[这里](https://wiki.archlinux.org/index.php?title=Fwupd&diff=0&oldid=558138)可以查看翻译后英文页面的改动。
+
 **fwupd** 是帮助你在 Linux 下更新固件的小工具，支持但不限于 UEFI/BIOS 固件。
 
 支持的设备列表请查看 [这里](https://fwupd.org/lvfs/devicelist) 更多厂商支持计划请查看 [链接](https://fwupd.org/vendorlist)
