@@ -113,7 +113,7 @@ Some FUSE-based file systems:
 
 *   **[gocryptfs](/index.php/Gocryptfs "Gocryptfs")** — gocryptfs is a userspace stackable cryptographic file-system.
 
-	[https://nuetzlich.net/gocryptfs/](https://nuetzlich.net/gocryptfs/) || [gocryptfs](https://aur.archlinux.org/packages/gocryptfs/)
+	[https://nuetzlich.net/gocryptfs/](https://nuetzlich.net/gocryptfs/) || [gocryptfs](https://www.archlinux.org/packages/?name=gocryptfs)
 
 *   **google-drive-ocamlfuse** — FUSE-based file system backed by Google Drive, written in OCaml.
 

@@ -18,7 +18,7 @@ Este artículo es una traducción de [Incron](/index.php/Incron "Incron"), revis
 
 ## Activación e inicio automático
 
-Después de la instalación, el demonio no se habilitará por defecto. Se puede habilitar utilizando [systemctl](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)").
+Después de la instalación, el demonio no se habilitará por defecto. Se puede habilitar utilizando [systemctl](/index.php/Systemd_(Espa%C3%B1ol)#Utilizar_las_unidades "Systemd (Español)").
 
 ## Configuración
 

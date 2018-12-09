@@ -187,6 +187,10 @@ Before starting the installation, pacman keys need to be setup. Before running t
 
 After [selecting a mirror](/index.php/Mirrors#Enabling_a_specific_mirror "Mirrors"), [refresh the package lists](/index.php/Mirrors#Force_pacman_to_refresh_the_package_lists "Mirrors") and [install](/index.php/Install "Install") what you need: [base](https://www.archlinux.org/groups/x86_64/base/), [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), [parted](https://www.archlinux.org/packages/?name=parted) etc.
 
+**Note:** As there is no any text editor yet, you need to exit arch-chroot and edit mirrorlist using host's text editor.
+
+**Note:** When you try to install packages with pacman, you could get `*error: could not determine cachedir mount point /var/cache/pacman/pkg*`. To workaround it, you could run `mount --bind <directory-to-livecd-or-bootstrap> <directory-to-livecd-or-bootstrap>` before chrooting. See [FS#46169](https://bugs.archlinux.org/task/46169)
+
 ### Installation tips
 
 You can now proceed to [Installation guide#Partition the disks](/index.php/Installation_guide#Partition_the_disks "Installation guide") and follow the rest of the [Installation guide](/index.php/Installation_guide "Installation guide").

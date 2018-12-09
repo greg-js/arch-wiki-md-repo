@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Webcam setup](/index.php/Webcam_setup "Webcam setup"), revisada por última vez el **2018-11-13**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Webcam_setup&diff=0&oldid=550828) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Webcam setup](/index.php/Webcam_setup "Webcam setup"), revisada por última vez el **2018-12-07**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Webcam_setup&diff=0&oldid=558415) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Esta es una guía para configurar su webcam en Arch Linux.
 
@@ -104,7 +104,7 @@ $ vlc v4l:// :v4l-vdev="/dev/video0" :v4l-adev="/dev/audio2" \
 
 ### MPlayer
 
-Para usar [MPlayer](/index.php/MPlayer_(Espa%C3%B1ol) "MPlayer (Español)") para tomar instantáneas de su webcam, ejecute este comando desde el terminal:
+Para usar [MPlayer](/index.php/MPlayer_(Espa%C3%B1ol) "MPlayer (Español)") para tomar instantáneas de su webcam, ejecute este comando desde la terminal:
 
 ```
 $ mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0 -fps 15 -vf screenshot
@@ -122,14 +122,23 @@ Presione `Ctrl+c` para finalizar la grabación.
 
 ### mpv
 
-Para usar [mpv](/index.php/Mpv_(Espa%C3%B1ol) "Mpv (Español)") para tomar instantáneas de su webcam, ejecute este comando desde el terminal:
+Para usar [mpv](/index.php/Mpv_(Espa%C3%B1ol) "Mpv (Español)") para tomar instantáneas desde su webcam, ejecute este comando desde la terminal:
 
 ```
 $ mpv av://v4l2:/dev/video0
 
 ```
 
-Desde aquí, debe pulsar `s` para tomar la instantánea. La instantánea se guardará en su carpeta actual como **mpv-shotNNNN.jpg**.
+Para utilizar MJPEG como formato de pixel en lugar del predeterminado (en muchos casos, YUYV), puede hacer lo siguiente:
+
+```
+$ mpv --demuxer-lavf-format video4linux2 --demuxer-lavf-o-set input_format=mjpeg /dev/video0
+
+```
+
+En algunos casos, esto puede llevar a mejoras drásticas en la calidad y el rendimiento (5FPS -> 30FPS por ejemplo).
+
+Desde aquí, debe pulsar `s` para tomar la instantánea. La instantánea se guardará en su carpeta actual como `mpv-shot*NNNN*.jpg`.
 
 ### FFmpeg
 

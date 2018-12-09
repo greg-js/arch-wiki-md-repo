@@ -878,7 +878,7 @@ $ ndiswrapper -l
 
 ```
 
-Agora a instalação do ndiswrapper está quase concluída; siga as instruções em [Kernel modules#Automatic loading with systemd](/index.php/Kernel_modules#Automatic_loading_with_systemd "Kernel modules") para carregar automaticamente o módulo na inicialização.
+Agora a instalação do ndiswrapper está quase concluída; siga as instruções em [Kernel modules#Automatic module loading with systemd](/index.php/Kernel_modules#Automatic_module_loading_with_systemd "Kernel modules") para carregar automaticamente o módulo na inicialização.
 
 A parte importante é certificar-se de que ndiswrapper existe nesta linha, por isso basta adicioná-lo ao lado dos outros módulos. Seria melhor testar se o ndiswrapper será carregado agora, então:
 

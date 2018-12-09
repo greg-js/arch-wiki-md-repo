@@ -49,7 +49,7 @@ TODO
 
 ### Environment variables
 
-*   TRANSFER_SSL_ENABLED: if "true", you should see [[page](http://kemalcr.com/guide/#ssl%7Cthis)]
+*   TRANSFER_SSL_ENABLED: if "true", you should see [page](http://kemalcr.com/guide/#ssl%7Cthis)
 *   TRANSFER_BASE_STORAGE: the base path where the upload should be stored
 *   TRANSFER_SECURE_SIZE: the size of the salt (minimum 1)
 *   TRANSFER_STORAGE_DAYS: default 7, number of days minimum to keep the files stored

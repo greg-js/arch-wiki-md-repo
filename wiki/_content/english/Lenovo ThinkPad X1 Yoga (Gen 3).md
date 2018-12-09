@@ -62,7 +62,7 @@ Several linux users reported their systems were bricked after enabling "Thunderb
 
 ### EC Fan issues under Linux
 
-Under BIOS version 1.24 the embedded controller will no longer spin the fan up properly during high system load causing CPU throttling issues. Reverting to version 1.21 will restore normal functions or you can use the [ThinkFan](https://aur.archlinux.org/packages/ThinkFan/) package to control it via the OS. See [Fan_speed_control#ThinkPad_laptops](/index.php/Fan_speed_control#ThinkPad_laptops "Fan speed control") for details.
+Under BIOS version 1.24 the embedded controller will no longer spin the fan up properly during high system load causing CPU throttling issues. Reverting to version 1.21 will restore normal functions or you can use the [ThinkFan](https://aur.archlinux.org/packages/ThinkFan/) package to control it via the OS. See [Fan speed control#ThinkPad laptops](/index.php/Fan_speed_control#ThinkPad_laptops "Fan speed control") for details.
 
 ### Updates
 

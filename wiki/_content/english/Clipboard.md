@@ -95,7 +95,7 @@ This section lists daemons that track your clipboard, to provide a clipboard his
 
 *   **CopyQ** — Clever clipboard manager with searchable and editable history, custom actions on items and command line support.
 
-	[https://github.com/hluk/CopyQ](https://github.com/hluk/CopyQ) || [copyq](https://aur.archlinux.org/packages/copyq/)
+	[https://github.com/hluk/CopyQ](https://github.com/hluk/CopyQ) || [copyq](https://www.archlinux.org/packages/?name=copyq)
 
 *   **[Glipper](https://en.wikipedia.org/wiki/Glipper "wikipedia:Glipper")** — Clipboard manager for the GNOME desktop with many features and plugin support.
 

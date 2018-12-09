@@ -56,7 +56,7 @@ A [display manager](https://en.wikipedia.org/wiki/X_display_manager_(program_typ
 
 	[https://sourceforge.net/projects/lxdm/](https://sourceforge.net/projects/lxdm/) || [lxdm](https://www.archlinux.org/packages/?name=lxdm)
 
-*   **[SDDM](/index.php/SDDM "SDDM")** — QML-based display manager and successor to KDE4's kdm; recommended for Plasma 5 and LXQt.
+*   **[SDDM](/index.php/SDDM "SDDM")** — QML-based display manager and successor to KDM; recommended for [Plasma](/index.php/Plasma "Plasma") and [LXQt](/index.php/LXQt "LXQt").
 
 	[https://github.com/sddm/sddm](https://github.com/sddm/sddm) || [sddm](https://www.archlinux.org/packages/?name=sddm)
 

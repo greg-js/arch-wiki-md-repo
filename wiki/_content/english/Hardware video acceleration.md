@@ -306,7 +306,7 @@ This does not represent the *configuration* however. The values above will not c
 
 You can override the [driver](http://www.freedesktop.org/wiki/Software/vaapi/#driversback-endsthatimplementva-api) for VA-API by using the `LIBVA_DRIVER_NAME` [environment variable](/index.php/Environment_variable "Environment variable"):
 
-*   [Intel Graphics](/index.php/Intel_Graphics "Intel Graphics"):
+*   [Intel graphics](/index.php/Intel_graphics "Intel graphics"):
     *   For [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) use `i965`.
     *   For [intel-media-driver](https://www.archlinux.org/packages/?name=intel-media-driver) use `iHD`.
 *   NVIDIA:

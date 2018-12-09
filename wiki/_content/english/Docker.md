@@ -210,7 +210,7 @@ $ git clone [https://github.com/archlinux/archlinux-docker.git](https://github.c
 
 ```
 
-Edit the packages file so it only contains 'base'. Then run:
+Edit the `packages` file so it only contains 'base'. Then run:
 
 ```
 # make docker-image

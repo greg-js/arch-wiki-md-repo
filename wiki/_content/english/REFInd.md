@@ -293,7 +293,7 @@ For automatically detected kernels you can either specify the kernel parameters 
 
 **Tip:** rEFInd will automatically choose the Arch Linux icon (`os_arch.png`) for the boot entry when `/etc/os-release` is on the same partition as the kernel. If your `/boot` is a separate partition see [Configuring the Boot Manager: Setting OS Icons](https://www.rodsbooks.com/refind/configfile.html#icons).
 
-For rEFInd to properly match multiple kernels with their respective initramfs you must uncomment and edit `extra_kernel_version_strings` option in `refind.conf`. E.g.:
+For rEFInd to support the naming scheme of Arch Linux [kernels](/index.php/Kernels "Kernels") and thus allow matching them with their respective initramfs images, you must uncomment and edit `extra_kernel_version_strings` option in `refind.conf`. E.g.:
 
  `*esp*/EFI/refind/refind.conf` 
 ```
@@ -303,7 +303,10 @@ extra_kernel_version_strings linux-hardened,linux-zen,linux-lts,linux
 
 ```
 
-**Note:** rEFInd only supports detecting one initramfs image per kernel, meaning it will not detect fallback initramfs nor [microcode](/index.php/Microcode "Microcode") images.
+**Note:**
+
+*   rEFInd only supports detecting one initramfs image per kernel, meaning it will not detect fallback initramfs nor [microcode](/index.php/Microcode "Microcode") images. They must be specified manually.
+*   Without the above `extra_kernel_version_strings` line, the `%v` variable in `refind_linux.conf` will not work for Arch Linux [kernels](/index.php/Kernels "Kernels").
 
 ##### refind_linux.conf
 
@@ -312,7 +315,7 @@ If rEFInd automatically detects your kernel, you can place a `refind_linux.conf`
  `/boot/refind_linux.conf` 
 ```
 "Boot using default options"     "root=PARTUUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* rw add_efi_memmap"
-"Boot using fallback initramfs"  "root=PARTUUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* rw add_efi_memmap initrd=/boot/initramfs-linux-fallback.img"
+"Boot using fallback initramfs"  "root=PARTUUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* rw add_efi_memmap initrd=/boot/initramfs-%v-fallback.img"
 "Boot to terminal"               "root=PARTUUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* rw add_efi_memmap systemd.unit=multi-user.target"
 ```
 
@@ -328,13 +331,12 @@ Which will attempt to find your kernel in `/boot` and automatically generate `re
 If you do not specify an `initrd=` parameter, rEFInd will automatically add it by searching for common RAM disk filenames in the same directory as the kernel. If you need multiple `initrd=` parameters, you must specify them manually in `refind_linux.conf`. For example, a [microcode](/index.php/Microcode "Microcode") passed before the initramfs:
 
 ```
-"Boot using default options"     "root=PARTUUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* rw add_efi_memmap initrd=/boot/intel-ucode.img initrd=/boot/amd-ucode.img initrd=/boot/initramfs-linux.img"
+"Boot using default options"     "root=PARTUUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* rw add_efi_memmap initrd=/boot/intel-ucode.img initrd=/boot/amd-ucode.img initrd=/boot/initramfs-%v.img"
+"Boot using fallback initramfs"  "root=PARTUUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* rw add_efi_memmap initrd=/boot/intel-ucode.img initrd=/boot/amd-ucode.img initrd=/boot/initramfs-%v-fallback.img"
 
 ```
 
-**Note:** Specifying `initrd=` in `/boot/refind_linux.conf` will prevent you from using the same kernel options for multiple kernels.
-
-**Warning:** `initrd` path is relative to the root of the file system on which the kernel resides. This could be `initrd=/boot/initramfs-linux.img` or, if ESP is mounted to `/boot`, `initrd=/initramfs-linux.img`.
+**Warning:** `initrd` path is relative to the root of the file system on which the kernel resides. This could be `initrd=/boot/initramfs-%v.img` or, if ESP is mounted to `/boot`, `initrd=/initramfs-%v.img`.
 
 ##### Without configuration
 
@@ -490,7 +492,7 @@ also_scan_dirs +,*subvolume*/boot
 
 Next add `subvol=*subvolume*` to `rootflags` in `refind_linux.conf` and then prepend `*subvolume*` to the initrd path.
 
- `/boot/refind_linux.conf`  `"Boot using standard options"  "root=PARTUUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* rw **rootflags=subvol=*subvolume*** initrd=***subvolume***/boot/initramfs-linux.img"` 
+ `/boot/refind_linux.conf`  `"Boot using standard options"  "root=PARTUUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* rw **rootflags=subvol=*subvolume*** initrd=***subvolume***/boot/initramfs-%v.img"` 
 
 #### Manual boot stanza
 

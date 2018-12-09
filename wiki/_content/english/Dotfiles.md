@@ -43,7 +43,7 @@ $ git commit -a
 
 ### Other tools
 
-*   **dotdrop** — A tool to manage different versions of your dotfiles on different hosts.
+*   **dotdrop** — A tool to manage your dotfiles across different hosts and saving them to git without duplicates.
 
 	[https://github.com/deadc0de6/dotdrop](https://github.com/deadc0de6/dotdrop) || [dotdrop](https://aur.archlinux.org/packages/dotdrop/)
 
@@ -97,7 +97,9 @@ $ git commit -a
 
 ### Maintaining dotfiles across multiple machines
 
-One way of maintaining dotfiles across various machines across various hosts while still allowing for per-host customizations, is by maintaining a master-branch for all shared configuration, while each individual machine has a machine-specific branch checked out. Host-specific configuration can be committed to the machine-specific branch; as shared configuration is added to the master-branch, the per-machine branches are then rebased on top of the updated master.
+[Dotdrop](https://github.com/deadc0de6/dotdrop) helps you manage your dotfiles across multiple hosts/profiles. It stores all your dotfiles in a git repository (without duplicates) which is to be cloned on each host where your dotfiles have to be deployed. A list of dotfiles for each profile is defined through the configuration file and, using a template engine, [dotdrop](https://github.com/deadc0de6/dotdrop) will generate the dotfiles exactly the way you need them for a specific profile. It also provides multiple additional features like the ability to store encrypted/private dotfiles, handle symlinks, associate actions to the deployment of specific dotfiles, etc.
+
+Using git, one way of maintaining dotfiles across various machines across various hosts while still allowing for per-host customizations, is by maintaining a master-branch for all shared configuration, while each individual machine has a machine-specific branch checked out. Host-specific configuration can be committed to the machine-specific branch; as shared configuration is added to the master-branch, the per-machine branches are then rebased on top of the updated master.
 
 Another approach is to put machine-specific configuration into specially commented blocks and to use [qualia](https://pypi.python.org/pypi/mir.qualia/) to automatically uncomment them on each machine. This approach requires less manual work and doesn't cause merge conflicts.
 

@@ -41,7 +41,7 @@ GTK+, GIMP Toolkit, został stworzony przez [GNU Project](/index.php/GNU_Project
 
 ## Instalacja
 
-Dwie wersje GTK+ są obecnie dostępne w [oficjalnych repozytoriach](https://wiki.archlinux.org/index.php/Official_repositories). Mogą być [zainstalowane](/index.php/Zainstal "Zainstal") za pomocą następujących pakietów:
+Dwie wersje GTK+ są obecnie dostępne w [oficjalnych repozytoriach](/index.php/Official_repositories "Official repositories"). Mogą być [zainstalowane](/index.php/Zainstal "Zainstal") za pomocą następujących pakietów:
 
 *   **GTK+ 3.x** jest dostępny z pakietem [gtk3](https://www.archlinux.org/packages/?name=gtk3).
 *   **GTK+ 2.x** jest dostępny z pakietem [gtk2](https://www.archlinux.org/packages/?name=gtk2).
@@ -51,7 +51,7 @@ Dwie wersje GTK+ są obecnie dostępne w [oficjalnych repozytoriach](https://wik
 
 W GTK+ 2 domyślnym motywem jest *Raleigh*, ale Arch Linux ma niestandardowy plik konfiguracyjny znajdujący się w `/usr/share/gtk-2.0/gtkrc`, który ustawia domyślny motyw na *Adwaita*. W GTK+ 3 domyślnym motywem jest *Adwaita*, ale są również uwzględnione motywy *HighContrast*, *HighContrastInverse* i *Raleigh*.
 
-Żeby wymusić motyw , ustaw [wartość środowiska](https://wiki.archlinux.org/index.php/Environment_variables).
+Żeby wymusić motyw , ustaw [wartość środowiska](/index.php/Environment_variables "Environment variables").
 
 *   Dla GTK+ 2, użyj `GTK2_RC_FILES`. Dla przykładu żeby uruchomić [GIMPa](/index.php/GIMP "GIMP") z motywem *Raleigh*:
 
@@ -149,7 +149,7 @@ Jeśli masz programy GTK+ i Qt (KDE), to wiesz, że ich wygląd nie miesza się 
 
 ## Narzędzia konfiguracyjne
 
-Większość głównych [Środowisk graficznych](https://wiki.archlinux.org/index.php/Desktop_environment) udostępnia narzędzia do konfiguracji motywu, ikon, czcionki i rozmiaru czcionki GTK+ oraz zarządzania tymi ustawieniami za pomocą [XSettings](http://standards.freedesktop.org/xsettings-spec/xsettings-spec-0.5.html):
+Większość głównych [Środowisk graficznych](/index.php/Desktop_environment "Desktop environment") udostępnia narzędzia do konfiguracji motywu, ikon, czcionki i rozmiaru czcionki GTK+ oraz zarządzania tymi ustawieniami za pomocą [XSettings](http://standards.freedesktop.org/xsettings-spec/xsettings-spec-0.5.html):
 
 *   Jeżeli korzystasz z [Cinnamon](/index.php/Cinnamon "Cinnamon"), użyj programu Motywy (*cinnamon-settings themes*): idź do *Ustawienia systemowe > Motywy*.
 *   Jeżeli korzystasz z [Enlightenment (Polski)](/index.php/Enlightenment_(Polski) "Enlightenment (Polski)"): idź do *Ustawienia > Wszystkie > Wygląd > Motyw aplikacji*.
@@ -517,7 +517,7 @@ WARNING **: Couldn't connect to accessibility bus:
 
 ```
 
-Żeby powstrzymać te błędy uruchom programy z `NO_AT_BRIDGE=1` lub ustaw jako globalną [wartość środowiska](https://wiki.archlinux.org/index.php/Environment_variables).
+Żeby powstrzymać te błędy uruchom programy z `NO_AT_BRIDGE=1` lub ustaw jako globalną [wartość środowiska](/index.php/Environment_variables "Environment variables").
 
 ### Niedopasowanie koloru tła paska tytułu
 

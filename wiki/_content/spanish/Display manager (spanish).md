@@ -67,7 +67,7 @@ El [gestor de pantalla](https://en.wikipedia.org/wiki/es:X_Display_Manager y de 
 
 ## Cargar el gestor de inicio de sesión
 
-Para [activar](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") el acceso gráfico, ejecute el demonio del <a class="mw-selflink selflink">gestor de pantallas</a> preferido (por ejemplo, [SDDM](/index.php/SDDM "SDDM")).
+Para [activar](/index.php/Systemd_(Espa%C3%B1ol)#Utilizar_las_unidades "Systemd (Español)") el acceso gráfico, ejecute el demonio del <a class="mw-selflink selflink">gestor de pantallas</a> preferido (por ejemplo, [SDDM](/index.php/SDDM "SDDM")).
 
 ```
 # systemctl enable sddm

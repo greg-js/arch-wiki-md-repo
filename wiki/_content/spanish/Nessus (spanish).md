@@ -23,7 +23,7 @@ Registre su correo electrónico en [[1]](http://www.tenable.com/products/nessus/
 
 ## Utilización
 
-El paquete [nessus](https://aur.archlinux.org/packages/nessus/) proporciona un archivo de unidad `nessusd.service`, véase [systemd (Español)#Usar las unidades](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") para más detalles.
+El paquete [nessus](https://aur.archlinux.org/packages/nessus/) proporciona un archivo de unidad `nessusd.service`, véase [systemd (Español)#Utilizar las unidades](/index.php/Systemd_(Espa%C3%B1ol)#Utilizar_las_unidades "Systemd (Español)") para más detalles.
 
 Acceda a la interfaz web en [https://localhost:8834](https://localhost:8834) y/o utilice la interfaz de línea de comandos (`/opt/nessus/sbin/nessuscli`). En la mayoría de los navegadores, deberá aceptar manualmente el certificado SSL que creó para el servidor.
 

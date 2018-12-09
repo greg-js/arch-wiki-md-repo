@@ -108,7 +108,7 @@ Remitiéndonos al artículo de ct-magazine (Número 3/12, página 146, 01.16.201
 
 El script con instrucciones de instalación está [disponible](ftp://ftp.heise.de/pub/ct/listings/1203-146.zip) (Author: Juergen Schmidt, ju at heisec.de; License: GPLv2), También hay un paquete [chkboot](https://aur.archlinux.org/packages/chkboot/) para [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)").
 
-Después de la instalación, agregue un archivo de servicio (el paquete incluye uno basado en lo siguiente) y [actívelo](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)"):
+Después de la instalación, agregue un archivo de servicio (el paquete incluye uno basado en lo siguiente) y [actívelo](/index.php/Systemd_(Espa%C3%B1ol)#Utilizar_las_unidades "Systemd (Español)"):
 
 ```
 [Unit]

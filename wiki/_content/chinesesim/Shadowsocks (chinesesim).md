@@ -300,7 +300,8 @@ AEAD加密:
 *   开启fast open降低延迟
 
 ```
- # echo 'net.ipv4.tcp_fastopen = 3' >> /etc/sysctl.d/tcp-fastopen.conf
+ echo 'net.ipv4.tcp_fastopen = 3' >> /etc/sysctl.d/tcp-fastopen.conf
+ sysctl -p /etc/sysctl.d/tcp-fastopen.conf
 
 ```
 
@@ -317,15 +318,16 @@ AEAD加密:
    net.core.default_qdisc=fq
    net.ipv4.tcp_congestion_control=bbr
  ' > /etc/sysctl.d/bbr.conf
- sysctl -p
+ sysctl -p /etc/sysctl.d/bbr.conf
 
 ```
 
 检查:
 
 ```
- sysctl net.ipv4.tcp_available_congestion_control
- sysctl net.ipv4.tcp_congestion_control
+ lsmod|grep --color bbr
+ sysctl net.ipv4.tcp_available_congestion_control|grep --color bbr
+ sysctl net.ipv4.tcp_congestion_control|grep --color bbr
 
 ```
 

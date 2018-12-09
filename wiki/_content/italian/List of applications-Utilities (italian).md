@@ -6,10 +6,10 @@
 
 ## Contents
 
-*   [1 Utilità](#Utilit.C3.A0)
+*   [1 Utilità](#Utilità)
     *   [1.1 Gestori di pacchetti](#Gestori_di_pacchetti)
     *   [1.2 Programmi per visualizzare lo spazio su disco](#Programmi_per_visualizzare_lo_spazio_su_disco)
-    *   [1.3 Tool per masterizzare CD/DVD](#Tool_per_masterizzare_CD.2FDVD)
+    *   [1.3 Tool per masterizzare CD/DVD](#Tool_per_masterizzare_CD/DVD)
     *   [1.4 Gestore degli appunti](#Gestore_degli_appunti)
     *   [1.5 Tool di compressione](#Tool_di_compressione)
         *   [1.5.1 Console](#Console)
@@ -81,7 +81,7 @@ Consultare: [Masterizzare CD/DVD con una interfaccia grafica](/index.php/Optical
 
 *   **CopyQ** — Un manager degli appunti con ricerca e modifica dello storico, azioni personalizzabili con oggetti e supporto alla riga di comando.
 
-	[https://github.com/hluk/CopyQ](https://github.com/hluk/CopyQ) || [copyq](https://aur.archlinux.org/packages/copyq/)
+	[https://github.com/hluk/CopyQ](https://github.com/hluk/CopyQ) || [copyq](https://www.archlinux.org/packages/?name=copyq)
 
 *   **[Glipper](https://en.wikipedia.org/wiki/Glipper "wikipedia:Glipper")** — Un gestore degli appunti per il desktop GNOME con molte caratteristiche e supporto a plugin.
 

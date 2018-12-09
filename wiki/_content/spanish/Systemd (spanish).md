@@ -503,7 +503,7 @@ El montaje automático de una partición se puede desactivar cambiando el [tipo 
 
 ```
 
-En Arch Linux, el directorio `/var/log/journal/` es parte del paquete [systemd](https://www.archlinux.org/packages/?name=systemd), y journal (cuando `Storage=` está definido a `auto` en `/etc/systemd/journald.conf`) escribirá en `/var/log/journal/`. Si usted o algún programa eliminan ese directorio, *systemd* **no** lo volverá a crear automáticamente y en su lugar escribirá sus registros en `/run/systemd/journal` de una manera no persistente. Sin embargo, la carpeta se volverá a crear cuando establezca `Storage=persistent` y [reinicie](/index.php/Systemd_(Espa%C3%B1ol)#Utilizar_las_unidades "Systemd (Español)") `systemd-journald.service` (o reinicie el equipo).
+En Arch Linux, el directorio `/var/log/journal/` es parte del paquete [systemd](https://www.archlinux.org/packages/?name=systemd), y journal (cuando `Storage=` está definido a `auto` en `/etc/systemd/journald.conf`) escribirá en `/var/log/journal/`. Si usted o algún programa eliminan ese directorio, *systemd* **no** lo volverá a crear automáticamente y en su lugar escribirá sus registros en `/run/systemd/journal` de una manera no persistente. Sin embargo, la carpeta se volverá a crear cuando establezca `Storage=persistent` y [reinicie](#Utilizar_las_unidades) `systemd-journald.service` (o reinicie el equipo).
 
 El journald de systemd clasifica los mensajes por [#Nivel de prioridad](#Nivel_de_prioridad) y [#Nivel del recurso](#Nivel_del_recurso). La clasificación del registro corresponde al protocolo clásico de [Syslog](https://en.wikipedia.org/wiki/es:Syslog "wikipedia:es:Syslog") ([RFC 5424](https://tools.ietf.org/html/rfc5424)).
 
@@ -611,7 +611,7 @@ También es posible utilizar el mecanismo de sobrescribir la configuración con 
 SystemMaxUse=50M
 ```
 
-[Reinicie](/index.php/Systemd_(Espa%C3%B1ol)#Utilizar_las_unidades "Systemd (Español)") el servicio `systemd-journald.service` después de cambiar esta configuración para aplicar inmediatamente el nuevo límite.
+[Reinicie](#Utilizar_las_unidades) el servicio `systemd-journald.service` después de cambiar esta configuración para aplicar inmediatamente el nuevo límite.
 
 Vea [journald.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journald.conf.5) para más información.
 
@@ -644,7 +644,7 @@ TTYPath=/dev/tty12
 MaxLevelConsole=info
 ```
 
-Depués [reinicie](/index.php/Systemd_(Espa%C3%B1ol)#Utilizar_las_unidades "Systemd (Español)") `systemd-journald.service`.
+Depués [reinicie](#Utilizar_las_unidades) `systemd-journald.service`.
 
 ### Especificar un journal diferente para visulizar
 
@@ -804,7 +804,7 @@ O, de igual modo, establezca la variable de entorno manualmente:
 
 ```
 
-luego [reinicie](/index.php/Systemd_(Espa%C3%B1ol)#Utilizar_las_unidades "Systemd (Español)") *systemd-networkd* y observe jopurnal para el servicio con la opción `-f`/`--follow`.
+luego [reinicie](#Utilizar_las_unidades) *systemd-networkd* y observe jopurnal para el servicio con la opción `-f`/`--follow`.
 
 ### Apagar/reiniciar se hace terriblemente largo
 

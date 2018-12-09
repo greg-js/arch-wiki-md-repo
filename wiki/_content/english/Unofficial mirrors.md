@@ -2,25 +2,30 @@ These [mirrors](/index.php/Mirrors "Mirrors") are *not* listed in `/etc/pacman.d
 
 ## Contents
 
-*   [1 Canada](#Canada)
-*   [2 Chile](#Chile)
-*   [3 China](#China)
-*   [4 France](#France)
-*   [5 Indonesia](#Indonesia)
-*   [6 Iran](#Iran)
-*   [7 Italy](#Italy)
-*   [8 Japan](#Japan)
-*   [9 Malaysia](#Malaysia)
-*   [10 Netherlands](#Netherlands)
-*   [11 New Zealand](#New_Zealand)
-*   [12 Poland](#Poland)
-*   [13 Russia](#Russia)
-*   [14 South Africa](#South_Africa)
-*   [15 Sweden](#Sweden)
-*   [16 Thailand](#Thailand)
-*   [17 Turkey](#Turkey)
-*   [18 United States](#United_States)
-*   [19 Sourceforge (old ISOs)](#Sourceforge_(old_ISOs))
+*   [1 Australia](#Australia)
+*   [2 Canada](#Canada)
+*   [3 Chile](#Chile)
+*   [4 China](#China)
+*   [5 France](#France)
+*   [6 Indonesia](#Indonesia)
+*   [7 Iran](#Iran)
+*   [8 Italy](#Italy)
+*   [9 Japan](#Japan)
+*   [10 Malaysia](#Malaysia)
+*   [11 Netherlands](#Netherlands)
+*   [12 New Zealand](#New_Zealand)
+*   [13 Poland](#Poland)
+*   [14 Russia](#Russia)
+*   [15 South Africa](#South_Africa)
+*   [16 Sweden](#Sweden)
+*   [17 Thailand](#Thailand)
+*   [18 Turkey](#Turkey)
+*   [19 United States](#United_States)
+*   [20 Sourceforge (old ISOs)](#Sourceforge_(old_ISOs))
+
+## Australia
+
+*   [https://chestm007.ddns.net/archlinux/](https://chestm007.ddns.net/archlinux/)
 
 ## Canada
 

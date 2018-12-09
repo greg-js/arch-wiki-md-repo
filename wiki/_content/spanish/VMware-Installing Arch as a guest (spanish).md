@@ -85,7 +85,7 @@ Open-VM-Tools lee la información sobre la versión desde `/etc/arch-release`, q
 
 ```
 
-[Inície](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") `vmtoolsd.service` y actívelo en el arranque, si lo desea.
+[Inície](/index.php/Systemd_(Espa%C3%B1ol)#Utilizar_las_unidades "Systemd (Español)") `vmtoolsd.service` y actívelo en el arranque, si lo desea.
 
 **Nota:** Hay un error en `vmtoolsd`, donde el servicio no es capaz de apagar correctamente y se cuelga durante 60 segundos. Una solución rápida se describe en [el foro](https://bbs.archlinux.org/viewtopic.php?pid=1206006#p1206006).
 
@@ -160,7 +160,7 @@ Instale las dependencias: [xf86-input-vmmouse](https://www.archlinux.org/package
 
 Si arranca con `graphical.target`, esto está casi terminado. `/etc/xdg/autostart/vmware-user.desktop` obtendrá al arranque la configuración de la mayor parte de las cosas que se necesitan para trabajar con la máquina virtual.
 
-Sin embargo, si el arranque es con `multi-user.target` o utilizando una configuración poco frecuente (por ejemplo, varios monitores), entonces, `vmtoolsd.service` tiene que ser [activado](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)").
+Sin embargo, si el arranque es con `multi-user.target` o utilizando una configuración poco frecuente (por ejemplo, varios monitores), entonces, `vmtoolsd.service` tiene que ser [activado](/index.php/Systemd_(Espa%C3%B1ol)#Utilizar_las_unidades "Systemd (Español)").
 
 ## Consejos y trucos
 

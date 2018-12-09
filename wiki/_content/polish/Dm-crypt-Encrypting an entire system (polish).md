@@ -2,8 +2,8 @@ Poniżej przedstawiono przykłady typowych scenariuszy pełnego szyfrowania syst
 
 ## Contents
 
-*   [1 Przegląd](#Przegl.C4.85d)
-*   [2 Prosty układ partycji z LUKS](#Prosty_uk.C5.82ad_partycji_z_LUKS)
+*   [1 Przegląd](#Przegląd)
+*   [2 Prosty układ partycji z LUKS](#Prosty_układ_partycji_z_LUKS)
     *   [2.1 Przygotowanie dysku](#Przygotowanie_dysku)
     *   [2.2 Preparing non-boot partitions](#Preparing_non-boot_partitions)
     *   [2.3 Przygotowanie partycji rozruchowej](#Przygotowanie_partycji_rozruchowej)
@@ -12,35 +12,35 @@ Poniżej przedstawiono przykłady typowych scenariuszy pełnego szyfrowania syst
     *   [2.6 Konfiguracja programu rozruchowego](#Konfiguracja_programu_rozruchowego)
 *   [3 LVM na LUKS](#LVM_na_LUKS)
     *   [3.1 Przygotowanie dysku](#Przygotowanie_dysku_2)
-    *   [3.2 Przygotowywanie woluminów logicznych](#Przygotowywanie_wolumin.C3.B3w_logicznych)
+    *   [3.2 Przygotowywanie woluminów logicznych](#Przygotowywanie_woluminów_logicznych)
     *   [3.3 Przygotowanie partycji rozruchowej](#Przygotowanie_partycji_rozruchowej_2)
     *   [3.4 Konfigurowanie mkinitcpio](#Konfigurowanie_mkinitcpio_2)
     *   [3.5 Konfigurowanie boot loadera](#Konfigurowanie_boot_loadera)
 *   [4 LUKS na LVM](#LUKS_na_LVM)
     *   [4.1 Przygotowanie dysku](#Przygotowanie_dysku_3)
-    *   [4.2 Przygotowywanie woluminów logicznych](#Przygotowywanie_wolumin.C3.B3w_logicznych_2)
+    *   [4.2 Przygotowywanie woluminów logicznych](#Przygotowywanie_woluminów_logicznych_2)
     *   [4.3 Przygotowanie partycji rozruchowej](#Przygotowanie_partycji_rozruchowej_3)
     *   [4.4 Konfigurowanie mkinitcpio](#Konfigurowanie_mkinitcpio_3)
     *   [4.5 konfiguracjae boot loadera](#konfiguracjae_boot_loadera)
     *   [4.6 Konfigurowanie fstab i crypttab](#Konfigurowanie_fstab_i_crypttab)
-    *   [4.7 Szyfrowanie woluminu logicznego /home](#Szyfrowanie_woluminu_logicznego_.2Fhome)
+    *   [4.7 Szyfrowanie woluminu logicznego /home](#Szyfrowanie_woluminu_logicznego_/home)
 *   [5 LUKS na programowym RAID](#LUKS_na_programowym_RAID)
     *   [5.1 Przygotowanie dysku](#Przygotowanie_dysku_4)
     *   [5.2 Budowanie macierzy RAID](#Budowanie_macierzy_RAID)
-    *   [5.3 Przygotowanie urządzeń blokowych](#Przygotowanie_urz.C4.85dze.C5.84_blokowych)
+    *   [5.3 Przygotowanie urządzeń blokowych](#Przygotowanie_urządzeń_blokowych)
     *   [5.4 Konfiguracja boot loadera](#Konfiguracja_boot_loadera)
-    *   [5.5 Tworzenie plików kluczy](#Tworzenie_plik.C3.B3w_kluczy)
+    *   [5.5 Tworzenie plików kluczy](#Tworzenie_plików_kluczy)
     *   [5.6 Konfigurowanie systemu](#Konfigurowanie_systemu)
-*   [6 Zwykły dm-crypt](#Zwyk.C5.82y_dm-crypt)
+*   [6 Zwykły dm-crypt](#Zwykły_dm-crypt)
     *   [6.1 Przygotowanie dysku](#Przygotowanie_dysku_5)
-    *   [6.2 Przygotowywanie partycji, które nie są uruchomione](#Przygotowywanie_partycji.2C_kt.C3.B3re_nie_s.C4.85_uruchomione)
+    *   [6.2 Przygotowywanie partycji, które nie są uruchomione](#Przygotowywanie_partycji,_które_nie_są_uruchomione)
     *   [6.3 Przygotowanie partycji rozruchowej](#Przygotowanie_partycji_rozruchowej_4)
     *   [6.4 Konfigurowanie mkinitcpio](#Konfigurowanie_mkinitcpio_4)
     *   [6.5 Konfiguracja bootloadera](#Konfiguracja_bootloadera)
     *   [6.6 Po instalacji](#Po_instalacji)
-*   [7 Szyfrowana partycja rozruchowa (GRUB)](#Szyfrowana_partycja_rozruchowa_.28GRUB.29)
+*   [7 Szyfrowana partycja rozruchowa (GRUB)](#Szyfrowana_partycja_rozruchowa_(GRUB))
     *   [7.1 Przygotowanie dysku](#Przygotowanie_dysku_6)
-    *   [7.2 Przygotowywanie woluminów logicznych](#Przygotowywanie_wolumin.C3.B3w_logicznych_3)
+    *   [7.2 Przygotowywanie woluminów logicznych](#Przygotowywanie_woluminów_logicznych_3)
     *   [7.3 Przygotowanie partycji rozruchowej](#Przygotowanie_partycji_rozruchowej_5)
     *   [7.4 Konfigurowanie mkinitcpio](#Konfigurowanie_mkinitcpio_5)
     *   [7.5 Konfiguracja botladera](#Konfiguracja_botladera)
@@ -48,18 +48,18 @@ Poniżej przedstawiono przykłady typowych scenariuszy pełnego szyfrowania syst
 *   [8 Btrfs subvolumes with swap](#Btrfs_subvolumes_with_swap)
     *   [8.1 Przygotowanie dysku](#Przygotowanie_dysku_7)
     *   [8.2 Przygotowanie partycji systemowej](#Przygotowanie_partycji_systemowej)
-        *   [8.2.1 Utwórz kontener LUKS](#Utw.C3.B3rz_kontener_LUKS)
+        *   [8.2.1 Utwórz kontener LUKS](#Utwórz_kontener_LUKS)
         *   [8.2.2 Odblokuj kontener LUKS](#Odblokuj_kontener_LUKS)
-        *   [8.2.3 Sformatuj zmapowane urządzenie](#Sformatuj_zmapowane_urz.C4.85dzenie)
-        *   [8.2.4 Zamontuj zmapowane urządzenie](#Zamontuj_zmapowane_urz.C4.85dzenie)
-    *   [8.3 Tworzenie subwoluminów btrfs](#Tworzenie_subwolumin.C3.B3w_btrfs)
-        *   [8.3.1 Układ](#Uk.C5.82ad)
+        *   [8.2.3 Sformatuj zmapowane urządzenie](#Sformatuj_zmapowane_urządzenie)
+        *   [8.2.4 Zamontuj zmapowane urządzenie](#Zamontuj_zmapowane_urządzenie)
+    *   [8.3 Tworzenie subwoluminów btrfs](#Tworzenie_subwoluminów_btrfs)
+        *   [8.3.1 Układ](#Układ)
         *   [8.3.2 Create top-level subvolumes](#Create_top-level_subvolumes)
         *   [8.3.3 Mount top-level subvolumes](#Mount_top-level_subvolumes)
-        *   [8.3.4 Utwórz zagnieżdżone subvolumes](#Utw.C3.B3rz_zagnie.C5.BCd.C5.BCone_subvolumes)
+        *   [8.3.4 Utwórz zagnieżdżone subvolumes](#Utwórz_zagnieżdżone_subvolumes)
         *   [8.3.5 Zamontuj ESP](#Zamontuj_ESP)
     *   [8.4 Konfigurowanie mkinitcpio](#Konfigurowanie_mkinitcpio_6)
-        *   [8.4.1 Utwórz plik klucza](#Utw.C3.B3rz_plik_klucza)
+        *   [8.4.1 Utwórz plik klucza](#Utwórz_plik_klucza)
         *   [8.4.2 Edycja mkinitcpio.conf](#Edycja_mkinitcpio.conf)
     *   [8.5 Konfigurowanie botladera](#Konfigurowanie_botladera)
     *   [8.6 Konfiguracja swap](#Konfiguracja_swap)
@@ -71,7 +71,7 @@ Zabezpieczenie głównego systemu plików to miejsce, w którym *dm-crypt* wyró
 Wszystkie scenariusze zilustrowane poniżej dzielą te zalety, inne ich wady i zalety, które je różnicują:
 
 | Scenariusze | Zalety | Wady |
-| [#Prosty układ partycji z LUKS](#Prosty_uk.C5.82ad_partycji_z_LUKS)
+| [#Prosty układ partycji z LUKS](#Prosty_układ_partycji_z_LUKS)
 
 pokazuje podstawową i prostą konfigurację dla w pełni zaszyfrowanego rootu LUKS.
 
@@ -130,7 +130,7 @@ używa dm-crypt tylko po skonfigurowaniu RAID.
 *   Analogiczny do LUKS na LVM
 
  |
-| [#Zwykły dm-crypt](#Zwyk.C5.82y_dm-crypt)
+| [#Zwykły dm-crypt](#Zwykły_dm-crypt)
 
 używa trybu zwykłego dm-crypt, tj. bez nagłówka LUKS i jego opcji dla wielu kluczy.
 W tym scenariuszu są również używane urządzenia USB `/boot` i pamięć kluczy, która może być zastosowana do innych scenariuszy.
@@ -139,7 +139,7 @@ W tym scenariuszu są również używane urządzenia USB `/boot` i pamięć kluc
 
 *   Odporność danych dla przypadków, w których nagłówek LUKS może być uszkodzony
 *   Pozwala [Full Disk Encryption](https://en.wikipedia.org/wiki/Disk_encryption#Full_disk_encryption "wikipedia:Disk encryption")
-*   Pomaga w rozwiązywaniu [problemów](/index.php/Dm-crypt/Specialties#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29 "Dm-crypt/Specialties") z dyskami SSD
+*   Pomaga w rozwiązywaniu [problemów](/index.php/Dm-crypt/Specialties#Discard/TRIM_support_for_solid_state_drives_(SSD) "Dm-crypt/Specialties") z dyskami SSD
 
  | 
 
@@ -147,7 +147,7 @@ W tym scenariuszu są również używane urządzenia USB `/boot` i pamięć kluc
 *   Pojedynczy klucz szyfrowania i brak opcji zmiany
 
  |
-| [#Szyfrowana partycja rozruchowa (GRUB)](#Szyfrowana_partycja_rozruchowa_.28GRUB.29)
+| [#Szyfrowana partycja rozruchowa (GRUB)](#Szyfrowana_partycja_rozruchowa_(GRUB))
 
 pokazuje, jak zaszyfrować partycję rozruchową za pomocą programu ładującego GRUB.
 W tym scenariuszu używana jest również partycja ESP, którą można zastosować do innych scenariuszy.
@@ -170,12 +170,12 @@ pokazuje, jak zaszyfrować [Btrfs](/index.php/Btrfs "Btrfs") system, w tym `/boo
 
  | 
 
-*   Podobne zalety jak [#Szyfrowana partycja rozruchowa (GRUB)](#Szyfrowana_partycja_rozruchowa_.28GRUB.29)
+*   Podobne zalety jak [#Szyfrowana partycja rozruchowa (GRUB)](#Szyfrowana_partycja_rozruchowa_(GRUB))
 *   Dostępność funkcji Btrfs
 
  | 
 
-*   Podobne wady jak [#Szyfrowana partycja rozruchowa (GRUB)](#Szyfrowana_partycja_rozruchowa_.28GRUB.29)
+*   Podobne wady jak [#Szyfrowana partycja rozruchowa (GRUB)](#Szyfrowana_partycja_rozruchowa_(GRUB))
 
  |
 
@@ -475,7 +475,7 @@ Randomise `/dev/sda2` zgodnie z [Dm-crypt/Drive preparation#dm-crypt wipe on an 
 
 ```
 
-Więcej informacji o opcjach szyfrowania można znaleźć w [Dm-crypt/Device encryption#Encryption options for LUKS mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption"). Zauważ, że `/home` zostanie zaszyfrowane [#Encrypting logical volume /home](#Encrypting_logical_volume_.2Fhome). Further, zauważ, że jeśli kiedykolwiek będziesz miał dostęp do zaszyfrowanego katalogu głównego z Arch-ISO, powyższe `open` akcja pozwoli ci po [Pojawia się LVM](/index.php/LVM#Logical_Volumes_do_not_show_up "LVM").
+Więcej informacji o opcjach szyfrowania można znaleźć w [Dm-crypt/Device encryption#Encryption options for LUKS mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption"). Zauważ, że `/home` zostanie zaszyfrowane [#Encrypting logical volume /home](#Encrypting_logical_volume_/home). Further, zauważ, że jeśli kiedykolwiek będziesz miał dostęp do zaszyfrowanego katalogu głównego z Arch-ISO, powyższe `open` akcja pozwoli ci po [Pojawia się LVM](/index.php/LVM#Logical_Volumes_do_not_show_up "LVM").
 
 ### Przygotowanie partycji rozruchowej
 
@@ -571,7 +571,7 @@ Jeśli chcesz rozszerzyć wolumin logiczny dla `/home` (lub dowolnego innego wol
 
 ## LUKS na programowym RAID
 
-Ten przykład jest oparty na konfiguracji dla laptopa wyposażonego w dwa dyski SSD o jednakowej wielkości oraz dodatkowy dysk twardy dla pamięci masowej. Efektem końcowym jest oparte na LUKS pełne szyfrowanie dysku (w tym `/boot`) dla wszystkich dysków, z dyskami SSD w macierzy RAID0 i pliki kluczy używane do odblokowania całego szyfrowania po podaniu GRUB poprawnego hasła przy starcie. Obsługa formatów TRIM jest włączona na dyskach SSD, ale warto zapoznać się ze szczegółowymi informacjami na temat bezpieczeństwa [Dm-crypt/Specialties#Discard/TRIM support for solid state drives (SSD)](/index.php/Dm-crypt/Specialties#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29 "Dm-crypt/Specialties") przed rozważeniem skorzystania z tego.
+Ten przykład jest oparty na konfiguracji dla laptopa wyposażonego w dwa dyski SSD o jednakowej wielkości oraz dodatkowy dysk twardy dla pamięci masowej. Efektem końcowym jest oparte na LUKS pełne szyfrowanie dysku (w tym `/boot`) dla wszystkich dysków, z dyskami SSD w macierzy RAID0 i pliki kluczy używane do odblokowania całego szyfrowania po podaniu GRUB poprawnego hasła przy starcie. Obsługa formatów TRIM jest włączona na dyskach SSD, ale warto zapoznać się ze szczegółowymi informacjami na temat bezpieczeństwa [Dm-crypt/Specialties#Discard/TRIM support for solid state drives (SSD)](/index.php/Dm-crypt/Specialties#Discard/TRIM_support_for_solid_state_drives_(SSD) "Dm-crypt/Specialties") przed rozważeniem skorzystania z tego.
 
 This setup utilizes a very simplistic partitioning scheme, with all the available RAID storage being mounted at `/` (no separate `/boot` partition), and the decrypted HDD being mounted at `/mnt/data`. It is also worth mentioning that the system in this example boots in BIOS mode and the drives are partitioned with [GPT](/index.php/Partitioning "Partitioning") partitions.
 
@@ -715,7 +715,7 @@ Zauważ, że jeśli szyfrowanie całego dysku nie jest wymagane, metody korzysta
 
 *Plain* dm-crypt encryption can be more resilient to damage than LUKS, because it does not rely on an encryption master-key which can be a single-point of failure if damaged.
 
-Zwykłe szyfrowanie dm-crypt może być bardziej odporne na uszkodzenia niż LUKS, ponieważ nie opiera się na kluczu szyfrującym, który może być pojedynczym punktem awarii, jeśli jest uszkodzony. Jednak użycie trybu zwykłego wymaga również ręcznej konfiguracji opcji szyfrowania, aby uzyskać taką samą siłę kryptograficzną. Zobacz też [Disk encryption#Cryptographic metadata](/index.php/Disk_encryption#Cryptographic_metadata "Disk encryption"). Stosując tryb "zwykły" można również rozważyć, jeśli chodzi o problemy wyjaśnione w [Dm-crypt/Specialties#Discard/TRIM support for solid state drives (SSD)](/index.php/Dm-crypt/Specialties#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29 "Dm-crypt/Specialties").
+Zwykłe szyfrowanie dm-crypt może być bardziej odporne na uszkodzenia niż LUKS, ponieważ nie opiera się na kluczu szyfrującym, który może być pojedynczym punktem awarii, jeśli jest uszkodzony. Jednak użycie trybu zwykłego wymaga również ręcznej konfiguracji opcji szyfrowania, aby uzyskać taką samą siłę kryptograficzną. Zobacz też [Disk encryption#Cryptographic metadata](/index.php/Disk_encryption#Cryptographic_metadata "Disk encryption"). Stosując tryb "zwykły" można również rozważyć, jeśli chodzi o problemy wyjaśnione w [Dm-crypt/Specialties#Discard/TRIM support for solid state drives (SSD)](/index.php/Dm-crypt/Specialties#Discard/TRIM_support_for_solid_state_drives_(SSD) "Dm-crypt/Specialties").
 
 **Tip:** Jeśli twoim celem jest szyfrowanie bez nagłówka, ale nie masz pewności co do braku wyprowadzania klucza w trybie "zwykłym", to dwie alternatywy to:
 
@@ -1083,7 +1083,7 @@ Utwórz potrzebne partycje, przynajmniej jedną dla `/` (e.g. `/dev/sda*X*`). zo
 
 #### Odblokuj kontener LUKS
 
-Teraz wykonaj [Dm-crypt/Device encryption#Unlocking/Mapping LUKS partitions with the device mapper](/index.php/Dm-crypt/Device_encryption#Unlocking.2FMapping_LUKS_partitions_with_the_device_mapper "Dm-crypt/Device encryption") aby odblokować kontener LUKS i zmapować go.
+Teraz wykonaj [Dm-crypt/Device encryption#Unlocking/Mapping LUKS partitions with the device mapper](/index.php/Dm-crypt/Device_encryption#Unlocking/Mapping_LUKS_partitions_with_the_device_mapper "Dm-crypt/Device encryption") aby odblokować kontener LUKS i zmapować go.
 
 #### Sformatuj zmapowane urządzenie
 

@@ -63,7 +63,7 @@ HOOKS=(base systemd autodetect keyboard sd-vconsole modconf block sd-encrypt sd-
 
 In order to enable booting an encrypted root partition, a subset of the following kernel parameters need to be set. See [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") for instructions specific to your [boot loader](/index.php/Boot_loader "Boot loader").
 
-For example, if using [GRUB](/index.php/GRUB#Root_partition "GRUB"), the relevant parameters are added to `/etc/default/grub` before [generating the main configuration file](/index.php/GRUB#Generate_the_main_configuration_file "GRUB"). See also [GRUB#Warning when installing in chroot](/index.php/GRUB#Warning_when_installing_in_chroot "GRUB") as another point to be aware of when installing the GRUB loader.
+For example, if using [GRUB](/index.php/GRUB "GRUB"), the relevant parameters are added to `/etc/default/grub` before [generating the main configuration file](/index.php/GRUB#Generate_the_main_configuration_file "GRUB"). See also [GRUB#Warning when installing in chroot](/index.php/GRUB#Warning_when_installing_in_chroot "GRUB") as another point to be aware of when installing the GRUB loader.
 
 The kernel parameters you need to specify depend on whether or not you are using the `encrypt` hook or the `sd-encrypt` hook.
 

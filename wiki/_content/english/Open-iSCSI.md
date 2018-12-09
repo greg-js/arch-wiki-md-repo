@@ -58,7 +58,7 @@ Persistent configuration is implemented as a DBM database, which contains two ta
 
 `iscsid` is managed by a systemd Unit.
 
-Start `open-iscsi.service` [using systemd](/index.php/Systemd#Using_units "Systemd").
+Start `iscsi.service` [using systemd](/index.php/Systemd#Using_units "Systemd").
 
 If the SCSI target requires authentication by the initiator, the configuration file /etc/iscsi/iscsid.conf may need to be updated.
 

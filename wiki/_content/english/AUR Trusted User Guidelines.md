@@ -137,7 +137,7 @@ If a package has been removed completely, it can be uploaded once again (fresh) 
 
 ### Moving packages from unsupported to [community]
 
-Follow the normal procedures for adding a package community, but remember to delete the corresponding package from unsupported!
+Follow the normal procedures for adding a package to community, but remember to delete the corresponding package from unsupported!
 
 ### Moving packages from [community] to unsupported
 
@@ -146,7 +146,7 @@ Remove the package using the instructions above and upload your source to the AU
 ### Moving packages from [community-testing] to [community]
 
 ```
-ssh nymeria.archlinux.org /srv/repos/svn-community/dbscripts/db-move community-testing community package
+$ ssh repos.archlinux.org /community/db-move community-testing community <package>
 
 ```
 

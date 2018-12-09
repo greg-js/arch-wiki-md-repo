@@ -16,18 +16,17 @@ From the [WireGuard](https://www.wireguard.com/) project homepage:
     *   [2.6 Example peer configuration](#Example_peer_configuration)
     *   [2.7 Example configuration for systemd-networkd](#Example_configuration_for_systemd-networkd)
     *   [2.8 Endpoint with changing IP](#Endpoint_with_changing_IP)
-*   [3 Specific use-case: setup a VPN server](#Specific_use-case:_setup_a_VPN_server)
+*   [3 Specific use-case: VPN server](#Specific_use-case:_VPN_server)
     *   [3.1 Server](#Server)
     *   [3.2 Key generation](#Key_generation_2)
     *   [3.3 Server config](#Server_config)
     *   [3.4 Client config](#Client_config)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 PresharedKey bug with iOS client](#PresharedKey_bug_with_iOS_client)
-    *   [4.2 Routes are periodically reset](#Routes_are_periodically_reset)
-    *   [4.3 Connection loss with NetworkManager](#Connection_loss_with_NetworkManager)
-        *   [4.3.1 Using resolvconf](#Using_resolvconf)
-        *   [4.3.2 Using dnsmasq](#Using_dnsmasq)
-        *   [4.3.3 Using systemd-resolved](#Using_systemd-resolved)
+    *   [4.1 Routes are periodically reset](#Routes_are_periodically_reset)
+    *   [4.2 Connection loss with NetworkManager](#Connection_loss_with_NetworkManager)
+        *   [4.2.1 Using resolvconf](#Using_resolvconf)
+        *   [4.2.2 Using dnsmasq](#Using_dnsmasq)
+        *   [4.2.3 Using systemd-resolved](#Using_systemd-resolved)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Store private keys in encrypted form](#Store_private_keys_in_encrypted_form)
 *   [6 See also](#See_also)
@@ -74,7 +73,7 @@ $ wg genkey | tee privatekey | wg pubkey > publickey
 
 ```
 
-One can also create a pre-shared key for added security.
+One can also generate a preshared key to add an additional layer of symmetric-key cryptography to be mixed into the already existing public-key cryptography, for post-quantum resistance.
 
 ```
 # wg genpsk > preshared
@@ -197,23 +196,18 @@ Destination = 10.0.0.0/24
 
 After resolving a server's domain, WireGuard [will not check for changes in DNS again](https://lists.zx2c4.com/pipermail/wireguard/2017-November/002028.html).
 
-If your WireGuard server is frequently changing it's IP-address due DHCP, Dyndns, IPv6, ..., any WireGuard client is going to lose it's connection, until you update it's endpoint via something like `wg set "$INTERFACE" peer "$PUBLIC_KEY" endpoint "$ENDPOINT"`.
+If the WireGuard server is frequently changing its IP-address due DHCP, Dyndns, IPv6, ..., any WireGuard client is going to lose its connection, until its endpoint is updated via something like `wg set "$INTERFACE" peer "$PUBLIC_KEY" endpoint "$ENDPOINT"`.
 
-Also be aware, if your endpoint is ever going to change it's address (for example when moving to a new provider/datacenter), just updating DNS won't be enough, so periodically running reresolve-dns might make sense on any DNS-based setup.
+Also be aware, if the endpoint is ever going to change its address (for example when moving to a new provider/datacenter), just updating DNS will not be enough, so periodically running reresolve-dns might make sense on any DNS-based setup.
 
-Luckily, WireGuard provides an example script `reresolve-dns.sh`, that parses WG configuration files and automatically resets the endpoint address.
+Luckily, [wireguard-tools](https://www.archlinux.org/packages/?name=wireguard-tools) provides an example script `/usr/share/wireguard/examples/reresolve-dns/reresolve-dns.sh`, that parses WG configuration files and automatically resets the endpoint address.
 
-You can obtain the script from [WireGuard.com git](https://git.zx2c4.com/WireGuard/tree/contrib/examples/reresolve-dns/reresolve-dns.sh) or from [wireguard-tools](https://www.archlinux.org/packages/?name=wireguard-tools) package located at `/usr/share/wireguard/examples/reresolve-dns/reresolve-dns.sh` on ArchLinux or `/usr/share/doc/wireguard-tools/examples/reresolve-dns/reresolve-dns.sh` on Debian.
+One needs to run the `/usr/share/wireguard/examples/reresolve-dns/reresolve-dns.sh /etc/wireguard/wg.conf` periodically to recover from an endpoint that has changed its IP.
 
-You just have to run the script as `reresolve-dns.sh /etc/wireguard/wg.conf` periodically to recover from an endpoint that has changed it's IP.
+One way of doing so is by updating all WireGuard endpoints once every thirty seconds[[2]](https://git.zx2c4.com/WireGuard/tree/contrib/examples/reresolve-dns/README) via a systemd timer:
 
-One way of doing so is by updating all WireGuard endpoints once every thirty seconds* via a systemd timer.
-
-* suggested by the [README](https://git.zx2c4.com/WireGuard/tree/contrib/examples/reresolve-dns/README) of `reresolve-dns.sh`
-
- `bash script for simple setup from your CLI` 
+ `/etc/systemd/system/wireguard_reresolve-dns.timer` 
 ```
-sudo tee /etc/systemd/system/wireguard_reresolve-dns.timer <<EOF
 [Unit]
 Description=Periodically reresolve DNS of all WireGuard endpoints
 
@@ -222,26 +216,24 @@ OnCalendar=*:*:0/30
 
 [Install]
 WantedBy=timers.target
-EOF
-
-sudo tee /etc/systemd/system/wireguard_reresolve-dns.service <<EOF
+```
+ `/etc/systemd/system/wireguard_reresolve-dns.service` 
+```
 [Unit]
 Description=Reresolve DNS of all WireGuard endpoints
+Wants=network-online.target
+After=network-online.target
 
 [Service]
 Type=oneshot
-Environment=reresolve="/usr/share/wireguard/examples/reresolve-dns/reresolve-dns.sh"
-ExecStart=/bin/sh -c 'for i in /etc/wireguard/*.conf; do "\$reresolve" "\$i"; done'
-EOF
-
-sudo systemctl daemon-reload
-sudo systemctl start wireguard_reresolve-dns.timer
-sudo systemctl enable wireguard_reresolve-dns.timer
+ExecStart=/bin/sh -c 'for i in /etc/wireguard/*.conf; do /usr/share/wireguard/examples/reresolve-dns/reresolve-dns.sh "\$i"; done'
 ```
 
-## Specific use-case: setup a VPN server
+Afterwards [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `wireguard_reresolve-dns.timer`
 
-The purpose of this section is to setup a WireGuard "server" and generic "clients" to enable access to the server/network resources through an encrypted and secured tunnel like [OpenVPN](/index.php/OpenVPN "OpenVPN") and others. The "server" runs on Linux and the "clients" can run any any number of platforms (the WireGuard Project offers apps on both iOS and Android platforms in addition to Linux-native and MacOS). See the official project [install link](https://www.wireguard.com/install/) for more.
+## Specific use-case: VPN server
+
+The purpose of this section is to setup a WireGuard "server" and generic "clients" to enable access to the server/network resources through an encrypted and secured tunnel like [OpenVPN](/index.php/OpenVPN "OpenVPN") and others. The server runs on Linux and the clients can run any any number of platforms (the WireGuard Project offers apps on both iOS and Android platforms in addition to Linux-native and MacOS). See the official project [install link](https://www.wireguard.com/install/) for more.
 
 ### Server
 
@@ -257,13 +249,13 @@ To make the change permanent, add `net.ipv4.ip_forward = 1` to `/etc/sysctl.d/99
 A properly configured [firewall](/index.php/Firewall "Firewall") is *HIGHLY recommended* for any Internet-facing device. Be sure to:
 
 *   Allow UDP traffic on the specified port(s) on which WireGuard will be running (for example allowing traffic on 51820/udp).
-*   Setting up the forwarding policy for the firewall if it is not included in the WireGuard config for the interface itself `/etc/wireguard/wg0.conf`. The example below should work as-is.
+*   Setup the forwarding policy for the firewall if it is not included in the WireGuard config for the interface itself `/etc/wireguard/wg0.conf`. The example below should work as-is.
 
-Finally, WireGuard port(s) need to be forwarded to the server from the network router so they can be accessed from the WAN.
+Finally, WireGuard port(s) need to be forwarded to the server's LAN IP from the router so they can be accessed from the WAN (ie router port forwarding).
 
 ### Key generation
 
-Generate public/private key pairs for the server and for each client as explained in [#Key generation](#Key_generation). Optionally, generate a preshared key for all peers to share.
+Generate key pairs for the server and for each client as explained in [#Key generation](#Key_generation).
 
 ### Server config
 
@@ -352,13 +344,9 @@ $ qrencode -t ansiutf8 < foo.conf
 
 ## Troubleshooting
 
-### PresharedKey bug with iOS client
-
-The iOS client (v0.0.20181104) has a bug where config files containing a PresharedKey field fail to get imported correctly via QR codes. All the other fields are successfully transferred *except* for the PresharedKey. One can manually edit the imported file and type it resulting in a functional config.
-
 ### Routes are periodically reset
 
-Make sure that [NetworkManager](/index.php/NetworkManager "NetworkManager") is not managing your Wireguard interface:
+Make sure that [NetworkManager](/index.php/NetworkManager "NetworkManager") is not managing the Wireguard interface:
 
  `/etc/NetworkManager/conf.d/unmanaged.conf` 
 ```
@@ -406,14 +394,14 @@ No `PostDown` key is necessary as *systemd-resolved* automatically revert all pa
 
 ### Store private keys in encrypted form
 
-It may be desirable to store private keys in encrypted form, such as through use of [pass](https://www.archlinux.org/packages/?name=pass). Just replace the PrivateKey line under [Interface] in your configuration file with:
+It may be desirable to store private keys in encrypted form, such as through use of [pass](https://www.archlinux.org/packages/?name=pass). Just replace the PrivateKey line under [Interface] in the configuration file with:
 
 ```
  PostUp = wg set %i private-key <(su user -c "export PASSWORD_STORE_DIR=/path/to/your/store/; pass WireGuard/private-keys/%i")
 
 ```
 
-where user is your username. See the [wg-quick(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wg-quick.8) man page for more details.
+where *user* is the Linux username of interest. See the [wg-quick(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wg-quick.8) man page for more details.
 
 ## See also
 

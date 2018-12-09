@@ -828,7 +828,7 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 ##### Java IDEs
 
-*   **[Bluej](https://en.wikipedia.org/wiki/Bluej "wikipedia:Bluej")** — Fully featured Java IDE used mainly for educational and beginner purposes.
+*   **[BlueJ](https://en.wikipedia.org/wiki/BlueJ "wikipedia:BlueJ")** — Fully featured Java IDE used mainly for educational and beginner purposes.
 
 	[https://bluej.org/](https://bluej.org/) || [bluej](https://aur.archlinux.org/packages/bluej/)
 

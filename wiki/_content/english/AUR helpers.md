@@ -8,17 +8,6 @@ AUR helpers automate certain usage of the [Arch User Repository](/index.php/Arch
 
 Since AUR helpers are unsupported, they are not present in the [official repositories](/index.php/Official_repositories "Official repositories").
 
-## Contents
-
-*   [1 Legend](#Legend)
-*   [2 Comparison table](#Comparison_table)
-    *   [2.1 Search and download](#Search_and_download)
-    *   [2.2 Download and build](#Download_and_build)
-    *   [2.3 Pacman wrappers](#Pacman_wrappers)
-*   [3 Graphical](#Graphical)
-*   [4 Maintenance](#Maintenance)
-*   [5 Other](#Other)
-
 ## Legend
 
 The [#Comparison table](#Comparison_table) columns have the following meaning:
@@ -57,11 +46,11 @@ The [#Comparison table](#Comparison_table) columns have the following meaning:
 
 	Batch interaction
 
-	Ability to prompt before the build process, in particular:
+	Ability to prompt before the build process and package transactions, in particular:
 
 1.  Inspection of package files or their differences;
-2.  Summary of package upgrades;
-3.  Resolution of package conflicts and installations.
+2.  Combined summary of repository and AUR package upgrades;
+3.  Resolution of package conflicts and choice of providers.
 
 	An asterisk denotes functionality specifically enabled by the user.
 
@@ -69,10 +58,7 @@ The [#Comparison table](#Comparison_table) columns have the following meaning:
 
 	[Tab completion](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion") is available for the listed [shells](/index.php/Shell "Shell").
 
-**Note:**
-
-*   Table rows are sorted by column values, where *Yes* or *N/A* take precedence over *Partial* or *Optional* and *No*, or alphabetically if values are equal.
-*   *Optional* means that a feature is available, but only through a command-line argument or configuration option. *Partial* means that a feature is not fully implemented, or that it partially deviates from the given criteria.
+**Note:** *Optional* means that a feature is available, but only through a command-line argument or configuration option. *Partial* means that a feature is not fully implemented, or that it partially deviates from the given criteria.
 
 ## Comparison table
 
@@ -81,53 +67,50 @@ The [#Comparison table](#Comparison_table) columns have the following meaning:
 | Name | Written in | File review | Git clone | Reliable parser | Reliable solver | Shell completion | Specificity |
 | [auracle-git](https://aur.archlinux.org/packages/auracle-git/) | C++ | Yes | [Yes](https://github.com/falconindy/auracle/commit/c73bbee) | Yes | Yes | bash | print build order |
 | [pbget](https://aur.archlinux.org/packages/pbget/) | Python | Yes | Yes | Yes | – | – | – |
+| [repoctl](https://aur.archlinux.org/packages/repoctl/) | Go | Yes | No | [Yes](https://github.com/goulash/pacman/blob/master/aur/aur.go) | – | zsh | [local repository](/index.php/Local_repository "Local repository") |
 | [yaah](https://aur.archlinux.org/packages/yaah/) | Bash | Yes | Optional | Yes | – | bash | – |
-| [repoctl](https://aur.archlinux.org/packages/repoctl/) | Go | Yes | No | [Yes](https://github.com/goulash/pacman/blob/master/aur/aur.go) | – | zsh | local repository support |
 | [aurel](https://aur.archlinux.org/packages/aurel/)
-<small>([discontinued](https://bbs.archlinux.org/viewtopic.php?pid=1522459#p1522459))</small> | Emacs Lisp | Yes | No | Yes | – | – | Emacs integration |
+<small>([discontinued](https://bbs.archlinux.org/viewtopic.php?pid=1522459#p1522459))</small> | Emacs Lisp | Yes | No | Yes | – | – | [emacs](/index.php/Emacs "Emacs") integration |
 | [cower](https://aur.archlinux.org/packages/cower/)
 <small>([discontinued](https://github.com/falconindy/cower#description))</small> | C | Yes | No | Yes | – | bash, zsh | regex support |
 
 ### Download and build
 
-| Name | Written in | File review | Diff view | Git clone | Reliable parser | Reliable solver | Split packages | Clean build | Batch interaction | Shell completion | Specificity |
-| [aurutils](https://aur.archlinux.org/packages/aurutils/) | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | Yes | 1 | zsh | [vifm](/index.php/Vifm "Vifm"), [local repository](/index.php/Local_repository "Local repository"), [package signing](/index.php/Package_signing "Package signing"), [clean chroot](/index.php/DeveloperWiki:Building_in_a_clean_chroot "DeveloperWiki:Building in a clean chroot") support |
-| [bauerbill](https://aur.archlinux.org/packages/bauerbill/) | Python | Yes | No | Yes | Yes | Yes | Yes | Yes | 1 | bash, zsh | trust management, [ABS](/index.php/ABS "ABS") support, extends *powerpill*, `bb-wrapper` for *pacman* wrapping |
-| [rua](https://aur.archlinux.org/packages/rua/) | Rust | Yes | [No](https://github.com/vn971/rua/issues/1) | Yes | [Yes](https://github.com/vn971/rua/commit/fc8c2f3) | Yes | Yes | Yes | 1 | bash, zsh, fish | tar artifact inspections (SUID, install file etc), isolated build, offline build |
-| [PKGBUILDer](https://aur.archlinux.org/packages/PKGBUILDer/) | Python | Optional | [No](https://github.com/Kwpolska/pkgbuilder/issues/36) | Yes | Yes | Yes | [Partial](https://github.com/Kwpolska/pkgbuilder/issues/39) | Yes | 1* | – | automatic builds by default, use `-F` to disable; multilingual, `pb-wrapper` for *pacman* wrapping |
-| [repofish](https://aur.archlinux.org/packages/repofish/) | Bash | Optional | Yes | Yes | No | No | No | Yes | 1* | – | automatic builds by default, use `check` or `update` to disable; [local repository](/index.php/Local_repository "Local repository") support |
-| [naaman](https://aur.archlinux.org/packages/naaman/)
-<small>([discontinued](https://github.com/enckse/naaman/issues/20#issuecomment-433781874))</small> | Python | Optional | No | Yes | Yes | [Partial](https://github.com/enckse/naaman/issues/19) | [Partial](https://github.com/enckse/naaman/issues/20) | Yes | 1* | bash | automatic builds by default, use `--fetch` to disable; use `-d` to enable the solver |
-| [spinach](https://aur.archlinux.org/packages/spinach/)
-<small>([discontinued](https://github.com/floft/spinach))</small> | Bash | [Yes](https://github.com/floft/spinach/commit/5455747) | No | No | No | No | No | Yes | – | – | – |
-| [aurget](https://aur.archlinux.org/packages/aurget/)
-<small>(stalled)</small> | Bash | Optional | [No](https://github.com/pbrisbin/aurget/issues/41) | No | No | No | [No](https://github.com/pbrisbin/aurget/issues/40) | Yes | – | bash, zsh | – |
+| Name | Written in | File review | Diff view | Git clone | Reliable parser | Reliable solver | Split packages | Clean build | Shell completion | Specificity |
+| [aurget](https://aur.archlinux.org/packages/aurget/) | Bash | Optional | [No](https://github.com/pbrisbin/aurget/issues/41) | No | No | No | [No](https://github.com/pbrisbin/aurget/issues/40) | Yes | bash, zsh | – |
+| [aurutils](https://aur.archlinux.org/packages/aurutils/) | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | Yes | zsh | [modular](https://en.wikipedia.org/wiki/Modular_programming "w:Modular programming"), [local repository](/index.php/Local_repository "Local repository"), [package signing](/index.php/Package_signing "Package signing"), [clean chroot](/index.php/DeveloperWiki:Building_in_a_clean_chroot "DeveloperWiki:Building in a clean chroot") |
+| [bauerbill](https://aur.archlinux.org/packages/bauerbill/) | Python | Yes | No | Yes | Yes | Yes | Yes | Yes | bash, zsh | `bb-wrapper` for *pacman* wrapping, trust management |
+| [PKGBUILDer](https://aur.archlinux.org/packages/PKGBUILDer/) | Python | Optional | [No](https://github.com/Kwpolska/pkgbuilder/issues/36) | Yes | Yes | Yes | [Partial](https://github.com/Kwpolska/pkgbuilder/issues/39) | Yes | – | automatic builds by default, use `-F` to disable; `pb-wrapper` for *pacman* wrapping |
+| [repofish](https://aur.archlinux.org/packages/repofish/) | Bash | Optional | Yes | Yes | No | No | No | Yes | – | automatic builds by default, use `check` or `update` to disable; [local repository](/index.php/Local_repository "Local repository") |
+| [rua](https://aur.archlinux.org/packages/rua/) | Rust | Yes | [No](https://github.com/vn971/rua/issues/1) | Yes | [Yes](https://github.com/vn971/rua/commit/fc8c2f3) | Yes | Yes | Yes | bash, zsh, fish | [bubblewrap](/index.php/Bubblewrap "Bubblewrap"), `.pkg.tar` inspection |
 | [burgaur](https://aur.archlinux.org/packages/burgaur/)
-<small>([discontinued](https://github.com/m45t3r/burgaur/issues/7#issuecomment-365599675))</small> | Python/C | Optional | No | No | No | No | No | Yes | – | – | wrapper for *cower* |
+<small>([discontinued](https://github.com/m45t3r/burgaur/issues/7#issuecomment-365599675))</small> | Python/C | Optional | No | No | No | No | No | Yes | – | wrapper for *cower* |
+| [naaman](https://aur.archlinux.org/packages/naaman/)
+<small>([discontinued](https://github.com/enckse/naaman/issues/20#issuecomment-433781874))</small> | Python | Optional | No | Yes | Yes | [Partial](https://github.com/enckse/naaman/issues/19) | [Partial](https://github.com/enckse/naaman/issues/20) | Yes | bash | automatic builds by default, use `--fetch` to disable |
+| [spinach](https://aur.archlinux.org/packages/spinach/)
+<small>([discontinued](https://github.com/floft/spinach))</small> | Bash | [Yes](https://github.com/floft/spinach/commit/5455747) | No | No | No | No | No | Yes | – | – |
 
 ### Pacman wrappers
 
 **Warning:** [pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8) wrappers abstract the work of the package manager. They may (optionally or by default) introduce [unsafe flags](/index.php/System_maintenance#Avoid_certain_pacman_commands "System maintenance"), or other unexpected behavior leading to a defective system.
 
-| Name | Written in | File review | Diff view | Git clone | Reliable parser | Reliable solver | Split packages | Clean build | Unsafe flags | Batch interaction | Shell completion | Specificity |
-| [pakku](https://aur.archlinux.org/packages/pakku/) | Nim | Yes | [Yes](https://github.com/kitsunyan/pakku/commit/396e9f4) | Yes | Yes | Yes | Yes | [Yes](https://github.com/kitsunyan/pakku/commit/864cc03) | [-Sy](https://github.com/kitsunyan/pakku/wiki/Native-Pacman-Explanation) | 1 | bash, zsh | [ABS](/index.php/ABS "ABS") support, AUR comments, fetch PGP keys |
-| [pikaur](https://aur.archlinux.org/packages/pikaur/) | Python | Yes | Yes | Yes | Yes | Yes | [Yes](https://github.com/actionless/pikaur/commit/d409b95) | Yes | [-Sy](https://github.com/actionless/pikaur#pikaur) | 1, 2, 3 | bash, fish, zsh | [ABS](/index.php/ABS "ABS") support, [dynamic users](http://0pointer.net/blog/dynamic-users-with-systemd.html), [multilingual](https://github.com/actionless/pikaur/tree/master/locale), print news |
+| Name | Written in | File review | Diff view | Git clone | Reliable parser | Reliable solver | Split packages | Clean build | Unsafe flags | Shell completion | Specificity |
+| [aura](https://aur.archlinux.org/packages/aura/) | Haskell | Optional | [Partial](https://github.com/aurapm/aura/blob/89bf702/aura/src/Aura/Pkgbuild/Records.hs) | [No](https://github.com/aurapm/aura/pull/346) | [Yes](https://github.com/aurapm/aura/commit/7848e983) | No | [No](https://github.com/aurapm/aura/issues/353) | Yes | – | bash, zsh | automatic builds by default, use `--dryrun` to disable |
+| [packer-aur-git](https://aur.archlinux.org/packages/packer-aur-git/) | Bash | No | No | No | No | No | No | Yes | – | – | – |
+| [pakku](https://aur.archlinux.org/packages/pakku/) | Nim | Yes | [Yes](https://github.com/kitsunyan/pakku/commit/396e9f4) | Yes | Yes | Yes | Yes | [Yes](https://github.com/kitsunyan/pakku/commit/864cc03) | [-Sy](https://github.com/kitsunyan/pakku/wiki/Native-Pacman-Explanation) | bash, zsh | fetch PGP keys |
+| [pikaur](https://aur.archlinux.org/packages/pikaur/) | Python | Yes | Yes | Yes | Yes | Yes | [Yes](https://github.com/actionless/pikaur/commit/d409b95) | Yes | [-Sy](https://github.com/actionless/pikaur#pikaur) | bash, fish, zsh | [dynamic users](http://0pointer.net/blog/dynamic-users-with-systemd.html), batch interaction (1,2,3) |
+| [trizen](https://aur.archlinux.org/packages/trizen/) | Perl | Yes | Yes | [Yes](https://github.com/trizen/trizen/commit/6fb0cc9) | [Yes](https://github.com/trizen/trizen/commit/7ab7ee5f) | Yes | [Partial](https://github.com/trizen/trizen/issues/46) | Yes | [-Ud*](https://github.com/trizen/trizen/commit/9e7b40e) | bash, fish, zsh | automatic builds by default, use `-G` to disable |
+| [wrapaur](https://aur.archlinux.org/packages/wrapaur/) | Bash | Yes | No | Yes | No | No | No | Yes | – | – | – |
 | [yay](https://aur.archlinux.org/packages/yay/) | Go | Yes | [Yes](https://github.com/Jguer/yay/pull/447) | [Yes](https://github.com/Jguer/yay/pull/297) | Yes | Yes | Yes | Yes | [-Sy*](https://github.com/Jguer/yay/commit/3bdb534)
-[--ask*](https://github.com/Jguer/yay/commit/ea5a94e) | 1, [2*](https://github.com/Jguer/yay/commit/3bdb534), [3*](https://github.com/Jguer/yay/commit/ea5a94e) | bash, fish, zsh | fetch PGP keys, [prompt architecture](https://github.com/Jguer/yay/commit/4bcd3a6) |
-| [trizen](https://aur.archlinux.org/packages/trizen/) | Perl | Yes | Yes | [Yes](https://github.com/trizen/trizen/commit/6fb0cc9) | [Yes](https://github.com/trizen/trizen/commit/7ab7ee5f) | Yes | [Partial](https://github.com/trizen/trizen/issues/46) | Yes | [-Ud*](https://github.com/trizen/trizen/commit/9e7b40e) | 1* | bash, fish, zsh | automatic builds by default, use `-G` to disable; AUR comments |
-| [aura](https://aur.archlinux.org/packages/aura/) | Haskell | Optional | [Partial](https://github.com/aurapm/aura/blob/89bf702/aura/src/Aura/Pkgbuild/Records.hs) | [No](https://github.com/aurapm/aura/pull/346) | [Yes](https://github.com/aurapm/aura/commit/7848e983) | No | [No](https://github.com/aurapm/aura/issues/353) | Yes | – | 1* | bash, zsh | automatic builds by default, use `--dryrun` to disable; [downgrade](/index.php/Downgrade "Downgrade") support, multilingual |
+[--ask*](https://github.com/Jguer/yay/commit/ea5a94e) | bash, fish, zsh | fetch PGP keys, batch interaction (1,2,3) |
 | [aurman](https://aur.archlinux.org/packages/aurman/)
-<small>([no user support](https://github.com/polygamma/aurman#stopped-development-for-public-use))</small> | Python | Yes | Yes | Yes | Yes | [Yes](https://github.com/polygamma/aurman/wiki/Description-of-the-aurman-dependency-solving) | Yes | Yes | [-Sy*](https://github.com/polygamma/aurman/commit/6c02ba3)
-[--ask*](https://github.com/polygamma/aurman#make-use-of-the-undocumented---ask-flag-of-pacman) | 1, [2*, 3*](https://github.com/polygamma/aurman#question-6) | bash, fish | fetch PGP keys, print news |
+<small>([discontinued](https://github.com/polygamma/aurman#stopped-development-for-public-use))</small> | Python | Yes | Yes | Yes | Yes | [Yes](https://github.com/polygamma/aurman/wiki/Description-of-the-aurman-dependency-solving) | Yes | Yes | [-Sy*](https://github.com/polygamma/aurman/commit/6c02ba3)
+[--ask*](https://github.com/polygamma/aurman#make-use-of-the-undocumented---ask-flag-of-pacman) | bash, fish | fetch PGP keys, batch interaction (1,2,3) |
 | [pacaur](https://aur.archlinux.org/packages/pacaur/)
 <small>([discontinued](https://bbs.archlinux.org/viewtopic.php?pid=1755144#p1755144))</small> | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | Yes | [-Ud](https://github.com/rmarquis/pacaur/commit/d8f4918)
-[--ask](https://github.com/rmarquis/pacaur/commit/12707cc) | 1, 3 | bash, zsh | multilingual |
-| [wrapaur](https://aur.archlinux.org/packages/wrapaur/)
-<small>(stalled)</small> | Bash | Yes | No | Yes | No | No | No | Yes | – | – | – | mirror updates, print news and AUR comments |
-| [packer-aur-git](https://aur.archlinux.org/packages/packer-aur-git/)
-<small>(stalled)</small> | Bash | No | No | No | No | No | No | Yes | – | – | – | – |
+[--ask](https://github.com/rmarquis/pacaur/commit/12707cc) | bash, zsh | batch interaction (1,3) |
 | [yaourt](https://aur.archlinux.org/packages/yaourt/)
-<small>([discontinued](https://github.com/archlinuxfr/yaourt/issues/382#issuecomment-437461631))</small> | Bash/C | [No](https://github.com/archlinuxfr/yaourt/blob/34b5c0b/src/lib/aur.sh#L54-L72) | Optional | Optional | No | [No](https://github.com/archlinuxfr/yaourt/issues/186) | [No](https://github.com/archlinuxfr/yaourt/issues/85) | [No](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | [-Sy](https://github.com/archlinuxfr/yaourt/blob/d30823e/yaourt/yaourt#L1773) | 2 | bash, fish, zsh | ABS support, print AUR comments, multilingual |
+<small>([discontinued](https://github.com/archlinuxfr/yaourt/issues/382#issuecomment-437461631))</small> | Bash/C | [No](https://github.com/archlinuxfr/yaourt/blob/34b5c0b/src/lib/aur.sh#L54-L72) | Optional | Optional | No | [No](https://github.com/archlinuxfr/yaourt/issues/186) | [No](https://github.com/archlinuxfr/yaourt/issues/85) | [No](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | [-Sy](https://github.com/archlinuxfr/yaourt/blob/d30823e/yaourt/yaourt#L1773) | bash, fish, zsh | batch interaction (2) |
 
 ## Graphical
 

@@ -201,7 +201,7 @@ The [systemd](/index.php/Systemd "Systemd") package includes the service `system
 
 *   **Light** — Program to control lights, leds and backlights. Works reliably by directly accessing sysfs, and not depending on X. Provides many features, such as saving/restoring brightness, limiting minimum brightness, etc. Designed to be bound to hotkeys or integrated into other applications.
 
-	[https://haikarainen.github.io/light/](https://haikarainen.github.io/light/) || [light](https://aur.archlinux.org/packages/light/), [light-git](https://aur.archlinux.org/packages/light-git/)
+	[https://haikarainen.github.io/light/](https://haikarainen.github.io/light/) || [light](https://www.archlinux.org/packages/?name=light), [light-git](https://aur.archlinux.org/packages/light-git/)
 
 *   **Lux** — Shell script to easily control brightness on backlight-controllers.
 

@@ -34,8 +34,9 @@
         *   [3.3.4 默认窗口管理器](#默认窗口管理器)
     *   [3.4 更换主题](#更换主题)
     *   [3.5 声音](#声音)
-        *   [3.5.1 键盘音量键](#键盘音量键)
-            *   [3.5.1.1 快捷键](#快捷键)
+        *   [3.5.1 声音主题](#声音主题)
+        *   [3.5.2 键盘音量键](#键盘音量键)
+            *   [3.5.2.1 快捷键](#快捷键)
     *   [3.6 键盘快捷键](#键盘快捷键)
     *   [3.7 Polkit 验证代理](#Polkit_验证代理)
     *   [3.8 Display blanking](#Display_blanking)
@@ -324,6 +325,20 @@ $ xfconf-query -c xfce4-session -p /sessions/Failsafe/Client0_Command -t string 
 另参见 [Cursor themes](/index.php/Cursor_themes "Cursor themes"), [Icons](/index.php/Icons "Icons"), 和 [Font configuration](/index.php/Font_configuration "Font configuration")。
 
 ### 声音
+
+#### 声音主题
+
+XFCE4支持 [freedesktop system sounds](https://www.freedesktop.org/wiki/Specifications/sound-theme-spec/)， 但需要配置。
+
+启用声音主题：
+
+1.  安装 [libcanberra](https://www.archlinux.org/packages/?name=libcanberra) 和 [libcanberra-pulse](https://www.archlinux.org/packages/?name=libcanberra-pulse) 以提供 [PulseAudio](/index.php/PulseAudio "PulseAudio") 支持。
+2.  "canberra-gtk-module" 应该在 GTK_MODULES 环境变量 （需要重新登陆）；
+3.  在 设置管理器 → 外观 → 设置 选项卡 勾选 "启用事件声音" ；
+4.  在 设置编辑器（Settings Editor） 设置 "xsettings/Net/SoundThemeName" 为一个在 `/usr/share/sounds/` 下的声音主题；
+5.  在混声器里（比如pavucontrol）打开系统声音（System Sounds）。
+
+[sound-theme-freedesktop](https://www.archlinux.org/packages/?name=sound-theme-freedesktop) 提供兼容的声音主题，但是不好用。推荐 [sound-theme-smooth](https://aur.archlinux.org/packages/sound-theme-smooth/) （上面的 SoundThemeName 设置为 "Smooth"）。
 
 #### 键盘音量键
 

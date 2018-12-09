@@ -210,14 +210,6 @@ set -g history-limit 10000
 
 ```
 
-Terminal emulator settings can be overridden with
-
-```
-set -ga terminal-overrides ',xterm*:smcup@:rmcup@'
-set -ga terminal-override ',rxvt-uni*:XT:Ms=\E]52;%p1%s;%p2%s\007'
-
-```
-
 Mouse can be toggled with
 
 ```

@@ -93,7 +93,7 @@ Esta sección lista los demonios que rastrean su portapapeles, para proporcionar
 
 *   **CopyQ** — Gestor de portapapeles inteligente con historial de búsqueda y modificable, con acciones personalizadas en elementos y soporte de línea de órdenes.
 
-	[https://github.com/hluk/CopyQ](https://github.com/hluk/CopyQ) || [copyq](https://aur.archlinux.org/packages/copyq/)
+	[https://github.com/hluk/CopyQ](https://github.com/hluk/CopyQ) || [copyq](https://www.archlinux.org/packages/?name=copyq)
 
 *   **[Glipper](https://en.wikipedia.org/wiki/Glipper "wikipedia:Glipper")** — Gestor de portapapeles para el escritorio de GNOME con muchas características y soporte para complementos.
 

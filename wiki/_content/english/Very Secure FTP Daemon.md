@@ -412,7 +412,7 @@ user_sub_token=$USER
 
 [seccomp](https://en.wikipedia.org/wiki/seccomp "wikipedia:seccomp") is activated by default in vsftpd and this has caused compatibility issues with some kernel versions. This was fixed as one can see in [RedHat Bugzilla#845980](https://bugzilla.redhat.com/show_bug.cgi?id=845980) but can still cause issues with newer kernels.
 
-If you encounter failures when listing directories, add this to `/etc/vsftpd.conf`:
+If you encounter any failures when listing directories, add this to `/etc/vsftpd.conf`:
 
 ```
 seccomp_sandbox=NO

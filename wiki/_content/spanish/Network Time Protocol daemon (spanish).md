@@ -186,7 +186,7 @@ Puede sincronizar el reloj del sistema con una conexión de red mediante el uso 
 
 ## Ejecutar como un demonio
 
-[Inicie](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") `ntpd.service`. Para iniciarlo en el arranque o bien actívelo o, alternativamente, utilice la orden:
+[Inicie](/index.php/Systemd_(Espa%C3%B1ol)#Utilizar_las_unidades "Systemd (Español)") `ntpd.service`. Para iniciarlo en el arranque o bien actívelo o, alternativamente, utilice la orden:
 
 ```
 # timedatectl set-ntp 1

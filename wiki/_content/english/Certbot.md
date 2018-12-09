@@ -242,7 +242,7 @@ ExecStart=/usr/bin/certbot renew --quiet --agree-tos
 
 If you do not use a plugin to manage the web server configuration automatically, the web server has to be reloaded manually to reload the certificates each time they are renewed. This can be done by adding `--deploy-hook "systemctl reload nginx.service"` to the `ExecStart` command [[1]](https://certbot.eff.org/docs/using.html#renewing-certificates). Of course use `httpd.service` instead of `nginx.service` if appropriate.
 
-**Note:** Before adding a [timer](/index.php/Systemd/Timers "Systemd/Timers"), check that the service is working correctly and is not trying to prompt anything.
+**Note:** Before adding a [timer](/index.php/Systemd/Timers "Systemd/Timers"), check that the service is working correctly and is not trying to prompt anything. Note that the service may take up to 480 seconds to complete since a delay is added to calling certbot interactively since [v0.29.0](https://github.com/certbot/certbot/blob/master/CHANGELOG.md#0290---2018-12-05).
 
 Add a timer to check for certificate renewal twice a day and include a randomized delay so that everyone's requests for renewal will be spread over the day to lighten the Let's Encrypt server load [[2]](https://certbot.eff.org/#arch-nginx):
 

@@ -27,7 +27,7 @@ GNUnet puede ser [Instalado](/index.php/Install_(Espa%C3%B1ol) "Install (Españo
 
 ## Configuración
 
-[Inicie](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") y posiblemente [habilite](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") el servicio `gnunet`.
+[Inicie](/index.php/Systemd_(Espa%C3%B1ol)#Utilizar_las_unidades "Systemd (Español)") y posiblemente [habilite](/index.php/Systemd_(Espa%C3%B1ol)#Utilizar_las_unidades "Systemd (Español)") el servicio `gnunet`.
 
 Alternativamente, para iniciar el par inmediatamente en un terminal ejecute:
 

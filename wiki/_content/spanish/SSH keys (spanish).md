@@ -350,7 +350,7 @@ WantedBy=*default*.target
 
 ```
 
-Agregue `SSH_AUTH_SOCK DEFAULT="${XDG_RUNTIME_DIR}/ssh-agent.socket"` al archivo `~/.pam_environment`. Después [active](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") o [active inicio automatico](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") de la unidad.
+Agregue `SSH_AUTH_SOCK DEFAULT="${XDG_RUNTIME_DIR}/ssh-agent.socket"` al archivo `~/.pam_environment`. Después [active](/index.php/Systemd_(Espa%C3%B1ol)#Utilizar_las_unidades "Systemd (Español)") o [active inicio automatico](/index.php/Systemd_(Espa%C3%B1ol)#Utilizar_las_unidades "Systemd (Español)") de la unidad.
 
 **Nota:** SI esta usando GNOME, esta variable de entorno es sobre escrita por defecto. Véase [GNOME/Keyring#Disable keyring daemon components](/index.php/GNOME/Keyring#Disable_keyring_daemon_components "GNOME/Keyring").
 

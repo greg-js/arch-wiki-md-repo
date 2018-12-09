@@ -114,7 +114,7 @@ Son necesarios los siguientes paquetes y algunos controladores de impresora. [In
 *   [ghostscript](https://www.archlinux.org/packages/?name=ghostscript) - (opcional) el intérprete para el lenguaje PostScript.
 *   [gsfonts](https://www.archlinux.org/packages/?name=gsfonts) - el tipo de letra estándar GhostScript Type1.
 
-Para poder usar la impresora en red es necesario intalar también [avahi](https://www.archlinux.org/packages/?name=avahi) y activar `avahi-daemon.service` [con systemd](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)").
+Para poder usar la impresora en red es necesario intalar también [avahi](https://www.archlinux.org/packages/?name=avahi) y activar `avahi-daemon.service` [con systemd](/index.php/Systemd_(Espa%C3%B1ol)#Utilizar_las_unidades "Systemd (Español)").
 
 Si el sistema está conectado a una impresora en red utilizando el protocolo [Samba](/index.php/Samba "Samba") o si el sistema va a ser utilizado como un servidor de impresión para clientes de Windows, instale también el paquete [samba](https://www.archlinux.org/packages/?name=samba).
 

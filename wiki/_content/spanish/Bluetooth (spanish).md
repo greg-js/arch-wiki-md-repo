@@ -24,7 +24,7 @@
 1.  [Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquetes [bluez](https://www.archlinux.org/packages/?name=bluez), el cual contiene el protocolo de Bluetooth.
 2.  [Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquetes [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils), el cual provee la utilidad `bluetoothctl`. Alternativamente puede instalar [bluez-utils-compat](https://aur.archlinux.org/packages/bluez-utils-compat/) el cual contiene las herramientas obsoletas de BlueZ.
 3.  El controlador genérico de Bluetooth es el modulo del kernel `btusb`. [Verifique](/index.php/Kernel_modules_(Espa%C3%B1ol)#Obtener_informaci.C3.B3n "Kernel modules (Español)") si el modulo ha sido cargado en su sistema. En caso de que no lo sea [cargue el modulo](/index.php/Kernel_modules_(Espa%C3%B1ol)#Manejar_m.C3.B3dulos_manualmente "Kernel modules (Español)") de manera manual.
-4.  [Active](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") / [active inicio automático](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") de la unidad de systemd `bluetooth.service`.
+4.  [Active](/index.php/Systemd_(Espa%C3%B1ol)#Utilizar_las_unidades "Systemd (Español)") / [active inicio automático](/index.php/Systemd_(Espa%C3%B1ol)#Utilizar_las_unidades "Systemd (Español)") de la unidad de systemd `bluetooth.service`.
 
 **Nota:**
 

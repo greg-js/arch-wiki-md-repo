@@ -36,7 +36,7 @@ IPSec gateway gateway.example.com
 
 ## Inicio
 
-El paquete `vpnc` viene con una unidad de [systemd](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") `vpnc @ .service`. Si desea utilizar el archivo de configuración `/etc/vpnc/client.conf`, debería iniciarlo con `systemctl start vpnc@client`.
+El paquete `vpnc` viene con una unidad de [systemd](/index.php/Systemd_(Espa%C3%B1ol)#Utilizar_las_unidades "Systemd (Español)") `vpnc @ .service`. Si desea utilizar el archivo de configuración `/etc/vpnc/client.conf`, debería iniciarlo con `systemctl start vpnc@client`.
 
 ## Solución de problemas
 

@@ -88,7 +88,7 @@ Véase el artículo de [ArchWiki](/index.php/Main_page_(Espa%C3%B1ol) "Main page
 
 *   **CopyQ** — Gestor de portapapeles inteligente con búsqueda e historial editables, acciones personalizadas sobre elementos y soporte para línea de órdenes.
 
-	[https://github.com/hluk/CopyQ](https://github.com/hluk/CopyQ) || [copyq](https://aur.archlinux.org/packages/copyq/)
+	[https://github.com/hluk/CopyQ](https://github.com/hluk/CopyQ) || [copyq](https://www.archlinux.org/packages/?name=copyq)
 
 *   **[Glipper](https://en.wikipedia.org/wiki/Glipper "wikipedia:Glipper")** — Gestor de portapapeles para el escritorio GNOME con muchas características y soporte para plugins.
 

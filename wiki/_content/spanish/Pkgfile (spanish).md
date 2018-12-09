@@ -87,6 +87,6 @@ end
 
 ## Actualizaciones automáticas
 
-**pkgfile** viene con un servicio y un [temporizador](/index.php/Systemd/Timers "Systemd/Timers") de [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") para sincronizar automáticamente la base de datos de pkgfile. Para activar automáticamente las actualizaciones [habilite](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") `pkgfile-update.timer`.
+**pkgfile** viene con un servicio y un [temporizador](/index.php/Systemd/Timers "Systemd/Timers") de [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") para sincronizar automáticamente la base de datos de pkgfile. Para activar automáticamente las actualizaciones [habilite](/index.php/Systemd_(Espa%C3%B1ol)#Utilizar_las_unidades "Systemd (Español)") `pkgfile-update.timer`.
 
 Por defecto, pkgfile se actualiza diariamente. Para cambiar esta programación, copie `/usr/lib/systemd/system/pkgfile-update.timer` a `/etc/systemd/system/pkgfile-update.timer` y edite este último archivo.

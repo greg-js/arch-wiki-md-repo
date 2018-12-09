@@ -282,7 +282,7 @@ m:0x0 + b:9
 
 ```
 
-Now to test... Run the following command and if it works as expected remember to add xbindkeys to `.xinitrc` or somewhere where it will be executed each time X starts. Also, this should work with Epiphany and Konqueror without any additional configuration or use of [Imwheel](/index.php/Imwheel "Imwheel").
+Now to test... Run the following command and if it works as expected remember to add xbindkeys to `.xinitrc` or somewhere where it will be executed each time X starts. Also, this should work with Epiphany and Konqueror without any additional configuration or use of [IMWheel](/index.php/IMWheel "IMWheel").
 
 ```
 xbindkeys

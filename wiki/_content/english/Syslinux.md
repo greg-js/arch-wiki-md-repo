@@ -710,7 +710,7 @@ MENU CLEAR
 
 If you often have to edit your boot command with diverse parameters in the Syslinux boot prompt, then you might want to remap your keyboard layout. This allows you to enter "=", "/" and other characters easily on a non-US keyboard.
 
-**Note:** `keytab-lilo` is a perl script invoking the *loadkeys* program.
+**Note:** `keytab-lilo`, which is included in the [syslinux](https://www.archlinux.org/packages/?name=syslinux) package, is a perl script invoking the *loadkeys* program.
 
 To create a compatible keymap (e.g. a german one) run:
 
@@ -903,7 +903,7 @@ then install and configure Syslinux.
 
 ```
 
-and then boot up with the Arch install disk. Next, use `cfdisk` to delete the `/boot` partition, and recreate it. This time it should begin at the proper sector, **63**. Now mount your partitions and `chroot` into your mounted system, as described in the beginners guide. Restore `/boot` with the command
+and then boot up with the Arch install disk. Next, use `cfdisk` to delete the `/boot` partition, and recreate it. This time it should begin at the proper sector, **63**. Now mount your partitions and `chroot` into your mounted system, as described in the [installation guide](/index.php/Installation_guide "Installation guide"). Restore `/boot` with the command
 
 ```
 # cp -a /boot.bak/ /boot/
@@ -923,7 +923,7 @@ You will also get this error if you are trying to boot from a md [RAID](/index.p
 
 ### Windows boots up, ignoring Syslinux
 
-**Solution:** Make sure the partition that contains `/boot` has the boot flag enabled. Also, make sure the boot flag is not enabled on the Windows partition. See the installation section above.
+**Solution:** Make sure the partition that contains `/boot` has the boot flag enabled. Also, make sure the boot flag is not enabled on the Windows partition. See the [installation section](#Chainloading_a_partition's_VBR) above.
 
 The MBR that comes with Syslinux looks for the first active partition that has the boot flag set. The Windows partition was likely found first and had the boot flag set. If you wanted, you could use the MBR that Windows or MS-DOS `fdisk` provides.
 
@@ -933,7 +933,7 @@ You select a menu entry and it does nothing, it just *"refreshes"* the menu. Thi
 
 ### Cannot remove ldlinux.sys
 
-The `ldlinux.sys` file has the immutable attribute set, which prevents it from being deleted or overwritten. This is because the sector location of the file must not change or else Syslinux has to be reinstalled. To remove it, run:
+The `ldlinux.sys` file has the [immutable attribute](/index.php/File_permissions_and_attributes#File_attributes "File permissions and attributes") set, which prevents it from being deleted or overwritten. This is because the sector location of the file must not change or else Syslinux has to be reinstalled. To remove it, run:
 
 ```
 # chattr -i /boot/syslinux/ldlinux.sys
@@ -997,7 +997,7 @@ invalid or corrupt kernel image.
 
 ### Btrfs multi-device
 
-Booting from multiple-device btrfs is not supported.[[15]](http://repo.or.cz/syslinux.git/blob/HEAD:/extlinux/main.c) (As of 7/21/2016 line 1246 in validate_device_btrfs() in main.c) This head-scratching error will show (assuming you're installing on sda1):
+Booting from multiple-device btrfs is not supported.[[15]](http://repo.or.cz/syslinux.git/blob/HEAD:/extlinux/main.c) (As of 21-Jul-2016 line 1246 in validate_device_btrfs() in main.c) This head-scratching error will show (assuming you're installing on sda1):
 
 ```
 /boot/syslinux is device /dev/sda1

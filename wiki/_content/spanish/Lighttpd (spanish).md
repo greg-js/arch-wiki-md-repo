@@ -49,7 +49,7 @@ El archivo de la configuración por defecto especifica que el directorio `/srv/h
 
  `/srv/http/index.html`  `Hola Mundo!` 
 
-Después [active](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") la unidad `lighttpd.service` y en su navegador diríjase a `localhost`, donde debería ver la pagina de prueba.
+Después [active](/index.php/Systemd_(Espa%C3%B1ol)#Utilizar_las_unidades "Systemd (Español)") la unidad `lighttpd.service` y en su navegador diríjase a `localhost`, donde debería ver la pagina de prueba.
 
 Archivos de configuración con ejemplos están disponibles en `/usr/share/doc/lighttpd/`.
 
@@ -264,7 +264,7 @@ include "conf.d/fastcgi.conf"
 
 **Nota:** recuerde que el orden en que los módulos se cargan es importante, una lista con el orden correcto esta en `/usr/share/doc/lighttpd/config/modules.conf`.
 
-[Recargue](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") lighttpd.
+[Recargue](/index.php/Systemd_(Espa%C3%B1ol)#Utilizar_las_unidades "Systemd (Español)") lighttpd.
 
 **Nota:**
 

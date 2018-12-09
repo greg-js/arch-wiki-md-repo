@@ -140,7 +140,7 @@ Restart Apache (`httpd.service`).
 
 Add a location block for RoundCube
 
- `/etc/nginx.conf` 
+ `/etc/nginx/nginx.conf` 
 ```
 location /webmail {
         alias /usr/share/webapps/roundcubemail;

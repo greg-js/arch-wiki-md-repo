@@ -38,7 +38,7 @@
 *   [DeveloperWiki:HOWTO Be A Packager](/index.php/DeveloperWiki:HOWTO_Be_A_Packager "DeveloperWiki:HOWTO Be A Packager")
 *   [DeveloperWiki:Systemd](/index.php/DeveloperWiki:Systemd "DeveloperWiki:Systemd")
 *   [DeveloperWiki:Signing Packages](/index.php/DeveloperWiki:Signing_Packages "DeveloperWiki:Signing Packages")
-*   [DeveloperWiki:Building in a Clean Chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot")
+*   [DeveloperWiki:Building in a clean chroot](/index.php/DeveloperWiki:Building_in_a_clean_chroot "DeveloperWiki:Building in a clean chroot")
 *   [DeveloperWiki:Package Submittal Rules](/index.php/DeveloperWiki:Package_Submittal_Rules "DeveloperWiki:Package Submittal Rules")
 *   [DeveloperWiki:GNOME Guidelines](/index.php/DeveloperWiki:GNOME_Guidelines "DeveloperWiki:GNOME Guidelines")
 *   [DeveloperWiki:Adopting Packages](/index.php/DeveloperWiki:Adopting_Packages "DeveloperWiki:Adopting Packages")
@@ -71,7 +71,7 @@
 
 ### Web Development
 
-*   [DeveloperWiki:Website Suggestions](/index.php/DeveloperWiki:Website_Suggestions "DeveloperWiki:Website Suggestions")
+*   [DeveloperWiki:Website suggestions](/index.php/DeveloperWiki:Website_suggestions "DeveloperWiki:Website suggestions")
 
 ### Release Engineering
 

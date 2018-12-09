@@ -55,6 +55,8 @@ Before installing it is necessary to modify some UEFI Settings. They can be acce
 
 It is also possible to use the right USB-C port directly without any UEFI adjustment.
 
+Booting and installing from a microSD card is also possible, as long as SD Card and SD Card Boot are both enabled in the UEFI setup.
+
 ## Content Adaptive Brightness Control
 
 In the XPS 13 the display panels (both FHD and 4K UHD) come with Content Adaptive Brightness Control (usually referred to as CABC or DBC) enabled by default. While disabling required flashing the display firmware in previous generations, DBC can now be disabled in recent BIOS versions. To test if DBS is enabled, go to this [test page](https://tylerwatt12.com/dc/).

@@ -20,13 +20,13 @@ See the [gocryptfs](https://nuetzlich.net/gocryptfs/) project home for further i
 
 ## Installation
 
-[Install](/index.php/Install "Install") [gocryptfs](https://aur.archlinux.org/packages/gocryptfs/) or [gocryptfs-git](https://aur.archlinux.org/packages/gocryptfs-git/).
+[Install](/index.php/Install "Install") [gocryptfs](https://www.archlinux.org/packages/?name=gocryptfs) or [gocryptfs-git](https://aur.archlinux.org/packages/gocryptfs-git/).
 
 As a FUSE filesystem, gocryptfs is fully configurable by the user and stores its configuration files in the user's directory paths.
 
 ## Usage
 
-See [gocryptfs(1)](https://manned.org/gocryptfs.1) and its examples first.
+See [gocryptfs(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gocryptfs.1) and its examples first.
 
 **Warning:**
 

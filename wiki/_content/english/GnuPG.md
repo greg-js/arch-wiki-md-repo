@@ -698,7 +698,7 @@ If you accept the security risk then you can use the patch from [GPGTools/MacGPG
 
 ##### Multi applet smart cards
 
-When using [Yubikeys](/index.php/Yubikey "Yubikey") or other multi applet USB dongles with OpenSC PKCS#11 may run into problems where OpenSC switches your Yubikey from OpenPGP to PIV applet, breaking the `scdaemon`.
+When using [YubiKeys](/index.php/YubiKey "YubiKey") or other multi applet USB dongles with OpenSC PKCS#11 may run into problems where OpenSC switches your Yubikey from OpenPGP to PIV applet, breaking the `scdaemon`.
 
 You can hack around the problem by forcing OpenSC to also use the OpenPGP applet. Open `/etc/opensc.conf` file, search for Yubikey and change the `driver = "PIV-II";` line to `driver = "openpgp";`. After that you can test with `pkcs11-tool -O --login` that the OpenPGP applet is selected by default. Other PKCS#11 clients like browsers may need to be restarted for that change to be applied.
 

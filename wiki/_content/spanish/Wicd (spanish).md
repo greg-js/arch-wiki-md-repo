@@ -68,7 +68,7 @@ Wicd provee un demonio que debe ser iniciado.
 
 En primer lugar, detenga todos los demonios de red que estén en ejecución (como netctl, dhcpcd, NetworkManager).
 
-Desactive los servicios de gestión red existentes, `netctl`, `dhcpcd`, y `networkmanager`. Remítase a [Systemd (Español)#Usar las unidades](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)").
+Desactive los servicios de gestión red existentes, `netctl`, `dhcpcd`, y `networkmanager`. Remítase a [Systemd (Español)#Utilizar las unidades](/index.php/Systemd_(Espa%C3%B1ol)#Utilizar_las_unidades "Systemd (Español)").
 
 **Nota:** Puede que tenga que detener y desactivar el demonio **network**, en lugar de **netctl**, que es el servicio que actualmente reemplaza a **network**. Si no está seguro, pruebe a desactivar ambos.
 

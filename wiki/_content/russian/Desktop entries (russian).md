@@ -169,7 +169,7 @@ $ icotool -x <icon name>.ico
 
 ```
 
-Для извлечения изображений из контейнера .icns вы можете использовать *icns2png* (предоставленный [libicns](https://aur.archlinux.org/packages/libicns/)):
+Для извлечения изображений из контейнера .icns вы можете использовать *icns2png* (предоставленный [libicns](https://www.archlinux.org/packages/?name=libicns)):
 
 ```
 $ icns2png -x <icon name>.icns

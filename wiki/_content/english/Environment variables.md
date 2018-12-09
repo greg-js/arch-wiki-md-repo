@@ -86,12 +86,20 @@ To update the variable, re-login or *source* the file: `$ source ~/.bash_profile
 
 #### Graphical applications
 
-Environment variables for GUI applications can be set in [xinitrc](/index.php/Xinitrc "Xinitrc"), or in [xprofile](/index.php/Xprofile "Xprofile") when using a [display manager](/index.php/Display_manager "Display manager"), for example:
+Environment variables for [Xorg](/index.php/Xorg "Xorg") applications can be set in [xinitrc](/index.php/Xinitrc "Xinitrc"), or in [xprofile](/index.php/Xprofile "Xprofile") when using a [display manager](/index.php/Display_manager "Display manager"), for example:
 
  `~/.xinitrc` 
 ```
 export PATH="${PATH}:~/scripts"
 export GUIVAR=value
+```
+
+Applications running on [Wayland](/index.php/Wayland "Wayland") may to use [systemd](/index.php/Systemd/User#Environment_variables "Systemd/User") user environments variables instead, as Wayland does not initiate any Xorg related files:
+
+ `~/.config/environment.d/envvars.conf` 
+```
+PATH=$PATH:~/scripts
+GUIVAR=value
 ```
 
 ### Per session

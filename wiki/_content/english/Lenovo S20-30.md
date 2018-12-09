@@ -119,7 +119,7 @@ video.use_native_backlight=1
 
 ```
 
-Use one of the [backlight utilities](/index.php/Backlight#Backlight_utilities "Backlight") (tested with [light](https://aur.archlinux.org/packages/light/)) to adjust the backlight and control it with keyboard shortcuts [by the method of your choice](/index.php/Extra_keyboard_keys_in_Xorg "Extra keyboard keys in Xorg").
+Use one of the [backlight utilities](/index.php/Backlight#Backlight_utilities "Backlight") (tested with [light](https://www.archlinux.org/packages/?name=light)) to adjust the backlight and control it with keyboard shortcuts [by the method of your choice](/index.php/Extra_keyboard_keys_in_Xorg "Extra keyboard keys in Xorg").
 
 With kernel 4.0.x backlight can still be changed, but the keys for increasing or decreasing backlight brightness do not work anymore.
 

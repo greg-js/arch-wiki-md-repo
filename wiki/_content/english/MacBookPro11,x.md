@@ -146,7 +146,7 @@ At the next reboot, the Apple Boot Manager, shown when holding down the option k
 
 **Note:** If you wish to use GRUB, have a look at [Mac#Using the native Apple bootloader with GRUB](/index.php/Mac#Using_the_native_Apple_bootloader_with_GRUB "Mac").
 
-**Tip:** After the installation, it is optionally possible to set a custom icon that will be displayed in the MacBook boot loader. In order to do that, you need to install the [wget](https://www.archlinux.org/packages/?name=wget), [librsvg](https://www.archlinux.org/packages/?name=librsvg) and [libicns](https://aur.archlinux.org/packages/libicns/) packages. After that, just follow the following commands:
+**Tip:** After the installation, it is optionally possible to set a custom icon that will be displayed in the MacBook boot loader. In order to do that, you need to install the [wget](https://www.archlinux.org/packages/?name=wget), [librsvg](https://www.archlinux.org/packages/?name=librsvg) and [libicns](https://www.archlinux.org/packages/?name=libicns) packages. After that, just follow the following commands:
 ```
  $ wget -O /tmp/archlinux.svg [https://www.archlinux.org/logos/archlinux-icon-crystal-64.svg](https://www.archlinux.org/logos/archlinux-icon-crystal-64.svg)
  $ rsvg-convert -w 128 -h 128 -o /tmp/archlogo.png /tmp/archlinux.svg

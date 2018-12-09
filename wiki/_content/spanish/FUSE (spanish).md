@@ -52,7 +52,7 @@ $ fusermount -u *punto_de_montaje*
 
 *   **[gocryptfs](/index.php/Gocryptfs "Gocryptfs")** — gocryptfs es un sistema de archivos criptográfico apilable de espacio de usuario.
 
-	[https://nuetzlich.net/gocryptfs/](https://nuetzlich.net/gocryptfs/) || [gocryptfs](https://aur.archlinux.org/packages/gocryptfs/)
+	[https://nuetzlich.net/gocryptfs/](https://nuetzlich.net/gocryptfs/) || [gocryptfs](https://www.archlinux.org/packages/?name=gocryptfs)
 
 *   **google-drive-ocamlfuse** — Sistema de archivos basado en FUSE respaldado por Google Drive, escrito en OCaml.
 

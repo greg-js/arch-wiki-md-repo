@@ -13,9 +13,11 @@ Pick a preferred network interface and edit the `Interface` variable in the `/et
 To start monitoring a particular interface you must initialize a database first. Each interface needs its own database. The command to initialize one for the `eth0` interface is:
 
 ```
-# vnstat -u -i eth0
+# vnstat --add -i eth0
 
 ```
+
+Remember to restart the `vnstat.service` daemon after you have added a new interface.
 
 ## Usage
 
@@ -37,5 +39,12 @@ To find more options, use:
 
 ```
 # vnstat --help
+
+```
+
+or to see all options use:
+
+```
+# vnstat --longhelp
 
 ```

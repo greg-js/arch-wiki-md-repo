@@ -307,7 +307,7 @@ Update GRUB configuration by running `grub-mkconfig -o /boot/grub/grub.cfg`
 
 #### Firefox
 
-Firefox should use the [#GDK 3 (GTK+ 3)](#GDK_3_(GTK+_3)) settings. However, the suggested `GDK_SCALE` suggestion doesn't consistently scale the entirety of Firefox, and doesn't work for fractional values (e.g., a factor of 158DPI/96DPI = 1.65 for a 1080p 14" laptop). You may want to use `GDK_DPI_SCALE` instead. Another option, which will avoid Firefox-specific settings in many setups is to use the settings in [#Xresources](#Xresources) as Firefox should respect the `Xft.dpi` value defined there.
+Firefox should use the [#GDK 3 (GTK+ 3)](#GDK_3_(GTK+_3)) settings. However, the suggested `GDK_SCALE` suggestion doesn't consistently scale the entirety of Firefox, and doesn't work for fractional values (e.g., a factor of 158DPI/96DPI = 1.65 for a 1080p 14" laptop). You may want to use `GDK_DPI_SCALE` instead. Another option, which will avoid Firefox-specific settings in many setups is to use the settings in [#X Resources](#X_Resources) as Firefox should respect the `Xft.dpi` value defined there.
 
 To override those, open Firefox advanced preferences page (`about:config`) and set parameter `layout.css.devPixelsPerPx` to `2` (or find the one that suits you better; `2` is a good choice for Retina screens), but it also doesn't consistently scale the entirety of Firefox. If Firefox is not scaling fonts, you may want to create `userChrome.css` and add appropriate styles to it. More information about `userChrome.css` at [mozillaZine](http://kb.mozillazine.org/index.php?title=UserChrome.css).
 

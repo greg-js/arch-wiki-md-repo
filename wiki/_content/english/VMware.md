@@ -386,7 +386,7 @@ blacklist kvm-intel # For Intel CPUs
 
 ```
 
-**Tip:** If `kvm` modules continue to load, despite being blacklisted, and you are running a system with integrated Intel graphics (i915,i965), it may be necessary to blacklist the `kvmgt` kernel module directly from the kernel command line options. See [Kernel_module#Using_kernel_command_line_2](/index.php/Kernel_module#Using_kernel_command_line_2 "Kernel module") for more details.
+**Tip:** If `kvm` modules continue to load, despite being blacklisted, and you are running a system with integrated Intel graphics (i915,i965), it may be necessary to blacklist the `kvmgt` kernel module directly from the kernel command line options. See [Kernel module#Using kernel command line_2](/index.php/Kernel_module#Using_kernel_command_line_2 "Kernel module") for more details.
 
 ### Module Issues
 

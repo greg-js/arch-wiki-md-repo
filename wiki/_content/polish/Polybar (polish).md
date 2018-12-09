@@ -1,4 +1,4 @@
-[polybar](https://github.com/jaagr/polybar) jest szybkim i prostym do używania narzędziem do tworzenia paska statusu. Program ma na calu być łatwo dostosowywalnym, wykorzystującym wiele modułów, które umożliwiają szeroki zakres funkcji (edytowalnych), takich jak wyświetlanie obszarów roboczych, daty czy głośności systemowej. Polybar jest wyjątkowo przydatny dla [Window manager](/index.php/Window_manager "Window manager")ów które mają ograniczony panel lub wcale go nie mają jak np [awesome](/index.php/Awesome "Awesome") czy [i3](/index.php/I3 "I3"). Polybar również może byc używany na pełnych [środowiskach graficznych](https://wiki.archlinux.org/index.php/Desktop_environment) jak [Plasma (Polski)](/index.php/Plasma_(Polski) "Plasma (Polski)").
+[polybar](https://github.com/jaagr/polybar) jest szybkim i prostym do używania narzędziem do tworzenia paska statusu. Program ma na calu być łatwo dostosowywalnym, wykorzystującym wiele modułów, które umożliwiają szeroki zakres funkcji (edytowalnych), takich jak wyświetlanie obszarów roboczych, daty czy głośności systemowej. Polybar jest wyjątkowo przydatny dla [Window manager](/index.php/Window_manager "Window manager")ów które mają ograniczony panel lub wcale go nie mają jak np [awesome](/index.php/Awesome "Awesome") czy [i3](/index.php/I3 "I3"). Polybar również może byc używany na pełnych [środowiskach graficznych](/index.php/Desktop_environment "Desktop environment") jak [Plasma (Polski)](/index.php/Plasma_(Polski) "Plasma (Polski)").
 
 ## Contents
 
@@ -62,7 +62,7 @@ Domyślnie polybar zainstaluje również przykładową konfigurację z wieloma w
 
 #### Uruchamianie korzystając z WM
 
-Stwórz [plik wykonywalny](https://wiki.archlinux.org/index.php/Help:Reading_(Polski)#Stw%C3%B3rz_plik_wykonywalnym) zawierający logikę uruchamiania, na przykład `$HOME/.config/polybar/launch.sh`:
+Stwórz [plik wykonywalny](/index.php/Help:Reading_(Polski)#Stwórz_plik_wykonywalnym "Help:Reading (Polski)") zawierający logikę uruchamiania, na przykład `$HOME/.config/polybar/launch.sh`:
 
 ```
 #!/bin/bash

@@ -304,7 +304,7 @@ Alternatively, run `pacman-key -v archlinux-<version>-x86_64.iso.sig` from an ex
 
 ### Boot loader
 
-Linux-съвместим boot loader трябва да бъде инталиран за да включите Arch Linux. Вижте [Category:Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") за да изберете някой от предоставените.
+Linux-съвместим boot loader трябва да бъде инталиран за да включите Arch Linux. Вижте [Arch boot process#Boot loader](/index.php/Arch_boot_process#Boot_loader "Arch boot process") за да изберете някой от предоставените.
 
 Ако разполагате с Intel или AMD процесор, включете [microcode](/index.php/Microcode "Microcode") обновления.
 

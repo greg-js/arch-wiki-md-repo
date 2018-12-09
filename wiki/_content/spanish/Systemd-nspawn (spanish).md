@@ -125,7 +125,7 @@ Si los comandos de arriba no funcionaron, es posible arrancar el contenedor y ej
 
 Al usar un contenedor frecuentemente, seria deseable iniciarlo al arrancar el sistema anfitrión.
 
-[Active](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") el target `machines.target`, después ejecute `systemd-nspawn@*myContainer*.service`, donde `myContainer` es un contenedor de nspawn ubicado en `/var/lib/machines`.
+[Active](/index.php/Systemd_(Espa%C3%B1ol)#Utilizar_las_unidades "Systemd (Español)") el target `machines.target`, después ejecute `systemd-nspawn@*myContainer*.service`, donde `myContainer` es un contenedor de nspawn ubicado en `/var/lib/machines`.
 
 **Sugerencia:** Para personalizar el arranque de los contenedores, edite `/etc/systemd/nspawn/*myContainer*.nspawn`. Vea [systemd.nspawn(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.nspawn.5) para todas las opciones.
 

@@ -4,28 +4,28 @@
 
 ## Contents
 
-*   [1 Обзор](#.D0.9E.D0.B1.D0.B7.D0.BE.D1.80)
+*   [1 Обзор](#Обзор)
 *   [2 ACPI](#ACPI)
-    *   [2.1 Параметры ядра](#.D0.9F.D0.B0.D1.80.D0.B0.D0.BC.D0.B5.D1.82.D1.80.D1.8B_.D1.8F.D0.B4.D1.80.D0.B0)
-    *   [2.2 Правило Udev](#.D0.9F.D1.80.D0.B0.D0.B2.D0.B8.D0.BB.D0.BE_Udev)
-*   [3 Выключение подсветки](#.D0.92.D1.8B.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE.D0.B4.D1.81.D0.B2.D0.B5.D1.82.D0.BA.D0.B8)
-*   [4 Служба systemd-backlight](#.D0.A1.D0.BB.D1.83.D0.B6.D0.B1.D0.B0_systemd-backlight)
-*   [5 Утилиты настройки](#.D0.A3.D1.82.D0.B8.D0.BB.D0.B8.D1.82.D1.8B_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B8)
+    *   [2.1 Параметры ядра](#Параметры_ядра)
+    *   [2.2 Правило Udev](#Правило_Udev)
+*   [3 Выключение подсветки](#Выключение_подсветки)
+*   [4 Служба systemd-backlight](#Служба_systemd-backlight)
+*   [5 Утилиты настройки](#Утилиты_настройки)
     *   [5.1 xbacklight](#xbacklight)
-    *   [5.2 Другие утилиты](#.D0.94.D1.80.D1.83.D0.B3.D0.B8.D0.B5_.D1.83.D1.82.D0.B8.D0.BB.D0.B8.D1.82.D1.8B)
+    *   [5.2 Другие утилиты](#Другие_утилиты)
     *   [5.3 setpci](#setpci)
-    *   [5.4 Использование DBus с Gnome](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_DBus_.D1.81_Gnome)
-*   [6 Цветовая коррекция](#.D0.A6.D0.B2.D0.B5.D1.82.D0.BE.D0.B2.D0.B0.D1.8F_.D0.BA.D0.BE.D1.80.D1.80.D0.B5.D0.BA.D1.86.D0.B8.D1.8F)
+    *   [5.4 Использование DBus с Gnome](#Использование_DBus_с_Gnome)
+*   [6 Цветовая коррекция](#Цветовая_коррекция)
     *   [6.1 xcalib](#xcalib)
     *   [6.2 Xflux](#Xflux)
     *   [6.3 redshift](#redshift)
     *   [6.4 NVIDIA settings](#NVIDIA_settings)
-    *   [6.5 Увеличение яркости выше максимального уровня](#.D0.A3.D0.B2.D0.B5.D0.BB.D0.B8.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.8F.D1.80.D0.BA.D0.BE.D1.81.D1.82.D0.B8_.D0.B2.D1.8B.D1.88.D0.B5_.D0.BC.D0.B0.D0.BA.D1.81.D0.B8.D0.BC.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D1.83.D1.80.D0.BE.D0.B2.D0.BD.D1.8F)
-*   [7 Внешние мониторы](#.D0.92.D0.BD.D0.B5.D1.88.D0.BD.D0.B8.D0.B5_.D0.BC.D0.BE.D0.BD.D0.B8.D1.82.D0.BE.D1.80.D1.8B)
-*   [8 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
-    *   [8.1 Частота ШИМ-модуляции подсветки (только для Intel i915)](#.D0.A7.D0.B0.D1.81.D1.82.D0.BE.D1.82.D0.B0_.D0.A8.D0.98.D0.9C-.D0.BC.D0.BE.D0.B4.D1.83.D0.BB.D1.8F.D1.86.D0.B8.D0.B8_.D0.BF.D0.BE.D0.B4.D1.81.D0.B2.D0.B5.D1.82.D0.BA.D0.B8_.28.D1.82.D0.BE.D0.BB.D1.8C.D0.BA.D0.BE_.D0.B4.D0.BB.D1.8F_Intel_i915.29)
-    *   [8.2 Инвертированная яркость (только для Intel i915)](#.D0.98.D0.BD.D0.B2.D0.B5.D1.80.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.BD.D0.B0.D1.8F_.D1.8F.D1.80.D0.BA.D0.BE.D1.81.D1.82.D1.8C_.28.D1.82.D0.BE.D0.BB.D1.8C.D0.BA.D0.BE_.D0.B4.D0.BB.D1.8F_Intel_i915.29)
-    *   [8.3 sysfs изменен, но нет изменения яркости](#sysfs_.D0.B8.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.2C_.D0.BD.D0.BE_.D0.BD.D0.B5.D1.82_.D0.B8.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D1.8F_.D1.8F.D1.80.D0.BA.D0.BE.D1.81.D1.82.D0.B8)
+    *   [6.5 Увеличение яркости выше максимального уровня](#Увеличение_яркости_выше_максимального_уровня)
+*   [7 Внешние мониторы](#Внешние_мониторы)
+*   [8 Решение проблем](#Решение_проблем)
+    *   [8.1 Частота ШИМ-модуляции подсветки (только для Intel i915)](#Частота_ШИМ-модуляции_подсветки_(только_для_Intel_i915))
+    *   [8.2 Инвертированная яркость (только для Intel i915)](#Инвертированная_яркость_(только_для_Intel_i915))
+    *   [8.3 sysfs изменен, но нет изменения яркости](#sysfs_изменен,_но_нет_изменения_яркости)
 
 ## Обзор
 
@@ -106,9 +106,9 @@ acpi_backlight=native
 SUBSYSTEM=="backlight", ACTION=="add", KERNEL=="acpi_video0", ATTR{brightness}="8"
 ```
 
-**Примечание:** Служба systemd-backlight восстанавливает предыдущий уровень яркости подсветки во время загрузки. Чтобы предотвратить конфликты для указанных выше правил, см. [#Служба systemd-backlight](#.D0.A1.D0.BB.D1.83.D0.B6.D0.B1.D0.B0_systemd-backlight).
+**Примечание:** Служба systemd-backlight восстанавливает предыдущий уровень яркости подсветки во время загрузки. Чтобы предотвратить конфликты для указанных выше правил, см. [#Служба systemd-backlight](#Служба_systemd-backlight).
 
-**Совет:** Чтобы настроить подсветку в зависимости от состояния питания, см. [Power management#Using a script and an udev rule](/index.php/Power_management#Using_a_script_and_an_udev_rule "Power management") и используйте выбранную вами [утилиту](#.D0.A3.D1.82.D0.B8.D0.BB.D0.B8.D1.82.D1.8B_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B8) в скрипте.
+**Совет:** Чтобы настроить подсветку в зависимости от состояния питания, см. [Power management#Using a script and an udev rule](/index.php/Power_management#Using_a_script_and_an_udev_rule "Power management") и используйте выбранную вами [утилиту](#Утилиты_настройки) в скрипте.
 
 ## Выключение подсветки
 
@@ -211,7 +211,7 @@ EndSection
 
 *   **light** — Light последователь *LightScript*.
 
-	[https://github.com/haikarainen/light](https://github.com/haikarainen/light) || [light](https://aur.archlinux.org/packages/light/)
+	[https://github.com/haikarainen/light](https://github.com/haikarainen/light) || [light](https://www.archlinux.org/packages/?name=light)
 
 *   **acpilight** — acpilight содержит "xbacklight"-совместимую утилиту, которая использует sys файловую систему для установки яркости экрана. Т.к. она не использует X вообще, ее также можно использовать в консоли и с Wayland. Она не имеет проблем с KMS драйверами. Кроме того, на ноутбуках ThinkPad можно также настраивать подсветку клавиатуры.
 

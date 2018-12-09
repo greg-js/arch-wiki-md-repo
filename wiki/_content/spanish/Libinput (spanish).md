@@ -45,7 +45,7 @@ En primer lugar ejecute:
 
 Se mostraran los dispositivos en el sistema y sus características que están soportadas por libinput.
 
-Después de [reiniciar](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") el entorno gráfico, los dispositivos deberían ser controlados por libinput con la configuración por defecto, en caso de que ningún otro controlador este configurado para tener preferencia.
+Después de [reiniciar](/index.php/Systemd_(Espa%C3%B1ol)#Utilizar_las_unidades "Systemd (Español)") el entorno gráfico, los dispositivos deberían ser controlados por libinput con la configuración por defecto, en caso de que ningún otro controlador este configurado para tener preferencia.
 
 Vea [libinput(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4) para opciones generales de opciones y valores validos. La herramienta *xinput* es usada para mostrar o cambiar valores de algún dispositivo, por ejemplo el comando:
 

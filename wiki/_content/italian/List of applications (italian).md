@@ -1799,7 +1799,7 @@ Consultare: [Masterizzare CD/DVD con una interfaccia grafica](/index.php/Optical
 
 *   **CopyQ** — Un manager degli appunti con ricerca e modifica dello storico, azioni personalizzabili con oggetti e supporto alla riga di comando.
 
-	[https://github.com/hluk/CopyQ](https://github.com/hluk/CopyQ) || [copyq](https://aur.archlinux.org/packages/copyq/)
+	[https://github.com/hluk/CopyQ](https://github.com/hluk/CopyQ) || [copyq](https://www.archlinux.org/packages/?name=copyq)
 
 *   **[Glipper](https://en.wikipedia.org/wiki/Glipper "wikipedia:Glipper")** — Un gestore degli appunti per il desktop GNOME con molte caratteristiche e supporto a plugin.
 

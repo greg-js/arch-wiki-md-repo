@@ -14,6 +14,8 @@ Arch Linux officially supports the open source [OpenJDK](https://openjdk.java.ne
 *   [1 Installation](#Installation)
     *   [1.1 OpenJDK](#OpenJDK)
     *   [1.2 Other implementations](#Other_implementations)
+    *   [1.3 Development tools](#Development_tools)
+        *   [1.3.1 Decompilers](#Decompilers)
 *   [2 Switching between JVM](#Switching_between_JVM)
     *   [2.1 List compatible Java environments installed](#List_compatible_Java_environments_installed)
     *   [2.2 Change default Java environment](#Change_default_Java_environment)
@@ -48,9 +50,7 @@ Arch Linux officially supports the open source [OpenJDK](https://openjdk.java.ne
 
 Two *common* packages are respectively pulled as dependency, named [java-runtime-common](https://www.archlinux.org/packages/?name=java-runtime-common) (containing common files for Java Runtime Environments) and [java-environment-common](https://www.archlinux.org/packages/?name=java-environment-common) (containing common files for Java Development Kits). The provided environment file `/etc/profile.d/jre.sh` points to a linked location `/usr/lib/jvm/default/bin`, set by the `archlinux-java` helper script. The links `/usr/lib/jvm/default` and `/usr/lib/jvm/default-runtime` should **always** be edited with `archlinux-java`. This is used to display and point to a working default Java environment in `/usr/lib/jvm/java-${JAVA_MAJOR_VERSION}-${VENDOR_NAME}` or a Java runtime in `/usr/lib/jvm/java-${JAVA_MAJOR_VERSION}-${VENDOR_NAME}/jre`.
 
-Most executables of the Java installation are provided by direct links in `/usr/bin`, while others are available in `$PATH`.
-
-**Warning:** File `/etc/profile.d/jdk.sh` is not provided any more by any package.
+Most executables of the Java installation are provided by direct links in `/usr/bin`, while others are available in `$PATH`. The script `/etc/profile.d/jdk.sh` is no longer provided any package.
 
 ### OpenJDK
 
@@ -113,6 +113,42 @@ Most executables of the Java installation are provided by direct links in `/usr/
 	[http://www.parrot.org/](http://www.parrot.org/) || [parrot](https://aur.archlinux.org/packages/parrot/)
 
 **Note:** 32-bit versions of Java SE can be found by prefixing `bin32-`, e.g. [bin32-jre](https://aur.archlinux.org/packages/bin32-jre/) and [bin32-jdk](https://aur.archlinux.org/packages/bin32-jdk/). They use [java32-runtime-common](https://aur.archlinux.org/packages/java32-runtime-common/), which functions as [java-runtime-common](https://www.archlinux.org/packages/?name=java-runtime-common) by suffixing with `32`, e.g. `java32`. The same analogy applies to [java32-environment-common](https://aur.archlinux.org/packages/java32-environment-common/), which is only used by 32-bit JDK packages.
+
+### Development tools
+
+For integrated development environments, see [List of applications#Integrated development environments](/index.php/List_of_applications#Integrated_development_environments "List of applications") and the *Java IDEs* subsection specifically.
+
+To discourage reverse engineering an obfuscator like [proguard](https://aur.archlinux.org/packages/proguard/) can be used.
+
+#### Decompilers
+
+*   **Bytecode Viewer** — Java reverse engineering suite, including a decompiler, editor and debugger.
+
+	[https://bytecodeviewer.com](https://bytecodeviewer.com) || [bytecode-viewer](https://aur.archlinux.org/packages/bytecode-viewer/)
+
+*   **CFR** — Java decompiler, supporting modern features of Java 9, 10 and beyond.
+
+	[https://www.benf.org/other/cfr/](https://www.benf.org/other/cfr/) || [cfr](https://aur.archlinux.org/packages/cfr/)
+
+*   **Fernflower** — Analytical decompiler for Java, developed as part of [IntelliJ IDEA](/index.php/IntelliJ_IDEA "IntelliJ IDEA").
+
+	[https://github.com/JetBrains/intellij-community/tree/master/plugins/java-decompiler/engine](https://github.com/JetBrains/intellij-community/tree/master/plugins/java-decompiler/engine) || [fernflower-git](https://aur.archlinux.org/packages/fernflower-git/)
+
+*   **[JAD](https://en.wikipedia.org/wiki/JAD_(software) "wikipedia:JAD (software)")** — Unmaintained Java decompiler.
+
+	[https://varaneckas.com/jad](https://varaneckas.com/jad) || [jad](https://www.archlinux.org/packages/?name=jad)
+
+*   **JD-Core-java** — Thin-wrapper for the [Java Decompiler](https://en.wikipedia.org/wiki/Java_Decompiler "wikipedia:Java Decompiler").
+
+	[https://github.com/nviennot/jd-core-java](https://github.com/nviennot/jd-core-java) || [jd-core-java](https://aur.archlinux.org/packages/jd-core-java/)
+
+*   **Krakatau** — Java decompiler, assembler, and disassembler.
+
+	[https://github.com/Storyyeller/Krakatau](https://github.com/Storyyeller/Krakatau) || [krakatau-git](https://aur.archlinux.org/packages/krakatau-git/)
+
+*   **Procyon decompiler** — Experimental Java decompiler, inspired by ILSpy and Mono.Cecil.
+
+	[https://bitbucket.org/mstrobel/procyon/wiki/Java%20Decompiler](https://bitbucket.org/mstrobel/procyon/wiki/Java%20Decompiler) || [procyon-decompiler](https://aur.archlinux.org/packages/procyon-decompiler/), GUI: [luyten](https://aur.archlinux.org/packages/luyten/)
 
 ## Switching between JVM
 

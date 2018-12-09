@@ -30,23 +30,23 @@ Related articles
 
 ## Contents
 
-*   [1 应用程序配置项](#.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F.E9.85.8D.E7.BD.AE.E9.A1.B9)
-    *   [1.1 范例文件](#.E8.8C.83.E4.BE.8B.E6.96.87.E4.BB.B6)
-    *   [1.2 关键字定义](#.E5.85.B3.E9.94.AE.E5.AD.97.E5.AE.9A.E4.B9.89)
-*   [2 图标](#.E5.9B.BE.E6.A0.87)
-    *   [2.1 通用图像格式](#.E9.80.9A.E7.94.A8.E5.9B.BE.E5.83.8F.E6.A0.BC.E5.BC.8F)
-    *   [2.2 图标格式转换](#.E5.9B.BE.E6.A0.87.E6.A0.BC.E5.BC.8F.E8.BD.AC.E6.8D.A2)
+*   [1 应用程序配置项](#应用程序配置项)
+    *   [1.1 范例文件](#范例文件)
+    *   [1.2 关键字定义](#关键字定义)
+*   [2 图标](#图标)
+    *   [2.1 通用图像格式](#通用图像格式)
+    *   [2.2 图标格式转换](#图标格式转换)
     *   [2.3 Obtaining icons](#Obtaining_icons)
-*   [3 工具](#.E5.B7.A5.E5.85.B7)
+*   [3 工具](#工具)
     *   [3.1 gendesk](#gendesk)
-        *   [3.1.1 用法](#.E7.94.A8.E6.B3.95)
+        *   [3.1.1 用法](#用法)
     *   [3.2 lsdesktopf](#lsdesktopf)
     *   [3.3 fbrokendesktop](#fbrokendesktop)
-*   [4 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
-    *   [4.1 从终端启动程序](#.E4.BB.8E.E7.BB.88.E7.AB.AF.E5.90.AF.E5.8A.A8.E7.A8.8B.E5.BA.8F)
-    *   [4.2 隐藏桌面配置项](#.E9.9A.90.E8.97.8F.E6.A1.8C.E9.9D.A2.E9.85.8D.E7.BD.AE.E9.A1.B9)
-    *   [4.3 修改环境变量](#.E4.BF.AE.E6.94.B9.E7.8E.AF.E5.A2.83.E5.8F.98.E9.87.8F)
-*   [5 参阅](#.E5.8F.82.E9.98.85)
+*   [4 提示与技巧](#提示与技巧)
+    *   [4.1 从终端启动程序](#从终端启动程序)
+    *   [4.2 隐藏桌面配置项](#隐藏桌面配置项)
+    *   [4.3 修改环境变量](#修改环境变量)
+*   [5 参阅](#参阅)
 
 ## 应用程序配置项
 
@@ -163,7 +163,7 @@ $ icotool -x <icon name>.ico
 
 ```
 
-For extracting images from .icns container, you can use *icns2png* (provided by [libicns](https://aur.archlinux.org/packages/libicns/)):
+For extracting images from .icns container, you can use *icns2png* (provided by [libicns](https://www.archlinux.org/packages/?name=libicns)):
 
 ```
 $ icns2png -x <icon name>.icns

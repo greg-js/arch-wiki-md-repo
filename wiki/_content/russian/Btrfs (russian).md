@@ -15,56 +15,56 @@ Related articles
 
 	Btrfs это новая файловая система для Linux с принципом копирования при записи (CoW), направленная на реализацию дополнительных функций с особым упором на отказоустойчивость, восстановление и простоту администрирования. Совместная разработка Oracle, Red Hat, Fujitsu, Intel, SUSE, STRATO и многих других, Btrfs распространяется под лицензией GPL, что позволяет внести свой вклад любому желающему.
 
-**Важно:** Btrfs содержит некоторые возможности, считающиеся экспериментальными. За подробностями, пройдите по ссылкам Btrfs Wiki's [Статус](https://btrfs.wiki.kernel.org/index.php/Status), [Btrfs стабильна?](https://btrfs.wiki.kernel.org/index.php/FAQ#Is_btrfs_stable.3F) и [Начинаем](https://btrfs.wiki.kernel.org/index.php/Getting_started). Смотрите раздел [#Известные проблемы](#.D0.98.D0.B7.D0.B2.D0.B5.D1.81.D1.82.D0.BD.D1.8B.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B).
+**Важно:** Btrfs содержит некоторые возможности, считающиеся экспериментальными. За подробностями, пройдите по ссылкам Btrfs Wiki's [Статус](https://btrfs.wiki.kernel.org/index.php/Status), [Btrfs стабильна?](https://btrfs.wiki.kernel.org/index.php/FAQ#Is_btrfs_stable.3F) и [Начинаем](https://btrfs.wiki.kernel.org/index.php/Getting_started). Смотрите раздел [#Известные проблемы](#Известные_проблемы).
 
 ## Contents
 
-*   [1 Подготовка](#.D0.9F.D0.BE.D0.B4.D0.B3.D0.BE.D1.82.D0.BE.D0.B2.D0.BA.D0.B0)
-*   [2 Создание раздела диска Btrfs](#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.B0_.D0.B4.D0.B8.D1.81.D0.BA.D0.B0_Btrfs)
-*   [3 Создание файловой системы](#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2.D0.BE.D0.B9_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B)
-    *   [3.1 Создание новой файловой системы](#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BD.D0.BE.D0.B2.D0.BE.D0.B9_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2.D0.BE.D0.B9_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B)
-        *   [3.1.1 Файловая система на одном устройстве](#.D0.A4.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2.D0.B0.D1.8F_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.B0_.D0.BD.D0.B0_.D0.BE.D0.B4.D0.BD.D0.BE.D0.BC_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B5)
-        *   [3.1.2 Файловая система на нескольких устройствах](#.D0.A4.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2.D0.B0.D1.8F_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.B0_.D0.BD.D0.B0_.D0.BD.D0.B5.D1.81.D0.BA.D0.BE.D0.BB.D1.8C.D0.BA.D0.B8.D1.85_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0.D1.85)
-    *   [3.2 Конвертация Ext3/4 в Btrfs](#.D0.9A.D0.BE.D0.BD.D0.B2.D0.B5.D1.80.D1.82.D0.B0.D1.86.D0.B8.D1.8F_Ext3.2F4_.D0.B2_Btrfs)
-*   [4 Настройка файловой системы](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2.D0.BE.D0.B9_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B)
-    *   [4.1 Копирование при записи (CoW)](#.D0.9A.D0.BE.D0.BF.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.B8_.D0.B7.D0.B0.D0.BF.D0.B8.D1.81.D0.B8_.28CoW.29)
-        *   [4.1.1 Отключение CoW](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_CoW)
-        *   [4.1.2 Принудительное CoW](#.D0.9F.D1.80.D0.B8.D0.BD.D1.83.D0.B4.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B5_CoW)
-    *   [4.2 Сжатие](#.D0.A1.D0.B6.D0.B0.D1.82.D0.B8.D0.B5)
-    *   [4.3 Подтома](#.D0.9F.D0.BE.D0.B4.D1.82.D0.BE.D0.BC.D0.B0)
-        *   [4.3.1 Создание подтома](#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE.D0.B4.D1.82.D0.BE.D0.BC.D0.B0)
-        *   [4.3.2 Просмотр подтомов](#.D0.9F.D1.80.D0.BE.D1.81.D0.BC.D0.BE.D1.82.D1.80_.D0.BF.D0.BE.D0.B4.D1.82.D0.BE.D0.BC.D0.BE.D0.B2)
-        *   [4.3.3 Удаление подтома](#.D0.A3.D0.B4.D0.B0.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE.D0.B4.D1.82.D0.BE.D0.BC.D0.B0)
-        *   [4.3.4 Монтирование подтомов](#.D0.9C.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE.D0.B4.D1.82.D0.BE.D0.BC.D0.BE.D0.B2)
-        *   [4.3.5 Изменение подтома по умолчанию](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE.D0.B4.D1.82.D0.BE.D0.BC.D0.B0_.D0.BF.D0.BE_.D1.83.D0.BC.D0.BE.D0.BB.D1.87.D0.B0.D0.BD.D0.B8.D1.8E)
+*   [1 Подготовка](#Подготовка)
+*   [2 Создание раздела диска Btrfs](#Создание_раздела_диска_Btrfs)
+*   [3 Создание файловой системы](#Создание_файловой_системы)
+    *   [3.1 Создание новой файловой системы](#Создание_новой_файловой_системы)
+        *   [3.1.1 Файловая система на одном устройстве](#Файловая_система_на_одном_устройстве)
+        *   [3.1.2 Файловая система на нескольких устройствах](#Файловая_система_на_нескольких_устройствах)
+    *   [3.2 Конвертация Ext3/4 в Btrfs](#Конвертация_Ext3/4_в_Btrfs)
+*   [4 Настройка файловой системы](#Настройка_файловой_системы)
+    *   [4.1 Копирование при записи (CoW)](#Копирование_при_записи_(CoW))
+        *   [4.1.1 Отключение CoW](#Отключение_CoW)
+        *   [4.1.2 Принудительное CoW](#Принудительное_CoW)
+    *   [4.2 Сжатие](#Сжатие)
+    *   [4.3 Подтома](#Подтома)
+        *   [4.3.1 Создание подтома](#Создание_подтома)
+        *   [4.3.2 Просмотр подтомов](#Просмотр_подтомов)
+        *   [4.3.3 Удаление подтома](#Удаление_подтома)
+        *   [4.3.4 Монтирование подтомов](#Монтирование_подтомов)
+        *   [4.3.5 Изменение подтома по умолчанию](#Изменение_подтома_по_умолчанию)
     *   [4.4 Commit Interval](#Commit_Interval)
     *   [4.5 SSD TRIM](#SSD_TRIM)
-*   [5 Использование](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
-    *   [5.1 Показать использованное/свободное место](#.D0.9F.D0.BE.D0.BA.D0.B0.D0.B7.D0.B0.D1.82.D1.8C_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.BD.D0.BE.D0.B5.2F.D1.81.D0.B2.D0.BE.D0.B1.D0.BE.D0.B4.D0.BD.D0.BE.D0.B5_.D0.BC.D0.B5.D1.81.D1.82.D0.BE)
-    *   [5.2 Дефрагментация](#.D0.94.D0.B5.D1.84.D1.80.D0.B0.D0.B3.D0.BC.D0.B5.D0.BD.D1.82.D0.B0.D1.86.D0.B8.D1.8F)
+*   [5 Использование](#Использование)
+    *   [5.1 Показать использованное/свободное место](#Показать_использованное/свободное_место)
+    *   [5.2 Дефрагментация](#Дефрагментация)
     *   [5.3 RAID](#RAID)
         *   [5.3.1 Scrub](#Scrub)
             *   [5.3.1.1 Start manually](#Start_manually)
-            *   [5.3.1.2 Запуск службы или таймера](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D1.81.D0.BB.D1.83.D0.B6.D0.B1.D1.8B_.D0.B8.D0.BB.D0.B8_.D1.82.D0.B0.D0.B9.D0.BC.D0.B5.D1.80.D0.B0)
+            *   [5.3.1.2 Запуск службы или таймера](#Запуск_службы_или_таймера)
         *   [5.3.2 Balance](#Balance)
-    *   [5.4 Снимки](#.D0.A1.D0.BD.D0.B8.D0.BC.D0.BA.D0.B8)
-    *   [5.5 Отправить / получить](#.D0.9E.D1.82.D0.BF.D1.80.D0.B0.D0.B2.D0.B8.D1.82.D1.8C_.2F_.D0.BF.D0.BE.D0.BB.D1.83.D1.87.D0.B8.D1.82.D1.8C)
-*   [6 Известные проблемы](#.D0.98.D0.B7.D0.B2.D0.B5.D1.81.D1.82.D0.BD.D1.8B.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B)
-    *   [6.1 Шифрование](#.D0.A8.D0.B8.D1.84.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
-    *   [6.2 Файл подкачки (Swap)](#.D0.A4.D0.B0.D0.B9.D0.BB_.D0.BF.D0.BE.D0.B4.D0.BA.D0.B0.D1.87.D0.BA.D0.B8_.28Swap.29)
-    *   [6.3 Ядро Linux-rt](#.D0.AF.D0.B4.D1.80.D0.BE_Linux-rt)
+    *   [5.4 Снимки](#Снимки)
+    *   [5.5 Отправить / получить](#Отправить_/_получить)
+*   [6 Известные проблемы](#Известные_проблемы)
+    *   [6.1 Шифрование](#Шифрование)
+    *   [6.2 Файл подкачки (Swap)](#Файл_подкачки_(Swap))
+    *   [6.3 Ядро Linux-rt](#Ядро_Linux-rt)
 *   [7 Tips and tricks](#Tips_and_tricks)
     *   [7.1 Checksum hardware acceleration](#Checksum_hardware_acceleration)
     *   [7.2 Corruption recovery](#Corruption_recovery)
-    *   [7.3 Загрузка в снимки с помощью GRUB](#.D0.97.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B0_.D0.B2_.D1.81.D0.BD.D0.B8.D0.BC.D0.BA.D0.B8_.D1.81_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D1.8C.D1.8E_GRUB)
-    *   [7.4 Использование подтомов Btrfs с systemd-nspawn](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE.D0.B4.D1.82.D0.BE.D0.BC.D0.BE.D0.B2_Btrfs_.D1.81_systemd-nspawn)
-*   [8 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
+    *   [7.3 Загрузка в снимки с помощью GRUB](#Загрузка_в_снимки_с_помощью_GRUB)
+    *   [7.4 Использование подтомов Btrfs с systemd-nspawn](#Использование_подтомов_Btrfs_с_systemd-nspawn)
+*   [8 Решение проблем](#Решение_проблем)
     *   [8.1 GRUB](#GRUB)
-        *   [8.1.1 Смещение разделов](#.D0.A1.D0.BC.D0.B5.D1.89.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2)
-        *   [8.1.2 Отсутствует root](#.D0.9E.D1.82.D1.81.D1.83.D1.82.D1.81.D1.82.D0.B2.D1.83.D0.B5.D1.82_root)
-    *   [8.2 Ошибка BTRFS: open_ctree failed](#.D0.9E.D1.88.D0.B8.D0.B1.D0.BA.D0.B0_BTRFS:_open_ctree_failed)
-    *   [8.3 Проверка btrfs](#.D0.9F.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.B0_btrfs)
-*   [9 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
+        *   [8.1.1 Смещение разделов](#Смещение_разделов)
+        *   [8.1.2 Отсутствует root](#Отсутствует_root)
+    *   [8.2 Ошибка BTRFS: open_ctree failed](#Ошибка_BTRFS:_open_ctree_failed)
+    *   [8.3 Проверка btrfs](#Проверка_btrfs)
+*   [9 Смотрите также](#Смотрите_также)
 
 ## Подготовка
 
@@ -74,7 +74,7 @@ Related articles
 
 ## Создание раздела диска Btrfs
 
-Btrfs может обладать всем устройством хранения данных, заменяя схемы разбиения [MBR](/index.php/MBR "MBR") или [GPT](/index.php/GPT "GPT"), используя [подтома](#.D0.9F.D0.BE.D0.B4.D1.82.D0.BE.D0.BC.D0.B0) для имитации разделов. Не нужно разбивать разделы, чтобы просто [создать файловую систему Btrfs](#Creating_a_new_file_system) на существующем [разделе](/index.php/Partitioning_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Partitioning (Русский)") который был создан с использованием другого метода. There are some limitations to partitionless single disk setups:
+Btrfs может обладать всем устройством хранения данных, заменяя схемы разбиения [MBR](/index.php/MBR "MBR") или [GPT](/index.php/GPT "GPT"), используя [подтома](#Подтома) для имитации разделов. Не нужно разбивать разделы, чтобы просто [создать файловую систему Btrfs](#Creating_a_new_file_system) на существующем [разделе](/index.php/Partitioning_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Partitioning (Русский)") который был создан с использованием другого метода. There are some limitations to partitionless single disk setups:
 
 *   Cannot use different [file systems](/index.php/File_systems "File systems") for different [mount points](/index.php/Fstab "Fstab").
 *   Cannot use [swap area](/index.php/Swap "Swap") as Btrfs does not support [swap files](/index.php/Swap#Swap_file "Swap") and there is no place to create [swap partition](/index.php/Swap#Swap_partition "Swap"). This also limits the use of hibernation/resume, which needs a swap area to store the hibernation image.
@@ -483,7 +483,7 @@ See the [Btrfs Wiki page](https://btrfs.wiki.kernel.org/index.php/Btrfsck) for m
 
 ### Загрузка в снимки с помощью GRUB
 
-You can manually create a [GRUB#GNU/Linux menu entry](/index.php/GRUB#GNU.2FLinux_menu_entry "GRUB") with the `rootflags=subvol=` argument. The `subvol=` mount options in `/etc/fstab` of the snapshot to boot into also have to be specified correctly.
+You can manually create a [GRUB#GNU/Linux menu entry](/index.php/GRUB#GNU/Linux_menu_entry "GRUB") with the `rootflags=subvol=` argument. The `subvol=` mount options in `/etc/fstab` of the snapshot to boot into also have to be specified correctly.
 
 Alternatively, you can automatically populate your GRUB menu with btrfs snapshots when regenerating the GRUB configuration file by using [grub-btrfs](https://aur.archlinux.org/packages/grub-btrfs/) or [grub-btrfs-git](https://aur.archlinux.org/packages/grub-btrfs-git/).
 

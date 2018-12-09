@@ -71,7 +71,7 @@ El servicio de Internet a través del demonio [dhcpcd](/index.php/Dhcpcd "Dhcpcd
 
 ```
 
-Si no hay disponible una conexión, [detenga](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") el servicio *dhcpcd* con la orden `systemctl stop dhcpcd@*interfaz*` donde `*interfaz*` puede ser [autocompletado con el tabulador](https://en.wikipedia.org/wiki/Command-line_completion "wikipedia:Command-line completion"). Proceda a configurar la red como se describe en [Network configuration (Español)](/index.php/Network_configuration_(Espa%C3%B1ol) "Network configuration (Español)").
+Si no hay disponible una conexión, [detenga](/index.php/Systemd_(Espa%C3%B1ol)#Utilizar_las_unidades "Systemd (Español)") el servicio *dhcpcd* con la orden `systemctl stop dhcpcd@*interfaz*` donde `*interfaz*` puede ser [autocompletado con el tabulador](https://en.wikipedia.org/wiki/Command-line_completion "wikipedia:Command-line completion"). Proceda a configurar la red como se describe en [Network configuration (Español)](/index.php/Network_configuration_(Espa%C3%B1ol) "Network configuration (Español)").
 
 ### Actualizar el reloj del sistema
 

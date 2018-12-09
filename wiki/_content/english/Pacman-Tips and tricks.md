@@ -480,7 +480,7 @@ Draft example for a client, using `uname -m` within the share name ensures an ar
 
 **Warning:** This method has a limitation. You must use mirrors that use the same relative path to package files and you must configure your cache to use that same path. In this example, we are using mirrors that use the relative path `/archlinux/$repo/os/$arch` and our cache's `Server` setting in `mirrorlist` is configured similarly.
 
-In this example, we will run the cache server on `http://cache.domain.local:8080/` and storing the packages in `/srv/http/pacman-cache/`.
+In this example, we will run the cache server on `http://cache.domain.example:8080/` and storing the packages in `/srv/http/pacman-cache/`.
 
 Create the directory for the cache and adjust the permissions so nginx can write files to it:
 
@@ -496,7 +496,7 @@ Finally, update your other Arch Linux servers to use this new cache by adding th
 
  `/etc/pacman.d/mirrorlist` 
 ```
-Server = http://cache.domain.local:8080/archlinux/$repo/os/$arch
+Server = http://cache.domain.example:8080/archlinux/$repo/os/$arch
 ...
 
 ```
