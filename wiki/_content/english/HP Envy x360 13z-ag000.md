@@ -44,7 +44,7 @@ The integrated Vega GPU works with the AMDGPU drivers. `GDK_SCALE=2` is somewhat
 
 ## Touchscreen and Stylus
 
-You need to build a Kernel with custom patches to get the touchscreen working. [[1]](https://bugzilla.kernel.org/show_bug.cgi?id=198715)
+Kernel 4.19.5 or greater is needed. [[1]](https://bugzilla.kernel.org/show_bug.cgi?id=198715#c14) [[2]](https://cdn.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.19.5)
 
 ## Orientation Sensor
 
@@ -56,7 +56,7 @@ Works out of the box. `aspm=0` seems to prevent the card from dropping offline a
 
 ## Bluetooth
 
-Untested.
+Works out of the box with Motorola Pulse Escape on kernel 4.19.5.
 
 ## Hard Drive
 

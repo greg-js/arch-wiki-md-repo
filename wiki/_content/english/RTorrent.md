@@ -717,7 +717,7 @@ Using TCP allows **any** *local* user to **execute arbitrary commands** as the u
 
 ### Saving magnet links as torrent files in watch folder
 
-**Note:** Rtorrent natively supports downloading torrents through magnet links. At the main view (reached by starting Rtorrent and pressing 1), press enter. At "load.normal>" paste the magnet link and press enter again. This will start the download.
+**Note:** rTorrent natively supports downloading torrents through magnet links. At the main view (reached by starting rTorrent and pressing 1), press enter. At "load.normal>" paste the magnet link and press enter again. This will start the download.
 
 If you wish to have magnet links automatically added to your watch folder, here is a script that will do the trick:
 
@@ -730,7 +730,7 @@ If you wish to have magnet links automatically added to your watch folder, here 
 
 ```
 
-(adapted from [http://blog.gonzih.org/blog/2012/02/17/how-to-use-magnet-links-with-rtorrent/](http://blog.gonzih.org/blog/2012/02/17/how-to-use-magnet-links-with-rtorrent/)).
+(adapted from [https://blog.gonzih.me/blog/2012/02/17/how-to-use-magnet-links-with-rtorrent/](https://blog.gonzih.me/blog/2012/02/17/how-to-use-magnet-links-with-rtorrent/)).
 
 Save it, for instance as rtorrent-magnet, give it execution permission, and place it somewhere under your $PATH. Then in Firefox:
 
@@ -738,7 +738,7 @@ Save it, for instance as rtorrent-magnet, give it execution permission, and plac
 2.  Right-click: *New > Boolean > Name: **network.protocol-handler.expose.magnet** > Value > false*.
 3.  Next time you click a magnet link you will be asked which application to open it with. Select the script we just created and you will be done.
 
-If you want xdg-open to handle this, which you need if you are using chrome instead of firefox, (though gnome and other DE might have their own programs overriding xdg-open) you need to create the desktop entry for the rtorrent-magnet script in `~/.local/share/applications/rtorrent-magnet.desktop` with the following content:
+If you want xdg-open to handle this, which you need if you are using chrome instead of Firefox, (though gnome and other DE might have their own programs overriding xdg-open) you need to create the desktop entry for the rtorrent-magnet script in `~/.local/share/applications/rtorrent-magnet.desktop` with the following content:
 
 ```
  [Desktop Entry]

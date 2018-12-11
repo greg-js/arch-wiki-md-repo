@@ -82,12 +82,14 @@ If your user has sudo rights to call `/usr/bin/modprobed-db`, the official Arch 
     patch -Np1 < "../$src"
   done
 
-  sudo modprobed-db recall                      # <---- insert this line
-  make localmodconfig                           # <---- insert this line
-
   msg2 "Setting config..."
   cp ../config .config
   make olddefconfig
+
+  sudo modprobed-db recall                      # <---- insert this line
+  make localmodconfig                           # <---- insert this line
+
+  make -s kernelrelease > ../version
  ...
 ```
 

@@ -733,9 +733,15 @@ down-pre
 
 By default [networkmanager-openvpn](https://www.archlinux.org/packages/?name=networkmanager-openvpn) plugin appends DNS servers provided by OpenVPN to `/etc/resolv.conf`. This may result in DNS instability (leakage).
 
-The settings user interface does not provide any way to change this behavior, but it is possible to [completely override](https://bugs.launchpad.net/ubuntu/+source/network-manager/+bug/1211110/comments/92) DNS using connection configuration file.
+The NetworkManager GUI does not provide any way to change this behavior, but it is possible to [completely override](https://bugs.launchpad.net/ubuntu/+source/network-manager/+bug/1211110/comments/92) DNS using connection configuration file.
+
+If the override is applied, queries for non-public DNS records are sent to the external resolver, see [[7]](https://bugs.launchpad.net/network-manager/+bug/1624317).
 
 To use DNS settings provided by the VPN connection add `dns-priority=-1` ([ipv4 section](https://developer.gnome.org/NetworkManager/stable/settings-ipv4.html)) to the file located at `/etc/NetworkManager/system-connections/*your_vpn_name*`, where `*your_vpn_name*` is the name of your VPN connection.
+
+Making changes to the VPN connection with the NetworkManager GUI will remove the setting above.
+
+To verify that the correct DNS server(s) are configured, see `resolvectl status` if systemd-resolved is in use, for other resolvers see [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution").
 
 ## L2 Ethernet bridging
 

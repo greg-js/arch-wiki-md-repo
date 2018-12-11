@@ -20,9 +20,11 @@ El paquete makepkg lo provee el paquete [pacman](https://www.archlinux.org/packa
     *   [1.4 fakeroot](#fakeroot)
 *   [2 Uso](#Uso)
 *   [3 Recomendaciones](#Recomendaciones)
-    *   [3.1 Compilación paralela](#Compilación_paralela)
-    *   [3.2 Generar nueva suma de verificación](#Generar_nueva_suma_de_verificación)
-    *   [3.3 Uso de múltiples núcleos en la compresión](#Uso_de_múltiples_núcleos_en_la_compresión)
+    *   [3.1 Construir binarios optimizados](#Construir_binarios_optimizados)
+    *   [3.2 Mejorar tiempos de compilación](#Mejorar_tiempos_de_compilación)
+        *   [3.2.1 Compilación paralela](#Compilación_paralela)
+    *   [3.3 Generar nueva suma de verificación](#Generar_nueva_suma_de_verificación)
+    *   [3.4 Uso de múltiples núcleos en la compresión](#Uso_de_múltiples_núcleos_en_la_compresión)
 
 ## Configuración
 
@@ -131,7 +133,39 @@ $ makepkg -c
 
 ## Recomendaciones
 
-### Compilación paralela
+### Construir binarios optimizados
+
+Una mejora de rendimiento del empaquetado de software se puede lograr habilitando optimizaciones en la máquina local. El inconveniente es que los binarios compilados para una arquitectura de procesador específico pueden no ejecutarse correctamente en otros ordenadores. En las máquinas x86_64 es raro ganar un rendimiento significativo que justifique invertir tiempo en reconstruir los paquetes oficiales.
+
+Sin embargo es muy fácil disminuir el rendimiento utilizando FLAGS de compilación "no estandar". Muchas optimizaciones son útiles solo en determinadas situaciones y no debe de aplicarse para todos los paquetes. A no haya ser que puedas verificar que algo es más rápido, es una muy buena oportunidad ¡como no! Los artículos de Gentoo [Guía de optimización de compilación](https://wiki.gentoo.org/wiki/GCC_optimization/es) y [CFLAGS Seguros (en ingles)](http://wiki.gentoo.org/wiki/Safe_CFLAGS) proporciona mas información detallada sobre optimizaciones de compilador.
+
+Las opciones pasadas al compilador C/C++ (e.g. [gcc](https://www.archlinux.org/packages/?name=gcc) o [clang](https://www.archlinux.org/packages/?name=clang)) están controladas por `CFLAGS`, `CXXFLAGS` y `CPPFLAGS` variables de entorno. Para usarlos en el sistema de construcción de Arch, *makepkg* muestra las variables de entorno según las opciones de configuración en `makepkg.conf`. Los valores por defecto están configurados para producir binarios genéricos que pueden ser instalados en un amplio rango de máquinas.
+
+**Nota:**
+
+*   Tener en cuenta que no todos los sistemas de construcciones utilizan las variables configuradas en `makepkg.conf`. Por ejemplo, *cmake* no tiene en cuenta las opciones de preprocesamiento `makepkg.conf`. Consecuentemente, muchos [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") contiene métodos alternativos con opciones específicas para el sistema constructor usado por el gestor de paquetes.
+*   La configuración proporcionada con el código fuente en el `Makefile` o algún argumento específico en la compilación desde la linea de comandos tiene preferencia y puede potencialmente sobrescribir el de `makepkg.conf`.
+
+GCC puede detectar automáticamente y habilitar de forma segura las optimizaciones especificas de la arquitectura. Para utilizar esta función, primero elimina cualquier `-march` y `-mtune` flags, después añade `-march=native`. Por ejemplo:
+
+ `/etc/makepkg.conf` 
+```
+CFLAGS="**-march=native** -O2 -pipe -fstack-protector-strong -fno-plt"
+CXXFLAGS="${CFLAGS}"
+```
+
+Para ver que flags estan habilitadas en tu ordenador, ejecuta:
+
+```
+$ gcc -march=native -v -Q --help=target
+
+```
+
+**Nota:** Si especificas un valor diferente que `-march=native`, después `-Q --help=target` **puede no** funcionar como se espera.[[2]](https://bbs.archlinux.org/viewtopic.php?pid=1616694#p1616694) Necesitas ir por los pasos de la compilación para ver que opciones están habilitadas realmente. Mira [Find CPU-specific options](https://wiki.gentoo.org/wiki/Safe_CFLAGS#Find_CPU-specific_options) en la wiki de Gentoo para instrucciones.
+
+### Mejorar tiempos de compilación
+
+#### Compilación paralela
 
 El sistema de construcción [make](https://www.archlinux.org/packages/?name=make) usa las `MAKEFLAGS` como variables de entorno para especificar opciones adicionales. Las variables también pueden ser definidas en el archivo `/etc/makepkg.conf`.
 

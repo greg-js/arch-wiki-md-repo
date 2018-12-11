@@ -45,7 +45,7 @@ Fan control can bring various benefits to your system, such as quieter working s
 
 There are multiple working solutions for fan control for both desktops and notebooks. Depending on your needs:
 
-*   [Fancontrol (lm-sensors)](#Fancontrol_(lm-sensors)) - Script (written in Bash) to configure fan speeds. Most suitable for desktops and laptops with a single fan and without discrete graphics card.
+*   [Fancontrol (lm-sensors)](#Fancontrol_(lm-sensors)) - Script (written in Bash) to configure fan speeds. Most suitable for desktops and laptops, where fan controls are available via sysfs.
 *   [NoteBook Fan Control (NBFC)](#NBFC) - Cross-platform solution for laptop fan control, written in C# and works under [Mono](/index.php/Mono "Mono") runtime. Most suitable for latest, unsupported by [Fancontrol](#Fancontrol_(lm-sensors)) laptops.
 *   [Dell laptops](#Dell_laptops) - Alternative fan control daemon for some Dell laptops.
 *   [ThinkPad laptops](#ThinkPad_laptops) - Fan configuration for some ThinkPad laptops.

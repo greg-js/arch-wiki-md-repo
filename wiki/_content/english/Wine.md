@@ -431,7 +431,7 @@ The [wine](https://www.archlinux.org/packages/?name=wine) package installs a *bi
 
 If you have issues with dual-head setups and different display resolutions you are probably missing [lib32-libxrandr](https://www.archlinux.org/packages/?name=lib32-libxrandr).
 
-Also installing [lib32-libxinerama](https://www.archlinux.org/packages/?name=lib32-libxinerama) might fix dual-head issues with wine.
+Also installing [lib32-libxinerama](https://www.archlinux.org/packages/?name=lib32-libxinerama) might fix dual-head issues with wine (for example, unclickable buttons and menus of application in the right most or bottom most monitor, not redrawable interface of application in that zone, dragging mouse cursor state stucked after leaving application area).
 
 ### Burning optical media
 

@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting"), revisada por última vez el **2018-10-14**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=General_troubleshooting&diff=0&oldid=545148) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting"), revisada por última vez el **2018-12-09**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=General_troubleshooting&diff=0&oldid=557281) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -67,7 +67,7 @@ A continuación se presentan una serie de preguntas que deberá hacerse a sí mi
 
 4.  ¿Cuándo se encontró por primera vez con este problema, y qué cambió entre ese momento y antes de que el sistema comenzase a funcionar erróneamente?
 
-    	Si ocurrió justo después de una actualización, enumere **todos los paquetes que se han actualizado**. Incluya los *números de versión*, copiando toda la actualización de [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)").log (`/var/log/pacman.log`). También tome nota de los estados de *cualquier* servicio necesario para dar soporte a la(s) aplicación(es) que está funcionando mal, usando las herramientas systemctl de [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"). Por ejemplo, para reenviar la salida del siguiente comando de [systemd](/index.php/Systemd_(Espa%C3%B1ol)#Uso_básico_de_systemctl "Systemd (Español)") a `$HOME/issue.log`:
+    	Si ocurrió justo después de una actualización, enumere **todos los paquetes que se han actualizado**. Incluya los *números de versión*, copiando toda la actualización de [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)").log (`/var/log/pacman.log`). También tome nota de los estados de *cualquier* servicio necesario para dar soporte a la(s) aplicación(es) que está funcionando mal, usando las herramientas systemctl de [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"). Por ejemplo, para reenviar la salida del siguiente comando de [systemd](/index.php/Systemd_(Espa%C3%B1ol)#Utilización_básica_de_systemctl "Systemd (Español)") a `$HOME/issue.log`:
 
     	 `$ systemctl status dhcpcd@eth0.service >> $HOME/issue.log` 
 
@@ -192,7 +192,7 @@ Véase [como obtener información](/index.php/Kernel_modules_(Espa%C3%B1ol)#Obte
 
 *   Puede visualizar información adicional de depuración sobre su hardware siguiendo [udev#Debug output](/index.php/Udev#Debug_output "Udev").
 *   Asegúrese de que las actualizaciones de [microcódigo](/index.php/Microcode_(Espa%C3%B1ol) "Microcode (Español)") se aplican en su sistema.
-*   Pruebe la memoria RAM de su dispositivo con [Memtest86+](http://www.memtest.org/). La RAM inestable puede ocasionar algunos problemas extremadamente extraños, que van desde fallos aleatorias hasta la corrupción de datos.
+*   Compruebe la memoria RAM de su dispositivo con [memtest86+](https://www.archlinux.org/packages/?name=memtest86%2B). La RAM inestable puede ocasionar algunos problemas extremadamente extraños, que van desde fallos aleatorias hasta la corrupción de datos. [memtest86+](https://www.archlinux.org/packages/?name=memtest86%2B) realiza pruebas similares, pero no puede comprobar toda la memoria RAM.
 
 ## Kernel panics
 

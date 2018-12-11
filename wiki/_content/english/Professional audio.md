@@ -67,7 +67,7 @@ echo 2048 > /proc/sys/dev/hpet/max-user-freq
 
 ```
 
-*   Reducing *swappiness* (aka swap frequency, set to `60` by default) to e.g. `10` will make the system wait much longer before trying to write to disk. This can be done on the fly with `sysctl vm.swappiness=10` (see [sysctl(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sysctl.8)) or setup permanently, using a configuration file (see [sysctl.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sysctl.d.5)) such as:
+*   Reducing *swappiness* (aka swap frequency, set to `60` by default) to e.g. `10` will make the system wait much longer before trying to swap to disk (see [wikipedia:Paging#Swappiness](https://en.wikipedia.org/wiki/Paging#Swappiness "wikipedia:Paging")). This can be done on the fly with `sysctl vm.swappiness=10` (see [sysctl(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sysctl.8)) or setup permanently, using a configuration file (see [sysctl.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sysctl.d.5)) such as:
 
  `/etc/sysctl.d/90-swappiness.conf` 
 ```

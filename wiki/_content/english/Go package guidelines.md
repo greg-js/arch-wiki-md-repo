@@ -103,17 +103,18 @@ When building go packages with [$GOPATH](/index.php/Go#$GOPATH "Go") there are a
 
 ```
 prepare(){
-  mkdir -p "gopath/src/github.com/pkgbuild-example"
-  ln -rTsf "${pkgname}-${pkgver}" "gopath/src/github.com/pkgbuild-example/$pkgname"
+  mkdir -p gopath/src/github.com/pkgbuild-example
+  ln -rTsf $pkgname-$pkgver gopath/src/github.com/pkgbuild-example/$pkgname
+  export GOPATH="$srcdir"/gopath
 
   # the dependencies can be fetched here if needed
-  cd "gopath/src/github.com/pkgbuild-example/$pkgname"
+  cd gopath/src/github.com/pkgbuild-example/$pkgname
   dep ensure
 }
 
 build(){
-  export GOPATH="$srcdir/gopath"
-  cd "gopath/src/github.com/pkgbuild-example/$pkgname"
+  export GOPATH="$srcdir"/gopath
+  cd gopath/src/github.com/pkgbuild-example/$pkgname
   go install -v .
 }
 
@@ -181,14 +182,15 @@ sha256sums=('1337deadbeef')
 
 prepare(){
   mkdir -p gopath/src/example.org/foo
-  ln -rTsf "$pkgname-$pkgver" gopath/src/example.org/foo
-  cd "gopath/src/example.org/foo"
+  ln -rTsf pkgname-$pkgver gopath/src/example.org/foo
+  export GOPATH="$srcdir"/gopath
+  cd gopath/src/example.org/foo
   dep ensure
 }
 
 build() {
-  export GOPATH="$srcdir/gopath"
-  cd "$GOPATH/src/example.org/foo
+  export GOPATH="$srcdir"/gopath
+  cd gopath/src/example.org/foo
   go install \
     -gcflags "all=-trimpath=$GOPATH" \
     -asmflags "all=-trimpath=$GOPATH" \
@@ -198,7 +200,7 @@ build() {
 
 check() {
   export GOPATH="$srcdir/gopath"
-  cd "$GOPATH/src/example.org/foo
+  cd gopath/src/example.org/foo
   go test ./...
 }
 

@@ -5,7 +5,7 @@ Related articles
 
 [ranger](http://ranger.github.io/) is a text-based file manager written in [Python](/index.php/Python "Python"). Directories are displayed in one pane with three columns. Moving between them is accomplished with keystrokes, bookmarks, the mouse or the command history. File previews and directory contents show automatically for the current selection.
 
-Features include: vi-style key bindings, bookmarks, selections, tagging, tabs, command history, the ability to make symbolic links, several console modes, and a task view. *ranger* has customizable commands and key bindings, including bindings to external scripts. Ranger also comes with its own [file opener](/index.php/File_opener "File opener"), [rifle(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/rifle.1). The closest competitors are [Vifm](/index.php/Vifm "Vifm") and [lf](https://github.com/gokcehan/lf).
+Features include: [vi](/index.php/Vi "Vi")-style key bindings, bookmarks, selections, tagging, tabs, command history, the ability to make symbolic links, several console modes, and a task view. *ranger* has customizable commands and key bindings, including bindings to external scripts. Ranger also comes with its own [file opener](/index.php/File_opener "File opener"), [rifle(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/rifle.1). The closest competitors are [Vifm](/index.php/Vifm "Vifm") and [lf](https://github.com/gokcehan/lf).
 
 ## Contents
 
@@ -51,7 +51,7 @@ To start ranger, launch a [terminal](/index.php/List_of_applications#Terminal_em
 
 ## Configuration
 
-After startup, *ranger* creates a directory `~/.config/ranger`. To copy the default configuration to this directory issue the following command:
+After startup, ranger creates a directory `~/.config/ranger`. To copy the default configuration to this directory issue the following command:
 
 ```
 $ ranger --copy-config=all
@@ -87,7 +87,7 @@ map DD shell gio trash %s
 
 ```
 
-Inspecting and emptying the "Trashcan" is normally supported by graphical file managers such as [nautilus](https://www.archlinux.org/packages/?name=nautilus), but you can also see the trash with the command `gio list trash://`, and empty it with: `gio trash --empty`.
+Inspecting and emptying the "trash" is normally supported by graphical file managers such as [nautilus](https://www.archlinux.org/packages/?name=nautilus), but you can also see the trash with the command `gio list trash://`, and empty it with: `gio trash --empty`.
 
 ### Defining commands
 
@@ -185,7 +185,7 @@ class extracthere(Command):
 
 #### Compression
 
-The following command allows the user to compress several files on the current directory by marking them and then calling `:compress *package name*`. It supports name suggestions by getting the basename of the current directory and appending several possibilities for the extension. You need to have [atool](https://www.archlinux.org/packages/?name=atool) installed. Otherwise you will see an error message when you create the archive.
+The following command allows users to compress several files on the current directory by marking them and then calling `:compress *package name*`. It supports name suggestions by getting the basename of the current directory and appending several possibilities for the extension. You need to have [atool](https://www.archlinux.org/packages/?name=atool) installed, otherwise you will see an error message when you create the archive.
 
 ```
 import os
@@ -312,7 +312,7 @@ map <c-n>  eval fm.tab_new('%d')
 
 ### PDF file preview
 
-By default ranger will preview PDF files as text. However, you can preview PDF files as an image in ranger by first converting the PDF file to an image. Ranger stores the image previews in `~/.cache/ranger/`. You either need to create this directory manually or set `preview_images` to `true` in `~/.config/ranger/rc.conf` to tell `ranger` to create it automatically at the next start. However, note that `preview_images` does not need to be set to `true` the whole time to preview PDF file as images, only `~/.cache/ranger` directory is needed.
+By default, ranger will preview PDF files as text. However, you can preview PDF files as an image in ranger by first converting the PDF file to an image. Ranger stores the image previews in `~/.cache/ranger/`. You either need to create this directory manually or set `preview_images` to `true` in `~/.config/ranger/rc.conf` to tell `ranger` to create it automatically at the next start. However, note that `preview_images` does not need to be set to `true` the whole time to preview PDF file as images, only `~/.cache/ranger` directory is needed.
 
 To enable this feature, uncomment the appropriate lines in `/usr/share/doc/ranger/config/scope.sh`, or add/uncomment these lines in your local file `~/.config/ranger/scope.sh`.
 
@@ -320,9 +320,9 @@ To enable this feature, uncomment the appropriate lines in `/usr/share/doc/range
 
 #### Synchronize path
 
-*ranger* provides a shell [function](/index.php/Bash/Functions "Bash/Functions") `/usr/share/doc/ranger/examples/bash_automatic_cd.sh`. Running `ranger-cd` instead of `ranger` will automatically *cd* to the last browsed folder.
+Ranger provides a shell [function](/index.php/Bash/Functions "Bash/Functions") `/usr/share/doc/ranger/examples/bash_automatic_cd.sh`. Running `ranger-cd` instead of `ranger` will automatically *cd* to the last browsed folder.
 
-If you launch ranger from a graphical launcher (such as `$TERMCMD -e ranger`, where TERMCMD is an X terminal), you cannot use `ranger-cd`. Create an executable script:
+If you launch ranger from a graphical launcher (such as `$TERMCMD -e ranger`, where TERMCMD is an X terminal), you cannot use `ranger-cd`. Instead, create an executable script:
 
  `ranger-launcher.sh` 
 ```
@@ -332,7 +332,7 @@ $TERMCMD
 
 ```
 
-and add at the *very end* of your shell configuration:
+And add the following at the end of your shell configuration:
 
  `.*shell*rc` 
 ```
@@ -371,7 +371,7 @@ map S shell shellcd %d
 
 ```
 
-Alternatively, you can make use of your shell history file if it has any. For instance, you could do this for [zsh](/index.php/Zsh#Dirstack "Zsh"):
+Alternatively, you can make use of your shell history file if it has one. For instance, you could do this for [zsh](/index.php/Zsh#Dirstack "Zsh"):
 
  `shellcd` 
 ```

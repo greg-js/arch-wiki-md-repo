@@ -54,7 +54,7 @@ Related articles
 
 **Note:** 这篇文章优先覆盖非https安装和配置Gitlab. 如果需要，查阅[#Advanced Configuration](#Advanced_Configuration) 来设置SSL.
 
-Gitlab需要 [Redis](/index.php/Redis "Redis") 和数据库后端. 如果你计划在同一个机器运行的话, 首先得安装 [MySQL](/index.php/MySQL "MySQL") 或者 [PostgreSQL](/index.php/PostgreSQL "PostgreSQL").
+Gitlab需要 [Redis](/index.php/Redis "Redis") 和数据库后端. 如果你计划在同一个机器运行的话, 首先得安装 [MySQL (简体中文)](/index.php/MySQL_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "MySQL (简体中文)") 或者 [PostgreSQL (简体中文)](/index.php/PostgreSQL_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PostgreSQL (简体中文)").
 
 [Install](/index.php/Install "Install") [gitlab](https://www.archlinux.org/packages/?name=gitlab) 包.
 
@@ -280,7 +280,7 @@ production:
 
 ### 防火墙
 
-如果你想通过[iptables](/index.php/Iptables "Iptables") 防火墙给予Gitlab安装过程直接权限, 你可能需要调整端口和网络地址:
+如果你想通过[Iptables (简体中文)](/index.php/Iptables_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Iptables (简体中文)") 防火墙给予Gitlab安装过程直接权限, 你可能需要调整端口和网络地址:
 
 ```
 # iptables -A tcp_inbound -p TCP -s **192.168.1.0/24** --destination-port **80** -j ACCEPT
@@ -333,7 +333,7 @@ production:
 
 ## 开始并测试Gitlab
 
-确定 [MySQL](/index.php/MySQL "MySQL")或 [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") 和 [Redis](/index.php/Redis "Redis") 运行和设置正确.
+确定 [MySQL (简体中文)](/index.php/MySQL_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "MySQL (简体中文)")或 [PostgreSQL (简体中文)](/index.php/PostgreSQL_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PostgreSQL (简体中文)") 和 [Redis](/index.php/Redis "Redis") 运行和设置正确.
 
 然后 [start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `gitlab.target`.
 
@@ -368,7 +368,7 @@ password: You'll be prompted to create one on your first visit.
 
 ### 基本的 SSH
 
-在完成了基本安装后, 为用户设置ssh权限. [OpenSSH](/index.php/OpenSSH "OpenSSH")的配置会在下面描述. [其它SSH客户端和服务器](/index.php/Secure_Shell#Other_SSH_clients_and_servers "Secure Shell") 需要不同的调整.
+在完成了基本安装后, 为用户设置ssh权限. [Secure Shell (简体中文)](/index.php/Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Secure Shell (简体中文)")的配置会在下面描述. [其它SSH客户端和服务器](/index.php/Secure_Shell#Other_SSH_clients_and_servers "Secure Shell") 需要不同的调整.
 
 获取添加用户SSH秘钥的建议，过程在[GitLab](https://docs.gitlab.com/ee/ssh/) 网站里描述的很好了. 你可以在 `/var/lib/gitlab/log/gitlab-shell.log`检查管理员日志来确认用户SSH秘钥被正确提交了. 在这些事件之后, GitLab 添加这些秘钥到*authorized_keys* 文件里，它在 `/var/lib/gitlab/.ssh/authorized_keys`.
 
@@ -493,7 +493,7 @@ server {
 
 #### Apache
 
-安装并配置 [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server"). 你可以使用这些 [upstream recipes](https://gitlab.com/gitlab-org/gitlab-recipes/tree/master/web-server/apache) 来开始Gitlab虚拟主机的配置文件.
+安装并配置 [Apache HTTP Server (简体中文)](/index.php/Apache_HTTP_Server_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Apache HTTP Server (简体中文)"). 你可以使用这些 [upstream recipes](https://gitlab.com/gitlab-org/gitlab-recipes/tree/master/web-server/apache) 来开始Gitlab虚拟主机的配置文件.
 
 对于SSL配置查阅 [Apache HTTP Server#TLS](/index.php/Apache_HTTP_Server#TLS "Apache HTTP Server"). 如果你不需要它, 移除它. 注意到SSL虚拟主机需要特定IP而不是通用IP. 同样如果你为Unicorn设置了自定义端口, 不要忘了在 `BalanceMember` 行也设置它.
 

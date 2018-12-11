@@ -7,9 +7,9 @@ From the project [README](https://github.com/flatpak/flatpak/blob/master/README.
 
 From [flatpak(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/flatpak.1):
 
-	*flatpak is a tool for managing applications and the runtimes they use. In the flatpak model, applications can be built and distributed independently from the host system they are used on, and they are isolated from the host system ('sandboxed') to some degree, at runtime.*
+	*Flatpak is a tool for managing applications and the runtimes they use. In the Flatpak model, applications can be built and distributed independently from the host system they are used on, and they are isolated from the host system ('sandboxed') to some degree, at runtime.*
 
-	*flatpak uses [OSTree](https://ostree.readthedocs.io/en/latest/) to distribute and deploy data. The repositories it uses are OSTree repositories and can be manipulated with the ostree utility. Installed runtimes and applications are OSTree checkouts.*
+	*Flatpak uses [OSTree](https://ostree.readthedocs.io/en/latest/) to distribute and deploy data. The repositories it uses are OSTree repositories and can be manipulated with the ostree utility. Installed runtimes and applications are OSTree checkouts.*
 
 ## Contents
 

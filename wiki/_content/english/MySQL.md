@@ -25,7 +25,7 @@ MySQL is a widely spread, multi-threaded, multi-user SQL database. For more info
     *   [2.9 Time zone tables](#Time_zone_tables)
 *   [3 Database maintenance](#Database_maintenance)
     *   [3.1 Upgrade databases on major releases](#Upgrade_databases_on_major_releases)
-    *   [3.2 Checking, optimizing and repairing databases](#Checking.2C_optimizing_and_repairing_databases)
+    *   [3.2 Checking, optimizing and repairing databases](#Checking,_optimizing_and_repairing_databases)
 *   [4 Backup](#Backup)
     *   [4.1 Compression](#Compression)
     *   [4.2 Non-interactive](#Non-interactive)
@@ -37,10 +37,11 @@ MySQL is a widely spread, multi-threaded, multi-user SQL database. For more info
     *   [5.3 Check and repair all tables](#Check_and_repair_all_tables)
     *   [5.4 Optimize all tables](#Optimize_all_tables)
     *   [5.5 OS error 22 when running on ZFS](#OS_error_22_when_running_on_ZFS)
-    *   [5.6 Cannot login through CLI, but phpmyadmin works well](#Cannot_login_through_CLI.2C_but_phpmyadmin_works_well)
+    *   [5.6 Cannot login through CLI, but phpmyadmin works well](#Cannot_login_through_CLI,_but_phpmyadmin_works_well)
     *   [5.7 MySQL binary logs are taking up huge disk space](#MySQL_binary_logs_are_taking_up_huge_disk_space)
     *   [5.8 OpenRC fails to start MySQL](#OpenRC_fails_to_start_MySQL)
     *   [5.9 Specified key was too long](#Specified_key_was_too_long)
+    *   [5.10 Changed limits warning on max_open_files/table_open_cache](#Changed_limits_warning_on_max_open_files/table_open_cache)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -59,7 +60,7 @@ Alternative implementations are:
 
 **Tip:**
 
-*   If the database (in `/var/lib/mysql`) resides on a [Btrfs](/index.php/Btrfs "Btrfs") file system, you should consider disabling [Copy-on-Write](/index.php/Btrfs#Copy-on-Write_.28CoW.29 "Btrfs") for the directory before creating any database.
+*   If the database (in `/var/lib/mysql`) resides on a [Btrfs](/index.php/Btrfs "Btrfs") file system, you should consider disabling [Copy-on-Write](/index.php/Btrfs#Copy-on-Write_(CoW) "Btrfs") for the directory before creating any database.
 *   If the database resides on a [ZFS](/index.php/ZFS "ZFS") file system, you should consult [ZFS#Database](/index.php/ZFS#Database "ZFS") before creating any database.
 
 Install [mariadb](https://www.archlinux.org/packages/?name=mariadb), afterwards run the following command **before starting** the `mariadb.service`:
@@ -543,6 +544,8 @@ Alternatively, you can purge some binary logs in `/var/lib/mysql` to free up dis
 
 ```
 
+**Warning:** This may decrease the chances of successful data recovery when trying to repair database tables (i.e. on database corruption).
+
 ### OpenRC fails to start MySQL
 
 To use MySQL with [OpenRC](/index.php/OpenRC "OpenRC") you need to add the following lines to the `[mysqld]` section in the MySQL config file, located at `/etc/mysql/my.cnf`.
@@ -565,6 +568,16 @@ You should now be able to start MySQL using:
 ### Specified key was too long
 
 See [#Increase character limit](#Increase_character_limit).
+
+### Changed limits warning on max_open_files/table_open_cache
+
+Increase the number of file descriptors by creating a [systemd drop-in](/index.php/Systemd#Drop-in_files "Systemd"), e.g.:
+
+ `/etc/systemd/system/mysqld.service.d/limit_nofile.conf` 
+```
+[Service]
+LimitNOFILE=8192
+```
 
 ## See also
 

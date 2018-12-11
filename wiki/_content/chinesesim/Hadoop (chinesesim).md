@@ -1,24 +1,26 @@
-**翻译状态：** 本文是英文页面 [Hadoop](/index.php/Hadoop "Hadoop") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-03-10，点击[这里](https://wiki.archlinux.org/index.php?title=Hadoop&diff=0&oldid=364609)可以查看翻译后英文页面的改动。
+Related articles
+
+*   [Apache spark](/index.php/Apache_spark "Apache spark")
 
 [Apache Hadoop](http://hadoop.apache.org) 是一个支持在商业硬件大型集群上运行应用程序框架。Hadoop框架透明地提供应用程序可靠性和数据传输。Hadoop实现了一个名为Map/Reduce计算模式，应用程序被划分成许多小片段，这些小片段可能在集群中的任何节点上被执行或反复执行。此外，它提供了一个分布式文件系统（HDFS）来存储在计算节点上的数据，它使集群有非常高的带宽。MapReduce和Hadoop分布式文件系统使框架能自行处理失效节点。
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 配置](#.E9.85.8D.E7.BD.AE)
-*   [3 Single Node Setup](#Single_Node_Setup)
-    *   [3.1 Standalone Operation](#Standalone_Operation)
-    *   [3.2 Pseudo-Distributed Operation](#Pseudo-Distributed_Operation)
-        *   [3.2.1 Set up passphraseless ssh](#Set_up_passphraseless_ssh)
-        *   [3.2.2 Execution](#Execution)
+*   [1 安装](#安装)
+*   [2 配置](#配置)
+*   [3 单节点设置](#单节点设置)
+    *   [3.1 独立操作](#独立操作)
+    *   [3.2 伪分布式操作](#伪分布式操作)
+        *   [3.2.1 设置无需密码的ssh](#设置无需密码的ssh)
+        *   [3.2.2 执行](#执行)
 
 ## 安装
 
-安装用户源[Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")中的 [hadoop](https://aur.archlinux.org/packages/hadoop/)包。
+安装 [hadoop](https://aur.archlinux.org/packages/hadoop/)包。
 
 ## 配置
 
-默认情况下, hadoop已经被配置成伪分布模式。在一些不同环境下要修改文件 `/etc/profile.d/hadoop.sh`中的变量。
+默认情况下, hadoop已经被配置成伪分布模式。在一些不同环境下要修改文件 `/etc/profile.d/hadoop.sh`中的和传统Hadoop不同的变量。
 
 | 环境变量 | 至 | 描述 | 权限 |
 | HADOOP_CONF_DIR | `/etc/hadoop` | `存放配置文件` | Read |
@@ -35,87 +37,86 @@
 
 ```
 
-`JAVA_HOME` 由[jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk)自动设置 `/etc/profile.d/jre.sh`，查看 `JAVA_HOME`:
+你必须在 `/etc/hadoop/hadoop-env.sh`告诉hadoop你的JAVA_HOME因为它并不自己找它自己安装的的地方:
+
+ `/etc/hadoop/hadoop-env.sh`  `export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/` 
+
+用下面命令检查安装:
 
 ```
-$ echo $JAVA_HOME
-
-```
-
-如果没有输出，请尝试重新登录。
-
-## Single Node Setup
-
-**Note:** This section is based on the [Hadoop Official Documentation](http://hadoop.apache.org/docs/stable/)
-
-### Standalone Operation
-
-By default, Hadoop is configured to run in a non-distributed mode, as a single Java process. This is useful for debugging.
-
-The following example copies the unpacked conf directory to use as input and then finds and displays every match of the given regular expression. Output is written to the given output directory.
-
-```
-$ export HADOOP_CONF_DIR=/usr/lib/hadoop/orig_conf
-$ mkdir input
-$ cp /etc/hadoop/*.xml input
-$ hadoop jar /usr/lib/hadoop/hadoop-examples-*.jar grep input output 'dfs[a-z.]+'
-$ cat output/*
+hadoop version
 
 ```
 
-For the current 2.5.x release of hadoop included in the AUR:
+如果你得到警告信息"WARNING: HADOOP_SLAVES has been replaced by HADOOP_WORKERS. Using value of HADOOP_SLAVES." 那么用下面的语句替换掉替换掉`/etc/profile.d/hadoop.sh`的 `export HADOOP_SLAVES=/etc/hadoop/slaves`:
+
+```
+export HADOOP_WORKERS=/etc/hadoop/workers
+
+```
+
+## 单节点设置
+
+**Note:** 这个部分内容基于 [Hadoop官方文档](http://hadoop.apache.org/docs/stable/)
+
+### 独立操作
+
+默认地, Hadoop被配置为非分布式模式,作为一个单独的Java进程. 这对调试很有帮助.
+
+下面的例子复制了解压缩的conf目录来用作输入然后寻找并展示每个匹配正则表达式的结果。输出被写入给定的输出目录。
 
 ```
 $ HADOOP_CONF_DIR=/usr/lib/hadoop/orig_etc/hadoop/
 $ mkdir input
-$ cp /etc/hadoop/hadoop/*.xml input
-$ hadoop jar /usr/lib/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.5.0.jar grep input output 'dfs[a-z.]+'
+$ cp /etc/hadoop/*.xml input
+$ hadoop jar /usr/lib/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.0.0.jar grep input output 'dfs[a-z.]+'
 $ cat output/*
 
 ```
 
-### Pseudo-Distributed Operation
+### 伪分布式操作
 
-Hadoop can also be run on a single-node in a pseudo-distributed mode where each Hadoop daemon runs in a separate Java process.
+Hadoop 能在伪分布式模式下运行在单一节点，这样每个hadoop守护进程运行在不同的Java进程.
 
-By default, Hadoop will run as the user root. You can change the user in `/etc/conf.d/hadoop`:
+默认地，hadoop将会以root用户运行。你可以改变默认用户，在 `/etc/conf.d/hadoop`里的:
 
 ```
 HADOOP_USERNAME="<your user name>"
 
 ```
 
-#### Set up passphraseless ssh
+#### 设置无需密码的ssh
 
-Make sure you have [sshd](/index.php/Sshd "Sshd") enabled, or start it with `systemctl enable sshd`. Now check that you can connect to localhost without a passphrase:
+确定你的 [sshd](/index.php/Sshd "Sshd")服务启用了, 或者用`systemctl enable sshd`手动开启. 现在确定你能不用密码连接到localhost:
 
 ```
 $ ssh localhost
 
 ```
 
-If you cannot ssh to localhost without a passphrase, execute the following commands:
+如果你不能用ssh无密码连接到localhost, 执行下面的命令:
 
 ```
 $ ssh-keygen -t rsa -P "" -f ~/.ssh/id_rsa
-$ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys2
+$ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+$ chmod 0600 ~/.ssh/authorized_keys
 
 ```
 
-Also make sure this line is commented in `/etc/ssh/sshd_config`
+确定`/etc/ssh/sshd_config`文件里的下面这行被注释了
 
  `/etc/ssh/sshd_config`  `#AuthorizedKeysFile .ssh/authorized_keys` 
 
-#### Execution
+#### 执行
 
-Format a new distributed-filesystem:
+格式化一个新的分布式文件系统:
 
 ```
 $ hadoop namenode -format
 
 ```
 
-Start the hadoop daemons:
+开启hadoop守护进程:
 
 ```
 # systemctl start hadoop-datanode
@@ -126,30 +127,30 @@ Start the hadoop daemons:
 
 ```
 
-The hadoop daemon log output is written to the `${HADOOP_LOG_DIR}` directory (defaults to `/var/log/hadoop`).
+hadoop守护进程的日志输出写在 `${HADOOP_LOG_DIR}`目录(默认在 `/var/log/hadoop`).
 
-Browse the web interface for the NameNode and the JobTracker; by default they are available at:
+为NameNode和JobTracker流量网络接口; 默认它们在:
 
 *   NameNode - [http://localhost:50070/](http://localhost:50070/)
 *   JobTracker - [http://localhost:50030/](http://localhost:50030/)
 
-Copy the input files into the distributed filesystem:
+复制输入文件到分布式文件系统:
 
 ```
 $ hadoop fs -put /etc/hadoop input
 
 ```
 
-Run some of the examples provided:
+运行一些提供的例子:
 
 ```
 $ hadoop jar /usr/lib/hadoop/hadoop-examples-*.jar grep input output 'dfs[a-z.]+'
 
 ```
 
-Examine the output files:
+检查输出文件:
 
-Copy the output files from the distributed filesystem to the local filesytem and examine them:
+复制分布式文件系统的输出文件到本地文件系统并检查它们:
 
 ```
 $ hadoop fs -get output output
@@ -157,16 +158,16 @@ $ cat output/*
 
 ```
 
-or
+或者
 
-View the output files on the distributed filesystem:
+在分布式文件系统浏览输出文件:
 
 ```
 $ hadoop fs -cat output/*
 
 ```
 
-When you're done, stop the daemons with:
+当你结束后停止以下守护进程:
 
 ```
 # systemctl stop hadoop-datanode

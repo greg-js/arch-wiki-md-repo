@@ -1,7 +1,7 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Incron](/index.php/Incron "Incron"), revisada por última vez el **2018-11-21**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Incron&diff=0&oldid=556315) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Incron](/index.php/Incron "Incron"), revisada por última vez el **2018-12-09**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Incron&diff=0&oldid=556315) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
-[incron](http://inotify.aiken.cz/?section=incron&page=about&lang=en) es un demonio que supervisa los [eventos de sistemas de archivos](/index.php/Autostarting_(Espa%C3%B1ol)#En_eventos_de_sistemas_de_archivos "Autostarting (Español)") y ejecuta los comandos definidos en las tablas del usuario y del sistema.
+[incron](http://inotify.aiken.cz/?section=incron&page=about&lang=en) es un daemon que supervisa los [eventos de sistemas de archivos](/index.php/Autostarting_(Espa%C3%B1ol)#En_eventos_de_sistemas_de_archivos "Autostarting (Español)") y ejecuta los comandos definidos en las tablas del usuario y del sistema.
 
 ## Contents
 
@@ -18,7 +18,7 @@ Este artículo es una traducción de [Incron](/index.php/Incron "Incron"), revis
 
 ## Activación e inicio automático
 
-Después de la instalación, el demonio no se habilitará por defecto. Se puede habilitar utilizando [systemctl](/index.php/Systemd_(Espa%C3%B1ol)#Utilizar_las_unidades "Systemd (Español)").
+Después de la instalación, el daemon no se habilitará por defecto. Se puede habilitar utilizando [systemctl](/index.php/Systemd_(Espa%C3%B1ol)#Utilizar_las_unidades "Systemd (Español)").
 
 ## Configuración
 

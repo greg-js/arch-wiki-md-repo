@@ -474,7 +474,7 @@ You could also do something like this (after the upgrade and install of [postgre
 
 **Note:**
 
-*   Below are the commands for PostgreSQL 9.6\. You can find similar commands in `/opt/` for PostgreSQL 9.2.
+*   Below are the commands for PostgreSQL 10\. You can find similar commands in `/opt/` for your version of PostgreSQL.
 *   If you had customized your `pg_hba.conf` file, you may have to temporarily modify it to allow full access to old database cluster from local system. After upgrade is complete set your customization to new database cluster as well and [restart](/index.php/Restart "Restart") `postgresql.service`.
 
 ```
@@ -483,9 +483,9 @@ You could also do something like this (after the upgrade and install of [postgre
 # mkdir /var/lib/postgres/data
 # chown postgres:postgres /var/lib/postgres/data
 [postgres]$ initdb -D '/var/lib/postgres/data'
-[postgres]$ /opt/pgsql-9.6/bin/pg_ctl -D /var/lib/postgres/olddata/ start
-[postgres]$ pg_dumpall -f /tmp/old_backup.sql
-[postgres]$ /opt/pgsql-9.6/bin/pg_ctl -D /var/lib/postgres/olddata/ stop
+[postgres]$ /opt/pgsql-10/bin/pg_ctl -D /var/lib/postgres/olddata/ start
+[postgres]$ pg_dumpall -h /tmp -f /tmp/old_backup.sql
+[postgres]$ /opt/pgsql-10/bin/pg_ctl -D /var/lib/postgres/olddata/ stop
 # systemctl start postgresql.service
 [postgres]$ psql -f /tmp/old_backup.sql postgres
 

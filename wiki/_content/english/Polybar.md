@@ -39,7 +39,7 @@ Usage: polybar [OPTION]... BAR
 
 ```
 
-However you will probably want to run Polybar with your Window Managers bootstrap routine. See [#Running with WM](#Running_with_WM)
+However you will probably want to run Polybar with your window manager's bootstrap routine. See [#Running with WM](#Running_with_WM)
 
 #### Sample Config
 

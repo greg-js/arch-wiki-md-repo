@@ -17,6 +17,7 @@
 *   [11 Screen(s) found, but none have a usable configuration](#Screen(s)_found,_but_none_have_a_usable_configuration)
 *   [12 Blackscreen at X startup / Machine poweroff at X shutdown](#Blackscreen_at_X_startup_/_Machine_poweroff_at_X_shutdown)
 *   [13 Backlight is not turning off in some occasions](#Backlight_is_not_turning_off_in_some_occasions)
+    *   [13.1 Driver 415: HardDPMS](#Driver_415:_HardDPMS)
 *   [14 Xorg fails to load or Red Screen of Death](#Xorg_fails_to_load_or_Red_Screen_of_Death)
 *   [15 Black screen on systems with Intel integrated GPU](#Black_screen_on_systems_with_Intel_integrated_GPU)
 *   [16 No audio over HDMI](#No_audio_over_HDMI)
@@ -318,6 +319,36 @@ Alternatively, xrandr is able to disable and re-enable monitor outputs without r
 
 ```
 xrandr --output DP-1 --off; read -n1; xrandr --output DP-1 --auto
+
+```
+
+### Driver 415: HardDPMS
+
+Proprietary driver 415 includes a new feature called HardDPMS. This is reported by some users to solve the issues with suspending monitors connected over DisplayPort. It is reported to become the default in a future driver version, but for now, the `HardDPMS` option can be set in the `Device` or `Screen` sections. For example:
+
+ `/etc/X11/xorg.conf.d/20-nvidia.conf` 
+```
+Section "Device"
+    ...
+    Option         "HardDPMS" "true"    
+    ...
+EndSection
+
+Section "Screen"
+    ...
+    Option         "HardDPMS" "true"
+    ...
+EndSection
+
+```
+
+`HardDPMS` will trigger on screensaver settings like `BlankTime`. The following `ServerFlags` will set your monitor(s) to suspend after 10 minutes of inactivity:
+
+ `/etc/X11/xorg.conf.d/20-nvidia.conf` 
+```
+Section "ServerFlags"
+    Option     "BlankTime" "10"
+EndSection
 
 ```
 

@@ -28,7 +28,7 @@ SSMTP is a program which delivers email from a local computer to a configured ma
 
 To configure SSMTP, you will have to edit its configuration file (`/etc/ssmtp/ssmtp.conf`) and enter your account settings.
 
-*   If your Gmail account is secured with two-factor authentication, you need to generate a unique [App Password](https://support.google.com/mail/answer/185833) to use in `ssmtp.conf`. You can do so on your [App Passwords](https://myaccount.google.com/apppasswords) page. Use the generated 16-character password in the `AuthPass` line. Spaces in the password can be omitted.
+*   If your Gmail account is secured with two-factor authentication, you need to generate a unique [App Password](https://support.google.com/mail/answer/185833) to use in `ssmtp.conf`. You can do so on your [App Passwords](https://myaccount.google.com/apppasswords) page. Use you Gmail username (not the App Name) in the `AuthUser` line and use the generated 16-character password in the `AuthPass` line, spaces in the password can be omitted.
 *   If you do *not* use two-factor authentication, you need to [allow access to unsecure apps](https://support.google.com/accounts/answer/6010255). You can do so on your [Less Secure Apps](https://myaccount.google.com/lesssecureapps) page.
 
  `/etc/ssmtp/ssmtp.conf` 

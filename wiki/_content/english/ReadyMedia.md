@@ -29,6 +29,8 @@ If you want to use an unofficial branch which supports transcoding, install the 
 
 ## Configuration and starting
 
+**Warning:** The current version of ReadyMedia has a serious bug: The `-i` command-line option and `network_interface` configuration option used to bind to a specific IP address does not apply to the HTTP server. Bug reported in 2017 to [upstream](https://sourceforge.net/p/minidlna/bugs/297/). The webserver remains accessible on all interfaces, potentially creating a security problem if running on a publicly accessible host.
+
 By default, minidlna runs as a system service (alternatively, you can [run it as your own user](#Running_minidlna_as_your_own_user)). It can be configured in `/etc/minidlna.conf`. Set the following necessary settings:
 
 ```

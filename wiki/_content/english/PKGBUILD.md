@@ -64,15 +64,15 @@ It is a common practice to define the variables in the PKGBUILD in same order as
 
 ### pkgbase
 
-An optional global directive is available when building a split package. `pkgbase` is used to refer to the group of packages in the output of *makepkg* and in the naming of source-only tarballs. If not specified, the first element in the `pkgname` array is used. The variable is not allowed to begin with a hyphen.
+When building regular packages, this variable should not be explicitly declared in the PKGBUILD: its value defaults to that of [#pkgname](#pkgname).
 
-All options and directives for the split packages default to the global values given in the PKGBUILD. Nevertheless, the following ones can be overridden within each split package’s packaging function: [#pkgdesc](#pkgdesc), [#arch](#arch), [#url](#url), [#license](#license), [#groups](#groups), [#depends](#depends), [#optdepends](#optdepends), [#provides](#provides), [#conflicts](#conflicts), [#replaces](#replaces), [#backup](#backup), [#options](#options), [#install](#install), and [#changelog](#changelog).
+When building a [split package](https://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5#PACKAGE_SPLITTING), this variable can be used to explicitly specify the name to be used to refer to the group of packages in the output of *makepkg* and in the naming of source-only tarballs. The value is not allowed to begin with a hyphen. If not specified, the value will default to the first element in the `pkgname` array.
+
+All options and directives for split packages default to the global values given in the PKGBUILD. Nevertheless, the following ones can be overridden within each split package’s packaging function: [#pkgdesc](#pkgdesc), [#arch](#arch), [#url](#url), [#license](#license), [#groups](#groups), [#depends](#depends), [#optdepends](#optdepends), [#provides](#provides), [#conflicts](#conflicts), [#replaces](#replaces), [#backup](#backup), [#options](#options), [#install](#install), and [#changelog](#changelog).
 
 ### pkgname
 
-The name(s) of the package(s). Package names should only consist of lowercase alphanumerics and the following characters: `@._+-` (at symbol, dot, underscore, plus, hyphen). Names are not allowed to start with hyphens or dots. For the sake of consistency, `pkgname` should match the name of the source tarball of the software: for instance, if the software is in `foobar-2.5.tar.gz`, use `pkgname=foobar`. The name of the directory containing the PKGBUILD should also match the `pkgname`.
-
-Split packages should be defined as an array, e.g. `pkgname=('foo' 'bar')`.
+Either the name of the package, e.g. `pkgname='foo'`, or, for split packages, an array of names, e.g. `pkgname=('foo' 'bar')`. Package names should only consist of lowercase alphanumerics and the following characters: `@._+-` (at symbol, dot, underscore, plus, hyphen). Names are not allowed to start with hyphens or dots. For the sake of consistency, `pkgname` should match the name of the source tarball of the software: for instance, if the software is in `foobar-2.5.tar.gz`, use `pkgname=foobar`. The name of the directory containing the PKGBUILD should also match the `pkgname`.
 
 ## Version
 

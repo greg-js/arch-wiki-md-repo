@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Systemd](/index.php/Systemd "Systemd"), revisada por última vez el **2018-11-21**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Systemd&diff=0&oldid=555139) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Systemd](/index.php/Systemd "Systemd"), revisada por última vez el **2018-12-09**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Systemd&diff=0&oldid=555139) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -124,7 +124,7 @@ Cuando se usa *systemctl*, por lo general, tiene que especificar el nombre compl
 *   Los puntos de montaje se traducirán automáticamente en la correspondiente unidad *.mount*. Por ejemplo, si especifica `/home` será equivalente a `home.mount`.
 *   Similar a los puntos de montaje, los dispositivos se traducen automáticamente en la correspondiente unidad *.device*, por lo tanto, la especificación `/dev/sda2` es equivalente a `dev-sda2.device`.
 
-Consulte [systemd.unit(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5) para más detalles.
+Véase [systemd.unit(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5) para más detalles.
 
 **Nota:** algunos nombres de unidades contienen un signo `@` (por ejemplo, `name@*string*.service`): esto significa que son [instancias](http://0pointer.de/blog/projects/instances.html) de una unidad *plantilla*, cuyo nombre de archivo real no contiene la parte `*string* `(por ejemplo, `name@.service` ). `*string*` se denomina al *identificador de instancia*, y es similar a un argumento que se pasa a la unidad que sirve de plantilla cuando es llamada con el orden *systemctl*: en el archivo de unidad se sustituirá el especificador `%i`.
 
@@ -135,79 +135,84 @@ Para ser más precisos, *antes* de probar inicializar una instancia de unidad de
 **Activa** una unidad de inmediato:
 
 ```
-# systemctl start *unit*
+# systemctl start *unidad*
 
 ```
 
 **Detiene** una unidad de inmediato:
 
+```
+# systemctl stop *unidad*
+
+```
+
 **Reinicia** la unidad:
 
 ```
-# systemctl restart *unit*
+# systemctl restart *unidad*
 
 ```
 
 Hace que una unidad **recargue** su configuración:
 
 ```
-# systemctl reload *unit*
+# systemctl reload *unidad*
 
 ```
 
 Muestra el **estado** de una unidad, incluso si se está ejecutando o no:
 
 ```
-$ systemctl status *unit*
+$ systemctl status *unidad*
 
 ```
 
 **Comprueba** si la unidad ya está activada o no:
 
 ```
-$ systemctl is-enabled *unit*
+$ systemctl is-enabled *unidad*
 
 ```
 
 **Activa** una unidad para inicarse en el **arranque**:
 
 ```
-# systemctl enable unit
+# systemctl enable *unidad*
 
 ```
 
 **Activa** una unidad para inicarse en el **arranque** y lo **inicia** inmediatamente:
 
 ```
-# systemctl enable --now *unit*
+# systemctl enable --now *unidad*
 
 ```
 
 **Desactiva** el inicio automático durante el arranque:
 
 ```
-# systemctl disable *unit*
+# systemctl disable *unidad*
 
 ```
 
 **Enmascara** una unidad para que sea imposible iniciarla (tanto de forma manual como de dependencia, lo que hace que el enmascaramiento sea peligroso):
 
 ```
-# systemctl mask *unit*
+# systemctl mask *unidad*
 
 ```
 
 **Desenmascara** una unidad:
 
 ```
-# systemctl unmask *unit*
+# systemctl unmask *unidad*
 
 ```
 
 Muestre la **página del manual** asociada a una unidad (esto debe ser compatible con el archivo de la unidad):
 
 ```
- $ systemctl help *unit* 
+ $ systemctl help *unidad*
 
 ```
 
@@ -306,21 +311,21 @@ Para evitar conflictos con pacman, los archivos de unidad proporcionados por los
 **Sugerencia:**
 
 *   Puede usar *systemd-delta* para ver qué archivos de la unidad se han sobrescrito o ampliado y qué se ha cambiado exactamente.
-*   Utilice `systemctl cat *unit*` para ver el contenido de un archivo de unidad y todos los fragmentos insertados asociados.
+*   Utilice `systemctl cat *unidad*` para ver el contenido de un archivo de unidad y todos los fragmentos insertados asociados.
 
 #### Reemplazar los archivos de unidad
 
 Para reemplazar el archivo de unidad `/usr/lib/systemd/system/*unit*`, cree el archivo `/etc/systemd/system/*unit*` y *reactive* la unidad para actualizar los enlaces simbólicos:
 
 ```
-# systemctl reenable *unit*
+# systemctl reenable *unidad*
 
 ```
 
 Alternativamente, ejecute:
 
 ```
-# systemctl edit --full *unit*
+# systemctl edit --full *unidad*
 
 ```
 
@@ -335,7 +340,7 @@ Para crear fragmentos de archivos para insertar en el archivo de unidad `/usr/li
 La forma más fácil de hacer esto es ejecutar:
 
 ```
-# systemctl edit *unit*
+# systemctl edit *unidad*
 
 ```
 
@@ -348,7 +353,7 @@ Esto abre el archivo `/etc/systemd/system/*unit*.d/override.conf` en su editor d
 Para revertir cualquier cambio en una unidad realizada utilizando `systemctl edit`, ejecute:
 
 ```
-# systemctl revert *unit*
+# systemctl revert *unidad*
 
 ```
 

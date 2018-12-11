@@ -8,7 +8,7 @@
 *   [2 Usage](#Usage)
 *   [3 Configuration](#Configuration)
 *   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 Disabling the *Online Updater*](#Disabling_the_Online_Updater)
+    *   [4.1 Enabling the *Online Updater*](#Enabling_the_Online_Updater)
     *   [4.2 Enabling *SaveRAM Autosave Interval*](#Enabling_SaveRAM_Autosave_Interval)
     *   [4.3 Filters and shaders](#Filters_and_shaders)
     *   [4.4 Reset settings to their default value](#Reset_settings_to_their_default_value)
@@ -59,11 +59,11 @@ If you want to override your configuration (for example when running certain cor
 
 ## Tips and tricks
 
-### Disabling the *Online Updater*
+### Enabling the *Online Updater*
 
-If you prefer to install all RetroArch components with [pacman](/index.php/Pacman "Pacman"), you can disable RetroArch's built-in updater to prevent accidentally installing components the wrong way.
+If you prefer to install all RetroArch components with the built in updater instead of pacman, you can enable it with a configuration file:
 
- `~/.config/retroarch/retroarch.cfg`  `menu_show_core_updater = "false"` 
+ `~/.config/retroarch/retroarch.cfg`  `menu_show_core_updater = "true"` 
 
 ### Enabling *SaveRAM Autosave Interval*
 

@@ -1,8 +1,5 @@
 Ссылки по теме
 
-*   [Среда рабочего стола](/index.php/%D0%A1%D1%80%D0%B5%D0%B4%D0%B0_%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B3%D0%BE_%D1%81%D1%82%D0%BE%D0%BB%D0%B0 "Среда рабочего стола")
-*   [Экранный менеджер](/index.php/%D0%AD%D0%BA%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Экранный менеджер")
-*   [Оконный менеджер](/index.php/%D0%9E%D0%BA%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Оконный менеджер")
 *   [GTK+ (Русский)](/index.php/GTK%2B_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GTK+ (Русский)")
 *   [GDM](/index.php/GDM "GDM")
 *   [GNOME/Tips and tricks](/index.php/GNOME/Tips_and_tricks "GNOME/Tips and tricks")
@@ -14,13 +11,11 @@
 *   [GNOME/Flashback](/index.php/GNOME/Flashback "GNOME/Flashback")
 *   [GNOME/Keyring](/index.php/GNOME/Keyring "GNOME/Keyring")
 *   [GNOME/Document viewer](/index.php/GNOME/Document_viewer "GNOME/Document viewer")
-*   [Cinnamon (Русский)](/index.php/Cinnamon_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Cinnamon (Русский)")
-*   [MATE (Русский)](/index.php/MATE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "MATE (Русский)")
 *   [Официальные репозитории#gnome-unstable](/index.php/%D0%9E%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%B8#gnome-unstable "Официальные репозитории")
 
 **Состояние перевода:** На этой странице представлен перевод статьи [GNOME](/index.php/GNOME "GNOME"). Дата последней синхронизации: 12 марта 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=466506).
 
-**GNOME** (произностися как /ɡˈnoʊm/[5] или /ˈnoʊm/[6]) - это [окружение рабочего стола](/index.php/%D0%9E%D0%BA%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B3%D0%BE_%D1%81%D1%82%D0%BE%D0%BB%D0%B0 "Окружение рабочего стола"), которое стремится быть простым и легким в использовании. Оно разработано в рамках [Проекта GNOME](https://en.wikipedia.org/wiki/ru:%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_GNOME "wikipedia:ru:Проект GNOME") и состоит полностью из свободного и открытого программного обеспечения. Является частью [Проекта GNU](https://en.wikipedia.org/wiki/ru:%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_GNU "wikipedia:ru:Проект GNU"). По умолчанию использует [Wayland](/index.php/Wayland_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wayland (Русский)"), а не [Xorg](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)").
+[GNOME](https://en.wikipedia.org/wiki/ru:GNOME "wikipedia:ru:GNOME") (произностися как /(ɡ)noʊm/) - это [окружение рабочего стола](/index.php/%D0%9E%D0%BA%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B3%D0%BE_%D1%81%D1%82%D0%BE%D0%BB%D0%B0 "Окружение рабочего стола"), которое стремится быть простым и легким в использовании. Оно разработано в рамках [Проекта GNOME](https://en.wikipedia.org/wiki/ru:%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_GNOME "wikipedia:ru:Проект GNOME") и состоит полностью из свободного и открытого программного обеспечения. Является частью [Проекта GNU](https://en.wikipedia.org/wiki/ru:%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_GNU "wikipedia:ru:Проект GNU"). По умолчанию использует [Wayland](/index.php/Wayland_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wayland (Русский)"), а не [Xorg](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)").
 
 ## Contents
 
@@ -40,31 +35,29 @@
         *   [6.1.2 Night Light](#Night_Light)
         *   [6.1.3 Дата & время](#Дата_&_время)
         *   [6.1.4 Приложения по умолчанию](#Приложения_по_умолчанию)
-        *   [6.1.5 Мышь и тачпад](#Мышь_и_тачпад)
+        *   [6.1.5 Мышь и сенсорная панель](#Мышь_и_сенсорная_панель)
         *   [6.1.6 Сеть](#Сеть)
         *   [6.1.7 Сетевые учетные записи](#Сетевые_учетные_записи)
         *   [6.1.8 Поиск](#Поиск)
     *   [6.2 Расширенная конфигурация](#Расширенная_конфигурация)
         *   [6.2.1 Внешний вид](#Внешний_вид)
-            *   [6.2.1.1 Темы GTK+ и иконок](#Темы_GTK+_и_иконок)
-                *   [6.2.1.1.1 Глобальная темная тема](#Глобальная_темная_тема)
-            *   [6.2.1.2 Темы оконного менеджера](#Темы_оконного_менеджера)
-                *   [6.2.1.2.1 Высота заголовка](#Высота_заголовка)
-                *   [6.2.1.2.2 Порядок кнопок в заголовке](#Порядок_кнопок_в_заголовке)
-                *   [6.2.1.2.3 Скрыть заголовок, когда окно во весь экран](#Скрыть_заголовок,_когда_окно_во_весь_экран)
-            *   [6.2.1.3 Темы GNOME Shell](#Темы_GNOME_Shell)
-            *   [6.2.1.4 Иконки в меню](#Иконки_в_меню)
-        *   [6.2.2 Рабочий стол](#Рабочий_стол)
-            *   [6.2.2.1 Иконки на рабочем столе](#Иконки_на_рабочем_столе)
-            *   [6.2.2.2 Фон экрана блокировки и рабочего стола](#Фон_экрана_блокировки_и_рабочего_стола)
-        *   [6.2.3 Расширения](#Расширения)
-        *   [6.2.4 Методы ввода](#Методы_ввода)
-        *   [6.2.5 Шрифты](#Шрифты)
-        *   [6.2.6 Запуск приложений при входе в систему](#Запуск_приложений_при_входе_в_систему)
-        *   [6.2.7 Электропитание](#Электропитание)
-            *   [6.2.7.1 Изменить поведение при закрытии крышки](#Изменить_поведение_при_закрытии_крышки)
-            *   [6.2.7.2 Изменить поведение при критическом уровне заряда батареи](#Изменить_поведение_при_критическом_уровне_заряда_батареи)
-        *   [6.2.8 Сортировка приложений по соответствующим папкам](#Сортировка_приложений_по_соответствующим_папкам)
+            *   [6.2.1.1 Темы](#Темы)
+            *   [6.2.1.2 Высота заголовка](#Высота_заголовка)
+            *   [6.2.1.3 Порядок кнопок в заголовке](#Порядок_кнопок_в_заголовке)
+            *   [6.2.1.4 Скрыть заголовок, когда окно во весь экран](#Скрыть_заголовок,_когда_окно_во_весь_экран)
+            *   [6.2.1.5 Темы GNOME Shell](#Темы_GNOME_Shell)
+            *   [6.2.1.6 Иконки в меню](#Иконки_в_меню)
+        *   [6.2.2 Каталоги в меню приложений](#Каталоги_в_меню_приложений)
+        *   [6.2.3 Автозапуск приложений при входе в систему](#Автозапуск_приложений_при_входе_в_систему)
+        *   [6.2.4 Рабочий стол](#Рабочий_стол)
+            *   [6.2.4.1 Иконки на рабочем столе](#Иконки_на_рабочем_столе)
+            *   [6.2.4.2 Фон экрана блокировки и рабочего стола](#Фон_экрана_блокировки_и_рабочего_стола)
+        *   [6.2.5 Расширения](#Расширения)
+        *   [6.2.6 Методы ввода](#Методы_ввода)
+        *   [6.2.7 Шрифты](#Шрифты)
+        *   [6.2.8 Электропитание](#Электропитание)
+            *   [6.2.8.1 Изменить поведение при закрытии крышки](#Изменить_поведение_при_закрытии_крышки)
+            *   [6.2.8.2 Изменить поведение при критическом уровне заряда батареи](#Изменить_поведение_при_критическом_уровне_заряда_батареи)
 *   [7 Смотрите также](#Смотрите_также)
 
 ## Установка
@@ -88,7 +81,7 @@
 
 ## Запуск GNOME
 
-GNOME может быть запущен как графически, используя [экранный менеджер](/index.php/%D0%AD%D0%BA%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Экранный менеджер"), так и вручную из консоли.
+GNOME может быть запущен как графически, используя [экранный менеджер](/index.php/%D0%AD%D0%BA%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Экранный менеджер"), так и вручную из консоли. При запуске из консоли некоторые возможности могут быть ограничены.
 
 **Примечание:** Поддержка механизмов блокировки экрана в GNOME обеспечивается GDM. Если запускать GNOME не при помощи GDM, то вам придется использовать другой блокировщик экрана. Смотрите [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security").
 
@@ -100,7 +93,12 @@ GNOME может быть запущен как графически, испол
 
 #### Сессия Xorg
 
-*   Для запуска сессии GNOME on Xorg добавьте следующее в файл `~/.xinitrc`: `exec gnome-session`.
+*   Для запуска сессии GNOME on Xorg добавьте следующее в файл `~/.xinitrc`:
+    ```
+    export GDK_BACKEND=x11
+    exec gnome-session
+    ```
+    .
 *   Для запуска сессии GNOME Classic добавьте следующее в файл `~/.xinitrc`:
     ```
     export XDG_CURRENT_DESKTOP=GNOME-Classic:GNOME
@@ -138,8 +136,8 @@ fi
 
 *   `Super` + `m`: показать трей с сообщениями
 *   `Super` + `a`: показать меню приложений
-*   `Alt-` + `Tab`: переключение между активными приложениями
-*   `Alt-` + ``` (клавиша выше `Tab` на раскладке клавиатуры США): переключение между окнами активного приложения
+*   `Alt` + `Tab`: переключение между активными приложениями
+*   `Alt` + ``` (клавиша выше `Tab` на раскладке клавиатуры США): переключение между окнами активного приложения
 *   `Alt` + `F2`, затем введите `r` или `restart`: перезапуск оболочки ввиду графических проблем (только для режима X/legacy. Не доступно для Wayland).
 
 ## Устаревшие названия
@@ -149,25 +147,30 @@ fi
 **Совет:** Поиск по старому названию успешно найдет требуемое приложение. Например, если искать *nautilus*, то выдаст *Files*.
 
 | Текущее | Старое |
-| [Files](/index.php/Files "Files") | Nautilus |
-| [Web](/index.php/GNOME_Web "GNOME Web") | Epiphany |
+| [Files](/index.php/GNOME/Files "GNOME/Files") | Nautilus |
+| [Web](/index.php/GNOME/Web "GNOME/Web") | Epiphany |
 | Videos | Totem |
 | Main Menu | Alacarte |
-| Document Viewer | Evince |
-| Disk Usage Analyser | Baobab |
+| [Document Viewer](/index.php/GNOME/Document_viewer "GNOME/Document viewer") | Evince |
+| Disk Usage Analyzer | Baobab |
 | Image Viewer | EoG (Eye of GNOME) |
-| [Passwords and Keys](/index.php/GNOME_Keyring "GNOME Keyring") | Seahorse |
+| [Passwords and Keys](/index.php/GNOME/Keyring "GNOME/Keyring") | Seahorse |
+| GNOME Translation Editor | Gtranslator |
 
 ## Конфигурация
 
-GNOME использует для сохранения настроек системы и приложений DConf - хранилище данных. Рабочий стол поставляется с настройками по умолчанию, установленными приложениями и их собственными базами данных. Базовая конфигурация производится при помощи панели управления GNOME (*gnome-control-center*) или при помощи настроек отдельных приложений. Всегда можно напрямую изменить базу данных DConf; это выполняется при помощи инструмента командной строки *gsettings*. В частности, его можно использовать, чтобы настроить параметры, которые не доступны через пользовательский интерфейс.
+Панель управления GNOME (gnome-control-center) и приложения GNOME используют низкоуровневую систему конфигурации [dconf](https://en.wikipedia.org/wiki/Dconf "wikipedia:Dconf") для хранения своих настроек.
 
-Настройки GNOME применяются GNOME Settings Daemon. Обратите внимание, что демон может быть запущен вне сессии GNOME, чтобы применять настройки GNOME вне родной среды. Выполните:
+С помощью утилит `gsettings` и `dconf` вы можете напрямую получить доступ к базе данных dconf. Этот метод также позволяет настраивать параметры не предоставляемые графическим интерфейсом.
+
+До версии GNOME 3.24 все настройки применялись с помощью сервиса GNOME settings, который может быть запущен вне сессии GNOME следующим образом:
 
 ```
 $ nohup /usr/lib/gnome-settings-daemon/gnome-settings-daemon > /dev/null &
 
 ```
+
+Однако в GNOME 3.24 сервис GNOME settings был заменён несколькими отдельными плагинами настроек: `/usr/lib/gnome-settings-daemon/gsd-*`. Эти плагины теперь контролируются через `.desktop` файлы, которые находятся в каталоге `/etc/xdg/autostart` (org.gnome.SettingsDaemon.*.desktop). Для того, чтобы запустить эти плагины вне сессии GNOME вам необходимо скопировать соответствующие [ярлыки приложений](/index.php/Desktop_entries_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop entries (Русский)") в каталог `~/.config/autostart`.
 
 Конфигурация обычно производится отдельно для каждого пользователя и остальная часть этого раздела не приводит примеры того, как создать конфигурацию для нескольких пользователей одновременно.
 
@@ -175,7 +178,7 @@ $ nohup /usr/lib/gnome-settings-daemon/gnome-settings-daemon > /dev/null &
 
 #### Цвет
 
-Демон `colord` считывает данные EDID дисплея и извлекает соответствующий цветовой профиль. Большинство цветовых профилей являются правильными и не требуют настройки; однако для тех, которые не являются правильными или для старых дисплеев, цветовые профили могут быть помещены в `~/.local/share/icc/` и направлены туда же.
+Демон (служба) `colord` считывает данные EDID дисплея и извлекает соответствующий цветовой профиль. Большинство цветовых профилей являются правильными и не требуют настройки; однако для тех, которые не являются правильными или для старых дисплеев, цветовые профили могут быть помещены в `~/.local/share/icc/` и направлены туда же.
 
 #### Night Light
 
@@ -185,6 +188,8 @@ GNOME поставляется со встроенным световым фил
 $ gsettings set org.gnome.settings-daemon.plugins.color night-light-temperature 5000
 
 ```
+
+**Совет:** Для того, чтобы изменить температуру фильтра в [Wayland](/index.php/Wayland_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wayland (Русский)") установите [это расширение](https://extensions.gnome.org/extension/1276/night-light-slider/).
 
 #### Дата & время
 
@@ -208,15 +213,11 @@ $ gsettings set org.gnome.desktop.calendar show-weekdate true
 
 После установки GNOME в первый раз вы можете обнаружить, что не те приложения обрабатывают определенные протоколы. Например, *totem* открывает видео вместо ранее использованного [VLC](/index.php/VLC "VLC"). Некоторые ассоциации могут быть установлены с помощью системных настроек: *Все параметры* > *Подробности* > *Приложения по умолчанию*.
 
-Для других протоколов и методах их конфигурации смотрите [Default applications](/index.php/Default_applications "Default applications").
+Для других протоколов и методов их конфигурации смотрите [приложения по умолчанию](/index.php/Default_applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Default applications (Русский)").
 
-#### Мышь и тачпад
+#### Мышь и сенсорная панель
 
-Для того чтобы уменьшить неудобства, доставляемые тачпадом, вам, возможно, захочется реализовать следующее:
-
-*   Отключение тачпада во время набора текста
-*   Отключение прокрутки
-*   Отключение tap-to-click
+Многие настройки сенсорной панели могут быть установлены с помощью системных настроек: *Параметры* > *Устройства* > *Мышь и сенсорная панель*.
 
 В зависимости от вашего устройства другие параметры, которые нельзя настроить через интерфейс, могут быть доступны. Например, другой `click-method` тачпада:
 
@@ -237,13 +238,13 @@ $ gsettings set org.gnome.desktop.peripherals.touchpad click-method 'fingers'
 
 ```
 
-или через *gnome-tweak*.
+или через [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks).
 
 **Примечание:** Драйвер [synaptics](/index.php/Synaptics "Synaptics") не поддерживается GNOME. Вместо него вы должны использовать [libinput](/index.php/Libinput "Libinput"). Смотрите [этот отчет об ошибке](https://bugzilla.gnome.org/show_bug.cgi?id=764257#c12).
 
 #### Сеть
 
-[NetworkManager](/index.php/NetworkManager "NetworkManager") - родной инструмент проекта GNOME для управления настройками сети. [Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) и [включите](/index.php/%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Включите") `NetworkManager.service`.
+[NetworkManager](/index.php/NetworkManager "NetworkManager") - собственный инструмент проекта GNOME для управления настройками сети. [Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) и [включите](/index.php/%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Включите") `NetworkManager.service`.
 
 В отличие от других [менеджеров сети](/index.php/List_of_applications/Internet#Network_managers "List of applications/Internet"), которые могут быть также использованы, NetworkManager обеспечивает полную интеграцию через настройки сети оболочки и предоставляет апплет индикатора статуса [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) (не требуется для GNOME).
 
@@ -253,42 +254,28 @@ $ gsettings set org.gnome.desktop.peripherals.touchpad click-method 'fingers'
 
 #### Поиск
 
-Чтобы воспользоваться поиском GNOME нужно нажать `Super` и просто начать печатать. [tracker](https://www.archlinux.org/packages/?name=tracker) устанавливается по умолчанию, как часть группы [gnome](https://www.archlinux.org/groups/x86_64/gnome/), и индексирует приложения и базы метаданных. Настраивается при помощи *Поиск и индексация*; мониторинг состояния производится посредством *tracker-control*. Он автоматически запускается *gnome-session* при входе в систему. Можно запустить вручную: `tracker-control -s`. Параметры поиска также могут быть настроены из панели *Все параметры*.
+Чтобы воспользоваться поиском GNOME нужно нажать клавишу `Super` и просто начать печатать. Пакет [tracker](https://www.archlinux.org/packages/?name=tracker) устанавливается по умолчанию, как часть группы [gnome](https://www.archlinux.org/groups/x86_64/gnome/), и индексирует приложения и базы метаданных. Настраивается при помощи *Поиск и индексация*. Мониторинг состояния производится посредством *tracker-control*. Он автоматически запускается *gnome-session* при входе в систему. Можно запустить вручную: `tracker-control -s`. Параметры поиска также могут быть настроены из панели *Все параметры*.
 
 Отправлять запросы базе данных Tracker можно при помощи *tracker-sparql*. Смотрите страницу справочного руководства [tracker-sparql(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tracker-sparql.1).
 
 ### Расширенная конфигурация
 
-Как вы могли заметить выше, многие параметры, такие как изменение темы [GTK+](/index.php/GTK%2B "GTK+") или [оконного менеджера](/index.php/%D0%9E%D0%BA%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Оконный менеджер"), недоступны в панели управления GNOME (*gnome-control-center*). Пользователи, желающие настроить эти параметры, возможно, захотят использовать GNOME Tweak Tool ([gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks) - удобная графическая утилита, которая предоставляет доступ к множеству параметров.
+Как вы могли заметить выше, многие параметры, такие как изменение темы [GTK+](/index.php/GTK%2B "GTK+") или [оконного менеджера](/index.php/%D0%9E%D0%BA%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Оконный менеджер"), недоступны в панели управления GNOME (*gnome-control-center*). Пользователи, желающие настроить эти параметры, возможно, захотят использовать GNOME Tweaks ([gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks) - удобная графическая утилита, которая предоставляет доступ к множеству параметров.
 
 Параметры GNOME (которые сохраняются в базе данных DConf) также могут быть настроены, используя [*dconf-editor*](https://developer.gnome.org/dconf/unstable/dconf-editor.html) (графический инструмент для настройки DConf) или [*gsettings*](https://developer.gnome.org/gio/stable/GSettings.html) - консольный утилита для настройки. В GNOME Tweak Tool нет скрытых настроек, все они предоставлены в графическом интерфейсе; заметим, однако, что вы не найдете все описываемые ниже параметры в этой утилите.
 
 #### Внешний вид
 
-##### Темы GTK+ и иконок
+##### Темы
 
-Чтобы установить новую тему или комплект иконок, переместите их в релевантную директорию(`~/.local/share/themes` или `~/.local/share/icons` соответственно; можете использовать `/usr/share/` вместо `~/.local/share/` для общесистемного доступа.) Настройки интерфейса могут быть заданы в `~/.config/gtk-3.0/settings.ini`:
+GNOME использует Adwaita по умолчанию. Для того, чтобы применить тему Adwaita dark только для GTK+2 приложений, используйте следующую символическую ссылку:
 
- `~/.config/gtk-3.0/settings.ini` 
 ```
-[Settings]
-gtk-theme-name = Adwaita
-# если приложение поддерживает темную тему Adwaita
-gtk-application-prefer-dark-theme = true
-# название шрифта и его размер
-gtk-font-name = Sans 10
+ $ ln -s /usr/share/themes/Adwaita-dark ~/.themes/Adwaita
 
 ```
 
-Дополнительные темы можно установить из:
-
-*   [DeviantArt](http://www.deviantart.com/browse/all/customization/skins/linuxutil/desktopenv/gnome/gtk3/).
-*   [gnome-look.org](http://gnome-look.org/index.php?xcontentmode=167).
-*   [GTK+ 3 темы в AUR](https://aur.archlinux.org/packages.php?O=0&K=gtk3&do_Search=Go).
-*   [Темы курсоров in the AUR](https://aur.archlinux.org/packages.php?O=0&K=xcursor&do_Search=Go&PP=50&SB=v&SO=d).
-*   [Темы иконок в AUR](https://aur.archlinux.org/packages.php?O=0&K=icon-theme&do_Search=Go&PP=50&SB=v&SO=d).
-
-После установки они могут быть выбраны посредством GNOME Tweak Tool или GSettings. Смотрите ниже для GSettings:
+Для того, чтобы установить новые темы, переместите их в соответствующий каталог и используйте GNOME Tweaks или следующие команды GSettings:
 
 Для темы GTK+:
 
@@ -304,15 +291,11 @@ $ gsettings set org.gnome.desktop.interface icon-theme *имя-темы*
 
 ```
 
-###### Глобальная темная тема
+**Примечание:** Тема оконного менеджера использует тему GTK+. Использование `org.gnome.desktop.wm.preferences theme` не поддерживается и игнорируется.
 
-GNOME будет использовать светлую тему Adwaita по умолчанию, однако темная вариация этой темы также существует и может быть выбрана посредством Tweak Tool или путем редактирования конфигурационного файла GTK+ 3 - смотрите [GTK+#Dark theme variant](/index.php/GTK%2B#Dark_theme_variant "GTK+"). Некоторые приложения, например Image Viewer (*eog*), уже используют темную тему по умолчанию. Следует отметить, что Глобальная Темная тема работает только с приложениями GTK+ 3; некоторые приложения GTK+ 3 могут иметь лишь частичную поддержку Глобальной Темной Темы. Поддержка Qt и GTK+ 2 может быть добавлена в будущем.
+Смотрите [GTK+#Темы](/index.php/GTK%2B_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Темы "GTK+ (Русский)") и [Icons#Manually](/index.php/Icons#Manually "Icons").
 
-##### Темы оконного менеджера
-
-Тема оконного менеджера использует тему GTK+. Использование `org.gnome.desktop.wm.preferences theme` не поддерживается и игнорируется.
-
-###### Высота заголовка
+##### Высота заголовка
 
 **Примечание:** Эта конфигурация сжимает заголовок GNOME-terminal и Chromium, но не влияет на высоту заголовка Nautilus.
  `~/.config/gtk-3.0/gtk.css` 
@@ -333,7 +316,7 @@ headerbar.default-decoration button.titlebutton {
 
 Смотрите [[2]](https://ask.fedoraproject.org/en/question/10035/shrink-title-bar/?answer=86149#post-id-86149) для дополнительной информации.
 
-###### Порядок кнопок в заголовке
+##### Порядок кнопок в заголовке
 
 Выполните, чтобы задать порядок кнопок (Mutter, Metacity):
 
@@ -344,21 +327,21 @@ $ gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximi
 
 **Совет:** Двоеточие указывает, с какой стороны заголовка окна будут располагаться кнопки.
 
-###### Скрыть заголовок, когда окно во весь экран
+##### Скрыть заголовок, когда окно во весь экран
+
+*   [Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") [gnome-shell-extension-no-title-bar-git](https://aur.archlinux.org/packages/gnome-shell-extension-no-title-bar-git/) или [gnome-shell-extension-no-title-bar](https://aur.archlinux.org/packages/gnome-shell-extension-no-title-bar/). Заголовок окон в полноэкранном режиме будет перемещен в панель в верхней части экрана.
+
+*   [Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") [mutter-hide-legacy-decorations](https://aur.archlinux.org/packages/mutter-hide-legacy-decorations/). Это изменит стандартные настройки оконного менеджера таким образом, что заголовки старых приложений (без функциональных кнопок в заголовке), будут автоматически скрываться в полноэкранном режиме или при максимальной высоте.
 
 *   [Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") [gnome-shell-extension-pixel-saver-git](https://aur.archlinux.org/packages/gnome-shell-extension-pixel-saver-git/) или [gnome-shell-extension-pixel-saver](https://aur.archlinux.org/packages/gnome-shell-extension-pixel-saver/). Заголовок окон будет перемещен в панель в верхней части экрана, экономя драгоценные пиксели.
 
-*   [Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") [mutter-hide-legacy-decorations](https://aur.archlinux.org/packages/mutter-hide-legacy-decorations/). Изменяет стандартные настройки оконного менеджера так, чтобы заголовки окон legacy-приложений скрывались автоматически, когда развернуты во весь экран или прикреплены к одной из сторон.
-
-*   [Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") [maximus](https://aur.archlinux.org/packages/maximus/). Выполните *maximus* из терминала, чтобы запустить приложение. По запуске демон автоматически разворачивает окна на весь экран. Он изменяет их при развороте во весь экран и возвращает прежний вид по необходимости. Если вы не хотите, чтобы все окна запускались развернутыми на весь экран, запускайте следующий образом - `maximus -m`. Обратите внимание, что это будет работает только с окнами, которые отрисовываются менеджером окон; приложение, использующую собственную отрисовку, например [GNOME Files](/index.php/GNOME_Files "GNOME Files"), не будут изменяться при развороте на весь экран.
-
 ##### Темы GNOME Shell
 
-Тему Gnome Shell можно настроить. Убедитесь, что установлен пакет [gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shell-extensions). Затем включите расширение *User Themes* при помощи GNOME Tweak Tool или через сайт [GNOME Shell Extensions](https://extensions.gnome.org). Темы Shell могут быть загружены и выбраны, используя GNOME Tweak Tool.
+Тему Gnome Shell можно настроить. Убедитесь, что установлен пакет [gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shell-extensions). Затем включите расширение *User Themes* при помощи GNOME Tweaks или через сайт [GNOME Shell Extensions](https://extensions.gnome.org). Темы Shell могут быть загружены и выбраны, используя GNOME Tweaks.
 
 Некоторые темы GNOME Shell доступны [в AUR](https://aur.archlinux.org/packages.php?O=0&K=gnome-shell-theme&do_Search=Go&PP=50&SB=v&SO=d).
 
-Также темы можно скачать с [gnome-look.org](http://gnome-look.org/index.php?xcontentmode=191).
+Также темы можно скачать с [gnome-look.org](http://gnome-look.org/).
 
 ##### Иконки в меню
 
@@ -368,6 +351,59 @@ $ gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximi
 $ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/ButtonImages': <1>, 'Gtk/MenuImages': <1>}"
 
 ```
+
+#### Каталоги в меню приложений
+
+**Совет:** Скрипт [gnome-catgen](https://github.com/prurigro/gnome-catgen) ([gnome-catgen-git](https://aur.archlinux.org/packages/gnome-catgen-git/)) позволяет вам управлять папками путем создания файлов в `~/.local/share/applications-categories`, называющихся в соответствии с категорией, содержащей список desktop-файлов, принадлежащих приложениям, которые вы хотели бы видеть внутри. При желании вы можете распределить все приложения без категории в соответствующие папки при помощи цикличного обхода, который не завершится пока вы не нажмете ctrl-c или не закончатся неотсортированные приложения.
+
+В **dconf-editor** перейдите в `org.gnome.desktop.app-folders` и установите значение `folder-children` на массив имен папок, разделенных запятыми:
+
+```
+['Utilities', 'Sundry']
+
+```
+
+Добавьте приложения, используя `gsettings`:
+
+```
+$ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Sundry/ apps "['alacarte.desktop', 'dconf-editor.desktop']"
+
+```
+
+Действия выше добавят приложения `alacarte.desktop` и `dconf-editor.desktop` в папку Sundry. Это также создаст каталог `org.gnome.desktop.app-folders.folders.Sundry`.
+
+Чтобы переименовать папку (если у нее нет имени, которое отображается в верхней части приложений):
+
+```
+$ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Sundry/ name "Sundry"
+
+```
+
+Приложения аналогично могут быть отсортированы по их категории (указанной в *.desktop* файле):
+
+```
+$ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Sundry/ categories "['Office']"
+
+```
+
+Если нужные приложения, соответствующие категории, не хотят добавляться в требуемую папку:
+
+```
+$ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Sundry/ excluded-apps "['libreoffice-draw.desktop']"
+
+```
+
+Для получения более подробной информации смотрите [[3]](https://git.gnome.org/browse/gsettings-desktop-schemas/tree/schemas/org.gnome.desktop.app-folders.gschema.xml.in) и [[4]](https://wiki.gentoo.org/wiki/Gnome_Applications_Folders).
+
+#### Автозапуск приложений при входе в систему
+
+GNOME реализует [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart").
+
+Утилита [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks) позволяет управлять тем, какие приложения будут запущены при входе.
+
+**Совет:** Если кнопка с иконкой "**+**" в GNOME Tweaks недоступна, попробуйте запустить GNOME Tweaks из терминала следующей командой: `gnome-tweaks`. Смотрите [страницу форума](https://bbs.archlinux.org/viewtopic.php?pid=1413631#p1413631).
+
+**Примечание:** Устаревший диалог *gnome-session-properties* может быть добавлен путем [установки](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакета [gnome-session-properties](https://aur.archlinux.org/packages/gnome-session-properties/).
 
 #### Рабочий стол
 
@@ -421,16 +457,6 @@ GNOME имеет встроенную поддержку методов ввод
 
 Для хинтинга, скорее всего, потребуется RGBA, так как он подходит для мониторов большинства типов, и если шрифты кажутся слишком загороженными, то измените хинтинг на *Slight* или *None*.
 
-#### Запуск приложений при входе в систему
-
-Для запуска определенных приложений при входе в систему скопируйте соответствующий файл `.desktop` из `/usr/share/applications/` в `~/.config/autostart/`.
-
-[gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) позволяет управлять тем, какие приложения будут запущены при входе.
-
-**Совет:** Если кнопка с плюсом в Tweak Tool недоступна, попробуйте запустить Tweak Tool из терминала следующей командой: `gnome-tweak-tool`. Смотрите [страницу форума](https://bbs.archlinux.org/viewtopic.php?pid=1413631#p1413631).
-
-**Примечание:** Устаревший диалог *gnome-session-properties* может быть добавлен путем [установки](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакета [gnome-session-properties](https://aur.archlinux.org/packages/gnome-session-properties/).
-
 #### Электропитание
 
 Вы, возможно, захотите изменить стандартные настройки электропитания (этот пример подразумевает то, что вы используете ноутбук; измените их по необходимости):
@@ -454,7 +480,7 @@ $ gsettings set org.gnome.settings-daemon.plugins.xrandr default-monitors-setup 
 
 ##### Изменить поведение при закрытии крышки
 
-GNOME Tweak Tool может дополнительно *тормозить systemd* для этого ACPI события.[[3]](http://ftp.gnome.org/pub/GNOME/sources/gnome-tweak-tool/3.17/gnome-tweak-tool-3.17.1.news) Чтобы включить это, запустите Tweak Tool и под вкладкой электропитание, отметьте опцию *Не переводить в ждущий режим при закрытии крышки*. Это значит, что система не будет ничего делать при закрытии крышки вместо того, чтобы перейти в ждущий режим - стандартное поведение. Включение этой опции создаст файл `~/.config/autostart/ignore-lid-switch-tweak.desktop`, который будет автоматически запускать ингибитор Tweak Tool.
+GNOME Tweak Tool может дополнительно *тормозить systemd* для этого ACPI события.[[5]](http://ftp.gnome.org/pub/GNOME/sources/gnome-tweak-tool/3.17/gnome-tweak-tool-3.17.1.news) Чтобы включить это, запустите Tweak Tool и под вкладкой электропитание, отметьте опцию *Не переводить в ждущий режим при закрытии крышки*. Это значит, что система не будет ничего делать при закрытии крышки вместо того, чтобы перейти в ждущий режим - стандартное поведение. Включение этой опции создаст файл `~/.config/autostart/ignore-lid-switch-tweak.desktop`, который будет автоматически запускать ингибитор Tweak Tool.
 
 Если вы не хотите, чтобы система переходила в ждущий режим или ничего не делала при закрытии крышки, то вы должны убедиться, что опция, описанная выше, **не** включена, а затем настроить *systemd* при помощи `HandleLidSwitch=*preferred_behaviour*`, как описано в [Power management#ACPI events](/index.php/Power_management#ACPI_events "Power management").
 
@@ -469,49 +495,6 @@ PercentageCritical=3
 PercentageAction=2
 CriticalPowerAction=HybridSleep
 ```
-
-#### Сортировка приложений по соответствующим папкам
-
-**Совет:** Скрипт [gnome-catgen](https://github.com/prurigro/gnome-catgen) ([gnome-catgen-git](https://aur.archlinux.org/packages/gnome-catgen-git/)) позволяет вам управлять папками путем создания файлов в `~/.local/share/applications-categories`, называющихся в соответствии с категорией, содержащей список desktop-файлов, принадлежащих приложениям, которые вы хотели бы видеть внутри. При желании вы можете распределить все приложения без категории в соответствующие папки при помощи цикличного обхода, который не завершится пока вы не нажмете ctrl-c или не закончатся неотсортированные приложения.
-
-В **dconf-editor** перейдите в `org.gnome.desktop.app-folders` и установите значение `folder-children` на массив имен папок, разделенных запятыми:
-
-```
-['Utilities', 'Sundry']
-
-```
-
-Добавьте приложения, используя `gsettings`:
-
-```
-$ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Sundry/ apps "['alacarte.desktop', 'dconf-editor.desktop']"
-
-```
-
-Действия выше добавят приложения `alacarte.desktop` и `dconf-editor.desktop` в папку Sundry. Это также создаст каталог `org.gnome.desktop.app-folders.folders.Sundry`.
-
-Чтобы переименовать папку (если у нее нет имени, которое отображается в верхней части приложений):
-
-```
-$ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Sundry/ name "Sundry"
-
-```
-
-Приложения аналогично могут быть отсортированы по их категории (указанной в *.desktop* файле):
-
-```
-$ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Sundry/ categories "['Office']"
-
-```
-
-Если нужные приложения, соответствующие категории, не хотят добавляться в требуемую папку:
-
-```
-$ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Sundry/ excluded-apps "['libreoffice-draw.desktop']"
-
-```
-
-Для получения более подробной информации ссылайтесь на [app-folders schema](https://git.gnome.org/browse/gsettings-desktop-schemas/tree/schemas/org.gnome.desktop.app-folders.gschema.xml.in).
 
 ## Смотрите также
 
