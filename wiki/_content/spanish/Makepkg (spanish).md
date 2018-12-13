@@ -23,6 +23,8 @@ El paquete makepkg lo provee el paquete [pacman](https://www.archlinux.org/packa
     *   [3.1 Construir binarios optimizados](#Construir_binarios_optimizados)
     *   [3.2 Mejorar tiempos de compilación](#Mejorar_tiempos_de_compilación)
         *   [3.2.1 Compilación paralela](#Compilación_paralela)
+        *   [3.2.2 Construir desde archivos en memoria](#Construir_desde_archivos_en_memoria)
+        *   [3.2.3 Usar caché de compilación](#Usar_caché_de_compilación)
     *   [3.3 Generar nueva suma de verificación](#Generar_nueva_suma_de_verificación)
     *   [3.4 Uso de múltiples núcleos en la compresión](#Uso_de_múltiples_núcleos_en_la_compresión)
 
@@ -115,7 +117,10 @@ $ makepkg -s
 
 ```
 
-**Nota:** Estas dependencias deben estar disponibles dentro de los repositorios disponibles para pacman, vea [pacman (Español)#Repositorios y servidores de réplicas](/index.php/Pacman_(Espa%C3%B1ol)#Repositorios_y_servidores_de_réplicas "Pacman (Español)") para mayor información al respecto. También se pueden instalar las dependencias antes de construir el paquete (`pacman -S --asdeps dep1 dep2`).
+**Nota:**
+
+*   Estas dependencias deben estar disponibles dentro de los repositorios disponibles para pacman, vea [pacman (Español)#Repositorios y servidores de réplicas](/index.php/Pacman_(Espa%C3%B1ol)#Repositorios_y_servidores_de_réplicas "Pacman (Español)") para mayor información al respecto. También se pueden instalar las dependencias antes de construir el paquete (`pacman -S --asdeps dep1 dep2`).
+*   Solo se utilizarán valores globales cuando se instalen las dependencias, por ejemplo, cualquier anulación hecha en la función de paquete dividido no sera usado. [[2]](https://patchwork.archlinux.org/patch/2271/)
 
 Una vez que se hayan satisfecho todas las dependencias y el paquete se construyo satisfactoriamente, un archivo con el nombre (`pkgname-pkgver.pkg.tar.gz`) será creado en el directorio de trabajo. Para instalarlo (al igual que `pacman -U pkgname-pkgver.pkg.tar.gz`) simplemente se ejecuta:
 
@@ -131,6 +136,8 @@ $ makepkg -c
 
 ```
 
+Para mas información, mire [makepkg(8)](https://www.archlinux.org/pacman/makepkg.8.html).
+
 ## Recomendaciones
 
 ### Construir binarios optimizados
@@ -143,7 +150,7 @@ Las opciones pasadas al compilador C/C++ (e.g. [gcc](https://www.archlinux.org/p
 
 **Nota:**
 
-*   Tener en cuenta que no todos los sistemas de construcciones utilizan las variables configuradas en `makepkg.conf`. Por ejemplo, *cmake* no tiene en cuenta las opciones de preprocesamiento `makepkg.conf`. Consecuentemente, muchos [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") contiene métodos alternativos con opciones específicas para el sistema constructor usado por el gestor de paquetes.
+*   Tener en cuenta que no todos los sistemas de construcciones utilizan las variables configuradas en `makepkg.conf`. Por ejemplo, *cmake* no tiene en cuenta las opciones de preprocesamiento `CPPFLAGS`. Consecuentemente, muchos [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") contiene métodos alternativos con opciones específicas para el sistema constructor usado por el gestor de paquetes.
 *   La configuración proporcionada con el código fuente en el `Makefile` o algún argumento específico en la compilación desde la linea de comandos tiene preferencia y puede potencialmente sobrescribir el de `makepkg.conf`.
 
 GCC puede detectar automáticamente y habilitar de forma segura las optimizaciones especificas de la arquitectura. Para utilizar esta función, primero elimina cualquier `-march` y `-mtune` flags, después añade `-march=native`. Por ejemplo:
@@ -161,7 +168,7 @@ $ gcc -march=native -v -Q --help=target
 
 ```
 
-**Nota:** Si especificas un valor diferente que `-march=native`, después `-Q --help=target` **puede no** funcionar como se espera.[[2]](https://bbs.archlinux.org/viewtopic.php?pid=1616694#p1616694) Necesitas ir por los pasos de la compilación para ver que opciones están habilitadas realmente. Mira [Find CPU-specific options](https://wiki.gentoo.org/wiki/Safe_CFLAGS#Find_CPU-specific_options) en la wiki de Gentoo para instrucciones.
+**Nota:** Si especificas un valor diferente que `-march=native`, después `-Q --help=target` **puede no** funcionar como se espera.[[3]](https://bbs.archlinux.org/viewtopic.php?pid=1616694#p1616694) Necesitas ir por los pasos de la compilación para ver que opciones están habilitadas realmente. Mira [Find CPU-specific options](https://wiki.gentoo.org/wiki/Safe_CFLAGS#Find_CPU-specific_options) en la wiki de Gentoo para instrucciones.
 
 ### Mejorar tiempos de compilación
 
@@ -189,16 +196,40 @@ MAKEFLAGS="-j3"
 
 ```
 
+Algunos [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") sobrescriben específicamente con `-j1`, por las condiciones en algunas versiones o porque simplemente no están soportadas en primer lugar. Paquetes que fallen la construcción por esto debe de ser [reportado](/index.php/Reporting_bug_guidelines "Reporting bug guidelines") en el bug tracker (o en su caso de los paquetes del [AUR](/index.php/AUR "AUR"), al mantenedor del paquete) después de estar seguro que ese error lo causa su `MAKEFLAGS`.
+
 Vea [make(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/make.1) para una lista completa de opciones.
+
+#### Construir desde archivos en memoria
+
+La compilación requiere muchas operaciones I/O y manejar muchos archivos pequeños, moviendo el directorio de trabajo a [tmpfs](/index.php/Tmpfs "Tmpfs") puede mejorar los tiempos de compilación.
+
+La variable `BUILDDIR` se puede exportar temporalmente a *makepkg* para establecer el directorio de trabajo a un tmpfs existente. Por ejemplo:
+
+$ BUILDDIR=/tmp/makepkg makepkg
+
+La configuración duradera se puede hacer en `makepkg.conf` descomentando la opción `BUILDDIR`, que se encuentra al final de la sección `BUILD ENVIRONMENT` en el archivo `/etc/makepkg.conf` por defecto. Estableciendo el valor en, por ejemplo, `BUILDDIR=/tmp/makepkg` hará que make use el sistema de archivos temporal `/tmp` por defecto en Arch.
+
+**Nota:**
+
+*   Evita compilar paquetes grandes en tmpfs para prevenir que se ejecute fuera de memoria.
+*   La carpeta tmpfs tiene que estar montada sin la opción `noexec`, si no evitara ejecutar la construcción de binarios.
+*   Mantén en mente que los paquetes compilados en tmpfs no perdurarán en un reinicio. Considera establecer la opción [PKGDEST](#Package_output) apropiada para mover el paquete construido automáticamente a un directorio persistente.
+
+#### Usar caché de compilación
+
+El uso de [ccache](/index.php/Ccache "Ccache") puede mejorar los tiempos de compilación generando caché los resultados de las compilaciones para utilizarlos sucesivamente.
 
 ### Generar nueva suma de verificación
 
-Ejecute el siguiente comando en el mismo directorio que el PKBUILD para generar una nueva suma de verificación:
+Instala [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) y ejecute el siguiente comando en el mismo directorio que el PKBUILD para generar una nueva suma de verificación:
 
 ```
 $ updpkgsums
 
 ```
+
+Las sumas de verificación pueden también obtenerse con, por ejemplo, `sha256sum` y añadirlo al array `sha256sums` a mano.
 
 ### Uso de múltiples núcleos en la compresión
 

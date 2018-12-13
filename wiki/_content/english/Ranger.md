@@ -30,8 +30,6 @@ Features include: [vi](/index.php/Vi "Vi")-style key bindings, bookmarks, select
         *   [4.7.2 Start a shell from ranger](#Start_a_shell_from_ranger)
             *   [4.7.2.1 A simpler solution](#A_simpler_solution)
         *   [4.7.3 Preventing nested ranger instances](#Preventing_nested_ranger_instances)
-    *   [4.8 Custom linemodes](#Custom_linemodes)
-        *   [4.8.1 BIDI linemode](#BIDI_linemode)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Artifacts in image preview](#Artifacts_in_image_preview)
 *   [6 See also](#See_also)
@@ -412,44 +410,6 @@ ranger() {
         exit
     fi
 }
-
-```
-
-### Custom linemodes
-
-#### BIDI linemode
-
- `plugin_bidi.py` 
-```
-# ~/.config/ranger/plugins/plugin_bidi.py
-#
-# Compatible since ranger 1.7.0
-#
-# This plugin adds a new linemode displaying the filename according to
-# UAX #9, Unicode Bidirectional Algorithm.
-# It depends on python-bidi, https://github.com/MeirKriheli/python-bidi.
-# Load this plugin by copying it to ~/.config/ranger/plugins/ and activate
-# the linemode by typing ":linemode bidi" in ranger.  Type Mf to restore
-# the default linemode.
-# Set this as the default linemode by adding "default_linemode bidi"
-# to your rc.conf.
-
-from __future__ import (absolute_import, division, print_function)
-
-from bidi import algorithm
-
-import ranger.api
-from ranger.core.linemode import LinemodeBase
-
-@ranger.api.register_linemode
-class MyLinemode(LinemodeBase):
-    name = "bidi"
-
-    def filetitle(self, fobj, metadata):
-        return algorithm.get_display(fobj.relative_path)
-
-    def infostring(self, fobj, metadata):
-        raise NotImplementedError
 
 ```
 

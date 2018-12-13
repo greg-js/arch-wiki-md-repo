@@ -208,7 +208,7 @@ Make sure to now [restart](/index.php/Restart "Restart") `nginx.service` to have
 
 ## Running uWSGI
 
-**Note:** This assumes the used web application has been properly configured, is being served by your web server, which redirects towards the socket or port it is using and was configured in `/etc/uwsgi/`.
+**Note:** This assumes the used web application has been properly configured, is being served by your web server, which redirects towards the socket or port it is using and was configured in `/etc/uwsgi/`. For simplicity, the configuration file names should contain only alphanumeric characters and `_` to avoid problems with escaping, see [systemd.unit(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5#STRING_ESCAPING_FOR_INCLUSION_IN_UNIT_NAMES).
 
 If you plan on using a web application all the time (without it being activated on demand), you can simply [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `uwsgi@example`.
 

@@ -9,9 +9,9 @@ Some Apple keyboard models may have swapped keys or missing functionality. This 
 *   [1 Numlock is on](#Numlock_is_on)
 *   [2 Repeating keys on a wireless keyboard](#Repeating_keys_on_a_wireless_keyboard)
 *   [3 Function keys do not work](#Function_keys_do_not_work)
-*   [4 Switching Cmd and Alt/AltGr](#Switching_Cmd_and_Alt.2FAltGr)
-*   [5 < and > have changed place with § and ½](#.3C_and_.3E_have_changed_place_with_.C2.A7_and_.C2.BD)
-*   [6 < and > have changed place with ^ and ° (or @ and #, or ` and ~)](#.3C_and_.3E_have_changed_place_with_.5E_and_.C2.B0_.28or_.40_and_.23.2C_or_.60_and_.7E.29)
+*   [4 Switching Cmd and Alt/AltGr](#Switching_Cmd_and_Alt/AltGr)
+*   [5 < and > have changed place with § and ½](#<_and_>_have_changed_place_with_§_and_½)
+*   [6 < and > have changed place with ^ and ° (or @ and #, or ` and ~)](#<_and_>_have_changed_place_with_^_and_°_(or_@_and_#,_or_`_and_~))
 *   [7 PrintScreen and SysRq](#PrintScreen_and_SysRq)
 *   [8 Treating Apple keyboards like regular keyboards](#Treating_Apple_keyboards_like_regular_keyboards)
     *   [8.1 Use a patch to hid-apple](#Use_a_patch_to_hid-apple)
@@ -59,8 +59,6 @@ To make the change permanent, [set](/index.php/Kernel_modules#Setting_module_opt
 
 To apply the change to your initial ramdisk, in your [mkinitcpio configuration](/index.php/Mkinitcpio#Configuration "Mkinitcpio") (usually `/etc/mkinitcpio.conf`), make sure you either have `modconf` included in the `HOOKS` variable or `/etc/modprobe.d/hid_apple.conf` in the `FILES` variable. You would then need to [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
 
-If your keyboard is model A1644, please use this [[1]](https://bugzilla.kernel.org/attachment.cgi?id=258205) patch (from this [[2]](https://bugzilla.kernel.org/show_bug.cgi?id=99881#c41)thread) to fix the function/media keys.
-
 ## Switching Cmd and Alt/AltGr
 
 This will switch the left `Alt` and `Cmd` key as well as the right `Alt`/`AltGr` and `Cmd` key.
@@ -107,7 +105,7 @@ keycode  49 = ugrave Ugrave ugrave Ugrave notsign notsign
 
 With German layout, circumflex/degree symbol and </> are exchanged. With French layout, @/# are exchanged. With the US layout, `/~ and </> are exchanged.
 
-To change the behavior temporarily, [overwrite](/index.php/Help:Reading#Append.2C_add.2C_create.2C_edit "Help:Reading") `/sys/module/hid_apple/parameters/iso_layout` with `0`. To make the change permanent, [set](/index.php/Kernel_modules#Setting_module_options "Kernel modules") the `hid_apple` `iso_layout` option to 0.
+To change the behavior temporarily, [overwrite](/index.php/Help:Reading#Append,_add,_create,_edit "Help:Reading") `/sys/module/hid_apple/parameters/iso_layout` with `0`. To make the change permanent, [set](/index.php/Kernel_modules#Setting_module_options "Kernel modules") the `hid_apple` `iso_layout` option to 0.
 
 ## PrintScreen and SysRq
 

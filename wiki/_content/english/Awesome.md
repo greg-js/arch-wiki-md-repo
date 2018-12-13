@@ -63,7 +63,7 @@ From the [awesome website](https://awesomewm.org/):
 
 ## Installation
 
-[Install](/index.php/Install "Install") [awesome](https://www.archlinux.org/packages/?name=awesome). The development version is [awesome-git](https://aur.archlinux.org/packages/awesome-git/), which is considered unstable and may have a different configuration API.
+[Install](/index.php/Install "Install") the [awesome](https://www.archlinux.org/packages/?name=awesome) package. The development version is [awesome-git](https://aur.archlinux.org/packages/awesome-git/), which is considered unstable and may have a different configuration API.
 
 ## Starting
 

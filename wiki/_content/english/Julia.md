@@ -39,11 +39,13 @@ Building the Arpack package can result in an error like shown below (stacktrace 
 
 Arpack packages its own `libarpack.so` that requires the DSO `libopenblas64_.so.0` to be present on the system:
 
- `$ ldd ~/packages/Arpack/UiiMc/deps/usr/lib/libarpack.so | grep 'not found'`  `        libopenblas64_.so.0 => not found` 
+ `$ ldd ~/.julia/packages/Arpack/UiiMc/deps/usr/lib/libarpack.so | grep 'not found'`  `        libopenblas64_.so.0 => not found` 
 
-The `UiiMc` part of the path may be different on your system. As shown, the required DSO is not present on the system, causing the build error.
+The `UiiMc` part of the path may be different on your system. As shown, the required DSO is not present on the system, causing the build error. A [workaround](https://github.com/JuliaLinearAlgebra/Arpack.jl/issues/5#issuecomment-437869878) to this problem is to create a symbolic link to the DSO file provided by the [openblas](https://www.archlinux.org/packages/?name=openblas) package, i.e.
 
-The DSO `/usr/lib/libopenblas.so` from the package [openblas](https://www.archlinux.org/packages/?name=openblas) probably cannot function stably as drop-in replacement, since [the 64 suffix seems to be used to indicate a difference in interface](https://github.com/xianyi/OpenBLAS/issues/1763) and [the 64 suffix does indicate a different version rather than a difference in target architecture](http://numpy-discussion.10968.n7.nabble.com/Linking-Numpy-with-parallel-OpenBLAS-td41590.html).
+`$ sudo ln -s /usr/lib/libopenblas.so /usr/lib/libopenblas64_.so.0`
+
+and then rebuild the Arpack package in Julia. However, it is in unclear whether the DSO `/usr/lib/libopenblas.so` from the package [openblas](https://www.archlinux.org/packages/?name=openblas) can function as a stable drop-in replacement, since [the 64 suffix seems to be used to indicate a difference in interface](https://github.com/xianyi/OpenBLAS/issues/1763) and [the 64 suffix does indicate a different version rather than a difference in target architecture](http://numpy-discussion.10968.n7.nabble.com/Linking-Numpy-with-parallel-OpenBLAS-td41590.html).
 
 ## Integration with editors
 

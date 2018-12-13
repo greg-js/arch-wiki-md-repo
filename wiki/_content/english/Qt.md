@@ -19,8 +19,8 @@ The Qt framework is emerging as a major development platform and is the basis of
     *   [2.1 Using environment variables](#Using_environment_variables)
     *   [2.2 Using configuration files](#Using_configuration_files)
 *   [3 Appearance](#Appearance)
-    *   [3.1 Qt4](#Qt4)
-    *   [3.2 Qt5](#Qt5)
+    *   [3.1 Qt5](#Qt5)
+    *   [3.2 Qt4](#Qt4)
     *   [3.3 Qt Style Sheets](#Qt_Style_Sheets)
     *   [3.4 GTK+ and Qt](#GTK+_and_Qt)
     *   [3.5 Configuration of Qt5 apps under environments other than KDE Plasma](#Configuration_of_Qt5_apps_under_environments_other_than_KDE_Plasma)
@@ -78,6 +78,38 @@ $ ln -s `/etc/xdg/qtchooser/4.conf` `~/.config/qtchooser/default.conf`
 
 ## Appearance
 
+### Qt5
+
+Qt5 decides the style to use based on what desktop environment is used:
+
+*   In KDE Plasma, it uses the actually selected Qt style. It can be configured using *KDE System Settings* (*systemsettings5*), the settings can be found in *Appearance > Application Style > Widget Style*.
+*   In Cinnamon, GNOME, MATE, LXDE, Xfce, it uses GTK+ ([QGtkStyle](/index.php/Uniform_look_for_Qt_and_GTK_applications#QGtkStyle "Uniform look for Qt and GTK applications")).
+*   In other desktop environments, it uses Fusion.
+
+To force a specific style, you can set the `QT_STYLE_OVERRIDE` [environment variable](/index.php/Environment_variable "Environment variable"). Specifically, set it to `gtk2` if you want to use the [GTK+](/index.php/GTK%2B "GTK+") theme (Note: you will need to install the Qt style plugins mention below to get the GTK+ style). Qt5 applications also support the `-style` flag, which you can use to launch a Qt5 application with a specific style.
+
+The following styles are included in Qt5: *Fusion*, *Windows*. Others can be installed from the official repositories:
+
+*   **Breeze** — Artwork, styles and assets for the Breeze visual style for the Plasma Desktop.
+
+	[https://cgit.kde.org/breeze.git](https://cgit.kde.org/breeze.git) || [breeze](https://www.archlinux.org/packages/?name=breeze)
+
+*   **Oxygen** — KDE Oxygen style.
+
+	[https://cgit.kde.org/oxygen.git](https://cgit.kde.org/oxygen.git) || [oxygen](https://www.archlinux.org/packages/?name=oxygen)
+
+*   **QtCurve** — A configurable set of widget styles for KDE and Gtk.
+
+	[https://cgit.kde.org/qtcurve.git](https://cgit.kde.org/qtcurve.git) || [qtcurve-qt5](https://www.archlinux.org/packages/?name=qtcurve-qt5)
+
+*   **Adwaita-Qt** — A style to bend Qt applications to look like they belong into GNOME Shell.
+
+	[https://github.com/MartinBriza/adwaita-qt](https://github.com/MartinBriza/adwaita-qt) || [adwaita-qt5](https://aur.archlinux.org/packages/adwaita-qt5/)
+
+*   **Qt style plugins** — Additional style plugins for Qt5, including *GTK+*, *Cleanlooks*, *Motif*, *Plastique*.
+
+	[http://code.qt.io/cgit/qt/qtstyleplugins.git](http://code.qt.io/cgit/qt/qtstyleplugins.git) || [qt5-styleplugins](https://www.archlinux.org/packages/?name=qt5-styleplugins)
+
 ### Qt4
 
 Qt4 application will try to mimic the behavior of the desktop environment they are running on, unless they run into some problems or hard-coded settings.
@@ -119,38 +151,6 @@ The following styles are included in Qt4: *CDE*, *Cleanlooks*, *GTK+*, *Motif*, 
 *   **Adwaita-Qt** — A style to bend Qt applications to look like they belong into GNOME Shell.
 
 	[https://github.com/MartinBriza/adwaita-qt](https://github.com/MartinBriza/adwaita-qt) || [adwaita-qt4](https://aur.archlinux.org/packages/adwaita-qt4/)
-
-### Qt5
-
-Qt5 decides the style to use based on what desktop environment is used:
-
-*   In KDE Plasma, it uses the actually selected Qt style. It can be configured using *KDE System Settings* (*systemsettings5*), the settings can be found in *Appearance > Application Style > Widget Style*.
-*   In Cinnamon, GNOME, MATE, LXDE, Xfce, it uses GTK+ ([QGtkStyle](/index.php/Uniform_look_for_Qt_and_GTK_applications#QGtkStyle "Uniform look for Qt and GTK applications")).
-*   In other desktop environments, it uses Fusion.
-
-To force a specific style, you can set the `QT_STYLE_OVERRIDE` [environment variable](/index.php/Environment_variable "Environment variable"). Specifically, set it to `gtk2` if you want to use the [GTK+](/index.php/GTK%2B "GTK+") theme (Note: you will need to install the Qt style plugins mention below to get the GTK+ style). Qt5 applications also support the `-style` flag, which you can use to launch a Qt5 application with a specific style.
-
-The following styles are included in Qt5: *Fusion*, *Windows*. Others can be installed from the official repositories:
-
-*   **Breeze** — Artwork, styles and assets for the Breeze visual style for the Plasma Desktop.
-
-	[https://cgit.kde.org/breeze.git](https://cgit.kde.org/breeze.git) || [breeze](https://www.archlinux.org/packages/?name=breeze)
-
-*   **Oxygen** — KDE Oxygen style.
-
-	[https://cgit.kde.org/oxygen.git](https://cgit.kde.org/oxygen.git) || [oxygen](https://www.archlinux.org/packages/?name=oxygen)
-
-*   **QtCurve** — A configurable set of widget styles for KDE and Gtk.
-
-	[https://cgit.kde.org/qtcurve.git](https://cgit.kde.org/qtcurve.git) || [qtcurve-qt5](https://www.archlinux.org/packages/?name=qtcurve-qt5)
-
-*   **Adwaita-Qt** — A style to bend Qt applications to look like they belong into GNOME Shell.
-
-	[https://github.com/MartinBriza/adwaita-qt](https://github.com/MartinBriza/adwaita-qt) || [adwaita-qt5](https://aur.archlinux.org/packages/adwaita-qt5/)
-
-*   **Qt style plugins** — Additional style plugins for Qt5, including *GTK+*, *Cleanlooks*, *Motif*, *Plastique*.
-
-	[http://code.qt.io/cgit/qt/qtstyleplugins.git](http://code.qt.io/cgit/qt/qtstyleplugins.git) || [qt5-styleplugins](https://www.archlinux.org/packages/?name=qt5-styleplugins)
 
 ### Qt Style Sheets
 

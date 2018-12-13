@@ -260,11 +260,11 @@ See also [Wikipedia:List of information graphics software](https://en.wikipedia.
 
 *   **[LabPlot](https://en.wikipedia.org/wiki/LabPlot "wikipedia:LabPlot")** — Free software data analysis and visualization application, similar to SciDAVis.
 
-	[https://labplot.kde.org/](https://labplot.kde.org/) || [labplot-kf5](https://aur.archlinux.org/packages/labplot-kf5/)
+	[https://labplot.kde.org/](https://labplot.kde.org/) || [labplot](https://www.archlinux.org/packages/?name=labplot)
 
 *   **[QtiPlot](https://en.wikipedia.org/wiki/QtiPlot or [SigmaPlot](https://en.wikipedia.org/wiki/SigmaPlot "wikipedia:SigmaPlot").
 
-	[http://www.qtiplot.com/](http://www.qtiplot.com/) || [qtiplot](https://www.archlinux.org/packages/?name=qtiplot)
+	[http://www.qtiplot.com/](http://www.qtiplot.com/) || [qtiplot-git](https://aur.archlinux.org/packages/qtiplot-git/)
 
 *   **Rocs** — Graph Theory IDE for everybody interested in designing and analyzing graph algorithms (e.g., lecturers, students, researchers). Part of [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
 

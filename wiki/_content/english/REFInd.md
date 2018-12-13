@@ -84,7 +84,7 @@ Alternatively you can install rEFInd to the default/fallback boot path `*esp*/EF
 
 ```
 
-Where `*/dev/sdXY*` is of your EFI System Partition.
+Where `*/dev/sdXY*` is of your EFI system partition.
 
 **Note:** By default `refind-install` installs only the driver for the file system on which kernel resides. Additional file systems need to be installed manually or you can install all drivers with the `--alldrivers` option. This is useful for bootable USB flash drives e.g.:
 ```
@@ -212,7 +212,7 @@ If you want to install rEFInd to the default/fallback boot path replace `*esp*/E
 
 ```
 
-Then use [efibootmgr](/index.php/Efibootmgr "Efibootmgr") to create a boot entry in the UEFI NVRAM, where `*/dev/sdX*` and `*Y*` are the device and partition number of your EFI System Partition. If you are installing rEFInd to the default/fallback boot path `*esp*/EFI/BOOT/bootx64.efi`, you can skip this step.
+Then use [efibootmgr](/index.php/Efibootmgr "Efibootmgr") to create a boot entry in the UEFI NVRAM, where `*/dev/sdX*` and `*Y*` are the device and partition number of your EFI system partition. If you are installing rEFInd to the default/fallback boot path `*esp*/EFI/BOOT/bootx64.efi`, you can skip this step.
 
 ```
 # efibootmgr --create --disk */dev/sdX* --part *Y* --loader /EFI/refind/refind_x64.efi --label "rEFInd Boot Manager" --verbose
@@ -338,6 +338,8 @@ If you do not specify an `initrd=` parameter, rEFInd will automatically add it b
 
 **Warning:** `initrd` path is relative to the root of the file system on which the kernel resides. This could be `initrd=/boot/initramfs-%v.img` or, if ESP is mounted to `/boot`, `initrd=/initramfs-%v.img`.
 
+**Note:** rEFInd replaces `%v` in `refind_linux.conf` with the kernel's version (by extracting if from the file name). For rEFInd to support Arch Linux kernels, the `extra_kernel_version_strings` in `esp/EFI/refind/refind.conf` must be edited as instructed in [#For kernels automatically detected by rEFInd](#For_kernels_automatically_detected_by_rEFInd).
+
 ##### Without configuration
 
 If you merely install rEFInd onto the ESP and launch it without any further ado (say via UEFI shell or KeyTool) you still get a menu to boot from via autodetection, with no configuration required whatsoever.
@@ -374,7 +376,7 @@ menuentry "Arch Linux" {
 }
 ```
 
-It is likely that you will need to change `volume` to match either a filesystem's LABEL, a PARTLABEL, or a PARTUUID of the partition where the kernel image resides. See [Persistent block device naming#by-label](/index.php/Persistent_block_device_naming#by-label "Persistent block device naming") for examples of assigning a volume label. If `volume` is not specified it defaults to volume from which rEFInd was launched (typically EFI System Partition).
+It is likely that you will need to change `volume` to match either a filesystem's LABEL, a PARTLABEL, or a PARTUUID of the partition where the kernel image resides. See [Persistent block device naming#by-label](/index.php/Persistent_block_device_naming#by-label "Persistent block device naming") for examples of assigning a volume label. If `volume` is not specified it defaults to volume from which rEFInd was launched (typically EFI system partition).
 
 **Warning:** `loader` and `initrd` paths are relative to the root of `volume`.
 

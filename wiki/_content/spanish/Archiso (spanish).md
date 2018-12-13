@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Archiso](/index.php/Archiso "Archiso"), revisada por última vez el **2018-10-11**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Archiso&diff=0&oldid=544276) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Archiso](/index.php/Archiso "Archiso"), revisada por última vez el **2018-12-11**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Archiso&diff=0&oldid=558326) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -9,6 +9,8 @@ Artículos relacionados
 *   [Offline installation](/index.php/Offline_installation "Offline installation")
 
 **Archiso** es un pequeño conjunto de scripts de bash capaz de compilar imagenes live en CD/DVD/USB plenamente funcionales basadas en Arch Linux. Es una herramienta muy genérica para generar imágenes oficiales, de manera que puede ser usada potencialmente para generar cualquier cosa, desde sistemas de rescate o discos de instalacion, hasta sistemas live CD/DVD/USB para intereses especiales, y quién sabe qué más. Simplemente, si involucra a Arch en una montaña brillante, puede hacerlo. El corazón y alma de Archiso es *mkarchiso*. Todas sus opciones están documentadas en la ayuda de utilización, de manera que su uso directo no será tratado aquí. En su lugar, este artículo actuará como guía para crear sus propios medios live en poco de tiempo.
+
+Si necesita únicamente un resumen técnico de los requisitos y los pasos de compilación, véase también la [documentación oficial del proyecto](https://git.archlinux.org/archiso.git/tree/docs).
 
 ## Contents
 
@@ -66,7 +68,7 @@ En general, todas las tareas administrativas que normalmente haría después de 
 
 ### Instalar paquetes
 
-[Edite](/index.php/Edit "Edit") las listas de paquetes en `packages.x86_64` para indicar qué paquetes se instalarán en el soporte live.
+Edite las listas de paquetes en `packages.x86_64` para indicar qué paquetes se instalarán en el soporte live.
 
 **Nota:** Si desea utiliza un [gestor de ventanas](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)") en el Live CD, debe agregar los [controladores de vídeo](/index.php/Xorg_(Espa%C3%B1ol)#Instalación_del_controlador "Xorg (Español)"),necesarios y correctos, o el gestor de ventanas puede congelarse al cargar.
 
@@ -280,7 +282,7 @@ Esto aumenta la velocidad del arranque inicial, ya que no tiene que descargar ni
 
 ## Utilizar la ISO
 
-Consulte la sección [Getting and installing Arch#Installation methods](/index.php/Getting_and_installing_Arch#Installation_methods "Getting and installing Arch") para conocer distintas opciones.
+Véase la [Guía de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)") para conocer distintas opciones.
 
 ## Véase también
 

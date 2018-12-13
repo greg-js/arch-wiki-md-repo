@@ -134,7 +134,7 @@ Now reboot and your display manager should start.
 
 #### SDDM
 
-For the [SDDM](/index.php/SDDM "SDDM") display manager (SSDM is the default DM for [KDE](/index.php/KDE "KDE")):
+For the [SDDM](/index.php/SDDM "SDDM") display manager (SDDM is the default DM for [KDE](/index.php/KDE "KDE")):
 
  `/usr/share/sddm/scripts/Xsetup` 
 ```

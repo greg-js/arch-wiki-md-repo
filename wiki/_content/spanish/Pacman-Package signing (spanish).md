@@ -225,7 +225,7 @@ error: *package-name*: signature from "*packager*" is unknown trust
 
 ```
 
-Esto ocurre porque la clave de `*packager*` utilizada en el paquete `*package-name*` no está presente y/o no es de confianza en la base de datos gpg local de pacman-key. Al parecer pacman no siempre puede verificar si la clave fue recibida y marcada como confiable antes de continuar. Mitigue esto [firmando manualmente la clave no confiable localmente](#Adding_unofficial_keys) o [restableciendo todas las claves](#Resetting_all_the_keys).
+Esto ocurre porque la clave de `*packager*` utilizada en el paquete `*package-name*` no está presente y/o no es de confianza en la base de datos gpg local de pacman-key. Al parecer pacman no siempre puede verificar si la clave fue recibida y marcada como confiable antes de continuar. Mitigue esto [firmando manualmente la clave no confiable localmente](#Añadir_claves_no_oficiales) o [restableciendo todas las claves](#Restablecer_todas_las_claves).
 
 ### Actualizar claves a través de proxy
 

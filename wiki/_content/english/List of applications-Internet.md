@@ -20,8 +20,7 @@
             *   [1.2.2.3 WebKit-based](#WebKit-based)
                 *   [1.2.2.3.1 Browsers based on webkit2gtk](#Browsers_based_on_webkit2gtk)
                 *   [1.2.2.3.2 Browsers based on qt5-webkit](#Browsers_based_on_qt5-webkit)
-            *   [1.2.2.4 Vi-like web browsers](#Vi-like_web_browsers)
-            *   [1.2.2.5 Other](#Other)
+            *   [1.2.2.4 Other](#Other)
     *   [1.3 Web servers](#Web_servers)
         *   [1.3.1 Static web servers](#Static_web_servers)
         *   [1.3.2 Specialized web servers](#Specialized_web_servers)
@@ -454,20 +453,6 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 	[http://www.alandmoore.com/wcgbrowser/wcgbrowser.html](http://www.alandmoore.com/wcgbrowser/wcgbrowser.html) || [wcgbrowser-git](https://aur.archlinux.org/packages/wcgbrowser-git/)
 
-##### Vi-like web browsers
-
-*   **[Luakit](/index.php/Luakit "Luakit")** — Fast, small, webkit based browser framework extensible by Lua.
-
-	[https://luakit.github.io/](https://luakit.github.io/) || [luakit](https://aur.archlinux.org/packages/luakit/)
-
-*   **Vimb** — A Vim-like web browser that is inspired by Pentadactyl and Vimprobable.
-
-	[https://fanglingsu.github.io/vimb/](https://fanglingsu.github.io/vimb/) || [vimb](https://aur.archlinux.org/packages/vimb/)
-
-*   **[qutebrowser](/index.php/Qutebrowser "Qutebrowser")** — A keyboard-driven, [vim](/index.php/Vim "Vim")-like browser based on PyQt5 and QtWebEngine.
-
-	[https://qutebrowser.org/](https://qutebrowser.org/) || [qutebrowser](https://www.archlinux.org/packages/?name=qutebrowser)
-
 ##### Other
 
 *   **[Dillo](https://en.wikipedia.org/wiki/Dillo "wikipedia:Dillo")** — Small, fast graphical web browser built on [FLTK](https://en.wikipedia.org/wiki/Fltk "wikipedia:Fltk"). Uses its own layout engine.
@@ -745,6 +730,7 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 **Tip:**
 
 *   Some [synchronization and backup programs](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs") provide direct support for some cloud-storage services.
+*   Some [FUSE filesystems](/index.php/FUSE#List_of_FUSE_filesystems "FUSE") provide a way to mount cloud-storage as a filesystem. Google Drive can be accessed also by [gvfs-google](https://www.archlinux.org/packages/?name=gvfs-google) for GVFS-based applications (like [Nautilus](/index.php/Nautilus "Nautilus")), and by [kio-gdrive](https://www.archlinux.org/packages/?name=kio-gdrive) for KIO-based applications (like [Dolphin](/index.php/Dolphin "Dolphin")).
 *   See [Disk encryption#Cloud-storage optimized](/index.php/Disk_encryption#Cloud-storage_optimized "Disk encryption") to achieve zero-knowledge (client-side transparent encryption) storage on any third-party cloud service.
 
 *   **aws-cli** — CLI for Amazon Web Services, including efficient file transfers to and from Amazon S3.
@@ -762,10 +748,6 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 *   **[Cozy](/index.php/Cozy "Cozy") Drive** — Desktop client for Cozy.
 
 	[https://cozy-labs.github.io/cozy-desktop/](https://cozy-labs.github.io/cozy-desktop/) || [cozy-desktop](https://www.archlinux.org/packages/?name=cozy-desktop)
-
-*   **[Dolphin](/index.php/Dolphin "Dolphin")** — KDE file manager that supports Google Drive access via the KIO Gdrive plugin.
-
-	[https://community.kde.org/KIO_GDrive](https://community.kde.org/KIO_GDrive) || [dolphin](https://www.archlinux.org/packages/?name=dolphin) [kio-gdrive](https://www.archlinux.org/packages/?name=kio-gdrive)
 
 *   **drive** — Tiny program to pull or push Google Drive files.
 
@@ -1169,7 +1151,7 @@ See also [Wikipedia:Comparison of email clients](https://en.wikipedia.org/wiki/C
 
 	[https://www.mailpile.is/](https://www.mailpile.is/) || [mailpile](https://aur.archlinux.org/packages/mailpile/)
 
-*   **Mailspring** — A beautiful, fast and maintained fork of @nylas Mail by one of the original authors.
+*   **Mailspring** — [Proprietary](https://github.com/Foundry376/Mailspring/issues/24) fork of Nylas Mail by one of the original authors.
 
 	[https://getmailspring.com/](https://getmailspring.com/) || [mailspring](https://aur.archlinux.org/packages/mailspring/)
 
@@ -1666,10 +1648,6 @@ See also [Bonjour](/index.php/Avahi#Link-Local_(Bonjour/Zeroconf)_chat "Avahi"),
 *   **[Mattermost](/index.php/Mattermost "Mattermost") Desktop** — Desktop application for Mattermost. Based on the [Electron](https://electronjs.org/) platform.
 
 	[https://github.com/mattermost/desktop](https://github.com/mattermost/desktop) || [mattermost-desktop](https://aur.archlinux.org/packages/mattermost-desktop/)
-
-*   **Messenger for Desktop** — Simple and beautiful app for Facebook Messenger. Based on the [Electron](https://electronjs.org/) platform.
-
-	[https://messengerfordesktop.com/](https://messengerfordesktop.com/) || [messengerfordesktop](https://www.archlinux.org/packages/?name=messengerfordesktop)
 
 *   **[Mumble](/index.php/Mumble "Mumble")** — Voice chat application similar to TeamSpeak.
 

@@ -35,8 +35,7 @@ Related articles
             *   [1.2.2.3 WebKit-based](#WebKit-based)
                 *   [1.2.2.3.1 Browsers based on webkit2gtk](#Browsers_based_on_webkit2gtk)
                 *   [1.2.2.3.2 Browsers based on qt5-webkit](#Browsers_based_on_qt5-webkit)
-            *   [1.2.2.4 Vi-like web browsers](#Vi-like_web_browsers)
-            *   [1.2.2.5 Other](#Other)
+            *   [1.2.2.4 Other](#Other)
     *   [1.3 Web servers](#Web_servers)
         *   [1.3.1 Static web servers](#Static_web_servers)
         *   [1.3.2 Specialized web servers](#Specialized_web_servers)
@@ -279,12 +278,12 @@ Related articles
         *   [4.9.2 Layout analyzers](#Layout_analyzers)
     *   [4.10 Notes](#Notes)
         *   [4.10.1 Note-taking software](#Note-taking_software)
-            *   [4.10.1.1 Stylus note-taking](#Stylus_note-taking)
-            *   [4.10.1.2 Console](#Console_20)
-            *   [4.10.1.3 Graphical](#Graphical_20)
-        *   [4.10.2 Diary](#Diary)
-        *   [4.10.3 Mind-mapping](#Mind-mapping)
-        *   [4.10.4 Sticky notes](#Sticky_notes)
+            *   [4.10.1.1 Console](#Console_20)
+            *   [4.10.1.2 Graphical](#Graphical_20)
+        *   [4.10.2 Stylus note-taking](#Stylus_note-taking)
+        *   [4.10.3 Diary](#Diary)
+        *   [4.10.4 Mind-mapping](#Mind-mapping)
+        *   [4.10.5 Sticky notes](#Sticky_notes)
     *   [4.11 Special writing environments](#Special_writing_environments)
         *   [4.11.1 Distraction-free writing](#Distraction-free_writing)
         *   [4.11.2 Story writing](#Story_writing)
@@ -760,20 +759,6 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 	[http://www.alandmoore.com/wcgbrowser/wcgbrowser.html](http://www.alandmoore.com/wcgbrowser/wcgbrowser.html) || [wcgbrowser-git](https://aur.archlinux.org/packages/wcgbrowser-git/)
 
-##### Vi-like web browsers
-
-*   **[Luakit](/index.php/Luakit "Luakit")** — Fast, small, webkit based browser framework extensible by Lua.
-
-	[https://luakit.github.io/](https://luakit.github.io/) || [luakit](https://aur.archlinux.org/packages/luakit/)
-
-*   **Vimb** — A Vim-like web browser that is inspired by Pentadactyl and Vimprobable.
-
-	[https://fanglingsu.github.io/vimb/](https://fanglingsu.github.io/vimb/) || [vimb](https://aur.archlinux.org/packages/vimb/)
-
-*   **[qutebrowser](/index.php/Qutebrowser "Qutebrowser")** — A keyboard-driven, [vim](/index.php/Vim "Vim")-like browser based on PyQt5 and QtWebEngine.
-
-	[https://qutebrowser.org/](https://qutebrowser.org/) || [qutebrowser](https://www.archlinux.org/packages/?name=qutebrowser)
-
 ##### Other
 
 *   **[Dillo](https://en.wikipedia.org/wiki/Dillo "wikipedia:Dillo")** — Small, fast graphical web browser built on [FLTK](https://en.wikipedia.org/wiki/Fltk "wikipedia:Fltk"). Uses its own layout engine.
@@ -1051,6 +1036,7 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 **Tip:**
 
 *   Some [synchronization and backup programs](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs") provide direct support for some cloud-storage services.
+*   Some [FUSE filesystems](/index.php/FUSE#List_of_FUSE_filesystems "FUSE") provide a way to mount cloud-storage as a filesystem. Google Drive can be accessed also by [gvfs-google](https://www.archlinux.org/packages/?name=gvfs-google) for GVFS-based applications (like [Nautilus](/index.php/Nautilus "Nautilus")), and by [kio-gdrive](https://www.archlinux.org/packages/?name=kio-gdrive) for KIO-based applications (like [Dolphin](/index.php/Dolphin "Dolphin")).
 *   See [Disk encryption#Cloud-storage optimized](/index.php/Disk_encryption#Cloud-storage_optimized "Disk encryption") to achieve zero-knowledge (client-side transparent encryption) storage on any third-party cloud service.
 
 *   **aws-cli** — CLI for Amazon Web Services, including efficient file transfers to and from Amazon S3.
@@ -1068,10 +1054,6 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 *   **[Cozy](/index.php/Cozy "Cozy") Drive** — Desktop client for Cozy.
 
 	[https://cozy-labs.github.io/cozy-desktop/](https://cozy-labs.github.io/cozy-desktop/) || [cozy-desktop](https://www.archlinux.org/packages/?name=cozy-desktop)
-
-*   **[Dolphin](/index.php/Dolphin "Dolphin")** — KDE file manager that supports Google Drive access via the KIO Gdrive plugin.
-
-	[https://community.kde.org/KIO_GDrive](https://community.kde.org/KIO_GDrive) || [dolphin](https://www.archlinux.org/packages/?name=dolphin) [kio-gdrive](https://www.archlinux.org/packages/?name=kio-gdrive)
 
 *   **drive** — Tiny program to pull or push Google Drive files.
 
@@ -1475,7 +1457,7 @@ See also [Wikipedia:Comparison of email clients](https://en.wikipedia.org/wiki/C
 
 	[https://www.mailpile.is/](https://www.mailpile.is/) || [mailpile](https://aur.archlinux.org/packages/mailpile/)
 
-*   **Mailspring** — A beautiful, fast and maintained fork of @nylas Mail by one of the original authors.
+*   **Mailspring** — [Proprietary](https://github.com/Foundry376/Mailspring/issues/24) fork of Nylas Mail by one of the original authors.
 
 	[https://getmailspring.com/](https://getmailspring.com/) || [mailspring](https://aur.archlinux.org/packages/mailspring/)
 
@@ -1972,10 +1954,6 @@ See also [Bonjour](/index.php/Avahi#Link-Local_(Bonjour/Zeroconf)_chat "Avahi"),
 *   **[Mattermost](/index.php/Mattermost "Mattermost") Desktop** — Desktop application for Mattermost. Based on the [Electron](https://electronjs.org/) platform.
 
 	[https://github.com/mattermost/desktop](https://github.com/mattermost/desktop) || [mattermost-desktop](https://aur.archlinux.org/packages/mattermost-desktop/)
-
-*   **Messenger for Desktop** — Simple and beautiful app for Facebook Messenger. Based on the [Electron](https://electronjs.org/) platform.
-
-	[https://messengerfordesktop.com/](https://messengerfordesktop.com/) || [messengerfordesktop](https://www.archlinux.org/packages/?name=messengerfordesktop)
 
 *   **[Mumble](/index.php/Mumble "Mumble")** — Voice chat application similar to TeamSpeak.
 
@@ -4049,7 +4027,7 @@ See also [Wikipedia:Comparison of video editing software](https://en.wikipedia.o
 
 	[http://cinelerra-cv.org/](http://cinelerra-cv.org/) || [cinelerra-cv](https://www.archlinux.org/packages/?name=cinelerra-cv)
 
-*   **[Davinci Resolve](https://en.wikipedia.org/wiki/Da_Vinci_Systems#da_Vinci_Resolve "wikipedia:Da Vinci Systems")** — Professional A/V post-production software suite.
+*   **[DaVinci Resolve](https://en.wikipedia.org/wiki/Da_Vinci_Systems#da_Vinci_Resolve "wikipedia:Da Vinci Systems")** — Proprietary A/V post-production software suite.
 
 	[https://www.blackmagicdesign.com/products/davinciresolve/](https://www.blackmagicdesign.com/products/davinciresolve/) || [davinci-resolve](https://aur.archlinux.org/packages/davinci-resolve/)
 
@@ -6013,10 +5991,6 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[http://brackets.io/](http://brackets.io/) || [brackets](https://aur.archlinux.org/packages/brackets/)
 
-*   **[Codelobster](https://en.wikipedia.org/wiki/Codelobster "w:Codelobster")** — Code editor for HTML, CSS, JavaScript and PHP.
-
-	[http://www.codelobster.com](http://www.codelobster.com) ||
-
 *   **Deepin Editor** — Simple text editor for Deepin desktop.
 
 	[https://github.com/linuxdeepin/deepin-editor](https://github.com/linuxdeepin/deepin-editor) || [deepin-editor](https://www.archlinux.org/packages/?name=deepin-editor)
@@ -6447,7 +6421,7 @@ See also the [official website](https://daringfireball.net/projects/markdown/) a
 
 *   **Discount** — A Markdown implementation written in C.
 
-	[https://www.pell.portland.or.us/~orc/Code/discount/](https://www.pell.portland.or.us/~orc/Code/discount/) || [discount](https://www.archlinux.org/packages/?name=discount), [ruby-rdiscount](https://www.archlinux.org/packages/?name=ruby-rdiscount)
+	[https://www.pell.portland.or.us/~orc/Code/discount/](https://www.pell.portland.or.us/~orc/Code/discount/) || [discount](https://www.archlinux.org/packages/?name=discount), Ruby wrapper library: [ruby-rdiscount](https://www.archlinux.org/packages/?name=ruby-rdiscount)
 
 *   **lowdown** — Markdown translator producing HTML5 and roff documents in the ms and man formats.
 
@@ -6849,25 +6823,7 @@ See also [Wikipedia:Comparison of optical character recognition software](https:
 
 #### Note-taking software
 
-See also [PDF, PS and DjVu#Annotation](/index.php/PDF,_PS_and_DjVu#Annotation "PDF, PS and DjVu") and [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/wiki/Comparison_of_notetaking_software "wikipedia:Comparison of notetaking software").
-
-##### Stylus note-taking
-
-*   **Cournal** — Collaborative note taking and journal application using a stylus. It allows multiple users to annotate PDF files in real-time.
-
-	[https://github.com/flyser/cournal](https://github.com/flyser/cournal) || [cournal](https://aur.archlinux.org/packages/cournal/)
-
-*   **Write** — A proprietary word processor for handwriting.
-
-	[http://www.styluslabs.com/](http://www.styluslabs.com/) || [write_stylus](https://aur.archlinux.org/packages/write_stylus/)
-
-*   **Xournal** — Application for notetaking, sketching and keeping a journal using a stylus. Capable of annotating existing PDF files as well.
-
-	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://www.archlinux.org/packages/?name=xournal)
-
-*   **Xournal++** — Notetaking software designed around a tablet. C++ rewrite of Xournal with PDF annotation support.
-
-	[https://github.com/xournalpp/xournalpp](https://github.com/xournalpp/xournalpp) || [xournalpp-git](https://aur.archlinux.org/packages/xournalpp-git/)
+See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/wiki/Comparison_of_notetaking_software "wikipedia:Comparison of notetaking software").
 
 ##### Console
 
@@ -7032,6 +6988,24 @@ See also [PDF, PS and DjVu#Annotation](/index.php/PDF,_PS_and_DjVu#Annotation "P
 *   **zNotes** — Lightweight application for notes management with simple interface.
 
 	[https://sourceforge.net/projects/znotes/](https://sourceforge.net/projects/znotes/) || [znotes](https://aur.archlinux.org/packages/znotes/)
+
+#### Stylus note-taking
+
+*   **Cournal** — Collaborative note taking and journal application using a stylus. It allows multiple users to annotate PDF files in real-time.
+
+	[https://github.com/flyser/cournal](https://github.com/flyser/cournal) || [cournal](https://aur.archlinux.org/packages/cournal/)
+
+*   **Write** — A proprietary word processor for handwriting.
+
+	[http://www.styluslabs.com/](http://www.styluslabs.com/) || [write_stylus](https://aur.archlinux.org/packages/write_stylus/)
+
+*   **Xournal** — Application for notetaking, sketching and keeping a journal using a stylus. Capable of annotating existing PDF files as well.
+
+	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://www.archlinux.org/packages/?name=xournal)
+
+*   **Xournal++** — Notetaking software designed around a tablet. C++ rewrite of Xournal with PDF annotation support.
+
+	[https://github.com/xournalpp/xournalpp](https://github.com/xournalpp/xournalpp) || [xournalpp-git](https://aur.archlinux.org/packages/xournalpp-git/)
 
 #### Diary
 
@@ -8059,11 +8033,11 @@ See also [Wikipedia:List of information graphics software](https://en.wikipedia.
 
 *   **[LabPlot](https://en.wikipedia.org/wiki/LabPlot "wikipedia:LabPlot")** — Free software data analysis and visualization application, similar to SciDAVis.
 
-	[https://labplot.kde.org/](https://labplot.kde.org/) || [labplot-kf5](https://aur.archlinux.org/packages/labplot-kf5/)
+	[https://labplot.kde.org/](https://labplot.kde.org/) || [labplot](https://www.archlinux.org/packages/?name=labplot)
 
 *   **[QtiPlot](https://en.wikipedia.org/wiki/QtiPlot or [SigmaPlot](https://en.wikipedia.org/wiki/SigmaPlot "wikipedia:SigmaPlot").
 
-	[http://www.qtiplot.com/](http://www.qtiplot.com/) || [qtiplot](https://www.archlinux.org/packages/?name=qtiplot)
+	[http://www.qtiplot.com/](http://www.qtiplot.com/) || [qtiplot-git](https://aur.archlinux.org/packages/qtiplot-git/)
 
 *   **Rocs** — Graph Theory IDE for everybody interested in designing and analyzing graph algorithms (e.g., lecturers, students, researchers). Part of [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
 

@@ -148,7 +148,7 @@ And add the following line to the end of the kernel config:
 
  `config`  `CONFIG_PKCS8_PRIVATE_KEY_PARSER=y` 
 
-Then update the checksums of the PKGBUILD:
+Then update the checksums of the PKGBUILD with `updpkgsums` (from [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib)):
 
 ```
 $ updpkgsums

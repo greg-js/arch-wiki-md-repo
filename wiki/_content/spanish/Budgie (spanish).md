@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Budgie](/index.php/Budgie "Budgie"), revisada por última vez el **2018-11-09**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Budgie&diff=0&oldid=534157) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Budgie](/index.php/Budgie "Budgie"), revisada por última vez el **2018-12-12**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Budgie&diff=0&oldid=558902) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -9,8 +9,6 @@ Artículos relacionados
 *   [GTK+](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)")
 
 [Budgie](https://budgie-desktop.org/home/) es el escritorio predeterminado de Solus Operating System, escrito desde cero. Además de un diseño más moderno, Budgie puede emular la apariencia y la sensación del escritorio GNOME 2.
-
-En este momento, Budgie está fuertemente en desarrollo, por lo que es de esperar que haya pequeños errores y que se vayan agregando nuevas características a medida que pase el tiempo.
 
 ## Contents
 

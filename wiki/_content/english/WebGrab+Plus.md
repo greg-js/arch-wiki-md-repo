@@ -11,6 +11,7 @@
     *   [4.2 Same channels under different names](#Same_channels_under_different_names)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Alternative configuration directory](#Alternative_configuration_directory)
+    *   [5.2 Update channels list](#Update_channels_list)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -119,6 +120,13 @@ To generate EPG guide, run:
 $ wg++ /path/to/*<configuration_directory>*
 
 ```
+
+### Update channels list
+
+[wg++](https://aur.archlinux.org/packages/wg%2B%2B/) already contains channels lists, but they might not be up to date. To update them, you have 2 choices:
+
+*   Download latest upstream channels (sites) lists from [GitHub repository](https://github.com/SilentButeo2/webgrabplus-siteinipack).
+*   Update yourself for specific TV guide providers. See [Site.channels.xml | WebGrab+Plus](http://webgrabplus.com/documentation/configuration/sitechannelsxml)
 
 ## See also
 

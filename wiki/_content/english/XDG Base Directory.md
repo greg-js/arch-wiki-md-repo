@@ -760,6 +760,7 @@ Specify `--init-file <file>` as an alternative to `~/.bashrc` for interactive sh
 | [NSS](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS) | `~/.pki` | [[134]](https://bugzilla.mozilla.org/show_bug.cgi?id=818686) |
 | [OpenSSH](/index.php/OpenSSH "OpenSSH") | `~/.ssh` | [won't fix](https://bugzilla.mindrot.org/show_bug.cgi?id=2050) | Assumed to be present by many ssh daemons and clients such as DropBear and OpenSSH. |
 | [palemoon](https://www.palemoon.org/) | `~/.moonchild productions` | [[135]](https://forum.palemoon.org/viewtopic.php?f=5&t=9639) |
+| [parsec-bin](https://aur.archlinux.org/packages/parsec-bin/) | `~/.parsec` |
 | [perf](https://perf.wiki.kernel.org/index.php/Main_Page) | `~/.debug` | Hardcoded in [tools/perf/util/config.c:29](https://github.com/torvalds/linux/blob/master/tools/perf/util/config.c#L29). |
 | various [shells](/index.php/Shell "Shell") and [display managers](/index.php/Display_manager "Display manager") | `~/.profile` |
 | [python](/index.php/Python "Python") | `~/.python_history` | All history from interactive sessions is saved to `~/.python_history` by default since [version 3.4](https://bugs.python.org/issue5845), custom path can still be set the same way as in older versions (see [this example](https://docs.python.org/3/library/readline.html?highlight=readline#example)). |

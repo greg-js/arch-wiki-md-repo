@@ -381,6 +381,8 @@ You may also add the following lines to your hosts file to block ads in SpotifyÂ
 127.0.0.1 bounceexchange.com
 #127.0.0.1 spclient.wg.spotify.com
 127.0.0.1 securepubads.g.doubleclick.net
+127.0.0.1 8.126.154.104.bc.googleusercontent.com
+127.0.0.1 104.154.126.8
 
 ```
 

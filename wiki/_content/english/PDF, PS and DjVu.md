@@ -1,11 +1,11 @@
-This article covers software to view, edit and convert [PDF](https://en.wikipedia.org/wiki/PDF "wikipedia:PDF"), [PostScript](https://en.wikipedia.org/wiki/PostScript "wikipedia:PostScript") (PS) and [DjVu](https://en.wikipedia.org/wiki/DjVu "wikipedia:DjVu") (*déjà vu*) files.
+This article covers software to view, edit and convert [PDF](https://en.wikipedia.org/wiki/PDF "wikipedia:PDF"), [PostScript](https://en.wikipedia.org/wiki/PostScript "wikipedia:PostScript") (PS), [DjVu](https://en.wikipedia.org/wiki/DjVu "wikipedia:DjVu") (*déjà vu*) and [XPS](https://en.wikipedia.org/wiki/Open_XML_Paper_Specification "wikipedia:Open XML Paper Specification") files.
 
 ## Contents
 
 *   [1 Engines](#Engines)
 *   [2 Viewers](#Viewers)
-    *   [2.1 PDF forms](#PDF_forms)
-    *   [2.2 Discontinued](#Discontinued)
+    *   [2.1 Comparison](#Comparison)
+    *   [2.2 PDF forms](#PDF_forms)
     *   [2.3 Framebuffer](#Framebuffer)
 *   [3 Annotation](#Annotation)
 *   [4 Graphical PDF editing](#Graphical_PDF_editing)
@@ -14,47 +14,131 @@ This article covers software to view, edit and convert [PDF](https://en.wikipedi
 *   [5 Command-line tools](#Command-line_tools)
     *   [5.1 DjVu tools](#DjVu_tools)
     *   [5.2 Create a PDF from images](#Create_a_PDF_from_images)
-    *   [5.3 Inspecting metadata](#Inspecting_metadata)
-    *   [5.4 Optimize a PDF](#Optimize_a_PDF)
-    *   [5.5 Encrypt a PDF](#Encrypt_a_PDF)
-    *   [5.6 Decrypt a PDF](#Decrypt_a_PDF)
-    *   [5.7 Concatenate PDFs](#Concatenate_PDFs)
-    *   [5.8 Extract page range from PDF](#Extract_page_range_from_PDF)
-    *   [5.9 Rasterize a PDF](#Rasterize_a_PDF)
+    *   [5.3 Extract images from a PDF](#Extract_images_from_a_PDF)
+    *   [5.4 Inspecting metadata](#Inspecting_metadata)
+    *   [5.5 Optimize a PDF](#Optimize_a_PDF)
+    *   [5.6 Encrypt a PDF](#Encrypt_a_PDF)
+    *   [5.7 Decrypt a PDF](#Decrypt_a_PDF)
+    *   [5.8 Concatenate PDFs](#Concatenate_PDFs)
+    *   [5.9 Extract page range from PDF](#Extract_page_range_from_PDF)
+    *   [5.10 Rasterize a PDF](#Rasterize_a_PDF)
 *   [6 Libraries](#Libraries)
     *   [6.1 Python](#Python)
 *   [7 See also](#See_also)
 
 ## Engines
 
-[Poppler](https://en.wikipedia.org/wiki/Poppler_(software) ([poppler](https://www.archlinux.org/packages/?name=poppler)) is a PDF rendering library based on Xpdf. For CJK (Chinese, Japanese, Korean) support with Poppler, [install](/index.php/Install "Install") [poppler-data](https://www.archlinux.org/packages/?name=poppler-data).
+*   **[Poppler](https://en.wikipedia.org/wiki/Poppler_(software) "wikipedia:Poppler (software)")** — PDF rendering library based on Xpdf. For CJK (Chinese, Japanese, Korean) support with Poppler, [install](/index.php/Install "Install") [poppler-data](https://www.archlinux.org/packages/?name=poppler-data).
 
-[libspectre](https://www.freedesktop.org/wiki/Software/libspectre) ([libspectre](https://www.archlinux.org/packages/?name=libspectre)) is a small library for rendering Postscript documents.
+	[https://poppler.freedesktop.org/](https://poppler.freedesktop.org/) || [poppler](https://www.archlinux.org/packages/?name=poppler)
 
-[Ghostscript](https://en.wikipedia.org/wiki/Ghostscript "wikipedia:Ghostscript") ([ghostscript](https://www.archlinux.org/packages/?name=ghostscript)) is an interpreter for PostScript and PDF.
+*   **libspectre** — Small library for rendering Postscript documents.
 
-[DjVuLibre](http://djvu.sourceforge.net/) ([djvulibre](https://www.archlinux.org/packages/?name=djvulibre)) is a suite to create, manipulate and view DjVu documents.
+	[https://www.freedesktop.org/wiki/Software/libspectre](https://www.freedesktop.org/wiki/Software/libspectre) || [libspectre](https://www.archlinux.org/packages/?name=libspectre)
+
+*   **[Ghostscript](https://en.wikipedia.org/wiki/Ghostscript "wikipedia:Ghostscript")** — Interpreter for PostScript and PDF.
+
+	[https://ghostscript.com/](https://ghostscript.com/) || [ghostscript](https://www.archlinux.org/packages/?name=ghostscript)
+
+*   **DjVuLibre** — Suite to create, manipulate and view DjVu documents.
+
+	[http://djvu.sourceforge.net/](http://djvu.sourceforge.net/) || [djvulibre](https://www.archlinux.org/packages/?name=djvulibre)
+
+*   **libgxps** — GObject based library for handling and rendering XPS documents.
+
+	[https://wiki.gnome.org/Projects/libgxps](https://wiki.gnome.org/Projects/libgxps) || [libgxps](https://www.archlinux.org/packages/?name=libgxps)
 
 ## Viewers
 
 **Note:** Some [web browsers](/index.php/Web_browser "Web browser") can display PDF files, for example with [PDF.js](/index.php/Browser_plugins#PDF.js "Browser plugins").
 
-| Name | Package | PDF | PostScript | DjVu | PDF forms | License | Note |
-| [apvlv](https://naihe2010.github.io/apvlv/) | [apvlv](https://aur.archlinux.org/packages/apvlv/) | Poppler | ✘ | DjVuLibre | ✘ | GPLv2 | Has [Vim](/index.php/Vim "Vim") keybindings, supports UMD and TXT files. |
-| [Atril](https://github.com/mate-desktop/atril) | [atril](https://www.archlinux.org/packages/?name=atril) | Poppler | libspectre | DjVuLibre | ✔ | GPLv2 | Fork of Evince, part of [MATE](/index.php/MATE "MATE"), supports DVI, EPS, EPUB, TIFF, XPS and Comicbook. |
-| [DjView](http://djvu.sourceforge.net/djview4.html) | [djview](https://www.archlinux.org/packages/?name=djview) | ✘ | ✘ | DjVuLibre | ✔ | GPLv2 | By the developers of DjVuLibre. |
-| [Emacs](/index.php/Emacs "Emacs") | [emacs](https://www.archlinux.org/packages/?name=emacs) | Ghostscript* | DjVuLibre* | ✘ | GPLv3 | See also [pdf-tools](https://github.com/politza/pdf-tools) for improved pdf support and the [djvu package](https://elpa.gnu.org/packages/djvu.html) for djvu support. |
-| [Evince](https://en.wikipedia.org/wiki/Evince "wikipedia:Evince") | [evince](https://www.archlinux.org/packages/?name=evince) | Poppler | libspectre | DjVuLibre | ✔ | GPLv2 | Part of [GNOME](/index.php/GNOME "GNOME"), supports DVI, EPS, TIFF, XPS and Comicbook. |
-| [Foxit Reader](https://en.wikipedia.org/wiki/Foxit_Reader "wikipedia:Foxit Reader") | [foxitreader](https://aur.archlinux.org/packages/foxitreader/) | custom | ✘ | ✘ | ✔ | proprietary | Small and fast (compared to Acrobat) proprietary PDF viewer. |
-| [gv](https://www.gnu.org/software/gv/) | [gv](https://www.archlinux.org/packages/?name=gv) | Ghostscript | ✘ | ✘ | GPLv3 | Graphical user interface for the Ghostscript interpreter. |
-| [llpp](/index.php/Llpp "Llpp") | [llpp](https://www.archlinux.org/packages/?name=llpp) | libmupdf | ✘ | ✘ | ✔ | GPLv3 | Based on MuPDF, supports continuous page scrolling and bookmarking. |
-| [MuPDF](/index.php/MuPDF "MuPDF") | [mupdf](https://www.archlinux.org/packages/?name=mupdf) | custom | ✘ | ✘ | ✔ | AGPLv3 | Supports EPUB, FictionBook, XPS, Comicbook and CJK. |
-| [Okular](https://en.wikipedia.org/wiki/Okular "wikipedia:Okular") | [okular](https://www.archlinux.org/packages/?name=okular) | Poppler | libspectre | DjVuLibre | ✔ | GPL, LGPL | Part of [KDE](/index.php/KDE "KDE"), supports CHM, Comicbook, DVI, EPUB, FictionBook, Mobipocket, ODT, Plucker, TIFF and XPS. |
-| [pdfpc](https://pdfpc.github.io/) | [pdfpc](https://www.archlinux.org/packages/?name=pdfpc) | Poppler | ✘ | ✘ | ✘ | GPLv2 | Presenter console with multi-monitor support for PDF files. |
-| [qpdfview](https://launchpad.net/qpdfview) | [qpdfview](https://www.archlinux.org/packages/?name=qpdfview) | Poppler | libspectre* | DjVuLibre* | ✔ | GPLv2 | Tabbed Qt interface, supports CUPS printing. |
-| [Xpdf](https://en.wikipedia.org/wiki/Xpdf "wikipedia:Xpdf") | [xpdf](https://www.archlinux.org/packages/?name=xpdf) | custom | ✘ | ✘ | ✘ | GPLv3 | Can decode LZW and read encrypted PDFs. |
-| [Xreader](https://github.com/linuxmint/xreader/) | [xreader](https://www.archlinux.org/packages/?name=xreader) | Poppler | libspectre* | DjVuLibre* | ✔ | GPLv2 | Fork of Evince, developed by Linux Mint, supports DVI, EPUB, TIFF, XPS and Comicbook. |
-| [Zathura](/index.php/Zathura "Zathura") | [zathura](https://www.archlinux.org/packages/?name=zathura) | Poppler* / libmupdf* | libspectre* | DjVuLibre* | ✔ | zlib | Customizable with plugins, functional, supports Comicbook. |
+*   **[Adobe Reader](https://en.wikipedia.org/wiki/Adobe_Reader "wikipedia:Adobe Reader")** — Proprietary PDF file viewer offered by Adobe. Discontinued for Linux.
+
+	[http://www.adobe.com/products/reader.html](http://www.adobe.com/products/reader.html) || [acroread](https://aur.archlinux.org/packages/acroread/)
+
+*   **apvlv** — Lightweight document viewer with [Vim](/index.php/Vim "Vim") keybindings. Supports PDF, DjVu, UMD and TXT.
+
+	[https://naihe2010.github.io/apvlv/](https://naihe2010.github.io/apvlv/) || [apvlv](https://aur.archlinux.org/packages/apvlv/)
+
+*   **Atril** — Simple multi-page document viewer for MATE. Supports DjVu, DVI, EPS, EPUB, PDF, PostScript, TIFF, XPS and Comicbook.
+
+	[https://github.com/mate-desktop/atril](https://github.com/mate-desktop/atril) || [atril](https://www.archlinux.org/packages/?name=atril)
+
+*   **DjView** — Viewer for DjVu documents.
+
+	[http://djvu.sourceforge.net/djview4.html](http://djvu.sourceforge.net/djview4.html) || [djview](https://www.archlinux.org/packages/?name=djview)
+
+*   **ePDFView** — Lightweight PDF document viewer using the Poppler and GTK+ libraries. Development stopped.
+
+	[http://freecode.com/projects/epdfview](http://freecode.com/projects/epdfview) || [epdfview](https://www.archlinux.org/packages/?name=epdfview)
+
+*   **[Emacs](/index.php/Emacs "Emacs")** — See also [pdf-tools](https://github.com/politza/pdf-tools) for improved pdf support and the [djvu package](https://elpa.gnu.org/packages/djvu.html) for djvu support.
+
+	[https://www.gnu.org/software/emacs/](https://www.gnu.org/software/emacs/) || [emacs](https://www.archlinux.org/packages/?name=emacs)
+
+*   **[Evince](https://en.wikipedia.org/wiki/Evince "wikipedia:Evince")** — Document viewer for GNOME. Supports DjVu, DVI, EPS, PDF, PostScript, TIFF, XPS and Comicbook.
+
+	[https://wiki.gnome.org/Apps/Evince](https://wiki.gnome.org/Apps/Evince) || [evince](https://www.archlinux.org/packages/?name=evince)
+
+*   **[Foxit Reader](https://en.wikipedia.org/wiki/Foxit_Reader "wikipedia:Foxit Reader")** — Small, fast (compared to Acrobat) proprietary PDF viewer.
+
+	[https://www.foxitsoftware.com/pdf-reader/](https://www.foxitsoftware.com/pdf-reader/) || [foxitreader](https://aur.archlinux.org/packages/foxitreader/)
+
+*   **gv** — Graphical user interface for the Ghostscript interpreter that allows to view and navigate through PostScript and PDF documents.
+
+	[https://www.gnu.org/software/gv/](https://www.gnu.org/software/gv/) || [gv](https://www.archlinux.org/packages/?name=gv)
+
+*   **[llpp](/index.php/Llpp "Llpp")** — Very fast PDF reader based off of MuPDF, that supports continuous page scrolling, bookmarking, and text search through the whole document.
+
+	[http://repo.or.cz/w/llpp.git](http://repo.or.cz/w/llpp.git) || [llpp](https://www.archlinux.org/packages/?name=llpp)
+
+*   **[MuPDF](/index.php/MuPDF "MuPDF")** — Very fast EPUB, FictionBook, PDF, XPS and Comicbook viewer written in portable C. Features CJK font support.
+
+	[https://mupdf.com/](https://mupdf.com/) || [mupdf](https://www.archlinux.org/packages/?name=mupdf)
+
+*   **[Okular](https://en.wikipedia.org/wiki/Okular "wikipedia:Okular")** — Universal document viewer for KDE. Supports CHM, Comicbook, DjVu, DVI, EPUB, FictionBook, Mobipocket, ODT, PDF, Plucker, PostScript, TIFF and XPS.
+
+	[https://okular.kde.org/](https://okular.kde.org/) || [okular](https://www.archlinux.org/packages/?name=okular)
+
+*   **pdfpc** — Presenter console with multi-monitor support for PDF files.
+
+	[https://pdfpc.github.io/](https://pdfpc.github.io/) || [pdfpc](https://www.archlinux.org/packages/?name=pdfpc)
+
+*   **qpdfview** — Tabbed document viewer. It uses Poppler for PDF support, libspectre for PS support, DjVuLibre for DjVu support, CUPS for printing support and the Qt toolkit for its interface.
+
+	[https://launchpad.net/qpdfview](https://launchpad.net/qpdfview) || [qpdfview](https://www.archlinux.org/packages/?name=qpdfview)
+
+*   **[Xpdf](https://en.wikipedia.org/wiki/Xpdf "wikipedia:Xpdf")** — Viewer that can decode LZW and read encrypted PDFs.
+
+	[http://www.xpdfreader.com/](http://www.xpdfreader.com/) || [xpdf](https://www.archlinux.org/packages/?name=xpdf)
+
+*   **Xreader** — Document viewer part of the X-Apps Project. Supports DjVu, DVI, EPUB, PDF, PostScript, TIFF, XPS, Comicbook.
+
+	[https://github.com/linuxmint/xreader/](https://github.com/linuxmint/xreader/) || [xreader](https://www.archlinux.org/packages/?name=xreader)
+
+*   **[Zathura](/index.php/Zathura "Zathura")** — Highly customizable and functional document viewer (plugin based). Supports PDF, DjVu, PostScript and Comicbook.
+
+	[https://pwmt.org/projects/zathura/](https://pwmt.org/projects/zathura/) || [zathura](https://www.archlinux.org/packages/?name=zathura)
+
+### Comparison
+
+| Name | PDF | PostScript | DjVu | XPS | PDF forms | License |
+| apvlv | Poppler | ✘ | DjVuLibre | ✘ | ✘ | GPLv2 |
+| Atril | Poppler | libspectre | DjVuLibre | libgxps | ✔ | GPLv2 |
+| DjView | ✘ | ✘ | DjVuLibre | ✘ | ✘ | GPLv2 |
+| [Emacs](/index.php/Emacs "Emacs") | Ghostscript* | DjVuLibre* | ✘ | ✘ | GPLv3 |
+| ePDFView | Poppler | ✘ | ✘ | ✘ | ✘ | GPLv2 |
+| [Evince](https://en.wikipedia.org/wiki/Evince "wikipedia:Evince") | Poppler | libspectre | DjVuLibre | libgxps | ✔ | GPLv2 |
+| [Foxit Reader](https://en.wikipedia.org/wiki/Foxit_Reader "wikipedia:Foxit Reader") | custom | ✘ | ✘ | ✘ | ✔ | proprietary |
+| gv | Ghostscript | ✘ | ✘ | ✘ | GPLv3 |
+| [llpp](/index.php/Llpp "Llpp") | libmupdf | ✘ | ✘ | libmupdf | ✔ | GPLv3 |
+| [MuPDF](/index.php/MuPDF "MuPDF") | custom | ✘ | ✘ | custom | ✔ | AGPLv3 |
+| [Okular](https://en.wikipedia.org/wiki/Okular "wikipedia:Okular") | Poppler | libspectre | DjVuLibre | custom | ✔ | GPL, LGPL |
+| pdfpc | Poppler | ✘ | ✘ | ✘ | ✘ | GPLv2 |
+| qpdfview | Poppler | libspectre* | DjVuLibre* | ✘ | ✔ | GPLv2 |
+| [Xpdf](https://en.wikipedia.org/wiki/Xpdf "wikipedia:Xpdf") | custom | ✘ | ✘ | ✘ | ✘ | GPLv3 |
+| Xreader | Poppler | libspectre* | DjVuLibre* | libgxps* | ✔ | GPLv2 |
+| [Zathura](/index.php/Zathura "Zathura") | Poppler* / libmupdf* | libspectre* | DjVuLibre* | libmupdf* | ✔ | zlib |
 
 	(* means optional)
 
@@ -63,16 +147,6 @@ This article covers software to view, edit and convert [PDF](https://en.wikipedi
 The *PDF forms* column in the above table refers to [AcroForms](https://en.wikipedia.org/wiki/PDF#AcroForms "wikipedia:PDF") support. If you do not need your input to be directly extractable from the PDF, you can also use the applications in [#Annotation](#Annotation) or [#Graphical PDF editing](#Graphical_PDF_editing) to put text on top of a PDF. PDF forms can be created with [LibreOffice Writer](/index.php/LibreOffice "LibreOffice") (*View > Toolbars > Form Controls*) and the [advanced PDF editors](#Advanced_editors).
 
 The proprietary and deprecated [XFA](https://en.wikipedia.org/wiki/PDF#Adobe_XML_Forms_Architecture_.28XFA.29 "wikipedia:PDF") format for forms, is not fully support by Poppler[[1]](https://gitlab.freedesktop.org/poppler/poppler/issues/199)[[2]](https://gitlab.freedesktop.org/poppler/poppler/issues/530) and only supported by [Adobe Reader](#Discontinued) and [Master PDF Editor](#Advanced_editors).
-
-### Discontinued
-
-*   **[Adobe Reader](https://en.wikipedia.org/wiki/Adobe_Reader "wikipedia:Adobe Reader")** — Discontinued proprietary PDF file viewer by Adobe, supports both AcroForms and XFA forms.
-
-	[https://www.adobe.com/products/reader.html](https://www.adobe.com/products/reader.html) || [acroread](https://aur.archlinux.org/packages/acroread/)
-
-*   **ePDFView** — Lightweight PDF document viewer using the Poppler and GTK+ libraries. Development stopped.
-
-	[http://freecode.com/projects/epdfview](http://freecode.com/projects/epdfview) || [epdfview](https://www.archlinux.org/packages/?name=epdfview)
 
 ### Framebuffer
 
@@ -180,6 +254,15 @@ With [GraphicsMagick](/index.php/GraphicsMagick "GraphicsMagick"):
 
 ```
 $ gm convert one.jpg two.jpg three.jpg out.pdf
+
+```
+
+### Extract images from a PDF
+
+With Poppler to JPEG:
+
+```
+$ pdfimages *infile*.pdf -j *outfileroot*
 
 ```
 

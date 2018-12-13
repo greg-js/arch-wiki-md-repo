@@ -15,6 +15,8 @@ Unclutter hides your X mouse cursor when you do not need it, to prevent it from 
 
 [Install](/index.php/Install "Install") the [unclutter](https://www.archlinux.org/packages/?name=unclutter) package.
 
+**Note:** Arch actually ships unclutter-xfixes instead of the original in this package.
+
 ## Usage
 
 Use your *.xinitrc* file or WM/DE to start unclutter. For example, add the following to your *.xinitrc*:
@@ -46,6 +48,8 @@ There are two known workarounds for this. You can either add `SDL_VIDEO_X11_DGAM
 ### unclutter-xfixes
 
 Unclutter is a tool from the early 90s and has not been updated since. It works by creating fake windows or active pointer grabs, both of which often cause problems. By now, the X11 extensions Xinput2 and Xfixes have been released and are commonly found on most user systems. Using those, [unclutter-xfixes-git](https://aur.archlinux.org/packages/unclutter-xfixes-git/) can provide the cursor hiding functionality without interfering with any application.
+
+As of December 2018, community/unclutter will actually ship this rewrite instead of the original[[2]](https://github.com/Airblader/unclutter-xfixes/issues/33#issuecomment-446209712)[[3]](https://git.archlinux.org/svntogit/community.git/commit/trunk?h=packages/unclutter&id=e652764bc5e55caefd3cd0df886554d3c76253ee).
 
 ### xbanish
 

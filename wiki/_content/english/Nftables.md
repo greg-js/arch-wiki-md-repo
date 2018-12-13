@@ -49,7 +49,7 @@ You can also visit the [official nftables wiki page](https://wiki.nftables.org/w
 
 [Install](/index.php/Install "Install") the userspace utilities package [nftables](https://www.archlinux.org/packages/?name=nftables) or the git version [nftables-git](https://aur.archlinux.org/packages/nftables-git/).
 
-Some [iptables#Front-ends](/index.php/Iptables#Front-ends "Iptables") support nftables.
+**Tip:** Most [iptables front-ends](/index.php/Iptables#Front-ends "Iptables") feature no direct or indirect support of nftables, but may introduce it.[[1]](https://www.spinics.net/lists/netfilter/msg58215.html) One graphical front-end that supports both, nftables and iptables, is [firewalld](https://www.archlinux.org/packages/?name=firewalld).[[2]](https://firewalld.org/2018/07/nftables-backend)
 
 ## Usage
 
@@ -204,7 +204,7 @@ To add a base chain specify hook and priority values:
 
 For IPv4/IPv6/Inet address families `*hook*` can be `prerouting`, `input`, `forward`, `output`, or `postrouting`. See [nft(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nft.8) for a list of hooks for other families.
 
-`*priority*` takes an integer value. Chains with lower numbers are processed first and can be negative. [[1]](https://wiki.nftables.org/wiki-nftables/index.php/Configuring_chains#Base_chain_types)
+`*priority*` takes an integer value. Chains with lower numbers are processed first and can be negative. [[3]](https://wiki.nftables.org/wiki-nftables/index.php/Configuring_chains#Base_chain_types)
 
 For example, to add a base chain that filters input packets:
 

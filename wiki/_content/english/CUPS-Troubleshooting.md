@@ -17,6 +17,7 @@ This article covers all non-specific (ie, not related to any one printer) troubl
     *   [3.1 Unable to locate printer](#Unable_to_locate_printer)
     *   [3.2 Old CUPS server](#Old_CUPS_server)
     *   [3.3 Shared printer works locally but remote machine fails to print](#Shared_printer_works_locally_but_remote_machine_fails_to_print)
+    *   [3.4 Unable to locate PPD file](#Unable_to_locate_PPD_file)
 *   [4 USB printers](#USB_printers)
     *   [4.1 Conflict with SANE](#Conflict_with_SANE)
     *   [4.2 Conflict with usblp](#Conflict_with_usblp)
@@ -150,6 +151,16 @@ As of CUPS version 1.6, the client defaults to IPP 2.0\. If the server uses CUPS
 ### Shared printer works locally but remote machine fails to print
 
 This is caused by a print job being sent through a filter twice, once on the local machine and once on the remote. See also the warning on the main [CUPS](/index.php/CUPS#Network_2 "CUPS") page.
+
+### Unable to locate PPD file
+
+ `/var/log/cups/error_log` 
+```
+Cannot connect to remote printer ipp://HP079676.local
+copy_model: empty PPD file
+```
+
+Make sure [Avahi](/index.php/Avahi "Avahi") is set up correctly. In particular, make sure [nss-mdns](https://www.archlinux.org/packages/?name=nss-mdns) is installed and set up in `/etc/nsswitch.conf`.
 
 ## USB printers
 

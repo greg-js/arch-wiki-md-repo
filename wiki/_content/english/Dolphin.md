@@ -15,7 +15,7 @@ Related articles
     *   [2.1 Open Terminal](#Open_Terminal)
     *   [2.2 KIO Slaves](#KIO_Slaves)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Device names shown as "X GiB Harddrive"](#Device_names_shown_as_.22X_GiB_Harddrive.22)
+    *   [3.1 Device names shown as "X GiB Harddrive"](#Device_names_shown_as_"X_GiB_Harddrive")
     *   [3.2 Transparent fonts](#Transparent_fonts)
     *   [3.3 Crashes on mounted SMB share](#Crashes_on_mounted_SMB_share)
     *   [3.4 Icons not showing](#Icons_not_showing)
@@ -91,6 +91,8 @@ BackgroundNormal=23,24,24
 ...
 
 ```
+
+Alternatively, use [kvantum-qt5](https://www.archlinux.org/packages/?name=kvantum-qt5) to manage your Qt5 theming. For instructions on usage see the [Kvantum](https://github.com/tsujan/Kvantum/blob/master/Kvantum/README.md) project homepage.
 
 ## See also
 

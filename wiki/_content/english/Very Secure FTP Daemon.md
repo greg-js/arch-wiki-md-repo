@@ -20,12 +20,13 @@
         *   [3.1.1 Adding private folders for the virtual users](#Adding_private_folders_for_the_virtual_users)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 vsftpd: Error 500 with kernel 4.18+](#vsftpd:_Error_500_with_kernel_4.18+)
-    *   [4.2 vsftpd: refusing to run with writable root inside chroot()](#vsftpd:_refusing_to_run_with_writable_root_inside_chroot())
-    *   [4.3 FileZilla Client: GnuTLS error -8 -15 -110 when connecting via SSL](#FileZilla_Client:_GnuTLS_error_-8_-15_-110_when_connecting_via_SSL)
-    *   [4.4 vsftpd.service fails to run on boot](#vsftpd.service_fails_to_run_on_boot)
-    *   [4.5 Passive mode replies with the local IP address to a remote connection](#Passive_mode_replies_with_the_local_IP_address_to_a_remote_connection)
-    *   [4.6 ipv6 only fails with: 500 OOPS: run two copies of vsftpd for IPv4 and IPv6](#ipv6_only_fails_with:_500_OOPS:_run_two_copies_of_vsftpd_for_IPv4_and_IPv6)
-    *   [4.7 vsftpd connections fail on a machine using nis with: yp_bind_client_create_v2: RPC: Unable to send](#vsftpd_connections_fail_on_a_machine_using_nis_with:_yp_bind_client_create_v2:_RPC:_Unable_to_send)
+    *   [4.2 vsftpd: Error 421 Service not available, remote server has closed connection](#vsftpd:_Error_421_Service_not_available,_remote_server_has_closed_connection)
+    *   [4.3 vsftpd: refusing to run with writable root inside chroot()](#vsftpd:_refusing_to_run_with_writable_root_inside_chroot())
+    *   [4.4 FileZilla Client: GnuTLS error -8 -15 -110 when connecting via SSL](#FileZilla_Client:_GnuTLS_error_-8_-15_-110_when_connecting_via_SSL)
+    *   [4.5 vsftpd.service fails to run on boot](#vsftpd.service_fails_to_run_on_boot)
+    *   [4.6 Passive mode replies with the local IP address to a remote connection](#Passive_mode_replies_with_the_local_IP_address_to_a_remote_connection)
+    *   [4.7 ipv6 only fails with: 500 OOPS: run two copies of vsftpd for IPv4 and IPv6](#ipv6_only_fails_with:_500_OOPS:_run_two_copies_of_vsftpd_for_IPv4_and_IPv6)
+    *   [4.8 vsftpd connections fail on a machine using nis with: yp_bind_client_create_v2: RPC: Unable to send](#vsftpd_connections_fail_on_a_machine_using_nis_with:_yp_bind_client_create_v2:_RPC:_Unable_to_send)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -171,7 +172,6 @@ service ftp
         log_on_failure  += HOST
         disable                 = no
 }
-
 ```
 
 If you have set the vsftpd daemon to run in standalone mode make the following change in `/etc/vsftpd.conf`:
@@ -273,7 +273,7 @@ Often the server running the FTP daemon is protected by an [iptables](/index.php
 
 ```
 
-This article won't provide any instruction on how to set up iptables but here is an example: [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall").
+This article will not provide any instruction on how to set up iptables but here is an example: [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall").
 
 There are some kernel modules needed for proper FTP connection handling by iptables that should be referenced here. Among those especially *nf_conntrack_ftp*. It is needed as FTP uses the given *listen_port* (21 by default) for commands only; all the data transfer is done over different ports. These ports are chosen by the FTP daemon at random and for each session (also depending on whether active or passive mode is used). To tell iptables that packets on ports should be accepted, *nf_conntrack_ftp* is required. To load it automatically on boot create a new file in `/etc/modules-load.d` e.g.:
 
@@ -338,6 +338,7 @@ Next you need to create a PAM service using `pam_pwdfile.so` and the generated `
 ```
 auth required pam_pwdfile.so pwdfile /etc/vsftpd/.passwd
 account required pam_permit.so
+
 ```
 
 Now it is time to create a home for the virtual users. In the example `/srv/ftp` is decided to host data for virtual users, which also reflects the default directory structure of Arch. First create the general user virtual and make `/srv/ftp` its home:
@@ -419,6 +420,15 @@ seccomp_sandbox=NO
 
 ```
 
+### vsftpd: Error 421 Service not available, remote server has closed connection
+
+Disabling [seccomp](https://en.wikipedia.org/wiki/seccomp "wikipedia:seccomp") might help prevent issues with listing directory contents, as reported in [FS#50309](https://bugs.archlinux.org/task/50309). Try adding the following line to `/etc/vsftpd.conf`:
+
+```
+seccomp_sandbox=NO
+
+```
+
 ### vsftpd: refusing to run with writable root inside chroot()
 
 As of vsftpd 2.3.5, the chroot directory that users are locked to must not be writable. This is in order to prevent a security vulnerabilty.
@@ -432,7 +442,6 @@ local_root=/srv/ftp/user
 
 ```
 # mkdir -p /srv/ftp/user/upload
-#
 # chmod 550 /srv/ftp/user
 # chmod 750 /srv/ftp/user/upload
 

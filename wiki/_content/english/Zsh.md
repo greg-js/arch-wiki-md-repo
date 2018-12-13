@@ -352,6 +352,10 @@ See [dotfiles#Repositories](/index.php/Dotfiles#Repositories "Dotfiles") for mor
 
 	[https://github.com/sorin-ionescu/prezto](https://github.com/sorin-ionescu/prezto) || [prezto-git](https://aur.archlinux.org/packages/prezto-git/)
 
+*   **ZIM** — A configuration framework with blazing speed and modular extensions. Zim is very easy to customize, and comes with a rich set of modules and features without compromising on speed or functionality.
+
+	[https://github.com/zimfw/zimfw](https://github.com/zimfw/zimfw) || [zsh-zim-git](https://aur.archlinux.org/packages/zsh-zim-git/)
+
 ## Tips and tricks
 
 ### Autostart X at login

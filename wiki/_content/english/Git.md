@@ -89,6 +89,10 @@ See also [git GUI Clients](https://git-scm.com/download/gui/linux).
 
 **Note:** To enable spell checking in *git-gui*, [aspell](https://www.archlinux.org/packages/?name=aspell) is required, along with the dictionary corresponding to the `LC_MESSAGES` [environment variable](/index.php/Environment_variable "Environment variable"). See [FS#28181](https://bugs.archlinux.org/task/28181) and the [aspell](/index.php/Aspell "Aspell") article.
 
+*   **GitHub Desktop** — Electron-based graphical user interface built by the GitHub team.
+
+	[https://github.com/desktop/desktop](https://github.com/desktop/desktop) || [github-desktop](https://aur.archlinux.org/packages/github-desktop/)
+
 *   **gitk** — Tcl/Tk based Git repository browser.
 
 	[https://git-scm.com/docs/gitk](https://git-scm.com/docs/gitk) || [git](https://www.archlinux.org/packages/?name=git) + [tk](https://www.archlinux.org/packages/?name=tk)
@@ -108,10 +112,6 @@ See also [git GUI Clients](https://git-scm.com/download/gui/linux).
 *   **ungit** — Brings user friendliness to git without sacrificing the versatility of git.
 
 	[https://github.com/FredrikNoren/ungit](https://github.com/FredrikNoren/ungit) || [nodejs-ungit](https://aur.archlinux.org/packages/nodejs-ungit/)
-
-*   **GitHub Desktop** — Electron-based graphical user interface built by the GitHub team.
-
-	[https://github.com/desktop/desktop](https://github.com/desktop/desktop) || [github-desktop](https://aur.archlinux.org/packages/github-desktop/)
 
 ## Configuration
 

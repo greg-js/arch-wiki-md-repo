@@ -824,6 +824,8 @@ Requires [lib32-libidn](https://www.archlinux.org/packages/?name=lib32-libidn) (
 
 ### Company of Heroes 2
 
+Make sure you have [lib32-gconf](https://www.archlinux.org/packages/?name=lib32-gconf) installed.
+
 #### Missing libpcre.so.3
 
 Like with [#Alien Isolation](#Alien_Isolation) you need to symlink `/usr/lib/libpcre.so` to `*GAME*/lib/*arch*/libpcre.so.3`, otherwise the game will fail to start.
@@ -2225,7 +2227,7 @@ Correctly recognized means you can control the desktop mouse and Steam in Big Pi
 
 #### Libfreetype/libfontconfig Incompatibility
 
-If you are experiencing issues with launching Torchlight 2, it could be due to using a newer libfontconfig than the game currently supports.
+If you are experiencing issues with launching games such as Torchlight 2 or Civilization IV, it could be due to using a newer libfontconfig than the game currently supports.
 
 Right click the game in Steam, and set the following as it's launch option:
 

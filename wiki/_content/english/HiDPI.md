@@ -28,29 +28,30 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
         *   [5.1.1 Lower the framebuffer resolution](#Lower_the_framebuffer_resolution)
         *   [5.1.2 Change GRUB font size](#Change_GRUB_font_size)
 *   [6 Applications](#Applications)
-    *   [6.1 Browsers](#Browsers)
-        *   [6.1.1 Firefox](#Firefox)
-        *   [6.1.2 Chromium / Google Chrome](#Chromium_/_Google_Chrome)
-        *   [6.1.3 Opera](#Opera)
-    *   [6.2 Thunderbird](#Thunderbird)
-    *   [6.3 Wine applications](#Wine_applications)
-    *   [6.4 Skype](#Skype)
-    *   [6.5 Slack](#Slack)
-    *   [6.6 Spotify](#Spotify)
-    *   [6.7 Zathura document viewer](#Zathura_document_viewer)
-    *   [6.8 Sublime Text 3](#Sublime_Text_3)
-    *   [6.9 IntelliJ IDEA](#IntelliJ_IDEA)
-    *   [6.10 NetBeans](#NetBeans)
-    *   [6.11 Gimp 2.8](#Gimp_2.8)
+    *   [6.1 Atom](#Atom)
+    *   [6.2 Browsers](#Browsers)
+        *   [6.2.1 Firefox](#Firefox)
+        *   [6.2.2 Chromium / Google Chrome](#Chromium_/_Google_Chrome)
+        *   [6.2.3 Opera](#Opera)
+    *   [6.3 Gimp 2.8](#Gimp_2.8)
+    *   [6.4 IntelliJ IDEA](#IntelliJ_IDEA)
+    *   [6.5 Java applications](#Java_applications)
+    *   [6.6 MATLAB](#MATLAB)
+    *   [6.7 Mono applications](#Mono_applications)
+    *   [6.8 NetBeans](#NetBeans)
+    *   [6.9 Skype](#Skype)
+    *   [6.10 Slack](#Slack)
+    *   [6.11 Spotify](#Spotify)
     *   [6.12 Steam](#Steam)
         *   [6.12.1 Official HiDPI support](#Official_HiDPI_support)
         *   [6.12.2 Unofficial](#Unofficial)
-    *   [6.13 Java applications](#Java_applications)
-    *   [6.14 Mono applications](#Mono_applications)
-    *   [6.15 MATLAB](#MATLAB)
-    *   [6.16 VirtualBox](#VirtualBox)
-    *   [6.17 Zoom](#Zoom)
-    *   [6.18 Unsupported applications](#Unsupported_applications)
+    *   [6.13 Sublime Text 3](#Sublime_Text_3)
+    *   [6.14 Thunderbird](#Thunderbird)
+    *   [6.15 VirtualBox](#VirtualBox)
+    *   [6.16 Wine applications](#Wine_applications)
+    *   [6.17 Zathura document viewer](#Zathura_document_viewer)
+    *   [6.18 Zoom](#Zoom)
+    *   [6.19 Unsupported applications](#Unsupported_applications)
 *   [7 Multiple displays](#Multiple_displays)
     *   [7.1 Side display](#Side_display)
     *   [7.2 Multiple external monitors](#Multiple_external_monitors)
@@ -303,6 +304,18 @@ Update GRUB configuration by running `grub-mkconfig -o /boot/grub/grub.cfg`
 
 ## Applications
 
+As a general rule, applications can be launched with a custom scaling value, e.g. `$ atom --force-device-scale-factor=2`. A more permanent solution is to add this scaling factor as a flag to the relevant .conf or .desktop file (normally located at `/usr/share/applications/`). In the latter instance, the flag should be added to the line beginning with "Exec=", e.g. `Exec=/usr/bin/atom --force-device-scale-factor=2 %F`. The next section provides more details on implementing this for specific applications.
+
+### Atom
+
+Add `--force-device-scale-factor=2` as a flag to the atom.desktop file:
+
+ `/usr/share/applications/atom.desktop` 
+```
+Exec=/usr/bin/atom --force-device-scale-factor=2 %F
+
+```
+
 ### Browsers
 
 #### Firefox
@@ -351,20 +364,54 @@ Opera should use the [#GDK 3 (GTK+ 3)](#GDK_3_(GTK+_3)) settings.
 
 To override those, use the `--alt-high-dpi-setting=X` command line option, where X is the desired DPI. For example, with `--alt-high-dpi-setting=144` Opera will assume that DPI is 144\. Newer versions of opera will auto detect the DPI using the font DPI setting (in KDE: the force font DPI setting.)
 
-### Thunderbird
+### Gimp 2.8
 
-See [#Firefox](#Firefox). To access `about:config`, go to Edit → Preferences → Advanced → Config editor.
+Use a high DPI theme, or adjust `gtkrc` of an existing theme. (Change all occurrences of the size `button` to `dialog`, for example `GimpToolPalette::tool-icon-size`.)
 
-### Wine applications
+There is also the [gimp-hidpi](https://github.com/jedireza/gimp-hidpi).
 
-Run
+### IntelliJ IDEA
+
+IntelliJ IDEA 15 and above should include HiDPI support.[[1]](http://blog.jetbrains.com/idea/2015/07/intellij-idea-15-eap-comes-with-true-hidpi-support-for-windows-and-linux/) If it does not work, the most convenient way to fix the problem in this case seems to be changing the Override Default Fonts setting:
+
+	*File -> Settings -> Behaviour & Appearance -> Appearance*
+
+The addition of `-Dhidpi=true` to the vmoptions file in either `$HOME/.IdeaC14/` or `/usr/share/intelligj-idea-ultimate-edition/bin/` of [release 14](https://youtrack.jetbrains.com/issue/IDEA-114944) should not be required anymore.
+
+### Java applications
+
+Java applications using the AWT/Swing framework can be scaled by defining the sun.java2d.uiScale variable when invoking java. For example,
 
 ```
-$ winecfg
+java -Dsun.java2d.uiScale=2 -jar some_application.jar
 
 ```
 
-and change the "dpi" setting found in the "Graphics" tab. This only affects the font size.
+Since Java 9 the GDK_SCALE environment variable is used to scale Swing applications accordingly.
+
+### MATLAB
+
+Recent versions (R2017b) of [MATLAB](/index.php/MATLAB "MATLAB") allow to set the scale factor:
+
+```
+>> s = settings;s.matlab.desktop.DisplayScaleFactor
+>> s.matlab.desktop.DisplayScaleFactor.PersonalValue = 2
+
+```
+
+The settings take effect after MATLAB is restarted.
+
+### Mono applications
+
+According to [[2]](https://bugzilla.xamarin.com/show_bug.cgi?id=35870), Mono applications should be scalable like [GTK3](#GDK_3_(GTK+_3)) applications.
+
+### NetBeans
+
+NetBeans allows the font size of its interface to be controlled using the `--fontsize` parameter during startup. To make this change permanent edit the `/usr/share/netbeans/etc/netbeans.conf` file and append the `--fontsize` parameter to the `netbeans_default_options` property.[[3]](http://wiki.netbeans.org/FaqFontSize)
+
+The editor fontsize can be controlled from Tools → Option → Fonts & Colors.
+
+The output window fontsize can be controlled from Tools → Options → Miscelaneous → Output
 
 ### Skype
 
@@ -397,43 +444,6 @@ $ spotify --force-device-scale-factor=1.5
 
 ```
 
-### Zathura document viewer
-
-No modifications required for document viewing.
-
-UI text scaling is specified via [configuration file](https://pwmt.org/projects/zathura/documentation/) (note that "font" is a [girara option](https://pwmt.org/projects/girara/options/)):
-
-```
-set font "monospace normal 20"
-
-```
-
-### Sublime Text 3
-
-Sublime Text 3 has full support for display scaling. Go to Preferences > Settings > User Settings and add `"dpi_scale": 2.0` to your settings [(source)](http://blog.wxm.be/2014/08/30/sublime-text-3-and-high-dpi-on-linux.html).
-
-### IntelliJ IDEA
-
-IntelliJ IDEA 15 and above should include HiDPI support.[[1]](http://blog.jetbrains.com/idea/2015/07/intellij-idea-15-eap-comes-with-true-hidpi-support-for-windows-and-linux/) If it does not work, the most convenient way to fix the problem in this case seems to be changing the Override Default Fonts setting:
-
-	*File -> Settings -> Behaviour & Appearance -> Appearance*
-
-The addition of `-Dhidpi=true` to the vmoptions file in either `$HOME/.IdeaC14/` or `/usr/share/intelligj-idea-ultimate-edition/bin/` of [release 14](https://youtrack.jetbrains.com/issue/IDEA-114944) should not be required anymore.
-
-### NetBeans
-
-NetBeans allows the font size of its interface to be controlled using the `--fontsize` parameter during startup. To make this change permanent edit the `/usr/share/netbeans/etc/netbeans.conf` file and append the `--fontsize` parameter to the `netbeans_default_options` property.[[2]](http://wiki.netbeans.org/FaqFontSize)
-
-The editor fontsize can be controlled from Tools → Option → Fonts & Colors.
-
-The output window fontsize can be controlled from Tools → Options → Miscelaneous → Output
-
-### Gimp 2.8
-
-Use a high DPI theme, or adjust `gtkrc` of an existing theme. (Change all occurrences of the size `button` to `dialog`, for example `GimpToolPalette::tool-icon-size`.)
-
-There is also the [gimp-hidpi](https://github.com/jedireza/gimp-hidpi).
-
 ### Steam
 
 #### Official HiDPI support
@@ -450,32 +460,13 @@ The [HiDPI-Steam-Skin](https://github.com/MoriTanosuke/HiDPI-Steam-Skin) can be 
 
 [MetroSkin Unofficial Patch](http://steamcommunity.com/groups/metroskin/discussions/0/517142253861033946/) also helps with HiDPI on Steam with Linux.
 
-### Java applications
+### Sublime Text 3
 
-Java applications using the AWT/Swing framework can be scaled by defining the sun.java2d.uiScale variable when invoking java. For example,
+Sublime Text 3 has full support for display scaling. Go to Preferences > Settings > User Settings and add `"dpi_scale": 2.0` to your settings [(source)](http://blog.wxm.be/2014/08/30/sublime-text-3-and-high-dpi-on-linux.html).
 
-```
-java -Dsun.java2d.uiScale=2 -jar some_application.jar
+### Thunderbird
 
-```
-
-Since Java 9 the GDK_SCALE environment variable is used to scale Swing applications accordingly.
-
-### Mono applications
-
-According to [[3]](https://bugzilla.xamarin.com/show_bug.cgi?id=35870), Mono applications should be scalable like [GTK3](#GDK_3_(GTK+_3)) applications.
-
-### MATLAB
-
-Recent versions (R2017b) of [MATLAB](/index.php/MATLAB "MATLAB") allow to set the scale factor:
-
-```
->> s = settings;s.matlab.desktop.DisplayScaleFactor
->> s.matlab.desktop.DisplayScaleFactor.PersonalValue = 2
-
-```
-
-The settings take effect after MATLAB is restarted.
+See [#Firefox](#Firefox). To access `about:config`, go to Edit → Preferences → Advanced → Config editor.
 
 ### VirtualBox
 
@@ -487,6 +478,28 @@ This can be worked around by calculating the inverse of your scaling factor and 
 
 ```
 $ QT_SCALE_FACTOR=0.5 VirtualBox --startvm vm-name
+
+```
+
+### Wine applications
+
+Run
+
+```
+$ winecfg
+
+```
+
+and change the "dpi" setting found in the "Graphics" tab. This only affects the font size.
+
+### Zathura document viewer
+
+No modifications required for document viewing.
+
+UI text scaling is specified via [configuration file](https://pwmt.org/projects/zathura/documentation/) (note that "font" is a [girara option](https://pwmt.org/projects/girara/options/)):
+
+```
+set font "monospace normal 20"
 
 ```
 

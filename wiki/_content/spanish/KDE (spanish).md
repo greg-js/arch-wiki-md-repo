@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [KDE](/index.php/KDE "KDE"), revisada por última vez el **2018-12-04**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=558213) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [KDE](/index.php/KDE "KDE"), revisada por última vez el **2018-12-12**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=558213) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -31,7 +31,7 @@ KDE es un proyecto de software que actualmente comprende un [entorno de escritor
             *   [3.1.1.1 Temas](#Temas)
                 *   [3.1.1.1.1 Apariencia de las aplicaciones Qt y GTK+](#Apariencia_de_las_aplicaciones_Qt_y_GTK+)
             *   [3.1.1.2 Caras](#Caras)
-            *   [3.1.1.3 Elementos gráficos](#Elementos_gráficos)
+            *   [3.1.1.3 Widgets](#Widgets)
             *   [3.1.1.4 Applet de sonido en la bandeja del sistema](#Applet_de_sonido_en_la_bandeja_del_sistema)
             *   [3.1.1.5 Deshabilitar la sombra del panel](#Deshabilitar_la_sombra_del_panel)
         *   [3.1.2 Decoraciones de las ventanas](#Decoraciones_de_las_ventanas)
@@ -175,7 +175,7 @@ La cara del usuario se puede configurar a través de *Preferencias del sistema >
 
 Si no se encuentra *Gestor de usuarios*, instale [user-manager](https://www.archlinux.org/packages/?name=user-manager) para obtenerlo.
 
-##### Elementos gráficos
+##### Widgets
 
 Los plasmoides son pequeñas aplicaciones KDE scripteadas (scripts plasmoides) o codificadas (binarios plasmoides) diseñadas para mejorar la funcionalidad de su escritorio.
 
@@ -555,9 +555,9 @@ Muchos problemas en KDE están relacionados con su configuración.
 
 #### El escritorio Plasma se comporta de manera extraña
 
-Los problemas en Plasma son generalmente causados por *elementos gráficos* inestables (llamados coloquialmente *plasmoides*) o *temas de Plasma* Primero, encuentre cuál fue el último elemento gráfico o tema que instaló y deshabilítelo o desinstálelo.
+Los problemas en Plasma son generalmente causados por *widgets de Plasma* inestables (llamados coloquialmente *plasmoides*) o *temas de Plasma*. Primero, encuentre cuál fue el último widget o tema que instaló y deshabilítelo o desinstálelo.
 
-Por lo tanto, si su escritorio muestra repentinamente un «bloqueo», es probable que esto se deba a un elemento gráfico instalado defectuoso. Si no puede recordar qué elemento gráfico instaló antes de que comenzara el problema (a veces puede ser un problema irregular), intente localizarlo eliminando cada elemento gráfico hasta que el problema cese. Luego, puede desinstalar el elemento gráfico y presentar un informe de error en el [seguimiento de errores de KDE](https://bugs.kde.org/) **solo si es un elemento gráfico oficial**. Si no lo es, se recomienda buscar la entrada en la [KDE Store](https://store.kde.org/) e informar al desarrollador de ese elemento gráfico sobre el problema (detallando los pasos para reproducirlo, etc.).
+Por lo tanto, si su escritorio muestra repentinamente un «bloqueo», es probable que esto se deba a un widget instalado defectuoso. Si no puede recordar qué widget instaló antes de que comenzara el problema (a veces puede ser un problema irregular), intente localizarlo eliminando cada widget hasta que el problema cese. Luego, puede desinstalar el widget y presentar un informe de error en el [seguimiento de errores de KDE](https://bugs.kde.org/) **solo si es un widget oficial**. Si no lo es, se recomienda buscar la entrada en la [KDE Store](https://store.kde.org/) e informar al desarrollador de ese widget sobre el problema (detallando los pasos para reproducirlo, etc.).
 
 Si no puede encontrar el problema, pero no quiere que se pierdan *todos* los ajustes, vaya a `~/.config/` y ejecute el siguiente comando:
 

@@ -96,7 +96,6 @@ These [mirrors](/index.php/Mirrors "Mirrors") are *not* listed in `/etc/pacman.d
 ## New Zealand
 
 *   [http://mirror.ece.auckland.ac.nz/archlinux/](http://mirror.ece.auckland.ac.nz/archlinux/) *NZ only*
-*   [https://mirror.fsmg.org.nz/archlinux/](https://mirror.fsmg.org.nz/archlinux/) - *Free Software Mirror Group*
 
 ## Poland
 
