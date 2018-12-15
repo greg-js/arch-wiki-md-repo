@@ -418,6 +418,10 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 
 	[https://github.com/paolostivanin/OTPClient](https://github.com/paolostivanin/OTPClient) || [otpclient](https://aur.archlinux.org/packages/otpclient/)
 
+*   **Passbook** — Modern password manager for GNOME.
+
+	[https://wiki.gnome.org/Apps/Passbook](https://wiki.gnome.org/Apps/Passbook) || [passbook](https://aur.archlinux.org/packages/passbook/)
+
 *   **Password Gorilla** — A cross-platform password manager.
 
 	[https://github.com/zdia/gorilla/wiki](https://github.com/zdia/gorilla/wiki) || [password-gorilla](https://aur.archlinux.org/packages/password-gorilla/)

@@ -4,9 +4,10 @@ This article covers software to view, edit and convert [PDF](https://en.wikipedi
 
 *   [1 Engines](#Engines)
 *   [2 Viewers](#Viewers)
-    *   [2.1 Comparison](#Comparison)
-    *   [2.2 PDF forms](#PDF_forms)
-    *   [2.3 Framebuffer](#Framebuffer)
+    *   [2.1 Framebuffer](#Framebuffer)
+    *   [2.2 Graphical](#Graphical)
+        *   [2.2.1 Comparison](#Comparison)
+        *   [2.2.2 PDF forms](#PDF_forms)
 *   [3 Annotation](#Annotation)
 *   [4 Graphical PDF editing](#Graphical_PDF_editing)
     *   [4.1 Simple editors](#Simple_editors)
@@ -49,6 +50,22 @@ This article covers software to view, edit and convert [PDF](https://en.wikipedi
 	[https://wiki.gnome.org/Projects/libgxps](https://wiki.gnome.org/Projects/libgxps) || [libgxps](https://www.archlinux.org/packages/?name=libgxps)
 
 ## Viewers
+
+### Framebuffer
+
+*   **fbgs** — Poor man's PostScript/pdf viewer for the linux framebuffer console.
+
+	[https://www.kraxel.org/blog/linux/fbida/](https://www.kraxel.org/blog/linux/fbida/) || [fbida](https://www.archlinux.org/packages/?name=fbida)
+
+*   **fbpdf** — Small framebuffer PDF and DjVu viewer based off of MuPDF, with [Vim](/index.php/Vim "Vim") keybindings and written in C
+
+	[http://repo.or.cz/w/fbpdf.git](http://repo.or.cz/w/fbpdf.git) || [fbpdf-git](https://aur.archlinux.org/packages/fbpdf-git/)
+
+*   **JFBView** — Framebuffer PDF and image viewer. Features include Vim-like controls, zoom-to-fit, a TOC (outline) view, fast multi-threaded rendering and asynchronous pre-caching. Originally a fork of *fbpdf* called *jfbpdf*, now completely rewritten.
+
+	[https://seasonofcode.com/pages/jfbview.html](https://seasonofcode.com/pages/jfbview.html) || [jfbview](https://aur.archlinux.org/packages/jfbview/)
+
+### Graphical
 
 **Note:** Some [web browsers](/index.php/Web_browser "Web browser") can display PDF files, for example with [PDF.js](/index.php/Browser_plugins#PDF.js "Browser plugins").
 
@@ -120,7 +137,7 @@ This article covers software to view, edit and convert [PDF](https://en.wikipedi
 
 	[https://pwmt.org/projects/zathura/](https://pwmt.org/projects/zathura/) || [zathura](https://www.archlinux.org/packages/?name=zathura)
 
-### Comparison
+#### Comparison
 
 | Name | PDF | PostScript | DjVu | XPS | PDF forms | License |
 | apvlv | Poppler | ✘ | DjVuLibre | ✘ | ✘ | GPLv2 |
@@ -142,25 +159,11 @@ This article covers software to view, edit and convert [PDF](https://en.wikipedi
 
 	(* means optional)
 
-### PDF forms
+#### PDF forms
 
 The *PDF forms* column in the above table refers to [AcroForms](https://en.wikipedia.org/wiki/PDF#AcroForms "wikipedia:PDF") support. If you do not need your input to be directly extractable from the PDF, you can also use the applications in [#Annotation](#Annotation) or [#Graphical PDF editing](#Graphical_PDF_editing) to put text on top of a PDF. PDF forms can be created with [LibreOffice Writer](/index.php/LibreOffice "LibreOffice") (*View > Toolbars > Form Controls*) and the [advanced PDF editors](#Advanced_editors).
 
 The proprietary and deprecated [XFA](https://en.wikipedia.org/wiki/PDF#Adobe_XML_Forms_Architecture_.28XFA.29 "wikipedia:PDF") format for forms, is not fully support by Poppler[[1]](https://gitlab.freedesktop.org/poppler/poppler/issues/199)[[2]](https://gitlab.freedesktop.org/poppler/poppler/issues/530) and only supported by [Adobe Reader](#Discontinued) and [Master PDF Editor](#Advanced_editors).
-
-### Framebuffer
-
-*   **fbgs** — Poor man's PostScript/pdf viewer for the linux framebuffer console.
-
-	[https://www.kraxel.org/blog/linux/fbida/](https://www.kraxel.org/blog/linux/fbida/) || [fbida](https://www.archlinux.org/packages/?name=fbida)
-
-*   **fbpdf** — Small framebuffer PDF and DjVu viewer based off of MuPDF, with [Vim](/index.php/Vim "Vim") keybindings and written in C
-
-	[http://repo.or.cz/w/fbpdf.git](http://repo.or.cz/w/fbpdf.git) || [fbpdf-git](https://aur.archlinux.org/packages/fbpdf-git/)
-
-*   **JFBView** — Framebuffer PDF and image viewer. Features include Vim-like controls, zoom-to-fit, a TOC (outline) view, fast multi-threaded rendering and asynchronous pre-caching. Originally a fork of *fbpdf* called *jfbpdf*, now completely rewritten.
-
-	[https://seasonofcode.com/pages/jfbview.html](https://seasonofcode.com/pages/jfbview.html) || [jfbview](https://aur.archlinux.org/packages/jfbview/)
 
 ## Annotation
 
@@ -191,6 +194,10 @@ See also [List of applications/Documents#Stylus note-taking](/index.php/List_of_
 
 	[https://wiki.gnome.org/Apps/PdfMod](https://wiki.gnome.org/Apps/PdfMod) || [pdfmod](https://www.archlinux.org/packages/?name=pdfmod)
 
+*   **PDFsam** — Open source application, written in Java, supports merging, splitting and rotating.
+
+	[https://pdfsam.org/](https://pdfsam.org/) || [pdfsam](https://www.archlinux.org/packages/?name=pdfsam)
+
 *   **PDF-Shuffler** — GTK2 front-end for [pyPdf](#Python), written in Python, supports concatenation, splitting, rotation and reordering.
 
 	[https://sourceforge.net/projects/pdfshuffler/](https://sourceforge.net/projects/pdfshuffler/) || [pdfshuffler](https://www.archlinux.org/packages/?name=pdfshuffler)
@@ -200,10 +207,6 @@ See also [List of applications/Documents#Stylus note-taking](/index.php/List_of_
 *   **Master PDF Editor** — Functional proprietary PDF editor. Free for non-commercial use.
 
 	[https://code-industry.net/free-pdf-editor/](https://code-industry.net/free-pdf-editor/) || [masterpdfeditor](https://aur.archlinux.org/packages/masterpdfeditor/), [masterpdfeditor-qt4](https://aur.archlinux.org/packages/masterpdfeditor-qt4/) for older version without restrictions
-
-*   **PDFsam** — Open source application, written in Java, supports merging, splitting, rotating and some premium features.
-
-	[https://pdfsam.org/](https://pdfsam.org/) || [pdfsam](https://www.archlinux.org/packages/?name=pdfsam)
 
 *   **PDF Studio** — All-in-one proprietary PDF editor similar to Adobe Acrobat.
 
@@ -453,4 +456,5 @@ $ pdftoppm -jpeg -r *dpi* in.pdf -f *page* -singlefile *infile*.pdf *outfileroot
 ## See also
 
 *   [List of applications/Documents#Readers and viewers](/index.php/List_of_applications/Documents#Readers_and_viewers "List of applications/Documents")
+*   [List of applications/Documents#OCR software](/index.php/List_of_applications/Documents#OCR_software "List of applications/Documents")
 *   [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_PDF_software "wikipedia:List of PDF software")

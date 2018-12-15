@@ -42,15 +42,16 @@ The following example displays the average load values in red and the current ti
 
  `~/.conkyrc` 
 ```
- background no
- out_to_console yes
- out_to_x no
- update_interval 1.0
- total_run_times 0
- use_spacer none
+conky.config = {
+      background = false
+    , out_to_console = true
+    , out_to_x = false
+    , update_interval = 1.0
+    , total_run_times = 0
+    , use_spacer = none
+}
 
- TEXT
- ^fg(\#ff0000)${loadavg 1 2 3} ^fg()${time %a %b %d %I:%M%P}
+conky.text = [[^fg(\#ff0000)${loadavg 1 2 3} ^fg()${time %a %b %d %I:%M%P}]]
 
 ```
  `~/bin/dzconky` 

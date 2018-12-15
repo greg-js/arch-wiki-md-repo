@@ -57,7 +57,7 @@ To avoid needing to remember all of your kernel parameters every time, you can s
 
 ### Using UEFI directly
 
-UEFI is designed to remove the need for an intermediate bootloader such as [GRUB](/index.php/GRUB "GRUB"). If your motherboard has a good UEFI implementation, it is possible to embed the kernel parameters within a UEFI boot entry and for the motherboard to boot Arch directly. You can use [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) or UEFI Shell v2 to modify your motherboard's boot entries.
+UEFI is designed to remove the need for an intermediate bootloader such as [GRUB](/index.php/GRUB "GRUB"). If your motherboard has a good UEFI implementation, it is possible to embed the kernel parameters within a UEFI boot entry and for the motherboard to boot Arch directly. You can use [efibootmgr](/index.php/Efibootmgr "Efibootmgr") or UEFI Shell v2 to modify your motherboard's boot entries.
 
 #### efibootmgr
 
@@ -85,7 +85,7 @@ After adding the boot entry, you can verify the entry was added properly with:
 
 ```
 
-Or, as a last resort, boot with the `efi_no_storage_paranoia` kernel parameter. You can also try to downgrade your efibootmgr install to version 0.11.0 if you have it available in your cache. This version works with Linux version 4.0.6\. See the bug discussion [FS#34641](https://bugs.archlinux.org/task/34641) for more information.
+Or, as a last resort, boot with the `efi_no_storage_paranoia` kernel parameter. You can also try to [downgrade](/index.php/Downgrading_packages "Downgrading packages") your efibootmgr install to version 0.11.0\. This version works with Linux version 4.0.6\. See the bug discussion [FS#34641](https://bugs.archlinux.org/task/34641) for more information.
 
 To set the boot order, run:
 
@@ -96,7 +96,7 @@ To set the boot order, run:
 
 where *XXXX* is the number that appears in the output of `efibootmgr` command against each entry.
 
-More info about efibootmgr at [UEFI#efibootmgr](/index.php/UEFI#efibootmgr "UEFI"). Forum post [https://bbs.archlinux.org/viewtopic.php?pid=1090040#p1090040](https://bbs.archlinux.org/viewtopic.php?pid=1090040#p1090040) .
+The forum post titled [[Solved]The linux kernel with build in bootloader?](https://bbs.archlinux.org/viewtopic.php?pid=1090040#p1090040%7C) might also be of interest.
 
 #### efibootmgr with .efi file
 

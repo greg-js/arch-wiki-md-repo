@@ -1,14 +1,19 @@
+Related articles
+
+*   [ASCII art](/index.php/ASCII_art "ASCII art")
+
 [fortune](https://en.wikipedia.org/wiki/Fortune_(Unix) is a simple program that displays random poignant, inspirational, silly or snide phrase from a database of quotations. The *fortune* command-line utility is part of the [fortune-mod](https://www.archlinux.org/packages/?name=fortune-mod) package.
 
 ## Contents
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
-    *   [2.1 Cowsay](#Cowsay)
-        *   [2.1.1 Default cow with fortune](#Default_cow_with_fortune)
-        *   [2.1.2 Random cow with fortune](#Random_cow_with_fortune)
-        *   [2.1.3 Random custom cow with fortune](#Random_custom_cow_with_fortune)
-    *   [2.2 Ponysay](#Ponysay)
+    *   [2.1 Creating custom files](#Creating_custom_files)
+    *   [2.2 Cowsay](#Cowsay)
+        *   [2.2.1 Default cow with fortune](#Default_cow_with_fortune)
+        *   [2.2.2 Random cow with fortune](#Random_cow_with_fortune)
+        *   [2.2.3 Random custom cow with fortune](#Random_custom_cow_with_fortune)
+    *   [2.3 Ponysay](#Ponysay)
 *   [3 See also](#See_also)
 
 ## Installation
@@ -54,6 +59,10 @@ fortune
 ```
 
 **Note:** *fortune* displays quotes and phrases deemed by its maintainer to be [non-offensive](https://github.com/shlomif/fortune-mod/blob/master/fortune-mod/Offensive). Aphorisms can be enabled as a mix of offensive/non-offensive or as potentially offensive output only. See [fortune(6)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fortune.6) for more information.
+
+### Creating custom files
+
+In order to create a custom file, you must first create a file containing the quotes. Between each quote you must add a line containing only the `%` character. Save this file using whatever name you want, for example *myquotes*. Then, run `strfile *myquotes*` in a terminal, in order to enable random access of the quotes. You can now access the quotes by executing `fortune *myquotes*` in a terminal. For this command to work you must be on the same directory as the `*myquotes*` and `*myquotes*.dat` files. If you want your quotes to be accessible by just running the `fortune` command, you must move **both** files into the `/usr/share/fortune/` directory. If you want to make any changes to your file, repeat from the start.
 
 ### Cowsay
 

@@ -23,6 +23,7 @@ Related articles
     *   [2.2 History](#History)
         *   [2.2.1 History completion](#History_completion)
         *   [2.2.2 Shorter history](#Shorter_history)
+        *   [2.2.3 Disable history](#Disable_history)
     *   [2.3 Mimic Zsh run-help ability](#Mimic_Zsh_run-help_ability)
 *   [3 Aliases](#Aliases)
 *   [4 Tips and tricks](#Tips_and_tricks)
@@ -153,6 +154,45 @@ The `HISTCONTROL` variable can prevent certain commands from being logged to the
  `~/.bashrc`  `export HISTCONTROL=ignoredups` 
 
 or set it to `erasedups` to ensure that Bash's history will only contain one copy of each command (regardless of order). See the Bash man page for more options.
+
+#### Disable history
+
+To disable the bash history only temporarily:
+
+```
+set +o history
+
+```
+
+The commands entered now are not logged to the `$HISTFILE`.
+
+For example, now you can hash passwords with `printf secret | sha256sum`, or hide GPG usage like `gpg -eaF secret-pubkey.asc` and your secret is not written to disk.
+
+To enable history:
+
+```
+set -o history
+
+```
+
+**Tip:** If the `HISTCONTROL` variable contains `ignorespace`, commands starting with a space will not be saved into the history file. See [bash(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bash.1#Shell_Variables) for details.
+
+To disable all bash history:
+
+ `~/.bashrc or /etc/profile` 
+```
+export HISTSIZE=0
+
+```
+
+... and just to make sure:
+
+```
+# warning. this will destroy your old histfile forever
+wipe -i -l2 -x4 -p4 "$HISTFILE"
+ln -sv /dev/null "$HISTFILE"
+
+```
 
 ### Mimic Zsh run-help ability
 

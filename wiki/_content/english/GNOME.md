@@ -494,7 +494,7 @@ org.gnome.settings-daemon.plugins.power critical-battery-action
 
 The settings panel of GNOME doesn't provide an option for the user, to change the action, when laptop lid is closed. However [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks) can override the setting applied by [systemd](https://www.archlinux.org/packages/?name=systemd), on the tab *General* turn off the switch *Suspend when laptop lid is closed*. The system will therefore not *Suspend to RAM (S3)* on lid close.
 
-To change the lid switch action system-wide, ensure that the setting described above is **not turned off** and edit the systemd settings in `/etc/systemd/logind.conf`. To turn of suspend on lid close, set `HandleLidSwitch=ignore`, as described in [Power management#ACPI events](/index.php/Power_management#ACPI_events "Power management").
+To change the lid switch action system-wide, ensure that the setting described above is **not turned off** and edit the systemd settings in `/etc/systemd/logind.conf`. To turn off suspend on lid close, set `HandleLidSwitch=ignore`, as described in [Power management#ACPI events](/index.php/Power_management#ACPI_events "Power management").
 
 ##### Change critical battery level action
 

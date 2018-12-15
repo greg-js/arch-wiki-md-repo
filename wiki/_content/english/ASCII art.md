@@ -1,6 +1,7 @@
 Related articles
 
-*   [Fortune](/index.php/Fortune "Fortune")
+*   [Fortune#Cowsay](/index.php/Fortune#Cowsay "Fortune")
+*   [Fortune#Ponysay](/index.php/Fortune#Ponysay "Fortune")
 
 ## Software
 

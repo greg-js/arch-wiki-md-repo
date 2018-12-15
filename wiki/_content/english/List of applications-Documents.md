@@ -826,7 +826,7 @@ See also [Wikipedia:Comparison of reference management software](https://en.wiki
 
 #### PDF and DjVu
 
-See [PDF, PS and DjVu](/index.php/PDF,_PS_and_DjVu "PDF, PS and DjVu").
+See [PDF, PS and DjVu#Viewers](/index.php/PDF,_PS_and_DjVu#Viewers "PDF, PS and DjVu").
 
 #### E-book
 
@@ -1349,6 +1349,10 @@ See also [Wikipedia:Comparison of computer-assisted translation tools](https://e
 *   **[Apertium](https://en.wikipedia.org/wiki/Apertium "wikipedia:Apertium")** — Free and open source rule-based machine translation platform with available language data. It supports the following formats: HTML, Microsoft Office 2007 XML, OpenDocument, TMX, MediaWiki and others.
 
 	[http://apertium.org/](http://apertium.org/) || [apertium](https://aur.archlinux.org/packages/apertium/)
+
+*   **Crow Translate** — Simple and lightweight translator that allows to translate and speak text using Google, Yandex and Bing.
+
+	[https://crow-translate.github.io/](https://crow-translate.github.io/) || [crow-translate](https://aur.archlinux.org/packages/crow-translate/)
 
 *   **[Gtranslator](https://en.wikipedia.org/wiki/Gtranslator "wikipedia:Gtranslator")** — Enhanced gettext po file editor for the GNOME. It handles all forms of gettext po files and includes very useful features.
 

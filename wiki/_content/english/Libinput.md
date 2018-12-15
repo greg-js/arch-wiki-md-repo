@@ -161,6 +161,7 @@ There are different GUI tools:
     *   Similar to the GNOME UI, with more options.
 *   [KDE Plasma](/index.php/KDE_Plasma "KDE Plasma") 5:
     *   Set of keyboard, mouse, controller, and touch pad options. Some features are still placeholders.
+    *   [kcm-pointing-devices-git](https://aur.archlinux.org/packages/kcm-pointing-devices-git/) is a rewritten KCM for all input devices supported by libinput.
 
 ## Tips and tricks
 
@@ -324,7 +325,7 @@ $ gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll false
 
 ### Touchpad settings not taking effect in KDE's Touchpad KCM
 
-KDE's Touchpad KCM has libinput support for [Xorg](/index.php/Xorg "Xorg"), but not all GUI settings are available yet. You may find that a setting such as *Disable touchpad when typing* has no effect and other options are greyed out. Until the support is extended, a workaround is to set the options manually with `xinput set-prop`.
+KDE's Touchpad KCM has libinput support for [Xorg](/index.php/Xorg "Xorg"), but not all GUI settings are available yet. You may find that a setting such as *Disable touchpad when typing* has no effect and other options are greyed out. Until the support is extended, a workaround is to install [kcm-pointing-devices-git](https://aur.archlinux.org/packages/kcm-pointing-devices-git/) or set the options manually with `xinput set-prop`.
 
 ### Touchpad not detected at all
 

@@ -47,8 +47,14 @@ Arch Linux 是一个社区驱动的发行版；开发者、支持人员和提供
     *   [3.4 IRC](#IRC)
     *   [3.5 Wiki](#Wiki)
     *   [3.6 Bug 系统](#Bug_系统)
-*   [4 执行](#执行)
-*   [5 联系工作人员](#联系工作人员)
+*   [4 中文社区交流群](#中文社区交流群)
+    *   [4.1 irc.freenode.net 的频道列表](#irc.freenode.net_的频道列表)
+    *   [4.2 其他入口](#其他入口)
+    *   [4.3 通用规则](#通用规则)
+    *   [4.4 #archlinux-cn 的额外规则](##archlinux-cn_的额外规则)
+    *   [4.5 对于 Telegram 用户](#对于_Telegram_用户)
+*   [5 执行](#执行)
+*   [6 联系工作人员](#联系工作人员)
 
 ## 常识
 
@@ -248,18 +254,6 @@ Arch User Repository 的指南位于:
 *   也别害羞,如果遇到你能回答的问题，请试着给予解答,只有更多的志愿者参与回答这个频道才能蓬勃发展.
 *   如果有其他人询问关于你的问题的更多信息,记得最好总是回复他/他/它.
 
-**#archlinux-cn**频道的默认语言是中文。如果你正在修复中文输入法或此时你无法显示中文，也可以使用英文（记得提前说明一下）。
-
-*   加入频道以后先通过 `/topic` 读一下频道的话题,一般包括了部分重要的信息.
-*   **#archlinux-cn 频道的主要目的是讨论和支持 Arch Linux**.
-    *   如果你正在使用某个 Arch Linux 的衍生发行版，或者非 Arch Linux 的 GNU/Linux 发行版，请在提问前先说明。
-    *   另推荐阅读 [提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md)
-    *   管理员在话题跑题或明显不属于技术话题时可能会要求移步至 #archlinux-cn-offtopic ,如果被要求这样做或者转至私聊，请遵守这个要求。
-*   不要刷屏，粘贴日志请考虑使用类 Pastebin 服务，如 [https://cfp.vim-cn.com/](https://cfp.vim-cn.com/) 或 [https://fars.ee/](https://fars.ee/) 。
-*   频道内的机器人不止一个，不过也请不要滥用机器人指令。
-*   不要对着 teleboto xmppbot 说话，它们都是桥接机器人，人类的名字在它们后面，请在回复时输入桥接机器人后面的昵称。
-*   **#archlinux-cn-offtopic 容许讨论大多数内容**，但唯独请不要发送大多数人容易反感的 （例如 [NSFW](https://en.wikipedia.org/wiki/zh:NSFW "wikipedia:zh:NSFW")） 内容。
-
 ### Wiki
 
 下面页面包含 [wiki](/index.php/ArchWiki:About "ArchWiki:About") 的规范:
@@ -271,6 +265,64 @@ Arch User Repository 的指南位于:
 ### [Bug 系统](https://bugs.archlinux.org/)
 
 参考页面: [Reporting bug guidelines](/index.php/Reporting_bug_guidelines "Reporting bug guidelines").
+
+## 中文社区交流群
+
+### irc.freenode.net 的频道列表
+
+*   #archlinux-cn ，主群组，讨论和 Arch Linux 相关的技术话题和寻求支持。
+*   #archlinux-cn-offtopic ，Arch Linux 相关人员的 Arch Linux 无关话题讨论群（也就是所谓的水群啦）
+*   #archlinux-cn-game，讨论各种游戏和邀请联机的分支频道。
+*   #archlinux-cn-bot，IRC 和 Telegram 机器人制作、交流和测试用频道。
+
+处于曾经遭受过来自 IRC 的大量 spam 攻击，建议通过 freenode 的 NickServ 服务注册一个用户名并进行验证。 未验证的用户可能会被重定向至 #archlinux-cn-unregistered 频道。
+
+这里是 freenode 提供的昵称注册指南： [https://freenode.net/kb/answer/registration](https://freenode.net/kb/answer/registration)
+
+Telegram 上还有两个和 Arch Linux 中文社区相关的频道:
+
+*   [@archlinuxcn](https://t.me/archlinuxcn) , 中文社区相关消息（翻译官方新闻，testing 翻车预警，滚包预警等）。
+*   [@archlinuxcn_updates](https://t.me/archlinuxcn_updates) , 官方仓库和中文社区的软件包更新推送频道。
+
+### 其他入口
+
+*   如果你使用 Matrix ，可以通过加入 #freenode_#频道名称:matrix.org 组加入聊天（例如 [https://matrix.to/#/#freenode_#archlinux-cn:matrix.org](https://matrix.to/#/#freenode_#archlinux-cn:matrix.org) ）
+*   如果你使用 Telegram ，可以加入除了 #archlinux-cn-fuckbot 外的其他群组。请向群中成员获取加入方式。
+*   如果你使用 XMPP/Jabber ，可以添加 talk@archlinuxcn.org （#archlinux-cn）或 offtopic@archlinuxcn.org（#archlinux-cn-offtopic）为好友加入聊天。
+
+### 通用规则
+
+*   所有的 IRC 频道都位于 freenode 上，请遵守它们的 [网络政策](https://freenode.net/policies) 和 [频道指南](https://freenode.net/changuide)。
+*   请勿在除 #archlinux-cn-nsfw 以外其他频道发送 NSFW(Not Safe For Work) 内容。
+*   加入频道以后先通过 `/topic` 读一下频道的话题,会包含这个频道相关的一些信息。
+*   [不要问能不能问，请直接问。](https://fars.ee/~justask.html)
+*   频道内的机器人不止一个，不过也请不要滥用机器人指令。如果你想加入你自己的机器人，欢迎先来 #archlinux-cn-bot 测试。
+*   不要刷屏，粘贴日志请考虑使用类 Pastebin 服务，如 [https://cfp.vim-cn.com/](https://cfp.vim-cn.com/) 或 [https://fars.ee/](https://fars.ee/) 。
+*   贴图同样可以用类图床服务，如 [https://img.vim-cn.com/](https://img.vim-cn.com/) 或 [https://fars.ee/](https://fars.ee/) 。
+*   不要对着桥接机器人说话，人类的名字在它们后面，请在回复时输入桥接机器人后面的昵称。用 weechat 客户端可以使用 [bot2human](https://github.com/tuna/scripts/blob/master/weechat_bot2human.py) 插件隐藏机器人姓名。
+*   几个频道的成员基本相同，在一个频道提问后短时间没有回答请不要同时转发到别的频道。过分发布可能被视为 spam 行为。
+
+### #archlinux-cn 的额外规则
+
+*   #archlinux-cn 频道的主要目的是讨论和支持 Arch Linux 。如果你正在使用某个 Arch Linux 的衍生发行版
+
+（如 Antergos、Manjaro、Chakara、Parabola GNU/Linux Libre 等)，非 Arch Linux 的 GNU/Linux 发行版， 或者在不受官方支持的非标准环境中使用（例如 Windows Subsystem for Linux 中），请在提问前先说明。
+
+*   推荐阅读 [提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md)，一般一个好的问题更容易在短时间内被注意并得到解决。
+*   别依赖帮助,自己去寻找它.重复提问前先等等,大多数问题都是由其他用户回答的,例如你.
+*   也别害羞,如果遇到你能回答的问题，请试着给予解答,只有更多的志愿者参与回答这个频道才能蓬勃发展.
+*   如果有其他人询问关于你的问题的更多信息,记得最好总是回复他/他/它.
+*   管理员或其他成员在话题跑题或明显不属于技术话题时可能会要求移步至 #archlinux-cn-offtopic ,如果被要求这样做或者转至私聊，请遵守这个要求。
+
+### 对于 Telegram 用户
+
+*   加入后默认会用姓名作为昵称转发，请尽量设置一个便于 IRC 用户提及的昵称。可以通过 /nick 命令查看和修改昵称。
+*   尽管转发机器人会自动将超过三行的文字发送至 Pastebin 服务，但仍需注意此点。
+*   由于 Bot API 的限制（Bot 之间相互不可见），由 Telegram 上的其他机器人发送的消息无法被其他侧的 IM 看到。引用 Bot 消息时请注意。
+*   #archlinux-cn 和 #archlinux-cn-offtopic 已经设置成不会转发 Sticker。图片、视频、语音、文档等如未超过大小限制会被正常转发到图床。
+*   由于存在转发机器人，请注意发布的信息中不要包括自己和其他人的隐私，已转发到 IRC 的消息无法被删除或修改。误发包含隐私信息的图片请联系图床管理员删除服务器存档（但是无法控制浏览器缓存）。
+
+有关中文社区交流群的其它常见问题（例如机器人的操作指南）， 请参阅 [https://fars.ee/~readme.html](https://fars.ee/~readme.html)
 
 ## 执行
 

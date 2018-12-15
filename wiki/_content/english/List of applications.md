@@ -2891,7 +2891,7 @@ See also [Wikipedia:Comparison of 3D computer graphics software](https://en.wiki
 
 *   **[MakeHuman™](https://en.wikipedia.org/wiki/MakeHuman "wikipedia:MakeHuman")** — Parametrical modeling program for creating human bodies.
 
-	[http://www.makehuman.org/](http://www.makehuman.org/) || [makehuman](https://aur.archlinux.org/packages/makehuman/)
+	[http://www.makehumancommunity.org/](http://www.makehumancommunity.org/) || [makehuman](https://aur.archlinux.org/packages/makehuman/)
 
 *   **[Sweet Home 3D](https://en.wikipedia.org/wiki/Sweet_Home_3D "wikipedia:Sweet Home 3D")** — Interior design software application for the planning and development of floor plans
 
@@ -6681,7 +6681,7 @@ See also [Wikipedia:Comparison of reference management software](https://en.wiki
 
 #### PDF and DjVu
 
-See [PDF, PS and DjVu](/index.php/PDF,_PS_and_DjVu "PDF, PS and DjVu").
+See [PDF, PS and DjVu#Viewers](/index.php/PDF,_PS_and_DjVu#Viewers "PDF, PS and DjVu").
 
 #### E-book
 
@@ -7205,6 +7205,10 @@ See also [Wikipedia:Comparison of computer-assisted translation tools](https://e
 
 	[http://apertium.org/](http://apertium.org/) || [apertium](https://aur.archlinux.org/packages/apertium/)
 
+*   **Crow Translate** — Simple and lightweight translator that allows to translate and speak text using Google, Yandex and Bing.
+
+	[https://crow-translate.github.io/](https://crow-translate.github.io/) || [crow-translate](https://aur.archlinux.org/packages/crow-translate/)
+
 *   **[Gtranslator](https://en.wikipedia.org/wiki/Gtranslator "wikipedia:Gtranslator")** — Enhanced gettext po file editor for the GNOME. It handles all forms of gettext po files and includes very useful features.
 
 	[https://wiki.gnome.org/Apps/Gtranslator](https://wiki.gnome.org/Apps/Gtranslator) || [gtranslator](https://www.archlinux.org/packages/?name=gtranslator)
@@ -7694,6 +7698,10 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 *   **OTPClient** — Highly secure and easy to use GTK+ software for two-factor authentication that supports both Time-based One-time Passwords (TOTP) and HMAC-Based One-Time Passwords (HOTP).
 
 	[https://github.com/paolostivanin/OTPClient](https://github.com/paolostivanin/OTPClient) || [otpclient](https://aur.archlinux.org/packages/otpclient/)
+
+*   **Passbook** — Modern password manager for GNOME.
+
+	[https://wiki.gnome.org/Apps/Passbook](https://wiki.gnome.org/Apps/Passbook) || [passbook](https://aur.archlinux.org/packages/passbook/)
 
 *   **Password Gorilla** — A cross-platform password manager.
 

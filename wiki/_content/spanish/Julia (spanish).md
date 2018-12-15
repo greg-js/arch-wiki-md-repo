@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Julia](/index.php/Julia "Julia"), revisada por última vez el **2018-12-05**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Julia&diff=0&oldid=558306) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Julia](/index.php/Julia "Julia"), revisada por última vez el **2018-12-14**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Julia&diff=0&oldid=559026) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 **Nota:** [https://julialang.org/](https://julialang.org/) contiene una documentación magnífica y de código abierto. La información no específica a Arch debería aportarse allí.
 
@@ -42,11 +42,16 @@ La compilación del paquete Arpack puede generar un error como el que se muestra
 
 Arpack empaqueta su propio `libarpack.so` que requiere que el DSO `libopenblas64_.so.0` esté presente en el sistema:
 
- `$ ldd ~/packages/Arpack/UiiMc/deps/usr/lib/libarpack.so | grep 'not found'`  `        libopenblas64_.so.0 => not found` 
+ `$ ldd ~/.julia/packages/Arpack/UiiMc/deps/usr/lib/libarpack.so | grep 'not found'`  `        libopenblas64_.so.0 => not found` 
 
-La parte `UiiMc` de la ruta puede ser diferente en su sistema. Tal y como se muestra, el DSO requerido no está presente en el sistema, lo que causa el error de compilación.
+La parte `UiiMc` de la ruta puede ser diferente en su sistema. Tal y como se muestra, el DSO requerido no está presente en el sistema, lo que causa el error de compilación. Una [solución](https://github.com/JuliaLinearAlgebra/Arpack.jl/issues/5#issuecomment-437869878) para este problema es crear un enlace simbólico al archivo DSO proporcionado por el paquete [openblas](https://www.archlinux.org/packages/?name=openblas), es decir
 
-El DSO `/usr/lib/libopenblas.so` del paquete [openblas](https://www.archlinux.org/packages/?name=openblas) probablemente no funcione de manera estable como reemplazo directo, dado que [el sufijo 64 parece usarse para indicar una diferencia en la interfaz](https://github.com/xianyi/OpenBLAS/issues/1763) y [el sufijo 64 indica una versión diferente en lugar de una diferencia en la arquitectura de destino](http://numpy-discussion.10968.n7.nabble.com/Linking-Numpy-with-parallel-OpenBLAS-td41590.html).
+```
+# ln -s /usr/lib/libopenblas.so /usr/lib/libopenblas64_.so.0 
+
+```
+
+y luego recompilar el paquete Arpack en Julia. Sin embargo, no está claro si el DSO `/usr/lib/libopenblas.so` del paquete [openblas](https://www.archlinux.org/packages/?name=openblas) puede funcionar de manera estable como reemplazo directo, dado que [el sufijo 64 parece usarse para indicar una diferencia en la interfaz](https://github.com/xianyi/OpenBLAS/issues/1763) y [el sufijo 64 indica una versión diferente en lugar de una diferencia en la arquitectura de destino](http://numpy-discussion.10968.n7.nabble.com/Linking-Numpy-with-parallel-OpenBLAS-td41590.html).
 
 ## Integración con editores
 

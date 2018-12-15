@@ -497,7 +497,7 @@ See also [Wikipedia:Comparison of 3D computer graphics software](https://en.wiki
 
 *   **[MakeHuman™](https://en.wikipedia.org/wiki/MakeHuman "wikipedia:MakeHuman")** — Parametrical modeling program for creating human bodies.
 
-	[http://www.makehuman.org/](http://www.makehuman.org/) || [makehuman](https://aur.archlinux.org/packages/makehuman/)
+	[http://www.makehumancommunity.org/](http://www.makehumancommunity.org/) || [makehuman](https://aur.archlinux.org/packages/makehuman/)
 
 *   **[Sweet Home 3D](https://en.wikipedia.org/wiki/Sweet_Home_3D "wikipedia:Sweet Home 3D")** — Interior design software application for the planning and development of floor plans
 

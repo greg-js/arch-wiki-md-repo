@@ -182,7 +182,7 @@ Al buscar archivos para eliminar, es importante encontrar los archivos que ocupa
 
 Elimine archivos `.pkg` no deseados de `/var/cache/pacman/pkg/` para liberar espacio en disco.
 
-Consulte [Pacman#Cleaning the package cache]] para obtener más información.
+Consulte [Pacman (Español)#Limpiar la memoria caché de los paquetes](/index.php/Pacman_(Espa%C3%B1ol)#Limpiar_la_memoria_caché_de_los_paquetes "Pacman (Español)") para obtener más información.
 
 ### Paquetes no utilizados (huérfanos)
 

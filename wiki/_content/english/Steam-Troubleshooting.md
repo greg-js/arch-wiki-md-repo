@@ -288,7 +288,7 @@ If your Steam apps (games, software…) download speed through the client is unu
 
 If the Steam launcher refuses to start and you get an error saying: "*Fatal Error: Steam needs to be online to update*" while you are online, then there might be issues with name resolving.
 
-Try to install [nss-mdns](https://www.archlinux.org/packages/?name=nss-mdns).
+Try to install [nss-mdns](https://www.archlinux.org/packages/?name=nss-mdns) or [lib32-nss](https://www.archlinux.org/packages/?name=lib32-nss).
 
 ### Steam forgets password
 

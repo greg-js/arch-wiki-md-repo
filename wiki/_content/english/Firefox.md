@@ -184,9 +184,10 @@ When your default language choice does not stick, see [#Firefox does not remembe
 
 *   To bring the [KDE](/index.php/KDE "KDE") look to GTK apps (including Firefox), install [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) and [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config). Afterwards, go to *System Settings > Application Style > GTK*. Be sure to choose 'Breeze' in 'Select a GTK2/GTK3 Theme' and check 'Show icons in GTK buttons' and 'Show icons in GTK'.
 *   To make the left mouse button warp the scrollbar instead of the middle one on KDE, go to *System Settings > Application Style > GTK* and set the checkbox for "Left mouse button warps scrollbar".
-*   To use the KDE file selection dialog in Firefox 64 or newer:
-    1.  Copy the Firefox [desktop entry](/index.php/Desktop_entry "Desktop entry") `/usr/share/applications/firefox.desktop` to `~/.local/share/applications/firefox.desktop`,
-    2.  Edit `~/.local/share/applications/firefox.desktop` and add `GTK_USE_PORTAL=1` to all `Exec` lines before the actual command. E.g.: `Exec=GTK_USE_PORTAL=1 /usr/lib/firefox/firefox %u`.
+*   To use the KDE file selection and print dialogs in Firefox 64 or newer:
+    1.  Install [xdg-desktop-portal](https://www.archlinux.org/packages/?name=xdg-desktop-portal) and [xdg-desktop-portal-kde](https://www.archlinux.org/packages/?name=xdg-desktop-portal-kde),
+    2.  Copy the Firefox [desktop entry](/index.php/Desktop_entry "Desktop entry") `/usr/share/applications/firefox.desktop` to `~/.local/share/applications/firefox.desktop`,
+    3.  Edit `~/.local/share/applications/firefox.desktop` and add `GTK_USE_PORTAL=1` to all `Exec` lines before the actual command. E.g.: `Exec=GTK_USE_PORTAL=1 /usr/lib/firefox/firefox %u`.
 *   For integration with [KDE](/index.php/KDE "KDE") mime type system and file dialog, one can use [firefox-kde-opensuse](https://aur.archlinux.org/packages/firefox-kde-opensuse/) variant from AUR with OpenSUSE’s patches applied.
 *   Extensions/add-ons may provide additional integration, such as:
     *   Browser integration in [Plasma](/index.php/Plasma "Plasma"): requires [plasma-browser-integration](https://www.archlinux.org/packages/?name=plasma-browser-integration) and the [plasma-integration add-on](https://addons.mozilla.org/firefox/addon/plasma-integration/).

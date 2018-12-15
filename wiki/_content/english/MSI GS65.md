@@ -81,6 +81,8 @@ The [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nou
 
 [Multihead](/index.php/Multihead "Multihead") support works with intel-virtual-output tool, following the 'port wired to Nvidia' instructions at [Bumblebee](https://github.com/Bumblebee-Project/Bumblebee/wiki/Multi-monitor-setup) and using this post at [Stack Exchange](https://superuser.com/questions/1082617/bumblebee-with-hdmi-on-nvidia-make-usable-both-with-without-connected-monitor).
 
+Thunderbolt port is wired to Intel GPU thus allowing for external monitor to be used with nvidia gpu off.
+
 ### Webcam
 
 The webcam is device 003 on bus 001\. See [Webcam setup](/index.php/Webcam_setup "Webcam setup") for more details.

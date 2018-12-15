@@ -43,7 +43,7 @@ The Qt framework is emerging as a major development platform and is the basis of
     *   [5.3 Icon theme is not applied](#Icon_theme_is_not_applied)
     *   [5.4 Theme not applied to root applications](#Theme_not_applied_to_root_applications)
     *   [5.5 Qt4 style not respected](#Qt4_style_not_respected)
-    *   [5.6 Applications using QML crash or don't work with Qt 5.8 - 5.10](#Applications_using_QML_crash_or_don't_work_with_Qt_5.8_-_5.10)
+    *   [5.6 Applications using QML crash or do not work with Qt 5.8 - 5.10](#Applications_using_QML_crash_or_do_not_work_with_Qt_5.8_-_5.10)
     *   [5.7 All Qt5-based applications fail to run after Qt5 update](#All_Qt5-based_applications_fail_to_run_after_Qt5_update)
 *   [6 See also](#See_also)
 
@@ -61,11 +61,11 @@ Qt packages do not provide the usual bins (e.g. *qmake*) in `/usr/bin` anymore. 
 
 By installing [qtchooser](https://aur.archlinux.org/packages/qtchooser/) you can restore the usual bins (e.g. *qmake*) in `/usr/bin` and setup the Qt toolkit to use. By default Qt5 is used.
 
-**Warning:** [qtchooser](https://aur.archlinux.org/packages/qtchooser/) is now in conflict with [qt5-base](https://www.archlinux.org/packages/?name=qt5-base). You can install it in /usr/local if you really need it, but it's not officially supported[[1]](https://bugs.archlinux.org/task/51308).
+**Warning:** [qtchooser](https://aur.archlinux.org/packages/qtchooser/) is now in conflict with [qt5-base](https://www.archlinux.org/packages/?name=qt5-base). You can install it in /usr/local if you really need it, but it's not officially supported. See [FS#51308](https://bugs.archlinux.org/task/51308).
 
 ### Using environment variables
 
-To define the default Qt toolkit, you can create `QT_SELECT` [environment variable](/index.php/Environment_variable "Environment variable"). For example, to set Qt4, do `export QT_SELECT=4` in your shell's init file (e.g. `~/.bash_profile` or `~/.zprofile`).
+To define the default Qt toolkit, you can create `QT_SELECT` [environment variable](/index.php/Environment_variable "Environment variable"). For example, to use Qt4, set `QT_SELECT=4`.
 
 ### Using configuration files
 
@@ -171,7 +171,7 @@ If you have GTK+ and Qt applications, their looks might not exactly blend in ver
 
 ### Configuration of Qt5 apps under environments other than KDE Plasma
 
-Unlike Qt4, Qt5 doesn't ship a qtconfig utility to configure fonts, icons or styles. Instead, it will try to use the settings from the running desktop environment. In KDE Plasma or GNOME this works well, but in other less popular desktop environments or window managers it can lead to missing icons in Qt5 applications. One way to solve this is to fake the running desktop environment by setting `XDG_CURRENT_DESKTOP=KDE` or `GNOME`, and then using the corresponding configuration application to set the desired icon set.
+Unlike Qt4, Qt5 does not ship a qtconfig utility to configure fonts, icons or styles. Instead, it will try to use the settings from the running desktop environment. In KDE Plasma or GNOME this works well, but in other less popular desktop environments or window managers it can lead to missing icons in Qt5 applications. One way to solve this is to fake the running desktop environment by setting `XDG_CURRENT_DESKTOP=KDE` or `GNOME`, and then using the corresponding configuration application to set the desired icon set.
 
 Another solution is provided by the [qt5ct](https://www.archlinux.org/packages/?name=qt5ct) package, which provides a Qt5 QPA independent of the desktop environment and a configuration utility. After installing the package, run `qt5ct` to set an icon theme, and set the [environment variable](/index.php/Environment_variable "Environment variable") `QT_QPA_PLATFORMTHEME="qt5ct"` so that the settings are picked up by Qt applications. Alternatively, use `--platformtheme qt5ct` as argument to the Qt5 application.
 
@@ -192,14 +192,14 @@ Qt supports most platforms that are available today, even some of the more obscu
 
 #### Android
 
-First of all you need an [Android SDK](/index.php/Android "Android") and NDK. Install SDK [android-sdk](https://aur.archlinux.org/packages/android-sdk/) (some tools have been removed) or [android-sdk-25.2.5](https://aur.archlinux.org/packages/android-sdk-25.2.5/) and NDK [android-ndk-10e](https://aur.archlinux.org/packages/android-ndk-10e/) from [AUR](/index.php/AUR "AUR") or using [Android Studio](/index.php/Android_Studio "Android Studio"). It is highly recommended to install NDK version [10e](https://developer.android.com/ndk/downloads/older_releases.html#ndk-10c-downloads) because of some [known issues](https://wiki.qt.io/Qt_for_Android_known_issues). Next you are going to need Qt 5 for Android. You can install it from [AUR](/index.php/AUR "AUR") as described bellow or build it yourself, you can find build instructions on Qt [wiki](http://wiki.qt.io/Android) page.
+First of all, you need an [Android SDK](/index.php/Android "Android") and NDK. Install SDK [android-sdk](https://aur.archlinux.org/packages/android-sdk/) (some tools have been removed) or [android-sdk-25.2.5](https://aur.archlinux.org/packages/android-sdk-25.2.5/) and NDK [android-ndk-10e](https://aur.archlinux.org/packages/android-ndk-10e/) from [AUR](/index.php/AUR "AUR") or using [Android Studio](/index.php/Android_Studio "Android Studio"). It is highly recommended to install NDK version [10e](https://developer.android.com/ndk/downloads/older_releases.html#ndk-10c-downloads) because of some [known issues](https://wiki.qt.io/Qt_for_Android_known_issues). Next you are going to need Qt 5 for Android. You can install it from [AUR](/index.php/AUR "AUR") as described below or build it yourself, you can find build instructions on Qt [wiki](http://wiki.qt.io/Android) page.
 
 *   [android-qt5-arm64-v8a](https://aur.archlinux.org/packages/android-qt5-arm64-v8a/) - arm64-v8a [ABI](https://developer.android.com/ndk/guides/abis.html)
 *   [android-qt5-armeabi](https://aur.archlinux.org/packages/android-qt5-armeabi/) - armeabi
-*   [android-qt5-armeabi-v7a](https://aur.archlinux.org/packages/android-qt5-armeabi-v7a/) - armeabi-v7a
+*   [android-armv7a-eabi-qt5](https://aur.archlinux.org/packages/android-armv7a-eabi-qt5/) - armeabi-v7a
 *   [android-qt5-mips](https://aur.archlinux.org/packages/android-qt5-mips/) - mips
-*   [android-qt5-x86](https://aur.archlinux.org/packages/android-qt5-x86/) - x86
-*   [android-qt5-x86_64](https://aur.archlinux.org/packages/android-qt5-x86_64/) - x86_64
+*   [android-x86-qt5](https://aur.archlinux.org/packages/android-x86-qt5/) - x86
+*   [android-x86-64-qt5](https://aur.archlinux.org/packages/android-x86-64-qt5/) - x86_64
 
 Or you can use a [Qt Installer](https://download.qt.io/official_releases/qt/5.11/5.11.1/qt-opensource-linux-x64-5.11.1.run), for a full list see [Official Qt installers](https://download.qt.io/official_releases/qt/).
 
@@ -459,35 +459,29 @@ Since Qt 5.1 SVG support has moved into a module. Since [qt5-base](https://www.a
 
 As the user theme file (`$XDG_CONFIG_HOME/Trolltech.conf`), are not read by other accounts, the selected theme will not apply to [X applications run as root](/index.php/Running_X_apps_as_root "Running X apps as root"). Possible solutions include:
 
-*   Create symlinks, e.g
-
-```
-# ln -s /home/[username]/.config/Trolltech.conf /etc/xdg/Trolltech.conf
-
-```
-
+*   Create symlinks, e.g `# ln -s /home/[username]/.config/Trolltech.conf /etc/xdg/Trolltech.conf` 
 *   Configure system-wide theme file: `/etc/xdg/Trolltech.conf`
 *   Adjust the theme as root
 
 ### Qt4 style not respected
 
-If pure Qt4 (non-KDE) applications do not stick with your selected Qt4 style, then you'll probably need to tell Qt4 how to find KDE's styles (Oxygen, Phase etc.). You just need to set the environment variable `QT_PLUGIN_PATH`. E.g. put
+If pure Qt4 (non-KDE) applications do not stick with your selected Qt4 style, then you will probably need to tell Qt4 how to find KDE's styles (Oxygen, Phase etc.). You just need to set the [environment variable](/index.php/Environment_variable "Environment variable") `QT_PLUGIN_PATH`. E.g.:
 
 ```
-export QT_PLUGIN_PATH=$HOME/.kde4/lib/kde4/plugins/:/usr/lib/kde4/plugins/
+QT_PLUGIN_PATH=$HOME/.kde4/lib/kde4/plugins/:/usr/lib/kde4/plugins/
 
 ```
 
-into your `/etc/profile` (or `~/.profile` if you do not have root access). `qtconfig-qt4` should then be able to find your kde styles and everything should look nice again!
+`qtconfig-qt4` should then be able to find your kde styles and everything should look nice again!
 
 Alternatively, you can symlink the Qt4 styles directory to the KDE4 styles one:
 
 ```
-# ln -s /usr/lib/{kde,qt}4/plugins/styles/[theme name]
+# ln -s /usr/lib/{kde,qt}4/plugins/styles/*theme_name*
 
 ```
 
-### Applications using QML crash or don't work with Qt 5.8 - 5.10
+### Applications using QML crash or do not work with Qt 5.8 - 5.10
 
 **Note:** This is meant to be resolved with Qt 5.11 (see BBS thread [222486: sddm-helper crashes](https://bbs.archlinux.org/viewtopic.php?id=222486)), published into the main repositories in late May 2018.
 
@@ -495,7 +489,10 @@ Between Qt 5.8 and 5.10, applications that rely on QML (such as [SDDM](/index.ph
 
 If you do not want to -- or cannot -- allow such execution privileges, a workaround is to set the following as appropriate in your [environment variables](/index.php/Environment_variables "Environment variables"):
 
- `QML_DISABLE_DISK_CACHE=1` 
+```
+QML_DISABLE_DISK_CACHE=1
+
+```
 
 ### All Qt5-based applications fail to run after Qt5 update
 

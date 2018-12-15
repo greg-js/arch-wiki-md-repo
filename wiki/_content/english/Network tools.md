@@ -38,7 +38,7 @@ See also [Wikipedia:Netcat](https://en.wikipedia.org/wiki/Netcat "wikipedia:Netc
 
 	[https://packages.debian.org/sid/netcat-openbsd](https://packages.debian.org/sid/netcat-openbsd) || [openbsd-netcat](https://www.archlinux.org/packages/?name=openbsd-netcat)
 
-*   **libressl-netcat** — Low level UDP/TCP connection tool with support for TLS protocol
+*   **libressl-netcat** — Low level UDP/TCP connection tool with support for TLS protocol.
 
 	[https://www.libressl.org](https://www.libressl.org) || [libressl-netcat](https://aur.archlinux.org/packages/libressl-netcat/)
 

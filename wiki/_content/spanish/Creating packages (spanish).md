@@ -38,7 +38,7 @@ Este artículo tiene como objetivo ayudar a los usuarios a crear sus propios paq
 
 ## Resumen
 
-Los paquetes en Arch Linux se construyen utilizando la utilidad [makepkg](/index.php/Makepkg "Makepkg") y la información almacenada en un archivo [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"). Cuando `makepkg` se ejecuta, busca un archivo `PKGBUILD` en el directorio actual y sigue las instrucciones en él para adquirir los archivos requeridos y/o copilarlos para enpaquetarlos en un archivo de paquete(`nombredelpaquete.pkg.tar.xz`). El paquete resultante contiene archivos binarios e instrucciones de instalación listas para ser instaladas por [pacman](/index.php/Pacman "Pacman").
+Los paquetes en Arch Linux se construyen utilizando la utilidad [makepkg](/index.php/Makepkg "Makepkg") y la información almacenada en un archivo [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"). Cuando `makepkg` se ejecuta, busca un archivo `PKGBUILD` en el directorio actual y sigue las instrucciones en él para adquirir los archivos requeridos y/o copilarlos para empaquetarlos en un archivo de paquete(`nombredelpaquete.pkg.tar.xz`). El paquete resultante contiene archivos binarios e instrucciones de instalación listas para ser instaladas por [pacman](/index.php/Pacman "Pacman").
 
 Un paquete de Arch no es más que un archivo tar o 'tarball', comprimido usando xz, que contiene los siguientes archivos generados por makepkg:
 

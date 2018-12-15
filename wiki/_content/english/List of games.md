@@ -407,7 +407,7 @@ See also [Wikipedia:List of massively multiplayer online games](https://en.wikip
 
 *   **[Savage 2: A Tortured Soul](https://en.wikipedia.org/wiki/Savage_2:_A_Tortured_Soul "wikipedia:Savage 2: A Tortured Soul")** — Fantasy themed online multiplayer team-based FPS/RTS/RPG hybrid. Free-to-play as of December 2008\. Pay for premium accounts providing crucial game elements such as extra inventory slots, access to clans and removal of the Hellbourne unit restrictions (per-account), as well as access to replays and stats.
 
-	[http://savage2.com](http://savage2.com) || [savage2](https://aur.archlinux.org/packages/savage2/)
+	[http://savage2.net](http://savage2.net) || [savage2](https://aur.archlinux.org/packages/savage2/)
 
 *   **The Mana World** — Serious effort to create an innovative free and open source MMORPG
 

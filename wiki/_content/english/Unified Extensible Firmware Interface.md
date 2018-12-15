@@ -214,6 +214,8 @@ There are few tools that can access/modify the UEFI variables, namely
 
 #### efibootmgr
 
+You will have to [install](/index.php/Install "Install") the [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) package.
+
 **Note:**
 
 *   If *efibootmgr* does not work on your system, you can reboot into [#UEFI Shell](#UEFI_Shell) and use `bcfg` to create a boot entry for the bootloader.

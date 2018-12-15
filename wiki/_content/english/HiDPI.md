@@ -64,7 +64,7 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
 
 ### GNOME
 
-To enable HiDPI, Settings > Devices > Displays，or use gsettings:
+To enable HiDPI, *Settings > Devices > Displays*，or use gsettings:
 
 ```
 $ gsettings set org.gnome.desktop.interface scaling-factor 2
@@ -77,7 +77,7 @@ $ gsettings set org.gnome.desktop.interface scaling-factor 2
 
 A setting of `2, 3, etc`, which is all you can do with `scaling-factor`, may not be ideal for certain HiDPI displays and smaller screens (e.g. small tablets).
 
-*   wayland
+*   Wayland
 
 Enable fractional Scaling experimental-feature:
 
@@ -86,9 +86,9 @@ $ gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuf
 
 ```
 
-then open Settings > Devices > Displays
+then open *Settings > Devices > Displays*
 
-*   xorg
+*   Xorg
 
 You can achieve any non-integer scale factor by using a combination of GNOME's `scaling-factor` and [xrandr](/index.php/Xrandr "Xrandr"). This combination keeps the TTF fonts properly scaled so that they do not become blurry if using `xrandr` alone. You specify zoom-in factor with `gsettings` and zoom-out factor with [xrandr](/index.php/Xrandr "Xrandr").
 
@@ -129,30 +129,30 @@ You can use KDE's settings to fine tune font, icon, and widget scaling. This sol
 
 To adjust font, widget, and icon scaling together:
 
-1.  System Settings → Display and Monitor → Display Configuration → Scale Display
+1.  *System Settings > Display and Monitor > Display Configuration > Scale Display*
 2.  Drag the slider to the desired size
 3.  Restart for the settings to take effect
 
 To adjust only font scaling:
 
-1.  System Settings → Fonts
+1.  *System Settings > Fonts*
 2.  Check "Force fonts DPI" and adjust the DPI level to the desired value. This setting should take effect immediately for newly started applications. You will have to logout and login for it to take effect on Plasma desktop.
 
 To adjust only icon scaling:
 
-1.  System Settings → Icons → Advanced
+1.  *System Settings > Icons > Advanced*
 2.  Choose the desired icon size for each category listed. This should take effect immediately.
 
 **Display Scale not integer bug :**
 
-When you use not integer values for Display Scale it causes font render issue in some QT application ( ex. okular ).
+When you use not integer values for Display Scale it causes font render issue in some QT application ( ex. Okular ).
 
 A workaround for this is to:
 
-1.  Set the scale value to 1
+1.  Set the scale value to `1`
 2.  Adjust your font and icons and use the "Force fonts DPI" ( this affects all apps, also GTK but not create issue with the fonts )
 3.  Restart KDE
-4.  If required tune the GTK apps using the variables GDK_SCALE/GDK_DPI_SCALE (as described above)
+4.  If required tune the GTK apps using the variables `GDK_SCALE`/`GDK_DPI_SCALE` (as described above)
 
 #### Tray icons with fixed size
 
@@ -160,13 +160,13 @@ The tray icons are not scaled with the rest of the desktop, since Plasma ignores
 
 ### Xfce
 
-Go to Settings Manager → Appearance → Fonts, and change the DPI parameter. The value of 180 or 192 seems to work well on Retina screens. To get a more precise number, you can use `xdpyinfo | grep resolution`, and then double it.
+Go to *Settings Manager > Appearance > Fonts*, and change the DPI parameter. The value of 180 or 192 seems to work well on Retina screens. To get a more precise number, you can use `xdpyinfo | grep resolution`, and then double it.
 
-To enlarge icons in system tray, right-click on it (aim for empty space / top pixels / bottom pixels, so that you will not activate icons themselves) → “Properties” → set “Maximum icon size” to 32, 48 or 64.
+To enlarge icons in system tray, *right-click on it (aim for empty space / top pixels / bottom pixels, so that you will not activate icons themselves) > Properties*, set “Maximum icon size” to 32, 48 or 64.
 
-Xfwm comes with two hidpi themes: Default-hdpi and Default-xhdpi. You can set them under Settings Manager → Window Manager → Style → Theme.
+Xfwm comes with two hidpi themes: Default-hdpi and Default-xhdpi. You can set them under *Settings Manager > Window Manager > Style > Theme*.
 
-You can set the default icon sizes of gtk2 menus, buttons and so on under Settings Manager → Settings Editor → xsettings → Gtk → IconSizes, with a line like this: `gtk-large-toolbar=96,96:gtk-small-toolbar=64,64:gtk-menu=64,64:gtk-dialog=96,96:gtk-button=64,64:gtk-dnd=64,64`. "gtk-dnd" is for the icons during drag'n'drop, the others are quite self-explanatory. You can use any value your icon theme supports.
+You can set the default icon sizes of gtk2 menus, buttons and so on under *Settings Manager > Settings Editor > xsettings > Gtk > IconSizes*, with a line like this: `gtk-large-toolbar=96,96:gtk-small-toolbar=64,64:gtk-menu=64,64:gtk-dialog=96,96:gtk-button=64,64:gtk-dnd=64,64`. "gtk-dnd" is for the icons during drag'n'drop, the others are quite self-explanatory. You can use any value your icon theme supports.
 
 ### Cinnamon
 
@@ -174,7 +174,7 @@ Has good support out of the box.
 
 ### Enlightenment
 
-For E18, go to the E Setting panel. In Look → Scaling, you can control the UI scaling ratios. A ratio of 1.2 seems to work well for the native resolution of the MBPr 15" screen.
+For E18, go to the E Setting panel. In *Look > Scaling*, you can control the UI scaling ratios. A ratio of 1.2 seems to work well for the native resolution of the MBPr 15" screen.
 
 ## X Server
 
@@ -182,8 +182,8 @@ Some programs use the DPI given by the X server. Examples are i3 ([source](https
 
 To verify that the X Server has properly detected the physical dimensions of your monitor, use the *xdpyinfo* utility from the [xorg-xdpyinfo](https://www.archlinux.org/packages/?name=xorg-xdpyinfo) package:
 
+ `$ xdpyinfo | grep -B 2 resolution` 
 ```
-$ xdpyinfo | grep -B 2 resolution
 screen #0:
   dimensions:    3200x1800 pixels (423x238 millimeters)
   resolution:    192x192 dots per inch
@@ -207,7 +207,6 @@ Xft.hintstyle:  hintfull
 Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
-
 ```
 
 Make sure the settings are loaded properly when X starts, for instance in your `~/.xinitrc` with `xrdb -merge ~/.Xresources` (see [Xresources](/index.php/Xresources "Xresources") for more information).
@@ -310,11 +309,7 @@ As a general rule, applications can be launched with a custom scaling value, e.g
 
 Add `--force-device-scale-factor=2` as a flag to the atom.desktop file:
 
- `/usr/share/applications/atom.desktop` 
-```
-Exec=/usr/bin/atom --force-device-scale-factor=2 %F
-
-```
+ `/usr/share/applications/atom.desktop`  `Exec=/usr/bin/atom --force-device-scale-factor=2 %F` 
 
 ### Browsers
 
@@ -374,7 +369,7 @@ There is also the [gimp-hidpi](https://github.com/jedireza/gimp-hidpi).
 
 IntelliJ IDEA 15 and above should include HiDPI support.[[1]](http://blog.jetbrains.com/idea/2015/07/intellij-idea-15-eap-comes-with-true-hidpi-support-for-windows-and-linux/) If it does not work, the most convenient way to fix the problem in this case seems to be changing the Override Default Fonts setting:
 
-	*File -> Settings -> Behaviour & Appearance -> Appearance*
+	*File > Settings > Behaviour & Appearance > Appearance*
 
 The addition of `-Dhidpi=true` to the vmoptions file in either `$HOME/.IdeaC14/` or `/usr/share/intelligj-idea-ultimate-edition/bin/` of [release 14](https://youtrack.jetbrains.com/issue/IDEA-114944) should not be required anymore.
 
@@ -409,9 +404,9 @@ According to [[2]](https://bugzilla.xamarin.com/show_bug.cgi?id=35870), Mono app
 
 NetBeans allows the font size of its interface to be controlled using the `--fontsize` parameter during startup. To make this change permanent edit the `/usr/share/netbeans/etc/netbeans.conf` file and append the `--fontsize` parameter to the `netbeans_default_options` property.[[3]](http://wiki.netbeans.org/FaqFontSize)
 
-The editor fontsize can be controlled from Tools → Option → Fonts & Colors.
+The editor fontsize can be controlled from *Tools > Option > Fonts & Colors*.
 
-The output window fontsize can be controlled from Tools → Options → Miscelaneous → Output
+The output window fontsize can be controlled from *Tools > Options > Miscelaneous > Output*
 
 ### Skype
 
@@ -421,21 +416,13 @@ Skype for Linux ([skypeforlinux-stable-bin](https://aur.archlinux.org/packages/s
 
 Slack ([slack-desktop](https://aur.archlinux.org/packages/slack-desktop/)), like all [Electron](https://electronjs.org/) apps, can be configured to use a custom scaling value by adding a `--force-device-scale-factor` flag to the .desktop file. This is normally located at `/usr/share/applications/`. The flag should be added to the line beginning with "Exec=". For example:
 
- `/usr/share/applications/slack.desktop` 
-```
-Exec=env LD_PRELOAD=/usr/lib/libcurl.so.3 /usr/bin/slack --force-device-scale-factor=1.5 %U
-
-```
+ `/usr/share/applications/slack.desktop`  `Exec=env LD_PRELOAD=/usr/lib/libcurl.so.3 /usr/bin/slack --force-device-scale-factor=1.5 %U` 
 
 ### Spotify
 
 You can change scale factor by simple `Ctrl++` for zoom in, `Ctrl+-` for zoom out and `Ctrl+0` for default scale. Scaling setting will be saved in `~/.config/spotify/Users/YOUR-SPOTIFY-USER-NAME/prefs`:
 
- `~/.config/spotify/Users/YOUR-SPOTIFY-USER-NAME/prefs` 
-```
-app.browser.zoom-level=100
-
-```
+ `~/.config/spotify/Users/YOUR-SPOTIFY-USER-NAME/prefs`  `app.browser.zoom-level=100` 
 
 Also Spotify can be launched with a custom scaling factor which will be multiplied with setting specified in `~/.config/spotify/Users/YOUR-SPOTIFY-USER-NAME/prefs`, for example
 
@@ -449,7 +436,7 @@ $ spotify --force-device-scale-factor=1.5
 #### Official HiDPI support
 
 *   Starting on 25 of January 2018 in the beta program there is actual support for HiDPI and it should be automatically detected.
-*   Steam -> Settings -> Interface -> check "Enlarge text and icons based on monitor size" (restart required)
+*   *Steam > Settings > Interface*, check "Enlarge text and icons based on monitor size" (restart required)
 *   If it not automatically detected use `GDK_SCALE=2` to set the desired scale factor.
 
 #### Unofficial
@@ -462,11 +449,11 @@ The [HiDPI-Steam-Skin](https://github.com/MoriTanosuke/HiDPI-Steam-Skin) can be 
 
 ### Sublime Text 3
 
-Sublime Text 3 has full support for display scaling. Go to Preferences > Settings > User Settings and add `"dpi_scale": 2.0` to your settings [(source)](http://blog.wxm.be/2014/08/30/sublime-text-3-and-high-dpi-on-linux.html).
+Sublime Text 3 has full support for display scaling. Go to *Preferences > Settings > User Settings* and add `"dpi_scale": 2.0` to your settings [(source)](http://blog.wxm.be/2014/08/30/sublime-text-3-and-high-dpi-on-linux.html).
 
 ### Thunderbird
 
-See [#Firefox](#Firefox). To access `about:config`, go to Edit → Preferences → Advanced → Config editor.
+See [#Firefox](#Firefox). To access `about:config`, go to *Edit > Preferences > Advanced >Config editor*.
 
 ### VirtualBox
 
