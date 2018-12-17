@@ -691,7 +691,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **Nexuiz** — Gioco open-source sparatutto in prima persona. Il suo sviluppo è cessato, la maggior parte degli sviluppatori si è spostata sul progetto [Xonotic](http://xonotic.org/).
 
-	[http://alientrap.org/nexuiz](http://alientrap.org/nexuiz) || [nexuiz](https://aur.archlinux.org/packages/nexuiz/)
+	[http://alientrap.org/nexuiz](http://alientrap.org/nexuiz) || [nexuiz](https://www.archlinux.org/packages/?name=nexuiz)
 
 *   **nQuake** — Veloce FPS multiplayer che si concentra sul movimento e salti. Questo è il famoso pacchetto Quake/QuakeWorld, tra cui client ezQuake, texture a 24 bit, mappe, bot e altro ancora. Creazione automatica post-installazione. Si può giocare on-line gratis.
 

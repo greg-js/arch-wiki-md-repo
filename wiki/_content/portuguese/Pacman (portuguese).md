@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Pacman](/index.php/Pacman "Pacman"). Data da última tradução: 2018-11-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman&diff=0&oldid=554980) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Pacman](/index.php/Pacman "Pacman"). Data da última tradução: 2018-12-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman&diff=0&oldid=559281) na versão em inglês.
 
 Artigos relacionados
 
@@ -328,6 +328,8 @@ Veja [Pacman/Dicas e truques](/index.php/Pacman/Dicas_e_truques "Pacman/Dicas e 
 
 #### Pactree
 
+**Nota:** *pactree* não é mais parte do pacote [pacman](https://www.archlinux.org/packages/?name=pacman). Agora ele pode ser encontrado no [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib).
+
 Para visualizar a árvore de dependência de um pacote:
 
 $ pactree *nome_pacote*
@@ -641,7 +643,7 @@ Se o *pacman* for interrompido enquanto altera a base de dados, esse arquivo de 
 
 Esse erro se manifesta como `não encontrado na base de dados de sincronização`, `alvo não encontrado` ou `falha ao obter o arquivo`.
 
-Primeiramente, assegure-se de que o pacote realmente existe. Se você tem certeza que o pacote existe, sua lista de pacote pode estar desatualizada. Tente execute `pacman -Syyu` para forçar uma atualização de todas as listas de pacote e atualize. Também certifique-se que os [espelhos](/index.php/Espelhos "Espelhos") selecionados estejam atualizados e [repositórios](#Repositórios_e_espelhos) são configurados corretamente.
+Primeiramente, assegure-se de que o pacote realmente existe. Se você tem certeza que o pacote existe, sua lista de pacote pode estar desatualizada. Tente execute `pacman -Syu` para forçar uma atualização de todas as listas de pacote e atualize. Também certifique-se que os [espelhos](/index.php/Espelhos "Espelhos") selecionados estejam atualizados e [repositórios](#Repositórios_e_espelhos) são configurados corretamente.
 
 Pode ser também que aquele repositório contendo o pacote não está habilidade no seu sistema. Por exemplo, o pacote pode estar no repositório [multilib](/index.php/Multilib_(Portugu%C3%AAs) "Multilib (Português)"), mas o *multilib* não está habilitado em seu `pacman.conf`.
 
@@ -682,7 +684,7 @@ No caso do *pacman* travar com um erro de "escrita da base de dados" enquanto re
 1.  Inicialize usando a mídia de instalação do Arch. Preferivelmente use uma mídia recente, para que a versão do *pacman* seja igual ou mais nova do que a do sistema.
 2.  Monte o sistema de arquivos raiz do sistema (ex.: `mount /dev/sdaX /mnt`) como root e verifique se a montagem tem espaço suficiente com `df -h`
 3.  Monte os sistemas de arquivos proc e sysfs também: `mount -t proc proc /mnt/proc; mount --rbind /sys /mnt/sys; mount --rbind /dev /mnt/dev`
-4.  Se o sistema usa locais padrão de base de dados e diretório, você pode agora atualizar a base de dados do *pacman* do sistema e atualizá-lo via `pacman --sysroot /mnt -Syyu` como root.
+4.  Se o sistema usa locais padrão de base de dados e diretório, você pode agora atualizar a base de dados do *pacman* do sistema e atualizá-lo via `pacman --sysroot /mnt -Syu` como root.
 5.  Após a atualização, uma forma de verificar se pacotes não atualizados, mas ainda quebrados: `find /mnt/usr/lib -size 0`
 6.  Seguido pela reinstalação de qualquer pacote ainda quebrado via `pacman --sysroot /mnt -S *pacote*`.
 
@@ -789,7 +791,7 @@ Ao concluir com êxito uma transação de pacote, o pacman executa as seguintes 
 3.  se hooks `PreTransaction` pré-existentes do pacman se aplicarem, eles serão executados
 4.  cada pacote é instalado/atualizado/removido por vez
     1.  se o pacote tiver um script de instalação, sua função `pre_install` é executada (ou `pre_upgrade` ou `pre_remove` no caso de um pacote atualizado ou removido)
-    2.  pacman exclui todos os arquivos de uma versão pré-existente do pacote (no caso de um pacote atualizado ou removido)
+    2.  pacman exclui todos os arquivos de uma versão pré-existente do pacote (no caso de um pacote atualizado ou removido). Porém, alguns arquivos de configuração são [tratados de forma diferente](/index.php/Pacman/Pacnew_e_Pacsave "Pacman/Pacnew e Pacsave").
     3.  pacman descompacta o pacote e despeja seus arquivos no sistema de arquivos (no caso de um pacote instalado ou atualizado)
     4.  se o pacote tiver um script de instalação, sua função `post_install` será executada (ou `post_upgrade` ou `post_remove` no caso de um pacote atualizado ou removido)
 5.  se hooks do pacman `PostTransaction` que existem no final da transação se aplicarem, eles serão executados

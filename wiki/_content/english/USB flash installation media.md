@@ -212,24 +212,7 @@ To boot either a label or an [UUID](/index.php/UUID "UUID") to select the partit
 
 **Warning:** Mismatching labels or wrong UUID prevents booting from the created medium.
 
-Syslinux is already preinstalled in `/mnt/usb/arch/boot/syslinux`. Install it completely to that folder by following [Syslinux#Manual install](/index.php/Syslinux#Manual_install "Syslinux"). Instructions are reproduced here for convenience.
-
-*   Overwrite the existing Syslinux modules (*.c32* files) present in the USB (from the ISO) with the ones from the [syslinux](https://www.archlinux.org/packages/?name=syslinux) package (found in `/usr/lib/syslinux/bios/`). This is necessary to avoid boot failure because of a possible version mismatch.
-
-```
-# cp /usr/lib/syslinux/bios/*.c32 /mnt/usb/arch/boot/syslinux/
-
-```
-
-*   Run:
-
-```
-# extlinux --install /mnt/usb/arch/boot/syslinux
-
-```
-
-*   Unmount the partition (`umount /mnt/usb`).
-*   Mark the partition as active (or “bootable”).
+Syslinux is already preinstalled in `/mnt/usb/arch/boot/syslinux`. Install it completely to that folder by following [Syslinux#Manual install](/index.php/Syslinux#Manual_install "Syslinux").
 
 #### In Windows
 

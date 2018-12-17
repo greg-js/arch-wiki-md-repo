@@ -9,14 +9,23 @@
 ## Contents
 
 *   [1 互联网](#互联网)
-    *   [1.1 网络管理](#网络管理)
+    *   [1.1 网络连接](#网络连接)
+        *   [1.1.1 网络管理](#网络管理)
+        *   [1.1.2 VPN 客户端](#VPN_客户端)
+        *   [1.1.3 代理服务器](#代理服务器)
+        *   [1.1.4 匿名网络](#匿名网络)
     *   [1.2 网络浏览器](#网络浏览器)
         *   [1.2.1 终端](#终端)
         *   [1.2.2 图形界面](#图形界面)
             *   [1.2.2.1 基于 Gecko](#基于_Gecko)
-                *   [1.2.2.1.1 Firefox forks](#Firefox_forks)
-            *   [1.2.2.2 Blink-based](#Blink-based)
-            *   [1.2.2.3 Webkit-based](#Webkit-based)
+                *   [1.2.2.1.1 Firefox的衍生品](#Firefox的衍生品)
+            *   [1.2.2.2 基于Blink](#基于Blink)
+                *   [1.2.2.2.1 Chromium 衍生品](#Chromium_衍生品)
+                *   [1.2.2.2.2 基于qt5-web引擎的浏览器](#基于qt5-web引擎的浏览器)
+                *   [1.2.2.2.3 基于electron/muon的浏览器](#基于electron/muon的浏览器)
+            *   [1.2.2.3 基于Webkit](#基于Webkit)
+                *   [1.2.2.3.1 基于webkit2gtk的浏览器](#基于webkit2gtk的浏览器)
+                *   [1.2.2.3.2 基于qt5-webkit的浏览器](#基于qt5-webkit的浏览器)
             *   [1.2.2.4 其它](#其它)
     *   [1.3 下载](#下载)
         *   [1.3.1 FTP](#FTP)
@@ -73,65 +82,165 @@
 
 ## 互联网
 
-### 网络管理
+### 网络连接
 
-*   **[ConnMan](/index.php/ConnMan "ConnMan")** — Daemon for managing internet connections within embedded devices running the Linux operating system. Comes with a command-line client, plus Enlightenment, ncurses, GTK and Dmenu clients are available.
+#### 网络管理
+
+*   **[ConnMan](/index.php/ConnMan "ConnMan")** — 用于管理运行Linux操作系统嵌入式设备的网络连接的守护进程. 配备命令行客户端, 额外的 Enlightenment, ncurses, GTK and Dmenu 客户端也是可用的.
 
 	[https://01.org/connman](https://01.org/connman) || [connman](https://www.archlinux.org/packages/?name=connman)
 
-*   **[dhcpcd](/index.php/Dhcpcd "Dhcpcd")** — RFC2131 compliant DHCP client daemon.
+*   **[dhcpcd](/index.php/Dhcpcd "Dhcpcd")** — 符合RFC2131的DHCP客户端守护进程.
 
 	[https://roy.marples.name/projects/dhcpcd](https://roy.marples.name/projects/dhcpcd) || [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd)
 
-*   **Kea** — An open source implementation of the Dynamic Host Configuration Protocol (DHCP) servers.
-
-	[https://www.isc.org/kea/](https://www.isc.org/kea/) || [kea](https://www.archlinux.org/packages/?name=kea)
-
-*   **[netctl](/index.php/Netctl "Netctl")** — Simple and robust tool to manage network connections via profiles. Intended for use with [systemd](/index.php/Systemd "Systemd").
+*   **[netctl](/index.php/Netctl "Netctl")** — 简单且健壮的通过配置文件管理网络连接的工具. 旨在和[systemd](/index.php/Systemd "Systemd")一起使用.
 
 	[https://projects.archlinux.org/netctl.git/](https://projects.archlinux.org/netctl.git/) || [netctl](https://www.archlinux.org/packages/?name=netctl)
 
-*   **[NetworkManager](/index.php/NetworkManager "NetworkManager")** — Manager that provides wired, wireless, mobile broadband and OpenVPN detection with configuration and automatic connection.
+*   **[NetworkManager](/index.php/NetworkManager "NetworkManager")** — 提供有限、无线、移动带宽和openVPN监测的配置和自动连接的管理工具.
 
 	[https://wiki.gnome.org/Projects/NetworkManager](https://wiki.gnome.org/Projects/NetworkManager) || [networkmanager](https://www.archlinux.org/packages/?name=networkmanager)
 
-*   **[systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd")** — Native [systemd](/index.php/Systemd "Systemd") daemon that manages network configuration. It includes support for basic network configuration through [udev](/index.php/Udev "Udev").
+*   **[systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd")** — [systemd](/index.php/Systemd "Systemd")原生的守护进程，用来管理网络配置. 它包括通过 [udev](/index.php/Udev "Udev")对基础网络配置的支持.
 
 	[http://www.freedesktop.org/software/systemd/man/systemd-networkd.service.html](http://www.freedesktop.org/software/systemd/man/systemd-networkd.service.html) || [systemd](https://www.archlinux.org/packages/?name=systemd)
 
-*   **[Wicd](/index.php/Wicd "Wicd")** — Wireless and wired connection manager with few dependencies. Comes with an ncurses interface, and a GTK interface [wicd-gtk](https://www.archlinux.org/packages/?name=wicd-gtk) is available.
+*   **[Wicd](/index.php/Wicd "Wicd")** — 需要较少依赖的有线无线连接管理工具. 附带的ncurse接口和GTK接口 [wicd-gtk](https://www.archlinux.org/packages/?name=wicd-gtk) 都是可用的.
 
 	[https://launchpad.net/wicd](https://launchpad.net/wicd) || [wicd](https://www.archlinux.org/packages/?name=wicd)
 
-*   **[Wifi Radar](/index.php/Wifi_Radar "Wifi Radar")** — *WiFi Radar* is a Python/PyGTK2 utility for managing wireless (and **only** wireless) profiles. It enables you to scan for available networks and create profiles for your preferred networks.
+*   **[Wifi Radar](/index.php/Wifi_Radar "Wifi Radar")** — *WiFi Radar* 是一个Python/PyGTK2实用工具用来管理无线(并且**只** 是无线) 配置文件. 它能让你扫描可用的网络并创造你喜欢的网络的配置文件.
 
 	[http://wifi-radar.tuxfamily.org/](http://wifi-radar.tuxfamily.org/) || [wifi-radar](https://www.archlinux.org/packages/?name=wifi-radar)
 
-See also [Network configuration#Network managers](/index.php/Network_configuration#Network_managers "Network configuration") and [Wireless network configuration#Automatic setup](/index.php/Wireless_network_configuration#Automatic_setup "Wireless network configuration") for feature comparisons.
+*   **wpa-cute** — 是一个图形化的Qt [wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant")前端，能让你管你你的无线文件 *only*. 它能提供修改和添加配置文件并扫描网络和通过 [WPS](https://en.wikipedia.org/wiki/Wi-Fi_Protected_Setup "wikipedia:Wi-Fi Protected Setup")连接到它们.
+
+	[https://github.com/loh-tar/wpa-cute](https://github.com/loh-tar/wpa-cute) || [wpa-cute](https://aur.archlinux.org/packages/wpa-cute/)
+
+也可以查阅[Network configuration#Network managers](/index.php/Network_configuration#Network_managers "Network configuration").
+
+#### VPN 客户端
+
+*   **Bitmask** — 使用不同服务提供商的安装和加密的交流
+
+	[https://bitmask.net/](https://bitmask.net/) || [bitmask](https://aur.archlinux.org/packages/bitmask/)
+
+*   **Libreswan** — 一个免费的最广泛支持和标准化的基于("IPsec")和因特网秘钥交换(IKE)的VPN协议的实现.
+
+	[https://libreswan.org/](https://libreswan.org/) || [libreswan](https://aur.archlinux.org/packages/libreswan/)
+
+*   **[NetworkManager](/index.php/NetworkManager "NetworkManager")** — 通过插件系统支持大量协议 (比如. MS, Cisco, Fortinet).
+
+	[https://wiki.gnome.org/Projects/NetworkManager/VPN](https://wiki.gnome.org/Projects/NetworkManager/VPN) || [networkmanager](https://www.archlinux.org/packages/?name=networkmanager)
+
+*   **[OpenConnect](/index.php/OpenConnect "OpenConnect")** — 支持 Cisco 和 Juniper VPNs.
+
+	[http://www.infradead.org/openconnect/](http://www.infradead.org/openconnect/) || [openconnect](https://www.archlinux.org/packages/?name=openconnect)
+
+*   **[Openswan](/index.php/Openswan "Openswan")** — 基于IPsec的VPN解决方案.
+
+	[https://www.openswan.org/](https://www.openswan.org/) || [openswan](https://aur.archlinux.org/packages/openswan/)
+
+*   **[OpenVPN](/index.php/OpenVPN "OpenVPN")** — 用来连接到 OpenVPN VPNs.
+
+	[https://openvpn.net/](https://openvpn.net/) || [openvpn](https://www.archlinux.org/packages/?name=openvpn)
+
+*   **[PPTP Client](/index.php/PPTP_Client "PPTP Client")** — 用来连接到 PPTP VPNs, 比如像微软 VPNs (MPPE). (insecure)
+
+	[http://pptpclient.sourceforge.net/](http://pptpclient.sourceforge.net/) || [pptpclient](https://www.archlinux.org/packages/?name=pptpclient)
+
+*   **[strongSwan](/index.php/StrongSwan "StrongSwan")** — 基于IPsec 的VPN解决方案.
+
+	[https://www.strongswan.org/](https://www.strongswan.org/) || [strongswan](https://www.archlinux.org/packages/?name=strongswan)
+
+*   **[tinc](/index.php/Tinc "Tinc")** — tinc是一个免费的VPN守护进程
+
+	[https://www.tinc-vpn.org/](https://www.tinc-vpn.org/) || [tinc](https://www.archlinux.org/packages/?name=tinc)
+
+*   **[Vpnc](/index.php/Vpnc "Vpnc")** — 用来连接到 Cisco 3000 VPN 集中器.
+
+	[https://www.unix-ag.uni-kl.de/~massar/vpnc/](https://www.unix-ag.uni-kl.de/~massar/vpnc/) || [vpnc](https://www.archlinux.org/packages/?name=vpnc)
+
+#### 代理服务器
+
+*   **Dante** — SOCKS服务器和 SOCKS客户端, RFC 1928和相关标准的实现.
+
+	[https://www.inet.no/dante/](https://www.inet.no/dante/) || [dante](https://www.archlinux.org/packages/?name=dante)
+
+*   **[Privoxy](/index.php/Privoxy "Privoxy")** — 非缓存的web代理，带有强大的过滤能力，能用来增强隐私、修改网页数据和HTTP头部、控制接入和移除广告和其它让人讨厌的因特网垃圾
+
+	[https://www.privoxy.org/](https://www.privoxy.org/) || [privoxy](https://www.archlinux.org/packages/?name=privoxy)
+
+*   **Project V** — Project V 是一系列工具用来通过因特网帮助您构建你自己的私有网络.
+
+	[https://www.v2ray.com/en/](https://www.v2ray.com/en/) || [v2ray](https://www.archlinux.org/packages/?name=v2ray)
+
+*   **[Shadowsocks](/index.php/Shadowsocks "Shadowsocks")** — 安全的 socks5 代理, 旨在保护你的因特网流量.
+
+	[https://www.shadowsocks.org/en/index.html](https://www.shadowsocks.org/en/index.html) || Python: [shadowsocks](https://www.archlinux.org/packages/?name=shadowsocks), C: [shadowsocks-libev](https://www.archlinux.org/packages/?name=shadowsocks-libev), Qt: [shadowsocks-qt5](https://www.archlinux.org/packages/?name=shadowsocks-qt5)
+
+*   **[Squid](/index.php/Squid "Squid")** — 让Web支持 HTTP, HTTPS, FTP, 和更多的缓存服务器.
+
+	[http://www.squid-cache.org/](http://www.squid-cache.org/) || [squid](https://www.archlinux.org/packages/?name=squid)
+
+*   **Tinyproxy** — 轻量的 HTTP/HTTPS 代理守护进程.
+
+	[https://tinyproxy.github.io/](https://tinyproxy.github.io/) || [tinyproxy](https://www.archlinux.org/packages/?name=tinyproxy)
+
+*   **[Trojan](/index.php/Trojan "Trojan")** — 一种无法辨别的机制，能让你绕过GFW.
+
+	[https://trojan-gfw.github.io/trojan/](https://trojan-gfw.github.io/trojan/) || [trojan](https://www.archlinux.org/packages/?name=trojan)
+
+*   **[Varnish](/index.php/Varnish "Varnish")** — 高性能的 HTTP加速器.
+
+	[https://varnish-cache.org/](https://varnish-cache.org/) || [varnish](https://www.archlinux.org/packages/?name=varnish)
+
+*   **Ziproxy** — 转发 (非缓存) 压缩 HTTP代理服务器.
+
+	[http://ziproxy.sourceforge.net/](http://ziproxy.sourceforge.net/) || [ziproxy](https://www.archlinux.org/packages/?name=ziproxy)
+
+#### 匿名网络
+
+*   **[Freenet](/index.php/Freenet "Freenet")** — 没有审查的加密网络.
+
+	[https://freenetproject.org/](https://freenetproject.org/) || [freenet](https://aur.archlinux.org/packages/freenet/)
+
+*   **[GNUnet](/index.php/GNUnet "GNUnet")** — 安全的对等网络框架.
+
+	[https://gnunet.org/](https://gnunet.org/) || CLI: [gnunet](https://www.archlinux.org/packages/?name=gnunet), GUI: [gnunet-gtk](https://www.archlinux.org/packages/?name=gnunet-gtk)
+
+*   **[I2P](/index.php/I2P "I2P")** — 分布式匿名网络.
+
+	[https://geti2p.net/](https://geti2p.net/) || [i2p](https://aur.archlinux.org/packages/i2p/)
+
+*   **[Lantern](/index.php/Lantern "Lantern")** — 点对点因特网审查规避软件.
+
+	[https://getlantern.org/](https://getlantern.org/) || [lantern-bin](https://aur.archlinux.org/packages/lantern-bin/)
+
+*   **[Tor](/index.php/Tor "Tor")** — 匿名覆盖网络.
+
+	[https://www.torproject.org/](https://www.torproject.org/) || [tor](https://www.archlinux.org/packages/?name=tor)
 
 ### 网络浏览器
 
-See also [Wikipedia:Comparison of web browsers](https://en.wikipedia.org/wiki/Comparison_of_web_browsers "wikipedia:Comparison of web browsers").
+也可查阅 [Wikipedia:Comparison of web browsers](https://en.wikipedia.org/wiki/Comparison_of_web_browsers "wikipedia:Comparison of web browsers").
 
 #### 终端
 
-*   **[ELinks](https://en.wikipedia.org/wiki/ELinks "wikipedia:ELinks")** — Advanced and well-established feature-rich text mode web browser (Links fork, barely supported since 2009).
+*   **[ELinks](https://en.wikipedia.org/wiki/ELinks "wikipedia:ELinks")** — 高级、构建良好和功能丰富的文本模式文本浏览器，并提供鼠标滚轮支持 (Links 的分支, 2009后很少维护).
 
 	[http://elinks.or.cz/](http://elinks.or.cz/) || [elinks](https://www.archlinux.org/packages/?name=elinks)
 
-*   **[Links](https://en.wikipedia.org/wiki/Links_(web_browser) "wikipedia:Links (web browser)")** — Text WWW browser. Includes a console version [links] similar to Lynx, and a graphical X-window/framebuffer version [links -g] (must be compiled in, Arch has both) with CSS, image rendering, pull-down menus.
+*   **[Links](https://en.wikipedia.org/wiki/Links_(web_browser) "wikipedia:Links (web browser)")** — 图形化和文本模式的web浏览器. 包括一个像Lynx的终端版本.
 
 	[http://links.twibright.com/](http://links.twibright.com/) || [links](https://www.archlinux.org/packages/?name=links)
 
-*   **[Lynx](https://en.wikipedia.org/wiki/Lynx_(web_browser) "wikipedia:Lynx (web browser)")** — Text browser for the World Wide Web.
+*   **[Lynx](https://en.wikipedia.org/wiki/Lynx_(web_browser) "wikipedia:Lynx (web browser)")** — 用来访问万维网的文本浏览器.
 
 	[http://lynx.isc.org](http://lynx.isc.org) || [lynx](https://www.archlinux.org/packages/?name=lynx)
 
-*   **retawq** — Interactive, multi-threaded network client (web browser) for text terminals.
-
-	[http://retawq.sourceforge.net/](http://retawq.sourceforge.net/) || [retawq](https://aur.archlinux.org/packages/retawq/)
-
-*   **[w3m](https://en.wikipedia.org/wiki/W3m "wikipedia:W3m")** — Pager/text-based web browser. It has vim-like keybindings, and is able to display images. It has javascript support too.
+*   **[w3m](https://en.wikipedia.org/wiki/W3m "wikipedia:W3m")** — 基于页面和文本的网页浏览器. 有类似与vim的键盘绑定,并且能展示图片.并且支持JavaScript.
 
 	[http://w3m.sourceforge.net/](http://w3m.sourceforge.net/) || [w3m](https://www.archlinux.org/packages/?name=w3m)
 
@@ -141,143 +250,219 @@ See also [Wikipedia:Comparison of web browsers](https://en.wikipedia.org/wiki/Co
 
 可见 [Wikipedia:Gecko (software)](https://en.wikipedia.org/wiki/Gecko_(software) "wikipedia:Gecko (software)").
 
-*   **[Firefox](/index.php/Firefox "Firefox")** — Extensible browser from Mozilla based on Gecko with fast rendering.
+*   **[Firefox](/index.php/Firefox "Firefox")** — 来自Mozilla的支持快速渲染的可扩展浏览器.
 
 	[https://mozilla.com/firefox](https://mozilla.com/firefox) || [firefox](https://www.archlinux.org/packages/?name=firefox)
 
-*   **Seamonkey** — Continuation of the Mozilla Internet Suite.
+*   **Seamonkey** — Mozilla网络套餐的分支版本.
 
-	[http://www.seamonkey-project.org/](http://www.seamonkey-project.org/) || [seamonkey](https://www.archlinux.org/packages/?name=seamonkey)
+	[http://www.seamonkey-project.org/](http://www.seamonkey-project.org/) || [seamonkey](https://www.archlinux.org/packages/?name=seamonkey)JavaScript.|[http://repo.or.cz/w/conkeror.git/%7C](http://repo.or.cz/w/conkeror.git/%7C)[conkeror-git](https://aur.archlinux.org/packages/conkeror-git/)}}
 
-*   **[Conkeror](https://en.wikipedia.org/wiki/Conkeror "wikipedia:Conkeror")** — Keyboard-based browser modeled after [Emacs](/index.php/Emacs "Emacs") using [XULRunner](https://en.wikipedia.org/wiki/XULRunner "wikipedia:XULRunner"). Customizable via JavaScript.
-
-	[http://repo.or.cz/w/conkeror.git/](http://repo.or.cz/w/conkeror.git/) || [conkeror-git](https://aur.archlinux.org/packages/conkeror-git/)
-
-###### Firefox forks
+###### Firefox的衍生品
 
 **警告:** 以下浏览器是火狐的第三方版本，请直接向它们各自的创建者寻求支持。
 
-*   **[Iceweasel](https://en.wikipedia.org/wiki/Mozilla_Corporation_software_rebranded_by_the_Debian_project#IceWeasel "wikipedia:Mozilla Corporation software rebranded by the Debian project")** — Fork of Firefox developed by Debian Linux. The main difference is that it does not include any trademarked Mozilla artwork. See [[1]](http://web.glandium.org/blog/?p=97) for more information on Iceweasel's existence.
+*   **[Cliqz](https://en.wikipedia.org/wiki/Cliqz "wikipedia:Cliqz")** — 基于Firefox的注重隐私的网页浏览器.
 
-	[https://wiki.debian.org/Iceweasel](https://wiki.debian.org/Iceweasel) || [iceweasel](https://aur.archlinux.org/packages/iceweasel/)
+	[https://cliqz.com/](https://cliqz.com/) || [cliqz](https://aur.archlinux.org/packages/cliqz/) or [cliqz-bin](https://aur.archlinux.org/packages/cliqz-bin/)
 
-*   **[GNU IceCat](https://en.wikipedia.org/wiki/GNU_IceCat "wikipedia:GNU IceCat")** — 通过 GNU Project 分发的 Web 浏览器, 去掉了非自由的组件，并且附加上了隐私扩展。发行周期与 Mozilla Firefox 相比可能会推迟。
+*   **Cyberfox** — 快速的并且注重隐私的Mozilla Firefox衍生品.
 
-	[https://www.gnu.org/software/gnuzilla/](https://www.gnu.org/software/gnuzilla/) || [icecat](https://aur.archlinux.org/packages/icecat/)
+	[https://cyberfox.8pecxstudios.com/](https://cyberfox.8pecxstudios.com/) || [cyberfox-bin](https://aur.archlinux.org/packages/cyberfox-bin/)
 
-*   **[Pale Moon](https://en.wikipedia.org/wiki/Pale_Moon_(web_browser) "wikipedia:Pale Moon (web browser)")** — 基于 Firefox 的分支, using a Firefox 3+ interface through selective use of add-ons. Firefox 扩展可能不兼容. [[2]](https://addons.palemoon.org/firefox/incompatible/) Compiled for SSE2, with disabled optional code and no support for newer Firefox features such as cache2, e10s, and OTMC.
+*   **Waterfox** — 优化后的Mozilla Firefox衍生品, 没有数据手机并允许未注册的扩展和NPAPI插件.
 
-	[http://www.palemoon.org/](http://www.palemoon.org/) || [palemoon-bin](https://aur.archlinux.org/packages/palemoon-bin/)
+	[https://www.waterfoxproject.org/](https://www.waterfoxproject.org/) || [waterfox-bin](https://aur.archlinux.org/packages/waterfox-bin/)
 
-##### Blink-based
+*   **[GNU IceCat](https://en.wikipedia.org/wiki/GNU_IceCat "wikipedia:GNU IceCat")** — 一个Firefox ESR的自定义版本，由 GNU Project发布, 剥离了收费组件和额外的隐私插件. 与Mozilla Firefox相比分布周期可能会滞后.
 
-See also [Wikipedia:Blink (layout engine)](https://en.wikipedia.org/wiki/Blink_(layout_engine) "wikipedia:Blink (layout engine)").
+	[https://www.gnu.org/software/gnuzilla/](https://www.gnu.org/software/gnuzilla/) || [icecat](https://aur.archlinux.org/packages/icecat/) or [icecat-bin](https://aur.archlinux.org/packages/icecat-bin/)
 
-*   **[Chromium](/index.php/Chromium "Chromium")** — Web browser developed by Google, the open source project behind Google Chrome.
+##### 基于Blink
+
+也可查阅[Wikipedia:Blink (layout engine)](https://en.wikipedia.org/wiki/Blink_(layout_engine) "wikipedia:Blink (layout engine)").
+
+*   **[Chromium](/index.php/Chromium "Chromium")** — Google开发的网页浏览器, Google Chrome之后的开源项目.
 
 	[http://www.chromium.org/](http://www.chromium.org/) || [chromium](https://www.archlinux.org/packages/?name=chromium)
 
-*   **[Opera](/index.php/Opera "Opera")** — Highly customizable browser with focuses on an adherence to web rendering standards.
+###### Chromium 衍生品
 
-	[http://opera.com](http://opera.com) || [opera](https://www.archlinux.org/packages/?name=opera)
+*   **[Google Chrome](/index.php/Google_Chrome "Google Chrome")** — Google开发的有所有权的浏览器.
 
-##### Webkit-based
+	[https://www.google.com/chrome/](https://www.google.com/chrome/) || [google-chrome](https://aur.archlinux.org/packages/google-chrome/)
 
-参考 [Wikipedia:Webkit](https://en.wikipedia.org/wiki/Webkit "wikipedia:Webkit").
+*   **Inox** — 针对隐私的Chromium补丁集，它能禁用Google服务，专有特性，组织"呼叫回家"和所有的隐藏扩展
 
-*   **[Arora](https://en.wikipedia.org/wiki/Arora_(browser) "wikipedia:Arora (browser)")** — 使用 QtWebKit 建立的跨平台 Web 浏览器. 2012年1月停止开发。
+	[https://github.com/gcarq/inox-patchset](https://github.com/gcarq/inox-patchset) || [inox](https://aur.archlinux.org/packages/inox/) or [inox-bin](https://aur.archlinux.org/packages/inox-bin/)
 
-	[https://code.google.com/p/arora/](https://code.google.com/p/arora/) || [arora](https://aur.archlinux.org/packages/arora/)
+*   **Iridium** — 一个为Chromium设计的专注隐私的 [补丁集](https://git.iridiumbrowser.de/cgit.cgi/iridium-browser/tree/?h=patchview).可查阅 [和 Chromium的区别](https://github.com/iridium-browser/tracker/wiki/Differences-between-Iridium-and-Chromium).
 
-*   **[dwb](/index.php/Dwb "Dwb")** — Lightweight, highly customizable web browser based on the WebKit engine with *vi*-like shortcuts and tiling layouts. As of October 2014 *dwb* is [unmaintained](https://bitbucket.org/portix/dwb/pull-request/22/several-cleanups-to-increase-portability/diff#comment-3217936).
+	[https://iridiumbrowser.de/](https://iridiumbrowser.de/) || [iridium](https://aur.archlinux.org/packages/iridium/)
 
-	[http://portix.bitbucket.org/dwb/](http://portix.bitbucket.org/dwb/) || [dwb](https://aur.archlinux.org/packages/dwb/)
+*   **[Opera](/index.php/Opera "Opera")** — 由Opera 软件开发的有所有权的浏览器.
 
-*   **[GNOME Web](/index.php/GNOME_Web "GNOME Web")** — Browser which uses the WebKitGTK+ rendering engine, part of [gnome](https://www.archlinux.org/groups/x86_64/gnome/).
+	[https://opera.com](https://opera.com) || [opera](https://www.archlinux.org/packages/?name=opera)
+
+*   **[Slimjet](https://en.wikipedia.org/wiki/SlimBrowser "wikipedia:SlimBrowser")** — 基于Chromium的快速、聪明和强大的有所有权的浏览器.
+
+	[http://www.slimjet.com/](http://www.slimjet.com/) || [slimjet](https://aur.archlinux.org/packages/slimjet/)
+
+*   **Ungoogled Chromium** — 对Google Chromium的修改品，移除了Google集成并增强隐私、控制和透明度
+
+	[https://github.com/Eloston/ungoogled-chromium](https://github.com/Eloston/ungoogled-chromium) || [ungoogled-chromium](https://aur.archlinux.org/packages/ungoogled-chromium/)
+
+*   **[Vivaldi](/index.php/Vivaldi "Vivaldi")** — 一个高级有所有权的浏览器，以强大的用户为中心.
+
+	[https://vivaldi.com/](https://vivaldi.com/) || [vivaldi](https://aur.archlinux.org/packages/vivaldi/)
+
+*   **[Yandex Browser](https://en.wikipedia.org/wiki/Yandex_Browser "wikipedia:Yandex Browser")** — 有所有权的浏览器，结合了最小的设计和先进技术来让网络更快安全和简单
+
+	[https://browser.yandex.com/](https://browser.yandex.com/) || [yandex-browser-beta](https://aur.archlinux.org/packages/yandex-browser-beta/)
+
+###### 基于qt5-web引擎的浏览器
+
+*   **Crusta** — 具有独特功能的超级快速全功能的浏览器.
+
+	[http://crustabrowser.com/](http://crustabrowser.com/) || [crusta](https://aur.archlinux.org/packages/crusta/)
+
+*   **[Dooble](https://en.wikipedia.org/wiki/Dooble "wikipedia:Dooble")** — 色彩艳丽的浏览器.
+
+	[https://textbrowser.github.io/dooble/](https://textbrowser.github.io/dooble/) || [dooble](https://aur.archlinux.org/packages/dooble/)
+
+*   **[Eric](https://en.wikipedia.org/wiki/Eric_Python_IDE "wikipedia:Eric Python IDE")** — 基于QTWEB引擎的HTML浏览器,是eric6开发工具集的一部分, 能用 `eric6_browser`命令启动.
+
+	[https://eric-ide.python-projects.org/](https://eric-ide.python-projects.org/) || [eric](https://www.archlinux.org/packages/?name=eric)
+
+*   **[Falkon](https://en.wikipedia.org/wiki/Falkon "wikipedia:Falkon")** — 基于QtWeb引擎，用Qt框架写的浏览器.
+
+	[https://qupzilla.com/](https://qupzilla.com/) || [falkon](https://www.archlinux.org/packages/?name=falkon)
+
+*   **[Konqueror](https://en.wikipedia.org/wiki/Konqueror "wikipedia:Konqueror")** — 基于Qt工具集和Qtweb引擎(或者KHTML布局引擎)的浏览器,是[kdebase](https://www.archlinux.org/groups/x86_64/kdebase/)的一部分.
+
+	[http://konqueror.org/](http://konqueror.org/) || [konqueror](https://www.archlinux.org/packages/?name=konqueror)
+
+*   **Liri Browser** — 一个为liri写的极简的材料设计web浏览器.
+
+	[https://github.com/lirios/browser](https://github.com/lirios/browser) || [liri-browser-git](https://aur.archlinux.org/packages/liri-browser-git/)
+
+*   **Qt WebBrowser** — 用Qt和Qt Web引擎写的用于嵌入式设备的浏览器
+
+	[http://doc.qt.io/QtWebBrowser/](http://doc.qt.io/QtWebBrowser/) || [qtwebbrowser](https://aur.archlinux.org/packages/qtwebbrowser/)
+
+*   **[qutebrowser](/index.php/Qutebrowser "Qutebrowser")** — 一个键盘驱动的, 像[vim](/index.php/Vim "Vim")的浏览器，基于 PyQt5 和 QtWebEngine.
+
+	[https://qutebrowser.org/](https://qutebrowser.org/) || [qutebrowser](https://www.archlinux.org/packages/?name=qutebrowser)
+
+###### 基于electron/muon的浏览器
+
+*   **Beaker** — 对等网络浏览器，带有创建和托管网站的浏览器. 基于 [Electron](https://electronjs.org/) 平台.
+
+	[https://github.com/beakerbrowser/beaker](https://github.com/beakerbrowser/beaker) || [beaker-browser](https://aur.archlinux.org/packages/beaker-browser/)
+
+*   **[Brave](https://en.wikipedia.org/wiki/Brave_(web_browser) "wikipedia:Brave (web browser)")** — 默认阻止广告和追踪器的浏览器.基于 [Muon](https://github.com/brave/muon)平台(Electron的分支).
+
+	[https://www.brave.com/](https://www.brave.com/) || [brave](https://aur.archlinux.org/packages/brave/) or [brave-bin](https://aur.archlinux.org/packages/brave-bin/)
+
+*   **Min** — 一个更智能的,更快的浏览器 ，基于 [Electron](https://electronjs.org/) 平台.
+
+	[https://minbrowser.github.io/min/](https://minbrowser.github.io/min/) || [min](https://www.archlinux.org/packages/?name=min)
+
+##### 基于Webkit
+
+可查阅 [Wikipedia:Webkit](https://en.wikipedia.org/wiki/Webkit "wikipedia:Webkit").
+
+**Note:** webkitgtk, webkitgtk2 和 qtwebkit-based 的浏览器被从名单里移除了,因为它们被认为不安全和过期了.更多信息 [在这里](https://blogs.gnome.org/mcatanzaro/2016/02/01/on-webkit-security-updates/).
+
+###### 基于webkit2gtk的浏览器
+
+*   **Eolie** — 为GNOME设计的简单浏览器.
+
+	[https://wiki.gnome.org/Apps/Eolie](https://wiki.gnome.org/Apps/Eolie) || [eolie](https://www.archlinux.org/packages/?name=eolie)
+
+*   **[GNOME Web](/index.php/GNOME_Web "GNOME Web")** — 使用WebKitGTK+渲染引擎的浏览器, 是 [gnome](https://www.archlinux.org/groups/x86_64/gnome/)的一部分.
 
 	[https://wiki.gnome.org/Apps/Web/](https://wiki.gnome.org/Apps/Web/) || [epiphany](https://www.archlinux.org/packages/?name=epiphany)
 
-*   **[Jumanji](/index.php/Jumanji "Jumanji")** — 高度定制且功能强大的Web浏览器。
+*   **[Lariza](/index.php/Lariza "Lariza")** — 一个简单的实验性的浏览器，使用GTK+ 3, GLib 和 WebKit2GTK+.
 
-	[http://pwmt.org/projects/jumanji](http://pwmt.org/projects/jumanji) || [jumanji](https://aur.archlinux.org/packages/jumanji/)
+	[https://www.uninformativ.de/git/lariza/](https://www.uninformativ.de/git/lariza/) || [lariza](https://aur.archlinux.org/packages/lariza/)
 
-*   **[Luakit](/index.php/Luakit "Luakit")** — Highly configurable, micro-browser framework based on the WebKit engine and the GTK+ toolkit. It is very fast, extensible by Lua and licensed under the GNU GPLv3 license.
+*   **[Luakit](/index.php/Luakit "Luakit")** — lua可扩展的快速，小巧，基于webkit的浏览器框架.
 
-	[http://mason-larobina.github.com/luakit/](http://mason-larobina.github.com/luakit/) || [luakit](https://aur.archlinux.org/packages/luakit/)
+	[https://luakit.github.io/](https://luakit.github.io/) || [luakit](https://aur.archlinux.org/packages/luakit/)
 
-*   **Maxthon** — A browser that combines a minimal design with sophisticated technology to make the web faster, safer, and easier.
-
-	[http://www.maxthon.cn/](http://www.maxthon.cn/) || [maxthon-browser](https://aur.archlinux.org/packages/maxthon-browser/)
-
-*   **[Midori](https://en.wikipedia.org/wiki/Midori_(web_browser) "wikipedia:Midori (web browser)")** — Lightweight web browser based on GTK+ and WebKit.
+*   **[Midori](/index.php/Midori "Midori")** — 基于GTK+ 和 WebKit的轻量级浏览器.
 
 	[http://midori-browser.org/](http://midori-browser.org/) || [midori](https://www.archlinux.org/packages/?name=midori)
 
-*   **Otter-browser** — Browser aiming to recreate classic Opera (12.x) UI using Qt5.
+*   **Next** — 基于键盘的, 可无限扩展的浏览器.
 
-	[http://otter-browser.org/](http://otter-browser.org/) || [otter-browser](https://aur.archlinux.org/packages/otter-browser/)
+	[https://next.atlas.engineer/](https://next.atlas.engineer/) || [next-browser-git](https://aur.archlinux.org/packages/next-browser-git/)
 
-*   **[QupZilla](https://en.wikipedia.org/wiki/QupZilla "wikipedia:QupZilla")** — New and very fast open source browser based on WebKit core, written in Qt framework.
+*   **Poseidon** — 快速的、最小化的轻量的浏览器，用 Python写成.
 
-	[http://www.qupzilla.com](http://www.qupzilla.com) || [qupzilla](https://www.archlinux.org/packages/?name=qupzilla)
+	[https://github.com/sidus-dev/poseidon](https://github.com/sidus-dev/poseidon) || [poseidon](https://aur.archlinux.org/packages/poseidon/)
 
-*   **[qutebrowser](/index.php/Qutebrowser "Qutebrowser")** — A keyboard-driven, vim-like browser based on PyQt5 and QtWebKit.
+*   **[surf](/index.php/Surf "Surf")** — 轻量的基于WebKit的浏览器, 它遵循 [suckless ideology](https://suckless.org/philosophy) (基本上, 这个浏览器它自己就是一个C的源文件).
 
-	[https://github.com/The-Compiler/qutebrowser](https://github.com/The-Compiler/qutebrowser) || [qutebrowser](https://www.archlinux.org/packages/?name=qutebrowser)
+	[https://surf.suckless.org/](https://surf.suckless.org/) || [surf](https://www.archlinux.org/packages/?name=surf)
 
-*   **[Rekonq](https://en.wikipedia.org/wiki/Rekonq "wikipedia:Rekonq")** — WebKit-based web browser for KDE.
+*   **Surfer** — 简单的基于键盘的浏览器, 用C写成.
 
-	[http://rekonq.kde.org/](http://rekonq.kde.org/) || [rekonq](https://aur.archlinux.org/packages/rekonq/)
+	[https://github.com/nihilowy/surfer](https://github.com/nihilowy/surfer) || [surfer](https://aur.archlinux.org/packages/surfer/)
 
-*   **Sb** — Very lightweight WebKit-based browser that uses keybindings to perform most things the URL bar would usually do.
-
-	[https://github.com/mutantturkey/sb/](https://github.com/mutantturkey/sb/) || [sb-git](https://aur.archlinux.org/packages/sb-git/)
-
-*   **SlimBoat** — Fast, free secure and powerful web browser based on QtWebkit.
-
-	[http://www.slimboat.com/](http://www.slimboat.com/) || [slimboat](https://aur.archlinux.org/packages/slimboat/)
-
-*   **Surf** — Lightweight WebKit-based browser, which follows the [suckless ideology](http://suckless.org/philosophy) (basically, the browser itself is a single C source file).
-
-	[http://surf.suckless.org](http://surf.suckless.org) || [surf](https://www.archlinux.org/packages/?name=surf)
-
-*   **[Uzbl](https://en.wikipedia.org/wiki/Uzbl "wikipedia:Uzbl")** — Group of web interface tools which adhere to the Unix philosophy.
+*   **[Uzbl](/index.php/Uzbl "Uzbl")** — 继承了Unix哲学的web接口工具组.
 
 	[http://uzbl.org/](http://uzbl.org/) || [uzbl-browser](https://aur.archlinux.org/packages/uzbl-browser/)
 
-*   **vimb** — Fast and lightweight vim like web browser based on the webkit web browser engine and the GTK toolkit.
+*   **Vimb** — 一个像vim的浏览器，灵感来源于Pentadactyl和 Vimprobable.
 
 	[https://fanglingsu.github.io/vimb/](https://fanglingsu.github.io/vimb/) || [vimb](https://aur.archlinux.org/packages/vimb/)
 
-*   **[Vimprobable](/index.php/Vimprobable "Vimprobable")** — Browser that behaves like the Vimperator plugin available for Mozilla Firefox. It is based on the WebKit engine and uses the GTK+ bindings.
+###### 基于qt5-webkit的浏览器
 
-	[http://sourceforge.net/apps/trac/vimprobable/](http://sourceforge.net/apps/trac/vimprobable/) || [vimprobable-git](https://aur.archlinux.org/packages/vimprobable-git/)
+*   **[Eric](https://en.wikipedia.org/wiki/Eric_Python_IDE "wikipedia:Eric Python IDE")** — 基于QtWebKit的 HTML 浏览器,是eric6 开发工具集的一部分,能通过`eric6_webbrowser`命令启动.
 
-*   **[Xombrero](https://en.wikipedia.org/wiki/Xombrero "wikipedia:Xombrero") (formerly known as *xxxterm*)** — Webkit minimalist web browser with sophisticated security features designed-in, BSD style.
+	[https://eric-ide.python-projects.org/](https://eric-ide.python-projects.org/) || [eric](https://www.archlinux.org/packages/?name=eric)
 
-	[https://opensource.conformal.com/wiki/xombrero](https://opensource.conformal.com/wiki/xombrero) || [xombrero-git](https://aur.archlinux.org/packages/xombrero-git/)
+*   **OSPKit** — 基于Webkit的 html浏览器，用于打印.
+
+	[http://osp.kitchen/tools/ospkit/](http://osp.kitchen/tools/ospkit/) || [ospkit-git](https://aur.archlinux.org/packages/ospkit-git/)
+
+*   **[Otter Browser](/index.php/Otter_Browser "Otter Browser")** — 专注重造经典Opera(12.x) UI，使用的是 Qt5.
+
+	[https://otter-browser.org/](https://otter-browser.org/) || [otter-browser](https://aur.archlinux.org/packages/otter-browser/)
+
+*   **[qutebrowser](/index.php/Qutebrowser "Qutebrowser")** — 一个键盘驱动的, 像[vim](/index.php/Vim "Vim")的浏览器基于PyQt5并且QtWebKit作为可选后端.
+
+	[https://github.com/qutebrowser/qutebrowser](https://github.com/qutebrowser/qutebrowser) || [qutebrowser](https://www.archlinux.org/packages/?name=qutebrowser)
+
+*   **smtube** — 允许浏览搜索YouTube视频的程序
+
+	[https://www.smtube.org/](https://www.smtube.org/) || [smtube](https://www.archlinux.org/packages/?name=smtube)
+
+*   **WCGBrowser** — 针对kiosk系统的浏览器.
+
+	[http://www.alandmoore.com/wcgbrowser/wcgbrowser.html](http://www.alandmoore.com/wcgbrowser/wcgbrowser.html) || [wcgbrowser-git](https://aur.archlinux.org/packages/wcgbrowser-git/)
 
 ##### 其它
 
-*   **[Konqueror](https://en.wikipedia.org/wiki/Konqueror "wikipedia:Konqueror")** — 基于 Qt 和 KHTML 的web浏览器, [kdebase](https://www.archlinux.org/groups/x86_64/kdebase/)的一部分.
-
-	[http://konqueror.org/](http://konqueror.org/) || [kdebase-konqueror](https://www.archlinux.org/packages/?name=kdebase-konqueror)
-
-*   **[Abaco](https://en.wikipedia.org/wiki/Abaco_(web_browser) "wikipedia:Abaco (web browser)")** — Multi-page graphical web browser for the Plan 9 OS.
-
-	[http://lab-fgb.com/abaco/](http://lab-fgb.com/abaco/) || [abaco](https://aur.archlinux.org/packages/abaco/)
-
-*   **[Conkeror](https://en.wikipedia.org/wiki/Conkeror "wikipedia:Conkeror")** — Highly programmable web browser, with Emacs-like keybindings, based on Mozilla's XULRunner.
-
-	[http://conkeror.org/](http://conkeror.org/) || [conkeror-git](https://aur.archlinux.org/packages/conkeror-git/)
-
-*   **[Dillo](https://en.wikipedia.org/wiki/Dillo "wikipedia:Dillo")** — Small, fast graphical web browser built on [FLTK](https://en.wikipedia.org/wiki/Fltk "wikipedia:Fltk").
+*   **[Dillo](https://en.wikipedia.org/wiki/Dillo "wikipedia:Dillo")** — 基于 [FLTK](https://en.wikipedia.org/wiki/Fltk "wikipedia:Fltk")的小巧、快速的图形化浏览器.使用它自己的布局引擎.
 
 	[http://dillo.org/](http://dillo.org/) || [dillo](https://www.archlinux.org/packages/?name=dillo)
 
-*   **[NetSurf](https://en.wikipedia.org/wiki/NetSurf "wikipedia:NetSurf")** — 用 C 语言写的次轻量级浏览器, 注意它对 JavaScript 欠缺支持，和使用它自己的渲染引擎快速的渲染。
+*   **[Links](https://en.wikipedia.org/wiki/Links_(web_browser) "wikipedia:Links (web browser)")** — 图形化和文本模式的浏览器. 包括一个图形化的X-window/帧缓冲带 CSS的版本, 图片渲染, 下拉菜单. 它能通过 `xlinks -g` 命令启动.
+
+	[http://links.twibright.com/](http://links.twibright.com/) || [links](https://www.archlinux.org/packages/?name=links)
+
+*   **[NetSurf](https://en.wikipedia.org/wiki/NetSurf "wikipedia:NetSurf")** — 用C写的羽毛级浏览器，以它的缓慢的开发JavaScript支持和通过自己的布局引擎实现快速图片渲染出名。
 
 	[http://netsurf-browser.org](http://netsurf-browser.org) || [netsurf](https://www.archlinux.org/packages/?name=netsurf)
+
+*   **[Pale Moon](https://en.wikipedia.org/wiki/Pale_Moon_(web_browser) "wikipedia:Pale Moon (web browser)")** — 一个Firefox分支专注于速度, 使用Firefox29之前的界面。使用 [Goanna](https://en.wikipedia.org/wiki/Goanna_(software) "wikipedia:Goanna (software)")布局引擎,一个Gecko分支. Firefox附加组件可能不兼容. [[1]](https://addons.palemoon.org/firefox/incompatible/) 没有更新的Firefox特性比如cache2, e10s, 和 OTMC.
+
+	[http://www.palemoon.org/](http://www.palemoon.org/) || [palemoon](https://aur.archlinux.org/packages/palemoon/) or [palemoon-bin](https://aur.archlinux.org/packages/palemoon-bin/)
 
 ### 下载
 

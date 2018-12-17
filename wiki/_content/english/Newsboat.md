@@ -30,7 +30,7 @@ Install the [newsboat](https://www.archlinux.org/packages/?name=newsboat) packag
 
 ## Usage
 
-Newsboat can't start without any configured feeds. Feeds can be configured in `~/.newsboat/urls`.
+Newsboat can't start without any configured feeds. Feeds can be configured in `~/.config/newsboat/urls`.
 
 Newsboat can be started from the command line with
 
@@ -43,11 +43,11 @@ Press the `?` key to see a list of all keybindings. Keybindings can be rebound, 
 
 ## Managing feeds
 
-Adding, removing, and tagging feeds is done by editing the urls file. By default that is `~/.newsboat/urls`.
+Adding, removing, and tagging feeds is done by editing the urls file. By default that is `~/.config/newsboat/urls`.
 
 ### Adding/Removing feeds
 
-To add URLs, open `~/.newsboat/urls` with your favorite text editor and add the URLs, one per line:
+To add URLs, open `~/.config/newsboat/urls` with your favorite text editor and add the URLs, one per line:
 
 ```
 http://rss.cnn.com/rss/cnn_topstories.rss
@@ -62,11 +62,11 @@ http://username:password@hostname.domain.tld/feed.rss
 
 ```
 
-In order to protect username and password, make sure that `~/.newsboat/urls` has the appropriate permissions.
+In order to protect username and password, make sure that `~/.config/newsboat/urls` has the appropriate permissions.
 
 Newsboat also makes sure that usernames and passwords within URLs aren’t displayed in its user interface. In case there is a @ in the username, you need to write it as %40 instead so that it can be distinguished from the @ that separates the username/password part from the hostname part.
 
-You can also configure local files as feeds, by prefixing the local path with `file://` and adding it to the `~/.newsboat/urls` file:
+You can also configure local files as feeds, by prefixing the local path with `file://` and adding it to the `~/.config/newsboat/urls` file:
 
 ```
 file:///var/log/rss_eventlog.xml
@@ -79,7 +79,7 @@ To **remove** a feed, simply delete the line from your urls file
 
 Every feed can be assigned 0 or more tags. This makes it easy to categorize your feeds as well as the ability to easily apply commands to multiple feeds at once.
 
-Usually, the `~/.newsboat/urls` file contains one RSS feed URL per line. To assign a tag to an RSS feed, simply attach it as a single word, separated by blanks such as space or tab. If the tag needs to contain spaces, you must use quotes (") around the tag (see example below). An example may look like this:
+Usually, the `~/.config/newsboat/urls` file contains one RSS feed URL per line. To assign a tag to an RSS feed, simply attach it as a single word, separated by blanks such as space or tab. If the tag needs to contain spaces, you must use quotes (") around the tag (see example below). An example may look like this:
 
 ```
 http://blog.fefe.de/rss.xml?html interesting conspiracy news "cool stuff"                                       
@@ -180,7 +180,7 @@ macro y set browser "mpv %u"; open-in-browser ; set browser "elinks %u"
 Newsboat cannot start without any configured feeds! If you try to do this you will get the following error:
 
 ```
-Error: no URLs configured. Please fill the file /home/ak/.newsboat/urls with RSS feed URLs or import an OPML file.
+Error: no URLs configured. Please fill the file ~/.config/newsboat/urls with RSS feed URLs or import an OPML file.
 
 ```
 

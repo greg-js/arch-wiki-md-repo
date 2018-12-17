@@ -7,7 +7,7 @@ From the [WireGuard](https://www.wireguard.com/) project homepage:
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Raw usage](#Raw_usage)
+*   [2 Usage](#Usage)
     *   [2.1 Key generation](#Key_generation)
     *   [2.2 Peer A setup](#Peer_A_setup)
     *   [2.3 Peer B setup](#Peer_B_setup)
@@ -15,7 +15,6 @@ From the [WireGuard](https://www.wireguard.com/) project homepage:
     *   [2.5 Persistent configuration](#Persistent_configuration)
     *   [2.6 Example peer configuration](#Example_peer_configuration)
     *   [2.7 Example configuration for systemd-networkd](#Example_configuration_for_systemd-networkd)
-    *   [2.8 Endpoint with changing IP](#Endpoint_with_changing_IP)
 *   [3 Specific use-case: VPN server](#Specific_use-case:_VPN_server)
     *   [3.1 Server](#Server)
     *   [3.2 Key generation](#Key_generation_2)
@@ -29,6 +28,7 @@ From the [WireGuard](https://www.wireguard.com/) project homepage:
         *   [4.2.3 Using systemd-resolved](#Using_systemd-resolved)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Store private keys in encrypted form](#Store_private_keys_in_encrypted_form)
+    *   [5.2 Endpoint with changing IP](#Endpoint_with_changing_IP)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -37,7 +37,7 @@ From the [WireGuard](https://www.wireguard.com/) project homepage:
 
 **Note:** WireGuard is not yet mainlined and the required kernel module will be built using [DKMS](/index.php/DKMS "DKMS"). As such, be sure to have the corresponding kernel-headers package installed.
 
-## Raw usage
+## Usage
 
 Below commands will demonstrate how to setup a basic tunnel between two peers with the following settings:
 
@@ -191,45 +191,6 @@ DNS = 10.0.0.1
 Gateway = 10.0.0.1
 Destination = 10.0.0.0/24
 ```
-
-### Endpoint with changing IP
-
-After resolving a server's domain, WireGuard [will not check for changes in DNS again](https://lists.zx2c4.com/pipermail/wireguard/2017-November/002028.html).
-
-If the WireGuard server is frequently changing its IP-address due DHCP, Dyndns, IPv6, ..., any WireGuard client is going to lose its connection, until its endpoint is updated via something like `wg set "$INTERFACE" peer "$PUBLIC_KEY" endpoint "$ENDPOINT"`.
-
-Also be aware, if the endpoint is ever going to change its address (for example when moving to a new provider/datacenter), just updating DNS will not be enough, so periodically running reresolve-dns might make sense on any DNS-based setup.
-
-Luckily, [wireguard-tools](https://www.archlinux.org/packages/?name=wireguard-tools) provides an example script `/usr/share/wireguard/examples/reresolve-dns/reresolve-dns.sh`, that parses WG configuration files and automatically resets the endpoint address.
-
-One needs to run the `/usr/share/wireguard/examples/reresolve-dns/reresolve-dns.sh /etc/wireguard/wg.conf` periodically to recover from an endpoint that has changed its IP.
-
-One way of doing so is by updating all WireGuard endpoints once every thirty seconds[[2]](https://git.zx2c4.com/WireGuard/tree/contrib/examples/reresolve-dns/README) via a systemd timer:
-
- `/etc/systemd/system/wireguard_reresolve-dns.timer` 
-```
-[Unit]
-Description=Periodically reresolve DNS of all WireGuard endpoints
-
-[Timer]
-OnCalendar=*:*:0/30
-
-[Install]
-WantedBy=timers.target
-```
- `/etc/systemd/system/wireguard_reresolve-dns.service` 
-```
-[Unit]
-Description=Reresolve DNS of all WireGuard endpoints
-Wants=network-online.target
-After=network-online.target
-
-[Service]
-Type=oneshot
-ExecStart=/bin/sh -c 'for i in /etc/wireguard/*.conf; do /usr/share/wireguard/examples/reresolve-dns/reresolve-dns.sh "\$i"; done'
-```
-
-Afterwards [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `wireguard_reresolve-dns.timer`
 
 ## Specific use-case: VPN server
 
@@ -402,6 +363,45 @@ It may be desirable to store private keys in encrypted form, such as through use
 ```
 
 where *user* is the Linux username of interest. See the [wg-quick(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wg-quick.8) man page for more details.
+
+### Endpoint with changing IP
+
+After resolving a server's domain, WireGuard [will not check for changes in DNS again](https://lists.zx2c4.com/pipermail/wireguard/2017-November/002028.html).
+
+If the WireGuard server is frequently changing its IP-address due DHCP, Dyndns, IPv6, ..., any WireGuard client is going to lose its connection, until its endpoint is updated via something like `wg set "$INTERFACE" peer "$PUBLIC_KEY" endpoint "$ENDPOINT"`.
+
+Also be aware, if the endpoint is ever going to change its address (for example when moving to a new provider/datacenter), just updating DNS will not be enough, so periodically running reresolve-dns might make sense on any DNS-based setup.
+
+Luckily, [wireguard-tools](https://www.archlinux.org/packages/?name=wireguard-tools) provides an example script `/usr/share/wireguard/examples/reresolve-dns/reresolve-dns.sh`, that parses WG configuration files and automatically resets the endpoint address.
+
+One needs to run the `/usr/share/wireguard/examples/reresolve-dns/reresolve-dns.sh /etc/wireguard/wg.conf` periodically to recover from an endpoint that has changed its IP.
+
+One way of doing so is by updating all WireGuard endpoints once every thirty seconds[[2]](https://git.zx2c4.com/WireGuard/tree/contrib/examples/reresolve-dns/README) via a systemd timer:
+
+ `/etc/systemd/system/wireguard_reresolve-dns.timer` 
+```
+[Unit]
+Description=Periodically reresolve DNS of all WireGuard endpoints
+
+[Timer]
+OnCalendar=*:*:0/30
+
+[Install]
+WantedBy=timers.target
+```
+ `/etc/systemd/system/wireguard_reresolve-dns.service` 
+```
+[Unit]
+Description=Reresolve DNS of all WireGuard endpoints
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c 'for i in /etc/wireguard/*.conf; do /usr/share/wireguard/examples/reresolve-dns/reresolve-dns.sh "\$i"; done'
+```
+
+Afterwards [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `wireguard_reresolve-dns.timer`
 
 ## See also
 

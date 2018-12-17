@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Dotfiles](/index.php/Dotfiles "Dotfiles"). Data da última tradução: 2018-10-26\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dotfiles&diff=0&oldid=548969) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Dotfiles](/index.php/Dotfiles "Dotfiles"). Data da última tradução: 2018-12-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dotfiles&diff=0&oldid=558788) na versão em inglês.
 
 Artigos relacionados
 
@@ -45,7 +45,7 @@ $ git commit -a
 
 ### Outras ferramentas
 
-*   **dotdrop** — Uma ferramenta para gerenciar diferentes versões de seus *dotfiles* em hosts diferentes.
+*   **dotdrop** — Uma ferramenta para gerenciar seus *dotfiles* entre hosts diferentes e salvá-los em git sem duplicatas.
 
 	[https://github.com/deadc0de6/dotdrop](https://github.com/deadc0de6/dotdrop) || [dotdrop](https://aur.archlinux.org/packages/dotdrop/)
 
@@ -101,7 +101,7 @@ $ git commit -a
 
 Uma forma de manter os *dotfiles* em várias máquinas em vários hosts, permitindo a personalização por host, é manter um ramo mestre para toda a configuração compartilhada, enquanto cada máquina individual possui uma ramificação específica da máquina com check-out. A configuração específica do host pode ser confirmada na ramificação específica da máquina; como a configuração compartilhada é adicionada ao ramo mestre, as ramos por máquina são então *rebase*ados no mestre atualizado.
 
-Outra abordagem é colocar configuração específica de máquina em blocos comentados especialmente para usar [qualia](https://pypi.python.org/pypi/mir.qualia/) para descomentá-los automaticamente cada um. Essa abordagem requer um trabalho menos manual e não causa conflitos de mesclagem.
+Outra abordagem é gerenciar configuração específica de máquina com ferramentas baseadas em mecanismo de modelos, p.ex., [qualia](https://pypi.python.org/pypi/mir.qualia/) ou [Dotdrop](https://github.com/deadc0de6/dotdrop). Essa abordagem requer um trabalho menos manual e não causa conflitos de mesclagem.
 
 ### Informação confidencial
 
@@ -149,6 +149,7 @@ de shell) | WM / DE | Editor | Terminal | Multiplexador | Áudio | Monitor | E-m
 | [meskarune](https://github.com/meskarune/.dotfiles) | bash | herbstluftwm | vim | rxvt-unicode | screen | conky | weechat |
 | [neersighted](https://github.com/neersighted/dotfiles) | zsh | i3 | vim | rxvt-unicode | tmux | ncmpcpp | htop | mutt | irssi |
 | [OK100](https://github.com/ok100/configs) | bash | dwm | vim | rxvt-unicode | cmus | conky, dzen | mutt | weechat |
+| [pablox-cl](https://github.com/pablox-cl/dotfiles) | zsh (zplug) | gnome3 | neovim | kitty |
 | [reisub0](https://github.com/reisub0/dot) | bash | awesome | neovim | termite | mpd | conky |
 | [sistematico](https://github.com/sistematico/majestic) | zsh/fish/bash | [i3-gaps](https://github.com/Airblader/i3) | vim/nano | termite | tmux | ncmpcpp | polybar | mutt | weechat |
 | [sitilge](https://git.sitilge.id.lv/sitilge/dotfiles) | zsh | awesome | neovim | termite | thunderbird |

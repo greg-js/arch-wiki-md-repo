@@ -85,7 +85,7 @@ These optional packages contribute to the look and feel of the desktop:
 
 It is also recommended to install the following fonts:
 
-*   [ttf-opensans](https://aur.archlinux.org/packages/ttf-opensans/): Open Sans Fonts
+*   [ttf-opensans](https://www.archlinux.org/packages/?name=ttf-opensans): Open Sans Fonts
 *   [ttf-raleway](https://aur.archlinux.org/packages/ttf-raleway/): Raleway Font
 *   [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu): Font family based on the Bitstream Vera Fonts
 *   [ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid): General-purpose fonts released by Google as part of Android

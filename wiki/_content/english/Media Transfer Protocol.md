@@ -21,6 +21,7 @@ The [Media Transfer Protocol](https://en.wikipedia.org/wiki/Media_Transfer_Proto
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 jmtpfs: Input/output error upon first access](#jmtpfs:_Input/output_error_upon_first_access)
     *   [6.2 kio-mtp: cannot use "Open with File Manager" action](#kio-mtp:_cannot_use_"Open_with_File_Manager"_action)
+    *   [6.3 kio-mtp being called simultaneously by different services](#kio-mtp_being_called_simultaneously_by_different_services)
 
 ## Connecting
 
@@ -295,3 +296,9 @@ This appears to be a security feature: MTP does not work when the phone is locke
 If you are not able to use the action "Open with File Manager", you may work around this problem by editing the file `/usr/share/solid/actions/solid_mtp.desktop`.
 
 Change the line `Exec=kioclient exec mtp:udi=%i/` to `Exec=dolphin "mtp:/"`.
+
+### kio-mtp being called simultaneously by different services
+
+Parallel usage of mtpfs and kio-mtp, as well as conflicting services using kio-mtp -music players included- should be avoided, as mentioned in [this forum](https://bbs.archlinux.org/viewtopic.php?pid=1657736#p1657736).
+
+Amarok's plugin for MTP services, for example, might be preventing Dolphin (plasma) to access different phone model's files. Switching it off was a solution for at least one user.

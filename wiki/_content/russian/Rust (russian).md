@@ -9,30 +9,30 @@
 ## Contents
 
 *   [1 Rust Core Library](#Rust_Core_Library)
-*   [2 Стандартная библиотека Rust](#.D0.A1.D1.82.D0.B0.D0.BD.D0.B4.D0.B0.D1.80.D1.82.D0.BD.D0.B0.D1.8F_.D0.B1.D0.B8.D0.B1.D0.BB.D0.B8.D0.BE.D1.82.D0.B5.D0.BA.D0.B0_Rust)
-*   [3 Цикл выпуска](#.D0.A6.D0.B8.D0.BA.D0.BB_.D0.B2.D1.8B.D0.BF.D1.83.D1.81.D0.BA.D0.B0)
-*   [4 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-    *   [4.1 Из репозитория](#.D0.98.D0.B7_.D1.80.D0.B5.D0.BF.D0.BE.D0.B7.D0.B8.D1.82.D0.BE.D1.80.D0.B8.D1.8F)
-    *   [4.2 С помощью Rustup](#.D0.A1_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D1.8C.D1.8E_Rustup)
-    *   [4.3 Проверка после установки](#.D0.9F.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.B0_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B8)
-*   [5 Кросс-компиляция](#.D0.9A.D1.80.D0.BE.D1.81.D1.81-.D0.BA.D0.BE.D0.BC.D0.BF.D0.B8.D0.BB.D1.8F.D1.86.D0.B8.D1.8F)
-    *   [5.1 С помощью rustup](#.D0.A1_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D1.8C.D1.8E_rustup_2)
+*   [2 Стандартная библиотека Rust](#Стандартная_библиотека_Rust)
+*   [3 Цикл выпуска](#Цикл_выпуска)
+*   [4 Установка](#Установка)
+    *   [4.1 Из репозитория](#Из_репозитория)
+    *   [4.2 С помощью Rustup](#С_помощью_Rustup)
+    *   [4.3 Проверка после установки](#Проверка_после_установки)
+*   [5 Кросс-компиляция](#Кросс-компиляция)
+    *   [5.1 С помощью rustup](#С_помощью_rustup_2)
     *   [5.2 Windows](#Windows)
-    *   [5.3 Неофициальные пакеты](#.D0.9D.D0.B5.D0.BE.D1.84.D0.B8.D1.86.D0.B8.D0.B0.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D1.8B)
+    *   [5.3 Неофициальные пакеты](#Неофициальные_пакеты)
 *   [6 Cargo](#Cargo)
-    *   [6.1 Использование](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
-*   [7 Поддержка в IDE](#.D0.9F.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.B0_.D0.B2_IDE)
-    *   [7.1 Инструменты](#.D0.98.D0.BD.D1.81.D1.82.D1.80.D1.83.D0.BC.D0.B5.D0.BD.D1.82.D1.8B)
+    *   [6.1 Использование](#Использование)
+*   [7 Поддержка в IDE](#Поддержка_в_IDE)
+    *   [7.1 Инструменты](#Инструменты)
         *   [7.1.1 Racer](#Racer)
         *   [7.1.2 Clippy](#Clippy)
-    *   [7.2 Редакторы](#.D0.A0.D0.B5.D0.B4.D0.B0.D0.BA.D1.82.D0.BE.D1.80.D1.8B)
+    *   [7.2 Редакторы](#Редакторы)
         *   [7.2.1 Atom](#Atom)
         *   [7.2.2 IntelliJ IDEA](#IntelliJ_IDEA)
         *   [7.2.3 Visual Studio Code](#Visual_Studio_Code)
         *   [7.2.4 Vim](#Vim)
         *   [7.2.5 Emacs](#Emacs)
         *   [7.2.6 Kate](#Kate)
-*   [8 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
+*   [8 Смотрите также](#Смотрите_также)
 
 ### Rust Core Library
 
@@ -56,7 +56,7 @@ Rust следует шестинедельному циклу выпуска, п
 
 Официальный и рекомендумемый способ установки Rust для разработки ПО — с помощью инструмента [Rustup](https://www.rustup.rs/), написанного на Rust.
 
-Преимуществом использования Rustup вместо обычной устаноки Rust из репозитория является возможность установки нескольких toolchains (stable, beta, nightly) для нескольких целевых платформ (windows, mac, android) и архитектур (x86, x86_64, arm). Также стоит отметить, что некоторые инструменты вроде [Clippy](https://github.com/Manishearth/rust-clippy) требуют поддержки компилируемых плагинов, что доступно только в nightly сборках Rust.
+Преимуществом использования Rustup вместо обычной устаноки Rust из репозитория является возможность установки нескольких toolchains (stable, beta, nightly) для нескольких целевых платформ (windows, mac, android) и архитектур (x86, x86_64, arm).
 
 Есть два способа установки rustup: официально поддерживаемый разработчиками Rust и поддерживаемый Arch Linux.
 
@@ -132,7 +132,7 @@ $ rustup install stable-x86_64-pc-windows-gnu
 
 В этом разделе `$ARCH` будет целевой архитектурой (`x86_64` или `i686`).
 
-1.  [Установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2 "Pacman (Русский)") [mingw-w64-gcc](https://aur.archlinux.org/packages/mingw-w64-gcc/) и [wine](https://www.archlinux.org/packages/?name=wine)
+1.  [Установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_определенных_пакетов "Pacman (Русский)") [mingw-w64-gcc](https://aur.archlinux.org/packages/mingw-w64-gcc/) и [wine](https://www.archlinux.org/packages/?name=wine)
 2.  Добавьте определение binfmt для исполняемых файлов Windows вручную или из [binfmt-wine](https://aur.archlinux.org/packages/binfmt-wine/).
 3.  Если вы используете rustup, достаточно просто выполнить команды `rustup install stable-$ARCH-pc-windows-gnu` и `rustup target add $ARCH-pc-windows-gnu` для установки Rust и стандартной библиотеки для вашей архитектуры. Если вы не используете rustup, поставьте стандартную библиотеку Rust для Windows в вашем каталоге rustlib (`/usr/local/lib/rustlib` если у вас [rust-nightly-bin](https://aur.archlinux.org/packages/rust-nightly-bin/) или `/usr/lib/rustlib` если вы используете пакет [rust](https://www.archlinux.org/packages/?name=rust)). Простейший путь для этого — скачать установщик Rust под Windows для нужной вам архитектуры, установить с помощью Wine (`wine start my-rust-installer.msi`) и скопировать `$INSTALL_DIR/lib/rustlib/$ARCH-pc-windows-gnu` в ваш каталог rustlib.
 4.  Подскажите cargo, где искать MinGW-w64 gcc/ar добавлением следующих параметров в `~/.cargo/config` (создайте файл, если он отсутствует):

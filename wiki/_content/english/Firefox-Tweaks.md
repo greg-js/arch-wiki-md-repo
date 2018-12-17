@@ -372,7 +372,7 @@ input:not(.urlbar-input):not(.textbox-input):not(.form-control):not([type='check
 
 ##### Change the GTK theme
 
-To force Firefox to use a light theme (e.g. Adwaita) for both web content and UI, see [Firefox#Dark themes](/index.php/Firefox#Dark_themes "Firefox").
+To force Firefox to use a light theme (e.g. Adwaita) for both web content and UI, see [GTK#Themes](/index.php/GTK#Themes "GTK").
 
 ##### Change the GTK theme for content process only
 

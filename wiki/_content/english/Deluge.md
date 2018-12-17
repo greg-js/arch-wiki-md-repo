@@ -33,6 +33,7 @@ Related articles
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 No module named service_identity](#No_module_named_service_identity)
     *   [6.2 Web ui .torrent upload does not work](#Web_ui_.torrent_upload_does_not_work)
+    *   [6.3 ImportError: No module named gobject](#ImportError:_No_module_named_gobject)
 *   [7 See Also](#See_Also)
 
 ## Installation
@@ -281,7 +282,7 @@ The default settings disallow remote connections. Change the "allow_remote" sett
 
 **Note:**
 
-1\. `$HOME/.config/deluge/core.conf` is automatically created at the first configuration change, if it does not exist you can set the value via `deluge-console`:
+1\. `$HOME/.config/deluge/core.conf` is automatically created at the first configuration change, if it does not exist, set the value via `deluge-console`:
 
 ```
 config --set allow_remote true
@@ -348,7 +349,7 @@ The port **58846** should be replaced with the port the deluge server is running
 
 ### No module named service_identity
 
-Upon running `deluged` or `deluge-console`, you may recieve a message like the following:
+Upon running `deluged` or `deluge-console`, one may receive a message like the following:
 
 ```
 :0: UserWarning: You do not have a working installation of the service_identity module: 'No module named service_identity'.  
@@ -358,11 +359,29 @@ client hostname verification.  Many valid certificate/hostname mappings may be r
 
 ```
 
-You may be missing [python2-service-identity](https://www.archlinux.org/packages/?name=python2-service-identity), which is an optional dependency to [python2-twisted](https://www.archlinux.org/packages/?name=python2-twisted). See [FS#43806](https://bugs.archlinux.org/task/43806).
+[python2-service-identity](https://www.archlinux.org/packages/?name=python2-service-identity), an optional dependency to [python2-twisted](https://www.archlinux.org/packages/?name=python2-twisted), is likely missing. See [FS#43806](https://bugs.archlinux.org/task/43806).
 
 ### Web ui .torrent upload does not work
 
-If you are running the web ui behind a reverse proxy, you need to allow embedding for .torrent upload to work (X-Frame-Options ALLOW)
+Users running the web ui behind a reverse proxy need to allow embedding for .torrent upload to work (X-Frame-Options ALLOW)
+
+### ImportError: No module named gobject
+
+If the following error message is displayed when attempting to launch the deluge GUI client:
+
+```
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/deluge/ui/ui.py", line 152, in __init__
+    from deluge.ui.gtkui.gtkui import GtkUI
+  File "/usr/lib/python2.7/site-packages/deluge/ui/gtkui/__init__.py", line 1, in <module>
+    from gtkui import start
+  File "/usr/lib/python2.7/site-packages/deluge/ui/gtkui/gtkui.py", line 37, in <module>
+    import gobject
+ImportError: No module named gobject
+
+```
+
+Install [pygtk](https://www.archlinux.org/packages/?name=pygtk), as noted above.
 
 ## See Also
 

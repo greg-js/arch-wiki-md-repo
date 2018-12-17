@@ -1,11 +1,17 @@
+Related articles
+
+*   [ClamAV](/index.php/ClamAV "ClamAV")
+*   [Postfix](/index.php/Postfix "Postfix")
+*   [Dovecot](/index.php/Dovecot "Dovecot")
+
 From [Amavis's site](http://www.ijs.si/software/amavisd/):
 
-	*amavisd-new is a high-performance interface between mailer (MTA) and content checkers: virus scanners, and/or SpamAssassin. It is written in Perl for maintainability, without paying a significant price for speed. It talks to MTA via (E)SMTP or LMTP, or by using helper programs. Best with Postfix, fine with dual-sendmail setup and Exim v4, works with sendmail/milter, or with any MTA as a SMTP relay.*
+	amavisd-new is a high-performance interface between mailer (MTA) and content checkers: virus scanners, and/or SpamAssassin. It is written in Perl for maintainability, without paying a significant price for speed. It talks to MTA via (E)SMTP or LMTP, or by using helper programs. Best with Postfix, fine with dual-sendmail setup and Exim v4, works with sendmail/milter, or with any MTA as a SMTP relay.
 
 ## Contents
 
-*   [1 Installation and Setup](#Installation_and_Setup)
-    *   [1.1 Basic Configuration](#Basic_Configuration)
+*   [1 Installation and setup](#Installation_and_setup)
+    *   [1.1 Basic configuration](#Basic_configuration)
     *   [1.2 Testing](#Testing)
 *   [2 Integration with Postfix](#Integration_with_Postfix)
     *   [2.1 Quick start](#Quick_start)
@@ -13,14 +19,14 @@ From [Amavis's site](http://www.ijs.si/software/amavisd/):
 *   [4 Final test](#Final_test)
 *   [5 See also](#See_also)
 
-## Installation and Setup
+## Installation and setup
 
 In this setup it is assumed that you are using [ClamAV](/index.php/ClamAV "ClamAV") as anti-virus scanner.
 
 *   Install [amavisd-new](https://www.archlinux.org/packages/?name=amavisd-new). You would be wise to also install optdepends such as [p7zip](https://www.archlinux.org/packages/?name=p7zip) and [unrar](https://www.archlinux.org/packages/?name=unrar) so your filters can actually see inside compressed files.
 *   Install [clamav](https://www.archlinux.org/packages/?name=clamav).
 
-### Basic Configuration
+### Basic configuration
 
 If your hostname is not a FQDN, you must set `$myhostname` and `$mydomain` accordingly in `/etc/amavisd/amavisd.conf`.
 

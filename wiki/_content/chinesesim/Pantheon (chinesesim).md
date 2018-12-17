@@ -4,18 +4,18 @@
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-    *   [1.1 补充信息](#.E8.A1.A5.E5.85.85.E4.BF.A1.E6.81.AF)
+*   [1 安装](#安装)
+    *   [1.1 补充信息](#补充信息)
         *   [1.1.1 Packages based on older evolution-data-server](#Packages_based_on_older_evolution-data-server)
-*   [2 启用Pantheon桌面](#.E5.90.AF.E7.94.A8Pantheon.E6.A1.8C.E9.9D.A2)
-    *   [2.1 使用显示服务器启动](#.E4.BD.BF.E7.94.A8.E6.98.BE.E7.A4.BA.E6.9C.8D.E5.8A.A1.E5.99.A8.E5.90.AF.E5.8A.A8)
-    *   [2.2 通过 .xinitrc 启动](#.E9.80.9A.E8.BF.87_.xinitrc_.E5.90.AF.E5.8A.A8)
+*   [2 启用Pantheon桌面](#启用Pantheon桌面)
+    *   [2.1 使用显示服务器启动](#使用显示服务器启动)
+    *   [2.2 通过 .xinitrc 启动](#通过_.xinitrc_启动)
     *   [2.3 Autostart applications](#Autostart_applications)
 *   [3 Configuration](#Configuration)
     *   [3.1 Pantheon Files](#Pantheon_Files)
         *   [3.1.1 Enable context menu entries](#Enable_context_menu_entries)
     *   [3.2 Terminal](#Terminal)
-        *   [3.2.1 Opacity (transparency)](#Opacity_.28transparency.29)
+        *   [3.2.1 Opacity (transparency)](#Opacity_(transparency))
 *   [4 Known Issues](#Known_Issues)
     *   [4.1 Indicators not working in wingpanel](#Indicators_not_working_in_wingpanel)
     *   [4.2 Indicator-session menus not working](#Indicator-session_menus_not_working)
@@ -26,8 +26,8 @@
     *   [4.7 Cannot interact with the LightDM Pantheon greeter](#Cannot_interact_with_the_LightDM_Pantheon_greeter)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Gala crashes on start](#Gala_crashes_on_start)
-    *   [5.2 How can I add new applications to the dock?](#How_can_I_add_new_applications_to_the_dock.3F)
-    *   [5.3 How can I change the default appearance such as GTK theme, font size, etc?](#How_can_I_change_the_default_appearance_such_as_GTK_theme.2C_font_size.2C_etc.3F)
+    *   [5.2 How can I add new applications to the dock?](#How_can_I_add_new_applications_to_the_dock?)
+    *   [5.3 How can I change the default appearance such as GTK theme, font size, etc?](#How_can_I_change_the_default_appearance_such_as_GTK_theme,_font_size,_etc?)
     *   [5.4 I do not have any mouse cursor](#I_do_not_have_any_mouse_cursor)
     *   [5.5 Wingpanel is empty except for Applications](#Wingpanel_is_empty_except_for_Applications)
 
@@ -90,7 +90,7 @@ Server = http://pkgbuild.com/~alucryd/$repo/$arch
 
 推荐安装以下字体包来获取最佳桌面体验:
 
-*   [ttf-opensans](https://aur.archlinux.org/packages/ttf-opensans/): Open Sans Fonts
+*   [ttf-opensans](https://www.archlinux.org/packages/?name=ttf-opensans): Open Sans Fonts
 *   [ttf-raleway-font-family](https://aur.archlinux.org/packages/ttf-raleway-font-family/): Raleway Font Family
 *   [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu): Font family based on the Bitstream Vera Fonts
 *   [ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid): General-purpose fonts released by Google as part of Android

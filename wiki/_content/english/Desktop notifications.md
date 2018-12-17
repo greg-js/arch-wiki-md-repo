@@ -82,7 +82,7 @@ You can choose one of the following implementations:
 
 *   **mako** — A lightweight notification daemon for [Wayland](/index.php/Wayland "Wayland"); it currently works on [Sway](/index.php/Sway "Sway") 1.0 alpha.
 
-	[https://github.com/emersion/mako](https://github.com/emersion/mako) || [mako](https://aur.archlinux.org/packages/mako/) [mako-git](https://aur.archlinux.org/packages/mako-git/)
+	[https://github.com/emersion/mako](https://github.com/emersion/mako) || [mako](https://www.archlinux.org/packages/?name=mako) [mako-git](https://aur.archlinux.org/packages/mako-git/)
 
 *   **MATE Notification Daemon** — Notification server for [MATE](/index.php/MATE "MATE").
 

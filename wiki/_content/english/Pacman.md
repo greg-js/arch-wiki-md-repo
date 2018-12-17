@@ -795,7 +795,7 @@ When successfully completing a package transaction, pacman performs for the foll
 3.  if pre-existing pacman `PreTransaction` hooks apply, they are executed
 4.  Each package is installed/upgraded/removed in turn
     1.  if the package has an install script, its `pre_install` function is executed (or `pre_upgrade` or `pre_remove` in the case of an upgraded or removed package)
-    2.  pacman deletes all the files from a pre-existing version of the package (in the case of an upgraded or removed package)
+    2.  pacman deletes all the files from a pre-existing version of the package (in the case of an upgraded or removed package). However, some configuration files are [treated differently](/index.php/Pacman/Pacnew_and_Pacsave "Pacman/Pacnew and Pacsave").
     3.  pacman untars the package and dumps its files into the file system (in the case of an installed or upgraded package)
     4.  if the package has an install script, its `post_install` function is executed (or `post_upgrade` or `post_remove` in the case of an upgraded or removed package)
 5.  if pacman `PostTransaction` hooks that exist at the end of the transaction apply, they are executed

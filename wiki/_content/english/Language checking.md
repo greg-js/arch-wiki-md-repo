@@ -39,7 +39,7 @@ This article covers [spell checking](https://en.wikipedia.org/wiki/Spell_checker
 
 Enchant is available as the [enchant](https://www.archlinux.org/packages/?name=enchant) package. For its usage and ordering file, see [enchant-2(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/enchant-2.1).
 
-Enchant is used my many applications through the following [GTK](/index.php/GTK "GTK") libraries:
+Enchant is used by many applications through the following [GTK](/index.php/GTK "GTK") libraries:
 
 *   **gspell** — Flexible API to implement spell checking in GTK+ applications.
 

@@ -10,7 +10,7 @@ Instalar o Arch Linux de um Linux existente é útil para:
 
 *   instalar remotamente o Arch Linux, p.ex. um servidor raiz (virtual)
 *   substituir um Linux existente sem um LiveCD (ver [#Substituindo o sistema existente sem um LiveCD](#Substituindo_o_sistema_existente_sem_um_LiveCD))
-*   criar uma nova distribuição ou LiveCD baseado no Arch Linux
+*   criar uma nova distribuição ou [LiveMedia baseada no Arch Linux](/index.php/Distribui%C3%A7%C3%B5es_baseadas_no_Arch "Distribuições baseadas no Arch")
 *   criar um ambiente de chroot do Arch Linux, p.ex.: contêiner base de Docker
 *   [rootfs-over-NFS para terminais burros](/index.php/Diskless_network_boot_NFS_root "Diskless network boot NFS root")
 
@@ -188,6 +188,11 @@ Antes de iniciar a instalação, as chaves do pacman precisam ser configuradas. 
 #### Selecionando um espelho e baixando ferramentas básicas
 
 Após [selecionar um espelho](/index.php/Espelhos#Habilitando_um_espelho_específico "Espelhos"), [renove as listas de pacotes](/index.php/Espelhos#Forçar_o_pacman_a_renovar_as_listas_de_pacotes "Espelhos") e [instale](/index.php/Instale "Instale") o que você precisa: [base](https://www.archlinux.org/groups/x86_64/base/), [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), [parted](https://www.archlinux.org/packages/?name=parted) etc.
+
+**Nota:**
+
+*   Como ainda não há nenhum editor de texto, você precisa sair do arch-chroot e editar a mirrorlist usando o editor de texto do host.
+*   Quando você tentar instalar pacotes com o pacman, você pode obter `*erro: não foi possível determinar o ponto de montagem do cachedir: /var/cache/pacman/pkg*`. Para contornar isso, você pode usar `mount --bind <diretório-para-livecd-ou-bootstrap> <diretório-para-livecd-ou-bootstrap>` antes de fazer chroot. Veja [FS#46169](https://bugs.archlinux.org/task/46169).
 
 ### Dicas de instalação
 

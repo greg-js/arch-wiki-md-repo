@@ -731,7 +731,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **Nexuiz** — Juego de disparos en primera persona, libre y de código abierto. Desarrollo cesado, la mayoría de los desarrolladores se trasladaron al proyecto [Xonotic](http://xonotic.org/).
 
-	[http://alientrap.org/nexuiz](http://alientrap.org/nexuiz) || [nexuiz](https://aur.archlinux.org/packages/nexuiz/)
+	[http://alientrap.org/nexuiz](http://alientrap.org/nexuiz) || [nexuiz](https://www.archlinux.org/packages/?name=nexuiz)
 
 *   **nQuake** — Juego FPS multijugador de ritmo rápido enfocado a trucos de movimientos y saltos. Este es el popular paquete Quake/QuakeWorld, que incluye el cliente ezQuake, texturas de 24bit, mapas, robots y más. Se configura automáticamente después de la instalación. Se puede jugar en línea gratis.
 

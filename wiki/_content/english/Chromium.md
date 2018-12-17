@@ -93,9 +93,17 @@ Accelerated video decoding using [VA-API](/index.php/VA-API "VA-API") is availab
 
 *   [Verify VA-API](/index.php/Hardware_video_acceleration#Verifying_VA-API "Hardware video acceleration") has been enabled and working correctly.
 *   One may need to [#Force GPU acceleration](#Force_GPU_acceleration) as Chromium uses a GPU blacklist by default.
-*   On [AMDGPU](/index.php/AMDGPU "AMDGPU") video corruption may occur [[1]](https://bugs.freedesktop.org/show_bug.cgi?id=106490). A workaround is to export `allow_rgb10_configs=false` as [environment variable](/index.php/Environment_variable "Environment variable"):
+
+On [ATI](/index.php/ATI "ATI")/[AMDGPU](/index.php/AMDGPU "AMDGPU") video corruption may occur [[1]](https://bugs.freedesktop.org/show_bug.cgi?id=106490). A workaround is to set `allow_rgb10_configs=false` [environment variable](/index.php/Environment_variable "Environment variable")
+
+*   globally (all applications will be affected):
 
  `/etc/environment`  `allow_rgb10_configs=false` 
+
+*   or app-specific adding the [variable](/index.php/Environment_variable "Environment variable") to `chromium.desktop` [desktop entry](/index.php/Desktop_entry "Desktop entry") editing the `Exec=` command line:
+
+ `~/.local/share/applications/chromium.desktop`  `Exec=allow_rgb10_configs=false chromium %U` 
+**Tip:** It may be helpful to copy the `.desktop` file in `/usr/share/applications/` and then modify the one locally at `~/.local/share/applications/`.
 
 To use hardware video acceleration:
 

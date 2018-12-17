@@ -8,7 +8,6 @@ Related articles
 ## Contents
 
 *   [1 Requirements](#Requirements)
-    *   [1.1 Buffer API support](#Buffer_API_support)
 *   [2 Weston](#Weston)
     *   [2.1 Installation](#Installation)
     *   [2.2 Usage](#Usage)
@@ -30,26 +29,19 @@ Related articles
 *   [4 Compositors](#Compositors)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Gamma](#Gamma)
-    *   [5.2 Running graphical applications as root](#Running_graphical_applications_as_root)
-    *   [5.3 LLVM assertion failure](#LLVM_assertion_failure)
-    *   [5.4 Slow motion, graphical glitches, and crashes](#Slow_motion,_graphical_glitches,_and_crashes)
-    *   [5.5 X11 on tty1, Wayland on tty2](#X11_on_tty1,_Wayland_on_tty2)
-    *   [5.6 GNOME Wayland on tty1, Weston on tty2](#GNOME_Wayland_on_tty1,_Weston_on_tty2)
-    *   [5.7 Electron based applications / VS Code](#Electron_based_applications_/_VS_Code)
-    *   [5.8 Weston terminal](#Weston_terminal)
-    *   [5.9 Screen recording](#Screen_recording)
-    *   [5.10 Remote display](#Remote_display)
-    *   [5.11 Input grabbing in games, remote desktop and VM windows](#Input_grabbing_in_games,_remote_desktop_and_VM_windows)
-        *   [5.11.1 wlroots input inhibitor protocol](#wlroots_input_inhibitor_protocol)
+    *   [5.2 LLVM assertion failure](#LLVM_assertion_failure)
+    *   [5.3 Slow motion, graphical glitches, and crashes](#Slow_motion,_graphical_glitches,_and_crashes)
+    *   [5.4 GNOME Wayland on tty1, Weston on tty2](#GNOME_Wayland_on_tty1,_Weston_on_tty2)
+    *   [5.5 Electron based applications / VS Code](#Electron_based_applications_/_VS_Code)
+    *   [5.6 Screen recording](#Screen_recording)
+    *   [5.7 Remote display](#Remote_display)
+    *   [5.8 Input grabbing in games, remote desktop and VM windows](#Input_grabbing_in_games,_remote_desktop_and_VM_windows)
+        *   [5.8.1 wlroots input inhibitor protocol](#wlroots_input_inhibitor_protocol)
 *   [6 See also](#See_also)
 
 ## Requirements
 
-Most Wayland compositors only work on systems using [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting").
-
-Wayland by itself does not provide a graphical environment; for this you also need a compositor such as [#Weston](#Weston) or [Sway](/index.php/Sway "Sway"), or a desktop environment that includes a compositor like [GNOME](/index.php/GNOME "GNOME") or [KDE](/index.php/KDE "KDE").
-
-### Buffer API support
+Most Wayland compositors only work on systems using [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"). Wayland by itself does not provide a graphical environment; for this you also need a compositor such as [#Weston](#Weston) or [Sway](/index.php/Sway "Sway"), or a desktop environment that includes a compositor like [GNOME](/index.php/GNOME "GNOME") or [KDE](/index.php/KDE "KDE").
 
 For the GPU driver and Wayland compositor to be compatible they must support the same buffer API. There are two main APIs: [GBM](https://en.wikipedia.org/wiki/Generic_Buffer_Management "wikipedia:Generic Buffer Management") and [EGLStreams](http://www.phoronix.com/scan.php?page=news_item&px=XDC2016-Device-Memory-API).
 
@@ -393,10 +385,6 @@ redshift -m drm -PO 3000
 
 ```
 
-### Running graphical applications as root
-
-See [Running GUI apps as root](/index.php/Running_GUI_apps_as_root "Running GUI apps as root").
-
 ### LLVM assertion failure
 
 If you get an LLVM assertion failure, you need to rebuild [mesa](https://www.archlinux.org/packages/?name=mesa) without Gallium LLVM until this problem is fixed.
@@ -412,10 +400,6 @@ $ export EGL_DRIVER=/usr/lib/egl/egl_gallium.so
 
 Gnome-shell users may experience display issues when they switch to Wayland from X. One of the root cause might be the `CLUTTER_PAINT=disable-clipped-redraws:disable-culling` set by yourself for Xorg-based gnome-shell. Just try to remove it from `/etc/environment` or other rc files to see if everything goes back to normal.
 
-### X11 on tty1, Wayland on tty2
-
-(20161209) windows of GNOME applications end up on tty2 no matter where started ([GNOME issue 774775)](https://bugzilla.gnome.org/show_bug.cgi?id=774775)
-
 ### GNOME Wayland on tty1, Weston on tty2
 
 (20170106) apps started on GNOME with WAYLAND_DISPLAY set to weston make it not respond any more ([Wayland issue 99489](https://bugs.freedesktop.org/show_bug.cgi?id=99489))
@@ -428,10 +412,6 @@ Try running with GDK_BACKEND=x11\. Example alias:
 $ alias code='GDK_BACKEND=x11 /usr/bin/code 2>/dev/null'
 
 ```
-
-### Weston terminal
-
-(20161229) core dump when started on gnome
 
 ### Screen recording
 

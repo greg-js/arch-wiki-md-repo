@@ -565,7 +565,7 @@ None, Thumb2, Alt_L|Right
 
 ```
 
-[lomoco](https://aur.archlinux.org/packages/lomoco/) for Logitech MX mice will help you set the proper resolution, enable or disable smart scroll (with boot time support too!), etc. lomoco is available from the `[community]` repository and can be installed with the following command:
+[lomoco](https://aur.archlinux.org/packages/lomoco/) for Logitech MX mice will help you set the proper resolution, enable or disable smart scroll (with boot time support too!), etc.
 
 Be sure to look at `/etc/udev/lomoco_mouse.conf` and set up the the options you want to be automatically applied when the mouse gets loaded by [udev](/index.php/Udev "Udev").
 

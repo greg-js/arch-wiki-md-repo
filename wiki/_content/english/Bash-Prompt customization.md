@@ -39,7 +39,7 @@ Bash has four prompts that can be customized:
 All of the prompts are customized by setting the corresponding variable to the desired string (usually in `~/.bashrc`), for example
 
 ```
-export PS2='> '
+PS2='> '
 
 ```
 
@@ -79,7 +79,7 @@ To practically incorporate these capabilities into your prompt, you can use Bash
 GREEN="\[$(tput setaf 2)\]"
 RESET="\[$(tput sgr0)\]"
 
-export PS1="${GREEN}my prompt${RESET}> "
+PS1="${GREEN}my prompt${RESET}> "
 ```
 
 my prompt>
@@ -104,7 +104,7 @@ PEACH="$ESC[48;5;209m"
 
 If you want to add the output of some command to your prompt, you might be tempted to use command substitution. For example, to add the amount of free memory to your prompt you might try:
 
- `export PS1="$(awk '/MemFree/{print $2}' /proc/meminfo) prompt > "` 
+ `PS1="$(awk '/MemFree/{print $2}' /proc/meminfo) prompt > "` 
 ```
 53718 prompt >
 53718 prompt >
@@ -114,9 +114,9 @@ If you want to add the output of some command to your prompt, you might be tempt
 But this doesn't work; the amount of memory shown is the same every time! This is because the command is run once, when PS1 is first set, and never again. The trick is to simply prevent the substitution either by escaping the `$` or by defining it in single quotes—either way it will be substituted when the prompt is actually displayed:
 
 ```
-export PS1="\$(awk '/MemFree/{print \$2}' /proc/meminfo) prompt > "
+PS1="\$(awk '/MemFree/{print \$2}' /proc/meminfo) prompt > "
 # or
-export PS1='$(awk "/MemFree/{print \$2}" /proc/meminfo) prompt > '
+PS1='$(awk "/MemFree/{print \$2}" /proc/meminfo) prompt > '
 
 ```
 
@@ -128,7 +128,7 @@ free_mem()
     awk '/MemFree/{print $2}' /proc/meminfo
 }
 
-export PS1='$(free_mem) prompt > '
+PS1='$(free_mem) prompt > '
 ```
 
 **Note:** You can use terminfo/ANSI escape sequences inside substituted functions but **not** Bash escapes. In particular `\[ \]` won't work for surrounding non-printable characters. Instead you can use the octal escapes `\001` and `\002` (e.g. using `printf` or `echo -e`).
@@ -236,9 +236,9 @@ The following [terminfo capabilities](#Terminfo_escape_sequences) are useful for
 Using the same trick from [embedding commands](#Embedding_commands) you can delay the interpolation of special Bash variables like `$?`. So the following prompt shows the exit code of the previous command:
 
 ```
-export PS1="\$? > "
+PS1="\$? > "
 # or
-export PS1='$? > '
+PS1='$? > '
 
 ```
 
@@ -257,7 +257,7 @@ exitstatus()
         echo 'D:'
     fi
 }
-export PS1='$(exitstatus) > '
+PS1='$(exitstatus) > '
 ```
 
 :) > true
@@ -269,7 +269,7 @@ D: >
 It is possible to move the cursor around the screen inside of PS1 to make different parts of the prompt appear in different locations. However, to ensure that Bash positions the cursor and output in the right position, you must move the cursor back to the original position after you are done printing elsewhere. This can be done using the tput capabilities `sc` and `rc` to save and restore the cursor position. The general pattern for a prompt that moves the cursor is
 
 ```
-export PS1="\[$(tput sc; *cursor-moving code*) *positioned prompt stuff* $(tput rc)\] *normal prompt stuff*"
+PS1="\[$(tput sc; *cursor-moving code*) *positioned prompt stuff* $(tput rc)\] *normal prompt stuff*"
 
 ```
 
@@ -285,7 +285,7 @@ rightprompt()
     printf "%*s" $COLUMNS "right prompt"
 }
 
-export PS1='\[$(tput sc; rightprompt; tput rc)\]left prompt > '
+PS1='\[$(tput sc; rightprompt; tput rc)\]left prompt > '
 ```
 
 left prompt > right prompt
@@ -306,7 +306,7 @@ $ tput cup $((LINES - 11)) $((COLUMNS - 6))
 The terminal window title can be customized in much the same way as the prompt: by printing escape sequences in the shell. Thus it is common for users to include window title customizations in their prompt. Although this is technically a feature of xterm, many modern terminals support it. The escape sequence to use is `**ESC**]2;*new title***BEL**` where `**ESC**` and `**BEL**` are the escape and bell characters. Using [#Bash escape sequences](#Bash_escape_sequences), changing the title in your prompt looks like
 
 ```
-export PS1='\[\e]2;*new title*\a\]prompt > '
+PS1='\[\e]2;*new title*\a\]prompt > '
 
 ```
 

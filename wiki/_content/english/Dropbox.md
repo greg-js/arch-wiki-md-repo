@@ -5,7 +5,7 @@ Related articles
 
 [Dropbox](https://www.dropbox.com) is a file sharing system with a GNU/Linux client. Use it to transparently sync files across computers and architectures. Simply drop files into your `~/Dropbox` folder, and they will automatically sync to your centralized repository.
 
-**Note:** On August 10, 2018, Dropbox announced that they will be ending support for all filesystems except for unencrypted [Ext4](/index.php/Ext4 "Ext4") on November 7, 2018.[[1]](https://www.dropboxforum.com/t5/Syncing-and-uploads/Dropbox-client-warns-me-that-it-ll-stop-syncing-in-Nov-why/m-p/290065/highlight/true#M42255)
+**Note:** In November, 2018, Dropbox dropped support for all filesystems except unencrypted [Ext4](/index.php/Ext4 "Ext4").[[1]](https://www.dropboxforum.com/t5/Syncing-and-uploads/Dropbox-client-warns-me-that-it-ll-stop-syncing-in-Nov-why/m-p/290065/highlight/true#M42255)
 
 ## Contents
 

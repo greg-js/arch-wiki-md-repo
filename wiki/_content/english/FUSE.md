@@ -59,6 +59,10 @@ $ fusermount -u *mountpoint*
 
 	[http://www.gphoto.org/proj/gphotofs/](http://www.gphoto.org/proj/gphotofs/) || [gphotofs](https://aur.archlinux.org/packages/gphotofs/)
 
+*   **HubicFuse** — FUSE filesystem to access HubiC cloud storage.
+
+	[https://github.com/TurboGit/hubicfuse](https://github.com/TurboGit/hubicfuse) || [hubicfuse](https://www.archlinux.org/packages/?name=hubicfuse)
+
 *   **MegaFuse** — MEGA client for Linux, based on FUSE.
 
 	[https://github.com/matteoserva/MegaFuse](https://github.com/matteoserva/MegaFuse) || [megafuse-git](https://aur.archlinux.org/packages/megafuse-git/)

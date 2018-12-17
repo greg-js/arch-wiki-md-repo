@@ -17,7 +17,8 @@ With EFISTUB a kernel can be booted directly by a UEFI motherboard or indirectly
         *   [2.3.1 efibootmgr](#efibootmgr)
         *   [2.3.2 efibootmgr with .efi file](#efibootmgr_with_.efi_file)
         *   [2.3.3 UEFI Shell](#UEFI_Shell)
-        *   [2.3.4 Using a startup.nsh script](#Using_a_startup.nsh_script)
+        *   [2.3.4 More tools](#More_tools)
+        *   [2.3.5 Using a startup.nsh script](#Using_a_startup.nsh_script)
 *   [3 See also](#See_also)
 
 ## Preparing for EFISTUB
@@ -85,7 +86,7 @@ After adding the boot entry, you can verify the entry was added properly with:
 
 ```
 
-Or, as a last resort, boot with the `efi_no_storage_paranoia` kernel parameter. You can also try to [downgrade](/index.php/Downgrading_packages "Downgrading packages") your efibootmgr install to version 0.11.0\. This version works with Linux version 4.0.6\. See the bug discussion [FS#34641](https://bugs.archlinux.org/task/34641) for more information.
+Or, as a last resort, boot with the `efi_no_storage_paranoia` kernel parameter. You can also try to [downgrade](/index.php/Downgrading_packages "Downgrading packages") your efibootmgr install to version 0.11.0\. This version works with Linux version 4.0.6\. See the bug discussion [FS#34641](https://bugs.archlinux.org/task/34641), in particular the [closing comment](https://bugs.archlinux.org/task/34641#comment111365), for more information.
 
 To set the boot order, run:
 
@@ -176,6 +177,10 @@ To remove a previously added item do:
 Shell> bcfg boot rm *N*
 
 ```
+
+#### More tools
+
+Some of the tools above, and more, are briefly discussed in [rEFInd#Tools](/index.php/REFInd#Tools "REFInd").
 
 #### Using a startup.nsh script
 

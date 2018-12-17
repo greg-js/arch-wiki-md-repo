@@ -78,8 +78,6 @@ The [#Comparison table](#Comparison_table) columns have the following meaning:
 | [rua](https://aur.archlinux.org/packages/rua/) | Rust | Yes | [No](https://github.com/vn971/rua/issues/1) | Yes | [Yes](https://github.com/vn971/rua/commit/fc8c2f3) | Yes | Yes | bash, zsh, fish | [bubblewrap](/index.php/Bubblewrap "Bubblewrap"), `.pkg.tar` inspection |
 | [burgaur](https://aur.archlinux.org/packages/burgaur/)
 <small>([discontinued](https://github.com/m45t3r/burgaur/issues/7#issuecomment-365599675))</small> | Python/C | No | No | No | No | No | No | – | wrapper for *cower* |
-| [naaman](https://aur.archlinux.org/packages/naaman/)
-<small>([discontinued](https://github.com/enckse/naaman/issues/20#issuecomment-433781874))</small> | Python | No | No | Yes | Yes | [Partial](https://github.com/enckse/naaman/issues/19) | [Partial](https://github.com/enckse/naaman/issues/20) | bash | – |
 | [spinach](https://aur.archlinux.org/packages/spinach/)
 <small>([discontinued](https://github.com/floft/spinach))</small> | Bash | [Yes](https://github.com/floft/spinach/commit/5455747) | No | No | No | No | No | – | – |
 

@@ -64,7 +64,7 @@ WARNING : Error while connecting to Last.fm network: 'module' object has no att
 
 ```
 
-You need to install the [python2-pylast](https://www.archlinux.org/packages/?name=python2-pylast) package from AUR.
+You need to install the [python2-pylast](https://aur.archlinux.org/packages/python2-pylast/) package from AUR.
 
 ### "Playback error encountered! No suitable plugins found"
 

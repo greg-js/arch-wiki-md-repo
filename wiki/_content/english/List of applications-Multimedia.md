@@ -547,7 +547,7 @@ See also [Wikipedia:Comparison of 3D computer graphics software](https://en.wiki
 
 *   **Gcolor3** — Simple GTK+ 3 color selector.
 
-	[https://www.hjdskes.nl/projects/gcolor3/](https://www.hjdskes.nl/projects/gcolor3/) || [gcolor3](https://aur.archlinux.org/packages/gcolor3/)
+	[https://www.hjdskes.nl/projects/gcolor3/](https://www.hjdskes.nl/projects/gcolor3/) || [gcolor3](https://www.archlinux.org/packages/?name=gcolor3)
 
 *   **GPick** — Advanced color picker tool.
 

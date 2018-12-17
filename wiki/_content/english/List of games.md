@@ -852,7 +852,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **[Nexuiz](https://en.wikipedia.org/wiki/Nexuiz "wikipedia:Nexuiz")** — Free, open-source first person shooter. Development ceased, most of the developers moved to project [Xonotic](http://xonotic.org/).
 
-	[http://alientrap.org/nexuiz](http://alientrap.org/nexuiz) || [nexuiz](https://aur.archlinux.org/packages/nexuiz/)
+	[http://alientrap.org/nexuiz](http://alientrap.org/nexuiz) || [nexuiz](https://www.archlinux.org/packages/?name=nexuiz)
 
 *   **nQuake** — Fast paced multiplayer FPS focusing on movement and trick jumps. This is the popular Quake / QuakeWorld package, including ezQuake client, 24bit textures, maps, bots and more. Can play on-line for free.
 

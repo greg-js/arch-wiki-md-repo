@@ -11,12 +11,12 @@ Related articles
 *   [2 Create a new configuration](#Create_a_new_configuration)
 *   [3 Take snapshots](#Take_snapshots)
     *   [3.1 Automatic timeline snapshots](#Automatic_timeline_snapshots)
-        *   [3.1.1 Enable/disable](#Enable.2Fdisable)
+        *   [3.1.1 Enable/disable](#Enable/disable)
         *   [3.1.2 Set snapshot limits](#Set_snapshot_limits)
         *   [3.1.3 Change snapshot and cleanup frequencies](#Change_snapshot_and_cleanup_frequencies)
     *   [3.2 Manual snapshots](#Manual_snapshots)
         *   [3.2.1 Simple snapshots](#Simple_snapshots)
-        *   [3.2.2 Pre/post snapshots](#Pre.2Fpost_snapshots)
+        *   [3.2.2 Pre/post snapshots](#Pre/post_snapshots)
     *   [3.3 Snapshots on boot](#Snapshots_on_boot)
 *   [4 List snapshots](#List_snapshots)
 *   [5 List configurations](#List_configurations)
@@ -28,7 +28,7 @@ Related articles
     *   [8.2 Incremental backup to external drive](#Incremental_backup_to_external_drive)
     *   [8.3 Suggested filesystem layout](#Suggested_filesystem_layout)
         *   [8.3.1 Configuration of snapper and mount point](#Configuration_of_snapper_and_mount_point)
-        *   [8.3.2 Restoring / to a previous snapshot of @](#Restoring_.2F_to_a_previous_snapshot_of_.40)
+        *   [8.3.2 Restoring / to a previous snapshot of @](#Restoring_/_to_a_previous_snapshot_of_@)
     *   [8.4 Deleting files from snapshots](#Deleting_files_from_snapshots)
     *   [8.5 Preventing slowdowns](#Preventing_slowdowns)
         *   [8.5.1 updatedb](#updatedb)
@@ -69,7 +69,7 @@ For example, to create a configuration file for the subvolume mounted at `/` do:
 
 ```
 
-At this point, the configuration is active. If your [cron](/index.php/Cron "Cron") daemon is running, snapper will take [#Automatic timeline snapshots](#Automatic_timeline_snapshots). If you do not use a [cron](/index.php/Cron "Cron") daemon, you will need to use the systemd service and timer. See [#Enable/disable](#Enable.2Fdisable).
+At this point, the configuration is active. If your [cron](/index.php/Cron "Cron") daemon is running, snapper will take [#Automatic timeline snapshots](#Automatic_timeline_snapshots). If you do not use a [cron](/index.php/Cron "Cron") daemon, you will need to use the systemd service and timer. See [#Enable/disable](#Enable/disable).
 
 See [man page](/index.php/Man_page "Man page") for `snapper-configs`.
 
@@ -150,7 +150,7 @@ To set a cleanup algorithm, use the `-c` flag after `create` and choose either `
 
 ```
 
-See [#Automatic timeline snapshots](#Automatic_timeline_snapshots) for how `timeline` snapshots work and see [#Pre/post snapshots](#Pre.2Fpost_snapshots) on how `pre` and `post` work.
+See [#Automatic timeline snapshots](#Automatic_timeline_snapshots) for how `timeline` snapshots work and see [#Pre/post snapshots](#Pre/post_snapshots) on how `pre` and `post` work.
 
 #### Pre/post snapshots
 
@@ -251,11 +251,11 @@ There are a couple of packages used for automatically creating snapshots upon a 
 
 	[https://github.com/crossroads1112/bin/tree/master/pacupg](https://github.com/crossroads1112/bin/tree/master/pacupg) || [pacupg](https://aur.archlinux.org/packages/pacupg/)
 
-*   **snap-pac** — "Makes pacman automatically use snapper to create [#Pre/post snapshots](#Pre.2Fpost_snapshots) like openSUSE's YaST". Uses [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman").
+*   **snap-pac** — "Makes pacman automatically use snapper to create [#Pre/post snapshots](#Pre/post_snapshots) like openSUSE's YaST". Uses [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman").
 
 	[https://github.com/wesbarnett/snap-pac](https://github.com/wesbarnett/snap-pac) || [snap-pac](https://www.archlinux.org/packages/?name=snap-pac)
 
-*   **snap-pac-grub** — "Additionally updates GRUB entries for [grub-btrfs](https://aur.archlinux.org/packages/grub-btrfs/) after [snap-pac](https://www.archlinux.org/packages/?name=snap-pac) made the snapshots. Also uses [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman").
+*   **snap-pac-grub** — "Additionally updates GRUB entries for [grub-btrfs](https://www.archlinux.org/packages/?name=grub-btrfs) after [snap-pac](https://www.archlinux.org/packages/?name=snap-pac) made the snapshots. Also uses [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman").
 
 	[snap-pac-grub](https://aur.archlinux.org/packages/snap-pac-grub/) || [snap-pac-grub](https://aur.archlinux.org/packages/snap-pac-grub/)
 

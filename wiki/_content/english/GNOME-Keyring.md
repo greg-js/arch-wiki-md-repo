@@ -173,7 +173,7 @@ $ ssh-add -L
 
 ```
 
-To disable all keys;
+To disable all keys:
 
 ```
 $ ssh-add -D
@@ -227,7 +227,7 @@ This command starts gnome-keyring-daemon, shutting down previously running insta
 
 The GNOME keyring is useful in conjuction with [Git](/index.php/Git "Git") when you are pushing over HTTPS.
 
-Install the [libsecret](https://www.archlinux.org/packages/?name=libsecret) package.
+[Install](/index.php/Install "Install") the [libsecret](https://www.archlinux.org/packages/?name=libsecret) package.
 
 Set Git up to use the helper:
 
@@ -244,7 +244,7 @@ Next time you do a *git push*, you are asked to unlock your keyring, if not unlo
 
 If you get a password prompt every time you login, and you find that passwords are not saved, you might need to create/set a default keyring.
 
-Ensure that the [seahorse](https://www.archlinux.org/packages/?name=seahorse) package is installed, open it ("Passwords and Keys" in system settings) and select *View* > *By Keyring* If there is no keyring in the left column (it will be marked with a lock icon), go to *File* > *New* > *Password Keyring* and give it a name. You will be asked to enter a password. If you do not give the keyring a password it will be unlocked automatically, even when using autologin, but passwords will not be stored securely. Finally, right-click on the keyring you just created and select "Set as default".
+Ensure that the [seahorse](https://www.archlinux.org/packages/?name=seahorse) package is [installed](/index.php/Install "Install"), open it ("Passwords and Keys" in system settings) and select *View* > *By Keyring*. If there is no keyring in the left column (it will be marked with a lock icon), go to *File* > *New* > *Password Keyring* and give it a name. You will be asked to enter a password. If you do not give the keyring a password it will be unlocked automatically, even when using autologin, but passwords will not be stored securely. Finally, right-click on the keyring you just created and select "Set as default".
 
 ### Resetting the keyring
 

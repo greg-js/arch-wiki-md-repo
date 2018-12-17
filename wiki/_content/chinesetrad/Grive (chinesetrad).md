@@ -2,10 +2,10 @@ Grive 是一個開源的 [Google雲端硬碟](https://en.wikipedia.org/wiki/Goog
 
 ## Contents
 
-*   [1 安裝](#.E5.AE.89.E8.A3.9D)
-*   [2 設定](#.E8.A8.AD.E5.AE.9A)
-*   [3 使用方式](#.E4.BD.BF.E7.94.A8.E6.96.B9.E5.BC.8F)
-*   [4 Grive 的圖形化界面](#Grive_.E7.9A.84.E5.9C.96.E5.BD.A2.E5.8C.96.E7.95.8C.E9.9D.A2)
+*   [1 安裝](#安裝)
+*   [2 設定](#設定)
+*   [3 使用方式](#使用方式)
+*   [4 Grive 的圖形化界面](#Grive_的圖形化界面)
 
 ## 安裝
 

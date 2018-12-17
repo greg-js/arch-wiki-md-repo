@@ -363,9 +363,9 @@ Graphics performance may depend on the settings in [xorg.conf(5)](https://jlk.fj
 
 The performance of the Mesa drivers can be configured via [drirc](https://dri.freedesktop.org/wiki/ConfigurationInfrastructure/). GUI configuration tools are available:
 
-*   **adriconf (Advanced DRI Configurator)** — Tool to set options and configure applications using the standard drirc file used by the Mesa drivers.
+*   **adriconf (Advanced DRI Configurator)** — GUI tool to configure Mesa drivers by setting options and writing them to the standard drirc file.
 
-	[https://github.com/jlHertel/adriconf/](https://github.com/jlHertel/adriconf/) || [adriconf](https://aur.archlinux.org/packages/adriconf/)
+	[https://github.com/jlHertel/adriconf/](https://github.com/jlHertel/adriconf/) || [adriconf](https://www.archlinux.org/packages/?name=adriconf)
 
 *   **DRIconf** — Configuration applet for the Direct Rendering Infrastructure. It allows customizing performance and visual quality settings of OpenGL drivers on a per-driver, per-screen and/or per-application level.
 

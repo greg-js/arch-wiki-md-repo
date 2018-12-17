@@ -506,7 +506,7 @@ See the [Btrfs Wiki page](https://btrfs.wiki.kernel.org/index.php/Btrfsck) for m
 
 In order to boot into a snapshot you must specify the subvolume via a [kernel parameter](/index.php/Kernel_parameters#Configuration "Kernel parameters") using `rootflags=subvol=*/path/to/subvolume*` and alter your `/etc/fstab` to point to the same subvolume using `subvol=`. Alternatively the subvolume can be specified with its id - retrievable with e.g. `btrfs subvolume list */root/path*` - and `rootflags=subvolid=*objectid*` as kernel parameter respectively `subvolid=*objectid*` as mount option in `/etc/fstab`.
 
-If using GRUB you can automatically populate your boot menu with btrfs snapshots when regenerating the configuration file with the help of [grub-btrfs](https://aur.archlinux.org/packages/grub-btrfs/) or [grub-btrfs-git](https://aur.archlinux.org/packages/grub-btrfs-git/).
+If using GRUB you can automatically populate your boot menu with btrfs snapshots when regenerating the configuration file with the help of [grub-btrfs](https://www.archlinux.org/packages/?name=grub-btrfs) or [grub-btrfs-git](https://aur.archlinux.org/packages/grub-btrfs-git/).
 
 ### Use Btrfs subvolumes with systemd-nspawn
 

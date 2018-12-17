@@ -26,7 +26,9 @@ Related articles
 *   [6 Tips and tricks](#Tips_and_tricks)
     *   [6.1 Dual booting with Windows XP](#Dual_booting_with_Windows_XP)
     *   [6.2 Check alignment](#Check_alignment)
-*   [7 See also](#See_also)
+*   [7 Troubleshooting](#Troubleshooting)
+    *   [7.1 Resized FAT32 partition then unrecognized on Windows](#Resized_FAT32_partition_then_unrecognized_on_Windows)
+*   [8 See also](#See_also)
 
 ## Installation
 
@@ -336,6 +338,23 @@ On an already partitioned disk, you can use *parted* to verify the alignment of 
 1 aligned
 
 ```
+
+## Troubleshooting
+
+### Resized FAT32 partition then unrecognized on Windows
+
+As of December 2018, there is [an old bug](http://git.savannah.gnu.org/cgit/parted.git/commit/?id=c0d394abac4d6d2ce35c98585b6ecb33aea48583) in parted, which [has been fixed](http://git.savannah.gnu.org/cgit/parted.git/commit/?id=3447264ba9fedf236da92b2199a2b4823b773cf5) upstream but [has never been released](https://bugzilla.gnome.org/show_bug.cgi?id=759916#c18) and therefore is still present in ArchLinux.
+
+This bug makes parted change the first bytes of resized FAT32 partitions, which are then unrecognized on Windows (even though no user data is lost, and the partitions are fully mountable on Linux).
+
+Such corrupted partitions can be repaired with a oneliner:
+
+```
+# echo -ne '\xeb\x58\x90' | dd conv=notrunc bs=1 count=3 of=*/dev/sdxy*
+
+```
+
+where `/dev/sdxy` is the corrupted partition (eg. `/dev/sdb1`).
 
 ## See also
 

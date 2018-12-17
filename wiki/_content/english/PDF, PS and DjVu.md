@@ -182,9 +182,21 @@ See also [List of applications/Documents#Stylus note-taking](/index.php/List_of_
 
 ### Simple editors
 
+*   **krop** — Simple graphical tool to crop the pages of PDF files.
+
+	[http://arminstraub.com/software/krop](http://arminstraub.com/software/krop) || [krop](https://aur.archlinux.org/packages/krop/)
+
+*   **pdfarranger** — Helps merge or split pdf documents and rotate, crop and rearrange pages. It's a maintained fork of PDF-Shuffler.
+
+	[https://github.com/jeromerobert/pdfarranger](https://github.com/jeromerobert/pdfarranger) || [pdfarranger](https://aur.archlinux.org/packages/pdfarranger/)
+
 *   **PDF Chain** — GTK front-end for [PDFtk](#Command-line_tools), written in C++, supporting concatenation, burst, watermarks, attaching files and more.
 
 	[http://pdfchain.sourceforge.net/](http://pdfchain.sourceforge.net/) || [pdfchain](https://aur.archlinux.org/packages/pdfchain/)
+
+*   **PdfHandoutCrop** — Tool to crop pdf handout with multiple pages per sheet.
+
+	[https://cges30901.github.io/pdfhandoutcrop/](https://cges30901.github.io/pdfhandoutcrop/) || [pdfhandoutcrop](https://aur.archlinux.org/packages/pdfhandoutcrop/)
 
 *   **PDF Mix Tool** — Qt front-end for [PoDoFo](#Libraries), written in C++, supports splitting, merging, rotating and mixing PDF files.
 
@@ -233,6 +245,10 @@ See also [List of applications/Documents#Stylus note-taking](/index.php/List_of_
 *   **pdf2svg** — Convert PDF files to SVG files.
 
 	[http://www.cityinthesky.co.uk/opensource/pdf2svg/](http://www.cityinthesky.co.uk/opensource/pdf2svg/) || [pdf2svg](https://www.archlinux.org/packages/?name=pdf2svg)
+
+*   **pstotext** — Converts PostScript files to text.
+
+	[http://www.cs.wisc.edu/~ghost/doc/pstotext.htm](http://www.cs.wisc.edu/~ghost/doc/pstotext.htm) || [pstotext](https://www.archlinux.org/packages/?name=pstotext)
 
 *   **mupdf-tools** — Tools developed as part of MuPDF, contains [mutool(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mutool.1) and *muraster*.
 

@@ -1235,7 +1235,7 @@ See also [Wikipedia:Comparison of BitTorrent clients](https://en.wikipedia.org/w
 
 *   **Fragments** — Easy to use BitTorrent client which follows the GNOME HIG and includes well thought-out features.
 
-	[https://github.com/haecker-felix/Fragments](https://github.com/haecker-felix/Fragments) || [fragments-git](https://aur.archlinux.org/packages/fragments-git/)
+	[https://github.com/haecker-felix/Fragments](https://github.com/haecker-felix/Fragments) || [fragments](https://www.archlinux.org/packages/?name=fragments)
 
 *   **[Ktorrent](/index.php/Ktorrent "Ktorrent")** — Feature-rich BitTorrent client for KDE.
 
@@ -1248,6 +1248,10 @@ See also [Wikipedia:Comparison of BitTorrent clients](https://en.wikipedia.org/w
 *   **[qBittorrent](https://en.wikipedia.org/wiki/qBittorrent "wikipedia:qBittorrent")** — Open source (GPLv2) BitTorrent client that strongly resembles µtorrent.
 
 	[http://www.qbittorrent.org/](http://www.qbittorrent.org/) || [qbittorrent](https://www.archlinux.org/packages/?name=qbittorrent) or [qbittorrent-nox](https://www.archlinux.org/packages/?name=qbittorrent-nox)
+
+*   **Torrential** — Simple torrent client for elementary OS.
+
+	[https://github.com/davidmhewitt/torrential](https://github.com/davidmhewitt/torrential) || [torrential](https://aur.archlinux.org/packages/torrential/)
 
 *   **[Transmission](/index.php/Transmission "Transmission")** — Simple and easy-to-use BitTorrent client with a daemon version and multiple front-ends.
 
@@ -2237,7 +2241,7 @@ See also [Wikipedia:List of podcatchers](https://en.wikipedia.org/wiki/List_of_p
 
 *   **GNOME Podcasts** — Podcast client for the GNOME Desktop written in Rust.
 
-	[https://gitlab.gnome.org/World/podcasts](https://gitlab.gnome.org/World/podcasts) || [gnome-podcasts](https://aur.archlinux.org/packages/gnome-podcasts/)
+	[https://gitlab.gnome.org/World/podcasts](https://gitlab.gnome.org/World/podcasts) || [gnome-podcasts](https://www.archlinux.org/packages/?name=gnome-podcasts)
 
 *   **gPodder** — Podcast client and media aggregator (GTK+ interface).
 
@@ -2941,7 +2945,7 @@ See also [Wikipedia:Comparison of 3D computer graphics software](https://en.wiki
 
 *   **Gcolor3** — Simple GTK+ 3 color selector.
 
-	[https://www.hjdskes.nl/projects/gcolor3/](https://www.hjdskes.nl/projects/gcolor3/) || [gcolor3](https://aur.archlinux.org/packages/gcolor3/)
+	[https://www.hjdskes.nl/projects/gcolor3/](https://www.hjdskes.nl/projects/gcolor3/) || [gcolor3](https://www.archlinux.org/packages/?name=gcolor3)
 
 *   **GPick** — Advanced color picker tool.
 
@@ -6619,7 +6623,7 @@ See also [Wikipedia:Comparison of XML editors](https://en.wikipedia.org/wiki/Com
 
 ### Document converters
 
-See also [#Markup languages](#Markup_languages).
+See also [#Markup languages](#Markup_languages) and [PDF, PS and DjVu#Command-line tools](/index.php/PDF,_PS_and_DjVu#Command-line_tools "PDF, PS and DjVu").
 
 *   **[Antiword](https://en.wikipedia.org/wiki/Antiword "wikipedia:Antiword")** — MS Word to text converter.
 
@@ -6640,6 +6644,10 @@ See also [#Markup languages](#Markup_languages).
 *   **unoconv** — Libreoffice-based document converter.
 
 	[http://dag.wiee.rs/home-made/unoconv/](http://dag.wiee.rs/home-made/unoconv/) || [unoconv](https://www.archlinux.org/packages/?name=unoconv)
+
+*   **UnRTF** — Command-line program which converts RTF documents to other formats.
+
+	[https://www.gnu.org/software/unrtf/unrtf.html](https://www.gnu.org/software/unrtf/unrtf.html) || [unrtf](https://www.archlinux.org/packages/?name=unrtf)
 
 ### Bibliographic reference managers
 
@@ -7671,9 +7679,9 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 
 	[https://als.regnet.cz/fpm2/](https://als.regnet.cz/fpm2/) || [fpm2](https://aur.archlinux.org/packages/fpm2/)
 
-*   **GNOME Password Safe** — Password manager for GNOME.
+*   **GNOME Password Safe** — Password manager for GNOME which makes use of the KeePass v.4 format.
 
-	[https://gitlab.gnome.org/World/PasswordSafe](https://gitlab.gnome.org/World/PasswordSafe) || [gnome-passwordsafe-git](https://aur.archlinux.org/packages/gnome-passwordsafe-git/)
+	[https://gitlab.gnome.org/World/PasswordSafe](https://gitlab.gnome.org/World/PasswordSafe) || [gnome-passwordsafe](https://www.archlinux.org/packages/?name=gnome-passwordsafe)
 
 *   **Ked Password Manager** — A password manager that helps to manage large numbers of passwords.
 

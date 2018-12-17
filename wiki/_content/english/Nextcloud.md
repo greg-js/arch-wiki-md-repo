@@ -249,7 +249,7 @@ To webserver read/write access to the *apps* directory (e.g. on "Cannot write in
 ```
 # mkdir -p /usr/share/webapps/nextcloud/data
 # chown http:http /usr/share/webapps/nextcloud/data
-# chown http:http /usr/share/webapps/nextcloud/apps
+# chown -R http:http /usr/share/webapps/nextcloud/apps
 # chmod 750 /usr/share/webapps/nextcloud/data
 # chmod 750 /usr/share/webapps/nextcloud/apps
 

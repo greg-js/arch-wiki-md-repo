@@ -18,8 +18,9 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [4.1 Configuring libvirt](#Configuring_libvirt)
     *   [4.2 Setting up the guest OS](#Setting_up_the_guest_OS)
     *   [4.3 Attaching the PCI devices](#Attaching_the_PCI_devices)
-    *   [4.4 Gotchas](#Gotchas_2)
-        *   [4.4.1 Using a non-EFI image on an OVMF-based VM](#Using_a_non-EFI_image_on_an_OVMF-based_VM)
+    *   [4.4 Passing keyboard/mouse via Evdev](#Passing_keyboard/mouse_via_Evdev)
+    *   [4.5 Gotchas](#Gotchas_2)
+        *   [4.5.1 Using a non-EFI image on an OVMF-based VM](#Using_a_non-EFI_image_on_an_OVMF-based_VM)
 *   [5 Performance tuning](#Performance_tuning)
     *   [5.1 CPU pinning](#CPU_pinning)
         *   [5.1.1 CPU topology](#CPU_topology)
@@ -294,6 +295,65 @@ The rest of the installation process will take place as normal using a standard 
 ### Attaching the PCI devices
 
 With the installation done, it is now possible to edit the hardware details in libvirt and remove virtual integration devices, such as the spice channel and virtual display, the QXL video adapter, the emulated mouse and keyboard and the USB tablet device. Since that leaves you with no input devices, you may want to bind a few USB host devices to your VM as well, but remember to **leave at least one mouse and/or keyboard assigned to your host** in case something goes wrong with the guest. At this point, it also becomes possible to attach the PCI device that was isolated earlier; simply click on "Add Hardware" and select the PCI Host Devices you want to passthrough. If everything went well, the screen plugged into your GPU should show the OVMF splash screen and your VM should start up normally. From there, you can setup the drivers for the rest of your VM.
+
+### Passing keyboard/mouse via Evdev
+
+If you do not have a spare mouse or keyboard to dedicate to your guest, and you do not want to suffer from the video overheard of Spice, you can setup evdev to swap control of your mouse and keyboard between the host and guest on the fly. First find your keyboard and mouse devices in `/dev/input/by-id/`. You may find multiple devices associated to your mouse or keyboard, so try `/dev/input/by-id/*device_id*` and either hit some keys on the keyboard or wiggle your mouse to see if input comes through, if so you have got the right device. Next add those devices to your configuration
+
+ `$ virsh edit [vmname]` 
+```
+...
+ <qemu:commandline>
+ <qemu:arg value='-object'/>
+ <qemu:arg value='input-linux,id=mouse1,evdev=/dev/input/by-id/MOUSE_NAME'/>
+ <qemu:arg value='-object'/>
+ <qemu:arg value='input-linux,id=kbd1,evdev=/dev/input/by-id/KEYBOARD_NAME,grab_all=on,repeat=on'/>
+ </qemu:commandline>
+...
+
+```
+
+Replace `MOUSE_NAME` and `KEYBOARD_NAME` with your device id. You will also need to include these devices in your qemu config, and setting the user and group to one that has access to your input devices:
+
+ `$ vim /etc/libvirt/qemu.conf` 
+```
+...
+user = "<your_user>"
+group = "kvm"
+...
+cgroup_device_acl = [
+    "/dev/kvm",
+    "/dev/input/by-id/KEYBOARD_NAME",
+    "/dev/input/by-id/MOUSE_NAME",
+    "/dev/null", "/dev/full", "/dev/zero",
+    "/dev/random", "/dev/urandom",
+    "/dev/ptmx", "/dev/kvm", "/dev/kqemu",
+    "/dev/rtc","/dev/hpet", "/dev/sev"
+]
+...
+
+```
+
+Then ensure that the user you provided has access to the `kvm` and `input` [user groups](/index.php/User_group "User group"). [Restart](/index.php/Restart "Restart") `libvirt.service`. Now you can startup the guest OS and test swapping control of your mouse and keyboard between the host and guest by pressing both the left and right control keys at the same time.
+
+You may also consider switching from PS/2 to Virtio inputs in your configurations:
+
+ `$ virsh edit [vmname]` 
+```
+...
+<input type='mouse' bus='virtio'>
+        <address type='pci' domain='0x0000' bus='0x00' slot='0x0e' function='0x0'/>
+</input>
+<input type='keyboard' bus='virtio'>
+        <address type='pci' domain='0x0000' bus='0x00' slot='0x0f' function='0x0'/>
+</input>
+<input type='mouse' bus='ps2'/>
+<input type='keyboard' bus='ps2'/>
+...
+
+```
+
+Next startup the guest OS and install the virtIO drivers for those devices.
 
 ### Gotchas
 

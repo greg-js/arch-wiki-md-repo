@@ -146,7 +146,11 @@ collect: `init=/usr/bin/e4rat-lite-collect`
 
 realloc: `/usr/bin/e4rat-lite-realloc`
 
-preload: `init=/usr/bin/e4rat-preload`
+preload: `init=/usr/bin/e4rat-lite-preload`
+
+startup.log: `/var/lib/e4rat-lite/startup.log`
+
+configuration file: `/etc/e4rat-lite.conf`
 
 ## Bootchart
 

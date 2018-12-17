@@ -173,7 +173,7 @@ If UEFI Variables support does not work even after the above conditions are sati
 1.  If any userspace tool is unable to modify UEFI variable data, check for existence of `/sys/firmware/efi/efivars/dump-*` files. If they exist, delete them, reboot and retry again.
 2.  If the above step does not fix the issue, try booting with `efi_no_storage_paranoia` kernel parameter to disable kernel UEFI variable storage space check that may prevent writing/modification of UEFI variables.
 
-**Warning:** `efi_no_storage_paranoia` should only be used when needed and should not be left as a normal boot option. The effect of this kernel command line parameter turns off a safeguard that was put in place to help avoid the bricking of machines when the NVRAM gets too full.
+**Warning:** `efi_no_storage_paranoia` should only be used when needed and should not be left as a normal boot option. The effect of this kernel command line parameter turns off a safeguard that was put in place to help avoid the bricking of machines when the NVRAM gets too full. See [FS#34641](https://bugs.archlinux.org/task/34641) for more information.
 
 #### Mount efivarfs
 

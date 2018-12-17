@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Bash](/index.php/Bash "Bash"), revisada por última vez el **2018-10-22**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Bash&diff=0&oldid=550152) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Bash](/index.php/Bash "Bash"), revisada por última vez el **2018-12-16**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Bash&diff=0&oldid=559083) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -26,6 +26,7 @@ Artículos relacionados
     *   [2.2 Historial](#Historial)
         *   [2.2.1 Completado del historial](#Completado_del_historial)
         *   [2.2.2 Historial más corto](#Historial_más_corto)
+        *   [2.2.3 Desactivar historial](#Desactivar_historial)
     *   [2.3 Imitación de la capacidad de ejecutar la ayuda como Zsh](#Imitación_de_la_capacidad_de_ejecutar_la_ayuda_como_Zsh)
 *   [3 Alias](#Alias)
 *   [4 Consejos y trucos](#Consejos_y_trucos)
@@ -158,6 +159,45 @@ La variable `HISTCONTROL` puede evitar que ciertas órdenes se registren en el h
  `~/.bashrc`  `export HISTCONTROL=ignoredups` 
 
 o configúrelo en `erasedups` para asegurarse de que el historial de Bash solo contenga una copia de cada orden (independientemente de su ordenación). Véase la página del manual de Bash para más opciones.
+
+#### Desactivar historial
+
+Para desactivar el historial de bash solo temporalmente:
+
+```
+set +o history
+
+```
+
+Las órdenes introducidas ​​ahora no se registrarán en `$HISTFILE`.
+
+Por ejemplo, ahora puede convertir en hash contraseñas mediante `printf secret | sha256sum`, u oculta la utilización de GPG como `gpg -eaF secret-pubkey.asc` y su secreto no se escribirá en el disco.
+
+Para activar el historial:
+
+```
+set -o history
+
+```
+
+**Sugerencia:** Si la variable `HISTCONTROL` contiene `ignorespace`, las órdenes que comiencen con un espacio no se guardarán en el archivo del historial. Véase [bash(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bash.1#Shell_Variables) para más detalles.
+
+Para desactivar todo el historial de bash:
+
+ `~/.bashrc or /etc/profile` 
+```
+export HISTSIZE=0
+
+```
+
+... y sólo para asegurarse:
+
+```
+# Advertencia: esto destruirá su antiguo archivo del historial para siempre
+wipe -i -l2 -x4 -p4 "$HISTFILE"
+ln -sv /dev/null "$HISTFILE"
+
+```
 
 ### Imitación de la capacidad de ejecutar la ayuda como Zsh
 

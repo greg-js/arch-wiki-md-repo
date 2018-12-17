@@ -1,4 +1,4 @@
-[MediaWiki](https://www.mediawiki.org/wiki/MediaWiki) is a free and open source wiki software written in PHP, originally developed for Wikipedia. It also powers this wiki.
+[MediaWiki](https://www.mediawiki.org/wiki/MediaWiki) is a free and open source wiki software written in [PHP](/index.php/PHP "PHP"), originally developed for Wikipedia. It also powers this wiki (see [Special:Version](/index.php/Special:Version "Special:Version")).
 
 ## Contents
 

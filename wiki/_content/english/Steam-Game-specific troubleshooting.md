@@ -772,6 +772,8 @@ Either run with steam-native or `env LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc
 
 Follow [#OpenSSL 1.0 setup](#OpenSSL_1.0_setup).
 
+Ensure that Steam Workshop mods are disabled as certain ones may cause issues following loading.
+
 #### If Segfault Immediately on Start
 
 This is a strange corner case which happens infrequently at best (and the prerequisites for reproducing it are unknown), but the crash would look like this:

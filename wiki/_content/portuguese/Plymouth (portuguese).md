@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Plymouth](/index.php/Plymouth "Plymouth"). Data da última tradução: 2018-08-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Plymouth&diff=0&oldid=535634) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Plymouth](/index.php/Plymouth "Plymouth"). Data da última tradução: 2018-12-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Plymouth&diff=0&oldid=559012) na versão em inglês.
 
 [Plymouth](http://www.freedesktop.org/wiki/Software/Plymouth) é um projeto da Fedora que consiste em proporcionar um processo de inicialização gráfico sem cintilação. Baseia-se no [modo de configuração do kernel](/index.php/Kernel_mode_setting "Kernel mode setting") (KMS) para definir uma resolução nativa da tela assim que possível, fornecendo então uma tela de boas vindas atrativa, até chegar no gerenciador de login.
 
@@ -37,7 +37,7 @@ Adicione `plymouth` ao vetor `HOOKS` em [mkinitcpio.conf](/index.php/Mkinitcpio.
  `/etc/mkinitcpio.conf`  `HOOKS="base udev plymouth [...] "` 
 **Atenção:**
 
-*   Se usa [criptografia no disco rígido](/index.php/System_Encryption_with_LUKS_for_dm-crypt "System Encryption with LUKS for dm-crypt") com o hook `encrypt`, você **deve** substituir o hook `encrypt` com `plymouth-encrypt` apara conseguir inserir senhas quando solicitado pelo TTY.
+*   Se usa [criptografia no disco rígido](/index.php/System_Encryption_with_LUKS_for_dm-crypt "System Encryption with LUKS for dm-crypt") com o hook `encrypt`, você **deve** substituir o hook `encrypt` com `plymouth-encrypt` e adicioná-lo após o hook `plymouth` para conseguir inserir senhas quando solicitado pelo TTY.
 *   O uso dos parâmetros `PARTUUID` ou `PARTLABEL` em `cryptdevice=` **não** funciona com o hook `plymouth-encrypt`.
 *   Para uma [raiz ZFS criptografada](/index.php/Installing_Arch_Linux_on_ZFS#Native_encryption "Installing Arch Linux on ZFS"), você **deve** instalar [plymouth-zfs](https://aur.archlinux.org/packages/plymouth-zfs/) e substituir o hook `zfs` com `plymouth-zfs`
 
@@ -55,7 +55,7 @@ Neste caso poderá ser necessário utilizar [plymouth-git](https://aur.archlinux
 
 ### Linha de comando do kernel
 
-Neste momento precisa de adicionar os [parâmetros do kernel](/index.php/Kernel_parameters "Kernel parameters") `quiet splash`. Veja [Inicialização silenciosa](/index.php/Inicializa%C3%A7%C3%A3o_silenciosa "Inicialização silenciosa") para outros parâmetros para limitar a saída para o console.
+Neste momento precisa de adicionar os [parâmetros do kernel](/index.php/Kernel_parameters "Kernel parameters") `quiet splash vt.global_cursor_default=0`. Veja [Inicialização silenciosa](/index.php/Inicializa%C3%A7%C3%A3o_silenciosa "Inicialização silenciosa") para outros parâmetros para limitar a saída para o console.
 
 Recompile a sua imagem initrd (veja o artigo [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") para mais detalhes), por exemplo:
 

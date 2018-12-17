@@ -485,7 +485,7 @@ See the [Btrfs Wiki page](https://btrfs.wiki.kernel.org/index.php/Btrfsck) for m
 
 You can manually create a [GRUB#GNU/Linux menu entry](/index.php/GRUB#GNU/Linux_menu_entry "GRUB") with the `rootflags=subvol=` argument. The `subvol=` mount options in `/etc/fstab` of the snapshot to boot into also have to be specified correctly.
 
-Alternatively, you can automatically populate your GRUB menu with btrfs snapshots when regenerating the GRUB configuration file by using [grub-btrfs](https://aur.archlinux.org/packages/grub-btrfs/) or [grub-btrfs-git](https://aur.archlinux.org/packages/grub-btrfs-git/).
+Alternatively, you can automatically populate your GRUB menu with btrfs snapshots when regenerating the GRUB configuration file by using [grub-btrfs](https://www.archlinux.org/packages/?name=grub-btrfs) or [grub-btrfs-git](https://aur.archlinux.org/packages/grub-btrfs-git/).
 
 ### Использование подтомов Btrfs с systemd-nspawn
 

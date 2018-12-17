@@ -358,7 +358,7 @@ Labels-based access control means the extended attributes of a file are used to 
 
 ### Kernel self-protection / exploit mitigation
 
-The [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) package uses a [basic kernel hardening patch set](https://github.com/thestinger/linux-hardened) and more security-focused compile-time configuration options than the [linux](https://www.archlinux.org/packages/?name=linux) package. A custom build can be made to choose a different compromise between security and performance than the security-leaning defaults.
+The [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) package uses a [basic kernel hardening patch set](https://github.com/anthraxx/linux-hardened) and more security-focused compile-time configuration options than the [linux](https://www.archlinux.org/packages/?name=linux) package. A custom build can be made to choose a different compromise between security and performance than the security-leaning defaults.
 
 If you use an out-of-tree driver such as [NVIDIA](/index.php/NVIDIA "NVIDIA"), you may need to switch to its [DKMS](/index.php/DKMS "DKMS") package.
 

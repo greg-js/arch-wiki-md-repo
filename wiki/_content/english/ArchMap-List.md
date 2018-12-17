@@ -1092,5 +1092,6 @@ You can use the following website to get your device's coordinates along with a 
 -33.8888, 18.507 "Storm" # Cape Town, South Africa
 49.0610688, 33.40288 "stanislav_sizonov" # Kremenchuk, Ukraine
 31.303009, 120.591111 "maoxuner" # Suzhou, Jiangsu, China
+47.443530599999995,9.659020199999999 "mist66" # Lustenau, Austria
 
 ```

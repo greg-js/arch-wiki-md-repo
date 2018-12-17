@@ -390,9 +390,9 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 
 	[https://als.regnet.cz/fpm2/](https://als.regnet.cz/fpm2/) || [fpm2](https://aur.archlinux.org/packages/fpm2/)
 
-*   **GNOME Password Safe** — Password manager for GNOME.
+*   **GNOME Password Safe** — Password manager for GNOME which makes use of the KeePass v.4 format.
 
-	[https://gitlab.gnome.org/World/PasswordSafe](https://gitlab.gnome.org/World/PasswordSafe) || [gnome-passwordsafe-git](https://aur.archlinux.org/packages/gnome-passwordsafe-git/)
+	[https://gitlab.gnome.org/World/PasswordSafe](https://gitlab.gnome.org/World/PasswordSafe) || [gnome-passwordsafe](https://www.archlinux.org/packages/?name=gnome-passwordsafe)
 
 *   **Ked Password Manager** — A password manager that helps to manage large numbers of passwords.
 

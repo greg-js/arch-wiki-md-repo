@@ -764,7 +764,7 @@ See also [Wikipedia:Comparison of XML editors](https://en.wikipedia.org/wiki/Com
 
 ### Document converters
 
-See also [#Markup languages](#Markup_languages).
+See also [#Markup languages](#Markup_languages) and [PDF, PS and DjVu#Command-line tools](/index.php/PDF,_PS_and_DjVu#Command-line_tools "PDF, PS and DjVu").
 
 *   **[Antiword](https://en.wikipedia.org/wiki/Antiword "wikipedia:Antiword")** — MS Word to text converter.
 
@@ -785,6 +785,10 @@ See also [#Markup languages](#Markup_languages).
 *   **unoconv** — Libreoffice-based document converter.
 
 	[http://dag.wiee.rs/home-made/unoconv/](http://dag.wiee.rs/home-made/unoconv/) || [unoconv](https://www.archlinux.org/packages/?name=unoconv)
+
+*   **UnRTF** — Command-line program which converts RTF documents to other formats.
+
+	[https://www.gnu.org/software/unrtf/unrtf.html](https://www.gnu.org/software/unrtf/unrtf.html) || [unrtf](https://www.archlinux.org/packages/?name=unrtf)
 
 ### Bibliographic reference managers
 

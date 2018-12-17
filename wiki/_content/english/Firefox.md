@@ -245,7 +245,7 @@ For general enhancements see [Firefox/Tweaks](/index.php/Firefox/Tweaks "Firefox
 
 ### Dark themes
 
-If a dark [GTK](/index.php/GTK "GTK") theme is in use (e.g. Arc Dark), it is recommended to start Firefox with a brighter one (e.g. Adwaita). See [GTK#Themes](/index.php/GTK#Themes "GTK") for more information.
+If a dark [GTK](/index.php/GTK "GTK") theme is in use (e.g. Arc Dark), it is recommended to start Firefox with a brighter one (e.g. Adwaita). See [Firefox/Tweaks#Unreadable input fields with dark GTK+ themes](/index.php/Firefox/Tweaks#Unreadable_input_fields_with_dark_GTK+_themes "Firefox/Tweaks") and [GTK#Themes](/index.php/GTK#Themes "GTK") for more information.
 
 ### Screenshot of webpage
 

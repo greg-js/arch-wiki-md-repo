@@ -6,9 +6,10 @@
 *   [4 Bad performance after installing a new driver version](#Bad_performance_after_installing_a_new_driver_version)
 *   [5 Avoid screen tearing](#Avoid_screen_tearing)
     *   [5.1 Multi-monitor](#Multi-monitor)
-    *   [5.2 Avoid screen tearing in KDE (KWin)](#Avoid_screen_tearing_in_KDE_(KWin))
-        *   [5.2.1 1\. GL threads](#1._GL_threads)
-        *   [5.2.2 2\. Use TripleBuffering](#2._Use_TripleBuffering)
+    *   [5.2 Avoid screen tearing on PRIME systems (Nvidia card + Intel integrated)](#Avoid_screen_tearing_on_PRIME_systems_(Nvidia_card_+_Intel_integrated))
+    *   [5.3 Avoid screen tearing in KDE (KWin)](#Avoid_screen_tearing_in_KDE_(KWin))
+        *   [5.3.1 1\. GL threads](#1._GL_threads)
+        *   [5.3.2 2\. Use TripleBuffering](#2._Use_TripleBuffering)
 *   [6 Modprobe Error: "Could not insert 'nvidia': No such device" on linux >=4.8](#Modprobe_Error:_"Could_not_insert_'nvidia':_No_such_device"_on_linux_>=4.8)
 *   [7 Poor performance after resuming from suspend](#Poor_performance_after_resuming_from_suspend)
 *   [8 CPU spikes with 400 series cards](#CPU_spikes_with_400_series_cards)
@@ -160,6 +161,32 @@ $ nvidia-settings --query CurrentMetaMode
 The above line is for two 3840x2160 monitors connected to DP-2 and DP-4\. You will need to read the correct `CurrentMetaMode` by exporting `xorg.conf` and append `ForceCompositionPipeline` to each of your displays. Setting `ForceCompositionPipeline` only affects the targeted display.
 
 **Tip:** Multi monitor setups using different model monitors may have slightly different refresh rates. If vsync is enabled by the driver it will sync to only one of these refresh rates which can cause the appearance of screen tearing on incorrectly synced monitors. Select to sync the display device which is the primarily used monitor as others will not sync properly. This is configurable in `~/.nvidia-settings-rc` as `0/XVideoSyncToDisplayID=` or by installing [nvidia-settings](https://www.archlinux.org/packages/?name=nvidia-settings) and using the graphical configuration options.
+
+### Avoid screen tearing on PRIME systems (Nvidia card + Intel integrated)
+
+To draw on the laptop panel, the Nvidia card writes to memory used by the Intel card, which then displays it on the screen. This is "Prime". Getting the two cards synced to avoid tearing needs Prime Sync, and to do that Nvidia driver needs to operate in kernel mode setting, which it does not by default.
+
+Create `/etc/modprobe.d/nvidia-drm-modeset.conf` file and add this line:
+
+ `/etc/modprobe.d/nvidia-drm-modeset.conf`  `options nvidia_XXX_drm modeset=1` 
+
+Where XXX is your driver version, eg. 412.
+
+Link this config file in your `/etc/mkinitcpio.conf` file, under the `#FILES` comment:
+
+ `/etc/mkinitcpio.conf` 
+```
+# FILES
+# This setting is similar to BINARIES above, however, files are added
+# as-is and are not parsed in any way.  This is useful for config files.
+FILES="/etc/modprobe.d/nvidia-drm-modeset.conf"
+```
+
+Regenerate the initramfs (see [Mkinitcpio#Image_creation_and_activation](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio")). Then reboot and check, if PRIME Sync is enabled:
+
+`xrandr --properties | grep PRIME`
+
+Output should read `PRIME Synchronization: 1`.
 
 ### Avoid screen tearing in KDE (KWin)
 

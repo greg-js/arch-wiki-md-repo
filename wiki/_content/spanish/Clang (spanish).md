@@ -1,12 +1,12 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Clang](/index.php/Clang "Clang"), revisada por última vez el **2018-11-09**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Clang&diff=0&oldid=551753) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Clang](/index.php/Clang "Clang"), revisada por última vez el **2018-12-16**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Clang&diff=0&oldid=551753) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 [Clang](http://clang.llvm.org/) es un compilador de [C](/index.php/C_(Espa%C3%B1ol) "C (Español)")/C ++/Objective C/[CUDA](/index.php/CUDA "CUDA") basado en [LLVM](/index.php/LLVM "LLVM"). Se distribuye bajo la Licencia BSD.
 
 ## Contents
 
 *   [1 Instalación](#Instalación)
-*   [2 Construir paquetes con Clang](#Construir_paquetes_con_Clang)
+*   [2 Compilar paquetes con Clang](#Compilar_paquetes_con_Clang)
 *   [3 Usar el Analizador Estático](#Usar_el_Analizador_Estático)
 *   [4 Véase también](#Véase_también)
 
@@ -14,7 +14,7 @@ Este artículo es una traducción de [Clang](/index.php/Clang "Clang"), revisada
 
 [Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquete [clang](https://www.archlinux.org/packages/?name=clang).
 
-## Construir paquetes con Clang
+## Compilar paquetes con Clang
 
 Agregue `export CC=clang` y (para C ++) `export CXX=clang++` a su `/etc/makepkg.conf`. Si está compilando con `debug`, elimine también `-fvar-tracking-assignments` de `DEBUG_CFLAGS` y `DEBUG_CXXFLAGS` ya que clang no lo admite.
 

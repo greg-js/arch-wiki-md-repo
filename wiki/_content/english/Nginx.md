@@ -306,13 +306,13 @@ Restart `nginx.service` to enable the new configuration.
 
 ### FastCGI
 
-FastCGI, also FCGI, is a protocol for interfacing interactive programs with a web server. FastCGI is a variation on the earlier CGI (Common Gateway Interface); FastCGI's main aim is to reduce the overhead associated with interfacing the web server and CGI programs, allowing a server to handle more web page requests at once.
+[FastCGI](https://en.wikipedia.org/wiki/FastCGI "wikipedia:FastCGI"), also FCGI, is a protocol for interfacing interactive programs with a web server. FastCGI is a variation on the earlier [Common Gateway Interface](https://en.wikipedia.org/wiki/Common_Gateway_Interface "wikipedia:Common Gateway Interface") (CGI); FastCGI's main aim is to reduce the overhead associated with interfacing the web server and CGI programs, allowing servers to handle more web page requests at once.
 
 FastCGI technology is introduced into nginx to work with many external tools, e.g. [Perl](/index.php/Perl "Perl"), [PHP](/index.php/PHP "PHP") and [Python](/index.php/Python "Python").
 
 #### PHP implementation
 
-[PHP-FPM](http://php-fpm.org/) is the recommended solution to run as FastCGI server for [PHP](/index.php/PHP "PHP").
+[PHP-FPM](https://php-fpm.org/) is the recommended solution to run as FastCGI server for [PHP](/index.php/PHP "PHP").
 
 [Install](/index.php/Install "Install") [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) and make sure [PHP](/index.php/PHP "PHP") has been installed and configured correctly. The main configuration file of PHP-FPM is `/etc/php/php-fpm.conf`. For basic usage the default configuration should be sufficient.
 
@@ -320,7 +320,7 @@ Finally, [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Star
 
 **Note:**
 
-*   If you [run nginx under different user](#Running_under_different_user), make sure that the PHP-FPM socket file is accessible by this user, or use a TCP socket.
+*   If you [run nginx under a different user](#Running_under_different_user), make sure that the PHP-FPM socket file is accessible by this user, or use a TCP socket.
 *   If you run nginx in chrooted environment (chroot is `/srv/nginx-jail`, web pages are served at `/srv/nginx-jail/www`), you must modify the file `/etc/php/php-fpm.conf` to include the `chroot /srv/nginx-jail` and `listen = /srv/nginx-jail/run/php-fpm/php-fpm.sock` directives within the pool section (a default one is `[www]`). Create the directory for the socket file, if missing. Moreover, for modules that are dynamically linked to dependencies, you will need to copy those dependencies to the chroot (e.g. for php-imagick, you will need to copy the ImageMagick libraries to the chroot, but not imagick.so itself).
 
 ##### nginx configuration
@@ -408,7 +408,7 @@ To test the FastCGI implementation, create a new PHP file inside the `root` fold
 
 ```
 
-Navigate this file inside a browser and you will see the informational page with the current PHP configuration.
+Navigate this file inside a browser and you should see the informational page with the current PHP configuration.
 
 #### CGI implementation
 

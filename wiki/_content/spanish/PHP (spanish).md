@@ -1,12 +1,12 @@
 ## Contents
 
-*   [1 Configuración del servidor](#Configuraci.C3.B3n_del_servidor)
-    *   [1.1 Zend Core + Apache](#Zend_Core_.2B_Apache)
+*   [1 Configuración del servidor](#Configuración_del_servidor)
+    *   [1.1 Zend Core + Apache](#Zend_Core_+_Apache)
 *   [2 Herramientas de desarrollo](#Herramientas_de_desarrollo)
     *   [2.1 Eclipse](#Eclipse)
     *   [2.2 Komodo](#Komodo)
     *   [2.3 Zend Studio Neon](#Zend_Studio_Neon)
-    *   [2.4 Analizador de código Zend](#Analizador_de_c.C3.B3digo_Zend)
+    *   [2.4 Analizador de código Zend](#Analizador_de_código_Zend)
 
 ### Configuración del servidor
 

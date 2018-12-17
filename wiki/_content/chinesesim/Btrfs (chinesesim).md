@@ -528,7 +528,7 @@ Btrfs 能在整个设备上使用,替代 [MBR](/index.php/MBR "MBR") 或 [GPT](/
 
 为了能够引导进入快照，你必须通过 [内核参数](/index.php/Kernel_parameters#Configuration "Kernel parameters") `rootflags=subvol=*/path/to/subvolume*` 来指定子卷，同时需要修改 `/etc/fstab` 使用 `subvol=` 来指定相同的子卷。或者，子卷可以用其 id 来指定 - 例如可以用例如可检索的。 `btrfs subvolume list */root/path*` - 和`rootflags=subvolid=*objectid*` 分别作为内核参数`subvolid= *objectid*` 作为 `/etc/fstab` 中的挂载选项。
 
-如果使用 GRUB，则可以在 [grub-btrfs](https://aur.archlinux.org/packages/grub-btrfs/) 或 [grub-btrfs-git](https://aur.archlinux.org/packages/grub-btrfs-git/) 的帮助下重新生成配置文件时使用 Btrfs 快照自动填充启动菜单。
+如果使用 GRUB，则可以在 [grub-btrfs](https://www.archlinux.org/packages/?name=grub-btrfs) 或 [grub-btrfs-git](https://aur.archlinux.org/packages/grub-btrfs-git/) 的帮助下重新生成配置文件时使用 Btrfs 快照自动填充启动菜单。
 
 ### Use Btrfs subvolumes with systemd-nspawn
 
