@@ -249,6 +249,10 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 	[https://www.kde.org/applications/games/kajongg/](https://www.kde.org/applications/games/kajongg/) || [kajongg](https://www.archlinux.org/packages/?name=kajongg)
 
+*   **KCheckers** — Qt-based checkers boardgame.
+
+	[http://qcheckers.sourceforge.net/](http://qcheckers.sourceforge.net/) || [kcheckers](https://www.archlinux.org/packages/?name=kcheckers)
+
 *   **KPatience** — A set of solitarire card games. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
 	[https://www.kde.org/applications/games/kpatience/](https://www.kde.org/applications/games/kpatience/) || [kpatience](https://www.archlinux.org/packages/?name=kpatience)

@@ -37,11 +37,11 @@ The integrated Vega GPU works with the AMDGPU drivers. Apparently the display pa
 
 ## Touchscreen and Stylus
 
-At the moment (22.11.2018) you need to build a Kernel with custom patches to get the touchscreen working. [[1]](https://bugzilla.kernel.org/show_bug.cgi?id=198715) An effort to upstream this work is in progress, which will make it possible to use the touchscreen with the stock Arch kernel.
+As of 4.19.8 the touchscreen works out of the box.
 
 ## Orientation Sensor
 
-You currently need to install [iio-sensor-proxy](https://www.archlinux.org/packages/?name=iio-sensor-proxy) and reboot to make the orientation sensor work. This will disable the keyboard and touchpad, and invert the side volume buttons when the screen is held at the right orientation or is folded. The Gnome desktop environment does support the rotation natively. Other desktop enviroments may need extra software. You could compile and use this daemon [[2]](https://github.com/mrquincle/yoga-900-auto-rotate) written in C.
+You currently need to install [iio-sensor-proxy](https://www.archlinux.org/packages/?name=iio-sensor-proxy) and reboot to make the orientation sensor work. This will disable the keyboard and touchpad, and invert the side volume buttons when the screen is held at the right orientation or is folded. The Gnome desktop environment does support the rotation natively. Other desktop enviroments may need extra software. You could compile and use this daemon [[1]](https://github.com/mrquincle/yoga-900-auto-rotate) written in C.
 
 ## Wireless Networking
 

@@ -33,7 +33,7 @@ La especificación UEFI exige soporte para los sistemas de archivos FAT12, FAT16
 
 Si está instalando Arch Linux en un equipo compatible con UEFI que ya tiene un sistema operativo instalado, como [Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows") 10, por ejemplo, es muy probable que ya tenga una partición del sistema EFI.
 
-Para conocer el esquema de particionado del disco y la «*system partition*», utilice [fdisk](/index.php/Fdisk "Fdisk") como root sobre el disco desde el que desea iniciar:
+Para conocer el esquema de particionado del disco y la «*system partition*», utilice [fdisk](/index.php/Fdisk_(Espa%C3%B1ol) "Fdisk (Español)") como root sobre el disco desde el que desea iniciar:
 
 ```
 # fdisk -l /dev/sd*x*
@@ -65,7 +65,7 @@ La partición del sistema EFI en una tabla de particionado [GUID Partition Table
 
 **Elija uno** de los siguientes métodos para crear una ESP para un disco particionado con GPT:
 
-*   [fdisk](/index.php/Fdisk "Fdisk"): cree una partición con el tipo de partición `EFI System`.
+*   [fdisk](/index.php/Fdisk_(Espa%C3%B1ol) "Fdisk (Español)"): cree una partición con el tipo de partición `EFI System`.
 *   [gdisk](/index.php/Gdisk "Gdisk"): cree una partición con el tipo de partición `EF00`.
 *   [GNU Parted](/index.php/GNU_Parted "GNU Parted"): cree una partición con `fat32` como tipo de sistema de archivos y establezca/active el indicador `esp` en él.
 
@@ -77,7 +77,7 @@ La partición del sistema EFI en una tabla de particionado [Master Boot Record](
 
 **Elija uno** de los siguientes métodos para crear un ESP para un disco particionado MBR:
 
-*   [fdisk](/index.php/Fdisk "Fdisk"): crre una partición primaria con el tipo de partición `EFI (FAT-12/16/32)`.
+*   [fdisk](/index.php/Fdisk_(Espa%C3%B1ol) "Fdisk (Español)"): crre una partición primaria con el tipo de partición `EFI (FAT-12/16/32)`.
 *   [GNU Parted](/index.php/GNU_Parted "GNU Parted"): cree una partición primaria con `fat32` como el tipo de sistema de archivos y establezca/active el indicador `esp` en ella.
 
 Continúe en la sección [#Formatear la partición](#Formatear_la_partición) a continuación.

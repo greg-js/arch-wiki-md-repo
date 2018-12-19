@@ -119,12 +119,14 @@ You can choose from two options to set your kernel configuration:
 
 #### A. Default Arch configuration
 
-This method will create a `.config` file for the custom kernel using the default Arch kernel settings. Ensure that a stock Arch kernel is running and use the following command inside the custom kernel source directory:
+This method will create a `.config` file for the custom kernel using the default Arch kernel settings. If a stock Arch kernel is running, you can use the following command inside the custom kernel source directory:
 
 ```
 $ zcat /proc/config.gz > .config
 
 ```
+
+Otherwise, the default configuration can be found online in the [official Arch Linux kernel](https://git.archlinux.org/svntogit/packages.git/tree/trunk/config?h=packages/linux) package.
 
 **Warning:** If you are compiling a kernel using your current `.config` file, do not forget to rename your kernel version "CONFIG_LOCALVERSION" in the new .config or in the `General Setup --->` option using one of the user interfaces listed under Advanced Configuration. If you skip this, there is the risk of overwriting one of your existing kernels by mistake.
 

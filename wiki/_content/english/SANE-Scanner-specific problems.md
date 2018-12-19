@@ -238,24 +238,20 @@ The latter comes with 3 tools:
 
 If the device is connected by USB, run *hp-setup* as root and follow the on screen instructions.
 
-If your device is connected on the network, use `# hp-setup <printer ip>` instead.
+If your device is connected on the network, use `hp-setup *printer_ip*` instead.
 
 ### Alternative way to scan with network HP scanner
 
 *   Find out IP address of your network HP scanner, for example *192.168.1.8*
 *   Make device URI using hp-makeuri utility:
 
-```
-   hp-makeuri 192.168.1.8
+ `$ hp-makeuri 192.168.1.8`  `hpaio:/net/DeskJet_3630_series?ip=192.168.1.8` 
 
-```
-
-*   Output should look like *hpaio:/net/DeskJet_3630_series?ip=192.168.1.8*
 *   This URI could be given to xsane or scanimage tools, for example:
 
 ```
-   xsane "hpaio:/net/DeskJet_3630_series?ip=192.168.1.8"
-   scanimage --device "hpaio:/net/DeskJet_3630_series?ip=10.12.129.6" --format=png --resolution 300 >scan01.png
+$ xsane "hpaio:/net/DeskJet_3630_series?ip=192.168.1.8"
+$ scanimage --device "hpaio:/net/DeskJet_3630_series?ip=10.12.129.6" --format=png --resolution 300 >scan01.png
 
 ```
 

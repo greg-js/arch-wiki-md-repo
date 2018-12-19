@@ -1,16 +1,19 @@
+**Estado de la traducción**
+Este artículo es una traducción de [HP Compaq nc4400](/index.php/HP_Compaq_nc4400 "HP Compaq nc4400"), revisada por última vez el **2018-12-18**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=HP_Compaq_nc4400&diff=0&oldid=559434) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
 ## Contents
 
-*   [1 System specifications](#System_specifications)
-*   [2 Configuration](#Configuration)
-    *   [2.1 Graphics](#Graphics)
-    *   [2.2 Touchpad](#Touchpad)
-    *   [2.3 Wireless](#Wireless)
+*   [1 Especificaciones del sistema](#Especificaciones_del_sistema)
+*   [2 Configuración](#Configuración)
+    *   [2.1 Gráficos](#Gráficos)
+    *   [2.2 Panel táctil](#Panel_táctil)
+    *   [2.3 Wifi](#Wifi)
     *   [2.4 SD/MMC](#SD/MMC)
-    *   [2.5 HDD failing sensors](#HDD_failing_sensors)
+    *   [2.5 Sensores defectuosos del HDD](#Sensores_defectuosos_del_HDD)
 
-## System specifications
+## Especificaciones del sistema
 
-lshwd output:
+salida de lshwd:
 
 ```
 00:00.0 Class 0600: Intel Corp.|Mobile Memory Controller Hub (intel-agp)
@@ -37,23 +40,23 @@ lshwd output:
 
 ```
 
-## Configuration
+## Configuración
 
-### Graphics
+### Gráficos
 
-See [Intel graphics](/index.php/Intel_graphics "Intel graphics").
+Véase [gráficos Intel](/index.php/Intel_graphics_(Espa%C3%B1ol) "Intel graphics (Español)").
 
-### Touchpad
+### Panel táctil
 
-See [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics").
+Véase [Touchpad Synaptics](/index.php/Touchpad_Synaptics_(Espa%C3%B1ol) "Touchpad Synaptics (Español)").
 
-### Wireless
+### Wifi
 
-See [Wireless network configuration#iwlegacy](/index.php/Wireless_network_configuration#iwlegacy "Wireless network configuration")
+Véase [Configuración de red inalámbrica#iwlegacy](/index.php/Wireless_network_configuration_(Espa%C3%B1ol)#iwlegacy "Wireless network configuration (Español)")
 
 ### SD/MMC
 
-This requires the *tifm* [kernel module](/index.php/Kernel_module "Kernel module").
+Esto requiere el [módulo del kernel](/index.php/Kernel_module_(Espa%C3%B1ol) "Kernel module (Español)") *tifm*.
 
 ```
 # modprobe tifm_core
@@ -62,9 +65,9 @@ This requires the *tifm* [kernel module](/index.php/Kernel_module "Kernel module
 
 ```
 
-### HDD failing sensors
+### Sensores defectuosos del HDD
 
-See [SMART](/index.php/SMART "SMART"). Example `/etc/smartd.conf`:
+Véase [SMART](/index.php/SMART "SMART"). Ejemplo `/etc/smartd.conf`:
 
 ```
 /dev/sda -a -d sat -m root@localhost

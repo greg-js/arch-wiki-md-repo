@@ -18,41 +18,41 @@
 
 ## Contents
 
-*   [1 Иерархия меню](#.D0.98.D0.B5.D1.80.D0.B0.D1.80.D1.85.D0.B8.D1.8F_.D0.BC.D0.B5.D0.BD.D1.8E)
-*   [2 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
-    *   [2.1 Добавление записей рабочего стола из других каталогов](#.D0.94.D0.BE.D0.B1.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B7.D0.B0.D0.BF.D0.B8.D1.81.D0.B5.D0.B9_.D1.80.D0.B0.D0.B1.D0.BE.D1.87.D0.B5.D0.B3.D0.BE_.D1.81.D1.82.D0.BE.D0.BB.D0.B0_.D0.B8.D0.B7_.D0.B4.D1.80.D1.83.D0.B3.D0.B8.D1.85_.D0.BA.D0.B0.D1.82.D0.B0.D0.BB.D0.BE.D0.B3.D0.BE.D0.B2)
-*   [3 Использование](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
+*   [1 Иерархия меню](#Иерархия_меню)
+*   [2 Настройка](#Настройка)
+    *   [2.1 Добавление записей рабочего стола из других каталогов](#Добавление_записей_рабочего_стола_из_других_каталогов)
+*   [3 Использование](#Использование)
     *   [3.1 xdg_menu](#xdg_menu)
-    *   [3.2 Обновление меню](#.D0.9E.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BC.D0.B5.D0.BD.D1.8E)
-*   [4 Примеры](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80.D1.8B)
+    *   [3.2 Обновление меню](#Обновление_меню)
+*   [4 Примеры](#Примеры)
     *   [4.1 Awesome](#Awesome)
-        *   [4.1.1 С xdg_menu](#.D0.A1_xdg_menu)
+        *   [4.1.1 С xdg_menu](#С_xdg_menu)
     *   [4.2 IceWM](#IceWM)
-        *   [4.2.1 С xdg_menu](#.D0.A1_xdg_menu_2)
-        *   [4.2.2 С update-menus](#.D0.A1_update-menus)
+        *   [4.2.1 С xdg_menu](#С_xdg_menu_2)
+        *   [4.2.2 С update-menus](#С_update-menus)
     *   [4.3 Ion3](#Ion3)
-        *   [4.3.1 С xdg_menu](#.D0.A1_xdg_menu_3)
-        *   [4.3.2 С update-menus](#.D0.A1_update-menus_2)
+        *   [4.3.1 С xdg_menu](#С_xdg_menu_3)
+        *   [4.3.2 С update-menus](#С_update-menus_2)
     *   [4.4 FluxBox](#FluxBox)
-        *   [4.4.1 С xdg_menu](#.D0.A1_xdg_menu_4)
-        *   [4.4.2 С update-menus](#.D0.A1_update-menus_3)
+        *   [4.4.1 С xdg_menu](#С_xdg_menu_4)
+        *   [4.4.2 С update-menus](#С_update-menus_3)
     *   [4.5 OpenBox](#OpenBox)
-        *   [4.5.1 С xdg_menu](#.D0.A1_xdg_menu_5)
-        *   [4.5.2 Как pipe menu](#.D0.9A.D0.B0.D0.BA_pipe_menu)
-        *   [4.5.3 С update-menus](#.D0.A1_update-menus_4)
+        *   [4.5.1 С xdg_menu](#С_xdg_menu_5)
+        *   [4.5.2 Как pipe menu](#Как_pipe_menu)
+        *   [4.5.3 С update-menus](#С_update-menus_4)
     *   [4.6 Twm](#Twm)
-        *   [4.6.1 С xdg_menu](#.D0.A1_xdg_menu_6)
-        *   [4.6.2 С update-menus](#.D0.A1_update-menus_5)
+        *   [4.6.1 С xdg_menu](#С_xdg_menu_6)
+        *   [4.6.2 С update-menus](#С_update-menus_5)
     *   [4.7 WindowMaker](#WindowMaker)
-        *   [4.7.1 С xdg_menu](#.D0.A1_xdg_menu_7)
-        *   [4.7.2 С update-menus](#.D0.A1_update-menus_6)
+        *   [4.7.1 С xdg_menu](#С_xdg_menu_7)
+        *   [4.7.2 С update-menus](#С_update-menus_6)
     *   [4.8 Fvwm2](#Fvwm2)
-        *   [4.8.1 С xdg_menu](#.D0.A1_xdg_menu_8)
-        *   [4.8.2 С update-menus](#.D0.A1_update-menus_7)
+        *   [4.8.1 С xdg_menu](#С_xdg_menu_8)
+        *   [4.8.2 С update-menus](#С_update-menus_7)
     *   [4.9 BlackBox](#BlackBox)
-        *   [4.9.1 С xdg_menu](#.D0.A1_xdg_menu_9)
-        *   [4.9.2 С update-menus](#.D0.A1_update-menus_8)
-*   [5 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
+        *   [4.9.1 С xdg_menu](#С_xdg_menu_9)
+        *   [4.9.2 С update-menus](#С_update-menus_8)
+*   [5 Смотрите также](#Смотрите_также)
 
 ### Иерархия меню
 
@@ -82,7 +82,7 @@ Xdg_menu опирается на сведения для генерации ме
 
 ### Добавление записей рабочего стола из других каталогов
 
-Изначально, меню XDG будет заполняться приложениями которые устанавливают свои Desktop entries в `/usr/share/applications`. Для добавления приложений в меню которое устанавливает их desktop entry из пользовательского каталога, такого как `~/.local/share/applications`, отредактируйте файл `/etc/xdg/menus/arch-applications.menu` и добавьте тэг `<AppDir>` для соответствующего каталога, смотрите ниже:
+По умолчанию, меню XDG будет заполняться приложениями которые устанавливают свои desktop entries в `/usr/share/applications`. Чтобы добавить в меню приложение, которое устанавливает свои desktop entry в пользовательский каталог, такой как `~/.local/share/applications`, отредактируйте файл `/etc/xdg/menus/arch-applications.menu` и добавьте тэг `<AppDir>` для соответствующего каталога, смотрите ниже:
 
  `/etc/xdg/menus/arch-applications.menu` 
 ```

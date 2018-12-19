@@ -21,12 +21,6 @@
     *   [5.1 OPCache](#OPCache)
     *   [5.2 APCu](#APCu)
 *   [6 Development tools](#Development_tools)
-    *   [6.1 Aptana Studio](#Aptana_Studio)
-    *   [6.2 Eclipse PDT](#Eclipse_PDT)
-    *   [6.3 Komodo](#Komodo)
-    *   [6.4 Netbeans](#Netbeans)
-    *   [6.5 PhpStorm](#PhpStorm)
-    *   [6.6 Zend Studio](#Zend_Studio)
 *   [7 Commandline tools](#Commandline_tools)
     *   [7.1 Composer](#Composer)
         *   [7.1.1 Allow user-wide installations](#Allow_user-wide_installations)
@@ -242,31 +236,29 @@ Its author recommends a few [suggested settings](https://github.com/krakjoe/apcu
 
 ## Development tools
 
-### Aptana Studio
+*   **Aptana Studio** — IDE for programming in PHP and web development. Does not have a PHP debugger.
 
-[Aptana Studio](http://www.aptana.com/products/studio3.html) is an IDE for programming in PHP and web development. It can be installed with the [aptana-studio](https://aur.archlinux.org/packages/aptana-studio/) package. Does not have a PHP debugger as of version 3.2.2.
+	[http://www.aptana.com/products/studio3.html](http://www.aptana.com/products/studio3.html) || [aptana-studio](https://aur.archlinux.org/packages/aptana-studio/)
 
-### Eclipse PDT
+*   **[Eclipse](/index.php/Eclipse "Eclipse") PDT** — The PHP variant of Eclipse.
 
-[Eclipse PDT](http://www.eclipse.org/pdt/) is the PHP variant of Eclipse. It can be installed with the [eclipse-php](https://www.archlinux.org/packages/?name=eclipse-php) package. See [Eclipse](/index.php/Eclipse "Eclipse") for more information.
+	[http://www.eclipse.org/pdt/](http://www.eclipse.org/pdt/) || [eclipse-php](https://www.archlinux.org/packages/?name=eclipse-php)
 
-You would need other plugins for JavaScript support and DB query.
+*   **Komodo** — IDE with good integration for PHP+HTML+JavaScript.
 
-### Komodo
+	[http://komodoide.com/](http://komodoide.com/) || [komodo-ide](https://aur.archlinux.org/packages/komodo-ide/), editor only: [komodo-edit](https://aur.archlinux.org/packages/komodo-edit/)
 
-[Komodo](http://komodoide.com/) is an IDE with good integration for PHP+HTML+JavaScript. [Komodo Edit](http://komodoide.com/komodo-edit/) is a free editor-only variant and installable with the [komodo-edit](https://aur.archlinux.org/packages/komodo-edit/) package.
+*   **[NetBeans](/index.php/NetBeans "NetBeans")** — IDE for many languages including PHP. Includes features like debugging, refactoring, code templating, autocomplete, XML features, and web design and development functionalities.
 
-### Netbeans
+	[https://netbeans.org/](https://netbeans.org/) || [netbeans](https://www.archlinux.org/packages/?name=netbeans)
 
-[NetBeans IDE](https://netbeans.org/) is a complete IDE for many languages including PHP. Includes features like debugging, refactoring, code templating, autocomplete, XML features, and web design and development functionalities (very good CSS autocomplete functionality and PHP/JavaScript code notifications/tips). Install it with the [netbeans](https://www.archlinux.org/packages/?name=netbeans) package.
+*   **[JetBrains PhpStorm](https://en.wikipedia.org/wiki/PhpStorm "wikipedia:PhpStorm")** — Commercial, cross-platform IDE for PHP built on JetBrains' IntelliJ IDEA platform. You can get a free license for education from Jetbrains.[[1]](https://www.jetbrains.com/student/).
 
-### PhpStorm
+	[https://www.jetbrains.com/phpstorm/](https://www.jetbrains.com/phpstorm/) || [phpstorm](https://aur.archlinux.org/packages/phpstorm/), 30-day trial: [phpstorm-eap](https://aur.archlinux.org/packages/phpstorm-eap/)
 
-[JetBrains PhpStorm](https://en.wikipedia.org/wiki/PhpStorm "wikipedia:PhpStorm") is a commercial, cross-platform IDE for PHP built on JetBrains' IntelliJ IDEA platform. It can be installed with the [phpstorm](https://aur.archlinux.org/packages/phpstorm/) package, or with [phpstorm-eap](https://aur.archlinux.org/packages/phpstorm-eap/) for the 30-day trial version. You can get a free license for education from Jetbrains.[[1]](https://www.jetbrains.com/student/)
+*   **Zend Studio** — Official PHP IDE, based on eclipse. The IDE has autocomplete, advanced code formatting, WYSIWYG html editor, refactoring, and all the eclipse features such as db access and version control integration and whatever you can get from other eclipse plugins.
 
-### Zend Studio
-
-[Zend Studio](http://www.zend.com/products/studio/) is the official PHP IDE, based on eclipse. The IDE has autocomplete, advanced code formatting, WYSIWYG html editor, refactoring, and all the eclipse features such as db access and version control integration and whatever you can get from other eclipse plugins. You can install it with the [zendstudio](https://aur.archlinux.org/packages/zendstudio/) package.
+	[http://www.zend.com/products/studio/](http://www.zend.com/products/studio/) || [zendstudio](https://aur.archlinux.org/packages/zendstudio/)
 
 ## Commandline tools
 

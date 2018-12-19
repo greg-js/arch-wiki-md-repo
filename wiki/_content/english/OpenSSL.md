@@ -4,22 +4,33 @@ Related articles
 
 [OpenSSL](http://www.openssl.org) is an open-source implementation of the SSL and [TLS](/index.php/TLS "TLS") protocols, designed to be as flexible as possible. It is supported on a variety of platforms, including BSD, Linux, OpenVMS, Solaris and Windows.
 
-[openssl](https://www.archlinux.org/packages/?name=openssl) is installed by default on Arch Linux (as a dependency of [coreutils](https://www.archlinux.org/packages/?name=coreutils)).
-
 **Warning:** Collaborated research into OpenSSL protocol usage, published in May 2015, showed further significant risks for SSL connections; named "Logjam" attack. See [https://weakdh.org/](https://weakdh.org/) for results and [https://weakdh.org/sysadmin.html](https://weakdh.org/sysadmin.html) for suggested server-side configuration changes.
 
 ## Contents
 
-*   [1 Configuration](#Configuration)
-    *   [1.1 req section](#req_section)
-*   [2 Usage](#Usage)
-    *   [2.1 Generate an RSA private key](#Generate_an_RSA_private_key)
-    *   [2.2 Generate a certificate signing request](#Generate_a_certificate_signing_request)
-    *   [2.3 Generate a self-signed certificate](#Generate_a_self-signed_certificate)
-    *   [2.4 Generate Diffie–Hellman parameters](#Generate_Diffie–Hellman_parameters)
-*   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 "bad decrypt" while decrypting](#"bad_decrypt"_while_decrypting)
-*   [4 See also](#See_also)
+*   [1 Installation](#Installation)
+*   [2 Configuration](#Configuration)
+    *   [2.1 req section](#req_section)
+*   [3 Usage](#Usage)
+    *   [3.1 Generate an RSA private key](#Generate_an_RSA_private_key)
+    *   [3.2 Generate a certificate signing request](#Generate_a_certificate_signing_request)
+    *   [3.3 Generate a self-signed certificate](#Generate_a_self-signed_certificate)
+    *   [3.4 Generate Diffie–Hellman parameters](#Generate_Diffie–Hellman_parameters)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 "bad decrypt" while decrypting](#"bad_decrypt"_while_decrypting)
+*   [5 See also](#See_also)
+
+## Installation
+
+[openssl](https://www.archlinux.org/packages/?name=openssl) is installed by default on Arch Linux (as a dependency of [coreutils](https://www.archlinux.org/packages/?name=coreutils)).
+
+There are various OpenSSL library bindings available for developers:
+
+*   [python-pyopenssl](https://www.archlinux.org/packages/?name=python-pyopenssl), [python2-pyopenssl](https://www.archlinux.org/packages/?name=python2-pyopenssl)
+*   [perl-net-ssleay](https://www.archlinux.org/packages/?name=perl-net-ssleay)
+*   [lua-sec](https://www.archlinux.org/packages/?name=lua-sec), [lua52-sec](https://www.archlinux.org/packages/?name=lua52-sec), [lua51-sec](https://www.archlinux.org/packages/?name=lua51-sec)
+*   [haskell-hsopenssl](https://www.archlinux.org/packages/?name=haskell-hsopenssl)
+*   [haskell-openssl-streams](https://www.archlinux.org/packages/?name=haskell-openssl-streams)
 
 ## Configuration
 

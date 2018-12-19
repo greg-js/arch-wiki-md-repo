@@ -111,6 +111,13 @@ $ systemctl list-unit-files
 
 ```
 
+Show the [cgroup slice](/index.php/Cgroups "Cgroups"), memory and parent for a PID:
+
+```
+$ systemctl status *pid*
+
+```
+
 ### Using units
 
 Units can be, for example, services (*.service*), mount points (*.mount*), devices (*.device*) or sockets (*.socket*).

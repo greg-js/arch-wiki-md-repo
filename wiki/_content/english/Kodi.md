@@ -43,7 +43,7 @@
 
 ## Installation
 
-The official stable release can be [installed](/index.php/Install "Install") via the [kodi](https://www.archlinux.org/packages/?name=kodi) package. Alternatively, recent alpha, beta, or RC builds are available from [kodi-pre-release](https://aur.archlinux.org/packages/kodi-pre-release/). Be sure to review/install optional dependencies listed by pacman to enable additional functionality.
+The official stable release can be [installed](/index.php/Install "Install") via the [kodi](https://www.archlinux.org/packages/?name=kodi) package. Alternatively, recent alpha, beta, or RC builds are available from [kodi-devel](https://aur.archlinux.org/packages/kodi-devel/). Be sure to review/install optional dependencies listed by pacman to enable additional functionality.
 
 All of the official addons in the [kodi-addons](https://www.archlinux.org/groups/x86_64/kodi-addons/) group are disabled by default and need to be enabled in Kodi's addon menu after installation.
 

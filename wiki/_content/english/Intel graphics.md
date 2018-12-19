@@ -113,9 +113,9 @@ Alternatively, check using:
 
 ## Xorg configuration
 
-There is no need for any configuration to run [Xorg](/index.php/Xorg "Xorg").
+There may be no need for any configuration to run [Xorg](/index.php/Xorg "Xorg").
 
-However, to take advantage of some driver options, you will need to create a Xorg configuration file similar to the one below:
+However, if [Xorg](/index.php/Xorg "Xorg") does not start, and to take advantage of some driver options, you can create an Xorg configuration file similar to the one below:
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
 ```
@@ -158,7 +158,7 @@ You will note that many options default to -1, resulting in per-chip powersaving
 
 Making use of Framebuffer compression (FBC) can reduce power consumption while reducing memory bandwidth needed for screen refreshes.
 
-To enable FBC, use `i915.enable_fbc=1` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") or set in `/etc/modprobe/i915.conf`:
+To enable FBC, use `i915.enable_fbc=1` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") or set in `/etc/modprobe.d/i915.conf`:
 
  `/etc/modprobe.d/i915.conf` 
 ```
@@ -186,7 +186,7 @@ The solution is to disable frame buffer compression which will imperceptibly inc
 
 The goal of Intel Fastboot is to preserve the frame-buffer as setup by the BIOS or [bootloader](/index.php/Bootloader "Bootloader") to avoid any flickering until [Xorg](/index.php/Xorg "Xorg") has started [[3]](https://www.phoronix.com/scan.php?page=news_item&px=MTEwNzc).
 
-To enable fastboot, set `i915.fastboot=1` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") or set in `/etc/modprobe/i915.conf`:
+To enable fastboot, set `i915.fastboot=1` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") or set in `/etc/modprobe.d/i915.conf`:
 
  `/etc/modprobe.d/i915.conf` 
 ```

@@ -481,7 +481,7 @@ w /proc/acpi/wakeup - - - - USBE
 
 详情参见`systemd-tmpfiles(8)` 和 [tmpfiles.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tmpfiles.d.5)。
 
-**注意:** 该方法不能向 `/sys` 中的配置文件添加参数，因为 `systemd-tmpfiles-setup` 有可能在相关模块加载前运行。这种情况下，需要首先通过 `modinfo <模块名>` 确认需要的参数，然后在 [`/etc/modprobe.d` 目录下的配置文件](/index.php/Kernel_modules_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#选项 "Kernel modules (简体中文)")中修改配置参数。另外，还可以使用 [udev 规则](/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#udev_规则 "Udev (简体中文)")，在设备就绪时设置相应属性。
+**注意:** 该方法不能向 `/sys` 中的配置文件添加参数，因为 `systemd-tmpfiles-setup` 有可能在相关模块加载前运行。这种情况下，需要首先通过 `modinfo <模块名>` 确认需要的参数，然后在 [`/etc/modprobe.d` 目录下的配置文件](/index.php/Kernel_modules_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#配置模块参数 "Kernel modules (简体中文)")中修改配置参数。另外，还可以使用 [udev 规则](/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#udev_规则 "Udev (简体中文)")，在设备就绪时设置相应属性。
 
 ## 定时器
 

@@ -190,7 +190,7 @@ When prompted for a passphrase, choose something that will be hard to guess if y
 
 It is also possible to create your private key without a passphrase. While this can be convenient, you need to be aware of the associated risks. Without a passphrase, your private key will be stored on disk in an unencrypted form. Anyone who gains access to your private key file will then be able to assume your identity on any SSH server to which you connect using key-based authentication. Furthermore, without a passphrase, you must also trust the root user, as he can bypass file permissions and will be able to access your unencrypted private key file at any time.
 
-**Note:** The old, default password encoding for *ssh* private keys keys **is insecure**; it is only a single round of an MD5 hash. Since OpenSSH version 6.5, use the `-o` option to `ssh-keygen` to encode your private key in a new, more secure format.
+**Note:** The old, default password encoding for *ssh* private keys **is insecure**; it is only a single round of an MD5 hash. Since OpenSSH version 6.5, use the `-o` option to `ssh-keygen` to encode your private key in a new, more secure format.
 
 #### Changing the private key's passphrase without changing the key
 

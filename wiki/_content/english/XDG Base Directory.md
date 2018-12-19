@@ -386,8 +386,8 @@ $ emcc --em-config "$XDG_CONFIG_HOME"/emscripten/config --em-cache "$XDG_CACHE_H
 | [gliv](https://aur.archlinux.org/packages/gliv/) | `~/.glivrc` | `$ gliv --glivrc="$XDG_CONFIG_HOME"/gliv/glivrc` |
 | [GnuPG](/index.php/GnuPG "GnuPG") | `~/.gnupg` | [[81]](https://bugs.gnupg.org/gnupg/issue1456) [[82]](https://bugs.gnupg.org/gnupg/issue1018) | 
 
-`$ export GNUPGHOME="$XDG_CONFIG_HOME"/gnupg
-$ gpg2 --homedir "$XDG_CONFIG_HOME"/gnupg`
+`$ export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+$ gpg2 --homedir "$XDG_DATA_HOME"/gnupg`
 
  |
 | [Google Earth](/index.php/Google_Earth "Google Earth") | `~/.googleearth` | Some paths can be changed with the `KMLPath` and `CachePath` options in `~/.config/Google/GoogleEarthPlus.conf` |

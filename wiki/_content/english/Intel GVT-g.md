@@ -16,13 +16,13 @@ You'll need to:
 
 *   Use at least Linux 4.16 and [QEMU](/index.php/QEMU "QEMU") 2.12.
 *   Add `i915.enable_gvt=1` to your kernel parameters to enable GPU virtualization.
-*   Find the PCI address of your GPU (`$GVT_PCI` in commands below), as it resides in `/sys/bus/pci/devices`. It looks like this: `0000:00:02.0` - you can look it up by running `lspci`, looking for `VGA compatible controller: Intel Corporation HD Graphics ...` and noting down the address on the left.
+*   Find the PCI address and domain number of your GPU (`$GVT_PCI` and `$GVT_DOM` in commands below), as it resides in `/sys/bus/pci/devices`. It looks like this: `0000:00:02.0` - you can look it up by running `lspci -D -nn`, looking for `VGA compatible controller: Intel Corporation HD Graphics ...` and noting down the address on the left.
 *   Generate the vGPU GUID (`$GVT_GUID` in commands below) which you'll use to create and assign the vGPU. A single virtual GPU can be assigned only to a single VM - create as many GUIDs as you want vGPUs. (You can do so by running `uuidgen`.)
 
 After rebooting with the `i915.enable_gvt=1` flag, you should be able to create vGPUs - there are multiple vGPU types you can create, which mainly differ in the amount of resources dedicated to that vGPU. You can look up what types are available in your system (and `cat description` inside of each type to discover what it's capable of) like this:
 
 ```
-# ls /sys/bus/pci/devices/$GVT_PCI/mdev_supported_types/
+# ls /sys/devices/pci${GVT_DOM}/$GVT_PCI/mdev_supported_types
 i915-GVTg_V5_1  # Video memory: <512MB, 2048MB>, resolution: up to 1920x1200
 i915-GVTg_V5_2  # Video memory: <256MB, 1024MB>, resolution: up to 1920x1200
 i915-GVTg_V5_4  # Video memory: <128MB, 512MB>, resolution: up to 1920x1200
@@ -33,7 +33,7 @@ i915-GVTg_V5_8  # Video memory: <64MB, 384MB>, resolution: up to 1024x768
 Pick a type you want to use - we'll refer to it as `$GVT_TYPE` below. Use the GUID you've created to create a vGPU with a chosen type:
 
 ```
-# echo "$GVT_GUID" > "/sys/bus/pci/devices/$GVT_PCI/mdev_supported_types/$GVT_TYPE/create"
+# echo "$GVT_GUID" > "/sys/devices/pci${GVT_DOM}/$GVT_PCI/mdev_supported_types/$GVT_TYPE/create"
 
 ```
 

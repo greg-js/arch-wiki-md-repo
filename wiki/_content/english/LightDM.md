@@ -16,6 +16,8 @@ Related articles
 
 More details about LightDM's design can be found [here](http://www.freedesktop.org/wiki/Software/LightDM/Design).
 
+**Note:** The Wayland windowing system is not yet fully supported. Wayland sessions are listed, but LightDM runs on X11.
+
 ## Contents
 
 *   [1 Installation](#Installation)

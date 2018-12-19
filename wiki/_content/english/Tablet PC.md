@@ -1,4 +1,4 @@
-Here are some hints for getting Arch Linux working on your tablet PC. These instructions contain information for getting the stylus, stylus rotation, and screen rotation to work properly on a tablet PC.
+This article aggregates information to get Arch Linux working on a tablet PC. The instructions contain information for getting the stylus, stylus rotation, and screen rotation to work properly on such devices.
 
 ## Contents
 
@@ -36,8 +36,9 @@ Intel (x86) tablets that are known to work (well) with Arch:
 
 *   [Samsung Series 7 Slate XE700T1A](/index.php/Samsung_Series_7_Slate_XE700T1A "Samsung Series 7 Slate XE700T1A")
 *   [Microsoft Surface Pro 3](/index.php/Microsoft_Surface_Pro_3 "Microsoft Surface Pro 3")
+*   Samsung ATIV Smart PC Pro XE700T1C
 *   Asus T300 Chi
-*   Acer Switch 3 (Be carefull, it is shipped with a 32 bits UEFI only, like the [ASUS x205ta](/index.php/ASUS_x205ta "ASUS x205ta") )
+*   Acer Switch 3 (be careful, it is shipped with a 32 bits UEFI only, like the [ASUS x205ta](/index.php/ASUS_x205ta "ASUS x205ta"))
 
 ## Stylus
 

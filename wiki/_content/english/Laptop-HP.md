@@ -206,6 +206,16 @@ Ambiant light sensor: works with iio-sensor-proxy | Not tested | Hot keys: Works
 Webcam: Works
 Fingerprint scanner: not tested
 Keyboard backlight: works | Secure boot works with SYSLINUX. (installed from Archiso) -- |
+| [HP Spectre x360 - 13-ap0xxxx](/index.php/HP_Spectre_x360_-_13-ap0xxxx "HP Spectre x360 - 13-ap0xxxx") | 2018.12 | Intel Core i7-8565U, Intel UHD Graphics 620 (*i915*) | Intel sound card: *snd-hda-intel* / Internal mic does not work | None | Intel Ac9560 Driver: *iwlwifi* | Yes | ACPI: works
+Suspend to RAM: works
+Suspend to Disk: untested
+Battery: works
+Display dimming: works
+CPU frequency scaling: works
+Rotation sensor: works with iio-sensor-proxy and screen-rotator | Not tested | Hot keys: Works
+Webcam: Works
+Fingerprint scanner: do not work ( undetected Synaptic SecurePad )
+Keyboard backlight: works | TO be able to boot, need to remove the initrd intel and amd patches / install and boots without issues without it -- |
 | Model version | Arch Linux Install CD version | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other | Remarks |
 | Hardware support |
 

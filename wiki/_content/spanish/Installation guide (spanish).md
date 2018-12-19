@@ -101,7 +101,7 @@ Las siguientes *particiones* son **necesarias** para el dispositivo elegido:
 *   Si [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)") está activado, una [partición del sistema EFI](/index.php/EFI_system_partition_(Espa%C3%B1ol) "EFI system partition (Español)").
     **Nota:** El [espacio de intercambio *(swap)*](/index.php/Swap_(Espa%C3%B1ol) "Swap (Español)") se puede establecer en una partición separada o en un [archivo](/index.php/Swap_(Espa%C3%B1ol)#Archivo_swap "Swap (Español)").
 
-Para modificar la *tablas de particiones*, utilice [fdisk](/index.php/Fdisk "Fdisk") o [parted](/index.php/GNU_Parted "GNU Parted").
+Para modificar la *tablas de particiones*, utilice [fdisk](/index.php/Fdisk_(Espa%C3%B1ol) "Fdisk (Español)") o [parted](/index.php/GNU_Parted "GNU Parted").
 
 ```
 # fdisk /dev/*sda*

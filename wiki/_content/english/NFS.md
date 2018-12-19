@@ -50,7 +50,7 @@ It is **highly** recommended to use a [time synchronization](/index.php/Time_syn
 
 Global configuration options are set in `/etc/nfs.conf`. Users of simple configurations should not need to edit this file.
 
-The NFS server needs a list of exports (directories to share) which are defined in `/etc/exports`. These shares are relative to the so-called NFS root. A good security practice is to define a NFS root in a discrete directory tree which will keep users limited to that mount point. Bind mounts are used to link the share mount point to the actual directory elsewhere on the [filesystem](/index.php/Filesystem "Filesystem").
+The NFS server needs a list of exports (directories to share) which are defined in `/etc/exports` or `/etc/exports.d/*.exports`. These shares are relative to the so-called NFS root. A good security practice is to define a NFS root in a discrete directory tree which will keep users limited to that mount point. Bind mounts are used to link the share mount point to the actual directory elsewhere on the [filesystem](/index.php/Filesystem "Filesystem").
 
 Consider this following example wherein:
 
@@ -289,7 +289,7 @@ Using [fstab](/index.php/Fstab "Fstab") is useful for a server which is always o
 
  `/etc/fstab` 
 ```
-servername:/music   /mountpoint/on/client   nfs   defaults,soft,rsize=32768,wsize=32768,timeo=900,retrans=5,_netdev	0 0
+servername:/music   /mountpoint/on/client   nfs   defaults,rsize=32768,wsize=32768,timeo=900,retrans=5,_netdev	0 0
 
 ```
 
@@ -304,6 +304,8 @@ Some additional mount options to consider:
 	soft or hard
 
 	Determines the recovery behaviour of the NFS client after an NFS request times out. If neither option is specified (or if the `hard` option is specified), NFS requests are retried indefinitely. If the `soft` option is specified, then the NFS client fails a NFS request after *retrans* retransmissions have been sent, causing the NFS client to return an error to the calling application.
+
+**Warning:** A so-called `soft` timeout can cause silent data corruption in certain cases. As such, use the `soft` option only when client responsiveness is more important than data integrity. Using NFS over TCP or increasing the value of the `retrans` option may mitigate some of the risks of using the `soft` option.
 
 	timeo
 

@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Archiso](/index.php/Archiso "Archiso"). Дата последней синхронизации: 4 декабря 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Archiso&diff=0&oldid=558326).
+**Состояние перевода:** На этой странице представлен перевод статьи [Archiso](/index.php/Archiso "Archiso"). Дата последней синхронизации: 19 декабря 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Archiso&diff=0&oldid=559444).
 
 Ссылки по теме
 
@@ -173,7 +173,7 @@ Include = /etc/pacman.d/mirrorlist
 
 #### UEFI Secure Boot
 
-Если вы хотите загружать Archiso в окружении с включённым UEFI Secure Boot, вы должны использовать подписанный загрузчик. Вы можете воспользоваться инструкциями из статьи [Secure Boot#Using a signed boot loader](/index.php/Secure_Boot#Using_a_signed_boot_loader "Secure Boot").
+Если вы хотите загружать Archiso в окружении с включённым UEFI Secure Boot, вы должны использовать подписанный загрузчик. Вы можете воспользоваться инструкциями из статьи [Secure Boot#Booting an install media](/index.php/Secure_Boot#Booting_an_install_media "Secure Boot").
 
 ### Вход в систему
 

@@ -14,7 +14,7 @@ The free edition allows to connect to an existing X display (also known as displ
 *   [2 Usage](#Usage)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Headless server](#Headless_server)
-    *   [3.2 Separate NoMachine X session in paralel with existing X session](#Separate_NoMachine_X_session_in_paralel_with_existing_X_session)
+    *   [3.2 Separate NoMachine X session in parallel with existing X session](#Separate_NoMachine_X_session_in_parallel_with_existing_X_session)
     *   [3.3 Problems with default keyboard in Display Manager](#Problems_with_default_keyboard_in_Display_Manager)
     *   [3.4 Connecting via SSH](#Connecting_via_SSH)
 
@@ -68,7 +68,7 @@ DefaultDesktopCommand "/usr/bin/mate-session"
 
 ```
 
-### Separate NoMachine X session in paralel with existing X session
+### Separate NoMachine X session in parallel with existing X session
 
 In default setup, the Free edition of NoMachine connects the client directly to an existing X session on the remote computer, even if it runs the X Display Manager only. This may be unwanted, because no other user may use the target computer locally at the same moment and because any person with physical access to the target computer can see on the physical display, what the remotely connected user is doing.
 

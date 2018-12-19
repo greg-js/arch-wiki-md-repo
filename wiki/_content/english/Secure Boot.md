@@ -6,12 +6,15 @@ For an overview about Secure Boot in Linux see [Rodsbooks' Secure Boot](http://w
 
 ## Contents
 
-*   [1 Booting archiso](#Booting_archiso)
+*   [1 Does the machine set to secure boot?](#Does_the_machine_set_to_secure_boot?)
+    *   [1.1 Before booting the OS](#Before_booting_the_OS)
+    *   [1.2 After booting the OS](#After_booting_the_OS)
 *   [2 Using a signed boot loader](#Using_a_signed_boot_loader)
     *   [2.1 PreLoader](#PreLoader)
         *   [2.1.1 Set up PreLoader](#Set_up_PreLoader)
             *   [2.1.1.1 Fallback](#Fallback)
-        *   [2.1.2 Remove PreLoader](#Remove_PreLoader)
+        *   [2.1.2 How to use while booting?](#How_to_use_while_booting?)
+        *   [2.1.3 Remove PreLoader](#Remove_PreLoader)
     *   [2.2 shim](#shim)
         *   [2.2.1 Set up shim](#Set_up_shim)
             *   [2.2.1.1 shim with hash](#shim_with_hash)
@@ -30,19 +33,18 @@ For an overview about Secure Boot in Linux see [Rodsbooks' Secure Boot](http://w
     *   [3.5 Dual booting with other operating systems](#Dual_booting_with_other_operating_systems)
         *   [3.5.1 Microsoft Windows](#Microsoft_Windows)
 *   [4 Disable Secure Boot](#Disable_Secure_Boot)
-*   [5 See also](#See_also)
+*   [5 Booting an install media](#Booting_an_install_media)
+*   [6 See also](#See_also)
 
-## Booting archiso
+## Does the machine set to secure boot?
 
-**Note:** The official installation image does not support Secure Boot ([FS#53864](https://bugs.archlinux.org/task/53864)). To successfully boot the installation medium you will need to [#Disable Secure Boot](#Disable_Secure_Boot).
+#### Before booting the OS
 
-Booting the archiso with Secure Boot enabled is possible since the EFI applications `PreLoader.efi` and `HashTool.efi` have been added to it. A message will show up that says `Failed to Start loader... I will now execute HashTool.` To use HashTool for enrolling the hash of `loader.efi` and `vmlinuz.efi`, follow these steps.
+At this point, one has to look at the firmware setup. Look at the instructions at [#Put firmware in "Setup Mode"](#Put_firmware_in_"Setup_Mode") and [#disable secure boot](#disable_secure_boot).
 
-*   Select *OK*
-*   In the HashTool main menu, select *Enroll Hash*, choose `\loader.efi` and confirm with *Yes*. Again, select *Enroll Hash* and `archiso` to enter the archiso directory, then select `vmlinuz.efi` and confirm with *Yes*. Then choose *Exit* to return to the boot device selection menu.
-*   In the boot device selection menu choose *Arch Linux archiso x86_64 UEFI CD*
+#### After booting the OS
 
-The archiso boots, and you are presented with a shell prompt, automatically logged in as root. To check if the archiso was booted with Secure Boot, use this command:
+To check if the machine was booted with Secure Boot, use this command:
 
 ```
 $ od -An -t u1 /sys/firmware/efi/efivars/SecureBoot-*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*
@@ -51,7 +53,7 @@ $ od -An -t u1 /sys/firmware/efi/efivars/SecureBoot-*XXXXXXXX-XXXX-XXXX-XXXX-XXX
 
 The characters denoted by `*XXXX*` differ from machine to machine. To help with this, you can use tab completion or list the EFI variables.
 
-If a Secure Boot is enabled, this command returns `1` as the final integer in a list of five, for example:
+If Secure Boot is enabled, this command returns `1` as the final integer in a list of five, for example:
 
 ```
 6  0  0  0  1
@@ -136,6 +138,14 @@ For particularly intransigent UEFI implementations, copy `PreLoader.efi` to the 
 As before, copy `HashTool.efi` and `loader.efi` to `*esp*/EFI/Microsoft/Boot/`.
 
 When the system starts with Secure Boot enabled, follow the steps above to enroll `loader.efi` and `/vmlinuz-linux` (or whichever kernel image is being used).
+
+#### How to use while booting?
+
+A message will show up that says `Failed to Start loader... I will now execute HashTool.` To use HashTool for enrolling the hash of `loader.efi` and `vmlinuz.efi`, follow these steps. These steps assume titles for a remastered archiso installation media. The exact titles you will get depends on your boot loader setup.
+
+*   Select *OK*
+*   In the HashTool main menu, select *Enroll Hash*, choose `\loader.efi` and confirm with *Yes*. Again, select *Enroll Hash* and `archiso` to enter the archiso directory, then select `vmlinuz.efi` and confirm with *Yes*. Then choose *Exit* to return to the boot device selection menu.
+*   In the boot device selection menu choose *Arch Linux archiso x86_64 UEFI CD*
 
 #### Remove PreLoader
 
@@ -510,6 +520,12 @@ The Secure Boot feature can be disabled via the UEFI firmware interface. You may
 If using a hotkey did not work and you can boot Windows, you can force a reboot into the firmware configuration in the following way (for Windows 10): *Settings > Update & Security > Recovery > Advanced startup (Restart now) > Troubleshoot > Advanced options > UEFI Firmware settings > restart*.
 
 Note that some motherboards (this is the case in a Packard Bell laptop) only allow to disable secure boot if you have set an administrator password (that can be removed afterwards). See also [Rod Smith's Disabling Secure Boot](http://www.rodsbooks.com/efi-bootloaders/secureboot.html#disable).
+
+## Booting an install media
+
+**Note:** The official installation image does not support Secure Boot ([FS#53864](https://bugs.archlinux.org/task/53864)). To successfully boot the installation medium you will need to [disable Secure Boot](#Disable_Secure_Boot).
+
+Secure Boot support was removed starting with `archlinux-2016.06.01-dual.iso`. At that time [prebootloader](https://www.archlinux.org/packages/?name=prebootloader) was replaced with [efitools](https://www.archlinux.org/packages/?name=efitools), even though the later uses unsigned EFI binaries. One might want to [remaster the Install ISO](/index.php/Remastering_the_Install_ISO "Remastering the Install ISO") in a way described by other topics of the article. For example, the signed EFI applications `PreLoader.efi` and `HashTool.efi` from [#PreLoader](#PreLoader) can be added to it. With it, the media boots, and you are presented with a shell prompt, automatically logged in as root.
 
 ## See also
 

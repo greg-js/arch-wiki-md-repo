@@ -47,9 +47,10 @@ Once logged as the 'postgres' user, create the database user (called *role* in t
 *   where *--interactive* is used to prompt for missing role name and attributes rather than using defaults
 *   and *--pwprompt'* is used to assign a password to the new role
 
-You will first be asked for a password. For highly secure yet easy to remember passwords, consider using a [Diceware Passphrase](http://world.std.com/~reinhold/diceware.html). Re-enter the password as requested. The next three questions should be answered in sequence with n, y, and n.
+To ensure proper installation, you should have created a database named odoo or anything other before you modify odoo user.Then you will first be asked for a password with createuser command. For highly secure yet easy to remember passwords, consider using a [Diceware Passphrase](http://world.std.com/~reinhold/diceware.html). Re-enter the password as requested. The next three questions should be answered in sequence with n, y, and n.
 
 ```
+$ createdb  odoo
 $ createuser odoo --interactive --pwprompt
 Enter password for new role: 
 Enter it again: 

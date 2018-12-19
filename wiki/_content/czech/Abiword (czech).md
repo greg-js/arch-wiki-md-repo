@@ -4,9 +4,9 @@
 
 *   [1 Instalace](#Instalace)
 *   [2 Oprava krachu dialogu tisku](#Oprava_krachu_dialogu_tisku)
-*   [3 Změna klávesových zkratek](#Zm.C4.9Bna_kl.C3.A1vesov.C3.BDch_zkratek)
+*   [3 Změna klávesových zkratek](#Změna_klávesových_zkratek)
 *   [4 Fonty LaTex](#Fonty_LaTex)
-*   [5 Externí odkazy](#Extern.C3.AD_odkazy)
+*   [5 Externí odkazy](#Externí_odkazy)
 
 ## Instalace
 

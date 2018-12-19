@@ -1,12 +1,12 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Fdisk](/index.php/Fdisk "Fdisk"), revisada por última vez el **2018-12-16**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Fdisk&diff=0&oldid=559268) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Fdisk](/index.php/Fdisk "Fdisk"), revisada por última vez el **2018-12-17**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Fdisk&diff=0&oldid=559268) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
 *   [Sistemas de archivos](/index.php/File_systems_(Espa%C3%B1ol) "File systems (Español)")
 *   [gdisk](/index.php/Gdisk "Gdisk")
 *   [GNU Parted](/index.php/GNU_Parted "GNU Parted")
-*   [Particionando](/index.php/Partitioning_(Espa%C3%B1ol) "Partitioning (Español)")
+*   [Particionar](/index.php/Partitioning_(Espa%C3%B1ol) "Partitioning (Español)")
 *   [dd](/index.php/Dd "Dd")
 
 [util-linux fdisk](https://git.kernel.org/cgit/utils/util-linux/util-linux.git/)es una utilidad de línea de órdenes dirigida por diálogos que crea y manipula las tablas de particiones y las particiones en un disco duro. Los discos duros se dividen en particiones y esta división se describe en la tabla de particiones.
@@ -20,12 +20,12 @@ Este artículo cubre [fdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fdisk
 *   [1 Instalación](#Instalación)
 *   [2 Listar las particiones](#Listar_las_particiones)
 *   [3 Copia de seguridad y restauración de la tabla de particiones](#Copia_de_seguridad_y_restauración_de_la_tabla_de_particiones)
-*   [4 Create a partition table and partitions](#Create_a_partition_table_and_partitions)
-    *   [4.1 Create new table](#Create_new_table)
-    *   [4.2 Create partitions](#Create_partitions)
-    *   [4.3 Write changes to disk](#Write_changes_to_disk)
-*   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Sort partitions](#Sort_partitions)
+*   [4 Crear una tabla de particiones y las particiones](#Crear_una_tabla_de_particiones_y_las_particiones)
+    *   [4.1 Crear nueva tabla](#Crear_nueva_tabla)
+    *   [4.2 Crear particiones](#Crear_particiones)
+    *   [4.3 Escribir cambios en el disco](#Escribir_cambios_en_el_disco)
+*   [5 Consejos y trucos](#Consejos_y_trucos)
+    *   [5.1 Ordenar particiones](#Ordenar_particiones)
 *   [6 Véase también](#Véase_también)
 
 ## Instalación
@@ -75,69 +75,69 @@ Para restaurar posteriormente este diseño puede ejecutar:
 
 ```
 
-## Create a partition table and partitions
+## Crear una tabla de particiones y las particiones
 
-The first step to [partitioning](/index.php/Partitioning "Partitioning") a disk is making a partition table. After that, the actual partitions are created according to the desired [partition scheme](/index.php/Partition_scheme "Partition scheme"). See the [partition table](/index.php/Partition_table "Partition table") article to help decide whether to use [MBR](/index.php/MBR "MBR") or [GPT](/index.php/GPT "GPT").
+El primer paso para [particionar](/index.php/Partitioning_(Espa%C3%B1ol) "Partitioning (Español)") un disco es crear una tabla de particiones. Después de eso, las particiones reales se crean de acuerdo con el [esquema de partición](/index.php/Partition_scheme_(Espa%C3%B1ol) "Partition scheme (Español)") deseado. Véase el artículo [tabla de particiones](/index.php/Partition_table_(Espa%C3%B1ol) "Partition table (Español)") para ayudarle a decidir si utilizar [MBR](/index.php/MBR_(Espa%C3%B1ol) "MBR (Español)") o [GPT](/index.php/GPT_(Espa%C3%B1ol) "GPT (Español)").
 
-Before beginning, you may wish to [backup](#Backup_and_restore_partition_table) your current partition table and scheme.
+Antes de comenzar, es posible que desee realizar una [copia de seguridad](#Copia_de_seguridad_y_restauración_de_la_tabla_de_particiones) de su actual tabla de particiones y esquema.
 
-Recent versions of *fdisk* have abandoned the deprecated system of using cylinders as the default display unit, as well as MS-DOS compatibility by default. *fdisk* automatically aligns all partitions to 2048 sectors, or 1 MiB, which should work for all EBS sizes that are known to be used by SSD manufacturers. This means that the default settings will give you proper alignment.
+Las versiones recientes de *fdisk* han abandonado el obsoleto sistema de utilizar cilindros como unidad de visualización predeterminada, así como la compatibilidad con MS-DOS de forma predeterminada. *fdisk* alinea automáticamente todas las particiones a 2048 sectores, o 1 MiB, que debería funcionar para todos los tamaños de EBS que se sabe que son utilizados por los fabricantes de SSD. Esto significa que la configuración predeterminada le dará una alineación adecuada.
 
-Start *fdisk* against your drive as root. In this example we are using `/dev/sda`:
+Inicie *fdisk* contra su disco como superusuario. En este ejemplo estamos utilizando `/dev/sda`:
 
 ```
 # fdisk /dev/sda
 
 ```
 
-This opens the *fdisk* dialogue where you can type in commands.
+Esto abre el diálogo de *fdisk* donde puede escribir las órdenes.
 
-### Create new table
+### Crear nueva tabla
 
-**Warning:** If you create a new partition table on a disk with data on it, it will erase all the data on the disk. Make sure this is what you want to do.
+**Advertencia:** Si crea una nueva tabla de particiones en un disco con datos, borrará todos los datos del disco. Asegúrese antes de que esto es lo que quiere hacer.
 
-To create a new partition table and clear all current partition data type `o` at the prompt for a MBR partition table or `g` for a GUID Partition Table (GPT). Skip this step if the table you require has already been created.
+Para crear una nueva tabla de particiones y borrar todos los datos de la partición actual escriba `o` en el indicador de una tabla de particiones MBR o `g` para una Tabla de particiones GUID (GPT). Omita este paso si la tabla que necesita ya se ha creado.
 
-### Create partitions
+### Crear particiones
 
-Create a new partition with the `n` command. You enter a partition type, partition number, starting sector, and an ending sector.
+Cree una nueva partición con la orden `n`. Introduzca un tipo de partición, un número de partición, un sector inicial y un sector final.
 
-When prompted, specify the partition type, type `p` to create a primary partition or `e` to create an extended one. There may be up to four primary partitions.
+Cuando se le solicite, especifique el tipo de partición, escriba `p` para crear una partición primaria o `e` para crear una extendida. Puede haber hasta cuatro particiones primarias.
 
-The first sector must be specified in absolute terms using sector numbers. The last sector can be specified using the absolute position in sectors or using the `+` symbol to specify a position relative to the start sector measured in sectors, kibibytes (`K`), mebibytes (`M`), gibibytes (`G`), tebibytes (`T`), or pebibytes (`P`); for instance, setting `+2G` as the last sector will specify a point 2GiB after the start sector. Pressing the `Enter` key with no input specifies the default value, which is the start of the largest available block for the start sector and the end of the same block for the end sector.
+El primer sector debe especificarse en términos absolutos utilizando números de sector. El último sector se puede especificar utilizando la posición absoluta en sectores o mediante el símbolo `+` para especificar una posición relativa al sector de inicio medido en sectores, kibibytes (`K`), mebibytes (`M`), gibibytes (`G`), tebibytes (`T`), o pebibytes (`P`); por ejemplo, si define `+2G` como el último sector, especificará un punto 2GiB después del sector de inicio. Al presionar la tecla `Intro` sin entrada, se especifica el valor predeterminado, que es el inicio del bloque más grande disponible para el sector de inicio y el final del mismo bloque para el sector de final.
 
-Select the partition's type id. The default, `Linux filesystem`, should be fine for most use. Press `l` to show the codes list. You can make the partition bootable by typing `a`.
+Seleccione el tipo de identificación de la partición. El valor predeterminado, `Linux filesystem`, debería estar bien para la mayoría de los casos. Presione `l` para mostrar la lista de códigos. Puede hacer que la partición se pueda iniciar escribiendo `a`.
 
-**Tip:**
+**Sugerencia:**
 
-*   When partitioning it is always a good idea to follow the default values for first and last partition sectors. Additionally, specify partition sizes with the *+<size>{M,G,...}* notation. Such partitions are always aligned according to the device properties.
-*   On a MBR partitioned disk leave at least 16.5 KiB free space at the end of the disk to simplify [converting between MBR and GPT](/index.php/Gdisk#Convert_between_MBR_and_GPT "Gdisk") if the need ever arises.
-*   [EFI system partition](/index.php/EFI_system_partition "EFI system partition") requires type `EFI System`.
-*   [GRUB](/index.php/GRUB "GRUB") requires a [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition") with type `BIOS boot` when installing GRUB to a disk.
-*   It is recommended to use `Linux swap` for any [swap](/index.php/Swap "Swap") partitions, since systemd will automount it.
+*   Cuando se particiona, siempre es una buena idea seguir los valores predeterminados para los sectores de inicio y final de la partición. Además, especifique los tamaños de partición con la notación *+<tamaño>{M,G,...}*. Dichas particiones siempre se alinean de acuerdo con las propiedades del dispositivo.
+*   En un disco con particionado MBR, deje al menos 16.5 KiB de espacio libre al final del disco para simplificar la [conversión entre MBR y GPT](/index.php/Gdisk#Convert_between_MBR_and_GPT "Gdisk") si alguna vez surge la necesidad.
+*   La [partición del sistema EFI](/index.php/EFI_system_partition_(Espa%C3%B1ol) "EFI system partition (Español)") requiere el tipo `EFI System`.
+*   [GRUB](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") requiere una [partición de arranque BIOS](/index.php/BIOS_boot_partition_(Espa%C3%B1ol) "BIOS boot partition (Español)") con el tipo `BIOS boot` al instalar GRUB en un disco.
+*   Se recomienda utilizar `Linux swap` para cualquier partición [swap](/index.php/Swap_(Espa%C3%B1ol) "Swap (Español)"), ya que systemd lo montará automáticamente.
 
-See the respective articles for considerations concerning the size and location of these partitions.
+Véase los artículos respectivos para conocer las consideraciones sobre el tamaño y la ubicación de estas particiones.
 
-Repeat this procedure until you have the partitions you desire.
+Repita este procedimiento hasta que tenga las particiones que desee.
 
-### Write changes to disk
+### Escribir cambios en el disco
 
-Write the table to disk and exit via the `w` command.
+Escriba la tabla en el disco y salga mediante la orden `w`.
 
-## Tips and tricks
+## Consejos y trucos
 
-### Sort partitions
+### Ordenar particiones
 
-This applies for when a new partition is created in the space between two partitions or a partition is deleted. `/dev/sda` is used in this example.
+Esto se aplica cuando se crea una nueva partición en el espacio entre dos particiones o se elimina una partición. Se utiliza `/dev/sda` en este ejemplo.
 
 ```
 # sfdisk -r /dev/sda
 
 ```
 
-After sorting the partitions if you are not using [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming"), it might be required to adjust the `/etc/fstab` and/or the `/etc/crypttab` configuration files.
+Después de ordenar las particiones si no está utilizando la [nomenclatura de dispositivo de bloque persistente](/index.php/Persistent_block_device_naming_(Espa%C3%B1ol) "Persistent block device naming (Español)"), es posible que deba ajustar los archivos de configuración `/etc/fstab` y/o `/etc/crypttab`.
 
-**Note:** The kernel must read the new partition table for the partitions (e.g. `/dev/sda1`) to be usable. Reboot the system or tell the kernel to [reread the partition table](https://serverfault.com/questions/36038/reread-partition-table-without-rebooting).
+**Nota:** El kernel debe leer la nueva tabla de particiones para que las particiones (por ejemplo, `/dev/sda1`) sean utilizables. Reinicie el sistema o diga al núcleo que [vuelva a leer la tabla de particiones](https://serverfault.com/questions/36038/reread-partition-table-without-rebooting).
 
 ## Véase también
 

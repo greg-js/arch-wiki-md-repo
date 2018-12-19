@@ -32,13 +32,13 @@ Este artículo es una traducción de [GNOME/Keyring](/index.php/GNOME/Keyring "G
 
 Cuando se utiliza GNOME, [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring) se instala automáticamente como parte del grupo [gnome](https://www.archlinux.org/groups/x86_64/gnome/). De lo contrario [instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquete [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring). Instale [libsecret](https://www.archlinux.org/packages/?name=libsecret) para permitir que las aplicaciones usen sus llaveros. [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring) está en desuso, sin embargo, algunas aplicaciones pueden requerirlo.
 
-Las utilidades adicionales relacionadas con GNOME Keyring incluyen:
+Las utilidades adicionales relacionadas con el llavero de GNOME incluyen:
 
-*   **secret-tool** — Acceso a GNOME keyring (y cualquier otro servicio que implemente la [API del servicio DBus Secret](http://standards.freedesktop.org/secret-service/)) desde la línea de órdenes.
+*   **secret-tool** — Acceso al llavero de GNOME (y cualquier otro servicio que implemente la [API del servicio DBus Secret](http://standards.freedesktop.org/secret-service/)) desde la línea de órdenes.
 
 	[https://wiki.gnome.org/Projects/Libsecret](https://wiki.gnome.org/Projects/Libsecret) || [libsecret](https://www.archlinux.org/packages/?name=libsecret)
 
-*   **gnome-keyring-query** — Proporciona una herramienta simple de línea de órdenes para consultar contraseñas del almacén de contraseñas del GNOME Keyring. (utiliza el obsoleto [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring))
+*   **gnome-keyring-query** — Proporciona una herramienta simple de línea de órdenes para consultar contraseñas del almacén de contraseñas del llavero de GNOME. (utiliza el obsoleto [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring))
 
 	|| [gnome-keyring-query](https://aur.archlinux.org/packages/gnome-keyring-query/)
 
@@ -48,9 +48,9 @@ Las utilidades adicionales relacionadas con GNOME Keyring incluyen:
 
 ## Administrar utilizando la GUI
 
-Puede administrar los contenidos de GNOME Keyring utilizando Seahorse. [Instálelo](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") con el paquete [seahorse](https://www.archlinux.org/packages/?name=seahorse).
+Puede administrar los contenidos del llavero de GNOME utilizando Seahorse. [Instálelo](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") con el paquete [seahorse](https://www.archlinux.org/packages/?name=seahorse).
 
-Es posible dejar la contraseña de GNOME keyring en blanco o cambiarla. En Seahorse, en el menú desplegable "Ver", seleccione "Por llavero". En la pestaña Contraseñas, pulse con el botón derecho en "Contraseñas: iniciar sesión" y seleccione "Cambiar contraseña". Introduzca la contraseña anterior y deje vacía la nueva contraseña. Se le advertirá sobre el uso de almacenamiento no cifrado; continúe presionando "Usar almacenamiento no seguro".
+Es posible dejar la contraseña del llavero de GNOME en blanco o cambiarla. En Seahorse, en el menú desplegable "Ver", seleccione "Por llavero". En la pestaña Contraseñas, pulse con el botón derecho en "Contraseñas: iniciar sesión" y seleccione "Cambiar contraseña". Introduzca la contraseña anterior y deje vacía la nueva contraseña. Se le advertirá sobre el uso de almacenamiento no cifrado; continúe presionando "Usar almacenamiento no seguro".
 
 ## Utilizando el llavero fuera de GNOME
 

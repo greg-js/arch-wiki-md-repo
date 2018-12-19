@@ -19,6 +19,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 *   [1 Configuration](#Configuration)
     *   [1.1 BIOS](#BIOS)
         *   [1.1.1 2.20.1271](#2.20.1271)
+        *   [1.1.2 E16Q2IMS.110](#E16Q2IMS.110)
     *   [1.2 Video](#Video)
         *   [1.2.1 Backlight](#Backlight)
         *   [1.2.2 Drivers](#Drivers)
@@ -58,6 +59,14 @@ At bootup, the BIOS settings page is entered via the delete key, the quick boot 
 In the BIOS setings,he model name can be seen in the Main tab, [Secure Boot](/index.php/Secure_Boot "Secure Boot") can be disabled from the Security tab and boot mode can optionally be switched from [UEFI](/index.php/UEFI "UEFI") to legacy.
 
 There is no option to disable the discrete intel GPU.
+
+#### E16Q2IMS.110
+
+This BIOS version seems to introduce many ACPI problems, including a flood of "No handler or method for GPE [00->6E]" at boot, which can be solved through kernel parameters:
+
+*   `acpi=off` allows to boot but most things won't work, including the keyboard and touchpad.
+*   `pci=nomsi` or `acpi=off acpi=force` allows to boot and have working keyboard and touchpad, but the NVidia card won't work ; neither will the USB3 ports.
+*   `pcie_aspm=off` will allow most things to work: keyboard, touchpad, USB 3 devices, NVidia card.
 
 ### Video
 

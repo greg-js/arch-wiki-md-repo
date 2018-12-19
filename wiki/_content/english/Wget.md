@@ -1,9 +1,9 @@
-[GNU Wget](http://www.gnu.org/software/wget/) is a free software package for retrieving files using HTTP, HTTPS and FTP. It is a non-interactive commandline tool, so it may easily be called from scripts.
+[GNU Wget](http://www.gnu.org/software/wget/) is a free software package for retrieving files using [HTTP](/index.php/HTTP "HTTP"), HTTPS, [FTP](/index.php/FTP "FTP") and FTPS *(FTPS since version 1.18)*. It is a non-interactive commandline tool, so it may easily be called from scripts.
 
 ## Contents
 
-*   [1 Installing](#Installing)
-*   [2 Configuring](#Configuring)
+*   [1 Installation](#Installation)
+*   [2 Configuration](#Configuration)
     *   [2.1 FTP automation](#FTP_automation)
     *   [2.2 Proxy](#Proxy)
     *   [2.3 pacman integration](#pacman_integration)
@@ -11,11 +11,11 @@
     *   [3.1 Basic usage](#Basic_usage)
     *   [3.2 Archive a complete website](#Archive_a_complete_website)
 
-## Installing
+## Installation
 
-Install the [wget](https://www.archlinux.org/packages/?name=wget) package. The git version is present in the AUR by the name [wget-git](https://aur.archlinux.org/packages/wget-git/).
+[Install](/index.php/Install "Install") the [wget](https://www.archlinux.org/packages/?name=wget) package. The git version is present in the AUR by the name [wget-git](https://aur.archlinux.org/packages/wget-git/).
 
-## Configuring
+## Configuration
 
 Configuration is performed in `/etc/wgetrc`. Not only is the default configuration file well documented; altering it is seldom necessary. See the man page for more intricate options.
 
@@ -30,7 +30,7 @@ wget ftp://root:somepassword@10.13.X.Y//ifs/home/test/big/"*.tar"
 
 ```
 
-In this case, Wget transfered a 3.3 G file at 74.4MB/second rate.
+In this case, Wget transfered a 3.3 GiB file at 74.4MB/second rate.
 
 In short, this procedure is:
 
@@ -41,7 +41,7 @@ In short, this procedure is:
 
 ### Proxy
 
-Wget uses the standard proxy environment variables. See: [Proxy settings](/index.php/Proxy_settings "Proxy settings")
+Wget uses the standard proxy environment variables. See [Proxy settings](/index.php/Proxy_settings "Proxy settings").
 
 To use the proxy authentication feature:
 

@@ -169,7 +169,7 @@ Due to the modular nature of isolinux, you are able to use lots of addons since 
 
 #### UEFI Secure Boot
 
-If you want to make your Archiso bootable on a UEFI Secure Boot enabled environment, you must use a signed bootloader. You can follow the instructions on [Secure Boot#Using a signed boot loader](/index.php/Secure_Boot#Using_a_signed_boot_loader "Secure Boot").
+If you want to make your Archiso bootable on a UEFI Secure Boot enabled environment, you must use a signed bootloader. You can follow the instructions on [Secure Boot#Booting an install media](/index.php/Secure_Boot#Booting_an_install_media "Secure Boot").
 
 ### Login manager
 

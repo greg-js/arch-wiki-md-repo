@@ -92,7 +92,7 @@ En una configuración BIOS/[GPT](/index.php/GUID_Partition_Table_(Espa%C3%B1ol) 
 
 Cree una partición de un mebibyte (MiB) (`+1M` con *fdisk* o *gdisk*) en el disco, sin formatearla con un sistema de archivos y con el GUID `21686148-6449-6E6F-744E-656564454649`.
 
-*   Seleccione el código de tipo `BIOS boot` con [fdisk](/index.php/Fdisk "Fdisk").
+*   Seleccione el código de tipo `BIOS boot` con [fdisk](/index.php/Fdisk_(Espa%C3%B1ol) "Fdisk (Español)").
 *   Seleccione el código de tipo `ef02` con [gdisk](/index.php/Gdisk "Gdisk").
 *   Con [parted](/index.php/Parted "Parted") establezca/active el flag `bios_grub`.
 

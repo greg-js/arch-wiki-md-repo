@@ -33,11 +33,11 @@ rbenv can be extended via a plugin system, and the rbenv wiki includes a [list o
 Before compiling, make sure you have all the dependencies needed:
 
 ```
- pacman -S --needed gcc6 base-devel libffi libyaml openssl zlib
+ pacman -S --needed base-devel libffi libyaml openssl zlib
 
 ```
 
-Installation of Ruby 2.3.x may break down due to openssl version and/or segmentation fault error while compilation. Both errors are described here:
+Installation of Ruby 2.3.x may break down due to openssl version described here:
 
 *   [https://stackoverflow.com/questions/44116005/openssl-error-installing-ruby-2-1-x-and-2-3-x-on-archlinux-with-ruby-install-rub](https://stackoverflow.com/questions/44116005/openssl-error-installing-ruby-2-1-x-and-2-3-x-on-archlinux-with-ruby-install-rub)
 
@@ -46,26 +46,18 @@ Installation of Ruby 2.3.x may break down due to openssl version and/or segmenta
 
 ```
 
-*   [https://github.com/rbenv/ruby-build/issues/1092](https://github.com/rbenv/ruby-build/issues/1092)
-
-```
- make: *** [uncommon.mk:655: enc.mk] Aborted (core dumped)
-
-```
-
 Here's a way how you can make a ruby compile:
 
-1\. Install **gcc-6** and **openssl-1.0** packages first:
+1\. Install **openssl-1.0** package first:
 
 ```
- sudo pacman -Syyu openssl-1.0 gcc6
+ sudo pacman -Syyu openssl-1.0
 
 ```
 
 2\. Then run:
 
 ```
- CC=/usr/bin/gcc-6 \
  PKG_CONFIG_PATH=/usr/lib/openssl-1.0/pkgconfig \
  rbenv install 2.3.4
 

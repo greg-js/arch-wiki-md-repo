@@ -237,7 +237,12 @@ Most people will probably want to run JACK in realtime mode, there are however a
 
 A great way to quickly diagnose your system and find out what it is missing in order to have JACK work properly in real time mode is to run the Quickscan script.
 
-[https://github.com/raboof/realtimeconfigquickscan/blob/master/realTimeConfigQuickScan.pl](https://github.com/raboof/realtimeconfigquickscan/blob/master/realTimeConfigQuickScan.pl)
+```
+git clone [git://github.com/raboof/realtimeconfigquickscan.git](git://github.com/raboof/realtimeconfigquickscan.git)
+cd realtimeconfigquickscan
+perl ./realTimeConfigQuickScan.pl
+
+```
 
 The output should tell you where your system is lacking and will point you to places to find more information.
 

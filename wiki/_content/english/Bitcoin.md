@@ -54,7 +54,7 @@ A discussion of design flaw on reddit (with citation links to official developer
 1.  Encrypt your wallet with a strong password
 2.  Backup your keys and transactions
 
-The Bitcoin Wiki article on [Wallet Security](https://en.bitcoin.it/wiki/Securing_your_wallet) contains further information.
+The Bitcoin Wiki article on [storing bitcoins](https://en.bitcoin.it/wiki/Storing_bitcoins) contains further information regarding wallet types and securing them.
 
 There are a variety of ways to acquire bitcoins:
 
