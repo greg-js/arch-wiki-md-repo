@@ -37,8 +37,10 @@ This article describes how [Yubico](https://yubico.com)'s [YubiKey](https://en.w
         *   [4.1.1 Chromium/Chrome](#Chromium/Chrome)
         *   [4.1.2 Firefox](#Firefox)
 *   [5 CCID Smartcard](#CCID_Smartcard)
-    *   [5.1 Enable the CCID mode](#Enable_the_CCID_mode)
-    *   [5.2 Use OpenPGP smartcard mode](#Use_OpenPGP_smartcard_mode)
+    *   [5.1 CCID](#CCID)
+    *   [5.2 PIV](#PIV)
+    *   [5.3 Enable the CCID mode](#Enable_the_CCID_mode)
+    *   [5.4 Use OpenPGP smartcard mode](#Use_OpenPGP_smartcard_mode)
 *   [6 Tips and tricks](#Tips_and_tricks)
     *   [6.1 YubiKey and LUKS encrypted partition/disk](#YubiKey_and_LUKS_encrypted_partition/disk)
     *   [6.2 Yubikey and KeePass](#Yubikey_and_KeePass)
@@ -372,6 +374,14 @@ To use a Challenge-Response slot (no matter which mode):
 [Firefox/Tweaks#Fido U2F authentication](/index.php/Firefox/Tweaks#Fido_U2F_authentication "Firefox/Tweaks")
 
 ## CCID Smartcard
+
+### CCID
+
+CCID (Chip Card Interface Device) is a USB standard device class for use by USB devices that act as smart card readers or with security tokens that connect directly via USB, like the Yubikey. HID (Human Interface Device) and CCID are both USB device classes, i.e. they are in the same category of USB specifications. HID is a specification for computer peripherals, like keyboards. The Yubikey works like a USB (HID) keyboard when used in the OTP and U2F modes, but confirms to the CCID device class when used in smart card mode.
+
+### PIV
+
+Starting from the fourth generation devices, the Yubikeys contain a PIV (Personal Identity Verification) application on the chip. PIV is a US government standard (FIPS 201) that specifies how a token using RSA or ECC (Elliptic Curve Cryptography) is used for personal electronic identification. The distinguishing characteristic of a PIV token is that it is built to protect private keys and operate on them on-chip. A private key never leaves the token after it has been installed on it. Optionally, the private key can even be generated on-chip with the aid of an on-chip random number generator. If generated on-chip, the private key is never handled outside of the chip, and there is no way to recover it from the token. When using the PIV mechanism, the Yubikey functions as a CCID device.
 
 ### Enable the CCID mode
 

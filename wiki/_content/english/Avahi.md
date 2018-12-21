@@ -241,7 +241,7 @@ Alternatively, [https://raw.github.com/tjfontaine/airprint-generate/master/airpr
 
 ### Hostname changes with appending incrementing numbers
 
-This is a [known bug](https://github.com/lathiat/avahi/issues/117) that is caused by a hostname race condition. As a temporary workaround [disabling IPv6 will make the bug less common](https://github.com/lathiat/avahi/issues/117#issuecomment-302849130).
+This is a [known bug](https://github.com/lathiat/avahi/issues/117) that is caused by a hostname race condition. One possible workaround is [disabling IPv6](https://github.com/lathiat/avahi/issues/117#issuecomment-302849130) to attempt to prevent the race condition. If multiple interfaces are present [use allow-interfaces](https://github.com/lathiat/avahi/issues/117#issuecomment-401225716) to limit Avahi to a single interface. Another possible workaround is to [disable the cache](https://github.com/lathiat/avahi/issues/117#issuecomment-442201162) to prevent Avahi from checking for host name conflicts altogether, but this prevents Avahi from performing lookups.
 
 ## See also
 

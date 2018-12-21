@@ -3,7 +3,7 @@ Related articles
 *   [llpp](/index.php/Llpp "Llpp")
 *   [List of applications/Documents#Readers and viewers](/index.php/List_of_applications/Documents#Readers_and_viewers "List of applications/Documents")
 
-[MuPDF](https://en.wikipedia.org/wiki/MuPDF "w:MuPDF") is a lightweight document viewer and toolkit written in portable C. It supports PDF, XPS, EPUB, XHTML, CBZ, and various image formats such as PNG, JPEG, GIF, and TIFF.
+[MuPDF](https://en.wikipedia.org/wiki/MuPDF "w:MuPDF") is a lightweight document viewer and toolkit written in portable C. It supports [PDF](/index.php/PDF "PDF"), XPS, EPUB, XHTML, CBZ, and various image formats such as PNG, JPEG, GIF, and TIFF.
 
 The renderer in MuPDF is tailored for high quality anti-aliased graphics. It renders text with metrics and spacing accurate to within fractions of a pixel for the highest fidelity in reproducing the look of a printed page on screen.
 

@@ -12,7 +12,7 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Transport_Layer_Security 
 *   [5 Server-side recommendations](#Server-side_recommendations)
     *   [5.1 Checking TLS](#Checking_TLS)
 *   [6 Miscellaneous](#Miscellaneous)
-    *   [6.1 ACME](#ACME)
+    *   [6.1 ACME clients](#ACME_clients)
     *   [6.2 OCSP](#OCSP)
     *   [6.3 HSTS](#HSTS)
 *   [7 See also](#See_also)
@@ -110,17 +110,13 @@ Websites to check TLS:
 
 ## Miscellaneous
 
-### ACME
+### ACME clients
 
 The [Automated Certificate Management Environment](https://en.wikipedia.org/wiki/Automated_Certificate_Management_Environment "wikipedia:Automated Certificate Management Environment") (ACME) protocol lets you request valid X.509 certificates from [certificate authorities](https://en.wikipedia.org/wiki/Certificate_authority "wikipedia:Certificate authority"), like [Let's Encrypt](https://letsencrypt.org/).
 
 See also [List of ACME clients](https://letsencrypt.org/docs/client-options/).
 
-*   **acme.sh** — A pure Unix shell script ACME client.
-
-	[https://github.com/Neilpang/acme.sh](https://github.com/Neilpang/acme.sh) || [acme.sh-git](https://aur.archlinux.org/packages/acme.sh-git/)
-
-*   **acme-client** — Secure Let's Encrypt client, written in C
+*   **acme-client** — Secure Let's Encrypt client, written in C.
 
 	[https://kristaps.bsd.lv/acme-client/](https://kristaps.bsd.lv/acme-client/) || [acme-client](https://aur.archlinux.org/packages/acme-client/)
 
@@ -128,11 +124,15 @@ See also [List of ACME clients](https://letsencrypt.org/docs/client-options/).
 
 	[https://github.com/diafygi/acme-tiny](https://github.com/diafygi/acme-tiny) || [acme-tiny](https://www.archlinux.org/packages/?name=acme-tiny)
 
-*   **acmetool** — An easy-to-use ACME CLI.
+*   **acme.sh** — A pure Unix shell script ACME client.
+
+	[https://github.com/Neilpang/acme.sh](https://github.com/Neilpang/acme.sh) || [acme.sh-git](https://aur.archlinux.org/packages/acme.sh-git/)
+
+*   **acmetool** — An easy-to-use ACME CLI, written in Go.
 
 	[https://github.com/hlandau/acme](https://github.com/hlandau/acme) || [acmetool](https://aur.archlinux.org/packages/acmetool/), [acmetool-git](https://aur.archlinux.org/packages/acmetool-git/)
 
-*   **[Certbot](/index.php/Certbot "Certbot")** — ACME client recommended by Let's Encrypt.
+*   **[Certbot](/index.php/Certbot "Certbot")** — ACME client recommended by Let's Encrypt, written in Python.
 
 	[https://github.com/certbot/certbot](https://github.com/certbot/certbot) || [certbot](https://www.archlinux.org/packages/?name=certbot)
 

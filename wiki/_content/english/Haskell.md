@@ -48,14 +48,12 @@ Hello, World
 
 Since version [8.0.2-1](https://git.archlinux.org/svntogit/community.git/commit/trunk?h=packages/ghc&id=7a948cdfb808afd3ce6f93047ae0dc1778e79f9f), the Arch [ghc](https://www.archlinux.org/packages/?name=ghc) package no longer installs static versions of the GHC boot libraries by default, nor do any of the [haskell-*](https://www.archlinux.org/packages/?q=haskell) packages in *community*. Therefore, to link successfully one must pass the `-dynamic` flag to GHC, as the default is to use static linking. For Cabal, this amounts to the following configuration:
 
-```
-cabal configure --disable-library-vanilla --enable-shared --enable-executable-dynamic
-
-```
+ `cabal configure --disable-library-vanilla --enable-shared --enable-executable-dynamic --ghc-options=-dynamic` 
 
 *   `--disable-library-vanilla` suppresses the creation of static libraries (if your project contains a library).
 *   `--enable-shared` enables the creation of shared libraries (if your project contains a library).
 *   `--enable-executable-dynamic` causes dynamic linking to be used for executables (if your project contains executables).
+*   `--ghc-options=-dynamic` adds the `-dynamic` flag to every invocation of GHC (e.g. if a package has a non-trivial `Setup.hs`).
 
 You can also set these flags in `~/.cabal/config` so that it applies to all projects by default:
 
@@ -64,6 +62,8 @@ You can also set these flags in `~/.cabal/config` so that it applies to all proj
 library-vanilla: False
 shared: True
 executable-dynamic: True
+ghc-options:
+  -dynamic
 
 ```
 

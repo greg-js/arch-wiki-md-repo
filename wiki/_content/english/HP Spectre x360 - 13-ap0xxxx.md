@@ -33,8 +33,9 @@ This article covers specific configuration of this laptop. Currently based on ex
     *   [3.8 Bluetooth](#Bluetooth)
     *   [3.9 ACPI Errors](#ACPI_Errors)
     *   [3.10 Pen input](#Pen_input)
-    *   [3.11 Battery optimizations](#Battery_optimizations)
-    *   [3.12 Sensors](#Sensors)
+    *   [3.11 IR Camera Login](#IR_Camera_Login)
+    *   [3.12 Battery optimizations](#Battery_optimizations)
+    *   [3.13 Sensors](#Sensors)
 
 ## Hardware Info
 
@@ -307,9 +308,13 @@ Many ACPI errors are logged on boot:
 
 Working, but seems like using the pen disable the touchscreen. more testing needed.
 
+### IR Camera Login
+
+Works with [Howdy](/index.php/Howdy "Howdy") configured to use /dev/video2 and the patch referenced in [https://github.com/boltgolt/howdy/issues/70#issuecomment-439123621](https://github.com/boltgolt/howdy/issues/70#issuecomment-439123621)
+
 ### Battery optimizations
 
-tlp installed
+tlp installed, no customisations: around 8-12h of browsing / sysadmin work, depending on the tasks.
 
 Powertop display a constant mW consumption of 570 mW ( probably wrong ). There is a setting in the BIOS to allow reporting via ACPI of the battery remaining time. It is disabled by default => to investigate.
 

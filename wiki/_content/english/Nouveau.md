@@ -295,6 +295,8 @@ Source: [http://gentoo-en.vfose.ru/wiki/Nouveau#Phantom_and_unpopulated_output_c
 
 Specific Nvidia chips with Nouveau may give random system lockups and more commonly throw many kernel messages, seen with *dmesg*. Try adding the `nouveau.noaccel=1` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"). See [[2]](https://fedoraproject.org/wiki/Common_kernel_problems#Systems_with_nVidia_adapters_using_the_nouveau_driver_lock_up_randomly) for more information.
 
+As an alternative you can also use the `QT_XCB_FORCE_SOFTWARE_OPENGL=1` [environment variable](/index.php/Environment_variable "Environment variable") to disable OpenGL acceleration in Qt applications.
+
 ### Flat Panel Table Invalid
 
 NVIDIA graphics cards with recent chipsets can cause startup issues - this includes X11 being unable to start and lspci freezing indefinitely[[3]](https://bugzilla.redhat.com/show_bug.cgi?id=1425253)[[4]](https://bbs.archlinux.org/viewtopic.php?id=192532)[[5]](https://stackoverflow.com/questions/28062458/nouveau-error-while-booting-arch)[[6]](https://bbs.archlinux.org/viewtopic.php?id=207602)[[7]](https://unix.stackexchange.com/questions/207895/how-do-i-install-antergos-with-a-gtx-970).

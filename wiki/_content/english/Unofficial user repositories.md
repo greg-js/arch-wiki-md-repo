@@ -27,40 +27,41 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
     *   [2.10 city](#city)
     *   [2.11 coderkun-aur](#coderkun-aur)
     *   [2.12 coderkun-aur-audio](#coderkun-aur-audio)
-    *   [2.13 disastrousaur](#disastrousaur)
-    *   [2.14 eatabrick](#eatabrick)
-    *   [2.15 eschwartz](#eschwartz)
-    *   [2.16 ffy00](#ffy00)
-    *   [2.17 fusion809](#fusion809)
-    *   [2.18 herecura](#herecura)
-    *   [2.19 holo](#holo)
-    *   [2.20 ivasilev](#ivasilev)
-    *   [2.21 jlk](#jlk)
-    *   [2.22 linux-macbook](#linux-macbook)
-    *   [2.23 llvm-svn](#llvm-svn)
-    *   [2.24 markzz](#markzz)
-    *   [2.25 maximbaz](#maximbaz)
-    *   [2.26 miffe](#miffe)
-    *   [2.27 mikelpint](#mikelpint)
-    *   [2.28 Minerva W Science](#Minerva_W_Science)
-    *   [2.29 mobile](#mobile)
-    *   [2.30 nah](#nah)
-    *   [2.31 nexus](#nexus)
-    *   [2.32 pkgbuilder](#pkgbuilder)
-    *   [2.33 post-factum kernels](#post-factum_kernels)
-    *   [2.34 QOwnNotes](#QOwnNotes)
-    *   [2.35 qt-debug](#qt-debug)
-    *   [2.36 quarry](#quarry)
-    *   [2.37 repo-ck](#repo-ck)
-    *   [2.38 seblu](#seblu)
-    *   [2.39 seiichiro](#seiichiro)
-    *   [2.40 sergej-repo](#sergej-repo)
-    *   [2.41 siosm-aur](#siosm-aur)
-    *   [2.42 sublime-text](#sublime-text)
-    *   [2.43 subtitlecomposer](#subtitlecomposer)
-    *   [2.44 trinity](#trinity)
-    *   [2.45 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
-    *   [2.46 xyne-x86_64](#xyne-x86_64)
+    *   [2.13 devkitpro](#devkitpro)
+    *   [2.14 disastrousaur](#disastrousaur)
+    *   [2.15 eatabrick](#eatabrick)
+    *   [2.16 eschwartz](#eschwartz)
+    *   [2.17 ffy00](#ffy00)
+    *   [2.18 fusion809](#fusion809)
+    *   [2.19 herecura](#herecura)
+    *   [2.20 holo](#holo)
+    *   [2.21 ivasilev](#ivasilev)
+    *   [2.22 jlk](#jlk)
+    *   [2.23 linux-macbook](#linux-macbook)
+    *   [2.24 llvm-svn](#llvm-svn)
+    *   [2.25 markzz](#markzz)
+    *   [2.26 maximbaz](#maximbaz)
+    *   [2.27 miffe](#miffe)
+    *   [2.28 mikelpint](#mikelpint)
+    *   [2.29 Minerva W Science](#Minerva_W_Science)
+    *   [2.30 mobile](#mobile)
+    *   [2.31 nah](#nah)
+    *   [2.32 nexus](#nexus)
+    *   [2.33 pkgbuilder](#pkgbuilder)
+    *   [2.34 post-factum kernels](#post-factum_kernels)
+    *   [2.35 QOwnNotes](#QOwnNotes)
+    *   [2.36 qt-debug](#qt-debug)
+    *   [2.37 quarry](#quarry)
+    *   [2.38 repo-ck](#repo-ck)
+    *   [2.39 seblu](#seblu)
+    *   [2.40 seiichiro](#seiichiro)
+    *   [2.41 sergej-repo](#sergej-repo)
+    *   [2.42 siosm-aur](#siosm-aur)
+    *   [2.43 sublime-text](#sublime-text)
+    *   [2.44 subtitlecomposer](#subtitlecomposer)
+    *   [2.45 trinity](#trinity)
+    *   [2.46 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
+    *   [2.47 xyne-x86_64](#xyne-x86_64)
 *   [3 Unsigned](#Unsigned)
     *   [3.1 alucryd](#alucryd)
     *   [3.2 alucryd-multilib](#alucryd-multilib)
@@ -108,7 +109,7 @@ Server = https://repo.arcanis.me/repo/$arch
 
 ```
 
-(It is also available via FTP with the same url.)
+(It is also available via FTP with the same URL.)
 
 ### archlinuxcn
 
@@ -256,6 +257,23 @@ Server = http://arch.suruatoel.xyz/$repo/$arch/
 ```
 [coderkun-aur-audio]
 Server = http://arch.suruatoel.xyz/$repo/$arch/
+
+```
+
+### devkitpro
+
+*   **Maintainer:** [wintermute](https://devkitpro.org/)
+*   **Description:** Provides Homebrew toolchains for the Nintendo Wii, Gamecube, DS, GBA, Gamepark gp32 and Nintendo Switch
+*   **Upstream page:** [https://devkitpro.org/wiki/devkitPro_pacman](https://devkitpro.org/wiki/devkitPro_pacman)
+*   **Key-ID:** F7FD5492264BB9D0
+
+**Note:** Repository has its own additional keyring at [https://downloads.devkitpro.org/devkitpro-keyring-r1.787e015-2-any.pkg.tar.xz](https://downloads.devkitpro.org/devkitpro-keyring-r1.787e015-2-any.pkg.tar.xz).
+
+```
+[dkp-libs]
+Server = https://downloads.devkitpro.org/packages
+[dkp-linux]
+Server = https://downloads.devkitpro.org/packages
 
 ```
 

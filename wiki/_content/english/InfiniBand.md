@@ -7,7 +7,7 @@ This page explains how to set up, diagnose, and benchmark [InfiniBand](https://e
     *   [1.2 Affordable used equipment](#Affordable_used_equipment)
     *   [1.3 Bandwidth](#Bandwidth)
         *   [1.3.1 Signal transfer rates](#Signal_transfer_rates)
-        *   [1.3.2 Effective throughput & multiple virtual lanes](#Effective_throughput_.26_multiple_virtual_lanes)
+        *   [1.3.2 Effective throughput & multiple virtual lanes](#Effective_throughput_&_multiple_virtual_lanes)
     *   [1.4 Latency](#Latency)
     *   [1.5 Backwards compatibility](#Backwards_compatibility)
     *   [1.6 Cables](#Cables)
@@ -18,12 +18,12 @@ This page explains how to set up, diagnose, and benchmark [InfiniBand](https://e
 *   [3 Installation](#Installation)
     *   [3.1 Upgrade firmware](#Upgrade_firmware)
         *   [3.1.1 For Mellanox](#For_Mellanox)
-        *   [3.1.2 For Intel/QLogic](#For_Intel.2FQLogic)
+        *   [3.1.2 For Intel/QLogic](#For_Intel/QLogic)
     *   [3.2 Kernel modules](#Kernel_modules)
     *   [3.3 Subnet manager](#Subnet_manager)
     *   [3.4 Enable port](#Enable_port)
         *   [3.4.1 Software subnet manager](#Software_subnet_manager)
-*   [4 TCP/IP (IPoIB)](#TCP.2FIP_.28IPoIB.29)
+*   [4 TCP/IP (IPoIB)](#TCP/IP_(IPoIB))
     *   [4.1 Connection mode](#Connection_mode)
     *   [4.2 MTU](#MTU)
     *   [4.3 Finetuning connection mode and MTU](#Finetuning_connection_mode_and_MTU)
@@ -36,20 +36,20 @@ This page explains how to set up, diagnose, and benchmark [InfiniBand](https://e
         *   [5.2.2 Over iSER](#Over_iSER)
             *   [5.2.2.1 Configuring iSER devices](#Configuring_iSER_devices)
 *   [6 Network segmentation](#Network_segmentation)
-*   [7 SDP (Sockets Direct Protocol)](#SDP_.28Sockets_Direct_Protocol.29)
+*   [7 SDP (Sockets Direct Protocol)](#SDP_(Sockets_Direct_Protocol))
 *   [8 Diagnosing and benchmarking](#Diagnosing_and_benchmarking)
-    *   [8.1 ibstat - View a computer's IB GUIDs](#ibstat_-_View_a_computer.27s_IB_GUIDs)
+    *   [8.1 ibstat - View a computer's IB GUIDs](#ibstat_-_View_a_computer's_IB_GUIDs)
     *   [8.2 ibhosts - View all hosts on IB network](#ibhosts_-_View_all_hosts_on_IB_network)
     *   [8.3 ibswitches - View all switches on IB network](#ibswitches_-_View_all_switches_on_IB_network)
     *   [8.4 iblinkinfo - View link information on IB network](#iblinkinfo_-_View_link_information_on_IB_network)
     *   [8.5 ibping - Ping another IB device](#ibping_-_Ping_another_IB_device)
     *   [8.6 ibdiagnet - Show diagnostic information for entire subnet](#ibdiagnet_-_Show_diagnostic_information_for_entire_subnet)
-    *   [8.7 qperf - Measure performance over RDMA or TCP/IP](#qperf_-_Measure_performance_over_RDMA_or_TCP.2FIP)
-        *   [8.7.1 TCP/IP over IPoIB](#TCP.2FIP_over_IPoIB)
-    *   [8.8 iperf - Measure performance over TCP/IP](#iperf_-_Measure_performance_over_TCP.2FIP)
-*   [9 Common problems / FAQ](#Common_problems_.2F_FAQ)
+    *   [8.7 qperf - Measure performance over RDMA or TCP/IP](#qperf_-_Measure_performance_over_RDMA_or_TCP/IP)
+        *   [8.7.1 TCP/IP over IPoIB](#TCP/IP_over_IPoIB)
+    *   [8.8 iperf - Measure performance over TCP/IP](#iperf_-_Measure_performance_over_TCP/IP)
+*   [9 Common problems / FAQ](#Common_problems_/_FAQ)
     *   [9.1 Connection problems](#Connection_problems)
-        *   [9.1.1 Link, physical state and port state](#Link.2C_physical_state_and_port_state)
+        *   [9.1.1 Link, physical state and port state](#Link,_physical_state_and_port_state)
         *   [9.1.2 getaddrinfo failed: Name or service not known](#getaddrinfo_failed:_Name_or_service_not_known)
     *   [9.2 Speed problems](#Speed_problems)
 
@@ -218,7 +218,7 @@ On one system:
 *   Install [opensm](https://aur.archlinux.org/packages/opensm/)
 *   [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `opensm.service`
 
-All of your connected IB ports should now be in a (port) state of `Active`, and a physical state of `LinkUp`. You can check this by running [ibstat](#ibstat_-_View_a_computer.27s_IB_GUIDs).
+All of your connected IB ports should now be in a (port) state of `Active`, and a physical state of `LinkUp`. You can check this by running [ibstat](#ibstat_-_View_a_computer's_IB_GUIDs).
 
  `$ ibstat` 
 ```
@@ -266,15 +266,15 @@ $ ip link show *interface*
 
 You only need `ipoibmodemtu` if you want to change the default connection mode and/or MTU.
 
-*   [Install and set up TCP/IP over IB (IPoIB)](#TCP.2FIP_.28IPoIB.29)
+*   [Install and set up TCP/IP over IB (IPoIB)](#TCP/IP_(IPoIB))
 *   Install [ipoibmodemtu](https://aur.archlinux.org/packages/ipoibmodemtu/)
 *   Configure `ipoibmodemtu` through `/etc/ipoibmodemtu.conf`, which contains instructions on how to do so
     *   It defaults to setting a single IB port `ib0` to `connected` mode and MTU `65520`
 *   [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `ipoibmodemtu.service`
 
-Different setups will see different results. Some people see a gigantic (double+) speed increase by usign `connected` mode and MTU `65520`, and a few see about the same or even worse speeds. Use [qperf](#qperf_-_Measure_performance_over_RDMA_or_TCP.2FIP) and [iperf](#iperf_-_Measure_performance_over_TCP.2FIP) to finetune your system.
+Different setups will see different results. Some people see a gigantic (double+) speed increase by using `connected` mode and MTU `65520`, and a few see about the same or even worse speeds. Use [qperf](#qperf_-_Measure_performance_over_RDMA_or_TCP/IP) and [iperf](#iperf_-_Measure_performance_over_TCP/IP) to finetune your system.
 
-Using the [qperf](#qperf_-_Measure_performance_over_RDMA_or_TCP.2FIP) examples given in this article, here are example results from an SDR network (8 theoretical Gb/s) with various finetuning:
+Using the [qperf](#qperf_-_Measure_performance_over_RDMA_or_TCP/IP) examples given in this article, here are example results from an SDR network (8 theoretical Gb/s) with various finetuning:
 
 | Mode | MTU | MB/s | us latency |
 | datagram | 2044 | 707 | 19.4 |
@@ -331,7 +331,7 @@ There is a lot of overlap with the [iSCSI Target](/index.php/ISCSI_Target "ISCSI
 
 Perform the target system instructions first, which will direct you when to temporarily switch over to the initiator system instructions.
 
-*   On the target and initiator systems, [install TCP/IP over IB](#TCP.2FIP_.28IPoIB.29)
+*   On the target and initiator systems, [install TCP/IP over IB](#TCP/IP_(IPoIB))
 
 *   On the target system, for each device or virtual device you want to share, in `targetcli`:
     *   [Create a backstore](#Create_backstores)
@@ -361,7 +361,7 @@ iSER (iSCSI Extensions for RDMA) takes advantage of IB's RDMA protocols, rather 
 
 Follow the [iSCSI Over IPoIB](#Over_IPoIB) instructions, with the following changes:
 
-*   If you wish, instead of [installing IPoIB](#TCP.2FIP_.28IPoIB.29), you can just [install RDMA for loading kernel modules](#Kernel_modules)
+*   If you wish, instead of [installing IPoIB](#TCP/IP_(IPoIB)), you can just [install RDMA for loading kernel modules](#Kernel_modules)
 *   On the target system, after everything else is setup, while still in `targetcli`, enable iSER on the target:
     *   Run `cd /iscsi/*iqn*/tpg1/portals/0.0.0.0:3260` for each *iqn* you want to have use iSER rather than IPoIB
         *   Where *iqn* is the randomly generated target name, i.e. `iqn.2003-01.org.linux-iscsi.hostname.x8664:sn.3d74b8d4020a`
@@ -586,7 +586,7 @@ tcp_lat:
 
 ### iperf - Measure performance over TCP/IP
 
-iperf is not an IB aware program, and is meant to test over TCP/IP or UDP. Even though [qperf](#qperf_-_Measure_performance_over_RDMA_or_TCP.2FIP) can test your IB TCP/IP performace using IPoIB, iperf is still another program you can use.
+iperf is not an IB aware program, and is meant to test over TCP/IP or UDP. Even though [qperf](#qperf_-_Measure_performance_over_RDMA_or_TCP/IP) can test your IB TCP/IP performace using IPoIB, iperf is still another program you can use.
 
 iperf must be ran in server mode on one computer.
 
@@ -631,7 +631,7 @@ iperf shows Transfer in base 10 GB's, and Bandwidth in base 2 GB's. So, this exa
 
 If nothing is shown, your kernel isn't recognizing your adapter. This example shows approximately what you will see if you have a Mellanox ConnectX adapter, which uses the mlx4_0 kernel module.
 
-*   Check the port and physical states. Either run [ibstat](#ibstat_-_View_a_computer.27s_IB_GUIDs) or examine `/sys`.
+*   Check the port and physical states. Either run [ibstat](#ibstat_-_View_a_computer's_IB_GUIDs) or examine `/sys`.
 
  `$ ibstat`  `(look at the port shown that you expect to be connected)` 
 
@@ -653,9 +653,9 @@ The physical state should be "LinkUp". If it isn't, your cable likely isn't plug
 
 *   Start by double-checking your expectations.
 
-How have you determined you have a speed problem? Are you using [qperf](#qperf_-_Measure_performance_over_RDMA_or_TCP.2FIP) or [iperf](#iperf_-_Measure_performance_over_TCP.2FIP), which both transmit data to and from memory rather than hard drives. Or, are you benchmarking actual file transfers, which relies on your hard drives? Unless you're running RAID to boost speed, even with the fastest SSD's available in mid 2015, a single hard drive (or sometimes even multiple ones) will be bottlenecking your IB transfer speeds. Are you using RDMA or TCP/IP via IPoIB? If so, [there is a performance hit](#TCP.2FIP_.28IPoIB.29) for using IPoIB instead of RDMA.
+How have you determined you have a speed problem? Are you using [qperf](#qperf_-_Measure_performance_over_RDMA_or_TCP/IP) or [iperf](#iperf_-_Measure_performance_over_TCP/IP), which both transmit data to and from memory rather than hard drives. Or, are you benchmarking actual file transfers, which relies on your hard drives? Unless you're running RAID to boost speed, even with the fastest SSD's available in mid 2015, a single hard drive (or sometimes even multiple ones) will be bottlenecking your IB transfer speeds. Are you using RDMA or TCP/IP via IPoIB? If so, [there is a performance hit](#TCP/IP_(IPoIB)) for using IPoIB instead of RDMA.
 
-*   Check your link speeds. Run [ibstat](#ibstat_-_View_a_computer.27s_IB_GUIDs), [iblinkinfo](#iblinkinfo_-_View_link_information_on_IB_network), or examine `/sys`.
+*   Check your link speeds. Run [ibstat](#ibstat_-_View_a_computer's_IB_GUIDs), [iblinkinfo](#iblinkinfo_-_View_link_information_on_IB_network), or examine `/sys`.
 
  `$ ibstat`  `(look at the Rate shown on the port you are using)` 
 

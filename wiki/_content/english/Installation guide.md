@@ -127,8 +127,6 @@ The following *partitions* are **required** for a chosen device:
 *   One partition for the root directory `/`.
 *   If [UEFI](/index.php/UEFI "UEFI") is enabled, an [EFI system partition](/index.php/EFI_system_partition "EFI system partition").
 
-**Note:** [Swap](/index.php/Swap "Swap") space can be set on a separate partition or a [swap file](/index.php/Swap_file "Swap file").
-
 To modify *partition tables*, use [fdisk](/index.php/Fdisk "Fdisk") or [parted](/index.php/Parted "Parted").
 
 ```
@@ -138,7 +136,10 @@ To modify *partition tables*, use [fdisk](/index.php/Fdisk "Fdisk") or [parted](
 
 See [Partitioning](/index.php/Partitioning "Partitioning") for more information.
 
-**Note:** If you want to create any stacked block devices for [LVM](/index.php/LVM "LVM"), [disk encryption](/index.php/Disk_encryption "Disk encryption") or [RAID](/index.php/RAID "RAID"), do it now.
+**Note:**
+
+*   [Swap](/index.php/Swap "Swap") space can be set on a separate partition or a [swap file](/index.php/Swap_file "Swap file").
+*   If you want to create any stacked block devices for [LVM](/index.php/LVM "LVM"), [disk encryption](/index.php/Disk_encryption "Disk encryption") or [RAID](/index.php/RAID "RAID"), do it now.
 
 ### Format the partitions
 
@@ -304,9 +305,9 @@ Set the root [password](/index.php/Password "Password"):
 
 ### Boot loader
 
-A Linux-capable boot loader must be installed in order to boot Arch Linux. See [Arch_boot_process#Boot_loader](/index.php/Arch_boot_process#Boot_loader "Arch boot process") for available choices.
+See [Arch_boot_process#Boot_loader](/index.php/Arch_boot_process#Boot_loader "Arch boot process") for a list of Linux-capable boot loaders.
 
-If you have an Intel or AMD CPU, enable [microcode](/index.php/Microcode "Microcode") updates.
+**Note:** If you have an Intel or AMD CPU, enable [microcode](/index.php/Microcode "Microcode") updates.
 
 ## Reboot
 

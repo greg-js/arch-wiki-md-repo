@@ -96,17 +96,9 @@ If the backend of your scanner is not part of the sane package (such as `hpaio.c
 
 Many frontends exist for SANE, a non-exhaustive list of which can be found on the [sane-project website](http://www.sane-project.org/sane-frontends.html).
 
-*   **[gscan2pdf](https://en.wikipedia.org/wiki/Scanner_Access_Now_Easy#gscan2pdf "wikipedia:Scanner Access Now Easy")** — Scans, runs an OCR engine, minor post-processing, creates a document.
-
-	[http://gscan2pdf.sourceforge.net/](http://gscan2pdf.sourceforge.net/) || [gscan2pdf](https://www.archlinux.org/packages/?name=gscan2pdf)
-
-*   **[OCRFeeder](https://en.wikipedia.org/wiki/OCRFeeder "wikipedia:OCRFeeder")** — Python GUI for Gnome which performs document analysis and rendition, and can use either CuneiForm, GOCR, Ocrad or Tesseract as OCR engines. It can import from PDF or image files, and export to HTML or OpenDocument.
-
-	[https://wiki.gnome.org/Apps/OCRFeeder](https://wiki.gnome.org/Apps/OCRFeeder) || [ocrfeeder](https://www.archlinux.org/packages/?name=ocrfeeder)
-
 *   **[Simple Scan](https://en.wikipedia.org/wiki/Scanner_Access_Now_Easy#Simple_Scan "wikipedia:Scanner Access Now Easy")** — Simplified GUI that is intended to be easier to use and better integrated into the [GNOME](/index.php/GNOME "GNOME") desktop than XSane. It was initially written for Ubuntu and is maintained by Robert Ancell of Canonical Ltd. for GNU/Linux.
 
-	[https://launchpad.net/simple-scan](https://launchpad.net/simple-scan) || [simple-scan](https://www.archlinux.org/packages/?name=simple-scan)
+	[https://gitlab.gnome.org/GNOME/simple-scan](https://gitlab.gnome.org/GNOME/simple-scan) || [simple-scan](https://www.archlinux.org/packages/?name=simple-scan)
 
 *   **[Skanlite](https://en.wikipedia.org/wiki/Skanlite "wikipedia:Skanlite")** — Simple image scanning application that does nothing more than scan and save images, based on the KSane backend.
 
@@ -115,6 +107,8 @@ Many frontends exist for SANE, a non-exhaustive list of which can be found on th
 *   **[XSane](https://en.wikipedia.org/wiki/Scanner_Access_Now_Easy#XSane "wikipedia:Scanner Access Now Easy")** — Full-featured GTK-based frontend looking a bit old but providing extended functionalities.
 
 	[http://www.xsane.org/](http://www.xsane.org/) || [xsane](https://www.archlinux.org/packages/?name=xsane)
+
+Some [OCR software](/index.php/List_of_applications/Documents#OCR_software "List of applications/Documents") are able to scan images using SANE: gImageReader, [gscan2pdf](https://en.wikipedia.org/wiki/Scanner_Access_Now_Easy#gscan2pdf "wikipedia:Scanner Access Now Easy"), Linux-Intelligent-Ocr-Solution, [OCRFeeder](https://en.wikipedia.org/wiki/OCRFeeder "wikipedia:OCRFeeder"), Paperwork.
 
 **Note:** Scanning directly to PDF using XSane in 16bit color depth mode is known to produces [corrupted files](https://bugs.launchpad.net/ubuntu/+source/xsane/+bug/539162) and a note in `pacman` output warns so. 8bit mode is known to work.
 

@@ -2,7 +2,9 @@ Related articles
 
 *   [File systems](/index.php/File_systems "File systems")
 
-[F2FS](https://en.wikipedia.org/wiki/F2FS "wikipedia:F2FS") (Flash-Friendly File System) is a file system intended for NAND-based flash memory equipped with Flash Transition Layer. Unlike JFFS or UBIFS it relies on FTL to handle write distribution. It is supported from kernel 3.8 onwards.
+[F2FS](https://en.wikipedia.org/wiki/F2FS "wikipedia:F2FS") (Flash-Friendly File System) is a file system intended for NAND-based flash memory equipped with Flash Translation Layer. Unlike JFFS or UBIFS it relies on FTL to handle write distribution. It is supported from kernel 3.8 onwards.
+
+An FTL is found in all flash memory with a SCSI/SATA/PCIe/NVMe interface [[1]](http://accelazh.github.io/ssd/A-Summary-On-SSD-And-FTL), opposed to bare NAND Flash and SmartMediaCards [[2]](http://www.linux-mtd.infradead.org/archive/tech/nand.html).
 
 ## Contents
 

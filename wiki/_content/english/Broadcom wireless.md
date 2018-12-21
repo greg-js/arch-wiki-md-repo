@@ -171,7 +171,9 @@ This device will not display with either `lspci` nor `lsusb`; there is no known 
 
 ### Missing firmware for Asus PCE-AC88
 
-See [[1]](https://ubuntuforums.org/showthread.php?t=2337200&p=13618497#post13618497) for a way to extract the `brcmfmac4366c-pcie.bin` firmware.
+The firmware has been added to [linux-firwmare](https://www.archlinux.org/packages/?name=linux-firwmare) 20181216.211de16-1.
+
+For previous versions of [linux-firwmare](https://www.archlinux.org/packages/?name=linux-firwmare), please refer to [[1]](https://ubuntuforums.org/showthread.php?t=2337200&p=13618497#post13618497) for a way to extract the `brcmfmac4366c-pcie.bin` firmware. The firwmare extracted through this method does not work with 5GHz networks.
 
 ### Connection is unstable with some routers
 

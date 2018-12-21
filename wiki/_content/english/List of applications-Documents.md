@@ -34,12 +34,12 @@
     *   [1.7 Document managers](#Document_managers)
     *   [1.8 Scanning software](#Scanning_software)
     *   [1.9 OCR software](#OCR_software)
-        *   [1.9.1 OCR engines](#OCR_engines)
-        *   [1.9.2 Layout analyzers](#Layout_analyzers)
+        *   [1.9.1 Console](#Console_2)
+        *   [1.9.2 Graphical](#Graphical_2)
     *   [1.10 Notes](#Notes)
         *   [1.10.1 Note-taking software](#Note-taking_software)
-            *   [1.10.1.1 Console](#Console_2)
-            *   [1.10.1.2 Graphical](#Graphical_2)
+            *   [1.10.1.1 Console](#Console_3)
+            *   [1.10.1.2 Graphical](#Graphical_3)
         *   [1.10.2 Stylus note-taking](#Stylus_note-taking)
         *   [1.10.3 Diary](#Diary)
         *   [1.10.4 Mind-mapping](#Mind-mapping)
@@ -53,8 +53,8 @@
         *   [1.12.2 Spell checkers](#Spell_checkers)
         *   [1.12.3 Translation and localization](#Translation_and_localization)
     *   [1.13 Barcode generators and readers](#Barcode_generators_and_readers)
-        *   [1.13.1 Console](#Console_3)
-        *   [1.13.2 Graphical](#Graphical_3)
+        *   [1.13.1 Console](#Console_4)
+        *   [1.13.2 Graphical](#Graphical_4)
 
 ## Documents and texts
 
@@ -910,7 +910,7 @@ See also [Wikipedia:Microsoft Compiled HTML Help](https://en.wikipedia.org/wiki/
 
 *   **Paperwork** — Personal document manager. It manages scanned documents and PDFs.
 
-	[https://openpaper.work/](https://openpaper.work/) || [paperwork](https://aur.archlinux.org/packages/paperwork/)
+	[https://openpaper.work/](https://openpaper.work/) || [paperwork](https://www.archlinux.org/packages/?name=paperwork)
 
 ### Scanning software
 
@@ -918,7 +918,7 @@ See [SANE#Install a frontend](/index.php/SANE#Install_a_frontend "SANE").
 
 ### OCR software
 
-#### OCR engines
+#### Console
 
 See also [Wikipedia:Comparison of optical character recognition software](https://en.wikipedia.org/wiki/Comparison_of_optical_character_recognition_software "wikipedia:Comparison of optical character recognition software").
 
@@ -934,31 +934,35 @@ See also [Wikipedia:Comparison of optical character recognition software](https:
 
 	[https://www.gnu.org/software/ocrad/](https://www.gnu.org/software/ocrad/) || [ocrad](https://www.archlinux.org/packages/?name=ocrad)
 
+*   **[OCRopus](https://en.wikipedia.org/wiki/OCRopus "wikipedia:OCRopus")** — OCR *platform*, modules exist for document layout analysis, OCR engines (it can use Tesseract or its own engine), natural language modeling, etc.
+
+	[https://github.com/tmbdev/ocropy](https://github.com/tmbdev/ocropy) || [ocropy](https://aur.archlinux.org/packages/ocropy/)
+
 *   **[Tesseract](https://en.wikipedia.org/wiki/Tesseract_(software) "wikipedia:Tesseract (software)")** — Accurate open source OCR engine. Package splitted, you need install some datafiles for each language ([tesseract-data-eng](https://www.archlinux.org/packages/?name=tesseract-data-eng) for example).
 
 	[https://github.com/tesseract-ocr](https://github.com/tesseract-ocr) || [tesseract](https://www.archlinux.org/packages/?name=tesseract)
 
-#### Layout analyzers
+#### Graphical
 
-*   **gImageReader** — Graphical GTK+ frontend to Tesseract.
+*   **gImageReader** — Graphical GTK+/Qt frontend to Tesseract.
 
-	[https://github.com/manisandro/gImageReader](https://github.com/manisandro/gImageReader) || [gimagereader](https://aur.archlinux.org/packages/gimagereader/)
+	[https://github.com/manisandro/gImageReader](https://github.com/manisandro/gImageReader) || GTK+: [gimagereader-gtk](https://www.archlinux.org/packages/?name=gimagereader-gtk), Qt: [gimagereader-qt](https://www.archlinux.org/packages/?name=gimagereader-qt)
 
 *   **[gscan2pdf](https://en.wikipedia.org/wiki/Scanner_Access_Now_Easy#gscan2pdf "wikipedia:Scanner Access Now Easy")** — Scans, runs an OCR engine, minor post-processing, creates a document.
 
 	[http://gscan2pdf.sourceforge.net/](http://gscan2pdf.sourceforge.net/) || [gscan2pdf](https://www.archlinux.org/packages/?name=gscan2pdf)
 
+*   **Linux-Intelligent-Ocr-Solution** — Easy-OCR solution and Tesseract trainer for converting print into text using either scanner or a camera.
+
+	[https://sourceforge.net/projects/lios/](https://sourceforge.net/projects/lios/) || [lios-git](https://aur.archlinux.org/packages/lios-git/)
+
 *   **[OCRFeeder](https://en.wikipedia.org/wiki/OCRFeeder "wikipedia:OCRFeeder")** — Python GUI for Gnome which performs document analysis and rendition, and can use either CuneiForm, GOCR, Ocrad or Tesseract as OCR engines. It can import from PDF or image files, and export to HTML or OpenDocument.
 
 	[https://wiki.gnome.org/Apps/OCRFeeder](https://wiki.gnome.org/Apps/OCRFeeder) || [ocrfeeder](https://www.archlinux.org/packages/?name=ocrfeeder)
 
-*   **[OCRopus](https://en.wikipedia.org/wiki/OCRopus "wikipedia:OCRopus")** — OCR *platform*, modules exist for document layout analysis, OCR engines (it can use Tesseract or its own engine), natural language modeling, etc.
-
-	[https://github.com/tmbdev/ocropy](https://github.com/tmbdev/ocropy) || [ocropy](https://aur.archlinux.org/packages/ocropy/)
-
 *   **Paperwork** — Personal document manager. It manages scanned documents and PDFs.
 
-	[https://openpaper.work/](https://openpaper.work/) || [paperwork](https://aur.archlinux.org/packages/paperwork/)
+	[https://openpaper.work/](https://openpaper.work/) || [paperwork](https://www.archlinux.org/packages/?name=paperwork)
 
 *   **Scan Tailor** — Interactive post-processing tool for scanned pages.
 

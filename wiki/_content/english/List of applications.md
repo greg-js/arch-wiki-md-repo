@@ -274,12 +274,12 @@ This article is a general list of applications sorted by category, as a referenc
     *   [4.7 Document managers](#Document_managers)
     *   [4.8 Scanning software](#Scanning_software)
     *   [4.9 OCR software](#OCR_software)
-        *   [4.9.1 OCR engines](#OCR_engines)
-        *   [4.9.2 Layout analyzers](#Layout_analyzers)
+        *   [4.9.1 Console](#Console_20)
+        *   [4.9.2 Graphical](#Graphical_20)
     *   [4.10 Notes](#Notes)
         *   [4.10.1 Note-taking software](#Note-taking_software)
-            *   [4.10.1.1 Console](#Console_20)
-            *   [4.10.1.2 Graphical](#Graphical_20)
+            *   [4.10.1.1 Console](#Console_21)
+            *   [4.10.1.2 Graphical](#Graphical_21)
         *   [4.10.2 Stylus note-taking](#Stylus_note-taking)
         *   [4.10.3 Diary](#Diary)
         *   [4.10.4 Mind-mapping](#Mind-mapping)
@@ -293,8 +293,8 @@ This article is a general list of applications sorted by category, as a referenc
         *   [4.12.2 Spell checkers](#Spell_checkers)
         *   [4.12.3 Translation and localization](#Translation_and_localization)
     *   [4.13 Barcode generators and readers](#Barcode_generators_and_readers)
-        *   [4.13.1 Console](#Console_21)
-        *   [4.13.2 Graphical](#Graphical_21)
+        *   [4.13.1 Console](#Console_22)
+        *   [4.13.2 Graphical](#Graphical_22)
 *   [5 Security](#Security)
     *   [5.1 Network security](#Network_security)
     *   [5.2 Firewall management](#Firewall_management)
@@ -304,8 +304,8 @@ This article is a general list of applications sorted by category, as a referenc
     *   [5.6 Backup programs](#Backup_programs)
     *   [5.7 Screen lockers](#Screen_lockers)
     *   [5.8 Password managers](#Password_managers)
-        *   [5.8.1 Console](#Console_22)
-        *   [5.8.2 Graphical](#Graphical_22)
+        *   [5.8.1 Console](#Console_23)
+        *   [5.8.2 Graphical](#Graphical_23)
     *   [5.9 Cryptography](#Cryptography)
         *   [5.9.1 Hash checkers](#Hash_checkers)
         *   [5.9.2 Encryption, signing, steganography](#Encryption,_signing,_steganography)
@@ -351,12 +351,12 @@ This article is a general list of applications sorted by category, as a referenc
     *   [7.1 Organization](#Organization)
         *   [7.1.1 Personal information managers](#Personal_information_managers)
         *   [7.1.2 Time management](#Time_management)
-            *   [7.1.2.1 Console](#Console_23)
-            *   [7.1.2.2 Graphical](#Graphical_23)
+            *   [7.1.2.1 Console](#Console_24)
+            *   [7.1.2.2 Graphical](#Graphical_24)
         *   [7.1.3 Time trackers](#Time_trackers)
         *   [7.1.4 Task management](#Task_management)
-            *   [7.1.4.1 Console](#Console_24)
-            *   [7.1.4.2 Graphical](#Graphical_24)
+            *   [7.1.4.1 Console](#Console_25)
+            *   [7.1.4.2 Graphical](#Graphical_25)
         *   [7.1.5 Contacts management](#Contacts_management)
         *   [7.1.6 Financial management](#Financial_management)
         *   [7.1.7 Cryptocurrency](#Cryptocurrency)
@@ -364,8 +364,8 @@ This article is a general list of applications sorted by category, as a referenc
     *   [7.2 Education](#Education)
         *   [7.2.1 Flashcards](#Flashcards)
         *   [7.2.2 Touch typing](#Touch_typing)
-            *   [7.2.2.1 Console](#Console_25)
-            *   [7.2.2.2 Graphical](#Graphical_25)
+            *   [7.2.2.1 Console](#Console_26)
+            *   [7.2.2.2 Graphical](#Graphical_26)
         *   [7.2.3 Recipe management](#Recipe_management)
         *   [7.2.4 Education management engines](#Education_management_engines)
     *   [7.3 Accessibility](#Accessibility)
@@ -376,8 +376,8 @@ This article is a general list of applications sorted by category, as a referenc
     *   [7.4 Display managers](#Display_managers)
     *   [7.5 Desktop environments](#Desktop_environments)
         *   [7.5.1 Window managers](#Window_managers)
-            *   [7.5.1.1 Console](#Console_26)
-            *   [7.5.1.2 Graphical](#Graphical_26)
+            *   [7.5.1.1 Console](#Console_27)
+            *   [7.5.1.2 Graphical](#Graphical_27)
             *   [7.5.1.3 Composite managers](#Composite_managers)
         *   [7.5.2 Window tilers](#Window_tilers)
         *   [7.5.3 Taskbars](#Taskbars)
@@ -6769,7 +6769,7 @@ See also [Wikipedia:Microsoft Compiled HTML Help](https://en.wikipedia.org/wiki/
 
 *   **Paperwork** — Personal document manager. It manages scanned documents and PDFs.
 
-	[https://openpaper.work/](https://openpaper.work/) || [paperwork](https://aur.archlinux.org/packages/paperwork/)
+	[https://openpaper.work/](https://openpaper.work/) || [paperwork](https://www.archlinux.org/packages/?name=paperwork)
 
 ### Scanning software
 
@@ -6777,7 +6777,7 @@ See [SANE#Install a frontend](/index.php/SANE#Install_a_frontend "SANE").
 
 ### OCR software
 
-#### OCR engines
+#### Console
 
 See also [Wikipedia:Comparison of optical character recognition software](https://en.wikipedia.org/wiki/Comparison_of_optical_character_recognition_software "wikipedia:Comparison of optical character recognition software").
 
@@ -6793,31 +6793,35 @@ See also [Wikipedia:Comparison of optical character recognition software](https:
 
 	[https://www.gnu.org/software/ocrad/](https://www.gnu.org/software/ocrad/) || [ocrad](https://www.archlinux.org/packages/?name=ocrad)
 
+*   **[OCRopus](https://en.wikipedia.org/wiki/OCRopus "wikipedia:OCRopus")** — OCR *platform*, modules exist for document layout analysis, OCR engines (it can use Tesseract or its own engine), natural language modeling, etc.
+
+	[https://github.com/tmbdev/ocropy](https://github.com/tmbdev/ocropy) || [ocropy](https://aur.archlinux.org/packages/ocropy/)
+
 *   **[Tesseract](https://en.wikipedia.org/wiki/Tesseract_(software) "wikipedia:Tesseract (software)")** — Accurate open source OCR engine. Package splitted, you need install some datafiles for each language ([tesseract-data-eng](https://www.archlinux.org/packages/?name=tesseract-data-eng) for example).
 
 	[https://github.com/tesseract-ocr](https://github.com/tesseract-ocr) || [tesseract](https://www.archlinux.org/packages/?name=tesseract)
 
-#### Layout analyzers
+#### Graphical
 
-*   **gImageReader** — Graphical GTK+ frontend to Tesseract.
+*   **gImageReader** — Graphical GTK+/Qt frontend to Tesseract.
 
-	[https://github.com/manisandro/gImageReader](https://github.com/manisandro/gImageReader) || [gimagereader](https://aur.archlinux.org/packages/gimagereader/)
+	[https://github.com/manisandro/gImageReader](https://github.com/manisandro/gImageReader) || GTK+: [gimagereader-gtk](https://www.archlinux.org/packages/?name=gimagereader-gtk), Qt: [gimagereader-qt](https://www.archlinux.org/packages/?name=gimagereader-qt)
 
 *   **[gscan2pdf](https://en.wikipedia.org/wiki/Scanner_Access_Now_Easy#gscan2pdf "wikipedia:Scanner Access Now Easy")** — Scans, runs an OCR engine, minor post-processing, creates a document.
 
 	[http://gscan2pdf.sourceforge.net/](http://gscan2pdf.sourceforge.net/) || [gscan2pdf](https://www.archlinux.org/packages/?name=gscan2pdf)
 
+*   **Linux-Intelligent-Ocr-Solution** — Easy-OCR solution and Tesseract trainer for converting print into text using either scanner or a camera.
+
+	[https://sourceforge.net/projects/lios/](https://sourceforge.net/projects/lios/) || [lios-git](https://aur.archlinux.org/packages/lios-git/)
+
 *   **[OCRFeeder](https://en.wikipedia.org/wiki/OCRFeeder "wikipedia:OCRFeeder")** — Python GUI for Gnome which performs document analysis and rendition, and can use either CuneiForm, GOCR, Ocrad or Tesseract as OCR engines. It can import from PDF or image files, and export to HTML or OpenDocument.
 
 	[https://wiki.gnome.org/Apps/OCRFeeder](https://wiki.gnome.org/Apps/OCRFeeder) || [ocrfeeder](https://www.archlinux.org/packages/?name=ocrfeeder)
 
-*   **[OCRopus](https://en.wikipedia.org/wiki/OCRopus "wikipedia:OCRopus")** — OCR *platform*, modules exist for document layout analysis, OCR engines (it can use Tesseract or its own engine), natural language modeling, etc.
-
-	[https://github.com/tmbdev/ocropy](https://github.com/tmbdev/ocropy) || [ocropy](https://aur.archlinux.org/packages/ocropy/)
-
 *   **Paperwork** — Personal document manager. It manages scanned documents and PDFs.
 
-	[https://openpaper.work/](https://openpaper.work/) || [paperwork](https://aur.archlinux.org/packages/paperwork/)
+	[https://openpaper.work/](https://openpaper.work/) || [paperwork](https://www.archlinux.org/packages/?name=paperwork)
 
 *   **Scan Tailor** — Interactive post-processing tool for scanned pages.
 

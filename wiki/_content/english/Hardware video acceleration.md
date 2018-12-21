@@ -99,7 +99,7 @@ GeForce 9300 and newer | GeForce 8 and newer |
 
 | Codec | [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) |
 | [Decoding](https://developer.nvidia.com/nvidia-video-codec-sdk#NVDECFeatures) | [Encoding](https://developer.nvidia.com/nvidia-video-codec-sdk#NVENCFeatures) |
-| MPEG-2 | Kepler and newer | No |
+| MPEG-2 | Fermi and newer | No |
 | VC-1 |
 | AVC (H.264) | Kepler and newer |
 | HEVC (H.265) 8bit | Maxwell (GM206) and newer | Maxwell (2nd Gen) and newer |
@@ -147,10 +147,11 @@ GeForce 9300 and newer | GeForce 8 and newer |
 *   GeForce 8 series and newer GPUs up until GeForce GTX 750 are supported by [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver) and [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau).
 *   [Requires](https://nouveau.freedesktop.org/wiki/VideoAcceleration/#firmware) [nouveau-fw](https://aur.archlinux.org/packages/nouveau-fw/) firmware package, presently extracted from the NVIDIA binary driver.
 
-[NVIDIA](/index.php/NVIDIA "NVIDIA") proprietary driver supports VDPAU and NVDECODE/NVENCODE:
+[NVIDIA](/index.php/NVIDIA "NVIDIA") proprietary driver supports via [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils):
 
-*   VDPAU is supported on GeForce 8 series and newer via [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils).
-*   NVDECODE/NVENCODE are supported on Kepler and newer via [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils).
+*   VDPAU on GeForce 8 series and newer GPUs;
+*   NVDECODE on Fermi and newer GPUs [[12]](https://developer.download.nvidia.com/assets/cuda/files/NVIDIA_Video_Decoder.pdf);
+*   NVENCODE on Kepler and newer GPUs.
 
 ### ATI/AMD
 

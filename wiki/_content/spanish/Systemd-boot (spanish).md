@@ -1,235 +1,239 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Systemd-boot](/index.php/Systemd-boot "Systemd-boot"), revisada por última vez el **2016-09-19**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Systemd-boot&diff=0&oldid=448431) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [systemd-boot](/index.php/Systemd-boot "Systemd-boot"), revisada por última vez el **2018-12-20**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Systemd-boot&diff=0&oldid=553630) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
 *   [Arch boot process (Español)](/index.php/Arch_boot_process_(Espa%C3%B1ol) "Arch boot process (Español)")
-*   [Boot loaders (Español)](/index.php/Boot_loaders_(Espa%C3%B1ol) "Boot loaders (Español)")
 *   [Secure Boot](/index.php/Secure_Boot "Secure Boot")
 *   [Unified Extensible Firmware Interface (Español)](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)")
 
-**systemd-boot**, anteriormente llamado **gummiboot**, es un sencillo gestor de arranque UEFI que ejecuta imágenes EFI configuradas. La entrada predeterminada es seleccionada por un patrón configurado (glob) o un menú en pantalla. Se incluye en el paquete [systemd](https://www.archlinux.org/packages/?name=systemd), que se instala en un sistema Arch de forma predeterminada.
+**systemd-boot**, anteriormente llamado **gummiboot**, es un sencillo [gestor de arranque](/index.php/Arch_boot_process_(Espa%C3%B1ol)#Gestor_de_arranque "Arch boot process (Español)") UEFI que ejecuta imágenes EFI configuradas. La entrada predeterminada es seleccionada por un patrón configurado ([glob](https://en.wikipedia.org/wiki/es:Glob_(inform%C3%A1tica) "wikipedia:es:Glob (informática)")) o un menú en pantalla. Se incluye en el paquete [systemd](https://www.archlinux.org/packages/?name=systemd), que se instala en un sistema Arch de forma predeterminada.
 
-Es fácil de configurar, pero solo puede iniciar ejecutables EFI, tales como [EFISTUB](/index.php/EFISTUB "EFISTUB") del kernel de Linux, Shell UEFI, GRUB, el Windows Boot Manager, y similares.
-
-**Advertencia:** *systemd-boot* simplemente ofrece un menú de arranque para los EFISTUB del kernel. En caso de tener problemas al arrancar el kernel con EFISTUB como en [FS#33745](https://bugs.archlinux.org/task/33745), debe utilizar un gestor de arranque que no utilice EFISTUB, como [GRUB](/index.php/GRUB "GRUB"), [Syslinux](/index.php/Syslinux "Syslinux") o cualquier otro [gestor de arranque](/index.php/Boot_loader "Boot loader") que no dependa exclusivamente de [UEFI](/index.php/UEFI "UEFI").
+Es fácil de configurar, pero solo puede iniciar ejecutables EFI, tales como [EFISTUB (Español)](/index.php/EFISTUB_(Espa%C3%B1ol) "EFISTUB (Español)") del kernel de Linux, Intérprete de órdenes de UEFI, GRUB o Windows Boot Manager.
 
 ## Contents
 
 *   [1 Instalación](#Instalación)
-    *   [1.1 Arranque EFI](#Arranque_EFI)
-    *   [1.2 Arranque Legacy](#Arranque_Legacy)
-    *   [1.3 Actualizar](#Actualizar)
+    *   [1.1 Instalar el gestor de arranque EFI](#Instalar_el_gestor_de_arranque_EFI)
+    *   [1.2 Actualizar el gestor de arranque EFI](#Actualizar_el_gestor_de_arranque_EFI)
+        *   [1.2.1 Actualización manual](#Actualización_manual)
+        *   [1.2.2 Actualización automática](#Actualización_automática)
 *   [2 Configuración](#Configuración)
-    *   [2.1 Configuración básica](#Configuración_básica)
-    *   [2.2 Añadir entradas de arranque](#Añadir_entradas_de_arranque)
-        *   [2.2.1 Instalaciones de root estándar](#Instalaciones_de_root_estándar)
-        *   [2.2.2 Instalaciones de root sobre LVM](#Instalaciones_de_root_sobre_LVM)
-        *   [2.2.3 Instalaciones de root cifrado](#Instalaciones_de_root_cifrado)
-        *   [2.2.4 Instalaciones de root sobre subvolumen btrfs](#Instalaciones_de_root_sobre_subvolumen_btrfs)
-        *   [2.2.5 Shells EFI u otras aplicaciones de EFI](#Shells_EFI_u_otras_aplicaciones_de_EFI)
-    *   [2.3 Soporte para hibernación](#Soporte_para_hibernación)
-*   [3 Teclas dentro del menú de arranque](#Teclas_dentro_del_menú_de_arranque)
+    *   [2.1 Configurar el cargador](#Configurar_el_cargador)
+    *   [2.2 Añadir entradas al cargador](#Añadir_entradas_al_cargador)
+        *   [2.2.1 Intérpretes de órdenes de EFI y otras aplicaciones EFI](#Intérpretes_de_órdenes_de_EFI_y_otras_aplicaciones_EFI)
+    *   [2.3 Arrancar con la configuración del firmware de EFI](#Arrancar_con_la_configuración_del_firmware_de_EFI)
+    *   [2.4 Preparar los kernels para /EFI/Linux](#Preparar_los_kernels_para_/EFI/Linux)
+    *   [2.5 Proporcionar soporte para hibernación](#Proporcionar_soporte_para_hibernación)
+    *   [2.6 Proteger con contraseña el editor de parámetros del kernel](#Proteger_con_contraseña_el_editor_de_parámetros_del_kernel)
+*   [3 Teclas utilizadas en el menú de arranque](#Teclas_utilizadas_en_el_menú_de_arranque)
 *   [4 Solución de problemas](#Solución_de_problemas)
-    *   [4.1 Entrada manual utilizando efibootmgr](#Entrada_manual_utilizando_efibootmgr)
-    *   [4.2 El menú no aparece después de actualizar Windows](#El_menú_no_aparece_después_de_actualizar_Windows)
+    *   [4.1 Instalación después de arrancar en modo BIOS](#Instalación_después_de_arrancar_en_modo_BIOS)
+    *   [4.2 Crear entrada manual utilizando efibootmgr](#Crear_entrada_manual_utilizando_efibootmgr)
+    *   [4.3 El menú no aparece después de actualizar Windows](#El_menú_no_aparece_después_de_actualizar_Windows)
 *   [5 Véase también](#Véase_también)
 
 ## Instalación
 
-### Arranque EFI
+### Instalar el gestor de arranque EFI
 
-1.  Asegúrese de que ha arrancado en modo UEFI.
-2.  Verifique que [las variables EFI son accesibles](/index.php/Unified_Extensible_Firmware_Interface#Requirements_for_UEFI_variable_support "Unified Extensible Firmware Interface").
-3.  Monte la [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (ESP) correctamente. En este artículo se utiliza `*esp*` para indicar su punto de montaje.
-    **Nota:** *systemd-boot* no puede cargar archivos binarios de EFI desde otras particiones. Por ello se recomienda montar la ESP en `/boot`. Vea [#Actualizar](#Actualizar) para obtener más información y trabajar sobre ello, en el caso de que desee separar `/boot` de ESP.
+Para instalar el gestor de arranque EFI *systemd-boot* primero asegúrese de que el sistema haya arrancado en modo UEFI y que las [variables UEFI](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol)#UEFI_variables "Unified Extensible Firmware Interface (Español)") son accesibles. Esto se puede verificar ejecutando la orden `efivar --list`.
 
-4.  Si la partición ESP **no** utiliza la partición /boot deberá copiar el kernel e initramfs a aquella en la que esté la ESP.
-    **Nota:** Para obtener una forma de mantener actualizado automáticamente el kernel en la ESP, eche un vistazo al artículo [EFISTUB](/index.php/EFISTUB_(Espa%C3%B1ol)#Utilizar_systemd "EFISTUB (Español)") para conocer algunas unidades de systemd que se pueden adaptar. Si la partición efi utiliza automount, necesita añadir `vfat` a un archivo en `/etc/modules-load.d/` para asegurarse de que el kernel que se está ejecutando ha cargado el módulo `vfat` en el arranque, antes de que ocurra cualquier actualización del kernel que podría remplazar el módulo por la versión actualmente en ejecución, haciendo imposible el montaje de `/boot/efi` hasta el reinicio.
+Cabe señalar que *systemd-boot* solo puede cargar el kernel [EFISTUB](/index.php/EFISTUB "EFISTUB") desde la [EFI system partition (Español)](/index.php/EFI_system_partition_(Espa%C3%B1ol) "EFI system partition (Español)") (ESP). Para mantener el kernel actualizado, es más sencillo y, por lo tanto, mas **recomendable** montar la ESP en `/boot`. Si la ESP **no** está montada en `/boot`, los archivos kernel y de initramfs deben copiarse en dicha ESP. Consulte [EFI system partition (Español)#Puntos de montaje alternativos](/index.php/EFI_system_partition_(Espa%C3%B1ol)#Puntos_de_montaje_alternativos "EFI system partition (Español)") para más detalles.
 
-5.  Escriba la siguiente órden para instalar *systemd-boot*: `# bootctl --path=*esp* install` Se copiará el binario *systemd-boot* a la partición EFI System Partition (`*esp*/EFI/systemd/systemd-bootx64.efi` y `*esp*/EFI/Boot/BOOTX64.EFI` —ambos idénticos— en sistemas x64) y añadirá el propio *systemd-boot* como aplicación EFI por defecto (entrada de arranque por defecto) cargada por el gestor de arranque EFI.
-6.  Por último, debe [configurar](#Configuración) el gestor de arranque para que funcione correctamente.
+`*esp*`se usará a lo largo de esta página para indicar el punto de montaje ESP, es decir, `/boot`.
 
-### Arranque Legacy
+Con la ESP montada en `*esp*`, utilice [bootctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bootctl.1) para instalar *systemd-boot* en la partición del sistema EFI ejecutando:
 
-**Advertencia:** Este no es el proceso recomendado.
+```
+# bootctl --path=*esp* install
 
-También puede instalar con éxito *systemd-boot* si arranca con un sistema operativo antiguo. Sin embargo, esto requiere que más tarde se le diga a su firmware que lance el archivo EFI de *systemd-boot* en el arranque:
+```
 
-*   que, o bien tiene una shell EFI trabajando en algún lugar;
-*   o la interfaz de su firmware le proporciona una forma de establecer adecuadamente el archivo EFI que se cargará en el arranque.
+Esto copiará el cargador de arranque *systemd-boot* a la partición EFI: en un sistema de arquitectura x64 los dos binarios idénticos `*esp*/EFI/systemd/systemd-bootx64.efi` y `*esp*/EFI/BOOT/BOOTX64.EFI` se transferirán a la ESP. A continuación, establecerá *systemd-boot* como la aplicación EFI predeterminada (entrada de arranque predeterminada) cargada por el gestor de arranque EFI («*EFI Boot Manager*»).
 
-**Nota:** Por ejemplo, en la serie Latitude de Dell, la interfaz de firmware proporciona todo lo necesario para la configuración de arranque EFI y la shell EFI no será capaz de escribir en la ROM del ordenador.
+Luego, vaya a la sección [#Configuración](#Configuración) para agregar entradas de arranque para que *systemd-boot* funcione correctamente en el momento del arranque.
 
-Si puede hacerlo, la instalación es fácil: entre en la shell EFI o en la interfaz de configuración del firmware y cambie los archivos EFI por defecto del equipo por `*esp*/EFI/systemd/systemd-bootx64.efi` (`systemd-bootia32.efi` en sistemas i686).
+### Actualizar el gestor de arranque EFI
 
-### Actualizar
+Siempre que haya una nueva versión de *systemd-boot*, el gestor de arranque debe ser actualizado por el usuario. Esto se puede realizar bien manualmente o bien la actualización se puede activar automáticamente utilizando los hooks de pacman. Los dos enfoques se describen a continuación.
 
-*systemd-boot* ([bootctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bootctl.1)) asume que EFI System Partition se monta en `/boot`. A diferencia del anterior paquete separado *gummiboot*, que se actualizaba automáticamente en cada nueva versión del paquete con un script `post_install`, las actualizaciones de las nuevas versiones de *systemd-boot* ahora son manejadas manualmente por el usuario:
+#### Actualización manual
+
+*systemd-boot* pueden ser actualizado por *systemd-boot*. Si el parámetro `path` no se especifica, `/efi`, `/boot`, y `/boot/efi` se verifican a su vez.
 
 ```
 # bootctl update
 
 ```
 
-Si la ESP no está montada en `/boot`, la opción `--path=` puede pasar la ruta. Por ejemplo:
+Si la ESP está montada en una ubicación diferente, la opción `--path=` puede pasar la ruta apropiada. Por ejemplo:
 
 ```
 # bootctl --path=*esp* update
 
 ```
 
-**Nota:** Esta es también la orden a utilizar cuando se migra de *gummiboot*, antes de eliminar el paquete. Si, no obstante, dicho paquete ya se eliminó, ejecute `bootctl --path=*esp* install`.
+**Nota:** esta es también la orden a utilizar cuando se migra de *gummiboot*, antes de eliminar el paquete. Si, no obstante, dicho paquete ya se eliminó, ejecute `bootctl --path=*esp* install`.
+
+#### Actualización automática
+
+El paquete [systemd-boot-pacman-hook](https://aur.archlinux.org/packages/systemd-boot-pacman-hook/) proporciona un [hook de pacman](/index.php/Pacman_hook "Pacman hook") para automatizar el proceso de actualización. Al [instalar](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquete, este agregará un hook que se ejecutará cada vez que se actualice el paquete [systemd](https://www.archlinux.org/packages/?name=systemd). En otro caso, para replicar lo que hace el paquete *systemd-boot-pacman-hook* sin instalarlo, coloque el siguiente hook de pacman en el directorio `/etc/pacman.d/hooks/`:
+
+ `/etc/pacman.d/hooks/systemd-boot.hook` 
+```
+[Trigger]
+Type = Package
+Operation = Upgrade
+Target = systemd
+
+[Action]
+Description = Updating systemd-boot
+When = PostTransaction
+Exec = /usr/bin/bootctl update
+```
 
 ## Configuración
 
-### Configuración básica
+### Configurar el cargador
 
-La configuración básica se coloca en `*esp*/loader/loader.conf`, con tres posibles opciones de configuración:
+La configuración del cargador se coloca en `*esp*/loader/loader.conf`, y está compuesto por las siguientes opciones:
 
-*   `default` – entrada por defecto para seleccionar (sin el sufijo `.conf`); se puede utilizar un comodín como `arch-*`
+*   `default` — entrada por defecto para seleccionar como se define [#Añadir entradas al cargador](#Añadir_entradas_al_cargador); se da sin el sufijo *.conf* y se puede utilizar un comodín como `arch-*`;
 
-*   `timeout` – tiempo de espera del menú, en segundos. Si este no se ha establecido, el menú solo se muestra cuando se mantiene pulsada la tecla de espacio durante el arranque.
+*   `timeout` — tiempo de espera del menú, en segundos. Si este no se ha establecido, el menú solo se muestra cuando se mantiene pulsada la tecla `espaciadora` (aunque también funcionan la mayoría de las otras teclas) durante el arranque;
 
-*   `editor` - si se quiere activar el editor de los parámetros del kernel o no. `1` (por defecto) es para activar, `0` es para desactivar. Dado que el usuario puede añadir `init=/bin/bash` para puentear la contraseña de root y acceder como tal, se recomienda encarecidamente establecer esta opción en `0`.
+*   `editor` — si se quiere activar el editor de los parámetros del kernel o no. `yes` (por defecto) es para activar, `no` es para desactivar. Dado que el usuario puede añadir `init=/bin/bash` para puentear la contraseña de root y acceder como tal, se recomienda encarecidamente establecer esta opción en `no`;
 
-Ejemplo:
+*   `auto-entries` — muestra entradas automáticas para Windows, EFI Shell y Default Loader si se configura en `1` (default), `0` para ocultar;
+
+*   `auto-firmware` — muestra la entrada para reiniciar en las configuraciones de firmware UEFI si está configurado en `1` (default), `0` para ocultar;
+
+*   `console-mode` — cambia el modo de consola UEFI: `0` para 80x25, `1` para 80x50, `2` y superior para modos no estándar proporcionado por el firmware del dispositivo, si existe, `auto` selecciona un modo adecuado automáticamente, `max` para el modo más alto disponible, `keep` (default) para el modo de firmware seleccionado.
+
+Consulte el [manual de loader.conf](https://www.freedesktop.org/software/systemd/man/loader.conf.html) para ver la lista completa de opciones.
+
+He aquí un ejemplo de configuración del cargador:
 
  `*esp*/loader/loader.conf` 
 ```
 default  arch
 timeout  4
-editor   0
+console-mode max
+editor   no
 
 ```
 
-**Nota:** Tenga en cuenta que las dos primeras opciones se pueden cambiar en el mismo menú de arranque, que se almacenará como variables de EFI.
+**Sugerencia:**
 
-**Sugerencia:** Un ejemplo de archivo de configuración básico puede encontralo en `/usr/share/systemd/bootctl`.
+*   `default` y `timeout` se pueden cambiar en el menú de inicio y los cambios se almacenarán como variables EFI, sobrescribiendo estas opciones.
+*   Un archivo básico de configuración del cargador se encuentra en `/usr/share/systemd/bootctl/loader.conf`.
 
-### Añadir entradas de arranque
+### Añadir entradas al cargador
 
-**Nota:**
+*bootctl* busca elementos del menú de arranque en `*esp*/loader/entries/*.conf` —cada archivo encontrado debe contener exactamente un cargador—. Las opciones posibles son:
 
-*   *bootctl* buscará automáticamente para "**Windows Boot Manager**" (`\EFI\Microsoft\Boot\Bootmgfw.efi`), "**EFI Shell**" (`\shellx64.efi`) y "**EFI Default Loader**" (`\EFI\Boot\bootx64.efi`). En caso de detectarse, las entradas también se generarán automáticamente para ellos. Sin embargo, no se autodetectan otras aplicaciones EFI (a diferencia de [rEFInd](/index.php/REFInd "REFInd")), por lo que para arrancar el kernel, deben ser creadas entradas de configuración manuales.
-*   Si tiene un arranque dual con Windows, se recomienda encarecidamente desactivar la opción por defecto [Fast Start-Up](/index.php/Dual_boot_with_Windows#Fast_Start-Up "Dual boot with Windows").
-*   Recuerde que debe cargar el [microcode](/index.php/Microcode "Microcode") de intel con `initrd` si procede.
-*   Puede encontrar el identificador `PARTUUID` de la partición root con la orden `blkid -s PARTUUID -o value /dev/sd*xY*`, donde `*x*` es la letra del dispositivo, y `*Y*` es el número de la partición. Esto solo es necesario para la partición raíz, no para `*esp*`.
+*   `title` — nombre del sistema operativo. **Necesario.**
 
-*bootctl* buscará los elementos para el menú de arranque en `*esp*/loader/entries/*.conf` —cada archivo encontrado debe contener exactamente una entrada de arranque—. Las opciones posibles son:
+*   `version` — versión del kernel, que se muestra solamente cuando existan varias entradas con el mismo título. Opcional.
 
-*   `title` – nombre del sistema operativo. **Necesario.**
+*   `machine-id` — identificador de la máquina desde `/etc/machine-id`, que se muestra solamente cuando existan varias entradas con la misma versión y título. Opcional.
 
-*   `version` – versión del kernel, que se muestra solamente cuando existan varias entradas con el mismo título. Opcional.
+*   `efi` — programas EFI a iniciar, que se encuentren en la ESP (`esp`); por ejemplo, `/vmlinuz-linux`. **Tanto** este parámetro como `linux` (véase a continuación) son **necesarios.**
 
-*   `machine-id` – identificador de la máquina desde `/etc/machine-id`, que se muestra solamente cuando existan varias entradas con la misma versión y título. Opcional.
+*   `options` — opciones de línea de órdenes para pasar al programa EFI o los [parámetros del kernel](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)"). Opcional, pero es necesario al menos `initrd=*ruta-a-efi*` y `root=*dev*` para arrancar Linux.
 
-*   `efi` – programas EFI a iniciar, que se encuentren en la ESP (`esp`); por ejemplo, `/vmlinuz-linux`. Tanto este como `linux` (véase a continuación) son **necesarios.**
+Para el arranque de Linux, también puede usar, en lugar de `efi` y `options`, la siguiente sintaxis:
 
-*   `options` – opciones de línea de órdenes para pasar al programa EFI. Opcional, pero es necesario al menos `initrd=*ruta-a-efi*` y `root=*dev*` para arrancar Linux.
+*   `linux` y `initrd` seguidos de la ruta relativa de los archivos correspondientes en el ESP; por ejemplo `/vmlinuz-linux`; esto se traducirá automáticamente a `efi *path*` y `options initrd=*path*` —esta sintaxis solo se admite por comodidad y no tiene diferencias en la función—.
 
-Para Linux, puede especificar `linux *ruta-a-vmlinuz*` y `initrd *ruta-a-initramfs*`; esto se traducirá automáticamente en `*ruta* a efi` y `options initrd=*ruta*` —esta sintaxis solo es apoyada por eficacia y no altera su función—.
-
-#### Instalaciones de root estándar
-
-He aquí un ejemplo de entrada para una partición raíz sin LVM o LUKS:
+Un ejemplo de un archivo de carga para iniciar Arch desde una partición con la etiqueta *arch_os* y cargar el [microcode (Español)](/index.php/Microcode_(Espa%C3%B1ol) "Microcode (Español)") de la CPU de Intel sería:
 
  `*esp*/loader/entries/arch.conf` 
 ```
-title          Arch Linux
-linux          /vmlinuz-linux
-initrd         /initramfs-linux.img
-options        root=PARTUUID=14420948-2cea-4de7-b042-40f67c618660 rw
+title   Arch Linux
+linux   /vmlinuz-linux
+initrd  /intel-ucode.img
+initrd  /initramfs-linux.img
+options root=LABEL=*arch_os* rw
 ```
 
-Note que, en el ejemplo anterior, `PARTUUID`/`PARTLABEL` identifica una partición GPT, y difiere de `UUID`/`LABEL`, que identifica un sistema de archivos. El uso de `PARTUUID`/`PARTLABEL` es ventajoso porque es invariable (es decir, que no cambia) si vuelve a formatear la partición con otro sistema de archivos, o si el mapeado de `/dev/sd*` cambia por cualquier razón. También es útil si no se tiene un sistema de archivos en la partición (o utiliza LUKS, que no soporta `LABEL`s).
+*bootctl* buscará automáticamente para «**Windows Boot Manager**» (`\EFI\Microsoft\Boot\Bootmgfw.efi`), «**EFI Shell**» (`\shellx64.efi`) y «**EFI Default Loader**» (`\EFI\Boot\bootx64.efi`). En caso de detectarlas, las entradas también se generarán automáticamente para ellos. Sin embargo, no autodetecta otras aplicaciones EFI (a diferencia de lo que hace [rEFInd](/index.php/REFInd "REFInd")), por lo que para arrancar el kernel, deben ser creadas entradas de configuración manualmente.
 
-**Sugerencia:** Puede encontrar un archivo de ejemplo en `/usr/share/systemd/bootctl`.
+**Nota:**
 
-#### Instalaciones de root sobre LVM
+*   Si realiza un arranque dual con Windows, se recomienda encarecidamente que desactive la opción predeterminada [Fast Start-Up](/index.php/Dual_boot_with_Windows#Fast_Start-Up "Dual boot with Windows").
+*   Recuerde cargar el *microcódigo* de Intel con `initrd` si procede, se proporciona un ejemplo en [Microcode#systemd-boot](/index.php/Microcode#systemd-boot "Microcode").
+*   La partición raíz se puede identificar con su `LABEL` o `PARTUUID`. Este último se puede encontrar con la orden `blkid -s PARTUUID -o value /dev/sd*xY*`, donde `*x*` es la letra del dispositivo y `*Y*` es el número de partición. Esto es necesario solo para identificar la partición raíz, no la partición `*esp*`.
 
-**Advertencia:** *systemd-boot* no puede ser utilizado sin un sistema de archivos `/boot` separado fuera de LVM.
+**Sugerencia:**
 
-Este es un ejemplo para una partición root utilizando la [gestión de volúmenes lógicos (LVM)](/index.php/LVM "LVM"):
+*   Las entradas de arranque disponibles que se han configurado pueden enumerarse con la orden `bootctl list`.
+*   Un archivo de entrada de ejemplo se encuentra en `/usr/share/systemd/bootctl/arch.conf`.
+*   Los [kernel parameters (Español)](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)") para escenarios como [LVM (Español)](/index.php/LVM_(Espa%C3%B1ol) "LVM (Español)") o [dm-crypt (Español)](/index.php/Dm-crypt_(Espa%C3%B1ol) "Dm-crypt (Español)") se pueden encontrar en sus páginas respectivas.
 
- `*esp*/loader/entries/arch-lvm.conf` 
-```
-title          Arch Linux (LVM)
-linux          /vmlinuz-linux
-initrd         /initramfs-linux.img
-options        root=/dev/mapper/<GrupodeVolúmenes-VolumenLógico> rw
-```
+#### Intérpretes de órdenes de EFI y otras aplicaciones EFI
 
-Sustituya `<GrupodeVolúmenes-VolumenLógico>` con los nombres reales del Grupo de Volúmenes y del Volumen Lógico (por ejemplo `root=/dev/mapper/volgroup00-lvolroot`). Alternativamente, también es posible utilizar una UUID en su lugar:
+En el caso de que haya instalado instérpretes de órdenes de EFI u otras aplicaciones EFI dentro de la partición ESP, puede utilizar los siguientes fragmentos:
 
-```
-....
-options  root=UUID=<identificador UUID> rw
+**Nota:** el parámetro de ruta del archivo para la línea `efi` es relativo a su punto de montaje *esp*. Si está montada en `/boot` y los archivos binarios de EFI residen en `/boot/EFI/xx.efi` y `/boot/yy.efi`, entonces especifique los parámetros como `efi/EFI/xx.efi` y `efi/yy.efi` respectivamente.
 
-```
-
-Advierta que `root=**UUID**=` es usado en lugar de `root=**PARTUUID**=`, que es utilizado para las particiones Root sin LVM o LUKS.
-
-#### Instalaciones de root cifrado
-
-Este es un ejemplo de un archivo de configuración para una partición root cifrada ([DM-Crypt / LUKS](/index.php/Dm-crypt "Dm-crypt")):
-
- `*esp*/loader/entries/arch-encrypted.conf` 
-```
-title Arch Linux Encrypted
-linux /vmlinuz-linux
-initrd /initramfs-linux.img
-options cryptdevice=UUID=<UUID>:<nombre-dispositivo-mapeado> root=/dev/mapper/<nombre-dispositivo-mapeado> quiet rw
-```
-
-En este ejemplo se utiliza el identificador UUID; pero podría remplazar el UUID con el identificador `PARTUUID`, si lo desea. También puede remplazar la ruta `/dev` con el UUID propio. El `nombre-dispositivo-mapeado` será el que quiera ponerle. Vea [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration").
-
-Si está utilizando LVM, su línea cryptdevice se verá así:
-
- `*esp*/loader/entries/arch-encrypted-lvm.conf` 
-```
-title Arch Linux Encrypted LVM
-linux /vmlinuz-linux
-initrd /initramfs-linux.img
-options cryptdevice=UUID=<UUID>:GrupodeVolúmenes root=/dev/mapper/GrupodeVolúmenes-VolumenLógicoRoot quiet rw
-```
-
-También se pueden añadir otros programas tales como `\EFI\arch\grub.efi`.
-
-#### Instalaciones de root sobre subvolumen btrfs
-
-Si se arranca un subvolumen [btrfs](/index.php/Btrfs "Btrfs") como root, modifique la línea `options` con `rootflags=subvol=<root subvolume>`. En el siguiente ejemplo, la raíz se ha montado como un subvolumen btrfs llamado «ROOT» (por ejemplo, `mount -o subvol=ROOT /dev/sdxY /mnt`):
-
- `*esp*/loader/entries/arch-btrfs-subvol.conf` 
-```
-title          Arch Linux
-linux          /vmlinuz-linux
-initrd         /initramfs-linux.img
-options        root=PARTUUID=14420948-2cea-4de7-b042-40f67c618660 rw rootflags=subvol=ROOT
-```
-
-Si no se hace según se ha indicado, dará como resultado el siguiente mensaje de error: `ERROR: Root device mounted successfully, but /sbin/init does not exist.`
-
-#### Shells EFI u otras aplicaciones de EFI
-
-En el caso de que haya instalado shells de EFI u otras aplicaciones EFI dentro de la ESP, puede utilizar los siguientes fragmentos:
+Ejemplos de entradas para los cargadores del intérprete de órdenes de UEFI personalizadas:
 
  `*esp*/loader/entries/uefi-shell-v1-x86_64.conf` 
 ```
-title  UEFI Shell x86_64 v1
-efi    /EFI/shellx64_v1.efi
+title   UEFI Shell x86_64 v1
+efi     /EFI/shellx64_v1.efi
+
 ```
  `*esp*/loader/entries/uefi-shell-v2-x86_64.conf` 
 ```
-title  UEFI Shell x86_64 v2
-efi    /EFI/shellx64_v2.efi
+title   UEFI Shell x86_64 v2
+efi     /EFI/shellx64_v2.efi
+
 ```
 
-### Soporte para hibernación
+### Arrancar con la configuración del firmware de EFI
+
+La mayoría de los firmware del sistema configurado para el inicio de EFI agregarán sus propias entradas [efibootmgr](/index.php/Efibootmgr "Efibootmgr") para arrancar en la «Configuración del Firmware de UEFI».
+
+### Preparar los kernels para /EFI/Linux
+
+*/EFI/Linux* busca archivos del kernel especialmente preparados, que agrupan el kernel, el disco RAM de inicio (initrd), la línea de órdenes del kernel y `/etc/os-release` en un solo archivo . Este archivo se puede firmar fácilmente para «secure boot».
+
+**Nota:** `systemd-boot` requiere que el archivo `os-release` contenga bien `VERSION_ID` o bien `BUILD_ID` para generar una ID y agregar automáticamente la entrada, que el archivo `os-release` de Arch no hace. Mantenga su propia copia con uno de ellos o haga que su script de agrupación lo genere automáticamente.
+
+Coloque la línea de órdenes del kernel que desea usar en un archivo y cree un archivo de agrupación como este:
+
+ `Kernel packaging command:` 
+```
+objcopy \
+    --add-section .osrel="/usr/lib/os-release" --change-section-vma .osrel=0x20000 \
+    --add-section .cmdline="kernel-command-line.txt" --change-section-vma .cmdline=0x30000 \
+    --add-section .linux="vmlinuz-file" --change-section-vma .linux=0x40000 \
+    --add-section .initrd="initrd-file" --change-section-vma .initrd=0x3000000 \
+    "/usr/lib/systemd/boot/efi/linuxx64.efi.stub" "*linux*.efi"
+```
+
+Opcionalmente firme el archivo `*linux*.efi` producido anteriormente.
+
+Copie `*linux*.efi` en `*esp*/EFI/Linux`.
+
+### Proporcionar soporte para hibernación
 
 Véase [Suspend and hibernate](/index.php/Suspend_and_hibernate "Suspend and hibernate").
 
-## Teclas dentro del menú de arranque
+### Proteger con contraseña el editor de parámetros del kernel
+
+Alternativamente, puede instalar [systemd-boot-password](https://aur.archlinux.org/packages/systemd-boot-password/) que admite `password` como opción de configuración básica. Utilice `sbpctl generate` para generar un valor para esta opción.
+
+Instale *systemd-boot-password* con la siguiente orden:
+
+ `# sbpctl install *esp*` 
+
+Con el editor activado, se le solicitará su contraseña antes de poder editar los parámetros del kernel.
+
+## Teclas utilizadas en el menú de arranque
 
 Las siguientes teclas se utilizan dentro del menú:
 
@@ -249,21 +253,36 @@ Las siguientes teclas son de acceso rápido, de modo que cuando se pulsan dentro
 *   `l` - Linux
 *   `w` - Windows
 *   `a` - OS X
-*   `s` - Shell EFI
+*   `s` - Shell de EFI
 *   `1-9` - número de entrada
 
 ## Solución de problemas
 
-### Entrada manual utilizando efibootmgr
+### Instalación después de arrancar en modo BIOS
 
-Si la orden `bootctl install` cfalla, puede crear una entrada de arranque EFI manualmente con la utilidad [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr):
+**Advertencia:** esto no es recomendable.
+
+Si se inicia en el modo BIOS, aún puede instalar *systemd-boot*, sin embargo, este proceso requiere que le diga al firmware que inicie el archivo EFI de *systemd-boot* en el arranque, lo cual se puede hacer generalmente de dos maneras:
+
+*   tiene un intérprete de órdenes de EFI en funcionamiento en otro lugar;
+*   su interfaz de firmware proporciona una forma de configurar correctamente el archivo EFI que debe cargarse en el momento del arranque.
+
+Si puede hacerlo, la instalación es más fácil: ingrese en el intérprete de órdenes de EFI o en la interfaz de configuración de su firmware y cambie el archivo EFI predeterminado de su equipo a `*esp*/EFI/systemd/systemd-bootx64.efi` (o `systemd-bootia32.efi` dependiendo de si el firmware de su sistema es de 32 bits).
+
+**Nota:** la interfaz de firmware de la serie Latitude de Dell proporciona todo lo que necesita para configurar el arranque EFI, pero el intérprete de órdenes de EFI no podrá escribir en la ROM del equipo.
+
+### Crear entrada manual utilizando efibootmgr
+
+Si la orden `bootctl install` falla, puede crear una entrada de arranque EFI manualmente con la utilidad [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr):
 
 ```
-# efibootmgr -c -d /dev/sdX -p Y -l /EFI/systemd/systemd-bootx64.efi -L "Linux Boot Manager"
+# efibootmgr -c -d /dev/sdX -p Y -l "\EFI\systemd\systemd-bootx64.efi" -L "Linux Boot Manager"
 
 ```
 
-Donde `/dev/sdXY` es la [EFI system partition](/index.php/EFI_system_partition "EFI system partition").
+Donde `/dev/sdXY` es la [EFI system partition (Español)](/index.php/EFI_system_partition_(Espa%C3%B1ol) "EFI system partition (Español)").
+
+**Nota:** la ruta a la imagen EFI debe usar la barra invertida (`\`) como separador.
 
 ### El menú no aparece después de actualizar Windows
 
@@ -272,3 +291,4 @@ Véase [UEFI#Windows changes boot order](/index.php/UEFI#Windows_changes_boot_or
 ## Véase también
 
 *   [http://www.freedesktop.org/wiki/Software/systemd/systemd-boot/](http://www.freedesktop.org/wiki/Software/systemd/systemd-boot/)
+*   [https://github.com/systemd/systemd/tree/master/src/boot/efi](https://github.com/systemd/systemd/tree/master/src/boot/efi)

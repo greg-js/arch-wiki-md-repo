@@ -610,7 +610,7 @@ mdadm: add new device failed for /dev/sdc1 as 2: Invalid argument
 
 ```
 
-This is because the above commands will add the new disk as a "spare" but RAID0 does not have spares. If you want to add a device to a RAID0 array, you need to "grow" and "add" in the same command. This is demonstrated below:
+This is because the above commands will add the new disk as a "spare" but RAID0 does not have spares. If you want to add a device to a RAID0 array, you need to "grow" and "add" in the same command, as demonstrated below:
 
 ```
 # mdadm --grow /dev/md0 --raid-devices=3 --add /dev/sdc1

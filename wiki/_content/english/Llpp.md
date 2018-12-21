@@ -2,7 +2,7 @@ Related articles
 
 *   [MuPDF](/index.php/MuPDF "MuPDF")
 
-[llpp](http://repo.or.cz/w/llpp.git) is a lightweight, fast and featureful PDF, EPUB, XPS and CBZ viewer based on [MuPDF](/index.php/MuPDF "MuPDF").
+[llpp](http://repo.or.cz/w/llpp.git) is a lightweight, fast and featureful [PDF](/index.php/PDF "PDF"), EPUB, XPS and CBZ viewer based on [MuPDF](/index.php/MuPDF "MuPDF").
 
 ## Contents
 

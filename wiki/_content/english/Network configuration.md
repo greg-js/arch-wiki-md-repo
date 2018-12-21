@@ -271,7 +271,7 @@ To use DHCP you need a DHCP server in your network and a DHCP client:
 
 | Client | Package | [Archiso](/index.php/Archiso "Archiso") | Note | Systemd units |
 | [dhcpcd](/index.php/Dhcpcd "Dhcpcd") | [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) | Yes | DHCP, DHCPv6, ZeroConf, static IP | `dhcpcd.service`, `dhcpcd@*interface*.service` |
-| [ISC dhclient](https://www.isc.org/downloads/dhcp/) | [dhclient](https://www.archlinux.org/packages/?name=dhclient) | Yes | DHCP, BOOTP, static IP | `dhclient@*interface*.service` |
+| [ISC dhclient](https://www.isc.org/downloads/dhcp/) | [dhclient](https://www.archlinux.org/packages/?name=dhclient) | Yes | DHCP, DHCPv6, BOOTP, static IP | `dhclient@*interface*.service` |
 
 Note that instead of directly using a DHCP client you can also use a [network manager](#Network_managers).
 

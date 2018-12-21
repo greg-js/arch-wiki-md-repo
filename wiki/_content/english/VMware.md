@@ -50,8 +50,7 @@ You may also be interested in [VMware/Installing Arch as a guest](/index.php/VMw
     *   [5.9 Guest Issues](#Guest_Issues)
         *   [5.9.1 Unable to download VMware Tools for Guests](#Unable_to_download_VMware_Tools_for_Guests)
         *   [5.9.2 Guests have incorrect system clocks or are unable to boot: "[...]timeTracker_user.c:234 bugNr=148722"](#Guests_have_incorrect_system_clocks_or_are_unable_to_boot:_"[...]timeTracker_user.c:234_bugNr=148722")
-        *   [5.9.3 Unable to connect Network](#Unable_to_connect_Network)
-        *   [5.9.4 Networking on Guests not available after system restart](#Networking_on_Guests_not_available_after_system_restart)
+        *   [5.9.3 Networking on Guests not available after system restart](#Networking_on_Guests_not_available_after_system_restart)
 *   [6 Uninstallation](#Uninstallation)
 
 ## Installation
@@ -610,10 +609,6 @@ ptsc.noTSC = "TRUE" # the time stamp counter (TSC) is slow.
 ```
 
 **Tip:** To periodically correct the time (once per minute), in the *Options* tab of VMware Tools, enable: *"Time synchronization between the virtual machine and the host operating system"*.
-
-#### Unable to connect Network
-
-If unable to connect the guests to network, it is probably due to vmware-network.service not started yet. Enable and start this service.
 
 #### Networking on Guests not available after system restart
 

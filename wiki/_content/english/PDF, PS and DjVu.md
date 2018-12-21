@@ -11,21 +11,30 @@ This article covers software to view, edit and convert [PDF](https://en.wikipedi
 *   [3 Annotation](#Annotation)
 *   [4 Graphical PDF editing](#Graphical_PDF_editing)
     *   [4.1 Simple editors](#Simple_editors)
-    *   [4.2 Advanced editors](#Advanced_editors)
-*   [5 Command-line tools](#Command-line_tools)
-    *   [5.1 DjVu tools](#DjVu_tools)
-    *   [5.2 Create a PDF from images](#Create_a_PDF_from_images)
-    *   [5.3 Extract images from a PDF](#Extract_images_from_a_PDF)
-    *   [5.4 Inspecting metadata](#Inspecting_metadata)
-    *   [5.5 Optimize a PDF](#Optimize_a_PDF)
-    *   [5.6 Encrypt a PDF](#Encrypt_a_PDF)
-    *   [5.7 Decrypt a PDF](#Decrypt_a_PDF)
-    *   [5.8 Concatenate PDFs](#Concatenate_PDFs)
-    *   [5.9 Extract page range from PDF](#Extract_page_range_from_PDF)
-    *   [5.10 Rasterize a PDF](#Rasterize_a_PDF)
-*   [6 Libraries](#Libraries)
-    *   [6.1 Python](#Python)
-*   [7 See also](#See_also)
+    *   [4.2 Cropping tools](#Cropping_tools)
+    *   [4.3 Advanced editors](#Advanced_editors)
+*   [5 PDF tools](#PDF_tools)
+    *   [5.1 Create a PDF from images](#Create_a_PDF_from_images)
+    *   [5.2 Concatenate PDFs](#Concatenate_PDFs)
+    *   [5.3 Convert a PDF to text](#Convert_a_PDF_to_text)
+    *   [5.4 Decrypt a PDF](#Decrypt_a_PDF)
+    *   [5.5 Encrypt a PDF](#Encrypt_a_PDF)
+    *   [5.6 Extract images from a PDF](#Extract_images_from_a_PDF)
+    *   [5.7 Extract page range from PDF](#Extract_page_range_from_PDF)
+    *   [5.8 Imposing a PDF](#Imposing_a_PDF)
+    *   [5.9 Inspecting metadata](#Inspecting_metadata)
+    *   [5.10 Optimize a PDF](#Optimize_a_PDF)
+    *   [5.11 Rasterize a PDF](#Rasterize_a_PDF)
+    *   [5.12 Splitting PDF pages](#Splitting_PDF_pages)
+*   [6 DjVu tools](#DjVu_tools)
+    *   [6.1 Convert DjVu to images](#Convert_DjVu_to_images)
+    *   [6.2 Processing images](#Processing_images)
+    *   [6.3 Make DjVu from images](#Make_DjVu_from_images)
+*   [7 PostScript tools](#PostScript_tools)
+    *   [7.1 ps2pdf](#ps2pdf)
+*   [8 Libraries](#Libraries)
+    *   [8.1 Python](#Python)
+*   [9 See also](#See_also)
 
 ## Engines
 
@@ -37,7 +46,7 @@ This article covers software to view, edit and convert [PDF](https://en.wikipedi
 
 	[https://www.freedesktop.org/wiki/Software/libspectre](https://www.freedesktop.org/wiki/Software/libspectre) || [libspectre](https://www.archlinux.org/packages/?name=libspectre)
 
-*   **[Ghostscript](https://en.wikipedia.org/wiki/Ghostscript "wikipedia:Ghostscript")** — Interpreter for PostScript and PDF.
+*   **[Ghostscript](https://en.wikipedia.org/wiki/Ghostscript "wikipedia:Ghostscript")** — Interpreter for PostScript and PDF. Provides the [gs(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gs.1) command-line interface, see also `/usr/share/doc/ghostscript/*/Use.htm` ([online](https://ghostscript.com/doc/current/Use.htm)), along with many wrapper scripts like *ps2pdf* and *pdf2ps*.
 
 	[https://ghostscript.com/](https://ghostscript.com/) || [ghostscript](https://www.archlinux.org/packages/?name=ghostscript)
 
@@ -182,21 +191,13 @@ See also [List of applications/Documents#Stylus note-taking](/index.php/List_of_
 
 ### Simple editors
 
-*   **krop** — Simple graphical tool to crop the pages of PDF files.
-
-	[http://arminstraub.com/software/krop](http://arminstraub.com/software/krop) || [krop](https://aur.archlinux.org/packages/krop/)
-
 *   **pdfarranger** — Helps merge or split pdf documents and rotate, crop and rearrange pages. It's a maintained fork of PDF-Shuffler.
 
-	[https://github.com/jeromerobert/pdfarranger](https://github.com/jeromerobert/pdfarranger) || [pdfarranger](https://aur.archlinux.org/packages/pdfarranger/)
+	[https://github.com/jeromerobert/pdfarranger](https://github.com/jeromerobert/pdfarranger) || [pdfarranger](https://www.archlinux.org/packages/?name=pdfarranger)
 
-*   **PDF Chain** — GTK front-end for [PDFtk](#Command-line_tools), written in C++, supporting concatenation, burst, watermarks, attaching files and more.
+*   **PDF Chain** — GTK front-end for [PDFtk](#PDF_tools), written in C++, supporting concatenation, burst, watermarks, attaching files and more.
 
 	[http://pdfchain.sourceforge.net/](http://pdfchain.sourceforge.net/) || [pdfchain](https://aur.archlinux.org/packages/pdfchain/)
-
-*   **PdfHandoutCrop** — Tool to crop pdf handout with multiple pages per sheet.
-
-	[https://cges30901.github.io/pdfhandoutcrop/](https://cges30901.github.io/pdfhandoutcrop/) || [pdfhandoutcrop](https://aur.archlinux.org/packages/pdfhandoutcrop/)
 
 *   **PDF Mix Tool** — Qt front-end for [PoDoFo](#Libraries), written in C++, supports splitting, merging, rotating and mixing PDF files.
 
@@ -210,9 +211,19 @@ See also [List of applications/Documents#Stylus note-taking](/index.php/List_of_
 
 	[https://pdfsam.org/](https://pdfsam.org/) || [pdfsam](https://www.archlinux.org/packages/?name=pdfsam)
 
-*   **PDF-Shuffler** — GTK2 front-end for [pyPdf](#Python), written in Python, supports concatenation, splitting, rotation and reordering.
+### Cropping tools
 
-	[https://sourceforge.net/projects/pdfshuffler/](https://sourceforge.net/projects/pdfshuffler/) || [pdfshuffler](https://www.archlinux.org/packages/?name=pdfshuffler)
+*   **briss** — Java GUI to crop pages of PDF documents to one or more regions selected.
+
+	[http://sourceforge.net/projects/briss/](http://sourceforge.net/projects/briss/) || [briss](https://aur.archlinux.org/packages/briss/)
+
+*   **krop** — Simple graphical tool to crop the pages of PDF files.
+
+	[http://arminstraub.com/software/krop](http://arminstraub.com/software/krop) || [krop](https://aur.archlinux.org/packages/krop/)
+
+*   **PdfHandoutCrop** — Tool to crop pdf handout with multiple pages per sheet.
+
+	[https://cges30901.github.io/pdfhandoutcrop/](https://cges30901.github.io/pdfhandoutcrop/) || [pdfhandoutcrop](https://aur.archlinux.org/packages/pdfhandoutcrop/)
 
 ### Advanced editors
 
@@ -224,7 +235,7 @@ See also [List of applications/Documents#Stylus note-taking](/index.php/List_of_
 
 	[https://www.qoppa.com/pdfstudio/](https://www.qoppa.com/pdfstudio/) || [pdfstudio](https://aur.archlinux.org/packages/pdfstudio/)
 
-## Command-line tools
+## PDF tools
 
 *   **[PDFtk](https://en.wikipedia.org/wiki/PDFtk "wikipedia:PDFtk")** — Simple tool for doing everyday things with PDF documents
 
@@ -246,26 +257,12 @@ See also [List of applications/Documents#Stylus note-taking](/index.php/List_of_
 
 	[http://www.cityinthesky.co.uk/opensource/pdf2svg/](http://www.cityinthesky.co.uk/opensource/pdf2svg/) || [pdf2svg](https://www.archlinux.org/packages/?name=pdf2svg)
 
-*   **pstotext** — Converts PostScript files to text.
-
-	[http://www.cs.wisc.edu/~ghost/doc/pstotext.htm](http://www.cs.wisc.edu/~ghost/doc/pstotext.htm) || [pstotext](https://www.archlinux.org/packages/?name=pstotext)
-
 *   **mupdf-tools** — Tools developed as part of MuPDF, contains [mutool(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mutool.1) and *muraster*.
 
 	[https://mupdf.com](https://mupdf.com) || [mupdf-tools](https://www.archlinux.org/packages/?name=mupdf-tools)
 
-*   [gs(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gs.1) from [Ghostscript](#Engines), see also `/usr/share/doc/ghostscript/*/Use.htm` ([online](https://ghostscript.com/doc/current/Use.htm)). Ghostscript also provides many wrapper scripts like *ps2pdf* and *pdf2ps*.
-
-### DjVu tools
-
-*   [DjVuLibre](#Engines) provides many command-line tools, like [ddjvu(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ddjvu.1) for example.
-*   **pdf2djvu** — Creates DjVu files from PDF files.
-
-	[https://jwilk.net/software/pdf2djvu](https://jwilk.net/software/pdf2djvu) || [pdf2djvu](https://www.archlinux.org/packages/?name=pdf2djvu)
-
-*   **img2djvu** — Single-pass DjVu encoder based on DjVu Libre and ImageMagick
-
-	[https://github.com/ashipunov/img2djvu](https://github.com/ashipunov/img2djvu) || [img2djvu-git](https://aur.archlinux.org/packages/img2djvu-git/)
+*   [pdfjam](http://mirrors.ctan.org/support/pdfjam/PDFjam-README.html) from [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) can be used to n-up, join, rotate and flip PDFs and arrange them into a format suitable for book binding.
+*   [Ghostscript](#Engines)
 
 ### Create a PDF from images
 
@@ -276,6 +273,94 @@ $ gm convert one.jpg two.jpg three.jpg out.pdf
 
 ```
 
+### Concatenate PDFs
+
+With PDFtk:
+
+```
+$ pdftk one.pdf two.pdf three.pdf cat output out.pdf
+
+```
+
+With Poppler:
+
+```
+$ pdfunite one.pdf two.pdf three.pdf out.pdf
+
+```
+
+With QPDF:
+
+```
+$ qpdf --empty --pages one.pdf two.pdf three.pdf -- out.pdf
+
+```
+
+### Convert a PDF to text
+
+With Poppler and maintaining the layout:
+
+```
+$ pdftotext -layout in.pdf out.txt
+
+```
+
+See also [pdftotext(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pdftotext.1).
+
+### Decrypt a PDF
+
+This section lists commands to decrypt a PDF to an unencrypted file. Note that most [PDF viewers](#Viewers) also support encrypted PDFs.
+
+With PDFtk:
+
+```
+$ pdftk in.pdf input_pw *password* output out.pdf
+
+```
+
+With QPDF:
+
+```
+$ qpdf --decrypt --password=*password* in.pdf out.pdf
+
+```
+
+With Poppler to PostScript:
+
+```
+$ pdftops -upw *password* in.pdf out.ps
+
+```
+
+**Tip:** Forgotten passwords might be recovered with [pdfcrack](https://www.archlinux.org/packages/?name=pdfcrack), see [pdfcrack(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pdfcrack.1).
+
+### Encrypt a PDF
+
+The *user password* is used for encryption, the *owner password* to restrict operations once the document is decrypted, for more information, see [Wikipedia:PDF#Security and signatures](https://en.wikipedia.org/wiki/PDF#Security_and_signatures "wikipedia:PDF").
+
+With PDFtk:
+
+```
+$ pdftk in.pdf output out.pdf user_pw *password*
+
+```
+
+With [PoDoFo](#Libraries):
+
+```
+$ podofoencrypt -u *user_password* -o *owner_password* in.pdf out.pdf
+
+```
+
+With QPDF:
+
+```
+$ qpdf --encrypt *user_password* *owner_password* *key_length* -- in.pdf out.pdf
+
+```
+
+where `*key_length*` can be 40, 128 or 256.
+
 ### Extract images from a PDF
 
 With Poppler to JPEG:
@@ -284,6 +369,33 @@ With Poppler to JPEG:
 $ pdfimages *infile*.pdf -j *outfileroot*
 
 ```
+
+### Extract page range from PDF
+
+With PDFtk as a single file:
+
+```
+$ pdftk *infile*.pdf cat *first*-*last* output *outfile*.pdf
+
+```
+
+With Poppler as separate files:
+
+```
+$ pdfseparate -f *first* -l *last* *infile*.pdf *outfileroot*-%d.pdf
+
+```
+
+With QPDF as a single file:
+
+```
+$ qpdf --empty --pages *infile*.pdf *first*-*last* -- *outfile*.pdf
+
+```
+
+### Imposing a PDF
+
+PDF [Imposition](https://en.wikipedia.org/wiki/Imposition "wikipedia:Imposition") can be done with [pdfjam](#pdfjam), for example paper waste can be reduced with *pdfnup* and *pdfbook* can be used to arrange PDFs into a format suitable for book binding.
 
 ### Inspecting metadata
 
@@ -314,106 +426,6 @@ For different settings see the [documentation](https://www.ghostscript.com/doc/9
 
 There is also [shrinkpdf](https://aur.archlinux.org/packages/shrinkpdf/), a third-party wrapper script.
 
-### Encrypt a PDF
-
-The *user password* is used for encryption, the *owner password* to restrict operations once the document is decrypted, for more information, see [Wikipedia:PDF#Security and signatures](https://en.wikipedia.org/wiki/PDF#Security_and_signatures "wikipedia:PDF").
-
-With PDFtk:
-
-```
-$ pdftk in.pdf output out.pdf user_pw *password*
-
-```
-
-With [PoDoFo](#Libraries):
-
-```
-$ podofoencrypt -u *user_password* -o *owner_password* in.pdf out.pdf
-
-```
-
-With QPDF:
-
-```
-$ qpdf --encrypt *user_password* *owner_password* *key_length* -- in.pdf out.pdf
-
-```
-
-where `*key_length*` can be 40, 128 or 256.
-
-### Decrypt a PDF
-
-This section lists commands to decrypt a PDF to an unencrypted file. Note that most [PDF viewers](#Viewers) also support encrypted PDFs.
-
-With PDFtk:
-
-```
-$ pdftk in.pdf input_pw *password* output out.pdf
-
-```
-
-With QPDF:
-
-```
-$ qpdf --decrypt --password=*password* in.pdf out.pdf
-
-```
-
-With Poppler to PostScript:
-
-```
-$ pdftops -upw *password* in.pdf out.ps
-
-```
-
-**Tip:** Forgotten passwords might be recovered with [pdfcrack](https://www.archlinux.org/packages/?name=pdfcrack), see [pdfcrack(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pdfcrack.1).
-
-### Concatenate PDFs
-
-With PDFtk:
-
-```
-$ pdftk one.pdf two.pdf three.pdf cat output out.pdf
-
-```
-
-With Poppler:
-
-```
-$ pdfunite one.pdf two.pdf three.pdf out.pdf
-
-```
-
-With QPDF:
-
-```
-$ qpdf --empty --pages one.pdf two.pdf three.pdf -- out.pdf
-
-```
-
-### Extract page range from PDF
-
-With PDFtk as a single file:
-
-```
-$ pdftk *infile*.pdf cat *first*-*last* output *outfile*.pdf
-
-```
-
-With Poppler as separate files:
-
-```
-$ pdfseparate -f *first* -l *last* *infile*.pdf *outfileroot*-%d.pdf
-
-```
-
-With QPDF as a single file:
-
-```
-$ qpdf --empty --pages *infile*.pdf *first*-*last* -- *outfile*.pdf
-
-```
-
 ### Rasterize a PDF
 
 With [GraphicsMagick](/index.php/GraphicsMagick "GraphicsMagick") to convert a specific page:
@@ -437,6 +449,106 @@ $ pdftoppm -jpeg -r *dpi* in.pdf -f *page* -singlefile *infile*.pdf *outfileroot
 
 ```
 
+### Splitting PDF pages
+
+With mupdf-tools to split every page vertically into two pages:
+
+```
+mutool poster -y 2 in.pdf out.pdf
+
+```
+
+## DjVu tools
+
+*   [DjVuLibre](#Engines) provides many command-line tools, like [ddjvu(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ddjvu.1) for example.
+*   **pdf2djvu** — Creates DjVu files from PDF files.
+
+	[https://jwilk.net/software/pdf2djvu](https://jwilk.net/software/pdf2djvu) || [pdf2djvu](https://www.archlinux.org/packages/?name=pdf2djvu)
+
+*   **img2djvu** — Single-pass DjVu encoder based on DjVu Libre and ImageMagick
+
+	[https://github.com/ashipunov/img2djvu](https://github.com/ashipunov/img2djvu) || [img2djvu-git](https://aur.archlinux.org/packages/img2djvu-git/)
+
+### Convert DjVu to images
+
+Break Djvu into separate pages:
+
+```
+djvmcvt -i input.djvu /path/to/out/dir output-index.djvu
+
+```
+
+Convert Djvu pages into images:
+
+```
+ddjvu --format=tiff page.djvu page.tiff
+
+```
+
+Convert Djvu pages into PDF:
+
+```
+ddjvu --format=pdf inputfile.djvu ouputfile.pdf
+
+```
+
+You can also use *--page* to export specific pages:
+
+```
+ddjvu --format=tiff --page=1-10 input.djvu output.tiff
+
+```
+
+this will convert pages from 1 to 10 into one tiff file.
+
+### Processing images
+
+You can use [scantailor](https://www.archlinux.org/packages/?name=scantailor) to:
+
+*   fix orientation
+*   split pages
+*   deskew
+*   crop
+*   adjust margins
+
+### Make DjVu from images
+
+There is a useful script [img2djvu-git](https://aur.archlinux.org/packages/img2djvu-git/).
+
+```
+img2djvu -c1 -d600 -v1 ./out
+
+```
+
+it will create 600dpi out.djvu from all files in ./out directory.
+
+Alternatively, you can try [didjvu](https://aur.archlinux.org/packages/didjvu/), which seems to create smaller files especially on images with well defined background.
+
+## PostScript tools
+
+*   **pstotext** — Converts PostScript files to text.
+
+	[http://www.cs.wisc.edu/~ghost/doc/pstotext.htm](http://www.cs.wisc.edu/~ghost/doc/pstotext.htm) || [pstotext](https://www.archlinux.org/packages/?name=pstotext)
+
+*   [Ghostscript](#Engines)
+
+### ps2pdf
+
+*ps2pdf* is a wrapper around ghostscript to convert PostScript to PDF:
+
+```
+$ ps2pdf -sPAPERSIZE=a4 -dOptimize=true -dEmbedAllFonts=true YourPSFile.ps
+
+```
+
+Explanation:
+
+*   with `-sPAPERSIZE=something` you define the paper size. For valid PAPERSIZE values, see [[6]](http://ghostscript.com/doc/current/Use.htm#Known_paper_sizes).
+*   `-dOptimize=true` let's the created PDF be optimised for loading
+*   `-dEmbedAllFonts=true` makes the fonts look always nice
+
+**Note:** You cannot choose the paper orientation in ps2pdf. If your input PS file is healthy, it already contains the orientation information. If you are trying to use an Encapsulated PS file, you will have problems, if it does not fit in the `-sPAPERSIZE` you specified, because EPS files usually do not contain paper orientation informaiton. a workaround is creating a new paper in ghostscript settings (call it e.g. "slide") and use it as `-sPAPERSIZE=slide`.
+
 ## Libraries
 
 *   **libharu** — C library for generating PDF documents.
@@ -449,17 +561,17 @@ $ pdftoppm -jpeg -r *dpi* in.pdf -f *page* -singlefile *infile*.pdf *outfileroot
 
 ### Python
 
+*   **PDFMiner** — Utils to extract, analyze text data of PDF files. Includes pdf2txt, dumppdf, and latin2ascii
+
+	[http://www.unixuser.org/~euske/python/pdfminer/](http://www.unixuser.org/~euske/python/pdfminer/) || [pdfminer](https://aur.archlinux.org/packages/pdfminer/), [python-pdfminer.six](https://aur.archlinux.org/packages/python-pdfminer.six/)
+
 *   **pdfrw** — A pure Python library that reads and writes PDFs.
 
 	[https://github.com/pmaupin/pdfrw](https://github.com/pmaupin/pdfrw) || [python-pdfrw](https://www.archlinux.org/packages/?name=python-pdfrw), [python2-pdfrw](https://www.archlinux.org/packages/?name=python2-pdfrw)
 
-*   **pyPdf** — Discontinued predecessor of PyPDF2.
-
-	[http://pybrary.net/pyPdf](http://pybrary.net/pyPdf) || [python2-pypdf](https://www.archlinux.org/packages/?name=python2-pypdf)
-
 *   **PyPDF2** — A pure-Python library built as a PDF toolkit.
 
-	[https://mstamy2.github.com/PyPDF2](https://mstamy2.github.com/PyPDF2) || [python-pypdf2](https://aur.archlinux.org/packages/python-pypdf2/), [python2-pypdf2](https://aur.archlinux.org/packages/python2-pypdf2/)
+	[https://mstamy2.github.com/PyPDF2](https://mstamy2.github.com/PyPDF2) || [python-pypdf2](https://www.archlinux.org/packages/?name=python-pypdf2), [python2-pypdf2](https://aur.archlinux.org/packages/python2-pypdf2/)
 
 *   **PyX** — Python library for the creation of PostScript and PDF files.
 

@@ -191,12 +191,7 @@ You also need to collect the static files for the webapp,
 
 Upstream provides systemd services that are already installed by the AUR package.
 
-To start the instance, just run:
-
-```
-$ systemctl start funkwhale.service
-
-```
+To start the instance, just [start](/index.php/Start "Start") `funkwhale.service`.
 
 This starts three services, you can check their status with:
 

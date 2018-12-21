@@ -950,7 +950,7 @@ And, installing a Collabora server. Make sure `cloud//.example//.com` is your ne
 
 ```
 
-Also make sure to escape all dots with double backslashes (\), since this string will be evaluated as a regular expression (and your bash 'eats' the first backslash.) If you want to use the docker container with more than one Nextcloud, you will need to use 'domain=cloud\\.example\\.com\|second\\.example\\.com' instead. (All hosts are separated by \|.) When using `localhost` as domain for testing you need to add {ic|--net host}} to ensure the docker container can access your Nextcloud server.
+Also make sure to escape all dots with double backslashes (\), since this string will be evaluated as a regular expression (and your bash 'eats' the first backslash.) If you want to use the docker container with more than one Nextcloud, you will need to use 'domain=cloud\\.example\\.com\|second\\.example\\.com' instead. (All hosts are separated by \|.) When using `localhost` as domain for testing you need to add `--net host` to ensure the docker container can access your Nextcloud server.
 
 If you need to delete or reinstall Collabora server use:
 
@@ -973,7 +973,7 @@ Futher, follow the instruction of webserver you are using:
 
 **Nginx setup example:**
 
-Add following to your nextcloud domain config or add new config file in /etc/nginx/conf.d/ directory, (Do not forget to change `office.example.com` and `ssl_certificate` to the right values:
+Add following to your nextcloud domain config or add new config file in /etc/nginx/conf.d/ directory, (Do not forget to change `office.example.com` and `ssl_certificate` to the right values. If you are using docker image, change `http` to `https`.)
 
  `/etc/nginx/conf.d/example.conf` 
 ```

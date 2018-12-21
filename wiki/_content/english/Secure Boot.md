@@ -6,9 +6,11 @@ For an overview about Secure Boot in Linux see [Rodsbooks' Secure Boot](http://w
 
 ## Contents
 
-*   [1 Does the machine set to secure boot?](#Does_the_machine_set_to_secure_boot?)
-    *   [1.1 Before booting the OS](#Before_booting_the_OS)
-    *   [1.2 After booting the OS](#After_booting_the_OS)
+*   [1 Secure Boot status](#Secure_Boot_status)
+    *   [1.1 Check the status](#Check_the_status)
+        *   [1.1.1 Before booting the OS](#Before_booting_the_OS)
+        *   [1.1.2 After booting the OS](#After_booting_the_OS)
+    *   [1.2 Change the status](#Change_the_status)
 *   [2 Using a signed boot loader](#Using_a_signed_boot_loader)
     *   [2.1 PreLoader](#PreLoader)
         *   [2.1.1 Set up PreLoader](#Set_up_PreLoader)
@@ -36,11 +38,17 @@ For an overview about Secure Boot in Linux see [Rodsbooks' Secure Boot](http://w
 *   [5 Booting an install media](#Booting_an_install_media)
 *   [6 See also](#See_also)
 
-## Does the machine set to secure boot?
+## Secure Boot status
+
+### Check the status
 
 #### Before booting the OS
 
-At this point, one has to look at the firmware setup. Look at the instructions at [#Put firmware in "Setup Mode"](#Put_firmware_in_"Setup_Mode") and [#disable secure boot](#disable_secure_boot).
+At this point, one has to look at the firmware setup. If the machine was booted and is running, in most cases it will have to be rebooted.
+
+You may access the firmware configuration by pressing a special key during the boot process. The key to use depends on the firmware. It is usually one of `Esc`, `F2`, `Del` or possibly another `F*n*` key. Sometimes the right key is displayed for a short while at the beginning of the boot process. The motherboard manual usually records it. You might want to press the key, and keep pressing it, immediately following powering on the machine, even before the screen actually displays anything.
+
+After entering the firmware setup, be careful not to change any settings without prior intention. Usually there are navigation instructions, and short help for the settings, at the bottom of each setup screen. The setup itself might be composed of several pages. You will have to navigate to the correct place. The interesting setting might be simply denoted by secure boot, which can be set on or off.
 
 #### After booting the OS
 
@@ -63,9 +71,11 @@ If Secure Boot is enabled, this command returns `1` as the final integer in a li
 For a verbose status, another way is to execute:
 
 ```
-# bootctl status
+$ bootctl status
 
 ```
+
+### Change the status
 
 ## Using a signed boot loader
 
@@ -449,7 +459,7 @@ Depends = grep
 
 ### Put firmware in "Setup Mode"
 
-Secure Boot is in Setup Mode when the Platform Key is removed. To put firmware in Setup Mode, enter firmware setup utility and find an option to delete or clear certificates.
+Secure Boot is in Setup Mode when the Platform Key is removed. To put firmware in Setup Mode, enter firmware setup utility and find an option to delete or clear certificates. How to enter the setup utility is described in [#Before booting the OS](#Before_booting_the_OS).
 
 ### Enroll keys in firmware
 
@@ -515,7 +525,7 @@ Follow [#Enroll keys in firmware](#Enroll_keys_in_firmware) to add `add_MS_db.au
 
 ## Disable Secure Boot
 
-The Secure Boot feature can be disabled via the UEFI firmware interface. You may access the firmware configuration by pressing a special key during the boot process. The key to use depends on the firmware. It is usually one of `Esc`, `F2`, `Del` or possibly another `F*n*` key.
+The Secure Boot feature can be disabled via the UEFI firmware interface. The Secure Boot feature can be disabled via the UEFI firmware interface. How to access the firmware configuration is described in [#Before booting the OS](#Before_booting_the_OS).
 
 If using a hotkey did not work and you can boot Windows, you can force a reboot into the firmware configuration in the following way (for Windows 10): *Settings > Update & Security > Recovery > Advanced startup (Restart now) > Troubleshoot > Advanced options > UEFI Firmware settings > restart*.
 
@@ -525,7 +535,7 @@ Note that some motherboards (this is the case in a Packard Bell laptop) only all
 
 **Note:** The official installation image does not support Secure Boot ([FS#53864](https://bugs.archlinux.org/task/53864)). To successfully boot the installation medium you will need to [disable Secure Boot](#Disable_Secure_Boot).
 
-Secure Boot support was removed starting with `archlinux-2016.06.01-dual.iso`. At that time [prebootloader](https://www.archlinux.org/packages/?name=prebootloader) was replaced with [efitools](https://www.archlinux.org/packages/?name=efitools), even though the later uses unsigned EFI binaries. One might want to [remaster the Install ISO](/index.php/Remastering_the_Install_ISO "Remastering the Install ISO") in a way described by other topics of the article. For example, the signed EFI applications `PreLoader.efi` and `HashTool.efi` from [#PreLoader](#PreLoader) can be added to it. With it, the media boots, and you are presented with a shell prompt, automatically logged in as root.
+Secure Boot support was removed starting with `archlinux-2016.06.01-dual.iso`. At that time [prebootloader](https://www.archlinux.org/packages/?name=prebootloader) was replaced with [efitools](https://www.archlinux.org/packages/?name=efitools), even though the later uses unsigned EFI binaries. One might want to [remaster the Install ISO](/index.php/Remastering_the_Install_ISO "Remastering the Install ISO") in a way described by previous topics of this article. For example, the signed EFI applications `PreLoader.efi` and `HashTool.efi` from [#PreLoader](#PreLoader) can be adopted to here. Note that up to this point, the article assumed one can access the [ESP](/index.php/ESP "ESP") of the machine. But when installing a machine that never had an OS before, there is no ESP present. You should explore other articles, for example [Unified Extensible Firmware Interface#Create UEFI bootable USB from ISO](/index.php/Unified_Extensible_Firmware_Interface#Create_UEFI_bootable_USB_from_ISO "Unified Extensible Firmware Interface"), to learn how this situation should be handled.
 
 ## See also
 
