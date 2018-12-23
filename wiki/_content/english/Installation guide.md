@@ -305,7 +305,7 @@ Set the root [password](/index.php/Password "Password"):
 
 ### Boot loader
 
-See [Arch_boot_process#Boot_loader](/index.php/Arch_boot_process#Boot_loader "Arch boot process") for a list of Linux-capable boot loaders.
+See [Arch boot process#Boot loader](/index.php/Arch_boot_process#Boot_loader "Arch boot process") for a list of Linux-capable boot loaders.
 
 **Note:** If you have an Intel or AMD CPU, enable [microcode](/index.php/Microcode "Microcode") updates.
 

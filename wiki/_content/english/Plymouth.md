@@ -32,7 +32,7 @@ If you also use [GDM](/index.php/GDM "GDM"), you should install the [gdm-plymout
 
 Add `plymouth` to the `HOOKS` array in [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"). It **must** be added **after** `base` and `udev` for it to work:
 
- `/etc/mkinitcpio.conf`  `HOOKS="base udev plymouth [...] "` 
+ `/etc/mkinitcpio.conf`  `HOOKS=(base udev plymouth [...])` 
 **Warning:**
 
 *   If you use [hard drive encryption](/index.php/System_Encryption_with_LUKS_for_dm-crypt "System Encryption with LUKS for dm-crypt") with the `encrypt` hook, you **must** replace the `encrypt` hook with `plymouth-encrypt` and add it after the `plymouth` hook in order to get to the TTY password prompts.
@@ -41,7 +41,7 @@ Add `plymouth` to the `HOOKS` array in [mkinitcpio.conf](/index.php/Mkinitcpio.c
 
 After adding the `plymouth-encrypt` hook, if input goes to the background in plaintext instead of into the password prompt you need to add your (kernel) graphics driver to your initramfs. For example, if using intel:
 
- `/etc/mkinitcpio.conf`  `MODULES="i915 [...]"` 
+ `/etc/mkinitcpio.conf`  `MODULES=(i915 [...])` 
 
 This might also be a step needed for some themes to work.
 
@@ -49,7 +49,7 @@ This might also be a step needed for some themes to work.
 
 If your [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") includes the `systemd` hook, then replace `plymouth` with `sd-plymouth`. Additionally, if using hard drive encryption, use `sd-encrypt` instead of `encrypt` or `plymouth-encrypt`:
 
- `/etc/mkinitcpio.conf`  `HOOKS="base systemd sd-plymouth [...] sd-encrypt [...]"` 
+ `/etc/mkinitcpio.conf`  `HOOKS=(base systemd sd-plymouth [...] sd-encrypt [...])` 
 
 ### The kernel command line
 

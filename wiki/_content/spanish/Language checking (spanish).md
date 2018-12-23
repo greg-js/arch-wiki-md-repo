@@ -76,4 +76,4 @@ Enchant es utilizado por muchas aplicaciones a través de las siguientes bibliot
 
 [Firefox](/index.php/Firefox_(Espa%C3%B1ol) "Firefox (Español)"), [Thunderbird](/index.php/Thunderbird "Thunderbird"), [Chromium](/index.php/Chromium_(Espa%C3%B1ol) "Chromium (Español)") y [LibreOffice](/index.php/LibreOffice_(Espa%C3%B1ol) "LibreOffice (Español)") soportan todos la corrección gramatical solo a través de extensiones. Para LibreOffice, véase [LibreOffice#Grammar checking](/index.php/LibreOffice#Grammar_checking "LibreOffice").
 
-[Abiword](/index.php/Abiword_(Espa%C3%B1ol) "Abiword (Español)") tiene un corrector gramatical incorporado, véase [Abiword#Grammar checking](/index.php/Abiword#Grammar_checking "Abiword").
+[Abiword](/index.php/Abiword_(Espa%C3%B1ol) "Abiword (Español)") tiene un corrector gramatical incorporado, véase [AbiWord#Grammar checking](/index.php/AbiWord#Grammar_checking "AbiWord").

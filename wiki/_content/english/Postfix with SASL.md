@@ -5,7 +5,7 @@ Related articles
 
 From [Postfix's site](http://www.postfix.org/SASL_README.html):
 
-	*People who go to the trouble of installing Postfix may have the expectation that Postfix is more secure than some other mailers. The Cyrus SASL library contains a lot of code. With this, Postfix becomes as secure as other mail systems that use the Cyrus SASL library. Dovecot provides an alternative that may be worth considering.*
+	People who go to the trouble of installing Postfix may have the expectation that Postfix is more secure than some other mailers. The Cyrus SASL library contains a lot of code. With this, Postfix becomes as secure as other mail systems that use the Cyrus SASL library. Dovecot provides an alternative that may be worth considering.
 
 ## Contents
 
@@ -18,7 +18,7 @@ From [Postfix's site](http://www.postfix.org/SASL_README.html):
 
 In this article you will learn how to setup SASL authentication for [Postfix](/index.php/Postfix "Postfix").
 
-Once Postfix is up and running you can add SASL authentication to avoid relaying. Only authenticated and trusted users will be able to send emails. This will avoid anonymous users to make spamming.
+Once Postfix is up and running you can add SASL authentication to avoid relaying. In order to prevent anonymous users from spamming, only authenticated and trusted users will be able to send emails.
 
 Since [postfix](https://www.archlinux.org/packages/?name=postfix) package in [extra] is already compiled with SASL support, to enable SASL authentication you have two choices:
 

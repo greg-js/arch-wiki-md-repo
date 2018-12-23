@@ -45,7 +45,7 @@ $ mkdir ~/kernelbuild
 
 Download the kernel source from [https://www.kernel.org](https://www.kernel.org). This should be the [tarball](https://en.wikipedia.org/wiki/Tar_(computing) (`tar.xz`) file for your chosen kernel.
 
-It can be downloaded by simply right-clicking the `tar.xz` link in your browser and selecting `Save Link As...`, or any other number of ways via alternative graphical or command-line tools that utilise HTTP, [FTP](/index.php/Ftp#FTP "Ftp"), [RSYNC](/index.php/Rsync "Rsync"), or [Git](/index.php/Git "Git").
+It can be downloaded by simply right-clicking the `tar.xz` link in your browser and selecting `Save Link As...`, or any other number of ways via alternative graphical or command-line tools that utilise HTTP, [TFTP](/index.php/TFTP "TFTP"), [RSYNC](/index.php/Rsync "Rsync"), or [Git](/index.php/Git "Git").
 
 **Note:** It is a good idea to verify the PGP signature of any downloaded kernel tarball. This ensures that it is legitimate and helps to build the Web of Trust. See [kernel.org/signature](https://kernel.org/signature.html#using-gnupg-to-verify-kernel-signatures).
 

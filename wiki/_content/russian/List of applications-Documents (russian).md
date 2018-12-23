@@ -72,7 +72,7 @@
 
 Дополнительную информацию смотрите в [Википедии](https://en.wikipedia.org/wiki/ru:%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0 "wikipedia:ru:Заглавная страница"): [Сравнение текстовых процессоров](https://en.wikipedia.org/wiki/Comparison_of_word_processors "wikipedia:Comparison of word processors").
 
-*   **[Abiword](/index.php/Abiword "Abiword")** — Полнофункциональный текстовый процессор
+*   **[AbiWord](/index.php/AbiWord "AbiWord")** — Полнофункциональный текстовый процессор
 
 	[http://www.abisource.com/](http://www.abisource.com/) || [abiword](https://www.archlinux.org/packages/?name=abiword)
 

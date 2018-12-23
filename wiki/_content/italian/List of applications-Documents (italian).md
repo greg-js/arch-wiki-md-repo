@@ -164,7 +164,7 @@ See also [Wikipedia:List of search engines#Desktop search engines](https://en.wi
 
 See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki/Comparison_of_word_processors "wikipedia:Comparison of word processors").
 
-*   **[Abiword](/index.php/Abiword "Abiword")** — Un elaboratore testi completo.
+*   **[AbiWord](/index.php/AbiWord "AbiWord")** — Un elaboratore testi completo.
 
 	[http://www.abisource.com/](http://www.abisource.com/) || [abiword](https://www.archlinux.org/packages/?name=abiword)
 

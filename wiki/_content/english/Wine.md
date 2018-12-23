@@ -451,7 +451,7 @@ Wine features an embedded FPS monitor which works for all graphical applications
 
 It may be desirable to run Wine under a specifically created user account in order to reduce concerns about Windows applications having access to your home directory.
 
-First, create a [user account](/index.php/Users_and_groups "Users and groups") for Wine:
+First, create a [user account](/index.php/User_account "User account") for Wine:
 
 ```
 # useradd -m -s /bin/bash wineuser

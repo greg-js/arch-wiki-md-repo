@@ -204,29 +204,29 @@ In all of the following `rd.luks` can be replaced with `luks`. `rd.luks` paramet
 **Tip:** `rd.luks.uuid` can be omitted when using `rd.luks.name`.
 
 ```
-rd.luks.uuid=*UUID*
+rd.luks.uuid=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*
 
 ```
 
 Specify the [UUID](/index.php/UUID "UUID") of the device to be decrypted on boot with this flag. If the UUID is in `/etc/crypttab.initramfs`, the options listed there will be used. For `luks.uuid` options from `/etc/crypttab.initramfs` or `/etc/crypttab` will be used.
 
-By default the mapped device will be located at `/dev/mapper/luks-*UUID*` where *UUID* is the UUID of the LUKS partition.
+By default the mapped device will be located at `/dev/mapper/luks-*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*` where *XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* is the UUID of the LUKS partition.
 
 #### rd.luks.name
 
 ```
-rd.luks.name=*UUID*=*name*
+rd.luks.name=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*=*name*
 
 ```
 
-Specify the name of the mapped device after the LUKS partition is open. For example, specifying `*UUID*=cryptroot` causes the unlocked device to be located at `/dev/mapper/cryptroot`. If this is not specified the mapped device will be located at `/dev/mapper/luks-*UUID*` where *UUID* is the UUID of the LUKS partition. When using this parameter you can omit `rd.luks.uuid`.
+Specify the name of the mapped device after the LUKS partition is open. For example, specifying `*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*=cryptroot` causes the unlocked device to be located at `/dev/mapper/cryptroot`. If this is not specified the mapped device will be located at `/dev/mapper/luks-*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*` where *XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* is the UUID of the LUKS partition. When using this parameter you can omit `rd.luks.uuid`.
 
 This is equivalent to the second parameter of `encrypt`'s `cryptdevice`.
 
 #### rd.luks.options
 
 ```
-rd.luks.options=UUID=*options*
+rd.luks.options=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*=*options*
 
 ```
 
@@ -237,7 +237,7 @@ rd.luks.options=*options*
 
 ```
 
-Specify options for the device listed after `UUID` or, if not specified, for all UUIDs not specified elsewhere (e.g., crypttab).
+Set options for the device specified by it UUID or, if not specified, for all UUIDs not specified elsewhere (e.g., crypttab).
 
 This is roughly equivalent to the third parameter of `encrypt`'s `cryptdevice`.
 
@@ -255,7 +255,7 @@ rd.luks.options=timeout=10s,swap,cipher=aes-cbc-essiv:sha256,size=256
 **Note:** `sd-encrypt` hook only supports keyfiles that are embedded in the initramfs (i.e. specified in the `FILES` array in `/etc/mkinitcpio.conf`). See [systemd issue 9181](https://github.com/systemd/systemd/issues/9181).
 
 ```
-rd.luks.key=UUID=*mykeyfile*
+rd.luks.key=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*=*mykeyfile*
 
 ```
 
@@ -266,7 +266,7 @@ rd.luks.key=*mykeyfile*
 
 ```
 
-Specify the location of a password file used to decrypt the device specified in `rd.luks.UUID`. There is no default location like there is with the `encrypt` hook parameter `cryptkey`.
+Specify the location of a password file used to decrypt the device specified by its UUID. There is no default location like there is with the `encrypt` hook parameter `cryptkey`.
 
 #### Timeout
 

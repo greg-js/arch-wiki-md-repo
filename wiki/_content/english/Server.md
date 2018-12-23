@@ -51,7 +51,7 @@ If the server has a dynamic IP address but you still want to be able to reliably
 *   [Security](/index.php/Security "Security")
 *   [Category:Security](/index.php/Category:Security "Category:Security")
 *   [Category:Firewalls](/index.php/Category:Firewalls "Category:Firewalls")
-*   [Secure Shell#Protection](/index.php/Secure_Shell#Protection "Secure Shell")
+*   [OpenSSH#Protection](/index.php/OpenSSH#Protection "OpenSSH")
 *   [SELinux](/index.php/SELinux "SELinux")
 *   [AppArmor](/index.php/AppArmor "AppArmor")
 
@@ -61,7 +61,7 @@ If the server has a dynamic IP address but you still want to be able to reliably
 
 **[SSH](/index.php/SSH "SSH")** is the **S**ecure **SH**ell, it allows you to remotely connect to your server and administer commands as if you were physically at the computer. Combined with [GNU Screen](/index.php/GNU_Screen "GNU Screen"), SSH can become an invaluable tool for remote maintenance and administration while on-the-move. Please note that a standard SSH install is not very secure and some configuration is needed before the server can be considered locked-down. This configuration includes disabling root log-in, disabling password-based log-in and setting up firewall rules. In addition, you may supplement the security of your SSH daemon by utilizing daemons, such as [sshguard](/index.php/Sshguard "Sshguard") or [fail2ban](/index.php/Fail2ban "Fail2ban"), which constantly monitor the log files for any suspicious activity and ban IP addresses with too many failed log-in attempts.
 
-**X Forwarding** is forwarding your X session via SSH so you can log in to the desktop GUI remotely. Use of this feature will require SSH and an X server to be installed on the server. You will also need to have a working X server installed on the client system you will be using to connect to the server with. More information can be found in the [X Forwarding](/index.php/SSH#X11_forwarding "SSH") section of the [SSH](/index.php/SSH "SSH") guide.
+**X Forwarding** is forwarding your X session via SSH so you can log in to the desktop GUI remotely. Use of this feature will require SSH and an X server to be installed on the server. You will also need to have a working X server installed on the client system you will be using to connect to the server with. More information can be found in the [X11 forwarding](/index.php/X11_forwarding "X11 forwarding") section of the [SSH](/index.php/SSH "SSH") guide.
 
 ### Local Package Repositories
 

@@ -215,7 +215,7 @@ user = postfix_user
 password = hunter2
 hosts = localhost
 dbname = postfix_db
-query = SELECT goto FROM alias,alias_domain WHERE alias_domain.alias_domain = '%d' and alias.address = CONCAT('%u', '@', alias_domain.target_domain) AND alias.active = 1 AND alias_domain.active='1'
+query = SELECT goto FROM alias,alias_domain WHERE alias_domain.alias_domain = '%d' and alias.address = CONCAT('%u', '@', alias_domain.target_domain) AND alias.active = '1' AND alias_domain.active='1'
 
 ```
  `/etc/postfix/virtual_alias_domains.cf` 

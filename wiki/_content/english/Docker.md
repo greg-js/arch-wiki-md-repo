@@ -57,7 +57,7 @@ If you want to be able to run docker as a regular user, add your user to the `do
 
 ### Storage driver
 
-The docker storage driver (or graph driver) has a huge impact on performance. Its job is to store layers of container images efficiently, that is when several images share a layer, only one layer uses disk space. The compatible option, `devicemapper` offers suboptimal performance, which is outright terrible on rotating disks. Additionally, `devicemappper` is not recommended in production.
+The docker storage driver (or graph driver) has a huge impact on performance. Its job is to store layers of container images efficiently, that is when several images share a layer, only one layer uses disk space. The compatible option, `devicemapper` offers suboptimal performance, which is outright terrible on rotating disks. Additionally, `devicemapper` is not recommended in production.
 
 As Arch linux ships new kernels, there is no point using the compatibility option. A good, modern choice is `overlay2`.
 

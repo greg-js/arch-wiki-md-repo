@@ -37,10 +37,10 @@ From [Wikipedia:udev](https://en.wikipedia.org/wiki/udev "wikipedia:udev"):
     *   [5.2 Debug output](#Debug_output)
     *   [5.3 udevd hangs at boot](#udevd_hangs_at_boot)
     *   [5.4 BusLogic devices can be broken and will cause a freeze during startup](#BusLogic_devices_can_be_broken_and_will_cause_a_freeze_during_startup)
-    *   [5.5 Some devices, that should be treated as removable, are not](#Some_devices.2C_that_should_be_treated_as_removable.2C_are_not)
+    *   [5.5 Some devices, that should be treated as removable, are not](#Some_devices,_that_should_be_treated_as_removable,_are_not)
     *   [5.6 Sound problems with some modules not loaded automatically](#Sound_problems_with_some_modules_not_loaded_automatically)
-    *   [5.7 IDE CD/DVD-drive support](#IDE_CD.2FDVD-drive_support)
-    *   [5.8 Optical drives have group ID set to "disk"](#Optical_drives_have_group_ID_set_to_.22disk.22)
+    *   [5.7 IDE CD/DVD-drive support](#IDE_CD/DVD-drive_support)
+    *   [5.8 Optical drives have group ID set to "disk"](#Optical_drives_have_group_ID_set_to_"disk")
 *   [6 See also](#See_also)
 
 ## Installation
@@ -355,7 +355,7 @@ Note: 1) `USERNAME_TO_RUN_SCRIPT_AS`, `UID_OF_USER_TO_RUN_SCRIPT_AS` and `USERNA
 
 3) Load/reload the new *udev* rule (see above) and test it by unplugging the power supply to the laptop.
 
-**Tip:** See also [xpub](https://github.com/Ventto/xpub) as a method for getting the user's display environment variables and exporting the last into *udev* rules via `IMPORT` key.
+**Tip:** See also [xpub](https://aur.archlinux.org/packages/xpub/) as a method for getting the user's display environment variables and exporting the last into *udev* rules via `IMPORT` key.
 
 ## Troubleshooting
 

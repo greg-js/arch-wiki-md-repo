@@ -182,7 +182,7 @@ Link this config file in your `/etc/mkinitcpio.conf` file, under the `#FILES` co
 FILES="/etc/modprobe.d/nvidia-drm-modeset.conf"
 ```
 
-Regenerate the initramfs (see [Mkinitcpio#Image_creation_and_activation](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio")). Then reboot and check, if PRIME Sync is enabled:
+Regenerate the initramfs (see [Mkinitcpio#Image creation and activation](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio")). Then reboot and check, if PRIME Sync is enabled:
 
 `xrandr --properties | grep PRIME`
 

@@ -1,8 +1,8 @@
 Related articles
 
+*   [Git server](/index.php/Git_server "Git server")
 *   [Bisecting bugs with Git](/index.php/Bisecting_bugs_with_Git "Bisecting bugs with Git")
 *   [Gitweb](/index.php/Gitweb "Gitweb")
-*   [Cgit](/index.php/Cgit "Cgit")
 *   [HTTP tunneling#Tunneling Git](/index.php/HTTP_tunneling#Tunneling_Git "HTTP tunneling")
 *   [Subversion](/index.php/Subversion "Subversion")
 *   [Concurrent Versions System](/index.php/Concurrent_Versions_System "Concurrent Versions System")
@@ -52,12 +52,7 @@ Related articles
         *   [4.12.2 Partial fetch](#Partial_fetch)
         *   [4.12.3 Get other branches](#Get_other_branches)
         *   [4.12.4 Possible Future alternative](#Possible_Future_alternative)
-*   [5 Git server](#Git_server)
-    *   [5.1 SSH](#SSH)
-    *   [5.2 Smart HTTP](#Smart_HTTP)
-    *   [5.3 Git](#Git)
-    *   [5.4 Setting access rights](#Setting_access_rights)
-*   [6 See also](#See_also)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -141,7 +136,7 @@ See [Getting Started - Git Basics](https://git-scm.com/book/en/Getting-Started-G
 
 *   Clone an existing repository
 
-	`git clone *repository*`, see [git-clone(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-clone.1)
+	`git clone *repository*`, see [git-clone(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-clone.1) (also explains the Git URLs)
 
 ### Recording changes
 
@@ -510,7 +505,7 @@ See [git-config(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-config.1) and
 
 You may wish to avoid the hassle of authenticating interactively at every push to the Git server.
 
-*   If you are authenticating with SSH keys, use an [SSH agent](/index.php/SSH_agent "SSH agent"). See also [SSH#Speeding up SSH](/index.php/SSH#Speeding_up_SSH "SSH") and [SSH#Keep alive](/index.php/SSH#Keep_alive "SSH").
+*   If you are authenticating with SSH keys, use an [SSH agent](/index.php/SSH_agent "SSH agent"). See also [OpenSSH#Speeding up SSH](/index.php/OpenSSH#Speeding_up_SSH "OpenSSH") and [OpenSSH#Keep alive](/index.php/OpenSSH#Keep_alive "OpenSSH").
 *   If you are authenticating with username and password, switch to [SSH keys](/index.php/SSH_keys "SSH keys") if the server supports SSH, otherwise try [git-credential-cache](https://git-scm.com/docs/git-credential-cache) or [git-credential-store](https://git-scm.com/docs/git-credential-store).
 
 ### Protocol defaults
@@ -754,95 +749,6 @@ As usual, do `git pull` to update your snapshot.
 Git Virtual Filesystem (GVFS), developed by Microsoft, allows you to access git repositories without a local one. (See [this Microsoft blog](https://blogs.msdn.microsoft.com/bharry/2017/05/24/the-largest-git-repo-on-the-planet/) or the [Wikipedia artcile](https://en.wikipedia.org/wiki/Git_Virtual_File_System "wikipedia:Git Virtual File System").) It's not available in Linux yet.
 
 Anyway it is not for the above examples of the Linux kernel, though.
-
-## Git server
-
-How to set up connecting to repositories using varying protocols.
-
-### SSH
-
-To use the SSH protocol, first set up a public SSH key; for that follow the guide at [SSH keys](/index.php/SSH_keys "SSH keys"). To set up a SSH server, follow the [SSH](/index.php/SSH "SSH") guide.
-
-With SSH working and a key generated, paste the contents of `~/.ssh/id_rsa.pub` to `~/.ssh/authorized_keys` (be sure it is all on one line). Now the Git repository can be accessed with SSH by doing:
-
-```
-$ git clone *user*@*foobar.com*:*my_repository*.git
-
-```
-
-You should now get an SSH yes/no question, if you have the SSH client setting `StrictHostKeyChecking` set to `ask` (the default). Type `yes` followed by `Enter`. Then you should have your repository checked out. Because this is with SSH, you also have commit rights now.
-
-To modify an existing repository to use SSH, the remote location will need to be redefined:
-
-```
-$ git remote set-url origin git@localhost:*my_repository*.git
-
-```
-
-Connecting on a port other than 22 can be configured on a per-host basis in `/etc/ssh/ssh_config` or `~/.ssh/config`. To set up ports for a repository (here 443 as example):
-
- `.git/config` 
-```
-[remote "origin"]
-    url = ssh://*user*@*foobar*.com:443/~*my_repository*/repo.git
-```
-
-You are able to secure the SSH user account even more allowing only push and pull commands on this user account. This is done by replacing the default login shell by git-shell. Described in [Setting Up the Server](https://git-scm.com/book/en/v2/Git-on-the-Server-Setting-Up-the-Server).
-
-### Smart HTTP
-
-Git is able to use the HTTP(S) protocol as efficiently as the SSH or Git protocols, by utilizing the git-http-backend. Furthermore it is not only possible to clone or pull from repositories, but also to push into repositories over HTTP(S).
-
-The setup for this is rather simple as all you need to have installed is the Apache web server ([apache](https://www.archlinux.org/packages/?name=apache), with `mod_cgi`, `mod_alias`, and `mod_env` enabled) and of course, [git](https://www.archlinux.org/packages/?name=git).
-
-Once you have your basic setup running, add the following to your Apache configuration file, which is usually located at:
-
- `/etc/httpd/conf/httpd.conf` 
-```
-<Directory "/usr/lib/git-core*">
-    Require all granted
-</Directory>
-
-SetEnv GIT_PROJECT_ROOT /srv/git
-SetEnv GIT_HTTP_EXPORT_ALL
-ScriptAlias /git/ /usr/lib/git-core/git-http-backend/
-
-```
-
-This assumes your Git repositories are located at `/srv/git` and that you want to access them via something like: `http(s)://your_address.tld/git/your_repo.git`.
-
-**Note:** Make sure that Apache can read and write to your repositories.
-
-For more detailed documentation, visit the following links:
-
-*   [https://git-scm.com/book/en/v2/Git-on-the-Server-Smart-HTTP](https://git-scm.com/book/en/v2/Git-on-the-Server-Smart-HTTP)
-*   [https://git-scm.com/docs/git-http-backend](https://git-scm.com/docs/git-http-backend)
-
-### Git
-
-**Note:** The Git protocol is not encrypted or authenticated, and only allows read access.
-
-[Start and enable](/index.php/Start "Start") `git-daemon.socket`.
-
-The daemon is started with the following options:
-
-```
-ExecStart=-/usr/lib/git-core/git-daemon --inetd --export-all --base-path=/srv/git
-
-```
-
-Repositories placed in `/srv/git/` will be recognized by the daemon. Clients can connect with something similar to:
-
-```
-$ git clone git://*location*/*repository*.git
-
-```
-
-### Setting access rights
-
-To restrict read and/or write access, use standard Unix permissions. Refer to [when gitolite is overkill](https://github.com/sitaramc/gitolite/blob/d74e58b5de8c78bddd29b009ba2d606f7fcb4f2d/doc/overkill.mkd) for more information.
-
-For fine-grained access management, refer to [gitolite](/index.php/Gitolite "Gitolite") and [gitosis](/index.php/Gitosis "Gitosis").
 
 ## See also
 

@@ -646,7 +646,7 @@ LABEL OtherLinux
 
 ```
 
-Note that the other Linux entry in `<other-OS>/boot/syslinux/syslinux.cfg` will need to be edited each time you update this OS's kernel unless it has symlinks to its latest kernel and initrd in **/**. Since we are booting the kernel directly and not chainloading the other-OS's default bootloader.
+Note that the other Linux entry in `<other-OS>/boot/syslinux/syslinux.cfg` will need to be edited each time you update this OS's kernel unless it has symlinks to its latest kernel and initrd in `/`. Since we are booting the kernel directly and not chainloading the other-OS's default bootloader.
 
 ### Using memtest
 

@@ -55,7 +55,7 @@ Enable challenge-response authentication in `/etc/ssh/**sshd_config**`:
 
 Finally, [reload](/index.php/Reload "Reload") the `sshd` service.
 
-**Warning:** OpenSSH will ignore all of this if you are authenticating with a SSH-key pair and have [disabled password logins](/index.php/Secure_Shell#Force_public_key_authentication "Secure Shell"). However, as of OpenSSH 6.2, you can add `AuthenticationMethods` to allow both: two-factor and key-based authentication. See [Secure Shell#Two-factor authentication and public keys](/index.php/Secure_Shell#Two-factor_authentication_and_public_keys "Secure Shell").
+**Warning:** OpenSSH will ignore all of this if you are authenticating with a SSH-key pair and have [disabled password logins](/index.php/OpenSSH#Force_public_key_authentication "OpenSSH"). However, as of OpenSSH 6.2, you can add `AuthenticationMethods` to allow both: two-factor and key-based authentication. See [OpenSSH#Two-factor authentication and public keys](/index.php/OpenSSH#Two-factor_authentication_and_public_keys "OpenSSH").
 
 ## Generating a secret key file
 

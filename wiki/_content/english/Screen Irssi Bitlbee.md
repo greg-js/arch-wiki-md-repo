@@ -3,7 +3,7 @@ Related articles
 *   [WeeChat](/index.php/WeeChat "WeeChat")
 *   [tmux](/index.php/Tmux "Tmux")
 
-Using GNU Screen, Irssi, Bitlbee, and SSH together allows you to have a persistent connection to IRC servers and other chat networks. Via SSH, you can access this persistent chat suite from anywhere. Putting the pieces together is not difficult, and this page will guide you through it.
+Using [GNU Screen](/index.php/GNU_Screen "GNU Screen"), [Irssi](/index.php/Irssi "Irssi"), [Bitlbee](/index.php/Bitlbee "Bitlbee"), and [SSH](/index.php/SSH "SSH") together allows you to have a persistent connection to IRC servers and other chat networks. Via SSH, you can access this persistent chat suite from anywhere. Putting the pieces together is not difficult, and this page will guide you through it.
 
 ## Contents
 
@@ -185,4 +185,4 @@ replacing TAG as necessary. In the current version, those occur on lines 181 and
 
 If you use a laptop, you likely suspend and change wireless networks often, which causes your ssh client to lose connection. This can be annoying for a chat client you expect to always be available.
 
-To fix this, try [Mosh](/index.php/Secure_Shell#Mosh "Secure Shell"), which is a shell that seamlessly deals with reconnection after resuming or changing wireless networks.
+To fix this, try [Mosh](/index.php/Mosh "Mosh"), which is a shell that seamlessly deals with reconnection after resuming or changing wireless networks.

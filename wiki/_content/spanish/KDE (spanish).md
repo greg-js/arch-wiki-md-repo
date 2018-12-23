@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [KDE](/index.php/KDE "KDE"), revisada por última vez el **2018-12-12**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=558213) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [KDE](/index.php/KDE "KDE"), revisada por última vez el **2018-12-22**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=559717) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -288,7 +288,7 @@ Plasma puede iniciar aplicaciones automáticamente y ejecutar scripts en el arra
 **Nota:**
 
 *   Los programas pueden iniciarse automáticamente solo con el inicio de sesión, mientras que los scripts de shell también se pueden ejecutar en el apagado o incluso antes de que se inicie Plasma.
-*   Los scripts de shell solo se ejecutarán si están marcados como [ejecutables](/index.php/Help:Reading_(Espa%C3%B1ol)#Marcar_como_ejecutable "Help:Reading (Español)").
+*   Los scripts de shell solo se ejecutarán si están marcados como [ejecutables](/index.php/Help:Reading_(Espa%C3%B1ol)#Hacer_ejecutable "Help:Reading (Español)").
 
 *   Coloque [entradas del escritorio](/index.php/Desktop_entries "Desktop entries") (es decir, archivos *.desktop*) en el directorio [XDG Autostart](/index.php/XDG_Autostart_(Espa%C3%B1ol) "XDG Autostart (Español)") apropiado.
 

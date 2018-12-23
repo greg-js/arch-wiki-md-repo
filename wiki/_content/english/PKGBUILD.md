@@ -130,7 +130,7 @@ The URL of the official site of the software being packaged.
 
 ### license
 
-The license under which the software is distributed. The [licenses](https://www.archlinux.org/packages/?name=licenses) package contains many commonly used licenses, which are installed under `/usr/share/licenses/common/`. If a package is licensed under one of these licenses, the value should be set to the directory name, e.g. `license=('GPL')`. If the appropriate license is not included, several things must be done:
+The license under which the software is distributed. The [licenses](https://www.archlinux.org/packages/?name=licenses) package (part of the [base group](/index.php/Base_group "Base group")) contains many commonly used licenses, which are installed under `/usr/share/licenses/common/`. If a package is licensed under one of these licenses, the value should be set to the directory name, e.g. `license=('GPL')`. If the appropriate license is not included, several things must be done:
 
 1.  Add `custom` to the `license` array. Optionally, you can replace `custom` with `custom:*name of license*`. Once a license is used in two or more packages in an official repository (including [community](/index.php/Community_repository "Community repository")), it becomes a part of the [licenses](https://www.archlinux.org/packages/?name=licenses) package.
 2.  Install the license in: `/usr/share/licenses/*pkgname*/`, e.g. `/usr/share/licenses/foobar/LICENSE`. One good way to do this is by using: `install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"` 
@@ -146,10 +146,12 @@ The license under which the software is distributed. The [licenses](https://www.
 
 **Tip:** Some software authors do not provide separate license file and describe distribution rules in section of common `ReadMe.txt`. This information can be extracted to a separate file during `build()` with something like `sed -n '/**This software**/,/ **thereof.**/p' ReadMe.txt > LICENSE`
 
+See also [Nonfree applications package guidelines](/index.php/Nonfree_applications_package_guidelines "Nonfree applications package guidelines").
+
 Additional information and perspectives on free and open source software licenses may be found on the following pages:
 
-*   [w:Free software licence](https://en.wikipedia.org/wiki/Free_software_licence "w:Free software licence")
-*   [w:Comparison of free and open-source software licenses](https://en.wikipedia.org/wiki/Comparison_of_free_and_open-source_software_licenses "w:Comparison of free and open-source software licenses")
+*   [Wikipedia:Free software licence](https://en.wikipedia.org/wiki/Free_software_licence "wikipedia:Free software licence")
+*   [Wikipedia:Comparison of free and open-source software licenses](https://en.wikipedia.org/wiki/Comparison_of_free_and_open-source_software_licenses "wikipedia:Comparison of free and open-source software licenses")
 *   [A Legal Issues Primer for Open Source and Free Software Projects](https://www.softwarefreedom.org/resources/2008/foss-primer.html)
 *   [GNU Project - Various Licenses and Comments about Them](https://www.gnu.org/licenses/license-list.html)
 *   [Debian - License information](https://www.debian.org/legal/licenses/)

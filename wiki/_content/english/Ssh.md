@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [OpenSSH](/index.php/OpenSSH "OpenSSH")
+*   [Secure Shell](/index.php/Secure_Shell "Secure Shell")

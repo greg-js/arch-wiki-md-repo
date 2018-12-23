@@ -43,7 +43,8 @@
         *   [1.3.9 UML modelers](#UML_modelers)
         *   [1.3.10 API documentation browsers](#API_documentation_browsers)
         *   [1.3.11 Issue tracking systems](#Issue_tracking_systems)
-        *   [1.3.12 Game development](#Game_development)
+        *   [1.3.12 Code review](#Code_review)
+        *   [1.3.13 Game development](#Game_development)
     *   [1.4 Text input](#Text_input)
         *   [1.4.1 Character selectors](#Character_selectors)
         *   [1.4.2 On-screen keyboards](#On-screen_keyboards)
@@ -469,6 +470,10 @@ Note that some of these twin-panel file managers can also be set to have only on
 #### File synchronization
 
 See also [Synchronization and backup programs#Data synchronization](/index.php/Synchronization_and_backup_programs#Data_synchronization "Synchronization and backup programs") and [Wikipedia:Comparison of file synchronization software](https://en.wikipedia.org/wiki/Comparison_of_file_synchronization_software "wikipedia:Comparison of file synchronization software").
+
+*   **[DirSync Pro](https://en.wikipedia.org/wiki/DirSync_Pro "wikipedia:DirSync Pro")** — Small, but powerful utility for file and folder synchronization.
+
+	[https://dirsyncpro.org/](https://dirsyncpro.org/) || [dirsyncpro](https://aur.archlinux.org/packages/dirsyncpro/)
 
 *   **[FreeFileSync](https://en.wikipedia.org/wiki/FreeFileSync "wikipedia:FreeFileSync")** — Folder comparison and synchronization software that creates and manages backup copies of all your important files.
 
@@ -1102,7 +1107,39 @@ See also [Wikipedia:List of Unified Modeling Language tools](https://en.wikipedi
 
 #### Issue tracking systems
 
-See [Category:Issue tracking systems](/index.php/Category:Issue_tracking_systems "Category:Issue tracking systems").
+*   **[Bugzilla](/index.php/Bugzilla "Bugzilla")** — Bug tracker from Mozilla.
+
+	[https://www.bugzilla.org](https://www.bugzilla.org) || [bugzilla](https://www.archlinux.org/packages/?name=bugzilla)
+
+*   **[Flyspray](/index.php/Flyspray "Flyspray")** — Lightweight, web-based bug tracking system written in PHP
+
+	[https://www.flyspray.org/](https://www.flyspray.org/) || [flyspray](https://www.archlinux.org/packages/?name=flyspray)
+
+*   **[MantisBT](/index.php/MantisBT "MantisBT")** — Web-based issue tracking system
+
+	[https://www.mantisbt.org/](https://www.mantisbt.org/) || [mantisbt](https://aur.archlinux.org/packages/mantisbt/)
+
+*   **[Redmine](/index.php/Redmine "Redmine")** — A flexible project management web application. Written using the Ruby on Rails, it is cross-platform and cross-database.
+
+	[https://www.redmine.org](https://www.redmine.org) || [redmine](https://aur.archlinux.org/packages/redmine/)
+
+*   **[Request Tracker](/index.php/Request_Tracker "Request Tracker") (RT)** — The leading open-source issue tracking system.
+
+	[https://bestpractical.com/rt/](https://bestpractical.com/rt/) || [rt](https://aur.archlinux.org/packages/rt/)
+
+*   **[Trac](/index.php/Trac "Trac")** — Trac Integrated SCM & Project Management using Apache & Subversion.
+
+	[https://trac.edgewall.org/](https://trac.edgewall.org/) || [trac](https://aur.archlinux.org/packages/trac/)
+
+#### Code review
+
+*   **Gerrit** — A web-based code review tool built on top of the Git version control system
+
+	[https://www.gerritcodereview.com/](https://www.gerritcodereview.com/) || [gerrit](https://aur.archlinux.org/packages/gerrit/)
+
+*   [GitLab](/index.php/GitLab "GitLab") also supports code reviews.
+
+See also [Wikipedia:List of tools for code review](https://en.wikipedia.org/wiki/List_of_tools_for_code_review "wikipedia:List of tools for code review").
 
 #### Game development
 

@@ -93,9 +93,9 @@ AUTHGROUP='<AUTHGROUP>'
 LOCAL_USERNAME=<USERNAME>
 REMOTE_USERNAME=<VPN_USERNAME>
 # Assuming the use of pass(1): 
-PASSWORD="`su ${LOCAL_USERNAME} -c "pass ${REMOTE_USERNAME}" | head -n 1`" 
+PASSWORD_CMD="su ${LOCAL_USERNAME} -c \"pass ${REMOTE_USERNAME} | head -n 1\""
 
-ExecUpPost="echo '${PASSWORD}' | /usr/bin/openconnect --background --pid-file=${PIDFILE} --interface='${Interface}' --authgroup='${AUTHGROUP}' --user='${REMOTE_USERNAME}' --passwd-on-stdin ${SERVER}"
+ExecUpPost="${PASSWORD_CMD} | /usr/bin/openconnect --background --pid-file=${PIDFILE} --interface='${Interface}' --authgroup='${AUTHGROUP}' --user='${REMOTE_USERNAME}' --passwd-on-stdin ${SERVER}"
 ExecDownPre="kill -INT $(cat ${PIDFILE}) ; resolvconf -d ${Interface} ; ip link delete ${Interface}"
 
 ```
@@ -111,11 +111,11 @@ $ netctl stop vpn
 
 Note that this relies on `LOCAL_USERNAME` having a [gpg-agent](/index.php/GnuPG#gpg-agent "GnuPG") running, with the passphrase for the PGP key already cached.
 
-If [pass](/index.php/Pass "Pass")’ interactive query is wanted, use the following line for `PASSWORD`:
+If [pass](/index.php/Pass "Pass")’ interactive query is wanted, use the following line for `PASSWORD_CMD`:
 
 ```
 DISPLAY=":0"
-PASSWORD="`su ${LOCAL_USERNAME} -c "DISPLAY=${DISPLAY} pass ${REMOTE_USERNAME}" | head -n 1`"
+PASSWORD_CMD="su ${LOCAL_USERNAME} -c \"DISPLAY=${DISPLAY} pass ${REMOTE_USERNAME} | head -n 1\""
 
 ```
 

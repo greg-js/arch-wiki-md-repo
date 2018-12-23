@@ -80,7 +80,7 @@ For the actual generation commands refer to the article of the used implementati
 *   [Network Security Services#Usage](/index.php/Network_Security_Services#Usage "Network Security Services")
 *   [mbed TLS#Usage](/index.php/Mbed_TLS#Usage "Mbed TLS")
 
-**Tip:** You can get free certificates from the [Let's Encrypt](https://letsencrypt.org/) certificate authority with [ACME](#ACME).
+**Tip:** You can get free certificates from the [Let's Encrypt](https://letsencrypt.org/) certificate authority with [ACME](#ACME_clients).
 
 ## Server-side recommendations
 

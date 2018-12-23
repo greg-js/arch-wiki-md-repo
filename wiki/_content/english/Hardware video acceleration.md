@@ -1,7 +1,3 @@
-Related articles
-
-*   [XvMC](/index.php/XvMC "XvMC")
-
 Hardware video acceleration makes it possible for the video card to decode/encode video, thus offloading the CPU and saving power.
 
 There are several ways to achieve this on Linux:
@@ -61,8 +57,8 @@ Hybrid: Haswell to Skylake | Broxton/Apollo Lake and newer | Raven Ridge and new
 | MPEG2 | Ivy Bridge and newer | Broadwell and newer
 except Broxton/Apollo Lake | No | No | No |
 | AVC (H.264) | Sandy Bridge and newer | Broadwell and newer | Radeon HD 7000 and newer |
-| HEVC (H.265) 8bit | Skylake and newer | Skylake and newer | Raven Ridge and newer |
-| HEVC (H.265) 10bit | Kaby Lake and newer | Cannonlake and newer |
+| HEVC (H.265) 8bit | Skylake and newer | Skylake and newer | Radeon 400 and newer |
+| HEVC (H.265) 10bit | Kaby Lake and newer | Cannonlake and newer | Raven Ridge and newer |
 | VP8 | Cherryview/Braswell and newer
 Hybrid: Haswell to Skylake | No |
 | VP9 8bit | Kaby Lake and newer | Icelake and newer |
@@ -160,8 +156,6 @@ GeForce 9300 and newer | GeForce 8 and newer |
 *   VDPAU on Radeon R300 and newer GPUs is supported by [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau).
 *   VA-API on Radeon HD 2000 and newer GPUs is supported by [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver).
 
-[AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") proprietary driver supports VA-API via [XvBA](/index.php/AMD_Catalyst#Video_acceleration "AMD Catalyst").
-
 [AMDGPU PRO](/index.php/AMDGPU_PRO "AMDGPU PRO") proprietary driver is built on top of AMDGPU driver and supports both VA-API and VDPAU.
 
 ### Translation layers
@@ -170,6 +164,7 @@ To get VA-API support when device driver provides none:
 
 *   [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) – VDPAU backend for VA-API.
 *   [libva-vdpau-driver-chromium](https://aur.archlinux.org/packages/libva-vdpau-driver-chromium/) – VDPAU backend for VA-API, patched to work with Chromium.
+*   [XvBA](/index.php/AMD_Catalyst#Video_acceleration "AMD Catalyst") backend for VA-API is provided by proprietary [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") driver.
 
 To get VDPAU support when device driver provides none:
 

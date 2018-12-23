@@ -377,7 +377,7 @@ However, using the *xmodmap* program ([xorg-xmodmap](https://www.archlinux.org/p
 1\. Check the keycode that your numerical keypad (numpad) generates using `xev` program.
 
 *   Start the `xev` program
-*   Press your number pad keys and look for *... keycode xxx ...* in `xev`'s output. For example, numpad 1 in my keyboard is also "End" key, that have a '**keycode 87'**.
+*   Press your number pad keys and look for *... keycode xxx ...* in `xev`'s output. For example, numpad 1 in some keyboards is also "End" key, that have a '**keycode 87'**.
 
 2\. Create or modify your xmodmap file, usually `~/.Xmodmap`, with the content representing your keycode.
 

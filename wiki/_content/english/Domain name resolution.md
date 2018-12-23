@@ -138,6 +138,8 @@ In the table below, the columns have the following meaning:
 
 DNS is not encrypted, so you may want to use a [resolver](#Resolvers) that supports an encrypted protocol, like [DNS over TLS](https://en.wikipedia.org/wiki/DNS_over_TLS "wikipedia:DNS over TLS"), [DNS over HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTPS") or [DNSCrypt](https://en.wikipedia.org/wiki/DNSCrypt "wikipedia:DNSCrypt").
 
+Be aware client software, such as major web browsers, may also (start to) implement one of the protocols. While the encryption of queries may often be seen as a bonus, it also means the software sidetracks queries around the system resolver configuration.[[6]](https://hacks.mozilla.org/2018/05/a-cartoon-intro-to-dns-over-https/#trr-and-doh)
+
 Most DNS servers keep a log of IP addresses and sites visited on a more or less temporary basis. The data collected can be used to perform various statistical studies. Personally-identifying information have value and can also be rented or sold to third parties. [Alternative DNS services](/index.php/Alternative_DNS_services "Alternative DNS services") provides a list of popular services, check their privacy policy for information about how user data is handled.
 
 ## Lookup utilities

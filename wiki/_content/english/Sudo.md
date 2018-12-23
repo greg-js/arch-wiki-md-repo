@@ -213,7 +213,7 @@ Defaults:%wheel targetpw
 
 ### Disable root login
 
-Users may wish to disable the root login. Without root, attackers must first guess a user name configured as a sudoer as well as the user password. See for example [Ssh#Deny](/index.php/Ssh#Deny "Ssh").
+Users may wish to disable the root login. Without root, attackers must first guess a user name configured as a sudoer as well as the user password. See for example [OpenSSH#Deny](/index.php/OpenSSH#Deny "OpenSSH").
 
 **Warning:**
 

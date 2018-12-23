@@ -22,7 +22,6 @@
             *   [1.2.2.1 Console](#Console_3)
             *   [1.2.2.2 Graphical](#Graphical_3)
         *   [1.2.3 Recipe management](#Recipe_management)
-        *   [1.2.4 Education management engines](#Education_management_engines)
     *   [1.3 Accessibility](#Accessibility)
         *   [1.3.1 Speech synthesizers](#Speech_synthesizers)
         *   [1.3.2 Speech recognition](#Speech_recognition)
@@ -439,6 +438,14 @@ See also [Wikipedia:Comparison of project management software](https://en.wikipe
 
 See also [List of games#Education](/index.php/List_of_games#Education "List of games").
 
+*   **[Moodle](/index.php/Moodle "Moodle")** — Open-source software learning management system.
+
+	[https://moodle.org/](https://moodle.org/) || [moodle](https://aur.archlinux.org/packages/moodle/)
+
+*   **[OpenBoard](https://en.wikipedia.org/wiki/OpenBoard "wikipedia:OpenBoard")** — Interactive whiteboard software for schools and universities.
+
+	[http://openboard.ch/index.en.html](http://openboard.ch/index.en.html) || [openboard](https://aur.archlinux.org/packages/openboard/)
+
 #### Flashcards
 
 See also [Wikipedia:List of flashcard software](https://en.wikipedia.org/wiki/List_of_flashcard_software "wikipedia:List of flashcard software").
@@ -534,12 +541,6 @@ See also [Wikipedia:List of flashcard software](https://en.wikipedia.org/wiki/Li
 *   **KRecipes** — KDE application designed to make organizing your personal recipes collection fast and easy.
 
 	[https://www.kde.org/applications/utilities/krecipes/](https://www.kde.org/applications/utilities/krecipes/) || [krecipes](https://aur.archlinux.org/packages/krecipes/)
-
-#### Education management engines
-
-*   **[Moodle](/index.php/Moodle "Moodle")** — Moodle is a open-source software learning management system.
-
-	[https://moodle.org/](https://moodle.org/) || [moodle](https://aur.archlinux.org/packages/moodle/)
 
 ### Accessibility
 

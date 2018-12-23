@@ -26,7 +26,8 @@ El paquete makepkg lo provee el paquete [pacman](https://www.archlinux.org/packa
         *   [3.2.2 Construir desde archivos en memoria](#Construir_desde_archivos_en_memoria)
         *   [3.2.3 Usar caché de compilación](#Usar_caché_de_compilación)
     *   [3.3 Generar nueva suma de verificación](#Generar_nueva_suma_de_verificación)
-    *   [3.4 Uso de múltiples núcleos en la compresión](#Uso_de_múltiples_núcleos_en_la_compresión)
+    *   [3.4 Usar otros algoritmos de compresión](#Usar_otros_algoritmos_de_compresión)
+    *   [3.5 Uso de múltiples núcleos en la compresión](#Uso_de_múltiples_núcleos_en_la_compresión)
 
 ## Configuración
 
@@ -230,6 +231,24 @@ $ updpkgsums
 ```
 
 Las sumas de verificación pueden también obtenerse con, por ejemplo, `sha256sum` y añadirlo al array `sha256sums` a mano.
+
+### Usar otros algoritmos de compresión
+
+Para acelerar la empaquetación y la instalación, con la desventaja de tener paquetes más grandes, cambia `PKGEXT`. Por ejemplo, lo siguiente hace que el paquete se descomprima para una sola invocación:
+
+```
+$ PKGEXT='.pkg.tar' makepkg
+
+```
+
+Otro ejemplo, usar el algoritmo lzop, con el paquete necesario [lzop](https://www.archlinux.org/packages/?name=lzop):
+
+```
+$ PKGEXT='.pkg.tar.lzo' makepkg
+
+```
+
+Para hacer estas configuraciones permanentes, establece `PKGEXT` en `/etc/makepkg.conf`.
 
 ### Uso de múltiples núcleos en la compresión
 

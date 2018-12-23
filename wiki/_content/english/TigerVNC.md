@@ -299,7 +299,7 @@ $ vncserver -geometry 1440x900 -alwaysshared -dpi 96 **-localhost** :1
 
 ### On the client
 
-The VNC server has been setup on the remote machine to only accept local connections. Now, the client must open a secure shell with the remote machine (10.1.10.2 in this example) and create a tunnel from the client port 5901 to the remote server 5901 port. For more details on this feature, see [Secure Shell#Forwarding other ports](/index.php/Secure_Shell#Forwarding_other_ports "Secure Shell") and [ssh(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ssh.1).
+The VNC server has been setup on the remote machine to only accept local connections. Now, the client must open a secure shell with the remote machine (10.1.10.2 in this example) and create a tunnel from the client port 5901 to the remote server 5901 port. For more details on this feature, see [OpenSSH#Forwarding other ports](/index.php/OpenSSH#Forwarding_other_ports "OpenSSH") and [ssh(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ssh.1).
 
 ```
 $ ssh 10.1.10.2 -L 5901:localhost:5901

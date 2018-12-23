@@ -186,11 +186,11 @@ If the information you provided is correct you should now be connected to the pr
 
 #### Using iwd instead of wpa_supplicant
 
-ConnMan can use [iwd](https://www.archlinux.org/packages/?name=iwd) to connect to wireless networks. The package which is available in community already supports using [iwd](https://www.archlinux.org/packages/?name=iwd) for connecting to wireless networks. It is recommended to uninstall [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) (see below).
+ConnMan can use [iwd](https://www.archlinux.org/packages/?name=iwd) to connect to wireless networks. The package which is available in community already supports using [iwd](https://www.archlinux.org/packages/?name=iwd) for connecting to wireless networks. As [connman](https://www.archlinux.org/packages/?name=connman) will start [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) when it finds it, it is recommended to uninstall [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant).
 
 Currently the `-i`-option of [iwd](https://www.archlinux.org/packages/?name=iwd) seems to cause that the WiFi-interface gets hidden from [connman](https://www.archlinux.org/packages/?name=connman).
 
-Create the following two service files which should cause that [connman](https://www.archlinux.org/packages/?name=connman) uses [iwd](https://www.archlinux.org/packages/?name=iwd) to connect to wireless networks, regardless if [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) is installed (as [connman](https://www.archlinux.org/packages/?name=connman) will start [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) when it finds it, it's probably still better to uninstall it).
+Create the following two service files which should cause [connman](https://www.archlinux.org/packages/?name=connman) to use [iwd](https://www.archlinux.org/packages/?name=iwd) to connect to wireless networks, regardless if [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) is installed.
 
  `/etc/systemd/system/iwd.service` 
 ```

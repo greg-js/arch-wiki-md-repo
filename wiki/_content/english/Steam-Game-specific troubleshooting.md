@@ -768,7 +768,7 @@ Segfault is caused by [lib32-intel-tbb](https://aur.archlinux.org/packages/lib32
 
 ### Civilization VI
 
-Either run with steam-native or `env LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6'`. The latter will disable the Steam overlay.
+Either run with steam-native, launch option `LD_PRELOAD=/usr/lib/libfreetype.so.6 %command%`, or `env LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6'`. The latter will disable the Steam overlay.
 
 Follow [#OpenSSL 1.0 setup](#OpenSSL_1.0_setup).
 

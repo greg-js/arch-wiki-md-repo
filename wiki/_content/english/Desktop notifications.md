@@ -72,6 +72,10 @@ You can choose one of the following implementations:
 
 	[https://github.com/p12tic/awn-extras](https://github.com/p12tic/awn-extras) || [awn-extras-applets](https://aur.archlinux.org/packages/awn-extras-applets/)
 
+*   **Deadd Notification Center** — A notification-daemon with notification center inspired by Dunst.
+
+	[https://github.com/phuhl/linux_notification_center](https://github.com/phuhl/linux_notification_center) || [deadd-notification-center](https://aur.archlinux.org/packages/deadd-notification-center/)
+
 *   **[Dunst](/index.php/Dunst "Dunst")** — Minimalistic notification daemon for Linux designed to fit nicely into minimalistic windowmanagers like [dwm](/index.php/Dwm "Dwm").
 
 	[https://dunst-project.org/](https://dunst-project.org/) || [dunst](https://www.archlinux.org/packages/?name=dunst)

@@ -248,7 +248,7 @@ Its author recommends a few [suggested settings](https://github.com/krakjoe/apcu
 
 	[http://komodoide.com/](http://komodoide.com/) || [komodo-ide](https://aur.archlinux.org/packages/komodo-ide/), editor only: [komodo-edit](https://aur.archlinux.org/packages/komodo-edit/)
 
-*   **[NetBeans](/index.php/NetBeans "NetBeans")** — IDE for many languages including PHP. Includes features like debugging, refactoring, code templating, autocomplete, XML features, and web design and development functionalities.
+*   **[Netbeans](/index.php/Netbeans "Netbeans")** — IDE for many languages including PHP. Includes features like debugging, refactoring, code templating, autocomplete, XML features, and web design and development functionalities.
 
 	[https://netbeans.org/](https://netbeans.org/) || [netbeans](https://www.archlinux.org/packages/?name=netbeans)
 

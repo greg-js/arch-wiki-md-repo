@@ -183,7 +183,7 @@ EnableHiDPI=true
 
 ### Long load time before SDDM shows the greeter
 
-A low entropy pool can cause long SDDM load time. See [Random number generation](/index.php/Random_number_generation "Random number generation") for suggestions to increase the entropy pool.
+A low entropy pool can cause long SDDM load time ([Bug report](https://github.com/sddm/sddm/issues/1036)). See [Random number generation](/index.php/Random_number_generation "Random number generation") for suggestions to increase the entropy pool.
 
 ### Hangs after login
 

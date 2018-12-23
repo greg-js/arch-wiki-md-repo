@@ -27,7 +27,7 @@
 
 ### PHP
 
-Make sure the PHP [mysql](/index.php/PHP#MySQL.2FMariaDB "PHP") extension(s) have been enabled.
+Make sure the PHP [mysql](/index.php/PHP#MySQL/MariaDB "PHP") extension(s) have been enabled.
 
 Optionally you can enable `extension=bz2` and `extension=zip` for compression support.
 
@@ -58,7 +58,7 @@ Include conf/extra/phpmyadmin.conf
 
 ```
 
-**Note:** By default, everyone who can reach the Apache Web Server can see the phpMyAdmin login page under this URL. To change this, edit `/etc/httpd/conf/extra/phpmyadmin.conf` to your liking. For example, if you only want to be able to access it from the same machine, replace `Require all granted` by `Require local`. Beware that this will disallow connecting to PhpMyAdmin on a remote server. If you still want to access PhpMyAdmin on a remote server securely, you might want to consider setting up a [Secure Shell#Encrypted SOCKS tunnel](/index.php/Secure_Shell#Encrypted_SOCKS_tunnel "Secure Shell").
+**Note:** By default, everyone who can reach the Apache Web Server can see the phpMyAdmin login page under this URL. To change this, edit `/etc/httpd/conf/extra/phpmyadmin.conf` to your liking. For example, if you only want to be able to access it from the same machine, replace `Require all granted` by `Require local`. Beware that this will disallow connecting to PhpMyAdmin on a remote server. If you still want to access PhpMyAdmin on a remote server securely, you might want to consider setting up a [OpenSSH#Encrypted SOCKS tunnel](/index.php/OpenSSH#Encrypted_SOCKS_tunnel "OpenSSH").
 
 After making changes to the Apache configuration file, [restart](/index.php/Restart "Restart") `httpd.service`.
 

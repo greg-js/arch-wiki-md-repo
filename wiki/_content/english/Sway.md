@@ -231,19 +231,15 @@ read lcd < /tmp/lcd
 
 ### dmenu replacement
 
-As dmenu runs on XWayland, the applicions tends to become unresponsive if the focus is moved elsewhere, requiring a sway restart, to fix the broken, always visible and unresponsive dmenu.
+Since dmenu runs on XWayland, it tends to become unresponsive and remain in the foreground if the focus is moved elsewhere and `pkill dmenu` is required to fix the problem.
 
-Rofi is a nice option, yet, to automatically focus rofi as a menu, it needs to be run from urxvt or other non-wayland-native virtual terminal. Invoking it as menu in sway will not focus on the menu (you have to hover the mouse on rofi, for rofi to grab your input).
-
-One of the best workarounds can be found [here](https://github.com/swaywm/sway/issues/1367#issuecomment-332910152).
+An alternative is to use Rofi, which now works out of the box on sway. Another alternative is bemenu, which is a native Wayland dmenu replacement.
 
 ## Known issues
 
 ### Using i3-dmenu-desktop
 
-i3-dmenu-desktop is not usable directly from sway, but a patch is available [here](https://github.com/i3/i3/pull/2265/files). Unfortunately, the patch cannot be merged because it breaks when used from i3 in some corner cases. See [[1]](https://github.com/SirCmpwn/sway/issues/521) for more information.
-
-You can still apply the patch manually through installing [sway-dmenu-desktop](https://aur.archlinux.org/packages/sway-dmenu-desktop/). This creates a new binary called `sway-dmenu-desktop` to be using within sway.
+i3-dmenu-desktop is not usable directly from sway, but a patch is available [here](https://github.com/i3/i3/pull/2265/files) and it can be applied as specified by the sway wiki [here](https://github.com/swaywm/sway/wiki#i3-dmenu-desktop-does-not-work). Unfortunately, the patch cannot be merged because it breaks when used from i3 in some corner cases. See [[1]](https://github.com/SirCmpwn/sway/issues/521) for more information.
 
 An alternative is to use [j4-dmenu-desktop](https://aur.archlinux.org/packages/j4-dmenu-desktop/), which is advertised as faster than i3-dmenu-desktop.
 

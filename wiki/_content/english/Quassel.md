@@ -13,9 +13,9 @@ Related articles
 *   [1 Structure](#Structure)
 *   [2 Installation](#Installation)
     *   [2.1 Basic usage](#Basic_usage)
-    *   [2.2 Setting up multiple clients to connect through the same core](#Setting_up_multiple_clients_to_connect_through_the_same_core)
-*   [3 Adding users](#Adding_users)
-*   [4 See also](#See_also)
+    *   [2.2 Setting up a bouncer (Quassel core) to be permanently online](#Setting_up_a_bouncer_(Quassel_core)_to_be_permanently_online)
+    *   [2.3 Setting up multiple clients to connect through the same core](#Setting_up_multiple_clients_to_connect_through_the_same_core)
+*   [3 See also](#See_also)
 
 ## Structure
 
@@ -27,9 +27,9 @@ Quassel is split up into two parts by a server-client model; a client and a core
 
 Just install the [quassel-monolithic](https://www.archlinux.org/packages/?name=quassel-monolithic) package if you only want to use Quassel from a single computer.
 
-### Setting up multiple clients to connect through the same core
+### Setting up a bouncer (Quassel core) to be permanently online
 
-Install [quassel-core](https://www.archlinux.org/packages/?name=quassel-core) and [quassel-client](https://www.archlinux.org/packages/?name=quassel-client).
+Install [quassel-core](https://www.archlinux.org/packages/?name=quassel-core) on the server and [quassel-client](https://www.archlinux.org/packages/?name=quassel-client) (or [quassel-client-small](https://www.archlinux.org/packages/?name=quassel-client-small)) on your desktop. If the server is headless, you could install [quassel-core-small](https://aur.archlinux.org/packages/quassel-core-small/) instead to avoid unnecessary dependencies like X11 libraries.
 
 Generate a certificate (this will be valid for 1 years, after which it needs to be reissued, just change the -days to another value if you so desire):
 
@@ -70,7 +70,7 @@ See also [PostgreSQL instruction on Quassel wiki](https://bugs.quassel-irc.org/p
 
 Once it all works, you can [enable](/index.php/Enable "Enable") `quassel.service` to start automatically on system boot.
 
-## Adding users
+### Setting up multiple clients to connect through the same core
 
 If you want additional users to be able to use the same core, run this command to create them:
 

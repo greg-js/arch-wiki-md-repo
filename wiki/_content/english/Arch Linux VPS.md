@@ -40,7 +40,7 @@ This article discusses the use of Arch Linux on Virtual Private Servers, and inc
 | [4smart.cz](http://4smart.cz/) | 2013.08 | OpenVZ | Prague, CZ | (Czech language site only) when updating system make sure you use [tredaelli-systemd] in pacman.conf (see [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories") |
 | [affinity.net.nz](https://www.affinity.net.nz/) | 2013.08.01 | KVM | Auckland, New Zealand (NZ) | IRC channel is #affinity on ircs.kiwicon.org |
 | [Atlantic.Net](https://www.atlantic.net/) | 2016.03.01 | KVM | NYC/SF/Toronto/Dallas/Orlando, US & Canada | 100% SSD 1-click Arch Linux, ready in 30 seconds. It is also easy to update Arch to the current version because the pre-provisioned Arch image is relatively current. |
-| [BuyVM](https://buyvm.net/) | 2013.07.01 | KVM | LA, Buffalo NY | Must chose a different OS at sign up. Once accessible, choose to mount the latest Arch ISO and reboot to install manually. |
+| [BuyVM](https://buyvm.net/) | 2017.08.01 | KVM | Las Vegas, NV; Buffalo, NY; Luxembourg | Must chose a different OS at sign up. Once accessible, choose to mount the latest Arch ISO and reboot to install manually. |
 | [Coinshost](https://coinshost.com/en/vps) | 2015.04 | Xen | Zurich, Switzerland | Bitcoin and other cryptocurrencies accepted. |
 | [Cherry Host](https://cherry.host) | Latest | KVM | Santee, US-CA | Must submit a support ticket to get Arch installed. |
 | [Contabo](https://contabo.com) | Latest | KVM | German | Only place to get 500 GB for 7€ - Decent speed. Other cheaps plans add snapshots, which is useful if you VPS runs a rolling release distro. |

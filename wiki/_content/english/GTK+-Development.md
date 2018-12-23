@@ -6,11 +6,11 @@
     *   [1.3 BASIC](#BASIC)
     *   [1.4 Boo](#Boo)
     *   [1.5 C](#C)
-    *   [1.6 C++](#C.2B.2B)
-    *   [1.7 C#](#C.23)
+    *   [1.6 C++](#C++)
+    *   [1.7 C#](#C#)
     *   [1.8 Cobra](#Cobra)
     *   [1.9 D](#D)
-    *   [1.10 F#](#F.23)
+    *   [1.10 F#](#F#)
     *   [1.11 Fortran](#Fortran)
     *   [1.12 Genie](#Genie)
     *   [1.13 Go](#Go)
@@ -25,12 +25,14 @@
     *   [1.22 Nemerle](#Nemerle)
     *   [1.23 Pascal](#Pascal)
     *   [1.24 Perl](#Perl)
-    *   [1.25 Python](#Python)
-    *   [1.26 Ruby](#Ruby)
-    *   [1.27 Rust](#Rust)
-    *   [1.28 Scala](#Scala)
-    *   [1.29 Vala](#Vala)
-    *   [1.30 Visual Basic .NET](#Visual_Basic_.NET)
+    *   [1.25 Prolog](#Prolog)
+    *   [1.26 Python](#Python)
+    *   [1.27 Ruby](#Ruby)
+    *   [1.28 Rust](#Rust)
+    *   [1.29 Scala](#Scala)
+    *   [1.30 Vala](#Vala)
+    *   [1.31 Visual Basic .NET](#Visual_Basic_.NET)
+*   [2 See also](#See_also)
 
 ## Write a simple message dialog app
 
@@ -185,8 +187,8 @@ class HelloWorld
 ### D
 
 *   Dependency: [gtkd](https://www.archlinux.org/packages/?name=gtkd)
-*   Makedependency: [dmd](https://www.archlinux.org/packages/?name=dmd)
-*   Build with: `dmd hello_world $(pkg-config --cflags --libs gtkd-2)`
+*   Makedependency: [ldc](https://www.archlinux.org/packages/?name=ldc)
+*   Build with: `ldc hello_world $(pkg-config --cflags --libs gtkd-3)`
 
  `hello_world.d` 
 ```
@@ -464,6 +466,28 @@ $hello->set ('secondary-text' => 'This is an example dialog.');
 $hello->run;
 ```
 
+### Prolog
+
+*   Dependency: [plgi](https://aur.archlinux.org/packages/plgi/)
+*   Run with: `swipl hello_world.pl`
+
+ `hello_world.pl` 
+```
+:- use_module(library(plgi)).
+:- plgi_use_namespace('Gtk').
+
+main :-
+	g_object_new('GtkMessageDialog',
+	             ['message-type'='GTK_MESSAGE_INFO',
+	              'buttons'='GTK_BUTTONS_OK',
+	              'text'='Hello world!',
+	              'secondary-text'='This is an example dialog.'],
+	             Dialog),
+	gtk_dialog_run(Dialog, _),
+	halt.
+:- main.
+```
+
 ### Python
 
 *   Dependencies: [gtk3](https://www.archlinux.org/packages/?name=gtk3), [python-gobject](https://www.archlinux.org/packages/?name=python-gobject) (or [python2-gobject](https://www.archlinux.org/packages/?name=python2-gobject) for Python 2)
@@ -606,3 +630,10 @@ Public Class Hello
 	End Sub
 End Class
 ```
+
+## See also
+
+*   [GNOME Developer Center](https://developer.gnome.org/)
+*   [GTK+ 3 Reference Manual](https://developer.gnome.org/gtk3/stable/)
+*   [GTK+ 2.0 Tutorial](https://developer.gnome.org/gtk-tutorial/stable/)
+*   [gtkmm 3 Tutorial](https://developer.gnome.org/gtkmm-tutorial/stable/)

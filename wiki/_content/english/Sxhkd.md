@@ -49,27 +49,26 @@ What is actually executed is `SHELL -c COMMAND`, which means you can use environ
 
 Create systemd service file for the user in question
 
- `%HOME/.config/systemd/user/sxhkd.service` 
+ `$HOME/.config/systemd/user/sxhkd.service` 
 ```
 [Unit]
- Description=Simple X Hotkey Daemon
- Documentation=man:sxhkd(1)
- BindsTo=xorg.service
- After=xorg.service
+Description=Simple X Hotkey Daemon
+Documentation=man:sxhkd(1)
+BindsTo=xorg.service
+After=xorg.service
 
- [Service]
- ExecStart=/usr/bin/sxhkd
- ExecReload=/usr/bin/kill -SIGUSR1 $MAINPID
+[Service]
+ExecStart=/usr/bin/sxhkd
+ExecReload=/usr/bin/kill -SIGUSR1 $MAINPID
 
- [Install]
- WantedBy=graphical.target
+[Install]
+WantedBy=graphical.target
 ```
 
 Enable and start the service
 
 ```
-# systemctl --user enable sxhkd.service
-# systemctl --user start sxhkd.service
+$ systemctl --user enable --now sxhkd
 
 ```
 
@@ -81,22 +80,22 @@ After configuring it, you may wish to setup sxhkd to [autostart](/index.php/Auto
 
 ## Example
 
-Edit `$XDG_CONFIG_HOME/sxhkd/sxhkdrc`
-
+ `$XDG_CONFIG_HOME/sxhkd/sxhkdrc` 
 ```
 # On mouse button 1 press Alt_R+F1
 button1
- xte "keydown Alt_R" "keydown F1" "keyup Alt_R" "keyup F1"
+    xte "keydown Alt_R" "keydown F1" "keyup Alt_R" "keyup F1"
+
 # On mouse button 2 pause 3 seconds then press Alt_R+F2
 button2
- xte "sleep 3" "keydown Alt_R" "keydown F2" "keyup Alt_R" "keyup F2"
+    xte "sleep 3" "keydown Alt_R" "keydown F2" "keyup Alt_R" "keyup F2"
 
 ```
 
-Restart user's sxhkd service
+Reload user's sxhkd service
 
 ```
-# systemctl --user restart sxhkd.service
+$ systemctl --user reload sxhkd
 
 ```
 

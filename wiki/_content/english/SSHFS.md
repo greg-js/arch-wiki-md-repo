@@ -3,10 +3,9 @@ Related articles
 *   [SCP and SFTP](/index.php/SCP_and_SFTP "SCP and SFTP")
 *   [SFTP chroot](/index.php/SFTP_chroot "SFTP chroot")
 *   [Pure-FTPd](/index.php/Pure-FTPd "Pure-FTPd")
-*   [SSH](/index.php/SSH "SSH")
 *   [sftpman](/index.php/Sftpman "Sftpman")
 
-[SSHFS](https://github.com/libfuse/sshfs) is a FUSE-based filesystem client for mounting remote directories over a [SSH](/index.php/SSH "SSH") connection.
+[SSHFS](https://github.com/libfuse/sshfs) is a FUSE-based filesystem client for mounting remote directories over a [Secure Shell](/index.php/Secure_Shell "Secure Shell") connection.
 
 ## Contents
 
@@ -54,7 +53,7 @@ $ sshfs myuser@mycomputer:/remote/path /local/path -C -p 9876
 
 Here `-p 9876` specifies the port number and `-C` enables compression. For more options see the [#Options](#Options) section.
 
-When not specified, the remote path defaults to the remote user home directory. Default user names and options can be predefined on a host-by-host basis in `~/.ssh/config` to simplify the *sshfs* usage. For more information see [Secure Shell#Client usage](/index.php/Secure_Shell#Client_usage "Secure Shell").
+When not specified, the remote path defaults to the remote user home directory. Default user names and options can be predefined on a host-by-host basis in `~/.ssh/config` to simplify the *sshfs* usage. For more information see [OpenSSH#Client usage](/index.php/OpenSSH#Client_usage "OpenSSH").
 
 SSH will ask for the password, if needed. If you do not want to type in the password multiple times a day, see [SSH keys](/index.php/SSH_keys "SSH keys").
 
@@ -186,7 +185,7 @@ Summary of the relevant options:
 
 ### Checklist
 
-Read the [SSH Checklist](/index.php/Secure_Shell#Checklist "Secure Shell") Wiki entry first. Further issues to check are:
+Read [OpenSSH#Checklist](/index.php/OpenSSH#Checklist "OpenSSH") first. Further issues to check are:
 
 1\. Is your SSH login sending additional information from server's `/etc/issue` file e.g.? This might confuse SSHFS. You should temporarily deactivate server's `/etc/issue` file:
 

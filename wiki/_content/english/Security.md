@@ -331,7 +331,7 @@ This means only users who are already able to run privileged commands may login 
 
 #### Denying SSH login
 
-Even if you do not wish to deny root login for local users, it is always good practice to [deny root login via SSH](/index.php/Ssh#Deny "Ssh"). The purpose of this is to add an additional layer of security before a user can completely compromise your system remotely.
+Even if you do not wish to deny root login for local users, it is always good practice to [deny root login via SSH](/index.php/OpenSSH#Deny "OpenSSH"). The purpose of this is to add an additional layer of security before a user can completely compromise your system remotely.
 
 ## Mandatory access control
 
@@ -553,19 +553,19 @@ Kernel parameters which affect networking can be set using [Sysctl](/index.php/S
 
 ### SSH
 
-Avoid using [Secure Shell](/index.php/Secure_Shell "Secure Shell") without [requiring SSH keys](/index.php/Secure_Shell#Force_public_key_authentication "Secure Shell"). This prevents [brute-force attacks](https://en.wikipedia.org/wiki/Brute-force_attack "wikipedia:Brute-force attack"). Alternatively [Fail2ban](/index.php/Fail2ban "Fail2ban") or [Sshguard](/index.php/Sshguard "Sshguard") offer lesser forms of protection by monitoring logs and writing [iptables rules](/index.php/Iptables "Iptables") but open up the potential for a denial of service, since an attacker can spoof packets as if they came from the administrator after identifying their address.
+To mitigate [brute-force attacks](https://en.wikipedia.org/wiki/Brute-force_attack "wikipedia:Brute-force attack") it is recommended to enforce key-based authentication. For OpenSSH, see [OpenSSH#Force public key authentication](/index.php/OpenSSH#Force_public_key_authentication "OpenSSH"). Alternatively [Fail2ban](/index.php/Fail2ban "Fail2ban") or [Sshguard](/index.php/Sshguard "Sshguard") offer lesser forms of protection by monitoring logs and writing [iptables rules](/index.php/Iptables "Iptables") but open up the potential for a denial of service, since an attacker can spoof packets as if they came from the administrator after identifying their address.
 
 You may want to harden authentication even more by using two-factor authentication. [Google Authenticator](/index.php/Google_Authenticator "Google Authenticator") provides a two-step authentication procedure using one-time passcodes (OTP).
 
-[Denying root login](/index.php/Secure_Shell#Deny "Secure Shell") is good practice, both for tracing intrusions and adding an additional layer of security before root access.
+Denying root login is also a good practice, both for tracing intrusions and adding an additional layer of security before root access. For OpenSSH, see [OpenSSH#Deny](/index.php/OpenSSH#Deny "OpenSSH").
 
 ### DNS
 
-[Domain Name System](https://en.wikipedia.org/wiki/DNS "wikipedia:DNS") queries are, by default on most systems, sent and received unencrypted and without checking for authentication of receipt from qualified servers. This could then allow [man-in-the-middle attacks](https://en.wikipedia.org/wiki/Man-in-the-middle_attack "wikipedia:Man-in-the-middle attack"), whereby an attacker intercepts your DNS queries and modifies the responses to deliver you an IP address leading to a [phishing](https://en.wikipedia.org/wiki/Phishing "wikipedia:Phishing") page to collect your valuable information. You nor your browser would be aware since the DNS query was believed to be legitimate.
+[DNS](/index.php/DNS "DNS") queries are, by default on most systems, sent and received unencrypted and without checking for authentication of receipt from qualified servers. This could then allow [man-in-the-middle attacks](https://en.wikipedia.org/wiki/Man-in-the-middle_attack "wikipedia:Man-in-the-middle attack"), whereby an attacker intercepts your DNS queries and modifies the responses to deliver you an IP address leading to a [phishing](https://en.wikipedia.org/wiki/Phishing "wikipedia:Phishing") page to collect your valuable information. Neither you nor the browser/other software would be aware since the DNS protocol takes the legitimacy of query results for granted.
 
-[DNSSEC](/index.php/DNSSEC "DNSSEC") is a set of standards in place that would require DNS servers to provide clients with origin authentication of DNS data, authenticated denial of existence, and data integrity. It, however, is not yet widely used. With DNSSEC enabled, an attacker could not make modifications to your DNS queries, but would still be able to read them.
+[DNSSEC](/index.php/DNSSEC "DNSSEC") is a set of standards in place that requires DNS servers to provide clients with origin authentication of DNS data, authenticated denial of existence, and data integrity. It, however, is not yet widely used. With DNSSEC enabled, an attacker can not make modifications to your DNS queries and the returning results, but would still be able to read them.
 
-[DNSCrypt](/index.php/DNSCrypt "DNSCrypt") uses cryptography to secure your communications with DNS resolvers.
+[DNSCrypt](/index.php/DNSCrypt "DNSCrypt"), as well as later alternative protocol developments *DNS over TLS* and *DNS over HTTPS*, use cryptography to secure communications with DNS resolvers. Usually only one protocol is employed on a system level. See [Domain name resolution#Resolvers](/index.php/Domain_name_resolution#Resolvers "Domain name resolution") for supporting software.
 
 If you have a domain name, set a [Sender Policy Framework](/index.php/Sender_Policy_Framework "Sender Policy Framework") policy to combat email spoofing.
 

@@ -93,15 +93,15 @@ $ captstatusui -P LBP6310 -e
 
 Unfortunately, a local installation of *captstatusui* will not detect CAPT printers on a remote CUPS server.
 
-Remote print monitoring can be achieved, however, using [SSH](/index.php/SSH "SSH") and [X11 forwarding](/index.php/Secure_Shell#X11_forwarding "Secure Shell").
+Remote print monitoring can be achieved, however, using [SSH](/index.php/SSH "SSH") and [X11 forwarding](/index.php/X11_forwarding "X11 forwarding").
 
-**Warning:** X11 forwarding has important security implications, especially when using the `-Y` switch (*ForwardX11Trusted*, required for the CAPT status monitor to work via X11 Forwarding). See [X11 forwarding](/index.php/Secure_Shell#X11_forwarding "Secure Shell") for further information.
+**Warning:** X11 forwarding has important security implications, especially when using the `-Y` switch (*ForwardX11Trusted*, required for the CAPT status monitor to work via X11 Forwarding). See [X11 forwarding](/index.php/X11_forwarding "X11 forwarding") for further information.
 
 **Note:** There are many ways to set up X11 forwarding. For security reasons, this example is based on public key authentication, a dedicated SSH user account, and SSH running on the CUPS server. Adapt these instructions to your specific configuration.
 
 #### Client configuration
 
-*   create a new [SSH key](/index.php/SSH_keys "SSH keys") `~/.ssh/capt` and [copy the public key to the remote server](/index.php/SSH_keys#Copying_the_public_key_to_the_remote_server "SSH keys")
+*   create a new [SSH key](/index.php/SSH_key "SSH key") `~/.ssh/capt` and [copy the public key to the remote server](/index.php/SSH_keys#Copying_the_public_key_to_the_remote_server "SSH keys")
 *   create a file `captstatusui.sh` with the following content, make it executable and place it in your [autostart](/index.php/Autostart "Autostart") folder:
 
 ```

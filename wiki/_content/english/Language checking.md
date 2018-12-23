@@ -35,7 +35,7 @@ This article covers [spell checking](https://en.wikipedia.org/wiki/Spell_checker
 
 ### Enchant
 
-[Enchant](https://en.wikipedia.org/wiki/Enchant_(software) is a wrapper library for generic spell checking, developed as part of [Abiword](/index.php/Abiword "Abiword"), supporting all above spell checkers apart from Ispell.
+[Enchant](https://en.wikipedia.org/wiki/Enchant_(software) is a wrapper library for generic spell checking, developed as part of [AbiWord](/index.php/AbiWord "AbiWord"), supporting all above spell checkers apart from Ispell.
 
 Enchant is available as the [enchant](https://www.archlinux.org/packages/?name=enchant) package. For its usage and ordering file, see [enchant-2(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/enchant-2.1).
 
@@ -57,7 +57,7 @@ Enchant is used by many applications through the following [GTK](/index.php/GTK 
 *   [Thunderbird#Spell checking](/index.php/Thunderbird#Spell_checking "Thunderbird")
 *   [LibreOffice#Spell checking](/index.php/LibreOffice#Spell_checking "LibreOffice")
 
-[Abiword](/index.php/Abiword "Abiword") and [Gedit](/index.php/Gedit "Gedit") use Enchant.
+[AbiWord](/index.php/AbiWord "AbiWord") and [Gedit](/index.php/Gedit "Gedit") use Enchant.
 
 ## Grammar checkers
 
@@ -73,4 +73,4 @@ Enchant is used by many applications through the following [GTK](/index.php/GTK 
 
 [Firefox](/index.php/Firefox "Firefox"), [Thunderbird](/index.php/Thunderbird "Thunderbird"), [Chromium](/index.php/Chromium "Chromium") and [LibreOffice](/index.php/LibreOffice "LibreOffice") all support grammar checking only through extensions. For LibreOffice, see [LibreOffice#Grammar checking](/index.php/LibreOffice#Grammar_checking "LibreOffice").
 
-[Abiword](/index.php/Abiword "Abiword") has a built-in grammar checker, see [Abiword#Grammar checking](/index.php/Abiword#Grammar_checking "Abiword").
+[AbiWord](/index.php/AbiWord "AbiWord") has a built-in grammar checker, see [AbiWord#Grammar checking](/index.php/AbiWord#Grammar_checking "AbiWord").

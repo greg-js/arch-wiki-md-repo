@@ -93,7 +93,7 @@ The size of our community led to the creation of multiple IRC channels. To get a
 
 ## 中文频道
 
-中文频道的入口和规则请参阅 [Code_of_conduct_(简体中文)](/index.php/Code_of_conduct_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Code of conduct (简体中文)")
+中文频道的入口和规则请参阅 [Code of conduct (简体中文)](/index.php/Code_of_conduct_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Code of conduct (简体中文)")
 
 ### 中文社区频道的机器人
 
@@ -142,7 +142,7 @@ Lisa 的命令主要分为 3 类
 
 1.  [直接与 Lisa 对话](#直接对话命令)(需要用 ':' 分隔内容与 Lisa 的名字) 例如: `Lisa: 北京天气`
 2.  [以 '!' 为前缀的命令](#带有前缀的命令) 例如: `!aqi 北京`
-3.  [直接输入命令](#直接触发的命令) 例如: `割一下`
+3.  [直接输入命令](#直接触发的命令)  例如: `割一下`
 
 *   如果对话不是命令列表中的内容，那么会触发 Lisa 的对话功能
 *   查询天气 `Lisa: XX天气` XX 为中文城市名称，例如 `Lisa: 北京天气`

@@ -2,7 +2,7 @@ Related articles
 
 *   [Improving performance/Boot process](/index.php/Improving_performance/Boot_process "Improving performance/Boot process")
 *   [Pacman/Tips and tricks#Performance](/index.php/Pacman/Tips_and_tricks#Performance "Pacman/Tips and tricks")
-*   [SSH#Speeding up SSH](/index.php/SSH#Speeding_up_SSH "SSH")
+*   [OpenSSH#Speeding up SSH](/index.php/OpenSSH#Speeding_up_SSH "OpenSSH")
 *   [Openoffice#Speed up OpenOffice](/index.php/Openoffice#Speed_up_OpenOffice "Openoffice")
 *   [Laptop](/index.php/Laptop "Laptop")
 *   [Preload](/index.php/Preload "Preload")
@@ -197,23 +197,24 @@ The [Budget Fair Queuing *(BFQ)*](https://algo.ing.unimo.it/people/paolo/disk_sc
 
 While some of the early algorithms have now been decommissioned, the official Linux kernel supports a number of I/O schedulers which can be split into two categories:
 
-*   The **single-queue schedulers** are available by default with the kernel:
-    *   [NOOP](https://en.wikipedia.org/wiki/NOOP_scheduler "w:NOOP scheduler") is the simplest scheduler, it inserts all incoming I/O requests into a simple FIFO queue and implements request merging. In this algorithm, there is no re-ordering of the request based on the sector number. Therefore it can be used if the ordering is dealt with at another layer, at the device level for example, or if it does not matter, for SSDs for instance.
-    *   *Deadline*
-    *   *CFQ*
-*   The **multi-queue scheduler** mode can be activated at boot time as described in [#Changing I/O scheduler](#Changing_I/O_scheduler). This [Multi-Queue Block I/O Queuing Mechanism *(blk-mq)*](https://www.thomas-krenn.com/en/wiki/Linux_Multi-Queue_Block_IO_Queueing_Mechanism_(blk-mq)) maps I/O queries to multiple queues, the tasks are distributed across threads and therefore CPU cores. Within this framework the following schedulers are available:
+*   The **multi-queue schedulers** are available by default with the kernel. The [Multi-Queue Block I/O Queuing Mechanism *(blk-mq)*](https://www.thomas-krenn.com/en/wiki/Linux_Multi-Queue_Block_IO_Queueing_Mechanism_(blk-mq)) maps I/O queries to multiple queues, the tasks are distributed across threads and therefore CPU cores. Within this framework the following schedulers are available:
     *   *None*, no queuing algorithm is applied.
     *   *mq-deadline* is the adaptation of the deadline scheduler to multi-threading.
     *   *Kyber*
     *   *BFQ*
 
-**Warning:** The multi-queue scheduler framework and its related algorithms are under active development, the state of some issues can be seen in the [bfq forum](https://groups.google.com/forum/#!forum/bfq-iosched) and [FS#57496](https://bugs.archlinux.org/task/57496). In particular, users reported USB drives to stop working - [[1]](https://bbs.archlinux.org/viewtopic.php?id=234070)[[2]](https://bbs.archlinux.org/viewtopic.php?id=234363)[[3]](https://bbs.archlinux.org/viewtopic.php?id=236291).
+**Note:** The multi-queue scheduler framework and its related algorithms are still under development, the state of some issues can be seen in the [bfq forum](https://groups.google.com/forum/#!forum/bfq-iosched) and [FS#57496](https://bugs.archlinux.org/task/57496). In particular, users reported USB drives to stop working - [[1]](https://bbs.archlinux.org/viewtopic.php?id=234070)[[2]](https://bbs.archlinux.org/viewtopic.php?id=234363) and [[3]](https://bbs.archlinux.org/viewtopic.php?id=236291).
+
+*   The **single-queue schedulers** are legacy schedulers, they can be activated at boot time as described in [#Changing I/O scheduler](#Changing_I/O_scheduler):
+    *   [NOOP](https://en.wikipedia.org/wiki/NOOP_scheduler "w:NOOP scheduler") is the simplest scheduler, it inserts all incoming I/O requests into a simple FIFO queue and implements request merging. In this algorithm, there is no re-ordering of the request based on the sector number. Therefore it can be used if the ordering is dealt with at another layer, at the device level for example, or if it does not matter, for SSDs for instance.
+    *   *Deadline*
+    *   *CFQ*
 
 **Note:** The best choice of scheduler depends on both the device and the exact nature of the workload. Also, the throughput in MB/s is not the only measure of performance: deadline or fairness deteriorate the overall throughput but improve system responsiveness.
 
 #### Changing I/O scheduler
 
-**Note:** The block multi-queue *(blk-mq)* mode must be enabled at boot time to be able to access the latest *BFQ* and *Kyber* schedulers. This is done by adding `scsi_mod.use_blk_mq=1` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). The single-queue schedulers are no longer available once in this mode.
+**Note:** The block multi-queue *(blk-mq)* mode must be disabled at boot time to be able to access the legacy *CFQ* and *Deadline* schedulers. This is done by adding `scsi_mod.use_blk_mq=0` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). The multi-queue schedulers are no longer available once in this mode.
 
 To see the available schedulers for a device and the active one, in brackets:
 
@@ -235,7 +236,7 @@ To change the active I/O scheduler to *bfq* for device *sda*, use:
 
 ```
 
-SSDs can handle many IOPS and tend to perform best with simple algorithm like *noop* or *deadline* while *BFQ* is well adapted to HDDs. The process to change I/O scheduler, depending on whether the disk is rotating or not can be automated and persist across reboots. For example the [udev](/index.php/Udev "Udev") rule below sets the scheduler to *mq-deadline* for non-rotational drives, it covers the naming schemes for SATA SSD, eMMC and NVMe SSD and to *bfq* for SATA HDD.
+SSDs can handle many IOPS and tend to perform best with simple algorithm like *noop* or *mq-deadline* while *BFQ* is well adapted to HDDs. The process to change I/O scheduler, depending on whether the disk is rotating or not can be automated and persist across reboots. For example the [udev](/index.php/Udev "Udev") rule below sets the scheduler to *mq-deadline* for non-rotational drives, it covers the naming schemes for SATA SSD, eMMC and NVMe SSD and to *bfq* for SATA HDD.
 
  `/etc/udev/rules.d/60-ioschedulers.rules` 
 ```

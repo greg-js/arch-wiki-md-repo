@@ -3,25 +3,25 @@ Poskytuje seznam odlehčeného softwaru pro ty, kteří si přejí používat pr
 ## Contents
 
 *   [1 Multimedia](#Multimedia)
-    *   [1.1 Audio přehrávače](#Audio_p.C5.99ehr.C3.A1va.C4.8De)
-    *   [1.2 Grafické editory](#Grafick.C3.A9_editory)
-    *   [1.3 Prohlížeče obrázků](#Prohl.C3.AD.C5.BEe.C4.8De_obr.C3.A1zk.C5.AF)
-    *   [1.4 Přehrávače videa](#P.C5.99ehr.C3.A1va.C4.8De_videa)
-*   [2 Kancelářské programy](#Kancel.C3.A1.C5.99sk.C3.A9_programy)
-    *   [2.1 Kalendáře](#Kalend.C3.A1.C5.99e)
-    *   [2.2 PDF nástroje](#PDF_n.C3.A1stroje)
-    *   [2.3 Textové editory](#Textov.C3.A9_editory)
-    *   [2.4 Textové procesory](#Textov.C3.A9_procesory)
-*   [3 Systém](#Syst.C3.A9m)
-    *   [3.1 Správci souborů](#Spr.C3.A1vci_soubor.C5.AF)
-    *   [3.2 Grafické kompresní nástroje](#Grafick.C3.A9_kompresn.C3.AD_n.C3.A1stroje)
-    *   [3.3 CD/DVD vypalovací programy](#CD.2FDVD_vypalovac.C3.AD_programy)
-    *   [3.4 Přihlašovací manažery](#P.C5.99ihla.C5.A1ovac.C3.AD_mana.C5.BEery)
-    *   [3.5 Monitorování](#Monitorov.C3.A1n.C3.AD)
+    *   [1.1 Audio přehrávače](#Audio_přehrávače)
+    *   [1.2 Grafické editory](#Grafické_editory)
+    *   [1.3 Prohlížeče obrázků](#Prohlížeče_obrázků)
+    *   [1.4 Přehrávače videa](#Přehrávače_videa)
+*   [2 Kancelářské programy](#Kancelářské_programy)
+    *   [2.1 Kalendáře](#Kalendáře)
+    *   [2.2 PDF nástroje](#PDF_nástroje)
+    *   [2.3 Textové editory](#Textové_editory)
+    *   [2.4 Textové procesory](#Textové_procesory)
+*   [3 Systém](#Systém)
+    *   [3.1 Správci souborů](#Správci_souborů)
+    *   [3.2 Grafické kompresní nástroje](#Grafické_kompresní_nástroje)
+    *   [3.3 CD/DVD vypalovací programy](#CD/DVD_vypalovací_programy)
+    *   [3.4 Přihlašovací manažery](#Přihlašovací_manažery)
+    *   [3.5 Monitorování](#Monitorování)
     *   [3.6 Panely](#Panely)
-    *   [3.7 Terminály](#Termin.C3.A1ly)
+    *   [3.7 Terminály](#Terminály)
     *   [3.8 Traye](#Traye)
-    *   [3.9 Správci oken](#Spr.C3.A1vci_oken)
+    *   [3.9 Správci oken](#Správci_oken)
 *   [4 Odkazy](#Odkazy)
 
 ## Multimedia
@@ -130,7 +130,7 @@ Vi, [Vim](/index.php/Vim "Vim"), gVim, klasický vi textový editor.
 
 ### Textové procesory
 
-[Abiword](http://www.abisource.com/) je plně vybavený textový procesor ([HOWTO](/index.php/Abiword "Abiword")), v AUR existuje ještě odlehčenější verze [Abiword-light](https://aur.archlinux.org/packages.php?ID=25601/).
+[Abiword](http://www.abisource.com/) je plně vybavený textový procesor ([HOWTO](/index.php/AbiWord "AbiWord")), v AUR existuje ještě odlehčenější verze [Abiword-light](https://aur.archlinux.org/packages.php?ID=25601/).
 
 [txt2tags](http://txt2tags.sourceforge.net) je primitivní, na KISSu založený, odlehčený, člověkem čitelný značkovací jazyk, který produkuje čistě zformátovaný obsah ve srozumitelných textových souborech
 

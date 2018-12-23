@@ -9,11 +9,9 @@ Related articles
 *   [SFTP chroot](/index.php/SFTP_chroot "SFTP chroot")
 *   [SCP and SFTP](/index.php/SCP_and_SFTP "SCP and SFTP")
 
-[OpenSSH](https://en.wikipedia.org/wiki/OpenSSH "wikipedia:OpenSSH") (OpenBSD Secure Shell) is a set of computer programs providing encrypted communication sessions over a computer network using the [Secure Shell](https://en.wikipedia.org/wiki/Secure_Shell "wikipedia:Secure Shell") (SSH) protocol. It was created as an open source alternative to the proprietary Secure Shell software suite offered by SSH Communications Security. OpenSSH is developed as part of the OpenBSD project, which is led by Theo de Raadt.
+[OpenSSH](https://en.wikipedia.org/wiki/OpenSSH "wikipedia:OpenSSH") (OpenBSD Secure Shell) is a set of computer programs providing encrypted communication sessions over a computer network using the [Secure Shell](/index.php/Secure_Shell "Secure Shell") (SSH) protocol. It was created as an open source alternative to the proprietary Secure Shell software suite offered by SSH Communications Security. OpenSSH is developed as part of the OpenBSD project, which is led by Theo de Raadt.
 
 OpenSSH is occasionally confused with the similarly-named OpenSSL; however, the projects have different purposes and are developed by different teams, the similar name is drawn only from similar goals.
-
-An SSH server, by default, listens on the standard TCP port 22\. An SSH client program is typically used for establishing connections to an *sshd* daemon accepting remote connections. Both are commonly present on most modern operating systems, including macOS, GNU/Linux, Solaris and OpenVMS. Proprietary, freeware and open source versions of various levels of complexity and completeness exist.
 
 ## Contents
 
@@ -34,49 +32,46 @@ An SSH server, by default, listens on the standard TCP port 22\. An SSH client p
             *   [3.3.4.1 Deny](#Deny)
             *   [3.3.4.2 Restrict](#Restrict)
         *   [3.3.5 Securing the authorized_keys file](#Securing_the_authorized_keys_file)
-*   [4 Other SSH clients and servers](#Other_SSH_clients_and_servers)
-    *   [4.1 Dropbear](#Dropbear)
-    *   [4.2 Mosh](#Mosh)
-*   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Encrypted SOCKS tunnel](#Encrypted_SOCKS_tunnel)
-        *   [5.1.1 Step 1: start the connection](#Step_1:_start_the_connection)
-        *   [5.1.2 Step 2: configure your browser (or other programs)](#Step_2:_configure_your_browser_(or_other_programs))
-    *   [5.2 X11 forwarding](#X11_forwarding)
-        *   [5.2.1 Setup](#Setup)
-        *   [5.2.2 Usage](#Usage)
-    *   [5.3 Forwarding other ports](#Forwarding_other_ports)
-    *   [5.4 Jump hosts](#Jump_hosts)
-    *   [5.5 Reverse SSH through a relay](#Reverse_SSH_through_a_relay)
-    *   [5.6 Multiplexing](#Multiplexing)
-    *   [5.7 Speeding up SSH](#Speeding_up_SSH)
-    *   [5.8 Mounting a remote filesystem with SSHFS](#Mounting_a_remote_filesystem_with_SSHFS)
-    *   [5.9 Keep alive](#Keep_alive)
-    *   [5.10 Automatically restart SSH tunnels with systemd](#Automatically_restart_SSH_tunnels_with_systemd)
-    *   [5.11 Autossh - automatically restarts SSH sessions and tunnels](#Autossh_-_automatically_restarts_SSH_sessions_and_tunnels)
-        *   [5.11.1 Run autossh automatically at boot via systemd](#Run_autossh_automatically_at_boot_via_systemd)
-    *   [5.12 Alternative service should SSH daemon fail](#Alternative_service_should_SSH_daemon_fail)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Checklist](#Checklist)
-    *   [6.2 Connection refused or timeout problem](#Connection_refused_or_timeout_problem)
-        *   [6.2.1 Port forwarding](#Port_forwarding)
-        *   [6.2.2 Is SSH running and listening?](#Is_SSH_running_and_listening?)
-        *   [6.2.3 Are there firewall rules blocking the connection?](#Are_there_firewall_rules_blocking_the_connection?)
-        *   [6.2.4 Is the traffic even getting to your computer?](#Is_the_traffic_even_getting_to_your_computer?)
-        *   [6.2.5 Your ISP or a third party blocking default port?](#Your_ISP_or_a_third_party_blocking_default_port?)
-            *   [6.2.5.1 Diagnosis](#Diagnosis)
-            *   [6.2.5.2 Possible solution](#Possible_solution)
-        *   [6.2.6 Read from socket failed: connection reset by peer](#Read_from_socket_failed:_connection_reset_by_peer)
-    *   [6.3 "[your shell]: No such file or directory" / ssh_exchange_identification problem](#"[your_shell]:_No_such_file_or_directory"_/_ssh_exchange_identification_problem)
-    *   [6.4 "Terminal unknown" or "Error opening terminal" error message](#"Terminal_unknown"_or_"Error_opening_terminal"_error_message)
-        *   [6.4.1 TERM hack](#TERM_hack)
-    *   [6.5 Connection closed by x.x.x.x [preauth]](#Connection_closed_by_x.x.x.x_[preauth])
-    *   [6.6 id_dsa refused by OpenSSH 7.0](#id_dsa_refused_by_OpenSSH_7.0)
-    *   [6.7 No matching key exchange method found by OpenSSH 7.0](#No_matching_key_exchange_method_found_by_OpenSSH_7.0)
-    *   [6.8 tmux/screen session killed when disconnecting from SSH](#tmux/screen_session_killed_when_disconnecting_from_SSH)
-    *   [6.9 SSH session stops responding](#SSH_session_stops_responding)
-    *   [6.10 Broken pipe](#Broken_pipe)
-    *   [6.11 Slow daemon startup after reboot](#Slow_daemon_startup_after_reboot)
-*   [7 See also](#See_also)
+*   [4 Tips and tricks](#Tips_and_tricks)
+    *   [4.1 Encrypted SOCKS tunnel](#Encrypted_SOCKS_tunnel)
+        *   [4.1.1 Step 1: start the connection](#Step_1:_start_the_connection)
+        *   [4.1.2 Step 2: configure your browser (or other programs)](#Step_2:_configure_your_browser_(or_other_programs))
+    *   [4.2 X11 forwarding](#X11_forwarding)
+        *   [4.2.1 Setup](#Setup)
+        *   [4.2.2 Usage](#Usage)
+    *   [4.3 Forwarding other ports](#Forwarding_other_ports)
+    *   [4.4 Jump hosts](#Jump_hosts)
+    *   [4.5 Reverse SSH through a relay](#Reverse_SSH_through_a_relay)
+    *   [4.6 Multiplexing](#Multiplexing)
+    *   [4.7 Speeding up SSH](#Speeding_up_SSH)
+    *   [4.8 Mounting a remote filesystem with SSHFS](#Mounting_a_remote_filesystem_with_SSHFS)
+    *   [4.9 Keep alive](#Keep_alive)
+    *   [4.10 Automatically restart SSH tunnels with systemd](#Automatically_restart_SSH_tunnels_with_systemd)
+    *   [4.11 Autossh - automatically restarts SSH sessions and tunnels](#Autossh_-_automatically_restarts_SSH_sessions_and_tunnels)
+        *   [4.11.1 Run autossh automatically at boot via systemd](#Run_autossh_automatically_at_boot_via_systemd)
+    *   [4.12 Alternative service should SSH daemon fail](#Alternative_service_should_SSH_daemon_fail)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Checklist](#Checklist)
+    *   [5.2 Connection refused or timeout problem](#Connection_refused_or_timeout_problem)
+        *   [5.2.1 Port forwarding](#Port_forwarding)
+        *   [5.2.2 Is SSH running and listening?](#Is_SSH_running_and_listening?)
+        *   [5.2.3 Are there firewall rules blocking the connection?](#Are_there_firewall_rules_blocking_the_connection?)
+        *   [5.2.4 Is the traffic even getting to your computer?](#Is_the_traffic_even_getting_to_your_computer?)
+        *   [5.2.5 Your ISP or a third party blocking default port?](#Your_ISP_or_a_third_party_blocking_default_port?)
+            *   [5.2.5.1 Diagnosis](#Diagnosis)
+            *   [5.2.5.2 Possible solution](#Possible_solution)
+        *   [5.2.6 Read from socket failed: connection reset by peer](#Read_from_socket_failed:_connection_reset_by_peer)
+    *   [5.3 "[your shell]: No such file or directory" / ssh_exchange_identification problem](#"[your_shell]:_No_such_file_or_directory"_/_ssh_exchange_identification_problem)
+    *   [5.4 "Terminal unknown" or "Error opening terminal" error message](#"Terminal_unknown"_or_"Error_opening_terminal"_error_message)
+        *   [5.4.1 TERM hack](#TERM_hack)
+    *   [5.5 Connection closed by x.x.x.x [preauth]](#Connection_closed_by_x.x.x.x_[preauth])
+    *   [5.6 id_dsa refused by OpenSSH 7.0](#id_dsa_refused_by_OpenSSH_7.0)
+    *   [5.7 No matching key exchange method found by OpenSSH 7.0](#No_matching_key_exchange_method_found_by_OpenSSH_7.0)
+    *   [5.8 tmux/screen session killed when disconnecting from SSH](#tmux/screen_session_killed_when_disconnecting_from_SSH)
+    *   [5.9 SSH session stops responding](#SSH_session_stops_responding)
+    *   [5.10 Broken pipe](#Broken_pipe)
+    *   [5.11 Slow daemon startup after reboot](#Slow_daemon_startup_after_reboot)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -369,28 +364,6 @@ $ chmod 400 ~/.ssh/authorized_keys
 To keep the user from simply changing the permissions back, [set the immutable bit](/index.php/File_permissions_and_attributes#chattr_and_lsattr "File permissions and attributes") on the `authorized_keys` file. After that the user could rename the `~/.ssh` directory to something else and create a new `~/.ssh` directory and `authorized_keys` file. To prevent this, set the immutable bit on the `~/.ssh` directory too.
 
 **Note:** If you find yourself needing to add a new key, you will first have to remove the immutable bit from `authorized_keys` and make it writable. Follow the steps above to secure it again.
-
-## Other SSH clients and servers
-
-Apart from OpenSSH, there are many SSH [clients](https://en.wikipedia.org/wiki/Comparison_of_SSH_clients "wikipedia:Comparison of SSH clients") and [servers](https://en.wikipedia.org/wiki/Comparison_of_SSH_servers "wikipedia:Comparison of SSH servers") available.
-
-### Dropbear
-
-[Dropbear](https://en.wikipedia.org/wiki/Dropbear_(software) is a SSH-2 client and server. [dropbear](https://www.archlinux.org/packages/?name=dropbear) is available in the [official repositories](/index.php/Official_repositories "Official repositories").
-
-The command-line ssh client is named dbclient.
-
-### Mosh
-
-From the Mosh [website](http://mosh.mit.edu/):
-
-	Remote terminal application that allows roaming, supports intermittent connectivity, and provides intelligent local echo and line editing of user keystrokes. Mosh is a replacement for SSH. It is more robust and responsive, especially over slow connections such as Wi-Fi, cellular, and long-distance.
-
-[Install](/index.php/Install "Install") the [mosh](https://www.archlinux.org/packages/?name=mosh) package, or [mosh-git](https://aur.archlinux.org/packages/mosh-git/) for the latest revision.
-
-Mosh has an undocumented command line option `--predict=experimental` which produces more aggressive echoing of local keystrokes. Users interested in low-latency visual confirmation of keyboard input may prefer this prediction mode.
-
-**Note:** Mosh by design does not let you access session history, consider installing a terminal multiplexer such as [tmux](/index.php/Tmux "Tmux") or [GNU Screen](/index.php/GNU_Screen "GNU Screen").
 
 ## Tips and tricks
 

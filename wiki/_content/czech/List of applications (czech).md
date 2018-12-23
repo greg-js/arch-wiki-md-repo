@@ -493,7 +493,7 @@ Pro správu vašich e-mailů je užitečný Thunderbird. Pokud používáte GNOM
 
 ## Office
 
-OpenOffice.org je kompletní kancelářský balík podobný k Microsoft Office. [Abiword](/index.php/Abiword "Abiword") je dobrý malý alternativní textový procesor a Gnumeric náhražka Excelu pro GNOME desktop. Koffice je kompletní kancelářský balík pro KDE desktop. GIMP (nebo GIMPShop) je rastrový grafický program podobný k Adobe Photoshop, zatímco Inkscape je vektorový grafický program jako Adobe Illustrator. A samozřejmě Arch přichází s plnou sadou LaTeX programů: spoustu let byl populární tetex a stále funguje, jeho následce [Texlive](/index.php/Texlive "Texlive") je dostupný z repozitáře [AUR](/index.php/ArchLinux_User-community_Repository_(AUR)_(%C4%8Cesky) "ArchLinux User-community Repository (AUR) (Česky)").
+OpenOffice.org je kompletní kancelářský balík podobný k Microsoft Office. [AbiWord](/index.php/AbiWord "AbiWord") je dobrý malý alternativní textový procesor a Gnumeric náhražka Excelu pro GNOME desktop. Koffice je kompletní kancelářský balík pro KDE desktop. GIMP (nebo GIMPShop) je rastrový grafický program podobný k Adobe Photoshop, zatímco Inkscape je vektorový grafický program jako Adobe Illustrator. A samozřejmě Arch přichází s plnou sadou LaTeX programů: spoustu let byl populární tetex a stále funguje, jeho následce [Texlive](/index.php/Texlive "Texlive") je dostupný z repozitáře [AUR](/index.php/ArchLinux_User-community_Repository_(AUR)_(%C4%8Cesky) "ArchLinux User-community Repository (AUR) (Česky)").
 
 ## Video přehřávač
 

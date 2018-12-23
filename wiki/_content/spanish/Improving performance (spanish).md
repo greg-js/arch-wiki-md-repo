@@ -3,6 +3,7 @@ Artículos relacionados
 *   [ccache](/index.php/Ccache "Ccache")
 *   [Improve pacman performance](/index.php/Improve_pacman_performance "Improve pacman performance")
 *   [SSH#Speeding up SSH](/index.php/SSH#Speeding_up_SSH "SSH")
+
 *   [Openoffice#Speed up OpenOffice](/index.php/Openoffice#Speed_up_OpenOffice "Openoffice")
 *   [Laptop](/index.php/Laptop "Laptop")
 *   [Swap#Swappiness](/index.php/Swap#Swappiness "Swap")

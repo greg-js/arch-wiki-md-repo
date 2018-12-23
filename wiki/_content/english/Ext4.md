@@ -175,14 +175,14 @@ These instructions were adapted from [Kernel documentation](http://ext4.wiki.ker
 
 In the following steps `/dev/sdxX` denotes the path to the partition to be converted, such as `/dev/sda1`.
 
-1.  **[BACK-UP!](/index.php/Backup_programs "Backup programs")** Back-up all data on any ext3 partitions that are to be converted to ext4\. A useful package, especially for root partitions, is [Clonezilla](http://clonezilla.org).
+1.  [Back up](/index.php/Backup_programs "Backup programs") all data on any ext3 partitions that are to be converted to ext4\. A useful package, especially for root partitions, is [clonezilla](https://www.archlinux.org/packages/?name=clonezilla).
 2.  Edit `/etc/fstab` and change the 'type' from ext3 to ext4 for any partitions that are to be converted to ext4.
 3.  Boot the live medium (if necessary). The conversion process with [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) must be done when the drive is not mounted. If converting a root partition, the simplest way to achieve this is to boot from some other live medium.
-4.  Ensure the partition is **NOT** mounted
+4.  Ensure the partition is *not* mounted
 5.  If you want to convert a ext2 partition, the first conversion step is to add a [journal](/index.php/File_systems#Journaling "File systems") by running `tune2fs -j /dev/sdxX` as root; making it a ext3 partition.
 6.  Run `tune2fs -O extent,uninit_bg,dir_index /dev/sdxX` as root. This command converts the ext3 filesystem to ext4 (irreversibly).
 7.  Run `fsck -f /dev/sdxX` as root.
-    *   The user **must *fsck*** the filesystem, or it **will be unreadable**! This *fsck* run is needed to return the filesystem to a consistent state. It **will** find checksum errors in the group descriptors - this **is** expected. The `-f` option asks *fsck* to force checking even if the file system seems clean. The `-p` option may be used on top to 'automatically repair' (otherwise, the user will be asked for input for each error).
+    *   This step is necessary, otherwise the filesystem **will be unreadable**. This *fsck* run is needed to return the filesystem to a consistent state. It will find checksum errors in the group descriptors - this is expected. The `-f` option asks *fsck* to force checking even if the file system seems clean. The `-p` option may be used on top to "automatically repair" (otherwise, the user will be asked for input for each error).
 8.  Recommended: mount the partition and run `e4defrag -c -v /dev/sdxX` as root.
     *   Even though the filesystem is now converted to ext4, all files that have been written before the conversion do not yet take advantage of the extent option of ext4, which will improve large file performance and reduce fragmentation and filesystem check time. In order to fully take advantage of ext4, all files would have to be rewritten on disk. Use *e4defrag* to take care of this problem.
 9.  Reboot

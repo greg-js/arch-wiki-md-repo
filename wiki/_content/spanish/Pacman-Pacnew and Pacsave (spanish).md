@@ -1,111 +1,119 @@
+**Estado de la traducción**
+Este artículo es una traducción de [Pacman/Pacnew and Pacsave](/index.php/Pacman/Pacnew_and_Pacsave "Pacman/Pacnew and Pacsave"), revisada por última vez el **2018-12-21**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Pacman/Pacnew_and_Pacsave&diff=0&oldid=523844) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
+Cuando *pacman* elimina un paquete que tiene un archivo de configuración, normalmente crea una copia de respaldo de ese archivo de configuración y agrega *.pacsave* al nombre del archivo. Del mismo modo, cuando *pacman* actualiza un paquete que incluye un nuevo archivo de configuración creado por el mantenedor que difiere del archivo que se instala, guarda un archivo *.pacnew* con la nueva configuración. *pacman* avisa de estas operacoines cuando se escriben dichos archivos.
+
 ## Contents
 
-*   [1 Introducción](#Introducci.C3.B3n)
-*   [2 Cuando Archivos .pac* Son Creados](#Cuando_Archivos_.pac.2A_Son_Creados)
-    *   [2.1 .pacnew](#.pacnew)
-    *   [2.2 .pacsave](#.pacsave)
-    *   [2.3 .pacorig](#.pacorig)
-*   [3 Manejando Archivos .pac*](#Manejando_Archivos_.pac.2A)
-*   [4 Vínculos Externos](#V.C3.ADnculos_Externos)
+*   [1 Por qué se crean estos archivos](#Por_qué_se_crean_estos_archivos)
+*   [2 Copias de seguridad de archivos de paquetes](#Copias_de_seguridad_de_archivos_de_paquetes)
+*   [3 Explicación de los tipos](#Explicación_de_los_tipos)
+    *   [3.1 .pacnew](#.pacnew)
+    *   [3.2 .pacsave](#.pacsave)
+*   [4 Localizar archivos .pac*](#Localizar_archivos_.pac*)
+*   [5 Gestionar archivos .pacnew](#Gestionar_archivos_.pacnew)
+    *   [5.1 pacdiff](#pacdiff)
+    *   [5.2 Utilidades de terceros](#Utilidades_de_terceros)
 
-## Introducción
+## Por qué se crean estos archivos
 
-Durante la actualización o remoción de paquetes, `pacman` a veces advierte que ciertos archivos — usualmente configuraciones en `/etc` — están siendo instalados con una extensión `.pacnew` o resguradados con una extensión `.pacsave`.
-
-Un archivo `**.pacnew**` es creado durante la actualización de un paquete (`pacman -U` o `pacman -Su`) para evitar sobreescribir un archivo que ya existe y que fue previamente modificado por el usuario. Cuando esto pasa, un mensaje como el siguiente aparecerá en la salida de `pacman`:
+Se puede crear un archivo *.pacnew* durante la actualización de un paquete (con `pacman -Syu`, `pacman -Su` o `pacman -U`) para evitar sobrescribir un archivo que ya existe y fue modificado previamente por el usuario. Cuando esto sucede, aparecerá un mensaje como el siguiente en la salida de *pacman*:
 
 ```
 advertencia: /etc/pam.d/usermod instalado como /etc/pam.d/usermod.pacnew
 
 ```
 
-Un archivo `**.pacsave**` es creado durante la eliminación de un paquete (`pacman -R`, el cual es también llamado automáticamente por `pacman -U` and `pacman -Su`) cuando la base de datos de `pacman` indica que cierto archivo perteneciente al paquete debe ser renombrado con una extensión `.pacsave` si fue previamente modificado por el usuario. Cuando esto pasa, `pacman` escribe un mensaje como el siguiente:
+Se puede crear un archivo *.pacsave* durante la eliminación de un paquete (con `pacman -R`), o mediante una actualización del paquete (el paquete debe eliminarse primero). Cuando la base de datos de pacman tiene registro de que se debe hacer una copia de seguridad de un determinado archivo que pertenece a un paquete, se creará un archivo *.pacsave*. Cuando esto sucede, pacman envía un mensaje como el siguiente:
 
 ```
 advertencia: /etc/pam.d/usermod guardado como /etc/pam.d/usermod.pacsave
 
 ```
 
-Estos archivos requieren intervención manual del usuario y es una buena práctica manejarlos inmediatamente después de cada invocación de `pacman`. Si se deja sin manejar ellos acumularán y recargarán el sistema de archivos, y el software instalado puede volverse mal configurado, causando comportamiento indeseado que puede ser dificil de resolver.
+Estos archivos requieren la intervención manual del usuario y es una buena práctica manejarlos inmediatamente después de cada actualización o eliminación de un paquete. Si no se manejan, las configuraciones incorrectas pueden dar como resultado un mal funcionamiento del software, o que el mismo no se ejecute al completo.
 
-## Cuando Archivos .pac* Son Creados
+## Copias de seguridad de archivos de paquetes
 
-### .pacnew
-
-Por cada archivo en un paquete que se actualiza, `pacman` compara tres [sumas MD5](https://es.wikipedia.org/wiki/Md5) generadas del contenido del archivo: una suma por la versión instalada por el paquete, una para la versión actual en el sistema de archivos, y una para la versión en el nuevo paquete. Si la versión del archivo actualmente en el sistema de archivos fue modificada de la versión originalmente instalada del paquete, `pacman` no puede saber como mezclar esos cambios con la versión nueva del archivo. Por lo tanto, en vez de sobreescribir el archivo modificado cuando actualiza, `pacman` guarda la nueva versión con una extensión `.pacnew` y deja la versión modificada intacta.
-
-Yendo a más detalles, el resultado de la comparación de tres vías de sumas MD5 resulta en lo siguiente:
-
-	original = *X*, actual = *X*, nuevo = *X* 
-
-	Todos las tres versiones del archivo tienen contenido idéntico, así que sobreescribir no es un problema. Sobreescribir la versión actual con la nueva versión y no notificar al usuario. (Aunque el contenido del archivo es el mismo, sobreescribir actualizará la información del sistema del archivo acerca del archivo instalado, su fecha de modificación y acceso, y también se asegura que cualquier cambio de permisos de archivo sea aplicada.)
-
-	original = *X*, actual = *X*, nuevo = *Y* 
-
-	El contenido de la versión actual es idéntivo al original, pero la nueva versión es diferente. Ya que el usuario no ha modificado la versión actual y la nueva versión puede contener mejoras o corregir errores, sobreescribe la versión actual con la nueva versión y no notifica al usuario. Este es la única auto-mezcla de nuevos cambios que `pacman` puede realizar.
-
-	original = *X*, actual = *Y*, nuevo = *X* 
-
-	El paquete original y el nuevo contienen exactamente la misma versión del archivom pero la versión actual en el sistema de archivos ha sido modificada. Deja la versión actual en su lugar y descarta la nueva versión sin notificar al usuario.
-
-	original = *X*, actual = *Y*, nuevo = *Y* 
-
-	La nueva versión es idéntica a la actual. Sobreescribe la versión actual con la nueva versión y no notifica al usuario. (Aunque el contenido de los archivos es el mismo, esta sobreescritura actualizará la información del sistema de archivo acerca de la fecha de instalación, modificación y acceso del archivo, así como se asegura que cualquier cambio de permisos sea aplicado.)
-
-	original = *X*, actual = *Y*, nuevo = *Z* 
-
-	Todas las versiones son diferentes, así que deja la versión actual en lugar, instala la versión nueva con una extensión `.pacnew` y advierte al suario acerca de la nueva versión. El usuario se espera que manualmente mezcle cualquier cambio necesario de la nueva versión a la actual.
-
-### .pacsave
-
-Un archivo `PKGBUILD` de un paquete especifica que archivos deben ser guardar una copia de seguridad cuando el paquete es actualizado o removido.Por ejemplo, el `PKGBUILD` del `pulseaudio` contiene la siguiente línea:
+El archivo `PKGBUILD` de un paquete especifica qué archivos deben conservarse o respaldarse cuando el paquete se actualiza o se elimina. Por ejemplo, `PKGBUILD` para `pulseaudio` contiene la siguiente línea:
 
 ```
 backup=('etc/pulse/client.conf' 'etc/pulse/daemon.conf' 'etc/pulse/default.pa')
 
 ```
 
-Si el usuario ha modificado uno de los archivos especificados en `backup` entonces ese archivo será renombrado a la extensión `.pacsave` y permanecerá en el sistema de archivos después de que el resto del paquete sea actualizado o removido.
+Para evitar que cualquier paquete sobrescriba un archivo determinado, consulte [Pacman (Español)#Evitar la instalación de archivos en el sistema](/index.php/Pacman_(Espa%C3%B1ol)#Evitar_la_instalación_de_archivos_en_el_sistema "Pacman (Español)").
 
-**Note:** El uso de la opción `-n` con `pacman -R` resultará en una completa eliminación de *todos* los archivos en el paquete especificado, así que ningún archivo `.pacsave` será creado.
+## Explicación de los tipos
 
-### .pacorig
+### .pacnew
 
-Cuando un archivo (usualmente una configuración ubicada en `/etc`) que es encontrado durante la instalación o actualización de un paquete no pertenece a ningún paquete instalado, pero es listado en `backup` (vea la sección `.pacsave` arriba) por el paquete en la operación actual, será guardado con una extensión `**.pacorig**` y reemplazado con la versión del archivo del paquete. Usualmente eso ocurre cuando un archivo de configuración ha sido movido de un paquete a otro. Si tal archivo no es listado en `backup`, `pacman` abortará con un error de conflicto de archivos.
+Para cada uno de las [#Copias de seguridad de archivos de paquetes](#Copias_de_seguridad_de_archivos_de_paquetes) que se están actualizando, pacman compara tres [md5sums](https://en.wikipedia.org/wiki/es:md5sum "wikipedia:es:md5sum") generados a partir del contenido del archivo: una suma para la versión instalada originalmente por el paquete, otra para la versión actualmente en el sistema de archivos y otra última para la versión en el nuevo paquete. Si la versión del archivo que se encuentra actualmente en el sistema de archivos se modificó con respecto a la versión instalada originalmente por el paquete, pacman no puede saber cómo combinar esos cambios con la nueva versión del archivo. Por lo tanto, en lugar de sobrescribir el archivo modificado al actualizar, pacman guarda la nueva versión con una extensión *.pacnew* y deja la versión modificada sin tocar.
 
-**Note:** Ya que los archivos `.pacorig` tienden a ser creados para circunstancias especiales no hay una forma universal para manejarlos. Puede ser útil consultar las [Noticias de Arch](https://www.archlinux.org/news/) por instrucciones de manejo si es un caso conocido.
+Para más detalles, la comparación de la suma MD5 a tres bandas dará uno de los siguientes resultados:
 
-## Manejando Archivos .pac*
+	original = *X*, actual = *X*, nuevo = *X* 
 
-Siempre pon atención a la salida de `pacman`. Cuando actualizando o removiendo un gran número de paquetes, mensajes importantes pueden pasar de largo muy rápidamente o más allá del almacenamiento de la terminal; afortunadamente existen otras formas de descubrir si una operación de `pacman` creó algún archivo `.pac*`.
+	las tres versiones del archivo tienen un contenido idéntico, por lo que la sobrescritura no es un problema. Sobrescribe la versión actual con la nueva versión y no lo notifica al usuario (aunque el contenido del archivo es el mismo, esta sobrescritura actualizará la información del sistema de archivos con respecto a los archivos instalados, modificados y tiempos de accesos, y asegurará que cualquier cambio en los permisos del archivo se aplicarán).
 
-Si el usuario o un trabajo `cron` ha ejecutado `updatedb` para actualizar la base de datos de `locate` ya que `pacman` fue ejecutado recientemente, los archivos pueden ser encontrados con:
+	original = *X*, actual = *X*, nuevo = *Y* 
 
-```
-locate .pac
+	el contenido de la versión actual es idéntico al del original, pero la nueva versión es diferente. Dado que el usuario no ha modificado la versión actual y la nueva versión puede contener mejoras o correcciones de errores, sobrescribe la versión actual con la nueva versión y no lo notifica al usuario. Esta es la única fusión automática de cambios nuevos que es capaz de realizar pacman.
 
-```
+	original = *X*, actual = *Y*, nuevo = *X* 
 
-Un método más lento (a menos que el usuario manualmente ejecute `updatedb` antes de `locate`) que siempre devuelve resultados actualizados a la fecha es el comando `find`:
+	el paquete original y el nuevo paquete contienen exactamente la misma versión del archivo, pero la versión actualmente en el sistema de archivos ha sido modificada. Deja la versión actual en su lugar y descarta la nueva versión sin notificarla al usuario.
 
-```
-find / -name "*.pac*"
+	original = *X*, actual = *Y*, nuevo = *Y* 
 
-```
+	la nueva versión es idéntica a la versión actual. Sobrescribe la versión actual con la nueva versión y no lo notifica al usuario (aunque el contenido del archivo es el mismo, esta sobrescritura actualizará la información del sistema de archivos con respecto a los archivos instalados, modificados y tiempos de accesos, y asegurará que cualquier cambio en los permisos del archivo se aplicarán).
 
-Buscando el historial de `pacman` con `egrep` puede ser tan rápido como el método `locate` anterior y siempre mostrará resultados actualizados a la fecha; sin embargo el historial no mantiene rastro de que archivos están actualmente en el sistema de archivos o cuales ya fueron removidos:
+	original = *X*, actual = *Y*, nuevo = *Z* 
 
-```
-egrep "pac(new|orig|save)" /var/log/pacman.log
+	las tres versiones son diferentes, así que deja la versión actual en su lugar, instala la nueva versión con una extensión *.pacnew* y advierte al usuario sobre la nueva versión. Se espera que el usuario combine manualmente los cambios necesarios de la nueva versión con la versión en vigor.
 
-```
+### .pacsave
 
-Una vez que todos los archivos `.pac*` existentes han sido localizados, el usuario puede manejarlos manualmente usando herramientas de mezcla — como `vimdiff` (parte de [`vim`](/index.php/Vim "Vim")), `ediff` (parte de [`emacs`](/index.php/Emacs "Emacs")), `meld` (GTK+ GUI), o `kompare` (Qt GUI) — y borrando los archivos `.pac*` que el usuario esté seguro que no necesita más. Unas pocas utilidades de terceros proveen varios niveles de acceso de automatización de estas tareas están disponibles en el repositorio `[comunitario](/index.php/Community_repository "Community repository")` y en [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") (Arch no provee utilidades oficiales para el manejo de archivos `.pac*`):
+Si el usuario ha modificado uno de los archivos especificados en `backup`, ese archivo cambiará de nombre con una extensión *.pacsave* y permanecerá en el sistema de archivos después de que se elimine el resto del paquete.
 
-*   [Dotpac](/index.php/Dotpac "Dotpac") — Programa básico e interactivo, con una interfaz de texto basado en "ncurses" y una útil guía. Sin características de mezcla o automezcla.
-*   `pacdiff` — Programa de cliente mínimo y no documentado. Parte del paquete de [pacman](https://www.archlinux.org/packages/?name=pacman) en el repositorio `comunitario`.
-*   [pacdiffviewer](https://aur.archlinux.org/packages.php?ID=5863) — Programa de cliente interactivo lleno de características con capacidad de auto-mezcla. Parte del paquete [`yaourt`](/index.php/Yaourt "Yaourt").
+**Nota:** el uso de la opción `-n` con `pacman -R` dará como resultado la eliminación completa de *todos* los archivos del paquete especificado, por lo tanto, no se creará ningún archivo *.pacsave*.
 
-## Vínculos Externos
+## Localizar archivos .pac*
 
-*   Foros de Arch Linux: [Dealing With .pacnew Files](https://bbs.archlinux.org/viewtopic.php?id=53532)
+pacman no trata los archivos *.pacnew* automáticamente: deben mantenerse por el usuario. Algunas herramientas se presentan en la siguiente sección. Para hacer esto manualmente, primero necesitará localizarlos. Al actualizar o eliminar una gran cantidad de paquetes, se pueden perder los archivos *.pac** actualizados. Para descubrir si se ha instalado algún archivo *.pac**, use una de la órdenes siguientes:
+
+*   Para buscar dentro de `/etc` donde se almacenan la mayoría de las configuraciones globales: `$ find /etc -regextye posix-extended -regex ".+\.pac(new|save)" 2> /dev/null` o para buscar en todo el disco, sustituya `/etc` por `/` en la orden anterior
+*   Si está instalado, [mlocate (Español)](/index.php/Mlocate_(Espa%C3%B1ol) "Mlocate (Español)") también se puede usar. Primero vuelva a indexar la base de datos: `# updatedb` Luego ejecute: `$ locate --existing --regex "\.pac(new|save)$"` 
+*   Utilice el registro de pacman para encontrarlos: `$ grep --extended-regexp "pac(new|save)" /var/log/pacman.log` Tenga en cuenta que el registro no pierde de vista los archivos que se encuentran actualmente en el sistema de archivos ni los que ya se han eliminado; la orden anterior mostrará una lista de todos los archivos *.pac** que hayan existido en su sistema. Para obtener solo los 10 archivos *.pac** más recientes, canalice el resultado con `tail`.
+
+## Gestionar archivos .pacnew
+
+### pacdiff
+
+[pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) proporciona una sencilla herramienta, *pacdiff*, para gestionar archivos pacnew/pacsave. Buscará todos los archivos *.pacnew* y *.pacsave* y solicitará cualquier acción sobre ellos. Utiliza [vimdiff](/index.php/Vim#Merging_files "Vim") de forma predeterminada, pero puede especificar una herramienta diferente con `DIFFPROG=*your_editor* pacdiff`. Vea [List of applications/Utilities#Comparison, diff, merge](/index.php/List_of_applications/Utilities#Comparison,_diff,_merge "List of applications/Utilities") para otras herramientas de comparación comunes.
+
+### Utilidades de terceros
+
+En [AUR (Español)](/index.php/AUR_(Espa%C3%B1ol) "AUR (Español)") dispone de algunas utilidades de terceros que proporcionan varios niveles de automatización para estas tareas.
+
+Algunas de dichas herramientas son las siguientes:
+
+*   **dotpac** — Script interactivo básico con una interfaz de texto basada en ncurses y un tutorial útil. No proporciona características de fusión o fusión automática.
+
+	[https://github.com/AladW/dotpac](https://github.com/AladW/dotpac) || [dotpac](https://aur.archlinux.org/packages/dotpac/)
+
+*   **etc-update** — Puerto de Arch de la utilidad *etc-update* de Gentoo, que proporciona un CLI simple para ver, combinar y editar interactivamente los cambios. Los cambios triviales (como los comentarios) pueden ser mezclados automáticamente.
+
+	[https://wiki.gentoo.org/wiki/Handbook:Parts/Portage/Tools#etc-update](https://wiki.gentoo.org/wiki/Handbook:Parts/Portage/Tools#etc-update) || [etc-update](https://aur.archlinux.org/packages/etc-update/)
+
+*   **pacmarge** — Una herramienta para combinar automáticamente archivos *.pacnew*
+
+	[https://github.com/foutrelis/pacmarge](https://github.com/foutrelis/pacmarge) || [pacmarge](https://aur.archlinux.org/packages/pacmarge/)
+
+*   **pacnew-auto** — Fusionar automáticamente `pacnew` utilizando rebase de [git](https://www.archlinux.org/packages/?name=git).
+
+	[https://github.com/joanrieu/pacnew-auto](https://github.com/joanrieu/pacnew-auto) || [pacnew-auto-git](https://aur.archlinux.org/packages/pacnew-auto-git/)
+
+*   **pacnews-git** — Un script simple destinado a encontrar todos los archivos *.pacnew*, para luego editarlos con [vimdiff](/index.php/Vim#Merging_files "Vim").
+
+	[https://github.com/pbrisbin/scripts/blob/master/pacnews](https://github.com/pbrisbin/scripts/blob/master/pacnews) || [pacnews-git](https://aur.archlinux.org/packages/pacnews-git/)

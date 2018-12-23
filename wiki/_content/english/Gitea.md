@@ -239,7 +239,7 @@ Set the home directory to gitea datadir (necessary to find users keys) and the s
 
 #### Configure SSH
 
-If you use `AllowUsers` in your [SSH configuration](/index.php/Secure_Shell#Configuration_2 "Secure Shell"), add `AllowUsers git` (or `AllowUsers gitea` when using [gitea-git](https://aur.archlinux.org/packages/gitea-git/)) to it, e.g.:
+If you use `AllowUsers` in your [SSH configuration](/index.php/OpenSSH#Configuration_2 "OpenSSH"), add `AllowUsers git` (or `AllowUsers gitea` when using [gitea-git](https://aur.archlinux.org/packages/gitea-git/)) to it, e.g.:
 
  `/etc/ssh/sshd_config` 
 ```

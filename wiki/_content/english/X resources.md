@@ -39,7 +39,7 @@ Among other things they can be used to:
 
 ### Load resource file
 
-Resources are stored in the X server, so have to only be read once. They are also accessible to *remote* X11 clients (such as those [forwarded over SSH](/index.php/Secure_Shell#X11_forwarding "Secure Shell")).
+Resources are stored in the X server, so have to only be read once. They are also accessible to *remote* X11 clients (such as those [forwarded over SSH](/index.php/OpenSSH#X11_forwarding "OpenSSH")).
 
 Load a resource file (such as the conventional `.Xresources`), replacing any current settings:
 

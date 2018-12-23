@@ -92,6 +92,10 @@ More themes can be installed from the official repositories or the [AUR](/index.
 
 	[https://github.com/nicohood/arc-theme](https://github.com/nicohood/arc-theme) || with transparency: [arc-gtk-theme](https://www.archlinux.org/packages/?name=arc-gtk-theme), without transparency: [arc-solid-gtk-theme](https://www.archlinux.org/packages/?name=arc-solid-gtk-theme)
 
+*   **Bluebird** — Blue Desktop Suite for Xfce.
+
+	[https://github.com/shimmerproject/Bluebird](https://github.com/shimmerproject/Bluebird) || [xfce-theme-bluebird](https://aur.archlinux.org/packages/xfce-theme-bluebird/)
+
 *   **Breeze** — GTK+ version of KDE's default widget theme. Includes: Breeze, Breeze-Dark
 
 	[https://cgit.kde.org/breeze-gtk.git](https://cgit.kde.org/breeze-gtk.git) || [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk)
@@ -104,25 +108,21 @@ More themes can be installed from the official repositories or the [AUR](/index.
 
 	[https://gitlab.gnome.org/GNOME/gnome-themes-extra](https://gitlab.gnome.org/GNOME/gnome-themes-extra) || [gnome-themes-extra](https://www.archlinux.org/packages/?name=gnome-themes-extra)
 
+*   **Greybird** — A grey and blue Xfce theme, used by default in Xubuntu 12.04.
+
+	[https://github.com/shimmerproject/Greybird](https://github.com/shimmerproject/Greybird) || [xfce-theme-greybird](https://aur.archlinux.org/packages/xfce-theme-greybird/)
+
+*   **Materia** — A Material Design-like flat theme for GTK3, GTK2, and GNOME-Shell.
+
+	[https://github.com/nana-4/materia-theme](https://github.com/nana-4/materia-theme) || [materia-gtk-theme](https://www.archlinux.org/packages/?name=materia-gtk-theme)
+
 *   **MATE Themes** — Default themes for the MATE desktop. Includes: BlackMATE, Blue-Submarine, BlueMenta, ContrastHighInverse, Green-Submarine, GreenLaguna, Menta, TraditionalGreen, TraditionalOk
 
 	[https://github.com/mate-desktop/mate-themes](https://github.com/mate-desktop/mate-themes) || [mate-themes](https://www.archlinux.org/packages/?name=mate-themes)
 
-*   **Materia Theme** — A Material Design-like flat theme for GTK3, GTK2, and GNOME-Shell.
-
-	[https://github.com/nana-4/materia-theme](https://github.com/nana-4/materia-theme) || [materia-gtk-theme](https://www.archlinux.org/packages/?name=materia-gtk-theme)
-
 *   **Numix** — A flat and light theme with a modern look (GNOME, Openbox, Unity, Xfce). Includes: Numix
 
 	[https://github.com/shimmerproject/Numix](https://github.com/shimmerproject/Numix) || [numix-gtk-theme](https://www.archlinux.org/packages/?name=numix-gtk-theme)
-
-*   **Blackbird** — Dark Desktop Suite for Xfce.
-
-	[https://github.com/shimmerproject/Blackbird](https://github.com/shimmerproject/Blackbird) || [xfce-theme-blackbird](https://aur.archlinux.org/packages/xfce-theme-blackbird/)
-
-*   **Greybird** — A grey and blue Xfce theme, used by default in Xubuntu 12.04.
-
-	[https://github.com/shimmerproject/Greybird](https://github.com/shimmerproject/Greybird) || [xfce-theme-greybird](https://aur.archlinux.org/packages/xfce-theme-greybird/)
 
 *   **Vertex** — Theme for GTK 3, GTK 2, Gnome-Shell and Cinnamon.
 
@@ -130,27 +130,9 @@ More themes can be installed from the official repositories or the [AUR](/index.
 
 *   **Zuki** — Themes for GTK, gnome-shell and more.
 
-	[https://github.com/lassekongo83/zuki-themes](https://github.com/lassekongo83/zuki-themes) || [zuki-themes-git](https://aur.archlinux.org/packages/zuki-themes-git/)
+	[https://github.com/lassekongo83/zuki-themes](https://github.com/lassekongo83/zuki-themes) || [zuki-themes](https://aur.archlinux.org/packages/zuki-themes/)
 
-**Only GTK+ 2 is supported:**
-
-*   **GTK+ Engines** — Theme engines for GTK+ 2\. Includes: Clearlooks, Crux, Industrial, Mist, Redmond, ThinIce
-
-	[https://github.com/GNOME/gtk-engines](https://github.com/GNOME/gtk-engines) || [gtk-engines](https://www.archlinux.org/packages/?name=gtk-engines)
-
-*   **Xfce Gtk+ Engine** — Xfce Gtk+-2.0 engine and themes
-
-	[http://git.xfce.org/xfce/gtk-xfce-engine/](http://git.xfce.org/xfce/gtk-xfce-engine/) || [gtk-xfce-engine](https://www.archlinux.org/packages/?name=gtk-xfce-engine)
-
-*   **Oxygen-Gtk** — Port of the default KDE widget theme (Oxygen) to GTK2
-
-	[https://cgit.kde.org/oxygen-gtk.git](https://cgit.kde.org/oxygen-gtk.git) || [oxygen-gtk2](https://www.archlinux.org/packages/?name=oxygen-gtk2)
-
-*   **QtCurve** — A configurable set of widget styles for KDE and Gtk.
-
-	[https://cgit.kde.org/qtcurve.git](https://cgit.kde.org/qtcurve.git) || [qtcurve-gtk2](https://www.archlinux.org/packages/?name=qtcurve-gtk2)
-
-There are a number of additional GTK+ themes in the AUR, example: [search for gtk-theme](https://aur.archlinux.org/packages.php?K=gtk-theme) or [search for gtk2-theme](https://aur.archlinux.org/packages.php?K=gtk2-theme).
+There are a number of additional GTK+ themes in the AUR, example: [search for gtk-theme](https://aur.archlinux.org/packages.php?K=gtk-theme).
 
 **Note:** Because GTK+ 3 changes rapidly, GTK+ 3 themes often require re-working after a GTK+ 3 release. For this reason, not all GTK+ 3 themes may look as intended when used with the latest GTK+ 3 version.
 
@@ -649,7 +631,3 @@ Depending on the theme of choice's support for GTK+ 2, UI controls may still hav
 
 *   [The official GTK+ website](http://www.gtk.org/)
 *   [Wikipedia article about GTK+](https://en.wikipedia.org/wiki/GTK%2B "wikipedia:GTK+")
-*   [GTK+ 2.0 Tutorial](http://developer.gnome.org/gtk-tutorial/stable/)
-*   [GTK+ 3 Reference Manual](http://developer.gnome.org/gtk3/stable/)
-*   [gtkmm Tutorial](http://developer.gnome.org/gtkmm-tutorial/stable/)
-*   [gtkmm Reference Manual](http://developer.gnome.org/gtkmm/stable/)

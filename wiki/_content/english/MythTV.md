@@ -142,7 +142,7 @@ $ mythtv-setup
 
 ```
 
-If your backend runs on a headless server, *mythtv-setup* can be run via [Secure Shell#X11 forwarding](/index.php/Secure_Shell#X11_forwarding "Secure Shell") by running:
+If your backend runs on a headless server, *mythtv-setup* can be run via [OpenSSH#X11 forwarding](/index.php/OpenSSH#X11_forwarding "OpenSSH") by running:
 
 ```
 $ ssh -X user@backend '. /etc/profile.d/perlbin.sh && LANG=C mythtv-setup'

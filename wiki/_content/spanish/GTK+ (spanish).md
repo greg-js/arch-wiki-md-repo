@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [GTK+](/index.php/GTK%2B "GTK+"), revisada por última vez el **2018-10-24**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=GTK%2B&diff=0&oldid=550627) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [GTK+](/index.php/GTK%2B "GTK+"), revisada por última vez el **2018-12-21**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=GTK%2B&diff=0&oldid=559719) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -33,22 +33,22 @@ GTK+ (GIMP Toolkit) fue originalmente creado por el [Proyecto GNU](/index.php/GN
     *   [4.9 Comportamiento de desplazamiento heredado](#Comportamiento_de_desplazamiento_heredado)
     *   [4.10 Deshabilitar las barras de desplazamiento superpuestas](#Deshabilitar_las_barras_de_desplazamiento_superpuestas)
         *   [4.10.1 Eliminar indicadores de la barra de desplazamiento de superposición](#Eliminar_indicadores_de_la_barra_de_desplazamiento_de_superposición)
-*   [5 Backends de GDK](#Backends_de_GDK)
-    *   [5.1 Backend de Broadway](#Backend_de_Broadway)
-    *   [5.2 Backend de Wayland](#Backend_de_Wayland)
-*   [6 Solución de problemas](#Solución_de_problemas)
-    *   [6.1 Diferentes temas entre aplicaciones GTK+ 2 y GTK+ 3](#Diferentes_temas_entre_aplicaciones_GTK+_2_y_GTK+_3)
-    *   [6.2 Tema no aplicado en aplicaciones del superusuario](#Tema_no_aplicado_en_aplicaciones_del_superusuario)
-    *   [6.3 Decoraciones del lado del cliente](#Decoraciones_del_lado_del_cliente)
-    *   [6.4 Cedilla ç/Ç en lugar de ć/Ć](#Cedilla_ç/Ç_en_lugar_de_ć/Ć)
-    *   [6.5 Suprimir advertencia referente al bus de accesibilidad](#Suprimir_advertencia_referente_al_bus_de_accesibilidad)
-    *   [6.6 Falta de coincidencia del color de fondo de la barra de título](#Falta_de_coincidencia_del_color_de_fondo_de_la_barra_de_título)
-    *   [6.7 Eventos de enfoque incorrecto con administradores de ventanas de mosaico](#Eventos_de_enfoque_incorrecto_con_administradores_de_ventanas_de_mosaico)
-    *   [6.8 Soporte de miniaturas para el diálogo del archivo GTK+ 2](#Soporte_de_miniaturas_para_el_diálogo_del_archivo_GTK+_2)
-    *   [6.9 Iconos de botón/menú en algunas aplicaciones en la sesión Wayland de GNOME](#Iconos_de_botón/menú_en_algunas_aplicaciones_en_la_sesión_Wayland_de_GNOME)
-    *   [6.10 GTK+ 3 sin polkit](#GTK+_3_sin_polkit)
-    *   [6.11 Algunos temas de GTK+ 2 solo cambian la paleta de colores de la interfaz de usuario](#Algunos_temas_de_GTK+_2_solo_cambian_la_paleta_de_colores_de_la_interfaz_de_usuario)
-*   [7 Ejemplos](#Ejemplos)
+*   [5 Ejemplos](#Ejemplos)
+*   [6 Backends de GDK](#Backends_de_GDK)
+    *   [6.1 Backend de Broadway](#Backend_de_Broadway)
+    *   [6.2 Backend de Wayland](#Backend_de_Wayland)
+*   [7 Solución de problemas](#Solución_de_problemas)
+    *   [7.1 Diferentes temas entre aplicaciones GTK+ 2 y GTK+ 3](#Diferentes_temas_entre_aplicaciones_GTK+_2_y_GTK+_3)
+    *   [7.2 Tema no aplicado en aplicaciones del superusuario](#Tema_no_aplicado_en_aplicaciones_del_superusuario)
+    *   [7.3 Decoraciones del lado del cliente](#Decoraciones_del_lado_del_cliente)
+    *   [7.4 Cedilla ç/Ç en lugar de ć/Ć](#Cedilla_ç/Ç_en_lugar_de_ć/Ć)
+    *   [7.5 Suprimir advertencia referente al bus de accesibilidad](#Suprimir_advertencia_referente_al_bus_de_accesibilidad)
+    *   [7.6 Falta de coincidencia del color de fondo de la barra de título](#Falta_de_coincidencia_del_color_de_fondo_de_la_barra_de_título)
+    *   [7.7 Eventos de enfoque incorrecto con administradores de ventanas de mosaico](#Eventos_de_enfoque_incorrecto_con_administradores_de_ventanas_de_mosaico)
+    *   [7.8 Soporte de miniaturas para el diálogo del archivo GTK+ 2](#Soporte_de_miniaturas_para_el_diálogo_del_archivo_GTK+_2)
+    *   [7.9 Iconos de botón y menú](#Iconos_de_botón_y_menú)
+    *   [7.10 GTK+ 3 sin polkit](#GTK+_3_sin_polkit)
+    *   [7.11 Algunos temas de GTK+ 2 solo cambian la paleta de colores de la interfaz de usuario](#Algunos_temas_de_GTK+_2_solo_cambian_la_paleta_de_colores_de_la_interfaz_de_usuario)
 *   [8 Véase también](#Véase_también)
 
 ## Instalación
@@ -61,69 +61,71 @@ Dos versiones de GTK+ estan disponibles en los [repositorios oficiales](/index.p
 
 ## Temas
 
-En GTK+ 2, el tema predeterminado es *Raleigh*, pero Arch Linux tiene un archivo de configuración personalizado en `/usr/share/gtk-2.0/gtkrc`, que establece *Adwaita* como el tema predeterminado. En GTK+ 3, el tema predeterminado es *Adwaita*, pero también se incluyen *HighContrast*, *HighContrastInverse* y *Raleigh*.
+En GTK+ 2, el tema predeterminado es Raleigh, pero Arch Linux tiene un archivo de configuración personalizado en `/usr/share/gtk-2.0/gtkrc`, que establece Adwaita como el tema predeterminado. En GTK+ 3, el tema predeterminado es Adwaita, pero también se incluyen HighContrast, HighContrastInverse y Raleigh.
 
 Para forzar un tema específico, establezca las siguientes [variables de entorno](/index.php/Environment_variables_(Espa%C3%B1ol) "Environment variables (Español)").
 
-*   Para GTK+ 2, utilice `GTK2_RC_FILES`. Por ejemplo para lanzar [GIMP](/index.php/GIMP "GIMP") con el tema *Industrial*:
+*   Para GTK+ 2, utilice `GTK2_RC_FILES`. Por ejemplo para lanzar [GIMP](/index.php/GIMP "GIMP") con el tema Raleigh:
 
 ```
-$ GTK2_RC_FILES=/usr/share/themes/Industrial/gtk-2.0/gtkrc gimp
+$ GTK2_RC_FILES=/usr/share/themes/Raleigh/gtk-2.0/gtkrc gimp
 
 ```
 
-**Sugerencia:** `gtkrc` puede ser también un archivo personalizado en su directorio de inicio creado por cualquiera de las [#Herramientas de configuración](#Herramientas_de_configuración).
+**Sugerencia:** `gtkrc` puede ser también un archivo personalizado en su directorio de inicio creado por cualquiera de las [#Herramientas de configuración](#Herramientas_de_configuración). Véase [#Ejemplos](#Ejemplos).
 
-*   Para GTK+ 3, utilice `GTK_THEME`. Por ejemplo para lanzar la calculadora de GNOME con la variante oscura de *Adwaita*:
+*   Para GTK+ 3, utilice `GTK_THEME`. Por ejemplo para lanzar la calculadora de GNOME con la variante oscura de Adwaita:
 
 ```
 $ GTK_THEME=Adwaita:dark gnome-calculator
 
 ```
 
+**Nota:** Para aplicar lo anterior a los accesos directos de escritorio (o lanzadores), véase [Modificar variables de entorno](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries").
+
 Se pueden instalar más temas desde los repositorios oficiales o desde [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)"). Los temas extraídos manualmente van en el directorio `~/.themes/` o `~/.local/share/themes/`.
 
 **Compatibles con GTK+ 2 y GTK+ 3.20 o posterior:**
 
-*   **Adapta** — Un tema Gtk+ adaptativo basado en las guías de diseño de Material Design. Incluye: *Adapta*, *Adapta-Eta*, *Adapta-Nokto*, *Adapta-Nokto-Eta*
+*   **Adapta** — Un tema Gtk+ adaptativo basado en las guías de diseño de Material Design. Incluye: Adapta, Adapta-Eta, Adapta-Nokto, Adapta-Nokto-Eta
 
 	[https://github.com/tista500/Adapta](https://github.com/tista500/Adapta) || [adapta-gtk-theme](https://www.archlinux.org/packages/?name=adapta-gtk-theme)
 
-*   **Arc** — Un tema plano con un aspecto moderno y elementos transparentes. Incluye: *Arc*, *Arc-Dark*, *Arc-Darker*
+*   **Arc** — Un tema plano con un aspecto moderno y elementos transparentes. Incluye: Arc, Arc-Dark, Arc-Darker
 
 	[https://github.com/nicohood/arc-theme](https://github.com/nicohood/arc-theme) || con transparencia: [arc-gtk-theme](https://www.archlinux.org/packages/?name=arc-gtk-theme), sin transparencia: [arc-solid-gtk-theme](https://www.archlinux.org/packages/?name=arc-solid-gtk-theme)
 
-*   **Breeze** — Versión GTK+ del tema predeterminado de KDE. Incluye: *Breeze*, *Breeze-Dark*
+*   **Bluebird** — Blue Desktop Suite para Xfce.
+
+	[https://github.com/shimmerproject/Bluebird](https://github.com/shimmerproject/Bluebird) || [xfce-theme-bluebird](https://aur.archlinux.org/packages/xfce-theme-bluebird/)
+
+*   **Breeze** — Versión GTK+ del tema predeterminado de KDE. Incluye: Breeze, Breeze-Dark
 
 	[https://cgit.kde.org/breeze-gtk.git](https://cgit.kde.org/breeze-gtk.git) || [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk)
 
-*   **Deepin** — Tema predeterminado del escritorio Deepin. Incluye: *deepin*, *deep-dark*
+*   **Deepin** — Tema predeterminado del escritorio Deepin. Incluye: deepin, deep-dark
 
 	[https://github.com/linuxdeepin/deepin-gtk-theme](https://github.com/linuxdeepin/deepin-gtk-theme) || [deepin-gtk-theme](https://www.archlinux.org/packages/?name=deepin-gtk-theme)
 
-*   **Temas extra de GNOME** — Temas extra para el escritorio GNOME. Incluye: *Adwaita*, *Adwaita-dark*, *HighContrast*
+*   **Temas extra de GNOME** — Temas extra para el escritorio GNOME. Incluye: Adwaita, Adwaita-dark, HighContrast
 
 	[https://gitlab.gnome.org/GNOME/gnome-themes-extra](https://gitlab.gnome.org/GNOME/gnome-themes-extra) || [gnome-themes-extra](https://www.archlinux.org/packages/?name=gnome-themes-extra)
 
-*   **Temas de MATE** — Temas predeterminados del escritorio MATE. Incluye: *BlackMATE*, *Blue-Submarine*, *BlueMenta*, *ContrastHighInverse*, *Green-Submarine*, *GreenLaguna*, *Menta*, *TraditionalGreen*, *TraditionalOk*
+*   **Greybird** — Un tema de Xfce gris y azul, utilizado por defecto en Xubuntu 12.04.
 
-	[https://github.com/mate-desktop/mate-themes](https://github.com/mate-desktop/mate-themes) || [mate-themes](https://www.archlinux.org/packages/?name=mate-themes)
+	[Https://github.com/shimmerproject/Greybird](Https://github.com/shimmerproject/Greybird) || [xfce-theme-greybird](https://aur.archlinux.org/packages/xfce-theme-greybird/)
 
 *   **Tema Materia** — Un tema plano parecido a Material Design para GTK3, GTK2 y GNOME-Shell.
 
 	[Https://github.com/nana-4/materia-theme](Https://github.com/nana-4/materia-theme) || [materia-gtk-theme](https://www.archlinux.org/packages/?name=materia-gtk-theme)
 
-*   **Numix** — Un tema plano y ligero con un aspecto moderno (GNOME, Openbox, Unity, Xfce). Incluye: *Numix*
+*   **Temas de MATE** — Temas predeterminados del escritorio MATE. Incluye: BlackMATE, Blue-Submarine, BlueMenta, ContrastHighInverse, Green-Submarine, GreenLaguna, Menta, TraditionalGreen, TraditionalOk
+
+	[https://github.com/mate-desktop/mate-themes](https://github.com/mate-desktop/mate-themes) || [mate-themes](https://www.archlinux.org/packages/?name=mate-themes)
+
+*   **Numix** — Un tema plano y ligero con un aspecto moderno (GNOME, Openbox, Unity, Xfce). Incluye: Numix
 
 	[https://github.com/shimmerproject/Numix](https://github.com/shimmerproject/Numix) || [numix-gtk-theme](https://www.archlinux.org/packages/?name=numix-gtk-theme)
-
-*   **Blackbird** — Tema oscuro para Xfce.
-
-	[Https://github.com/shimmerproject/Blackbird](Https://github.com/shimmerproject/Blackbird) || [xfce-theme-blackbird](https://aur.archlinux.org/packages/xfce-theme-blackbird/)
-
-*   **Greybird** — Un tema de Xfce gris y azul, utilizado por defecto en Xubuntu 12.04.
-
-	[Https://github.com/shimmerproject/Greybird](Https://github.com/shimmerproject/Greybird) || [xfce-theme-greybird](https://aur.archlinux.org/packages/xfce-theme-greybird/)
 
 *   **Vertex** — Tema para GTK3, GTK2, Gnome-Shell y Cinnamon.
 
@@ -131,27 +133,9 @@ Se pueden instalar más temas desde los repositorios oficiales o desde [AUR](/in
 
 *   **Zuki** — Temas para GTK, gnome-shell y más.
 
-	[Https://github.com/lassekongo83/zuki-themes](Https://github.com/lassekongo83/zuki-themes) || [zuki-themes-git](https://aur.archlinux.org/packages/zuki-themes-git/)
+	[Https://github.com/lassekongo83/zuki-themes](Https://github.com/lassekongo83/zuki-themes) || [zuki-themes](https://aur.archlinux.org/packages/zuki-themes/)
 
-**Solo compatibles con GTK+ 2:**
-
-*   **Motores GTK+** — Motores de temas para GTK+ 2\. Incluye: *Clearlooks*, *Crux*, *Industrial*, *Mist*, *Redmond*, *ThinIce*
-
-	[https://github.com/GNOME/gtk-engines](https://github.com/GNOME/gtk-engines) || [gtk-engines](https://www.archlinux.org/packages/?name=gtk-engines)
-
-*   **Motor Xfce Gtk+** — Motor y temas de Xfce Gtk+-2.0
-
-	[http://git.xfce.org/xfce/gtk-xfce-engine/](http://git.xfce.org/xfce/gtk-xfce-engine/) || [gtk-xfce-engine](https://www.archlinux.org/packages/?name=gtk-xfce-engine)
-
-*   **Oxygen-Gtk** — Adaptación del tema predeterminado de KDE (Oxygen) a GTK2
-
-	[https://cgit.kde.org/oxygen-gtk.git](https://cgit.kde.org/oxygen-gtk.git) || [oxygen-gtk2](https://www.archlinux.org/packages/?name=oxygen-gtk2)
-
-*   **QtCurve** — Un conjunto configurable de estilos para KDE y Gtk.
-
-	[Https://cgit.kde.org/qtcurve.git](Https://cgit.kde.org/qtcurve.git) || [qtcurve-gtk2](https://www.archlinux.org/packages/?name=qtcurve-gtk2)
-
-Hay una serie de temas GTK+ adicionales en AUR, por ejemplo: [búsqueda de gtk-theme](https://aur.archlinux.org/packages.php?K=gtk-theme), [búsqueda de gtk2-theme](https://aur.archlinux.org/packages.php?K=gtk2-theme).
+Hay una serie de temas GTK+ adicionales en AUR, por ejemplo: [búsqueda de gtk-theme](https://aur.archlinux.org/packages.php?K=gtk-theme).
 
 **Nota:** Debido a que GTK+ 3 cambia rápidamente, los temas GTK+ 3 a menudo requieren una revisión después de una nueva versión GTK+ 3\. Por esta razón, no todos los temas de GTK+ 3 se muestran como se pretendía cuando se utilizó con la última versión de GTK+ 3.
 
@@ -220,7 +204,7 @@ Los ajustes de GTK+ se puede especificar manualmente en los archivos de configur
 
 Para cambiar manualmente el tema, los iconos, la tipografía y el tamaño de la fuente GTK+, añada lo siguiente a los archivos de configuración, por ejemplo:
 
-**GTK+ 2:**
+*   GTK+ 2:
 
  `~/.gtkrc-2.0` 
 ```
@@ -229,7 +213,7 @@ gtk-theme-name = "Adwaita"
 gtk-font-name = "DejaVu Sans 11"
 ```
 
-**GTK+ 3:**
+*   GTK+ 3:
 
  `$XDG_CONFIG_HOME/gtk-3.0/settings.ini` 
 ```
@@ -401,6 +385,51 @@ Las posiciones de las barras de desplazamiento de superposición se indican medi
 /* Remove dotted lines from GTK+ 3 applications */
 undershoot.top, undershoot.right, undershoot.bottom, undershoot.left { background-image: none; }
 
+```
+
+## Ejemplos
+
+Ejemplo de configuración de GTK+:
+
+**Nota:** Puede ser ignorado por algunos [entornos de escritorio](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)") (por ejemplo, [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)")).
+ `~/.gtkrc-2.0` 
+```
+gtk-theme-name="Arc-Dark"
+gtk-icon-theme-name="breeze-dark"
+gtk-font-name="Sans 11"
+gtk-cursor-theme-name="Breeze_Amber"
+gtk-cursor-theme-size=0
+gtk-toolbar-style=GTK_TOOLBAR_BOTH_HORIZ
+gtk-toolbar-icon-size=GTK_ICON_SIZE_SMALL_TOOLBAR
+gtk-button-images=0
+gtk-menu-images=0
+gtk-enable-event-sounds=0
+gtk-enable-input-feedback-sounds=0
+gtk-xft-antialias=1
+gtk-xft-hinting=1
+gtk-xft-hintstyle="hintslight"
+gtk-xft-rgba="rgb"
+```
+ `~/.config/gtk-3.0/settings.ini` 
+```
+[Settings]
+gtk-theme-name=Arc-Dark
+gtk-icon-theme-name=breeze-dark
+gtk-font-name=Sans 11
+gtk-cursor-theme-name=Breeze_Amber
+gtk-cursor-theme-size=0
+gtk-toolbar-style=GTK_TOOLBAR_BOTH_HORIZ
+gtk-toolbar-icon-size=GTK_ICON_SIZE_SMALL_TOOLBAR
+gtk-button-images=0
+gtk-menu-images=0
+gtk-enable-event-sounds=0
+gtk-enable-input-feedback-sounds=0
+gtk-xft-antialias=1
+gtk-xft-hinting=1
+gtk-xft-hintstyle=hintslight
+gtk-xft-rgba=rgb
+gtk-decoration-layout=menu:close
+# gtk-application-prefer-dark-theme=1
 ```
 
 ## Backends de GDK
@@ -587,9 +616,9 @@ NautilusWindow {
 
 Instale [gtk2-patched-filechooser-icon-view](https://aur.archlinux.org/packages/gtk2-patched-filechooser-icon-view/) para tener la opción de ver los archivos como miniaturas en lugar de la lista en el selector de archivos de GTK+.
 
-### Iconos de botón/menú en algunas aplicaciones en la sesión Wayland de GNOME
+### Iconos de botón y menú
 
-Su archivo `~/.config/gtk-3.0/settings.ini` está mal configurado. Esto puede ocurrir si prueba otros entornos de escritorio basados ​​en GTK+. Estos son los valores afectados:
+Para algunas aplicaciones en la sesión de Wayland de GNOME. Su archivo `~/.config/gtk-3.0/settings.ini` está mal configurado. Esto puede ocurrir si prueba otros entornos de escritorio basados ​​en GTK+. Estos son los valores afectados:
 
  `~/.config/gtk-3.0/settings.ini` 
 ```
@@ -608,56 +637,7 @@ GTK+ 3 depende del polkit a través de colord, que es requerido para imprimir. S
 
 Según el tema elegido compatible con GTK+ 2, los controles de la interfaz de usuario pueden tener la apariencia predeterminada de Raleigh, posiblemente con una paleta de colores diferente. Esto se debe a que estos temas requieren el motor Murrine de GTK+ 2, que no está disponible (los programas GTK+ 2 deben avisar de ello en su salida de error estándar). Instale el paquete [gtk-engine-murrine](https://www.archlinux.org/packages/?name=gtk-engine-murrine).
 
-## Ejemplos
-
-Ejemplo de configuración de GTK+ 2:
-
- `~/.gtkrc-2.0` 
-```
-# GTK theme
-include "/usr/share/themes/Clearlooks/gtk-2.0/gtkrc"
-
-# Font
-style "myfont" {
-    font_name = "DejaVu Sans 8"
-}
-widget_class "*" style "myfont"
-gtk-font-name = "DejaVu Sans 8"
-
-# Icon theme
-gtk-icon-theme-name = "Tango"
-
-# Toolbar style
-gtk-toolbar-style = GTK_TOOLBAR_ICONS
-```
-
-Ejemplo de GTK+ 3 de una configuración convertida de GTK+ 2.x a GTK+ 3.x por [lxappearance](https://www.archlinux.org/packages/?name=lxappearance):
-
- `$XDG_CONFIG_HOME/gtk-3.0/settings.ini` 
-```
-[Settings] 
-gtk-theme-name=TraditionalOk
-gtk-icon-theme-name=Fog
-gtk-font-name=Luxi Sans 12
-gtk-cursor-theme-name=mate
-gtk-cursor-theme-size=24
-gtk-toolbar-style=GTK_TOOLBAR_BOTH_HORIZ
-gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
-gtk-button-images=1
-gtk-menu-images=1
-gtk-enable-event-sounds=0
-gtk-enable-input-feedback-sounds=0
-gtk-xft-antialias=1
-gtk-xft-hinting=1
-gtk-xft-hintstyle=hintslight
-gtk-xft-rgba=rgb
-```
-
 ## Véase también
 
 *   [Web oficial de GTK+](http://www.gtk.org/)
 *   [Artículo en Wikipedia sobre GTK+](https://en.wikipedia.org/wiki/es:GTK%2B "wikipedia:es:GTK+")
-*   [Tutorial de GTK+ 2.0](http://developer.gnome.org/gtk-tutorial/stable/)
-*   [Manual de referencia de GTK+ 3](http://developer.gnome.org/gtk3/stable/)
-*   [Tutorial de gtkmm](http://developer.gnome.org/gtkmm-tutorial/stable/)
-*   [Manual de referencia de gtkmm](http://developer.gnome.org/gtkmm/stable/)

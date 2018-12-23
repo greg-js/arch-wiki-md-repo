@@ -59,7 +59,7 @@ Install the virtualgl package using pacman, then follow the instructions [here](
 In addition to setting up VirtualGL on the remote server [as described above](#Installation_and_setup), this usage scenario requires you to:
 
 *   install the [virtualgl](https://www.archlinux.org/packages/?name=virtualgl) package on the client side as well *(but no need to set it up like on the server side, we just need the `vglconnect` and `vglclient` binaries on this end)*.
-*   set up [SSH with X11 forwarding](/index.php/SSH#X11_forwarding "SSH") *(confirm that connecting from the client to the server via `ssh -X user@server` and running GUI applications in the resulting shell works)*
+*   set up [SSH with X11 forwarding](/index.php/X11_forwarding "X11 forwarding") *(confirm that connecting from the client to the server via `ssh -X user@server` and running GUI applications in the resulting shell works)*
 
 ***2\. Connecting***
 

@@ -52,6 +52,7 @@ For more information, see the [Trusted User Bylaws](https://aur.archlinux.org/tr
 | [ConnorBehan](https://aur.archlinux.org/packages.php?K=ConnorBehan&SeB=m) | Connor Behan | connor.behan@gmail.com |
 | [lfleischer](https://aur.archlinux.org/packages.php?K=lfleischer&SeB=m) | Lukas Fleischer | lfleischer at archlinux dot org |
 | [eworm](https://aur.archlinux.org/packages.php?K=eworm&SeB=m) | Christian Hesse | mail@eworm.de |
+| [daurnimator](https://aur.archlinux.org/packages.php?K=daurnimator&SeB=m) | Daurnimator | quae at daurnimator com |
 | [dbermond](https://aur.archlinux.org/packages.php?K=dbermond&SeB=m) | Daniel Bermond | gmail-com: danielbermond |
 | [Dragonlord](https://aur.archlinux.org/packages.php?K=Dragonlord&SeB=m) | [Jaroslav Lichtblau](/index.php/User:Drag0nl0rd "User:Drag0nl0rd") | dragonlord @ aur archlinux org |
 | [dvzrv](https://aur.archlinux.org/packages.php?K=dvzrv&SeB=m) | [David Runge](/index.php/User:Davezerave "User:Davezerave") | dave@sleepmap.de |

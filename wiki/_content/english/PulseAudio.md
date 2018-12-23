@@ -423,9 +423,7 @@ Be sure to remove the `dev=default` option of the alsa driver or adjust it to sp
 
 ## Equalizer
 
-**Warning:** The equalizer module is considered unstable and might be removed from PulseAudio. For more, see the [mailing list](https://lists.freedesktop.org/archives/pulseaudio-discuss/2014-March/020174.html).
-
-**Tip:** You might want to use [pulseeffects](https://www.archlinux.org/packages/?name=pulseeffects) instead.
+**Warning:** The equalizer module is considered [unstable and might be removed from PulseAudio](https://lists.freedesktop.org/archives/pulseaudio-discuss/2014-March/020174.html). See [#Alternative equalizers](#Alternative_equalizers) for available alternatives.
 
 PulseAudio has an integrated 10-band equalizer system. In order to use the equalizer do the following:
 
@@ -465,9 +463,10 @@ load-module module-dbus-protocol
 
 ### Alternative equalizers
 
-[pulseaudio-equalizer-ladspa](https://www.archlinux.org/packages/?name=pulseaudio-equalizer-ladspa) (based on [swh-plugins](https://www.archlinux.org/packages/?name=swh-plugins)) can be used as an alternative to [pulseaudio-equalizer](https://www.archlinux.org/packages/?name=pulseaudio-equalizer).
+The following are optional replacements of [pulseaudio-equalizer](https://www.archlinux.org/packages/?name=pulseaudio-equalizer):
 
-[pulseeffects](https://www.archlinux.org/packages/?name=pulseeffects) applies peak limiting, compression, reverberation, auto volume and 15 bands equalization to Pulseaudio applications output.
+*   [pulseaudio-equalizer-ladspa](https://www.archlinux.org/packages/?name=pulseaudio-equalizer-ladspa) - based on [swh-plugins](https://www.archlinux.org/packages/?name=swh-plugins).
+*   [pulseeffects](https://www.archlinux.org/packages/?name=pulseeffects) - audio effects (peak limiting, compression, reverberation, auto volume and 15 bands equalization) for Pulseaudio applications.
 
 ## Applications
 

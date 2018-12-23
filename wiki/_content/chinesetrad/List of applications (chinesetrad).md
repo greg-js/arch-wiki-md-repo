@@ -2404,7 +2404,7 @@ See also [Wikipedia:Comparison of office suites](https://en.wikipedia.org/wiki/C
 
 See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki/Comparison_of_word_processors "wikipedia:Comparison of word processors").
 
-*   **[Abiword](/index.php/Abiword "Abiword")** — Full-featured word processor.
+*   **[AbiWord](/index.php/AbiWord "AbiWord")** — Full-featured word processor.
 
 	[http://www.abisource.com/](http://www.abisource.com/) || [abiword](https://www.archlinux.org/packages/?name=abiword)
 

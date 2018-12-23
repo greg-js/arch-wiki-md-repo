@@ -17,32 +17,39 @@ This article assumes you already have a basic understanding of the [Secure Shell
     *   [2.2 Choosing the key location and passphrase](#Choosing_the_key_location_and_passphrase)
         *   [2.2.1 Changing the private key's passphrase without changing the key](#Changing_the_private_key's_passphrase_without_changing_the_key)
         *   [2.2.2 Managing multiple keys](#Managing_multiple_keys)
-*   [3 Copying the public key to the remote server](#Copying_the_public_key_to_the_remote_server)
-    *   [3.1 Simple method](#Simple_method)
-    *   [3.2 Manual method](#Manual_method)
-*   [4 SSH agents](#SSH_agents)
-    *   [4.1 ssh-agent](#ssh-agent)
-        *   [4.1.1 Start ssh-agent with systemd user](#Start_ssh-agent_with_systemd_user)
-        *   [4.1.2 ssh-agent as a wrapper program](#ssh-agent_as_a_wrapper_program)
-    *   [4.2 GnuPG Agent](#GnuPG_Agent)
-    *   [4.3 Keychain](#Keychain)
-        *   [4.3.1 Installation](#Installation)
-        *   [4.3.2 Configuration](#Configuration)
-        *   [4.3.3 Tips](#Tips)
-    *   [4.4 x11-ssh-askpass](#x11-ssh-askpass)
-        *   [4.4.1 Calling x11-ssh-askpass with ssh-add](#Calling_x11-ssh-askpass_with_ssh-add)
-        *   [4.4.2 Theming](#Theming)
-        *   [4.4.3 Alternative passphrase dialogs](#Alternative_passphrase_dialogs)
-    *   [4.5 pam_ssh](#pam_ssh)
-        *   [4.5.1 Using a different password to unlock the SSH key](#Using_a_different_password_to_unlock_the_SSH_key)
-        *   [4.5.2 Known issues with pam_ssh](#Known_issues_with_pam_ssh)
-    *   [4.6 GNOME Keyring](#GNOME_Keyring)
-    *   [4.7 Store SSH keys with Kwallet](#Store_SSH_keys_with_Kwallet)
-    *   [4.8 KeePass2 with KeeAgent plugin](#KeePass2_with_KeeAgent_plugin)
-    *   [4.9 KeePassXC](#KeePassXC)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Key ignored by the server](#Key_ignored_by_the_server)
-*   [6 See also](#See_also)
+*   [3 Using a YubiKey with SSH](#Using_a_YubiKey_with_SSH)
+    *   [3.1 Generating a key pair on the YubiKey](#Generating_a_key_pair_on_the_YubiKey)
+    *   [3.2 Client configuration](#Client_configuration)
+    *   [3.3 Public key conversion](#Public_key_conversion)
+    *   [3.4 Initiating an SSH session with the YubiKey](#Initiating_an_SSH_session_with_the_YubiKey)
+    *   [3.5 Using ssh-agent to cache the PIN](#Using_ssh-agent_to_cache_the_PIN)
+    *   [3.6 Further reading](#Further_reading)
+*   [4 Copying the public key to the remote server](#Copying_the_public_key_to_the_remote_server)
+    *   [4.1 Simple method](#Simple_method)
+    *   [4.2 Manual method](#Manual_method)
+*   [5 SSH agents](#SSH_agents)
+    *   [5.1 ssh-agent](#ssh-agent)
+        *   [5.1.1 Start ssh-agent with systemd user](#Start_ssh-agent_with_systemd_user)
+        *   [5.1.2 ssh-agent as a wrapper program](#ssh-agent_as_a_wrapper_program)
+    *   [5.2 GnuPG Agent](#GnuPG_Agent)
+    *   [5.3 Keychain](#Keychain)
+        *   [5.3.1 Installation](#Installation)
+        *   [5.3.2 Configuration](#Configuration)
+        *   [5.3.3 Tips](#Tips)
+    *   [5.4 x11-ssh-askpass](#x11-ssh-askpass)
+        *   [5.4.1 Calling x11-ssh-askpass with ssh-add](#Calling_x11-ssh-askpass_with_ssh-add)
+        *   [5.4.2 Theming](#Theming)
+        *   [5.4.3 Alternative passphrase dialogs](#Alternative_passphrase_dialogs)
+    *   [5.5 pam_ssh](#pam_ssh)
+        *   [5.5.1 Using a different password to unlock the SSH key](#Using_a_different_password_to_unlock_the_SSH_key)
+        *   [5.5.2 Known issues with pam_ssh](#Known_issues_with_pam_ssh)
+    *   [5.6 GNOME Keyring](#GNOME_Keyring)
+    *   [5.7 Store SSH keys with Kwallet](#Store_SSH_keys_with_Kwallet)
+    *   [5.8 KeePass2 with KeeAgent plugin](#KeePass2_with_KeeAgent_plugin)
+    *   [5.9 KeePassXC](#KeePassXC)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 Key ignored by the server](#Key_ignored_by_the_server)
+*   [7 See also](#See_also)
 
 ## Background
 
@@ -180,7 +187,7 @@ $ ssh-keygen -t ed25519
 
 There is no need to set the key size, as all Ed25519 keys are 256 bits. Also, they rely on a [new key format](http://www.gossamer-threads.com/lists/openssh/dev/57162#57162) which "*uses a bcrypt-based key derivation function that makes brute-force attacks against stolen private keys far slower*".
 
-For those reasons, compatibility with older versions of OpenSSH or [other SSH clients and servers](/index.php/Ssh#Other_SSH_clients_and_servers "Ssh") may prove troublesome.
+For those reasons, compatibility with older versions of OpenSSH or [other SSH clients and servers](/index.php/SSH "SSH") may prove troublesome.
 
 ### Choosing the key location and passphrase
 
@@ -229,6 +236,87 @@ Host SERVER2
 ```
 
 See [ssh_config(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ssh_config.5) for full description of these options.
+
+## Using a YubiKey with SSH
+
+SSH keys can also be stored on a security token like a smart card or a USB token. This has the advantage that the private key is stored securely on the token instead of being stored on disk. When using a security token the sensitive private key is also never present in the RAM of the PC—the cryptographic operations are performed on the token itself. A cryptographic token has the additional advantage that it is not bound to a single computer—it can easily be removed from the computer and carried around to be used on other computers.
+
+Some of the most popular security tokens on the market today (late 2018) are the family of [Yubikey](https://www.yubico.com/products/yubikey-hardware/) models. The following text describes how to use a YubiKey for SSH keys. A YubiKey with the PIV (Personal Identification Verification) application is required; this means you need a YubiKey 4 or later.
+
+### Generating a key pair on the YubiKey
+
+A private key and associated certificate need to be either generated on the YubiKey or imported to it. Install the [yubikey-manager](https://www.archlinux.org/packages/?name=yubikey-manager) package. Insert the YubiKey in a USB port and check that it is recognized:
+
+```
+$ ykman list
+YubiKey 4 [OTP+FIDO+CCID] Serial: 1234567
+
+```
+
+Generate a 2048-bit RSA key pair on the YubiKey. The private key will be stored in key slot 9a on the YubiKey, and the public key will be written to the file pubkey.pem.
+
+```
+$ ykman piv generate-key -a RSA2048 9a pubkey.pem
+
+```
+
+Next, use the YubiKey to generate a self-signed certificate for the public key:
+
+```
+$ ykman piv generate-certificate -s "SSH Key" 9a pubkey.pem
+
+```
+
+The Subject field in the certificate will be set to "SSH Key". This field will be included in the prompt for PIN to help identify which key is used for authentication.
+
+Note that the last parameter in the generate-key command is the file name where the public key is written to, whereas the last parameter in the generate-certificate command specifies where the public key is read from. The certificate is constructed and signed on the YubiKey and stored alongside the private key; the command does not output the certificate.
+
+At this point the YubiKey is ready for authenticating to a SSH server. For this to happen, some additional configuration on both the client and the server is required.
+
+### Client configuration
+
+The standard API used to communicate with cryptographic tokens is defined by [PKCS#11](https://en.wikipedia.org/wiki/PKCS_11). Install the [opensc](https://www.archlinux.org/packages/?name=opensc) package which provides this API in the form of the shared library /usr/lib/opensc-pkcs11.so. The ssh client should be configured to use this library with the directive PKCS11Provider in ~/.ssh/config:
+
+ `~/.ssh/config`  `PKCS11Provider /usr/lib/opensc-pkcs11.so` 
+
+### Public key conversion
+
+The pubkey.pem file contains the public key in PEM (Privacy Enhanced Mail) format. OpenSSH uses a different format defined in RFC 4253, section 6.6, so the PEM formatted key should be converted to the format OpenSSH understands. This can be done using ssh-keygen:
+
+```
+$ ssh-keygen -i -m PKCS8 -f pubkey.pem > pubkey.txt
+
+```
+
+This command uses the import (-i) function of the ssh-keygen program, specifies PKCS8 as the input file format (-m), and reads the input from the file pubkey.pem (-f). The converted key is written on standard output, which is the example is redirected to the file pubkey.txt.
+
+The converted public key should now be copied to the remote server as described in [#Copying the public key to the remote server](#Copying_the_public_key_to_the_remote_server).
+
+### Initiating an SSH session with the YubiKey
+
+To authenticate a SSH connection using the YubiKey, just use ssh normally. You will be prompted for the PIN instead of a password:
+
+```
+$ ssh remote
+Enter PIN for 'SSH Key' 
+[user@remote ~]$ 
+
+```
+
+### Using ssh-agent to cache the PIN
+
+ssh-agent (see [#SSH agents](#SSH_agents)) can also be used with the PKCS#11 library; in this case the PIN code is cached instead of the private key.
+
+```
+$ ssh-add -s /usr/lib/pkcs11/opensc-pkcs11.so
+
+```
+
+As long as the PIN is cached in by the agent, the cached value is used and the user is not prompted for it.
+
+### Further reading
+
+The default PIN code of the PIV application on the YubiKey is 123456; you may want to change it. The YubiKey also requires a 24-byte management key for administrative functions like key generation. If the management key has been changed from its default value, the new value needs to be specified using the -m option on the command line for certain commands. See [What is PIV?](https://developers.yubico.com/PIV/)
 
 ## Copying the public key to the remote server
 

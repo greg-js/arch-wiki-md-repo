@@ -8,6 +8,7 @@ Lenovo ThinkPad P1 was released in 2018 and has up to Intel Core i7-8850H or Xeo
     *   [1.3 HiDPI screen](#HiDPI_screen)
 *   [2 Graphics](#Graphics)
     *   [2.1 Discrete only](#Discrete_only)
+        *   [2.1.1 Black screen after X starts with NVIDIA drivers](#Black_screen_after_X_starts_with_NVIDIA_drivers)
     *   [2.2 Hybrid graphics with Bumblebee](#Hybrid_graphics_with_Bumblebee)
     *   [2.3 Hybrid graphics with bbswitch only](#Hybrid_graphics_with_bbswitch_only)
 *   [3 Troubleshooting](#Troubleshooting)
@@ -46,6 +47,37 @@ There are two difficulties with configuring graphics on ThinkPad P1: there is no
 ### Discrete only
 
 Follow the instructions at [NVIDIA](/index.php/NVIDIA "NVIDIA") and you should be all set. Note that this method will keep your NVIDIA graphics card always on, which might dramatically shorten your battery life.
+
+#### Black screen after X starts with NVIDIA drivers
+
+As the P1 is an hybrid device with both an integrated and discrete video card, the NVIDIA drivers have to be setup to use Optimus in order to properly work with external outputs and the integrated laptop screen. Setup NVIDIA Optimus as instructed in [NVIDIA Optimus#Using nvidia](/index.php/NVIDIA_Optimus#Using_nvidia "NVIDIA Optimus").
+
+The driver might anyway fail to detect the laptop screen using the auto-generated `xorg.conf` file and you might experience a black screen after X has been started. See [NVIDIA Optimus#No screens found on a laptop/NVIDIA Optimus](/index.php/NVIDIA_Optimus#No_screens_found_on_a_laptop/NVIDIA_Optimus "NVIDIA Optimus") for more details.
+
+If you're able to connect an external monitor and verify it works, you can inspect the `xrandr -q` output to verify only HDMI and Display Port outputs are actually detected. The tool should as well display only external video output connections.
+
+In order to instruct the driver about the integrated laptop screen, the `xorg.conf` file has to be modified to add a {ic|"ConnectedMonitor" Option}} to the `Section "Device"` (see [NVIDIA/Troubleshooting#Screen(s) found, but none have a usable configuration](/index.php/NVIDIA/Troubleshooting#Screen(s)_found,_but_none_have_a_usable_configuration "NVIDIA/Troubleshooting"))
+
+Use the following as `xorg.conf` `Section "Device"`
+
+```
+  Section "Device"
+      Identifier      "nvidia"
+      Driver         "nvidia"
+      VendorName     "NVIDIA Corporation"
+      BusId          "1:0:0"
+      Option         "AllowEmptyInitialConfiguration"
+      Option	      "ConnectedMonitor" "eDP"
+      Option	      "CustomEDID" "eDP:/sys/class/drm/card0-eDP-1/edid"
+      Option	      "IgnoreEDID" "false"
+      Option	      "UseEDID" "true" 
+  EndSection
+
+```
+
+After re-starting X, the integrated screen output should show be now detected and properly usable.
+
+If the laptop screen gets detected but `xrandr` fails to properly detect the available resolutions, remove the `HorizSync` and `Vertrefresh` options from and restart X
 
 ### Hybrid graphics with Bumblebee
 

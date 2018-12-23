@@ -64,6 +64,7 @@ From [http://www.x.org/wiki/](http://www.x.org/wiki/):
         *   [8.9.1 Broken redirection](#Broken_redirection)
     *   [8.10 A green screen whenever trying to watch a video](#A_green_screen_whenever_trying_to_watch_a_video)
     *   [8.11 SocketCreateListener error](#SocketCreateListener_error)
+    *   [8.12 Invalid MIT-MAGIC-COOKIE-1 key when trying to run a program as root](#Invalid_MIT-MAGIC-COOKIE-1_key_when_trying_to_run_a_program_as_root)
 *   [9 See also](#See_also)
 
 ## Installation
@@ -445,7 +446,7 @@ This needs the package [xorg-server-xnest](https://www.archlinux.org/packages/?n
 
 ### Starting GUI programs remotely
 
-See main article: [SSH#X11 forwarding](/index.php/SSH#X11_forwarding "SSH").
+See main article: [OpenSSH#X11 forwarding](/index.php/OpenSSH#X11_forwarding "OpenSSH").
 
 ### On-demand disabling and enabling of input sources
 
@@ -692,6 +693,17 @@ Your color depth is set wrong. It may need to be 24 instead of 16, for example.
 ### SocketCreateListener error
 
 If X terminates with error message "SocketCreateListener() failed", you may need to delete socket files in `/tmp/.X11-unix`. This may happen if you have previously run Xorg as root (e.g. to generate an `xorg.conf`).
+
+### Invalid MIT-MAGIC-COOKIE-1 key when trying to run a program as root
+
+That error means that only the current user has access to the X server. The solution is to give access to root:
+
+```
+$ xhost +si:localuser:root
+
+```
+
+That line can also be used to give access to X to a different user than root.
 
 ## See also
 

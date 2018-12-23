@@ -354,7 +354,7 @@ See also [Wikipedia:Comparison of office suites](https://en.wikipedia.org/wiki/C
 
 See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki/Comparison_of_word_processors "wikipedia:Comparison of word processors").
 
-*   **[Abiword](/index.php/Abiword "Abiword")** — Full-featured word processor.
+*   **[AbiWord](/index.php/AbiWord "AbiWord")** — Full-featured word processor.
 
 	[http://www.abisource.com/](http://www.abisource.com/) || [abiword](https://www.archlinux.org/packages/?name=abiword)
 
@@ -764,7 +764,7 @@ See also [Wikipedia:Comparison of XML editors](https://en.wikipedia.org/wiki/Com
 
 ### Document converters
 
-See also [#Markup languages](#Markup_languages) and [PDF, PS and DjVu#Command-line tools](/index.php/PDF,_PS_and_DjVu#Command-line_tools "PDF, PS and DjVu").
+See also [#Markup languages](#Markup_languages) and [PDF, PS and DjVu](/index.php/PDF,_PS_and_DjVu "PDF, PS and DjVu").
 
 *   **[Antiword](https://en.wikipedia.org/wiki/Antiword "wikipedia:Antiword")** — MS Word to text converter.
 
@@ -830,7 +830,7 @@ See also [Wikipedia:Comparison of reference management software](https://en.wiki
 
 #### PDF and DjVu
 
-See [PDF, PS and DjVu#Viewers](/index.php/PDF,_PS_and_DjVu#Viewers "PDF, PS and DjVu").
+See [PDF, PS and DjVu](/index.php/PDF,_PS_and_DjVu "PDF, PS and DjVu").
 
 #### E-book
 
@@ -873,6 +873,10 @@ See [PDF, PS and DjVu#Viewers](/index.php/PDF,_PS_and_DjVu#Viewers "PDF, PS and 
 *   **MComix** — GTK2 image viewer specifically designed to handle comic book archives (fork of Comix). Also includes library manager.
 
 	[https://sourceforge.net/projects/mcomix/](https://sourceforge.net/projects/mcomix/) || [mcomix](https://www.archlinux.org/packages/?name=mcomix)
+
+*   **MComix-GTK3** — GTK3 image viewer specifically designed to handle comic book archives (unmerged patch for MComix). Works well on hidpi screens. Also includes library manager.
+
+	[https://sourceforge.net/projects/mcomix/](https://sourceforge.net/projects/mcomix/) || [mcomix-gtk3-git](https://aur.archlinux.org/packages/mcomix-gtk3-git/)
 
 *   **Peruse** — Comic book reader by KDE.
 

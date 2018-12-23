@@ -12,24 +12,24 @@ Related articles
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-    *   [1.1 挂载](#.E6.8C.82.E8.BD.BD)
-    *   [1.2 卸载](#.E5.8D.B8.E8.BD.BD)
+*   [1 安装](#安装)
+    *   [1.1 挂载](#挂载)
+    *   [1.2 卸载](#卸载)
 *   [2 Chrooting](#Chrooting)
-*   [3 助手程序](#.E5.8A.A9.E6.89.8B.E7.A8.8B.E5.BA.8F)
-*   [4 自动挂载](#.E8.87.AA.E5.8A.A8.E6.8C.82.E8.BD.BD)
+*   [3 助手程序](#助手程序)
+*   [4 自动挂载](#自动挂载)
     *   [4.1 On demand](#On_demand)
-    *   [4.2 引导时挂载](#.E5.BC.95.E5.AF.BC.E6.97.B6.E6.8C.82.E8.BD.BD)
-    *   [4.3 安全用户访问](#.E5.AE.89.E5.85.A8.E7.94.A8.E6.88.B7.E8.AE.BF.E9.97.AE)
-*   [5 选项](#.E9.80.89.E9.A1.B9)
-*   [6 排错](#.E6.8E.92.E9.94.99)
-    *   [6.1 检查清单](#.E6.A3.80.E6.9F.A5.E6.B8.85.E5.8D.95)
+    *   [4.2 引导时挂载](#引导时挂载)
+    *   [4.3 安全用户访问](#安全用户访问)
+*   [5 选项](#选项)
+*   [6 排错](#排错)
+    *   [6.1 检查清单](#检查清单)
     *   [6.2 Connection reset by peer](#Connection_reset_by_peer)
-    *   [6.3 远程主机连接断开（Remote host has disconnected）](#.E8.BF.9C.E7.A8.8B.E4.B8.BB.E6.9C.BA.E8.BF.9E.E6.8E.A5.E6.96.AD.E5.BC.80.EF.BC.88Remote_host_has_disconnected.EF.BC.89)
-    *   [6.4 冻结应用（Freezing apps (e.g. Gnome Files, Gedit)）](#.E5.86.BB.E7.BB.93.E5.BA.94.E7.94.A8.EF.BC.88Freezing_apps_.28e.g._Gnome_Files.2C_Gedit.29.EF.BC.89)
+    *   [6.3 远程主机连接断开（Remote host has disconnected）](#远程主机连接断开（Remote_host_has_disconnected）)
+    *   [6.4 冻结应用（Freezing apps (e.g. Gnome Files, Gedit)）](#冻结应用（Freezing_apps_(e.g._Gnome_Files,_Gedit)）)
     *   [6.5 Shutdown hangs when sshfs is mounted](#Shutdown_hangs_when_sshfs_is_mounted)
-    *   [6.6 fstab 挂载问题](#fstab_.E6.8C.82.E8.BD.BD.E9.97.AE.E9.A2.98)
-*   [7 参阅](#.E5.8F.82.E9.98.85)
+    *   [6.6 fstab 挂载问题](#fstab_挂载问题)
+*   [7 参阅](#参阅)
 
 ## 安装
 
@@ -57,7 +57,7 @@ Where `-p 9876` stands for the port number, `-C` enables compression and `-o all
 
 **注意:** The `allow_other` option is disabled by default. To enable it, uncomment the line `user_allow_other` in `/etc/fuse.conf` to enable non-root users to use the allow_other mount option.
 
-**注意:** Users may also define a non-standard port on a host-by-host basis in `~/.ssh/config` to avoid appending the -p switch here. For more information see [Secure Shell#Client usage](/index.php/Secure_Shell#Client_usage "Secure Shell").
+**注意:** Users may also define a non-standard port on a host-by-host basis in `~/.ssh/config` to avoid appending the -p switch here. For more information see [OpenSSH#Client usage](/index.php/OpenSSH#Client_usage "OpenSSH").
 
 必要时，SSH 将询问口令。如果你不希望频繁输入口令，可参阅：[SSH 如何使用 RSA 密钥做认证](http://linuxmafia.com/~karsten/Linux/FAQs/sshrsakey.html) 或 [SSH 密钥](/index.php/SSH_keys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "SSH keys (简体中文)")。
 
@@ -194,7 +194,7 @@ This will map UID of the remote user "sessy" to the local user, who runs this pr
 
 ### 检查清单
 
-Read the [SSH Checklist](/index.php/Secure_Shell#Checklist "Secure Shell") Wiki entry first. Further issues to check are:
+Read the [SSH Checklist](/index.php/OpenSSH#Checklist "OpenSSH") Wiki entry first. Further issues to check are:
 
 1\. Is your SSH login sending additional information from server's `/etc/issue` file e.g.? This might confuse SSHFS. You should temporarily deactivate server's `/etc/issue` file:
 

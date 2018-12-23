@@ -149,6 +149,7 @@ This article covers software to view, edit and convert [PDF](https://en.wikipedi
 #### Comparison
 
 | Name | PDF | PostScript | DjVu | XPS | PDF forms | License |
+| [Adobe Reader](https://en.wikipedia.org/wiki/Adobe_Reader "wikipedia:Adobe Reader") | custom | ✘ | ✘ | ✘ | ✔ | proprietary |
 | apvlv | Poppler | ✘ | DjVuLibre | ✘ | ✘ | GPLv2 |
 | Atril | Poppler | libspectre | DjVuLibre | libgxps | ✔ | GPLv2 |
 | DjView | ✘ | ✘ | DjVuLibre | ✘ | ✘ | GPLv2 |
@@ -172,7 +173,7 @@ This article covers software to view, edit and convert [PDF](https://en.wikipedi
 
 The *PDF forms* column in the above table refers to [AcroForms](https://en.wikipedia.org/wiki/PDF#AcroForms "wikipedia:PDF") support. If you do not need your input to be directly extractable from the PDF, you can also use the applications in [#Annotation](#Annotation) or [#Graphical PDF editing](#Graphical_PDF_editing) to put text on top of a PDF. PDF forms can be created with [LibreOffice Writer](/index.php/LibreOffice "LibreOffice") (*View > Toolbars > Form Controls*) and the [advanced PDF editors](#Advanced_editors).
 
-The proprietary and deprecated [XFA](https://en.wikipedia.org/wiki/PDF#Adobe_XML_Forms_Architecture_.28XFA.29 "wikipedia:PDF") format for forms, is not fully support by Poppler[[1]](https://gitlab.freedesktop.org/poppler/poppler/issues/199)[[2]](https://gitlab.freedesktop.org/poppler/poppler/issues/530) and only supported by [Adobe Reader](#Discontinued) and [Master PDF Editor](#Advanced_editors).
+The proprietary and deprecated [XFA](https://en.wikipedia.org/wiki/PDF#Adobe_XML_Forms_Architecture_.28XFA.29 "wikipedia:PDF") format for forms, is not fully support by Poppler[[1]](https://gitlab.freedesktop.org/poppler/poppler/issues/199)[[2]](https://gitlab.freedesktop.org/poppler/poppler/issues/530) and only supported by [Adobe Reader](#Graphical) and [Master PDF Editor](#Advanced_editors).
 
 ## Annotation
 
@@ -395,7 +396,7 @@ $ qpdf --empty --pages *infile*.pdf *first*-*last* -- *outfile*.pdf
 
 ### Imposing a PDF
 
-PDF [Imposition](https://en.wikipedia.org/wiki/Imposition "wikipedia:Imposition") can be done with [pdfjam](#pdfjam), for example paper waste can be reduced with *pdfnup* and *pdfbook* can be used to arrange PDFs into a format suitable for book binding.
+PDF [Imposition](https://en.wikipedia.org/wiki/Imposition "wikipedia:Imposition") can be done with [pdfjam](#PDF_tools), for example paper waste can be reduced with *pdfnup* and *pdfbook* can be used to arrange PDFs into a format suitable for book binding.
 
 ### Inspecting metadata
 
@@ -454,7 +455,7 @@ $ pdftoppm -jpeg -r *dpi* in.pdf -f *page* -singlefile *infile*.pdf *outfileroot
 With mupdf-tools to split every page vertically into two pages:
 
 ```
-mutool poster -y 2 in.pdf out.pdf
+$ mutool poster -y 2 in.pdf out.pdf
 
 ```
 

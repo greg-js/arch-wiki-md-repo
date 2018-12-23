@@ -30,6 +30,7 @@ Related articles
     *   [6.3 Screen flickering](#Screen_flickering)
     *   [6.4 R9 390 series Poor Performance and/or Instability](#R9_390_series_Poor_Performance_and/or_Instability)
     *   [6.5 Freezes with "[drm] IP block:gmc_v8_0 is hung!" kernel error](#Freezes_with_"[drm]_IP_block:gmc_v8_0_is_hung!"_kernel_error)
+    *   [6.6 Cursor corruption](#Cursor_corruption)
 
 ## Selecting the right driver
 
@@ -304,3 +305,7 @@ If it still does not work, try disabling DPM, by setting the [kernel parameters]
 ### Freezes with "[drm] IP block:gmc_v8_0 is hung!" kernel error
 
 If you experience freezes and kernel crashes during a GPU intensive task with the kernel error " [drm] IP block:gmc_v8_0 is hung!" [[8]](https://bugs.freedesktop.org/show_bug.cgi?id=102322), a workaround is to set `amggpu.vm_update_mode=3` as [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to force the GPUVM page tables update to be done using the CPU. Downsides are listed here [[9]](https://bugs.freedesktop.org/show_bug.cgi?id=102322#c15).
+
+### Cursor corruption
+
+If you experience issues with the mouse cursor sometimes not rendering properly, set `Option "SWCursor" "True"` in the `"Device"` section of the `/etc/X11/xorg.conf.d/20-amdgpu.conf` configuration file.

@@ -4,13 +4,13 @@
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 设置插入式验证模块(**P**luggable **A**uthentication **M**odules)](#.E8.AE.BE.E7.BD.AE.E6.8F.92.E5.85.A5.E5.BC.8F.E9.AA.8C.E8.AF.81.E6.A8.A1.E5.9D.97.28Pluggable_Authentication_Modules.29)
-*   [3 生成密钥文件](#.E7.94.9F.E6.88.90.E5.AF.86.E9.92.A5.E6.96.87.E4.BB.B6)
-*   [4 设置两步验证软件](#.E8.AE.BE.E7.BD.AE.E4.B8.A4.E6.AD.A5.E9.AA.8C.E8.AF.81.E8.BD.AF.E4.BB.B6)
-*   [5 测试](#.E6.B5.8B.E8.AF.95)
-*   [6 存储位置](#.E5.AD.98.E5.82.A8.E4.BD.8D.E7.BD.AE)
-*   [7 用于桌面登陆](#.E7.94.A8.E4.BA.8E.E6.A1.8C.E9.9D.A2.E7.99.BB.E9.99.86)
+*   [1 安装](#安装)
+*   [2 设置插入式验证模块(**P**luggable **A**uthentication **M**odules)](#设置插入式验证模块(Pluggable_Authentication_Modules))
+*   [3 生成密钥文件](#生成密钥文件)
+*   [4 设置两步验证软件](#设置两步验证软件)
+*   [5 测试](#测试)
+*   [6 存储位置](#存储位置)
+*   [7 用于桌面登陆](#用于桌面登陆)
 
 ## 安装
 

@@ -9,8 +9,9 @@
 *   [3 Configuration](#Configuration)
 *   [4 XMLTV](#XMLTV)
 *   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Use hardware video acceleration](#Use_hardware_video_acceleration)
-    *   [5.2 Use VA-API support transcoding](#Use_VA-API_support_transcoding)
+    *   [5.1 Create M3U compatible playlist file](#Create_M3U_compatible_playlist_file)
+    *   [5.2 Use hardware video acceleration](#Use_hardware_video_acceleration)
+        *   [5.2.1 Enable VA-API support transcoding](#Enable_VA-API_support_transcoding)
     *   [5.3 Use CAPMT (Linux Network DVBAPI) with OSCam](#Use_CAPMT_(Linux_Network_DVBAPI)_with_OSCam)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Unable to authenticate/play stream](#Unable_to_authenticate/play_stream)
@@ -46,6 +47,15 @@ If you want to obtain schedule data from an outside source like Schedules Direct
 
 ## Tips and tricks
 
+### Create M3U compatible playlist file
+
+To export all channels as a M3U playlist file, one may want to use the following URL [[1]](https://tvheadend.org/boards/5/topics/21366):
+
+```
+http://<user>:<pass>@<ip>:9981/playlist/channels.m3u?profile=<profile>
+
+```
+
 ### Use hardware video acceleration
 
 When using [tvheadend-git](https://aur.archlinux.org/packages/tvheadend-git/) it is possible to enable [hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
@@ -54,11 +64,11 @@ Support depends on selected the codec and capabilities of the video device in us
 
 To enable hardware acceleration, check *Hardware acceleration* for a codec profile on the *Codec Profiles* page.
 
-### Use VA-API support transcoding
+#### Enable VA-API support transcoding
 
 It is possible to use [VA-API](/index.php/VA-API "VA-API") for transcoding streams when using [tvheadend-git](https://aur.archlinux.org/packages/tvheadend-git/), support depends on capabilities of the video device and the selected codec.
 
-To enable VA-API create a new *Codec Profile* and select a codec with *VAAPI* on the *Codec Profiles* page. On the next screen do **not check** *Hardware acceleration*, select the correct *Device Name*, e.g. `i915 v1.6.0 (/dev/dri/renderD128)` and click on *Create*.
+To enable VA-API create a new *Codec Profile* and select a codec with *VAAPI* on the *Codec Profiles* page. On the next screen check *Hardware acceleration*, select the correct *Device Name*, e.g. `i915 v1.6.0 (/dev/dri/renderD128)` and click on *Create*.
 
 Finally, create a *Stream Profile* and select the previously created *Codec Profile* as *Video codec profile*. The *Audio codec profile* and *Subtitle codec profile* depend on the user preferences and as stated support by the video device.
 
