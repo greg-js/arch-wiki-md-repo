@@ -2,7 +2,7 @@ Related articles
 
 *   [pacman/Package signing (简体中文)](/index.php/Pacman/Package_signing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman/Package signing (简体中文)")
 *   [Disk encryption](/index.php/Disk_encryption "Disk encryption")
-*   [List of applications/Security#Encryption, signing, steganography](/index.php/List_of_applications/Security#Encryption.2C_signing.2C_steganography "List of applications/Security")
+*   [List of applications/Security#Encryption, signing, steganography](/index.php/List_of_applications/Security#Encryption,_signing,_steganography "List of applications/Security")
 
 **翻译状态：** 本文是英文页面 [GnuPG](/index.php/GnuPG "GnuPG") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-07-27，点击[这里](https://wiki.archlinux.org/index.php?title=GnuPG&diff=0&oldid=441685)可以查看翻译后英文页面的改动。
 
@@ -12,19 +12,19 @@ Related articles
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 配置](#.E9.85.8D.E7.BD.AE)
-    *   [2.1 目录位置](#.E7.9B.AE.E5.BD.95.E4.BD.8D.E7.BD.AE)
-    *   [2.2 配置文件](#.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)
-    *   [2.3 新用户的默认选项](#.E6.96.B0.E7.94.A8.E6.88.B7.E7.9A.84.E9.BB.98.E8.AE.A4.E9.80.89.E9.A1.B9)
-*   [3 用法](#.E7.94.A8.E6.B3.95)
-    *   [3.1 创建密钥对](#.E5.88.9B.E5.BB.BA.E5.AF.86.E9.92.A5.E5.AF.B9)
-    *   [3.2 查看密钥](#.E6.9F.A5.E7.9C.8B.E5.AF.86.E9.92.A5)
-    *   [3.3 导出公钥](#.E5.AF.BC.E5.87.BA.E5.85.AC.E9.92.A5)
-    *   [3.4 导入公共密钥](#.E5.AF.BC.E5.85.A5.E5.85.AC.E5.85.B1.E5.AF.86.E9.92.A5)
-    *   [3.5 使用公钥服务器](#.E4.BD.BF.E7.94.A8.E5.85.AC.E9.92.A5.E6.9C.8D.E5.8A.A1.E5.99.A8)
+*   [1 安装](#安装)
+*   [2 配置](#配置)
+    *   [2.1 目录位置](#目录位置)
+    *   [2.2 配置文件](#配置文件)
+    *   [2.3 新用户的默认选项](#新用户的默认选项)
+*   [3 用法](#用法)
+    *   [3.1 创建密钥对](#创建密钥对)
+    *   [3.2 查看密钥](#查看密钥)
+    *   [3.3 导出公钥](#导出公钥)
+    *   [3.4 导入公共密钥](#导入公共密钥)
+    *   [3.5 使用公钥服务器](#使用公钥服务器)
     *   [3.6 Encrypt and decrypt](#Encrypt_and_decrypt)
-*   [4 密钥维护](#.E5.AF.86.E9.92.A5.E7.BB.B4.E6.8A.A4)
+*   [4 密钥维护](#密钥维护)
     *   [4.1 Edit your key](#Edit_your_key)
     *   [4.2 Exporting subkey](#Exporting_subkey)
     *   [4.3 Rotating subkeys](#Rotating_subkeys)
@@ -44,12 +44,12 @@ Related articles
     *   [7.1 GnuPG only setups](#GnuPG_only_setups)
     *   [7.2 GnuPG with PSCD-Lite](#GnuPG_with_PSCD-Lite)
         *   [7.2.1 Always use PSCD-Light](#Always_use_PSCD-Light)
-*   [8 使用技巧](#.E4.BD.BF.E7.94.A8.E6.8A.80.E5.B7.A7)
+*   [8 使用技巧](#使用技巧)
     *   [8.1 Different algorithm](#Different_algorithm)
     *   [8.2 Encrypt a password](#Encrypt_a_password)
     *   [8.3 Revoking a key](#Revoking_a_key)
     *   [8.4 Change trust model](#Change_trust_model)
-    *   [8.5 Hide all recipient id's](#Hide_all_recipient_id.27s)
+    *   [8.5 Hide all recipient id's](#Hide_all_recipient_id's)
     *   [8.6 Using caff for keysigning parties](#Using_caff_for_keysigning_parties)
 *   [9 Troubleshooting](#Troubleshooting)
     *   [9.1 Not enough random bytes available](#Not_enough_random_bytes_available)
@@ -58,10 +58,10 @@ Related articles
     *   [9.4 KGpg configuration permissions](#KGpg_configuration_permissions)
     *   [9.5 Conflicts between gnome-keyring and gpg-agent](#Conflicts_between_gnome-keyring_and_gpg-agent)
     *   [9.6 mutt and gpg](#mutt_and_gpg)
-    *   [9.7 "Lost" keys, upgrading to gnupg version 2.1](#.22Lost.22_keys.2C_upgrading_to_gnupg_version_2.1)
-    *   [9.8 gpg hanged for all keyservers (when trying to receive keys)](#gpg_hanged_for_all_keyservers_.28when_trying_to_receive_keys.29)
+    *   [9.7 "Lost" keys, upgrading to gnupg version 2.1](#"Lost"_keys,_upgrading_to_gnupg_version_2.1)
+    *   [9.8 gpg hanged for all keyservers (when trying to receive keys)](#gpg_hanged_for_all_keyservers_(when_trying_to_receive_keys))
     *   [9.9 Smartcard not detected](#Smartcard_not_detected)
-*   [10 参阅](#.E5.8F.82.E9.98.85)
+*   [10 参阅](#参阅)
 
 ## 安装
 
@@ -69,7 +69,7 @@ Related articles
 
 软件包 [pinentry](https://www.archlinux.org/packages/?name=pinentry) 也会被同时安装，它是一个简单的 PIN 或 passphrase 输入对话框集合，GnuPG 用来输入密码，*pinentry* 的对话框是由软链接`/usr/bin/pinentry` 确定，默认指向 `/usr/bin/pinentry-gtk-2`.
 
-如果要图形界面和 GnuPG 进行整合，请查看 [List of applications/Security#Encryption, signing, steganography](/index.php/List_of_applications/Security#Encryption.2C_signing.2C_steganography "List of applications/Security").
+如果要图形界面和 GnuPG 进行整合，请查看 [List of applications/Security#Encryption, signing, steganography](/index.php/List_of_applications/Security#Encryption,_signing,_steganography "List of applications/Security").
 
 ## 配置
 
@@ -155,7 +155,7 @@ $ gpg --output *public.key* --armor --export *<user-id>*
 
 ```
 
-此外，还可以通过 [密钥服务器](#.E4.BD.BF.E7.94.A8.E5.85.AC.E9.92.A5.E6.9C.8D.E5.8A.A1.E5.99.A8)分发公钥.
+此外，还可以通过 [密钥服务器](#使用公钥服务器)分发公钥.
 
 **Tip:** 使用 `--no-emit-version` 可以避免打印版本号，通过配置文件也可以进行此设置。
 

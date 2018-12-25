@@ -48,6 +48,8 @@ Related articles
 
 [Install](/index.php/Install "Install") the [distcc](https://www.archlinux.org/packages/?name=distcc) package on all participating PCs in the distcc cluster. For other distros, or even operating systems including Windows through using Cygwin, refer to the [distcc docs](http://distcc.samba.org/doc.html).
 
+distcc need TCP port 3632 for communication. Refer [https://wiki.archlinux.org/index.php/Category:Firewalls](https://wiki.archlinux.org/index.php/Category:Firewalls) and man distcc.
+
 ## Configuration
 
 ### Slaves

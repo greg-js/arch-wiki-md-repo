@@ -104,16 +104,17 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
     *   [12.1 Virtual machine runs too slowly](#Virtual_machine_runs_too_slowly)
     *   [12.2 Mouse cursor is jittery or erratic](#Mouse_cursor_is_jittery_or_erratic)
     *   [12.3 No visible Cursor](#No_visible_Cursor)
-    *   [12.4 Unable to move/attach Cursor](#Unable_to_move/attach_Cursor)
-    *   [12.5 Keyboard seems broken or the arrow keys do not work](#Keyboard_seems_broken_or_the_arrow_keys_do_not_work)
-    *   [12.6 Guest display stretches on window resize](#Guest_display_stretches_on_window_resize)
-    *   [12.7 ioctl(KVM_CREATE_VM) failed: 16 Device or resource busy](#ioctl(KVM_CREATE_VM)_failed:_16_Device_or_resource_busy)
-    *   [12.8 libgfapi error message](#libgfapi_error_message)
-    *   [12.9 Kernel panic on LIVE-environments](#Kernel_panic_on_LIVE-environments)
-    *   [12.10 Windows 7 guest suffers low-quality sound](#Windows_7_guest_suffers_low-quality_sound)
-    *   [12.11 Could not access KVM kernel module: Permission denied](#Could_not_access_KVM_kernel_module:_Permission_denied)
-    *   [12.12 "System Thread Exception Not Handled" when booting a Windows VM](#"System_Thread_Exception_Not_Handled"_when_booting_a_Windows_VM)
-    *   [12.13 Certain Windows games/applications crashing/causing a bluescreen](#Certain_Windows_games/applications_crashing/causing_a_bluescreen)
+    *   [12.4 Two different mouse cursors are visible](#Two_different_mouse_cursors_are_visible)
+    *   [12.5 Keyboard issues when using VNC](#Keyboard_issues_when_using_VNC)
+    *   [12.6 Keyboard seems broken or the arrow keys do not work](#Keyboard_seems_broken_or_the_arrow_keys_do_not_work)
+    *   [12.7 Guest display stretches on window resize](#Guest_display_stretches_on_window_resize)
+    *   [12.8 ioctl(KVM_CREATE_VM) failed: 16 Device or resource busy](#ioctl(KVM_CREATE_VM)_failed:_16_Device_or_resource_busy)
+    *   [12.9 libgfapi error message](#libgfapi_error_message)
+    *   [12.10 Kernel panic on LIVE-environments](#Kernel_panic_on_LIVE-environments)
+    *   [12.11 Windows 7 guest suffers low-quality sound](#Windows_7_guest_suffers_low-quality_sound)
+    *   [12.12 Could not access KVM kernel module: Permission denied](#Could_not_access_KVM_kernel_module:_Permission_denied)
+    *   [12.13 "System Thread Exception Not Handled" when booting a Windows VM](#"System_Thread_Exception_Not_Handled"_when_booting_a_Windows_VM)
+    *   [12.14 Certain Windows games/applications crashing/causing a bluescreen](#Certain_Windows_games/applications_crashing/causing_a_bluescreen)
 *   [13 See also](#See_also)
 
 ## Installation
@@ -250,7 +251,7 @@ See [qemu(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/qemu.1) for more inform
 
 After the operating system has finished installing, the QEMU image can be booted directly (see [#Running virtualized system](#Running_virtualized_system)).
 
-**Warning:** By default only 128 MB of memory is assigned to the machine. The amount of memory can be adjusted with the `-m` switch, for example `-m 512M` or `-m 2G`.
+**Note:** By default only 128 MB of memory is assigned to the machine. The amount of memory can be adjusted with the `-m` switch, for example `-m 512M` or `-m 2G`.
 
 **Tip:**
 
@@ -763,7 +764,7 @@ sudo ip tuntap del $IFACE mode tap &> /dev/null
 Then to launch a VM, do something like this
 
 ```
-$ run-qemu -hda *myvm.img* -m 512 -vga std
+$ run-qemu -hda *myvm.img* -m 512
 
 ```
 
@@ -1125,7 +1126,11 @@ $ qemu-system-x86_64 -vga qxl -spice port=5930,disable-ticketing -device virtio-
 
 ```
 
-From the [SPICE page on the KVM wiki](https://www.linux-kvm.org/page/SPICE): "*The `-device virtio-serial-pci` option adds the virtio-serial device, `-device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0` opens a port for spice vdagent in that device and `-chardev spicevmc,id=spicechannel0,name=vdagent` adds a spicevmc chardev for that port. It is important that the `chardev=` option of the `virtserialport` device matches the `id=` option given to the `chardev` option (`spicechannel0` in this example). It is also important that the port name is `com.redhat.spice.0`, because that is the namespace where vdagent is looking for in the guest. And finally, specify `name=vdagent` so that spice knows what this channel is for.*"
+The parameters have the following meaning:
+
+1.  The `-device virtio-serial-pci` option adds the virtio-serial device,
+2.  `-device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0` opens a port for spice vdagent in that device,
+3.  `-chardev spicevmc,id=spicechannel0,name=vdagent` adds a spicevmc chardev for that port. It is important that the `chardev=` option of the `virtserialport` device matches the `id=` option given to the `chardev` option (`spicechannel0` in this example). It is also important that the port name is `com.redhat.spice.0`, because that is the namespace where vdagent is looking for in the guest. And finally, specify `name=vdagent` so that spice knows what this channel is for.
 
 **Tip:** Since QEMU in SPICE mode acts similarly to a remote desktop server, it may be more convenient to run QEMU in daemon mode with the `-daemonize` parameter.
 
@@ -1240,15 +1245,14 @@ This is like a PC that has no VGA card at all. You would not even be able to acc
 
 ### vnc
 
-Given that you used the `-nographic` option, you can add the `-vnc display` option to have QEMU listen on `display` and redirect the VGA display to the VNC session. There is an example of this in the [#Starting QEMU virtual machines on boot](#Starting_QEMU_virtual_machines_on_boot) section's example configs.
+One can add the `-vnc :X` option to have QEMU redirect the VGA display to the VNC session. Substitute `X` for the number of the display (0 will then listen on 5900, 1 on 5901...).
 
 ```
-$ qemu-system-x86_64 -vga std -nographic -vnc :0
-$ gvncviewer :0
+$ qemu-system-x86_64 -vnc :0
 
 ```
 
-When using VNC, you might experience keyboard problems described (in gory details) [here](https://www.berrange.com/posts/2010/07/04/more-than-you-or-i-ever-wanted-to-know-about-virtual-keyboard-handling/). The solution is *not* to use the `-k` option on QEMU, and to use `gvncviewer` from [gtk-vnc](https://www.archlinux.org/packages/?name=gtk-vnc). See also [this](http://www.mail-archive.com/libvir-list@redhat.com/msg13340.html) message posted on libvirt's mailing list.
+An example is also provided in the [#Starting QEMU virtual machines on boot](#Starting_QEMU_virtual_machines_on_boot) section.
 
 ## Audio
 
@@ -1373,7 +1377,7 @@ $ qemu-img create -f qcow2 *fake.qcow2* 1G
 Run the original Windows guest (with the boot disk still in IDE mode) with the fake disk (in virtio mode) and a CD-ROM with the driver.
 
 ```
-$ qemu-system-x86_64 -m 512 -vga std -drive file=*windows_disk_image*,if=ide -drive file=*fake.qcow2*,if=virtio -cdrom virtio-win-0.1-81.iso
+$ qemu-system-x86_64 -m 512 -drive file=*windows_disk_image*,if=ide -drive file=*fake.qcow2*,if=virtio -cdrom virtio-win-0.1-81.iso
 
 ```
 
@@ -1382,7 +1386,7 @@ Windows will detect the fake disk and try to find a driver for it. If it fails, 
 When the installation is successful, you can turn off the virtual machine and launch it again, now with the boot disk attached in virtio mode:
 
 ```
-$ qemu-system-x86_64 -m 512 -vga std -drive file=*windows_disk_image*,if=virtio
+$ qemu-system-x86_64 -m 512 -drive file=*windows_disk_image*,if=virtio
 
 ```
 
@@ -1393,7 +1397,7 @@ $ qemu-system-x86_64 -m 512 -vga std -drive file=*windows_disk_image*,if=virtio
 Installing virtio network drivers is a bit easier, simply add the `-net` argument as explained above.
 
 ```
-$ qemu-system-x86_64 -m 512 -vga std -drive file=*windows_disk_image*,if=virtio -net nic,model=virtio -cdrom virtio-win-0.1-74.iso
+$ qemu-system-x86_64 -m 512 -drive file=*windows_disk_image*,if=virtio -net nic,model=virtio -cdrom virtio-win-0.1-74.iso
 
 ```
 
@@ -1614,7 +1618,7 @@ To set which virtual machines will start on boot-up, [enable](/index.php/Enable 
 To prevent the mouse from being grabbed when clicking on the guest operating system's window, add the options `-usb -device usb-tablet`. This means QEMU is able to report the mouse position without having to grab the mouse. This also overrides PS/2 mouse emulation when activated. For example:
 
 ```
-$ qemu-system-x86_64 -hda *disk_image* -m 512 -vga std -usb -device usb-tablet
+$ qemu-system-x86_64 -hda *disk_image* -m 512 -usb -device usb-tablet
 
 ```
 
@@ -1798,13 +1802,15 @@ If this helps, you can add this to your `~/.bashrc` file.
 
 Add `-show-cursor` to QEMU's options to see a mouse cursor.
 
-If that still does not work, make sure you have set your display device appropriately.
+If that still does not work, make sure you have set your display device appropriately, for example: `-vga qxl`.
 
-For example: `-vga qxl`
+### Two different mouse cursors are visible
 
-### Unable to move/attach Cursor
+Apply the tip [#Mouse integration](#Mouse_integration).
 
-Replace `-usbdevice tablet` with `-usb` as QEMU option.
+### Keyboard issues when using VNC
+
+When using VNC, you might experience keyboard problems described (in gory details) [here](https://www.berrange.com/posts/2010/07/04/more-than-you-or-i-ever-wanted-to-know-about-virtual-keyboard-handling/). The solution is *not* to use the `-k` option on QEMU, and to use `gvncviewer` from [gtk-vnc](https://www.archlinux.org/packages/?name=gtk-vnc). See also [this](http://www.mail-archive.com/libvir-list@redhat.com/msg13340.html) message posted on libvirt's mailing list.
 
 ### Keyboard seems broken or the arrow keys do not work
 

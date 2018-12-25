@@ -330,7 +330,7 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 
 *   **XSecureLock** — X11 screen lock utility designed with the primary goal of security.
 
-	[https://github.com/google/xsecurelock](https://github.com/google/xsecurelock) || [xsecurelock-git](https://aur.archlinux.org/packages/xsecurelock-git/)
+	[https://github.com/google/xsecurelock](https://github.com/google/xsecurelock) || [xsecurelock](https://www.archlinux.org/packages/?name=xsecurelock)
 
 *   **xtrlock** — Very lightweight X display locker. Keeps windows visible and displays lock icon instead of mouse cursor. Typing password followed by enter unlocks the screen.
 

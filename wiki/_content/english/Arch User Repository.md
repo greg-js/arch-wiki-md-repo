@@ -31,8 +31,8 @@ A good number of new packages that enter the official repositories start in the 
     *   [5.1 Submitting packages](#Submitting_packages)
         *   [5.1.1 Rules of submission](#Rules_of_submission)
         *   [5.1.2 Authentication](#Authentication)
-        *   [5.1.3 Creating a new package](#Creating_a_new_package)
-        *   [5.1.4 Uploading packages](#Uploading_packages)
+        *   [5.1.3 Creating package repositories](#Creating_package_repositories)
+        *   [5.1.4 Publish new package content](#Publish_new_package_content)
     *   [5.2 Maintaining packages](#Maintaining_packages)
     *   [5.3 Other requests](#Other_requests)
 *   [6 Web interface translation](#Web_interface_translation)
@@ -240,55 +240,39 @@ $ ssh-keygen -f ~/.ssh/aur
 
 **Tip:** You can add multiple public keys to your profile by separating them with a newline in the input field.
 
-#### Creating a new package
+#### Creating package repositories
 
-In order to create a new, empty, local Git repository for a package, simply `git clone` the remote repository with the corresponding name. If the package does not exist on AUR yet, you will see the following warning:
+If you are [creating a new package](/index.php/Creating_packages "Creating packages") from scratch, establish a local Git repository and an AUR remote by [cloning](/index.php/Git#Getting_a_Git_repository "Git") the intended [pkgbase](/index.php/PKGBUILD#pkgbase "PKGBUILD"). If the package does not yet exist, the following warning is expected:
 
- `$ git clone ssh://aur@aur.archlinux.org/*package_name*.git` 
+ `$ git clone ssh://aur@aur.archlinux.org/*pkgbase*.git` 
 ```
-Cloning into '*package_name*'...
+Cloning into '*pkgbase*'...
 warning: You appear to have cloned an empty repository.
 Checking connectivity... done.
 ```
 
-**Note:** When a package on the AUR is deleted, the git repository is not deleted so it is possible for a deleted package's repository to not be empty when cloned if someone is creating a package with the same name.
+**Note:** The repository will not be empty if `*pkgbase*` matches a [deleted](#Other_requests) package.
 
-If you have already created a git repository, you can simply create a remote for the AUR git repository and then fetch it:
-
-```
-$ git remote add *remote_name* ssh://aur@aur.archlinux.org/*package_name*.git
-$ git fetch *remote_name*
+If you already have a package, [initialize it](/index.php/Git#Getting_a_Git_repository "Git") as a Git repository if it isn't one, and add an AUR remote:
 
 ```
-
-where `*remote_name*` is the name of the remote to create (*e.g.,* "origin"). See [Git#Using remotes](/index.php/Git#Using_remotes "Git") for more information.
-
-The new package will appear on AUR after you *push* the first commit. You can now add the source files to the local copy of the Git repository. See [#Uploading packages](#Uploading_packages).
-
-**Warning:** Your AUR commits will be authored according to your git user name and email address and it is very difficult to change commits after you push them (see [FS#45425](https://bugs.archlinux.org/task/45425)). If you want to push to AUR under a different name/email, you can change them for this package via `git config user.name [...]` and `git config user.email [...]`. Review your commits before pushing them!
-
-#### Uploading packages
-
-The procedure for uploading packages to the AUR is the same for new packages and package updates. You need at least [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and [.SRCINFO](/index.php/.SRCINFO ".SRCINFO") in the top-level directory to *push* your package to AUR.
-
-**Note:** You need to regenerate the `.SRCINFO` every time you change `PKGBUILD` metadata, such as [pkgver()](/index.php/PKGBUILD#pkgver "PKGBUILD") updates. Otherwise the AUR will not show the updated version numbers.
-
-To upload, add the `PKGBUILD`, `.SRCINFO`, and any helper files (like *.install* files or local source files like *.patch*) to the *staging area* with `git add`, commit them to your local tree with a commit message with `git commit`, and finally publish the changes to the AUR with `git push`.
-
-For example:
-
-```
-$ makepkg --printsrcinfo > .SRCINFO
-$ git add PKGBUILD .SRCINFO
-$ git commit -m "*useful commit message*"
-$ git push
+$ git remote add *label* ssh://aur@aur.archlinux.org/*pkgbase*.git
 
 ```
 
-**Tip:**
+Then [fetch](/index.php/Git#Using_remotes "Git") this remote to initialize it in the AUR.
 
-*   If you initially forgot to commit the `.SRCINFO` and added it in a later commit, the AUR will still reject your pushes because the `.SRCINFO` must exist for *every* commit. To solve this problem you can use [git rebase](https://git-scm.com/docs/git-rebase) with the `--root` option or [git filter-branch](https://git-scm.com/docs/git-filter-branch) with the `--tree-filter` option.
-*   To prevent untracked files from commits and to keep the working directory as clean as possible, exclude all files with `.gitignore` and force-add files instead. See [dotfiles#Using gitignore](/index.php/Dotfiles#Using_gitignore "Dotfiles").
+**Note:** [Pull and rebase](https://git-scm.com/docs/git-pull#git-pull---rebasefalsetruemergespreserveinteractive) to resolve conflicts if `*pkgbase*` matches a deleted package.
+
+#### Publish new package content
+
+**Warning:** Your commits will be authored with your [global Git name and email address](/index.php/Git#Configuration "Git"). It is very difficult to change commits after pushing them ([FS#45425](https://bugs.archlinux.org/task/45425)). If you want to push to the AUR under different credentials, you can change them per package with `git config user.name "..."` and `git config user.email "..."`.
+
+To upload or update a package, [add](/index.php/Git#Staging_changes "Git") *at least* [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and [.SRCINFO](/index.php/.SRCINFO ".SRCINFO"), then any additional new or modified helper files (such as [*.install*](/index.php/PKGBUILD#install "PKGBUILD") files or [local source files](/index.php/PKGBUILD#source "PKGBUILD") such as [patches](/index.php/Patching_packages "Patching packages")), [commit](/index.php/Git#Commiting_changes "Git") with a meaningful commit message, and finally [push](/index.php/Git#Push_to_a_repository "Git") the changes to the AUR.
+
+**Note:** If `.SRCINFO` was not included in your first commit, add it by [rebasing all commits](https://git-scm.com/docs/git-rebase#git-rebase---root) or [filtering the tree](https://git-scm.com/docs/git-filter-branch#git-filter-branch---tree-filterltcommandgt) so the AUR will permit your initial push. Be sure to regenerate `.SRCINFO` whenever `PKGBUILD` metadata changes, such as [pkgver()](/index.php/PKGBUILD#pkgver "PKGBUILD") updates; otherwise the AUR will not show updated version numbers.
+
+**Tip:** To keep the working directory and commits as clean as possible, create a `.gitignore` that [excludes all files](/index.php/Dotfiles#Using_gitignore "Dotfiles") and force-add files as needed.
 
 ### Maintaining packages
 
@@ -307,6 +291,7 @@ Orphan, deletion and merge requests can be created by clicking on the "Submit Re
     *   A short note explaining the reason for deletion. Note that a package's comments does not sufficiently point out the reasons why a package is up for deletion. Because as soon as a TU takes action, the only place where such information can be obtained is the aur-requests mailing list.
     *   Supporting details, like when a package is provided by another package, if you are the maintainer yourself, it is renamed and the original owner agreed, etc.
     *   Deletion requests can be rejected, in which case if you are the maintainer of the package you will likely be advised to disown the package to allow adoption by another packager.
+    *   After a package is deleted, its Git repository remains available in the AUR
 
 ## Web interface translation
 

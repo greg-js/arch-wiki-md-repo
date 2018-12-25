@@ -240,7 +240,7 @@ The Plasma Netbook shell has been dropped from Plasma 5, see the following [KDE 
 
 #### Thumbnail generation
 
-To allow thumbnail generation for media or document files on the desktop and in Dolphin, install [kdegraphics-thumbnailers](https://www.archlinux.org/packages/?name=kdegraphics-thumbnailers), [ffmpegthumbs](https://www.archlinux.org/packages/?name=ffmpegthumbs) and [kde-thumbnailer-odf](https://aur.archlinux.org/packages/kde-thumbnailer-odf/).
+To allow thumbnail generation for media or document files on the desktop and in Dolphin, install [kdegraphics-thumbnailers](https://www.archlinux.org/packages/?name=kdegraphics-thumbnailers) and [ffmpegthumbs](https://www.archlinux.org/packages/?name=ffmpegthumbs).
 
 Then enable the thumbnail categories for the desktop via *right click* on the *desktop background* > *Configure Desktop* > *Icons* > *More Preview Options...*.
 

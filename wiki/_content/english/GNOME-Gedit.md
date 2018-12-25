@@ -6,7 +6,7 @@
 *   [2 Configuration](#Configuration)
     *   [2.1 Do not end files with a new line](#Do_not_end_files_with_a_new_line)
     *   [2.2 Save backup versions of edited files](#Save_backup_versions_of_edited_files)
-*   [3 Spell Checking](#Spell_Checking)
+*   [3 Spell checking](#Spell_checking)
 *   [4 Plugins](#Plugins)
     *   [4.1 Adding and making custom plugins](#Adding_and_making_custom_plugins)
 *   [5 See also](#See_also)
@@ -32,9 +32,9 @@ If desired, gedit can create a backup copy of an edited file - the contents of t
 
 To enable this behaviour, access gedit's Preferences panel (for GNOME Shell users, this can be found in gedit's global menu). In the preferences panel, click on the *Editor* tab and tick the option *Create a backup copy of files before saving.*
 
-## Spell Checking
+## Spell checking
 
-In order to use spell checking in gedit you need an [aspell](/index.php/Aspell "Aspell") dictionary.
+Gedit can use multiple spell checking dictionaries, see [Language checking](/index.php/Language_checking "Language checking").
 
 ## Plugins
 

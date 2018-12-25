@@ -121,13 +121,26 @@ Mount the loopback device and [transfer](/index.php/Rsync "Rsync") the system:
 
 ### Convert the container to a compatible format
 
-Change directory to where the loopback file is located and choose the appropriate command for your virtual machine:
+Choose the appropriate command depending on the desired virtual machine.
+
+To convert into a **KVM** container, use [qemu](https://www.archlinux.org/packages/?name=qemu) with the following command line:
 
 ```
-$ cd /media/Backup
-$ qemu-img convert -c -f raw -O qcow backup.img backup.qcow2
-$ VBoxManage convertfromraw --format VDI backup.img backup.vdi
-$ VBoxManage convertfromraw --format VMDK backup.img backup.vmdk
+$ qemu-img convert -c -f raw -O qcow /media/backup.img /media/backup.qcow2
+
+```
+
+To convert into a **VirtualBox** container, use [virtualbox](https://www.archlinux.org/packages/?name=virtualbox) with the following command line:
+
+```
+$ VBoxManage convertfromraw --format VDI /media/backup.img /media/backup.vdi
+
+```
+
+To convert into a **VMware** container, use *virtualbox* with the following command line:
+
+```
+$ VBoxManage convertfromraw --format VMDK /media/backup.img /media/backup.vmdk
 
 ```
 

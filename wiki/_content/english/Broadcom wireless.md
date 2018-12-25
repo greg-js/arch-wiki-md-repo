@@ -22,10 +22,9 @@ This article details how to install and setup a Broadcom wireless network device
     *   [4.5 Interface is showing but not allowing connections](#Interface_is_showing_but_not_allowing_connections)
     *   [4.6 Suppressing console messages](#Suppressing_console_messages)
     *   [4.7 Device BCM43241 not detected](#Device_BCM43241_not_detected)
-    *   [4.8 Missing firmware for Asus PCE-AC88](#Missing_firmware_for_Asus_PCE-AC88)
-    *   [4.9 Connection is unstable with some routers](#Connection_is_unstable_with_some_routers)
-    *   [4.10 No 5GHz for BCM4360 (14e4:43a0) devices](#No_5GHz_for_BCM4360_(14e4:43a0)_devices)
-    *   [4.11 Device works intermittently](#Device_works_intermittently)
+    *   [4.8 Connection is unstable with some routers](#Connection_is_unstable_with_some_routers)
+    *   [4.9 No 5GHz for BCM4360 (14e4:43a0) devices](#No_5GHz_for_BCM4360_(14e4:43a0)_devices)
+    *   [4.10 Device works intermittently](#Device_works_intermittently)
 
 ## History
 
@@ -168,12 +167,6 @@ To disable those messages, increase the loglevel of printk messages that get thr
 ### Device BCM43241 not detected
 
 This device will not display with either `lspci` nor `lsusb`; there is no known solution yet. Please remove this section when resolved.
-
-### Missing firmware for Asus PCE-AC88
-
-The firmware has been added to [linux-firwmare](https://www.archlinux.org/packages/?name=linux-firwmare) 20181216.211de16-1.
-
-For previous versions of [linux-firwmare](https://www.archlinux.org/packages/?name=linux-firwmare), please refer to [[1]](https://ubuntuforums.org/showthread.php?t=2337200&p=13618497#post13618497) for a way to extract the `brcmfmac4366c-pcie.bin` firmware. The firwmare extracted through this method does not work with 5GHz networks.
 
 ### Connection is unstable with some routers
 

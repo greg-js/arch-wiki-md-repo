@@ -6,10 +6,8 @@
 *   [2 D-Bus remote control](#D-Bus_remote_control)
 *   [3 Show/hide roster](#Show/hide_roster)
 *   [4 OMEMO Support](#OMEMO_Support)
-    *   [4.1 Configuration](#Configuration)
 *   [5 Off-the-Record Messaging](#Off-the-Record_Messaging)
-    *   [5.1 Installation / Configuration](#Installation_/_Configuration)
-    *   [5.2 gajim-otr version confusions](#gajim-otr_version_confusions)
+    *   [5.1 gajim-otr version confusions](#gajim-otr_version_confusions)
 
 ## Installation
 
@@ -32,37 +30,24 @@ It may be necessary to restart Gajim if this doesn't work.
 
 ## OMEMO Support
 
-[OMEMO Multi-End Message and Object Encryption](https://conversations.im/omemo/) is an XMPP Extension Protocol (XEP) for secure multi-client end-to-end encryption. It is an open standard based on Axolotl and PEP which can be freely used and implemented by anyone and recently got an experimental [plugin](https://github.com/kalkin/gajim-omemo) for Gajim.
+[OMEMO Multi-End Message and Object Encryption](https://conversations.im/omemo/) is an XMPP Extension Protocol (XEP) for secure multi-client end-to-end encryption. It is an open standard based on Axolotl and PEP which can be freely used and implemented by anyone.
 
-In order to use OMEMO in Gajim, just install the [gajim-plugin-omemo](https://aur.archlinux.org/packages/gajim-plugin-omemo/) package which will also install all the required dependencies. Alternatively, you can install it from Gajim Plugin Manager after installing the dependencies of [gajim-plugin-omemo](https://aur.archlinux.org/packages/gajim-plugin-omemo/).
-
-### Configuration
-
-After installing the OMEMO plugin, you have to enable it in Gajim Plugin Manager in order to use it:
+In order to use OMEMO in Gajim, follow these steps:
 
 1.  Go to menu Edit => Plugins;
-2.  Activate the "OMEMO Multi-End Message and Object Encryption" plugin;
-3.  Close dialogs to save the changes.
-4.  Restart Gajim.
-5.  Please refer to the official documentation for [running instructions](https://dev.gajim.org/gajim/gajim-plugins/wikis/OmemoGajimPlugin#running)
+2.  Go to the available plugins window;
+3.  Mark the "OMEMO Multi-End Message and Object Encryption" plugin;
+4.  Back to the "Installed" plugins window;
+5.  Activate the "OMEMO Multi-End Message and Object Encryption" plugin;
+6.  Close dialogs to save the changes;
+7.  Restart Gajim;
+8.  Please refer to the official documentation for [running instructions](https://dev.gajim.org/gajim/gajim-plugins/wikis/OmemoGajimPlugin#running)
 
 ## Off-the-Record Messaging
 
-[OTR (off-the-record) messaging](https://en.wikipedia.org/wiki/Off-the-Record_Messaging "wikipedia:Off-the-Record Messaging") is strong end-to-end encryption protocol for instant messaging ([read more](https://www.cypherpunks.ca/otr/)). OTR hasn't any XMPP XEP, because OTR is of cross-protocol nature. Gajim does not support OTR out of the box.
+The [OTR (off-the-record) messaging](https://en.wikipedia.org/wiki/Off-the-Record_Messaging "wikipedia:Off-the-Record Messaging") have some bugs that can lead to accidently sending plaintext. It is recommended to use PGP or [OMEMO](https://conversations.im/omemo/) instead.
 
-### Installation / Configuration
-
-1.  Go to "contact-window" menu "Edit => Plugins";
-2.  If not activated out of the box, activate the "Plugin Installer";
-3.  Restart Gajim.
-4.  In "plugins-window", switch to the "Available" tab;
-5.  Activate the "Off-the-record encryption" plugin;
-6.  Restart Gajim.
-7.  Click on plugin settings button;
-8.  Generate your OTR key using "Generate key";
-9.  Take a look on other settings;
-10.  Close dialogs to save the changes.
-11.  Restart Gajim.
+The OTR plugin won't work with Gajim >= 1.0 as it was not ported to python3\. There is no port planned.
 
 ### gajim-otr version confusions
 

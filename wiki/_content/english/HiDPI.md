@@ -86,7 +86,7 @@ $ gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuf
 
 ```
 
-then open *Settings > Devices > Displays*
+then open *Settings > Devices > Displays* (the new options may only appear after a restart)
 
 *   Xorg
 

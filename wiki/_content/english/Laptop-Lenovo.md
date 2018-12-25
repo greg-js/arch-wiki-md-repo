@@ -100,6 +100,7 @@ install CD version
 
  | HDMI audio requires nvhda module |
 | [Lenovo ThinkPad P52](/index.php/Lenovo_ThinkPad_P52 "Lenovo ThinkPad P52") | 2018.09 | Yes | Yes | Yes | Yes | Unknown | Suspend working, hibernate not tested | NA | Touchpad (No) |
+| [Lenovo ThinkPad P1](/index.php/Lenovo_ThinkPad_P1 "Lenovo ThinkPad P1") | 2018.12 | Yes | Yes | Yes | Yes | Yes | Suspend working, hibernate not tested | NA | Webcam (Yes), multi-monitor (yes) |
 
 #### T series
 

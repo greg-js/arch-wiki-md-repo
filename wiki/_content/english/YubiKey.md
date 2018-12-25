@@ -37,10 +37,15 @@ This article describes how [Yubico](https://yubico.com)'s [YubiKey](https://en.w
         *   [4.1.1 Chromium/Chrome](#Chromium/Chrome)
         *   [4.1.2 Firefox](#Firefox)
 *   [5 CCID Smartcard](#CCID_Smartcard)
-    *   [5.1 CCID](#CCID)
-    *   [5.2 PIV](#PIV)
-    *   [5.3 Enable the CCID mode](#Enable_the_CCID_mode)
-    *   [5.4 Use OpenPGP smartcard mode](#Use_OpenPGP_smartcard_mode)
+    *   [5.1 PIV](#PIV)
+    *   [5.2 Use OpenPGP smartcard mode](#Use_OpenPGP_smartcard_mode)
+    *   [5.3 Using a YubiKey with SSH](#Using_a_YubiKey_with_SSH)
+        *   [5.3.1 Generating a key pair on the YubiKey](#Generating_a_key_pair_on_the_YubiKey)
+        *   [5.3.2 Client configuration](#Client_configuration)
+        *   [5.3.3 Public key conversion](#Public_key_conversion)
+        *   [5.3.4 Initiating an SSH session with the YubiKey](#Initiating_an_SSH_session_with_the_YubiKey)
+        *   [5.3.5 Using ssh-agent to cache the PIN](#Using_ssh-agent_to_cache_the_PIN)
+        *   [5.3.6 Further reading](#Further_reading)
 *   [6 Tips and tricks](#Tips_and_tricks)
     *   [6.1 YubiKey and LUKS encrypted partition/disk](#YubiKey_and_LUKS_encrypted_partition/disk)
     *   [6.2 Yubikey and KeePass](#Yubikey_and_KeePass)
@@ -375,21 +380,96 @@ To use a Challenge-Response slot (no matter which mode):
 
 ## CCID Smartcard
 
-### CCID
-
 CCID (Chip Card Interface Device) is a USB standard device class for use by USB devices that act as smart card readers or with security tokens that connect directly via USB, like the Yubikey. HID (Human Interface Device) and CCID are both USB device classes, i.e. they are in the same category of USB specifications. HID is a specification for computer peripherals, like keyboards. The Yubikey works like a USB (HID) keyboard when used in the OTP and U2F modes, but switches to the CCID protocol when using the PIV application, or as an OpenPGP device.
+
+CCID mode should be enabled by default on all YubiKeys shipped since November 2015 [[1]](https://www.yubico.com/support/knowledge-base/categories/articles/use-yubikey-yubikey-windows-hello-app/). Enable at least the CCID mode. Please see [#Set the enabled modes](#Set_the_enabled_modes).
 
 ### PIV
 
 Starting from the fourth generation devices, the Yubikeys contain a PIV (Personal Identity Verification) application on the chip. PIV is a US government standard (FIPS 201) that specifies how a token using RSA or ECC (Elliptic Curve Cryptography) is used for personal electronic identification. The distinguishing characteristic of a PIV token is that it is built to protect private keys and operate on them on-chip. A private key never leaves the token after it has been installed on it. Optionally, the private key can even be generated on-chip with the aid of an on-chip random number generator. If generated on-chip, the private key is never handled outside of the chip, and there is no way to recover it from the token. When using the PIV mechanism, the Yubikey functions as a CCID device.
 
-### Enable the CCID mode
-
-Please see [#Set the enabled modes](#Set_the_enabled_modes). Enable at least the CCID mode. CCID mode should be enabled by default on all YubiKeys shipped since November 2015 [[1]](https://www.yubico.com/support/knowledge-base/categories/articles/use-yubikey-yubikey-windows-hello-app/).
-
 ### Use OpenPGP smartcard mode
 
 See [GnuPG#Smartcards](/index.php/GnuPG#Smartcards "GnuPG")
+
+### Using a YubiKey with SSH
+
+The following example describes how to use a YubiKey for [SSH keys](/index.php/SSH_keys "SSH keys"). A YubiKey with the PIV (Personal Identification Verification) application is required; this means you need a YubiKey 4 or later.
+
+#### Generating a key pair on the YubiKey
+
+A private key and associated certificate need to be either generated on the YubiKey or imported to it. Install the [yubikey-manager](https://www.archlinux.org/packages/?name=yubikey-manager) package. Insert the YubiKey in a USB port and check that it is recognized:
+
+```
+$ ykman list
+YubiKey 4 [OTP+FIDO+CCID] Serial: 1234567
+
+```
+
+Generate a 2048-bit RSA key pair on the YubiKey. The private key will be stored in key slot 9a on the YubiKey, and the public key will be written to the file `pubkey.pem`.
+
+```
+$ ykman piv generate-key -a RSA2048 9a pubkey.pem
+
+```
+
+Next, use the YubiKey to generate a self-signed certificate for the public key:
+
+```
+$ ykman piv generate-certificate -s "SSH Key" 9a pubkey.pem
+
+```
+
+The Subject field in the certificate will be set to "SSH Key". This field will be included in the prompt for PIN to help identify which key is used for authentication.
+
+Note that the last parameter in the generate-key command is the file name where the public key is written to, whereas the last parameter in the generate-certificate command specifies where the public key is read from. The certificate is constructed and signed on the YubiKey and stored alongside the private key; the command does not output the certificate.
+
+At this point the YubiKey is ready for authenticating to a SSH server. For this to happen, some additional configuration on both the client and the server is required.
+
+#### Client configuration
+
+The standard API used to communicate with cryptographic tokens is defined by [PKCS#11](https://en.wikipedia.org/wiki/PKCS_11). Install the [opensc](https://www.archlinux.org/packages/?name=opensc) package which provides this API in the form of the shared library `/usr/lib/opensc-pkcs11.so`. The ssh client should be configured to use this library with the directive PKCS11Provider in `~/.ssh/config`:
+
+ `~/.ssh/config`  `PKCS11Provider /usr/lib/opensc-pkcs11.so` 
+
+#### Public key conversion
+
+The `pubkey.pem` file contains the public key in PEM (Privacy Enhanced Mail) format. OpenSSH uses a different format defined in RFC 4253, section 6.6, so the PEM formatted key should be converted to the format OpenSSH understands. This can be done using *ssh-keygen*:
+
+```
+$ ssh-keygen -i -m PKCS8 -f pubkey.pem > pubkey.txt
+
+```
+
+This command uses the import (`-i`) function of the *ssh-keygen* program, specifies PKCS8 as the input file format (-m), and reads the input from the (`-f`) file `pubkey.pem`. The converted key is written on standard output, which is the example is redirected to the file `pubkey.txt`.
+
+The converted public key should now be copied to the remote server as described in [SSH keys#Copying the public key to the remote server](/index.php/SSH_keys#Copying_the_public_key_to_the_remote_server "SSH keys").
+
+#### Initiating an SSH session with the YubiKey
+
+To authenticate a SSH connection using the YubiKey, just use *ssh* normally. You will be prompted for the PIN instead of a password:
+
+```
+$ ssh remote
+Enter PIN for 'SSH Key' 
+[user@remote ~]$ 
+
+```
+
+#### Using ssh-agent to cache the PIN
+
+ssh-agent (see [SSH keys#SSH agents](/index.php/SSH_keys#SSH_agents "SSH keys")) can also be used with the PKCS#11 library; in this case the PIN code is cached instead of the private key.
+
+```
+$ ssh-add -s /usr/lib/pkcs11/opensc-pkcs11.so
+
+```
+
+As long as the PIN is cached in by the agent, the cached value is used and the user is not prompted for it.
+
+#### Further reading
+
+The default PIN code of the PIV application on the YubiKey is `123456`; you may want to change it. The YubiKey also requires a 24-byte management key for administrative functions like key generation. If the management key has been changed from its default value, the new value needs to be specified using the -m option on the command line for certain commands. See [What is PIV?](https://developers.yubico.com/PIV/)
 
 ## Tips and tricks
 

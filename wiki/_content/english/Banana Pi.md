@@ -14,7 +14,7 @@ With its Allwinner SoC, a Banana board usually runs the well documented Sunxi Li
 *   [2 Installation](#Installation)
     *   [2.1 Install basesystem to a SD card](#Install_basesystem_to_a_SD_card)
     *   [2.2 Compile and copy U-Boot bootloader](#Compile_and_copy_U-Boot_bootloader)
-    *   [2.3 Login / SSH](#Login_.2F_SSH)
+    *   [2.3 Login / SSH](#Login_/_SSH)
 *   [3 X.org driver](#X.org_driver)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Ethernet not working](#Ethernet_not_working)
@@ -48,10 +48,16 @@ Mount the ext4 filesystem, replacing `sda1` with the formatted partition:
 
 ```
 
-Download and extract the root filesystem:
+Download ArchLinuxARM with [wget](https://www.archlinux.org/packages/?name=wget):
 
 ```
 # wget [http://archlinuxarm.org/os/ArchLinuxARM-armv7-latest.tar.gz](http://archlinuxarm.org/os/ArchLinuxARM-armv7-latest.tar.gz)
+
+```
+
+Extract the root filesystem:
+
+```
 # bsdtar -xpf ArchLinuxARM-armv7-latest.tar.gz -C /mnt/
 
 ```

@@ -16,11 +16,9 @@ This article does not cover features common to multiple emulators using KVM as a
 *   [1 Checking support for KVM](#Checking_support_for_KVM)
     *   [1.1 Hardware support](#Hardware_support)
     *   [1.2 Kernel support](#Kernel_support)
-        *   [1.2.1 KVM modules](#KVM_modules)
-*   [2 Para-virtualized devices](#Para-virtualized_devices)
-    *   [2.1 VIRTIO modules](#VIRTIO_modules)
-    *   [2.2 Loading kernel modules](#Loading_kernel_modules)
-    *   [2.3 List of para-virtualized devices](#List_of_para-virtualized_devices)
+*   [2 Para-virtualization with Virtio](#Para-virtualization_with_Virtio)
+    *   [2.1 Kernel support](#Kernel_support_2)
+    *   [2.2 List of para-virtualized devices](#List_of_para-virtualized_devices)
 *   [3 How to use KVM](#How_to_use_KVM)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Nested virtualization](#Nested_virtualization)
@@ -51,43 +49,38 @@ If nothing is displayed after running either command, then your processor does *
 
 ### Kernel support
 
-Arch Linux kernels provide the appropriate [kernel modules](/index.php/Kernel_modules "Kernel modules") to support KVM and VIRTIO.
+Arch Linux kernel provides the required [kernel modules](/index.php/Kernel_modules "Kernel modules") to support KVM.
 
-#### KVM modules
+*   One can check if the necessary modules, `kvm` and either `kvm_amd` or `kvm_intel`, are available in the kernel with the following command:
 
-You can check if necessary modules (`kvm` and one of `kvm_amd`, `kvm_intel`) are available in your kernel with the following command (assuming your kernel is built with `CONFIG_IKCONFIG_PROC`):
+ `$ zgrep CONFIG_KVM /proc/config.gz` 
 
+The module is available only if it is set to either `y` or `m`.
+
+*   Then, ensure that the kernel modules are automatically loaded, with the command:
+
+ `$ lsmod | grep kvm` 
 ```
-$ zgrep CONFIG_KVM /proc/config.gz
-
-```
-
-The module is **only** available if it is set to either `y` or `m`.
-
-## Para-virtualized devices
-
-Para-virtualization provides a fast and efficient means of communication for guests to use devices on the host machine. KVM provides para-virtualized devices to virtual machines using the Virtio API as a layer between the hypervisor and guest.
-
-All virtio devices have two parts: the host device and the guest driver.
-
-### VIRTIO modules
-
-Use the following command to check if needed modules are available:
-
-```
-$ zgrep VIRTIO /proc/config.gz
-
+kvm_intel             245760  0
+kvmgt                  28672  0
+mdev                   20480  2 kvmgt,vfio_mdev
+vfio                   32768  3 kvmgt,vfio_mdev,vfio_iommu_type1
+kvm                   737280  2 kvmgt,kvm_intel
+irqbypass              16384  1 kvm
 ```
 
-### Loading kernel modules
+If the command returns nothing, the module needs to be loaded manually, see [Kernel modules#Manual module handling](/index.php/Kernel_modules#Manual_module_handling "Kernel modules").
 
-First, check if the kernel modules are automatically loaded. This should be the case with recent versions of [udev](/index.php/Udev "Udev").
+## Para-virtualization with Virtio
 
-```
-$ lsmod | grep kvm
-$ lsmod | grep virtio
+Para-virtualization provides a fast and efficient means of communication for guests to use devices on the host machine. KVM provides para-virtualized devices to virtual machines using the **Virtio** API as a layer between the hypervisor and guest.
 
-```
+All Virtio devices have two parts: the host device and the guest driver.
+
+### Kernel support
+
+*   Use the following command to check if the VIRTIO modules are available in the kernel: `$ zgrep VIRTIO /proc/config.gz` 
+*   Then, check if the kernel modules are automatically loaded with the command: `$ lsmod | grep virtio` 
 
 In case the above commands return nothing, you need to [Kernel modules#Manual module handling](/index.php/Kernel_modules#Manual_module_handling "Kernel modules") kernel modules.
 

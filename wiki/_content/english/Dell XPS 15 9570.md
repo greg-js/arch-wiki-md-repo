@@ -10,7 +10,7 @@
 | [rfkill](#Wifi_and_Bluetooth) | Working |
 | Audio | Working |
 | [Touchpad](#Touchpad) | Working |
-| Webcam | Not Working |
+| Webcam | Working |
 | Card Reader | Working |
 | Function/Multimedia Keys | Working |
 | [Power Management](#Power_Saving) | Buggy |

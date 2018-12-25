@@ -22,7 +22,8 @@ Related articles
     *   [4.2 Launching container without CONFIG_USER_NS](#Launching_container_without_CONFIG_USER_NS)
     *   [4.3 No ipv4 on unprivileged Arch container](#No_ipv4_on_unprivileged_Arch_container)
     *   [4.4 Resource limits are not applied when viewed from inside a container](#Resource_limits_are_not_applied_when_viewed_from_inside_a_container)
-*   [5 See also](#See_also)
+*   [5 Uninstall](#Uninstall)
+*   [6 See also](#See_also)
 
 ## Setup
 
@@ -30,7 +31,7 @@ Related articles
 
 Install [LXC](/index.php/LXC "LXC") and the [lxd](https://aur.archlinux.org/packages/lxd/) package, then [start](/index.php/Start "Start") `lxd.service`.
 
-See [Linux Containers#Enable support to run unprivileged containers (optional)](/index.php/Linux_Containers#Enable_support_to_run_unprivileged_containers_.28optional.29 "Linux Containers") if you want to run *unprivileged* containers. Otherwise see [#Launching container without CONFIG_USER_NS](#Launching_container_without_CONFIG_USER_NS).
+See [Linux Containers#Enable support to run unprivileged containers (optional)](/index.php/Linux_Containers#Enable_support_to_run_unprivileged_containers_(optional) "Linux Containers") if you want to run *unprivileged* containers. Otherwise see [#Launching container without CONFIG_USER_NS](#Launching_container_without_CONFIG_USER_NS).
 
 ### Alternative installation method
 
@@ -217,6 +218,28 @@ $ systemctl start lxcfs
 ```
 
 lxd will need to be restarted. Enable lxcfs for the service to be started at boot time.
+
+## Uninstall
+
+[Stop](/index.php/Stop "Stop") and disable `lxd.service` and `lxd.socket`:
+
+Then uninstall the package via pacman:
+
+```
+ # pacman -R lxd
+
+```
+
+If you uninstalled the package without disabling the service, you might have a lingering broken symlink at `/etc/systemd/system/multi-user.wants/lxd.service`.
+
+If you want to remove all data:
+
+```
+ # rm -r /var/lib/lxd
+
+```
+
+If you used any of the example networking configs, you should remove those as well.
 
 ## See also
 

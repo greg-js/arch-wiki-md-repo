@@ -18,21 +18,22 @@ Related articles
 *   [3 Configuration](#Configuration)
     *   [3.1 Auto power-on after boot](#Auto_power-on_after_boot)
 *   [4 Audio](#Audio)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Deprecated BlueZ tools](#Deprecated_BlueZ_tools)
-    *   [5.2 gnome-bluetooth](#gnome-bluetooth)
-    *   [5.3 Bluetooth USB Dongle](#Bluetooth_USB_Dongle)
-        *   [5.3.1 Audio devices start to skip at short distance from dongle](#Audio_devices_start_to_skip_at_short_distance_from_dongle)
-    *   [5.4 Logitech Bluetooth USB Dongle](#Logitech_Bluetooth_USB_Dongle)
-    *   [5.5 hcitool scan: Device not found](#hcitool_scan:_Device_not_found)
-    *   [5.6 rfkill unblock: Do not unblock](#rfkill_unblock:_Do_not_unblock)
-    *   [5.7 My computer is not visible](#My_computer_is_not_visible)
-    *   [5.8 Logitech keyboard does not pair](#Logitech_keyboard_does_not_pair)
-    *   [5.9 HSP/HFP profiles](#HSP/HFP_profiles)
-    *   [5.10 Foxconn / Hon Hai / Lite-On Broadcom device](#Foxconn_/_Hon_Hai_/_Lite-On_Broadcom_device)
-    *   [5.11 Device connects, then disconnects after a few moments](#Device_connects,_then_disconnects_after_a_few_moments)
-    *   [5.12 Device does not connect with an error in journal](#Device_does_not_connect_with_an_error_in_journal)
-    *   [5.13 Device does not show up in scan](#Device_does_not_show_up_in_scan)
+*   [5 Bluetooth serial](#Bluetooth_serial)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 Deprecated BlueZ tools](#Deprecated_BlueZ_tools)
+    *   [6.2 gnome-bluetooth](#gnome-bluetooth)
+    *   [6.3 Bluetooth USB Dongle](#Bluetooth_USB_Dongle)
+        *   [6.3.1 Audio devices start to skip at short distance from dongle](#Audio_devices_start_to_skip_at_short_distance_from_dongle)
+    *   [6.4 Logitech Bluetooth USB Dongle](#Logitech_Bluetooth_USB_Dongle)
+    *   [6.5 hcitool scan: Device not found](#hcitool_scan:_Device_not_found)
+    *   [6.6 rfkill unblock: Do not unblock](#rfkill_unblock:_Do_not_unblock)
+    *   [6.7 My computer is not visible](#My_computer_is_not_visible)
+    *   [6.8 Logitech keyboard does not pair](#Logitech_keyboard_does_not_pair)
+    *   [6.9 HSP/HFP profiles](#HSP/HFP_profiles)
+    *   [6.10 Foxconn / Hon Hai / Lite-On Broadcom device](#Foxconn_/_Hon_Hai_/_Lite-On_Broadcom_device)
+    *   [6.11 Device connects, then disconnects after a few moments](#Device_connects,_then_disconnects_after_a_few_moments)
+    *   [6.12 Device does not connect with an error in journal](#Device_does_not_connect_with_an_error_in_journal)
+    *   [6.13 Device does not show up in scan](#Device_does_not_show_up_in_scan)
 
 ## Installation
 
@@ -170,6 +171,23 @@ load-module module-bluetooth-discover
 ```
 
 Please have a look at the [Bluetooth headset](/index.php/Bluetooth_headset "Bluetooth headset") page for more information about bluetooth audio and bluetooth headsets.
+
+## Bluetooth serial
+
+To get bluetooth serial communication working on Bluetooth-to-Serial modules (HC-05, HC-06) do the following steps:
+
+Pair your bluetooth device using `bluetoothctl` as described [above](/index.php/Bluetooth#Pairing "Bluetooth").
+
+Install [bluez-rfcomm](https://aur.archlinux.org/packages/bluez-rfcomm/) and [bluez-hcitool](https://aur.archlinux.org/packages/bluez-hcitool/), as they provide certain functionality which is missing from newer tools.
+
+Bind paired device MAC address to tty terminal:
+
+```
+# rfcomm bind rfcomm0 <MAC address of bluetooth device>
+
+```
+
+Now you can open `/dev/rfcomm0` for serial communication.
 
 ## Troubleshooting
 

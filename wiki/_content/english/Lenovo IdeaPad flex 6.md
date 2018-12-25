@@ -73,11 +73,11 @@ Works natively with [f86-video-amdgpu](https://www.archlinux.org/packages/?name=
 
 ### Touchpad
 
-Touch pad is not recognized
+Recognized with [this kernel module](https://github.com/Syniurge/i2c-amd-mp2)
 
 ### Touchscreen
 
-Does not work out
+Recognized with [this kernel module](https://github.com/Syniurge/i2c-amd-mp2)
 
 ## Issues
 

@@ -78,4 +78,3 @@ This keyboard has a row of 6 programmable G keys. In order to use them as intend
 ## See also
 
 *   [Enabling Keyboard Multimedia Keys](http://wiki.linuxquestions.org/wiki/Configuring_keyboards#Enabling_Keyboard_Multimedia_Keys) - guide on LinuxQuestions wiki
-*   [Multimedia Keys](http://www.gentoo-wiki.info/HOWTO_Use_Multimedia_Keys) on [Gentoo Wiki Archives](http://www.gentoo-wiki.info/)

@@ -560,7 +560,7 @@ See also [Wikipedia:Comparison of speech synthesizers](https://en.wikipedia.org/
 
 *   **[eSpeak NG](https://en.wikipedia.org/wiki/eSpeakNG "wikipedia:eSpeakNG")** — Fork of eSpeak (due to inactivity of original maintainer).
 
-	[https://github.com/espeak-ng/espeak-ng](https://github.com/espeak-ng/espeak-ng) || [espeak-ng](https://aur.archlinux.org/packages/espeak-ng/)
+	[https://github.com/espeak-ng/espeak-ng](https://github.com/espeak-ng/espeak-ng) || [espeak-ng](https://www.archlinux.org/packages/?name=espeak-ng)
 
 *   **[Festival](/index.php/Festival "Festival")** — General framework for building speech synthesis systems as well as including examples of various modules. As a whole it offers full text to speech.
 

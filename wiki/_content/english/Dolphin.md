@@ -11,6 +11,7 @@ Related articles
 *   [1 Installation](#Installation)
     *   [1.1 Compare files](#Compare_files)
     *   [1.2 File previews](#File_previews)
+    *   [1.3 View audio CDs](#View_audio_CDs)
 *   [2 Usage](#Usage)
     *   [2.1 Open Terminal](#Open_Terminal)
     *   [2.2 KIO Slaves](#KIO_Slaves)
@@ -45,6 +46,10 @@ The *Compare files* dialog depends on [kompare](https://www.archlinux.org/packag
 *   [kde-thumbnailer-epub](https://aur.archlinux.org/packages/kde-thumbnailer-epub/): Electronic book files
 
 Enable preview showing of required file type in *Control > Configure Dolphin... > General > Previews*.
+
+### View audio CDs
+
+Support for audio CDs is provided by the kio extension [audiocd-kio](https://www.archlinux.org/packages/?name=audiocd-kio).
 
 ## Usage
 

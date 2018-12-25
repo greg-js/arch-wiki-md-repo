@@ -68,7 +68,7 @@ This article provides information on basic system diagnostics relating to perfor
 
 The best way to tune a system is to target bottlenecks, or subsystems which limit overall speed. The system specifications can help identify them.
 
-*   If the computer becomes slow when large applications (such as OpenOffice.org and Firefox) run at the same time, check if the amount of RAM is sufficient. Use the following command, and check the "available" column:
+*   If the computer becomes slow when large applications (such as LibreOffice and Firefox) run at the same time, check if the amount of RAM is sufficient. Use the following command, and check the "available" column:
 
 ```
 $ free -h

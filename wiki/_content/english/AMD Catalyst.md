@@ -567,7 +567,7 @@ To disable, again use `amdcccle` or run:
 
 ### Video acceleration
 
-Catalyst supports [hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration") via VA-API. Applications can take advantage of AMD Radeons UVD2 chipsets via AMD's [X-Video Bitstream Acceleration (XvBA)](https://en.wikipedia.org/wiki/X-Video_Bitstream_Acceleration "wikipedia:X-Video Bitstream Acceleration") library. There is no need to manually install it as it is included in the [catalyst-test](https://aur.archlinux.org/packages/catalyst-test/), [catalyst-total](https://aur.archlinux.org/packages/catalyst-total/) and [catalyst-utils](https://aur.archlinux.org/packages/catalyst-utils/) packages.
+Catalyst supports [hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration") on AMD Radeons UVD2 chipsets and later via [X-Video Bitstream Acceleration (XvBA)](https://en.wikipedia.org/wiki/X-Video_Bitstream_Acceleration "wikipedia:X-Video Bitstream Acceleration"). XvBA backend fo VA-API is also shipped with the driver as most applications already support VA-API but not XvBA.
 
 For **mplayer**: Install [mplayer-vaapi](https://aur.archlinux.org/packages/mplayer-vaapi/) and [libva](https://www.archlinux.org/packages/?name=libva). Then just set your video player to use `vaapi:gl` as video output:
 

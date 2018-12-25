@@ -21,6 +21,10 @@ An SSH server, by default, listens on the standard TCP port 22\. An SSH client p
 
 	[https://www.openssh.com/portable.html](https://www.openssh.com/portable.html) || [openssh](https://www.archlinux.org/packages/?name=openssh)
 
+*   **TinySSH** — A minimalistic SSH server which implements only a subset of SSHv2 features; glibc as its single dependency.
+
+	[https://tinyssh.org/](https://tinyssh.org/) || [tinyssh](https://www.archlinux.org/packages/?name=tinyssh)
+
 ## Securing
 
 See [Security#SSH](/index.php/Security#SSH "Security").

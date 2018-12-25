@@ -5,6 +5,7 @@
 | Audio | Working | snd_hda_intel |
 | Touchpad | Working | hid_multitouch |
 | Webcam | Working ¹ | uvcvideo |
+| Infrared Camera Authentication | Working | ? |
 | USB-C / Thunderbolt 3 | Working | intel_wmi_thunderbolt |
 | Wireless switch | Working | intel_hid |
 | Function/Multimedia Keys | Working | ? |
@@ -42,8 +43,9 @@ The installation process for Arch on the XPS 13 does not differ from any other P
     *   [13.1 Cursor Jump](#Cursor_Jump)
     *   [13.2 Sensitivity](#Sensitivity)
 *   [14 Audio](#Audio)
-*   [15 USB Type-C ports](#USB_Type-C_ports)
-*   [16 Fingerprint reader](#Fingerprint_reader)
+*   [15 Infrared camera](#Infrared_camera)
+*   [16 USB Type-C ports](#USB_Type-C_ports)
+*   [17 Fingerprint reader](#Fingerprint_reader)
 
 ## UEFI
 
@@ -90,6 +92,8 @@ Some other options that save battery life are:
 ## Storage
 
 The nvme SSD is a Toshiba KXG50ZNV256G, KXG50ZNV512G or KXG50ZNV1T02\. The stock firmware version AADA4102 has severe problems when the ssd enters the lowest power state. This results in a unresponsive device (kernel complains about read-only filesystem) The problems can occur any time, but seem to have become way more common on Kernel 4.18 on battery power. [Firmware Version AADA4105](https://www.dell.com/support/home/us/en/19/drivers/driversdetails?driverid=c0pf8) seems to fix the problem.
+
+Note : On some devices, the nvme SSD can be a SK hynix EJ82N00301190264W (1TB) and not a Toshiba one
 
 As the upgrade is only possible under windows and as even with upgraded driver the disk may be completely undetected by the kernel because of the SSD not being responsive in the deepest sleep mode. The following kernel parameter works as a workaround, preventing the disk to enter the problematic sleep mode (see [Solid state drive/NVMe](/index.php/Solid_state_drive/NVMe "Solid state drive/NVMe")):
 
@@ -200,6 +204,20 @@ By default, the [libinput](/index.php/Libinput "Libinput") driver might not have
 ## Audio
 
 Works correctly, but the audio controller cannot figure out what kind of device is plugged into the jack on its own. For this reason the desktop environment (eg. Gnome) will pop up a dialog where you can choose if it was a headset, or microphone, etc.
+
+## Infrared camera
+
+The infrared camera can be used as an authentication method with [howdy](https://aur.archlinux.org/packages/howdy/)
+
+**Warning:** As said in howdy documentation, "DO NOT USE HOWDY AS THE SOLE AUTHENTICATION METHOD FOR YOUR SYSTEM."
+
+After installing howdy, you should edit the configuration file to set the good camera for XPS 13 9370: /dev/video2\. The file is located at `/lib/security/howdy/config.ini`. The device should be configured like this : `device_id = 2`.
+
+**Note:** On the device where I tested this, the infrared camera was /dev/video2\. To test if it is the right one for you, just run `fswebcam test.png --device /dev/video2` to check if the video source is the infrared one. An output file `test.png` will be generated. If it looks like an infrared image, you are ready to go.
+
+To check if howdy is correctly reading your camera and detecting your face, just run `# howdy test`. If your face is detected, just follow the normal setup instructions provided in the wiki page : [howdy](/index.php/Howdy "Howdy").
+
+If it is not working, you probably need to apply the fix provided here: [GitHub: Error when trying to use IR sensors on Manjaro (Arch-based)](https://github.com/boltgolt/howdy/issues/70#issuecomment-439123621)
 
 ## USB Type-C ports
 

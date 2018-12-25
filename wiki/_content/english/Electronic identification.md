@@ -53,7 +53,7 @@ Install [chrome-token-signing](https://aur.archlinux.org/packages/chrome-token-s
 
 Once DigiDoc is installed, it is necessary to enable the service <tt>pcscd</tt>.
 
-DigiDoc4 has [GNOME/Files](/index.php/GNOME/Files "GNOME/Files") right click menu integration. Install [python2-nautilus](https://www.archlinux.org/packages/?name=python2-nautilus) and restart Gnome Files using command <tt>pkill nautilus</tt>.
+DigiDoc4 has [GNOME/Files](/index.php/GNOME/Files "GNOME/Files") right click menu integration. Install [python2-nautilus](https://aur.archlinux.org/packages/python2-nautilus/) and restart Gnome Files using command <tt>pkill nautilus</tt>.
 
 In case of bugs in DigiDoc4 you can install the older DigiDoc3 and ID-Card Utility programs using AUR packages [qdigidoc](https://aur.archlinux.org/packages/qdigidoc/) and [qesteidutil](https://aur.archlinux.org/packages/qesteidutil/).
 

@@ -16,14 +16,15 @@
         *   [1.2.5 Database tools](#Database_tools)
         *   [1.2.6 Formula editors](#Formula_editors)
     *   [1.3 Markup languages](#Markup_languages)
-        *   [1.3.1 Markdown](#Markdown)
-            *   [1.3.1.1 Python implementations](#Python_implementations)
-            *   [1.3.1.2 Ruby implementations](#Ruby_implementations)
-            *   [1.3.1.3 Markdown editors](#Markdown_editors)
-        *   [1.3.2 Typesetting systems](#Typesetting_systems)
-        *   [1.3.3 TeX editors](#TeX_editors)
-        *   [1.3.4 TeX formula editors](#TeX_formula_editors)
-        *   [1.3.5 XML editors](#XML_editors)
+        *   [1.3.1 AsciiDoc](#AsciiDoc)
+        *   [1.3.2 Markdown](#Markdown)
+            *   [1.3.2.1 Python implementations](#Python_implementations)
+            *   [1.3.2.2 Ruby implementations](#Ruby_implementations)
+            *   [1.3.2.3 Markdown editors](#Markdown_editors)
+        *   [1.3.3 Typesetting systems](#Typesetting_systems)
+        *   [1.3.4 TeX editors](#TeX_editors)
+        *   [1.3.5 TeX formula editors](#TeX_formula_editors)
+        *   [1.3.6 XML editors](#XML_editors)
     *   [1.4 Document converters](#Document_converters)
     *   [1.5 Bibliographic reference managers](#Bibliographic_reference_managers)
     *   [1.6 Readers and viewers](#Readers_and_viewers)
@@ -544,14 +545,6 @@ See also [#TeX formula editors](#TeX_formula_editors) and [Wikipedia:Formula edi
 
 See also [Wikipedia:Comparison of document markup languages](https://en.wikipedia.org/wiki/Comparison_of_document_markup_languages "wikipedia:Comparison of document markup languages").
 
-*   **[asciidoc](https://en.wikipedia.org/wiki/AsciiDoc "wikipedia:AsciiDoc")** — Human-readable text document format. Used by Arch for generating *pacman*'s man pages[[1]](https://www.archlinux.org/pacman/pacman.8.html).
-
-	[http://asciidoc.org/](http://asciidoc.org/) || [asciidoc](https://www.archlinux.org/packages/?name=asciidoc)
-
-*   **Asciidoctor** — An asciidoc implementation written in Ruby, with many extra features.
-
-	[http://asciidoctor.org/](http://asciidoctor.org/) || [asciidoctor](https://www.archlinux.org/packages/?name=asciidoctor)
-
 *   **[Sphinx](https://en.wikipedia.org/wiki/Sphinx_(documentation_generator) "wikipedia:Sphinx (documentation generator)")** — A documentation generation system using [reStructuredText](https://en.wikipedia.org/wiki/ReStructuredText "wikipedia:ReStructuredText") to generate output in multiple formats (primary documentation system for the Python project).
 
 	[http://sphinx-doc.org](http://sphinx-doc.org) || [python-sphinx](https://www.archlinux.org/packages/?name=python-sphinx)
@@ -559,6 +552,18 @@ See also [Wikipedia:Comparison of document markup languages](https://en.wikipedi
 *   **[txt2tags](https://en.wikipedia.org/wiki/Txt2tags "wikipedia:Txt2tags")** — Dead-simple, KISS-compliant lightweight, human-readable markup language to produce rich format content out of plain text files.
 
 	[http://txt2tags.sourceforge.net](http://txt2tags.sourceforge.net) || [txt2tags](https://www.archlinux.org/packages/?name=txt2tags)
+
+#### AsciiDoc
+
+See also [Wikipedia:AsciiDoc](https://en.wikipedia.org/wiki/AsciiDoc "wikipedia:AsciiDoc").
+
+*   **AsciiDoc** — The original implementation, written in Python. Used by Arch for generating *pacman*'s man pages.[[1]](https://www.archlinux.org/pacman/pacman.8.html).
+
+	[http://asciidoc.org/](http://asciidoc.org/) || [asciidoc](https://www.archlinux.org/packages/?name=asciidoc)
+
+*   **Asciidoctor** — An implementation written in Ruby, with [many extra features](https://asciidoctor.org/docs/asciidoc-asciidoctor-diffs/).
+
+	[https://asciidoctor.org/](https://asciidoctor.org/) || [asciidoctor](https://www.archlinux.org/packages/?name=asciidoctor)
 
 #### Markdown
 

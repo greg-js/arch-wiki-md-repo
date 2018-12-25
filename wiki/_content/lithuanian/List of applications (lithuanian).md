@@ -257,14 +257,15 @@ Related articles
         *   [4.2.5 Database tools](#Database_tools)
         *   [4.2.6 Formula editors](#Formula_editors)
     *   [4.3 Markup languages](#Markup_languages)
-        *   [4.3.1 Markdown](#Markdown)
-            *   [4.3.1.1 Python implementations](#Python_implementations)
-            *   [4.3.1.2 Ruby implementations](#Ruby_implementations)
-            *   [4.3.1.3 Markdown editors](#Markdown_editors)
-        *   [4.3.2 Typesetting systems](#Typesetting_systems)
-        *   [4.3.3 TeX editors](#TeX_editors)
-        *   [4.3.4 TeX formula editors](#TeX_formula_editors)
-        *   [4.3.5 XML editors](#XML_editors)
+        *   [4.3.1 AsciiDoc](#AsciiDoc)
+        *   [4.3.2 Markdown](#Markdown)
+            *   [4.3.2.1 Python implementations](#Python_implementations)
+            *   [4.3.2.2 Ruby implementations](#Ruby_implementations)
+            *   [4.3.2.3 Markdown editors](#Markdown_editors)
+        *   [4.3.3 Typesetting systems](#Typesetting_systems)
+        *   [4.3.4 TeX editors](#TeX_editors)
+        *   [4.3.5 TeX formula editors](#TeX_formula_editors)
+        *   [4.3.6 XML editors](#XML_editors)
     *   [4.4 Document converters](#Document_converters)
     *   [4.5 Bibliographic reference managers](#Bibliographic_reference_managers)
     *   [4.6 Readers and viewers](#Readers_and_viewers)
@@ -1605,7 +1606,7 @@ The number of networks supported by these clients is very large but they (like a
 
 	[https://userbase.kde.org/Telepathy](https://userbase.kde.org/Telepathy) || [telepathy-kde-meta](https://www.archlinux.org/packages/?name=telepathy-kde-meta)
 
-*   **[Pidgin](/index.php/Pidgin "Pidgin")** — Multi-protocol instant messaging client with audio/video support that uses libpurple and supports all its protocols (Bonjour, Gadu-Gadu, Groupwise, ICQ, IRC, SIMPLE, XMPP, Zephyr).
+*   **[Pidgin](/index.php/Pidgin "Pidgin")** — Multi-protocol instant messaging client with audio support that uses libpurple and supports all its protocols (Bonjour, Gadu-Gadu, Groupwise, ICQ, IRC, SIMPLE, XMPP, Zephyr).
 
 	[http://pidgin.im/](http://pidgin.im/) || [pidgin](https://www.archlinux.org/packages/?name=pidgin)
 
@@ -1761,7 +1762,7 @@ See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") a
 
 	[https://dino.im/](https://dino.im/) || [dino-git](https://aur.archlinux.org/packages/dino-git/)
 
-*   **[Gajim](/index.php/Gajim "Gajim")** — XMPP client with audio/video support written in PyGTK.
+*   **[Gajim](/index.php/Gajim "Gajim")** — XMPP client with audio support written in PyGTK.
 
 	[https://gajim.org/](https://gajim.org/) || [gajim](https://www.archlinux.org/packages/?name=gajim)
 
@@ -1777,7 +1778,7 @@ See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") a
 
 	[https://github.com/nextcloud/jsxc.nextcloud](https://github.com/nextcloud/jsxc.nextcloud) || [nextcloud-app-jsxc](https://aur.archlinux.org/packages/nextcloud-app-jsxc/)
 
-*   **[Psi](https://en.wikipedia.org/wiki/Psi_(instant_messaging_client) "wikipedia:Psi (instant messaging client)")** — Qt-based XMPP client with audio/video support.
+*   **[Psi](https://en.wikipedia.org/wiki/Psi_(instant_messaging_client) "wikipedia:Psi (instant messaging client)")** — Qt-based XMPP client.
 
 	[https://psi-im.org/](https://psi-im.org/) || [psi](https://www.archlinux.org/packages/?name=psi) or [psi-nowebengine](https://www.archlinux.org/packages/?name=psi-nowebengine)
 
@@ -6439,14 +6440,6 @@ See also [#TeX formula editors](#TeX_formula_editors) and [Wikipedia:Formula edi
 
 See also [Wikipedia:Comparison of document markup languages](https://en.wikipedia.org/wiki/Comparison_of_document_markup_languages "wikipedia:Comparison of document markup languages").
 
-*   **[asciidoc](https://en.wikipedia.org/wiki/AsciiDoc "wikipedia:AsciiDoc")** — Human-readable text document format. Used by Arch for generating *pacman*'s man pages[[2]](https://www.archlinux.org/pacman/pacman.8.html).
-
-	[http://asciidoc.org/](http://asciidoc.org/) || [asciidoc](https://www.archlinux.org/packages/?name=asciidoc)
-
-*   **Asciidoctor** — An asciidoc implementation written in Ruby, with many extra features.
-
-	[http://asciidoctor.org/](http://asciidoctor.org/) || [asciidoctor](https://www.archlinux.org/packages/?name=asciidoctor)
-
 *   **[Sphinx](https://en.wikipedia.org/wiki/Sphinx_(documentation_generator) "wikipedia:Sphinx (documentation generator)")** — A documentation generation system using [reStructuredText](https://en.wikipedia.org/wiki/ReStructuredText "wikipedia:ReStructuredText") to generate output in multiple formats (primary documentation system for the Python project).
 
 	[http://sphinx-doc.org](http://sphinx-doc.org) || [python-sphinx](https://www.archlinux.org/packages/?name=python-sphinx)
@@ -6454,6 +6447,18 @@ See also [Wikipedia:Comparison of document markup languages](https://en.wikipedi
 *   **[txt2tags](https://en.wikipedia.org/wiki/Txt2tags "wikipedia:Txt2tags")** — Dead-simple, KISS-compliant lightweight, human-readable markup language to produce rich format content out of plain text files.
 
 	[http://txt2tags.sourceforge.net](http://txt2tags.sourceforge.net) || [txt2tags](https://www.archlinux.org/packages/?name=txt2tags)
+
+#### AsciiDoc
+
+See also [Wikipedia:AsciiDoc](https://en.wikipedia.org/wiki/AsciiDoc "wikipedia:AsciiDoc").
+
+*   **AsciiDoc** — The original implementation, written in Python. Used by Arch for generating *pacman*'s man pages.[[2]](https://www.archlinux.org/pacman/pacman.8.html).
+
+	[http://asciidoc.org/](http://asciidoc.org/) || [asciidoc](https://www.archlinux.org/packages/?name=asciidoc)
+
+*   **Asciidoctor** — An implementation written in Ruby, with [many extra features](https://asciidoctor.org/docs/asciidoc-asciidoctor-diffs/).
+
+	[https://asciidoctor.org/](https://asciidoctor.org/) || [asciidoctor](https://www.archlinux.org/packages/?name=asciidoctor)
 
 #### Markdown
 
@@ -7663,7 +7668,7 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 
 *   **XSecureLock** — X11 screen lock utility designed with the primary goal of security.
 
-	[https://github.com/google/xsecurelock](https://github.com/google/xsecurelock) || [xsecurelock-git](https://aur.archlinux.org/packages/xsecurelock-git/)
+	[https://github.com/google/xsecurelock](https://github.com/google/xsecurelock) || [xsecurelock](https://www.archlinux.org/packages/?name=xsecurelock)
 
 *   **xtrlock** — Very lightweight X display locker. Keeps windows visible and displays lock icon instead of mouse cursor. Typing password followed by enter unlocks the screen.
 
@@ -9133,7 +9138,7 @@ See also [Wikipedia:Comparison of speech synthesizers](https://en.wikipedia.org/
 
 *   **[eSpeak NG](https://en.wikipedia.org/wiki/eSpeakNG "wikipedia:eSpeakNG")** — Fork of eSpeak (due to inactivity of original maintainer).
 
-	[https://github.com/espeak-ng/espeak-ng](https://github.com/espeak-ng/espeak-ng) || [espeak-ng](https://aur.archlinux.org/packages/espeak-ng/)
+	[https://github.com/espeak-ng/espeak-ng](https://github.com/espeak-ng/espeak-ng) || [espeak-ng](https://www.archlinux.org/packages/?name=espeak-ng)
 
 *   **[Festival](/index.php/Festival "Festival")** — General framework for building speech synthesis systems as well as including examples of various modules. As a whole it offers full text to speech.
 

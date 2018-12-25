@@ -43,6 +43,23 @@ LIRC is a daemon that can translate key presses on a supported remote into progr
 
 **Note:** This section is a quick summary. Complete documentation is available [upstream](http://lirc.sourceforge.net/lirc.org/html/index.html).
 
+You may need to specify the driver and/or the device for the LIRC service to run properly. Look for messages like these in the [journalctl](/index.php/Journalctl "Journalctl") output if you notice the service stopping when you run LIRC programs like *irrecord*:
+
+```
+Driver `devinput' not found or not loadable (wrong or missing -U/--plugindir?).
+readlink() failed for "auto": No such file or directory
+
+```
+
+Set these in the config file and then restart the service.
+
+ `/etc/lirc/lirc_options.conf` 
+```
+[lircd]
+driver = *driver-name*
+device = /dev/*path-to-dev*
+```
+
 ### Scancode mapping
 
 `/etc/lirc/lircd.conf.d/foo.conf` is the system-wide configuration translating scancodes to keycodes. This directory may contain multiple conf files and each one is specific to each remote control/receiver on the system. These files are user-created config files and not directly supplied by [lirc](https://www.archlinux.org/packages/?name=lirc).

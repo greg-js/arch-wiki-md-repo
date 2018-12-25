@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [KDE](/index.php/KDE "KDE"), revisada por última vez el **2018-12-22**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=559717) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [KDE](/index.php/KDE "KDE"), revisada por última vez el **2018-12-23**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=560101) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -243,7 +243,7 @@ El shell del Plasma Netbook se ha eliminado de Plasma 5, véase la siguiente [pu
 
 #### Generación de miniaturas
 
-Para permitir la generación de miniaturas para archivos de media o de documentos en el escritorio y en Dolphin, instale [kdegraphics-thumbnailers](https://www.archlinux.org/packages/?name=kdegraphics-thumbnailers), [ffmpegthumbs](https://www.archlinux.org/packages/?name=ffmpegthumbs) y [kde-thumbnailer-odf](https://aur.archlinux.org/packages/kde-thumbnailer-odf/).
+Para permitir la generación de miniaturas para archivos de media o de documentos en el escritorio y en Dolphin, instale [kdegraphics-thumbnailers](https://www.archlinux.org/packages/?name=kdegraphics-thumbnailers) y [ffmpegthumbs](https://www.archlinux.org/packages/?name=ffmpegthumbs).
 
 Luego, habilite las categorías de las miniaturas para el escritorio haciendo clic con el botón derecho en el *fondo de escritorio > Configurar escritorio > Iconos > Más opciones de vista previa...*
 

@@ -238,6 +238,8 @@ nametrans = lambda foldername: re.sub ('^\[gmail\]', 'bak',
 folderfilter = lambda foldername: foldername not in ['[Gmail]/All Mail']
 # Necessary as of OfflineIMAP 6.5.4
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+# Necessary to work around https://github.com/OfflineIMAP/offlineimap/issues/573 (versions 7.0.12, 7.2.1)
+ssl_version = tls1_2
 
 ```
 
