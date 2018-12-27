@@ -67,6 +67,7 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
     *   [7.5 cirrus](#cirrus)
     *   [7.6 none](#none)
     *   [7.7 vnc](#vnc)
+        *   [7.7.1 Basic password authentication](#Basic_password_authentication)
 *   [8 Audio](#Audio)
     *   [8.1 Host](#Host)
     *   [8.2 Guest](#Guest)
@@ -87,34 +88,35 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
     *   [10.5 Pause and power options via the monitor console](#Pause_and_power_options_via_the_monitor_console)
     *   [10.6 Taking screenshots of the virtual machine](#Taking_screenshots_of_the_virtual_machine)
 *   [11 Tips and tricks](#Tips_and_tricks)
-    *   [11.1 Starting QEMU virtual machines on boot](#Starting_QEMU_virtual_machines_on_boot)
-        *   [11.1.1 With libvirt](#With_libvirt)
-        *   [11.1.2 Custom script](#Custom_script)
-    *   [11.2 Mouse integration](#Mouse_integration)
-    *   [11.3 Pass-through host USB device](#Pass-through_host_USB_device)
-    *   [11.4 USB redirection with SPICE](#USB_redirection_with_SPICE)
-    *   [11.5 Enabling KSM](#Enabling_KSM)
-    *   [11.6 Multi-monitor support](#Multi-monitor_support)
-    *   [11.7 Copy and paste](#Copy_and_paste)
-    *   [11.8 Windows-specific notes](#Windows-specific_notes)
-        *   [11.8.1 Fast startup](#Fast_startup)
-        *   [11.8.2 Remote Desktop Protocol](#Remote_Desktop_Protocol)
-    *   [11.9 Clone Linux system installed on physical equipment](#Clone_Linux_system_installed_on_physical_equipment)
+    *   [11.1 Improve virtual machine performance](#Improve_virtual_machine_performance)
+    *   [11.2 Starting QEMU virtual machines on boot](#Starting_QEMU_virtual_machines_on_boot)
+        *   [11.2.1 With libvirt](#With_libvirt)
+        *   [11.2.2 With systemd service](#With_systemd_service)
+    *   [11.3 Mouse integration](#Mouse_integration)
+    *   [11.4 Pass-through host USB device](#Pass-through_host_USB_device)
+    *   [11.5 USB redirection with SPICE](#USB_redirection_with_SPICE)
+    *   [11.6 Enabling KSM](#Enabling_KSM)
+    *   [11.7 Multi-monitor support](#Multi-monitor_support)
+    *   [11.8 Copy and paste](#Copy_and_paste)
+    *   [11.9 Windows-specific notes](#Windows-specific_notes)
+        *   [11.9.1 Fast startup](#Fast_startup)
+        *   [11.9.2 Remote Desktop Protocol](#Remote_Desktop_Protocol)
+    *   [11.10 Clone Linux system installed on physical equipment](#Clone_Linux_system_installed_on_physical_equipment)
 *   [12 Troubleshooting](#Troubleshooting)
-    *   [12.1 Virtual machine runs too slowly](#Virtual_machine_runs_too_slowly)
-    *   [12.2 Mouse cursor is jittery or erratic](#Mouse_cursor_is_jittery_or_erratic)
-    *   [12.3 No visible Cursor](#No_visible_Cursor)
-    *   [12.4 Two different mouse cursors are visible](#Two_different_mouse_cursors_are_visible)
-    *   [12.5 Keyboard issues when using VNC](#Keyboard_issues_when_using_VNC)
-    *   [12.6 Keyboard seems broken or the arrow keys do not work](#Keyboard_seems_broken_or_the_arrow_keys_do_not_work)
-    *   [12.7 Guest display stretches on window resize](#Guest_display_stretches_on_window_resize)
-    *   [12.8 ioctl(KVM_CREATE_VM) failed: 16 Device or resource busy](#ioctl(KVM_CREATE_VM)_failed:_16_Device_or_resource_busy)
-    *   [12.9 libgfapi error message](#libgfapi_error_message)
-    *   [12.10 Kernel panic on LIVE-environments](#Kernel_panic_on_LIVE-environments)
-    *   [12.11 Windows 7 guest suffers low-quality sound](#Windows_7_guest_suffers_low-quality_sound)
-    *   [12.12 Could not access KVM kernel module: Permission denied](#Could_not_access_KVM_kernel_module:_Permission_denied)
-    *   [12.13 "System Thread Exception Not Handled" when booting a Windows VM](#"System_Thread_Exception_Not_Handled"_when_booting_a_Windows_VM)
-    *   [12.14 Certain Windows games/applications crashing/causing a bluescreen](#Certain_Windows_games/applications_crashing/causing_a_bluescreen)
+    *   [12.1 Mouse cursor is jittery or erratic](#Mouse_cursor_is_jittery_or_erratic)
+    *   [12.2 No visible Cursor](#No_visible_Cursor)
+    *   [12.3 Two different mouse cursors are visible](#Two_different_mouse_cursors_are_visible)
+    *   [12.4 Keyboard issues when using VNC](#Keyboard_issues_when_using_VNC)
+    *   [12.5 Keyboard seems broken or the arrow keys do not work](#Keyboard_seems_broken_or_the_arrow_keys_do_not_work)
+    *   [12.6 Guest display stretches on window resize](#Guest_display_stretches_on_window_resize)
+    *   [12.7 ioctl(KVM_CREATE_VM) failed: 16 Device or resource busy](#ioctl(KVM_CREATE_VM)_failed:_16_Device_or_resource_busy)
+    *   [12.8 libgfapi error message](#libgfapi_error_message)
+    *   [12.9 Kernel panic on LIVE-environments](#Kernel_panic_on_LIVE-environments)
+    *   [12.10 Windows 7 guest suffers low-quality sound](#Windows_7_guest_suffers_low-quality_sound)
+    *   [12.11 Could not access KVM kernel module: Permission denied](#Could_not_access_KVM_kernel_module:_Permission_denied)
+    *   [12.12 "System Thread Exception Not Handled" when booting a Windows VM](#"System_Thread_Exception_Not_Handled"_when_booting_a_Windows_VM)
+    *   [12.13 Certain Windows games/applications crashing/causing a bluescreen](#Certain_Windows_games/applications_crashing/causing_a_bluescreen)
+    *   [12.14 Applications in the VM experience long delays or take a long time to start](#Applications_in_the_VM_experience_long_delays_or_take_a_long_time_to_start)
 *   [13 See also](#See_also)
 
 ## Installation
@@ -1115,40 +1117,27 @@ On Linux guests, the `qxl` and `bochs_drm` kernel modules must be loaded in orde
 
 #### SPICE
 
-The [SPICE project](http://spice-space.org/) aims to provide a complete open source solution for remote access to virtual machines in a seamless way.
-
-SPICE can only be used when using QXL as the graphical output.
+The [SPICE project](http://spice-space.org/) aims to provide a complete open source solution for remote access to virtual machines in a seamless way. SPICE can only be used when using QXL as the graphical output.
 
 The following is example of booting with SPICE as the remote desktop protocol, including the support for copy and paste from host:
 
 ```
-$ qemu-system-x86_64 -vga qxl -spice port=5930,disable-ticketing -device virtio-serial-pci -device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0 -chardev spicevmc,id=spicechannel0,name=vdagent
+$ qemu-system-x86_64 -vga qxl -spice port=5930,disable-ticketing -device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0 -chardev spicevmc,id=spicechannel0,name=vdagent
 
 ```
 
 The parameters have the following meaning:
 
-1.  The `-device virtio-serial-pci` option adds the virtio-serial device,
-2.  `-device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0` opens a port for spice vdagent in that device,
-3.  `-chardev spicevmc,id=spicechannel0,name=vdagent` adds a spicevmc chardev for that port. It is important that the `chardev=` option of the `virtserialport` device matches the `id=` option given to the `chardev` option (`spicechannel0` in this example). It is also important that the port name is `com.redhat.spice.0`, because that is the namespace where vdagent is looking for in the guest. And finally, specify `name=vdagent` so that spice knows what this channel is for.
+1.  `-device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0` opens a port for spice vdagent in that device,
+2.  `-chardev spicevmc,id=spicechannel0,name=vdagent` adds a spicevmc chardev for that port. It is important that the `chardev=` option of the `virtserialport` device matches the `id=` option given to the `chardev` option (`spicechannel0` in this example). It is also important that the port name is `com.redhat.spice.0`, because that is the namespace where vdagent is looking for in the guest. And finally, specify `name=vdagent` so that spice knows what this channel is for.
 
 **Tip:** Since QEMU in SPICE mode acts similarly to a remote desktop server, it may be more convenient to run QEMU in daemon mode with the `-daemonize` parameter.
 
-Connect to the guest by using a SPICE client. [virt-viewer](https://www.archlinux.org/packages/?name=virt-viewer) is the recommended SPICE client by the protocol developers:
+One of the three methods below can be used to connect to the guest using a SPICE client:
 
-```
-$ remote-viewer spice://127.0.0.1:5930
-
-```
-
-The reference and test implementation [spice-gtk](https://www.archlinux.org/packages/?name=spice-gtk) can also be used:
-
-```
-$ spicy -h 127.0.0.1 -p 5930
-
-```
-
-Other [clients](http://www.spice-space.org/download.html), including for other platforms, are also available.
+1.  [virt-viewer](https://www.archlinux.org/packages/?name=virt-viewer) is the recommended SPICE client by the protocol developers: `$ remote-viewer spice://127.0.0.1:5930` 
+2.  [spice-gtk](https://www.archlinux.org/packages/?name=spice-gtk) can also be used: `$ spicy -h 127.0.0.1 -p 5930` 
+3.  Other [clients](http://www.spice-space.org/download.html), including for other platforms, are also available.
 
 Using [Unix sockets](https://en.wikipedia.org/wiki/Unix_socket "wikipedia:Unix socket") instead of TCP ports does not involve using network stack on the host system, so it is [reportedly](https://unix.stackexchange.com/questions/91774/performance-of-unix-sockets-vs-tcp-ports) better for performance. Example:
 
@@ -1253,6 +1242,36 @@ $ qemu-system-x86_64 -vnc :0
 ```
 
 An example is also provided in the [#Starting QEMU virtual machines on boot](#Starting_QEMU_virtual_machines_on_boot) section.
+
+**Warning:** The default VNC server setup does not use any form of authentication. Any user can connect from any host.
+
+#### Basic password authentication
+
+An access password can be setup easily by using the `password` option. The password must be indicated in the QEMU monitor and connection is only possible once the password is provided.
+
+```
+$ qemu-system-x86_64 -vnc :0,password -monitor stdio
+
+```
+
+In the QEMU monitor, password is set using the command `change vnc password` and then indicating the password.
+
+Alternatively if one create the following file:
+
+ `vncpassword.txt` 
+```
+change vnc password
+*mykvmvncpassword*
+```
+
+The following command line directly runs vnc with a password:
+
+```
+$ cat vncpassword.txt | qemu-system-x86_64 -vnc :0,password -monitor stdio
+
+```
+
+**Note:** The password is limited to 8 characters and can be guessed through brute force attack. More elaborated protection is strongly recommended for public network.
 
 ## Audio
 
@@ -1537,13 +1556,63 @@ Screenshots of the virtual machine graphic display can be obtained in the PPM fo
 
 ## Tips and tricks
 
+### Improve virtual machine performance
+
+There are a number of techniques that you can use to improve the performance of the virtual machine. For example:
+
+*   Use the `-cpu host` option to make QEMU emulate the host's exact CPU. If you do not do this, it may be trying to emulate a more generic CPU.
+*   Especially for Windows guests, enable [Hyper-V enlightenments](http://blog.wikichoon.com/2014/07/enabling-hyper-v-enlightenments-with-kvm.html): `-cpu host,hv_relaxed,hv_spinlocks=0x1fff,hv_vapic,hv_time`.
+*   If the host machine has multiple CPUs, assign the guest more CPUs using the `-smp` option.
+*   Make sure you have assigned the virtual machine enough memory. By default, QEMU only assigns 128 MiB of memory to each virtual machine. Use the `-m` option to assign more memory. For example, `-m 1024` runs a virtual machine with 1024 MiB of memory.
+*   Use KVM if possible: add `-machine type=pc,accel=kvm` to the QEMU start command you use.
+*   If supported by drivers in the guest operating system, use [virtio](http://wiki.libvirt.org/page/Virtio) for network and/or block devices. For example:
+
+```
+$ qemu-system-x86_64 -net nic,model=virtio -net tap,if=tap0,script=no -drive file=*disk_image*,media=disk,if=virtio
+
+```
+
+*   Use TAP devices instead of user-mode networking. See [#Tap networking with QEMU](#Tap_networking_with_QEMU).
+*   If the guest OS is doing heavy writing to its disk, you may benefit from certain mount options on the host's file system. For example, you can mount an [ext4 file system](/index.php/Ext4 "Ext4") with the option `barrier=0`. You should read the documentation for any options that you change because sometimes performance-enhancing options for file systems come at the cost of data integrity.
+*   If you have a raw disk image, you may want to disable the cache:
+
+```
+$ qemu-system-x86_64 -drive file=*disk_image*,if=virtio,**cache=none**
+
+```
+
+*   Use the native Linux AIO:
+
+```
+$ qemu-system-x86_64 -drive file=*disk_image*,if=virtio**,aio=native,cache.direct=on**
+
+```
+
+*   If you use a qcow2 disk image, I/O performance can be improved considerably by ensuring that the L2 cache is of sufficient size. The [formula](https://blogs.igalia.com/berto/2015/12/17/improving-disk-io-performance-in-qemu-2-5-with-the-qcow2-l2-cache/) to calculate L2 cache is: l2_cache_size = disk_size * 8 / cluster_size. Assuming the qcow2 image was created with the default cluster size of 64K, this means that for every 8 GB in size of the qcow2 image, 1 MB of L2 cache is best for performance. Only 1 MB is used by QEMU by default; specifying a larger cache is done on the QEMU command line. For instance, to specify 4 MB of cache (suitable for a 32 GB disk with a cluster size of 64K):
+
+```
+$ qemu-system-x86_64 -drive file=*disk_image*,format=qcow2,l2-cache-size=4M
+
+```
+
+*   If you are running multiple virtual machines concurrently that all have the same operating system installed, you can save memory by enabling [kernel same-page merging](https://en.wikipedia.org/wiki/Kernel_SamePage_Merging_(KSM) "wikipedia:Kernel SamePage Merging (KSM)"). See [#Enabling KSM](#Enabling_KSM).
+*   In some cases, memory can be reclaimed from running virtual machines by running a memory ballooning driver in the guest operating system and launching QEMU using `-device virtio-balloon`.
+*   It is possible to use a emulation layer for an ICH-9 AHCI controller (although it may be unstable). The AHCI emulation supports [NCQ](https://en.wikipedia.org/wiki/Native_Command_Queuing "wikipedia:Native Command Queuing"), so multiple read or write requests can be outstanding at the same time:
+
+```
+$ qemu-system-x86_64 -drive id=disk,file=*disk_image*,if=none -device ich9-ahci,id=ahci -device ide-drive,drive=disk,bus=ahci.0
+
+```
+
+See [http://www.linux-kvm.org/page/Tuning_KVM](http://www.linux-kvm.org/page/Tuning_KVM) for more information.
+
 ### Starting QEMU virtual machines on boot
 
 #### With libvirt
 
 If a virtual machine is set up with [libvirt](/index.php/Libvirt "Libvirt"), it can be configured with `virsh autostart` or through the *virt-manager* GUI to start at host boot by going to the Boot Options for the virtual machine and selecting "Start virtual machine on host boot up".
 
-#### Custom script
+#### With systemd service
 
 To run QEMU VMs on boot, you can use following systemd unit and config.
 
@@ -1556,7 +1625,7 @@ Description=QEMU virtual machine
 Environment="type=system-x86_64" "haltcmd=kill -INT $MAINPID"
 EnvironmentFile=/etc/conf.d/qemu.d/%i
 PIDFile=/tmp/%i.pid
-ExecStart=/usr/bin/env qemu-${type} -name %i -nographic -pidfile /tmp/%i.pid $args
+ExecStart=/usr/bin/qemu-${type} -name %i -nographic -pidfile /tmp/%i.pid $args
 ExecStop=/bin/sh -c ${haltcmd}
 TimeoutStopSec=30
 KillMode=none
@@ -1571,21 +1640,7 @@ WantedBy=multi-user.target
 *   According to [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5) and `5` man pages it is necessary to use the `KillMode=none` option. Otherwise the main qemu process will be killed immediately after the `ExecStop` command quits (it simply echoes one string) and your quest system will not be able to shutdown correctly.
 *   It is necessary to use the `PIDFile` option. Otherwise systemd cannot tell whether the main qemu process was terminated and your quest system will not be able to shutdown correctly. On host shutdown it will proceed without waiting for the VM to shutdown.
 
-Then create per-VM configuration files, named `/etc/conf.d/qemu.d/*vm_name*`, with the following variables set:
-
-	type
-
-	QEMU binary to call. If specified, will be prepended with `/usr/bin/qemu-` and that binary will be used to start the VM. I.e. you can boot e.g. `qemu-system-arm` images with `type="system-arm"`.
-
-	args
-
-	QEMU command line to start with. Will always be prepended with `-name ${vm} -nographic`.
-
-	haltcmd
-
-	Command to shut down a VM safely. In this example, the QEMU monitor is exposed via telnet using `-monitor telnet:..` and the VMs are powered off via ACPI by sending `system_powerdown` to monitor with the `nc` command. You can use SSH or some other ways as well.
-
-Example configs:
+Then create per-VM configuration files, named `/etc/conf.d/qemu.d/*vm_name*`, with the variables `type`, `args` and `altcmd` set. Example configs:
 
  `/etc/conf.d/qemu.d/one` 
 ```
@@ -1611,6 +1666,20 @@ haltcmd="echo 'system_powerdown' | nc localhost 7101"
 
 ```
 
+The description of the variables is the following:
+
+	type
+
+	QEMU binary to call. If specified, will be prepended with `/usr/bin/qemu-` and that binary will be used to start the VM. I.e. you can boot e.g. `qemu-system-arm` images with `type="system-arm"`.
+
+	args
+
+	QEMU command line to start with. Will always be prepended with `-name ${vm} -nographic`.
+
+	haltcmd
+
+	Command to shut down a VM safely. In this example, the QEMU monitor is exposed via telnet using `-monitor telnet:..` and the VMs are powered off via ACPI by sending `system_powerdown` to monitor with the `nc` command. You can use SSH or some other ways as well.
+
 To set which virtual machines will start on boot-up, [enable](/index.php/Enable "Enable") the `qemu@*vm_name*.service` systemd unit.
 
 ### Mouse integration
@@ -1622,7 +1691,7 @@ $ qemu-system-x86_64 -hda *disk_image* -m 512 -usb -device usb-tablet
 
 ```
 
-If that does not work, try the tip at [#Mouse cursor is jittery or erratic](#Mouse_cursor_is_jittery_or_erratic).
+If that does not work, try using `-vga qxl` parameter, also look at the instructions [#Mouse cursor is jittery or erratic](#Mouse_cursor_is_jittery_or_erratic).
 
 ### Pass-through host USB device
 
@@ -1736,56 +1805,6 @@ $ xfreerdp -g 2048x1152 localhost:5555 -z -x lan
 Linux system installed on physical equipment can be cloned for running on QEMU vm. See [Clone Linux system from hardware for QEMU virtual machine](https://coffeebirthday.wordpress.com/2018/09/14/clone-linux-system-for-qemu-virtual-machine/)
 
 ## Troubleshooting
-
-### Virtual machine runs too slowly
-
-There are a number of techniques that you can use to improve the performance of your virtual machine. For example:
-
-*   Use the `-cpu host` option to make QEMU emulate the host's exact CPU. If you do not do this, it may be trying to emulate a more generic CPU.
-*   Especially for Windows guests, enable [Hyper-V enlightenments](http://blog.wikichoon.com/2014/07/enabling-hyper-v-enlightenments-with-kvm.html): `-cpu host,hv_relaxed,hv_spinlocks=0x1fff,hv_vapic,hv_time`.
-*   If the host machine has multiple CPUs, assign the guest more CPUs using the `-smp` option.
-*   Make sure you have assigned the virtual machine enough memory. By default, QEMU only assigns 128 MiB of memory to each virtual machine. Use the `-m` option to assign more memory. For example, `-m 1024` runs a virtual machine with 1024 MiB of memory.
-*   Use KVM if possible: add `-machine type=pc,accel=kvm` to the QEMU start command you use.
-*   If supported by drivers in the guest operating system, use [virtio](http://wiki.libvirt.org/page/Virtio) for network and/or block devices. For example:
-
-```
-$ qemu-system-x86_64 -net nic,model=virtio -net tap,if=tap0,script=no -drive file=*disk_image*,media=disk,if=virtio
-
-```
-
-*   Use TAP devices instead of user-mode networking. See [#Tap networking with QEMU](#Tap_networking_with_QEMU).
-*   If the guest OS is doing heavy writing to its disk, you may benefit from certain mount options on the host's file system. For example, you can mount an [ext4 file system](/index.php/Ext4 "Ext4") with the option `barrier=0`. You should read the documentation for any options that you change because sometimes performance-enhancing options for file systems come at the cost of data integrity.
-*   If you have a raw disk image, you may want to disable the cache:
-
-```
-$ qemu-system-x86_64 -drive file=*disk_image*,if=virtio,**cache=none**
-
-```
-
-*   Use the native Linux AIO:
-
-```
-$ qemu-system-x86_64 -drive file=*disk_image*,if=virtio**,aio=native,cache.direct=on**
-
-```
-
-*   If you use a qcow2 disk image, I/O performance can be improved considerably by ensuring that the L2 cache is of sufficient size. The [formula](https://blogs.igalia.com/berto/2015/12/17/improving-disk-io-performance-in-qemu-2-5-with-the-qcow2-l2-cache/) to calculate L2 cache is: l2_cache_size = disk_size * 8 / cluster_size. Assuming the qcow2 image was created with the default cluster size of 64K, this means that for every 8 GB in size of the qcow2 image, 1 MB of L2 cache is best for performance. Only 1 MB is used by QEMU by default; specifying a larger cache is done on the QEMU command line. For instance, to specify 4 MB of cache (suitable for a 32 GB disk with a cluster size of 64K):
-
-```
-$ qemu-system-x86_64 -drive file=*disk_image*,format=qcow2,l2-cache-size=4M
-
-```
-
-*   If you are running multiple virtual machines concurrently that all have the same operating system installed, you can save memory by enabling [kernel same-page merging](https://en.wikipedia.org/wiki/Kernel_SamePage_Merging_(KSM) "wikipedia:Kernel SamePage Merging (KSM)"). See [#Enabling KSM](#Enabling_KSM).
-*   In some cases, memory can be reclaimed from running virtual machines by running a memory ballooning driver in the guest operating system and launching QEMU using `-device virtio-balloon`.
-*   It is possible to use a emulation layer for an ICH-9 AHCI controller (although it may be unstable). The AHCI emulation supports [NCQ](https://en.wikipedia.org/wiki/Native_Command_Queuing "wikipedia:Native Command Queuing"), so multiple read or write requests can be outstanding at the same time:
-
-```
-$ qemu-system-x86_64 -drive id=disk,file=*disk_image*,if=none -device ich9-ahci,id=ahci -device ide-drive,drive=disk,bus=ahci.0
-
-```
-
-See [http://www.linux-kvm.org/page/Tuning_KVM](http://www.linux-kvm.org/page/Tuning_KVM) for more information.
 
 ### Mouse cursor is jittery or erratic
 
@@ -1907,6 +1926,12 @@ Cases where adding this option might help:
 *   StarCraft 2 and L.A. Noire reliably blue-screening Windows 10 with `KMODE_EXCEPTION_NOT_HANDLED`. The blue screen information does not identify a driver file in these cases.
 
 **Warning:** While this is normally safe and some applications might not work without this, silently ignoring unknown MSR accesses could potentially break other software within the VM or other VMs.
+
+### Applications in the VM experience long delays or take a long time to start
+
+This may be caused by insufficient available entropy in the VM. Consider allowing the guest to access the hosts's entropy pool by adding a [VirtIO RNG device](https://wiki.qemu.org/Features/VirtIORNG) to the VM, or by installing an entropy generating daemon such as [Haveged](/index.php/Haveged "Haveged").
+
+Anecdotally, OpenSSH takes a while to start accepting connections under insufficient entropy, without the logs revealing why.
 
 ## See also
 

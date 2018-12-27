@@ -134,7 +134,7 @@ Finally, to change root into */location/of/new/root* using a bash shell:
 **Note:** If you see the error:
 
 *   `chroot: cannot run command '/usr/bin/bash': Exec format error`, it is likely that the architectures of the host environment and chroot environment do not match.
-*   `chroot: '/usr/bin/bash': permission denied`, remount with the exec permission: `mount -o remount,exec /mnt/arch`.
+*   `chroot: '/usr/bin/bash': permission denied`, remount with the exec permission: `mount -o remount,exec /location/of/new/root`.
 
 After chrooting it may be necessary to load the local bash configuration:
 
@@ -161,7 +161,7 @@ Then unmount the temporary file systems:
 
 ```
 
-**Note:** If there is an error mentioning something like: `umount: /path: device is busy` this usually means that either: a program (even a shell) was left running in the chroot or that a sub-mount still exists. Quit the program and use `mount` to find and `umount` sub-mounts). It may be tricky to `umount` some things and one can hopefully have `umount --force` work, as a last resort use `umount --lazy` which just releases them. In either case to be safe, `reboot` as soon as possible if these are unresolved to avoid possible future conflicts.
+**Note:** If there is an error mentioning something like: `umount: /path: device is busy` this usually means that either: a program (even a shell) was left running in the chroot or that a sub-mount still exists. Quit the program and use `findmnt | grep /location/of/new/root` to find and then `umount` sub-mounts). It may be tricky to `umount` some things and one can hopefully have `umount --force` work, as a last resort use `umount --lazy` which just releases them. In either case to be safe, `reboot` as soon as possible if these are unresolved to avoid possible future conflicts.
 
 ## Run graphical applications from chroot
 

@@ -735,8 +735,6 @@ Add a line to `/etc/fstab`:
 
 ```
 
-Keep in mind the Hibernate hook must be loaded before filesystems, so using ZVOL as swap will not allow to use hibernate function. If you need hibernate, keep a partition for it.
-
 ### Automatic snapshots
 
 #### ZFS Automatic Snapshot Service for Linux

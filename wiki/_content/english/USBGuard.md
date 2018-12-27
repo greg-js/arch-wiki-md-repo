@@ -26,9 +26,9 @@ For an in-depth documentation of configuration see the very well commented confi
 
 ## Usage
 
-USBGuard has a core daemon, a CLI, a QT GUI, a DBUS interface and an API via libusbguard.
+USBGuard has a core daemon, a CLI, a Qt GUI, a DBUS interface and an API via libusbguard.
 
-If you want to use the QT GUI or another program communicating via DBUS, [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `usbguard-dbus.service`.
+If you want to use the Qt GUI or another program communicating via DBUS, [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `usbguard-dbus.service`.
 
 If you only want to communicate via API (with the CLI tool or another software using libusbguard) [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `usbguard.service`.
 
@@ -38,7 +38,7 @@ The CLI is available via `usbguard`.
 
 See the according man pages for more info.
 
-A QT applet can be started with `usbguard-applet-qt` and provides an interactive graphical interface.
+A Qt applet can be started with `usbguard-applet-qt` and provides an interactive graphical interface.
 
 ### Rules
 

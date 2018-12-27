@@ -46,22 +46,21 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
     *   [2.29 Minerva W Science](#Minerva_W_Science)
     *   [2.30 mobile](#mobile)
     *   [2.31 nah](#nah)
-    *   [2.32 nexus](#nexus)
-    *   [2.33 pkgbuilder](#pkgbuilder)
-    *   [2.34 post-factum kernels](#post-factum_kernels)
-    *   [2.35 QOwnNotes](#QOwnNotes)
-    *   [2.36 qt-debug](#qt-debug)
-    *   [2.37 quarry](#quarry)
-    *   [2.38 repo-ck](#repo-ck)
-    *   [2.39 seblu](#seblu)
-    *   [2.40 seiichiro](#seiichiro)
-    *   [2.41 sergej-repo](#sergej-repo)
-    *   [2.42 siosm-aur](#siosm-aur)
-    *   [2.43 sublime-text](#sublime-text)
-    *   [2.44 subtitlecomposer](#subtitlecomposer)
-    *   [2.45 trinity](#trinity)
-    *   [2.46 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
-    *   [2.47 xyne-x86_64](#xyne-x86_64)
+    *   [2.32 pkgbuilder](#pkgbuilder)
+    *   [2.33 post-factum kernels](#post-factum_kernels)
+    *   [2.34 QOwnNotes](#QOwnNotes)
+    *   [2.35 qt-debug](#qt-debug)
+    *   [2.36 quarry](#quarry)
+    *   [2.37 repo-ck](#repo-ck)
+    *   [2.38 seblu](#seblu)
+    *   [2.39 seiichiro](#seiichiro)
+    *   [2.40 sergej-repo](#sergej-repo)
+    *   [2.41 siosm-aur](#siosm-aur)
+    *   [2.42 sublime-text](#sublime-text)
+    *   [2.43 subtitlecomposer](#subtitlecomposer)
+    *   [2.44 trinity](#trinity)
+    *   [2.45 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
+    *   [2.46 xyne-x86_64](#xyne-x86_64)
 *   [3 Unsigned](#Unsigned)
     *   [3.1 alucryd](#alucryd)
     *   [3.2 alucryd-multilib](#alucryd-multilib)
@@ -502,21 +501,6 @@ Server = https://farwayer.keybase.pub/arch/$repo
 ```
 [nah]
 Server = https://repo.nah.nz/$repo
-
-```
-
-### nexus
-
-*   (former aur-archlinux)
-*   **Maintainer:** Marc Mettke <marc@itmettke.de>
-*   **Description:** Auto Build of Most Popular AUR Packages
-*   **Upstream page:** [https://repo.itmettke.de/status/](https://repo.itmettke.de/status/)
-*   **Archive:** [https://repo.itmettke.de/nexus-archive/](https://repo.itmettke.de/nexus-archive/)
-*   **Key-ID:** [7448C890582975CD](https://pgp.mit.edu/pks/lookup?op=vindex&search=0x7448C890582975CD)
-
-```
-[nexus]
-Server = https://repo.itmettke.de/$repo/$arch
 
 ```
 

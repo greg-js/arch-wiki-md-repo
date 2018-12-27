@@ -7,10 +7,11 @@ From [Wikipedia](https://en.wikipedia.org/wiki/RuneScape "wikipedia:RuneScape"):
 *   [1 Methods to play](#Methods_to_play)
     *   [1.1 RuneScape NXT](#RuneScape_NXT)
     *   [1.2 Rsu-client](#Rsu-client)
-    *   [1.3 OSBuddy (Old School RuneScape only)](#OSBuddy_.28Old_School_RuneScape_only.29)
-    *   [1.4 RuneLite (Old School RuneScape only)](#RuneLite_.28Old_School_RuneScape_only.29)
+    *   [1.3 OSBuddy (Old School RuneScape only)](#OSBuddy_(Old_School_RuneScape_only))
+    *   [1.4 RuneLite (Old School RuneScape only)](#RuneLite_(Old_School_RuneScape_only))
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 Audio issues](#Audio_issues)
+    *   [2.2 SSL errors](#SSL_errors)
 
 ## Methods to play
 
@@ -37,3 +38,19 @@ Install the official RuneScape NXT client with the [runescape-launcher](https://
 ### Audio issues
 
 The Java client (jagexappletviewer.jar) requires [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa) to be installed for sound to work properly. Otherwise there will be no in-game sound or other applications will not be able to play audio due to the client claiming direct access to `/dev/snd/*` devices. For more details, see [PulseAudio#ALSA](/index.php/PulseAudio#ALSA "PulseAudio").
+
+### SSL errors
+
+If you receive an error like this (with RuneLite or otherwise):
+
+```
+javax.net.ssl.SSLHandshakeException: Received fatal alert: handshake_failure
+
+```
+
+This error may be due to Java's new TLSv1.3 implementation. Try adding `-Djdk.tls.client.protocols=TLSv1.2` to your client's launch options. For example:
+
+```
+java -Djdk.tls.client.protocols=TLSv1.2 -jar RuneLite.jar
+
+```

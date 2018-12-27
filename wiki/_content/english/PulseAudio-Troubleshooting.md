@@ -396,7 +396,7 @@ card 0: Intel [HDA Intel], device 2: ALC888 Analog [ALC888 Analog]
 
 ```
 
-Sound card is `hw:0,0`.
+The sound card is `hw:x,y` where `x` is the card number and `y` is the device number. In this case, it's `hw:0,0`.
 
 #### Determine sampling rate of the sound card (2/5)
 

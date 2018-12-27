@@ -49,11 +49,14 @@ If nothing is displayed after running either command, then your processor does *
 
 ### Kernel support
 
-Arch Linux kernel provides the required [kernel modules](/index.php/Kernel_modules "Kernel modules") to support KVM.
+Arch Linux kernels provide the required [kernel modules](/index.php/Kernel_modules "Kernel modules") to support KVM.
 
 *   One can check if the necessary modules, `kvm` and either `kvm_amd` or `kvm_intel`, are available in the kernel with the following command:
 
- `$ zgrep CONFIG_KVM /proc/config.gz` 
+```
+$ zgrep CONFIG_KVM /proc/config.gz}}
+
+```
 
 The module is available only if it is set to either `y` or `m`.
 
@@ -67,9 +70,12 @@ mdev                   20480  2 kvmgt,vfio_mdev
 vfio                   32768  3 kvmgt,vfio_mdev,vfio_iommu_type1
 kvm                   737280  2 kvmgt,kvm_intel
 irqbypass              16384  1 kvm
+
 ```
 
 If the command returns nothing, the module needs to be loaded manually, see [Kernel modules#Manual module handling](/index.php/Kernel_modules#Manual_module_handling "Kernel modules").
+
+**Tip:** If modprobing `kvm_intel` or `kvm_amd` fails but modprobing `kvm` succeeds, and `lscpu` claims that hardware acceleration is supported, check the BIOS settings. Some vendors, especially laptop vendors, disable these processor extensions by default. To determine whether there is no hardware support or whether the extensions are disabled in BIOS, the output from `dmesg` after having failed to modprobe will tell.
 
 ## Para-virtualization with Virtio
 
@@ -83,8 +89,6 @@ All Virtio devices have two parts: the host device and the guest driver.
 *   Then, check if the kernel modules are automatically loaded with the command: `$ lsmod | grep virtio` 
 
 In case the above commands return nothing, you need to [Kernel modules#Manual module handling](/index.php/Kernel_modules#Manual_module_handling "Kernel modules") kernel modules.
-
-**Tip:** If modprobing `kvm_intel` or `kvm_amd` fails but modprobing `kvm` succeeds, (and `lscpu` claims that hardware acceleration is supported), check your BIOS settings. Some vendors (especially laptop vendors) disable these processor extensions by default. To determine whether there's no hardware support or there is but the extensions are disabled in BIOS, the output from `dmesg` after having failed to modprobe will tell.
 
 ### List of para-virtualized devices
 
@@ -116,19 +120,11 @@ On host, enable nested feature for `kvm_intel`:
 
 To make it permanent (see [Kernel modules#Setting module options](/index.php/Kernel_modules#Setting_module_options "Kernel modules")):
 
- `/etc/modprobe.d/kvm_intel.conf` 
-```
-options kvm_intel nested=1
-
-```
+ `/etc/modprobe.d/kvm_intel.conf`  `options kvm_intel nested=1` 
 
 Verify that feature is activated:
 
- `$ systool -m kvm_intel -v | grep nested` 
-```
-    nested              = "Y"
-
-```
+ `$ systool -m kvm_intel -v | grep nested`  `nested              = "Y"` 
 
 Enable the "host passthrough" mode to forward all CPU features to the guest system:
 
@@ -170,7 +166,7 @@ $ grep Hugepagesize /proc/meminfo
 
 ```
 
-Normally that should be 2048 kB ≙ 2 MB. Let's say you want to run your virtual machine with 1024 MB. 1024 / 2 = 512\. Add a few extra so we can round this up to 550\. Now tell your machine how many hugepages you want:
+Normally that should be 2048 kB ≙ 2 MB. Let us say you want to run your virtual machine with 1024 MB. 1024 / 2 = 512\. Add a few extra so we can round this up to 550\. Now tell your machine how many hugepages you want:
 
 ```
 # echo 550 > /proc/sys/vm/nr_hugepages
@@ -179,7 +175,7 @@ Normally that should be 2048 kB ≙ 2 MB. Let's say you want to run your virtual
 
 If you had enough free memory you should see:
 
- `$ grep HugePages_Total /proc/meminfo ` 
+ `$ grep HugePages_Total /proc/meminfo` 
 ```
 HugesPages_Total:  550
 
@@ -196,7 +192,7 @@ Note the `-mem-path` parameter. This will make use of the hugepages.
 
 Now you can check, while your virtual machine is running, how many pages are used:
 
- `$ grep HugePages /proc/meminfo ` 
+ `$ grep HugePages /proc/meminfo` 
 ```
 HugePages_Total:     550
 HugePages_Free:       48

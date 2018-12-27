@@ -123,6 +123,6 @@ Battery status can be read as described on [Logitech Unifying Receiver](/index.p
 
 ## Smart shift
 
-In order to change the sensitivity of changing the mouse wheel mode (between hyperfast and click-to-click), install [solaar-git](https://aur.archlinux.org/packages/solaar-git/). A slider appears that can be set somewhere between 0 and 50 (inclusive). 0 means always in hyperfast mode, 50 means always in click-to-click mode.
+In order to change the sensitivity of changing the mouse wheel mode (between hyperfast and click-to-click), install [solaar](https://www.archlinux.org/packages/?name=solaar). A slider appears that can be set somewhere between 0 and 50 (inclusive). 0 means always in hyperfast mode, 50 means always in click-to-click mode.
 
 To change the sensitivity, change this value somewhere between 0 and 50.

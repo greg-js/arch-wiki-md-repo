@@ -3,9 +3,10 @@ Lenovo ThinkPad P1 was released in 2018 and has up to Intel Core i7-8850H or Xeo
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Firmware update](#Firmware_update)
-    *   [1.2 Installation with hybrid graphics](#Installation_with_hybrid_graphics)
-    *   [1.3 HiDPI screen](#HiDPI_screen)
+    *   [1.1 Do not change to "Discrete Graphics" with BIOS v1.15](#Do_not_change_to_"Discrete_Graphics"_with_BIOS_v1.15)
+    *   [1.2 Firmware update](#Firmware_update)
+    *   [1.3 Installation with hybrid graphics](#Installation_with_hybrid_graphics)
+    *   [1.4 HiDPI screen](#HiDPI_screen)
 *   [2 Graphics](#Graphics)
     *   [2.1 Discrete only](#Discrete_only)
         *   [2.1.1 Black screen after X starts with NVIDIA drivers](#Black_screen_after_X_starts_with_NVIDIA_drivers)
@@ -16,6 +17,12 @@ Lenovo ThinkPad P1 was released in 2018 and has up to Intel Core i7-8850H or Xeo
     *   [3.2 System hangs on startup/shutdown](#System_hangs_on_startup/shutdown)
 
 ## Installation
+
+### Do not change to "Discrete Graphics" with BIOS v1.15
+
+[https://www.reddit.com/r/thinkpad/comments/a2g0k4/warning_do_not_change_from_hybrid_graphics_to/](https://www.reddit.com/r/thinkpad/comments/a2g0k4/warning_do_not_change_from_hybrid_graphics_to/)
+
+This might potentially brick your device and require Lenovo to replace your motherboard. Apparently verified on BIOS v1.15 and still not resolved.
 
 ### Firmware update
 

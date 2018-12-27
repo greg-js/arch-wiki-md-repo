@@ -17,7 +17,7 @@ This wiki page covers a basic setup of the smokeping daemon and the CGI webinter
     *   [3.3 Nginx](#Nginx)
 *   [4 Advanced Configuration](#Advanced_Configuration)
 *   [5 Notes](#Notes)
-    *   [5.1 Smoketrace (Tr.cgi)](#Smoketrace_.28Tr.cgi.29)
+    *   [5.1 Smoketrace (Tr.cgi)](#Smoketrace_(Tr.cgi))
 
 ## Installation
 
@@ -171,7 +171,7 @@ unison_tolerance = 2
 
 + FPing
 
-binary = /usr/sbin/fping
+binary = /usr/bin/fping
 
 *** Targets ***
 

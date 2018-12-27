@@ -4,7 +4,7 @@ Related articles
 
 From the [official website](http://lirc.org/):
 
-	**LIRC** (Linux Infrared Remote Control) is a package that allows you to decode and send infra-red signals of many (but not all) commonly used remote controls.
+	**LIRC** (Linux Infrared Remote Control) is a package that decodes and sends infra-red signals of many (but not all) commonly used remote controls.
 
 **Note:** Since 4.18 the kernel can decode the signals of some IR remote controls using BPF, making LIRC sometimes redundant.[[1]](https://lwn.net/Articles/759188/)
 
@@ -43,7 +43,7 @@ LIRC is a daemon that can translate key presses on a supported remote into progr
 
 **Note:** This section is a quick summary. Complete documentation is available [upstream](http://lirc.sourceforge.net/lirc.org/html/index.html).
 
-You may need to specify the driver and/or the device for the LIRC service to run properly. Look for messages like these in the [journalctl](/index.php/Journalctl "Journalctl") output if you notice the service stopping when you run LIRC programs like *irrecord*:
+The driver and/or the device for the LIRC service may need to be specified in order to run properly. Look for messages like these in the [journalctl](/index.php/Journalctl "Journalctl") output if the service abruptly stops while running LIRC-dependent programs such as *irrecord*:
 
 ```
 Driver `devinput' not found or not loadable (wrong or missing -U/--plugindir?).
@@ -68,9 +68,9 @@ The definition of scancodes to keycodes is required to allow LIRC to manage a re
 
 #### Remotes database
 
-LIRC provides configuration files for many remote controls in the [remotes database](http://lirc-remotes.sourceforge.net/remotes-table.html). You can use [irdb-get(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/irdb-get.1) to search the database or simply browse to the URL and do the same.
+LIRC provides configuration files for many remote controls in the [remotes database](http://lirc-remotes.sourceforge.net/remotes-table.html). Use [irdb-get(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/irdb-get.1) to search the database or simply browse to the URL and do the same.
 
-If you cannot find a configuration file for your remote control, you need to [create one](#Creating_remote_configurations).
+Refer to [creating remote configurations](#Creating_remote_configurations) if configs for your specific hardware are not in either location.
 
 An example using `irdb-get` to find a config file for a Streamzap remote:
 
@@ -110,9 +110,9 @@ The program will instruct users to begin hitting keys on the remote in an attemp
 
 ### Application-specific actions
 
-The `~/.config/lircrc` configuration file lets you bind keycodes to application-specific actions, see [lircrc(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lircrc.5). This only works for LIRC-aware applications, like [MPlayer](/index.php/MPlayer "MPlayer"), [VLC](/index.php/VLC "VLC"), [MythTV](/index.php/MythTV "MythTV") and [totem](https://www.archlinux.org/packages/?name=totem) ([Kodi](/index.php/Kodi "Kodi") also supports LIRC but does so in a non-standard way, see [Kodi#Using a remote control](/index.php/Kodi#Using_a_remote_control "Kodi")).
+Bind keycodes to application-specific actions by placing their respective configuration files in `~/.config/lircrc/` which should be created manually if desired, see [lircrc(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lircrc.5). This only works for LIRC-aware applications, like [MPlayer](/index.php/MPlayer "MPlayer"), [VLC](/index.php/VLC "VLC"), [MythTV](/index.php/MythTV "MythTV") and [totem](https://www.archlinux.org/packages/?name=totem) ([Kodi](/index.php/Kodi "Kodi") also supports LIRC but does so in a non-standard way, see [Kodi#Using a remote control](/index.php/Kodi#Using_a_remote_control "Kodi")).
 
-You can put application configuration in separate files and include them in *lircrc*, like:
+Define these application-specific configurations in separate files and include them in *lircrc*, like:
 
 ```
 include "~/.config/lircrc/mplayer"

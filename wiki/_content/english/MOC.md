@@ -5,8 +5,9 @@
 *   [1 Installation](#Installation)
 *   [2 Front-ends](#Front-ends)
 *   [3 Configuration](#Configuration)
-    *   [3.1 Lynx like navigation](#Lynx_like_navigation)
-    *   [3.2 systemd service file](#systemd_service_file)
+    *   [3.1 Navigation](#Navigation)
+    *   [3.2 systemd service](#systemd_service)
+    *   [3.3 Themes](#Themes)
 *   [4 Usage](#Usage)
 *   [5 Scrobbling](#Scrobbling)
 *   [6 Troubleshooting](#Troubleshooting)
@@ -25,25 +26,19 @@
 
 	[http://mocicon.sourceforge.net/](http://mocicon.sourceforge.net/) || [mocicon](https://aur.archlinux.org/packages/mocicon/)
 
-*   **moc-tray** — Quick and easy access to mocp basic functions
-
-	[https://code.google.com/p/moc-tray/](https://code.google.com/p/moc-tray/) || [moc-tray](https://www.archlinux.org/packages/?name=moc-tray)
-
 *   **eXo** — Qt frontend to MOC, supports scrobbling
 
 	[https://bitbucket.org/blaze/exo/](https://bitbucket.org/blaze/exo/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 ## Configuration
 
-Sample configuration files can be found in `/usr/share/doc/moc/`. On *mocp* first run the local `~/.moc/` directory is created. To configure, copy the examples to it and edit accordingly.
+Sample configuration files can be found in `/usr/share/doc/moc/`. On *mocp* first run, the `~/.moc/` directory is created. To configure, copy the examples to it and edit accordingly.
 
-Themes are stored in `/usr/share/moc/themes` and can be set in `~/.moc/config`. See `/usr/share/moc/themes/example_theme` for more.
+To use MOC with v4.1 [OSS](/index.php/OSS "OSS"), see [OSS#MOC](/index.php/OSS#MOC "OSS").
 
 To change the default key bindings, see `/usr/share/doc/moc/keymap.example`.
 
-If you want to use Moc with [OSS](/index.php/OSS "OSS") v4.1, see [OSS#MOC](/index.php/OSS#MOC "OSS").
-
-### Lynx like navigation
+### Navigation
 
 To change directories with the arrow keys uncomment in `~/.moc/config`:
 
@@ -62,7 +57,7 @@ go_up = U LEFT
 
 ```
 
-### systemd service file
+### systemd service
 
 [Enable](/index.php/Enable "Enable") this service for the respective user:
 
@@ -84,6 +79,51 @@ WorkingDirectory=/home/%I/
 WantedBy=multi-user.target
 
 ```
+
+### Themes
+
+Themes are stored in `~/.moc/themes/` and can be set in `~/.moc/config`. Example theme:
+
+```
+background                     = white black
+frame                          = white black
+window_title                   = white black
+directory                      = white black
+selected_directory             = white black reverse
+playlist                       = white black
+selected_playlist              = white black reverse
+file                           = white black
+selected_file                  = white black reverse
+selected_info                  = white black reverse
+marked_file                    = white black bold
+marked_selected_file           = white black reverse
+info                           = white black
+marked_info                    = white black bold
+marked_selected_info           = white black reverse
+status                         = white black
+title                          = white black bold
+state                          = white black
+current_time                   = white black bold
+time_left                      = white black bold
+total_time                     = white black bold
+time_total_frames              = white black
+sound_parameters               = white black bold
+legend                         = white black
+disabled                       = white black
+enabled                        = white black bold
+empty_mixer_bar                = white black
+filled_mixer_bar               = white black reverse
+empty_time_bar                 = white black
+filled_time_bar                = white black reverse
+entry                          = white black
+entry_title                    = white black
+error                          = white black bold
+message                        = white black
+plist_time                     = white black
+
+```
+
+See `/usr/share/moc/themes/example_theme` for more.
 
 ## Usage
 
@@ -144,7 +184,7 @@ If MOC fails to start, it is most probably because of something wrong in `~/.moc
 
 ### Strange characters
 
-If you see strange-like characters displayed in *moc* instead of the normal lines (vertical lines to separate space, etc.), you may have a font set incompatible to MOC. Either change the respective font, or edit `.moc/config` to use ASCII for drawing lines:
+If you see strange-like characters displayed instead of the normal lines (vertical lines to separate space, etc.), you may have a font set incompatible to MOC. Either change the respective font, or edit `.moc/config` to use ASCII for drawing lines:
 
 ```
 ASCIILines = no

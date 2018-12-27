@@ -12,7 +12,8 @@ Configurations can vary to a degree. Please post Fontconfig configurations with 
 *   [6 Default fonts](#Default_fonts)
     *   [6.1 Japanese](#Japanese)
     *   [6.2 Chinese](#Chinese)
-*   [7 See also](#See_also)
+*   [7 Alternate stylistic sets for fonts](#Alternate_stylistic_sets_for_fonts)
+*   [8 See also](#See_also)
 
 ## Hinted fonts
 
@@ -408,6 +409,32 @@ or
 </fontconfig>
 
 ```
+
+## Alternate stylistic sets for fonts
+
+Certain fonts come with alternate stylistic sets for characters through an OpenType feature. Generally these stylistic sets are named `ss0x` and contain small changes to individual characters. This shows how to change the default dotted zero to a slashed zero for the monospace version of [ttf-ibm-plex](https://www.archlinux.org/packages/?name=ttf-ibm-plex).
+
+ `~/.config/fontconfig/fonts.conf` 
+```
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+    <match target='font'>
+        <test name='fontformat' compare='not_eq'>
+            <string/>
+        </test>
+        <test name='family'>
+            <string>IBM Plex Mono</string>
+        </test>
+        <edit name='fontfeatures' mode='assign_replace'>
+            <string>ss03</string>
+        </edit>
+    </match>
+</fontconfig>
+
+```
+
+See [What are "Stylistic Sets?"](https://www.typography.com/faq/question.php?faqID=157) for more information on this.
 
 ## See also
 

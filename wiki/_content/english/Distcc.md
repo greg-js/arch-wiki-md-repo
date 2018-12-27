@@ -18,15 +18,11 @@ Related articles
     *   [4.1 With makepkg](#With_makepkg)
     *   [4.2 Without makepkg](#Without_makepkg)
 *   [5 Monitoring progress](#Monitoring_progress)
-*   [6 "Cross Compiling" with distcc](#"Cross_Compiling"_with_distcc)
-    *   [6.1 32-bit x86 (i686)](#32-bit_x86_(i686))
-        *   [6.1.1 Chroot method (preferred)](#Chroot_method_(preferred))
-            *   [6.1.1.1 Add port numbers to DISTCC_HOSTS on the i686 chroot](#Add_port_numbers_to_DISTCC_HOSTS_on_the_i686_chroot)
-            *   [6.1.1.2 Invoke makepkg from the Native Environment](#Invoke_makepkg_from_the_Native_Environment)
-        *   [6.1.2 Multilib GCC method (not recommended)](#Multilib_GCC_method_(not_recommended))
-    *   [6.2 Other architectures](#Other_architectures)
-        *   [6.2.1 Arch Linux ARM](#Arch_Linux_ARM)
-        *   [6.2.2 Additional toolchains](#Additional_toolchains)
+*   [6 Cross Compiling with distcc](#Cross_Compiling_with_distcc)
+    *   [6.1 Arch Linux ARM](#Arch_Linux_ARM)
+        *   [6.1.1 Slaves](#Slaves_2)
+        *   [6.1.2 Master](#Master_2)
+    *   [6.2 Additional toolchains](#Additional_toolchains)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Journalctl](#Journalctl)
     *   [7.2 code 110](#code_110)
@@ -46,9 +42,7 @@ Related articles
 
 ## Getting started
 
-[Install](/index.php/Install "Install") the [distcc](https://www.archlinux.org/packages/?name=distcc) package on all participating PCs in the distcc cluster. For other distros, or even operating systems including Windows through using Cygwin, refer to the [distcc docs](http://distcc.samba.org/doc.html).
-
-distcc need TCP port 3632 for communication. Refer [https://wiki.archlinux.org/index.php/Category:Firewalls](https://wiki.archlinux.org/index.php/Category:Firewalls) and man distcc.
+[Install](/index.php/Install "Install") the [distcc](https://www.archlinux.org/packages/?name=distcc) package on all participating PCs in the distcc cluster. For other distros, or even operating systems including Windows through using Cygwin, refer to the [distcc docs](http://distcc.samba.org/doc.html). Be sure to allow traffic on the port on which distcc runs (the default is 3632/tcp), see [Category:Firewalls](/index.php/Category:Firewalls "Category:Firewalls") and [distcc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/distcc.1).
 
 ## Configuration
 
@@ -57,7 +51,7 @@ distcc need TCP port 3632 for communication. Refer [https://wiki.archlinux.org/i
 The configuration for the slave machine is stored in `/etc/conf.d/distccd`. At a minimum, configure the allowed address ranges in [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing "wikipedia:Classless Inter-Domain Routing") format:
 
 ```
-DISTCC_ARGS="--allow 192.168.0.0/24"
+DISTCC_ARGS="--allow 192.168.10.0/24"
 
 ```
 
@@ -72,21 +66,19 @@ A nice tool for converting address ranges to CIDR format can be found here: [CID
 Edit `/etc/makepkg.conf` in the following sections:
 
 1.  The BUILDENV array will need to have *distcc* unbanged i.e. list it without exclamation point.
-2.  Uncomment the *DISTCC_HOSTS* line and add the IP addresses of the slaves then a slash and the number of threads they are to use. The subsequent IP address/threads should be separated by a white space. This list is ordered from most powerful to least powerful (processing power).
+2.  Uncomment the *DISTCC_HOSTS* line and add the host name or IP addresses of the slaves. Optionally, follow this with a forward slash and the max number of threads they are to use. The subsequent nodes should be separated by a white space. This list should be ordered from most powerful to least powerful (processing power).
 3.  Adjust the MAKEFLAGS variable to correspond to the number of sum of the number of individual values specified for the max threads per server. In the example below, this is 5+3+3=11.
-
-**Note:** The number of threads is commonly set as the number of cores plus 1\. Do this on a per-server basis, *not* in the `MAKEFLAGS` variable.
 
 Example using relevant lines:
 
 ```
 BUILDENV=(distcc fakeroot color !ccache check !sign)
 MAKEFLAGS="-j11"
-DISTCC_HOSTS="192.168.0.2/5 192.168.0.3/3 192.168.0.4/3"
+DISTCC_HOSTS="192.168.10.2/5 192.168.10.3/3 192.168.10.4/3"
 
 ```
 
-**Note:** The `-march=native` flag cannot be used in the `CFLAGS` and `CXXFLAGS` variables, otherwise distccd will not distribute work to other machines.
+**Warning:** The `-march=native` flag cannot be used in the `CFLAGS` and `CXXFLAGS` variables, otherwise distccd will not distribute work to other machines.
 
 #### For use without makepkg
 
@@ -95,7 +87,7 @@ The minimal configuration for distcc on the master includes the setting of the a
 Example for setting the slave address using `DISTCC_HOSTS`:
 
 ```
-$ export DISTCC_HOSTS="192.168.0.3,lzo,cpp 192.168.0.4,lzo,cpp"
+$ export DISTCC_HOSTS="192.168.10.3,lzo,cpp 192.168.10.4,lzo,cpp"
 
 ```
 
@@ -105,7 +97,7 @@ Example for setting the slave addresses in the hosts configuration file:
 
  `~/.distcc/hosts` 
 ```
-192.168.0.3,lzo,cpp 192.168.0.4,lzo,cpp
+192.168.10.3,lzo,cpp 192.168.10.4,lzo,cpp
 
 ```
 
@@ -158,76 +150,56 @@ The cli monitor can run continuously by appending a space followed by integer to
 
 ```
 $ distccmon-text 3
-29291 Preprocess  probe_64.c                                 192.168.0.2[0]
-30954 Compile     apic_noop.c                                192.168.0.2[0]
-30932 Preprocess  kfifo.c                                    192.168.0.2[0]
-30919 Compile     blk-core.c                                 192.168.0.2[1]
-30969 Compile     i915_gem_debug.c                           192.168.0.2[3]
-30444 Compile     block_dev.c                                192.168.0.3[1]
-30904 Compile     compat.c                                   192.168.0.3[2]
-30891 Compile     hugetlb.c                                  192.168.0.3[3]
-30458 Compile     catalog.c                                  192.168.0.4[0]
-30496 Compile     ulpqueue.c                                 192.168.0.4[2]
-30506 Compile     alloc.c                                    192.168.0.4[0]
+29291 Preprocess  probe_64.c                                 192.168.10.2[0]
+30954 Compile     apic_noop.c                                192.168.10.2[0]
+30932 Preprocess  kfifo.c                                    192.168.10.2[0]
+30919 Compile     blk-core.c                                 192.168.10.2[1]
+30969 Compile     i915_gem_debug.c                           192.168.10.2[3]
+30444 Compile     block_dev.c                                192.168.10.3[1]
+30904 Compile     compat.c                                   192.168.10.3[2]
+30891 Compile     hugetlb.c                                  192.168.10.3[3]
+30458 Compile     catalog.c                                  192.168.10.4[0]
+30496 Compile     ulpqueue.c                                 192.168.10.4[2]
+30506 Compile     alloc.c                                    192.168.10.4[0]
 
 ```
 
-## "Cross Compiling" with distcc
+## Cross Compiling with distcc
 
-### 32-bit x86 (i686)
+One can use distcc to help cross compile.
 
-There are currently two methods from which to select to have the ability of distcc distribution of tasks over a cluster building i686 packages from a native x86_64 environment. Neither is ideal, but to date, there are the only two methods documented on the wiki.
+*   A machine running the target architecture should be used as the master.
+*   Non-native architecture slaves will help compile but they require the corresponding toolchain to be installed and their distcc to point to it.
 
-An ideal setup is one that uses the unmodified ARCH packages for distccd running only once one each node regardless of building from the native environment or from within a chroot AND one that works with makepkg. Again, this Utopian setup is not currently known.
+### Arch Linux ARM
 
-A [discussion thread](https://bbs.archlinux.org/viewtopic.php?id=129762) has been started on the topic; feel free to contribute.
+#### Slaves
 
-#### Chroot method (preferred)
-
-**Note:** This method works, but is not very elegant requiring duplication of distccd on all nodes AND need to have a 32-bit chroots on all nodes.
-
-Assuming the user has a [32-bit chroot](/index.php/Install_bundled_32-bit_system_in_64-bit_system "Install bundled 32-bit system in 64-bit system") setup and configured on **each node** of the distcc cluster, the strategy is to have two separate instances of distccd running on different ports on each node -- one runs in the native x86_64 environment and the other in the x86 chroot on a modified port. Start makepkg via a [schroot(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/schroot.1) command invoking makepkg.
-
-##### Add port numbers to DISTCC_HOSTS on the i686 chroot
-
-Append the port number defined eariler (3692) to each of the hosts in `/opt/arch32/etc/makepkg.conf` as follows:
-
-```
-DISTCC_HOSTS="192.168.1.101/5:3692 192.168.1.102/5:3692 192.168.1.103/3:3692"
-
-```
-
-**Note:** This only needs to be setup on the "master" i686 chroot. Where "master" is defined as the one from which the compilation will take place.
-
-##### Invoke makepkg from the Native Environment
-
-Set up [schroot](https://www.archlinux.org/packages/?name=schroot) on the native x86_64 environment. Invoke makepkg to build an i686 package from the native x86_64 environment, simply by:
-
-```
-$ schroot -p -- makepkg -src
-
-```
-
-#### Multilib GCC method (not recommended)
-
-See [Makepkg#Build 32-bit packages on a 64-bit system](/index.php/Makepkg#Build_32-bit_packages_on_a_64-bit_system "Makepkg").
-
-### Other architectures
-
-#### Arch Linux ARM
-
-When building on an Arch Linux ARM device, the developers *highly* recommend using the official project [toolchains](https://archlinuxarm.org/wiki/Distcc_Cross-Compiling) which should be installed on the x86_64 slave machine(s). Rather than manually managing these, the [AUR](/index.php/AUR "AUR") provides all four toolchains as well as simple systemd service units:
+The developers *highly* recommend using the official project [toolchains](https://archlinuxarm.org/wiki/Distcc_Cross-Compiling) which should be installed on the x86_64 slave machine(s). Rather than manually managing these, the [AUR](/index.php/AUR "AUR") provides all four toolchains as well as simple systemd service units:
 
 *   [distccd-alarm-armv5](https://aur.archlinux.org/packages/distccd-alarm-armv5/)
 *   [distccd-alarm-armv6h](https://aur.archlinux.org/packages/distccd-alarm-armv6h/)
 *   [distccd-alarm-armv7h](https://aur.archlinux.org/packages/distccd-alarm-armv7h/)
 *   [distccd-alarm-armv8](https://aur.archlinux.org/packages/distccd-alarm-armv8/)
 
-Setup on the slave machine containing the toolchain is identical to [#Slaves](#Slaves) except that the name of the configuration file matches that of the respective package. For example, `/etc/conf.d/distccd-armv7h`.
+Setup on the slave machine containing the toolchain is identical to [#Slaves](#Slaves) except that the name of the configuration and systemd service file matches that of the respective package. For example, for armv7h the config file is `/etc/conf.d/distccd-armv7h` and the systemd service unit is `distccd-armv7h.service`.
 
-A systemd service unit is provided for each respective package. For example, `distccd-armv7h.service`.
+Note that each of the toolchains runs on a unique port thus allowing them to co-exist on the slave machine if needed. Be sure to allow traffic to the port on which distcc runs see [Category:Firewalls](/index.php/Category:Firewalls "Category:Firewalls") and [distcc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/distcc.1).
 
-#### Additional toolchains
+| Target architecture | Distcc Port |
+| *armv5* | 3633 |
+| *armv6h* | 3634 |
+| *armv7h* | 3635 |
+| *armv8h/aarch64* | 3636 |
+
+#### Master
+
+Setup of the master is identical to [#Master](#Master) except, one needs to modify the following two files to define the now non-standard port the slaves are expected to use. Refer to the table above if using the AUR package.
+
+1.  `/etc/conf.d/distcc`: example on an armv7h machine: `DISTCC_ARGS="--allow 127.0.0.1 --allow 192.168.10.0/24 --port 3635`
+2.  `/etc/makepkg.conf`: example on an armv7h machine: `DISTCC_HOSTS="192.168.10.2/5:3635 192.168.10.3/5:3635"`
+
+### Additional toolchains
 
 *   [EmbToolkit](https://embtoolkit.org/): Tool for creating cross compilation tool chain; supports ARM and MIPS architectures; supports building of an LLVM based tool chain
 *   [crosstool-ng](http://crosstool-ng.org/): Similar to EmbToolkit; supports more architectures (see website for more information)
@@ -285,7 +257,7 @@ By default, distcc will log to `/var/log/messages.log` as it goes along. One tri
 Either call distcc with the arguments mentioned here on the master or appended it to DISTCC_ARGS in `/etc/conf.d/distccd` on the slaves:
 
 ```
-DISTCC_ARGS="--allow 192.168.0.0/24 --log-level error --log-file /tmp/distccd.log"
+DISTCC_ARGS="--allow 192.168.10.0/24 --log-level error --log-file /tmp/distccd.log"
 
 ```
 

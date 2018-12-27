@@ -47,8 +47,8 @@ Related articles
 *   [4 Using the command shell](#Using_the_command_shell)
     *   [4.1 Pager support](#Pager_support)
     *   [4.2 Using the command shell environment to boot operating systems](#Using_the_command_shell_environment_to_boot_operating_systems)
-        *   [4.2.1 Chainloading a partition](#Chainloading_a_partition)
-        *   [4.2.2 Chainloading a disk/drive](#Chainloading_a_disk/drive)
+        *   [4.2.1 Chainloading a partition's VBR](#Chainloading_a_partition's_VBR)
+        *   [4.2.2 Chainloading a disk's MBR or a partitionless disk's VBR](#Chainloading_a_disk's_MBR_or_a_partitionless_disk's_VBR)
         *   [4.2.3 Chainloading Windows/Linux installed in UEFI mode](#Chainloading_Windows/Linux_installed_in_UEFI_mode)
         *   [4.2.4 Normal loading](#Normal_loading)
     *   [4.3 Using the rescue console](#Using_the_rescue_console)
@@ -552,9 +552,9 @@ The GRUB's command shell environment can be used to boot operating systems. A co
 
 *Chainloading* means to load another boot-loader from the current one, ie, chain-loading.
 
-The other bootloader may be embedded at the starting of the disk (MBR) or at the starting of a partition or as an EFI binary in the ESP in the case of UEFI.
+The other bootloader may be embedded at the start of a partitioned disk (MBR), at the start of a partition or a partitionless disk (VBR), or as an EFI binary in the case of UEFI.
 
-#### Chainloading a partition
+#### Chainloading a partition's VBR
 
 ```
 set root=(hdX,Y)
@@ -565,7 +565,7 @@ boot
 
 X=0,1,2... Y=1,2,3...
 
-For example to chainload Windows stored in the first partiton of the first hard disk,
+For example to chainload Windows stored in the first partition of the first hard disk,
 
 ```
 set root=(hd0,1)
@@ -576,7 +576,7 @@ boot
 
 Similarly GRUB installed to a partition can be chainloaded.
 
-#### Chainloading a disk/drive
+#### Chainloading a disk's MBR or a partitionless disk's VBR
 
 ```
 set root=hdX

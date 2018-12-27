@@ -1,134 +1,165 @@
+**Estado de la traducción**
+Este artículo es una traducción de [ZTE MF626 / MF636](/index.php/ZTE_MF626_/_MF636 "ZTE MF626 / MF636"), revisada por última vez el **2018-12-26**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=ZTE_MF626_/_MF636&diff=0&oldid=557086) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
+Artículos relacionados
+
+*   [USB 3G Modem](/index.php/USB_3G_Modem "USB 3G Modem")
+
+El ZTE MF626 / MF636 es un módem USB que combina 3G+/3G con EDGE/GPRS en un dispositivo compacto. Cuenta con un lector de tarjetas micro-SD integrado. Puede enviar información a velocidades de hasta 4.5 Mbps en redes 3G+ y recibir información a velocidades de hasta 7.2 Mbps. También se conoce como el adaptador USB rojo de Rogers (compañía telefónica canadiense).
+
 ## Contents
 
-*   [1 Introducción](#Introducci.C3.B3n)
-*   [2 Desabilitar el modo CD en el modem](#Desabilitar_el_modo_CD_en_el_modem)
-*   [3 Configurar reglas de UDEV](#Configurar_reglas_de_UDEV)
-*   [4 Configurar reglas de HAL](#Configurar_reglas_de_HAL)
-*   [5 Cree una configuración de wvdial](#Cree_una_configuraci.C3.B3n_de_wvdial)
-*   [6 Conectese a internet](#Conectese_a_internet)
-*   [7 Resolución de problemas](#Resoluci.C3.B3n_de_problemas)
-*   [8 Agradecimientos](#Agradecimientos)
+*   [1 Configuración](#Configuración)
+    *   [1.1 Deshabilitar el modo CD en el dispositivo](#Deshabilitar_el_modo_CD_en_el_dispositivo)
+    *   [1.2 Deshabilitar el modo CD en el dispositivo con wvdial](#Deshabilitar_el_modo_CD_en_el_dispositivo_con_wvdial)
+    *   [1.3 Configurar las reglas de udev](#Configurar_las_reglas_de_udev)
+    *   [1.4 Crear una configuración wvdial](#Crear_una_configuración_wvdial)
+*   [2 Conectarse a internet](#Conectarse_a_internet)
+*   [3 Consejos y trucos](#Consejos_y_trucos)
+*   [4 Véase también](#Véase_también)
 
-## Introducción
+## Configuración
 
-vea tambien [USB 3G Modem](/index.php/USB_3G_Modem "USB 3G Modem").
+### Deshabilitar el modo CD en el dispositivo
 
-El modem ZTE MF626 / MF636 es un modem USB que combina 3G+/3G con EDGE/GPRS en un dispositivo conpacto. Este tambien integra un lector de tarjetas Micro SD. Puede subir datos a una velocidad de 4.5 Mbps en redes 3G+ y recibir datos a una velocidad de 7.2 Mbps.  Es tambien conocido como "Rogers (Operador celular canadiense) red stick USB dongle".
-
-## Desabilitar el modo CD en el modem
-
-Usando una maquina con Windows, inserte el dispositivo USB y espere a que inicie el instalador. Cuando este termine, cierre la ventana del programa de conexión, vaya al administrador de dispositivos (Panel de Control -> Sistema -> Hardware -> Administrador de dispositivos). En la sección de puertos, busque el puerto COM al que esta conectado el módem (no el de modo diagnostico); en mi caso es COM4\. Conéctese a ese puerto mediante Hyperterminal, puede encontrarlo en el submenu accesorios del menú inicio. Los parámetros de conexión son:
+Con una máquina Windows, conecte el dispositivo USB y complete el breve asistente de instalación. Una vez hecho esto, cierre la aplicación Rogers que se inicia, luego diríjase al Administrador de dispositivos (*Panel de control > Sistema > Hardware > Administrador de dispositivos*). En la sección Puertos, busque el puerto COM que está conectado al módem USB (ignore el modo de diagnóstico). Conéctese a ese puerto COM a través del Hyperterminal, que se encuentra en el área de Accesorios del Menú de Inicio. Los parámetros de conexión son:
 
 ```
-Bits por segundo: 115200
-Bits de datos: 8
-Paridad: Ninguno
-Bits de parada: 1
-Control de flujo: Ninguno
+Bits per Second: 115200
+Data bits: 8
+Parity: None
+Stop bits: 1
+Flow Control: None
 
 ```
 
-Cuando este conectado, escriba los siguientes comandos (ignore los mensajes que van apareciendo):
+Una vez conectado, escriba las siguientes órdenes:
 
 ```
-AT+ZOPRT=5 [ENTER]
-AT+ZCDRUN=8 [ENTER]
-
-```
-
-Luego de cada comando presione ENTER, deberia aparecer un "ok", esto desabilitara la autoejecucion del modo CD en el modem, ahora puede salir de Hypterterminal y retirar el dispositivo, esto es todo lo que debe hacer en windows.
-
-## Configurar reglas de UDEV
-
-Cree un archivo en /etc/udev/rules.d/90-zte.conf que contenga lo siguiente:
-
-```
-ACTION!="add", GOTO="ZTE_End"
-SUBSYSTEM=="usb", SYSFS{idProduct}=="0031", SYSFS{idVendor}=="19d2", GOTO="ZTE_Modem"
-GOTO="ZTE_End"
-
-LABEL="ZTE_Modem"
-RUN+="/sbin/modprobe usbserial vendor=0x19d2 product=0x0031", MODE="660", GROUP="network"
-LABEL="ZTE_End"
+AT+ZOPRT=5
+AT+ZCDRUN=8
 
 ```
 
-## Configurar reglas de HAL
+Esto le indica al módem que no use el modo CD cuando se conecta por primera vez a un ordenador. Ahora salga del Hyperterminal y retire el módem USB. Ya ha terminado con Windows.
 
-La versión actual de HAL no conoce el modem ZTE MF626 / MF636, pero si conoce modelos similares. Para informar esto, cree el archivo /etc/hal/fdi/information/10-modem.fdi con lo siguiente:
+### Deshabilitar el modo CD en el dispositivo con wvdial
+
+Primero, elimine el módulo `usb-storage`. Luego, cargue el módulo `usbserial`:
 
 ```
-<?xml version="1.0" encoding="UTF-8"?> <!-- -*- xml -*- -->
-
-<deviceinfo version="0.2">
-  <device>
-    <match key="info.category" string="serial">
-        <!-- ZTE MF636 HSDPA USB dongle -->
-        <match key="@info.parent:usb.product_id" int="0x0031">
-          <match key="@info.parent:usb.interface.number" int="3">
-            <append key="modem.command_sets" type="strlist">GSM-07.07</append>
-            <append key="modem.command_sets" type="strlist">GSM-07.05</append>
-          </match>
-        </match>
-    </match>
-  </device>
-</deviceinfo>
+# rmmod usb_storage
+# modprobe usbserial
 
 ```
 
-## Cree una configuración de wvdial
-
-Primero asegurese de tener instalado [wvdial](/index.php/Wvdial "Wvdial"), si no es así ejecute:
-
-```
-# Pacman -S wvdial
-
-```
-
-Wvdial es un front-end para PPPd muy facil de usar. La configuración es facil de comprender con pequeños conocimientos de ingles. Esta es probablemente mas larga de lo que requiera, aqui se deja un archivo de ejemplo con la configuración que ha funcionado con el autor de esta guia, recuerde cambiar los parametros de acuerdo al tipo de modem y su ISP. Reemplace /dev/ttyUSB0 con el cual el modem esta conectado, en algunos casos el modem abre mas de un puerto, usted debera probar con cada uno, en mi caso, ha funcionado con /dev/ttyUSB2, puede verificar cuales son los puertos abiertos con dmesg. Guarde el archivo como /etc/wvdial.conf
+Edite `/etc/wvdial.conf`:
 
 ```
 [Dialer Defaults]
-Init1 = ATZ
-Init2 = ATQ0 V1 E1 S0=0 &C1 &D2 +FCLASS=0
-Init3 = AT+CGDCONT=1,"IP","APN DE SU RED" # ejemplo: "bam.clarochile.cl" (comillas incluidas)
+Modem = /dev/ttyUSB0
 Modem Type = Analog Modem
-Baud = 7200000
-New PPPD = yes
+ISDN = 0
+Init1 = AT+ZOPRT=5
+Init2 = AT+ZCDRUN=8
+
+```
+
+Ejecute *wvdial*, debería usar estas órdenes y fallar al intentar conectarse. Una vez que salga, desconecte el USB y vuelva a conectarlo, y debería ser reconocido como un módem.
+
+### Configurar las reglas de udev
+
+Cree la siguiente regla [udev](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)"):
+
+ `/etc/udev/rules.d/90-zte.conf.rules`  `ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="19d2", ATTRS{idProduct}=="0031", RUN+="/sbin/modprobe usbserial vendor=0x19d2 product=0x0031", MODE="660", GROUP="network"` 
+
+### Crear una configuración wvdial
+
+[Wvdial](/index.php/Wvdial "Wvdial") es una interfaz fácil de usar para PPPd. Asegúrese de reemplazar la línea `/dev/ttyUSB0` con el nodo al que está conectado su módem USB, puede verlo con dmesg. Guárdelo como `/etc/wvdial.conf`.
+
+```
+[Dialer Defaults]
 Modem = /dev/ttyUSB0
 ISDN = off
+Modem Type = USB Modem
+Baud = 7200000
+Init = ATZ
+Init2 =
+Init3 =
+Init4 =
+Init5 =
+Init6 =
+Init7 =
+Init8 =
+Init9 =
 Phone = *99#
-Username = SU NOMBRE DE USUARIO DE LA RED # ejemplo: clarochile
-Password = CONTRASEÑA DE LA RED # ejemplo: clarochile
+Phone1 =
+Phone2 =
+Phone3 =
+Phone4 =
+Dial Prefix =
+Dial Attempts = 1
+Dial Command = ATM1L3DT
+Ask Password = off
+Password = off
+Username = na
+Auto Reconnect = off
+Abort on Busy = off
+Carrier Check = off
+Check Def Route = off
+Abort on No Dialtone = off
 Stupid Mode = on
+Idle Seconds = 0
+Auto DNS = on
 
 ```
 
-## Conectese a internet
+Si lo anterior no funciona, intente lo siguiente (extraído de sakis3g):
 
-Ejecute wvdial como root o con [sudo](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)"):
-
-```
-# wvdial &
+Esto es para Etisalat Misr, pero debería funcionar para todas las demás redes que usan el mismo dispositivo.
 
 ```
-
-Si la salida reporta la IP local y las DNS, la conexión ha funcionado.
-
-## Resolución de problemas
-
-*   Si queda en la orden de marcado, y luego aparece un mensaje de desconexion, pruebe otro puerto como /dev/ttyUSB2
-*   Si, a pesar de que esta conectado, no puede navegar en internet, pero si puede hacer ping a direcciones IP u ocupar otros programas que dependan de internet, revise las direcciones DNS, en algunas ocaciones el modem no informa correctamente entregando DNS erroneas, usted puede añadir la opción `Auto DNS = off` al final de su archivo wvdial.conf, y a continuación configurar sus DNS manualmente, pudiendo usar por ejemplo Open DNS ([http://www.opendns.org](http://www.opendns.org))
-*   En pruebas en mi red, he sufrido problemas entre tener el modem conectado desde el inicio y pulseaudio, con el resultado de que pulseaudio arranca desactivado, la unica solucion que he encontrado hasta el momento es arrancar sin el modem conectado y al terminar la carga del sistema colocar este.
-
-## Agradecimientos
-
-Gracias a las siguientes paginas por brindar la información necesaria:
-
-```
-   * [http://www.zeroflux.org/blog/post/255](http://www.zeroflux.org/blog/post/255)
-   * [http://www.matt-barrett.com/?p=5](http://www.matt-barrett.com/?p=5)
-   * [http://ubuntuforums.org/showthread.php?t=1005910](http://ubuntuforums.org/showthread.php?t=1005910)
-   * [http://ubuntuforums.org/showthread.php?t=1065934](http://ubuntuforums.org/showthread.php?t=1065934)
+[Dialer Defaults]
+Modem = /dev/ttyUSB2
+Modem Type = Analog Modem
+ISDN = 0
+Baud = 7200000
+Dial Attempts = 3
+Username = apn
+Password = apn
+Phone = *99#
+Auto Reconnect = off
+Stupid Mode = 1
+Init1 = ATZ
+Init6 = AT+CGEQMIN=1,4,64,640,64,640
+Init7 = AT+CGEQREQ=1,4,64,640,64,640
 
 ```
+
+## Conectarse a internet
+
+Ahora simplemente ejecute *wvdial* para conectarse
+
+```
+# wvdial
+
+```
+
+Si ve que la salida muestra sus direcciones IP locales y endpoints PPP, entonces, ha funcionado.
+
+## Consejos y trucos
+
+Todos los pasos anteriores pueden quedar obsoletos si el módem USB se vuelve compatible con [sakis3g](http://www.sakis3g.org/), que es un script de línea de comandos todo en uno que automatiza todos los pasos anteriores. Los pasos de instalación son los siguientes:
+
+```
+wget "[http://www.sakis3g.org/versions/latest/$ARCH/sakis3g.gz](http://www.sakis3g.org/versions/latest/$ARCH/sakis3g.gz)" # where $ARCH is either i386 or amd64
+gunzip sakis3g.gz
+chmod +x sakis3g
+./sakis3g --interactive
+
+```
+
+## Véase también
+
+*   [Publicación 1 del foro de Ubuntu](http://ubuntuforums.org/showthread.php?t=1005910) - más detalles
+*   [Publicación 2 del foro de Ubuntu](http://ubuntuforums.org/showthread.php?t=1065934) - más detalles

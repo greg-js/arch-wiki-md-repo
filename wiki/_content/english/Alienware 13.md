@@ -144,6 +144,8 @@ from a console.
 
 We can simply add the commands to the energy admin or the startup to make keyboard lights change automatically.
 
+If that does not work try this tool specifically made for Alienware 13 R3 [alieneffects-13r3](https://github.com/Yashasvi-Sriram/alieneffects-13r3)
+
 ## Intel powersaving options
 
 In order to get the most out of your battery life it is recommended to use additional powersaving options. The following should be save to use.

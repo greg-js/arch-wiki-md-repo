@@ -1095,5 +1095,8 @@ You can use the following website to get your device's coordinates along with a 
 31.303009, 120.591111 "maoxuner" # Suzhou, Jiangsu, China
 47.443530599999995,9.659020199999999 "mist66" # Lustenau, Austria
 35,522778,24,129011 "mperrakis" # Pazinos, Chania, Crete, Greece
+49.129944, 9.219347 "vivanova" # Heilbronn, Germany
+49.193263, 16.609428 "UTF_8x" # Brno, Czech Republic
+51.5889556, -0.1006367 "442401" # London, United Kingdom
 
 ```

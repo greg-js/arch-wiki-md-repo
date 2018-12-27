@@ -203,7 +203,7 @@ Alternatively, [#Use a keyserver](#Use_a_keyserver) to find a public key.
 You can register your key with a public PGP key server, so that others can retrieve your key without having to contact you directly:
 
 ```
-$ gpg --send-keys *user-id*
+$ gpg --send-keys *key-id*
 
 ```
 

@@ -29,17 +29,18 @@ Version: ThinkPad X1 Carbon 6th
 | Camera | Yes | uvcvideo |
 | Fingerprint Reader | No² | ? |
 | [Power management](/index.php/Power_management "Power management") | Yes³ | ? |
-| [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes | btusb |
+| [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes⁴ | btusb |
 | microSD card reader | Yes | scsi_mod |
 | Keyboard Backlight | Yes | thinkpad_acpi |
 | Function/Multimedia Keys | Yes | ? |
-| Thunderbolt 3 eGPU | Yes⁴ | nvidia |
+| Thunderbolt 3 eGPU | Yes⁵ | nvidia |
 | 
 
 1.  No working Linux driver for Fibocom L850-GL. See [this thread](https://forums.lenovo.com/t5/Linux-Discussion/X1C-gen-6-Fibocom-L850-GL-Ubuntu-18-04/m-p/4078413) and [this thread](https://forums.lenovo.com/t5/Linux-Discussion/Linux-support-for-WWAN-LTE-L850-GL-on-T580-T480/td-p/4067969) for more info.
 2.  [The Validity90 project](https://github.com/nmikhailov/Validity90) began reverse engineering the reader, but updates have stopped recently.
 3.  S3 suspend requires changes to BIOS settings - see section on [suspend issues](#Suspend_issues).
-4.  Internal monitor acceleration does not appear to be supported.
+4.  See [this blog post](https://200ok.ch/posts/2018-12-17_making_bluetooth_work_on_lenovo_x1_carbon_6th_gen_with_linux.html) for improvements to reliability.
+5.  Internal monitor acceleration does not appear to be supported.
 
  |
 

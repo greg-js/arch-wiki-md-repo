@@ -264,7 +264,7 @@ GeForce 8 and newer | Radeon HD 4000 and newer | See [#VDPAU drivers](#VDPAU_dri
 | MPEG-4 | No | No | Radeon HD 6000 and newer | Radeon HD 6000 and newer |
 | VC-1 | Sandy Bridge and newer | Broadwell and newer | Radeon HD 2000 and newer
 GeForce 9300 and newer | Radeon HD 4000 and newer |
-| H.264/MPEG-4 AVC | GMA 4500, Ironlake and newer | Broadwell and newer | Radeon HD 2000 and newer
+| H.264/MPEG-4 AVC | GMA 4500, Ironlake and newer | Radeon HD 2000 and newer
 GeForce 8 and newer | Radeon HD 4000 and newer |
 | H.265/HEVC 8bit | Cherryview/Braswell and newer | Skylake and newer | Radeon R9 Fury and newer | No |
 | H.265/HEVC 10bit | Broxton and newer | Broxton/Apollo Lake and newer | Radeon 400 and newer |

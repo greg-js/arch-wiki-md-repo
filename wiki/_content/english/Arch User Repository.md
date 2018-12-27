@@ -32,7 +32,7 @@ A good number of new packages that enter the official repositories start in the 
         *   [5.1.1 Rules of submission](#Rules_of_submission)
         *   [5.1.2 Authentication](#Authentication)
         *   [5.1.3 Creating package repositories](#Creating_package_repositories)
-        *   [5.1.4 Publish new package content](#Publish_new_package_content)
+        *   [5.1.4 Publishing new package content](#Publishing_new_package_content)
     *   [5.2 Maintaining packages](#Maintaining_packages)
     *   [5.3 Other requests](#Other_requests)
 *   [6 Web interface translation](#Web_interface_translation)
@@ -264,13 +264,17 @@ Then [fetch](/index.php/Git#Using_remotes "Git") this remote to initialize it in
 
 **Note:** [Pull and rebase](https://git-scm.com/docs/git-pull#git-pull---rebasefalsetruemergespreserveinteractive) to resolve conflicts if `*pkgbase*` matches a deleted package.
 
-#### Publish new package content
+#### Publishing new package content
 
 **Warning:** Your commits will be authored with your [global Git name and email address](/index.php/Git#Configuration "Git"). It is very difficult to change commits after pushing them ([FS#45425](https://bugs.archlinux.org/task/45425)). If you want to push to the AUR under different credentials, you can change them per package with `git config user.name "..."` and `git config user.email "..."`.
 
-To upload or update a package, [add](/index.php/Git#Staging_changes "Git") *at least* [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and [.SRCINFO](/index.php/.SRCINFO ".SRCINFO"), then any additional new or modified helper files (such as [*.install*](/index.php/PKGBUILD#install "PKGBUILD") files or [local source files](/index.php/PKGBUILD#source "PKGBUILD") such as [patches](/index.php/Patching_packages "Patching packages")), [commit](/index.php/Git#Commiting_changes "Git") with a meaningful commit message, and finally [push](/index.php/Git#Push_to_a_repository "Git") the changes to the AUR.
+When releasing a new version of the packaged software, update the [pkgver](/index.php/PKGBUILD#pkgver "PKGBUILD") or [pkgrel](/index.php/PKGBUILD#pkgrel "PKGBUILD") variables to notify all users that an upgrade is needed. Do not update those values if only minor changes to the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") such as the correction of a typo are being published.
 
-**Note:** If `.SRCINFO` was not included in your first commit, add it by [rebasing all commits](https://git-scm.com/docs/git-rebase#git-rebase---root) or [filtering the tree](https://git-scm.com/docs/git-filter-branch#git-filter-branch---tree-filterltcommandgt) so the AUR will permit your initial push. Be sure to regenerate `.SRCINFO` whenever `PKGBUILD` metadata changes, such as [pkgver()](/index.php/PKGBUILD#pkgver "PKGBUILD") updates; otherwise the AUR will not show updated version numbers.
+Be sure to regenerate [.SRCINFO](/index.php/.SRCINFO ".SRCINFO") whenever `PKGBUILD` metadata changes, such as `pkgver()` updates; otherwise the AUR will not show updated version numbers.
+
+To upload or update a package, [add](/index.php/Git#Staging_changes "Git") *at least* `PKGBUILD` and `.SRCINFO`, then any additional new or modified helper files (such as [*.install*](/index.php/PKGBUILD#install "PKGBUILD") files or [local source files](/index.php/PKGBUILD#source "PKGBUILD") such as [patches](/index.php/Patching_packages "Patching packages")), [commit](/index.php/Git#Commiting_changes "Git") with a meaningful commit message, and finally [push](/index.php/Git#Push_to_a_repository "Git") the changes to the AUR.
+
+**Note:** If `.SRCINFO` was not included in your first commit, add it by [rebasing with --root](https://git-scm.com/docs/git-rebase#git-rebase---root) or [filtering the tree](https://git-scm.com/docs/git-filter-branch#git-filter-branch---tree-filterltcommandgt) so the AUR will permit your initial push.
 
 **Tip:** To keep the working directory and commits as clean as possible, create a `.gitignore` that [excludes all files](/index.php/Dotfiles#Using_gitignore "Dotfiles") and force-add files as needed.
 
@@ -291,7 +295,7 @@ Orphan, deletion and merge requests can be created by clicking on the "Submit Re
     *   A short note explaining the reason for deletion. Note that a package's comments does not sufficiently point out the reasons why a package is up for deletion. Because as soon as a TU takes action, the only place where such information can be obtained is the aur-requests mailing list.
     *   Supporting details, like when a package is provided by another package, if you are the maintainer yourself, it is renamed and the original owner agreed, etc.
     *   Deletion requests can be rejected, in which case if you are the maintainer of the package you will likely be advised to disown the package to allow adoption by another packager.
-    *   After a package is deleted, its Git repository remains available in the AUR
+    *   After a package is deleted, its Git repository remains available in the AUR.
 
 ## Web interface translation
 

@@ -130,10 +130,17 @@ case "$3" in
 esac
 ```
 
-Finally, make the script executable:
+Make the script executable:
 
 ```
 # chmod +x /etc/acpi/actions/sleep-button.sh
+
+```
+
+Finally, reload the acpid.service to get acpid to recognize the changes to these files:
+
+```
+# kill -SIGHUP $(pidof acpid)
 
 ```
 

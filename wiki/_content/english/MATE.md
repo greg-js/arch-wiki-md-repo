@@ -202,7 +202,7 @@ $ gsettings set org.mate.background show-desktop-icons false
 
 ```
 
-Doing so may cause some graphics artifacts on secondary monitors
+Doing so may cause some graphics artifacts on secondary monitors.
 
 #### Hide individual icons
 

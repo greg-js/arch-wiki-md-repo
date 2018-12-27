@@ -101,6 +101,8 @@ TimeoutSec=0
 
 ```
 
+For the root filesystem, it also has to be mounted read-only initially with the kernel parameter `ro` and only then remounted read-write from [fstab](/index.php/Fstab "Fstab") (note that the `defaults` mount option implies `rw`). See [fsck#Mechanism](/index.php/Fsck#Mechanism "Fsck").
+
 See [this](http://www.freedesktop.org/software/systemd/man/systemd-fsck@.service.html) for more info on the options you can pass to `systemd-fsck` - you can change how often the service will check (or not) your filesystems.
 
 ## Make GRUB silent

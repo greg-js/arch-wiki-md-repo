@@ -11,12 +11,13 @@ Related articles
         *   [1.1.1 Edge series](#Edge_series)
         *   [1.1.2 E series](#E_series)
         *   [1.1.3 L series](#L_series)
-        *   [1.1.4 P series](#P_series)
-        *   [1.1.5 T series](#T_series)
-        *   [1.1.6 W series](#W_series)
-        *   [1.1.7 X series](#X_series)
-        *   [1.1.8 Yoga Series](#Yoga_Series)
-        *   [1.1.9 Helix Series](#Helix_Series)
+        *   [1.1.4 A series](#A_series)
+        *   [1.1.5 P series](#P_series)
+        *   [1.1.6 T series](#T_series)
+        *   [1.1.7 W series](#W_series)
+        *   [1.1.8 X series](#X_series)
+        *   [1.1.9 Yoga Series](#Yoga_Series)
+        *   [1.1.10 Helix Series](#Helix_Series)
 *   [2 Lenovo](#Lenovo)
     *   [2.1 IdeaPad](#IdeaPad)
     *   [2.2 B series](#B_series)
@@ -84,6 +85,14 @@ install CD version
 | Lenovo ThinkPad L430 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | Trackpoint* |
 | Lenovo ThinkPad L520 | 2018.09.01-x86_64 | Yes | Yes | Yes | Yes | Not tested | Not tested | Not tested | Not tested |
 | Lenovo ThinkPad L530 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | Trackpoint*, Fingerprint reader |
+
+#### A series
+
+| Model version | Arch Linux
+install CD version
+ | Hardware support | Remarks |
+| Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
+| Lenovo ThinkPad A485 | 2018.12 | Yes | Yes | Yes | Yes | Yes | Yes | NA | Touch Pad/Trackpoint (yes), Webcam (yes) | bluetooth does not work when activating [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools") `runtime-pm` module |
 
 #### P series
 
@@ -172,7 +181,8 @@ install CD version
 | [Lenovo ThinkPad X1 Carbon (Gen 4)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_4) "Lenovo ThinkPad X1 Carbon (Gen 4)") | NA | Yes | Yes | Yes | Yes | Yes | Yes | NA |
 | [Lenovo ThinkPad X1 Carbon (Gen 5)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_5) "Lenovo ThinkPad X1 Carbon (Gen 5)") | NA | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
 | [Lenovo ThinkPad X1 Carbon (Gen 6)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_6) "Lenovo ThinkPad X1 Carbon (Gen 6)") | NA | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
-| [Lenovo ThinkPad X1 Yoga (Gen 3)](/index.php/Lenovo_ThinkPad_X1_Yoga_(Gen_3) "Lenovo ThinkPad X1 Yoga (Gen 3)") | NA | Yes | Yes | Yes | Yes | Yes | Partial | NA | SD card (Yes), Webcam (Yes), Fingerprint (No), Touchscreen (Yes), Accelerometer (Yes) | _ |
+| [Lenovo ThinkPad X1 Extreme](/index.php/Lenovo_ThinkPad_X1_Extreme "Lenovo ThinkPad X1 Extreme") | NA | Yes | Yes | Yes | Yes | Yes | Yes | NA | Fingerprint reader not supported, Thunderbolt ports not tested | Graphics requires some configuration to work correctly |
+| [Lenovo ThinkPad X1 Yoga (Gen 3)](/index.php/Lenovo_ThinkPad_X1_Yoga_(Gen_3) "Lenovo ThinkPad X1 Yoga (Gen 3)") | NA | Yes | Yes | Yes | Yes | Yes | Partial | NA | SD card (Yes), Webcam (Yes), Fingerprint (No), Touchscreen (Yes), Accelerometer (Yes) |
 
 #### Yoga Series
 

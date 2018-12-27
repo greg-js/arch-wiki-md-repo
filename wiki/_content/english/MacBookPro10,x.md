@@ -4,7 +4,9 @@ Related articles
 *   [General recommendations](/index.php/General_recommendations "General recommendations")
 *   [Mac](/index.php/Mac "Mac")
 
-This page should help you setting up ArchLinux on a [MacBook Pro 10,1 with Retina display](https://en.wikipedia.org/wiki/MacBook_Pro#Third_generation_.28Retina.29 "wikipedia:MacBook Pro"). Most of the steps are the same or very similar to the regular ArchLinux installation. However, because this is very new hardware, the setup requires a few different steps. The general installation guidelines are descibed in [Mac](/index.php/Mac "Mac").
+This page should help you set up Arch Linux on a [MacBook Pro 10,1 with Retina display](https://en.wikipedia.org/wiki/MacBook_Pro#Third_generation_.28Retina.29 "wikipedia:MacBook Pro"). Most of the steps are the same or very similar to the regular Arch Linux installation. However, because this is very new hardware, the setup requires a few different steps.
+
+The general installation guidelines are described in [Mac](/index.php/Mac "Mac").
 
 **Note:** To have all hardware supported, you should run this Notebook with Kernel 3.7 or newer.
 
@@ -18,7 +20,7 @@ This page should help you setting up ArchLinux on a [MacBook Pro 10,1 with Retin
     *   [1.5 USB Tethering](#USB_Tethering)
 *   [2 Installation](#Installation)
     *   [2.1 Booting the live image](#Booting_the_live_image)
-    *   [2.2 Connecting Wi-Fi](#Connecting_Wi-Fi)
+    *   [2.2 Connecting to Wi-Fi](#Connecting_to_Wi-Fi)
     *   [2.3 The installation](#The_installation)
     *   [2.4 Bootloader](#Bootloader)
         *   [2.4.1 Direct EFI booting](#Direct_EFI_booting)
@@ -50,7 +52,7 @@ Assuming you want to dual boot with OS X, you have to shrink its partition with 
 
 ### Using the Thunderbolt to Ethernet adapter
 
-As of late 2014, thunderbolt hotplugging has been included in the mainline Linux kernel. Ethernet cables can now be used as usual through the thunderbolt adapter. [[1]](https://plus.google.com/+gregkroahhartman/posts/bzx6EJnwMMf)
+As of late 2014, Thunderbolt hotplugging has been included in the mainline Linux kernel. Ethernet cables can now be used as usual through the Thunderbolt adapter. [[1]](https://plus.google.com/+gregkroahhartman/posts/bzx6EJnwMMf)
 
 ### Using a USB-to-Ethernet adapter
 
@@ -70,13 +72,13 @@ If you have a smartphone, you can also try tethering your device to get connecte
 
 Download the latest ISO from the download page and prepare a live USB as outlined in [USB flash installation media](/index.php/USB_flash_installation_media "USB flash installation media").
 
-Shut down the Macbook. Plug in the USB drive. Hold the option key, then press the power button. After a few seconds, you should see Apple's boot loader display the choice of either starting up the built-in drive with OS X or the USB drive you plugged in.
+Shut down the MacBook. Plug in the USB drive. Hold the option key, then press the power button. After a few seconds, you should see Apple's boot loader display the choice of either starting up the built-in drive with OS X or the USB drive you plugged in.
 
 Select the live USB with the arrow keys, and press Enter to boot into the live Arch Linux environment.
 
 **Note:** You should not need to pass in any kernel parameters to boot successfully into the live environment.
 
-### Connecting Wi-Fi
+### Connecting to Wi-Fi
 
 **Note:** You can skip this if you use the Thunderbolt or USB-to-Ethernet adapter for the installation.
 

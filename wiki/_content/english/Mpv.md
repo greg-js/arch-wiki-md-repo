@@ -388,11 +388,11 @@ ytdl-format="((bestvideo[vcodec^=vp9]/bestvideo)+(bestaudio[acodec=opus]/bestaud
 
 ### youtube-dl audio with search
 
-To find and stream audio from your terminal emulator with `yta "*search terms*"` put the following function in your `.bashrc`:
+To find and stream audio from your terminal emulator with `yta *search terms*` put the following function in your `.bashrc`:
 
 ```
 function yta() {
-    mpv --ytdl-format=bestaudio ytdl://ytsearch:"$@"
+    mpv --ytdl-format=bestaudio ytdl://ytsearch:"$*"
 }
 
 ```

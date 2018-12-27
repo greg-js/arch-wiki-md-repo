@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [GNOME/Gedit](/index.php/GNOME/Gedit "GNOME/Gedit"), revisada por última vez el **2018-11-21**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=GNOME/Gedit&diff=0&oldid=556503) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [GNOME/Gedit](/index.php/GNOME/Gedit "GNOME/Gedit"), revisada por última vez el **2018-12-25**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=GNOME/Gedit&diff=0&oldid=560355) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 [gedit](https://en.wikipedia.org/wiki/es:gedit "w:es:gedit") es un editor de texto de propósito general para GNOME.
 
@@ -37,7 +37,7 @@ Para activar este comportamiento, acceda al panel de Preferencias de gedit (para
 
 ## Corrección ortográfica
 
-Para utilizar el corrector ortográfico en gedit necesita un diccionario [aspell](/index.php/Aspell_(Espa%C3%B1ol) "Aspell (Español)").
+Gedit puede utilizar múltiples diccionarios de correctores ortográficos, véase [corrección de idiomas](/index.php/Language_checking_(Espa%C3%B1ol) "Language checking (Español)").
 
 ## Complementos
 

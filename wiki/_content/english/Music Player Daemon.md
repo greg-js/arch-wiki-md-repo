@@ -296,6 +296,10 @@ A separate client is needed to control MPD. See a long list of clients at the [m
 
 	[https://github.com/CDrummond/cantata](https://github.com/CDrummond/cantata) || [cantata](https://www.archlinux.org/packages/?name=cantata)
 
+*   **CoverGrid** — GTK3 GUI client focusing on albums instead of single tracks.
+
+	[https://www.suruatoel.xyz/codes/mcg](https://www.suruatoel.xyz/codes/mcg) || [mcg](https://aur.archlinux.org/packages/mcg/)
+
 *   **GMPC** — Gnome Music Player Client. GTK+ frontend for MPD. It is designed to be lightweight and easy to use, while providing full access to all of MPD's features. Users are presented with several different methods to browse through their music. It can be extended by plugins, of which many are available.
 
 	[http://gmpclient.org/](http://gmpclient.org/) || [gmpc](https://www.archlinux.org/packages/?name=gmpc)

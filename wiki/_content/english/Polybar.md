@@ -9,7 +9,9 @@
     *   [2.3 Running with WM](#Running_with_WM)
         *   [2.3.1 bspwm](#bspwm)
         *   [2.3.2 i3](#i3)
-*   [3 See also](#See_also)
+*   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 Cannot open shared object file libjsoncpp.so](#Cannot_open_shared_object_file_libjsoncpp.so)
+*   [4 See also](#See_also)
 
 ## Installation
 
@@ -99,6 +101,16 @@ If using [i3](/index.php/I3 "I3"), add the following to your configuration:
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 ```
+
+## Troubleshooting
+
+### Cannot open shared object file libjsoncpp.so
+
+Attempt a reinstall as per [this](https://github.com/jaagr/polybar/issues/885) github issue.
+
+Failing that, try installing jsoncpp from the official repositories:
+
+ `pacman -S jsoncpp` 
 
 ## See also
 

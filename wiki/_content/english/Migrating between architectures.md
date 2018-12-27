@@ -30,8 +30,9 @@ This page documents two potential methods of migrating installed systems from i6
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Busybox](#Busybox)
     *   [5.2 Lib32-glibc](#Lib32-glibc)
-    *   [5.3 KDE does not start after switching from 32-bit to 64-bit](#KDE_does_not_start_after_switching_from_32-bit_to_64-bit)
-    *   [5.4 Mutt issues with cache enabled](#Mutt_issues_with_cache_enabled)
+    *   [5.3 Migrating from old system 2017 and before](#Migrating_from_old_system_2017_and_before)
+    *   [5.4 KDE does not start after switching from 32-bit to 64-bit](#KDE_does_not_start_after_switching_from_32-bit_to_64-bit)
+    *   [5.5 Mutt issues with cache enabled](#Mutt_issues_with_cache_enabled)
 *   [6 See also](#See_also)
 
 ## General preparation
@@ -297,6 +298,12 @@ Example run 32 bit `/bin/ls`:
 # /lib/ld-linux.so.2 /bin/ls
 
 ```
+
+### Migrating from old system 2017 and before
+
+You might face issue with updating old 32-bit system since in 2017 ArchLinux dropped support for i686\. To make that update safe you may want use [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive"). I.e. fix repo snapshot, then update current system and then switch to 64-bit flavor of packages corresponding to **same version**.
+
+Note that you may need to downgrade required trust level in `pacman.conf` (like `PackageTrustAll` to include marginal trust) since not all GPG keys which were used to sign package are still valid. Though you may want to ensure that you use HTTPS to at least ensure that packages comes from `archlinux.org` domain.
 
 ### KDE does not start after switching from 32-bit to 64-bit
 

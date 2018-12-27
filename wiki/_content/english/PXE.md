@@ -41,7 +41,9 @@ Next mount the image:
 
 You will need to setup a DHCP, [TFTP](/index.php/TFTP "TFTP"), and [HTTP server](/index.php/List_of_applications/Internet#Web_servers "List of applications/Internet") to configure networking, load pxelinux/kernel/initramfs, and finally load the root filesystem (respectively).
 
-Arch currently only supports BIOS-style PXE booting. See [FS#50188](https://bugs.archlinux.org/task/50188) for more information.
+The Arch ISO currently only supports BIOS-style PXE booting. See [FS#50188](https://bugs.archlinux.org/task/50188) for more information.
+
+[Arch Netboot](/index.php/Netboot "Netboot") does support UEFI-style booting if you require that. Rest of this page focuses on the ISO however.
 
 ### Network
 

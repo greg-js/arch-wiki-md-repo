@@ -53,10 +53,11 @@
 | <small>3.10.</small> [Dispositivos móviles](/index.php/Category:Mobile_devices_(Espa%C3%B1ol) "Category:Mobile devices (Español)") <small>(1)</small> |
 | <small>3.10.1.</small> [Android](/index.php/Category:Android_(Espa%C3%B1ol) "Category:Android (Español)") <small>(2)</small> |
 | <small>3.11.</small> [Módems](/index.php/Category:Modems_(Espa%C3%B1ol) "Category:Modems (Español)") <small>(3) (también en [Administración de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)"))</small> |
-| <small>3.12.</small> [Impresoras](/index.php/Category:Printers_(Espa%C3%B1ol) "Category:Printers (Español)") <small>(1)</small> |
-| <small>3.13.</small> [Sonido](/index.php/Category:Sound_(Espa%C3%B1ol) "Category:Sound (Español)") <small>(6) (también en [Multimedia](/index.php/Category:Multimedia_(Espa%C3%B1ol) "Category:Multimedia (Español)"))</small> |
-| <small>3.14.</small> [Almacenamiento](/index.php/Category:Storage_(Espa%C3%B1ol) "Category:Storage (Español)") <small>(3)</small> |
-| <small>3.14.1.</small> [Disco óptico](/index.php/Category:Optical_disc_(Espa%C3%B1ol) "Category:Optical disc (Español)") <small>(1)</small> |
+| <small>3.12.</small> [Other hardware](/index.php/Category:Other_hardware_(Espa%C3%B1ol) "Category:Other hardware (Español)") <small>(1)</small> |
+| <small>3.13.</small> [Impresoras](/index.php/Category:Printers_(Espa%C3%B1ol) "Category:Printers (Español)") <small>(1)</small> |
+| <small>3.14.</small> [Sonido](/index.php/Category:Sound_(Espa%C3%B1ol) "Category:Sound (Español)") <small>(6) (también en [Multimedia](/index.php/Category:Multimedia_(Espa%C3%B1ol) "Category:Multimedia (Español)"))</small> |
+| <small>3.15.</small> [Almacenamiento](/index.php/Category:Storage_(Espa%C3%B1ol) "Category:Storage (Español)") <small>(3)</small> |
+| <small>3.15.1.</small> [Disco óptico](/index.php/Category:Optical_disc_(Espa%C3%B1ol) "Category:Optical disc (Español)") <small>(1)</small> |
 | <small>4.</small> [Administración de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)") <small>(7)</small> |
 | <small>4.1.</small> [Servicios de directorio](/index.php/Category:Directory_services_(Espa%C3%B1ol) "Category:Directory services (Español)") <small>(0)</small> |
 | <small>4.1.1.</small> [Sistema de nombres de dominio (DNS)](/index.php/Category:Domain_Name_System_(Espa%C3%B1ol) "Category:Domain Name System (Español)") <small>(6) (también en [Protocolos](/index.php/Category:Protocols_(Espa%C3%B1ol) "Category:Protocols (Español)"), [Servidores](/index.php/Category:Servers_(Espa%C3%B1ol) "Category:Servers (Español)"))</small> |
@@ -159,7 +160,7 @@
 | <small>5.1.11.4.</small> [Música](/index.php/Category:Music_(Espa%C3%B1ol) "Category:Music (Español)") <small>(4)</small> |
 | <small>5.1.11.5.</small> [Sonido](/index.php/Category:Sound_(Espa%C3%B1ol) "Category:Sound (Español)") <small>(6) (también en [Hardware](/index.php/Category:Hardware_(Espa%C3%B1ol) "Category:Hardware (Español)"))</small> |
 | <small>5.1.11.6.</small> [Video](/index.php/Category:Video_(Espa%C3%B1ol) "Category:Video (Español)") <small>(3)</small> |
-| <small>5.1.12.</small> [Ofimática](/index.php/Category:Office_(Espa%C3%B1ol) "Category:Office (Español)") <small>(7)</small> |
+| <small>5.1.12.</small> [Ofimática](/index.php/Category:Office_(Espa%C3%B1ol) "Category:Office (Español)") <small>(8)</small> |
 | <small>5.1.12.1.</small> [TeX](/index.php/Category:TeX_(Espa%C3%B1ol) "Category:TeX (Español)") <small>(1)</small> |
 | <small>5.1.13.</small> [Science](/index.php/Category:Science_(Espa%C3%B1ol) "Category:Science (Español)") <small>(6)</small> |
 | <small>5.1.13.1.</small> [Electronic design automation](/index.php/Category:Electronic_design_automation_(Espa%C3%B1ol) "Category:Electronic design automation (Español)") <small>(1) (también en [Desarrollo](/index.php/Category:Development_(Espa%C3%B1ol) "Category:Development (Español)"))</small> |

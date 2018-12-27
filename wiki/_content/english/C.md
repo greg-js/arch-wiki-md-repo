@@ -61,6 +61,10 @@ See also [Wikipedia:List of compilers#C compilers](https://en.wikipedia.org/wiki
 
 ## Alternative libc implementations
 
+*   **[dietlibc](https://en.wikipedia.org/wiki/dietlibc "wikipedia:dietlibc")** — a libc optimized for small size
+
+	[https://www.fefe.de/dietlibc/](https://www.fefe.de/dietlibc/) || [dietlibc](https://www.archlinux.org/packages/?name=dietlibc)
+
 *   **[musl](https://en.wikipedia.org/wiki/musl "wikipedia:musl")** — Lightweight implementation of C standard library.
 
 	[http://www.musl-libc.org/](http://www.musl-libc.org/) || [musl](https://www.archlinux.org/packages/?name=musl)
