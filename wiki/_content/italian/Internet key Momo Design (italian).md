@@ -132,7 +132,7 @@ Se non funzione provare da un altro terminale a dare il seguente comando per ins
 
 ## Configurazione
 
-Creiamo uno script che chiameremo /etc/ppp/peers/conn3 con questi dati all'interno (scopiazzato da [qui](http://www.gentoo-wiki.info/Mobile_Phone))
+Creiamo uno script che chiameremo /etc/ppp/peers/conn3 con questi dati all'interno
 
 ```
 #!/bin/bash                                                                                                              
@@ -312,5 +312,4 @@ ${color lightgrey}Network ppp0: ${exec cat "/var/log/monitorconn.log" | head --l
 
 *   [Huawei E220](/index.php/Huawei_E220 "Huawei E220")
 *   [PPPoE Setup with pppd](/index.php/PPPoE_Setup_with_pppd "PPPoE Setup with pppd")
-*   [http://www.gentoo-wiki.info/Mobile_Phone](http://www.gentoo-wiki.info/Mobile_Phone)
 *   [Speeding up DNS with dnsmasq#Conserve_DNS_settings](/index.php/Speeding_up_DNS_with_dnsmasq#Conserve_DNS_settings "Speeding up DNS with dnsmasq")

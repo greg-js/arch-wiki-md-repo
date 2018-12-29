@@ -274,6 +274,16 @@ Be sure to regenerate [.SRCINFO](/index.php/.SRCINFO ".SRCINFO") whenever `PKGBU
 
 To upload or update a package, [add](/index.php/Git#Staging_changes "Git") *at least* `PKGBUILD` and `.SRCINFO`, then any additional new or modified helper files (such as [*.install*](/index.php/PKGBUILD#install "PKGBUILD") files or [local source files](/index.php/PKGBUILD#source "PKGBUILD") such as [patches](/index.php/Patching_packages "Patching packages")), [commit](/index.php/Git#Commiting_changes "Git") with a meaningful commit message, and finally [push](/index.php/Git#Push_to_a_repository "Git") the changes to the AUR.
 
+For example:
+
+```
+$ makepkg --printsrcinfo > .SRCINFO
+$ git add PKGBUILD .SRCINFO
+$ git commit -m "*useful commit message*"
+$ git push
+
+```
+
 **Note:** If `.SRCINFO` was not included in your first commit, add it by [rebasing with --root](https://git-scm.com/docs/git-rebase#git-rebase---root) or [filtering the tree](https://git-scm.com/docs/git-filter-branch#git-filter-branch---tree-filterltcommandgt) so the AUR will permit your initial push.
 
 **Tip:** To keep the working directory and commits as clean as possible, create a `.gitignore` that [excludes all files](/index.php/Dotfiles#Using_gitignore "Dotfiles") and force-add files as needed.

@@ -1192,7 +1192,7 @@ E.g.:
 
 ```
 # zfs snapshot -r zroot@pre
-# pacman -Syyu   # dangerous command
+# pacman -Syu
 # zfs snapshot -r zroot@post
 # zfs diff zroot@pre zroot@post 
 # zfs rollback zroot@pre
@@ -1204,7 +1204,7 @@ A utility that automates the creation of pre and post snapshots around a shell c
 E.g.:
 
 ```
-# znp pacman -Syyu
+# znp pacman -Syu
 # znp find / -name "something*" -delete
 
 ```

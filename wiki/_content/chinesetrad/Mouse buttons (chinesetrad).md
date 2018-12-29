@@ -718,4 +718,3 @@ Be sure to look at `/etc/udev/lomoco_mouse.conf` and set up the the options you 
 ### Credits
 
 *   [linuX-gamers.net How-Tos: Getting all mouse buttons working in X](http://www.linux-gamers.net/modules/wiwimod/index.php?page=HOWTO+Mouse+Buttons)
-*   [http://www.gentoo-wiki.info/HOWTO_Advanced_Mouse](http://www.gentoo-wiki.info/HOWTO_Advanced_Mouse)

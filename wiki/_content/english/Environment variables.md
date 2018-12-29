@@ -131,7 +131,7 @@ exec openbox
 
 *   `DESKTOP_SESSION` is similar to `DE`, but used in [LXDE](/index.php/LXDE "LXDE") desktop environment: when `DESKTOP_SESSION` is set to `LXDE`, *xdg-open* will use *pcmanfm* file associations.
 
-*   `PATH` contains a colon-separated list of directories in which your system looks for executable files. When a regular command (e.g., *ls*, *rc-update* or *ic|emerge*) is interpreted by the shell (e.g., *bash* or *zsh*), the shell looks for an executable file with the same name as your command in the listed directories, and executes it. To run executables that are not listed in `PATH`, the absolute path to the executable must be given: `/bin/ls`.
+*   `PATH` contains a colon-separated list of directories in which your system looks for executable files. When a regular command (e.g., *ls* or *rc-update*) is interpreted by the shell (e.g., *bash* or *zsh*), the shell looks for an executable file with the same name as your command in the listed directories, and executes it. To run executables that are not listed in `PATH`, the absolute path to the executable must be given: `/bin/ls`.
 
 **Note:** It is advised not to include the current working directory (`.`) into your `PATH` for security reasons, as it may trick the user to execute vicious commands.
 
@@ -155,7 +155,7 @@ http_proxy="http://192.168.0.1:80"
 
 *   `MANPATH` contains a colon-separated list of directories in which *man* searches for the man pages.
 
-**Note:** In `/etc/profile`, there is a comment that states "Man is much better than us at figuring this out", so this variable should generally be left as default, i.e. `/usr/share/man:/usr/local/share/man`
+**Note:** In `/etc/profile`, there is a comment that states "Man is much better than us at figuring this out", so this variable should generally be left unset. See [manpath(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/manpath.5).
 
 *   `INFODIR` contains a colon-separated list of directories in which the *info* command searches for the info pages, e.g., `/usr/share/info:/usr/local/share/info`
 

@@ -1,6 +1,6 @@
 | **Device** | **Status** | **Modules** |
 | Intel | Working | xf86-video-intel |
-| Nvidia | Partially Working | nvidia *or* nvidia-dkms |
+| Nvidia | Working | nvidia *or* nvidia-dkms |
 | Wireless | Working | mwifiex |
 | Audio | Working | snd_hda_intel |
 | Touchpad | Working | xf86-input-synaptics |
@@ -58,7 +58,9 @@ The laptop works surprisingly well with Arch Linux, but requires a kernel with m
 
 ### Nvidia
 
-The Nvidia 1050 and 1060 cards in the Surface Book 2 Performance Base are recognized by the kernel and supported by `nvidia` and `nvidia-dkms` drivers. However, when a load is put on the Nvidia graphics hardware, it immediately and severely throttles down to around 139MHz. The reason, as reported by `nvidia-smi`, is software thermal throttling. The cause is that, apparently, the fan cannot be controlled automatically, nor through `nvidia-smi` or `nvidia-settings`, even when the nvidia xorg `Coolbits` option is set to 8.
+The Nvidia 1050 and 1060 cards in the Surface Book 2 Performance Base are recognized by the kernel and supported by `nvidia` and `nvidia-dkms` drivers. Without the kernel ([linux-surface4](https://aur.archlinux.org/packages/linux-surface4/)), there was a bug which causes it to be effectively useless because when a load is put on the Nvidia graphics hardware, it immediately and severely throttles down to around 139MHz. The reason, as reported by `nvidia-smi`, is software thermal throttling. The cause is that, apparently, the fan cannot be controlled automatically, nor through `nvidia-smi` or `nvidia-settings`, even when the nvidia xorg `Coolbits` option is set to 8.
+
+In December 2018, the custom kernel was updated with ACPI modules that fix the unwanted behavior.
 
 ## UEFI Setup and Secure Boot
 
@@ -82,7 +84,7 @@ Booting from USB is possible by reordering boot devices in the UEFI setup.
 
 The standard [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) driver works with the Surface Book devices.
 
-For devices equipped with dedicated Nvidia graphics, the [nvidia](https://www.archlinux.org/packages/?name=nvidia) driver supports the dedicated GPU.
+For devices equipped with dedicated Nvidia graphics, the [nvidia](https://www.archlinux.org/packages/?name=nvidia) or [nvidia-dkms](https://aur.archlinux.org/packages/nvidia-dkms/) driver supports the dedicated GPU.
 
 ## Audio
 

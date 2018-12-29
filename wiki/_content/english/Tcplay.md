@@ -130,7 +130,6 @@ Finally, to close the container this command does the trick.
 *   [Manual page for tcplay](http://leaf.dragonflybsd.org/cgi/web-man?command=tcplay&section=8)
 *   [Jason Ryan: Replacing TrueCrypt](http://jasonwryan.com/blog/2013/01/10/truecrypt/)
 *   [TrueCrypt Homepage](http://www.truecrypt.org/)
-*   [HOWTO: Truecrypt Gentoo wiki](http://www.gentoo-wiki.info/HOWTO_Truecrypt)
 *   [Truecrypt Tutorial on HowToForge](http://www.howtoforge.com/truecrypt_data_encryption)
 *   [There is a good chance the CIA has a backdoor?](http://www.privacylover.com/encryption/analysis-is-there-a-backdoor-in-truecrypt-is-truecrypt-a-cia-honeypot/) (via [wp](https://secure.wikimedia.org/wikipedia/en/wiki/Truecrypt))
 *   [tcplay-helper documentation](https://github.com/robertmuil/tcplay-helper)

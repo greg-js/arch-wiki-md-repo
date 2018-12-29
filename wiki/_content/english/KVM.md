@@ -54,7 +54,7 @@ Arch Linux kernels provide the required [kernel modules](/index.php/Kernel_modul
 *   One can check if the necessary modules, `kvm` and either `kvm_amd` or `kvm_intel`, are available in the kernel with the following command:
 
 ```
-$ zgrep CONFIG_KVM /proc/config.gz}}
+$ zgrep CONFIG_KVM /proc/config.gz
 
 ```
 

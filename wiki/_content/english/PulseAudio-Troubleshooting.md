@@ -150,7 +150,7 @@ $ pacmd set-sink-input-volume <index> 0x10000
 
 ### Volume adjustment does not work properly
 
-Check: `/usr/share/pulseaudio/alsa-mixer/paths/analog-output.conf.common`
+Check `/usr/share/pulseaudio/alsa-mixer/paths/analog-output.conf.common`.
 
 If the volume does not appear to increment/decrement properly using `alsamixer` or `amixer`, it may be due to PulseAudio having a larger number of increments (65537 to be exact). Try using larger values when changing volume (e.g. `amixer set Master 655+`).
 
@@ -158,11 +158,7 @@ If the volume does not appear to increment/decrement properly using `alsamixer` 
 
 This is because PulseAudio uses flat volumes by default, instead of relative volumes, relative to an absolute master volume. If this is found to be inconvenient, asinine, or otherwise undesireable, relative volumes can be enabled by disabling flat volumes in the PulseAudio daemon's configuration file:
 
- `/etc/pulse/daemon.conf or ~/.config/pulse/daemon.conf` 
-```
-flat-volumes = no
-
-```
+ `/etc/pulse/daemon.conf or ~/.config/pulse/daemon.conf`  `flat-volumes = no` 
 
 and then restarting PulseAudio by executing
 
@@ -190,20 +186,15 @@ load-module module-alsa-sink sink_name=delta_out device=hw:M2496 format=s24le ch
 load-module module-alsa-source source_name=delta_in device=hw:M2496 format=s24le channels=12 channel_map=left,right,aux0,aux1,aux2,aux3,aux4,aux5,aux6,aux7,aux8,aux9
 set-default-sink delta_out
 set-default-source delta_in
-
 ```
 
 ### No sound below a volume cutoff
 
-Known issue (won't fix): [https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/223133](https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/223133)
+Known issue (will not fix): [https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/223133](https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/223133)
 
 If sound does not play when PulseAudio's volume is set below a certain level, try setting `ignore_dB=1` in `/etc/pulse/default.pa`:
 
- `/etc/pulse/default.pa` 
-```
-load-module module-udev-detect ignore_dB=1
-
-```
+ `/etc/pulse/default.pa`  `load-module module-udev-detect ignore_dB=1` 
 
 However, be aware that it may cause another bug preventing PulseAudio to unmute speakers when headphones or other audio devices are unplugged.
 
@@ -211,21 +202,13 @@ However, be aware that it may cause another bug preventing PulseAudio to unmute 
 
 If you experience low volume on internal notebook microphone, try setting:
 
- `/etc/pulse/default.pa` 
-```
-set-source-volume 1 300000
-
-```
+ `/etc/pulse/default.pa`  `set-source-volume 1 300000` 
 
 ### Clients alter master output volume (a.k.a. volume jumps to 100% after running application)
 
 If changing the volume in specific applications or simply running an application changes the master output volume this is likely due to flat volumes mode of pulseaudio. Before disabling it, KDE users should try lowering their system notifications volume in *System Settings -> Application and System Notifications -> Manage Notifications* under the *Player Settings* tab to something reasonable. Changing the *Event Sounds* volume in KMix or another volume mixer application will not help here. This should make the flat-volumes mode work out as intended, if it does not work, some other application is likely requesting 100% volume when its playing something. If all else fails, you can try to disable flat-volumes:
 
- `/etc/pulse/daemon.conf` 
-```
-flat-volumes = no
-
-```
+ `/etc/pulse/daemon.conf`  `flat-volumes = no` 
 
 Then restart PulseAudio daemon:
 
@@ -269,7 +252,7 @@ WantedBy=suspend.target
 2\. Enable it for your user account
 
 ```
-# systemctl enable resume-fix-pulseaudio@YOUR_USERNAME_HERE.service
+# systemctl enable resume-fix-pulseaudio@*YOUR_USERNAME_HERE*.service
 
 ```
 
@@ -298,7 +281,7 @@ $ hdajackretask
 
 ```
 
-Set "Not Connected" to everything but the ports you are using. It seems the other unused audio ports on the motherboard interfere with the used ones. Then if you want use the Boot Override to save this change between reboots. There is a possibility it's the Front Green Headphone that's causing the bug, if you need it override the Front Microphone to Headphone and the Front Green Headphone to "Not Connected" and use the Front Microphone port as your headphone port.
+Set "Not Connected" to everything but the ports you are using. It seems the other unused audio ports on the motherboard interfere with the used ones. Then if you want use the Boot Override to save this change between reboots. There is a possibility it is the Front Green Headphone that is causing the bug, if you need it override the Front Microphone to Headphone and the Front Green Headphone to "Not Connected" and use the Front Microphone port as your headphone port.
 
 More info about this problem: [[2]](https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/1585084).
 
@@ -308,30 +291,30 @@ More info about this problem: [[2]](https://bugs.launchpad.net/ubuntu/+source/pu
 
 Determine the card and device number of your mic:
 
+ `$ arecord -l` 
 ```
- $ arecord -l
- **** List of CAPTURE Hardware Devices ****
- card 0: PCH [HDA Intel PCH], device 0: ALC269VC Analog [ALC269VC Analog]
- Subdevices: 1/1
- Subdevice #0: subdevice #0
+**** List of CAPTURE Hardware Devices ****
+card 0: PCH [HDA Intel PCH], device 0: ALC269VC Analog [ALC269VC Analog]
+Subdevices: 1/1
+Subdevice #0: subdevice #0
 
 ```
 
-In hw:CARD,DEVICE notation, you would specify the above device as `hw:0,0`.
+In `hw:*CARD*,*DEVICE*` notation, you would specify the above device as `hw:0,0`.
 
 Then, edit `/etc/pulse/default.pa` and insert a `load-module` line specifying your device as follows:
 
 ```
-  load-module module-alsa-source device=hw:0,0
-  # the line above should be somewhere before the line below
- .ifexists module-udev-detect.so
+load-module module-alsa-source device=hw:0,0
+# the line above should be somewhere before the line below
+.ifexists module-udev-detect.so
 
 ```
 
 Finally, restart pulseaudio to apply the new settings:
 
 ```
-  $ pulseaudio -k ; pulseaudio -D
+$ pulseaudio -k ; pulseaudio -D
 
 ```
 
@@ -355,7 +338,7 @@ Now try if the correct microphone is used for recording.
 Run:
 
 ```
-alsamixer -c 0
+$ alsamixer -c 0
 
 ```
 
@@ -364,7 +347,7 @@ Unmute and maximize the volume of the "Internal Mic".
 Once you see the device with:
 
 ```
-arecord -l
+$ arecord -l
 
 ```
 
@@ -396,7 +379,7 @@ card 0: Intel [HDA Intel], device 2: ALC888 Analog [ALC888 Analog]
 
 ```
 
-The sound card is `hw:x,y` where `x` is the card number and `y` is the device number. In this case, it's `hw:0,0`.
+The sound card is `hw:*x*,*y*` where `*x*` is the card number and `*y*` is the device number. In the above example, it is `hw:0,0`.
 
 #### Determine sampling rate of the sound card (2/5)
 
@@ -472,8 +455,8 @@ set-default-source record_mono
 3\. Restart PulseAudio:
 
 ```
-pulseaudio -k
-pulseaudio --start
+$ pulseaudio -k
+$ pulseaudio --start
 
 ```
 
@@ -512,7 +495,6 @@ Example output edited for brevity, the name you need is in bold:
 ```
 ### Remap microphone to mono
 load-module module-remap-source master=alsa_input.pci-0000_00_14.2.analog-stereo master_channel_map=front-left,front-right channels=2 channel_map=mono,mono
-
 ```
 
 3\. Restart Pulseaudio
@@ -568,7 +550,7 @@ then restart pulseaudio.
 If you are unsure about your microphone setup, you can hear the input from the microphone in real-time by enabling the [loopback module](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#index57h3) ([source](https://answers.launchpad.net/ubuntu/+source/pulseaudio/+question/83742)):
 
 ```
-pactl load-module module-loopback
+$ pactl load-module module-loopback
 
 ```
 
@@ -590,14 +572,13 @@ Arch does not load the Pulseaudio Echo-Cancellation module by default, therefore
 load-module module-echo-cancel use_master_format=1 aec_method=webrtc aec_args="analog_gain_control=0 digital_gain_control=1" source_name=echoCancel_source sink_name=echoCancel_sink
 set-default-source echoCancel_source
 set-default-sink echoCancel_sink
-
 ```
 
 then restart Pulseaudio
 
 ```
-pulseaudio -k
-pulseaudio --start
+$ pulseaudio -k
+$ pulseaudio --start
 
 ```
 
@@ -630,7 +611,7 @@ Here is a list of possible 'aec_args' for 'aec_method=webrtc' with their default
 
 #### Disable audio post processing in certain applications
 
-If you are using the [module-echo-cancel](#Enable_Echo.2FNoise-Cancellation), you probably don't want other applications to do additional audio post processing. Here is a list for disabling audio post processing in following applications:
+If you are using the [module-echo-cancel](#Enable_Echo/Noise-Cancellation), you probably do not want other applications to do additional audio post processing. Here is a list for disabling audio post processing in following applications:
 
 *   Mumble:
     1.  Configure -> Settings -> Check 'Advanced' check box -> Audio Input
@@ -784,7 +765,6 @@ Sink #1
 	Formats:
 		pcm
 ...
-
 ```
 
 Take note the `buffer_size` and `fragment_size` values for the relevant sound card.
@@ -809,7 +789,6 @@ device.buffering.fragment_size = "176400" => 176400/1411200 = 0.125 s = 125 ms
 ```
 ; default-fragments = X
 ; default-fragment-size-msec = Y
-
 ```
 
 In the previous step, we calculated the fragment size parameter. The number of fragments is simply buffer_size/fragment_size, which in this case (`250/125`) is `2`:
@@ -834,19 +813,11 @@ For more information, see: [Linux Mint topic](http://forums.linuxmint.com/viewto
 
 The low-frequency effects (LFE) or Subwoofer channel is not remixed per default. To enable it the following needs to be set in `/etc/pulse/daemon.conf` :
 
- `/etc/pulse/daemon.conf` 
-```
-enable-lfe-remixing = yes
-
-```
+ `/etc/pulse/daemon.conf`  `enable-lfe-remixing = yes` 
 
 You should also consider to set a proper crossover frequency for the LFE- channel. The crossover frequency is the frequency up to which the audio signal is rerouted to the LFE sink. The optimal crossover frequency in Hz depends on the size of all your speakers.
 
- `/etc/pulse/daemon.conf` 
-```
-lfe-crossover-freq = <40-200>
-
-```
+ `/etc/pulse/daemon.conf`  `lfe-crossover-freq = <40-200>` 
 
 ### Laggy sound
 
@@ -973,8 +944,8 @@ If you have trouble with some applications (such as TeamSpeak or Mumble) interru
 Then restart pulseaudo by using your normal user account with
 
 ```
-pulseaudio -k
-pulseaudio --start
+$ pulseaudio -k
+$ pulseaudio --start
 
 ```
 
@@ -1191,7 +1162,7 @@ load-module module-switch-on-connect ignore_virtual=no
 
 Since [PulseAudio 11](https://www.freedesktop.org/wiki/Software/PulseAudio/Notes/11.0/) USB and bluetooth devices are preferred over internal sound cards by default, but as in the above link described, you still need module-switch-on-connect to also moves existing streams to the new sink.
 
-Since [PulseAudio 12](https://www.freedesktop.org/wiki/Software/PulseAudio/Notes/12.0/) virtual devices are ignored by default. If you don't want this behavior because you want to move existing streams to freshly loaded [module-echo-cancel](#Enable_Echo/Noise-Cancellation) for example, you have to add `ignore_virtual=no`.
+Since [PulseAudio 12](https://www.freedesktop.org/wiki/Software/PulseAudio/Notes/12.0/) virtual devices are ignored by default. If you do not want this behavior because you want to move existing streams to freshly loaded [module-echo-cancel](#Enable_Echo/Noise-Cancellation) for example, you have to add `ignore_virtual=no`.
 
 ### My Bluetooth device is paired but does not play any sound
 
@@ -1203,7 +1174,6 @@ Starting from PulseAudio 2.99 and bluez 4.101 you should **avoid** using Socket 
 ```
 [General]
 Enable=Socket
-
 ```
 
 If you face problems with A2DP and PA 2.99 make sure you have [sbc](https://www.archlinux.org/packages/?name=sbc) library.
@@ -1223,6 +1193,7 @@ If Flash audio is lagging, you may try to have Flash access ALSA directly. See [
 E: [autospawn] core-util.c: Failed to create secure directory (/run/user/1000/pulse): Operation not permitted
 W: [autospawn] lock-autospawn.c: Cannot access autospawn lock.
 E: [pulseaudio] main.c: Failed to acquire autospawn lock
+
 ```
 
 Known programs that changes permissions for `/run/user/*user id*/pulse` when using [Polkit](/index.php/Polkit "Polkit") for root elevation:
@@ -1300,9 +1271,15 @@ restore_alsa &
 Sometimes you may wish to temporarily disable Pulse. In order to do so you will have to prevent Pulse from restarting after being killed. To disable autospawning you can [issue](https://bbs.archlinux.org/viewtopic.php?pid=1807567#p1807567):
 
 ```
-systemctl --user mask pulseaudio.socket
-systemctl --user stop pulseaudio
-systemctl --user unmask pulseaudio.socket # To reenable autospawning
+$ systemctl --user mask pulseaudio.socket
+$ systemctl --user stop pulseaudio
+
+```
+
+To re-enable autospawning:
+
+```
+$ systemctl --user unmask pulseaudio.socket
 
 ```
 
@@ -1326,11 +1303,8 @@ $ pulseaudio --start
 ```
 
 *   Check that options for sinks are set up correctly.
-
 *   If you configured in default.pa to load and use the OSS modules then check with [lsof](https://www.archlinux.org/packages/?name=lsof) that `/dev/dsp` device is not used by another application.
-
 *   Set a preferred working resample method. Use `pulseaudio --dump-resample-methods` to see a list with all available resample methods you can use.
-
 *   To get details about currently appeared unfixed errors or just get status of daemon use commands like `pax11publish -d` and `pulseaudio -v` where `v` option can be used multiple time to set verbosity of log output equal to the `--log-level[=LEVEL]` option where LEVEL is from 0 to 4\. See the [#Outputs by PulseAudio error status check utilities](#Outputs_by_PulseAudio_error_status_check_utilities) section.
 
 See also man pages for [pax11publish(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pax11publish.1) and [pulseaudio(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pulseaudio.1) for more details.
@@ -1436,11 +1410,7 @@ PulseAudio does not have a true default device. Instead it uses a ["fallback"](h
 
 3\. Disable stream device reading. This may be not wanted when using different soundcards with different applications.
 
- `/etc/pulse/default.pa` 
-```
-load-module module-stream-restore restore_device=false
-
-```
+ `/etc/pulse/default.pa`  `load-module module-stream-restore restore_device=false` 
 
 ### RTP/UDP packet flood
 

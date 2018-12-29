@@ -23,16 +23,15 @@ MEncoder is part of the [mplayer](https://www.archlinux.org/packages/?name=mplay
         *   [5.2.1 Fix subtitle images](#Fix_subtitle_images)
     *   [5.3 VobSub files](#VobSub_files)
 *   [6 Authoring the DVD](#Authoring_the_DVD)
-    *   [6.1 One file, One movie](#One_file.2C_One_movie)
-    *   [6.2 Many files, One movie](#Many_files.2C_One_movie)
-    *   [6.3 One file, Many movies](#One_file.2C_Many_movies)
-    *   [6.4 Many files, Many movies](#Many_files.2C_Many_movies)
+    *   [6.1 One file, One movie](#One_file,_One_movie)
+    *   [6.2 Many files, One movie](#Many_files,_One_movie)
+    *   [6.3 One file, Many movies](#One_file,_Many_movies)
+    *   [6.4 Many files, Many movies](#Many_files,_Many_movies)
     *   [6.5 dvdauthor Command line](#dvdauthor_Command_line)
 *   [7 Burning the DVD video](#Burning_the_DVD_video)
     *   [7.1 Video2dvdiso](#Video2dvdiso)
 *   [8 Appendix A: about changing frame-rate](#Appendix_A:_about_changing_frame-rate)
 *   [9 Appendix B: about menu](#Appendix_B:_about_menu)
-*   [10 External links](#External_links)
 
 ## The parts of a DVD
 
@@ -785,7 +784,3 @@ Here is an example of making a Pal Dvd from an Ntsc input, the 1.042733... is fr
 ## Appendix B: about menu
 
 Now you know how-to make the **.mpg** files; if you want making a menu for your DVD you can follow this external tutorial from Myth TV[[1]](http://www.mythtv.org/wiki/Creating_a_DVD_with_a_menu).
-
-## External links
-
-*   [http://www.gentoo-wiki.info/FFmpeg/DivX_to_DVD](http://www.gentoo-wiki.info/FFmpeg/DivX_to_DVD) gives an example of using ffmpeg to quickly create the mpg from e.g. an avi. This might be useful if mencoder doesn't seem to handle some input files (has happened).

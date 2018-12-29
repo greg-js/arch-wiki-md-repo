@@ -11,7 +11,7 @@ Related articles
 
 **Note:** Occasionally, updates/changes are made to the default config file `/usr/share/psd/psd.conf` upstream. The user copy `$XDG_CONFIG_HOME/psd/psd.conf` will need to be diffed against it. On Arch Linux, pacman should notify the user to do this. Users of other package managers and/or distros will need to periodically diff the files manually.
 
-**Note:** Sometimes this daemon can slow down your login, because it copy all your browser cache to the RAM at [login](https://www.reddit.com/r/archlinux/comments/4l7gvm/very_slow_when_login/d3lrx9y/).
+**Note:** psd can slow down [login](https://www.reddit.com/r/archlinux/comments/4l7gvm/very_slow_when_login/d3lrx9y/), as that is when it copies your browser cache to RAM.
 
 ## Contents
 
@@ -20,19 +20,19 @@ Related articles
     *   [2.1 Edit the config file](#Edit_the_config_file)
 *   [3 Supported browsers](#Supported_browsers)
 *   [4 Using psd](#Using_psd)
-    *   [4.1 Preview (parse) mode](#Preview_.28parse.29_mode)
+    *   [4.1 Preview (parse) mode](#Preview_(parse)_mode)
     *   [4.2 Clean mode](#Clean_mode)
     *   [4.3 Start and stop psd](#Start_and_stop_psd)
     *   [4.4 Supported distros](#Supported_distros)
-    *   [4.5 Sync at more frequent intervals (optional)](#Sync_at_more_frequent_intervals_.28optional.29)
+    *   [4.5 Sync at more frequent intervals (optional)](#Sync_at_more_frequent_intervals_(optional))
 *   [5 FAQ](#FAQ)
-    *   [5.1 What is overlayfs mode?](#What_is_overlayfs_mode.3F)
-    *   [5.2 I need more memory to accommodate my profile/profiles in /run/user/xxxx. How can I allocate more?](#I_need_more_memory_to_accommodate_my_profile.2Fprofiles_in_.2Frun.2Fuser.2Fxxxx._How_can_I_allocate_more.3F)
-    *   [5.3 Why do I have another browser profile directory "foo-back-ovfs" when I enable overlayfs?](#Why_do_I_have_another_browser_profile_directory_.22foo-back-ovfs.22_when_I_enable_overlayfs.3F)
-    *   [5.4 My system crashed and did not sync back. What do I do?](#My_system_crashed_and_did_not_sync_back._What_do_I_do.3F)
-    *   [5.5 Where can I find this snapshot?](#Where_can_I_find_this_snapshot.3F)
-    *   [5.6 How can I restore the snapshot?](#How_can_I_restore_the_snapshot.3F)
-    *   [5.7 Can psd delete the snapshots automatically?](#Can_psd_delete_the_snapshots_automatically.3F)
+    *   [5.1 What is overlayfs mode?](#What_is_overlayfs_mode?)
+    *   [5.2 I need more memory to accommodate my profile/profiles in /run/user/xxxx. How can I allocate more?](#I_need_more_memory_to_accommodate_my_profile/profiles_in_/run/user/xxxx._How_can_I_allocate_more?)
+    *   [5.3 Why do I have another browser profile directory "foo-back-ovfs" when I enable overlayfs?](#Why_do_I_have_another_browser_profile_directory_"foo-back-ovfs"_when_I_enable_overlayfs?)
+    *   [5.4 My system crashed and did not sync back. What do I do?](#My_system_crashed_and_did_not_sync_back._What_do_I_do?)
+    *   [5.5 Where can I find this snapshot?](#Where_can_I_find_this_snapshot?)
+    *   [5.6 How can I restore the snapshot?](#How_can_I_restore_the_snapshot?)
+    *   [5.7 Can psd delete the snapshots automatically?](#Can_psd_delete_the_snapshots_automatically?)
 *   [6 Support](#Support)
 *   [7 psd on other distros](#psd_on_other_distros)
 *   [8 See also](#See_also)
@@ -108,7 +108,7 @@ BROWSERS="chromium opera"
 
 ```
 
-Beginning with version 5.54 of psd, native support for [overlayfs](#What_is_overlayfs_mode.3F) is included. This feature requires at least a Linux kernel version of 3.18.0 or greater.
+Beginning with version 5.54 of psd, native support for [overlayfs](#What_is_overlayfs_mode?) is included. This feature requires at least a Linux kernel version of 3.18.0 or greater.
 
 ## Supported browsers
 
@@ -232,7 +232,7 @@ See [systemd.timer(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.timer.
 
 Overlayfs is a simple union file-system mainlined in the Linux kernel version 3.18.0\. Starting with psd version 5.54, overlayfs can be used to reduce the memory footprint of psd's tmpfs space and to speed up sync and unsync operations. The magic is in how the overlay mount only writes out data that has changed rather than the entire profile. The same recovery features psd uses in its default mode are also active when running in overlayfs mode. Overlayfs mode is enabled by uncommenting the *USE_OVERLAYFS="yes*" line in `$XDG_CONFIG_HOME/psd/psd.conf` followed by a [restart](/index.php/Restart "Restart") of the daemon.
 
-Since version 6.05 of psd, users wanting to take advantage of this mode MUST have [sudo](/index.php/Sudo "Sudo") rights (without password prompt) to `/usr/bin/psd-overlay-helper` or global sudo rights. The following line in `/etc/sudoers` will supply an [user](/index.php/User "User") with these rights. Add it using [visudo](/index.php/Sudo#Using_visudo "Sudo"):
+Since version 6.05 of psd, users wanting to take advantage of this mode MUST have [sudo](/index.php/Sudo "Sudo") rights (without password prompt) to `/usr/bin/psd-overlay-helper` or global sudo rights. The following line in `/etc/sudoers` will supply a [user](/index.php/User "User") with these rights (replace "user" with your actual username). Add it using [visudo](/index.php/Sudo#Using_visudo "Sudo"):
 
 ```
 user ALL=(ALL) NOPASSWD: /usr/bin/psd-overlay-helper

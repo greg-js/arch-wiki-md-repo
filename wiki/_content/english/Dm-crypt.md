@@ -1,7 +1,7 @@
 Related articles
 
 *   [Disk encryption](/index.php/Disk_encryption "Disk encryption")
-*   [Removing System Encryption](/index.php/Removing_System_Encryption "Removing System Encryption")
+*   [Removing system encryption](/index.php/Removing_system_encryption "Removing system encryption")
 
 dm-crypt is the Linux kernel's [device mapper](https://en.wikipedia.org/wiki/device_mapper "wikipedia:device mapper") crypto target. From [Wikipedia:dm-crypt](https://en.wikipedia.org/wiki/dm-crypt "wikipedia:dm-crypt"), it is a:
 

@@ -61,9 +61,9 @@ Verify:
 
 New 'mars:1 (facade)' desktop is mars:1
 
-Creating default startup script /home/facade/.vnc/xstartup
-Starting applications specified in /home/facade/.vnc/xstartup
-Log file is /home/facade/.vnc/mars:1.log
+Creating default startup script /home/theusername/.vnc/xstartup
+Starting applications specified in /home/theusername/.vnc/xstartup
+Log file is /home/theusername/.vnc/mars:1.log
 
 ```
 
@@ -82,32 +82,19 @@ $ vncserver -kill :1
 
 The `~/.vnc/xstartup` script is sourced by *vncserver* for creating the virtual X session and it must be adapted to one's needs. It functions like an [.xinitrc](/index.php/.xinitrc ".xinitrc") file. In this script, users are expected to start a [Desktop environment](/index.php/Desktop_environment "Desktop environment"), see: [General recommendations#Desktop environments](/index.php/General_recommendations#Desktop_environments "General recommendations").
 
-For example, starting [Xfce](/index.php/Xfce "Xfce"):
+For example, to start [Xfce](/index.php/Xfce "Xfce") the following script can be used, not it also requires that a [D-Bus](/index.php/D-Bus "D-Bus") session is launched.
 
  `~/.vnc/xstartup` 
 ```
 #!/bin/sh
 unset SESSION_MANAGER
 unset DBUS_SESSION_BUS_ADDRESS
-exec startxfce4
+exec dbus-launch startxfce4
 ```
 
-Some desktop environments may require [D-Bus](/index.php/D-Bus "D-Bus") session. For example, starting [GNOME](/index.php/GNOME "GNOME"):
+To start [GNOME](/index.php/GNOME "GNOME"), replace `startxfce4` by `gnome-session` in the example above.
 
- `~/.vnc/xstartup` 
-```
-#!/bin/sh
-unset SESSION_MANAGER
-unset DBUS_SESSION_BUS_ADDRESS
-exec dbus-launch gnome-session
-```
-
-Make sure `~/.vnc/xstartup` has a execute permission:
-
-```
-$ chmod u+x ~/.vnc/xstartup
-
-```
+Make sure `~/.vnc/xstartup` has a execute permission.
 
 #### Edit the optional config file
 

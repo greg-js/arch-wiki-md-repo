@@ -1668,17 +1668,9 @@ haltcmd="echo 'system_powerdown' | nc localhost 7101"
 
 The description of the variables is the following:
 
-	type
-
-	QEMU binary to call. If specified, will be prepended with `/usr/bin/qemu-` and that binary will be used to start the VM. I.e. you can boot e.g. `qemu-system-arm` images with `type="system-arm"`.
-
-	args
-
-	QEMU command line to start with. Will always be prepended with `-name ${vm} -nographic`.
-
-	haltcmd
-
-	Command to shut down a VM safely. In this example, the QEMU monitor is exposed via telnet using `-monitor telnet:..` and the VMs are powered off via ACPI by sending `system_powerdown` to monitor with the `nc` command. You can use SSH or some other ways as well.
+*   `type` - QEMU binary to call. If specified, will be prepended with `/usr/bin/qemu-` and that binary will be used to start the VM.
+*   `args` - QEMU command line to start with. Will always be prepended with `-name ${vm} -nographic`.
+*   `haltcmd` - Command to shut down a VM safely. In this example, the QEMU monitor is exposed via telnet using `-monitor telnet:..` and the VMs are powered off via ACPI by sending `system_powerdown` to monitor with the `nc` command. You can use SSH or some other ways as well.
 
 To set which virtual machines will start on boot-up, [enable](/index.php/Enable "Enable") the `qemu@*vm_name*.service` systemd unit.
 

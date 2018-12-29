@@ -207,7 +207,7 @@ Es necesario poner en marcha estas aplicaciones desde una localización UTF-8 o 
 ## Véase también
 
 *   [Guía de Gentoo Linux sobre localización](http://www.gentoo.org/doc/en/guide-localization.xml)
-*   [Gentoo Wiki Archives: Locales](http://www.gentoo-wiki.info/Locales)
+*   [http://wikigentoo.ksiezyc.pl/Locales.htm](http://wikigentoo.ksiezyc.pl/Locales.htm)
 *   [Test interactivo ICU sobre la clasificación](http://demo.icu-project.org/icu-bin/locexp?_=en_US&x=col)
 *   [Free Standards Group Open Internationalisation Initiative](http://www.openi18n.org/)
 *   [*The Single UNIX Specification* definition of Locale](http://pubs.opengroup.org/onlinepubs/007908799/xbd/locale.html) by The Open Group

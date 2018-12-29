@@ -232,7 +232,7 @@ If you're using a desktop environment, such as [GNOME](/index.php/GNOME "GNOME")
 ## See also
 
 *   [Gentoo:Localization/Guide](https://wiki.gentoo.org/wiki/Localization/Guide "gentoo:Localization/Guide")
-*   [Gentoo Wiki Archives: Locales](http://www.gentoo-wiki.info/Locales)
+*   [Supposedly 2008, or earlier, Gentoo wiki article](http://wikigentoo.ksiezyc.pl/Locales.htm)
 *   [ICU's interactive collation testing](http://demo.icu-project.org/icu-bin/locexp?_=en_US&x=col)
 *   [Free Standards Group Open Internationalisation Initiative](http://www.openi18n.org/)
 *   [*The Single UNIX Specification* definition of Locale](http://pubs.opengroup.org/onlinepubs/007908799/xbd/locale.html) by The Open Group

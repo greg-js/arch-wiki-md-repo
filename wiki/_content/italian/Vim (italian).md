@@ -12,7 +12,7 @@ Vim è ideato per ridurre al minimo il lavoro delle dita, e non ci sarà mai bis
     *   [3.3 Ripetere i comandi](#Ripetere_i_comandi)
     *   [3.4 Cancellare](#Cancellare)
     *   [3.5 Annulla e ripeti](#Annulla_e_ripeti)
-    *   [3.6 Modalità visuale](#Modalit.C3.A0_visuale)
+    *   [3.6 Modalità visuale](#Modalità_visuale)
     *   [3.7 Trova e sostituisci](#Trova_e_sostituisci)
     *   [3.8 Salvare ed uscire](#Salvare_ed_uscire)
     *   [3.9 Altri comandi](#Altri_comandi)
@@ -21,13 +21,13 @@ Vim è ideato per ridurre al minimo il lavoro delle dita, e non ci sarà mai bis
     *   [4.2 Ripetizione della ricerca](#Ripetizione_della_ricerca)
     *   [4.3 Controllo ortografico](#Controllo_ortografico)
     *   [4.4 Evidenziare la sintassi](#Evidenziare_la_sintassi)
-    *   [4.5 Esempio di ~/.vimrc](#Esempio_di_.7E.2F.vimrc)
-*   [5 Unire file (Vimdiff)](#Unire_file_.28Vimdiff.29)
+    *   [4.5 Esempio di ~/.vimrc](#Esempio_di_~/.vimrc)
+*   [5 Unire file (Vimdiff)](#Unire_file_(Vimdiff))
 *   [6 Vim Tips](#Vim_Tips)
     *   [6.1 Numeri linea](#Numeri_linea)
     *   [6.2 Sostituzioni tra linee](#Sostituzioni_tra_linee)
     *   [6.3 Ripristinare la posizione del cursore nei file](#Ripristinare_la_posizione_del_cursore_nei_file)
-    *   [6.4 Spazio vuoto all'inizio della finestra di gvim](#Spazio_vuoto_all.27inizio_della_finestra_di_gvim)
+    *   [6.4 Spazio vuoto all'inizio della finestra di gvim](#Spazio_vuoto_all'inizio_della_finestra_di_gvim)
     *   [6.5 Sostituire il comando vi con vim](#Sostituire_il_comando_vi_con_vim)
 *   [7 Altre risorse](#Altre_risorse)
     *   [7.1 Ufficiali](#Ufficiali)
@@ -353,5 +353,4 @@ Leggere anche [http://superuser.com/questions/27091/vim-to-replace-vi](http://su
 
 ### Altro
 
-*   [HOWTO Vim](http://www.gentoo-wiki.info/HOWTO_VIM) - Articolo del wiki di Gentoo su cui è basato questo articolo (autore sconosciuto).
 *   [Vivify](http://bytefluent.com/vivify/) - Un editor dello schema di colori per Vim

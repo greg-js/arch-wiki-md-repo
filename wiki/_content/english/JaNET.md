@@ -145,24 +145,12 @@ jaNET allows you to run external commands and use the output in it's replies! A 
 
 You should have a `/usr/share/festival/scripts` directory now. If not, create it.
 
-First we need pacman to update its cache every so often so we can find new updates. Create `/etc/cron.hourly/pacmanupdate` and place this inside:
-
-```
-pacman -Syy
-
-```
-
-Next we need to create the script for jaNET to use. Create `/usr/share/janet/archlinux_updates.sh` with the following:
-
-```
-#!/bin/bash
-echo "$(pacman -Qu 
-```
+First [install](/index.php/Install "Install") the [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) package, in order to acquire the *checkupdates* script.
 
 Now all we need to do is add the new InstructionSets so that we can use this with jaNET! Edit your *AppConfig.xml* and add the following within the Instructions Sub-Tree.
 
 ```
-<InstructionSet id="*archupdates">bash /usr/share/janet/scripts/archlinux_updates.sh</InstructionSet>
+<InstructionSet id="*archupdates">checkupdates</InstructionSet>
 <InstructionSet id="archupdates">There are *archupdates available updates sir.</InstructionSet>
 
 ```

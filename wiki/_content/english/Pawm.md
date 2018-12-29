@@ -31,7 +31,7 @@ Run `pawn` with [xinit](/index.php/Xinit "Xinit").
 
 By default, PAWM looks blue, plain and kind of dated. By editing the file `/etc/pawm.conf` you can customize the scheme of your PAWM.
 
-Colors are changed through hexadecimal values. Fonts can be changed either through core fonts[wikipedia:X_logical_font_description](https://en.wikipedia.org/wiki/X_logical_font_description "wikipedia:X logical font description") or Xft fonts[[1]](http://www.x.org/archive/X11R6.8.2/doc/fonts.html).
+Colors are changed through hexadecimal values. Fonts can be changed either through [X Logical Font Description](/index.php/X_Logical_Font_Description "X Logical Font Description") or Xft fonts[[1]](http://www.x.org/archive/X11R6.8.2/doc/fonts.html).
 
 You may also adjust adjust the behavior of pabar, paicons, pashut icon or any modules added.
 
@@ -59,7 +59,7 @@ This article covers the third option.
 
 #### Creating new Launcher files
 
-Create a new file in the directory. For our example we will use the terminal emulator [Sakura](http://www.pleyades.net/david/sakura.php).
+Create a new file in the directory. For our example we will use the [sakura-bzr](https://aur.archlinux.org/packages/sakura-bzr/), [sakura-gtk2](https://aur.archlinux.org/packages/sakura-gtk2/) terminal emulator.
 
 The filename must start with **app** with up to 20 characters after it.
 

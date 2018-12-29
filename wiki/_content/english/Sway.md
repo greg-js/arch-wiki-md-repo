@@ -20,9 +20,8 @@
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Autostart on login](#Autostart_on_login)
     *   [5.2 Backlight toggle](#Backlight_toggle)
-    *   [5.3 dmenu replacement](#dmenu_replacement)
 *   [6 Known issues](#Known_issues)
-    *   [6.1 Using i3-dmenu-desktop](#Using_i3-dmenu-desktop)
+    *   [6.1 Application launchers](#Application_launchers)
     *   [6.2 VirtualBox](#VirtualBox)
     *   [6.3 Sway Socket Not Detected](#Sway_Socket_Not_Detected)
     *   [6.4 Incorrect Monitor Resolution](#Incorrect_Monitor_Resolution)
@@ -229,19 +228,15 @@ read lcd < /tmp/lcd
 
 ```
 
-### dmenu replacement
-
-Since dmenu runs on XWayland, it tends to become unresponsive and remain in the foreground if the focus is moved elsewhere and `pkill dmenu` is required to fix the problem.
-
-An alternative is to use Rofi, which now works out of the box on sway. Another alternative is bemenu, which is a native Wayland dmenu replacement.
-
 ## Known issues
 
-### Using i3-dmenu-desktop
+### Application launchers
 
-i3-dmenu-desktop is not usable directly from sway, but a patch is available [here](https://github.com/i3/i3/pull/2265/files) and it can be applied as specified by the sway wiki [here](https://github.com/swaywm/sway/wiki#i3-dmenu-desktop-does-not-work). Unfortunately, the patch cannot be merged because it breaks when used from i3 in some corner cases. See [[1]](https://github.com/SirCmpwn/sway/issues/521) for more information.
+i3-dmenu-desktop, [j4-dmenu-desktop](https://aur.archlinux.org/packages/j4-dmenu-desktop/), [dmenu](https://www.archlinux.org/packages/?name=dmenu), and [rofi](https://www.archlinux.org/packages/?name=rofi) all function relatively well in Sway, but all run under XWayland and suffer from the safe issue where they can become unresponsive if the cursor is moved to a native Wayland window. Moving the cursor to an XWayland window and pressing Escape should fix the issue, and sometimes running `pkill` does too.
 
-An alternative is to use [j4-dmenu-desktop](https://aur.archlinux.org/packages/j4-dmenu-desktop/), which is advertised as faster than i3-dmenu-desktop.
+One alternative is bemenu, which is a native Wayland dmenu replacement.
+
+The reason for this issue is that Wayland clients/windows do not have access to input devices unless they have focus of the screen. The XWayland server is itself a client to the Wayland compositor, so one of its XWayland clients must have focus for it to access user input. However, once one of its clients has focus, it can gather input and make it available to all XWayland clients through the X11 protocol.
 
 ### VirtualBox
 

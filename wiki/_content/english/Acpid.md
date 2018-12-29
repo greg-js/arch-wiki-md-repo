@@ -137,12 +137,7 @@ Make the script executable:
 
 ```
 
-Finally, reload the acpid.service to get acpid to recognize the changes to these files:
-
-```
-# kill -SIGHUP $(pidof acpid)
-
-```
+Finally, [reload](/index.php/Reload "Reload") the `acpid.service` to get acpid to recognize the changes to these files.
 
 Using this method, it is easy to create any number of individual event/action scripts.
 

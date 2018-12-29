@@ -1,39 +1,41 @@
-ArchLinux is not officially supported by Vivado, but as happens with [Xilinx ISE WebPACK](/index.php/Xilinx_ISE_WebPACK "Xilinx ISE WebPACK"), most of its features can be used with a bit of hacking.
+**翻译状态：** 本文是英文页面 [Xilinx_Vivado](/index.php/Xilinx_Vivado "Xilinx Vivado") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-12-29，点击[这里](https://wiki.archlinux.org/index.php?title=Xilinx_Vivado&diff=0&oldid=560755)可以查看翻译后英文页面的改动。
+
+Archlinux 并不受 Vivado 的正式支持，但是从 [Xilinx ISE WebPACK](/index.php/Xilinx_ISE_WebPACK "Xilinx ISE WebPACK") 的使用体验上看，只需要一点修改便能正常使用所有功能。
 
 ## Contents
 
-*   [1 Prerequisites](#Prerequisites)
-    *   [1.1 Dependencies](#Dependencies)
-*   [2 Installation](#Installation)
-    *   [2.1 Vivado and SDK](#Vivado_and_SDK)
-    *   [2.2 Update patch](#Update_patch)
-    *   [2.3 Licensing](#Licensing)
-    *   [2.4 Digilent USB-JTAG Drivers](#Digilent_USB-JTAG_Drivers)
-    *   [2.5 Linux cable driver](#Linux_cable_driver)
-*   [3 Tips and tricks](#Tips_and_tricks)
-    *   [3.1 Create .desktop files](#Create_.desktop_files)
-    *   [3.2 Enable display scaling](#Enable_display_scaling)
-*   [4 Troubleshooting](#Troubleshooting)
+*   [1 先决条件](#先决条件)
+    *   [1.1 依赖](#依赖)
+*   [2 安装](#安装)
+    *   [2.1 Vivado 与 SDK](#Vivado_与_SDK)
+    *   [2.2 更新补丁](#更新补丁)
+    *   [2.3 证书](#证书)
+    *   [2.4 Digilent USB-JTAG 驱动](#Digilent_USB-JTAG_驱动)
+    *   [2.5 Linux cable 驱动](#Linux_cable_驱动)
+*   [3 提示和技巧](#提示和技巧)
+    *   [3.1 创建 .desktop files](#创建_.desktop_files)
+    *   [3.2 启用屏幕缩放功能](#启用屏幕缩放功能)
+*   [4 故障排除](#故障排除)
     *   [4.1 Synthesis segfaults](#Synthesis_segfaults)
     *   [4.2 xsct segfault](#xsct_segfault)
     *   [4.3 Vivado HLS testbench error with GCC](#Vivado_HLS_testbench_error_with_GCC)
     *   [4.4 Vivado Crashes with Wayland](#Vivado_Crashes_with_Wayland)
 
-## Prerequisites
+## 先决条件
 
 Xilinx Vivado can be downloaded from its official website [[1]](http://www.xilinx.com/products/design-tools/vivado.html). It's recommended to download "Vivado HLx <year>.<version>: All OS installer Single-File Download" tarball, but make sure not to be in a hurry, as it's a large download (near 19 GB). Update tarballs can also be downloaded and installed later.
 
-### Dependencies
+### 依赖
 
 **Note:** For 2018.3 and later, there is no need to install ncurses5 libarys
 
 Installer needs ncurses5 libs, and will not work with ncurses 6 available at official repos. You can work-around this problem by installing [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). You will also need to install [libpng12](https://www.archlinux.org/packages/?name=libpng12) and [lib32-libpng12](https://www.archlinux.org/packages/?name=lib32-libpng12) for Xilinx Document Navigator to launch.
 
-## Installation
+## 安装
 
 You must install the main package, and it is also recommended to install the latest update patch.
 
-### Vivado and SDK
+### Vivado 与 SDK
 
 **Warning:** The patch below is not longer needed in the 2018.1 version. Just unpack and run the xsetup file.
 
@@ -53,7 +55,7 @@ Install script will be patched and original will be backed up as `xsetup.origina
 
 It is recommended to install the suite at the default location `/opt/Xilinx`, as further instructions in this page will assume the suite is installed there.
 
-### Update patch
+### 更新补丁
 
 **Warning:** The patch below is not longer needed in the 2018.1 version.
 
@@ -67,7 +69,7 @@ $ sed -i.original 's/uname -i/uname -m/' xsetup
 
 ```
 
-### Licensing
+### 证书
 
 **Warning:** In the 2018.1 Webpack version there is not longer required download an explicit license file, it just works.
 
@@ -89,7 +91,7 @@ $ /opt/Xilinx/Vivado/2015.4/bin/vlm
 
 If you try obtaining a WebPack license, your default browser should open, and the license should be generated normally. If Vivado License Manager fails to automatically load the generated license, download the .lic file, and manually load it.
 
-### Digilent USB-JTAG Drivers
+### Digilent USB-JTAG 驱动
 
 To use Digilent Adept USB-JTAG adapters (e.g. the onboard JTAG adapter on the [ZedBoard](http://www.zedboard.org)) from Vivado, you need to install the Digilent [Adept Runtime](http://store.digilentinc.com/digilent-adept-2-download-only/).
 
@@ -99,7 +101,7 @@ To install the Digilent Adept Runtime, it is recommended to install [digilent.ad
 
 In addition, installing [digilent.adept.utilities](https://aur.archlinux.org/packages/digilent.adept.utilities/) may do good to configuring your board.
 
-### Linux cable driver
+### Linux cable 驱动
 
 Run as root privilege:
 
@@ -108,9 +110,9 @@ $ {vivado_install_dir}/data/xicom/cable_drivers/lin64/install_script/install_dri
 
 ```
 
-## Tips and tricks
+## 提示和技巧
 
-### Create .desktop files
+### 创建 .desktop files
 
 **Note:** For 2018.3 and later, there is no need to write .desktop file manually
 
@@ -153,7 +155,7 @@ Categories=Development;
 Comment=Xilinx Documentation Navigator
 ```
 
-### Enable display scaling
+### 启用屏幕缩放功能
 
 Start vivado, then set the scaling rate as follow:
 
@@ -162,7 +164,7 @@ Tools -> Setting -> Display -> Scaling
 
 ```
 
-## Troubleshooting
+## 故障排除
 
 ### Synthesis segfaults
 

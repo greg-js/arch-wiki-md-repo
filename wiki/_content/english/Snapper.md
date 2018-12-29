@@ -259,7 +259,7 @@ There are a couple of packages used for automatically creating snapshots upon a 
 
 	[snap-pac-grub](https://aur.archlinux.org/packages/snap-pac-grub/) || [snap-pac-grub](https://aur.archlinux.org/packages/snap-pac-grub/)
 
-*   **snp** — wrap any shell command in a snapper pre-post snapshot, e.g. `$ snp pacman -Syyu`
+*   **snp** — wrap any shell command in a snapper pre-post snapshot, e.g. `$ snp pacman -Syu`
 
 	[https://gist.github.com/erikw/5229436](https://gist.github.com/erikw/5229436) ||
 

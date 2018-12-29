@@ -50,7 +50,7 @@ Note that some languages listed above also support some functional programming.
     *   [Emacs Lisp](/index.php/Emacs_Lisp "Emacs Lisp")
     *   [Scheme](https://en.wikipedia.org/wiki/Scheme_(programming_language) – [mit-scheme](https://www.archlinux.org/packages/?name=mit-scheme)
 *   [ML](https://en.wikipedia.org/wiki/ML_(programming_language) "wikipedia:ML (programming language)")
-    *   [Standard ML](https://en.wikipedia.org/wiki/Standard_ML "wikipedia:Standard ML") – [smlnj](https://www.archlinux.org/packages/?name=smlnj)
+    *   [Standard ML](https://en.wikipedia.org/wiki/Standard_ML "wikipedia:Standard ML") – [smlnj](https://www.archlinux.org/packages/?name=smlnj), [mlton](https://www.archlinux.org/packages/?name=mlton), [mosml](https://aur.archlinux.org/packages/mosml/), [smlsharp](https://aur.archlinux.org/packages/smlsharp/)
     *   [OCaml](https://en.wikipedia.org/wiki/OCaml "wikipedia:OCaml") – [ocaml](https://www.archlinux.org/packages/?name=ocaml)
 
 ## Shell languages

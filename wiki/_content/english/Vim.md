@@ -400,7 +400,6 @@ nnoremap <C-l> :TlistToggle<CR>
 *   [Learning Vim in 2014](http://benmccormick.org/learning-vim-in-2014/)
 *   [Seven habits of effective text editing](http://www.moolenaar.net/habits.html)
 *   [Basic Vim Tips](http://bencrowder.net/files/vim-fu/)
-*   [HOWTO Vim](http://www.gentoo-wiki.info/HOWTO_VIM)
 
 #### Videos
 

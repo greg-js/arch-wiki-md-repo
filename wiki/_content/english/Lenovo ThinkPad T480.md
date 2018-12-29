@@ -6,6 +6,7 @@
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
 | [Webcam](/index.php/Webcam "Webcam") | Yes |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes |
+| [Mobile internet](/index.php/ThinkPad_mobile_internet "ThinkPad mobile internet") | Yes |
 | Fingerprint Sensor |
 
 This article covers the installation and configuration of Arch Linux on a Lenovo T480 laptop. Everything seems to work pretty much out the box.
@@ -27,7 +28,6 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 Using kernel 4.16.8-1-ARCH
 
 ```
-Product Name: 20L5CTO1WW
 Version: ThinkPad T480
 SKU Number: LENOVO_MT_20L5_BU_Think_FM_ThinkPad T480
 Product Name: 20L5CTO1WW
@@ -70,6 +70,22 @@ Bus 001 Device 002: ID 8087:0a2b Intel Corp.
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ```
+
+and for Product Name: `20L50007GE` something like:
+
+```
+Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 002 Device 002: ID 0bda:0316 Realtek Semiconductor Corp. 
+Bus 001 Device 006: ID 06cb:009a Synaptics, Inc. 
+Bus 001 Device 005: ID 13d3:56a6 IMC Networks 
+Bus 001 Device 004: ID 8087:0a2b Intel Corp. 
+Bus 001 Device 003: ID 2cb7:0210  
+Bus 001 Device 002: ID 058f:9540 Alcor Micro Corp. AU9540 Smartcard Reader
+
+```
+
+ID `2cb7:0210` is the 4G modem Fibocom L830-EB.
 
 ## Suspend / Hibernation
 

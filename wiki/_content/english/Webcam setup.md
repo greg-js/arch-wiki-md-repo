@@ -17,6 +17,7 @@ Most probably your webcam will work out of the box. Permissions to access video 
     *   [4.2 Microsoft Lifecam Studio/Cinema](#Microsoft_Lifecam_Studio/Cinema)
     *   [4.3 Skype](#Skype)
     *   [4.4 Check bandwidth used by USB webcams](#Check_bandwidth_used_by_USB_webcams)
+    *   [4.5 Groups](#Groups)
 
 ## Loading
 
@@ -193,3 +194,7 @@ When testing the webcam, note the following:
 ### Check bandwidth used by USB webcams
 
 When running multiple webcams on a single USB bus, they may saturate the bandwidth of the USB bus and not work properly. You can diagnose this with the *usbtop* tool from the [usbtop](https://aur.archlinux.org/packages/usbtop/) package.
+
+### Groups
+
+If the system is telling you it cannot find the device, this may be because you are not part of the `video` group. Check to make sure you are part of the group `video` using `groups`. If not, add yourself by using `gpasswd`.

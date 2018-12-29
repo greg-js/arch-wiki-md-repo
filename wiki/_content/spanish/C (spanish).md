@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [C](/index.php/C "C"), revisada por última vez el **2018-11-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=C&diff=0&oldid=554150) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [C](/index.php/C "C"), revisada por última vez el **2018-12-27**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=C&diff=0&oldid=560524) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 El kernel [Linux](/index.php/Linux_(Espa%C3%B1ol) "Linux (Español)") y las herramientas de usuario [GNU](/index.php/GNU_(Espa%C3%B1ol) "GNU (Español)") están escritos principalmente en [C](https://en.wikipedia.org/wiki/es:C_(lenguaje_de_programaci%C3%B3n) "wikipedia:es:C (lenguaje de programación)").
 
@@ -63,6 +63,10 @@ Puede utilizar [toolchain de GNU](/index.php/GNU_toolchain_(Espa%C3%B1ol) "GNU t
 Véase también [Wikipedia:List of compilers#C compilers](https://en.wikipedia.org/wiki/List_of_compilers#C_compilers "wikipedia:List of compilers").
 
 ## Implementaciones de libc alternativas
+
+*   **[dietlibc](https://en.wikipedia.org/wiki/dietlibc "wikipedia:dietlibc")** — Un libc optimizado para tamaños pequeños
+
+	[https://www.fefe.de/dietlibc/](https://www.fefe.de/dietlibc/) || [dietlibc](https://www.archlinux.org/packages/?name=dietlibc)
 
 *   **[musl](https://en.wikipedia.org/wiki/musl "wikipedia:musl")** — Implementación ligera de la biblioteca estándar de C.
 

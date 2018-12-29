@@ -14,7 +14,8 @@ This wiki page covers a basic setup of the smokeping daemon and the CGI webinter
 *   [3 Setup web frontend](#Setup_web_frontend)
     *   [3.1 Apache](#Apache)
     *   [3.2 Caddy](#Caddy)
-    *   [3.3 Nginx](#Nginx)
+    *   [3.3 Lighttpd](#Lighttpd)
+    *   [3.4 Nginx](#Nginx)
 *   [4 Advanced Configuration](#Advanced_Configuration)
 *   [5 Notes](#Notes)
     *   [5.1 Smoketrace (Tr.cgi)](#Smoketrace_(Tr.cgi))
@@ -301,6 +302,65 @@ smokeping.example.com/css {
 smokeping.example.com/cache {
         root /var/cache/smokeping
 }
+
+```
+
+### Lighttpd
+
+First install Lighttpd and FastCGI:
+
+ `# pacman -S lighttpd fcgi` 
+
+Edit the [Lighttpd](/index.php/Lighttpd "Lighttpd") configuration file and ensure you have at least all of the following configuration directives:
+
+ `/etc/lighttpd/lighttpd.conf` 
+```
+server.document-root    = "/srv/http"
+server.follow-symlink   = "enable"
+
+server.modules += ("mod_fastcgi")
+fastcgi.server = (
+        ".fcgi" =>
+        ((
+                "bin-path" => "/srv/http/smokeping/smokeping.fcgi",
+                "host" => "localhost",
+                "port" => 8001,
+        )),
+)
+```
+
+Start and enable the server:
+
+```
+$ systemctl start lighttpd
+$ systemctl enable lighttpd
+
+```
+
+[Systemd](/index.php/Systemd "Systemd") should show `smokeping_cgi` being managed by `lighttpd.service`.
+
+ `$ systemctl status lighttpd` 
+```
+● lighttpd.service - Lighttpd Web Server
+   Loaded: loaded (/usr/lib/systemd/system/lighttpd.service; enabled; vendor preset: disabled)
+   Active: active (running) since Wed 2018-12-26 14:34:42 PST; 1 day 7h ago
+  Process: 17117 ExecReload=/bin/kill -HUP $MAINPID (code=exited, status=0/SUCCESS)
+ Main PID: 28321 (lighttpd-angel)
+    Tasks: 6 (limit: 4915)
+   Memory: 128.9M
+   CGroup: /system.slice/lighttpd.service
+           ├─17119 /usr/bin/lighttpd -D -f /etc/lighttpd/lighttpd.conf
+           ├─17126 /usr/bin/perl /usr/bin/smokeping_cgi /etc/smokeping/config
+           ├─17127 /usr/bin/perl /usr/bin/smokeping_cgi /etc/smokeping/config
+           ├─17128 /usr/bin/perl /usr/bin/smokeping_cgi /etc/smokeping/config
+           ├─17129 /usr/bin/perl /usr/bin/smokeping_cgi /etc/smokeping/config
+           └─28321 /usr/bin/lighttpd-angel -D -f /etc/lighttpd/lighttpd.conf
+```
+
+Finally, add a symbolic link to allow images to load:
+
+```
+# ln -s -t /srv/http/smokeping /srv/smokeping/imgcache
 
 ```
 

@@ -688,6 +688,23 @@ LD_PRELOAD="/usr/lib32/libpng16.so.16" %command%
 
 ```
 
+If such error is seen in terminal output of steam-native:
+
+```
+/home/$USER/.local/share/Steam/steamapps/common/Chaos engine/TheChaosEngineSteam: /home/$USER/.local/share/Steam/steamapps/common/Chaos engine/lib/libz.so.1: version `ZLIB_1.2.9' not found (required by /usr/lib32/libpng16.so.16)
+/home/$USER/.local/share/Steam/steamapps/common/Chaos engine/TheChaosEngineSteam: /home/$USER/.local/share/Steam/steamapps/common/Chaos engine/lib/libz.so.1: version `ZLIB_1.2.3.4' not found (required by /usr/lib32/libpng16.so.16)
+
+```
+
+Then link the system libz.so:
+
+```
+cd ~/.local/share/Steam/steamapps/common/Chaos\ engine/lib
+mv libz.so.1 libz.so.1.old
+ln -s /lib/libz.so.1
+
+```
+
 ### Cities in Motion 2
 
 #### Dialog boxes fail to display properly

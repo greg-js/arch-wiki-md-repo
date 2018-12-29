@@ -102,20 +102,33 @@ For the first two options, consider that you might need adapters to connect the 
 
 ### Update fstab
 
+**Warning:** Before doing this step please make sure that you do not wish to use this drive in the old system, as removing/altering the [fstab](/index.php/Fstab "Fstab") file will likely prevent the system from booting in the old configuration
+If you are using an Arch Linux Installation Image, mount the new root partition to `/mnt`, and any other partitions required like you would in a normal install (see [Installation guide#Mount the file systems](/index.php/Installation_guide#Mount_the_file_systems "Installation guide")). Next remove the old fstab file using the following command ` # rm /mnt/etc/fstab` and then generate a new one as indicated on [Installation guide#Fstab](/index.php/Installation_guide#Fstab "Installation guide").
+**Note:** Make sure to check that no unnecessary partitions are mounted. This can be checked by running `mount -l` and checking all the partitions that are mounted under `/mnt` (either directly or under a subfolder of `/mnt`). If there are any partitions mounted that are unnecessary you can unmount them using `umount devname` where `devname` is the name of the device you with to unmount (most likely in the from `/dev/sdxn` with `x` a letter indicating the device and `n` a number indicating the specific partition)
+
+Alternative methods to alter the fstab file are:
+
 *   using /dev paths: this should change depending on how the new drives are connected to the mainboard, on the BIOS and on the new partitions scheme
 *   using fs labels: should be safe
 *   using UUIDs
 
 ### Reconfigure the bootloader
 
-*   because of:
-    *   new HDD and partitions configuration
-    *   new BIOS configuration
-*   GRUB allows to edit entries with 'e'
-*   use a live system?
+Reasons you might need to reconfige the bootloader:
+
+*   new HDD and partitions configuration
+*   new BIOS configuration
 *   update framebuffer mode (if new gpu)
 *   USB to SATA/NVMe migration?
     *   often UEFI doesn't boot [EFISTUB](/index.php/EFISTUB "EFISTUB") of a non-removable medium without explicit configuration, use f.e. `efibootmgr`
+
+**Note:** If you are using an Arch Linux Installation Image make sure that you have set changed you root to the new boot partion (preferably using `arch-chroot`)
+
+If you are using [GRUB](/index.php/GRUB "GRUB") simply run install procedure as indicated for you setup (BIOS vs UEFI) and then generate the main config as indicated on [GRUB#Generate the main configuration file](/index.php/GRUB#Generate_the_main_configuration_file "GRUB").
+Alternatives are:
+
+*   GRUB allows to edit entries with 'e'
+*   use a live system?
 
 ### Regenerate kernel image
 

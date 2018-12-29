@@ -10,7 +10,7 @@ Questa è una guida veloce all'installazione di [TuxOnIce](http://www.tuxonice.n
     *   [3.3 Sospensione su file](#Sospensione_su_file)
 *   [4 Sospensione e Resuming](#Sospensione_e_Resuming)
 *   [5 Configurazioni addizionali di pm-utils](#Configurazioni_addizionali_di_pm-utils)
-*   [6 Usare UserUI - Un'Interfaccia Utente per TuxOnIce (Opzionale)](#Usare_UserUI_-_Un.27Interfaccia_Utente_per_TuxOnIce_.28Opzionale.29)
+*   [6 Usare UserUI - Un'Interfaccia Utente per TuxOnIce (Opzionale)](#Usare_UserUI_-_Un'Interfaccia_Utente_per_TuxOnIce_(Opzionale))
 *   [7 Riferimenti](#Riferimenti)
 
 ## Preparazione del kernel
@@ -225,4 +225,3 @@ Per l'interfaccia grafica eseguite:
 
 *   Il sito di [TuxOnIce](http://www.tuxonice.net) e la sua [wiki](http://wiki.tuxonice.net) sono un ottima fonte di informazioni.
 *   Altre informazioni generali sulla sospensione/ibernazione con gli hibernate-script si possono trovare nella pagina [Suspend to Disk](/index.php/Suspend_to_Disk "Suspend to Disk") di questa wiki. Questa tratta argomenti avanzati come problemi con certe configurazioni hardware.
-*   Un'altra buona fonte di informazioni è la [wiki di Gentoo](http://www.gentoo-wiki.info/TuxOnIce).

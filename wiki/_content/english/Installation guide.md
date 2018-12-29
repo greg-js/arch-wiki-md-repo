@@ -14,6 +14,7 @@ Arch Linux should run on any [x86_64](https://en.wikipedia.org/wiki/X86-64 "wiki
     *   [1.5 Connect to the Internet](#Connect_to_the_Internet)
     *   [1.6 Update the system clock](#Update_the_system_clock)
     *   [1.7 Partition the disks](#Partition_the_disks)
+        *   [1.7.1 Example layouts](#Example_layouts)
     *   [1.8 Format the partitions](#Format_the_partitions)
     *   [1.9 Mount the file systems](#Mount_the_file_systems)
 *   [2 Installation](#Installation)
@@ -39,9 +40,19 @@ The installation media and their [GnuPG](/index.php/GnuPG "GnuPG") signatures ca
 
 It is recommended to verify the image signature before use, especially when downloading from an *HTTP mirror*, where downloads are generally prone to be intercepted to [serve malicious images](http://www.cs.arizona.edu/stork/packagemanagersecurity/attacks-on-package-managers.html#explanation).
 
-On a system with [GnuPG](/index.php/GnuPG "GnuPG") installed, do this by downloading the *PGP signature* (under *Checksums*) to the ISO directory, and [verifying](/index.php/GnuPG#Verify_a_signature "GnuPG") it with `gpg --keyserver pgp.mit.edu --keyserver-options auto-key-retrieve --verify archlinux-<version>-x86_64.iso.sig`.
+On a system with [GnuPG](/index.php/GnuPG "GnuPG") installed, do this by downloading the *PGP signature* (under *Checksums*) to the ISO directory, and [verifying](/index.php/GnuPG#Verify_a_signature "GnuPG") it with:
 
-Alternatively, run `pacman-key -v archlinux-<version>-x86_64.iso.sig` from an existing Arch Linux installation as root.
+```
+$ gpg --keyserver pgp.mit.edu --keyserver-options auto-key-retrieve --verify archlinux-*version*-x86_64.iso.sig
+
+```
+
+Alternatively, from an existing Arch Linux installation run:
+
+```
+$ pacman-key -v archlinux-*version*-x86_64.iso.sig
+
+```
 
 **Note:**
 
@@ -55,8 +66,7 @@ The live environment can be booted from a [USB flash drive](/index.php/USB_flash
 *   Pointing the current boot device to a drive containing the Arch installation media is typically achieved by pressing a key during the [POST](https://en.wikipedia.org/wiki/Power-on_self_test "w:Power-on self test") phase, as indicated on the splash screen. Refer to your motherboard's manual for details.
 *   When the Arch menu appears, select *Boot Arch Linux* and press `Enter` to enter the installation environment.
 *   See [README.bootparams](https://projects.archlinux.org/archiso.git/tree/docs/README.bootparams) for a list of [boot parameters](/index.php/Kernel_parameters#Configuration "Kernel parameters"), and [packages.x86_64](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) for a list of included packages.
-
-You will be logged in on the first [virtual console](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") as the root user, and presented with a [Zsh](/index.php/Zsh "Zsh") shell prompt.
+*   You will be logged in on the first [virtual console](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") as the root user, and presented with a [Zsh](/index.php/Zsh "Zsh") shell prompt.
 
 To switch to a different console—for example, to view this guide with [ELinks](/index.php/ELinks "ELinks") alongside the installation—use the `Alt+*arrow*` [shortcut](/index.php/Keyboard_shortcuts "Keyboard shortcuts"). To [edit](/index.php/Textedit "Textedit") configuration files, [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "wikipedia:vi") and [vim](/index.php/Vim#Usage "Vim") are available.
 
@@ -122,39 +132,45 @@ When recognized by the live system, disks are assigned to a [block device](https
 
 Results ending in `rom`, `loop` or `airoot` may be ignored.
 
-The following *partitions* are **required** for a chosen device:
+The following [partitions](/index.php/Partition "Partition") are **required** for a chosen device:
 
 *   One partition for the root directory `/`.
 *   If [UEFI](/index.php/UEFI "UEFI") is enabled, an [EFI system partition](/index.php/EFI_system_partition "EFI system partition").
 
-To modify *partition tables*, use [fdisk](/index.php/Fdisk "Fdisk") or [parted](/index.php/Parted "Parted").
+If you want to create any stacked block devices for [LVM](/index.php/LVM "LVM"), [system encryption](/index.php/Dm-crypt "Dm-crypt") or [RAID](/index.php/RAID "RAID"), do it now.
 
-```
-# fdisk /dev/*sda*
+#### Example layouts
 
-```
-
-See [Partitioning](/index.php/Partitioning "Partitioning") for more information.
+| UEFI with [GPT](/index.php/Partitioning#GUID_Partition_Table "Partitioning") |
+| Mount point | Partition | [Partition type (GUID)](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "w:GUID Partition Table") | Suggested size |
+| `/boot` or `/efi` | /dev/sd*x*1 | [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") | 260–512 MiB |
+| `/` | /dev/sd*x*2 | Linux | Remainder of the device |
+| [SWAP] | /dev/sd*x*3 | Linux [swap](/index.php/Swap "Swap") | More than 512 MiB |
+| BIOS with [MBR](/index.php/Partitioning#Master_Boot_Record "Partitioning") or GPT |
+| Mount point | Partition | [Partition type](https://en.wikipedia.org/wiki/Partition_type "w:Partition type") | Suggested size |
+| – | /dev/sd*x*1 | [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition") | 1 MiB |
+| `/` | /dev/sd*x*2 | Linux | Remainder of the device |
+| [SWAP] | /dev/sd*x*3 | Linux [swap](/index.php/Swap "Swap") | More than 512 MiB |
 
 **Note:**
 
-*   [Swap](/index.php/Swap "Swap") space can be set on a separate partition or a [swap file](/index.php/Swap_file "Swap file").
-*   If you want to create any stacked block devices for [LVM](/index.php/LVM "LVM"), [disk encryption](/index.php/Disk_encryption "Disk encryption") or [RAID](/index.php/RAID "RAID"), do it now.
+*   Use [fdisk](/index.php/Fdisk "Fdisk") or [parted](/index.php/Parted "Parted") to modify partition tables, for example `fdisk /dev/sd*x*`.
+*   [Swap](/index.php/Swap "Swap") space can be set on a [swap file](/index.php/Swap_file "Swap file") for file systems supporting it.
 
 ### Format the partitions
 
-Once the partitions have been created, each must be formatted with an appropriate [file system](/index.php/File_system "File system"). For example, to format the root partition on `/dev/*sda1*` with `*ext4*`, run:
+Once the partitions have been created, each must be formatted with an appropriate [file system](/index.php/File_system "File system"). For example, to format the root partition on `/dev/sd*x*2` with `*ext4*`, run:
 
 ```
-# mkfs.*ext4* /dev/*sda1*
+# mkfs.*ext4* /dev/sd*x*2
 
 ```
 
-If you created a partition for swap (for example `/dev/*sda3*`), initialize it with *mkswap*:
+If you created a partition for swap, initialize it with *mkswap*:
 
 ```
-# mkswap /dev/*sda3*
-# swapon /dev/*sda3*
+# mkswap /dev/sd*x*3
+# swapon /dev/sd*x*3
 
 ```
 
@@ -165,15 +181,15 @@ See [File systems#Create a file system](/index.php/File_systems#Create_a_file_sy
 [Mount](/index.php/Mount "Mount") the file system on the root partition to `/mnt`, for example:
 
 ```
-# mount /dev/*sda1* /mnt
+# mount /dev/sd*x*2 /mnt
 
 ```
 
-Create mount points for any remaining partitions and mount them accordingly:
+Create mount points for any remaining partitions and mount them accordingly, for example:
 
 ```
-# mkdir /mnt/*boot*
-# mount /dev/*sda2* /mnt/*boot*
+# mkdir /mnt/boot
+# mount /dev/sd*x*1 /mnt/boot
 
 ```
 
@@ -287,7 +303,7 @@ Complete the [network configuration](/index.php/Network_configuration "Network c
 
 Creating a new *initramfs* is usually not required, because [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") was run on installation of the [linux](https://www.archlinux.org/packages/?name=linux) package with *pacstrap*.
 
-For special configurations, modify the [mkinitcpio.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.conf.5) file and recreate the initramfs image:
+For [LVM](/index.php/LVM#Configure_mkinitcpio "LVM"), [system encryption](/index.php/Dm-crypt "Dm-crypt") or [RAID](/index.php/RAID#Configure_mkinitcpio "RAID"), modify [mkinitcpio.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.conf.5) and recreate the initramfs image:
 
 ```
 # mkinitcpio -p linux

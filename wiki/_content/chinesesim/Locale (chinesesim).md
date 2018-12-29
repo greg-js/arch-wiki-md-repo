@@ -4,26 +4,26 @@ Locales 被 [glibc](https://www.archlinux.org/packages/?name=glibc) 和其它需
 
 ## Contents
 
-*   [1 生成 locale](#.E7.94.9F.E6.88.90_locale)
-*   [2 设置 locale](#.E8.AE.BE.E7.BD.AE_locale)
-    *   [2.1 其它用例](#.E5.85.B6.E5.AE.83.E7.94.A8.E4.BE.8B)
-*   [3 支持的变量](#.E6.94.AF.E6.8C.81.E7.9A.84.E5.8F.98.E9.87.8F)
-    *   [3.1 LANG: 默认的 Locale](#LANG:_.E9.BB.98.E8.AE.A4.E7.9A.84_Locale)
-    *   [3.2 LANGUAGE: 后备 Locale](#LANGUAGE:_.E5.90.8E.E5.A4.87_Locale)
-    *   [3.3 LC_TIME: 时间和日期格式](#LC_TIME:_.E6.97.B6.E9.97.B4.E5.92.8C.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)
-    *   [3.4 LC_COLLATE: 排序格式](#LC_COLLATE:_.E6.8E.92.E5.BA.8F.E6.A0.BC.E5.BC.8F)
+*   [1 生成 locale](#生成_locale)
+*   [2 设置 locale](#设置_locale)
+    *   [2.1 其它用例](#其它用例)
+*   [3 支持的变量](#支持的变量)
+    *   [3.1 LANG: 默认的 Locale](#LANG:_默认的_Locale)
+    *   [3.2 LANGUAGE: 后备 Locale](#LANGUAGE:_后备_Locale)
+    *   [3.3 LC_TIME: 时间和日期格式](#LC_TIME:_时间和日期格式)
+    *   [3.4 LC_COLLATE: 排序格式](#LC_COLLATE:_排序格式)
 *   [4 LC_ALL](#LC_ALL)
-*   [5 自定义 Locale](#.E8.87.AA.E5.AE.9A.E4.B9.89_Locale)
-    *   [5.1 设置每周的第一天](#.E8.AE.BE.E7.BD.AE.E6.AF.8F.E5.91.A8.E7.9A.84.E7.AC.AC.E4.B8.80.E5.A4.A9)
-*   [6 提示和技巧](#.E6.8F.90.E7.A4.BA.E5.92.8C.E6.8A.80.E5.B7.A7)
-    *   [6.1 从终端中以另一 Locale 运行程序](#.E4.BB.8E.E7.BB.88.E7.AB.AF.E4.B8.AD.E4.BB.A5.E5.8F.A6.E4.B8.80_Locale_.E8.BF.90.E8.A1.8C.E7.A8.8B.E5.BA.8F)
-    *   [6.2 从桌面以另一 Locale 运行程序](#.E4.BB.8E.E6.A1.8C.E9.9D.A2.E4.BB.A5.E5.8F.A6.E4.B8.80_Locale_.E8.BF.90.E8.A1.8C.E7.A8.8B.E5.BA.8F)
-    *   [6.3 Python, ViM 和 UTF-8](#Python.2C_ViM_.E5.92.8C_UTF-8)
-*   [7 排除问题](#.E6.8E.92.E9.99.A4.E9.97.AE.E9.A2.98)
-    *   [7.1 我的终端不支持 UTF-8](#.E6.88.91.E7.9A.84.E7.BB.88.E7.AB.AF.E4.B8.8D.E6.94.AF.E6.8C.81_UTF-8)
-        *   [7.1.1 Gnome-terminal / rxvt-unicode 不支持 UTF-8](#Gnome-terminal_.2F_rxvt-unicode_.E4.B8.8D.E6.94.AF.E6.8C.81_UTF-8)
-    *   [7.2 我的系统的语言还是不对](#.E6.88.91.E7.9A.84.E7.B3.BB.E7.BB.9F.E7.9A.84.E8.AF.AD.E8.A8.80.E8.BF.98.E6.98.AF.E4.B8.8D.E5.AF.B9)
-*   [8 另见](#.E5.8F.A6.E8.A7.81)
+*   [5 自定义 Locale](#自定义_Locale)
+    *   [5.1 设置每周的第一天](#设置每周的第一天)
+*   [6 提示和技巧](#提示和技巧)
+    *   [6.1 从终端中以另一 Locale 运行程序](#从终端中以另一_Locale_运行程序)
+    *   [6.2 从桌面以另一 Locale 运行程序](#从桌面以另一_Locale_运行程序)
+    *   [6.3 Python, ViM 和 UTF-8](#Python,_ViM_和_UTF-8)
+*   [7 排除问题](#排除问题)
+    *   [7.1 我的终端不支持 UTF-8](#我的终端不支持_UTF-8)
+        *   [7.1.1 Gnome-terminal / rxvt-unicode 不支持 UTF-8](#Gnome-terminal_/_rxvt-unicode_不支持_UTF-8)
+    *   [7.2 我的系统的语言还是不对](#我的系统的语言还是不对)
+*   [8 另见](#另见)
 
 ## 生成 locale
 
@@ -97,7 +97,7 @@ LC_TIME=en_DK.UTF-8
 
 这些 `locale.conf` 文件的优先级定义在 `/etc/profile.d/locale.sh` 中.
 
-参阅 [#支持的变量](#.E6.94.AF.E6.8C.81.E7.9A.84.E5.8F.98.E9.87.8F), [locale.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5) 和相关连的文章获得更多细节.
+参阅 [#支持的变量](#支持的变量), [locale.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5) 和相关连的文章获得更多细节.
 
 `locale.conf` 的变更会在下次登录时生效,要立刻应用新的设置的话,可以运行:
 
@@ -130,12 +130,12 @@ $ export LANG="en_AU.UTF-8"
 
 `locale.conf` files support the following environment variables:
 
-*   [LANG](#LANG:_.E9.BB.98.E8.AE.A4.E7.9A.84_Locale)
-*   [LANGUAGE](#LANGUAGE:_.E5.90.8E.E5.A4.87_Locale)
+*   [LANG](#LANG:_默认的_Locale)
+*   [LANGUAGE](#LANGUAGE:_后备_Locale)
 *   `LC_CTYPE`
 *   `LC_NUMERIC`
-*   [LC_TIME](#LC_TIME:_.E6.97.B6.E9.97.B4.E5.92.8C.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)
-*   [LC_COLLATE](#LC_COLLATE:_.E6.8E.92.E5.BA.8F.E6.A0.BC.E5.BC.8F)
+*   [LC_TIME](#LC_TIME:_时间和日期格式)
+*   [LC_COLLATE](#LC_COLLATE:_排序格式)
 *   `LC_MONETARY`
 *   `LC_MESSAGES`
 *   `LC_PAPER`
@@ -187,7 +187,7 @@ LANGUAGE="zh_CN:en_GB:en"
 
 `/usr/share/i18n/locales/` 存放着所有的 Locale,并且可以被修改以适应不同的需要.
 
-记得在修改 Locale 文件以后[重新生成](#.E7.94.9F.E6.88.90_locale) Locale 并重新启动以让新的 Locales 生效.
+记得在修改 Locale 文件以后[重新生成](#生成_locale) Locale 并重新启动以让新的 Locales 生效.
 
 ### 设置每周的第一天
 
@@ -257,7 +257,7 @@ $ cp /usr/share/applications/abiword.desktop ~/.local/share/applications/
 ## 另见
 
 *   [Gentoo Linux 本地化指南](http://www.gentoo.org/doc/en/guide-localization.xml)
-*   [Gentoo Wiki Archives: Locales](http://www.gentoo-wiki.info/Locales)
+*   [http://wikigentoo.ksiezyc.pl/Locales.htm](http://wikigentoo.ksiezyc.pl/Locales.htm)
 *   [ICU's interactive collation testing](http://demo.icu-project.org/icu-bin/locexp?_=en_US&x=col)
 *   [Free Standards Group Open Internationalisation Initiative](http://www.openi18n.org/)
 *   [*The Single UNIX Specification* definition of Locale](http://pubs.opengroup.org/onlinepubs/007908799/xbd/locale.html) by The Open Group

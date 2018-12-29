@@ -15,12 +15,12 @@
 *   [1 Installazione](#Installazione)
 *   [2 Configurazione](#Configurazione)
     *   [2.1 Configurazione alternativa](#Configurazione_alternativa)
-*   [3 Tips & Tricks](#Tips_.26_Tricks)
+*   [3 Tips & Tricks](#Tips_&_Tricks)
     *   [3.1 Esempi di eventi](#Esempi_di_eventi)
     *   [3.2 Abilitare il controllo del volume](#Abilitare_il_controllo_del_volume)
     *   [3.3 Abilitare il controllo della retroilluminazione](#Abilitare_il_controllo_della_retroilluminazione)
-    *   [3.4 Abilitare/disattivare Wi-fi](#Abilitare.2Fdisattivare_Wi-fi)
-    *   [3.5 Spegnere l'alimentazione del monitor di un laptop](#Spegnere_l.27alimentazione_del_monitor_di_un_laptop)
+    *   [3.4 Abilitare/disattivare Wi-fi](#Abilitare/disattivare_Wi-fi)
+    *   [3.5 Spegnere l'alimentazione del monitor di un laptop](#Spegnere_l'alimentazione_del_monitor_di_un_laptop)
     *   [3.6 Ottenere il nome utente del display corrente](#Ottenere_il_nome_utente_del_display_corrente)
     *   [3.7 Tasti di scelta rapida ACPI](#Tasti_di_scelta_rapida_ACPI)
 *   [4 Altre risorse](#Altre_risorse)
@@ -90,7 +90,7 @@ $4 00000b31
 
 Come si può notare, il pulsante Sleep in uscita, nell'esempio, è stato riconosciuto come *SBTN*, piuttosto che con l'etichetta *SLPB*, come specificato nel file `/etc/acpi/handler.sh`. Al fine di far funzionare correttamente il tasto Sleep su questa macchina, avremmo bisogno di sostituire *SLPB)* con *SBTN)*.
 
-Utilizzando queste informazioni come base, si può facilmente personalizzare il file `/etc/acpi/handler.sh` in modo da eseguire una varietà di comandi a seconda di quale evento viene attivato. Si veda la sezione [Tips & Tricks](#Tips_.26_Tricks) per altri comandi di uso comune.
+Utilizzando queste informazioni come base, si può facilmente personalizzare il file `/etc/acpi/handler.sh` in modo da eseguire una varietà di comandi a seconda di quale evento viene attivato. Si veda la sezione [Tips & Tricks](#Tips_&_Tricks) per altri comandi di uso comune.
 
 ### Configurazione alternativa
 
@@ -288,7 +288,7 @@ esac
 
 ### Spegnere l'alimentazione del monitor di un laptop
 
-Tratto dal [Wiki di Gentoo](http://www.gentoo-wiki.info/ACPI/Configuration) arriva questo piccolo gioiello. Aggiungendo queste stringhe al fondo del file `/etc/acpi/actions/lm_lid.sh` o alla sezione *button/lid* di `/etc/acpi/handler.sh`, si ottiene lo spegnimento della reto-illuminazione del display LCD quando il coperchio è chiuso, e lo riaccende quando il coperchio si riapre.
+Aggiungendo queste stringhe al fondo del file `/etc/acpi/actions/lm_lid.sh` o alla sezione *button/lid* di `/etc/acpi/handler.sh`, si ottiene lo spegnimento della reto-illuminazione del display LCD quando il coperchio è chiuso, e lo riaccende quando il coperchio si riapre.
 
 ```
 case $(cat /proc/acpi/button/lid/LID0/state | awk '{print $2}') in
@@ -402,4 +402,3 @@ per esempio, altrimenti non verrà rilevato il programma a livello utente e ne v
 ## Altre risorse
 
 *   [acpid homepage](http://acpid.sourceforge.net/)
-*   [Gentoo wiki](http://www.gentoo-wiki.info/ACPI/Configuration)

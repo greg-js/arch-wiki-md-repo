@@ -11,10 +11,8 @@ This article describes how [Yubico](https://yubico.com)'s [YubiKey](https://en.w
         *   [1.2.2 Outputs](#Outputs)
     *   [1.3 The button](#The_button)
     *   [1.4 USB connection modes](#USB_connection_modes)
-        *   [1.4.1 What does a mode do ?](#What_does_a_mode_do_?)
-        *   [1.4.2 Which mode is used?](#Which_mode_is_used?)
-        *   [1.4.3 Get enabled modes](#Get_enabled_modes)
-        *   [1.4.4 Set the enabled modes](#Set_the_enabled_modes)
+        *   [1.4.1 Get enabled modes](#Get_enabled_modes)
+        *   [1.4.2 Set the enabled modes](#Set_the_enabled_modes)
     *   [1.5 Two Slots](#Two_Slots)
         *   [1.5.1 Configuration of the slots](#Configuration_of_the_slots)
     *   [1.6 The LED](#The_LED)
@@ -151,42 +149,24 @@ In the OTP mode a short press yields slot 1 and a long press yields slot 2.
 
 ### USB connection modes
 
-Think of these modes as different subsystems on the key that handle different parts of the keys functionality.
+Depending on the YubiKey model, the device provides up to three different USB interfaces with their associated protocols. Two of the interfaces implement the USB HID (Human Interface Device) device class; the third is a smart card interface (CCID). The YubiKey is a multi-function USB device, just like a USB printer that can also function as a scanner.
 
-YubiKeys support up to 3 different USB connection/transport modes (depending on model):
+The following table shows which interfaces the different applications use:
 
-	U2F mode
+| Application | USB Interface |
+| OTP | Keyboard HID |
+| FIDO | Other HID |
+| PIV | CCID |
+| OpenPGP | CCID |
+| OATH | CCID |
 
-	This subsystem only supports the U2F protocol. It comes fully configured when you buy a YubiKey. It does neither need, nor support any configuration. It can only be enabled / disabled by setting the mode.
+All three interfaces can be independently enabled or disabled. The ykman program uses the term "manage connection modes" and uses OTP, FIDO, and CCID as selectors for which modes should be enabled.
 
-	OTP mode
+**Note:** The old U2F mode has been renamed and is now called FIDO in ykman 0.6.1 and later (released 2018-04-16) [https://developers.yubico.com/yubikey-manager/Release_Notes.html](https://developers.yubico.com/yubikey-manager/Release_Notes.html)
 
-	This subsystem is responsible for OTP, Challenge-Response, Static Passwords. If the transport mode OTP is enabled, the two YubiKey Slots, long press and short press, can be configured and used. These slots can have one of the following credentials configured: a [Yubico OTP](https://developers.yubico.com/OTP/) (which is what comes preconfigured in the short press slot on a new key), a static password, a challenge-response credential, an OATH-HOTP credential. All this functionality is found in the `ykman slot` commands.
+The set of enabled USB interfaces affects which applications on the key can be accessed. As an example, if only the HID interfaces are enabled, the applications dependent on the CCID interface are unavailable.
 
-	CCID mode
-
-	This is the subsystem allowing the key to act as a Smartcard (using CCID protocol).
-
-**Note:** See [#The LED](#The_LED) about CCID related blinking.
-
-#### What does a mode do ?
-
-A mode defines:
-
-*   how the YubiKey is accessed (e.g. if the CCID mode is activated, then `ykman` will access the YubiKey in CCID mode, meaning if you do not have `pcscd` running, then even a `ykman info` will fail) and
-*   what functionality is available or not (e.g. if you deactivate the U2F mode, then your YubiKey will not handle any U2F requests anymore)
-
-These modes can be activated/deactivated independently from each other.
-
-#### Which mode is used?
-
-Only one connection mode will be used at any given point in time to communicate with the YubiKey.
-
-When you plug in your YubiKey one, connection mode will be chosen. The order of preference (TODO:verify) is:
-
-*   If the **CCID mode** is activated, this mode will be chosen.
-*   Otherwise (so CCID deactivated and) if the **U2F mode** is activated, this mode will be chosen.
-*   Otherwise (so CCID and U2F deactivated and) if the **OTP mode** is activated, this mode will be chosen.
+Which application on the key is chosen is determined by the host application and is a combination of USB interface and an application selection mechanism. For example, if the host application wants to communicate with the PIV application on the key, it accesses the key using the CCID interface and using the protocols defined by CCID sends a 'select application' command to the key selecting the PIV application.
 
 #### Get enabled modes
 
@@ -194,7 +174,7 @@ When you plug in your YubiKey one, connection mode will be chosen. The order of 
 
  `Current connection mode is: OTP+U2F+CCID` 
 
-Meaning that currently the OTP, U2F and CCID subsystem of the key are enabled .
+Meaning that currently the OTP, U2F and CCID subsystem of the key are enabled.
 
 #### Set the enabled modes
 

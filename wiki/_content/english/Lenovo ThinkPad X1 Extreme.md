@@ -35,7 +35,7 @@ BIOS updates are normally available via [fwupd](/index.php/Fwupd "Fwupd"), howev
 
 ### Graphics
 
-Text mode works out of the box. Starting X11 requires configuring the right card ID in [Xorg.conf](/index.php/Xorg.conf "Xorg.conf"), e.g.:
+Text mode works out of the box. Starting X11 requires installing [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) or configuring the right card ID for the default "modesetting" driver in [Xorg.conf](/index.php/Xorg.conf "Xorg.conf"), e.g.:
 
 ```
 Section "Device"

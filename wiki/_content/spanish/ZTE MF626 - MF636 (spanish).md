@@ -1,18 +1,18 @@
 **Estado de la traducción**
-Este artículo es una traducción de [ZTE MF626 / MF636](/index.php/ZTE_MF626_/_MF636 "ZTE MF626 / MF636"), revisada por última vez el **2018-12-26**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=ZTE_MF626_/_MF636&diff=0&oldid=557086) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [ZTE MF626 / MF636](/index.php/ZTE_MF626_/_MF636 "ZTE MF626 / MF636"), revisada por última vez el **2018-12-27**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=ZTE_MF626_/_MF636&diff=0&oldid=557086) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
 *   [USB 3G Modem](/index.php/USB_3G_Modem "USB 3G Modem")
 
-El ZTE MF626 / MF636 es un módem USB que combina 3G+/3G con EDGE/GPRS en un dispositivo compacto. Cuenta con un lector de tarjetas micro-SD integrado. Puede enviar información a velocidades de hasta 4.5 Mbps en redes 3G+ y recibir información a velocidades de hasta 7.2 Mbps. También se conoce como el adaptador USB rojo de Rogers (compañía telefónica canadiense).
+El ZTE MF626 / MF636 es un módem USB que combina 3G+/3G con EDGE/GPRS en un dispositivo compacto. Cuenta con un lector de tarjetas micro-SD integrado. Puede enviar información a velocidades de hasta 4.5 Mbps en redes 3G+ y recibir información a velocidades de hasta 7.2 Mbps. También se le conoce como el adaptador USB rojo Rogers (una compañía telefónica canadiense).
 
 ## Contents
 
 *   [1 Configuración](#Configuración)
     *   [1.1 Deshabilitar el modo CD en el dispositivo](#Deshabilitar_el_modo_CD_en_el_dispositivo)
     *   [1.2 Deshabilitar el modo CD en el dispositivo con wvdial](#Deshabilitar_el_modo_CD_en_el_dispositivo_con_wvdial)
-    *   [1.3 Configurar las reglas de udev](#Configurar_las_reglas_de_udev)
+    *   [1.3 Configurar las reglas udev](#Configurar_las_reglas_udev)
     *   [1.4 Crear una configuración wvdial](#Crear_una_configuración_wvdial)
 *   [2 Conectarse a internet](#Conectarse_a_internet)
 *   [3 Consejos y trucos](#Consejos_y_trucos)
@@ -65,9 +65,9 @@ Init2 = AT+ZCDRUN=8
 
 ```
 
-Ejecute *wvdial*, debería usar estas órdenes y fallar al intentar conectarse. Una vez que salga, desconecte el USB y vuelva a conectarlo, y debería ser reconocido como un módem.
+Ejecute *wvdial*, debería usar estas órdenes y fallar al intentar conectarse. Una vez que se salga, desconecte el USB y vuelva a conectarlo, y debería ser reconocido como un módem.
 
-### Configurar las reglas de udev
+### Configurar las reglas udev
 
 Cree la siguiente regla [udev](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)"):
 

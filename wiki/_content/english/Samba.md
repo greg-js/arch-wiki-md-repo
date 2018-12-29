@@ -272,7 +272,7 @@ By default Samba allows the usage of (possible) insecure and out-of-dated protoc
 
 **Tip:** Use `server min protocol = SMB3` when clients should only connect using the latest SMB3 protocol, e.g. on clients running Windows 8 and later.
 
-[Clients](#Manual_mounting) using `mount.cifs` should specify the correct `vers=*`, e.g.:
+[Clients](#Manual_mounting) using `mount.cifs` may need to specify the correct `vers=*`, e.g.:
 
 ```
 # mount -t cifs //*SERVER*/*sharename* /mnt/*mountpoint* -o username=*username*,password=*password*,iocharset=*utf8*,vers=*3.1.1*
@@ -283,22 +283,17 @@ See [mount.cifs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.cifs.8) for
 
 #### Use native SMB transport encryption
 
-Native SMB transport encryption is available in SMB version 3.0 or newer. It is only offered by Samba if `server max protocol` is set to `SMB3` or newer. Clients supporting this type of encryption include Windows 8 and newer, Windows server 2012 and newer, and smbclient of Samba 4.1 and newer.
+Native SMB transport encryption is available in SMB version 3.0 or newer. Clients supporting this type of encryption include Windows 8 and newer, Windows server 2012 and newer, and smbclient of Samba 4.1 and newer.
 
-To use native SMB transport encryption by default, set the `smb encrypt` parameter globally and/or by share. Possible values are *off* (or disabled), *enabled* (or *auto* or *if_required*), *desired*, and *required* (or *mandatory*). A special value is *default* which is the implicit default setting of *enabled*:
+To use native SMB transport encryption by default, set the `smb encrypt` parameter globally and/or by share. Possible values are `off`, `enabled` (default value), `desired`, or `required`:
 
  `/etc/samba/smb.conf` 
 ```
 [global]
-  smb encrypt = required
-  ...
-
-[media]
   smb encrypt = desired
-  ...
 ```
 
-See [smb.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5) for more information.
+See [smb.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5) for more information, especially the paragraphs *Effects for SMB1* and *Effects for SMB2*.
 
 **Tip:** When [mounting](#Manual_mounting) a share, specify the `seal` mount option to force usage of encryption.
 

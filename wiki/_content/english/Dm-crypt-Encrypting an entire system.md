@@ -443,8 +443,6 @@ HOOKS=(base **systemd** autodetect **keyboard** **sd-vconsole** modconf block **
 
 ```
 
-Note that the `systemd` hook replaces the default `udev` hook.
-
 See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for details and other hooks that you may need.
 
 ### Configuring the boot loader

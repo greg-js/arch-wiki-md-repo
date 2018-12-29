@@ -9,18 +9,18 @@
 
 ## Contents
 
-*   [1 필요한 로캘 활성화](#.ED.95.84.EC.9A.94.ED.95.9C_.EB.A1.9C.EC.BA.98_.ED.99.9C.EC.84.B1.ED.99.94)
-    *   [1.1 한국어 예시](#.ED.95.9C.EA.B5.AD.EC.96.B4_.EC.98.88.EC.8B.9C)
-*   [2 시스템 로캘 설정](#.EC.8B.9C.EC.8A.A4.ED.85.9C_.EB.A1.9C.EC.BA.98_.EC.84.A4.EC.A0.95)
-*   [3 안전 로캘 설정](#.EC.95.88.EC.A0.84_.EB.A1.9C.EC.BA.98_.EC.84.A4.EC.A0.95)
-*   [4 개인 사용자 로캘 설정](#.EA.B0.9C.EC.9D.B8_.EC.82.AC.EC.9A.A9.EC.9E.90_.EB.A1.9C.EC.BA.98_.EC.84.A4.EC.A0.95)
-*   [5 정렬 순서 설정](#.EC.A0.95.EB.A0.AC_.EC.88.9C.EC.84.9C_.EC.84.A4.EC.A0.95)
-*   [6 주일의 첫 번째 요일 설정](#.EC.A3.BC.EC.9D.BC.EC.9D.98_.EC.B2.AB_.EB.B2.88.EC.A7.B8_.EC.9A.94.EC.9D.BC_.EC.84.A4.EC.A0.95)
-*   [7 문제 해결](#.EB.AC.B8.EC.A0.9C_.ED.95.B4.EA.B2.B0)
-    *   [7.1 터미널에서 UTF-8을 지원하지 못할 경우](#.ED.84.B0.EB.AF.B8.EB.84.90.EC.97.90.EC.84.9C_UTF-8.EC.9D.84_.EC.A7.80.EC.9B.90.ED.95.98.EC.A7.80_.EB.AA.BB.ED.95.A0_.EA.B2.BD.EC.9A.B0)
-        *   [7.1.1 Xterm에서 UTF-8을 지원하지 못할 경우](#Xterm.EC.97.90.EC.84.9C_UTF-8.EC.9D.84_.EC.A7.80.EC.9B.90.ED.95.98.EC.A7.80_.EB.AA.BB.ED.95.A0_.EA.B2.BD.EC.9A.B0)
-        *   [7.1.2 Gnome-터미널과 rxvt-unicode 터미널에서 UTF-8을 지원하지 못할 경우](#Gnome-.ED.84.B0.EB.AF.B8.EB.84.90.EA.B3.BC_rxvt-unicode_.ED.84.B0.EB.AF.B8.EB.84.90.EC.97.90.EC.84.9C_UTF-8.EC.9D.84_.EC.A7.80.EC.9B.90.ED.95.98.EC.A7.80_.EB.AA.BB.ED.95.A0_.EA.B2.BD.EC.9A.B0)
-*   [8 같이 보기](#.EA.B0.99.EC.9D.B4_.EB.B3.B4.EA.B8.B0)
+*   [1 필요한 로캘 활성화](#필요한_로캘_활성화)
+    *   [1.1 한국어 예시](#한국어_예시)
+*   [2 시스템 로캘 설정](#시스템_로캘_설정)
+*   [3 안전 로캘 설정](#안전_로캘_설정)
+*   [4 개인 사용자 로캘 설정](#개인_사용자_로캘_설정)
+*   [5 정렬 순서 설정](#정렬_순서_설정)
+*   [6 주일의 첫 번째 요일 설정](#주일의_첫_번째_요일_설정)
+*   [7 문제 해결](#문제_해결)
+    *   [7.1 터미널에서 UTF-8을 지원하지 못할 경우](#터미널에서_UTF-8을_지원하지_못할_경우)
+        *   [7.1.1 Xterm에서 UTF-8을 지원하지 못할 경우](#Xterm에서_UTF-8을_지원하지_못할_경우)
+        *   [7.1.2 Gnome-터미널과 rxvt-unicode 터미널에서 UTF-8을 지원하지 못할 경우](#Gnome-터미널과_rxvt-unicode_터미널에서_UTF-8을_지원하지_못할_경우)
+*   [8 같이 보기](#같이_보기)
 
 ## 필요한 로캘 활성화
 
@@ -184,7 +184,7 @@ UTF-8 로캘에서 이 프로그램을 실행해야 한다. 그렇지 않으면 
 ## 같이 보기
 
 *   [젠투 리눅스 지역화 안내](http://www.gentoo.org/doc/en/guide-localization.xml)
-*   [젠투 위키 보관 자료: 로캘](http://www.gentoo-wiki.info/Locales)
+*   [http://wikigentoo.ksiezyc.pl/Locales.htm](http://wikigentoo.ksiezyc.pl/Locales.htm)
 *   [ICU 사용자 입력 정렬 시험](http://demo.icu-project.org/icu-bin/locexp?_=en_US&x=col)
 *   [Free Standards Group Open 지역화 방안](http://www.openi18n.org/)
 *   [*The Single UNIX Specification* 로캘 정의](http://pubs.opengroup.org/onlinepubs/007908799/xbd/locale.html) (Open Group)

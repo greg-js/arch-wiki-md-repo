@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [sudo](/index.php/Sudo "Sudo"), revisada por última vez el **2018-08-21**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Sudo&diff=0&oldid=549220) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [sudo](/index.php/Sudo "Sudo"), revisada por última vez el **2018-12-27**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Sudo&diff=0&oldid=559971) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -213,7 +213,7 @@ Defaults:%wheel targetpw
 
 ### Desactivar el acceso de superusuario
 
-Los usuarios pueden querer deshabilitar el inicio de sesión del superusuario. Sin este, los atacantes deben primero adivinar un nombre de usuario configurado como sudoer, así como su contraseña. Véase por ejemplo [Denegar](/index.php/Secure_Shell_(Espa%C3%B1ol)#Denegar "Secure Shell (Español)").
+Los usuarios pueden querer deshabilitar el inicio de sesión del superusuario. Sin este, los atacantes deben primero adivinar un nombre de usuario configurado como sudoer, así como su contraseña. Véase por ejemplo [Denegar](/index.php/OpenSSH_(Espa%C3%B1ol)#Denegar "OpenSSH (Español)").
 
 **Advertencia:**
 
@@ -274,7 +274,7 @@ Alternativamente, instale [kdesudo](https://aur.archlinux.org/packages/kdesudo/)
 
 Digamos que crea 3 usuarios: admin, devel y joe. El usuario «admin» se usa para journalctl, systemctl, mount, kill e iptables; «devel» se usa para instalar paquetes y editar archivos de configuración; y «joe» es el usuario con el que inicia sesión. Para permitir a «joe» reiniciar, apagar y usar netctl, haríamos lo siguiente:
 
-Edite `/etc/pam.d/su` y `/etc/pam.d/su-1` Requiere que el usuario esté en el grupo wheel, pero no ponga a nadie en él.
+Edite `/etc/pam.d/su` y `/etc/pam.d/su-l` Requiere que el usuario esté en el grupo wheel, pero no ponga a nadie en él.
 
 ```
 #%PAM-1.0

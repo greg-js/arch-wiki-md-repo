@@ -100,6 +100,7 @@ You will need to add a user for a monitor to connect to the server and issue com
 ...
 [*upsuser*]
      password = *password*
+     upsmon master
      actions = SET
      instcmds = ALL
 

@@ -9,17 +9,17 @@
 
 ## Contents
 
-*   [1 تمكين المحليّات الضرورية](#.D8.AA.D9.85.D9.83.D9.8A.D9.86_.D8.A7.D9.84.D9.85.D8.AD.D9.84.D9.8A.D9.91.D8.A7.D8.AA_.D8.A7.D9.84.D8.B6.D8.B1.D9.88.D8.B1.D9.8A.D8.A9)
-    *   [1.1 مثال الإنجليزية الأمريكية](#.D9.85.D8.AB.D8.A7.D9.84_.D8.A7.D9.84.D8.A5.D9.86.D8.AC.D9.84.D9.8A.D8.B2.D9.8A.D8.A9_.D8.A7.D9.84.D8.A3.D9.85.D8.B1.D9.8A.D9.83.D9.8A.D8.A9)
-*   [2 تعيين المحليّة على مستوى النظام](#.D8.AA.D8.B9.D9.8A.D9.8A.D9.86_.D8.A7.D9.84.D9.85.D8.AD.D9.84.D9.8A.D9.91.D8.A9_.D8.B9.D9.84.D9.89_.D9.85.D8.B3.D8.AA.D9.88.D9.89_.D8.A7.D9.84.D9.86.D8.B8.D8.A7.D9.85)
-*   [3 تعيين المحليّات البديلة](#.D8.AA.D8.B9.D9.8A.D9.8A.D9.86_.D8.A7.D9.84.D9.85.D8.AD.D9.84.D9.8A.D9.91.D8.A7.D8.AA_.D8.A7.D9.84.D8.A8.D8.AF.D9.8A.D9.84.D8.A9)
-*   [4 تعيين محليّة لكل مستخدم](#.D8.AA.D8.B9.D9.8A.D9.8A.D9.86_.D9.85.D8.AD.D9.84.D9.8A.D9.91.D8.A9_.D9.84.D9.83.D9.84_.D9.85.D8.B3.D8.AA.D8.AE.D8.AF.D9.85)
-*   [5 تعيين الترتيب](#.D8.AA.D8.B9.D9.8A.D9.8A.D9.86_.D8.A7.D9.84.D8.AA.D8.B1.D8.AA.D9.8A.D8.A8)
-*   [6 تعيين اليوم الأول من الأسبوع](#.D8.AA.D8.B9.D9.8A.D9.8A.D9.86_.D8.A7.D9.84.D9.8A.D9.88.D9.85_.D8.A7.D9.84.D8.A3.D9.88.D9.84_.D9.85.D9.86_.D8.A7.D9.84.D8.A3.D8.B3.D8.A8.D9.88.D8.B9)
-*   [7 إصلاح المشاكل](#.D8.A5.D8.B5.D9.84.D8.A7.D8.AD_.D8.A7.D9.84.D9.85.D8.B4.D8.A7.D9.83.D9.84)
-    *   [7.1 طرفيّتي لا تدعم UTF-8](#.D8.B7.D8.B1.D9.81.D9.8A.D9.91.D8.AA.D9.8A_.D9.84.D8.A7_.D8.AA.D8.AF.D8.B9.D9.85_UTF-8)
-        *   [7.1.1 Xterm لا تدعم UTF-8](#Xterm_.D9.84.D8.A7_.D8.AA.D8.AF.D8.B9.D9.85_UTF-8)
-        *   [7.1.2 طرفية جنوم أو rxvt-unicode لا تدعمان UTF-8](#.D8.B7.D8.B1.D9.81.D9.8A.D8.A9_.D8.AC.D9.86.D9.88.D9.85_.D8.A3.D9.88_rxvt-unicode_.D9.84.D8.A7_.D8.AA.D8.AF.D8.B9.D9.85.D8.A7.D9.86_UTF-8)
+*   [1 تمكين المحليّات الضرورية](#تمكين_المحليّات_الضرورية)
+    *   [1.1 مثال الإنجليزية الأمريكية](#مثال_الإنجليزية_الأمريكية)
+*   [2 تعيين المحليّة على مستوى النظام](#تعيين_المحليّة_على_مستوى_النظام)
+*   [3 تعيين المحليّات البديلة](#تعيين_المحليّات_البديلة)
+*   [4 تعيين محليّة لكل مستخدم](#تعيين_محليّة_لكل_مستخدم)
+*   [5 تعيين الترتيب](#تعيين_الترتيب)
+*   [6 تعيين اليوم الأول من الأسبوع](#تعيين_اليوم_الأول_من_الأسبوع)
+*   [7 إصلاح المشاكل](#إصلاح_المشاكل)
+    *   [7.1 طرفيّتي لا تدعم UTF-8](#طرفيّتي_لا_تدعم_UTF-8)
+        *   [7.1.1 Xterm لا تدعم UTF-8](#Xterm_لا_تدعم_UTF-8)
+        *   [7.1.2 طرفية جنوم أو rxvt-unicode لا تدعمان UTF-8](#طرفية_جنوم_أو_rxvt-unicode_لا_تدعمان_UTF-8)
 *   [8 See also](#See_also)
 
 ## تمكين المحليّات الضرورية
@@ -192,7 +192,7 @@ xterm تدعم UTF-8 فقط إن شُغِّل كـ `uxterm` أو `xterm -u8`.
 ## See also
 
 *   [Gentoo Linux Localization Guide](http://www.gentoo.org/doc/en/guide-localization.xml)
-*   [Gentoo Wiki Archives: Locales](http://www.gentoo-wiki.info/Locales)
+*   [http://wikigentoo.ksiezyc.pl/Locales.htm](http://wikigentoo.ksiezyc.pl/Locales.htm)
 *   [ICU's interactive collation testing](http://demo.icu-project.org/icu-bin/locexp?_=en_US&x=col)
 *   [Free Standards Group Open Internationalisation Initiative](http://www.openi18n.org/)
 *   [*The Single UNIX Specification* definition of Locale](http://pubs.opengroup.org/onlinepubs/007908799/xbd/locale.html) by The Open Group

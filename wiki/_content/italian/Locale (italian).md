@@ -187,7 +187,7 @@ xterm supporta UTF-8 solo se eseguito come `uxterm` o `xterm -u8`.
 ## Altre Fonti
 
 *   [Guida di Gentoo Linux sulla localizzazione](http://www.gentoo.org/doc/en/guide-localization.xml)
-*   [Gentoo Wiki Archives: Locales](http://www.gentoo-wiki.info/Locales)
+*   [http://wikigentoo.ksiezyc.pl/Locales.htm](http://wikigentoo.ksiezyc.pl/Locales.htm)
 *   [Test interattivo ICU sull'ordinamento](http://demo.icu-project.org/icu-bin/locexp?_=en_US&x=col)
 *   [Free Standards Group Open Internationalisation Initiative](http://www.openi18n.org/)
 *   [*The Single UNIX Specification* definizione di locale](http://pubs.opengroup.org/onlinepubs/007908799/xbd/locale.html) dell'Open Group

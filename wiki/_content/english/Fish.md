@@ -140,7 +140,7 @@ However some workarounds are described in the [fish wiki](https://github.com/fis
 
 ### Command chaining
 
-Command chaining `&&` and `||` is not implemented and the syntax to achieve similar results in *fish* is respectively `; and` and `; or`. Some keybindings can be set for automatic substitution as described in the [fish wiki](https://github.com/fish-shell/fish-shell/wiki/Bash-Style-Command-Substitution-and-Chaining-(!!-!$-&&-%7C%7C)#getting--and-).
+Command chaining `&&` and `||` is not implemented in versions older than 3.0 and the recommended syntax to achieve similar results in *fish* is respectively `; and` and `; or`. Some keybindings can be set for automatic substitution as described in the [fish wiki](https://github.com/fish-shell/fish-shell/wiki/Bash-Style-Command-Substitution-and-Chaining-(!!-!$-&&-%7C%7C)#getting--and-).
 
 ### Disable greeting
 

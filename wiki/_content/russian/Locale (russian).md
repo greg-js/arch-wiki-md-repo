@@ -2,23 +2,23 @@
 
 ## Contents
 
-*   [1 Генерирование локалей](#.D0.93.D0.B5.D0.BD.D0.B5.D1.80.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BB.D0.BE.D0.BA.D0.B0.D0.BB.D0.B5.D0.B9)
-*   [2 Установка локали](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BB.D0.BE.D0.BA.D0.B0.D0.BB.D0.B8)
-*   [3 Дополнительно](#.D0.94.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE)
-*   [4 Переменные окружения](#.D0.9F.D0.B5.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.BD.D1.8B.D0.B5_.D0.BE.D0.BA.D1.80.D1.83.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F)
-    *   [4.1 LANG: локаль по умолчанию](#LANG:_.D0.BB.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C_.D0.BF.D0.BE_.D1.83.D0.BC.D0.BE.D0.BB.D1.87.D0.B0.D0.BD.D0.B8.D1.8E)
-    *   [4.2 LANGUAGE: запасные локали](#LANGUAGE:_.D0.B7.D0.B0.D0.BF.D0.B0.D1.81.D0.BD.D1.8B.D0.B5_.D0.BB.D0.BE.D0.BA.D0.B0.D0.BB.D0.B8)
-    *   [4.3 LC_TIME: формат даты и времени](#LC_TIME:_.D1.84.D0.BE.D1.80.D0.BC.D0.B0.D1.82_.D0.B4.D0.B0.D1.82.D1.8B_.D0.B8_.D0.B2.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.B8)
-    *   [4.4 LC_COLLATE: порядок сортировки](#LC_COLLATE:_.D0.BF.D0.BE.D1.80.D1.8F.D0.B4.D0.BE.D0.BA_.D1.81.D0.BE.D1.80.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.BA.D0.B8)
+*   [1 Генерирование локалей](#Генерирование_локалей)
+*   [2 Установка локали](#Установка_локали)
+*   [3 Дополнительно](#Дополнительно)
+*   [4 Переменные окружения](#Переменные_окружения)
+    *   [4.1 LANG: локаль по умолчанию](#LANG:_локаль_по_умолчанию)
+    *   [4.2 LANGUAGE: запасные локали](#LANGUAGE:_запасные_локали)
+    *   [4.3 LC_TIME: формат даты и времени](#LC_TIME:_формат_даты_и_времени)
+    *   [4.4 LC_COLLATE: порядок сортировки](#LC_COLLATE:_порядок_сортировки)
 *   [5 LC_ALL](#LC_ALL)
-*   [6 Советы и рекомендации](#.D0.A1.D0.BE.D0.B2.D0.B5.D1.82.D1.8B_.D0.B8_.D1.80.D0.B5.D0.BA.D0.BE.D0.BC.D0.B5.D0.BD.D0.B4.D0.B0.D1.86.D0.B8.D0.B8)
-    *   [6.1 Запуск приложения с другой локалью в терминале](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D1.81_.D0.B4.D1.80.D1.83.D0.B3.D0.BE.D0.B9_.D0.BB.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D1.8E_.D0.B2_.D1.82.D0.B5.D1.80.D0.BC.D0.B8.D0.BD.D0.B0.D0.BB.D0.B5)
-    *   [6.2 Запуск приложения с другой локалью из меню](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D1.81_.D0.B4.D1.80.D1.83.D0.B3.D0.BE.D0.B9_.D0.BB.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D1.8E_.D0.B8.D0.B7_.D0.BC.D0.B5.D0.BD.D1.8E)
-*   [7 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
-    *   [7.1 Эмулятор терминала не поддерживает UTF-8](#.D0.AD.D0.BC.D1.83.D0.BB.D1.8F.D1.82.D0.BE.D1.80_.D1.82.D0.B5.D1.80.D0.BC.D0.B8.D0.BD.D0.B0.D0.BB.D0.B0_.D0.BD.D0.B5_.D0.BF.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.B8.D0.B2.D0.B0.D0.B5.D1.82_UTF-8)
-        *   [7.1.1 gnome-terminal или rxvt-unicode не поддерживают UTF-8](#gnome-terminal_.D0.B8.D0.BB.D0.B8_rxvt-unicode_.D0.BD.D0.B5_.D0.BF.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.B8.D0.B2.D0.B0.D1.8E.D1.82_UTF-8)
-    *   [7.2 Моя система использует неверный язык](#.D0.9C.D0.BE.D1.8F_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.B0_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D1.83.D0.B5.D1.82_.D0.BD.D0.B5.D0.B2.D0.B5.D1.80.D0.BD.D1.8B.D0.B9_.D1.8F.D0.B7.D1.8B.D0.BA)
-*   [8 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
+*   [6 Советы и рекомендации](#Советы_и_рекомендации)
+    *   [6.1 Запуск приложения с другой локалью в терминале](#Запуск_приложения_с_другой_локалью_в_терминале)
+    *   [6.2 Запуск приложения с другой локалью из меню](#Запуск_приложения_с_другой_локалью_из_меню)
+*   [7 Решение проблем](#Решение_проблем)
+    *   [7.1 Эмулятор терминала не поддерживает UTF-8](#Эмулятор_терминала_не_поддерживает_UTF-8)
+        *   [7.1.1 gnome-terminal или rxvt-unicode не поддерживают UTF-8](#gnome-terminal_или_rxvt-unicode_не_поддерживают_UTF-8)
+    *   [7.2 Моя система использует неверный язык](#Моя_система_использует_неверный_язык)
+*   [8 Смотрите также](#Смотрите_также)
 
 ## Генерирование локалей
 
@@ -73,7 +73,7 @@ LC_TIME=en_DK.UTF-8
 
 Приоритет файлов `locale.conf` определяется в `/etc/profile.d/locale.sh`.
 
-Смотрите [#Переменные окружения](#.D0.9F.D0.B5.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.BD.D1.8B.D0.B5_.D0.BE.D0.BA.D1.80.D1.83.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F), [man-страницу](/index.php/Man_page_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Man page (Русский)") `locale.conf (5)` и связанные страницы для получения подробной информации.
+Смотрите [#Переменные окружения](#Переменные_окружения), [man-страницу](/index.php/Man_page_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Man page (Русский)") `locale.conf (5)` и связанные страницы для получения подробной информации.
 
 После внесения изменений в файлы `locale.conf`, они вступят в силу после перезагрузки системы, и для отдельных сеансов пользователей — при входе. Чтобы принудительно обновить локаль в текущем окружении без перезагрузки, выполните:
 
@@ -97,12 +97,12 @@ $ LANG="en_AU.UTF-8" ./my_application.sh
 
 Файлы `locale.conf` могут содержать следующие переменные окружения:
 
-*   [LANG](#LANG:_.D0.BB.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C_.D0.BF.D0.BE_.D1.83.D0.BC.D0.BE.D0.BB.D1.87.D0.B0.D0.BD.D0.B8.D1.8E)
-*   [LANGUAGE](#LANGUAGE:_.D0.B7.D0.B0.D0.BF.D0.B0.D1.81.D0.BD.D1.8B.D0.B5_.D0.BB.D0.BE.D0.BA.D0.B0.D0.BB.D0.B8)
+*   [LANG](#LANG:_локаль_по_умолчанию)
+*   [LANGUAGE](#LANGUAGE:_запасные_локали)
 *   `LC_CTYPE`
 *   `LC_NUMERIC`
-*   [LC_TIME](#LC_TIME:_.D1.84.D0.BE.D1.80.D0.BC.D0.B0.D1.82_.D0.B4.D0.B0.D1.82.D1.8B_.D0.B8_.D0.B2.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.B8)
-*   [LC_COLLATE](#LC_COLLATE:_.D0.BF.D0.BE.D1.80.D1.8F.D0.B4.D0.BE.D0.BA_.D1.81.D0.BE.D1.80.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.BA.D0.B8)
+*   [LC_TIME](#LC_TIME:_формат_даты_и_времени)
+*   [LC_COLLATE](#LC_COLLATE:_порядок_сортировки)
 *   `LC_MONETARY`
 *   `LC_MESSAGES`
 *   `LC_PAPER`
@@ -185,7 +185,7 @@ $ cp /usr/share/applications/abiword.desktop ~/.local/share/applications/
 *   [mlterm](/index.php/Mlterm "Mlterm")
 *   [rxvt-unicode (Русский)](/index.php/Rxvt-unicode_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Rxvt-unicode (Русский)")
 *   [st](/index.php/St "St")
-*   [эмуляторы на основе VTE](/index.php/List_of_applications/Utilities_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9D.D0.B0_.D0.BE.D1.81.D0.BD.D0.BE.D0.B2.D0.B5_VTE "List of applications/Utilities (Русский)")
+*   [эмуляторы на основе VTE](/index.php/List_of_applications/Utilities_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#На_основе_VTE "List of applications/Utilities (Русский)")
 *   [xterm](/index.php/Xterm_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xterm (Русский)") — необходимо запускать с опцией `-u8`. Также вы можете запускать *uxterm*, который предоставляется пакетом [xterm](https://www.archlinux.org/packages/?name=xterm).
 
 #### gnome-terminal или rxvt-unicode не поддерживают UTF-8
@@ -194,12 +194,12 @@ $ cp /usr/share/applications/abiword.desktop ~/.local/share/applications/
 
 ### Моя система использует неверный язык
 
-Возможно, некоторые переменные окружения из `locale.conf` были переопределены каким-то другим файлом, например `~/.pam_environment`, который используется в GNOME. Подробнее смотрите на странице [Переменные окружения#Установка переменных](/index.php/%D0%9F%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BE%D0%BA%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BF.D0.B5.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.BD.D1.8B.D1.85 "Переменные окружения").
+Возможно, некоторые переменные окружения из `locale.conf` были переопределены каким-то другим файлом, например `~/.pam_environment`, который используется в GNOME. Подробнее смотрите на странице [Переменные окружения#Установка переменных](/index.php/%D0%9F%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BE%D0%BA%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F#Установка_переменных "Переменные окружения").
 
 ## Смотрите также
 
 *   [Руководство по локализации Gentoo Linux](http://www.gentoo.org/doc/en/guide-localization.xml)
-*   [Статья о локалях на Gentoo Wiki](http://www.gentoo-wiki.info/Locales)
+*   [http://wikigentoo.ksiezyc.pl/Locales.htm](http://wikigentoo.ksiezyc.pl/Locales.htm)
 *   [Интерактивная проверка сортировки от ICU](http://demo.icu-project.org/icu-bin/locexp?_=en_US&x=col)
 *   [Инициатива Free Standards Group создания открытого стандарта интернационализации](http://www.openi18n.org/)
 *   [О локалях в *The Single UNIX Specification*](http://pubs.opengroup.org/onlinepubs/007908799/xbd/locale.html) от The Open Group

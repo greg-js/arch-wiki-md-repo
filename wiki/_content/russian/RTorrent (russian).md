@@ -285,7 +285,7 @@ $ ssh -t rtorrent@192.168.1.10 'tmux attach -t rtorrent'
 
 Этот скрипт может быть найден в [rtorrent-daemon-git](https://aur.archlinux.org/packages.php?ID=56458) репозитория AUR.
 
-Другие скрипты могут быть найдены на следующих страницах: [Gentoo Wiki Archives](http://www.gentoo-wiki.info/Rtorrent#rtorrent), [Joyent CodeSnippets](http://codesnippets.joyent.com/posts/show/1947) и [ByteTouch](http://www.bytetouch.com/blog/linux/how-to-rtorrent-with-screen-on-debian/).
+Другие скрипты могут быть найдены на следующих страницах: [Joyent CodeSnippets](http://codesnippets.joyent.com/posts/show/1947) и [ByteTouch](http://www.bytetouch.com/blog/linux/how-to-rtorrent-with-screen-on-debian/).
 
 ### Резерв места, предупреждение фрагментации (pre-allocation)
 

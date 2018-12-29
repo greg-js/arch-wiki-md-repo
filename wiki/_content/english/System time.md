@@ -5,7 +5,7 @@ Related articles
 *   [Chrony](/index.php/Chrony "Chrony")
 *   [systemd-timesyncd](/index.php/Systemd-timesyncd "Systemd-timesyncd")
 
-In an operating system, the time (clock) is determined by four parts: time value, time standard, time zone, and Daylight Saving Time *(DST)* if applicable. This article explains what they are and how to read/set them. Two clocks are present on systems: a hardware clock and a system clock which are also detailed in this article.
+In an operating system, the time (clock) is determined by four parts: time value, whether it is local time or UTC or something else, time zone, and Daylight Saving Time *(DST)* if applicable. This article explains what they are and how to read/set them. Two clocks are present on systems: a hardware clock and a system clock which are also detailed in this article.
 
 Standard behavior of most operating systems is:
 
@@ -36,7 +36,7 @@ Standard behavior of most operating systems is:
 
 ## Hardware clock
 
-The **hardware clock** (a.k.a. the Real Time Clock (RTC) or CMOS clock) stores the values of: Year, Month, Day, Hour, Minute, and Seconds. It does not have the ability to store the time standard (localtime or UTC), nor whether DST is used.
+The **hardware clock** (a.k.a. the Real Time Clock (RTC) or CMOS clock) stores the values of: Year, Month, Day, Hour, Minute, and Seconds. Only 2016, or later, [UEFI](/index.php/UEFI "UEFI") firmware has the ability to store the timezone, and whether DST is used.
 
 ### Read hardware clock
 

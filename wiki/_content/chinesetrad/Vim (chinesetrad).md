@@ -510,5 +510,4 @@ Alternatively, install the package [dos2unix](https://www.archlinux.org/packages
 
 ### 其他
 
-*   [HOWTO Vim](http://www.gentoo-wiki.info/HOWTO_VIM) - Gentoo wiki article which this article was based on (author unknown).
 *   [Vivify](http://bytefluent.com/vivify/) - A ColorScheme Editor for Vim

@@ -127,6 +127,10 @@ There are a number of front-ends available for controlling the PulseAudio daemon
 
 	[https://cgit.kde.org/plasma-pa.git](https://cgit.kde.org/plasma-pa.git) || [plasma-pa](https://www.archlinux.org/packages/?name=plasma-pa)
 
+*   **PulseAudio Graph Control** — Electron-based volume and graph control for PulseAudio.
+
+	[https://github.com/futpib/pagraphcontrol#readme](https://github.com/futpib/pagraphcontrol#readme) || [pagraphcontrol-git](https://aur.archlinux.org/packages/pagraphcontrol-git/)
+
 *   **PulseAudio Manager** — Simple GTK+ frontend for PulseAudio.
 
 	[http://0pointer.de/lennart/projects/paman/](http://0pointer.de/lennart/projects/paman/) || [paman](https://aur.archlinux.org/packages/paman/)

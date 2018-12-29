@@ -12,7 +12,7 @@ Artículos relacionados
 
 makepkg es usado para compilar y construir paquetes capaces de instalar mediante [pacman](/index.php/Pacman "Pacman"), el manejador de paquetes de Arch Linux. makepkg es un script que automatiza el proceso de construcción de paquetes; este puede descargar y validar archivos fuente, resolver dependencias, configurar los parámetros de tiempo de compilación, compilar las fuentes e instalarlo dentro de un root temporal.
 
-El paquete makepkg lo provee el paquete [pacman](https://www.archlinux.org/packages/?name=pacman).
+makepkg lo provee el paquete [pacman](https://www.archlinux.org/packages/?name=pacman).
 
 ## Contents
 
@@ -21,7 +21,7 @@ El paquete makepkg lo provee el paquete [pacman](https://www.archlinux.org/packa
     *   [1.2 Resultado del paquete](#Resultado_del_paquete)
     *   [1.3 Verificación de firmas](#Verificación_de_firmas)
     *   [1.4 fakeroot](#fakeroot)
-*   [2 Uso](#Uso)
+*   [2 Utilización](#Utilización)
 *   [3 Recomendaciones](#Recomendaciones)
     *   [3.1 Construir binarios optimizados](#Construir_binarios_optimizados)
     *   [3.2 Mejorar tiempos de compilación](#Mejorar_tiempos_de_compilación)
@@ -43,7 +43,7 @@ El paquete makepkg lo provee el paquete [pacman](https://www.archlinux.org/packa
         *   [4.6.1 Habilitar proxy estableciendo su URL en XferCommand](#Habilitar_proxy_estableciendo_su_URL_en_XferCommand)
         *   [4.6.2 Habilitar proxy via sudoer's env_keep](#Habilitar_proxy_via_sudoer's_env_keep)
     *   [4.7 Makepkg falla, pero el make termina bien](#Makepkg_falla,_pero_el_make_termina_bien)
-*   [5 Vea también](#Vea_también)
+*   [5 Véase también](#Véase_también)
 
 ## Configuración
 
@@ -105,7 +105,7 @@ Si una clave pública es necesaria, el [PKGBUILD](/index.php/PKGBUILD_(Espa%C3%B
 
 `fakeroot` permite al usuario usar los permisos necesarios de root para crear paquetes en el ambiente de construcción sin necesidad de alterar todo el sistema. Si el proceso de construcción trata de alterar archivos fuera del ambiente de construcción entonces aparecerán mensajes de error y el empaquetado habrá fallado – esto es muy útil para verificar la calidad, seguridad e integridad de los PKGBUILD para su distribución. Por default `fakeroot` esta habilitado en el archivo de configuración `/etc/makepkg.conf`; los usuarios pueden utilizar el prefijo `!` en la variable `BUILDENV` para deshabilitar esto.
 
-## Uso
+## Utilización
 
 Antes de continuar, asegúrese de que el grupo de paquetes [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) este [instalado](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)"). Los paquetes pertenecientes a este grupo no son requeridos en la lista de dependencias en los [PKGBUILD](/index.php/PKGBUILD "PKGBUILD").
 
@@ -430,7 +430,7 @@ Si algo se compila manualmente utilizando *make*, pero falla al utilizar *makepk
 
 Si alguno de estos parámetros soluciona el problema, lo puede indicar reportando un bug, si usted localiza que parámetro exactamente está causando el problema.
 
-## Vea también
+## Véase también
 
 *   [makepkg(8) Manual Page](https://www.archlinux.org/pacman/makepkg.8.html)
 *   [makepkg.conf(5) Manual Page](https://www.archlinux.org/pacman/makepkg.conf.5.html)

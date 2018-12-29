@@ -729,7 +729,6 @@ You can use the following website to get your device's coordinates along with a 
 46.7993,-71.229476 "TioDuke" # Québec, QC, Canada
 46.859252,9.529266 "k3njiy" # Chur, GR, Switzerland
 40.476650,0.474365 "Raist" # Vinaròs, CS, Spain
-44.7197,11.5333 "max.bra" # Malalbergo, Bologna, Italy
 34.154286,-77.879264 "ant978" # Wilmington, NC, USA
 50.411275,4.156757 "TimScampi" # Waudrez, Hainaut, Belgium
 39.810761,16.207237 "Simandr" # Castrovillari, CS, Italy

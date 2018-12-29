@@ -20,18 +20,18 @@ Arch 中的电源管理包含两个主要部分：
 
 ## Contents
 
-*   [1 用户空间工具](#.E7.94.A8.E6.88.B7.E7.A9.BA.E9.97.B4.E5.B7.A5.E5.85.B7)
-*   [2 用 systemd 进行电源管理](#.E7.94.A8_systemd_.E8.BF.9B.E8.A1.8C.E7.94.B5.E6.BA.90.E7.AE.A1.E7.90.86)
-    *   [2.1 ACPI 事件](#ACPI_.E4.BA.8B.E4.BB.B6)
-    *   [2.2 电源管理器](#.E7.94.B5.E6.BA.90.E7.AE.A1.E7.90.86.E5.99.A8)
+*   [1 用户空间工具](#用户空间工具)
+*   [2 用 systemd 进行电源管理](#用_systemd_进行电源管理)
+    *   [2.1 ACPI 事件](#ACPI_事件)
+    *   [2.2 电源管理器](#电源管理器)
         *   [2.2.1 xss-lock](#xss-lock)
-    *   [2.3 休眠和挂起](#.E4.BC.91.E7.9C.A0.E5.92.8C.E6.8C.82.E8.B5.B7)
-        *   [2.3.1 混合休眠](#.E6.B7.B7.E5.90.88.E4.BC.91.E7.9C.A0)
-    *   [2.4 休眠钩子](#.E4.BC.91.E7.9C.A0.E9.92.A9.E5.AD.90)
-        *   [2.4.1 使用服务文件](#.E4.BD.BF.E7.94.A8.E6.9C.8D.E5.8A.A1.E6.96.87.E4.BB.B6)
-        *   [2.4.2 合并待机和唤醒服务文件](#.E5.90.88.E5.B9.B6.E5.BE.85.E6.9C.BA.E5.92.8C.E5.94.A4.E9.86.92.E6.9C.8D.E5.8A.A1.E6.96.87.E4.BB.B6)
-        *   [2.4.3 延迟休眠服务文件](#.E5.BB.B6.E8.BF.9F.E4.BC.91.E7.9C.A0.E6.9C.8D.E5.8A.A1.E6.96.87.E4.BB.B6)
-            *   [2.4.3.1 使用 /usr/lib/systemd/system-sleep 钩子](#.E4.BD.BF.E7.94.A8_.2Fusr.2Flib.2Fsystemd.2Fsystem-sleep_.E9.92.A9.E5.AD.90)
+    *   [2.3 休眠和挂起](#休眠和挂起)
+        *   [2.3.1 混合休眠](#混合休眠)
+    *   [2.4 休眠钩子](#休眠钩子)
+        *   [2.4.1 使用服务文件](#使用服务文件)
+        *   [2.4.2 合并待机和唤醒服务文件](#合并待机和唤醒服务文件)
+        *   [2.4.3 延迟休眠服务文件](#延迟休眠服务文件)
+            *   [2.4.3.1 使用 /usr/lib/systemd/system-sleep 钩子](#使用_/usr/lib/systemd/system-sleep_钩子)
 
 ## 用户空间工具
 
@@ -48,10 +48,6 @@ Arch 中的电源管理包含两个主要部分：
 *   **[Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools")** — 配置笔记本电源设置的工具，很多人将其视为省电标准工具，需要的配置比较多。
 
 	[https://github.com/rickysarraf/laptop-mode-tools](https://github.com/rickysarraf/laptop-mode-tools) || [laptop-mode-tools](https://aur.archlinux.org/packages/laptop-mode-tools/)
-
-*   **[pm-utils](/index.php/Pm-utils "Pm-utils")** — 休眠和省电工具(已经停止开发).
-
-	[http://pm-utils.freedesktop.org/](http://pm-utils.freedesktop.org/) || [pm-utils](https://aur.archlinux.org/packages/pm-utils/)
 
 *   **[powertop](/index.php/Powertop "Powertop")** — 检查电源消耗和电源管理的工具，可以协助省电模式的配置。
 
@@ -110,7 +106,7 @@ xss-lock -- i3lock -n -i *background_image.png* &
 
 ### 休眠钩子
 
-使用 `systemctl suspend`、`systemctl hibernate` 或 `systemctl hybrid-sleep` 命令执行待机/休眠时，systemd 不会调用 [pm-utils](/index.php/Pm-utils_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pm-utils (简体中文)")。[pm-utils](/index.php/Pm-utils_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pm-utils (简体中文)") 的钩子扩展（hook）——包括 [自定义钩子](/index.php/Pm-utils_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.BB.BA.E7.AB.8B.E4.BD.A0.E8.87.AA.E5.B7.B1.E7.9A.84.E9.92.A9.E5.AD.90 "Pm-utils (简体中文)")——会失效。不过，systemd 提供了两种类似的待机/休眠时执行脚本的机制。
+systemd 提供了两种类似的待机/休眠时执行脚本的机制。
 
 ##### 使用服务文件
 
@@ -261,9 +257,9 @@ systemd 在待机/休眠时执行 `/usr/lib/systemd/system-sleep/` 里的所有�
 *   参数1：若是准备进入待机/休眠状态，则为 `pre`；唤醒时为 `post`。
 *   参数2：事件名称，`suspend`，`hibernate` 或 `hybrid-sleep`。
 
-systemd 会同时执行所有脚本，而不是像 [pm-utils](/index.php/Pm-utils_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pm-utils (简体中文)") 那样顺序执行。
+systemd 会同时执行所有脚本。
 
-脚本输出会记录在相关服务（`systemd-suspend.service`、`systemd-hibernate.service` 或 `systemd-hybrid-sleep.service`）中。通过[日志](#.E6.97.A5.E5.BF.97)查看：
+脚本输出会记录在相关服务（`systemd-suspend.service`、`systemd-hibernate.service` 或 `systemd-hybrid-sleep.service`）中。通过[日志](#日志)查看：
 
 ```
 # journalctl -b -u systemd-suspend

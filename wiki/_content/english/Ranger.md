@@ -127,10 +127,12 @@ ext tex = kile "$@"
 
 ```
 
-To open all files with [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils):
+To open all files with [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils), make sure your `$EDITOR` and `$PAGER` are set and add:
 
 ```
-has xdg-open, flag f = xdg-open "$1"
+else = xdg-open "$1"
+label editor = "$EDITOR" -- "$@"
+label pager  = "$PAGER" -- "$@"
 
 ```
 

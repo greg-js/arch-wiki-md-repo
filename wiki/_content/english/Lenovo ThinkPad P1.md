@@ -32,7 +32,7 @@ Before installation, it is recommended that you boot into Windows 10 and use the
 
 Currently the live CD might not boot normally if your BIOS is configured to enable hybrid graphics. See [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus") for details. Two options are possible:
 
-*   Disable hybrid graphics by changing your BIOS settings to "Discrete only".
+*   Disable hybrid graphics by changing your BIOS settings to "Discrete only" (Be careful, this might brick your latpop: [Lenovo_ThinkPad_P1#Do not change to "Discrete Graphics" with BIOS v1.15](/index.php/Lenovo_ThinkPad_P1#Do_not_change_to_"Discrete_Graphics"_with_BIOS_v1.15 "Lenovo ThinkPad P1"))
 *   Alternatively, before booting into live CD, press `e` and add `modprobe.blacklist=nouveau` to your kernel parameters.
 
 If you choose to use the second option, you might also want to include `modprobe.blacklist=nouveau` in your `/boot/loader/entries/arch.conf`.

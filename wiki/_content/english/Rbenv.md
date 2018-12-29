@@ -48,12 +48,7 @@ Installation of Ruby 2.3.x may break down due to openssl version described here:
 
 Here's a way how you can make a ruby compile:
 
-1\. Install **openssl-1.0** package first:
-
-```
- sudo pacman -Syyu openssl-1.0
-
-```
+1\. [Install](/index.php/Install "Install") the [openssl-1.0](https://www.archlinux.org/packages/?name=openssl-1.0) package first.
 
 2\. Then run:
 

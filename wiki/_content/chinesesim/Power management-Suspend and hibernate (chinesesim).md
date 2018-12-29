@@ -2,15 +2,15 @@
 
 ## Contents
 
-*   [1 挂起、睡眠和休眠的区别](#.E6.8C.82.E8.B5.B7.E3.80.81.E7.9D.A1.E7.9C.A0.E5.92.8C.E4.BC.91.E7.9C.A0.E7.9A.84.E5.8C.BA.E5.88.AB)
-*   [2 休眠设置](#.E4.BC.91.E7.9C.A0.E8.AE.BE.E7.BD.AE)
-    *   [2.1 开启休眠](#.E5.BC.80.E5.90.AF.E4.BC.91.E7.9C.A0)
-        *   [2.1.1 划分合适大小的swap分区](#.E5.88.92.E5.88.86.E5.90.88.E9.80.82.E5.A4.A7.E5.B0.8F.E7.9A.84swap.E5.88.86.E5.8C.BA)
-        *   [2.1.2 在bootloader 中增加resume内核参数](#.E5.9C.A8bootloader_.E4.B8.AD.E5.A2.9E.E5.8A.A0resume.E5.86.85.E6.A0.B8.E5.8F.82.E6.95.B0)
-        *   [2.1.3 配置 initramfs的resume钩子](#.E9.85.8D.E7.BD.AE_initramfs.E7.9A.84resume.E9.92.A9.E5.AD.90)
-    *   [2.2 设置低电量休眠](#.E8.AE.BE.E7.BD.AE.E4.BD.8E.E7.94.B5.E9.87.8F.E4.BC.91.E7.9C.A0)
-    *   [2.3 设置盖上笔记本盖子或按下电源键休眠](#.E8.AE.BE.E7.BD.AE.E7.9B.96.E4.B8.8A.E7.AC.94.E8.AE.B0.E6.9C.AC.E7.9B.96.E5.AD.90.E6.88.96.E6.8C.89.E4.B8.8B.E7.94.B5.E6.BA.90.E9.94.AE.E4.BC.91.E7.9C.A0)
-*   [3 参看](#.E5.8F.82.E7.9C.8B)
+*   [1 挂起、睡眠和休眠的区别](#挂起、睡眠和休眠的区别)
+*   [2 休眠设置](#休眠设置)
+    *   [2.1 开启休眠](#开启休眠)
+        *   [2.1.1 划分合适大小的swap分区](#划分合适大小的swap分区)
+        *   [2.1.2 在bootloader 中增加resume内核参数](#在bootloader_中增加resume内核参数)
+        *   [2.1.3 配置 initramfs的resume钩子](#配置_initramfs的resume钩子)
+    *   [2.2 设置低电量休眠](#设置低电量休眠)
+    *   [2.3 设置盖上笔记本盖子或按下电源键休眠](#设置盖上笔记本盖子或按下电源键休眠)
+*   [3 参看](#参看)
 
 ## 挂起、睡眠和休眠的区别
 
@@ -38,7 +38,7 @@
 
 ArchLiux的休眠功能需要用户设置后才能使用。
 
-这里介绍使用systemd休眠，此外可选择[pm-utils](https://aur.archlinux.org/packages/pm-utils/)实现，参看[Pm-utils (简体中文)](/index.php/Pm-utils_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pm-utils (简体中文)")。
+这里介绍使用systemd休眠。
 
 ### 开启休眠
 

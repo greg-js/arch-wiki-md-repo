@@ -239,20 +239,6 @@ WantedBy=suspend.target
 
 For root/system actions ([enable](/index.php/Enable "Enable") the `root-resume` and `root-suspend` services to have them started at boot):
 
- `/etc/systemd/system/root-resume.service` 
-```
-[Unit]
-Description=Local system resume actions
-After=suspend.target
-
-[Service]
-Type=simple
-ExecStart=/usr/bin/systemctl restart mnt-media.automount
-
-[Install]
-WantedBy=suspend.target
-
-```
  `/etc/systemd/system/root-suspend.service` 
 ```
 [Unit]
@@ -265,6 +251,20 @@ ExecStart=-/usr/bin/pkill sshfs
 
 [Install]
 WantedBy=sleep.target
+
+```
+ `/etc/systemd/system/root-resume.service` 
+```
+[Unit]
+Description=Local system resume actions
+After=suspend.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/systemctl restart mnt-media.automount
+
+[Install]
+WantedBy=suspend.target
 
 ```
 

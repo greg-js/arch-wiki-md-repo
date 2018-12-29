@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Arch Linux](/index.php/Arch_Linux "Arch Linux"), revisada por última vez el **2018-08-23**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Arch_Linux&diff=0&oldid=536968) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Arch Linux](/index.php/Arch_Linux "Arch Linux"), revisada por última vez el **2018-12-27**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Arch_Linux&diff=0&oldid=556870) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Arch Linux es una distribución [GNU](/index.php/GNU_(Espa%C3%B1ol) "GNU (Español)")/Linux de propósito general, desarrollada independientemente para x86-64, que se esfuerza por proporcionar las últimas versiones estables de la mayoría del software, siguiendo un modelo de lanzamiento continuo (*rolling-release*). La instalación por defecto deja un sistema de base mínima, que el usuario configurará posteriormente agregando lo que necesite.
 
@@ -68,7 +68,7 @@ La primera comunidad de Arch creció de manera constante, como lo demuestra [est
 
 ### El nacimiento de ArchWiki
 
-En 2005-07-08 la ArchWiki [comenzó](/index.php/ArchWiki:About_(Espa%C3%B1ol)#Historia "ArchWiki:About (Español)") basada en Mediawiki.
+En 2005-07-08 la ArchWiki [comenzó](/index.php/ArchWiki:About_(Espa%C3%B1ol)#Historia_temprana "ArchWiki:About (Español)") basada en Mediawiki.
 
 ### El amanecer de la era de A. Griffin
 
@@ -80,7 +80,7 @@ Los desarrolladores de Arch no cobran, dedican a la misma parte de su tiempo y n
 
 ### Scripts de instalación de Arch
 
-El lanzamiento en 2012-07-15 del medio de instalación volvió [obsoleto](https://www.archlinux.org/news/install-media-20120715-released/) la estructura de instalación por menús de Arch, en favor de los scripts de instalación de Arch (*Arch Install Scripts*).
+El lanzamiento en 2012-07-15 del medio de instalación volvió [obsoleto](https://www.archlinux.org/news/install-media-20120715-released/) la estructura de instalación por menús de Arch *(Arch Installation Framework, también conocido como AIF)*, en favor de los scripts de instalación de Arch *(Arch Install Scripts)*.
 
 ### La era de systemd
 

@@ -13,6 +13,7 @@ Two different font systems are used by [X11](/index.php/X11 "X11"): the older or
 *   [3 Font search path](#Font_search_path)
     *   [3.1 mkfontscale and mkfontdir](#mkfontscale_and_mkfontdir)
 *   [4 Aliases](#Aliases)
+*   [5 See also](#See_also)
 
 ## Font names
 
@@ -206,3 +207,7 @@ For new font aliases to be available to the user, the font database must be upda
 $ xset fp rehash
 
 ```
+
+## See also
+
+*   [Wikipedia:X_logical_font_description](https://en.wikipedia.org/wiki/X_logical_font_description "wikipedia:X logical font description")
