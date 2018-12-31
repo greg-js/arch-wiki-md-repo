@@ -73,6 +73,7 @@ Related articles
     *   [5.14 Old BTRFS prevents installation](#Old_BTRFS_prevents_installation)
     *   [5.15 Windows 8/10 not found](#Windows_8/10_not_found)
     *   [5.16 VirtualBox EFI mode](#VirtualBox_EFI_mode)
+    *   [5.17 Device /dev/xxx not initialized in udev database even after waiting 10000000 microseconds](#Device_/dev/xxx_not_initialized_in_udev_database_even_after_waiting_10000000_microseconds)
 *   [6 See also](#See_also)
 
 ## BIOS systems
@@ -880,6 +881,22 @@ A setting in Windows 8/10 called "Hiberboot", "Hybrid Boot" or "Fast Boot" can p
 Install GRUB to the [default/fallback boot path](#Default/fallback_boot_path).
 
 See also [VirtualBox#Installation in EFI mode](/index.php/VirtualBox#Installation_in_EFI_mode "VirtualBox").
+
+### Device /dev/xxx not initialized in udev database even after waiting 10000000 microseconds
+
+If grub-mkconfig hangs and gives error: `WARNING: Device /dev/*xxx* not initialized in udev database even after waiting 10000000 microseconds`.
+
+You may need to provide `/run/lvm/` access to the chroot environment using:
+
+```
+# mkdir /mnt/hostlvm
+# mount --bind /run/lvm /mnt/hostlvm
+# arch-chroot /mnt
+# ln -s /hostlvm /run/lvm
+
+```
+
+See [FS#61040](https://bugs.archlinux.org/task/61040).
 
 ## See also
 

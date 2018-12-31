@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [CUPS/Troubleshooting](/index.php/CUPS/Troubleshooting "CUPS/Troubleshooting"). Дата последней синхронизации: 30 сентября 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=CUPS/Troubleshooting&diff=0&oldid=545156).
+**Состояние перевода:** На этой странице представлен перевод статьи [CUPS/Troubleshooting](/index.php/CUPS/Troubleshooting "CUPS/Troubleshooting"). Дата последней синхронизации: 11 декабря 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=CUPS/Troubleshooting&diff=0&oldid=558898).
 
 Ссылки по теме
 
@@ -19,6 +19,7 @@
     *   [3.1 Не удается найти принтер](#Не_удается_найти_принтер)
     *   [3.2 Старый сервер CUPS](#Старый_сервер_CUPS)
     *   [3.3 Общий принтер работает локально, но удаленный компьютер не печатает](#Общий_принтер_работает_локально,_но_удаленный_компьютер_не_печатает)
+    *   [3.4 Не удается найти файл PPD](#Не_удается_найти_файл_PPD)
 *   [4 USB-принтеры](#USB-принтеры)
     *   [4.1 Конфликт с SANE](#Конфликт_с_SANE)
     *   [4.2 Конфликт с usblp](#Конфликт_с_usblp)
@@ -152,6 +153,16 @@ lpd://BRN_020554/BINARY_P1
 ### Общий принтер работает локально, но удаленный компьютер не печатает
 
 Это вызвано тем, что задание на печать отправляется через фильтр дважды, один раз на локальном компьютере и один раз на удаленном. Смотрите также предупреждение на главной странице [CUPS](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A1.D0.B5.D1.82.D1.8C "CUPS (Русский)").
+
+### Не удается найти файл PPD
+
+ `/var/log/cups/error_log` 
+```
+Cannot connect to remote printer ipp://HP079676.local
+copy_model: empty PPD file
+```
+
+Убедитесь, что [Avahi](/index.php/Avahi "Avahi") настроен правильно. В частности, проверьте, что [nss-mdns](https://www.archlinux.org/packages/?name=nss-mdns) установлен и настроен в `/etc/nsswitch.conf`.
 
 ## USB-принтеры
 

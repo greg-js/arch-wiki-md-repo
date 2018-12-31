@@ -8,8 +8,6 @@
     *   [2.2 Apache](#Apache)
     *   [2.3 Lighttpd](#Lighttpd)
     *   [2.4 Nginx](#Nginx)
-        *   [2.4.1 Subdomain](#Subdomain)
-        *   [2.4.2 Subdirectory using location](#Subdirectory_using_location)
 *   [3 Configuration](#Configuration)
     *   [3.1 Using setup script](#Using_setup_script)
     *   [3.2 Add blowfish_secret passphrase](#Add_blowfish_secret_passphrase)
@@ -75,45 +73,78 @@ Add the following alias for PhpMyAdmin to the config:
 
 ### Nginx
 
-Make sure to set up [nginx#FastCGI](/index.php/Nginx#FastCGI "Nginx").
+Make sure to set up [nginx#FastCGI](/index.php/Nginx#FastCGI "Nginx") and using [server blocks](/index.php/Nginx#Server_blocks "Nginx") to easier management.
 
-#### Subdomain
+By preference; access phpMyAdmin by subdomain, e.g. `[https://pma.domain.tld](https://pma.domain.tld)`:
 
-Set up a separate configuration file for PHP as shown in [nginx#PHP configuration file](/index.php/Nginx#PHP_configuration_file "Nginx") and use a server block such as:
-
+ `/etc/nginx/sites-available/pma.domain.tld` 
 ```
 server {
-    server_name     phpmyadmin.<domain.tld>;
-    root    /usr/share/webapps/phpMyAdmin;
-    index   index.php;
-    include php.conf;
-}
+    server_name pma.domain.tld;
+    ; listen 80; # also listen on http
+    ; listen [::]:80;
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    index index.php;
+    access_log /var/log/nginx/pma.access.log;
+    error_log /var/log/nginx/pma.error.log;
 
+    # Allows limiting access to certain client addresses.
+    ; allow 192.168.1.0/24;
+    ; allow *my-ip*;
+    ; deny all;
+
+    root /usr/share/webapps/phpMyAdmin;
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    error_page 404 /index.php;
+
+    location ~ \.php$ {
+        try_files $uri $document_root$fastcgi_script_name =404;
+
+        fastcgi_split_path_info ^(.+\.php)(/.*)$;
+        fastcgi_pass unix:/run/php-fpm/php-fpm.sock;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+
+        fastcgi_param HTTP_PROXY "";
+        fastcgi_param HTTPS on;
+        fastcgi_request_buffering off;
+   }
+}
 ```
 
-#### Subdirectory using location
-
-This will allow access to PhpMyAdmin as in `https://domain.tld/phpMyAdmin`:
+Or by subdirectory, e.g. `[https://domain.tld/phpMyAdmin](https://domain.tld/phpMyAdmin)`:
 
  `/etc/nginx/sites-available/domain.tld` 
 ```
-location /phpMyAdmin {
-   server_name domain.tld;
-   listen 443 ssl http2;
-   root /srv/http/domain.tld;
-   index index.php;  
+server {
+    server_name domain.tld;
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    index index.php;
+    access_log /var/log/nginx/domain.tld.access.log;
+    error_log /var/log/nginx/domain.tld.error.log;
 
-   location / {
-      try_files $uri $uri/ =404;
-   }
+    root /srv/http/domain.tld;
+    location / {
+        try_files $uri $uri/ =404;
+    }
 
-   # Deny static files
-   location ~ ^/phpMyAdmin/(README|LICENSE|ChangeLog|DCO)$ {
-      deny all;
-   }
+    location /phpMyAdmin {
+        root /usr/share/webapps/phpMyAdmin;
+    }
 
-   # Deny .md files
-   location ~ ^/phpMyAdmin/(.+\.md)$ {
+    # Deny static files
+    location ~ ^/phpMyAdmin/(README|LICENSE|ChangeLog|DCO)$ {
+       deny all;
+    }
+
+    # Deny .md files
+    location ~ ^/phpMyAdmin/(.+\.md)$ {
       deny all;
    }
 
@@ -124,10 +155,17 @@ location /phpMyAdmin {
 
    #FastCGI config for phpMyAdmin
    location ~ /phpMyAdmin/(.+\.php)$ {
+      try_files $uri $document_root$fastcgi_script_name =404;
+
+      fastcgi_split_path_info ^(.+\.php)(/.*)$;
+      fastcgi_pass unix:/run/php-fpm/php-fpm.sock;
+      fastcgi_index index.php;
       fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-      fastcgi_pass   unix:/run/php-fpm/php-fpm.sock;
-      fastcgi_index  index.php;
-      include        fastcgi.conf;
+      include fastcgi_params;
+
+      fastcgi_param HTTP_PROXY "";
+      fastcgi_param HTTPS on;
+      fastcgi_request_buffering off;
    }
 }
 

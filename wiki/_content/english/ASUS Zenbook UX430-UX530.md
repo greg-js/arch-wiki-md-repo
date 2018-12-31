@@ -49,6 +49,8 @@ If the aforementioned "Secure Boot" option is a menu rather than an on-or-off op
 
 See [Intel Graphics](/index.php/Intel_graphics#Installation "Intel graphics") and [Hardware Acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration"). For models with discrete NVidia graphics card, also see [Bumblebee](/index.php/Bumblebee "Bumblebee").
 
+**Note:** As shown in [this thread](https://bbs.archlinux.org/viewtopic.php?pid=1822926), [Bumblebee](/index.php/Bumblebee "Bumblebee") makes Nvidia GFX slower than integrated graphics and has no [Vulkan](/index.php/Vulkan "Vulkan") support. Consider using [Nvidia-xrun](/index.php/Nvidia-xrun "Nvidia-xrun") instead.
+
 ## Audio
 
 See [PulseAudio](/index.php/PulseAudio "PulseAudio").

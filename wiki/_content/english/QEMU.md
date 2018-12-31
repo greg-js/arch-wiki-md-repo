@@ -1624,21 +1624,16 @@ Description=QEMU virtual machine
 [Service]
 Environment="type=system-x86_64" "haltcmd=kill -INT $MAINPID"
 EnvironmentFile=/etc/conf.d/qemu.d/%i
-PIDFile=/tmp/%i.pid
-ExecStart=/usr/bin/qemu-${type} -name %i -nographic -pidfile /tmp/%i.pid $args
+ExecStart=/usr/bin/qemu-${type} -name %i -nographic $args
 ExecStop=/bin/sh -c ${haltcmd}
 TimeoutStopSec=30
 KillMode=none
 
 [Install]
 WantedBy=multi-user.target
-
 ```
 
-**Note:**
-
-*   According to [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5) and `5` man pages it is necessary to use the `KillMode=none` option. Otherwise the main qemu process will be killed immediately after the `ExecStop` command quits (it simply echoes one string) and your quest system will not be able to shutdown correctly.
-*   It is necessary to use the `PIDFile` option. Otherwise systemd cannot tell whether the main qemu process was terminated and your quest system will not be able to shutdown correctly. On host shutdown it will proceed without waiting for the VM to shutdown.
+**Note:** According to [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5) and `5` man pages it is necessary to use the `KillMode=none` option. Otherwise the main qemu process will be killed immediately after the `ExecStop` command quits (it simply echoes one string) and your quest system will not be able to shutdown correctly.
 
 Then create per-VM configuration files, named `/etc/conf.d/qemu.d/*vm_name*`, with the variables `type`, `args` and `altcmd` set. Example configs:
 

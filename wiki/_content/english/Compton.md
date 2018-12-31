@@ -318,7 +318,7 @@ See [[6]](https://www.reddit.com/r/unixporn/comments/330zxl/webmi3_no_more_overl
 
 ### Unable to change the background color with xsetroot
 
-Currently, compton is incompatible with `xsetroot`'s `-solid` option, a workaround is to use [hsetroot](https://aur.archlinux.org/packages/hsetroot/) to set the background color:
+Currently, compton is incompatible with `xsetroot`'s `-solid` option, a workaround is to use [hsetroot](https://www.archlinux.org/packages/?name=hsetroot) to set the background color:
 
 ```
 $ hsetroot -solid '#000000'

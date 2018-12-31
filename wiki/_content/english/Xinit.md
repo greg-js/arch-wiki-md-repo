@@ -19,8 +19,8 @@ From [Wikipedia](https://en.wikipedia.org/wiki/xinit "wikipedia:xinit"):
     *   [2.2 xserverrc](#xserverrc)
 *   [3 Usage](#Usage)
 *   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 Autostart X at login](#Autostart_X_at_login)
-    *   [4.2 Override xinitrc](#Override_xinitrc)
+    *   [4.1 Override xinitrc](#Override_xinitrc)
+    *   [4.2 Autostart X at login](#Autostart_X_at_login)
     *   [4.3 Switching between desktop environments/window managers](#Switching_between_desktop_environments/window_managers)
     *   [4.4 Starting applications without a window manager](#Starting_applications_without_a_window_manager)
     *   [4.5 Output redirection using startx](#Output_redirection_using_startx)
@@ -118,29 +118,6 @@ See also [signal(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/signal.7).
 
 ## Tips and tricks
 
-### Autostart X at login
-
-Make sure that *startx* is properly [configured](#Configuration).
-
-For [Bash](/index.php/Bash "Bash"), add the following to the bottom of `~/.bash_profile`. If the file does not exist, copy a skeleton version from `/etc/skel/.bash_profile`. For [Zsh](/index.php/Zsh "Zsh"), add it to `~/.zprofile`.
-
-```
-if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-  exec startx
-fi
-
-```
-
-You can replace the `-eq` comparison with one like `-le 3` (for vt1 to vt3) if you want to use graphical logins on more than one virtual terminal.
-
-Alternative conditions to detect the virtual terminal include `"$(tty)" = "/dev/tty1"`, which does not allow comparison with `-le`, and `"$(fgconsole 2>/dev/null || echo -1)" -eq 1`, which does not work in [serial consoles](/index.php/Serial_console "Serial console").
-
-If you would like to remain logged in when the X session ends, remove `exec`.
-
-See also [Fish#Start X at login](/index.php/Fish#Start_X_at_login "Fish") and [Systemd/User#Automatic login into Xorg without display manager](/index.php/Systemd/User#Automatic_login_into_Xorg_without_display_manager "Systemd/User").
-
-**Tip:** This method can be combined with [automatic login to virtual console](/index.php/Automatic_login_to_virtual_console "Automatic login to virtual console").
-
 ### Override xinitrc
 
 If you have a working `~/.xinitrc` but just want to try other window manager or desktop environment, you can run it by issuing *startx* followed by the path to the window manager, for example:
@@ -169,6 +146,29 @@ See also [startx(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/startx.1).
 **Note:** Display needs to be specified (as loading `/etc/X11/xinit/xinitrc.d/` is skipped) for some operations to work (e.g. notification daemons). [[2]](https://bbs.archlinux.org/viewtopic.php?id=202812)
 
 **Tip:** This can be used to start regular GUI programs but without any of the basic window manager features. See also [#Starting applications without a window manager](#Starting_applications_without_a_window_manager) and [Running program in separate X display](/index.php/Running_program_in_separate_X_display "Running program in separate X display").
+
+### Autostart X at login
+
+Make sure that *startx* is properly [configured](#Configuration).
+
+For [Bash](/index.php/Bash "Bash"), add the following to the bottom of `~/.bash_profile`. If the file does not exist, copy a skeleton version from `/etc/skel/.bash_profile`. For [Zsh](/index.php/Zsh "Zsh"), add it to `~/.zprofile`.
+
+```
+if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+  exec startx
+fi
+
+```
+
+You can replace the `-eq` comparison with one like `-le 3` (for vt1 to vt3) if you want to use graphical logins on more than one virtual terminal.
+
+Alternative conditions to detect the virtual terminal include `"$(tty)" = "/dev/tty1"`, which does not allow comparison with `-le`, and `"$(fgconsole 2>/dev/null || echo -1)" -eq 1`, which does not work in [serial consoles](/index.php/Serial_console "Serial console").
+
+If you would like to remain logged in when the X session ends, remove `exec`.
+
+See also [Fish#Start X at login](/index.php/Fish#Start_X_at_login "Fish") and [Systemd/User#Automatic login into Xorg without display manager](/index.php/Systemd/User#Automatic_login_into_Xorg_without_display_manager "Systemd/User").
+
+**Tip:** This method can be combined with [automatic login to virtual console](/index.php/Automatic_login_to_virtual_console "Automatic login to virtual console").
 
 ### Switching between desktop environments/window managers
 

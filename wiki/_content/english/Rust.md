@@ -1,3 +1,7 @@
+Related articles
+
+*   [Rust package guidelines](/index.php/Rust_package_guidelines "Rust package guidelines")
+
 From [Wikipedia](https://en.wikipedia.org/wiki/Rust_(programming_language) "wikipedia:Rust (programming language)"):
 
 	[Rust](http://rust-lang.org/) is a general-purpose, multi-paradigm, compiled programming language sponsored by Mozilla Research. It is designed to be a "safe, concurrent, practical language", supporting pure-functional, imperative-procedural, and object-oriented styles. The goal of Rust is to be a good language for creating highly concurrent and highly safe systems, and programming in the large. This has led to a feature set with an emphasis on safety, control of memory layout, and concurrency. Performance of idiomatic Rust is comparable to the performance of idiomatic C++.

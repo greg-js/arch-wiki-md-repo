@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Data da última tradução: 2018-10-30\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_User_Repository&diff=0&oldid=551990) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Data da última tradução: 2018-12-29\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_User_Repository&diff=0&oldid=560637) na versão em inglês.
 
 Artigos relacionados
 
@@ -33,10 +33,10 @@ Um bom número de novos pacotes que entram para os repositórios oficiais inicia
     *   [6.1 Enviando pacotes](#Enviando_pacotes)
         *   [6.1.1 Regras de envio](#Regras_de_envio)
         *   [6.1.2 Autenticação](#Autenticação)
-        *   [6.1.3 Criando um novo pacote](#Criando_um_novo_pacote)
-        *   [6.1.4 Enviando pacotes](#Enviando_pacotes_2)
-    *   [6.2 Mantendo pacotes](#Mantendo_pacotes)
-    *   [6.3 Outras requisições](#Outras_requisições)
+        *   [6.1.3 Criando repositórios de pacote](#Criando_repositórios_de_pacote)
+    *   [6.2 Publicando novo conteúdo de pacote](#Publicando_novo_conteúdo_de_pacote)
+    *   [6.3 Mantendo pacotes](#Mantendo_pacotes)
+    *   [6.4 Outras requisições](#Outras_requisições)
 *   [7 Tradução da interface web](#Tradução_da_interface_web)
 *   [8 Sintaxe de comentário](#Sintaxe_de_comentário)
 *   [9 FAQ](#FAQ)
@@ -240,40 +240,39 @@ $ ssh-keygen -f ~/.ssh/aur
 
 **Dica:** Você pode adicionar múltiplas chaves públicas ao seu perfil separando-as com uma nova linha no campo de entrada.
 
-#### Criando um novo pacote
+#### Criando repositórios de pacote
 
-Para criar um novo repositório Git local vazio para um pacote, basta executar `git clone` com o nome de repositório correspondendo ao nome do pacote. Se o pacote ainda não existir no AUR, você verá a seguinte mensagem:
+Se você está [criando um novo pacote](/index.php/Criando_pacotes "Criando pacotes") do zero, estabeleça um repositório Git local e um remoto no AUR [clonando](/index.php/Git#Getting_a_Git_repository "Git") o [pkgbase](/index.php/PKGBUILD_(Portugu%C3%AAs)#pkgbase "PKGBUILD (Português)") desejado. Se o pacote ainda não existir, o seguinte aviso é esperado:
 
  `$ git clone ssh://aur@aur.archlinux.org/*nome_pacote*.git` 
 ```
-Cloning into '*nome_pacote*'...
+Cloning into '*pkgbase*'...
 warning: You appear to have cloned an empty repository.
 Checking connectivity... done.
 ```
 
-**Nota:** Quando um pacote do AUR é excluído, o repositório git é mantido, de forma que é possível para um repositório do pacote excluído não estar vazio quando clonado se alguém estiver criando um pacote com o mesmo nome.
+**Nota:** O repositório não estará vazio, se `*pkgbase*` corresponde a um pacote [excluído](#Outras_requisições).
 
-Se você já criou um repositório git, você pode simplesmente criar um remoto para o repositório do AUR e então executar "fetch":
-
-```
-$ git remote add *nome_remoto* ssh://aur@aur.archlinux.org/*nome_pacote*.git
-$ git fetch *nome_remoto*
+Se você já tem um pacote, [inicialize-o](/index.php/Git#Getting_a_Git_repository "Git") como um repositório Git, se ainda não for um, e adicione um remoto do AUR:
 
 ```
+$ git remote add *rótulo* ssh://aur@aur.archlinux.org/*pkgbase*.git
 
-sendo `*nome_remoto*` o nome do remoto para a ser criado (*ex.:* "origin"). Veja o [uso de remotos no Git](/index.php/Git#Using_remotes "Git") para mais informações.
+```
 
-O novo pacote aparecerá no AUR após você executar *push* no primeiro commit. Você pode adicionar os arquivos fontes à cópia local do repositório Git. Veja [#Enviando pacotes](#Enviando_pacotes).
+Então, faça um [fetch](/index.php/Git#Using_remotes "Git") deste remoto para inicializá-lo no AUR.
 
-**Atenção:** Seus commits do AUR serão autorizados de acordo com seu nome de usuário git e endereço de e-mail e é muito difícil de alterar commits após você ter enviado (veja [FS#45425](https://bugs.archlinux.org/task/45425)). Se você deseja enviar para o AUR sob um nome/e-mail diferente, você pode alterá-los para esse pacote via `git config user.name [...]` e `git config user.email [...]`. Reveja seus commits antes de enviá-los!
+**Nota:** Use [pull e rebase](https://git-scm.com/docs/git-pull#git-pull---rebasefalsetruemergespreserveinteractive) para resolver conflitos se o `*pkgbase*` corresponder a um pacote excluído.
 
-#### Enviando pacotes
+### Publicando novo conteúdo de pacote
 
-Os procedimentos para envio de pacotes para o AUR é o mesmo de novos pacotes e atualizações de pacotes. Você precisa pelo menos de um [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") e um [.SRCINFO](/index.php/.SRCINFO_(Portugu%C3%AAs) ".SRCINFO (Português)") no diretório de nível superior para poder fazer o *push* do seu pacote para o AUR.
+**Atenção:** Seus commits terão como autor seu [nome e endereço de e-mail Git globais](/index.php/Git#Configuration "Git"). É muito difícil de alterar commits após você realizar o *push* ([FS#45425](https://bugs.archlinux.org/task/45425)). Se você deseja fazer o push para o AUR sob credenciais diferentes, você pode alterá-los por pacote com `git config user.name "..."` e `git config user.email "..."`.
 
-**Nota:** Você precisa regerar o `.SRCINFO` toda vez que você alterar os metadados do `PKGBUILD`, tal como atualizações de [pkgver()](/index.php/PKGBUILD_(Portugu%C3%AAs)#pkgver "PKGBUILD (Português)"). Do contrário, o AUR não vai mostrar os números de versão atualizados.
+Ao lançar uma nova versão do software empacotado, atualize as variáveis [pkgver](/index.php/PKGBUILD_(Portugu%C3%AAs)#pkgver "PKGBUILD (Português)") ou [pkgrel](/index.php/PKGBUILD_(Portugu%C3%AAs)#pkgrel "PKGBUILD (Português)") para notificar todos os usuários que uma atualização é necessária. Não atualize esses valores se apenas pequenas alterações no [PKGBUILD (Português)](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)"), como a correção de um erro de digitação, estiverem sendo publicadas.
 
-Para enviar, adicione o `PKGBUILD`, `.SRCINFO` e quaisquer arquivos auxiliares (como arquivos *.install* ou arquivos fontes locais como *.patch*) à *staging area* com `git add`, faça commit deles para sua árvore local com uma mensagem de commit com `git commit` e, finalmente, publique as alterações para o AUR com `git push`.
+Certifique-se de regerar o [.SRCINFO](/index.php/.SRCINFO_(Portugu%C3%AAs) ".SRCINFO (Português)") sempre que metadados do `PKGBUILD` forem alterados, tal como atualizações de `pkgver()`; do contrário, o AUR não vai mostrar os números de versão atualizados.
+
+Para enviar ou atualizar um pacote, [adicione](/index.php/Git#Staging_changes "Git") *pelo menos* o `PKGBUILD` e `.SRCINFO`, e quaisquer arquivos auxiliares novos ou modificados (como arquivos [*.install*](/index.php/PKGBUILD_(Portugu%C3%AAs)#install "PKGBUILD (Português)") ou [arquivos fontes locais](/index.php/PKGBUILD_(Portugu%C3%AAs)#source "PKGBUILD (Português)") como [patches](/index.php/Patching_packages "Patching packages")) à *staging area* com `git add`, faça commit deles para sua árvore local com uma mensagem de commit com `git commit`, faça [commit](/index.php/Git#Commiting_changes "Git") com uma mensagem de commit significativa e, finalmente, faça um [push](/index.php/Git#Push_to_a_repository "Git") das alterações para o AUR.
 
 Por exemplo:
 
@@ -285,10 +284,9 @@ $ git push
 
 ```
 
-**Dica:**
+**Nota:** Se o `.SRCINFO` foi incluído em seu primeiro commit, adicione-o realizando o [rebase com --root](https://git-scm.com/docs/git-rebase#git-rebase---root) ou [filtrando a árvore](https://git-scm.com/docs/git-filter-branch#git-filter-branch---tree-filterltcommandgt), de forma que o AUR permita seu push inicial.
 
-*   Se você inicialmente se esqueceu de fazer commit do `.SRCINFO` e adicionou-o em um commit posterior, o AUR ainda rejeitará seus *pushes* porque o `.SRCINFO` deve existir para *todo* commit. Para resolver esse problema, você pode usar [git rebase](https://git-scm.com/docs/git-rebase) com a opção `--root` ou [git filter-branch](https://git-scm.com/docs/git-filter-branch) com a opção `--tree-filter`.
-*   Para evitar arquivos não rastreados de commits e manter o diretório de trabalho o mais limpo possível, exclua todos os arquivos com `.gitignore` e force a adição de arquivos. Veja o [uso de gitignore](/index.php/Dotfiles_(Portugu%C3%AAs)#Usando_gitignore "Dotfiles (Português)").
+**Dica:** Para manter o diretório de trabalho e os commits o mais limpo possível, crie um `.gitignore` que [exclua todos os arquivos](/index.php/Dotfiles_(Portugu%C3%AAs)#Usando_gitignore "Dotfiles (Português)") e adicione forçadamente os arquivos conforme necessário.
 
 ### Mantendo pacotes
 
@@ -307,6 +305,7 @@ Requisições para excluir, mesclar e tornar órfão podem ser criadas clicando 
     *   Uma nota curta explicando o motivo para exclusão. Note que um comentário em um pacote não necessariamente demonstra suficiente motivo do porquê um pacote deve ser excluído. Isso porque assim que um TU realiza a exclusão, o único lugar que vai manter a tal informação será o e-mail na lista de discussão do aur-requests.
     *   Detalhes de suporte, como, por exemplo, quando um pacote é fornecido por outro pacote, se você é o mantenedor do pacote, ele foi renomeado e o dono original concordou, etc.
     *   Requisições para excluir podem ser negadas, caso em que, se você for o mantenedor do pacote, você provavelmente será aconselhado a tornar órfão o pacote para permitir a adoção por outro empacotador.
+    *   Após um pacote ser excluído, seu repositório Git permanece disponível no AUR.
 
 ## Tradução da interface web
 

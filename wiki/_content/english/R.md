@@ -1,5 +1,6 @@
 Related articles
 
+*   [R package guidelines](/index.php/R_package_guidelines "R package guidelines")
 *   [Intel C++](/index.php/Intel_C%2B%2B "Intel C++")
 
 [R](https://en.wikipedia.org/wiki/R_(programming_language) is a "free software environment for statistical computing and graphics."[[1]](https://www.r-project.org/)

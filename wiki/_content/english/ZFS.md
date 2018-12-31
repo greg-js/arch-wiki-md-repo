@@ -79,6 +79,9 @@ As a result:
         *   [8.4.1 fstab](#fstab)
     *   [8.5 Monitoring / Mailing on Events](#Monitoring_/_Mailing_on_Events)
     *   [8.6 Wrap shell commands in pre & post snapshots](#Wrap_shell_commands_in_pre_&_post_snapshots)
+    *   [8.7 Remote unlocking of ZFS encrypted root](#Remote_unlocking_of_ZFS_encrypted_root)
+        *   [8.7.1 Changing the SSH server port](#Changing_the_SSH_server_port)
+        *   [8.7.2 Unlocking from a Windows machine using PuTTY/Plink](#Unlocking_from_a_Windows_machine_using_PuTTY/Plink)
 *   [9 See also](#See_also)
 
 ## Installation
@@ -1210,6 +1213,54 @@ E.g.:
 ```
 
 and you would get snapshots created before and after the supplied command, and also output of the commands logged to file for future reference so we know what command created the diff seen in a pair of pre/post snapshots.
+
+### Remote unlocking of ZFS encrypted root
+
+As of [PR #261](https://github.com/archzfs/archzfs/pull/261), `archzfs` supports SSH unlocking of natively-encrypted ZFS datasets. This section describes how to use this feature, and is largely based on [dm-crypt/Specialties#Remote unlocking (hooks: netconf, dropbear, tinyssh, ppp)](/index.php/Dm-crypt/Specialties#Remote_unlocking_(hooks:_netconf,_dropbear,_tinyssh,_ppp) "Dm-crypt/Specialties").
+
+1.  Install [mkinitcpio-netconf](https://aur.archlinux.org/packages/mkinitcpio-netconf/) to provide hooks for setting up early user space networking.
+2.  Choose an SSH server to use in early user space. The options are [mkinitcpio-tinyssh](https://aur.archlinux.org/packages/mkinitcpio-tinyssh/) or [mkinitcpio-dropbear](https://aur.archlinux.org/packages/mkinitcpio-dropbear/), and are mutually exclusive.
+    1.  If using [mkinitcpio-tinyssh](https://aur.archlinux.org/packages/mkinitcpio-tinyssh/), it is also recommended to install [tinyssh-convert](https://aur.archlinux.org/packages/tinyssh-convert/) or [tinyssh-convert-git](https://aur.archlinux.org/packages/tinyssh-convert-git/). This tool converts an existing OpenSSH hostkey to the TinySSH key format, preserving the key fingerprint and avoiding connection warnings. The TinySSH and Dropbear mkinitcpio install scripts will automatically convert existing hostkeys when generating a new initcpio image.
+3.  Decide whether to use an existing OpenSSH key or generate a new one (recommended) for the host that will be connecting to and unlocking the encrypted ZFS machine. Copy the public key into `/etc/tinyssh/root_key` or `/etc/dropbear/root_key`. When generating the initcpio image, this file will be added to `authorized_keys` for the root user and is only valid in the initrd environment.
+4.  Add the `ip=` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") to your boot loader configuration. The `ip` string is [highly configurable](https://www.kernel.org/doc/Documentation/filesystems/nfs/nfsroot.txt). A simple DHCP example is shown below. `ip=:::::eth0:dhcp` 
+5.  Edit `/etc/mkinitcpio.conf` to include the `netconf`, `dropbear` or `tinyssh`, and `zfsencryptssh` hooks before the `zfs` hook: `HOOKS=(... netconf <tinyssh>|<dropbear> zfsencryptssh zfs ...)` 
+6.  Re-build the initcpio image: `sudo mkinitcpio -p linux` 
+7.  Reboot and try it out!
+
+#### Changing the SSH server port
+
+By default, [mkinitcpio-tinyssh](https://aur.archlinux.org/packages/mkinitcpio-tinyssh/) and [mkinitcpio-dropbear](https://aur.archlinux.org/packages/mkinitcpio-dropbear/) listen on port `22`. You may wish to change this.
+
+For **TinySSH**, copy `/usr/lib/initcpio/hooks/tinyssh` to `/etc/initcpio/hooks/tinyssh`, and find/modify the following line in the `run_hook()` function:
+
+ `/etc/initcpio/hooks/tinyssh` 
+```
+/usr/bin/tcpserver -HRDl0 0.0.0.0 <new_port> /usr/sbin/tinysshd -v /etc/tinyssh/sshkeydir &
+
+```
+
+For **Dropbear**, copy `/usr/lib/initcpio/hooks/dropbear` to `/etc/initcpio/hooks/dropbear`, and find/modify the following line in the `run_hook()` function:
+
+ `/etc/initcpio/hooks/tinyssh` 
+```
+ /usr/sbin/dropbear -E -s -j -k -p <new_port>
+
+```
+
+[Regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
+
+#### Unlocking from a Windows machine using PuTTY/Plink
+
+First, we need to use `puttygen.exe` to import and convert the OpenSSH key generated earlier into PuTTY's *.ppk* private key format. Let us call it `zfs_unlock.ppk` for this example.
+
+The mkinitcpio-netconf process above does not setup a shell (nor do we need need one). However, because there is no shell, PuTTY will immediately close after a successful connection. This can be disabled in the PuTTY SSH configuration (*Connection -> SSH -> [X] Do not start a shell or command at all*), but it still does not allow us to see stdout or enter the encryption passphrase. Instead, we use `plink.exe` with the following parameters:
+
+```
+plink.exe -ssh -l root -i c:\path\to\zfs_unlock.ppk <hostname>
+
+```
+
+The plink command can be put into a batch script for ease of use.
 
 ## See also
 

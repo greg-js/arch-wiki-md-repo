@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Installation guide](/index.php/Installation_guide "Installation guide"). Data da última tradução: 2018-10-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=549392) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Installation guide](/index.php/Installation_guide "Installation guide"). Data da última tradução: 2018-12-29\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=560731) na versão em inglês.
 
 Este documento irá guiá-lo no processo de instalação [Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs) "Arch Linux (Português)") usando o [Arch Install Scripts](https://projects.archlinux.org/arch-install-scripts.git/). Antes de instalar, é recomendável ler rapidamente o [FAQ](/index.php/FAQ_(Portugu%C3%AAs) "FAQ (Português)"). Para convenções usadas neste documento, veja [Help:Reading (Português)](/index.php/Help:Reading_(Portugu%C3%AAs) "Help:Reading (Português)"). Em especial, exemplos de código podem conter objetos reservados (formatados em `*italics*`) que devem ser substituídos manualmente.
 
@@ -9,13 +9,16 @@ Arch Linux deve funcionar em qualquer máquina compatível com [x86_64](https://
 ## Contents
 
 *   [1 Pré-instalação](#Pré-instalação)
-    *   [1.1 Definir o layout do teclado](#Definir_o_layout_do_teclado)
-    *   [1.2 Verificar o modo de inicialização](#Verificar_o_modo_de_inicialização)
-    *   [1.3 Conectar à Internet](#Conectar_à_Internet)
-    *   [1.4 Atualizar o relógio do sistema](#Atualizar_o_relógio_do_sistema)
-    *   [1.5 Partição dos discos](#Partição_dos_discos)
-    *   [1.6 Formatar as partições](#Formatar_as_partições)
-    *   [1.7 Montar os sistemas de arquivos](#Montar_os_sistemas_de_arquivos)
+    *   [1.1 Verificar a assinatura](#Verificar_a_assinatura)
+    *   [1.2 Inicializar o ambiente live](#Inicializar_o_ambiente_live)
+    *   [1.3 Definir o layout do teclado](#Definir_o_layout_do_teclado)
+    *   [1.4 Verificar o modo de inicialização](#Verificar_o_modo_de_inicialização)
+    *   [1.5 Conectar à Internet](#Conectar_à_Internet)
+    *   [1.6 Atualizar o relógio do sistema](#Atualizar_o_relógio_do_sistema)
+    *   [1.7 Partição dos discos](#Partição_dos_discos)
+        *   [1.7.1 Exemplos de layouts](#Exemplos_de_layouts)
+    *   [1.8 Formatar as partições](#Formatar_as_partições)
+    *   [1.9 Montar os sistemas de arquivos](#Montar_os_sistemas_de_arquivos)
 *   [2 Instalação](#Instalação)
     *   [2.1 Selecionar os espelhos](#Selecionar_os_espelhos)
     *   [2.2 Instalar os pacotes base](#Instalar_os_pacotes_base)
@@ -33,7 +36,39 @@ Arch Linux deve funcionar em qualquer máquina compatível com [x86_64](https://
 
 ## Pré-instalação
 
-Baixe e inicialize a mídia de instalação como explicado em [Obtendo e instalando o Arch](/index.php/Obtendo_e_instalando_o_Arch "Obtendo e instalando o Arch"). Você será autenticado no primeiro [console virtual](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") como o usuário root e apresentado como um prompt shell [Zsh](/index.php/Zsh "Zsh"); comandos comuns como [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) podem ser [completados com tab](https://en.wikipedia.org/wiki/Command-line_completion "wikipedia:Command-line completion").
+A mídia de instalação e suas assinaturas [GnuPG](/index.php/GnuPG "GnuPG") podem ser obtidas a partir da página de [Download](https://archlinux.org/download/).
+
+### Verificar a assinatura
+
+É recomendável verificar a assinatura da imagem antes de usá-la, especialmente ao fazer o download de um *espelho HTTP*, no qual os downloads geralmente são propensos a serem interceptados para [servir imagens maliciosas](http://www.cs.arizona.edu/stork/packagemanagersecurity/attacks-on-package-managers.html#explanation).
+
+Em um sistema com [GnuPG](/index.php/GnuPG "GnuPG") instalado, faça isso baixando a *assinatura PGP* (sob *Checksums*) para o diretório da ISO e [verificando-a](/index.php/GnuPG#Verify_a_signature "GnuPG") com:
+
+```
+$ gpg --keyserver pgp.mit.edu --keyserver-options auto-key-retrieve --verify archlinux-*versão*-x86_64.iso.sig
+
+```
+
+Alternativamente, de uma instalação existente de Arch Linux, execute:
+
+```
+$ pacman-key -v archlinux-*versão*-x86_64.iso.sig
+
+```
+
+**Nota:**
+
+*   A assinatura em si pode ser manipulada se for baixada de um site espelho, em vez de [archlinux.org](https://archlinux.org/download/) como acima. Nesse caso, certifique-se de que a chave pública, que é usada para decodificar a assinatura, seja assinada por outra chave confiável. O comando `gpg` produzirá a impressão digital da chave pública.
+*   Outro método para verificar a autenticidade da assinatura é garantir que a impressão digital da chave pública seja idêntica à impressão digital da chave do [desenvolvedor do Arch Linux](https://www.archlinux.org/people/developers/) que assinou o arquivo ISO. Veja [Wikipedia:pt:Criptografia de chave pública](https://en.wikipedia.org/wiki/pt:Criptografia_de_chave_p%C3%BAblica "wikipedia:pt:Criptografia de chave pública") para mais informações sobre o processo de chave pública para autenticar chaves.
+
+### Inicializar o ambiente live
+
+O ambiente *live* pode ser inicializado a partir de uma [unidade flash USB](/index.php/M%C3%ADdia_de_instala%C3%A7%C3%A3o_em_flash_USB "Mídia de instalação em flash USB"), um [disco óptico](/index.php/Optical_disc_drive#Burning "Optical disc drive") ou uma rede com [PXE](/index.php/PXE "PXE"). Para meios alternativos de instalação, consulte [Category:Installation process (Português)](/index.php/Category:Installation_process_(Portugu%C3%AAs) "Category:Installation process (Português)").
+
+*   O apontamento do dispositivo de inicialização atual para uma unidade que contém a mídia de instalação do Arch normalmente pode ser alcançado pressionando-se uma tecla durante a fase [POST](https://en.wikipedia.org/wiki/pt:Power-on_self-test "wikipedia:pt:Power-on self-test"), conforme indicado na tela inicial. Consulte o manual da sua placa-mãe para obter detalhes.
+*   Quando o menu do Arch aparecer, selecione *Boot Arch Linux* e pressione `Enter` para entrar no ambiente de instalação.
+*   Consulte [README.bootparams](https://projects.archlinux.org/archiso.git/tree/docs/README.bootparams) para uma lista de [parâmetros de inicialização](/index.php/Kernel_parameters#Configuration "Kernel parameters") e [packages.x86_64](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) para uma lista de pacotes incluídos.
+*   Você será autenticado no primeiro [console virtual](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") como o usuário *root* sob um prompt de shell [Zsh](/index.php/Zsh "Zsh").
 
 Para trocar para um console diferente — por exemplo, para ver esse guia com [ELinks](/index.php/ELinks "ELinks") junto com a instalação — use o [atalho](/index.php/Keyboard_shortcuts "Keyboard shortcuts") `Alt+*seta*`. Para [editar](/index.php/Edi%C3%A7%C3%A3o_de_texto "Edição de texto") arquivos de configuração, [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "wikipedia:vi") e [vim](/index.php/Vim#Usage "Vim") estão disponíveis.
 
@@ -99,38 +134,45 @@ Quando reconhecido pelo sistema *live*, discos são atribuídos a um [dispositiv
 
 Resultados terminando em `rom`, `loop` ou `airoot` podem ser ignorados.
 
-As seguintes *partições* são **exigidos** para um dispositivo escolhido:
+As seguintes [partições](/index.php/Partition "Partition") são **exigidas** para um dispositivo escolhido:
 
 *   Uma partição para o diretório raiz `/`.
 *   Se [UEFI](/index.php/UEFI "UEFI") estiver habilitado, um [Partição de sistema EFI](/index.php/EFI_system_partition "EFI system partition").
 
-**Nota:** Espaço [swap](/index.php/Swap_(Portugu%C3%AAs) "Swap (Português)") pode ser definido em uma partição separada ou um [arquivo swap](/index.php/Arquivo_swap "Arquivo swap").
+Se você quiser criar algum dispositivo de bloco empilhado para [LVM](/index.php/LVM "LVM"), [criptografia de sistema](/index.php/Dm-crypt "Dm-crypt") ou [RAID](/index.php/RAID "RAID"), faça isso agora.
 
-Para modificar *tabelas de partição*, use [fdisk](/index.php/Fdisk "Fdisk") ou [parted](/index.php/Parted "Parted").
+#### Exemplos de layouts
 
-```
-# fdisk /dev/*sda*
+| UEFI com [GPT](/index.php/Partitioning#GUID_Partition_Table "Partitioning") |
+| Ponto de montagem | Partição | [Tipo de partição (GUID)](https://en.wikipedia.org/wiki/pt:Tabela_de_Parti%C3%A7%C3%A3o_GUID#Tipos_de_parti.C3.A7.C3.A3o_GUID "wikipedia:pt:Tabela de Partição GUID") | Tamanho sugerido |
+| `/boot` ou `/efi` | /dev/sd*x*1 | [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") | 260–512 MiB |
+| `/` | /dev/sd*x*2 | Linux | Restante do dispositivo |
+| [SWAP] | /dev/sd*x*3 | [Swap](/index.php/Swap_(Portugu%C3%AAs) "Swap (Português)") Linux | Mais que 512 MiB |
+| BIOS com [MBR](/index.php/Partitioning#Master_Boot_Record "Partitioning") ou GPT |
+| Ponto de montagem | Partição | [Tipo de partição](https://en.wikipedia.org/wiki/pt:Tipo_de_parti%C3%A7%C3%A3o "wikipedia:pt:Tipo de partição") | Tamanho sugerido |
+| – | /dev/sd*x*1 | [Partição de inicialização BIOS](/index.php/BIOS_boot_partition "BIOS boot partition") | 1 MiB |
+| `/` | /dev/sd*x*2 | Linux | Restante do dispositivo |
+| [SWAP] | /dev/sd*x*3 | Linux [swap](/index.php/Swap_(Portugu%C3%AAs) "Swap (Português)") | Mais que 512 MiB |
 
-```
+**Nota:**
 
-Veja [Particionamento](/index.php/Partitioning "Partitioning") para mais informações.
-
-**Nota:** Se você quiser criar qualquer dispositivo de bloco *stacked* para [LVM](/index.php/LVM "LVM"), [criptografia de disco](/index.php/Disk_encryption "Disk encryption") ou [RAID](/index.php/RAID "RAID"), faça-o agora.
+*   Use [fdisk](/index.php/Fdisk "Fdisk") ou [parted](/index.php/Parted "Parted") para modificar as tabelas de partição, por exemplo `fdisk /dev/sd*x*`.
+*   Um espaço [swap](/index.php/Swap_(Portugu%C3%AAs) "Swap (Português)") pode ser definido em um [Arquivo swap](/index.php/Arquivo_swap "Arquivo swap") para sistemas de arquivos que possuem suporte a file systems supporting it.
 
 ### Formatar as partições
 
-Assim que as partições tenham sido criadas, cada uma deve ser formatada com um [sistema de arquivos](/index.php/File_system "File system") adequado. Por exemplo, para formatar a partição raiz em `/dev/*sda1*` com `*ext4*`, execute:
+Assim que as partições tenham sido criadas, cada uma deve ser formatada com um [sistema de arquivos](/index.php/File_system "File system") adequado. Por exemplo, para formatar a partição raiz em `/dev/sd*x*2` com `*ext4*`, execute:
 
 ```
-# mkfs.*ext4* /dev/*sda1*
+# mkfs.*ext4* /dev/sd*x*2
 
 ```
 
 Se você criou uma partição para swap (por exemplo, `/dev/*sda3*`), inicialize-a com *mkswap*:
 
 ```
-# mkswap /dev/*sda3*
-# swapon /dev/*sda3*
+# mkswap /dev/sd*x*3
+# swapon /dev/sd*x*3
 
 ```
 
@@ -141,15 +183,15 @@ Veja [File systems#Create a file system](/index.php/File_systems#Create_a_file_s
 [Monte](/index.php/Mount "Mount") o sistema de arquivos da partição raiz em `/mnt`, por exemplo:
 
 ```
-# mount /dev/*sda1* /mnt
+# mount /dev/sd*x*2 /mnt
 
 ```
 
-Crie pontos de montagem para quaisquer partições restantes e monte-as conforme adequado:
+Crie pontos de montagem para quaisquer partições restantes e monte-as conforme adequado, por exemplo:
 
 ```
 # mkdir /mnt/*boot*
-# mount /dev/*sda2* /mnt/*boot*
+# mount /dev/sd*x*2 /mnt/*boot*
 
 ```
 
@@ -270,7 +312,7 @@ Complete a [configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede "C
 
 Criar um novo *initramfs* geralmente não é necessário, porque [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") foi executado na instalação do pacote [linux](https://www.archlinux.org/packages/?name=linux) com *pacstrap*.
 
-Para configurações especiais, modifique o arquivo [mkinitcpio.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.conf.5) e recrie a imagem initramfs:
+Para [LVM](/index.php/LVM#Configure_mkinitcpio "LVM"), [criptografia de sistema](/index.php/Dm-crypt "Dm-crypt") or [RAID](/index.php/RAID#Configure_mkinitcpio "RAID"), modifique o [mkinitcpio.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.conf.5) e recrie a imagem initramfs:
 
 ```
 # mkinitcpio -p linux
@@ -288,11 +330,9 @@ Defina a [senha](/index.php/Senha "Senha") do *root* (também conhecido como "su
 
 ### Gerenciador de boot
 
-Você pode escolher entre [GRUB](/index.php/GRUB_(Portugu%C3%AAs) "GRUB (Português)") ou [Syslinux](/index.php/Syslinux "Syslinux").
+Veja [Processo de inicialização do Arch#Gerenciador de boot](/index.php/Processo_de_inicializa%C3%A7%C3%A3o_do_Arch#Gerenciador_de_boot "Processo de inicialização do Arch") para uma lista de gerenciadores de boot com suporte a Linux.
 
-Um gerenciador de boot compatível com o Linux deve ser instalado para inicializar o Arch Linux. Veja [Category:Boot loaders (Português)](/index.php/Category:Boot_loaders_(Portugu%C3%AAs) "Category:Boot loaders (Português)") para escolhas disponíveis e configurações.
-
-Se você tiver um CPU Intel ou AMD, habilite atualizações de [microcódigo](/index.php/Microcode "Microcode").
+**Nota:** Se você tiver um CPU Intel ou AMD, habilite atualizações de [microcódigo](/index.php/Microcode "Microcode").
 
 ## Reiniciar
 

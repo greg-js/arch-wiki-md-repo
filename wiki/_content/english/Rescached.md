@@ -1,3 +1,7 @@
+Related articles
+
+*   [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution")
+
 [rescached](https://github.com/shuLhan/rescached-go) is a daemon to cache internet name and address resolution in local memory when running and in a disk cache when not running.
 
 *rescached* is not a reimplementation of a DNS server like BIND. The primary goal of *rescached* is only to cache DNS queries and answers to minimize unneeded traffic to the outside network. It is intended for personal systems or serving a small group of users.

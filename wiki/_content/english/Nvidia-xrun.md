@@ -23,25 +23,23 @@
 
 ### Setting the right bus id
 
-If you install nvidia-xrun from [AUR](/index.php/AUR "AUR"), you can skip this step, as the bus id has been already set in `/etc/X11/nvidia-xorg.conf`.
+Users who installed `nvidia-xrun` from the [AUR](/index.php/AUR "AUR") can skip this step, because the bus id has been automatically set in `/etc/X11/nvidia-xorg.conf`. However, if you installed it from [Github repo](https://github.com/Witko/nvidia-xrun), you might need to set the bus id manually.
 
-If you download nvidia-xrun from [nvidia-xrun github repo], perhaps you should set the bus id.
-
-Check your display device's bus id
+Find your display device bus id:
 
 ```
- $ lspci | grep NVIDIA
+ $ lspci | grep -i nvidia | awk '{print $1}'
 
 ```
 
-You will find your bus id. Usually the `1:0:0` bus is correct. If this is not your case (you can find out through *lspci* or *bbswitch* output messages) you can create a script for example `/etc/X11/nvidia-xorg.conf.d/30-nvidia.conf` to set the proper bus id:
+It might return something similar to **`01:00.0`**. Then create a script (for example `/etc/X11/nvidia-xorg.conf.d/30-nvidia.conf`) to set the proper bus id:
 
  `/etc/X11/nvidia-xorg.conf.d/30-nvidia.conf` 
 ```
 Section "Device"
     Identifier "nvidia"
     Driver "nvidia"
-    BusID "PCI:2:0:0"
+    BusID "PCI:**1:0:0**"
 EndSection
 ```
 

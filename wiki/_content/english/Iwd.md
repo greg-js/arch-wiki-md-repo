@@ -163,7 +163,26 @@ Example configuration files for these network types can be found in subdirectori
 
 File `/etc/iwd/main.conf` can be used for main configuration.
 
-By default, `iwd` stores the network configuration in `/var/lib/iwd` directory. The configuration file is named as `*network*.*type*` where *network* is network SSID and *type* is network type i.e. one of "open", "wep", "psk", "8021x". The file is used to store the encrypted `PreSharedKey` and the cleartext `Passphrase` and can be created by the user without invoking `iwctl`. The file can also be used for other configuration pertaining to that network SSID.
+By default, `iwd` stores the network configuration in `/var/lib/iwd` directory. The configuration file is named as `*network*.*type*` where *network* is network SSID and *type* is network type i.e. one of "open", "wep", "psk", "8021x". The file is used to store the encrypted `PreSharedKey` and optionally the cleartext `Passphrase` and can be created by the user without invoking `iwctl`. The file can also be used for other configuration pertaining to that network SSID.
+
+A minimal example file to connect to a WPA2/PSK secured network with SSID "spaceship" and passphrase "test1234":
+
+ `/var/lib/iwd/spaceship.psk` 
+```
+[Security]
+PreSharedKey=aafb192ce2da24d8c7805c956136f45dd612103f086034c402ed266355297295
+```
+
+The PreSharedKey can be calculated with wpa_passphrase from the SSID and the WIFI passphrase:
+
+ `$ wpa_passphrase "spaceship" "test1234"` 
+```
+network={
+        ssid="spaceship"
+        #psk="test1234"
+        psk=aafb192ce2da24d8c7805c956136f45dd612103f086034c402ed266355297295
+}
+```
 
 ### Disable auto-connect for a particular network
 
@@ -185,7 +204,6 @@ By default when `iwd` is in disconnected state, it periodically scans for availa
 # Upcoming iwd version 0.13 and above
 [Scan]
 disable_periodic_scan=true
-
 ```
 
 ### Deny console (local) user from modifying the settings

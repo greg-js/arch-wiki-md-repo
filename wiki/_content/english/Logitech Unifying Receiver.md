@@ -15,6 +15,7 @@ The [Logitech Unifying Receiver](http://www.logitech.com/349/6072) is a wireless
     *   [3.3 Logitech touchpad keyboard K400r with unifying receiver M325](#Logitech_touchpad_keyboard_K400r_with_unifying_receiver_M325)
     *   [3.4 Solaar 'Permission denied'](#Solaar_'Permission_denied')
     *   [3.5 Wireless Keyboard doesn't work while booting (can't enter luks passphrase)](#Wireless_Keyboard_doesn't_work_while_booting_(can't_enter_luks_passphrase))
+    *   [3.6 MouseJack Vulnerability](#MouseJack_Vulnerability)
 
 ## Installation
 
@@ -161,3 +162,24 @@ and recreate the initrd for the kernel:
 # mkinitcpio -p linux
 
 ```
+
+### MouseJack Vulnerability
+
+It's probable that your firmware is affected by the [MouseJack Vulnerability](https://www.bastille.net/research/vulnerabilities/mousejack/affected-devices).
+
+```
+ltunify receiver-info
+
+```
+
+for getting current firmware. Affected versions include:
+
+```
+012.001.00019
+012.003.00025
+012.005.00028
+024.003.00027
+
+```
+
+You should therefore update the firmware, like instructed [here](https://community.logitech.com/s/question/0D531000058b3B7CAI/logitech-response-to-research-findings). Unfortunately, Logitech only provides Firmware Update Tools for Windows and Mac.

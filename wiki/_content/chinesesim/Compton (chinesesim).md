@@ -4,25 +4,25 @@ Compton 是一个独立的合成管理器，可以给不带合成功能的窗口
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 使用](#.E4.BD.BF.E7.94.A8)
-    *   [2.1 开机时自动启动 Compton](#.E5.BC.80.E6.9C.BA.E6.97.B6.E8.87.AA.E5.8A.A8.E5.90.AF.E5.8A.A8_Compton)
-    *   [2.2 手动运行](#.E6.89.8B.E5.8A.A8.E8.BF.90.E8.A1.8C)
-    *   [2.3 配置文件](#.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)
-        *   [2.3.1 专为某些窗口禁用阴影效果](#.E4.B8.93.E4.B8.BA.E6.9F.90.E4.BA.9B.E7.AA.97.E5.8F.A3.E7.A6.81.E7.94.A8.E9.98.B4.E5.BD.B1.E6.95.88.E6.9E.9C)
-*   [3 多显示器](#.E5.A4.9A.E6.98.BE.E7.A4.BA.E5.99.A8)
-*   [4 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
-    *   [4.1 标签页式窗口](#.E6.A0.87.E7.AD.BE.E9.A1.B5.E5.BC.8F.E7.AA.97.E5.8F.A3)
+*   [1 安装](#安装)
+*   [2 使用](#使用)
+    *   [2.1 开机时自动启动 Compton](#开机时自动启动_Compton)
+    *   [2.2 手动运行](#手动运行)
+    *   [2.3 配置文件](#配置文件)
+        *   [2.3.1 专为某些窗口禁用阴影效果](#专为某些窗口禁用阴影效果)
+*   [3 多显示器](#多显示器)
+*   [4 故障排除](#故障排除)
+    *   [4.1 标签页式窗口](#标签页式窗口)
     *   [4.2 slock](#slock)
-    *   [4.3 dwm 与 dmenu](#dwm_.E4.B8.8E_dmenu)
-    *   [4.4 用 xsetroot 无法设置桌面背景颜色](#.E7.94.A8_xsetroot_.E6.97.A0.E6.B3.95.E8.AE.BE.E7.BD.AE.E6.A1.8C.E9.9D.A2.E8.83.8C.E6.99.AF.E9.A2.9C.E8.89.B2)
-    *   [4.5 Intel 显卡渲染出错](#Intel_.E6.98.BE.E5.8D.A1.E6.B8.B2.E6.9F.93.E5.87.BA.E9.94.99)
-    *   [4.6 使用 AMD Catalyst 驱动时出现的花屏 / 截屏问题](#.E4.BD.BF.E7.94.A8_AMD_Catalyst_.E9.A9.B1.E5.8A.A8.E6.97.B6.E5.87.BA.E7.8E.B0.E7.9A.84.E8.8A.B1.E5.B1.8F_.2F_.E6.88.AA.E5.B1.8F.E9.97.AE.E9.A2.98)
-    *   [4.7 使用 NVidia 驱动时出现高 CPU 占用](#.E4.BD.BF.E7.94.A8_NVidia_.E9.A9.B1.E5.8A.A8.E6.97.B6.E5.87.BA.E7.8E.B0.E9.AB.98_CPU_.E5.8D.A0.E7.94.A8)
-    *   [4.8 使用 NVidia 驱动时，进程后台化会报错](#.E4.BD.BF.E7.94.A8_NVidia_.E9.A9.B1.E5.8A.A8.E6.97.B6.EF.BC.8C.E8.BF.9B.E7.A8.8B.E5.90.8E.E5.8F.B0.E5.8C.96.E4.BC.9A.E6.8A.A5.E9.94.99)
-    *   [4.9 使用 Xft 字体会导致卡顿](#.E4.BD.BF.E7.94.A8_Xft_.E5.AD.97.E4.BD.93.E4.BC.9A.E5.AF.BC.E8.87.B4.E5.8D.A1.E9.A1.BF)
-    *   [4.10 屏幕闪烁](#.E5.B1.8F.E5.B9.95.E9.97.AA.E7.83.81)
-*   [5 延伸阅读](#.E5.BB.B6.E4.BC.B8.E9.98.85.E8.AF.BB)
+    *   [4.3 dwm 与 dmenu](#dwm_与_dmenu)
+    *   [4.4 用 xsetroot 无法设置桌面背景颜色](#用_xsetroot_无法设置桌面背景颜色)
+    *   [4.5 Intel 显卡渲染出错](#Intel_显卡渲染出错)
+    *   [4.6 使用 AMD Catalyst 驱动时出现的花屏 / 截屏问题](#使用_AMD_Catalyst_驱动时出现的花屏_/_截屏问题)
+    *   [4.7 使用 NVidia 驱动时出现高 CPU 占用](#使用_NVidia_驱动时出现高_CPU_占用)
+    *   [4.8 使用 NVidia 驱动时，进程后台化会报错](#使用_NVidia_驱动时，进程后台化会报错)
+    *   [4.9 使用 Xft 字体会导致卡顿](#使用_Xft_字体会导致卡顿)
+    *   [4.10 屏幕闪烁](#屏幕闪烁)
+*   [5 延伸阅读](#延伸阅读)
 
 ## 安装
 
@@ -238,7 +238,7 @@ focus-exclude = "x = 0 && y = 0 && override_redirect = true";
 
 ### 用 xsetroot 无法设置桌面背景颜色
 
-目前 compton 与 `xsetroot` 的 `-solid` 功能还无法兼容。不过你可以试试用 [hsetroot](https://aur.archlinux.org/packages/hsetroot/) 这个替代方案：
+目前 compton 与 `xsetroot` 的 `-solid` 功能还无法兼容。不过你可以试试用 [hsetroot](https://www.archlinux.org/packages/?name=hsetroot) 这个替代方案：
 
 ```
 $ hsetroot -solid '#000000'

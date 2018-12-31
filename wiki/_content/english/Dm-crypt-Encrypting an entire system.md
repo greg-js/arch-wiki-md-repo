@@ -268,7 +268,7 @@ At [Installation guide#Mount the file systems](/index.php/Installation_guide#Mou
 Add the `keyboard`, `keymap` and `encrypt` hooks to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"). If the default US keymap is fine for you, you can omit the `keymap` hook.
 
 ```
-HOOKS=(base udev autodetect **keyboard** **keymap** consolefont modconf block **encrypt** filesystems fsck)
+HOOKS=(base **udev** autodetect **keyboard** **keymap** consolefont modconf block **encrypt** filesystems fsck)
 
 ```
 
@@ -432,7 +432,7 @@ Mount the partition to `/mnt/boot`:
 Add the `keyboard`, `encrypt` and `lvm2` hooks to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
 
 ```
-HOOKS=(base udev autodetect **keyboard** **keymap** consolefont modconf block **encrypt** **lvm2** filesystems fsck)
+HOOKS=(base **udev** autodetect **keyboard** **keymap** consolefont modconf block **encrypt** **lvm2** filesystems fsck)
 
 ```
 
@@ -537,7 +537,7 @@ More information about the encryption options can be found in [dm-crypt/Device e
 Add the `keyboard`, `lvm2` and `encrypt` hooks to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
 
 ```
-HOOKS=(base udev autodetect **keyboard** **keymap** consolefont modconf block **lvm2** **encrypt** filesystems fsck)
+HOOKS=(base **udev** autodetect **keyboard** **keymap** consolefont modconf block **lvm2** **encrypt** filesystems fsck)
 
 ```
 
@@ -1049,7 +1049,7 @@ sda                   8:0      0   200G  0 disk
 Add the `keyboard`, `encrypt` and `lvm2` hooks to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
 
 ```
-HOOKS=(base udev autodetect **keyboard** **keymap** consolefont modconf block **encrypt** **lvm2** filesystems fsck)
+HOOKS=(base **udev** autodetect **keyboard** **keymap** consolefont modconf block **encrypt** **lvm2** filesystems fsck)
 
 ```
 

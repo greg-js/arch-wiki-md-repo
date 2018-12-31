@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [CUPS/Printer-specific problems](/index.php/CUPS/Printer-specific_problems "CUPS/Printer-specific problems"). Дата последней синхронизации: 13 октября 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=CUPS/Printer-specific_problems&diff=0&oldid=547417).
+**Состояние перевода:** На этой странице представлен перевод статьи [CUPS/Printer-specific problems](/index.php/CUPS/Printer-specific_problems "CUPS/Printer-specific problems"). Дата последней синхронизации: 27 декабря 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=CUPS/Printer-specific_problems&diff=0&oldid=560538).
 
 Ссылки по теме
 
@@ -53,6 +53,7 @@
 | DCP-7020 | [foomatic](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Foomatic "CUPS (Русский)") | Или драйвер Brother. |
 | DCP-7030 | [brother-dcp7030](https://aur.archlinux.org/packages/brother-dcp7030/) |
 | DCP-7065DN | [brother-dcp7065dn](https://aur.archlinux.org/packages/brother-dcp7065dn/) |
+| DCP-J515W | [brother-dcp-j515w](https://aur.archlinux.org/packages/brother-dcp-j515w/) |
 | FAX-2820 | [brother-cups-wrapper-laser](https://aur.archlinux.org/packages/brother-cups-wrapper-laser/) |
 | FAX-2840 | [brother-fax2840](https://aur.archlinux.org/packages/brother-fax2840/) | Или [foomatic](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Foomatic "CUPS (Русский)") - работает в основном с `hpijs-pcl5e.ppd`. То же, что и HL-2170W. |
 | FAX-2940 | [brother-fax2940](https://aur.archlinux.org/packages/brother-fax2940/) |
@@ -71,6 +72,7 @@
 | HL-3140CW | [brother-hl3140cw](https://aur.archlinux.org/packages/brother-hl3140cw/) | Используйте драйвер IPP и Brother, чтобы избежать сокращения страниц и бесконечных распечаток |
 | HL-3150CDW | [brother-hl3150cdw](https://aur.archlinux.org/packages/brother-hl3150cdw/) |
 | HL-3170CDW | [brother-hl3170cdw](https://aur.archlinux.org/packages/brother-hl3170cdw/) |
+| HL-4150CDN | [brother-hl4150cdn](https://aur.archlinux.org/packages/brother-hl4150cdn/) |
 | HL-5140 | [foomatic](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Foomatic "CUPS (Русский)") | Или драйвер Brother. |
 | HL-5340 | [foomatic](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Foomatic "CUPS (Русский)") | Используйте драйвер *Generic PCL 6/PCL XL Printer - CUPS+Gutenprint* ([gutenprint](https://www.archlinux.org/packages/?name=gutenprint) и [foomatic-db-gutenprint-ppds](https://www.archlinux.org/packages/?name=foomatic-db-gutenprint-ppds)). Или драйвер Brother, который может привести к сбою печати с ошибками postscript. |
 | HL-L2300D | [brother-hll2300d](https://aur.archlinux.org/packages/brother-hll2300d/) |
@@ -245,12 +247,13 @@ ftp $PRINTER_IP
 | LBP7200C series |
 | LBP7210Cdn |
 | LBP9100C |
-| MF4720w | [cndrvcups-lb-bin](https://aur.archlinux.org/packages/cndrvcups-lb-bin/) |
+| MF635Cx | [cndrvcups-lb-bin](https://aur.archlinux.org/packages/cndrvcups-lb-bin/) |
+| MF4720w |
 | MG4200 series | [cnijfilter-mg4200](https://aur.archlinux.org/packages/cnijfilter-mg4200/) | Избегайте добавления принтера через [веб интерфейс](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Веб_интерфейс "CUPS (Русский)"), т.к. он не найдет файл PPD. |
 | MX490 | [cnijfilter2](https://aur.archlinux.org/packages/cnijfilter2/)
 [cnijfilter2-bin](https://aur.archlinux.org/packages/cnijfilter2-bin/) |
 | MX492 |
-| TS8050 | [cnijfilter2](https://aur.archlinux.org/packages/cnijfilter2/) | Без [cnijfilter2](https://aur.archlinux.org/packages/cnijfilter2/) печать завершится ошибкой фильтра или вы можете получить "рендеринг завершен", а принтер ничего не напечатает |
+| TS8050 | Без [cnijfilter2](https://aur.archlinux.org/packages/cnijfilter2/) печать завершится ошибкой фильтра или вы можете получить "рендеринг завершен", а принтер ничего не напечатает |
 | TS9020 | [canon-ts9020](https://aur.archlinux.org/packages/canon-ts9020/) |
 | Принтер | Драйвер/фильтр | Примечание |
 

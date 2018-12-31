@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Archiso offline](/index.php/Archiso_offline "Archiso offline"). Data da última tradução: 2018-11-11\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Archiso_offline&diff=0&oldid=554772) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Archiso offline](/index.php/Archiso_offline "Archiso offline"). Data da última tradução: 2018-12-29\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Archiso_offline&diff=0&oldid=557387) na versão em inglês.
 
 Artigos relacionados
 

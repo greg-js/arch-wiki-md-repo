@@ -20,8 +20,9 @@ These [mirrors](/index.php/Mirrors "Mirrors") are *not* listed in `/etc/pacman.d
 *   [16 Sweden](#Sweden)
 *   [17 Thailand](#Thailand)
 *   [18 Turkey](#Turkey)
-*   [19 United States](#United_States)
-*   [20 Sourceforge (old ISOs)](#Sourceforge_(old_ISOs))
+*   [19 United Kingdom](#United_Kingdom)
+*   [20 United States](#United_States)
+*   [21 Sourceforge (old ISOs)](#Sourceforge_(old_ISOs))
 
 ## Australia
 
@@ -130,6 +131,10 @@ These [mirrors](/index.php/Mirrors "Mirrors") are *not* listed in `/etc/pacman.d
 
 *   [http://mirror.veriteknik.net.tr/archlinux/](http://mirror.veriteknik.net.tr/archlinux/) *- VeriTeknik Data Center*
 *   [http://ftp.linux.org.tr/archlinux/](http://ftp.linux.org.tr/archlinux/)
+
+## United Kingdom
+
+*   [http://archlinux.uk.mirror.allworldit.com/archlinux-deltarepo/](http://archlinux.uk.mirror.allworldit.com/archlinux-deltarepo/) - *Automatically generating deltas for last 5 versions to current version. Needs [xdelta3](https://www.archlinux.org/packages/?name=xdelta3) to run. Supports http, https, rsync on same path.*
 
 ## United States
 

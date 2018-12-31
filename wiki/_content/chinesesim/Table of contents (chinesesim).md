@@ -2,7 +2,7 @@
 
 目前因为中文文档和分类尚不齐全，有需要的请浏览英语语种的网页。
 
-| [简体中文](/index.php/Category:%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87 "Category:简体中文") <small>(160)</small> |
+| [简体中文](/index.php/Category:%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87 "Category:简体中文") <small>(159)</small> |
 | <small>1.</small> [关于Arch](/index.php/Category:About_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:About Arch (简体中文)") <small>(16)</small> |
 | <small>1.1.</small> [Arch community](/index.php/Category:Arch_community_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Arch community (简体中文)") <small>(2)</small> |
 | <small>1.2.</small> [Arch开发](/index.php/Category:Arch_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Arch development (简体中文)") <small>(1) (同时还属于 [开发](/index.php/Category:Development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Development (简体中文)"))</small> |
@@ -21,9 +21,9 @@
 | <small>2.3.</small> [数据压缩和归档](/index.php/Category:Data_compression_and_archiving_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Data compression and archiving (简体中文)") <small>(4)</small> |
 | <small>2.4.</small> [数据库管理](/index.php/Category:Database_management_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Database management systems (简体中文)") <small>(4)</small> |
 | <small>2.5.</small> [字典](/index.php/Category:Dictionaries_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Dictionaries (简体中文)") <small>(2)</small> |
-| <small>2.6.</small> [Emulation](/index.php/Category:Emulation_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Emulation (简体中文)") <small>(7)</small> |
+| <small>2.6.</small> [Emulation](/index.php/Category:Emulation_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Emulation (简体中文)") <small>(6)</small> |
 | <small>2.7.</small> [文件管理器](/index.php/Category:File_managers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:File managers (简体中文)") <small>(4)</small> |
-| <small>2.8.</small> [游戏娱乐](/index.php/Category:Gaming_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Gaming (简体中文)") <small>(6)</small> |
+| <small>2.8.</small> [游戏娱乐](/index.php/Category:Gaming_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Gaming (简体中文)") <small>(5)</small> |
 | <small>2.9.</small> [图形和排版](/index.php/Category:Graphics_and_desktop_publishing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Graphics and desktop publishing (简体中文)") <small>(4)</small> |
 | <small>2.10.</small> [网络程序](/index.php/Category:Internet_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Internet applications (简体中文)") <small>(16) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small> |
 | <small>2.10.1.</small> [BitTorrent clients](/index.php/Category:BitTorrent_clients_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:BitTorrent clients (简体中文)") <small>(1)</small> |
@@ -37,21 +37,24 @@
 | <small>2.12.</small> [播放器](/index.php/Category:Multimedia_players_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Multimedia players (简体中文)") <small>(4)</small> |
 | <small>2.13.</small> [办公](/index.php/Category:Office_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Office (简体中文)") <small>(3)</small> |
 | <small>2.13.1.</small> [TeX](/index.php/Category:TeX_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:TeX (简体中文)") <small>(1)</small> |
-| <small>2.14.</small> [Software comparisons](/index.php/Category:Software_comparisons_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Software comparisons (简体中文)") <small>(1) (同时还属于 [ArchWiki](/index.php/Category:ArchWiki_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:ArchWiki (简体中文)"))</small> |
-| <small>2.15.</small> [系统监视和信息通知](/index.php/Category:Status_monitoring_and_notification_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Status monitoring and notification (简体中文)") <small>(1)</small> |
-| <small>2.16.</small> [终端模拟器](/index.php/Category:Terminal_emulators_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Terminal emulators (简体中文)") <small>(4) (同时还属于 [简体中文](/index.php/Category:%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87 "Category:简体中文"))</small> |
-| <small>2.17.</small> [文本编辑器](/index.php/Category:Text_editors_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Text editors (简体中文)") <small>(6)</small> |
-| <small>2.18.</small> [Web applications](/index.php/Category:Web_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Web applications (简体中文)") <small>(1)</small> |
-| <small>2.18.1.</small> [Web admin interfaces](/index.php/Category:Web_admin_interfaces_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Web admin interfaces (简体中文)") <small>(1)</small> |
-| <small>2.19.</small> [Wine](/index.php/Category:Wine_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Wine (简体中文)") <small>(1)</small> |
+| <small>2.14.</small> [Science](/index.php/Category:Science_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Science (简体中文)") <small>(0)</small> |
+| <small>2.14.1.</small> [Electronic design automation](/index.php/Category:Electronic_design_automation_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Electronic design automation (简体中文)") <small>(1) (同时还属于 [开发](/index.php/Category:Development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Development (简体中文)"))</small> |
+| <small>2.15.</small> [Software comparisons](/index.php/Category:Software_comparisons_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Software comparisons (简体中文)") <small>(1) (同时还属于 [ArchWiki](/index.php/Category:ArchWiki_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:ArchWiki (简体中文)"))</small> |
+| <small>2.16.</small> [系统监视和信息通知](/index.php/Category:Status_monitoring_and_notification_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Status monitoring and notification (简体中文)") <small>(1)</small> |
+| <small>2.17.</small> [终端模拟器](/index.php/Category:Terminal_emulators_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Terminal emulators (简体中文)") <small>(4) (同时还属于 [简体中文](/index.php/Category:%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87 "Category:简体中文"))</small> |
+| <small>2.18.</small> [文本编辑器](/index.php/Category:Text_editors_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Text editors (简体中文)") <small>(6)</small> |
+| <small>2.19.</small> [Web applications](/index.php/Category:Web_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Web applications (简体中文)") <small>(1)</small> |
+| <small>2.19.1.</small> [Web admin interfaces](/index.php/Category:Web_admin_interfaces_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Web admin interfaces (简体中文)") <small>(1)</small> |
+| <small>2.20.</small> [Wine](/index.php/Category:Wine_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Wine (简体中文)") <small>(1)</small> |
 | <small>3.</small> [开发](/index.php/Category:Development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Development (简体中文)") <small>(14)</small> |
 | <small>3.1.</small> [Arch开发](/index.php/Category:Arch_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Arch development (简体中文)") <small>(1) (同时还属于 [关于Arch](/index.php/Category:About_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:About Arch (简体中文)"))</small> |
 | <small>3.1.1.</small> [软件包开发](/index.php/Category:Package_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Package development (简体中文)") <small>(19)</small> |
 | <small>3.1.2.</small> [Pacman开发](/index.php/Category:Pacman_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Pacman development (简体中文)") <small>(1)</small> |
-| <small>3.2.</small> [Frameworks](/index.php/Category:Frameworks_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Frameworks (简体中文)") <small>(1)</small> |
-| <small>3.3.</small> [编程语言](/index.php/Category:Programming_languages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Programming languages (简体中文)") <small>(6)</small> |
-| <small>3.4.</small> [版本控制系统](/index.php/Category:Version_Control_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Version Control System (简体中文)") <small>(4)</small> |
-| <small>3.5.</small> [部件工具](/index.php/Category:Widget_toolkits_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Widget toolkits (简体中文)") <small>(1)</small> |
+| <small>3.2.</small> [Electronic design automation](/index.php/Category:Electronic_design_automation_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Electronic design automation (简体中文)") <small>(1) (同时还属于 [Science](/index.php/Category:Science_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Science (简体中文)"))</small> |
+| <small>3.3.</small> [Frameworks](/index.php/Category:Frameworks_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Frameworks (简体中文)") <small>(1)</small> |
+| <small>3.4.</small> [编程语言](/index.php/Category:Programming_languages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Programming languages (简体中文)") <small>(6)</small> |
+| <small>3.5.</small> [版本控制系统](/index.php/Category:Version_Control_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Version Control System (简体中文)") <small>(4)</small> |
+| <small>3.6.</small> [部件工具](/index.php/Category:Widget_toolkits_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Widget toolkits (简体中文)") <small>(1)</small> |
 | <small>4.</small> [硬件](/index.php/Category:Hardware_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Hardware (简体中文)") <small>(3)</small> |
 | <small>4.1.</small> [ARM 架构](/index.php/Category:ARM_architecture_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:ARM architecture (简体中文)") <small>(1)</small> |
 | <small>4.2.</small> [蓝牙](/index.php/Category:Bluetooth_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Bluetooth (简体中文)") <small>(2)</small> |
@@ -128,7 +131,7 @@
 | <small>7.6.1.</small> [Disk encryption](/index.php/Category:Disk_encryption_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Disk encryption (简体中文)") <small>(1) (同时还属于 [加密](/index.php/Category:Encryption_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Encryption (简体中文)"))</small> |
 | <small>7.6.2.</small> [Storage virtualization](/index.php/Category:Storage_virtualization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Storage virtualization (简体中文)") <small>(1)</small> |
 | <small>7.7.</small> [软件包管理](/index.php/Category:Package_management_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Package management (简体中文)") <small>(22)</small> |
-| <small>7.8.</small> [电源管理](/index.php/Category:Power_management_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Power management (简体中文)") <small>(11)</small> |
+| <small>7.8.</small> [电源管理](/index.php/Category:Power_management_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Power management (简体中文)") <small>(10)</small> |
 | <small>7.9.</small> [Software projects](/index.php/Category:Software_projects_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Software projects (简体中文)") <small>(0)</small> |
 | <small>7.9.1.</small> [Apache](/index.php/Category:Apache_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Apache (简体中文)") <small>(1)</small> |
 | <small>7.10.</small> [X server](/index.php/Category:X_server_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:X server (简体中文)") <small>(28)</small> |

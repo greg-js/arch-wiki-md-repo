@@ -94,7 +94,7 @@ AMD provides a proprietary, binary userland driver called *AMDGPU PRO*, which wo
 
 See the [release notes](https://support.amd.com/en-us/kb-articles/Pages/AMDGPU-PRO-Driver-for-Linux-Release-Notes.aspx) and the [announcement at the Phoronix forum](https://www.phoronix.com/forums/forum/linux-graphics-x-org-drivers/amd-linux/855699-amd-representative-says-their-vulkan-linux-driver-will-be-here-soon/page6) for more information.
 
-A patched version of the official AMDGPU PRO driver is available as [amdgpu-pro](https://aur.archlinux.org/packages/amdgpu-pro/) in [AUR](/index.php/AUR "AUR").
+A patched version of the official AMDGPU PRO driver is available as [amdgpu-pro](https://aur.archlinux.org/packages/amdgpu-pro/).
 
 ## Loading
 

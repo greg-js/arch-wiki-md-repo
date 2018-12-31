@@ -272,7 +272,7 @@ Efectuar un [Downgrade](/index.php/Downgrading_packages#ARM "Downgrading package
 
 ### Texturas en negro en videojuegos
 
-Si está experimentando texturas negras en los juegos de vídeo, la solución puede ser habilitar el soporte S3TC que permite la compresión de texturas. Se puede activar a través de [driconf](https://www.archlinux.org/packages/?name=driconf) o instalando [libtxc_dxtn](https://www.archlinux.org/packages/?name=libtxc_dxtn) desde AUR.
+Si está experimentando texturas negras en los juegos de vídeo, la solución puede ser habilitar el soporte S3TC que permite la compresión de texturas. Se puede activar a través de [driconf](https://www.archlinux.org/packages/?name=driconf) o instalando [libtxc_dxtn](https://aur.archlinux.org/packages/libtxc_dxtn/) desde AUR.
 
 Este «problema» se solucionará muy pronto en los [nuevos controladores](http://www.phoronix.com/scan.php?page=news_item&px=MTIwOTg)
 

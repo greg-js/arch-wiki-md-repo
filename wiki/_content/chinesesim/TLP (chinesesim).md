@@ -25,7 +25,7 @@ Related articles
 
 从[官方源](/index.php/%E5%AE%98%E6%96%B9%E6%BA%90 "官方源")[安装](/index.php/%E5%AE%89%E8%A3%85 "安装")[tlp](https://www.archlinux.org/packages/?name=tlp) - 有些可选依赖可以提供更佳的省电性能。
 
-为了完成 TLP 的安装，必须[启用](/index.php/%E5%90%AF%E7%94%A8 "启用") systemd 服务`tl.service`以及`tlp-sleep.service`。您也应该[屏蔽](/index.php/Mask "Mask") systemd 服务`systemd-rfkill.service` 以及套接字 `systemd-rfkill.socket` 来防止冲突，保证 TLP 无线设备的开关选项可以正确运行。
+为了完成 TLP 的安装，必须[启用](/index.php/%E5%90%AF%E7%94%A8 "启用") systemd 服务`tlp.service`以及`tlp-sleep.service`。您也应该[屏蔽](/index.php/Mask "Mask") systemd 服务`systemd-rfkill.service` 以及套接字 `systemd-rfkill.socket` 来防止冲突，保证 TLP 无线设备的开关选项可以正确运行。
 
 **注意:** 如果存在 `NetworkManager.service`，`tlp.service` 将启动它 `NetworkManager.service`；[FS#43733](https://bugs.archlinux.org/task/43733)。如果您使用其它的[网络管理器](/index.php/List_of_applications#Network_managers "List of applications")，请编辑 `tlp.service` 来去除此服务 (line`Wants`)或[屏蔽](/index.php/Mask "Mask")它。
 

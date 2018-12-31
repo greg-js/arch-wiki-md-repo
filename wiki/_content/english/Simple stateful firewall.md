@@ -267,7 +267,7 @@ To allow remote SSH connections (on port 22):
 
 ```
 
-To accept incoming TCP/UDP requests for a [DNS](/index.php/DNS "DNS") server (port 53):
+To accept incoming TCP/UDP requests for a [DNS server](/index.php/DNS_server "DNS server") (port 53):
 
 ```
 # iptables -A TCP -p tcp --dport 53 -j ACCEPT

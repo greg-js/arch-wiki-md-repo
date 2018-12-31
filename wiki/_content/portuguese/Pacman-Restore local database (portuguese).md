@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Pacman/Restore local database](/index.php/Pacman/Restore_local_database "Pacman/Restore local database"). Data da última tradução: 2018-11-05\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Restore_local_database&diff=0&oldid=553241) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Pacman/Restore local database](/index.php/Pacman/Restore_local_database "Pacman/Restore local database"). Data da última tradução: 2018-12-29\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Restore_local_database&diff=0&oldid=557130) na versão em inglês.
 
 Sinais de que o pacman precisa de uma restauração da base de dados local:
 

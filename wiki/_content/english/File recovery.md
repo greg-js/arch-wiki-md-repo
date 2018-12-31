@@ -9,27 +9,28 @@ This article lists data recovery and undeletion options for Linux.
 *   [1 Special notes](#Special_notes)
     *   [1.1 Before you start](#Before_you_start)
     *   [1.2 Failing drives](#Failing_drives)
-    *   [1.3 Backup flash media/small partitions](#Backup_flash_media.2Fsmall_partitions)
+    *   [1.3 Backup flash media/small partitions](#Backup_flash_media/small_partitions)
     *   [1.4 Working with digital cameras](#Working_with_digital_cameras)
 *   [2 List of utilities](#List_of_utilities)
 *   [3 Extundelete](#Extundelete)
     *   [3.1 Installation](#Installation)
     *   [3.2 Usage](#Usage)
-*   [4 Testdisk and PhotoRec](#Testdisk_and_PhotoRec)
-    *   [4.1 Installation](#Installation_2)
-    *   [4.2 Usage](#Usage_2)
-    *   [4.3 Files recovered by photorec](#Files_recovered_by_photorec)
-    *   [4.4 See also](#See_also)
-*   [5 e2fsck](#e2fsck)
-    *   [5.1 Installation](#Installation_3)
-    *   [5.2 See also](#See_also_2)
-*   [6 Working with raw disk images](#Working_with_raw_disk_images)
-    *   [6.1 Mount the entire disk](#Mount_the_entire_disk)
-    *   [6.2 Mounting partitions](#Mounting_partitions)
-        *   [6.2.1 Getting disk geometry](#Getting_disk_geometry)
-    *   [6.3 Using QEMU to Repair NTFS](#Using_QEMU_to_Repair_NTFS)
-*   [7 Text file recovery](#Text_file_recovery)
-*   [8 See also](#See_also_3)
+*   [4 Ext4Magic](#Ext4Magic)
+*   [5 Testdisk and PhotoRec](#Testdisk_and_PhotoRec)
+    *   [5.1 Installation](#Installation_2)
+    *   [5.2 Usage](#Usage_2)
+    *   [5.3 Files recovered by photorec](#Files_recovered_by_photorec)
+    *   [5.4 See also](#See_also)
+*   [6 e2fsck](#e2fsck)
+    *   [6.1 Installation](#Installation_3)
+    *   [6.2 See also](#See_also_2)
+*   [7 Working with raw disk images](#Working_with_raw_disk_images)
+    *   [7.1 Mount the entire disk](#Mount_the_entire_disk)
+    *   [7.2 Mounting partitions](#Mounting_partitions)
+        *   [7.2.1 Getting disk geometry](#Getting_disk_geometry)
+    *   [7.3 Using QEMU to Repair NTFS](#Using_QEMU_to_Repair_NTFS)
+*   [8 Text file recovery](#Text_file_recovery)
+*   [9 See also](#See_also_3)
 
 ## Special notes
 
@@ -73,6 +74,10 @@ See also [Wikipedia:List of data recovery software#File Recovery](https://en.wik
 *   **[dvdisaster](https://en.wikipedia.org/wiki/dvdisaster "wikipedia:dvdisaster")** — Additional error protection for CD/DVD media.
 
 	[https://sourceforge.net/projects/dvdisaster/](https://sourceforge.net/projects/dvdisaster/) || [dvdisaster](https://www.archlinux.org/packages/?name=dvdisaster)
+
+*   **ext4magic** — recover deleted or overwritten files on ext3 and ext4 filesystems.
+
+	[http://sourceforge.net/projects/ext4magic/](http://sourceforge.net/projects/ext4magic/) || [ext4magic](https://www.archlinux.org/packages/?name=ext4magic)
 
 *   **extundelete** — Utility for recovering deleted files from ext2, ext3 or ext4 partitions by parsing the journal.
 
@@ -144,6 +149,66 @@ Finally, to recover all deleted files from an entire partition, run:
 
 ```
 # extundelete /dev/sda4 --restore-all
+
+```
+
+## Ext4Magic
+
+[ext4magic](https://www.archlinux.org/packages/?name=ext4magic) is another recovery tool for the ext3 and ext4 file system.
+
+To recover all files, deleted in the last 24 hours:
+
+```
+# ext4magic /dev/sdXY -r
+
+```
+
+To recover a directory or file:
+
+```
+# ext4magic /dev/sdXY -f path/to/lost/file -r
+
+```
+
+The *small R* flag `-r` will only recover complete files, that were not overwritten. To also recover broken files, that were partially overwritten, use the *big R* flag `-R`. This will also restore not-deleted files and empty directories.
+
+The default destination is `./RECOVERDIR` which can be changed by adding the option `-d path/to/dest/dir`.
+
+If a file exists in the destination directory, the new file is renamed with a trailing hash sign `#`.
+
+To recover files deleted after 'five days ago':
+
+```
+# ext4magic /dev/sdXY -f path/to/lost/file -a $(date -d -5days +%s) -r
+
+```
+
+To use a file list:
+
+```
+# ext4magic /dev/sdXY -f path/to/lost/file -Lx | grep -a ^--- >recovery-files-big.txt
+# ext4magic /dev/sdXY -i recovery-files-big.txt -R
+
+# ext4magic /dev/sdXY -f path/to/lost/file -lx | grep -a '^  100%' >recovery-files-small.txt
+# ext4magic /dev/sdXY -i recovery-files-small.txt -r
+
+```
+
+The difference between the *big L* flag `-L` and the *small L* flag `-l` is the same as between the two *R* flags `-R` and `-r` (see above).
+
+Use `grep -a` to preserve binary file names.
+
+Using a file list allows to filter the files, for example by file extension:
+
+```
+# cat recovery-files-big.txt | grep -a '\.jpg"$' >recovery-files-big-jpg.txt
+
+```
+
+... or to split the file list:
+
+```
+# cat recovery-files-big.txt | split -l 100 - recovery-files-big-100-each-
 
 ```
 

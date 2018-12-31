@@ -233,7 +233,7 @@ The [Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol 
 
 ### DNS security
 
-For better security while browsing web, paying online, connecting to [SSH](/index.php/SSH "SSH") services and similar tasks consider using [DNSSEC](/index.php/DNSSEC "DNSSEC")-enabled client software which can validate signed [DNS](https://en.wikipedia.org/wiki/Domain_Name_System "wikipedia:Domain Name System") records, and [DNSCrypt](/index.php/DNSCrypt "DNSCrypt") to encrypt DNS traffic.
+For better security while browsing web, paying online, connecting to [SSH](/index.php/SSH "SSH") services and similar tasks consider using [DNSSEC](/index.php/DNSSEC "DNSSEC")-enabled [DNS resolver](/index.php/DNS_resolver "DNS resolver") that can validate signed [DNS](https://en.wikipedia.org/wiki/Domain_Name_System "wikipedia:Domain Name System") records, and [DNSCrypt](/index.php/DNSCrypt "DNSCrypt") to encrypt DNS traffic.
 
 ### Setting up a firewall
 
@@ -285,7 +285,7 @@ The [Solid State Drives](/index.php/Solid_State_Drives "Solid State Drives") art
 
 ## System service
 
-This section relates to [daemons](/index.php/Daemons "Daemons"). For more, please see [Category:Daemons and system services](/index.php?title=Category:Daemons_and_system_services&action=edit&redlink=1 "Category:Daemons and system services (page does not exist)").
+This section relates to [daemons](/index.php/Daemons "Daemons"). For more, please see [Category:Daemons](/index.php/Category:Daemons "Category:Daemons").
 
 ### File index and search
 

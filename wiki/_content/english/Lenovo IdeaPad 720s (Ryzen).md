@@ -17,6 +17,8 @@ CPU/APU-wise, Linux support for the 720s is in decent shape since kernel ~4.15 (
     *   [3.8 Hardware keys](#Hardware_keys)
     *   [3.9 Finger Print Reader](#Finger_Print_Reader)
     *   [3.10 ACPI annoyances](#ACPI_annoyances)
+    *   [3.11 CPU soft lockup](#CPU_soft_lockup)
+    *   [3.12 See also](#See_also)
 
 ## PCI Devices
 
@@ -84,7 +86,7 @@ Sound works with PulseAudio in linux 4.15-1 from testing repos.
 
 Chicony EasyCamera (USB)
 
-<untested>
+Works out of the box on linux 4.19.12.
 
 ### Ethernet
 
@@ -93,6 +95,8 @@ Chicony EasyCamera (USB)
 ### Wireless
 
 The [rtl8821ce-dkms-git](https://aur.archlinux.org/packages/rtl8821ce-dkms-git/) wireless driver is required in order for WiFi and Bluetooth to work.
+
+Sometimes upon reboot, rfkill may block wireless communications. To unblock, run : `rfkill unblock all`.
 
 Active bluetooth may lock up the PC on lid close/suspend, then `rfkill block bluetooth`.
 
@@ -113,3 +117,13 @@ Model: <Unknown>
 ### ACPI annoyances
 
 ttys get filled with massive amounts of ACPI complaints, and are unusable as such. Mitigate by passing the `pci=noaer` kernel commandline option.
+
+### CPU soft lockup
+
+The mwait cpu instruction can cause a CPU soft lockup.
+
+To fix the issue, add `idle=nomwait` to kernel parameters.
+
+### See also
+
+*   [Random Freeze on Ryzen 2500U using amdgpu driver](https://bugzilla.redhat.com/show_bug.cgi?id=1562530)

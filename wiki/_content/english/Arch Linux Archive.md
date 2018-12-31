@@ -25,7 +25,6 @@ Packages are only kept for a few years, afterwards they are moved to the [Arch L
 *   [4 Historical Archive](#Historical_Archive)
     *   [4.1 Finding packages in the Historical Archive](#Finding_packages_in_the_Historical_Archive)
     *   [4.2 Downloading packages from the Historical Archive](#Downloading_packages_from_the_Historical_Archive)
-    *   [4.3 Redirecting package downloads to the Historical Archive](#Redirecting_package_downloads_to_the_Historical_Archive)
 *   [5 History](#History)
 
 ## Location
@@ -275,15 +274,14 @@ $ ia search subject:"archlinux package" subject:'mysql'
 
 All available package versions (and their signature) can be accessed via the download page of a package: [https://archive.org/download/archlinux_pkg_lucene__](https://archive.org/download/archlinux_pkg_lucene__)
 
-Here are a few example ways to fetch a package:
+To download, verify and install a package using [pacman](/index.php/Pacman "Pacman"):
 
 ```
-$ wget https://archive.org/download/archlinux_pkg_cjdns/cjdns-16.1-3-x86_64.pkg.tar.xz{,.sig}
-$ pacman -U https://archive.org/download/archlinux_pkg_cjdns/cjdns-16.1-3-x86_64.pkg.tar.xz
+# pacman -U https://archive.org/download/archlinux_pkg_cjdns/cjdns-16.1-3-x86_64.pkg.tar.xz
 
 ```
 
-Note that if you use pacman, you have to figure out the dependencies yourself.
+Package verification is controlled by pacman's `RemoteFileSigLevel` option. Note that if you use pacman, you have to figure out the dependencies yourself.
 
 It is also possible to use the [archive.org Python client](https://github.com/jjjake/internetarchive):
 
@@ -293,33 +291,6 @@ $ ia download archlinux_pkg_cjdns cjdns-16.1-3-x86_64.pkg.tar.xz{,.sig}
 
 # Download all x86_64 versions of a package, with signatures
 $ ia download archlinux_pkg_cjdns --glob="*x86_64.pkg.tar.xz*"
-
-```
-
-### Redirecting package downloads to the Historical Archive
-
-To redirect downloads for old packages to `archive.org`, here is the Nginx configuration on orion:
-
-```
-location ~ /repos/201[3456]/.*/.*\.pkg\.tar\.xz(\.sig)? {
-        # Tricky regexp to separate the pkgname from the pkgver (both can contain "-")
-        rewrite ^/repos/.*/((.*?)-[^-/]+-[0-9]+-[^-]+.*\.pkg\.tar\.xz(\.sig)?)$ /archive.org/archlinux_pkg_$2/$1 last;
-}
-
-# archive.org download URLs look like:
-# https://archive.org/download/archlinux_pkg_lucene__/lucene++-1.4.2-3-i686.pkg.tar.xz
-# We need to remove @.+ in the identifier (archlinux_pkg_*) but keep it in the filename at the end.
-location /archive.org/ {
-        # Rewrite @, + and . into _
-        # This is recursive so it will work even for multiple replacement,
-        # with up to 10 replacements for each character (nginx recursion limit). 
-        # Idea from https://stackoverflow.com/a/15934256
-        rewrite ^/archive\.org/([^@]*)@(.*)/(.*)$   /archive.org/$1_$2/$3;
-        rewrite ^/archive\.org/([^\.]*)\.(.*)/(.*)$ /archive.org/$1_$2/$3;
-        rewrite ^/archive\.org/([^\+]*)\+(.*)/(.*)$ /archive.org/$1_$2/$3;
-        # Once there are no more @.+ in the identifier part, redirect to archive.org
-        rewrite ^/archive\.org/([^@\+\.]*/.*)$ https://archive.org/download/$1 permanent;
-}
 
 ```
 

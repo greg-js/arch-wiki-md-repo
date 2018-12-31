@@ -2,48 +2,12 @@ Related articles
 
 *   [systemd](/index.php/Systemd "Systemd")
 *   [Kernel modules](/index.php/Kernel_modules "Kernel modules")
+*   [Minimal initramfs](/index.php/Minimal_initramfs "Minimal initramfs")
+*   [Boot debugging](/index.php/Boot_debugging "Boot debugging")
 
-**翻译状态：** 本文是英文页面 [Mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-05-14，点击[这里](https://wiki.archlinux.org/index.php?title=Mkinitcpio&diff=0&oldid=459968)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-12-29，点击[这里](https://wiki.archlinux.org/index.php?title=Mkinitcpio&diff=0&oldid=560730)可以查看翻译后英文页面的改动。
 
-**mkinitcpio**是新一代[initramfs](https://en.wikipedia.org/wiki/initramfs "wikipedia:initramfs")创建工具。
-
-## Contents
-
-*   [1 概览](#概览)
-*   [2 安装](#安装)
-*   [3 创建和启用镜像](#创建和启用镜像)
-    *   [3.1 手动生成自定义的 initcpio](#手动生成自定义的_initcpio)
-*   [4 配置](#配置)
-    *   [4.1 模块（MODULES）](#模块（MODULES）)
-    *   [4.2 附加文件（BINARIES、FILES）](#附加文件（BINARIES、FILES）)
-    *   [4.3 钩子(HOOKS)](#钩子(HOOKS))
-        *   [4.3.1 编译钩子](#编译钩子)
-        *   [4.3.2 运行时钩子](#运行时钩子)
-        *   [4.3.3 常用钩子](#常用钩子)
-        *   [4.3.4 编写钩子扩展](#编写钩子扩展)
-    *   [4.4 压缩方式(COMPRESSION)](#压缩方式(COMPRESSION))
-    *   [4.5 压缩选项(COMPRESSION_OPTIONS)](#压缩选项(COMPRESSION_OPTIONS))
-*   [5 运行时配置](#运行时配置)
-    *   [5.1 从基本钩子启动](#从基本钩子启动)
-    *   [5.2 使用 RAID 磁盘阵列](#使用_RAID_磁盘阵列)
-    *   [5.3 使用 net](#使用_net)
-    *   [5.4 使用 lvm](#使用_lvm)
-    *   [5.5 使用加密根目录](#使用加密根目录)
-    *   [5.6 /usr 放到单独分区](#/usr_放到单独分区)
-*   [6 疑难解答](#疑难解答)
-    *   [6.1 解压缩镜像](#解压缩镜像)
-    *   [6.2 Recompressing a modified extracted image](#Recompressing_a_modified_extracted_image)
-    *   [6.3 "/dev must be mounted" when it already is](#"/dev_must_be_mounted"_when_it_already_is)
-    *   [6.4 Using systemd HOOKS in a LUKS/LVM/resume setup](#Using_systemd_HOOKS_in_a_LUKS/LVM/resume_setup)
-    *   [6.5 Possibly missing firmware for module XXXX](#Possibly_missing_firmware_for_module_XXXX)
-    *   [6.6 mkinitcpio creates images with all the shared libraries missing](#mkinitcpio_creates_images_with_all_the_shared_libraries_missing)
-    *   [6.7 Standard rescue procedures](#Standard_rescue_procedures)
-        *   [6.7.1 Boot succeeds on one machine and fails on another](#Boot_succeeds_on_one_machine_and_fails_on_another)
-*   [7 参考资料](#参考资料)
-
-## 概览
-
-mkinitcpio 是一个创建初始内存盘的 bash 脚本。摘自[mkinitcpio手册页](https://projects.archlinux.org/mkinitcpio.git/tree/man/mkinitcpio.8.txt)：
+[mkinitcpio](https://projects.archlinux.org/mkinitcpio.git/) 是一个创建 [initramfs](https://en.wikipedia.org/wiki/initramfs "wikipedia:initramfs") 的 bash 脚本。
 
 	*初始内存盘本质上是一个很小的运行环境（早期用户空间），用于加载一些核心模块，并在 init 接管启动过程之前做必要的准备。有了这个环境，才能支持加密根文件系统、RAID上的根文件系统等高级功能。mkinicpio 支持自定义的钩子扩展、运行时自动检测以及其他功能。*
 
@@ -53,17 +17,40 @@ mkinitcpio 是一个创建初始内存盘的 bash 脚本。摘自[mkinitcpio手�
 
 另见：[/dev/brain0 » Blog Archive » Early Userspace in Arch Linux](https://web.archive.org/web/20150430223035/http://archlinux.me/brain0/2010/02/13/early-userspace-in-arch-linux/)。
 
-用模块化的mkinitcpio构建初始化内存盘镜像（init ramfs cpio image），较之其他方法有诸多优势：
+## Contents
 
-*   使用轻量的[BusyBox](http://www.busybox.net/)作为早期用户空间的基础（早在0.6版本时，使用的是[**klibc**](https://www.archlinux.org/news/486/)）。
-*   支持**[udev](/index.php/Udev "Udev")**运行时硬件探测，避免加载不需要的模块。
-*   支持可扩展的init钩子脚本，可以方便的使用[pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")软件包安装自定义钩子扩展。
-*   同时支持传统和LUKS卷上的**lvm2**、**dm-crypt**，以及从U盘启动所需的**mdadm**、**swsusp**、**suspend2**。
-*   支持通过启动参数配置内核功能，无需重新编译。
+*   [1 安装](#安装)
+*   [2 创建和启用镜像](#创建和启用镜像)
+    *   [2.1 手动生成自定义的 initcpio](#手动生成自定义的_initcpio)
+*   [3 配置](#配置)
+    *   [3.1 模块（MODULES）](#模块（MODULES）)
+    *   [3.2 附加文件（BINARIES、FILES）](#附加文件（BINARIES、FILES）)
+    *   [3.3 钩子(HOOKS)](#钩子(HOOKS))
+        *   [3.3.1 编译钩子](#编译钩子)
+        *   [3.3.2 运行时钩子](#运行时钩子)
+        *   [3.3.3 常用钩子](#常用钩子)
+        *   [3.3.4 编写钩子扩展](#编写钩子扩展)
+    *   [3.4 压缩方式(COMPRESSION)](#压缩方式(COMPRESSION))
+    *   [3.5 压缩选项(COMPRESSION_OPTIONS)](#压缩选项(COMPRESSION_OPTIONS))
+*   [4 运行时配置](#运行时配置)
+    *   [4.1 从基本钩子启动](#从基本钩子启动)
+    *   [4.2 使用 RAID 磁盘阵列](#使用_RAID_磁盘阵列)
+    *   [4.3 使用 net](#使用_net)
+    *   [4.4 使用 lvm](#使用_lvm)
+    *   [4.5 使用加密根目录](#使用加密根目录)
+    *   [4.6 /usr 放到单独分区](#/usr_放到单独分区)
+*   [5 疑难解答](#疑难解答)
+    *   [5.1 解压缩镜像](#解压缩镜像)
+    *   [5.2 Recompressing a modified extracted image](#Recompressing_a_modified_extracted_image)
+    *   [5.3 "/dev must be mounted" when it already is](#"/dev_must_be_mounted"_when_it_already_is)
+    *   [5.4 Possibly missing firmware for module XXXX](#Possibly_missing_firmware_for_module_XXXX)
+    *   [5.5 Standard rescue procedures](#Standard_rescue_procedures)
+        *   [5.5.1 Boot succeeds on one machine and fails on another](#Boot_succeeds_on_one_machine_and_fails_on_another)
+*   [6 参考资料](#参考资料)
 
 ## 安装
 
-[mkinitcpio](https://www.archlinux.org/packages/?name=mkinitcpio)软件包被收录于[官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")。作为[linux](https://www.archlinux.org/packages/?name=linux)软件包组的一部分，应该已经自动安装了。高级用户可以从[mkinitcpio-git](https://aur.archlinux.org/packages/mkinitcpio-git/) 获取 mkinitcpio 的最新开发版本.
+[安装](/index.php/Install "Install") 软件包 [mkinitcpio](https://www.archlinux.org/packages/?name=mkinitcpio)。这个软件包是 [linux](https://www.archlinux.org/packages/?name=linux) 软件包的依赖，应该已经自动安装了。高级用户可以从[mkinitcpio-git](https://aur.archlinux.org/packages/mkinitcpio-git/) 获取 mkinitcpio 的最新开发版本.
 
 **注意:** 若要使用git开发版本，强烈建议同时加入[arch-projectsarch-projects](https://mailman.archlinux.org/mailman/listinfo/arch-projects) 邮件列表！
 
@@ -141,7 +128,7 @@ mkinitcpio 是一个创建初始内存盘的 bash 脚本。摘自[mkinitcpio手�
 
 如果挂载root分区时需要上述任一模块，请将其加入`/etc/mkinitcpio.conf`，以避免内核崩溃。
 
-若使用多个拥有相同节点名、但内核模块不同的硬盘控制器（如两个SCSI/SATA或两个IDE控制器），应确保在`/etc/mkinitcpio.conf`中设置了正确的模块加载顺序。否则，系统无法确定根目录位置，导致崩溃（kernel panic）。另一个更好的办法是使用[永久性块设备名称](/index.php/Persistent_block_device_naming "Persistent block device naming")。
+若使用多个拥有相同节点名、但内核模块不同的硬盘控制器（如两个SCSI/SATA或两个IDE控制器），应该使用[永久性块设备名称](/index.php/Persistent_block_device_naming "Persistent block device naming")。否则，系统无法确定根目录位置。
 
 从 Linux 4.4 开始，如果使用 NVME 设备，请将 **nvme** 添加到模块列表。
 
@@ -150,16 +137,12 @@ mkinitcpio 是一个创建初始内存盘的 bash 脚本。摘自[mkinitcpio手�
 这两个选项允许用户添加任何文件到镜像中。`BINARIES`、`FILES`数组指定了要加入内存盘镜像的文件，可以覆盖钩子扩展提供的文件。`BINARIES`中的二进制文件会自动放入一个标准的`PATH`路径，而且会自动加入可执行文件依赖的函数库。`FILES`中的文件则不进行上述处理，直接原样放入镜像。例如：
 
 ```
-FILES="/etc/modprobe.d/modprobe.conf /etc/another.conf"
-BINARIES="kexec some_bin"
+FILES=(/etc/modprobe.d/modprobe.conf)
+BINARIES=(kexec)
 
 ```
 
 配置支持多个选项，用空格隔开。
-
-上面的例子添加了两个配置文件：`modprobe.conf` 和 `another.conf` 和两个二进制文件：`kexec` 和 `some_bin`.
-
-所有文件在镜像中的位置和当前系统的位置一致，比如 `modprobe.conf` 会被放到镜像的 `/etc/modprobe.d/`，上层目录会被自动创建。
 
 ### 钩子(HOOKS)
 
@@ -180,7 +163,7 @@ $ mkinitcpio -L
 
 ```
 
-使用 mkinitcpio 的 `-H` 选项输出对于某一钩子的帮助。例如：
+使用 mkinitcpio 的 `-H`/`--hookhelp` 选项输出对于某一钩子的帮助。例如：
 
 ```
 $ mkinitcpio -H udev
@@ -388,40 +371,6 @@ BOOTIF=01-A1-B2-C3-D4-E5-F6  # Note the prepended "01-" and capital letters.
 
 ```
 
-*参数解释：*
-
-```
- <server-ip>   Specifies the IP address of the NFS server. If this field
-               is not given, the default address as determined by the
-               `ip' variable (see below) is used. One use of this
-               parameter is for example to allow using different servers
-               for RARP and NFS. Usually you can leave this blank.
-
- <root-dir>    Name of the directory on the server to mount as root. If
-               there is a "%s" token in the string, the token will be
-               replaced by the ASCII-representation of the client's IP
-               address.
-
- <nfs-options> Standard NFS options. All options are separated by commas.
-               If the options field is not given, the following defaults
-               will be used:
-                       port            = as given by server portmap daemon
-                       rsize           = 1024
-                       wsize           = 1024
-                       timeo           = 7
-                       retrans         = 3
-                       acregmin        = 3
-                       acregmax        = 60
-                       acdirmin        = 30
-                       acdirmax        = 60
-                       flags           = hard, nointr, noposix, cto, ac
-
-```
-
-**root=/dev/nfs**
-
-如果你不使用 `nfsroot` 参数，你需要设定 `root=/dev/nfs` 来通过自动配置从一个 NFS root 启动。
-
 ### 使用 lvm
 
 如果你的根设备是在[LVM](/index.php/LVM "LVM") 上，你必须添加 **lvm2** 钩子。请阅读 [这里](/index.php/LVM#Configure_mkinitcpio "LVM").
@@ -508,10 +457,6 @@ The test used by mkinitcpio to determine if /dev is mounted is to see if /dev/fd
 
 (Obviously, /proc must be mounted as well. mkinitcpio requires that anyway, and that is the next thing it will check.)
 
-### Using systemd HOOKS in a LUKS/LVM/resume setup
-
-Using `systemd`/`sd-encrypt`/`sd-lvm2` **HOOKS** instead of the traditional `encrypt`/`lvm2`/`resume` requires different initrd parameters to be passed by your [boot loader](/index.php/Boot_loader "Boot loader"). See [this post on forum](https://bbs.archlinux.org/viewtopic.php?pid=1480241) for details.
-
 ### Possibly missing firmware for module XXXX
 
 When initramfs are being rebuild after a kernel update, you might get these two warnings:
@@ -523,10 +468,6 @@ When initramfs are being rebuild after a kernel update, you might get these two 
 ```
 
 These appear to any Arch Linux users, especially those who have not installed these firmware modules. If you do not use hardware which uses these firmwares you can safely ignore this message.
-
-### mkinitcpio creates images with all the shared libraries missing
-
-If your machine fails to boot with an "Attempted to kill init!" kernel panic right off the bat (before any `init` or `systemd`-related messages appear on the screen), and running `lsinitcpio` reveals that all the shared libraries are missing from the images generated in `/boot`, make sure there is a symbolic link at `/usr/lib64` pointing to `/usr/lib`, and rebuild them all.
 
 ### Standard rescue procedures
 
@@ -540,6 +481,5 @@ To fix, first try choosing the [fallback](#Image_creation_and_activation) image 
 
 ## 参考资料
 
-*   [Boot debugging](/index.php/Boot_debugging "Boot debugging") - 启动调试
 *   [initramfs](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/plain/Documentation/filesystems/ramfs-rootfs-initramfs.txt?id=HEAD) 内核文档
 *   [initrd](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/plain/Documentation/initrd.txt?id=HEAD) 内核文档

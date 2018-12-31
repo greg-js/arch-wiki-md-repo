@@ -607,7 +607,7 @@ Questa è una soluzione ad un problema di non visualizzazione della console che 
 
 ### Alcune applicazioni 3d vanno in crash o mostrano alcune textures completamente nere
 
-Si potrebbe aver bisogno del supporto alle texture compresse, che non è incluso nei driver liberi. Installare [libtxc_dxtn](https://www.archlinux.org/packages/?name=libtxc_dxtn) oppure [lib32-libtxc_dxtn](https://www.archlinux.org/packages/?name=lib32-libtxc_dxtn) per sistemi multilib.
+Si potrebbe aver bisogno del supporto alle texture compresse, che non è incluso nei driver liberi. Installare [libtxc_dxtn](https://aur.archlinux.org/packages/libtxc_dxtn/) oppure [lib32-libtxc_dxtn](https://aur.archlinux.org/packages/lib32-libtxc_dxtn/) per sistemi multilib.
 
 ### Prestazioni 2D (ad esempio lo scroll) scadenti
 

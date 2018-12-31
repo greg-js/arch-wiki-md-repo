@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Network configuration](/index.php/Network_configuration "Network configuration"). Data da última tradução: 2018-11-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Network_configuration&diff=0&oldid=554914) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Network configuration](/index.php/Network_configuration "Network configuration"). Data da última tradução: 2018-12-29\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Network_configuration&diff=0&oldid=559522) na versão em inglês.
 
 Artigos relacionados
 
@@ -273,7 +273,7 @@ Para usar DHCP, você precisa de um servidor DHCP em sua rede e um cliente DHCP:
 
 | Cliente | Pacote | [Archiso](/index.php/Archiso_(Portugu%C3%AAs) "Archiso (Português)") | Nota | Units de systemd |
 | [dhcpcd](/index.php/Dhcpcd "Dhcpcd") | [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) | Sim | DHCP, DHCPv6, ZeroConf, IP estático | `dhcpcd.service`, `dhcpcd@*interface*.service` |
-| [ISC dhclient](https://www.isc.org/downloads/dhcp/) | [dhclient](https://www.archlinux.org/packages/?name=dhclient) | Sim | DHCP, BOOTP, IP estático | `dhclient@*interface*.service` |
+| [ISC dhclient](https://www.isc.org/downloads/dhcp/) | [dhclient](https://www.archlinux.org/packages/?name=dhclient) | Sim | DHCP, DHCPv6, BOOTP, IP estático | `dhclient@*interface*.service` |
 
 Note que em vez de usar diretamente um cliente DHCP, você também pode usar um [gerenciador de rede](#Gerenciadores_de_rede).
 
@@ -391,6 +391,10 @@ SUBSYSTEM=="net", DEVPATH=="/devices/pci*/*1c.0/*/net/*", NAME="en"
 ```
 
 O caminho do dispositivo deve corresponder ao nome do dispositivo novo e antigo, uma vez que a regra pode ser executada mais de uma vez na inicialização. Por exemplo, na segunda regra, `"/devices/pci*/*1c.0/*/net/enp*"` seria errado, uma vez que irá parar de corresponder depois que o nome for alterado para `en`. Somente a regra padrão do sistema será chamada na segunda vez, fazendo com que o nome seja alterado de volta para, por exemplo, `enp1s0`.
+
+Se você estiver usando um dispositivo de rede USB (por exemplo, tethering de telefone Android) que tenha um endereço MAC dinâmico e deseje usar diferentes portas USB, poderá usar uma regra que corresponda, dependendo do fornecedor e do ID do modelo:
+
+ `/etc/udev/rules.d/10-network.rules`  `SUBSYSTEM=="net", ACTION="add", ENV{ID_VENDOR_ID}=="12ab", ENV{ID_MODEL_ID}=="3cd4", NAME="net2"` 
 
 Para [testar](/index.php/Udev#Testing_rules_before_loading "Udev") suas regras, elas podem ser acionadas diretamente do espaço de usuário, por exemplo, com `udevadm --debug test /sys/*CAMINHO_DISPOSITIVO*`. Lembre-se de primeiro retirar a interface que você está tentando renomear (ex. `ip link set enp1s0 down`).
 

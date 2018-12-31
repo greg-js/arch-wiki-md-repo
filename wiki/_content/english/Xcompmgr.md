@@ -165,7 +165,7 @@ export XLIB_SKIP_ARGB_VISUALS=1
 
 ### Background turns light gray briefly after logging in (e.g. in Openbox)
 
-This is fixed by [installing](/index.php/Install "Install") [hsetroot](https://aur.archlinux.org/packages/hsetroot/) and setting the background color by executing `hsetroot -solid "#000000"` (just type the code of the color you want instead of *#000000*) before `xcompmgr`. Alternatively, if `xcompmgr` is called prior to `exec` in `~/.xinitrc`, you can change `xcompmgr &` to `(sleep 1 && xcompmgr) &` which will fork a subshell and allow `xcompmgr` to execute after your window manager has already started.
+This is fixed by [installing](/index.php/Install "Install") [hsetroot](https://www.archlinux.org/packages/?name=hsetroot) and setting the background color by executing `hsetroot -solid "#000000"` (just type the code of the color you want instead of *#000000*) before `xcompmgr`. Alternatively, if `xcompmgr` is called prior to `exec` in `~/.xinitrc`, you can change `xcompmgr &` to `(sleep 1 && xcompmgr) &` which will fork a subshell and allow `xcompmgr` to execute after your window manager has already started.
 
 ### BadPicture request in awesome
 
@@ -184,7 +184,7 @@ just [install](/index.php/Install "Install") [feh](/index.php/Feh "Feh") and res
 
 When using an external monitor, you may encounter problems when automatically changing display resolutions: a part of the screen becomes "stuck" and no longer updates itself. This problem occurs because of the initial resolution change (happening before Xcompmgr starts) as well as [awesome](/index.php/Awesome "Awesome") setting the background via [feh](/index.php/Feh "Feh").
 
-To fix it, you need to [install](/index.php/Install "Install") [hsetroot](https://aur.archlinux.org/packages/hsetroot/) and put the following line in `.xinitrc`, just before `xcompmgr`:
+To fix it, you need to [install](/index.php/Install "Install") [hsetroot](https://www.archlinux.org/packages/?name=hsetroot) and put the following line in `.xinitrc`, just before `xcompmgr`:
 
 ```
 hsetroot -solid "#000066"

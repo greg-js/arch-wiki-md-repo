@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [GNOME/Keyring](/index.php/GNOME/Keyring "GNOME/Keyring"), revisada por última vez el **2018-12-16**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=GNOME/Keyring&diff=0&oldid=559215) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [GNOME/Keyring](/index.php/GNOME/Keyring "GNOME/Keyring"), revisada por última vez el **2018-12-30**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=GNOME/Keyring&diff=0&oldid=560987) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 [GNOME Keyring](https://wiki.gnome.org/Projects/GnomeKeyring) (*llavero de GNOME*) es "una colección de componentes en GNOME que almacenan secretos, contraseñas, claves, certificados y los ponen a disposición de las aplicaciones".
 
@@ -21,6 +21,7 @@ Este artículo es una traducción de [GNOME/Keyring](/index.php/GNOME/Keyring "G
     *   [5.1 Integración con aplicaciones](#Integración_con_aplicaciones)
     *   [5.2 Limpiando frases de contraseña](#Limpiando_frases_de_contraseña)
     *   [5.3 Integración con Git](#Integración_con_Git)
+    *   [5.4 Integración con GnuPG](#Integración_con_GnuPG)
 *   [6 Solución de problemas](#Solución_de_problemas)
     *   [6.1 Las contraseñas no son recordadas](#Las_contraseñas_no_son_recordadas)
     *   [6.2 Restableciendo el llavero](#Restableciendo_el_llavero)
@@ -240,6 +241,18 @@ $ git config --global credential.helper /usr/lib/git-core/git-credential-libsecr
 ```
 
 La próxima vez que haga un *git push*, se le pedirá que desbloquee su llavero, si no lo está ya.
+
+### Integración con GnuPG
+
+Algunas aplicaciones que utilizan GnuPG requieren un `pinentry-program` para configurarse. Configure lo siguiente para utilizar pinentry de Gnome 3 para el llavero de Gnome para administrar las solicitudes de frase de contraseña.
+
+ `~/.gnupg/gpg-agent.conf` 
+```
+pinentry-program /usr/bin/pinentry-gnome3
+
+```
+
+Otra opción es [forzar loopback para GPG](/index.php/GnuPG_(Espa%C3%B1ol)#Frase_de_acceso_desatendida "GnuPG (Español)") que debería permitir que se introduzca la contraseña en la aplicación.
 
 ## Solución de problemas
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Keyboard configuration in console](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console"). Data da última tradução: 2018-10-25\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Keyboard_configuration_in_console&diff=0&oldid=547940) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Keyboard configuration in console](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console"). Data da última tradução: 2018-12-29\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Keyboard_configuration_in_console&diff=0&oldid=560841) na versão em inglês.
 
 Artigos relacionados
 
@@ -91,6 +91,8 @@ $ localectl set-keymap --no-convert *mapa_de_teclado*
 ```
 
 A opção `--no-convert` pode ser usada para evitar que o `localectl` altere automaticamente o [mapa de teclado do Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg") para a correspondência mais próxima. Veja [localectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/localectl.1) para mais informações.
+
+Se necessário, o mapa de teclado do `/etc/vconsole.conf` pode ser carregado anteriormente no espaço de usuário pelo [hook de mkinitcpio](/index.php/Mkinitcpio#Common_hooks "Mkinitcpio") `keymap`.
 
 ### Criando um mapa de teclado personalizado
 

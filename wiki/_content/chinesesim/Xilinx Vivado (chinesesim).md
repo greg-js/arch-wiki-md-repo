@@ -13,7 +13,7 @@ Archlinux 并不受 Vivado 的正式支持，但是从 [Xilinx ISE WebPACK](/ind
     *   [2.4 Digilent USB-JTAG 驱动](#Digilent_USB-JTAG_驱动)
     *   [2.5 Linux cable 驱动](#Linux_cable_驱动)
 *   [3 提示和技巧](#提示和技巧)
-    *   [3.1 创建 .desktop files](#创建_.desktop_files)
+    *   [3.1 创建 .desktop 文件](#创建_.desktop_文件)
     *   [3.2 启用屏幕缩放功能](#启用屏幕缩放功能)
 *   [4 故障排除](#故障排除)
     *   [4.1 Synthesis segfaults](#Synthesis_segfaults)
@@ -23,21 +23,19 @@ Archlinux 并不受 Vivado 的正式支持，但是从 [Xilinx ISE WebPACK](/ind
 
 ## 先决条件
 
-Xilinx Vivado can be downloaded from its official website [[1]](http://www.xilinx.com/products/design-tools/vivado.html). It's recommended to download "Vivado HLx <year>.<version>: All OS installer Single-File Download" tarball, but make sure not to be in a hurry, as it's a large download (near 19 GB). Update tarballs can also be downloaded and installed later.
+可以从官方网址[[1]](http://www.xilinx.com/products/design-tools/vivado.html)下载Xilinx Vivado。我们建议您下载“Vivado HLx <year>.<version>: All OS installer Single-File Download”。别心急，因为这个文件有将近19GB。
 
 ### 依赖
 
-**Note:** For 2018.3 and later, there is no need to install ncurses5 libarys
+**注意:** 对于 2018.3 及其之后的版本，不再需要安装 ncurses5 库
 
-Installer needs ncurses5 libs, and will not work with ncurses 6 available at official repos. You can work-around this problem by installing [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). You will also need to install [libpng12](https://www.archlinux.org/packages/?name=libpng12) and [lib32-libpng12](https://www.archlinux.org/packages/?name=lib32-libpng12) for Xilinx Document Navigator to launch.
+安装程序需要 ncurses5 库，并且不能使用官方仓库里的 ncurses6。您可以通过安装 [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") 中的 [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) 来解决这个问题。您可能需要安装 [libpng12](https://www.archlinux.org/packages/?name=libpng12) 与 [lib32-libpng12](https://www.archlinux.org/packages/?name=lib32-libpng12) 以便使用 Xilinx Document Navigator。
 
 ## 安装
 
-You must install the main package, and it is also recommended to install the latest update patch.
-
 ### Vivado 与 SDK
 
-**Warning:** The patch below is not longer needed in the 2018.1 version. Just unpack and run the xsetup file.
+**警告:** 2018.1及以后版本不再需要以下补丁。请直接解压后执行 xsetup 文件。
 
 Once downloaded and unpacked the tarball, the install script must be patched to be able to properly detect the machine architecture. You can do it by going to the directory where installer is extracted and running:
 
@@ -57,7 +55,7 @@ It is recommended to install the suite at the default location `/opt/Xilinx`, as
 
 ### 更新补丁
 
-**Warning:** The patch below is not longer needed in the 2018.1 version.
+**警告:** 2018.1 及以后版本不再需要以下补丁。
 
 It is recommended to install the latest update patch, and repeat the process each time a new patch is released. Note that update patches cannot be applied to WebPACK installs. If you installed Vivado WebPACK, skip this section.
 
@@ -71,7 +69,7 @@ $ sed -i.original 's/uname -i/uname -m/' xsetup
 
 ### 证书
 
-**Warning:** In the 2018.1 Webpack version there is not longer required download an explicit license file, it just works.
+**警告:** 2018.1及以后的 Webpack 版本不再需要手动下载证书文件。
 
 If you already have a license file, you can load it using Vivado License Manager. Unfortunately, if you want to obtain a WebPack license, further steps are needed. Vivado installs old stdc++ libraries, causing problems when spawning programs not included with Vivado Suite (like your default browser). To fix this, do the following steps:
 
@@ -103,7 +101,7 @@ In addition, installing [digilent.adept.utilities](https://aur.archlinux.org/pac
 
 ### Linux cable 驱动
 
-Run as root privilege:
+以 root 权限运行以下脚本：
 
 ```
 $ {vivado_install_dir}/data/xicom/cable_drivers/lin64/install_script/install_drivers/install_drivers
@@ -112,9 +110,9 @@ $ {vivado_install_dir}/data/xicom/cable_drivers/lin64/install_script/install_dri
 
 ## 提示和技巧
 
-### 创建 .desktop files
+### 创建 .desktop 文件
 
-**Note:** For 2018.3 and later, there is no need to write .desktop file manually
+**注意:** 对于2018.3及以后版本不再需要手动创建 .desktop 文件。
 
 To ease launching programs, you can create the following .desktop files for Vivado IDE, SDK and DocNav:
 
@@ -157,7 +155,7 @@ Comment=Xilinx Documentation Navigator
 
 ### 启用屏幕缩放功能
 
-Start vivado, then set the scaling rate as follow:
+启动 Vivado，然后按照以下方式启用屏幕缩放功能：
 
 ```
 Tools -> Setting -> Display -> Scaling

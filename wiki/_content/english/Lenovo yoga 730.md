@@ -64,7 +64,7 @@ Installing [iio-sensor-proxy](https://www.archlinux.org/packages/?name=iio-senso
 
 ### Fingerprint reader
 
-The device is `Bus 001 Device 005: ID 06cb:0081 Synaptics, Inc.` Nether [fprint](https://www.archlinux.org/packages/?name=fprint) nor [thinkfinger](https://www.archlinux.org/packages/?name=thinkfinger) work, but there is a prototype driver [here](https://github.com/nmikhailov/Validity90).
+The device is `Bus 001 Device 005: ID 06cb:0081 Synaptics, Inc.` Nether [fprint](https://www.archlinux.org/groups/x86_64/fprint/) nor [thinkfinger](https://www.archlinux.org/packages/?name=thinkfinger) work, but there is a prototype driver [here](https://github.com/nmikhailov/Validity90).
 
 ### Thunderbolt 3
 

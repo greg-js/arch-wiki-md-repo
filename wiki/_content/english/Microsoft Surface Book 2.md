@@ -84,7 +84,7 @@ Booting from USB is possible by reordering boot devices in the UEFI setup.
 
 The standard [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) driver works with the Surface Book devices.
 
-For devices equipped with dedicated Nvidia graphics, the [nvidia](https://www.archlinux.org/packages/?name=nvidia) or [nvidia-dkms](https://aur.archlinux.org/packages/nvidia-dkms/) driver supports the dedicated GPU.
+For devices equipped with dedicated Nvidia graphics, the [nvidia](https://www.archlinux.org/packages/?name=nvidia) or [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) driver supports the dedicated GPU.
 
 ## Audio
 

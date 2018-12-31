@@ -414,7 +414,7 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 *   **Geotag** — Match date/time information from photos with location information from a GPS unit or from a map.
 
-	[http://geotag.sourceforge.net/](http://geotag.sourceforge.net/) || [geotag](https://www.archlinux.org/packages/?name=geotag)
+	[http://geotag.sourceforge.net/](http://geotag.sourceforge.net/) || [geotag](https://aur.archlinux.org/packages/geotag/)
 
 *   **GNOME Maps** — A simple map client for GNOME. Part of [gnome-extra](https://www.archlinux.org/groups/x86_64/gnome-extra/).
 

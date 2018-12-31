@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Xorg](/index.php/Xorg "Xorg"). Дата последней синхронизации: 5 сентября 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Xorg&diff=0&oldid=539938).
+**Состояние перевода:** На этой странице представлен перевод статьи [Xorg](/index.php/Xorg "Xorg"). Дата последней синхронизации: 22 декабря 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Xorg&diff=0&oldid=559991).
 
 Ссылки по теме
 
@@ -24,8 +24,6 @@ C [http://www.x.org/wiki/](http://www.x.org/wiki/):
     *   [1.1 Установка драйвера](#Установка_драйвера)
     *   [1.2 AMD](#AMD)
 *   [2 Запуск](#Запуск)
-    *   [2.1 Экранный менеджер](#Экранный_менеджер)
-    *   [2.2 Вручную](#Вручную)
 *   [3 Настройка](#Настройка)
     *   [3.1 Через файлы .conf](#Через_файлы_.conf)
     *   [3.2 Через файл xorg.conf](#Через_файл_xorg.conf)
@@ -37,7 +35,7 @@ C [http://www.x.org/wiki/](http://www.x.org/wiki/):
     *   [4.5 Тачскрин](#Тачскрин)
     *   [4.6 Настройка клавиатуры](#Настройка_клавиатуры)
 *   [5 Настройка монитора](#Настройка_монитора)
-    *   [5.1 Начало работы](#Начало_работы)
+    *   [5.1 Ручная настройка](#Ручная_настройка)
     *   [5.2 Несколько мониторов](#Несколько_мониторов)
         *   [5.2.1 Более одной видеокарты](#Более_одной_видеокарты)
     *   [5.3 Размер дисплея/DPI](#Размер_дисплея/DPI)
@@ -68,6 +66,7 @@ C [http://www.x.org/wiki/](http://www.x.org/wiki/):
         *   [8.9.1 Неработающее перенаправление](#Неработающее_перенаправление)
     *   [8.10 Зеленый экран при попытке просмотра видео](#Зеленый_экран_при_попытке_просмотра_видео)
     *   [8.11 Ошибка SocketCreateListener](#Ошибка_SocketCreateListener)
+    *   [8.12 Неверный ключ MIT-MAGIC-COOKIE-1 при попытке запустить программу от суперпользователя](#Неверный_ключ_MIT-MAGIC-COOKIE-1_при_попытке_запустить_программу_от_суперпользователя)
 *   [9 Смотрите также](#Смотрите_также)
 
 ## Установка
@@ -118,10 +117,10 @@ Xorg автоматически ищет установленные драйве
 
 **Примечание:**
 
-*   Если Вы пользуетесь ноутбуком с поддержкой NVIDIA Optimus, который использует интегрированную видеокарту вместе с дискретной видеокартой, обратитесь к статье [NVIDIA Optimus (Русский)](/index.php/NVIDIA_Optimus_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NVIDIA Optimus (Русский)") или [Bumblebee (Русский)](/index.php/Bumblebee_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bumblebee (Русский)").
+*   Если Вы пользуетесь ноутбуком с поддержкой NVIDIA Optimus, который использует интегрированную видеокарту вместе с дискретной, обратитесь к статье [NVIDIA Optimus (Русский)](/index.php/NVIDIA_Optimus_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NVIDIA Optimus (Русский)") или [Bumblebee (Русский)](/index.php/Bumblebee_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bumblebee (Русский)").
 *   Чтобы узнать доступные драйверы для графики Intel 4-го поколения и выше, смотрите статью [Intel graphics (Русский)#Установка](/index.php/Intel_graphics_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка "Intel graphics (Русский)").
 
-Другие видео драйверы можно найти в группе [xorg-drivers](https://www.archlinux.org/groups/x86_64/xorg-drivers/).
+Другие видеодрайверы можно найти в группе [xorg-drivers](https://www.archlinux.org/groups/x86_64/xorg-drivers/).
 
 Во избежание проблем X следует запускать без драйверов с закрытым исходным кодом, которые обычно требуются только для расширенных возможностей, таких, как быстрый 3D рендеринг в играх. Исключением из этого правила являются недавние графические процессоры (особенно видеокарты NVIDIA), которые не поддерживаются драйверами с открытым исходным кодом.
 
@@ -142,13 +141,7 @@ Xorg автоматически ищет установленные драйве
 
 ## Запуск
 
-### Экранный менеджер
-
-Использование [экранного менеджера](/index.php/%D0%AD%D0%BA%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Экранный менеджер") для запуска X удобно, но для этого требуется дополнительное приложение и некоторые зависимости для него.
-
-### Вручную
-
-Чтобы запустить X без экранного менеджера, смотрите статью [xinitrc (Русский)](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xinitrc (Русский)").
+Команду [Xorg(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/Xorg.1) обычно не используют для запуска. Вместо этого оконный сервер X запускают с помощью [экранного менеджера](/index.php/%D0%AD%D0%BA%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Экранный менеджер") или [xinit](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xinitrc (Русский)").
 
 ## Настройка
 
@@ -200,7 +193,7 @@ $ grep -e "Using input driver " Xorg.0.log
 
 ### Идентификация ввода
 
-Для получения дополнительной информации смотрите [Extra keyboard keys#In Xorg](/index.php/Extra_keyboard_keys#In_Xorg "Extra keyboard keys").
+Для получения дополнительной информации смотрите [Keyboard input#Identifying keycodes in Xorg](/index.php/Keyboard_input#Identifying_keycodes_in_Xorg "Keyboard input").
 
 ### Ускорение мыши
 
@@ -224,37 +217,38 @@ $ grep -e "Using input driver " Xorg.0.log
 
 ## Настройка монитора
 
-#### Начало работы
+#### Ручная настройка
 
-**Примечание:** Новые версии Xorg автоматически все настраивают, поэтому вам не следует что-либо менять тем более, если вы не знаете, что делаете.
+**Примечание:**
 
-Создайте новый файл конфигурации, например `/etc/X11/xorg.conf.d/10-monitor.conf`.
+*   Новые версии Xorg автоматически все настраивают, поэтому ручная настройка не требуется.
+*   Если Xorg не может обнаружить монитор или автоматически не настраивается, можно использовать файл конфигурации. Распространенным случаем, когда это необходимо, является система без монитора, которая автоматически запускает Xorg либо с [виртуальной консоли](/index.php/Automatic_login_to_virtual_console "Automatic login to virtual console") при [входе](/index.php/%D0%90%D0%B2%D1%82%D0%BE%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA_X_%D0%BF%D1%80%D0%B8_%D0%B2%D1%85%D0%BE%D0%B4%D0%B5_%D0%B2_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%83 "Автозапуск X при входе в систему"), либо с [экранного менеджера](/index.php/%D0%AD%D0%BA%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Экранный менеджер").
 
- `/etc/X11/xorg.conf.d/10-monitor.conf` 
+Для системы без монитора необходим драйвер [xf86-video-dummy](https://www.archlinux.org/packages/?name=xf86-video-dummy). [Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") его и создайте файл конфигурации, например, с таким содержанием:
+
+ `/etc/X11/xorg.conf.d/10-headless.conf` 
 ```
 Section "Monitor"
-    Identifier             "Monitor0"
+        Identifier "dummy_monitor"
+        HorizSync 28.0-80.0
+        VertRefresh 48.0-75.0
+        Modeline "1920x1080" 172.80 1920 2040 2248 2576 1080 1081 1084 1118
 EndSection
 
 Section "Device"
-    Identifier             "Device0"
-    Driver                 "vesa" #Выберите драйвер для этого монитора
+        Identifier "dummy_card"
+        VideoRam 256000
+        Driver "dummy"
 EndSection
 
 Section "Screen"
-    Identifier             "Screen0"  #Collapse Monitor and Device section to Screen section
-    Device                 "Device0"
-    Monitor                "Monitor0"
-    DefaultDepth           16 #Выберите глубину (16||24)
-    SubSection             "Display"
-        Depth              16
-        Modes              "1024x768_75.00" #Выберите разрешение
-    EndSubSection
+        Identifier "dummy_screen"
+        Device "dummy_card"
+        Monitor "dummy_monitor"
+        SubSection "Display"
+        EndSubSection
 EndSection
-
 ```
-
-**Примечание:** По умолчанию Xorg должен иметь возможность обнаружить монитор, иначе он не запустится вовсе. Обходной путь заключается в создании файла конфигурации, такого как указано выше, и, таким образом, мы избежим автоматическую настройку. Часто это необходимо, когда Х запускаются автоматически и система используется без монитора, либо, если [вход в систему](/index.php/%D0%90%D0%B2%D1%82%D0%BE%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA_X_%D0%BF%D1%80%D0%B8_%D0%B2%D1%85%D0%BE%D0%B4%D0%B5_%D0%B2_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%83 "Автозапуск X при входе в систему") осуществляется через [виртуальную консоль](/index.php/Automatic_login_to_virtual_console "Automatic login to virtual console"), или из [экранного менеджера](/index.php/%D0%AD%D0%BA%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Экранный менеджер").
 
 ### Несколько мониторов
 
@@ -413,7 +407,7 @@ $ xrdb -query | grep dpi
 
 *   **[Compton](/index.php/Compton_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Compton (Русский)")** — Композитный оконный менеджер (форк xcompmgr-dana)
 
-	[https://github.com/chjj/compton](https://github.com/chjj/compton) || [compton](https://www.archlinux.org/packages/?name=compton)
+	[https://github.com/yshui/compton](https://github.com/yshui/compton) || [compton](https://www.archlinux.org/packages/?name=compton)
 
 *   **[Xcompmgr](/index.php/Xcompmgr_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xcompmgr (Русский)")** — Композитный оконный менеджер
 
@@ -429,10 +423,10 @@ $ xrdb -query | grep dpi
 
 В этом разделе перечислены утилиты для автоматизации операций с окнами (например, перемещение, изменение размера или фокусировка), ввода/вывода клавиатуры и мыши.
 
-| Утилита | Пакет | Документация | эмуляция
-клавиш | операции
+| Утилита | Пакет | Документация | Эмуляция
+клавиш | Операции
 с окнами | Примечание |
-| xte | [xautomation](https://www.archlinux.org/packages/?name=xautomation) | [xte(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xte.1) | Да | Нет | Также содержит инструменты для очистки экрана. Не может эмулировать F13+. |
+| xautomation | [xautomation](https://www.archlinux.org/packages/?name=xautomation) | [xte(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xte.1) | Да | Нет | Также содержит инструменты для очистки экрана. Не может эмулировать F13+. |
 | xdo | [xdo-git](https://aur.archlinux.org/packages/xdo-git/) | [xdo(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdo.1) | Нет | Да | Небольшая утилита X для выполнения элементарных действий над окнами. |
 | xdotool | [xdotool](https://www.archlinux.org/packages/?name=xdotool) | [xdotool(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdotool.1) | Да | Да | [Очень забагованный](https://github.com/jordansissel/xdotool/issues) и находится в неактивной разработке, например: имеет сломанный CLI parsing.[[2]](https://github.com/jordansissel/xdotool/issues/14#issuecomment-327968132)[[3]](https://github.com/jordansissel/xdotool/issues/71) |
 | xvkbd | [xvkbd](https://aur.archlinux.org/packages/xvkbd/) | [xvkbd(1)](http://t-sato.in.coocan.jp/xvkbd/#option) | Да | Нет | Виртуальная клавиатура для Xorg, также имеет параметр `-text` для отправки символов. |
@@ -701,6 +695,17 @@ exec startx -- -keeptty > ~/.xorg.log 2>&1
 ### Ошибка SocketCreateListener
 
 Если X завершаются с сообщением об ошибке "SocketCreateListener() failed", вам необходимо удалить файлы сокета в `/tmp/.X11-unix`. Это может происходить после того, как вы ранее запускали Xorg с правами суперпользователя (например, для создания `xorg.conf`).
+
+### Неверный ключ MIT-MAGIC-COOKIE-1 при попытке запустить программу от суперпользователя
+
+Эта ошибка означает, что только текущий пользователь имеет доступ к X-серверу. Решение состоит в том, чтобы предоставить доступ для суперпользователя:
+
+```
+$ xhost +si:localuser:root
+
+```
+
+Эта строка также может быть использована для предоставления доступа к X другому пользователю, нежели root.
 
 ## Смотрите также
 

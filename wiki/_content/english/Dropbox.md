@@ -25,17 +25,18 @@ Related articles
     *   [6.1 Using netctl](#Using_netctl)
     *   [6.2 Using wicd](#Using_wicd)
 *   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 Dropbox keeps saying Downloading files](#Dropbox_keeps_saying_Downloading_files)
-    *   [7.2 Change the Dropbox location from the installation wizard](#Change_the_Dropbox_location_from_the_installation_wizard)
-    *   [7.3 Context menu entries in file manager do not work](#Context_menu_entries_in_file_manager_do_not_work)
-    *   [7.4 Connecting...](#Connecting...)
-    *   [7.5 Dropbox does not start - "This is usually because of a permission error"](#Dropbox_does_not_start_-_"This_is_usually_because_of_a_permission_error")
-        *   [7.5.1 Check permissions](#Check_permissions)
-        *   [7.5.2 Re-linking your account](#Re-linking_your_account)
-        *   [7.5.3 Errors caused by running out of space](#Errors_caused_by_running_out_of_space)
-        *   [7.5.4 Locale caused errors](#Locale_caused_errors)
-        *   [7.5.5 Filesystem monitoring problem](#Filesystem_monitoring_problem)
-    *   [7.6 Proxy settings](#Proxy_settings)
+    *   [7.1 Using Dropbox with non-ext4 filesystems](#Using_Dropbox_with_non-ext4_filesystems)
+    *   [7.2 Dropbox keeps saying Downloading files](#Dropbox_keeps_saying_Downloading_files)
+    *   [7.3 Change the Dropbox location from the installation wizard](#Change_the_Dropbox_location_from_the_installation_wizard)
+    *   [7.4 Context menu entries in file manager do not work](#Context_menu_entries_in_file_manager_do_not_work)
+    *   [7.5 Connecting...](#Connecting...)
+    *   [7.6 Dropbox does not start - "This is usually because of a permission error"](#Dropbox_does_not_start_-_"This_is_usually_because_of_a_permission_error")
+        *   [7.6.1 Check permissions](#Check_permissions)
+        *   [7.6.2 Re-linking your account](#Re-linking_your_account)
+        *   [7.6.3 Errors caused by running out of space](#Errors_caused_by_running_out_of_space)
+        *   [7.6.4 Locale caused errors](#Locale_caused_errors)
+        *   [7.6.5 Filesystem monitoring problem](#Filesystem_monitoring_problem)
+    *   [7.7 Proxy settings](#Proxy_settings)
 
 ## Installation
 
@@ -240,6 +241,10 @@ systemctl stop dropbox@<user>
 Do not forget to make the above scripts executable.
 
 ## Troubleshooting
+
+### Using Dropbox with non-ext4 filesystems
+
+Workarounds have been created, see for example [dropbox-fix2](https://aur.archlinux.org/packages/dropbox-fix2/). These workarounds are based on substituting the filesystem detection functions by the use of LD_PRELOAD.
 
 ### Dropbox keeps saying Downloading files
 

@@ -960,7 +960,7 @@ See also [Wikipedia:Wallpaper (computing)](https://en.wikipedia.org/wiki/Wallpap
 
 *   **hsetroot** — A tool to create compose wallpapers.
 
-	[https://packages.debian.org/sid/hsetroot](https://packages.debian.org/sid/hsetroot) || [hsetroot](https://aur.archlinux.org/packages/hsetroot/)
+	[https://packages.debian.org/sid/hsetroot](https://packages.debian.org/sid/hsetroot) || [hsetroot](https://www.archlinux.org/packages/?name=hsetroot)
 
 *   **HydraPaper** — Gtk utility to set two different backgrounds for each monitor on GNOME.
 
@@ -974,7 +974,7 @@ See also [Wikipedia:Wallpaper (computing)](https://en.wikipedia.org/wiki/Wallpap
 
 	[https://bbs.archlinux.org/viewtopic.php?id=88997](https://bbs.archlinux.org/viewtopic.php?id=88997) || [pybgsetter](https://aur.archlinux.org/packages/pybgsetter/)
 
-*   **pywal** — Changes the wallpaper and creates matching colorschemes for various applications (rofi, i3, termials)
+*   **pywal** — Changes the wallpaper and creates matching colorschemes for various applications (rofi, i3, terminals)
 
 	[https://github.com/dylanaraps/pywal](https://github.com/dylanaraps/pywal) || [python-pywal](https://www.archlinux.org/packages/?name=python-pywal)
 

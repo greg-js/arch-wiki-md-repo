@@ -144,7 +144,7 @@ $ getfacl ~/.face.icon
 
 ```
 
-See [SDDM README: No User Icon](https://github.com/sgerbino/sddm#no-user-icon).
+See [SDDM README: No User Icon](https://github.com/sddm/sddm#no-user-icon).
 
 ### Numlock
 

@@ -12,18 +12,18 @@ Xcompmgr不替代任何窗口管理器，所以对于[Openbox](/index.php/Openbo
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-    *   [1.1 分支版本](#.E5.88.86.E6.94.AF.E7.89.88.E6.9C.AC)
-*   [2 配置](#.E9.85.8D.E7.BD.AE)
-    *   [2.1 窗口透明度](#.E7.AA.97.E5.8F.A3.E9.80.8F.E6.98.8E.E5.BA.A6)
-*   [3 小提示](#.E5.B0.8F.E6.8F.90.E7.A4.BA)
-    *   [3.1 方便开关xcompmgr的脚本](#.E6.96.B9.E4.BE.BF.E5.BC.80.E5.85.B3xcompmgr.E7.9A.84.E8.84.9A.E6.9C.AC)
-    *   [3.2 仅用一个快捷键就切换 xcompmgr](#.E4.BB.85.E7.94.A8.E4.B8.80.E4.B8.AA.E5.BF.AB.E6.8D.B7.E9.94.AE.E5.B0.B1.E5.88.87.E6.8D.A2_xcompmgr)
-*   [4 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
-    *   [4.1 Mozilla Firefox 打开 Flash 时崩溃](#Mozilla_Firefox_.E6.89.93.E5.BC.80_Flash_.E6.97.B6.E5.B4.A9.E6.BA.83)
-    *   [4.2 登陆后变成浅灰色背景 （如Openbox）](#.E7.99.BB.E9.99.86.E5.90.8E.E5.8F.98.E6.88.90.E6.B5.85.E7.81.B0.E8.89.B2.E8.83.8C.E6.99.AF_.EF.BC.88.E5.A6.82Openbox.EF.BC.89)
-    *   [4.3 在 awesome 窗口管理器中出现 BadPicture request](#.E5.9C.A8_awesome_.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8.E4.B8.AD.E5.87.BA.E7.8E.B0_BadPicture_request)
-    *   [4.4 Chromium & Xcompmgr & Awesome & Conky](#Chromium_.26_Xcompmgr_.26_Awesome_.26_Conky)
+*   [1 安装](#安装)
+    *   [1.1 分支版本](#分支版本)
+*   [2 配置](#配置)
+    *   [2.1 窗口透明度](#窗口透明度)
+*   [3 小提示](#小提示)
+    *   [3.1 方便开关xcompmgr的脚本](#方便开关xcompmgr的脚本)
+    *   [3.2 仅用一个快捷键就切换 xcompmgr](#仅用一个快捷键就切换_xcompmgr)
+*   [4 疑难解答](#疑难解答)
+    *   [4.1 Mozilla Firefox 打开 Flash 时崩溃](#Mozilla_Firefox_打开_Flash_时崩溃)
+    *   [4.2 登陆后变成浅灰色背景 （如Openbox）](#登陆后变成浅灰色背景_（如Openbox）)
+    *   [4.3 在 awesome 窗口管理器中出现 BadPicture request](#在_awesome_窗口管理器中出现_BadPicture_request)
+    *   [4.4 Chromium & Xcompmgr & Awesome & Conky](#Chromium_&_Xcompmgr_&_Awesome_&_Conky)
 
 ## 安装
 
@@ -167,7 +167,7 @@ export XLIB_SKIP_ARGB_VISUALS=1
 
 ### 登陆后变成浅灰色背景 （如Openbox）
 
-安装[hsetroot](https://aur.archlinux.org/packages/hsetroot/)，在运行xcompmgr之前，执行`hsetroot -solid "#000000"`（将000000替换成你想要的颜色代码）。
+安装[hsetroot](https://www.archlinux.org/packages/?name=hsetroot)，在运行xcompmgr之前，执行`hsetroot -solid "#000000"`（将000000替换成你想要的颜色代码）。
 
 ### 在 awesome 窗口管理器中出现 BadPicture request
 

@@ -114,16 +114,16 @@ ACTION=="remove", SUBSYSTEM=="usb", ENV{ID_VENDOR_ID}=="05a9", ENV{ID_MODEL_ID}=
 
 ### 列出设备属性
 
-To get a list of all of the attributes of a device you can use to write rules, run this command:
+要列出所有设备的属性以用来编写规则的话，运行下面的命令：
 
 ```
 # udevadm info -a -n [device name]
 
 ```
 
-Replace `[device name]` with the device present in the system, such as `/dev/sda` or `/dev/ttyUSB0`.
+将 `[device name]` 替换为系统中存在的设备，比如 `/dev/sda` 或 `/dev/ttyUSB0`。
 
-If you do not know the device name you can also list all attributes of a specific system path:
+如果你不知道设备名，你也可以列出某个系统路径的属性：
 
 ```
 # udevadm info -a -p /sys/class/backlight/acpi_video0
@@ -137,7 +137,7 @@ If you do not know the device name you can also list all attributes of a specifi
 
 ```
 
-This will not perform all actions in your new rules but it will however process symlink rules on existing devices which might come in handy if you are unable to load them otherwise. You can also directly provide the path to the device you want to test the udev rule for:
+这不会运行你的规则中的所有命令，但会处理已有设备的符号连接，如果你不能加载它们这也许会变得方便。也可以直接输入你测试的设备路径：
 
 ```
 # udevadm test /sys/class/backlight/acpi_video0/

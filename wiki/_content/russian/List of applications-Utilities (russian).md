@@ -842,7 +842,7 @@
 
 *   **hsetroot** — Утилита для создания составных (compose) обоев рабочего стола
 
-	[https://packages.debian.org/sid/hsetroot](https://packages.debian.org/sid/hsetroot) || [hsetroot](https://aur.archlinux.org/packages/hsetroot/)
+	[https://packages.debian.org/sid/hsetroot](https://packages.debian.org/sid/hsetroot) || [hsetroot](https://www.archlinux.org/packages/?name=hsetroot)
 
 *   **[Nitrogen](/index.php/Nitrogen "Nitrogen")** — Быстрая и легковесная программа настройки обоев рабочего стола для оконной системы X
 

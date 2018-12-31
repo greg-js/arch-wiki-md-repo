@@ -18,6 +18,7 @@
     *   [5.1 Integration with applications](#Integration_with_applications)
     *   [5.2 Flushing passphrases](#Flushing_passphrases)
     *   [5.3 Git integration](#Git_integration)
+    *   [5.4 GnuPG integration](#GnuPG_integration)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Passwords are not remembered](#Passwords_are_not_remembered)
     *   [6.2 Resetting the keyring](#Resetting_the_keyring)
@@ -237,6 +238,18 @@ $ git config --global credential.helper /usr/lib/git-core/git-credential-libsecr
 ```
 
 Next time you do a *git push*, you are asked to unlock your keyring, if not unlocked already.
+
+### GnuPG integration
+
+Several applications which use GnuPG require a `pinentry-program` to be set. Set the following to use Gnome 3 pinentry for Gnome Keyring to manage passphrase prompts.
+
+ `~/.gnupg/gpg-agent.conf` 
+```
+pinentry-program /usr/bin/pinentry-gnome3
+
+```
+
+Another option is to [force loopback for GPG](/index.php/GnuPG#Unattended_passphrase "GnuPG") which should allow the passphrase to be entered in the application.
 
 ## Troubleshooting
 

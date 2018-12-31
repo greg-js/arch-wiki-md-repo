@@ -640,7 +640,7 @@ See also [Wikipedia:Comparison of e-mail clients](https://en.wikipedia.org/wiki/
 
 *   **alot** — An experimental terminal MUA based on [notmuch mail](http://notmuchmail.org/). It is written in python using the [urwid](http://urwid.org/) toolkit.
 
-	[https://github.com/pazz/alot](https://github.com/pazz/alot) || [alot](https://aur.archlinux.org/packages/alot/) [alot-git](https://aur.archlinux.org/packages/alot-git/)
+	[https://github.com/pazz/alot](https://github.com/pazz/alot) || [alot](https://www.archlinux.org/packages/?name=alot) [alot-git](https://aur.archlinux.org/packages/alot-git/)
 
 *   **[Alpine](/index.php/Alpine "Alpine")** — Fast, easy-to-use and Apache-licensed email client based on [Pine](https://en.wikipedia.org/wiki/Pine_(email_client) "wikipedia:Pine (email client)").
 

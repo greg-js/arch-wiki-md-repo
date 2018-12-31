@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch boot process](/index.php/Arch_boot_process "Arch boot process"). Data da última tradução: 2018-11-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_boot_process&diff=0&oldid=554647) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch boot process](/index.php/Arch_boot_process "Arch boot process"). Data da última tradução: 2018-12-29\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_boot_process&diff=0&oldid=560834) na versão em inglês.
 
 Artigos relacionados
 
@@ -42,7 +42,7 @@ Uma [BIOS](https://en.wikipedia.org/wiki/pt:BIOS "wikipedia:pt:BIOS") (acrônimo
 
 ### UEFI
 
-[Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface") tem suporte para ler a tabela de partições e os sistemas de arquivos. UEFI não inicia qualquer código de inicialização na MBR independentemente de existir ou não - em vez disso, a inicialização depende de entradas de inicialização na NVRAM.
+[Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface") tem suporte para ler a tabela de partições e os sistemas de arquivos. UEFI não inicia qualquer código de inicialização na MBR independentemente de existir ou não - em vez disso, a inicialização depende de entradas de inicialização na [NVRAM](https://en.wikipedia.org/wiki/pt:NVRAM "wikipedia:pt:NVRAM").
 
 A especificação UEFI determina o suporte para os sistemas de arquivos [FAT12, FAT16 e FAT32](/index.php/FAT "FAT") (veja [Especificação UEFI versão 2.7, seção 13.3.1.1](http://www.uefi.org/sites/default/files/resources/UEFI%20Spec%202_7_A%20Sept%206.pdf#G17.1019485)), mas qualquer fornecedor em conformidade pode, opcionalmente, adicionar suporte para sistemas de arquivos adicionais; por exemplo, o [Mac](/index.php/Mac "Mac") da Apple (e por padrão) oferece suporte a seus próprios drivers de sistema de arquivos HFS+. As implementações da UEFI também suportam ISO-9660 para discos ópticos.
 

@@ -1,10 +1,6 @@
 Related articles
 
-*   [BIND](/index.php/BIND "BIND")
-*   [DNSCrypt](/index.php/DNSCrypt "DNSCrypt")
-*   [DNSSEC](/index.php/DNSSEC "DNSSEC")
-*   [Pdnsd](/index.php/Pdnsd "Pdnsd")
-*   [unbound](/index.php/Unbound "Unbound")
+*   [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution")
 
 [dnsmasq](http://www.thekelleys.org.uk/dnsmasq/doc.html) provides a [DNS server](https://en.wikipedia.org/wiki/Name_server "wikipedia:Name server"), a [DHCP server](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol "wikipedia:Dynamic Host Configuration Protocol") with support for [DHCPv6](https://en.wikipedia.org/wiki/DHCPv6 "wikipedia:DHCPv6") and [PXE](https://en.wikipedia.org/wiki/Preboot_Execution_Environment "wikipedia:Preboot Execution Environment"), and a [TFTP server](https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol "wikipedia:Trivial File Transfer Protocol"). It is designed to be lightweight and have a small footprint, suitable for resource constrained routers and firewalls. dnsmasq can also be configured to cache DNS queries for improved DNS lookup speeds to previously visited sites.
 
@@ -50,9 +46,9 @@ The network will also need to be restarted so the DHCP client can create a new `
 
 ## Configuration
 
-To configure dnsmasq, you need to edit `/etc/dnsmasq.conf`. The file contains extensive comments explaining its options. For all available options see [dnsmasq(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dnsmasq.8).
+To configure dnsmasq, edit `/etc/dnsmasq.conf`. The file contains comments explaining the options. For all available options see [dnsmasq(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dnsmasq.8).
 
-**Warning:** dnsmasq by default enables its DNS server. If you do not require it, you need to explicitly disable it by setting DNS port to `0`: `port=0` 
+**Warning:** dnsmasq's default configuration enables its DNS server. If you do not require it, you need to explicitly disable it by setting the DNS port to `0`: `port=0` 
 
 **Tip:** To check configuration file(s) syntax, execute:
 ```
@@ -97,7 +93,7 @@ See [dnsmasq(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dnsmasq.8) for more 
 
 After configuring dnsmasq, you need to add the localhost addresses as the only nameservers in `/etc/resolv.conf`. This causes all queries to be sent to dnsmasq.
 
-Since dnsmasq is not a recursive DNS server you must set up forwarding to an external DNS server. This can be done automatically by using [openresolv](/index.php/Openresolv "Openresolv") or by manually specifying the DNS server address in dnsmasq's configuration.
+Since dnsmasq is a stub resolver not a recursive resolver you must set up forwarding to an external DNS server. This can be done automatically by using [openresolv](/index.php/Openresolv "Openresolv") or by manually specifying the DNS server address in dnsmasq's configuration.
 
 ##### openresolv
 
@@ -137,7 +133,7 @@ nameserver 127.0.0.1
 
 ```
 
-See [Domain name resolution#Overwriting of /etc/resolv.conf](/index.php/Domain_name_resolution#Overwriting_of_/etc/resolv.conf "Domain name resolution") on how to protect `/etc/resolv.conf` from modification.
+Make sure to protect `/etc/resolv.conf` from modification as described in [Domain name resolution#Overwriting of /etc/resolv.conf](/index.php/Domain_name_resolution#Overwriting_of_/etc/resolv.conf "Domain name resolution").
 
 The upstream DNS server addresses must then be specified in dnsmasq's configuration file as `server=*server_address*`. Also add `no-resolv` so dnsmasq does not needlessly read `/etc/resolv.conf` which only contains the localhost addresses of itself.
 

@@ -911,7 +911,7 @@ feh --bg-scale */path/to/image.file* &
 
 #### hsetroot
 
-[hsetroot](https://aur.archlinux.org/packages/hsetroot/) is a command-line tool specifically designed to set wallpapers. As with Feh, it will be necessary to add the full directory path and name of the image to be used as the wallpaper. To use HSetRoot as the background provider, add the following command to the `~/.config/openbox/autostart` file:
+[hsetroot](https://www.archlinux.org/packages/?name=hsetroot) is a command-line tool specifically designed to set wallpapers. As with Feh, it will be necessary to add the full directory path and name of the image to be used as the wallpaper. To use HSetRoot as the background provider, add the following command to the `~/.config/openbox/autostart` file:
 
 ```
 hsetroot -fill */path/to/image.file* &

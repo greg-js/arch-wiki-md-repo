@@ -1,9 +1,6 @@
 Related articles
 
-*   [BIND](/index.php/BIND "BIND")
-*   [DNSCrypt](/index.php/DNSCrypt "DNSCrypt")
-*   [dnsmasq](/index.php/Dnsmasq "Dnsmasq")
-*   [Unbound](/index.php/Unbound "Unbound")
+*   [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution")
 
 [pdnsd](http://members.home.nl/p.a.rombouts/pdnsd/index.html) is a DNS server designed for local caching of DNS information. Correctly configured, it can significantly increase browsing speed on a broadband connection. Compared to [BIND](/index.php/BIND "BIND") or [dnsmasq](/index.php/Dnsmasq "Dnsmasq") it can remember its cache after a reboot; "p" stands for persistent.
 

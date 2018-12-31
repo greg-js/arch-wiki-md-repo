@@ -637,7 +637,7 @@ Esto le indicará al controlador fbcon que realice el mapeado sobre el disposibi
 
 ### Algunas aplicaciones 3D fallan o muestran texturas completamente negras
 
-Es posible que necesite apoyo de compresión de textura, que no está incluido en el controlador de código abierto. Instale [libtxc_dxtn](https://www.archlinux.org/packages/?name=libtxc_dxtn) (y [lib32-libtxc_dxtn](https://www.archlinux.org/packages/?name=lib32-libtxc_dxtn) para los sistemas multilib).
+Es posible que necesite apoyo de compresión de textura, que no está incluido en el controlador de código abierto. Instale [libtxc_dxtn](https://aur.archlinux.org/packages/libtxc_dxtn/) (y [lib32-libtxc_dxtn](https://aur.archlinux.org/packages/lib32-libtxc_dxtn/) para los sistemas multilib).
 
 ### Prestaciones 2D (por ejemplo, el desplazamiento) lentas
 

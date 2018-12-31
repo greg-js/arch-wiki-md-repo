@@ -55,7 +55,7 @@ And the following as stable but missing minor features:
 
 ### Installation
 
-Download and install [razercfg](https://aur.archlinux.org/packages/razercfg/) or [razercfg-git](https://aur.archlinux.org/packages/razercfg-git/) for bleeding edge git releases from the [AUR](/index.php/AUR "AUR").
+Download and install [razercfg](https://www.archlinux.org/packages/?name=razercfg) or [razercfg-git](https://aur.archlinux.org/packages/razercfg-git/) for bleeding edge git releases from the [AUR](/index.php/AUR "AUR").
 
 You also need to edit your `/etc/X11/xorg.conf` file to disable the current mouse settings by commenting them out as in the following example, where also some defaults are set as suggested by the author:
 

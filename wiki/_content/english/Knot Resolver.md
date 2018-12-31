@@ -1,3 +1,7 @@
+Related articles
+
+*   [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution")
+
 [Knot Resolver](https://www.knot-resolver.cz/) is a full (recursive), caching DNS resolver. It is designed to scale from small home-office networks to providing DNS servers at the scale of ISPs. Knot Resolver supports [DNSSEC](/index.php/DNSSEC "DNSSEC").
 
 ## Contents

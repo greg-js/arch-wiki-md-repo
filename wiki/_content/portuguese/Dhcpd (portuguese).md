@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [dhcpd](/index.php/Dhcpd "Dhcpd"). Data da última tradução: 2018-10-30\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dhcpd&diff=0&oldid=547387) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [dhcpd](/index.php/Dhcpd "Dhcpd"). Data da última tradução: 2018-12-29\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dhcpd&diff=0&oldid=557343) na versão em inglês.
 
 Artigos relacionados
 
@@ -24,7 +24,7 @@ O *dhcpd* é o servidor DHCP da [Internet Systems Consortium](http://www.isc.org
 
 ## Uso
 
-*dhcpd* inclui um arquivo unit `dhcpd.service`, que pode ser usado para [controlar](/index.php/Habilite "Habilite") o daemon. Ele inicia o daemon para *todas* as [interfaces de rede](/index.php/Interfaces_de_rede "Interfaces de rede"). Veja [#Ouvindo apenas em uma interface](#Ouvindo_apenas_em_uma_interface) para uma alternativa.
+*dhcpd* inclui dois arquivos unit `dhcpd4.service` e `dhcpd6.service`, que podem ser usados para [controlar](/index.php/Habilite "Habilite") o daemon. Eles iniciam o daemon em *todas* as [interfaces de rede](/index.php/Interfaces_de_rede "Interfaces de rede") para IPv4 e IPv6, respectivamente. Veja [#Ouvindo apenas em uma interface](#Ouvindo_apenas_em_uma_interface) para uma alternativa.
 
 ## Configuração
 

@@ -214,14 +214,16 @@ By default the mapped device will be located at `/dev/mapper/luks-*XXXXXXXX-XXXX
 
 #### rd.luks.name
 
+**Tip:** When using this parameter you can omit `rd.luks.uuid`.
+
 ```
 rd.luks.name=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*=*name*
 
 ```
 
-Specify the name of the mapped device after the LUKS partition is open. For example, specifying `*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*=cryptroot` causes the unlocked device to be located at `/dev/mapper/cryptroot`. If this is not specified the mapped device will be located at `/dev/mapper/luks-*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*` where *XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* is the UUID of the LUKS partition. When using this parameter you can omit `rd.luks.uuid`.
+Specify the name of the mapped device after the LUKS partition is open, where *XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* is the UUID of the LUKS partition. This is equivalent to the second parameter of `encrypt`'s `cryptdevice`.
 
-This is equivalent to the second parameter of `encrypt`'s `cryptdevice`.
+For example, specifying `rd.luks.name=12345678-9ABC-DEF0-1234-56789ABCDEF0=cryptroot` causes the unlocked LUKS device with UUID `12345678-9ABC-DEF0-1234-56789ABCDEF0` to be located at `/dev/mapper/cryptroot`.
 
 #### rd.luks.options
 

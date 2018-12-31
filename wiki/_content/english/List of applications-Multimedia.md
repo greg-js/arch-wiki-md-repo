@@ -719,7 +719,7 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 
 	[http://flavio.tordini.org/musique](http://flavio.tordini.org/musique) || [musique](https://aur.archlinux.org/packages/musique/)
 
-*   **[Tomahawk](https://en.wikipedia.org/wiki/Tomahawk_(software) "wikipedia:Tomahawk (software)")** — Music player application written in C++/Qt. It decouples the name of the song from the source it was shared from - and fulfills the request using all of your available sources.
+*   **[Tomahawk](https://en.wikipedia.org/wiki/Tomahawk_(software) "wikipedia:Tomahawk (software)")** — Not actively developed anymore. Music player application written in C++/Qt. It decouples the name of the song from the source it was shared from - and fulfills the request using all of your available sources.
 
 	[https://www.tomahawk-player.org/](https://www.tomahawk-player.org/) || [tomahawk](https://aur.archlinux.org/packages/tomahawk/)
 

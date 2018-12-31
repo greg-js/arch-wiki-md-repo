@@ -22,7 +22,9 @@ This page specifically concerns the specifics of running Arch Linux on this lapt
 *   [1 Configuration](#Configuration)
     *   [1.1 BIOS update](#BIOS_update)
     *   [1.2 Graphics](#Graphics)
-    *   [1.3 Other notes](#Other_notes)
+    *   [1.3 Dolby Atmos Effect on Linux](#Dolby_Atmos_Effect_on_Linux)
+    *   [1.4 TLP](#TLP)
+    *   [1.5 Other notes](#Other_notes)
 *   [2 Specifications](#Specifications)
 
 ## Configuration
@@ -35,20 +37,37 @@ BIOS updates are normally available via [fwupd](/index.php/Fwupd "Fwupd"), howev
 
 ### Graphics
 
-Text mode works out of the box. Starting X11 requires installing [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) or configuring the right card ID for the default "modesetting" driver in [Xorg.conf](/index.php/Xorg.conf "Xorg.conf"), e.g.:
+Text mode works out of the box. Starting X11 requires configuring the right card ID for the driver in [Xorg.conf](/index.php/Xorg.conf "Xorg.conf"), e.g.:
 
 ```
 Section "Device"
        Identifier  "Card1"
+       # pick between "modesetting" and "intel" here (intel requires xf86-video-intel)
        Driver      "modesetting"
        BusID       "PCI:0:2:0"
 EndSection
 
 ```
 
-Hybrid graphics works via [Bumblebee](/index.php/Bumblebee "Bumblebee"). Nvidia-only mode has not been tested as of this writing.
+Others have reported the display working out of the box with [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel), but this is not confirmed. modesetting Hybrid graphics works via [Bumblebee](/index.php/Bumblebee "Bumblebee"). The HDMI port is wired to the Nvidia chip, see [Bumblebee#Output_wired_to_the_NVIDIA_chip](/index.php/Bumblebee#Output_wired_to_the_NVIDIA_chip "Bumblebee") for details.
 
-The HDMI port is wired to the Nvidia chip, see [Bumblebee#Output_wired_to_the_NVIDIA_chip](/index.php/Bumblebee#Output_wired_to_the_NVIDIA_chip "Bumblebee") for details.
+Nvidia-only mode has not been thoroughly tested, but seems to work fine with the default configuration produced by `nvidia-xconfig`, including HDMI output.
+
+### Dolby Atmos Effect on Linux
+
+In order to get the same speaker sound quality/effect as on Dolby Atmos with Windows install & configure [Pulseaudio](/index.php/Pulseaudio "Pulseaudio") and [pulseeffects](https://www.archlinux.org/packages/?name=pulseeffects).
+
+You can then download the Dolby Atmos preset from [JackHack96's Github](https://github.com/JackHack96/PulseEffects-Presets/tree/master/irs).
+
+Open the PulseEffects GUI and enable the preset in the "Convolver" tab.
+
+### TLP
+
+Currently the TLP module [tlp_smapi](https://www.archlinux.org/packages/?name=tlp_smapi) doesn't seem to load / work correctly. How ever, the package [tpacpi-bat](https://www.archlinux.org/packages/?name=tpacpi-bat) works and can read the battery charging start/stop limits.
+
+To set battery start/stop thresholds with [tpacpi-bat](https://www.archlinux.org/packages/?name=tpacpi-bat) you need to edit /etc/default/tlp e.g.:
+
+"START_CHARGE_THRESH_BAT0=80" and "STOP_CHARGE_THRESH_BAT0=90"
 
 ### Other notes
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch package guidelines](/index.php/Arch_package_guidelines "Arch package guidelines"). Data da última tradução: 2018-10-30\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_package_guidelines&diff=0&oldid=550020) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch package guidelines](/index.php/Arch_package_guidelines "Arch package guidelines"). Data da última tradução: 2018-12-29\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_package_guidelines&diff=0&oldid=557440) na versão em inglês.
 
 Artigos relacionados
 

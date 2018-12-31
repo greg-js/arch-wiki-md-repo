@@ -1,10 +1,6 @@
 Related articles
 
-*   [DNSCrypt](/index.php/DNSCrypt "DNSCrypt")
-*   [dnsmasq](/index.php/Dnsmasq "Dnsmasq")
-*   [Pdnsd](/index.php/Pdnsd "Pdnsd")
-*   [Unbound](/index.php/Unbound "Unbound")
-*   [PowerDNS](/index.php/PowerDNS "PowerDNS")
+*   [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution")
 
 [BIND](https://www.isc.org/downloads/bind/) (or named) is the most widely used Domain Name System (DNS) server.
 

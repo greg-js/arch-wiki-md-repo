@@ -1378,7 +1378,7 @@ See also [Wikipedia:Comparison of email clients](https://en.wikipedia.org/wiki/C
 
 *   **alot** — An experimental terminal MUA based on [notmuch mail](http://notmuchmail.org/). It is written in python using the [urwid](http://urwid.org/) toolkit.
 
-	[https://github.com/pazz/alot](https://github.com/pazz/alot) || [alot](https://aur.archlinux.org/packages/alot/)
+	[https://github.com/pazz/alot](https://github.com/pazz/alot) || [alot](https://www.archlinux.org/packages/?name=alot)
 
 *   **[Alpine](/index.php/Alpine "Alpine")** — Fast, easy-to-use and Apache-licensed email client based on [Pine](https://en.wikipedia.org/wiki/Pine_(email_client) "wikipedia:Pine (email client)").
 
@@ -3118,7 +3118,7 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 
 	[http://flavio.tordini.org/musique](http://flavio.tordini.org/musique) || [musique](https://aur.archlinux.org/packages/musique/)
 
-*   **[Tomahawk](https://en.wikipedia.org/wiki/Tomahawk_(software) "wikipedia:Tomahawk (software)")** — Music player application written in C++/Qt. It decouples the name of the song from the source it was shared from - and fulfills the request using all of your available sources.
+*   **[Tomahawk](https://en.wikipedia.org/wiki/Tomahawk_(software) "wikipedia:Tomahawk (software)")** — Not actively developed anymore. Music player application written in C++/Qt. It decouples the name of the song from the source it was shared from - and fulfills the request using all of your available sources.
 
 	[https://www.tomahawk-player.org/](https://www.tomahawk-player.org/) || [tomahawk](https://aur.archlinux.org/packages/tomahawk/)
 
@@ -8252,7 +8252,7 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 *   **Geotag** — Match date/time information from photos with location information from a GPS unit or from a map.
 
-	[http://geotag.sourceforge.net/](http://geotag.sourceforge.net/) || [geotag](https://www.archlinux.org/packages/?name=geotag)
+	[http://geotag.sourceforge.net/](http://geotag.sourceforge.net/) || [geotag](https://aur.archlinux.org/packages/geotag/)
 
 *   **GNOME Maps** — A simple map client for GNOME. Part of [gnome-extra](https://www.archlinux.org/groups/x86_64/gnome-extra/).
 
@@ -9538,7 +9538,7 @@ See also [Wikipedia:Wallpaper (computing)](https://en.wikipedia.org/wiki/Wallpap
 
 *   **hsetroot** — A tool to create compose wallpapers.
 
-	[https://packages.debian.org/sid/hsetroot](https://packages.debian.org/sid/hsetroot) || [hsetroot](https://aur.archlinux.org/packages/hsetroot/)
+	[https://packages.debian.org/sid/hsetroot](https://packages.debian.org/sid/hsetroot) || [hsetroot](https://www.archlinux.org/packages/?name=hsetroot)
 
 *   **HydraPaper** — Gtk utility to set two different backgrounds for each monitor on GNOME.
 
@@ -9552,7 +9552,7 @@ See also [Wikipedia:Wallpaper (computing)](https://en.wikipedia.org/wiki/Wallpap
 
 	[https://bbs.archlinux.org/viewtopic.php?id=88997](https://bbs.archlinux.org/viewtopic.php?id=88997) || [pybgsetter](https://aur.archlinux.org/packages/pybgsetter/)
 
-*   **pywal** — Changes the wallpaper and creates matching colorschemes for various applications (rofi, i3, termials)
+*   **pywal** — Changes the wallpaper and creates matching colorschemes for various applications (rofi, i3, terminals)
 
 	[https://github.com/dylanaraps/pywal](https://github.com/dylanaraps/pywal) || [python-pywal](https://www.archlinux.org/packages/?name=python-pywal)
 

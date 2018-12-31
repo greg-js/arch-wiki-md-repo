@@ -131,7 +131,7 @@ exec openbox
 
 *   `DESKTOP_SESSION` is similar to `DE`, but used in [LXDE](/index.php/LXDE "LXDE") desktop environment: when `DESKTOP_SESSION` is set to `LXDE`, *xdg-open* will use *pcmanfm* file associations.
 
-*   `PATH` contains a colon-separated list of directories in which your system looks for executable files. When a regular command (e.g., *ls* or *rc-update*) is interpreted by the shell (e.g., *bash* or *zsh*), the shell looks for an executable file with the same name as your command in the listed directories, and executes it. To run executables that are not listed in `PATH`, the absolute path to the executable must be given: `/bin/ls`.
+*   `PATH` contains a colon-separated list of directories in which your system looks for executable files. When a regular command (e.g. *ls*, *systemctl* or *pacman*) is interpreted by the shell (e.g. *bash* or *zsh*), the shell looks for an executable file with the same name as your command in the listed directories, and executes it. To run executables that are not listed in `PATH`, a relative or absolute path to the executable must be given, e.g. `./a.out` or `/bin/ls`.
 
 **Note:** It is advised not to include the current working directory (`.`) into your `PATH` for security reasons, as it may trick the user to execute vicious commands.
 

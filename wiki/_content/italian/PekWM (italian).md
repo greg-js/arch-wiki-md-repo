@@ -1,10 +1,14 @@
+Articoli correlati
+
+*   [gestore delle finestre](/index.php/Window_Manager_(Italiano) "Window Manager (Italiano)")
+
 [Pek Window Manager](http://pekwm.org) è stato scritto da Claes Nästen. Il codice è basato su un'altro gestore di finestre aewm++, ma si è evoluto talmente da non avere più nulla in comune con aewm++. Dispone anche di un esteso set di funzioni, tra cui il raggruppamento delle finestre (non diverso da [ion3](/index.php/Ion3 "Ion3"), pwm o [fluxbox](/index.php/Fluxbox "Fluxbox")), proprietà automatiche, xinerama e keygrabber per il supporto al portachiavi, e molto altro.
 
 ## Contents
 
 *   [1 Installazione](#Installazione)
 *   [2 Avvio](#Avvio)
-    *   [2.1 Metodo 1: avviare tramite kdm/gdm](#Metodo_1:_avviare_tramite_kdm.2Fgdm)
+    *   [2.1 Metodo 1: avviare tramite kdm/gdm](#Metodo_1:_avviare_tramite_kdm/gdm)
     *   [2.2 Metodo 2: avviare tramite xinitrc](#Metodo_2:_avviare_tramite_xinitrc)
 *   [3 Configurazione](#Configurazione)
     *   [3.1 Menu](#Menu)
@@ -15,12 +19,12 @@
     *   [3.3 Mouse](#Mouse)
     *   [3.4 Avvio automatico dei programmi](#Avvio_automatico_dei_programmi)
     *   [3.5 Variabii](#Variabii)
-    *   [3.6 Proprietà automatiche](#Propriet.C3.A0_automatiche)
+    *   [3.6 Proprietà automatiche](#Proprietà_automatiche)
 *   [4 Temi](#Temi)
     *   [4.1 GTK Appearance](#GTK_Appearance)
 *   [5 Impostare uno sfondo](#Impostare_uno_sfondo)
 *   [6 Problemi comuni](#Problemi_comuni)
-    *   [6.1 Quando si utilizza la modalità TwinView di Nvidia, le finestre massimizzate attraversano entrambi gli schermi](#Quando_si_utilizza_la_modalit.C3.A0_TwinView_di_Nvidia.2C_le_finestre_massimizzate_attraversano_entrambi_gli_schermi)
+    *   [6.1 Quando si utilizza la modalità TwinView di Nvidia, le finestre massimizzate attraversano entrambi gli schermi](#Quando_si_utilizza_la_modalità_TwinView_di_Nvidia,_le_finestre_massimizzate_attraversano_entrambi_gli_schermi)
     *   [6.2 La trasparenza e il composite non funzionano correttamente](#La_trasparenza_e_il_composite_non_funzionano_correttamente)
 *   [7 Link esterni](#Link_esterni)
 
@@ -235,7 +239,7 @@ Poiché pekwm è solo un windows manager è necessario utilizzare un programma s
 *   [Nitrogen](/index.php/Nitrogen "Nitrogen")
 *   [xli](https://aur.archlinux.org/packages/xli/)
 *   [esetroot](https://aur.archlinux.org/packages/esetroot/)
-*   [hsetroot](https://aur.archlinux.org/packages/hsetroot/)
+*   [hsetroot](https://www.archlinux.org/packages/?name=hsetroot)
 *   [habak](https://www.archlinux.org/packages/?name=habak)
 
 ## Problemi comuni

@@ -595,7 +595,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **alot** — Экспериментальный терминальный MUA, основанный на [notmuch mail](http://notmuchmail.org/). Написан на [python](/index.php/Python_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Python (Русский)") с использованием тулкита [urwid](http://urwid.org/)
 
-	[https://github.com/pazz/alot](https://github.com/pazz/alot) || [alot](https://aur.archlinux.org/packages/alot/) [alot-git](https://aur.archlinux.org/packages/alot-git/)
+	[https://github.com/pazz/alot](https://github.com/pazz/alot) || [alot](https://www.archlinux.org/packages/?name=alot) [alot-git](https://aur.archlinux.org/packages/alot-git/)
 
 *   **[Alpine](/index.php/Alpine "Alpine")** — Быстрый и легкий в использовании почтовый клиент, основанный на [Pine](https://en.wikipedia.org/wiki/Pine_(email_client) и распространяемый под лицензией Apache
 
@@ -2913,7 +2913,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **hsetroot** — Утилита для создания составных (compose) обоев рабочего стола
 
-	[https://packages.debian.org/sid/hsetroot](https://packages.debian.org/sid/hsetroot) || [hsetroot](https://aur.archlinux.org/packages/hsetroot/)
+	[https://packages.debian.org/sid/hsetroot](https://packages.debian.org/sid/hsetroot) || [hsetroot](https://www.archlinux.org/packages/?name=hsetroot)
 
 *   **[Nitrogen](/index.php/Nitrogen "Nitrogen")** — Быстрая и легковесная программа настройки обоев рабочего стола для оконной системы X
 

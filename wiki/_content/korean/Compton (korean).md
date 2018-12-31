@@ -2,20 +2,20 @@
 
 ## Contents
 
-*   [1 설치](#.EC.84.A4.EC.B9.98)
-*   [2 사용](#.EC.82.AC.EC.9A.A9)
-    *   [2.1 자동실행](#.EC.9E.90.EB.8F.99.EC.8B.A4.ED.96.89)
-    *   [2.2 커맨드로 실행](#.EC.BB.A4.EB.A7.A8.EB.93.9C.EB.A1.9C_.EC.8B.A4.ED.96.89)
-    *   [2.3 설정파일 사용](#.EC.84.A4.EC.A0.95.ED.8C.8C.EC.9D.BC_.EC.82.AC.EC.9A.A9)
-        *   [2.3.1 몇몇 창의 그림자 효과](#.EB.AA.87.EB.AA.87_.EC.B0.BD.EC.9D.98_.EA.B7.B8.EB.A6.BC.EC.9E.90_.ED.9A.A8.EA.B3.BC)
-*   [3 다중 모니터](#.EB.8B.A4.EC.A4.91_.EB.AA.A8.EB.8B.88.ED.84.B0)
-*   [4 오류 해결](#.EC.98.A4.EB.A5.98_.ED.95.B4.EA.B2.B0)
-    *   [4.1 탭 창](#.ED.83.AD_.EC.B0.BD)
+*   [1 설치](#설치)
+*   [2 사용](#사용)
+    *   [2.1 자동실행](#자동실행)
+    *   [2.2 커맨드로 실행](#커맨드로_실행)
+    *   [2.3 설정파일 사용](#설정파일_사용)
+        *   [2.3.1 몇몇 창의 그림자 효과](#몇몇_창의_그림자_효과)
+*   [3 다중 모니터](#다중_모니터)
+*   [4 오류 해결](#오류_해결)
+    *   [4.1 탭 창](#탭_창)
     *   [4.2 slock](#slock)
-    *   [4.3 dwm & dmenu](#dwm_.26_dmenu)
+    *   [4.3 dwm & dmenu](#dwm_&_dmenu)
     *   [4.4 Unable to change the background color with xsetroot](#Unable_to_change_the_background_color_with_xsetroot)
     *   [4.5 Corrupted screen contents with Intel graphics](#Corrupted_screen_contents_with_Intel_graphics)
-    *   [4.6 Screen artifacts/screenshot issues when using AMD's Catalyst driver](#Screen_artifacts.2Fscreenshot_issues_when_using_AMD.27s_Catalyst_driver)
+    *   [4.6 Screen artifacts/screenshot issues when using AMD's Catalyst driver](#Screen_artifacts/screenshot_issues_when_using_AMD's_Catalyst_driver)
     *   [4.7 Errors while trying to daemonize with nvidia drivers](#Errors_while_trying_to_daemonize_with_nvidia_drivers)
     *   [4.8 Lag when using xft fonts](#Lag_when_using_xft_fonts)
     *   [4.9 Flicker](#Flicker)
@@ -241,7 +241,7 @@ The override redirect property seems to be false for most windows- having this i
 
 ### Unable to change the background color with xsetroot
 
-Currently, compton is incompatible with `xsetroot`'s `-solid` option, a workaround is to use [hsetroot](https://aur.archlinux.org/packages/hsetroot/) to set the background color:
+Currently, compton is incompatible with `xsetroot`'s `-solid` option, a workaround is to use [hsetroot](https://www.archlinux.org/packages/?name=hsetroot) to set the background color:
 
 ```
 $ hsetroot -solid '#000000'

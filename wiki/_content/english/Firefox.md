@@ -176,7 +176,7 @@ Install the [hunspell](https://www.archlinux.org/packages/?name=hunspell) packag
 
 To enable spell checking for a specific language right click on any text field and check the *Check Spelling* box. To select a language for spell checking to you have right click again and select your language from the *Languages* sub-menu.
 
-To get more languages just click *Add Dictionaries...* and select the dictionary you want to install from the list.
+To get more languages just click *Add Dictionaries...* and select the dictionary you want to install from the list. For Russian there is [firefox-spell-ru](https://www.archlinux.org/packages/?name=firefox-spell-ru).
 
 When your default language choice does not stick, see [#Firefox does not remember default spell check language](#Firefox_does_not_remember_default_spell_check_language).
 

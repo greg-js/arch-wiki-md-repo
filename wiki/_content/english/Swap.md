@@ -162,7 +162,13 @@ Activate the swap file:
 
 Finally, edit [fstab](/index.php/Fstab "Fstab") to add an entry for the swap file:
 
- `/etc/fstab`  `/swapfile none swap defaults 0 0` 
+ `/etc/fstab` 
+```
+/swapfile none swap defaults 0 0
+
+```
+
+**Note:** The swap file must be specified by its location on the file system not by its UUID or LABEL.
 
 #### Remove swap file
 

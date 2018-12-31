@@ -1,11 +1,6 @@
 Related articles
 
-*   [DNSSEC](/index.php/DNSSEC "DNSSEC")
-*   [BIND](/index.php/BIND "BIND")
-*   [DNSCrypt](/index.php/DNSCrypt "DNSCrypt")
-*   [dnsmasq](/index.php/Dnsmasq "Dnsmasq")
-*   [Pdnsd](/index.php/Pdnsd "Pdnsd")
-*   [Stubby](/index.php/Stubby "Stubby")
+*   [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution")
 
 [Unbound](https://unbound.net/) is a validating, recursive, and caching DNS resolver. According to [Wikipedia](https://en.wikipedia.org/wiki/Unbound_(DNS_Server) "wikipedia:Unbound (DNS Server)"):
 

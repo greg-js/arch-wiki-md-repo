@@ -1,3 +1,7 @@
+Related articles
+
+*   [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution")
+
 [dnscrypt-proxy](https://github.com/jedisct1/dnscrypt-proxy) is a DNS proxy with support for the encrypted DNS protocols [DNS over HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTPS") and [DNSCrypt](https://dnscrypt.info/), which can be used to prevent man-in-the-middle attacks and eavesdropping. *dnscrypt-proxy* is also compatible with [DNSSEC](/index.php/DNSSEC "DNSSEC").
 
 ## Contents

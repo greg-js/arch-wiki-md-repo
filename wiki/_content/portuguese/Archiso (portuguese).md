@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Archiso](/index.php/Archiso "Archiso"). Data da última tradução: 2018-11-11\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Archiso&diff=0&oldid=554718) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Archiso](/index.php/Archiso "Archiso"). Data da última tradução: 2018-12-29\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Archiso&diff=0&oldid=559444) na versão em inglês.
 
 Artigos relacionados
 
@@ -8,6 +8,8 @@ Artigos relacionados
 *   [Instalação offline](/index.php/Offline_installation "Offline installation")
 
 **Archiso** é um pequeno conjunto de scripts bash capazes de construir imagens em CD/DVD/USB Live totalmente funcionais do Arch Linux. É a mesma ferramenta usada para gerar as imagens oficiais, mas como é uma ferramenta muito genérica, pode ser usada para gerar qualquer coisa desde sistemas de resgate, discos de instalação, até sistemas de CD/DVD/USB Live, e quem sabe o que outro. Simplificando, se envolve Arch em uma montanha russa brilhante, pode fazê-lo. O coração e a alma de Archiso são *mkarchiso*. Todas as suas opções estão documentadas em sua saída de uso, portanto, seu uso direto não será coberto aqui. Em vez disso, este artigo da wiki funcionará como um guia para rolar sua própria mídia ao vivo em pouco tempo!
+
+Se você precisar de um detalhamento técnico dos requisitos e das etapas de criação, consulte também a [documentação oficial do projeto](https://git.archlinux.org/archiso.git/tree/docs).
 
 ## Contents
 
@@ -171,7 +173,7 @@ Devido à natureza modular do isolinux, você pode usar muitos addons, pois todo
 
 #### Secure Boot do UEFI
 
-Se você deseja tornar seu Archiso inicializável em um ambiente ativado pelo UEFI Secure Boot, você deve usar um gerenciador de boot assinado. Você pode seguir as instruções em [Secure Boot#Using a signed boot loader](/index.php/Secure_Boot#Using_a_signed_boot_loader "Secure Boot").
+Se você deseja tornar seu Archiso inicializável em um ambiente ativado pelo UEFI Secure Boot, você deve usar um gerenciador de boot assinado. Você pode seguir as instruções em [Secure Boot#Booting an install media](/index.php/Secure_Boot#Booting_an_install_media "Secure Boot").
 
 ### Gerenciador de login
 
@@ -280,7 +282,7 @@ Isso aumenta a velocidade do *bootstrap* inicial, já que ele não precisa baixa
 
 ## Usando a ISO
 
-Veja a seção [Obtendo e instalando o Arch#Métodos de instalação](/index.php/Obtendo_e_instalando_o_Arch#Métodos_de_instalação "Obtendo e instalando o Arch") para várias opções.
+Veja o artigo [Guia de instalação](/index.php/Guia_de_instala%C3%A7%C3%A3o "Guia de instalação") para várias opções.
 
 ## Veja também
 

@@ -8,7 +8,7 @@
 | <small>1.3.1.</small> [Help](/index.php/Category:Help_(Portugu%C3%AAs) "Category:Help (Português)") <small>(15)</small> |
 | <small>1.3.2.</small> [Lists](/index.php/Category:Lists_(Portugu%C3%AAs) "Category:Lists (Português)") <small>(2)</small> |
 | <small>1.3.2.1.</small> [Lists of software](/index.php/Category:Lists_of_software_(Portugu%C3%AAs) "Category:Lists of software (Português)") <small>(8) (também em [Software](/index.php/Category:Software_(Portugu%C3%AAs) "Category:Software (Português)"))</small> |
-| <small>1.4.</small> [Installation process](/index.php/Category:Installation_process_(Portugu%C3%AAs) "Category:Installation process (Português)") <small>(8)</small> |
+| <small>1.4.</small> [Installation process](/index.php/Category:Installation_process_(Portugu%C3%AAs) "Category:Installation process (Português)") <small>(6)</small> |
 | <small>1.5.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems_(Portugu%C3%AAs) "Category:Live Arch systems (Português)") <small>(2)</small> |
 | <small>1.6.</small> [Teams](/index.php/Category:Teams_(Portugu%C3%AAs) "Category:Teams (Português)") <small>(5)</small> |
 | <small>2.</small> [Applications](/index.php/Category:Applications_(Portugu%C3%AAs) "Category:Applications (Português)") <small>(1)</small> |

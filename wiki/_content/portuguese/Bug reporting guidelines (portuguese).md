@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Bug reporting guidelines](/index.php/Bug_reporting_guidelines "Bug reporting guidelines"). Data da última tradução: 2018-12-29\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Bug_reporting_guidelines&diff=0&oldid=557450) na versão em inglês.
+
 Artigos relacionados
 
 *   [Solução de problema geral](/index.php/General_troubleshooting "General troubleshooting")

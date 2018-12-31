@@ -72,24 +72,99 @@ The examples below cover the most common use cases. It is assumed that you use t
  `/etc/nginx/nginx.conf` 
 ```
 user http;
+
+# May be equal to `grep processor /proc/cpuinfo | wc -l`
 worker_processes auto;
 worker_cpu_affinity auto;
+
+# PCRE JIT can speed up processing of regular expressions significantly.
 pcre_jit on;
 
 events {
-    worker_connections 2048;
+    # Should be equal to `ulimit -n`
+    worker_connections 1024;
+
+    # Let each process accept multiple connections.
+    multi_accept on;
+
+    # Preferred connection method for newer linux versions.
+    use epoll;
 }
 
 http {
+    server_tokens off; # Disables the “Server” response header
+    charset utf-8;
+
+    # Sendfile copies data between one FD and other from within the kernel.
+    # More efficient than read() + write(), since the requires transferring
+    # data to and from the user space.
+    sendfile on;
+
+    # Tcp_nopush causes nginx to attempt to send its HTTP response head in one
+    # packet, instead of using partial frames. This is useful for prepending
+    # headers before calling sendfile, or for throughput optimization.
+    tcp_nopush on;
+
+    # Don't buffer data-sends (disable Nagle algorithm). Good for sending
+    # frequent small bursts of data in real time.
+    #
+    tcp_nodelay on;
+
+    # On Linux, AIO can be used starting from kernel version 2.6.22.
+    # It is necessary to enable directio, or otherwise reading will be blocking.
+    # aio threads;
+    # aio_write on;
+    # directio 8m;
+
+    # Caches information about open FDs, freqently accessed files.
+    # open_file_cache max=200000 inactive=20s;
+    # open_file_cache_valid 60s;
+    # open_file_cache_min_uses 2;
+    # open_file_cache_errors on;
+
+    # http://nginx.org/en/docs/hash.html
+    types_hash_max_size 4096;
     include mime.types;
     default_type application/octet-stream;
-    sendfile on;
-    tcp_nopush on;
-    aio threads;
-    server_tokens off; # Security: Disables nginx version in error messages and in the “Server” response header field.
-    charset utf-8; # Force usage of UTF-8
-    index index.php index.html index.htm;
-    # include sites-enabled/*; # See Server blocks
+
+    # Logging Settings
+    access_log off;
+
+    # Gzip Settings
+    gzip on;
+    gzip_comp_level 6;
+    gzip_min_length 500;
+    gzip_proxied expired no-cache no-store private auth;
+    gzip_vary on;
+    gzip_disable "MSIE [1-6]\.";
+    gzip_types
+        application/atom+xml
+        application/javascript
+        application/json
+        application/ld+json
+        application/manifest+json
+        application/rss+xml
+        application/vnd.geo+json
+        application/vnd.ms-fontobject
+        application/x-font-ttf
+        application/x-web-app-manifest+json
+        application/xhtml+xml
+        application/xml
+        font/opentype
+        image/bmp
+        image/svg+xml
+        image/x-icon
+        text/cache-manifest
+        text/css
+        text/plain
+        text/vcard
+        text/vnd.rim.location.xloc
+        text/vtt
+        text/x-component
+        text/x-cross-domain-policy;
+
+    # index index.php index.html index.htm;
+    include sites-enabled/*; # See Server blocks
 }
 
 ```
@@ -327,18 +402,32 @@ Finally, [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Star
 
 ###### Adding to main configuration
 
-Inside each `server` block serving a PHP web application should appear a `location` block similar to:
+When serving a PHP web-application, a `location` for PHP-FPM should to be included in each [server block](/index.php/Nginx#Server_blocks "Nginx") [[3]](https://www.nginx.com/resources/wiki/start/topics/examples/phpfcgi/), e.g.:
 
+ `/etc/nginx/sites-available/example` 
 ```
-location ~ \.php$ {
-    try_files $uri $document_root$fastcgi_script_name =404;
-    fastcgi_pass unix:/run/php-fpm/php-fpm.sock;
-    fastcgi_index index.php;
-    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-    include fastcgi.conf;
+server {
+    ...
 
-    # prevention for httpoxy vulnerability: https://httpoxy.org/
-    fastcgi_param HTTP_PROXY "";
+    root /usr/share/nginx/html;
+    location / {
+        index index.html index.htm;
+    }
+
+    location ~ [^/]\.php(/|$) {
+        # Correctly handle request like /test.php/foo/blah.php or /test.php/
+        fastcgi_split_path_info ^(.+?\.php)(/.*)$;
+
+        try_files $uri $document_root$fastcgi_script_name =404;
+
+        # Mitigate https://httpoxy.org/ vulnerabilities
+        fastcgi_param HTTP_PROXY "";
+
+        fastcgi_pass unix:/run/php-fpm/php-fpm.sock;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
 }
 
 ```
@@ -346,7 +435,7 @@ location ~ \.php$ {
 If it is needed to process other extensions with PHP (e.g. *.html* and *.htm*):
 
 ```
-location ~ \.(php**|html|htm**)$ {
+location ~ [^/]\.php**|html|htm**(/|$) {
     ...
 }
 
@@ -771,7 +860,7 @@ Now we should be good to go. Go ahead and [start](/index.php/Start "Start") ngin
 
 ### Alternative script for systemd
 
-On pure systemd you can get advantages of chroot + systemd. [[3]](http://0pointer.de/blog/projects/changing-roots.html) Based on set [user group](http://wiki.nginx.org/CoreModule#user) an pid on:
+On pure systemd you can get advantages of chroot + systemd. [[4]](http://0pointer.de/blog/projects/changing-roots.html) Based on set [user group](http://wiki.nginx.org/CoreModule#user) an pid on:
 
  `/etc/nginx/nginx.conf` 
 ```
@@ -895,7 +984,7 @@ When starting the `nginx.service`, the process might log the message:
 
 ```
 
-To fix this warning, increase the values for these keys inside the `http` block [[4]](http://nginx.org/en/docs/http/ngx_http_core_module.html#types_hash_max_size) [[5]](http://nginx.org/en/docs/http/server_names.html):
+To fix this warning, increase the values for these keys inside the `http` block [[5]](http://nginx.org/en/docs/http/ngx_http_core_module.html#types_hash_max_size) [[6]](http://nginx.org/en/docs/http/server_names.html):
 
  `/etc/nginx/nginx.conf` 
 ```

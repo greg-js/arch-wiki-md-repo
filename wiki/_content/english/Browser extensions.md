@@ -37,17 +37,17 @@ See also [Firefox/Privacy](/index.php/Firefox/Privacy "Firefox/Privacy") and [Ch
 
 *   **[uBlock Origin](https://en.wikipedia.org/wiki/uBlock_Origin "wikipedia:uBlock Origin")** — A lightweight, efficient blocker which is easy on [memory and CPU](https://github.com/gorhill/uBlock#performance). It comes with several filter lists ready to use out-of-the-box (including EasyList, Peter Lowe's, several malware filter lists). The lead developer of uBlock forked the project and created uBlock Origin. As of July 2015, most of the development is being done on uBlock Origin and the codebases are deviating substantially.
 
-	[https://github.com/gorhill/uBlock/](https://github.com/gorhill/uBlock/) || [Firefox](/index.php/Firefox "Firefox"), [Chromium](/index.php/Chromium "Chromium")
+	[https://github.com/gorhill/uBlock/](https://github.com/gorhill/uBlock/) || [firefox-ublock-origin](https://www.archlinux.org/packages/?name=firefox-ublock-origin), [Chromium](/index.php/Chromium "Chromium")
 
 *   **[Adblock Plus](https://en.wikipedia.org/wiki/Adblock_Plus "wikipedia:Adblock Plus")** — Was a popular extension to block ads. Now that it is not blocking some ads on purpose [[1]](https://adblockplus.org/acceptable-ads), it may be a better idea to use a different blocker like uBlock Origin.
 
-	[https://adblockplus.org/](https://adblockplus.org/) || [Firefox](/index.php/Firefox "Firefox"), [Chromium](/index.php/Chromium "Chromium")
+	[https://adblockplus.org/](https://adblockplus.org/) || [firefox-adblock-plus](https://www.archlinux.org/packages/?name=firefox-adblock-plus), [Chromium](/index.php/Chromium "Chromium")
 
 ### Advanced control
 
 *   **uMatrix** — Fork of HTTP Switchboard. Lets you selectively block Javascript, plugins or other resources and control third-party resources. It also features extensive privacy features like user-agent masquerading, referering blocking and so on. It effectively replaces NoScript and RequestPolicy. See the [old HTTP Switchboard wiki](https://github.com/gorhill/httpswitchboard/wiki/How-to-use-HTTP-Switchboard:-Two-opposing-views) for different ways how to use it.
 
-	[https://github.com/gorhill/uMatrix](https://github.com/gorhill/uMatrix) || [Firefox](/index.php/Firefox "Firefox"), [Chromium](/index.php/Chromium "Chromium")
+	[https://github.com/gorhill/uMatrix](https://github.com/gorhill/uMatrix) || [firefox-umatrix](https://www.archlinux.org/packages/?name=firefox-umatrix), [Chromium](/index.php/Chromium "Chromium")
 
 *   **ScriptSafe** — Gives users control of the web and more secure browsing while emphasizing simplicity and intuitiveness. Due to the nature of this extension, this will break most sites! It is designed to learn over time with sites that you allow.
 
@@ -55,7 +55,7 @@ See also [Firefox/Privacy](/index.php/Firefox/Privacy "Firefox/Privacy") and [Ch
 
 *   **NoScript** — Disables JavaScript and Flash on any website not specifically whitelisted by the user. This extension will protect you from exploitation of security vulnerabilities by not letting anything but trusted sites (e.g: your bank, webmail) serve you executable content. Once installed you can configure settings for NoScript by either clicking its icon on the toolbar or right clicking a page and navigating to NoScript. You will then have the option to enable/disable scripts for the current page, as well as any third party scripts that the page is linking to. Alternatively you can choose to enable scripts temporarily for that session only. Be aware a lot of modern websites use scripts for layout purposes, hence content may look different. For example, failed rendering due to missing fonts might occur on websites that load fonts at runtime via scripts, which were blocked by NoScript.
 
-	[http://noscript.net/](http://noscript.net/) || [Firefox](/index.php/Firefox "Firefox")
+	[http://noscript.net/](http://noscript.net/) || [firefox-noscript](https://www.archlinux.org/packages/?name=firefox-noscript)
 
 *   **ScriptBlock** — Similar to NoScript, which is a Firefox add-on. Both extensions stop a website from executing any kind of JavaScript. However, ScriptBlock is a much simpler design thus it's easier to use. It blocks JavaScript by default. You can allow and temporary allow JavaScripts. Once you allow them to run, it lets all the JavaScripts run on that page so you might want ScriptBlock to work in conjunction with [Privacy Badger](#Automatic_tracker_blockers). It's also worth checking it's default whitelist, which might be permissive to you.
 
@@ -97,7 +97,7 @@ See also [Firefox/Privacy](/index.php/Firefox/Privacy "Firefox/Privacy") and [Ch
 
 *   **Decentraleyes** — Protects you against tracking through "free", centralized, content delivery. It prevents a lot of requests from reaching networks like Google Hosted Libraries, and serves local files to keep sites from breaking. Complements regular content blockers.
 
-	[https://decentraleyes.org/](https://decentraleyes.org/) || [Firefox](/index.php/Firefox "Firefox"), [Chromium](/index.php/Chromium "Chromium")
+	[https://decentraleyes.org/](https://decentraleyes.org/) || [firefox-decentraleyes](https://www.archlinux.org/packages/?name=firefox-decentraleyes), [Chromium](/index.php/Chromium "Chromium")
 
 *   **CanvasBlocker** — Blocks or fakes the JS-API for modifying <canvas> to prevent Canvas-Fingerprinting. Firefox has a built-in anti-fingerprinting feature that can be enabled by setting `privacy.resistFingerprinting` to `true` in `about:config`.
 
@@ -113,7 +113,7 @@ Websites can be augmented using user style sheets and JavaScript [userscripts](h
 
 *   **Stylus** — User style sheets manager, fork of defunct [Stylish](https://en.wikipedia.org/wiki/Stylish "wikipedia:Stylish").
 
-	[https://add0n.com/stylus.html](https://add0n.com/stylus.html) || [Firefox](/index.php/Firefox "Firefox"), [Chromium](/index.php/Chromium "Chromium")
+	[https://add0n.com/stylus.html](https://add0n.com/stylus.html) || [firefox-stylus](https://www.archlinux.org/packages/?name=firefox-stylus), [Chromium](/index.php/Chromium "Chromium")
 
 *   **Violentmonkey** — Open source userscript manager.
 
@@ -122,6 +122,14 @@ Websites can be augmented using user style sheets and JavaScript [userscripts](h
 *   **Tampermonkey** — Proprietary userscript manager.
 
 	[https://tampermonkey.net/](https://tampermonkey.net/) || [Firefox](/index.php/Firefox "Firefox"), [Chromium](/index.php/Chromium "Chromium")
+
+*   **Dark Reader** — Inverts brightness of web pages and aims to reduce eyestrain while browsing the web.
+
+	[https://darkreader.org/](https://darkreader.org/) || [firefox-dark-reader](https://www.archlinux.org/packages/?name=firefox-dark-reader), [Chromium](/index.php/Chromium "Chromium")
+
+*   **Toggle Website Colors** — Replaces colours with user selected ones.
+
+	[https://github.com/M-Reimer/togglewebsitecolors](https://github.com/M-Reimer/togglewebsitecolors) || [Firefox](/index.php/Firefox "Firefox")
 
 ## Keyboard shortcuts
 
@@ -134,6 +142,10 @@ There are various extensions providing [vi](/index.php/Vi "Vi")-style keyboard s
 *   **Saka Key** — Allows mouse-less browsing, focused on accessibility.
 
 	[https://key.saka.io/](https://key.saka.io/) || [Firefox](/index.php/Firefox "Firefox"), [Chromium](/index.php/Chromium "Chromium")
+
+*   **Tridactyl** — Replace Firefox's control mechanism with one modelled on Vim.
+
+	[https://github.com/cmcaine/tridactyl](https://github.com/cmcaine/tridactyl) || [firefox-tridactyl](https://www.archlinux.org/packages/?name=firefox-tridactyl)
 
 *   **wasavi** — Can transform textareas into Vi editors.
 

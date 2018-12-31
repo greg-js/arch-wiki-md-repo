@@ -1,5 +1,7 @@
 Related articles
 
+*   [PRIME](/index.php/PRIME "PRIME")
+*   [Nvidia-xrun](/index.php/Nvidia-xrun "Nvidia-xrun")
 *   [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus")
 *   [Nouveau](/index.php/Nouveau "Nouveau")
 *   [NVIDIA](/index.php/NVIDIA "NVIDIA")
@@ -8,6 +10,8 @@ Related articles
 From Bumblebee's [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ):
 
 	Bumblebee is an effort to make NVIDIA Optimus enabled laptops work in GNU/Linux systems. Such feature involves two graphics cards with two different power consumption profiles plugged in a layered way sharing a single framebuffer.
+
+**Note:** However, you might want to consider using [nvidia-xrun](/index.php/Nvidia-xrun "Nvidia-xrun") or [PRIME](/index.php/PRIME "PRIME"), because Bumblebee not only has significant performance issues[[1]](https://github.com/Witko/nvidia-xrun/issues/4#issuecomment-153386837)[[2]](https://bbs.archlinux.org/viewtopic.php?pid=1822926), but also has no plans to support [Vulkan](/index.php/Vulkan "Vulkan")[[3]](https://github.com/Bumblebee-Project/Bumblebee/issues/769#issuecomment-218016574).
 
 ## Contents
 
@@ -411,7 +415,7 @@ If no target displays are parsed on the commandline, *intel-virtual-output* will
 
 When run in a terminal, *intel-virtual-output* will daemonize itself unless the `-f` switch is used. Games can be run on the external screen by first exporting the display `export DISPLAY=:8`, and then running the game with `optirun *game_bin*`, however, cursor and keyboard are not fully captured. Use `export DISPLAY=:0` to revert back to standard operation.
 
-If *intel-virtual-output* does not detect displays, see [[1]](https://unix.stackexchange.com/questions/321151/do-not-manage-to-activate-hdmi-on-a-laptop-that-has-optimus-bumblebee) for further configuration to try. If the laptop screen is stretched and the cursor is misplaced while the external monitor shows only the cursor, try killing any running compositing managers.
+If *intel-virtual-output* does not detect displays, see [[4]](https://unix.stackexchange.com/questions/321151/do-not-manage-to-activate-hdmi-on-a-laptop-that-has-optimus-bumblebee) for further configuration to try. If the laptop screen is stretched and the cursor is misplaced while the external monitor shows only the cursor, try killing any running compositing managers.
 
 **Note:** In `/etc/bumblebee/xorg.conf.nvidia` change the lines `Option "UseEDID" "false"` and `Option "AutoAddDevices" "false"` to `"true"`, and comment `Option "ConnectedMonitor"`. If you are having trouble with device resolution detection. You will also need to comment out the line `Option "UseDisplayDevices" "none"` in order to use the display connected to the NVIDIA GPU.
 
@@ -732,7 +736,7 @@ Performance comparison:
 
 ### Primus issues under compositing window managers
 
-Since compositing hurts performance, invoking primus when a compositing WM is active is not recommended.[[2]](https://github.com/amonakov/primus#issues-under-compositing-wms) If you need to use primus with compositing and see flickering or bad performance, synchronizing primus' display thread with the application's rendering thread may help:
+Since compositing hurts performance, invoking primus when a compositing WM is active is not recommended.[[5]](https://github.com/amonakov/primus#issues-under-compositing-wms) If you need to use primus with compositing and see flickering or bad performance, synchronizing primus' display thread with the application's rendering thread may help:
 
 ```
 $ PRIMUS_SYNC=1 primusrun ...
@@ -792,7 +796,7 @@ As a workaround, add `pcie_port_pm=off` to your [Kernel parameters](/index.php/K
 
 Alternatively, if you are only interested in power saving (and perhaps use of external monitors), remove bbswitch and rely on [Nouveau](/index.php/Nouveau "Nouveau") runtime power-management (which supports the new method).
 
-**Note:** Some tools such as `powertop --auto-tune` automatically enable power management on PCI devices, which leads to the same problem [[3]](https://github.com/Bumblebee-Project/bbswitch/issues/159). Use the same workaround or do not use the all-in-one tools.
+**Note:** Some tools such as `powertop --auto-tune` automatically enable power management on PCI devices, which leads to the same problem [[6]](https://github.com/Bumblebee-Project/bbswitch/issues/159). Use the same workaround or do not use the all-in-one tools.
 
 ### Lockup issue (lspci hangs)
 
@@ -800,7 +804,7 @@ See [NVIDIA Optimus#Lockup issue (lspci hangs)](/index.php/NVIDIA_Optimus#Lockup
 
 ### Discrete card always on and acpi warnings
 
-Add `acpi_osi=Linux` to your [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). See [[4]](https://github.com/Bumblebee-Project/Bumblebee/issues/592) and [[5]](https://github.com/Bumblebee-Project/bbswitch/issues/112) for more information.
+Add `acpi_osi=Linux` to your [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). See [[7]](https://github.com/Bumblebee-Project/Bumblebee/issues/592) and [[8]](https://github.com/Bumblebee-Project/bbswitch/issues/112) for more information.
 
 ### Screen 0 deleted because of no matching config section
 
@@ -820,7 +824,7 @@ If Bumblebee starts/works in a random manner, check that you have set your [Netw
 
 ### Discrete card always on and nvidia driver cannot be unloaded
 
-Make sure `nvidia-persistenced.service` is disabled and not currently active. It is intended to keep the `nvidia` driver running at all times [[6]](https://us.download.nvidia.com/XFree86/Linux-x86_64/367.57/README/nvidia-persistenced.html), which prevents the card being turned off.
+Make sure `nvidia-persistenced.service` is disabled and not currently active. It is intended to keep the `nvidia` driver running at all times [[9]](https://us.download.nvidia.com/XFree86/Linux-x86_64/367.57/README/nvidia-persistenced.html), which prevents the card being turned off.
 
 ## See also
 

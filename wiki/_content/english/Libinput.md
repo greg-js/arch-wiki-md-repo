@@ -144,7 +144,7 @@ You may define as many sections as you like in a single configuration file (usua
 The input device can then be configured with any of the lines in the CONFIGURATION DETAILS section of [libinput(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4). Common options include:
 
 *   `Option "Tapping" "on"`: tapping a.k.a. tap-to-click
-*   `Option "ClickMethod" "clickfinger"`: trackpad no longer has middle and right button areas and instead two-finger click is a context click and three-finger click is a middle click, see the [docs](https://wayland.freedesktop.org/libinput/doc/latest/clickpad_softbuttons.html#clickfinger).
+*   `Option "ClickMethod" "clickfinger"`: trackpad no longer has middle and right button areas and instead two-finger click is a context click and three-finger click is a middle click, see the [docs](https://wayland.freedesktop.org/libinput/doc/latest/clickpad-softbuttons.html#clickfinger-behavior).
 *   `Option "NaturalScrolling" "true"`: natural (reverse) scrolling
 *   `Option "ScrollMethod" "edge"`: edge (vertical) scrolling
 
