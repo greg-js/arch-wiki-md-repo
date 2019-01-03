@@ -327,7 +327,7 @@ The disk layout in this example is:
 **Tip:** Three variants of this setup:
 
 *   Instructions at [dm-crypt/Specialties#Encrypted system using a detached LUKS header](/index.php/Dm-crypt/Specialties#Encrypted_system_using_a_detached_LUKS_header "Dm-crypt/Specialties") use this setup with a detached LUKS header on a USB device to achieve a two factor authentication with it.
-*   Instructions at [Pavel Kogan's blog](https://web.archive.org/web/20180103175714/http://www.pavelkogan.com/2014/05/23/luks-full-disk-encryption/) show how to encrypt the `/boot` partition while keeping it on the main LUKS partition when using GRUB.
+*   Instructions at [Pavel Kogan's blog](https://www.pavelkogan.com/2014/05/23/luks-full-disk-encryption/) show how to encrypt the `/boot` partition while keeping it on the main LUKS partition when using GRUB.
 *   Instructions at [dm-crypt/Specialties#Encrypted /boot and a detached LUKS header on USB](/index.php/Dm-crypt/Specialties#Encrypted_/boot_and_a_detached_LUKS_header_on_USB "Dm-crypt/Specialties") use this setup with a detached LUKS header, encrypted `/boot` partition, and encrypted keyfile all on a USB device.
 
 ### Preparing the disk
@@ -791,7 +791,9 @@ The disk layout is:
 
 **Tip:**
 
-*   It is also possible to use a single USB key by copying the keyfile to the initramfs directly. An example keyfile `/etc/keyfile` gets copied to the initramfs image by setting `FILES=(/etc/keyfile)` in `/etc/mkinitcpio.conf`. The way to instruct the `encrypt` hook to read the keyfile in the initramfs image is using `rootfs:` prefix before the filename, e.g. `cryptkey=rootfs:/etc/keyfile`.
+*   It is also possible to use a single USB key physical device:
+    *   By putting the key on another partition (/dev/sdb2) of the USB storage device (/dev/sdb).
+    *   By copying the keyfile to the initramfs directly. An example keyfile `/etc/keyfile` gets copied to the initramfs image by setting `FILES=(/etc/keyfile)` in `/etc/mkinitcpio.conf`. The way to instruct the `encrypt` hook to read the keyfile in the initramfs image is using `rootfs:` prefix before the filename, e.g. `cryptkey=rootfs:/etc/keyfile`.
 *   Another option is using a passphrase with good [entropy](/index.php/Disk_encryption#Choosing_a_strong_passphrase "Disk encryption").
 
 ### Preparing the disk
@@ -804,10 +806,10 @@ See [dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt
 
 See [dm-crypt/Device encryption#Encryption options for plain mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_plain_mode "Dm-crypt/Device encryption") for details.
 
-Using the device `/dev/sda`, with the twofish-xts cipher with a 512 bit key size and using a keyfile we have the following options for this scenario:
+Using the device `/dev/sda`, with the aes-xts cipher with a 512 bit key size and using a keyfile we have the following options for this scenario:
 
 ```
-# cryptsetup --cipher=twofish-xts-plain64 --offset=0 --key-file=/dev/sdc --key-size=512 open --type=plain /dev/sda cryptlvm
+# cryptsetup --cipher=aes-xts-plain64 --offset=0 --key-file=/dev/sdc --key-size=512 open --type=plain /dev/sda cryptlvm
 
 ```
 
@@ -875,7 +877,7 @@ See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_config
 In order to boot the encrypted root partition, the following kernel parameters need to be set by the boot loader (note that 64 is the number of bytes in 512 bits):
 
 ```
-cryptdevice=/dev/disk/by-id/*disk-ID-of-sda*:cryptlvm cryptkey=/dev/disk/by-id/*disk-ID-of-sdc*:0:64 crypto=:twofish-xts-plain64:512:0:
+cryptdevice=/dev/disk/by-id/*disk-ID-of-sda*:cryptlvm cryptkey=/dev/disk/by-id/*disk-ID-of-sdc*:0:64 crypto=:aes-xts-plain64:512:0:
 
 ```
 
@@ -900,7 +902,7 @@ You may wish to remove the USB sticks after booting. Since the `/boot` partition
 
 ```
 
-However, when an update to the kernel or bootloader is required, the `/boot` partition must be present and mounted. As the entry in `fstab` already exists, it can be mounted simply with:
+However, when an update to anything used in the initramfs, or a kernel, or the bootloader is required; the `/boot` partition must be present and mounted. As the entry in `fstab` already exists, it can be mounted simply with:
 
 ```
 # mount /boot
@@ -941,9 +943,9 @@ For [UEFI systems](/index.php/GRUB#UEFI_systems "GRUB") create an [EFI system pa
 
 Create a partition to be mounted at `/boot` of type `8300` with a size of 200 MiB or more.
 
-Create a partition of type `8E00`, which will later contain the encrypted container.
+Create a partition of type `8E00`, which will later contain the encrypted container for the LVM.
 
-Create the LUKS encrypted container at the "system" partition.
+Create the LUKS encrypted container:
 
 ```
 # cryptsetup luksFormat --type luks2 /dev/sda4

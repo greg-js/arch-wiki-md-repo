@@ -9,6 +9,8 @@
     *   [2.3 Use bbswitch to manage nvidia](#Use_bbswitch_to_manage_nvidia)
 *   [3 Usage](#Usage)
 *   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 General issues](#General_issues)
+    *   [4.2 Issues with Nvidia after removing Bumblebee](#Issues_with_Nvidia_after_removing_Bumblebee)
 
 ## Installation
 
@@ -23,7 +25,7 @@
 
 ### Setting the right bus id
 
-Users who installed `nvidia-xrun` from the [AUR](/index.php/AUR "AUR") can skip this step, because the bus id has been automatically set in `/etc/X11/nvidia-xorg.conf`. However, if you installed it from [Github repo](https://github.com/Witko/nvidia-xrun), you might need to set the bus id manually.
+**Note:** Users who installed `nvidia-xrun` from the [AUR](/index.php/AUR "AUR") can skip this step, because the bus id has been automatically set in `/etc/X11/nvidia-xorg.conf`.
 
 Find your display device bus id:
 
@@ -114,4 +116,21 @@ For more about bbswitch see [Bumblebee-Project/bbswitch](https://github.com/Bumb
 
 ## Troubleshooting
 
-Running Steam directly with *nvidia-xrun* does not work well, usage via a window manager, like openbox, will be better.
+### General issues
+
+Running apps (e.g. steam) directly with `nvidia-xrun` does not work well, so use window manager like [openbox](https://www.archlinux.org/packages/?name=openbox) and run apps from it.
+
+### Issues with Nvidia after removing Bumblebee
+
+See [#Use_bbswitch_to_manage_nvidia](#Use_bbswitch_to_manage_nvidia).
+
+If Nvidia GPU still fails to switch off, or is somehow set to be default whenever you use or not `nvidia-xrun`, then you might likely need to blacklist specific modules (which were previously blacklisted by [Bumblebee](/index.php/Bumblebee "Bumblebee")). Create this file and restart your system:
+
+ `/usr/lib/modprobe.d/nvidia-xrun.conf` 
+```
+blacklist nvidia
+blacklist nvidia-drm
+blacklist nvidia-modeset
+blacklist nvidia-uv
+
+```

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Systemd](/index.php/Systemd "Systemd"). Data da última tradução: 2018-11-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Systemd&diff=0&oldid=555139) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Systemd](/index.php/Systemd "Systemd"). Data da última tradução: 2019-01-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Systemd&diff=0&oldid=560145) na versão em inglês.
 
 Artigos relacionados
 
@@ -113,6 +113,13 @@ $ systemctl list-unit-files
 
 ```
 
+Mostre [*slice* de cgroup](/index.php/Cgroups "Cgroups"), memória e pai de um PID:
+
+```
+$ systemctl status *pid*
+
+```
+
 ### Usando units
 
 As units podem ser, por exemplo, serviços (*.service*), pontos de montagem (*.mount*), dispositivos (*.device*) ou soquetes (*.socket*).
@@ -132,7 +139,7 @@ Para ser mais preciso, *antes* de tentar instanciar a unit modelo `nome@.suffix`
 **Dica:**
 
 *   A maioria dos comandos a seguir também funciona se várias units forem especificadas; veja [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) para obter mais informações.
-*   A opção `--now` pode ser usada em conjunto com `enable`, `disable` e `mask` para iniciar, parar ou mascarar, respectivamente, imediatamente a unit em vez de após na próxima inicialização.
+*   A opção `--now` pode ser usada em conjunto com `enable`, `disable` e `mask` para iniciar, parar ou mascarar, respectivamente, *imediatamente* a unit em vez de após reinicializar.
 *   Um pacote pode oferecer units para diferentes finalidades. Se você acabou de instalar um pacote, `pacman -Qql *pacote* | grep -Fe .service -e .socket` pode ser usado para verificar e localizá-las.
 
 **Inicia** uma unit imediatamente:
@@ -446,7 +453,7 @@ Para alterar o target padrão a ser inicializado, altere o link simbólico `defa
  `# systemctl set-default multi-user.target` 
 ```
 Removed /etc/systemd/system/default.target.
-Created symlink /etc/systemd/system/default.target -> /usr/lib/systemd/system/graphical.target.
+Created symlink /etc/systemd/system/default.target -> /usr/lib/systemd/system/multi-user.target.
 ```
 
 Alternativamente, acrescente um dos seguintes [parâmetros de kernel](/index.php/Kernel_parameters "Kernel parameters") a seu gerenciador de boot:

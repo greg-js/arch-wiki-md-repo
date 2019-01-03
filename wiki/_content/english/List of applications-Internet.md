@@ -171,6 +171,10 @@ See also [Network configuration#Network managers](/index.php/Network_configurati
 
 	[https://www.unix-ag.uni-kl.de/~massar/vpnc/](https://www.unix-ag.uni-kl.de/~massar/vpnc/) || [vpnc](https://www.archlinux.org/packages/?name=vpnc)
 
+*   **[WireGuard](/index.php/WireGuard "WireGuard")** — Next generation secure network tunnel.
+
+	[https://www.wireguard.com/](https://www.wireguard.com/) || [wireguard-tools](https://www.archlinux.org/packages/?name=wireguard-tools)
+
 #### Proxy servers
 
 *   **Dante** — SOCKS server and SOCKS client, implementing RFC 1928 and related standards.

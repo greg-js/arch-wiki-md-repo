@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [USB flash installation media](/index.php/USB_flash_installation_media "USB flash installation media"). Data da última tradução: 2018-10-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=USB_flash_installation_media&diff=0&oldid=548021) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [USB flash installation media](/index.php/USB_flash_installation_media "USB flash installation media"). Data da última tradução: 2018-12-31\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=USB_flash_installation_media&diff=0&oldid=559198) na versão em inglês.
 
 Artigos relacionados
 
@@ -68,7 +68,7 @@ Veja [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1) para mais informa�
 
 ##### Usando etcher
 
-[Etcher](https://etcher.io/) é um aplicador de imagem do sistema operacional criado com node.js e Electron, capaz que o *flashing* de um cartão SD ou unidade USB seja uma experiência agradável e segura. Ele protege você de gravar acidentalmente em seus discos rígidos e garante que todos os bytes de dados foram escritos corretamente e muito mais.
+[Etcher](https://etcher.io/) é um aplicador de imagem do sistema operacional criado com node.js e Electron, capaz que o *flashing* de um cartão SD ou unidade USB seja uma experiência agradável e segura. Ele protege você de gravar acidentalmente em seus discos rígidos e garante que todos os bytes de dados foram escritos corretamente e muito mais. Há 6 pacotes relacionados no AUR.
 
 #### No Windows
 
@@ -215,25 +215,7 @@ Para inicializar um rótulo ou um [UUID](/index.php/UUID "UUID") para selecionar
 
 **Atenção:** A incompatibilidade de rótulos ou o UUID errado impede a inicialização da mídia criada.
 
-O Syslinux já está pré-instalado em `/mnt/usb/arch/boot/syslinux`. Instale-o completamente nessa pasta seguindo [Syslinux#Manual install](/index.php/Syslinux#Manual_install "Syslinux"). As instruções são reproduzidas aqui para sua conveniência.
-
-*   Sobrescreva os módulos existentes do Syslinux (arquivos **.c32*) presentes no USB (da ISO) com os do pacote [syslinux](https://www.archlinux.org/packages/?name=syslinux) (encontrado em `/usr/lib/syslinux/bios/`). Isso é necessário para evitar falhas de inicialização devido a uma possível incompatibilidade de versão.
-
-```
-# cp /usr/lib/syslinux/bios/*.c32 /mnt/usb/arch/boot/syslinux/
-
-```
-
-*   Execute:
-
-```
-# extlinux --install /mnt/usb/arch/boot/syslinux
-
-```
-
-*   Desmonte a partição (`umount /mnt/usb`).
-
-*   Marque a partição como ativa (ou “inicializável”).
+O Syslinux já está pré-instalado em `/mnt/usb/arch/boot/syslinux`. Instale-o completamente nessa pasta seguindo [Syslinux#Manual install](/index.php/Syslinux#Manual_install "Syslinux").
 
 #### No Windows
 
@@ -247,7 +229,7 @@ O Syslinux já está pré-instalado em `/mnt/usb/arch/boot/syslinux`. Instale-o 
 
 *   Particione e formate o drive USB usando o [particionador de USB Rufus](https://rufus.akeo.ie/). Selecione a opção de esquema de partição como **MBR para BIOS e UEFI** e sistema de arquivos como **FAT32**. Desmarque a opção "Criar um disco inicializável usando imagem ISO" e "Criar arquivos estendidos de rótulo e ícone".
 *   Altere o **Rótulo do Volume** da unidade flash USB `X:` para corresponder ao LABEL mencionado na parte `archisolabel=` em `<ISO>\loader\entries\archiso-x86_64.conf`. Esta etapa é necessária para o ISO oficial ([Archiso](/index.php/Archiso_(Portugu%C3%AAs) "Archiso (Português)")). Esta etapa também pode ser executada usando o Rufus, durante a etapa anterior de "particionamento e formatação".
-*   Extraia a ISO (similar a extrair o arquivo ZIP) para a unidade flash USB (usando [7-Zip](https://www.7-zip.org/).
+*   Extraia a ISO (similar a extrair o arquivo ZIP) para a unidade flash USB usando [7-Zip](https://www.7-zip.org/).
 *   Baixe os binários oficiais Syslinux 6.xx (arquivo zip) de [https://www.kernel.org/pub/linux/utils/boot/syslinux/](https://www.kernel.org/pub/linux/utils/boot/syslinux/) e extrai-a. A versão do Syslinux deve ser a mesma versão usada na imagem ISO.
 
 *   Execute o comando a seguir (no prompt de comando do Windows, como admin):

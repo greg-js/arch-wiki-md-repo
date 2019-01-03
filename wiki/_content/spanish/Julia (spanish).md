@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Julia](/index.php/Julia "Julia"), revisada por última vez el **2018-12-14**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Julia&diff=0&oldid=559026) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Julia](/index.php/Julia "Julia"), revisada por última vez el **2019-01-01**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Julia&diff=0&oldid=561163) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 **Nota:** [https://julialang.org/](https://julialang.org/) contiene una documentación magnífica y de código abierto. La información no específica a Arch debería aportarse allí.
 
@@ -19,7 +19,7 @@ Este artículo es una traducción de [Julia](/index.php/Julia "Julia"), revisada
 
 ## Instalación
 
-[Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquete [julia](https://www.archlinux.org/packages/?name=julia). Para aprender cómo usar a Julia, lea la [documentación previa](https://docs.julialang.org/en/stable/).
+[Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquete [julia](https://www.archlinux.org/packages/?name=julia). Para aprender cómo se utiliza Julia, lea por favor la [documentación previa](https://docs.julialang.org/en/latest/).
 
 ## IJulia
 

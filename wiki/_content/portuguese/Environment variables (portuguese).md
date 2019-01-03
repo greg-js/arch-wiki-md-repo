@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Environment variables](/index.php/Environment_variables "Environment variables"). Data da última tradução: 2018-11-05\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Environment_variables&diff=0&oldid=552317) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Environment variables](/index.php/Environment_variables "Environment variables"). Data da última tradução: 2019-01-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Environment_variables&diff=0&oldid=560957) na versão em inglês.
 
 Artigos relacionados
 
@@ -89,12 +89,20 @@ Para atualizar a variável, autentique-se novamente ou use *source* para recarre
 
 #### Aplicativos gráficos
 
-Variáveis de ambiente para aplicativos de interface gráfica de usuário (GUI) podem ser definidos em [xinitrc](/index.php/Xinitrc_(Portugu%C3%AAs) "Xinitrc (Português)"), ou em [xprofile](/index.php/Xprofile_(Portugu%C3%AAs) "Xprofile (Português)") ao usar um [gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição"), por exemplo:
+Variáveis de ambiente para aplicativos do [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)") podem ser definidos em [xinitrc](/index.php/Xinitrc_(Portugu%C3%AAs) "Xinitrc (Português)"), ou em [xprofile](/index.php/Xprofile_(Portugu%C3%AAs) "Xprofile (Português)") ao usar um [gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição"), por exemplo:
 
  `~/.xinitrc` 
 ```
 export PATH="${PATH}:~/scripts"
 export GUIVAR=value
+```
+
+Aplicativos que usam [Wayland](/index.php/Wayland "Wayland") pode usar variáveis de ambiente de usuário [systemd](/index.php/Systemd/User#Environment_variables "Systemd/User"), pois o Wayland não inicia qualquer arquivo relacionado ao Xorg:
+
+ `~/.config/environment.d/envvars.conf` 
+```
+PATH=$PATH:~/scripts
+GUIVAR=value
 ```
 
 ### Por sessão
@@ -126,7 +134,7 @@ exec openbox
 
 *   `DESKTOP_SESSION` é similar ao `DE`, mas usado no ambiente desktop [LXDE](/index.php/LXDE "LXDE"): quando `DESKTOP_SESSION` é definido para `LXDE`, *xdg-open* vai usar associações de arquivos do *pcmanfm*.
 
-*   `PATH` contém uma lista, separada por caractere de dois pontos, de diretórios nos quais seu sistema procura por arquivos executáveis. Quando um comando comum (p.ex.: *ls*, *rc-update* ou *emerge*) é interpretado pelo shell (p.ex., *bash* ou *zsh*), o shell procura por um arquivo executável com o mesmo nome que seu comando nos diretórios listados, e o executa. Para executar os executáveis que não estão listados no `PATH`, o caminho absoluto para o executável deve ser dado: `/bin/ls`.
+*   `PATH` contém uma lista, separada por caractere de dois pontos, de diretórios nos quais seu sistema procura por arquivos executáveis. Quando um comando comum (p.ex.: *ls*, *systemctl* ou *pacman*) é interpretado pelo shell (p.ex., *bash* ou *zsh*), o shell procura por um arquivo executável com o mesmo nome que seu comando nos diretórios listados, e o executa. Para executar os executáveis que não estão listados no `PATH`, um caminho relativo ou absoluto para o executável deve ser dado, como, por exemplo, `./a.out` ou `/bin/ls`.
 
 **Nota:** É aconselhável não incluir o diretório de trabalho atual (`.`) no seu `PATH` por motivos de segurança, pois pode enganar o usuário para executar comandos maliciosos.
 
@@ -150,7 +158,7 @@ http_proxy="http://192.168.0.1:80"
 
 *   `MANPATH` contém uma lista, separada por caractere de dois pontos, de diretório nos quais o *man* pesquisa por páginas man.
 
-**Nota:** No `/etc/profile`, há um comentário que afirma "Man é muito melhor que nós para descobrir isso", então essa variável geralmente deve ser deixada no seu padrão, isto é, `/usr/share/man:/usr/local/share/man`
+**Nota:** No `/etc/profile`, há um comentário que afirma "Man é muito melhor que nós para descobrir isso", então essa variável geralmente deve ser deixada não definido. Veja [manpath(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/manpath.5).
 
 *   `INFODIR` contém uma lista, separada por caracteres de dois pontos, de diretórios nos quais o comando *info* pesquisa por páginas info, p.ex.: `/usr/share/info:/usr/local/share/info`
 

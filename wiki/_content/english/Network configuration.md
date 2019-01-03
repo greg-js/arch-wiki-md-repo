@@ -560,7 +560,7 @@ This problem is caused by broken routers/firewalls, so let us change them. Some 
 
 #### More about it
 
-This section is based on the LWN article [TCP window scaling and broken routers](http://lwn.net/Articles/92727/) and a Kernel Trap article: [Window Scaling on the Internet](http://kerneltrap.org/node/6723).
+This section is based on the LWN article [TCP window scaling and broken routers](http://lwn.net/Articles/92727/) and an archived Kernel Trap article: [Window Scaling on the Internet](https://web.archive.org/web/20120426135627/http://kerneltrap.org:80/node/6723).
 
 There are also several relevant threads on the LKML.
 

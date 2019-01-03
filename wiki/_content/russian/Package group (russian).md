@@ -1,16 +1,29 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Package group](/index.php/Package_group "Package group"). Дата последней синхронизации: 29 октября 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Package_group&diff=0&oldid=551934).
+**Состояние перевода:** На этой странице представлен перевод статьи [Package group](/index.php/Package_group "Package group"). Дата последней синхронизации: 1 января 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Package_group&diff=0&oldid=561245).
 
 **Группа пакетов** — набор связанных пакетов, определённый [мейнтейнером](/index.php/Packager "Packager") и пакеты которого могут быть одновременно установлены или удалены используя имя группы вместо имени каждого пакета. Не смотря на то, что группа не является пакетом, её всё-равно можно установить похожим способом, смотрите [Pacman (Русский)#Установка группы пакетов](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_группы_пакетов "Pacman (Русский)") и [PKGBUILD (Русский)#groups](/index.php/PKGBUILD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#groups "PKGBUILD (Русский)").
 
+## Contents
+
+*   [1 Группы](#Группы)
+    *   [1.1 base](#base)
+    *   [1.2 base-devel](#base-devel)
+*   [2 Отличие от мета-пакета](#Отличие_от_мета-пакета)
+*   [3 Смотрите также](#Смотрите_также)
+
+## Группы
+
 Наиболее важными группами пакетов являются:
 
-	base
+### base
 
-	Группа [base](https://www.archlinux.org/groups/x86_64/base/) содержит основное ПО, например, [ядро](/index.php/%D0%AF%D0%B4%D1%80%D0%BE "Ядро"), [Bash (Русский)](/index.php/Bash_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bash (Русский)"), [базовые утилиты](/index.php/%D0%91%D0%B0%D0%B7%D0%BE%D0%B2%D1%8B%D0%B5_%D1%83%D1%82%D0%B8%D0%BB%D0%B8%D1%82%D1%8B "Базовые утилиты"), [pacman (Русский)](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)"), а также не настолько важное ПО вроде [dhcpcd (Русский)](/index.php/Dhcpcd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dhcpcd (Русский)") и [netctl (Русский)](/index.php/Netctl_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Netctl (Русский)").
+Группа [base](https://www.archlinux.org/groups/x86_64/base/) содержит:
 
-	base-devel
+*   Основное ПО, например, [ядро](/index.php/%D0%AF%D0%B4%D1%80%D0%BE "Ядро"), [Bash (Русский)](/index.php/Bash_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bash (Русский)"), [базовые утилиты](/index.php/%D0%91%D0%B0%D0%B7%D0%BE%D0%B2%D1%8B%D0%B5_%D1%83%D1%82%D0%B8%D0%BB%D0%B8%D1%82%D1%8B "Базовые утилиты") и [pacman (Русский)](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)").
+*   А также не настолько важное ПО вроде [dhcpcd (Русский)](/index.php/Dhcpcd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dhcpcd (Русский)"), [netctl (Русский)](/index.php/Netctl_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Netctl (Русский)"), [nano (Русский)](/index.php/Nano_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Nano (Русский)") и [vi](/index.php/Vi "Vi").
 
-	Группа [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) содержит утилиты, требующиеся для сборки многих пакетов. Смотрите также [makepkg#Usage](/index.php/Makepkg#Usage "Makepkg").
+### base-devel
+
+Группа [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) содержит утилиты, требующиеся для сборки многих пакетов. Например, [GCC](/index.php/GCC "GCC") и [make](/index.php/GNU_make "GNU make"). Смотрите также: [makepkg#Usage](/index.php/Makepkg#Usage "Makepkg").
 
 ## Отличие от мета-пакета
 

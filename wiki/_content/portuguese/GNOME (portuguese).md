@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [GNOME](/index.php/GNOME "GNOME"). Data da última tradução: 2018-11-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=556961) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [GNOME](/index.php/GNOME "GNOME"). Data da última tradução: 2018-12-31\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=559176) na versão em inglês.
 
 Artigos relacionados
 
@@ -57,7 +57,7 @@ Artigos relacionados
         *   [6.2.6 Fontes](#Fontes)
         *   [6.2.7 Métodos de entrada](#Métodos_de_entrada)
         *   [6.2.8 Energia](#Energia)
-            *   [6.2.8.1 Configurar o comportamento do fechamento da tela de notebook](#Configurar_o_comportamento_do_fechamento_da_tela_de_notebook)
+            *   [6.2.8.1 Não suspender quando a tampa do notebook é fechada](#Não_suspender_quando_a_tampa_do_notebook_é_fechada)
             *   [6.2.8.2 Alterar ação de nível crítico da bateria](#Alterar_ação_de_nível_crítico_da_bateria)
     *   [6.3 Usar um gerenciador de janela diferente](#Usar_um_gerenciador_de_janela_diferente)
 *   [7 Veja também](#Veja_também)
@@ -95,7 +95,7 @@ Selecione a sessão: *GNOME*, *GNOME Clássico* ou *GNOME sobre Xorg* a partir d
 
 #### Sessões Xorg
 
-*   Para a sessão do GNOME sobre Xorg, adicione ao arquivo `~/.xinitrc`:
+*   Para a sessão do GNOME sobre Xorg, adicione ao arquivo `~/.xinitrc` (veja [aqui](https://gitlab.gnome.org/GNOME/gtk/issues/1390#note_344758) para detalhes):
     ```
     export GDK_BACKEND=x11
     exec gnome-session
@@ -331,7 +331,7 @@ $ gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximi
 
 ##### Ocultar barra de título quando maximizado
 
-*   [Instale](/index.php/Instale "Instale") [gnome-shell-extension-no-title-bar](https://aur.archlinux.org/packages/gnome-shell-extension-no-title-bar/) ou [gnome-shell-extension-no-title-bar](https://aur.archlinux.org/packages/gnome-shell-extension-no-title-bar/). Janelas maximizadas mesclam a barra de título com a barra de atividade, salvando pixels preciosos.
+*   [Instale](/index.php/Instale "Instale") [gnome-shell-extension-no-title-bar](https://aur.archlinux.org/packages/gnome-shell-extension-no-title-bar/) ou [gnome-shell-extension-no-title-bar-git](https://aur.archlinux.org/packages/gnome-shell-extension-no-title-bar-git/). Janelas maximizadas mesclam a barra de título com a barra de atividade, salvando pixels preciosos.
 *   [Instale](/index.php/Instale "Instale") [mutter-hide-legacy-decorations](https://aur.archlinux.org/packages/mutter-hide-legacy-decorations/). Isso altera a configuração padrão no gerenciador de janelas, assim como oculta automaticamente a barra de título em aplicativos legados (sem barra de título) quando eles são maximizados ou colados lado a lado na lateral.
 *   [Instale](/index.php/Instale "Instale") [gnome-shell-extension-pixel-saver-git](https://aur.archlinux.org/packages/gnome-shell-extension-pixel-saver-git/) ou [gnome-shell-extension-pixel-saver](https://aur.archlinux.org/packages/gnome-shell-extension-pixel-saver/). Janelas maximizadas mesclam a barra de título com a barra de atividade, salvando pixels preciosos.
 
@@ -492,11 +492,11 @@ org.gnome.settings-daemon.plugins.power critical-battery-action
 
 ```
 
-##### Configurar o comportamento do fechamento da tela de notebook
+##### Não suspender quando a tampa do notebook é fechada
 
-O Ajustes do GNOME é uma ferramenta que pode opcionalmente *inibir* a configuração do *systemd* para o evento de ACPI de fechar a tampa.[[7]](http://ftp.gnome.org/pub/GNOME/sources/gnome-tweak-tool/3.17/gnome-tweak-tool-3.17.1.news) Para *inibir* a configuração, inicie a ferramenta de ajustes e, sob a aba energia, marque a opção *Suspender quando a tampa do notebook é fechada*. Isso significa que o ssitema fará nada ao fechar a tampa do notebook em vez de suspender - o comportamento padrão. Marcando essa configuração, cria `~/.config/autostart/ignore-lid-switch-tweak.desktop` que vai iniciar automaticamente o inibidor da ferramenta Ajustes.
+O painel de configurações do GNOME não oferece uma opção para o usuário, para alterar a ação, quando a tampa do notebook é fechada. No entanto, [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks) pode sobrescrever a configuração aplicada por [systemd](https://www.archlinux.org/packages/?name=systemd), na aba *Geral* desative a opção *Suspender quando a tampa do notebook é fechada*. O sistema não irá, portanto, *Suspender para a RAM (S3)* no fechamento da tampa.
 
-Se você não deseja suspender ou fazer nada ao fechar a tampa do notebook, você precisará se certificar de que a configuração acima **não** esteja marcada e, então, configure *systemd* com `HandleLidSwitch=*preferred_behaviour*` como descrito em [Power management#ACPI events](/index.php/Power_management#ACPI_events "Power management").
+Para alterar a ação da opção de tampa em todo o sistema, certifique-se de que a configuração descrita acima não esteja desativada e edite as configurações do systemd em `/etc/systemd/logind.conf`. Para desativar a suspensão na tampa, defina `HandleLidSwitch=ignore`, conforme descrito em [Power management#ACPI events](/index.php/Power_management#ACPI_events "Power management").
 
 ##### Alterar ação de nível crítico da bateria
 

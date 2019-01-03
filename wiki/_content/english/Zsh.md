@@ -185,7 +185,7 @@ zstyle ':completion::complete:*' gain-privileges 1
 
 ### Key bindings
 
-Zsh does not use [readline](/index.php/Readline "Readline"), instead it uses its own and more powerful Zsh Line Editor, ZLE. It does not read `/etc/inputrc` or `~/.inputrc`.
+Zsh does not use [readline](/index.php/Readline "Readline"), instead it uses its own and more powerful Zsh Line Editor (ZLE). It does not read `/etc/inputrc` or `~/.inputrc`.
 
 ZLE has an [emacs](/index.php/Emacs "Emacs") mode and a [vi](/index.php/Vi "Vi") mode. If one of the `$VISUAL` or `$EDITOR` [environment variables](/index.php/Environment_variables "Environment variables") contain the string `vi` then vi mode will be used; otherwise, it will default to emacs mode. Set the mode explicitly with `bindkey -e` or `bindkey -v` respectively for emacs mode or vi mode.
 

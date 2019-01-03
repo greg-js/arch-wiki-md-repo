@@ -16,7 +16,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [julia](https://www.archlinux.org/packages/?name=julia) package. To learn and use Julia, please read [upstream documents](https://docs.julialang.org/en/stable/).
+[Install](/index.php/Install "Install") the [julia](https://www.archlinux.org/packages/?name=julia) package. To learn and use Julia, please read [upstream documents](https://docs.julialang.org/en/latest/).
 
 ## IJulia
 

@@ -8,7 +8,7 @@
 | Pen input | Working with quirks | ? |
 | Webcam | working | uvcvideo |
 | Card Reader | Working | rtsx_pci |
-| Wireless Switch | Untested | ? |
+| Wireless Switch | Working | ? |
 | Function/Multimedia Keys | Working | ? |
 | Suspend/Resume | Working | ? |
 | Fingerprint sensor | Not working | ? synaptic 06cb:00bb |
@@ -33,9 +33,10 @@ This article covers specific configuration of this laptop. Currently based on ex
     *   [3.8 Bluetooth](#Bluetooth)
     *   [3.9 ACPI Errors](#ACPI_Errors)
     *   [3.10 Pen input](#Pen_input)
-    *   [3.11 IR Camera Login](#IR_Camera_Login)
-    *   [3.12 Battery optimizations](#Battery_optimizations)
-    *   [3.13 Sensors](#Sensors)
+    *   [3.11 Tablet mode](#Tablet_mode)
+    *   [3.12 IR Camera Login](#IR_Camera_Login)
+    *   [3.13 Battery optimizations](#Battery_optimizations)
+    *   [3.14 Sensors](#Sensors)
 
 ## Hardware Info
 
@@ -143,7 +144,7 @@ Works out of the box with a generic USB-C to HDMI adapter
 
 ### Bluetooth
 
-Seems to work out of the box. May need further testing. Some random disconnects are experienced with an apple magic mouse. Unable to pair an apple magic touchpad that was paired without issues to my previous computer.
+Seems to work out of the box. May need further testing. Some random disconnects are experienced with an apple magic mouse. no issue with a bt keyboard.
 
 ### ACPI Errors
 
@@ -307,6 +308,10 @@ Many ACPI errors are logged on boot:
 ### Pen input
 
 Working, but seems like using the pen disable the touchscreen. more testing needed.
+
+### Tablet mode
+
+Keyboard is automatically deactivated when screen is rotated to tent or tablet mode. Screen-rotator works great. Using Onboard for onscreen keyboard works also, but xfce4 does not allow Onboard to come automatically when editing text ( Onboard uses the Gnome accessibility, so if you are a Gnome user, you should be fine ).
 
 ### IR Camera Login
 

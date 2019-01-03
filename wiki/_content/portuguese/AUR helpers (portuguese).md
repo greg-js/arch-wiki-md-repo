@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [AUR helpers](/index.php/AUR_helpers "AUR helpers"). Data da última tradução: 2018-11-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AUR_helpers&diff=0&oldid=553496) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [AUR helpers](/index.php/AUR_helpers "AUR helpers"). Data da última tradução: 2018-12-31\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AUR_helpers&diff=0&oldid=559461) na versão em inglês.
 
 **Atenção:** Auxiliares do AUR **não possuem suporte** pelo Arch Linux. Você deve se familiarizar com o [processo manual de compilação](/index.php/Arch_User_Repository_(Portugu%C3%AAs)#Instalando_pacotes "Arch User Repository (Português)") para estar preparado para diagnosticar e resolver problemas.
 
@@ -10,103 +10,99 @@ Os auxiliares do AUR automatizam certos usos do [Arch User Repository](/index.ph
 
 Como não há suporte aos auxiliares do AUR, eles não estão presentes nos [repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais").
 
-## Contents
-
-*   [1 Legenda](#Legenda)
-*   [2 Pesquisa e download](#Pesquisa_e_download)
-*   [3 Download e compilação](#Download_e_compilação)
-*   [4 Wrappers do pacman](#Wrappers_do_pacman)
-*   [5 Gráficos](#Gráficos)
-*   [6 Outros](#Outros)
-*   [7 Manutenção](#Manutenção)
-
 ## Legenda
 
-As colunas têm o seguinte significado:
+As colunas da [#Tabela de comparação](#Tabela_de_comparação) têm o seguinte significado:
 
-*   *Revisão de arquivo*: não [carrega](/index.php/Carrega "Carrega") o PKGBUILD por padrão, ou alerta o usuário e oferece a oportunidade de inspecionar o PKGBUILD manualmente antes dele ser carregado. Alguns auxiliares são conhecidos por carregar PKGBUILDs antes do usuário inspecioná-los, **permitindo códigos maliciosos serem executados**. *Opcional* significa que há uma opção de linha de comando ou opção de configuração para evitar o carregamento automático antes de visualizar.
-*   *Ver diff*: capacidade de visualizar as diferenças de pacote na inspeção. Além do PKGBUILD, isso inclui alterações em arquivos como `.install` ou `.patch`.
-*   *Git clone*: usa [git-clone(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-clone.1) por padrão para obter os arquivos de compilação a partir do AUR.
-*   *Analisador confiável*: capacidade de lidar com pacotes complexos usando os metadados fornecidos ([RPC](/index.php/Interface_RPC_do_Aurweb "Interface RPC do Aurweb")/.SRCINFO) em vez de [análise](https://en.wikipedia.org/wiki/pt:An%C3%A1lise_sint%C3%A1tica_(computa%C3%A7%C3%A3o)#Analisador_sint.C3.A1tico do PKGBUILD, tal como [aws-cli-git](https://aur.archlinux.org/packages/aws-cli-git/).
-*   *Resolvedor confiável*: capacidade para resolver corretamente e compilar cadeias de dependência complexas, tal como [ros-lunar-desktop](https://aur.archlinux.org/packages/ros-lunar-desktop/).
-*   *Pacotes divididos*: relacionado aos chamados *split packages* (inglês), é a capacidade de compilar e instalar corretamente:
+	Revisão de arquivo
 
-	– Vários pacotes do mesmo pacote base, sem recompilar ou reinstalar várias vezes, tal como [clion](https://aur.archlinux.org/packages/clion/)
+	Não [carrega](/index.php/Carrega "Carrega") o PKGBUILD *por padrão*, ou alerta o usuário e oferece a oportunidade de inspecionar o PKGBUILD manualmente antes dele ser carregado. Alguns auxiliares são conhecidos por carregar PKGBUILDs antes do usuário inspecioná-los, **permitindo códigos maliciosos serem executados**.
 
-	– Pacotes divididos que dependem de um pacote do mesmo pacote base, tal como [libc++](https://aur.archlinux.org/packages/libc%2B%2B/) e [libc++abi](https://aur.archlinux.org/packages/libc%2B%2Babi/).
+	Ver diff
 
-	– Pacotes divididos de forma independente, tal como [python-pyalsaaudio](https://aur.archlinux.org/packages/python-pyalsaaudio/) e [python2-pyalsaaudio](https://aur.archlinux.org/packages/python2-pyalsaaudio/).
+	Capacidade de visualizar as diferenças de pacote na inspeção. Além do PKGBUILD, isso inclui alterações em arquivos como os arquivos `.install` ou `.patch`.
 
-*   *Compilação limpa*: não exporta novas variáveis que podem evitar um processo de compilação bem-sucedido.
-*   *Interação em lote*: capacidade de solicitar antes do processo de compilação, em particular para:
+	Git clone
 
-1.  Inspeção de arquivos do pacote ou suas diferenças;
-2.  Resumo de atualizações de pacotes;
-3.  Resolução de conflitos e instalações de pacotes.
+	Usa [git-clone(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-clone.1) por padrão para obter os arquivos de compilação a partir do AUR.
 
-	Um asterisco indica funcionalidade especificamente habilitada pelo usuário.
+	Analisador confiável
 
-*   *Completação de shell*: [completação por Tab](https://en.wikipedia.org/wiki/Command-line_completion listados.
+	Capacidade de tratar de pacotes complexos usando os metadados fornecidos ([RPC](/index.php/Interface_RPC_do_Aurweb "Interface RPC do Aurweb")/.SRCINFO) em vez de [análise](https://en.wikipedia.org/wiki/pt:An%C3%A1lise_sint%C3%A1tica_(computa%C3%A7%C3%A3o)#Analisador_sint.C3.A1tico do PKGBUILD, tal como [aws-cli-git](https://aur.archlinux.org/packages/aws-cli-git/).
 
-**Nota:**
+	Resolvedor confiável
 
-*   As linhas da tabela estão ordenadas por valores das colunas, nas quais *Sim* ou *N/D* aparecem antes de *Parcial* ou *Opcional* e *Não*, ou alfabeticamente se os valores forem iguais.
-*   *Opcional* significa que um recurso está disponível, mas apenas por meio de um argumento de linha de comando ou opção de configuração. *Parcial* significa que um recurso não está totalmente implementado, ou que ela parcialmente desvia do critério dado.
+	Capacidade de resolver e compilar corretamente cadeias de dependência complexas, tal como [ros-lunar-desktop](https://aur.archlinux.org/packages/ros-lunar-desktop/).
 
-## Pesquisa e download
+	Pacotes divididos
 
-| Nome | Escrito em | Revisão de arquivo | Git clone | Analisador confiável | Resolvedor confiável | Completação de shell | Especificidade |
-| [auracle-git](https://aur.archlinux.org/packages/auracle-git/) | C++ | Sim | [Sim](https://github.com/falconindy/auracle/commit/c73bbee) | Sim | Sim | Bash | imprime ordem de compilação |
-| [pbget](https://aur.archlinux.org/packages/pbget/) | Python | Sim | Sim | Sim | – | – | – |
-| [yaah](https://aur.archlinux.org/packages/yaah/) | Bash | Sim | Opcional | Sim | – | bash | – |
-| [repoctl](https://aur.archlinux.org/packages/repoctl/) | Go | Sim | Não | [Sim](https://github.com/goulash/pacman/blob/master/aur/aur.go) | – | zsh | suporte a repositório local |
+	Relacionado aos chamados *split packages* (inglês), é a capacidade de compilar e instalar corretamente:
+
+*   Vários pacotes do mesmo pacote base, sem recompilar ou reinstalar várias vezes, tal como [clion](https://aur.archlinux.org/packages/clion/)
+*   Pacotes divididos que dependem de um pacote do mesmo pacote base, tal como [libc++](https://aur.archlinux.org/packages/libc%2B%2B/) e [libc++abi](https://aur.archlinux.org/packages/libc%2B%2Babi/).
+*   Pacotes divididos de forma independente, tal como [python-pyalsaaudio](https://aur.archlinux.org/packages/python-pyalsaaudio/) e [python2-pyalsaaudio](https://aur.archlinux.org/packages/python2-pyalsaaudio/).
+
+	Interação em lote
+
+	Capacidade de perguntar antes do processo de compilação e transações de pacote, em particular para:
+
+1.  Resumo combinado de atualizações de repositório e de pacote do AUR;
+2.  Resolução de conflitos e escolha de provedores.
+
+	Completação de shell
+
+	[Completação por Tab](https://en.wikipedia.org/wiki/Command-line_completion listados.
+
+**Nota:** *Opcional* significa que um recurso está disponível, mas apenas por meio de um argumento de linha de comando ou opção de configuração. *Parcial* significa que um recurso não está totalmente implementado, ou que ela parcialmente desvia do critério dado.
+
+## Tabela de comparação
+
+### Pesquisa e download
+
+| Nome | Escrito em | Git clone | Analisador confiável | Resolvedor confiável | Completação de shell | Especificidade |
+| [auracle-git](https://aur.archlinux.org/packages/auracle-git/) | C++ | [Sim](https://github.com/falconindy/auracle/commit/c73bbee) | Sim | Sim | Bash | imprime ordem de compilação |
+| [pbget](https://aur.archlinux.org/packages/pbget/) | Python | Sim | Sim | – | – | – |
+| [repoctl](https://aur.archlinux.org/packages/repoctl/) | Go | Não | [Sim](https://github.com/goulash/pacman/blob/master/aur/aur.go) | – | zsh | [repositório local](/index.php/Reposit%C3%B3rio_local "Repositório local") |
+| [yaah](https://aur.archlinux.org/packages/yaah/) | Bash | Opcional | Sim | – | bash | – |
 | [aurel](https://aur.archlinux.org/packages/aurel/)
-<small>([descontinuado](https://bbs.archlinux.org/viewtopic.php?pid=1522459#p1522459))</small> | Emacs Lisp | Sim | Não | Sim | – | – | Integração com Emacs |
+<small>([descontinuado](https://bbs.archlinux.org/viewtopic.php?pid=1522459#p1522459))</small> | Emacs Lisp | Não | Sim | – | – | Integração com [emacs](/index.php/Emacs "Emacs") |
 | [cower](https://aur.archlinux.org/packages/cower/)
-<small>([descontinuado](https://github.com/falconindy/cower#description))</small> | C | Sim | Não | Sim | – | bash, zsh | suporte a expressão regular, ordem por votos/popularidade |
+<small>([descontinuado](https://github.com/falconindy/cower#description))</small> | C | Não | Sim | – | bash, zsh | suporte a expressão regular |
 
-## Download e compilação
+### Download e compilação
 
-| Nome | Escrito em | Revisão de arquivo | Ver diff | Git clone | Analisador confiável | Resolvedor confiável | Pacotes divididos | Compilação limpa | Interação em lote | Completação
+| Nome | Escrito em | Revisão de arquivo | Ver diff | Git clone | Analisador confiável | Resolvedor confiável | Pacotes divididos | Completação
 de shell | Especificidade |
-| [aurutils](https://aur.archlinux.org/packages/aurutils/) | Bash/C | Sim | Sim | Sim | Sim | Sim | Sim | Sim | 1 | zsh | suporte a [vifm](/index.php/Vifm "Vifm"), [repositório local](/index.php/Reposit%C3%B3rio_local "Repositório local"), [assinatura de pacote](/index.php/Assinatura_de_pacote "Assinatura de pacote"), [chroot limpo](/index.php/DeveloperWiki:Building_in_a_clean_chroot "DeveloperWiki:Building in a clean chroot"), ordena por votos/popularidade |
-| [bauerbill](https://aur.archlinux.org/packages/bauerbill/) | Python | Sim | Não | Sim | Sim | Sim | Sim | Sim | 1 | bash, zsh | Gerenciamento de confiança, suporte a [ABS](/index.php/ABS_(Portugu%C3%AAs) "ABS (Português)"), estende o *powerpill*, `bb-wrapper` para interfacear o *pacman* |
-| [rua](https://aur.archlinux.org/packages/rua/) | Rust | Sim | [Não](https://github.com/vn971/rua/issues/1) | Sim | [Sim](https://github.com/vn971/rua/commit/fc8c2f3) | Sim | Sim | Sim | 1 | bash, zsh, fish | nspeções de artefatos tar (SUID, arquivo install etc), compilação isolada, compilação offline |
-| [PKGBUILDer](https://aur.archlinux.org/packages/PKGBUILDer/) | Python | Opcional | [Não](https://github.com/Kwpolska/pkgbuilder/issues/36) | Sim | Sim | Sim | [Parcial](https://github.com/Kwpolska/pkgbuilder/issues/39) | Sim | 1* | – | Compilações automáticas por padrão, use `-F` para desabilitar; multilíngue, `pb-wrapper` para interfacear o *pacman* |
-| [repofish](https://aur.archlinux.org/packages/repofish/) | Bash | Opcional | Sim | Sim | Não | Não | Não | Sim | 1* | – | Compilações automáticas por padrão, use `check` ou `update` para desabilitar, suporte a [repositório local](/index.php/Reposit%C3%B3rio_local "Repositório local") |
-| [naaman](https://aur.archlinux.org/packages/naaman/)
-<small>([descontinuado](https://github.com/enckse/naaman/issues/20#issuecomment-433781874))</small> | Python | Opcional | Não | Sim | Sim | [Parcial](https://github.com/enckse/naaman/issues/19) | [Parcial](https://github.com/enckse/naaman/issues/20) | Sim | 1* | bash | Compilações automáticas por padrão, use `--fetch` para desabilitar, use `-d` para habilitar o resolvedor |
-| [spinach](https://aur.archlinux.org/packages/spinach/)
-<small>([descontinuado](https://github.com/floft/spinach))</small> | Bash | [Sim](https://github.com/floft/spinach/commit/5455747) | Não | Não | Não | Não | Não | Sim | – | – | – |
-| [aurget](https://aur.archlinux.org/packages/aurget/)
-<small>(parado)</small> | Bash | Opcional | [Não](https://github.com/pbrisbin/aurget/issues/41) | Não | Não | Não | [Não](https://github.com/pbrisbin/aurget/issues/40) | Sim | – | bash, zsh | ordena por votos |
+| [aurget](https://aur.archlinux.org/packages/aurget/) | Bash | Não | [Não](https://github.com/pbrisbin/aurget/issues/41) | Não | Não | Não | [Não](https://github.com/pbrisbin/aurget/issues/40) | bash, zsh | – |
+| [aurutils](https://aur.archlinux.org/packages/aurutils/) | Bash/C | Sim | Sim | Sim | Sim | Sim | Sim | zsh | [modular](https://en.wikipedia.org/wiki/Modular_programming "w:Modular programming"), [repositório local](/index.php/Reposit%C3%B3rio_local "Repositório local"), [assinatura de pacote](/index.php/Assinatura_de_pacote "Assinatura de pacote"), [chroot limpo](/index.php/DeveloperWiki:Building_in_a_clean_chroot "DeveloperWiki:Building in a clean chroot") |
+| [bauerbill](https://aur.archlinux.org/packages/bauerbill/) | Python | Sim | Não | Sim | Sim | Sim | Sim | bash, zsh | `bb-wrapper` para interfacear o *pacman*, gerenciamento de confiança |
+| [PKGBUILDer](https://aur.archlinux.org/packages/PKGBUILDer/) | Python | Não | [Não](https://github.com/Kwpolska/pkgbuilder/issues/36) | Sim | Sim | Sim | [Parcial](https://github.com/Kwpolska/pkgbuilder/issues/39) | – | `pb-wrapper` para interfacear o *pacman* |
+| [repofish](https://aur.archlinux.org/packages/repofish/) | Bash | Não | Sim | Sim | Não | Não | Não | – | [repositório local](/index.php/Reposit%C3%B3rio_local "Repositório local") |
+| [rua](https://aur.archlinux.org/packages/rua/) | Rust | Sim | [Não](https://github.com/vn971/rua/issues/1) | Sim | [Sim](https://github.com/vn971/rua/commit/fc8c2f3) | Sim | Sim | bash, zsh, fish | [bubblewrap](/index.php/Bubblewrap "Bubblewrap"), inspeção de `.pkg.tar` |
 | [burgaur](https://aur.archlinux.org/packages/burgaur/)
-<small>([descontinuado](https://github.com/m45t3r/burgaur/issues/7#issuecomment-365599675))</small> | Python/C | Opcional | Não | Não | Não | Não | Não | Sim | – | – | Wrapper para *cower* |
+<small>([descontinuado](https://github.com/m45t3r/burgaur/issues/7#issuecomment-365599675))</small> | Python/C | Não | Não | Não | Não | Não | Não | – | Wrapper para *cower* |
+| [spinach](https://aur.archlinux.org/packages/spinach/)
+<small>([descontinuado](https://github.com/floft/spinach))</small> | Bash | [Sim](https://github.com/floft/spinach/commit/5455747) | Não | Não | Não | Não | Não | – | – |
 
-## Wrappers do pacman
+### Wrappers do pacman
 
 **Atenção:** Wrappers do [pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8) abstraem o trabalho do gerenciador de arquivos. Eles podem (opcionalmente ou por padrão) introduzir [opções inseguras](/index.php/Manuten%C3%A7%C3%A3o_do_sistema#Evite_certos_comandos_do_pacman "Manutenção do sistema") ou outros comportamentos inesperados levando a um sistema defeituoso.
 
-| Nome | Escrito em | Revisão de arquivo | Ver diff | Git clone | Analisador confiável | Resolvedor confiável | Pacotes divididos | Compilação limpa | Opções inseguras | Interação em lote | Completação
+| Nome | Escrito em | Revisão de arquivo | Ver diff | Git clone | Analisador confiável | Resolvedor confiável | Pacotes divididos | Opções inseguras | Completação
 de shell | Especificidade |
-| [pakku](https://aur.archlinux.org/packages/pakku/) | Nim | Sim | [Sim](https://github.com/kitsunyan/pakku/commit/396e9f4) | Sim | Sim | Sim | Sim | [Sim](https://github.com/kitsunyan/pakku/commit/864cc03) | [-Sy](https://github.com/kitsunyan/pakku/wiki/Native-Pacman-Explanation) | 1 | bash, zsh | Suporte a [ABS](/index.php/ABS_(Portugu%C3%AAs) "ABS (Português)"), comentários do AUR, obtém chaves PGP |
-| [pikaur](https://aur.archlinux.org/packages/pikaur/) | Python | Sim | Sim | Sim | Sim | Sim | [Sim](https://github.com/actionless/pikaur/commit/d409b95) | Sim | [-Sy](https://github.com/actionless/pikaur#pikaur) | 1, 2, 3 | bash, fish, zsh | [usuários dinâmicos](http://0pointer.net/blog/dynamic-users-with-systemd.html), [multilíngue](https://github.com/actionless/pikaur/tree/master/locale), ordena por votos/popularidade, emite notícias, [ignora erros](https://github.com/actionless/pikaur/commit/3688d828591d307c6864c3b5ad8c1f581396b865) |
-| [yay](https://aur.archlinux.org/packages/yay/) | Go | Sim | [Sim](https://github.com/Jguer/yay/pull/447) | [Sim](https://github.com/Jguer/yay/pull/297) | Sim | Sim | Sim | Sim | [-Sy*](https://github.com/Jguer/yay/commit/3bdb534)
-[--ask*](https://github.com/Jguer/yay/commit/ea5a94e) | 1, [2*](https://github.com/Jguer/yay/commit/3bdb534), [3*](https://github.com/Jguer/yay/commit/ea5a94e) | bash, fish, zsh | obtém chaves PGP, ordena por votos/popularidade, [arquitetura de prompt](https://github.com/Jguer/yay/commit/4bcd3a6) |
-| [trizen](https://aur.archlinux.org/packages/trizen/) | Perl | Sim | Sim | [Sim](https://github.com/trizen/trizen/commit/6fb0cc9) | [Sim](https://github.com/trizen/trizen/commit/7ab7ee5f) | Sim | [Parcial](https://github.com/trizen/trizen/issues/46) | Sim | [-Ud*](https://github.com/trizen/trizen/commit/9e7b40e) | 1* | bash, fish, zsh | compilações automáticas por padrão, use `-G` para desabilitar, comentários do AUR |
-| [aura](https://aur.archlinux.org/packages/aura/) | Haskell | Opcional | [Parcial](https://github.com/aurapm/aura/blob/89bf702/aura/src/Aura/Pkgbuild/Records.hs) | [Não](https://github.com/aurapm/aura/pull/346) | [Sim](https://github.com/aurapm/aura/commit/7848e983) | Não | [Não](https://github.com/aurapm/aura/issues/353) | Sim | – | 1* | bash, zsh | compilações automáticas por padrão, use `--dryrun` para desabilitar, suporte a [downgrade](/index.php/Downgrade_(Portugu%C3%AAs) "Downgrade (Português)"), multilíngue |
+| [aura](https://aur.archlinux.org/packages/aura/) | Haskell | Não | [Parcial](https://github.com/aurapm/aura/blob/89bf702/aura/src/Aura/Pkgbuild/Records.hs) | [Não](https://github.com/aurapm/aura/pull/346) | [Sim](https://github.com/aurapm/aura/commit/7848e983) | Não | [Não](https://github.com/aurapm/aura/issues/353) | – | bash, zsh | – |
+| [packer-aur-git](https://aur.archlinux.org/packages/packer-aur-git/) | Bash | Não | Não | Não | Não | Não | Não | – | – | – |
+| [pakku](https://aur.archlinux.org/packages/pakku/) | Nim | Sim | [Sim](https://github.com/kitsunyan/pakku/commit/396e9f4) | Sim | Sim | Sim | Sim | [-Sy](https://github.com/kitsunyan/pakku/wiki/Native-Pacman-Explanation) | bash, zsh | obtém chaves PGP |
+| [pikaur](https://aur.archlinux.org/packages/pikaur/) | Python | Sim | Sim | Sim | Sim | Sim | Sim | [-Sy](https://github.com/actionless/pikaur#pikaur) | bash, fish, zsh | [usuários dinâmicos](http://0pointer.net/blog/dynamic-users-with-systemd.html), interação em lote (1,2) |
+| [trizen](https://aur.archlinux.org/packages/trizen/) | Perl | Sim | Sim | [Sim](https://github.com/trizen/trizen/commit/6fb0cc9) | [Sim](https://github.com/trizen/trizen/commit/7ab7ee5f) | Sim | [Parcial](https://github.com/trizen/trizen/issues/46) | [-Ud*](https://github.com/trizen/trizen/commit/9e7b40e) | bash, fish, zsh | – |
+| [wrapaur](https://aur.archlinux.org/packages/wrapaur/) | Bash | Sim | Não | Sim | Não | Não | Não | – | – | – |
+| [yay](https://aur.archlinux.org/packages/yay/) | Go | Sim | [Sim](https://github.com/Jguer/yay/pull/447) | [Sim](https://github.com/Jguer/yay/pull/297) | Sim | Sim | Sim | [-Sy*](https://github.com/Jguer/yay/commit/3bdb534)
+[--ask*](https://github.com/Jguer/yay/commit/ea5a94e) | bash, fish, zsh | obtém chaves PGP, interação em lote (1,2) |
 | [aurman](https://aur.archlinux.org/packages/aurman/)
-<small>([sem suporte a usuário](https://github.com/polygamma/aurman#stopped-development-for-public-use))</small> | Python | Sim | Sim | Sim | Sim | [Sim](https://github.com/polygamma/aurman/wiki/Description-of-the-aurman-dependency-solving) | Sim | Sim | [-Sy*](https://github.com/polygamma/aurman/commit/6c02ba3)
-[--ask*](https://github.com/polygamma/aurman#make-use-of-the-undocumented---ask-flag-of-pacman) | 1, [2*, 3*](https://github.com/polygamma/aurman#question-6) | bash, fish | obtém chaves PGP, ordena por votos/popularidade, emite notícias |
-| [pacaur](https://aur.archlinux.org/packages/pacaur/)
-<small>([descontinuado](https://bbs.archlinux.org/viewtopic.php?pid=1755144#p1755144))</small> | Bash/C | Sim | Sim | Sim | Sim | Sim | Sim | Sim | [-Ud](https://github.com/rmarquis/pacaur/commit/d8f4918)
-[--ask](https://github.com/rmarquis/pacaur/commit/12707cc) | 1, 3 | bash, zsh | multilíngue, ordena por votos/popularidade |
-| [wrapaur](https://aur.archlinux.org/packages/wrapaur/)
-<small>(parado)</small> | Bash | Sim | Não | Sim | Não | Não | Não | Sim | – | – | – | atualizações de espelhos, emite notícias e comentários do AUR |
-| [packer-aur](https://aur.archlinux.org/packages/packer-aur/)
-<small>(parado)</small> | Bash | Não | Não | Não | Não | Não | Não | Sim | – | – | – | – |
+<small>([descontinuado](https://github.com/polygamma/aurman#stopped-development-for-public-use))</small> | Python | Sim | Sim | Sim | Sim | [Sim](https://github.com/polygamma/aurman/wiki/Description-of-the-aurman-dependency-solving) | Sim | [-Sy*](https://github.com/polygamma/aurman/commit/6c02ba3)
+[--ask*](https://github.com/polygamma/aurman#make-use-of-the-undocumented---ask-flag-of-pacman) | bash, fish | obtém chaves PGP, interação em lote (1,2) |
 | [yaourt](https://aur.archlinux.org/packages/yaourt/)
-<small>(parado)</small> | Bash/C | [Não](https://github.com/archlinuxfr/yaourt/blob/34b5c0b/src/lib/aur.sh#L54-L72) | Opcional | Opcional | Não | [Não](https://github.com/archlinuxfr/yaourt/issues/186) | [Não](https://github.com/archlinuxfr/yaourt/issues/85) | [Não](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | [-Sy](https://github.com/archlinuxfr/yaourt/blob/d30823e/yaourt/yaourt#L1773) | 2 | bash, fish, zsh | suporte a ABS, emite comentários do AUR, multilíngue |
+<small>([descontinuado](https://github.com/archlinuxfr/yaourt/issues/382#issuecomment-437461631))</small> | Bash/C | [Não](https://github.com/archlinuxfr/yaourt/blob/34b5c0b/src/lib/aur.sh#L54-L72) | Opcional | Opcional | Não | [Não](https://github.com/archlinuxfr/yaourt/issues/186) | [Não](https://github.com/archlinuxfr/yaourt/issues/85) | [-Sy](https://github.com/archlinuxfr/yaourt/blob/d30823e/yaourt/yaourt#L1773) | bash, fish, zsh | interação em lote (1), [corrompe o processo de compilação](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) |
 
 ## Gráficos
 
@@ -136,24 +132,6 @@ de shell | Especificidade |
 
 	[https://octopiproject.wordpress.com/](https://octopiproject.wordpress.com/) || [octopi](https://aur.archlinux.org/packages/octopi/)
 
-## Outros
-
-*   **aur.rs** — Biblioteca em Rust para acessar [interface RPC do Aurweb](/index.php/Interface_RPC_do_Aurweb "Interface RPC do Aurweb")
-
-	[https://github.com/zeyla/aur.rs](https://github.com/zeyla/aur.rs) ||
-
-*   **haskell-aur** — Biblioteca Haskell para acessar a interface RPC do Aurweb
-
-	[https://hackage.haskell.org/package/aur](https://hackage.haskell.org/package/aur) || [haskell-aur](https://aur.archlinux.org/packages/haskell-aur/)
-
-*   **python3-aur** — Módulos Python 3 e utilitários auxiliares para acessar as informações de pacote do AUR e automatizar as interações do AUR.
-
-	[https://xyne.archlinux.ca/projects/python3-aur](https://xyne.archlinux.ca/projects/python3-aur) || [python3-aur](https://aur.archlinux.org/packages/python3-aur/)
-
-*   **package-query** — Ferramenta para consultar [libalpm(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libalpm.3) e o AUR.
-
-	[https://github.com/archlinuxfr/package-query](https://github.com/archlinuxfr/package-query) || [package-query](https://aur.archlinux.org/packages/package-query/)
-
 ## Manutenção
 
 *   **aur-out-of-date** — Usa APIs do hospedeiro para verificar pacotes do AUR por alterações no upstream.
@@ -175,3 +153,21 @@ de shell | Especificidade |
 *   **pkgoutofdate** — Analisa a URL fonte dos PKGBUILDs e tenta localizar novas versões dos pacotes incrementando o número da versão e enviando requisições ao servidor web.
 
 	[https://github.com/anatol/pkgoutofdate](https://github.com/anatol/pkgoutofdate) || [pkgoutofdate-git](https://aur.archlinux.org/packages/pkgoutofdate-git/)
+
+## Outros
+
+*   **aur.rs** — Biblioteca em Rust para acessar [interface RPC do Aurweb](/index.php/Interface_RPC_do_Aurweb "Interface RPC do Aurweb")
+
+	[https://github.com/zeyla/aur.rs](https://github.com/zeyla/aur.rs) ||
+
+*   **haskell-aur** — Biblioteca Haskell para acessar a interface RPC do Aurweb
+
+	[https://hackage.haskell.org/package/aur](https://hackage.haskell.org/package/aur) || [haskell-aur](https://aur.archlinux.org/packages/haskell-aur/)
+
+*   **python3-aur** — Módulos Python 3 e utilitários auxiliares para acessar as informações de pacote do AUR e automatizar as interações do AUR.
+
+	[https://xyne.archlinux.ca/projects/python3-aur](https://xyne.archlinux.ca/projects/python3-aur) || [python3-aur](https://aur.archlinux.org/packages/python3-aur/)
+
+*   **package-query** — Ferramenta para consultar [libalpm(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libalpm.3) e o AUR.
+
+	[https://github.com/archlinuxfr/package-query](https://github.com/archlinuxfr/package-query) || [package-query](https://aur.archlinux.org/packages/package-query/)

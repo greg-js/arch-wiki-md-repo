@@ -30,6 +30,7 @@ Version: ThinkPad X1 Carbon 6th
 | Fingerprint Reader | No² | ? |
 | [Power management](/index.php/Power_management "Power management") | Yes³ | ? |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes⁴ | btusb |
+| NFC | No⁶ | ? |
 | microSD card reader | Yes | scsi_mod |
 | Keyboard Backlight | Yes | thinkpad_acpi |
 | Function/Multimedia Keys | Yes | ? |
@@ -41,6 +42,7 @@ Version: ThinkPad X1 Carbon 6th
 3.  S3 suspend requires changes to BIOS settings - see section on [suspend issues](#Suspend_issues).
 4.  See [this blog post](https://200ok.ch/posts/2018-12-17_making_bluetooth_work_on_lenovo_x1_carbon_6th_gen_with_linux.html) for improvements to reliability.
 5.  Internal monitor acceleration does not appear to be supported.
+6.  Connected via I2C, support was discussed in the [libnfc project](https://github.com/nfc-tools/libnfc/issues/455).
 
  |
 
@@ -64,12 +66,17 @@ Version: ThinkPad X1 Carbon 6th
     *   [4.4 HDR Display Color Calibration](#HDR_Display_Color_Calibration)
 *   [5 Intel Graphics UHD 620 issues](#Intel_Graphics_UHD_620_issues)
 *   [6 TrackPoint and Touchpad issues](#TrackPoint_and_Touchpad_issues)
-*   [7 Full-disk encryption](#Full-disk_encryption)
-    *   [7.1 Ramdisk module](#Ramdisk_module)
-*   [8 Tools](#Tools)
-    *   [8.1 Diagnostics](#Diagnostics)
-*   [9 References](#References)
-*   [10 Additional resources](#Additional_resources)
+*   [7 Thunderbolt dock](#Thunderbolt_dock)
+    *   [7.1 Plugable USB-C Mini Docking Station with 85W Power Delivery UD-CAM](#Plugable_USB-C_Mini_Docking_Station_with_85W_Power_Delivery_UD-CAM)
+        *   [7.1.1 Bios settings](#Bios_settings)
+        *   [7.1.2 TLP blacklisting devices from USB autosuspend](#TLP_blacklisting_devices_from_USB_autosuspend)
+    *   [7.2 Lenovo dock](#Lenovo_dock)
+*   [8 Full-disk encryption](#Full-disk_encryption)
+    *   [8.1 Ramdisk module](#Ramdisk_module)
+*   [9 Tools](#Tools)
+    *   [9.1 Diagnostics](#Diagnostics)
+*   [10 References](#References)
+*   [11 Additional resources](#Additional_resources)
 
 ## BIOS
 
@@ -273,6 +280,36 @@ echo -n "reconnect" | sudo tee /sys/bus/serio/devices/serio1/drvctl
 ```
 
 A [bug](https://gitlab.freedesktop.org/libinput/libinput/issues/46) in the libinput library that caused dropouts of the tap-to-click functionality of the touchpad on the X1 Carbon 6th Gen has been fixed in libinput 1.11.2, which was released on [3 July 2018](https://lists.freedesktop.org/archives/wayland-devel/2018-July/038782.html).
+
+## Thunderbolt dock
+
+### Plugable USB-C Mini Docking Station with 85W Power Delivery UD-CAM
+
+If you are using an external plugable [UD-CAM](https://plugable.com/products/ud-cam/) thunderbolt dock connected to the laptop through its USB-C thunderbolt port, you might experience random disconnections (external monitor, bluetooth and ethernet) with this kind of error in dmesg :
+
+ `pcieport 0000:05:00.0: BAR 13: no space for [io  size 0x3000]` 
+
+It should be noted that [bolt](https://www.archlinux.org/packages/?name=bolt) is not working with this [UD-CAM](https://plugable.com/products/ud-cam/) dock.
+
+To avoid random disconnection, proceed as followed by editing the bios and [TLP](/index.php/TLP "TLP")
+
+#### Bios settings
+
+You should then look at your bios settings :
+
+*   Wake by thunderbolt : enable
+*   Security level : no security
+*   Pre-boot ACL option : enable
+
+#### TLP blacklisting devices from USB autosuspend
+
+If you are using [TLP](/index.php/TLP "TLP") you have to edit /etc/default/tlp and make sure that you exclude all dock devices from USB autosuspend as followed :
+
+ `USB_BLACKLIST="0000:1111 2222:3333 4444:5555"` 
+
+Then reboot and your dock should work correctly.
+
+### Lenovo dock
 
 ## Full-disk encryption
 

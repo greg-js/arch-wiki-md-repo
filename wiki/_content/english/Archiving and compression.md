@@ -22,8 +22,9 @@ Of course there are also [tools that do both](#Archiving_and_compression), which
 *   [4 Convenience tools](#Convenience_tools)
 *   [5 Determining archive format](#Determining_archive_format)
 *   [6 Esoteric, rare or deprecated tools](#Esoteric,_rare_or_deprecated_tools)
-*   [7 Compression libraries](#Compression_libraries)
-*   [8 See also](#See_also)
+*   [7 Device mapper compression](#Device_mapper_compression)
+*   [8 Compression libraries](#Compression_libraries)
+*   [9 See also](#See_also)
 
 ## Archiving only
 
@@ -139,6 +140,18 @@ Otherwise you can use the [file](https://www.archlinux.org/packages/?name=file) 
 | [PAR2](https://en.wikipedia.org/wiki/Parchive "wikipedia:Parchive") | [par2cmdline](https://www.archlinux.org/packages/?name=par2cmdline) | .par2 | Parity archiver for increased data integrity. See also [Parchive](/index.php/Parchive "Parchive"). |
 | [shar](https://en.wikipedia.org/wiki/shar "wikipedia:shar") | [sharutils](https://www.archlinux.org/packages/?name=sharutils) | .shar | Creates self-extracting archives that are valid shell scripts. |
 | [Zoo](https://en.wikipedia.org/wiki/Zoo_(file_format) | [zoo](https://aur.archlinux.org/packages/zoo/) | .zoo | Was mostly popular on the [OpenVMS](https://en.wikipedia.org/wiki/OpenVMS "wikipedia:OpenVMS") operating system before PKZIP became popular. |
+
+## Device mapper compression
+
+There is work being done to mainline (integrate into the Linux kernel project) the recently open-sourced VDO project, which provides a deduplication and compression device mapper layer in the interest of increasing storage efficiency. The following packages are available:
+
+*   **vdo** — Userspace tools for managing VDO volumes
+
+	[https://github.com/dm-vdo/vdo](https://github.com/dm-vdo/vdo) || [vdo](https://aur.archlinux.org/packages/vdo/)
+
+*   **kvdo** — A pair of kernel modules which provide pools of deduplicated and/or compressed block storage
+
+	[https://github.com/dm-vdo/kvdo](https://github.com/dm-vdo/kvdo) || [kvdo-dkms](https://aur.archlinux.org/packages/kvdo-dkms/)
 
 ## Compression libraries
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [chroot](/index.php/Chroot "Chroot"). Data da última tradução: 2018-10-31\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Chroot&diff=0&oldid=552163) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [chroot](/index.php/Chroot "Chroot"). Data da última tradução: 2019-01-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Chroot&diff=0&oldid=560633) na versão em inglês.
 
 Artigos relacionados
 
@@ -100,9 +100,9 @@ Por exemplo, para executar `mkinitcpio -p linux` para um chroot localizado em `/
 
 **Atenção:** Ao usar `--rbind`, alguns subdiretório de `dev/` e `sys/` não serão desmontáveis. Tentar desmontar com `umount -l` nesta situação vai quebrar a sua sessão, exigindo um *reboot*. Se possível, use `-o bind`.
 
-No exemplo a seguir, */local/da/nova/raiz* é o diretório no qual a nova raiz reside.
+No exemplo a seguir, `/local/da/nova/raiz` é o diretório no qual a nova raiz reside.
 
-Primeiro, monte os sistemas de arquivos de api temporários:
+Primeiro, monte os sistemas de arquivos de API temporários:
 
 ```
 # cd */local/da/nova/raiz*
@@ -126,7 +126,7 @@ Em seguida, para usar uma conexão com a internet no ambiente *chroot* copie os 
 
 ```
 
-Finalmente, para alterar a raiz para */local/da/nova/raiz* usando um shell do bash:
+Finalmente, para alterar a raiz para `/local/da/nova/raiz` usando um shell do bash:
 
 ```
 # chroot */local/da/nova/raiz* /bin/bash
@@ -136,7 +136,7 @@ Finalmente, para alterar a raiz para */local/da/nova/raiz* usando um shell do ba
 **Nota:** Se você vir o erro:
 
 *   `chroot: não foi possível executar o comando '/usr/bin/bash': Erro no formato exec`, é provável que as arquiteturas do ambiente hospedeiro e do ambiente *chroot* não sejam iguais.
-*   `chroot: '/usr/bin/bash': permissão negada`, remote com a permissão de execução: `mount -o remount,exec /mnt/arch`.
+*   `chroot: '/usr/bin/bash': permissão negada`, remote com a permissão de execução: `mount -o remount,exec */local/da/nova/raiz*`.
 
 Após fazer o *chroot* pode ser necessário carregar a configuração local do bash:
 
@@ -163,7 +163,7 @@ Então, desmonte os sistemas de arquivos temporários:
 
 ```
 
-**Nota:** Se houver um erro mencionando algo como: `umount: /caminho: dispositivo está ocupado` isso geralmente significa que: um programa (até mesmo um shell) foi mantido em execução no chroot ou que uma submontagem ainda existe. Saia do programa e use `mount` para localizar e desmonte (com `umount`) as submontagens. Pode ser complicado desmontar algumas coisas e pode-se ter sorte com o `umount --force`. Como um último recurso, use `umount --lazy` para apenas liberá-los. Em ambos casos, para ter segurança, reinicialize (com `reboot`) assim que possível se essas coisas ficarem não resolvidas para evitar possíveis conflitos futuros.
+**Nota:** Se houver um erro mencionando algo como: `umount: /caminho: dispositivo está ocupado` isso geralmente significa que: um programa (até mesmo um shell) foi mantido em execução no chroot ou que uma submontagem ainda existe. Saia do programa e use `findmnt -R /local/da/nova/raiz` para localizar e então desmontar (com `umount`) as submontagens. Pode ser complicado desmontar algumas coisas e pode-se ter sorte com o `umount --force`. Como um último recurso, use `umount --lazy` para apenas liberá-los. Em ambos casos, para ter segurança, reinicialize (com `reboot`) assim que possível se essas coisas ficarem não resolvidas para evitar possíveis conflitos futuros.
 
 ## Executar aplicativos gráficos a partir do chroot
 

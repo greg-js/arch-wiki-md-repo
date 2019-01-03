@@ -2,7 +2,7 @@ Related articles
 
 *   [TalkingArch](/index.php/TalkingArch "TalkingArch")
 
-There are many different methods of providing accessibility to users that suffer from a physical or visual handicap. However, unless a [desktop environment](/index.php/Desktop_environment "Desktop environment") is used, the configuration might require some tinkering until one gets it right.
+There are many different methods of providing accessibility to users that have a physical or visual handicap. However, unless a [desktop environment](/index.php/Desktop_environment "Desktop environment") is used, the configuration might require some tinkering until one gets it right.
 
 ## Contents
 

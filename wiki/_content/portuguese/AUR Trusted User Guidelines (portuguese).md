@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [AUR Trusted User Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines"). Data da última tradução: 2018-11-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AUR_Trusted_User_Guidelines&diff=0&oldid=554812) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [AUR Trusted User Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines"). Data da última tradução: 2019-01-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AUR_Trusted_User_Guidelines&diff=0&oldid=558705) na versão em inglês.
 
 Artigos relacionados
 
@@ -136,7 +136,7 @@ Se um pacote foi removido completamente, o mesmo pode ser enviado novamente (do 
 
 ### Movendo pacotes do unsupported para [community]
 
-Siga os procedimentos normais para adição de um pacote ao [community], mas lembre-se de remover o pacote correspondente do unsupported!
+Siga os procedimentos normais para adição de um pacote ao [community], mas lembre-se de remover o pacote correspondente do *unsupported*!
 
 ### Movendo pacotes do [community] para unsupported
 
@@ -145,7 +145,7 @@ Remova o pacote usando as instruções acima e envie o seu tarball fonte para o 
 ### Movendo pacotes do [community-testing] para [community]
 
 ```
-ssh nymeria.archlinux.org /arch/db-move community-testing community package
+$ ssh repos.archlinux.org /community/db-move community-testing community <pacote>
 
 ```
 

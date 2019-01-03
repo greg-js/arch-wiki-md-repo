@@ -1,8 +1,8 @@
 Related articles
 
-*   [List of applications/Documents#Vi text editors](/index.php/List_of_applications/Documents#Vi_text_editors "List of applications/Documents")
+*   [List of applications/Documents#Vi-style text editors](/index.php/List_of_applications/Documents#Vi-style_text_editors "List of applications/Documents")
 
-[Vim](https://en.wikipedia.org/wiki/Vim_(text_editor) is a terminal text editor. It is an extended version of [vi](https://en.wikipedia.org/wiki/vi "wikipedia:vi") with additional features, including syntax highlighting, a comprehensive help system, native scripting (vimscript), a visual mode for text selection, and comparison of files (vimdiff).
+[Vim](https://en.wikipedia.org/wiki/Vim_(text_editor) is a terminal text editor. It is an extended version of [vi](/index.php/Vi "Vi") with additional features, including syntax highlighting, a comprehensive help system, native scripting (vimscript), a visual mode for text selection, and comparison of files (vimdiff).
 
 ## Contents
 
@@ -392,7 +392,7 @@ nnoremap <C-l> :TlistToggle<CR>
 ### Tutorials
 
 *   [vim Tutorial and Primer](https://danielmiessler.com/study/vim/)
-*   [vi Tutorial and Reference Guide](http://usalug.org/vi.html)
+*   [vi Tutorial and Reference Guide](https://web.archive.org/web/20140822135551/http://usalug.com/vi.html)
 *   [Graphical vi-Vim Cheat Sheet and Tutorial](http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html)
 *   [Vim Introduction and Tutorial](http://blog.interlinked.org/tutorials/vim_tutorial.html)
 *   [Open Vim](http://www.openvim.com/) — collection of Vim learning tools

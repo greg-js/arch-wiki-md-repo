@@ -24,7 +24,8 @@ This page specifically concerns the specifics of running Arch Linux on this lapt
     *   [1.2 Graphics](#Graphics)
     *   [1.3 Dolby Atmos Effect on Linux](#Dolby_Atmos_Effect_on_Linux)
     *   [1.4 TLP](#TLP)
-    *   [1.5 Other notes](#Other_notes)
+    *   [1.5 CPU Undervolting](#CPU_Undervolting)
+    *   [1.6 Other notes](#Other_notes)
 *   [2 Specifications](#Specifications)
 
 ## Configuration
@@ -69,6 +70,14 @@ To set battery start/stop thresholds with [tpacpi-bat](https://www.archlinux.org
 
 "START_CHARGE_THRESH_BAT0=80" and "STOP_CHARGE_THRESH_BAT0=90"
 
+The available CPU governors on the X1E are "performance" and "powersave" (see output of "cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors").
+
+### CPU Undervolting
+
+Undervolting the CPU/Intel GPU works well with [intel-undervolt](https://aur.archlinux.org/packages/intel-undervolt/). The ArchWiki describes how to do it: [Undervolting_CPU#intel-undervolt](/index.php/Undervolting_CPU#intel-undervolt "Undervolting CPU").
+
+Generally -150mV seems to be a safe choice on the i7-8750H and i7-8850H CPUs.
+
 ### Other notes
 
 The webcam works out of the box, though it appears connected at all times, no matter the slider state (the camera appears "disconnected" in Windows when the protective slider is closed) - however, when the slider is closed, a completely black image is reported by the camera.
@@ -81,10 +90,10 @@ Everything else works correctly out of the box.
 
 ## Specifications
 
-All information on this page has been tested on laptop part number 20MF000BUS, with the following specifications:
+All information on this page has been tested on laptop part number 20MF000BUS and 20MFCTO1WW, with the following specifications:
 
-*   Intel Core i7-8750H CPU
-*   Hybrid Intel UHD 630/Nvidia GTX 1050 Ti Max-Q graphics
-*   Innolux N156HCE-EN1 1920x1080/60Hz IPS screen (other vendors may be used)
-*   16GB RAM
-*   Intel 7600p series 512GB NVMe SSD drive (other vendors may be used)
+*   CPU: Intel Core i7-8750H / i7-8850H
+*   Graphics: Hybrid Intel UHD 630 + Nvidia GTX 1050 Ti Max-Q
+*   Display: Innolux N156HCE-EN1 1920x1080/60Hz IPS (other vendors may be used)
+*   RAM: 16GB / 32GB
+*   SSD: Intel 7600p series 512GB NVMe / Samsung 970 Pro 1TB NVMe

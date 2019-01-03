@@ -17,10 +17,10 @@ DASH shines in:
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Use DASH as /bin/sh](#Use_DASH_as_.2Fbin.2Fsh)
+*   [2 Use DASH as /bin/sh](#Use_DASH_as_/bin/sh)
     *   [2.1 Identifying bashisms](#Identifying_bashisms)
         *   [2.1.1 Common places to check](#Common_places_to_check)
-    *   [2.2 Relinking /bin/sh](#Relinking_.2Fbin.2Fsh)
+    *   [2.2 Relinking /bin/sh](#Relinking_/bin/sh)
 *   [3 See also](#See_also)
 
 ## Installation
@@ -75,6 +75,8 @@ Exec = /usr/bin/ln -sfT dash /usr/bin/sh
 Depends = dash
 
 ```
+
+This is provided by [dashbinsh](https://aur.archlinux.org/packages/dashbinsh/).
 
 ## See also
 

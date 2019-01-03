@@ -88,7 +88,7 @@ Para modificar o layout, acrescente um nome de arquivo ao [loadkeys(1)](https://
 
 ```
 
-[Fontes de console](/index.php/Console_fonts "Console fonts") estão localizadas em `/usr/share/kbd/consolefonts/` e, de forma semelhante, podem ser definidas com [setfont(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/setfont.8).
+[Fontes de console](/index.php/Fontes_de_console "Fontes de console") estão localizadas em `/usr/share/kbd/consolefonts/` e, de forma semelhante, podem ser definidas com [setfont(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/setfont.8).
 
 ### Verificar o modo de inicialização
 

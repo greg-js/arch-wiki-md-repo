@@ -1,10 +1,10 @@
-**Status de tradução:** Esse artigo é uma tradução de [Locale](/index.php/Locale "Locale"). Data da última tradução: 2018-11-04\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Locale&diff=0&oldid=550402) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Locale](/index.php/Locale "Locale"). Data da última tradução: 2019-01-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Locale&diff=0&oldid=560668) na versão em inglês.
 
 Artigos relacionados
 
 *   [Variáveis de ambiente](/index.php/Vari%C3%A1veis_de_ambiente "Variáveis de ambiente")
 
-Locales, por vezes chamados em português de *localidades*, são usados pelo [glibc](https://www.archlinux.org/packages/?name=glibc) e outros programas ou bibliotecas conscientes de locales para renderizar texto, exibindo corretamente valores monetários regionais, formatos de hora e data, idiossincrasias alfabéticas e outros padrões específicas para locales.
+[Locales](https://en.wikipedia.org/wiki/Locale_(computer_software) "wikipedia:Locale (computer software)"), por vezes chamados em português de *localidades*, são usados pelo [glibc](https://www.archlinux.org/packages/?name=glibc) e outros programas ou bibliotecas conscientes de locales para renderizar texto, exibindo corretamente valores monetários regionais, formatos de hora e data, idiossincrasias alfabéticas e outros padrões específicas para locales.
 
 ## Contents
 
@@ -234,7 +234,7 @@ Se você está usando um ambiente gráfico, como o [GNOME](/index.php/GNOME_(Por
 ## Veja também
 
 *   [Gentoo:Localization/Guide](https://wiki.gentoo.org/wiki/Localization/Guide "gentoo:Localization/Guide")
-*   [Gentoo Wiki Archives: Locales](https://web.archive.org/web/20151218174230/http://www.gentoo-wiki.info/Locales)
+*   [Artigo wiki do Gentoo supostamente de 2008, ou anterior](http://wikigentoo.ksiezyc.pl/Locales.htm)
 *   [Teste de colação interativa da ICU](http://demo.icu-project.org/icu-bin/locexp?_=en_US&x=col)
 *   [Free Standards Group Open Internationalisation Initiative](http://www.openi18n.org/)
 *   [*The Single UNIX Specification* definição de Locale](http://pubs.opengroup.org/onlinepubs/007908799/xbd/locale.html) por The Open Group

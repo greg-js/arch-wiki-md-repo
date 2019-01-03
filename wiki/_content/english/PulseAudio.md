@@ -766,4 +766,4 @@ See [PulseAudio/Troubleshooting](/index.php/PulseAudio/Troubleshooting "PulseAud
 ## See also
 
 *   [PulseAudio official website](https://www.freedesktop.org/wiki/Software/PulseAudio/), including documentation
-*   [Pulseaudio under the hood](https://gavv.github.io/blog/pulseaudio-under-the-hood/)
+*   [Pulseaudio under the hood](https://gavv.github.io/articles/pulseaudio-under-the-hood/)

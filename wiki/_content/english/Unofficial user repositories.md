@@ -775,12 +775,12 @@ Server = http://archlinuxgr.tiven.org/archlinux-kde4/$arch
 
 ### craftdestiny
 
-*   **Maintainer:** [LinuxVieLoisir](https://craftdestiny.ml)
+*   **Maintainer:** [LinuxVieLoisir](https://craftdestiny.ovh)
 *   **Description:** A Craft Destiny repository is there to avoid long compilation on some software. It also adds some very useful additional software.
 
 ```
 [craftdestiny]
-Server = https://miroir.craftdestiny.ml/archlinux-repo/
+Server = https://miroir.craftdestiny.ovh/archlinux-repo/
 
 ```
 

@@ -14,19 +14,19 @@ Utilizzato in combinazione col pacchetto [cpupower](/index.php/Cpupower "Cpupowe
 ## Contents
 
 *   [1 Installazione](#Installazione)
-    *   [1.1 Installare backend per la sospensione alternativi (opzionale)](#Installare_backend_per_la_sospensione_alternativi_.28opzionale.29)
+    *   [1.1 Installare backend per la sospensione alternativi (opzionale)](#Installare_backend_per_la_sospensione_alternativi_(opzionale))
 *   [2 Configurazione di base](#Configurazione_di_base)
-    *   [2.1 Standby / Sospensione su RAM](#Standby_.2F_Sospensione_su_RAM)
-    *   [2.2 Ibernazione (suspend2disk)](#Ibernazione_.28suspend2disk.29)
+    *   [2.1 Standby / Sospensione su RAM](#Standby_/_Sospensione_su_RAM)
+    *   [2.2 Ibernazione (suspend2disk)](#Ibernazione_(suspend2disk))
     *   [2.3 Sospensione e Ibernazione come utente](#Sospensione_e_Ibernazione_come_utente)
         *   [2.3.1 Metodo UPower](#Metodo_UPower)
         *   [2.3.2 Metodo con i permessi Utente](#Metodo_con_i_permessi_Utente)
     *   [2.4 Risparmio Energetico](#Risparmio_Energetico)
-        *   [2.4.1 Cambiare la retroilluminazione in dipendenza dell'alimentazione](#Cambiare_la_retroilluminazione_in_dipendenza_dell.27alimentazione)
-    *   [2.5 Sospensione in caso di idle/inattività](#Sospensione_in_caso_di_idle.2Finattivit.C3.A0)
+        *   [2.4.1 Cambiare la retroilluminazione in dipendenza dell'alimentazione](#Cambiare_la_retroilluminazione_in_dipendenza_dell'alimentazione)
+    *   [2.5 Sospensione in caso di idle/inattività](#Sospensione_in_caso_di_idle/inattività)
     *   [2.6 Utilizzare un file di Swap al posto della regolare partizione swap](#Utilizzare_un_file_di_Swap_al_posto_della_regolare_partizione_swap)
 *   [3 Configurazione avanzata](#Configurazione_avanzata)
-    *   [3.1 Variabili disponibili per l'uso nei file di configurazione](#Variabili_disponibili_per_l.27uso_nei_file_di_configurazione)
+    *   [3.1 Variabili disponibili per l'uso nei file di configurazione](#Variabili_disponibili_per_l'uso_nei_file_di_configurazione)
     *   [3.2 Disabilitare un Hook](#Disabilitare_un_Hook)
         *   [3.2.1 Metodo alternativo](#Metodo_alternativo)
     *   [3.3 Creazione di un Hook personale](#Creazione_di_un_Hook_personale)
@@ -42,13 +42,13 @@ Utilizzato in combinazione col pacchetto [cpupower](/index.php/Cpupower "Cpupowe
     *   [5.7 Schermo nero con cursore fisso quando si tenta di sospendere il sistema](#Schermo_nero_con_cursore_fisso_quando_si_tenta_di_sospendere_il_sistema)
     *   [5.8 Problema schermo nero](#Problema_schermo_nero)
     *   [5.9 Impossibile il resume con arch 64 bit](#Impossibile_il_resume_con_arch_64_bit)
-*   [6 Trucchi e Consigli / FAQ](#Trucchi_e_Consigli_.2F_FAQ)
-    *   [6.1 Riprendere automaticamente i livelli della gestione dell'alimentazione di un HD dopo la sospensione](#Riprendere_automaticamente_i_livelli_della_gestione_dell.27alimentazione_di_un_HD_dopo_la_sospensione)
+*   [6 Trucchi e Consigli / FAQ](#Trucchi_e_Consigli_/_FAQ)
+    *   [6.1 Riprendere automaticamente i livelli della gestione dell'alimentazione di un HD dopo la sospensione](#Riprendere_automaticamente_i_livelli_della_gestione_dell'alimentazione_di_un_HD_dopo_la_sospensione)
     *   [6.2 Riavviare il mouse](#Riavviare_il_mouse)
-    *   [6.3 Aggiungere una modalità sleep al menu di Openbox](#Aggiungere_una_modalit.C3.A0_sleep_al_menu_di_Openbox)
-    *   [6.4 Modificare i pulsanti "sleep" e "power"](#Modificare_i_pulsanti_.22sleep.22_e_.22power.22)
+    *   [6.3 Aggiungere una modalità sleep al menu di Openbox](#Aggiungere_una_modalità_sleep_al_menu_di_Openbox)
+    *   [6.4 Modificare i pulsanti "sleep" e "power"](#Modificare_i_pulsanti_"sleep"_e_"power")
     *   [6.5 Bloccare lo schermo quando si iberna o si sospende](#Bloccare_lo_schermo_quando_si_iberna_o_si_sospende)
-    *   [6.6 Disabilitare l'ibernazione tramite polkit](#Disabilitare_l.27ibernazione_tramite_polkit)
+    *   [6.6 Disabilitare l'ibernazione tramite polkit](#Disabilitare_l'ibernazione_tramite_polkit)
 *   [7 Ulteriori Risorse](#Ulteriori_Risorse)
 
 ## Installazione
@@ -453,7 +453,7 @@ Inoltre, controllare l'output del comando `pm-is-supported`. Questo comando (con
 
 ### Segmentation faults
 
-Se si riscontrano difetti di segmentazione che potrebbe causare il blocco del sistema e di chiavi mancanti, provare a impostare l'UUID nei punti di montaggio in `/boot/grub/menu.lst` come spiegato [sopra](#Ibernazione_.28suspend2disk.29).
+Se si riscontrano difetti di segmentazione che potrebbe causare il blocco del sistema e di chiavi mancanti, provare a impostare l'UUID nei punti di montaggio in `/boot/grub/menu.lst` come spiegato [sopra](#Ibernazione_(suspend2disk)).
 
 ### Il sistema si riavvia invece di ripristinarsi dalla sospensione
 

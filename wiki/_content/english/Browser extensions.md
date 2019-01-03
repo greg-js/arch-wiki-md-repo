@@ -16,6 +16,7 @@ This article lists some [browser extensions](https://en.wikipedia.org/wiki/Brows
 *   [3 Website customization](#Website_customization)
 *   [4 Keyboard shortcuts](#Keyboard_shortcuts)
 *   [5 Edit text with external text editor](#Edit_text_with_external_text_editor)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -166,3 +167,8 @@ Extensions to edit <textarea>s with native [text editors](/index.php/Text_editor
 *   **GhostText** — Use your text editor to write in your browser. Everything you type in the editor will be instantly updated in the browser (and vice versa). Has plugins for [Vim](/index.php/Vim "Vim"), [Emacs](/index.php/Emacs "Emacs"), [Neovim](/index.php/Neovim "Neovim"), [Visual Studio Code](/index.php/Visual_Studio_Code "Visual Studio Code") and [Atom](/index.php/Atom "Atom").
 
 	[https://github.com/GhostText/GhostText](https://github.com/GhostText/GhostText) || [Firefox](/index.php/Firefox "Firefox"), [Chromium](/index.php/Chromium "Chromium")
+
+## See also
+
+*   [Firefox add-ons sorted by user counts](https://addons.mozilla.org/firefox/search/?sort=users)
+*   [List of Firefox extensions at Wikipedia](https://en.wikipedia.org/wiki/List_of_Firefox_extensions "wikipedia:List of Firefox extensions")

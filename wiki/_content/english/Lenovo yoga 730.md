@@ -3,30 +3,19 @@
 ## Contents
 
 *   [1 Install](#Install)
-    *   [1.1 Grub 2](#Grub_2)
-    *   [1.2 Systemd boot](#Systemd_boot)
-    *   [1.3 Packages](#Packages)
+    *   [1.1 Packages](#Packages)
 *   [2 Suspend](#Suspend)
 *   [3 Backlight](#Backlight)
     *   [3.1 Fingerprint reader](#Fingerprint_reader)
     *   [3.2 Thunderbolt 3](#Thunderbolt_3)
         *   [3.2.1 eGPU](#eGPU)
-    *   [3.3 OpenCL](#OpenCL)
-    *   [3.4 Tablet mode](#Tablet_mode)
-    *   [3.5 Pen](#Pen)
-    *   [3.6 External display](#External_display)
+    *   [3.3 Tablet mode](#Tablet_mode)
+    *   [3.4 Pen](#Pen)
+    *   [3.5 External display](#External_display)
 *   [4 Issues](#Issues)
     *   [4.1 USB-C Charging](#USB-C_Charging)
 
 ## Install
-
-### Grub 2
-
-Boot failed for some reason - this might be a strange issue with left over windows "repairing" the boot process
-
-### Systemd boot
-
-This worked after a cold boot - rebooting after install initially failed with a black screen.
 
 ### Packages
 
@@ -36,10 +25,11 @@ This worked after a cold boot - rebooting after install initially failed with a 
 | [bolt](https://www.archlinux.org/packages/?name=bolt) | Thunderbolt 3 |
 | [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom) | Digitiser/Pen support |
 | [nvidia](https://www.archlinux.org/packages/?name=nvidia) | For external GPU |
+| [compute-runtime](https://www.archlinux.org/packages/?name=compute-runtime) | For OpenCL CPU support |
 
 ## Suspend
 
-Closing the lid doesn't suspend. In `/etc/systemd/logind.conf` uncomment the following:
+If closing the lid doesn't suspend. In `/etc/systemd/logind.conf` uncomment the following:
 
  `/etc/systemd/logind.conf/etc/systemd/logind.conf` 
 ```
@@ -51,7 +41,7 @@ HandleLidSwitch=suspend
 
 Works in gnome but can be reduced so far that it goes off, leaving the screen black.
 
-Possible parameters:
+One of these kernel parameters might fix this:
 
  `kernel parameters` 
 ```
@@ -185,28 +175,17 @@ TTYVHangup=yes
 WantedBy=multi-user.target
 ```
 
-### OpenCL
-
-add key with
-```
-gpg2 --recv-key 702353E0F7E48EDB
-pacman -S compute-runtime-bin ocl-icd
-
-```
-
-[blender](/index.php/Blender "Blender") doesn't currently support Intel OpenCL
-
 ### Tablet mode
 
 Try gnome extension slide-for-keyboard, keyboard automatically disables under gnome.
 
 ### Pen
 
-install `xf86-input-wacom`
+install [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom)
 
 ### External display
 
-HDMI on USB-C adaptor just works
+HDMI on USB-C adapter just works
 
 ## Issues
 

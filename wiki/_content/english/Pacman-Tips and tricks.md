@@ -15,15 +15,16 @@ For general methods to improve the flexibility of the provided tips or *pacman* 
         *   [1.1.2 By date](#By_date)
         *   [1.1.3 Not in a specified group or repository](#Not_in_a_specified_group_or_repository)
         *   [1.1.4 Development packages](#Development_packages)
-    *   [1.2 Listing files owned by a package with size](#Listing_files_owned_by_a_package_with_size)
-    *   [1.3 Identify files not owned by any package](#Identify_files_not_owned_by_any_package)
-    *   [1.4 Tracking unowned files created by packages](#Tracking_unowned_files_created_by_packages)
-    *   [1.5 Removing unused packages (orphans)](#Removing_unused_packages_(orphans))
-    *   [1.6 Removing everything but base group](#Removing_everything_but_base_group)
-    *   [1.7 Getting the dependencies list of several packages](#Getting_the_dependencies_list_of_several_packages)
-    *   [1.8 Listing changed backup files](#Listing_changed_backup_files)
-    *   [1.9 Backup the pacman database](#Backup_the_pacman_database)
-    *   [1.10 Check changelogs easily](#Check_changelogs_easily)
+    *   [1.2 Browsing packages](#Browsing_packages)
+    *   [1.3 Listing files owned by a package with size](#Listing_files_owned_by_a_package_with_size)
+    *   [1.4 Identify files not owned by any package](#Identify_files_not_owned_by_any_package)
+    *   [1.5 Tracking unowned files created by packages](#Tracking_unowned_files_created_by_packages)
+    *   [1.6 Removing unused packages (orphans)](#Removing_unused_packages_(orphans))
+    *   [1.7 Removing everything but base group](#Removing_everything_but_base_group)
+    *   [1.8 Getting the dependencies list of several packages](#Getting_the_dependencies_list_of_several_packages)
+    *   [1.9 Listing changed backup files](#Listing_changed_backup_files)
+    *   [1.10 Backup the pacman database](#Backup_the_pacman_database)
+    *   [1.11 Check changelogs easily](#Check_changelogs_easily)
 *   [2 Installation and recovery](#Installation_and_recovery)
     *   [2.1 Installing packages from a CD/DVD or USB stick](#Installing_packages_from_a_CD/DVD_or_USB_stick)
     *   [2.2 Custom local repository](#Custom_local_repository)
@@ -182,6 +183,19 @@ To list all development/unstable packages, run:
 $ pacman -Qq | grep -Ee '-(bzr|cvs|darcs|git|hg|svn)$'
 
 ```
+
+### Browsing packages
+
+To browse all installed packages with an instant preview of each package:
+
+```
+ $ pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'
+
+```
+
+This uses [fzf](/index.php/Fzf "Fzf") to present a two-pane view listing all packages with package info shown on the right.
+
+Enter letters to filter the list of packages; use arrow keys (or `Ctrl-j`/`Ctrl-k`) to navigate; press `Enter` to see package info under *less*.
 
 ### Listing files owned by a package with size
 

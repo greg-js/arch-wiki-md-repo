@@ -6,8 +6,8 @@
     *   [1.1 Text editors](#Text_editors)
         *   [1.1.1 Console](#Console)
         *   [1.1.2 Graphical](#Graphical)
-        *   [1.1.3 Emacs text editors](#Emacs_text_editors)
-        *   [1.1.4 Vi text editors](#Vi_text_editors)
+        *   [1.1.3 Emacs-style text editors](#Emacs-style_text_editors)
+        *   [1.1.4 Vi-style text editors](#Vi-style_text_editors)
     *   [1.2 Office](#Office)
         *   [1.2.1 Office suites](#Office_suites)
         *   [1.2.2 Word processors](#Word_processors)
@@ -277,7 +277,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[https://wxmedit.github.io/](https://wxmedit.github.io/) || [wxmedit](https://aur.archlinux.org/packages/wxmedit/)
 
-#### Emacs text editors
+#### Emacs-style text editors
 
 *   **[Emacs](/index.php/Emacs "Emacs")** — The extensible, customizable, self-documenting real-time display editor by GNU.
 
@@ -299,7 +299,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[https://www.gnu.org/software/zile/](https://www.gnu.org/software/zile/) || [zile](https://www.archlinux.org/packages/?name=zile)
 
-#### Vi text editors
+#### Vi-style text editors
 
 *   **Amp** — Text editor written in Rust, that aims to take the core interaction model of Vim, simplify it, and bundle in the essential features required for a modern text editor.
 

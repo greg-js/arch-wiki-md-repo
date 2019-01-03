@@ -15,7 +15,7 @@
 *   [1 Installation](#Installation)
 *   [2 Running](#Running)
 *   [3 Configuration](#Configuration)
-    *   [3.1 DHCP static route(s)](#DHCP_static_route.28s.29)
+    *   [3.1 DHCP static route(s)](#DHCP_static_route(s))
     *   [3.2 DHCP Client Identifier](#DHCP_Client_Identifier)
     *   [3.3 Static profile](#Static_profile)
         *   [3.3.1 Fallback profile](#Fallback_profile)
@@ -33,7 +33,7 @@
     *   [6.4 dhcpcd and systemd network interfaces](#dhcpcd_and_systemd_network_interfaces)
     *   [6.5 Timeout delay](#Timeout_delay)
 *   [7 Known issues](#Known_issues)
-    *   [7.1 dhcpcd@.service causes slow startup](#dhcpcd.40.service_causes_slow_startup)
+    *   [7.1 dhcpcd@.service causes slow startup](#dhcpcd@.service_causes_slow_startup)
 *   [8 See also](#See_also)
 
 ## Installation

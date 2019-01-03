@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Display manager](/index.php/Display_manager "Display manager"). Data da última tradução: 2018-11-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Display_manager&diff=0&oldid=556894) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Display manager](/index.php/Display_manager "Display manager"). Data da última tradução: 2019-01-02\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Display_manager&diff=0&oldid=558987) na versão em inglês.
 
 Artigos relacionados
 
@@ -40,7 +40,7 @@ Um [gerenciador de exibição](https://en.wikipedia.org/wiki/X_display_manager_(
 
 	[https://github.com/cylgom/ly](https://github.com/cylgom/ly) || [ly-git](https://aur.archlinux.org/packages/ly-git/)
 
-*   **tbsm** — Uma sessão bash ou lançador de aplicativos.
+*   **tbsm** — Uma sessão bash ou lançador de aplicativos, possuindo suporte a sessões X e Wayland.
 
 	[https://loh-tar.github.io/tbsm/](https://loh-tar.github.io/tbsm/) || [tbsm](https://aur.archlinux.org/packages/tbsm/)
 
@@ -58,7 +58,7 @@ Um [gerenciador de exibição](https://en.wikipedia.org/wiki/X_display_manager_(
 
 	[https://sourceforge.net/projects/lxdm/](https://sourceforge.net/projects/lxdm/) || [lxdm](https://www.archlinux.org/packages/?name=lxdm)
 
-*   **[SDDM](/index.php/SDDM "SDDM")** — Gerenciador de exibição baseado no QML e sucesso para o kdm do KDE4; recomendado para Plasma 5 e LXQt.
+*   **[SDDM](/index.php/SDDM "SDDM")** — Gerenciador de exibição baseado no QML e sucessor do KDM; recomendado para [Plasma](/index.php/Plasma "Plasma") e [LXQt](/index.php/LXQt "LXQt").
 
 	[https://github.com/sddm/sddm](https://github.com/sddm/sddm) || [sddm](https://www.archlinux.org/packages/?name=sddm)
 

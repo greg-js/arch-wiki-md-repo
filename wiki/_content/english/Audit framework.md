@@ -23,7 +23,7 @@ The audit framework works by listening to the event reported by the kernel and l
 
 ## Installation
 
-In-kernel audit support is available in [linux](https://www.archlinux.org/packages/?name=linux) (since 4.18), [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) (since 4.18) and [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened). For custom kernels `CONFIG_AUDIT` should be enabled. Audit can be enabled at boot-time by setting `audit=1` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter").
+In-kernel audit support is available in [linux](https://www.archlinux.org/packages/?name=linux) (since 4.18), [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) (since 4.19), [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) (since 4.18) and [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened). For custom kernels `CONFIG_AUDIT` should be enabled. Audit can be enabled at boot-time by setting `audit=1` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter").
 
 For userspace support [install](/index.php/Install "Install") [audit](https://www.archlinux.org/packages/?name=audit) and [start/enable](/index.php/Start/enable "Start/enable") `auditd.service`.
 

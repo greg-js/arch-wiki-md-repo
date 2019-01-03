@@ -1,14 +1,27 @@
 A **package group** is a set of related packages, defined by the [packager](/index.php/Packager "Packager"), which can be installed or uninstalled simultaneously by using the group name as a substitute for each individual package name. While a group is not a package, it can be installed in a similar fashion to a package, see [Pacman#Installing package groups](/index.php/Pacman#Installing_package_groups "Pacman") and [PKGBUILD#groups](/index.php/PKGBUILD#groups "PKGBUILD").
 
+## Contents
+
+*   [1 Groups](#Groups)
+    *   [1.1 base](#base)
+    *   [1.2 base-devel](#base-devel)
+*   [2 Difference to a meta package](#Difference_to_a_meta_package)
+*   [3 See also](#See_also)
+
+## Groups
+
 The most important package groups are:
 
-	base
+### base
 
-	The [base](https://www.archlinux.org/groups/x86_64/base/) group contains essential software like the [kernel](/index.php/Kernel "Kernel"), [Bash](/index.php/Bash "Bash"), the [core utilities](/index.php/Core_utilities "Core utilities") and [pacman](/index.php/Pacman "Pacman") and non-essential software like [dhcpcd](/index.php/Dhcpcd "Dhcpcd") and [netctl](/index.php/Netctl "Netctl").
+The [base](https://www.archlinux.org/groups/x86_64/base/) group contains:
 
-	base-devel
+*   essential software like the [kernel](/index.php/Kernel "Kernel"), [Bash](/index.php/Bash "Bash"), the [core utilities](/index.php/Core_utilities "Core utilities") and [pacman](/index.php/Pacman "Pacman")
+*   non-essential software like [dhcpcd](/index.php/Dhcpcd "Dhcpcd"), [netctl](/index.php/Netctl "Netctl"), [nano](/index.php/Nano "Nano") and [vi](/index.php/Vi "Vi").
 
-	The [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group contains tools required to build many packages. See also [makepkg#Usage](/index.php/Makepkg#Usage "Makepkg").
+### base-devel
+
+The [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group contains tools required to build many packages like [GCC](/index.php/GCC "GCC") and [make](/index.php/GNU_make "GNU make"). See also [makepkg#Usage](/index.php/Makepkg#Usage "Makepkg").
 
 ## Difference to a meta package
 

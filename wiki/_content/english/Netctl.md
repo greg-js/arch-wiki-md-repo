@@ -256,7 +256,7 @@ Setting the MODE in the netctl configuration is not always successful and it may
 
 #### Wired to wireless failover
 
-This example describes how to use *bonding* to fallback to wireless when the wired ethernet goes down. This is most useful when both the wired and wireless interface will be connected to the same network. Your wireless router/access point must be configured in *bridge* mode.
+This example describes how to use *bonding* to fallback to wireless when the wired ethernet goes down. This is most useful when both the wired and wireless interface will be connected to the same network. Your wireless router/access point must be configured in [bridge](/index.php/Bridge "Bridge") mode.
 
 You will need additional packages from the official repositories: [ifenslave](https://www.archlinux.org/packages/?name=ifenslave) and [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant).
 

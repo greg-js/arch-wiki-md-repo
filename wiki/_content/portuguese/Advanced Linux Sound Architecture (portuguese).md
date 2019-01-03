@@ -2,7 +2,7 @@
 
 Artigos relacionados
 
-*   [Advanced Linux Sound Architecture/Example Configurations](/index.php/Advanced_Linux_Sound_Architecture/Example_Configurations "Advanced Linux Sound Architecture/Example Configurations")
+*   [Advanced Linux Sound Architecture/Exemplo de configurações](/index.php/Advanced_Linux_Sound_Architecture/Exemplo_de_configura%C3%A7%C3%B5es "Advanced Linux Sound Architecture/Exemplo de configurações")
 *   [Advanced Linux Sound Architecture/Troubleshooting](/index.php/Advanced_Linux_Sound_Architecture/Troubleshooting "Advanced Linux Sound Architecture/Troubleshooting")
 *   [Sistema de som](/index.php/Sistema_de_som "Sistema de som")
 *   [Disable PC Speaker Beep](/index.php/Disable_PC_Speaker_Beep "Disable PC Speaker Beep")

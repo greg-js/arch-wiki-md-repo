@@ -76,7 +76,6 @@ build() {
 package() {
     *python* setup.py install --root="$pkgdir/" --optimize=1 --skip-build
 }
-
 ```
 
 where:
@@ -125,7 +124,7 @@ For packages that do this, we need a [prepare()](/index.php/Creating_packages#pr
 makedepends=("python-setuptools" "python2-setuptools")
 
 prepare() {
-  cp -a foo-$pkgver{,-py2}
+    cp -a foo-$pkgver{,-py2}
 }
 
 build() {
@@ -147,10 +146,11 @@ package_python2-foo() {
     cd "$srcdir/foo-$pkgver-py2"
     python2 setup.py install --root="$pkgdir/" --optimize=1 --skip-build
 }
-
 ```
 
 ## Check
+
+**Warning:** Avoid using `tox` to run testsuites as it is explicitly designed to test repeatable configurations downloaded from PyPI while `tox` is running, and does **not** test the version that will be installed by the package. This defeats the purpose of having a *check* function at all.
 
 Most python projects providing a testsuite use nosetests or pytest to run tests with `test` in the name of the file or directory containing the testsuite. In general, simply running `nosetests` or `pytest` is enough to run the testsuite.
 

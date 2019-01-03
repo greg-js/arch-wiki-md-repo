@@ -81,3 +81,7 @@ keep_alive2_flag = '\xd8'
 ## 注意事项以及疑难解答
 
 更多配置以及事项请见[github wiki](https://github.com/drcoms/drcom-generic/wiki)页面
+
+*   大部分学校配置可能无法生成，可参阅一下链接
+
+[可用学校列表](https://github.com/drcoms/drcom-generic/wiki/%E5%8F%AF%E7%94%A8%E5%AD%A6%E6%A0%A1%E5%88%97%E8%A1%A8)

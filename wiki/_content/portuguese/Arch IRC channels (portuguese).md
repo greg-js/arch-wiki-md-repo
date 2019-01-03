@@ -2,7 +2,7 @@
 
 Artigos relacionados
 
-*   [ArchWiki:IRC](/index.php/ArchWiki:IRC "ArchWiki:IRC")
+*   [ArchWiki:IRC (Português)](/index.php/ArchWiki:IRC_(Portugu%C3%AAs) "ArchWiki:IRC (Português)")
 *   [Comunidades internacionais](/index.php/Comunidades_internacionais "Comunidades internacionais")
 *   [phrik](/index.php/Phrik "Phrik")
 

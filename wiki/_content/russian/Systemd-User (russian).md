@@ -12,13 +12,12 @@
 
 *   [1 Как это работает](#Как_это_работает)
 *   [2 Основные настройки](#Основные_настройки)
-    *   [2.1 D-Bus](#D-Bus)
-    *   [2.2 Переменные окружения](#Переменные_окружения)
-        *   [2.2.1 Пример службы](#Пример_службы)
-        *   [2.2.2 DISPLAY и XAUTHORITY](#DISPLAY_и_XAUTHORITY)
-        *   [2.2.3 PATH](#PATH)
-        *   [2.2.4 pam_environment](#pam_environment)
-    *   [2.3 Автоматический запуск systemd от имени пользователя](#Автоматический_запуск_systemd_от_имени_пользователя)
+    *   [2.1 Переменные окружения](#Переменные_окружения)
+        *   [2.1.1 Пример службы](#Пример_службы)
+        *   [2.1.2 DISPLAY и XAUTHORITY](#DISPLAY_и_XAUTHORITY)
+        *   [2.1.3 PATH](#PATH)
+        *   [2.1.4 pam_environment](#pam_environment)
+    *   [2.2 Автоматический запуск systemd от имени пользователя](#Автоматический_запуск_systemd_от_имени_пользователя)
 *   [3 Xorg и systemd](#Xorg_и_systemd)
     *   [3.1 Автоматический логин в Xorg без экранного менеджера](#Автоматический_логин_в_Xorg_без_экранного_менеджера)
     *   [3.2 Xorg как служба systemd пользователь](#Xorg_как_служба_systemd_пользователь)
@@ -55,23 +54,24 @@
 
 Все пользовательские службы размещаются в `~/.config/systemd/user/`. Если вы хотите запускать службы при первом входе в систему, выполните `systemctl --user enable *service*` для любой службы, которую вы хотите сделать автозагрузочной.
 
-### D-Bus
-
-Некоторые программы нуждаются в [D-Bus](/index.php/D-Bus "D-Bus") пользовательской шине сообщений, и Systemd является менеджером шины сообщений пользователя.[[3]](https://www.archlinux.org/news/d-bus-now-launches-user-buses/) *dbus-daemon* запускается только один раз для каждого пользователя и для всех его сеансов с предусмотренными для этого `dbus.socket` и `dbus.service` службами.
-
-**Примечание:** Если ранее Вы уже создали эти службы вручную в `/etc/systemd/user/` или `~/.config/systemd/user/`, то они могут быть удалены.
+**Совет:** Если вы хотите включить службу для всех пользователей, а не для пользователя, выполняющего команду *systemctl* , запустите `systemctl --user --global enable *service*` от имени суперпользователя.
 
 ### Переменные окружения
 
 Пользовательский процесс systemd не наследует какую-либо из [переменных окружения](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Environment variables (Русский)"), установленных в `.bashrc` или других. Существует несколько способов установить переменные окружения для systemd:
 
-1.  Для переменной `$HOME` пользовательского каталога, используйте опцию `DefaultEnvironment` в `~/.config/systemd/user.conf`. Применяется только к части пользовательских служб.
-2.  Используйте опцию `DefaultEnvironment` в `/etc/systemd/user.conf`. Применяется ко всем пользовательским службам.
-3.  Добавление конфигурационного файла в `/etc/systemd/system/user@.service.d/`. Применяется ко всем пользовательским процессам; см [#Пример службы](#Пример_службы)
-4.  Для временного изменения используйте `systemctl --user set-environment` или `systemctl --user import-environment`. Применяется ко всем пользовательским службам, созданным после установки переменных окружения, но не к службам, которые уже были запущены.
-5.  Используйте `dbus-update-activation-environment --systemd --all` команда обеспечивается [dbus](/index.php/Dbus "Dbus"). Имеет тот же эффект, что и `systemctl --user import-environment`, но так же влияет на сессию D-Bus. Вы можете добавить это в конец вашего файла инициализации оболочки.
+1.  Для переменной `$HOME` пользовательского каталога, создайте файл *.conf* в каталоге `~/.config/environment.d/` со строками вида {{ic | 1 = NAME = VAL}. Применяется только к части пользовательских служб.
 
-Одну переменную Вы можете установить в `PATH`.
+Смотрите [environment.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/environment.d.5) для получения дополнительной информации.
+
+1.  Используйте опцию `DefaultEnvironment` в `/etc/systemd/user.conf`. Применяется ко всем пользовательским службам.
+2.  Добавление конфигурационного файла в `/etc/systemd/system/user@.service.d/`. Применяется ко всем пользовательским процессам; см [#Пример службы](#Пример_службы)
+3.  Для временного изменения используйте `systemctl --user set-environment` или `systemctl --user import-environment`. Применяется ко всем пользовательским службам, созданным после установки переменных окружения, но не к службам, которые уже были запущены.
+4.  Используйте `dbus-update-activation-environment --systemd --all` команда обеспечивается [dbus](/index.php/Dbus "Dbus"). Имеет тот же эффект, что и `systemctl --user import-environment`, но так же влияет на сессию D-Bus. Вы можете добавить это в конец вашего файла инициализации оболочки.
+5.  Для "глобальных" переменных среды для пользовательской среды вы можете использовать каталоги environment.d, которые анализируются генераторами systemd. Смотрите [environment.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/environment.d.5) для получения дополнительной информации.
+6.  Вы также можете написать скрипт генератора среды, который может создавать переменные среды, которые варьируются от пользователя к пользователю. Это, вероятно, лучший способ, если вам нужны индивидуальные среды (это относится к XDG_RUNTIME_DIR, DBUS_SESSION_BUS_ADDRESS и т.д.). Смотрите [systemd.environment-generator(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.environment-generator.7).
+
+Одну переменную Вы можете установить в `PATH`. После настройки можно использовать команду `systemctl --user show-environment` для проверки правильности значений.
 
 #### Пример службы
 
@@ -80,7 +80,7 @@
  `/etc/systemd/system/user@.service.d/local.conf` 
 ```
 [Service]
-Environment="PATH=/usr/lib/ccache/bin/:$PATH"
+Environment="PATH=/usr/lib/ccache/bin:/usr/local/bin:/usr/bin:/bin"
 Environment="EDITOR=nano -c"
 Environment="BROWSER=firefox"
 Environment="NO_AT_BRIDGE=1"
@@ -88,7 +88,7 @@ Environment="NO_AT_BRIDGE=1"
 
 #### DISPLAY и XAUTHORITY
 
-Переменная `DISPLAY` используется любым графическим приложением, чтобы знать, какой дисплей использовать, `XAUTHORITY`, чтобы указать путь к пользовательскому файлу `.Xauthority`, а также куки, необходимые для запуска Х-сервера. Если Вы планируете запускать графические приложения из процесса systemd, то эти переменные обязательно должны быть установлены. Systemd предоставляет скрипт в `/etc/X11/xinit/xinitrc.d/50-systemd-user.sh` для импорта этих переменных в пользовательскую сессию systemd на запуск X. [[4]](https://github.com/systemd/systemd/blob/v219/NEWS#L194) Так что если Вы не запускаете Х нестандартным образом, пользовательские службы должны знать переменные `DISPLAY` и `XAUTHORITY`.
+Переменная `DISPLAY` используется любым графическим приложением, чтобы знать, какой дисплей использовать, `XAUTHORITY`, чтобы указать путь к пользовательскому файлу `.Xauthority`, а также куки, необходимые для запуска Х-сервера. Если Вы планируете запускать графические приложения из процесса systemd, то эти переменные обязательно должны быть установлены. Systemd предоставляет скрипт в `/etc/X11/xinit/xinitrc.d/50-systemd-user.sh` для импорта этих переменных в пользовательскую сессию systemd на запуск X. [[3]](https://github.com/systemd/systemd/blob/v219/NEWS#L194) Так что если Вы не запускаете Х нестандартным образом, пользовательские службы должны знать переменные `DISPLAY` и `XAUTHORITY`.
 
 #### PATH
 
@@ -99,6 +99,8 @@ Environment="NO_AT_BRIDGE=1"
 systemctl --user import-environment PATH
 
 ```
+
+Обратите внимание, что это не повлияет на системные службы, запущенные до получения `~/.bash_profile`.
 
 #### pam_environment
 
@@ -167,7 +169,7 @@ Unfortunately, to be able to run xorg in unprivileged mode, it needs to run insi
 
 **Примечание:** This is not a fundamental restriction imposed by logind, but the reason seems to be that xorg needs to know which session to take over, and right now it gets this information calling [logind](http://www.freedesktop.org/wiki/Software/systemd/logind)'s `GetSessionByPID` using its own pid as argument. See [this thread](http://lists.x.org/archives/xorg-devel/2014-February/040476.html) and [xorg sources](http://cgit.freedesktop.org/xorg/xserver/tree/hw/xfree86/os-support/linux/systemd-logind.c). It seems likely that xorg could be modified to get the session from the tty it is attaching to, and then it could run unprivileged from a user service outside a session.
 
-**Важно:** On xorg 1.18 socket activation seems to be broken. The client triggering the activation deadlocks. See the upstream bug report [[5]](https://bugs.freedesktop.org/show_bug.cgi?id=93072). As a temporary workaround you can start the xorg server without socket activation, making sure the clients connect after a delay, so the server is fully started. There seems to be no nice mechanism te get startup notification for the X server.
+**Важно:** On xorg 1.18 socket activation seems to be broken. The client triggering the activation deadlocks. See the upstream bug report [[4]](https://bugs.freedesktop.org/show_bug.cgi?id=93072). As a temporary workaround you can start the xorg server without socket activation, making sure the clients connect after a delay, so the server is fully started. There seems to be no nice mechanism te get startup notification for the X server.
 
 This is how to launch xorg from a user service:
 
@@ -230,7 +232,7 @@ Now running any X application will launch xorg on virtual terminal 2 automatical
 
 The environment variable `XDG_VTNR` can be set in the systemd environment from `.bash_profile`, and then one could start any X application, including a window manager, as a systemd unit that depends on `xorg@0.socket`.
 
-**Важно:** Currently running a window manager as a user service means it runs outside of a session with the problems this may bring: [break the session](/index.php/General_troubleshooting#Session_permissions "General troubleshooting"). However, it seems that systemd developers intend to make something like this possible. See [[6]](https://mail.gnome.org/archives/desktop-devel-list/2014-January/msg00079.html) and [[7]](http://lists.freedesktop.org/archives/systemd-devel/2014-March/017552.html)
+**Важно:** Currently running a window manager as a user service means it runs outside of a session with the problems this may bring: [break the session](/index.php/General_troubleshooting#Session_permissions "General troubleshooting"). However, it seems that systemd developers intend to make something like this possible. See [[5]](https://mail.gnome.org/archives/desktop-devel-list/2014-January/msg00079.html) and [[6]](http://lists.freedesktop.org/archives/systemd-devel/2014-March/017552.html)
 
 ## Написание пользовательских юнитов
 

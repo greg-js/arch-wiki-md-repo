@@ -2,15 +2,15 @@
 
 ## Contents
 
-*   [1 Instalação](#Instala.C3.A7.C3.A3o)
-*   [2 Configuração](#Configura.C3.A7.C3.A3o)
+*   [1 Instalação](#Instalação)
+*   [2 Configuração](#Configuração)
     *   [2.1 IPv6](#IPv6)
     *   [2.2 Avahi](#Avahi)
-*   [3 Uso autônomo](#Uso_aut.C3.B4nomo)
+*   [3 Uso autônomo](#Uso_autônomo)
 *   [4 Configurar o Pacman para usar Pacserve](#Configurar_o_Pacman_para_usar_Pacserve)
-*   [5 Solução de problemas](#Solu.C3.A7.C3.A3o_de_problemas)
+*   [5 Solução de problemas](#Solução_de_problemas)
     *   [5.1 Problemas se usar baixadores externos no pacman.conf](#Problemas_se_usar_baixadores_externos_no_pacman.conf)
-*   [6 Veja também](#Veja_tamb.C3.A9m)
+*   [6 Veja também](#Veja_também)
 
 ## Instalação
 
@@ -28,7 +28,7 @@ O `pacserve.service` pode ser configurado editando `PACSERVE_ARGS` em `/etc/pacs
 
 ### IPv6
 
-Para habilitar suporte a [IPv6](/index.php/IPv6 "IPv6"), adicione a opção `--ipv6` a `PACSERVE_ARGS` em `/etc/pacserve/pacserve.service.conf`.
+Para habilitar suporte a [IPv6](/index.php/IPv6_(Portugu%C3%AAs) "IPv6 (Português)"), adicione a opção `--ipv6` a `PACSERVE_ARGS` em `/etc/pacserve/pacserve.service.conf`.
 
 ### Avahi
 
@@ -80,4 +80,4 @@ XferCommand = /usr/bin/wget --timeout=6 --passive-ftp -c -O '%o' '%u'
 
 ## Veja também
 
-*   [tópico do pacserve no fórum do Arch Linux](https://bbs.archlinux.org/viewtopic.php?id=117094)
+*   [Tópico do pacserve no fórum do Arch Linux](https://bbs.archlinux.org/viewtopic.php?id=117094)

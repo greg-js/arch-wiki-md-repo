@@ -150,7 +150,7 @@ This can be resolved using [lenovo-throttling-fix-git](https://aur.archlinux.org
 
 ## Thermal Modes / Fan profiles
 
-Just like in Windows by using Dell Power Manager you can set the thermal configuration and behaviour of the fans of your machine. This is done within a terminal with the following commands.
+Just like in Windows by using Dell Power Manager you can set the thermal configuration and behaviour of the fans and CPU of your machine. This is done within a terminal with the following commands.
 
 To find out what thermal mode is set type:
 
@@ -172,6 +172,12 @@ And finally to set the desired thermal mode that you identified with the command
 # smbios-thermal-ctl --set-thermal-mode=THERMAL_MODE
 
 ```
+
+*   "Quiet" profile limits CPU power to 11W (18W boost) and thus reduces overall system performance.
+*   "Balanced" and "Performance" profiles remove this limit.
+*   Thermal profile changes may not reliably alter the CPU power limit. When connected via Thunderbolt dock it appears to be worse.
+*   In some circumstances after booting (particularly with "Quiet" profile), power may be limited to 10W.
+*   Disconnecting and reconnecting power, changing thermal profile, or simply waiting may resolve these issues.
 
 ## Power Saving
 

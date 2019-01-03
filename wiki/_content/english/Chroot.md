@@ -167,7 +167,7 @@ Then unmount the temporary file systems:
 
 If you have an [X server](/index.php/X_server "X server") running on your system, you can start graphical applications from the chroot environment.
 
-To allow the chroot environment to connect to an X server, open a virtual terminal inside the X server (i.e. inside the desktop of the user that is currently logged in), then run the [xhost](/index.php/Xhost "Xhost") command, which gives permission to anyone to connect to the user's X server:
+To allow the chroot environment to connect to an X server, open a virtual terminal inside the X server (i.e. inside the desktop of the user that is currently logged in), then run the [xhost](/index.php/Xhost "Xhost") command, which gives permission to anyone to connect to the user's X server (see also [Xhost](/index.php/Xhost "Xhost")):
 
 ```
 $ xhost +local:

@@ -398,7 +398,7 @@ password=secret
 
 ```
 
-Mentioning a user here is optional, but doing so will free you from having to mention it on the command line.
+Mentioning a user here is optional, but doing so will free you from having to mention it on the command line. If you want to set this for all tools, including `mysql`, use the `[client]` group.
 
 #### Example script
 

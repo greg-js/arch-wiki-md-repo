@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Go package guidelines](/index.php/Go_package_guidelines "Go package guidelines"). Data da última tradução: 2018-11-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Go_package_guidelines&diff=0&oldid=556838) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Go package guidelines](/index.php/Go_package_guidelines "Go package guidelines"). Data da última tradução: 2018-12-31\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Go_package_guidelines&diff=0&oldid=561069) na versão em inglês.
 
 **[Diretrizes de criação de pacotes](/index.php/Padr%C3%B5es_de_empacotamento_do_Arch "Padrões de empacotamento do Arch")**
 
@@ -42,11 +42,12 @@ Ao preparar as fontes antes de construir, pode ser necessário o seguinte:
 
 ```
 prepare(){
-  mkdir -p "gopath/src/github.com/pkgbuild-example"
-  ln -rTsf "${pkgname}-${pkgver}" "gopath/src/github.com/pkgbuild-example/$pkgname"
+  mkdir -p gopath/src/github.com/pkgbuild-example
+  ln -rTsf $pkgname-$pkgver gopath/src/github.com/pkgbuild-example/$pkgname
+  export GOPATH="$srcdir"/gopath
 
   # as dependências podem ser obtidas aqui, se necessário
-  cd "gopath/src/github.com/pkgbuild-example/$pkgname"
+  cd gopath/src/github.com/pkgbuild-example/$pkgname
   dep ensure
 }
 
@@ -91,7 +92,7 @@ Projetos como esses têm um arquivo `go.mod` e um `go.sum`.
 
 ```
 build(){
-  cd "$pkgname-$pkgver"
+  cd $pkgname-$pkgver
   go build .
 }
 
@@ -105,17 +106,17 @@ Ao compilarmos pacotes com [$GOPATH](/index.php/Go#$GOPATH "Go"), existem alguns
 
 ```
 prepare(){
-  mkdir -p "gopath/src/github.com/pkgbuild-example"
-  ln -rTsf "${pkgname}-${pkgver}" "gopath/src/github.com/pkgbuild-example/$pkgname"
+  mkdir -p gopath/src/github.com/pkgbuild-example
+  ln -rTsf $pkgname-$pkgver gopath/src/github.com/pkgbuild-example/$pkgname
 
   # as dependências podem ser obtidas aqui se necessário
-  cd "gopath/src/github.com/pkgbuild-example/$pkgname"
+  cd gopath/src/github.com/pkgbuild-example/$pkgname
   dep ensure
 }
 
 build(){
-  export GOPATH="$srcdir/gopath"
-  cd "gopath/src/github.com/pkgbuild-example/$pkgname"
+  export GOPATH="$srcdir"/gopath
+  cd gopath/src/github.com/pkgbuild-example/$pkgname
   go install -v .
 }
 
@@ -152,17 +153,17 @@ source=("$url/$pkgname-$pkgver.tar.gz")
 sha256sums=('1337deadbeef')
 
 build() {
-  cd "$pkgname-$pkgver"
+  cd $pkgname-$pkgver
   go build \
     -gcflags "all=-trimpath=$PWD" \
     -asmflags "all=-trimpath=$PWD" \
     -ldflags "-extldflags $LDFLAGS" \
-    -o "$pkgname" .
+    -o $pkgname .
 }
 
 package() {
-  cd "$pkgname-$pkgver"
-  install -Dm755 "$pkgname" "$pkgdir/usr/bin/$pkgname"
+  cd $pkgname-$pkgver
+  install -Dm755 $pkgname "$pkgdir"/usr/bin/$pkgname
 }
 
 ```
@@ -183,14 +184,14 @@ sha256sums=('1337deadbeef')
 
 prepare(){
   mkdir -p gopath/src/example.org/foo
-  ln -rTsf "$pkgname-$pkgver" gopath/src/example.org/foo
-  cd "gopath/src/example.org/foo"
+  ln -rTsf $pkgname-$pkgver gopath/src/example.org/foo
+  cd gopath/src/example.org/foo
   dep ensure
 }
 
 build() {
-  export GOPATH="$srcdir/gopath"
-  cd "$GOPATH/src/example.org/foo
+  export GOPATH="$srcdir"/gopath
+  cd gopath/src/example.org/foo
   go install \
     -gcflags "all=-trimpath=$GOPATH" \
     -asmflags "all=-trimpath=$GOPATH" \
@@ -199,13 +200,13 @@ build() {
 }
 
 check() {
-  export GOPATH="$srcdir/gopath"
-  cd "$GOPATH/src/example.org/foo
+  export GOPATH="$srcdir"/gopath
+  cd gopath/src/example.org/foo
   go test ./...
 }
 
 package() {
-  install -Dm755 "gopath/bin/$pkgname" "$pkgdir/usr/bin/$pkgname"
+  install -Dm755 gopath/bin/$pkgname "$pkgdir"/usr/bin/$pkgname
 }
 
 ```

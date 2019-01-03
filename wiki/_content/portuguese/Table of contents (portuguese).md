@@ -4,7 +4,7 @@
 | <small>1.2.</small> [Desenvolvimento do Arch](/index.php/Category:Arch_development_(Portugu%C3%AAs) "Category:Arch development (Português)") <small>(4) (também em [Development](/index.php/Category:Development_(Portugu%C3%AAs) "Category:Development (Português)"))</small> |
 | <small>1.2.1.</small> [Desenvolvimento de pacotes](/index.php/Category:Package_development_(Portugu%C3%AAs) "Category:Package development (Português)") <small>(11)</small> |
 | <small>1.2.1.1.</small> [Arch package guidelines](/index.php/Category:Arch_package_guidelines_(Portugu%C3%AAs) "Category:Arch package guidelines (Português)") <small>(24)</small> |
-| <small>1.3.</small> [ArchWiki](/index.php/Category:ArchWiki_(Portugu%C3%AAs) "Category:ArchWiki (Português)") <small>(6)</small> |
+| <small>1.3.</small> [ArchWiki](/index.php/Category:ArchWiki_(Portugu%C3%AAs) "Category:ArchWiki (Português)") <small>(8)</small> |
 | <small>1.3.1.</small> [Help](/index.php/Category:Help_(Portugu%C3%AAs) "Category:Help (Português)") <small>(15)</small> |
 | <small>1.3.2.</small> [Lists](/index.php/Category:Lists_(Portugu%C3%AAs) "Category:Lists (Português)") <small>(2)</small> |
 | <small>1.3.2.1.</small> [Lists of software](/index.php/Category:Lists_of_software_(Portugu%C3%AAs) "Category:Lists of software (Português)") <small>(8) (também em [Software](/index.php/Category:Software_(Portugu%C3%AAs) "Category:Software (Português)"))</small> |
@@ -48,7 +48,7 @@
 | <small>5.2.</small> [Email](/index.php/Category:Email_(Portugu%C3%AAs) "Category:Email (Português)") <small>(0)</small> |
 | <small>5.2.1.</small> [Mail server](/index.php/Category:Mail_server_(Portugu%C3%AAs) "Category:Mail server (Português)") <small>(2) (também em [Servers](/index.php/Category:Servers_(Portugu%C3%AAs) "Category:Servers (Português)"))</small> |
 | <small>5.3.</small> [Internet applications](/index.php/Category:Internet_applications_(Portugu%C3%AAs) "Category:Internet applications (Português)") <small>(2)</small> |
-| <small>5.3.1.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat_(Portugu%C3%AAs) "Category:Internet Relay Chat (Português)") <small>(2)</small> |
+| <small>5.3.1.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat_(Portugu%C3%AAs) "Category:Internet Relay Chat (Português)") <small>(3)</small> |
 | <small>5.3.2.</small> [Web browser](/index.php/Category:Web_browser_(Portugu%C3%AAs) "Category:Web browser (Português)") <small>(1)</small> |
 | <small>5.4.</small> [Network Configuration](/index.php/Category:Network_Configuration_(Portugu%C3%AAs) "Category:Network Configuration (Português)") <small>(1)</small> |
 | <small>5.5.</small> [Network configuration](/index.php/Category:Network_configuration_(Portugu%C3%AAs) "Category:Network configuration (Português)") <small>(2)</small> |

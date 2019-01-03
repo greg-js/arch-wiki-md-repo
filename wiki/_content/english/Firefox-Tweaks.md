@@ -571,7 +571,7 @@ Now scrolling should flow smoothly.
 
 ### Run Firefox inside an nspawn container
 
-Note: on newer systems, you must enable local access to the user xserver with 'xhost local:root'
+If you have problems accessing the X server from within the container, you might want to consider [Systemd-nspawn#Use_an_X_environment](/index.php/Systemd-nspawn#Use_an_X_environment "Systemd-nspawn").
 
 To run as PID 1
 

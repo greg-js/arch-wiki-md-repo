@@ -48,6 +48,10 @@ To ensure you have this version, [install](/index.php/Install "Install") the pac
 *   [2 Suspend issues](#Suspend_issues)
     *   [2.1 Verifying S3](#Verifying_S3)
     *   [2.2 Enabling S3](#Enabling_S3)
+        *   [2.2.1 Bios settings [1]](#Bios_settings_[1])
+        *   [2.2.2 Generate the override [2]](#Generate_the_override_[2])
+        *   [2.2.3 Load the override on boot [3]](#Load_the_override_on_boot_[3])
+        *   [2.2.4 Verify that S3 is working (See Verifying S3)](#Verify_that_S3_is_working_(See_Verifying_S3))
     *   [2.3 Enabling S2idle](#Enabling_S2idle)
 *   [3 Tablet Functions](#Tablet_Functions)
     *   [3.1 Stylus](#Stylus)
@@ -93,7 +97,110 @@ and check for `S3` in the list.
 
 ### Enabling S3
 
-Untested: there is an automatic patching script for the Carbon X1 Gen.6 [x1carbon2018s3](https://github.com/fiji-flo/x1carbon2018s3), that was written with full instructions on both enabling S3 and verifying the patch worked.
+There is an automated script called x1carbon2018s3 by [fiji-flo](https://github.com/fiji-flo) that was originally intended for use for the X1 Carbon 6th Gen ([source](https://github.com/fiji-flo/x1carbon2018s3)). The script and documentation were updated and maintained by [lsmith77](https://github.com/lsmith77) to adapt it for the X1 Yoga 3rd Gen. The latest known version is in a fork by [ryankhart](https://github.com/ryankhart) currently awaiting a pull request.
+
+(Optional) To check out this script and its history, visit these GitHub repositories:
+
+*   [https://github.com/fiji-flo/x1carbon2018s3](https://github.com/fiji-flo/x1carbon2018s3)
+    *   [https://github.com/lsmith77/x1carbon2018s3](https://github.com/lsmith77/x1carbon2018s3)
+        *   [https://github.com/ryankhart/x1carbon2018s3](https://github.com/ryankhart/x1carbon2018s3)
+
+#### Bios settings [[1]](https://github.com/ryankhart/x1carbon2018s3#bios-settings)
+
+Ensure that Boot Mode is set to `Quick` and not `Diagnostic`
+
+Set `Thunderbolt BIOS Assist Mode` to Enabled (via Config → Thunderbolt 3).
+
+Run:
+
+```
+ dmesg | grep -A3 'DSDT ACPI'
+
+```
+
+If you see all three of the following lines:
+
+```
+ [    0.000000] ACPI: DSDT ACPI table found in initrd [kernel/firmware/acpi/dsdt.aml][0x2338b]
+ [    0.000000] Lockdown: ACPI table override is restricted; see man kernel_lockdown.7
+ [    0.000000] ACPI: kernel is locked down, ignoring table override
+
+```
+
+rather than just the first line, disable `Secure Boot`
+
+#### Generate the override [[2]](https://github.com/ryankhart/x1carbon2018s3#generating-the-override)
+
+**Note:** The following GitHub repository is a fork of a fork. If any of the parent repositories get updated in the future consider updating all links to this repository
+
+```
+ git clone [https://github.com/ryankhart/x1carbon2018s3.git](https://github.com/ryankhart/x1carbon2018s3.git)
+ cd x1carbon2018s3/
+ chmod +x generate_and_apply_patch.sh
+ ./generate_and_apply_patch.sh
+
+```
+
+#### Load the override on boot [[3]](https://github.com/ryankhart/x1carbon2018s3#loading-the-override-on-boot)
+
+Edit your boot loader configuration and add /acpi_override to the initrd line. To ensure S3 is used as sleep default add mem_sleep_default=deep to you kernel parameters.
+
+If you're using systemd-boot your `/boot/loader/entries/arch.conf` might look like this:
+
+```
+ title	Arch Linux ACPI
+ linux	/vmlinuz-linux
+ initrd /intel-ucode.img
+ initrd /acpi_override
+ initrd /initramfs-linux.img
+ options root=/dev/nvme0n1p2 rw i915.enable_guc=3 mem_sleep_default=deep
+
+```
+
+If you're using grub edit `/etc/default/grub` and add the following:
+
+```
+ GRUB_EARLY_INITRD_LINUX_CUSTOM=acpi_override
+ GRUB_CMDLINE_LINUX_DEFAULT="quiet mem_sleep_default=deep"
+
+```
+
+Then run:
+
+```
+ sudo update-grub
+
+```
+
+To verify the setting has been applied correctly run:
+
+```
+ sudo cat /boot/grub/grub.cfg | grep initrd
+
+```
+
+You should see:
+
+```
+ initrd  /boot/intel-ucode.img /boot/acpi_override /boot/initramfs-4.19-x86_64.img
+
+```
+
+#### Verify that S3 is working [(See Verifying S3)](#Verifying_S3)
+
+Reboot and verify whether S3 is working by running:
+
+```
+ dmesg | grep -i "acpi: (supports"
+
+```
+
+You should now see something like this:
+
+```
+ [    0.230796] ACPI: (supports S0 S3 S4 S5)
+
+```
 
 ### Enabling S2idle
 

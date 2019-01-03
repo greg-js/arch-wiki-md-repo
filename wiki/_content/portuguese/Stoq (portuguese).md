@@ -1,6 +1,6 @@
 [Stoq](http://www.stoq.com.br) é uma suíte de gerenciamento empresarial open-source.
 
-O aplicativo Stoq usa o PostgreSQL como banco de dados back-end, com um cliente através de uma interface gráfica.
+O aplicativo Stoq usa o [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") como banco de dados back-end, com um cliente através de uma interface gráfica.
 
 ## Contents
 
@@ -20,7 +20,7 @@ O aplicativo Stoq usa o PostgreSQL como banco de dados back-end, com um cliente 
 
 ### Instalação do Stoq
 
-[Instale](/index.php/Help:Reading_(Portugu%C3%AAs)#Instala.C3.A7.C3.A3o_de_pacotes "Help:Reading (Português)") o pacote [stoq](https://aur.archlinux.org/packages/stoq/). A instalação da dependência [webkitgtk](https://aur.archlinux.org/packages/webkitgtk/) levará muito tempo no processo de instalação.
+[Instale](/index.php/Instale "Instale") o pacote [stoq](https://aur.archlinux.org/packages/stoq/). A instalação da dependência [webkitgtk](https://aur.archlinux.org/packages/webkitgtk/) levará muito tempo no processo de instalação.
 
 ### Configuração do Stoq
 
@@ -31,11 +31,11 @@ Após a execução do Stoq pela primeira vez será necessário configurar a loca
 
 #### Conexão com banco de dados local
 
-Para conexão com o banco de dados no local é necessário [instalar](/index.php/Help:Reading_(Portugu%C3%AAs)#Instala.C3.A7.C3.A3o_de_pacotes "Help:Reading (Português)") o [postgresql](https://www.archlinux.org/packages/?name=postgresql).
+Para conexão com o banco de dados no local é necessário [instalar](/index.php/Instalar "Instalar") o [postgresql](https://www.archlinux.org/packages/?name=postgresql).
 
-Se a instância PostgreSQL ainda não estiver inicializada, seguir o artigo [Processo de instalação do PostgreSQL](/index.php/PostgreSQL#Initial_configuration "PostgreSQL").
+Se a instância PostgreSQL ainda não estiver inicializada, consulte [PostgreSQL#Initial configuration](/index.php/PostgreSQL#Initial_configuration "PostgreSQL").
 
-Em seguida, como o root, [ative ou habilite](/index.php/Systemd_(Portugu%C3%AAs)#Usando_units "Systemd (Português)") o `postgresql.service`.
+Em seguida, como o root, [inicie](/index.php/Inicie "Inicie") ou [habilite](/index.php/Habilite "Habilite") o `postgresql.service`.
 
 Na tela "Localização do banco de dados" utilizar a opção "Eu quero usar o Stoq apenas neste computador".
 
@@ -45,19 +45,19 @@ Na tela "Localização do banco de dados" utilizar a opção "Quero configurar a
 
 #### Arquivo de configuração do Stoq
 
-O principal arquivo de configuraçãos do Stoq se encontra em `~/.stoq/stoq.conf`.
+O principal arquivo de configurações do Stoq se encontra em `~/.stoq/stoq.conf`.
 
 ### Instalação do stoq-server
 
-[Instale](/index.php/Help:Reading_(Portugu%C3%AAs)#Instala.C3.A7.C3.A3o_de_pacotes "Help:Reading (Português)") o pacote [stoq-server](https://aur.archlinux.org/packages/stoq-server/). Então [defina a senha](/index.php/Users_and_groups#Example_adding_a_user "Users and groups") do novo usuário *stoqserver*.
+[Instale](/index.php/Instale "Instale") o pacote [stoq-server](https://aur.archlinux.org/packages/stoq-server/). Então [defina a senha](/index.php/Usu%C3%A1rios_e_grupos#Exemplo_de_adicionar_um_usuário "Usuários e grupos") do novo usuário *stoqserver*.
 
 ### Configuração do stoq-server
 
-Se a instância PostgreSQL ainda não estiver inicializada, seguir o artigo [Processo de instalação do PostgreSQL](/index.php/PostgreSQL#Initial_configuration "PostgreSQL").
+Se a instância PostgreSQL ainda não estiver inicializada, consulte [PostgreSQL#Initial configuration](/index.php/PostgreSQL#Initial_configuration "PostgreSQL").
 
-Em seguida, como o root, [ative ou habilite](/index.php/Systemd_(Portugu%C3%AAs)#Usando_units "Systemd (Português)") o `postgresql.service`.
+Em seguida, como o root, [inicie](/index.php/Inicie "Inicie") ou [habilite](/index.php/Habilite "Habilite") o `postgresql.service`.
 
-É necessário criar uma nova configuração no PostgreSQL para o stoq-server. Para isso, entre no usário padrão para o PostgreSQL, 'postgres', usando os seguintes comandos:
+É necessário criar uma nova configuração no PostgreSQL para o stoq-server. Para isso, entre no usuário padrão para o PostgreSQL, 'postgres', usando os seguintes comandos:
 
 *   Se você tiver [sudo](https://www.archlinux.org/packages/?name=sudo) e seu usuário estiver no `sudoers`:
 
@@ -87,7 +87,7 @@ Retorne ao usuário regular usando `exit`.
 
 Para que o stoq-server seja acessível remotamente é necessário seguir o artigo [Configurar o PostgreSQL para ser acessível a partir de hosts remotos](/index.php/PostgreSQL#Configure_PostgreSQL_to_be_accessible_from_remote_hosts "PostgreSQL").
 
-Como root, [ative ou habilite](/index.php/Systemd_(Portugu%C3%AAs)#Usando_units "Systemd (Português)") o `supervisord.service`.
+Como root, [inicie](/index.php/Inicie "Inicie") ou [habilite](/index.php/Habilite "Habilite") o `supervisord.service`.
 
 Reinicie o processo do supervisor:
 
@@ -103,7 +103,7 @@ Reinicie o processo do supervisor:
 
 #### Arquivo de configuração do stoq-server
 
-O principal arquivo de configuraçãos do stoq-server se encontra em `/usr/share/stoqserver/.stoq/stoq.conf`.
+O principal arquivo de configurações do stoq-server se encontra em `/usr/share/stoqserver/.stoq/stoq.conf`.
 
 ### Acessando via conexão serial
 

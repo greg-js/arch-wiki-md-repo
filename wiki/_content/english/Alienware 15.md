@@ -13,14 +13,15 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 ## Contents
 
 *   [1 Hardware overview](#Hardware_overview)
-    *   [1.1 Alienware 15(early 2015)](#Alienware_15.28early_2015.29)
+    *   [1.1 Alienware 15(early 2015)](#Alienware_15(early_2015))
     *   [1.2 Alienware 15 R2](#Alienware_15_R2)
     *   [1.3 Alienware 15 R3](#Alienware_15_R3)
+    *   [1.4 Alienware 15 R4](#Alienware_15_R4)
 *   [2 Networking](#Networking)
     *   [2.1 Qualcomm Atheros QCA6174 802.11ac Wireless Network Adapter](#Qualcomm_Atheros_QCA6174_802.11ac_Wireless_Network_Adapter)
 *   [3 Input](#Input)
 *   [4 Video](#Video)
-    *   [4.1 NVIDIA Corporation GM204M [GeForce GTX 965M]](#NVIDIA_Corporation_GM204M_.5BGeForce_GTX_965M.5D)
+    *   [4.1 NVIDIA Corporation GM204M [GeForce GTX 965M]](#NVIDIA_Corporation_GM204M_[GeForce_GTX_965M])
 *   [5 Control of the light colors](#Control_of_the_light_colors)
 *   [6 Issues](#Issues)
     *   [6.1 Alienware 15 R3](#Alienware_15_R3_2)
@@ -155,6 +156,48 @@ Bus 001 Device 008: ID 062a:4102 MosArt Semiconductor Corp.
 Bus 001 Device 006: ID 2109:2812 VIA Labs, Inc. VL812 Hub
 Bus 001 Device 004: ID 258a:1006  
 Bus 001 Device 002: ID 2109:2812 VIA Labs, Inc. VL812 Hub
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+
+```
+
+### Alienware 15 R4
+
+lspci:
+
+```
+00:00.0 Host bridge: Intel Corporation 8th Gen Core Processor Host Bridge/DRAM Registers (rev 07)
+00:01.0 PCI bridge: Intel Corporation Xeon E3-1200 v5/E3-1500 v5/6th Gen Core Processor PCIe Controller (x16) (rev 07)
+00:01.1 PCI bridge: Intel Corporation Xeon E3-1200 v5/E3-1500 v5/6th Gen Core Processor PCIe Controller (x8) (rev 07)
+00:01.2 PCI bridge: Intel Corporation Xeon E3-1200 v5/E3-1500 v5/6th Gen Core Processor PCIe Controller (x4) (rev 07)
+00:02.0 Display controller: Intel Corporation UHD Graphics 630 (Mobile)
+00:04.0 Signal processing controller: Intel Corporation Xeon E3-1200 v5/E3-1500 v5/6th Gen Core Processor Thermal Subsystem (rev 07)
+00:12.0 Signal processing controller: Intel Corporation Cannon Lake PCH Thermal Controller (rev 10)
+00:14.0 USB controller: Intel Corporation Cannon Lake PCH USB 3.1 xHCI Host Controller (rev 10)
+00:14.2 RAM memory: Intel Corporation Cannon Lake PCH Shared SRAM (rev 10)
+00:15.0 Serial bus controller [0c80]: Intel Corporation Device a368 (rev 10)
+00:16.0 Communication controller: Intel Corporation Cannon Lake PCH HECI Controller (rev 10)
+00:17.0 SATA controller: Intel Corporation Device a353 (rev 10)
+00:1d.0 PCI bridge: Intel Corporation Cannon Lake PCH PCI Express Root Port #9 (rev f0)
+00:1d.6 PCI bridge: Intel Corporation Cannon Lake PCH PCI Express Root Port #15 (rev f0)
+00:1d.7 PCI bridge: Intel Corporation Cannon Lake PCH PCI Express Root Port #16 (rev f0)
+00:1f.0 ISA bridge: Intel Corporation Device a30e (rev 10)
+00:1f.3 Audio device: Intel Corporation Cannon Lake PCH cAVS (rev 10)
+00:1f.4 SMBus: Intel Corporation Cannon Lake PCH SMBus Controller (rev 10)
+00:1f.5 Serial bus controller [0c80]: Intel Corporation Cannon Lake PCH SPI Controller (rev 10)
+01:00.0 VGA compatible controller: NVIDIA Corporation GP104BM [GeForce GTX 1070 Mobile] (rev a1)
+43:00.0 Non-Volatile memory controller: Toshiba America Info Systems Device 0116
+44:00.0 Ethernet controller: Qualcomm Atheros Killer E2500 Gigabit Ethernet Controller (rev 10)
+45:00.0 Network controller: Qualcomm Atheros QCA6174 802.11ac Wireless Network Adapter (rev 32)
+
+```
+
+lsusb:
+
+```
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 003: ID 1bcf:2b97 Sunplus Innovation Technology Inc. 
+Bus 001 Device 002: ID 187c:0550 Alienware Corporation 
+Bus 001 Device 004: ID 0cf3:e300 Qualcomm Atheros Communications 
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ```

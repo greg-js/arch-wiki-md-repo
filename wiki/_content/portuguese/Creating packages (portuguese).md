@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Creating packages](/index.php/Creating_packages "Creating packages"). Data da última tradução: 2018-11-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Creating_packages&diff=0&oldid=553584) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Creating packages](/index.php/Creating_packages "Creating packages"). Data da última tradução: 2019-01-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Creating_packages&diff=0&oldid=558317) na versão em inglês.
 
 Artigos relacionados
 
@@ -113,7 +113,7 @@ Há cinco funções, listadas aqui na ordem em que elas são executadas. Com exc
 
 #### prepare()
 
-Nessa função, comandos que são usados para preparar fontes para compilação são executados, tal como [patching](/index.php/Patching_in_ABS "Patching in ABS"). Essa função é executada após a extração do pacote, antes do [pkgver()](#pkgver()) e a função de compilação. Se a extração for ignorada (`makepkg -e`), então `prepare()` não é executada.
+Com essa função, comandos que são usados para preparar fontes para compilação são executados, tal como [patching](/index.php/Patching_in_ABS "Patching in ABS"). Essa função é executada após a extração do pacote, antes do [pkgver()](#pkgver()) e a função de compilação. Se a extração for ignorada (`makepkg -e`), então `prepare()` não é executada.
 
 **Nota:** (De [PKGBUILD(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5)) A função é executada no modo `bash -e`, o que significa que qualquer comando que sair com um status não-zero fará com que a função saia.
 

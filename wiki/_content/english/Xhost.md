@@ -1,6 +1,6 @@
-From Xhost man page:
+From Xhost man page (boldface added):
 
-	The xhost program is used to add and delete host names or user names to the list allowed to make connections to the X server. In the case of hosts, this provides a rudimentary form of privacy control and security. It is only sufficient for a workstation (single user) environment, although it does limit the worst abuses. Environments which require more sophisticated measures should implement the user-based mechanism or use the hooks in the protocol for passing other authentication data to the server.
+	The xhost program is used to add and delete host names or user names to the list allowed to make connections to the X server. In the case of hosts, this provides a rudimentary form of privacy control and security. **It is only sufficient for a workstation (single user) environment**, although it does limit the worst abuses. Environments which require more sophisticated measures should implement the user-based mechanism or use the hooks in the protocol for passing other authentication data to the server.
 
 See [xhost(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xhost.1) for the full info.
 
@@ -9,6 +9,8 @@ See [xhost(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xhost.1) for the full 
 [Install](/index.php/Install "Install") the [xorg-xhost](https://www.archlinux.org/packages/?name=xorg-xhost) package.
 
 ## Usage
+
+**Warning:** This command grants any local user access to your X screen. That might be OK for a single-user machine, but certainly not for a multi-user system. If you want to grant root access to your X screen, it is preferable to set the $XAUTHORITY environment variable. This variable is kept by **sudo** by default and also by plain **su** (i.e., not **su -**).
 
 To provide access to an application running as sudo or su to the graphical server (aka your X session aka your computer screen), open a terminal and type as your normal user (don't *su -*):
 

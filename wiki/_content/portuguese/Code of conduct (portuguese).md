@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Code of conduct](/index.php/Code_of_conduct "Code of conduct"). Data da última tradução: 2018-11-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Code_of_conduct&diff=0&oldid=554662) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Code of conduct](/index.php/Code_of_conduct "Code of conduct"). Data da última tradução: 2019-01-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Code_of_conduct&diff=0&oldid=557872) na versão em inglês.
 
 A comunidade Arch é uma comunidade técnica cujo propósito compartilhado é oferecer suporte e melhoria do Arch Linux.
 

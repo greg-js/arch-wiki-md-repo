@@ -11,27 +11,27 @@ MySQL是一个广泛使用的多线程多用户式数据库。具体特性请参
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-    *   [1.1 升级](#.E5.8D.87.E7.BA.A7)
-    *   [1.2 由 Oracle MySQL 升级到 MariaDB](#.E7.94.B1_Oracle_MySQL_.E5.8D.87.E7.BA.A7.E5.88.B0_MariaDB)
-*   [2 配置](#.E9.85.8D.E7.BD.AE)
-    *   [2.1 添加新用户](#.E6.B7.BB.E5.8A.A0.E6.96.B0.E7.94.A8.E6.88.B7)
-    *   [2.2 配置文件](#.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)
-    *   [2.3 禁用远程访问](#.E7.A6.81.E7.94.A8.E8.BF.9C.E7.A8.8B.E8.AE.BF.E9.97.AE)
-    *   [2.4 启用自动补全](#.E5.90.AF.E7.94.A8.E8.87.AA.E5.8A.A8.E8.A1.A5.E5.85.A8)
-    *   [2.5 为数据库使用 UTF-8 编码](#.E4.B8.BA.E6.95.B0.E6.8D.AE.E5.BA.93.E4.BD.BF.E7.94.A8_UTF-8_.E7.BC.96.E7.A0.81)
-    *   [2.6 使用内存作为临时文件存放点](#.E4.BD.BF.E7.94.A8.E5.86.85.E5.AD.98.E4.BD.9C.E4.B8.BA.E4.B8.B4.E6.97.B6.E6.96.87.E4.BB.B6.E5.AD.98.E6.94.BE.E7.82.B9)
-*   [3 备份](#.E5.A4.87.E4.BB.BD)
-*   [4 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
-    *   [4.1 MySQL 守护进程无法启动](#MySQL_.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B.E6.97.A0.E6.B3.95.E5.90.AF.E5.8A.A8)
-    *   [4.2 执行 mysql_upgrade 后 MySQL 不能启动](#.E6.89.A7.E8.A1.8C_mysql_upgrade_.E5.90.8E_MySQL_.E4.B8.8D.E8.83.BD.E5.90.AF.E5.8A.A8)
-    *   [4.3 重置 root 密码](#.E9.87.8D.E7.BD.AE_root_.E5.AF.86.E7.A0.81)
-    *   [4.4 检查并修复所有数据表](#.E6.A3.80.E6.9F.A5.E5.B9.B6.E4.BF.AE.E5.A4.8D.E6.89.80.E6.9C.89.E6.95.B0.E6.8D.AE.E8.A1.A8)
-    *   [4.5 优化所有数据表](#.E4.BC.98.E5.8C.96.E6.89.80.E6.9C.89.E6.95.B0.E6.8D.AE.E8.A1.A8)
+*   [1 安装](#安装)
+    *   [1.1 升级](#升级)
+    *   [1.2 由 Oracle MySQL 升级到 MariaDB](#由_Oracle_MySQL_升级到_MariaDB)
+*   [2 配置](#配置)
+    *   [2.1 添加新用户](#添加新用户)
+    *   [2.2 配置文件](#配置文件)
+    *   [2.3 禁用远程访问](#禁用远程访问)
+    *   [2.4 启用自动补全](#启用自动补全)
+    *   [2.5 为数据库使用 UTF-8 编码](#为数据库使用_UTF-8_编码)
+    *   [2.6 使用内存作为临时文件存放点](#使用内存作为临时文件存放点)
+*   [3 备份](#备份)
+*   [4 故障排除](#故障排除)
+    *   [4.1 MySQL 守护进程无法启动](#MySQL_守护进程无法启动)
+    *   [4.2 执行 mysql_upgrade 后 MySQL 不能启动](#执行_mysql_upgrade_后_MySQL_不能启动)
+    *   [4.3 重置 root 密码](#重置_root_密码)
+    *   [4.4 检查并修复所有数据表](#检查并修复所有数据表)
+    *   [4.5 优化所有数据表](#优化所有数据表)
     *   [4.6 OS error 22 when running on ZFS](#OS_error_22_when_running_on_ZFS)
-    *   [4.7 无法通过命令行登陆, 但是 phpmyadmin 正常工作](#.E6.97.A0.E6.B3.95.E9.80.9A.E8.BF.87.E5.91.BD.E4.BB.A4.E8.A1.8C.E7.99.BB.E9.99.86.2C_.E4.BD.86.E6.98.AF_phpmyadmin_.E6.AD.A3.E5.B8.B8.E5.B7.A5.E4.BD.9C)
-    *   [4.8 MySQL 日志文件占用太多空间](#MySQL_.E6.97.A5.E5.BF.97.E6.96.87.E4.BB.B6.E5.8D.A0.E7.94.A8.E5.A4.AA.E5.A4.9A.E7.A9.BA.E9.97.B4)
-*   [5 更多资源](#.E6.9B.B4.E5.A4.9A.E8.B5.84.E6.BA.90)
+    *   [4.7 无法通过命令行登陆, 但是 phpmyadmin 正常工作](#无法通过命令行登陆,_但是_phpmyadmin_正常工作)
+    *   [4.8 MySQL 日志文件占用太多空间](#MySQL_日志文件占用太多空间)
+*   [5 更多资源](#更多资源)
 
 ## 安装
 
@@ -39,7 +39,7 @@ Archlinux 选择的 MySQL 实现被称为 MariaDB。 [安装](/index.php/Pacman 
 
 **Tip:**
 
-*   如果数据库 (位于 `/var/lib/mysql`) 运行在[Btrfs](/index.php/Btrfs "Btrfs")分区之上, 你应当在创建数据库之前禁用 [Copy-on-Write](/index.php/Btrfs#Copy-on-Write_.28CoW.29 "Btrfs") 特性。
+*   如果数据库 (位于 `/var/lib/mysql`) 运行在[Btrfs](/index.php/Btrfs "Btrfs")分区之上, 你应当在创建数据库之前禁用 [Copy-on-Write](/index.php/Btrfs#Copy-on-Write_(CoW) "Btrfs") 特性。
 *   如果数据库运行在 [ZFS](/index.php/ZFS "ZFS") 分区之上, 你应该在创建数据库之前参阅 [ZFS#Database](/index.php/ZFS#Database "ZFS") 。
 
 安装Mariadb软件包之后，你必须运行下面这条命令：
@@ -103,7 +103,7 @@ $ mysql -p -u root
  `$ mysql -u root -p` 
 ```
 MariaDB> CREATE USER 'monty'@'localhost' IDENTIFIED BY 'some_pass';
-MariaDB> GRANT ALL PRIVILEGES ON mydb.* TO 'monty'@'localhost'
+MariaDB> GRANT ALL PRIVILEGES ON mydb.* TO 'monty'@'localhost';
 MariaDB> FLUSH PRIVILEGES;
 MariaDB> quit
 ```

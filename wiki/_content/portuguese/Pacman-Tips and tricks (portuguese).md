@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks"). Data da última tradução: 2018-11-22\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&diff=0&oldid=555776) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks"). Data da última tradução: 2019-01-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&diff=0&oldid=561230) na versão em inglês.
 
 Artigos relacionados
 
@@ -17,15 +17,16 @@ Para métodos gerais para melhorar a flexibilidade das dicas fornecidas ou do *p
         *   [1.1.2 Por data](#Por_data)
         *   [1.1.3 Que não estejam em um grupo ou repositório especificado](#Que_não_estejam_em_um_grupo_ou_repositório_especificado)
         *   [1.1.4 Pacotes de desenvolvimento](#Pacotes_de_desenvolvimento)
-    *   [1.2 Listando arquivos pertencentes a um pacote com tamanho](#Listando_arquivos_pertencentes_a_um_pacote_com_tamanho)
-    *   [1.3 Identificar arquivos que pertençam a nenhum pacote](#Identificar_arquivos_que_pertençam_a_nenhum_pacote)
-    *   [1.4 Rastreando arquivos sem donos criados criados por pacotes](#Rastreando_arquivos_sem_donos_criados_criados_por_pacotes)
-    *   [1.5 Removendo pacotes não usados (órfãos)](#Removendo_pacotes_não_usados_(órfãos))
-    *   [1.6 Removendo tudo exceto o grupo base](#Removendo_tudo_exceto_o_grupo_base)
-    *   [1.7 Obtendo a lista de dependências de vários pacotes](#Obtendo_a_lista_de_dependências_de_vários_pacotes)
-    *   [1.8 Listando arquivos backup modificados](#Listando_arquivos_backup_modificados)
-    *   [1.9 Fazer backup da base de dados do pacman](#Fazer_backup_da_base_de_dados_do_pacman)
-    *   [1.10 Verificar changelogs facilmente](#Verificar_changelogs_facilmente)
+    *   [1.2 Navegando por pacotes](#Navegando_por_pacotes)
+    *   [1.3 Listando arquivos pertencentes a um pacote com tamanho](#Listando_arquivos_pertencentes_a_um_pacote_com_tamanho)
+    *   [1.4 Identificar arquivos que pertençam a nenhum pacote](#Identificar_arquivos_que_pertençam_a_nenhum_pacote)
+    *   [1.5 Rastreando arquivos sem donos criados criados por pacotes](#Rastreando_arquivos_sem_donos_criados_criados_por_pacotes)
+    *   [1.6 Removendo pacotes não usados (órfãos)](#Removendo_pacotes_não_usados_(órfãos))
+    *   [1.7 Removendo tudo exceto o grupo base](#Removendo_tudo_exceto_o_grupo_base)
+    *   [1.8 Obtendo a lista de dependências de vários pacotes](#Obtendo_a_lista_de_dependências_de_vários_pacotes)
+    *   [1.9 Listando arquivos backup modificados](#Listando_arquivos_backup_modificados)
+    *   [1.10 Fazer backup da base de dados do pacman](#Fazer_backup_da_base_de_dados_do_pacman)
+    *   [1.11 Verificar changelogs facilmente](#Verificar_changelogs_facilmente)
 *   [2 Instalação e recuperação](#Instalação_e_recuperação)
     *   [2.1 Instalando pacotes a partir de um CD/DVD ou pendrive](#Instalando_pacotes_a_partir_de_um_CD/DVD_ou_pendrive)
     *   [2.2 Repositório local personalizado](#Repositório_local_personalizado)
@@ -184,6 +185,19 @@ Para listar todos os pacotes de desenvolvimento/instáveis, execute:
  $ pacman -Qq | grep -Ee '-(bzr|cvs|darcs|git|hg|svn)$'
 
 ```
+
+### Navegando por pacotes
+
+Para navegador por todos os pacotes instalados com uma visualização instantânea de cada pacote:
+
+```
+ $ pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'
+
+```
+
+Isso usa [fzf](/index.php/Fzf "Fzf") para apresentar uma visão de dois painéis listando todos os pacotes com informações de pacotes mostradas na direita.
+
+Insira letras para filtrar a lista de pacotes; use teclas de setas (ou `Ctrl-j`/`Ctrl-k`) para navegar; pressione `Enter` para ver informações de pacote sob *less*.
 
 ### Listando arquivos pertencentes a um pacote com tamanho
 
@@ -482,7 +496,7 @@ Um exemplo de rascunho para um cliente, usando `uname -m` dentro de nome de comp
 
 **Atenção:** Este método tem uma limitação. Você deve usar espelhos que usam o mesmo caminho relativo para o pacote de arquivos e você deve configurar seu cache para usar esse mesmo caminho. Neste exemplo, estamos usando espelhos que usam o caminho relativo `/archlinux/$repo/os/$arch` e a definição `Server` do nosso cache no `mirrorlist` está configurada similarmente.
 
-Neste exemplo, vamos executar o servidor de cache em `http://cache.domain.local:8080/` e armazenar os pacotes em `/srv/http/pacman-cache/`.
+Neste exemplo, vamos executar o servidor de cache em `http://cache.domain.example:8080/` e armazenar os pacotes em `/srv/http/pacman-cache/`.
 
 Crie o diretório para o cache e ajuste as permissões de forma que o nginx possa escrever os arquivos para ele:
 
@@ -498,7 +512,7 @@ Finalmente, atualize seus outros servidores Arch Linux para usar esse novo cache
 
  `/etc/pacman.d/mirrorlist` 
 ```
-Server = http://cache.domain.local:8080/archlinux/$repo/os/$arch
+Server = http://cache.domain.example:8080/archlinux/$repo/os/$arch
 ...
 
 ```
@@ -522,11 +536,7 @@ CleanMethod = KeepCurrent
 
 ### Recriar um pacote do sistema de arquivos
 
-Para recriar um pacote do sistema de arquivos, use *bacman* (incluído no *pacman*). Os arquivos do sistema são aceitos como estão, portanto, quaisquer modificações estarão presentes no pacote montado. Distribuir o pacote recriado é, portanto, desencorajado; veja [ABS](/index.php/ABS_(Portugu%C3%AAs) "ABS (Português)") e [Arch Linux Archive (Português)](/index.php/Arch_Linux_Archive_(Portugu%C3%AAs) "Arch Linux Archive (Português)") para obter alternativas.
-
-**Dica:** *bacman* honra as opções `PACKAGER`, `PKGDEST` e `PKGEXT` do `makepkg.conf`. Bacman atualmente não honra as opções `COMPRESS` em `makepkg.conf`.
-
-Uma ferramenta alternativa seria [fakepkg](https://aur.archlinux.org/packages/fakepkg/). Ela oferece suporte a paralelização e pode lidar com vários pacotes de entrada em um comando, duas coisas a que o *bacman* não oferece suporte.
+Para recriar um pacote do sistema de arquivos, use [fakepkg](https://www.archlinux.org/packages/?name=fakepkg). Os arquivos do sistema são aceitos como estão, portanto, quaisquer modificações estarão presentes no pacote montado. Distribuir o pacote recriado é, portanto, desencorajado; veja [ABS](/index.php/ABS_(Portugu%C3%AAs) "ABS (Português)") e [Arch Linux Archive (Português)](/index.php/Arch_Linux_Archive_(Portugu%C3%AAs) "Arch Linux Archive (Português)") para obter alternativas.
 
 ### Lista de pacotes instalados
 
@@ -628,7 +638,7 @@ Se você possui o Arch instalado em um pendrive e conseguir arruiná-lo (por exe
 Por exemplo, se você deseja ver o conteúdo de `/etc/systemd/logind.conf` fornecido no pacote [systemd](https://www.archlinux.org/packages/?name=systemd):
 
 ```
-$ tar -xOf /var/cache/pacman/pkg/systemd-204-3-x86_64.pkg.tar.xz etc/systemd/logind.conf
+$ bsdtar -xOf /var/cache/pacman/pkg/systemd-204-3-x86_64.pkg.tar.xz etc/systemd/logind.conf
 
 ```
 

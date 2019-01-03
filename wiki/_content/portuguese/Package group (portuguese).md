@@ -1,16 +1,29 @@
-**Status de tradução:** Esse artigo é uma tradução de [Package group](/index.php/Package_group "Package group"). Data da última tradução: 2018-10-26\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Package_group&diff=0&oldid=550027) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Package group](/index.php/Package_group "Package group"). Data da última tradução: 2019-01-02\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Package_group&diff=0&oldid=561245) na versão em inglês.
 
 Um **grupo de pacotes** é um conjunto de pacotes relacionados, definidos pelo [empacotador](/index.php/Empacotador "Empacotador"), que podem ser instalados ou desinstalados simultaneamente usando o nome do grupo como um substituto para cada nome de pacote individual. Embora um grupo não seja um pacote, ele pode ser instalado de maneira semelhante a um pacote, consulte [Pacman (Português)#Instalando grupos de pacotes](/index.php/Pacman_(Portugu%C3%AAs)#Instalando_grupos_de_pacotes "Pacman (Português)") e [PKGBUILD (Português)#groups](/index.php/PKGBUILD_(Portugu%C3%AAs)#groups "PKGBUILD (Português)").
 
+## Contents
+
+*   [1 Grupos](#Grupos)
+    *   [1.1 base](#base)
+    *   [1.2 base-devel](#base-devel)
+*   [2 Diferença para um pacote meta](#Diferença_para_um_pacote_meta)
+*   [3 Veja também](#Veja_também)
+
+## Grupos
+
 Os grupos de pacotes mais importantes são:
 
-	base
+### base
 
-	O grupo [base](https://www.archlinux.org/groups/x86_64/base/) contém softwares essenciais, como o [kernel](/index.php/Kernel "Kernel"), [Bash](/index.php/Bash "Bash"), os [utilitários principais](/index.php/Utilit%C3%A1rios_principais "Utilitários principais") e [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") e softwares não essenciais, como [dhcpcd](/index.php/Dhcpcd "Dhcpcd") e [netctl](/index.php/Netctl "Netctl").
+O grupo [base](https://www.archlinux.org/groups/x86_64/base/) contém:
 
-	base-devel
+*   softwares essenciais, como o [kernel](/index.php/Kernel "Kernel"), [Bash](/index.php/Bash "Bash"), os [utilitários principais](/index.php/Utilit%C3%A1rios_principais "Utilitários principais") e [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)")
+*   softwares não essenciais, como [dhcpcd](/index.php/Dhcpcd "Dhcpcd"), [netctl](/index.php/Netctl "Netctl"), [nano](/index.php/Nano "Nano") e [vi](/index.php/Vi "Vi").
 
-	o grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) contém ferramentas necessárias para compilar muitos pacotes. Veja também [makepkg (Português)#Uso](/index.php/Makepkg_(Portugu%C3%AAs)#Uso "Makepkg (Português)").
+### base-devel
+
+O grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) contém ferramentas necessárias para compilar muitos pacotes como o [GCC](/index.php/GCC "GCC") e o [make](/index.php/GNU_make "GNU make"). Veja também [makepkg (Português)#Uso](/index.php/Makepkg_(Portugu%C3%AAs)#Uso "Makepkg (Português)").
 
 ## Diferença para um pacote meta
 

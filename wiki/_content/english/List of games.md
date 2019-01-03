@@ -295,7 +295,7 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 	[http://bergo.eng.br/eboard](http://bergo.eng.br/eboard) || [eboard](https://aur.archlinux.org/packages/eboard/)
 
-*   **Knights** — Simple chess board for KDE 4\. It is a rewrite of the KDE3 Knights.
+*   **Knights** — Chess board by KDE with XBoard protocol support.
 
 	[https://www.linux-apps.com/content/show.php/Knights?content=122046](https://www.linux-apps.com/content/show.php/Knights?content=122046) || [knights](https://www.archlinux.org/packages/?name=knights)
 

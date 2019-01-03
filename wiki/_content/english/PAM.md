@@ -110,7 +110,7 @@ The following sections describe examples to change the default PAM parameter con
 
 *   [Security#Enforcing strong passwords using pam_cracklib](/index.php/Security#Enforcing_strong_passwords_using_pam_cracklib "Security")
 
-	shows how to enforce srong passwords with `pam_cracklib.so`.
+	shows how to enforce strong passwords with `pam_cracklib.so`.
 
 *   [Security#Lockout user after three failed login attempts](/index.php/Security#Lockout_user_after_three_failed_login_attempts "Security")
 

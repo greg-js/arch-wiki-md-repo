@@ -102,7 +102,7 @@ To configure desktop Firefox to talk to your new Sync server, go to `about:confi
 
 ## See also
 
-*   [Official Mozilla Firefox Sync Server Howto](http://docs.services.mozilla.com/howtos/run-sync.html)
+*   [Official Mozilla Firefox Sync Server Howto](https://mozilla-services.readthedocs.io/en/latest/howtos/run-sync-1.5.html)
 *   [Howto with Apache support by Eric Hameleers](http://alien.slackbook.org/blog/setting-up-your-own-mozilla-sync-server/)
 *   [Howto with nginx and systemd support by Timothée Ravier](https://tim.siosm.fr/blog/2012/12/11/firefox-sync-nginx-systemd/)
 *   [Howto with nginx support](http://amnesiak.org/blog/mozilla-sync-server-with-nginx.html)

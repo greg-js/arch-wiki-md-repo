@@ -853,7 +853,7 @@ Veja a seguinte [publicação de blog do GNOME](https://blogs.gnome.org/thaller/
 
 ### Habilitar extensões de privacidade IPv6
 
-Veja [IPv6#NetworkManager](/index.php/IPv6#NetworkManager "IPv6").
+Veja [IPv6 (Português)#NetworkManager](/index.php/IPv6_(Portugu%C3%AAs)#NetworkManager "IPv6 (Português)").
 
 ### Trabalhando com conexões cabeadas
 

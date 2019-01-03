@@ -80,13 +80,13 @@ A number of language packs are available for Firefox, other than the standard En
 
 Firefox is well known for its large library of add-ons which can be used to add new features or modify the behavior of existing features. Firefox's "Add-ons Manager" is used to manage installed add-ons or find new ones.
 
-For a list of popular add-ons, see [Mozilla's add-on list sorted by popularity](https://addons.mozilla.org/firefox/extensions/?sort=popular). See also [List of Firefox extensions](https://en.wikipedia.org/wiki/List_of_Firefox_extensions "wikipedia:List of Firefox extensions") on Wikipedia.
+For instructions on how to install add-ons and a list of add-ons, see [Browser extensions](/index.php/Browser_extensions "Browser extensions").
 
 ### Adding search engines
 
 Search engines can be added to Firefox through normal add-ons, see [this page](https://addons.mozilla.org/firefox/search-tools/) for a list of available search engines.
 
-A very extensive list of search engines can be found at the [Mycroft Project](http://mycroftproject.com/).
+A very extensive list of search engines can be found at the [Mycroft Project](https://mycroftproject.com/).
 
 Also, you can use the [add-to-searchbar](https://firefox.maltekraus.de/extensions/add-to-search-bar) extension to add a search to your search bar from any web site, by simply right clicking on the site's search field and selecting *Add to Search Bar...*
 

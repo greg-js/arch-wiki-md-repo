@@ -175,7 +175,7 @@ The [systemd](/index.php/Systemd "Systemd") package includes the service `system
 
 	[http://www.pberndt.com/Programme/Linux/brightd/](http://www.pberndt.com/Programme/Linux/brightd/) || [brightd](https://aur.archlinux.org/packages/brightd/)
 
-*   **brillo** — Fork of *light*. Minimal, self contained program to control brightness and keyboard controllers. Allows unprivileged access using udev rules or PolicyKit.
+*   **brillo** — Minimal, secure, self-contained program to control brightness and keyboard brightness. Supports smooth adjustments and is Wayland compatible.
 
 	[https://gitlab.com/cameronnemo/brillo](https://gitlab.com/cameronnemo/brillo) || [brillo](https://aur.archlinux.org/packages/brillo/)
 
@@ -342,11 +342,11 @@ This will set the brightness level to 200%. It will cause higher power usage and
 
 ## External monitors
 
-DDC/CI (Display Data Channel Command Interface) can be used to communicate with external monitors implementing MCCS (Monitor Control Command Set) over I2C. DDC can control brightness, contrast, inputs, etc on supported monitors. Settings available via the OSD (On-Screen Display) panel can usually also be managed via DDC.
+DDC/CI (Display Data Channel Command Interface) can be used to communicate with external monitors implementing MCCS (Monitor Control Command Set) over I2C. DDC can control brightness, contrast, inputs, etc on supported monitors. Settings available via the OSD (On-Screen Display) panel can usually also be managed via DDC. The [kernel module](/index.php/Kernel_module "Kernel module") `i2c-dev` may need to be loaded if the `/dev/i2c-*` devices do not exist.
 
 [ddcutil](http://www.ddcutil.com/) can be used to query and set brightness settings:
 
- `# ddcutil capabilities | grep Brightness` 
+ `# ddcutil capabilities | grep "Feature: 10"` 
 ```
   Feature: 10 (Brightness)
 
@@ -356,6 +356,8 @@ DDC/CI (Display Data Channel Command Interface) can be used to communicate with 
 # ddcutil setvcp 10 70
 
 ```
+
+Alternatively, one may use [ddcci-driver-linux-dkms](https://aur.archlinux.org/packages/ddcci-driver-linux-dkms/) to expose external monitors in sysfs. Then, after loading the `ddcci` [kernel module](/index.php/Kernel_module "Kernel module"), one can use any [backlight utility](#Backlight_utilities).
 
 ## Troubleshooting
 

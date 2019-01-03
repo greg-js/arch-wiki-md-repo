@@ -6,7 +6,7 @@ Related articles
 
 From the project's [git repository](http://cgit.freedesktop.org/~dvdhrm/kmscon/tree/README):
 
-	*Kmscon is a simple terminal emulator based on linux [kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"). It is an attempt to replace the in-kernel VT implementation with a userspace console.*
+	Kmscon is a simple terminal emulator based on linux [kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"). It is an attempt to replace the in-kernel VT implementation with a userspace console.
 
 ## Contents
 

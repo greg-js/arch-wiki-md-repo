@@ -63,7 +63,7 @@ Novas vulnerabilidades são localizadas todo momento. Ajude a [Equipe de Seguran
 
 ### Ajude a testar pacotes
 
-Pacotes nos repositórios de teste precisam ser testados e assinados antes que ele sejam promovidos para os repositórios principas. Ajude a [Equipe de Teste do Arch](/index.php/Arch_Testing_Team "Arch Testing Team") a testar novos pacotes.
+Pacotes nos repositórios de teste precisam ser testados e assinados antes que ele sejam promovidos para os repositórios principas. Ajude a [Equipe de Teste do Arch](/index.php/Equipe_de_Teste_do_Arch "Equipe de Teste do Arch") a testar novos pacotes.
 
 ### Crie e adote pacotes do AUR
 
@@ -75,7 +75,7 @@ O [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch 
 
 A distribuição [Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs) "Arch Linux (Português)") compreende muitos componentes, como o gerenciador de pacotes [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)"), o site [archlinux.org](https://archlinux.org) ( *archweb* ) ou o sistema de suporte para o [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)") ( *aurweb* ). Cada um desses projetos pode ser contribuído individualmente.
 
-Veja [DeveloperWiki:Projects](/index.php/DeveloperWiki:Projects "DeveloperWiki:Projects") para uma visão geral dos membros da equipe, canais de comunicação e linguagens de programação usadas. Os projetos em si são hospedados com [git](/index.php/Git "Git") em [git.archlinux.org](https://git.archlinux.org).
+Veja [DeveloperWiki:Projects (Português)](/index.php/DeveloperWiki:Projects_(Portugu%C3%AAs) "DeveloperWiki:Projects (Português)") para uma visão geral dos membros da equipe, canais de comunicação e linguagens de programação usadas. Os projetos em si são hospedados com [git](/index.php/Git "Git") em [git.archlinux.org](https://git.archlinux.org).
 
 ## Doe dinheiro
 

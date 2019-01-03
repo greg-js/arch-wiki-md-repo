@@ -128,6 +128,8 @@ Actually, for this to work, we will need to add the primary and secondary groups
 | [grafana](https://www.archlinux.org/packages/?name=grafana) | grafana | 207 |
 | [consul](https://www.archlinux.org/packages/?name=consul) | consul | 208 |
 | [cups](https://www.archlinux.org/packages/?name=cups) | cups | 209 |
+ prometheus | 210 |
+ [alertmanager](https://www.archlinux.org/packages/?name=alertmanager) | 211 |
 | [amavisd-new](https://www.archlinux.org/packages/?name=amavisd-new) | amavis | 333 |
 | [opendmarc](https://www.archlinux.org/packages/?name=opendmarc) | opendmarc | 335 |
 | [ceph](https://www.archlinux.org/packages/?name=ceph) | ceph | 340 |
@@ -292,6 +294,7 @@ Actually, for this to work, we will need to add the primary and secondary groups
 | [grafana](https://www.archlinux.org/packages/?name=grafana) | grafana | 207 |
 | [consul](https://www.archlinux.org/packages/?name=consul) | consul | 208 |
 | [cups](https://www.archlinux.org/packages/?name=cups) | cups | 209 |
+ prometheus | 210 |
 | [amavisd-new](https://www.archlinux.org/packages/?name=amavisd-new) | amavis | 333 |
 | [opendmarc](https://www.archlinux.org/packages/?name=opendmarc) | opendmarc | 335 |
 | [ceph](https://www.archlinux.org/packages/?name=ceph) | ceph | 340 |

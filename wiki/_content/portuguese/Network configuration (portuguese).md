@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Network configuration](/index.php/Network_configuration "Network configuration"). Data da última tradução: 2018-12-29\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Network_configuration&diff=0&oldid=559522) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Network configuration](/index.php/Network_configuration "Network configuration"). Data da última tradução: 2019-01-02\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Network_configuration&diff=0&oldid=561085) na versão em inglês.
 
 Artigos relacionados
 
@@ -49,7 +49,7 @@ Esse artigo explica como configurar uma conexão de rede.
             *   [6.2.2.1 Ruim](#Ruim)
             *   [6.2.2.2 Bom](#Bom)
             *   [6.2.2.3 Melhor](#Melhor)
-        *   [6.2.3 More about it](#More_about_it)
+        *   [6.2.3 Mais sobre isso](#Mais_sobre_isso)
     *   [6.3 Notificação de Congestionamento Explícito](#Notificação_de_Congestionamento_Explícito)
     *   [6.4 Realtek sem link / Problema com WOL](#Realtek_sem_link_/_Problema_com_WOL)
         *   [6.4.1 Habilitando a NIC diretamente no Linux](#Habilitando_a_NIC_diretamente_no_Linux)
@@ -293,7 +293,7 @@ de rede | GUI | [Archiso](/index.php/Archiso_(Portugu%C3%AAs) "Archiso (Portugu�
 | [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") | Não | Sim ([base](https://www.archlinux.org/groups/x86_64/base/)) | [networkctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/networkctl.1) | [Não](https://github.com/systemd/systemd/issues/481) | interno | `systemd-networkd.service`, `systemd-resolved.service` |
 | [Wicd](/index.php/Wicd "Wicd") | Sim | Não | [wicd-cli(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wicd-cli.8), [wicd-curses(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wicd-curses.8) | Não | [dhcpcd](/index.php/Dhcpcd "Dhcpcd") | `wicd.service` |
 
-Há também o [Wifi Radar](/index.php/Wifi_Radar "Wifi Radar"), um aplicativo GUI que gerencia redes Wifi por meio do [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools), porém ele não gerencia conexões cabeadas.
+Há também o [Wifi Radar](/index.php/Wifi_Radar_(Portugu%C3%AAs) "Wifi Radar (Português)"), um aplicativo GUI que gerencia redes Wifi por meio do [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools), porém ele não gerencia conexões cabeadas.
 
 Veja também [List of applications#Network managers](/index.php/List_of_applications#Network_managers "List of applications").
 
@@ -356,7 +356,7 @@ Para um sistema com um endereço IP permanente, esse endereço IP permanente dev
 Para tornar sua máquina acessível em sua LAN por seu hostname, você pode:
 
 *   editar o arquivo `/etc/hosts` para todo dispositivio em sua LAN, veja [hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5)
-*   configurar um [servidor DNS](/index.php/DNS_server "DNS server") para resolver seu hostname e faça com que os dispositivos LAN o usem (ex., por [#DHCP](#DHCP))
+*   configurar um [servidor DNS](/index.php/Servidor_DNS "Servidor DNS") para resolver seu hostname e faça com que os dispositivos LAN o usem (ex., por [#DHCP](#DHCP))
 *   ou a forma fácil: use um serviço [Zero-configuration networking](https://en.wikipedia.org/wiki/pt:Zeroconf "wikipedia:pt:Zeroconf"):
     *   [Samba](/index.php/Samba "Samba") fornece resolução de nomes via **NetBIOS** da Microsoft. Ele precisa da instalação do [samba](https://www.archlinux.org/packages/?name=samba) e habilitação do serviço `nmb.service`. Computadores usando Windows, macOS ou Linux com `nmb` ativo, serão capazes de localizar sua máquina.
     *   [Avahi](/index.php/Avahi "Avahi") fornece resolução de nomes via **zeroconf**, também conhecido como Avahi ou Bonjour. É necessário uma configuração um pouco mais complexa que o Samba: veja [Avahi#Hostname resolution](/index.php/Avahi#Hostname_resolution "Avahi") para detalhes details. Computadores usando macOS, ou Linux com um daemon Avahi ativo, serão capazes de localizar sua máquina. Windows não têm um cliente ou daemon Avahi incorporados.
@@ -560,9 +560,9 @@ net.ipv4.tcp_window_scaling = 0
 
 Esse problema é causado por roteadores/firewalls quebrados, então vamos mudá-los. Alguns usuários relataram que o roteador quebrado era o próprio roteador DSL.
 
-#### More about it
+#### Mais sobre isso
 
-Essa seção é baseada nos artigos, em inglês, do LWN [Escala de janela e roteadores quebrados](http://lwn.net/Articles/92727/) e do Kernel Trap [Escala de Janela na Internet](http://kerneltrap.org/node/6723).
+Essa seção é baseada nos artigos, em inglês, do LWN [Escala de janela e roteadores quebrados](http://lwn.net/Articles/92727/) e do Kernel Trap [Escala de Janela na Internet](https://web.archive.org/web/20120426135627/http://kerneltrap.org:80/node/6723) (arquivado).
 
 Há também vários tópicos relevantes no LKML.
 
@@ -686,7 +686,7 @@ softdep tg3 pre: broadcom
 
 O adaptador deve ser reconhecido pelo módulo `r8169`. No entanto, com algumas revisões de chips, a conexão pode cair e voltar o tempo todo. A alternativa [r8168](https://www.archlinux.org/packages/?name=r8168) deve ser usada para uma conexão confiável neste caso. [Lista negra](/index.php/Blacklist "Blacklist") `r8169`, se [r8168](https://www.archlinux.org/packages/?name=r8168) não for carregado automaticamente pelo [udev](/index.php/Udev "Udev"), veja [Kernel modules#Automatic module loading with systemd](/index.php/Kernel_modules#Automatic_module_loading_with_systemd "Kernel modules").
 
-Outra falha nos drivers para algumas revisões deste adaptador é um suporte fraco de IPv6\. [IPv6#Disable functionality](/index.php/IPv6#Disable_functionality "IPv6") pode ser útil se você encontrar problemas como pendurar páginas da web e velocidades lentas.
+Outra falha nos drivers para algumas revisões deste adaptador é um suporte fraco de IPv6\. [IPv6 (Português)#Desabilitar funcionalidade](/index.php/IPv6_(Portugu%C3%AAs)#Desabilitar_funcionalidade "IPv6 (Português)") pode ser útil se você encontrar problemas como pendurar páginas da web e velocidades lentas.
 
 ### Placa-mãe Gigabyte com Realtek 8111/8168/8411
 

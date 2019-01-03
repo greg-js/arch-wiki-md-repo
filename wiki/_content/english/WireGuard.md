@@ -33,13 +33,15 @@ From the [WireGuard](https://www.wireguard.com/) project homepage:
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [wireguard-tools](https://www.archlinux.org/packages/?name=wireguard-tools) package.
+[Install](/index.php/Install "Install") the [wireguard-tools](https://www.archlinux.org/packages/?name=wireguard-tools) package and the appropriate kernel module:
 
-**Note:** WireGuard is not yet mainlined and the required kernel module will be built using [DKMS](/index.php/DKMS "DKMS"). As such, be sure to have the corresponding kernel-headers package installed.
+*   [wireguard-arch](https://www.archlinux.org/packages/?name=wireguard-arch) for the default [linux](https://www.archlinux.org/packages/?name=linux) kernel.
+*   [wireguard-lts](https://www.archlinux.org/packages/?name=wireguard-lts) for the LTS [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernel.
+*   [wireguard-dkms](https://www.archlinux.org/packages/?name=wireguard-dkms) for the DKMS variant for other [kernels](/index.php/Kernel "Kernel").
 
 ## Usage
 
-Below commands will demonstrate how to setup a basic tunnel between two peers with the following settings:
+The below commands demonstrate how to setup a basic tunnel between two peers with the following settings:
 
  Peer A | Peer B |
 | External IP address | 10.10.10.1/24 | 10.10.10.2/24 |
@@ -194,7 +196,7 @@ Destination = 10.0.0.0/24
 
 ## Specific use-case: VPN server
 
-The purpose of this section is to setup a WireGuard "server" and generic "clients" to enable access to the server/network resources through an encrypted and secured tunnel like [OpenVPN](/index.php/OpenVPN "OpenVPN") and others. The server runs on Linux and the clients can run any any number of platforms (the WireGuard Project offers apps on both iOS and Android platforms in addition to Linux-native and MacOS). See the official project [install link](https://www.wireguard.com/install/) for more.
+The purpose of this section is to setup a WireGuard "server" and generic "clients" to enable access to the server/network resources through an encrypted and secured tunnel like [OpenVPN](/index.php/OpenVPN "OpenVPN") and others. The server runs on Linux and the clients can run any number of platforms (the WireGuard Project offers apps on both iOS and Android platforms in addition to Linux-native and MacOS). See the official project [install link](https://www.wireguard.com/install/) for more.
 
 ### Server
 

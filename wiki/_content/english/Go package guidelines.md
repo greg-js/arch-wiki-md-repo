@@ -40,11 +40,11 @@ When preparing the sources before building, the following may be needed:
 
 ```
 prepare(){
-  mkdir -p "gopath/src/github.com/pkgbuild-example"
-  ln -rTsf "${pkgname}-${pkgver}" "gopath/src/github.com/pkgbuild-example/$pkgname"
+  mkdir -p gopath/src/github.com/pkgbuild-example
+  ln -rTsf $pkgname-$pkgver gopath/src/github.com/pkgbuild-example/$pkgname
 
   # the dependencies can be fetched here if needed
-  cd "gopath/src/github.com/pkgbuild-example/$pkgname"
+  cd gopath/src/github.com/pkgbuild-example/$pkgname
   dep ensure
 }
 
@@ -124,7 +124,7 @@ Note that `install` and `build` and can do recursive builds if you have a `cmd/`
 
 ### Notes about dependencies and dependency managers
 
-Go packages currently use the `vendor/` folder to handle dependencies in projects. These are usually managed by one of several dependency manager projects. If one is used for the package, this step should be performed in the [prepare()](/index.php/Creating_packages#prepare.28.29 "Creating packages") function of the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD").
+Go packages currently use the `vendor/` folder to handle dependencies in projects. These are usually managed by one of several dependency manager projects. If one is used for the package, this step should be performed in the [prepare()](/index.php/Creating_packages#prepare() "Creating packages") function of the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD").
 
 Dependencies are normally managed by the `go mod` command, that comes with Go 1.11 or later.
 
@@ -161,7 +161,7 @@ build() {
 
 package() {
   cd $pkgname-$pkgver
-  install -Dm755 $pkgname -t "$pkgdir"/usr/bin/
+  install -Dm755 $pkgname "$pkgdir"/usr/bin/$pkgname
 }
 
 ```
@@ -182,7 +182,7 @@ sha256sums=('1337deadbeef')
 
 prepare(){
   mkdir -p gopath/src/example.org/foo
-  ln -rTsf pkgname-$pkgver gopath/src/example.org/foo
+  ln -rTsf $pkgname-$pkgver gopath/src/example.org/foo
   export GOPATH="$srcdir"/gopath
   cd gopath/src/example.org/foo
   dep ensure
@@ -199,13 +199,13 @@ build() {
 }
 
 check() {
-  export GOPATH="$srcdir/gopath"
+  export GOPATH="$srcdir"/gopath
   cd gopath/src/example.org/foo
   go test ./...
 }
 
 package() {
-  install -Dm755 "gopath/bin/$pkgname" "$pkgdir/usr/bin/$pkgname"
+  install -Dm755 gopath/bin/$pkgname "$pkgdir"/usr/bin/$pkgname
 }
 
 ```

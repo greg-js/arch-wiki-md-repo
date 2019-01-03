@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Python package guidelines](/index.php/Python_package_guidelines "Python package guidelines"). Data da última tradução: 2018-11-26\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Python_package_guidelines&diff=0&oldid=557376) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Python package guidelines](/index.php/Python_package_guidelines "Python package guidelines"). Data da última tradução: 2019-01-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Python_package_guidelines&diff=0&oldid=561238) na versão em inglês.
 
 **[Diretrizes de criação de pacotes](/index.php/Padr%C3%B5es_de_empacotamento_do_Arch "Padrões de empacotamento do Arch")**
 
@@ -72,13 +72,12 @@ Um PKGBUILD de *distutils* é geralmente bem simples:
 
 ```
 build() {
-  *python* setup.py build
+    *python* setup.py build
 }
 
 package() {
-  *python* setup.py install --root="$pkgdir/" --optimize=1 --skip-build
+    *python* setup.py install --root="$pkgdir/" --optimize=1 --skip-build
 }
-
 ```
 
 sendo que:
@@ -127,7 +126,7 @@ Para pacotes que fazem isso, precisamos de uma função [prepare()](/index.php/C
 makedepends=("python-setuptools" "python2-setuptools")
 
 prepare() {
-  cp -a foo-$pkgver{,-py2}
+    cp -a foo-$pkgver{,-py2}
 }
 
 build() {
@@ -149,7 +148,6 @@ package_python2-foo() {
     cd "$srcdir/foo-$pkgver-py2"
     python2 setup.py install --root="$pkgdir/" --optimize=1 --skip-build
 }
-
 ```
 
 ## Verificação
@@ -157,45 +155,44 @@ package_python2-foo() {
 A maioria dos projetos python que fornecem *testsuites* (que são conjunto ou coleção de testes) usam *nosetests* ou *pytest* para executar os testes com `test` no nome do arquivo ou diretório contendo a *testsuite*. Em geral, só executar `nosetests` ou `pytest` é o suficiente para executar a *testsuite*.
 
 ```
- check(){
-   cd "$srcdir/foo-$pkgver"
+check(){
+    cd "$srcdir/foo-$pkgver"
 
-   # Para nosetests
-   nosetests
+    # Para nosetests
+    nosetests
 
-   # Para pytest
-   pytest
- }
+    # Para pytest
+    pytest
+}
 
 ```
 
 Se houver uma extensão C compilada, os testes precisam ser executados usando um hack `$PYTHONPATH` para localizá-la e carregá-la.
 
 ```
- check(){
-   cd "$srcdir/foo-$pkgver"
+check(){
+    cd "$srcdir/foo-$pkgver"
 
-   # Para nosetests
-   PYTHONPATH="$PWD/build/lib.linux-$CARCH-3.7" nosetests
+    # Para nosetests
+    PYTHONPATH="$PWD/build/lib.linux-$CARCH-3.7" nosetests
 
-   # Para pytest
-   PYTHONPATH="$PWD/build/lib.linux-$CARCH-3.7" pytest
- }
-
+    # Para pytest
+    PYTHONPATH="$PWD/build/lib.linux-$CARCH-3.7" pytest
+}
 ```
 
 Alguns projetos fornecem pontos de entrada no `setup.py` para executar o teste. Isso funciona para `pytest` e `nosetests`.
 
 ```
- check(){
-   cd "$srcdir/foo-$pkgver"
+check(){
+    cd "$srcdir/foo-$pkgver"
 
-   # para nosetests
-   python setup.py nosetests
+    # para nosetests
+    python setup.py nosetests
 
-   # Para pytest - precisa de python-pytest-runner
-   python setup.py pytest
- }
+    # Para pytest - precisa de python-pytest-runner
+    python setup.py pytest
+}
 
 ```
 

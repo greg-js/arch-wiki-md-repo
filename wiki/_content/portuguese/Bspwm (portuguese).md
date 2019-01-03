@@ -1,6 +1,8 @@
+**Status de tradução:** Esse artigo é uma tradução de [Bspwm](/index.php/Bspwm "Bspwm"). Data da última tradução: 2018-07-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Bspwm&diff=0&oldid=530329) na versão em inglês.
+
 Related articles
 
-*   [Window manager](/index.php/Window_manager "Window manager")
+*   [Gerenciador de janela](/index.php/Gerenciador_de_janela "Gerenciador de janela")
 *   [Comparison of tiling window managers](/index.php/Comparison_of_tiling_window_managers "Comparison of tiling window managers")
 
 [bspwm](https://github.com/baskerville/bspwm) é um gerenciador de janelas leve, lado a lado, e minimalista escrito em C que organiza janelas em [árvore binária](https://pt.wikipedia.org/wiki/%C3%81rvore_bin%C3%A1ria) completa. Seu tamanho instalado é menor que 600KB. O bspwm tem suporte para [EWMH](https://standards.freedesktop.org/wm-spec/wm-spec-latest.html) e múltiplos monitores. Ele responde apenas a eventos e mensagens X que recebe em um soquete dedicado de um programa incluído em seu pacote, o bspc.

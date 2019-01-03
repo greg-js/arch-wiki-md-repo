@@ -104,7 +104,7 @@ Usually the post-MBR gap (after the 512 byte [MBR](/index.php/MBR "MBR") region 
 
 ### Installation
 
-[Install](/index.php/Install "Install") the [grub](https://www.archlinux.org/packages/?name=grub) package. It will replace [grub-legacy](https://aur.archlinux.org/packages/grub-legacy/), where already installed. Then do:
+[Install](/index.php/Install "Install") the [grub](https://www.archlinux.org/packages/?name=grub) package. (It will replace [grub-legacy](https://aur.archlinux.org/packages/grub-legacy/) if that is already installed.) Then do:
 
 ```
 # grub-install --target=i386-pc /dev/sd**X**
@@ -202,7 +202,7 @@ To automatically add entries for other installed operating systems, see [#Detect
 
 You can add additional custom menu entries by editing `/etc/grub.d/40_custom` and re-generating `/boot/grub/grub.cfg`. Or you can create `/boot/grub/custom.cfg` and add them there. Changes to `/boot/grub/custom.cfg` do not require re-running *grub-mkconfig*, since `/etc/grub.d/40_custom` adds the necessary `source` statement to the generated configuration file.
 
-**Tip:** `/etc/grub.d/40_custom` can be used as a template to create `/etc/grub.d/*nn*_custom`. Where `*nn*` defines the precedence, indicating the order the script is executed. The order scripts are executed determine the placement in the GRUB boot menu. `*nn*` should be greater than `06` to ensure necessary scripts are executed first.
+**Tip:** `/etc/grub.d/40_custom` can be used as a template to create `/etc/grub.d/*nn*_custom`, where `*nn*` defines the precedence, indicating the order the script is executed. The order scripts are executed determine the placement in the GRUB boot menu. `*nn*` should be greater than `06` to ensure necessary scripts are executed first.
 
 See [#Boot menu entries](#Boot_menu_entries) for custom menu entry examples.
 
@@ -212,7 +212,9 @@ To have *grub-mkconfig* search for other installed systems and automatically add
 
 ##### MS Windows
 
-Partitions containing Windows should be automatically discovered by [os-prober](https://www.archlinux.org/packages/?name=os-prober). However, if the partition is encrypted, you may need to decrypt the partition before mounting. For BitLocker, this can be done with [dislocker](https://aur.archlinux.org/packages/dislocker/). This should be sufficient for [os-prober](https://www.archlinux.org/packages/?name=os-prober) to add the correct entry.
+Often, partitions containing Windows will be automatically discovered by [os-prober](https://www.archlinux.org/packages/?name=os-prober). However, NTFS partitions may not always be detected when mounted with the default Linux drivers. If GRUB is not detecting it, try installing [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) and remounting.
+
+Encrypted Windows partitions may need to be decrypted before mounting. For BitLocker, this can be done with [dislocker](https://aur.archlinux.org/packages/dislocker/). This should be sufficient for [os-prober](https://www.archlinux.org/packages/?name=os-prober) to add the correct entry.
 
 #### Additional arguments
 
@@ -896,7 +898,7 @@ You may need to provide `/run/lvm/` access to the chroot environment using:
 
 ```
 
-See [FS#61040](https://bugs.archlinux.org/task/61040).
+See [FS#61040](https://bugs.archlinux.org/task/61040) and [workaround](https://bbs.archlinux.org/viewtopic.php?pid=1820949#p1820949).
 
 ## See also
 

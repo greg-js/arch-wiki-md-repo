@@ -88,9 +88,11 @@ Refer to [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Ea
 
 For Skylake and newer processors, some video features (e.g. CBR rate control on SKL low-power encoding mode) may require the use of an updated GPU firmware, which is currently (as of 4.16) not enabled by default. Enabling GuC/HuC firmware loading can cause issues on some systems; disable it if you experience freezing (for example, after resuming from hibernation).
 
-It is necessary to add `i915.enable_guc=3` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to enable both GuG and HuC firmware loading. Alternatively, if the [initramfs](/index.php/Initramfs "Initramfs") already includes the `i915` module (see [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting")), you can set these options through a file in `/etc/modprobe.d/`, e.g.:
+It is necessary to add `i915.enable_guc=2` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to enable both GuC and HuC firmware loading. Alternatively, if the [initramfs](/index.php/Initramfs "Initramfs") already includes the `i915` module (see [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting")), you can set these options through a file in `/etc/modprobe.d/`, e.g.:
 
- `/etc/modprobe.d/i915.conf`  `options i915 enable_guc=3` 
+ `/etc/modprobe.d/i915.conf`  `options i915 enable_guc=2` 
+
+You can also enable GuC submission by setting flag `enable_guc=3` but this is generally discouraged and may negatively affect your system stability.
 
 You can verify both are enabled by using *dmesg*:
 

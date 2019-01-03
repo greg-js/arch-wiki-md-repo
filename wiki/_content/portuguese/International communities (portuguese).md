@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [International communities](/index.php/International_communities "International communities"). Data da última tradução: 2018-11-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=International_communities&diff=0&oldid=554588) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [International communities](/index.php/International_communities "International communities"). Data da última tradução: 2019-01-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=International_communities&diff=0&oldid=558404) na versão em inglês.
 
 Artigos relacionados
 
@@ -22,20 +22,19 @@ Esta lista não está completa. Se você conhece uma comunidade que não está l
 *   [4 Espanhol](#Espanhol)
 *   [5 Francês](#Francês)
 *   [6 Grego](#Grego)
-*   [7 Húngaro](#Húngaro)
-*   [8 Italiano](#Italiano)
-*   [9 Japonês](#Japonês)
-*   [10 Lituano](#Lituano)
-*   [11 Persa](#Persa)
-*   [12 Polonês](#Polonês)
-*   [13 Português](#Português)
-*   [14 Romeno](#Romeno)
-*   [15 Russo](#Russo)
-*   [16 Sérvia](#Sérvia)
-*   [17 Sueco](#Sueco)
-*   [18 Turco](#Turco)
-*   [19 Ucraniano](#Ucraniano)
-*   [20 Vietnamita](#Vietnamita)
+*   [7 Italiano](#Italiano)
+*   [8 Japonês](#Japonês)
+*   [9 Lituano](#Lituano)
+*   [10 Persa](#Persa)
+*   [11 Polonês](#Polonês)
+*   [12 Português](#Português)
+*   [13 Romeno](#Romeno)
+*   [14 Russo](#Russo)
+*   [15 Sérvia](#Sérvia)
+*   [16 Sueco](#Sueco)
+*   [17 Turco](#Turco)
+*   [18 Ucraniano](#Ucraniano)
+*   [19 Vietnamita](#Vietnamita)
 
 ## Alemão
 
@@ -86,11 +85,6 @@ Esta lista não está completa. Se você conhece uma comunidade que não está l
 
 *   Site: [http://archlinux.gr](http://archlinux.gr)
 *   Wiki: [Main page (Ελληνικά)](/index.php/Main_page_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Main page (Ελληνικά)")
-
-## Húngaro
-
-*   Site: [http://archlinux.hu/](http://archlinux.hu/)
-*   Fórum: [http://archlinux.hu/forum](http://archlinux.hu/forum)
 
 ## Italiano
 

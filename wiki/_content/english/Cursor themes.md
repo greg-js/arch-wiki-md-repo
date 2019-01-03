@@ -302,4 +302,4 @@ If you have conflicting cursors then it might be because a different cursor has 
 
 ## See also
 
-*   [man Xcursor](http://www.x.org/releases/current/doc/man/man3/Xcursor.3.xhtml) — For more information about cursors in X (supported directories, formats, compatibility, etc.).
+*   [Xcursor(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/Xcursor.3) — For more information about cursors in X (supported directories, formats, compatibility, etc.).

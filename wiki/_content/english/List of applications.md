@@ -247,8 +247,8 @@ This article is a general list of applications sorted by category, as a referenc
     *   [4.1 Text editors](#Text_editors)
         *   [4.1.1 Console](#Console_19)
         *   [4.1.2 Graphical](#Graphical_19)
-        *   [4.1.3 Emacs text editors](#Emacs_text_editors)
-        *   [4.1.4 Vi text editors](#Vi_text_editors)
+        *   [4.1.3 Emacs-style text editors](#Emacs-style_text_editors)
+        *   [4.1.4 Vi-style text editors](#Vi-style_text_editors)
     *   [4.2 Office](#Office)
         *   [4.2.1 Office suites](#Office_suites)
         *   [4.2.2 Word processors](#Word_processors)
@@ -477,6 +477,10 @@ See also [Network configuration#Network managers](/index.php/Network_configurati
 *   **[Vpnc](/index.php/Vpnc "Vpnc")** — To connect to Cisco 3000 VPN Concentrators.
 
 	[https://www.unix-ag.uni-kl.de/~massar/vpnc/](https://www.unix-ag.uni-kl.de/~massar/vpnc/) || [vpnc](https://www.archlinux.org/packages/?name=vpnc)
+
+*   **[WireGuard](/index.php/WireGuard "WireGuard")** — Next generation secure network tunnel.
+
+	[https://www.wireguard.com/](https://www.wireguard.com/) || [wireguard-tools](https://www.archlinux.org/packages/?name=wireguard-tools)
 
 #### Proxy servers
 
@@ -6172,7 +6176,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[https://wxmedit.github.io/](https://wxmedit.github.io/) || [wxmedit](https://aur.archlinux.org/packages/wxmedit/)
 
-#### Emacs text editors
+#### Emacs-style text editors
 
 *   **[Emacs](/index.php/Emacs "Emacs")** — The extensible, customizable, self-documenting real-time display editor by GNU.
 
@@ -6194,7 +6198,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[https://www.gnu.org/software/zile/](https://www.gnu.org/software/zile/) || [zile](https://www.archlinux.org/packages/?name=zile)
 
-#### Vi text editors
+#### Vi-style text editors
 
 *   **Amp** — Text editor written in Rust, that aims to take the core interaction model of Vim, simplify it, and bundle in the essential features required for a modern text editor.
 

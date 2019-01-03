@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Pacman/Package signing](/index.php/Pacman/Package_signing "Pacman/Package signing"). Data da última tradução: 2018-10-25\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Package_signing&diff=0&oldid=551079) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Pacman/Package signing](/index.php/Pacman/Package_signing "Pacman/Package signing"). Data da última tradução: 2018-12-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Package_signing&diff=0&oldid=557729) na versão em inglês.
 
 Artigos relacionados
 
@@ -40,7 +40,7 @@ Exemplos de redes de confiança:
 
 A opção `SigLevel` no `/etc/pacman.conf` determina quanta confiança é exigida para instalar um pacote. Para uma explicação detalhada de `SigLevel`, veja a [página man do pacman.conf](https://www.archlinux.org/pacman/pacman.conf.5.html#_package_and_database_signature_checking) e os comentários no arquivo em si. A verificação de assinatura pode ser definida globalmente ou por repositório. Se `SigLevel` estiver definido globalmente na seção `[options]` para exigir que todos os pacotes seja assinados, então os pacotes que você compilar também precisarão ser assinados usando *makepkg*.
 
-**Nota:** Apesar de todos os pacotes oficiais serem agora assinados, desde Junho de 2012 a assinatura da base de dados é um trabalho em progresso. Se `Required` estiver definido, então `DatabaseOptional` também deve ser definido.
+**Nota:** Apesar de todos os pacotes oficiais serem agora assinados, desde Novembro de 2018 a assinatura da base de dados é um [trabalho em progresso](https://bbs.archlinux.org/viewtopic.php?id=242258). Se `Required` estiver definido, então `DatabaseOptional` também deve ser definido.
 
 Uma configuração padrão pode ser usada para instalar apenas os pacotes que estão assinados pelas chaves confiadas:
 

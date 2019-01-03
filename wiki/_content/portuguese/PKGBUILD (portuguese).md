@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"). Data da última tradução: 2018-11-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=PKGBUILD&diff=0&oldid=556019) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"). Data da última tradução: 2019-01-02\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=PKGBUILD&diff=0&oldid=559829) na versão em inglês.
 
 Artigos relacionados
 
@@ -66,15 +66,15 @@ Variáveis obrigatórias são `pkgname`, `pkgver`, `pkgrel` e `arch`. `license` 
 
 ### pkgbase
 
-Uma diretiva global e opcional quando se está compilando um pacote dividido (*split*). `pkgbase` é usado para se referir a um grupo de pacotes na saída de *makepkg* e na nomeação de tarballs com apenas fontes. Se não especificado, o primeiro elemento no vetor `pkgname` é usado. A variável não pode iniciar com um hífen.
+Ao compilar pacotes comuns, esta variável não deve ser explicitamente declarada no PKGBUILD: seu valor é padronizado para o do [#pkgname](#pkgname).
 
-Todas opções e diretivas para os pacotes divididos têm como padrão os valores globais definidos no PKGBUILD. Mesmo assim, os seguintes podem ser sobrescritos dentro de cada função de empacotameto do pacote dividido: [#pkgdesc](#pkgdesc), [#arch](#arch), [#url](#url), [#license](#license), [#groups](#groups), [#depends](#depends), [#optdepends](#optdepends), [#provides](#provides), [#conflicts](#conflicts), [#replaces](#replaces), [#backup](#backup), [#options](#options), [#install](#install) e [#changelog](#changelog).
+Ao criar um [pacote dividido](https://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5#PACKAGE_SPLITTING) (*split package*, em inglês), essa variável pode ser usada para especificar explicitamente o nome a ser usado para se referir ao grupo de pacotes na saída de *makepkg* e na nomeação de tarballs somente de origem. O valor não é permitido para começar com um hífen. Se não for especificado, o valor será o padrão para o primeiro elemento no vetor `pkgname`.
+
+Todas opções e diretivas para pacotes divididos têm como padrão os valores globais definidos no PKGBUILD. Mesmo assim, os seguintes podem ser sobrescritos dentro de cada função de empacotameto do pacote dividido: [#pkgdesc](#pkgdesc), [#arch](#arch), [#url](#url), [#license](#license), [#groups](#groups), [#depends](#depends), [#optdepends](#optdepends), [#provides](#provides), [#conflicts](#conflicts), [#replaces](#replaces), [#backup](#backup), [#options](#options), [#install](#install) e [#changelog](#changelog).
 
 ### pkgname
 
-O nome do pacote, ou dos pacotes. Nome de pacotes devem consistir apenas de caracteres alfanuméricos minúsculos e quaisquer outros dos seguintes caracteres: `@._+-` (sinais de arroba, ponto, sublinhado, mais e hífen). Nomes não podem iniciar com hífenes. Por uma questão de consistência, `pkgname` deve corresponder ao nome do tarball fonte do software: por exemplo, se o software está em `foobar-2.5.tar.gz`, use `pkgname=foobar`. O nome do diretório contendo o PKGBUILD também deve corresponder ao `pkgname`.
-
-Pacotes divididos devem ser definidos como um vetor, ex.: `pkgname=('foo' 'bar')`.
+O nome do pacote (por exemplo, `pkgname='foo'`) ou, para pacotes divididos, um vetor de nomes (por exemplo, `pkgname=('foo' 'bar')`). Nomes não podem iniciar com hífenes. Por uma questão de consistência, `pkgname` deve corresponder ao nome do tarball fonte do software: por exemplo, se o software está em `foobar-2.5.tar.gz`, use `pkgname=foobar`. O nome do diretório contendo o PKGBUILD também deve corresponder ao `pkgname`.
 
 ## Versão
 
@@ -132,7 +132,7 @@ A URL do site oficial do software sendo empacotado.
 
 ### license
 
-A licença sob a qual o software é distribuído. O pacote [licenses](https://www.archlinux.org/packages/?name=licenses) contém muitas licenças comumente usadas, que são instaladas em `/usr/share/licenses/common`. Se um pacote é licenciado sob uma dessas licenças, o valor deve ser definido para o nome do diretório (ex.: `license=('GPL')`). Se a licença adequada não estiver incluída, diversas coisas devem ser feitas:
+A licença sob a qual o software é distribuído. O pacote [licenses](https://www.archlinux.org/packages/?name=licenses) (parte do [grupo base](/index.php/Grupo_base "Grupo base")) contém muitas licenças comumente usadas, que são instaladas em `/usr/share/licenses/common`. Se um pacote é licenciado sob uma dessas licenças, o valor deve ser definido para o nome do diretório (ex.: `license=('GPL')`). Se a licença adequada não estiver incluída, diversas coisas devem ser feitas:
 
 1.  Adicione `custom` ao vetor `license`. Opcionalmente, você pode substituir `custom` com `custom:*nome da licença*`. Uma vez que uma licença é usada em dois ou mais pacotes em um repositório oficial (incluindo [repositório community](/index.php/Reposit%C3%B3rio_community "Repositório community")), ela se torna parte do pacote [licenses](https://www.archlinux.org/packages/?name=licenses).
 2.  Instale a licença em: `/usr/share/licenses/*pkgname*/` (ex.: `/usr/share/licenses/foobar/LICENSE`). Uma boa forma de fazer isso é usando: {{bc|install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"}
@@ -147,6 +147,8 @@ A licença sob a qual o software é distribuído. O pacote [licenses](https://ww
 *   Se após pesquisar a questão nenhuma licença puder ser determinada, [PKGBUILD.proto](https://projects.archlinux.org/pacman.git/tree/proto/PKGBUILD.proto) sugere `unknown`. Porém, o *upstream* deve ser contatado sobre as condições sob as quais o software está (e não está) disponível.
 
 **Dica:** Alguns autores de software não fornecem arquivo de licença separados e descrevem regras de distribuição em uma seção de `ReadMe.txt` comum. Essa informação pode ser extraída para um arquivo separado durante a `build()` com alguma coisa como `sed -n '/**This software**/,/ **thereof.**/p' ReadMe.txt > LICENSE`
+
+Veja também [Diretrizes de pacotes de aplicativos não livres](/index.php/Diretrizes_de_pacotes_de_aplicativos_n%C3%A3o_livres "Diretrizes de pacotes de aplicativos não livres") (*nonfree*).
 
 Informações e perspectivas adicionais sobre licenças de software aberto e livre podem ser encontradas nas seguintes páginas:
 

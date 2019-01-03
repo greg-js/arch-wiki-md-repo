@@ -579,7 +579,7 @@ Matlab can be run within a systemd-nspawn container to maintain a static system 
 
 The following lists instruction to get a MATLAB 2017b install running in a minimal debian 9 environment. It assumes matlab is already installed as normal in "/usr/local/MATLAB/R2017b".
 
-Use [Xhost](/index.php/Xhost "Xhost") to allow the nspawn environment to use the existing X server instance.
+Use [Xhost](/index.php/Xhost "Xhost") to allow the nspawn environment to use the existing X server instance, see also [Systemd-nspawn#Use_an_X_environment](/index.php/Systemd-nspawn#Use_an_X_environment "Systemd-nspawn").
 
 Create a minimal debian environment in a folder ("deb9" here) with:
 

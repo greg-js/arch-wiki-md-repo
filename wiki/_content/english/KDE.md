@@ -62,6 +62,7 @@ KDE is a software project currently comprising a [desktop environment](/index.ph
         *   [5.1.2 Re-enabling compositing effects](#Re-enabling_compositing_effects)
     *   [5.2 Configuring monitor resolution / multiple monitors](#Configuring_monitor_resolution_/_multiple_monitors)
     *   [5.3 Disable opening application launcher with Super key (Windows key)](#Disable_opening_application_launcher_with_Super_key_(Windows_key))
+    *   [5.4 Disable Bookmarks Showing in Application Menu](#Disable_Bookmarks_Showing_in_Application_Menu)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Fonts](#Fonts)
         *   [6.1.1 Fonts in a Plasma session look poor](#Fonts_in_a_Plasma_session_look_poor)
@@ -523,6 +524,18 @@ To disable this feature you currently can run the following command:
 
 ```
 $ kwriteconfig5 --file kwinrc --group ModifierOnlyShortcuts --key Meta ""
+
+```
+
+### Disable Bookmarks Showing in Application Menu
+
+With Plasma Browser integration installed, KDE will show bookmarks in the application launcher.
+
+To disable this feature you currently can run the following commands:
+
+```
+$ mkdir ~/.local/share/kservices5
+$ sed 's/EnabledByDefault=true$/EnabledByDefault=false/' /usr/share/kservices5/plasma-runner-bookmarks.desktop > ~/.local/share/kservices5/plasma-runner-bookmarks.desktop
 
 ```
 

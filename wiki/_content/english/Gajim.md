@@ -6,8 +6,7 @@
 *   [2 D-Bus remote control](#D-Bus_remote_control)
 *   [3 Show/hide roster](#Show/hide_roster)
 *   [4 OMEMO Support](#OMEMO_Support)
-*   [5 Off-the-Record Messaging](#Off-the-Record_Messaging)
-    *   [5.1 gajim-otr version confusions](#gajim-otr_version_confusions)
+*   [5 Minimize / Close to tray](#Minimize_/_Close_to_tray)
 
 ## Installation
 
@@ -43,12 +42,6 @@ In order to use OMEMO in Gajim, follow these steps:
 7.  Restart Gajim;
 8.  Please refer to the official documentation for [running instructions](https://dev.gajim.org/gajim/gajim-plugins/wikis/OmemoGajimPlugin#running)
 
-## Off-the-Record Messaging
+## Minimize / Close to tray
 
-The [OTR (off-the-record) messaging](https://en.wikipedia.org/wiki/Off-the-Record_Messaging "wikipedia:Off-the-Record Messaging") have some bugs that can lead to accidently sending plaintext. It is recommended to use PGP or [OMEMO](https://conversations.im/omemo/) instead.
-
-The OTR plugin won't work with Gajim >= 1.0 as it was not ported to python3\. There is no port planned.
-
-### gajim-otr version confusions
-
-There are two differently developed/deployed versions of gajim-otr. One was developed at [github](https://github.com/python-otr/gajim-otr) but soon got merged into [gajim's own plugin-repository](https://dev.gajim.org/gajim/gajim-plugins/commits/master/gotr). [This repository](https://dev.gajim.org/gajim/gajim-plugins/wikis/home) is used for the development of many plugins, those plugins then get installed via. "Plugin Installer" from [ftp.gajim.org](ftp://ftp.gajim.org/) at the "view => plugins menu". github/gajim-otr shall not be used, due the fact it's source is outdated and [not maintained](https://github.com/python-otr/gajim-otr/wiki).
+By default Gajim remains in the taskbar (for Docks) instead of minimizing to tray when closing it. If you would like to disable this behavior, go to *Preferences > Advanced > Advanced Configuration Editor* and change **hide_on_roster_x_button** to **Activated**.

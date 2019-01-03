@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Package group](/index.php/Package_group "Package group")
+*   [Package group#base](/index.php/Package_group#base "Package group")

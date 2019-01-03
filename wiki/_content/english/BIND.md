@@ -39,7 +39,7 @@ BIND is configured in `/etc/named.conf`. The available options are documented in
 
 ### Restrict access to localhost
 
-BIND by defaults listens on [port](/index.php?title=Port&action=edit&redlink=1 "Port (page does not exist)") 53 of all interfaces and IP addresses. To only allow connections from localhost add the following line to the options section in `/etc/named.conf`:
+BIND by defaults listens on port 53 of all interfaces and IP addresses. To only allow connections from localhost add the following line to the options section in `/etc/named.conf`:
 
 ```
 listen-on { 127.0.0.1; };

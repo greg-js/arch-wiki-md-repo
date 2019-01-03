@@ -185,7 +185,7 @@ Executing it will prompt for a password, which should have very high entropy. Be
 
 -c
 
- | `aes-cbc-essiv:sha256` | `twofish-xts-plain64` | The cipher consists of three parts: cipher-chainmode-IV generator. Please see [Disk encryption#Ciphers and modes of operation](/index.php/Disk_encryption#Ciphers_and_modes_of_operation "Disk encryption") for an explanation of these settings, and the [DMCrypt documentation](https://gitlab.com/cryptsetup/cryptsetup/wikis/DMCrypt) for some of the options available. |
+ | `aes-cbc-essiv:sha256` | `aes-xts-plain64` | The cipher consists of three parts: cipher-chainmode-IV generator. Please see [Disk encryption#Ciphers and modes of operation](/index.php/Disk_encryption#Ciphers_and_modes_of_operation "Disk encryption") for an explanation of these settings, and the [DMCrypt documentation](https://gitlab.com/cryptsetup/cryptsetup/wikis/DMCrypt) for some of the options available. |
 | --key-size
 
 -s
@@ -211,7 +211,7 @@ Executing it will prompt for a password, which should have very high entropy. Be
 Using the device `/dev/sd*X*`, the above right column example results in:
 
 ```
-# cryptsetup --cipher=twofish-xts-plain64 --offset=0 --key-file=/dev/sd*Z* --key-size=512 open --type=plain /dev/sdX enc
+# cryptsetup --cipher=aes-xts-plain64 --offset=0 --key-file=/dev/sd*Z* --key-size=512 open --type=plain /dev/sdX enc
 
 ```
 

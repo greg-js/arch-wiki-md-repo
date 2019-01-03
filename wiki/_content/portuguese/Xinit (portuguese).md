@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Xinit](/index.php/Xinit "Xinit"). Data da última tradução: 2018-11-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Xinit&diff=0&oldid=556525) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Xinit](/index.php/Xinit "Xinit"). Data da última tradução: 2018-12-31\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Xinit&diff=0&oldid=560963) na versão em inglês.
 
 Artigos relacionados
 
@@ -21,8 +21,8 @@ Do [Wikipédia](https://en.wikipedia.org/wiki/xinit "wikipedia:xinit"):
     *   [2.2 xserverrc](#xserverrc)
 *   [3 Uso](#Uso)
 *   [4 Dicas e truques](#Dicas_e_truques)
-    *   [4.1 Inicializar automaticamente o X no login](#Inicializar_automaticamente_o_X_no_login)
-    *   [4.2 Sobrescrever xinitrc](#Sobrescrever_xinitrc)
+    *   [4.1 Sobrescrever xinitrc](#Sobrescrever_xinitrc)
+    *   [4.2 Inicializar automaticamente o X no login](#Inicializar_automaticamente_o_X_no_login)
     *   [4.3 Alternando entre ambientes de desktop/gerenciadores de janela](#Alternando_entre_ambientes_de_desktop/gerenciadores_de_janela)
     *   [4.4 Inicializando aplicativos sem um gerenciador de janela](#Inicializando_aplicativos_sem_um_gerenciador_de_janela)
     *   [4.5 Faça redirecionamento usando startx](#Faça_redirecionamento_usando_startx)
@@ -123,29 +123,6 @@ Veja também [signal(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/signal.7).
 
 ## Dicas e truques
 
-### Inicializar automaticamente o X no login
-
-Certifique-se de que *startx* esteja apropriadamente [configurado](#Configuração).
-
-Para o [Bash](/index.php/Bash "Bash"), adicione o seguinte ao final do `~/.bash_profile`. Se o arquivo não existir, copie uma versão esqueleto de `/etc/skel/.bash_profile`. Para [Zsh](/index.php/Zsh "Zsh"), adicione-o a `~/.zprofile`.
-
-```
-if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-  exec startx
-fi
-
-```
-
-Você pode substituir a comparação `-eq` por uma como `-le 3` (de vt1 a vt3) se quiser usar logins gráficos em mais de um terminal virtual.
-
-Condições alternativas para detectar o terminal virtual incluem `"$(tty)" = "/dev/tty1"`, que não permite comparação com `-le`, e `"$(fgconsole 2>/dev/null || echo -1)" -eq 1`, que não funciona em [consoles seriais](/index.php/Serial_console "Serial console").
-
-Se você quiser de permanecer autenticado quando a sessão X terminar, remova `exec`.
-
-Veja também [Fish#Start X at login](/index.php/Fish#Start_X_at_login "Fish") e [Systemd/User#Automatic login into Xorg without display manager](/index.php/Systemd/User#Automatic_login_into_Xorg_without_display_manager "Systemd/User").
-
-**Dica:** Esse método pode ser combinado com [login automático a um console virtual](/index.php/Automatic_login_to_virtual_console "Automatic login to virtual console").
-
 ### Sobrescrever xinitrc
 
 Se você tem um `~/.xinitrc` funcionando, mas quer apenas tentar outro gerenciador de janela ou ambiente de desktop, você pode executá-lo emitindo *startx* seguido pelo caminho para o gerenciador de janela, por exemplo:
@@ -174,6 +151,29 @@ Veja também [startx(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/startx.1).
 **Nota:** Display precisa se especificado (pois o carregamento `/etc/X11/xinit/xinitrc.d/` é ignorado) para algumas operações para funcionar (por exemplo, para daemons de notificação). [[2]](https://bbs.archlinux.org/viewtopic.php?id=202812)
 
 **Dica:** Isso pode ser usado para iniciar programas de interface gráfica comum, mas sem qualquer recurso básico de gerenciador de janela. Veja também [#Inicializando aplicativos sem um gerenciador de janela](#Inicializando_aplicativos_sem_um_gerenciador_de_janela) e [Executando um programa em uma tela X separada](/index.php/Running_program_in_separate_X_display "Running program in separate X display").
+
+### Inicializar automaticamente o X no login
+
+Certifique-se de que *startx* esteja apropriadamente [configurado](#Configuração).
+
+Para o [Bash](/index.php/Bash "Bash"), adicione o seguinte ao final do `~/.bash_profile`. Se o arquivo não existir, copie uma versão esqueleto de `/etc/skel/.bash_profile`. Para [Zsh](/index.php/Zsh "Zsh"), adicione-o a `~/.zprofile`.
+
+```
+if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+  exec startx
+fi
+
+```
+
+Você pode substituir a comparação `-eq` por uma como `-le 3` (de vt1 a vt3) se quiser usar logins gráficos em mais de um terminal virtual.
+
+Condições alternativas para detectar o terminal virtual incluem `"$(tty)" = "/dev/tty1"`, que não permite comparação com `-le`, e `"$(fgconsole 2>/dev/null || echo -1)" -eq 1`, que não funciona em [consoles seriais](/index.php/Serial_console "Serial console").
+
+Se você quiser de permanecer autenticado quando a sessão X terminar, remova `exec`.
+
+Veja também [Fish#Start X at login](/index.php/Fish#Start_X_at_login "Fish") e [Systemd/User#Automatic login into Xorg without display manager](/index.php/Systemd/User#Automatic_login_into_Xorg_without_display_manager "Systemd/User").
+
+**Dica:** Esse método pode ser combinado com [login automático a um console virtual](/index.php/Automatic_login_to_virtual_console "Automatic login to virtual console").
 
 ### Alternando entre ambientes de desktop/gerenciadores de janela
 

@@ -23,6 +23,7 @@ From [Wikipedia:JACK Audio Connection Kit](https://en.wikipedia.org/wiki/JACK_Au
     *   [2.5 GStreamer](#GStreamer)
     *   [2.6 PulseAudio](#PulseAudio)
     *   [2.7 Firewire](#Firewire)
+    *   [2.8 Network / remote audio](#Network_/_remote_audio)
 *   [3 MIDI](#MIDI)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 "Cannot lock down memory area (Cannot allocate memory)" message on startup](#"Cannot_lock_down_memory_area_(Cannot_allocate_memory)"_message_on_startup)
@@ -289,6 +290,39 @@ blacklist snd-firewire-motu
 *The list of modules is the most recent available at the time of writing at [Alsa Firewire Improve Repository](https://github.com/takaswie/snd-firewire-improve).*
 
 Now you can unload your loaded firewire modules or reboot.
+
+### Network / remote audio
+
+JACK can be configured to send audio data over a network to a "master" machine, which then outputs the audio to a physical device. This can be useful to mix audio from a number of "slave" computers without requiring additional cables or hardware mixers, and keeping the audio path digital for as long as possible (as hardware mixers with digital inputs are very rare).
+
+The configuration is very simple, however it requires a network that supports multicast traffic (i.e. IGMP snooping must be enabled on managed network switches), and it requires all machines be running the same JACK major version (JACK1 or JACK2) as the protocols are not interoperable between versions. For JACK2, the `netmanager` module must be loaded:
+
+```
+master$ jack_load netmanager -i -c
+
+```
+
+The `-i -c` option tells the netmanager to automatically map any incoming connections to the default audio device. Without this, each incoming connection would have to be manually mapped on each connection. You can use `-i -h` instead to see all available options, however note that the options are printed in the `jackd` server output, the `jack_load` command will not show anything.
+
+On the client, JACK must be started in network mode:
+
+```
+slave$ jackd -d net
+
+```
+
+The two machines will connect and on the master the new audio source will be visible:
+
+```
+master$ jack_lsp
+system:playback_1
+system:playback_2
+remotehost:from_slave_1
+remotehost:from_slave_2
+
+```
+
+If you passed the `-c` option to `jack_load` as above, then the remote system will now be able to play audio.
 
 ## MIDI
 
