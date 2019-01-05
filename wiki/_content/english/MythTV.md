@@ -65,7 +65,7 @@ Before setting up your backend, make sure you have a functioning *video capture 
 
 #### Setting up the database
 
-**Note:** This is a quick and dirty walk through of MySQL. Be sure you read the [MySQL](/index.php/MySQL "MySQL") article for more details.
+**Note:** This is a quick and dirty walk through of MariaDB. Be sure you read the [MariaDB](/index.php/MariaDB "MariaDB") article for more details.
 
 [Install](/index.php/Install "Install") [mariadb](https://www.archlinux.org/packages/?name=mariadb) and [start](/index.php/Start "Start") `mysqld.service`.
 
@@ -244,7 +244,7 @@ See MythTV wiki's page [Systemd mythbackend Configuration](https://www.mythtv.or
 
 ## Frontend setup
 
-Compared to the backend, getting a frontend running is trivially simple. The frontend machine needs permission to access the database on the backend machine. On the backend machine, follow the instructions to grant remote access in the [MySQL](/index.php/MySQL "MySQL") archlinux wiki. On the frontend machine, install the mythtv pacakages using pacman as above. Afterward, make sure you are in an X environment as a normal user and run mythfrontend. It will pop up a menu asking about the IP address of the backend and the local computer's name and IP address. Fill in this information and your frontend should be functional.
+Compared to the backend, getting a frontend running is trivially simple. The frontend machine needs permission to access the database on the backend machine. On the backend machine, follow the instructions to grant remote access in the [MariaDB](/index.php/MariaDB "MariaDB") article. On the frontend machine, install the mythtv pacakages using pacman as above. Afterward, make sure you are in an X environment as a normal user and run mythfrontend. It will pop up a menu asking about the IP address of the backend and the local computer's name and IP address. Fill in this information and your frontend should be functional.
 
 On the other hand, the frontend has more options than a luxury car. All of those are an article on their own. There are a few notable options that should be set to ensure a good working setup. If you do not have an interlaced monitor (and almost nobody does), you will need to deinterlace your television output. Go into the TV playback menu and select kernel deinterlacing or bob2x deinterlacing. Try both and see which you like better. Also, in the general settings page, it is good to set up your [Alsa setup] settings, but those vary so greatly it is not worth suggesting values here.
 

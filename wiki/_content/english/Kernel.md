@@ -27,7 +27,7 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Linux_kernel "wikipedia:L
 
 	[https://www.kernel.org/](https://www.kernel.org/) || [linux](https://www.archlinux.org/packages/?name=linux)
 
-*   **Hardened** — A security-focused Linux kernel applying a set of hardening patches to mitigate kernel and userspace exploits. It also enables more upstream kernel hardening features than [linux](https://www.archlinux.org/packages/?name=linux) along [AppArmor](/index.php/AppArmor "AppArmor") and [SELinux](/index.php/SELinux "SELinux").
+*   **Hardened** — A security-focused Linux kernel applying a set of hardening patches to mitigate kernel and userspace exploits. It also enables more upstream kernel hardening features than [linux](https://www.archlinux.org/packages/?name=linux) along with [AppArmor](/index.php/AppArmor "AppArmor") and [SELinux](/index.php/SELinux "SELinux").
 
 	[https://github.com/anthraxx/linux-hardened](https://github.com/anthraxx/linux-hardened) || [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened)
 
@@ -41,7 +41,7 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Linux_kernel "wikipedia:L
 
 ## Compilation
 
-Arch Linux provides two methods of kernel compilation.
+Arch Linux provides two methods to compile your own kernel.
 
 	[/Arch Build System](/index.php/Kernel/Arch_Build_System "Kernel/Arch Build System")
 
@@ -76,6 +76,10 @@ Arch Linux provides two methods of kernel compilation.
 *   **Longterm 4.9** — Long-term support (LTS) Linux 4.9 kernel and modules.
 
 	[https://www.kernel.org/](https://www.kernel.org/) || [linux-lts49](https://aur.archlinux.org/packages/linux-lts49/)
+
+*   **Longterm 4.14** — Long-term support (LTS) Linux 4.14 kernel and modules.
+
+	[https://www.kernel.org/](https://www.kernel.org/) || [linux-lts414](https://aur.archlinux.org/packages/linux-lts414/)
 
 ## Patches and patchsets
 

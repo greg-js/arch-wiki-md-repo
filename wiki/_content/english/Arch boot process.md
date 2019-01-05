@@ -26,7 +26,7 @@ In order to boot Arch Linux, a Linux-capable [boot loader](#Boot_loader) must be
 *   [5 initramfs](#initramfs)
 *   [6 Init process](#Init_process)
 *   [7 Getty](#Getty)
-*   [8 Display Manager](#Display_Manager)
+*   [8 Display manager](#Display_manager)
 *   [9 Login](#Login)
 *   [10 Shell](#Shell)
 *   [11 GUI, xinit or wayland](#GUI,_xinit_or_wayland)
@@ -126,7 +126,7 @@ At the final stage of early userspace, the real root is mounted, and then replac
 
 [init](/index.php/Init "Init") calls [getty](/index.php/Getty "Getty") once for each [virtual terminal](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") (typically six of them), which initializes each tty and asks for a username and password. Once the username and password are provided, getty checks them against `/etc/passwd` and `/etc/shadow`, then calls [login](#Login). Alternatively, getty may start a display manager if one is present on the system.
 
-## Display Manager
+## Display manager
 
 A [display manager](/index.php/Display_manager "Display manager") can be configured to replace the getty login prompt on a tty.
 

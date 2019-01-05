@@ -25,6 +25,7 @@ Fan control can bring various benefits to your system, such as quieter working s
     *   [4.1 Installation](#Installation_2)
     *   [4.2 Configuration](#Configuration_3)
     *   [4.3 Installation as a service](#Installation_as_a_service)
+    *   [4.4 BIOS overriding fan control](#BIOS_overriding_fan_control)
 *   [5 ThinkPad laptops](#ThinkPad_laptops)
     *   [5.1 Installation](#Installation_3)
     *   [5.2 Running](#Running)
@@ -245,6 +246,7 @@ Run `nbfc` to see all options. More information about configuration is available
 
 *   [tcl](https://www.archlinux.org/packages/?name=tcl) - must be installed in order to run `i8kmon` as a background service (using the `--daemon` option).
 *   [tk](https://www.archlinux.org/packages/?name=tk) - must be installed together with [tcl](https://www.archlinux.org/packages/?name=tcl) to run as X11 desktop applet.
+*   [dell-bios-fan-control-git](https://aur.archlinux.org/packages/dell-bios-fan-control-git/) - recommended if your BIOS overrides fan control
 
 ### Configuration
 
@@ -268,22 +270,42 @@ This example starts the fan at low speed when the CPU temperature reaches 55 °C
 
 ### Installation as a service
 
-`i8kmon` can be started automatically as a [systemd](/index.php/Systemd "Systemd") service using a unit file similar to the following:
+`i8kmon` can be started automatically as a [systemd](/index.php/Systemd "Systemd") service:
 
- `/etc/systemd/system/i8kmon.service` 
 ```
-[Unit]
-Description=i8kmon
+ # systemctl enable i8kmon
+ # systemctl start i8kmon
 
-[Service]
-#ExecStartPre=/usr/bin/smm 30a3  # uncomment to disable BIOS fan control
-#ExecStopPost=/usr/bin/smm 31a3  # ... and re-enable it afterwards
-ExecStart=/usr/bin/i8kmon
-Restart=always
-RestartSec=5
+```
 
-[Install]
-WantedBy=multi-user.target
+### BIOS overriding fan control
+
+Some newer laptops have BIOS fan control in place which will override the OS level fan control. To test if this the case, run `i8kmon` with verbose mode in a command line, make sure the CPU is idle, then see if the fan is turned off or turned down accordingly.
+
+If the BIOS fan control is in place, you can try using [dell-bios-fan-control-git](https://aur.archlinux.org/packages/dell-bios-fan-control-git/):
+
+**Warning:** turning off BIOS fan control could result in damage to your hardware. Make sure you have i8kmon properly set up beforehand, or leave the CPU idle while you test this program
+
+To enable BIOS fan control:
+
+```
+ # dell-bios-fan-control 1
+
+```
+
+To disable BIOS fan control:
+
+```
+ # dell-bios-fan-control 0
+
+```
+
+To automatically disable BIOS fan control via [systemd](/index.php/Systemd "Systemd"):
+
+```
+ # systemctl enable dell-bios-fan-control
+ # systemctl start dell-bios-fan-control
+
 ```
 
 ## ThinkPad laptops

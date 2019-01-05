@@ -83,7 +83,7 @@ Proceed to [#Format the partition](#Format_the_partition) section below.
 
 ## Format the partition
 
-After creating the ESP, you **must** [format](/index.php/Format "Format") it as [FAT32](/index.php/FAT32 "FAT32"):
+After creating the ESP, you **must** [format](/index.php/Format "Format") it as [FAT32](/index.php/FAT32 "FAT32"). To use the `mkfs.fat` utility, [install](/index.php/Install "Install") [dosfstools](https://www.archlinux.org/packages/?name=dosfstools).
 
 ```
 # mkfs.fat -F32 /dev/sd*xY*

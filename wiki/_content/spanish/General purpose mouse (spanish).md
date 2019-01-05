@@ -1,28 +1,50 @@
-#### ¿Como configuro un mouse para que sea usado en la consola?
+**Estado de la traducción**
+Este artículo es una traducción de [General purpose mouse](/index.php/General_purpose_mouse "General purpose mouse"), revisada por última vez el **2019-01-04**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=General_purpose_mouse&diff=0&oldid=545942) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
-Para usar su mouse en la consola, necesita el paquete **gpm**. Si no está instalado, consígalo con:
+GPM, abreviatura de General Purpose Mouse, es un daemon que proporciona soporte de ratón para las consolas virtuales Linux.
 
- `pacman -S gpm` 
+## Instalación
 
-Para usarlo, puede cargar gpm desde el archivo /etc/rc.conf, agregándolo a la línea de DAEMONS. Aquí hay un ejemplo de esta línea, incluyendo gpm:
+[Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquete [gpm](https://www.archlinux.org/packages/?name=gpm). Es posible que también necesite instalar [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) para la compatibilidad con el panel táctil en un ordenador portátil.
 
-```
-DAEMONS=(syslog-ng !hotplug !pcmcia network netfs openntpd crond cups gpm)
+## Configuración
 
-```
-
-El paquete gpm necesita ser inicializado con unos pocos parámetros. Estos parámetros pueden ser agregados en el archivo */etc/conf.d/gpm*. Aquí hay un ejemplo del contenido del archivo:
+El parámetro `-m` precede a la declaración del ratón que se va a utilizar. El parámetro `-t` precede al tipo de ratón. Para obtener una lista de los tipos disponibles para la opción `-t`, ejecute `gpm` con `-t help`.
 
 ```
-#
-# Parameters to be passed to gpm
-#
-GPM_ARGS="-m /dev/psaux -t imps2"
+# gpm -m /dev/input/mice -t help
 
 ```
 
-El parámetro -m precede a la declaración del mouse que va a ser usado. El parámetro -t precede el tipo de mouse que está usando (un mouse PS2 en este caso). Para obtener una lista de los tipos disponibles para la opción -t, ejecute gpm con -t help
+El paquete [gpm](https://www.archlinux.org/packages/?name=gpm) debe iniciarse con algunos parámetros. Estos parámetros se pueden agregar al archivo `/etc/conf.d/gpm`, o ser usados cuando se ejecuta *gpm* directamente. A partir de 2016, el archivo `gpm.service` para [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") incluye los parámetros para un ratón USB. Obviamente, debe editarse si existe otro tipo de ratón, y si se utiliza el archivo.
 
- `$ gpm -m /dev/psaux -t help` 
+*   Para ratones PS/2, reemplace la línea existente con:
 
-Para más información vea `man gpm`.
+```
+GPM_ARGS="-m /dev/psaux -t ps2"
+
+```
+
+*   Mientras que los ratones USB deberían usar:
+
+```
+GPM_ARGS="-m /dev/input/mice -t imps2"
+
+```
+
+*   Y los IBM Trackpoints necesitan:
+
+```
+GPM_ARGS="-m /dev/input/mice -t ps2"
+
+```
+
+**Nota:** Si el ratón tiene solo 2 botones, pase `-2` a `GPM_ARGS` y el segundo botón realizará la función de pegado.
+
+Una vez que se haya encontrado una configuración adecuada, [inicie](/index.php/Systemd_(Espa%C3%B1ol)#Utilizar_las_unidades "Systemd (Español)") y [active](/index.php/Systemd_(Espa%C3%B1ol)#Utilizar_las_unidades "Systemd (Español)") el `gpm.service`.
+
+Para obtener más información, véase [gpm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gpm.8).
+
+## Véase también
+
+*   [Gentoo:GPM](https://wiki.gentoo.org/wiki/GPM "gentoo:GPM")

@@ -1236,11 +1236,11 @@ See also [Wikipedia:Comparison of BitTorrent clients](https://en.wikipedia.org/w
 
 *   **[Deluge](/index.php/Deluge "Deluge")** — User-friendly BitTorrent client written in PyGTK that can run as a daemon.
 
-	[http://deluge-torrent.org/](http://deluge-torrent.org/) || [deluge](https://www.archlinux.org/packages/?name=deluge)
+	[https://deluge-torrent.org/](https://deluge-torrent.org/) || [deluge](https://www.archlinux.org/packages/?name=deluge)
 
 *   **Fragments** — Easy to use BitTorrent client which follows the GNOME HIG and includes well thought-out features.
 
-	[https://github.com/haecker-felix/Fragments](https://github.com/haecker-felix/Fragments) || [fragments](https://www.archlinux.org/packages/?name=fragments)
+	[https://gitlab.gnome.org/haecker-felix/Fragments](https://gitlab.gnome.org/haecker-felix/Fragments) || [fragments](https://www.archlinux.org/packages/?name=fragments)
 
 *   **[Ktorrent](/index.php/Ktorrent "Ktorrent")** — Feature-rich BitTorrent client for KDE.
 
@@ -1248,11 +1248,11 @@ See also [Wikipedia:Comparison of BitTorrent clients](https://en.wikipedia.org/w
 
 *   **Powder Player** — Hybrid between a streaming BitTorrent client and a player. Based on the [Electron](https://electronjs.org/) platform.
 
-	[http://powder.media/](http://powder.media/) || [powder-player-bin](https://aur.archlinux.org/packages/powder-player-bin/)
+	[https://powder.media/](https://powder.media/) || [powder-player-bin](https://aur.archlinux.org/packages/powder-player-bin/)
 
 *   **[qBittorrent](https://en.wikipedia.org/wiki/qBittorrent "wikipedia:qBittorrent")** — Open source (GPLv2) BitTorrent client that strongly resembles µtorrent.
 
-	[http://www.qbittorrent.org/](http://www.qbittorrent.org/) || [qbittorrent](https://www.archlinux.org/packages/?name=qbittorrent) or [qbittorrent-nox](https://www.archlinux.org/packages/?name=qbittorrent-nox)
+	[https://www.qbittorrent.org/](https://www.qbittorrent.org/) || [qbittorrent](https://www.archlinux.org/packages/?name=qbittorrent) or [qbittorrent-nox](https://www.archlinux.org/packages/?name=qbittorrent-nox)
 
 *   **Torrential** — Simple torrent client for elementary OS.
 
@@ -1268,7 +1268,7 @@ See also [Wikipedia:Comparison of BitTorrent clients](https://en.wikipedia.org/w
 
 *   **[Tribler](https://en.wikipedia.org/wiki/Tribler "wikipedia:Tribler")** — 4th generation file sharing system BitTorrent client.
 
-	[http://www.tribler.org](http://www.tribler.org) || [tribler](https://www.archlinux.org/packages/?name=tribler)
+	[https://www.tribler.org](https://www.tribler.org) || [tribler](https://www.archlinux.org/packages/?name=tribler)
 
 *   **[Vuze](https://en.wikipedia.org/wiki/Vuze "wikipedia:Vuze")** — Feature-rich BitTorrent client written in Java (formerly Azureus).
 
@@ -6350,15 +6350,17 @@ See also [Wikipedia:Comparison of spreadsheet software](https://en.wikipedia.org
 
 #### Database tools
 
+For DBMS-specific tools, see:
+
+*   [MySQL#Graphical tools](/index.php/MySQL#Graphical_tools "MySQL")
+*   [PostgreSQL#Graphical tools](/index.php/PostgreSQL#Graphical_tools "PostgreSQL")
+*   [SQLite#Graphical tools](/index.php/SQLite#Graphical_tools "SQLite")
+
 See also [Wikipedia:Comparison of database tools](https://en.wikipedia.org/wiki/Comparison_of_database_tools "wikipedia:Comparison of database tools").
 
 *   **[Adminer](/index.php/Adminer "Adminer")** — Full-featured database management webapp with support for many database types.
 
 	[https://www.adminer.org/](https://www.adminer.org/) || [adminer](https://aur.archlinux.org/packages/adminer/)
-
-*   **DB Browser for SQLite** — High quality, visual, open source tool to create, design, and edit database files compatible with SQLite.
-
-	[https://sqlitebrowser.org/](https://sqlitebrowser.org/) || [sqlitebrowser](https://www.archlinux.org/packages/?name=sqlitebrowser)
 
 *   **[DBeaver](https://en.wikipedia.org/wiki/DBeaver "wikipedia:DBeaver")** — Java-based graphical database editor with support for many database types.
 
@@ -6384,10 +6386,6 @@ See also [Wikipedia:Comparison of database tools](https://en.wikipedia.org/wiki/
 
 	[https://www.libreoffice.org/discover/base/](https://www.libreoffice.org/discover/base/) || [libreoffice-still](https://www.archlinux.org/packages/?name=libreoffice-still) or [libreoffice-fresh](https://www.archlinux.org/packages/?name=libreoffice-fresh)
 
-*   **[MySQL Workbench](https://en.wikipedia.org/wiki/MySQL_Workbench "wikipedia:MySQL Workbench")** — Unified visual tool for database architects, developers, and DBAs.
-
-	[https://www.mysql.com/products/workbench/](https://www.mysql.com/products/workbench/) || [mysql-workbench](https://www.archlinux.org/packages/?name=mysql-workbench)
-
 *   **[OpenOffice Base](/index.php/OpenOffice "OpenOffice")** — Full-featured desktop database front end included in the OpenOffice suite, designed to meet the needs of a broad array of users.
 
 	[http://www.openoffice.org/product/base.html](http://www.openoffice.org/product/base.html) || [openoffice](https://aur.archlinux.org/packages/openoffice/)
@@ -6395,22 +6393,6 @@ See also [Wikipedia:Comparison of database tools](https://en.wikipedia.org/wiki/
 *   **[Orbada](https://en.wikipedia.org/wiki/Orbada "wikipedia:Orbada")** — Excellent tool for database developers, SQL developers, DBA administrators, as well as for users who wish to broaden their knowledge and skills in SQL.
 
 	[http://orbada.sourceforge.net/](http://orbada.sourceforge.net/) || [orbada](https://aur.archlinux.org/packages/orbada/)
-
-*   **pgAdmin** — Comprehensive design and management interface for PostgreSQL.
-
-	[https://www.pgadmin.org/](https://www.pgadmin.org/) || [pgadmin3](https://www.archlinux.org/packages/?name=pgadmin3) or [pgadmin4](https://www.archlinux.org/packages/?name=pgadmin4)
-
-*   **pgModeler** — PostgreSQL Database Modeler: an open source CASE tool for modeling PostgreSQL databases.
-
-	[https://pgmodeler.io/](https://pgmodeler.io/) || [pgmodeler](https://aur.archlinux.org/packages/pgmodeler/)
-
-*   **[phpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin")** — Webapp intended to handle the administration of MySQL.
-
-	[https://www.phpmyadmin.net/](https://www.phpmyadmin.net/) || [phpmyadmin](https://www.archlinux.org/packages/?name=phpmyadmin)
-
-*   **[phpPgAdmin](/index.php/PhpPgAdmin "PhpPgAdmin")** — Fully functional webapp for PostgreSQL.
-
-	[https://sourceforge.net/projects/phppgadmin/](https://sourceforge.net/projects/phppgadmin/) || [phppgadmin](https://www.archlinux.org/packages/?name=phppgadmin)
 
 *   **Sequeler** — SQL client built in Vala and Gtk. It allows you to connect to your local and remote databases, write SQL in a handy text editor with language recognition, and visualize SELECT results in a Gtk.Grid Widget.
 

@@ -14,7 +14,7 @@ NVIDIA Optimus is a technology that allows an Intel integrated GPU and discrete 
 
 *   using the third-party Bumblebee program to implement Optimus-like functionality, which offers GPU switching and powersaving but requires extra configuration
 
-*   using nvidia-xrun. Utility to run separate X with discrete nvidia graphics with full performance
+*   using the nvidia-xrun utility to run separate X sessions with discrete nvidia graphics with full performance
 
 These options are explained in detail below.
 
@@ -90,7 +90,7 @@ xrandr --auto
 
 Now reboot to load the drivers, and X should start.
 
-If your display dpi is not correct add following line:
+If your display dpi is not correct add the following line:
 
 ```
 xrandr --dpi 96

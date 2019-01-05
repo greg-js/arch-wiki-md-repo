@@ -10,7 +10,7 @@ See [xhost(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xhost.1) for the full 
 
 ## Usage
 
-**Warning:** This command grants any local user access to your X screen. That might be OK for a single-user machine, but certainly not for a multi-user system. If you want to grant root access to your X screen, it is preferable to set the $XAUTHORITY environment variable. This variable is kept by **sudo** by default and also by plain **su** (i.e., not **su -**).
+**Warning:** This command grants any local user access to your X screen. That might be OK for a single-user machine, but usually not for a multi-user system. If you want to grant root access to your X screen, it is preferable to set the `$XAUTHORITY` environment variable. This variable is kept by **sudo** by default and also by plain **su** (i.e., not **su -**).
 
 To provide access to an application running as sudo or su to the graphical server (aka your X session aka your computer screen), open a terminal and type as your normal user (don't *su -*):
 

@@ -64,13 +64,11 @@ Open the PulseEffects GUI and enable the preset in the "Convolver" tab.
 
 ### TLP
 
-Currently the TLP module [tlp_smapi](https://www.archlinux.org/packages/?name=tlp_smapi) doesn't seem to load / work correctly. How ever, the package [tpacpi-bat](https://www.archlinux.org/packages/?name=tpacpi-bat) works and can read the battery charging start/stop limits.
+Currently the [TLP](/index.php/TLP "TLP") module [tlp_smapi](https://www.archlinux.org/packages/?name=tlp_smapi) doesn't seem to load / work correctly. However, the package [tpacpi-bat](https://www.archlinux.org/packages/?name=tpacpi-bat) works and can read the battery charging start/stop limits.
 
 To set battery start/stop thresholds with [tpacpi-bat](https://www.archlinux.org/packages/?name=tpacpi-bat) you need to edit /etc/default/tlp e.g.:
 
 "START_CHARGE_THRESH_BAT0=80" and "STOP_CHARGE_THRESH_BAT0=90"
-
-The available CPU governors on the X1E are "performance" and "powersave" (see output of "cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors").
 
 ### CPU Undervolting
 

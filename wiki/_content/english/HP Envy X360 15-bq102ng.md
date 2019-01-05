@@ -22,6 +22,7 @@ The HP Envy X360 15-bq102ng was released in 2017\. It has a Ryzen Mobile 5 2500u
 *   [7 Bluetooth](#Bluetooth)
 *   [8 Hard Drive](#Hard_Drive)
 *   [9 Dual Boot](#Dual_Boot)
+*   [10 Freezes](#Freezes)
 
 ## Installing Arch
 
@@ -58,3 +59,7 @@ Built-in NVME drive works with advertised speed. Blockdevices are loacated at /d
 ## Dual Boot
 
 Not tested, but there shouldn't any difficulties.
+
+## Freezes
+
+On some devices the Laptop freezes randomly (e.g. when surfing on Youtube). A workaround is to set these kernel-options: idle=nomwait rcu_nocbs=0-7

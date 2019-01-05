@@ -53,10 +53,17 @@ username:x:1000:
 
 3\. Add the following information to the 51-lattice.rules file:
 
-1.  Lattice - from Lattice Diamond 3.9 Installation Notice for Linux p.20 and [https://github.com/jandob/lattice-diamond-archlinux](https://github.com/jandob/lattice-diamond-archlinux) showing a higher number used for the .rules file
+*   Lattice - from Lattice Diamond 3.9 Installation Notice for Linux p.20 and [https://github.com/jandob/lattice-diamond-archlinux](https://github.com/jandob/lattice-diamond-archlinux) showing a higher number used for the .rules file
 
+```
 SUBSYSTEM=="usb",ACTION=="add",ATTRS{idVendor}=="1134",ATTRS{idProduct}=="8001",MODE=="0660",GROUP=="username:x:1000:",SYMLINK+="lattice-%n"
 
-1.  FTDI
+```
 
-SUBSYSTEM=="usb",ACTION=="add",ATTRS{idVendor}=="0403",ATTRS{idProduct}=="6010",MODE=="0666",GROUP=="username:x:1000:",SYMLINK+="ftdi-%n" SUBSYSTEM=="usb",ATTRS{idVendor}=="0403",ATTRS{idProduct}=="6010",RUN+="/bin/sh -c 'basename %p > /sys/bus/usb/drivers/ftdi_sio/unbind'"
+*   FTDI
+
+```
+SUBSYSTEM=="usb",ACTION=="add",ATTRS{idVendor}=="0403",ATTRS{idProduct}=="6010",MODE=="0666",GROUP=="username:x:1000:",SYMLINK+="ftdi-%n"
+SUBSYSTEM=="usb",ATTRS{idVendor}=="0403",ATTRS{idProduct}=="6010",RUN+="/bin/sh -c 'basename %p > /sys/bus/usb/drivers/ftdi_sio/unbind'"
+
+```

@@ -33,14 +33,15 @@ It may be necessary to restart Gajim if this doesn't work.
 
 In order to use OMEMO in Gajim, follow these steps:
 
-1.  Go to menu Edit => Plugins;
-2.  Go to the available plugins window;
-3.  Mark the "OMEMO Multi-End Message and Object Encryption" plugin;
-4.  Back to the "Installed" plugins window;
-5.  Activate the "OMEMO Multi-End Message and Object Encryption" plugin;
-6.  Close dialogs to save the changes;
-7.  Restart Gajim;
-8.  Please refer to the official documentation for [running instructions](https://dev.gajim.org/gajim/gajim-plugins/wikis/OmemoGajimPlugin#running)
+1.  [Install](/index.php/Install "Install") the [python-axolotl](https://www.archlinux.org/packages/?name=python-axolotl) and [python-qrcode](https://www.archlinux.org/packages/?name=python-qrcode) packages.
+2.  Open Gajim and go to menu *Gajim* => *Plugins*;
+3.  Go to the *Available* tab;
+4.  Mark the "OMEMO" plugin and click the *Install/Update Plugin* button;
+5.  Go back to the *Installed* tab;
+6.  Activate the "OMEMO" plugin;
+7.  Close dialogs to save the changes;
+8.  Restart Gajim;
+9.  Please refer to the official documentation for [running instructions](https://dev.gajim.org/gajim/gajim-plugins/wikis/OmemoGajimPlugin#running)
 
 ## Minimize / Close to tray
 

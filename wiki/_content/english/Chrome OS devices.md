@@ -452,7 +452,11 @@ Then [rebuild your grub config](/index.php/GRUB#Generate_the_main_configuration_
 
 #### Baytrail based models
 
-Audio on most baytrail models should work on [linux](https://www.archlinux.org/packages/?name=linux) since fix merged into 4.19.7 [[10]](https://git.archlinux.org/linux.git/commit/?h=v4.19.7-arch1&id=f35f68c68ce48a8b70a4c3674663513825b7a1bc), to fix regression in 4.18.15, see bug report [[11]](https://lkml.org/lkml/2018/10/30/676). It is likely that you will also need to use `alsamixer` from [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) to turn on "Left Speaker Mixer Left DAC" and "Right Speaker Mixer Right DAC". For more information, see [[12]](https://bugs.archlinux.org/task/48936).
+Audio on most baytrail models should work on [linux](https://www.archlinux.org/packages/?name=linux) since fix merged into 4.19.7 [[10]](https://git.archlinux.org/linux.git/commit/?h=v4.19.7-arch1&id=f35f68c68ce48a8b70a4c3674663513825b7a1bc), to fix regression in 4.18.15, see bug report [[11]](https://lkml.org/lkml/2018/10/30/676).
+
+**Note:** If you find audio is less stable (see journal PLL mesages) using [linux](https://www.archlinux.org/packages/?name=linux), consider custom kernel with reverted fixes from custom repo [linux-max98090](https://github.com/JSkier21/linux-max98090)
+
+It is likely that you will also need to use `alsamixer` from [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) to turn on "Left Speaker Mixer Left DAC" and "Right Speaker Mixer Right DAC". For more information, see [[12]](https://bugs.archlinux.org/task/48936).
 
 #### Haswell based models
 

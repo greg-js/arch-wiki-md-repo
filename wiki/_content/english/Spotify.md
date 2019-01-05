@@ -71,7 +71,7 @@
 
 Spotify automatically manage a storage size for caching, however one may want to force the size limit preventing the [filesystem](/index.php/Filesystem "Filesystem") from filling up.
 
-[Append](/index.php/Append "Append") `storage.size` (measured in MB) to `/home/*user*/.config/spotifiy/prefs`, e.g. a storage size of 3072MB:
+[Append](/index.php/Append "Append") `storage.size` (measured in MB) to `/home/*user*/.config/spotify/prefs`, e.g. a storage size of 3072MB:
 
  `~/.config/spotify/prefs`  `storage.size=3072` 
 

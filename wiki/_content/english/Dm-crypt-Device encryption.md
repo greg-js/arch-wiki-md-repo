@@ -130,7 +130,7 @@ For comparison, one can specify the default options manually too:
 
 Defaults are compared with a cryptographically higher specification example in the table below, with accompanying comments:
 
-| Options | Cryptsetup 1.7.0 defaults | Example | Comment |
+| Options | Cryptsetup 2.0.6 defaults | Example | Comment |
 | --cipher
 
 -c
@@ -175,7 +175,7 @@ To create a *plain* mode mapping with cryptsetup's default parameters:
 
 Executing it will prompt for a password, which should have very high entropy. Below a comparison of default parameters with the example in [dm-crypt/Encrypting an entire system#Plain dm-crypt](/index.php/Dm-crypt/Encrypting_an_entire_system#Plain_dm-crypt "Dm-crypt/Encrypting an entire system")
 
-| Option | Cryptsetup 1.7.0 defaults | Example | Comment |
+| Option | Cryptsetup 2.0.6 defaults | Example | Comment |
 | --hash
 
 -h

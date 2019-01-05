@@ -14,9 +14,9 @@ In general, a [domain name](https://en.wikipedia.org/wiki/Domain_name "wikipedia
     *   [2.2 Limit lookup time](#Limit_lookup_time)
     *   [2.3 Hostname lookup delayed with IPv6](#Hostname_lookup_delayed_with_IPv6)
     *   [2.4 Local domain names](#Local_domain_names)
-*   [3 Resolvers](#Resolvers)
+*   [3 Lookup utilities](#Lookup_utilities)
 *   [4 Privacy](#Privacy)
-*   [5 Lookup utilities](#Lookup_utilities)
+*   [5 Resolvers](#Resolvers)
 *   [6 See also](#See_also)
 
 ## Name Service Switch
@@ -97,6 +97,31 @@ domain example.com
 
 That way you can refer to local hosts such as `mainmachine1.example.com` as simply `mainmachine1` when using the *ssh* command, but the *drill* command still requires the fully qualified domain names in order to perform lookups.
 
+## Lookup utilities
+
+To query specific DNS servers and DNS/[DNSSEC](/index.php/DNSSEC "DNSSEC") records you can use dedicated DNS lookup utilities. These tools implement DNS themselves and do not use [NSS](#Name_Service_Switch).
+
+*   [ldns](https://www.archlinux.org/packages/?name=ldns) provides [drill(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/drill.1), which is a tool designed to retrieve information out of the DNS.
+
+For example, to query a specific nameserver with *drill* for the TXT records of a domain:
+
+```
+$ drill @*nameserver* TXT *domain*
+
+```
+
+If you do not specify a DNS server *drill* uses the nameservers defined in `/etc/resolv.conf`.
+
+*   [bind-tools](https://www.archlinux.org/packages/?name=bind-tools) provides [dig(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dig.1), [host(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/host.1), [nslookup(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nslookup.1) and a bunch of `dnssec-` tools.
+
+## Privacy
+
+DNS is not encrypted, so you may want to use a [resolver](#Resolvers) that supports an encrypted protocol, like [DNS over TLS](https://en.wikipedia.org/wiki/DNS_over_TLS "wikipedia:DNS over TLS"), [DNS over HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTPS") or [DNSCrypt](https://en.wikipedia.org/wiki/DNSCrypt "wikipedia:DNSCrypt").
+
+Be aware client software, such as major web browsers, may also (start to) implement one of the protocols. While the encryption of queries may often be seen as a bonus, it also means the software sidetracks queries around the system resolver configuration.[[2]](https://hacks.mozilla.org/2018/05/a-cartoon-intro-to-dns-over-https/#trr-and-doh)
+
+Most DNS servers keep a log of IP addresses and sites visited on a more or less temporary basis. The data collected can be used to perform various statistical studies. Personally-identifying information have value and can also be rented or sold to third parties. [Alternative DNS services](/index.php/Alternative_DNS_services "Alternative DNS services") provides a list of popular services, check their privacy policy for information about how user data is handled.
+
 ## Resolvers
 
 The Glibc resolver provides only the most basic necessities, it does not cache queries nor provides any security features. If you require more functionality, use another resolver.
@@ -130,34 +155,9 @@ In the table below, the columns have the following meaning:
 | [Unbound](/index.php/Unbound "Unbound") | Yes | Yes | [openresolv](/index.php/Openresolv "Openresolv") subscriber | Yes | Yes | [No](https://nlnetlabs.nl/bugs-script/show_bug.cgi?id=1200) |
 
 1.  Implements a [DNSCrypt](https://en.wikipedia.org/wiki/DNSCrypt "wikipedia:DNSCrypt") protocol client.
-2.  Can use the subscribers of dnsmasq, pdns and unbound.[[2]](https://github.com/shuLhan/rescached-go#integration-with-openresolv)
-3.  Only forwards using DNS over HTTPS when Rescached itself is queried using DNS over HTTPS.[[3]](https://github.com/shuLhan/rescached-go#integration-with-dns-over-https)
-4.  From [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5): *Note as the resolver is not capable of authenticating the server, it is vulnerable for "man-in-the-middle" attacks.*[[4]](https://github.com/systemd/systemd/issues/9397) Also, the only supported mode is "opportunistic", which *makes DNS-over-TLS vulnerable to "downgrade" attacks*.[[5]](https://github.com/systemd/systemd/issues/10755)
-
-## Privacy
-
-DNS is not encrypted, so you may want to use a [resolver](#Resolvers) that supports an encrypted protocol, like [DNS over TLS](https://en.wikipedia.org/wiki/DNS_over_TLS "wikipedia:DNS over TLS"), [DNS over HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTPS") or [DNSCrypt](https://en.wikipedia.org/wiki/DNSCrypt "wikipedia:DNSCrypt").
-
-Be aware client software, such as major web browsers, may also (start to) implement one of the protocols. While the encryption of queries may often be seen as a bonus, it also means the software sidetracks queries around the system resolver configuration.[[6]](https://hacks.mozilla.org/2018/05/a-cartoon-intro-to-dns-over-https/#trr-and-doh)
-
-Most DNS servers keep a log of IP addresses and sites visited on a more or less temporary basis. The data collected can be used to perform various statistical studies. Personally-identifying information have value and can also be rented or sold to third parties. [Alternative DNS services](/index.php/Alternative_DNS_services "Alternative DNS services") provides a list of popular services, check their privacy policy for information about how user data is handled.
-
-## Lookup utilities
-
-To query specific DNS servers and DNS/[DNSSEC](/index.php/DNSSEC "DNSSEC") records you can use dedicated DNS lookup utilities. These tools implement DNS themselves and do not use [NSS](#Name_Service_Switch).
-
-*   [ldns](https://www.archlinux.org/packages/?name=ldns) provides [drill(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/drill.1), which is a tool designed to retrieve information out of the DNS.
-
-For example, to query a specific nameserver with *drill* for the TXT records of a domain:
-
-```
-$ drill @*nameserver* TXT *domain*
-
-```
-
-If you do not specify a DNS server *drill* uses the nameservers defined in `/etc/resolv.conf`.
-
-*   [bind-tools](https://www.archlinux.org/packages/?name=bind-tools) provides [dig(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dig.1), [host(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/host.1), [nslookup(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nslookup.1) and a bunch of `dnssec-` tools.
+2.  Can use the subscribers of dnsmasq, pdns and unbound.[[3]](https://github.com/shuLhan/rescached-go#integration-with-openresolv)
+3.  Only forwards using DNS over HTTPS when Rescached itself is queried using DNS over HTTPS.[[4]](https://github.com/shuLhan/rescached-go#integration-with-dns-over-https)
+4.  From [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5): *Note as the resolver is not capable of authenticating the server, it is vulnerable for "man-in-the-middle" attacks.*[[5]](https://github.com/systemd/systemd/issues/9397) Also, the only supported mode is "opportunistic", which *makes DNS-over-TLS vulnerable to "downgrade" attacks*.[[6]](https://github.com/systemd/systemd/issues/10755)
 
 ## See also
 

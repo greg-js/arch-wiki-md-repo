@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Telegram](/index.php/Telegram "Telegram"). Дата последней синхронизации: 27 октября 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Telegram&diff=0&oldid=551543).
+**Состояние перевода:** На этой странице представлен перевод статьи [Telegram](/index.php/Telegram "Telegram"). Дата последней синхронизации: 5 января 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Telegram&diff=0&oldid=561769).
 
 [Telegram](https://en.wikipedia.org/wiki/ru:Telegram "wikipedia:ru:Telegram") — облачный кроссплатформенный мессенджер с опциональным end-to-end шифрованием. Для создания аккаунта требуется номер телефона.
 
@@ -12,7 +12,7 @@
     *   [1.3 Приложения для терминала](#Приложения_для_терминала)
     *   [1.4 Web-приложения](#Web-приложения)
 *   [2 Советы и рекомендации](#Советы_и_рекомендации)
-    *   [2.1 Каналы в Telegram про Arch Linux](#Каналы_в_Telegram_про_Arch_Linux)
+    *   [2.1 Ресурсы в Telegram про Arch Linux](#Ресурсы_в_Telegram_про_Arch_Linux)
     *   [2.2 Счётчик непрочитанных сообщений для Telegram Desktop](#Счётчик_непрочитанных_сообщений_для_Telegram_Desktop)
 
 ## Установка
@@ -49,12 +49,15 @@
 
 ## Советы и рекомендации
 
-### Каналы в Telegram про Arch Linux
+### Ресурсы в Telegram про Arch Linux
 
-*   [Arch Linux News](https://telegram.me/archlinuxnews) — последние новости с официального сайта Arch Linux (на английском).
-*   [Planet Arch](https://telegram.me/archplanet) — последние публикации с сайта Planet Arch (на английском).
-*   [Arch Linux RU](https://telegram.me/ArchLinuxChatRU) — неофициальный чат сообщества Arch Linux в СНГ.
-*   [Arch Linux](https://telegram.me/archlinuxgroup) — неофициальный чат для обсуждения всего о Arch Linux (на английском).
+*   [Arch Linux RU](https://t.me/ArchLinuxChatRU) — неофициальная группа сообщества Arch Linux в СНГ.
+*   [Arch Linux](https://t.me/archlinuxgroup) — неофициальная группа для обсуждения всего о Arch Linux (на английском).
+*   [ArchWikiBot](https://t.me/archewikibot) — встроенный бот для поиска в ArchWiki.
+*   [Planet Arch Linux & News](https://t.me/planetarch) — канал с последними публикациями Planet Arch и новостями с сайта Arch Linux.
+*   [Arch Linux: Recent package updates](https://t.me/archlinux_updates) — канал с последними обновлениями пакетов в репозиториях Arch Linux.
+*   [Arch Linux News](https://t.me/archlinuxnews) — канал с последними новостями с официального сайта Arch Linux (*не обновляется*).
+*   [Planet Arch](https://t.me/archplanet) — канал с последними публикациями с сайта Planet Arch *(не обновляется)*.
 
 ### Счётчик непрочитанных сообщений для Telegram Desktop
 

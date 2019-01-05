@@ -451,15 +451,17 @@ See also [Wikipedia:Comparison of spreadsheet software](https://en.wikipedia.org
 
 #### Database tools
 
+For DBMS-specific tools, see:
+
+*   [MySQL#Graphical tools](/index.php/MySQL#Graphical_tools "MySQL")
+*   [PostgreSQL#Graphical tools](/index.php/PostgreSQL#Graphical_tools "PostgreSQL")
+*   [SQLite#Graphical tools](/index.php/SQLite#Graphical_tools "SQLite")
+
 See also [Wikipedia:Comparison of database tools](https://en.wikipedia.org/wiki/Comparison_of_database_tools "wikipedia:Comparison of database tools").
 
 *   **[Adminer](/index.php/Adminer "Adminer")** — Full-featured database management webapp with support for many database types.
 
 	[https://www.adminer.org/](https://www.adminer.org/) || [adminer](https://aur.archlinux.org/packages/adminer/)
-
-*   **DB Browser for SQLite** — High quality, visual, open source tool to create, design, and edit database files compatible with SQLite.
-
-	[https://sqlitebrowser.org/](https://sqlitebrowser.org/) || [sqlitebrowser](https://www.archlinux.org/packages/?name=sqlitebrowser)
 
 *   **[DBeaver](https://en.wikipedia.org/wiki/DBeaver "wikipedia:DBeaver")** — Java-based graphical database editor with support for many database types.
 
@@ -485,10 +487,6 @@ See also [Wikipedia:Comparison of database tools](https://en.wikipedia.org/wiki/
 
 	[https://www.libreoffice.org/discover/base/](https://www.libreoffice.org/discover/base/) || [libreoffice-still](https://www.archlinux.org/packages/?name=libreoffice-still) or [libreoffice-fresh](https://www.archlinux.org/packages/?name=libreoffice-fresh)
 
-*   **[MySQL Workbench](https://en.wikipedia.org/wiki/MySQL_Workbench "wikipedia:MySQL Workbench")** — Unified visual tool for database architects, developers, and DBAs.
-
-	[https://www.mysql.com/products/workbench/](https://www.mysql.com/products/workbench/) || [mysql-workbench](https://www.archlinux.org/packages/?name=mysql-workbench)
-
 *   **[OpenOffice Base](/index.php/OpenOffice "OpenOffice")** — Full-featured desktop database front end included in the OpenOffice suite, designed to meet the needs of a broad array of users.
 
 	[http://www.openoffice.org/product/base.html](http://www.openoffice.org/product/base.html) || [openoffice](https://aur.archlinux.org/packages/openoffice/)
@@ -504,10 +502,6 @@ See also [Wikipedia:Comparison of database tools](https://en.wikipedia.org/wiki/
 *   **pgModeler** — PostgreSQL Database Modeler: an open source CASE tool for modeling PostgreSQL databases.
 
 	[https://pgmodeler.io/](https://pgmodeler.io/) || [pgmodeler](https://aur.archlinux.org/packages/pgmodeler/)
-
-*   **[phpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin")** — Webapp intended to handle the administration of MySQL.
-
-	[https://www.phpmyadmin.net/](https://www.phpmyadmin.net/) || [phpmyadmin](https://www.archlinux.org/packages/?name=phpmyadmin)
 
 *   **[phpPgAdmin](/index.php/PhpPgAdmin "PhpPgAdmin")** — Fully functional webapp for PostgreSQL.
 

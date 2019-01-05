@@ -93,7 +93,7 @@ Kpathsea searches the following variables in the reverse order (later trees over
 | TEXMFCONFIG | ~/.texlive/texmf-config | updmap and fmtutil (sys mode) to store modified configuration data |
 | TEXMFCACHE | $TEXMFSYSVAR;$TEXMFVAR | ConTeXt MkIV and LuaLaTeX to store (cached) runtime data |
 
-1.  The default values are defined in `/etc/texmf/web2c/texmf.cnf`[[4]](https://git.archlinux.org/svntogit/packages.git/tree/trunk/texmf.cnf?h=packages/texlive-core), they can be overridden with [environment variables](/index.php/Environment_variables "Environment variables").
+1.  The default values are defined in `/etc/texmf/web2c/texmf.cnf`[[4]](https://git.archlinux.org/svntogit/packages.git/tree/trunk/texmf.cnf?h=packages/texlive-core); they can be overridden with [environment variables](/index.php/Environment_variables "Environment variables").
 
 Kpathsea provides the [kpsewhich(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/kpsewhich.1) command to lookup paths. When run with the `-var` argument it can also print the values of variables.
 

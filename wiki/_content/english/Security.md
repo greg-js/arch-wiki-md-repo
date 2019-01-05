@@ -1,5 +1,6 @@
 Related articles
 
+*   [General recommendations](/index.php/General_recommendations "General recommendations")
 *   [PAM](/index.php/PAM "PAM")
 *   [Capabilities](/index.php/Capabilities "Capabilities")
 *   [List of Applications/Security](/index.php/List_of_Applications/Security "List of Applications/Security")

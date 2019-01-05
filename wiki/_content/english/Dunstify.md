@@ -17,7 +17,7 @@ Additionally to the options available in notify-send, dunstify offers some more 
 
 ## Installation
 
-Dunstify is available through the [AUR](/index.php/AUR "AUR"). Simply install the [dunstify](https://aur.archlinux.org/packages/dunstify/) package.
+Dunstify is part [Dunst](/index.php/Dunst "Dunst").
 
 ## Notification ID
 

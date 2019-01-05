@@ -18,13 +18,13 @@
 
 ## Installation
 
-**Note:** To install MediaWiki on XAMPP see [mw:Manual:Installing MediaWiki on XAMPP](https://www.mediawiki.org/wiki/Manual:Installing_MediaWiki_on_XAMPP "mw:Manual:Installing MediaWiki on XAMPP").
-
 To run MediaWiki you need three things:
 
 *   the [mediawiki](https://www.archlinux.org/packages/?name=mediawiki) package
 *   a web server – [Apache](/index.php/Apache "Apache"), [Nginx](/index.php/Nginx "Nginx") or [Lighttpd](/index.php/Lighttpd "Lighttpd")
 *   a database system – [MySQL](/index.php/MySQL "MySQL"), [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") or [SQLite](/index.php/SQLite "SQLite")
+
+To install MediaWiki on [XAMPP](/index.php/XAMPP "XAMPP"), see [mw:Manual:Installing MediaWiki on XAMPP](https://www.mediawiki.org/wiki/Manual:Installing_MediaWiki_on_XAMPP "mw:Manual:Installing MediaWiki on XAMPP")
 
 Optionally install [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) or [php-gd](https://www.archlinux.org/packages/?name=php-gd) for thumbnail rendering and [php-intl](https://www.archlinux.org/packages/?name=php-intl) to handle Unicode normalization.
 

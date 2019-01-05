@@ -3,7 +3,7 @@ The following are examples of common scenarios of full system encryption with *d
 ## Contents
 
 *   [1 Overview](#Overview)
-*   [2 Simple partition layout with LUKS](#Simple_partition_layout_with_LUKS)
+*   [2 LUKS on a MBR or GPT partition](#LUKS_on_a_MBR_or_GPT_partition)
     *   [2.1 Preparing the disk](#Preparing_the_disk)
     *   [2.2 Preparing non-boot partitions](#Preparing_non-boot_partitions)
     *   [2.3 Preparing the boot partition](#Preparing_the_boot_partition)
@@ -31,7 +31,7 @@ The following are examples of common scenarios of full system encryption with *d
     *   [5.4 Configuring the boot loader](#Configuring_the_boot_loader_4)
     *   [5.5 Creating the keyfiles](#Creating_the_keyfiles)
     *   [5.6 Configuring the system](#Configuring_the_system)
-*   [6 Plain dm-crypt](#Plain_dm-crypt)
+*   [6 LVM on dm-crypt](#LVM_on_dm-crypt)
     *   [6.1 Preparing the disk](#Preparing_the_disk_4)
     *   [6.2 Preparing the non-boot partitions](#Preparing_the_non-boot_partitions)
     *   [6.3 Preparing the boot partition](#Preparing_the_boot_partition_4)
@@ -71,7 +71,7 @@ Securing a root filesystem is where *dm-crypt* excels, feature and performance-w
 All scenarios illustrated in the following share these advantages, other pros and cons differentiating them are summarized below:
 
 | Scenarios | Advantages | Disadvantages |
-| [#Simple partition layout with LUKS](#Simple_partition_layout_with_LUKS)
+| [#LUKS on a MBR or GPT partition](#LUKS_on_a_MBR_or_GPT_partition)
 
 shows a basic and straight-forward set-up for a fully LUKS encrypted root.
 
@@ -130,7 +130,7 @@ uses dm-crypt only after RAID is setup.
 *   Analogous to LUKS on LVM
 
  |
-| [#Plain dm-crypt](#Plain_dm-crypt)
+| [#LVM on dm-crypt](#LVM_on_dm-crypt)
 
 uses dm-crypt plain mode, i.e. without a LUKS header and its options for multiple keys.
 This scenario also employs USB devices for `/boot` and key storage, which may be applied to the other scenarios.
@@ -196,9 +196,9 @@ For [solid state drives](/index.php/Solid_state_drive "Solid state drive") you m
     *   [GRUB](/index.php/GRUB "GRUB") does not support LUKS2\. Do not use LUKS2 on partitions that GRUB needs to access.
     *   The LUKS2 format has a high RAM usage per design, defaulting to 1GB per encrypted mapper. Machines with low RAM and/or multiple LUKS2 partitions unlocked in parallel may error on boot. See the `--pbkdf-memory` option to control memory usage.[[1]](https://gitlab.com/cryptsetup/cryptsetup/issues/372)
 
-## Simple partition layout with LUKS
+## LUKS on a MBR or GPT partition
 
-This example covers a full system encryption with *dmcrypt* + LUKS in a simple partition layout:
+This example covers a full system encryption with *dm-crypt* + LUKS in a simple partition layout:
 
 ```
 +-----------------------+------------------------+-----------------------+
@@ -756,7 +756,7 @@ HOOKS=(base udev autodetect **keyboard** **keymap** consolefont modconf block **
 
 See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for details.
 
-## Plain dm-crypt
+## LVM on dm-crypt
 
 Contrary to LUKS, dm-crypt *plain* mode does not require a header on the encrypted device: this scenario exploits this feature to set up a system on an unpartitioned, encrypted disk that will be indistinguishable from a disk filled with random data, which could allow [deniable encryption](https://en.wikipedia.org/wiki/Deniable_encryption "wikipedia:Deniable encryption"). See also [wikipedia:Disk encryption#Full disk encryption](https://en.wikipedia.org/wiki/Disk_encryption#Full_disk_encryption "wikipedia:Disk encryption").
 

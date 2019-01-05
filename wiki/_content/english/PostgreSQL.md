@@ -18,7 +18,7 @@ Related articles
     *   [5.4 Configure PostgreSQL authenticate against PAM](#Configure_PostgreSQL_authenticate_against_PAM)
     *   [5.5 Change default data directory](#Change_default_data_directory)
     *   [5.6 Change default encoding of new databases to UTF-8](#Change_default_encoding_of_new_databases_to_UTF-8)
-*   [6 Administration tools](#Administration_tools)
+*   [6 Graphical tools](#Graphical_tools)
 *   [7 Upgrading PostgreSQL](#Upgrading_PostgreSQL)
     *   [7.1 Manual dump and reload](#Manual_dump_and_reload)
 *   [8 Troubleshooting](#Troubleshooting)
@@ -378,11 +378,7 @@ template1 | postgres | UTF8      | C         | C     |
 
 ```
 
-## Administration tools
-
-*   **[Adminer](/index.php/Adminer "Adminer")** — Web-based database management tool for multiple database systems.
-
-	[https://www.adminer.org](https://www.adminer.org) || [adminer](https://aur.archlinux.org/packages/adminer/)
+## Graphical tools
 
 *   **[phpPgAdmin](/index.php/PhpPgAdmin "PhpPgAdmin")** — Web-based administration tool for PostgreSQL.
 
@@ -395,6 +391,8 @@ template1 | postgres | UTF8      | C         | C     |
 *   **pgModeler** — Graphical schema designer for PostgreSQL.
 
 	[https://pgmodeler.io/](https://pgmodeler.io/) || [pgmodeler](https://aur.archlinux.org/packages/pgmodeler/)
+
+For more, see [List of applications/Documents#Database tools](/index.php/List_of_applications/Documents#Database_tools "List of applications/Documents").
 
 ## Upgrading PostgreSQL
 
@@ -418,7 +416,7 @@ This will ensure you do not accidentally upgrade the database to an incompatible
 
 There are two main ways to upgrade your PostgreSQL database. Read the official documentation for details.
 
-For those wishing to use `pg_upgrade`, a [postgresql-old-upgrade](https://www.archlinux.org/packages/?name=postgresql-old-upgrade) package is available that will always run one major version behind the real PostgreSQL package. This can be installed side-by-side with the new version of PostgreSQL.
+For those wishing to use `pg_upgrade`, a [postgresql-old-upgrade](https://www.archlinux.org/packages/?name=postgresql-old-upgrade) package is available that will always run one major version behind the real PostgreSQL package. This can be installed side-by-side with the new version of PostgreSQL. To upgrade from older versions of PostgreSQL there are AUR packages available: [postgresql-96-upgrade](https://aur.archlinux.org/packages/postgresql-96-upgrade/), [postgresql-95-upgrade](https://aur.archlinux.org/packages/postgresql-95-upgrade/), [postgresql-94-upgrade](https://aur.archlinux.org/packages/postgresql-94-upgrade/), [postgresql-93-upgrade](https://aur.archlinux.org/packages/postgresql-93-upgrade/), [postgresql-92-upgrade](https://aur.archlinux.org/packages/postgresql-92-upgrade/).
 
 Note that the databases cluster directory does not change from version to version, so before running `pg_upgrade`, it is necessary to rename your existing data directory and migrate into a new directory. The new databases cluster must be initialized, as described in the [#Installation](#Installation) section.
 

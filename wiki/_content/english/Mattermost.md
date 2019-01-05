@@ -82,7 +82,7 @@ Continue with [#Database setup](#Database_setup).
 
 ## Database setup
 
-Mattermost requires a database back-end. If you plan to run it on the same machine, first install either [MySQL](/index.php/MySQL "MySQL")/MariaDB or [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") as database. Follow one of the following sections and then proceed with [#Configuring Mattermost](#Configuring_Mattermost).
+Mattermost requires a database back-end. If you plan to run it on the same machine, first install either [MySQL](/index.php/MySQL "MySQL") or [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") as database. Follow one of the following sections and then proceed with [#Configuring Mattermost](#Configuring_Mattermost).
 
 While MySQL is officially supported, please note the official guide goes through the PostgreSQL steps only.
 

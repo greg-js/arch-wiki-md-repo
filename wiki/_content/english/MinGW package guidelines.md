@@ -38,7 +38,7 @@ Packaging for cross platform packages can be fairly tricky as there are many dif
 *   consider using [mingw-w64-configure](https://aur.archlinux.org/packages/mingw-w64-configure/) for building with configure scripts
 *   consider using [mingw-w64-cmake](https://aur.archlinux.org/packages/mingw-w64-cmake/) for building with CMake
 *   consider using [mingw-w64-qt5-base](https://aur.archlinux.org/packages/mingw-w64-qt5-base/) or [mingw-w64-qt4](https://aur.archlinux.org/packages/mingw-w64-qt4/) for building with QMake
-*   consider using compilation flags `-O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions --param=ssp-buffer-size=4` (usually named CFLAGS, CXXFLAGS) when no proper build system is provided
+*   consider using compilation flags `-D_FORTIFY_SOURCE=2 -O2 -pipe -fno-plt -fexceptions --param=ssp-buffer-size=4` (usually named CFLAGS, CXXFLAGS) when no proper build system is provided
 *   consider explicitly stripping symbols with `${_arch}-strip` in `package()`'s for-loop as demonstrated in the below PKGBUILD examples.
     *   consider using the [find](/index.php/Find "Find") command to iterate over `$pkgdir` since not all DLLs, static libraries, or executables may reside in their appropriate locations.
         *   if the binary is a DLL, use `${_arch}-strip --strip-unneeded *.dll`

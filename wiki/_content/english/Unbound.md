@@ -95,6 +95,8 @@ To use [DNSSEC](/index.php/DNSSEC "DNSSEC") validation, point *unbound* to the s
 
  `/etc/unbound/unbound.conf`  `trust-anchor-file: trusted-key.key` 
 
+`/etc/unbound/trusted-key.key` is copied from `/etc/trusted-key.key`, which is provided by the [dnssec-anchors](https://www.archlinux.org/packages/?name=dnssec-anchors) dependency, whose [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") generates the file with [unbound-anchor(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/unbound-anchor.8).
+
 Also make sure that if general [#Forwarding queries](#Forwarding_queries) have been set to DNS servers that do not support DNSSEC, then comment them out; otherwise, DNS queries will fail. DNSSEC validation will only be done if the DNS server being queried supports it.
 
 **Note:** Including DNSSEC checking significantly increases DNS lookup times for initial lookups before the address is cached.
@@ -135,7 +137,7 @@ If you only want to forward queries to an external DNS server, skip ahead to [#F
 
 ##### Using openresolv
 
-If your network manager supports [openresolv](/index.php/Openresolv "Openresolv"), you can configure it to provide local DNS servers and search domains to Unbound. [[1]](https://roy.marples.name/projects/openresolv/config)
+If your network manager supports [openresolv](/index.php/Openresolv "Openresolv"), you can configure it to provide local DNS servers and search domains to Unbound. [[2]](https://roy.marples.name/projects/openresolv/config)
 
  `/etc/resolvconf.conf` 
 ```
@@ -169,7 +171,7 @@ server:
 
 ```
 
-Additionally you may want to disable DNSSEC validation for private DNS namespaces[[2]](https://tools.ietf.org/html/rfc6762#appendix-G):
+Additionally you may want to disable DNSSEC validation for private DNS namespaces[[3]](https://tools.ietf.org/html/rfc6762#appendix-G):
 
  `/etc/unbound/unbound.conf` 
 ```
@@ -249,7 +251,7 @@ local-data: "1.0.0.127.in-addr.arpa. 10800 IN PTR localhost."
 
 ##### Using openresolv
 
-If your network manager supports [openresolv](/index.php/Openresolv "Openresolv"), you can configure it to provide upstream DNS servers to Unbound. [[3]](https://roy.marples.name/projects/openresolv/config)
+If your network manager supports [openresolv](/index.php/Openresolv "Openresolv"), you can configure it to provide upstream DNS servers to Unbound. [[4]](https://roy.marples.name/projects/openresolv/config)
 
  `/etc/resolvconf.conf` 
 ```
@@ -406,7 +408,7 @@ server:
 
 ### Adding an authoritative DNS server
 
-For users who wish to run both a validating, recursive, caching DNS server as well as an authoritative DNS server on a single machine then it may be useful to refer to the wiki page [nsd](/index.php/Nsd "Nsd") which gives an example of a configuration for such a system. Having one server for authoritative DNS queries and a separate DNS server for the validating, recursive, caching DNS functions gives increased security over a single DNS server providing all of these functions. Many users have used bind as a single DNS server, and some help on migration from bind to the combination of running nsd and bind is provided in the [nsd](/index.php/Nsd "Nsd") wiki page.
+For users who wish to run both a validating, recursive, caching DNS server as well as an authoritative DNS server on a single machine then it may be useful to refer to the wiki page [NSD](/index.php/NSD "NSD") which gives an example of a configuration for such a system. Having one server for authoritative DNS queries and a separate DNS server for the validating, recursive, caching DNS functions gives increased security over a single DNS server providing all of these functions. Many users have used Bind as a single DNS server, and some help on migration from Bind to the combination of running NSD and Bind is provided in the [NSD](/index.php/NSD "NSD") wiki page.
 
 ### WAN facing DNS
 

@@ -128,7 +128,7 @@ Websites can be augmented using user style sheets and JavaScript [userscripts](h
 
 	[https://darkreader.org/](https://darkreader.org/) || [firefox-dark-reader](https://www.archlinux.org/packages/?name=firefox-dark-reader), [Chromium](/index.php/Chromium "Chromium")
 
-*   **Toggle Website Colors** — Replaces colours with user selected ones.
+*   **Toggle Website Colors** — Replaces colors with user selected ones.
 
 	[https://github.com/M-Reimer/togglewebsitecolors](https://github.com/M-Reimer/togglewebsitecolors) || [Firefox](/index.php/Firefox "Firefox")
 

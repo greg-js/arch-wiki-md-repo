@@ -405,7 +405,7 @@ Akonadi is a system meant to act as a local cache for PIM data, regardless of it
 
 Install [akonadi](https://www.archlinux.org/packages/?name=akonadi). For additional addons, install [kdepim-addons](https://www.archlinux.org/packages/?name=kdepim-addons).
 
-**Note:** If you wish to use a database engine other than [MySQL](/index.php/MySQL "MySQL"), then when installing the [akonadi](https://www.archlinux.org/packages/?name=akonadi) package, use the following command to skip installing the [mariadb](https://www.archlinux.org/packages/?name=mariadb) dependencies:
+**Note:** If you wish to use a database engine other than [MariaDB](/index.php/MariaDB "MariaDB"), then when installing the [akonadi](https://www.archlinux.org/packages/?name=akonadi) package, use the following command to skip installing the [mariadb](https://www.archlinux.org/packages/?name=mariadb) dependencies:
 ```
 # pacman -S akonadi --assume-installed mariadb
 
@@ -742,7 +742,7 @@ innodb_use_native_aio = 0
 
 ```
 
-See [MySQL#OS error 22 when running on ZFS](/index.php/MySQL#OS_error_22_when_running_on_ZFS "MySQL").
+See [MariaDB#OS error 22 when running on ZFS](/index.php/MariaDB#OS_error_22_when_running_on_ZFS "MariaDB").
 
 ### Some programs are unable to scroll when their windows are inactive
 

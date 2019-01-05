@@ -182,4 +182,9 @@ for getting current firmware. Affected versions include:
 
 ```
 
-You should therefore update the firmware, like instructed [here](https://community.logitech.com/s/question/0D531000058b3B7CAI/logitech-response-to-research-findings). Unfortunately, Logitech only provides Firmware Update Tools for Windows and Mac.
+You should therefore update the firmware, like instructed [here](https://community.logitech.com/s/question/0D531000058b3B7CAI/logitech-response-to-research-findings). You can do this via [fwupd](/index.php/Fwupd "Fwupd") like this:
+
+```
+fwupdmgr refresh && fwupdmgr get-updates
+
+```

@@ -1,6 +1,6 @@
 Dbeaver is a free multi-platform database database administration tool. For more information about features, see the [official homepage](https://dbeaver.jkiss.org/).
 
-It supports popular databases such as [MySQL](/index.php/MySQL "MySQL"), [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"), [MariaDB](/index.php/MariaDB "MariaDB"), [SQLite](/index.php/SQLite "SQLite"), [Oracle](/index.php/Oracle "Oracle").
+It supports popular databases such as [MySQL](/index.php/MySQL "MySQL"), [MariaDB](/index.php/MariaDB "MariaDB"), [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"), [SQLite](/index.php/SQLite "SQLite"), [Oracle](/index.php/Oracle "Oracle").
 
 It provides a plugin architecture (based on Eclipse plugins architecture) that allows to modify much of the application behavior to provide database-specific functionality or features that are database-independent. This is a desktop application written in Java and based on Eclipse platform.
 

@@ -18,19 +18,20 @@
         *   [2.1.3 PATH](#PATH)
         *   [2.1.4 pam_environment](#pam_environment)
     *   [2.2 Автоматический запуск systemd от имени пользователя](#Автоматический_запуск_systemd_от_имени_пользователя)
-*   [3 Xorg и systemd](#Xorg_и_systemd)
-    *   [3.1 Автоматический логин в Xorg без экранного менеджера](#Автоматический_логин_в_Xorg_без_экранного_менеджера)
-    *   [3.2 Xorg как служба systemd пользователь](#Xorg_как_служба_systemd_пользователь)
-*   [4 Написание пользовательских юнитов](#Написание_пользовательских_юнитов)
-    *   [4.1 Пример](#Пример)
-    *   [4.2 Пример с переменными](#Пример_с_переменными)
-    *   [4.3 Примечание о приложениях X](#Примечание_о_приложениях_X)
-    *   [4.4 Reading the journal](#Reading_the_journal)
-*   [5 Некоторые случаи использования](#Некоторые_случаи_использования)
-    *   [5.1 Постоянный терминальный мультиплексор](#Постоянный_терминальный_мультиплексор)
-    *   [5.2 Оконный менеджер](#Оконный_менеджер)
-*   [6 Kill user processes on logout](#Kill_user_processes_on_logout)
-*   [7 Смотрите также](#Смотрите_также)
+*   [3 Написание пользовательских юнитов](#Написание_пользовательских_юнитов)
+    *   [3.1 Пример](#Пример)
+    *   [3.2 Пример с переменными](#Пример_с_переменными)
+    *   [3.3 Примечание о приложениях X](#Примечание_о_приложениях_X)
+    *   [3.4 Чтение журнала](#Чтение_журнала)
+*   [4 Временные файлы](#Временные_файлы)
+*   [5 Xorg и systemd](#Xorg_и_systemd)
+    *   [5.1 Автоматический логин в Xorg без экранного менеджера](#Автоматический_логин_в_Xorg_без_экранного_менеджера)
+    *   [5.2 Xorg как служба systemd пользователь](#Xorg_как_служба_systemd_пользователь)
+*   [6 Некоторые случаи использования](#Некоторые_случаи_использования)
+    *   [6.1 Постоянный терминальный мультиплексор](#Постоянный_терминальный_мультиплексор)
+    *   [6.2 Оконный менеджер](#Оконный_менеджер)
+*   [7 Сделать kill процесса при выходе из системы](#Сделать_kill_процесса_при_выходе_из_системы)
+*   [8 Смотрите также](#Смотрите_также)
 
 ## Как это работает
 
@@ -104,23 +105,7 @@ systemctl --user import-environment PATH
 
 #### pam_environment
 
-Environment variables can be made available through use of the `pam_env.so` module. Create the file `~/.pam_environment`, for example:
-
- `~/.pam_environment` 
-```
-XDG_CONFIG_HOME DEFAULT=@{HOME}/.local/config
-XDG_DATA_HOME   DEFAULT=@{HOME}/.local/data
-```
-
-For details about the syntax of the `.pam_environment` file see [Environment variables#Using pam_env](/index.php/Environment_variables#Using_pam_env "Environment variables"). You can verify that the configuration was successful by running the command `systemctl --user show-environment`:
-
- `$ systemctl --user show-environment` 
-```
-...
-XDG_CONFIG_HOME=/home/*user*/.local/config
-XDG_DATA_HOME=/home/*user*/.local/data
-...
-```
+Переменные среды можно сделать доступными с помощью модуля `pam_env.so`. Смотрите [Environment variables#Using pam_env](/index.php/Environment_variables#Using_pam_env "Environment variables") для деталей конфигурации.
 
 ### Автоматический запуск systemd от имени пользователя
 
@@ -133,108 +118,9 @@ XDG_DATA_HOME=/home/*user*/.local/data
 
 **Важно:** служба systemd находится **вне** сессии, она запускается за пределами *logind*. Не используйте долговременные службы для включения автоматического входа в систему, иначе будет [перерыв в работе сессии](/index.php/General_troubleshooting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Разрешения_сессии "General troubleshooting (Русский)").
 
-## Xorg и systemd
-
-There are several ways to run xorg within systemd units. Below there are two options, either by starting a new user session with an xorg process, or by launching xorg from a systemd user service.
-
-### Автоматический логин в Xorg без экранного менеджера
-
-This option will launch a system unit that will start a user session with an xorg server and then run the usual `~/.xinitrc` to launch the window manager, etc.
-
-You need to have [#D-Bus](#D-Bus) correctly set up and [xlogin-git](https://aur.archlinux.org/packages/xlogin-git/) installed.
-
-Set up your [xinitrc](/index.php/Xinitrc "Xinitrc") from the skeleton, so that it will source the files in `/etc/X11/xinit/xinitrc.d/`. Running your `~/.xinitrc` should not return, so either have `wait` as the last command, or add `exec` to the last command that will be called and which should not return (your window manager, for instance).
-
-The session will use its own dbus daemon, but various systemd utilities will automatically connect to the `dbus.service` instance.
-
-Finally, enable (**as root**) the *xlogin* service for automatic login at boot:
-
-```
-# systemctl enable xlogin@*username*
-
-```
-
-The user session lives entirely inside a systemd scope and everything in the user session should work just fine.
-
-### Xorg как служба systemd пользователь
-
-Alternatively, [xorg](/index.php/Xorg "Xorg") can be run from within a systemd user service. This is nice since other X-related units can be made to depend on xorg, etc, but on the other hand, it has some drawbacks explained below.
-
-[xorg-server](https://www.archlinux.org/packages/?name=xorg-server) provides integration with systemd in two ways:
-
-*   Can be run unprivileged, delegating device management to logind (see Hans de Goede commits around [this commit](http://cgit.freedesktop.org/xorg/xserver/commit/?id=82863656ec449644cd34a86388ba40f36cea11e9)).
-*   Can be made into a socket activated service (see [this commit](http://cgit.freedesktop.org/xorg/xserver/commit/?id=b3d3ffd19937827bcbdb833a628f9b1814a6e189)). This removes the need for [systemd-xorg-launch-helper-git](https://aur.archlinux.org/packages/systemd-xorg-launch-helper-git/).
-
-Unfortunately, to be able to run xorg in unprivileged mode, it needs to run inside a session. So, right now the handicap of running xorg as user service is that it must be run with root privileges (like before 1.16), and can't take advantage of the unprivileged mode introduced in 1.16.
-
-**Примечание:** This is not a fundamental restriction imposed by logind, but the reason seems to be that xorg needs to know which session to take over, and right now it gets this information calling [logind](http://www.freedesktop.org/wiki/Software/systemd/logind)'s `GetSessionByPID` using its own pid as argument. See [this thread](http://lists.x.org/archives/xorg-devel/2014-February/040476.html) and [xorg sources](http://cgit.freedesktop.org/xorg/xserver/tree/hw/xfree86/os-support/linux/systemd-logind.c). It seems likely that xorg could be modified to get the session from the tty it is attaching to, and then it could run unprivileged from a user service outside a session.
-
-**Важно:** On xorg 1.18 socket activation seems to be broken. The client triggering the activation deadlocks. See the upstream bug report [[4]](https://bugs.freedesktop.org/show_bug.cgi?id=93072). As a temporary workaround you can start the xorg server without socket activation, making sure the clients connect after a delay, so the server is fully started. There seems to be no nice mechanism te get startup notification for the X server.
-
-This is how to launch xorg from a user service:
-
-1\. Make xorg run with root privileges and for any user, by editing `/etc/X11/Xwrapper.config`
-
- `/etc/X11/Xwrapper.config` 
-```
-allowed_users=anybody
-needs_root_rights=yes
-
-```
-
-2\. Add the following units to `~/.config/systemd/user`
-
- `~/.config/systemd/user/xorg@.socket` 
-```
-[Unit]
-Description=Socket for xorg at display %i
-
-[Socket]
-ListenStream=/tmp/.X11-unix/X%i
-
-```
- `~/.config/systemd/user/xorg@.service` 
-```
-[Unit]
-Description=Xorg server at display %i
-
-Requires=xorg@%i.socket
-After=xorg@%i.socket
-
-[Service]
-Type=simple
-SuccessExitStatus=0 1
-
-ExecStart=/usr/bin/Xorg :%i -nolisten tcp -noreset -verbose 2 "vt${XDG_VTNR}"
-
-```
-
-where `${XDG_VTNR}` is the virtual terminal where xorg will be launched, either hard-coded in the service unit, or set in the systemd environment with
-
-```
-$ systemctl --user set-environment XDG_VTNR=1
-
-```
-
-**Note:** xorg should be launched at the same virtual terminal where the user logged in. Otherwise logind will consider the session inactive.
-
-3\. Make sure to configure the `DISPLAY` environment variable as explained [above](#DISPLAY_и_XAUTHORITY).
-
-4\. Then, to enable socket activation for xorg on display 0 and tty 2 one would do:
-
-```
-$ systemctl --user set-environment XDG_VTNR=2     # So that xorg@.service knows which vt use
-$ systemctl --user start xorg@0.socket            # Start listening on the socket for display 0
-
-```
-
-Now running any X application will launch xorg on virtual terminal 2 automatically.
-
-The environment variable `XDG_VTNR` can be set in the systemd environment from `.bash_profile`, and then one could start any X application, including a window manager, as a systemd unit that depends on `xorg@0.socket`.
-
-**Важно:** Currently running a window manager as a user service means it runs outside of a session with the problems this may bring: [break the session](/index.php/General_troubleshooting#Session_permissions "General troubleshooting"). However, it seems that systemd developers intend to make something like this possible. See [[5]](https://mail.gnome.org/archives/desktop-devel-list/2014-January/msg00079.html) and [[6]](http://lists.freedesktop.org/archives/systemd-devel/2014-March/017552.html)
-
 ## Написание пользовательских юнитов
+
+Смотрите [systemd#Writing_unit_files](/index.php/Systemd#Writing_unit_files "Systemd") для получения общей информации о написании юнитов модулей systemd.
 
 ### Пример
 
@@ -274,40 +160,141 @@ WantedBy=default.target
 
 ### Примечание о приложениях X
 
-Most X apps need a `DISPLAY` variable to run. See [#DISPLAY и XAUTHORITY](#DISPLAY_и_XAUTHORITY) for how to this variable is set for the entire systemd user instance.
+Большинству приложений X для запуска нужна переменная `DISPLAY`. Смотрите [#DISPLAY и XAUTHORITY](#DISPLAY_и_XAUTHORITY), чтобы узнать, как установить эту переменную для всего пользовательского экземпляра systemd.
 
-### Reading the journal
+### Чтение журнала
 
-The journal for the user can be read using the analogous command:
+Журнал для пользователя может быть прочитан с помощью аналогичной команды:
 
 ```
 $ journalctl --user
 
 ```
 
-To specify a unit, one can use
+Чтобы указать юнит, можно использовать
 
 ```
 $ journalctl --user -u myunit.service
 
 ```
 
-For a user unit, use
+Эквивалентная команда
 
 ```
 $ journalctl --user --user-unit myunit.service
 
 ```
 
-Note that there seems to be some sort of bug that can sometimes stop output from user services from being properly attributed to their service unit. Therefore, filtering by the `-u` may unwittingly exclude some of the output from the service units.
+Обратите внимание, что journald не будет писать пользовательские журналы для пользователей с UID ниже 1000, вместо этого [перенаправляя](https://github.com/systemd/systemd/blob/a33687b792908aa6c9f4c0b22e8935643ee0ddb6/src/journal/journald-server.c#L402) всё в системный журнал.
+
+## Временные файлы
+
+*systemd-tmpfiles* позволяет пользователям управлять нестабильными и временными файлами и каталогами так же, как общесистемным способом (см. [systemd#Temporary files](/index.php/Systemd#Temporary_files "Systemd")). Пользовательские файлы конфигурации считываются из `~/.config/user-tmpfiles.d/` и `~/.local/share/user-tmpfiles.d/` в указанном порядке. Для использования этой функциональности требуется включить необходимые пользовательские юниты systemd для вашего пользователя:
+
+```
+$ systemctl --user enable systemd-tmpfiles-setup.service systemd-tmpfiles-clean.timer
+
+```
+
+Синтаксис конфигурационных файлов такой же, как и для всей системы. Для получения дополнительной информации смотрите справочные страницы [systemd-tmpfiles(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-tmpfiles.8) и [tmpfiles.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tmpfiles.d.5).
+
+## Xorg и systemd
+
+Есть несколько способов запустить xorg в системных модулях. Ниже представлены два варианта: либо запустить новый пользовательский сеанс с процессом xorg, либо запустить xorg из пользовательской службы systemd.
+
+### Автоматический логин в Xorg без экранного менеджера
+
+Эта опция запускает системный блок, который запускает сеанс пользователя с сервером xorg, а затем запускает обычный `~/.xinitrc` для запуска оконного менеджера и т.д.
+
+Вам необходим установленный [xlogin-git](https://aur.archlinux.org/packages/xlogin-git/). Настройте свой xinitrc, как указано в разделе [Xinit#xinitrc](/index.php/Xinit#xinitrc "Xinit").
+
+Сеанс будет использовать собственный dbus демон, но различные утилиты systemd будут автоматически подключаться к экземпляру `dbus.service`. Наконец, [enable](/index.php/Enable "Enable") службу `xlogin@*username*` для автоматического входа при загрузке.Сеанс пользователя полностью находится в области видимости systemd, и все в сеансе пользователя должно работать нормально.
+
+### Xorg как служба systemd пользователь
+
+Кроме того, [xorg](/index.php/Xorg "Xorg") можно запустить из службы пользователя systemd. Это хорошо, поскольку другие связанные с X юниты могут зависеть от xorg и т. д. Но с другой стороны, у этого есть некоторые недостатки, объясненные ниже.
+
+[xorg-server](https://www.archlinux.org/packages/?name=xorg-server) обеспечивает интеграцию с systemd двумя способами:
+
+*   Может быть запущен непривилегированным, делегируя управление устройствами logind (смотрите коммиты Hans de Goede [коммит](http://cgit.freedesktop.org/xorg/xserver/commit/?id=82863656ec449644cd34a86388ba40f36cea11e9)).
+*   Может быть превращен в сервис, активируемый сокетом (смотрите [этот коммит](http://cgit.freedesktop.org/xorg/xserver/commit/?id=b3d3ffd19937827bcbdb833a628f9b1814a6e189)). Это устраняет необходимость в [systemd-xorg-launch-helper-git](https://aur.archlinux.org/packages/systemd-xorg-launch-helper-git/).
+
+К сожалению, чтобы иметь возможность запускать xorg в непривилегированном режиме, он должен запускаться внутри сеанса. Итак, в данный момент недостаток запуска xorg в качестве пользовательской службы заключается в том, что он должен запускаться с привилегиями суперпользователя (как до 1.16) и не может использовать преимущества непривилегированного режима, представленного в 1.16.
+
+**Примечание:** Это не является фундаментальным ограничением, налагаемым logind, но причина, по-видимому, заключается в том, что xorg нужно знать, какой сеанс взять на себя, и сейчас он получает эту информацию, вызывая [logind](http://www.freedesktop.org/wiki/Software/systemd/logind)'s `GetSessionByPID` используя свой собственный pid в качестве аргумента. Смотрите [this thread](http://lists.x.org/archives/xorg-devel/2014-February/040476.html) и [xorg sources](http://cgit.freedesktop.org/xorg/xserver/tree/hw/xfree86/os-support/linux/systemd-logind.c). Кажется вероятным, что xorg можно изменить, чтобы получить сеанс от tty, к которому он подключен, и затем он мог бы работать непривилегированным из пользовательской службы вне сеанса.
+
+**Важно:** В xorg 1.18 активация сокета, кажется, сломана. Клиент, вызывающий активацию, зависает. Смотрите вышестоящий отчет об ошибках [[4]](https://bugs.freedesktop.org/show_bug.cgi?id=93072). В качестве временного обходного пути вы можете запустить сервер xorg без активации сокета, убедившись, что клиенты подключаются после задержки, поэтому сервер полностью запускается. Кажется, нет никакого удобного механизма, чтобы получить уведомление о запуске для X сервера.
+
+Вот как запустить xorg из пользовательского сервиса:
+
+1\. Заставить xorg работать с правами суперпользователя и для любого пользователя путем редактирования `/etc/X11/Xwrapper.config`
+
+ `/etc/X11/Xwrapper.config` 
+```
+allowed_users=anybody
+needs_root_rights=yes
+
+```
+
+2\. Добавить следующие юниты в `~/.config/systemd/user`
+
+ `~/.config/systemd/user/xorg@.socket` 
+```
+[Unit]
+Description=Socket for xorg at display %i
+
+[Socket]
+ListenStream=/tmp/.X11-unix/X%i
+
+```
+ `~/.config/systemd/user/xorg@.service` 
+```
+[Unit]
+Description=Xorg server at display %i
+
+Requires=xorg@%i.socket
+After=xorg@%i.socket
+
+[Service]
+Type=simple
+SuccessExitStatus=0 1
+
+ExecStart=/usr/bin/Xorg :%i -nolisten tcp -noreset -verbose 2 "vt${XDG_VTNR}"
+
+```
+
+где `${XDG_VTNR`} - виртуальный терминал, на котором будет запущен xorg, либо прописанный в сервисном модуле, либо установленный в среде systemd с помощью
+
+```
+$ systemctl --user set-environment XDG_VTNR=1
+
+```
+
+**Note:** xorg должен быть запущен на том же виртуальном терминале, где пользователь вошел в систему. В противном случае logind будет считать сеанс неактивным.
+
+3\. Обязательно настройте переменную среды `DISPLAY`, как описано [выше](#DISPLAY_и_XAUTHORITY).
+
+4\. Затем, чтобы активировать сокет для xorg на дисплее 0 и tty 2, следует выполнить:
+
+```
+$ systemctl --user set-environment XDG_VTNR=2     # Так что xorg@.service знает, какой vt использовать
+$ systemctl --user start xorg@0.socket            # начинает слушать на сокете для дисплея 0
+
+```
+
+Теперь запуск любого X приложения автоматически запустит xorg на виртуальном терминале 2.
+
+Переменная среды `XDG_VTNR` может быть установлена в среде systemd из `.bash_profile`, а затем можно запустить любое приложение X, включая диспетчер окон, как системный модуль, зависящий от `xorg@0.socket`.
+
+**Важно:** В настоящее время запуск оконного менеджера в качестве пользовательской службы означает, что он работает работает за пределами сеанса, с проблемами, которые могут возникнуть: [break the session](/index.php/General_troubleshooting#Session_permissions "General troubleshooting"). Однако, похоже, что разработчики systemd намерены сделать что-то подобное возможным. Смотрите [[5]](https://mail.gnome.org/archives/desktop-devel-list/2014-January/msg00079.html) и [[6]](http://lists.freedesktop.org/archives/systemd-devel/2014-March/017552.html)
 
 ## Некоторые случаи использования
 
 ### Постоянный терминальный мультиплексор
 
-You may wish your user session to default to running a terminal multiplexer, such as [GNU Screen](/index.php/GNU_Screen "GNU Screen") or [Tmux](/index.php/Tmux "Tmux"), in the background rather than logging you into a window manager session. Separating login from X login is most likely only useful for those who boot to a TTY instead of to a display manager (in which case you can simply bundle everything you start in with myStuff.target).
+Возможно, вы захотите, чтобы в сеансе пользователя по умолчанию использовался терминальный мультиплексор, например [GNU Screen](/index.php/GNU_Screen "GNU Screen") или [Tmux](/index.php/Tmux "Tmux"), в фоновом режиме, а не для входа в сеанс оконного менеджера. Разделение входа в систему от входа в систему X, скорее всего, полезно только для тех, кто загружается с TTY, а не с экранным менеджером (в этом случае вы можете просто связать все, что вы запускаете, с myStuff.target).
 
-To create this type of user session, procede as above, but instead of creating wm.target, create multiplexer.target:
+Чтобы создать пользовательский сеанс такого типа, действуйте, как указано выше, но вместо создания wm.target создайте multiplexer.target:
 
 ```
 [Unit]
@@ -320,9 +307,9 @@ Wants=cruft.target
 Alias=default.target
 ```
 
-`cruft.target`, like `mystuff.target` above, should start anything you think should run before tmux or screen starts (or which you want started at boot regardless of timing), such as a GnuPG daemon session.
+`cruft.target`, как `mystuff.target` выше, должен запускать все, что, по вашему мнению, должно запускаться до запуска tmux или экрана (или что вы хотите запустить при загрузке независимо от времени), например сеанс демона GnuPG.
 
-You then need to create a service for your multiplexer session. Here is a sample service, using tmux as an example and sourcing a gpg-agent session which wrote its information to `/tmp/gpg-agent-info`. This sample session, when you start X, will also be able to run X programs, since DISPLAY is set.
+Затем вам нужно создать сервис для сеанса мультиплексора. Вот пример службы, использующей tmux в качестве примера и использующей сеанс gpg-agent, который записал свою информацию в `/tmp/gpg-agent-info`. Этот пример сеанса при запуске X также сможет запускать программы X, так как установлен DISPLAY.
 
 ```
 [Unit]
@@ -342,11 +329,11 @@ EnvironmentFile=/tmp/gpg-agent-info
 WantedBy=multiplexer.target
 ```
 
-Once this is done, `systemctl --user enable` `tmux.service`, `multiplexer.target` and any services you created to be run by `cruft.target` and you should be set to go! Activated `user-session@.service` as described above, but be sure to remove the `Conflicts=getty@tty1.service` from `user-session@.service`, since your user session will not be taking over a TTY. Congratulations! You have a running terminal multiplexer and some other useful programs ready to start at boot!
+Как только это будет сделано, `systemctl --user enable` `tmux.service`, `multiplexer.target` и любые сервисы, которые вы создали для запуска `cruft.target`, и вы должны быть готовы к работе! Активирован `user-session@.service`, как описано выше, но обязательно удалите `Conflicts=getty@tty1.service` из {{ic|user-session@.service} }, поскольку ваш пользовательский сеанс не будет принимать TTY. Поздравляем! У вас есть работающий терминальный мультиплексор и некоторые другие полезные программы, готовые к запуску при загрузке!
 
 ### Оконный менеджер
 
-To run a window manager as a systemd service, you first need to run [#Xorg as a systemd user service](#Xorg_as_a_systemd_user_service). In the following we will use awesome as an example:
+Чтобы запустить Оконный менеджер в качестве службы systemd, сначала необходимо запустить [#Xorg как служба systemd пользователь](#Xorg_как_служба_systemd_пользователь). В следующем примере мы будем использовать awesome:
 
  `~/.config/systemd/user/awesome.service` 
 ```
@@ -365,20 +352,20 @@ WantedBy=wm.target
 
 ```
 
-**Примечание:** The `[Install]` section includes a `WantedBy` part. When using `systemctl --user enable` it will link this as `~/.config/systemd/user/wm.target.wants/*window_manager*.service`, allowing it to be started at login. Is recommended to enable this service, not to link it manually.
+**Примечание:** Раздел `[Install]` содержит часть `WantedBy`. При использовании `systemctl --user enable` он будет связывать это как `~/.config/systemd/user/wm.target.wants /*window_manager*.service`, позволяя ему стартовать при входе в систему. Рекомендуется включить этот сервис, а не связывать его вручную.
 
-## Kill user processes on logout
+## Сделать kill процесса при выходе из системы
 
-Arch Linux builds the [systemd](https://www.archlinux.org/packages/?name=systemd) package with `--without-kill-user-processes`, setting `KillUserProcesses` to `no` by default. This setting causes user processes not to be killed when the user completely logs out. To change this behavior in order to have all user processes killed on the user's logout, set `KillUserProcesses=yes` in `/etc/systemd/logind.conf`.
+Arch Linux создает пакет [systemd](https://www.archlinux.org/packages/?name=systemd) с помощью `--without-kill-user-process`, устанавливая `KillUserProcesses` равным `no` по умолчанию. Этот параметр предотвращает уничтожение пользовательских процессов, когда пользователь полностью выходит из системы. Чтобы изменить это поведение и убить все пользовательские процессы при выходе из системы, установите `KillUserProcesses=yes` в `/etc/systemd/logind.conf`.
 
-Note that changing this setting breaks terminal multiplexers such as [tmux](/index.php/Tmux "Tmux") and [GNU Screen](/index.php/GNU_Screen "GNU Screen"). If you change this setting, you can still use a terminal multiplexer by using `systemd-run` as follows:
+Обратите внимание, что изменение этого параметра нарушает работу мультиплексоров терминала, таких как [tmux (Русский)](/index.php/Tmux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Tmux (Русский)") и [GNU Screen (Русский)](/index.php/GNU_Screen_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNU Screen (Русский)"). Если вы измените этот параметр, вы все равно сможете использовать терминальный мультиплексор, используя `systemd-run` следующим образом:
 
 ```
 $ systemd-run --scope --user *command* *args*
 
 ```
 
-For example, to run `screen` you would do:
+Например, чтобы запустить `screen`, вы должны сделать:
 
 ```
 $ systemd-run --scope --user screen -S *foo*

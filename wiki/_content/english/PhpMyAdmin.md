@@ -1,4 +1,4 @@
-[phpMyAdmin](http://www.phpmyadmin.net/) is a web-based tool to help manage MySQL databases using an Apache/PHP frontend.
+[phpMyAdmin](https://en.wikipedia.org/wiki/phpMyAdmin "wikipedia:phpMyAdmin") is a web-based tool to help manage MySQL databases using an Apache/PHP frontend.
 
 ## Contents
 
@@ -287,4 +287,4 @@ Edit `/etc/webapps/phpmyadmin/config.inc.php` to add the line:
 
 ## See also
 
-*   [Wikipedia](https://en.wikipedia.org/wiki/phpMyAdmin "wikipedia:phpMyAdmin")
+*   [Official website](https://www.phpmyadmin.net/)

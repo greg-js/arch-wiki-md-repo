@@ -260,9 +260,9 @@ X stores some required files in the `/tmp` directory. In order for your containe
 
 **Note:** Since systemd version 235, `/tmp/.X11-unix` contents [have to be bind-mounted as read-only](https://github.com/systemd/systemd/issues/7093), otherwise they will disappear from the filesystem. The read-only mount flag does not prevent using `connect()` syscall on the socket. If you binded also `/run/user/1000` then you might want to explicitly bind `/run/user/1000/bus` as read-only to protect the dbus socket from being deleted.
 
-#### Avoiding `xhost`
+#### Avoiding xhost
 
-`xhost` only provides rather coarse access rights to the X server. More fine-grained access control is possible via the `$XAUTHORITY` file. Unfortunately, just making the `$XAUTHORITY` file accessible in the container won't do the job: your `$XAUTHORITY` file is specific to your host, but the container is a different host. The following trick (from [[2]](https://stackoverflow.com/a/25280523)) can be used to make your X server accept the `$XAUTHORITY` file from an X application run inside the container:
+`xhost` only provides rather coarse access rights to the X server. More fine-grained access control is possible via the `$XAUTHORITY` file. Unfortunately, just making the `$XAUTHORITY` file accessible in the container will not do the job: your `$XAUTHORITY` file is specific to your host, but the container is a different host. The following trick adapted from [stackoverflow](https://stackoverflow.com/a/25280523) can be used to make your X server accept the `$XAUTHORITY` file from an X application run inside the container:
 
 ```
 $ XAUTH=/tmp/container_xauth
@@ -272,7 +272,7 @@ $ sudo systemd-nspawn -D myContainer --bind=/tmp/.X11-unix --bind="$XAUTH" \
 
 ```
 
-The second line above sets the connection family to "FamilyWild", value 65535, which causes the entry to match every display [[3]](ftp://www.x.org/pub/current/doc/man/man7/Xsecurity.7.xhtml).
+The second line above sets the connection family to "FamilyWild", value `65535`, which causes the entry to match every display. See [Xsecurity(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/Xsecurity.7) for more information.
 
 ### Run Firefox
 
@@ -456,7 +456,7 @@ pam_securetty(login:auth): access denied: tty 'pts/0' is not secure !
 
 ```
 
-Add `pts/0` to the list of terminal names in `/etc/securetty` on the **container** filesystem, see [[4]](http://unix.stackexchange.com/questions/41840/effect-of-entries-in-etc-securetty/41939#41939). You can also opt to delete `/etc/securetty` on the **container** to allow root to login to any tty, see [[5]](https://github.com/systemd/systemd/issues/852).
+Add `pts/0` to the list of terminal names in `/etc/securetty` on the **container** filesystem, see [[2]](http://unix.stackexchange.com/questions/41840/effect-of-entries-in-etc-securetty/41939#41939). You can also opt to delete `/etc/securetty` on the **container** to allow root to login to any tty, see [[3]](https://github.com/systemd/systemd/issues/852).
 
 ### Unable to upgrade some packages on the container
 

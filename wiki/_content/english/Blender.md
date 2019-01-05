@@ -27,7 +27,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Blender_(software) "wikipedia:Ble
 
 ## GPU Rendering
 
-Blender only officially supports only the proprietary drivers from both AMD (for GCN cards: [AMDGPU](/index.php/AMDGPU "AMDGPU"); For pre-GCN cards: [ATI](/index.php/ATI "ATI")) and [NVIDIA](/index.php/NVIDIA "NVIDIA"). After installing the proprietary drivers, one can select the graphics card as a compute device under *File > User Preferences > System*.
+Blender officially supports only the proprietary drivers from both AMD (for GCN cards: [AMDGPU](/index.php/AMDGPU "AMDGPU"); For pre-GCN cards: [ATI](/index.php/ATI "ATI")) and [NVIDIA](/index.php/NVIDIA "NVIDIA"). After installing the proprietary drivers, one can select the graphics card as a compute device under *File > User Preferences > System*.
 
 ## Professional Rendering Plugins
 

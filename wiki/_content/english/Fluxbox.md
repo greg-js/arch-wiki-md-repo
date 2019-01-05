@@ -1,6 +1,5 @@
 Related articles
 
-*   [Fluxbox/Style guide](/index.php/Fluxbox/Style_guide "Fluxbox/Style guide")
 *   [Window manager](/index.php/Window_manager "Window manager")
 
 Fluxbox is a [window manager](/index.php/Window_manager "Window manager") for [X11](/index.php/X11 "X11"). It is based on the (now abandoned) Blackbox 0.61.1 code, but with significant enhancements and continued development. Fluxbox provides a number of window management features such as tabbing and grouping and has hundreds of styles (themes) available. All Fluxbox configuration is stored in plaintext files, however some settings are exposed graphically in the configuration menu.

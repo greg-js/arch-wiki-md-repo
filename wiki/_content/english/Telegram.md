@@ -10,7 +10,7 @@ The official clients are open-source but the code for recent versions is not alw
     *   [1.3 Command-line clients](#Command-line_clients)
     *   [1.4 Web-based clients](#Web-based_clients)
 *   [2 Tips and tricks](#Tips_and_tricks)
-    *   [2.1 Telegram channels about Arch Linux](#Telegram_channels_about_Arch_Linux)
+    *   [2.1 Telegram resources about Arch Linux](#Telegram_resources_about_Arch_Linux)
     *   [2.2 Unread messages counter for Telegram Desktop](#Unread_messages_counter_for_Telegram_Desktop)
 
 ## Installation
@@ -47,11 +47,14 @@ The [official app](https://desktop.telegram.org/):
 
 ## Tips and tricks
 
-### Telegram channels about Arch Linux
+### Telegram resources about Arch Linux
 
-*   [Arch Linux News](https://telegram.me/archlinuxnews) - Latest news form Arch web site.
-*   [Planet Arch](https://telegram.me/archplanet) - Latest posts from Planet Arch web site.
-*   [Arch Linux](https://telegram.me/archlinuxgroup) - Unofficial group for discussing everything about Arch Linux.
+*   [Arch Linux](https://t.me/archlinuxgroup) - Unofficial group for discussing everything about Arch Linux.
+*   [ArchWikiBot](https://t.me/archewikibot) - Inline bot for searching through ArchWiki pages.
+*   [Planet Arch Linux & News](https://t.me/planetarch) - Channel with recent Planet Arch updates and Latest News in one place.
+*   [Arch Linux: Recent package updates](https://t.me/archlinux_updates) - Channel with recent package updates in Arch Linux repositories.
+*   [Arch Linux News](https://t.me/archlinuxnews) - Channel with latest news from Arch web site *(not updated)*.
+*   [Planet Arch](https://t.me/archplanet) - Channel with latest posts from Planet Arch web site *(not updated)*.
 
 ### Unread messages counter for Telegram Desktop
 

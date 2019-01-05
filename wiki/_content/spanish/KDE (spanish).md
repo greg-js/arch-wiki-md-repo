@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [KDE](/index.php/KDE "KDE"), revisada por última vez el **2018-12-23**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=560101) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [KDE](/index.php/KDE "KDE"), revisada por última vez el **2019-01-03**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=561416) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -65,6 +65,7 @@ KDE es un proyecto de software que actualmente comprende un [entorno de escritor
         *   [5.1.2 Rehabilitar efectos de composición](#Rehabilitar_efectos_de_composición)
     *   [5.2 Configurar la resolución del monitor / múltiples monitores](#Configurar_la_resolución_del_monitor_/_múltiples_monitores)
     *   [5.3 Deshabilitar la apertura del lanzador de aplicaciones con la tecla Super (tecla Windows)](#Deshabilitar_la_apertura_del_lanzador_de_aplicaciones_con_la_tecla_Super_(tecla_Windows))
+    *   [5.4 Deshabilitar que los marcadores se muestren en el menú de aplicaciones](#Deshabilitar_que_los_marcadores_se_muestren_en_el_menú_de_aplicaciones)
 *   [6 Solución de problemas](#Solución_de_problemas)
     *   [6.1 Fuentes tipográficas](#Fuentes_tipográficas)
         *   [6.1.1 Las fuentes en una sesión Plasma se ven mal](#Las_fuentes_en_una_sesión_Plasma_se_ven_mal)
@@ -526,6 +527,18 @@ Para deshabilitar esta característica, actualmente puede ejecutar el siguiente 
 
 ```
 $ kwriteconfig5 --file kwinrc --group ModifierOnlyShortcuts --key Meta ""
+
+```
+
+### Deshabilitar que los marcadores se muestren en el menú de aplicaciones
+
+Si tiene instalada la integración del navegador de Plasma, KDE mostrará marcadores en el lanzador de aplicaciones.
+
+Para deshabilitar esta característica, ejecute las siguientes órdenes:
+
+```
+$ mkdir ~/.local/share/kservices5
+$ sed 's/EnabledByDefault=true$/EnabledByDefault=false/' /usr/share/kservices5/plasma-runner-bookmarks.desktop > ~/.local/share/kservices5/plasma-runner-bookmarks.desktop
 
 ```
 

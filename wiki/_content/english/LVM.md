@@ -15,78 +15,79 @@ From [Wikipedia:Logical Volume Manager (Linux)](https://en.wikipedia.org/wiki/Lo
 *   [1 LVM Building Blocks](#LVM_Building_Blocks)
 *   [2 Advantages](#Advantages)
 *   [3 Disadvantages](#Disadvantages)
-*   [4 Installing Arch Linux on LVM](#Installing_Arch_Linux_on_LVM)
-    *   [4.1 Create partitions](#Create_partitions)
-    *   [4.2 Create physical volumes](#Create_physical_volumes)
-    *   [4.3 Create volume group](#Create_volume_group)
-    *   [4.4 Create in one step](#Create_in_one_step)
-    *   [4.5 Create logical volumes](#Create_logical_volumes)
-    *   [4.6 Create file systems and mount logical volumes](#Create_file_systems_and_mount_logical_volumes)
-    *   [4.7 Configure mkinitcpio](#Configure_mkinitcpio)
-    *   [4.8 Kernel options](#Kernel_options)
-*   [5 Volume operations](#Volume_operations)
-    *   [5.1 Advanced options](#Advanced_options)
-    *   [5.2 Resizing volumes](#Resizing_volumes)
-        *   [5.2.1 Physical volumes](#Physical_volumes)
-            *   [5.2.1.1 Growing](#Growing)
-            *   [5.2.1.2 Shrinking](#Shrinking)
-                *   [5.2.1.2.1 Move physical extents](#Move_physical_extents)
-                *   [5.2.1.2.2 Resize physical volume](#Resize_physical_volume)
-                *   [5.2.1.2.3 Resize partition](#Resize_partition)
-        *   [5.2.2 Logical volumes](#Logical_volumes)
-            *   [5.2.2.1 Resizing the logical volume and file system in one go](#Resizing_the_logical_volume_and_file_system_in_one_go)
-            *   [5.2.2.2 Resizing the logical volume and file system separately](#Resizing_the_logical_volume_and_file_system_separately)
-    *   [5.3 Renaming volumes](#Renaming_volumes)
-        *   [5.3.1 Renaming a Volume Group](#Renaming_a_Volume_Group)
-        *   [5.3.2 Renaming Logical Volumes](#Renaming_Logical_Volumes)
-    *   [5.4 Remove logical volume](#Remove_logical_volume)
-    *   [5.5 Add physical volume to a volume group](#Add_physical_volume_to_a_volume_group)
-    *   [5.6 Remove partition from a volume group](#Remove_partition_from_a_volume_group)
-    *   [5.7 Deactivate volume group](#Deactivate_volume_group)
-*   [6 Logical volume types](#Logical_volume_types)
-    *   [6.1 Snapshots](#Snapshots)
-        *   [6.1.1 Configuration](#Configuration)
-    *   [6.2 LVM cache](#LVM_cache)
-        *   [6.2.1 Create cache](#Create_cache)
-        *   [6.2.2 Remove cache](#Remove_cache)
-    *   [6.3 RAID](#RAID)
-        *   [6.3.1 Setup RAID](#Setup_RAID)
-        *   [6.3.2 Configure mkinitcpio for RAID](#Configure_mkinitcpio_for_RAID)
-*   [7 Graphical configuration](#Graphical_configuration)
-*   [8 Troubleshooting](#Troubleshooting)
-    *   [8.1 Boot/Shutdown-problems because of disabled lvmetad](#Boot/Shutdown-problems_because_of_disabled_lvmetad)
-    *   [8.2 LVM commands do not work](#LVM_commands_do_not_work)
-    *   [8.3 Logical Volumes do not show up](#Logical_Volumes_do_not_show_up)
-    *   [8.4 LVM on removable media](#LVM_on_removable_media)
-    *   [8.5 Resizing a contiguous logical volume fails](#Resizing_a_contiguous_logical_volume_fails)
-    *   [8.6 Command "grub-mkconfig" reports "unknown filesystem" errors](#Command_"grub-mkconfig"_reports_"unknown_filesystem"_errors)
-    *   [8.7 Thinly-provisioned root volume device times out](#Thinly-provisioned_root_volume_device_times_out)
-    *   [8.8 Delay on shutdown](#Delay_on_shutdown)
-*   [9 See also](#See_also)
+*   [4 Getting started](#Getting_started)
+*   [5 Installing Arch Linux on LVM](#Installing_Arch_Linux_on_LVM)
+    *   [5.1 Create partitions](#Create_partitions)
+    *   [5.2 Create physical volumes](#Create_physical_volumes)
+    *   [5.3 Create volume group](#Create_volume_group)
+    *   [5.4 Create in one step](#Create_in_one_step)
+    *   [5.5 Create logical volumes](#Create_logical_volumes)
+    *   [5.6 Create file systems and mount logical volumes](#Create_file_systems_and_mount_logical_volumes)
+    *   [5.7 Configure mkinitcpio](#Configure_mkinitcpio)
+    *   [5.8 Kernel options](#Kernel_options)
+*   [6 Volume operations](#Volume_operations)
+    *   [6.1 Advanced options](#Advanced_options)
+    *   [6.2 Resizing volumes](#Resizing_volumes)
+        *   [6.2.1 Physical volumes](#Physical_volumes)
+            *   [6.2.1.1 Growing](#Growing)
+            *   [6.2.1.2 Shrinking](#Shrinking)
+                *   [6.2.1.2.1 Move physical extents](#Move_physical_extents)
+                *   [6.2.1.2.2 Resize physical volume](#Resize_physical_volume)
+                *   [6.2.1.2.3 Resize partition](#Resize_partition)
+        *   [6.2.2 Logical volumes](#Logical_volumes)
+            *   [6.2.2.1 Resizing the logical volume and file system in one go](#Resizing_the_logical_volume_and_file_system_in_one_go)
+            *   [6.2.2.2 Resizing the logical volume and file system separately](#Resizing_the_logical_volume_and_file_system_separately)
+    *   [6.3 Renaming volumes](#Renaming_volumes)
+        *   [6.3.1 Renaming a Volume Group](#Renaming_a_Volume_Group)
+        *   [6.3.2 Renaming Logical Volumes](#Renaming_Logical_Volumes)
+    *   [6.4 Remove logical volume](#Remove_logical_volume)
+    *   [6.5 Add physical volume to a volume group](#Add_physical_volume_to_a_volume_group)
+    *   [6.6 Remove partition from a volume group](#Remove_partition_from_a_volume_group)
+    *   [6.7 Deactivate volume group](#Deactivate_volume_group)
+*   [7 Logical volume types](#Logical_volume_types)
+    *   [7.1 Snapshots](#Snapshots)
+        *   [7.1.1 Configuration](#Configuration)
+    *   [7.2 LVM cache](#LVM_cache)
+        *   [7.2.1 Create cache](#Create_cache)
+        *   [7.2.2 Remove cache](#Remove_cache)
+    *   [7.3 RAID](#RAID)
+        *   [7.3.1 Setup RAID](#Setup_RAID)
+        *   [7.3.2 Configure mkinitcpio for RAID](#Configure_mkinitcpio_for_RAID)
+*   [8 Graphical configuration](#Graphical_configuration)
+*   [9 Troubleshooting](#Troubleshooting)
+    *   [9.1 Boot/Shutdown-problems because of disabled lvmetad](#Boot/Shutdown-problems_because_of_disabled_lvmetad)
+    *   [9.2 LVM commands do not work](#LVM_commands_do_not_work)
+    *   [9.3 Logical Volumes do not show up](#Logical_Volumes_do_not_show_up)
+    *   [9.4 LVM on removable media](#LVM_on_removable_media)
+    *   [9.5 Resizing a contiguous logical volume fails](#Resizing_a_contiguous_logical_volume_fails)
+    *   [9.6 Command "grub-mkconfig" reports "unknown filesystem" errors](#Command_"grub-mkconfig"_reports_"unknown_filesystem"_errors)
+    *   [9.7 Thinly-provisioned root volume device times out](#Thinly-provisioned_root_volume_device_times_out)
+    *   [9.8 Delay on shutdown](#Delay_on_shutdown)
+*   [10 See also](#See_also)
 
 ## LVM Building Blocks
 
 Logical Volume Management utilizes the kernel's [device-mapper](http://sources.redhat.com/dm/) feature to provide a system of partitions independent of underlying disk layout. With LVM you abstract your storage and have "virtual partitions", making [extending/shrinking](#Resizing_volumes) easier (subject to potential filesystem limitations).
 
-Virtual partitions allow addition and removal without worry of whether you have enough contiguous space on a particular disk, getting caught up fdisking a disk in use (and wondering whether the kernel is using the old or new partition table), or, having to move other partitions out of the way. This is strictly an ease-of-management solution: LVM adds no security.
+Virtual partitions allow addition and removal without worry of whether you have enough contiguous space on a particular disk, getting caught up fdisking a disk in use (and wondering whether the kernel is using the old or new partition table), or, having to move other partitions out of the way.
 
 Basic building blocks of LVM:
 
 	Physical volume (PV)
 
-	Partition on hard disk (or even the disk itself or loopback file) on which you can have volume groups. It has a special header and is divided into physical extents. Think of physical volumes as big building blocks used to build your hard drive.
+	Unix block device nodes, usable for storage by LVM. Examples: a hard disk, a MBR or GPT partition, loopback file, a device mapper device (e.g., dm-crypt). Has a header when used with LVM.
 
 	Volume group (VG)
 
-	Group of physical volumes used as a storage volume (as one disk). They contain logical volumes. Think of volume groups as hard drives.
+	Group of PVs. PEs are allocated from a VG for a LV.
 
 	Logical volume (LV)
 
-	A "virtual/logical partition" that resides in a volume group and is composed of physical extents. Think of logical volumes as normal partitions.
+	A "virtual/logical partition" that resides in a VG and is composed of PEs. LVs are UNIX block devices, but reside on top of a layer of LVM abstraction.
 
 	Physical extent (PE)
 
-	The smallest size in the physical volume that can be assigned to a logical volume (default 4 MiB). Think of physical extents as parts of disks that can be allocated to any partition.
+	The smallest contiguous extent (default 4 MiB) in the PV that can be assigned to a LV. Think of PEs as parts of PVs that can be allocated to any LV.
 
 Example:
 
@@ -136,11 +137,17 @@ LVM gives you more flexibility than just using normal hard drive partitions:
 *   Additional steps in setting up the system, more complicated.
 *   If dual-booting, note that Windows does not support LVM; you will be unable to access any LVM partitions from Windows.
 
+## Getting started
+
+Make sure the [lvm2](https://www.archlinux.org/packages/?name=lvm2) package is [installed](/index.php/Install "Install").
+
 ## Installing Arch Linux on LVM
+
+For a system combining LVM and encryption, see the LVM-related sections in [dm-crypt/Encrypting an entire system](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system").
 
 You should create your LVM Volumes between the [partitioning](/index.php/Partitioning "Partitioning") and [formatting](/index.php/File_systems#Create_a_file_system "File systems") steps of the [installation procedure](/index.php/Installation_guide "Installation guide"). Instead of directly formatting a partition to be your root file system, the file system will be created inside a logical volume (LV).
 
-Make sure the [lvm2](https://www.archlinux.org/packages/?name=lvm2) package is [installed](/index.php/Install "Install").
+Refer to "Getting started" first.
 
 Quick overview:
 

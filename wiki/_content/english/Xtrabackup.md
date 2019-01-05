@@ -1,6 +1,6 @@
 Percona XtraBackup is an high performance, low-profile and non-blocking open-source backup utility for InnoDB and XtraDB databases.
 
-Currently is the only open-source tool that performs backups on 'MySQL-based' servers ([MySQL](/index.php/MySQL "MySQL"), [MariaDB](/index.php/MariaDB "MariaDB"), [Percona Server](http://www.percona.com/docs/wiki/percona-server:start)) that doesn't lock your database during it. Backups are online, and queries and transactions continue to run without interruption ('hot backups').
+Currently is the only open-source tool that performs backups on [MySQL](/index.php/MySQL "MySQL") servers that does not lock your database during it. Backups are online, and queries and transactions continue to run without interruption ('hot backups').
 
 It can back up data from InnoDB, XtraDB, and MyISAM tables on MySQL 5.0 and 5.1 servers, and it has many advanced features like partial, remote, compressed and incremental backups, multi-threaded file copying for performance and Point-in-time recovery.
 

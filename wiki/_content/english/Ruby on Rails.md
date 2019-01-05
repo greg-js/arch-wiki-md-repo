@@ -1,4 +1,4 @@
-[Ruby on Rails](http://rubyonrails.org/), often shortened to Rails or RoR, is an open source web application framework for the [Ruby](/index.php/Ruby "Ruby") programming language. It is intended to be used with an Agile development methodology that is used by web developers for rapid development.
+[Ruby on Rails](https://rubyonrails.org/), often shortened to Rails or RoR, is an open source web application framework for the [Ruby](/index.php/Ruby "Ruby") programming language. It is intended to be used with an Agile development methodology that is used by web developers for rapid development.
 
 This document describes how to set up the Ruby on Rails Framework on an Arch Linux system.
 
@@ -14,8 +14,8 @@ This document describes how to set up the Ruby on Rails Framework on an Arch Lin
     *   [3.2 Unicorn](#Unicorn)
         *   [3.2.1 Systemd service](#Systemd_service)
         *   [3.2.2 Nginx Configuration](#Nginx_Configuration)
-    *   [3.3 Apache/Nginx (using Phusion Passenger)](#Apache.2FNginx_.28using_Phusion_Passenger.29)
-    *   [3.4 Puma (with Nginx as reverse proxy server)](#Puma_.28with_Nginx_as_reverse_proxy_server.29)
+    *   [3.3 Apache/Nginx (using Phusion Passenger)](#Apache/Nginx_(using_Phusion_Passenger))
+    *   [3.4 Puma (with Nginx as reverse proxy server)](#Puma_(with_Nginx_as_reverse_proxy_server))
         *   [3.4.1 Option A: With config file](#Option_A:_With_config_file)
         *   [3.4.2 Option 2: by systemd](#Option_2:_by_systemd)
 *   [4 Databases](#Databases)
@@ -111,7 +111,7 @@ A test-page should be shown greeting you "Welcome aboard".
 
 ## Application servers
 
-The built-in Ruby On Rails HTTP server (WeBrick for version 4.X of Rails, and Puma for version 5.X) is convenient for basic development, but it is not recommended for production use. Instead, you should use an application server such as [#Thin](#Thin), [#Unicorn](#Unicorn) or [Phusion Passenger](#Apache.2FNginx_.28using_Phusion_Passenger.29).
+The built-in Ruby On Rails HTTP server (WeBrick for version 4.X of Rails, and Puma for version 5.X) is convenient for basic development, but it is not recommended for production use. Instead, you should use an application server such as [#Thin](#Thin), [#Unicorn](#Unicorn) or [Phusion Passenger](#Apache/Nginx_(using_Phusion_Passenger)).
 
 ### Thin
 

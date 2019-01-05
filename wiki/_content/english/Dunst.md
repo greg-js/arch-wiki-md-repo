@@ -15,8 +15,9 @@ Related articles
     *   [4.1 Filtering](#Filtering)
     *   [4.2 Modifying](#Modifying)
     *   [4.3 Scripting](#Scripting)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Dunst fails to start via systemd](#Dunst_fails_to_start_via_systemd)
+*   [5 Disable dunst temporarily](#Disable_dunst_temporarily)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 Dunst fails to start via systemd](#Dunst_fails_to_start_via_systemd)
 
 ## Installation
 
@@ -95,6 +96,20 @@ Dunst can be configured to run scripts based on certain notification content. He
 ```
 
 The specified script will be passed the following parameters in that order: appname, summary, body, icon, urgency.
+
+## Disable dunst temporarily
+
+To disable dunst temporarily there are two options.
+
+	Send a special notification
+
+	Use `notify-send "DUNST_COMMAND_PAUSE"` to disable and `notify-send "DUNST_COMMAND_RESUME"` to reenable.
+
+	Use `killall`
+
+	Use `killall -SIGUSR1 dunst` to disable and `killall -SIGUSR2 dunst` to reenable
+
+Once paused dunst will hold back all notifications. After enabling dunst again all held back notifications will be displayed.
 
 ## Troubleshooting
 

@@ -68,7 +68,7 @@ man-db.service
 | [miniDLNA](/index.php/MiniDLNA "MiniDLNA") | minidlna | minidlna.service | simple DLNA/UPnP media server. |
  ? | ModemManager.service | Makes mobile broadband (3G) modem available to [NetworkManager](/index.php/NetworkManager "NetworkManager"). |
 | [mpd](/index.php/Mpd "Mpd") | mpd | mpd.service | Music Player Daemon. |
-| [MySQL](/index.php/MySQL "MySQL") | mysqld | mysqld.service | MySQL database server. |
+| [MariaDB](/index.php/MariaDB "MariaDB") | mysqld | mysqld.service | MySQL database server. |
 | [MythTV](/index.php/MythTV "MythTV") | mythbackend | mythbackend.service | Back-end for the MythTV digital video recording/home theater software. |
 | [BIND](/index.php/BIND "BIND") | named | named.service | The Berkeley Internet Name Daemon (BIND) DNS server. |
 | [netctl](/index.php/Netctl "Netctl") | netctl@.service | Manually activate specific profile. |

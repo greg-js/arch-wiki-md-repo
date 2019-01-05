@@ -29,7 +29,7 @@ The biggest feature of WordPress is its ease in configuration and administration
     *   [4.2 Installing a plugin](#Installing_a_plugin)
     *   [4.3 Updating](#Updating)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Appearance is broken (no styling)](#Appearance_is_broken_.28no_styling.29)
+    *   [5.1 Appearance is broken (no styling)](#Appearance_is_broken_(no_styling))
     *   [5.2 Plugins are unable to install: Could not create directory](#Plugins_are_unable_to_install:_Could_not_create_directory)
     *   [5.3 Cannot save plugins to localhost](#Cannot_save_plugins_to_localhost)
 *   [6 Tips and tricks](#Tips_and_tricks)
@@ -70,7 +70,7 @@ Make sure your `/etc/hosts` file is setup correctly. This will be important when
 ::1             lithium.kaboodle.net    localhost lithium
 ```
 
-**Note:** You will need to use a proxy server to access your WordPress installation from mobile devices if you plan on using hostnames to install WordPress, otherwise your website will appear broken [#Appearance is broken (no styling)](#Appearance_is_broken_.28no_styling.29).
+**Note:** You will need to use a proxy server to access your WordPress installation from mobile devices if you plan on using hostnames to install WordPress, otherwise your website will appear broken [#Appearance is broken (no styling)](#Appearance_is_broken_(no_styling)).
 
 ### Configure apache
 
@@ -116,7 +116,7 @@ Now restart `httpd.service` (Apache) using [systemd](/index.php/Systemd#Using_un
 
 MySQL can be configured using a plethora of tools, but the most common are the command-line or [phpMyAdmin](http://www.phpmyadmin.net/home_page/index.php).
 
-**Tip:** Make sure MariaDB is installed and configured correctly. At a minimum, follow the [installation instructions](/index.php/MySQL#Installation "MySQL") for Arch Linux.
+**Tip:** Make sure [MariaDB](/index.php/MariaDB "MariaDB") is installed and configured correctly. At a minimum, follow the [installation instructions](/index.php/MariaDB#Installation "MariaDB") for Arch Linux.
 
 #### Using MariaDB command-line tool
 

@@ -262,7 +262,7 @@ Also please note that:
 
 ### MySQL
 
-Due to the fact that the JDBC-drivers often use the port in the URL to establish a connection to the database, it is considered "remote" (i.e., MySQL does not listen to the port as per its default settings) despite the fact that they are possibly running on the same host, Thus, to use JDBC and MySQL you should enable remote access to MySQL, following the instructions in [MySQL#Grant remote access](/index.php/MySQL#Grant_remote_access "MySQL").
+Due to the fact that the JDBC-drivers often use the port in the URL to establish a connection to the database, it is considered "remote" (i.e., MySQL does not listen to the port as per its default settings) despite the fact that they are possibly running on the same host, Thus, to use JDBC and MySQL you should enable remote access to MySQL, following the instructions in [MariaDB#Grant remote access](/index.php/MariaDB#Grant_remote_access "MariaDB").
 
 ### Impersonate another window manager
 

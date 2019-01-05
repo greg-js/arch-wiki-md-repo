@@ -7,21 +7,21 @@ Related articles
 
 *   [1 General package details](#General_package_details)
     *   [1.1 Release cycle](#Release_cycle)
-    *   [1.2 Package defaults](#Package_defaults)
-    *   [1.3 Long-Term Support (LTS) CK releases](#Long-Term_Support_.28LTS.29_CK_releases)
+    *   [1.2 Long-Term Support (LTS) CK releases](#Long-Term_Support_(LTS)_CK_releases)
 *   [2 Installation options](#Installation_options)
     *   [2.1 Compile the package from source](#Compile_the_package_from_source)
     *   [2.2 Use pre-compiled packages](#Use_pre-compiled_packages)
-*   [3 How to enable the BFQ I/O Scheduler](#How_to_enable_the_BFQ_I.2FO_Scheduler)
+*   [3 How to enable the BFQ I/O Scheduler](#How_to_enable_the_BFQ_I/O_Scheduler)
 *   [4 More about MuQSS](#More_about_MuQSS)
     *   [4.1 Check if MuQSS is enabled](#Check_if_MuQSS_is_enabled)
     *   [4.2 MuQSS patched kernels and systemd](#MuQSS_patched_kernels_and_systemd)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Running VirtualBox with Linux-ck](#Running_VirtualBox_with_Linux-ck)
-        *   [5.1.1 Use the unofficial repo (recommended if Linux-ck is installed from Repo-ck)](#Use_the_unofficial_repo_.28recommended_if_Linux-ck_is_installed_from_Repo-ck.29)
-        *   [5.1.2 DKMS](#DKMS)
-    *   [5.2 Downgrading](#Downgrading)
-    *   [5.3 Forum support](#Forum_support)
+    *   [5.1 Silencing psi: task underflow message](#Silencing_psi:_task_underflow_message)
+    *   [5.2 Running VirtualBox with Linux-ck](#Running_VirtualBox_with_Linux-ck)
+        *   [5.2.1 Use the unofficial repo (recommended if Linux-ck is installed from Repo-ck)](#Use_the_unofficial_repo_(recommended_if_Linux-ck_is_installed_from_Repo-ck))
+        *   [5.2.2 DKMS](#DKMS)
+    *   [5.3 Downgrading](#Downgrading)
+    *   [5.4 Forum support](#Forum_support)
 *   [6 See also](#See_also)
 
 ## General package details
@@ -36,18 +36,6 @@ Linux-ck roughly follows the release cycle of the official Arch kernel but not o
 
 *   CK patchset compatible with the current kernel version
 *   corresponding Arch kernel must be in existence otherwise it will break other packages i.e. nvidia. See [git.archlinux.org](https://git.archlinux.org/svntogit/packages.git/log/trunk?h=packages/linux) for the official [linux](https://www.archlinux.org/packages/?name=linux) package
-
-### Package defaults
-
-There are **three** modifications to the config files:
-
-1.  The options that the CK patchset enable/disable.
-2.  The tickrate is set to 100 Hz (CK's recommendation).
-3.  The extra CPU types optionally available to compilation thanks to the [GCC patch](https://github.com/graysky2/kernel_gcc_patch).
-
-**All other options are set to the Arch defaults outlined in the main kernel's config files.** Of course users are free to edit them.
-
-The [linux-ck](https://aur.archlinux.org/packages/linux-ck/) package contains an option to switch on the **nconfig** config editor (see the section [below](#Compile_the_package_from_source)).
 
 ### Long-Term Support (LTS) CK releases
 
@@ -86,7 +74,7 @@ If user prefers to spend no time to compile on their own, the unofficial repo ma
 
 **Note:** Do not confuse MuQSS (Multiple Queue Skiplist Scheduler) with BFQ (Budget Fair Queueing). MuQSS is a CPU scheduler and is enabled by default whereas BFQ is an I/O scheduler and must explicitly be enabled in order to use it.
 
-See the [Improving performance#Input/output schedulers](/index.php/Improving_performance#Input.2Foutput_schedulers "Improving performance") section for some background about the different IO schedulers and how to activate *BFQ*.
+See the [Improving performance#Input/output schedulers](/index.php/Improving_performance#Input/output_schedulers "Improving performance") section for some background about the different IO schedulers and how to activate *BFQ*.
 
 ## More about MuQSS
 
@@ -108,6 +96,12 @@ MuQSS CPU scheduler v0.120 by Con Kolivas.
 It is a common mistake to think that MuQSS does not support *cgroups*. It does but not all the cgroup features (e.g. CPU limiting will not work).
 
 ## Troubleshooting
+
+### Silencing psi: task underflow message
+
+New in MuQSS v0.185 is support for [PSI](https://lwn.net/Articles/763629/) which [CK is characterizing](http://ck-hack.blogspot.com/2018/12/linux-420-ck1-muqss-version-0185-for.html?showComment=1546576441759#c2919535897335602087) as "completely untested and probably broken."
+
+In response to this, some users may notice [psi: task underflow!](https://bbs.archlinux.org/viewtopic.php?pid=1824594#p1824594) in dmesg/journalctl output. With the release of 4.20.0-3-ck1, is compiled in but disabled by default. Users wanting PSI enabled should boot with the following [Kernel_parameter] on their respective bootloader config: **psi=1**
 
 ### Running VirtualBox with Linux-ck
 

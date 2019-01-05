@@ -4,35 +4,15 @@ From the [project home page](http://www.sqlite.org/):
 
 ## Contents
 
-*   [1 Features](#Features)
-*   [2 Installation](#Installation)
-*   [3 Using sqlite3 command line shell](#Using_sqlite3_command_line_shell)
-    *   [3.1 Create a database](#Create_a_database)
-    *   [3.2 Create table](#Create_table)
-    *   [3.3 Insert data](#Insert_data)
-    *   [3.4 Search database](#Search_database)
+*   [1 Installation](#Installation)
+*   [2 Using sqlite3 command line shell](#Using_sqlite3_command_line_shell)
+    *   [2.1 Create a database](#Create_a_database)
+    *   [2.2 Create table](#Create_table)
+    *   [2.3 Insert data](#Insert_data)
+    *   [2.4 Search database](#Search_database)
+*   [3 Graphical tools](#Graphical_tools)
 *   [4 Using sqlite in shell script](#Using_sqlite_in_shell_script)
 *   [5 See also](#See_also)
-
-## Features
-
-From: [SQLite Features](http://www.sqlite.org/features.html)
-
-*   Transactions are atomic, consistent, isolated, and durable even after system crashes and power failures.
-*   Zero-configuration - no setup or administration needed.
-*   Implements most of SQL92\.
-*   A complete database is stored in a single cross-platform disk file.
-*   Supports terabyte-sized databases and gigabyte-sized strings and blobs.
-*   Small code footprint: less than 325KiB fully configured or less than 190KiB with optional features omitted.
-*   Faster than popular client/server database engines for most common operations.
-*   Simple, easy to use API.
-*   Written in ANSI-C. TCL bindings included. Bindings for dozens of other languages available separately.
-*   Well-commented source code with 100% branch test coverage.
-*   Available as a single ANSI-C source-code file that you can easily drop into another project.
-*   Self-contained: no external dependencies.
-*   Cross-platform: Unix (Linux and Mac OS X), OS/2, and Windows (Win32 and WinCE) are supported out of the box. Easy to port to other systems.
-*   Sources are in the public domain. Use for any purpose.
-*   Comes with a standalone command-line interface (CLI) client that can be used to administer SQLite databases.
 
 ## Installation
 
@@ -82,6 +62,14 @@ archlinux|30
 ```
 
 See the [sqlite docs](http://www.sqlite.org/sqlite.html).
+
+## Graphical tools
+
+*   **DB Browser for SQLite** — High quality, visual, open source tool to create, design, and edit database files compatible with SQLite.
+
+	[https://sqlitebrowser.org/](https://sqlitebrowser.org/) || [sqlitebrowser](https://www.archlinux.org/packages/?name=sqlitebrowser)
+
+For more, see [List of applications/Documents#Database tools](/index.php/List_of_applications/Documents#Database_tools "List of applications/Documents").
 
 ## Using sqlite in shell script
 
