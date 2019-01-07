@@ -19,15 +19,16 @@ This article describes how both new and experienced Arch users can contribute to
     *   [2.3 Inform about security issues](#Inform_about_security_issues)
     *   [2.4 Help test packages](#Help_test_packages)
     *   [2.5 Create and adopt AUR packages](#Create_and_adopt_AUR_packages)
-*   [3 Software projects](#Software_projects)
-*   [4 Donate money](#Donate_money)
-*   [5 Unofficial projects](#Unofficial_projects)
-    *   [5.1 Groups](#Groups)
-    *   [5.2 Software](#Software)
-*   [6 FAQ](#FAQ)
-    *   [6.1 How can I become an Arch Developer?](#How_can_I_become_an_Arch_Developer?)
-    *   [6.2 How can I become a Trusted User?](#How_can_I_become_a_Trusted_User?)
-    *   [6.3 What can I do as an artist?](#What_can_I_do_as_an_artist?)
+*   [3 Events](#Events)
+*   [4 Software projects](#Software_projects)
+*   [5 Donate money](#Donate_money)
+*   [6 Unofficial projects](#Unofficial_projects)
+    *   [6.1 Groups](#Groups)
+    *   [6.2 Software](#Software)
+*   [7 FAQ](#FAQ)
+    *   [7.1 How can I become an Arch Developer?](#How_can_I_become_an_Arch_Developer?)
+    *   [7.2 How can I become a Trusted User?](#How_can_I_become_a_Trusted_User?)
+    *   [7.3 What can I do as an artist?](#What_can_I_do_as_an_artist?)
 
 ## Community
 
@@ -68,6 +69,13 @@ Packages on the testing repositories need to be tried out and signed off before 
 The [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") contains community-made package scripts, allowing users to easily install software not part of the [official repositories](/index.php/Official_repositories "Official repositories"). Popular packages get included into the [official community repository](/index.php/Official_repositories#community "Official repositories").
 
 [aurphan](https://www.archlinux.org/packages/?name=aurphan) can help you identify orphaned packages you use, so that you can adopt them.
+
+## Events
+
+There are regular events open to the community for bugfixing, cleanup, and other activities.
+
+*   [Bug Day](/index.php/Bug_Day "Bug Day")
+*   [AUR Cleanup Day](/index.php/AUR_Cleanup_Day "AUR Cleanup Day")
 
 ## Software projects
 

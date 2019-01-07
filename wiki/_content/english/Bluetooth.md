@@ -176,7 +176,7 @@ Please have a look at the [Bluetooth headset](/index.php/Bluetooth_headset "Blue
 
 To get bluetooth serial communication working on Bluetooth-to-Serial modules (HC-05, HC-06) do the following steps:
 
-Pair your bluetooth device using `bluetoothctl` as described [above](/index.php/Bluetooth#Pairing "Bluetooth").
+Pair your bluetooth device using `bluetoothctl` as described [above](#Pairing).
 
 Install [bluez-rfcomm](https://aur.archlinux.org/packages/bluez-rfcomm/) and [bluez-hcitool](https://aur.archlinux.org/packages/bluez-hcitool/), as they provide certain functionality which is missing from newer tools.
 

@@ -1,4 +1,6 @@
-[MediaWiki](https://www.mediawiki.org/wiki/MediaWiki) is a free and open source wiki software written in [PHP](/index.php/PHP "PHP"), originally developed for Wikipedia. It also powers this wiki (see [Special:Version](/index.php/Special:Version "Special:Version")).
+**Warning:** [mediawiki](https://www.archlinux.org/packages/?name=mediawiki) is currently broken because MediaWiki does not support PHP 7.3\. [FS#61070](https://bugs.archlinux.org/task/61070)
+
+[MediaWiki](https://www.mediawiki.org/wiki/MediaWiki) is a free and open source wiki software written in [PHP](/index.php/PHP "PHP"), originally developed for Wikipedia. It also powers this wiki (see [Special:Version](/index.php/Special:Version "Special:Version") and the [GitHub repository](https://github.com/archlinux/archwiki)).
 
 ## Contents
 
@@ -20,13 +22,11 @@
 
 To run MediaWiki you need three things:
 
-*   the [mediawiki](https://www.archlinux.org/packages/?name=mediawiki) package
+*   the [mediawiki](https://www.archlinux.org/packages/?name=mediawiki) package, which pulls in [PHP](/index.php/PHP "PHP")
 *   a web server – [Apache](/index.php/Apache "Apache"), [Nginx](/index.php/Nginx "Nginx") or [Lighttpd](/index.php/Lighttpd "Lighttpd")
 *   a database system – [MySQL](/index.php/MySQL "MySQL"), [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") or [SQLite](/index.php/SQLite "SQLite")
 
 To install MediaWiki on [XAMPP](/index.php/XAMPP "XAMPP"), see [mw:Manual:Installing MediaWiki on XAMPP](https://www.mediawiki.org/wiki/Manual:Installing_MediaWiki_on_XAMPP "mw:Manual:Installing MediaWiki on XAMPP")
-
-Optionally install [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) or [php-gd](https://www.archlinux.org/packages/?name=php-gd) for thumbnail rendering and [php-intl](https://www.archlinux.org/packages/?name=php-intl) to handle Unicode normalization.
 
 ## Configuration
 
@@ -34,30 +34,24 @@ The steps to achieve a working MediaWiki configuration involve editing the PHP s
 
 ### PHP
 
-First, adjust the `open_basedir` in `/etc/php/php.ini` to include the mediawiki data directory (`/var/lib/mediawiki` by default):
+MediaWiki requires the `iconv` extension, so you need to uncomment `extension=iconv` in `/etc/php/php.ini`.
 
- `/etc/php/php.ini`  `open_basedir = /srv/http/:/home/:/tmp/:/usr/share/pear/:/usr/share/webapps/:/var/lib/mediawiki/` 
+Optional dependencies:
 
-Then, also in `/etc/php/php.ini`, uncomment the following lines: (in the `Dynamic Extensions` section)
+*   For thumbnail rendering, install either [ImageMagick](/index.php/ImageMagick "ImageMagick") or [php-gd](https://www.archlinux.org/packages/?name=php-gd). If you choose the latter, you also need to uncomment `extension=gd`.
+*   For more efficient [Unicode normalization](https://www.mediawiki.org/wiki/Unicode_normalization_considerations "mw:Unicode normalization considerations"), install [php-intl](https://www.archlinux.org/packages/?name=php-intl) and uncomment `extension=intl`.
 
-```
-extension=gd
-extension=intl
-extension=iconv
+Enable the API for your DBMS:
 
-```
-
-**Note:**
-
-*   If you would like to use MariaDB as database, also uncomment `extension=mysqli`.
-*   If you would like to use PostgreSQL as database, also uncomment `extension=pgsql`.
-*   If you would like to use SQLite as database, also uncomment `extension=pdo_sqlite`.
+*   If you use [MariaDB](/index.php/MariaDB "MariaDB"), uncomment `extension=mysqli`.
+*   If you use [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"), install [php-pgsql](https://www.archlinux.org/packages/?name=php-pgsql) and uncomment `extension=pgsql`.
+*   If you use [SQLite](/index.php/SQLite "SQLite"), install [php-sqlite](https://www.archlinux.org/packages/?name=php-sqlite) and uncomment `extension=pdo_sqlite`.
 
 Second, tweak the session handling or you might get a fatal error (`PHP Fatal error: session_start(): Failed to initialize storage module[...]`) by finding the `session.save_path` path. A good choice can be `/var/lib/php/sessions` or `/tmp/`.
 
  `/etc/php/php.ini`  `session.save_path = "/var/lib/php/sessions"` 
 
-You will need to create the directory if it doesn't exist and then restrict its permissions:
+You will need to create the directory if it does not exist and then restrict its permissions:
 
 ```
 # mkdir -p /var/lib/php/sessions/
@@ -66,9 +60,13 @@ You will need to create the directory if it doesn't exist and then restrict its 
 
 ```
 
+If you use [PHP's open_basedir](/index.php/PHP#Configuration "PHP") and want to [allow file uploads](https://www.mediawiki.org/wiki/Manual:Configuring_file_uploads "mw:Manual:Configuring file uploads"), you need to include `/var/lib/mediawiki/` ([mediawiki](https://www.archlinux.org/packages/?name=mediawiki) symlinks `images/` to `/var/lib/mediawiki/`).
+
 ### Web server
 
 #### Apache
+
+Follow [Apache HTTP Server#PHP](/index.php/Apache_HTTP_Server#PHP "Apache HTTP Server").
 
 Copy `/etc/webapps/mediawiki/apache.example.conf` to `/etc/httpd/conf/extra/mediawiki.conf` and edit it as needed.
 
@@ -168,7 +166,9 @@ url.rewrite-once += (
 
 ### Database
 
-If the database server is already set up, MediaWiki can automatically create the database (provided that the database root password is supplied) during the [next step](#LocalSettings.php). Otherwise the database needs to be created manually, see [upstream instructions](https://www.mediawiki.org/wiki/Manual:Installing_MediaWiki#Create_a_database "mw:Manual:Installing MediaWiki").
+Set up a database server as explained in the article of your DBMS: [MySQL](/index.php/MySQL "MySQL"), [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") or [SQLite](/index.php/SQLite "SQLite").
+
+MediaWiki can automatically create the database, if you supply the database root password, during the [next step](#LocalSettings.php). Otherwise the database needs to be created manually, see [upstream instructions](https://www.mediawiki.org/wiki/Manual:Installing_MediaWiki#Create_a_database "mw:Manual:Installing MediaWiki").
 
 ### LocalSettings.php
 
@@ -218,7 +218,6 @@ Alternatively, one may also use the [parsoid](https://aur.archlinux.org/packages
 
  `/usr/share/webapps/parsoid/config.yaml` 
 ```
-
 uri: `'http://localhost/mediawiki/api.php'`
 domain: 'localhost'
 
@@ -228,15 +227,22 @@ The matching part in the mediawiki settings:
 
  `/usr/share/webapps/mediawiki/LocalSettings.php` 
 ```
-
 $wgVirtualRestConfig['modules']['parsoid'] = array(
-	// URL to the Parsoid instance
-	// Use port 8142 if you use the Debian package
-	'url' => 'http://localhost:8000',
-	// Parsoid "domain", see below (optional)
-	'domain' => 'localhost',
-	// Parsoid "prefix", see below (optional)
-	'prefix' => 'localhost'
+  // URL to the Parsoid instance - use port 8142 if you use the Debian package - the parameter 'URL' was first used but is now deprecated (string)
+  'url' => 'http://localhost:8000/',
+  // Parsoid "domain" (string, optional) - MediaWiki >= 1.26
+  'domain' => 'localhost',
+  // Parsoid "prefix" (string, optional) - deprecated since MediaWiki 1.26, use 'domain'
+  'prefix' => 'localhost',
+  // Forward cookies in the case of private wikis (string or false, optional)
+  'forwardCookies' => false,
+  // request timeout in seconds (integer or null, optional)
+  'timeout' => null,
+  // Parsoid HTTP proxy (string or null, optional)
+  'HTTPProxy' => null,
+  // whether to parse URL as if they were meant for RESTBase (boolean or null, optional)
+  'restbaseCompat' => null,
+);
 
 ```
 

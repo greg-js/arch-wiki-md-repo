@@ -336,7 +336,7 @@ Restart=always
 
 ### dhcpcd@.service causes slow startup
 
-By default the `dhcpcd@.service` waits to get an IP address before forking into the background via the `-w` flag for *dhcpcd*. If the unit is enabled, this may cause the boot to wait for an IP address before continuing. To fix this, create a [drop-in file](/index.php/Systemd#Drop-in_files "Systemd") for the unit with the following:
+By default the `dhcpcd@.service` waits to get an IP address before forking into the background via the `-w` flag for *dhcpcd*. If the unit is enabled, this may cause the boot to wait for an IP address before continuing. To fix this, create a [drop-in file](/index.php/Drop-in_file "Drop-in file") for the unit with the following:
 
  `/etc/systemd/system/dhcpcd@.service.d/no-wait.conf` 
 ```

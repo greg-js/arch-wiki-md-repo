@@ -69,7 +69,7 @@ See the [sqlite docs](http://www.sqlite.org/sqlite.html).
 
 	[https://sqlitebrowser.org/](https://sqlitebrowser.org/) || [sqlitebrowser](https://www.archlinux.org/packages/?name=sqlitebrowser)
 
-For more, see [List of applications/Documents#Database tools](/index.php/List_of_applications/Documents#Database_tools "List of applications/Documents").
+For tools supporting multiple DBMSs, see [List of applications/Documents#Database tools](/index.php/List_of_applications/Documents#Database_tools "List of applications/Documents").
 
 ## Using sqlite in shell script
 

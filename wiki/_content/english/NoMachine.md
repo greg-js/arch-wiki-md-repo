@@ -53,7 +53,14 @@ The `nxserver.service` does not need to be enabled and started on computers, whi
 
 On the target computer, [start/enable](/index.php/Start/enable "Start/enable") `nxserver.service` via systemd, or via menu in your desktop: *Internet > NoMachine > NoMachine Service*, which does the same via a GUI and offers extra info and configuration.
 
-On the client, start the "Player" (menu *Internet > NoMachine > NoMachine*. It will search the LAN for available NoMachine servers or, if disabled or in a different subnet/WAN, you can type in the target hostname or IP address manually. The login credentials are the same as used for the user on the target computer.
+On the client, start the "Player" (menu *Internet > NoMachine > NoMachine*. Or start it with
+
+```
+/usr/NX/bin/nxplayer
+
+```
+
+It will search the LAN for available NoMachine servers or, if disabled or in a different subnet/WAN, you can type in the target hostname or IP address manually. The login credentials are the same as used for the user on the target computer.
 
 ## Troubleshooting
 

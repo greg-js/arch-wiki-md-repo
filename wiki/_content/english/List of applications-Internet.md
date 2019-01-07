@@ -347,7 +347,7 @@ See also [Wikipedia:Blink (web engine)](https://en.wikipedia.org/wiki/Blink_(web
 
 *   **[Falkon](https://en.wikipedia.org/wiki/Falkon "wikipedia:Falkon")** — Web browser based on QtWebEngine, written in Qt framework.
 
-	[https://qupzilla.com/](https://qupzilla.com/) || [falkon](https://www.archlinux.org/packages/?name=falkon)
+	[https://falkon.org/](https://falkon.org/) || [falkon](https://www.archlinux.org/packages/?name=falkon)
 
 *   **[Konqueror](https://en.wikipedia.org/wiki/Konqueror "wikipedia:Konqueror")** — Web browser based on Qt toolkit and Qt WebEngine (or KHTML layout engine), part of [kdebase](https://www.archlinux.org/groups/x86_64/kdebase/).
 

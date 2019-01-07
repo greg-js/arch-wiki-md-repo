@@ -16,9 +16,9 @@ Related articles
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [prometheus](https://aur.archlinux.org/packages/prometheus/) or [prometheus-bin](https://aur.archlinux.org/packages/prometheus-bin/) package. After that you can [Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `prometheus` service and access the application via HTTP on port 9090 by default.
+[Install](/index.php/Install "Install") the [prometheus](https://www.archlinux.org/packages/?name=prometheus) or [prometheus-bin](https://aur.archlinux.org/packages/prometheus-bin/) package. After that you can [Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `prometheus` service and access the application via HTTP on port 9090 by default.
 
-The default configuration monitors the `prometheus` process itself, but not much beyond that. To perform system monitoring, you can install [prometheus-node-exporter](https://aur.archlinux.org/packages/prometheus-node-exporter/) or [prometheus-node-exporter-bin](https://aur.archlinux.org/packages/prometheus-node-exporter-bin/), which performs metric scraping from the local system. You can start and enable the `prometheus-node-exporter` service. It will open port 9100 by default.
+The default configuration monitors the `prometheus` process itself, but not much beyond that. To perform system monitoring, you can install [prometheus-node-exporter](https://www.archlinux.org/packages/?name=prometheus-node-exporter) or [prometheus-node-exporter-bin](https://aur.archlinux.org/packages/prometheus-node-exporter-bin/), which performs metric scraping from the local system. You can start and enable the `prometheus-node-exporter` service. It will open port 9100 by default.
 
 ## Configuration
 

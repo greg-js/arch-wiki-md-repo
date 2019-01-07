@@ -38,7 +38,7 @@ Este arículo cubre los programas de [corrección ortográfica](https://en.wikip
 
 ### Enchant
 
-[Enchant](https://en.wikipedia.org/wiki/es:Enchant_(software) es una biblioteca para el corrector ortográfico genérico, desarrollada como parte de [Abiword](/index.php/Abiword_(Espa%C3%B1ol) "Abiword (Español)"), que admite todos los correctores ortográficos anteriores, aparte de Ispell.
+[Enchant](https://en.wikipedia.org/wiki/es:Enchant_(software) es una biblioteca para el corrector ortográfico genérico, desarrollada como parte de [Abiword](/index.php/AbiWord_(Espa%C3%B1ol) "AbiWord (Español)"), que admite todos los correctores ortográficos anteriores, aparte de Ispell.
 
 Enchant está disponible con el paquete [enchant](https://www.archlinux.org/packages/?name=enchant). Para su uso y ordenación de archivo, véase [enchant-2(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/enchant-2.1).
 
@@ -60,7 +60,7 @@ Enchant es utilizado por muchas aplicaciones a través de las siguientes bibliot
 *   [Thunderbird#Spell checking](/index.php/Thunderbird#Spell_checking "Thunderbird")
 *   [LibreOffice#Spell checking](/index.php/LibreOffice#Spell_checking "LibreOffice")
 
-[Abiword](/index.php/Abiword_(Espa%C3%B1ol) "Abiword (Español)") y [Gedit](/index.php/Gedit_(Espa%C3%B1ol) "Gedit (Español)") utilizan Enchant.
+[Abiword](/index.php/AbiWord_(Espa%C3%B1ol) "AbiWord (Español)") y [Gedit](/index.php/Gedit_(Espa%C3%B1ol) "Gedit (Español)") utilizan Enchant.
 
 ## Correctores gramaticales
 
@@ -76,4 +76,4 @@ Enchant es utilizado por muchas aplicaciones a través de las siguientes bibliot
 
 [Firefox](/index.php/Firefox_(Espa%C3%B1ol) "Firefox (Español)"), [Thunderbird](/index.php/Thunderbird "Thunderbird"), [Chromium](/index.php/Chromium_(Espa%C3%B1ol) "Chromium (Español)") y [LibreOffice](/index.php/LibreOffice_(Espa%C3%B1ol) "LibreOffice (Español)") soportan todos la corrección gramatical solo a través de extensiones. Para LibreOffice, véase [LibreOffice#Grammar checking](/index.php/LibreOffice#Grammar_checking "LibreOffice").
 
-[Abiword](/index.php/Abiword_(Espa%C3%B1ol) "Abiword (Español)") tiene un corrector gramatical incorporado, véase [AbiWord#Grammar checking](/index.php/AbiWord#Grammar_checking "AbiWord").
+[Abiword](/index.php/AbiWord_(Espa%C3%B1ol) "AbiWord (Español)") tiene un corrector gramatical incorporado, véase [AbiWord#Grammar checking](/index.php/AbiWord#Grammar_checking "AbiWord").

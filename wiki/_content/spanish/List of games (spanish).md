@@ -483,7 +483,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **[XMoto](https://en.wikipedia.org/wiki/X-Moto "wikipedia:X-Moto")** — Plataforma de juegos de motocross en 2D, donde la física juega un papel importante.
 
-	[http://xmoto.tuxfamily.org/](http://xmoto.tuxfamily.org/) || [xmoto](https://www.archlinux.org/packages/?name=xmoto)
+	[http://xmoto.tuxfamily.org/](http://xmoto.tuxfamily.org/) || [xmoto](https://aur.archlinux.org/packages/xmoto/)
 
 ## Juegos roguelike
 

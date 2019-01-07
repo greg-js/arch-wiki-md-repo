@@ -57,7 +57,7 @@ Everything works well.
 
 The [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) driver works well with no need for an configuration.
 
-The brightness you need to add acpi_backlight=video in the kernel params [Backlight#Kernel_command-line_options](/index.php/Backlight#Kernel_command-line_options "Backlight")
+The brightness you need to add acpi_backlight=video in the kernel params [Backlight#Kernel command-line options](/index.php/Backlight#Kernel_command-line_options "Backlight")
 
 ## TouchScreen
 

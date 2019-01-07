@@ -141,14 +141,14 @@ If you want to create any stacked block devices for [LVM](/index.php/LVM "LVM"),
 
 #### Example layouts
 
-| UEFI with [GPT](/index.php/Partitioning#GUID_Partition_Table "Partitioning") |
-| Mount point | Partition | [Partition type (GUID)](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "w:GUID Partition Table") | Suggested size |
-| `/boot` or `/efi` | /dev/sd*x*1 | [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") | 260–512 MiB |
+| BIOS with [MBR](/index.php/MBR "MBR") or GPT |
+| Mount point | Partition | [Partition type](https://en.wikipedia.org/wiki/Partition_type "w:Partition type") | Suggested size |
+| None | /dev/sd*x*1 | [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition") | 1 MiB |
 | `/` | /dev/sd*x*2 | Linux | Remainder of the device |
 | [SWAP] | /dev/sd*x*3 | Linux [swap](/index.php/Swap "Swap") | More than 512 MiB |
-| BIOS with [MBR](/index.php/Partitioning#Master_Boot_Record "Partitioning") or GPT |
-| Mount point | Partition | [Partition type](https://en.wikipedia.org/wiki/Partition_type "w:Partition type") | Suggested size |
-| – | /dev/sd*x*1 | [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition") | 1 MiB |
+| UEFI with [GPT](/index.php/GPT "GPT") |
+| Mount point | Partition | [Partition type (GUID)](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "w:GUID Partition Table") | Suggested size |
+| `/boot` or `/efi` | /dev/sd*x*1 | [EFI system partition](/index.php/EFI_system_partition "EFI system partition") | 260–512 MiB |
 | `/` | /dev/sd*x*2 | Linux | Remainder of the device |
 | [SWAP] | /dev/sd*x*3 | Linux [swap](/index.php/Swap "Swap") | More than 512 MiB |
 

@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Programming languages](/index.php/Programming_languages "Programming languages"). Дата последней синхронизации: 30 декабря 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Programming_languages&diff=0&oldid=560774).
+**Состояние перевода:** На этой странице представлен перевод статьи [Programming languages](/index.php/Programming_languages "Programming languages"). Дата последней синхронизации: 6 января 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Programming_languages&diff=0&oldid=560982).
 
 Эта статья – попытка создать список всех [языков программирования](https://en.wikipedia.org/wiki/ru:%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D1%8F%D0%B7%D1%8B%D0%BA%D0%BE%D0%B2_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F "wikipedia:ru:Список языков программирования"), для которых поставляется компилятор или интерпретатор в Arch Linux.
 
@@ -48,7 +48,7 @@
     *   [Clojure](/index.php/Clojure "Clojure")
     *   [Common Lisp](/index.php/Common_Lisp "Common Lisp")
     *   [Emacs Lisp](/index.php/Emacs_Lisp "Emacs Lisp")
-    *   [Scheme](https://en.wikipedia.org/wiki/ru:Scheme "wikipedia:ru:Scheme") – [bigloo](https://www.archlinux.org/packages/?name=bigloo), [chicken](https://www.archlinux.org/packages/?name=chicken), [gambit-c](https://www.archlinux.org/packages/?name=gambit-c), [gauche](https://www.archlinux.org/packages/?name=gauche), [guile](https://www.archlinux.org/packages/?name=guile), [mit-scheme](https://www.archlinux.org/packages/?name=mit-scheme), [racket](https://www.archlinux.org/packages/?name=racket)
+    *   [Scheme (Русский)](/index.php/Scheme_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Scheme (Русский)")
 *   [ML](https://en.wikipedia.org/wiki/ru:ML "wikipedia:ru:ML")
     *   [Standard ML](https://en.wikipedia.org/wiki/ru:Standard_ML "wikipedia:ru:Standard ML") – [smlnj](https://www.archlinux.org/packages/?name=smlnj), [mlton](https://www.archlinux.org/packages/?name=mlton), [mosml](https://aur.archlinux.org/packages/mosml/), [smlsharp](https://aur.archlinux.org/packages/smlsharp/)
     *   [OCaml](https://en.wikipedia.org/wiki/ru:OCaml "wikipedia:ru:OCaml") – [ocaml](https://www.archlinux.org/packages/?name=ocaml)

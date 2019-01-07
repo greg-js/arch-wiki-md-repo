@@ -145,7 +145,7 @@ Se você quiser criar algum dispositivo de bloco empilhado para [LVM](/index.php
 
 | UEFI com [GPT](/index.php/Partitioning#GUID_Partition_Table "Partitioning") |
 | Ponto de montagem | Partição | [Tipo de partição (GUID)](https://en.wikipedia.org/wiki/pt:Tabela_de_Parti%C3%A7%C3%A3o_GUID#Tipos_de_parti.C3.A7.C3.A3o_GUID "wikipedia:pt:Tabela de Partição GUID") | Tamanho sugerido |
-| `/boot` ou `/efi` | /dev/sd*x*1 | [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") | 260–512 MiB |
+| `/boot` ou `/efi` | /dev/sd*x*1 | [EFI system partition](/index.php/EFI_system_partition "EFI system partition") | 260–512 MiB |
 | `/` | /dev/sd*x*2 | Linux | Restante do dispositivo |
 | [SWAP] | /dev/sd*x*3 | [Swap](/index.php/Swap_(Portugu%C3%AAs) "Swap (Português)") Linux | Mais que 512 MiB |
 | BIOS com [MBR](/index.php/Partitioning#Master_Boot_Record "Partitioning") ou GPT |

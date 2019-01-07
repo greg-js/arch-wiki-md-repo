@@ -346,7 +346,7 @@ Using [autofs](/index.php/Autofs "Autofs") is useful when multiple machines want
 
 ### Performance tuning
 
-When using NFS on a network with a significant of clients one may increase the default NFS threads from *8* to *16* or even a higher, depending on the server/network requirements:
+When using NFS on a network with a significant number of clients one may increase the default NFS threads from *8* to *16* or even a higher, depending on the server/network requirements:
 
  `/etc/nfs.conf` 
 ```

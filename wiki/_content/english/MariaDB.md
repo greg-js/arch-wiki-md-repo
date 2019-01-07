@@ -70,7 +70,7 @@ The following command will interactively guide you through a number of recommend
 
 ```
 
-To simplify administration, you might want to install a front-end such as [dbeaver](https://www.archlinux.org/packages/?name=dbeaver), [mysql-workbench](https://www.archlinux.org/packages/?name=mysql-workbench), [Adminer](/index.php/Adminer "Adminer") or [phpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin"). [mysql-workbench](https://www.archlinux.org/packages/?name=mysql-workbench) is not completely compatible with MariaDB but can be used for basic tasks.
+To simplify administration, you might want to install a [front-end](/index.php/MySQL#Graphical_tools "MySQL").
 
 ## Configuration
 

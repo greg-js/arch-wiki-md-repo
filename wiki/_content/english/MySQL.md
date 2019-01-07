@@ -8,7 +8,7 @@ Arch Linux favors [MariaDB](/index.php/MariaDB "MariaDB"), a community-developed
 
 	[https://www.phpmyadmin.net](https://www.phpmyadmin.net) || [phpmyadmin](https://www.archlinux.org/packages/?name=phpmyadmin)
 
-*   **[MySQL Workbench](https://en.wikipedia.org/wiki/MySQL_Workbench "wikipedia:MySQL Workbench")** — Unified visual tool for database architects, developers, and DBAs.
+*   **[MySQL Workbench](https://en.wikipedia.org/wiki/MySQL_Workbench "wikipedia:MySQL Workbench")** — Unified visual tool for database architects, developers, and DBAs. Developed by Oracle and not guaranteed to work with [MariaDB](/index.php/MariaDB "MariaDB").
 
 	[https://www.mysql.com/products/workbench/](https://www.mysql.com/products/workbench/) || [mysql-workbench](https://www.archlinux.org/packages/?name=mysql-workbench)
 
@@ -18,3 +18,11 @@ For tools supporting multiple DBMSs, see [List of applications/Documents#Databas
 
 *   [JDBC and MySQL](/index.php/JDBC_and_MySQL "JDBC and MySQL")
 *   [PHP#MySQL/MariaDB](/index.php/PHP#MySQL/MariaDB "PHP")
+*   [Python](/index.php/Python "Python")
+    *   [mysql-python](https://www.archlinux.org/packages/?name=mysql-python)
+    *   [python-mysqlclient](https://www.archlinux.org/packages/?name=python-mysqlclient)
+    *   [python-mysql-connector](https://www.archlinux.org/packages/?name=python-mysql-connector), [python2-mysql-connector](https://www.archlinux.org/packages/?name=python2-mysql-connector)
+*   [C++](/index.php/C%2B%2B "C++")
+    *   [mysql++](https://www.archlinux.org/packages/?name=mysql%2B%2B)
+*   [Perl](/index.php/Perl "Perl")
+    *   [perl-dbd-mysql](https://www.archlinux.org/packages/?name=perl-dbd-mysql)

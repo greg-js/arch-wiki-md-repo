@@ -52,7 +52,7 @@ With TLS one of a set of [certificate authorities](https://en.wikipedia.org/wiki
 
 ## Trust management
 
-See [Security#Managing SSL certificates](/index.php/Security#Managing_SSL_certificates "Security") on how to distrust/blacklist a certificate authority.
+See [Security#Managing SSL certificates](/index.php/Security#Managing_SSL_certificates "Security") on how to blacklist a certificate authority.
 
 ### Trust a certificate authority system-wide
 

@@ -777,7 +777,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 *   {{App|[Avidemux](https://en.wikipedia.org/wiki/Avidemux "wikipedia:Avidemux")|Editor de vídeo gratuito diseñado para cortar, filtrar y codificar tareas sencillas.|[http://fixounet.free.fr/avidemux/%7C](http://fixounet.free.fr/avidemux/%7C)[avidemux-qt](https://www.archlinux.org/packages/?name=avidemux-qt)
 *   **[Cinelerra (Community Version)](https://en.wikipedia.org/wiki/Cinelerra "wikipedia:Cinelerra")** — Editor de vídeo profesional y entorno de composición.
 
-	[http://cinelerra.org/](http://cinelerra.org/) || [cinelerra-cv](https://www.archlinux.org/packages/?name=cinelerra-cv)
+	[http://cinelerra.org/](http://cinelerra.org/) || [cinelerra-cv](https://aur.archlinux.org/packages/cinelerra-cv/)
 
 *   **[HandBrake](/index.php/DVD_Ripping#HandBrake "DVD Ripping")** — Simple pero potente transcodificador de vídeo ideal para ripear lotes mkv/x264\. Versión GTK+.
 

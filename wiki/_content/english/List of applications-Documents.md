@@ -14,6 +14,7 @@
         *   [1.2.3 Presentations](#Presentations)
         *   [1.2.4 Spreadsheets](#Spreadsheets)
         *   [1.2.5 Database tools](#Database_tools)
+            *   [1.2.5.1 Simplified database software](#Simplified_database_software)
         *   [1.2.6 Formula editors](#Formula_editors)
     *   [1.3 Markup languages](#Markup_languages)
         *   [1.3.1 AsciiDoc](#AsciiDoc)
@@ -471,11 +472,7 @@ See also [Wikipedia:Comparison of database tools](https://en.wikipedia.org/wiki/
 
 	[http://www.gnome-db.org/GdaBrowser](http://www.gnome-db.org/GdaBrowser) || [libgda](https://www.archlinux.org/packages/?name=libgda)
 
-*   **Glom** — Easy-to-use database designer and user interface.
-
-	[https://www.glom.org/](https://www.glom.org/) || [glom](https://www.archlinux.org/packages/?name=glom)
-
-*   **GSQL** — Integrated database development tool for GNOME.
+*   **GSQL** — Integrated database development tool for GNOME. Last release 2010.
 
 	[http://gsql.org/](http://gsql.org/) || [gsql](https://www.archlinux.org/packages/?name=gsql)
 
@@ -495,18 +492,6 @@ See also [Wikipedia:Comparison of database tools](https://en.wikipedia.org/wiki/
 
 	[http://orbada.sourceforge.net/](http://orbada.sourceforge.net/) || [orbada](https://aur.archlinux.org/packages/orbada/)
 
-*   **pgAdmin** — Comprehensive design and management interface for PostgreSQL.
-
-	[https://www.pgadmin.org/](https://www.pgadmin.org/) || [pgadmin3](https://www.archlinux.org/packages/?name=pgadmin3) or [pgadmin4](https://www.archlinux.org/packages/?name=pgadmin4)
-
-*   **pgModeler** — PostgreSQL Database Modeler: an open source CASE tool for modeling PostgreSQL databases.
-
-	[https://pgmodeler.io/](https://pgmodeler.io/) || [pgmodeler](https://aur.archlinux.org/packages/pgmodeler/)
-
-*   **[phpPgAdmin](/index.php/PhpPgAdmin "PhpPgAdmin")** — Fully functional webapp for PostgreSQL.
-
-	[https://sourceforge.net/projects/phppgadmin/](https://sourceforge.net/projects/phppgadmin/) || [phppgadmin](https://www.archlinux.org/packages/?name=phppgadmin)
-
 *   **Sequeler** — SQL client built in Vala and Gtk. It allows you to connect to your local and remote databases, write SQL in a handy text editor with language recognition, and visualize SELECT results in a Gtk.Grid Widget.
 
 	[https://github.com/Alecaddd/sequeler](https://github.com/Alecaddd/sequeler) || [sequeler-git](https://aur.archlinux.org/packages/sequeler-git/)
@@ -515,13 +500,19 @@ See also [Wikipedia:Comparison of database tools](https://en.wikipedia.org/wiki/
 
 	[http://www.squirrelsql.org/](http://www.squirrelsql.org/) || [squirrel-sql](https://aur.archlinux.org/packages/squirrel-sql/)
 
-*   **Symphytum** — Personal database software for everyone who desires to manage and organize data in an easy and intuitive way, without having to study complex database languages and software user interfaces.
-
-	[https://giowck.github.io/symphytum/](https://giowck.github.io/symphytum/) || [symphytum](https://aur.archlinux.org/packages/symphytum/)
-
 *   **[TOra](https://en.wikipedia.org/wiki/TOra "wikipedia:TOra")** — Database management GUI that supports accessing most of the common database platforms in use, including Oracle, MySQL, and PostgreSQL, as well as limited support for any target that can be accessed through Qt's ODBC support.
 
 	[https://github.com/tora-tool/tora/wiki](https://github.com/tora-tool/tora/wiki) || [tora](https://aur.archlinux.org/packages/tora/)
+
+##### Simplified database software
+
+*   **Glom** — Easy-to-use database designer and user interface.
+
+	[https://www.glom.org/](https://www.glom.org/) || [glom](https://www.archlinux.org/packages/?name=glom)
+
+*   **Symphytum** — Personal database software for everyone who desires to manage and organize data in an easy and intuitive way, without having to study complex database languages and software user interfaces.
+
+	[https://giowck.github.io/symphytum/](https://giowck.github.io/symphytum/) || [symphytum](https://aur.archlinux.org/packages/symphytum/)
 
 #### Formula editors
 

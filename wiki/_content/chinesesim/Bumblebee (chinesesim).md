@@ -33,19 +33,21 @@
 *   [6 不依赖Bumblebee来使用CUDA](#不依赖Bumblebee来使用CUDA)
 *   [7 疑难问题](#疑难问题)
     *   [7.1 [VGL] ERROR: Could not open display :8](#[VGL]_ERROR:_Could_not_open_display_:8)
-    *   [7.2 [ERROR]Cannot access secondary GPU: No devices detected](#[ERROR]Cannot_access_secondary_GPU:_No_devices_detected)
-        *   [7.2.1 NVIDIA(0): Failed to assign any connected display devices to X screen 0](#NVIDIA(0):_Failed_to_assign_any_connected_display_devices_to_X_screen_0)
-        *   [7.2.2 systemd-logind: failed to get session: PID XXX does not belong to any known session](#systemd-logind:_failed_to_get_session:_PID_XXX_does_not_belong_to_any_known_session)
-        *   [7.2.3 Failed to initialize the NVIDIA GPU at PCI:1:0:0 (GPU fallen off the bus / RmInitAdapter failed!)](#Failed_to_initialize_the_NVIDIA_GPU_at_PCI:1:0:0_(GPU_fallen_off_the_bus_/_RmInitAdapter_failed!))
-        *   [7.2.4 Could not load GPU driver](#Could_not_load_GPU_driver)
-        *   [7.2.5 NOUVEAU(0): [drm] failed to set drm interface version](#NOUVEAU(0):_[drm]_failed_to_set_drm_interface_version)
-    *   [7.3 /dev/dri/card0: failed to set DRM interface version 1.4: Permission denied](#/dev/dri/card0:_failed_to_set_DRM_interface_version_1.4:_Permission_denied)
-    *   [7.4 ERROR: ld.so: object 'libdlfaker.so' from LD_PRELOAD cannot be preloaded: ignored](#ERROR:_ld.so:_object_'libdlfaker.so'_from_LD_PRELOAD_cannot_be_preloaded:_ignored)
-    *   [7.5 Fatal IO error 11 (Resource temporarily unavailable) on X server](#Fatal_IO_error_11_(Resource_temporarily_unavailable)_on_X_server)
-    *   [7.6 视频撕裂](#视频撕裂)
-    *   [7.7 Bumblebee cannot connect to socket](#Bumblebee_cannot_connect_to_socket)
-    *   [7.8 Running X.org from console after login (rootless X.org)](#Running_X.org_from_console_after_login_(rootless_X.org))
-    *   [7.9 Primusrun 鼠标延迟/禁用 VSYNC](#Primusrun_鼠标延迟/禁用_VSYNC)
+    *   [7.2 Xlib: extension "GLX" missing on display ":0.0"](#Xlib:_extension_"GLX"_missing_on_display_":0.0")
+    *   [7.3 [ERROR]Cannot access secondary GPU: No devices detected](#[ERROR]Cannot_access_secondary_GPU:_No_devices_detected)
+        *   [7.3.1 NVIDIA(0): Failed to assign any connected display devices to X screen 0](#NVIDIA(0):_Failed_to_assign_any_connected_display_devices_to_X_screen_0)
+        *   [7.3.2 systemd-logind: failed to get session: PID XXX does not belong to any known session](#systemd-logind:_failed_to_get_session:_PID_XXX_does_not_belong_to_any_known_session)
+        *   [7.3.3 Failed to initialize the NVIDIA GPU at PCI:1:0:0 (GPU fallen off the bus / RmInitAdapter failed!)](#Failed_to_initialize_the_NVIDIA_GPU_at_PCI:1:0:0_(GPU_fallen_off_the_bus_/_RmInitAdapter_failed!))
+        *   [7.3.4 Could not load GPU driver](#Could_not_load_GPU_driver)
+        *   [7.3.5 NOUVEAU(0): [drm] failed to set drm interface version](#NOUVEAU(0):_[drm]_failed_to_set_drm_interface_version)
+    *   [7.4 [ERROR]Cannot access secondary GPU - error: X did not start properly](#[ERROR]Cannot_access_secondary_GPU_-_error:_X_did_not_start_properly)
+    *   [7.5 /dev/dri/card0: failed to set DRM interface version 1.4: Permission denied](#/dev/dri/card0:_failed_to_set_DRM_interface_version_1.4:_Permission_denied)
+    *   [7.6 ERROR: ld.so: object 'libdlfaker.so' from LD_PRELOAD cannot be preloaded: ignored](#ERROR:_ld.so:_object_'libdlfaker.so'_from_LD_PRELOAD_cannot_be_preloaded:_ignored)
+    *   [7.7 Fatal IO error 11 (Resource temporarily unavailable) on X server](#Fatal_IO_error_11_(Resource_temporarily_unavailable)_on_X_server)
+    *   [7.8 视频撕裂](#视频撕裂)
+    *   [7.9 Bumblebee cannot connect to socket](#Bumblebee_cannot_connect_to_socket)
+    *   [7.10 Running X.org from console after login (rootless X.org)](#Running_X.org_from_console_after_login_(rootless_X.org))
+    *   [7.11 Primusrun 鼠标延迟/禁用 VSYNC](#Primusrun_鼠标延迟/禁用_VSYNC)
 *   [8 另见](#另见)
 
 ## Bumblebee: Linux上的 Optimus
@@ -545,6 +547,26 @@ $ optirun wine *windows program*.exe
 
 如果使用NVIDIA驱动的话，一个该问题的解决方案是修改 `/etc/bumblebee/xorg.conf.nvidia` 把 Option `ConnectedMonitor` 改为 `CRT-0`.
 
+### Xlib: extension "GLX" missing on display ":0.0"
+
+从官网下载安装的NVIDIA驱动不会工作。
+
+1\. 卸载驱动：
+
+```
+# ./NVIDIA-Linux-*.run --uninstall
+
+```
+
+2\. 删除生成的配置文件：
+
+```
+# rm /etc/X11/xorg.conf
+
+```
+
+3\. 重新从源里安装： [#安装](#安装)
+
 ### [ERROR]Cannot access secondary GPU: No devices detected
 
 某些情况下，运行 `optirun` 会返回:
@@ -657,6 +679,19 @@ modprobe: ERROR: could not insert 'nvidia': Exec format error
 #### NOUVEAU(0): [drm] failed to set drm interface version
 
 考虑切换到 nvidia 官方驱动。在[此](https://github.com/Bumblebee-Project/Bumblebee/issues/438#issuecomment-22005923)的评论说 nouveau 驱动在某些显卡和bumblebee上有问题。
+
+### [ERROR]Cannot access secondary GPU - error: X did not start properly
+
+在 `/etc/bumblebee/xorg.conf.nvidia` 把 `"AutoAddDevices"` 设置为 `"true"`（看 [这里](https://github.com/Bumblebee-Project/Bumblebee/issues/88)）：
+
+```
+Section "ServerLayout"
+    Identifier  "Layout0"
+    Option      "AutoAddDevices" "true"
+    Option      "AutoAddGPU" "false"
+EndSection
+
+```
 
 ### /dev/dri/card0: failed to set DRM interface version 1.4: Permission denied
 

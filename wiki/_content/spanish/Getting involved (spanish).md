@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Getting involved](/index.php/Getting_involved "Getting involved"), revisada por última vez el **2018-11-17**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Getting_involved&diff=0&oldid=555594) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Getting involved](/index.php/Getting_involved "Getting involved"), revisada por última vez el **2019-01-06**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Getting_involved&diff=0&oldid=561969) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -22,15 +22,16 @@ En este artículo se describe cómo los usuarios nuevos o experimentados en Arch
     *   [2.3 Informar sobre problemas de seguridad](#Informar_sobre_problemas_de_seguridad)
     *   [2.4 Ayudar a probar paquetes](#Ayudar_a_probar_paquetes)
     *   [2.5 Crear y adoptar paquetes de AUR](#Crear_y_adoptar_paquetes_de_AUR)
-*   [3 Proyectos software](#Proyectos_software)
-*   [4 Donar dinero](#Donar_dinero)
-*   [5 Proyectos no oficiales](#Proyectos_no_oficiales)
-    *   [5.1 Grupos](#Grupos)
-    *   [5.2 Programas](#Programas)
-*   [6 FAQ](#FAQ)
-    *   [6.1 ¿Cómo puedo convertirme en un desarrollador de Arch?](#¿Cómo_puedo_convertirme_en_un_desarrollador_de_Arch?)
-    *   [6.2 ¿Cómo puedo ser un usuario de confianza?](#¿Cómo_puedo_ser_un_usuario_de_confianza?)
-    *   [6.3 ¿Cómo puedo ser un artista?](#¿Cómo_puedo_ser_un_artista?)
+*   [3 Eventos](#Eventos)
+*   [4 Proyectos software](#Proyectos_software)
+*   [5 Donar dinero](#Donar_dinero)
+*   [6 Proyectos no oficiales](#Proyectos_no_oficiales)
+    *   [6.1 Grupos](#Grupos)
+    *   [6.2 Programas](#Programas)
+*   [7 FAQ](#FAQ)
+    *   [7.1 ¿Cómo puedo convertirme en un desarrollador de Arch?](#¿Cómo_puedo_convertirme_en_un_desarrollador_de_Arch?)
+    *   [7.2 ¿Cómo puedo ser un usuario de confianza?](#¿Cómo_puedo_ser_un_usuario_de_confianza?)
+    *   [7.3 ¿Cómo puedo ser un artista?](#¿Cómo_puedo_ser_un_artista?)
 
 ## Comunidad
 
@@ -71,6 +72,13 @@ Los paquetes en los repositorios de prueba deben probarse y firmarse antes de se
 El [repositorio de usuario de Arch](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)") contiene los scripts de los paquetes realizados por la comunidad, permitiendo que los usuarios puedan instalar fácilmente programas que no son parte de los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). Los paquetes más populares terminan incluyéndose en el [repositorio oficial de la comunidad](/index.php/Official_repositories_(Espa%C3%B1ol)#community "Official repositories (Español)").
 
 [aurphan](https://www.archlinux.org/packages/?name=aurphan) puede ayudarle a identificar los paquetes huérfanos que utilice, para que pueda adoptarlos.
+
+## Eventos
+
+Regularmente hay eventos abiertos a la comunidad para la corrección de errores, la limpieza y otras actividades.
+
+*   [Bug Day](/index.php/Bug_Day "Bug Day")
+*   [Día de la limpieza de AUR](/index.php/DeveloperWiki:AUR_Cleanup_Day "DeveloperWiki:AUR Cleanup Day")
 
 ## Proyectos software
 

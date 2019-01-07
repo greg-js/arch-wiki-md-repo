@@ -13,25 +13,25 @@ Wordpress的最大特性是易于配置与管理。[搭建WordPress将使用5分
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-    *   [1.1 使用pacman安装](#.E4.BD.BF.E7.94.A8pacman.E5.AE.89.E8.A3.85)
-    *   [1.2 手动安装](#.E6.89.8B.E5.8A.A8.E5.AE.89.E8.A3.85)
-*   [2 配置](#.E9.85.8D.E7.BD.AE)
-    *   [2.1 主机配置](#.E4.B8.BB.E6.9C.BA.E9.85.8D.E7.BD.AE)
-    *   [2.2 配置apache](#.E9.85.8D.E7.BD.AEapache)
-    *   [2.3 配置MySQL](#.E9.85.8D.E7.BD.AEMySQL)
-        *   [2.3.1 使用MariaDB命令行工具](#.E4.BD.BF.E7.94.A8MariaDB.E5.91.BD.E4.BB.A4.E8.A1.8C.E5.B7.A5.E5.85.B7)
-        *   [2.3.2 使用phpMyAdmin](#.E4.BD.BF.E7.94.A8phpMyAdmin)
-*   [3 WordPress安装](#WordPress.E5.AE.89.E8.A3.85)
-*   [4 使用](#.E4.BD.BF.E7.94.A8)
-    *   [4.1 安装一个主题](#.E5.AE.89.E8.A3.85.E4.B8.80.E4.B8.AA.E4.B8.BB.E9.A2.98)
-        *   [4.1.1 寻找新的主题](#.E5.AF.BB.E6.89.BE.E6.96.B0.E7.9A.84.E4.B8.BB.E9.A2.98)
-        *   [4.1.2 使用管理面板安装主题](#.E4.BD.BF.E7.94.A8.E7.AE.A1.E7.90.86.E9.9D.A2.E6.9D.BF.E5.AE.89.E8.A3.85.E4.B8.BB.E9.A2.98)
-        *   [4.1.3 手动安装主题](#.E6.89.8B.E5.8A.A8.E5.AE.89.E8.A3.85.E4.B8.BB.E9.A2.98)
+*   [1 安装](#安装)
+    *   [1.1 使用pacman安装](#使用pacman安装)
+    *   [1.2 手动安装](#手动安装)
+*   [2 配置](#配置)
+    *   [2.1 主机配置](#主机配置)
+    *   [2.2 配置apache](#配置apache)
+    *   [2.3 配置MySQL](#配置MySQL)
+        *   [2.3.1 使用MariaDB命令行工具](#使用MariaDB命令行工具)
+        *   [2.3.2 使用phpMyAdmin](#使用phpMyAdmin)
+*   [3 WordPress安装](#WordPress安装)
+*   [4 使用](#使用)
+    *   [4.1 安装一个主题](#安装一个主题)
+        *   [4.1.1 寻找新的主题](#寻找新的主题)
+        *   [4.1.2 使用管理面板安装主题](#使用管理面板安装主题)
+        *   [4.1.3 手动安装主题](#手动安装主题)
     *   [4.2 Installing a plugin](#Installing_a_plugin)
-    *   [4.3 升级](#.E5.8D.87.E7.BA.A7)
-*   [5 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
-    *   [5.1 Appearance is broken (no styling)](#Appearance_is_broken_.28no_styling.29)
+    *   [4.3 升级](#升级)
+*   [5 故障排除](#故障排除)
+    *   [5.1 Appearance is broken (no styling)](#Appearance_is_broken_(no_styling))
 *   [6 Tips and tricks](#Tips_and_tricks)
 *   [7 See also](#See_also)
 
@@ -70,7 +70,7 @@ tar xvzf latest.tar.gz
 ::1             lithium.kaboodle.net    localhost lithium
 ```
 
-**注意:** 如果计划使用主机名安装WordPress，则需要使用代理服务器从移动设备访问您的WordPress安装，否则你的网站将会崩溃 [#Appearance is broken (no styling)](#Appearance_is_broken_.28no_styling.29).
+**注意:** 如果计划使用主机名安装WordPress，则需要使用代理服务器从移动设备访问您的WordPress安装，否则你的网站将会崩溃 [#Appearance is broken (no styling)](#Appearance_is_broken_(no_styling)).
 
 ### 配置apache
 

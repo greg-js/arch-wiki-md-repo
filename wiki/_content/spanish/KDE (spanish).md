@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [KDE](/index.php/KDE "KDE"), revisada por última vez el **2019-01-03**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=561416) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [KDE](/index.php/KDE "KDE"), revisada por última vez el **2019-01-05**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=561787) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -408,7 +408,7 @@ Akonadi es un sistema destinado a actuar como caché local para datos PIM, indep
 
 Instale [akonadi](https://www.archlinux.org/packages/?name=akonadi). Para obtener complementos adicionales, instale [kdepim-addons](https://www.archlinux.org/packages/?name=kdepim-addons).
 
-**Nota:** Si desea usar un motor de base de datos que no sea [MySQL](/index.php/MySQL_(Espa%C3%B1ol) "MySQL (Español)"), al instalar el paquete [akonadi](https://www.archlinux.org/packages/?name=akonadi), use el siguiente comando para omitir la instalación de las dependencias [mariadb](https://www.archlinux.org/packages/?name=mariadb):
+**Nota:** Si desea usar un motor de base de datos que no sea [MariaDB](/index.php/MariaDB "MariaDB"), al instalar el paquete [akonadi](https://www.archlinux.org/packages/?name=akonadi), use el siguiente comando para omitir la instalación de las dependencias [mariadb](https://www.archlinux.org/packages/?name=mariadb):
 ```
 # pacman -S akonadi --assume-installed mariadb
 
@@ -745,7 +745,7 @@ innodb_use_native_aio = 0
 
 ```
 
-Véase [MySQL#Error 22 del SO cuando se ejecuta Akonadi en ZFS](/index.php/MySQL#OS_error_22_when_running_on_ZFS "MySQL").
+Véase [MariaDB#OS error 22 when running on ZFS](/index.php/MariaDB#OS_error_22_when_running_on_ZFS "MariaDB").
 
 ### Algunos programas no pueden desplazarse cuando sus ventanas están inactivas
 

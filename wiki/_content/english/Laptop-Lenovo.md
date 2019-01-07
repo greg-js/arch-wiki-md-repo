@@ -93,7 +93,7 @@ install CD version
 install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
-| Lenovo ThinkPad A485 | 2018.12 | Yes | Yes | Yes | Yes | Yes | Yes | NA | Touch Pad/Trackpoint (yes), Webcam (yes) | bluetooth does not work when activating [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools") `runtime-pm` module |
+| Lenovo ThinkPad A485 | 2018.12 | Yes | Yes | Yes | Yes | Yes | Yes | NA | Touch Pad/Trackpoint (yes), Webcam (yes) | bluetooth does not work when activating [aptop Mode Tools](/index.php?title=Aptop_Mode_Tools&action=edit&redlink=1 "Aptop Mode Tools (page does not exist)") `runtime-pm` module |
 
 #### P series
 

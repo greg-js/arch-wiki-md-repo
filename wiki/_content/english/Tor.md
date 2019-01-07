@@ -38,35 +38,35 @@ Related articles
     *   [8.3 Privoxy](#Privoxy)
 *   [9 Instant messaging](#Instant_messaging)
     *   [9.1 Pidgin](#Pidgin)
-*   [10 Irssi](#Irssi)
-*   [11 Pacman](#Pacman)
-*   [12 Java](#Java)
-*   [13 Running a Tor server](#Running_a_Tor_server)
-    *   [13.1 Running a Tor bridge](#Running_a_Tor_bridge)
-        *   [13.1.1 Configuration](#Configuration_2)
-    *   [13.2 Running a Tor relay](#Running_a_Tor_relay)
-        *   [13.2.1 Configuration](#Configuration_3)
-    *   [13.3 Running a Tor exit node](#Running_a_Tor_exit_node)
-        *   [13.3.1 Configuration](#Configuration_4)
-        *   [13.3.2 +100Mbps Exit Relay configuration example](#+100Mbps_Exit_Relay_configuration_example)
-            *   [13.3.2.1 Tor](#Tor)
-                *   [13.3.2.1.1 Raise maximum number of open file descriptors](#Raise_maximum_number_of_open_file_descriptors)
-                *   [13.3.2.1.2 Start tor.service as root to bind Tor to privileged ports](#Start_tor.service_as_root_to_bind_Tor_to_privileged_ports)
-                *   [13.3.2.1.3 Tor configuration](#Tor_configuration)
-            *   [13.3.2.2 nyx](#nyx)
-            *   [13.3.2.3 iptables](#iptables)
-            *   [13.3.2.4 Haveged](#Haveged)
-            *   [13.3.2.5 pdnsd](#pdnsd)
-                *   [13.3.2.5.1 Uncensored DNS](#Uncensored_DNS)
-*   [14 TorDNS](#TorDNS)
-    *   [14.1 Using TorDNS for all DNS queries](#Using_TorDNS_for_all_DNS_queries)
-*   [15 Torsocks](#Torsocks)
-*   [16 Transparent Torification](#Transparent_Torification)
-*   [17 Tips and tricks](#Tips_and_tricks)
-    *   [17.1 Kernel capabilities](#Kernel_capabilities)
-*   [18 Troubleshooting](#Troubleshooting)
-    *   [18.1 Problem with user value](#Problem_with_user_value)
-*   [19 See also](#See_also)
+    *   [9.2 Irssi](#Irssi)
+*   [10 Pacman](#Pacman)
+*   [11 Java](#Java)
+*   [12 Running a Tor server](#Running_a_Tor_server)
+    *   [12.1 Running a Tor bridge](#Running_a_Tor_bridge)
+        *   [12.1.1 Configuration](#Configuration_2)
+    *   [12.2 Running a Tor relay](#Running_a_Tor_relay)
+        *   [12.2.1 Configuration](#Configuration_3)
+    *   [12.3 Running a Tor exit node](#Running_a_Tor_exit_node)
+        *   [12.3.1 Configuration](#Configuration_4)
+        *   [12.3.2 +100Mbps Exit Relay configuration example](#+100Mbps_Exit_Relay_configuration_example)
+            *   [12.3.2.1 Tor](#Tor)
+                *   [12.3.2.1.1 Raise maximum number of open file descriptors](#Raise_maximum_number_of_open_file_descriptors)
+                *   [12.3.2.1.2 Start tor.service as root to bind Tor to privileged ports](#Start_tor.service_as_root_to_bind_Tor_to_privileged_ports)
+                *   [12.3.2.1.3 Tor configuration](#Tor_configuration)
+            *   [12.3.2.2 nyx](#nyx)
+            *   [12.3.2.3 iptables](#iptables)
+            *   [12.3.2.4 Haveged](#Haveged)
+            *   [12.3.2.5 pdnsd](#pdnsd)
+                *   [12.3.2.5.1 Uncensored DNS](#Uncensored_DNS)
+*   [13 TorDNS](#TorDNS)
+    *   [13.1 Using TorDNS for all DNS queries](#Using_TorDNS_for_all_DNS_queries)
+*   [14 Torsocks](#Torsocks)
+*   [15 Transparent Torification](#Transparent_Torification)
+*   [16 Tips and tricks](#Tips_and_tricks)
+    *   [16.1 Kernel capabilities](#Kernel_capabilities)
+*   [17 Troubleshooting](#Troubleshooting)
+    *   [17.1 Problem with user value](#Problem_with_user_value)
+*   [18 See also](#See_also)
 
 ## Introduction
 
@@ -506,7 +506,7 @@ Port 9150
 
 Note that [some time in 2013](https://trac.torproject.org/projects/tor/ticket/8135) the Port has changed from 9050 to 9150 if you use the Tor Browser Bundle. Try the other value if you receive a "Connection refused" message.
 
-## Irssi
+### Irssi
 
 Freenode recommends connecting to `.onion` directly. It also requires charybdis and ircd-seven's SASL mechanism for identifying to nickserv during connection; see [Irssi#Authenticating with SASL](/index.php/Irssi#Authenticating_with_SASL "Irssi"). Start irssi:
 
@@ -534,11 +534,11 @@ Disable CTCP and DCC and set a different hostname to prevent information disclos
 Connect to Freenode:
 
 ```
-/connect -network *network* frxleqtzgvwkv7oz.onion
+/connect -network *network* freenodeok2gncmy.onion
 
 ```
 
-For more information check [Accessing freenode Via Tor](http://freenode.net/irc_servers.shtml#tor), [SASL README](http://freenode.net/sasl/README.txt) or [IRC/SILC Wiki article](https://trac.torproject.org/projects/tor/wiki/doc/TorifyHOWTO/IrcSilc).
+For more information check [Accessing freenode Via Tor](https://freenode.net/kb/answer/chat#accessing-freenode-via-tor), [SASL README](http://freenode.net/sasl/README.txt) or [IRC/SILC Wiki article](https://trac.torproject.org/projects/tor/wiki/doc/TorifyHOWTO/IrcSilc).
 
 ## Pacman
 

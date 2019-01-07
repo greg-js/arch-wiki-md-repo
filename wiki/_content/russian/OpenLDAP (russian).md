@@ -4,31 +4,24 @@ OpenLDAP, LDAP являются очень большой темой для оп
 
 ## Contents
 
-*   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-*   [2 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
-    *   [2.1 Сервер (slapd)](#.D0.A1.D0.B5.D1.80.D0.B2.D0.B5.D1.80_.28slapd.29)
-        *   [2.1.1 /etc/openldap/slapd.conf](#.2Fetc.2Fopenldap.2Fslapd.conf)
-        *   [2.1.2 /etc/conf.d/slapd](#.2Fetc.2Fconf.d.2Fslapd)
-    *   [2.2 Клиент](#.D0.9A.D0.BB.D0.B8.D0.B5.D0.BD.D1.82)
-    *   [2.3 Тестирование установки](#.D0.A2.D0.B5.D1.81.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B8)
-    *   [2.4 OpenLDAP и SSL](#OpenLDAP_.D0.B8_SSL)
-        *   [2.4.1 Создание само-подписанного сертификата](#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D1.81.D0.B0.D0.BC.D0.BE-.D0.BF.D0.BE.D0.B4.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.BD.D0.BE.D0.B3.D0.BE_.D1.81.D0.B5.D1.80.D1.82.D0.B8.D1.84.D0.B8.D0.BA.D0.B0.D1.82.D0.B0)
-        *   [2.4.2 Настройка slapd для использования SSL](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_slapd_.D0.B4.D0.BB.D1.8F_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F_SSL)
-        *   [2.4.3 Запуск slapd с SSL](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_slapd_.D1.81_SSL)
-*   [3 Следующие шаги](#.D0.A1.D0.BB.D0.B5.D0.B4.D1.83.D1.8E.D1.89.D0.B8.D0.B5_.D1.88.D0.B0.D0.B3.D0.B8)
-*   [4 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
-*   [5 Внешние ссылки](#.D0.92.D0.BD.D0.B5.D1.88.D0.BD.D0.B8.D0.B5_.D1.81.D1.81.D1.8B.D0.BB.D0.BA.D0.B8)
+*   [1 Установка](#Установка)
+*   [2 Настройка](#Настройка)
+    *   [2.1 Сервер (slapd)](#Сервер_(slapd))
+        *   [2.1.1 /etc/openldap/slapd.conf](#/etc/openldap/slapd.conf)
+        *   [2.1.2 /etc/conf.d/slapd](#/etc/conf.d/slapd)
+    *   [2.2 Клиент](#Клиент)
+    *   [2.3 Тестирование установки](#Тестирование_установки)
+    *   [2.4 OpenLDAP и SSL](#OpenLDAP_и_SSL)
+        *   [2.4.1 Создание само-подписанного сертификата](#Создание_само-подписанного_сертификата)
+        *   [2.4.2 Настройка slapd для использования SSL](#Настройка_slapd_для_использования_SSL)
+        *   [2.4.3 Запуск slapd с SSL](#Запуск_slapd_с_SSL)
+*   [3 Следующие шаги](#Следующие_шаги)
+*   [4 Решение проблем](#Решение_проблем)
+*   [5 Внешние ссылки](#Внешние_ссылки)
 
 ## Установка
 
-Установите пакет:
-
-```
-pacman -S openldap 
-
-```
-
-Пакет openldap обычно включает две части: серверную (slapd) и клиентскую. Возможно, вы захотите запустить сервер на своем компьютере. После того, как вы настроете его, сервер будет готов предоставить сервисы аутентификации для клиентов. It is quite likely that you will run services requiring the LDAP authentication on that very computer, in which case the LDAP client will query the LDAP server from the same package.
+OpenLDAP содержит как сервер LDAP, так и клиент. [Установить](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C "Установить") с пакетом [openldap](https://www.archlinux.org/packages/?name=openldap).
 
 ## Настройка
 

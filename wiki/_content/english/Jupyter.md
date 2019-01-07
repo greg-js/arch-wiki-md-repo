@@ -57,11 +57,12 @@ Install the [ihaskell-git](https://aur.archlinux.org/packages/ihaskell-git/) pac
 Install the [julia](https://www.archlinux.org/packages/?name=julia) package and run `julia` to get a REPL prompt. Then run:
 
 ```
+using Pkg
 Pkg.add("IJulia")
 
 ```
 
-See the [Julia manual](http://docs.julialang.org/en/release-0.4/manual/packages/) for more details on package management.
+See the [Julia manual](https://docs.julialang.org/en/v1.0/stdlib/Pkg/#Getting-Started-1) for more details on package management.
 
 ### Python
 

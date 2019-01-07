@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Jupyter](/index.php/Jupyter "Jupyter"), revisada por última vez el **2018-10-30**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Jupyter&diff=0&oldid=552059) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Jupyter](/index.php/Jupyter "Jupyter"), revisada por última vez el **2019-01-06**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Jupyter&diff=0&oldid=561989) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 [Jupyter](https://en.wikipedia.org/wiki/Project_Jupyter "wikipedia:Project Jupyter") es un proyecto que produce entornos interactivos basados en navegadores web para programación, matemáticas y ciencia de datos. Es compatible con varios lenguajes a través de complementos ("kernels"), como Python, Ruby, Haskell, R, Scala y Julia.
 
@@ -60,11 +60,12 @@ Instale el paquete [ihaskell-git](https://aur.archlinux.org/packages/ihaskell-gi
 Instale el paquete [julia](https://www.archlinux.org/packages/?name=julia) y ejecute `julia` para obtener un mensaje REPL. Entonces ejecute:
 
 ```
-Pkg.add ("IJulia")
+using Pkg
+Pkg.add("IJulia")
 
 ```
 
-Consulte el [manual de Julia](http://docs.julialang.org/en/release-0.4/manual/packages/) para obtener más detalles sobre la administración de paquetes.
+Véase el [manual de Julia](https://docs.julialang.org/en/v1.0/stdlib/Pkg/#Getting-Started-1) para obtener más detalles sobre la gestión de paquetes.
 
 ### Python
 

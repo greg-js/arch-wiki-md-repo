@@ -604,7 +604,7 @@ The procedure described below can be used to test HDMI audio. Before proceeding,
 
 Connect your PC to the Display via HDMI cable and enable the display with [xrandr](/index.php/Xrandr "Xrandr").
 
-Use `aplay -l` to get the discover the card and device number. For example:
+Use `aplay -l` to discover the card and device number. For example:
 
  `$ aplay -l` 
 ```

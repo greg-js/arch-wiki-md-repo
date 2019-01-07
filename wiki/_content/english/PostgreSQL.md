@@ -37,7 +37,7 @@ You can switch to the PostgreSQL user by executing the following command:
 
 *   If you have [sudo](/index.php/Sudo "Sudo") and are in [sudoers](/index.php/Sudoers "Sudoers"):
 
-	 `$ sudo -u postgres -i` 
+	 `$ sudo -iu postgres` 
 
 *   Otherwise using [su](/index.php/Su "Su"):
 
@@ -54,7 +54,7 @@ See [sudo(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sudo.8) or [su(1)](http
 Before PostgreSQL can function correctly, the database cluster must be initialized:
 
 ```
-[postgres]$ initdb -D '/var/lib/postgres/data'
+[postgres]$ initdb -D /var/lib/postgres/data
 
 ```
 
@@ -195,7 +195,7 @@ The PostgreSQL database server configuration file is `postgresql.conf`. This fil
 
 ### Restricts access rights to the database superuser by default
 
-The defaults `pg_hba.conf` **allow any local user to connect as any database user**, including the database superuser. This is likely not what you want, so in order to restrict global access to the *postgress* user, change the following line:
+The defaults `pg_hba.conf` **allow any local user to connect as any database user**, including the database superuser. This is likely not what you want, so in order to restrict global access to the *postgres* user, change the following line:
 
  `/var/lib/postgres/data/pg_hba.conf` 
 ```
@@ -384,15 +384,15 @@ template1 | postgres | UTF8      | C         | C     |
 
 	[http://phppgadmin.sourceforge.net](http://phppgadmin.sourceforge.net) || [phppgadmin](https://www.archlinux.org/packages/?name=phppgadmin)
 
-*   **pgAdmin** — GUI-based administration tool for PostgreSQL.
+*   **pgAdmin** — Comprehensive design and management GUI for PostgreSQL.
 
-	[https://www.pgadmin.org/](https://www.pgadmin.org/) || [pgadmin4](https://www.archlinux.org/packages/?name=pgadmin4)
+	[https://www.pgadmin.org/](https://www.pgadmin.org/) || [pgadmin3](https://www.archlinux.org/packages/?name=pgadmin3) or [pgadmin4](https://www.archlinux.org/packages/?name=pgadmin4)
 
 *   **pgModeler** — Graphical schema designer for PostgreSQL.
 
 	[https://pgmodeler.io/](https://pgmodeler.io/) || [pgmodeler](https://aur.archlinux.org/packages/pgmodeler/)
 
-For more, see [List of applications/Documents#Database tools](/index.php/List_of_applications/Documents#Database_tools "List of applications/Documents").
+For tools supporting multiple DBMSs, see [List of applications/Documents#Database tools](/index.php/List_of_applications/Documents#Database_tools "List of applications/Documents").
 
 ## Upgrading PostgreSQL
 

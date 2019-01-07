@@ -2,7 +2,7 @@
 
 | **Device/Functionality** | **Status** |
 | [Suspend](#Suspend) | Working |
-| [Hibernate](#Suspend_and_Hibernate) | Not tested |
+| [Hibernate](#Hibernate) | Working |
 | [Integrated Graphics](#Graphics) | Working |
 | [Discrete Nvidia Graphics](#Graphics) | Modify |
 | [Wifi](#Wifi_and_Bluetooth) | Working |
@@ -20,11 +20,16 @@
 ## Contents
 
 *   [1 Suspend](#Suspend)
-*   [2 Graphics](#Graphics)
-    *   [2.1 Optimus Nvidia](#Optimus_Nvidia)
-    *   [2.2 bbswitch](#bbswitch)
-    *   [2.3 nvidia-xrun](#nvidia-xrun)
-*   [3 EFI firmware updates](#EFI_firmware_updates)
+*   [2 Hibernate](#Hibernate)
+*   [3 Graphics](#Graphics)
+    *   [3.1 Optimus Nvidia](#Optimus_Nvidia)
+    *   [3.2 bbswitch](#bbswitch)
+    *   [3.3 nvidia-xrun](#nvidia-xrun)
+*   [4 Thunderbolt docks](#Thunderbolt_docks)
+    *   [4.1 TB16](#TB16)
+*   [5 EFI firmware updates](#EFI_firmware_updates)
+*   [6 Tipps and Tricks](#Tipps_and_Tricks)
+    *   [6.1 Systemd dont wait for Network](#Systemd_dont_wait_for_Network)
 
 ## Suspend
 
@@ -44,6 +49,10 @@ To make the change permanent add `mem_sleep_default=deep` to your kernel paramet
 Read more regarding the sleep variants on the kernel documentation [[1]](https://www.kernel.org/doc/html/v4.18/admin-guide/pm/sleep-states.html).
 
 **Warning:** Some users have reported a problem where the CPUs get stuck in a high power state after resuming from S3 (deep) suspension [[2]](https://www.reddit.com/r/Dell/comments/91313h/xps_15_9570_c_state_bug_after_s3_sleep_and_modern/).
+
+## Hibernate
+
+Works out of the Box see [Power management/Suspend and hibernate](/index.php/Power_management/Suspend_and_hibernate "Power management/Suspend and hibernate")
 
 ## Graphics
 
@@ -90,6 +99,41 @@ The [nvidia-xrun](https://aur.archlinux.org/packages/nvidia-xrun/) package will 
 
 ```
 
+## Thunderbolt docks
+
+### TB16
+
+TB16 works fine if either Thunderbolt security is disabled in the BIOS or using [bolt](https://www.archlinux.org/packages/?name=bolt) to temporarily authorize or permanently enroll Thunderbolt devices with Thunderbolt security activated.
+
 ## EFI firmware updates
 
 This device is supported by [Fwupd](/index.php/Fwupd "Fwupd").
+
+## Tipps and Tricks
+
+### Systemd dont wait for Network
+
+before few months systemd added "after= .. .. network.target" in /usr/lib/systemd/system/systemd-user-sessions.service
+
+this causes systemd to wait for network connection at boot, you can modify this file to remove network.target but it will be overwritten on systemd update. Better workaround is to add /etc/systemd/system/systemd-user-sessions.service with network.target removed.
+
+ `/etc/systemd/system/systemd-user-sessions.service` 
+```
+#  This file is part of systemd.
+#
+#  systemd is free software; you can redistribute it and/or modify it
+#  under the terms of the GNU Lesser General Public License as published by
+#  the Free Software Foundation; either version 2.1 of the License, or
+#  (at your option) any later version.
+
+[Unit]
+Description=Permit User Sessions
+Documentation=man:systemd-user-sessions.service(8)
+After=remote-fs.target nss-user-lookup.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/lib/systemd/systemd-user-sessions start
+ExecStop=/usr/lib/systemd/systemd-user-sessions stop
+```

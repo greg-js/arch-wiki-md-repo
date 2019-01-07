@@ -126,7 +126,7 @@ Resources of other distributions (to look for CVE, patch, comments etc.):
 
 	Ubuntu
 
-	Advisories feed: [https://www.ubuntu.com/usn/atom.xml](https://www.ubuntu.com/usn/atom.xml)
+	Advisories feed: [https://usn.ubuntu.com/usn/atom.xml](https://usn.ubuntu.com/usn/atom.xml)
 
 	CVE tracker: [https://people.canonical.com/~ubuntu-security/cve/?cve=](https://people.canonical.com/~ubuntu-security/cve/?cve=)<CVE-ID>
 

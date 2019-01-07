@@ -122,7 +122,7 @@ Running apps (e.g. steam) directly with `nvidia-xrun` does not work well, so use
 
 ### Issues with Nvidia after removing Bumblebee
 
-See [#Use_bbswitch_to_manage_nvidia](#Use_bbswitch_to_manage_nvidia).
+See [#Use bbswitch to manage nvidia](#Use_bbswitch_to_manage_nvidia).
 
 If Nvidia GPU still fails to switch off, or is somehow set to be default whenever you use or not `nvidia-xrun`, then you might likely need to blacklist specific modules (which were previously blacklisted by [Bumblebee](/index.php/Bumblebee "Bumblebee")). Create this file and restart your system:
 

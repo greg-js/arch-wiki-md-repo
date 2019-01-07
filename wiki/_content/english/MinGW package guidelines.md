@@ -69,7 +69,7 @@ makedepends=('mingw-w64-configure')
 depends=('mingw-w64-crt')
 options=('!strip' '!buildflags' 'staticlibs')
 source=("http://www.foo.bar/foobar.tar.gz")
-md5sums=('4736ac4f34fd9a41fa0197eac23bbc24')
+sha256sums=('8f32d4617390d1c2d16f26a27ab60d97807b35440d45891fa340fc2648b04406')
 
 _architectures="i686-w64-mingw32 x86_64-w64-mingw32"
 
@@ -108,7 +108,7 @@ makedepends=('mingw-w64-cmake')
 depends=('mingw-w64-crt')
 options=('!strip' '!buildflags' 'staticlibs')
 source=("http://www.foo.bar/foobar.tar.gz")
-md5sums=('4736ac4f34fd9a41fa0197eac23bbc24')
+sha256sums=('8f32d4617390d1c2d16f26a27ab60d97807b35440d45891fa340fc2648b04406')
 
 _architectures="i686-w64-mingw32 x86_64-w64-mingw32"
 

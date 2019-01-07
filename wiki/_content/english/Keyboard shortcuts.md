@@ -39,7 +39,7 @@ A common idiom to remember this is "**R**eboot **E**ven **I**f **S**ystem **U**t
 
 **Tip:**
 
-*   If you are using a [display manager](/index.php/Display_manager "Display manager") and after `Alt+SysRq+e` you are presented with the login screen (or full desktop if autologin is enabled), it is most likely caused by `Restart=always` directive in the relevant [service file](/index.php/Systemd "Systemd"). If necessary, [edit the unit](/index.php/Systemd#Editing_provided_units "Systemd"), however this should not prevent the "REISUB" sequence from working.
+*   If you are using a [display manager](/index.php/Display_manager "Display manager") and after `Alt+SysRq+e` you are presented with the login screen (or full desktop if autologin is enabled), it is most likely caused by `Restart=always` directive in the relevant [service file](/index.php/Systemd "Systemd"). If necessary, [edit the unit](/index.php/Edit_the_unit "Edit the unit"), however this should not prevent the "REISUB" sequence from working.
 *   If all the above combinations work except `Alt+SysRq+b`, try using the contralateral `Alt` key.
 *   On laptops that use `Fn` key to differentiate `SysRq` from `PrtScrn`, it may not actually be necessary to use the `Fn` key (i.e., `Alt+PrtSc+*letter*` could work).
 *   On Lenovo laptops `SysRq` is often configured as `Fn+S`. To use it press and hold `Alt` then press `Fn+s`, **release** `Fn` and `s` still holding `Alt` followed by the keys above.

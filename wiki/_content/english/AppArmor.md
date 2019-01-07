@@ -187,7 +187,7 @@ NoDisplay=true
 Reboot and check if `aa-notify` daemon is running:
 
 ```
-$ ps aux | grep aa-notify
+$ pgrep -ax aa-notify
 
 ```
 

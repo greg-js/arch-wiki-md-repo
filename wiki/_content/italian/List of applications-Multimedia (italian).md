@@ -722,7 +722,7 @@ See also [Wikipedia:Comparison of video editing software](https://en.wikipedia.o
 
 *   **[Cinelerra (Community Version)](https://en.wikipedia.org/wiki/Cinelerra "wikipedia:Cinelerra")** — Editor video professionale e ambiente di compositing.
 
-	[http://cinelerra.org/](http://cinelerra.org/) || [cinelerra-cv](https://www.archlinux.org/packages/?name=cinelerra-cv)
+	[http://cinelerra.org/](http://cinelerra.org/) || [cinelerra-cv](https://aur.archlinux.org/packages/cinelerra-cv/)
 
 *   **[HandBrake](/index.php/DVD_Ripping#HandBrake "DVD Ripping")** — Semplice ma potente transcodificatore video, ideale per il ripping in formati mkv/x264\. Versione GTK+.
 

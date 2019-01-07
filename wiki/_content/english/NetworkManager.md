@@ -863,7 +863,13 @@ You can also edit the connection (and persist it to disk) or delete it. NetworkM
 
 *NetworkManager* overwrites [resolv.conf](/index.php/Resolv.conf "Resolv.conf") by default.
 
-This can be stopped by adding `dns=none` to the `[main]` section in `/etc/NetworkManager/NetworkManager.conf`.
+This can be stopped by setting `dns=none` in a configuration file:
+
+ `/etc/NetworkManager/conf.d/dns.conf` 
+```
+[main]
+dns=none
+```
 
 After that `/etc/resolv.conf` might be a broken symlink that you will need to remove. Then, just create a new `/etc/resolv.conf` file.
 

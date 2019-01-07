@@ -1,59 +1,70 @@
 **翻译状态：** 本文是英文页面 [Microcode](/index.php/Microcode "Microcode") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-21，点击[这里](https://wiki.archlinux.org/index.php?title=Microcode&diff=0&oldid=438585)可以查看翻译后英文页面的改动。
 
-处理器厂商会发布 [微码](https://en.wikipedia.org/wiki/Microcode "wikipedia:Microcode") 以增强系统稳定性和解决安全问题。微码可以通过 BIOS 更新，Linux 内核也支持启动时应用新的微码。没有这些更新，可能会遇到一些很难查的的死机或崩溃问题。
+处理器制造商发布对处理器[微码](https://en.wikipedia.org/wiki/Microcode "wikipedia:Microcode")的稳定性和安全性更新。虽然微码可以通过BIOS进行更新，但Linux内核也可以在引导期间应用这些更新。这些更新提供了对系统稳定性至关重要的错误修复。如果没有这些更新，您可能会遇到虚假崩溃或难以跟踪的意外系统暂停。
 
-建议所有 Intel 用户使用新的微码。Intel Haswell 和 Broadwell 处理器家族的用户请务必使用最新的微码。
+属于Intel Haswell和Broadwell处理器系列的CP US用户必须安装这些微代码更新，以确保系统稳定性。当然，所有用户都应该安装这些更新。
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 启用 Intel 微指令更新](#.E5.90.AF.E7.94.A8_Intel_.E5.BE.AE.E6.8C.87.E4.BB.A4.E6.9B.B4.E6.96.B0)
+*   [1 安装](#安装)
+*   [2 启用早期微码更新](#启用早期微码更新)
     *   [2.1 Grub](#Grub)
+        *   [2.1.1 自动模式](#自动模式)
+        *   [2.1.2 手动模式](#手动模式)
     *   [2.2 systemd-boot](#systemd-boot)
-    *   [2.3 EFI boot stub / EFI handover](#EFI_boot_stub_.2F_EFI_handover)
+    *   [2.3 EFI boot stub / EFI handover](#EFI_boot_stub_/_EFI_handover)
     *   [2.4 rEFInd](#rEFInd)
     *   [2.5 Syslinux](#Syslinux)
     *   [2.6 LILO](#LILO)
-*   [3 验证微指令已在启动时更新](#.E9.AA.8C.E8.AF.81.E5.BE.AE.E6.8C.87.E4.BB.A4.E5.B7.B2.E5.9C.A8.E5.90.AF.E5.8A.A8.E6.97.B6.E6.9B.B4.E6.96.B0)
-*   [4 哪些 CPU 可以接受微指令更新](#.E5.93.AA.E4.BA.9B_CPU_.E5.8F.AF.E4.BB.A5.E6.8E.A5.E5.8F.97.E5.BE.AE.E6.8C.87.E4.BB.A4.E6.9B.B4.E6.96.B0)
-    *   [4.1 检查可用微指令更新](#.E6.A3.80.E6.9F.A5.E5.8F.AF.E7.94.A8.E5.BE.AE.E6.8C.87.E4.BB.A4.E6.9B.B4.E6.96.B0)
-*   [5 在自定义内核中启用微代码加载](#.E5.9C.A8.E8.87.AA.E5.AE.9A.E4.B9.89.E5.86.85.E6.A0.B8.E4.B8.AD.E5.90.AF.E7.94.A8.E5.BE.AE.E4.BB.A3.E7.A0.81.E5.8A.A0.E8.BD.BD)
-*   [6 参阅](#.E5.8F.82.E9.98.85)
+*   [3 验证微指令已在启动时更新](#验证微指令已在启动时更新)
+*   [4 哪些 CPU 可以接受微指令更新](#哪些_CPU_可以接受微指令更新)
+    *   [4.1 检查可用微指令更新](#检查可用微指令更新)
+*   [5 在自定义内核中启用微代码加载](#在自定义内核中启用微代码加载)
+*   [6 参阅](#参阅)
 
 ## 安装
 
-对于 AMD 处理器，微指令更新放置在 [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) ，而它作为基本系统的一部分安装，不需要额外动作。
+对于 AMD 处理器，安装 [amd-ucode](https://www.archlinux.org/packages/?name=amd-ucode)。
 
-对于 Intel 处理器，安装 [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode)，需要一些配置才能启用。
+对于 Intel 处理器，安装 [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode)。
 
-## 启用 Intel 微指令更新
+如果你在一个移动介质上安装Arch Linux（[Installing Arch Linux on a USB key (简体中文)](/index.php/Installing_Arch_Linux_on_a_USB_key_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installing Arch Linux on a USB key (简体中文)")），需要应该安装以上两个厂商处理器的微码软件包。
 
-Intel 微代码必须被启动加载器加载。因为用户的启动配置有很多种情况，可能没有在 Arch 默认的配置中启用 Intel 微代码。AUR 中的内核和 Arch 官方内核的处理方式类似。
+## 启用早期微码更新
 
-要启用新的微代码，`/boot/intel-ucode.img` 必须做为 **bootloader 配置文件的第一个 initrd** ，然后才是正常的 initrd 文件。参考下面的示例：
+微码必须被[boot loader](/index.php/Boot_loader "Boot loader")加载，由于用户的早期引导配置具有很大的可变性，因此Arch的默认配置可能不会自动触发微码更新。在这方面，许多aur内核都遵循了Arch官方的[kernels](/index.php/Kernels "Kernels")路径。
+
+These updates must be enabled by adding `/boot/amd-ucode.img` or `/boot/intel-ucode.img` as the **first initrd in the bootloader config file**. This is in addition to the normal initrd file. See below for instructions for common bootloaders.
+
+**Note:** In the following sections replace `*cpu_manufacturer*` with your CPU manufacturer, i.e. `amd` or `intel`.
+
+**Tip:** For [Arch Linux on a removable drive](/index.php/Installing_Arch_Linux_on_a_USB_key "Installing Arch Linux on a USB key") add both microcode files as `initrd` to the boot loader configuration. Their order does not matter as long as they both are specified before the real initramfs image.
 
 ### Grub
 
-`/usr/bin/grub-mkconfig` 可以自动处理微指令更新.用戶在安装完[intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode)后，运行下面命令就可以重新生成配置文件启用微指令更新。
+#### 自动模式
+
+*grub-mkconfig* 会自动发现微码更新并更新 [GRUB](/index.php/GRUB "GRUB") 配置信息。安装微码软件包后，重新生成GRUB 配置以激活更新：
 
 ```
 # grub-mkconfig -o /boot/grub/grub.cfg
 
 ```
 
-用户也可以在 `grub.cfg` 中添加`/intel-ucode.img` 或 `/boot/intel-ucode.img`
+#### 手动模式
+
+或者，手动管理GRUB配置文件，用户可以添加`/boot/*cpu_manufacturer*-ucode.img` (或者 `/*cpu_manufacturer*-ucode.img` ，当 `/boot` 是一个独立分区的情况) 如下:
+
+ `/boot/grub/grub.cfg` 
+```
+...
+echo 'Loading initial ramdisk'
+initrd	**/boot/*cpu_manufacturer*-ucode.img** /boot/initramfs-linux.img
+...
 
 ```
-[...]
-    echo	'Loading initial ramdisk ...'
-    initrd	/intel-ucode.img /initramfs-linux.img
-[...]
 
-```
-
-**注意:** 这个文件会被 `/usr/bin/grub-mkconfig` 自动覆盖，并且这些更新会消除你的修改。所以建议用 `/etc/grub.d/` 中的配置文件管理启动配置。
-
-每个启动项都需要修改.
+为每个入口菜单执行以上操作。
 
 ### systemd-boot
 

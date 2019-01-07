@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Dynamic Kernel Module Support](/index.php/Dynamic_Kernel_Module_Support "Dynamic Kernel Module Support"). Дата последней синхронизации: 28 января 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Dynamic_Kernel_Module_Support&diff=0&oldid=512538).
+**Состояние перевода:** На этой странице представлен перевод статьи [Dynamic Kernel Module Support](/index.php/Dynamic_Kernel_Module_Support "Dynamic Kernel Module Support"). Дата последней синхронизации: 6 января 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Dynamic_Kernel_Module_Support&diff=0&oldid=555532).
 
 Из [Википедии](https://en.wikipedia.org/wiki/ru:Dynamic_Kernel_Module_Support "wikipedia:ru:Dynamic Kernel Module Support"):
 
@@ -29,15 +29,13 @@
 
 ## Установка
 
-[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [dkms](https://www.archlinux.org/packages/?name=dkms) и заголовочные файлы вашего ядра ([linux-headers](https://www.archlinux.org/packages/?name=linux-headers) - заголовочные файлы ядра по умолчанию).
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [dkms](https://www.archlinux.org/packages/?name=dkms) и заголовочные файлы ядра ([linux-headers](https://www.archlinux.org/packages/?name=linux-headers) для ядра по умолчанию — [linux](https://www.archlinux.org/packages/?name=linux)).
 
 Значительное число модулей, не включенных в ядро, имеют DKMS вариант; некоторые из них размещаются в [официальных репозиториях](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)"), но большинство из них можно найти только в [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)").
 
 ## Обновления
 
-**Примечание:** [pacman](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)") не берет в расчет зависимости, когда пересобирает модули DKMS. Как следствие, это приведет к ошибкам во время сборки, если один модуль DKMS зависит от другого (например [zfs-dkms](https://aur.archlinux.org/packages/zfs-dkms/)). Смотрите следующий отчет об ошибке [FS#52901](https://bugs.archlinux.org/task/52901). [dkms-sorted](https://aur.archlinux.org/packages/dkms-sorted/) добавляет экспериментальную поддержку для подобных зависимостей; технически это замена пакета `dkms`. Самый простой способ попробовать - установить [dkms-sorted](https://aur.archlinux.org/packages/dkms-sorted/) *перед* установкой любых DKMS модулей.
-
-Обычно пересборка модулей DKMS во время обновления ядра выполняется бесшовно, но что-то может пойти не так. Следует обратить особое внимание на вывод *pacman*! Это, в частности, относится к тем системам, которым требуется модуль DKMS для успешной загрузки и/или если вы используете DKMS с ядром не из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)").
+Обычно пересборка модулей DKMS во время обновления ядра выполняется бесшовно, но что-то может пойти не так. Следует обратить особое внимание на вывод [Pacman](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)")! Это, в частности, относится к тем системам, которым требуется модуль DKMS для успешной загрузки и/или если вы используете DKMS с ядром не из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)").
 
 Для того, чтобы следовать изменениям в ядре, исправить ошибки или добавить необходимый функционал, подумайте об обновлении соответствующего пакета DKMS перед перезагрузкой.
 

@@ -673,7 +673,14 @@ See [#Borderlands 2](#Borderlands_2).
 
 #### Keyboard not working
 
-This can occur with certain window managers e.g. [dwm](/index.php/Dwm "Dwm"). Try a different [window manager](/index.php/Window_manager "Window manager").
+This can occur with certain window managers e.g. [dwm](/index.php/Dwm "Dwm"). Try a different [window manager](/index.php/Window_manager "Window manager"), or install [wmname](https://www.archlinux.org/packages/?name=wmname) and run:
+
+```
+$ wmname LG3D
+
+```
+
+see [Java#Impersonate another window manager](/index.php/Java#Impersonate_another_window_manager "Java") for more information.
 
 #### Not starting via Steam
 

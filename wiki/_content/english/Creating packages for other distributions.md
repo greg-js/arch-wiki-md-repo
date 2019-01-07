@@ -36,47 +36,47 @@ Related articles
 
 The [Debian Packaging Tutorial](https://www.debian.org/doc/manuals/packaging-tutorial/packaging-tutorial.pdf) explains the groundwork. It describes use of the following tools:
 
-**cowdancer** — Copy-on-write wrapper for pbuilder
+*   **cowdancer** — Copy-on-write wrapper for pbuilder
 
 	[https://packages.debian.org/sid/cowdancer](https://packages.debian.org/sid/cowdancer) || [cowdancer](https://aur.archlinux.org/packages/cowdancer/)
 
-**debootstrap** — A tool used to create a Debian base system from scratch, without requiring the availability of dpkg or apt.
+*   **debootstrap** — A tool used to create a Debian base system from scratch, without requiring the availability of dpkg or apt.
 
 	[https://packages.debian.org/sid/debootstrap](https://packages.debian.org/sid/debootstrap) || [debootstrap](https://www.archlinux.org/packages/?name=debootstrap)
 
-**devscripts** — Scripts to make the life of a Debian Package maintainer easier
+*   **devscripts** — Scripts to make the life of a Debian Package maintainer easier
 
 	[https://packages.debian.org/sid/devscripts](https://packages.debian.org/sid/devscripts) || [devscripts](https://aur.archlinux.org/packages/devscripts/)
 
-**dh-autoreconf** — Debhelper add-on to call autoreconf and clean up after the build
+*   **dh-autoreconf** — Debhelper add-on to call autoreconf and clean up after the build
 
 	[https://packages.debian.org/sid/dh-autoreconf](https://packages.debian.org/sid/dh-autoreconf) || [dh-autoreconf](https://aur.archlinux.org/packages/dh-autoreconf/)
 
-**dh-make** — Tool that converts source archives into Debian package source
+*   **dh-make** — Tool that converts source archives into Debian package source
 
 	[https://packages.debian.org/sid/dh-make](https://packages.debian.org/sid/dh-make) || [dh-make](https://aur.archlinux.org/packages/dh-make/)
 
-**[dpkg](https://en.wikipedia.org/wiki/dpkg "wikipedia:dpkg")** — The Debian Package Manager
+*   **[dpkg](https://en.wikipedia.org/wiki/dpkg "wikipedia:dpkg")** — The Debian Package Manager
 
 	[https://packages.debian.org/sid/dpkg](https://packages.debian.org/sid/dpkg) || [dpkg](https://aur.archlinux.org/packages/dpkg/)
 
-**dput** — Debian package upload tool
+*   **dput** — Debian package upload tool
 
 	[https://packages.debian.org/sid/dput](https://packages.debian.org/sid/dput) || [dput](https://aur.archlinux.org/packages/dput/)
 
-**equivs** — Circumvent Debian package dependencies
+*   **equivs** — Circumvent Debian package dependencies
 
 	[https://launchpad.net/ubuntu/+source/equivs](https://launchpad.net/ubuntu/+source/equivs) || [equivs](https://aur.archlinux.org/packages/equivs/)
 
-**git-buildpackage** — Tools from Debian to integrate the package build system with Git
+*   **git-buildpackage** — Tools from Debian to integrate the package build system with Git
 
 	[https://honk.sigxcpu.org/piki/projects/git-buildpackage/](https://honk.sigxcpu.org/piki/projects/git-buildpackage/) || [git-buildpackage](https://aur.archlinux.org/packages/git-buildpackage/)
 
-**pbuilder-ubuntu** — Chroot environment for building Debian packages
+*   **pbuilder-ubuntu** — Chroot environment for building Debian packages
 
 	[https://launchpad.net/ubuntu/+source/pbuilder](https://launchpad.net/ubuntu/+source/pbuilder) || [pbuilder-ubuntu](https://aur.archlinux.org/packages/pbuilder-ubuntu/)
 
-**[quilt](https://en.wikipedia.org/wiki/Quilt_(software) "wikipedia:Quilt (software)")** — Manage a series of patches by keeping track of the changes each patch makes
+*   **[quilt](https://en.wikipedia.org/wiki/Quilt_(software) "wikipedia:Quilt (software)")** — Manage a series of patches by keeping track of the changes each patch makes
 
 	[http://savannah.nongnu.org/projects/quilt](http://savannah.nongnu.org/projects/quilt) || [quilt](https://www.archlinux.org/packages/?name=quilt)
 
@@ -142,11 +142,11 @@ $ dpkg-buildpackage -d -us -uc -S
 
 [How to create an RPM package](https://fedoraproject.org/wiki/How_to_create_an_RPM_package)
 
-**rpm-org** — RPM.org fork, used in major RPM distros
+*   **rpm-org** — RPM.org fork, used in major RPM distros
 
 	[http://www.rpm.org/](http://www.rpm.org/) || [rpm-org](https://aur.archlinux.org/packages/rpm-org/)
 
-**mock** — Takes Source RPMs and builds RPMs from them in a chroot
+*   **mock** — Takes Source RPMs and builds RPMs from them in a chroot
 
 	[http://fedoraproject.org/wiki/Projects/Mock](http://fedoraproject.org/wiki/Projects/Mock) || [mock](https://aur.archlinux.org/packages/mock/)
 

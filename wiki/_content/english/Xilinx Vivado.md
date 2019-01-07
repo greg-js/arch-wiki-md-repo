@@ -25,9 +25,9 @@ Xilinx Vivado can be downloaded from its official website [[1]](http://www.xilin
 
 ### Dependencies
 
-**Note:** For 2018.3 and later, there is no need to install ncurses5 libarys
-
 Installer needs ncurses5 libs, and will not work with ncurses 6 available at official repos. You can work-around this problem by installing [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). You will also need to install [libpng12](https://www.archlinux.org/packages/?name=libpng12) and [lib32-libpng12](https://www.archlinux.org/packages/?name=lib32-libpng12) for Xilinx Document Navigator to launch.
+
+SDK 2018.3 (potentially also other versions) needs gtk2 library. You may need to install [gtk2](https://www.archlinux.org/packages/?name=gtk2) if you are planning to use SDK.
 
 ## Installation
 

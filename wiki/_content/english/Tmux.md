@@ -35,8 +35,9 @@ tmux is an ISC-licensed alternative to [GNU Screen](/index.php/GNU_Screen "GNU S
     *   [5.9 Template script to run program in new session resp. attach to existing one](#Template_script_to_run_program_in_new_session_resp._attach_to_existing_one)
     *   [5.10 Terminal emulator window titles](#Terminal_emulator_window_titles)
     *   [5.11 Automatic layouting](#Automatic_layouting)
-    *   [5.12 Vim friendly configuration](#Vim_friendly_configuration)
-    *   [5.13 Friendly pane splitting](#Friendly_pane_splitting)
+    *   [5.12 Vim colorscheme not loading](#Vim_colorscheme_not_loading)
+    *   [5.13 Vim friendly configuration](#Vim_friendly_configuration)
+    *   [5.14 Friendly pane splitting](#Friendly_pane_splitting)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Scrolling issues](#Scrolling_issues)
     *   [6.2 Mouse scrolling](#Mouse_scrolling)
@@ -161,14 +162,14 @@ alias tmux="tmux -2"
 
 #### 24-bit color
 
-tmux supports 24-bit color as of version 2.2 ([[1]](https://github.com/tmux/tmux/commit/427b8204268af5548d09b830e101c59daa095df9)). If your terminal supports 24-bit color (see this [gist](https://gist.github.com/XVilka/8346728)), add your terminal to the `terminal-overrides` setting. For example, if you use [Termite](/index.php/Termite "Termite"), you would add:
+tmux supports 24-bit color as of version 2.2 [[1]](https://github.com/tmux/tmux/commit/427b8204268af5548d09b830e101c59daa095df9). If your terminal supports 24-bit color (see this [gist](https://gist.github.com/XVilka/8346728)), add your terminal to the `terminal-overrides` setting. For example, if you use [Termite](/index.php/Termite "Termite"), you would add:
 
 ```
 set -ga terminal-overrides ",xterm-termite:Tc"
 
 ```
 
-For other terminals, replace `xterm-termite` with the relevant terminal type (stored in `$TERM`). See the tmux(1) man page for details about the `Tc` terminfo extension.
+For other terminals, replace `xterm-termite` with the relevant terminal type (stored in `$TERM`). See the [tmux(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tmux.1) man page for details about the `Tc` terminfo extension.
 
 #### xterm-keys
 
@@ -742,29 +743,13 @@ bind-key -n M-n split-window \; select-layout
 
 ```
 
+### Vim colorscheme not loading
+
+See the following if your vim colorscheme isn't loading in tmux: [[3]](https://stackoverflow.com/a/47994805/1766555) [[4]](https://github.com/vim/vim/issues/993#issuecomment-255651605)
+
 ### Vim friendly configuration
 
-See [[3]](https://gist.github.com/anonymous/6bebae3eb9f7b972e6f0) for a configuration friendly to [vim](/index.php/Vim "Vim") users.
-
-With tmux 2.4 change:
-
-```
-bind -t vi-copy 'v' begin-selection
-bind -t vi-copy 'y' copy-selection
-bind -t vi-copy 'Space' halfpage-down
-bind -t vi-copy 'Bspace' halfpage-up
-
-```
-
-to:
-
-```
-bind-key -T copy-mode-vi 'v' send -X begin-selection
-bind-key -T copy-mode-vi 'y' send -X copy-selection
-bind-key -T copy-mode-vi 'Space' send -X halfpage-down
-bind-key -T copy-mode-vi 'Bspace' send -X halfpage-up
-
-```
+See [[5]](https://gist.github.com/Lartza/6a7a62466a8a3e436234412d9b1c5066) for a configuration friendly to [vim](/index.php/Vim "Vim") users.
 
 ### Friendly pane splitting
 
@@ -792,7 +777,7 @@ set -ga terminal-overrides ',xterm*:smcup@:rmcup@'
 
 ```
 
-This tricks the terminal emulator into thinking tmux is a full screen application like pico or mutt[[4]](http://superuser.com/questions/310251/use-terminal-scrollbar-with-tmux), which will make the scrollback be recorded properly. Beware however, it will get a bit messed up when switching between windows/panes. Consider using tmux's native scrollback instead.
+This tricks the terminal emulator into thinking tmux is a full screen application like pico or mutt[[6]](http://superuser.com/questions/310251/use-terminal-scrollbar-with-tmux), which will make the scrollback be recorded properly. Beware however, it will get a bit messed up when switching between windows/panes. Consider using tmux's native scrollback instead.
 
 ### Mouse scrolling
 

@@ -1631,7 +1631,7 @@ See also [Wikipedia:Comparison of video editing software](https://en.wikipedia.o
 
 *   **[Cinelerra (Community Version)](https://en.wikipedia.org/wiki/Cinelerra "wikipedia:Cinelerra")** — Professional video editing and compositing environment.
 
-	[http://cinelerra-cv.org/](http://cinelerra-cv.org/) || [cinelerra-cv](https://www.archlinux.org/packages/?name=cinelerra-cv)
+	[http://cinelerra-cv.org/](http://cinelerra-cv.org/) || [cinelerra-cv](https://aur.archlinux.org/packages/cinelerra-cv/)
 
 *   **[DaVinci Resolve](https://en.wikipedia.org/wiki/Da_Vinci_Systems#da_Vinci_Resolve "wikipedia:Da Vinci Systems")** — Proprietary A/V post-production software suite.
 

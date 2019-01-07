@@ -62,15 +62,7 @@ You might need to install [perl-archive-zip](https://www.archlinux.org/packages/
 
 ### Accessing serial
 
-The arduino board communicates with the computer via a serial connection or a serial-over-USB connection, so the user needs read/write access to the serial device file. [Udev](/index.php/Udev "Udev") creates files such as `/dev/ttyUSB0` owned by group `uucp` so adding the user to the `uucp` group gives the required read/write access. Also, if you are planning to use the default Java IDE, add your user to the lock group for `/var/lock/lockdev` access.
-
-```
-# gpasswd -a $USER uucp
-# gpasswd -a $USER lock
-
-```
-
-**Note:** You will have to logout and login again for this to take effect.
+The arduino board communicates with the computer via a serial connection or a serial-over-USB connection, so the user needs read/write access to the serial device file. [Udev](/index.php/Udev "Udev") creates files such as `/dev/ttyUSB0` owned by group `uucp` so adding the user to the `uucp` group gives the required read/write access. Also, if you are planning to use the default Java IDE, add your user to the lock group for `/var/lock/lockdev` access. See [Users and groups#Group management](/index.php/Users_and_groups#Group_management "Users and groups") for details.
 
 Before uploading to the Arduino, be sure to set the correct serial port, board, and processor from the Tools menu.
 

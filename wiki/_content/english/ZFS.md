@@ -591,7 +591,7 @@ WantedBy=zfs-mount.service
 
 ```
 
-and enable a service instance for each encrypted volume: `# systemctl enable zfs-key@dataset`.
+and enable a service instance for each encrypted volume: `# systemctl enable zfs-key@dataset`. Make sure to change the name of the pool (zpool in the example) in the ExecStart= line if yours is different.
 
 The Before= reference to systemd-user-sessions.service ensures that systemd-ask-password is invoked before the local IO devices are handed over to the system UI
 

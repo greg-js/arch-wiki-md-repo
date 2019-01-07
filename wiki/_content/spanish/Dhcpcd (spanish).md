@@ -12,9 +12,9 @@ Artículos relacionados
 
 *   [1 Instalación](#Instalación)
 *   [2 Iniciar](#Iniciar)
-*   [3 Configuration](#Configuration)
-    *   [3.1 DHCP static route(s)](#DHCP_static_route(s))
-    *   [3.2 DHCP Client Identifier](#DHCP_Client_Identifier)
+*   [3 Configuración](#Configuración)
+    *   [3.1 Ruta(s) estática DHCP](#Ruta(s)_estática_DHCP)
+    *   [3.2 Identificador de cliente DHCP](#Identificador_de_cliente_DHCP)
     *   [3.3 Perfil estático](#Perfil_estático)
         *   [3.3.1 Fallback profile](#Fallback_profile)
 *   [4 Hooks](#Hooks)
@@ -59,13 +59,13 @@ Otra forma es iniciar *dhcpcd* manualmente, ejecute el siguiente comando:
 
 En todo lo de arriba, le será asignado una dirección IP dinámica. Para establecer una dirección IP estática, vea [#Perfil estático](#Perfil_estático).
 
-## Configuration
+## Configuración
 
-The main configuration is done in `/etc/dhcpcd.conf`. See [dhcpcd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5) for details. Some of the frequently used options are highlighted below.
+La configuración principal se hace en `/etc/dhcpcd.conf`. Vea [dhcpcd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5) para más detalles. Algunas de las opciones frecuentemente utilizadas están resaltadas abajo.
 
-### DHCP static route(s)
+### Ruta(s) estática DHCP
 
-If you need to add a static route client-side, add it to `/etc/dhcpcd.exit-hook`. The example shows a new hook-script which adds a static route to a VPN subnet on `10.11.12.0/24` via a gateway machine at `192.168.192.5`:
+Si necesita añadir una ruta estática en el lado del cliente, añádelo a `/etc/dhcpcd.exit-hook`. En el ejemplo se observa un hook-script nuevo que añade una ruta estática a una subred VPN en `10.11.12.0/24` via a la puerta de entrada de la maquina a `192.168.192.5`:
 
  `/etc/dhcpcd.exit-hook` 
 ```
@@ -73,18 +73,18 @@ ip route add 10.11.12.0/24 via 192.168.192.5
 
 ```
 
-You can add multiple routes to this file.
+Puedes añadir múltiples rutas en este archivo.
 
-### DHCP Client Identifier
+### Identificador de cliente DHCP
 
-The DHCP client may be uniquely identified in different ways by the server:
+El cliente DHCP puede identificarse de diferentes formas por el servidor:
 
-1.  hostname (or the hostname value sent by the client),
-2.  MAC address of the network interface controller through which the connection is being made, linked to this is the third,
-3.  Identity Association ID (IAID), which is an abstraction layer to differentiate different use-cases and/or interfaces on a single host,
-4.  DHCP Unique Identifier (DUID).
+1.  hostname (o el valor del nombre del host enviado por el cliente),
+2.  por la dirección MAC del controlador de la interfaz de red con la que se está realizando la conexión, vinculado al
+3.  ID de Asociación de Identidad (IAID), que es una capa de abstracción para diferenciar usos/casos y/o interfaces en un solo host,
+4.  Identificador único de DHCP (DUID).
 
-For a further description, see [RFC 3315](https://tools.ietf.org/html/rfc3315#section-4.2).
+Para una descripción más extensa, vea [RFC 3315](https://tools.ietf.org/html/rfc3315#section-4.2).
 
 It depends on the DHCP-server configuration which options are optional or required to request a DHCP IP lease.
 

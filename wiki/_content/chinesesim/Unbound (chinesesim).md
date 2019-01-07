@@ -4,23 +4,23 @@
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 配置](#.E9.85.8D.E7.BD.AE)
-    *   [2.1 访问控制](#.E8.AE.BF.E9.97.AE.E6.8E.A7.E5.88.B6)
-    *   [2.2 Root 提示](#Root_.E6.8F.90.E7.A4.BA)
-    *   [2.3 设置 /etc/resolv.conf为本地DNS服务](#.E8.AE.BE.E7.BD.AE_.2Fetc.2Fresolv.conf.E4.B8.BA.E6.9C.AC.E5.9C.B0DNS.E6.9C.8D.E5.8A.A1)
-    *   [2.4 记录](#.E8.AE.B0.E5.BD.95)
-    *   [2.5 DNSSEC验证](#DNSSEC.E9.AA.8C.E8.AF.81)
-    *   [2.6 转发查询](#.E8.BD.AC.E5.8F.91.E6.9F.A5.E8.AF.A2)
-*   [3 使用](#.E4.BD.BF.E7.94.A8)
-    *   [3.1 启动Unbound](#.E5.90.AF.E5.8A.A8Unbound)
-    *   [3.2 远程控制Unbound](#.E8.BF.9C.E7.A8.8B.E6.8E.A7.E5.88.B6Unbound)
-        *   [3.2.1 设置 unbound-control](#.E8.AE.BE.E7.BD.AE_unbound-control)
-        *   [3.2.2 使用unbound-control](#.E4.BD.BF.E7.94.A8unbound-control)
-*   [4 添加一个权威DNS服务器](#.E6.B7.BB.E5.8A.A0.E4.B8.80.E4.B8.AA.E6.9D.83.E5.A8.81DNS.E6.9C.8D.E5.8A.A1.E5.99.A8)
-*   [5 WAN面临的DNS](#WAN.E9.9D.A2.E4.B8.B4.E7.9A.84DNS)
+*   [1 安装](#安装)
+*   [2 配置](#配置)
+    *   [2.1 访问控制](#访问控制)
+    *   [2.2 Root 提示](#Root_提示)
+    *   [2.3 设置 /etc/resolv.conf为本地DNS服务](#设置_/etc/resolv.conf为本地DNS服务)
+    *   [2.4 记录](#记录)
+    *   [2.5 DNSSEC验证](#DNSSEC验证)
+    *   [2.6 转发查询](#转发查询)
+*   [3 使用](#使用)
+    *   [3.1 启动Unbound](#启动Unbound)
+    *   [3.2 远程控制Unbound](#远程控制Unbound)
+        *   [3.2.1 设置 unbound-control](#设置_unbound-control)
+        *   [3.2.2 使用unbound-control](#使用unbound-control)
+*   [4 添加一个权威DNS服务器](#添加一个权威DNS服务器)
+*   [5 WAN面临的DNS](#WAN面临的DNS)
 *   [6 Issues concerning num-threads](#Issues_concerning_num-threads)
-*   [7 参阅](#.E5.8F.82.E9.98.85)
+*   [7 参阅](#参阅)
 
 ## 安装
 
@@ -294,11 +294,11 @@ Some of the commands that can be used with *unbound-control* are:
 
 ```
 
-Please refer to [unbound-control(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/unbound-control.8) for a detailed look at the operations it supports.
+Please refer to [unbound-control(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/unbound-control.8) for a detailed look at the operations it supports.
 
 ## 添加一个权威DNS服务器
 
-For users who wish to run both a validating, recursive, caching DNS server as well as an authoritative DNS server on a single machine then it may be useful to refer to the wiki page [nsd](/index.php/Nsd "Nsd") which gives an example of a configuration for such a system. Having one server for authoritative DNS queries and a separate DNS server for the validating, recursive, caching DNS functions gives increased security over a single DNS server providing all of these functions. Many users have used bind as a single DNS server, and some help on migration from bind to the combination of running nsd and bind is provided in the [nsd](/index.php/Nsd "Nsd") wiki page.
+For users who wish to run both a validating, recursive, caching DNS server as well as an authoritative DNS server on a single machine then it may be useful to refer to the wiki page [NSD](/index.php/NSD "NSD") which gives an example of a configuration for such a system. Having one server for authoritative DNS queries and a separate DNS server for the validating, recursive, caching DNS functions gives increased security over a single DNS server providing all of these functions. Many users have used bind as a single DNS server, and some help on migration from bind to the combination of running nsd and bind is provided in the [NSD](/index.php/NSD "NSD") wiki page.
 
 ## WAN面临的DNS
 

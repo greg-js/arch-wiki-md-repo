@@ -1761,7 +1761,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 *   {{App|[Avidemux](https://en.wikipedia.org/wiki/Avidemux "wikipedia:Avidemux")|Editor de vídeo gratuito diseñado para cortar, filtrar y codificar tareas sencillas.|[http://fixounet.free.fr/avidemux/%7C](http://fixounet.free.fr/avidemux/%7C)[avidemux-qt](https://www.archlinux.org/packages/?name=avidemux-qt)
 *   **[Cinelerra (Community Version)](https://en.wikipedia.org/wiki/Cinelerra "wikipedia:Cinelerra")** — Editor de vídeo profesional y entorno de composición.
 
-	[http://cinelerra.org/](http://cinelerra.org/) || [cinelerra-cv](https://www.archlinux.org/packages/?name=cinelerra-cv)
+	[http://cinelerra.org/](http://cinelerra.org/) || [cinelerra-cv](https://aur.archlinux.org/packages/cinelerra-cv/)
 
 *   **[HandBrake](/index.php/DVD_Ripping#HandBrake "DVD Ripping")** — Simple pero potente transcodificador de vídeo ideal para ripear lotes mkv/x264\. Versión GTK+.
 
@@ -2313,7 +2313,7 @@ Véanse los artículos de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page
 
 Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "wikipedia:es:Main Page") sobre este asunto para obtener más información: [Comparison of word processors](https://en.wikipedia.org/wiki/Comparison_of_word_processors "wikipedia:Comparison of word processors").
 
-*   **[Abiword](/index.php/Abiword_(Espa%C3%B1ol) "Abiword (Español)")** — Procesador de texto completo.
+*   **[Abiword](/index.php/AbiWord_(Espa%C3%B1ol) "AbiWord (Español)")** — Procesador de texto completo.
 
 	[http://www.abisource.com/](http://www.abisource.com/) || [abiword](https://www.archlinux.org/packages/?name=abiword)
 

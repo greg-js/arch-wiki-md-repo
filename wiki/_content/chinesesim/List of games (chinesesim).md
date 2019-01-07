@@ -555,7 +555,7 @@ See also [Wikipedia:Comparison of massively multiplayer online role-playing game
 
 *   **[XMoto](https://en.wikipedia.org/wiki/X-Moto "wikipedia:X-Moto")** — Challenging 2D motocross platform game, where physics play an important role.
 
-	[http://xmoto.tuxfamily.org/](http://xmoto.tuxfamily.org/) || [xmoto](https://www.archlinux.org/packages/?name=xmoto)
+	[http://xmoto.tuxfamily.org/](http://xmoto.tuxfamily.org/) || [xmoto](https://aur.archlinux.org/packages/xmoto/)
 
 ## Rogue-like
 

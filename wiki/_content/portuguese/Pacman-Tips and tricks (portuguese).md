@@ -536,7 +536,7 @@ CleanMethod = KeepCurrent
 
 ### Recriar um pacote do sistema de arquivos
 
-Para recriar um pacote do sistema de arquivos, use [fakepkg](https://www.archlinux.org/packages/?name=fakepkg). Os arquivos do sistema são aceitos como estão, portanto, quaisquer modificações estarão presentes no pacote montado. Distribuir o pacote recriado é, portanto, desencorajado; veja [ABS](/index.php/ABS_(Portugu%C3%AAs) "ABS (Português)") e [Arch Linux Archive (Português)](/index.php/Arch_Linux_Archive_(Portugu%C3%AAs) "Arch Linux Archive (Português)") para obter alternativas.
+Para recriar um pacote do sistema de arquivos, use [fakepkg](https://aur.archlinux.org/packages/fakepkg/). Os arquivos do sistema são aceitos como estão, portanto, quaisquer modificações estarão presentes no pacote montado. Distribuir o pacote recriado é, portanto, desencorajado; veja [ABS](/index.php/ABS_(Portugu%C3%AAs) "ABS (Português)") e [Arch Linux Archive (Português)](/index.php/Arch_Linux_Archive_(Portugu%C3%AAs) "Arch Linux Archive (Português)") para obter alternativas.
 
 ### Lista de pacotes instalados
 

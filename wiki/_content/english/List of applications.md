@@ -255,6 +255,7 @@ This article is a general list of applications sorted by category, as a referenc
         *   [4.2.3 Presentations](#Presentations)
         *   [4.2.4 Spreadsheets](#Spreadsheets)
         *   [4.2.5 Database tools](#Database_tools)
+            *   [4.2.5.1 Simplified database software](#Simplified_database_software)
         *   [4.2.6 Formula editors](#Formula_editors)
     *   [4.3 Markup languages](#Markup_languages)
         *   [4.3.1 AsciiDoc](#AsciiDoc)
@@ -654,7 +655,7 @@ See also [Wikipedia:Blink (web engine)](https://en.wikipedia.org/wiki/Blink_(web
 
 *   **[Falkon](https://en.wikipedia.org/wiki/Falkon "wikipedia:Falkon")** — Web browser based on QtWebEngine, written in Qt framework.
 
-	[https://qupzilla.com/](https://qupzilla.com/) || [falkon](https://www.archlinux.org/packages/?name=falkon)
+	[https://falkon.org/](https://falkon.org/) || [falkon](https://www.archlinux.org/packages/?name=falkon)
 
 *   **[Konqueror](https://en.wikipedia.org/wiki/Konqueror "wikipedia:Konqueror")** — Web browser based on Qt toolkit and Qt WebEngine (or KHTML layout engine), part of [kdebase](https://www.archlinux.org/groups/x86_64/kdebase/).
 
@@ -4034,7 +4035,7 @@ See also [Wikipedia:Comparison of video editing software](https://en.wikipedia.o
 
 *   **[Cinelerra (Community Version)](https://en.wikipedia.org/wiki/Cinelerra "wikipedia:Cinelerra")** — Professional video editing and compositing environment.
 
-	[http://cinelerra-cv.org/](http://cinelerra-cv.org/) || [cinelerra-cv](https://www.archlinux.org/packages/?name=cinelerra-cv)
+	[http://cinelerra-cv.org/](http://cinelerra-cv.org/) || [cinelerra-cv](https://aur.archlinux.org/packages/cinelerra-cv/)
 
 *   **[DaVinci Resolve](https://en.wikipedia.org/wiki/Da_Vinci_Systems#da_Vinci_Resolve "wikipedia:Da Vinci Systems")** — Proprietary A/V post-production software suite.
 
@@ -6370,11 +6371,7 @@ See also [Wikipedia:Comparison of database tools](https://en.wikipedia.org/wiki/
 
 	[http://www.gnome-db.org/GdaBrowser](http://www.gnome-db.org/GdaBrowser) || [libgda](https://www.archlinux.org/packages/?name=libgda)
 
-*   **Glom** — Easy-to-use database designer and user interface.
-
-	[https://www.glom.org/](https://www.glom.org/) || [glom](https://www.archlinux.org/packages/?name=glom)
-
-*   **GSQL** — Integrated database development tool for GNOME.
+*   **GSQL** — Integrated database development tool for GNOME. Last release 2010.
 
 	[http://gsql.org/](http://gsql.org/) || [gsql](https://www.archlinux.org/packages/?name=gsql)
 
@@ -6402,13 +6399,19 @@ See also [Wikipedia:Comparison of database tools](https://en.wikipedia.org/wiki/
 
 	[http://www.squirrelsql.org/](http://www.squirrelsql.org/) || [squirrel-sql](https://aur.archlinux.org/packages/squirrel-sql/)
 
-*   **Symphytum** — Personal database software for everyone who desires to manage and organize data in an easy and intuitive way, without having to study complex database languages and software user interfaces.
-
-	[https://giowck.github.io/symphytum/](https://giowck.github.io/symphytum/) || [symphytum](https://aur.archlinux.org/packages/symphytum/)
-
 *   **[TOra](https://en.wikipedia.org/wiki/TOra "wikipedia:TOra")** — Database management GUI that supports accessing most of the common database platforms in use, including Oracle, MySQL, and PostgreSQL, as well as limited support for any target that can be accessed through Qt's ODBC support.
 
 	[https://github.com/tora-tool/tora/wiki](https://github.com/tora-tool/tora/wiki) || [tora](https://aur.archlinux.org/packages/tora/)
+
+##### Simplified database software
+
+*   **Glom** — Easy-to-use database designer and user interface.
+
+	[https://www.glom.org/](https://www.glom.org/) || [glom](https://www.archlinux.org/packages/?name=glom)
+
+*   **Symphytum** — Personal database software for everyone who desires to manage and organize data in an easy and intuitive way, without having to study complex database languages and software user interfaces.
+
+	[https://giowck.github.io/symphytum/](https://giowck.github.io/symphytum/) || [symphytum](https://aur.archlinux.org/packages/symphytum/)
 
 #### Formula editors
 

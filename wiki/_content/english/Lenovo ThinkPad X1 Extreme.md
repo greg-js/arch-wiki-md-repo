@@ -19,16 +19,17 @@ This page specifically concerns the specifics of running Arch Linux on this lapt
 
 ## Contents
 
-*   [1 Configuration](#Configuration)
+*   [1 Hardware compatibility](#Hardware_compatibility)
     *   [1.1 BIOS update](#BIOS_update)
     *   [1.2 Graphics](#Graphics)
-    *   [1.3 Dolby Atmos Effect on Linux](#Dolby_Atmos_Effect_on_Linux)
-    *   [1.4 TLP](#TLP)
-    *   [1.5 CPU Undervolting](#CPU_Undervolting)
-    *   [1.6 Other notes](#Other_notes)
-*   [2 Specifications](#Specifications)
+    *   [1.3 Other hardware](#Other_hardware)
+*   [2 Software tweaks](#Software_tweaks)
+    *   [2.1 Dolby Atmos Effect on Linux](#Dolby_Atmos_Effect_on_Linux)
+    *   [2.2 TLP](#TLP)
+    *   [2.3 CPU Undervolting](#CPU_Undervolting)
+*   [3 Specifications](#Specifications)
 
-## Configuration
+## Hardware compatibility
 
 ### BIOS update
 
@@ -50,33 +51,13 @@ EndSection
 
 ```
 
-Others have reported the display working out of the box with [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel), but this is not confirmed. modesetting Hybrid graphics works via [Bumblebee](/index.php/Bumblebee "Bumblebee"). The HDMI port is wired to the Nvidia chip, see [Bumblebee#Output_wired_to_the_NVIDIA_chip](/index.php/Bumblebee#Output_wired_to_the_NVIDIA_chip "Bumblebee") for details.
+Others have reported the display working out of the box with [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel), but this is not confirmed.
+
+Hybrid graphics works via [Bumblebee](/index.php/Bumblebee "Bumblebee"). The HDMI port is wired to the Nvidia chip, see [Bumblebee#Output wired to the NVIDIA chip](/index.php/Bumblebee#Output_wired_to_the_NVIDIA_chip "Bumblebee") for details.
 
 Nvidia-only mode has not been thoroughly tested, but seems to work fine with the default configuration produced by `nvidia-xconfig`, including HDMI output.
 
-### Dolby Atmos Effect on Linux
-
-In order to get the same speaker sound quality/effect as on Dolby Atmos with Windows install & configure [Pulseaudio](/index.php/Pulseaudio "Pulseaudio") and [pulseeffects](https://www.archlinux.org/packages/?name=pulseeffects).
-
-You can then download the Dolby Atmos preset from [JackHack96's Github](https://github.com/JackHack96/PulseEffects-Presets/tree/master/irs).
-
-Open the PulseEffects GUI and enable the preset in the "Convolver" tab.
-
-### TLP
-
-Currently the [TLP](/index.php/TLP "TLP") module [tlp_smapi](https://www.archlinux.org/packages/?name=tlp_smapi) doesn't seem to load / work correctly. However, the package [tpacpi-bat](https://www.archlinux.org/packages/?name=tpacpi-bat) works and can read the battery charging start/stop limits.
-
-To set battery start/stop thresholds with [tpacpi-bat](https://www.archlinux.org/packages/?name=tpacpi-bat) you need to edit /etc/default/tlp e.g.:
-
-"START_CHARGE_THRESH_BAT0=80" and "STOP_CHARGE_THRESH_BAT0=90"
-
-### CPU Undervolting
-
-Undervolting the CPU/Intel GPU works well with [intel-undervolt](https://aur.archlinux.org/packages/intel-undervolt/). The ArchWiki describes how to do it: [Undervolting_CPU#intel-undervolt](/index.php/Undervolting_CPU#intel-undervolt "Undervolting CPU").
-
-Generally -150mV seems to be a safe choice on the i7-8750H and i7-8850H CPUs.
-
-### Other notes
+### Other hardware
 
 The webcam works out of the box, though it appears connected at all times, no matter the slider state (the camera appears "disconnected" in Windows when the protective slider is closed) - however, when the slider is closed, a completely black image is reported by the camera.
 
@@ -85,6 +66,32 @@ The fingerprint scanner is currently not supported in libfprint - a reverse engi
 The Thunderbolt port has been reported to work on other distributions, but has not been tested on Arch as of December 2018.
 
 Everything else works correctly out of the box.
+
+## Software tweaks
+
+### Dolby Atmos Effect on Linux
+
+In order to get the same speaker sound quality/effect as on Dolby Atmos with Windows install & configure [PulseAudio](/index.php/PulseAudio "PulseAudio") and [pulseeffects](https://www.archlinux.org/packages/?name=pulseeffects).
+
+You can then download the Dolby Atmos preset from [JackHack96's Github](https://github.com/JackHack96/PulseEffects-Presets/tree/master/irs).
+
+Open the PulseEffects GUI and enable the preset in the "Convolver" tab.
+
+### TLP
+
+To set battery start/stop thresholds with [TLP](/index.php/TLP "TLP"), install [acpi_call](https://www.archlinux.org/packages/?name=acpi_call) and edit `/etc/default/tlp`:
+
+```
+START_CHARGE_THRESH_BAT0=80
+STOP_CHARGE_THRESH_BAT0=90
+
+```
+
+### CPU Undervolting
+
+Undervolting the CPU/Intel GPU works well with [intel-undervolt](/index.php/Undervolting_CPU#intel-undervolt "Undervolting CPU").
+
+Generally -150mV seems to be a safe choice on the i7-8750H and i7-8850H CPUs.
 
 ## Specifications
 

@@ -169,15 +169,15 @@ Follow general installation instruction above. Differences:
 ### UBoot
 
 ```
-# git clone  [https://github.com/apritzel/arm-trusted-firmware.git](https://github.com/apritzel/arm-trusted-firmware.git)
+# git clone [https://github.com/ARM-software/arm-trusted-firmware.git](https://github.com/ARM-software/arm-trusted-firmware.git)
 # git clone [git://git.denx.de/u-boot.git](git://git.denx.de/u-boot.git)
 # cd arm-trusted-firmware
-# make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- -j4 PLAT=sun50iw1p1 DEBUG=1 bl31
-# cp build/sun50iw1p1/debug/bl31.bin ../u-boot/
+# make CROSS_COMPILE=aarch64-linux-gnu- PLAT=sun50i_a64 DEBUG=1 -j4 bl31
+# cp build/sun50i_a64/debug/bl31.bin ../u-boot/
 # cd ../u-boot
+# git checkout v2018.11
 # make ARCH=arm CROSS_COMPILE=aarch64-linux-gnu- -j4 orangepi_pc2_defconfig
 # make ARCH=arm CROSS_COMPILE=aarch64-linux-gnu- -j4
-# cat spl/sunxi-spl.bin u-boot.itb > u-boot-sunxi-with-spl.bin
 # dd if=u-boot-sunxi-with-spl.bin of=/dev/sdX bs=8k seek=1
 
 ```

@@ -272,7 +272,7 @@ When releasing a new version of the packaged software, update the [pkgver](/inde
 
 Be sure to regenerate [.SRCINFO](/index.php/.SRCINFO ".SRCINFO") whenever `PKGBUILD` metadata changes, such as `pkgver()` updates; otherwise the AUR will not show updated version numbers.
 
-To upload or update a package, [add](/index.php/Git#Staging_changes "Git") *at least* `PKGBUILD` and `.SRCINFO`, then any additional new or modified helper files (such as [*.install*](/index.php/PKGBUILD#install "PKGBUILD") files or [local source files](/index.php/PKGBUILD#source "PKGBUILD") such as [patches](/index.php/Patching_packages "Patching packages")), [commit](/index.php/Git#Commiting_changes "Git") with a meaningful commit message, and finally [push](/index.php/Git#Push_to_a_repository "Git") the changes to the AUR.
+To upload or update a package, [add](/index.php/Git#Staging_changes "Git") *at least* `PKGBUILD` and `.SRCINFO`, then any additional new or modified helper files (such as [*.install*](/index.php/PKGBUILD#install "PKGBUILD") files or [local source files](/index.php/PKGBUILD#source "PKGBUILD") such as [patches](/index.php/Patching_packages "Patching packages")), [commit](/index.php/Git#Committing_changes "Git") with a meaningful commit message, and finally [push](/index.php/Git#Push_to_a_repository "Git") the changes to the AUR.
 
 For example:
 

@@ -11,6 +11,7 @@
 
 *   [1 Установка](#Установка)
 *   [2 Настройка](#Настройка)
+    *   [2.1 Storage driver](#Storage_driver)
 *   [3 Docker 0.9.0 — 1.2.x и LXC](#Docker_0.9.0_—_1.2.x_и_LXC)
 *   [4 Skype](#Skype)
 *   [5 Сборка образа i686](#Сборка_образа_i686)
@@ -23,38 +24,45 @@
 [Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") [docker](https://www.archlinux.org/packages/?name=docker), доступный в [официальных репозиториях](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)"). Для i686 установите [docker-git](https://aur.archlinux.org/packages/docker-git/) из [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)"). Затем [включите](/index.php/%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Включите") и [запустите](/index.php/%D0%97%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D0%B5 "Запустите") службу `docker.service` и проверьте ее работу:
 
 ```
-# docker info
+ # docker info
 
 ```
 
-Если необходимо запускать *docker* от обычного пользователя, добавьте его в группу `docker` и перелогиньтесь:
+Обратите внимание, что запуск службы Docker может завершиться сбоем, если у вас есть активное VPN-соединение из-за конфликтов IP между VPN и сетевым мостом и оверлейной сетью Docker. Если это так, попробуйте отключить VPN перед запуском службы Docker. Вы можете переподключить VPN сразу после этого. [Вы также можете попытаться разрешить конфликт сетей.](https://stackoverflow.com/questions/45692255/how-make-openvpn-work-with-docker)
+
+Если вы хотите иметь возможность запускать docker как обычный пользователь, добавьте его в `docker` [user group](/index.php/User_group "User group") и перелогиньтесь:
 
 ```
 # gpasswd -a *user* docker
 
 ```
 
+**Важно:** Любой, кто добавлен в группу `docker`, имеет права, эквивалентные правам суперпользователя. Больше информации [здесь](https://github.com/docker/docker/issues/9976) и [здесь](https://docs.docker.com/engine/security/security/).
+
+**Примечание:** По состоянию на [linux](https://www.archlinux.org/packages/?name=linux) 4.15.0-1 *vsyscalls*, которые требуются определенными программами в контейнерах (такими как *apt-get*), по умолчанию отключены в конфигурации ядра. Чтобы включить их снова, добавьте`vsyscall=emulate` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"). Больше информации в [FS#57336](https://bugs.archlinux.org/task/57336).
+
 ## Настройка
 
-Отредактируйте `/etc/systemd/system/docker.service`, где `http_proxy` — ваш прокси сервер, `-g <path>` — директория docker (по умолчанию `/var/cache/docker`).
+### Storage driver
 
+Docker storage driver (или graph driver) оказывает огромное влияние на производительность. Его задача - эффективно хранить слои изображений контейнеров, то есть, когда несколько изображений совместно используют слой, только один слой использует дисковое пространство. Совместимая опция `devicemapper` предлагает неоптимальную производительность, которая совершенно ужасна на вращающихся дисках. Кроме того, `devicemapper` не рекомендуется в производстве.
+
+Поскольку Arch linux поставляется с новым ядром Linux, нет смысла использовать опцию совместимости. Хороший, современный выбор - `overlay2`.
+
+Чтобы увидеть текущий драйвер хранилища, запустите `# docker info | head`, современная установка Docker уже должна использовать `overlay2` по умолчанию.
+
+Чтобы установить свой собственный драйвер хранилища, отредактируйте `/etc/docker/daemon.json` (создайте его, если он не существует):
+
+ `/etc/docker/daemon.json` 
 ```
-[Service]
-Environment="http_proxy=192.168.1.1:3128"
-ExecStart=
-ExecStart=/usr/bin/docker -d -g /var/yourDockerDir
-
+{
+  "storage-driver": "overlay2"
+}
 ```
 
-**Примечание:** Предполагается, что адрес используемого прокси-сервера `192.168.1.1`; не используйте `127.0.0.1`.
+После этого [restart](/index.php/Restart "Restart") докер.
 
-По умолчанию, демон docker принимает запросы на [доменном сокете Unix](https://en.wikipedia.org/wiki/ru:Unix_domain_socket "wikipedia:ru:Unix domain socket"). Если вы хотите, чтобы запросы принимались на сетевом порту, отредактируйте `/etc/systemd/system/docker.socket`, где `ListenStream` — сетевой адрес сокета:
-
-```
-[Socket]
-ListenStream=0.0.0.0:2375
-
-```
+Дополнительную информацию о вариантах можно найти в [руководстве пользователя](https://docs.docker.com/engine/userguide/storagedriver/selectadriver/). Для получения дополнительной информации о параметрах в `daemon.json` см. [dockerd документацию](https://docs.docker.com/engine/reference/commandline/dockerd/#daemon-configuration-file).
 
 ## Docker 0.9.0 — 1.2.x и LXC
 

@@ -349,7 +349,6 @@ LoadModule proxy_fcgi_module modules/mod_proxy_fcgi.so
 
 Create `/etc/httpd/conf/extra/php-fpm.conf` with the following content:
 
- `/etc/httpd/conf/extra/php-fpm.conf` 
 ```
 DirectoryIndex index.php index.html
 <FilesMatch \.php$>

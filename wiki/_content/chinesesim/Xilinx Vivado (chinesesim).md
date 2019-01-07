@@ -27,8 +27,6 @@ Archlinux 并不受 Vivado 的正式支持，但是从 [Xilinx ISE WebPACK](/ind
 
 ### 依赖
 
-**注意:** 对于 2018.3 及其之后的版本，不再需要安装 ncurses5 库
-
 安装程序需要 ncurses5 库，并且不能使用官方仓库里的 ncurses6。您可以通过安装 [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") 中的 [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) 来解决这个问题。您可能需要安装 [libpng12](https://www.archlinux.org/packages/?name=libpng12) 与 [lib32-libpng12](https://www.archlinux.org/packages/?name=lib32-libpng12) 以便使用 Xilinx Document Navigator。
 
 ## 安装

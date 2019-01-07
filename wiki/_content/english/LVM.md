@@ -75,15 +75,15 @@ Basic building blocks of LVM:
 
 	Physical volume (PV)
 
-	Unix block device nodes, usable for storage by LVM. Examples: a hard disk, a MBR or GPT partition, loopback file, a device mapper device (e.g., dm-crypt). Has a header when used with LVM.
+	Unix block device node, usable for storage by LVM. Examples: a hard disk, an MBR or GPT [partition](/index.php/Partition "Partition"), a loopback file, a device mapper device (e.g. [dm-crypt](/index.php/Dm-crypt "Dm-crypt")). It hosts an LVM header.
 
 	Volume group (VG)
 
-	Group of PVs. PEs are allocated from a VG for a LV.
+	Group of PVs that serves as a container for LVs. PEs are allocated from a VG for a LV.
 
 	Logical volume (LV)
 
-	A "virtual/logical partition" that resides in a VG and is composed of PEs. LVs are UNIX block devices, but reside on top of a layer of LVM abstraction.
+	"Virtual/logical partition" that resides in a VG and is composed of PEs. LVs are Unix block devices analogous to physical partitions, e.g. they can be directly formatted with a [file system](/index.php/File_system "File system").
 
 	Physical extent (PE)
 
@@ -142,8 +142,6 @@ LVM gives you more flexibility than just using normal hard drive partitions:
 Make sure the [lvm2](https://www.archlinux.org/packages/?name=lvm2) package is [installed](/index.php/Install "Install").
 
 ## Installing Arch Linux on LVM
-
-For a system combining LVM and encryption, see the LVM-related sections in [dm-crypt/Encrypting an entire system](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system").
 
 You should create your LVM Volumes between the [partitioning](/index.php/Partitioning "Partitioning") and [formatting](/index.php/File_systems#Create_a_file_system "File systems") steps of the [installation procedure](/index.php/Installation_guide "Installation guide"). Instead of directly formatting a partition to be your root file system, the file system will be created inside a logical volume (LV).
 

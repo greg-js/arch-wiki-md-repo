@@ -803,7 +803,7 @@ See [Optical disc drive#DVD ripping](/index.php/Optical_disc_drive#DVD_ripping "
 
 *   **[Cinelerra (Community Version)](https://en.wikipedia.org/wiki/Cinelerra "wikipedia:Cinelerra")** — 专业级别，能够编辑或合成视频的环境。
 
-	[http://cinelerra-cv.org/](http://cinelerra-cv.org/) || [cinelerra-cv](https://www.archlinux.org/packages/?name=cinelerra-cv)
+	[http://cinelerra-cv.org/](http://cinelerra-cv.org/) || [cinelerra-cv](https://aur.archlinux.org/packages/cinelerra-cv/)
 
 *   **[HandBrake](/index.php/Optical_disc_drive#DVD_ripping "Optical disc drive")** — Simple yet powerful video transcoder ideal for batch mkv/x264 ripping. GTK+ version.
 

@@ -6,7 +6,7 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Scheme_(programming_langu
 
 *   **Bigloo** — Fast scheme compiler
 
-	[http://www-sop.inria.fr/mimosa/fp/Bigloo/](http://www-sop.inria.fr/mimosa/fp/Bigloo/) || [bigloo](https://www.archlinux.org/packages/?name=bigloo)
+	[https://www-sop.inria.fr/mimosa/fp/Bigloo/](https://www-sop.inria.fr/mimosa/fp/Bigloo/) || [bigloo](https://www.archlinux.org/packages/?name=bigloo)
 
 *   **CHICKEN** — Feature rich R5RS Scheme compiler and interpreter
 
@@ -30,4 +30,4 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Scheme_(programming_langu
 
 *   **Racket** — A full-spectrum language with DrRacket IDE. Formerly known as PLT Scheme.
 
-	[http://racket-lang.org/](http://racket-lang.org/) || [racket](https://www.archlinux.org/packages/?name=racket)
+	[https://racket-lang.org/](https://racket-lang.org/) || [racket](https://www.archlinux.org/packages/?name=racket)

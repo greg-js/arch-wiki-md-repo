@@ -137,7 +137,7 @@
 | <small>5.1.3.</small> [Console applications](/index.php/Category:Console_applications "Category:Console applications") <small>(19) (also in [Commands](/index.php/Category:Commands "Category:Commands"))</small> |
 | <small>5.1.4.</small> [Data compression and archiving](/index.php/Category:Data_compression_and_archiving "Category:Data compression and archiving") <small>(7)</small> |
 | <small>5.1.5.</small> [Database management systems](/index.php/Category:Database_management_systems "Category:Database management systems") <small>(14)</small> |
-| <small>5.1.5.1.</small> [Relational DBMSs](/index.php/Category:Relational_DBMSs "Category:Relational DBMSs") <small>(3)</small> |
+| <small>5.1.5.1.</small> [Relational DBMSs](/index.php/Category:Relational_DBMSs "Category:Relational DBMSs") <small>(4)</small> |
 | <small>5.1.6.</small> [Dictionaries](/index.php/Category:Dictionaries "Category:Dictionaries") <small>(3)</small> |
 | <small>5.1.7.</small> [Emulation](/index.php/Category:Emulation "Category:Emulation") <small>(14)</small> |
 | <small>5.1.7.1.</small> [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators") <small>(17) (also in [Applications](/index.php/Category:Applications "Category:Applications"), [Command-line](/index.php/Category:Command-line "Category:Command-line"))</small> |
@@ -220,7 +220,7 @@
 | <small>5.6.</small> [Software companies](/index.php/Category:Software_companies "Category:Software companies") <small>(0)</small> |
 | <small>5.6.1.</small> [Canonical](/index.php/Category:Canonical "Category:Canonical") <small>(3)</small> |
 | <small>5.6.2.</small> [Google](/index.php/Category:Google "Category:Google") <small>(5)</small> |
-| <small>5.6.3.</small> [Oracle](/index.php/Category:Oracle "Category:Oracle") <small>(6)</small> |
+| <small>5.6.3.</small> [Oracle](/index.php/Category:Oracle "Category:Oracle") <small>(7)</small> |
 | <small>5.6.4.</small> [Red Hat](/index.php/Category:Red_Hat "Category:Red Hat") <small>(4)</small> |
 | <small>5.7.</small> [Software comparisons](/index.php/Category:Software_comparisons "Category:Software comparisons") <small>(5)</small> |
 | <small>5.8.</small> [Software projects](/index.php/Category:Software_projects "Category:Software projects") <small>(0)</small> |

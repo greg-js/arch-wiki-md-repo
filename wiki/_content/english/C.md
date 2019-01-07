@@ -71,6 +71,7 @@ See also [Wikipedia:List of compilers#C compilers](https://en.wikipedia.org/wiki
 
 ## Libraries
 
+*   [FFmpeg](/index.php/FFmpeg "FFmpeg") - includes libav, the audio and video library (not to be confused with the FFmpeg fork of the same name).
 *   **[GLib](https://en.wikipedia.org/wiki/GLib "wikipedia:GLib")** — Low-level system library by [GNOME](/index.php/GNOME "GNOME"), includes [GObject](https://en.wikipedia.org/wiki/GObject "wikipedia:GObject") and [GIO](https://en.wikipedia.org/wiki/GIO "wikipedia:GIO").
 
 	[https://wiki.gnome.org/Projects/GLib](https://wiki.gnome.org/Projects/GLib) || [glib2](https://www.archlinux.org/packages/?name=glib2)
@@ -84,6 +85,7 @@ See also:
 *   [Libcanberra#C](/index.php/Libcanberra#C "Libcanberra")
 *   [Archiving and compression#Compression libraries](/index.php/Archiving_and_compression#Compression_libraries "Archiving and compression")
 *   [Wikipedia:Category:C libraries](https://en.wikipedia.org/wiki/Category:C_libraries "wikipedia:Category:C libraries")
+*   [A list of open source C libraries](https://en.cppreference.com/w/c/links/libs)
 
 ## See also
 

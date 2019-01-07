@@ -408,7 +408,7 @@ At this point the YubiKey is ready for authenticating to a SSH server. For this 
 
 #### Client configuration
 
-The standard API used to communicate with cryptographic tokens is defined by [PKCS#11](https://en.wikipedia.org/wiki/PKCS_11). Install the [opensc](https://www.archlinux.org/packages/?name=opensc) package which provides this API in the form of the shared library `/usr/lib/opensc-pkcs11.so`. The ssh client should be configured to use this library with the directive PKCS11Provider in `~/.ssh/config`:
+The standard API used to communicate with cryptographic tokens is defined by [PKCS#11](https://en.wikipedia.org/wiki/PKCS_11 "wikipedia:PKCS 11"). Install the [opensc](https://www.archlinux.org/packages/?name=opensc) package which provides this API in the form of the shared library `/usr/lib/opensc-pkcs11.so`. The ssh client should be configured to use this library with the directive PKCS11Provider in `~/.ssh/config`:
 
  `~/.ssh/config`  `PKCS11Provider /usr/lib/opensc-pkcs11.so` 
 

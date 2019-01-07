@@ -16,6 +16,7 @@ Related articles
             *   [1.2.1.2 GDM](#GDM)
             *   [1.2.1.3 SLIM](#SLIM)
             *   [1.2.1.4 LXDM](#LXDM)
+            *   [1.2.1.5 SDDM](#SDDM)
     *   [1.3 Setting a password](#Setting_a_password)
     *   [1.4 Running constantly](#Running_constantly)
     *   [1.5 Accessing](#Accessing)
@@ -104,6 +105,17 @@ or see [Troubleshooting](#Troubleshooting) section below
 # x11vnc -display :0 -auth /var/run/lxdm/lxdm-\:0.auth
 
 ```
+
+##### SDDM
+
+SDDM uses an unpredictable UUID for the auth file [[2]](https://github.com/sddm/sddm/issues/622) therefore one needs to:
+
+```
+# x11vnc -display :0 -auth $(find /var/run/sddm/ -type f)
+
+```
+
+Embedding this into a systemd .service file will require a trick to evaluate the find command as shown here [[3]](https://gist.github.com/nickjacob/9909574).
 
 ### Setting a password
 
