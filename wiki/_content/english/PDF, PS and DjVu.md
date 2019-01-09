@@ -270,7 +270,7 @@ See also [List of applications/Documents#Stylus note-taking](/index.php/List_of_
 With [GraphicsMagick](/index.php/GraphicsMagick "GraphicsMagick"):
 
 ```
-$ gm convert one.jpg two.jpg three.jpg out.pdf
+$ gm convert 1.jpg 2.jpg 3.jpg out.pdf
 
 ```
 
@@ -279,21 +279,28 @@ $ gm convert one.jpg two.jpg three.jpg out.pdf
 With PDFtk:
 
 ```
-$ pdftk one.pdf two.pdf three.pdf cat output out.pdf
+$ pdftk 1.pdf 2.pdf 3.pdf cat output out.pdf
 
 ```
 
 With Poppler:
 
 ```
-$ pdfunite one.pdf two.pdf three.pdf out.pdf
+$ pdfunite 1.pdf 2.pdf 3.pdf out.pdf
 
 ```
 
 With QPDF:
 
 ```
-$ qpdf --empty --pages one.pdf two.pdf three.pdf -- out.pdf
+$ qpdf --empty --pages 1.pdf 2.pdf 3.pdf -- out.pdf
+
+```
+
+With Ghostscript:
+
+```
+$ gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=out.pdf -dBATCH 1.pdf 2.pdf 3.pdf
 
 ```
 
@@ -439,14 +446,14 @@ $ gm convert -density *dpi* *infile*.pdf[*page*] *outfile*.jpg
 With Poppler to convert all pages:
 
 ```
-$ pdftoppm -jpeg -r *dpi* in.pdf *infile*.pdf *outfileroot*
+$ pdftoppm -jpeg -r *dpi* *infile*.pdf *outfileroot*
 
 ```
 
 With Poppler to convert a specific page:
 
 ```
-$ pdftoppm -jpeg -r *dpi* in.pdf -f *page* -singlefile *infile*.pdf *outfileroot*
+$ pdftoppm -jpeg -r *dpi* -f *page* -singlefile *infile*.pdf *outfileroot*
 
 ```
 
@@ -458,6 +465,8 @@ With mupdf-tools to split every page vertically into two pages:
 $ mutool poster -y 2 in.pdf out.pdf
 
 ```
+
+Can be used to undo simple [imposition](#Imposing_a_PDF).
 
 ## DjVu tools
 

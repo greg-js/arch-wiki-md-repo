@@ -16,10 +16,11 @@ This article covers the [radeon](https://wiki.freedesktop.org/xorg/radeon/) open
 *   [4 Xorg configuration](#Xorg_configuration)
 *   [5 Performance tuning](#Performance_tuning)
     *   [5.1 Enabling video acceleration](#Enabling_video_acceleration)
-    *   [5.2 Driver options](#Driver_options)
-    *   [5.3 Kernel parameters](#Kernel_parameters)
-        *   [5.3.1 Deactivating PCIe 2.0](#Deactivating_PCIe_2.0)
-    *   [5.4 Gallium Heads-Up Display](#Gallium_Heads-Up_Display)
+    *   [5.2 Graphical tools](#Graphical_tools)
+    *   [5.3 Driver options](#Driver_options)
+    *   [5.4 Kernel parameters](#Kernel_parameters)
+        *   [5.4.1 Deactivating PCIe 2.0](#Deactivating_PCIe_2.0)
+    *   [5.5 Gallium Heads-Up Display](#Gallium_Heads-Up_Display)
 *   [6 Hybrid graphics/AMD Dynamic Switchable Graphics](#Hybrid_graphics/AMD_Dynamic_Switchable_Graphics)
 *   [7 Powersaving](#Powersaving)
     *   [7.1 Dynamic power management](#Dynamic_power_management)
@@ -28,7 +29,7 @@ This article covers the [radeon](https://wiki.freedesktop.org/xorg/radeon/) open
         *   [7.2.1 Dynamic frequency switching](#Dynamic_frequency_switching)
         *   [7.2.2 Profile-based frequency switching](#Profile-based_frequency_switching)
     *   [7.3 Persistent configuration](#Persistent_configuration)
-    *   [7.4 Graphical tools](#Graphical_tools)
+    *   [7.4 Graphical tools](#Graphical_tools_2)
     *   [7.5 Other notes](#Other_notes)
 *   [8 Fan Speed](#Fan_Speed)
 *   [9 TV out](#TV_out)
@@ -114,6 +115,18 @@ Using this section, you can enable features and tweak the driver settings.
 ### Enabling video acceleration
 
 See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
+
+### Graphical tools
+
+*   **WattmanGTK** — A GTK3 user-interface written in Python 3, which allows you to view, monitor Radeon performance, fan speeds and power states and the ability to overclock the graphics processor. It uses the AMDGPU kernel driver.
+
+	[https://github.com/BoukeHaarsma23/WattmanGTK](https://github.com/BoukeHaarsma23/WattmanGTK) || [wattman-gtk-git](https://aur.archlinux.org/packages/wattman-gtk-git/)
+
+**Note:** It is required to set a kernel parameter (`amdgpu.ppfeaturemask`) in order to enable the AMD Overdrive technology within GNU/Linux. Which is necessary to use WattmanGTK.
+
+*   **radeon-profile** — Qt application for displaying info about a Radeon card.
+
+	[https://github.com/marazmista/radeon-profile](https://github.com/marazmista/radeon-profile) || [radeon-profile-git](https://aur.archlinux.org/packages/radeon-profile-git/)
 
 ### Driver options
 

@@ -93,7 +93,7 @@ This section lists daemons that track your clipboard, to provide a clipboard his
 
 	[https://github.com/mrichar1/clipster](https://github.com/mrichar1/clipster) || [clipster](https://aur.archlinux.org/packages/clipster/), [clipster-git](https://aur.archlinux.org/packages/clipster-git/)
 
-*   **CopyQ** — Clever clipboard manager with searchable and editable history, custom actions on items and command line support.
+*   **CopyQ** — Clever Qt clipboard manager with searchable and editable history, custom actions on items and command line support.
 
 	[https://github.com/hluk/CopyQ](https://github.com/hluk/CopyQ) || [copyq](https://www.archlinux.org/packages/?name=copyq)
 

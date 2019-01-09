@@ -662,7 +662,7 @@
 
 *   **[Filelight](https://en.wikipedia.org/wiki/Filelight "wikipedia:Filelight")** — Анализатор использования дискового пространства, который создает интерактивную карту концентрических, сегментированных колец, помогающих визуализировать информацию
 
-	[http://methylblue.com/filelight/](http://methylblue.com/filelight/) || [kdeutils-filelight](https://www.archlinux.org/packages/?name=kdeutils-filelight)
+	[http://methylblue.com/filelight/](http://methylblue.com/filelight/) || [filelight](https://www.archlinux.org/packages/?name=filelight)
 
 *   **GdMap** — Анализатор использования дискового пространства, который рисует карту из прямоугольников, размер каждого из которых соответствует размерам файлов или каталогов
 

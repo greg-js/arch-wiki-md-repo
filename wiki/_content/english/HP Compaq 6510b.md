@@ -74,7 +74,7 @@ See [fprint](/index.php/Fprint "Fprint").
 
 ### Tactile strip
 
-This laptop sports a fancy tactile strip, providing some extra buttons as well as volume control (toggling mute and changing volume). I have not tried yet to get [hal working for my multimedia keys](http://people.freedesktop.org/~hughsient/quirk/quirk-keymap-index.html) yet, the present solution works fine. Enter [keytouch](/index.php/Keytouch "Keytouch"): The HP NC6320 settings (pre-supplied by keytouch) seem to work just fine for muting & adjusting the volume. The 'Help' key (left to the radio switch) fires up your DE's help center if everything goes well, the button to the right is recognised too (you have to configure it though ;-)). As a fancy plus, you'll get a nice OSD when you mute/unmute or change volume.
+This laptop sports a fancy tactile strip, providing some extra buttons as well as volume control (toggling mute and changing volume). I have not tried yet to get [hal working for my multimedia keys](http://people.freedesktop.org/~hughsient/quirk/quirk-keymap-index.html) yet, the present solution works fine. As a fancy plus, you'll get a nice OSD when you mute/unmute or change volume.
 
 ### lspci output
 

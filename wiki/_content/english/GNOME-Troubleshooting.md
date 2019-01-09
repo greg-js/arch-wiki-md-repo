@@ -112,7 +112,7 @@ $ coredumpctl gdb 27368
 #9  0x0000000000401ff7 in main ()
 ```
 
-You can then report the bug on the [gnome bugzilla](https://bugzilla.gnome.org/buglist.cgi?bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&bug_status=NEEDINFO&list_id=233614&product=gnome-shell&query_format=advanced).
+You can then report the bug on the [project page](https://gitlab.gnome.org/GNOME/gnome-shell/issues) at GNOME GitLab.
 
 ## Incorrect application defaults
 

@@ -17,7 +17,6 @@
 
 *   Using Multimedia Keys in Linux
 *   Hotkeys
-*   Extra Keyboard Keys - keyTouch
 
 ## Установка необходимых инструментов
 

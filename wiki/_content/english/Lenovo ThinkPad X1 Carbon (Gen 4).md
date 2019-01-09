@@ -16,7 +16,7 @@ Related articles
     *   [1.3 Fingerprint Reader](#Fingerprint_Reader)
 *   [2 Configuration](#Configuration)
     *   [2.1 Display](#Display)
-    *   [2.2 OneLink+](#OneLink.2B)
+    *   [2.2 OneLink+](#OneLink+)
         *   [2.2.1 Dock](#Dock)
     *   [2.3 WiFi](#WiFi)
         *   [2.3.1 Bluetooth](#Bluetooth)
@@ -45,7 +45,7 @@ Updating the UEFI works like described here: [link ThinkWiki BIOS Upgrade/Using 
 | **Device** | **Working** |
 | [Intel graphics](/index.php/Intel_graphics "Intel graphics") | Yes |
 | [Wireless network configuration#iwlwifi](/index.php/Wireless_network_configuration#iwlwifi "Wireless network configuration") | Yes |
-| Mobile broadband |  ?? |
+| Mobile broadband | ?? |
 | [ALSA](/index.php/ALSA "ALSA") | Yes |
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
 | [TrackPoint](/index.php/TrackPoint "TrackPoint") | Yes |
@@ -59,7 +59,7 @@ Updating the UEFI works like described here: [link ThinkWiki BIOS Upgrade/Using 
 
 An open source Linux driver has been developed by reverse engineering the Windows driver. [[1]](https://github.com/nmikhailov/Validity90)
 
-The fingerprint reader included with this model `138a:0090 Validity Sensors, Inc` currently lacks an official linux driver. [libfprint bugreport](https://bugs.freedesktop.org/show_bug.cgi?id=94536). Synaptics (which has acquired 'Validity Sensors') has unofficially said that they cannot disclose the protocol, but may possibly release a binary driver.
+The fingerprint reader included with this model `138a:0090 Validity Sensors, Inc` currently lacks an official linux driver. [libfprint bugreport](https://gitlab.freedesktop.org/libfprint/libfprint/issues/54). Synaptics (which has acquired 'Validity Sensors') has unofficially said that they cannot disclose the protocol, but may possibly release a binary driver.
 
 ## Configuration
 

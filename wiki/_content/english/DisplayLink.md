@@ -7,7 +7,6 @@ Also be warned that even over USB 3.0, a DisplayLink monitor may exhibit noticea
 *   [1 Installation](#Installation)
     *   [1.1 USB 2.0 DL-1x5, DL-1x0 Devices](#USB_2.0_DL-1x5,_DL-1x0_Devices)
     *   [1.2 USB 3.0 DL-6xxx, DL-5xxx, DL-41xx, DL-3xxx Devices](#USB_3.0_DL-6xxx,_DL-5xxx,_DL-41xx,_DL-3xxx_Devices)
-        *   [1.2.1 Workaround for xorg version newer than 1.19.6](#Workaround_for_xorg_version_newer_than_1.19.6)
     *   [1.3 Setting up X Displays](#Setting_up_X_Displays)
 *   [2 Configuration](#Configuration)
     *   [2.1 Load the framebuffer device](#Load_the_framebuffer_device)
@@ -39,14 +38,9 @@ This should work without any configuration changes on [linux](https://www.archli
 
 ### USB 3.0 DL-6xxx, DL-5xxx, DL-41xx, DL-3xxx Devices
 
-**Warning:** The current version of [evdi](https://aur.archlinux.org/packages/evdi/), which [displaylink](https://aur.archlinux.org/packages/displaylink/) depends on, doesn't work on the latest version of [xorg-server](https://www.archlinux.org/packages/?name=xorg-server). You should [downgrade](/index.php/Downgrade "Downgrade") your [xorg-server](https://www.archlinux.org/packages/?name=xorg-server) and some relevant packages including but not limited to [xf86-video-fbdev](https://www.archlinux.org/packages/?name=xf86-video-fbdev) and [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) to version `1.19.6` in order to make [displaylink](https://aur.archlinux.org/packages/displaylink/) work. Please check the following [github issue](https://github.com/DisplayLink/evdi/issues/133) for the latest update of this issue.
-
 1.  Install the [displaylink](https://aur.archlinux.org/packages/displaylink/) driver. It allows configuring DisplayLink monitors using [Xrandr](/index.php/Xrandr "Xrandr") in the same manner as the `udl` driver.
 2.  Enable `displaylink.service`.
-
-#### Workaround for xorg version newer than 1.19.6
-
-Use the "modesetting" driver with AccelMethod "none" and MatchDriver "evdi".
+3.  Use the "modesetting" driver with AccelMethod "none" and MatchDriver "evdi".
 
 Create a file with the following content:
 

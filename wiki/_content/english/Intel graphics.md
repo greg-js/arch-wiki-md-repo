@@ -77,7 +77,7 @@ Refer to [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Ea
 
 ### Enable GuC / HuC firmware loading
 
-**Warning:** Setting `enable_gvt=1` when GuC/HuC is enabled is not supported as of linux 4.18.8\. The i915 module would fail to initialize as shown in system journal. `$ journalctl` 
+**Warning:** Using [GVT-g graphics virtualization](/index.php/Intel_GVT-g "Intel GVT-g") by setting `enable_gvt=1` is not supported as of linux 4.18.8 when GuC/HuC is also enabled. The i915 module would fail to initialize as shown in system journal. `$ journalctl` 
 ```
 ... kernel: [drm:intel_gvt_init [i915]] *ERROR* i915 GVT-g loading failed due to Graphics virtualization is not yet supported with GuC submission
 ... kernel: i915 0000:00:02.0: [drm:i915_driver_load [i915]] Device initialization failed (-5)
@@ -88,7 +88,9 @@ Refer to [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Ea
 
 For Skylake and newer processors, some video features (e.g. CBR rate control on SKL low-power encoding mode) may require the use of an updated GPU firmware, which is currently (as of 4.16) not enabled by default. Enabling GuC/HuC firmware loading can cause issues on some systems; disable it if you experience freezing (for example, after resuming from hibernation).
 
-It is necessary to add `i915.enable_guc=2` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to enable both GuC and HuC firmware loading. Alternatively, if the [initramfs](/index.php/Initramfs "Initramfs") already includes the `i915` module (see [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting")), you can set these options through a file in `/etc/modprobe.d/`, e.g.:
+**Note:** See [Gentoo:Intel#Feature support](https://wiki.gentoo.org/wiki/Intel#Feature_support "gentoo:Intel") for an overview of Intel processor generations.
+
+For those processors it is necessary to add `i915.enable_guc=2` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to enable both GuC and HuC firmware loading. Alternatively, if the [initramfs](/index.php/Initramfs "Initramfs") already includes the `i915` module (see [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting")), you can set these options through a file in `/etc/modprobe.d/`, e.g.:
 
  `/etc/modprobe.d/i915.conf`  `options i915 enable_guc=2` 
 
@@ -162,12 +164,7 @@ Making use of Framebuffer compression (FBC) can reduce power consumption while r
 
 To enable FBC, use `i915.enable_fbc=1` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") or set in `/etc/modprobe.d/i915.conf`:
 
- `/etc/modprobe.d/i915.conf` 
-```
-options i915 enable_fbc=1
-
-```
-
+ `/etc/modprobe.d/i915.conf`  `options i915 enable_fbc=1` 
 **Note:** Framebuffer compression may be unreliable or unavailable on Intel GPU generations before Sandy Bridge (generation 6). This results in messages logged to the system journal similar to this one:
 ```
 kernel: drm: not enough stolen space for compressed buffer, disabling.
@@ -190,23 +187,14 @@ The goal of Intel Fastboot is to preserve the frame-buffer as setup by the BIOS 
 
 To enable fastboot, set `i915.fastboot=1` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") or set in `/etc/modprobe.d/i915.conf`:
 
- `/etc/modprobe.d/i915.conf` 
-```
-options i915 fastboot=1
-
-```
-
+ `/etc/modprobe.d/i915.conf`  `options i915 fastboot=1` 
 **Warning:** This parameter is not enabled by default and may cause issues on some systems [[4]](https://www.phoronix.com/scan.php?page=news_item&px=i915-Fastboot-Default-2017).
 
 ### Intel GVT-g Graphics Virtualization Support
 
 To enable GVT support, mainly used for allowing [Xen](/index.php/Xen "Xen")/[KVM](/index.php/KVM "KVM") guests to access the Intel GPU of the host, the `enable_gvt=1` has to be set:
 
- `/etc/modprobe.d/i915.conf` 
-```
-options i915 enable_gvt=1
-
-```
+ `/etc/modprobe.d/i915.conf`  `options i915 enable_gvt=1` 
 
 ## Tips and tricks
 
@@ -284,6 +272,7 @@ The intel-driver uses [Triple Buffering](http://www.intel.com/support/graphics/s
 		<option name="vblank_mode" value="0"/>
 	</application>
 </device>
+
 ```
 
 **Warning:** Do not use [driconf](https://www.archlinux.org/packages/?name=driconf) to create this file. It is buggy and will set the wrong driver.

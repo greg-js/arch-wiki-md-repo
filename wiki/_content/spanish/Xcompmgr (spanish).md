@@ -1,8 +1,8 @@
 ## Contents
 
-*   [1 Introducción](#Introducci.C3.B3n)
-    *   [1.1 Instalación](#Instalaci.C3.B3n)
-*   [2 Configuración](#Configuraci.C3.B3n)
+*   [1 Introducción](#Introducción)
+    *   [1.1 Instalación](#Instalación)
+*   [2 Configuración](#Configuración)
     *   [2.1 Transparencia de Ventanas](#Transparencia_de_Ventanas)
 *   [3 Problemas](#Problemas)
     *   [3.1 Las ventanas de Fluxbox no se levantan](#Las_ventanas_de_Fluxbox_no_se_levantan)
@@ -73,7 +73,7 @@ Una vez ejecutado, el cursor del mouse se transformará en una cruz. Simplemente
 
 ## Las ventanas de Fluxbox no se levantan
 
-Esto es arreglado en fluxbox CVS después de 0.9.10\. Mira [[1]](http://freedesktop.org/bugzilla/show_bug.cgi?id=1264) para mas información.
+Esto es arreglado en fluxbox CVS después de 0.9.10\. Mira [[1]](https://bugs.freedesktop.org/show_bug.cgi?id=1264) para mas información.
 
 ## Mozilla Firefox se tranca al entrar a un sitio con Flash
 

@@ -1,4 +1,6 @@
-[nvidia-xrun](https://github.com/Witko/nvidia-xrun) is a utility to run separate X with discrete nvidia graphics. This solution offers a bit more complicated procedure but offers a full GPU utilization(in terms of linux drivers).
+[Nvidia-xrun](https://github.com/Witko/nvidia-xrun) is a utility to allow Nvidia optimus enabled laptops run [X server](/index.php/Xorg "Xorg") with discrete nvidia graphics on demand. This solution offers full GPU utilization, compatibility and better performance than [Bumblebee](/index.php/Bumblebee "Bumblebee").
+
+X server can only be used with integrated graphics or discrete Nvidia graphics, but not both, so user might want to switch to separate [virtual console](/index.php/Linux_console "Linux console") and start another X server using different graphics from what was used for the first X server.
 
 ## Contents
 
@@ -69,7 +71,7 @@ openbox-session
 With it you do not need to specify the app and can simply execute:
 
 ```
-nvidia-xrun
+$ nvidia-xrun
 
 ```
 
@@ -110,15 +112,15 @@ For more about bbswitch see [Bumblebee-Project/bbswitch](https://github.com/Bumb
 
 ## Usage
 
-1.  switch to free tty
-2.  login
-3.  run `nvidia-xrun [app]`
+Once system boots, from virtual console login to your user and run `nvidia-xrun <application>`.
+
+If above does not work, [switch](/index.php/Keyboard_shortcuts#Xorg_and_Wayland "Keyboard shortcuts") to unused virtual console and try again.
 
 ## Troubleshooting
 
 ### General issues
 
-Running apps (e.g. steam) directly with `nvidia-xrun` does not work well, so use window manager like [openbox](https://www.archlinux.org/packages/?name=openbox) and run apps from it.
+Running apps directly with `nvidia-xrun <application>` does not work well. Use window manager like [openbox](https://www.archlinux.org/packages/?name=openbox) and run apps from it.
 
 ### Issues with Nvidia after removing Bumblebee
 
@@ -132,5 +134,6 @@ blacklist nvidia
 blacklist nvidia-drm
 blacklist nvidia-modeset
 blacklist nvidia-uv
+blacklist nouveau
 
 ```

@@ -16,11 +16,11 @@ For the reverse operation (generating codes compatible with Google Authenticator
 
 ## Installation
 
-Install [libpam-google-authenticator](https://www.archlinux.org/packages/?name=libpam-google-authenticator) package. Development version is also available with [google-authenticator-libpam-git](https://aur.archlinux.org/packages/google-authenticator-libpam-git/).
+[Install](/index.php/Install "Install") [libpam-google-authenticator](https://www.archlinux.org/packages/?name=libpam-google-authenticator) package. Development version is also available with [google-authenticator-libpam-git](https://aur.archlinux.org/packages/google-authenticator-libpam-git/).
 
 ## Setting up the PAM
 
-**Warning:** If you do all configuration via SSH do not close the session before you tested that everything is working, else you may lock yourself out. Furthermore consider generating the key file before activating the PAM.
+**Warning:** If you do all configuration via [SSH](/index.php/SSH "SSH") do not close the session before you tested that everything is working, else you may lock yourself out. Furthermore consider generating the key file before activating the PAM.
 
 Usually one demands two-pass authentication only for remote login. The corresponding PAM configuration file is `/etc/pam.d/sshd`. In case you want to use Google Authenticator globally you would need to change `/etc/pam.d/system-auth`, however, in this case proceed with extreme caution to not lock yourself out. In this guide we proceed with editing `/etc/pam.d/sshd` which is most safely (but not necessarily) done in a local session.
 
@@ -59,7 +59,7 @@ Finally, [reload](/index.php/Reload "Reload") the `sshd` service.
 
 ## Generating a secret key file
 
-**Tip:** Install [qrencode](https://www.archlinux.org/packages/?name=qrencode) to generate a scannable QR. Scan the QR with the authenticator app to automatically configure the key.
+**Tip:** [Install](/index.php/Install "Install") [qrencode](https://www.archlinux.org/packages/?name=qrencode) to generate a scannable QR. Scan the QR with the authenticator app to automatically configure the key.
 
 Every user who wants to use two-pass authentication needs to generate a secret key file in his home folder. This can very easily be done using *google-authenticator*:
 
@@ -99,7 +99,12 @@ It is recommended to **store the emergency scratch codes safely** (print them ou
 
 ## Setting up your OTP-generator
 
-Install generator application on your mobile phone from [Android market](http://m.google.com/authenticator) (e.g. [FreeOTP](https://play.google.com/store/apps/details?id=org.fedorahosted.freeotp)) or from [F-Droid](https://f-droid.org/repository/browse/?fdfilter=google&fdid=com.google.android.apps.authenticator2). In the applications menu click the corresponding button to create a new account and either scan the QR code from the URL you were told when generating the secret key file, or enter the secret key (in the example above 'ZVZG5UZU4D7MY4DH') manually.
+Install a generator application on your mobile phone (e.g.):
+
+*   **FreeOTP** for [Android](https://play.google.com/store/apps/details?id=org.fedorahosted.freeotp)/[iOS](https://itunes.apple.com/es/app/freeotp-authenticator/id872559395).
+*   **Google Authenticator** for [Android](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2)/[iOS](https://itunes.apple.com/es/app/google-authenticator/id388497605).
+
+In the mobile application, create a new account and either scan the QR code from the URL you were told when generating the secret key file, or enter the secret key (in the example above 'ZVZG5UZU4D7MY4DH') manually.
 
 Now you should see a new passcode token being generated every 30 seconds on your phone.
 

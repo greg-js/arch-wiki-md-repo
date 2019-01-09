@@ -63,7 +63,7 @@ This needs to be enabled with systemctl start ModemManager and systemctl enable 
 
 Make sure [mobile-broadband-provider-info](https://www.archlinux.org/packages/?name=mobile-broadband-provider-info) and [nm-connection-editor](https://www.archlinux.org/packages/?name=nm-connection-editor) are installed.
 
-To use this quite old modem, you need to blacklist qmi_wwan and cdc_wdm modules from loading into [modern] Linux kernel. Else, if these modules are loaded, ModemManager recognizes this modem as something new with QMI interface, and then complains about too small versions of some QMI services. [Source](https://bugs.freedesktop.org/show_bug.cgi?id=93392)
+To use this quite old modem, you need to blacklist qmi_wwan and cdc_wdm modules from loading into [modern] Linux kernel. Else, if these modules are loaded, ModemManager recognizes this modem as something new with QMI interface, and then complains about too small versions of some QMI services. [Source](https://gitlab.freedesktop.org/mobile-broadband/ModemManager/issues/69)
 
 ## Connection
 

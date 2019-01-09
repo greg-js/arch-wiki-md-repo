@@ -212,7 +212,7 @@ To use hibernation (a.k.a suspend to disk) it is advised to create the swap part
 
 ### Example layouts
 
-**Note:** UEFI/GPT does not have a "boot" flag, booting relies on boot entries in NVRAM. [Parted](/index.php/Parted "Parted") and its front-ends use a `boot` flag on GPT to indicate an EFI system partition.
+**Note:** UEFI/GPT booting does not involve any "boot" flag, booting relies solely on the boot entries in NVRAM. [Parted](/index.php/Parted "Parted") and its front-ends use a "boot" flag on GPT to indicate that a partition is an EFI system partition.
 
 #### UEFI/GPT example layout
 
@@ -236,6 +236,8 @@ To use hibernation (a.k.a suspend to disk) it is advised to create the swap part
 | `/` | `/dev/sda2` | `4F68BCE3-E8CD-4DB1-96E7-FBCAF984B709`: Linux x86-64 root (/) | `2`: Legacy BIOS bootable | 23 - 32 GiB |
 | `[SWAP]` | `/dev/sda3` | `0657FD6D-A4AB-43C4-84E5-0933C84B4F4F`: Linux [swap](/index.php/Swap "Swap") | More than 512 MiB |
 | `/home` | `/dev/sda4` | `933AC7E1-2EB4-4F13-B844-0E14E2AEF915`: Linux /home | Remainder of the device |
+
+1.  A BIOS boot partition is only required when using [GRUB](/index.php/GRUB "GRUB"). It has nothing to do with `/boot`, and it must not be formatted with a file system or mounted.
 
 ## Partitioning tools
 

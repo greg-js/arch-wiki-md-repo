@@ -12,6 +12,10 @@
 *   [1 Установка](#Установка)
 *   [2 Настройка](#Настройка)
     *   [2.1 Storage driver](#Storage_driver)
+    *   [2.2 Remote API](#Remote_API)
+        *   [2.2.1 Remote API с systemd](#Remote_API_с_systemd)
+    *   [2.3 Конфигурация сокета демона](#Конфигурация_сокета_демона)
+        *   [2.3.1 Proxy configuration](#Proxy_configuration)
 *   [3 Docker 0.9.0 — 1.2.x и LXC](#Docker_0.9.0_—_1.2.x_и_LXC)
 *   [4 Skype](#Skype)
 *   [5 Сборка образа i686](#Сборка_образа_i686)
@@ -45,7 +49,7 @@
 
 ### Storage driver
 
-Docker storage driver (или graph driver) оказывает огромное влияние на производительность. Его задача - эффективно хранить слои изображений контейнеров, то есть, когда несколько изображений совместно используют слой, только один слой использует дисковое пространство. Совместимая опция `devicemapper` предлагает неоптимальную производительность, которая совершенно ужасна на вращающихся дисках. Кроме того, `devicemapper` не рекомендуется в производстве.
+Docker storage driver (или graph driver) оказывает огромное влияние на производительность. Его задача - эффективно хранить слои изображений контейнеров, то есть, когда несколько изображений совместно используют слой, только один слой использует дисковое пространство. Совместимая опция `devicemapper` предлагает неоптимальную производительность, которая просто ужасна на вращающихся дисках. Кроме того, `devicemapper` не рекомендуется в производстве.
 
 Поскольку Arch linux поставляется с новым ядром Linux, нет смысла использовать опцию совместимости. Хороший, современный выбор - `overlay2`.
 
@@ -63,6 +67,57 @@ Docker storage driver (или graph driver) оказывает огромное 
 После этого [restart](/index.php/Restart "Restart") докер.
 
 Дополнительную информацию о вариантах можно найти в [руководстве пользователя](https://docs.docker.com/engine/userguide/storagedriver/selectadriver/). Для получения дополнительной информации о параметрах в `daemon.json` см. [dockerd документацию](https://docs.docker.com/engine/reference/commandline/dockerd/#daemon-configuration-file).
+
+### Remote API
+
+Чтобы открыть Remote API для порта `4243`, используйте:
+
+```
+# /usr/bin/dockerd -H tcp://0.0.0.0:4243 -H unix:///var/run/docker.sock
+
+```
+
+`-H tcp://0.0.0.0:4243` часть для открытия Remote API.
+
+`-H unix:///var/run/docker.sock` часть для доступа к хост-машине через терминал.
+
+#### Remote API с systemd
+
+Чтобы запустить удаленный API с помощью docker демона, создайте [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") со следующим содержимым:
+
+ `/etc/systemd/system/docker.service.d/override.conf` 
+```
+[Service]
+ExecStart=
+ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:4243 -H unix:///var/run/docker.sock
+```
+
+### Конфигурация сокета демона
+
+Демон docker по умолчанию прослушивает [Сокет домена Unix](https://en.wikipedia.org/wiki/Unix_domain_socket_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "wikipedia:Unix domain socket (Русский)"). Чтобы прослушивать определённый порт, создайте [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") со следующим содержимым:
+
+ `/etc/systemd/system/docker.socket.d/socket.conf` 
+```
+[Socket]
+ListenStream=0.0.0.0:2375
+```
+
+#### Proxy configuration
+
+Создайте [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") со следующим содержанием:
+
+ `/etc/systemd/system/docker.service.d/proxy.conf` 
+```
+[Service]
+Environment="HTTP_PROXY=192.168.1.1:8080"
+Environment="HTTPS_PROXY=192.168.1.1:8080"
+```
+
+**Примечание:** Это предполагает что `192.168.1.1` ваш прокси-сервер, не используйте `127.0.0.1`.
+
+Убедитесь, что конфигурация была загружена:
+
+ `# systemctl show docker --property Environment`  `Environment=HTTP_PROXY=192.168.1.1:8080 HTTPS_PROXY=192.168.1.1:8080` 
 
 ## Docker 0.9.0 — 1.2.x и LXC
 

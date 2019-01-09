@@ -6,7 +6,7 @@ Related articles
 *   [Samba](/index.php/Samba "Samba")
 *   [LPRng](/index.php/LPRng "LPRng")
 
-[CUPS](http://www.cups.org/) is the standards-based, open source printing system developed by Apple Inc. for macOS® and other UNIX®-like operating systems.
+[CUPS](https://www.cups.org/) is the standards-based, open source printing system developed by Apple Inc. for macOS® and other UNIX®-like operating systems.
 
 ## Contents
 
@@ -359,7 +359,7 @@ polkit.addRule(function(action, subject) {
 
 CUPS can be configured to directly connect to remote printer servers instead of running a local print server. This requires [installation](/index.php/Install "Install") of the [libcups](https://www.archlinux.org/packages/?name=libcups) package. Some applications will still require the [cups](https://www.archlinux.org/packages/?name=cups) package for printing.
 
-**Warning:** Accessing remote printers without a local CUPS server is not recommended by the developers. [[3]](http://www.cups.org/pipermail/cups/2015-October/027229.html)
+**Warning:** Accessing remote printers without a local CUPS server is not recommended by the developers. [[3]](https://lists.cups.org/pipermail/cups/2015-October/027229.html)
 
 To use a remote CUPS server, set the `CUPS_SERVER` [environment variable](/index.php/Environment_variable "Environment variable") to `printerserver.mydomain:port`. For instance, if you want to use a different print server for a single [Firefox](/index.php/Firefox "Firefox") instance (substitute `printserver.mydomain:port` with your print server name/port):
 

@@ -6,111 +6,118 @@ Related articles
 *   [Secure Shell (简体中文)](/index.php/Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Secure Shell (简体中文)")
 *   [sftpman](/index.php/Sftpman "Sftpman")
 
-**翻译状态：** 本文是英文页面 [SSHFS](/index.php/SSHFS "SSHFS") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-07-03，点击[这里](https://wiki.archlinux.org/index.php?title=SSHFS&diff=0&oldid=481165)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [SSHFS](/index.php/SSHFS "SSHFS") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-01-09，点击[这里](https://wiki.archlinux.org/index.php?title=SSHFS&diff=0&oldid=559978)可以查看翻译后英文页面的改动。
 
 [SSHFS](https://github.com/libfuse/sshfs) 是一个通过 [SSH](/index.php/Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Secure Shell (简体中文)") 挂载基于 FUSE 的文件系统的客户端程序。
 
 ## Contents
 
 *   [1 安装](#安装)
-    *   [1.1 挂载](#挂载)
-    *   [1.2 卸载](#卸载)
-*   [2 Chrooting](#Chrooting)
-*   [3 助手程序](#助手程序)
-*   [4 自动挂载](#自动挂载)
+    *   [1.1 Mounting](#Mounting)
+    *   [1.2 Unmounting](#Unmounting)
+*   [2 Options](#Options)
+*   [3 Chrooting](#Chrooting)
+*   [4 Automounting](#Automounting)
     *   [4.1 On demand](#On_demand)
-    *   [4.2 引导时挂载](#引导时挂载)
-    *   [4.3 安全用户访问](#安全用户访问)
-*   [5 选项](#选项)
-*   [6 排错](#排错)
-    *   [6.1 检查清单](#检查清单)
-    *   [6.2 Connection reset by peer](#Connection_reset_by_peer)
-    *   [6.3 远程主机连接断开（Remote host has disconnected）](#远程主机连接断开（Remote_host_has_disconnected）)
-    *   [6.4 冻结应用（Freezing apps (e.g. Gnome Files, Gedit)）](#冻结应用（Freezing_apps_(e.g._Gnome_Files,_Gedit)）)
-    *   [6.5 Shutdown hangs when sshfs is mounted](#Shutdown_hangs_when_sshfs_is_mounted)
-    *   [6.6 fstab 挂载问题](#fstab_挂载问题)
-*   [7 参阅](#参阅)
+    *   [4.2 On boot](#On_boot)
+    *   [4.3 Secure user access](#Secure_user_access)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Checklist](#Checklist)
+    *   [5.2 Connection reset by peer](#Connection_reset_by_peer)
+    *   [5.3 Remote host has disconnected](#Remote_host_has_disconnected)
+    *   [5.4 fstab mounting issues](#fstab_mounting_issues)
+*   [6 See also](#See_also)
 
 ## 安装
 
-[安装](/index.php/Install "Install") [sshfs](https://www.archlinux.org/packages/?name=sshfs) 软件包。
+[安装](/index.php/Install "Install") 软件包 [sshfs](https://www.archlinux.org/packages/?name=sshfs)。
 
-### 挂载
+**Tip:**
 
-**提示：** sshfs 结合 [Google Authenticator](/index.php/Google_Authenticator "Google Authenticator") 使用可以提供额外的安全性。
+*   If you often need to mount sshfs filesystems you may be interested in using an sshfs helper, such as [qsshfs](https://aur.archlinux.org/packages/qsshfs/), [sftpman](/index.php/Sftpman "Sftpman"), [sshmnt](https://aur.archlinux.org/packages/sshmnt/) or [fmount.py](https://github.com/lahwaacz/Scripts/blob/master/fmount.py).
+*   You may want to use [Google Authenticator](/index.php/Google_Authenticator "Google Authenticator") providing additional security as in two-step authentication.
+*   [SSH keys](/index.php/SSH_keys "SSH keys") may be used over traditional password authentication.
 
-In order to be able to mount a directory the SSH user needs to be able to access it. Invoke `sshfs` to mount a remote directory:
+### Mounting
+
+In order to be able to mount a directory the SSH user needs to be able to access it. Invoke *sshfs* to mount a remote directory:
 
 ```
-$ sshfs [user@]host:[dir] mountpoint [options]
+$ sshfs *[user@]host:[dir] mountpoint [options]*
 
 ```
 
 For example:
 
 ```
-$ sshfs sessy@mycomputer:/remote/path /local/path -C -p 9876 -o allow_other
+$ sshfs myuser@mycomputer:/remote/path /local/path -C -p 9876
 
 ```
 
-Where `-p 9876` stands for the port number, `-C` enables compression and `-o allow_other` grants non-rooted users read/write access.
+Here `-p 9876` specifies the port number and `-C` enables compression. For more options see the [#Options](#Options) section.
 
-**注意:** The `allow_other` option is disabled by default. To enable it, uncomment the line `user_allow_other` in `/etc/fuse.conf` to enable non-root users to use the allow_other mount option.
+When not specified, the remote path defaults to the remote user home directory. Default user names and options can be predefined on a host-by-host basis in `~/.ssh/config` to simplify the *sshfs* usage. For more information see [OpenSSH#Client usage](/index.php/OpenSSH#Client_usage "OpenSSH").
 
-**注意:** Users may also define a non-standard port on a host-by-host basis in `~/.ssh/config` to avoid appending the -p switch here. For more information see [OpenSSH#Client usage](/index.php/OpenSSH#Client_usage "OpenSSH").
+SSH will ask for the password, if needed. If you do not want to type in the password multiple times a day, see [SSH keys](/index.php/SSH_keys "SSH keys").
 
-必要时，SSH 将询问口令。如果你不希望频繁输入口令，可参阅：[SSH 如何使用 RSA 密钥做认证](http://linuxmafia.com/~karsten/Linux/FAQs/sshrsakey.html) 或 [SSH 密钥](/index.php/SSH_keys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "SSH keys (简体中文)")。
-
-### 卸载
+### Unmounting
 
 To unmount the remote system:
 
 ```
-$ fusermount -u *LOCAL_MOUNT_POINT*
+$ fusermount3 -u *mountpoint*
 
 ```
 
 Example:
 
 ```
-$ fusermount -u /mnt/sessy
+$ fusermount3 -u /local/path
 
 ```
 
+## Options
+
+*sshfs* can automatically convert between local and remote user IDs. Use the `idmap=user` option to translate the UID of the connecting user to the remote user `myuser` (GID remains unchanged):
+
+```
+$ sshfs myuser@mycomputer:/remote/path /local/path -o idmap=user
+
+```
+
+If you need more control over UID and GID translation, look at the options `idmap=file`, `uidfile` and `gidfile`.
+
+A complete list of options can be found in [sshfs(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sshfs.1).
+
 ## Chrooting
 
-You may want to jail a (specific) user to a directory by editing `/etc/ssh/sshd_config`:
+You may want to restrict a specific user to a specific directory on the remote system. This can be done by editing `/etc/ssh/sshd_config`:
 
  `/etc/ssh/sshd_config` 
 ```
 .....
-Match User someuser 
-       ChrootDirectory /chroot/%u
-       ForceCommand internal-sftp #to restrict the user to sftp only
+Match User *someuser* 
+       ChrootDirectory */chroot/%u*
+       ForceCommand internal-sftp
        AllowTcpForwarding no
        X11Forwarding no
 .....
+
 ```
 
-**注意:** The chroot directory **must** be owned by root, otherwise you will not be able to connect.
+**Note:** The chroot directory **must** be owned by root, otherwise you will not be able to connect.
 
-See also [SFTP chroot](/index.php/SFTP_chroot "SFTP chroot"). For more information check the manpages for `Match, ChrootDirectory` and `ForceCommand`.
+See also [SFTP chroot](/index.php/SFTP_chroot "SFTP chroot"). For more information check the [sshd_config(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sshd_config.5) man page for `Match`, `ChrootDirectory` and `ForceCommand`.
 
-## 助手程序
+## Automounting
 
-If you often need to mount sshfs filesystems you may be interested in using an sshfs helper, such as [sftpman](/index.php/Sftpman "Sftpman").
+Automounting can happen on boot, or on demand (when accessing the directory). For both, the setup happens in the [fstab](/index.php/Fstab "Fstab").
 
-It provides a command-line and a GTK frontend, to make mounting and unmounting a simple one click/command process.
+**Note:** Keep in mind that automounting is done through the root user, therefore you cannot use hosts configured in `.ssh/config` of your normal user.
 
-## 自动挂载
+To let the root user use an SSH key of a normal user, specify its full path in the `IdentityFile` option.
 
-Automounting can happen on boot, or on demand (when accessing the directory). For both, the setup happens in `/etc/[fstab](/index.php/Fstab "Fstab")`.
-
-**注意:** Be mindful that automounting is done through the root user, therefore you cannot use Hosts configured in `.ssh/config` of your normal user.
-
-To let root user use an SSH key of a normal user, specify its full path in option `IdentityFile`.
-
-**And most importantly**, use each sshfs mount at least once manually **while root** so the host's signature is added to the `.ssh/known_hosts` file.
+**And most importantly**, use each sshfs mount at least once manually **while root** so the host's signature is added to the `/root/.ssh/known_hosts` file.
 
 ### On demand
 
@@ -129,13 +136,13 @@ The important mount options here are *noauto,x-systemd.automount,_netdev*.
 *   *x-systemd.automount* does the on-demand magic
 *   *_netdev* tells it that it is a network device, not a block device (without it "No such device" errors might happen)
 
-**注意:** After editing `/etc/fstab`, (re)start the required service: `systemctl daemon-reload && systemctl restart <target>` where `<target>` can be found by running `systemctl list-unit-files --type automount`
+**Note:** After editing `/etc/fstab`, (re)start the required service: `systemctl daemon-reload && systemctl restart <target>` where `<target>` can be found by running `systemctl list-unit-files --type automount`
 
-**提示：** [autosshfs-git](https://aur.archlinux.org/packages/autosshfs-git/) do not require editing `/etc/fstab` to add a new mountpoint. Instead, regular users can create one by simply attempting to access it (with e. g. something like `ls ~/mnt/ssh/[user@]yourremotehost[:port]`). [autosshfs-git](https://aur.archlinux.org/packages/autosshfs-git/) uses AutoFS. Users need to be enabled to use it with `autosshfs-user`.
+**Tip:** [autosshfs-git](https://aur.archlinux.org/packages/autosshfs-git/) do not require editing `/etc/fstab` to add a new mountpoint. Instead, regular users can create one by simply attempting to access it (with e. g. something like `ls ~/mnt/ssh/[user@]yourremotehost[:port]`). [autosshfs-git](https://aur.archlinux.org/packages/autosshfs-git/) uses AutoFS. Users need to be enabled to use it with `autosshfs-user`.
 
-### 引导时挂载
+### On boot
 
-An example on how to use sshfs to mount a remote filesystem through `/etc/[fstab](/index.php/Fstab "Fstab")`
+An example on how to use sshfs to mount a remote filesystem through `/etc/fstab`
 
 ```
 USERNAME@HOSTNAME_OR_IP:/REMOTE/DIRECTORY  /LOCAL/MOUNTPOINT  fuse.sshfs  defaults,_netdev  0  0
@@ -160,9 +167,9 @@ user@domain.org:/home/user  /media/user   fuse.sshfs    defaults,allow_other,_ne
 
 Again, it is important to set the *_netdev* mount option to make sure the network is available before trying to mount.
 
-### 安全用户访问
+### Secure user access
 
-When automounting via `/etc/[fstab](/index.php/Fstab "Fstab")`, the filesystem will generally be mounted by root. By default, this produces undesireable results if you wish access as an ordinary user and limit access to other users.
+When automounting via [fstab](/index.php/Fstab "Fstab"), the filesystem will generally be mounted by root. By default, this produces undesireable results if you wish access as an ordinary user and limit access to other users.
 
 An example mountpoint configuration:
 
@@ -177,24 +184,11 @@ Summary of the relevant options:
 *   *default_permissions* - Allow kernel to check permissions, i.e. use the actual permissions on the remote filesystem. This allows prohibiting access to everybody otherwise granted by *allow_other*.
 *   *uid*, *gid* - set reported ownership of files to given values; *uid* is the numeric user ID of your user, *gid* is the numeric group ID of your user.
 
-## 选项
+## Troubleshooting
 
-sshfs can automatically convert your local and remote user IDs.
+### Checklist
 
-Add the *idmap* option with *user* value to translate UID of connecting user:
-
-```
-# sshfs -o idmap=user sessy@mycomputer:/home/sessy /mnt/sessy -C -p 9876
-
-```
-
-This will map UID of the remote user "sessy" to the local user, who runs this process ("root" in the above example) and GID remains unchanged. If you need more precise control over UID and GID translation, look at the options *idmap=file* and *uidfile* and *gidfile*.
-
-## 排错
-
-### 检查清单
-
-Read the [SSH Checklist](/index.php/OpenSSH#Checklist "OpenSSH") Wiki entry first. Further issues to check are:
+Read [OpenSSH#Checklist](/index.php/OpenSSH#Checklist "OpenSSH") first. Further issues to check are:
 
 1\. Is your SSH login sending additional information from server's `/etc/issue` file e.g.? This might confuse SSHFS. You should temporarily deactivate server's `/etc/issue` file:
 
@@ -228,33 +222,6 @@ $ chown -R USER_C: /mnt/client/folder
 
 6\. Check that the client's mount point (folder) is empty. By default you cannot mount SSHFS folders to non-empty folders.
 
-7\. If you want to automount SSH shares by using an SSH public key authentication (no password) via `/etc/fstab`, you can use this line as an example:
-
-```
-*USER_S*@*SERVER*:/mnt/on/server      /nmt/on/client        fuse.sshfs      x-systemd.automount,_netdev,user,idmap=user,transform_symlinks,identityfile=/home/*USER_C*/.ssh/id_rsa,allow_other,default_permissions,uid=*USER_C_ID*,gid=*GROUP_C_ID*,umask=0   0 0
-
-```
-
-Considering the following example settings ...
-
-SERVER = Server host name (serv) USER_S = Server user name (pete) USER_C = Client user name (pete) USER_S_ID = Server user ID (1004) USER_C_ID = Client user ID (1000) GROUP_C_ID = Client user's group ID (100)
-
-you get the client user's ID and group ID with
-
-```
-$ id USERNAME
-
-```
-
-this is the final SSHFS mount row in `/etc/fstab`;
-
-```
-pete@serv:/mnt/on/server      /nmt/on/client        fuse.sshfs      x-systemd.automount,_netdev,user,idmap=user,transform_symlinks,identityfile=/home/pete/.ssh/id_rsa,allow_other,default_permissions,uid=1004,gid=1000,umask=0   0 0
-
-```
-
-8\. If you know another issue for this checklist please add it the list above.
-
 ### Connection reset by peer
 
 *   If you are trying to access the remote system with a hostname, try using its IP address, as it can be a domain name solving issue. Make sure you edit `/etc/hosts` with the server details.
@@ -263,59 +230,21 @@ pete@serv:/mnt/on/server      /nmt/on/client        fuse.sshfs      x-systemd.au
 *   Adding the option '`sshfs_debug`' (as in '`sshfs -o sshfs_debug user@server ...`') can help in resolving the issue.
 *   If that doesn't reveal anything useful, you might also try adding the option '`debug`'
 *   If you are trying to sshfs into a router running DD-WRT or the like, there is a solution [here](http://www.dd-wrt.com/wiki/index.php/SFTP_with_DD-WRT). (note that the -osftp_server=/opt/libexec/sftp-server option can be used to the sshfs command in stead of patching dropbear)
+*   If you see this only on boot, it may be that systemd is attempting to mount prior to a network connection being available. Enabling the 'wait-online' service appropriate to your network connection (eg. systemd-networkd-wait-online.service) fixes this.
 *   Old Forum thread: [sshfs: Connection reset by peer](https://bbs.archlinux.org/viewtopic.php?id=27613)
 *   Make sure your user can log into the server (especially when using AllowUsers)
 *   Make sure `Subsystem sftp /usr/lib/ssh/sftp-server` is enabled in `/etc/ssh/sshd_config`.
 
-**注意:** When providing more than one option for sshfs, they must be comma separated. Like so: '`sshfs -o sshfs_debug,IdentityFile=</path/to/key> user@server ...`')
+**Note:** When providing more than one option for sshfs, they must be comma separated. Like so: '`sshfs -o sshfs_debug,IdentityFile=</path/to/key> user@server ...`')
 
-### 远程主机连接断开（Remote host has disconnected）
+### Remote host has disconnected
 
 If you receive this message directly after attempting to use *sshfs*:
 
 *   First make sure that the **remote** machine has *sftp* installed! It will not work, if not.
+*   Then, check that the path of the `Subsystem sftp` in `/etc/ssh/sshd_config` on the remote machine is valid.
 
-**提示：** If your remote server is running OpenWRT: `opkg install openssh-sftp-server` will do the trick
-
-*   Then, try checking the path of the `Subsystem` listed in `/etc/ssh/sshd_config` on the remote machine to see, if it is valid. You can check the path to it with `find / -name sftp-server`.
-
-For Arch Linux the default value in `/etc/ssh/sshd_config` is `Subsystem sftp /usr/lib/ssh/sftp-server`.
-
-### 冻结应用（Freezing apps (e.g. Gnome Files, Gedit)）
-
-**注意:** This prevents the recently used file list from being populated and may lead to possible write errors.
-
-If you experience freezing/hanging (stopped responding) applications, you may need to disable write-access to the `~/recently-used.xbel` file.
-
-```
-# chattr +i /home/USERNAME/.local/share/recently-used.xbel
-
-```
-
-See the following [bug report](https://bugs.archlinux.org/task/40260) for more details and/or solutions.
-
-### Shutdown hangs when sshfs is mounted
-
-Systemd may hang on shutdown if an sshfs mount was mounted manually and not unmounted before shutdown. To solve this problem, create this file (as root):
-
- `/etc/systemd/system/killsshfs.service` 
-```
-[Unit]
-After=network.target
-
-[Service]
-RemainAfterExit=yes
-ExecStart=-/bin/true
-ExecStop=-/usr/bin/pkill sshfs
-
-[Install]
-WantedBy=multi-user.target
-
-```
-
-Then enable the service: `systemctl enable killsshfs.service`
-
-### fstab 挂载问题
+### fstab mounting issues
 
 To get verbose debugging output, add the following to the mount options:
 
@@ -324,7 +253,7 @@ ssh_command=ssh\040-vv,sshfs_debug,debug
 
 ```
 
-**注意:** Here, `\040` represents a space which fstab uses to separate fields.
+**Note:** Here, `\040` represents a space which fstab uses to separate fields.
 
 To be able to run `mount -av` and see the debug output, remove the following:
 
@@ -333,7 +262,6 @@ To be able to run `mount -av` and see the debug output, remove the following:
 
 ```
 
-## 参阅
+## See also
 
 *   [How to mount chrooted SSH filesystem](http://wiki.gilug.org/index.php/How_to_mount_SFTP_accesses), with special care with owners and permissions questions.
-*   [SSHFS – Installation and Performance](http://www.admin-magazine.com/HPC/Articles/Sharing-Data-with-SSHFS) — Comparison with NFS and optimization tips.

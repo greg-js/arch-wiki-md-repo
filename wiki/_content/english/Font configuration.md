@@ -9,7 +9,7 @@ Related articles
 
 [Fontconfig](http://www.freedesktop.org/wiki/Software/fontconfig/) is a library designed to provide a list of available [fonts](/index.php/Fonts "Fonts") to applications, and also for configuration for how fonts get rendered. The FreeType library renders the fonts, based on this configuration. The *freetype2* font rendering packages on Arch Linux include the bytecode interpreter (BCI) enabled for better font rendering especially with an LCD monitor. See [#Fontconfig configuration](#Fontconfig_configuration) and [Font configuration/Examples](/index.php/Font_configuration/Examples "Font configuration/Examples").
 
-Though Fontconfig is the standard in modern Linux, some applications rely on the original method of font selection and display, the [X Logical Font Description](/index.php/X_Logical_Font_Description "X Logical Font Description").
+Though Fontconfig is used often in modern Unix and Unix-like operating systems, some applications rely on the original method of font selection and display, the [X Logical Font Description](/index.php/X_Logical_Font_Description "X Logical Font Description").
 
 ## Contents
 

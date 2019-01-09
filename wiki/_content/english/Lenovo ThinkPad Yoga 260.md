@@ -37,7 +37,7 @@ Most functionality works out of the box, although a kernel of version 4.3 or hig
 
 ¹Pen-buttons can be assigned with xsetwacom, see [Wacom tablet#Remapping buttons](/index.php/Wacom_tablet#Remapping_buttons "Wacom tablet"). Device name is "Wacom Co.,Ltd. Pen and multitouch sensor Pen stylus".
 
-²Using [https://github.com/3v1n0/libfprint](https://github.com/3v1n0/libfprint). Bug tracker for fingerprint sensor: [https://bugs.freedesktop.org/show_bug.cgi?id=94536](https://bugs.freedesktop.org/show_bug.cgi?id=94536)
+²Using [https://github.com/3v1n0/libfprint](https://github.com/3v1n0/libfprint). Bug tracker for fingerprint sensor: [https://gitlab.freedesktop.org/libfprint/libfprint/issues/54](https://gitlab.freedesktop.org/libfprint/libfprint/issues/54)
 
 ## Installation
 

@@ -4,7 +4,7 @@ Articoli correlati
 *   [CUPS printer-specific problems](/index.php/CUPS_printer-specific_problems "CUPS printer-specific problems")
 *   [Samba (Italiano)](/index.php/Samba_(Italiano) "Samba (Italiano)")
 
-Dal sito di [CUPS](http://www.cups.org/index.php):
+Dal sito di [CUPS](https://www.cups.org/):
 
 	"*[CUPS](https://en.wikipedia.org/wiki/it:CUPS "wikipedia:it:CUPS") è il sistema di stampa, standard e open source, sviluppato da Apple Inc. per Mac OS® X e altri sistemi operativi UNIX®-like.*"
 
@@ -18,7 +18,7 @@ Anche se ci sono altri sistemi di stampa come LPRNG, il Common Unix Printing Sys
 *   [3 Installare il server](#Installare_il_server)
     *   [3.1 Driver per la stampante](#Driver_per_la_stampante)
         *   [3.1.1 Scaricare il PPD della stampante](#Scaricare_il_PPD_della_stampante)
-        *   [3.1.2 Un'altra risorsa per i driver](#Un.27altra_risorsa_per_i_driver)
+        *   [3.1.2 Un'altra risorsa per i driver](#Un'altra_risorsa_per_i_driver)
 *   [4 Configurazione e supporto hardware](#Configurazione_e_supporto_hardware)
     *   [4.1 Moduli del kernel](#Moduli_del_kernel)
         *   [4.1.1 Stampanti USB](#Stampanti_USB)
@@ -29,34 +29,34 @@ Anche se ci sono altri sistemi di stampa come LPRNG, il Common Unix Printing Sys
     *   [5.1 Avviare CUPS al boot](#Avviare_CUPS_al_boot)
     *   [5.2 Interfaccia web e strumenti](#Interfaccia_web_e_strumenti)
         *   [5.2.1 Amministrazione di CUPS](#Amministrazione_di_CUPS)
-        *   [5.2.2 Accesso remoto all'interfaccia web](#Accesso_remoto_all.27interfaccia_web)
+        *   [5.2.2 Accesso remoto all'interfaccia web](#Accesso_remoto_all'interfaccia_web)
     *   [5.3 Configurazione CLI](#Configurazione_CLI)
     *   [5.4 Interfaccia CUPS di GNOME](#Interfaccia_CUPS_di_GNOME)
 *   [6 Stampante virtuale PDF](#Stampante_virtuale_PDF)
     *   [6.1 Stampare su Postscript](#Stampare_su_Postscript)
 *   [7 Risoluzione dei Problemi](#Risoluzione_dei_Problemi)
-    *   [7.1 Problemi legati all'aggiornamento](#Problemi_legati_all.27aggiornamento)
+    *   [7.1 Problemi legati all'aggiornamento](#Problemi_legati_all'aggiornamento)
         *   [7.1.1 CUPS smette di funzionare](#CUPS_smette_di_funzionare)
-        *   [7.1.2 Tutti i lavori sono "fermati"](#Tutti_i_lavori_sono_.22fermati.22)
-        *   [7.1.3 Tutti i lavori convergono in un "The printer is not responding"](#Tutti_i_lavori_convergono_in_un_.22The_printer_is_not_responding.22)
-        *   [7.1.4 La versione PPD non è compatibile con gutenprint](#La_versione_PPD_non_.C3.A8_compatibile_con_gutenprint)
+        *   [7.1.2 Tutti i lavori sono "fermati"](#Tutti_i_lavori_sono_"fermati")
+        *   [7.1.3 Tutti i lavori convergono in un "The printer is not responding"](#Tutti_i_lavori_convergono_in_un_"The_printer_is_not_responding")
+        *   [7.1.4 La versione PPD non è compatibile con gutenprint](#La_versione_PPD_non_è_compatibile_con_gutenprint)
     *   [7.2 Altro](#Altro)
         *   [7.2.1 Errori di permessi CUPS](#Errori_di_permessi_CUPS)
-        *   [7.2.2 La stampante HPLIP invia come errore "/usr/lib/cups/backend/hp failed"](#La_stampante_HPLIP_invia_come_errore_.22.2Fusr.2Flib.2Fcups.2Fbackend.2Fhp_failed.22)
-        *   [7.2.3 HPLIP tutti i lavori vengono segnati come ultimati ma non si è riusciti a stampare niente](#HPLIP_tutti_i_lavori_vengono_segnati_come_ultimati_ma_non_si_.C3.A8_riusciti_a_stampare_niente)
-        *   [7.2.4 hp-toolbox invia come errore, "Unable to communicate with device"](#hp-toolbox_invia_come_errore.2C_.22Unable_to_communicate_with_device.22)
-        *   [7.2.5 CUPS risponde '"foomatic-rip" not available/stopped with status 3' con una stampante HP](#CUPS_risponde_.27.22foomatic-rip.22_not_available.2Fstopped_with_status_3.27_con_una_stampante_HP)
+        *   [7.2.2 La stampante HPLIP invia come errore "/usr/lib/cups/backend/hp failed"](#La_stampante_HPLIP_invia_come_errore_"/usr/lib/cups/backend/hp_failed")
+        *   [7.2.3 HPLIP tutti i lavori vengono segnati come ultimati ma non si è riusciti a stampare niente](#HPLIP_tutti_i_lavori_vengono_segnati_come_ultimati_ma_non_si_è_riusciti_a_stampare_niente)
+        *   [7.2.4 hp-toolbox invia come errore, "Unable to communicate with device"](#hp-toolbox_invia_come_errore,_"Unable_to_communicate_with_device")
+        *   [7.2.5 CUPS risponde '"foomatic-rip" not available/stopped with status 3' con una stampante HP](#CUPS_risponde_'"foomatic-rip"_not_available/stopped_with_status_3'_con_una_stampante_HP)
         *   [7.2.6 La stampa fallisce segnalando errori di autorizzazione](#La_stampa_fallisce_segnalando_errori_di_autorizzazione)
         *   [7.2.7 Pulsante Stampa bloccato nelle applicazioni GNOME](#Pulsante_Stampa_bloccato_nelle_applicazioni_GNOME)
-        *   [7.2.8 Formato supportato sconosciuto: application/postscript](#Formato_supportato_sconosciuto:_application.2Fpostscript)
+        *   [7.2.8 Formato supportato sconosciuto: application/postscript](#Formato_supportato_sconosciuto:_application/postscript)
         *   [7.2.9 Trovare gli URI per i server di stampa Windows](#Trovare_gli_URI_per_i_server_di_stampa_Windows)
         *   [7.2.10 Errore di stampa client-error-document-format-not-supported](#Errore_di_stampa_client-error-document-format-not-supported)
-        *   [7.2.11 Errore /usr/lib/cups/backend/hp](#Errore_.2Fusr.2Flib.2Fcups.2Fbackend.2Fhp)
-        *   [7.2.12 "Unable to get list of printer drivers"](#.22Unable_to_get_list_of_printer_drivers.22)
+        *   [7.2.11 Errore /usr/lib/cups/backend/hp](#Errore_/usr/lib/cups/backend/hp)
+        *   [7.2.12 "Unable to get list of printer drivers"](#"Unable_to_get_list_of_printer_drivers")
         *   [7.2.13 lp: Error - Scheduler Not Responding](#lp:_Error_-_Scheduler_Not_Responding)
         *   [7.2.14 CUPS stampa una pagina vuota e una di errore con HP Laserjet](#CUPS_stampa_una_pagina_vuota_e_una_di_errore_con_HP_Laserjet)
-        *   [7.2.15 Errore: "Using invalid Host"](#Errore:_.22Using_invalid_Host.22)
-        *   [7.2.16 La stampante non lavora e restituisce come errore "Filter Failed" sull'interfaccia web di CUPS](#La_stampante_non_lavora_e_restituisce_come_errore_.22Filter_Failed.22_sull.27interfaccia_web_di_CUPS)
+        *   [7.2.15 Errore: "Using invalid Host"](#Errore:_"Using_invalid_Host")
+        *   [7.2.16 La stampante non lavora e restituisce come errore "Filter Failed" sull'interfaccia web di CUPS](#La_stampante_non_lavora_e_restituisce_come_errore_"Filter_Failed"_sull'interfaccia_web_di_CUPS)
         *   [7.2.17 La stampante non viene riconosciuta da cups](#La_stampante_non_viene_riconosciuta_da_cups)
 *   [8 Vedere anche](#Vedere_anche)
 
@@ -141,7 +141,7 @@ Questa sezione può non essere necessaria a seconda del kernel utilizzato. Il mo
 
 #### Stampanti USB
 
-**Dalla versione 1.6.0 di cups, non dovrebbe più essere necessario blacklistare `usblp`.** Se si dovesse notare che mettere in blacklist tale modulo fosse l'unica soluzione ad un problema, si prega di riportare un bug all'upstream di Cups. Vedere [questo bug](http://cups.org/str.php?L4128) per maggiori informazioni.
+**Dalla versione 1.6.0 di cups, non dovrebbe più essere necessario blacklistare `usblp`.** Se si dovesse notare che mettere in blacklist tale modulo fosse l'unica soluzione ad un problema, si prega di riportare un bug all'upstream di Cups. Vedere [questo bug](https://github.com/apple/cups/issues/4128) per maggiori informazioni.
 
 Alcuni utenti, potrebbero comunque ancora voler mettere in blacklist il modulo `usblp`:
 
@@ -860,7 +860,7 @@ KERNEL=="lp[0-9]", SYMLINK+="%k", GROUP="lp"}}
 ## Vedere anche
 
 *   [Documentazione Ufficiale di CUPS](http://localhost:631/documentation.html), *Installata Localmente*
-*   [Sito ufficiale di CUPS](http://www.cups.org/)
+*   [Sito ufficiale di CUPS](https://www.cups.org/)
 *   [Linux Printing](http://www.linuxprinting.org/), *[The Linux Foundation](http://www.linuxfoundation.org)*
 *   [Guida alla stampa di Gentoo](http://www.gentoo.org/doc/en/printing-howto.xml), *[Documentazione di Gentoo](http://www.gentoo.org/doc/en)*
 *   [Forum internazionale di Arch Linux](https://bbs.archlinux.org/)

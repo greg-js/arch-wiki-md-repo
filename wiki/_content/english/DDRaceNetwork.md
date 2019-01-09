@@ -2,7 +2,7 @@
 
 From the official website [ddnet.tw](https://ddnet.tw):
 
-	*DDraceNetwork (DDNet) is an actively maintained version of DDRace, a Teeworlds modification with a unique cooperative gameplay. Help each other play through custom maps with up to 64 players, compete against the best in international tournaments, design your own maps, or run your own server. The official servers are located in Germany, Russia, USA, Canada, China, Chile, Brazil and South Africa. All ranks made on official servers are available worldwide and you can collect points!*
+	DDraceNetwork (DDNet) is an actively maintained version of DDRace, a Teeworlds modification with a unique cooperative gameplay. Help each other play through custom maps with up to 64 players, compete against the best in international tournaments, design your own maps, or run your own server. The official servers are located in Germany, Russia, USA, Canada, China, Chile, Brazil and South Africa. All ranks made on official servers are available worldwide and you can collect points!
 
 You control a *tee*, a ball-shaped 2D character, using your keyboard and mouse to shoot, grapple hook and jump around to interact with other players and the environment in the map with the finish line as target.
 
@@ -43,8 +43,8 @@ The game works in a client–server model, where the user plays using a Client w
     *   [5.16 tileset_borderset](#tileset_borderset)
     *   [5.17 uuid](#uuid)
 *   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Build failed, MYSQL_CPPCONN_INCLUDEDIR and MYSQL_CPPCONN_LIBRARY not found](#Build_failed.2C_MYSQL_CPPCONN_INCLUDEDIR_and_MYSQL_CPPCONN_LIBRARY_not_found)
-    *   [6.2 Build failed, no such file boost/shared_ptr.hpp](#Build_failed.2C_no_such_file_boost.2Fshared_ptr.hpp)
+    *   [6.1 Build failed, MYSQL_CPPCONN_INCLUDEDIR and MYSQL_CPPCONN_LIBRARY not found](#Build_failed,_MYSQL_CPPCONN_INCLUDEDIR_and_MYSQL_CPPCONN_LIBRARY_not_found)
+    *   [6.2 Build failed, no such file boost/shared_ptr.hpp](#Build_failed,_no_such_file_boost/shared_ptr.hpp)
 *   [7 See also](#See_also)
 
 ## Installation

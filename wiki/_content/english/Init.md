@@ -43,7 +43,7 @@ These components combine to the init *system*. Some inits include the service ma
 
 *   **[systemd](/index.php/Systemd "Systemd")** — Dependency-based init system with aggressive parallelization, process supervision using cgroups, and the ability to depend on a given mount point or dbus service.
 
-	[http://freedesktop.org/wiki/Software/systemd/](http://freedesktop.org/wiki/Software/systemd/) || [systemd](https://www.archlinux.org/packages/?name=systemd)
+	[https://freedesktop.org/wiki/Software/systemd/](https://freedesktop.org/wiki/Software/systemd/) || [systemd](https://www.archlinux.org/packages/?name=systemd)
 
 ## Inits
 
@@ -116,7 +116,7 @@ and configure the [#Init scripts](#Init_scripts) accordingly. See also [[2]](htt
 
 ### logind
 
-[logind](http://www.freedesktop.org/wiki/Software/systemd/logind/) requires *systemd* to be the init process. [[3]](http://www.freedesktop.org/wiki/Software/systemd/InterfacePortabilityAndStabilityChart/) As such, [local sessions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting") and other functionality is not available.
+[logind](https://www.freedesktop.org/wiki/Software/systemd/logind/) requires *systemd* to be the init process. [[3]](https://www.freedesktop.org/wiki/Software/systemd/InterfacePortabilityAndStabilityChart/) As such, [local sessions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting") and other functionality is not available.
 
 **Tip:** A standalone version of *logind* is available as [elogind-git](https://aur.archlinux.org/packages/elogind-git/) [[4]](https://lists.gnu.org/archive/html/guix-devel/2015-04/msg00352.html)
 

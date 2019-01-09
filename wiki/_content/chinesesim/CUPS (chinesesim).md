@@ -1,4 +1,4 @@
-来自 [CUPS' site](http://www.cups.org/index.php):
+来自 [CUPS' site](https://www.cups.org/):
 
 	"*[CUPS](https://en.wikipedia.org/wiki/CUPS "wikipedia:CUPS") 是苹果公司为Mac OS® X 和其他类 UNIX® 的操作系统开发的基于标准的、开源的打印系统*".
 
@@ -6,39 +6,39 @@
 
 ## Contents
 
-*   [1 安装 CUPS](#.E5.AE.89.E8.A3.85_CUPS)
-    *   [1.1 打印机驱动](#.E6.89.93.E5.8D.B0.E6.9C.BA.E9.A9.B1.E5.8A.A8)
-        *   [1.1.1 下载PPD文件](#.E4.B8.8B.E8.BD.BDPPD.E6.96.87.E4.BB.B6)
-*   [2 配置](#.E9.85.8D.E7.BD.AE)
+*   [1 安装 CUPS](#安装_CUPS)
+    *   [1.1 打印机驱动](#打印机驱动)
+        *   [1.1.1 下载PPD文件](#下载PPD文件)
+*   [2 配置](#配置)
     *   [2.1 Kernel Modules](#Kernel_Modules)
-    *   [2.2 USB 打印机](#USB_.E6.89.93.E5.8D.B0.E6.9C.BA)
+    *   [2.2 USB 打印机](#USB_打印机)
         *   [2.2.1 Parallel port printers](#Parallel_port_printers)
         *   [2.2.2 Auto-loading](#Auto-loading)
-    *   [2.3 CUPS 守护进程](#CUPS_.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B)
-    *   [2.4 Web 接口和工具](#Web_.E6.8E.A5.E5.8F.A3.E5.92.8C.E5.B7.A5.E5.85.B7)
+    *   [2.3 CUPS 守护进程](#CUPS_守护进程)
+    *   [2.4 Web 接口和工具](#Web_接口和工具)
         *   [2.4.1 CUPS administration](#CUPS_administration)
         *   [2.4.2 Remote access to web interface](#Remote_access_to_web_interface)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Problems resulting from upgrades](#Problems_resulting_from_upgrades)
         *   [3.1.1 CUPS stops working](#CUPS_stops_working)
         *   [3.1.2 Error with gnutls](#Error_with_gnutls)
-        *   [3.1.3 All jobs are "stopped"](#All_jobs_are_.22stopped.22)
-        *   [3.1.4 All jobs are "The printer is not responding"](#All_jobs_are_.22The_printer_is_not_responding.22)
+        *   [3.1.3 All jobs are "stopped"](#All_jobs_are_"stopped")
+        *   [3.1.4 All jobs are "The printer is not responding"](#All_jobs_are_"The_printer_is_not_responding")
         *   [3.1.5 The PPD version is not compatible with gutenprint](#The_PPD_version_is_not_compatible_with_gutenprint)
     *   [3.2 Other](#Other)
         *   [3.2.1 CUPS permission errors](#CUPS_permission_errors)
-        *   [3.2.2 HPLIP printer sends "/usr/lib/cups/backend/hp failed" error](#HPLIP_printer_sends_.22.2Fusr.2Flib.2Fcups.2Fbackend.2Fhp_failed.22_error)
-        *   [3.2.3 hp-toolbox sends an error, "Unable to communicate with device"](#hp-toolbox_sends_an_error.2C_.22Unable_to_communicate_with_device.22)
-        *   [3.2.4 CUPS returns '"foomatic-rip" not available/stopped with status 3' with a HP printer](#CUPS_returns_.27.22foomatic-rip.22_not_available.2Fstopped_with_status_3.27_with_a_HP_printer)
+        *   [3.2.2 HPLIP printer sends "/usr/lib/cups/backend/hp failed" error](#HPLIP_printer_sends_"/usr/lib/cups/backend/hp_failed"_error)
+        *   [3.2.3 hp-toolbox sends an error, "Unable to communicate with device"](#hp-toolbox_sends_an_error,_"Unable_to_communicate_with_device")
+        *   [3.2.4 CUPS returns '"foomatic-rip" not available/stopped with status 3' with a HP printer](#CUPS_returns_'"foomatic-rip"_not_available/stopped_with_status_3'_with_a_HP_printer)
         *   [3.2.5 Printing fails with unauthorised error](#Printing_fails_with_unauthorised_error)
         *   [3.2.6 Print button greyed-out in GNOME print dialogs](#Print_button_greyed-out_in_GNOME_print_dialogs)
-        *   [3.2.7 Unknown supported format: application/postscript](#Unknown_supported_format:_application.2Fpostscript)
+        *   [3.2.7 Unknown supported format: application/postscript](#Unknown_supported_format:_application/postscript)
         *   [3.2.8 Finding URIs for Windows Print Servers](#Finding_URIs_for_Windows_Print_Servers)
         *   [3.2.9 Print-Job client-error-document-format-not-supported](#Print-Job_client-error-document-format-not-supported)
-        *   [3.2.10 /usr/lib/cups/backend/hp failed](#.2Fusr.2Flib.2Fcups.2Fbackend.2Fhp_failed)
-        *   [3.2.11 Samsung Printer won't print certain documents](#Samsung_Printer_won.27t_print_certain_documents)
+        *   [3.2.10 /usr/lib/cups/backend/hp failed](#/usr/lib/cups/backend/hp_failed)
+        *   [3.2.11 Samsung Printer won't print certain documents](#Samsung_Printer_won't_print_certain_documents)
         *   [3.2.12 Local USB printer does not show up](#Local_USB_printer_does_not_show_up)
-        *   [3.2.13 "Unable to get list of printer drivers"](#.22Unable_to_get_list_of_printer_drivers.22)
+        *   [3.2.13 "Unable to get list of printer drivers"](#"Unable_to_get_list_of_printer_drivers")
 *   [4 Appendix](#Appendix)
     *   [4.1 Alternative CUPS interfaces](#Alternative_CUPS_interfaces)
 *   [5 PDF virtual printer](#PDF_virtual_printer)
@@ -659,7 +659,7 @@ The CUPS-PDF (Virtual PDF Printer) actually creates a PostScript file and then c
 ## Resources
 
 *   [Official CUPS documentation](http://localhost:631/documentation.html), *locally installed*
-*   [Official CUPS Website](http://www.cups.org/)
+*   [Official CUPS Website](https://www.cups.org/)
 *   [Linux Printing](http://www.linuxprinting.org/), *[The Linux Foundation](http://www.linuxfoundation.org)*
 *   [Gentoo's Printing Guide](http://www.gentoo.org/doc/en/printing-howto.xml), *[Gentoo Documentation Resources](http://www.gentoo.org/doc/en)*
 *   [Arch Linux User Forums](https://bbs.archlinux.org/)

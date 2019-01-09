@@ -208,10 +208,8 @@ AES-Twofish, AES-Twofish-Serpent, Serpent-AES, Serpent-Twofish-AES, Twofish-Serp
 | Optimized handling of sparse files | ✘ | ✔ |
 | Compatibility & prevalence | Loop-AES | dm-crypt +/- LUKS | TrueCrypt | VeraCrypt | eCryptfs | EncFs |
 | Supported Linux kernel versions | 2.0 or newer | CBC-mode since 2.6.4, ESSIV 2.6.10, LRW 2.6.20, XTS 2.6.24 | ? | ? | ? | 2.4 or newer |
-| Encrypted data can also be accessed from Windows | ✔
-(with [CrossCrypt](https://en.wikipedia.org/wiki/CrossCrypt "wikipedia:CrossCrypt"), [LibreCrypt](https://github.com/t-d-k/LibreCrypt)) | ?
-(with [FreeOTFE](https://en.wikipedia.org/wiki/FreeOTFE "wikipedia:FreeOTFE"), [LibreCrypt](https://github.com/t-d-k/LibreCrypt)) | ✔ | ✔ | ? | ?
-[[6]](http://members.ferrara.linux.it/freddy77/encfs.html) |
+| Encrypted data can also be accessed from Windows | ? | ? | ✔ | ✔ | ? | ✔
+[[6]](https://github.com/vgough/encfs/wiki/Windows) |
 | Encrypted data can also be accessed from Mac OS X | ? | ? | ✔ | ✔ | ? | ✔
 [[7]](https://sites.google.com/a/arg0.net/www/encfs-mac-build) |
 | Encrypted data can also be accessed from FreeBSD | ? | ? | ✔

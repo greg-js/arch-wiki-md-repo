@@ -10,6 +10,7 @@ The TUs are governed using the [TU bylaws](https://aur.archlinux.org/trusted-use
 
 *   [1 TODO list for new Trusted Users](#TODO_list_for_new_Trusted_Users)
 *   [2 The TU and the AUR](#The_TU_and_the_AUR)
+    *   [2.1 Rewriting git history](#Rewriting_git_history)
 *   [3 The TU and [community], Guidelines for Package Maintenance](#The_TU_and_[community],_Guidelines_for_Package_Maintenance)
     *   [3.1 Rules for Packages Entering the [community] Repo](#Rules_for_Packages_Entering_the_[community]_Repo)
     *   [3.2 Accessing and Updating the Repository](#Accessing_and_Updating_the_Repository)
@@ -55,6 +56,30 @@ The TUs should also make an effort to check package submissions in the [AUR](/in
 TUs should also check PKGBUILDs for minor mistakes, suggest corrections and improvements. The TU should endeavor to confirm that all pkgs follow the Arch Packaging Guidelines/Standards and in doing so share their skills with other package builders in an effort to raise the standard of package building across the distro.
 
 TUs are also in an excellent position to document recommended practices.
+
+### Rewriting git history
+
+In some cases rewriting the history of an AUR repository is required, for example when a user inadvertently uses their real name in a published commit. This can be automated with [git-filter-branch(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-filter-branch.1).
+
+To force push the new history, forward the `AUR_OVERWRITE=1` environment variable to [git-push(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-push.1). See [[1]](https://git.archlinux.org/aurweb.git/commit/?id=c5302d3a33028f483cc2e01225226d4ae047dd4a) for details.
+
+**Warning:** It is recommended to create a backup of the repository before rewriting history.
+
+	Modify committer or author identity
+
+Use `git filter-branch --env-filter` with the `GIT_AUTHOR_NAME`, `GIT_AUTHOR_EMAIL`, `GIT_COMMITTER_NAME` and `GIT_COMMITTER_EMAIL` [environment variables](/index.php/Environment_variables "Environment variables"). For example:
+
+```
+git filter-branch --env-filter '
+if test "$GIT_AUTHOR_EMAIL" = "lepetit@prince.com"; then
+  GIT_AUTHOR_EMAIL=user@users.noreply.github.com
+fi
+if test "$GIT_AUTHOR_NAME" = "Antoine de Saint-Exupéry"; then
+  GIT_AUTHOR_NAME=user
+fi'
+```
+
+**Note:** [git-log(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-log.1) only displays the git *author* by default. Use `git log --pretty=fuller` to display the *author* and *committer*.
 
 ## The TU and [community], Guidelines for Package Maintenance
 

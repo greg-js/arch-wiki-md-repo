@@ -83,19 +83,7 @@ Devices are now automatically mounted when they are accessed, they will remain m
 
 ### Removable media
 
-*   Open `/etc/autofs/auto.misc` to add, remove or edit miscellaneous devices. For instance:
-
- `/etc/autofs/auto.misc` 
-```
-#kernel   -ro                                        ftp.kernel.org:/pub/linux
-#boot     -fstype=ext2                               :/dev/hda1
-usbstick  -fstype=auto,async,nodev,nosuid,umask=000  :/dev/sdb1
-cdrom     -fstype=iso9660,ro                         :/dev/cdrom
-#floppy   -fstype=auto                               :/dev/fd0
-
-```
-
-If you have a CD/DVD combo-drive you can change the `cdrom` line with `-fstype=auto` to have the media type autodetected.
+Edit `/etc/autofs/auto.misc` to add, remove or edit miscellaneous devices.
 
 ### NFS network mounts
 

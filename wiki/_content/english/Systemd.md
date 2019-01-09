@@ -9,7 +9,7 @@ Related articles
 *   [Improving performance/Boot process](/index.php/Improving_performance/Boot_process "Improving performance/Boot process")
 *   [Allow users to shutdown](/index.php/Allow_users_to_shutdown "Allow users to shutdown")
 
-From the [project web page](http://freedesktop.org/wiki/Software/systemd):
+From the [project web page](https://freedesktop.org/wiki/Software/systemd/):
 
 	*systemd* is a suite of basic building blocks for a Linux system. It provides a system and service manager that runs as PID 1 and starts the rest of the system. systemd provides aggressive parallelization capabilities, uses socket and [D-Bus](/index.php/D-Bus "D-Bus") activation for starting services, offers on-demand starting of daemons, keeps track of processes using Linux [control groups](/index.php/Control_groups "Control groups"), maintains mount and automount points, and implements an elaborate transactional dependency-based service control logic. *systemd* supports SysV and LSB init scripts and works as a replacement for sysvinit. Other parts include a logging daemon, utilities to control basic system configuration like the hostname, date, locale, maintain a list of logged-in users and running containers and virtual machines, system accounts, runtime directories and settings, and daemons to manage simple network configuration, network time synchronization, log forwarding, and name resolution.
 
@@ -274,7 +274,7 @@ $ systemctl hybrid-sleep
 
 ## Writing unit files
 
-The syntax of *systemd'*s [unit files](http://www.freedesktop.org/software/systemd/man/systemd.unit.html) is inspired by XDG Desktop Entry Specification *.desktop* files, which are in turn inspired by Microsoft Windows *.ini* files. Unit files are loaded from multiple locations (to see the full list, run `systemctl show --property=UnitPath`), but the main ones are (listed from lowest to highest precedence):
+The syntax of *systemd'*s [unit files](https://www.freedesktop.org/software/systemd/man/systemd.unit.html) is inspired by XDG Desktop Entry Specification *.desktop* files, which are in turn inspired by Microsoft Windows *.ini* files. Unit files are loaded from multiple locations (to see the full list, run `systemctl show --property=UnitPath`), but the main ones are (listed from lowest to highest precedence):
 
 *   `/usr/lib/systemd/system/`: units provided by installed packages
 *   `/etc/systemd/system/`: units installed by the system administrator
@@ -284,7 +284,7 @@ The syntax of *systemd'*s [unit files](http://www.freedesktop.org/software/syste
 *   The load paths are completely different when running *systemd* in [user mode](/index.php/Systemd/User#How_it_works "Systemd/User").
 *   systemd unit names may only contain ASCII alphanumeric characters, underscores and periods. All other characters must be replaced by C-style "\x2d" escapes, or employ their predefined semantics ('@', '-'). See [systemd.unit(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5) and [systemd-escape(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-escape.1) for more information.
 
-Look at the units installed by your packages for examples, as well as the [annotated example section](http://www.freedesktop.org/software/systemd/man/systemd.service.html#Examples) of [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5).
+Look at the units installed by your packages for examples, as well as the [annotated example section](https://www.freedesktop.org/software/systemd/man/systemd.service.html#Examples) of [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5).
 
 **Tip:** Comments prepended with `#` may be used in unit-files as well, but only in new lines. Do not use end-line comments after *systemd* parameters or the unit will fail to activate.
 
@@ -305,7 +305,7 @@ There are several different start-up types to consider when writing a custom ser
 *   `Type=dbus`: the service is considered ready when the specified `BusName` appears on DBus's system bus.
 *   `Type=idle`: *systemd* will delay execution of the service binary until all jobs are dispatched. Other than that behavior is very similar to `Type=simple`.
 
-See the [systemd.service(5)](http://www.freedesktop.org/software/systemd/man/systemd.service.html#Type=) man page for a more detailed explanation of the `Type` values.
+See the [systemd.service(5)](https://www.freedesktop.org/software/systemd/man/systemd.service.html#Type=) man page for a more detailed explanation of the `Type` values.
 
 ### Editing provided units
 
@@ -641,7 +641,7 @@ See [journalctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1) for
 
 Compatibility with a classic, non-journald aware [syslog](/index.php/Syslog-ng "Syslog-ng") implementation can be provided by letting *systemd* forward all messages via the socket `/run/systemd/journal/syslog`. To make the syslog daemon work with the journal, it has to bind to this socket instead of `/dev/log` ([official announcement](http://lwn.net/Articles/474968/)).
 
-The default `journald.conf` for forwarding to the socket is `ForwardToSyslog=no` to avoid system overhead, because [rsyslog](/index.php/Rsyslog "Rsyslog") or [syslog-ng](/index.php/Syslog-ng "Syslog-ng") pull the messages from the journal by [itself](http://lists.freedesktop.org/archives/systemd-devel/2014-August/022295.html#journald).
+The default `journald.conf` for forwarding to the socket is `ForwardToSyslog=no` to avoid system overhead, because [rsyslog](/index.php/Rsyslog "Rsyslog") or [syslog-ng](/index.php/Syslog-ng "Syslog-ng") pull the messages from the journal by [itself](https://lists.freedesktop.org/archives/systemd-devel/2014-August/022295.html#journald).
 
 See [Syslog-ng#Overview](/index.php/Syslog-ng#Overview "Syslog-ng") and [Syslog-ng#syslog-ng and systemd journal](/index.php/Syslog-ng#syslog-ng_and_systemd_journal "Syslog-ng"), or [rsyslog](/index.php/Rsyslog "Rsyslog") respectively, for details on configuration.
 
@@ -796,7 +796,7 @@ Aug 25 12:22:31 mypc systemd[1]: **Started Load Kernel Modules**.
 
 ### Diagnosing boot problems
 
-*systemd* has several options for diagnosing problems with the boot process. See [boot debugging](/index.php/Boot_debugging "Boot debugging") for more general instructions and options to capture boot messages before *systemd* takes over the [boot process](/index.php/Boot_process "Boot process"). Also see the [systemd debugging documentation](http://freedesktop.org/wiki/Software/systemd/Debugging/).
+*systemd* has several options for diagnosing problems with the boot process. See [boot debugging](/index.php/Boot_debugging "Boot debugging") for more general instructions and options to capture boot messages before *systemd* takes over the [boot process](/index.php/Boot_process "Boot process"). Also see the [systemd debugging documentation](https://freedesktop.org/wiki/Software/systemd/Debugging/).
 
 ### Diagnosing a service
 
@@ -821,7 +821,7 @@ then [restart](/index.php/Restart "Restart") *systemd-networkd* and watch the jo
 
 ### Shutdown/reboot takes terribly long
 
-If the shutdown process takes a very long time (or seems to freeze) most likely a service not exiting is to blame. *systemd* waits some time for each service to exit before trying to kill it. To find out if you are affected, see [this article](http://freedesktop.org/wiki/Software/systemd/Debugging/#shutdowncompleteseventually).
+If the shutdown process takes a very long time (or seems to freeze) most likely a service not exiting is to blame. *systemd* waits some time for each service to exit before trying to kill it. To find out if you are affected, see [this article](https://freedesktop.org/wiki/Software/systemd/Debugging/#shutdowncompleteseventually).
 
 ### Short lived processes do not seem to log any output
 

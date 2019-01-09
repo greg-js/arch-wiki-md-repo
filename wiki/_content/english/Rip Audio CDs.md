@@ -37,7 +37,7 @@ $ cdda2wav -vall cddb=0 speed=4 -paranoia paraopts=proof -B -D /dev/sr0
 
 ```
 
-Some CD rippers support burning audio to a CD and transcoding on-the-fly.
+Some CD rippers support burning audio to a CD and transcoding on-the-fly (e.g. *cdda2mp3*).
 
 ### Creating cue files
 
@@ -60,17 +60,17 @@ For some examples of audio tag editors see [List of applications/Multimedia#Audi
 
 ### Converting to other formats
 
-Re-encoding to another format can be done with [lame](https://www.archlinux.org/packages/?name=lame) or [FFmpeg](/index.php/FFmpeg "FFmpeg"). For example, to convert the output raw audio files from the example in [#Ripping](#Ripping) to highest quality variable bitrate MP3:
+Re-encoding to another format can be done with [lame](https://www.archlinux.org/packages/?name=lame), [flac](https://www.archlinux.org/packages/?name=flac) or [FFmpeg](/index.php/FFmpeg "FFmpeg"). For example, to convert the output raw audio files from the example in [#Ripping](#Ripping) to highest quality variable bitrate MP3:
 
 ```
-$ lame -V0 *input*.wav *output*.mp3
+$ lame -V0 *input*.wav
 
 ```
 
 To convert them to FLAC instead:
 
 ```
-$ ffmpeg -i *input*.wav *output*.flac
+$ flac *input*.wav
 
 ```
 

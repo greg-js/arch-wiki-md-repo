@@ -48,7 +48,7 @@ Related articles
 
 ### ما هي توزيعة آرتش لينُكس؟
 
-قم بالاطلاع على مقالة [آرتش لينُكس](/index.php?title=(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9)_Arch_Linux&action=edit&redlink=1 "(العربية) Arch Linux (page does not exist)").
+قم بالاطلاع على مقالة [آرتش لينُكس](/index.php/Arch_Linux_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Arch Linux (العربية)").
 
 ### ما الأسباب التي تجعلني لا استخدام آرتش لينُكس؟
 

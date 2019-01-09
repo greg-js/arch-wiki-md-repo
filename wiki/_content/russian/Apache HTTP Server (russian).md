@@ -312,7 +312,7 @@ httpd.service: control process exited, code=exited status=1
 
 **Примечание:** Если вы не обнаружите библиотеку `libphp7.so` в каталоге (`/etc/httpd/modules`), то вероятнее всего, что вы не установили [php-apache](https://www.archlinux.org/packages/?name=php-apache).
 
-Если ваш корневой каталог `DocumentRoot` не `/srv/http`, добавьте его в список `open_basedir` в `/etc/php/php.ini`:
+Если ваш корневой каталог `DocumentRoot` не `/srv/http`, добавьте его в список `open_basedir` в `/etc/php/php.ini` (необязательно):
 
 ```
  open_basedir=/srv/http/:/home/:/tmp/:/usr/share/pear/:*/путь/до/корневого/каталога*

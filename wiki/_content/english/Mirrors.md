@@ -39,8 +39,8 @@ Example:
 
 ```
 # Any
-# Server = ftp://mirrors.kernel.org/archlinux/$repo/os/$arch
-**Server = http://mirrors.kernel.org/archlinux/$repo/os/$arch**
+# Server = http://mirrors.kernel.org/archlinux/$repo/os/$arch
+**Server = https://mirrors.kernel.org/archlinux/$repo/os/$arch**
 
 ```
 
@@ -63,7 +63,7 @@ To use the *HostEurope* mirror as a default mirror, add it before the `Include` 
 
 ```
 [core]
-**Server = ftp://ftp.hosteurope.de/mirror/ftp.archlinux.org/core/os/$arch**
+**Server = http://ftp.hosteurope.de/mirror/ftp.archlinux.org/core/os/$arch**
 Include = /etc/pacman.d/mirrorlist
 
 ```

@@ -18,7 +18,7 @@ En este artículo se describe cómo los usuarios nuevos o experimentados en Arch
     *   [1.3 Unirse a la sala de chat](#Unirse_a_la_sala_de_chat)
 *   [2 Empaquetado](#Empaquetado)
     *   [2.1 Informar sobre los paquetes instalados](#Informar_sobre_los_paquetes_instalados)
-    *   [2.2 Arreglar y reportar bugs](#Arreglar_y_reportar_bugs)
+    *   [2.2 Arreglar y reportar errores](#Arreglar_y_reportar_errores)
     *   [2.3 Informar sobre problemas de seguridad](#Informar_sobre_problemas_de_seguridad)
     *   [2.4 Ayudar a probar paquetes](#Ayudar_a_probar_paquetes)
     *   [2.5 Crear y adoptar paquetes de AUR](#Crear_y_adoptar_paquetes_de_AUR)
@@ -53,7 +53,7 @@ Puede ayudar a otros usuarios a resolver problemas a través del [canal IRC](/in
 
 [pkgstats](/index.php/Pkgstats "Pkgstats") proporciona un [temporizador en systemd](/index.php/Systemd/Timers "Systemd/Timers") que envía una lista de los paquetes instalados en el sistema, junto con la arquitectura y los mirrors que se utilizan, a los desarrolladores de Arch Linux, con el fin de ayudarles a priorizar sus esfuerzos y mejorar la distribución. La información se envía de forma anónima y no puede ser utilizada para identificarle. Puede ver los datos recogidos en la [página Statistics](https://www.archlinux.de/?page=Statistics). Más información disponible en [este hilo del foro](https://bbs.archlinux.org/viewtopic.php?id=105431).
 
-### Arreglar y reportar bugs
+### Arreglar y reportar errores
 
 Informar y corregir errores en el [bug tracker](https://bugs.archlinux.org/) es una de las posibles formas de ayudar a la comunidad.
 

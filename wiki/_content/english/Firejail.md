@@ -29,6 +29,7 @@ Related articles
     *   [7.3 PulseAudio](#PulseAudio)
     *   [7.4 Hidepid](#Hidepid)
     *   [7.5 Proprietary Nvidia drivers](#Proprietary_Nvidia_drivers)
+    *   [7.6 --net options and Linux kernel >=4.20.0](#--net_options_and_Linux_kernel_>=4.20.0)
 *   [8 See also](#See_also)
 
 ## Installation
@@ -336,6 +337,21 @@ If you have [hidepid](/index.php/Hidepid "Hidepid") installed, Firemon can only 
 ### Proprietary Nvidia drivers
 
 Some users report problems when using Firejail and proprietary graphic drivers from [NVIDIA](/index.php/NVIDIA "NVIDIA") (e.g. [[4]](https://github.com/netblue30/firejail/issues/1753), [[5]](https://github.com/netblue30/firejail/issues/879) or [[6]](https://github.com/netblue30/firejail/issues/841)). This can often be solved by disabling the `noroot` Firejail option in the application's profile file.
+
+### --net options and Linux kernel >=4.20.0
+
+There is a bug on firejail 0.5.96 with linux >= 4.20.0, see [[7]](https://github.com/netblue30/firejail/issues/2314) and [[8]](https://github.com/netblue30/firejail/pull/2327)
+
+Example error message:
+
+```
+$ firejail --noprofile --net=eth0 ls
+Parent pid 8521, child pid 8522
+Error send: arp.c:182 arp_check: Invalid argument
+Error: proc 8521 cannot sync with peer: unexpected EOF
+Peer 8522 unexpectedly exited with status 1
+
+```
 
 ## See also
 

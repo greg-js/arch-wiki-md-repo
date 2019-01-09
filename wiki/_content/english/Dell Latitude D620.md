@@ -9,7 +9,7 @@
 *   [4 Recommendations](#Recommendations)
     *   [4.1 PC Speaker](#PC_Speaker)
     *   [4.2 Synaptics Touchpad](#Synaptics_Touchpad)
-    *   [4.3 Volume, Mute and Super Keys](#Volume.2C_Mute_and_Super_Keys)
+    *   [4.3 Volume, Mute and Super Keys](#Volume,_Mute_and_Super_Keys)
         *   [4.3.1 In Openbox](#In_Openbox)
         *   [4.3.2 In Xmonad](#In_Xmonad)
 
@@ -136,7 +136,7 @@ The synaptics touchpad should be working out of the box.
 
 #### In Openbox
 
-If you install Openbox3 you may find that your volume and mute keys (next to the power button) and your super (Windows key) are not bound. You may wish to configure these in a different manner(e.g. [Keytouch](/index.php/Keytouch "Keytouch")) but if you simply want to get these to work in Openbox then create `~/.Xmodmap` with the following contents:
+If you install Openbox3 you may find that your volume and mute keys (next to the power button) and your super (Windows key) are not bound. If you simply want to get these to work in Openbox then create `~/.Xmodmap` with the following contents:
 
 ```
 add mod4=Super_L

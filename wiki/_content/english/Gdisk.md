@@ -165,7 +165,7 @@ Repeat this procedure until you have the partitions you desire.
 
 ### Write changes to disk
 
-**Tip:** Use the command `c` to change a partition's name ([PARTLABEL](/index.php/Persistent_block_device_naming#by-partlabel "Persistent block device naming")) for easy distinguishing.
+**Tip:** Use the command `c` to change a partition's name ([PARTLABEL](/index.php/PARTLABEL "PARTLABEL")) for easy distinguishing.
 
 Write the table to disk and exit via the `w` command.
 

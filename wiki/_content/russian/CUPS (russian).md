@@ -8,7 +8,7 @@
 *   [Samba (Русский)](/index.php/Samba_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Samba (Русский)")
 *   [LPRng](/index.php/LPRng "LPRng")
 
-[CUPS](http://www.cups.org/) - это стандартная система печати с открытым исходным кодом, разработанная Apple Inc. для MacOS® и других UNIX®-подобных операционных систем.
+[CUPS](https://www.cups.org/) - это стандартная система печати с открытым исходным кодом, разработанная Apple Inc. для MacOS® и других UNIX®-подобных операционных систем.
 
 ## Contents
 
@@ -361,7 +361,7 @@ polkit.addRule(function(action, subject) {
 
 CUPS можно настроить для прямого подключения к удаленным серверам принтеров вместо запуска локального сервера печати. Для этого потребуется [установить](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C "Установить") пакет [libcups](https://www.archlinux.org/packages/?name=libcups). Некоторым приложениям по-прежнему потребуется пакет [cups](https://www.archlinux.org/packages/?name=cups) для печати.
 
-**Важно:** Доступ к удаленным принтерам без локального сервера CUPS не рекомендуется разработчиками. [[3]](http://www.cups.org/pipermail/cups/2015-October/027229.html)
+**Важно:** Доступ к удаленным принтерам без локального сервера CUPS не рекомендуется разработчиками. [[3]](https://lists.cups.org/pipermail/cups/2015-October/027229.html)
 
 Чтобы использовать удаленный сервер CUPS, установите [переменную окружения](/index.php/%D0%9F%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BE%D0%BA%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F "Переменные окружения") `CUPS_SERVER` в `printerserver.mydomain:port`. Например, если вы хотите использовать другой сервер печати для одного экземпляра [Firefox](/index.php/Firefox_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Firefox (Русский)") (замените `printserver.mydomain:port` на имя/порт своего сервера печати):
 

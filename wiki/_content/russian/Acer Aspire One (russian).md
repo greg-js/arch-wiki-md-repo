@@ -854,7 +854,7 @@ Option "MigrationHeuristic" "greedy"
 
 ```
 
-Замечание: Установка опции "MigrationHeuristic" в "greedy" может приводить к искажениям иконок трея в KDE 4.1, как описано здесь [http://bugs.kde.org/show_bug.cgi?id=170283](http://bugs.kde.org/show_bug.cgi?id=170283) и здесь [http://bugs.freedesktop.org/show_bug.cgi?id=19059](http://bugs.freedesktop.org/show_bug.cgi?id=19059)
+Замечание: Установка опции "MigrationHeuristic" в "greedy" может приводить к искажениям иконок трея в KDE 4.1, как описано здесь [https://bugs.kde.org/show_bug.cgi?id=170283](https://bugs.kde.org/show_bug.cgi?id=170283) и здесь [https://bugs.freedesktop.org/show_bug.cgi?id=19059](https://bugs.freedesktop.org/show_bug.cgi?id=19059)
 
 Для увеличения производительности 3D, добавить в **/etc/profile**
 

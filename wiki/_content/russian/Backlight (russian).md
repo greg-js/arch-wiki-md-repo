@@ -163,7 +163,7 @@ systemd.restore_state=
 **Примечание:**
 
 *   xbacklight работает только с intel. Radeon не поддерживает свойство подсветки RandR.
-*   xbacklight в настоящий момент не работает с modesetting-драйвером [[3]](https://bugs.freedesktop.org/show_bug.cgi?id=96572).
+*   xbacklight в настоящий момент не работает с modesetting-драйвером [[3]](https://gitlab.freedesktop.org/xorg/xserver/issues/47).
 
 Чтобы установить яркость в 50% от максимальной:
 

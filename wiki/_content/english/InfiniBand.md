@@ -34,7 +34,7 @@ This page explains how to set up, diagnose, and benchmark [InfiniBand](https://e
     *   [5.2 iSCSI](#iSCSI)
         *   [5.2.1 Over IPoIB](#Over_IPoIB)
         *   [5.2.2 Over iSER](#Over_iSER)
-            *   [5.2.2.1 Configuring iSER devices](#Configuring_iSER_devices)
+        *   [5.2.3 Adding to /etc/fstab](#Adding_to_/etc/fstab)
 *   [6 Network segmentation](#Network_segmentation)
 *   [7 SDP (Sockets Direct Protocol)](#SDP_(Sockets_Direct_Protocol))
 *   [8 Diagnosing and benchmarking](#Diagnosing_and_benchmarking)
@@ -310,7 +310,14 @@ In `targetcli`:
 
 #### Create backstores
 
-In `targetcli`, setup a backstore for each device or virtual device to share:
+Enter the configuration shell:
+
+```
+# targetcli
+
+```
+
+Within `targetcli`, setup a backstore for each device or virtual device to share:
 
 *   To share an actual block device, run: `cd /backstores/block`; and `create *name* *dev*`
 *   To share a file as a virtual block device, run: `cd /backstores/fileio`; and `create *name* *file*`
@@ -347,17 +354,20 @@ Perform the target system instructions first, which will direct you when to temp
 
 *   On the initiator system:
     *   Install [open-iscsi](https://www.archlinux.org/packages/?name=open-iscsi)
-    *   [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `open-iscsi.service`
-    *   At this point, if you need this initiator system's IQN (iSCSI Qualified Name), aka its wwn (World Wide Name), for setting up the target system's `luns`, run: `cat /etc/iscsi/initiatorname.iscsi`
-    *   Discover online targets. Run `iscsiadm -m discovery -t sendtargets -p *portal*`, where *portal* is an IP (v4 or v6) address or hostname
-    *   Login to discovered targets. Run `iscsiadm -m node -L all`
-    *   View which block device ID was given to each target logged into. Run `iscsiadm -m session -P 3 | grep Attached`. The block device ID will be the last line in the tree for each target (`-P` is the print command, its option is the verbosity level, and only level 3 lists the block device IDs)
+    *   At this point, you can obtain this initiator system's IQN (iSCSI Qualified Name), aka its wwn (World Wide Name), for setting up the target system's `luns`:
+        *   `pacman` should have displayed `>>> Setting Initiatorname *wwn*`
+        *   Otherwise, run: `cat /etc/iscsi/initiatorname.iscsi` to see `InitiatorName=*wwn*`
+    *   [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `iscsid.service`
+    *   To automatically login to discovered targets at boot, before discovering targets, edit `/etc/iscsi/iscsid.conf` to set `node.startup = automatic`
+    *   Discover online targets. Run `iscsiadm -m discovery -t sendtargets -p *portal*` as root, where *portal* is an IP (v4 or v6) address or hostname
+        *   If using a hostname, make sure it routes to the IB IP address rather than Ethernet - it may be beneficial to just use the IB IP address
+    *   To automatically login to discovered targets at boot, [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `iscsi.service`
+    *   To manually login to discovered targets, run `iscsiadm -m node -L all` as root.
+    *   View which block device ID was given to each target logged into. Run `iscsiadm -m session -P 3 | grep Attached` as root. The block device ID will be the last line in the tree for each target (`-P` is the print command, its option is the verbosity level, and only level 3 lists the block device IDs)
 
 #### Over iSER
 
 iSER (iSCSI Extensions for RDMA) takes advantage of IB's RDMA protocols, rather than using TCP/IP. It eliminates TCP/IP overhead, and provides higher bandwidth, zero copy time, lower latency, and lower CPU utilization.
-
-##### Configuring iSER devices
 
 Follow the [iSCSI Over IPoIB](#Over_IPoIB) instructions, with the following changes:
 
@@ -367,7 +377,13 @@ Follow the [iSCSI Over IPoIB](#Over_IPoIB) instructions, with the following chan
         *   Where *iqn* is the randomly generated target name, i.e. `iqn.2003-01.org.linux-iscsi.hostname.x8664:sn.3d74b8d4020a`
     *   Run `enable_iser true`
     *   Save and exit by running: `cd /`; `saveconfig`; and `exit`
-*   On the initiator system, when running `iscsiadm` to discover online targets and login to them, use the additional argument `-I iser`
+*   On the initiator system, when running `iscsiadm` to discover online targets, use the additional argument `-I iser`, and it should show: `Logging in to [iface: iser...`
+
+#### Adding to /etc/fstab
+
+The last time you discovered targets, automatic login must have been turned on.
+
+Add your mount entry to `/etc/fstab` as if it were a local block device, except add a `_netdev` option to avoid attempting to mount it before network initialization.
 
 ## Network segmentation
 

@@ -58,10 +58,7 @@ $ resolvectl status
 
 However, if the [DHCP](/index.php/DHCP "DHCP") and [VPN](/index.php/VPN "VPN") clients use the [resolvconf](https://en.wikipedia.org/wiki/resolvconf "wikipedia:resolvconf") program to set name servers and search domains (see [openresolv#Users](/index.php/Openresolv#Users "Openresolv") for a list of software that use *resolvconf*), the additional package [systemd-resolvconf](https://www.archlinux.org/packages/?name=systemd-resolvconf) is needed to provide the `/usr/bin/resolvconf` symlink.
 
-**Note:**
-
-*   *systemd-resolved* has a limited *resolvconf* interface and may not work with all the clients, see [resolvectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolvectl.1#COMPATIBILITY_WITH_RESOLVCONF%288%29) for more information.
-*   The *resolvconf* interface in systemd 239 does not set nameservers. See [FS#59459](https://bugs.archlinux.org/task/59459) and [systemd issue 9423](https://github.com/systemd/systemd/issues/9423).
+**Note:** *systemd-resolved* has a limited *resolvconf* interface and may not work with all the clients, see [resolvectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolvectl.1#COMPATIBILITY_WITH_RESOLVCONF%288%29) for more information.
 
 ##### Manually
 

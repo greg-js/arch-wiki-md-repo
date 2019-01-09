@@ -21,8 +21,7 @@ FireWire (Texas Instruments) TSB43AB23: OK(?) | FireWire detects well but I have
 Runs Compiz on both fglrx ([catalyst](https://aur.archlinux.org/packages/catalyst/)) >= 8.02 and radeon driver | AC97: OK | Realtek: OK | Broadcom 4318
 Needs *acer_apci* + firmware or ndiswrapper driver | N/A | Battery: Yes
 Suspend: Video and Wi-Fi problems
-CPU frequency scaling: powernow-k8 driver | untested | KeyTouch works for hot keys
-Volume control, etc. |
+CPU frequency scaling: powernow-k8 driver | untested |
 | [Aspire 7720](/index.php/Acer_Aspire_7720 "Acer Aspire 7720") | 2009.02 | Intel i965 | ALC268: working OK | Broadcom BCM5787M (tg3): OK | Intel 3945: Needs microcode | Detected, works | Battery: Yes
 Suspend: Seems to work ok
 Hibernation: still flaky (often hangs in the middle of restoring) | With linuxant drivers, might work | Web cam driver: *uvcvideo*; card reader: only SD cards seem to work; special keys (Acer Arcade, direct access to browser/mail) seem to not work; volume knob at the side is seen as a multimedia key. | FireWire seems to be recognized, untested. For 64-bit, update BIOS to fix ACPI and wireless problems. |

@@ -4,11 +4,11 @@ Related articles
 *   [Arch based distributions](/index.php/Arch_based_distributions "Arch based distributions")
 *   [Pacman/Rosetta](/index.php/Pacman/Rosetta "Pacman/Rosetta")
 
-تحاول هذه الصفحة المقارنة بين آرش لينكس وتوزيعات غنو/لينكس المشهورة الأخرى وأنظمة التشغيل الشبيهة بنظام يونكس. الملخصات التالية هي أوصاف مختصرة قد تساعد الشخص على تقرير إن كان آرش لينكس سيناسب حاجاته. ومع أن المراجعات يمكن أن تكون مفيدة, إلا أن التجربة المباشرة هي أفضل طريقة للمقارنة بين التوزيعات.
+تحاول هذه الصفحة المقارنة بين آرتش لينكس وتوزيعات غنو/لينكس المشهورة الأخرى وأنظمة التشغيل الشبيهة بنظام يونكس. الملخصات التالية هي أوصاف مختصرة قد تساعد الشخص على تقرير إن كان آرتش لينكس سيناسب حاجاته. ومع أن المراجعات يمكن أن تكون مفيدة, إلا أن التجربة المباشرة هي أفضل طريقة للمقارنة بين التوزيعات.
 
 أنظر [w:Comparison of operating systems](https://en.wikipedia.org/wiki/Comparison_of_operating_systems "w:Comparison of operating systems") و [w:Comparison of Linux distributions](https://en.wikipedia.org/wiki/Comparison_of_Linux_distributions "w:Comparison of Linux distributions") لمقارنة أكمل.
 
-كل المقارنات التالية هي بين آرش لينكس والتوزيعات الأخرى. نسخ المجتمع المنقولة الداعمة لبنًى غير x86_64 موجودة في [Arch-based distributions](/index.php/Arch-based_distributions "Arch-based distributions").
+كل المقارنات التالية هي بين آرتش لينكس والتوزيعات الأخرى. نسخ المجتمع المنقولة الداعمة لبنًى غير x86_64 موجودة في [Arch-based distributions](/index.php/Arch-based_distributions "Arch-based distributions").
 
 ## Contents
 
@@ -30,17 +30,17 @@ Related articles
 
 ## التوزيعات المبنية على المصدر
 
-التوزيعة المبنية على المصدر محمولة جدًّا، وتعطي ميزة التحكم وتصريف نظام التشغيل كاملًا والتطبيقات لبنية معينة واستخدام مخطط، وعيبها هو طبيعة تصريف المصدر التي تستهلك الوقت. قاعدة آرش وكل الحزم مصرفة فقط للبنية x86_64.
+التوزيعة المبنية على المصدر محمولة جدًّا، وتعطي ميزة التحكم وتصريف نظام التشغيل كاملًا والتطبيقات لبنية معينة واستخدام مخطط، وعيبها هو طبيعة تصريف المصدر التي تستهلك الوقت. قاعدة آرتش وكل الحزم مصرفة فقط للبنية x86_64.
 
 ### CRUX
 
-*   [CRUX](https://crux.nu/) هي توزيعة خفيفة تركز على مبدأ [KISS](/index.php/Arch_terminology#KISS "Arch terminology"). CRUX ألهمت Judd Vinet إنشاء آرش.
-*   تستعمل CRUX مخطوطات بدء على شكل BSD, أما آرش فتستعمل systemd.
+*   [CRUX](https://crux.nu/) هي توزيعة خفيفة تركز على مبدأ [افعلها بنفسك](/index.php/Arch_terminology#KISS "Arch terminology"). CRUX ألهمت Judd Vinet إنشاء آرتش.
+*   تستعمل CRUX مخطوطات بدء على شكل BSD, أما آرتش فتستعمل systemd.
 *   بينما تستعمل Arch نظام إصدار متدحرج، فإن CRUX لها إصدارات شبه سنوية.
 *   كلاهما مشحون بنظام شبيه بالمنافذ، وكلاهما يوفران بيئة قاعدية للبناء فوقها مثل أنظمة *BSD.
-*   آرش تقدم باكمان الذي يدير حزم النظام الثنائية ويعمل بسلاسة مع [Arch Build System](/index.php/Arch_Build_System "Arch Build System"). يستعمل CRUX نظامًا ساهم فيه المجتمع يدعى *prt-get*، وهو يتعامل مع تمييز الإعتماديات بالاشتراك مع نظام المنافذ، لكنه يبني كل الحزم من المصدر (رغم أن تثبيت CRUX القاعدي ثنائي).
+*   آرتش تقدم باكمان الذي يدير حزم النظام الثنائية ويعمل بسلاسة مع [Arch Build System](/index.php/Arch_Build_System "Arch Build System"). يستعمل CRUX نظامًا ساهم فيه المجتمع يدعى *prt-get*، وهو يتعامل مع تمييز الإعتماديات بالاشتراك مع نظام المنافذ، لكنه يبني كل الحزم من المصدر (رغم أن تثبيت CRUX القاعدي ثنائي).
 *   كلا Arch و CRUX تدعمان رسميًّا البنية x86_64 فقط.
-*   تقدم آرش عددًا كبيرًا من مخازن الحزم الثنائية بالإضافة إلى [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). يوفر CRUX نظام منافذ مدعوم دعمًا رسميا أقل بالإضافة إلى مستودع مجتمع متواضع نسبيا.
+*   تقدم آرتش عددًا كبيرًا من مخازن الحزم الثنائية بالإضافة إلى [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). يوفر CRUX نظام منافذ مدعوم دعمًا رسميا أقل بالإضافة إلى مستودع مجتمع متواضع نسبيا.
 
 ### LFS
 

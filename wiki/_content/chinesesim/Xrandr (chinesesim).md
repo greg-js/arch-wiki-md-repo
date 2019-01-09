@@ -5,62 +5,92 @@ Related articles
 
 **翻译状态：** 本文是英文页面 [Xrandr](/index.php/Xrandr "Xrandr") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-6-16，点击[这里](https://wiki.archlinux.org/index.php?title=Xrandr&diff=0&oldid=477117)可以查看翻译后英文页面的改动。
 
-"xrandr" 是一款官方的 [RandR](https://en.wikipedia.org/wiki/RandR "wikipedia:RandR") [Wikipedia:X Window System](https://en.wikipedia.org/wiki/X_Window_System "wikipedia:X Window System") 扩展配置工具。它可以设置屏幕显示的大小、方向、镜像等。对多显示器的情况，请参考 [Multihead](/index.php/Multihead "Multihead") 页面。 当前使用的显示器用 ***** 标记，优先使用的显示器用 **+** 标记。
+"xrandr" 是一款官方的 [RandR](https://en.wikipedia.org/wiki/RandR "wikipedia:RandR") (*Resize and Rotate*)[Wikipedia:X Window System](https://en.wikipedia.org/wiki/X_Window_System "wikipedia:X Window System") 扩展配置工具。它可以设置屏幕显示的大小、方向、镜像等。对多显示器的情况，请参考 [Multihead](/index.php/Multihead "Multihead") 页面。
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 设置分辨率](#.E8.AE.BE.E7.BD.AE.E5.88.86.E8.BE.A8.E7.8E.87)
-*   [3 添加未被检测到的有效分辨率](#.E6.B7.BB.E5.8A.A0.E6.9C.AA.E8.A2.AB.E6.A3.80.E6.B5.8B.E5.88.B0.E7.9A.84.E6.9C.89.E6.95.88.E5.88.86.E8.BE.A8.E7.8E.87)
-*   [4 使xrandr所更改的分辨率设置永久生效](#.E4.BD.BFxrandr.E6.89.80.E6.9B.B4.E6.94.B9.E7.9A.84.E5.88.86.E8.BE.A8.E7.8E.87.E8.AE.BE.E7.BD.AE.E6.B0.B8.E4.B9.85.E7.94.9F.E6.95.88)
-    *   [4.1 在xorg.conf设置分辨率（推荐）](#.E5.9C.A8xorg.conf.E8.AE.BE.E7.BD.AE.E5.88.86.E8.BE.A8.E7.8E.87.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89)
-    *   [4.2 在xprofile设定xrandr命令](#.E5.9C.A8xprofile.E8.AE.BE.E5.AE.9Axrandr.E5.91.BD.E4.BB.A4)
-    *   [4.3 在KDM/GDM的启动脚本设定xrandr命令](#.E5.9C.A8KDM.2FGDM.E7.9A.84.E5.90.AF.E5.8A.A8.E8.84.9A.E6.9C.AC.E8.AE.BE.E5.AE.9Axrandr.E5.91.BD.E4.BB.A4)
-*   [5 图形前端](#.E5.9B.BE.E5.BD.A2.E5.89.8D.E7.AB.AF)
-    *   [5.1 ARandR](#ARandR)
-    *   [5.2 LXrandR](#LXrandR)
-*   [6 脚本](#.E8.84.9A.E6.9C.AC)
-*   [7 在VNC上使用xrandr](#.E5.9C.A8VNC.E4.B8.8A.E4.BD.BF.E7.94.A8xrandr)
-*   [8 疑难排除](#.E7.96.91.E9.9A.BE.E6.8E.92.E9.99.A4)
-    *   [8.1 添加未检测到的分辨率](#.E6.B7.BB.E5.8A.A0.E6.9C.AA.E6.A3.80.E6.B5.8B.E5.88.B0.E7.9A.84.E5.88.86.E8.BE.A8.E7.8E.87)
-        *   [8.1.1 EDID 校验和无效](#EDID_.E6.A0.A1.E9.AA.8C.E5.92.8C.E6.97.A0.E6.95.88)
-    *   [8.2 纠正电视机分辨率过扫](#.E7.BA.A0.E6.AD.A3.E7.94.B5.E8.A7.86.E6.9C.BA.E5.88.86.E8.BE.A8.E7.8E.87.E8.BF.87.E6.89.AB)
-    *   [8.3 Full RGB in HDMI](#Full_RGB_in_HDMI)
-        *   [8.3.1 Screen resolution reverts back after a blink](#Screen_resolution_reverts_back_after_a_blink)
-*   [9 参见](#.E5.8F.82.E8.A7.81)
+*   [1 安装](#安装)
+    *   [1.1 图形化操作程序](#图形化操作程序)
+*   [2 测试配置](#测试配置)
+*   [3 添加未被检测到的有效分辨率](#添加未被检测到的有效分辨率)
+*   [4 使xrandr所更改的分辨率设置永久生效](#使xrandr所更改的分辨率设置永久生效)
+    *   [4.1 在xorg.conf设置分辨率（推荐）](#在xorg.conf设置分辨率（推荐）)
+    *   [4.2 在xprofile设定xrandr命令](#在xprofile设定xrandr命令)
+    *   [4.3 在KDM/GDM的启动脚本设定xrandr命令](#在KDM/GDM的启动脚本设定xrandr命令)
+*   [5 脚本](#脚本)
+*   [6 在VNC上使用xrandr](#在VNC上使用xrandr)
+*   [7 疑难排除](#疑难排除)
+    *   [7.1 添加未检测到的分辨率](#添加未检测到的分辨率)
+        *   [7.1.1 EDID 校验和无效](#EDID_校验和无效)
+    *   [7.2 纠正电视机分辨率过扫](#纠正电视机分辨率过扫)
+    *   [7.3 Full RGB in HDMI](#Full_RGB_in_HDMI)
+        *   [7.3.1 Screen resolution reverts back after a blink](#Screen_resolution_reverts_back_after_a_blink)
+*   [8 参见](#参见)
 
 ## 安装
 
-请从 [官方软件仓库](/index.php/%E5%AE%98%E6%96%B9%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93 "官方软件仓库")[安装](/index.php/Pacman "Pacman") [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr) 软件包。除此之外，也可使用 [arandr](https://www.archlinux.org/packages/?name=arandr) 或 [lxrandr](https://www.archlinux.org/packages/?name=lxrandr) 等图形前端作为替代。
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr).
 
-## 设置分辨率
+### 图形化操作程序
 
-`xrandr`命令可以直接向您分别显示系统当前有效输出设备的名称(LVDS或VGA-0等等)和所有有效分辨率。
+*   **ARandR** — 提供了一个简单的图形化程序给 XrandR。显示器的位置会图形化地展示出来并可以使用拖拽的方式调整。
+
+	[https://christian.amsuess.com/tools/arandr/](https://christian.amsuess.com/tools/arandr/) || [arandr](https://www.archlinux.org/packages/?name=arandr)
+
+*   **LXRandR** — 是在 LXDE 可以对屏幕分辨率和额外的显示器管理的工具.
+
+	[https://wiki.lxde.org/en/LXRandR](https://wiki.lxde.org/en/LXRandR) || GTK+ 2: [lxrandr](https://www.archlinux.org/packages/?name=lxrandr), GTK+ 3: [lxrandr-gtk3](https://www.archlinux.org/packages/?name=lxrandr-gtk3)
+
+## 测试配置
+
+当没有添加任何选项直接运行时，*xrandr* 列出该系统可用的显示输出设备 (`VGA-1`, `HDMI-1`等等) 和每一台设备可设置的分辨率，当前分辨率后面带有一个*****号和一个**+**号:
+
+ `xrandr` 
+```
+Screen 0: minimum 320 x 200, current 3200 x 1080, maximum 8192 x 8192
+VGA-1 disconnected (normal left inverted right x axis y axis)
+HDMI-1 connected primary 1920x1080+0+0 (normal left inverted right x axis y axis) 531mm x 299mm
+   1920x1080     59.93 +  60.00*   50.00    59.94  
+   1920x1080i    60.00    50.00    59.94  
+   1680x1050     59.88  
+…
 
 ```
-Screen 0: minimum 320 x 200, current 1400 x 1050, maximum 1400 x 1400
-VGA disconnected (normal left inverted right x axis y axis)
-LVDS connected 1400x1050+0+0 (normal left inverted right x axis y axis) 286mm x 214mm
-   1400x1050      60.0*+   50.0  
-[...]
+
+**注意:** 如果你的分辨率没有出现在上方， 请看 [#添加未被检测到的有效分辨率](#添加未被检测到的有效分辨率)
+
+你可以使用 *xrandr* 设置不同的分辨率（必须是出现在上面输出列表中的分辨率）：
+
+```
+$ xrandr --output HDMI-1 --mode 1920x1080
 
 ```
 
-您可以通过xrandr为某显示器指定一种分辨率，示例，且其中--output参数指定显示器，--mode参数指定一种有效分辨率：
+当列表中出现多个刷新率，可以通过 `--rate` 选项改变，一次性设置或者分开设置，例如：
 
 ```
- xrandr --output LVDS --mode 1024x768
-
-```
-
-也可以与此同时地，或独立地使用--rate参数来修改刷新率，：
-
-```
- xrandr --output LVDS --mode 1024x768 --rate 75
+$ xrandr --output HDMI-1 --mode 1920x1080 --rate 60
 
 ```
 
-**注意:** 您通过`xrandr`所作出的更改只能在当前会话暂时生效。详情请参考 [xrandr(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xrandr.1)。
+如果输出设备已经连接但被禁用，`--auto` 选项会以系统偏好的分辨率（最大分辨率）开启特定的输出设备：
+
+```
+$ xrandr --output HDMI-1 --auto
+
+```
+
+还可以用一条命令设置多个输出设备，例如，使用系统偏好的选项关闭 `HDMI-1` 并打开 `HDMI-2`：
+
+```
+$ xrandr --output HDMI-1 --off --output HDMI-2 --auto
+
+```
+
+**注意:**
+
+*   通过 *xrandr* 作出的改变只在本次会话中有效
+*   *xrandr* 有很多功能 - 详情请参考 [xrandr(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xrandr.1)。
 
 ## 添加未被检测到的有效分辨率
 
@@ -159,25 +189,9 @@ EndSection
 
 ### 在KDM/GDM的启动脚本设定xrandr命令
 
-KDM和GDM都具备在X初始化时，会被自动执行的启动脚本。GDM的启动脚本放在`/etc/gdm/`， KDM的则是`/usr/share/config/kdm/Xsetup`。您可以把相关的xrandr命令添加到这些启动脚本里。
+KDM和GDM都具备在X初始化时，会被自动执行的启动脚本。GDM的启动脚本放在`/etc/gdm/`， KDM的则是`/usr/share/config/kdm/Xsetup`，SDDM 的则是在 `/usr/share/sddm/scripts/Xsetup`。您可以把相关的xrandr命令添加到这些启动脚本里。
 
 这些脚本需要root权限及其他系统配置的配合，不过在启动进程里会比xprofile更早生效。
-
-## 图形前端
-
-有若干`xrandr`的图形前端可供您使用：
-
-### ARandR
-
-ARandR为xrandr提供了一个简单易用的前端。
-
-其软件包可通过community仓库下载到：[arandr](https://www.archlinux.org/packages/?name=arandr)
-
-### LXrandR
-
-[LXDE](/index.php/LXDE "LXDE")桌面环境默认的显示器配置工具。
-
-这软件也是community仓库的一部分：[lxrandr](https://www.archlinux.org/packages/?name=lxrandr)
 
 ## 脚本
 
@@ -401,7 +415,7 @@ $ xrandr --output VGA1 --mode 1280x1024_60.00 && sleep 5 && xrandr --newmode "10
 
 #### EDID 校验和无效
 
-如果前述方法导致引导期间发生 `*ERROR* EDID checksum is invalid` 错误，参阅 [这里](/index.php/Kernel_mode_setting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.BC.BA.E8.AE.BE.E6.A8.A1.E5.BC.8F.E5.92.8C_EDID "Kernel mode setting (简体中文)") 和 [这里](http://askubuntu.com/questions/201081/how-can-i-make-linux-behave-better-when-edid-is-unavailable).
+如果前述方法导致引导期间发生 `*ERROR* EDID checksum is invalid` 错误，参阅 [这里](/index.php/Kernel_mode_setting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#强设模式和_EDID "Kernel mode setting (简体中文)") 和 [这里](http://askubuntu.com/questions/201081/how-can-i-make-linux-behave-better-when-edid-is-unavailable).
 
 也许 `xrandr --addmode` 会返回错误 `X Error of failed request: BadMatch`。NVIDIA 用户请参阅 [NVIDIA/Troubleshooting#xrandr BadMatch](/index.php/NVIDIA/Troubleshooting#xrandr_BadMatch "NVIDIA/Troubleshooting")。`BadMatch` 能指示出无效的 EDID 校验和。要验证确实是这种情况，请以 verbose mode 运行 X 服务（例如：`startx -- -logverbose 6`）然后查阅 Xorg 日志中有关 EDID 错误的信息。
 

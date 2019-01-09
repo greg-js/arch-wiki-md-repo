@@ -428,7 +428,9 @@ Existing Btrfs file systems can use something like [EncFS](/index.php/EncFS "Enc
 
 ### Swap file
 
-Btrfs does not yet support [swap files](/index.php/Swap#Swap_file "Swap"). This is due to swap files requiring a function that Btrfs intentionally does not have for possibility of file system corruption [[5]](https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F). Patches for swapfile support are already available [[6]](https://lkml.org/lkml/2014/12/9/718) and may be included in an upcoming kernel release. As an alternative a swap file can be mounted on a loop device with poorer performance but will not be able to hibernate. Install the package [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) and enable swapfc in its configuration to automate this.
+[Swap files](/index.php/Swap#Swap_file "Swap") in Btrfs will be supported in Linux 5.0.[[5]](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ed46ff3d423780fa5173b38a844bf0fdb210a2a7). At the moment, Btrfs intentionally does not support [swap files](/index.php/Swap_file "Swap file") to prevent file system corruption.[[6]](https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F)
+
+Alternatively, swap file can be mounted on a [loop device](https://en.wikipedia.org/wiki/Loop_device "wikipedia:Loop device") with poorer performance and inability to hibernate. Install the package [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) and enable swapfc in its configuration to automate this.
 
 ### TLP
 

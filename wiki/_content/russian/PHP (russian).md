@@ -2,17 +2,17 @@
 
 ## Contents
 
-*   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-*   [2 Запуск](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA)
-*   [3 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
-*   [4 Расширения](#.D0.A0.D0.B0.D1.81.D1.88.D0.B8.D1.80.D0.B5.D0.BD.D0.B8.D1.8F)
+*   [1 Установка](#Установка)
+*   [2 Запуск](#Запуск)
+*   [3 Настройка](#Настройка)
+*   [4 Расширения](#Расширения)
     *   [4.1 gd](#gd)
     *   [4.2 imagemagick](#imagemagick)
     *   [4.3 pthreads](#pthreads)
     *   [4.4 mcrypt](#mcrypt)
     *   [4.5 PCNTL](#PCNTL)
-    *   [4.6 MySQL/MariaDB](#MySQL.2FMariaDB)
-*   [5 Zend Core + Apache](#Zend_Core_.2B_Apache)
+    *   [4.6 MySQL/MariaDB](#MySQL/MariaDB)
+*   [5 Zend Core + Apache](#Zend_Core_+_Apache)
 *   [6 Development tools](#Development_tools)
     *   [6.1 Komodo](#Komodo)
     *   [6.2 Netbeans](#Netbeans)
@@ -24,10 +24,10 @@
         *   [6.6.2 Vim Integration](#Vim_Integration)
         *   [6.6.3 Eclipse Integration](#Eclipse_Integration)
         *   [6.6.4 Komodo Integration](#Komodo_Integration)
-*   [7 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
-    *   [7.1 PHP Fatal error: Class 'ZipArchive' not found](#PHP_Fatal_error:_Class_.27ZipArchive.27_not_found)
-    *   [7.2 /etc/php/php.ini not parsed](#.2Fetc.2Fphp.2Fphp.ini_not_parsed)
-*   [8 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
+*   [7 Решение проблем](#Решение_проблем)
+    *   [7.1 PHP Fatal error: Class 'ZipArchive' not found](#PHP_Fatal_error:_Class_'ZipArchive'_not_found)
+    *   [7.2 /etc/php/php.ini not parsed](#/etc/php/php.ini_not_parsed)
+*   [8 Смотрите также](#Смотрите_также)
 
 ## Установка
 
@@ -103,7 +103,7 @@ extension=imagick.so
 
 ### mcrypt
 
-Если вы хотите использовать модуль `mcrypt`, установите [php-mcrypt](https://www.archlinux.org/packages/?name=php-mcrypt) и раскомментируйте следующую строку в `/etc/php/php.ini`:
+Если вы хотите использовать модуль `mcrypt`, установите [php71-mcrypt](https://aur.archlinux.org/packages/php71-mcrypt/) и раскомментируйте следующую строку в `/etc/php/php.ini`:
 
 ```
 extension=mcrypt.so

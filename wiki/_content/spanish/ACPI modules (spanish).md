@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [ACPI modules](/index.php/ACPI_modules "ACPI modules"), revisada por última vez el **2018-09-13**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=ACPI_modules&diff=0&oldid=541074) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [ACPI modules](/index.php/ACPI_modules "ACPI modules"), revisada por última vez el **2019-01-08**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=ACPI_modules&diff=0&oldid=554908) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -101,7 +101,7 @@ $ dmesg | grep acpi
 
 ```
 
-Añada los que estén funcionando a los archivos de configuración en `/etc/modules-load.d`. `/etc/modules-load.d` se describe en [Kernel modules#Automatic module handling](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules").
+Añada los que estén funcionando a los archivos de configuración en `/etc/modules-load.d`. `/etc/modules-load.d` se describe en [Kernel modules#Automatic module loading with systemd](/index.php/Kernel_modules#Automatic_module_loading_with_systemd "Kernel modules").
 
 ## Obteniendo información
 

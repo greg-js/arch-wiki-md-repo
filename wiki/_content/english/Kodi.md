@@ -94,9 +94,9 @@ user-session=kodi
 
 ### Socket activation
 
-Socket activation can be used to start Kodi when the user starts a remote control app or on a connection to Kodi's html control port. Start listening by [starting](/index.php/Starting "Starting") `kodi@*user*.socket` (replace *user* with the user running Kodi to be started as).
+Socket activation can be used to start Kodi when the user issues a Wakeup command from a remote control app like Kore, or makes a connection to Kodi's html control port. Start listening by [starting](/index.php/Starting "Starting") `kodi@*user*.socket` (replace *user* with the user running Kodi to be started as).
 
-There are no packaged `kodi@.socket` and `kodi@.socket` files, one must create them manually. Depending on the setup, one can optionally change the port in `kodi@.socket`.
+There are no packaged `kodi@.socket` and `kodi@.socket` files, one must create them manually. Depending on the setup, one can optionally change the ports in `kodi@.socket`.
 
  `/etc/systemd/system/kodi@.service` 
 ```
@@ -122,11 +122,18 @@ WantedBy=multi-user.target
 Conflicts=kodi@%i.service
 
 [Socket]
-# listen for WOL packets
-#ListenDatagram=9
-
-# change this to Kodi's http control port
-ListenStream=8082
+# Unset 
+ListenStream=
+# Start when receiving a TCP request on the http control port
+ListenStream=8080
+# start when receiving an UDP datagram (Wakeup/WOL)
+ListenDatagram=9
+# do not wait for network
+# (comment out ListenStream and ListenDatagram lines above)  
+#ListenStream=
+#ListenStream=0.0.0.0:8080
+#ListenDatagram=0.0.0.0:9
+#FreeBind=true
 
 [Install]
 WantedBy=sockets.target

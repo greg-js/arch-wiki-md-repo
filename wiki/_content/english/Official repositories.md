@@ -153,7 +153,7 @@ Include = /etc/pacman.d/mirrorlist
 
 The *gnome-unstable* entry should be first in the list of repositories (*i.e.*, above the *testing* entry).
 
-Please report packaging related bugs in our [bug tracker](https://bugs.archlinux.org/), while anything else should be reported upstream to [GNOME Bugzilla](https://bugzilla.gnome.org/) or [GNOME Gitlab issues](https://gitlab.gnome.org), as appropriate.
+Please report packaging related bugs in our [bug tracker](https://bugs.archlinux.org/), while anything else should be reported upstream to [GNOME Gitlab](https://gitlab.gnome.org).
 
 ### kde-unstable
 

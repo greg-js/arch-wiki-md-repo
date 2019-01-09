@@ -81,7 +81,7 @@ video=SVIDEO-1:d
 
 ### Fingerprint Sensor
 
-The fingerprint reader included with this model `138a:0090 Validity Sensors, Inc` currently lacks a linux driver. [libfprint bugreport](https://bugs.freedesktop.org/show_bug.cgi?id=94536). Synaptics (which has acquired 'Validity Sensors') has unofficially said that they cannot disclose the protocol, but may possibly release a binary driver.
+The fingerprint reader included with this model `138a:0090 Validity Sensors, Inc` currently lacks a linux driver. [libfprint bugreport](https://gitlab.freedesktop.org/libfprint/libfprint/issues/54). Synaptics (which has acquired 'Validity Sensors') has unofficially said that they cannot disclose the protocol, but may possibly release a binary driver.
 
 Open source Linux driver is being developed by reverse engineering the Windows driver [[1]](https://github.com/nmikhailov/Validity90). Based on this work an experimental [fprint](/index.php/Fprint "Fprint") driver was developed: [libfprint-vfs0090-git](https://aur.archlinux.org/packages/libfprint-vfs0090-git/) [[2]](https://github.com/3v1n0/libfprint).
 
@@ -107,7 +107,9 @@ This can be worked around by using the `i915.enable_rc6=0` [kernel parameter](/i
 Bus 001 Device 003: ID 058f:9540 Alcor Micro Corp. AU9540 Smartcard Reader
 
 ```
+
 [Install](/index.php/Install "Install") the [ccid](https://www.archlinux.org/packages/?name=ccid) and [pcsc-tools](https://www.archlinux.org/packages/?name=pcsc-tools) packages, and [enable](/index.php/Enable "Enable") the `pcscd` service. The reader should be visible when running `pcsc_scan`:
+
 ```
 pcsc_scan
 PC/SC device scanner

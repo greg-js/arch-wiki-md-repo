@@ -25,9 +25,8 @@ Related articles
     *   [6.2 Additional toolchains](#Additional_toolchains)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Journalctl](#Journalctl)
-    *   [7.2 code 110](#code_110)
-    *   [7.3 Adjust log level](#Adjust_log_level)
-    *   [7.4 Limit HDD/SSD usage by relocating $HOME/.distcc](#Limit_HDD/SSD_usage_by_relocating_$HOME/.distcc)
+    *   [7.2 Adjust log level](#Adjust_log_level)
+    *   [7.3 Limit HDD/SSD usage by relocating $HOME/.distcc](#Limit_HDD/SSD_usage_by_relocating_$HOME/.distcc)
 *   [8 See also](#See_also)
 
 ## Terms
@@ -215,38 +214,6 @@ Use `journalctl` to find out what was going wrong:
 
 ```
 $ journalctl $(which distccd) -e --since "5 min ago"
-
-```
-
-### code 110
-
-Make sure that the tool chain works for the user account under which the distcc daemon process gets started (default is nobody). The following will test if the tool chain works for user nobody. In `/etc/passwd` change the login for the nobody user to the following:
-
- `$ cat /etc/passwd` 
-```
-...
-nobody:x:99:99:nobody:/:/bin/bash
-...
-
-```
-
-Then cd into the directory containing the cross compiler binaries and try to execute the compiler:
-
-```
-# su nobody
-$ ./gcc --version
-bash: ./gcc: Permission denied
-
-```
-
-Users experiencing this error should make sure that groups permissions as described in [#Other architectures](#Other_architectures) are correctly in setup.
-
-Make sure to change back `/etc/passwd` to its original state after these modifications.
-
-Alternatively, use sudo without changing the shell in /etc/passwd.
-
-```
- # sudo -u nobody gcc --version
 
 ```
 

@@ -27,8 +27,7 @@ The following list of steps is a brief guide to installing Arch Linux using this
 3.  You'll need to install the `espeakup` and `alsa-utils` packages. The [Installation guide](/index.php/Installation_guide "Installation guide") mentions that you can install additional packages by appending their names to the packstrap command. For example, `pacstrap /mnt base espeakup alsa-utils`
 4.  If you heard a voice recording informing you that multiple sound cards were detected, and you selected a card by pressing enter at the beep, a /etc/asound.conf file was generated that will configure ALSA to use your selected card as the default. You will need to copy this file by executing `cp /etc/asound.conf /mnt/etc`
 5.  While in the arch-chroot, Enable the espeakup systemd service by executing `systemctl enable espeakup.service`
-6.  You also need to save the state of the sound card, so that it will be retrieved on reboot. Execute the command `alsactl store` from inside of the arch-chroot.
-7.  When you boot the system from the hard disk, it should start speaking.
+6.  When you boot the system from the hard disk, it should start speaking.
 
 ## Braille Support
 

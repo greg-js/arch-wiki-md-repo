@@ -222,7 +222,7 @@ Brightness can be set using the [xorg-xbacklight](https://www.archlinux.org/pack
 **Note:**
 
 *   xbacklight only works with [Intel](/index.php/Intel "Intel"). [Radeon](/index.php/Radeon "Radeon") does not support the RandR backlight property.
-*   xbacklight currently does not work with the modesetting driver [[1]](https://bugs.freedesktop.org/show_bug.cgi?id=96572).
+*   xbacklight currently does not work with the modesetting driver [[1]](https://gitlab.freedesktop.org/xorg/xserver/issues/47).
 
 To set brightness to 50% of maximum:
 

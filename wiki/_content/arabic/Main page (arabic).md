@@ -4,7 +4,7 @@
 
 ## التوزيعة
 
-	[آرش لينُكس](/index.php/Arch_Linux_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Arch Linux (العربية)")
+	[آرتش لينُكس](/index.php/Arch_Linux_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Arch Linux (العربية)")
 
 	مقالة توفِر نظرة عامة على توزيعة آرتش لينُكس تشرح أساسيات هذا النظام.
 
@@ -12,7 +12,7 @@
 
 	أسئلة وحقائق متعددة بارزة حول التوزيعة.
 
-	[مقارنة آرتش مع توزيعات أخرى](/index.php?title=Arch_compared_to_other_distributions_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9)&action=edit&redlink=1 "Arch compared to other distributions (العربية) (page does not exist)")
+	[مقارنة آرتش مع توزيعات أخرى](/index.php/Arch_compared_to_other_distributions_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Arch compared to other distributions (العربية)")
 
 	مُلخص للتشابهات والاختلافات بين آرتش والتوزيعات الأخرى.
 
@@ -20,7 +20,7 @@
 
 	دليل إرشادي شامل حول عمليّة تثبيت آرتش لينُكس.
 
-	[نصائح عامة](/index.php?title=General_recommendations_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9)&action=edit&redlink=1 "General recommendations (العربية) (page does not exist)")
+	[نصائح عامة](/index.php/General_recommendations_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "General recommendations (العربية)")
 
 	قائمة بدروس حول الخطوات ما بعد عمليّة التثبيت ومقالات أخرى شائعة.
 

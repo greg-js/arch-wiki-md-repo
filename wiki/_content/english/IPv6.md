@@ -7,7 +7,7 @@ In Arch Linux, IPv6 is enabled by default.
 ## Contents
 
 *   [1 Neighbor discovery](#Neighbor_discovery)
-*   [2 Stateless autoconfiguration (SLAAC)](#Stateless_autoconfiguration_.28SLAAC.29)
+*   [2 Stateless autoconfiguration (SLAAC)](#Stateless_autoconfiguration_(SLAAC))
     *   [2.1 For clients](#For_clients)
     *   [2.2 For gateways](#For_gateways)
 *   [3 Privacy extensions](#Privacy_extensions)
@@ -17,7 +17,7 @@ In Arch Linux, IPv6 is enabled by default.
     *   [3.4 connman](#connman)
 *   [4 Static address](#Static_address)
 *   [5 IPv6 and PPPoE](#IPv6_and_PPPoE)
-*   [6 Prefix delegation (DHCPv6-PD)](#Prefix_delegation_.28DHCPv6-PD.29)
+*   [6 Prefix delegation (DHCPv6-PD)](#Prefix_delegation_(DHCPv6-PD))
     *   [6.1 With dibbler](#With_dibbler)
     *   [6.2 With dhcpcd](#With_dhcpcd)
     *   [6.3 With WIDE-DHCPv6](#With_WIDE-DHCPv6)
@@ -232,7 +232,7 @@ PPPoEIP6=yes
 
 **Note:** This section is targeted towards custom gateway configuration, not client machines. For standard market routers please consult the documentation of your router on how to enable prefix delegation.
 
-Prefix delegation is a common IPv6 deployment technique used by many ISPs. It is a method of assigning a network prefix to a user site (ie. local network). A router can be configured to assign different network prefixes to various subnetworks. The ISP handles out a network prefix using DHCPv6 (usually a `/56` or `/64`) and a dhcp client assigns the prefixes to the local network. For a simple two interface gateway it practically assigns an IPv6 prefix to the interface connected to to the local network from an address acquired through the interface connected to WAN (or a pseudo-interface such as ppp).
+Prefix delegation is a common IPv6 deployment technique used by many ISPs. It is a method of assigning a network prefix to a user site (ie. local network). A router can be configured to assign different network prefixes to various subnetworks. The ISP hands out a network prefix using DHCPv6 (usually a `/56` or `/64`) and a dhcp client assigns the prefixes to the local network. For a simple two interface gateway it practically assigns an IPv6 prefix to the interface connected to to the local network from an address acquired through the interface connected to WAN (or a pseudo-interface such as ppp).
 
 ### With dibbler
 

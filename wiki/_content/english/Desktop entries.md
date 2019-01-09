@@ -191,7 +191,7 @@ If the developers of an application do not include icons in their source package
 
 ### Icon path
 
-The [freedesktop.org standard](http://standards.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html) specifies in which order and directories programs should look for icons:
+The [freedesktop.org standard](https://specifications.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html) specifies in which order and directories programs should look for icons:
 
 1.  `$HOME/.icons` (for backwards compatibility)
 2.  `$XDG_DATA_DIRS/icons`
@@ -283,4 +283,4 @@ Edit the `Exec=` command line by prepending *env*, for example:
 ## See also
 
 *   [Wikipedia:.desktop](https://en.wikipedia.org/wiki/.desktop "wikipedia:.desktop")
-*   [Information for developers](http://freedesktop.org/wiki/Howto_desktop_files)
+*   [Information for developers](https://freedesktop.org/wiki/Howto_desktop_files/)

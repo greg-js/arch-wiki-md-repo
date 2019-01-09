@@ -1175,10 +1175,7 @@ will make the system ask for the passphrase again (i.e. you have to enter it twi
 
 If for some reason the keyfile fails to unlock the boot partition, systemd will fallback to ask for a passphrase to unlock and, in case that is correct, continue booting.
 
-**Tip:** Optional post-installation steps:
-
-*   It may be worth considering to add the GRUB bootloader to the ignore list of `/etc/pacman.conf` in order to take particular control of when the bootloader (which includes its own encryption modules) is updated.
-*   If you want to encrypt the `/boot` partition to protect against offline tampering threats, the [mkinitcpio-chkcryptoboot](/index.php/Dm-crypt/Specialties#mkinitcpio-chkcryptoboot "Dm-crypt/Specialties") hook has been contributed to help.
+**Tip:** If you want to encrypt the `/boot` partition to protect against offline tampering threats, the [mkinitcpio-chkcryptoboot](/index.php/Dm-crypt/Specialties#mkinitcpio-chkcryptoboot "Dm-crypt/Specialties") hook has been contributed to help.
 
 ## Btrfs subvolumes with swap
 

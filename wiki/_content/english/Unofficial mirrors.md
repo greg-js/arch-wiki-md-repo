@@ -117,6 +117,7 @@ These [mirrors](/index.php/Mirrors "Mirrors") are *not* listed in `/etc/pacman.d
 *   [ftp://mirror.ufs.ac.za/os/linux/distros/archlinux/](ftp://mirror.ufs.ac.za/os/linux/distros/archlinux/)
 *   [http://archlinux.mirror.ac.za](http://archlinux.mirror.ac.za) - *TENET - Tertiary Education and Research Network of South Africa*
 *   [ftp://archlinux.mirror.ac.za](ftp://archlinux.mirror.ac.za)
+*   [http://archlinux.za.mirror.allworldit.com/archlinux-deltarepo/](http://archlinux.za.mirror.allworldit.com/archlinux-deltarepo/) - *Automatically generating deltas for last 5 versions to current version. Supports http, https, rsync and IPv6\. Check [here](https://bbs.archlinux.org/viewtopic.php?id=243247) for more info.*
 
 ## Sweden
 
@@ -134,7 +135,7 @@ These [mirrors](/index.php/Mirrors "Mirrors") are *not* listed in `/etc/pacman.d
 
 ## United Kingdom
 
-*   [http://archlinux.uk.mirror.allworldit.com/archlinux-deltarepo/](http://archlinux.uk.mirror.allworldit.com/archlinux-deltarepo/) - *Automatically generating deltas for last 5 versions to current version. Needs [xdelta3](https://www.archlinux.org/packages/?name=xdelta3) to run. Supports http, https, rsync on same path.*
+*   [http://archlinux.uk.mirror.allworldit.com/archlinux-deltarepo/](http://archlinux.uk.mirror.allworldit.com/archlinux-deltarepo/) - *Automatically generating deltas for last 5 versions to current version. Supports http, https, rsync and IPv6\. Check [here](https://bbs.archlinux.org/viewtopic.php?id=243247) for more info.*
 
 ## United States
 

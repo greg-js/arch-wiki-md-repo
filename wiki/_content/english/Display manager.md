@@ -89,7 +89,7 @@ $ loginctl show-session $XDG_SESSION_ID
 
 ## Session configuration
 
-Many display managers read available sessions from `/usr/share/xsessions/` directory. It contains standard [desktop entry files](http://standards.freedesktop.org/desktop-entry-spec/latest/) for each DM/WM.
+Many display managers read available sessions from `/usr/share/xsessions/` directory. It contains standard [desktop entry files](https://specifications.freedesktop.org/desktop-entry-spec/latest/) for each DM/WM.
 
 To add/remove entries to your display manager's session list; create/remove the *.desktop* files in `/usr/share/xsessions/` as desired. A typical *.desktop* file will look something like:
 
@@ -137,7 +137,7 @@ Most display managers source `/etc/xprofile`, `~/.xprofile` and `/etc/X11/xinit/
 
 ### Set language for user session
 
-For display managers that use [AccountsService](http://freedesktop.org/wiki/Software/AccountsService/) the [locale](/index.php/Locale "Locale") for the user session can be set by editing: `/var/lib/AccountsService/users/$USER` 
+For display managers that use [AccountsService](https://freedesktop.org/wiki/Software/AccountsService/) the [locale](/index.php/Locale "Locale") for the user session can be set by editing: `/var/lib/AccountsService/users/$USER` 
 ```
 [User]
 Language=*your_locale*

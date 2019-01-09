@@ -22,7 +22,7 @@ This article summarizes the [XDG Base Directory specification](https://specifica
 
 Please read the [full specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html). This section will attempt to break down the essence of what it tries to achieve.
 
-Only `XDG_RUNTIME_DIR` is set by default through [pam_systemd](http://www.freedesktop.org/software/systemd/man/pam_systemd.html). It is up to the user to explicitly [define](/index.php/Define "Define") the other variables, using absolute paths that point to existing directories.
+Only `XDG_RUNTIME_DIR` is set by default through [pam_systemd](https://www.freedesktop.org/software/systemd/man/pam_systemd.html). It is up to the user to explicitly [define](/index.php/Define "Define") the other variables, using absolute paths that point to existing directories.
 
 ### User directories
 
@@ -119,7 +119,7 @@ Supported only in Git master branch, there's no updated stable release yet.
 `~/.fontconfig
 ~/.fonts`
 
- | [8c255fb](http://cgit.freedesktop.org/fontconfig/commit/?id=8c255fb) | Use `"$XDG_DATA_HOME"/fonts` to store fonts instead. |
+ | [8c255fb](https://cgit.freedesktop.org/fontconfig/commit/?id=8c255fb) | Use `"$XDG_DATA_HOME"/fonts` to store fonts instead. |
 | [fontforge](https://www.archlinux.org/packages/?name=fontforge) | 
 
 `~/.FontForge
@@ -148,7 +148,7 @@ Supported only in Git master branch, there's no updated stable release yet.
 
  |
 | [Git](/index.php/Git "Git") | `~/.gitconfig` | [0d94427](https://github.com/git/git/commit/0d94427) |
-| [GStreamer](/index.php/GStreamer "GStreamer") | `~/.gstreamer-0.10` | [4e36f93](http://cgit.freedesktop.org/gstreamer/gstreamer/commit/?id=4e36f93) | [[19]](https://bugzilla.gnome.org/show_bug.cgi?id=518597) |
+| [GStreamer](/index.php/GStreamer "GStreamer") | `~/.gstreamer-0.10` | [4e36f93](https://cgit.freedesktop.org/gstreamer/gstreamer/commit/?id=4e36f93) | [[19]](https://bugzilla.gnome.org/show_bug.cgi?id=518597) |
 | [GTK+](/index.php/GTK%2B "GTK+") 3 |
 | [htop](https://www.archlinux.org/packages/?name=htop) | `~/.htoprc` | [93233a6](https://github.com/hishamhm/htop/commit/93233a6) |
 | [i3](/index.php/I3 "I3") | `~/.i3` | [7c130fb](http://code.stapelberg.de/git/i3/commit/?id=7c130fb) |
@@ -251,7 +251,7 @@ Supported only in Git master branch, there's no updated stable release yet.
 
  | 
 
-[59a8618](http://cgit.freedesktop.org/pulseaudio/pulseaudio/commit/?id=59a8618) [87ae830](http://cgit.freedesktop.org/pulseaudio/pulseaudio/commit/?id=87ae830) [9ab510a](http://cgit.freedesktop.org/pulseaudio/pulseaudio/commit/?id=9ab510a) [4c195bc](http://cgit.freedesktop.org/pulseaudio/pulseaudio/commit/?id=4c195bc)
+[59a8618](https://cgit.freedesktop.org/pulseaudio/pulseaudio/commit/?id=59a8618) [87ae830](https://cgit.freedesktop.org/pulseaudio/pulseaudio/commit/?id=87ae830) [9ab510a](https://cgit.freedesktop.org/pulseaudio/pulseaudio/commit/?id=9ab510a) [4c195bc](https://cgit.freedesktop.org/pulseaudio/pulseaudio/commit/?id=4c195bc)
 
  | [[48]](https://bugzilla.redhat.com/show_bug.cgi?id=845607) |
 | [pyroom](https://aur.archlinux.org/packages/pyroom/) |
@@ -284,7 +284,7 @@ Supported only in Git master branch, there's no updated stable release yet.
 | [termite](/index.php/Termite "Termite") |
 | [tmuxinator](https://aur.archlinux.org/packages/tmuxinator/) | `~/.tmuxinator` | [2636923](https://github.com/tmuxinator/tmuxinator/pull/511/commits/2636923) | [[55]](https://github.com/tmuxinator/tmuxinator/pull/511) |
 | [Transmission](/index.php/Transmission "Transmission") | `~/.transmission` | [b71a298](https://github.com/transmission/transmission/commit/b71a298) |
-| [util-linux](https://www.archlinux.org/packages/?name=util-linux) | [570b321](http://git.kernel.org/cgit/utils/util-linux/util-linux.git/commit/?id=570b321) |
+| [util-linux](https://www.archlinux.org/packages/?name=util-linux) | [570b321](https://git.kernel.org/pub/scm/utils/util-linux/util-linux.git/commit/?id=570b321) |
 | [Uzbl](/index.php/Uzbl "Uzbl") | [c6fd63a](https://github.com/uzbl/uzbl/commit/c6fd63a) | [[56]](https://github.com/uzbl/uzbl/pull/150) |
 | [vimb](https://aur.archlinux.org/packages/vimb/) |
 | [VirtualBox](/index.php/VirtualBox "VirtualBox") | `~/.VirtualBox` | [4.3](https://www.virtualbox.org/ticket/5099?action=diff&version=7) | [[57]](https://www.virtualbox.org/ticket/5099) |
@@ -432,7 +432,7 @@ $ export LESSHISTFILE="$XDG_CACHE_HOME"/less/history`
 
  |
 | [libdvdcss](https://www.archlinux.org/packages/?name=libdvdcss) | `~/.dvdcss` | [[87]](https://mailman.videolan.org/pipermail/libdvdcss-devel/2014-August/001022.html) | `$ export DVDCSS_CACHE="$XDG_DATA_HOME"/dvdcss` |
-| [libice](https://www.archlinux.org/packages/?name=libice) | `~/.ICEauthority` | [[88]](https://bugs.freedesktop.org/show_bug.cgi?id=49173) | `$ export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority`
+| [libice](https://www.archlinux.org/packages/?name=libice) | `~/.ICEauthority` | [[88]](https://gitlab.freedesktop.org/xorg/lib/libice/issues/2) | `$ export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority`
 
 Make sure `XDG_CACHE_HOME` is set beforehand to directory user running [Xorg](/index.php/Xorg "Xorg") has write access to.
 
@@ -660,7 +660,7 @@ Note that these variables are respected by *xinit*, but not by *startx*. Instead
 `~/.Xresources
 ~/.Xdefaults`
 
- | Ultimately you [should be](http://superuser.com/questions/243914/xresources-or-xdefaults) using `Xresources` and since these resources are loaded via `xrdb` you can specify a path such as `$ xrdb -load ~/.config/X11/xresources`. |
+ | Ultimately you [should be](https://superuser.com/questions/243914/xresources-or-xdefaults) using `Xresources` and since these resources are loaded via `xrdb` you can specify a path such as `$ xrdb -load ~/.config/X11/xresources`. |
 
 ### Hardcoded
 
@@ -704,9 +704,9 @@ Specify `--init-file <file>` as an alternative to `~/.bashrc` for interactive sh
 | [chatty](https://aur.archlinux.org/packages/chatty/) | `~/.chatty/` | [[113]](https://github.com/chatty/chatty/issues/273) |
 | [cmake](https://www.archlinux.org/packages/?name=cmake) | `~/.cmake/` | Used for the user package registry `~/.cmake/packages/<package>`, detailed in [cmake-packages(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cmake-packages.7#User_Package_Registry) and [the Package registry wiki page](https://gitlab.kitware.com/cmake/community/wikis/doc/tutorials/Package-Registry). Looks like it's hardcoded, for example in [cmFindPackageCommand.cxx](https://gitlab.kitware.com/cmake/cmake/blob/v3.12.1/Source/cmFindPackageCommand.cxx#L1221). |
 | [cryptomator](https://aur.archlinux.org/packages/cryptomator/) | `~/.Cryptomator` | [[114]](https://github.com/cryptomator/cryptomator/issues/710) |
-| [CUPS](/index.php/CUPS "CUPS") | `~/.cups/` | [won't fix](http://www.cups.org/str.php?L4243) |
+| [CUPS](/index.php/CUPS "CUPS") | `~/.cups/` | [won't fix](https://github.com/apple/cups/issues/4243) |
 | [darcs](/index.php/Darcs "Darcs") | `~/.darcs/` | [[115]](http://bugs.darcs.net/issue2453) |
-| [dbus](/index.php/Dbus "Dbus") | `~/.dbus/` | [[116]](https://bugs.freedesktop.org/show_bug.cgi?id=35887) | This should be avoidable with kdbus [citation needed]. |
+| [dbus](/index.php/Dbus "Dbus") | `~/.dbus/` | [[116]](https://gitlab.freedesktop.org/dbus/dbus/issues/46) | This should be avoidable with kdbus [citation needed]. |
 | [devede](https://www.archlinux.org/packages/?name=devede) | `~/.devedeng` | Hardcoded [here](https://gitlab.com/rastersoft/devedeng/blob/f0893b3ff7b14723bd148db35bdfe2d284156d19/src/devedeng/configuration_data.py#L111) |
 | [Dia](https://wiki.gnome.org/Apps/Dia) | `~/.dia/` |
 | [Eclipse](/index.php/Eclipse "Eclipse") | `~/.eclipse/` | [[117]](https://bugs.eclipse.org/bugs/show_bug.cgi?id=200809) | Option `-Dosgi.configuration.area=@user.home/.config/..` overrides but must be added to `"$ECLIPSE_HOME"/eclipse.ini"` rather than command line which means you must have write access to `$ECLIPSE_HOME`. (Arch Linux hard-codes `$ECLIPSE_HOME` in `/usr/bin/eclipse`) |
@@ -754,7 +754,7 @@ Specify `--init-file <file>` as an alternative to `~/.bashrc` for interactive sh
 `~/.mongorc.js
 ~/.dbshell`
 
- | [[133]](https://jira.mongodb.org/browse/DOCS-5652?jql=text%20~%20%22.mongorc.js%22) | [This Stack Overflow thread](http://stackoverflow.com/a/22349050/4200039) suggests a partial workaround using command-line switch `--norc`. |
+ | [[133]](https://jira.mongodb.org/browse/DOCS-5652?jql=text%20~%20%22.mongorc.js%22) | [This Stack Overflow thread](https://stackoverflow.com/questions/22348604/the-mongorc-js-is-not-found-but-there-is-one/22349050#22349050) suggests a partial workaround using command-line switch `--norc`. |
 | [Nestopia UE](http://0ldsk00l.ca/nestopia/) | `~/.nestopia/` | [won't fix](https://github.com/0ldsk00l/nestopia/pull/292) |
  `~/.netrc` | Like `~/.ssh`, many programs expect this file to be here. These include projects like curl (`CURLOPT_NETRC_FILE`), ftp (`NETRC`), s-nail (`NETRC`), etc. While some of them offer alternative configurable locations, many do not such as w3m, wget and lftp. |
 | [NSS](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS) | `~/.pki` | [[134]](https://bugzilla.mozilla.org/show_bug.cgi?id=818686) |
@@ -896,7 +896,7 @@ export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
 
 	Python
 
-	[pyxdg](http://freedesktop.org/wiki/Software/pyxdg/)
+	[pyxdg](https://freedesktop.org/wiki/Software/pyxdg/)
 
 	Vala
 
@@ -908,8 +908,8 @@ export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
 
 *   [GNOME Goal: XDG Base Directory Specification Usage](https://wiki.gnome.org/Initiatives/GnomeGoals/XDGConfigFolders)
 *   [Rob Pike: "Dotfiles" being hidden is a UNIXv2 mistake](https://plus.google.com/+RobPikeTheHuman/posts/R58WgWwN9jp).
-*   [systemd-path(1)](http://www.freedesktop.org/software/systemd/man/systemd-path.html)
-*   [file-hierarchy(7)](http://www.freedesktop.org/software/systemd/man/file-hierarchy.html)
+*   [systemd-path(1)](https://www.freedesktop.org/software/systemd/man/systemd-path.html)
+*   [file-hierarchy(7)](https://www.freedesktop.org/software/systemd/man/file-hierarchy.html)
 *   [Grawity's notes on dotfiles](https://github.com/grawity/dotfiles/blob/master/.dotfiles.notes).
 *   [Grawity's notes on environment variables](https://github.com/grawity/dotfiles/blob/master/.environ.notes).
 *   [ploum.net: Modify Your Application to use XDG Folders](https://ploum.net/207-modify-your-application-to-use-xdg-folders/).

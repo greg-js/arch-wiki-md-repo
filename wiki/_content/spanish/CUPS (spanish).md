@@ -4,7 +4,7 @@ Artículos relacionados
 *   [CUPS printer-specific problems](/index.php/CUPS_printer-specific_problems "CUPS printer-specific problems")
 *   [Samba](/index.php/Samba "Samba")
 
-De la [web de CUPS](http://www.cups.org/index.php):
+De la [web de CUPS](https://www.cups.org/):
 
 	«*[CUPS](https://en.wikipedia.org/wiki/es:Common_Unix_Printing_System "wikipedia:es:Common Unix Printing System") es el sistema de impresión, basado en estándares y de código abierto, desarrollado por Apple Inc. para Mac OS® X y otros sistemas operativos basados en UNIX®*».
 
@@ -164,7 +164,7 @@ Se puede tener acceso a las impresoras USB de dos modos: a través de los módul
 
 #### Introducir en blacklisting el módulo usblp
 
-**Advertencia:** Desde la versión 1.6.0 de [cups](https://www.archlinux.org/packages/?name=cups) no tendría que ser necesario introducir en [blacklist](/index.php/Kernel_modules_(Espa%C3%B1ol)#Blacklisting "Kernel modules (Español)") el módulo `usblp`. Si nota que al poner dicho módulo en blaklist soluciona algún problema, por favor informe del fallo a los desarrolladores en el «seguimiento de errores de CUPS» y, quizás, también puede ponerse en contacto con Till Kamppeter. Consulte [upstream bug](http://cups.org/str.php?L4128) para más información.
+**Advertencia:** Desde la versión 1.6.0 de [cups](https://www.archlinux.org/packages/?name=cups) no tendría que ser necesario introducir en [blacklist](/index.php/Kernel_modules_(Espa%C3%B1ol)#Blacklisting "Kernel modules (Español)") el módulo `usblp`. Si nota que al poner dicho módulo en blaklist soluciona algún problema, por favor informe del fallo a los desarrolladores en el «seguimiento de errores de CUPS» y, quizás, también puede ponerse en contacto con Till Kamppeter. Consulte [upstream bug](https://github.com/apple/cups/issues/4128) para más información.
 
 Algunos usuarios de impresoras USB, pueden, sin embargo, a modo de prevención, querer todavía introducir en blacklisting el [módulo de kernel](/index.php/Kernel_modules_(Espa%C3%B1ol) "Kernel modules (Español)") `usblp`, que se haría como sigue:
 
@@ -1012,7 +1012,7 @@ Ahora CUPS debería comenzar automáticamente cuando se imprime localmente o en 
 ## Véase también
 
 *   [Official CUPS documentation](http://localhost:631/documentation.html), *locally installed*
-*   [Official CUPS Website](http://www.cups.org/)
+*   [Official CUPS Website](https://www.cups.org/)
 *   [Linux Printing](http://www.linuxprinting.org/), *[The Linux Foundation](http://www.linuxfoundation.org)*
 *   [Gentoo's Printing Guide](http://www.gentoo.org/doc/en/printing-howto.xml), *[Gentoo Documentation Resources](http://www.gentoo.org/doc/en)*
 *   [Arch Linux User Forums](https://bbs.archlinux.org/)

@@ -93,8 +93,9 @@ An important distinction of *LUKS* to note at this point is that the key is used
 
 *Cryptsetup* supports different encryption operating modes to use with *dm-crypt*:
 
-*   `--type luks` for using the default and most common one,
-*   `--type luks2` for using the latest available version of luks that allows additional extensions,
+*   `--type luks` for using the default LUKS format version (currently LUKS1),
+*   `--type luks1` for using LUKS1, the most common version of LUKS,
+*   `--type luks2` for using LUKS2, the latest available version of LUKS that allows additional extensions,
 *   `--type plain` for using dm-crypt plain mode,
 *   `--type loopaes` for a loopaes legacy mode,
 *   `--type tcrypt` for a [TrueCrypt](/index.php/TrueCrypt "TrueCrypt") compatibility mode.
@@ -108,7 +109,7 @@ $ less /proc/crypto
 
 **Tip:** If the list is short, execute `$ cryptsetup benchmark` which will trigger loading available modules.
 
-The following introduces encryption options for the `luks`, `luks2` and `plain` modes. Note that the tables list options used in the respective examples in this article and not all available ones.
+The following introduces encryption options for the `luks`, `luks1`, `luks2` and `plain` modes. Note that the tables list options used in the respective examples in this article and not all available ones.
 
 ### Encryption options for LUKS mode
 

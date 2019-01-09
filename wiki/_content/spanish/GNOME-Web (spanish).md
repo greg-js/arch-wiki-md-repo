@@ -26,7 +26,7 @@ Web es el navegador web predeterminado para [GNOME](/index.php/GNOME_(Espa%C3%B1
 
 Activado de forma predeterminada, puede desactivarlo desmarcando *Intentar bloquear anuncios* en *Preferencias*. EasyList, EasyPrivacy y Fanboy-molestia son listas de bloqueo predeterminadas. Todas las listas se actualizan periódicamente.
 
-**Nota:** Debido a que faltan algunas funciones, por ejemplo, la ocultación de elementos, Web no bloquea/oculta algunos anuncios. Véase este [aviso de error relacionado](https://bugzilla.gnome.org/show_bug.cgi?id=757824) para consultar su progreso.
+**Nota:** Debido a que faltan algunas funciones, por ejemplo, la ocultación de elementos, Web no bloquea/oculta algunos anuncios. Véase este [aviso de error relacionado](https://gitlab.gnome.org/GNOME/epiphany/issues/288) para consultar su progreso.
 
 Para obtener una lista de los filtros actualmente activados:
 

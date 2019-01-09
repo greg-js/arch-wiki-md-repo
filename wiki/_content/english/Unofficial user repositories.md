@@ -191,6 +191,7 @@ Server = https://repo.herecura.be/$repo/$arch
 ```
 [chaotic-aur]
 Server = http://lonewolf-builder.duckdns.org/$repo/x86_64
+Server = http://lonewolf-ipfs.pedrohlc.com/$repo/x86_64
 
 ```
 

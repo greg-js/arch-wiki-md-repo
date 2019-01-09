@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [General recommendations](/index.php/General_recommendations "General recommendations"), revisada por última vez el **2018-11-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=General_recommendations&diff=0&oldid=549342) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [General recommendations](/index.php/General_recommendations "General recommendations"), revisada por última vez el **2019-01-08**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=General_recommendations&diff=0&oldid=560777) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -236,7 +236,7 @@ El [protocolo de tiempo de red](https://en.wikipedia.org/wiki/es:Network_Time_Pr
 
 ### Seguridad DNS
 
-Para una mayor seguridad al navegar por la web, pagos en línea, conectarse a servicios [SSH](/index.php/Secure_Shell_(Espa%C3%B1ol) "Secure Shell (Español)") y tareas similares, considere utilizar aplicaciones clientes con soporte [DNSSEC](/index.php/DNSSEC "DNSSEC") que pueda validar registros [DNS](https://en.wikipedia.org/wiki/es:Domain_Name_System para cifrar el tráfico de DNS.
+Para una mayor seguridad al navegar por la web, pagos en línea, conectarse a servicios [SSH](/index.php/Secure_Shell_(Espa%C3%B1ol) "Secure Shell (Español)") y tareas similares, considere utilizar [resolvedores DNS](/index.php/DNS_resolver "DNS resolver") con soporte [DNSSEC](/index.php/DNSSEC "DNSSEC") que pueda validar registros [DNS](https://en.wikipedia.org/wiki/es:Domain_Name_System para cifrar el tráfico de DNS.
 
 ### Configurar un cortafuegos
 
@@ -288,7 +288,7 @@ El artículo sobre [discos de estado sólido](/index.php/Solid_State_Drives "Sol
 
 ## Servicios del sistema
 
-Esta sección se relaciona con el artículos sobre los [demonios](/index.php/Daemons_(Espa%C3%B1ol) "Daemons (Español)").
+Esta sección se relaciona con los [demonios](/index.php/Daemons_(Espa%C3%B1ol) "Daemons (Español)"). Para más, véase la categoría [Demonios](/index.php/Category:Daemons_(Espa%C3%B1ol) "Category:Daemons (Español)").
 
 ### Índice de archivos y búsqueda
 

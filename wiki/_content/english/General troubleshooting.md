@@ -354,5 +354,5 @@ A package update likely added an invalid `*filename*.conf` to the directory `/et
 *   [List of Tools for UBCD](http://wiki.ultimatebootcd.com/index.php?title=Tools) - Memtest-like tools to add to grub.cfg on UltimateBootCD.com
 *   [Wikipedia:BIOS Boot partition](https://en.wikipedia.org/wiki/BIOS_Boot_partition "wikipedia:BIOS Boot partition")
 *   [REISUB](/index.php/REISUB "REISUB")
-*   [Debug Logging to a Serial Console](http://freedesktop.org/wiki/Software/systemd/Debugging#Debug_Logging_to_a_Serial_Console) on Freedesktop.org
+*   [Debug Logging to a Serial Console](https://freedesktop.org/wiki/Software/systemd/Debugging/#Debug_Logging_to_a_Serial_Console) on Freedesktop.org
 *   [How to Isolate Linux ACPI Issues](https://web.archive.org/web/20120217124742/http://www.lesswatts.org/projects/acpi/debug.php) on Archive.org

@@ -14,9 +14,10 @@ Related articles
         *   [1.2.1 Setting X authority](#Setting_X_authority)
             *   [1.2.1.1 Start X](#Start_X)
             *   [1.2.1.2 GDM](#GDM)
-            *   [1.2.1.3 SLIM](#SLIM)
+            *   [1.2.1.3 Lightdm](#Lightdm)
             *   [1.2.1.4 LXDM](#LXDM)
             *   [1.2.1.5 SDDM](#SDDM)
+            *   [1.2.1.6 SLIM](#SLIM)
     *   [1.3 Setting a password](#Setting_a_password)
     *   [1.4 Running constantly](#Running_constantly)
     *   [1.5 Accessing](#Accessing)
@@ -88,16 +89,12 @@ Newer versions of GDM uses /run/user. Example for user 120 (gdm), used for login
 
 or see [Troubleshooting](#Troubleshooting) section below
 
-##### SLIM
+##### Lightdm
 
 ```
-# x11vnc -display :0 -auth /var/run/slim.auth
+# x11vnc -display :0 -auth /var/run/lightdm/root/\:0
 
 ```
-
-**Warning:** This will set up VNC with NO PASSWORD. This means that ANYBODY who has access to the network the computer is on CAN SEE YOUR XSERVER. It is a fairly simple matter to tunnel your VNC connection through SSH to avoid this. Or, simply set a password, as described below.
-
-**Note:** The password will only encrypt the login process itself. The transmission is still unencrypted[[1]](http://security.web.cern.ch/security/ssh/encrypt_vnc.htm).
 
 ##### LXDM
 
@@ -108,14 +105,25 @@ or see [Troubleshooting](#Troubleshooting) section below
 
 ##### SDDM
 
-SDDM uses an unpredictable UUID for the auth file [[2]](https://github.com/sddm/sddm/issues/622) therefore one needs to:
+SDDM uses an unpredictable UUID for the auth file [[1]](https://github.com/sddm/sddm/issues/622) therefore one needs to:
 
 ```
 # x11vnc -display :0 -auth $(find /var/run/sddm/ -type f)
 
 ```
 
-Embedding this into a systemd .service file will require a trick to evaluate the find command as shown here [[3]](https://gist.github.com/nickjacob/9909574).
+Embedding this into a systemd .service file will require a trick to evaluate the find command as shown here [[2]](https://gist.github.com/nickjacob/9909574).
+
+##### SLIM
+
+```
+# x11vnc -display :0 -auth /var/run/slim.auth
+
+```
+
+**Warning:** This will set up VNC with NO PASSWORD. This means that ANYBODY who has access to the network the computer is on CAN SEE YOUR XSERVER. It is a fairly simple matter to tunnel your VNC connection through SSH to avoid this. Or, simply set a password, as described below.
+
+**Note:** The password will only encrypt the login process itself. The transmission is still unencrypted[[3]](http://security.web.cern.ch/security/ssh/encrypt_vnc.htm).
 
 ### Setting a password
 

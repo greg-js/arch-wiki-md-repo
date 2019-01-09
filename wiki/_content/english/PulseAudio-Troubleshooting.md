@@ -586,7 +586,7 @@ and check if the module is activated by starting `pavucontrol`. Under `Recording
 
 If you want existing streams to be automatically moved to the new sink and source, you have to load the [module-switch-on-connect](#Automatically_switch_to_Bluetooth_or_USB_headset) with `ignore_virtual=no` before.
 
-**Note:** If you plug in a USB sound card or headset, or you have for example a 5.1 Speaker configuration and plug in a headset on your front audio connectors after you have loaded the `module-echo-cancel`, you have to manually unload and load the `module-echo-cancel` again, because unfortunately there is no way to tell the module that it should automatically switch to the new default 'source_master' and 'source_sink'. See [[3]](https://bugs.freedesktop.org/show_bug.cgi?id=100403).
+**Note:** If you plug in a USB sound card or headset, or you have for example a 5.1 Speaker configuration and plug in a headset on your front audio connectors after you have loaded the `module-echo-cancel`, you have to manually unload and load the `module-echo-cancel` again, because unfortunately there is no way to tell the module that it should automatically switch to the new default 'source_master' and 'source_sink'. See [[3]](https://gitlab.freedesktop.org/pulseaudio/pulseaudio/issues/196).
 
 #### Possible 'aec_args' for 'aec_method=webrtc'
 
@@ -1414,4 +1414,4 @@ PulseAudio does not have a true default device. Instead it uses a ["fallback"](h
 
 ### RTP/UDP packet flood
 
-In some cases the default configuration might flood the network with UDP packets.[[12]](https://bugs.freedesktop.org/show_bug.cgi?id=44777) To fix this problem, launch `paprefs` and disable "Multicast/RTP Sender".[[13]](https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/411688/comments/36)
+In some cases the default configuration might flood the network with UDP packets.[[12]](https://gitlab.freedesktop.org/pulseaudio/pulseaudio/issues/505) To fix this problem, launch `paprefs` and disable "Multicast/RTP Sender".[[13]](https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/411688/comments/36)
