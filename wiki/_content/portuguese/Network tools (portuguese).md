@@ -1,8 +1,8 @@
-**Status de tradução:** Esse artigo é uma tradução de [Network tools](/index.php/Network_tools "Network tools"). Data da última tradução: 2018-10-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Network_tools&diff=0&oldid=551063) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Network tools](/index.php/Network_tools "Network tools"). Data da última tradução: 2019-01-10\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Network_tools&diff=0&oldid=559049) na versão em inglês.
 
 Artigos relacionados
 
-*   [Telnet](/index.php/Telnet "Telnet")
+*   [Telnet](/index.php/Telnet_(Portugu%C3%AAs) "Telnet (Português)")
 *   [Nmap](/index.php/Nmap "Nmap")
 *   [Wireshark](/index.php/Wireshark_(Portugu%C3%AAs) "Wireshark (Português)")
 
@@ -39,6 +39,10 @@ Veja também [Wikipedia:pt:Netcat](https://en.wikipedia.org/wiki/pt:Netcat "wiki
 *   **openbsd-netcat** — Canivete suíço de TCP/IP. Variante OpenBSD.
 
 	[https://packages.debian.org/sid/netcat-openbsd](https://packages.debian.org/sid/netcat-openbsd) || [openbsd-netcat](https://www.archlinux.org/packages/?name=openbsd-netcat)
+
+*   **libressl-netcat** — Ferramenta de conexão UDP/TCP de baixo nível com suporte a protocolo TLS.
+
+	[https://www.libressl.org](https://www.libressl.org) || [libressl-netcat](https://aur.archlinux.org/packages/libressl-netcat/)
 
 Uma alternativa mais complexa é o [socat](https://www.archlinux.org/packages/?name=socat).
 

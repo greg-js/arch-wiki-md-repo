@@ -184,6 +184,8 @@ network={
 }
 ```
 
+**Note:** The SSID of the network is used as a filename only when it contains only alphanumeric characters or one of `- _`. If it contains any other characters, the name will instead be an `=`-character followed by the hex-encoded version of the SSID.
+
 ### Disable auto-connect for a particular network
 
 Create / edit file `/var/lib/iwd/*network*.*type*`. Add the following section to it:

@@ -53,7 +53,7 @@ Some programs can add extra functionality to Files. Here are a few packages in t
 
 *   **File Manager Actions** — Configures programs to be launched when files are selected in Files
 
-	[https://git.gnome.org/browse/filemanager-actions](https://git.gnome.org/browse/filemanager-actions) || [filemanager-actions](https://www.archlinux.org/packages/?name=filemanager-actions)
+	[https://gitlab.gnome.org/GNOME/filemanager-actions](https://gitlab.gnome.org/GNOME/filemanager-actions) || [filemanager-actions](https://www.archlinux.org/packages/?name=filemanager-actions)
 
 *   **Nautilus Admin** — Add to menu: "Open as administrator" or "Edit as administrator"
 
@@ -65,11 +65,11 @@ Some programs can add extra functionality to Files. Here are a few packages in t
 
 *   **Send to Menu** — Files context menu for sending files.
 
-	[http://download.gnome.org/sources/nautilus-sendto/](http://download.gnome.org/sources/nautilus-sendto/) || [nautilus-sendto](https://www.archlinux.org/packages/?name=nautilus-sendto)
+	[https://download.gnome.org/sources/nautilus-sendto/](https://download.gnome.org/sources/nautilus-sendto/) || [nautilus-sendto](https://www.archlinux.org/packages/?name=nautilus-sendto)
 
 *   **Seahorse Nautilus** — PGP encryption and signing for Files
 
-	[http://git.gnome.org/browse/seahorse-nautilus/](http://git.gnome.org/browse/seahorse-nautilus/) || [seahorse-nautilus](https://www.archlinux.org/packages/?name=seahorse-nautilus)
+	[https://gitlab.gnome.org/GNOME/seahorse-nautilus/](https://gitlab.gnome.org/GNOME/seahorse-nautilus/) || [seahorse-nautilus](https://www.archlinux.org/packages/?name=seahorse-nautilus)
 
 *   **File Roller** — An application for browsing archives
 

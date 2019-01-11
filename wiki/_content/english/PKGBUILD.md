@@ -230,9 +230,9 @@ However, there is an exception to this rule. Defining conflicting packages in al
 
 This is why, in this context, if your package `provides` a feature and another package `provides` the same feature, you do not need to specify that conflicting package in your `conflicts` array. Let us take a concrete example:
 
-*   [netbeans](https://www.archlinux.org/packages/?name=netbeans) provides `netbeans`
+*   [netbeans](https://www.archlinux.org/packages/?name=netbeans) implicitly provides `netbeans` as the `pkgname` itself
 *   [netbeans-javase](https://aur.archlinux.org/packages/netbeans-javase/) provides `netbeans` and conflicts with `netbeans`
-*   [netbeans-php](https://aur.archlinux.org/packages/netbeans-php/) provides `netbeans` and conflicts with `netbeans` but does not need to conflicts with [netbeans-javase](https://aur.archlinux.org/packages/netbeans-javase/) since pacman is smart enough to figure out these packages are incompatible as they provide the same feature and are in conflict with it.
+*   [netbeans-php](https://aur.archlinux.org/packages/netbeans-php/) provides `netbeans` and conflicts with `netbeans` but does not need to conflict with [netbeans-javase](https://aur.archlinux.org/packages/netbeans-javase/) since pacman is smart enough to figure out these packages are incompatible as they provide the same feature and are in conflict with it.
 
 	The same applies in the reverse order: [netbeans-javase](https://aur.archlinux.org/packages/netbeans-javase/) does not need to conflict with [netbeans-php](https://aur.archlinux.org/packages/netbeans-php/), because they provide the same feature.
 

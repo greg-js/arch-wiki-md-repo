@@ -2,6 +2,8 @@
 
 [The NTP Project](http://support.ntp.org/bin/view/Main/WebHome#The_NTP_Project) provides a reference implementation of the protocol called simply NTP. This article further describes how to set up and run the NTP daemon, both as a client and as a server.
 
+See [System_time#Time_synchronization](/index.php/System_time#Time_synchronization "System time") for other NTP implementations.
+
 ## Contents
 
 *   [1 Installation](#Installation)

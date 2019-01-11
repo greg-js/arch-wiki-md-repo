@@ -232,14 +232,9 @@ The [List of applications/Security#Screen lockers](/index.php/List_of_applicatio
 
 In particular, [light-locker](https://www.archlinux.org/packages/?name=light-locker) integrates well with [xfce4-power-manager](https://www.archlinux.org/packages/?name=xfce4-power-manager): once installed, Xfce Power Manager's setting gains an additional *Security* tab to configure *light-locker* and the existing *Lock screen when system is going for sleep* setting is relocated under this tab. It is then possible to set in this GUI whether the session should be locked upon screensaver activity or whenever the system goes to sleep.
 
-To have *xflock4* run *light-locker* or any custom session locker, not among the four cited above, some steps are required:
+To have *xflock4* run *light-locker* or any custom session locker, not among the four cited above, one must set `LockCommand` in the session's xfconf channel to the command line to be used (the command inside the quotes in the following example can be adapted accordingly for other screen lockers):
 
-The latest 4.13 version of [xfce4-session](https://www.archlinux.org/packages/?name=xfce4-session), not available in the official repositories yet, eases the integration of custom screen lockers with *xflock4* (see the [latest xflock4 on git.xfce.org](https://git.xfce.org/xfce/xfce4-session/tree/scripts/xflock4)) by checking first for the `LockCommand` set in the session's xfconf channel. Therefore to use a custom locker with *xflock4* one can follow the two steps below (the command inside the quotes can be adapted accordingly for other screen lockers):
-
-1.  Use the command line below to set `LockCommand`, here for example to use *light-locker*: `$ xfconf-query -c xfce4-session -p /general/LockCommand -s "*light-locker-command --lock*" --create -t string` 
-2.  Enhance the *xflock4* script with either one of the following methods:
-    1.  Replace manually `/usr/bin/xflock4` with the latest version of the script, so that it calls the command specified in `LockCommand`.
-    2.  Install [xfce4-session-git](https://aur.archlinux.org/packages/xfce4-session-git/) in order to replace the official repository package with the updated 4.13 version which takes into account `LockCommand`.
+ `$ xfconf-query -c xfce4-session -p /general/LockCommand -s "*light-locker-command --lock*" --create -t string` 
 
 The panel lock button in the *Action Buttons* panel simply executes `/usr/bin/xflock4`. It should work as expected as long as *xflock4* is functioning i.e. one of the native lockers is installed or a custom locker is configured to integrate with it as proposed above.
 

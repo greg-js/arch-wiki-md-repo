@@ -8,7 +8,7 @@ Related articles
 
 *Core utilities* are the basic, fundamental tools of a [GNU](/index.php/GNU "GNU")/[Linux](/index.php/Linux "Linux") system. On Arch Linux they are found in the [base group](/index.php/Base_group "Base group"). This article provides an incomplete overview of them, links their documentation and describes useful alternatives. The scope of this article includes, but is not limited to, the [GNU coreutils](https://www.gnu.org/software/coreutils/coreutils.html). Most core utilities are traditional [Unix](https://en.wikipedia.org/wiki/Unix "wikipedia:Unix") tools (see [Heirloom](/index.php/Heirloom "Heirloom")) and many were standardized by [POSIX](https://en.wikipedia.org/wiki/POSIX "wikipedia:POSIX") but have been developed further to provide more features.
 
-Most command-line interfaces are documented in [man pages](/index.php/Man_page "Man page"), utilities by the [GNU Project](/index.php/GNU_Project "GNU Project") are documented in [Info manuals](/index.php/Info_manual "Info manual"), some [shells](/index.php/Shell "Shell") provide a `help` command for shell builtin commands. Additionally most utilities print their usage when run with the `--help` flag.
+Most command-line interfaces are documented in [man pages](/index.php/Man_page "Man page"), utilities by the [GNU Project](/index.php/GNU_Project "GNU Project") are documented primarily in [Info manuals](/index.php/Info_manual "Info manual"), some [shells](/index.php/Shell "Shell") provide a `help` command for shell builtin commands. Additionally most utilities print their usage when run with the `--help` flag.
 
 ## Contents
 

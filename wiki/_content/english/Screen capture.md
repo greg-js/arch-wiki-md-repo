@@ -59,7 +59,7 @@ This article lists and describes [screenshot](https://en.wikipedia.org/wiki/Scre
 
 	[https://github.com/thenaterhood/gscreenshot](https://github.com/thenaterhood/gscreenshot) || [gscreenshot](https://aur.archlinux.org/packages/gscreenshot/)
 
-*   **imgur-screenshot** — Take screenshot selection, upload to [imgur](http://imgur.com). + more cool things
+*   **imgur-screenshot** — Take screenshot selection, upload to [imgur](https://imgur.com). + more cool things
 
 	[https://github.com/jomo/imgur-screenshot](https://github.com/jomo/imgur-screenshot) || [imgur-screenshot-git](https://aur.archlinux.org/packages/imgur-screenshot-git/)
 
@@ -83,7 +83,7 @@ This article lists and describes [screenshot](https://en.wikipedia.org/wiki/Scre
 
 	[http://mate-desktop.org](http://mate-desktop.org) || [mate-utils](https://www.archlinux.org/packages/?name=mate-utils)
 
-*   **ScreenCloud** — Take a screenshot of the entire screen or to select an area and then uploading the screenshot to [imgur](http://imgur.com)+auth. has plugins and system tray.
+*   **ScreenCloud** — Take a screenshot of the entire screen or to select an area and then uploading the screenshot to [imgur](https://imgur.com)+auth. has plugins and system tray.
 
 	[http://screencloud.net/](http://screencloud.net/) || [screencloud](https://aur.archlinux.org/packages/screencloud/)
 
@@ -109,7 +109,7 @@ This article lists and describes [screenshot](https://en.wikipedia.org/wiki/Scre
 
 *   **xwd** — X Window System image dumping utility
 
-	[http://xorg.freedesktop.org/](http://xorg.freedesktop.org/) || [xorg-xwd](https://www.archlinux.org/packages/?name=xorg-xwd)
+	[https://www.x.org/](https://www.x.org/) || [xorg-xwd](https://www.archlinux.org/packages/?name=xorg-xwd)
 
 #### xwd
 
@@ -247,7 +247,7 @@ Screencast utilities allow you to create a video of your desktop or individual w
 
 *   **Byzanz** — Simple screencast tool that produces GIF animations.
 
-	[http://blogs.gnome.org/otte/2009/08/30/byzanz-0-2-0/](http://blogs.gnome.org/otte/2009/08/30/byzanz-0-2-0/) || [byzanz](https://www.archlinux.org/packages/?name=byzanz)
+	[https://blogs.gnome.org/otte/2009/08/30/byzanz-0-2-0/](https://blogs.gnome.org/otte/2009/08/30/byzanz-0-2-0/) || [byzanz](https://www.archlinux.org/packages/?name=byzanz)
 
 *   **Deepin Screen Recorder** — Screen recorder application for Deepin desktop.
 

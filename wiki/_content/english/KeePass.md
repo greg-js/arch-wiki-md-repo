@@ -19,7 +19,7 @@ There are two versions of the format: *KeePass 1.x (Classic)* and *KeePass 2.x*
 
 There are three major implementations of KeePass, which are all available in the official repositories:
 
-*   **[KeePass](https://en.wikipedia.org/wiki/KeePass "wikipedia:KeePass")** — A cross-platform password manager that has autotype and clipboard support when respectively `xdotool` and `xsel` are installed. It lets you import [many formats](http://keepass.info/help/base/importexport.html) and has [many plugins](http://keepass.info/plugins.html).
+*   **[KeePass](https://en.wikipedia.org/wiki/KeePass "wikipedia:KeePass")** — A cross-platform password manager that has autotype and clipboard support when respectively `xdotool` and `xsel` are installed. It lets you import [many formats](https://keepass.info/help/base/importexport.html) and has [many plugins](https://keepass.info/plugins.html).
 
 	[http://keepass.info](http://keepass.info) || [keepass](https://www.archlinux.org/packages/?name=keepass)
 

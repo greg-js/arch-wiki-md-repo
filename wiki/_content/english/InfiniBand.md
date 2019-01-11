@@ -377,7 +377,7 @@ Follow the [iSCSI Over IPoIB](#Over_IPoIB) instructions, with the following chan
         *   Where *iqn* is the randomly generated target name, i.e. `iqn.2003-01.org.linux-iscsi.hostname.x8664:sn.3d74b8d4020a`
     *   Run `enable_iser true`
     *   Save and exit by running: `cd /`; `saveconfig`; and `exit`
-*   On the initiator system, when running `iscsiadm` to discover online targets, use the additional argument `-I iser`, and it should show: `Logging in to [iface: iser...`
+*   On the initiator system, when running `iscsiadm` to discover online targets, use the additional argument `-I iser`, and when you login to them, you should see: `Logging in to [iface: iser...`
 
 #### Adding to /etc/fstab
 

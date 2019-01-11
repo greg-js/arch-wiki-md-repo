@@ -82,25 +82,11 @@ If you'd prefer to install packages system wide just run the previous commands a
 
 ## EasyInstall
 
-Python libraries and programs can be installed in PyPy through EasyInstall. PyPy libraries are stored in a different folder then CPython libraries.
+Python libraries and programs can be installed in PyPy through EasyInstall.
 
 ### EasyInstall installation
 
-EasyInstall does not come with the PyPy package and must be installed manually. Create the /opt/pypy/site-packages/ folder which will be needed for the EasyInstall installation.
-
-```
-# mkdir /opt/pypy/site-packages/
-
-```
-
-Download distribute_setup.py to the folder /opt/pypy/ and run it. distribute_setup.py will install EasyInstall.
-
-```
-$ cd /opt/pypy/
-# wget python-distribute.org/distribute_setup.py
-# pypy distribute_setup.py
-
-```
+EasyInstall does not come with the PyPy package and but is automatically installed when installing pip
 
 EasyInstall is located at /opt/pypy/bin/easy_install
 

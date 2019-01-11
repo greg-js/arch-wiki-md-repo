@@ -66,6 +66,7 @@ Related articles
     *   [16.1 Kernel capabilities](#Kernel_capabilities)
 *   [17 Troubleshooting](#Troubleshooting)
     *   [17.1 Problem with user value](#Problem_with_user_value)
+    *   [17.2 tor-browser proxy problems](#tor-browser_proxy_problems)
 *   [18 See also](#See_also)
 
 ## Introduction
@@ -1102,6 +1103,10 @@ Now save changes:
 ```
 
 Then [start](/index.php/Start "Start") `tor.service`.
+
+### tor-browser proxy problems
+
+[tor-browser](https://aur.archlinux.org/packages/tor-browser/) should generally work without significant customization. If previously installed/configured and bundled proxy fails with `proxy server is refusing connections` for any website, consider resetting settings by moving or deleting `~/.tor-browser` directory.
 
 ## See also
 

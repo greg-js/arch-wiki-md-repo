@@ -318,7 +318,7 @@ $ flatpak build-init geditapp org.gnome.gedit org.mydomain.BaseSdk org.mydomain.
 
 ```
 
-Now finish the dummy app. You can fine-tune the app’s access permissions when sandboxed by giving additional options when finishing the build. For possible options see the [Flatpak documentation](#See_also) and the [GNOME manifest files](https://git.gnome.org/browse/gnome-apps-nightly/tree). Alternatively, adapt `geditapp/metadata` to your needs after finishing the build but before exporting. When the metadata file is complete, export the app to the repository.
+Now finish the dummy app. You can fine-tune the app’s access permissions when sandboxed by giving additional options when finishing the build. For possible options see the [Flatpak documentation](#See_also) and the [GNOME manifest files](https://gitlab.gnome.org/GNOME/gnome-apps-nightly/tree/master). Alternatively, adapt `geditapp/metadata` to your needs after finishing the build but before exporting. When the metadata file is complete, export the app to the repository.
 
 ```
 $ flatpak build-finish geditapp --socket=x11 *[possibly other options]* --command=gedit

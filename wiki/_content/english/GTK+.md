@@ -5,7 +5,7 @@ Related articles
 *   [GNU Project](/index.php/GNU_Project "GNU Project")
 *   [GTK+/Development](/index.php/GTK%2B/Development "GTK+/Development")
 
-From the [GTK+ website](http://www.gtk.org):
+From the [GTK+ website](https://www.gtk.org/):
 
 	GTK+, or the GIMP Toolkit, is a multi-platform toolkit for creating graphical user interfaces. Offering a complete set of widgets, GTK+ is suitable for projects ranging from small one-off tools to complete application suites.
 
@@ -142,7 +142,7 @@ If you have GTK+ and Qt (KDE) applications on your desktop then you know that th
 
 ## Configuration tools
 
-Most major [desktop environments](/index.php/Desktop_environments "Desktop environments") provide tools to configure the GTK+ theme, icons, font and font size, and manage these settings via [XSettings](http://standards.freedesktop.org/xsettings-spec/xsettings-spec-0.5.html):
+Most major [desktop environments](/index.php/Desktop_environments "Desktop environments") provide tools to configure the GTK+ theme, icons, font and font size, and manage these settings via [XSettings](https://specifications.freedesktop.org/xsettings-spec/xsettings-spec-0.5.html):
 
 *   If you use [Cinnamon](/index.php/Cinnamon "Cinnamon"), use Themes tool (*cinnamon-settings themes*): go to *System Settings > Themes*.
 *   If you use [Enlightenment](/index.php/Enlightenment "Enlightenment"): go to *Settings > All > Look > Application Theme*.
@@ -193,7 +193,7 @@ GTK+ settings can be specified manually in configuration files, but desktop envi
 
 **Note:**
 
-*   See the [GTK+ 3 *GtkSettings* properties](http://library.gnome.org/devel/gtk3/stable/GtkSettings.html#GtkSettings.properties) (and [GTK+ 2 properties](http://library.gnome.org/devel/gtk2/stable/GtkSettings.html#GtkSettings.properties)) in the GTK+ programming reference manual for the full list of currently supported GTK+ configuration options.
+*   See the [GTK+ 3 *GtkSettings* properties](https://developer.gnome.org/gtk3/stable/GtkSettings.html#GtkSettings.properties) (and [GTK+ 2 properties](https://developer.gnome.org/gtk2/stable/GtkSettings.html#GtkSettings.properties)) in the GTK+ programming reference manual for the full list of currently supported GTK+ configuration options.
 *   Some of the settings described below (such as `gtk-icon-sizes`) are deprecated and ignored since GTK+ 3.10.
 *   If you edit your GTK+ configuration files, only newly started applications will display the changes.
 
@@ -513,11 +513,11 @@ As user theme files (`$XDG_CONFIG_HOME/gtk-3.0/settings.ini`, `~/.gtkrc-2.0`) ar
 
 ```
 
-*   Use a settings daemon (this is what most desktop environments do). A desktop-agnostic variant using [XSettings](http://standards.freedesktop.org/xsettings-spec/xsettings-spec-0.5.html) is available in the [AUR](/index.php/AUR "AUR") under [xsettingsd-git](https://aur.archlinux.org/packages/xsettingsd-git/).
+*   Use a settings daemon (this is what most desktop environments do). A desktop-agnostic variant using [XSettings](https://specifications.freedesktop.org/xsettings-spec/xsettings-spec-0.5.html) is available in the [AUR](/index.php/AUR "AUR") under [xsettingsd-git](https://aur.archlinux.org/packages/xsettingsd-git/).
 
 ### Client-side decorations
 
-GTK 3.12 introduced [client-side decorations](http://blogs.gnome.org/mclasen/2013/12/05/client-side-decorations-in-themes/), which move the title-bar away from the window manager. This may present issues such as [double title-bars](http://redmine.audacious-media-player.org/boards/1/topics/1135), no title-bar at all or [double shadows](https://github.com/chjj/compton/issues/189) with compositing enabled.
+GTK 3.12 introduced [client-side decorations](https://blogs.gnome.org/mclasen/2013/12/05/client-side-decorations-in-themes/), which move the title-bar away from the window manager. This may present issues such as [double title-bars](http://redmine.audacious-media-player.org/boards/1/topics/1135), no title-bar at all or [double shadows](https://github.com/chjj/compton/issues/189) with compositing enabled.
 
 To remove the shadow and gap around windows (for example in combination with a tiling window manager), create the following file:
 
@@ -629,5 +629,5 @@ Depending on the theme of choice's support for GTK+ 2, UI controls may still hav
 
 ## See also
 
-*   [The official GTK+ website](http://www.gtk.org/)
+*   [The official GTK+ website](https://www.gtk.org/)
 *   [Wikipedia article about GTK+](https://en.wikipedia.org/wiki/GTK%2B "wikipedia:GTK+")

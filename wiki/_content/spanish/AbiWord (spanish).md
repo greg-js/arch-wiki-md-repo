@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [AbiWord](/index.php/AbiWord "AbiWord"), revisada por última vez el **2019-01-02**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=AbiWord&diff=0&oldid=561374) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [AbiWord](/index.php/AbiWord "AbiWord"), revisada por última vez el **2019-01-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=AbiWord&diff=0&oldid=562524) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 [AbiWord](http://www.abisource.com/) es un procesador de textos que ofrece una alternativa más liviana que [LibreOffice](/index.php/LibreOffice_(Espa%C3%B1ol) "LibreOffice (Español)") Writer y [OpenOffice](/index.php/OpenOffice "OpenOffice") Writer, mientras que al mismo tiempo proporciona una gran funcionalidad. AbiWord admite muchos tipos de documentos estándar, como documentos ODF, documentos Microsoft Word, documentos WordPerfect, documentos Rich Text Format y páginas web HTML.
 
@@ -13,8 +13,6 @@ Este artículo es una traducción de [AbiWord](/index.php/AbiWord "AbiWord"), re
 *   [4 Comprobación de gramática](#Comprobación_de_gramática)
 *   [5 Cambiar los atajos de teclado](#Cambiar_los_atajos_de_teclado)
 *   [6 Fuentes LaTeX](#Fuentes_LaTeX)
-*   [7 Solución de problemas](#Solución_de_problemas)
-    *   [7.1 Solución para el cuelgue del diálogo de impresión](#Solución_para_el_cuelgue_del_diálogo_de_impresión)
 
 ## Instalación
 
@@ -52,7 +50,7 @@ Habilite la revisión gramatical desde *Editar > Preferencias > Corrección orto
 
 ## Cambiar los atajos de teclado
 
-**Nota:** [Esta publicación de la wiki](http://www.abisource.com/wiki/Keyboard_bindings) tiene instrucciones sobre esto, pero algunas están desactualizadas y no funcionan
+**Nota:** [Esta publicación de la wiki](http://www.abisource.com/wiki/Keyboard_bindings) tiene instrucciones para ello, pero algunas están desactualizadas y no funcionan
 
 Puede cambiar los atajos de teclado predeterminados en AbiWord usando [KeyBindings](https://www.abisource.com/wiki/KeyBindings).
 
@@ -66,38 +64,3 @@ El paquete [abiword](https://www.archlinux.org/packages/?name=abiword) viene con
 # fc-cache -fv
 
 ```
-
-## Solución de problemas
-
-### Solución para el cuelgue del diálogo de impresión
-
-**Nota:** Este error ha sido reportado como inexistente para la versión 2.8.1 o superior. Sin embargo, esta sección permanecerá para las versiones anteriores o por si vuelve a aparecer
-
-Por alguna razón, las versiones actuales de AbiWord y libgnomeprint no se llevan bien. La plantilla predeterminada `.abw` hace que el programa se bloquee cuando el usuario intenta imprimir. La solución es forzar a AbiWord a trabajar con el formato `.rtf` en su lugar. Al seguir los pasos que se muestran a continuación, establecerá el formato de guardado predeterminado a .rtf y engañará a AbiWord para que use un archivo `.rtf` como plantilla predeterminada.
-
-Abra `~/.AbiSuite/AbiWord.Profile` y añada la siguiente línea en la segunda sección <scheme>.
-
-```
-DefaultSaveFormat=".rtf"
-
-```
-
-Debería ser algo así:
-
-```
-<Scheme
-   name="_custom_"
-   ZoomPercentage="64"
-   DefaultSaveFormat=".rtf"
-/>
-
-```
-
-Es necesario entonces cambiar la plantilla por defecto. Debe seguir exactamente estos pasos.
-
-1.  Abra AbiWord y guarde un documento en blanco titulado `normal.rtf` en `~/.AbiSuite/templates/`. Si el directorio no existe, créelo.
-2.  Cambie el nombre del archivo a *normal.awt*.
-
-¡Sencillamente **no** guarde un archivo `.awt` en blanco! Debe engañar a AbiWord para que use una plantilla `.rtf` para que esto funcione.
-
-Tan pronto como se resuelva el conflicto entre AbiWord y libgnomeprint, estas instrucciones ya no serán necesarias y deberán eliminarse.

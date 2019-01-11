@@ -566,7 +566,7 @@ Denying root login is also a good practice, both for tracing intrusions and addi
 
 [DNSSEC](/index.php/DNSSEC "DNSSEC") is a set of standards in place that requires DNS servers to provide clients with origin authentication of DNS data, authenticated denial of existence, and data integrity. It, however, is not yet widely used. With DNSSEC enabled, an attacker can not make modifications to your DNS queries and the returning results, but would still be able to read them.
 
-[DNSCrypt](/index.php/DNSCrypt "DNSCrypt"), as well as later alternative protocol developments *DNS over TLS* and *DNS over HTTPS*, use cryptography to secure communications with DNS servers. Usually only one protocol is employed on a system level. See [Domain name resolution#Resolvers](/index.php/Domain_name_resolution#Resolvers "Domain name resolution") for supporting software.
+[DNSCrypt](/index.php/DNSCrypt "DNSCrypt"), as well as later alternative protocol developments *DNS over TLS* and *DNS over HTTPS*, use cryptography to secure communications with DNS servers. Usually only one protocol is employed on a system level. See [Domain name resolution#DNS servers](/index.php/Domain_name_resolution#DNS_servers "Domain name resolution") for supporting software.
 
 If you have a domain name, set a [Sender Policy Framework](/index.php/Sender_Policy_Framework "Sender Policy Framework") policy to combat email spoofing.
 

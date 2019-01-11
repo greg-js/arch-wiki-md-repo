@@ -63,14 +63,12 @@ Man pages all follow a fairly standard format, which helps in navigating them. S
 
 Even though the `man` utility allows users to display man pages, and search their contents via *less*, a problem arises when one knows not the exact name of the desired manual page in the first place! Fortunately, the `-k` or `--apropos` options can be used to search the manual page descriptions for instances of a given keyword.
 
-The research feature is provided by a dedicated cache. By default you may not have any cache built and all your searches will give you the *nothing appropriate* result. You can generate the cache or update it by running
+The search feature is provided by a dedicated cache, otherwise all searches would give the *nothing appropriate* result. By default, maintenance of that cache is handled by `man-db.service` which gets periodically triggered by `man-db.timer`. You can manually (re)generate the cache or update it by running:
 
 ```
 # mandb
 
 ```
-
-You should run it every time a new man page is installed.
 
 Now you can begin your search. For example, to search for man pages related to "password":
 
@@ -148,7 +146,7 @@ Instead of the standard interface, using browsers such as [lynx](https://www.arc
 Install the [mandoc](https://aur.archlinux.org/packages/mandoc/) package. To convert a page, for example `free(1)`:
 
 ```
-$ gunzip -c /usr/share/man/man1/free.1.gz | mandoc -Thtml -Ostyle=style.css 1> free.html
+$ mandoc -Thtml -Ostyle=style.css /usr/share/man/man1/free.1.gz > free.html
 
 ```
 

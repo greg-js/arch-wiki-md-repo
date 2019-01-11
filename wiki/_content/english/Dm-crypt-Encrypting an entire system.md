@@ -41,10 +41,9 @@ The following are examples of common scenarios of full system encryption with *d
 *   [7 Encrypted boot partition (GRUB)](#Encrypted_boot_partition_(GRUB))
     *   [7.1 Preparing the disk](#Preparing_the_disk_5)
     *   [7.2 Preparing the logical volumes](#Preparing_the_logical_volumes_3)
-    *   [7.3 Preparing the boot partition](#Preparing_the_boot_partition_5)
-    *   [7.4 Configuring mkinitcpio](#Configuring_mkinitcpio_5)
-    *   [7.5 Configuring GRUB](#Configuring_GRUB_2)
-    *   [7.6 Configuring fstab and crypttab](#Configuring_fstab_and_crypttab_2)
+    *   [7.3 Configuring mkinitcpio](#Configuring_mkinitcpio_5)
+    *   [7.4 Configuring GRUB](#Configuring_GRUB_2)
+    *   [7.5 Avoiding having to enter the passphrase twice](#Avoiding_having_to_enter_the_passphrase_twice)
 *   [8 Btrfs subvolumes with swap](#Btrfs_subvolumes_with_swap)
     *   [8.1 Preparing the disk](#Preparing_the_disk_6)
     *   [8.2 Preparing the system partition](#Preparing_the_system_partition)
@@ -962,15 +961,15 @@ This setup utilizes the same partition layout and configuration for the system's
 The disk layout in this example is:
 
 ```
-+---------------------+----------------------+-----------------+----------------------+----------------------+----------------------+
-| BIOS boot partition | EFI system partition | Boot partition  | Logical volume 1     | Logical volume 2     | Logical volume 3     |
-|                     |                      |                 |                      |                      |                      |
-|                     | /efi                 | /boot           | /                    | [SWAP]               | /home                |
-|                     |                      |                 |                      |                      |                      |
-|                     |                      |                 | /dev/MyVolGroup/root | /dev/MyVolGroup/swap | /dev/MyVolGroup/home |
-| /dev/sda1           | /dev/sda2            | /dev/sda3       +----------------------+----------------------+----------------------+
-| unencrypted         | unencrypted          | LUKS1 encrypted | /dev/sda4 encrypted using LVM on LUKS2                             |
-+---------------------+----------------------+-----------------+--------------------------------------------------------------------+
++---------------------+----------------------+----------------------+----------------------+----------------------+
+| BIOS boot partition | EFI system partition | Logical volume 1     | Logical volume 2     | Logical volume 3     |
+|                     |                      |                      |                      |                      |
+|                     | /efi                 | /                    | [SWAP]               | /home                |
+|                     |                      |                      |                      |                      |
+|                     |                      | /dev/MyVolGroup/root | /dev/MyVolGroup/swap | /dev/MyVolGroup/home |
+| /dev/sda1           | /dev/sda2            |----------------------+----------------------+----------------------+
+| unencrypted         | unencrypted          | /dev/sda3 encrypted using LVM on LUKS1                             |
++---------------------+----------------------+--------------------------------------------------------------------+
 
 ```
 
@@ -987,14 +986,14 @@ For [BIOS systems](/index.php/GRUB#BIOS_systems "GRUB") create a [BIOS boot part
 
 For [UEFI systems](/index.php/GRUB#UEFI_systems "GRUB") create an [EFI system partition](/index.php/EFI_system_partition "EFI system partition") with an appropriate size, it will later be mounted at `/efi`.
 
-Create a partition to be mounted at `/boot` of type `8300` with a size of 200 MiB or more.
-
 Create a partition of type `8E00`, which will later contain the encrypted container for the LVM.
 
 Create the LUKS encrypted container:
 
+**Warning:** GRUB does not support LUKS2\. Use LUKS1 (`--type luks1`) on partitions that GRUB needs to access.
+
 ```
-# cryptsetup luksFormat --type luks2 /dev/sda4
+# cryptsetup luksFormat --type luks1 /dev/sda3
 
 ```
 
@@ -1002,8 +1001,9 @@ For more information about the available cryptsetup options see the [LUKS encryp
 
 Your partition layout should look similar to this:
 
- `# gdisk /dev/sda` 
+ `# gdisk -l /dev/sda` 
 ```
+...
 Number  Start (sector)    End (sector)  Size       Code  Name
    1            2048            4095   1024.0 KiB  EF02  BIOS boot partition
    2            4096         1130495   550.0 MiB   EF00  EFI System
@@ -1015,7 +1015,7 @@ Number  Start (sector)    End (sector)  Size       Code  Name
 Open the container:
 
 ```
-# cryptsetup open /dev/sda4 cryptlvm
+# cryptsetup open /dev/sda3 cryptlvm
 
 ```
 
@@ -1025,48 +1025,7 @@ The decrypted container is now available at `/dev/mapper/cryptlvm`.
 
 The LVM logical volumes of this example follow the exact layout as the [#LVM on LUKS](#LVM_on_LUKS) scenario. Therefore, please follow [#Preparing the logical volumes](#Preparing_the_logical_volumes) above and adjust as required.
 
-### Preparing the boot partition
-
-**Warning:** GRUB does not support LUKS2\. Use LUKS1 (`--type luks1`) on partitions that GRUB needs to access.
-
-The bootloader loads the kernel, [initramfs](/index.php/Initramfs "Initramfs"), and its own configuration files from the `/boot` directory.
-
-First, create the LUKS container where the files will be located and installed into:
-
-```
-# cryptsetup luksFormat --type luks1 /dev/sda3
-
-```
-
-Next, open it:
-
-```
-# cryptsetup open /dev/sda3 cryptboot
-
-```
-
-Create a filesystem on the partition intended for `/boot`. Any filesystem that can be read by the bootloader is eligible:
-
-```
-# mkfs.ext4 /dev/mapper/*cryptboot*
-
-```
-
-Create the directory `/mnt/boot`:
-
-```
-# mkdir /mnt/boot
-
-```
-
-Mount the partition to `/mnt/boot`:
-
-```
-# mount /dev/mapper/*cryptboot* /mnt/boot
-
-```
-
-Create a mountpoint for the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") at `/efi` for compatibility with `grub-install` and mount it:
+If you plan to boot in UEFI mode, create a mountpoint for the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") at `/efi` for compatibility with `grub-install` and mount it:
 
 ```
 # mkdir /mnt/efi
@@ -1082,13 +1041,11 @@ NAME                  MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINT
 sda                   8:0      0   200G  0 disk
 ├─sda1                8:1      0     1M  0 part
 ├─sda2                8:2      0   550M  0 part  /efi
-├─sda3                8:3      0   200M  0 part
-│ └─cryptboot         254:0    0   198M  0 crypt /boot
-└─sda4                8:4      0   100G  0 part
-  └─cryptlvm          254:1    0   100G  0 crypt
-    ├─MyVolGroup-swap 254:2    0     8G  0 lvm   [SWAP]
-    ├─MyVolGroup-root 254:3    0    32G  0 lvm   /
-    └─MyVolGroup-home 254:4    0    60G  0 lvm   /home
+└─sda3                8:3      0   100G  0 part
+  └─cryptlvm          254:0    0   100G  0 crypt
+    ├─MyVolGroup-swap 254:1    0     8G  0 lvm   [SWAP]
+    ├─MyVolGroup-root 254:2    0    32G  0 lvm   /
+    └─MyVolGroup-home 254:3    0    60G  0 lvm   /home
 
 ```
 
@@ -1126,23 +1083,23 @@ See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_config
 
 ```
 
-Configure GRUB to recognize the LUKS encrypted `/boot` partition and unlock the encrypted root partition at boot:
+Configure GRUB to allow booting from `/boot` on LVM on a LUKS encrypted partition:
 
  `/etc/default/grub` 
 ```
-GRUB_CMDLINE_LINUX="... cryptdevice=UUID=*device-UUID*:cryptlvm ..."
+GRUB_PRELOAD_MODULES="... lvm"
 GRUB_ENABLE_CRYPTODISK=y
 ```
+
+Set the kernel parameters, so that the initramfs can unlock the encrypted root partition. Using the `encrypt` hook:
+
+ `/etc/default/grub`  `GRUB_CMDLINE_LINUX="... cryptdevice=UUID=*device-UUID*:cryptlvm ..."` 
 
 If using the [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") hook, the following need to be set instead:
 
- `/etc/default/grub` 
-```
-GRUB_CMDLINE_LINUX="... rd.luks.name=*device-UUID*=cryptlvm" ...
-GRUB_ENABLE_CRYPTODISK=y
-```
+ `/etc/default/grub`  `GRUB_CMDLINE_LINUX="... rd.luks.name=*device-UUID*=cryptlvm" ...` 
 
-See [dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") and [GRUB#Encrypted /boot](/index.php/GRUB#Encrypted_/boot "GRUB") for details. The `*device-UUID*` refers to the UUID of `/dev/sda4` (the partition which holds the lvm containing the root filesystem). See [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").
+See [dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") and [GRUB#Encrypted /boot](/index.php/GRUB#Encrypted_/boot "GRUB") for details. The `*device-UUID*` refers to the UUID of `/dev/sda3` (the partition which holds the lvm containing the root filesystem). See [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").
 
 Generate GRUB's [configuration](/index.php/GRUB#Generate_the_main_configuration_file "GRUB") file:
 
@@ -1151,27 +1108,36 @@ Generate GRUB's [configuration](/index.php/GRUB#Generate_the_main_configuration_
 
 ```
 
-If all commands finished without errors, GRUB should prompt for the passphrase to unlock the `/boot` partition after the next reboot.
+If all commands finished without errors, GRUB should prompt for the passphrase to unlock the `/dev/sda3` partition after the next reboot.
 
-### Configuring fstab and crypttab
+### Avoiding having to enter the passphrase twice
 
-This section deals with extra configuration to let the system **mount** the encrypted `/boot`.
+While GRUB asks for a passphrase to unlock the encrypted partition after above instructions, the partition unlock is not passed on to the initramfs. Hence, you have to enter the passphrase twice at boot: once for GRUB and once for the initramfs.
 
-While GRUB asks for a passphrase to unlock the encrypted `/boot` after above instructions, the partition unlock is not passed on to the initramfs. Hence, `/boot` will not be available after the system has re-/booted, because the `encrypt` hook only unlocks the system's root.
+This section deals with extra configuration to let the system boot by only entering the passphrase once, in GRUB. This is accomplished by [with a keyfile embedded in the initramfs](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption").
 
-If you used the *genfstab* script during installation, it will have generated `/etc/fstab` entries for the `/boot` and `/efi` mount points already, but the system will fail to find the generated device mapper for the boot partition. To make it available, add it to [crypttab](/index.php/Crypttab "Crypttab"). For example:
-
- `/etc/crypttab` 
-```
-cryptboot  /dev/sda3      none        luks
+First create a keyfile and add it as LUKS key:
 
 ```
+# dd bs=512 count=4 if=/dev/random of=/root/cryplvm.keyfile iflag=fullblock
+# chmod 000 /root/cryplvm.keyfile
+# cryptsetup -v luksAddKey /dev/sda3 /root/cryplvm.keyfile
 
-will make the system ask for the passphrase again (i.e. you have to enter it twice at boot: once for GRUB and once for systemd init). To avoid the double entry for unlocking `/boot`, follow the instructions at [dm-crypt/Device encryption#Keyfiles](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") to:
+```
 
-1.  Create a [randomtext keyfile](/index.php/Dm-crypt/Device_encryption#Storing_the_keyfile_on_a_filesystem "Dm-crypt/Device encryption"),
-2.  Add the keyfile to the (`/dev/sda3`) [boot partition's LUKS header](/index.php/Dm-crypt/Device_encryption#Configuring_LUKS_to_make_use_of_the_keyfile "Dm-crypt/Device encryption") and
-3.  Check the `/etc/fstab` entry and add the `/etc/crypttab` line to [unlock it automatically at boot](/index.php/Dm-crypt/Device_encryption#Unlocking_a_secondary_partition_at_boot "Dm-crypt/Device encryption").
+Using the `encrypt` hook:
+
+```
+GRUB_CMDLINE_LINUX="... cryptkey=rootfs:/root/cryptlvm.keyfile"
+
+```
+
+Or, using the [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") hook:
+
+```
+GRUB_CMDLINE_LINUX="... rd.luks.key=*device-UUID*=/root/cryptlvm.keyfile"
+
+```
 
 If for some reason the keyfile fails to unlock the boot partition, systemd will fallback to ask for a passphrase to unlock and, in case that is correct, continue booting.
 

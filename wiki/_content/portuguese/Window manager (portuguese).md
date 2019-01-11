@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Window manager](/index.php/Window_manager "Window manager"). Data da última tradução: 2018-10-26\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Window_manager&diff=0&oldid=548106) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Window manager](/index.php/Window_manager "Window manager"). Data da última tradução: 2019-01-10\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Window_manager&diff=0&oldid=559676) na versão em inglês.
 
 Related articles
 
@@ -45,147 +45,147 @@ Veja [Comparison of tiling window managers](/index.php/Comparison_of_tiling_wind
 
 ### Gerenciadores de janela de empilhamento
 
-*   **[2bwm](/index.php/2bwm "2bwm")** — Fast floating WM, with the particularity of having 2 borders, written over the XCB library and derived from mcwm written by Michael Cardell. In 2bwm everything is accessible from the keyboard but a pointing device can be used for move, resize and raise/lower. The name has recently changed from mcwm-beast to 2bwm.
+*   **[2bwm](/index.php/2bwm "2bwm")** — Gerenciador de janela flutuante rápido, com a particularidade de ter 2 bordas, escritas sobre a biblioteca XCB e derivadas de mcwm escritas por Michael Cardell. Em 2bwm tudo é acessível a partir do teclado, mas um dispositivo de apontamento pode ser usado para mover, redimensionar e aumentar/diminuir. O nome mudou recentemente de mcwm-beast para 2bwm.
 
 	[https://github.com/venam/2bwm](https://github.com/venam/2bwm) || [2bwm](https://aur.archlinux.org/packages/2bwm/)
 
-*   **aewm** — Modern, minimal window manager for X11\. It is controlled entirely with the mouse, but contains no visible UI apart from window frames. The command set is sort of like vi: designed back in the dawn of time (1997) to squeeze speed out of low-memory machines, completely unintuitive and new-user-hostile, but quick and elegant in its own way.
+*   **aewm** — Gerenciador de janela moderno e minimalista para o X11\. Ele é controlado inteiramente com o mouse, mas não contém nenhuma interface do usuário visível além dos quadros de janela. O conjunto de comandos é como o vi: projetado no início dos tempos (1997) para extrair velocidade de máquinas com pouca memória, totalmente não-intuitivo e hostil ao usuário, mas rápido e elegante à sua própria maneira.
 
 	[http://www.red-bean.com/decklin/aewm/](http://www.red-bean.com/decklin/aewm/) || [aewm](https://aur.archlinux.org/packages/aewm/)
 
-*   **[AfterStep](https://en.wikipedia.org/wiki/AfterStep "wikipedia:AfterStep")** — Window manager for the Unix X Window System. Originally based on the look and feel of the NeXTStep interface, it provides end users with a consistent, clean, and elegant desktop. The goal of AfterStep development is to provide for flexibility of desktop configuration, improving aesthetics, and efficient use of system resources.
+*   **[AfterStep](https://en.wikipedia.org/wiki/AfterStep "wikipedia:AfterStep")** — Gerenciador de janela para o sistema Unix X Window. Originalmente baseado na aparência da interface NeXTStep, ele fornece aos usuários finais uma área de trabalho consistente, limpa e elegante. O objetivo do desenvolvimento do AfterStep é fornecer flexibilidade na configuração da área de trabalho, melhorando a estética e o uso eficiente dos recursos do sistema.
 
 	[http://www.afterstep.org/](http://www.afterstep.org/) || [afterstep-git](https://aur.archlinux.org/packages/afterstep-git/)
 
-*   **[Blackbox](/index.php/Blackbox "Blackbox")** — Fast, lightweight window manager for the X Window System, without all those annoying library dependencies. Blackbox is built with C++ and contains completely original code (even though the graphics implementation is similar to that of WindowMaker).
+*   **[Blackbox](/index.php/Blackbox "Blackbox")** — Gerenciador de janela rápido e leve para o X Window System, sem todas as dependências irritantes da biblioteca. O Blackbox é construído com C++ e contém código completamente original (mesmo que a implementação gráfica seja semelhante à do WindowMaker).
 
 	[http://blackboxwm.sourceforge.net/](http://blackboxwm.sourceforge.net/) || [blackbox](https://www.archlinux.org/packages/?name=blackbox)
 
-*   **[Compiz](/index.php/Compiz "Compiz")** — OpenGL compositing manager that uses GLX_EXT_texture_from_pixmap for binding redirected top-level windows to texture objects. It has a flexible plug-in system and it is designed to run well on most graphics hardware.
+*   **[Compiz](/index.php/Compiz "Compiz")** — Gerenciador de composição OpenGL que usa GLX_EXT_texture_from_pixmap para vincular janelas de nível superior redirecionadas a objetos de textura. Ele tem um sistema de plug-in flexível e foi projetado para funcionar bem na maioria dos hardwares gráficos.
 
 	[https://launchpad.net/compiz](https://launchpad.net/compiz) || [compiz](https://aur.archlinux.org/packages/compiz/), [compiz-core](https://aur.archlinux.org/packages/compiz-core/)
 
-*   **[cwm](/index.php/Cwm "Cwm")** — Originally deriving from evilwm, but later re-written from scratch. cwm aims to be simple, and offers helpful features such as searching for windows.
+*   **[cwm](/index.php/Cwm "Cwm")** — Originalmente derivado do evilwm, mas depois reescrito do zero. O cwm tem como objetivo ser simples e oferece recursos úteis, como procurar por janelas.
 
 	[https://github.com/chneukirchen/cwm](https://github.com/chneukirchen/cwm) || [cwm](https://aur.archlinux.org/packages/cwm/)
 
-*   **eggwm** — A lightweight QT4/QT5 window manager
+*   **eggwm** — Um gerenciador de janela leve em QT4/QT5
 
 	[eggwm-qt5](https://aur.archlinux.org/packages/eggwm-qt5/) || [eggwm](https://aur.archlinux.org/packages/eggwm/)
 
-*   **[Enlightenment](/index.php/Enlightenment "Enlightenment")** — Enlightenment is not just a window manager for Linux/X11 and others, but also a whole suite of libraries to help you create beautiful user interfaces with much less work than doing it the old fashioned way and fighting with traditional toolkits, not to mention a traditional window manager.
+*   **[Enlightenment](/index.php/Enlightenment "Enlightenment")** — O Enlightenment não é apenas um gerenciador de janela para Linux/X11 e outros, mas também um conjunto completo de bibliotecas para ajudá-lo a criar lindas interfaces com muito menos trabalho do que fazê-lo à moda antiga e lutar com ferramentas tradicionais, sem mencionar um tradicional gerenciador de janela.
 
 	[http://www.enlightenment.org/](http://www.enlightenment.org/) || [enlightenment](https://www.archlinux.org/packages/?name=enlightenment)
 
-*   **[evilwm](/index.php/Evilwm "Evilwm")** — Minimalist window manager for the X Window System. 'Minimalist' here does not mean it is too bare to be usable - it just means it omits a lot of the stuff that make other window managers *un*usable.
+*   **[evilwm](/index.php/Evilwm "Evilwm")** — Gerenciador de janela minimalista para o X Window System. 'Minimalista' aqui não significa que esteja muito vazio para ser usado - significa apenas que omite muitas das coisas que tornam os outros gerentes de janela *in*utilizáveis.
 
 	[http://www.6809.org.uk/evilwm/](http://www.6809.org.uk/evilwm/) || [evilwm](https://aur.archlinux.org/packages/evilwm/)
 
-*   **[Fluxbox](/index.php/Fluxbox "Fluxbox")** — Window manager for X that was based on the Blackbox 0.61.1 code. It is very light on resources and easy to handle but yet full of features to make an easy and extremely fast desktop experience. It is built using C++ and licensed under the MIT License.
+*   **[Fluxbox](/index.php/Fluxbox "Fluxbox")** — Gerenciador de janela para X que foi baseado no código do Blackbox 0.61.1\. É muito leve em recursos e fácil de manusear, mas ainda repleta de recursos para criar uma experiência de área de trabalho fácil e extremamente rápida. É construído usando C++ e licenciado sob a licença MIT.
 
 	[https://github.com/fluxbox/fluxbox](https://github.com/fluxbox/fluxbox) || [fluxbox](https://www.archlinux.org/packages/?name=fluxbox)
 
-*   **[Flwm](https://en.wikipedia.org/wiki/FLWM "wikipedia:FLWM")** — Attempt to combine the best ideas from in several window managers. The primary influence and code base is from wm2 by Chris Cannam.
+*   **[Flwm](https://en.wikipedia.org/wiki/FLWM "wikipedia:FLWM")** — Tente combinar as melhores ideias em vários gerenciadores de janela. A principal influência e base de código é de wm2 por Chris Cannam.
 
 	[http://flwm.sourceforge.net/](http://flwm.sourceforge.net/) || [flwm](https://aur.archlinux.org/packages/flwm/)
 
-*   **[FVWM](/index.php/FVWM "FVWM")** — Extremely powerful ICCCM-compliant multiple virtual desktop window manager for the X Window system. Development is active, and support is excellent.
+*   **[FVWM](/index.php/FVWM "FVWM")** — Extremamente poderoso gerenciador de janela de múltiplas áreas virtuais compatível com ICCCM para o sistema X Window. O desenvolvimento está ativo e o suporte é excelente.
 
 	[http://www.fvwm.org/](http://www.fvwm.org/) || [fvwm](https://www.archlinux.org/packages/?name=fvwm)
 
-*   **[Gala](http://elementaryos.org/journal/meet-gala-window-manager)** — A beautiful Window Manager from elementaryos, part of [Pantheon](/index.php/Pantheon "Pantheon"). Also as a compositing manager, based on libmutter.
+*   **[Gala](http://elementaryos.org/journal/meet-gala-window-manager)** — Um belo gerenciador de janela do elementaryos, parte do [Pantheon](/index.php/Pantheon "Pantheon"). Também como gerenciador de composição, baseado no libmutter.
 
 	[https://launchpad.net/gala](https://launchpad.net/gala) || [gala](https://aur.archlinux.org/packages/gala/), [gala-git](https://aur.archlinux.org/packages/gala-git/)
 
-*   **Goomwwm** — X11 window manager implemented in C as a cleanroom software project. It manages windows in a minimal floating layout, while providing flexible keyboard-driven controls for window switching, sizing, moving, tagging, and tiling. It is also fast, lightweight, modeless, Xinerama-aware, and EWMH compatible wherever possible.
+*   **Goomwwm** — Gerenciador de janela X11 implementado em C como um projeto de software de sala limpa. Ele gerencia janelas em um layout flutuante mínimo, enquanto fornece controles orientados por teclado flexíveis para troca de janela, dimensionamento, movimentação, marcação e colocação. Também é rápido, leve, sem modelagem, compatível com Xinerama e compatível com EWMH sempre que possível.
 
 	[https://github.com/seanpringle/goomwwm](https://github.com/seanpringle/goomwwm) || [goomwwm](https://aur.archlinux.org/packages/goomwwm/)
 
-*   **[IceWM](/index.php/IceWM "IceWM")** — Window manager for the X Window System. The goal of IceWM is speed, simplicity, and not getting in the user's way.
+*   **[IceWM](/index.php/IceWM "IceWM")** — Gerenciador de janela para o sistema X Window. O objetivo do IceWM é a velocidade, simplicidade e não ficar no caminho do usuário.
 
 	[https://ice-wm.org/](https://ice-wm.org/) || [icewm](https://www.archlinux.org/packages/?name=icewm)
 
-*   **jbwm** — jbwm is a window manager based on evilwm, with a minimal configuration size of approximately 16kb, focused on small binary size and usability, incorporating optional title-bars and XFT title-bar font rendering as compile-time options. jbwm also features easier to use keybindings than evilwm.
+*   **jbwm** — O jbwm é um gerenciador de janela baseado no evilwm, com um tamanho mínimo de configuração de aproximadamente 16kb, focado no pequeno tamanho binário e na usabilidade, incorporando barras de título opcionais e renderização de fonte de barra de título XFT como opções de tempo de compilação. O jbwm também é mais fácil de usar keybindings do que o evilwm.
 
 	[https://github.com/jefbed/jbwm](https://github.com/jefbed/jbwm) || [jbwm](https://aur.archlinux.org/packages/jbwm/)
 
-*   **[JWM](/index.php/JWM "JWM")** — Window manager for the X11 Window System. JWM is written in C and uses only Xlib at a minimum.
+*   **[JWM](/index.php/JWM "JWM")** — Gerenciador de janela para o sistema de janelas X11\. O JWM é escrito em C e usa apenas o Xlib no mínimo.
 
 	[https://joewing.net/projects/jwm/index.shtml](https://joewing.net/projects/jwm/index.shtml) || [jwm](https://www.archlinux.org/packages/?name=jwm)
 
-*   **Karmen** — Window manager for X, written by Johan Veenhuizen. It is designed to "just work." There is no configuration file and no library dependencies other than Xlib. The input focus model is click-to-focus. Karmen aims at ICCCM and EWMH compliance.
+*   **Karmen** — Gerenciador de janela para X, escrito por Johan Veenhuizen. Ele é projetado para "apenas trabalhar". Não há arquivo de configuração nem dependências de bibliotecas além do Xlib. O modelo de foco de entrada é o clicar para focar. Karmen visa o cumprimento do ICCCM e do EWMH.
 
 	[http://karmen.sourceforge.net/](http://karmen.sourceforge.net/) || [karmen](https://aur.archlinux.org/packages/karmen/)
 
-*   **[KWin](https://en.wikipedia.org/wiki/KWin "wikipedia:KWin")** — The standard KDE window manager since KDE 4.0, ships with the first version of built-in support for compositing, making it also a compositing manager. This allows KWin to provide advanced graphical effects, similar to Compiz, while also providing all the features from previous KDE releases (such as very good integration with the rest of KDE, advanced configurability, focus stealing prevention, a well-tested window manager, robust handling of misbehaving applications/toolkits, etc.). Also serves as a compositor for [Wayland](/index.php/Wayland "Wayland").
+*   **[KWin](https://en.wikipedia.org/wiki/KWin "wikipedia:KWin")** — O gerenciador de janela padrão do KDE, desde o KDE 4.0, vem com a primeira versão do suporte integrado para composição, tornando-o também um gerenciador de composição. Isso permite que a KWin forneça efeitos gráficos avançados, semelhantes ao Compiz, além de fornecer todos os recursos das versões anteriores do KDE (como uma integração muito boa com o KDE, capacidade de configuração avançada, prevenção contra furto de foco, gerenciador de janela bem testado e robusto). manuseio de aplicativos/kits de ferramentas que se comportam mal etc.). Também serve como compositor para [Wayland](/index.php/Wayland "Wayland").
 
 	[https://techbase.kde.org/Projects/KWin](https://techbase.kde.org/Projects/KWin) || [kwin](https://www.archlinux.org/packages/?name=kwin)
 
-*   **lwm** — Window manager for X that tries to keep out of your face. There are no icons, no button bars, no icon docks, no root menus, no nothing: if you want all that, then other programs can provide it. There is no configurability either: if you want that, you want a different window manager; one that helps your operating system in its evil conquest of your disc space and its annexation of your physical memory.
+*   **lwm** — Gerenciador de janela para o X que tenta se manter fora do seu rosto. Não há ícones, sem barras de botões, sem docks de ícones, sem menus raiz, sem nada: se você quer tudo isso, outros programas podem fornecê-lo. Também não há configurabilidade: se você quiser, você quer um gerenciador de janela diferente; um que ajude o seu sistema operacional em sua conquista maligna de seu espaço de disco e sua anexação de sua memória física.
 
 	[http://www.jfc.org.uk/software/lwm.html](http://www.jfc.org.uk/software/lwm.html) || [lwm](https://www.archlinux.org/packages/?name=lwm)
 
-*   **Marco** — The MATE window manager, fork of Metacity.
+*   **Marco** — O gerenciador de janela MATE, fork do Metacity.
 
 	[https://github.com/mate-desktop/marco](https://github.com/mate-desktop/marco) || [marco](https://www.archlinux.org/packages/?name=marco)
 
-*   **[Metacity](https://en.wikipedia.org/wiki/Metacity "wikipedia:Metacity")** — This window manager strives to be quiet, small, stable, get on with its job, and stay out of your attention. It is used by the legacy GNOME 2 and GNOME flashback sessions, and superseded by Mutter.
+*   **[Metacity](https://en.wikipedia.org/wiki/Metacity "wikipedia:Metacity")** — Este gerenciador de janela se esforça para ser silencioso, pequeno, estável, continuar com seu trabalho e ficar fora de sua atenção. Ele é usado pelas sessões legadas de flashback do GNOME 2 e do GNOME, e substituído pelo Mutter.
 
 	[https://blogs.gnome.org/metacity/](https://blogs.gnome.org/metacity/) || [metacity](https://www.archlinux.org/packages/?name=metacity)
 
-*   **[Muffin](https://en.wikipedia.org/wiki/Mutter_(software)#Muffin "wikipedia:Mutter (software)")** — Window and compositing manager for Cinnamon, fork of Mutter, based on Clutter, uses OpenGL. It cannot be used outside of Cinnamon.
+*   **[Muffin](https://en.wikipedia.org/wiki/Mutter_(software)#Muffin "wikipedia:Mutter (software)")** — O gerenciador de janela e composição do Cinnamon, fork do Mutter, baseado no Clutter, usa o OpenGL. Não pode ser usado fora de canela.
 
 	[https://github.com/linuxmint/muffin/](https://github.com/linuxmint/muffin/) || [muffin](https://www.archlinux.org/packages/?name=muffin)
 
-*   **[Mutter](https://en.wikipedia.org/wiki/Mutter_(window_manager) "wikipedia:Mutter (window manager)")** — Window and compositing manager for GNOME, based on Clutter, uses OpenGL. Also serves a Wayland compositor.
+*   **[Mutter](https://en.wikipedia.org/wiki/Mutter_(window_manager) "wikipedia:Mutter (window manager)")** — O gerenciador de janela e composição do GNOME, baseado no Clutter, usa o OpenGL. Também serve um compositor de Wayland.
 
 	[https://gitlab.gnome.org/GNOME/mutter/](https://gitlab.gnome.org/GNOME/mutter/) || [mutter](https://www.archlinux.org/packages/?name=mutter)
 
-*   **[MWM](https://en.wikipedia.org/wiki/Motif_Window_Manager "wikipedia:Motif Window Manager")** — The Motif Window Manager (MWM) is an X window manager based on the Motif toolkit.
+*   **[MWM](https://en.wikipedia.org/wiki/Motif_Window_Manager "wikipedia:Motif Window Manager")** — O Motif Window Manager (MWM) é um gerenciador de janela X baseado no kit de ferramentas Motif.
 
 	[http://sourceforge.net/projects/motif/](http://sourceforge.net/projects/motif/) || [openmotif](https://www.archlinux.org/packages/?name=openmotif)
 
-*   **[Openbox](/index.php/Openbox "Openbox")** — Highly configurable, next generation window manager with extensive standards support. The *box visual style is well known for its minimalistic appearance. Openbox uses the *box visual style, while providing a greater number of options for theme developers than previous *box implementations. The theme documentation describes the full range of options found in Openbox themes.
+*   **[Openbox](/index.php/Openbox "Openbox")** — Gerenciador de janela da próxima geração e altamente configurável, com amplo suporte a padrões. O estilo visual *box é bem conhecido por sua aparência minimalista. O Openbox usa o estilo visual *box, enquanto fornece um maior número de opções para desenvolvedores de temas do que implementações anteriores de *box. A documentação do tema descreve a gama completa de opções encontradas nos temas do Openbox.
 
 	[http://openbox.org/](http://openbox.org/) || [openbox](https://www.archlinux.org/packages/?name=openbox)
 
-*   **[pawm](/index.php/Pawm "Pawm")** — Window manager for the X Window system. So it is not a 'desktop' and does not offer you a huge pile of useless options, just the facilities needed to run your X applications and at the same time having a friendly and easy to use interface.
+*   **[pawm](/index.php/Pawm "Pawm")** — Gerenciador de janela para o sistema X Window. Portanto, não é um 'desktop' e não oferece uma enorme pilha de opções inúteis, apenas as facilidades necessárias para executar seus aplicativos X e ao mesmo tempo ter uma interface amigável e fácil de usar.
 
 	[http://www.pleyades.net/pawm/](http://www.pleyades.net/pawm/) || [pawm](https://aur.archlinux.org/packages/pawm/)
 
-*   **[PekWM](/index.php/PekWM "PekWM")** — Window manager that once upon a time was based on the aewm++ window manager, but it has evolved enough that it no longer resembles aewm++ at all. It has a much expanded feature-set, including window grouping (similar to Ion, PWM, or Fluxbox), auto-properties, Xinerama, keygrabber that supports keychains, and much more.
+*   **[PekWM](/index.php/PekWM "PekWM")** — O gerenciador de janela que antigamente era baseado no gerenciador de janela aewm++, mas evoluiu o suficiente para não mais se assemelhar ao aew++. Ele tem um conjunto de recursos muito expandido, incluindo agrupamento de janelas (semelhante ao Ion, PWM ou Fluxbox), propriedades automáticas, Xinerama, keygrabber que suporta keychains e muito mais.
 
 	[https://www.pekwm.org/](https://www.pekwm.org/) || [pekwm](https://www.archlinux.org/packages/?name=pekwm)
 
-*   **[Sawfish](/index.php/Sawfish "Sawfish")** — Extensible window manager using a Lisp-based scripting language. Its policy is very minimal compared to most window managers. Its aim is simply to manage windows in the most flexible and attractive manner possible. All high-level WM functions are implemented in Lisp for future extensibility or redefinition.
+*   **[Sawfish](/index.php/Sawfish "Sawfish")** — Gerenciador de janela extensível usando uma linguagem de script baseada em Lisp. Sua política é muito mínima em comparação com a maioria dos gerenciadores de janelas. Seu objetivo é simplesmente gerenciar janelas da maneira mais flexível e atraente possível. Todas as funções WM de alto nível são implementadas em Lisp para futura extensibilidade ou redefinição.
 
 	[http://sawfish.wikia.com/wiki/Main_Page](http://sawfish.wikia.com/wiki/Main_Page) || [sawfish](https://aur.archlinux.org/packages/sawfish/)
 
-*   **TinyWM** — Tiny window manager created as an exercise in minimalism. It may be helpful in learning some of the very basics of creating a window manager. It is comprised of approximately 50 lines of C. There is also a Python version using python-xlib.
+*   **TinyWM** — Gerenciador de janela minúsculo criado como um exercício de minimalismo. Pode ser útil aprender algumas das noções básicas de como criar um gerenciador de janela. É composto de aproximadamente 50 linhas de C. Há também uma versão do Python usando python-xlib.
 
 	[http://incise.org/tinywm.html](http://incise.org/tinywm.html) || [tinywm](https://aur.archlinux.org/packages/tinywm/) [tinywm-git](https://aur.archlinux.org/packages/tinywm-git/)
 
-*   **[twm](/index.php/Twm "Twm")** — Window manager for the X Window System. It provides titlebars, shaped windows, several forms of icon management, user-defined macro functions, click-to-type and pointer-driven keyboard focus, and user-specified key and pointer button bindings.
+*   **[twm](/index.php/Twm "Twm")** — Gerenciador de janela para o sistema X Window. Ele fornece barras de título, janelas de forma, várias formas de gerenciamento de ícone, funções de macro definidas pelo usuário, foco no teclado de clique para tipo e ponteiro e ligações de botão de ponteiro e tecla especificada pelo usuário.
 
 	[https://cgit.freedesktop.org/xorg/app/twm/](https://cgit.freedesktop.org/xorg/app/twm/) || [xorg-twm](https://www.archlinux.org/packages/?name=xorg-twm)
 
-*   **[UWM](https://en.wikipedia.org/wiki/UDE "wikipedia:UDE")** — The ultimate window manager for UDE.
+*   **[UWM](https://en.wikipedia.org/wiki/UDE "wikipedia:UDE")** — O gerenciador de janela final para a UDE.
 
 	[http://udeproject.sourceforge.net/](http://udeproject.sourceforge.net/) || [ude](https://aur.archlinux.org/packages/ude/)
 
-*   **WindowLab** — Small and simple window manager of novel design. It has a click-to-focus but not raise-on-focus policy, a window resizing mechanism that allows one or many edges of a window to be changed in one action, and an innovative menubar that shares the same part of the screen as the taskbar. Window titlebars are prevented from going off the edge of the screen by constraining the mouse pointer, and when appropriate the pointer is also constrained to the taskbar/menubar in order to make target menu items easier to hit.
+*   **WindowLab** — Gerenciador de janela pequeno e simples com design inovador. Ele tem uma política de clique para focar, mas não para aumentar o foco, um mecanismo de redimensionamento de janela que permite que uma ou várias bordas de uma janela sejam alteradas em uma ação e uma barra de menu inovadora que compartilhe a mesma parte da tela. a barra de tarefas. As barras de título da janela são impedidas de sair da borda da tela restringindo o ponteiro do mouse e, quando apropriado, o ponteiro também é restringido à barra de tarefas/barra de menu para facilitar a execução dos itens de menu de destino.
 
 	[https://github.com/nickgravgaard/windowlab](https://github.com/nickgravgaard/windowlab) || [windowlab](https://aur.archlinux.org/packages/windowlab/)
 
-*   **[Window Maker](/index.php/Window_Maker "Window Maker")** — X11 window manager originally designed to provide integration support for the GNUstep Desktop Environment. In every way possible, it reproduces the elegant look and feel of the NEXTSTEP user interface. It is fast, feature rich, easy to configure, and easy to use. It is also free software, with contributions being made by programmers from around the world.
+*   **[Window Maker](/index.php/Window_Maker "Window Maker")** — Gerenciador de janela X11 originalmente projetado para fornecer suporte de integração para o GNUstep Desktop Environment. De todas as formas possíveis, reproduz a aparência elegante da interface de usuário NEXTSTEP. É rápido, rico em recursos, fácil de configurar e fácil de usar. Também é software livre, com contribuições feitas por programadores de todo o mundo.
 
 	[https://windowmaker.org/](https://windowmaker.org/) || [windowmaker](https://aur.archlinux.org/packages/windowmaker/)
 
-*   **WM2** — Window manager for X. It provides an unusual style of window decoration and as little functionality as its author feels comfortable with in a window manager. wm2 is not configurable, except by editing the source and recompiling the code, and is really intended for people who do not particularly want their window manager to be too friendly.
+*   **WM2** — Gerenciador de janela para X. Ele oferece um estilo incomum de decoração de janelas e pouca funcionalidade com a qual seu autor se sente confortável em um gerenciador de janela. wm2 não é configurável, exceto por editar o fonte e recompilar o código, e é realmente destinado a pessoas que não querem particularmente que seu gerenciador de janela seja muito amigável.
 
 	[http://www.all-day-breakfast.com/wm2/](http://www.all-day-breakfast.com/wm2/) || [wm2](https://aur.archlinux.org/packages/wm2/)
 
-*   **[Xfwm](/index.php/Xfwm "Xfwm")** — The [Xfce](/index.php/Xfce "Xfce") window manager manages the placement of application windows on the screen, provides beautiful window decorations, manages workspaces or virtual desktops and natively supports multiscreen mode. It provides its own compositing manager (from the X.Org Composite extension) for true transparency and shadows. The Xfce window manager also includes a keyboard shortcuts editor for user specific commands and basic windows manipulations and provides a preferences dialog for advanced tweaks.
+*   **[Xfwm](/index.php/Xfwm "Xfwm")** — O gerenciador de janela [Xfce](/index.php/Xfce "Xfce") gerencia a colocação de janelas de aplicativos na tela, fornece belas decorações de janelas, gerencia espaços de trabalho ou desktops virtuais e suporta nativamente o modo de várias telas. Ele fornece seu próprio gerenciador de composição (da extensão X.Org Composite) para transparência e sombras verdadeiras. O gerenciador de janela do Xfce também inclui um editor de atalhos de teclado para comandos específicos do usuário e manipulações básicas do Windows e fornece um diálogo de preferências para ajustes avançados.
 
 	[https://docs.xfce.org/xfce/xfwm4/start](https://docs.xfce.org/xfce/xfwm4/start) || [xfwm4](https://www.archlinux.org/packages/?name=xfwm4)
 
@@ -293,5 +293,6 @@ Veja [Comparison of tiling window managers](/index.php/Comparison_of_tiling_wind
 ## Veja também
 
 *   [http://www.gilesorr.com/wm/](http://www.gilesorr.com/wm/)
-*   [http://www.slant.co/topics/390/~what-are-the-best-window-managers-for-linux](http://www.slant.co/topics/390/~what-are-the-best-window-managers-for-linux)
+*   [http://www.slant.co/topics/390/~what-are-the-best-window-managers-for-linux/](http://www.slant.co/topics/390/~what-are-the-best-window-managers-for-linux/)
 *   [https://l3net.wordpress.com/2013/03/17/a-memory-comparison-of-light-linux-desktops/](https://l3net.wordpress.com/2013/03/17/a-memory-comparison-of-light-linux-desktops/)
+*   [http://www.xwinman.org/others.php](http://www.xwinman.org/others.php)

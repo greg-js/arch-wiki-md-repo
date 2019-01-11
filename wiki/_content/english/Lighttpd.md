@@ -9,7 +9,8 @@
         *   [2.1.2 Enabling https via SSL](#Enabling_https_via_SSL)
             *   [2.1.2.1 Self-signed](#Self-signed)
             *   [2.1.2.2 Let's Encrypt](#Let's_Encrypt)
-        *   [2.1.3 Password protecting a directory](#Password_protecting_a_directory)
+        *   [2.1.3 Redirect http requests to https](#Redirect_http_requests_to_https)
+        *   [2.1.4 Password protecting a directory](#Password_protecting_a_directory)
     *   [2.2 CGI](#CGI)
     *   [2.3 FastCGI](#FastCGI)
         *   [2.3.1 PHP](#PHP)
@@ -17,8 +18,8 @@
             *   [2.3.1.2 Using php-fpm](#Using_php-fpm)
         *   [2.3.2 Python FastCGI](#Python_FastCGI)
             *   [2.3.2.1 Server name indication](#Server_name_indication)
-        *   [2.3.3 Redirect http requests to https](#Redirect_http_requests_to_https)
-    *   [2.4 Output compression](#Output_compression)
+    *   [2.4 uWSGI](#uWSGI)
+    *   [2.5 Output compression](#Output_compression)
 *   [3 See also](#See_also)
 
 ## Installation
@@ -126,6 +127,50 @@ ssl.openssl.ssl-conf-cmd = ("Protocol" => "-ALL, TLSv1.2")
 ```
 
 to the above. This may also fix Firefox not being able to load the HTTPS version of your site
+
+#### Redirect http requests to https
+
+You should add `"mod_redirect"` in server.modules array in `/etc/lighttpd/lighttpd.conf`:
+
+```
+server.modules += ( "mod_redirect" )
+
+$SERVER["socket"] == ":80" {
+  $HTTP["host"] =~ "example.org" {
+    url.redirect = ( "^/(.*)" => "https://example.org/$1" )
+    server.name                 = "example.org" 
+  }
+}
+
+$SERVER["socket"] == ":443" {
+  ssl.engine = "enable" 
+  ssl.pemfile = "/etc/lighttpd/certs/server.pem" 
+  server.document-root = "..." 
+}
+
+```
+
+To redirect all hosts to their secure equivalents use the following in place of the socket 80 configuration above:
+
+```
+$SERVER["socket"] == ":80" {
+  $HTTP["host"] =~ ".*" {
+    url.redirect = (".*" => "https://%0$0")
+  }
+}
+
+```
+
+To redirect all hosts for part of the site (e.g. secure or phpmyadmin):
+
+```
+$SERVER["socket"] == ":80" {
+  $HTTP["url"] =~ "^/secure" {
+    url.redirect = ( "^/(.*)" => "https://example.com/$1" )
+  }
+}
+
+```
 
 #### Password protecting a directory
 
@@ -340,7 +385,6 @@ fastcgi.server = (
 
 **Note:**
 
-*   lighttpd supports Python WSGI protocol: [HowToPythonWSGI](https://redmine.lighttpd.net/projects/lighttpd/wiki/HowToPythonWSGI).
 *   The following method will not work with Python 3 because *Flup* library is only available for Python 2\. If you want to use Python 3, you should refer to [#CGI](#CGI) section.
 
 Install and configure FastCGI (see [#FastCGI](#FastCGI) above).
@@ -397,49 +441,32 @@ $HTTP["host"] == "mail.example.org" {
 
 ```
 
-#### Redirect http requests to https
+### uWSGI
 
-You should add `"mod_redirect"` in server.modules array in `/etc/lighttpd/lighttpd.conf`:
+In `/etc/lighttpd/lighttpd.conf` add
 
 ```
-server.modules += ( "mod_redirect" )
+server.modules += ("mod_scgi")
 
-$SERVER["socket"] == ":80" {
-  $HTTP["host"] =~ "example.org" {
-    url.redirect = ( "^/(.*)" => "https://example.org/$1" )
-    server.name                 = "example.org" 
-  }
+$HTTP["url"] =~ "^/uwsgi/" {
+    scgi.protocol = "uwsgi"
+    scgi.server   = (
+        "/uwsgi/foo" => ((
+            "socket"            => "/path/to/socket",
+            "check-local"       => "disable",
+            "strip-request-url" => "uwsgi/foo"
+        )),
+        "/uwsgi/bar" =>
+            "host"              => "127.0.0.1",
+            "port"              => "8080",
+            "check-local"       => "disable",
+            "strip-request-url" => "uwsgi/foo"
+        ))
+    )
 }
-
-$SERVER["socket"] == ":443" {
-  ssl.engine = "enable" 
-  ssl.pemfile = "/etc/lighttpd/certs/server.pem" 
-  server.document-root = "..." 
-}
-
 ```
 
-To redirect all hosts to their secure equivalents use the following in place of the socket 80 configuration above:
-
-```
-$SERVER["socket"] == ":80" {
-  $HTTP["host"] =~ ".*" {
-    url.redirect = (".*" => "https://%0$0")
-  }
-}
-
-```
-
-To redirect all hosts for part of the site (e.g. secure or phpmyadmin):
-
-```
-$SERVER["socket"] == ":80" {
-  $HTTP["url"] =~ "^/secure" {
-    url.redirect = ( "^/(.*)" => "https://example.com/$1" )
-  }
-}
-
-```
+You can than start the uwsgi application either as a [systemd unit](https://uwsgi-docs.readthedocs.io/en/latest/Systemd.html)] or [[direct](https://redmine.lighttpd.net/projects/lighttpd/wiki/HowToPythonWSGI). [Here](https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uwsgi-and-nginx-on-ubuntu-16-04) is a neat guide from digitalocean on how to setup a flask application from the scratch.
 
 ### Output compression
 

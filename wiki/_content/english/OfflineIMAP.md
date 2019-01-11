@@ -361,7 +361,7 @@ remotepasseval = get_password("examplerepo")
 
 ##### Option 1: python2-gnomekeyring script
 
-**Note:** This script relies upon [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring) which has been deprecated. [[1]](https://git.gnome.org/browse/libgnome-keyring/commit/?id=6a5adea4aec93)
+**Note:** This script relies upon [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring) which has been deprecated. [[1]](https://gitlab.gnome.org/GNOME/libgnome-keyring/commit/6a5adea4aec93)
 
 Install [python2-gnomekeyring](https://www.archlinux.org/packages/?name=python2-gnomekeyring). Then:
 
@@ -411,7 +411,7 @@ To set the credentials, run this script from a shell.
 
 ##### Option 2: gnome-keyring-query script
 
-**Note:** This script relies upon [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring) which has been deprecated. [[2]](https://git.gnome.org/browse/libgnome-keyring/commit/?id=6a5adea4aec93)
+**Note:** This script relies upon [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring) which has been deprecated. [[2]](https://gitlab.gnome.org/GNOME/libgnome-keyring/commit/6a5adea4aec93)
 
 Install [gnome-keyring-query](https://aur.archlinux.org/packages/gnome-keyring-query/). Then create the following:
 

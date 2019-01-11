@@ -22,4 +22,4 @@ To start Gnumeric with a different locale, run
 
 ## See also
 
-*   [Gnumeric Official Website](http://projects.gnome.org/gnumeric/)
+*   [Gnumeric Official Website](http://www.gnumeric.org/)

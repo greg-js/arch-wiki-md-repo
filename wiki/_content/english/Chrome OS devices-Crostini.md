@@ -40,7 +40,7 @@ The below instructions were taken from [https://www.reddit.com/r/Crostini/wiki/h
 
 1\. Install an Arch linux container
 
-Open a new terminal in Chrome (Alt + Shift + T). Then connect to terminal and create an arch linux container:
+Open a new terminal in Chrome (Ctrl + Shift + T). Then connect to terminal and create an arch linux container:
 
 ```
 vsh termina
@@ -130,6 +130,13 @@ lxc profile set default security.syscalls.blacklist "keyctl errno 38"
 ### DNS resolution not working
 
 DNS resolution stopped working in the container after my install. To get it working again I had to create [/etc/resolv.conf](/index.php//etc/resolv.conf "/etc/resolv.conf").
+
+As of Jan 2019, my container wasn't able to resolve ".org" DNS, I had to modify [nsswitch.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nsswitch.conf.5) (only the hosts line).
+
+```
+ hosts: files dns
+
+```
 
 ### App not opening in chrome OS (infinite spinner)
 

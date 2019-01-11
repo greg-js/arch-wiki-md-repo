@@ -3,10 +3,10 @@
 | Wireless | Working | iwlwifi |
 | Bluetooth | Working | btusb |
 | Audio | Working | snd_hda_intel |
-| Touchpad | Working |  ? |
+| Touchpad | Working | ? |
 | Webcam | Working | uvcvideo |
-| USB-C / Thunderbolt 3 | Working |  ? |
-| Function/Multimedia Keys | Working |  ? |
+| USB-C / Thunderbolt 3 | Working | ? |
+| Function/Multimedia Keys | Working | ? |
 
 The Mi Notebook Air 13.3 is an aluminium Ultrabook. It is a product by the Chinese Company Xiaomi and is currently only available in China or through import online-shops. Using the [Intel Core i5 6200U](https://ark.intel.com/products/88193/Intel-Core-i5-6200U-Processor-3M-Cache-up-to-2_80-GHz) @ 2.3 GHz and the NVIDIA GeForce 940MX, it provides good power for a decent price.
 
@@ -17,7 +17,7 @@ The installation should be going without any problems, if you follow the followi
 *   [1 Pre-Installation System Settings](#Pre-Installation_System_Settings)
 *   [2 Graphics Card Configuration](#Graphics_Card_Configuration)
     *   [2.1 Intel Only](#Intel_Only)
-    *   [2.2 Intel/Nvidia Hybrid Configuration](#Intel.2FNvidia_Hybrid_Configuration)
+    *   [2.2 Intel/Nvidia Hybrid Configuration](#Intel/Nvidia_Hybrid_Configuration)
 *   [3 Input](#Input)
     *   [3.1 Touchpad](#Touchpad)
     *   [3.2 Fn-Keys](#Fn-Keys)
@@ -26,6 +26,7 @@ The installation should be going without any problems, if you follow the followi
 *   [6 Troubleshoothing](#Troubleshoothing)
     *   [6.1 Backlight](#Backlight)
     *   [6.2 WiFi](#WiFi)
+    *   [6.3 Audio Jack](#Audio_Jack)
 
 ## Pre-Installation System Settings
 
@@ -165,3 +166,11 @@ If you are having issues with the auto-detected WiFi drivers, that is because th
  `/etc/modprobe.d/blacklist.conf`  `blacklist acer-wmi` 
 
 Note, this issue is fixed in kernel version 4.9 and above.
+
+### Audio Jack
+
+If you want to use the microphone from the headset plugged in the combo jack input add this line to alsa config:
+
+ `/etc/modprobe.d/alsa-base.conf`  `options snd-hda-intel model=dell-headset-multi` 
+
+And reboot the machine.

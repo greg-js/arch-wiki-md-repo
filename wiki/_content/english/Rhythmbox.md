@@ -4,15 +4,15 @@
 
 *   [1 Installation](#Installation)
 *   [2 Tips](#Tips)
-    *   [2.1 Playing remote media from Internet sources (blip.tv, Jamendo, SHOUTcast)](#Playing_remote_media_from_Internet_sources_.28blip.tv.2C_Jamendo.2C_SHOUTcast.29)
+    *   [2.1 Playing remote media from Internet sources (blip.tv, Jamendo, SHOUTcast)](#Playing_remote_media_from_Internet_sources_(blip.tv,_Jamendo,_SHOUTcast))
     *   [2.2 How to activate the Cover Art plugin](#How_to_activate_the_Cover_Art_plugin)
     *   [2.3 What to do when the little red icon shows when you try to play radio stations](#What_to_do_when_the_little_red_icon_shows_when_you_try_to_play_radio_stations)
     *   [2.4 How to activate the DAAP Music Sharing](#How_to_activate_the_DAAP_Music_Sharing)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 "Unknown Playback Error" when streaming or playing from regular files](#.22Unknown_Playback_Error.22_when_streaming_or_playing_from_regular_files)
-    *   [3.2 "Error, impossible to activate plugin 'Audio CD Recorder'" shows up every time I start Rhythmbox](#.22Error.2C_impossible_to_activate_plugin_.27Audio_CD_Recorder.27.22_shows_up_every_time_I_start_Rhythmbox)
-    *   [3.3 Slow start and "Unable to start mDNS browsing: MDNS service is not running" output](#Slow_start_and_.22Unable_to_start_mDNS_browsing:_MDNS_service_is_not_running.22_output)
-    *   [3.4 Cannot activate "context pane" plugin](#Cannot_activate_.22context_pane.22_plugin)
+    *   [3.1 "Unknown Playback Error" when streaming or playing from regular files](#"Unknown_Playback_Error"_when_streaming_or_playing_from_regular_files)
+    *   [3.2 "Error, impossible to activate plugin 'Audio CD Recorder'" shows up every time I start Rhythmbox](#"Error,_impossible_to_activate_plugin_'Audio_CD_Recorder'"_shows_up_every_time_I_start_Rhythmbox)
+    *   [3.3 Slow start and "Unable to start mDNS browsing: MDNS service is not running" output](#Slow_start_and_"Unable_to_start_mDNS_browsing:_MDNS_service_is_not_running"_output)
+    *   [3.4 Cannot activate "context pane" plugin](#Cannot_activate_"context_pane"_plugin)
     *   [3.5 Rhythmbox Startup is Slow](#Rhythmbox_Startup_is_Slow)
     *   [3.6 No cover are shown in the dedicated box](#No_cover_are_shown_in_the_dedicated_box)
     *   [3.7 Cannot enable MTP device support](#Cannot_enable_MTP_device_support)
@@ -26,7 +26,7 @@
 
 ### Playing remote media from Internet sources (blip.tv, Jamendo, SHOUTcast)
 
-Rhythmbox takes advantage of the [Grilo](https://live.gnome.org/Grilo) framework to browse external sources such as SHOUTcast webradios and more.
+Rhythmbox takes advantage of the [Grilo](https://wiki.gnome.org/Projects/Grilo) framework to browse external sources such as SHOUTcast webradios and more.
 
 You need to install the [grilo](https://www.archlinux.org/packages/?name=grilo) and [grilo-plugins](https://www.archlinux.org/packages/?name=grilo-plugins) packages. Then, be sure to enable the *Grilo Media Browser* plugin into Rhythmbox ("Edit" > "Plugins").
 

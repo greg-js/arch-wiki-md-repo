@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Unofficial mirrors](/index.php/Unofficial_mirrors "Unofficial mirrors"), revisada por última vez el **2018-12-30**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Unofficial_mirrors&diff=0&oldid=560849) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Unofficial mirrors](/index.php/Unofficial_mirrors "Unofficial mirrors"), revisada por última vez el **2019-01-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Unofficial_mirrors&diff=0&oldid=562487) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Estos [mirrors](/index.php/Mirrors_(Espa%C3%B1ol) "Mirrors (Español)") *no* están listados en `/etc/pacman.d/mirrorlist`.
 
@@ -120,6 +120,7 @@ Estos [mirrors](/index.php/Mirrors_(Espa%C3%B1ol) "Mirrors (Español)") *no* est
 *   [ftp://mirror.ufs.ac.za/os/linux/distros/archlinux/](ftp://mirror.ufs.ac.za/os/linux/distros/archlinux/)
 *   [http://archlinux.mirror.ac.za](http://archlinux.mirror.ac.za) - *TENET - Tertiary Education and Research Network of South Africa*
 *   [ftp://archlinux.mirror.ac.za](ftp://archlinux.mirror.ac.za)
+*   [http://archlinux.za.mirror.allworldit.com/archlinux-deltarepo/](http://archlinux.za.mirror.allworldit.com/archlinux-deltarepo/) - *Generación automática de deltas para las últimas 5 versiones a la versión actual. Soporta http, https, rsync e IPv6\. Véase [aquí](https://bbs.archlinux.org/viewtopic.php?id=243247) para obtener más información.*
 
 ## Suecia
 
@@ -137,7 +138,7 @@ Estos [mirrors](/index.php/Mirrors_(Espa%C3%B1ol) "Mirrors (Español)") *no* est
 
 ## Reino Unido
 
-*   [http://archlinux.uk.mirror.allworldit.com/archlinux-deltarepo/](http://archlinux.uk.mirror.allworldit.com/archlinux-deltarepo/) - *Generación automática de deltas para las últimas 5 versiones a la versión actual. Necesita [xdelta3](https://www.archlinux.org/packages/?name=xdelta3) para ejecutarse. Soporta http, https, rsync en la misma ruta.*
+*   [http://archlinux.uk.mirror.allworldit.com/archlinux-deltarepo/](http://archlinux.uk.mirror.allworldit.com/archlinux-deltarepo/) - *Generación automática de deltas para las últimas 5 versiones a la versión actual. Soporta http, https, rsync e IPv6\. Véase [aquí](https://bbs.archlinux.org/viewtopic.php?id=243247) para obtener más información.*
 
 ## Estados Unidos
 

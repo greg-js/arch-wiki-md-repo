@@ -43,7 +43,7 @@ Desktop notifications are small, passive popup dialogs that notify the user of p
 
 ## Libnotify
 
-Libnotify is an implementation of the [Desktop Notifications Specification](http://developer.gnome.org/notification-spec/) which provides support for [GTK+](/index.php/GTK%2B "GTK+") and [Qt](/index.php/Qt "Qt") applications and is desktop independent: it is already used by many open source apps like [Evolution](/index.php/Evolution "Evolution") and [Pidgin](/index.php/Pidgin "Pidgin"). Libnotify can be installed with the [libnotify](https://www.archlinux.org/packages/?name=libnotify) package.
+Libnotify is an implementation of the [Desktop Notifications Specification](https://developer.gnome.org/notification-spec/) which provides support for [GTK+](/index.php/GTK%2B "GTK+") and [Qt](/index.php/Qt "Qt") applications and is desktop independent: it is already used by many open source apps like [Evolution](/index.php/Evolution "Evolution") and [Pidgin](/index.php/Pidgin "Pidgin"). Libnotify can be installed with the [libnotify](https://www.archlinux.org/packages/?name=libnotify) package.
 
 In order to use libnotify, you have to install a [notification server](#Notification_servers).
 
@@ -138,7 +138,7 @@ notify-send 'Hello world!' 'This is an example notification.' --icon=dialog-info
 
 **Tip:**
 
-*   An overview on the available icons can be found [here](http://standards.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html).
+*   An overview on the available icons can be found [here](https://specifications.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html).
 *   To send desktop notification from a background script running as root (replace `*X_user*` and `*X_userid*` with the user and userid running X respectively): `# sudo -u *X_user* DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/*X_userid*/bus notify-send 'Hello world!' 'This is an example notification.'` 
 
 ### Boo
@@ -740,7 +740,7 @@ End Class
 
 ## See also
 
-*   [Libnotify Reference Manual](http://developer.gnome.org/libnotify/)
+*   [Libnotify Reference Manual](https://developer.gnome.org/libnotify/)
 *   [C example](http://milky.manishsinha.net/2009/03/29/working-with-libnotify/)
 *   [Python notification examples](https://www.devdungeon.com/content/desktop-notifications-linux-python)
 *   [Python notify example](http://hashbang.fr/tutoriel-notify.html) (french article)

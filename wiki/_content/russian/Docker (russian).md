@@ -15,7 +15,9 @@
     *   [2.2 Remote API](#Remote_API)
         *   [2.2.1 Remote API с systemd](#Remote_API_с_systemd)
     *   [2.3 Конфигурация сокета демона](#Конфигурация_сокета_демона)
-        *   [2.3.1 Proxy configuration](#Proxy_configuration)
+        *   [2.3.1 Конфигурация Proxy](#Конфигурация_Proxy)
+        *   [2.3.2 Конфигурация контейнера](#Конфигурация_контейнера)
+    *   [2.4 Конфигурация DNS](#Конфигурация_DNS)
 *   [3 Docker 0.9.0 — 1.2.x и LXC](#Docker_0.9.0_—_1.2.x_и_LXC)
 *   [4 Skype](#Skype)
 *   [5 Сборка образа i686](#Сборка_образа_i686)
@@ -102,7 +104,7 @@ ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:4243 -H unix:///var/run/docker.sock
 ListenStream=0.0.0.0:2375
 ```
 
-#### Proxy configuration
+#### Конфигурация Proxy
 
 Создайте [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") со следующим содержанием:
 
@@ -118,6 +120,23 @@ Environment="HTTPS_PROXY=192.168.1.1:8080"
 Убедитесь, что конфигурация была загружена:
 
  `# systemctl show docker --property Environment`  `Environment=HTTP_PROXY=192.168.1.1:8080 HTTPS_PROXY=192.168.1.1:8080` 
+
+#### Конфигурация контейнера
+
+Настройки в файле `docker.service` не будут применены к контейнерам. Чтобы достичь этого, вы должны установить `ENV` переменные в `Dockerfile` так:
+
+```
+FROM base/archlinux
+ENV http_proxy="http://192.168.1.1:3128"
+ENV https_proxy="https://192.168.1.1:3128"
+
+```
+
+[Docker](https://docs.docker.com/engine/reference/builder/#env) предоставляет подробную информацию о конфигурации через `ENV` в Dockerfile.
+
+### Конфигурация DNS
+
+По умолчанию docker создаёт `resolv.conf` в контейнере с `/etc/resolv.conf` на хост-машине, отфильтровывая локальные адреса (например, `127.0.0.1`). Если это приводит к пустому файлу, тогда используются [Google DNS серверы](https://developers.google.com/speed/public-dns/). Если вы используете службу типа [dnsmasq](/index.php/Dnsmasq "Dnsmasq") для предоставления разрешения имен, вам может потребоваться добавить запись в `/etc/resolv.conf` для сетевого интерфейса докера, чтобы она не отфильтровывалась.
 
 ## Docker 0.9.0 — 1.2.x и LXC
 

@@ -272,11 +272,11 @@ A separate client is needed to control MPD. See a long list of clients at the [m
 
 *   **ncmpy** — Curses-based MPD client written in Python.
 
-	[http://ncmpcpp.rybczak.net/](http://ncmpcpp.rybczak.net/) || [ncmpy](https://aur.archlinux.org/packages/ncmpy/)
+	[https://repo.cykerway.com/ncmpy](https://repo.cykerway.com/ncmpy) || [ncmpy](https://aur.archlinux.org/packages/ncmpy/)
 
 *   **nncmpp** — Yet another MPD client. It is in effect a simplified TUI version of Sonata.
 
-	[http://ncmpcpp.rybczak.net/](http://ncmpcpp.rybczak.net/) || [nncmpp-git](https://aur.archlinux.org/packages/nncmpp-git/)
+	[https://git.janouch.name/p/nncmpp/](https://git.janouch.name/p/nncmpp/) || [nncmpp-git](https://aur.archlinux.org/packages/nncmpp-git/)
 
 *   **pms** — Highly configurable and accessible ncurses client written in Go.
 

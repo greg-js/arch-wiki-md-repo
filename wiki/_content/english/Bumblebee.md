@@ -11,7 +11,7 @@ From Bumblebee's [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ):
 
 	Bumblebee is an effort to make NVIDIA Optimus enabled laptops work in GNU/Linux systems. Such feature involves two graphics cards with two different power consumption profiles plugged in a layered way sharing a single framebuffer.
 
-**Note:** You might want to consider using [nvidia-xrun](/index.php/Nvidia-xrun "Nvidia-xrun") or [PRIME](/index.php/PRIME "PRIME"), because Bumblebee not only has significant performance issues[[1]](https://github.com/Witko/nvidia-xrun/issues/4#issuecomment-153386837)[[2]](https://bbs.archlinux.org/viewtopic.php?pid=1822926), but also has no plans to support [Vulkan](/index.php/Vulkan "Vulkan")[[3]](https://github.com/Bumblebee-Project/Bumblebee/issues/769#issuecomment-218016574).
+**Note:** You might want to use [nvidia-xrun](/index.php/Nvidia-xrun "Nvidia-xrun") or [PRIME](/index.php/PRIME "PRIME") instead, because Bumblebee not only has significant performance issues[[1]](https://github.com/Witko/nvidia-xrun/issues/4#issuecomment-153386837)[[2]](https://bbs.archlinux.org/viewtopic.php?pid=1822926), but also has no plans to support [Vulkan](/index.php/Vulkan "Vulkan")[[3]](https://github.com/Bumblebee-Project/Bumblebee/issues/769#issuecomment-218016574).
 
 ## Contents
 

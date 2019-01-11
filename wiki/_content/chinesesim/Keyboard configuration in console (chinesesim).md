@@ -7,7 +7,7 @@
 
 **Note:** 此文仅介绍简单设置，修改布局、按键映射等高级功能请查看 [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys")。
 
-[虚拟控制台](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console")键盘映射(keymaps), 控制台字体和控制台映射由软件包 [kbd](https://www.archlinux.org/packages/?name=kbd) 提供([systemd](/index.php/Systemd "Systemd")依赖次软件包)。这个包还提供了很多管理虚拟控制台的底层工具。此外，*systemd* 还提供了 *localectl* 工具，可以同时控制系统 [locale](/index.php/Locale "Locale") 和控制台、Xorg 的键盘布局设置.
+[虚拟控制台](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console")键盘映射(keymaps), 控制台字体和控制台映射由软件包 [kbd](https://www.archlinux.org/packages/?name=kbd) 提供([systemd](/index.php/Systemd "Systemd")依赖此软件包)。这个包还提供了很多管理虚拟控制台的底层工具。此外，*systemd* 还提供了 *localectl* 工具，可以同时控制系统 [locale](/index.php/Locale "Locale") 和控制台、Xorg 的键盘布局设置.
 
 ## Contents
 

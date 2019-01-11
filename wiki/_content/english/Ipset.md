@@ -44,7 +44,7 @@ Add any IP address that you'd like to block to the set.
 # ipset add myset 14.144.0.0/12
 # ipset add myset 27.8.0.0/13
 # ipset add myset 58.16.0.0/15
-# ipset -A myset 1.1.1.0/24
+# ipset add myset 1.1.1.0/24
 
 ```
 
@@ -75,7 +75,7 @@ Add any IP address that you'd like to block to the set.
 
 ```
 # ipset add myset-ip 1.1.1.1
-# ipset -A myset-ip 2.2.2.2
+# ipset add myset-ip 2.2.2.2
 
 ```
 

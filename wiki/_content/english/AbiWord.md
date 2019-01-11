@@ -10,8 +10,6 @@
 *   [4 Grammar checking](#Grammar_checking)
 *   [5 Change keybindings](#Change_keybindings)
 *   [6 LaTeX fonts](#LaTeX_fonts)
-*   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 Fix for print dialog crash](#Fix_for_print_dialog_crash)
 
 ## Installation
 
@@ -63,38 +61,3 @@ The package [abiword](https://www.archlinux.org/packages/?name=abiword) comes wi
 # fc-cache -fv
 
 ```
-
-## Troubleshooting
-
-### Fix for print dialog crash
-
-**Note:** This bug has been reported as non-existent for version 2.8.1 or higher. However, this section will remain for legacy versions or if it crops up again,
-
-For some reason, the current versions of AbiWord and libgnomeprint are not playing nice together. The `.abw` default template causes the program to crash when the user attempts to print. The solution is to force abiword to work with the `.rtf` format instead. By following the steps below, you will set the default save format to .rtf and trick AbiWord into using a `.rtf` file as its default template.
-
-Open `~/.AbiSuite/AbiWord.Profile` and insert the following line into the second <scheme> section.
-
-```
-DefaultSaveFormat=".rtf"
-
-```
-
-It should look similar to the following:
-
-```
-<Scheme
-   name="_custom_"
-   ZoomPercentage="64"
-   DefaultSaveFormat=".rtf"
-/>
-
-```
-
-It is then neccessary to change the default template. You must follow these steps exactly.
-
-1.  Open AbiWord and save a blank document titled `normal.rtf` in `~/.AbiSuite/templates/`. If the directory does not exist, create it.
-2.  Rename the file to *normal.awt*.
-
-Do **not** just save a blank `.awt` file! You must trick AbiWord into using a `.rtf` template in order for this to work.
-
-As soon as the conflict between AbiWord and libgnomeprint is resovled, these instructions will no longer be neccessary and should be removed.

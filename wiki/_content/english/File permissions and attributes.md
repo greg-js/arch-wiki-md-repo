@@ -445,7 +445,7 @@ To remove an attribute on a file just change `+` to `-`.
 
 ## Extended attributes
 
-From [attr(5)](https://linux.die.net/man/5/attr): "Extended attributes are name:value pairs associated permanently with files and directories". There are four extended attribute classes: security, system, trusted and user.
+From [xattr(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xattr.7): "Extended attributes are name:value pairs associated permanently with files and directories". There are four extended attribute classes: security, system, trusted and user.
 
 **Warning:** By default, extended attributes are not preserved by [cp](/index.php/Cp "Cp"), [rsync](/index.php/Rsync "Rsync"), and other similar programs, see [#Preserving extended attributes](#Preserving_extended_attributes).
 

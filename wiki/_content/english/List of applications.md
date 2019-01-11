@@ -4447,7 +4447,7 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 
 ##### VTE-based
 
-[VTE](http://developer.gnome.org/vte/unstable/) (Virtual Terminal Emulator) is a widget developed during early GNOME days for use in the GNOME Terminal. It has since given birth to many terminals with similar capabilities.
+[VTE](https://developer.gnome.org/vte/unstable/) (Virtual Terminal Emulator) is a widget developed during early GNOME days for use in the GNOME Terminal. It has since given birth to many terminals with similar capabilities.
 
 *   **Deepin Terminal** — Terminal emulation application for Deepin desktop.
 
@@ -4471,7 +4471,7 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 
 *   **LXTerminal** — Desktop independent terminal emulator for [LXDE](/index.php/LXDE "LXDE").
 
-	[http://wiki.lxde.org/en/LXTerminal](http://wiki.lxde.org/en/LXTerminal) || [lxterminal](https://www.archlinux.org/packages/?name=lxterminal)
+	[https://wiki.lxde.org/en/LXTerminal](https://wiki.lxde.org/en/LXTerminal) || [lxterminal](https://www.archlinux.org/packages/?name=lxterminal)
 
 *   **MATE terminal** — A fork of [Wikipedia:GNOME terminal](https://en.wikipedia.org/wiki/GNOME_terminal "wikipedia:GNOME terminal") for the [MATE](/index.php/MATE "MATE") desktop.
 
@@ -4581,7 +4581,7 @@ See also [Wikipedia:Terminal multiplexer](https://en.wikipedia.org/wiki/Terminal
 
 *   **[tmux](/index.php/Tmux "Tmux")** — BSD licensed terminal multiplexer.
 
-	[http://tmux.github.io/](http://tmux.github.io/) || [tmux](https://www.archlinux.org/packages/?name=tmux)
+	[https://tmux.github.io/](https://tmux.github.io/) || [tmux](https://www.archlinux.org/packages/?name=tmux)
 
 ### Files
 
@@ -4655,7 +4655,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 *   **[Konqueror](https://en.wikipedia.org/wiki/Konqueror "wikipedia:Konqueror")** — File manager and web browser for the KDE desktop.
 
-	[http://www.konqueror.org/](http://www.konqueror.org/) || [konqueror](https://www.archlinux.org/packages/?name=konqueror)
+	[https://konqueror.org/](https://konqueror.org/) || [konqueror](https://www.archlinux.org/packages/?name=konqueror)
 
 *   **Liri Files** — The file manager for Liri.
 
@@ -4675,7 +4675,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 *   **[PCManFM](/index.php/PCManFM "PCManFM")** — Very fast and lightweight file manager which can also optionally manage the desktop icons and background.
 
-	[http://wiki.lxde.org/en/PCManFM](http://wiki.lxde.org/en/PCManFM) || [pcmanfm](https://www.archlinux.org/packages/?name=pcmanfm)
+	[https://wiki.lxde.org/en/PCManFM](https://wiki.lxde.org/en/PCManFM) || [pcmanfm](https://www.archlinux.org/packages/?name=pcmanfm)
 
 *   **qtFM** — Small, lightweight filemanager for Linux desktops based on pure Qt.
 
@@ -4703,7 +4703,7 @@ Note that some of these twin-panel file managers can also be set to have only on
 
 *   **[GNOME Commander](https://en.wikipedia.org/wiki/GNOME_Commander "wikipedia:GNOME Commander")** — A dual-paned file manager for the GNOME Desktop.
 
-	[http://gcmd.github.io/](http://gcmd.github.io/) || [gnome-commander](https://aur.archlinux.org/packages/gnome-commander/)
+	[https://gcmd.github.io/](https://gcmd.github.io/) || [gnome-commander](https://aur.archlinux.org/packages/gnome-commander/)
 
 *   **[Krusader](https://en.wikipedia.org/wiki/Krusader "wikipedia:Krusader")** — Advanced twin panel (Midnight Commander style) file manager for the KDE desktop.
 
@@ -5629,7 +5629,7 @@ See [File recovery#List of utilities](/index.php/File_recovery#List_of_utilities
 
 *   **Sweeper** — System cleaning utility for KDE.
 
-	[http://utils.kde.org/projects/sweeper/](http://utils.kde.org/projects/sweeper/) || [sweeper](https://www.archlinux.org/packages/?name=sweeper)
+	[https://utils.kde.org/projects/sweeper/](https://utils.kde.org/projects/sweeper/) || [sweeper](https://www.archlinux.org/packages/?name=sweeper)
 
 #### Disk image writing
 
@@ -5709,7 +5709,7 @@ See also [Wikipedia:List of tools to create Live USB systems](https://en.wikiped
 
 *   **LXTask** — Lightweight task manager for [LXDE](/index.php/LXDE "LXDE").
 
-	[http://wiki.lxde.org/en/LXTask](http://wiki.lxde.org/en/LXTask) || [lxtask](https://www.archlinux.org/packages/?name=lxtask)
+	[https://wiki.lxde.org/en/LXTask](https://wiki.lxde.org/en/LXTask) || [lxtask](https://www.archlinux.org/packages/?name=lxtask)
 
 *   **MATE System Monitor** — System monitor for [MATE](/index.php/MATE "MATE").
 

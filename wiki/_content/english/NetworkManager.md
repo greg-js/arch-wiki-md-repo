@@ -3,7 +3,7 @@ Related articles
 *   [Network configuration](/index.php/Network_configuration "Network configuration")
 *   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
 
-[NetworkManager](http://projects.gnome.org/NetworkManager/) is a program for providing detection and configuration for systems to automatically connect to network. NetworkManager's functionality can be useful for both wireless and wired networks. For wireless networks, NetworkManager prefers known wireless networks and has the ability to switch to the most reliable network. NetworkManager-aware applications can switch from online and offline mode. NetworkManager also prefers wired connections over wireless ones, has support for modem connections and certain types of VPN. NetworkManager was originally developed by Red Hat and now is hosted by the [GNOME](/index.php/GNOME "GNOME") project.
+[NetworkManager](https://wiki.gnome.org/Projects/NetworkManager/) is a program for providing detection and configuration for systems to automatically connect to network. NetworkManager's functionality can be useful for both wireless and wired networks. For wireless networks, NetworkManager prefers known wireless networks and has the ability to switch to the most reliable network. NetworkManager-aware applications can switch from online and offline mode. NetworkManager also prefers wired connections over wireless ones, has support for modem connections and certain types of VPN. NetworkManager was originally developed by Red Hat and now is hosted by the [GNOME](/index.php/GNOME "GNOME") project.
 
 **Warning:** By default, Wi-Fi passwords are stored in clear text, see [#Encrypted Wi-Fi passwords](#Encrypted_Wi-Fi_passwords).
 
@@ -550,7 +550,7 @@ See [NFS#Using a NetworkManager dispatcher](/index.php/NFS#Using_a_NetworkManage
 
 The idea is to only turn Wi-Fi on when the LAN cable is unplugged (for example when detaching from a laptop dock), and for Wi-Fi to be automatically disabled, once a LAN cable is plugged in again.
 
-Create the following dispatcher script ([Source](http://superuser.com/questions/233448/disable-wlan-if-wired-cable-network-is-available)), replacing `LAN_interface` with yours.
+Create the following dispatcher script ([Source](https://superuser.com/questions/233448/disable-wlan-if-wired-cable-network-is-available)), replacing `LAN_interface` with yours.
 
  `/etc/NetworkManager/dispatcher.d/wlan_auto_toggle.sh` 
 ```
@@ -602,7 +602,7 @@ esac
 
 If you would like to attempt to automatically connect to VPN for all Wi-Fi networks, you can use the following definition of the ESSID: `ESSID=$(iwgetid -r)`. Remember to set the script's permissions [accordingly](#Network_services_with_NetworkManager_dispatcher).
 
-Trying to connect with the above script may still fail with `NetworkManager-dispatcher.service` complaining about 'no valid VPN secrets', because of [the way VPN secrets are stored](http://developer.gnome.org/NetworkManager/0.9/secrets-flags.html). Fortunately, there are different options to give the above script access to your VPN password.
+Trying to connect with the above script may still fail with `NetworkManager-dispatcher.service` complaining about 'no valid VPN secrets', because of [the way VPN secrets are stored](https://developer.gnome.org/NetworkManager/0.9/secrets-flags.html). Fortunately, there are different options to give the above script access to your VPN password.
 
 1: One of them requires editing the VPN connection configuration file to make NetworkManager store the secrets by itself rather than inside a keyring [that will be inaccessible for root](https://bugzilla.redhat.com/show_bug.cgi?id=710552): open up `/etc/NetworkManager/system-connections/*name of your VPN connection*` and change the `password-flags` and `secret-flags` from `1` to `0`.
 
@@ -1080,5 +1080,5 @@ It might not be obvious, but the service automatically starts through *dbus*. To
 
 ## See also
 
-*   [NetworkManager for Administrators Part 1](http://blogs.gnome.org/dcbw/2015/02/16/networkmanager-for-administrators-part-1/)
+*   [NetworkManager for Administrators Part 1](https://blogs.gnome.org/dcbw/2015/02/16/networkmanager-for-administrators-part-1/)
 *   [Wikipedia:NetworkManager](https://en.wikipedia.org/wiki/NetworkManager "wikipedia:NetworkManager")

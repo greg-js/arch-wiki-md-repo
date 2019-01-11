@@ -11,7 +11,7 @@ There are multiple methods for virtual machine (VM) graphics display which yield
 *   [1 Methods for QEMU guest graphics acceleration](#Methods_for_QEMU_guest_graphics_acceleration)
     *   [1.1 QXL video driver and SPICE client for display](#QXL_video_driver_and_SPICE_client_for_display)
     *   [1.2 PCI GPU passthrough](#PCI_GPU_passthrough)
-        *   [1.2.1 PCI VGA/GPU passthrough via OVMF](#PCI_VGA.2FGPU_passthrough_via_OVMF)
+        *   [1.2.1 PCI VGA/GPU passthrough via OVMF](#PCI_VGA/GPU_passthrough_via_OVMF)
         *   [1.2.2 Looking Glass](#Looking_Glass)
     *   [1.3 Fully virtualized GPU support via Intel-specific iGVT-g extension](#Fully_virtualized_GPU_support_via_Intel-specific_iGVT-g_extension)
     *   [1.4 Virgil3d virtio-gpu paravirtualized device driver](#Virgil3d_virtio-gpu_paravirtualized_device_driver)
@@ -34,7 +34,7 @@ There is a fairly recent passthrough method called [Looking Glass](https://looki
 
 ### Fully virtualized GPU support via Intel-specific iGVT-g extension
 
-[iGVT-g](/index.php/Intel_graphics#Intel_GVT-g_Graphics_Virtualization_Support "Intel graphics") is limited to Intel graphics on [recent Intel CPUs](https://github.com/intel/gvt-linux/wiki/GVTg_Setup_Guide) (starting with 5th generation Intel Core(TM) processors). For more information, see [this Reddit thread for use on an Arch host system](https://www.reddit.com/r/VFIO/comments/8h352p/guide_running_windows_via_qemukvm_and_intel_gvtg/).
+[iGVT-g](/index.php/Intel_graphics#Intel_GVT-g_Graphics_Virtualization_Support "Intel graphics") is limited to Intel graphics on [recent Intel CPUs](https://github.com/intel/gvt-linux/wiki/GVTg_Setup_Guide) (starting with 5th generation Intel Core(TM) processors). For more information, see [this Reddit thread for use on an Arch host system](https://www.reddit.com/r/VFIO/comments/8h352p/guide_running_windows_via_qemukvm_and_intel_gvtg/). If you use [Libvirt](/index.php/Libvirt "Libvirt"), you might want to check out [this blog.](https://blog.bepbep.co/posts/gvt/)
 
 ### Virgil3d virtio-gpu paravirtualized device driver
 

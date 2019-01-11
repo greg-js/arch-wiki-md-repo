@@ -221,7 +221,7 @@ Other mixers that have support for OSS:
 
 *   **Gnome Volume Control** — for [GNOME](/index.php/GNOME "GNOME").
 
-	[http://library.gnome.org/users/gnome-volume-control/stable/](http://library.gnome.org/users/gnome-volume-control/stable/) || [gnome](https://www.archlinux.org/groups/x86_64/gnome/)
+	[https://help.gnome.org/users/gnome-volume-control/stable/](https://help.gnome.org/users/gnome-volume-control/stable/) || [gnome](https://www.archlinux.org/groups/x86_64/gnome/)
 
 *   **Kmix** — for [KDE](/index.php/KDE "KDE").
 
@@ -270,7 +270,7 @@ $ ossmix vmix0-enable ON
 
 ### Gajim
 
-By default, [Gajim](http://gajim.org/) uses `aplay -q` to play a sound. For OSS you can change it to the equivalent `ossplay -qq` by going to *Edit > Preferences > Advanced*, opening the *Advanced Configuration Editor* and modifying the `soundplayer` variable accordingly.
+By default, [Gajim](https://gajim.org/) uses `aplay -q` to play a sound. For OSS you can change it to the equivalent `ossplay -qq` by going to *Edit > Preferences > Advanced*, opening the *Advanced Configuration Editor* and modifying the `soundplayer` variable accordingly.
 
 ### MOC
 

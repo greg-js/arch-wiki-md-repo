@@ -103,7 +103,7 @@ See below a few examples for `~/.config/jhbuildrc` contents:
 
 ## Usage
 
-This topic provides some information and examples on how to use some JHBuild commands, but without intending to exhaust the subject. For a detailed information on each of JHBuild commands, please refer to [JHBuild Manual](https://developer.gnome.org/jhbuild/stable/), learn from each command's help output or even read JHBuild's [source code](https://git.gnome.org/browse/jhbuild/).
+This topic provides some information and examples on how to use some JHBuild commands, but without intending to exhaust the subject. For a detailed information on each of JHBuild commands, please refer to [JHBuild Manual](https://developer.gnome.org/jhbuild/stable/), learn from each command's help output or even read JHBuild's [source code](https://gitlab.gnome.org/GNOME/jhbuild/).
 
 JHBuild provides a general `--help` which lists all the commands available, and also a help message for each sub-command, e.g. `jhbuild sysdeps --help`.
 
@@ -295,4 +295,4 @@ $ PYTHON=/usr/bin/python2 ./autogen.sh
 *   [JHBuild for GNOME newcomers](https://wiki.gnome.org/Newcomers/BuildGnome)
 *   [JHBuild for experienced GNOME contributors](https://wiki.gnome.org/HowDoI/Jhbuild)
 *   [JHBuild Manual](https://developer.gnome.org/jhbuild/stable/)
-*   [JHBuild Source Code](https://git.gnome.org/browse/jhbuild/)
+*   [JHBuild Source Code](https://gitlab.gnome.org/GNOME/jhbuild/)

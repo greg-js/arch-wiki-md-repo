@@ -60,7 +60,7 @@ $ incrontab -u *user*
 
 ### Incrontab format
 
-Each row in an incrotab file is a table that the dameon runs when an event happens to a certain directory or file.
+Each row in an incrontab file is a table that the dameon runs when an event happens to a certain directory or file.
 
 The basic format for an incrontab is:
 

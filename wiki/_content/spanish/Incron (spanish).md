@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Incron](/index.php/Incron "Incron"), revisada por última vez el **2018-12-09**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Incron&diff=0&oldid=556315) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Incron](/index.php/Incron "Incron"), revisada por última vez el **2019-01-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Incron&diff=0&oldid=562621) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 [incron](http://inotify.aiken.cz/?section=incron&page=about&lang=en) es un daemon que supervisa los [eventos de sistemas de archivos](/index.php/Autostarting_(Espa%C3%B1ol)#En_eventos_de_sistemas_de_archivos "Autostarting (Español)") y ejecuta los comandos definidos en las tablas del usuario y del sistema.
 
@@ -63,7 +63,7 @@ Para editar otro usuario incrontab, ejecute el siguiente comando como root:
 
 ### Formato Incrontab
 
-Cada fila en un archivo incrotab es una tabla que ejecuta el dameon cuando ocurre un evento en un determinado directorio o archivo.
+Cada fila en un archivo incrontab es una tabla que ejecuta el dameon cuando ocurre un evento en un determinado directorio o archivo.
 
 El formato básico para un incrontab es:
 

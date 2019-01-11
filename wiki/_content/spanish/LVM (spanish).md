@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [LVM](/index.php/LVM "LVM"), revisada por última vez el **2018-11-22**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=LVM&diff=0&oldid=551231) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [LVM](/index.php/LVM "LVM"), revisada por última vez el **2019-01-09**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=LVM&diff=0&oldid=561890) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -18,54 +18,55 @@ De [Wikipedia:Logical Volume Manager (Linux)](https://en.wikipedia.org/wiki/Logi
 *   [1 Bloques para construir LVM](#Bloques_para_construir_LVM)
 *   [2 Ventajas](#Ventajas)
 *   [3 Desventajas](#Desventajas)
-*   [4 Instalar Arch Linux sobre LVM](#Instalar_Arch_Linux_sobre_LVM)
-    *   [4.1 Crear particiones](#Crear_particiones)
-    *   [4.2 Crear volúmenes físicos](#Crear_volúmenes_físicos)
-    *   [4.3 Crear grupo de volúmenes](#Crear_grupo_de_volúmenes)
-    *   [4.4 Crear en un solo paso](#Crear_en_un_solo_paso)
-    *   [4.5 Crear volúmenes lógicos](#Crear_volúmenes_lógicos)
-    *   [4.6 Crear sistemas de archivos y montar los volúmenes lógicos](#Crear_sistemas_de_archivos_y_montar_los_volúmenes_lógicos)
-    *   [4.7 Configurar mkinitcpio](#Configurar_mkinitcpio)
-    *   [4.8 Opciones del kernel](#Opciones_del_kernel)
-*   [5 Operaciones sobre los volúmenes](#Operaciones_sobre_los_volúmenes)
-    *   [5.1 Opciones avanzadas](#Opciones_avanzadas)
-    *   [5.2 Redimensionar volúmenes](#Redimensionar_volúmenes)
-        *   [5.2.1 Volúmenes físicos](#Volúmenes_físicos)
-            *   [5.2.1.1 Agrandar](#Agrandar)
-            *   [5.2.1.2 Encoger](#Encoger)
-                *   [5.2.1.2.1 Mover extensiones físicas](#Mover_extensiones_físicas)
-                *   [5.2.1.2.2 Redimensionar volumen físico](#Redimensionar_volumen_físico)
-                *   [5.2.1.2.3 Redimensionar partición](#Redimensionar_partición)
-        *   [5.2.2 Volúmenes lógicos](#Volúmenes_lógicos)
-            *   [5.2.2.1 Cambiar el tamaño del volumen lógico y del sistema de archivos a la vez](#Cambiar_el_tamaño_del_volumen_lógico_y_del_sistema_de_archivos_a_la_vez)
-            *   [5.2.2.2 Cambiar el tamaño del volumen lógico y del sistema de archivos separadamente](#Cambiar_el_tamaño_del_volumen_lógico_y_del_sistema_de_archivos_separadamente)
-    *   [5.3 Renombrar volúmenes](#Renombrar_volúmenes)
-        *   [5.3.1 Renombrar un grupo de volúmenes](#Renombrar_un_grupo_de_volúmenes)
-        *   [5.3.2 Renombrar volúmenes lógicos](#Renombrar_volúmenes_lógicos)
-    *   [5.4 Eliminar volúmenes lógicos](#Eliminar_volúmenes_lógicos)
-    *   [5.5 Agregar un volumen físico a un grupo de volúmenes](#Agregar_un_volumen_físico_a_un_grupo_de_volúmenes)
-    *   [5.6 Eliminar una partición de un grupo de volúmenes](#Eliminar_una_partición_de_un_grupo_de_volúmenes)
-    *   [5.7 Desactivar un grupo de volúmenes](#Desactivar_un_grupo_de_volúmenes)
-*   [6 Tipos de volúmenes lógicos](#Tipos_de_volúmenes_lógicos)
-    *   [6.1 Instantáneas/Snapshots](#Instantáneas/Snapshots)
-        *   [6.1.1 Configuración](#Configuración)
-    *   [6.2 La caché de LVM](#La_caché_de_LVM)
-        *   [6.2.1 Crear la caché](#Crear_la_caché)
-        *   [6.2.2 Eliminar la caché](#Eliminar_la_caché)
-    *   [6.3 RAID](#RAID)
-        *   [6.3.1 Configurar RAID](#Configurar_RAID)
-        *   [6.3.2 Configurar mkinitcpio para RAID](#Configurar_mkinitcpio_para_RAID)
-*   [7 Configuración gráfica](#Configuración_gráfica)
-*   [8 Solución de problemas](#Solución_de_problemas)
-    *   [8.1 Problemas de arranque/apagado debido a lvmetad desactivado](#Problemas_de_arranque/apagado_debido_a_lvmetad_desactivado)
-    *   [8.2 Las órdenes LVM no funcionan](#Las_órdenes_LVM_no_funcionan)
-    *   [8.3 No se muestran los volúmenes lógicos](#No_se_muestran_los_volúmenes_lógicos)
-    *   [8.4 LVM sobre un medio extraíble](#LVM_sobre_un_medio_extraíble)
-    *   [8.5 Al redimensionar un volumen lógico contiguo falla](#Al_redimensionar_un_volumen_lógico_contiguo_falla)
-    *   [8.6 La orden «grub-mkconfig» informa del error «unknown filesystem»](#La_orden_«grub-mkconfig»_informa_del_error_«unknown_filesystem»)
-    *   [8.7 Dispositivo de volumen raíz aprovisionado para agotar tiempo de espera](#Dispositivo_de_volumen_raíz_aprovisionado_para_agotar_tiempo_de_espera)
-    *   [8.8 Demora al apagar](#Demora_al_apagar)
-*   [9 Véase también](#Véase_también)
+*   [4 Primeros pasos](#Primeros_pasos)
+*   [5 Instalar Arch Linux sobre LVM](#Instalar_Arch_Linux_sobre_LVM)
+    *   [5.1 Crear particiones](#Crear_particiones)
+    *   [5.2 Crear volúmenes físicos](#Crear_volúmenes_físicos)
+    *   [5.3 Crear grupo de volúmenes](#Crear_grupo_de_volúmenes)
+    *   [5.4 Crear en un solo paso](#Crear_en_un_solo_paso)
+    *   [5.5 Crear volúmenes lógicos](#Crear_volúmenes_lógicos)
+    *   [5.6 Crear sistemas de archivos y montar los volúmenes lógicos](#Crear_sistemas_de_archivos_y_montar_los_volúmenes_lógicos)
+    *   [5.7 Configurar mkinitcpio](#Configurar_mkinitcpio)
+    *   [5.8 Opciones del kernel](#Opciones_del_kernel)
+*   [6 Operaciones sobre los volúmenes](#Operaciones_sobre_los_volúmenes)
+    *   [6.1 Opciones avanzadas](#Opciones_avanzadas)
+    *   [6.2 Redimensionar volúmenes](#Redimensionar_volúmenes)
+        *   [6.2.1 Volúmenes físicos](#Volúmenes_físicos)
+            *   [6.2.1.1 Agrandar](#Agrandar)
+            *   [6.2.1.2 Encoger](#Encoger)
+                *   [6.2.1.2.1 Mover extensiones físicas](#Mover_extensiones_físicas)
+                *   [6.2.1.2.2 Redimensionar volumen físico](#Redimensionar_volumen_físico)
+                *   [6.2.1.2.3 Redimensionar partición](#Redimensionar_partición)
+        *   [6.2.2 Volúmenes lógicos](#Volúmenes_lógicos)
+            *   [6.2.2.1 Cambiar el tamaño del volumen lógico y del sistema de archivos a la vez](#Cambiar_el_tamaño_del_volumen_lógico_y_del_sistema_de_archivos_a_la_vez)
+            *   [6.2.2.2 Cambiar el tamaño del volumen lógico y del sistema de archivos separadamente](#Cambiar_el_tamaño_del_volumen_lógico_y_del_sistema_de_archivos_separadamente)
+    *   [6.3 Renombrar volúmenes](#Renombrar_volúmenes)
+        *   [6.3.1 Renombrar un grupo de volúmenes](#Renombrar_un_grupo_de_volúmenes)
+        *   [6.3.2 Renombrar volúmenes lógicos](#Renombrar_volúmenes_lógicos)
+    *   [6.4 Eliminar volúmenes lógicos](#Eliminar_volúmenes_lógicos)
+    *   [6.5 Agregar un volumen físico a un grupo de volúmenes](#Agregar_un_volumen_físico_a_un_grupo_de_volúmenes)
+    *   [6.6 Eliminar una partición de un grupo de volúmenes](#Eliminar_una_partición_de_un_grupo_de_volúmenes)
+    *   [6.7 Desactivar un grupo de volúmenes](#Desactivar_un_grupo_de_volúmenes)
+*   [7 Tipos de volúmenes lógicos](#Tipos_de_volúmenes_lógicos)
+    *   [7.1 Instantáneas/Snapshots](#Instantáneas/Snapshots)
+        *   [7.1.1 Configuración](#Configuración)
+    *   [7.2 La memoria caché de LVM](#La_memoria_caché_de_LVM)
+        *   [7.2.1 Crear la memoria caché](#Crear_la_memoria_caché)
+        *   [7.2.2 Eliminar la memoria caché](#Eliminar_la_memoria_caché)
+    *   [7.3 RAID](#RAID)
+        *   [7.3.1 Configurar RAID](#Configurar_RAID)
+        *   [7.3.2 Configurar mkinitcpio para RAID](#Configurar_mkinitcpio_para_RAID)
+*   [8 Configuración gráfica](#Configuración_gráfica)
+*   [9 Solución de problemas](#Solución_de_problemas)
+    *   [9.1 Problemas de arranque/apagado debido a lvmetad desactivado](#Problemas_de_arranque/apagado_debido_a_lvmetad_desactivado)
+    *   [9.2 Las órdenes LVM no funcionan](#Las_órdenes_LVM_no_funcionan)
+    *   [9.3 No se muestran los volúmenes lógicos](#No_se_muestran_los_volúmenes_lógicos)
+    *   [9.4 LVM sobre un medio extraíble](#LVM_sobre_un_medio_extraíble)
+    *   [9.5 Al redimensionar un volumen lógico contiguo falla](#Al_redimensionar_un_volumen_lógico_contiguo_falla)
+    *   [9.6 La orden «grub-mkconfig» informa del error «unknown filesystem»](#La_orden_«grub-mkconfig»_informa_del_error_«unknown_filesystem»)
+    *   [9.7 Dispositivo de volumen raíz aprovisionado Getting started para agotar tiempo de espera](#Dispositivo_de_volumen_raíz_aprovisionado_Getting_started_para_agotar_tiempo_de_espera)
+    *   [9.8 Demora al apagar](#Demora_al_apagar)
+*   [10 Véase también](#Véase_también)
 
 ## Bloques para construir LVM
 
@@ -77,19 +78,19 @@ Los bloques básicos que construyen LVM son:
 
 	Physical volume —*volúmenes físicos*— (en adelante PV)
 
-	Son las particiones en el disco duro (o, incluso, el propio disco o un archivo [loopback](https://en.wikipedia.org/wiki/es:Loopback "wikipedia:es:Loopback")) donde se tiene un grupo de volúmenes. Posee una cabecera especial y está dividida en extensiones físicas. Piense en los volúmenes físicos como grandes bloques de construcción utilizados para construir su disco duro.
+	Nodo de dispositivo de bloque de Unix, utilizable para almacenamiento por LVM. Ejemplos: un disco duro, una [partición](/index.php/Partition "Partition") MBR o GPT, un archivo loopback, un dispositivo mapeador de dispositivos (por ejemplo, [dm-crypt (Español)](/index.php/Dm-crypt_(Espa%C3%B1ol) "Dm-crypt (Español)")). Alberga un encabezado LVM.
 
 	Volume group —*grupo de volúmenes*— (en adelante VG)
 
-	Los grupos de volúmenes físicos son usados como volúmenes de almacenamiento (como si fueran un solo disco). Contienen volúmenes lógicos. Piense en los grupos de volúmenes como discos duros.
+	Grupo de volúmenes físicos que sirve de contenedor para volúmenes lógicos. Las extensiones físicas se asignan desde un grupo de volúmenes para un volumen lógico.
 
 	Logical volume —*volúmenes lógicos*— (en adelante LV)
 
-	Es una «partición virtual/lógica» que reside en un grupo de volúmenes y está compuesta por extensiones físicas. Piense en los volúmenes lógicos como particiones normales.
+	«Partición virtual/lógica» que reside en un grupo de volúmenes y está compuesta de extensiones físicas. Los volúmenes lógicos son dispositivos de bloque de Unix análogos a las particiones físicas, por ejemplo, se pueden formatear directamente con un [sistema de archivos](/index.php/File_systems_(Espa%C3%B1ol) "File systems (Español)").
 
 	Physical extent —*extensiones físicas*— (en adelante PE)
 
-	Es una pequeña parte de un volumen físico (por defecto, 4MiB) que puede ser asignada a un volumen lógico. Piense en las extensiones físicas como partes de los discos que pueden ser asignadas a cualquier partición.
+	La extensión contigua más pequeña (por defecto 4 MiB) en el volumen físico que se puede asignar a un volumen lógico. Piense en las extensiones físicas como partes de los volúmenes físicos que pueden asignarse a cualquier volúmen lógico.
 
 Ejemplo:
 
@@ -139,11 +140,15 @@ LVM le da más flexibilidad que la simple partición de un disco duro para:
 *   Los pasos adicionales en la configuración del sistema, que lo hace más complicado.
 *   Si tiene un arranque dual, tenga en cuenta que Windows no es compatible con LVM; no podrá acceder a ninguna partición LVM desde Windows.
 
+## Primeros pasos
+
+Asegúrese de que el paquete [lvm2](https://www.archlinux.org/packages/?name=lvm2) está [instalado](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)").
+
 ## Instalar Arch Linux sobre LVM
 
 Se deben crear los volúmenes LVM entre el [particionado](/index.php/Partitioning_(Espa%C3%B1ol) "Partitioning (Español)") y el [formateado](/index.php/File_systems_(Espa%C3%B1ol)#Crear_un_sistema_de_archivos "File systems (Español)") durante el procedimiento de instalación. En lugar de dar formato directamente a una partición para que sea su sistema de archivos root, esta operación se hará dentro de un volumen lógico (LV).
 
-Asegúrese de que el paquete [lvm2](https://www.archlinux.org/packages/?name=lvm2) está [instalado](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)").
+Remítase primero a «Primeros pasos».
 
 He aquí un breve resumen:
 
@@ -174,7 +179,7 @@ Para listar todos los dispositivos capaces de ser utilizados como un volumen fí
 
 ```
 
-**Advertencia:** Asegúrese de indicar bien el dispositivo correcto, o de lo contrario la ejecución de las órdenes de abajo se traducirán en la perdidad de sus datos.
+**Advertencia:** asegúrese de indicar bien el dispositivo correcto, o de lo contrario la ejecución de las órdenes de abajo se traducirán en la perdidad de sus datos.
 
 Cree un volumen físico en ellos:
 
@@ -199,7 +204,7 @@ Puede hacer un seguimiento de los volúmenes físicos creados con:
 
 ```
 
-**Nota:** Si se utiliza un disco SSD sin particionarlo primero, utilice `pvcreate --dataalignment 1m /dev/sda` (para el tamaño de bloque de borrado de < 1MiB), véase por ejemplo [esto](http://serverfault.com/questions/356534/ssd-erase-block-size-lvm-pv-on-raw-device-alignment).
+**Nota:** si se utiliza un disco SSD sin particionarlo primero, utilice `pvcreate --dataalignment 1m /dev/sda` (para el tamaño de bloque de borrado de < 1MiB), véase por ejemplo [esto](http://serverfault.com/questions/356534/ssd-erase-block-size-lvm-pv-on-raw-device-alignment).
 
 ### Crear grupo de volúmenes
 
@@ -243,7 +248,7 @@ Puede hacer un seguimiento de cómo su grupo de volúmenes ha crecido con:
 
 ```
 
-**Nota:** Se pueden crear más de un grupo de volúmenes si es necesario, pero entonces no tendrá todo su almacenamiento presente como si fuera un disco.
+**Nota:** se pueden crear más de un grupo de volúmenes si es necesario, pero entonces no tendrá todo su almacenamiento presente como si fuera un disco.
 
 ### Crear en un solo paso
 
@@ -258,7 +263,7 @@ Esta orden configurará primero las tres particiones como volúmenes físicos (s
 
 ### Crear volúmenes lógicos
 
-**Sugerencia:** Si desea utilizar instantáneas, volúmenes lógicos para almacenamiento caché, volúmenes lógicos de aprovisionamiento ligero o RAID, consulte [#Tipos de volúmenes lógicos](#Tipos_de_volúmenes_lógicos).
+**Sugerencia:** si desea utilizar instantáneas, volúmenes lógicos para almacenamiento caché, volúmenes lógicos de aprovisionamiento ligero o RAID, consulte [#Tipos de volúmenes lógicos](#Tipos_de_volúmenes_lógicos).
 
 Ahora necesitaremos crear volúmenes lógicos en el mencionado grupo de volúmenes. Para ello debe utilizar la siguiente orden, proporcionándole como parámetros, su tamaño (-L), el grupo de volúmenes al que pertenecerá, y el nombre (-n) que queremos darle al nuevo volumen lógico:
 
@@ -297,9 +302,9 @@ Puede hacer un seguimiento de los volúmenes lógicos creados con:
 
 ```
 
-**Nota:** Es posible que deba cargar el módulo del kernel *device-mapper* (`modprobe dm_mod`) para que las órdenes anteriores puedan tener éxito.
+**Nota:** es posible que deba cargar el módulo del kernel *device-mapper* (`modprobe dm_mod`) para que las órdenes anteriores puedan tener éxito.
 
-**Sugerencia:** Se puede comenzar creando volúmenes lógicos relativamente pequeños y ampliarlos más adelante si fuera necesario. Para simplificar, deje un poco de espacio libre en el grupo de volúmenes para tener margen para su expansión.
+**Sugerencia:** se puede comenzar creando volúmenes lógicos relativamente pequeños y ampliarlos más adelante si fuera necesario. Para simplificar, deje un poco de espacio libre en el grupo de volúmenes para tener margen para su expansión.
 
 ### Crear sistemas de archivos y montar los volúmenes lógicos
 
@@ -328,7 +333,7 @@ Por ejemplo:
 
 ```
 
-**Advertencia:** Al elegir los puntos de montaje, solo tiene que seleccionar los volúmenes lógicos recién creados (utilice: `/dev/Volgroup00/lvolhome`). **No** seleccione las particiones reales sobre las que se crearon los volúmenes lógicos (por tanto, no utilice: `/dev/sda2`).
+**Advertencia:** al elegir los puntos de montaje, solo tiene que seleccionar los volúmenes lógicos recién creados (utilice: `/dev/Volgroup00/lvolhome`). **No** seleccione las particiones reales sobre las que se crearon los volúmenes lógicos (por tanto, no utilice: `/dev/sda2`).
 
 ### Configurar mkinitcpio
 
@@ -381,7 +386,7 @@ Para ampliar el volumen físico existente sobre el dispositivo `/dev/sda1`, desp
 
 Esto detectará automáticamente el nuevo tamaño del dispositivo y extenderá el volumen físico a su máximo.
 
-**Nota:** Este orden se puede ejecutar mientras el volumen está en línea.
+**Nota:** esta orden se puede ejecutar mientras el volumen está en línea.
 
 ##### Encoger
 
@@ -439,7 +444,7 @@ Se puede observar que el espacio FREE (LIBRE) se intercala por todo el volumen. 
 
 Aquí, el primer segmento libre es desde 0 a 153.600, lo cual nos deja con 153.601 extensiones libres. Ahora podemos mover este número de segmentos desde la última extensión física de la primera. La orden sería así:
 
- `# pvmove --alloc anywhere /dev/sdd1:307201-399668 /dev/sdd1:0-92466` 
+ `# pvmove --alloc anywhere /dev/sdd1:307201-399668 /dev/sdd1:0-92467` 
 ```
 /dev/sdd1: Moved: 0.1 %
 /dev/sdd1: Moved: 0.2 %
@@ -451,14 +456,14 @@ Aquí, el primer segmento libre es desde 0 a 153.600, lo cual nos deja con 153.6
 
 **Nota:**
 
-*   Esta orden indica que se muevan 92.467 (399.668-307.201) extensiones físicas **desde** el último segmento **al** primer segmento. Esto es posible ya que el primer segmento cerrado LIBRE es de 153.600 extensiones físicas, que puede contener las 92.467 extensiones físicas trasladadas.
+*   Esta orden indica que se muevan 399.668 - 307.201 + 1 = 92.468 extensiones físicas **desde** el último segmento **al** primer segmento. Esto es posible ya que el primer segmento cerrado LIBRE es de 153.600 extensiones físicas, que puede contener las 92.467 - 0 + 1 = 92.468 extensiones físicas trasladadas.
 *   La opción `--alloc anywhere` se utiliza cuando movemos extensiones físicas dentro de la misma partición. En caso de particiones diferentes, la orden sería algo como esto: `# pvmove /dev/sdb1:1000-1999 /dev/sdc1:0-999` 
 *   El traslado toma su tiempo (una/dos horas) en el caso de gran tamaño. Puede ser una buena idea ejecutar esta orden en una sesión [Tmux](/index.php/Tmux "Tmux") o [GNU Screen](/index.php/GNU_Screen "GNU Screen"). Cualquier parada no deseada del proceso puede ser fatal.
 *   Una vez finalizada la operación, ejecute [fsck](/index.php/Fsck "Fsck") para asegurarse de que su sistema de archivos es válido.
 
 ###### Redimensionar volumen físico
 
-Una vez que todos sus segmentos físicos libres están en la última extensión física, ejecute `vgdisplay` y vea su extensión física libre.
+Una vez que todos sus segmentos físicos libres estén en las últimas extensiones físicas, ejecute `vgdisplay` y vea su extensión física libre.
 
 Entonces, podrá ejecutar de nuevo la orden:
 
@@ -484,11 +489,11 @@ Vea el resultado:
 
 **Nota:** [lvresize(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvresize.8) proporciona, más o menos, las mismas opciones que las órdenes especializadas de [lvextend(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvextend.8) y [lvreduce(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvreduce.8), al tiempo que permite hacer ambos tipos de operaciones. A pesar de esto, todos las utilidades ofrecen una opción `-r, --resizefs` que permite cambiar el tamaño del sistema de archivos junto con el volumen lógico, mediante `fsadm(8)` (que soporta *ext2*, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), *ReiserFS* y [XFS](/index.php/XFS "XFS")). Por lo tanto, puede ser más fácil simplemente utilizar `lvresize` para ambas operaciones y utilizar `--resizefs` para simplificar un poco las cosas, excepto si tiene necesidades específicas o desea tener un control total sobre el proceso.
 
-**Advertencia:** Si bien la ampliación de un sistema de archivos, a menudo, puede hacerse en línea (*es decir* mientras está montado), incluso para la partición raíz, la reducción, casi siempre, requerirá primero desmontar el sistema de archivos para evitar pérdida de datos. Asegúrese de que su sistema de archivos sea compatible con lo que está tratando de hacer.
+**Advertencia:** si bien la ampliación de un sistema de archivos, a menudo, puede hacerse en línea (*es decir* mientras está montado), incluso para la partición raíz, la reducción, casi siempre, requerirá primero desmontar el sistema de archivos para evitar pérdida de datos. Asegúrese de que su sistema de archivos sea compatible con lo que está tratando de hacer.
 
 ##### Cambiar el tamaño del volumen lógico y del sistema de archivos a la vez
 
-**Nota:** Solo los [sistemas de archivos](/index.php/File_systems "File systems") *ext2*, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), *ReiserFS* y [XFS](/index.php/XFS "XFS") son ​​compatibles. Para un tipo diferente de sistema de archivos, consulte [#Cambiar el tamaño del volumen lógico y del sistema de archivos separadamente](#Cambiar_el_tamaño_del_volumen_lógico_y_del_sistema_de_archivos_separadamente).
+**Nota:** solo los [sistemas de archivos](/index.php/File_systems "File systems") *ext2*, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), *ReiserFS* y [XFS](/index.php/XFS "XFS") son ​​compatibles. Para un tipo diferente de sistema de archivos, consulte [#Cambiar el tamaño del volumen lógico y del sistema de archivos separadamente](#Cambiar_el_tamaño_del_volumen_lógico_y_del_sistema_de_archivos_separadamente).
 
 Extienda el volumen lógico `mediavol` del grupo de volúmenes `MyVolGroup` en 10 GiB y redimensione *a la vez* su sistema de archivos :
 
@@ -583,7 +588,7 @@ Cualquiera de las siguientes órdenes cambia el nombre del volumen lógico `lvol
 
 ### Eliminar volúmenes lógicos
 
-**Advertencia:** Antes de quitar un volumen lógico, asegúrese de mover todos los datos que desee conservar a otro lugar; ¡de lo contrario, se perderán!
+**Advertencia:** antes de quitar un volumen lógico, asegúrese de mover todos los datos que desee conservar a otro lugar; ¡de lo contrario, se perderán!
 
 En primer lugar, averigüe el nombre del volumen lógico que desea eliminar. Se puede obtener una lista de todos los volúmenes lógicos instalados en el sistema con:
 
@@ -638,7 +643,7 @@ En primer lugar, cree un nuevo volumen físico en el dispositivo de bloque que d
 
 Por supuesto, esto aumentará el número total de extensiones físicas en el grupo de volúmenes, que podrá asignar a los volúmenes lógicos como mejor le parezca.
 
-**Nota:** Se considera una buena práctica tener una [tabla de particiones](/index.php/Partitioning_(Espa%C3%B1ol) "Partitioning (Español)") en el soporte de almacenamiento que aloja LVM. Utilice el tipo de código apropiado para su partición: `8e` para MBR, y `8e00` para.
+**Nota:** se considera una buena práctica tener una [tabla de particiones](/index.php/Partitioning_(Espa%C3%B1ol) "Partitioning (Español)") en el soporte de almacenamiento que aloja LVM. Utilice el tipo de código apropiado para su partición: `8e` para MBR, y `8e00` para.
 
 ### Eliminar una partición de un grupo de volúmenes
 
@@ -718,7 +723,7 @@ Para revertir el volumen lógico del «volumen físico» modificado al estado en
 
 En caso de que el volumen lógico de origen esté activo, la fusión se producirá en el siguiente reinicio (la fusión se puede hacer, incluso, desde un CD Live)
 
-**Nota:** La instantánea dejará de existir después de la fusión.
+**Nota:** la instantánea dejará de existir después de la fusión.
 
 Se pueden tomar también varias instantáneas y cada una se puede combinar con el volumen lógico de origen a voluntad.
 
@@ -732,13 +737,13 @@ Vea [Create root filesystem snapshots with LVM](/index.php/Create_root_filesyste
 
 Si tiene volúmenes LVM no activados a través de [initramfs](/index.php/Initramfs "Initramfs"), [active](/index.php/Enable "Enable") el servicio `lvm-monitoring.service`, proporcionado por el paquete [lvm2](https://www.archlinux.org/packages/?name=lvm2).
 
-### La caché de LVM
+### La memoria caché de LVM
 
 De [lvmcache(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvmcache.7):
 
 	El tipo de volumen lógico de caché utiliza un volumen lógico pequeño y rápido para mejorar el rendimiento de un volumen lógico grande y lento. Lo hace almacenando en el volumen lógico más rápido los bloques utilizados con más frecuencia (del volumen lógico grande). LVM se refiere al volumen lógico pequeño y rápido como un volumen lógico que actúa como un contenedor de memoria caché. El volumen lógico lento se llama volumen lógico de origen. Debido a los requisitos de dm-cache (el controlador del kernel), LVM divide aún más el volumen lógico que sirve de contenedor de la memoria caché en dos dispositivos: el volumen lógico para la caché de datos y el volumen lógico para la caché de metadatos. El volumen lógico para la caché de datos es donde se guardan copias de bloques de datos del volumen lógico de origen para aumentar la velocidad. El volumen lógico para la memoria caché de los metadatos contiene la información de recuento que especifica dónde se almacenan los bloques de datos (por ejemplo, en el volumen lógico de origen o en el volumen lógico para la caché de los datos). Los usuarios deben estar familiarizados con estos volúmenes lógicos si desean crear los mejores y más robustos volúmenes lógicos como almacenamientos de caché. Todos estos volúmenes lógicos asociados deben estar en el mismo grupo de volúmenes.
 
-#### Crear la caché
+#### Crear la memoria caché
 
 El método rápido es crear un volumen físico (si es necesario) en el disco y agregarlo al grupo de volúmenes existente:
 
@@ -763,7 +768,7 @@ Obviamente, si desea que su caché sea más grande, puede cambiar el parámetro 
 
 Si no se indica un valor `--cachemode` específico, el sistema asumirá el parámetro `writethrough` como predeterminado.
 
-#### Eliminar la caché
+#### Eliminar la memoria caché
 
 Si alguna vez necesita deshacer la operación anterior en un solo paso :
 
@@ -935,7 +940,7 @@ Para solucionar este problema, antes de extender el volumen lógico, cambie su p
 
 Asegúrese de retirar los volúmenes de instantáneas antes de generar grub.cfg
 
-### Dispositivo de volumen raíz aprovisionado para agotar tiempo de espera
+### Dispositivo de volumen raíz aprovisionado Getting started para agotar tiempo de espera
 
 Con una gran cantidad de instantáneas, `thin_check` se ejecuta durante un tiempo suficientemente prolongado para que se agote el tiempo de espera del dispositivo raíz. Para compensar, agregue el parámetro de arranque del kernel `rootdelay=60` a la configuración de su gestor de arranque.
 

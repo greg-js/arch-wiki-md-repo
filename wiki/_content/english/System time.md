@@ -243,7 +243,11 @@ The software clock is very accurate but like most clocks is not perfectly accura
 
 ## Time synchronization
 
-The [Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol "wikipedia:Network Time Protocol") (NTP) is a protocol for synchronizing the clocks of computer systems over packet-switched, variable-latency data networks. The following are implementations of such protocol:
+The [Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol "wikipedia:Network Time Protocol") (NTP) is a protocol for synchronizing the clocks of computer systems over packet-switched, variable-latency data networks. The following are implementations of NTP available for Arch Linux:
+
+*   **[ConnMan](/index.php/ConnMan "ConnMan")** — A lightweight network manager with NTP support.
+
+	[https://01.org/connman](https://01.org/connman) || [connman](https://www.archlinux.org/packages/?name=connman)
 
 *   **[Network Time Protocol daemon](/index.php/Network_Time_Protocol_daemon "Network Time Protocol daemon")** — The [reference implementation](https://en.wikipedia.org/wiki/reference_implementation "wikipedia:reference implementation") of the protocol, especially recommended to be used on time servers. It can also adjust the interrupt frequency and the number of ticks per second to decrease system clock drift, and will cause the hardware clock to be re-synchronised every 11 minutes.
 

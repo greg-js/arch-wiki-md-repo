@@ -389,7 +389,7 @@ $ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-fold
 
 ```
 
-For more information, see [[4]](https://git.gnome.org/browse/gsettings-desktop-schemas/tree/schemas/org.gnome.desktop.app-folders.gschema.xml.in) and [[5]](https://wiki.gentoo.org/wiki/Gnome_Applications_Folders).
+For more information, see [[4]](https://gitlab.gnome.org/GNOME/gsettings-desktop-schemas/blob/master/schemas/org.gnome.desktop.app-folders.gschema.xml.in) and [[5]](https://wiki.gentoo.org/wiki/Gnome_Applications_Folders).
 
 #### Autostart
 
@@ -525,5 +525,5 @@ GNOME Shell does not support using a different [window manager](/index.php/Windo
     *   [GNOME Apps Index](https://wiki.gnome.org/Apps)
     *   [Wikipedia:GNOME Core Applications](https://en.wikipedia.org/wiki/GNOME_Core_Applications "wikipedia:GNOME Core Applications")
 *   GNOME Source/Mirrors:
-    *   [GNOME Git Repository](https://git.gnome.org/browse/)
+    *   [GNOME GitLab](https://gitlab.gnome.org/)
     *   [GNOME Github Mirror](https://github.com/GNOME)

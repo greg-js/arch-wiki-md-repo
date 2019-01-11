@@ -260,6 +260,4 @@ This is a known problem and relates to glibc not Evolution hence cannot be fixed
 
 ## References
 
-[GNOME Evolution Guide](http://library.gnome.org/users/evolution/stable/)
-
-[Tudelft Evolution 2.24 Setup](http://www.tudelft.nl/live/pagina.jsp?id=babae0a3-1479-4501-9ec4-e308153735dc&lang=nl)
+[GNOME Evolution Guide](https://help.gnome.org/users/evolution/stable/)

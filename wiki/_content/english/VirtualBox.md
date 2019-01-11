@@ -117,7 +117,7 @@ To load the module manually, run:
 
 ```
 
-The following modules are optional but are recommended if you do not want to be bothered in some advanced configurations (precised here after): `vboxnetadp`, `vboxnetflt` and `vboxpci`.
+The following modules are only required in advanced configurations:
 
 *   `vboxnetadp` and `vboxnetflt` are both needed when you intend to use the [bridged](https://www.virtualbox.org/manual/ch06.html#network_bridged) or [host-only networking](https://www.virtualbox.org/manual/ch06.html#network_hostonly) feature. More precisely, `vboxnetadp` is needed to create the host interface in the VirtualBox global preferences, and `vboxnetflt` is needed to launch a virtual machine using that network interface.
 
@@ -773,6 +773,8 @@ In this case, you will either have to use [CDemu](/index.php/CDemu "CDemu") for 
 ### Failed to create the host-only network interface
 
 Make sure all required kernel modules are loaded. See [#Load the VirtualBox kernel modules](#Load_the_VirtualBox_kernel_modules).
+
+If all required kernel modules are loaded and you are still unable to create the host-only adapter, navigate to "File > Host Network Manager" and click the "Create" button to enable the interface.
 
 ### Failed to insert module
 

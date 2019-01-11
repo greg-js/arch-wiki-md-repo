@@ -22,9 +22,7 @@
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Passwords are not remembered](#Passwords_are_not_remembered)
     *   [6.2 Resetting the keyring](#Resetting_the_keyring)
-*   [7 Known issues](#Known_issues)
-    *   [7.1 Cannot handle ECDSA and Ed25519 keys](#Cannot_handle_ECDSA_and_Ed25519_keys)
-*   [8 See also](#See_also)
+*   [7 See also](#See_also)
 
 ## Installation
 
@@ -264,14 +262,6 @@ Ensure that the [seahorse](https://www.archlinux.org/packages/?name=seahorse) pa
 If you get the error "The password you use to login to your computer no longer matches that of your login keyring", you can simply reset your gnome keyring.
 
 Remove "login.keyring" and "user.keystore" from */home/{username}/.local/share/keyrings/*. After removing the files, simply log out and log in again. Obviously, this will remove your saved keys.
-
-## Known issues
-
-### Cannot handle ECDSA and Ed25519 keys
-
-As of January 2018, GNOME Keyring doesn't handle ECDSA[[1]](https://bugzilla.gnome.org/show_bug.cgi?id=641082) nor Ed25519[[2]](https://bugzilla.gnome.org/show_bug.cgi?id=723274) keys. You can turn to other [SSH agents](/index.php/SSH_keys#SSH_agents "SSH keys") if you need support for those.
-
-**Note:** As of GNOME 3.28, gnome-keyring replaced its SSH agent implementation with a wrapper around the ssh-agent tool that comes with [openssh](https://www.archlinux.org/packages/?name=openssh) [[3]](https://bugzilla.gnome.org/show_bug.cgi?id=775981). As a result, any type of key supported by the upstream ssh-agent is now also supported by gnome-keyring, including ECDSA and Ed25519 keys.
 
 ## See also
 

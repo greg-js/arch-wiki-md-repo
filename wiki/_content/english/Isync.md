@@ -87,10 +87,12 @@ Patterns "INBOX" "arch"
 Channel sync-googlemail-sent
 Master :googlemail-remote:"[Google Mail]/Gesendet"
 Slave :googlemail-local:sent
+Create Slave
 
 Channel sync-googlemail-trash
 Master :googlemail-remote:"[Google Mail]/Papierkorb"
 Slave :googlemail-local:trash
+Create Slave
 
 # Get all the channels together into a group.
 Group googlemail

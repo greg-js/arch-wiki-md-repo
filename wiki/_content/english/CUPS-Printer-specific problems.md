@@ -65,7 +65,6 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
 | HL-2250DN | [brother-hl2250dn](https://aur.archlinux.org/packages/brother-hl2250dn/) |
 | HL-2270DW | [brother-hl2270dw](https://aur.archlinux.org/packages/brother-hl2270dw/) |
 | HL-2280DW | [brother-hl2280dw](https://aur.archlinux.org/packages/brother-hl2280dw/) |
-| HL-2340DW | [brother-hll2340dw](https://aur.archlinux.org/packages/brother-hll2340dw/) |
 | HL-3045CN | Install Brother's driver. |
 | HL-3140CW | [brother-hl3140cw](https://aur.archlinux.org/packages/brother-hl3140cw/) | Use IPP and Brother's driver to avoid page-shrinking and endless blank printouts |
 | HL-3150CDW | [brother-hl3150cdw](https://aur.archlinux.org/packages/brother-hl3150cdw/) |
@@ -74,7 +73,11 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
 | HL-5140 | [foomatic](/index.php/Foomatic "Foomatic") | Or Brother's driver. |
 | HL-5340 | [foomatic](/index.php/Foomatic "Foomatic") | Using the *Generic PCL 6/PCL XL Printer - CUPS+Gutenprint* ([gutenprint](https://www.archlinux.org/packages/?name=gutenprint) and [foomatic-db-gutenprint-ppds](https://www.archlinux.org/packages/?name=foomatic-db-gutenprint-ppds)). Or Brother's driver, which may result in failed prints with postscript errors. |
 | HL-L2300D | [brother-hll2300d](https://aur.archlinux.org/packages/brother-hll2300d/) |
+| HL-L2340DW | [brother-hll2340dw](https://aur.archlinux.org/packages/brother-hll2340dw/) |
 | HL-L2350DW | [brother-hll2350dw](https://aur.archlinux.org/packages/brother-hll2350dw/) |
+| HL-L2360DN | [brother-hll2360d](https://aur.archlinux.org/packages/brother-hll2360d/) |
+| HL-L2360DW | [brother-hll2360d](https://aur.archlinux.org/packages/brother-hll2360d/) |
+| HL-L2365DW | [brother-hll2360d](https://aur.archlinux.org/packages/brother-hll2360d/) |
 | HL-L2380DW | [brother-hll2380dw](https://aur.archlinux.org/packages/brother-hll2380dw/) |
 | HL-L2395DW | [brother-hll2395dw](https://aur.archlinux.org/packages/brother-hll2395dw/) | Use the `socket` protocol as described in [#Network printers](#Network_printers) |
 | HL-L5100DN | HP LaserJet Foomatic driver | This model will emulate a HP LaserJet. Use the `lpd` protocol as described in [#Network printers](#Network_printers). |

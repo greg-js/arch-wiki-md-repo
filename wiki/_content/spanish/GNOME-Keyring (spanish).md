@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [GNOME/Keyring](/index.php/GNOME/Keyring "GNOME/Keyring"), revisada por última vez el **2018-12-30**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=GNOME/Keyring&diff=0&oldid=560987) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [GNOME/Keyring](/index.php/GNOME/Keyring "GNOME/Keyring"), revisada por última vez el **2018-01-09**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=GNOME/Keyring&diff=0&oldid=562490) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 [GNOME Keyring](https://wiki.gnome.org/Projects/GnomeKeyring) (*llavero de GNOME*) es "una colección de componentes en GNOME que almacenan secretos, contraseñas, claves, certificados y los ponen a disposición de las aplicaciones".
 
@@ -25,9 +25,7 @@ Este artículo es una traducción de [GNOME/Keyring](/index.php/GNOME/Keyring "G
 *   [6 Solución de problemas](#Solución_de_problemas)
     *   [6.1 Las contraseñas no son recordadas](#Las_contraseñas_no_son_recordadas)
     *   [6.2 Restableciendo el llavero](#Restableciendo_el_llavero)
-*   [7 Problemas conocidos](#Problemas_conocidos)
-    *   [7.1 No se pueden manejar claves ECDSA y Ed25519](#No_se_pueden_manejar_claves_ECDSA_y_Ed25519)
-*   [8 Véase también](#Véase_también)
+*   [7 Véase también](#Véase_también)
 
 ## Instalación
 
@@ -269,14 +267,6 @@ Si no hay un llavero en la columna izquierda (se marcará con un icono de candad
 Si aparece el error "La contraseña que utiliza para iniciar sesión en su computadora ya no coincide con la de su llavero de inicio de sesión" *("The password you use to login to your computer no longer matches that of your login keyring" en inglés)*, puede simplemente restablecer su llavero de gnome.
 
 Elimine "login.keyring" y "user.keystore" de */home/{usuario}/.local/share/keyrings/*. Después de eliminar los archivos, simplemente cierre la sesión y vuelva a iniciarla. Obviamente, esto eliminará las claves guardadas.
-
-## Problemas conocidos
-
-### No se pueden manejar claves ECDSA y Ed25519
-
-A partir de enero de 2018, el llavero de GNOME no maneja claves ECDSA[[1]](https://bugzilla.gnome.org/show_bug.cgi?id=641082) ni Ed25519[[2]](https://bugzilla.gnome.org/show_bug.cgi?id=723274). Puede recurrir a otros [agentes SSH](/index.php/SSH_keys_(Espa%C3%B1ol)#Agentes_de_SSH "SSH keys (Español)") si necesita soporte para ellos.
-
-**Nota:** A partir de GNOME 3.28, gnome-keyring reemplazó su implementación del agente SSH con un envoltorio alrededor de la herramienta ssh-agent que viene con [openssh](https://www.archlinux.org/packages/?name=openssh) [[3]](https://bugzilla.gnome.org/show_bug.cgi?id=775981). Como resultado, cualquier tipo de clave compatible con ssh-agent ahora también es compatible con gnome-keyring, incluidas las claves ECDSA y Ed25519.
 
 ## Véase también
 
