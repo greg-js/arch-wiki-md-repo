@@ -102,6 +102,8 @@ There are many different [levels of RAID](https://en.wikipedia.org/wiki/Standard
 
 	The *far X* layout on Y disks is designed to offer striped read performance on a mirrored array. It accomplishes this by dividing each disk in two sections, say front and back, and what is written to disk 1 front is mirrored in disk 2 back, and vice versa. This has the effect of being able to stripe sequential reads, which is where RAID0 and RAID5 get their performance from. The drawback is that sequential writing has a very slight performance penalty because of the distance the disk needs to seek to the other section of the disk to store the mirror. RAID10 in far 2 layout is, however, preferable to layered RAID1+0 **and** RAID5 whenever read speeds are of concern and availability / redundancy is crucial. However, it is still not a substitute for backups. See the wikipedia page for more information.
 
+**Warning:** mdadm cannot reshape arrays in *far X* layouts which means once the array is created, you won't be able to `mdadm --grow` it. For example, if you have a 4x1TB RAID10 array and you want to switch to 2TB disks, your usable capacity will remain 2TB. For such use cases, stick to *near X* layouts.
+
 ### RAID level comparison
 
 | RAID level | Data redundancy | Physical drive utilization | Read performance | Write performance | Min drives |

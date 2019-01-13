@@ -73,7 +73,7 @@ Add the following alias for PhpMyAdmin to the config:
 
 ### Nginx
 
-Make sure to set up [nginx#FastCGI](/index.php/Nginx#FastCGI "Nginx") and using [server blocks](/index.php/Nginx#Server_blocks "Nginx") to easier management.
+Make sure to set up [nginx#FastCGI](/index.php/Nginx#FastCGI "Nginx") and use [server blocks](/index.php/Nginx#Server_blocks "Nginx") to make management easier.
 
 By preference; access phpMyAdmin by subdomain, e.g. `[https://pma.domain.tld](https://pma.domain.tld)`:
 
@@ -195,7 +195,7 @@ To allow the usage of the phpMyAdmin setup script (e.g. [http://localhost/phpmya
 
 ### Add blowfish_secret passphrase
 
-It is required to enter an unique 32 characters long string to fully use the blowfish algorithm used by PhpMyAdmin, thus preventing the message *ERROR: The configuration file now needs a secret passphrase (blowfish_secret)*:
+It is required to enter a unique 32 characters long string to fully use the blowfish algorithm used by phpMyAdmin, thus preventing the message *ERROR: The configuration file now needs a secret passphrase (blowfish_secret)*:
 
  `/etc/webapps/phpmyadmin/config.inc.php`  `$cfg['blowfish_secret'] = '...';` 
 

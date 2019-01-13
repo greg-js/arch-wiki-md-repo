@@ -7,8 +7,9 @@
     *   [2.1 Shell](#Shell)
     *   [2.2 Term](#Term)
     *   [2.3 Font](#Font)
-    *   [2.4 Colors](#Colors)
-    *   [2.5 Desktop entry](#Desktop_entry)
+    *   [2.4 Cursor](#Cursor)
+    *   [2.5 Colors](#Colors)
+    *   [2.6 Desktop entry](#Desktop_entry)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Keyboard](#Keyboard)
     *   [3.2 Vim](#Vim)
@@ -36,7 +37,7 @@ static char *shell = "/bin/sh";
 Or start *st* with the desired shell as last argument:
 
 ```
-st *options* fish
+$ st *options* fish
 
 ```
 
@@ -45,7 +46,7 @@ st *options* fish
 To change the terminal type, edit this line:
 
 ```
- static char *termname = "st-256color";
+static char *termname = "st-256color";
 
 ```
 
@@ -67,6 +68,15 @@ You can also pass the value of the font in the command line:
 ```
 $ st -f "Liberation Mono:size=12"
 $ st -f 'Liberation Mono-12'
+
+```
+
+### Cursor
+
+By default the mouse pointer is `XC_xterm;` which often can be hard to find. To change it to your cursor theme's normal one, edit the following:
+
+```
+static unsigned int mouseshape = XC_left_ptr;
 
 ```
 
@@ -155,7 +165,7 @@ The menu entry will appear as *Simple Terminal* in the *System Tools* applicatio
 Add the following to `~/.inputrc` or `/etc/inputrc` if `Delete` is not working properly in some applications:
 
 ```
- set enable-keypad on
+set enable-keypad on
 
 ```
 

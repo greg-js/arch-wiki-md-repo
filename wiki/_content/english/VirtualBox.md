@@ -774,7 +774,7 @@ In this case, you will either have to use [CDemu](/index.php/CDemu "CDemu") for 
 
 Make sure all required kernel modules are loaded. See [#Load the VirtualBox kernel modules](#Load_the_VirtualBox_kernel_modules).
 
-If all required kernel modules are loaded and you are still unable to create the host-only adapter, navigate to "File > Host Network Manager" and click the "Create" button to enable the interface.
+If all required kernel modules are loaded and you are still unable to create the host-only adapter, navigate to *File > Host Network Manager* and click the *Create* button to add the network interface.
 
 ### Failed to insert module
 

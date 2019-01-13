@@ -229,7 +229,7 @@ An entry should now exist for `/dev/mapper/enc`.
 
 This section shows how to employ the options for creating new encrypted blockdevices and accessing them manually.
 
-**Warning:** GRUB does not support LUKS2 headers. Therefore, if you plan to [unlock an encrypted boot partition with GRUB](/index.php/GRUB#Encrypted_/boot "GRUB"), do not specify `luks2` for the type parameter on encrypted boot partitions.
+**Warning:** GRUB does not support LUKS2 headers. Therefore, if you plan to [unlock an encrypted boot partition with GRUB](/index.php/GRUB#Encrypted_/boot "GRUB"), specify `luks1` for the type parameter on encrypted boot partitions.
 
 ### Encrypting devices with LUKS mode
 

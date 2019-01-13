@@ -13,7 +13,7 @@ This page explains how to setup Arch to use a US Department of Defense [Common A
     *   [3.1 Firefox](#Firefox)
         *   [3.1.1 Load security device](#Load_security_device)
         *   [3.1.2 Import the DoD Certificates](#Import_the_DoD_Certificates)
-    *   [3.2 Chromium/Google Chrome](#Chromium.2FGoogle_Chrome)
+    *   [3.2 Chromium/Google Chrome](#Chromium/Google_Chrome)
 *   [4 Testing](#Testing)
 *   [5 Debugging](#Debugging)
     *   [5.1 opensc-tool](#opensc-tool)
@@ -40,7 +40,7 @@ Sometimes [opensc](https://www.archlinux.org/packages/?name=opensc) can struggle
 
 1\. Go to: [http://iase.disa.mil/pki-pke/Pages/tools.aspx](http://iase.disa.mil/pki-pke/Pages/tools.aspx)
 
-2\. Download certs: "Trust Store" -> "PKI CA Certificate Bundles: PKCS#7" -> "For DoD PKI Only - Version 5.3" (ZIP Download)
+2\. Download certs: *"Trust Store" -> "PKI CA Certificate Bundles: PKCS#7" -> "For DoD PKI Only - Version 5.3"* (ZIP Download)
 
 3\. Unzip the DoD PKI zip
 
@@ -50,13 +50,13 @@ Sometimes [opensc](https://www.archlinux.org/packages/?name=opensc) can struggle
 
 #### Load security device
 
-Navigate to Edit -> Preference -> Advanced -> Certificates -> Security Devices and click "Load" to load a module using `/usr/lib/opensc-pkcs11.so` or `/usr/lib/pkcs11/opensc-pkcs11.so`.
+Navigate to *Edit -> Preference -> Advanced -> Certificates -> Security Devices* and click "Load" to load a module using `/usr/lib/opensc-pkcs11.so` or `/usr/lib/pkcs11/opensc-pkcs11.so`.
 
 **Note:** Firefox may report the module did not load correctly however you will have to check in the security devices to confirm whether the module properly loaded or not
 
 #### Import the DoD Certificates
 
-Install the certificates from the mentioned zip in _this_ order, by going to Edit -> Preference -> Advanced -> Certificates -> View Certificates -> Authorities -> Import (make sure to at-least check the box for "Trust this CA to identify websites"):
+Install the certificates from the mentioned zip-file in *this* order, by going to *Edit -> Preference -> Advanced -> Certificates -> View Certificates -> Authorities -> Import* (make sure to at-least check the box for "Trust this CA to identify websites"):
 
 **Note:** As of the 5.3 version of the certificate zip
 
@@ -74,16 +74,28 @@ Install the certificates from the mentioned zip in _this_ order, by going to Edi
 
 ### Chromium/Google Chrome
 
-1\. Ensure CAC is connected, [Chromium](/index.php/Chromium "Chromium") is closed and enter the following in a terminal: `$ modutil -dbdir sql:.pki/nssdb/ -add "CAC Module" -libfile /usr/lib/opensc-pkcs11.so`
+1\. Add the CAC Module to the NSS DB.
+
+Ensure that your CAC is connected, that [Chromium](/index.php/Chromium "Chromium") is closed and enter the following in a terminal: `$ modutil -dbdir sql:$HOME/.pki/nssdb/ -add "CAC Module" -libfile /usr/lib/opensc-pkcs11.so`
 
 **Note:** You may see the message 'Failure to load dynamic library'. This can be ignored.
 
-2\. Navigate (in a shell) to the location of the unzip DoD PKI files and install via:
+Upon success you will see "Module "CAC Module" added to database."
+
+2\. Check if the CAC Module was successfully added with `$ modutil -dbdir sql:$HOME/.pki/nssdb/ -list`
+
+3\. Navigate (in a shell) to the location of the unzip DoD PKI files and install via:
 
 ```
  for n in $(ls * | grep Chrome); do certutil -d sql:$HOME/.pki/nssdb -A -t TC -n $n -i $n; done
 
 ```
+
+or
+
+Re-open Chrome, Navigate to *Settings -> Show Advanced Settings -> Manage Certificates -> Authorities* to load CA bundle from the PEM-formatted file from above.
+
+4\. Verify the authority is in Chrome under *Settings -> Show Advanced Settings -> Manage Certificates -> Authorities* then expand "org-U.S. Government" and you should see a number of "DoD" certificates listed.
 
 ## Testing
 

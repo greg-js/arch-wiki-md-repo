@@ -21,7 +21,7 @@ Related articles
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [youtube-dl](https://www.archlinux.org/packages/?name=youtube-dl) package, or [youtube-dl-git](https://aur.archlinux.org/packages/youtube-dl-git/) for the development version. It is recommended to also install [FFmpeg](/index.php/FFmpeg "FFmpeg") as it is used for muxing for some sites.
+[Install](/index.php/Install "Install") the [youtube-dl](https://www.archlinux.org/packages/?name=youtube-dl) package, or [youtube-dl-git](https://aur.archlinux.org/packages/youtube-dl-git/) for the development version. It is recommended to also install [FFmpeg](/index.php/FFmpeg "FFmpeg") as it is used for muxing for some sites. See the optional dependencies.
 
 ## Configuration
 
@@ -29,6 +29,7 @@ The system-wide configuration file is `/etc/youtube-dl.conf` and the user-specif
 
 ```
 --ignore-errors
+# --no-playlist
 
 # Save in ~/Videos
 -o ~/Videos/%(title)s.%(ext)s
@@ -42,7 +43,7 @@ See [[1]](https://github.com/rg3/youtube-dl/blob/master/README.md#configuration)
 
 ## Usage
 
-See [youtube-dl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/youtube-dl.1).
+See [youtube-dl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/youtube-dl.1) for the manual.
 
 ```
 $ youtube-dl [OPTIONS] *URL*
@@ -79,6 +80,13 @@ $ youtube-dl -x -f bestaudio *URL*
 ```
 
 Depending on the available source streams, this will often correct the audio-only container. If an audio-only stream is not available, exclude `-f bestaudio` from the example above. This will download the video and copy its audio as post process. By default this will remove the downloaded video, include `-k` to keep it.
+
+To also include album art:
+
+```
+$ youtube-dl -x -f bestaudio[ext=m4a] --embed-thumbnail *URL*
+
+```
 
 ### Subtitles
 

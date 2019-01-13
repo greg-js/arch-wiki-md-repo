@@ -203,11 +203,12 @@ This article is a general list of applications sorted by category, as a referenc
         *   [3.3.6 GUI builders](#GUI_builders)
         *   [3.3.7 Hex editors](#Hex_editors)
         *   [3.3.8 JSON tools](#JSON_tools)
-        *   [3.3.9 UML modelers](#UML_modelers)
-        *   [3.3.10 API documentation browsers](#API_documentation_browsers)
-        *   [3.3.11 Issue tracking systems](#Issue_tracking_systems)
-        *   [3.3.12 Code review](#Code_review)
-        *   [3.3.13 Game development](#Game_development)
+        *   [3.3.9 Literate programming](#Literate_programming)
+        *   [3.3.10 UML modelers](#UML_modelers)
+        *   [3.3.11 API documentation browsers](#API_documentation_browsers)
+        *   [3.3.12 Issue tracking systems](#Issue_tracking_systems)
+        *   [3.3.13 Code review](#Code_review)
+        *   [3.3.14 Game development](#Game_development)
     *   [3.4 Text input](#Text_input)
         *   [3.4.1 Character selectors](#Character_selectors)
         *   [3.4.2 On-screen keyboards](#On-screen_keyboards)
@@ -5310,6 +5311,18 @@ See also [Wikipedia:Comparison of hex editors](https://en.wikipedia.org/wiki/Com
 	[http://kmkeen.com/jshon/](http://kmkeen.com/jshon/) || [jshon](https://www.archlinux.org/packages/?name=jshon)
 
 *   the [Elvish](/index.php/Elvish "Elvish") shell has built-in support for JSON
+
+#### Literate programming
+
+See also [Wikipedia:Literate programming](https://en.wikipedia.org/wiki/Literate_programming "wikipedia:Literate programming").
+
+*   **Noweb** — A Simple, Extensible Tool for Literate Programming build against ICON libs and texlive
+
+	[http://www.cs.tufts.edu/~nr/noweb/](http://www.cs.tufts.edu/~nr/noweb/) || [noweb](https://aur.archlinux.org/packages/noweb/)
+
+*   **nuweb** — A Simple Literate Programming Tool
+
+	[http://nuweb.sourceforge.net/](http://nuweb.sourceforge.net/) || [nuweb](https://aur.archlinux.org/packages/nuweb/)
 
 #### UML modelers
 

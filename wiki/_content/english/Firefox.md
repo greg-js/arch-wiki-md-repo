@@ -17,7 +17,7 @@ Related articles
         *   [2.1.1 arch-firefox-search](#arch-firefox-search)
 *   [3 Configuration](#Configuration)
     *   [3.1 Multimedia playback](#Multimedia_playback)
-        *   [3.1.1 Open-with extension](#Open-with_extension)
+        *   [3.1.1 Open With extension](#Open_With_extension)
     *   [3.2 Spell checking](#Spell_checking)
     *   [3.3 KDE/GNOME integration](#KDE/GNOME_integration)
     *   [3.4 Smooth Scrolling](#Smooth_Scrolling)
@@ -159,14 +159,15 @@ security.sandbox.content.write_path_whitelist
 
 If you have no audio even when using *apulse*, try adding `16` to `security.sandbox.content.syscall_whitelist` in `about:config`.
 
-#### Open-with extension
+#### Open With extension
 
-1.  Install [Open-with](https://addons.mozilla.org/firefox/addon/open-with/) add-on.
-2.  Open `about:openwith`, select *Add...*
-3.  In the dialog select a video streaming capable player (e.g. [/usr/bin/mpv](/index.php/Mpv "Mpv")).
-4.  (Optional step) Add needed arguments to the player (e.g. you may want `--force-window --ytdl` for *mpv*)
-5.  (Optional step) Choose how to display the dialogs using the left panel.
-6.  Right click on links or visit pages containing videos. If the site is supported, the player will open as expected.
+1.  Install [Open With](https://addons.mozilla.org/firefox/addon/open-with/) add-on.
+2.  Go to *Add-ons > Open With > Preferences*.
+3.  Proceed with instructions to install a file in your system and test the installation.
+4.  Click *Add browser*.
+5.  In the dialog write a name for this menu entry and command to start a video streaming capable player (e.g. [/usr/bin/mpv](/index.php/Mpv "Mpv")).
+6.  (Optional step) Add needed arguments to the player (e.g. you may want `--force-window --ytdl` for *mpv*)
+7.  Right click on links or visit pages containing videos. Select newly created entry from Open With's menu and if the site is supported, the player will open as expected.
 
 The same procedure can be used to associate video downloaders such as *youtube-dl*.
 
@@ -245,7 +246,7 @@ For general enhancements see [Firefox/Tweaks](/index.php/Firefox/Tweaks "Firefox
 
 ### Dark themes
 
-If a dark [GTK](/index.php/GTK "GTK") theme is in use (e.g. Arc Dark), it is recommended to start Firefox with a brighter one (e.g. Adwaita). See [Firefox/Tweaks#Unreadable input fields with dark GTK+ themes](/index.php/Firefox/Tweaks#Unreadable_input_fields_with_dark_GTK+_themes "Firefox/Tweaks") and [GTK#Themes](/index.php/GTK#Themes "GTK") for more information.
+If a dark [GTK](/index.php/GTK "GTK") theme is in use (e.g. Arc Dark), it is recommended to start Firefox with a brighter one (e.g. Adwaita). See [GTK#Themes](/index.php/GTK#Themes "GTK") and [Firefox/Tweaks#Unreadable input fields with dark GTK+ themes](/index.php/Firefox/Tweaks#Unreadable_input_fields_with_dark_GTK+_themes "Firefox/Tweaks") for more information.
 
 ### Screenshot of webpage
 

@@ -21,7 +21,8 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 *   [4 Power management/Throttling issues](#Power_management/Throttling_issues)
 *   [5 UEFI](#UEFI)
 *   [6 Screen backlight](#Screen_backlight)
-*   [7 Special buttons](#Special_buttons)
+*   [7 Encryption and keyboard](#Encryption_and_keyboard)
+*   [8 Special buttons](#Special_buttons)
 
 ## Hardware
 
@@ -138,6 +139,25 @@ Source: [http://www.rodsbooks.com/efi-bootloaders/installation.html#alternative-
 ## Screen backlight
 
 Without the intel driver (xf86-video-intel), neither xbacklight or xrandr brightness control are working.
+
+## Encryption and keyboard
+
+Assuming encrypted installation, during boot process you are prompted to enter password to decrypt disk. In some cases you may not be able to enter password, because at this time keyboard driver is not loaded yet.
+
+To fix this simply put `atkbd` module into `MODULES` in [mkinitcpio](https://wiki.archlinux.org/index.php/Mkinitcpio) config file:
+
+ `/etc/mkinitcpio.conf` 
+```
+  MODULES = (... atkbd)
+
+```
+
+And generate new ramdisk environment:
+
+```
+ # mkinitcpio -p linux
+
+```
 
 ## Special buttons
 

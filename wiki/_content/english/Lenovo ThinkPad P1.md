@@ -24,6 +24,8 @@ Lenovo ThinkPad P1 was released in 2018 and has up to Intel Core i7-8850H or Xeo
 
 This might potentially brick your device and require Lenovo to replace your motherboard. Apparently verified on BIOS v1.15 and still not resolved.
 
+BIOS v1.17 (released Dec 24, 2018) fixes the issue.
+
 ### Firmware update
 
 Before installation, it is recommended that you boot into Windows 10 and use the preinstalled Lenovo Vantage software to install any necessary firmware updates, particularly [this one](https://pcsupport.lenovo.com/us/en/products/LAPTOPS-AND-NETBOOKS/THINKPAD-P-SERIES-LAPTOPS/THINKPAD-P1-TYPE-20MD-20ME/downloads/DS504958).

@@ -9,8 +9,9 @@ Related articles
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
 *   [3 Rofi as dmenu replacement](#Rofi_as_dmenu_replacement)
-*   [4 Custom Themes](#Custom_Themes)
-    *   [4.1 Contributed Themes](#Contributed_Themes)
+*   [4 Execute shell commands from rofi](#Execute_shell_commands_from_rofi)
+*   [5 Custom Themes](#Custom_Themes)
+    *   [5.1 Contributed Themes](#Contributed_Themes)
 
 ## Installation
 
@@ -62,6 +63,20 @@ rofi -show run -modi run -location 1 -width 100 \
 		 -color-active "#222222, #b1b4b3, #222222, #007763, #b1b4b3" \
 		 -color-urgent "#222222, #b1b4b3, #222222, #77003d, #b1b4b3" \
 		 -kb-row-select "Tab" -kb-row-tab ""
+
+```
+
+## Execute shell commands from rofi
+
+If you want the ability to run shell commands or use your own scripts directly from rofi with seeing the output, then ensure following:
+
+*   configure the PATH variable in `~/.profile` (instead of e.g. `~/.bashrc`) and then logout and re-login to your window manager/desktop environment
+*   define `-run-shell-command '{terminal} -e \\"{cmd}; read -n 1 -s"'`. This allows you to enter the command on the inputbar followed by SHIFT+ENTER. The terminal stays open until the next keypress.
+
+This is an example with the recommended escaping sequence for i3:
+
+```
+ bindsym $mod+d exec --no-startup-id "rofi -show drun -font \\"DejaVu 9\\" -run-shell-command '{terminal} -e \\" {cmd}; read -n 1 -s\\"'"
 
 ```
 

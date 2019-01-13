@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Daemons](/index.php/Daemons "Daemons"), revisada por última vez el **2018-11-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Daemons&diff=0&oldid=554263) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Daemons](/index.php/Daemons "Daemons"), revisada por última vez el **2019-01-12**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Daemons&diff=0&oldid=561789) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Un [demonio](https://en.wikipedia.org/wiki/es:Demonio_(inform%C3%A1tica) es un programa que se ejecuta como un proceso en segundo plano (o de fondo, sin una terminal o interfaz de usuario), comúnmente esperando que ocurran eventos y ofreciendo servicios. Un buen ejemplo es un servidor web que espera una solicitud para entregar una página, o un servidor ssh esperando a que alguien intente iniciar sesión. Si bien estas son aplicaciones completas, hay demonios cuyo trabajo no es tan visible. Los demonios son para tareas como escribir mensajes en un archivo de registro (por ejemplo, `syslog`, `metalog`) o para mantener la precisión del reloj de su sistema (por ejemplo, [ntpd](/index.php/Network_Time_Protocol_daemon_(Espa%C3%B1ol) "Network Time Protocol daemon (Español)")). Para obtener más información, véase [daemon(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/daemon.7).
 
@@ -71,7 +71,7 @@ man-db.service
 | [miniDLNA](/index.php/MiniDLNA "MiniDLNA") | minidlna | minidlna.service | Sencillo servidor multimedia DLNA/UPnP. |
  ? | ModemManager.service | Gestión de banda ancha por módem (3G) disponible para [NetworkManager](/index.php/NetworkManager "NetworkManager"). |
 | [mpd](/index.php/Music_Player_Daemon "Music Player Daemon") | mpd | mpd.service | Demonio de Music Player. |
-| [MySQL](/index.php/MySQL "MySQL") | mysqld | mysqld.service | Servidor de base de datos MySQL. |
+| [MariaDB](/index.php/MariaDB "MariaDB") | mysqld | mysqld.service | Servidor de base de datos MySQL. |
 | [MythTV](/index.php/MythTV "MythTV") | mythbackend | mythbackend.service | Backend para el software de vídeo digital MythTV. |
 | [BIND](/index.php/BIND "BIND") | named | named.service | Berkeley Internet Name Daemon (BIND), servidor DNS. |
 | [netctl](/index.php/Netctl "Netctl") | netctl@.service | Activa manualmente el perfil específico. |

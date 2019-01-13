@@ -77,6 +77,10 @@ An emulator is a program which serves to replicate the functions of another plat
 
 	[http://ppsspp.org/](http://ppsspp.org/) || [ppsspp](https://www.archlinux.org/packages/?name=ppsspp)
 
+*   **RPCS3** — Experimental open-source Sony PlayStation 3 emulator and debugger.
+
+	[https://rpcs3.net/](https://rpcs3.net/) || [rpcs3](https://aur.archlinux.org/packages/rpcs3/)
+
 *   **Snes9x** — Portable, freeware Super Nintendo Entertainment System (SNES) emulator.
 
 	[http://www.snes9x.com/](http://www.snes9x.com/) || [snes9x](https://www.archlinux.org/packages/?name=snes9x)

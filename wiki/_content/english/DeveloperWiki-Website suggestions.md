@@ -5,11 +5,10 @@
     *   [2.1 OpenID](#OpenID)
     *   [2.2 Developer/Fellows profiles](#Developer/Fellows_profiles)
     *   [2.3 Navbar for internal Arch sites](#Navbar_for_internal_Arch_sites)
-    *   [2.4 ~~Embed Ads by Google into content~~](#Embed_Ads_by_Google_into_content)
-    *   [2.5 URI Linking](#URI_Linking)
-    *   [2.6 Focus in Search](#Focus_in_Search)
-    *   [2.7 Direct package links by name](#Direct_package_links_by_name)
-    *   [2.8 Adopting archweb_manpages](#Adopting_archweb_manpages)
+    *   [2.4 URI Linking](#URI_Linking)
+    *   [2.5 Focus in Search](#Focus_in_Search)
+    *   [2.6 Direct package links by name](#Direct_package_links_by_name)
+    *   [2.7 Adopting archweb_manpages](#Adopting_archweb_manpages)
 
 ## Introduction
 
@@ -39,12 +38,6 @@ Condense the developer profiles pages, reducing photo sizes and dropping relativ
 ### Navbar for internal Arch sites
 
 Look at the feasibility of creating a unified navbar that would sit at the top of all Arch community sites (bbs.archlinux, wiki.archlinux, etc.), providing an exact copy of the main website hierarchy via drop-down menus (using CSS of course).
-
-### ~~Embed Ads by Google into content~~
-
-Consider placing the Ads by Google inside actual page content (or at least below the navigation) and removing it from the header entirely.
-
-	The ads have been removed some time ago due to Google having issues with Arch violating the terms of service or something. -- [Karol](/index.php/User:Karol "User:Karol") 15:13, 27 November 2011 (EST)
 
 ### URI Linking
 
@@ -85,3 +78,5 @@ On the ArchWiki we can only link to packages using the package search, for examp
 [Lahwaacz](/index.php/User:Lahwaacz "User:Lahwaacz") developed and hosts [https://jlk.fjfi.cvut.cz/arch/manpages/](https://jlk.fjfi.cvut.cz/arch/manpages/), which is used on the ArchWiki for links to man pages, e.g. [pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8). See [Template talk:Man#Sources](/index.php/Template_talk:Man#Sources "Template talk:Man") and the [GitHub repository](https://github.com/lahwaacz/archweb_manpages). I think this should be adopted as an official Arch Linux project if only for a nicer domain name (man.archlinux.org).
 
 --[Larivact](/index.php/User:Larivact "User:Larivact") ([talk](/index.php/User_talk:Larivact "User talk:Larivact")) 14:27, 4 November 2018 (UTC)
+
+	👍 You or Lahwaacz may want to email that proposal to the [arch-projects ML](https://lists.archlinux.org/listinfo/arch-projects). -- [Polyzen](/index.php?title=User:Polyzen&action=edit&redlink=1 "User:Polyzen (page does not exist)") ([talk](/index.php/User_talk:Polyzen "User talk:Polyzen")) 20:42, 11 January 2019 (UTC)

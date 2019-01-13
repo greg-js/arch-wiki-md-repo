@@ -37,6 +37,13 @@ After configuration the repository for the `/etc` path has to be initialized:
 
 ```
 
+And perform a first commit to keep track of the changes, this is a necessary step for etckeeper to be able to work automatically:
+
+```
+# etckeeper commit "first commit"
+
+```
+
 As of *etckeeper* version 1.18.3-1, pre-install and post-install [pacman hooks](/index.php/Pacman_hooks "Pacman hooks") are executed automatically on package installation, update and removal. A manual [#Wrapper script](#Wrapper_script) is not required anymore.
 
 To track other changes to the `/etc` path, you need to either commit changes manually (see the [etckeeper(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/etckeeper.8) man page for commands) or use one of the stopgap solutions below.

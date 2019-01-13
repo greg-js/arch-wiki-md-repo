@@ -226,12 +226,13 @@
 | <small>5.8.</small> [Software projects](/index.php/Category:Software_projects "Category:Software projects") <small>(0)</small> |
 | <small>5.8.1.</small> [Apache](/index.php/Category:Apache "Category:Apache") <small>(6)</small> |
 | <small>5.8.2.</small> [Arch projects](/index.php/Category:Arch_projects "Category:Arch projects") <small>(9) (also in [DeveloperWiki](/index.php/Category:DeveloperWiki "Category:DeveloperWiki"))</small> |
-| <small>5.8.3.</small> [GNOME](/index.php/Category:GNOME "Category:GNOME") <small>(13) (also in [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments"))</small> |
-| <small>5.8.4.</small> [GNU](/index.php/Category:GNU "Category:GNU") <small>(14)</small> |
-| <small>5.8.5.</small> [KDE](/index.php/Category:KDE "Category:KDE") <small>(12) (also in [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments"))</small> |
-| <small>5.8.6.</small> [Mozilla](/index.php/Category:Mozilla "Category:Mozilla") <small>(5)</small> |
-| <small>5.8.7.</small> [OpenBSD](/index.php/Category:OpenBSD "Category:OpenBSD") <small>(4)</small> |
-| <small>5.8.8.</small> [Suckless](/index.php/Category:Suckless "Category:Suckless") <small>(5)</small> |
+| <small>5.8.3.</small> [Electronic Frontier Foundation](/index.php/Category:Electronic_Frontier_Foundation "Category:Electronic Frontier Foundation") <small>(3)</small> |
+| <small>5.8.4.</small> [GNOME](/index.php/Category:GNOME "Category:GNOME") <small>(13) (also in [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments"))</small> |
+| <small>5.8.5.</small> [GNU](/index.php/Category:GNU "Category:GNU") <small>(14)</small> |
+| <small>5.8.6.</small> [KDE](/index.php/Category:KDE "Category:KDE") <small>(12) (also in [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments"))</small> |
+| <small>5.8.7.</small> [Mozilla](/index.php/Category:Mozilla "Category:Mozilla") <small>(5)</small> |
+| <small>5.8.8.</small> [OpenBSD](/index.php/Category:OpenBSD "Category:OpenBSD") <small>(4)</small> |
+| <small>5.8.9.</small> [Suckless](/index.php/Category:Suckless "Category:Suckless") <small>(5)</small> |
 | <small>6.</small> [System administration](/index.php/Category:System_administration "Category:System administration") <small>(22)</small> |
 | <small>6.1.</small> [Backup](/index.php/Category:Backup "Category:Backup") <small>(11)</small> |
 | <small>6.2.</small> [Boot process](/index.php/Category:Boot_process "Category:Boot process") <small>(27)</small> |
@@ -303,7 +304,7 @@
 | <small>6.17.</small> [Monitoring](/index.php/Category:Monitoring "Category:Monitoring") <small>(1)</small> |
 | <small>6.17.1.</small> [Network monitoring](/index.php/Category:Network_monitoring "Category:Network monitoring") <small>(9) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
 | <small>6.17.2.</small> [System monitors](/index.php/Category:System_monitors "Category:System monitors") <small>(10) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
-| <small>6.18.</small> [Notification](/index.php/Category:Notification "Category:Notification") <small>(3)</small> |
+| <small>6.18.</small> [Notification](/index.php/Category:Notification "Category:Notification") <small>(2)</small> |
 | <small>6.19.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(31)</small> |
 | <small>6.20.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(19)</small> |
 | <small>6.21.</small> [Security](/index.php/Category:Security "Category:Security") <small>(36)</small> |

@@ -1,123 +1,33 @@
-MySQL es una gran base de datos SQL multi-hilo y multi-usuario. Para mas información, mira [su página oficial](http://www.mysql.com/).
+**Estado de la traducción**
+Este artículo es una traducción de [MySQL](/index.php/MySQL "MySQL"), revisada por última vez el **2019-01-12**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=MySQL&diff=0&oldid=562846) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
-## Contents
+[MySQL](https://en.wikipedia.org/wiki/es:MySQL "wikipedia:es:MySQL") es una base de datos SQL multiusuario y multihilo muy extendida, desarrollada por Oracle.
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Configuración](#Configuraci.C3.B3n)
-*   [3 Habilitar acceso remoto](#Habilitar_acceso_remoto)
-*   [4 Habilitar autocompletado](#Habilitar_autocompletado)
-*   [5 Como resetear la contraseña del Root](#Como_resetear_la_contrase.C3.B1a_del_Root)
+Arch Linux favorece [MariaDB](/index.php/MariaDB "MariaDB"), una bifurcación de MySQL desarrollada por la comunidad, que apunta a la compatibilidad directa. MySQL de Oracle fue [desplazada](https://www.archlinux.org/news/mariadb-replaces-mysql-in-repositories/) hacia [AUR](/index.php/AUR_(Espa%C3%B1ol) "AUR (Español)"): [mysql](https://aur.archlinux.org/packages/mysql/). Otra bifurcación que apunta a ser totalmente compatible es [Percona Server](https://en.wikipedia.org/wiki/Percona_Server_for_MySQL "wikipedia:Percona Server for MySQL"), disponible como [percona-server](https://www.archlinux.org/packages/?name=percona-server).
 
-## Instalación
+El motor de almacenamiento [InnoDB](https://en.wikipedia.org/wiki/es:InnoDB "wikipedia:es:InnoDB") de Oracle fue también bifurcado por Percona como [XtraDB](https://en.wikipedia.org/wiki/XtraDB "wikipedia:XtraDB"). La bifurcación es utilizada por ambas, [MariaDB](/index.php/MariaDB "MariaDB") y Percona Server.
 
-[Instala](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [mysql](https://aur.archlinux.org/packages/mysql/).
+## Herramientas gráficas
 
-Despues de la instalación es necesario ejecutar el servicio de mysqld para poder proseguir:
+*   **[phpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin")** — Interfaz web para MySQL, escrito en PHP.
 
-Si estas usando systemd:
+	[https://www.phpmyadmin.net](https://www.phpmyadmin.net) || [phpmyadmin](https://www.archlinux.org/packages/?name=phpmyadmin)
 
-```
-# systemctl start mysqld.service 
+*   **[MySQL Workbench](https://en.wikipedia.org/wiki/MySQL_Workbench "wikipedia:MySQL Workbench")** — Herramienta visual unificada para arquitectos, desarrolladores y administradores de bases de datos. Está desarrollado por Oracle y no se garantiza que funcione con [MariaDB](/index.php/MariaDB "MariaDB").
 
-```
+	[https://www.mysql.com/products/workbench/](https://www.mysql.com/products/workbench/) || [mysql-workbench](https://www.archlinux.org/packages/?name=mysql-workbench)
 
-Si estas en initscripts
+Para herramientas que soporten múltiples DBMS, véase [List of applications/Documents#Database tools](/index.php/List_of_applications/Documents#Database_tools "List of applications/Documents").
 
-```
-# rc.d start mysqld
+## Acceso programado
 
-```
-
-Para configurar la contraseña del root, deberemos correr el script de instalación, este tambien nos permitira configurar algunas otras cosas como los usuarios anonimos, deshabilitar el login remote, y remover las bases de datos de prueba:
-
-```
-# mysql_secure_installation
-
-```
-
-Al finalizar el script simplemente nos permitira recargar los privilegios de las tablas y con esto tendremos configurado Mysql.
-
-## Configuración
-
-Una vez iniciado el servidor MySQL, podras utilizarlo con tu interfaz preferida, por ejemplo:
-
-```
-$ mysql -p -u root
-
-```
-
-Para iniciar MySQL al arranque:
-
-Si usas systemd:
-
-```
-#systemctl enable mysqld.service
-
-```
-
-Si usas initscripts agrega `mysqld` a la lista de demonios en `/etc/rc.conf`
-
-```
-DAEMONS=(....mysqld)
-
-```
-
-## Habilitar acceso remoto
-
-El servidor MySQL no escucha en el puerto TCP 3306 por defecto. Para permitir conexiones (remotas) TCP, comenta la línea que contiene `skip-networking` en `/etc/mysql/my.cnf`.
-
-## Habilitar autocompletado
-
-El autocompletado en MySQL esta deshabilitado por defecto, para habilitarlo edite el archivo `/etc/mysql/my.cnf` y rempace la linea que dice `no-auto-rehash` por `auto-rehash`, el cambio se notara la proxima vez que inicie MySQL.
-
-## Como resetear la contraseña del Root
-
-Deten el demonio mysqld
-
-Si estas en systemd
-
-```
-#systemctl stop mysqld.service
-# mysqld_safe --skip-grant-tables &
-
-```
-
-Si estas en initscripts
-
-```
-# rc.d stop mysqld
-# mysqld_safe --skip-grant-tables &
-
-```
-
-Conectar al servidor mysql
-
-```
-# mysql -u root mysql
-
-```
-
-Cambia la contraseña del root:
-
-```
- mysql> UPDATE user SET password=PASSWORD("NEW_PASSWORD") WHERE User='root';
- mysql> FLUSH PRIVILEGES;
- mysql> exit
-
-```
-
-Entonces Inicia el demonio: Si estas en systemd
-
-```
-#systemctl start mysqld.service
-
-```
-
-Si estas en initscripts
-
-```
-# rc.d start mysqld
-
-```
-
-Listo.
+*   [JDBC y MySQL](/index.php/JDBC_and_MySQL "JDBC and MySQL")
+*   [PHP#MySQL/MariaDB](/index.php/PHP#MySQL/MariaDB "PHP")
+*   [Python](/index.php/Python_(Espa%C3%B1ol) "Python (Español)")
+    *   [mysql-python](https://www.archlinux.org/packages/?name=mysql-python)
+    *   [python-mysqlclient](https://www.archlinux.org/packages/?name=python-mysqlclient)
+    *   [python-mysql-connector](https://www.archlinux.org/packages/?name=python-mysql-connector), [python2-mysql-connector](https://www.archlinux.org/packages/?name=python2-mysql-connector)
+*   [C++](/index.php/C%2B%2B_(Espa%C3%B1ol) "C++ (Español)")
+    *   [mysql++](https://www.archlinux.org/packages/?name=mysql%2B%2B)
+*   [Perl](/index.php/Perl "Perl")
+    *   [perl-dbd-mysql](https://www.archlinux.org/packages/?name=perl-dbd-mysql)

@@ -11,7 +11,6 @@ This article collects user repositories with custom configuration files, commonl
     *   [1.1 Using gitignore](#Using_gitignore)
     *   [1.2 Other tools](#Other_tools)
     *   [1.3 Maintaining dotfiles across multiple machines](#Maintaining_dotfiles_across_multiple_machines)
-    *   [1.4 Confidential information](#Confidential_information)
 *   [2 Repositories](#Repositories)
 *   [3 See also](#See_also)
 
@@ -40,6 +39,8 @@ And commit the changes with [git-commit(1)](https://jlk.fjfi.cvut.cz/arch/manpag
 $ git commit -a
 
 ```
+
+**Tip:** To avoid accidentally commiting confidential information, see [Git#Filtering confidential information](/index.php/Git#Filtering_confidential_information "Git").
 
 ### Other tools
 
@@ -99,26 +100,18 @@ $ git commit -a
 
 One way of maintaining dotfiles across various machines across various hosts while still allowing for per-host customizations, is by maintaining a master-branch for all shared configuration, while each individual machine has a machine-specific branch checked out. Host-specific configuration can be committed to the machine-specific branch; as shared configuration is added to the master-branch, the per-machine branches are then rebased on top of the updated master.
 
+The drawback on having some of the configuration files in multiple branches is that you have to remember to maintain and synchronize changes. Use conditional logic to minimize the number of machine specific files. For example, bash scripts (i.e. `.bashrc`) can apply different configuration depending on the machine name (or type, custom variable, etc.):
+
+```
+if [[ "$(uname -n)" == "archlaptop" ]]; then
+    # laptop specific commands here
+else
+    # desktop or server machine commands
+fi
+
+```
+
 Another approach is to manage machine-specific configuration with tools based on template engines, e.g. [qualia](https://pypi.python.org/pypi/mir.qualia/) or [Dotdrop](https://github.com/deadc0de6/dotdrop). This approach requires less manual work and doesn't cause merge conflicts.
-
-### Confidential information
-
-Occasionally, software may keep plain-text passwords in configuration files, as opposed to hooking into a keyring. In these cases, git clean-filters may be handy to avoid accidentally commiting confidential information. E. g., the following file assigns a filter to the file “some-dotfile”:
-
- `.gitattributes` 
-```
-some-dotfile filter=remove-pass
-
-```
-
-Whenever the file “some-dotfile” is checked into git, git will invoke the filter “remove-pass” on the file before checking it in. The filter must be defined in the git-configuration file, e. g.:
-
- `.git/config` 
-```
-[filter "remove-pass"]
-clean = "sed -e 's/^password=.*/#password=TODO/'"
-
-```
 
 ## Repositories
 

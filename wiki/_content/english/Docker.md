@@ -34,6 +34,7 @@ Related articles
     *   [6.3 Error initializing graphdriver: devmapper](#Error_initializing_graphdriver:_devmapper)
     *   [6.4 Failed to create some/path/to/file: No space left on device](#Failed_to_create_some/path/to/file:_No_space_left_on_device)
     *   [6.5 Invalid cross-device link in kernel 4.19.1](#Invalid_cross-device_link_in_kernel_4.19.1)
+    *   [6.6 CPUACCT missing in docker with Linux-ck](#CPUACCT_missing_in_docker_with_Linux-ck)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -383,6 +384,14 @@ dpkg: error: error creating new backup file '/var/lib/dpkg/status-old': Invalid 
 ```
 
 Either add a `overlay.metacopy=N` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") or downgrade to 4.18.x until [this issue](https://github.com/docker/for-linux/issues/480) is resolved. More info in the [Arch forum](https://bbs.archlinux.org/viewtopic.php?id=241866).
+
+### CPUACCT missing in docker with Linux-ck
+
+In newer versions of [Linux-ck](/index.php/Linux-ck "Linux-ck") ([some experienced](https://aur.archlinux.org/packages/linux-ck#comment-677316) with 4.19, 4.20 seems general), a change to the MuQSS was made that disables the `CONFIG_CGROUP_CPUACCT` option from the kernel, which makes *some* usage of docker (`run` or `build`) to produce the following error:
+
+ `$ docker run --rm hello-world`  `docker: Error response from daemon: unable to find "cpuacct" in controller set: unknown.` 
+
+This error does not seems to affect the docker daemon, just containers. Read more on [Linux-ck#CPUACCT_missing_in_docker](/index.php/Linux-ck#CPUACCT_missing_in_docker "Linux-ck").
 
 ## See also
 

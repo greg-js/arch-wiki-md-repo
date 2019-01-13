@@ -237,37 +237,37 @@ To use persistent names in the [boot manager (boot loader)](/index.php/Boot_load
 
 The location of the root filesystem is given by the parameter `root` on the kernel commandline. The kernel commandline is configured from the bootloader, see [Kernel parameters#Configuration](/index.php/Kernel_parameters#Configuration "Kernel parameters"). To change to persistent device naming, only change the parameters which specify block devices, e.g. `root` and `resume`, while leaving other parameters as is. Various naming schemes are supported:
 
-Persistent device naming using label and the `LABEL=` format.
+Persistent device naming using label and the `LABEL=` format, in this example `System` is the LABEL of the root file system.
 
 ```
-root=LABEL=*System*
-
-```
-
-Persistent device naming using UUID and the `UUID=` format, in this example `*0a3407de-014b-458b-b5c1-848e92a327a3*` is the UUID of the root partition.
-
-```
-root=UUID=*0a3407de-014b-458b-b5c1-848e92a327a3*
+root=LABEL=System
 
 ```
 
-Persistent device naming using disk id and the `/dev` path format, in this example `*wwn-0x60015ee0000b237f-part2*` is the id of the root partition.
+Persistent device naming using UUID and the `UUID=` format, in this example `0a3407de-014b-458b-b5c1-848e92a327a3` is the UUID of the root file system.
 
 ```
-root=/dev/disk/by-id/*wwn-0x60015ee0000b237f-part2*
-
-```
-
-Persistent device naming using GPT partition UUID and the `PARTUUID=` format.
-
-```
-root=PARTUUID=*98a81274-10f7-40db-872a-03df048df366*
+root=UUID=0a3407de-014b-458b-b5c1-848e92a327a3
 
 ```
 
-Persistent device naming using GPT partition label and the `PARTLABEL=` format.
+Persistent device naming using disk id and the `/dev` path format, in this example `wwn-0x60015ee0000b237f-part2` is the id of the root partition.
 
 ```
-root=PARTLABEL=*GNU\057Linux*
+root=/dev/disk/by-id/wwn-0x60015ee0000b237f-part2
+
+```
+
+Persistent device naming using GPT partition UUID and the `PARTUUID=` format, in this example `98a81274-10f7-40db-872a-03df048df366` is the PARTUUID of the root partition.
+
+```
+root=PARTUUID=98a81274-10f7-40db-872a-03df048df366
+
+```
+
+Persistent device naming using GPT partition label and the `PARTLABEL=` format, in this example `GNU/Linux` is the PARTLABEL of the root partition.
+
+```
+root="PARTLABEL=GNU/Linux"
 
 ```

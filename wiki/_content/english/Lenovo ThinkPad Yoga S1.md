@@ -9,6 +9,7 @@
     *   [3.4 Sensor hub](#Sensor_hub)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Wakeup after suspend](#Wakeup_after_suspend)
+    *   [4.2 TLP](#TLP)
 
 ## Overview
 
@@ -61,3 +62,7 @@ After installing [iio-sensor-proxy](https://www.archlinux.org/packages/?name=iio
 echo XHC | sudo tee /proc/acpi/wakeup
 
 ```
+
+### TLP
+
+In case of system stability you should give up using TLP, sometimes it can hang system during sleep. Battery limits can be set using [tpacpi-bat](https://www.archlinux.org/packages/?name=tpacpi-bat).

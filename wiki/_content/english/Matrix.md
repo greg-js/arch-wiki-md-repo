@@ -17,8 +17,7 @@ The reference server implementation **Synapse** is available in the community re
 After installation, a configuration file needs to be generated. It should be readable by the *synapse* user:
 
 ```
-$ cd /var/lib/synapse
-$ sudo -u synapse python2 -m synapse.app.homeserver \
+$ sudo -u synapse python -m /var/lib/synapse/synapse.app.homeserver \
   --server-name my.domain.name \
   --config-path /etc/synapse/homeserver.yaml \
   --generate-config \
@@ -42,7 +41,7 @@ or using one of the [matrix clients](https://matrix.org/docs/projects/try-matrix
 
 ## Spider Webcrawler
 
-To enable the webcrawler, for server generated link previews, the additional packages [python2-lxml](https://www.archlinux.org/packages/?name=python2-lxml) and [python2-netaddr](https://www.archlinux.org/packages/?name=python2-netaddr) have to be installed. After that the config option `url_preview_enabled: True` can be set in your `homeserver.yaml`. To prevent the synapse server from issuing arbitrary GET requests to internal hosts the `url_preview_ip_range_blacklist:` has to be set.
+To enable the webcrawler, for server generated link previews, the additional packages [python-lxml](https://www.archlinux.org/packages/?name=python-lxml) and [python-netaddr](https://www.archlinux.org/packages/?name=python-netaddr) have to be installed. After that the config option `url_preview_enabled: True` can be set in your `homeserver.yaml`. To prevent the synapse server from issuing arbitrary GET requests to internal hosts the `url_preview_ip_range_blacklist:` has to be set.
 
 **Warning:** There are no defaults! By default the synapse server can crawl all your internal hosts.
 

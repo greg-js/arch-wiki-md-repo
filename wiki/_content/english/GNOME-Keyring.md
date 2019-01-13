@@ -113,7 +113,7 @@ export SSH_AUTH_SOCK
 
 See [Xfce#SSH agents](/index.php/Xfce#SSH_agents "Xfce") for use in Xfce.
 
-If you use [i3](/index.php/I3 "I3") and ssh is not showing the password prompt, giving the following error
+If using [i3](/index.php/I3 "I3") and ssh is not showing the password prompt, giving the following error:
 
 ```
 sign_and_send_pubkey: signing failed: agent refused operation
@@ -121,7 +121,7 @@ Permission denied (publickey).
 
 ```
 
-you need to add the DISPLAY environment variable to dbus-daemon in your .xinitrc, like this:
+then you need to add the DISPLAY environment variable to dbus-daemon via the .xinitrc:
 
  `~/.xinitrc` 
 ```
@@ -133,6 +133,8 @@ export SSH_AUTH_SOCK
 exec i3
 
 ```
+
+**Note:** If you use a different location for `~/.Xauthority` (`XAUTHORITY`) then you will have to also include this environment variable in the aforementioned `dbus-update-activation-environment` command.
 
 ### With a display manager
 

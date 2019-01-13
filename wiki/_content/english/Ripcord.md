@@ -6,7 +6,7 @@ Install the [ripcord](https://aur.archlinux.org/packages/ripcord/) package.
 
 ## Custom themes
 
-See the following [guide](https://gist.github.com/randrew/81d4fed3ef72e56bb3d24bf2a564225c). The directory containing `settings.ini` is `$HOME/.local/share/Ripcord`.
+See the following [guide](https://dev.cancel.fm/wiki?name=Custom_Themes). The directory containing `settings.ini` is `$HOME/.local/share/Ripcord`.
 
 ## Emoji glitch
 

@@ -30,6 +30,8 @@ OpenCL (Open Computing Language) is an open, royalty-free parallel programming s
 
 The OpenCL specification describes a programming language, a general environment that is required to be present, and a C API to enable programmers to call into this environment.
 
+**Tip:** The [clinfo](https://www.archlinux.org/packages/?name=clinfo) utility can be used to list OpenCL platforms, devices present and ICD loader properties.
+
 ### OpenCL Runtime
 
 To **execute** programs that use OpenCL, a compatible hardware runtime needs to be installed.
@@ -146,20 +148,21 @@ To find whether the installation was successful and if cuda is up and running, y
 
 ## List of GPGPU accelerated software
 
-*   [clinfo](https://www.archlinux.org/packages/?name=clinfo) – Find all possible (known) properties of the OpenCL platform and devices available on the system.
 *   [Bitcoin](/index.php/Bitcoin "Bitcoin")
 *   [Blender](/index.php/Blender "Blender") – CUDA support for Nvidia GPUs and OpenCL support for AMD GPUs. More information [here](http://blender.org/manual/render/cycles/features.html#features).
 *   [BOINC](/index.php/BOINC "BOINC")
-*   [cuda_memtest](https://aur.archlinux.org/packages/cuda_memtest/) – a GPU memtest. Despite its name, is supports both CUDA and OpenCL.
-*   [darktable](https://www.archlinux.org/packages/?name=darktable) – OpenCL feature requires at least 1 GB RAM on GPU and *Image support* (check output of clinfo command).
+*   [FFmpeg](/index.php/FFmpeg "FFmpeg") – more information [here](https://trac.ffmpeg.org/wiki/HWAccelIntro#OpenCL).
 *   [GIMP](/index.php/GIMP "GIMP") – experimental – more information [here](http://www.h-online.com/open/news/item/GIMP-2-8-RC-1-arrives-with-GPU-acceleration-1518417.html).
 *   [HandBrake](/index.php/HandBrake "HandBrake")
 *   [Hashcat](/index.php/Hashcat "Hashcat")
-*   [imagemagick](https://www.archlinux.org/packages/?name=imagemagick)
 *   [LibreOffice](/index.php/LibreOffice "LibreOffice") Calc – more information [here](https://help.libreoffice.org/Calc/OpenCL_Options).
+*   [clinfo](https://www.archlinux.org/packages/?name=clinfo) – Find all possible (known) properties of the OpenCL platform and devices available on the system.
+*   [cuda_memtest](https://aur.archlinux.org/packages/cuda_memtest/) – a GPU memtest. Despite its name, is supports both CUDA and OpenCL.
+*   [davinci-resolve](https://aur.archlinux.org/packages/davinci-resolve/) - a non-linear video editor. Can use both OpenCL and CUDA.
+*   [darktable](https://www.archlinux.org/packages/?name=darktable) – OpenCL feature requires at least 1 GB RAM on GPU and *Image support* (check output of clinfo command).
+*   [imagemagick](https://www.archlinux.org/packages/?name=imagemagick)
 *   [opencv](https://www.archlinux.org/packages/?name=opencv)
 *   [pyrit](https://www.archlinux.org/packages/?name=pyrit)
-*   [davinci-resolve](https://aur.archlinux.org/packages/davinci-resolve/) - a non-linear video editor. Can use both OpenCL and CUDA.
 
 ## Links and references
 

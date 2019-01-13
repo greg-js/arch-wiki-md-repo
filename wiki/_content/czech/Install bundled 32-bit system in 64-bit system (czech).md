@@ -4,13 +4,13 @@ Tento článek je určený především pro ty, kdo opravdu potřebují použív
 
 ## Contents
 
-*   [1 Instalace základních balíčků](#Instalace_z.C3.A1kladn.C3.ADch_bal.C3.AD.C4.8Dk.C5.AF)
-*   [2 /etc/rc.d/arch32 rc skript](#.2Fetc.2Frc.d.2Farch32_rc_skript)
+*   [1 Instalace základních balíčků](#Instalace_základních_balíčků)
+*   [2 /etc/rc.d/arch32 rc skript](#/etc/rc.d/arch32_rc_skript)
 *   [3 Konfigurace](#Konfigurace)
-*   [4 Spouštění 32bitových aplikací z 64bitového systému](#Spou.C5.A1t.C4.9Bn.C3.AD_32bitov.C3.BDch_aplikac.C3.AD_z_64bitov.C3.A9ho_syst.C3.A9mu)
-    *   [4.1 Stáhněte a nainstalujte schroot](#St.C3.A1hn.C4.9Bte_a_nainstalujte_schroot)
-    *   [4.2 Nastavení](#Nastaven.C3.AD)
-    *   [4.3 Spuštění aplikací](#Spu.C5.A1t.C4.9Bn.C3.AD_aplikac.C3.AD)
+*   [4 Spouštění 32bitových aplikací z 64bitového systému](#Spouštění_32bitových_aplikací_z_64bitového_systému)
+    *   [4.1 Stáhněte a nainstalujte schroot](#Stáhněte_a_nainstalujte_schroot)
+    *   [4.2 Nastavení](#Nastavení)
+    *   [4.3 Spuštění aplikací](#Spuštění_aplikací)
     *   [4.4 Zvuk](#Zvuk)
 
 ## Instalace základních balíčků

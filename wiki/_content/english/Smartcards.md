@@ -83,7 +83,7 @@ Possibly identified card (using /usr/share/pcsc/smartcard_list.txt):
 
 ### Mozilla Firefox
 
-The browser needs to set the new security-related device. Open the **Security Devices** page (reach it via Preferences, Privacy & Security, Certificates), then click **Load** and set the module `/usr/lib/opensc-pkcs11.so`.
+The browser needs to set the new security-related device. Open the **Security Devices** page (reach it via Preferences, Privacy & Security, Certificates), then click **Load** and set the Module Name to "CAC Module" and Module filename to `/usr/lib/opensc-pkcs11.so`.
 
 ## Tips and tricks
 

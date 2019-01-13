@@ -190,9 +190,10 @@ ListenStream=12345
 
 Allowing remote log-on through SSH is good for administrative purposes, but can pose a threat to your server's security. Often the target of brute force attacks, SSH access needs to be limited properly to prevent third parties gaining access to your server.
 
-Several other good guides are available on the topic, for example:
+Several other good guides and tools are available on the topic, for example:
 
 *   [Article by Mozilla Infosec Team](https://wiki.mozilla.org/Security/Guidelines/OpenSSH "mozillawiki:Security/Guidelines/OpenSSH")
+*   [Mozilla ssh_scan](https://github.com/mozilla/ssh_scan)
 *   [Secure sshd](https://stribika.github.io/2015/01/04/secure-secure-shell.html)
 
 #### Force public key authentication

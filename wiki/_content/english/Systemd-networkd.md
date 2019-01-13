@@ -554,7 +554,7 @@ Gateway=192.168.1.254
 
 *   The [networkd-dispatcher](https://aur.archlinux.org/packages/networkd-dispatcher/) daemon allows executing scripts in response to network interface state changes, similar to *NetworkManager-dispatcher*.
 
-*   As for the DNS resolver *systemd-resolved*, information about current DNS servers can be visualized with `systemd-resolve --status`.
+*   As for the DNS resolver *systemd-resolved*, information about current DNS servers can be visualized with `resolvectl status`.
 
 ## Troubleshooting
 

@@ -185,7 +185,7 @@ crypto=sha512:twofish-xts-plain64:512:0:
 
 ### Using sd-encrypt hook
 
-In all of the following `rd.luks` can be replaced with `luks`. `rd.luks` parameters are only honored by the initrd. `luks` parameters are honored by both the main system and initrd. Unless you want to control devices which get unlocked after boot from kernel command line, use `rd.luks`. See [systemd-cryptsetup-generator(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-cryptsetup-generator.8) for more options and more details.
+In all of the following a `rd.luks` can be replaced with a `luks`. The `rd.luks` parameters are only honored by the initrd, while the `luks` parameters are honored by both the main system and initrd. Unless you want to control devices which get unlocked after boot from kernel command line, use `rd.luks`. See [systemd-cryptsetup-generator(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-cryptsetup-generator.8) for more options and more details.
 
 **Tip:**
 
@@ -194,6 +194,7 @@ In all of the following `rd.luks` can be replaced with `luks`. `rd.luks` paramet
 
 **Note:**
 
+*   If you get dropped to an emergency shell at boot with systemd release 239.300-2 or later, see [FS#60907](https://bugs.archlinux.org/task/60907).
 *   All of the `rd.luks` parameters can be specified multiple times to unlock multiple LUKS encrypted volumes.
 *   The `rd.luks` parameters only support unlocking detectable LUKS devices. To unlock a plain dm-crypt device or a LUKS device with a detached header, you must specify it in `/etc/crypttab.initramfs`. See [#crypttab](#crypttab) for the syntax.
 

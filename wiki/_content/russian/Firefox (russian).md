@@ -16,6 +16,8 @@
     *   [2.1 Добавление движков поиска](#Добавление_движков_поиска)
         *   [2.1.1 arch-firefox-search](#arch-firefox-search)
 *   [3 Настройка](#Настройка)
+    *   [3.1 Воспроизведение медиаконтента](#Воспроизведение_медиаконтента)
+        *   [3.1.1 Дополнение "Open With"](#Дополнение_"Open_With")
 *   [4 Плагины](#Плагины)
 *   [5 Советы и полезности](#Советы_и_полезности)
 *   [6 Решение проблем](#Решение_проблем)
@@ -120,6 +122,39 @@ pref("general.config.filename", "mozilla.cfg");
 ```
 
 Обратите внимание, что первая строка должна содержать именно `//`. Синтаксис данного файла похож на синтаксис `user.js`.
+
+### Воспроизведение медиаконтента
+
+В Firefox используется [FFmpeg](/index.php/FFmpeg "FFmpeg") для воспроизведения медиаконтента в HTML5-элементах `<audio>` и `<video>`. Перейдите на [HTML5-страницу YouTube](https://www.youtube.com/html5), [страницу видео-теста](https://www.quirksmode.org/html5/tests/video.html) или [страницу аудио-теста](https://hpr.dogphilosophy.net/test/) для проверки поддерживаемых форматов.
+
+Воспроизведение HTML5 DRM поддерживается Google Widevine CDM, но не активировано по умолчанию. Смотрите *Настройки > Основные > Содержимое использующее технические средства защиты авторских прав (DRM)* для получения более подробной информации.
+
+Смотрите [Firefox/Tweaks#Enable additional media codecs](/index.php/Firefox/Tweaks#Enable_additional_media_codecs "Firefox/Tweaks") для получения информации об активации и расширенной настройке Widevine (Netflix, Amazon Video и т.д.).
+
+В Firefox используется [PulseAudio (Русский)](/index.php/PulseAudio_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PulseAudio (Русский)") при захвате и воспроизведении аудио, для чего потребуется установка пакета [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio).
+
+Если вы не можете использовать [PulseAudio (Русский)](/index.php/PulseAudio_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PulseAudio (Русский)") по какой-либо причине, воспользуйтесь [apulse](/index.php/Advanced_Linux_Sound_Architecture#PulseAudio_compatibility "Advanced Linux Sound Architecture"). В таком случае, необходимо исключить `/dev/snd/` из песочницы Firefox, добавив данный путь в список разделяемый запятой в `about:config`:
+
+```
+security.sandbox.content.write_path_whitelist
+
+```
+
+**Примечание:** Важно использовать завершающий слэш в `/dev/snd/`, иначе *apulse* будет сообщать об ошибках "Permission denied".
+
+Если у вас нет звука даже при использовании *apulse*, попробуйте добавить `16` в `security.sandbox.content.syscall_whitelist` в `about:config`.
+
+#### Дополнение "Open With"
+
+1.  Установите дополнение [Open With](https://addons.mozilla.org/ru/firefox/addon/open-with/).
+2.  Перейдите в *Дополнения > Open With > Preferences*.
+3.  Следуйте инструкциям по установке файла в систему, после чего проверьте его доступность.
+4.  Нажмите *Add browser*.
+5.  В диалоге укажите название для данной записи в меню и команду для запуска видеоплеера с поддержкой потокового вещания (например, [/usr/bin/mpv](/index.php/Mpv_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Mpv (Русский)")).
+6.  (Опционально) Добавьте необходимые аргументы плеера (например, `--force-window --ytdl` для *mpv*)
+7.  Нажмите правой кнопкой мыши на ссылке с видео или перейдите на его страницу. Выберите добавленную запись из меню Open With и если сайт поддерживается, откроется плеер с данным видео.
+
+Таким же образом можно добавить запись с *youtube-dl* для загрузки видео.
 
 ## Плагины
 

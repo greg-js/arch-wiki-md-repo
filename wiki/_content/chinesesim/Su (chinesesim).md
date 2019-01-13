@@ -11,12 +11,12 @@
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 用法](#.E7.94.A8.E6.B3.95)
-*   [3 另一个选择：Sudo](#.E5.8F.A6.E4.B8.80.E4.B8.AA.E9.80.89.E6.8B.A9.EF.BC.9ASudo)
-*   [4 提示和技巧](#.E6.8F.90.E7.A4.BA.E5.92.8C.E6.8A.80.E5.B7.A7)
-    *   [4.1 “登录至”其他用户](#.E2.80.9C.E7.99.BB.E5.BD.95.E8.87.B3.E2.80.9D.E5.85.B6.E4.BB.96.E7.94.A8.E6.88.B7)
-    *   [4.2 su 和 wheel 用户组](#su_.E5.92.8C_wheel_.E7.94.A8.E6.88.B7.E7.BB.84)
+*   [1 安装](#安装)
+*   [2 用法](#用法)
+*   [3 另一个选择：Sudo](#另一个选择：Sudo)
+*   [4 提示和技巧](#提示和技巧)
+    *   [4.1 “登录至”其他用户](#“登录至”其他用户)
+    *   [4.2 su 和 wheel 用户组](#su_和_wheel_用户组)
 
 ## 安装
 
@@ -88,7 +88,7 @@ alias su="su -l"
 
 ### su 和 wheel 用户组
 
-BSD su 默认仅允许 "wheel" [用户组](/index.php/Users_and_groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E7.94.A8.E6.88.B7.E7.BB.84.E7.AE.A1.E7.90.86 "Users and groups (简体中文)") 成员切换至 root 身份。而 GNU su 默认没有这一特性，可以使用 [PAM](/index.php/PAM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PAM (简体中文)") 来模拟这一特性。将 `/etc/pam.d/su` 和 `/etc/pam.d/su-l` 中相应的行取消注释：
+BSD su 默认仅允许 "wheel" [用户组](/index.php/Users_and_groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#用户组管理 "Users and groups (简体中文)") 成员切换至 root 身份。而 GNU su 默认没有这一特性，可以使用 [PAM](/index.php/PAM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PAM (简体中文)") 来模拟这一特性。将 `/etc/pam.d/su` 和 `/etc/pam.d/su-l` 中相应的行取消注释：
 
 ```
 auth required pam_wheel.so use_uid

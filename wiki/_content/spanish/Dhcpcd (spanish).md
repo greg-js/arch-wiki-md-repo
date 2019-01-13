@@ -86,20 +86,20 @@ El cliente DHCP puede identificarse de diferentes formas por el servidor:
 
 Para una descripción más extensa, vea [RFC 3315](https://tools.ietf.org/html/rfc3315#section-4.2).
 
-It depends on the DHCP-server configuration which options are optional or required to request a DHCP IP lease.
+Dependiendo de la configuración del servidor DHCP algunas opciones serán opcionales u obligatorias para solicitar una concesión de IP a DHCP.
 
-**Note:** The *dhcpcd* default configuration should be sufficient usually. The listed identifiers are determined automatically and manual configuration changes only be required in case of problems.
+**Nota:** La configuración por defecto de *dhcpcd* debería ser suficiente. La lista de identificadores son determinados automáticamente y solo se requiere cambiar la configuración manualmente en caso de experimentar problemas.
 
-If the *dhcpcd* default configuration fails to obtain an IP, the following options are available to use in `dhcpcd.conf`:
+Si la configuración por defecto de *dhcpcd* falla al obtener una IP, las siguientes opciones están disponibles para usarse en `dhcpcd.conf`:
 
-*   `hostname` sends the hostname set in `/etc/hostname`
-*   `clientid` sends the MAC address as identifier
-*   `iaid <interface>` derives the IAID to use for DHCP discovery. It has to be used in an interface block (started by `interface <interface>`, see [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1388376#p1388376)), but more frequently the next option is used:
-*   `duid` triggers using a combination of DUID and IAID as identifier.
+*   `hostname` envia el nombre del host establecido en `/etc/hostname`
+*   `clientid` envia la dirección MAC como identificador
+*   `iaid <interface>` deriva el IAID para utilizarlo en el detector DHCP. Se tiene que utilizar en un block de la interfaz (iniciada por `interface <interface>`, vea [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1388376#p1388376)), pero normalmente se utiliza la siguiente opción:
+*   El disparador `duid` utiliza una combinación de DUID y IAID como identificador.
 
-The DUID value is set in `/var/lib/dhcpcd/duid`. For efficient DHCP lease operation it is important that it is unique for the system and applies to all network interfaces alike, while the IAID represents an identifier for each of the systems' interfaces (see [RFC 4361](https://tools.ietf.org/html/rfc4361#section-6.1)).
+El valor DUID esta establecido en `/var/lib/dhcpcd/duid`. Para la eficiencia en la operación de concesión DHCP es importante que sea único para el sistema y se aplique a todas las interfaces de red iguales, mientras el IAID representa un identificador para cada interfaz del sistema (vea [RFC 4361](https://tools.ietf.org/html/rfc4361#section-6.1)).
 
-Care must be taken on a network running [Dynamic DNS](https://en.wikipedia.org/wiki/Dynamic_DNS "wikipedia:Dynamic DNS") to ensure that all three IDs are unique. If duplicate DUID values are presented to the DNS server, e.g. in the case where a virtual machine has been cloned and the hostname and MAC have been made unique but the DUID has not been changed, then the result will be that as each client with the duplicated DUID requests a lease the server will remove the predecessor from the DNS record.
+Tenga mucho cuidado en una red en funcionamiento con [DNS dinámicos](https://en.wikipedia.org/wiki/Dynamic_DNS "wikipedia:Dynamic DNS") en asegurarse de que los tres IDs son únicos. Si se presenta valores duplicados DUID en el servidor DNS, por ejemplo, en el caso donde una máquina virtual ha sido clonada y el nombre del host y la MAC se han hecho únicos pero el DUID no se ha cambiado, cada cliente con el DUID duplicado requiere que el servidor elimine el predecesor del registro DNS.
 
 ### Perfil estático
 

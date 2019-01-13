@@ -20,8 +20,9 @@ Related articles
     *   [5.2 Running VirtualBox with Linux-ck](#Running_VirtualBox_with_Linux-ck)
         *   [5.2.1 Use the unofficial repo (recommended if Linux-ck is installed from Repo-ck)](#Use_the_unofficial_repo_(recommended_if_Linux-ck_is_installed_from_Repo-ck))
         *   [5.2.2 DKMS](#DKMS)
-    *   [5.3 Downgrading](#Downgrading)
-    *   [5.4 Forum support](#Forum_support)
+    *   [5.3 CPUACCT missing in docker](#CPUACCT_missing_in_docker)
+    *   [5.4 Downgrading](#Downgrading)
+    *   [5.5 Forum support](#Forum_support)
 *   [6 See also](#See_also)
 
 ## General package details
@@ -128,6 +129,28 @@ Install **virtualbox** with the **virtualbox-host-dkms** package. Then setup DKM
 # pacman -S virtualbox virtualbox-host-dkms
 
 ```
+
+### CPUACCT missing in docker
+
+In newer versions of Linux-ck ([some experienced](https://aur.archlinux.org/packages/linux-ck#comment-677316) with 4.19, 4.20 seems general), a change to the MuQSS was made that disables the `CONFIG_CGROUP_CPUACCT` option from the kernel, which makes *some* usage of docker (`run` or `build`) to produce the following error:
+
+ `$ docker run --rm hello-world`  `docker: Error response from daemon: unable to find "cpuacct" in controller set: unknown.` 
+
+This error does not seems to affect the docker daemon, just containers. This is due a change where the `CONFIG_CGROUP_CPUACCT` kernel option is incompatible with `SCHED_MUQSS` when the last is set to `Y`, as seen in a [recent commit](https://github.com/ckolivas/linux/commit/1e3f40f5448c4a7a4257f0908f4620b3de679472#diff-df29aead4faac0f63a7af3a16a9ebd1cR1148) in ck's repository:
+
+```
+@@ -896,6 +913,7 @@ config CGROUP_DEVICE
+
+ config CGROUP_CPUACCT
+        bool "Simple CPU accounting controller"
++       depends on !SCHED_MUQSS
+        help
+          Provides a simple controller for monitoring the
+          total CPU consumed by the tasks in a cgroup.
+
+```
+
+You can check more information [in the forums](https://bbs.archlinux.org/viewtopic.php?pid=1825773#p1825773) or in [ck's blog](https://ck-hack.blogspot.com/2018/12/linux-420-ck1-muqss-version-0185-for.html?showComment=1547195122462#c1770603367031092645).
 
 ### Downgrading
 

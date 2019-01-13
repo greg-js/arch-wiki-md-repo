@@ -52,6 +52,7 @@ Related articles
         *   [4.12.2 Partial fetch](#Partial_fetch)
         *   [4.12.3 Get other branches](#Get_other_branches)
         *   [4.12.4 Possible Future alternative](#Possible_Future_alternative)
+    *   [4.13 Filtering confidential information](#Filtering_confidential_information)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -749,6 +750,25 @@ As usual, do `git pull` to update your snapshot.
 Git Virtual Filesystem (GVFS), developed by Microsoft, allows you to access git repositories without a local one. (See [this Microsoft blog](https://blogs.msdn.microsoft.com/bharry/2017/05/24/the-largest-git-repo-on-the-planet/) or the [Wikipedia artcile](https://en.wikipedia.org/wiki/Git_Virtual_File_System "wikipedia:Git Virtual File System").) It's not available in Linux yet.
 
 Anyway it is not for the above examples of the Linux kernel, though.
+
+### Filtering confidential information
+
+Occasionally, software may keep plain-text passwords in configuration files, as opposed to hooking into a keyring. In these cases, git clean-filters may be handy to avoid accidentally commiting confidential information. E. g., the following file assigns a filter to the file “some-dotfile”:
+
+ `.gitattributes` 
+```
+some-dotfile filter=remove-pass
+
+```
+
+Whenever the file “some-dotfile” is checked into git, git will invoke the filter “remove-pass” on the file before checking it in. The filter must be defined in the git-configuration file, e. g.:
+
+ `.git/config` 
+```
+[filter "remove-pass"]
+clean = "sed -e 's/^password=.*/#password=TODO/'"
+
+```
 
 ## See also
 

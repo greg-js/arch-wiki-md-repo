@@ -206,6 +206,7 @@ Ambiant light sensor: works with iio-sensor-proxy | Not tested | Hot keys: Works
 Webcam: Works
 Fingerprint scanner: not tested
 Keyboard backlight: works | Secure boot works with SYSLINUX. (installed from Archiso) -- |
+| HP Pavilion 15-cw0xxx | 2018.09 | AMD Raven Ridge: *amdgpu* | Intel HDA driver: *snd_hda_intel* ; pulseaudio requires a line to explicitly load an alsa sink for the speaker sound card | RTL8111\. Driver: *r8169* | Realtek RTL8822BE driver: *r8822be* | Yes | ACPI: works Suspend to RAM: works Suspend to Disk: untested Battery: works Display dimming: works CPU frequency scaling: works Rotation sensor: untested | not tested | Volume keys: work keyboard backlight: works | Make sure to install [amd-ucode](https://www.archlinux.org/packages/core/any/amd-ucode/) to enable full CPU speed. If not cores are capped to 2.0 GHz |
 | [HP Spectre x360 - 13-ap0xxxx](/index.php/HP_Spectre_x360_-_13-ap0xxxx "HP Spectre x360 - 13-ap0xxxx") | 2018.12 | Intel Core i7-8565U, Intel UHD Graphics 620 (*i915*) | Intel sound card: *snd-hda-intel* / Internal mic does not work | None | Intel Ac9560 Driver: *iwlwifi* | Yes | ACPI: works
 Suspend to RAM: works
 Suspend to Disk: untested

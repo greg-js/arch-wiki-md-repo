@@ -1530,7 +1530,7 @@ It is possible to run a virtual machine in a frozen state so that all changes wi
 However, if a machine is running in frozen mode it is still possible to save the changes to the disk image if it is afterwards desired by using the monitor console and running the following command:
 
 ```
- (qemu) commit
+ (qemu) commit all
 
 ```
 

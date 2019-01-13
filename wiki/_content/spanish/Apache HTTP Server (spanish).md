@@ -291,7 +291,7 @@ Asegúrese de probar de nuevo la página para verificar que funciona correctamne
 
 #### Configurar el soporte para MySQL
 
-Haga ésto sólo si quiere activar el soporte para MySQL. Configure previamente MySQL en los pasos descritos de [MySQL](/index.php/MySQL "MySQL")
+Haga ésto sólo si quiere activar el soporte para MySQL. Configure previamente MySQL en los pasos descritos de [MySQL](/index.php/MySQL_(Espa%C3%B1ol) "MySQL (Español)")
 
 *   Edite `/etc/php/php.ini` y descomente la siguiente línea (*quitando el ;*):
 

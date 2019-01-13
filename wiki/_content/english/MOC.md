@@ -57,6 +57,14 @@ go_up = U LEFT
 
 ```
 
+To speed up navigation set the following in `~/.moc/config`:
+
+```
+ReadTags = no
+ShowTime = no
+
+```
+
 ### systemd service
 
 [Enable](/index.php/Enable "Enable") this service for the respective user:

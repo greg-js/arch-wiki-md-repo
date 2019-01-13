@@ -68,7 +68,7 @@ For [reproducible builds](https://reproducible-builds.org/) it's important that 
 # LDFLAGS into the GOFLAGS env variable.
 export GOFLAGS="-gcflags=all=-trimpath=${PWD} -asmflags=all=-trimpath=${PWD} -ldflags=-extldflags=-zrelro -ldflags=-extldflags=-znow"
 
-# LDFLAGS defined in go build.
+# or alternatively use LDFLAGS defined in go build.
 go build \
     -gcflags "all=-trimpath=${PWD}" \
     -asmflags "all=-trimpath=${PWD}" \

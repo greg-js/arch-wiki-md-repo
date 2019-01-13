@@ -170,16 +170,18 @@ To add a new user, use the *useradd* command:
 
 When the login shell is intended to be non-functional, for example when the user account is created for a specific service, `/usr/bin/nologin` may be specified in place of a regular shell to politely refuse a login (see [nologin(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nologin.8)).
 
+See [useradd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/useradd.8) for other supported options.
+
 ### Example adding a user
 
 To add a new user named `archie`, creating its home directory and otherwise using all the defaults in terms of groups, folder names, shell used and various other parameters:
 
 ```
-# useradd --create-home archie
+# useradd -m archie
 
 ```
 
-**Tip:** The default value used for the login shell of the new account can be displayed using `useradd --default`. The default is Bash, a different shell can be specified with the `-s`/`--shell` option.
+**Tip:** The default value used for the login shell of the new account can be displayed using `useradd --defaults`. The default is Bash, a different shell can be specified with the `-s`/`--shell` option; see `/etc/shells` for valid login shells.
 
 Although it is not required to protect the newly created user `archie` with a password, it is highly recommended to do so:
 
@@ -211,6 +213,13 @@ With the following command a system user without shell access and without a `hom
 
 ```
 # useradd -r -s /usr/bin/nologin *username*
+
+```
+
+If the system user requires a specific user and group ID, specify them with the `-u`/`--uid` and `-g`/`--gid` options when creating the user:
+
+```
+# useradd -r -u 850 -g 850 -s /usr/bin/nologin *username*
 
 ```
 
@@ -265,13 +274,6 @@ To add a user to other groups use (`*additional_groups*` is a comma-separated li
 ```
 
 **Warning:** If the `-a` option is omitted in the *usermod* command above, the user is removed from all groups not listed in `*additional_groups*` (i.e. the user will be member only of those groups listed in `*additional_groups*`).
-
-Alternatively, *gpasswd* may be used. Though the username can only be added (or removed) from one group at a time:
-
-```
-# gpasswd --add *username* *group*
-
-```
 
 To enter user information for the [GECOS](#User_database) comment (e.g. the full user name), type:
 
@@ -329,7 +331,7 @@ Where:
 *   `*password*` is the user password.
     **Warning:** The `passwd` file is world-readable, so storing passwords (hashed or otherwise) in this file is insecure. Instead, Arch Linux uses [shadowed passwords](/index.php/Security#Password_hashes "Security"): the `password` field will contain a placeholder character (`x`) indicating that the hashed password is saved in the access-restricted file `/etc/shadow`. For this reason it is recommended to always change passwords using the **passwd** command.
 
-*   `*UID*` is the numerical user ID. In Arch, the first login name (after root) is UID 1000 by default; subsequent UID entries for users should be greater than 1000.
+*   `*UID*` is the numerical user ID. In Arch, the first login name (after root) for a so called normal user, as opposed to services, is UID 1000 by default; subsequent UID entries for users should be greater than 1000.
 *   `*GID*` is the numerical primary group ID for the user. Numeric values for GIDs are listed in [/etc/group](#Group_management).
 *   `*GECOS*` is an optional field used for informational purposes; usually it contains the full user name, but it can also be used by services such as *finger* and managed with the [chfn](#Other_examples_of_user_management) command. This field is optional and may be left blank.
 *   `*directory*` is used by the login command to set the `$HOME` environment variable. Several services with their own users use `/`, but normal users usually set a folder under `/home`.
@@ -387,7 +389,7 @@ Create new groups with the `groupadd` command:
 
 ```
 
-Add users to a group with the `gpasswd` command:
+Add users to a group with the `gpasswd` command (see [FS#58262](https://bugs.archlinux.org/task/58262) regarding errors; alternatively the `usermod` command may be used):
 
 ```
 # gpasswd -a *user* *group*

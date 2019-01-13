@@ -85,7 +85,7 @@ Users and groups are a mechanism for *access control*; administrators may fine-t
 
 ### تصعيد الامتيازات
 
-كلا الأمرين [su](/index.php/Su "Su") و [sudo](/index.php/Sudo "Sudo") يسمحان لك بتنفيذ أوامر باسم مستخدم آخر. يدخلك *su* مبدئيا إلى صدفة ولوج باسم المستخدم الجذر، و *sudo* مبدئيا يمنجك مؤقتا امتيازات الجذر لأمر واحد. طالع مقالتيهما الخاصتين لمعرفة الفروق.
+كلا الأمرين [su](/index.php/Su_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Su (العربية)") و [sudo](/index.php/Sudo "Sudo") يسمحان لك بتنفيذ أوامر باسم مستخدم آخر. يدخلك *su* مبدئيا إلى صدفة ولوج باسم المستخدم الجذر، و *sudo* مبدئيا يمنجك مؤقتا امتيازات الجذر لأمر واحد. طالع مقالتيهما الخاصتين لمعرفة الفروق.
 
 ### إدارة الخدمات
 
@@ -103,7 +103,7 @@ This section contains helpful information related to package management. For mor
 
 ### باكمان
 
-[باكمان](/index.php/Pacman "Pacman") هو مدير حزم آرتش لينكس: يجب على كل المستخدمين أن يألفوه قبل قراءة مقال آخر.
+[باكمان](/index.php/Pacman_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Pacman (العربية)") هو مدير حزم آرتش لينكس: يجب على كل المستخدمين أن يألفوه قبل قراءة مقال آخر.
 
 طالع [pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks") لاقتراحات حول كيفية تحسن تفاعلك مع *باكمان* وإدارة الحزم عموما.
 

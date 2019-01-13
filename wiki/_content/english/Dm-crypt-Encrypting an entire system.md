@@ -192,7 +192,7 @@ For [solid state drives](/index.php/Solid_state_drive "Solid state drive") you m
 
 *   In any scenario, never use file system repair software such as [fsck](/index.php/Fsck "Fsck") directly on an encrypted volume, or it will destroy any means to recover the key used to decrypt your files. Such tools must be used on the decrypted (opened) device instead.
 *   For the LUKS2 format:
-    *   [GRUB](/index.php/GRUB "GRUB") does not support LUKS2\. Do not use LUKS2 on partitions that GRUB needs to access.[[1]](https://savannah.gnu.org/bugs/?55093)
+    *   [GRUB](/index.php/GRUB "GRUB") does not support LUKS2.[[1]](https://savannah.gnu.org/bugs/?55093) Use LUKS1 on partitions that GRUB needs to access.
     *   The LUKS2 format has a high RAM usage per design, defaulting to 1GB per encrypted mapper. Machines with low RAM and/or multiple LUKS2 partitions unlocked in parallel may error on boot. See the `--pbkdf-memory` option to control memory usage.[[2]](https://gitlab.com/cryptsetup/cryptsetup/issues/372)
 
 ## LUKS on a partition
@@ -1125,7 +1125,11 @@ First create a keyfile and add it as LUKS key:
 
 ```
 
-Using the `encrypt` hook:
+Add the keyfile to the initramfs image:
+
+ `/etc/mkinitcpio.conf`  `FILES=(/root/cryplvm.keyfile)` 
+
+Set the following kernel parameters to unlock the LUKS partition with the keyfile. Using the `encrypt` hook:
 
 ```
 GRUB_CMDLINE_LINUX="... cryptkey=rootfs:/root/cryptlvm.keyfile"

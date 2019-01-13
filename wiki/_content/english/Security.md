@@ -1,5 +1,6 @@
 Related articles
 
+*   [Arch Security Team](/index.php/Arch_Security_Team "Arch Security Team")
 *   [General recommendations](/index.php/General_recommendations "General recommendations")
 *   [PAM](/index.php/PAM "PAM")
 *   [Capabilities](/index.php/Capabilities "Capabilities")
@@ -239,11 +240,11 @@ pam_tally is deprecated and superseded by pam_tally2, so you will want to commen
 That is all there is to it. If you feel adventurous, make three failed login attempts. Then you can see for yourself what happens. To unlock a user manually do:
 
 ```
-# pam_tally2 --user *username* --reset
+# pam_tally2 --reset --user *username*
 
 ```
 
-If you want to permanently lockout a user after 3 failed login attempts remove the `unlock_time` part of the line. The user can then not login until root unlocks the account.
+`unlock_time` is specified in seconds. If you want to permanently lockout a user after 3 failed login attempts remove the `unlock_time` part of the line. The user can then not login until root unlocks the account.
 
 ### Limit amount of processes
 
@@ -602,8 +603,6 @@ Subscribe to the Common Vulnerabilities and Exposure (CVE) Security Alert update
 
 ## Physical security
 
-**Note:** You can ignore this section if you just want to secure your computer against remote threats.
-
 Physical access to a computer is root access given enough time and resources. However, a high *practical* level of security can be obtained by putting up enough barriers.
 
 An attacker can gain full control of your computer on the next boot by simply attaching a malicious IEEE 1394 (FireWire), Thunderbolt or PCI Express device as they are given full memory access.[[3]](https://www.breaknenter.org/projects/inception/) There is little you can do from preventing this, or modification of the hardware itself - such as flashing malicious firmware onto a drive. However, the vast majority of attackers will not be this knowledgeable and determined.
@@ -666,7 +665,6 @@ Packages can be rebuilt and stripped of undesired functions and features as a me
 ## See also
 
 *   [Arch Linux Security Tracker](https://security.archlinux.org/)
-*   [List of applications/Security](/index.php/List_of_applications/Security "List of applications/Security")
 *   [CentOS Wiki: OS Protection](https://wiki.centos.org/HowTos/OS_Protection)
 *   [Hardening the Linux desktop](https://www.ibm.com/developerworks/linux/tutorials/l-harden-desktop/index.html)
 *   [Hardening the Linux server](https://www.ibm.com/developerworks/linux/tutorials/l-harden-server/index.html)
@@ -675,4 +673,3 @@ Packages can be rebuilt and stripped of undesired functions and features as a me
 *   [Red Hat Enterprise Linux 7 Security Guide](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Security_Guide/)
 *   [Securing Debian Manual (PDF)](https://www.debian.org/doc/manuals/securing-debian-howto/securing-debian-howto.en.pdf)
 *   [The paranoid #! Security Guide](https://web.archive.org/web/20140220055801/http://crunchbang.org:80/forums/viewtopic.php?id=24722)
-*   [UNIX and Linux Security Checklist v3.0](https://archive.fo/wrjIM)

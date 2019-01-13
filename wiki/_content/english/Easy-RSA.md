@@ -14,17 +14,17 @@ One can think of the key-based authentication in terms similar to that of how [S
 
 ## Contents
 
-*   [1 Certificate Authority (CA)](#Certificate_Authority_.28CA.29)
+*   [1 Certificate Authority (CA)](#Certificate_Authority_(CA))
 *   [2 OpenVPN server files](#OpenVPN_server_files)
     *   [2.1 CA public certificate](#CA_public_certificate)
     *   [2.2 Server certificate and private key](#Server_certificate_and_private_key)
-    *   [2.3 Diffie-Hellman (DH) parameters file](#Diffie-Hellman_.28DH.29_parameters_file)
-    *   [2.4 Hash-based Message Authentication Code (HMAC) key](#Hash-based_Message_Authentication_Code_.28HMAC.29_key)
+    *   [2.3 Diffie-Hellman (DH) parameters file](#Diffie-Hellman_(DH)_parameters_file)
+    *   [2.4 Hash-based Message Authentication Code (HMAC) key](#Hash-based_Message_Authentication_Code_(HMAC)_key)
 *   [3 OpenVPN client files](#OpenVPN_client_files)
     *   [3.1 Client certificate and private key](#Client_certificate_and_private_key)
 *   [4 Sign the certificates and pass them back to the server and clients](#Sign_the_certificates_and_pass_them_back_to_the_server_and_clients)
     *   [4.1 Obtain and sign the certificates on the CA](#Obtain_and_sign_the_certificates_on_the_CA)
-    *   [4.2 Pass the signed certificates back to the server and client(s)](#Pass_the_signed_certificates_back_to_the_server_and_client.28s.29)
+    *   [4.2 Pass the signed certificates back to the server and client(s)](#Pass_the_signed_certificates_back_to_the_server_and_client(s))
 *   [5 Revoking certificates and alerting the OpenVPN server](#Revoking_certificates_and_alerting_the_OpenVPN_server)
     *   [5.1 Revoke a certificate](#Revoke_a_certificate)
     *   [5.2 Alert the OpenVPN server](#Alert_the_OpenVPN_server)
@@ -47,7 +47,7 @@ On the **CA machine**, install [easy-rsa](https://www.archlinux.org/packages/?na
 
 ## OpenVPN server files
 
-A functional OpenVPN server requires the following (in alphabetical order):
+A functional OpenVPN server requires the following:
 
 1.  The CA's public certificate
 2.  The Diffie-Hellman (DH) parameters file (needed for TLS mode which is recommended).

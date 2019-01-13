@@ -7,8 +7,8 @@
 | <small>1.2.2.</small> [Listados](/index.php/Category:Lists_(Espa%C3%B1ol) "Category:Lists (Español)") <small>(4)</small> |
 | <small>1.2.2.1.</small> [Listados de programas](/index.php/Category:Lists_of_software_(Espa%C3%B1ol) "Category:Lists of software (Español)") <small>(22) (también en [Software](/index.php/Category:Software_(Espa%C3%B1ol) "Category:Software (Español)"))</small> |
 | <small>1.3.</small> [DeveloperWiki](/index.php/Category:DeveloperWiki_(Espa%C3%B1ol) "Category:DeveloperWiki (Español)") <small>(0) (también en [Desarrollo](/index.php/Category:Development_(Espa%C3%B1ol) "Category:Development (Español)"))</small> |
-| <small>1.3.1.</small> [Desarrollo de Arch](/index.php/Category:Arch_development_(Espa%C3%B1ol) "Category:Arch development (Español)") <small>(1)</small> |
-| <small>1.3.1.1.</small> [Desarrollo de paquetes](/index.php/Category:Package_development_(Espa%C3%B1ol) "Category:Package development (Español)") <small>(9)</small> |
+| <small>1.3.1.</small> [Desarrollo de Arch](/index.php/Category:Arch_development_(Espa%C3%B1ol) "Category:Arch development (Español)") <small>(2)</small> |
+| <small>1.3.1.1.</small> [Desarrollo de paquetes](/index.php/Category:Package_development_(Espa%C3%B1ol) "Category:Package development (Español)") <small>(10)</small> |
 | <small>1.3.1.2.</small> [Desarrollo de pacman](/index.php/Category:Pacman_development_(Espa%C3%B1ol) "Category:Pacman development (Español)") <small>(1)</small> |
 | <small>1.3.2.</small> [Proyectos de Arch](/index.php/Category:Arch_projects_(Espa%C3%B1ol) "Category:Arch projects (Español)") <small>(6) (también en [Proyectos de software](/index.php/Category:Software_projects_(Espa%C3%B1ol) "Category:Software projects (Español)"))</small> |
 | <small>1.4.</small> [Proceso de instalación](/index.php/Category:Installation_process_(Espa%C3%B1ol) "Category:Installation process (Español)") <small>(16)</small> |
@@ -16,14 +16,14 @@
 | <small>1.6.</small> [Equipos](/index.php/Category:Teams_(Espa%C3%B1ol) "Category:Teams (Español)") <small>(4)</small> |
 | <small>2.</small> [Desarrollo](/index.php/Category:Development_(Espa%C3%B1ol) "Category:Development (Español)") <small>(6)</small> |
 | <small>2.1.</small> [DeveloperWiki](/index.php/Category:DeveloperWiki_(Espa%C3%B1ol) "Category:DeveloperWiki (Español)") <small>(0) (también en [Acerca de Arch](/index.php/Category:About_Arch_(Espa%C3%B1ol) "Category:About Arch (Español)"))</small> |
-| <small>2.1.1.</small> [Desarrollo de Arch](/index.php/Category:Arch_development_(Espa%C3%B1ol) "Category:Arch development (Español)") <small>(1)</small> |
-| <small>2.1.1.1.</small> [Desarrollo de paquetes](/index.php/Category:Package_development_(Espa%C3%B1ol) "Category:Package development (Español)") <small>(9)</small> |
+| <small>2.1.1.</small> [Desarrollo de Arch](/index.php/Category:Arch_development_(Espa%C3%B1ol) "Category:Arch development (Español)") <small>(2)</small> |
+| <small>2.1.1.1.</small> [Desarrollo de paquetes](/index.php/Category:Package_development_(Espa%C3%B1ol) "Category:Package development (Español)") <small>(10)</small> |
 | <small>2.1.1.2.</small> [Desarrollo de pacman](/index.php/Category:Pacman_development_(Espa%C3%B1ol) "Category:Pacman development (Español)") <small>(1)</small> |
 | <small>2.1.2.</small> [Proyectos de Arch](/index.php/Category:Arch_projects_(Espa%C3%B1ol) "Category:Arch projects (Español)") <small>(6) (también en [Proyectos de software](/index.php/Category:Software_projects_(Espa%C3%B1ol) "Category:Software projects (Español)"))</small> |
-| <small>2.2.</small> [Automatización de diseño electronico](/index.php/Category:Electronic_design_automation_(Espa%C3%B1ol) "Category:Electronic design automation (Español)") <small>(1) (también en [Science](/index.php/Category:Science_(Espa%C3%B1ol) "Category:Science (Español)"))</small> |
+| <small>2.2.</small> [Automatización de diseño electronico](/index.php/Category:Electronic_design_automation_(Espa%C3%B1ol) "Category:Electronic design automation (Español)") <small>(2) (también en [Science](/index.php/Category:Science_(Espa%C3%B1ol) "Category:Science (Español)"))</small> |
 | <small>2.3.</small> [Frameworks](/index.php/Category:Frameworks_(Espa%C3%B1ol) "Category:Frameworks (Español)") <small>(2)</small> |
-| <small>2.4.</small> [Entornos de desarrollo integrados](/index.php/Category:Integrated_development_environments_(Espa%C3%B1ol) "Category:Integrated development environments (Español)") <small>(3)</small> |
-| <small>2.5.</small> [Issue tracking systems](/index.php/Category:Issue_tracking_systems_(Espa%C3%B1ol) "Category:Issue tracking systems (Español)") <small>(1) (también en [Aplicaciones Web](/index.php/Category:Web_applications_(Espa%C3%B1ol) "Category:Web applications (Español)"))</small> |
+| <small>2.4.</small> [Entornos de desarrollo integrados](/index.php/Category:Integrated_development_environments_(Espa%C3%B1ol) "Category:Integrated development environments (Español)") <small>(4)</small> |
+| <small>2.5.</small> [Sistemas de seguimiento de problemas](/index.php/Category:Issue_tracking_systems_(Espa%C3%B1ol) "Category:Issue tracking systems (Español)") <small>(1) (también en [Aplicaciones Web](/index.php/Category:Web_applications_(Espa%C3%B1ol) "Category:Web applications (Español)"))</small> |
 | <small>2.6.</small> [Lenguaje de programación](/index.php/Category:Programming_languages_(Espa%C3%B1ol) "Category:Programming languages (Español)") <small>(13)</small> |
 | <small>2.6.1.</small> [Intérpretes de órdenes](/index.php/Category:Command_shells_(Espa%C3%B1ol) "Category:Command shells (Español)") <small>(5) (también en [Línea de órdenes](/index.php/Category:Command-line_(Espa%C3%B1ol) "Category:Command-line (Español)"))</small> |
 | <small>2.6.2.</small> [Dialectos de Lisp](/index.php/Category:Lisp_dialects_(Espa%C3%B1ol) "Category:Lisp dialects (Español)") <small>(2)</small> |
@@ -41,12 +41,12 @@
 | <small>3.7.1.</small> [Teclados](/index.php/Category:Keyboards_(Espa%C3%B1ol) "Category:Keyboards (Español)") <small>(2)</small> |
 | <small>3.7.1.1.</small> [Configuración de teclado](/index.php/Category:Keyboard_configuration_(Espa%C3%B1ol) "Category:Keyboard configuration (Español)") <small>(1) (también en [Administración del sistema](/index.php/Category:System_administration_(Espa%C3%B1ol) "Category:System administration (Español)"))</small> |
 | <small>3.7.2.</small> [Ratones](/index.php/Category:Mice_(Espa%C3%B1ol) "Category:Mice (Español)") <small>(2)</small> |
-| <small>3.8.</small> [Portátiles](/index.php/Category:Laptops_(Espa%C3%B1ol) "Category:Laptops (Español)") <small>(1)</small> |
+| <small>3.8.</small> [Portátiles](/index.php/Category:Laptops_(Espa%C3%B1ol) "Category:Laptops (Español)") <small>(2)</small> |
 | <small>3.8.1.</small> [Acer](/index.php/Category:Acer_(Espa%C3%B1ol) "Category:Acer (Español)") <small>(6)</small> |
 | <small>3.8.2.</small> [ASUS](/index.php/Category:ASUS_(Espa%C3%B1ol) "Category:ASUS (Español)") <small>(2)</small> |
 | <small>3.8.3.</small> [Dell](/index.php/Category:Dell_(Espa%C3%B1ol) "Category:Dell (Español)") <small>(1)</small> |
 | <small>3.8.4.</small> [HP](/index.php/Category:HP_(Espa%C3%B1ol) "Category:HP (Español)") <small>(4)</small> |
-| <small>3.8.5.</small> [Lenovo](/index.php/Category:Lenovo_(Espa%C3%B1ol) "Category:Lenovo (Español)") <small>(3)</small> |
+| <small>3.8.5.</small> [Lenovo](/index.php/Category:Lenovo_(Espa%C3%B1ol) "Category:Lenovo (Español)") <small>(5)</small> |
 | <small>3.8.6.</small> [MSI](/index.php/Category:MSI_(Espa%C3%B1ol) "Category:MSI (Español)") <small>(0)</small> |
 | <small>3.8.7.</small> [Sony](/index.php/Category:Sony_(Espa%C3%B1ol) "Category:Sony (Español)") <small>(1)</small> |
 | <small>3.8.8.</small> [Toshiba](/index.php/Category:Toshiba_(Espa%C3%B1ol) "Category:Toshiba (Español)") <small>(2)</small> |
@@ -121,7 +121,7 @@
 | <small>4.15.</small> [Web](/index.php/Category:Web_(Espa%C3%B1ol) "Category:Web (Español)") <small>(1)</small> |
 | <small>4.15.1.</small> [Aplicaciones Web](/index.php/Category:Web_applications_(Espa%C3%B1ol) "Category:Web applications (Español)") <small>(2) (también en [Aplicaciones](/index.php/Category:Applications_(Espa%C3%B1ol) "Category:Applications (Español)"))</small> |
 | <small>4.15.1.1.</small> [Sistemas de gestión de contenidos](/index.php/Category:Content_management_systems_(Espa%C3%B1ol) "Category:Content management systems (Español)") <small>(1)</small> |
-| <small>4.15.1.2.</small> [Issue tracking systems](/index.php/Category:Issue_tracking_systems_(Espa%C3%B1ol) "Category:Issue tracking systems (Español)") <small>(1) (también en [Desarrollo](/index.php/Category:Development_(Espa%C3%B1ol) "Category:Development (Español)"))</small> |
+| <small>4.15.1.2.</small> [Sistemas de seguimiento de problemas](/index.php/Category:Issue_tracking_systems_(Espa%C3%B1ol) "Category:Issue tracking systems (Español)") <small>(1) (también en [Desarrollo](/index.php/Category:Development_(Espa%C3%B1ol) "Category:Development (Español)"))</small> |
 | <small>4.15.1.3.</small> [Interfaces de administración web](/index.php/Category:Web_admin_interfaces_(Espa%C3%B1ol) "Category:Web admin interfaces (Español)") <small>(1)</small> |
 | <small>4.15.1.4.</small> [Programas para Wiki](/index.php/Category:Wiki_software_(Espa%C3%B1ol) "Category:Wiki software (Español)") <small>(1)</small> |
 | <small>4.15.2.</small> [Navegadores web](/index.php/Category:Web_browser_(Espa%C3%B1ol) "Category:Web browser (Español)") <small>(6) (también en [Aplicaciones de internet](/index.php/Category:Internet_applications_(Espa%C3%B1ol) "Category:Internet applications (Español)"))</small> |
@@ -164,7 +164,7 @@
 | <small>5.1.12.</small> [Ofimática](/index.php/Category:Office_(Espa%C3%B1ol) "Category:Office (Español)") <small>(8)</small> |
 | <small>5.1.12.1.</small> [TeX](/index.php/Category:TeX_(Espa%C3%B1ol) "Category:TeX (Español)") <small>(1)</small> |
 | <small>5.1.13.</small> [Science](/index.php/Category:Science_(Espa%C3%B1ol) "Category:Science (Español)") <small>(6)</small> |
-| <small>5.1.13.1.</small> [Electronic design automation](/index.php/Category:Electronic_design_automation_(Espa%C3%B1ol) "Category:Electronic design automation (Español)") <small>(1) (también en [Desarrollo](/index.php/Category:Development_(Espa%C3%B1ol) "Category:Development (Español)"))</small> |
+| <small>5.1.13.1.</small> [Automatización de diseño electronico](/index.php/Category:Electronic_design_automation_(Espa%C3%B1ol) "Category:Electronic design automation (Español)") <small>(2) (también en [Desarrollo](/index.php/Category:Development_(Espa%C3%B1ol) "Category:Development (Español)"))</small> |
 | <small>5.1.13.2.</small> [Numerical analysis](/index.php/Category:Numerical_analysis_(Espa%C3%B1ol) "Category:Numerical analysis (Español)") <small>(1)</small> |
 | <small>5.1.14.</small> [Búsqueda](/index.php/Category:Search_(Espa%C3%B1ol) "Category:Search (Español)") <small>(2)</small> |
 | <small>5.1.15.</small> [Monitorización y notificación de estados](/index.php/Category:Status_monitoring_and_notification_(Espa%C3%B1ol) "Category:Status monitoring and notification (Español)") <small>(1)</small> |
@@ -207,7 +207,7 @@
 | <small>5.6.</small> [Empresas de software](/index.php/Category:Software_companies_(Espa%C3%B1ol) "Category:Software companies (Español)") <small>(0)</small> |
 | <small>5.6.1.</small> [Canonical](/index.php/Category:Canonical_(Espa%C3%B1ol) "Category:Canonical (Español)") <small>(2)</small> |
 | <small>5.6.2.</small> [Google](/index.php/Category:Google_(Espa%C3%B1ol) "Category:Google (Español)") <small>(2)</small> |
-| <small>5.6.3.</small> [Oracle](/index.php/Category:Oracle_(Espa%C3%B1ol) "Category:Oracle (Español)") <small>(3)</small> |
+| <small>5.6.3.</small> [Oracle](/index.php/Category:Oracle_(Espa%C3%B1ol) "Category:Oracle (Español)") <small>(4)</small> |
 | <small>5.6.4.</small> [Red Hat](/index.php/Category:Red_Hat_(Espa%C3%B1ol) "Category:Red Hat (Español)") <small>(1)</small> |
 | <small>5.7.</small> [Comparaciones de programas](/index.php/Category:Software_comparisons_(Espa%C3%B1ol) "Category:Software comparisons (Español)") <small>(2)</small> |
 | <small>5.8.</small> [Proyectos de software](/index.php/Category:Software_projects_(Espa%C3%B1ol) "Category:Software projects (Español)") <small>(0)</small> |
@@ -215,7 +215,7 @@
 | <small>5.8.2.</small> [Proyectos de Arch](/index.php/Category:Arch_projects_(Espa%C3%B1ol) "Category:Arch projects (Español)") <small>(6) (también en [DeveloperWiki](/index.php/Category:DeveloperWiki_(Espa%C3%B1ol) "Category:DeveloperWiki (Español)"))</small> |
 | <small>5.8.3.</small> [GNOME](/index.php/Category:GNOME_(Espa%C3%B1ol) "Category:GNOME (Español)") <small>(6) (también en [Entornos de escritorios](/index.php/Category:Desktop_environments_(Espa%C3%B1ol) "Category:Desktop environments (Español)"))</small> |
 | <small>5.8.4.</small> [GNU](/index.php/Category:GNU_(Espa%C3%B1ol) "Category:GNU (Español)") <small>(10)</small> |
-| <small>5.8.5.</small> [KDE](/index.php/Category:KDE_(Espa%C3%B1ol) "Category:KDE (Español)") <small>(2) (también en [Entornos de escritorios](/index.php/Category:Desktop_environments_(Espa%C3%B1ol) "Category:Desktop environments (Español)"))</small> |
+| <small>5.8.5.</small> [KDE](/index.php/Category:KDE_(Espa%C3%B1ol) "Category:KDE (Español)") <small>(3) (también en [Entornos de escritorios](/index.php/Category:Desktop_environments_(Espa%C3%B1ol) "Category:Desktop environments (Español)"))</small> |
 | <small>5.8.6.</small> [Mozilla](/index.php/Category:Mozilla_(Espa%C3%B1ol) "Category:Mozilla (Español)") <small>(1)</small> |
 | <small>5.8.7.</small> [OpenBSD](/index.php/Category:OpenBSD_(Espa%C3%B1ol) "Category:OpenBSD (Español)") <small>(1)</small> |
 | <small>5.8.8.</small> [Suckless](/index.php/Category:Suckless_(Espa%C3%B1ol) "Category:Suckless (Español)") <small>(2)</small> |
@@ -263,7 +263,7 @@
 | <small>6.11.</small> [Interfaz gráfico de usuario](/index.php/Category:Graphical_user_interfaces_(Espa%C3%B1ol) "Category:Graphical user interfaces (Español)") <small>(4)</small> |
 | <small>6.11.1.</small> [Entornos de escritorios](/index.php/Category:Desktop_environments_(Espa%C3%B1ol) "Category:Desktop environments (Español)") <small>(6)</small> |
 | <small>6.11.1.1.</small> [GNOME](/index.php/Category:GNOME_(Espa%C3%B1ol) "Category:GNOME (Español)") <small>(6) (también en [Proyectos de software](/index.php/Category:Software_projects_(Espa%C3%B1ol) "Category:Software projects (Español)"))</small> |
-| <small>6.11.1.2.</small> [KDE](/index.php/Category:KDE_(Espa%C3%B1ol) "Category:KDE (Español)") <small>(2) (también en [Proyectos de software](/index.php/Category:Software_projects_(Espa%C3%B1ol) "Category:Software projects (Español)"))</small> |
+| <small>6.11.1.2.</small> [KDE](/index.php/Category:KDE_(Espa%C3%B1ol) "Category:KDE (Español)") <small>(3) (también en [Proyectos de software](/index.php/Category:Software_projects_(Espa%C3%B1ol) "Category:Software projects (Español)"))</small> |
 | <small>6.11.1.3.</small> [Xfce](/index.php/Category:Xfce_(Espa%C3%B1ol) "Category:Xfce (Español)") <small>(1)</small> |
 | <small>6.11.2.</small> [Gestores de inicio de sesión](/index.php/Category:Display_managers_(Espa%C3%B1ol) "Category:Display managers (Español)") <small>(3)</small> |
 | <small>6.11.3.</small> [Conjunto de widgets](/index.php/Category:Widget_toolkits_(Espa%C3%B1ol) "Category:Widget toolkits (Español)") <small>(2) (también en [Desarrollo](/index.php/Category:Development_(Espa%C3%B1ol) "Category:Development (Español)"))</small> |

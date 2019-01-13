@@ -420,7 +420,7 @@ pactl move-sink-input $INPUTID $BINAURALSINKNAME
 
 ## PulseAudio over network
 
-One of PulseAudio's unique features is its ability to stream audio from clients over TCP to a server running the PulseAudio daemon reliably within a LAN. Ensure that client and server systems agree on the time (e.g. use NTP), or audio streams may be choppy or may not work at all.
+One of PulseAudio's unique features is its ability to stream audio from clients over TCP to a server running the PulseAudio daemon reliably within a LAN. Ensure that client and server systems agree on the time (i.e., use NTP), or audio streams may be choppy or may not work at all.
 
 ### TCP support (networked sound)
 

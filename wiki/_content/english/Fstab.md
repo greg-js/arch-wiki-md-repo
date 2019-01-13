@@ -219,7 +219,7 @@ UUID=47FA-4071     /home/username/Camera<font color="grey">\040</font>Pictures  
 
 Below atime options can impact drive performance.
 
-*   The `strictatime` option updates the access time of the files every time they are accessed. This is more purposeful when Linux is used for servers; it does not have much value for desktop use. The drawback about the `strictatime` option is that even reading a file from the page cache (reading from memory instead of the drive) will still result in a write!
+*   The `strictatime` option updates the access time of the files every time they are accessed. This is more purposeful when Linux is used for servers; it does not have much value for desktop use. The drawback about the `strictatime` option is that even reading a file from the page cache (reading from memory instead of the drive) will still result in a write.
 *   The `noatime` option fully disables writing file access times to the drive every time you read a file. This works well for almost all applications, except for those that need to know if a file has been read since the last time it was modified. The write time information to a file will continue to be updated anytime the file is written to with this option enabled.
 *   The `nodiratime` option disables the writing of file access times only for directories while other files still get access times written.
     **Note:** `noatime` implies `nodiratime`. [You do not need to specify both](http://lwn.net/Articles/244941/).

@@ -28,7 +28,7 @@ tt-rss se instala en `/usr/share/webapps/tt-rss/`. Tendrá que hacer que este di
 
 ### Configurar PHP y base de datos
 
-Deberá configurar una base de datos, ya sea [MySQL](/index.php/MySQL "MySQL") o [PostgreSQL](/index.php/PostgreSQL "PostgreSQL").
+Deberá configurar una base de datos, ya sea [MySQL](/index.php/MySQL_(Espa%C3%B1ol) "MySQL (Español)") o [PostgreSQL](/index.php/PostgreSQL "PostgreSQL").
 
 Cree un usuario y una base de datos, por ejemplo. con mysql:
 
