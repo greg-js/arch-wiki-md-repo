@@ -48,10 +48,10 @@
 | <small>3.8.4.</small> [HP](/index.php/Category:HP_(Espa%C3%B1ol) "Category:HP (Español)") <small>(4)</small> |
 | <small>3.8.5.</small> [Lenovo](/index.php/Category:Lenovo_(Espa%C3%B1ol) "Category:Lenovo (Español)") <small>(5)</small> |
 | <small>3.8.6.</small> [MSI](/index.php/Category:MSI_(Espa%C3%B1ol) "Category:MSI (Español)") <small>(0)</small> |
-| <small>3.8.7.</small> [Sony](/index.php/Category:Sony_(Espa%C3%B1ol) "Category:Sony (Español)") <small>(1)</small> |
+| <small>3.8.7.</small> [Sony](/index.php/Category:Sony_(Espa%C3%B1ol) "Category:Sony (Español)") <small>(2)</small> |
 | <small>3.8.8.</small> [Toshiba](/index.php/Category:Toshiba_(Espa%C3%B1ol) "Category:Toshiba (Español)") <small>(2)</small> |
 | <small>3.9.</small> [Placas base y BIOS](/index.php/Category:Mainboards_and_BIOS_(Espa%C3%B1ol) "Category:Mainboards and BIOS (Español)") <small>(1)</small> |
-| <small>3.10.</small> [Dispositivos móviles](/index.php/Category:Mobile_devices_(Espa%C3%B1ol) "Category:Mobile devices (Español)") <small>(1)</small> |
+| <small>3.10.</small> [Dispositivos móviles](/index.php/Category:Mobile_devices_(Espa%C3%B1ol) "Category:Mobile devices (Español)") <small>(2)</small> |
 | <small>3.10.1.</small> [Android](/index.php/Category:Android_(Espa%C3%B1ol) "Category:Android (Español)") <small>(2)</small> |
 | <small>3.11.</small> [Módems](/index.php/Category:Modems_(Espa%C3%B1ol) "Category:Modems (Español)") <small>(3) (también en [Administración de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)"))</small> |
 | <small>3.12.</small> [Otro hardware](/index.php/Category:Other_hardware_(Espa%C3%B1ol) "Category:Other hardware (Español)") <small>(1)</small> |
@@ -299,6 +299,6 @@
 | <small>6.20.9.1.</small> [Proveedores VPN](/index.php/Category:VPN_providers_(Espa%C3%B1ol) "Category:VPN providers (Español)") <small>(1)</small> |
 | <small>6.21.</small> [Sincronización](/index.php/Category:Synchronization_(Espa%C3%B1ol) "Category:Synchronization (Español)") <small>(1)</small> |
 | <small>6.21.1.</small> [Protocolo de tiempo de red (NTP)](/index.php/Category:Network_Time_Protocol_(Espa%C3%B1ol) "Category:Network Time Protocol (Español)") <small>(1) (también en [Protocolos](/index.php/Category:Protocols_(Espa%C3%B1ol) "Category:Protocols (Español)"), [Servidores](/index.php/Category:Servers_(Espa%C3%B1ol) "Category:Servers (Español)"))</small> |
-| <small>6.22.</small> [Recuperación del sistema](/index.php/Category:System_recovery_(Espa%C3%B1ol) "Category:System recovery (Español)") <small>(6)</small> |
+| <small>6.22.</small> [Recuperación del sistema](/index.php/Category:System_recovery_(Espa%C3%B1ol) "Category:System recovery (Español)") <small>(7)</small> |
 | <small>6.23.</small> [Virtualización](/index.php/Category:Virtualization_(Espa%C3%B1ol) "Category:Virtualization (Español)") <small>(2)</small> |
 | <small>6.23.1.</small> [Hipervisores](/index.php/Category:Hypervisors_(Espa%C3%B1ol) "Category:Hypervisors (Español)") <small>(5)</small> |

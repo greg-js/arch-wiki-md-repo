@@ -28,6 +28,15 @@ The following packages use the `plugdev` [user group](/index.php/User_group "Use
 *   [solaar](https://www.archlinux.org/packages/?name=solaar) or [solaar-git](https://aur.archlinux.org/packages/solaar-git/)
 *   [ltunify-git](https://aur.archlinux.org/packages/ltunify-git/)
 
+Do not forget to relogin to apply user's group membership. After installation, run
+
+```
+# udevadm control --reload-rules
+
+```
+
+and then replug reciever. After that you will not need root permissions.
+
 ## Usage
 
 pairingtool can only be used for pairing and does not provide feedback, it also needs to know the device name for pairing. ltunify and Solaar can detect the receiver automatically.

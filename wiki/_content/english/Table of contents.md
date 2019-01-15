@@ -23,7 +23,7 @@
 | <small>2.7.</small> [Version Control System](/index.php/Category:Version_Control_System "Category:Version Control System") <small>(12)</small> |
 | <small>2.7.1.</small> [Git web interfaces](/index.php/Category:Git_web_interfaces "Category:Git web interfaces") <small>(5) (also in [Web applications](/index.php/Category:Web_applications "Category:Web applications"))</small> |
 | <small>2.8.</small> [Widget toolkits](/index.php/Category:Widget_toolkits "Category:Widget toolkits") <small>(4) (also in [Graphical user interfaces](/index.php/Category:Graphical_user_interfaces "Category:Graphical user interfaces"))</small> |
-| <small>3.</small> [Hardware](/index.php/Category:Hardware "Category:Hardware") <small>(3)</small> |
+| <small>3.</small> [Hardware](/index.php/Category:Hardware "Category:Hardware") <small>(4)</small> |
 | <small>3.1.</small> [ARM architecture](/index.php/Category:ARM_architecture "Category:ARM architecture") <small>(7)</small> |
 | <small>3.2.</small> [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth") <small>(6) (also in [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking"))</small> |
 | <small>3.3.</small> [CPU](/index.php/Category:CPU "Category:CPU") <small>(10)</small> |
@@ -106,7 +106,7 @@
 | <small>4.12.5.</small> [Network Time Protocol](/index.php/Category:Network_Time_Protocol "Category:Network Time Protocol") <small>(4) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"), [Synchronization](/index.php/Category:Synchronization "Category:Synchronization"))</small> |
 | <small>4.12.6.</small> [Proxy servers](/index.php/Category:Proxy_servers "Category:Proxy servers") <small>(9) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
 | <small>4.12.7.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network") <small>(16) (also in [Networking](/index.php/Category:Networking "Category:Networking"), [Security](/index.php/Category:Security "Category:Security"))</small> |
-| <small>4.12.7.1.</small> [VPN providers](/index.php/Category:VPN_providers "Category:VPN providers") <small>(7)</small> |
+| <small>4.12.7.1.</small> [VPN providers](/index.php/Category:VPN_providers "Category:VPN providers") <small>(8)</small> |
 | <small>4.12.8.</small> [Web server](/index.php/Category:Web_server "Category:Web server") <small>(16) (also in [Streaming](/index.php/Category:Streaming "Category:Streaming"), [Web](/index.php/Category:Web "Category:Web"))</small> |
 | <small>4.12.9.</small> [WebDAV](/index.php/Category:WebDAV "Category:WebDAV") <small>(7) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
 | <small>4.12.10.</small> [XMPP](/index.php/Category:XMPP "Category:XMPP") <small>(5) (also in [Instant messaging](/index.php/Category:Instant_messaging "Category:Instant messaging"), [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
@@ -116,7 +116,7 @@
 | <small>4.13.2.</small> [Web server](/index.php/Category:Web_server "Category:Web server") <small>(16) (also in [Servers](/index.php/Category:Servers "Category:Servers"), [Web](/index.php/Category:Web "Category:Web"))</small> |
 | <small>4.14.</small> [Telephony](/index.php/Category:Telephony "Category:Telephony") <small>(2)</small> |
 | <small>4.15.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network") <small>(16) (also in [Security](/index.php/Category:Security "Category:Security"), [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
-| <small>4.15.1.</small> [VPN providers](/index.php/Category:VPN_providers "Category:VPN providers") <small>(7)</small> |
+| <small>4.15.1.</small> [VPN providers](/index.php/Category:VPN_providers "Category:VPN providers") <small>(8)</small> |
 | <small>4.16.</small> [Voice over IP](/index.php/Category:Voice_over_IP "Category:Voice over IP") <small>(7)</small> |
 | <small>4.17.</small> [Web](/index.php/Category:Web "Category:Web") <small>(4)</small> |
 | <small>4.17.1.</small> [Web applications](/index.php/Category:Web_applications "Category:Web applications") <small>(34) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
@@ -211,7 +211,7 @@
 | <small>5.3.1.5.</small> [Network Time Protocol](/index.php/Category:Network_Time_Protocol "Category:Network Time Protocol") <small>(4) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"), [Synchronization](/index.php/Category:Synchronization "Category:Synchronization"))</small> |
 | <small>5.3.1.6.</small> [Proxy servers](/index.php/Category:Proxy_servers "Category:Proxy servers") <small>(9) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
 | <small>5.3.1.7.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network") <small>(16) (also in [Networking](/index.php/Category:Networking "Category:Networking"), [Security](/index.php/Category:Security "Category:Security"))</small> |
-| <small>5.3.1.7.1.</small> [VPN providers](/index.php/Category:VPN_providers "Category:VPN providers") <small>(7)</small> |
+| <small>5.3.1.7.1.</small> [VPN providers](/index.php/Category:VPN_providers "Category:VPN providers") <small>(8)</small> |
 | <small>5.3.1.8.</small> [Web server](/index.php/Category:Web_server "Category:Web server") <small>(16) (also in [Streaming](/index.php/Category:Streaming "Category:Streaming"), [Web](/index.php/Category:Web "Category:Web"))</small> |
 | <small>5.3.1.9.</small> [WebDAV](/index.php/Category:WebDAV "Category:WebDAV") <small>(7) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
 | <small>5.3.1.10.</small> [XMPP](/index.php/Category:XMPP "Category:XMPP") <small>(5) (also in [Instant messaging](/index.php/Category:Instant_messaging "Category:Instant messaging"), [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
@@ -251,8 +251,8 @@
 | <small>6.3.2.7.</small> [Terminal multiplexers](/index.php/Category:Terminal_multiplexers "Category:Terminal multiplexers") <small>(3)</small> |
 | <small>6.3.2.8.</small> [Xorg commands](/index.php/Category:Xorg_commands "Category:Xorg commands") <small>(11) (also in [X server](/index.php/Category:X_server "Category:X server"))</small> |
 | <small>6.3.3.</small> [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators") <small>(17) (also in [Applications](/index.php/Category:Applications "Category:Applications"), [Emulation](/index.php/Category:Emulation "Category:Emulation"))</small> |
-| <small>6.4.</small> [Configuration files](/index.php/Category:Configuration_files "Category:Configuration files") <small>(12)</small> |
-| <small>6.5.</small> [Configuration management](/index.php/Category:Configuration_management "Category:Configuration management") <small>(8)</small> |
+| <small>6.4.</small> [Configuration files](/index.php/Category:Configuration_files "Category:Configuration files") <small>(13)</small> |
+| <small>6.5.</small> [Configuration management](/index.php/Category:Configuration_management "Category:Configuration management") <small>(7)</small> |
 | <small>6.6.</small> [Daemons](/index.php/Category:Daemons "Category:Daemons") <small>(16) (also in [Software](/index.php/Category:Software "Category:Software"))</small> |
 | <small>6.6.1.</small> [Servers](/index.php/Category:Servers "Category:Servers") <small>(10) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
 | <small>6.6.1.1.</small> [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System") <small>(19) (also in [Directory services](/index.php/Category:Directory_services "Category:Directory services"), [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
@@ -264,7 +264,7 @@
 | <small>6.6.1.5.</small> [Network Time Protocol](/index.php/Category:Network_Time_Protocol "Category:Network Time Protocol") <small>(4) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"), [Synchronization](/index.php/Category:Synchronization "Category:Synchronization"))</small> |
 | <small>6.6.1.6.</small> [Proxy servers](/index.php/Category:Proxy_servers "Category:Proxy servers") <small>(9) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
 | <small>6.6.1.7.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network") <small>(16) (also in [Networking](/index.php/Category:Networking "Category:Networking"), [Security](/index.php/Category:Security "Category:Security"))</small> |
-| <small>6.6.1.7.1.</small> [VPN providers](/index.php/Category:VPN_providers "Category:VPN providers") <small>(7)</small> |
+| <small>6.6.1.7.1.</small> [VPN providers](/index.php/Category:VPN_providers "Category:VPN providers") <small>(8)</small> |
 | <small>6.6.1.8.</small> [Web server](/index.php/Category:Web_server "Category:Web server") <small>(16) (also in [Streaming](/index.php/Category:Streaming "Category:Streaming"), [Web](/index.php/Category:Web "Category:Web"))</small> |
 | <small>6.6.1.9.</small> [WebDAV](/index.php/Category:WebDAV "Category:WebDAV") <small>(7) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
 | <small>6.6.1.10.</small> [XMPP](/index.php/Category:XMPP "Category:XMPP") <small>(5) (also in [Instant messaging](/index.php/Category:Instant_messaging "Category:Instant messaging"), [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
@@ -288,7 +288,7 @@
 | <small>6.11.4.1.</small> [Dynamic WMs](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs") <small>(13)</small> |
 | <small>6.11.4.2.</small> [Stacking WMs](/index.php/Category:Stacking_WMs "Category:Stacking WMs") <small>(16)</small> |
 | <small>6.11.4.3.</small> [Tiling WMs](/index.php/Category:Tiling_WMs "Category:Tiling WMs") <small>(16)</small> |
-| <small>6.11.5.</small> [X server](/index.php/Category:X_server "Category:X server") <small>(53)</small> |
+| <small>6.11.5.</small> [X server](/index.php/Category:X_server "Category:X server") <small>(52)</small> |
 | <small>6.11.5.1.</small> [Xorg commands](/index.php/Category:Xorg_commands "Category:Xorg commands") <small>(11) (also in [Commands](/index.php/Category:Commands "Category:Commands"))</small> |
 | <small>6.12.</small> [Input](/index.php/Category:Input "Category:Input") <small>(2)</small> |
 | <small>6.12.1.</small> [Input devices](/index.php/Category:Input_devices "Category:Input devices") <small>(15) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |
@@ -325,7 +325,7 @@
 | <small>6.21.11.</small> [Security testing](/index.php/Category:Security_testing "Category:Security testing") <small>(3)</small> |
 | <small>6.21.12.</small> [Surveillance](/index.php/Category:Surveillance "Category:Surveillance") <small>(3)</small> |
 | <small>6.21.13.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network") <small>(16) (also in [Networking](/index.php/Category:Networking "Category:Networking"), [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
-| <small>6.21.13.1.</small> [VPN providers](/index.php/Category:VPN_providers "Category:VPN providers") <small>(7)</small> |
+| <small>6.21.13.1.</small> [VPN providers](/index.php/Category:VPN_providers "Category:VPN providers") <small>(8)</small> |
 | <small>6.22.</small> [Synchronization](/index.php/Category:Synchronization "Category:Synchronization") <small>(6)</small> |
 | <small>6.22.1.</small> [Cloud synchronization](/index.php/Category:Cloud_synchronization "Category:Cloud synchronization") <small>(3)</small> |
 | <small>6.22.2.</small> [Network Time Protocol](/index.php/Category:Network_Time_Protocol "Category:Network Time Protocol") <small>(4) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"), [Servers](/index.php/Category:Servers "Category:Servers"))</small> |

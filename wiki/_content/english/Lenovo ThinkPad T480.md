@@ -6,8 +6,13 @@
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
 | [Webcam](/index.php/Webcam "Webcam") | Yes |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes |
-| [Mobile internet](/index.php/ThinkPad_mobile_internet "ThinkPad mobile internet") | Yes |
+| [Mobile internet](/index.php/ThinkPad_mobile_internet "ThinkPad mobile internet") | Yes¹ |
 | Fingerprint Sensor |
+| 
+
+1.  No working Linux driver for Fibocom L850-GL. See [this thread](https://forums.lenovo.com/t5/Linux-Discussion/X1C-gen-6-Fibocom-L850-GL-Ubuntu-18-04/m-p/4078413) and [this thread](https://forums.lenovo.com/t5/Linux-Discussion/Linux-support-for-WWAN-LTE-L850-GL-on-T580-T480/td-p/4067969) for more info.
+
+ |
 
 This article covers the installation and configuration of Arch Linux on a Lenovo T480 laptop. Everything seems to work pretty much out the box.
 
@@ -86,7 +91,7 @@ Bus 001 Device 002: ID 058f:9540 Alcor Micro Corp. AU9540 Smartcard Reader
 
 ```
 
-ID `2cb7:0210` is the 4G modem Fibocom L830-EB.
+ID `2cb7:0210` is the 4G modem Fibocom L830-EB. Noted that devices come with 4G modem Fibocom L850-GL may not work.
 
 ## Suspend / Hibernation
 

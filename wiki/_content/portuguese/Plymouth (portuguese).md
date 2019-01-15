@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Plymouth](/index.php/Plymouth "Plymouth"). Data da última tradução: 2018-12-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Plymouth&diff=0&oldid=559012) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Plymouth](/index.php/Plymouth "Plymouth"). Data da última tradução: 2019-01-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Plymouth&diff=0&oldid=562218) na versão em inglês.
 
 [Plymouth](http://www.freedesktop.org/wiki/Software/Plymouth) é um projeto da Fedora que consiste em proporcionar um processo de inicialização gráfico sem cintilação. Baseia-se no [modo de configuração do kernel](/index.php/Kernel_mode_setting "Kernel mode setting") (KMS) para definir uma resolução nativa da tela assim que possível, fornecendo então uma tela de boas vindas atrativa, até chegar no gerenciador de login.
 
@@ -34,7 +34,7 @@ Se também usa o [GDM](/index.php/GDM_(Portugu%C3%AAs) "GDM (Português)"), voc�
 
 Adicione `plymouth` ao vetor `HOOKS` em [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"). **Tem** que ser adicionado **após** `base` e `udev` para funcionar:
 
- `/etc/mkinitcpio.conf`  `HOOKS="base udev plymouth [...] "` 
+ `/etc/mkinitcpio.conf`  `HOOKS=(base udev plymouth [...])` 
 **Atenção:**
 
 *   Se usa [criptografia no disco rígido](/index.php/System_Encryption_with_LUKS_for_dm-crypt "System Encryption with LUKS for dm-crypt") com o hook `encrypt`, você **deve** substituir o hook `encrypt` com `plymouth-encrypt` e adicioná-lo após o hook `plymouth` para conseguir inserir senhas quando solicitado pelo TTY.
@@ -43,19 +43,19 @@ Adicione `plymouth` ao vetor `HOOKS` em [mkinitcpio.conf](/index.php/Mkinitcpio.
 
 Após adicionar o hook `plymouth-encrypt`, se a entrada for para plano de fundo em modo de texto em vez de ir para a solicitação de senha, é necessário adicionar o driver gráfico (kernel) ao seu initramfs. Por exemplo, se estiver usando intel:
 
- `/etc/mkinitcpio.conf`  `MODULES="i915 [...]"` 
+ `/etc/mkinitcpio.conf`  `MODULES=(i915 [...])` 
 
 ### Hook alternativo Plymouth (systemd)
 
 Se o seu [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") inclui o hook `systemd`, então substitua `plymouth` por `sd-plymouth`. Além disso, se utilizar criptografia nos discos rígidos, utilize `sd-encrypt` em vez de `encrypt` ou de `plymouth-encrypt`
 
- `/etc/mkinitcpio.conf`  `HOOKS="base systemd sd-plymouth [...] sd-encrypt [...]"` 
+ `/etc/mkinitcpio.conf`  `HOOKS=(base systemd sd-plymouth [...] sd-encrypt [...])` 
 
 Neste caso poderá ser necessário utilizar [plymouth-git](https://aur.archlinux.org/packages/plymouth-git/) em vez de [plymouth](https://aur.archlinux.org/packages/plymouth/).
 
 ### Linha de comando do kernel
 
-Neste momento precisa de adicionar os [parâmetros do kernel](/index.php/Kernel_parameters "Kernel parameters") `quiet splash vt.global_cursor_default=0`. Veja [Inicialização silenciosa](/index.php/Inicializa%C3%A7%C3%A3o_silenciosa "Inicialização silenciosa") para outros parâmetros para limitar a saída para o console.
+Neste momento precisa de adicionar os [parâmetros do kernel](/index.php/Kernel_parameters "Kernel parameters") `quiet splash loglevel=3 rd.udev.log-priority=3 vt.global_cursor_default=0`. Veja [Inicialização silenciosa](/index.php/Inicializa%C3%A7%C3%A3o_silenciosa "Inicialização silenciosa") para outros parâmetros para limitar a saída para o console.
 
 Recompile a sua imagem initrd (veja o artigo [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") para mais detalhes), por exemplo:
 

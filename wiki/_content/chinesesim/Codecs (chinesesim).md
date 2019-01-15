@@ -17,15 +17,15 @@
 
 ## Contents
 
-*   [1 需求条件](#.E9.9C.80.E6.B1.82.E6.9D.A1.E4.BB.B6)
-*   [2 常用编解码器](#.E5.B8.B8.E7.94.A8.E7.BC.96.E8.A7.A3.E7.A0.81.E5.99.A8)
-*   [3 后端](#.E5.90.8E.E7.AB.AF)
+*   [1 需求条件](#需求条件)
+*   [2 常用编解码器](#常用编解码器)
+*   [3 后端](#后端)
     *   [3.1 GStreamer](#GStreamer)
     *   [3.2 xine](#xine)
     *   [3.3 libavcodec](#libavcodec)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Install MPlayer binary codecs](#Install_MPlayer_binary_codecs)
-    *   [4.2 No H264, mpg4 or Musepack (.mpc) in Totem Player](#No_H264.2C_mpg4_or_Musepack_.28.mpc.29_in_Totem_Player)
+    *   [4.2 No H264, mpg4 or Musepack (.mpc) in Totem Player](#No_H264,_mpg4_or_Musepack_(.mpc)_in_Totem_Player)
 
 ## 需求条件
 

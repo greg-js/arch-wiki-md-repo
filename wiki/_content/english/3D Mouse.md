@@ -157,11 +157,16 @@ $> ./xcube
 
 ## Open Source Drivers
 
-There exists also an open source driver for 3Dconnexion devices maintained by the spacenav project. Unfortunately the list of supported applications is very short. Actually there is only one major software supporting the spacenav driver, namely the 3D creation suite Blender. For it to work three things must be fulfilled
+There exists also an open source driver for 3Dconnexion devices maintained by the spacenav project. From the short list of softwares that supports spacenavd we can cite:
+
+*   Blender
+*   Freecad
+
+For it to work three things must be fulfilled
 
 1.  The device must be recognized by the kernel as input device
 2.  The spacenavd daemon must be running
-3.  The application must be compiled with spacenav support. (community/[blender](https://www.archlinux.org/packages/?name=blender) isn't)
+3.  The application must be compiled with spacenav support. (community/[blender](https://www.archlinux.org/packages/?name=blender) should be)
 
 The first requirement should be fulfilled automatically after plugging in the device. It can be checked by looking if the device is listed in `/proc/bus/input/devices` e.g. by
 
@@ -182,7 +187,7 @@ trying to open X11 display ":0"
    XAUTHORITY=/home/user/.Xauthority
 ```
 
-If it works you can simply shut down the daemon by hitting CTRL-C and run it using `sudo /etc/rc.d/spacenavd start`. On a systemd-only system the following service script can be used to [start](/index.php/Start "Start") the daemon.
+If it works you can simply shut down the daemon by hitting CTRL-C and run it using `sudo /etc/rc.d/spacenavd start`. On a systemd-only system the following service script can be used to [start](/index.php/Start "Start") the daemon (should come with spacenavd).
 
  `/etc/systemd/system/spacenavd.service` 
 ```

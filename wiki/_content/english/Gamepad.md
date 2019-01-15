@@ -422,6 +422,8 @@ Your games will now work with bluetooth gamepad as long as xboxdrv is running.
 
 The [Steam](/index.php/Steam "Steam") client will recognize the controller and provide keyboard/mouse/gamepad emulation while Steam is running. The in-game Steam overlay needs to be enabled and working in order for gamepad emulation to work. You may need to run `udevadm trigger` with root privileges or plug the dongle out and in again, if the controller doesn't work immediately after installing and running Steam. If all else fails, try restarting the computer while the dongle is plugged in.
 
+For Steam client to be able to emulate other gamepads in games, you will need to follow this [post](https://steamcommunity.com/app/353370/discussions/2/1735465524711324558/) from Valve. Note that name of the file with udev rules may be different, for example `/usr/lib/udev/rules.d/70-steam-input.rules`. A reboot may be required after making changes.
+
 If you can't get the Steam Controller to work, see [#Steam Controller not pairing](#Steam_Controller_not_pairing).
 
 Alternatively you can install [python-steamcontroller-git](https://aur.archlinux.org/packages/python-steamcontroller-git/) to have controller and mouse emulation without Steam or [sc-controller](https://aur.archlinux.org/packages/sc-controller/) for a versatile graphical configuration tool simillar to what is provided by the Steam client.

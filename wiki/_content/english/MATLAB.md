@@ -573,6 +573,18 @@ Since R2018a, it is not possible to type text in interfaces based on MATLABWindo
 
 One possible workaround is to switch focus from the MATLABWindow to another window and then switch back - so that you can type.
 
+To elaborate more on this workaround (since the problem is still there in R2018b), here is what i did in my Openbox config (note that the A-Middle keybinding already exist in default config):
+
+```
+    <mousebind button="A-Middle" action="Press">
+       <action name="Unfocus"/>
+       <action name="Focus"/>
+     </mousebind>
+
+```
+
+Now, whenever it is not possible to type in a text field, I press Alt+Mouse middle mouse and then I can type again.
+
 ## Matlab in a systemd-nspawn
 
 Matlab can be run within a systemd-nspawn container to maintain a static system and avoid the library issues that often plague matlab installs after significant updates to libraries in Arch. Refer to [Systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") for detailed information on setting up such containers.

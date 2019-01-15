@@ -168,7 +168,7 @@ ac_adapter)
 
 ### Enabling volume control
 
-Find out the acpi identity of the volume buttons (see above) and susbtitute it for the acpi events in the files below.
+Find out the acpi identity of the volume buttons (see above) and substitute it for the acpi events in the files below.
 
  `/etc/acpi/events/vol-d` 
 ```

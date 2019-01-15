@@ -145,7 +145,6 @@ Another approach is to manage machine-specific configuration with tools based on
 | [swalladge](https://github.com/swalladge/dotfiles) | zsh/bash | i3 | neovim/vim | termite | tmux | cmus | i3pystatus | mutt |
 | [SyfiMalik](https://github.com/SyfiMalik/cfg) | zsh | i3 | vim | rxvt-unicode | tmux | ncmpcpp/mpd | polybar | mutt | weechat |
 | [thiagowfx](https://github.com/thiagowfx/dotfiles) | bash/zsh | i3 | vim/emacs | rxvt-unicode | ncmpcpp | i3blocks |
-| [unexist](http://hg.subtle.de/dotfiles/file) | zsh | subtle | vim | rxvt-unicode | ncmpcpp | mutt | irssi |
 | [vodik](https://github.com/vodik/dotfiles) | zsh | xmonad | vim | termite-git | tmux | ncmpcpp | custom | mutt | weechat |
 | [w0ng](https://github.com/w0ng/dotfiles) | zsh | dwm | vim | rxvt-unicode | tmux | ncmpcpp | custom | mutt | irssi |
 | [whitelynx](https://github.com/whitelynx/dotfiles) | fish | i3 | neovim | kitty | i3pystatus |

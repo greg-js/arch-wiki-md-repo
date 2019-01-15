@@ -464,6 +464,10 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 	[http://josm.openstreetmap.de/](http://josm.openstreetmap.de/) || [josm](https://www.archlinux.org/packages/?name=josm)
 
+*   **Mapton** — Extensible desktop map and globe application written in Java.
+
+	[https://mapton.org/](https://mapton.org/) || [mapton](https://aur.archlinux.org/packages/mapton/)
+
 *   **[Marble](https://en.wikipedia.org/wiki/Marble_(software) "wikipedia:Marble (software)")** — Virtual Globe and World Atlas that can be used to learn more about the Earth. Part of [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
 
 	[https://marble.kde.org/](https://marble.kde.org/) || KDE: [marble](https://www.archlinux.org/packages/?name=marble), Qt: [marble-qt](https://www.archlinux.org/packages/?name=marble-qt)

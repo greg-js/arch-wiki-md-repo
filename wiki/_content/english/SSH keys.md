@@ -213,7 +213,7 @@ $ ssh-keygen -f ~/.ssh/id_rsa -p
 
 #### Managing multiple keys
 
-It is possible —although [not considered best practice](http://security.stackexchange.com/questions/10963/whats-the-common-pragmatic-strategy-for-managing-key-pairs)— to use the same SSH key pair for multiple hosts.
+It is possible — although controversial [[8]](https://security.stackexchange.com/questions/40050/best-practice-separate-ssh-key-per-host-and-user-vs-one-ssh-key-for-all-hos) [[9]](https://security.stackexchange.com/questions/10963/whats-the-common-pragmatic-strategy-for-managing-key-pairs) — to use the same SSH key pair for multiple hosts.
 
 On the other hand, it is rather easy to maintain distinct keys for multiple hosts by using the `IdentityFile` directive in your openSSH config file:
 

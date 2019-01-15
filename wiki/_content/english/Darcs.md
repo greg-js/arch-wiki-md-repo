@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Synchronization and backup programs#Version control systems](/index.php?title=Synchronization_and_backup_programs&redirect=no#Version_control_systems "Synchronization and backup programs")
+*   [List of applications/Utilities#Version control systems](/index.php/List_of_applications/Utilities#Version_control_systems "List of applications/Utilities")

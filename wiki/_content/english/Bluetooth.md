@@ -44,7 +44,7 @@ Related articles
 
 **Note:**
 
-*   By default the bluetooth daemon will only give out bnep0 devices to users that are a member of the `lp` group. Make sure to add your user to that group if you intend to connect to a bluetooth tether. You can change the group that is required in the file `/etc/dbus-1/system.d/bluetooth.conf`.
+*   By default the bluetooth daemon will only give out bnep0 devices to users that are a member of the `lp` group. Make sure to add your user to that group if you intend to connect to a bluetooth tether. You can change the group that is required in the file `/usr/share/dbus-1/system.d/bluetooth.conf`.
 *   Some Bluetooth adapters are bundled with a Wi-Fi card (e.g. [Intel Centrino](http://www.intel.com/content/www/us/en/wireless-products/centrino-advanced-n-6235.html)). These require that the Wi-Fi card is firstly enabled (typically a keyboard shortcut on a laptop) in order to make the Bluetooth adapter visible to the kernel.
 *   Some Bluetooth cards (e.g. Broadcom) conflict with the network adapter. Thus, you need to make sure that your Bluetooth device get connected before the network service boot.
 *   Some tools such as hcitool and hciconfig have been deprecated upstream, and are no longer included in [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils). Since these tools will no longer be updated, it is recommended that scripts be updated to avoid using them. If you still desire to use them, install [bluez-utils-compat](https://aur.archlinux.org/packages/bluez-utils-compat/). See [FS#53110](https://bugs.archlinux.org/task/53110) and [the Bluez mailing list](https://www.spinics.net/lists/linux-bluetooth/msg69239.html) for more information.

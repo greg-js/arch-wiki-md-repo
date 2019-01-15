@@ -244,7 +244,7 @@ That is all there is to it. If you feel adventurous, make three failed login att
 
 ```
 
-`unlock_time` is specified in seconds. If you want to permanently lockout a user after 3 failed login attempts remove the `unlock_time` part of the line. The user can then not login until root unlocks the account.
+`unlock_time` is specified in seconds. If you want to permanently lockout a user after 3 failed login attempts remove the `unlock_time` part of the line. The user is then unable to login until root unlocks the account.
 
 ### Limit amount of processes
 

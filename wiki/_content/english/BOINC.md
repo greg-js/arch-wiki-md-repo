@@ -165,7 +165,7 @@ To do this on boot, create the following tmpfiles.d config:
 
 ### Unable to download with World Community Grid
 
-If you are unable to download new work units for the World Community Grid project, [makepkg](/index.php?title=Rebuild&action=edit&redlink=1 "Rebuild (page does not exist)") [openssl](https://www.archlinux.org/packages/?name=openssl) using a [modified PKGBUILD](http://pastebin.com/pYcYf4dr). Then [restart](/index.php/Restart "Restart") `boinc-client.service`.
+If you are unable to download new work units for the World Community Grid project, [rebuild](/index.php/Makepkg "Makepkg") [openssl](https://www.archlinux.org/packages/?name=openssl) using a [modified PKGBUILD](http://pastebin.com/pYcYf4dr). Then [restart](/index.php/Restart "Restart") `boinc-client.service`.
 
 Your new work units should now be able to download. If you have any trouble, the original thread on the forum can be seen [here](https://bbs.archlinux.org/viewtopic.php?pid=1160393#p1160393).
 

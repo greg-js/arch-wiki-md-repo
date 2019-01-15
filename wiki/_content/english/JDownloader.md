@@ -1,4 +1,4 @@
-[JDownloader](http://jdownloader.org/) is a download manager written in [Java](/index.php/Java "Java"). JDownloader can download normal files, but also files from online file hosting services like Rapidshare.com.
+[JDownloader](http://jdownloader.org/) is a download manager written in [Java](/index.php/Java "Java"). JDownloader can download normal files, but also files from online file hosting services like MEGA.nz.
 
 ## Contents
 

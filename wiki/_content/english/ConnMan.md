@@ -45,7 +45,7 @@ ConnMan comes with the [connmanctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/ma
 
 *   **cmst** — Qt GUI for ConnMan.
 
-	[https://github.com/andrew-bibb/cmst](https://github.com/andrew-bibb/cmst) || [cmst](https://aur.archlinux.org/packages/cmst/)
+	[https://github.com/andrew-bibb/cmst](https://github.com/andrew-bibb/cmst) || [cmst](https://www.archlinux.org/packages/?name=cmst)
 
 *   **connman-ncurses** — Simple ncurses UI for ConnMan; not all of connman functionality is implemented, but usable (with X or from terminal without X), see the [wiki](https://github.com/eurogiciel-oss/connman-json-client/wiki).
 

@@ -28,6 +28,8 @@ When executed, it will also automatically:
 *   Create a local `~/.config/user-dirs.dirs` configuration file: used by applications to find and use home directories specific to an account.
 *   Create a local `~/.config/user-dirs.locale` configuration file: used to set the language according to the locale in use.
 
+The user service `xdg-user-dirs-update.service` will also be installed and enabled by default, in order to keep your directories up to date by running this command at the beginning of each login session.
+
 ## Creating custom directories
 
 Both the local `~/.config/user-dirs.dirs` and global `/etc/xdg/user-dirs.defaults` configuration files use the following environmental variable format to point to user directories: `XDG_DIRNAME_DIR="$HOME/directory_name"` An example configuration file will/may likely look like this (these are all the template directories):

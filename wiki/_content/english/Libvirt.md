@@ -643,6 +643,8 @@ Now you are ready to create a UEFI virtual machine. Create a new virtual machine
 
 For more information about this, refer to [this fedora wiki page](https://fedoraproject.org/wiki/Using_UEFI_with_QEMU).
 
+**Note:** The nvram entry can be added to `~/.config/libvirt/qemu.conf` to enable UEFI in user sessions.
+
 ## PulseAudio
 
 The PulseAudio daemon normally runs under your regular user account, and will only accept connections from the same user. This can be a problem if QEMU is being run as root through <a class="mw-selflink selflink">libvirt</a>. To run QEMU as a regular user, edit `/etc/libvirt/qemu.conf` and set the `user` option to your username.

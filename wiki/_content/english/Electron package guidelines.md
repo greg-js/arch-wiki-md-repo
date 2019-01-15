@@ -38,9 +38,11 @@ export npm_config_target_arch=x64
 export npm_config_disturl=[https://atom.io/download/electron](https://atom.io/download/electron)
 export npm_config_runtime=electron
 export npm_config_build_from_source=true
-HOME=~/.electron-gyp npm install
+HOME="$srcdir/.electron-gyp" npm install
 
 ```
+
+Set `HOME` to a path inside the `$srcdir` so the build process doesn't place any files in your real `HOME` directory. Make sure to adjust the path for all further commands that make use of the `.electron-gyp` cache.
 
 (more details [here](https://electronjs.org/docs/tutorial/using-native-node-modules)).
 

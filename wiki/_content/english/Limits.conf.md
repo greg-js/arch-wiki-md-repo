@@ -5,7 +5,7 @@ Related articles
 
 Using `limits.conf`, you can limit how many resources various users and groups are allocated. This is a useful way of preventing, for example, fork-bombs from using up all system resources.
 
-**Warning:** `/etc/security/limits.conf` does not work if systemd exists. The files `/etc/systemd/system.conf`, `/etc/systemd/user.conf`, and `/etc/systemd/<systemd_unit>/override.conf` would control the limit. See the [systemd-system.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-system.conf.5) man page for details.
+**Note:** `/etc/security/limits.conf` does not work if systemd exists. The files `/etc/systemd/system.conf`, `/etc/systemd/user.conf`, and `/etc/systemd/<systemd_unit>/override.conf` would control the limit. See the [systemd-system.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-system.conf.5) man page for details.
 
 ## Contents
 

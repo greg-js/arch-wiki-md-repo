@@ -33,7 +33,8 @@ See [PulseAudio](/index.php/PulseAudio "PulseAudio") for the main article.
     *   [2.6 No microphone on Steam or Skype with enable-remixing = no](#No_microphone_on_Steam_or_Skype_with_enable-remixing_=_no)
     *   [2.7 Microphone distorted due to automatic adjustment](#Microphone_distorted_due_to_automatic_adjustment)
     *   [2.8 Microphone crackling with Realtek ALC892](#Microphone_crackling_with_Realtek_ALC892)
-    *   [2.9 Echo test](#Echo_test)
+    *   [2.9 Microphone crackling with Azalia chipsets](#Microphone_crackling_with_Azalia_chipsets)
+    *   [2.10 Echo test](#Echo_test)
 *   [3 Audio quality](#Audio_quality)
     *   [3.1 Enable Echo/Noise-Cancellation](#Enable_Echo/Noise-Cancellation)
         *   [3.1.1 Possible 'aec_args' for 'aec_method=webrtc'](#Possible_'aec_args'_for_'aec_method=webrtc')
@@ -544,6 +545,23 @@ and add the `use_ucm` option to
  `/etc/pulse/default.pa`  `load-module module-udev-detect use_ucm=0 tsched=0` 
 
 then restart pulseaudio.
+
+### Microphone crackling with Azalia chipsets
+
+Some Azalia based chips have popping/crackling noise and distortion while recording using a microphone with PulseAudio. This can be fixed by loading the `snd-hda-intel` module with `position_fix` set to an appropriate value. This tells the module to use various DMA pointer fixes. Use trial and error to determine which value works for you. ([source](https://wiki.sabayon.org/index.php?title=HOWTO:_Resolve_Problems_with_HDA-Intel_Sound_Cards))
+
+Create a new `modprobe.d` config:
+
+ `/etc/modprobe.d/azalia-microphone.conf`  `options snd-hda-intel position_fix=1` 
+
+Valid values for `position_fix` are:
+
+*   `0` = Auto
+*   `1` = None
+*   `2` = POSBUF
+*   `3` = FIFO size
+
+then reload your modules.
 
 ### Echo test
 

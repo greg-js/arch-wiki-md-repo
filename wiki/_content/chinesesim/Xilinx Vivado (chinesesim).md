@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Xilinx_Vivado](/index.php/Xilinx_Vivado "Xilinx Vivado") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-12-29，点击[这里](https://wiki.archlinux.org/index.php?title=Xilinx_Vivado&diff=0&oldid=560755)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Xilinx_Vivado](/index.php/Xilinx_Vivado "Xilinx Vivado") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-12-29，点击[这里](https://wiki.archlinux.org/index.php?title=Xilinx_Vivado&diff=0&oldid=561915)可以查看翻译后英文页面的改动。
 
 Archlinux 并不受 Vivado 的正式支持，但是从 [Xilinx ISE WebPACK](/index.php/Xilinx_ISE_WebPACK "Xilinx ISE WebPACK") 的使用体验上看，只需要一点修改便能正常使用所有功能。
 
@@ -28,6 +28,8 @@ Archlinux 并不受 Vivado 的正式支持，但是从 [Xilinx ISE WebPACK](/ind
 ### 依赖
 
 安装程序需要 ncurses5 库，并且不能使用官方仓库里的 ncurses6。您可以通过安装 [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") 中的 [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) 来解决这个问题。您可能需要安装 [libpng12](https://www.archlinux.org/packages/?name=libpng12) 与 [lib32-libpng12](https://www.archlinux.org/packages/?name=lib32-libpng12) 以便使用 Xilinx Document Navigator。
+
+SDK 2018.3（以及其他可能的版本）需要 gtk2 库。如果您打算使用 SDK，您可能需要安装 [gtk2](https://www.archlinux.org/packages/?name=gtk2)。
 
 ## 安装
 

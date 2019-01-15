@@ -134,7 +134,7 @@ Restart `httpd.service` to apply any changes. See also [Umask#Set the mask value
 
 ### TLS
 
-**Warning:** If you deploy [TLS](https://en.wikipedia.org/wiki/TLS "wikipedia:TLS"), be sure to follow [weakdh.org's guide](https://weakdh.org/sysadmin.html) to prevent vulnerabilities. For more information see [Server-side TLS](/index.php/Server-side_TLS "Server-side TLS").
+**Warning:** If you deploy [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security "wikipedia:Transport Layer Security"), be sure to follow [weakdh.org's guide](https://weakdh.org/sysadmin.html) to prevent vulnerabilities. For more information see [Server-side TLS](/index.php/Server-side_TLS "Server-side TLS").
 
 Firstly [obtain a certificate](/index.php/Obtain_a_certificate "Obtain a certificate").
 

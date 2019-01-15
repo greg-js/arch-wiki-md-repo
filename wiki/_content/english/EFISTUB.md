@@ -158,7 +158,7 @@ root=/dev/sda2 ro initrd=\initramfs-linux.img
 
 ```
 
-**Note:** Add extra spaces in the beginning of the line in the file. There is a byte order mark at the beginning of the line that will squash any character next to it which will cause an error when booting.
+**Note:** Add extra spaces in the beginning of the line in the file. There is a [byte order mark](https://en.wikipedia.org/wiki/Byte_order_mark "wikipedia:Byte order mark") at the beginning of the line that will squash any character next to it which will cause an error when booting.
 
 Press `F2` to save and then `F3` to exit.
 

@@ -84,7 +84,7 @@ Alternatively you can install rEFInd to the default/fallback boot path `*esp*/EF
 
 ```
 
-Where `*/dev/sdXY*` is of your EFI system partition.
+Where `*/dev/sdXY*` is your EFI system partition.
 
 **Note:** By default `refind-install` installs only the driver for the file system on which kernel resides. Additional file systems need to be installed manually or you can install all drivers with the `--alldrivers` option. This is useful for bootable USB flash drives e.g.:
 ```

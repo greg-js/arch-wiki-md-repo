@@ -787,7 +787,7 @@ Edit `/etc/pulse/default.pa` and comment out module-hal-detect and module-detect
 Search for the commented-out line that starts "#load-module module-alsa-sink", uncomment it and change it to
 
 ```
-load-module module-alsa-sink device=hw:[device name] channel_map=right,left
+load-module module-alsa-sink device=hw:"device_name" channel_map=right,left
 
 ```
 

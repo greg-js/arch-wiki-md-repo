@@ -143,13 +143,13 @@ If you want to create any stacked block devices for [LVM](/index.php/LVM "LVM"),
 
 | BIOS with [MBR](/index.php/MBR "MBR") or GPT |
 | Mount point | Partition | [Partition type](https://en.wikipedia.org/wiki/Partition_type "w:Partition type") | Suggested size |
-| None | /dev/sd*X*1 | [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition") | 1 MiB |
-| `/` | /dev/sd*X*2 | Linux | Remainder of the device |
+ /dev/sd*X*1 | [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition") | 1 MiB |
+| `/mnt` | /dev/sd*X*2 | Linux | Remainder of the device |
 | [SWAP] | /dev/sd*X*3 | Linux [swap](/index.php/Swap "Swap") | More than 512 MiB |
 | UEFI with [GPT](/index.php/GPT "GPT") |
 | Mount point | Partition | [Partition type (GUID)](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "w:GUID Partition Table") | Suggested size |
-| `/boot` or `/efi` | /dev/sd*X*1 | [EFI system partition](/index.php/EFI_system_partition "EFI system partition") | 260–512 MiB |
-| `/` | /dev/sd*X*2 | Linux | Remainder of the device |
+| `/mnt/boot` or `/mnt/efi` | /dev/sd*X*1 | [EFI system partition](/index.php/EFI_system_partition "EFI system partition") | 260–512 MiB |
+| `/mnt` | /dev/sd*X*2 | Linux | Remainder of the device |
 | [SWAP] | /dev/sd*X*3 | Linux [swap](/index.php/Swap "Swap") | More than 512 MiB |
 
 **Note:**
@@ -185,11 +185,11 @@ See [File systems#Create a file system](/index.php/File_systems#Create_a_file_sy
 
 ```
 
-Create mount points for any remaining partitions and mount them accordingly, for example:
+Where required, create mount points and mount the corresponding partitions, for example:
 
 ```
-# mkdir /mnt/boot
-# mount /dev/sd*X*1 /mnt/boot
+# mkdir /mnt/efi
+# mount /dev/sd*X*1 /mnt/efi
 
 ```
 

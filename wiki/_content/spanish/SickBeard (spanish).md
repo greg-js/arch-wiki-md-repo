@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [SickBeard](/index.php/SickBeard "SickBeard"), revisada por última vez el **2018-12-08**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=SickBeard&diff=0&oldid=558559) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [SickBeard](/index.php/SickBeard "SickBeard"), revisada por última vez el **2019-01-14**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=SickBeard&diff=0&oldid=558559) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -11,7 +11,7 @@ Artículos relacionados
 
 [Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquete [sickbeard](https://aur.archlinux.org/packages/sickbeard/).
 
-[Inicie/habilite](/index.php/Systemd_(Espa%C3%B1ol)#Utilizar_las_unidades "Systemd (Español)") `sickbeard.service`.
+[Inicie/active](/index.php/Systemd_(Espa%C3%B1ol)#Utilizar_las_unidades "Systemd (Español)") `sickbeard.service`.
 
 ## Solución de problemas
 

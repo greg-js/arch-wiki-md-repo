@@ -219,6 +219,8 @@ $ wol -i *target_IP* *target_MAC_address*
 
 **Tip:** If you intend to continue using Wake-on-LAN, it is recommended to assign a static IP address to the target computer.
 
+**Tip:** Only use the `-i` switch when the target address is on a different subnet from the sender.
+
 ### Across the internet
 
 When the source and target computers are separated by a router, Wake-on-LAN can be achieved via [port forwarding](https://en.wikipedia.org/wiki/Port_forwarding "wikipedia:Port forwarding"). The router needs to be configured using one of these two options:

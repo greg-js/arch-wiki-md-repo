@@ -3,7 +3,7 @@ Related articles
 *   [Git](/index.php/Git "Git")
 *   [Cron](/index.php/Cron "Cron")
 
-[Etckeeper](http://etckeeper.branchable.com/) lets you keep `/etc` under version control.
+[Etckeeper](http://etckeeper.branchable.com/) is a collection of tools to keep track of `/etc/` in a repository ([Git](/index.php/Git "Git"), [Mercurial](/index.php/Mercurial "Mercurial"), [Bazaar](/index.php/Bazaar "Bazaar") or [Darcs](/index.php/Darcs "Darcs") are supported). A [pacman hook](/index.php/Pacman_hook "Pacman hook") auto-commits changes before a system-upgrade and file permissions are tracked, which version control does not normally support, but is important for files like [/etc/shadow](/index.php//etc/shadow "/etc/shadow").
 
 ## Contents
 

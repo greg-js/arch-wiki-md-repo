@@ -37,8 +37,8 @@ There are various ways of installing Arch on a USB stick, depending on the opera
 
 ### Installation tweaks
 
-*   Before creating the initial RAM disk `# mkinitcpio -p linux`, in `/etc/mkinitcpio.conf` add the `block` hook to the hooks array right after udev. This is necessary for appropriate module loading in early userspace.
-*   It is highly recommended to review the [reduce disk reads/writes](/index.php/Improving_performance#Reduce_disk_reads.2Fwrites "Improving performance") wiki article prior to selecting a filesystem. To sum up, [ext4 without a journal](http://fenidik.blogspot.com/2010/03/ext4-disable-journal.html) should be fine, which can be created with `# mkfs.ext4 -O "^has_journal" /dev/sdXX`. The obvious drawback of using a filesystem with journaling disabled is data loss as a result of an ungraceful dismount. Recognize that flash has a limited number of writes, and a journaling file system will take some of these as the journal is updated. For this same reason, it is best to forget the swap partition. Note that this does not affect installing onto a USB hard drive.
+*   Before [creating the initial RAM disk](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio"), in `/etc/mkinitcpio.conf` move the `block` and `keyboard` hooks before the `autodetect` hook. This is necessary to allow booting on multiple systems each requiring different modules in early userspace.
+*   It is highly recommended to review the [reduce disk reads/writes](/index.php/Improving_performance#Reduce_disk_reads.2Fwrites "Improving performance") wiki article prior to selecting a filesystem. To sum up, [ext4 without a journal](http://fenidik.blogspot.com/2010/03/ext4-disable-journal.html) should be fine, which can be created with `mkfs.ext4 -O "^has_journal" /dev/sdXX`. The obvious drawback of using a filesystem with journaling disabled is data loss as a result of an ungraceful dismount. Recognize that flash has a limited number of writes, and a journaling file system will take some of these as the journal is updated. For this same reason, it is best to forget the swap partition. Note that this does not affect installing onto a USB hard drive.
 *   If you want to be able to continue to use the UFD device as a cross-platform removable drive, this can be accomplished by creating a partition housing an appropriate file system (most likely NTFS or exFAT). Note that the data partition may need to be the first partition on the device, as Windows assumes that there can only be one partition on a removable device, and will happily automount an EFI system partition otherwise. Remember to install [dosfstools](https://www.archlinux.org/packages/?name=dosfstools) and [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g). Some tools are available online that may allow you to flip the removable media bit on your UFD device. This would trick operating systems into treating your UFD device as an external hard disk and allow you to use whichever partitioning scheme you choose.
 
 **Warning:** It is not possible to flip the removable media bit on every UFD device and attempting to use software that is incompatible with your device may damage it. Attempting to flip the removable media bit is **not** recommended.
@@ -58,20 +58,11 @@ To get the proper UUIDs for your partitions issue **blkid**.
 
 `menu.lst`, the GRUB legacy configuration file, should be edited to (loosely) match the following.
 
-With the static `/dev/sda*X*`:
-
-```
-root (hd0,0)
-kernel /boot/vmlinuz-linux root=/dev/sda1 ro
-initrd /boot/initramfs-linux.img
-
-```
-
 When using label your menu.lst should look like this:
 
 ```
 root (hd0,0)
-kernel /boot/vmlinuz-linux root=/dev/disk/by-label/**Arch** ro
+kernel /boot/vmlinuz-linux root=/dev/disk/by-label/**Arch** rw
 initrd /boot/initramfs-linux.img
 
 ```
@@ -80,7 +71,7 @@ And for UUID, it should be like this:
 
 ```
 root (hd0,0)
-kernel /boot/vmlinuz-linux root=/dev/disk/by-uuid/3a9f8929-627b-4667-9db4-388c4eaaf9fa ro
+kernel /boot/vmlinuz-linux root=/dev/disk/by-uuid/3a9f8929-627b-4667-9db4-388c4eaaf9fa rw
 initrd /boot/initramfs-linux.img
 
 ```
@@ -90,22 +81,11 @@ initrd /boot/initramfs-linux.img
 On GPT with UEFI installations, make sure you follow the instructions on [GRUB#UEFI systems](/index.php/GRUB#UEFI_systems "GRUB") and include the `--removable` option as doing otherwise may break existing GRUB installations, as in the below command:
 
 ```
-# grub-install --target=x86_64-efi --efi-directory=$esp --bootloader-id=grub **--removable** --recheck
+# grub-install --target=x86_64-efi --efi-directory=*esp*  **--removable** --recheck
 
 ```
 
 ### Syslinux
-
-With the static `/dev/sda*X*`:
-
-```
-LABEL Arch
-        MENU LABEL Arch Linux
-        LINUX ../vmlinuz-linux
-        APPEND root=/dev/sdax ro
-        INITRD ../initramfs-linux.img
-
-```
 
 Using your UUID:
 
@@ -113,7 +93,7 @@ Using your UUID:
 LABEL Arch
         MENU LABEL Arch Linux
         LINUX ../vmlinuz-linux
-        APPEND root=UUID=3a9f8929-627b-4667-9db4-388c4eaaf9fa ro
+        APPEND root=UUID=3a9f8929-627b-4667-9db4-388c4eaaf9fa rw
         INITRD ../initramfs-linux.img
 
 ```

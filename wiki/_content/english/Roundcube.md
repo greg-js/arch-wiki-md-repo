@@ -51,7 +51,7 @@ $ mysql -u root -p roundcubemail < /usr/share/webapps/roundcubemail/SQL/mysql.in
 
 ### SQLite
 
-A SQLite DB will be created automagically by Roundcube. Ensure the file specified in the configuration is located in a basedir location. Consider adding /var/lib/roundcubemail to your basedir definition. This implies creating the directory and chowning it to http.
+A SQLite DB will be created automatically by Roundcube. Ensure the file specified in the configuration is located in a basedir location. Consider adding /var/lib/roundcubemail to your basedir definition. This implies creating the directory and chowning it to http.
 
 ### Other Databases
 

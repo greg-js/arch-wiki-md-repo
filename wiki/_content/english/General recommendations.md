@@ -30,6 +30,7 @@ This document is an annotated index of popular articles and important informatio
     *   [4.3 Desktop environments](#Desktop_environments)
     *   [4.4 Window managers](#Window_managers)
     *   [4.5 Display manager](#Display_manager)
+    *   [4.6 User directories](#User_directories)
 *   [5 Power management](#Power_management)
     *   [5.1 ACPI events](#ACPI_events)
     *   [5.2 CPU frequency scaling](#CPU_frequency_scaling)
@@ -178,6 +179,10 @@ A full-fledged desktop environment provides a complete and consistent graphical 
 ### Display manager
 
 Most desktop environments include a [display manager](/index.php/Display_manager "Display manager") for automatically starting the graphical environment and managing user logins. Users without a desktop environment can install one separately. Alternatively you may [start X at login](/index.php/Start_X_at_login "Start X at login") as a simple alternative to a display manager.
+
+### User directories
+
+Well-known user directories like Downloads or Music are created by the `xdg-user-dirs-update.service` user service, that is provided by [xdg-user-dirs](https://www.archlinux.org/packages/?name=xdg-user-dirs) and enabled by default upon install. If your desktop environment or window manager does not pull in the package, you can [install](/index.php/Install "Install") it and run `xdg-user-dirs-update` manually as per [XDG user directories#Creating default directories](/index.php/XDG_user_directories#Creating_default_directories "XDG user directories").
 
 ## Power management
 

@@ -58,7 +58,7 @@ If you would like to run a full install of Arch Linux from a USB drive (i.e. wit
 Run the following command, replacing `/dev/**sdx**` with your drive, e.g. `/dev/sdb`. (Do **not** append a partition number, so do **not** use something like `/dev/sdb**1**`)
 
 ```
-# dd bs=4M if=/path/to/archlinux.iso of=/dev/**sdx** status=progress oflag=sync
+# dd bs=4M if=path/to/archlinux.iso of=/dev/**sdx** status=progress oflag=sync
 
 ```
 
@@ -138,7 +138,7 @@ Now, launch your `command prompt` as an administrator. Next, change directory (`
 If your Arch Linux ISO is elsewhere you may need to state the full path, for convenience you may wish to put the Arch Linux ISO into the same folder as the dd executable. The basic format of the command will look like this.
 
 ```
-# dd if=*archlinux-2017-XX-YY-x86_64.iso* od=\\.\*x*: bs=4M
+# dd if=*archlinux-*version*-x86_64.iso* od=\\.\*x*: bs=4M
 
 ```
 
@@ -149,11 +149,11 @@ If your Arch Linux ISO is elsewhere you may need to state the full path, for con
 Simply replace the various null spots (indicated by an "x") with the correct date and correct drive letter. Here is a complete example.
 
 ```
-# dd if=ISOs\archlinux-2017.04.01-x86_64.iso od=\\.\d: bs=4M
+# dd if=ISOs\archlinux-*version*-x86_64.iso od=\\.\d: bs=4M
 
 ```
 
-**Note:** Alternatively, replace the drive letter with `\\.\PhysicalDrive*X*`, where `*X*` is the physical drive number (starts from 0). Example: `# dd if=ISOs\archlinux-2017.04.01-x86_64.iso of=\\.\PhysicalDrive1 bs=4M` 
+**Note:** Alternatively, replace the drive letter with `\\.\PhysicalDrive*X*`, where `*X*` is the physical drive number (starts from 0). Example: `# dd if=ISOs\archlinux-*version*-x86_64.iso of=\\.\PhysicalDrive1 bs=4M` 
 
 You can find out the physical drive number by typing `wmic diskdrive list brief` at the command prompt or with `dd --list`
 
@@ -200,7 +200,7 @@ This method is more complicated than writing the image directly with `dd`, but i
 
 ```
 # mkdir -p /mnt/{iso,usb}
-# mount -o loop archlinux-2017.04.01-x86_64.iso /mnt/iso
+# mount -o loop archlinux-*version*-x86_64.iso /mnt/iso
 # mount /dev/sd**Xn** /mnt/usb
 # cp -a /mnt/iso/* /mnt/usb
 # sync
@@ -208,7 +208,7 @@ This method is more complicated than writing the image directly with `dd`, but i
 
 ```
 
-To boot either a label or an [UUID](/index.php/UUID "UUID") to select the partition to boot from is required. By default the label `ARCH_2017**XX**` (with the appropriate release month) is used. Thus, the partition’s label has to be set accordingly, for example using *gparted*. Alternatively, you can change this behaviour by altering the lines ending by `archisolabel=ARCH_2017**XX**` in the file `/mnt/usb/arch/boot/syslinux/archiso_sys.cfg` (for BIOS boot), and in `/mnt/usb/loader/entries/archiso-x86_64.conf` (for UEFI boot). To use an UUID instead, replace those portions of lines with `archiso*device*=/dev/disk/by-uuid/**YOUR-UUID**`. The UUID can be retrieved with `blkid -o value -s UUID /dev/sd**Xn**`.
+To boot either a label or an [UUID](/index.php/UUID "UUID") to select the partition to boot from is required. By default the label `ARCH_*YYYYMM*` (with the appropriate release year and month) is used. Thus, the partition’s label has to be set accordingly, for example using *gparted*. Alternatively, you can change this behaviour by altering the lines ending by `archisolabel=ARCH_*YYYYMM*` in the file `/mnt/usb/arch/boot/syslinux/archiso_sys.cfg` (for BIOS boot), and in `/mnt/usb/loader/entries/archiso-x86_64.conf` (for UEFI boot). To use an UUID instead, replace those portions of lines with `archiso*device*=/dev/disk/by-uuid/**YOUR-UUID**`. The UUID can be retrieved with `blkid -o value -s UUID /dev/sd**Xn**`.
 
 **Warning:** Mismatching labels or wrong UUID prevents booting from the created medium.
 
@@ -366,7 +366,7 @@ DEFAULT arch_iso
 LABEL arch_iso
         MENU LABEL Arch Setup
         LINUX memdisk
-        INITRD /Boot/ISOs/archlinux-2017.04.01-x86_64.iso
+        INITRD /Boot/ISOs/archlinux-*version*-x86_64.iso
         APPEND iso
 ```
 
@@ -385,7 +385,7 @@ syslinux.exe -m -a -d /Boot/Settings X:
 
 ## Troubleshooting
 
-*   If you get the "device did not show up after 30 seconds" error due to the `/dev/disk/by-label/ARCH_XXXXYY` not mounting, try renaming your USB media to `ARCH_XXXXYY` (e.g. `ARCH_201501`).
+*   If you get the "device did not show up after 30 seconds" error due to the `/dev/disk/by-label/ARCH_*YYYYMM*` not mounting, try renaming your USB media to `ARCH_*YYYYMM*` (e.g. `ARCH_201501`).
 *   If you get errors, try using another USB device. There are case scenarios in which it solved all issues.
 
 ## See also

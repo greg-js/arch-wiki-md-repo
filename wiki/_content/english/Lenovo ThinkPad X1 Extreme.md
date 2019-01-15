@@ -8,7 +8,7 @@
 | SunplusIT camera | Working | uvcvideo |
 | Card reader | Working | xhci_hcd |
 | Intel 9560 Bluetooth | Working | btusb |
-| Intel JHL7540 Thunderbolt | Untested |
+| Intel JHL7540 Thunderbolt | Working | thunderbolt |
 | Synaptics fingerprint reader | Not working |
 
 The [ThinkPad X1 Extreme](https://www.lenovo.com/us/en/laptops/thinkpad/thinkpad-x/ThinkPad-X1-Extreme/p/20MF000DUS) is a thin-and-light 15.6" workstation/multimedia laptop from Lenovo's 2018 ThinkPad X lineup.
@@ -22,12 +22,14 @@ This page specifically concerns the specifics of running Arch Linux on this lapt
 *   [1 Hardware compatibility](#Hardware_compatibility)
     *   [1.1 BIOS update](#BIOS_update)
     *   [1.2 Graphics](#Graphics)
-    *   [1.3 Other hardware](#Other_hardware)
+    *   [1.3 Thunderbolt](#Thunderbolt)
+    *   [1.4 Other hardware](#Other_hardware)
 *   [2 Software tweaks](#Software_tweaks)
     *   [2.1 Dolby Atmos Effect on Linux](#Dolby_Atmos_Effect_on_Linux)
     *   [2.2 TLP](#TLP)
     *   [2.3 CPU throttling workaround](#CPU_throttling_workaround)
     *   [2.4 CPU undervolting](#CPU_undervolting)
+    *   [2.5 Kernel parameters](#Kernel_parameters)
 *   [3 Specifications](#Specifications)
 
 ## Hardware compatibility
@@ -36,7 +38,7 @@ This page specifically concerns the specifics of running Arch Linux on this lapt
 
 Despite not being required for an Arch Linux install, a BIOS update is strongly recommended for general use of the laptop - the initial 1.13 version devices seem to ship with contains multiple bugs that can result in bricking the laptop: [Reddit thread discussing the issue](https://www.reddit.com/r/thinkpad/comments/a2g0k4/warning_do_not_change_from_hybrid_graphics_to/); [another Reddit thread discussing a different bricking issue](https://www.reddit.com/r/thinkpad/comments/9qreoj/psa_do_not_enable_bios_support_for_thunderbolt/).
 
-BIOS updates are normally available via [fwupd](/index.php/Fwupd "Fwupd"), however, the latest BIOS update version 1.17 is only available from [Lenovo's website](https://pcsupport.lenovo.com/en/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x1-extreme/downloads) as of late December 2018\. You can use the bootable version if you don't have access to a Windows install.
+BIOS updates are normally available via [fwupd](/index.php/Fwupd "Fwupd"), however, the latest BIOS update version 1.17 is only available from [Lenovo's website](https://pcsupport.lenovo.com/en/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x1-extreme/downloads) as of January 2019\. You can use the bootable version if you don't have access to a Windows install.
 
 ### Graphics
 
@@ -58,13 +60,15 @@ Hybrid graphics works via [Bumblebee](/index.php/Bumblebee "Bumblebee"). The HDM
 
 Nvidia-only mode has not been thoroughly tested, but seems to work fine with the default configuration produced by `nvidia-xconfig`, including HDMI output.
 
+### Thunderbolt
+
+Thunderbolt works out of the box (tested with ThinkPad Thunderbolt 3 Dock); see [Thunderbolt](/index.php/Thunderbolt "Thunderbolt") for details on security. DisplayPort/HDMI port seems to be attached to the NVIDIA GPU only.
+
 ### Other hardware
 
 The webcam works out of the box, though it appears connected at all times, no matter the slider state (the camera appears "disconnected" in Windows when the protective slider is closed) - however, when the slider is closed, a completely black image is reported by the camera.
 
 The fingerprint scanner is currently not supported in libfprint - a reverse engineering effort was ongoing [here](https://github.com/nmikhailov/Validity90), but seems to have stalled. Upstream libfprint bug is tracked [here](https://gitlab.freedesktop.org/libfprint/libfprint/issues/134).
-
-The Thunderbolt port has been reported to work on other distributions, but has not been tested on Arch as of December 2018.
 
 Everything else works correctly out of the box.
 
@@ -72,11 +76,7 @@ Everything else works correctly out of the box.
 
 ### Dolby Atmos Effect on Linux
 
-In order to get the same speaker sound quality/effect as on Dolby Atmos with Windows install & configure [PulseAudio](/index.php/PulseAudio "PulseAudio") and [pulseeffects](https://www.archlinux.org/packages/?name=pulseeffects).
-
-You can then download the Dolby Atmos preset from [JackHack96's Github](https://github.com/JackHack96/PulseEffects-Presets/tree/master/irs).
-
-Open the PulseEffects GUI and enable the preset in the "Convolver" tab.
+In order to get the same speaker sound quality/effect as on Dolby Atmos with Windows install & configure [PulseAudio](/index.php/PulseAudio "PulseAudio") and [pulseeffects](https://www.archlinux.org/packages/?name=pulseeffects). You can then download the Dolby Atmos preset from [JackHack96's Github](https://github.com/JackHack96/PulseEffects-Presets/tree/master/irs) and enable it in the "Convolver" tab of the PulseEffects GUI.
 
 ### TLP
 
@@ -96,9 +96,14 @@ See the [lenovo-throttling-fix homepage](https://github.com/erpalma/lenovo-throt
 
 ### CPU undervolting
 
-Undervolting the CPU/Intel GPU works well with [intel-undervolt](/index.php/Undervolting_CPU#intel-undervolt "Undervolting CPU").
+Undervolting the CPU/Intel GPU works well with [intel-undervolt](/index.php/Undervolting_CPU#intel-undervolt "Undervolting CPU"). Generally -150mV seems to be a safe choice on the i7-8750H and i7-8850H CPUs, but your mileage may vary.
 
-Generally -150mV seems to be a safe choice on the i7-8750H and i7-8850H CPUs.
+### Kernel parameters
+
+As of January 2019, the following commonly used kernel parameters are known to work:
+
+*   `i915.enable_fbc=1` - enables framebuffer compression on Intel graphics, potential power savings
+*   `i915.enable_psr=1` - enables panel self-refresh on Intel graphics, likely power savings
 
 ## Specifications
 

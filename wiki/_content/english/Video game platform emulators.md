@@ -8,15 +8,15 @@ An emulator is a program which serves to replicate the functions of another plat
 
 *   **Citra** — Nintendo 3DS emulator.
 
-	[http://citra-emu.org/](http://citra-emu.org/) || [citra-git](https://aur.archlinux.org/packages/citra-git/)
+	[https://citra-emu.org/](https://citra-emu.org/) || [citra-git](https://aur.archlinux.org/packages/citra-git/)
 
 *   **DeSmuME** — Nintendo DS emulator.
 
-	[http://desmume.org/](http://desmume.org/) || [desmume](https://www.archlinux.org/packages/?name=desmume)
+	[https://desmume.org/](https://desmume.org/) || [desmume](https://www.archlinux.org/packages/?name=desmume)
 
 *   **[Dolphin](/index.php/Dolphin_emulator "Dolphin emulator")** — Very capable GameCube and Wii emulator.
 
-	[http://dolphin-emu.org/](http://dolphin-emu.org/) || [dolphin-emu](https://www.archlinux.org/packages/?name=dolphin-emu)
+	[https://dolphin-emu.org/](https://dolphin-emu.org/) || [dolphin-emu](https://www.archlinux.org/packages/?name=dolphin-emu)
 
 *   **epsxe** — Emulator for the PlayStation video game console for x86-based PC hardware.
 
@@ -39,11 +39,11 @@ An emulator is a program which serves to replicate the functions of another plat
 
 *   **Gens-GS** — Gens2, rewritten in C++, combining features from various Gens forks.
 
-	[http://segaretro.org/Gens/GS](http://segaretro.org/Gens/GS) || [gens-gs](https://www.archlinux.org/packages/?name=gens-gs)
+	[https://segaretro.org/Gens/GS](https://segaretro.org/Gens/GS) || [gens-gs](https://www.archlinux.org/packages/?name=gens-gs)
 
 *   **gngeo** — Command-line NeoGeo emulator.
 
-	[http://gngeo.googlecode.com](http://gngeo.googlecode.com) || [gngeo](https://aur.archlinux.org/packages/gngeo/)
+	[https://github.com/pepone42/gngeo](https://github.com/pepone42/gngeo) || [gngeo](https://aur.archlinux.org/packages/gngeo/)
 
 *   **higan** — Multisystem emulator focusing on accuracy, supporting SNES, NES, GB, GBC, GBA.
 
@@ -51,7 +51,7 @@ An emulator is a program which serves to replicate the functions of another plat
 
 *   **mednafen** — Command-line driven multisystem emulator.
 
-	[http://mednafen.sourceforge.net/](http://mednafen.sourceforge.net/) || [mednafen](https://www.archlinux.org/packages/?name=mednafen)
+	[https://mednafen.github.io/](https://mednafen.github.io/) || [mednafen](https://www.archlinux.org/packages/?name=mednafen)
 
 *   **Mupen64Plus** — Highly compatible Nintendo 64 emulator with plugin system.
 
@@ -67,15 +67,15 @@ An emulator is a program which serves to replicate the functions of another plat
 
 *   **[PCSXR](/index.php/PCSX-Reloaded "PCSX-Reloaded")** — PlayStation emulator; Debian fork of the abandoned original PCSX
 
-	[http://pcsxr.codeplex.com/](http://pcsxr.codeplex.com/) || [pcsxr](https://aur.archlinux.org/packages/pcsxr/)
+	[pcsxr](https://aur.archlinux.org/packages/pcsxr/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 *   **PCSX2** — PlayStation 2 emulator. It is still being maintained and developed. It requires BIOS files.
 
-	[http://www.pcsx2.net/](http://www.pcsx2.net/) || [pcsx2](https://www.archlinux.org/packages/?name=pcsx2)
+	[https://pcsx2.net/](https://pcsx2.net/) || [pcsx2](https://www.archlinux.org/packages/?name=pcsx2)
 
 *   **PPSSPP** — PlayStation Portable emulator.
 
-	[http://ppsspp.org/](http://ppsspp.org/) || [ppsspp](https://www.archlinux.org/packages/?name=ppsspp)
+	[https://ppsspp.org/](https://ppsspp.org/) || [ppsspp](https://www.archlinux.org/packages/?name=ppsspp)
 
 *   **RPCS3** — Experimental open-source Sony PlayStation 3 emulator and debugger.
 
@@ -87,7 +87,7 @@ An emulator is a program which serves to replicate the functions of another plat
 
 *   **[Visual Boy Advance](/index.php/Visual_Boy_Advance "Visual Boy Advance")** — Game Boy emulator with Game Boy Advance, Game Boy Color, and Super Game Boy support.
 
-	[http://vba.ngemu.com/](http://vba.ngemu.com/) || [vbam-wx](https://www.archlinux.org/packages/?name=vbam-wx)
+	[http://vba-m.com/](http://vba-m.com/) || [vbam-wx](https://www.archlinux.org/packages/?name=vbam-wx)
 
 *   **ZSNES** — Highly compatible Super Nintendo emulator.
 
@@ -97,7 +97,7 @@ An emulator is a program which serves to replicate the functions of another plat
 
 *   **DOSBox** — Open-source DOS emulator which primarily focuses on running DOS Games.
 
-	[http://www.dosbox.com/](http://www.dosbox.com/) || [dosbox](https://www.archlinux.org/packages/?name=dosbox)
+	[https://www.dosbox.com/](https://www.dosbox.com/) || [dosbox](https://www.archlinux.org/packages/?name=dosbox)
 
 *   **DOSEmu** — Open-source DOS emulator.
 
@@ -105,7 +105,7 @@ An emulator is a program which serves to replicate the functions of another plat
 
 *   **MAME** — Multiple Arcade Machine Emulator.
 
-	[http://mamedev.org/](http://mamedev.org/) || [mame](https://www.archlinux.org/packages/?name=mame)
+	[https://www.mamedev.org/](https://www.mamedev.org/) || [mame](https://www.archlinux.org/packages/?name=mame)
 
 *   **ResidualVM** — Cross-platform 3D game interpreter which allows you to play LucasArts' Lua-based 3D adventures.
 
@@ -113,11 +113,11 @@ An emulator is a program which serves to replicate the functions of another plat
 
 *   **[RetroArch](/index.php/RetroArch "RetroArch")** — Frontend to libretro (emulation library, using modified versions of existing emulators as plugins).
 
-	[http://www.libretro.com/](http://www.libretro.com/) || [retroarch](https://www.archlinux.org/packages/?name=retroarch)
+	[https://www.libretro.com/](https://www.libretro.com/) || [retroarch](https://www.archlinux.org/packages/?name=retroarch)
 
 *   **ScummVM** — Virtual machine for old school adventures.
 
-	[http://www.scummvm.org/](http://www.scummvm.org/) || [scummvm](https://www.archlinux.org/packages/?name=scummvm)
+	[https://www.scummvm.org/](https://www.scummvm.org/) || [scummvm](https://www.archlinux.org/packages/?name=scummvm)
 
 *   **X Neko Project II** — PC-9801 emulator.
 

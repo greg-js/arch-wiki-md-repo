@@ -200,7 +200,7 @@ Exec = /bin/sh -c 'echo 1 > /sys/devices/system/cpu/microcode/reload'
 
 ### Disabling late microcode updates
 
-For AMD systems the CPU microcode will get updated even if [amd-ucode](https://www.archlinux.org/packages/?name=amd-ucode) in not installed since the files are provided by [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) ([FS#59840](https://bugs.archlinux.org/task/59840)). To disable late loading you must override the [tmpfile](/index.php/Tmpfile "Tmpfile") `/usr/lib/tmpfiles.d/linux-firmware.conf`. It can be done by creating a file with the same filename in `/etc/tmpfiles.d/`:
+For AMD systems the CPU microcode will get updated even if [amd-ucode](https://www.archlinux.org/packages/?name=amd-ucode) is not installed since the files are provided by [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) ([FS#59840](https://bugs.archlinux.org/task/59840)). To disable late loading you must override the [tmpfile](/index.php/Tmpfile "Tmpfile") `/usr/lib/tmpfiles.d/linux-firmware.conf`. It can be done by creating a file with the same filename in `/etc/tmpfiles.d/`:
 
 ```
 # ln -s /dev/null /etc/tmpfiles.d/linux-firmware.conf

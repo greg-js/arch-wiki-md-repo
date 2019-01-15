@@ -21,11 +21,17 @@ You can also try a Free Trial before purchase a payment fee. [https://free.nordv
 
 ## Installation
 
-NordVPN can be installed with the package [nordvpn-bin](https://aur.archlinux.org/packages/nordvpn-bin/), available in the [AUR](/index.php/AUR "AUR").
+NordVPN can be installed with a package [nordvpn-bin](https://aur.archlinux.org/packages/nordvpn-bin/), available in the [AUR](/index.php/AUR "AUR").
 
 ## Systemd
 
 In order to use NordVPN. You must [enable](/index.php/Enable "Enable") `nordvpnd` service.
+
+```
+$ sudo systemctl enable nordvpnd.service
+$ sudo systemctl start nordvpnd.service
+
+```
 
 ## Configuration
 
@@ -49,9 +55,11 @@ Logs you out from your NordVPN Account.
 
 ### Connect to VPN
 
+ `$ nordvpn connect [[country]/[server]/[country_code]/[city] or [country] [city]]` 
 ```
-$ nordvpn connect
-
+Provide a [country] argument to automatically connect to a specific country. For example: 'nordvpn set autoconnect on Australia'
+Provide a [country_code] argument to automatically connect to a specific country. For example: 'nordvpn set autoconnect on us'
+Provide a [city] argument to automatically connect to a specific city. For example: 'nordvpn set autoconnect on Hungary Budapest'
 ```
 
 Connect you to VPN.
@@ -100,7 +108,7 @@ Supported values for [enabled]: 1, true, enable, on, enabled
 Example: nordvpn set cybersec on
 ```
 
-Enables or disables CyberSec. When enabled, the CyberSec feature will automatically block suspicious websites so that no malware or other cyber threats can infect your device. Additionally, no flashy ads will come into your sight. More information on how it works: [[1]](https://nordvpn.com/features/cybersec/).
+Enables or disables CyberSec. When enabled, the CyberSec feature will automatically block suspicious websites so that no malware or other cyber threats can infect your device. Additionally, no flashy ads will come into your sight. More information on how it works: [https://nordvpn.com/features/cybersec/](https://nordvpn.com/features/cybersec/).
 
  `$ nordvpn set autoconnect [enabled]/[disabled] [[country]/[server]/[country_code]/[city] or [country] [city]]` 
 ```

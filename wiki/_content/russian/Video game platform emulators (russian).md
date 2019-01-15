@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Video game platform emulators](/index.php/Video_game_platform_emulators "Video game platform emulators"). Дата последней синхронизации: 28 октября 201‎8\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Video_game_platform_emulators&diff=0&oldid=548104).
+**Состояние перевода:** На этой странице представлен перевод статьи [Video game platform emulators](/index.php/Video_game_platform_emulators "Video game platform emulators"). Дата последней синхронизации: 13 января 201‎9\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Video_game_platform_emulators&diff=0&oldid=563091).
 
 Эмулятор – это программа, повторяющая функции другой платформы или системы для запуска приложений и игр в окружении, для которого они изначально не создавались.
 
@@ -10,15 +10,15 @@
 
 *   **Citra** — Эмулятор Nintendo 3DS.
 
-	[http://citra-emu.org/](http://citra-emu.org/) || [citra-git](https://aur.archlinux.org/packages/citra-git/)
+	[https://citra-emu.org/](https://citra-emu.org/) || [citra-git](https://aur.archlinux.org/packages/citra-git/)
 
 *   **DeSmuME** — Эмулятор Nintendo DS.
 
-	[http://desmume.org/](http://desmume.org/) || [desmume](https://www.archlinux.org/packages/?name=desmume)
+	[https://desmume.org/](https://desmume.org/) || [desmume](https://www.archlinux.org/packages/?name=desmume)
 
 *   **[Dolphin](/index.php/Dolphin_emulator "Dolphin emulator")** — Эмулятор GameCube и Wii с широкими возможностями.
 
-	[http://dolphin-emu.org/](http://dolphin-emu.org/) || [dolphin-emu](https://www.archlinux.org/packages/?name=dolphin-emu)
+	[https://dolphin-emu.org/](https://dolphin-emu.org/) || [dolphin-emu](https://www.archlinux.org/packages/?name=dolphin-emu)
 
 *   **epsxe** — Эмулятор PlayStation для ПК с архитектурой x86.
 
@@ -41,11 +41,11 @@
 
 *   **Gens-GS** — Gens2, переписанный на C++ и комбинирующий возможности различных форков Gens.
 
-	[http://segaretro.org/Gens/GS](http://segaretro.org/Gens/GS) || [gens-gs](https://www.archlinux.org/packages/?name=gens-gs)
+	[https://segaretro.org/Gens/GS](https://segaretro.org/Gens/GS) || [gens-gs](https://www.archlinux.org/packages/?name=gens-gs)
 
 *   **gngeo** — Консольный эмулятор NeoGeo.
 
-	[http://gngeo.googlecode.com](http://gngeo.googlecode.com) || [gngeo](https://aur.archlinux.org/packages/gngeo/)
+	[https://github.com/pepone42/gngeo](https://github.com/pepone42/gngeo) || [gngeo](https://aur.archlinux.org/packages/gngeo/)
 
 *   **higan** — Мультисистемный эмулятор, фокусирующийся на точности и поддерживаемый SNES, NES, GB, GBC, GBA.
 
@@ -53,7 +53,7 @@
 
 *   **mednafen** — Консольный мультисистемный эмулятор.
 
-	[http://mednafen.sourceforge.net/](http://mednafen.sourceforge.net/) || [mednafen](https://www.archlinux.org/packages/?name=mednafen)
+	[https://mednafen.github.io/](https://mednafen.github.io/) || [mednafen](https://www.archlinux.org/packages/?name=mednafen)
 
 *   **Mupen64Plus** — Высокосовместимый эмулятор Nintendo 64 с системой плагинов.
 
@@ -69,15 +69,19 @@
 
 *   **[PCSXR](/index.php/PCSX-Reloaded "PCSX-Reloaded")** — Эмулятор PlayStation; Форк Debian заброшенного оригинального PCSX.
 
-	[http://pcsxr.codeplex.com/](http://pcsxr.codeplex.com/) || [pcsxr](https://aur.archlinux.org/packages/pcsxr/)
+	[pcsxr](https://aur.archlinux.org/packages/pcsxr/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 *   **PCSX2** — Эмулятор PlayStation 2\. До сих пор поддерживается и разрабатывается. Требуются файлы BIOS.
 
-	[http://www.pcsx2.net/](http://www.pcsx2.net/) || [pcsx2](https://www.archlinux.org/packages/?name=pcsx2)
+	[https://pcsx2.net/](https://pcsx2.net/) || [pcsx2](https://www.archlinux.org/packages/?name=pcsx2)
 
 *   **PPSSPP** — Эмулятор PlayStation Portable.
 
-	[http://ppsspp.org/](http://ppsspp.org/) || [ppsspp](https://www.archlinux.org/packages/?name=ppsspp)
+	[https://ppsspp.org/](https://ppsspp.org/) || [ppsspp](https://www.archlinux.org/packages/?name=ppsspp)
+
+*   **RPCS3** — Экспериментальный свободный эмулятор и отладчик Sony PlayStation 3.
+
+	[https://rpcs3.net/](https://rpcs3.net/) || [rpcs3](https://aur.archlinux.org/packages/rpcs3/)
 
 *   **Snes9x** — Портативный, бесплатный (freeware) эмулятор Super Nintendo Entertainment System (SNES).
 
@@ -85,7 +89,7 @@
 
 *   **[Visual Boy Advance](/index.php/Visual_Boy_Advance "Visual Boy Advance")** — Эмулятор Game Boy с поддержкой Game Boy Advance, Game Boy Color и Super Game Boy.
 
-	[http://vba.ngemu.com/](http://vba.ngemu.com/) || [vbam-wx](https://www.archlinux.org/packages/?name=vbam-wx)
+	[http://vba-m.com/](http://vba-m.com/) || [vbam-wx](https://www.archlinux.org/packages/?name=vbam-wx)
 
 *   **ZSNES** — Высокосовместимый эмулятор Super Nintendo.
 
@@ -95,7 +99,7 @@
 
 *   **DOSBox** — Свободный эмулятор DOS, в основном фокусирующийся на запуске DOS-игр.
 
-	[http://www.dosbox.com/](http://www.dosbox.com/) || [dosbox](https://www.archlinux.org/packages/?name=dosbox)
+	[https://www.dosbox.com/](https://www.dosbox.com/) || [dosbox](https://www.archlinux.org/packages/?name=dosbox)
 
 *   **DOSEmu** — Свободный эмулятор DOS.
 
@@ -103,7 +107,7 @@
 
 *   **MAME** — Эмулятор различных аркадных автоматов.
 
-	[http://mamedev.org/](http://mamedev.org/) || [mame](https://www.archlinux.org/packages/?name=mame)
+	[https://www.mamedev.org/](https://www.mamedev.org/) || [mame](https://www.archlinux.org/packages/?name=mame)
 
 *   **ResidualVM** — Кроссплатформенный интерпретатор 3D-игр, позволяющий играть в 3D-приключения на основе Lua от LucasArts.
 
@@ -111,11 +115,11 @@
 
 *   **[RetroArch](/index.php/RetroArch "RetroArch")** — Фронтенд для libretro (библиотеки для эмуляции, использующей модифицированные версии существующих эмуляторов в качестве плагинов).
 
-	[http://www.libretro.com/](http://www.libretro.com/) || [retroarch](https://www.archlinux.org/packages/?name=retroarch)
+	[https://www.libretro.com/](https://www.libretro.com/) || [retroarch](https://www.archlinux.org/packages/?name=retroarch)
 
 *   **ScummVM** — Виртуальная машина для "олд скульных" приключений.
 
-	[http://www.scummvm.org/](http://www.scummvm.org/) || [scummvm](https://www.archlinux.org/packages/?name=scummvm)
+	[https://www.scummvm.org/](https://www.scummvm.org/) || [scummvm](https://www.archlinux.org/packages/?name=scummvm)
 
 *   **X Neko Project II** — Эмулятор PC-9801.
 

@@ -155,28 +155,6 @@ The Steel Series lights on the keyboard cannot be configured with [msi-keyboard-
 
 #### Button Mapping
 
-On the US model, the `\|` key (to the right of space) has scancode `0x56` is incorrectly mapped to `<>`.
-
-The mapping can be fixed temporarily by [adding a scancode mapping](/index.php/Map_scancodes_to_keycodes#Using_udev "Map scancodes to keycodes"):
-
- `/etc/udev/hwdb.d/85-msi-keyboard.hwdb` 
-```
-# MSI GS65 Stealth Thin has a physical backslash key next to the space bar
-evdev:atkbd:dmi:bvn*:bvr*:bd*:svnMicro-Star*:pnGS65StealthThin*:pvr*
- KEYBOARD_KEY_56=backslash
-
-```
-
-And reloading the keymapping database:
-
-```
-# systemd-hwdb update
-# udevadm trigger
-
-```
-
-The commit [[1]](https://github.com/systemd/systemd/commit/e05c8b44622afe4256f3bb361cfb2c7db32fff8e) to fix this in systemd has been merged and should be available in the next release of systemd (240).
-
 ##### Airplane Mode Key Combination
 
 The airplane mode key combination (FN + F10) is disabled by default. Adding the following kernel parameters activates airplane mode:
@@ -231,7 +209,7 @@ Following this, cheese should work correctly.
 
 ### Wifi is hardblocked (airplane mode) after waking up from suspend
 
-Waking from suspend will have wifi in airplane mode. [[2]](https://askubuntu.com/questions/1043547/wifi-hard-blocked-after-suspend-in-ubuntu-on-gs65)
+Waking from suspend will have wifi in airplane mode. [[1]](https://askubuntu.com/questions/1043547/wifi-hard-blocked-after-suspend-in-ubuntu-on-gs65)
 
  `# rfkill list` 
 ```

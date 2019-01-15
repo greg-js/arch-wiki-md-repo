@@ -1,32 +1,63 @@
-**翻译状态：** 本文是英文页面 [Node.js](/index.php/Node.js "Node.js") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-29，点击[这里](https://wiki.archlinux.org/index.php?title=Node.js&diff=0&oldid=424348)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Node.js](/index.php/Node.js "Node.js") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-01-14，点击[这里](https://wiki.archlinux.org/index.php?title=Node.js&diff=0&oldid=424348)可以查看翻译后英文页面的改动。
 
 [Node.js](http://nodejs.org/) 是一个 javascript 运行环境，并附带有功能丰富的库.使用 [Google's V8 引擎](https://code.google.com/p/v8/) 在浏览器外执行代码. 由于其是事件驱动、非阻塞 I/O 模型，它适合于实时 web 应用.
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
+*   [1 安装](#安装)
+    *   [1.1 多版本需求](#多版本需求)
 *   [2 Node Packaged Modules](#Node_Packaged_Modules)
-    *   [2.1 使用 npm 管理包](#.E4.BD.BF.E7.94.A8_npm_.E7.AE.A1.E7.90.86.E5.8C.85)
-        *   [2.1.1 安装软件包](#.E5.AE.89.E8.A3.85.E8.BD.AF.E4.BB.B6.E5.8C.85)
-        *   [2.1.2 更新包](#.E6.9B.B4.E6.96.B0.E5.8C.85)
-            *   [2.1.2.1 更新所有包](#.E6.9B.B4.E6.96.B0.E6.89.80.E6.9C.89.E5.8C.85)
-        *   [2.1.3 删除包](#.E5.88.A0.E9.99.A4.E5.8C.85)
-        *   [2.1.4 列出所有包](#.E5.88.97.E5.87.BA.E6.89.80.E6.9C.89.E5.8C.85)
-    *   [2.2 使用 pacman 管理包](#.E4.BD.BF.E7.94.A8_pacman_.E7.AE.A1.E7.90.86.E5.8C.85)
-*   [3 问题处理](#.E9.97.AE.E9.A2.98.E5.A4.84.E7.90.86)
-    *   [3.1 node-gyp python 错误](#node-gyp_python_.E9.94.99.E8.AF.AF)
-*   [4 其他资源](#.E5.85.B6.E4.BB.96.E8.B5.84.E6.BA.90)
+    *   [2.1 使用 npm 管理包](#使用_npm_管理包)
+        *   [2.1.1 安装软件包](#安装软件包)
+        *   [2.1.2 更新包](#更新包)
+            *   [2.1.2.1 更新所有包](#更新所有包)
+        *   [2.1.3 删除包](#删除包)
+        *   [2.1.4 列出所有包](#列出所有包)
+    *   [2.2 使用 pacman 管理包](#使用_pacman_管理包)
+*   [3 问题处理](#问题处理)
+    *   [3.1 node-gyp python 错误](#node-gyp_python_错误)
+    *   [3.2 无法找到模块错误](#无法找到模块错误)
+*   [4 其他资源](#其他资源)
 
 ## 安装
 
-[nodejs](https://www.archlinux.org/packages/?name=nodejs) 包位于 [官方软件仓库](/index.php/Official_repositories "Official repositories") .
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 软件包 [nodejs](https://www.archlinux.org/packages/?name=nodejs)。
 
-如果需要使用多个 [nodejs](https://www.archlinux.org/packages/?name=nodejs) 版本，可以使用 [NVM](https://github.com/creationix/nvm) (Node Version Manger). NVM 可以很方便的安装多个版本，并在版本间快速切换。github 上有使用文档，命令很简单：
+### 多版本需求
+
+如果需要使用多个 [nodejs](https://www.archlinux.org/packages/?name=nodejs) 版本，可以使用 [NVM](https://github.com/creationix/nvm) (Node Version Manger). [nvm](https://aur.archlinux.org/packages/nvm/) 可以很方便的安装多个版本，并在版本间快速切换。命令很简单：
+
+将下面命令加入 shell 的启动文件：
 
 ```
-  $ nvm install VERSION_NUM
+# Set up Node Version Manager
+source /usr/share/nvm/init-nvm.sh
 
 ```
+
+如果需要使用自定义的 nvm 目录：
+
+```
+# Set up Node Version Manager
+export NVM_DIR="$HOME/.nvm"                            # You can change this if you want.
+export NVM_SOURCE="/usr/share/nvm"                     # The AUR package installs it to here.
+[ -s "$NVM_SOURCE/nvm.sh" ] && . "$NVM_SOURCE/nvm.sh"  # Load NVM
+
+```
+
+项目的 GitHub 页面包含使用文档，命令很简单：
+
+```
+$ nvm install 8.0
+Downloading and installing node v8.0.0...
+[..]
+
+$ nvm use 8.0
+Now using node v8.0.0 (npm v5.0.0)
+
+```
+
+使用 [nvm](https://aur.archlinux.org/packages/nvm/) 时，可以用 [[1]](https://www.archlinux.org/pacman/pacman.8.html#_transaction_options_apply_to_em_s_em_em_r_em_and_em_u_em%7Cpacman) 的 `--assume-installed nodejs=<version>` 参数避免安装系统提供的版本。
 
 ## Node Packaged Modules
 
@@ -52,17 +83,9 @@ $ npm install packageName
 
 ```
 
-默认情形下这个命令会将包安装至 `/usr/lib/node_modules/npm` ，需要管理员权限.
+默认情形下这个命令会将包安装至 `/usr/lib/node_modules/npm`，需要管理员权限.
 
-作为个人用户级的安装您可以使用一个本地目录来配置 `npm` 。这可以通过多种方式完成：
-
-*   在命令中添加 `--prefix` 标记 (e.g. `npm -g install packageName --prefix ~/.node_modules` )。
-*   使用 `npm_config_prefix` 环境变量。
-*   使用用户配置文件 `~/.npmrc` 。
-
-第一个方法已不被推荐因为您需要记住位置并且每次操作都需要添加参数。
-
-第二个方法只是添加下列行到您的 shell 配置文件 (e.g. `.bash_profile`)。
+作为个人用户级的安装您可以使用一个本地目录来配置 `npm` 。添加下列行到您的 shell 配置文件 (e.g. `.bash_profile`)。
 
 ```
 PATH="$HOME/.node_modules/bin:$PATH"
@@ -70,32 +93,14 @@ export npm_config_prefix=~/.node_modules
 
 ```
 
-不要忘记重新登录或重启您的 shell。
+不要忘记重新登录或读取新配置。
 
-第三个方法您可以使用命令：
-
-```
-$ npm config edit
+也可以在 `npm install` 时指定 `--prefix` 参数，但是不建议使用这个方式，因为需要每次安装全局软件包时都记得使用此参数。
 
 ```
-
-您可以找到 `prefix` 选项并且设置一个期望的位置：
-
-```
-prefix=~/.node_modules
+$ npm -g install packageName --prefix ~/.node_modules
 
 ```
-
-不要忘记删除行前面的 `;` 否则会被当作注释。
-
-您现在可以添加可执行命令的位置到您的 shell 配置文件 (e.g. `.bash_profile` )。
-
-```
-export PATH="$HOME/.node_modules/bin:$PATH"
-
-```
-
-再次提示不要忘记重新登录或重启您的 shell。
 
 #### 更新包
 
@@ -158,6 +163,20 @@ $ npm -g list
 
 ```
 
+仅显示顶层树：
+
+```
+$ npm list --depth=0
+
+```
+
+要显示需要更新的过期软件包：
+
+```
+$ npm outdated
+
+```
+
 ### 使用 pacman 管理包
 
 一些 node.js 包可以在 [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") 找到，命名为 `nodejs-packageName` 格式。
@@ -176,9 +195,21 @@ $ npm config set python /usr/bin/python2
 如果出现 **gyp WARN EACCES user "root" does not have permission to access the ... dir**，可以使用 *--unsafe-perm* 选项:
 
 ```
-$ sudo npm install --unsafe-perm -g node-inspector
+# npm install --unsafe-perm -g node-inspector
 
 ```
+
+### 无法找到模块错误
+
+从 npm 5.x.x. 开始，package-lock.json 会和 package.json 文件一起创建，如果两个文件引用了不同的版本，会出现冲突。临时解决方案是：
+
+```
+$ rm package-lock.json
+$ npm install
+
+```
+
+nmp 5.1.0 或以上版本已经解决了此问题，请参考: [missing dependencies](https://github.com/npm/npm/pull/17508)
 
 ## 其他资源
 

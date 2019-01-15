@@ -30,7 +30,7 @@
 
 ## Configuration
 
-The default configuration is available in `/etc/xdg/compton.conf`. For modifications, it can be copied to `~/.config/compton.conf` or `~/.compton.conf`.
+The default configuration is available in `/etc/xdg/compton.conf`. For modifications, it can be copied to `~/.config/compton/compton.conf` or `~/.config/compton.conf` or `~/.compton.conf`.
 
 To use another custom configuration file with compton, use the following command:
 
