@@ -1547,7 +1547,7 @@ See also [Wikipedia:Comparison of video player software](https://en.wikipedia.or
 
 #### Video converters
 
-See also [Wikipedia:Comparison of video converters](https://en.wikipedia.org/wiki/Comparison_of_video_converters "wikipedia:Comparison of video converters").
+See also [Wikipedia:Comparison of video converters](https://en.wikipedia.org/wiki/Comparison_of_video_converters "wikipedia:Comparison of video converters") and [Codecs and containers#Container format tools](/index.php/Codecs_and_containers#Container_format_tools "Codecs and containers").
 
 ##### Console
 
@@ -1566,10 +1566,6 @@ See also [Wikipedia:Comparison of video converters](https://en.wikipedia.org/wik
 *   **[MEncoder](https://en.wikipedia.org/wiki/MEncoder "wikipedia:MEncoder")** — Free command line video decoding, encoding and filtering tool.
 
 	[http://mplayerhq.hu/](http://mplayerhq.hu/) || [mencoder](https://www.archlinux.org/packages/?name=mencoder)
-
-*   **[MKVToolNix CLI](https://en.wikipedia.org/wiki/MKVToolNix "wikipedia:MKVToolNix")** — Set of tools to create, edit and inspect Matroska files.
-
-	[https://mkvtoolnix.download/](https://mkvtoolnix.download/) || [mkvtoolnix-cli](https://www.archlinux.org/packages/?name=mkvtoolnix-cli)
 
 *   **Transcode** — Command line tool for video stream processing.
 
@@ -1596,10 +1592,6 @@ See also [Wikipedia:Comparison of video converters](https://en.wikipedia.org/wik
 *   **[HandBrake](https://en.wikipedia.org/wiki/HandBrake "wikipedia:HandBrake")** — Simple yet powerful video transcoder ideal for batch mkv/x264 ripping. GTK+ version.
 
 	[http://handbrake.fr/](http://handbrake.fr/) || [handbrake](https://www.archlinux.org/packages/?name=handbrake)
-
-*   **[MKVToolNix GUI](https://en.wikipedia.org/wiki/MKVToolNix "wikipedia:MKVToolNix")** — Qt based GUI to create, edit and inspect Matroska files.
-
-	[https://mkvtoolnix.download/](https://mkvtoolnix.download/) || [mkvtoolnix-gui](https://www.archlinux.org/packages/?name=mkvtoolnix-gui)
 
 *   **QWinFF** — Qt5 GUI for FFmpeg that can read audio and video files in various formats and convert them into other formats.
 

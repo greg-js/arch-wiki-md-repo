@@ -58,7 +58,7 @@ Tenga en cuenta que algunos de los lenguajes mencionados anteriormente también 
 
 ## Lenguajes de intérprete de línea de órdenes
 
-[Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)") es parte del [grupo base](/index.php/Base_group "Base group"). Para otros, véase [Intérprete de línea de órdenes](/index.php/Command-line_shell_(Espa%C3%B1ol) "Command-line shell (Español)").
+[Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)") es parte del [grupo base](/index.php/Base_group_(Espa%C3%B1ol) "Base group (Español)"). Para otros, véase [Intérprete de línea de órdenes](/index.php/Command-line_shell_(Espa%C3%B1ol) "Command-line shell (Español)").
 
 ## Véase también
 

@@ -2,14 +2,13 @@ Related articles
 
 *   [Optical disc drive#Playback](/index.php/Optical_disc_drive#Playback "Optical disc drive")
 *   [GStreamer](/index.php/GStreamer "GStreamer")
-*   [MPlayer](/index.php/MPlayer "MPlayer")
-*   [VLC media player](/index.php/VLC_media_player "VLC media player")
+*   [ffmpeg](/index.php/Ffmpeg "Ffmpeg")
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Codec "wikipedia:Codec"), "a codec is a device or computer program capable of encoding and/or decoding a digital data stream or signal."
 
 In general, codecs are utilized by multimedia applications to encode or decode audio or video streams. In order to play encoded streams, users must ensure an appropriate codec is installed.
 
-This article deals only with codecs and application backends; see [List of Applications](/index.php/List_of_applications#Multimedia "List of applications") for a list of media players ([MPlayer](/index.php/MPlayer "MPlayer"), [mpv](/index.php/Mpv "Mpv") and [VLC](/index.php/VLC "VLC") are popular choices).
+This article deals only with codecs and application backends; see [List of applications/Multimedia](/index.php/List_of_applications/Multimedia "List of applications/Multimedia") for a list of media players ([MPlayer](/index.php/MPlayer "MPlayer"), [mpv](/index.php/Mpv "Mpv") and [VLC](/index.php/VLC "VLC") are popular choices).
 
 ## Contents
 
@@ -21,13 +20,14 @@ This article deals only with codecs and application backends; see [List of Appli
         *   [2.1.2 Lossless audio codecs](#Lossless_audio_codecs)
     *   [2.2 Image codecs](#Image_codecs)
     *   [2.3 Video codecs](#Video_codecs)
-*   [3 Backends](#Backends)
-    *   [3.1 GStreamer](#GStreamer)
-    *   [3.2 xine](#xine)
-    *   [3.3 libavcodec](#libavcodec)
-*   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 Install MPlayer binary codecs](#Install_MPlayer_binary_codecs)
-    *   [4.2 No H264, mpg4 or Musepack (.mpc) in Totem Player](#No_H264,_mpg4_or_Musepack_(.mpc)_in_Totem_Player)
+*   [3 Container format tools](#Container_format_tools)
+*   [4 Backends](#Backends)
+    *   [4.1 GStreamer](#GStreamer)
+    *   [4.2 xine](#xine)
+    *   [4.3 libavcodec](#libavcodec)
+*   [5 Tips and tricks](#Tips_and_tricks)
+    *   [5.1 Install MPlayer binary codecs](#Install_MPlayer_binary_codecs)
+    *   [5.2 No H264, mpg4 or Musepack (.mpc) in Totem Player](#No_H264,_mpg4_or_Musepack_(.mpc)_in_Totem_Player)
 
 ## Requirements
 
@@ -42,22 +42,24 @@ It is not always necessary to explicitly install codecs if you have installed a 
 
 ### Audio
 
-<caption>Audio codec overview</caption>
-| Lossy | Lossless |
-| Codec | Libraries | Codec | Libraries |
-| [AAC](https://en.wikipedia.org/wiki/Advanced_Audio_Coding "wikipedia:Advanced Audio Coding") | [#AAC](#AAC) | [FLAC](https://en.wikipedia.org/wiki/FLAC "wikipedia:FLAC") | [flac](https://www.archlinux.org/packages/?name=flac) |
-| [ATSC A/52](https://en.wikipedia.org/wiki/ATSC_A/52 "wikipedia:ATSC A/52") | [a52dec](https://www.archlinux.org/packages/?name=a52dec) (decode) | [Apple Lossless](https://en.wikipedia.org/wiki/Apple_Lossless "wikipedia:Apple Lossless") | [alac-git](https://aur.archlinux.org/packages/alac-git/) |
-| [CELT](https://en.wikipedia.org/wiki/CELT "wikipedia:CELT") | [celt](https://www.archlinux.org/packages/?name=celt) | [WavPack](https://en.wikipedia.org/wiki/WavPack "wikipedia:WavPack") | [wavpack](https://www.archlinux.org/packages/?name=wavpack) |
-| [MPEG-1](https://en.wikipedia.org/wiki/MPEG-1 "wikipedia:MPEG-1") | [libmad](https://www.archlinux.org/packages/?name=libmad) (decode) | <small>* Also has a lossy [hybrid mode](https://en.wikipedia.org/wiki/WavPack#Hybrid_mode "wikipedia:WavPack").</small> |
-| [MP3](https://en.wikipedia.org/wiki/MP3 "wikipedia:MP3") | [lame](https://www.archlinux.org/packages/?name=lame) (encode) |
-| [Musepack](https://en.wikipedia.org/wiki/Musepack "wikipedia:Musepack") (MPC) | [libmpcdec](https://www.archlinux.org/packages/?name=libmpcdec) (decode) |
+See also [Wikipedia:Comparison of audio coding formats](https://en.wikipedia.org/wiki/Comparison_of_audio_coding_formats "wikipedia:Comparison of audio coding formats").
+
+#### Lossy audio codecs
+
+| Codec | Encode | Decode |
+| [AAC](https://en.wikipedia.org/wiki/Advanced_Audio_Coding "wikipedia:Advanced Audio Coding") | [#AAC](#AAC) |
+| [ATSC A/52](https://en.wikipedia.org/wiki/ATSC_A/52 "wikipedia:ATSC A/52") | [aften](https://aur.archlinux.org/packages/aften/) | [a52dec](https://www.archlinux.org/packages/?name=a52dec) |
+| [CELT](https://en.wikipedia.org/wiki/CELT "wikipedia:CELT") | [celt](https://www.archlinux.org/packages/?name=celt) |
+| [MPEG-1](https://en.wikipedia.org/wiki/MPEG-1 "wikipedia:MPEG-1") | [libmad](https://www.archlinux.org/packages/?name=libmad) |
+| [MP3](https://en.wikipedia.org/wiki/MP3 "wikipedia:MP3") | [lame](https://www.archlinux.org/packages/?name=lame) |
+| [Musepack](https://en.wikipedia.org/wiki/Musepack "wikipedia:Musepack") (MPC) | – | [libmpcdec](https://www.archlinux.org/packages/?name=libmpcdec) |
 | [Opus](https://en.wikipedia.org/wiki/Opus_(audio_format) | [opus](https://www.archlinux.org/packages/?name=opus), [opus-git](https://aur.archlinux.org/packages/opus-git/) |
 | [Vorbis](https://en.wikipedia.org/wiki/Vorbis "wikipedia:Vorbis") | [libvorbis](https://www.archlinux.org/packages/?name=libvorbis) |
 | Speech codecs |
 | [AMR](https://en.wikipedia.org/wiki/Adaptive_Multi-Rate_audio_codec "wikipedia:Adaptive Multi-Rate audio codec") | [opencore-amr](https://www.archlinux.org/packages/?name=opencore-amr) |
 | [Speex](https://en.wikipedia.org/wiki/Speex "wikipedia:Speex") | [speex](https://www.archlinux.org/packages/?name=speex) |
 
-#### Lossy audio codecs
+1.  mppenc is not packaged.
 
 *   **[CELT](https://en.wikipedia.org/wiki/CELT "wikipedia:CELT")** — Open, royalty-free lossy audio codec, optimized for low latency.
 
@@ -131,7 +133,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Advanced_Audio_Coding "wikipedia:
 
 	[https://xiph.org/flac/](https://xiph.org/flac/) || [flac](https://www.archlinux.org/packages/?name=flac)
 
-*   **[WavPack](https://en.wikipedia.org/wiki/WavPack "wikipedia:WavPack")** — Audio compression format with lossless, lossy, and hybrid compression modes.
+*   **[WavPack](https://en.wikipedia.org/wiki/WavPack "wikipedia:WavPack")** — Lossless audio compression format that also has a lossy [hybrid mode](https://en.wikipedia.org/wiki/WavPack#Hybrid_mode "wikipedia:WavPack").
 
 	[http://www.wavpack.com/](http://www.wavpack.com/) || [wavpack](https://www.archlinux.org/packages/?name=wavpack)
 
@@ -147,12 +149,21 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Advanced_Audio_Coding "wikipedia:
 
 ### Video codecs
 
+See also [Wikipedia:Comparison of video codecs](https://en.wikipedia.org/wiki/Comparison_of_video_codecs "wikipedia:Comparison of video codecs").
+
 | Codec | Libraries |
 | [AV1](https://en.wikipedia.org/wiki/AV1 "wikipedia:AV1") | [aom](https://www.archlinux.org/packages/?name=aom) |
 | [Daala](https://en.wikipedia.org/wiki/Daala "wikipedia:Daala") | [daala-git](https://aur.archlinux.org/packages/daala-git/) |
+| [Dirac](https://en.wikipedia.org/wiki/Dirac_(video_compression_format) | [schroedinger](https://www.archlinux.org/packages/?name=schroedinger) |
+| [DV](https://en.wikipedia.org/wiki/DV "wikipedia:DV") | [libdv](https://www.archlinux.org/packages/?name=libdv) |
 | [H.265](https://en.wikipedia.org/wiki/High_Efficiency_Video_Coding "wikipedia:High Efficiency Video Coding") | [x265](https://www.archlinux.org/packages/?name=x265), [x265-hg](https://aur.archlinux.org/packages/x265-hg/) |
 | [libde265](https://www.archlinux.org/packages/?name=libde265), [libde265-git](https://aur.archlinux.org/packages/libde265-git/) |
 | [H.264](https://en.wikipedia.org/wiki/H.264 "wikipedia:H.264") | [x264](https://www.archlinux.org/packages/?name=x264), [x264-git](https://aur.archlinux.org/packages/x264-git/) |
+| [MPEG-1](https://en.wikipedia.org/wiki/MPEG-1 "wikipedia:MPEG-1") | [libmpeg2](https://www.archlinux.org/packages/?name=libmpeg2) (decode) |
+| [MPEG-2](https://en.wikipedia.org/wiki/MPEG-2 "wikipedia:MPEG-2") |
+| [MPEG-4](https://en.wikipedia.org/wiki/MPEG-4 "wikipedia:MPEG-4") | [Xvid](https://en.wikipedia.org/wiki/Xvid "wikipedia:Xvid") ([xvidcore](https://www.archlinux.org/packages/?name=xvidcore)) |
+| [Theora](https://en.wikipedia.org/wiki/Theora "wikipedia:Theora") | [libtheora](https://www.archlinux.org/packages/?name=libtheora) |
+| [VP8](https://en.wikipedia.org/wiki/VP8 "wikipedia:VP8") | [libvpx](https://www.archlinux.org/packages/?name=libvpx), [libvpx-git](https://aur.archlinux.org/packages/libvpx-git/) |
 
 *   **[AV1](https://en.wikipedia.org/wiki/AV1 "wikipedia:AV1")** — AOMedia Video 1 (AV1) is successor codec to Google's VP9, Mozilla's Daala, Cisco's Thor.
 
@@ -198,6 +209,18 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Advanced_Audio_Coding "wikipedia:
 
 	[https://www.xvid.org/](https://www.xvid.org/) || [xvidcore](https://www.archlinux.org/packages/?name=xvidcore)
 
+## Container format tools
+
+See also [Wikipedia:Comparison of video container formats](https://en.wikipedia.org/wiki/Comparison_of_video_container_formats "wikipedia:Comparison of video container formats").
+
+*   **[MKVToolNix CLI](https://en.wikipedia.org/wiki/MKVToolNix "wikipedia:MKVToolNix")** — Set of tools to create, edit and inspect Matroska files.
+
+	[https://mkvtoolnix.download/](https://mkvtoolnix.download/) || [mkvtoolnix-cli](https://www.archlinux.org/packages/?name=mkvtoolnix-cli), [mkvtoolnix-gui](https://www.archlinux.org/packages/?name=mkvtoolnix-gui)
+
+*   **OGMtools** — Information, extraction or creation for OGG media streams.
+
+	[http://www.bunkus.org/videotools/ogmtools](http://www.bunkus.org/videotools/ogmtools) || [ogmtools](https://www.archlinux.org/packages/?name=ogmtools)
+
 ## Backends
 
 ### GStreamer
@@ -220,7 +243,7 @@ Note that the xine project itself provides a capable video player, [xine-ui](htt
 
 ### libavcodec
 
-[libavcodec](/index.php/FFmpeg "FFmpeg") is part of the [FFmpeg](http://ffmpeg.org/) project. It includes a large number of video and audio codecs. The libavcodec codecs are included with media players such as [MPlayer](/index.php/MPlayer "MPlayer") and [VLC](/index.php/VLC "VLC"), so you may not need to install the [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) package itself.
+[libavcodec](https://ffmpeg.org/libavcodec.html) is part of the [FFmpeg](/index.php/FFmpeg "FFmpeg") project. It includes a large number of video and audio codecs. The libavcodec codecs are included with media players such as [MPlayer](/index.php/MPlayer "MPlayer") and [VLC](/index.php/VLC "VLC"), so you may not need to install the [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) package itself.
 
 ## Tips and tricks
 

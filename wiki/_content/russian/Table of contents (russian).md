@@ -36,7 +36,7 @@
 | <small>3.7.1.</small> [Клавиатуры](/index.php/Category:Keyboards_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Keyboards (Русский)") <small>(4)</small> | <small>3.8.1.</small> [Keyboards](/index.php/Category:Keyboards "Category:Keyboards") <small>(7)</small> |
 | <small>3.7.1.1.</small> [Keyboard configuration](/index.php/Category:Keyboard_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Keyboard configuration (Русский)") <small>(4) (Также в [Администрирование](/index.php/Category:System_administration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:System administration (Русский)"))</small> |
 | <small>3.7.2.</small> [Мыши](/index.php/Category:Mice_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Mice (Русский)") <small>(2)</small> | <small>3.8.2.</small> [Mice](/index.php/Category:Mice "Category:Mice") <small>(15)</small> |
-| <small>3.8.</small> [Ноутбуки](/index.php/Category:Laptops_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Laptops (Русский)") <small>(3)</small> | <small>3.9.</small> [Laptops](/index.php/Category:Laptops "Category:Laptops") <small>(22)</small> |
+| <small>3.8.</small> [Ноутбуки](/index.php/Category:Laptops_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Laptops (Русский)") <small>(3)</small> | <small>3.9.</small> [Laptops](/index.php/Category:Laptops "Category:Laptops") <small>(23)</small> |
  <small>3.9.1.</small> [Acer](/index.php/Category:Acer "Category:Acer") <small>(33)</small> |
  <small>3.9.2.</small> [Alienware](/index.php/Category:Alienware "Category:Alienware") <small>(4)</small> |
  <small>3.9.3.</small> [Apple](/index.php/Category:Apple "Category:Apple") <small>(12)</small> |

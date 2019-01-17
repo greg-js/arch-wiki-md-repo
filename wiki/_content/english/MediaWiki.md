@@ -1,4 +1,4 @@
-**Warning:** [mediawiki](https://www.archlinux.org/packages/?name=mediawiki) is currently broken because MediaWiki does not support PHP 7.3\. [FS#61070](https://bugs.archlinux.org/task/61070)
+**Note:** MediaWiki is not fully compatible with PHP 7.3 yet.[[1]](https://www.mediawiki.org/wiki/Compatibility#PHP)[[2]](https://phabricator.wikimedia.org/project/view/3494/)
 
 [MediaWiki](https://www.mediawiki.org/wiki/MediaWiki) is a free and open source wiki software written in [PHP](/index.php/PHP "PHP"), originally developed for Wikipedia. It also powers this wiki (see [Special:Version](/index.php/Special:Version "Special:Version") and the [GitHub repository](https://github.com/archlinux/archwiki)).
 

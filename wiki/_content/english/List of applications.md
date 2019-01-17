@@ -59,6 +59,7 @@ This article is a general list of applications sorted by category, as a referenc
         *   [1.5.1 Email clients](#Email_clients)
             *   [1.5.1.1 Console](#Console_4)
             *   [1.5.1.2 Graphical](#Graphical_4)
+            *   [1.5.1.3 Web-based](#Web-based)
         *   [1.5.2 Mail servers](#Mail_servers)
         *   [1.5.3 Mail retrieval agents](#Mail_retrieval_agents)
         *   [1.5.4 Instant messaging clients](#Instant_messaging_clients)
@@ -1464,17 +1465,9 @@ See also [Wikipedia:Comparison of email clients](https://en.wikipedia.org/wiki/C
 
 	[https://github.com/pulb/mailnag](https://github.com/pulb/mailnag) || [mailnag](https://www.archlinux.org/packages/?name=mailnag)
 
-*   **[Mailpile](https://en.wikipedia.org/wiki/Mailpile "wikipedia:Mailpile")** — A modern, fast web-mail client with user-friendly encryption and privacy features.
-
-	[https://www.mailpile.is/](https://www.mailpile.is/) || [mailpile](https://aur.archlinux.org/packages/mailpile/)
-
 *   **Mailspring** — [Proprietary](https://github.com/Foundry376/Mailspring/issues/24) fork of Nylas Mail by one of the original authors.
 
 	[https://getmailspring.com/](https://getmailspring.com/) || [mailspring](https://aur.archlinux.org/packages/mailspring/)
-
-*   **[Nextcloud](/index.php/Nextcloud "Nextcloud") Mail** — An email webapp for NextCloud.
-
-	[https://github.com/nextcloud/mail](https://github.com/nextcloud/mail) || [nextcloud-app-mail](https://www.archlinux.org/packages/?name=nextcloud-app-mail)
 
 *   **Nylas Mail** — Extensible desktop mail app. Based on the [Electron](https://electronjs.org/) platform.
 
@@ -1492,17 +1485,9 @@ See also [Wikipedia:Comparison of email clients](https://en.wikipedia.org/wiki/C
 
 	[http://protondesktop.com/](http://protondesktop.com/) || [protonmail-desktop](https://aur.archlinux.org/packages/protonmail-desktop/)
 
-*   **Roundcubemail** — Browser-based multilingual IMAP client webapp with a native application-like user interface.
-
-	[http://roundcube.net/](http://roundcube.net/) || [roundcubemail](https://www.archlinux.org/packages/?name=roundcubemail)
-
 *   **[SeaMonkey Mail & Newsgroups](https://en.wikipedia.org/wiki/SeaMonkey#Mail "wikipedia:SeaMonkey")** — Email client included in the SeaMonkey suite.
 
 	[http://www.seamonkey-project.org/](http://www.seamonkey-project.org/) || [seamonkey](https://www.archlinux.org/packages/?name=seamonkey)
-
-*   **[SquirrelMail](/index.php/Squirrelmail "Squirrelmail")** — Webmail for Nuts!
-
-	[https://squirrelmail.org/](https://squirrelmail.org/) || [squirrelmail](https://aur.archlinux.org/packages/squirrelmail/)
 
 *   **[Sylpheed](https://en.wikipedia.org/wiki/Sylpheed "wikipedia:Sylpheed")** — Lightweight and user-friendly GTK+ email client.
 
@@ -1515,6 +1500,24 @@ See also [Wikipedia:Comparison of email clients](https://en.wikipedia.org/wiki/C
 *   **Trojitá** — Qt IMAP email client. Only supports [one IMAP account](https://bugs.kde.org/show_bug.cgi?id=321374).
 
 	[http://trojita.flaska.net/](http://trojita.flaska.net/) || [trojita](https://www.archlinux.org/packages/?name=trojita)
+
+##### Web-based
+
+*   **[Mailpile](https://en.wikipedia.org/wiki/Mailpile "wikipedia:Mailpile")** — A modern, fast web-mail client with user-friendly encryption and privacy features.
+
+	[https://www.mailpile.is/](https://www.mailpile.is/) || [mailpile](https://aur.archlinux.org/packages/mailpile/)
+
+*   **[Nextcloud](/index.php/Nextcloud "Nextcloud") Mail** — An email webapp for NextCloud.
+
+	[https://github.com/nextcloud/mail](https://github.com/nextcloud/mail) || [nextcloud-app-mail](https://www.archlinux.org/packages/?name=nextcloud-app-mail)
+
+*   **Roundcubemail** — Browser-based multilingual IMAP client webapp with a native application-like user interface.
+
+	[http://roundcube.net/](http://roundcube.net/) || [roundcubemail](https://www.archlinux.org/packages/?name=roundcubemail)
+
+*   **[SquirrelMail](/index.php/Squirrelmail "Squirrelmail")** — Webmail for Nuts!
+
+	[https://squirrelmail.org/](https://squirrelmail.org/) || [squirrelmail](https://aur.archlinux.org/packages/squirrelmail/)
 
 #### Mail servers
 
@@ -3952,7 +3955,7 @@ See also [Wikipedia:Comparison of video player software](https://en.wikipedia.or
 
 #### Video converters
 
-See also [Wikipedia:Comparison of video converters](https://en.wikipedia.org/wiki/Comparison_of_video_converters "wikipedia:Comparison of video converters").
+See also [Wikipedia:Comparison of video converters](https://en.wikipedia.org/wiki/Comparison_of_video_converters "wikipedia:Comparison of video converters") and [Codecs and containers#Container format tools](/index.php/Codecs_and_containers#Container_format_tools "Codecs and containers").
 
 ##### Console
 
@@ -3971,10 +3974,6 @@ See also [Wikipedia:Comparison of video converters](https://en.wikipedia.org/wik
 *   **[MEncoder](https://en.wikipedia.org/wiki/MEncoder "wikipedia:MEncoder")** — Free command line video decoding, encoding and filtering tool.
 
 	[http://mplayerhq.hu/](http://mplayerhq.hu/) || [mencoder](https://www.archlinux.org/packages/?name=mencoder)
-
-*   **[MKVToolNix CLI](https://en.wikipedia.org/wiki/MKVToolNix "wikipedia:MKVToolNix")** — Set of tools to create, edit and inspect Matroska files.
-
-	[https://mkvtoolnix.download/](https://mkvtoolnix.download/) || [mkvtoolnix-cli](https://www.archlinux.org/packages/?name=mkvtoolnix-cli)
 
 *   **Transcode** — Command line tool for video stream processing.
 
@@ -4001,10 +4000,6 @@ See also [Wikipedia:Comparison of video converters](https://en.wikipedia.org/wik
 *   **[HandBrake](https://en.wikipedia.org/wiki/HandBrake "wikipedia:HandBrake")** — Simple yet powerful video transcoder ideal for batch mkv/x264 ripping. GTK+ version.
 
 	[http://handbrake.fr/](http://handbrake.fr/) || [handbrake](https://www.archlinux.org/packages/?name=handbrake)
-
-*   **[MKVToolNix GUI](https://en.wikipedia.org/wiki/MKVToolNix "wikipedia:MKVToolNix")** — Qt based GUI to create, edit and inspect Matroska files.
-
-	[https://mkvtoolnix.download/](https://mkvtoolnix.download/) || [mkvtoolnix-gui](https://www.archlinux.org/packages/?name=mkvtoolnix-gui)
 
 *   **QWinFF** — Qt5 GUI for FFmpeg that can read audio and video files in various formats and convert them into other formats.
 

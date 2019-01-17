@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [openresolv](/index.php/Openresolv "Openresolv"). Data da última tradução: 2018-10-30\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Openresolv&diff=0&oldid=547380) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [openresolv](/index.php/Openresolv "Openresolv"). Data da última tradução: 2019-01-15\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Openresolv&diff=0&oldid=561689) na versão em inglês.
 
 Artigos relacionados
 
@@ -46,10 +46,10 @@ Clientes [VPN](/index.php/VPN "VPN"):
 
 Openresolv pode ser configurado para passar servidores de nome e domínios de pesquisa para resolvedores de DNS. Há suporte aos seguintes resolvedores:
 
-*   [Unbound](/index.php/Unbound "Unbound")
-*   [dnsmasq (Português)#openresolv](/index.php/Dnsmasq_(Portugu%C3%AAs)#openresolv "Dnsmasq (Português)")
 *   [BIND](/index.php/BIND "BIND")
+*   [dnsmasq (Português)#openresolv](/index.php/Dnsmasq_(Portugu%C3%AAs)#openresolv "Dnsmasq (Português)")
 *   [pdnsd](/index.php/Pdnsd "Pdnsd")
+*   [Unbound](/index.php/Unbound "Unbound")
 
 Veja a [documentação oficial](https://roy.marples.name/projects/openresolv/config) para instruções.
 

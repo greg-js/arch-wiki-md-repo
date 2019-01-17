@@ -72,7 +72,7 @@ If you want to verify that your MAC has been spoofed, simply run `ip link show *
 
 Another method uses [macchanger](https://www.archlinux.org/packages/?name=macchanger) (a.k.a., the GNU MAC Changer). It provides a variety of features such as changing the address to match a certain vendor or completely randomizing it.
 
-[Install](/index.php/Pacman#Installing_specific_packages "Pacman") the package [macchanger](https://www.archlinux.org/packages/?name=macchanger) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the package [macchanger](https://www.archlinux.org/packages/?name=macchanger).
 
 The spoofing is done on per-interface basis, specify [network interface](/index.php/Network_interface "Network interface") name as `*interface*` in each of the following commands.
 

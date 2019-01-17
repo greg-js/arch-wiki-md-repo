@@ -4,15 +4,17 @@ The power of an enterprise-class laptop. The freedom and convenience of a tablet
 
 *   [1 Specifications](#Specifications)
 *   [2 Installation and configuration](#Installation_and_configuration)
-    *   [2.1 CPU & Graphics](#CPU_.26_Graphics)
+    *   [2.1 CPU & Graphics](#CPU_&_Graphics)
     *   [2.2 Touchpad](#Touchpad)
     *   [2.3 Bluetooth](#Bluetooth)
     *   [2.4 Wifi](#Wifi)
-    *   [2.5 LTE/3G](#LTE.2F3G)
+    *   [2.5 LTE/3G](#LTE/3G)
     *   [2.6 Smart Card Reader](#Smart_Card_Reader)
     *   [2.7 Display Backlight Control](#Display_Backlight_Control)
     *   [2.8 Keyboard Backlight control](#Keyboard_Backlight_control)
     *   [2.9 Fn-F9 Touchpad Toggle](#Fn-F9_Touchpad_Toggle)
+*   [3 Issues](#Issues)
+    *   [3.1 No speaker sound when resuming from suspend to RAM](#No_speaker_sound_when_resuming_from_suspend_to_RAM)
 
 ## Specifications
 
@@ -107,3 +109,9 @@ Since changing sys values requires root, one can either write a wrapper for bash
 ### Fn-F9 Touchpad Toggle
 
 Needs custom hwdb to work. See [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys"). Example hwdb provided here, but you might want to choose a different keycode: [HWDB Config](https://github.com/Exel232/Configurations/raw/master/Toshiba/60-toshiba-input.hwdb)
+
+## Issues
+
+### No speaker sound when resuming from suspend to RAM
+
+See [https://bbs.archlinux.org/viewtopic.php?id=213720](https://bbs.archlinux.org/viewtopic.php?id=213720)

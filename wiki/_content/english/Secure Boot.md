@@ -457,6 +457,25 @@ Depends = findutils
 Depends = grep
 ```
 
+Since your boot loader or boot manager will also need to be signed, you might want to trigger the hook when the former is updated. Here is an example with systemd-boot:
+
+ `/etc/pacman.d/hooks/99-secureboot.hook` 
+```
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = linux
+Target = systemd
+
+[Action]
+Description = Signing Kernel for SecureBoot
+When = PostTransaction
+Exec = /usr/bin/sh -c "/usr/bin/find /boot/ -type f \( -name 'vmlinuz-*' -o -name 'systemd*' \) -exec /usr/bin/sh -c 'if ! /usr/bin/sbverify --list {} 2>/dev/null
+```
+
+The `Target` needs to be duplicated each time you want to add a new package. Wrt. the `find` statement, since we had a condition with the filenames and APLM hooks are being split on spaces, we had to surround the whole statement by quotes in order for the hook to be parsed properly. Since systemd-boot is located in sub-folders, the depth needed to be adjusted as well so that we removed the `-maxdepth` argument. In order to avoid hassle, if you are unsure, try to reinstall the package you want to test to see if the hook and signing part are processed successfully. See [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman") or [alpm-hooks(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/alpm-hooks.5) for more info.
+
 ### Put firmware in "Setup Mode"
 
 Secure Boot is in Setup Mode when the Platform Key is removed. To put firmware in Setup Mode, enter firmware setup utility and find an option to delete or clear certificates. How to enter the setup utility is described in [#Before booting the OS](#Before_booting_the_OS).

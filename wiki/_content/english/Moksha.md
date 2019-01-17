@@ -1,3 +1,8 @@
+Related articles
+
+*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
+*   [Window manager](/index.php/Window_manager "Window manager")
+
 [Moksha](http://www.bodhilinux.com/moksha-desktop/) is a desktop environment created in 2014\. It is a fork of [Enlightenment](/index.php/Enlightenment "Enlightenment") 17 and it is currently used as default desktop environment in Ubuntu-based Bodhi Linux. Its chief advantage over later Enlightenment releases that are available in the extra repository is that it is more stable and has a significantly smaller memory footprint.
 
 ## Installation

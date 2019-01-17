@@ -37,8 +37,9 @@ From [GDM - GNOME Display Manager](https://wiki.gnome.org/Projects/GDM): "The GN
     *   [4.2 Failure on logout](#Failure_on_logout)
     *   [4.3 Rootless Xorg](#Rootless_Xorg)
     *   [4.4 Use Xorg backend](#Use_Xorg_backend)
-    *   [4.5 Incomplete removal of gdm](#Incomplete_removal_of_gdm)
-    *   [4.6 GDM auto-suspend (GNOME 3.28)](#GDM_auto-suspend_(GNOME_3.28))
+    *   [4.5 GDM freezes with systemd](#GDM_freezes_with_systemd)
+    *   [4.6 Incomplete removal of gdm](#Incomplete_removal_of_gdm)
+    *   [4.7 GDM auto-suspend (GNOME 3.28)](#GDM_auto-suspend_(GNOME_3.28))
 *   [5 See also](#See_also)
 
 ## Installation
@@ -527,6 +528,16 @@ The [Wayland](/index.php/Wayland "Wayland") backend is used by default and the [
 
 ```
 #WaylandEnable=false
+
+```
+
+### GDM freezes with systemd
+
+If GDM gets hang-up with `systemctl enable gdm` and `systemctl start gdm` works as expected, apply the config with `systemctl edit gdm` as below:
+
+```
+ [Service]
+ Type=idle
 
 ```
 

@@ -82,7 +82,7 @@ Dimming of display: brightness control works even after suspend with gnome-setti
 Microphone works | NA |
 | [Portege Z20t](/index.php/Toshiba_Portege_Z20t "Toshiba Portege Z20t")-B2112 | Current | Intel® HD Graphics 5300 (Broadwell GT2)
 Touschscreen also works fine (Gnome)
-Side note: To use dual monitor setup one cable has to be connected to the screen and the other one to the base (keyboard), both cables to the base doesn't work. | Sound works. Also the keyboard shortcuts to mute/unmute
+Side note: To use dual monitor setup one cable has to be connected to the screen and the other one to the base (keyboard), both cables to the base doesn't work. | Sound works [except no sound from speaker after resuming from suspend to RAM](https://bbs.archlinux.org/viewtopic.php?id=213720). Also the keyboard shortcuts to mute/unmute
 Vol Buttons on the screen works too | works | works. | Not tested | Suspend to
 RAM: works
 Disk: not tested

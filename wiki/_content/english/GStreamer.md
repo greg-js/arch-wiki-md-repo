@@ -43,7 +43,7 @@ See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardwa
 GStreamer will automatically detect and use the correct API [[1]](https://gstreamer.freedesktop.org/documentation/tutorials/playback/hardware-accelerated-video-decoding.html). Depending on your system you can [install](/index.php/Install "Install"):
 
 *   [gstreamer-vaapi](https://www.archlinux.org/packages/?name=gstreamer-vaapi) for VA-API support.
-*   [gst-plugins-bad](https://www.archlinux.org/packages/?name=gst-plugins-bad) for VDPAU and NVDEC support. (NVDEC is currently broken, [fixed](https://bugzilla.gnome.org/show_bug.cgi?id=791724) in GStreamer 1.15)
+*   [gst-plugins-bad](https://www.archlinux.org/packages/?name=gst-plugins-bad) for VDPAU and NVDEC support. (NVDEC is currently broken, [fixed](https://gitlab.freedesktop.org/gstreamer/gst-plugins-bad/commit/4e314d6f80515501906599f548e88e2e4f2d9452) in GStreamer 1.15)
 
 ## See also
 

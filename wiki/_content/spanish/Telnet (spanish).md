@@ -5,7 +5,7 @@ Este artículo es una traducción de [Telnet](/index.php/Telnet "Telnet"), revis
 
 ## Instalación
 
-El paquete [inetutils](https://www.archlinux.org/packages/?name=inetutils), parte del [grupo base](/index.php/Base_group "Base group"), incluye un cliente telnet.
+El paquete [inetutils](https://www.archlinux.org/packages/?name=inetutils), parte del [grupo base](/index.php/Base_group_(Espa%C3%B1ol) "Base group (Español)"), incluye un cliente telnet.
 
 Un servidor telnet puede configurarse con sockets de [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") o xinetd. Telnetd via systemd requiere solo el paquete inetutils. Para configurar un servidor telnet con xinetd, instale también [xinetd](https://www.archlinux.org/packages/?name=xinetd).
 

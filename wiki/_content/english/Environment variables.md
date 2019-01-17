@@ -37,7 +37,7 @@ $ env EDITOR=vim xterm
 
 The [Bash](/index.php/Bash "Bash") builtin *set* allows you to change the values of shell options and set the positional parameters, or to display the names and values of shell variables. For more information, see [the set builtin documentation](http://www.gnu.org/software/bash/manual/bash.html#The-Set-Builtin).
 
-Each process stores their environment in the `/proc/$PID/environ` file. This file contained each key value pair delimited by a nul character (`\x0`). A more human readable format can be obtained with [sed](/index.php/Sed "Sed"), e.g. `sed 's:\x0:
+Each process stores their environment in the `/proc/$PID/environ` file. This file contains each key value pair delimited by a nul character (`\x0`). A more human readable format can be obtained with [sed](/index.php/Sed "Sed"), e.g. `sed 's:\x0:
 :g' /proc/$PID/environ`.
 
 ## Defining variables
@@ -94,7 +94,7 @@ export PATH="${PATH}:~/scripts"
 export GUIVAR=value
 ```
 
-Applications running on [Wayland](/index.php/Wayland "Wayland") may to use [systemd](/index.php/Systemd/User#Environment_variables "Systemd/User") user environments variables instead, as Wayland does not initiate any Xorg related files:
+Applications running on [Wayland](/index.php/Wayland "Wayland") may use [systemd](/index.php/Systemd/User#Environment_variables "Systemd/User") user environment variables instead, as Wayland does not initiate any Xorg related files:
 
  `~/.config/environment.d/envvars.conf` 
 ```

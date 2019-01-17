@@ -143,8 +143,6 @@ Type=oneshot
 ExecStart=/usr/bin/mbsync -Va
 ```
 
-**Note:** It's possible this service could trigger without an internet connection. A solution is to add the following into the Unit section: `After=network.target network-online.target dbus.socket`
-
 The following timer configures `mbsync` to be started 2 minutes after boot, and then every 5 minutes:
 
  `~/.config/systemd/user/mbsync.timer` 

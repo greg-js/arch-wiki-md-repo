@@ -444,7 +444,7 @@ alias help=run-help
 
 `run-help` will invoke *man* for external commands. Default keyboard shortcut is `Alt+h` or `Esc+h`.
 
-`run-help` has helper functions, they need to be enabled separately:
+`run-help` has assistant functions, they need to be enabled separately:
 
 ```
 autoload -Uz run-help-git

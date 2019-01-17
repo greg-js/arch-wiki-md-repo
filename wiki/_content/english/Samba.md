@@ -102,7 +102,7 @@ If you are using a [firewall](/index.php/Firewall "Firewall"), do not forget to 
 
 Samba requires a Linux user account - you may use an existing user account or create a [new one](/index.php/Users_and_groups#User_management "Users and groups").
 
-**Note:** The [user](/index.php/User "User")/[user group](/index.php/User_group "User group") *nobody* should already exists on the system, is used as default `guest account` and may be used for shares containing `guest ok = yes`, thus preventing the need of user login on that share.
+**Note:** The [user](/index.php/User "User")/[user group](/index.php/User_group "User group") *nobody* should already exist on the system, it's used as the default `guest account` and may be used for shares containing `guest ok = yes`, thus preventing the need of user login on that share.
 
 Although the user name is shared with Linux system, Samba uses a password separate from that of the Linux user accounts. Replace `samba_user` with the chosen Samba user account:
 

@@ -39,7 +39,7 @@ $ convert -append *input.pngs* *output.png*
 To crop part of multiple images and convert them to another format:
 
 ```
-$ mogrify -crop *WIDTH***x***HEIGHT*+*X*+*Y* -format jpg *.png
+$ mogrify -crop *WIDTH*x*HEIGHT*+*X*+*Y* -format jpg *.png
 
 ```
 

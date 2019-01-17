@@ -89,10 +89,12 @@ For example, to start [Xfce](/index.php/Xfce "Xfce") the following script can be
 #!/bin/sh
 unset SESSION_MANAGER
 unset DBUS_SESSION_BUS_ADDRESS
-exec dbus-launch startxfce4
+exec startxfce4
 ```
 
-To start [GNOME](/index.php/GNOME "GNOME"), replace `startxfce4` by `gnome-session` in the example above.
+**Note:** The instruction `unset DBUS_SESSION_BUS_ADDRESS` clears the variable and forces `startxfce4` to initiate a new bus for the VNC session. If *D-Bus* fails to start, try using `exec dbus-launch startxfce4` instead to launch the bus manually, note that this latter way of starting *D-Bus* is deprecated.
+
+To start [GNOME](/index.php/GNOME "GNOME"), replace `exec startxfce4` by `exec dbus-launch gnome-session` in the example above.
 
 Make sure `~/.vnc/xstartup` has a execute permission.
 

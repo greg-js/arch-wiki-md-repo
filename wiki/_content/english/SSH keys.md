@@ -348,7 +348,7 @@ In order to start the agent automatically and make sure that only one `ssh-agent
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
     ssh-agent > ~/.ssh-agent-thing
 fi
-if [[ "$SSH_AGENT_PID" == "" ]]; then
+if [[ ! "$SSH_AUTH_SOCK" ]]; then
     eval "$(<~/.ssh-agent-thing)"
 fi
 

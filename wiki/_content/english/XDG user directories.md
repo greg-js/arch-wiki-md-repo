@@ -8,7 +8,7 @@ From [freedesktop.org](https://www.freedesktop.org/wiki/Software/xdg-user-dirs/)
 
 	xdg-user-dirs is a tool to help manage "well known" user directories like the desktop folder and the music folder. It also handles localization (i.e. translation) of the filenames.
 
-	The way it works is that [xdg-user-dirs-update(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdg-user-dirs-update.1) is run very early in the login phase. This program reads a configuration file, and a set of default directories. It then creates localized versions of these directories in the users home directory and sets up a config file in `$XDG_CONFIG_HOME/user-dirs.dirs` (XDG_CONFIG_HOME defaults to ~/.config) that applications can read to find these directories.
+	The way it works is that [xdg-user-dirs-update(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdg-user-dirs-update.1) is run very early in the login phase. This program reads a configuration file, and a set of default directories. It then creates localized versions of these directories in the users home directory and sets up a config file in `$XDG_CONFIG_HOME/user-dirs.dirs` (`XDG_CONFIG_HOME` defaults to `~/.config`) that applications can read to find these directories.
 
 Most [file managers](/index.php/File_manager "File manager") indicate XDG user directories with special icons.
 

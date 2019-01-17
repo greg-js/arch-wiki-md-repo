@@ -78,7 +78,7 @@ Either the name of the package, e.g. `pkgname='foo'`, or, for split packages, an
 
 ### pkgver
 
-The version of the package. This should be the same as the version released by the author of the package. It can contain letters, numbers, periods and underscores, but **not** a hyphen (`-`). If the author of the software uses one, replace it with an underscore (`_`). If the `pkgver` variable is used later in the PKGBUILD, then the underscore can easily be substituted for a hyphen, e.g. `source=("$pkgname-${pkgver//_/-}.tar.gz")`.
+The version of the package. This should be the same as the version published by the author of the upstream software. It can contain letters, numbers, periods and underscores, but **not** a hyphen (`-`). If the author of the software uses one, replace it with an underscore (`_`). If the `pkgver` variable is used later in the PKGBUILD, then the underscore can easily be substituted for a hyphen, e.g. `source=("$pkgname-${pkgver//_/-}.tar.gz")`.
 
 **Note:** If upstream uses a timestamp versioning such as `30102014`, ensure to use the reversed date, i.e. `20141030` ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601 "wikipedia:ISO 8601") format). Otherwise it will not appear as a newer version.
 

@@ -3,7 +3,7 @@ Este artículo es una traducción de [C](/index.php/C "C"), revisada por última
 
 El kernel [Linux](/index.php/Linux_(Espa%C3%B1ol) "Linux (Español)") y las herramientas de usuario [GNU](/index.php/GNU_(Espa%C3%B1ol) "GNU (Español)") están escritos principalmente en [C](https://en.wikipedia.org/wiki/es:C_(lenguaje_de_programaci%C3%B3n) "wikipedia:es:C (lenguaje de programación)").
 
-Arch Linux utiliza la [Biblioteca de C de GNU](https://en.wikipedia.org/wiki/GNU_C_Library "wikipedia:GNU C Library") ([glibc](https://www.archlinux.org/packages/?name=glibc)) como la biblioteca estándar de C; es parte del [grupo base](/index.php/Base_group "Base group").
+Arch Linux utiliza la [Biblioteca de C de GNU](https://en.wikipedia.org/wiki/GNU_C_Library "wikipedia:GNU C Library") ([glibc](https://www.archlinux.org/packages/?name=glibc)) como la biblioteca estándar de C; es parte del [grupo base](/index.php/Base_group_(Espa%C3%B1ol) "Base group (Español)").
 
 Puede utilizar [toolchain de GNU](/index.php/GNU_toolchain_(Espa%C3%B1ol) "GNU toolchain (Español)") o [LLVM toolchain](/index.php/LLVM_toolchain "LLVM toolchain") para desarrollar software en C, [C++](https://en.wikipedia.org/wiki/C%2B%2B "wikipedia:C++") u [Objective-C](https://en.wikipedia.org/wiki/es:Objective-C "wikipedia:es:Objective-C").
 

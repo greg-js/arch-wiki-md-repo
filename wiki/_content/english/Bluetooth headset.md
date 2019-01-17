@@ -228,7 +228,7 @@ bluetoothd[5556]: a2dp-sink profile connect failed for 00:1D:43:6D:03:26: Protoc
 
 This may be due to the [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth) package not being installed. Install it if it missing, then restart pulseaudio.
 
-It can also be due to permission, especially if starting pulseaudio as root allows you to connect. Add your user is part of the *lp* group, then restart pulseaudio. See `/etc/dbus-1/system.d/bluetooth.conf` for reference.
+It can also be due to permission, especially if starting pulseaudio as root allows you to connect. Add your user to the *lp* group, then restart pulseaudio. See `/etc/dbus-1/system.d/bluetooth.conf` for reference.
 
 If the issue is not due to the missing package, the problem in this case is that PulseAudio is not catching up. A common solution to this problem is to restart PulseAudio. Note that it is perfectly fine to run *bluetoothctl* as root while PulseAudio runs as user. After restarting PulseAudio, retry to connect. It is not necessary to repeat the pairing.
 

@@ -349,9 +349,9 @@ If you keep `/usr` as a separate partition, you must adhere to the following req
 
 ### Extracting the image
 
-If you are curious about what is inside the initrd image, you can extract it and poke at the files inside of it.
+If you are curious about what is inside the initramfs image, you can extract it and poke at the files inside of it.
 
-The initrd image is an SVR4 CPIO archive, generated via the `find` and `bsdcpio` commands, optionally compressed with a compression scheme understood by the kernel. For more information on the compression schemes, see [#COMPRESSION](#COMPRESSION).
+The initramfs image is an SVR4 CPIO archive, generated via the `find` and `bsdcpio` commands, optionally compressed with a compression scheme understood by the kernel. For more information on the compression schemes, see [#COMPRESSION](#COMPRESSION).
 
 mkinitcpio includes a utility called `lsinitcpio` which will list and/or extract the contents of initramfs images.
 
@@ -440,7 +440,7 @@ To fix, first try choosing the [fallback](#Image_creation_and_activation) image 
 
 ## See also
 
-*   Linux Kernel documentation on [initramfs](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/plain/Documentation/filesystems/ramfs-rootfs-initramfs.txt?id=HEAD)
+*   Linux Kernel documentation on [initramfs](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/plain/Documentation/filesystems/ramfs-rootfs-initramfs.txt?id=HEAD), search for "What is rootfs?"
 *   Linux Kernel documentation on [initrd](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/plain/Documentation/admin-guide/initrd.rst?id=HEAD)
 *   Wikipedia article on [initrd](https://en.wikipedia.org/wiki/initrd "wikipedia:initrd")
 *   **[dracut](https://en.wikipedia.org/wiki/dracut_(software) "w:dracut (software)")** — A cross-distribution initramfs generation tool.

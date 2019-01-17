@@ -183,6 +183,7 @@ If you have not done additional configuration, the automatic generation will det
 *   Remember that `/boot/grub/grub.cfg` has to be re-generated after any change to `/etc/default/grub` or files in `/etc/grub.d/`.
 *   The default file path is `/boot/grub/grub.cfg`, not `/boot/grub/i386-pc/grub.cfg`.
 *   If you are trying to run *grub-mkconfig* in a chroot or *systemd-nspawn* container, you might notice that it does not work, complaining that *grub-probe* cannot get the "canonical path of /dev/sdaX". In this case, try using *arch-chroot* as described in the [BBS post](https://bbs.archlinux.org/viewtopic.php?pid=1225067#p1225067).
+*   If you are installing GRUB in chroot environment using LVM and the `grub-mkconfig` hangs indefinitely, see [#Device /dev/xxx not initialized in udev database even after waiting 10000000 microseconds](#Device_/dev/xxx_not_initialized_in_udev_database_even_after_waiting_10000000_microseconds).
 
 Use the *grub-mkconfig* tool to generate `/boot/grub/grub.cfg`:
 

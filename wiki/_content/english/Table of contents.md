@@ -34,7 +34,7 @@
 | <small>3.8.</small> [Input devices](/index.php/Category:Input_devices "Category:Input devices") <small>(15) (also in [Input](/index.php/Category:Input "Category:Input"))</small> |
 | <small>3.8.1.</small> [Keyboards](/index.php/Category:Keyboards "Category:Keyboards") <small>(7)</small> |
 | <small>3.8.2.</small> [Mice](/index.php/Category:Mice "Category:Mice") <small>(15)</small> |
-| <small>3.9.</small> [Laptops](/index.php/Category:Laptops "Category:Laptops") <small>(22)</small> |
+| <small>3.9.</small> [Laptops](/index.php/Category:Laptops "Category:Laptops") <small>(23)</small> |
 | <small>3.9.1.</small> [Acer](/index.php/Category:Acer "Category:Acer") <small>(33)</small> |
 | <small>3.9.2.</small> [Alienware](/index.php/Category:Alienware "Category:Alienware") <small>(4)</small> |
 | <small>3.9.3.</small> [Apple](/index.php/Category:Apple "Category:Apple") <small>(12)</small> |

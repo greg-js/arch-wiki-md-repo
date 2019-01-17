@@ -28,6 +28,7 @@
 *   [20 xrandr BadMatch](#xrandr_BadMatch)
 *   [21 Override EDID](#Override_EDID)
 *   [22 Overclocking with nvidia-settings GUI not working](#Overclocking_with_nvidia-settings_GUI_not_working)
+*   [23 Overclocking not working with Unknown Error](#Overclocking_not_working_with_Unknown_Error)
 
 ## Corrupted screen: "Six screens" Problem
 
@@ -550,3 +551,15 @@ Example to set multiple variables at once (overclock GPU by 50MHz, overclock vid
  nvidia-settings -a GPUGraphicsClockOffsetAllPerformanceLevels=50 -a GPUMemoryTransferRateOffsetGPUGraphicsClockOffsetAllPerformanceLevels=50 -a GPUOverVoltageOffset=100
 
 ```
+
+## Overclocking not working with Unknown Error
+
+If you're running Xorg as a non-root user and trying to overclock your NVIDIA GPU, you will get an error similar to this one:
+
+ `$ nvidia-settings -a "[gpu:0]/GPUGraphicsClockOffset[3]=10"` 
+```
+ERROR: Error assigning value 10 to attribute 'GPUGraphicsClockOffset' (trinity-zero:1[gpu:0]) as specified in assignment
+        '[gpu:0]/GPUGraphicsClockOffset[3]=10' (Unknown Error).
+```
+
+To avoid this issue, Xorg has to be run as the root user. See [Xorg#Rootless Xorg](/index.php/Xorg#Rootless_Xorg "Xorg") for details.

@@ -269,7 +269,7 @@ Screencast utilities allow you to create a video of your desktop or individual w
 
 	[https://obsproject.com/](https://obsproject.com/) || [obs-studio](https://www.archlinux.org/packages/?name=obs-studio)
 
-*   **[Peek](https://en.wikipedia.org/wiki/Peek "wikipedia:Peek")** — Simple screencast tool that produces GIF, APNG, WebM or MP4 animations.
+*   **[Peek](https://en.wikipedia.org/wiki/Peek_(software) "wikipedia:Peek (software)")** — Simple screencast tool that produces GIF, APNG, WebM or MP4 animations.
 
 	[https://github.com/phw/peek](https://github.com/phw/peek) || [peek](https://www.archlinux.org/packages/?name=peek)
 

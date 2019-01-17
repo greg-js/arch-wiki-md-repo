@@ -106,7 +106,7 @@ KDE es un proyecto de software que actualmente comprende un [entorno de escritor
 
 Antes de instalar Plasma, asegúrese de tener una instalación [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)") en funcionamiento en su sistema.
 
-[Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el metapaquete [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) o el grupo [plasma](https://www.archlinux.org/groups/x86_64/plasma/). Para conocer las diferencias entre [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) y [plasma](https://www.archlinux.org/groups/x86_64/plasma/) véase [grupo de paquetes](/index.php/Package_group "Package group"). Alternativamente, para una instalación de Plasma más minimalista, instale el paquete [plasma-desktop](https://www.archlinux.org/packages/?name=plasma-desktop).
+[Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el metapaquete [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) o el grupo [plasma](https://www.archlinux.org/groups/x86_64/plasma/). Para conocer las diferencias entre [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) y [plasma](https://www.archlinux.org/groups/x86_64/plasma/) véase [grupo de paquetes](/index.php/Package_group_(Espa%C3%B1ol) "Package group (Español)"). Alternativamente, para una instalación de Plasma más minimalista, instale el paquete [plasma-desktop](https://www.archlinux.org/packages/?name=plasma-desktop).
 
 Para habilitar el soporte para [Wayland](/index.php/Wayland_(Espa%C3%B1ol) "Wayland (Español)") en Plasma, instale también el paquete [plasma-wayland-session](https://www.archlinux.org/packages/?name=plasma-wayland-session).
 

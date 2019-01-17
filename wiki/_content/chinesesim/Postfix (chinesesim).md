@@ -120,7 +120,7 @@ default_transport = error: outside mail is not deliverable
 
 虚拟用户邮件的邮件账户不存储在本地系统的(`/etc/passwd`文件中。可以配合数据库完成对用户账户的存储。
 
-请参见 [Virtual user mail system with Postfix, Dovecot and Roundcube](/index.php/Virtual_user_mail_system_with_Postfix,_Dovecot_and_Roundcube "Virtual user mail system with Postfix, Dovecot and Roundcube")（英文） 那是一个如果设置的详细介绍。
+请参见 [Virtual user mail system with Postfix, Dovecot and Roundcube (简体中文)](/index.php/Virtual_user_mail_system_with_Postfix,_Dovecot_and_Roundcube_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Virtual user mail system with Postfix, Dovecot and Roundcube (简体中文)") 那是一个如何设置的详细介绍。
 
 ### 检查配置 Check configuration
 

@@ -75,6 +75,7 @@ In order to integrate functions of the host system to the guests, including shar
     *   [5.25 WinXP: Bit-depth cannot be greater than 16](#WinXP:_Bit-depth_cannot_be_greater_than_16)
     *   [5.26 Windows: Screen flicker if 3D acceleration enabled](#Windows:_Screen_flicker_if_3D_acceleration_enabled)
     *   [5.27 No hardware 3D acceleration in Arch Linux guest](#No_hardware_3D_acceleration_in_Arch_Linux_guest)
+    *   [5.28 Black screen for guest in EFI mode](#Black_screen_for_guest_in_EFI_mode)
 *   [6 See also](#See_also)
 
 ## Installation steps for Arch Linux hosts
@@ -171,6 +172,8 @@ Once the system and the boot loader are installed, VirtualBox will first attempt
 Do not bother with the VirtualBox Boot Manager (accessible with `F2` at boot), as it is buggy and incomplete. It does not store efivars set interactively. Therefore, EFI entries added to it manually in the firmware (accessed with `F12` at boot time) or with [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) will persist after a reboot [but are lost when the VM is shut down](https://www.virtualbox.org/ticket/11177).
 
 See also [UEFI VirtualBox installation boot problems](https://bbs.archlinux.org/viewtopic.php?id=158003).
+
+**Note:** In UEFI mode you may experience a black screen, see [#Black screen for guest in EFI mode](#Black_screen_for_guest_in_EFI_mode) for a workaround.
 
 ### Install the Guest Additions
 
@@ -892,6 +895,16 @@ Make sure no VirtualBox services are still running. See [VirtualBox bug 13653](h
 [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) package as of version 5.2.16-2 does not contain the file `VBoxEGL.so`. This causes the Arch Linux guest does not have proper 3D acceleration. See [FS#49752](https://bugs.archlinux.org/task/49752).
 
 To deal with this problem, apply the patch set at [FS#49752#comment152254](https://bugs.archlinux.org/task/49752#comment152254). Some fix to the patch set is required to make it work for version 5.2.16-2.
+
+### Black screen for guest in EFI mode
+
+When the guest is using UEFI in Virtualbox (*Enable EFI (special OSes only)*), you get a black screen during the boot and maybe after.
+
+This is because you are experiencing [FS#61184](https://bugs.archlinux.org/task/61184).
+
+The workaround is to use the VBoxVGA graphics controller, as that is the only one that does not display a black screen. Go to VM *Settings > Display'* and change the *Graphics Controller* to *VBoxVGA*.
+
+The default VMSVGA will show a black screen until Linux loads the graphics driver and VBoxSVGA will always show a black screen.
 
 ## See also
 

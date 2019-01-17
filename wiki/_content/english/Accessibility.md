@@ -18,6 +18,7 @@ There are many different methods of providing accessibility to users that have a
         *   [2.3.1 Speech recognition](#Speech_recognition)
         *   [2.3.2 Console and Virtual Terminal Emulators](#Console_and_Virtual_Terminal_Emulators)
 *   [3 Known issues](#Known_issues)
+*   [4 See also](#See_also)
 
 ## Desktop environments
 
@@ -212,3 +213,7 @@ See [Speech recognition](/index.php/Speech_recognition "Speech recognition").
 ## Known issues
 
 *   Configuration of input devices is not recognized by software that circumvents the software layer, e.g. [wine](/index.php/Wine "Wine"), [VirtualBox](/index.php/VirtualBox "VirtualBox"), and [QEMU](/index.php/QEMU "QEMU").
+
+## See also
+
+*   [KDE's](https://userbase.kde.org/Applications/Accessibility) advanced accessibility applications.

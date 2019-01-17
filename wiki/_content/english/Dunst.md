@@ -8,7 +8,7 @@ Related articles
 
 *   [1 Installation](#Installation)
 *   [2 Appearance](#Appearance)
-    *   [2.1 Icon Sets](#Icon_Sets)
+    *   [2.1 Icon sets](#Icon_sets)
 *   [3 Shortcuts](#Shortcuts)
 *   [4 Rules](#Rules)
     *   [4.1 Filtering](#Filtering)
@@ -48,7 +48,7 @@ The formatting of the notification can be specified. Options are as follows:
 These can be used in conjunction with HTML markup. For example the `format` can be set to `<b>%s</b>
 %b` for a bolded notification summary, a newline and the body unformatted.
 
-### Icon Sets
+### Icon sets
 
 Icons are set in the option `icon_path`. Status and devices icons are needed. By default, Dunst looks for the [gnome-icon-theme](https://www.archlinux.org/packages/?name=gnome-icon-theme) icons. For example, to use [adwaita-icon-theme](https://www.archlinux.org/packages/?name=adwaita-icon-theme) (gnome-icon-theme's successor), instead:
 
@@ -173,7 +173,7 @@ To realize that volume indicator place the following script somewhere on your `P
 
 ```
 
-`getProgressString` needs to be some function assembling the progressbar like string. This script uses [[3]](https://github.com/Fabian-G/dotfiles/blob/master/bin/getProgressString).
+`getProgressString` needs to be some function assembling the progressbar like string. This script uses [[3]](https://github.com/Fabian-G/dotfiles/blob/master/scripts/bin/getProgressString).
 
 Now simply bind `changeVolume 2dB+ unmute` etc. to some hotkey and you are done. You might also want to make dunst ignore these type of notifications in its history. See [Dunst#Modifying](/index.php/Dunst#Modifying "Dunst").
 

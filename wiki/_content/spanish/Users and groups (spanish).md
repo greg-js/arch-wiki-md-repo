@@ -125,7 +125,7 @@ Véase [chown(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [chmod(1)
 
 ## Shadow
 
-Las herramientas de gestión de usuarios, grupos y contraseñas en Arch Linux provienen del paquete [shadow](https://www.archlinux.org/packages/?name=shadow), que forma parte del [grupo base](/index.php/Base_group "Base group").
+Las herramientas de gestión de usuarios, grupos y contraseñas en Arch Linux provienen del paquete [shadow](https://www.archlinux.org/packages/?name=shadow), que forma parte del [grupo base](/index.php/Base_group_(Espa%C3%B1ol) "Base group (Español)").
 
 ## Lista de archivos
 

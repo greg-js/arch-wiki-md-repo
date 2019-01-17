@@ -1,5 +1,7 @@
 The following are examples of common scenarios of full system encryption with *dm-crypt*. They explain all the adaptations that need to be done to the normal [installation procedure](/index.php/Installation_guide "Installation guide"). All the necessary tools are on the [installation image](https://www.archlinux.org/download/).
 
+For Full-disk encryption (FDE), see [Dm-crypt/Encrypting_an_entire_system#Plain_dm-crypt](/index.php/Dm-crypt/Encrypting_an_entire_system#Plain_dm-crypt "Dm-crypt/Encrypting an entire system") and [Dm-crypt/Encrypting_an_entire_system#GPT_on_plain_dm-crypt](/index.php/Dm-crypt/Encrypting_an_entire_system#GPT_on_plain_dm-crypt "Dm-crypt/Encrypting an entire system").
+
 ## Contents
 
 *   [1 Overview](#Overview)
@@ -749,7 +751,6 @@ Configure [GRUB](/index.php/GRUB "GRUB") for the encrypted system by editing `/e
 
 ```
 GRUB_CMDLINE_LINUX="cryptdevice=/dev/md/root:cryptroot"
-GRUB_PRELOAD_MODULES="... mdraid1x"
 GRUB_ENABLE_CRYPTODISK=y
 
 ```
@@ -1083,13 +1084,9 @@ See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_config
 
 ```
 
-Configure GRUB to allow booting from `/boot` on LVM on a LUKS encrypted partition:
+Configure GRUB to allow booting from `/boot` on a LUKS encrypted partition:
 
- `/etc/default/grub` 
-```
-GRUB_PRELOAD_MODULES="... lvm"
-GRUB_ENABLE_CRYPTODISK=y
-```
+ `/etc/default/grub`  `GRUB_ENABLE_CRYPTODISK=y` 
 
 Set the kernel parameters, so that the initramfs can unlock the encrypted root partition. Using the `encrypt` hook:
 

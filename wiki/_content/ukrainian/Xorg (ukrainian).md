@@ -38,13 +38,13 @@ Related articles
         *   [5.2.1 Більш ніж одна графічна карта](#Більш_ніж_одна_графічна_карта)
     *   [5.3 Розмір екрану та DPI](#Розмір_екрану_та_DPI)
         *   [5.3.1 Ручне налаштування DPI](#Ручне_налаштування_DPI)
-            *   [5.3.1.1 Proprietary NVIDIA driver](#Proprietary_NVIDIA_driver)
-            *   [5.3.1.2 Manual DPI Setting Caveat](#Manual_DPI_Setting_Caveat)
-    *   [5.4 Display Power Management](#Display_Power_Management)
-*   [6 Composite](#Composite)
-    *   [6.1 List of composite managers](#List_of_composite_managers)
-*   [7 Tips and tricks](#Tips_and_tricks)
-    *   [7.1 Automation](#Automation)
+            *   [5.3.1.1 Пропрієтарний драйвер NVIDIA](#Пропрієтарний_драйвер_NVIDIA)
+            *   [5.3.1.2 Застереження, щодо ручного налаштування DPI](#Застереження,_щодо_ручного_налаштування_DPI)
+    *   [5.4 Управління енергозбереженням монітора](#Управління_енергозбереженням_монітора)
+*   [6 Композит](#Композит)
+    *   [6.1 Список композитних менеджерів](#Список_композитних_менеджерів)
+*   [7 Поради та підказки](#Поради_та_підказки)
+    *   [7.1 Автоматизація](#Автоматизація)
     *   [7.2 Nested X session](#Nested_X_session)
     *   [7.3 Starting GUI programs remotely](#Starting_GUI_programs_remotely)
     *   [7.4 On-demand disabling and enabling of input sources](#On-demand_disabling_and_enabling_of_input_sources)
@@ -347,22 +347,22 @@ $ echo 'scale=5;(13.3/1509)*800*25.4'  | bc  # 179.01920
 
 #### Ручне налаштування DPI
 
-**Note:** While you can set any dpi you like and applications using Qt and GTK will scale accordingly, it's recommended to set it to 96, 120 (25% higher), 144 (50% higher), 168 (75% higher), 192 (100% higher) etc., to reduce scaling artifacts to GUI that use bitmaps. Reducing it below 96 dpi may not reduce size of graphical elements of GUI as typically the lowest dpi the icons are made for is 96.
+**Note:** Незважаючи на те, що ви можете встановити будь-яке потрібне dpi, а програми, які використовують Qt і GTK, відповідно масштабуватимуться, рекомендується встановити значення 96, 120 (25% вище), 144 (на 50% вище), 168 (на 75% вище), 192 (100% вище) і т.д., щоб зменшити масштаб артефактів в програмах з GUI, які використовують растрові зображення. Зменшення його нижче 96 точок на дюйм може не зменшити розмір графічних елементів GUI, оскільки, як правило, найнижче dpi для піктограм, становить 96.
 
-For RandR compliant drivers (for example the open source ATI driver), you can set it by:
+Для RandR-сумісних драйверів (наприклад відкритий ATI драйвер), ви можете встановити його:
 
 ```
 $ xrandr --dpi 144
 
 ```
 
-**Note:** Applications that comply with the setting will not change immediately. You have to start them anew.
+**Note:** Програми, які відповідають встановленим параметрам, не зміняться негайно. Ви повинні їх перезавантажити.
 
-See [Execute commands after X start](/index.php/Execute_commands_after_X_start "Execute commands after X start") to make it permanent.
+Дивіться [Виконайте команди після старту X](/index.php/Execute_commands_after_X_start "Execute commands after X start") щоб зробити зміни постійними.
 
-##### Proprietary NVIDIA driver
+##### Пропрієтарний драйвер NVIDIA
 
-DPI can be set manually if you only plan to use one resolution ([DPI calculator](http://pxcalc.com/)):
+DPI можна встановити вручну, якщо ви плануєте використовувати лише одну роздільну здатність ([калькулятор DPI](http://pxcalc.com/)):
 
 ```
 Section "Monitor"
@@ -372,7 +372,7 @@ EndSection
 
 ```
 
-You can manually set the DPI adding the options below on `/etc/X11/xorg.conf.d/20-nvidia.conf` (inside **Device** section):
+Ви можете вручну встановити DPI, додавши нижче опції `/etc/X11/xorg.conf.d/20-nvidia.conf` (в секції **Device**):
 
 ```
 Option              "UseEdidDpi" "False"
@@ -380,44 +380,44 @@ Option              "DPI" "96 x 96"
 
 ```
 
-##### Manual DPI Setting Caveat
+##### Застереження, щодо ручного налаштування DPI
 
-GTK very often overrides the server's DPI via the optional Xresource `Xft.dpi`. To find out whether this is happening to you, check with:
+GTK дуже часто перевизначає DPI сервера за допомогою додаткового файлу Xresource `Xft.dpi`. Щоб дізнатися, чи відбувається це з вами, перевірте з:
 
 ```
 $ xrdb -query | grep dpi
 
 ```
 
-With GTK library versions since 3.16, when this variable is not otherwise explicitly set, GTK sets it to 96\. To have GTK apps obey the server DPI you may need to explictly set Xft.dpi to the same value as the server. The Xft.dpi resource is the method by which some desktop environments optionally force DPI to a particular value in personal settings. Among these are KDE and TDE.
+З версіями бібліотеки GTK після 3.16, коли ця змінна явно не встановлена, GTK встановлює його 96\. Щоб програми GTK підкорялися серверу DPI, вам може знадобитися точно встановити Xft.dpi на те ж значення, що і сервер. Ресурс Xft.dpi - це метод, за допомогою якого деякі настільні середовища примушують DPI до певного значення в особистих налаштуваннях. Серед них KDE та TDE.
 
-### Display Power Management
+### Управління енергозбереженням монітора
 
-[DPMS](/index.php/DPMS "DPMS") (Display Power Management Signaling) is a technology that allows power saving behaviour of monitors when the computer is not in use. This will allow you to have your monitors automatically go into standby after a predefined period of time.
+[DPMS](/index.php/DPMS "DPMS") (Display Power Management Signaling) це технологія, що визначає функції управління енергозбереженням моніторів за допомогою відеокарти, коли комп'ютер не використовується. Це дозволить монітору автоматично переходити в режим очікування після попередньо визначеного періоду часу.
 
-## Composite
+## Композит
 
-The Composite extension for X causes an entire sub-tree of the window hierarchy to be rendered to an off-screen buffer. Applications can then take the contents of that buffer and do whatever they like. The off-screen buffer can be automatically merged into the parent window or merged by external programs, called compositing managers. See the following article for more information: [compositing window manager](https://en.wikipedia.org/wiki/Compositing_window_manager "wikipedia:Compositing window manager")
+Композитне розширення для X призводить до того, що усе піддерево ієрархії вікна буде відтворено у буфері поза екраном. Програми можуть приймати вміст цього буфера і робити все, що їм подобається. Екранний буфер може бути автоматично об'єднаний у батьківське вікно або об'єднаний зовнішніми програмами, які називаються композитними менеджерами. Докладнішу інформацію див. у наступній статті: [Композитний менеджер вікон](https://uk.wikipedia.org/w/index.php?title=%D0%9A%D0%BE%D0%BC%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BD%D0%B8%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80_%D0%B2%D1%96%D0%BA%D0%BE%D0%BD&oldid=13646590)
 
-Some window managers (e.g. [Compiz](/index.php/Compiz "Compiz"), [Enlightenment](/index.php/Enlightenment "Enlightenment"), KWin, Marco, Metacity, Muffin, Mutter, [Xfwm](/index.php/Xfwm "Xfwm")) do compositing on their own. For other window managers, a standalone composite manager can be used.
+Багато віконних менеджерів (наприклад: [Compiz](/index.php/Compiz "Compiz"), [Enlightenment](/index.php/Enlightenment "Enlightenment"), KWin, Marco, Metacity, Muffin, Mutter, [Xfwm](/index.php/Xfwm "Xfwm")) роблять композицію самостійно. Для інших менеджерів вікон можна використовувати автономний композитний менеджер.
 
-### List of composite managers
+### Список композитних менеджерів
 
-*   **[Compton](/index.php/Compton "Compton")** — Compositor (a fork of xcompmgr-dana)
+*   **[Compton](/index.php/Compton "Compton")** — Композитний віконний менеджер (форк xcompmgr-dana)
 
 	[https://github.com/yshui/compton](https://github.com/yshui/compton) || [compton](https://www.archlinux.org/packages/?name=compton)
 
-*   **[Xcompmgr](/index.php/Xcompmgr "Xcompmgr")** — Composite window-effects manager
+*   **[Xcompmgr](/index.php/Xcompmgr "Xcompmgr")** — Композитний віконний менеджер
 
 	[http://cgit.freedesktop.org/xorg/app/xcompmgr/](http://cgit.freedesktop.org/xorg/app/xcompmgr/) || [xcompmgr](https://www.archlinux.org/packages/?name=xcompmgr)
 
-*   **Unagi** — Modular compositing manager which aims written in C and based on XCB
+*   **Unagi** — Модульний композитний менеджер, який написаний на С і базується на XCB
 
 	[http://projects.mini-dweeb.org/projects/unagi](http://projects.mini-dweeb.org/projects/unagi) || [unagi](https://aur.archlinux.org/packages/unagi/)
 
-## Tips and tricks
+## Поради та підказки
 
-### Automation
+### Автоматизація
 
 This section lists utilities for automating keyboard / mouse input and window operations (like moving, resizing or raising).
 

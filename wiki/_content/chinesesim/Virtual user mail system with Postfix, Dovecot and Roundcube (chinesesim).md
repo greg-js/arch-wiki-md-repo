@@ -14,17 +14,17 @@ Related articles
 ## Contents
 
 *   [1 安装](#安装)
-*   [2 Configuration](#Configuration)
-    *   [2.1 User](#User)
-    *   [2.2 Database](#Database)
-        *   [2.2.1 PostfixAdmin](#PostfixAdmin)
-    *   [2.3 SSL certificate](#SSL_certificate)
+*   [2 配置](#配置)
+    *   [2.1 用户](#用户)
+    *   [2.2 数据库](#数据库)
+        *   [2.2.1 使用 PostfixAdmin](#使用_PostfixAdmin)
+    *   [2.3 通信加密证书](#通信加密证书)
     *   [2.4 Postfix](#Postfix)
         *   [2.4.1 Setting up Postfix](#Setting_up_Postfix)
         *   [2.4.2 Create the file structure](#Create_the_file_structure)
     *   [2.5 Dovecot](#Dovecot)
         *   [2.5.1 DH parameters](#DH_parameters)
-    *   [2.6 PostfixAdmin](#PostfixAdmin_2)
+    *   [2.6 PostfixAdmin](#PostfixAdmin)
     *   [2.7 Roundcube](#Roundcube)
         *   [2.7.1 Apache configuration](#Apache_configuration)
         *   [2.7.2 Roundcube: Change Password Plugin](#Roundcube:_Change_Password_Plugin)
@@ -48,15 +48,15 @@ Related articles
 
 ## 安装
 
-Before you start, you must have both a working MySQL server as described in [MySQL](/index.php/MySQL "MySQL") and a working Postfix server as described in [Postfix](/index.php/Postfix "Postfix").
+开始这一步之前, 你需要按照链接中的页面安装好[Mysql](/index.php/MySQL_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "MySQL (简体中文)")和[Postfix](/index.php/Postfix_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Postfix (简体中文)")。
 
-[Install](/index.php/Install "Install") the [dovecot](https://www.archlinux.org/packages/?name=dovecot) and [roundcubemail](https://www.archlinux.org/packages/?name=roundcubemail) packages.
+[安装](/index.php/Install "Install") 这两个软件包： [dovecot](https://www.archlinux.org/packages/?name=dovecot) 和 [roundcubemail](https://www.archlinux.org/packages/?name=roundcubemail) 。
 
-## Configuration
+## 配置
 
-### User
+### 用户
 
-For security reasons, a new user should be created to store the mails:
+出于安全原因，应创建一个新用户来存储邮件：
 
 ```
 # groupadd -g 5000 vmail
@@ -64,11 +64,11 @@ For security reasons, a new user should be created to store the mails:
 
 ```
 
-A gid and uid of 5000 is used in both cases so that we do not run into conflicts with regular users. All your mail will then be stored in `/home/vmail`. You could change the home directory to something like `/var/mail/vmail` but be careful to change this in any configuration below as well.
+gid 和 uid 都使用 5000 ，这样可以避免和普通用户的冲突。所有你的邮件都会存储在 `/home/vmail`中。也可以将家目录更改到像是 `/var/mail/vmail` 这样的你自已定义的目录，需要注意的是下面的所有配置中都要对应修改。
 
-### Database
+### 数据库
 
-You will need to create an empty database and corresponding user. In this article, the user *postfix_user* will have read/write access to the database *postfix_db* using *hunter2* as password. You are expected to create the database and user yourself, and give the user permission to use the database, as shown in the following code.
+你需要建立一个空数据库和相应的用户。 在这篇文章中，用户： *postfix_user* 有 读/写 这个数据库： *postfix_db* 的权限 我们将这个用户的密码设为： *hunter2* 。 你需要去创建数据库和用户，并给它们合适的权限。下面列出了操作命令：
 
  `$ mysql -u root -p` 
 ```
@@ -78,15 +78,17 @@ FLUSH PRIVILEGES;
 
 ```
 
-Now you can go to the PostfixAdmin's setup page, let PostfixAdmin create the needed tables and create the users in there.
+**注意:** 这里没有列出安装mysql的步骤，如果需要请参考这个链接：[Mysql](/index.php/MySQL_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "MySQL (简体中文)")
 
-#### PostfixAdmin
+现在您可以转到PostfixAdmin的设置页面，让PostfixAdmin创建所需的表并在那里创建用户。
 
-See [PostfixAdmin](/index.php/PostfixAdmin "PostfixAdmin").
+#### 使用 PostfixAdmin
 
-### SSL certificate
+请参见： [PostfixAdmin](/index.php/PostfixAdmin "PostfixAdmin").
 
-You will need a SSL certificate for all encrypted mail communications (SMTPS/IMAPS/POP3S). If you do not have one, create one:
+### 通信加密证书
+
+您将需要一个SSL证书来加密邮件通信（SMTPS / IMAPS / POP3S）。 如果您没有，请创建一个：
 
 ```
 # cd /etc/ssl/private/
@@ -96,7 +98,7 @@ You will need a SSL certificate for all encrypted mail communications (SMTPS/IMA
 
 ```
 
-Alternatively, create a free trusted certificate using [Let's Encrypt](/index.php/Let%27s_Encrypt "Let's Encrypt"). The private key will be in `/etc/letsencrypt/live/*yourdomain*/privkey.pem`, the certificate in `/etc/letsencrypt/live/*yourdomain*/fullchain.pem`. Either change the configuration accordingly, or symlink the keys to `/etc/ssl/private`:
+或者，使用[Let's Encrypt](/index.php/Let%27s_Encrypt "Let's Encrypt")创建免费的可信证书。 私钥会生成在 `/etc/letsencrypt/live/*yourdomain*/privkey.pem`, 证书会生成在 `/etc/letsencrypt/live/*yourdomain*/fullchain.pem`。 相应地更改配置，或将键符号链接到 `/etc/ssl/private`:
 
 ```
 # ln -s /etc/letsencrypt/live/*yourdomain*/privkey.pem /etc/ssl/private/vmail.key

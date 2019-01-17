@@ -15,7 +15,7 @@ The [ThinkPad X1 Extreme](https://www.lenovo.com/us/en/laptops/thinkpad/thinkpad
 
 This page specifically concerns the specifics of running Arch Linux on this laptop. See [Laptop](/index.php/Laptop "Laptop") for generic laptop-related information, or [ThinkPad](/index.php/ThinkPad "ThinkPad") for other ThinkPad laptops.
 
-**Note:** The ThinkPad P1 is a workstation version of the same laptop, using extremely similar hardware. The information on this page should be applicable to P1 models as well, but that has not been confirmed.
+**Note:** The ThinkPad P1 is a workstation version of the same laptop which uses extremely similar hardware. Most of the information on this page should be applicable to P1 models as well.
 
 ## Contents
 
@@ -102,8 +102,8 @@ Undervolting the CPU/Intel GPU works well with [intel-undervolt](/index.php/Unde
 
 As of January 2019, the following commonly used kernel parameters are known to work:
 
-*   `i915.enable_fbc=1` - enables framebuffer compression on Intel graphics, potential power savings
 *   `i915.enable_psr=1` - enables panel self-refresh on Intel graphics, likely power savings
+*   `i915.enable_guc=2` - enables [GuC/HuC firmware loading](/index.php/Intel_graphics#Enable_GuC_/_HuC_firmware_loading "Intel graphics"), allowing additional hardware acceleration for some video encoding configurations
 
 ## Specifications
 

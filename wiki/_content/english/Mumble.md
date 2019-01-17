@@ -1,6 +1,6 @@
 From [Wikipedia, the free encyclopedia](https://en.wikipedia.org/wiki/Mumble_(software) "wikipedia:Mumble (software)"):
 
-	*Mumble is a voice over IP (VoIP) application primarily designed for use by gamers, similar to programs such as TeamSpeak and Ventrilo.*
+	Mumble is a voice over IP (VoIP) application primarily designed for use by gamers, similar to programs such as TeamSpeak and Ventrilo.
 
 This page goes over installation and configuration of both the client portion of the software (Mumble) and the server portion (Murmur).
 
@@ -15,7 +15,7 @@ This page goes over installation and configuration of both the client portion of
         *   [2.2.1 Network](#Network)
         *   [2.2.2 Config File](#Config_File)
         *   [2.2.3 Startup](#Startup)
-        *   [2.2.4 SSL/TLS](#SSL.2FTLS)
+        *   [2.2.4 SSL/TLS](#SSL/TLS)
         *   [2.2.5 SuperUser](#SuperUser)
 
 ## Client
@@ -40,11 +40,9 @@ The Mumble project maintains a good guide for setting up the server here: [Murmu
 
 ### Installation
 
-[Install](/index.php/Install "Install") the [murmur](https://www.archlinux.org/packages/?name=murmur) package.
+[Install](/index.php/Install "Install") the [murmur](https://www.archlinux.org/packages/?name=murmur) or [murmur-git](https://aur.archlinux.org/packages/murmur-git/) package. Both come with ICE support.
 
-For ICE support, install the [murmur-ice](https://aur.archlinux.org/packages/murmur-ice/) package.
-
-The postinstall script will tell you to reload dbus and set the supervisor password. The default configuration does not use dbus, so you can ignore that if you want. Setting the supervisor password is recommended, however.
+The postinstall script will tell you to reload dbus and set the supervisor password. SQLite is used as the default database. The default configuration does not use dbus, so you can ignore that if you want. Setting the supervisor password is recommended, however.
 
 ### Configuration
 
@@ -62,28 +60,9 @@ The default Murmur config file is at `/etc/murmur.ini` and is heavily commented.
 
 #### SSL/TLS
 
-Obtain either a self-signed certificate as described in [OpenSSL](/index.php/OpenSSL "OpenSSL"), or a publicly trusted one with [Let's Encrypt](/index.php/Let%27s_Encrypt "Let's Encrypt") according to the following directions:
+Obtain either a self-signed certificate as described in [OpenSSL](/index.php/OpenSSL "OpenSSL"), or a publicly trusted one with [Let's Encrypt](/index.php/Let%27s_Encrypt "Let's Encrypt").
 
-[Install](/index.php/Install "Install") the [certbot](https://www.archlinux.org/packages/?name=certbot) package. Temporarily turn off any webservers listening on port 443, if any (apache/nginx/etc)
-
-```
-# systemctl stop nginx
-
-```
-
-Generate the Let's Encrypt certificate for Murmur
-
-```
-# certbot certonly --standalone --standalone-supported-challenges tls-sni-01
-
-```
-
-Re-enable webservers, if any
-
-```
-# systemctl start nginx
-
-```
+Please note, that there is currently no released version with support for Elliptic Curve certificates, but [murmur-git](https://aur.archlinux.org/packages/murmur-git/) supports it.
 
 Edit `murmur.ini` and tell it where your key and cert are:
 

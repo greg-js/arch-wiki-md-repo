@@ -14,6 +14,8 @@ This article discusses [disk encryption](https://en.wikipedia.org/wiki/Disk_encr
 
 Disk encryption should only be viewed as an adjunct to the existing security mechanisms of the operating system - focused on securing physical access, while relying on *other* parts of the system to provide things like network security and user-based access control.
 
+For Full-disk encryption (FDE), see [Dm-crypt/Encrypting_an_entire_system](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system").
+
 ## Contents
 
 *   [1 Why use encryption?](#Why_use_encryption?)

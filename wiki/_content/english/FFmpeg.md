@@ -5,7 +5,6 @@ From the project [home page](http://www.ffmpeg.org/):
 ## Contents
 
 *   [1 Package installation](#Package_installation)
-    *   [1.1 Manual installation](#Manual_installation)
 *   [2 Encoding examples](#Encoding_examples)
     *   [2.1 Screen capture](#Screen_capture)
     *   [2.2 Recording webcam](#Recording_webcam)
@@ -45,32 +44,6 @@ From the project [home page](http://www.ffmpeg.org/):
 [Install](/index.php/Install "Install") the [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) package.
 
 For the development version, install the [ffmpeg-git](https://aur.archlinux.org/packages/ffmpeg-git/) package. There is also [ffmpeg-full](https://aur.archlinux.org/packages/ffmpeg-full/), which is built with as many optional features enabled as possible.
-
-### Manual installation
-
-Some users may wish to skip the package or AUR and compile FFmpeg themselves from its git master directly, and add `/usr/local/lib` to `/etc/ld.so.conf`. This can cause the `/usr/bin/ffmpeg` tool provided by [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) to crash or work improperly due to the library version mismatch. (Frequently [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) is still installed as a dependency.) One fix for this is to add `/usr/lib` to the rpath of `/usr/bin/ffmpeg` with a tool such as [patchelf](https://www.archlinux.org/packages/?name=patchelf):
-
-```
-# patchelf --set-rpath /usr/lib /usr/bin/ffmpeg
-
-```
-
-This will be revoked whenever ffmpeg is reinstalled or upgraded, so adding a pacman hook might be prudent:
-
- `/etc/pacman.d/hooks/ffmpeg.hook` 
-```
-[Trigger]
-Operation=Install
-Operation=Upgrade
-Type=Package
-Target=ffmpeg
-
-[Action]
-Description=Adding /usr/lib to ffmpeg rpath...
-Depends=patchelf
-When=PostTransaction
-Exec=/usr/bin/patchelf --set-rpath /usr/lib /usr/bin/ffmpeg
-```
 
 ## Encoding examples
 
