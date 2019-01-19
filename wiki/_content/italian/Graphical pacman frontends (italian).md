@@ -2,12 +2,12 @@ Quella qui riportata è una lista di interfacce grafiche per Pacman, progettate 
 
 ## Contents
 
-*   [1 Interfacce grafiche per Gnome/Gtk2](#Interfacce_grafiche_per_Gnome.2FGtk2)
+*   [1 Interfacce grafiche per Gnome/Gtk2](#Interfacce_grafiche_per_Gnome/Gtk2)
     *   [1.1 GtkPacman](#GtkPacman)
-*   [2 Interfacce grafiche per KDE/Qt](#Interfacce_grafiche_per_KDE.2FQt)
+*   [2 Interfacce grafiche per KDE/Qt](#Interfacce_grafiche_per_KDE/Qt)
     *   [2.1 Shaman](#Shaman)
     *   [2.2 AppSet](#AppSet)
-    *   [2.3 Pacman / AUR Package Browser](#Pacman_.2F_AUR_Package_Browser)
+    *   [2.3 Pacman / AUR Package Browser](#Pacman_/_AUR_Package_Browser)
 *   [3 Indicatori per pannelli di sistema](#Indicatori_per_pannelli_di_sistema)
     *   [3.1 archup](#archup)
     *   [3.2 Chase](#Chase)

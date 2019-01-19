@@ -1,8 +1,7 @@
-**Status de tradução:** Esse artigo é uma tradução de [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution"). Data da última tradução: 2018-11-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Domain_name_resolution&diff=0&oldid=555547) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution"). Data da última tradução: 2019-01-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Domain_name_resolution&diff=0&oldid=562570) na versão em inglês.
 
 Artigos relacionados
 
-*   [Serviços DNS alternativos](/index.php/Alternative_DNS_services "Alternative DNS services")
 *   [Configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede "Configuração de rede")
 
 Em geral, um [nome de domínio](https://en.wikipedia.org/wiki/pt:Dom%C3%ADnio "wikipedia:pt:Domínio") representa um endereço IP e está associado a ele no [Sistema de Nomes de Domínio](https://en.wikipedia.org/wiki/pt:Sistema_de_Nomes_de_Dom%C3%ADnio "wikipedia:pt:Sistema de Nomes de Domínio"), ou *Domain Name System* (DNS). Esse artigo explica como para configurar resolução de nome de domínio e resolver nomes de domínio.
@@ -16,10 +15,13 @@ Em geral, um [nome de domínio](https://en.wikipedia.org/wiki/pt:Dom%C3%ADnio "w
     *   [2.2 Limitar o tempo de pesquisa](#Limitar_o_tempo_de_pesquisa)
     *   [2.3 Pesquisa de hostname atrasada com IPv6](#Pesquisa_de_hostname_atrasada_com_IPv6)
     *   [2.4 Nomes de domínio local](#Nomes_de_domínio_local)
-*   [3 Resolvedores](#Resolvedores)
-*   [4 Privacidade](#Privacidade)
-*   [5 Utilitários de pesquisa](#Utilitários_de_pesquisa)
-*   [6 Veja também](#Veja_também)
+*   [3 Utilitários de pesquisa](#Utilitários_de_pesquisa)
+*   [4 Desempenho de resolvedor](#Desempenho_de_resolvedor)
+*   [5 Privacidade e segurança](#Privacidade_e_segurança)
+*   [6 Serviços DNS de terceiros](#Serviços_DNS_de_terceiros)
+*   [7 Servidores DNS](#Servidores_DNS)
+    *   [7.1 Servidores apenas autoritativos](#Servidores_apenas_autoritativos)
+*   [8 Veja também](#Veja_também)
 
 ## Name Service Switch
 
@@ -53,7 +55,7 @@ O resolvedor do glibc lê `/etc/resolv.conf` para toda resolução para determin
 
 Servidores de nome *(nameservers)* listados primeiros são tentados primeiro, até os três servidores podem ser listados. Linhas iniciando com um cerquilha (`#`) são ignoradas.
 
-**Nota:** O resolvedor do glibc não faz cache de consultas. Para melhorar tempo de consulta, você pode configurar um resolvedor em cache. Veja [#Resolvedores](#Resolvedores) para mais informações.
+**Nota:** O resolvedor do glibc não faz cache de consultas. Para melhorar tempo de consulta, você pode configurar um resolvedor em cache. Veja [#Servidores DNS](#Servidores_DNS) para mais informações.
 
 ### Sobrescrita do /etc/resolv.conf
 
@@ -101,56 +103,13 @@ domain exemplo.com.br
 
 Dessa forma, você pode se referir a hosts locais como `maquinaprincipal1.exemplo.com.brm` como simplesmente `maquinaprincipal1` ao usar o comando *ssh*, mas o comando *drill* ainda requer os nomes de domínio totalmente qualificados para realizar pesquisas.
 
-## Resolvedores
-
-O resolvedor do Glibc fornece apenas as necessidades mais básicas, não armazena em cache as consultas nem fornece nenhum recurso de segurança. Se você precisar de mais funcionalidade, use outro resolvedor.
-
-**Dica:**
-
-*   Os [utilitários de pesquisa](#Utilitários_de_pesquisa) *drill* ou *dig* relatam o tempo de consulta.
-*   Um roteador geralmente configura seu próprio resolvedor de cache como o servidor DNS da rede, fornecendo assim o cache DNS para toda a rede.
-*   Se demorar muito para mudar para o próximo servidor DNS, você pode tentar [diminuir o tempo limite](#Limitar_o_tempo_de_pesquisa).
-
-Na tabela abaixo, as colunas têm o seguinte sentido:
-
-*   *Cache*: [Faz cache](https://en.wikipedia.org/wiki/Name_server#Caching_name_server "wikipedia:Name server") de consultas DNS para melhorar os tempos de pesquisa de solicitações idênticas subsequentes.
-*   *Recursor*: pode [consultar recursivamente](https://en.wikipedia.org/wiki/Name_server#Recursive_query "wikipedia:Name server") o nome de domínio iniciando da [zona raiz do DNS](https://en.wikipedia.org/wiki/DNS_root_zone "wikipedia:DNS root zone").
-*   *Compatibilidade com resolvconf*: pode adquirir servidores de nomes e domínios de pesquisa, para usar solicitações de encaminhamento, de softwares que os definem usando [resolvconf](/index.php/Resolvconf_(Portugu%C3%AAs) "Resolvconf (Português)").
-*   *Valida DNSSEC*: [valida](https://en.wikipedia.org/wiki/Domain_Name_System_Security_Extensions#The_lookup_procedure "wikipedia:Domain Name System Security Extensions") respostas de consulta de DNS usando [DNSSEC](/index.php/DNSSEC_(Portugu%C3%AAs) "DNSSEC (Português)").
-*   *DNS por TLS*: suporte a encaminhamento usando o protocolo [DNS over TLS](https://en.wikipedia.org/wiki/DNS_over_TLS "wikipedia:DNS over TLS").
-*   *DNS por HTTPS*: suporte a encaminhamento usando o protocolo [DNS over HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTPS").
-
-| Resolvedor | Cache | Recursor | Compatibilidade *resolvconf* | Valida DNSSEC | DNS por TLS | DNS por HTTPS |
-| [glibc](#Resolvedor_do_glibc) | Não | Não | [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)") | Não | Não | Não |
-| [BIND](/index.php/BIND "BIND") | Sim | Sim | se inscreve no [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)") | Sim | ? | ? |
-| [dnscrypt-proxy](/index.php/Dnscrypt-proxy_(Portugu%C3%AAs) "Dnscrypt-proxy (Português)") | Sim | Não | Não | Não | Não | Sim |
-| [dnsmasq](/index.php/Dnsmasq_(Portugu%C3%AAs) "Dnsmasq (Português)") | Sim | Não | se inscreve no [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)") | Sim | [Não](http://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2018q2/012131.html) | Não |
-| [Knot Resolver](/index.php/Knot_Resolver "Knot Resolver") | Sim | Sim | Não | Sim | Sim | [Não](https://gitlab.labs.nic.cz/knot/knot-resolver/issues/243) |
-| [pdnsd](/index.php/Pdnsd "Pdnsd") | Sim | Sim | se inscreve no [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)") | Não | Não | Não |
-| [powerdns-recursor](https://www.archlinux.org/packages/?name=powerdns-recursor) | Sim | Sim | [Não](https://roy.marples.name/projects/openresolv/config#pdns_recursor) | Sim | ? | ? |
-| [Rescached](/index.php/Rescached "Rescached") | Sim | Não | se inscreve no [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)") | Não | Não | Limitado |
-| [Stubby](/index.php/Stubby "Stubby") | Não | Não | Não | Sim | Sim | Não |
-| [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") | Sim | Não | [systemd-resolvconf](/index.php/Systemd-resolvconf "Systemd-resolvconf") | Sim | Inseguro | [Não](https://github.com/systemd/systemd/issues/8639) |
-| [Unbound](/index.php/Unbound "Unbound") | Sim | Sim | se inscreve no [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)") | Sim | Sim | [Não](https://nlnetlabs.nl/bugs-script/show_bug.cgi?id=1200) |
-
-1.  Implementa um cliente de protocoolo [DNSCrypt](https://en.wikipedia.org/wiki/DNSCrypt "wikipedia:DNSCrypt").
-2.  Pode usar os inscritores de dnsmasq, pdns e unbound.[[2]](https://github.com/shuLhan/rescached-go#integration-with-openresolv)
-3.  Só encaminha usando DNS por HTTPS quando Rescached em si é consultado usando DNS por HTTPS.[[3]](https://github.com/shuLhan/rescached-go#integration-with-dns-over-https)
-4.  Do [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5): *Note que o resolvedor não é capaz de autenticar o servidor, ele é vulnerável a ataques "man-in-the-middle".* [[4]](https://github.com/systemd/systemd/issues/9397) Além disso, o único modo suportado é "opportunistic", o que *torna o DNS-over-TLS vulnerável a ataques de "downgrade"*.[[5]](https://github.com/systemd/systemd/issues/10755)
-
-## Privacidade
-
-DNS não está criptografado, então você pode querer usar um [resolvedor](#Resolvedores) que tem suporte a um protocolo criptografado, como [DNS over TLS](https://en.wikipedia.org/wiki/DNS_over_TLS "wikipedia:DNS over TLS"), [DNS over HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTPS") ou [DNSCrypt](https://en.wikipedia.org/wiki/DNSCrypt "wikipedia:DNSCrypt").
-
-A maioria dos servidores DNS mantém um registro de endereços IP e sites visitados em uma base mais ou menos temporária. Os dados coletados podem ser usados para realizar vários estudos estatísticos. Informações de identificação pessoal têm valor e também podem ser alugadas ou vendidas a terceiros. O artigo [Serviços DNS alternativos](/index.php/Alternative_DNS_services "Alternative DNS services") fornece uma lista de serviços populares, verifique sua política de privacidade para obter informações sobre como os dados do usuário são manipulados.
-
 ## Utilitários de pesquisa
 
 Para consultar servidores DNS específicos e registros DNS/[DNSSEC](/index.php/DNSSEC_(Portugu%C3%AAs) "DNSSEC (Português)"), você pode usar utilitários de pesquisa de DNS dedicados. Essas ferramentas implementam o próprio DNS e não usam [NSS](/index.php/Name_Service_Switch_(Portugu%C3%AAs) "Name Service Switch (Português)").
 
 *   [ldns](https://www.archlinux.org/packages/?name=ldns) fornece [drill(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/drill.1), que é uma ferramenta projetada para obter informações do DNS.
 
-Por exemplo, para consultar um servidor de nomes específico com drill por registros TXT de um domínio:
+Por exemplo, para consultar um servidor de nomes específico com *drill* por registros TXT de um domínio:
 
 ```
 $ drill @*servidor-de-nome* TXT *domínio*
@@ -161,7 +120,75 @@ Se você não especificar um servidor DNS, *drill* use os servidores de nome def
 
 *   [bind-tools](https://www.archlinux.org/packages/?name=bind-tools) fornece [dig(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dig.1), [host(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/host.1), [nslookup(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nslookup.1) e um monte de ferramentas `dnssec-`.
 
+## Desempenho de resolvedor
+
+O resolvedor do Glibc não armazena em cache as consultas. Se você quiser que o cache local, use [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") ou configure um cache local [servidor DNS](#servidores_DNS) e use `127.0.0.1` como seu servidor de nomes.
+
+**Dica:**
+
+*   Os [utilitários de pesquisa](#Utilitários_de_pesquisa) *drill* ou *dig* relatam o tempo de consulta.
+*   Um roteador geralmente configura seu próprio resolvedor de cache como o servidor DNS da rede, fornecendo assim o cache DNS para toda a rede.
+*   Se demorar muito para mudar para o próximo servidor DNS, você pode tentar [diminuir o tempo limite](#Limitar_o_tempo_de_pesquisa).
+
+## Privacidade e segurança
+
+O protocolo DNS não é criptografado e não leva em conta a confidencialidade, integridade ou autenticação, portanto, se você usar uma rede não confiável ou um ISP mal-intencionado, suas consultas DNS poderão ser interceptadas e as respostas [manipuladas](https://en.wikipedia.org/wiki/pt:Ataque_man-in-the-middle "wikipedia:pt:Ataque man-in-the-middle"). Além disso, os servidores DNS podem realizar [redirecionamento de DNS](https://en.wikipedia.org/wiki/pt:DNS_hijacking "wikipedia:pt:DNS hijacking") (*DNS hijacking*).
+
+Você precisa confiar em seu servidor DNS para tratar suas consultas de maneira confidencial. Os servidores DNS são fornecidos por ISPs e [terceiros](#serviços_DNS_de_terceiros). Como alternativa, você pode executar seu próprio servidor de nome recursivo, o que, no entanto, exige mais esforço. Se você usa um cliente [DHCP](/index.php/DHCP_(Portugu%C3%AAs) "DHCP (Português)") em redes não confiáveis, defina os servidores de nomes estáticos para evitar o uso e a sujeição a servidores DNS arbitrários. Para proteger sua comunicação com um servidor DNS remoto, você pode usar um protocolo criptografado, como [DNS por TLS](https://en.wikipedia.org/wiki/DNS_over_TLS "wikipedia:DNS over TLS"), [DNS por HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTPS") ou [DNSCrypt](https://en.wikipedia.org/wiki/DNSCrypt "wikipedia:DNSCrypt"), desde que o servidor upstream e seu [resolvedor](#servidores_DNS) possuam suporte ao protocolo. Para verificar se as respostas são realmente de [servidores de nome autoritativos](https://en.wikipedia.org/wiki/Authoritative_name_server "wikipedia:Authoritative name server"), você pode validar [DNSSEC](/index.php/DNSSEC_(Portugu%C3%AAs) "DNSSEC (Português)"), desde que ambos os servidores upstream e seu [resolvedor](#servidores_DNS) tenha suporte a isso.
+
+Esteja ciente de que o software cliente, como os principais navegadores da Web, também pode (começar a) implementar alguns dos protocolos. Embora a criptografia de consultas possa ser vista como um bônus, isso também significa que o software avisa sobre a configuração do resolvedor do sistema. [[2]](https://hacks.mozilla.org/2018/05/a-cartoon-intro-to-dns-over-https/#trr-and-doh)
+
+## Serviços DNS de terceiros
+
+**Nota:** Antes de usar um serviço DNS de terceiros, verifique sua política de privacidade para obter informações sobre como os dados do usuário são manipulados. Os dados do usuário têm valor e podem ser vendidos para outras partes.
+
+Existem vários [serviços DNS de terceiros](https://en.wikipedia.org/wiki/Public_recursive_name_server#List_of_public_DNS_service_operators "wikipedia:Public recursive name server") disponíveis, alguns dos quais também possuem software dedicado:
+
+*   **dingo** — Um cliente DNS para o DNS do Google por HTTPS
+
+	[https://github.com/pforemski/dingo](https://github.com/pforemski/dingo) || [dingo](https://www.archlinux.org/packages/?name=dingo)
+
+*   **opennic-up** — Automatiza a renovação de servidores DNS com os servidores OpenNIC mais responsivos
+
+	[https://github.com/kewlfft/opennic-up](https://github.com/kewlfft/opennic-up) || [opennic-up](https://aur.archlinux.org/packages/opennic-up/)
+
+## Servidores DNS
+
+Os servidores [DNS](/index.php/DNS_(Portugu%C3%AAs) "DNS (Português)") podem ser [autoritativos](https://en.wikipedia.org/wiki/Authoritative_name_server "wikipedia:Authoritative name server") e [recursivos](https://en.wikipedia.org/wiki/Name_server#Recursive_query "wikipedia:Name server"). Se eles não forem, eles são chamados de ***stub resolvers*** e simplesmente encaminham todas as consultas para outro servidor de nomes recursivo. Os *stub resolvers* são normalmente usados para introduzir o cache de DNS no host ou na rede local. Observe que o mesmo também pode ser obtido com um servidor de nomes completo. Esta seção compara os servidores DNS disponíveis, para uma comparação mais detalhada, consulte o [Wikipédia](https://en.wikipedia.org/wiki/Comparison_of_DNS_server_software "wikipedia:Comparison of DNS server software").
+
+| Nome | Pacote | [Autoritativo](https://en.wikipedia.org/wiki/Authoritative_name_server "wikipedia:Authoritative name server")
+/ [Recursivo](https://en.wikipedia.org/wiki/Name_server#Recursive_query | [Valida](https://en.wikipedia.org/wiki/Domain_Name_System_Security_Extensions#The_lookup_procedure "wikipedia:Domain Name System Security Extensions")
+[DNSSEC](/index.php/DNSSEC_(Portugu%C3%AAs) "DNSSEC (Português)") | [DNS
+por TLS](https://en.wikipedia.org/wiki/DNS_over_TLS "wikipedia:DNS over TLS") | [DNS
+por HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTPS") |
+| [dnscrypt-proxy](/index.php/Dnscrypt-proxy_(Portugu%C3%AAs) "Dnscrypt-proxy (Português)") | [dnscrypt-proxy](https://www.archlinux.org/packages/?name=dnscrypt-proxy) | Não | Sim | Não | Não | Não | Sim |
+| [Rescached](/index.php/Rescached "Rescached") | [rescached-git](https://aur.archlinux.org/packages/rescached-git/) | Não | Sim | [Sim](https://github.com/shuLhan/rescached-go#integration-with-openresolv) | Não | Não | Limitado |
+| [Stubby](/index.php/Stubby "Stubby") | [stubby](https://www.archlinux.org/packages/?name=stubby) | Não | Não | Não | Sim | Sim | Não |
+| [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") | [systemd](https://www.archlinux.org/packages/?name=systemd) | Não | Sim | [Sim](/index.php/Systemd-resolvconf "Systemd-resolvconf") | Sim | Inseguro | [Não](https://github.com/systemd/systemd/issues/8639) |
+| [dnsmasq](/index.php/Dnsmasq_(Portugu%C3%AAs) "Dnsmasq (Português)") | [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) | Parcial | Sim | [Sim](/index.php/Openresolv_(Portugu%C3%AAs)#Assinantes "Openresolv (Português)") | Sim | [Não](http://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2018q2/012131.html) | Não |
+| [BIND](/index.php/BIND "BIND") | [bind](https://www.archlinux.org/packages/?name=bind) | Sim | Sim | [Sim](/index.php/Openresolv_(Portugu%C3%AAs)#Assinantes "Openresolv (Português)") | Sim | ? | ? |
+| [Knot Resolver](/index.php/Knot_Resolver "Knot Resolver") | [knot-resolver](https://aur.archlinux.org/packages/knot-resolver/) | Sim | Sim | Não | Sim | Sim | [Não](https://gitlab.labs.nic.cz/knot/knot-resolver/issues/243) |
+| [MaraDNS](https://en.wikipedia.org/wiki/MaraDNS "wikipedia:MaraDNS") | [maradns](https://aur.archlinux.org/packages/maradns/) | Sim | Sim | Não | Não | Não | Não |
+| [pdnsd](/index.php/Pdnsd "Pdnsd") | [pdnsd](https://www.archlinux.org/packages/?name=pdnsd) | Sim | Permanente | [Sim](/index.php/Openresolv_(Portugu%C3%AAs)#Assinantes "Openresolv (Português)") | Não | Não | Não |
+| [PowerDNS Recursor](https://www.powerdns.com/recursor.html) | [powerdns-recursor](https://www.archlinux.org/packages/?name=powerdns-recursor) | Sim | Sim | [Não](https://roy.marples.name/projects/openresolv/config#pdns_recursor) | Sim | ? | ? |
+| [Unbound](/index.php/Unbound "Unbound") | [unbound](https://www.archlinux.org/packages/?name=unbound) | Sim | Sim | [Sim](/index.php/Openresolv_(Portugu%C3%AAs)#Assinantes "Openresolv (Português)") | Sim | Sim | [Não](https://nlnetlabs.nl/bugs-script/show_bug.cgi?id=1200) |
+
+1.  Implementa um cliente de protocolo [DNSCrypt](https://en.wikipedia.org/wiki/DNSCrypt "wikipedia:DNSCrypt").
+2.  Só encaminha usando DNS por HTTPS quando Rescached em si é consultado usando DNS por HTTPS.[[3]](https://github.com/shuLhan/rescached-go#integration-with-dns-over-https)
+3.  Do [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5): *Note que como o resolvedor não é capaz de autenticar o servidor, ele é vulnerável a ataques "man-in-the-middle".*[[4]](https://github.com/systemd/systemd/issues/9397) Além disso, o único modo suportado é "opportunistic", o que *torna o DNS-over-TLS vulnerável a ataques de "downgrade"*.[[5]](https://github.com/systemd/systemd/issues/10755)
+4.  Do [Wikipédia](https://en.wikipedia.org/wiki/Comparison_of_DNS_server_software#cite_note-masqauth-26 "wikipedia:Comparison of DNS server software"): dnsmasq tem um suporte autoritativo limitado, sendo destinado a rede interna em vez de uso público na Internet.
+
+### Servidores apenas autoritativos
+
+| Nome | Pacote | [DNSSEC](/index.php/DNSSEC_(Portugu%C3%AAs) "DNSSEC (Português)") | Balanceamento
+geográfico |
+| [gdnsd](https://gdnsd.org/) | [gdnsd](https://www.archlinux.org/packages/?name=gdnsd) | Não | Sim |
+| [Knot DNS](https://www.knot-dns.cz/) | [knot](https://www.archlinux.org/packages/?name=knot) | Sim | Não |
+| [NSD](/index.php/NSD "NSD") | [nsd](https://www.archlinux.org/packages/?name=nsd) | Não | Não |
+| [PowerDNS](https://www.powerdns.com/auth.html) | [powerdns](https://www.archlinux.org/packages/?name=powerdns) | Sim | Sim |
+
 ## Veja também
 
 *   [Linux Network Administrators Guide](https://www.tldp.org/LDP/nag2/x-087-2-resolv.html)
 *   [Debian Handbook](https://www.debian.org/doc/manuals/debian-handbook/sect.hostname-name-service.en.html#sect.name-resolution)
+*   [RFC:7706](https://tools.ietf.org/html/rfc7706 "rfc:7706") - Diminuindo o tempo de acesso a servidores raiz executando um com loopback (inglês)

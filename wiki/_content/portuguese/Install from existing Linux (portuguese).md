@@ -320,7 +320,7 @@ Defina uma senha de root para que você possa alternar para root por meio do su 
 
 ```
 
-Instale o [ssh](/index.php/Ssh "Ssh") e [habilite](/index.php/Habilite "Habilite")-o para iniciar automaticamente na inicialização.
+Instale o [ssh](/index.php/Ssh_(Portugu%C3%AAs) "Ssh (Português)") e [habilite](/index.php/Habilite "Habilite")-o para iniciar automaticamente na inicialização.
 
 Configure a conexão de [rede](/index.php/Rede "Rede") para iniciar automaticamente na inicialização.
 

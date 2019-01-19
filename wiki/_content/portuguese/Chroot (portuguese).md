@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [chroot](/index.php/Chroot "Chroot"). Data da última tradução: 2019-01-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Chroot&diff=0&oldid=560633) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [chroot](/index.php/Chroot "Chroot"). Data da última tradução: 2019-01-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Chroot&diff=0&oldid=562685) na versão em inglês.
 
 Artigos relacionados
 
@@ -48,7 +48,7 @@ Veja também [Wikipedia:Chroot#Limitations](https://en.wikipedia.org/wiki/Chroot
 
 **Nota:**
 
-*   Algumas ferramentas do [systemd (Português)](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)"), tal como *localectl* e *timedatectl*, não podem ser usados dentro de um chroot, pois eles exigem uma conexão [dbus](/index.php/Dbus "Dbus") ativa. [[1]](https://github.com/systemd/systemd/issues/798#issuecomment-126568596)
+*   Algumas ferramentas do [systemd (Português)](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)"), tal como *hostnamectl*, *localectl* e *timedatectl*, não podem ser usados dentro de um chroot, pois eles exigem uma conexão [dbus](/index.php/Dbus "Dbus") ativa. [[1]](https://github.com/systemd/systemd/issues/798#issuecomment-126568596)
 *   O sistema de arquivos que vai servir como uma nova raiz (`/`) de seu chroot deve estar acessível (i.e., descriptografado, montado).
 
 Há duas opções principais para usar chroot, descritas abaixo.
@@ -169,7 +169,7 @@ Então, desmonte os sistemas de arquivos temporários:
 
 Se você tiver um [servidor X](/index.php/Servidor_X "Servidor X") funcionando em seu sistema, você pode iniciar aplicativos gráficos a partir do ambiente chroot.
 
-Para permitir que o ambiente *chroot* se conecte a um servidor X, abra um terminal virtual dentro do servidor X (i.e. dentro do computador do usuário que está atualmente autenticado), então execute o comando [xhost](/index.php/Xhost_(Portugu%C3%AAs) "Xhost (Português)"), que dá a permissão para qualquer um se conectar ao servidor X do usuário:
+Para permitir que o ambiente *chroot* se conecte a um servidor X, abra um terminal virtual dentro do servidor X (i.e. dentro do computador do usuário que está atualmente autenticado), então execute o comando [xhost](/index.php/Xhost_(Portugu%C3%AAs) "Xhost (Português)"), que dá a permissão para qualquer um se conectar ao servidor X do usuário (veja também [Xhost](/index.php/Xhost_(Portugu%C3%AAs) "Xhost (Português)")):
 
 ```
 $ xhost +local:

@@ -19,6 +19,7 @@
         *   [2.3.2 Конфигурация контейнера](#Конфигурация_контейнера)
     *   [2.4 Конфигурация DNS](#Конфигурация_DNS)
     *   [2.5 Запуск Docker с сетью, заданной вручную, в systemd-networkd](#Запуск_Docker_с_сетью,_заданной_вручную,_в_systemd-networkd)
+    *   [2.6 Расположение образов](#Расположение_образов)
 *   [3 Docker 0.9.0 — 1.2.x и LXC](#Docker_0.9.0_—_1.2.x_и_LXC)
 *   [4 Skype](#Skype)
 *   [5 Сборка образа i686](#Сборка_образа_i686)
@@ -154,6 +155,21 @@ IPForward=kernel
 ```
 
 Эта конфигурация разрешает переадресацию IP из контейнера, как и ожидалось.
+
+### Расположение образов
+
+По умолчанию Docker образы расположены в `/var/lib/docker`. Они могут быть перемещены в другие разделы. Во-первых, [остановите](/index.php/%D0%9E%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Остановите") `docker.service`.
+
+Если вы запустили Docker образы, вам необходимо убедиться, что они полностью размонтированы. После этого вы можете переместить изображения из `/var/lib/docker` в целевой путь.
+
+Затем добавьте [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") для `docker.service`, добавив параметр `--data-root` в `ExecStart`:
+
+ `/etc/systemd/system/docker.service.d/docker-storage.conf` 
+```
+[Service]
+ExecStart= 
+ExecStart=/usr/bin/dockerd --data-root=*/path/to/new/location/docker* -H fd://
+```
 
 ## Docker 0.9.0 — 1.2.x и LXC
 

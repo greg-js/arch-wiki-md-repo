@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Swap](/index.php/Swap "Swap"). Data da última tradução: 2018-11-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Swap&diff=0&oldid=553734) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Swap](/index.php/Swap "Swap"). Data da última tradução: 2019-01-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Swap&diff=0&oldid=561612) na versão em inglês.
 
 Artigos relacionados
 
@@ -139,7 +139,7 @@ Como root, use `fallocate` para criar um arquivo swap com o tamanho de sua escol
 
 ```
 
-**Nota:** *fallocate* pode causar problemas com alguns sistemas de arquivos tal como [F2FS](/index.php/F2FS "F2FS") ou [XFS](/index.php/XFS "XFS").[[1]](https://bugzilla.redhat.com/show_bug.cgi?id=1129205#c3) Como uma alternativa, usar *dd* é mais confiável, mas mais lento: `# dd if=/dev/zero of=/swapfile bs=1M count=512` 
+**Nota:** *fallocate* pode causar problemas com alguns sistemas de arquivos tal como [F2FS](/index.php/F2FS "F2FS") ou [XFS](/index.php/XFS "XFS").[[1]](https://bugzilla.redhat.com/show_bug.cgi?id=1129205#c3) Como uma alternativa, usar *dd* é mais confiável, mas mais lento: `# dd if=/dev/zero of=/swapfile bs=1M count=512 status=progress` 
 
 Defina as permissões certas (um arquivo swap legível por todos é uma imensa vulnerabilidade local)
 
@@ -164,7 +164,13 @@ Ative o arquivo swap:
 
 Finalmente, edite o [fstab](/index.php/Fstab "Fstab") para adicionar uma entrada para o arquivo swap:
 
- `/etc/fstab`  `/swapfile none swap defaults 0 0` 
+ `/etc/fstab` 
+```
+/swapfile none swap defaults 0 0
+
+```
+
+**Nota:** O arquivo swap deve ser especificado por sua localização no sistema de arquivos, e não por seu UUID ou LABEL.
 
 #### Remover arquivo swap
 

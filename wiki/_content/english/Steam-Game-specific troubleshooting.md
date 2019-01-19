@@ -64,7 +64,9 @@
         *   [5.26.1 Segfault after a few minutes](#Segfault_after_a_few_minutes)
     *   [5.27 Civilization VI](#Civilization_VI)
         *   [5.27.1 If Segfault Immediately on Start](#If_Segfault_Immediately_on_Start)
-    *   [5.28 Deus Ex: Mankind divided](#Deus_Ex:_Mankind_divided)
+        *   [5.27.2 If Crash with Error "undefined symbol FT_Done_MM_Var"](#If_Crash_with_Error_"undefined_symbol_FT_Done_MM_Var")
+        *   [5.27.3 If the game ends up being a grey-color blank screen](#If_the_game_ends_up_being_a_grey-color_blank_screen)
+    *   [5.28 Deus Ex: Mankind Divided](#Deus_Ex:_Mankind_Divided)
     *   [5.29 The Clockwork Man](#The_Clockwork_Man)
     *   [5.30 Company of Heroes 2](#Company_of_Heroes_2)
         *   [5.30.1 Missing libpcre.so.3](#Missing_libpcre.so.3)
@@ -834,11 +836,31 @@ If all of that is the case for you, the fix is pretty simple. Edit `~/.local/sha
 
 Presumably this fix will prevent any automated bug reports from reaching Aspyr, should you encounter crashes/bugs in the future, but it will at least let the game launch properly.
 
-### Deus Ex: Mankind divided
+#### If Crash with Error "undefined symbol FT_Done_MM_Var"
+
+If the game crashed with error
+
+```
+   ./GameGuide/Civ6: symbol lookup error: /usr/lib/libfontconfig.so.1: undefined symbol: FT_Done_MM_Var
+
+```
+
+The solution is to set launch option to be
+
+```
+   LD_PRELOAD=/usr/lib/libfreetype.so.6 %command%
+
+```
+
+#### If the game ends up being a grey-color blank screen
+
+The solution is to disable mods.
+
+### Deus Ex: Mankind Divided
 
 Follow [#OpenSSL 1.0 setup](#OpenSSL_1.0_setup).
 
-Requires [librtmp0](https://www.archlinux.org/packages/?name=librtmp0).
+Requires [libidn11](https://www.archlinux.org/packages/?name=libidn11) & [librtmp0](https://www.archlinux.org/packages/?name=librtmp0).
 
 Also if you use Bumblebee set your [launch options](/index.php/Launch_option "Launch option") to:
 

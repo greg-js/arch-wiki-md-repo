@@ -5,18 +5,18 @@ Toto je seznam Pacman GUI frontendů, Pacman/AUR pohlížečů balíčků a tray
 ## Contents
 
 *   [1 Pacman Frontendy](#Pacman_Frontendy)
-    *   [1.1 GNOME/GTK+](#GNOME.2FGTK.2B)
+    *   [1.1 GNOME/GTK+](#GNOME/GTK+)
         *   [1.1.1 GNOME PackageKit](#GNOME_PackageKit)
-    *   [1.2 KDE/Qt](#KDE.2FQt)
+    *   [1.2 KDE/Qt](#KDE/Qt)
         *   [1.2.1 KPackageKit](#KPackageKit)
         *   [1.2.2 AppSet](#AppSet)
     *   [1.3 NCurses](#NCurses)
         *   [1.3.1 pcurses](#pcurses)
-*   [2 Pacman/AUR Prohlížeč balíčků](#Pacman.2FAUR_Prohl.C3.AD.C5.BEe.C4.8D_bal.C3.AD.C4.8Dk.C5.AF)
+*   [2 Pacman/AUR Prohlížeč balíčků](#Pacman/AUR_Prohlížeč_balíčků)
     *   [2.1 PkgBrowser](#PkgBrowser)
-*   [3 Tray ohlašovatelé](#Tray_ohla.C5.A1ovatel.C3.A9)
+*   [3 Tray ohlašovatelé](#Tray_ohlašovatelé)
     *   [3.1 Aarchup](#Aarchup)
-*   [4 Neaktivní projekty](#Neaktivn.C3.AD_projekty)
+*   [4 Neaktivní projekty](#Neaktivní_projekty)
 
 # Pacman Frontendy
 

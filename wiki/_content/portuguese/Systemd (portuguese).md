@@ -73,7 +73,7 @@ O principal comando usado para introspecção e controle *systemd* é *systemctl
 
 **Dica:**
 
-*   Você pode usar todos os comandos de *systemctl* abaixo com a opção `-H *usuário*@*host*` para controlar uma instância de *systemd* em uma máquina remota. Isso usará [SSH](/index.php/SSH "SSH") para se conectar uma instância remota *systemd*.
+*   Você pode usar todos os comandos de *systemctl* abaixo com a opção `-H *usuário*@*host*` para controlar uma instância de *systemd* em uma máquina remota. Isso usará [SSH](/index.php/SSH_(Portugu%C3%AAs) "SSH (Português)") para se conectar uma instância remota *systemd*.
 *   Usuários de [Plasma](/index.php/Plasma "Plasma") podem instalar [systemd-kcm](https://aur.archlinux.org/packages/systemd-kcm/) como um frontend gráfico para *systemctl*. Após a instalação, o módulo será adicionar sob *Administração de sistema*.
 
 ### Analisando o estado do sistema

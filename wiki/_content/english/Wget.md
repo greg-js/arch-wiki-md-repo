@@ -13,7 +13,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [wget](https://www.archlinux.org/packages/?name=wget) package. The git version is present in the AUR by the name [wget-git](https://aur.archlinux.org/packages/wget-git/).
+[Install](/index.php/Install "Install") the [wget](https://www.archlinux.org/packages/?name=wget) package. The [git](/index.php/Git "Git") version is present in the [AUR](/index.php/AUR "AUR") by the name [wget-git](https://aur.archlinux.org/packages/wget-git/).
 
 ## Configuration
 
@@ -37,7 +37,7 @@ In short, this procedure is:
 *   scriptable
 *   faster than ssh
 *   easily used by languages than can substitute string variables
-*   globbing capable
+*   [globbing](https://en.wikipedia.org/wiki/glob_(programming) capable
 
 ### Proxy
 

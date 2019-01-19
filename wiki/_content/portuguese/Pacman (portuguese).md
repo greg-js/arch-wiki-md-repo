@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Pacman](/index.php/Pacman "Pacman"). Data da última tradução: 2018-12-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman&diff=0&oldid=559281) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Pacman](/index.php/Pacman "Pacman"). Data da última tradução: 2019-01-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman&diff=0&oldid=561237) na versão em inglês.
 
 Artigos relacionados
 

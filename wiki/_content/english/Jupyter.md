@@ -1,6 +1,6 @@
 [Jupyter](https://en.wikipedia.org/wiki/Project_Jupyter "wikipedia:Project Jupyter") is a project which produces browser-based interactive environments for programming, mathematics, and data science. It supports a number of languages via plugins ("kernels"), such as Python, Ruby, Haskell, R, Scala and Julia.
 
-Jupyter Notebook is the traditional and most stable application. [JupyterLab](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) has a new interface and is more suitable for working with larger projects consisting of multiple files. JupyterLab is considered "ready for daily use" since [version 0.33](https://github.com/jupyterlab/jupyterlab/blob/master/CHANGELOG.md#v0330).
+Jupyter Notebook is the traditional and most stable application. [JupyterLab](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) has a new interface and is more suitable for working with larger projects consisting of multiple files. JupyterLab is considered "ready for daily use" since [version 0.33](https://jupyterlab.readthedocs.io/en/stable/getting_started/changelog.html#v0-33-0).
 
 ## Contents
 
@@ -27,6 +27,15 @@ After installation, run the following to enable interactive Javascript widgets i
 # jupyter nbextension enable --py --sys-prefix widgetsnbextension
 
 ```
+
+To install third-party Jupyter Notebook extensions for the current user, use the `--user` option instead of `--sys-prefix` while executing `jupyter nbextension install`. To do the same for [installation of JupyterLab extensions](https://jupyterlab.readthedocs.io/en/stable/user/extensions.html?highlight=advanced%20usage#advanced-usage), set the environment variable
+
+```
+$ export JUPYTERLAB_DIR=$HOME/.local/share/jupyter/lab
+
+```
+
+and verify it by running `jupyter lab paths`. Then onwards follow usual installation instructions.
 
 ## Running
 

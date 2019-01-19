@@ -376,7 +376,7 @@ To mount the disk image with *udisksctl*, see [Udisks#Mount loop devices](/index
 
 #### With kpartx
 
-**kpartx** from the [multipath-tools](https://aur.archlinux.org/packages/multipath-tools/) package can read a partition table on a device and create a new device for each partition. For example:
+**kpartx** from the [multipath-tools](https://www.archlinux.org/packages/?name=multipath-tools) package can read a partition table on a device and create a new device for each partition. For example:
 
 ```
 # kpartx -a *disk_image*

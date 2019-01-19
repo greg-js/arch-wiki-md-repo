@@ -1,3 +1,7 @@
+Related articles
+
+*   [Full system backup with SquashFS](/index.php/Full_system_backup_with_SquashFS "Full system backup with SquashFS")
+
 This article will show you how to do a full system backup with [tar](/index.php/Tar "Tar").
 
 ## Contents

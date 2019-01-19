@@ -172,7 +172,7 @@ You can proceed to create the caching device and attach it to the backing device
 
 #### Troubleshooting
 
-If `blocks` complains complains about *overlapping metadata* when running `blocks to-bcache`, you will need to shrink by 100Mb the partition you want to cache and create a new 100Mb free partition.
+If `blocks` complains about *overlapping metadata* when running `blocks to-bcache`, you will need to shrink by 100Mb the partition you want to cache and create a new 100Mb free partition.
 
 ## Installation to a bcache device
 

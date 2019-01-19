@@ -4,15 +4,15 @@ MongoDB (from hu**mongo**us) 是一个开源的，面向文档的数据库系统
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 使用](#.E4.BD.BF.E7.94.A8)
+*   [1 安装](#安装)
+*   [2 使用](#使用)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 无法启动 MongoDB](#.E6.97.A0.E6.B3.95.E5.90.AF.E5.8A.A8_MongoDB)
-    *   [3.2 transparent_hugepage内核设置警告](#transparent_hugepage.E5.86.85.E6.A0.B8.E8.AE.BE.E7.BD.AE.E8.AD.A6.E5.91.8A)
+    *   [3.1 无法启动 MongoDB](#无法启动_MongoDB)
+    *   [3.2 transparent_hugepage内核设置警告](#transparent_hugepage内核设置警告)
 
 ## 安装
 
-从 [官方软件仓库](/index.php/Official_repositories "Official repositories") 安装 [mongodb](https://www.archlinux.org/packages/?name=mongodb)。
+从 [官方软件仓库](/index.php/Official_repositories "Official repositories") 安装 [mongodb](https://aur.archlinux.org/packages/mongodb/)。
 
 [Start/Enable](/index.php/Systemd#Using_units "Systemd") `mongodb.service`.
 

@@ -14,10 +14,11 @@ It is important to regularly backup system and user data stored for example in `
 *   [2 Using LVM snapshots](#Using_LVM_snapshots)
 *   [3 Using rsync](#Using_rsync)
 *   [4 Using tar](#Using_tar)
-*   [5 Bootable backup](#Bootable_backup)
-    *   [5.1 Update the fstab](#Update_the_fstab)
-    *   [5.2 Update the bootloader's configuration file](#Update_the_bootloader's_configuration_file)
-    *   [5.3 First boot](#First_boot)
+*   [5 Using SquashFS](#Using_SquashFS)
+*   [6 Bootable backup](#Bootable_backup)
+    *   [6.1 Update the fstab](#Update_the_fstab)
+    *   [6.2 Update the bootloader's configuration file](#Update_the_bootloader's_configuration_file)
+    *   [6.3 First boot](#First_boot)
 
 ## Using Btrfs snapshots
 
@@ -34,6 +35,10 @@ See [rsync#As a backup utility](/index.php/Rsync#As_a_backup_utility "Rsync").
 ## Using tar
 
 See [Full system backup with tar](/index.php/Full_system_backup_with_tar "Full system backup with tar").
+
+## Using SquashFS
+
+See [Full system backup with SquashFS](/index.php/Full_system_backup_with_SquashFS "Full system backup with SquashFS").
 
 ## Bootable backup
 

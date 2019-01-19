@@ -38,7 +38,7 @@ To install the *systemd-boot* EFI boot manager, first make sure the system has b
 
 It should be noted that *systemd-boot* is only able to load the [EFISTUB](/index.php/EFISTUB "EFISTUB") kernel from the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (ESP). To keep the kernel updated, it is simpler and therefore **recommended** to mount the ESP to `/boot`. If the ESP is **not** mounted to `/boot`, the kernel and initramfs files must be copied onto that ESP. See [EFI system partition#Alternative mount points](/index.php/EFI_system_partition#Alternative_mount_points "EFI system partition") for details.
 
-`*esp*` will be used throughout this page to denote the ESP mountpoint, i.e. `/boot`.
+`*esp*` will be used throughout this page to denote the ESP mountpoint, e.g. `/boot`.
 
 With the ESP mounted to `*esp*`, use [bootctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bootctl.1) to install *systemd-boot* into the EFI system partition by running:
 
@@ -131,7 +131,7 @@ editor   no
 *   `efi` – EFI program to start, relative to your ESP (`*esp*`); e.g. `/vmlinuz-linux`. **Either** this parameter or `linux` (see below) is **required**.
 *   `options` – command line options to pass to the EFI program or [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). Optional, but you will need at least `initrd=*efipath*` and `root=*dev*` if booting Linux.
 
-For Linux boot, you can also use instead of `efi` and `options` the following syntax:
+For Linux boot, you can also use `linux` instead of `efi`. Or `initrd` in addition to `options`. The syntax is:
 
 *   `linux` and `initrd` followed by the relative path of the corresponding files in the ESP; e.g. `/vmlinuz-linux`; this will be automatically translated into `efi *path*` and `options initrd=*path*` – this syntax is only supported for convenience and has no differences in function.
 

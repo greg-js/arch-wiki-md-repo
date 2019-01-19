@@ -66,7 +66,7 @@ These shells can all be linked from `/usr/bin/sh`. When [Bash](/index.php/Bash "
 
 	[https://github.com/michaelmacinnis/oh](https://github.com/michaelmacinnis/oh) || [oh-git](https://aur.archlinux.org/packages/oh-git/)
 
-*   **[Powershell](https://en.wikipedia.org/wiki/Powershell "wikipedia:Powershell")** — PowerShell is an object-oriented programming language and interactive command line shell, originally written for and exclusive to Windows. Later on, it was open sourced and ported to Mac OS X and Linux.
+*   **[PowerShell](https://en.wikipedia.org/wiki/PowerShell "wikipedia:PowerShell")** — PowerShell is an object-oriented programming language and interactive command line shell, originally written for and exclusive to Windows. Later on, it was open sourced and ported to Mac OS X and Linux.
 
 	[https://github.com/PowerShell/PowerShell](https://github.com/PowerShell/PowerShell) || [powershell](https://aur.archlinux.org/packages/powershell/)
 

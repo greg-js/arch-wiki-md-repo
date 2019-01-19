@@ -27,7 +27,7 @@ This article explains the Arch Linux base set-up defaults for PAM to authenticat
 
 ## Installation
 
-The [pam](https://www.archlinux.org/packages/?name=pam) package is part of the base group of packages and, thereby, normally installed on an Arch system. The PAM modules are installed into `/usr/lib/security` exclusively.
+The [pam](https://www.archlinux.org/packages/?name=pam) package is part of the [base group](/index.php/Base_group "Base group") of packages and, thereby, normally installed on an Arch system. The PAM modules are installed into `/usr/lib/security` exclusively.
 
 The repositories contain a number of optional PAM packages, the [#Configuration How-Tos](#Configuration_How-Tos) show examples.
 

@@ -13,6 +13,9 @@ See the [Laptop/Dell](/index.php/Laptop/Dell "Laptop/Dell") chart for informatio
         *   [4.1.1 GRUB](#GRUB)
             *   [4.1.1.1 Booting in blind mode error](#Booting_in_blind_mode_error)
         *   [4.1.2 Screen freezes](#Screen_freezes)
+    *   [4.2 Network](#Network)
+        *   [4.2.1 Network Manager](#Network_Manager)
+            *   [4.2.1.1 Wifi card doesn't work after sleep](#Wifi_card_doesn't_work_after_sleep)
 
 ## Hardware Details
 
@@ -110,3 +113,17 @@ The boot process normally gets stuck at certain point of the boot process and th
 *   You can perform login and some debugging commands in blind mode, dumping their output into some files in the hard disk for posterior checks.
 
 The solution is to disable Legacy Boot in the BIOS, so the UEFI mode will be the one used to boot. Tested with Secure Boot turned **off**
+
+### Network
+
+#### Network Manager
+
+##### Wifi card doesn't work after sleep
+
+When left idle, Network Manager will save power by suspending Radio Activity. Suspending the laptop during this state will make it hard/impossible to enable the wifi after waking up. The solution is to turn off Network Manager power saving feature. Create `/etc/NetworkManager/conf.d/10-wifi-powersaving-off.conf` with the following contents:
+
+```
+[connection]
+wifi.powersave = 2
+
+```

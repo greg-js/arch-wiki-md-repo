@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive"). Data da última tradução: 2018-10-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_Linux_Archive&diff=0&oldid=545028) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive"). Data da última tradução: 2019-01-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_Linux_Archive&diff=0&oldid=561011) na versão em inglês.
 
 Artigos relacionados
 
@@ -27,7 +27,6 @@ Os pacotes são mantidos apenas por poucos anos e, posteriormente, eles são mov
 *   [4 Historical Archive](#Historical_Archive)
     *   [4.1 Localizando pacotes no Historical Archive](#Localizando_pacotes_no_Historical_Archive)
     *   [4.2 Baixando pacotes do Historical Archive](#Baixando_pacotes_do_Historical_Archive)
-    *   [4.3 Redirecionando downloads de pacote para o Historical Archive](#Redirecionando_downloads_de_pacote_para_o_Historical_Archive)
 *   [5 História](#História)
 
 ## Localização
@@ -277,15 +276,14 @@ $ ia search subject:"archlinux package" subject:'mysql'
 
 Todas as versões de pacotes disponíveis (e sua assinatura) podem ser acessadas através da página de download de um pacote: [https://archive.org/download/archlinux_pkg_lucene__](https://archive.org/download/archlinux_pkg_lucene__)
 
-Aqui estão algumas maneiras de buscar um pacote:
+Para baixar, verificar e instalar um pacote usando [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)"):
 
 ```
-$ wget https://archive.org/download/archlinux_pkg_cjdns/cjdns-16.1-3-x86_64.pkg.tar.xz{,.sig}
-$ pacman -U https://archive.org/download/archlinux_pkg_cjdns/cjdns-16.1-3-x86_64.pkg.tar.xz
+# pacman -U https://archive.org/download/archlinux_pkg_cjdns/cjdns-16.1-3-x86_64.pkg.tar.xz
 
 ```
 
-Observe que, se você usar o pacman, terá que descobrir as dependências sozinho.
+A verificação de pacote é controlada pela opção `RemoteFileSigLevel` do pacman. Note que, se você usar o pacman, terá que descobrir as dependências sozinho.
 
 Também é possível usar o [archive.org cliente Python](https://github.com/jjjake/internetarchive):
 
@@ -295,33 +293,6 @@ $ ia download archlinux_pkg_cjdns cjdns-16.1-3-x86_64.pkg.tar.xz{,.sig}
 
 # Baixa todas as versões x86_64 de um pacote, com assinaturas
 $ ia download archlinux_pkg_cjdns --glob="*x86_64.pkg.tar.xz*"
-
-```
-
-### Redirecionando downloads de pacote para o Historical Archive
-
-Para redirecionar downloads de pacotes antigos ao `archive.org`, arqui está a configuração Nginx no orion:
-
-```
-location ~ /repos/201[3456]/.*/.*\.pkg\.tar\.xz(\.sig)? {
-        # Truque de regexp para separar o pkgname do pkgver (ambos podem conter "-")
-        rewrite ^/repos/.*/((.*?)-[^-/]+-[0-9]+-[^-]+.*\.pkg\.tar\.xz(\.sig)?)$ /archive.org/archlinux_pkg_$2/$1 last;
-}
-
-# URLs de download do archive.org se parecem com:
-# https://archive.org/download/archlinux_pkg_lucene__/lucene++-1.4.2-3-i686.pkg.tar.xz
-# Nós precisamos remover @.+ no identificador (archlinux_pkg_*), mas mantê-lo no nome de arquivo ao final.
-location /archive.org/ {
-        # Reescreve @, + e . para _
-        # Isso é recursivo, então vai funcionar mesmo para substituição múltipla,
-        # com até 10 substituições para cada caractere (limie de recursão do nginx). 
-        # Ideia de https://stackoverflow.com/a/15934256
-        rewrite ^/archive\.org/([^@]*)@(.*)/(.*)$   /archive.org/$1_$2/$3;
-        rewrite ^/archive\.org/([^\.]*)\.(.*)/(.*)$ /archive.org/$1_$2/$3;
-        rewrite ^/archive\.org/([^\+]*)\+(.*)/(.*)$ /archive.org/$1_$2/$3;
-        # Quando não tiver mais @.+ na parte do identificador, redirecione para archive.org
-        rewrite ^/archive\.org/([^@\+\.]*/.*)$ https://archive.org/download/$1 permanent;
-}
 
 ```
 

@@ -1,12 +1,8 @@
-**Status de tradução:** Esse artigo é uma tradução de [Dnsmasq](/index.php/Dnsmasq "Dnsmasq"). Data da última tradução: 2018-11-06\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dnsmasq&diff=0&oldid=549819) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Dnsmasq](/index.php/Dnsmasq "Dnsmasq"). Data da última tradução: 2019-01-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dnsmasq&diff=0&oldid=561029) na versão em inglês.
 
 Artigos relacionados
 
-*   [BIND](/index.php/BIND "BIND")
-*   [DNSCrypt](/index.php/DNSCrypt_(Portugu%C3%AAs) "DNSCrypt (Português)")
-*   [DNSSEC](/index.php/DNSSEC_(Portugu%C3%AAs) "DNSSEC (Português)")
-*   [Pdnsd](/index.php/Pdnsd "Pdnsd")
-*   [unbound](/index.php/Unbound "Unbound")
+*   [Resolução de nome de domínio](/index.php/Resolu%C3%A7%C3%A3o_de_nome_de_dom%C3%ADnio "Resolução de nome de domínio")
 
 [dnsmasq](http://www.thekelleys.org.uk/dnsmasq/doc.html) fornece um [servidor DNS](https://en.wikipedia.org/wiki/Name_server "wikipedia:Name server"), um [servidor DHCP](https://en.wikipedia.org/wiki/pt:Dynamic_Host_Configuration_Protocol "wikipedia:pt:Dynamic Host Configuration Protocol") com suporte a [DHCPv6](https://en.wikipedia.org/wiki/DHCPv6 "wikipedia:DHCPv6") e [PXE](https://en.wikipedia.org/wiki/Preboot_Execution_Environment "wikipedia:Preboot Execution Environment"), e um [servidor TFTP](https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol "wikipedia:Trivial File Transfer Protocol"). Ele é projetado para ser leve e ter um tamanho reduzido, adequado para roteadores e firewalls com recursos restritos. O dnsmasq também pode ser configurado para armazenar em cache as consultas DNS para melhorar as velocidades de pesquisa de DNS nos sites visitados anteriormente.
 
@@ -52,9 +48,9 @@ A rede também precisará ser reiniciada de forma que o cliente DHCP possa criar
 
 ## Configuração
 
-Para configurar o dnsmasq, você precisa editar `/etc/dnsmasq.conf`. O arquivo contém extensos comentários explicando suas opções. Para todas as opções disponíveis, veja [dnsmasq(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dnsmasq.8).
+Para configurar o dnsmasq, edite `/etc/dnsmasq.conf`. O arquivo contém comentários explicando as opções. Para todas as opções disponíveis, veja [dnsmasq(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dnsmasq.8).
 
-**Atenção:** Por padrão, o dnsmasq habilita seus servidores DNS. Se você não quiser este serviço, você precisa desabilitá-lo explicitamente definindo a porta do DNS para `0`: `port=0` 
+**Atenção:** A configuração padrão do dnsmasq habilita seus servidores DNS. Se você não quiser este serviço, você precisa desabilitá-lo explicitamente definindo a porta DNS para `0`: `port=0` 
 
 **Dica:** Para verificar a sintaxe do(s) arquivo(s) de configuração, execute:
 ```
@@ -99,7 +95,7 @@ Veja o [dnsmasq(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dnsmasq.8) para m
 
 Depois de configurar o dnsmasq, você precisa adicionar os endereços de host local como os únicos servidores de nomes em `/etc/resolv.conf`. Isso faz com que todas as consultas sejam enviadas para o dnsmasq.
 
-Como o dnsmasq não é um servidor DNS recursivo, você deve configurar o encaminhamento para um servidor DNS externo. Isso pode ser feito automaticamente usando [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)") ou especificando manualmente o endereço do servidor DNS na configuração do dnsmasq.
+Como o dnsmasq é um *stub resolver*, isto é, não é um servidor DNS recursivo, você deve configurar o encaminhamento para um servidor DNS externo. Isso pode ser feito automaticamente usando [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)") ou especificando manualmente o endereço do servidor DNS na configuração do dnsmasq.
 
 ##### openresolv
 
@@ -139,7 +135,7 @@ nameserver 127.0.0.1
 
 ```
 
-Veja [Resolução de nome de domínio#Sobrescrita do /etc/resolv.conf](/index.php/Resolu%C3%A7%C3%A3o_de_nome_de_dom%C3%ADnio#Sobrescrita_do_/etc/resolv.conf "Resolução de nome de domínio") sobre como proteger `/etc/resolv.conf` contra modificação.
+Certifique-se de proteger `/etc/resolv.conf` de modificações conforme descrito em [Resolução de nome de domínio#Sobrescrita do /etc/resolv.conf](/index.php/Resolu%C3%A7%C3%A3o_de_nome_de_dom%C3%ADnio#Sobrescrita_do_/etc/resolv.conf "Resolução de nome de domínio").
 
 Os endereços de servidor DNS upstream devem então ser especificados no arquivo de configuração do dnsmasq como `server=*endereço_servidor*`. Também adicione `no-resolv` para que o dnsmasq não leia desnecessariamente `/etc/resolv.conf` que contém apenas os endereços de host local de si mesmo.
 

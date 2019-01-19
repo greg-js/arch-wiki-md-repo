@@ -215,7 +215,7 @@ EndSection
 
 *   **acpilight** — acpilight содержит "xbacklight"-совместимую утилиту, которая использует sys файловую систему для установки яркости экрана. Т.к. она не использует X вообще, ее также можно использовать в консоли и с Wayland. Она не имеет проблем с KMS драйверами. Кроме того, на ноутбуках ThinkPad можно также настраивать подсветку клавиатуры.
 
-	[https://github.com/wavexx/acpilight/](https://github.com/wavexx/acpilight/) || [acpilight](https://aur.archlinux.org/packages/acpilight/)
+	[https://github.com/wavexx/acpilight/](https://github.com/wavexx/acpilight/) || [acpilight](https://www.archlinux.org/packages/?name=acpilight)
 
 *   **illum** — ilum следит за клавишами увеличения и уменьшения яркости на всех устройствах ввода (с помощью libevdev) и настраивает яркость по нажатию клавиши (через sysfs). Написана для новых BIOS/UEFI, которые не обрабатывают нажатия этих клавиш за вас. Это альтернатива обработке этих клавиш через acpi или с помощью горячих клавиш x11/wm.
 

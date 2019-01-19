@@ -1,6 +1,6 @@
 **Status de tradução:** Esse artigo é uma tradução de [Telnet](/index.php/Telnet "Telnet"). Data da última tradução: 2019-01-10\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Telnet&diff=0&oldid=549518) na versão em inglês.
 
-[Telnet](https://en.wikipedia.org/wiki/pt:Telnet "wikipedia:pt:Telnet") é o protocolo tradicional para fazer conexões remotas do console via TCP. O Telnet **não é seguro** e é usado principalmente para conectar equipamentos legados hoje em dia. O tráfego de Telnet é pode ser facilmente detectado por senhas e, portanto, conexões nunca devem ser feitas através de qualquer rede não confiável, incluindo a Internet, a menos que seja criptografada com [SSH](/index.php/SSH "SSH") ou encapsulada através de uma VPN. Para uma alternativa segura, veja [SSH](/index.php/SSH "SSH").
+[Telnet](https://en.wikipedia.org/wiki/pt:Telnet ou encapsulada através de uma VPN. Para uma alternativa segura, veja [SSH](/index.php/SSH_(Portugu%C3%AAs) "SSH (Português)").
 
 ## Instalação
 

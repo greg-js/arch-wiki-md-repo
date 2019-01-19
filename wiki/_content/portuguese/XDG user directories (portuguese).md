@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [XDG user directories](/index.php/XDG_user_directories "XDG user directories"). Data da última tradução: 2019-01-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=XDG_user_directories&diff=0&oldid=563506) na versão em inglês.
+
 Artigos relacionados
 
 *   [xdg-menu](/index.php/Xdg-menu "Xdg-menu")
@@ -8,7 +10,7 @@ Do [freedesktop.org](https://www.freedesktop.org/wiki/Software/xdg-user-dirs/):
 
 	xdg-user-dirs é uma ferramenta para ajudar a gerenciar diretórios de usuário "bem conhecidos", como a pasta de área de trabalho e a pasta de música. Também lida com localização (isto é, tradução) dos nomes de arquivo.
 
-	A maneira como funciona é que o [xdg-user-dirs-update(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdg-user-dirs-update.1) é executado muito cedo na fase de login. Este programa lê um arquivo de configuração e um conjunto de diretórios padrão. Em seguida, ele cria versões localizadas desses diretórios no diretório inicial dos usuários e configura um arquivo de configuração em `$XDG_CONFIG_HOME/user-dirs.dirs` (XDG_CONFIG_HOME tem como padrão ~/.config) que os aplicativos podem ler para localizar esses diretórios.
+	A maneira como funciona é que o [xdg-user-dirs-update(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdg-user-dirs-update.1) é executado muito cedo na fase de login. Este programa lê um arquivo de configuração e um conjunto de diretórios padrão. Em seguida, ele cria versões localizadas desses diretórios no diretório inicial dos usuários e configura um arquivo de configuração em `$XDG_CONFIG_HOME/user-dirs.dirs` (`XDG_CONFIG_HOME` tem como padrão `~/.config`) que os aplicativos podem ler para localizar esses diretórios.
 
 A maioria dos [gerenciadores de arquivos](/index.php/Gerenciadores_de_arquivos "Gerenciadores de arquivos") indica diretórios de usuário XDG com ícones especiais.
 
@@ -27,6 +29,8 @@ Quando executado, ele também vai automaticamente:
 
 *   Criar um arquivo de configuração local `~/.config/user-dirs.dirs`: usado por aplicativos para localizar e usar diretórios *home* específicos para uma conta.
 *   Criar um arquivo de configuração local `~/.config/user-dirs.locale`: usado para definir o idioma conforme o *locale* em uso.
+
+O serviço de usuário `xdg-user-dir-update.service` também será instalado e ativado por padrão, para manter seus diretórios atualizados executando este comando no início de cada sessão de login.
 
 ## Criando diretórios personalizados
 

@@ -1,61 +1,61 @@
+Related articles
+
+*   [Comparison of tiling window managers](/index.php/Comparison_of_tiling_window_managers "Comparison of tiling window managers")
+*   [Window manager](/index.php/Window_manager "Window manager")
+
+**翻译状态：** 本文是英文页面 [Qtile](/index.php/Qtile "Qtile") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-01-18，点击[这里](https://wiki.archlinux.org/index.php?title=Qtile&diff=0&oldid=538757)可以查看翻译后英文页面的改动。
+
 From [Qtile web site](http://qtile.org/):
 
 	*Qtile 是一个全功能、可轻易修改(骇)的平铺式窗口管理程序。 Qtile 简单、轻巧、扩展性高。 撰写自订的窗口堆叠模式、插件以及指令是轻而易举的事情。程序以及设定均是以 [python](/index.php/Python_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Python (简体中文)") 写成，意味着：您可以使用语言所提供的所有能力及弹性来满足您对窗口管理的需求。*
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 启动Ｑtile](#.E5.90.AF.E5.8A.A8.EF.BC.B1tile)
-*   [3 配置](#.E9.85.8D.E7.BD.AE)
-    *   [3.1 群(Groups)](#.E7.BE.A4.28Groups.29)
-    *   [3.2 按键组合(Keys)](#.E6.8C.89.E9.94.AE.E7.BB.84.E5.90.88.28Keys.29)
-    *   [3.3 显示器与资讯列(Screens and Bars)](#.E6.98.BE.E7.A4.BA.E5.99.A8.E4.B8.8E.E8.B5.84.E8.AE.AF.E5.88.97.28Screens_and_Bars.29)
-    *   [3.4 插件(Widgets)](#.E6.8F.92.E4.BB.B6.28Widgets.29)
-    *   [3.5 啟動(Startup)](#.E5.95.9F.E5.8B.95.28Startup.29)
-    *   [3.6 音效(Sound)](#.E9.9F.B3.E6.95.88.28Sound.29)
-*   [4 除错(Debugging)](#.E9.99.A4.E9.94.99.28Debugging.29)
-*   [5 Hacking Qtile](#Hacking_Qtile)
-    *   [5.1 预备](#.E9.A2.84.E5.A4.87)
-    *   [5.2 关于钩(hook)](#.E5.85.B3.E4.BA.8E.E9.92.A9.28hook.29)
-    *   [5.3 关于插件(widget)](#.E5.85.B3.E4.BA.8E.E6.8F.92.E4.BB.B6.28widget.29)
-*   [6 相关文件](#.E7.9B.B8.E5.85.B3.E6.96.87.E4.BB.B6)
+*   [1 安装](#安装)
+*   [2 启动](#启动)
+*   [3 配置](#配置)
+    *   [3.1 群(Groups)](#群(Groups))
+    *   [3.2 按键组合(Keys)](#按键组合(Keys))
+    *   [3.3 显示器与资讯列(Screens and Bars)](#显示器与资讯列(Screens_and_Bars))
+    *   [3.4 插件(Widgets)](#插件(Widgets))
+    *   [3.5 启动](#启动_2)
+*   [4 除错](#除错)
+*   [5 参阅](#参阅)
 
 ## 安装
 
-安装下列包之一：
+从下列软件包中选择一个进行[安装](/index.php/%E5%AE%89%E8%A3%85 "安装")：
 
 *   [qtile](https://www.archlinux.org/packages/?name=qtile) 最后正式版，基于 Python 3。
 *   [qtile-python2](https://aur.archlinux.org/packages/qtile-python2/) 最后正式版，基于 Python 2。
 *   [qtile-python3-git](https://aur.archlinux.org/packages/qtile-python3-git/) 最后开发版，基于 Python 3。
 *   [qtile-git](https://aur.archlinux.org/packages/qtile-git/) 最后开发版，基于 Python 2。
 
-缺省配置可以参考[Github源](https://github.com/qtile/qtile/blob/master/libqtile/resources/default_config.py)或从该源复制一份，存放于 `~/.config/qtile/config.py`：
+## 启动
 
-```
-$ mkdir -p ~/.config/qtile/
-$ wget [https://raw.github.com/qtile/qtile/develop/libqtile/resources/default_config.py](https://raw.github.com/qtile/qtile/develop/libqtile/resources/default_config.py) -O - > ~/.config/qtile/config.py
+用 [xinit](/index.php/Xinit "Xinit") 执行 `qtile`。
 
-```
-
-若无法从Github获得缺省配置，也可以以下列方式获得一份复制：
-
-```
-$ rm ~/.config/qtile/config.py
-$ cp  /usr/lib/python2.7/site-packages/libqtile/resources/default_config.py ~/.config/qtile/config.py
-
-```
-
-## 启动Ｑtile
-
-将 Ｑtile 指令 `exec qtile` 加入 `~/.xinitrc` 并启动 [Xorg](/index.php/Xorg "Xorg")。 缺省启动一个新的 `xterm` 终端的按键组合是：`Alt+Enter`。
+[默认配置](http://docs.qtile.org/en/latest/manual/config/#default-configuration)设置了 `Super+Enter` 作为打开 *xterm* 终端的快捷键，`Super+Ctrl+q` 可以退出 Qile。
 
 ## 配置
 
 **注意:** 这个章节只会介绍基本的配置模式，若需更详尽的配置讯息请参见 [官方文档](http://docs.qtile.org/en/latest/)。
 
-整个 Qtile 的配置均是以[python](/index.php/Python_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Python (简体中文)")写成，存放于 `~/.config/qtile/config.py`。 若需对 [python](/index.php/Python_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Python (简体中文)") 有*快速概览*的需求，可以阅读 [这份教程](https://developers.google.com/edu/python/introduction)。 此教程将讲解关于 [python](/index.php/Python_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Python (简体中文)") 变数、函数、模组以及其他配置 qtile 所需要的预备知识。
+[根据配置查询表](http://docs.qtile.org/en/latest/manual/config/default.html#configuration-lookup)， 如果未进行配置，Qtile 会使用默认配置文件中的设置。要自定义配置，先将默认配置文件复制到 `~/.config/qtile/config.py`：
 
-透过以下指令测试你所编写的 config.py 文件是否有语法上的错误。
+```
+$ mkdir -p ~/.config/qtile/
+$ cp /usr/share/doc/*qtile_dir*/default_config.py ~/.config/qtile/config.py
+
+```
+
+*   `*qtile_dir*` 是安装的软件包名。
+*   最新的默认配置文件位于： [libqtile/resources/default_config.py](https://github.com/qtile/qtile/blob/develop/libqtile/resources/default_config.py).
+*   更完整的测试请参考 [qtile-examples](https://github.com/qtile/qtile-examples) 仓库。
+
+整个 Qtile 的配置均是以[python](/index.php/Python_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Python (简体中文)")写成，存放于 `~/.config/qtile/config.py`。
+
+用以下指令测试 config.py 文件是否有语法错误:
 
 ```
 $ python2 -m py_compile ~/.config/qtile/config.py
@@ -138,7 +138,7 @@ screens = [
 
 ```
 
-### 啟動(Startup)
+### 启动
 
 透过捆绑 **钩(hooks)** 我们可以设定许多需要 Qtile 监视的事件。其中一个 `startup` 钩是关注 Qtile 初始化事件的钩，能够在 Qtile 初始化的时连带启动其他的应用程序(一次性指令或应用程序)。其他的 **钩(hook)** 请参件 [官方文档](http://docs.qtile.org/en/latest/manual/ref/hooks.html).
 
@@ -168,22 +168,7 @@ def startup():
 
 ```
 
-### 音效(Sound)
-
-能透过键组合来操控 `alsamixer` 来快速调整音量以及静音与否。使用者必须是 **audio gropu** 的成员。
-
-```
-keys= [
-    ...
-    # 音效设置，未绑定键配置！
-    Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
-    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -c 0 sset Master 1- unmute")),
-    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -c 0 sset Master 1+ unmute"))
-   ]
-
-```
-
-## 除错(Debugging)
+## 除错
 
 有时候会因为插件的参数没有完整，或者设定之间有冲突情形发生、模组未 import 等，需要检查出错位置，可以以如下方式启动一个虚拟的 Xorg 并进行测试：
 
@@ -192,28 +177,7 @@ echo "exec qtile" > /tmp/.start_qtile ; xinit /tmp/.start_qtile -- :2
 
 ```
 
-## Hacking Qtile
-
-**注意:** 本说明为非官方文件翻译而来，请勿将用于生产的桌面环境进行不保证稳定的修改行为。
-
-目前官方的开发状况：
-
-*   [Qtile 官方文档](http://docs.qtile.org/en/latest/) 是 Qtile 0.5 的说明文件，而在函式库的呼叫上， 0.5 版与 0.6 版有不相容的差异；这些差异将会使 [缺省配置](https://github.com/qtile/qtile/blob/master/libqtile/resources/default_config.py) 无法于 Qtile 0.5 上运行。
-    *   Ubuntu PPA 包含的是 Qtile 0.5
-    *   ArchLinux 的 [qtile-git](https://aur.archlinux.org/packages/qtile-git/) 则是最新的 Qtile 0.6
-*   依照邮件列表内开发者的意思， Qtile 并不打算撰写完整的说明文件，而是优先扩充 *问与答 (FAQ)* ，而若有细节需求，会请求直接阅读源码。
-*   Qtile 可以很好的与其他桌面环境组件协调运作。
-
-### 预备
-
-*   关于 [Xephyr](http://awesome.naquadah.org/wiki/Using_Xephyr) 使用方式的基本知识，请避免在实验期间重启 Qtile。
-*   关于 [python](/index.php/Python_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Python (简体中文)") 的操作能力。
-
-### 关于钩(hook)
-
-### 关于插件(widget)
-
-## 相关文件
+## 参阅
 
 *   [Qtile 官方网站](http://qtile.org/)
 *   [官方文档](http://docs.qtile.org/en/latest/)

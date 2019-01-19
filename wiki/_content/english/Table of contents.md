@@ -41,7 +41,7 @@
 | <small>3.9.4.</small> [ASUS](/index.php/Category:ASUS "Category:ASUS") <small>(61)</small> |
 | <small>3.9.5.</small> [Casper](/index.php/Category:Casper "Category:Casper") <small>(1)</small> |
 | <small>3.9.6.</small> [Clevo](/index.php/Category:Clevo "Category:Clevo") <small>(2)</small> |
-| <small>3.9.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(66)</small> |
+| <small>3.9.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(67)</small> |
 | <small>3.9.8.</small> [Fujitsu](/index.php/Category:Fujitsu "Category:Fujitsu") <small>(1)</small> |
 | <small>3.9.9.</small> [HASEE](/index.php/Category:HASEE "Category:HASEE") <small>(1)</small> |
 | <small>3.9.10.</small> [HP](/index.php/Category:HP "Category:HP") <small>(58)</small> |
@@ -234,7 +234,7 @@
 | <small>5.8.8.</small> [OpenBSD](/index.php/Category:OpenBSD "Category:OpenBSD") <small>(4)</small> |
 | <small>5.8.9.</small> [Suckless](/index.php/Category:Suckless "Category:Suckless") <small>(5)</small> |
 | <small>6.</small> [System administration](/index.php/Category:System_administration "Category:System administration") <small>(22)</small> |
-| <small>6.1.</small> [Backup](/index.php/Category:Backup "Category:Backup") <small>(11)</small> |
+| <small>6.1.</small> [Backup](/index.php/Category:Backup "Category:Backup") <small>(12)</small> |
 | <small>6.2.</small> [Boot process](/index.php/Category:Boot_process "Category:Boot process") <small>(27)</small> |
 | <small>6.2.1.</small> [Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") <small>(10)</small> |
 | <small>6.2.2.</small> [Bootsplash](/index.php/Category:Bootsplash "Category:Bootsplash") <small>(2) (also in [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy"))</small> |

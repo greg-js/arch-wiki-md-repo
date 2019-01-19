@@ -319,7 +319,7 @@ Para montar la imagen de disco con *udisksctl* , vea [Udisks#Mount loop devices]
 
 #### Con kpartx
 
-*'Kpartx'* del paquete [multipath-tools](https://aur.archlinux.org/packages/multipath-tools/) puede leer una tabla de particiones en un dispositivo y crear un nuevo dispositivo para cada partición. Por ejemplo:  # Kpartx -a *disk_image*
+*'Kpartx'* del paquete [multipath-tools](https://www.archlinux.org/packages/?name=multipath-tools) puede leer una tabla de particiones en un dispositivo y crear un nuevo dispositivo para cada partición. Por ejemplo:  # Kpartx -a *disk_image*
 
 Esto configurará el dispositivo de bucle invertido y creará los dispositivos de partición necesarios en `/dev/mapper/`.
 

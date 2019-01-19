@@ -40,6 +40,6 @@ The default install also includes a cron job, placed in cron.daily. This job wil
 
 ## systemd journal support
 
-Logwatch 7.4.3-3 now supports querying the systemd journal via journalctl. See [Logwatch dist.conf files for Arch Linux](https://bbs.archlinux.org/viewtopic.php?id=227516) for details
+**Note:** Logwatch 7.5.0 now supports querying the systemd journal via journalctl.
 
 Older versions of Logwatch do not support querying the systemd journal directly. For this reason, a logger like syslog-ng is required to duplicate the journal output into external log files (such as in `/var/log`). A [patch](http://sourceforge.net/p/logwatch/patches/34/) is under development to support the systemd journal. Alternately, a custom script could duplicate some of the logwatch functionality by directly querying the journal and sending email(s), as done in a Python script in [this blog post](https://tim.siosm.fr/blog/2014/02/24/journald-log-scanner-python/).

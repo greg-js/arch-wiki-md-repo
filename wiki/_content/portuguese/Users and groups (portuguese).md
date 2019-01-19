@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Users and groups](/index.php/Users_and_groups "Users and groups"). Data da última tradução: 2018-10-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Users_and_groups&diff=0&oldid=550515) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Users and groups](/index.php/Users_and_groups "Users and groups"). Data da última tradução: 2019-11-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Users_and_groups&diff=0&oldid=562974) na versão em inglês.
 
 Artigos relacionados
 
@@ -172,16 +172,18 @@ Para adicionar um novo usuário, use o comando *useradd*:
 
 Quando o shell de login destina-se a ser não funcional, por exemplo quando a conta de usuário é criada para um serviço específico, `/usr/bin/nologin` pode ser especificado no lugar de uma shell comum para educadamente recusar um login (veja [nologin(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nologin.8)).
 
+Veja [useradd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/useradd.8) para outras opções suportadas.
+
 ### Exemplo de adicionar um usuário
 
 Para adicionar um novo usuário chamado `archie`, crar seu diretório pessoal e, do contrário, usando todos os padrões nos termos de grupos, nomes de pastas, shell usado e vários outros parâmetros:
 
 ```
-# useradd --create-home archie
+# useradd -m archie
 
 ```
 
-**Dica:** O valor padrão usado para o shell de login da nova conta pode ser exibida usando `useradd ---default`. O padrão é Bash, um shell diferente pode ser especificado com a opção `-s`/`--shell`.
+**Dica:** O valor padrão usado para o shell de login da nova conta pode ser exibida usando `useradd --defaults`. O padrão é Bash, um shell diferente pode ser especificado com a opção `-s`/`--shell`; veja `/etc/shells` para shells de login válidos.
 
 Apesar de ser obrigatório proteger o recém criado usuário `archie` com uma senha, é altamente recomendado fazê-lo:
 
@@ -213,6 +215,13 @@ Com o seguinte comando, um usuário do sistema sem acesso ao shell e sem um dire
 
 ```
 # useradd -r -s /usr/bin/nologin *nome_de_usuário*
+
+```
+
+Se o usuário do sistema exige um ID de usuário e grupo específico, especifique-os com as opções `-u`/`--uid` e `-g`/`--gid` ao criar o usuário:
+
+```
+# useradd -r -u 850 -g 850 -s /usr/bin/nologin *nome_de_usuário*
 
 ```
 
@@ -267,13 +276,6 @@ Para adicionar um usuário a outros grupos, use (`*grupos_adicionais*` é uma li
 ```
 
 **Atenção:** Se a opção `-a` for omitida no comando *usermod* acima, o usuário é removido de todos os outros grupos não listados em `*grupos_adicionais*` (i.e. o usuário será membro apenas daqueles grupos em `*grupos_adicionais*`).
-
-Alternativamente, *gpasswd* pode ser usado, embora o nome de usuário só possa ser adicionado (ou removido) de um grupo por vez:
-
-```
-# gpasswd --add *nome_de_usuário* *grupo*
-
-```
 
 Para inserir informações do usuário para o comentário [GECOS](#Base_de_dados_de_usuários) (ex. o nome completo do usuário), digite:
 
@@ -331,7 +333,7 @@ Sendo que:
 *   `*senha*` é a senha do usuário.
     **Atenção:** O arquivo `passwd` é legível por todos, então armazenar senhas (em hash ou de outra forma) neste arquivo é inseguro. Em vez disso, o Arch Linux usa [senhas em *shadow*](/index.php/Security#Password_hashes "Security"): o campo `senha` conterá um caractere reservado (`x`) indicando que a senha em hash está salva no arquivo de acesso restrito `/etc/shadow`. Por esse motivo, é recomendado sempre alterar senhas usando o comando **passwd**.
 
-*   `*UID*` é a identificação numérica de usuário. No Arch, o nome do primeiro login (após o *root*) tem UID 1000, por padrão; entradas subsequentes de UID para usuários devem ser maiores que 1000.
+*   `*UID*` é a identificação numérica de usuário. No Arch, o nome do primeiro login (após o *root*) para o chamado usuário normal, em oposição a serviços, tem UID 1000, por padrão; entradas subsequentes de UID para usuários devem ser maiores que 1000.
 *   `*GID*` é a identificação numérica de grupo primário para o usuário. Valores numéricos para GIDs são listados em [/etc/group](#Gerenciamento_de_grupo).
 *   `*GECOS*` é um campo opcional com propósitos informacionais; geralmente, ele contém o nome completo do usuário, mas também pode ser usado por serviços, como o *finger*, e gerenciado com o comando [chfn](#Outros_exemplos_de_gerenciamento_de_usuário). Esse campo é opcional e pode ser deixado em branco.
 *   `*diretório*` é usado pelo comando de login para definir a variável de ambiente `$HOME`. Vários serviços com seus próprios usuários usam `/`, mas os usuários normais costumam definir uma pasta em `/home`.
@@ -389,7 +391,7 @@ Crie novos grupos com o comando `groupadd`:
 
 ```
 
-Adicione usuários a um grupo com o comando `gpasswd`:
+Adicione usuários a um grupo com o comando `gpasswd` (veja [FS#58262](https://bugs.archlinux.org/task/58262) a cerca de erros; alternativamente, o comando `usermod` pode ser usado):
 
 ```
 # gpasswd -a *usuário* *grupo*

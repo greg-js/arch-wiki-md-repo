@@ -120,7 +120,7 @@ Por supuesto, esto no está limitado y se puede ampliar a los niveles que sean n
 
 #### Instalar grupos de paquetes
 
-Algunos paquetes pertenecen a un [grupo de paquetes](/index.php/Creating_packages#Meta_packages_and_groups "Creating packages"), los cuales se pueden instalar simultáneamente. Por ejemplo, emitiendo la orden:
+Algunos paquetes pertenecen a un [grupo de paquetes](/index.php/Package_group_(Espa%C3%B1ol) "Package group (Español)"), los cuales se pueden instalar simultáneamente. Por ejemplo, emitiendo la orden:
 
 ```
 # pacman -S gnome

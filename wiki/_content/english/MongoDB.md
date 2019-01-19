@@ -10,7 +10,7 @@ MongoDB (from hu**mongo**us) is an open source document-oriented database system
 
 ## Installation
 
-Install [mongodb](https://www.archlinux.org/packages/?name=mongodb) from [official repositories](/index.php/Official_repositories "Official repositories"). You may also wish to install [mongodb-tools](https://www.archlinux.org/packages/?name=mongodb-tools), which provides tools such as `mongoimport`, `mongoexport`, `mongodump`, `mongorestore`, among others.
+MongoDB has been removed from the [official repositories](/index.php/Official_repositories "Official repositories") due to its re-licensing issues. You can install the [mongodb](https://aur.archlinux.org/packages/mongodb/) package. You may also wish to install [mongodb-tools](https://www.archlinux.org/packages/?name=mongodb-tools), which provides tools such as `mongoimport`, `mongoexport`, `mongodump`, `mongorestore`, among others.
 
 [Start/Enable](/index.php/Systemd#Using_units "Systemd") the `mongodb.service` daemon.
 

@@ -9479,6 +9479,10 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 	[https://launchpad.net/synapse-project](https://launchpad.net/synapse-project) || [synapse](https://www.archlinux.org/packages/?name=synapse)
 
+*   **Ulauncher** — Modern and shiny launcher that provides fuzzy search, extensions, and themes
+
+	[https://ulauncher.io/](https://ulauncher.io/) || [ulauncher](https://aur.archlinux.org/packages/ulauncher/)
+
 *   **Whippet** — Launcher and xdg-open replacement for control freaks. Opens files and URLs with applications associated by name and/or mimetype. Applications and associations may be customized using an SQLite database. Uses dmenu to manage its menus.
 
 	[http://appstogo.mcfadzean.org.uk/linux.html#whippet](http://appstogo.mcfadzean.org.uk/linux.html#whippet) || [whippet](https://aur.archlinux.org/packages/whippet/)

@@ -1,6 +1,6 @@
 **Status de tradução:** Esse artigo é uma tradução de [Install from SSH](/index.php/Install_from_SSH "Install from SSH"). Data da última tradução: 2018-10-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Install_from_SSH&diff=0&oldid=544157) na versão em inglês.
 
-Este artigo possui o intuito de mostrar aos usuários como instalar o Arch através de uma conexão [SSH](/index.php/SSH "SSH"). Considere esta forma de instalação a padrão nos seguintes cenários:
+Este artigo possui o intuito de mostrar aos usuários como instalar o Arch através de uma conexão [SSH](/index.php/SSH_(Portugu%C3%AAs) "SSH (Português)"). Considere esta forma de instalação a padrão nos seguintes cenários:
 
 *   Home Theater Personal Computer (HTPC) sem um monitor conectado (p. ex., um SDTV)
 *   Um PC localizado em outra cidade, estado, país (casa do amigo, de um parente, etc.)

@@ -17,9 +17,9 @@ The [pacman](https://www.archlinux.org/pacman/) [package manager](https://en.wik
 
 *Pacman* keeps the system up to date by synchronizing package lists with the master server. This server/client model also allows the user to download/install packages with a simple command, complete with all required dependencies.
 
-*Pacman* is written in the C programming language and uses the [tar](https://en.wikipedia.org/wiki/tar_(computing) "w:tar (computing)") format for packaging.
+*Pacman* is written in the [C](/index.php/C "C") programming language and uses the [bsdtar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bsdtar.1) [tar](https://en.wikipedia.org/wiki/tar_(computing) "w:tar (computing)") format for packaging.
 
-**Tip:** The [pacman](https://www.archlinux.org/packages/?name=pacman) package contains tools such as [makepkg](/index.php/Makepkg "Makepkg") and *vercmp*. Other useful tools such as *pactree* and [checkupdates](/index.php/Checkupdates "Checkupdates") are found in [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) ([formerly](https://git.archlinux.org/pacman.git/commit/?id=0c99eabd50752310f42ec808c8734a338122ec86) part of pacman). Run `pacman -Ql pacman pacman-contrib | grep -E 'bin/.+'` to see the full list.
+**Tip:** The [pacman](https://www.archlinux.org/packages/?name=pacman) package contains tools such as [makepkg](/index.php/Makepkg "Makepkg") and *vercmp*. Other useful tools such as [pactree](#Pactree) and [checkupdates](/index.php/Checkupdates "Checkupdates") are found in [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) ([formerly](https://git.archlinux.org/pacman.git/commit/?id=0c99eabd50752310f42ec808c8734a338122ec86) part of pacman). Run `pacman -Ql pacman pacman-contrib | grep -E 'bin/.+'` to see the full list.
 
 ## Contents
 
@@ -326,7 +326,7 @@ See [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and 
 
 #### Pactree
 
-**Note:** *pactree* is not part of the [pacman](https://www.archlinux.org/packages/?name=pacman) package anymore. Instead it can be found in [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib).
+**Note:** [pactree(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pactree.8) is not part of the [pacman](https://www.archlinux.org/packages/?name=pacman) package anymore. Instead it can be found in [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib).
 
 To view the dependency tree of a package:
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [General recommendations](/index.php/General_recommendations "General recommendations"). Data da última tradução: 2018-10-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=General_recommendations&diff=0&oldid=549342) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [General recommendations](/index.php/General_recommendations "General recommendations"). Data da última tradução: 2019-01-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=General_recommendations&diff=0&oldid=563264) na versão em inglês.
 
 Artigos relacionados
 
@@ -31,7 +31,8 @@ Esse documento é um índice anotado de artigos populares e informações import
     *   [4.2 Drivers de exibição](#Drivers_de_exibição)
     *   [4.3 Ambientes gráficos](#Ambientes_gráficos)
     *   [4.4 Gerenciadores de janela](#Gerenciadores_de_janela)
-    *   [4.5 Gerenciadores de exibição](#Gerenciadores_de_exibição)
+    *   [4.5 Diretórios de usuário](#Diretórios_de_usuário)
+    *   [4.6 Gerenciadores de exibição](#Gerenciadores_de_exibição)
 *   [5 Gerenciamento de energia](#Gerenciamento_de_energia)
     *   [5.1 Eventos de ACPI](#Eventos_de_ACPI)
     *   [5.2 Escala de frequência de CPU](#Escala_de_frequência_de_CPU)
@@ -81,7 +82,7 @@ Essa seção lida com tarefas administrativas e gerenciamento do sistema. Para m
 
 ### Usuários e grupos
 
-Uma nova instalação deixa você com apenas a conta de [superusuário](https://en.wikipedia.org/wiki/Superuser "wikipedia:Superuser"), mais conhecida como "root". Se autenticar como root por períodos prolongados de tempo, possivelmente expondo-o via [SSH](/index.php/SSH "SSH") em um servidor, [é inseguro](https://apple.stackexchange.com/questions/192365/is-it-ok-to-use-the-root-user-as-a-normal-user/192422#192422). Em vez disso, você deve criar e usar uma conta de usuário desprivilegiada para a maioria das tarefas, apenas usando a conta root para administração do sistema. Veja [Usuários e grupos#Gerenciamento de usuário](/index.php/Usu%C3%A1rios_e_grupos#Gerenciamento_de_usuário "Usuários e grupos") para detalhes.
+Uma nova instalação deixa você com apenas a conta de [superusuário](https://en.wikipedia.org/wiki/Superuser em um servidor, [é inseguro](https://apple.stackexchange.com/questions/192365/is-it-ok-to-use-the-root-user-as-a-normal-user/192422#192422). Em vez disso, você deve criar e usar uma conta de usuário desprivilegiada para a maioria das tarefas, apenas usando a conta root para administração do sistema. Veja [Usuários e grupos#Gerenciamento de usuário](/index.php/Usu%C3%A1rios_e_grupos#Gerenciamento_de_usuário "Usuários e grupos") para detalhes.
 
 Usuários e grupos são mecanismo para *controle de acesso*; administradores podem ajustar participação e posse de grupos para conceder ou negar a usuários e serviços acesso a recursos do sistema. Leia o artigo [Usuários e grupos](/index.php/Usu%C3%A1rios_e_grupos "Usuários e grupos") para detalhes e riscos de segurança em potencial.
 
@@ -177,6 +178,10 @@ Apesar do Xorg fornecer um framework básico para compilação de um ambiente gr
 
 Um ambiente gráfico completo fornece uma interface gráfica de usuário completa e consistente, mas tende a representar um consumo considerável dos recursos do sistema. Usuários buscando maximizar o desempenho ou simplificar seu ambiente, podem optar por instalar um [gerenciador de janela](/index.php/Gerenciador_de_janela "Gerenciador de janela") sozinho e selecionar pessoalmente os extras desejados. A maioria dos ambientes gráficos também permitem o uso de um gerenciador de janela alternativo. Os gerenciadores de janela [dinâmicos](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs"), [empilhamento](/index.php/Category:Stacking_WMs "Category:Stacking WMs") e [tiling](/index.php/Category:Tiling_WMs "Category:Tiling WMs") se diferem na forma de lidar com posicionamento das janelas.
 
+### Diretórios de usuário
+
+Os diretórios de usuário conhecidos, como Downloads ou Música, são criados pelo serviço do usuário `xdg-user-dirs-update.service`, fornecido por [xdg-user-dirs](https://www.archlinux.org/packages/?name=xdg-user-dirs) e ativado por padrão após a instalação. Se o seu ambiente de desktop ou gerenciador de janelas não puxar o pacote, você pode [instalar](/index.php/Instalar "Instalar") e executar `xdg-user-dirs-update` manualmente conforme [Diretórios de usuário XDG#Criando diretórios padrão](/index.php/Diret%C3%B3rios_de_usu%C3%A1rio_XDG#Criando_diretórios_padrão "Diretórios de usuário XDG").
+
 ### Gerenciadores de exibição
 
 A maioria dos ambientes gráficos incluem um [gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição") para iniciar automaticamente o ambiente gráfico e gerenciar autenticação de usuário. Usuários sem um ambiente gráfico podem instalar um separadamente. Alternativamente, você pode [iniciar X no login](/index.php/Iniciar_X_no_login "Iniciar X no login") como uma alternativa simples a um gerenciador de exibição.
@@ -235,7 +240,7 @@ O [Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol "w
 
 ### Segurança de DNS
 
-Para melhor segurança ao navegar na web, jogar na internet, conectar a serviços [SSH](/index.php/SSH "SSH") e tarefas similares, considere usar software cliente habilitado para [DNSSEC](/index.php/DNSSEC_(Portugu%C3%AAs) "DNSSEC (Português)") que pode validar registros [DNS](https://en.wikipedia.org/wiki/Domain_Name_System para criptografar tráfego DNS.
+Para melhor segurança ao navegar na web, jogar na internet, conectar a serviços [SSH](/index.php/SSH_(Portugu%C3%AAs) "SSH (Português)") e tarefas similares, considere usar um [resolvedor de DNS](/index.php/Resolvedor_de_DNS "Resolvedor de DNS") habilitado para [DNSSEC](/index.php/DNSSEC_(Portugu%C3%AAs) "DNSSEC (Português)") que pode validar registros [DNS](https://en.wikipedia.org/wiki/Domain_Name_System para criptografar tráfego DNS.
 
 ### Configuração de um firewall
 
@@ -287,7 +292,7 @@ O artigo [Solid State Drives](/index.php/Solid_State_Drives "Solid State Drives"
 
 ## Serviço de sistema
 
-Essa seção está relacionada a [daemons](/index.php/Daemons_(Portugu%C3%AAs) "Daemons (Português)").
+Essa seção está relacionada a [daemons](/index.php/Daemons_(Portugu%C3%AAs) "Daemons (Português)"). Para mais, consulta [Category:Daemons (Português)](/index.php/Category:Daemons_(Portugu%C3%AAs) "Category:Daemons (Português)").
 
 ### Índice e pesquisa por arquivo
 

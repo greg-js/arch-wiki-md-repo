@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch boot process](/index.php/Arch_boot_process "Arch boot process"). Data da última tradução: 2018-12-29\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_boot_process&diff=0&oldid=560834) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch boot process](/index.php/Arch_boot_process "Arch boot process"). Data da última tradução: 2019-01-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_boot_process&diff=0&oldid=563557) na versão em inglês.
 
 Artigos relacionados
 
@@ -115,6 +115,10 @@ Veja também [Wikipedia:Comparison of boot loaders](https://en.wikipedia.org/wik
 O [kernel](/index.php/Kernel "Kernel") é o núcleo de um sistema operacional. Ele funciona em um baixo nível (*kernelspace* ou espaço de kernel) interagindo entre o hardware da máquina e os programas que usam o hardware para funcionar. Para fazer uso eficiente da CPU, o kernel usa um agendador para arbitrar quais tarefas têm prioridade em qualquer momento, criando a ilusão de que muitas tarefas são executadas simultaneamente.
 
 ## initramfs
+
+Depois que o gerenciador de boot carrega o kernel e os possíveis arquivos initramfs e executa o kernel, o kernel extrai os arquivos initramfs (sistema de arquivos RAM inicial) no (então vazio) rootfs (sistema de arquivos raiz inicial, especificamente um ramfs ou tmpfs). O primeiro initramfs extraído é aquele embutido no binário do kernel durante a construção do kernel, então os possíveis arquivos initramfs externos são extraídos. Assim, os arquivos no initramfs externo sobrescrevem arquivos com o mesmo nome no initramfs incorporado. O kernel então executa `/init` (no rootfs) como o primeiro processo. O *early userspace* é iniciado.
+
+O Arch Linux usa um arquivo vazio para o initramfs incorporado (que é o padrão ao construir o Linux). Veja [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") para mais informações específicas do Arch sobre o initramfs externo.
 
 Depois que o kernel é carregado, ele descompacta o [initramfs](/index.php/Initramfs "Initramfs") (sistema de arquivos RAM inicial ou ***init**ial **RAM** **f**ile**s**ystem*), que se torna o sistema de arquivos raiz inicial. O kernel então executa `/init` como o primeiro processo. O *early userspace* é iniciado.
 

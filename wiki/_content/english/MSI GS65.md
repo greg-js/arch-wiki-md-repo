@@ -35,6 +35,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 Webcam is not detected](#Webcam_is_not_detected)
 *   [3 Tips and Tricks](#Tips_and_Tricks)
+    *   [3.1 Microphone noise reduction](#Microphone_noise_reduction)
 *   [4 Known Issues](#Known_Issues)
     *   [4.1 Lockup Issue (lspci and poweroff hang)](#Lockup_Issue_(lspci_and_poweroff_hang))
     *   [4.2 Cheese Hangs While Opening Camera](#Cheese_Hangs_While_Opening_Camera)
@@ -179,6 +180,18 @@ Single tap and double finger scrolling work. Multi gestures do not work out the 
 If `/dev/video0` is unavailable and `lsusb` does not list the webcam, make sure that hard webcam switch is activated. The switch is indicated on the F6 key and can be toggled with `FN + F6`.
 
 ## Tips and Tricks
+
+### Microphone noise reduction
+
+GS65 has the twin microphone, which is very cool to have for noise reduction and echo cancellation, as well as background sounds suppression via beamforming technique. To get the best of it add this line to `/etc/pulse/default.pa`:
+
+```
+load-module module-echo-cancel use_master_format=1 aec_method='webrtc' aec_args='"beamforming=1 mic_geometry=-0.025,0,0,0.025,0,0"'
+set-default-source alsa_input.pci-0000_00_1f.3.analog-stereo.echo-cancel
+
+```
+
+Also, it could be useful to add `analog_gain_control=0` to `aec_args` to disable automatic gain control.
 
 ## Known Issues
 

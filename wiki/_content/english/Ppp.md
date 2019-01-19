@@ -260,7 +260,7 @@ The MTU under pppoe is 1492 bytes. Most sites use an MTU of 1500\. So your conne
 Enabling the PMTU clamping in [iptables](/index.php/Iptables "Iptables") can solve that:
 
 ```
-iptables -I FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu
+iptables -I FORWARD -o ppp0 -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu
 
 ```
 

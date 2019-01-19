@@ -1,4 +1,8 @@
-**Status de tradução:** Esse artigo é uma tradução de [Dnscrypt-proxy](/index.php/Dnscrypt-proxy "Dnscrypt-proxy"). Data da última tradução: 2018-10-31\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dnscrypt-proxy&diff=0&oldid=549821) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Dnscrypt-proxy](/index.php/Dnscrypt-proxy "Dnscrypt-proxy"). Data da última tradução: 2019-01-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dnscrypt-proxy&diff=0&oldid=561489) na versão em inglês.
+
+Artigos relacionados
+
+*   [Resolução de nome de domínio](/index.php/Resolu%C3%A7%C3%A3o_de_nome_de_dom%C3%ADnio "Resolução de nome de domínio")
 
 O [dnscrypt-proxy](https://github.com/jedisct1/dnscrypt-proxy) é um proxy DNS com suporte para os protocolos DNS criptografados [DNS sobre HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTPS") e [DNSCrypt](https://dnscrypt.info/), que pode ser usado para prevenir ataques do tipo *man-in-the-middle* e espionagem. O *dnscrypt-proxy* também é compatível com [DNSSEC](/index.php/DNSSEC_(Portugu%C3%AAs) "DNSSEC (Português)").
 

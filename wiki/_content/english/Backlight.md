@@ -169,7 +169,7 @@ The [systemd](/index.php/Systemd "Systemd") package includes the service `system
 
 *   **acpilight** — "xbacklight" compatible utility that uses the sys filesystem to set the display brightness. Since it doesn't use X at all, it can also be used on the console and Wayland and has no problems with KMS drivers. Furthermore, on ThinkPad laptops, the keyboard backlight can also be controlled.
 
-	[https://gitlab.com/wavexx/acpilight/](https://gitlab.com/wavexx/acpilight/) || [acpilight](https://aur.archlinux.org/packages/acpilight/)
+	[https://gitlab.com/wavexx/acpilight/](https://gitlab.com/wavexx/acpilight/) || [acpilight](https://www.archlinux.org/packages/?name=acpilight)
 
 *   **brightd** — Macbook-inspired brightd automatically dims (but does not put to standby) the screen when there is no user input for some time. A good companion of [Display Power Management Signaling](/index.php/Display_Power_Management_Signaling "Display Power Management Signaling") so that the screen does not blank out in a sudden.
 

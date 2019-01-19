@@ -130,7 +130,7 @@
 | <small>5.</small> [Software](/index.php/Category:Software_(Espa%C3%B1ol) "Category:Software (Español)") <small>(0)</small> |
 | <small>5.1.</small> [Aplicaciones](/index.php/Category:Applications_(Espa%C3%B1ol) "Category:Applications (Español)") <small>(8)</small> |
 | <small>5.1.1.</small> [Accesibilidad](/index.php/Category:Accessibility_(Espa%C3%B1ol) "Category:Accessibility (Español)") <small>(1)</small> |
-| <small>5.1.2.</small> [Lanzadores de aplicaciones](/index.php/Category:Application_launchers_(Espa%C3%B1ol) "Category:Application launchers (Español)") <small>(1)</small> |
+| <small>5.1.2.</small> [Lanzadores de aplicaciones](/index.php/Category:Application_launchers_(Espa%C3%B1ol) "Category:Application launchers (Español)") <small>(2)</small> |
 | <small>5.1.3.</small> [Console applications](/index.php/Category:Console_applications_(Espa%C3%B1ol) "Category:Console applications (Español)") <small>(7) (también en [Órdenes](/index.php/Category:Commands_(Espa%C3%B1ol) "Category:Commands (Español)"))</small> |
 | <small>5.1.4.</small> [Compresión y almacenamiendo de datos](/index.php/Category:Data_compression_and_archiving_(Espa%C3%B1ol) "Category:Data compression and archiving (Español)") <small>(2)</small> |
 | <small>5.1.5.</small> [Sistemas de gestión de bases de datos](/index.php/Category:Database_management_systems_(Espa%C3%B1ol) "Category:Database management systems (Español)") <small>(2)</small> |
@@ -273,7 +273,7 @@
 | <small>6.11.4.3.</small> [Gestores de ventanas en mosaicos](/index.php/Category:Tiling_WMs_(Espa%C3%B1ol) "Category:Tiling WMs (Español)") <small>(3)</small> |
 | <small>6.11.5.</small> [Servidor X](/index.php/Category:X_server_(Espa%C3%B1ol) "Category:X server (Español)") <small>(16)</small> |
 | <small>6.11.5.1.</small> [Órdenes Xorg](/index.php/Category:Xorg_commands_(Espa%C3%B1ol) "Category:Xorg commands (Español)") <small>(6) (también en [Órdenes](/index.php/Category:Commands_(Espa%C3%B1ol) "Category:Commands (Español)"))</small> |
-| <small>6.12.</small> [Kernel](/index.php/Category:Kernel_(Espa%C3%B1ol) "Category:Kernel (Español)") <small>(7)</small> |
+| <small>6.12.</small> [Kernel](/index.php/Category:Kernel_(Espa%C3%B1ol) "Category:Kernel (Español)") <small>(8)</small> |
 | <small>6.13.</small> [Configuración de teclado](/index.php/Category:Keyboard_configuration_(Espa%C3%B1ol) "Category:Keyboard configuration (Español)") <small>(1) (también en [Teclados](/index.php/Category:Keyboards_(Espa%C3%B1ol) "Category:Keyboards (Español)"))</small> |
 | <small>6.14.</small> [Consola de Linux](/index.php/Category:Linux_console_(Espa%C3%B1ol) "Category:Linux console (Español)") <small>(3)</small> |
 | <small>6.15.</small> [Localización](/index.php/Category:Localization_(Espa%C3%B1ol) "Category:Localization (Español)") <small>(2)</small> |
@@ -284,7 +284,7 @@
 | <small>6.19.</small> [Gestión de energía](/index.php/Category:Power_management_(Espa%C3%B1ol) "Category:Power management (Español)") <small>(4)</small> |
 | <small>6.20.</small> [Seguridad](/index.php/Category:Security_(Espa%C3%B1ol) "Category:Security (Español)") <small>(10)</small> |
 | <small>6.20.1.</small> [Redes de anonimato](/index.php/Category:Anonymity_networks_(Espa%C3%B1ol) "Category:Anonymity networks (Español)") <small>(3) (también en [Aplicaciones de internet](/index.php/Category:Internet_applications_(Espa%C3%B1ol) "Category:Internet applications (Español)"))</small> |
-| <small>6.20.2.</small> [Autenticación](/index.php/Category:Authentication_(Espa%C3%B1ol) "Category:Authentication (Español)") <small>(1)</small> |
+| <small>6.20.2.</small> [Autenticación](/index.php/Category:Authentication_(Espa%C3%B1ol) "Category:Authentication (Español)") <small>(2)</small> |
 | <small>6.20.3.</small> [Criptografía](/index.php/Category:Cryptography_(Espa%C3%B1ol) "Category:Cryptography (Español)") <small>(1)</small> |
 | <small>6.20.3.1.</small> [Criptomonedas](/index.php/Category:Cryptocurrencies_(Espa%C3%B1ol) "Category:Cryptocurrencies (Español)") <small>(3) (también en [Aplicaciones de internet](/index.php/Category:Internet_applications_(Espa%C3%B1ol) "Category:Internet applications (Español)"))</small> |
 | <small>6.20.3.2.</small> [Cifrado](/index.php/Category:Encryption_(Espa%C3%B1ol) "Category:Encryption (Español)") <small>(3)</small> |

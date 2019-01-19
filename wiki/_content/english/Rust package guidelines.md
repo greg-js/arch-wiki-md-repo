@@ -18,13 +18,13 @@ This document covers standards and guidelines on writing [PKGBUILDs](/index.php/
 
 ### Package naming
 
-For [Rust](/index.php/Rust "Rust") binary's use only the program name.
+For [Rust](/index.php/Rust "Rust") binaries use only the program name.
 
 **Note:** The package name should be entirely lowercase.
 
 ## Building
 
-Building a rust package.
+Building a Rust package.
 
 ```
  build() {
@@ -35,8 +35,8 @@ Building a rust package.
 
 where:
 
-*   `--release` tells cargo to compile a release build
-*   `--locked` tells cargo to adhere the Cargo.lock file and prevent it from updating dependencies which is important for [reproducible builds](https://reproducible-builds.org/).
+*   `--release` tells *cargo* to compile a release build
+*   `--locked` tells *cargo* to adhere the `Cargo.lock` file and prevent it from updating dependencies which is important for [reproducible builds](https://reproducible-builds.org/).
 
 ## Check
 
@@ -51,7 +51,7 @@ Most Rust projects provide a simple way to run the testsuite.
 
 ## Package
 
-Rust builds binaries in target/release and can simply be installed to /usr/bin.
+Rust builds binaries in `target/release` and can simply be installed to `/usr/bin`.
 
 **Note:** Some packages should install more files such as a man page.
 

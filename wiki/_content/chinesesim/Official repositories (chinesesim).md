@@ -15,9 +15,11 @@
 *   [3 extra](#extra)
 *   [4 community](#community)
 *   [5 multilib](#multilib)
-*   [6 testing](#testing)
-*   [7 community-testing](#community-testing)
-*   [8 multilib-testing](#multilib-testing)
+*   [6 启用](#启用)
+*   [7 禁用](#禁用)
+*   [8 testing](#testing)
+*   [9 community-testing](#community-testing)
+*   [10 multilib-testing](#multilib-testing)
 
 ## 历史背景
 
@@ -69,7 +71,51 @@ community 仓库位于Arch镜像的 `.../community/os/` 目录中。
 
 [multilib](/index.php/Multilib "Multilib") 仓库位于Arch镜像的 `.../multilib/os/` 目录中。
 
-包含64位系统中需要的32位软件和库，例如： [wine](https://www.archlinux.org/packages/?name=wine), [skype](https://aur.archlinux.org/packages/skype/) 等。
+包含64位系统中需要的32位软件和库，例如： [wine](https://www.archlinux.org/packages/?name=wine) 等。
+
+## 启用
+
+想使用 multilib 仓库，编辑 `/etc/pacman.conf`，取消下面内容的注释：
+
+```
+[multilib]
+Include = /etc/pacman.d/mirrorlist
+
+```
+
+更新软件包列表并升级系统 `pacman -Syu`.
+
+**Note:** 不要仅运行 `pacman -Sy`, [Arch 不支持部分升级](/index.php/System_maintenance#Partial_upgrades_are_unsupported "System maintenance").
+
+**Tip:** 运行 `pacman -Sl multilib` 来列出在*multilib*仓库里的所有软件包，32位库的软件包以 `lib32-` 开头
+
+## 禁用
+
+要恢复到纯 64 位系统，删除 *multilib*:
+
+运行下面命令可以删除所有从 *multilib* 安装的软件:
+
+```
+# pacman -R $(paclist multilib | cut -f1 -d' ')
+
+```
+
+如果有 gcc-libs 冲突，重新安装 64-bit 版本并执行下面命令：
+
+```
+# pacman -S gcc-libs base-devel
+
+```
+
+在 `/etc/pacman.conf` 中注释掉 `[multilib]` 段落：
+
+```
+#[multilib]
+#Include = /etc/pacman.d/mirrorlist
+
+```
+
+用 `pacman -Syu` 更新软件包列表和软件包.
 
 ## testing
 

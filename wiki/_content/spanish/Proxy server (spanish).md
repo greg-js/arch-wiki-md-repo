@@ -23,7 +23,7 @@ Un proxy es *una interfaz para un servicio, especialmente para uno que está a d
 
 ## Variables de entorno
 
-Algunos programas (como [wget](/index.php/Wget "Wget")) utilizan variables de entorno con el formato «protocol_proxy» para determinar el proxy para un protocolo determinado (por ejemplo, HTTP, FTP, ...).
+Algunos programas (como [wget](/index.php/Wget_(Espa%C3%B1ol) "Wget (Español)")) utilizan variables de entorno con el formato «protocol_proxy» para determinar el proxy para un protocolo determinado (por ejemplo, HTTP, FTP, ...).
 
 A continuación se muestra un ejemplo sobre cómo configurar estas variables en una shell:
 

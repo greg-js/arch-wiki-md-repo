@@ -91,7 +91,7 @@ To prevent websites from getting your local IP address via [WebRTC](https://en.w
 *   `media.peerconnection.ice.default_address_only` to `true`
 *   `media.peerconnection.enabled` to `false`. (only if you want to completely disable WebRTC)
 
-You can use this [WebRTC test page](http://net.ipcalf.com/) and [WebRTC IP Leak VPN / Tor IP Test](https://www.privacytools.io/webrtc.html) to confirm that your internal/external IP address is no longer leaked.
+You can use this [WebRTC test page](http://net.ipcalf.com/) and [WebRTC IP Leak VPN / Tor IP Test](https://ipleak.net/) to confirm that your internal/external IP address is no longer leaked.
 
 ### Disable telemetry
 

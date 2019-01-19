@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [GDM](/index.php/GDM "GDM"). Data da última tradução: 2018-10-26\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GDM&diff=0&oldid=548757) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [GDM](/index.php/GDM "GDM"). Data da última tradução: 2019-01-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GDM&diff=0&oldid=563466) na versão em inglês.
 
 Artigos relacionados
 
@@ -39,8 +39,9 @@ Do [GDM - GNOME Display Manager](https://wiki.gnome.org/Projects/GDM): "O Gerenc
     *   [4.2 Falha no encerramento da sessão](#Falha_no_encerramento_da_sessão)
     *   [4.3 Xorg sem senha](#Xorg_sem_senha)
     *   [4.4 Usar backend do Xorg](#Usar_backend_do_Xorg)
-    *   [4.5 Remoção incompleta do gdm](#Remoção_incompleta_do_gdm)
-    *   [4.6 Suspensão automática do GDM (GNOME 3.28)](#Suspensão_automática_do_GDM_(GNOME_3.28))
+    *   [4.5 GDM congela com o systemd](#GDM_congela_com_o_systemd)
+    *   [4.6 Remoção incompleta do gdm](#Remoção_incompleta_do_gdm)
+    *   [4.7 Suspensão automática do GDM (GNOME 3.28)](#Suspensão_automática_do_GDM_(GNOME_3.28))
 *   [5 Veja também](#Veja_também)
 
 ## Instalação
@@ -529,6 +530,16 @@ O backend [Wayland](/index.php/Wayland "Wayland") é usado por padrão e o backe
 
 ```
 #WaylandEnable=false
+
+```
+
+### GDM congela com o systemd
+
+Se o GDM travar com `systemctl enable gdm`, e `systemctl start gdm` funciona conforme esperado, aplique a configuração com `systemctl edit gdm` conforme abaixo:
+
+```
+ [Service]
+ Type=Idle
 
 ```
 

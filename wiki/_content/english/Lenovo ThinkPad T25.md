@@ -17,7 +17,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 
 ## Contents
 
-*   [1 Firmware (e.g. bios and peripherals)](#Firmware_.28e.g._bios_and_peripherals.29)
+*   [1 Firmware (e.g. bios and peripherals)](#Firmware_(e.g._bios_and_peripherals))
 *   [2 Kernel and hardware support](#Kernel_and_hardware_support)
     *   [2.1 Screen backlight](#Screen_backlight)
     *   [2.2 Thunderbolt 3](#Thunderbolt_3)
@@ -46,9 +46,9 @@ As noted in [Intel graphics](/index.php/Intel_graphics "Intel graphics"), the [x
 
 With the `intel` driver ([xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) the `xbacklight` brightness control isn't working. It is possible that, with the good `acpi_*` kernel parameters, the backlight related keys do their job.
 
-Other workaround exists, such as described [on this post](https://bbs.archlinux.org/viewtopic.php?pid=1449243#p1449243) or in the wiki [acpid#Enabling backlight control](/index.php/Acpid#Enabling_backlight_control "Acpid"). Using the [acpilight](https://aur.archlinux.org/packages/acpilight/) package as a `xbacklight` replacement works well. You can also check [this repository](https://lab.knightsofnii.com/kristaba/tpacpi-backlight)] as a base to add the ACPI rules to call `xbacklight` when backlight keys are pressed.
+Other workaround exists, such as described [on this post](https://bbs.archlinux.org/viewtopic.php?pid=1449243#p1449243) or in the wiki [acpid#Enabling backlight control](/index.php/Acpid#Enabling_backlight_control "Acpid"). Using the [acpilight](https://www.archlinux.org/packages/?name=acpilight) package as a `xbacklight` replacement works well. You can also check [this repository](https://lab.knightsofnii.com/kristaba/tpacpi-backlight)] as a base to add the ACPI rules to call `xbacklight` when backlight keys are pressed.
 
-**Note:** The [acpilight](https://aur.archlinux.org/packages/acpilight/) package is known to allow controlling the ThinkPad keyboard backlight. Similar ACPI rules should allow to toggle it when the keyboard backlight key is pressed.
+**Note:** The [acpilight](https://www.archlinux.org/packages/?name=acpilight) package is known to allow controlling the ThinkPad keyboard backlight. Similar ACPI rules should allow to toggle it when the keyboard backlight key is pressed.
 
 ### Thunderbolt 3
 

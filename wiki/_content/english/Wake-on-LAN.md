@@ -58,6 +58,8 @@ The *Wake-on* values define what activity triggers wake up: `d` (disabled), `p` 
 
 ```
 
+**Note:** Setting one of `u`, `m` or `b` along with `g` might also be necessary to enable the feature.
+
 This command might not last beyond the next reboot and in this case must be repeated via some mechanism. Common solutions are listed in the following subsections.
 
 ### Make it persistent

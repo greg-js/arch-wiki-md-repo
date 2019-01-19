@@ -1097,5 +1097,7 @@ You can use the following website to get your device's coordinates along with a 
 49.129944, 9.219347 "vivanova" # Heilbronn, Germany
 49.193263, 16.609428 "UTF_8x" # Brno, Czech Republic
 51.5889556, -0.1006367 "442401" # London, United Kingdom
+46.551536, -87.461566 "MagicMan" # At Work in Michigan, United States
+46.546318, -87.392896 "MagicMan" # Michigan, United States
 
 ```

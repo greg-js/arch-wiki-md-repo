@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Archiving and compression](/index.php/Archiving_and_compression "Archiving and compression"). Data da última tradução: 2018-11-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Archiving_and_compression&diff=0&oldid=555712) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Archiving and compression](/index.php/Archiving_and_compression "Archiving and compression"). Data da última tradução: 2019-01-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Archiving_and_compression&diff=0&oldid=563810) na versão em inglês.
 
 As ferramentas tradicionais de arquivamento e compactação (ou compressão) Unix são separadas de acordo com a [filosofia Unix](https://en.wikipedia.org/wiki/pt:Filosofia_Unix "wikipedia:pt:Filosofia Unix"):
 
@@ -24,8 +24,9 @@ Claro que também existem [ferramentas que fazem ambos](#Arquivamento_e_compress
 *   [4 Ferramentas de conveniência](#Ferramentas_de_conveniência)
 *   [5 Determinando o formato do pacote](#Determinando_o_formato_do_pacote)
 *   [6 Ferramentas esotéricas, raras e obsoletas](#Ferramentas_esotéricas,_raras_e_obsoletas)
-*   [7 Bibliotecas de compressão](#Bibliotecas_de_compressão)
-*   [8 Veja também](#Veja_também)
+*   [7 Compressão de mapeador de dispositivos](#Compressão_de_mapeador_de_dispositivos)
+*   [8 Bibliotecas de compressão](#Bibliotecas_de_compressão)
+*   [9 Veja também](#Veja_também)
 
 ## Arquivamento apenas
 
@@ -141,6 +142,18 @@ Do contrário, você pode usar a ferramenta [file](https://www.archlinux.org/pac
 | [PAR2](https://en.wikipedia.org/wiki/Parchive "wikipedia:Parchive") | [par2cmdline](https://www.archlinux.org/packages/?name=par2cmdline) | .par2 | Arquivador de paridade para maior integridade de dados. Veja também [Parchive](/index.php/Parchive "Parchive"). |
 | [shar](https://en.wikipedia.org/wiki/shar "wikipedia:shar") | [sharutils](https://www.archlinux.org/packages/?name=sharutils) | .shar | Cria arquivos de extração automática que são scripts de shell válidos. |
 | [Zoo](https://en.wikipedia.org/wiki/Zoo_(file_format) | [zoo](https://aur.archlinux.org/packages/zoo/) | .zoo | Era mais popular no sistema operacional [OpenVMS](https://en.wikipedia.org/wiki/pt:OpenVMS "wikipedia:pt:OpenVMS") antes de o PKZIP se tornar popular. |
+
+## Compressão de mapeador de dispositivos
+
+Há um trabalho sendo feito para integrar (ao projeto de kernel do Linux) o projeto VDO de código recentemente aberto, que fornece uma camada de mapeamento de dispositivos de deduplicação e compactação no interesse de aumentar a eficiência do armazenamento. Os seguintes pacotes estão disponíveis:
+
+*   **vdo** — Ferramentas de espaço do usuário para gerenciar volumes VDO
+
+	[https://github.com/dm-vdo/vdo](https://github.com/dm-vdo/vdo) || [vdo](https://aur.archlinux.org/packages/vdo/)
+
+*   **kvdo** — Um par de módulos do kernel que fornecem conjuntos de armazenamento de bloco deduplicado e/ou compactado
+
+	[https://github.com/dm-vdo/kvdo](https://github.com/dm-vdo/kvdo) || [kvdo-dkms](https://aur.archlinux.org/packages/kvdo-dkms/)
 
 ## Bibliotecas de compressão
 
