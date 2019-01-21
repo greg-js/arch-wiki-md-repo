@@ -40,49 +40,49 @@ Un número de rutas en `/etc` son relevantes para PAM, ejecute `pacman -Ql pam |
 
 ### Parámetros de seguridad
 
-The path `/etc/security` contains system-specific configuration for variables the authentication methods offer. The base install populates it with default upstream configuration files.
+La ruta `/etc/security` contiene la configuración específica del sistema para las variables que ofrecen los métodos de autenticación. La instalación básica lo puebla con los archivos de configuración predeterminados.
 
-Note Arch Linux does not provide distribution-specific configuration for these files. For example, the `/etc/security/pwquality.conf` file can be used to define system-wide defaults for password quality. Yet, to enable it the `pam_pwquality.so` module has to be added to the [#Apilado base de PAM](#Apilado_base_de_PAM) of modules, which is not the case per default.
+Note que Arch Linux no proporciona una configuración específica de distribución para estos archivos. Por ejemplo, el archivo `/etc/security/pwquality.conf` se puede utilizar para definir los valores predeterminados de todo el sistema para la calidad de la contraseña. Sin embargo, para activarlo, el módulo `pam_pwquality.so` debe añadirse al [#Apilado base de PAM](#Apilado_base_de_PAM) de los módulos, que no es el caso por defecto.
 
-See [#Security parameter configuration](#Security_parameter_configuration) for some of the possibilities.
+Véase [#Configuración de los parámetros de seguridad](#Configuración_de_los_parámetros_de_seguridad) para algunas de las posibilidades.
 
 ### Apilado base de PAM
 
-The `/etc/pam.d/` path is exclusive for the PAM configuration to link the applications to the individual systems' authentication schemes. During installation of the system base it is populated by:
+La ruta `/etc/pam.d/` es exclusiva de la configuración de PAM para vincular las aplicaciones a los esquemas individuales de autenticación de los sistemas. Durante la instalación de la base del sistema se puebla con:
 
-*   the [pambase](https://www.archlinux.org/packages/?name=pambase) package, which contains the base-stack of Arch Linux specific PAM configuration to be used by applications, and
-*   other base packages. For example, [util-linux](https://www.archlinux.org/packages/?name=util-linux) adds configuration for the central *login* and other programs, the [shadow](https://www.archlinux.org/packages/?name=shadow) package adds the Arch Linux defaults to secure and modify the user database (see [Users and groups](/index.php/Users_and_groups "Users and groups")).
+*   el paquete [pambase](https://www.archlinux.org/packages/?name=pambase), que contiene la pila base de la configuración PAM específica de Arch Linux para ser utilizada por las aplicaciones, y
+*   otros paquetes base. Por ejemplo, [util-linux](https://www.archlinux.org/packages/?name=util-linux) añade la configuración para el *inicio de sesión* central y otros programas, el paquete [shadow](https://www.archlinux.org/packages/?name=shadow) añade los valores predeterminados de Arch Linux para proteger y modificar la base de datos del usuario (véase [Usuarios y grupos](/index.php/Users_and_groups_(Espa%C3%B1ol) "Users and groups (Español)")).
 
-The different configuration files of the base installation link together, are stacked during runtime. For example, on a local user logon, the *login* application sources the `system-local-login` policy, which in turn sources others:
+Los diferentes archivos de configuración de la instalación base se apilan durante el tiempo de ejecución. Por ejemplo, en el inicio de sesión de un usuario local, la aplicación *login* carga la política `system-local-login`, que a su vez carga otros:
 
  `/etc/pam.d/`  `login -> system-local-login -> system-login -> system-auth` 
 
-For a different application, a different path may apply. For example, [openssh](https://www.archlinux.org/packages/?name=openssh) installs its `sshd` PAM policy:
+Para una aplicación diferente, se puede aplicar una ruta diferente. Por ejemplo, [openssh](https://www.archlinux.org/packages/?name=openssh) instala su política de PAM `sshd`:
 
  `/etc/pam.d/`  `sshd -> system-remote-login -> system-login -> system-auth` 
 
-Consequently, the choice of the configuration file in the stack matters. For the above example, a special authentication method could be required for `sshd` only, or all remote logins by changing `system-remote-login`; both changes would not affect local logins. Applying the change to `system-login` or `system-auth` instead would affect local and remote logins.
+En consecuencia, la elección del archivo de configuración en la pila es importante. Para el ejemplo anterior, se podría requerir un método de autenticación especial solo para `sshd` o para todos los inicios de sesión remotos cambiando `system-remote-login`; ambos cambios no afectarían los inicios de sesión locales. Aplicar el cambio a `system-login` o `system-auth` en cambio afectaría los inicios de sesión locales y remotos.
 
-Like the example of `sshd`, any **pam-aware** application is required to install its policy to `/etc/pam.d` in order to integrate and rely on the PAM stack appropriately. If an application fails to do it, the `/etc/pam.d/other` policy is applied per default. A permissive policy for it is installed per default ([FS#48650](https://bugs.archlinux.org/task/48650)).
+Al igual que en el ejemplo de `sshd`, se requiere que cualquier aplicación **consciente de PAM** instale su política en `/etc/pam.d` para integrar y confiar en la pila de PAM apropiadamente. Si una aplicación no lo hace, la política de `/etc/pam.d/other` se aplica por defecto. Se instala una política permisiva por defecto ([FS#48650](https://bugs.archlinux.org/task/48650)).
 
-**Tip:** PAM is dynamically linked at runtime. For example: `$ ldd /usr/bin/login |grep pam` 
+**Sugerencia:** PAM está enlazado dinámicamente en tiempo de ejecución. Por ejemplo: `$ ldd /usr/bin/login |grep pam` 
 ```
 libpam.so.0 => /usr/lib/libpam.so.0 (0x000003d8c32d6000)
 libpam_misc.so.0 => /usr/lib/libpam_misc.so.0 (0x000003d8c30d2000)
 ```
-the *login* application is pam-aware and **must**, therefore, have a policy.
+la aplicación *login* es consciente de PAM y **debe**, por lo tanto, tener una política.
 
-The PAM package manual pages *pam(8)* and *pam.d(5)* describe the standardized content of the configuration files. In particular they explain the four PAM groups: account, authentication, password, and session management, as well as the control values that may be used to configure stacking and behaviour of the modules.
+Las páginas del manual del paquete PAM [pam(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam.8) y [pam.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam.d.5) describen el contenido estandarizado de los archivos de configuración. En particular, explican los cuatro grupos de PAM: gestión de cuentas, autenticación, contraseña y sesión, así como los valores de control que pueden utilizarse para configurar el apilamiento y el comportamiento de los módulos.
 
-Additionally, an extensive documentation is installed to `/usr/share/doc/Linux-PAM/index.html` which, among various guides, contains browsable man pages for each of the standard modules.
+Además, se ha instalado una extensa documentación en `/usr/share/doc/Linux-PAM/index.html` que, entre varias guías, contiene páginas de manual navegables para cada uno de los módulos estándar.
 
-**Warning:** Changes to the PAM configuration fundamentally affect user authentication. Erroneous changes can result in that **no** or **any** user can log in. Since changes are not effective for already authenticated users, a good precaution is to perform changes with one user and test the result with another user in a separate console.
+**Advertencia:** Los cambios en la configuración de PAM afectan fundamentalmente a la autenticación del usuario. Los cambios erróneos pueden dar como resultado que **todos** o **algún** usuario no pueda iniciar sesión. Dado que los cambios no son efectivos para usuarios ya autenticados, una buena precaución es realizar cambios con un usuario y probar el resultado con otro usuario en una consola separada.
 
 #### Ejemplos
 
-Two short examples to illustrate the above warning.
+Dos ejemplos breves para ilustrar la advertencia anterior.
 
-First, we take the following two lines:
+Primero, tomamos las siguientes dos líneas:
 
  `/etc/pam.d/system-auth` 
 ```
@@ -90,18 +90,18 @@ auth      required  pam_unix.so     try_first_pass nullok
 auth      optional  pam_permit.so
 ```
 
-From [pam_unix(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_unix.8): "The authentication component `pam_unix.so` performs the task of checking the users credentials (password). The default action of this module is to not permit the user access to a service if their official password is blank. " - the latter being what `pam_permit.so` is used for. Simply swapping the control values `required` and `optional` for both lines is enough to disable password authentication, i.e. any user may logon without providing a password.
+De [pam_unix(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_unix.8): "El componente de autenticación `pam_unix.so` realiza la tarea de verificar las credenciales (contraseña) de los usuarios. La acción predeterminada de este módulo es no permitir que el usuario acceda a un servicio si su contraseña oficial está en blanco." - siendo lo último para lo que se utiliza `pam_permit.so`. Basta con intercambiar los valores de control `required` y `optional` para desactivar la autenticación de contraseña, es decir, cualquier usuario puede iniciar sesión sin proporcionar una contraseña.
 
-Second, as the contrary example, per default configuration creating the following file:
+Segundo, como ejemplo contrario, por configuración predeterminada creando el siguiente archivo:
 
 ```
 # touch /etc/nologin 
 
 ```
 
-results in that no user other than root may login (if root logins are allowed, another default for Arch Linux). To allow logins again, remove the file from the console you created it with.
+da como resultado que ningún usuario que no sea root pueda iniciar sesión (si se permiten inicios de sesión del superusuario, otro valor predeterminado para Arch Linux). Para volver a permitir los inicios de sesión, elimine el archivo desde la consola con la que lo creó.
 
-With that as background, see [#PAM stack and module configuration](#PAM_stack_and_module_configuration) for particular use-case configuration.
+Con eso como fondo, véase [#Configuración del apilado y los módulos de PAM](#Configuración_del_apilado_y_los_módulos_de_PAM) para configuraciones de casos de uso particulares.
 
 ## Configuración guiada
 

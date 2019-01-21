@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Installing Arch Linux on a USB key](/index.php/Installing_Arch_Linux_on_a_USB_key "Installing Arch Linux on a USB key"). Data da última tradução: 2019-01-10\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Installing_Arch_Linux_on_a_USB_key&diff=0&oldid=559626) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Installing Arch Linux on a USB key](/index.php/Installing_Arch_Linux_on_a_USB_key "Installing Arch Linux on a USB key"). Data da última tradução: 2019-01-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Installing_Arch_Linux_on_a_USB_key&diff=0&oldid=563273) na versão em inglês.
 
 Artigos relacionados
 
@@ -39,7 +39,7 @@ Existem várias maneiras de instalar o Arch em um pendrive, dependendo do sistem
 
 ### Ajustes na instalação
 
-*   Antes de criar o disco de RAM inicial com `# mkinitcpio -p linux`, em `/etc/mkinitcpio.conf` adicione o *hook* `block` ao vetor de *hooks* logo após o udev. Isso é necessário para o carregamento apropriado do módulo desde cedo no espaço do usuário.
+*   Antes de [criar o disco de RAM inicial](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio"), em `/etc/mkinitcpio.conf` mova os hooks `block` e `keyboard` antes do hook `autodetect`. Isso é necessário para permitir a inicialização em vários sistemas. cada um exigindo módulos diferentes no espaço do usuário anterior.
 *   É altamente recomendável revisar o artigo wiki sobre [redução leitura/escrita de disco](/index.php/Improving_performance#Reduce_disk_reads/writes "Improving performance") antes de selecionar um sistema de arquivos. Resumindo, [ext4 sem um jornal](http://fenidik.blogspot.com/2010/03/ext4-disable-journal.html) está bom, o qual pode ser criado com `# mkfs.ext4 -O "^has_journal" /dev/sdXX`. A desvantagem óbvia de usar um sistema de arquivos com o *journaling* desativado é a perda de dados como resultado de uma desmontagem desajeitada. Reconheça que o flash tem um número limitado de gravações, e um sistema de arquivos com *journaling* levará alguns deles à medida que o journal for atualizado. Por esse mesmo motivo, é melhor nem pensar a partição swap. Observe que isso não afeta a instalação em um disco rígido USB.
 *   Se você quiser continuar a usar o dispositivo UFD como uma unidade removível multiplataforma, isso pode ser feito criando uma partição que hospede um sistema de arquivos apropriado (provavelmente NTFS ou exFAT). Observe que a partição de dados pode precisar ser a primeira partição no dispositivo, pois o Windows pressupõe que só pode haver uma partição em um dispositivo removível e, de outra forma, terá uma montagem automática de uma partição do sistema EFI. Lembre-se de instalar [dosfstools](https://www.archlinux.org/packages/?name=dosfstools) e [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g). Algumas ferramentas estão disponíveis on-line que podem permitir que você mude o bit de mídia removível em seu dispositivo UFD. Isso faria com que os sistemas operacionais tratassem seu dispositivo UFD como um disco rígido externo e permitisse que você usasse qualquer esquema de particionamento escolhido.
 
@@ -60,20 +60,11 @@ Para obter os UUIDs adequados para sua partição, emita **blkid**
 
 `menu.lst`, o arquivo de configuração do GRUB legado, deve ser editado para (mais ou menos) corresponder às configurações a seguir.
 
-Com o `/dev/sda*X*` estático:
-
-```
-root (hd0,0)
-kernel /boot/vmlinuz-linux root=/dev/sda1 ro
-initrd /boot/initramfs-linux.img
-
-```
-
 Quando estiver usando rótulo, seu menu.lst deve se parecer com isso:
 
 ```
 root (hd0,0)
-kernel /boot/vmlinuz-linux root=/dev/disk/by-label/**Arch** ro
+kernel /boot/vmlinuz-linux root=/dev/disk/by-label/**Arch** rw
 initrd /boot/initramfs-linux.img
 
 ```
@@ -82,7 +73,7 @@ E para UUID, deve se parecer com isso:
 
 ```
 root (hd0,0)
-kernel /boot/vmlinuz-linux root=/dev/disk/by-uuid/3a9f8929-627b-4667-9db4-388c4eaaf9fa ro
+kernel /boot/vmlinuz-linux root=/dev/disk/by-uuid/3a9f8929-627b-4667-9db4-388c4eaaf9fa rw
 initrd /boot/initramfs-linux.img
 
 ```
@@ -92,22 +83,11 @@ initrd /boot/initramfs-linux.img
 Na GPT com instalações UEFI, certifique-se de seguir as instruções em [GRUB#UEFI systems](/index.php/GRUB#UEFI_systems "GRUB") e incluir a opção `--removable`, pois isso pode interromper as instalações do GRUB existentes, como no comando abaixo:
 
 ```
-# grub-install --target=x86_64-efi --efi-directory=$esp --bootloader-id=grub **--removable** --recheck
+# grub-install --target=x86_64-efi --efi-directory=*esp* **--removable** --recheck
 
 ```
 
 ### Syslinux
-
-Com o `/dev/sda*X*` estático:
-
-```
-LABEL Arch
-        MENU LABEL Arch Linux
-        LINUX ../vmlinuz-linux
-        APPEND root=/dev/sdax ro
-        INITRD ../initramfs-linux.img
-
-```
 
 Usando seu UUID:
 
@@ -115,7 +95,7 @@ Usando seu UUID:
 LABEL Arch
         MENU LABEL Arch Linux
         LINUX ../vmlinuz-linux
-        APPEND root=UUID=3a9f8929-627b-4667-9db4-388c4eaaf9fa ro
+        APPEND root=UUID=3a9f8929-627b-4667-9db4-388c4eaaf9fa rw
         INITRD ../initramfs-linux.img
 
 ```

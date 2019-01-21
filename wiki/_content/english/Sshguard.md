@@ -85,7 +85,7 @@ If UFW is installed and enabled, it must be given the ability to pass along DROP
 -A ufw-before-output -o lo -j ACCEPT
 
 # hand off control for sshd to sshguard
--N sshguard
+:sshguard - [0:0]
 -A ufw-before-input -p tcp --dport 22 -j sshguard
 
 ```

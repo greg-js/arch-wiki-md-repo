@@ -16,11 +16,11 @@ Artículos relacionados
     *   [3.1 Ruta(s) estática DHCP](#Ruta(s)_estática_DHCP)
     *   [3.2 Identificador de cliente DHCP](#Identificador_de_cliente_DHCP)
     *   [3.3 Perfil estático](#Perfil_estático)
-        *   [3.3.1 Fallback profile](#Fallback_profile)
+        *   [3.3.1 Volver al perfil anterior](#Volver_al_perfil_anterior)
 *   [4 Hooks](#Hooks)
     *   [4.1 10-wpa_supplicant](#10-wpa_supplicant)
-*   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Speed up DHCP by disabling ARP probing](#Speed_up_DHCP_by_disabling_ARP_probing)
+*   [5 Consejos y trucos](#Consejos_y_trucos)
+    *   [5.1 Acelerar DHCP deshabilitando la exploración ARP](#Acelerar_DHCP_deshabilitando_la_exploración_ARP)
     *   [5.2 Remove old DHCP lease](#Remove_old_DHCP_lease)
     *   [5.3 Different IPs when multi-booting](#Different_IPs_when_multi-booting)
     *   [5.4 resolv.conf](#resolv.conf)
@@ -103,9 +103,9 @@ Tenga mucho cuidado en una red en funcionamiento con [DNS dinámicos](https://en
 
 ### Perfil estático
 
-Required settings are explained in [Network configuration](/index.php/Network_configuration "Network configuration"). These typically include the [network interface](/index.php/Network_interface "Network interface") name, *IP address*, *router address*, and *name server*.
+Los ajustes necesarios están explicados en [Configuración de red](/index.php/Network_configuration_(Espa%C3%B1ol) "Network configuration (Español)"). Normalmente incluye el nombre de la [interfaz de red](/index.php/Network_configuration_(Espa%C3%B1ol)#Interfaces_de_red "Network configuration (Español)"), *dirección IP*, *dirección del router*, y el *nombre del servidor*.
 
-Configure a static profile for *dhcpcd* in `/etc/dhcpcd.conf`, for example:
+El perfil estático para *dhcpcd* se configura en `/etc/dhcpcd.conf`, por ejemplo:
 
  `/etc/dhcpcd.conf` 
 ```
@@ -115,49 +115,49 @@ static routers=192.168.0.1
 static domain_name_servers=192.168.0.1 8.8.8.8
 ```
 
-More complicated configurations are possible, for example combining with the `arping` option. See [dhcpcd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5) for details.
+Es posible realizar configuraciones más complicadas, por ejemplo combinar con la opción `arping`. Vea [dhcpcd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5) para más información.
 
-#### Fallback profile
+#### Volver al perfil anterior
 
-It is possible to configure a static profile within *dhcpcd* and fall back to it when DHCP lease fails. This is useful particularly for [headless machines](https://en.wikipedia.org/wiki/Headless_computer "wikipedia:Headless computer"), where the static profile can be used as "recovery" profile to ensure that it is always possible to connect to the machine.
+Es posible configurar un perfil estático dentro de *dhcpcd* y regresar al perfil anterior cuando el requerimiento de DHCP falle. Esto es particularmente útil para [máquinas sin monitor (en inglés)](https://en.wikipedia.org/wiki/Headless_computer "wikipedia:Headless computer"), donde el perfil estático se puede utilizar como un perfil de "recuperación" para asegurarse de que siempre sea posible conectarse a la máquina.
 
-The following example configures a `static_eth0` profile with `192.168.1.23` as IP address, `192.168.1.1` as gateway and name server, and makes this profile fallback for interface `eth0`.
+El siguiente ejemplo configura un perfil `estático_eth0` con `192.168.1.23` como dirección IP, `192.168.1.1` como puerta y nombre de servidor, y hace que este perfil sea un respaldo para la interfaz `eth0`.
 
  `/etc/dhcpcd.conf` 
 ```
-# define static profile
+# define un perfil estático
 profile static_eth0
 static ip_address=192.168.1.23/24
 static routers=192.168.1.1
 static domain_name_servers=192.168.1.1
 
-# fallback to static profile on eth0
+# respaldo para el perfil estático en eth0
 interface *eth0*
 fallback static_eth0
 ```
 
 ## Hooks
 
-*dhcpcd* executes all scripts found in `/usr/lib/dhcpcd/dhcpcd-hooks/` in a lexical order. See [dhcpcd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5) and [dhcpcd-run-hooks(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd-run-hooks.8) for details.
+*dhcpcd* ejecuta todos los scripts que encuentra en `/usr/lib/dhcpcd/dhcpcd-hooks/` en un orden léxico. Vea [dhcpcd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5) y [dhcpcd-run-hooks(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd-run-hooks.8) para más información.
 
-**Note:**
+**Nota:**
 
-*   Each script can be disabled using the `nohook` option in `dhcpcd.conf`.
-*   The `env` option can be used to set an environment variable for **all** hooks. For example, you can force the hostname hook to always set the hostname with `env force_hostname=YES`.
+*   Cada script puede desactivarse utilizando la opción `nohook` en `dhcpcd.conf`.
+*   La opción `env` se puede utilizar para establecer una variable de entorno para **todos** los hooks. Por ejemplo, puedes forzar el que el hook hostname siempre establezca en nombre del host con `env force_hostname=YES`.
 
 ### 10-wpa_supplicant
 
-Enable this hook by creating a symbolic link (to ensure that always the current version is used, even after package updates):
+Activar este hook creando un enlace simbólico (para asegurarse de que siempre se utilice la versión actual, incluso despues de actualizaciones):
 
 ```
 # ln -s /usr/share/dhcpcd/hooks/10-wpa_supplicant /usr/lib/dhcpcd/dhcpcd-hooks/
 
 ```
 
-The `10-wpa_supplicant` hook, if enabled, automatically launches [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") on wireless interfaces. It is started only if:
+El hook `10-wpa_supplicant`, si esta activado, ejecuta automáticamente [WPA supplicant (Español)](/index.php/WPA_supplicant_(Espa%C3%B1ol) "WPA supplicant (Español)") en las interfaces de red inalámbricas. Se inicia solo si:
 
-*   no *wpa_supplicant* process is already listening on that interface.
-*   a *wpa_supplicant* configuration file exists. *dhcpcd* checks
+*   Ningún proceso *wpa_supplicant* esta escuchando a esa interfaz.
+*   existe un archivo de configuración *wpa_supplicant*. *dhcpcd* comprueba
 
 ```
 /etc/wpa_supplicant/wpa_supplicant-*interface*.conf
@@ -167,26 +167,26 @@ The `10-wpa_supplicant` hook, if enabled, automatically launches [WPA supplicant
 
 ```
 
-by default, in that order, but a custom path can be set by adding `env wpa_supplicant_conf=*configuration_file_path*` into `/etc/dhcpcd.conf`.
+por defecto, y en ese orden, pero se puede configurar un parche personalizado añadiendo `env wpa_supplicant_conf=*archivo_de_configuración_del_parche*` en `/etc/dhcpcd.conf`.
 
-**Note:** The hook stops at the first configuration file found, thus you should take this into consideration if you have several *wpa_supplicant* configuration files, otherwise *dhcpcd* might end up using the wrong file.
+**Nota:** El hook se para cuando encuentra el primer archivo de configuración, por lo tanto ha de tenerlo en cuenta si usted tiene bastantes archivos de configuración *wpa_supplicant*, de otra forma puede que al final *dhcpcd* utilice el archivo incorrecto.
 
-If you manage wireless connections with *wpa_supplicant* itself, the hook may create unwanted connection events. For example, if you stop *wpa_supplicant* the hook may bring the interface up again. Also, if you use [netctl-auto](/index.php/Netctl#Special_systemd_units "Netctl"), *wpa_supplicant* is started automatically with `/run/network/wpa_supplicant_*interface*.conf` for config, so starting it again from the hook is unnecessary and may result in boot-time parse errors of the `/etc/wpa_supplicant/wpa_supplicant.conf` file, which only contains dummy values in the default packaged version.
+Si *wpa_supplicant* maneja conexiones inalámbricas por si mismo, el hook puede crear eventos de conexiones no deseadas. Por ejemplo, si para *wpa_supplicant* el hook puede iniciar la interfaz otra vez. Incluso si utiliza [netctl-auto (en inglés)](/index.php/Netctl#Special_systemd_units "Netctl"), *wpa_supplicant* se inicia automáticamente con `/run/network/wpa_supplicant_*interface*.conf` por la configuración, por lo tanto iniciarlo otra vez desde el hook no es necesario y puede causar errores en el booteo al analizar el archivo `/etc/wpa_supplicant/wpa_supplicant.conf`, que solo contiene valores ficticios en la versión por defecto.
 
-To disable the hook, add `nohook wpa_supplicant` to `dhcpcd.conf`.
+Para desactivar el hook, añade `nohook wpa_supplicant` en `dhcpcd.conf`.
 
-## Tips and tricks
+## Consejos y trucos
 
-### Speed up DHCP by disabling ARP probing
+### Acelerar DHCP deshabilitando la exploración ARP
 
-*dhcpcd* contains an implementation of a recommendation of the DHCP standard ([RFC2131](https://www.ietf.org/rfc/rfc2131.txt) section 2.2) to check via ARP if the assigned IP address is really not taken. This seems mostly useless in home networks, so you can save about 5 seconds on every connect by adding the following line to `/etc/dhcpcd.conf`:
+*Dhcpcd* contiene una implementación como recomendación del estándar DHCP ([RFC2131](https://www.ietf.org/rfc/rfc2131.txt) sección 2.2) para comprobar vía ARP si la dirección IP asignada no esta realmente ocupada. Esto puede no ser útil en las redes domésticas, por lo tanto se puede ahorrar alrededor de 5 segundos en cada conexión añadiendo la siguiente linea a `/etc/dhcpcd.conf`:
 
 ```
 noarp
 
 ```
 
-This is equivalent to passing `--noarp` to `dhcpcd`, and disables the described ARP probing, speeding up connections to networks with DHCP.
+Esto es equivalente si le pasa `--noarp` a `dhcpcd`, y desactiva la prueba ARP descrita, aumentando la velocidad de la conexiones a redes con DHCP.
 
 ### Remove old DHCP lease
 

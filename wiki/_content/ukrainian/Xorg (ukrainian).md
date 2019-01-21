@@ -45,7 +45,7 @@ Related articles
     *   [6.1 Список композитних менеджерів](#Список_композитних_менеджерів)
 *   [7 Поради та підказки](#Поради_та_підказки)
     *   [7.1 Автоматизація](#Автоматизація)
-    *   [7.2 Nested X session](#Nested_X_session)
+    *   [7.2 Вкладені X сесії](#Вкладені_X_сесії)
     *   [7.3 Starting GUI programs remotely](#Starting_GUI_programs_remotely)
     *   [7.4 On-demand disabling and enabling of input sources](#On-demand_disabling_and_enabling_of_input_sources)
     *   [7.5 Killing application with hotkey](#Killing_application_with_hotkey)
@@ -419,19 +419,19 @@ $ xrdb -query | grep dpi
 
 ### Автоматизація
 
-This section lists utilities for automating keyboard / mouse input and window operations (like moving, resizing or raising).
+У цьому розділі перелічено утиліти для автоматизації введення та виведення клавіатури / миші, операцій з вікнами (наприклад переміщення, зміна розміру або фокусування).
 
-| Tool | Package | Manual | [Keysym](/index.php/Keysym "Keysym")
-input | Window
-operations | Note |
-| xautomation | [xautomation](https://www.archlinux.org/packages/?name=xautomation) | [xte(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xte.1) | Yes | No | Also contains screen scraping tools. Cannot simulate F13+. |
-| xdo | [xdo-git](https://aur.archlinux.org/packages/xdo-git/) | [xdo(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdo.1) | No | Yes | Small X utility to perform elementary actions on windows. |
-| xdotool | [xdotool](https://www.archlinux.org/packages/?name=xdotool) | [xdotool(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdotool.1) | Yes | Yes | [Very buggy](https://github.com/jordansissel/xdotool/issues) and not in active development, e.g: has broken CLI parsing.[[2]](https://github.com/jordansissel/xdotool/issues/14#issuecomment-327968132)[[3]](https://github.com/jordansissel/xdotool/issues/71) |
-| xvkbd | [xvkbd](https://aur.archlinux.org/packages/xvkbd/) | [xvkbd(1)](http://t-sato.in.coocan.jp/xvkbd/#option) | Yes | No | Virtual keyboard for Xorg, also has the `-text` option for sending characters. |
+| Інструмент | Пакунок | Документація | Емуляція
+введення | Операції
+з вікнами | Примітка |
+| xautomation | [xautomation](https://www.archlinux.org/packages/?name=xautomation) | [xte(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xte.1) | Так | Ні | Також містить інструменти очищення екрану. Не може емулювати F13+. |
+| xdo | [xdo-git](https://aur.archlinux.org/packages/xdo-git/) | [xdo(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdo.1) | Ні | Так | Невелика утиліта X для виконання елементарних дій з вікнами. |
+| xdotool | [xdotool](https://www.archlinux.org/packages/?name=xdotool) | [xdotool(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdotool.1) | Так | Так | [Багато помилок](https://github.com/jordansissel/xdotool/issues) та не ведеться активна розробка, наприклад: має зламаний CLI parsing.[[2]](https://github.com/jordansissel/xdotool/issues/14#issuecomment-327968132)[[3]](https://github.com/jordansissel/xdotool/issues/71) |
+| xvkbd | [xvkbd](https://aur.archlinux.org/packages/xvkbd/) | [xvkbd(1)](http://t-sato.in.coocan.jp/xvkbd/#option) | Так | Ні | Віртуальна клавіатура для Xorg, також має `-text` параметри для відправлення символів. |
 
-See also [Clipboard#Tools](/index.php/Clipboard#Tools "Clipboard") and [an overview of X automation tools](https://venam.nixers.net/blog/unix/2019/01/07/win-automation.html).
+Дивіться також [Clipboard#Tools](/index.php/Clipboard#Tools "Clipboard") та [огляд інструментів автоматизації X](https://venam.nixers.net/blog/unix/2019/01/07/win-automation.html).
 
-### Nested X session
+### Вкладені X сесії
 
 To run a nested session of another desktop environment:
 

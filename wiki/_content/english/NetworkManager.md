@@ -204,7 +204,7 @@ To configure and have easy access to NetworkManager, most users will want to ins
 
 ### KDE Plasma
 
-[Install](/index.php/Install "Install") the [plasma-nm](https://www.archlinux.org/packages/?name=plasma-nm) package.
+[Install](/index.php/Install "Install") the [plasma-nm](https://www.archlinux.org/packages/?name=plasma-nm) package. After that, add it to the KDE taskbar via the *Panel options > Add widgets > Network* menu.
 
 ### nm-applet
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [GNOME](/index.php/GNOME "GNOME"). Data da última tradução: 2018-12-31\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=559176) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [GNOME](/index.php/GNOME "GNOME"). Data da última tradução: 2019-01-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=562506) na versão em inglês.
 
 Artigos relacionados
 
@@ -391,7 +391,7 @@ $ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-fold
 
 ```
 
-Para mais informações, veja [[4]](https://git.gnome.org/browse/gsettings-desktop-schemas/tree/schemas/org.gnome.desktop.app-folders.gschema.xml.in) e [[5]](https://wiki.gentoo.org/wiki/Gnome_Applications_Folders).
+Para mais informações, veja [[4]](https://gitlab.gnome.org/GNOME/gsettings-desktop-schemas/blob/master/schemas/org.gnome.desktop.app-folders.gschema.xml.in) e [[5]](https://wiki.gentoo.org/wiki/Gnome_Applications_Folders).
 
 #### Inicialização automática
 
@@ -527,5 +527,5 @@ GNOME Shell não oferece suporte a usar um [gerenciador de janela](/index.php/Ge
     *   [Índice dos aplicativos do GNOME](https://wiki.gnome.org/Apps)
     *   [Aplicativos Centrais do GNOME](https://en.wikipedia.org/wiki/GNOME_Core_Applications "wikipedia:GNOME Core Applications")
 *   Código-fonte/Espelhos do GNOME:
-    *   [Repositório Git do GNOME](https://git.gnome.org/browse/)
+    *   [GitLab do GNOME](https://gitlab.gnome.org/)
     *   [Espelho do GNOME no Github](https://github.com/GNOME)

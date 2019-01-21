@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Dotfiles](/index.php/Dotfiles "Dotfiles"). Data da última tradução: 2018-12-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dotfiles&diff=0&oldid=558788) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Dotfiles](/index.php/Dotfiles "Dotfiles"). Data da última tradução: 2019-01-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dotfiles&diff=0&oldid=563155) na versão em inglês.
 
 Artigos relacionados
 
@@ -13,7 +13,6 @@ Este artigo coleta repositórios de usuários com arquivos de configuração per
     *   [1.1 Usando gitignore](#Usando_gitignore)
     *   [1.2 Outras ferramentas](#Outras_ferramentas)
     *   [1.3 Mantendo dotfiles em várias máquinas](#Mantendo_dotfiles_em_várias_máquinas)
-    *   [1.4 Informação confidencial](#Informação_confidencial)
 *   [2 Repositórios](#Repositórios)
 *   [3 Veja também](#Veja_também)
 
@@ -42,6 +41,8 @@ e faça commit as alterações com [git-commit(1)](https://jlk.fjfi.cvut.cz/arch
 $ git commit -a
 
 ```
+
+**Dica:** Para evitar fazer commit acidental de informações confidenciais, veja [Git#Filtering confidential information](/index.php/Git#Filtering_confidential_information "Git").
 
 ### Outras ferramentas
 
@@ -101,26 +102,18 @@ $ git commit -a
 
 Uma forma de manter os *dotfiles* em várias máquinas em vários hosts, permitindo a personalização por host, é manter um ramo mestre para toda a configuração compartilhada, enquanto cada máquina individual possui uma ramificação específica da máquina com check-out. A configuração específica do host pode ser confirmada na ramificação específica da máquina; como a configuração compartilhada é adicionada ao ramo mestre, as ramos por máquina são então *rebase*ados no mestre atualizado.
 
+A desvantagem de ter alguns dos arquivos de configuração em várias ramos é que você deve se lembrar de manter e sincronizar as alterações. Use lógica condicional para minimizar o número de arquivos específicos da máquina. Por exemplo, os scripts bash (por exemplo, `.bashrc`) podem aplicar configurações diferentes dependendo do nome da máquina (ou tipo, variável personalizada, etc.):
+
+```
+if [[ "$(uname -n)" == "archlaptop" ]]; then
+    # comandos específicos de laptop aqui
+else
+    # comandos de desktop ou servidor
+fi
+
+```
+
 Outra abordagem é gerenciar configuração específica de máquina com ferramentas baseadas em mecanismo de modelos, p.ex., [qualia](https://pypi.python.org/pypi/mir.qualia/) ou [Dotdrop](https://github.com/deadc0de6/dotdrop). Essa abordagem requer um trabalho menos manual e não causa conflitos de mesclagem.
-
-### Informação confidencial
-
-Ocasionalmente, o software pode manter senhas de texto simples em arquivos de configuração, em vez de depender de um chaveiro. Nesses casos, git sem qualquer filtro pode ser útil para evitar o commit acidental de informações confidenciais. Por exemplo, o arquivo a seguir atribui um filtro ao arquivo "some-dotfile":
-
- `.gitattributes` 
-```
-some-dotfile filter=remove-pass
-
-```
-
-Sempre que o arquivo "some-dotfile" verificado pelo git, o git invocará o filtro "remove-pass" no arquivo antes de ser verificado. O filtro deve ser definido no arquivo de configuração do git, p. ex.:
-
- `.git/config` 
-```
-[filter "remove-pass"]
-clean = "sed -e 's/^password=.*/#password=TODO/'"
-
-```
 
 ## Repositórios
 

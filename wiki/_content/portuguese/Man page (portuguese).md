@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Man page](/index.php/Man_page "Man page"). Data da última tradução: 2018-10-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Man_page&diff=0&oldid=544517) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Man page](/index.php/Man_page "Man page"). Data da última tradução: 2019-01-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Man_page&diff=0&oldid=563907) na versão em inglês.
 
 Artigos relacionados
 
@@ -65,14 +65,12 @@ Todas as páginas man seguem um formato razoavelmente padronizado, o que ajuda a
 
 Apesar do utilitário `man` permitir que usuários exibam páginas man, e pesquisem seu conteúdo via *less*, um problema surge quando não se sabe o nome exato da página de manual desejada em primeiro lugar! Por sorte, as opções `-k` ou `--apropos` podem ser usadas para pesquisar pelas descrições de página de manual por ocorrências de uma palavra-chave dada.
 
-O recurso de pesquisa é fornecido por um cache dedicado. Por padrão, você não pode ter qualquer cache compilado e todas suas pesquisa lhe darão *nenhum resultado apropriado*. Você pode gerar o cache ou atualizá-lo executando
+O recurso de pesquisa é fornecido por um cache dedicado, do contrário todas as pesquisa retornariam resultado *nada apropriado*. Por padrão, manutenção daquele cache é lidado por `man-db.service`, o qual periodicamente é ativado por `man-db.timer`. Você pode manualmente (re)gerar o cache ou atualizá-lo executando:
 
 ```
 # mandb
 
 ```
-
-Você deve executá-lo toda vez que uma nova página man é instalada.
 
 Agora, você pode começar sua pesquisa. Por exemplo, para pesquisar por páginas man relacionadas a "password":
 
@@ -150,7 +148,7 @@ Em vez da interface padrão, o uso de navegadores como [lynx](https://www.archli
 Instale o pacote [mandoc](https://aur.archlinux.org/packages/mandoc/). Para converter uma página, por exemplo `free(1)`:
 
 ```
-$ gunzip -c /usr/share/man/man1/free.1.gz | mandoc -Thtml -Ostyle=style.css 1> free.html
+$ mandoc -Thtml -Ostyle=style.css /usr/share/man/man1/free.1.gz > free.html
 
 ```
 
@@ -208,22 +206,20 @@ Há vários bancos de dado online de páginas man, incluindo:
 
 *   [man7.org](http://man7.org/linux/man-pages/index.html). Upstream do [man-pages](https://www.archlinux.org/packages/?name=man-pages) do Arch Linux.
 *   [Páginas man do Arch Linux](https://jlk.fjfi.cvut.cz/arch/manpages/). Usado para links do wiki.
-*   [Coleção do manned.org para várias distribuições Linux, BSD, etc. com múltiplas versões de pacotes](https://manned.org/)
-*   [Páginas man do Debian GNU/Linux](https://manpages.debian.net/)
+*   [manned.org](https://manned.org/) — coleção de várias distribuições Linux, BSD, etc. com múltiplas versões de pacotes
+*   [linux.die.net](https://linux.die.net/man/)
+*   [man.cx](https://man.cx/)
+*   [Páginas man do Debian](https://manpages.debian.org/)
+*   [Páginas man do Ubuntu](http://manpages.ubuntu.com/)
 *   [Páginas man do DragonFlyBSD](https://leaf.dragonflybsd.org/cgi/web-man)
 *   [Páginas man do FreeBSD](https://www.freebsd.org/cgi/man.cgi)
-*   [Páginas man do Linux e Solaris 10](http://www.manpages.spotlynx.com/)
-*   [Páginas man do Linux no die.net](https://linux.die.net/man/)
-*   [Páginas man do Linux no man.cx](https://man.cx/)
 *   [Páginas man do NetBSD](http://netbsd.gw.com/cgi-bin/man-cgi)
+*   [Páginas man do OpenBSD](https://www.openbsd.org/cgi-bin/man.cgi)
 *   [Páginas man do Mac OS X](https://developer.apple.com/documentation/Darwin/Reference/ManPages/index.html)
-*   [Páginas man online do UNIX](http://unixhelp.ed.ac.uk/alphabetical/index.html)
-*   [Páginas de manual do OpenBSD](https://www.openbsd.org/cgi-bin/man.cgi)
 *   [Manual do Plan 9 — Volume 1](http://man.cat-v.org/plan_9/)
 *   [Manual do Inferno — Volume 1](http://man.cat-v.org/inferno/)
 *   [Páginas man do Storage Foundation](http://sfdoccentral.symantec.com/sf/5.0MP3/linux/manpages/index.html)
 *   [Repositório de páginas man do UNIX and Linux Forums](https://www.unix.com/man-page/OpenSolaris/1/man/)
-*   [Repositório de páginas man do Ubuntu](http://manpages.ubuntu.com/)
 
 **Dica:** Você pode usar o [!Bang](https://duckduckgo.com/bang.html) `!archman` do DuckDuckGo para pesquisar pelas [páginas man do Arch Linux](https://jlk.fjfi.cvut.cz/arch/manpages/) diretamente
 

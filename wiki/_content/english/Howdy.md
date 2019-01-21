@@ -9,7 +9,8 @@
     *   [2.2 Add correct IR sensor](#Add_correct_IR_sensor)
     *   [2.3 Add face to Howdy](#Add_face_to_Howdy)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Howdy doesn't seem to work](#Howdy_doesn't_seem_to_work)
+    *   [3.1 Howdy does not seem to work](#Howdy_does_not_seem_to_work)
+    *   [3.2 Errors recognizing an input device](#Errors_recognizing_an_input_device)
 
 ## Installation
 
@@ -49,6 +50,17 @@ In order to add a face model to Howdy, run `sudo howdy add`.
 
 ## Troubleshooting
 
-### Howdy doesn't seem to work
+### Howdy does not seem to work
 
 Verify that Howdy is properly working by running `howdy test` as root. If that seems to work, check any PAM configuration files and verify they are working. Some programs, such as SDDM [[1]](https://github.com/sddm/sddm/issues/284), do not work properly with PAM, which may result in unexpected results.
+
+### Errors recognizing an input device
+
+Some IR sensors (for example of the Thinkpad T480) need to have the frame width and height defined in the configuration file:
+
+```
+frame_width = 400
+frame_height = 400
+```
+
+The width and height of your sensor output: `v4l2-ctl --list-devices --all`.

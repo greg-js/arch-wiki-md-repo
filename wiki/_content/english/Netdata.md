@@ -18,7 +18,7 @@
 
 ## Configuration
 
-The configuration file is located at `/etc/netdata/netdata.conf`. The plugins folders is at `/usr/lib/netdata`.
+The configuration file is located at `/etc/netdata/netdata.conf`. The plugins folders is at `/usr/lib/netdata` and their configuration at `/usr/lib/netdata/conf.d`.
 
 ### Behind a web server
 

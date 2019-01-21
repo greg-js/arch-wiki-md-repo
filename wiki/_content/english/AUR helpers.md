@@ -92,7 +92,7 @@ The [#Comparison table](#Comparison_table) columns have the following meaning:
 | [pikaur](https://aur.archlinux.org/packages/pikaur/) | Python | Yes | Yes | Yes | Yes | Yes | Yes | [-Sy](https://github.com/actionless/pikaur#pikaur) | bash, fish, zsh | [dynamic users](http://0pointer.net/blog/dynamic-users-with-systemd.html), batch interaction (1,2) |
 | [trizen](https://aur.archlinux.org/packages/trizen/) | Perl | Yes | Yes | [Yes](https://github.com/trizen/trizen/commit/6fb0cc9) | [Yes](https://github.com/trizen/trizen/commit/7ab7ee5f) | Yes | [Partial](https://github.com/trizen/trizen/issues/46) | [-Ud*](https://github.com/trizen/trizen/commit/9e7b40e) | bash, fish, zsh | – |
 | [wrapaur](https://aur.archlinux.org/packages/wrapaur/) | Bash | Yes | No | Yes | No | No | No | – | – | – |
-| [yay](https://aur.archlinux.org/packages/yay/) | Go | Yes | [Yes](https://github.com/Jguer/yay/pull/447) | [Yes](https://github.com/Jguer/yay/pull/297) | Yes | No | Yes | [-Sy*](https://github.com/Jguer/yay/commit/3bdb534)
+| [yay](https://aur.archlinux.org/packages/yay/) | Go | Yes | [Yes](https://github.com/Jguer/yay/pull/447) | [Yes](https://github.com/Jguer/yay/pull/297) | Yes | Yes | Yes | [-Sy*](https://github.com/Jguer/yay/commit/3bdb534)
 [--ask*](https://github.com/Jguer/yay/commit/ea5a94e) | bash, fish, zsh | fetch PGP keys, batch interaction (1,2) |
 | [aurman](https://aur.archlinux.org/packages/aurman/)
 <small>([discontinued](https://github.com/polygamma/aurman#stopped-development-for-public-use))</small> | Python | Yes | Yes | Yes | Yes | [Yes](https://github.com/polygamma/aurman/wiki/Description-of-the-aurman-dependency-solving) | Yes | [-Sy*](https://github.com/polygamma/aurman/commit/6c02ba3)

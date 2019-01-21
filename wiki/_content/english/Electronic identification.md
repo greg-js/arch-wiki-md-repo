@@ -8,16 +8,21 @@ An [electronic identification](https://en.wikipedia.org/wiki/Electronic_identifi
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Belgium](#Belgium)
-    *   [1.2 Estonia](#Estonia)
-        *   [1.2.1 DigiDoc](#DigiDoc)
-        *   [1.2.2 Chromium](#Chromium)
-        *   [1.2.3 Firefox](#Firefox)
-    *   [1.3 Sweden](#Sweden)
+*   [2 Setup per country](#Setup_per_country)
+    *   [2.1 Belgium](#Belgium)
+    *   [2.2 Estonia](#Estonia)
+        *   [2.2.1 DigiDoc](#DigiDoc)
+        *   [2.2.2 Chromium](#Chromium)
+        *   [2.2.3 Firefox](#Firefox)
+    *   [2.3 Sweden](#Sweden)
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [ccid](https://www.archlinux.org/packages/?name=ccid) package. [ACS](https://www.acs.com.hk/en/product-lines/2/pc-linked-smart-card-readers/) smart card also require the [acsccid](https://www.archlinux.org/packages/?name=acsccid) package. After installation, [enable](/index.php/Enable "Enable") `pcscd.socket`.
+All types of electronic identification **require** installing the [ccid](https://www.archlinux.org/packages/?name=ccid) package. After installation, [enable](/index.php/Enable "Enable"), and [start](/index.php/Start "Start") `pcscd.socket`. In addition, [ACS](https://www.acs.com.hk/en/product-lines/2/pc-linked-smart-card-readers/) smart cards also require the [acsccid](https://www.archlinux.org/packages/?name=acsccid) package.
+
+[pcsc-tools](https://www.archlinux.org/packages/?name=pcsc-tools) contains `pcsc_scan` program that can be used to check smart card detection [Smartcards#Scan_for_card_reader](/index.php/Smartcards#Scan_for_card_reader "Smartcards").
+
+## Setup per country
 
 ### Belgium
 
@@ -45,36 +50,30 @@ You may find hints for troubleshooting in the [official documentation](http://fa
 
 ### Estonia
 
-[https://www.id.ee/?lang=en](https://www.id.ee/?lang=en)
+See [https://www.id.ee/?lang=en](https://www.id.ee/?lang=en)
 
 #### DigiDoc
 
-Install [chrome-token-signing](https://aur.archlinux.org/packages/chrome-token-signing/) and [qdigidoc4](https://aur.archlinux.org/packages/qdigidoc4/) packages, with dependencies on [libdigidocpp](https://aur.archlinux.org/packages/libdigidocpp/). DigiDoc4 contains merged features of older DigiDoc3 and ID-Card Utility. It can be started from your graphical desktop menu by searching for DigiDoc4 Client or from commandline with <tt>qdigidoc4</tt>.
+Once [ccid](https://www.archlinux.org/packages/?name=ccid) is installed and `pcscd.socket` is [started](/index.php/Start "Start"), install [qdigidoc4](https://aur.archlinux.org/packages/qdigidoc4/). One of the dependency [xml-security-c](https://aur.archlinux.org/packages/xml-security-c/) is [verified with a signature](/index.php/Makepkg#Signature_checking "Makepkg") that you have to import to your GnuPG keyring. Alternatively, the older version of this software (DigiDoc3) is also available with the packages [qdigidoc](https://aur.archlinux.org/packages/qdigidoc/) and [qesteidutil](https://aur.archlinux.org/packages/qesteidutil/).
 
-Once DigiDoc is installed, it is necessary to enable the service <tt>pcscd</tt>.
+DigiDoc4 has an optional [GNOME/Files](/index.php/GNOME/Files "GNOME/Files") right click menu integration. Install [python2-nautilus](https://aur.archlinux.org/packages/python2-nautilus/) and restart Gnome Files using the command `pkill nautilus`.
 
-DigiDoc4 has [GNOME/Files](/index.php/GNOME/Files "GNOME/Files") right click menu integration. Install [python2-nautilus](https://aur.archlinux.org/packages/python2-nautilus/) and restart Gnome Files using command <tt>pkill nautilus</tt>.
-
-In case of bugs in DigiDoc4 you can install the older DigiDoc3 and ID-Card Utility programs using AUR packages [qdigidoc](https://aur.archlinux.org/packages/qdigidoc/) and [qesteidutil](https://aur.archlinux.org/packages/qesteidutil/).
-
-[chrome-token-signing](https://aur.archlinux.org/packages/chrome-token-signing/) contains [Native Messaging](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Native_messaging) host for Google Chrome/Chromium and Firefox and it is the modern way of doing digital signatures on the web. This package also contains "Token signing" extension counterpart for both browsers.
+**Note:** [chrome-token-signing](https://aur.archlinux.org/packages/chrome-token-signing/) contains the "Token signing" extension that allows digital signatures on the web for both Google Chrome/Chromium and Firefox.
 
 #### Chromium
 
-To enable PIN 1 authentication in [Google Chrome](/index.php/Google_Chrome "Google Chrome") and [Chromium](/index.php/Chromium "Chromium") you should run [esteid-update-nssdb](https://github.com/open-eid/linux-installer/blob/master/esteid-update-nssdb) script. Or you can run this command that does pretty much the same thing with less error checking.
+After installing [chrome-token-signing](https://aur.archlinux.org/packages/chrome-token-signing/), enable the PIN 1 authentication in [Google Chrome](/index.php/Google_Chrome "Google Chrome") and [Chromium](/index.php/Chromium "Chromium") by running the following command (taken from the [open-eid repo](https://github.com/open-eid/linux-installer/blob/master/esteid-update-nssdb)).
 
 ```
- modutil -dbdir sql:$HOME/.pki/nssdb -add onepin-opensc-pkcs11 -libfile onepin-opensc-pkcs11.so -mechanisms FRIENDLY
+ modutil -dbdir sql:$HOME/.pki/nssdb -add opensc-pkcs11 -libfile onepin-opensc-pkcs11.so -mechanisms FRIENDLY
 
 ```
-
-[chrome-token-signing](https://aur.archlinux.org/packages/chrome-token-signing/) contains "Token signing" extension that needs to be enabled for document signing in Chromium.
 
 #### Firefox
 
-To enable PIN 1 authentication in [Firefox](/index.php/Firefox "Firefox") 58+ you should install [esteidpkcs11loader](https://aur.archlinux.org/packages/esteidpkcs11loader/) and after restarting the browser make sure that "Firefox PKCS11 loader" extension is enabled. You can also follow manual instructions at [Smartcards#Mozilla Firefox](/index.php/Smartcards#Mozilla_Firefox "Smartcards"). For [firefox-esr52](https://aur.archlinux.org/packages/firefox-esr52/) and other other Firefox forks you can use [esteidfirefoxplugin](https://aur.archlinux.org/packages/esteidfirefoxplugin/).
+To enable PIN 1 authentication in [Firefox](/index.php/Firefox "Firefox") you should install [esteidpkcs11loader](https://aur.archlinux.org/packages/esteidpkcs11loader/) and [chrome-token-signing](https://aur.archlinux.org/packages/chrome-token-signing/). After restarting the browser make sure that "Firefox PKCS11 loader" extension is enabled. You can also follow manual instructions at [Smartcards#Mozilla Firefox](/index.php/Smartcards#Mozilla_Firefox "Smartcards").
 
-[chrome-token-signing](https://aur.archlinux.org/packages/chrome-token-signing/) contains "Token signing" extension that needs to be enabled for document signing in Firefox 58+.
+For [firefox-esr52](https://aur.archlinux.org/packages/firefox-esr52/) and other other Firefox forks you can use [esteidfirefoxplugin](https://aur.archlinux.org/packages/esteidfirefoxplugin/).
 
 ### Sweden
 

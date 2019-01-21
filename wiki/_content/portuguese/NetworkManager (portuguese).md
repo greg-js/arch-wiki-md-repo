@@ -1,11 +1,11 @@
-**Status de tradução:** Esse artigo é uma tradução de [NetworkManager](/index.php/NetworkManager "NetworkManager"). Data da última tradução: 2018-11-10\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=NetworkManager&diff=0&oldid=554414) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [NetworkManager](/index.php/NetworkManager "NetworkManager"). Data da última tradução: 2019-01-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=NetworkManager&diff=0&oldid=562494) na versão em inglês.
 
 Related articles
 
 *   [Configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede "Configuração de rede")
 *   [Configuração de rede sem fio](/index.php/Configura%C3%A7%C3%A3o_de_rede_sem_fio "Configuração de rede sem fio")
 
-O [NetworkManager](http://www.gnome.org/projects/NetworkManager/) é um programa que provê a detecção e configuração automática de redes para computadores. As funcionalidades do NetworkManager são úteis para redes sem fio e cabeadas. Nas redes sem fio, o NetworkManager terá preferência pelas redes que já conhece, e possui a habilidade para trocar para a rede mais confiável sempre que disponível. Aplicativos preparados para o NetworkManager podem trocar do modo online para o offline. O NetworkManager tem preferência pelas redes cabeadas em detrimento das redes sem fio, e possui suporte a certos tipos de VPN. Foi originalmente desenvolvido pela Red Hat e agora, é hospedado no projeto [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)").
+O [NetworkManager](https://wiki.gnome.org/Projects/NetworkManager/) é um programa que provê a detecção e configuração automática de redes para computadores. As funcionalidades do NetworkManager são úteis para redes sem fio e cabeadas. Nas redes sem fio, o NetworkManager terá preferência pelas redes que já conhece, e possui a habilidade para trocar para a rede mais confiável sempre que disponível. Aplicativos preparados para o NetworkManager podem trocar do modo online para o offline. O NetworkManager tem preferência pelas redes cabeadas em detrimento das redes sem fio, e possui suporte a certos tipos de VPN. Foi originalmente desenvolvido pela Red Hat e agora, é hospedado no projeto [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)").
 
 **Atenção:** Por padrão, as senhas de Wi-Fi são armazenadas em texto simples, veja [#Senhas de Wi-Fi criptografadas](#Senhas_de_Wi-Fi_criptografadas).
 
@@ -255,7 +255,7 @@ $ nm-applet --indicator
 
 ### nmcli-dmenu
 
-Como alternativa, existe o [networkmanager-dmenu-git](https://aur.archlinux.org/packages/networkmanager-dmenu-git/), que é um pequeno script para gerenciar as conexões do NetworkManager com o *dmenu* em vez do `nm-applet`. Ele fornece todos os recursos essenciais, como conexão com conexões Wi-Fi ou com fio existentes do NetworkManager, conexão a novas conexões Wi-Fi, solicitações de senha, se necessário, conexão VPN existente, habilitação/desabilitação de rede e inicialização da interface gráfica *nm-connection-editor*.
+Como alternativa, existe o [networkmanager-dmenu-git](https://aur.archlinux.org/packages/networkmanager-dmenu-git/), que é um pequeno script para gerenciar as conexões do NetworkManager com o [dmenu](/index.php/Dmenu "Dmenu") em vez do `nm-applet`. Ele fornece todos os recursos essenciais, como conexão com conexões Wi-Fi ou com fio existentes do NetworkManager, conexão a novas conexões Wi-Fi, solicitações de senha, se necessário, conexão VPN existente, habilitação/desabilitação de rede e inicialização da interface gráfica *nm-connection-editor*.
 
 ## Configuração
 
@@ -552,7 +552,7 @@ Veja [NFS#Using a NetworkManager dispatcher](/index.php/NFS#Using_a_NetworkManag
 
 A ideia é ligar o Wi-Fi apenas quando o cabo LAN estiver desconectado (por exemplo, ao desconectá-lo de um laptop) e para que o Wi-Fi seja desativado automaticamente, assim que o cabo LAN for conectado novamente.
 
-Crie o seguinte script de dispatcher ([Fonte](http://superuser.com/questions/233448/disable-wlan-if-wired-cable-network-is-available)), substituindo `LAN_interface` pelo seu.
+Crie o seguinte script de dispatcher ([Fonte](https://superuser.com/questions/233448/disable-wlan-if-wired-cable-network-is-available)), substituindo `LAN_interface` pelo seu.
 
  `/etc/NetworkManager/dispatcher.d/wlan_auto_toggle.sh` 
 ```
@@ -604,7 +604,7 @@ esac
 
 Se você quiser se conectar automaticamente à VPN para todas as redes Wi-Fi, use a seguinte definição do ESSID: `ESSID=$(iwgetid -r)`. Lembre-se de definir as permissões do script [de acordo com isso](#Serviços_de_rede_com_o_NetworkManager_dispatcher).
 
-A tentativa de se conectar com o script acima ainda pode falhar com `NetworkManager-dispatcher.service` reclamando sobre "nenhum segredo de VPN válido", por causa de [como os segredos VPN são armazenados](http://developer.gnome.org/NetworkManager/0.9/secrets-flags.html). Felizmente, existem diferentes opções para fornecer ao script acima acesso à sua senha de VPN.
+A tentativa de se conectar com o script acima ainda pode falhar com `NetworkManager-dispatcher.service` reclamando sobre "nenhum segredo de VPN válido", por causa de [como os segredos VPN são armazenados](https://developer.gnome.org/NetworkManager/0.9/secrets-flags.html). Felizmente, existem diferentes opções para fornecer ao script acima acesso à sua senha de VPN.
 
 1: Um deles requer a edição do arquivo de configuração de conexão VPN para fazer com que o NetworkManager armazene os segredos por si só, em vez de dentro de um chaveiro [que será inacessível por root](https://bugzilla.redhat.com/show_bug.cgi?id=710552): abra `/etc/NetworkManager/system-connections/*nome de sua conexão VPN*` e altere as `password-flags` e `secret-flags` de `1` para `0`.
 
@@ -865,7 +865,13 @@ Você também pode editar a conexão (e persistir no disco) ou excluí-la. O Net
 
 O *NetworkManager* sobrescreve o [resolv.conf](/index.php/Resolv.conf_(Portugu%C3%AAs) "Resolv.conf (Português)") por padrão.
 
-Isso pode ser evitado adicionando `dns=none` à seção `[main]` no `/etc/NetworkManager/NetworkManager.conf`.
+Isso pode ser evitado definindo `dns=none` em um arquivo de configuração:
+
+ `/etc/NetworkManager/conf.d/dns.conf` 
+```
+[main]
+dns=none
+```
 
 Após isso, o `/etc/resolv.conf` pode ser um link simbólico quebrado que você precisará remover. Então, basta criar um novo arquivo `/etc/resolv.conf`.
 
@@ -1076,5 +1082,5 @@ Pode não ser óbvio, mas o serviço inicia automaticamente através de *dbus*. 
 
 ## Veja também
 
-*   [NetworkManager para Administradores Parte 1](http://blogs.gnome.org/dcbw/2015/02/16/networkmanager-for-administrators-part-1/)
+*   [NetworkManager para Administradores Parte 1](https://blogs.gnome.org/dcbw/2015/02/16/networkmanager-for-administrators-part-1/)
 *   [Wikipedia:pt:NetworkManager](https://en.wikipedia.org/wiki/pt:NetworkManager "wikipedia:pt:NetworkManager")

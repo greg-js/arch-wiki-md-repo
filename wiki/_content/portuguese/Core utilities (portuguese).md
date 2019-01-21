@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Core utilities](/index.php/Core_utilities "Core utilities"). Data da última tradução: 2018-11-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Core_utilities&diff=0&oldid=555719) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Core utilities](/index.php/Core_utilities "Core utilities"). Data da última tradução: 2019-01-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Core_utilities&diff=0&oldid=562627) na versão em inglês.
 
 Artigos relacionados
 
@@ -10,7 +10,7 @@ Artigos relacionados
 
 *Utilitários principais* (ou *Core utilities*) são as ferramentas básicas e fundamentais de um sistema [GNU](/index.php/GNU_(Portugu%C3%AAs) "GNU (Português)")/[Linux](/index.php/Linux "Linux"). No Arch Linux eles são encontrados no [grupo base](/index.php/Grupo_de_pacotes "Grupo de pacotes"). Este artigo fornece uma visão geral incompleta deles, vincula sua documentação e descreve alternativas úteis. O escopo deste artigo inclui, mas não está limitado a, o [GNU coreutils](https://www.gnu.org/software/coreutils/coreutils.html). A maioria dos utilitários principais é ferramenta tradicional [Unix](https://en.wikipedia.org/wiki/pt:Unix "wikipedia:pt:Unix") (veja [Heirloom](/index.php/Heirloom "Heirloom")) e muitos foram padronizados pela [POSIX](https://en.wikipedia.org/wiki/pt:POSIX "wikipedia:pt:POSIX"), mas foram desenvolvidos para fornecer mais recursos.
 
-A maioria das interfaces de linha de comando está documentada em [páginas man](/index.php/P%C3%A1ginas_man "Páginas man"), utilitários pelo [Projeto GNU](/index.php/Projeto_GNU "Projeto GNU") estão documentados em [manual info](/index.php/Manual_info "Manual info"), alguns [shells](/index.php/Shell_(Portugu%C3%AAs) "Shell (Português)") fornecem um `help` comando para comandos embutidos [shell](/index.php/Shell_(Portugu%C3%AAs) "Shell (Português)"). Além disso, a maioria dos utilitários imprime seu uso quando executado com o sinalizador `--help`.
+A maioria das interfaces de linha de comando está principalmente documentada em [páginas man](/index.php/P%C3%A1ginas_man "Páginas man"), utilitários pelo [Projeto GNU](/index.php/Projeto_GNU "Projeto GNU") estão documentados em [manual info](/index.php/Manual_info "Manual info"), alguns [shells](/index.php/Shell_(Portugu%C3%AAs) "Shell (Português)") fornecem um `help` comando para comandos embutidos [shell](/index.php/Shell_(Portugu%C3%AAs) "Shell (Português)"). Além disso, a maioria dos utilitários imprime seu uso quando executado com o sinalizador `--help`.
 
 ## Contents
 

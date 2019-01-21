@@ -90,7 +90,7 @@ STOP_CHARGE_THRESH_BAT0=90
 
 ### CPU throttling workaround
 
-A stress test using [s-tui](https://aur.archlinux.org/packages/s-tui/) indicates that CPU power limit is capped at 38W, keeping CPU temperature at 81C and resulting in maximum sustained frequency around 2850 MHz on i7-8750H. Similar to other modern Thinkpad laptops, this can be worked around by using [lenovo-throttling-fix-git](https://aur.archlinux.org/packages/lenovo-throttling-fix-git/). Combined with the `performance` [CPU frequency scaling governor](/index.php/CPU_frequency_scaling#Scaling_governors "CPU frequency scaling"), it raises the power limit to 44W which allows the same CPU to run at 3100 MHz with the temperature of 95C.
+A stress test using [s-tui](https://aur.archlinux.org/packages/s-tui/) indicates that CPU power limit is capped at 38W, keeping CPU temperature at 81C and resulting in maximum sustained frequency around 2850 MHz on i7-8750H. Similar to other modern Thinkpad laptops, this can be worked around by using [lenovo-throttling-fix-git](https://aur.archlinux.org/packages/lenovo-throttling-fix-git/). It raises the power limit to 44W, which, combined with the `performance` [CPU frequency scaling governor](/index.php/CPU_frequency_scaling#Scaling_governors "CPU frequency scaling"), allows the same CPU to run at 3100 MHz with the temperature of 95C.
 
 See the [lenovo-throttling-fix homepage](https://github.com/erpalma/lenovo-throttling-fix) for more info about the temporary fix and [this reddit thread](https://www.reddit.com/r/linux/comments/9n5ajg/first_part_of_the_real_fix_for_ultrabook_cpu/) that sheds the light on what may become the long-term solution.
 

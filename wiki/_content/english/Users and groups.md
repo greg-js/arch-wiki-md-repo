@@ -144,17 +144,13 @@ To list users currently logged on the system, the *who* command can be used. To 
 To add a new user, use the *useradd* command:
 
 ```
-# useradd -m -g *initial_group* -G *additional_groups* -s *login_shell* *username*
+# useradd -m -G *additional_groups* -s *login_shell* *username*
 
 ```
 
 	`-m`/`--create-home`
 
 	creates the user home directory as `/home/*username*`. Within their home directory, a non-root user can write files, delete them, install programs, and so on.
-
-	`-g`/`--gid`
-
-	defines the group name or number of the user's initial login group. If specified, the group name must exist; if a group number is provided, it must refer to an already existing group. If not specified, the behaviour of *useradd* will depend on the `USERGROUPS_ENAB` variable contained in `/etc/login.defs`. The default behaviour (`USERGROUPS_ENAB yes`) is to create a group with the same name as the username, with `GID` equal to `UID`.
 
 	`-G`/`--groups`
 
@@ -167,6 +163,8 @@ To add a new user, use the *useradd* command:
 **Warning:** In order to be able to log in, the login shell must be one of those listed in `/etc/shells`, otherwise the [PAM](/index.php/PAM "PAM") module `pam_shell` will deny the login request. In particular, do not use the `/usr/bin/bash` path instead of `/bin/bash`, unless it is properly configured in `/etc/shells`.
 
 **Note:** The password for the newly created user must then be defined, using *passwd* as shown in [#Example adding a user](#Example_adding_a_user).
+
+If an initial login group is specified by name or number, it must refer to an already existing group. If not specified, the behaviour of *useradd* will depend on the `USERGROUPS_ENAB` variable contained in `/etc/login.defs`. The default behaviour (`USERGROUPS_ENAB yes`) is to create a group with the same name as the username, with `GID` equal to `UID`.
 
 When the login shell is intended to be non-functional, for example when the user account is created for a specific service, `/usr/bin/nologin` may be specified in place of a regular shell to politely refuse a login (see [nologin(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nologin.8)).
 
@@ -436,7 +434,7 @@ This section explains the purpose of the essential groups from the [core/filesys
 Non-root workstation/desktop users often need to be added to some of following groups to allow access to hardware peripherals and facilitate system administration:
 
 | Group | Affected files | Purpose |
-| adm | Administration group, similar to `wheel`. |
+| adm | Administration group, commonly used to give read access to protected logs (including [journal](/index.php/Systemd#Journal "Systemd") files). |
 | ftp | `/srv/ftp/` | Access to files served by [FTP](https://en.wikipedia.org/wiki/FTP "wikipedia:FTP") servers. |
 | games | `/var/games` | Access to some game software. |
 | http | `/srv/http/` | Access to files served by [HTTP](https://en.wikipedia.org/wiki/HTTP "wikipedia:HTTP") servers. |
@@ -446,7 +444,7 @@ Non-root workstation/desktop users often need to be added to some of following g
 | systemd-journal | `/var/log/journal/*` | Can be used to provide read-only access to the systemd logs, as an alternative to `adm` and `wheel` [[1]](https://cgit.freedesktop.org/systemd/systemd/tree/README?id=fdbbf0eeda929451e2aaf34937a72f03a225e315#n190). Otherwise, only user generated messages are displayed. |
 | users | Standard users group. |
 | uucp | `/dev/ttyS[0-9]+`, `/dev/tts/[0-9]+`, `/dev/ttyUSB[0-9]+`, `/dev/ttyACM[0-9]+`, `/dev/rfcomm[0-9]+` | RS-232 serial ports and devices connected to them. |
-| wheel | Administration group, commonly used to give access to the [sudo](/index.php/Sudo "Sudo") and [su](/index.php/Su "Su") utilities (neither uses it by default, configurable in `/etc/pam.d/su` and `/etc/pam.d/su-l`). It can also be used to gain full read access to [journal](/index.php/Systemd#Journal "Systemd") files. |
+| wheel | Administration group, commonly used to give privileges to perform administrative actions. Can be used to give access to the [sudo](/index.php/Sudo "Sudo") and [su](/index.php/Su "Su") utilities (neither uses it by default, configurable in `/etc/pam.d/su` and `/etc/pam.d/su-l`). It also has full read access to [journal](/index.php/Systemd#Journal "Systemd") files. |
 
 ### System groups
 

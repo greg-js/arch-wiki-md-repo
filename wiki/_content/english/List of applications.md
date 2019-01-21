@@ -5415,6 +5415,8 @@ See also [Wikipedia:List of Unified Modeling Language tools](https://en.wikipedi
 
 	[https://trac.edgewall.org/](https://trac.edgewall.org/) || [trac](https://aur.archlinux.org/packages/trac/)
 
+See also [Git server#Advanced web applications](/index.php/Git_server#Advanced_web_applications "Git server").
+
 #### Code review
 
 *   **Gerrit** — A web-based code review tool built on top of the Git version control system

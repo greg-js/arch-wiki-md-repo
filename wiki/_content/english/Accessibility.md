@@ -184,7 +184,9 @@ $ setxkbmap -option keypad:pointerkeys
 
 ```
 
-If you use a [xmodmap](/index.php/Xmodmap "Xmodmap") configuration, be aware *setxkbmap* resets it. Some third party key-board layouts like the German Neo layout use [a different way](https://wiki.neo-layout.org/wiki/Tastaturmaus) to activate mouse keys.
+If you use a [xmodmap](/index.php/Xmodmap "Xmodmap") configuration, be aware *setxkbmap* resets it.
+
+**Tip:** Some third-party keyboard layouts, for example the [German Neo layout](https://wiki.neo-layout.org/wiki/Tastaturmaus), may use different ways to activate mouse keys.
 
 To enable Mouse keys permanently, add
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Systemd](/index.php/Systemd "Systemd"). Data da última tradução: 2019-01-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Systemd&diff=0&oldid=560145) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Systemd](/index.php/Systemd "Systemd"). Data da última tradução: 2019-01-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Systemd&diff=0&oldid=560145) na versão em inglês.
 
 Artigos relacionados
 
@@ -11,7 +11,7 @@ Artigos relacionados
 *   [Melhorar desempenho/Processo de inicialização](/index.php/Improving_performance/Boot_process "Improving performance/Boot process")
 *   [Permitir desligamento por usuários](/index.php/Allow_users_to_shutdown "Allow users to shutdown")
 
-De [página web do projeto](http://freedesktop.org/wiki/Software/systemd):
+De [página web do projeto](https://freedesktop.org/wiki/Software/systemd/):
 
 	*Systemd* é um sistema e gerenciador de serviços para Linux, compatível com os scripts de inicializações SysV e LS. *Systemd* fornece recursos de paralelização agressivos, usa socket e ativação [D-Bus](/index.php/D-Bus "D-Bus") para iniciar serviços, oferece o início de daemons on-demand, mantém o registro de processos usando [grupos de controle](/index.php/Cgroups "Cgroups") Linux, suporte snapshotting e restauração do estado do sistema, preserva pontos de montagens e automontagens e implementa uma lógica de controle elaborado transacional baseada em dependência de serviço. O *systemd* oferece suporte scripts de init SysV e LSB e funciona como um substituto para o sysvinit. Outras partes incluem um daemon de registro, utilitários para controlar a configuração básica do sistema como o nome do host, data, local, manter uma lista de usuários logados e executar contêineres e máquinas virtuais, contas do sistema, diretórios e configurações de tempo de execução e daemons para gerenciar configuração de redes simples, sincronização de tempo de rede, encaminhamento de log e resolução de nomes.
 
@@ -276,7 +276,7 @@ $ systemctl hybrid-sleep
 
 ## Escrevendo arquivos unit
 
-A sintaxe de [arquivos unit](http://www.freedesktop.org/software/systemd/man/systemd.unit.html) do *systemd* é inspirada nos arquivos *.desktop* da XDG Desktop Entry Specification, que por sua vez são inspirados nos arquivos *.ini* do Microsoft Windows. Os arquivos unit são carregados de vários localizações (para ver a lista completa, execute `systemctl show --property=UnitPath`), mas os principais são (listados da menor para a mais alta precedência):
+A sintaxe de [arquivos unit](https://www.freedesktop.org/software/systemd/man/systemd.unit.html) do *systemd* é inspirada nos arquivos *.desktop* da XDG Desktop Entry Specification, que por sua vez são inspirados nos arquivos *.ini* do Microsoft Windows. Os arquivos unit são carregados de vários localizações (para ver a lista completa, execute `systemctl show --property=UnitPath`), mas os principais são (listados da menor para a mais alta precedência):
 
 *   `/usr/lib/systemd/system/`: units fornecidas por pacotes instalados
 *   `/etc/systemd/system/`: units instaladas pelo administrador do sistema
@@ -286,7 +286,7 @@ A sintaxe de [arquivos unit](http://www.freedesktop.org/software/systemd/man/sys
 *   Os caminhos de carregamento são completamente diferentes quando se está executando *systemd* em [modo usuário](/index.php/Systemd/User#How_it_works "Systemd/User").
 *   Nomes de unit do systemd só podem conter caracteres alfanuméricos, sublinhados e pontos. Todos outros caracteres devem ser substituídos por escapes no estilo C "\x2d" ou deve-se empregar suas semânticas predefinidas ('@', '-'). Veja [systemd.unit(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5) e [systemd-escape(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-escape.1) para mais informações.
 
-Veja as units instaladas por seus pacotes para exemplos, bem como a [seção de exemplos comentados](http://www.freedesktop.org/software/systemd/man/systemd.service.html#Examples) de [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5).
+Veja as units instaladas por seus pacotes para exemplos, bem como a [seção de exemplos comentados](https://www.freedesktop.org/software/systemd/man/systemd.service.html#Examples) de [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5).
 
 **Dica:** Comentários prefixados com `#` também podem ser usados em arquivos units, mas apenas em novas linhas. Não use comentários em fim de linha após parâmetros do *systemd* ou a unidade não conseguirá ativar.
 
@@ -307,7 +307,7 @@ Há vários tipos de execução diferentes a considerar quando se escreve um arq
 *   `Type=dbus`: o serviço é considerado pronto quando o `BusName` especificado aparece no barramento do sistema do DBus.
 *   `Type=idle`: *systemd*vai atrasar a execução do binário do serviço até todos os trabalhos serem despachados. Além desse comportamento, é muito similar a `Type=simple`.
 
-Veja a página man [systemd.service(5)](http://www.freedesktop.org/software/systemd/man/systemd.service.html#Type=) para uma explicação mais detalhada dos valores de `Type`.
+Veja a página man [systemd.service(5)](https://www.freedesktop.org/software/systemd/man/systemd.service.html#Type=) para uma explicação mais detalhada dos valores de `Type`.
 
 ### Editando units fornecidas
 
@@ -643,7 +643,7 @@ Veja [journalctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1) pa
 
 Compatibilidade com uma implementação clássica, sem journald, do [syslog](/index.php/Syslog-ng "Syslog-ng") pode ser fornecida deixando o *systemd* encaminhar todas as mensagens pelo soquete `/run/systemd/journal/syslog`. Para fazer funcionar o daemon do syslog com o journal, ele tem que associar a este soquete em vez de `/dev/log` ([anúncio oficial](http://lwn.net/Articles/474968/)).
 
-O `journald.conf` padrão para encaminhar para o soquete é `ForwardToSyslog=no` para evitar sobrecarga de sistema, porque [rsyslog](/index.php/Rsyslog "Rsyslog") ou [syslog-ng](/index.php/Syslog-ng "Syslog-ng") obtêm as mensagens do journal [eles mesmo](http://lists.freedesktop.org/archives/systemd-devel/2014-August/022295.html#journald).
+O `journald.conf` padrão para encaminhar para o soquete é `ForwardToSyslog=no` para evitar sobrecarga de sistema, porque [rsyslog](/index.php/Rsyslog "Rsyslog") ou [syslog-ng](/index.php/Syslog-ng "Syslog-ng") obtêm as mensagens do journal [eles mesmo](https://lists.freedesktop.org/archives/systemd-devel/2014-August/022295.html#journald).
 
 Veja [Syslog-ng#Overview](/index.php/Syslog-ng#Overview "Syslog-ng") e [Syslog-ng#syslog-ng and systemd journal](/index.php/Syslog-ng#syslog-ng_and_systemd_journal "Syslog-ng") e [rsyslog](/index.php/Rsyslog "Rsyslog"), para detalhes sobre a configuração.
 
@@ -798,7 +798,7 @@ Aug 25 12:22:31 mypc systemd[1]: **Started Load Kernel Modules**.
 
 ### Diagnosticar problemas de inicialização
 
-O *systemd* tem várias opções para diagnosticar problemas com o processo de inicialização. Veja [Depuração de inicialização](/index.php/Boot_debugging "Boot debugging") para instruções mais gerais e opções para capturar mensagens de inicialização antes que o *systemd* assuma o [processo de inicialização](/index.php/Processo_de_inicializa%C3%A7%C3%A3o "Processo de inicialização"). Veja também a [documentação de depuração do systemd](http://freedesktop.org/wiki/Software/systemd/Debugging/).
+O *systemd* tem várias opções para diagnosticar problemas com o processo de inicialização. Veja [Depuração de inicialização](/index.php/Boot_debugging "Boot debugging") para instruções mais gerais e opções para capturar mensagens de inicialização antes que o *systemd* assuma o [processo de inicialização](/index.php/Processo_de_inicializa%C3%A7%C3%A3o "Processo de inicialização"). Veja também a [documentação de depuração do systemd](https://freedesktop.org/wiki/Software/systemd/Debugging/).
 
 ### Diagnosticar um serviço
 
@@ -823,7 +823,7 @@ então, [reinicie](/index.php/Reinicie "Reinicie") *systemd-networkd* e monitore
 
 ### Desligamento/reinicialização demora demais
 
-Se o processo de desligamento leva um tempo muito longo (ou parece estar congelado) muito provavelmente um serviço que não se encerra é o responsável. O *systemd* espera um tempo para cada serviço encerrar antes de tentar matá-lo. Para descobrir se você foi afetado, veja [esse artigo](http://freedesktop.org/wiki/Software/systemd/Debugging#Shutdown_Completes_Eventually).
+Se o processo de desligamento leva um tempo muito longo (ou parece estar congelado) muito provavelmente um serviço que não se encerra é o responsável. O *systemd* espera um tempo para cada serviço encerrar antes de tentar matá-lo. Para descobrir se você foi afetado, veja [esse artigo](https://freedesktop.org/wiki/Software/systemd/Debugging#Shutdown_Completes_Eventually).
 
 ### Processos de curta duração não parecem registrar qualquer saída
 

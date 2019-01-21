@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [DeveloperWiki:Projects](/index.php/DeveloperWiki:Projects "DeveloperWiki:Projects"). Data da última tradução: 2019-01-10\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=DeveloperWiki:Projects&diff=0&oldid=559835) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [DeveloperWiki:Projects](/index.php/DeveloperWiki:Projects "DeveloperWiki:Projects"). Data da última tradução: 2019-01-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=DeveloperWiki:Projects&diff=0&oldid=563592) na versão em inglês.
 
 Links:
 

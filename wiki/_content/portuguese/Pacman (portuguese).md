@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Pacman](/index.php/Pacman "Pacman"). Data da última tradução: 2019-01-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman&diff=0&oldid=561237) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Pacman](/index.php/Pacman "Pacman"). Data da última tradução: 2019-01-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman&diff=0&oldid=563885) na versão em inglês.
 
 Artigos relacionados
 
@@ -19,9 +19,9 @@ O [gerenciador de pacote](https://en.wikipedia.org/wiki/Package_management_syste
 
 O *pacman* mantém o sistema atualizado, listas de pacotes de sincronização com o servidor mestre. Este modelo servidor/cliente também permite o usuário baixar/instalar pacotes com um simples comando, completo com todas as dependências requeridas.
 
-O *pacman* é escrito na linguagem de programação C e usa o formato [tar](https://en.wikipedia.org/wiki/pt:TAR "w:pt:TAR") para empacotamento.
+O *pacman* é escrito na linguagem de programação [C](/index.php/C "C") e usa o formato [tar](https://en.wikipedia.org/wiki/pt:TAR "w:pt:TAR") do [bsdtar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bsdtar.1) para empacotamento.
 
-**Dica:** O pacote [pacman](https://www.archlinux.org/packages/?name=pacman) contém ferramentas tal como [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") e *vercmp*. Outras ferramentas úteis como o *pactree* e [checkupdates](/index.php/Checkupdates_(Portugu%C3%AAs) "Checkupdates (Português)") estão localizados em [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) ([anteriormente](https://git.archlinux.org/pacman.git/commit/?id=0c99eabd50752310f42ec808c8734a338122ec86) parte do pacman). Execute `pacman -Ql pacman pacman-contrib | grep -E 'bin/.+'` para ver a lista completa.
+**Dica:** O pacote [pacman](https://www.archlinux.org/packages/?name=pacman) contém ferramentas tal como [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") e *vercmp*. Outras ferramentas úteis como o [pactree](#Pactree) e [checkupdates](/index.php/Checkupdates_(Portugu%C3%AAs) "Checkupdates (Português)") estão localizados em [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) ([anteriormente](https://git.archlinux.org/pacman.git/commit/?id=0c99eabd50752310f42ec808c8734a338122ec86) parte do pacman). Execute `pacman -Ql pacman pacman-contrib | grep -E 'bin/.+'` para ver a lista completa.
 
 ## Contents
 
@@ -328,7 +328,7 @@ Veja [Pacman/Dicas e truques](/index.php/Pacman/Dicas_e_truques "Pacman/Dicas e 
 
 #### Pactree
 
-**Nota:** *pactree* não é mais parte do pacote [pacman](https://www.archlinux.org/packages/?name=pacman). Agora ele pode ser encontrado no [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib).
+**Nota:** [pactree(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pactree.8) não é mais parte do pacote [pacman](https://www.archlinux.org/packages/?name=pacman). Agora ele pode ser encontrado no [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib).
 
 Para visualizar a árvore de dependência de um pacote:
 

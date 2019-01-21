@@ -668,7 +668,7 @@ Unable to determine failsafe session name.  Possible causes: xfconfd isn't runni
 
 ```
 
-Restarting Xfce or rebooting your system may solve the problem, but a corrupt session is the likely cause. Delete the session folder:
+Restarting Xfce or rebooting your system may solve the problem, but a corrupt session could also be the cause. Delete the session folder:
 
 ```
 $ rm -r ~/.cache/sessions/

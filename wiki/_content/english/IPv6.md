@@ -29,7 +29,8 @@ In Arch Linux, IPv6 is enabled by default.
         *   [7.2.2 NetworkManager](#NetworkManager_2)
         *   [7.2.3 ntpd](#ntpd)
     *   [7.3 systemd-networkd](#systemd-networkd_2)
-*   [8 See also](#See_also)
+*   [8 Prefer IPv4 over IPv6](#Prefer_IPv4_over_IPv6)
+*   [9 See also](#See_also)
 
 ## Neighbor discovery
 
@@ -398,6 +399,18 @@ which first clears the previous `ExecStart`, and then replaces it with one that 
 networkd supports disabling IPv6 on a per-interface basis. When a network unit's `[Network]` section has either `LinkLocalAddressing=ipv4` or `LinkLocalAddressing=no`, networkd will not try to configure IPv6 on the matching interfaces.
 
 Note however that even when using the above option, networkd will still be expecting to receive router advertisements if IPv6 is not disabled globally. If IPv6 traffic is not being received by the interface (e.g. due to sysctl or ip6tables settings), it will remain in the configuring state and potentially cause timeouts for services waiting for the network to be fully configured. To avoid this, the `IPv6AcceptRA=no` option should also be set in the `[Network]` section.
+
+## Prefer IPv4 over IPv6
+
+Uncomment the following line in `/etc/gai.conf`:
+
+```
+#
+#    For sites which prefer IPv4 connections change the last line to
+#
+precedence ::ffff:0:0/96  100
+
+```
 
 ## See also
 

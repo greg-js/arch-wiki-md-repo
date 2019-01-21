@@ -162,7 +162,7 @@ options root=LABEL=*arch_os* rw
 
 #### EFI Shells or other EFI apps
 
-In case you installed EFI shells and other EFI application into the ESP, you can use the following snippets.
+In case you installed [EFI shells](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Shell "Unified Extensible Firmware Interface") and [other EFI application](/index.php/REFInd#Tools "REFInd") into the ESP, you can use the following snippets.
 
 **Note:** The file path parameter for the `efi` line is relative to your *esp* mount point. If you are mounted on `/boot` and your EFI binaries reside at `/boot/EFI/xx.efi` and `/boot/yy.efi`, then you would specify the parameters as `efi /EFI/xx.efi` and `efi /yy.efi` respectively.
 

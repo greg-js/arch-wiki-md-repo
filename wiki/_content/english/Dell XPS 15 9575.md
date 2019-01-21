@@ -1,5 +1,7 @@
 **Note:** This page is far from completed. Some not mentioned items could be the same as [XPS 15 9560](/index.php/XPS_15_9560 "XPS 15 9560") and [Dell XPS 15 9570](/index.php/Dell_XPS_15_9570 "Dell XPS 15 9570")
 
+This page is about the Dell XPS 15 9575, also known as the Dell XPS 15 2-in-1.
+
 | **Device/Functionality** | **Status** |
 | [Suspend](#Suspend) | Working |
 | [Hibernate](#Hibernate) | Working |

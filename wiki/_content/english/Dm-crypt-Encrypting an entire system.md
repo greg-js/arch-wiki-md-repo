@@ -333,11 +333,13 @@ The disk layout in this example is:
 
 Prior to creating any partitions, you should inform yourself about the importance and methods to securely erase the disk, described in [dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation").
 
-**Tip:** When using the [GRUB](/index.php/GRUB "GRUB") bootloader together with [GPT](/index.php/GPT "GPT"), create a [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition").
+**Tip:** When using the [GRUB](/index.php/GRUB "GRUB") boot loader for BIOS booting from a [GPT](/index.php/GPT "GPT") disk, create a [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition").
 
-Create a partition to be mounted at `/boot` of type `8300` with a size of 200 MiB or more.
+Create a partition to be mounted at `/boot` with a size of 200 MiB or more.
 
-Create a partition of type `8E00`, which will later contain the encrypted container.
+**Tip:** UEFI systems can use the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") for `/boot`.
+
+Create a partition which will later contain the encrypted container.
 
 Create the LUKS encrypted container at the "system" partition. Enter the chosen password twice.
 
@@ -403,12 +405,18 @@ Mount your filesystems:
 
 ### Preparing the boot partition
 
-The bootloader loads the kernel, [initramfs](/index.php/Initramfs "Initramfs"), and its own configuration files from the `/boot` directory. This directory must be located on a separate unencrypted filesystem.
+The bootloader loads the kernel, [initramfs](/index.php/Initramfs "Initramfs"), and its own configuration files from the `/boot` directory. Any filesystem on a disk that can be read by the bootloader is eligible.
 
-Create a [filesystem](/index.php/Filesystem "Filesystem") on the partition intended for `/boot`. Any filesystem that can be read by the bootloader is eligible.
+Create a [filesystem](/index.php/Filesystem "Filesystem") on the partition intended for `/boot`:
 
 ```
 # mkfs.ext4 /dev/sdb1
+
+```
+
+**Tip:** When opting to keep `/boot` on an [EFI system partition](/index.php/EFI_system_partition "EFI system partition") the recommended formatting is
+```
+# mkfs.vfat /dev/sdb1
 
 ```
 
@@ -431,14 +439,14 @@ Mount the partition to `/mnt/boot`:
 Add the `keyboard`, `encrypt` and `lvm2` hooks to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
 
 ```
-HOOKS=(base **udev** autodetect **keyboard** **keymap** consolefont modconf block **encrypt** **lvm2** filesystems fsck)
+HOOKS=(base consolefont modconf block filesystems fsck autodetect **udev** **keyboard** **keymap** **encrypt** **lvm2**)
 
 ```
 
 If using the [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") hook with the systemd-based initramfs, the following needs to be set instead:
 
 ```
-HOOKS=(base **systemd** autodetect **keyboard** **sd-vconsole** modconf block **sd-encrypt** **sd-lvm2** filesystems fsck)
+HOOKS=(base modconf block filesystems fsck autodetect **systemd** **keyboard** **sd-vconsole** **sd-encrypt** **sd-lvm2**)
 
 ```
 
@@ -1114,15 +1122,15 @@ This section deals with extra configuration to let the system boot by only enter
 First create a keyfile and add it as LUKS key:
 
 ```
-# dd bs=512 count=4 if=/dev/random of=/root/cryplvm.keyfile iflag=fullblock
-# chmod 000 /root/cryplvm.keyfile
-# cryptsetup -v luksAddKey /dev/sda3 /root/cryplvm.keyfile
+# dd bs=512 count=4 if=/dev/random of=/root/cryptlvm.keyfile iflag=fullblock
+# chmod 000 /root/cryptlvm.keyfile
+# cryptsetup -v luksAddKey /dev/sda3 /root/cryptlvm.keyfile
 
 ```
 
 Add the keyfile to the initramfs image:
 
- `/etc/mkinitcpio.conf`  `FILES=(/root/cryplvm.keyfile)` 
+ `/etc/mkinitcpio.conf`  `FILES=(/root/cryptlvm.keyfile)` 
 
 Set the following kernel parameters to unlock the LUKS partition with the keyfile. Using the `encrypt` hook:
 

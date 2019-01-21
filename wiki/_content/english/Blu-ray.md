@@ -10,13 +10,13 @@ This article is designed to help Linux users to play the Blu-ray discs they have
     *   [1.1 Blu-ray DRM](#Blu-ray_DRM)
         *   [1.1.1 AACS](#AACS)
             *   [1.1.1.1 AACS decryption process](#AACS_decryption_process)
-        *   [1.1.2 BD+](#BD.2B)
+        *   [1.1.2 BD+](#BD+)
 *   [2 Playback](#Playback)
     *   [2.1 Preparation](#Preparation)
     *   [2.2 Decryption process](#Decryption_process)
-        *   [2.2.1 Decrypting using VUK (step 3.1 or 3.2.1)](#Decrypting_using_VUK_.28step_3.1_or_3.2.1.29)
-        *   [2.2.2 Decrypting using PK and Host K/C (step 3.2.2)](#Decrypting_using_PK_and_Host_K.2FC_.28step_3.2.2.29)
-        *   [2.2.3 BD+ support](#BD.2B_support)
+        *   [2.2.1 Decrypting using VUK (step 3.1 or 3.2.1)](#Decrypting_using_VUK_(step_3.1_or_3.2.1))
+        *   [2.2.2 Decrypting using PK and Host K/C (step 3.2.2)](#Decrypting_using_PK_and_Host_K/C_(step_3.2.2))
+        *   [2.2.3 BD+ support](#BD+_support)
     *   [2.3 Media players](#Media_players)
         *   [2.3.1 mplayer](#mplayer)
             *   [2.3.1.1 Stuttering video](#Stuttering_video)
@@ -26,10 +26,10 @@ This article is designed to help Linux users to play the Blu-ray discs they have
         *   [2.3.3 xine](#xine)
     *   [2.4 Troubleshooting](#Troubleshooting)
         *   [2.4.1 Absent KEYDB.cfg file](#Absent_KEYDB.cfg_file)
-        *   [2.4.2 Revoked Host key/certificate](#Revoked_Host_key.2Fcertificate)
+        *   [2.4.2 Revoked Host key/certificate](#Revoked_Host_key/certificate)
         *   [2.4.3 Using aacskeys](#Using_aacskeys)
             *   [2.4.3.1 If aacskeys is not able to generate the key](#If_aacskeys_is_not_able_to_generate_the_key)
-        *   [2.4.4 If you have the corresponding VUK but the Blu-ray won't play](#If_you_have_the_corresponding_VUK_but_the_Blu-ray_won.27t_play)
+        *   [2.4.4 If you have the corresponding VUK but the Blu-ray won't play](#If_you_have_the_corresponding_VUK_but_the_Blu-ray_won't_play)
 *   [3 See also](#See_also)
 
 ## How it works
@@ -260,7 +260,7 @@ For DVD, the [libdvdcss](https://www.archlinux.org/packages/?name=libdvdcss) pac
 *   [aacskeys](https://aur.archlinux.org/packages/aacskeys/) - Open source
 *   [makemkv](https://aur.archlinux.org/packages/makemkv/) - Closed source/limited free beta
 
-*   [vukextract](https://github.com/m4tthi4s/vukextract) - Open source software that uses proprietary DVDFab to extract VUKs
-*   [anydvdhd](http://www.slysoft.com/en/anydvdhd.html) - Commercial software requiring users to run it on an Microsoft OS in a VM.
+*   [vukextract](https://github.com/m4tthi4s/vukextract) [VukExtract support+discussion](https://forum.doom9.org/showthread.php?t=174404) - Open source software that uses proprietary DVDFab to extract VUKs
+*   [AnyDVD HD](https://www.redfox.bz/anydvdhd.html) - Commercial software requiring users to run it on an Microsoft OS in a VM.
 *   [DVDFab HD Decrypter](https://appdb.winehq.org/objectManager.php?sClass=application&iId=2377) - Commercial software for Windows, but works fine using [Wine](/index.php/Wine "Wine").
 *   [Aiseesoft Blu-ray Player](https://www.aiseesoft.com/blu-ray-player/) - Commercial software player for Windows, but works fine using [Wine](/index.php/Wine "Wine").

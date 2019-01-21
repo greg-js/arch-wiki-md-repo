@@ -19,6 +19,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 *   [1 Hardware](#Hardware)
     *   [1.1 Fingerprint reader](#Fingerprint_reader)
 *   [2 Powersaving](#Powersaving)
+    *   [2.1 SD Card Reader](#SD_Card_Reader)
 *   [3 Thermal Throttling Fix](#Thermal_Throttling_Fix)
 *   [4 See also](#See_also)
 
@@ -93,6 +94,22 @@ Without special configuration and with default firmware settings, power usage is
 *   Disable unused peripherals under "Security" -> "I/O port access" in the firmware. This especially applies to the SD/MMC-cardreader, which seems to drain some power even when idle
 
 As of Kernel 4.15, DisplayPort PSR (Panel self refresh) is disabled by default and broken when forcibly enabled (system hangs after a few seconds, display lag). 4.17-rc1 seems to improve a lot in this regard, but PSR still sometimes causes the screen to freeze for a few seconds.
+
+### SD Card Reader
+
+According to various reports the SD card reader drains several watts of power. If you don't want to disable it in bios because you use it semi-regularly, you can turn it off by unbinding its driver using this command:
+
+```
+echo "2-3" | sudo tee /sys/bus/usb/drivers/usb/unbind
+
+```
+
+You can then turn the reader back on by running:
+
+```
+echo "2-3" | sudo tee /sys/bus/usb/drivers/usb/bind
+
+```
 
 ## Thermal Throttling Fix
 

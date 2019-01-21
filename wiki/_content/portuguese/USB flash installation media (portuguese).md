@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [USB flash installation media](/index.php/USB_flash_installation_media "USB flash installation media"). Data da última tradução: 2018-12-31\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=USB_flash_installation_media&diff=0&oldid=559198) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [USB flash installation media](/index.php/USB_flash_installation_media "USB flash installation media"). Data da última tradução: 2019-01-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=USB_flash_installation_media&diff=0&oldid=563340) na versão em inglês.
 
 Artigos relacionados
 
@@ -60,7 +60,7 @@ Se você deseja executar uma instalação completa do Arch Linux a partir de uma
 Execute o seguinte comando, substituindo `/dev/**sdx**` pela sua unidade, por exemplo `/dev/sdb`. (**não** anexe um número de partição, de forma a **não** usar algo como `/dev/sdb**1**`)
 
 ```
-# dd bs=4M if=/path/to/archlinux.iso of=/dev/**sdx** status=progress oflag=sync
+# dd bs=4M if=path/to/archlinux.iso of=/dev/**sdx** status=progress oflag=sync
 
 ```
 
@@ -140,7 +140,7 @@ Agora, inicie seu `prompt de comando` como administrador. Em seguida, mude o dir
 Se a sua ISO do Arch Linux estiver em outro lugar, você pode precisar declarar o caminho completo, por conveniência, você pode querer colocar o ISO do Arch Linux na mesma pasta que o executável dd. O formato básico do comando será semelhante a este:
 
 ```
-# dd if=*archlinux-2017-XX-YY-x86_64.iso* od=\\.\*x*: bs=4M
+# dd if=*archlinux-*versão*-x86_64.iso* od=\\.\*x*: bs=4M
 
 ```
 
@@ -151,11 +151,11 @@ Se a sua ISO do Arch Linux estiver em outro lugar, você pode precisar declarar 
 Simplesmente substitua os vários pontos nulos (indicados por um "x") com a data correta e letra de unidade correta. Aqui está um exemplo completo. Por exemplo:
 
 ```
-# dd if=ISOs\archlinux-2017.04.01-x86_64.iso od=\\.\d: bs=4M
+# dd if=ISOs\archlinux-*versão*-x86_64.iso od=\\.\d: bs=4M
 
 ```
 
-**Nota:** Alternativamente, substitua a letra da unidade com `\\.\PhysicalDrive*X*`, sendo `*X*` o número da unidade física (inicia do 0). Por exemplo: `# dd if=ISOs\archlinux-2017.04.01-x86_64.iso of=\\.\PhysicalDrive1 bs=4M` 
+**Nota:** Alternativamente, substitua a letra da unidade com `\\.\PhysicalDrive*X*`, sendo `*X*` o número da unidade física (inicia do 0). Por exemplo: `# dd if=ISOs\archlinux-*versão*-x86_64.iso of=\\.\PhysicalDrive1 bs=4M` 
 
 Você pode descobrir o número da unidade física digitando `wmic diskdrive list brief` no prompt de comando ou com `dd --list`
 
@@ -203,7 +203,7 @@ Esse método é mais complicado do que gravar a imagem diretamente com `dd`, mas
 
 ```
 # mkdir -p /mnt/{iso,usb}
-# mount -o loop archlinux-2017.04.01-x86_64.iso /mnt/iso
+# mount -o loop archlinux-*versão*-x86_64.iso /mnt/iso
 # mount /dev/sd**Xn** /mnt/usb
 # cp -a /mnt/iso/* /mnt/usb
 # sync
@@ -211,7 +211,7 @@ Esse método é mais complicado do que gravar a imagem diretamente com `dd`, mas
 
 ```
 
-Para inicializar um rótulo ou um [UUID](/index.php/UUID "UUID") para selecionar, é necessário informar a partição a ser inicializada. Por padrão, o rótulo `ARCH_2017**XX**` (com o mês de lançamento apropriado) é usado. Assim, o rótulo da partição precisa ser definido de acordo, por exemplo, usando *gparted*. Alternativamente, você pode mudar este comportamento alterando as linhas terminadas por `archisolabel=ARCH_2017**XX**` no arquivo `/mnt/usb/arch/boot/syslinux/archiso_sys.cfg` (para inicialização de BIOS), e em `/mnt/usb/loader/entries/archiso-x86_64.conf` (para inicialização com UEFI). Para usar um UUID, substitua as porções de linhas com `archiso*dispositivo*=/dev/disk/by-uuid/**SEU-UUID**`. O UUID pode ser recuperado com `blkid -o *valor* -s UUID /dev/sd**Xn**`.
+Para inicializar um rótulo ou um [UUID](/index.php/UUID "UUID") para selecionar, é necessário informar a partição a ser inicializada. Por padrão, o rótulo `ARCH_*AAAAMM*` (com o ano e mês de lançamento apropriado) é usado. Assim, o rótulo da partição precisa ser definido de acordo, por exemplo, usando *gparted*. Alternativamente, você pode mudar este comportamento alterando as linhas terminadas por `archisolabel=ARCH_*AAAAMM*` no arquivo `/mnt/usb/arch/boot/syslinux/archiso_sys.cfg` (para inicialização de BIOS), e em `/mnt/usb/loader/entries/archiso-x86_64.conf` (para inicialização com UEFI). Para usar um UUID, substitua as porções de linhas com `archiso*dispositivo*=/dev/disk/by-uuid/**SEU-UUID**`. O UUID pode ser recuperado com `blkid -o *valor* -s UUID /dev/sd**Xn**`.
 
 **Atenção:** A incompatibilidade de rótulos ou o UUID errado impede a inicialização da mídia criada.
 
@@ -369,7 +369,7 @@ DEFAULT arch_iso
 LABEL arch_iso
         MENU LABEL Arch Setup
         LINUX memdisk
-        INITRD /Boot/ISOs/archlinux-2017.04.01-x86_64.iso
+        INITRD /Boot/ISOs/archlinux-*versão*-x86_64.iso
         APPEND iso
 ```
 
@@ -388,7 +388,7 @@ syslinux.exe -m -a -d /Boot/Settings X:
 
 ## Solução de problemas
 
-*   Se você receber o erro "device did not show up after 30 seconds" devido à não montagem do `/dev/disk/by-label/ARCH_XXXXYY`, tente renomear sua mídia USB para `ARCH_XXXXYY` (por exemplo, `ARCH_201501`).
+*   Se você receber o erro "device did not show up after 30 seconds" devido à não montagem do `/dev/disk/by-label/ARCH_*AAAAMM*`, tente renomear sua mídia USB para `ARCH_*AAAAMM*` (por exemplo, `ARCH_201501`).
 *   Se você receber erros, tente usar outro dispositivo USB. Existem casos em que resolveu todos os problemas.
 
 ## Veja também

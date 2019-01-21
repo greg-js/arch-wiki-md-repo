@@ -15,11 +15,13 @@
     *   [2.2 Remote API](#Remote_API)
         *   [2.2.1 Remote API с systemd](#Remote_API_с_systemd)
     *   [2.3 Конфигурация сокета демона](#Конфигурация_сокета_демона)
-        *   [2.3.1 Конфигурация Proxy](#Конфигурация_Proxy)
-        *   [2.3.2 Конфигурация контейнера](#Конфигурация_контейнера)
-    *   [2.4 Конфигурация DNS](#Конфигурация_DNS)
-    *   [2.5 Запуск Docker с сетью, заданной вручную, в systemd-networkd](#Запуск_Docker_с_сетью,_заданной_вручную,_в_systemd-networkd)
-    *   [2.6 Расположение образов](#Расположение_образов)
+    *   [2.4 Proxies](#Proxies)
+        *   [2.4.1 Конфигурация Proxy](#Конфигурация_Proxy)
+        *   [2.4.2 Конфигурация контейнера](#Конфигурация_контейнера)
+    *   [2.5 Конфигурация DNS](#Конфигурация_DNS)
+    *   [2.6 Запуск Docker с сетью, заданной вручную, в systemd-networkd](#Запуск_Docker_с_сетью,_заданной_вручную,_в_systemd-networkd)
+    *   [2.7 Расположение образов](#Расположение_образов)
+    *   [2.8 Insecure registries](#Insecure_registries)
 *   [3 Docker 0.9.0 — 1.2.x и LXC](#Docker_0.9.0_—_1.2.x_и_LXC)
 *   [4 Skype](#Skype)
 *   [5 Сборка образа i686](#Сборка_образа_i686)
@@ -106,6 +108,8 @@ ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:4243 -H unix:///var/run/docker.sock
 ListenStream=0.0.0.0:2375
 ```
 
+### Proxies
+
 #### Конфигурация Proxy
 
 Создайте [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") со следующим содержанием:
@@ -169,6 +173,17 @@ IPForward=kernel
 [Service]
 ExecStart= 
 ExecStart=/usr/bin/dockerd --data-root=*/path/to/new/location/docker* -H fd://
+```
+
+### Insecure registries
+
+If you decide to use a self signed certificate for your private registry, Docker will refuse to use it until you declare that you trust it. Add a [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") for the `docker.service`, adding the `--insecure-registry` parameter to the `dockerd`:
+
+ `/etc/systemd/system/docker.service.d/override.conf` 
+```
+[Service]
+ExecStart=
+ExecStart=/usr/bin/dockerd -H fd:// --insecure-registry my.registry.name:5000
 ```
 
 ## Docker 0.9.0 — 1.2.x и LXC
@@ -244,5 +259,7 @@ $ docker run -t -i --rm debian /bin/bash
 
 ## Смотрите также
 
-*   [Arch Linux на docs.docker.com](https://docs.docker.com/installation/archlinux/)
+*   [Official website](https://www.docker.com)
+*   [Arch Linux на docs.docker.com](https://docs.docker.com/engine/installation/linux/archlinux/)
+*   [Are Docker containers really secure?](http://opensource.com/business/14/7/docker-security-selinux) — opensource.com
 *   [Arch Linux Docker Tutorial на linuxhint.com](https://linuxhint.com/arch-linux-docker-tutorial/)

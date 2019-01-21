@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Telnet](/index.php/Telnet "Telnet"). Data da última tradução: 2019-01-10\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Telnet&diff=0&oldid=549518) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Telnet](/index.php/Telnet "Telnet"). Data da última tradução: 2019-01-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Telnet&diff=0&oldid=562857) na versão em inglês.
 
 [Telnet](https://en.wikipedia.org/wiki/pt:Telnet ou encapsulada através de uma VPN. Para uma alternativa segura, veja [SSH](/index.php/SSH_(Portugu%C3%AAs) "SSH (Português)").
 

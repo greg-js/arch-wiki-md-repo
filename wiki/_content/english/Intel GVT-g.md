@@ -8,6 +8,13 @@ Related articles
 
 There is also a variant of this technology called GVT-d - it is essentially Intel's name for full device passthrough with the vfio-pci driver. With GVT-d, the host cannot use the virtualized GPU.
 
+## Contents
+
+*   [1 Configuration](#Configuration)
+*   [2 Troubleshooting](#Troubleshooting)
+    *   [2.1 Missing mdev_supported_types directory](#Missing_mdev_supported_types_directory)
+*   [3 See also](#See_also)
+
 ## Configuration
 
 You'll have to create a virtual GPU (vGPU) first, then assign it to your VM. The guest with a vGPU sees it as a "regular" GPU - just install the latest native drivers. (The vGPU actually does need specialized drivers to work correctly, but all the required changes are present in the latest upstream Linux/Windows drivers.)
@@ -51,6 +58,17 @@ Finally, to create a VM with the virtualized GPU, add this parameter to the QEMU
 
 ```
 
+## Troubleshooting
+
+### Missing mdev_supported_types directory
+
+If you have followed instructions and added *i915.enable_gvt=1* kernel parameter, but there is still no `/sys/bus/pci/devices/0000:02:00.0/mdev_supported_types` directory, probably your hardware is not supported. Check dmesg log for this message:
+
+ `dmesg | grep -i gvt `  `[    4.227468] [drm] Unsupported device. GVT-g is disabled` 
+
+Coffee Lake is not supported yet. See this: [https://github.com/intel/gvt-linux/issues/53](https://github.com/intel/gvt-linux/issues/53)
+
 ## See also
 
 *   [Official GVT-g Setup Guide](https://github.com/intel/gvt-linux/wiki/GVTg_Setup_Guide)
+*   [Running Windows via QEMU/KVM and Intel GVT-g](https://www.reddit.com/r/VFIO/comments/8h352p/guide_running_windows_via_qemukvm_and_intel_gvtg/)

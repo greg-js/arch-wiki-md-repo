@@ -127,36 +127,31 @@ Some good examples of rc.lua would be as follows:
 
 ### Extensions
 
-Several extensions are available for awesome (3.5+):
+Several extensions are available for awesome:
 
-| Extension | Functionality |
+| Extension | Functionality | Version |
 | 
 
-*   [Revelation](http://awesome.naquadah.org/wiki/Revelation)
+*   [Revelation](https://github.com/guotsuan/awesome-revelation)
 
- | Bring up a view of all opened clients |
+ | Bring up a view of all opened clients | Awesome 3.5+ |
 | 
 
-*   [Shifty](http://awesome.naquadah.org/wiki/Shifty)
+*   [Shifty](https://github.com/bioe007/awesome-shifty)
 
- | Dynamic tagging |
+ | Dynamic tagging | Awesome 3.5 |
 | 
 
 *   [Naughty](https://awesomewm.org/apidoc/libraries/naughty.html)
 
- | Pop-up notifications |
+ | Pop-up notifications | Awesome 3.5+ |
 | 
 
-*   [Vicious](http://awesome.naquadah.org/wiki/Vicious) ([README](http://git.sysphere.org/vicious/tree/README))
-*   [Obvious](http://awesome.naquadah.org/wiki/Obvious)
-*   [Bashets](http://awesome.naquadah.org/wiki/Bashets)
+*   [Vicious](https://github.com/vicious-widgets/vicious)
+*   [Obvious](https://github.com/hoelzro/obvious)
+*   [Bashets](https://code.google.com/archive/p/bashets/)
 
- | Additional [widgets](http://awesome.naquadah.org/wiki/Widgets_in_awesome) |
-| 
-
-*   [Run or raise](http://awesome.naquadah.org/wiki/Run_or_raise)
-
- | Start a program if no instance exists, else jump to it |
+ | Additional [widgets](https://awesomewm.org/recipes/) | Awesome 3.5 |
 
 ### Autostart
 
@@ -245,7 +240,7 @@ beautiful.init(awful.util.getdir("config") .. "/themes/default/theme.lua")
 
 ```
 
-See also [[2]](https://awesomewm.org/apidoc/libraries/beautiful.html) for additional theming options. To add a useless gap for example, add
+See also [[1]](https://awesomewm.org/apidoc/libraries/beautiful.html) for additional theming options. To add a useless gap for example, add
 
 ```
 beautiful.useless_gap = 5
@@ -275,7 +270,7 @@ end
 
 ```
 
-For a random background image, add [[3]](https://gist.github.com/anonymous/37f3b1c58d6616cab756) to `rc.lua` (v3.5+). To automatically fetch images from a given directory use [[4]](https://gist.github.com/anonymous/9072154f03247ab6e28c) instead.
+For a random background image, add [[2]](https://gist.github.com/anonymous/37f3b1c58d6616cab756) to `rc.lua` (v3.5+). To automatically fetch images from a given directory use [[3]](https://gist.github.com/anonymous/9072154f03247ab6e28c) instead.
 
 To simply specify the wallpaper in your `rc.lua`, add the following line to the theming section:
 
@@ -444,7 +439,7 @@ Note that the `.desktop` files are re-read each time awesome starts, thereby slo
 
 ### Pop-up menus
 
-There is a simple menu by default in awesome 3, simplifying custom menus. [[5]](https://awesomewm.org/apidoc/libraries/awful.menu.html) If you want a freedesktop.org menu, you could take a look at *[awesome-freedesktop](https://github.com/copycat-killer/awesome-freedesktop)*.
+There is a simple menu by default in awesome 3, simplifying custom menus. [[4]](https://awesomewm.org/apidoc/libraries/awful.menu.html) If you want a freedesktop.org menu, you could take a look at *[awesome-freedesktop](https://github.com/copycat-killer/awesome-freedesktop)*.
 
 ### Applications menu
 
@@ -477,7 +472,7 @@ awful.titlebar.hide(c)
 
 ### Battery notification
 
-See [this blog post](http://bpdp.blogspot.be/2013/06/battery-warning-notification-for.html) for a simple battery notification to add to `rc.lua`. Note that it needs *naughty* for the notifications (installed by default in version 3.5). Other examples are available at [awesome wiki](https://awesome.naquadah.org/wiki/Gigamo_Battery_Widget#Simple_modular_version_for_3.4).
+See [this blog post](http://bpdp.blogspot.be/2013/06/battery-warning-notification-for.html) for a simple battery notification to add to `rc.lua`. Note that it needs *naughty* for the notifications (installed by default in version 3.5). Other examples are available at [awesome wiki](https://awesomewm.org/recipes/).
 
 4/10/2018: The above mentioned wiki no longer exists. [(Reddit comment: What happened to the wiki?)](https://www.reddit.com/r/awesomewm/comments/5k9vob/what_happened_to_the_wiki/)
 
@@ -640,7 +635,7 @@ keysym Caps_Lock = Super_L Caps_Lock
 
 ### Fix Java (GUI appears gray only)
 
-See [awesome wiki](http://awesome.naquadah.org/wiki/Problems_with_Java) and [[6]](https://bbs.archlinux.org/viewtopic.php?pid=450870).
+See [awesome wiki](http://awesome.naquadah.org/wiki/Problems_with_Java) and [[5]](https://bbs.archlinux.org/viewtopic.php?pid=450870).
 
 ### Eclipse: cannot resize/move main window
 
@@ -745,7 +740,7 @@ or:
 
 ```
 
-See [[7]](https://bbs.archlinux.org/viewtopic.php?pid=1085494#p1085494).
+See [[6]](https://bbs.archlinux.org/viewtopic.php?pid=1085494#p1085494).
 
 ### Prevent the mouse scroll wheel from changing tags
 

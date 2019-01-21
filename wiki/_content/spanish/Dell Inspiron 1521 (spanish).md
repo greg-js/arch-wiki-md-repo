@@ -1,15 +1,18 @@
+**Estado de la traducción**
+Este artículo es una traducción de [Dell Inspiron 1521](/index.php/Dell_Inspiron_1521 "Dell Inspiron 1521"), revisada por última vez el **2019-01-19**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Dell_Inspiron_1521&diff=0&oldid=563919) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
 ## Contents
 
-*   [1 Hardware Specifications](#Hardware_Specifications)
-    *   [1.1 lspci Output](#lspci_Output)
-    *   [1.2 lsusb Output](#lsusb_Output)
-*   [2 Networking](#Networking)
-    *   [2.1 Wireless](#Wireless)
+*   [1 Especificaciones de hardware](#Especificaciones_de_hardware)
+    *   [1.1 Salida de lspci](#Salida_de_lspci)
+    *   [1.2 Salida de lsusb](#Salida_de_lsusb)
+*   [2 Red](#Red)
+    *   [2.1 Wifi](#Wifi)
         *   [2.1.1 Broadcom Corporation BCM4311](#Broadcom_Corporation_BCM4311)
 
-## Hardware Specifications
+## Especificaciones de hardware
 
-### lspci Output
+### Salida de lspci
 
 ```
 00:00.0 Host bridge: ATI Technologies Inc RS690 Host Bridge
@@ -42,7 +45,7 @@
 
 ```
 
-### lsusb Output
+### Salida de lsusb
 
 ```
 Bus 006 Device 001: ID 1d6b:0002  
@@ -54,17 +57,17 @@ Bus 004 Device 001: ID 1d6b:0001
 
 ```
 
-## Networking
+## Red
 
-My Network was extremely slow. This was caused by an IPv6 problem. After adding the following line in the `/etc/modprobe.d/modprobe.conf` everything was ok.
+El internet iba extremadamente lento. Esto era debido a un problema de IPv6. Después de agregar la siguiente línea a `/etc/modprobe.d/modprobe.conf`, todo funcionaba correctamente.
 
 ```
 alias net-pf-10 off
 
 ```
 
-### Wireless
+### Wifi
 
 #### Broadcom Corporation BCM4311
 
-Install [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl) package.
+[Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquete [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl).

@@ -386,7 +386,7 @@ Since Java 9 the GDK_SCALE environment variable is used to scale Swing applicati
 
 ### MATLAB
 
-Recent versions (R2017b) of [MATLAB](/index.php/MATLAB "MATLAB") allow to set the scale factor:
+Recent versions (R2017b) of [MATLAB](/index.php/MATLAB "MATLAB") allow to set the scale factor[[2]](https://www.mathworks.com/matlabcentral/answers/406956-does-matlab-support-high-dpi-screens-on-linux):
 
 ```
 >> s = settings;s.matlab.desktop.DisplayScaleFactor
@@ -398,11 +398,11 @@ The settings take effect after MATLAB is restarted.
 
 ### Mono applications
 
-According to [[2]](https://bugzilla.xamarin.com/show_bug.cgi?id=35870), Mono applications should be scalable like [GTK3](#GDK_3_(GTK+_3)) applications.
+According to [[3]](https://bugzilla.xamarin.com/show_bug.cgi?id=35870), Mono applications should be scalable like [GTK3](#GDK_3_(GTK+_3)) applications.
 
 ### NetBeans
 
-NetBeans allows the font size of its interface to be controlled using the `--fontsize` parameter during startup. To make this change permanent edit the `/usr/share/netbeans/etc/netbeans.conf` file and append the `--fontsize` parameter to the `netbeans_default_options` property.[[3]](http://wiki.netbeans.org/FaqFontSize)
+NetBeans allows the font size of its interface to be controlled using the `--fontsize` parameter during startup. To make this change permanent edit the `/usr/share/netbeans/etc/netbeans.conf` file and append the `--fontsize` parameter to the `netbeans_default_options` property.[[4]](http://wiki.netbeans.org/FaqFontSize)
 
 The editor fontsize can be controlled from *Tools > Option > Fonts & Colors*.
 
@@ -459,7 +459,7 @@ See [#Firefox](#Firefox). To access `about:config`, go to *Edit > Preferences > 
 
 **Note:** This only applies to KDE with scaling enabled.
 
-VirtualBox also applies the system-wide scaling to the virtual monitor, which reduces the maximum resolution inside VMs by your scaling factor (see [[4]](https://www.virtualbox.org/ticket/16604)).
+VirtualBox also applies the system-wide scaling to the virtual monitor, which reduces the maximum resolution inside VMs by your scaling factor (see [[5]](https://www.virtualbox.org/ticket/16604)).
 
 This can be worked around by calculating the inverse of your scaling factor and manually setting this new scaling factor for the VirtualBox execution, e.g.
 
@@ -524,7 +524,7 @@ When extending above the internal display, you may see part of the internal disp
 
 You may adjust the "sharpness" parameter on your monitor settings to adjust the blur level introduced with scaling.
 
-**Note:** Above solution with `--scale 2x2` does not work on some Nvidia cards. No solution is currently available. [[5]](https://bbs.archlinux.org/viewtopic.php?pid=1670840) A potential workaround exists with configuring `ForceFullCompositionPipeline=On` on the `CurrentMetaMode` via `nvidia-settings`. For more info see [[6]](https://askubuntu.com/a/979551/763549).
+**Note:** Above solution with `--scale 2x2` does not work on some Nvidia cards. No solution is currently available. [[6]](https://bbs.archlinux.org/viewtopic.php?pid=1670840) A potential workaround exists with configuring `ForceFullCompositionPipeline=On` on the `CurrentMetaMode` via `nvidia-settings`. For more info see [[7]](https://askubuntu.com/a/979551/763549).
 
 ### Multiple external monitors
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Daemon](/index.php/Daemon "Daemon"). Data da última tradução: 2018-11-04\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Daemon&diff=0&oldid=550507) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Daemon](/index.php/Daemon "Daemon"). Data da última tradução: 2019-01-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Daemon&diff=0&oldid=561789) na versão em inglês.
 
 Um [daemon](https://en.wikipedia.org/wiki/Daemon_(computing) é um programa que roda em "background" como um processo (sem terminal ou interface), que comumente espera por eventos para oferecer serviços. Um bom exemplo é um servidor web que espera por requisições para entregar uma página, ou um servidor ssh que espera por alguma tentativa de login. Apesar destes serem exemplos de aplicações bastante conhecidas e difundidas, há daemons cujo trabalho não é visível. Daemons que as tarefas são enviar logs para arquivos(ex: `syslog`, `metalog`) ou manter o horário do sistema sincronizado como o [ntpd](/index.php/Ntpd "Ntpd"). Para maiores informações veja [daemon(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/daemon.7).
 
@@ -70,7 +70,7 @@ man-db.service
 | [miniDLNA](/index.php/MiniDLNA "MiniDLNA") | minidlna | minidlna.service | Servidor DLNA/UPnP simples. |
  ? | ModemManager.service | Torna internet móvel(3G) disponível para o [NetworkManager](/index.php/NetworkManager_(Portugu%C3%AAs) "NetworkManager (Português)"). |
 | [mpd](/index.php/Mpd "Mpd") | mpd | mpd.service | Daemon de tocador de músicas |
-| [MySQL](/index.php/MySQL "MySQL") | mysqld | mysqld.service | Servidor de banco de dados MySQL. |
+| [MariaDB](/index.php/MariaDB "MariaDB") | mysqld | mysqld.service | Servidor de banco de dados MySQL. |
 | [MythTV](/index.php/MythTV "MythTV") | mythbackend | mythbackend.service | Backend para o gravador de vídeo e home theater MythTV. |
 | [BIND](/index.php/BIND "BIND") | named | named.service | Servidor DNS "de facto" Berkeley Internet Name Daemon (BIND) |
 | [netctl](/index.php/Netctl "Netctl") | netctl@.service | Ativação manual de perfil de rede. |

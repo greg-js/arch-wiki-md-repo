@@ -31,6 +31,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
         *   [1.5.2 Button Mapping](#Button_Mapping)
             *   [1.5.2.1 Airplane Mode Key Combination](#Airplane_Mode_Key_Combination)
             *   [1.5.2.2 Unmapped Buttons](#Unmapped_Buttons)
+        *   [1.5.3 Non-US Keyboards' Backslash/Pipe 102nd Key](#Non-US_Keyboards'_Backslash/Pipe_102nd_Key)
     *   [1.6 Touchpad](#Touchpad)
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 Webcam is not detected](#Webcam_is_not_detected)
@@ -168,6 +169,21 @@ The following buttons don't have any function or keycodes.
 
 *   FN + F7
 *   FN + Home
+
+#### Non-US Keyboards' Backslash/Pipe 102nd Key
+
+Systemd v240 addressed an issue for US keyboards which broke the mapping for the 102nd key on non-US keyboards. This is the key on the right of the space bar. For a UK keyboard it is the backslash/pipe key and you can correct the scancode to keycode mapping with `# setkeycodes 56 86` . To make this permanent, save the command to an executable shell script with a #!/bin/sh shebang, then create and enable the following systemd unit file:
+
+```
+[Unit]
+Description=Remap backslash key
+[Service]
+Type=oneshot
+ExecStart=/path/to/shell/script
+[Install]
+WantedBy=multi-user.target
+
+```
 
 ### Touchpad
 

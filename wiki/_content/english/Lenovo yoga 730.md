@@ -1,5 +1,3 @@
-**Note:** This is work in progress
-
 ## Contents
 
 *   [1 Install](#Install)

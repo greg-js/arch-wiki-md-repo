@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes"). Data da última tradução: 2018-11-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=File_permissions_and_attributes&diff=0&oldid=555714) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes"). Data da última tradução: 2019-01-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=File_permissions_and_attributes&diff=0&oldid=562573) na versão em inglês.
 
 Artigos relacionados
 
@@ -447,7 +447,7 @@ Para remover um atributo em um arquivo, basta alterar `+` para `-`.
 
 ## Atributos estendidos
 
-Do [attr(5)](https://linux.die.net/man/5/attr): "Atributos estendidos são pares nome:valor associados permanentemente a arquivos e diretórios". Existem quatro classes de atributos estendidos: segurança, sistema, confiável e usuário.
+Do [xattr(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xattr.7): "Atributos estendidos são pares nome:valor associados permanentemente a arquivos e diretórios". Existem quatro classes de atributos estendidos: segurança, sistema, confiável e usuário.
 
 **Atenção:** Por padrão, atributos estendidos não são preservados por [cp](/index.php/Cp_(Portugu%C3%AAs) "Cp (Português)"), [rsync](/index.php/Rsync "Rsync") e outros programas similares, veja [#Preservando atributos estendidos](#Preservando_atributos_estendidos).
 

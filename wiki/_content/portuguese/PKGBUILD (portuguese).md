@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"). Data da última tradução: 2019-01-02\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=PKGBUILD&diff=0&oldid=559829) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"). Data da última tradução: 2019-01-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=PKGBUILD&diff=0&oldid=563398) na versão em inglês.
 
 Artigos relacionados
 
@@ -80,7 +80,7 @@ O nome do pacote (por exemplo, `pkgname='foo'`) ou, para pacotes divididos, um v
 
 ### pkgver
 
-A versão do pacote. Ela deve ser a mesma que a versão de lançamento pelo autor do pacote. Ela pode conter letras, números, pontos e sublinhados, mas **não** um hífen (`-`). Se o autor do software usa um hífen, substitua-o com um sublinhado (`_`). Se a variável `pkgver` é usada posteriormente no PKGBUILD, então o sublinhado pode ser facilmente substituído por um hífen, ex.: `source=("$pkgname-${pkgver//_/-}.tar.gz")`.
+A versão do pacote. Ela deve ser a mesma que a versão publicada pelo autor do software *upstream*. Ela pode conter letras, números, pontos e sublinhados, mas **não** um hífen (`-`). Se o autor do software usa um hífen, substitua-o com um sublinhado (`_`). Se a variável `pkgver` é usada posteriormente no PKGBUILD, então o sublinhado pode ser facilmente substituído por um hífen, ex.: `source=("$pkgname-${pkgver//_/-}.tar.gz")`.
 
 **Nota:** Se o *upstream* usa um versionamento com marca de tempo como `30102014`, certifique-se de usar a data reversa, i.e. `20141030` (formato [ISO 8601](https://en.wikipedia.org/wiki/pt:ISO_8601 "wikipedia:pt:ISO 8601")). Do contrário, ela não aparecerá como uma versão mais nova
 
@@ -138,7 +138,7 @@ A licença sob a qual o software é distribuído. O pacote [licenses](https://ww
 2.  Instale a licença em: `/usr/share/licenses/*pkgname*/` (ex.: `/usr/share/licenses/foobar/LICENSE`). Uma boa forma de fazer isso é usando: {{bc|install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"}
 3.  Se a licença é encontrada apenas em um site, então você precisa inclui-la separadamente no pacote.
 
-*   As licenças [BSD](https://en.wikipedia.org/wiki/pt:Licen%C3%A7a_BSD "wikipedia:pt:Licença BSD"), [MIT](https://en.wikipedia.org/wiki/pt:Licen%C3%A7a_MIT "wikipedia:pt:Licença MIT"), [zlib/png](https://en.wikipedia.org/wiki/pt:Licen%C3%A7a_zlib "wikipedia:pt:Licença zlib") e [Python](https://en.wikipedia.org/wiki/pt:Python "wikipedia:pt:Python") são casos especiais e não podem ser incluídos no pacote [licenses](https://www.archlinux.org/packages/?name=licenses). Para manter a consistência no vetor `license`, é tratado como licença comum (`license=('BSD')`, `license=('MIT')`, `license=('ZLIB')` e `license=('Python')`), mas tecnicamente cada uma é uma licença personalizada, porque cada uma possui sua própria linha de copyright. Quaisquer pacotes licenciados sob essas quatro devem ter uma licença única armazenada em `/usr/share/licenses/*pkgname*`.
+*   As licenças [BSD](https://en.wikipedia.org/wiki/pt:Licen%C3%A7a_BSD "wikipedia:pt:Licença BSD"), [ISC](https://en.wikipedia.org/wiki/pt:Licen%C3%A7a_ISC "wikipedia:pt:Licença ISC"), [MIT](https://en.wikipedia.org/wiki/pt:Licen%C3%A7a_MIT "wikipedia:pt:Licença MIT"), [zlib/png](https://en.wikipedia.org/wiki/pt:Licen%C3%A7a_zlib "wikipedia:pt:Licença zlib") e [Python](https://en.wikipedia.org/wiki/pt:Python "wikipedia:pt:Python") são casos especiais e não podem ser incluídos no pacote [licenses](https://www.archlinux.org/packages/?name=licenses). Para manter a consistência no vetor `license`, é tratado como licença comum (`license=('BSD')`, `license=('ISC')`, `license=('MIT')`, `license=('ZLIB')` e `license=('Python')`), mas tecnicamente cada uma é uma licença personalizada, porque cada uma possui sua própria linha de copyright. Quaisquer pacotes licenciados sob essas quatro devem ter uma licença única armazenada em `/usr/share/licenses/*pkgname*`.
 *   Alguns pacotes podem não estar cobertos por uma única licença. Nestes casos, múltiplas entradas podem ser feitas no vetor `license` como, por exemplo, `license=('GPL' 'custom:*nome da licença'*)`.
 *   (L)GPL possui muitas verões e permutações daquelas versões. Para softwares sob (L)GPL, a convenção é:
     *   (L)GPL — (L)GPLv2 ou qualquer versão posterior
@@ -232,7 +232,7 @@ No entanto, há uma exceção a essa regra. Definir pacotes conflitantes em toda
 
 É por isso que, neste contexto, se seu pacote fornece `provides` um recurso e outro pacote fornece `provides` o mesmo recurso, você não precisa especificar aquele pacote conflitante em seu vetor `conflicts`. Vejamos um exemplo concreto:
 
-*   [netbeans](https://www.archlinux.org/packages/?name=netbeans) fornece `netbeans`
+*   [netbeans](https://www.archlinux.org/packages/?name=netbeans) fornece implicitamente `netbeans` como o `pkgname` em si
 *   [netbeans-javase](https://aur.archlinux.org/packages/netbeans-javase/) fornece `netbeans` e conflita com `netbeans`
 *   [netbeans-php](https://aur.archlinux.org/packages/netbeans-php/) fornece `netbeans` e conflita com `netbeans`, mas não precisa conflitar com [netbeans-javase](https://aur.archlinux.org/packages/netbeans-javase/) já que o pacman é suficientemente inteligente para descobrir que esses pacotes são incompatíveis, já que eles fornecem as mesmas funcionalidades e estão em conflito com isso.
 

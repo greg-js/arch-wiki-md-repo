@@ -20,7 +20,7 @@ Arch Linux is currently in the process of having it 100% reproducible, for the e
 
 Arch users can help contribute to Reproducible Build issues by looking at the [continuous reproducing environment](https://tests.reproducible-builds.org/archlinux/archlinux.html). There are various issues which can be sorted out:
 
-*   FTBS (failed to build from source): reproduce the build failure locally and create a bug report if the package can't be build from a clean chroot (extra-x86_64-build or multilib-build).
+*   FTBS (failed to build from source): reproduce the build failure locally and create a bug report if the package can't be [built from a clean chroot](/index.php/DeveloperWiki:Building_in_a_clean_chroot "DeveloperWiki:Building in a clean chroot") (extra-x86_64-build or multilib-build).
 *   Failed to download sources, reproduce the issue (makepkg -o -d) and create a bug report on the Arch bugtracker.
 *   Failed to reproduce. Locally you can reproduce packages using {pkg|reprotest}. Note that not all variations can be used. For simple time related testing:
 

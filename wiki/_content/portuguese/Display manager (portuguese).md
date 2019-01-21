@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Display manager](/index.php/Display_manager "Display manager"). Data da última tradução: 2019-01-02\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Display_manager&diff=0&oldid=558987) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Display manager](/index.php/Display_manager "Display manager"). Data da última tradução: 2019-01-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Display_manager&diff=0&oldid=562748) na versão em inglês.
 
 Artigos relacionados
 
@@ -40,7 +40,7 @@ Um [gerenciador de exibição](https://en.wikipedia.org/wiki/X_display_manager_(
 
 	[https://github.com/cylgom/ly](https://github.com/cylgom/ly) || [ly-git](https://aur.archlinux.org/packages/ly-git/)
 
-*   **tbsm** — Uma sessão bash ou lançador de aplicativos, possuindo suporte a sessões X e Wayland.
+*   **tbsm** — Uma sessão bash ou lançador de aplicativos, com suporte a sessões X e Wayland.
 
 	[https://loh-tar.github.io/tbsm/](https://loh-tar.github.io/tbsm/) || [tbsm](https://aur.archlinux.org/packages/tbsm/)
 
@@ -91,7 +91,7 @@ $ loginctl show-session $XDG_SESSION_ID
 
 ## Configuração de sessão
 
-Muitos gerenciadores de exibição leem sessões disponíveis do diretório `/usr/share/xsessions/`. Ele contém [arquivos de entrada de desktop](http://standards.freedesktop.org/desktop-entry-spec/latest/) padrão para cada DM/WM.
+Muitos gerenciadores de exibição leem sessões disponíveis do diretório `/usr/share/xsessions/`. Ele contém [arquivos de entrada de desktop](https://specifications.freedesktop.org/desktop-entry-spec/latest/) padrão para cada DM/WM.
 
 Para adicionar/remover entradas à sua lista de sessões do gerenciador de exibição; crie/remova os arquivos *.desktop* em `/usr/share/xsessions/` conforme desejado. Um arquivo *.desktop* comum se parecerá com:
 
@@ -139,7 +139,7 @@ A maioria dos gerenciadores de exibição carregam `/etc/xprofile`, `~/.xprofile
 
 ### Definir o idioma para sessão de usuário
 
-Para gerenciadores de exibição que usam [AccountsService](http://freedesktop.org/wiki/Software/AccountsService/) o [locale](/index.php/Locale_(Portugu%C3%AAs) "Locale (Português)") para a sessão de usuário pode ser definido editando: `/var/lib/AccountsService/users/$USER` 
+Para gerenciadores de exibição que usam [AccountsService](https://freedesktop.org/wiki/Software/AccountsService/) o [locale](/index.php/Locale_(Portugu%C3%AAs) "Locale (Português)") para a sessão de usuário pode ser definido editando: `/var/lib/AccountsService/users/$USER` 
 ```
 [User]
 Language=*seu_locale*

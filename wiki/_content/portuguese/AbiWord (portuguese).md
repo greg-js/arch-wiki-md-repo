@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [AbiWord](/index.php/AbiWord "AbiWord"). Data da última tradução: 2019-01-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AbiWord&diff=0&oldid=562520) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [AbiWord](/index.php/AbiWord "AbiWord"). Data da última tradução: 2019-01-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AbiWord&diff=0&oldid=562766) na versão em inglês.
 
 [AbiWord](http://www.abisource.com/) é um processador de texto que oferece uma alternativa mais leve para o [LibreOffice](/index.php/LibreOffice "LibreOffice") Writer e o [OpenOffice](/index.php/OpenOffice "OpenOffice") Writer, ao mesmo tempo em que fornece excelente funcionalidade. O AbiWord possui suporte a muitos tipos de documentos padrão, como documentos ODF, documentos do Microsoft Word, documentos do WordPerfect, documentos em formato Rich Text e páginas da Web em HTML.
 
@@ -12,8 +12,6 @@
 *   [4 Verificação gramatical](#Verificação_gramatical)
 *   [5 Alterar associações de teclas](#Alterar_associações_de_teclas)
 *   [6 Fontes LaTeX](#Fontes_LaTeX)
-*   [7 Solução de problemas](#Solução_de_problemas)
-    *   [7.1 Correção para travamento do diálogo de impressão](#Correção_para_travamento_do_diálogo_de_impressão)
 
 ## Instalação
 
@@ -65,38 +63,3 @@ O pacote [abiword](https://www.archlinux.org/packages/?name=abiword) vem com uma
 # fc-cache -fv
 
 ```
-
-## Solução de problemas
-
-### Correção para travamento do diálogo de impressão
-
-**Nota:** Este erro foi relatado como inexistente para a versão 2.8.1 ou superior. No entanto, esta seção permanecerá para versões legadas ou se aparecer novamente.
-
-Por alguma razão, as versões atuais do AbiWord e do [libgnomeprint](https://aur.archlinux.org/packages/libgnomeprint/) não estão funcionando bem juntas. O modelo padrão `.abw` faz com que o programa trave quando o usuário tenta imprimir. A solução é forçar o AbiWord a trabalhar com o formato `.rtf`. Seguindo os passos abaixo, você irá configurar o formato de salvamento padrão para .rtf e enganar o AbiWord para usar um arquivo `.rtf` como seu modelo padrão.
-
-Abra `~/.AbiSuite/AbiWord.Profile` e insira a seguinte linha na segunda seção <scheme>.
-
-```
-DefaultSaveFormat=".rtf"
-
-```
-
-Ele deve se parecer com o seguinte:
-
-```
-<Scheme
-   name="_custom_"
-   ZoomPercentage="64"
-   DefaultSaveFormat=".rtf"
-/>
-
-```
-
-Então, é necessário alterar o modelo padrão. Você deve seguir os seguintes passos.
-
-1.  Abra o AbiWord e salve um documento vazio com título `normal.rtf` em `~/.AbiSuite/templates/`. Se o diretório não existir, crie-o.
-2.  Renomeie o arquivo para *normal.awt*.
-
-**Não** apenas salve um arquivo `.awt` vazio! Você deve enganar o AbiWord para usar um modelo `.rtf` na pasta para isso funcionar.
-
-Assim que o conflito entre AbiWord e *libgnomeprint* for resolvido, essas instruções não serão mais necessárias e deverão ser removidas.

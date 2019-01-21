@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Init](/index.php/Init "Init"). Data da última tradução: 2018-10-25\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Init&diff=0&oldid=551065) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Init](/index.php/Init "Init"). Data da última tradução: 2019-01-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Init&diff=0&oldid=562442) na versão em inglês.
 
 Artigos relacionados
 
@@ -45,7 +45,7 @@ Esses componentes combinam-se com o *sistema* init. Algumas entradas incluem o g
 
 *   **[systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)")** — Sistema de inicialização baseado em dependência com paralelização agressiva, supervisão de processo usando cgroups e a capacidade de depender de um ponto de montagem dado ou um serviço dbus.
 
-	[http://freedesktop.org/wiki/Software/systemd/](http://freedesktop.org/wiki/Software/systemd/) || [systemd](https://www.archlinux.org/packages/?name=systemd)
+	[https://freedesktop.org/wiki/Software/systemd/](https://freedesktop.org/wiki/Software/systemd/) || [systemd](https://www.archlinux.org/packages/?name=systemd)
 
 ## Inits
 
@@ -118,7 +118,7 @@ e configure os [#Init scripts](#Init_scripts) adequadamente. Veja também [[2]](
 
 ### logind
 
-[logind](http://www.freedesktop.org/wiki/Software/systemd/logind/) exige *systemd* para ser o processo init. [[3]](http://www.freedesktop.org/wiki/Software/systemd/InterfacePortabilityAndStabilityChart/) Portanto, [sessões locais](/index.php/General_troubleshooting#Session_permissions "General troubleshooting") e outras funcionalidades não estão disponíveis.
+[logind](https://www.freedesktop.org/wiki/Software/systemd/logind/) exige *systemd* para ser o processo init. [[3]](https://www.freedesktop.org/wiki/Software/systemd/InterfacePortabilityAndStabilityChart/) Portanto, [sessões locais](/index.php/General_troubleshooting#Session_permissions "General troubleshooting") e outras funcionalidades não estão disponíveis.
 
 **Dica:** Uma versão autônoma do *logind* está disponível como [elogind-git](https://aur.archlinux.org/packages/elogind-git/) [[4]](https://lists.gnu.org/archive/html/guix-devel/2015-04/msg00352.html)
 

@@ -326,6 +326,8 @@ done
 
 Docker enables IP forwarding by itself, but by default [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") overrides the respective sysctl setting. Set `IPForward=yes` in the network profile. See [Internet sharing#Enable packet forwarding](/index.php/Internet_sharing#Enable_packet_forwarding "Internet sharing") for details.
 
+**Note:** You may need to [restart](/index.php/Restart "Restart") `docker.service` each time you [restart](/index.php/Restart "Restart") `systemd-networkd.service` or `iptables.service`
+
 ### Default number of allowed processes/threads too low
 
 If you run into error messages like

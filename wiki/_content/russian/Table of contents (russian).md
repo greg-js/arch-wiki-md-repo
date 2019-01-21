@@ -43,7 +43,7 @@
  <small>3.9.4.</small> [ASUS](/index.php/Category:ASUS "Category:ASUS") <small>(61)</small> |
  <small>3.9.5.</small> [Casper](/index.php/Category:Casper "Category:Casper") <small>(1)</small> |
  <small>3.9.6.</small> [Clevo](/index.php/Category:Clevo "Category:Clevo") <small>(2)</small> |
- <small>3.9.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(67)</small> |
+ <small>3.9.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(68)</small> |
 | <small>3.8.1.</small> [Fujitsu](/index.php/Category:Fujitsu_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Fujitsu (Русский)") <small>(1)</small> | <small>3.9.8.</small> [Fujitsu](/index.php/Category:Fujitsu "Category:Fujitsu") <small>(1)</small> |
  <small>3.9.9.</small> [HASEE](/index.php/Category:HASEE "Category:HASEE") <small>(1)</small> |
 | <small>3.8.2.</small> [HP](/index.php/Category:HP_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:HP (Русский)") <small>(1)</small> | <small>3.9.10.</small> [HP](/index.php/Category:HP "Category:HP") <small>(58)</small> |

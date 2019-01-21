@@ -60,6 +60,7 @@ Related articles
     *   [7.14 Enable Hot Corners](#Enable_Hot_Corners)
     *   [7.15 Window snapping](#Window_snapping)
     *   [7.16 Smooth display manager transition](#Smooth_display_manager_transition)
+    *   [7.17 Window Decorations](#Window_Decorations)
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 Firefox](#Firefox)
     *   [8.2 Missing themes](#Missing_themes)
@@ -734,6 +735,20 @@ Users of display managers might experience a flickering during the transition be
 Setting the root window's background color can be disabled by editing the Openbox startup script found in `/usr/lib/openbox/openbox-autostart`. Simply comment out (or delete) the block starting with `# Set a background color`.
 
 **Note:** Users who don't specifically set their wallpaper will "inherit" the display manager's background automatically if they disable the root window color adjustment.
+
+### Window Decorations
+
+To remove window decorations for all or particular applications, use the *<decor>* option in the *<applications>* section of *rc.xml* (user: *~/.config/openbox/* or system: */etc/xdg/openbox/*).
+Example for Firefox, including variants like Firefox-Beta and Firefox-Nightly:
+
+```
+ <application class="Firefox*">
+   <decor>no</decor>
+ </application>
+
+```
+
+One could also disable decorations for all applications (using class **"*"**), then enable them (using **yes**) for individual ones. To apply the changes, restart your desktop session, and thus Openbox. Reference: [Openbox FAQ](http://openbox.org/wiki/Help:FAQ#How_do_I_remove_the_decorations_from_all_my_windows.3F)
 
 ## Troubleshooting
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [AUR Trusted User Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines"). Data da última tradução: 2019-01-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AUR_Trusted_User_Guidelines&diff=0&oldid=558705) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [AUR Trusted User Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines"). Data da última tradução: 2019-01-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AUR_Trusted_User_Guidelines&diff=0&oldid=562395) na versão em inglês.
 
 Artigos relacionados
 
@@ -12,6 +12,7 @@ Os TUs são governados usando as [TU bylaws](https://aur.archlinux.org/trusted-u
 
 *   [1 Lista de tarefas para novos Trusted Users](#Lista_de_tarefas_para_novos_Trusted_Users)
 *   [2 O TU e o AUR](#O_TU_e_o_AUR)
+    *   [2.1 Reescrevendo histórico Git](#Reescrevendo_histórico_Git)
 *   [3 O TU e [community], Diretrizes para Manutenção de Pacotes](#O_TU_e_[community],_Diretrizes_para_Manutenção_de_Pacotes)
     *   [3.1 Regras para a Entrada de Pacotes no Repositório [community]](#Regras_para_a_Entrada_de_Pacotes_no_Repositório_[community])
     *   [3.2 Acessando e Atualizando o Repositório](#Acessando_e_Atualizando_o_Repositório)
@@ -40,7 +41,7 @@ Os TUs são governados usando as [TU bylaws](https://aur.archlinux.org/trusted-u
     *   Anexar uma chave pública SSH. Se você não possuir uma, use `ssh-keygen` para gerar uma. Verifique na página wiki [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys") para mais informações sobre chaves SSH.
     *   Solicitar que ele lhe dê permissão à arch-dev-public.
     *   Falar para ele se você deseja um e-mail @archlinux.org.
-    *   Todas as informações baseadas nesse [modelo](https://www.archlinux.org/people/trusted-users/) para ter acesso na interface dev (archweb). Se você já tem uma conta, peça para ser adicionado ao grupo de Trusted Users.
+    *   Nome de usuário e endereço de e-mail preferidos cuja senha inicial deve ser enviada para ter acesso na interface dev (archweb). Se você já tem uma conta, peça para ser adicionado ao grupo de Trusted Users.
 10.  Pedir a seu patrocinador (*sponsor*):
     *   para lhe conceder o status de TU no AUR.
     *   para abrir uma nova tarefa no projeto "Keyring" do rastreador de erro seguindo as instruções [nesta mensagem](https://lists.archlinux.org/pipermail/arch-dev-public/2013-September/025456.html) na ordem de ter sua chave PGP assinado pelos três detentores de chave mestre.
@@ -57,6 +58,30 @@ Os TUs deveriam também fazer um esforço para verificar o envio de pacotes no [
 Os TUs devem também verificar os PKGBUILDs por pequenos erros, sugerir correções e melhoras. O TU deve se tentar certificar-se de que todos os pacotes sigam Arch Packaging Guidelines/Standards (Diretrizes/Padrões de Empacotamento do Arch) e ao fazer isso, compartilhar suas habilidades com outros criadores de pacotes em um esforço em criar um padrão de criação de pacotes por toda a distribuição.
 
 Os TUs também estão em uma posição de documentar práticas recomendadas.
+
+### Reescrevendo histórico Git
+
+Em alguns casos, é necessário reescrever o histórico de um repositório do AUR, por exemplo, quando um usuário inadvertidamente usa seu nome real em um commit publicado. Isso pode ser automatizado com [git-filter-branch(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-filter-branch.1).
+
+Para realizar um push forçado para um novo histórico, encaminhe a variável de ambiente `AUR_OVERWRITE=1` para o [git-push(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-push.1). Veja [[1]](https://git.archlinux.org/aurweb.git/commit/?id=c5302d3a33028f483cc2e01225226d4ae047dd4a) para detalhes.
+
+**Atenção:** É recomendado criar um backup do repositório antes de reescrever o histórico.
+
+	Modificar a identidade do committer ou autor
+
+Use `git filter-branch --env-filter` com as [variáveis de ambiente](/index.php/Vari%C3%A1veis_de_ambiente "Variáveis de ambiente") `GIT_AUTHOR_NAME`, `GIT_AUTHOR_EMAIL`, `GIT_COMMITTER_NAME` and `GIT_COMMITTER_EMAIL`. Por exemplo:
+
+```
+git filter-branch --env-filter '
+if test "$GIT_AUTHOR_EMAIL" = "lepetit@prince.com"; then
+  GIT_AUTHOR_EMAIL=user@users.noreply.github.com
+fi
+if test "$GIT_AUTHOR_NAME" = "Antoine de Saint-Exupéry"; then
+  GIT_AUTHOR_NAME=user
+fi'
+```
+
+**Nota:** [git-log(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-log.1) só exibe o *author* git por padrão. Use `git log --pretty=fuller` para exibir o *author* e o *committer*.
 
 ## O TU e [community], Diretrizes para Manutenção de Pacotes
 

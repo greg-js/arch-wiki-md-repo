@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Official repositories](/index.php/Official_repositories "Official repositories"). Data da última tradução: 2018-11-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Official_repositories&diff=0&oldid=554348) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Official repositories](/index.php/Official_repositories "Official repositories"). Data da última tradução: 2019-01-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Official_repositories&diff=0&oldid=562422) na versão em inglês.
 
 Artigos relacionados
 
@@ -155,7 +155,7 @@ Include = /etc/pacman.d/mirrorlist
 
 A entrada *gnome-unstable* deve estar primeiro na lista de repositórios (*i.e.*, acima da entrada *testing*).
 
-Por favor, relate erros relacionados a empacotamento em nosso [rastreador de erro](https://bugs.archlinux.org/), enquanto o resto deve ser relatado para o *upstream* no [Bugzilla do GNOME](https://bugzilla.gnome.org/) ou [Gitlab issues do GNOME](https://gitlab.gnome.org), conforme apropriado.
+Por favor, relate erros relacionados a empacotamento em nosso [rastreador de erro](https://bugs.archlinux.org/), enquanto o resto deve ser relatado para o *upstream* no [Gitlab do GNOME](https://gitlab.gnome.org).
 
 ### kde-unstable
 

@@ -580,12 +580,12 @@ See [/Repo-ck](/index.php/Unofficial_user_repositories/Repo-ck "Unofficial user 
 ### seblu
 
 *   **Maintainer:** [Sébastien Luttringer](https://www.archlinux.org/people/developers/#seblu)
-*   **Description:** All seblu useful pre-built packages, some homemade (virtualbox-ext-oracle, linux-seblu-meta, bedup).
+*   **Description:** All seblu useful pre-built packages, some homemade (linux-seblu-meta, virtualbox-ext-oracle, spotify, masterpdfeditor, yaourt, zfs-dkms, etc).
 *   **Key-ID:** Not required, as maintainer is a Developer
 
 ```
 [seblu]
-Server = http://al.seblu.net/$repo/$arch
+Server = https://al.seblu.net/$repo/$arch
 
 ```
 

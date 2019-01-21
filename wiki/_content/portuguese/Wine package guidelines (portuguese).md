@@ -35,7 +35,7 @@ Geralmente, as licenças estão em um arquivo de texto no diretório de instala�
 
 ### Instalador
 
-É muito mais fácil trabalhar com arquivos compactados como `.zip` do que com instaladores do Windows. Se você não tiver escolha, pois o autor insiste em distribuir seu programa com um instalador, pesquise na Internet se é possível instalar silenciosamente o software. [MSFN](http://unattended.msfn.org/unattended.xp/page/list/switch/) geralmente é um bom lugar para pesquisar. Se não conseguir encontrar uma maneira, tente abrir o instalador com diferentes [utilitários de desempacotamento](/index.php/Nonfree_applications_package_guidelines#Unpacking "Nonfree applications package guidelines"); pode funcionar.
+É muito mais fácil trabalhar com arquivos compactados como `.zip` do que com instaladores do Windows. Se você não tiver escolha, pois o autor insiste em distribuir seu programa com um instalador, pesquise na Internet se é possível instalar silenciosamente o software. [MSFN](http://unattended.msfn.org/unattended.xp/page/list/switch/) geralmente é um bom lugar para pesquisar. Se não conseguir encontrar uma maneira, tente abrir o instalador com diferentes [utilitários de desempacotamento](/index.php/Diretrizes_de_pacotes_de_aplicativos_n%C3%A3o_livres#Desempacotando "Diretrizes de pacotes de aplicativos não livres"); pode funcionar.
 
 ### Portabilidade e limpeza
 

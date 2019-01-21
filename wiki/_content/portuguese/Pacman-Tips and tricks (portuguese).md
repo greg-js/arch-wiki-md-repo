@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks"). Data da última tradução: 2019-01-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&diff=0&oldid=561230) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks"). Data da última tradução: 2019-01-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&diff=0&oldid=564067) na versão em inglês.
 
 Artigos relacionados
 
@@ -47,6 +47,7 @@ Para métodos gerais para melhorar a flexibilidade das dicas fornecidas ou do *p
     *   [2.10 Recuperando um pendrive a partir de uma instalação existente](#Recuperando_um_pendrive_a_partir_de_uma_instalação_existente)
     *   [2.11 Vendo um único arquivo dentro de um arquivo .pkg](#Vendo_um_único_arquivo_dentro_de_um_arquivo_.pkg)
     *   [2.12 Localizar aplicativos que usam bibliotecas de pacotes mais antigos](#Localizar_aplicativos_que_usam_bibliotecas_de_pacotes_mais_antigos)
+    *   [2.13 Instalando apenas conteúdo nos idiomas necessários](#Instalando_apenas_conteúdo_nos_idiomas_necessários)
 *   [3 Desempenho](#Desempenho)
     *   [3.1 Velocidades de download](#Velocidades_de_download)
         *   [3.1.1 Powerpill](#Powerpill)
@@ -661,6 +662,26 @@ Aqui está uma maneira de encontrar todos os programas que usam código de pacot
 ```
 
 Ele imprimirá o nome do programa em execução e a biblioteca antiga que foi removida ou substituída por conteúdo mais novo.
+
+### Instalando apenas conteúdo nos idiomas necessários
+
+A maioria dos pacotes tem como objetivo instalar documentação, traduções e outras coisas no maior número de idiomas possível. É discutível se vale a pena o esforço e o ganho de tamanho para remover idiomas não requeridos. No entanto, alguns preferem um sistema mais limpo ou menor. [bleachbit](https://aur.archlinux.org/packages/bleachbit/) e [localepurge](https://aur.archlinux.org/packages/localepurge/) limpam idiomas indesejáveis removendo os arquivos instalados. O que não é desejável, pois o administrador pode confiar menos no pacman para rastrear os arquivos relacionados ao sistema. Uma maneira mais fundamental é usar a palavra-chave `NoExtract`, que previne que esses arquivos sejam instalados em primeiro lugar. O exemplo abaixo tenta instalar apenas arquivos em inglês (EUA) ou nenhum.
+
+ `/etc/pacman.conf` 
+```
+NoExtract = usr/share/help/* !usr/share/help/en*
+NoExtract = usr/share/gtk-doc/html/*
+NoExtract = usr/share/locale/* usr/share/X11/locale/* usr/share/i18n/* opt/google/chrome/locales/*
+NoExtract = !*locale*/en*/* !usr/share/i18n/charmaps/UTF-8.gz !usr/share/*locale*/locale.*
+NoExtract = !usr/share/*locales/en_?? !usr/share/*locales/i18n !usr/share/*locales/iso*
+NoExtract = !usr/share/*locales/trans*
+NoExtract = usr/share/qt4/translations/*
+NoExtract = usr/share/man/* !usr/share/man/man*
+NoExtract = usr/share/vim/vim*/lang/*
+NoExtract = usr/lib/libreoffice/help/en-US/*
+```
+
+Embora esse truque tenha sido usado por muitos usuários, alguns usuários descobriram que [removê-los fazia com que erros se escondessem para debaixo do tapete](https://wiki.archlinux.org/index.php?title=Talk:Pacman&oldid=460285#Dangerous_NoExtract_example).
 
 ## Desempenho
 

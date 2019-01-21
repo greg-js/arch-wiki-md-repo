@@ -82,7 +82,7 @@ $ vncserver -kill :1
 
 The `~/.vnc/xstartup` script is sourced by *vncserver* for creating the virtual X session and it must be adapted to one's needs. It functions like an [.xinitrc](/index.php/.xinitrc ".xinitrc") file. In this script, users are expected to start a [Desktop environment](/index.php/Desktop_environment "Desktop environment"), see: [General recommendations#Desktop environments](/index.php/General_recommendations#Desktop_environments "General recommendations").
 
-For example, to start [Xfce](/index.php/Xfce "Xfce") the following script can be used, not it also requires that a [D-Bus](/index.php/D-Bus "D-Bus") session is launched.
+For example, to start [Xfce](/index.php/Xfce "Xfce") the following script can be used, note it also requires that a [D-Bus](/index.php/D-Bus "D-Bus") session is launched.
 
  `~/.vnc/xstartup` 
 ```

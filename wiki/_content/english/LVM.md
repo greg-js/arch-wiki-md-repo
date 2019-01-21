@@ -154,7 +154,7 @@ Quick overview:
 *   Create your volume group (VG) and add all PVs to it.
 *   Create logical volumes (LVs) inside that VG.
 *   Continue with [Installation guide#Format the partitions](/index.php/Installation_guide#Format_the_partitions "Installation guide").
-*   When you reach the “Create initial ramdisk environment” step in the Installation guide, add the `lvm` hook to `/etc/mkinitcpio.conf` (see below for details).
+*   When you reach the “Create initial ramdisk environment” step in the Installation guide, add the `lvm2` hook to `/etc/mkinitcpio.conf` (see below for details).
 
 **Warning:** `/boot` cannot reside in LVM when using a boot loader which does not support LVM; you must create a separate `/boot` partition and format it directly. Only [GRUB](/index.php/GRUB "GRUB") is known to support LVM.
 
@@ -299,7 +299,7 @@ You can track created logical volumes with:
 
 ```
 
-**Note:** You may need to load the *device-mapper* kernel module (`modprobe dm_mod'`) for the above commands to succeed.
+**Note:** You may need to load the *device-mapper* kernel module (`modprobe dm_mod`) for the above commands to succeed.
 
 **Tip:** You can start out with relatively small logical volumes and expand them later if needed. For simplicity, leave some free space in the volume group so there is room for expansion.
 
@@ -935,7 +935,9 @@ Make sure to remove snapshot volumes before [generating grub.cfg](/index.php/GRU
 
 ### Thinly-provisioned root volume device times out
 
-With a large number of snapshots, `thin_check` runs for a long enough time so that waiting for the root device times out. To compensate, add the `rootdelay=60` kernel boot parameter to your boot loader configuration.
+With a large number of snapshots, `thin_check` runs for a long enough time so that waiting for the root device times out. To compensate, add the `rootdelay=60` kernel boot parameter to your boot loader configuration. Or, make `thin_check` skip checking block mappings (see [[2]](https://www.redhat.com/archives/linux-lvm/2016-January/msg00010.html)) and [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs"):
+
+ `/etc/lvm/lvm.conf`  `thin_check_options = [ "-q", "--clear-needs-check-flag", "--skip-mappings" ]` 
 
 ### Delay on shutdown
 

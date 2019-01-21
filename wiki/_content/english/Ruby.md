@@ -19,6 +19,8 @@ Ruby is a dynamic, interpreted, open source programming language with a focus on
 
 For the latest version of Ruby, [install](/index.php/Install "Install") the [ruby](https://www.archlinux.org/packages/?name=ruby) package.
 
+To install IRB, [install](/index.php/Install "Install") the [ruby-irb](https://www.archlinux.org/packages/?name=ruby-irb) package.
+
 ### Multiple versions
 
 If you want to run multiple versions on the same system (e.g. 2.0.0-p0 and 1.9.3-p392), the easiest way is to use [RVM](/index.php/RVM "RVM"), [chruby](https://aur.archlinux.org/packages/chruby/) or [rbenv](/index.php/Rbenv "Rbenv").

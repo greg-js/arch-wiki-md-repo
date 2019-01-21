@@ -1,6 +1,7 @@
 Related articles
 
 *   [Common Access Card](/index.php/Common_Access_Card "Common Access Card")
+*   [Electronic_identification](/index.php/Electronic_identification "Electronic identification")
 
 This page explains how to setup your system in order to use a [smart card](https://en.wikipedia.org/wiki/Smart_card "wikipedia:Smart card") reader.
 

@@ -15,9 +15,9 @@
     *   [4.3 HDMI-CEC](#HDMI-CEC)
 *   [5 Sharing media and a centralized database across multiple nodes](#Sharing_media_and_a_centralized_database_across_multiple_nodes)
     *   [5.1 NFS server export example](#NFS_server_export_example)
-    *   [5.2 Install and setup the MySQL server](#Install_and_setup_the_MySQL_server)
-    *   [5.3 Setup Kodi to use the MySQL library and the NFS exports](#Setup_Kodi_to_use_the_MySQL_library_and_the_NFS_exports)
-        *   [5.3.1 Setup Kodi to use the common MySQL database](#Setup_Kodi_to_use_the_common_MySQL_database)
+    *   [5.2 Install and setup the MariaDB server](#Install_and_setup_the_MariaDB_server)
+    *   [5.3 Setup Kodi to use the MariaDB library and the NFS exports](#Setup_Kodi_to_use_the_MariaDB_library_and_the_NFS_exports)
+        *   [5.3.1 Setup Kodi to use the common SQL database](#Setup_Kodi_to_use_the_common_SQL_database)
         *   [5.3.2 Setup network shares](#Setup_network_shares)
     *   [5.4 Cloning the configuration to other nodes on the network](#Cloning_the_configuration_to_other_nodes_on_the_network)
 *   [6 Tips and Tricks](#Tips_and_Tricks)
@@ -231,7 +231,7 @@ As well, the media itself can be located in one space thus allowing a lighter fo
 Several things are needed for this to work:
 
 *   Network exposed media (via protocols that Kodi can read, e.g. NFS or Samba).
-*   A [MySQL](/index.php/MySQL "MySQL") server.
+*   A [MariaDB](/index.php/MariaDB "MariaDB") server.
 
 **Warning:** When sharing a database, ALL clients need to be on the same major version of Kodi due to versioned requirements of the database schema. Refer to [this](https://kodi.wiki/view/Databases#Database_Versions) table for a list of database versions.
 
@@ -241,7 +241,7 @@ These assumptions are used for the guide, substitute as needed:
 
 *   The media is located under following mount points: `/mnt/shows` `/mnt/movies` `/mnt/music`.
 *   The network addresses of all nodes are within the 192.168.0.* subnet range.
-*   The IP address of the machine running both the NFS exports and the MySQL database is 192.168.0.105.
+*   The IP address of the machine running both the NFS exports and the MariaDB database is 192.168.0.105.
 *   Each Kodi box is referred to as a node.
 *   The Linux user running Kodi is 'kodi' on all nodes.
 
@@ -272,7 +272,7 @@ Setup [exports](/index.php/NFS#Server "NFS"):
 /srv/nfs/music    192.168.0.0/24(ro,no_subtree_check,insecure)
 ```
 
-### Install and setup the MySQL server
+### Install and setup the MariaDB server
 
 See [MariaDB](/index.php/MariaDB "MariaDB") for installation and configuration instructions.
 
@@ -280,7 +280,7 @@ To create a database for Kodi, use the following commands:
 
 ```
 $ mysql -u root -p
-   <<enter the mysqld root password assigned in the first step>>
+   <<enter the mariadb root password assigned in the first step>>
 MariaDB [(none)]> CREATE USER 'kodi' IDENTIFIED BY 'kodi';
 MariaDB [(none)]> GRANT ALL ON *.* TO 'kodi';
 MariaDB [(none)]> flush privileges;
@@ -288,11 +288,11 @@ MariaDB [(none)]> \q
 
 ```
 
-### Setup Kodi to use the MySQL library and the NFS exports
+### Setup Kodi to use the MariaDB library and the NFS exports
 
 Since this example makes use of NFS shares, an optional dependency of Kodi is now required to access them. Ensure that each of the Kodi nodes has [libnfs](https://www.archlinux.org/packages/?name=libnfs) installed.
 
-#### Setup Kodi to use the common MySQL database
+#### Setup Kodi to use the common SQL database
 
 To tell Kodi to use the common database, insure that Kodi is not running, then create the following file:
 
@@ -331,15 +331,15 @@ Load Kodi and define the network shares that correspond to the exports by browsi
 
 After a few seconds, the IP address corresponding to the NFS server should appear.
 
-Select `/srv/nfs/shows` from the list of share and then *OK* from the menu on the right. Assign this share the category of *TV Shows* to setup the appropriate scraper and to populate the MySQL database with the correct metadata.
+Select `/srv/nfs/shows` from the list of share and then *OK* from the menu on the right. Assign this share the category of *TV Shows* to setup the appropriate scraper and to populate the SQL database with the correct metadata.
 
-Repeat this browsing process for the "movies" and "music" and then exit Kodi once properly configured. At this point, the MySQL tables should have been created.
+Repeat this browsing process for the "movies" and "music" and then exit Kodi once properly configured. At this point, the SQL tables should have been created.
 
-**Note:** Even if Kodi is running on the same box that is also running the NFS exports and MySQL server, one **must** setup the media using the nfs shares only.
+**Note:** Even if Kodi is running on the same box that is also running the NFS exports and SQL server, one **must** setup the media using the nfs shares only.
 
 ### Cloning the configuration to other nodes on the network
 
-To set up another Kodi node on the network to use this library, simply copy `~/.kodi/userdata/advancedsettings.xml` to that box and restart Kodi. There is NO need to copy any other files or to do any other setup steps on the new kodi node. The nfs exports, the metadata for the programming, any stop/start times, view status, etc. are all stored in the MySQL tables.
+To set up another Kodi node on the network to use this library, simply copy `~/.kodi/userdata/advancedsettings.xml` to that box and restart Kodi. There is NO need to copy any other files or to do any other setup steps on the new kodi node. The nfs exports, the metadata for the programming, any stop/start times, view status, etc. are all stored in the SQL tables.
 
 **Note:** One can optionally define other media sources that are not managed by kodi database, but they will be specific to that particular node.
 
@@ -439,7 +439,7 @@ To allow the receiver to decode the audio by enabling passthrough. This is usefu
 
 #### Fix for delayed startup on wifi
 
-If running with WiFi only (wired network unplugged) while [#Sharing media and a centralized database across multiple nodes](#Sharing_media_and_a_centralized_database_across_multiple_nodes), kodi will likely start before the wireless network is up, which will result in failure to connect to the shares and to the mysql server. Assuming the network is managed by the default [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd"), this can be fixed by using two [Systemd#Drop-in files](/index.php/Systemd#Drop-in_files "Systemd"), one for `kodi.service` and another for `systemd-networkd-wait-online.service`:
+If running with WiFi only (wired network unplugged) while [#Sharing media and a centralized database across multiple nodes](#Sharing_media_and_a_centralized_database_across_multiple_nodes), kodi will likely start before the wireless network is up, which will result in failure to connect to the shares and to the SQL server. Assuming the network is managed by the default [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd"), this can be fixed by using two [Systemd#Drop-in files](/index.php/Systemd#Drop-in_files "Systemd"), one for `kodi.service` and another for `systemd-networkd-wait-online.service`:
 
 ```
 # systemctl edit systemd-networkd-wait-online.service

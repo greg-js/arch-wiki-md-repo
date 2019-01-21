@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Installation guide](/index.php/Installation_guide "Installation guide"). Data da última tradução: 2018-12-29\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=560731) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Installation guide](/index.php/Installation_guide "Installation guide"). Data da última tradução: 2019-01-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=563317) na versão em inglês.
 
 Este documento irá guiá-lo no processo de instalação [Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs) "Arch Linux (Português)") usando o [Arch Install Scripts](https://projects.archlinux.org/arch-install-scripts.git/). Antes de instalar, é recomendável ler rapidamente o [FAQ](/index.php/FAQ_(Portugu%C3%AAs) "FAQ (Português)"). Para convenções usadas neste documento, veja [Help:Reading (Português)](/index.php/Help:Reading_(Portugu%C3%AAs) "Help:Reading (Português)"). Em especial, exemplos de código podem conter objetos reservados (formatados em `*italics*`) que devem ser substituídos manualmente.
 
@@ -137,42 +137,42 @@ Resultados terminando em `rom`, `loop` ou `airoot` podem ser ignorados.
 As seguintes [partições](/index.php/Partition "Partition") são **exigidas** para um dispositivo escolhido:
 
 *   Uma partição para o diretório raiz `/`.
-*   Se [UEFI](/index.php/UEFI "UEFI") estiver habilitado, um [Partição de sistema EFI](/index.php/EFI_system_partition "EFI system partition").
+*   Se [UEFI](/index.php/UEFI "UEFI") estiver habilitado, uma [partição de sistema EFI](/index.php/EFI_system_partition "EFI system partition").
 
 Se você quiser criar algum dispositivo de bloco empilhado para [LVM](/index.php/LVM "LVM"), [criptografia de sistema](/index.php/Dm-crypt "Dm-crypt") ou [RAID](/index.php/RAID "RAID"), faça isso agora.
 
 #### Exemplos de layouts
 
-| UEFI com [GPT](/index.php/Partitioning#GUID_Partition_Table "Partitioning") |
-| Ponto de montagem | Partição | [Tipo de partição (GUID)](https://en.wikipedia.org/wiki/pt:Tabela_de_Parti%C3%A7%C3%A3o_GUID#Tipos_de_parti.C3.A7.C3.A3o_GUID "wikipedia:pt:Tabela de Partição GUID") | Tamanho sugerido |
-| `/boot` ou `/efi` | /dev/sd*x*1 | [EFI system partition](/index.php/EFI_system_partition "EFI system partition") | 260–512 MiB |
-| `/` | /dev/sd*x*2 | Linux | Restante do dispositivo |
-| [SWAP] | /dev/sd*x*3 | [Swap](/index.php/Swap_(Portugu%C3%AAs) "Swap (Português)") Linux | Mais que 512 MiB |
-| BIOS com [MBR](/index.php/Partitioning#Master_Boot_Record "Partitioning") ou GPT |
+| BIOS com [MBR](/index.php/MBR "MBR") ou GPT |
 | Ponto de montagem | Partição | [Tipo de partição](https://en.wikipedia.org/wiki/pt:Tipo_de_parti%C3%A7%C3%A3o "wikipedia:pt:Tipo de partição") | Tamanho sugerido |
-| – | /dev/sd*x*1 | [Partição de inicialização BIOS](/index.php/BIOS_boot_partition "BIOS boot partition") | 1 MiB |
-| `/` | /dev/sd*x*2 | Linux | Restante do dispositivo |
-| [SWAP] | /dev/sd*x*3 | Linux [swap](/index.php/Swap_(Portugu%C3%AAs) "Swap (Português)") | Mais que 512 MiB |
+ /dev/sd*X*1 | [Partição de inicialização BIOS](/index.php/BIOS_boot_partition "BIOS boot partition") | 1 MiB |
+| `/mnt` | /dev/sd*X*2 | Linux | Restante do dispositivo |
+| [SWAP] | /dev/sd*X*3 | [Swap](/index.php/Swap_(Portugu%C3%AAs) "Swap (Português)") Linux | Mais que 512 MiB |
+| UEFI com [GPT](/index.php/GPT "GPT") |
+| Ponto de montagem | Partição | [Tipo de partição (GUID)](https://en.wikipedia.org/wiki/pt:Tabela_de_Parti%C3%A7%C3%A3o_GUID#Tipos_de_parti.C3.A7.C3.A3o_GUID "wikipedia:pt:Tabela de Partição GUID") | Tamanho sugerido |
+| `/mnt/boot` ou `/mnt/efi` | /dev/sd*X*1 | [Partição de sistema EFI](/index.php/EFI_system_partition "EFI system partition") | 260–512 MiB |
+| `/mnt` | /dev/sd*X*2 | Linux | Restante do dispositivo |
+| [SWAP] | /dev/sd*X*3 | Linux [swap](/index.php/Swap_(Portugu%C3%AAs) "Swap (Português)") | Mais que 512 MiB |
 
 **Nota:**
 
-*   Use [fdisk](/index.php/Fdisk "Fdisk") ou [parted](/index.php/Parted "Parted") para modificar as tabelas de partição, por exemplo `fdisk /dev/sd*x*`.
+*   Use [fdisk](/index.php/Fdisk "Fdisk") ou [parted](/index.php/Parted "Parted") para modificar as tabelas de partição, por exemplo `fdisk /dev/sd*X*`.
 *   Um espaço [swap](/index.php/Swap_(Portugu%C3%AAs) "Swap (Português)") pode ser definido em um [Arquivo swap](/index.php/Arquivo_swap "Arquivo swap") para sistemas de arquivos que possuem suporte a file systems supporting it.
 
 ### Formatar as partições
 
-Assim que as partições tenham sido criadas, cada uma deve ser formatada com um [sistema de arquivos](/index.php/File_system "File system") adequado. Por exemplo, para formatar a partição raiz em `/dev/sd*x*2` com `*ext4*`, execute:
+Assim que as partições tenham sido criadas, cada uma deve ser formatada com um [sistema de arquivos](/index.php/File_system "File system") adequado. Por exemplo, para formatar a partição raiz em `/dev/sd*X*2` com `*ext4*`, execute:
 
 ```
-# mkfs.*ext4* /dev/sd*x*2
+# mkfs.*ext4* /dev/sd*X*2
 
 ```
 
 Se você criou uma partição para swap (por exemplo, `/dev/*sda3*`), inicialize-a com *mkswap*:
 
 ```
-# mkswap /dev/sd*x*3
-# swapon /dev/sd*x*3
+# mkswap /dev/sd*X*3
+# swapon /dev/sd*X*3
 
 ```
 
@@ -183,15 +183,15 @@ Veja [File systems#Create a file system](/index.php/File_systems#Create_a_file_s
 [Monte](/index.php/Mount "Mount") o sistema de arquivos da partição raiz em `/mnt`, por exemplo:
 
 ```
-# mount /dev/sd*x*2 /mnt
+# mount /dev/sd*X*2 /mnt
 
 ```
 
-Crie pontos de montagem para quaisquer partições restantes e monte-as conforme adequado, por exemplo:
+Onde necessário, crie pontos de montagem e monte as partições correspondentes. Por exemplo:
 
 ```
-# mkdir /mnt/*boot*
-# mount /dev/sd*x*2 /mnt/*boot*
+# mkdir /mnt/efi
+# mount /dev/sd*X*2 /mnt/efi
 
 ```
 

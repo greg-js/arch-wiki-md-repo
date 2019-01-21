@@ -83,11 +83,11 @@ There are a number of front-ends available for controlling the PulseAudio daemon
 
 *   **pacmixer** — Alsamixer alike for PulseAudio.
 
-	[https://github.com/cdemoulins/pamixer](https://github.com/cdemoulins/pamixer) || [pacmixer](https://aur.archlinux.org/packages/pacmixer/)
+	[https://github.com/KenjiTakahashi/pacmixer](https://github.com/KenjiTakahashi/pacmixer) || [pacmixer](https://aur.archlinux.org/packages/pacmixer/)
 
 *   **PAmix** — Ncurses PulseAudio mixer similar to pavucontrol.
 
-	[https://github.com/cdemoulins/pamixer](https://github.com/cdemoulins/pamixer) || [pamix-git](https://aur.archlinux.org/packages/pamix-git/)
+	[https://github.com/patroclos/PAmix](https://github.com/patroclos/PAmix) || [pamix-git](https://aur.archlinux.org/packages/pamix-git/)
 
 *   **pamixer** — PulseAudio command line mixer.
 

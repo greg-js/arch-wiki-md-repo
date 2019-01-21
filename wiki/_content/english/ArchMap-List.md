@@ -1099,5 +1099,6 @@ You can use the following website to get your device's coordinates along with a 
 51.5889556, -0.1006367 "442401" # London, United Kingdom
 46.551536, -87.461566 "MagicMan" # At Work in Michigan, United States
 46.546318, -87.392896 "MagicMan" # Michigan, United States
+22.809794, 88.374308 "feline" # Kolkata, West Bengal, India
 
 ```

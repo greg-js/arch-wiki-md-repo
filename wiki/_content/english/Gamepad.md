@@ -27,6 +27,7 @@ Joysticks can be a bit of a hassle to get working in Linux. Not because they are
         *   [7.5.1 Connecting via Bluetooth](#Connecting_via_Bluetooth)
         *   [7.5.2 Using generic/clone controllers](#Using_generic/clone_controllers)
     *   [7.6 iPEGA-9017s and other Bluetooth gamepads](#iPEGA-9017s_and_other_Bluetooth_gamepads)
+        *   [7.6.1 iPEGA-9068](#iPEGA-9068)
     *   [7.7 Steam Controller](#Steam_Controller)
         *   [7.7.1 Wine](#Wine)
     *   [7.8 Xbox 360 controller](#Xbox_360_controller)
@@ -415,6 +416,49 @@ Now when you have the config and your device is connected you can start the [xbo
 `sudo xboxdrv --evdev /dev/btjoy --config .config/xboxdrv/ipega.conf`
 
 Your games will now work with bluetooth gamepad as long as xboxdrv is running.
+
+#### iPEGA-9068
+
+For this model, use the same procedures as above, but with the configs:
+
+ `~/.config/xboxdrv/ipega.conf` 
+```
+#iPEGA PG-9068 Config 
+
+[xboxdrv]
+evdev-debug = true
+evdev-grab = true
+rumble = false
+mimic-xpad = true
+
+[evdev-absmap]
+ABS_HAT0X = dpad_x
+ABS_HAT0Y = dpad_y
+
+ABS_X = X1
+ABS_Y = Y1
+
+ABS_Z  = X2
+ABS_RZ = Y2
+
+[axismap]
+-Y1 = Y1
+-Y2 = Y2
+
+[evdev-keymap]
+BTN_A=a
+BTN_B=b
+BTN_Y=y
+BTN_X=x
+BTN_TR=rb
+BTN_TL=lb
+BTN_TR2=rt
+BTN_TL2=lt
+BTN_START=start
+BTN_SELECT=back
+
+BTN_MODE = guide
+```
 
 ### Steam Controller
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch Security Team](/index.php/Arch_Security_Team "Arch Security Team"). Data da última tradução: 2018-11-07\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_Security_Team&diff=0&oldid=552747) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch Security Team](/index.php/Arch_Security_Team "Arch Security Team"). Data da última tradução: 2019-01-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_Security_Team&diff=0&oldid=561963) na versão em inglês.
 
 A Equipe de Segurança do Arch é um grupo de voluntários cujo objetivo é rastrear problemas de segurança com pacotes do Arch Linux. Todos os problemas são rastreados no [rastreador de segurança do Arch Linux](https://security.archlinux.org/). A equipe era conhecida como *Arch CVE Monitoring Team* (em português, Equipe de Monitoramento do Arch CVE).
 
@@ -130,7 +130,7 @@ Recursos de outras distribuições (para procurar por CVE, patch, comentários e
 
 	Ubuntu
 
-	Feed de comunicados: [https://www.ubuntu.com/usn/atom.xml](https://www.ubuntu.com/usn/atom.xml)
+	Feed de comunicados: [https://usn.ubuntu.com/usn/atom.xml](https://usn.ubuntu.com/usn/atom.xml)
 
 	Rastreador de CVE: [https://people.canonical.com/~ubuntu-security/cve/?cve=](https://people.canonical.com/~ubuntu-security/cve/?cve=)<CVE-ID>
 

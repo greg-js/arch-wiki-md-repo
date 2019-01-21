@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch compared to other distributions](/index.php/Arch_compared_to_other_distributions "Arch compared to other distributions"). Data da última tradução: 2018-10-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_compared_to_other_distributions&diff=0&oldid=547912) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch compared to other distributions](/index.php/Arch_compared_to_other_distributions "Arch compared to other distributions"). Data da última tradução: 2019-01-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_compared_to_other_distributions&diff=0&oldid=562771) na versão em inglês.
 
 Artigos relacionados
 

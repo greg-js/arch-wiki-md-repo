@@ -69,7 +69,7 @@ libpam_misc.so.0 => /usr/lib/libpam_misc.so.0 (0x000003d8c30d2000)
 ```
 the *login* application is pam-aware and **must**, therefore, have a policy.
 
-The PAM package manual pages *pam(8)* and *pam.d(5)* describe the standardized content of the configuration files. In particular they explain the four PAM groups: account, authentication, password, and session management, as well as the control values that may be used to configure stacking and behaviour of the modules.
+The PAM package manual pages [pam(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam.8) and [pam.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam.d.5) describe the standardized content of the configuration files. In particular they explain the four PAM groups: account, authentication, password, and session management, as well as the control values that may be used to configure stacking and behaviour of the modules.
 
 Additionally, an extensive documentation is installed to `/usr/share/doc/Linux-PAM/index.html` which, among various guides, contains browsable man pages for each of the standard modules.
 

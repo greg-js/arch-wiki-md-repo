@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [MinGW package guidelines](/index.php/MinGW_package_guidelines "MinGW package guidelines"). Data da última tradução: 2018-11-03\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=MinGW_package_guidelines&diff=0&oldid=552768) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [MinGW package guidelines](/index.php/MinGW_package_guidelines "MinGW package guidelines"). Data da última tradução: 2019-01-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=MinGW_package_guidelines&diff=0&oldid=561843) na versão em inglês.
 
 **[Diretrizes de criação de pacotes](/index.php/Padr%C3%B5es_de_empacotamento_do_Arch "Padrões de empacotamento do Arch")**
 
@@ -40,7 +40,7 @@ O empacotamento para pacotes de plataforma cruzada pode ser bastante complicada,
 *   considere usar [mingw-w64-configure](https://aur.archlinux.org/packages/mingw-w64-configure/) para compilação com scripts de configuração
 *   considere usar [mingw-w64-cmake](https://aur.archlinux.org/packages/mingw-w64-cmake/) para compilação com CMake
 *   considere usar [mingw-w64-qt5-base](https://aur.archlinux.org/packages/mingw-w64-qt5-base/) ou [mingw-w64-qt4](https://aur.archlinux.org/packages/mingw-w64-qt4/) para compilação com QMake
-*   considere usar opções de compilação `-O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions --param=ssp-buffer-size=4` (geralmente nomeadas com CFLAGS, CXXFLAGS) quando nenhum sistema de compilação adequado foi fornecido
+*   considere usar opções de compilação `-D_FORTIFY_SOURCE=2 -O2 -pipe -fno-plt -fexceptions --param=ssp-buffer-size=4` (geralmente nomeadas com CFLAGS, CXXFLAGS) quando nenhum sistema de compilação adequado foi fornecido
 *   considere remover símbolos explicitamente com `${_arch}-strip` em loop for `package()` como demonstrado nos exemplos de PKGBUILD abaixo.
     *   considere usar o comando [find](/index.php/Find_(Portugu%C3%AAs) "Find (Português)") para interagir com `$pkgdir` já que todas DLLs, bibliotecas estáticas ou executáveis podem residir em localizações apropriadas.
         *   se o binário é uma DLL, use `${_arch}-strip --strip-unneeded *.dll`
@@ -71,7 +71,7 @@ makedepends=('mingw-w64-configure')
 depends=('mingw-w64-crt')
 options=('!strip' '!buildflags' 'staticlibs')
 source=("http://www.foo.bar/foobar.tar.gz")
-md5sums=('4736ac4f34fd9a41fa0197eac23bbc24')
+sha256sums=('8f32d4617390d1c2d16f26a27ab60d97807b35440d45891fa340fc2648b04406')
 
 _architectures="i686-w64-mingw32 x86_64-w64-mingw32"
 
@@ -110,8 +110,7 @@ makedepends=('mingw-w64-cmake')
 depends=('mingw-w64-crt')
 options=('!strip' '!buildflags' 'staticlibs')
 source=("http://www.foo.bar/foobar.tar.gz")
-md5sums=('4736ac4f34fd9a41fa0197eac23bbc24')
-
+sha256sums=('8f32d4617390d1c2d16f26a27ab60d97807b35440d45891fa340fc2648b04406')
 _architectures="i686-w64-mingw32 x86_64-w64-mingw32"
 
 build() { 

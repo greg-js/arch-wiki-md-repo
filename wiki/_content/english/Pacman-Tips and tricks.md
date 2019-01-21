@@ -45,6 +45,7 @@ For general methods to improve the flexibility of the provided tips or *pacman* 
     *   [2.10 Recovering a USB key from existing install](#Recovering_a_USB_key_from_existing_install)
     *   [2.11 Viewing a single file inside a .pkg file](#Viewing_a_single_file_inside_a_.pkg_file)
     *   [2.12 Find applications that use libraries from older packages](#Find_applications_that_use_libraries_from_older_packages)
+    *   [2.13 Installing only content in required languages](#Installing_only_content_in_required_languages)
 *   [3 Performance](#Performance)
     *   [3.1 Download speeds](#Download_speeds)
         *   [3.1.1 Powerpill](#Powerpill)
@@ -659,6 +660,26 @@ Here is a way how to find all the programs that use old packages code:
 ```
 
 It will print running program name and old library that was removed or replaced with newer content.
+
+### Installing only content in required languages
+
+Most packages aims at installing documentation, translations, and other stuff in as many languages as possible. It is arguable if it is worth the effort and the gain of size to remove unrequired languages. Yet some prefer a cleaner, or smaller, system. [bleachbit](https://aur.archlinux.org/packages/bleachbit/) and [localepurge](https://aur.archlinux.org/packages/localepurge/) cleans undesirable languages by removing installed files. Which is not desirable since the administrator can less rely on pacman to track the system related files. A more fundamental way is using the `NoExtract` keyword, which prevets these files from being installed in the first place. The example below try to install only English (US) files, or none at all.
+
+ `/etc/pacman.conf` 
+```
+NoExtract = usr/share/help/* !usr/share/help/en*
+NoExtract = usr/share/gtk-doc/html/*
+NoExtract = usr/share/locale/* usr/share/X11/locale/* usr/share/i18n/* opt/google/chrome/locales/*
+NoExtract = !*locale*/en*/* !usr/share/i18n/charmaps/UTF-8.gz !usr/share/*locale*/locale.*
+NoExtract = !usr/share/*locales/en_?? !usr/share/*locales/i18n !usr/share/*locales/iso*
+NoExtract = !usr/share/*locales/trans*
+NoExtract = usr/share/qt4/translations/*
+NoExtract = usr/share/man/* !usr/share/man/man*
+NoExtract = usr/share/vim/vim*/lang/*
+NoExtract = usr/lib/libreoffice/help/en-US/*
+```
+
+Though this trick was used by many user, some users found that [removing it made bugs hide under the rug](https://wiki.archlinux.org/index.php?title=Talk:Pacman&oldid=460285#Dangerous_NoExtract_example).
 
 ## Performance
 

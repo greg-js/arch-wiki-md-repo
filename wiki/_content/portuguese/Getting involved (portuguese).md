@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Getting involved](/index.php/Getting_involved "Getting involved"). Data da última tradução: 2018-11-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Getting_involved&diff=0&oldid=555594) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Getting involved](/index.php/Getting_involved "Getting involved"). Data da última tradução: 2019-01-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Getting_involved&diff=0&oldid=562131) na versão em inglês.
 
 Artigos relacionados
 
@@ -21,15 +21,16 @@ Este artigo descreve como usuários novos e experientes do Arch podem contribuir
     *   [2.3 Informe sobre problemas de segurança](#Informe_sobre_problemas_de_segurança)
     *   [2.4 Ajude a testar pacotes](#Ajude_a_testar_pacotes)
     *   [2.5 Crie e adote pacotes do AUR](#Crie_e_adote_pacotes_do_AUR)
-    *   [2.6 Projetos de software](#Projetos_de_software)
-*   [3 Doe dinheiro](#Doe_dinheiro)
-*   [4 Projetos não oficiais](#Projetos_não_oficiais)
-    *   [4.1 Grupos](#Grupos)
-    *   [4.2 Software](#Software)
-*   [5 FAQ](#FAQ)
-    *   [5.1 Como posso me tornar um desenvolvedor do Arch?](#Como_posso_me_tornar_um_desenvolvedor_do_Arch?)
-    *   [5.2 Como me torno um Trusted User?](#Como_me_torno_um_Trusted_User?)
-    *   [5.3 O que eu posso fazer sendo um artista?](#O_que_eu_posso_fazer_sendo_um_artista?)
+*   [3 Eventos](#Eventos)
+*   [4 Projetos de software](#Projetos_de_software)
+*   [5 Doe dinheiro](#Doe_dinheiro)
+*   [6 Projetos não oficiais](#Projetos_não_oficiais)
+    *   [6.1 Grupos](#Grupos)
+    *   [6.2 Software](#Software)
+*   [7 FAQ](#FAQ)
+    *   [7.1 Como posso me tornar um desenvolvedor do Arch?](#Como_posso_me_tornar_um_desenvolvedor_do_Arch?)
+    *   [7.2 Como me torno um Trusted User?](#Como_me_torno_um_Trusted_User?)
+    *   [7.3 O que eu posso fazer sendo um artista?](#O_que_eu_posso_fazer_sendo_um_artista?)
 
 ## Comunidade
 
@@ -71,7 +72,14 @@ O [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch 
 
 [aurphan](https://www.archlinux.org/packages/?name=aurphan) pode lhe ajudar a identificar pacotes órfãos que você usa, de forma que você possa adotá-los.
 
-### Projetos de software
+## Eventos
+
+Há eventos regulares abertos à comunidade para correção de bugs, limpeza e outras atividades.
+
+*   [Bug Day](/index.php/Bug_Day_(Portugu%C3%AAs) "Bug Day (Português)")
+*   [AUR Cleanup Day](/index.php/AUR_Cleanup_Day "AUR Cleanup Day")
+
+## Projetos de software
 
 A distribuição [Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs) "Arch Linux (Português)") compreende muitos componentes, como o gerenciador de pacotes [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)"), o site [archlinux.org](https://archlinux.org) ( *archweb* ) ou o sistema de suporte para o [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)") ( *aurweb* ). Cada um desses projetos pode ser contribuído individualmente.
 
