@@ -1,4 +1,4 @@
-Related articles
+Пов'язані статті
 
 *   [Autostarting](/index.php/Autostarting "Autostarting")
 *   [Display manager](/index.php/Display_manager "Display manager")
@@ -46,13 +46,13 @@ Related articles
 *   [7 Поради та підказки](#Поради_та_підказки)
     *   [7.1 Автоматизація](#Автоматизація)
     *   [7.2 Вкладені X сесії](#Вкладені_X_сесії)
-    *   [7.3 Starting GUI programs remotely](#Starting_GUI_programs_remotely)
-    *   [7.4 On-demand disabling and enabling of input sources](#On-demand_disabling_and_enabling_of_input_sources)
-    *   [7.5 Killing application with hotkey](#Killing_application_with_hotkey)
-    *   [7.6 Block TTY access](#Block_TTY_access)
-    *   [7.7 Prevent a user from killing X](#Prevent_a_user_from_killing_X)
-*   [8 Troubleshooting](#Troubleshooting)
-    *   [8.1 General](#General)
+    *   [7.3 Запуск програм GUI віддалено](#Запуск_програм_GUI_віддалено)
+    *   [7.4 Вимикання та увімкнення пристроїв введення на вимогу](#Вимикання_та_увімкнення_пристроїв_введення_на_вимогу)
+    *   [7.5 Закриття додатку гарячою клавішею](#Закриття_додатку_гарячою_клавішею)
+    *   [7.6 Блокування доступу до TTY](#Блокування_доступу_до_TTY)
+    *   [7.7 Запобігання закриттю X-сервера користувачем](#Запобігання_закриттю_X-сервера_користувачем)
+*   [8 Вирішення проблем](#Вирішення_проблем)
+    *   [8.1 Загальне](#Загальне)
     *   [8.2 Black screen, No protocol specified.., Resource temporarily unavailable for all or some users](#Black_screen,_No_protocol_specified..,_Resource_temporarily_unavailable_for_all_or_some_users)
     *   [8.3 DRI with Matrox cards stopped working](#DRI_with_Matrox_cards_stopped_working)
     *   [8.4 Frame-buffer mode problems](#Frame-buffer_mode_problems)
@@ -75,7 +75,7 @@ Xorg може бути встановлена з пакунком [xorg-server](
 
 Нарешті, також доступна група [xorg](https://www.archlinux.org/groups/x86_64/xorg/), яка включає в себе серверні пакунки Xorg, пакунки з групи [xorg-apps](https://www.archlinux.org/groups/x86_64/xorg-apps/) і шрифтів.
 
-**Tip:** Зазвичай встановлюють [менеджер вікон](/index.php/Display_manager "Display manager") або [середовище стільниці](/index.php/Desktop_environment "Desktop environment") для доповнення X.
+**Порада:** Зазвичай встановлюють [менеджер вікон](/index.php/Display_manager "Display manager") або [середовище стільниці](/index.php/Desktop_environment "Desktop environment") для доповнення X.
 
 ### Встановлення драйверів
 
@@ -113,7 +113,7 @@ Xorg автоматично шукає встановлені драйвери:
 | [nvidia-390xx](https://www.archlinux.org/packages/?name=nvidia-390xx) | [nvidia-390xx-utils](https://www.archlinux.org/packages/?name=nvidia-390xx-utils) | [lib32-nvidia-390xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-390xx-utils) |
 | [nvidia-340xx](https://www.archlinux.org/packages/?name=nvidia-340xx) | [nvidia-340xx-utils](https://www.archlinux.org/packages/?name=nvidia-340xx-utils) | [lib32-nvidia-340xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-utils) |
 
-**Note:**
+**Примітка:**
 
 *   Для NVIDIA Optimus на ноутбуках, в яких використовується вбудована відеокарта в поєднанні з виділеним GPU, дивіться [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus") або [Bumblebee](/index.php/Bumblebee "Bumblebee").
 *   Для графіки Intel 4-го покоління і вище див. [Intel graphics#Installation](/index.php/Intel_graphics#Installation "Intel graphics") для доступних драйверів.
@@ -143,7 +143,7 @@ and newer | [варіанти](https://en.wikipedia.org/wiki/List_of_AMD_graphic
 
 ## Конфігурація
 
-**Note:** Arch типово розміщує файли налаштувань в `/usr/share/X11/xorg.conf.d/`, і в більшості випадків не потрібно додаткового налаштування.
+**Примітка:** Arch типово розміщує файли налаштувань в `/usr/share/X11/xorg.conf.d/`, і в більшості випадків не потрібно додаткового налаштування.
 
 Xorg використовує файл налаштувань`xorg.conf` і файли що закінчуються на `.conf` для початкового налаштування: повний список тек, в яких знаходяться ці файли, можна знайти у [xorg.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xorg.conf.5), разом з детальним поясненням усіх доступних варіантів.
 
@@ -164,11 +164,11 @@ Xorg також можна налаштувати за допомогою `/etc/
 
 Це має створити файл `xorg.conf.new` в `/root/`, в який можна скопіювати `/etc/X11/xorg.conf`.
 
-**Tip:** Якщо ви вже запустили X-сервер, використовуйте інший дисплей, наприклад `Xorg :2 -configure`.
+**Порада:** Якщо ви вже запустили X-сервер, використовуйте інший дисплей, наприклад `Xorg :2 -configure`.
 
 Крім того, драйвери пропрієтарних відеокарт можуть постачатися з інструментом для автоматичної настройки Xorg: див. Статтю вашого відео-драйвера, [NVIDIA](/index.php/NVIDIA "NVIDIA") або [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst").
 
-**Note:** Ключові слова файлу конфігурації нечутливі до регістру, символи "_" ігноруються. Більшість рядків (включаючи назви опцій) також нечутливі до регістру, пробілу та символу "_".
+**Примітка:** Ключові слова файлу конфігурації нечутливі до регістру, символи "_" ігноруються. Більшість рядків (включаючи назви опцій) також нечутливі до регістру, пробілу та символу "_".
 
 ## Пристрої введення
 
@@ -217,7 +217,7 @@ $ grep -e "Using input driver " Xorg.0.log
 
 ### Ручне налаштування
 
-**Note:**
+**Примітка:**
 
 *   Новіші версії Xorg йдуть з автоконфігуруванням, тому ручна конфігурація не потрібна.
 *   Якщо Xorg не може виявити якийсь монітор або знайти автоматичного налаштування, можна використовувати файл конфігурації. Загальний випадок, коли це необхідно, це система, яка завантажується без монітора і автоматично запускає Xorg, або з [віртуальної консолі](/index.php/Automatic_login_to_virtual_console "Automatic login to virtual console") при [вході](/index.php/Start_X_at_login "Start X at login"), або з [менеджеру вікон](/index.php/Display_manager "Display manager").
@@ -328,14 +328,14 @@ EndSection
 
 ```
 
-Якщо у вас немає в документації інформації про ширину та висоту екрана (більшість специфікацій наведено лише за діагональним розміром), можна використовувати власне дозвіл монітора (або співвідношення сторін) і діагональну довжину для обчислення горизонтальних і вертикальних фізичних розмірів. Використання теореми Піфагора на екрані довжини діагоналі 13,3 дюйма з рідною роздільною здатністю 1280x800 (або співвідношенням сторін 16:10):
+Якщо у вас немає в документації інформації про ширину та висоту екрана (більшість специфікацій наведено лише за діагональним розміром), можна використовувати власне дозвіл монітора (або співвідношення сторін) і діагональний розмір для обчислення горизонтальних і вертикальних фізичних розмірів. Використання теореми Піфагора на екрані діагоналі 13,3 дюйма з рідною роздільною здатністю 1280x800 (або співвідношенням сторін 16:10):
 
 ```
 $ echo 'scale=5;sqrt(1280^2+800^2)' | bc  # 1509.43698
 
 ```
 
-Це дасть піксельну діагональну довжину і з цим значенням ви зможете виявити фізичні та горизонтальні довжини (і перетворити їх на міліметри):
+Це дасть піксельний діагональний розмір і з цим значенням ви зможете виявити фізичні та горизонтальні розміри (і перетворити їх на міліметри):
 
 ```
 $ echo 'scale=5;(13.3/1509)*1280*25.4' | bc  # 286.43072
@@ -343,11 +343,11 @@ $ echo 'scale=5;(13.3/1509)*800*25.4'  | bc  # 179.01920
 
 ```
 
-**Note:** Цей розрахунок працює для моніторів з квадратними пікселями; однак, зустрічаються монітори, які можуть стискати форматне співвідношення (наприклад, роздільну здатність 16:10 до 16:9). Якщо це так, ви повинні вимірювати розмір екрану вручну.
+**Примітка:** Цей розрахунок працює для моніторів з квадратними пікселями; однак, зустрічаються монітори, які можуть стискати форматне співвідношення (наприклад, роздільну здатність 16:10 до 16:9). Якщо це так, ви повинні вимірювати розмір екрану вручну.
 
 #### Ручне налаштування DPI
 
-**Note:** Незважаючи на те, що ви можете встановити будь-яке потрібне dpi, а програми, які використовують Qt і GTK, відповідно масштабуватимуться, рекомендується встановити значення 96, 120 (25% вище), 144 (на 50% вище), 168 (на 75% вище), 192 (100% вище) і т.д., щоб зменшити масштаб артефактів в програмах з GUI, які використовують растрові зображення. Зменшення його нижче 96 точок на дюйм може не зменшити розмір графічних елементів GUI, оскільки, як правило, найнижче dpi для піктограм, становить 96.
+**Примітка:** Незважаючи на те, що ви можете встановити будь-яке потрібне dpi, а програми, які використовують Qt і GTK, відповідно масштабуватимуться, рекомендується встановити значення 96, 120 (25% вище), 144 (на 50% вище), 168 (на 75% вище), 192 (100% вище) і т.і., щоб зменшити масштаб артефактів в програмах з GUI, які використовують растрові зображення. Зменшення його нижче 96 точок на дюйм може не зменшити розмір графічних елементів GUI, оскільки, як правило, найнижче dpi для піктограм, становить 96.
 
 Для RandR-сумісних драйверів (наприклад відкритий ATI драйвер), ви можете встановити його:
 
@@ -356,9 +356,9 @@ $ xrandr --dpi 144
 
 ```
 
-**Note:** Програми, які відповідають встановленим параметрам, не зміняться негайно. Ви повинні їх перезавантажити.
+**Примітка:** Програми, які відповідають встановленим параметрам, не зміняться негайно. Ви повинні їх перезавантажити.
 
-Дивіться [Виконайте команди після старту X](/index.php/Execute_commands_after_X_start "Execute commands after X start") щоб зробити зміни постійними.
+[Виконайте команди після старту X](/index.php/Execute_commands_after_X_start "Execute commands after X start") щоб зробити зміни постійними.
 
 ##### Пропрієтарний драйвер NVIDIA
 
@@ -433,35 +433,35 @@ $ xrdb -query | grep dpi
 
 ### Вкладені X сесії
 
-To run a nested session of another desktop environment:
+Для запуску вкладеного сеансу іншого середовища робочого столу:
 
 ```
 $ /usr/bin/Xnest :1 -geometry 1024x768+0+0 -ac -name Windowmaker & wmaker -display :1
 
 ```
 
-This will launch a Window Maker session in a 1024 by 768 window within your current X session.
+Це запустить сеанс Window Maker у вікні 1024x768 у поточній сесії X.
 
-This needs the package [xorg-server-xnest](https://www.archlinux.org/packages/?name=xorg-server-xnest) to be installed.
+Для цього потрібно, щоб пакет [xorg-server-xnest](https://www.archlinux.org/packages/?name=xorg-server-xnest) був встановлений.
 
-### Starting GUI programs remotely
+### Запуск програм GUI віддалено
 
-See main article: [OpenSSH#X11 forwarding](/index.php/OpenSSH#X11_forwarding "OpenSSH").
+Див. статтю: [OpenSSH#X11 forwarding](/index.php/OpenSSH#X11_forwarding "OpenSSH").
 
-### On-demand disabling and enabling of input sources
+### Вимикання та увімкнення пристроїв введення на вимогу
 
-With the help of *xinput* you can temporarily disable or enable input sources. This might be useful, for example, on systems that have more than one mouse, such as the ThinkPads and you would rather use just one to avoid unwanted mouse clicks.
+За допомогою *xinput* ви можете тимчасово вимкнути або ввімкнути пристрої введення. Це може бути корисним, наприклад, у системах, які мають більше однієї миші, наприклад ThinkPad, і ви бажаєте використовувати лише одну, щоб уникнути небажаних кліків мишею.
 
-[Install](/index.php/Install "Install") the [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) package.
+[Встановіть](/index.php/Install "Install") пакунок [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput).
 
-Find the name or ID of the device you want to disable:
+Знайдіть ім'я або ID пристрою що ви хочете відключити:
 
 ```
 $ xinput
 
 ```
 
-For example in a Lenovo ThinkPad T500, the output looks like this:
+Наприклад для Lenovo ThinkPad T500, вивід інформації такий:
 
  `$ xinput` 
 ```
@@ -479,30 +479,30 @@ For example in a Lenovo ThinkPad T500, the output looks like this:
 
 ```
 
-Disable the device with `xinput --disable *device*`, where *device* is the device ID or name of the device you want to disable. In this example we will disable the Synaptics Touchpad, with the ID 10:
+Відключити цей пристрій можна командою `xinput --disable *пристрій*`, де *пристрій* це ID пристрою або ім'я пристрою, який ви хочете відключити. У цьому прикладі ми відключимо Synaptics Touchpad з ID 10:
 
 ```
 $ xinput --disable 10
 
 ```
 
-To re-enable the device, just issue the opposite command:
+Щоби включити знов цей пристрій, просто виконайте команду:
 
 ```
 $ xinput --enable 10
 
 ```
 
-Alternatively using the device name, the command to disable the touchpad would be:
+Альтернатива - використовуємо ім'я пристрою, ця команда його відключить:
 
 ```
 $ xinput --disable "SynPS/2 Synaptics TouchPad"
 
 ```
 
-### Killing application with hotkey
+### Закриття додатку гарячою клавішею
 
-Run script on hotkey:
+Запустіть скрипт для гарячої клавіші:
 
 ```
 #!/bin/bash
@@ -512,11 +512,11 @@ kill -9 $pid
 
 ```
 
-Deps: [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop), [xdotool](https://www.archlinux.org/packages/?name=xdotool)
+Потрібні пакунки: [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop), [xdotool](https://www.archlinux.org/packages/?name=xdotool)
 
-### Block TTY access
+### Блокування доступу до TTY
 
-To block tty access when in an X add the following to [xorg.conf](#Configuration):
+Щоб заблокувати доступ до tty в X, до [xorg.conf](#Configuration) додати наступне:
 
 ```
 Section "ServerFlags"
@@ -524,9 +524,9 @@ Section "ServerFlags"
 EndSection
 ```
 
-### Prevent a user from killing X
+### Запобігання закриттю X-сервера користувачем
 
-To prevent a user from killing when it is running add the following to [xorg.conf](#Configuration):
+Щоб запобігти втручанню користувача в роботу X-сервера, додайте наступне до [xorg.conf](#Configuration):
 
 ```
 Section "ServerFlags"
@@ -534,9 +534,9 @@ Section "ServerFlags"
 EndSection
 ```
 
-## Troubleshooting
+## Вирішення проблем
 
-### General
+### Загальне
 
 If a problem occurs, view the log stored in either `/var/log/` or, for the rootless X default since v1.16, in `~/.local/share/xorg/`. [GDM](/index.php/GDM "GDM") users should check the [systemd](/index.php/Systemd "Systemd") journal. [[4]](https://bbs.archlinux.org/viewtopic.php?id=184639)
 

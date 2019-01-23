@@ -612,7 +612,7 @@ Works out of the box.
 
 The fingerprint reader is a Validity Sensors model (138a:0017) also used on the Thinkpad X240 and T440\. ThinkFinger does NOT support this reader.
 
-This fingerprint reader works with the current release of fprint.
+This fingerprint reader works with the current release of [fprint](/index.php/Fprint "Fprint").
 
 ### WWAN (Mobile broadband)
 

@@ -377,6 +377,7 @@ They go with multiple preconfigured presets that can be changed, and new can be 
 
 *   **cw** — A non-intrusive real-time ANSI color wrapper for common unix-based commands.
     Presets: arp, arping, auth.log@, blockdev, cal, cksum, clock, configure, cpuinfo@, crontab@, cw-pipe, cw-test.cgi, date, df, diff, dig, dmesg, du, env, figlet, file, find, finger, free, fstab@, fuser, g++, gcc, group@, groups, hdparm, hexdump, host, hosts@, id, ifconfig, inittab@, iptables, last, lastlog, lsattr, lsmod, lsof, ltrace-color, make, md5sum, meminfo@, messages@, mount, mpg123, netstat, nfsstat, nmap, nslookup, objdump, passwd@, ping, pmap, pmap_dump, praliases, profile@, protocols@, ps, pstree, quota, quotastats, resolv.conf@, route, routel, sdiff, services@, showmount, smbstatus, stat, strace-color, sysctl, syslog, tar, tcpdump, tracepath, traceroute, umount, uname, uptime, users, vmstat, w, wc, whereis, who, xferlog.
+    **Warning:** Wrapper replaces output of commands with escape sequences. Some shell scripts and programs which use the output of standard shell utilities may work wrong.
 
 	[http://cwrapper.sourceforge.net/](http://cwrapper.sourceforge.net/) || [cw](https://aur.archlinux.org/packages/cw/)
 

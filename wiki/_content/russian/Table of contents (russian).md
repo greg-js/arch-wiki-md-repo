@@ -24,7 +24,7 @@
  <small>2.7.1.</small> [Git web interfaces](/index.php/Category:Git_web_interfaces "Category:Git web interfaces") <small>(5) (also in [Web applications](/index.php/Category:Web_applications "Category:Web applications"))</small> |
 | <small>2.3.</small> [Виджет инструментарий](/index.php/Category:Widget_toolkits_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Widget toolkits (Русский)") <small>(3) (Также в [Graphical user interfaces](/index.php/Category:Graphical_user_interfaces_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Graphical user interfaces (Русский)"))</small> | <small>2.8.</small> [Widget toolkits](/index.php/Category:Widget_toolkits "Category:Widget toolkits") <small>(4) (also in [Graphical user interfaces](/index.php/Category:Graphical_user_interfaces "Category:Graphical user interfaces"))</small> |
 | <small>3.</small> [Аппаратная часть](/index.php/Category:Hardware_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Hardware (Русский)") <small>(3)</small> | <small>3.</small> [Hardware](/index.php/Category:Hardware "Category:Hardware") <small>(4)</small> |
-| <small>3.1.</small> [Архитектура ARM](/index.php/Category:ARM_architecture_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:ARM architecture (Русский)") <small>(1)</small> | <small>3.1.</small> [ARM architecture](/index.php/Category:ARM_architecture "Category:ARM architecture") <small>(7)</small> |
+| <small>3.1.</small> [Архитектура ARM](/index.php/Category:ARM_architecture_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:ARM architecture (Русский)") <small>(2)</small> | <small>3.1.</small> [ARM architecture](/index.php/Category:ARM_architecture "Category:ARM architecture") <small>(7)</small> |
 | <small>3.2.</small> [Bluetooth](/index.php/Category:Bluetooth_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Bluetooth (Русский)") <small>(4)</small> | <small>3.2.</small> [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth") <small>(6) (also in [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking"))</small> |
 | <small>3.3.</small> [Процессор](/index.php/Category:CPU_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:CPU (Русский)") <small>(5)</small> | <small>3.3.</small> [CPU](/index.php/Category:CPU "Category:CPU") <small>(10)</small> |
  <small>3.4.</small> [Digital imaging](/index.php/Category:Digital_imaging "Category:Digital imaging") <small>(6)</small> |
@@ -48,7 +48,7 @@
  <small>3.9.9.</small> [HASEE](/index.php/Category:HASEE "Category:HASEE") <small>(1)</small> |
 | <small>3.8.2.</small> [HP](/index.php/Category:HP_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:HP (Русский)") <small>(1)</small> | <small>3.9.10.</small> [HP](/index.php/Category:HP "Category:HP") <small>(58)</small> |
  <small>3.9.11.</small> [IBM](/index.php/Category:IBM "Category:IBM") <small>(2)</small> |
- <small>3.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(91)</small> |
+ <small>3.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(92)</small> |
  <small>3.9.13.</small> [MSI](/index.php/Category:MSI "Category:MSI") <small>(6)</small> |
 | <small>3.8.3.</small> [Samsung](/index.php/Category:Samsung_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Samsung (Русский)") <small>(1)</small> | <small>3.9.14.</small> [Samsung](/index.php/Category:Samsung "Category:Samsung") <small>(7)</small> |
  <small>3.9.15.</small> [Sony](/index.php/Category:Sony "Category:Sony") <small>(10)</small> |

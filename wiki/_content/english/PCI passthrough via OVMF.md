@@ -1,3 +1,7 @@
+Related articles
+
+*   [Intel GVT-g](/index.php/Intel_GVT-g "Intel GVT-g")
+
 The Open Virtual Machine Firmware ([OVMF](https://github.com/tianocore/tianocore.github.io/wiki/OVMF)) is a project to enable UEFI support for virtual machines. Starting with Linux 3.9 and recent versions of [QEMU](/index.php/QEMU "QEMU"), it is now possible to passthrough a graphics card, offering the VM native graphics performance which is useful for graphic-intensive tasks.
 
 Provided you have a desktop computer with a spare GPU you can dedicate to the host (be it an integrated GPU or an old OEM card, the brands do not even need to match) and that your hardware supports it (see [#Prerequisites](#Prerequisites)), it is possible to have a VM of any OS with its own dedicated GPU and near-native performance. For more information on techniques see the background [presentation (pdf)](https://www.linux-kvm.org/images/b/b3/01x09b-VFIOandYou-small.pdf).
@@ -72,6 +76,7 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [10.11 Host lockup after VM shutdown](#Host_lockup_after_VM_shutdown)
     *   [10.12 Host lockup if guest is left running during sleep](#Host_lockup_if_guest_is_left_running_during_sleep)
     *   [10.13 Cannot boot after upgrading ovmf](#Cannot_boot_after_upgrading_ovmf)
+    *   [10.14 QEMU via cli pulseaudio stuttering/delay](#QEMU_via_cli_pulseaudio_stuttering/delay)
 *   [11 See also](#See_also)
 
 ## Prerequisites
@@ -298,7 +303,25 @@ With the installation done, it is now possible to edit the hardware details in l
 
 ### Passing keyboard/mouse via Evdev
 
-If you do not have a spare mouse or keyboard to dedicate to your guest, and you do not want to suffer from the video overheard of Spice, you can setup evdev to swap control of your mouse and keyboard between the host and guest on the fly. First find your keyboard and mouse devices in `/dev/input/by-id/`. You may find multiple devices associated to your mouse or keyboard, so try `/dev/input/by-id/*device_id*` and either hit some keys on the keyboard or wiggle your mouse to see if input comes through, if so you have got the right device. Next add those devices to your configuration
+If you do not have a spare mouse or keyboard to dedicate to your guest, and you do not want to suffer from the video overheard of Spice, you can setup evdev to swap control of your mouse and keyboard between the host and guest on the fly.
+
+First, modify the libvirt configuration
+
+ `$ virsh edit [vmname]` 
+```
+<domain type='kvm'>
+
+```
+
+to
+
+ `$ virsh edit [vmname]` 
+```
+<domain type='kvm' xmlns:qemu='http://libvirt.org/schemas/domain/qemu/1.0'>
+
+```
+
+Next, find your keyboard and mouse devices in `/dev/input/by-id/`. You may find multiple devices associated to your mouse or keyboard, so try `/dev/input/by-id/*device_id*` and either hit some keys on the keyboard or wiggle your mouse to see if input comes through, if so you have got the right device. Now add those devices to your configuration
 
  `$ virsh edit [vmname]` 
 ```
@@ -334,7 +357,7 @@ cgroup_device_acl = [
 
 ```
 
-Then ensure that the user you provided has access to the `kvm` and `input` [user groups](/index.php/User_group "User group"). [Restart](/index.php/Restart "Restart") `libvirt.service`. Now you can startup the guest OS and test swapping control of your mouse and keyboard between the host and guest by pressing both the left and right control keys at the same time.
+Then ensure that the user you provided has access to the `kvm` and `input` [user groups](/index.php/User_group "User group"). [Restart](/index.php/Restart "Restart") `libvirtd.service`. Now you can startup the guest OS and test swapping control of your mouse and keyboard between the host and guest by pressing both the left and right control keys at the same time.
 
 You may also consider switching from PS/2 to Virtio inputs in your configurations:
 
@@ -1461,6 +1484,23 @@ mv /var/lib/libvirt/qemu/nvram/vmname_VARS.fd /var/lib/libvirt/qemu/nvram/vmname
 
 See [FS#57825](https://bugs.archlinux.org/task/57825) for further details.
 
+### QEMU via cli pulseaudio stuttering/delay
+
+Using following flags for the audio device and chipset might help if you are running into the stuttering/delay audio issues when running QEMU via cli:
+
+```
+qemu-system-x86_64 \
+-machine pc-i440fx-3.0 \
+-device hda-micro \
+-soundhw hda \
+-...
+
+```
+
+As noted in [QEMU 3.0 audio changes](/index.php/PCI_passthrough_via_OVMF#QEMU_3.0_audio_changes "PCI passthrough via OVMF") the specified chipset will include a series of audio patches.
+
+Setting `QEMU_AUDIO_TIMER_PERIOD` to values higher than 100 might also help (did not test value lower than 100).
+
 ## See also
 
 *   [Discussion on Arch Linux forums](https://bbs.archlinux.org/viewtopic.php?id=162768) | [Archived link](https://archive.is/kZYMt)
@@ -1471,3 +1511,4 @@ See [FS#57825](https://bugs.archlinux.org/task/57825) for further details.
 *   [#vfio-users on freenode](ircs://chat.freenode.net/vfio-users)
 *   [YouTube: Level1Linux - GPU Passthrough for Virtualization with Ryzen](https://www.youtube.com/watch?v=aLeWg11ZBn0)
 *   [/r/VFIO: A subreddit focused on vfio](https://www.reddit.com/r/VFIO)
+*   [GVT-d: passthrough of an entire integrated GPU](https://github.com/intel/gvt-linux/wiki/GVTd_Setup_Guide)

@@ -27,7 +27,7 @@ Joysticks can be a bit of a hassle to get working in Linux. Not because they are
         *   [7.5.1 Connecting via Bluetooth](#Connecting_via_Bluetooth)
         *   [7.5.2 Using generic/clone controllers](#Using_generic/clone_controllers)
     *   [7.6 iPEGA-9017s and other Bluetooth gamepads](#iPEGA-9017s_and_other_Bluetooth_gamepads)
-        *   [7.6.1 iPEGA-9068](#iPEGA-9068)
+        *   [7.6.1 iPEGA-9068 and 9087](#iPEGA-9068_and_9087)
     *   [7.7 Steam Controller](#Steam_Controller)
         *   [7.7.1 Wine](#Wine)
     *   [7.8 Xbox 360 controller](#Xbox_360_controller)
@@ -417,13 +417,13 @@ Now when you have the config and your device is connected you can start the [xbo
 
 Your games will now work with bluetooth gamepad as long as xboxdrv is running.
 
-#### iPEGA-9068
+#### iPEGA-9068 and 9087
 
 For this model, use the same procedures as above, but with the configs:
 
  `~/.config/xboxdrv/ipega.conf` 
 ```
-#iPEGA PG-9068 Config 
+#iPEGA PG-9068 and PG-9087 Config 
 
 [xboxdrv]
 evdev-debug = true

@@ -257,7 +257,7 @@ La lingua ufficiale del canale **#archlinux** è l'Inglese. Se hai bisogno di ai
 
 *   Non cercare aiuto, chiedi direttamente. Aspetta pazientemente per qualche minuto prima di rifare la domanda. La maggior parte delle domande trovano risposta da 'altri utenti' come te.
 
-*   Quando si chiede aiuto, rispndere sempre alla persona che chiede più informazioni, se non conosci la risposta, esponilo.
+*   Quando si chiede aiuto, rispondere sempre alla persona che chiede più informazioni, se non conosci la risposta, esponilo.
 
 ### Wiki
 

@@ -63,7 +63,7 @@ Si está utilizando el inicio de sesión automático, puede desactivar el gestor
 
 #### Inicio de sesión de consola
 
-Cuando se utiliza el inicio de sesión basado en la consola, el demonio del llavero puede iniciarse mediante [PAM](/index.php/PAM "PAM") o [xinitrc](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)"). PAM también puede desbloquear el llavero automáticamente al iniciar sesión.
+Cuando se utiliza el inicio de sesión basado en la consola, el demonio del llavero puede iniciarse mediante [PAM](/index.php/PAM_(Espa%C3%B1ol) "PAM (Español)") o [xinitrc](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)"). PAM también puede desbloquear el llavero automáticamente al iniciar sesión.
 
 ##### Método PAM
 

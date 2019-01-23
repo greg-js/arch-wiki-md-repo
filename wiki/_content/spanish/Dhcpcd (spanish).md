@@ -1,3 +1,6 @@
+**Estado de la traducción**
+Este artículo es una traducción de [dhcpcd](/index.php/Dhcpcd "Dhcpcd"), revisada por última vez el **2019-1-21**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Dhcpcd&diff=0&oldid=562094) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
 Artículos relacionados
 
 *   [Network configuration (Español)](/index.php/Network_configuration_(Espa%C3%B1ol) "Network configuration (Español)")
@@ -21,18 +24,18 @@ Artículos relacionados
     *   [4.1 10-wpa_supplicant](#10-wpa_supplicant)
 *   [5 Consejos y trucos](#Consejos_y_trucos)
     *   [5.1 Acelerar DHCP deshabilitando la exploración ARP](#Acelerar_DHCP_deshabilitando_la_exploración_ARP)
-    *   [5.2 Remove old DHCP lease](#Remove_old_DHCP_lease)
-    *   [5.3 Different IPs when multi-booting](#Different_IPs_when_multi-booting)
+    *   [5.2 Quitar el arrendamiento antiguo de DHCP](#Quitar_el_arrendamiento_antiguo_de_DHCP)
+    *   [5.3 Diferentes IPs cuando se multi-bootea](#Diferentes_IPs_cuando_se_multi-bootea)
     *   [5.4 resolv.conf](#resolv.conf)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Client ID](#Client_ID)
-    *   [6.2 Check DHCP problem by releasing IP first](#Check_DHCP_problem_by_releasing_IP_first)
-    *   [6.3 Problems with noncompliant routers](#Problems_with_noncompliant_routers)
+*   [6 Solución de problemas](#Solución_de_problemas)
+    *   [6.1 ID del cliente](#ID_del_cliente)
+    *   [6.2 Comprobar un problema de DHCP soltando primero la IP](#Comprobar_un_problema_de_DHCP_soltando_primero_la_IP)
+    *   [6.3 Problemas con routers no obedientes](#Problemas_con_routers_no_obedientes)
     *   [6.4 dhcpcd y interfaces de red con systemd](#dhcpcd_y_interfaces_de_red_con_systemd)
-    *   [6.5 Timeout delay](#Timeout_delay)
-*   [7 Known issues](#Known_issues)
-    *   [7.1 dhcpcd@.service causes slow startup](#dhcpcd@.service_causes_slow_startup)
-*   [8 See also](#See_also)
+    *   [6.5 Tiempo de espera](#Tiempo_de_espera)
+*   [7 Problemas conocidos](#Problemas_conocidos)
+    *   [7.1 dhcpcd@.service causa un inicio lento](#dhcpcd@.service_causa_un_inicio_lento)
+*   [8 Véase también](#Véase_también)
 
 ## Instalación
 
@@ -188,134 +191,134 @@ noarp
 
 Esto es equivalente si le pasa `--noarp` a `dhcpcd`, y desactiva la prueba ARP descrita, aumentando la velocidad de la conexiones a redes con DHCP.
 
-### Remove old DHCP lease
+### Quitar el arrendamiento antiguo de DHCP
 
-The file `/var/lib/dhcpcd/*interface*.lease`, where `*interface*` is the name of the interface on which you have a lease, contains the actual DHCP lease reply sent by the DHCP server. For a wireless interface, the filename is `/var/lib/dhcpcd/*interface*-*ssid*.lease`, where `*ssid*` is the name of the wireless network. It is used to determine the last lease from the server, and its `mtime` attribute is used to determine when it was issued. This last lease information is then used to request the same IP address previously held on a network, if it is available. If you do not want that, simply delete this file.
+El archivo `/var/lib/dhcpcd/*interfaz*.lease`, donde `*interfaz*` es el nombre de la interfaz que tiene el arrendamiento, contiene la respuesta enviada por el servidor DHCP del actual arrendamiento de DHCP. Para una interfaz inalámbrica, el nombre del archivo es `/var/lib/dhcpcd/*interfaz*-*ssid*.lease`, donde `*ssid*` es el nombre de la red inalámbrica. Se usa para determinar el último arrendamiento del servidor, y su atributo `mtime` se usa para determinar cuando se ha resuelto. La última información de arrendamiento se usa para pedir la misma dirección IP previamente retenida en la red, si está disponible. Si no quiere eso, simplemente elimine este archivo.
 
-If the DHCP server still assigns the same IP address, this may happen because it is configured to keep the assignment stable and recognizes the requesting DHCP client id or DUID (see [#DHCP Client Identifier](#DHCP_Client_Identifier)). You can test it by stopping *dhcpcd* and removing or renaming `/var/lib/dhcpcd/duid`. *dhcpcd* will generate a new one on next run.
+Si el servidor DHCP aún le asigna la misma dirección IP, puede deberse a que está configurado para mantener la asignación estable y reconoce el requerimiento del id del cliente DHCP o DUID (vea [#Identificador de cliente DHCP](#Identificador_de_cliente_DHCP)). Puedes probarlo parando *dhcpcd* y eliminando o renombrando `/var/lib/dhcpcd/duid`. *Dhcpcd* generará uno nuevo en la siguiente ejecución.
 
-Keep in mind that the DUID is intended as persistent machine identifier across reboots and interfaces. If you are transferring the system to new computer, preserving this file should make it appear as old one.
+Tenga en cuenta que el DUID está destinado a ser un identificador persistente sobre los reinicios e interfaces. Si estás transfiriendo el sistema a un nuevo ordenador, preservar este archivo debería hacer que el ordenador se parezca al antiguo.
 
-### Different IPs when multi-booting
+### Diferentes IPs cuando se multi-bootea
 
-If you are dualbooting Arch and OS X or Windows and want each to receive different IP addresses, you can exert control about the IPs leased by specifying a different DUID in each operating system installation.
+Si está dualbooteando Arch y OS X o Windows y quiere que cada uno reciba direcciones IP distintas, puedes ejercer control sobre el arrendamiento de IPs especificando un DUID diferente para cada sistema operativo.
 
-In Windows (post XP) the DUID should be stored in the
+En Windows (en XP) el DUID debería estar guardado en
 
 ```
 \HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip6\Parameters\Dhcpv6DUID 
 
 ```
 
-registry key.
+registro clave.
 
-On OS X it is directly accessible in `Network\adapter\dhcp preferences panel`.
+En OS X es directamente accesible en `Network\adapter\dhcp preferences panel`.
 
-If you are using a [dnsmasq](/index.php/Dnsmasq "Dnsmasq") DHCP server, the different DUIDs can be used in appropriate `dhcp-host=` rules in its configuration.
+Si está utilizando un servidor [dnsmasq](/index.php/Dnsmasq_(Espa%C3%B1ol) "Dnsmasq (Español)") DHCP, los DUIDs diferentes pueden utilizar las reglas apropiadas `dhcp-host=` en su cpnfiguración.
 
 ### resolv.conf
 
-*dhcpcd'* by default overwrites [resolv.conf](/index.php/Resolv.conf "Resolv.conf").
+*dhcpcd'* por defecto sobrescribe [resolv.conf](/index.php/Resolv.conf "Resolv.conf").
 
-This can be stopped by adding the following to the last section of `/etc/dhcpcd.conf`:
+Se puede parar añadiendo lo siguiente a la última sección de `/etc/dhcpcd.conf`:
 
 ```
 nohook resolv.conf
 
 ```
 
-Alternatively, you can create a file called `/etc/resolv.conf.head` containing your DNS servers. *dhcpcd* will prepend this file to the beginning of `/etc/resolv.conf`.
+Alternativamente, puede crear un archivo llamado `/etc/resolv.conf.head` conteniendo sus servidores DNS. *Dhcpcd* antepone este archivo al comienzo de `/etc/resolv.conf`.
 
-Or you can configure dhcpcd to use the same DNS servers every time. To do this, add the following line at the end of your `/etc/dhcpcd.conf`, where `*dns-server-ip-addressses*` is a space separated list of DNS IP addresses.
+O puede configurar dhcpcd para utilizar el mismo servidor DNS siempre. Para hacer esto, añade la siguiente linea al final de su `/etc/dhcpcd.conf`, donde `*dns-server-ip-addressses*` es una lista deparada por espacios de las direcciones IP DNS.
 
 ```
 static domain_name_servers=*dns-server-ip-addresses*
 
 ```
 
-For example, to set it to Google's DNS servers:
+Por ejemplo, para establecer el servidor DNS de Google:
 
 ```
 static domain_name_servers=8.8.8.8 8.8.4.4
 
 ```
 
-## Troubleshooting
+## Solución de problemas
 
-### Client ID
+### ID del cliente
 
-If you are on a network with DHCPv4 that filters Client IDs based on MAC addresses, you may need to change the following line:
+Si está en una red con DHCPv4 If you are on a network with DHCPv4 que filtra las IDs de los clientes basados en direcciones MAC, necesita cambiar la siguiente linea:
 
  `/etc/dhcpcd.conf` 
 ```
-# Use the same DUID + IAID as set in DHCPv6 for DHCPv4 Client ID as per RFC4361\. 
+# Use el mismo DUID + IAID como se establece en DHCPv6 para el ID del cliente DHCPv4 igual que RFC4361\. 
 duid
 
 ```
 
-To:
+A:
 
  `/etc/dhcpcd.conf` 
 ```
-# Use the hardware address of the interface for the Client ID (DHCPv4).
+# Utilice la dirección de la interfaz del hardware para el ID del cliente (DHCPv4).
 clientid
 
 ```
 
-Else, you may not obtain a lease since the DHCP server may not read your [DHCPv6-style](https://en.wikipedia.org/wiki/DHCPv6 "wikipedia:DHCPv6") Client ID correctly. See [RFC 4361](https://tools.ietf.org/html/rfc4361) for more information.
+Si no, puede no obtener ningún arrendamiento desde que el servidor DHCP no lea su ID del cliente [estilo-DHCPv6](https://en.wikipedia.org/wiki/es:DHCPv6 "wikipedia:es:DHCPv6") correctamente. Vea [RFC 4361](https://tools.ietf.org/html/rfc4361) para más información.
 
-### Check DHCP problem by releasing IP first
+### Comprobar un problema de DHCP soltando primero la IP
 
-A problem may occur when DHCP gets a wrong IP assignment, such as when two routers are tied together through a VPN. The router that is connected through the VPN may be assigning IP address. To fix it, as root, release the IP address:
+Puede ocurrir un problema cuando DHCP obtiene una asignación IP incorrecta, como que dos routers están enlazados juntos a una VPN. El router que está conectado a través de la VPN puede haber asignado una dirección IP. Para arreglarlo, como root, suelte la dirección IP:
 
 ```
 # dhcpcd -k
 
 ```
 
-Then request a new one:
+Luego pida una nueva:
 
 ```
 # dhcpcd
 
 ```
 
-You may have to run those two commands many times.
+Puede que tengas que ejecutar estos dos comandos varias veces.
 
-### Problems with noncompliant routers
+### Problemas con routers no obedientes
 
-For some (noncompliant) routers, you will not be able to connect properly unless you comment the line
+Para algunos routers (desobedientes), no podrá conectarse apropiadamente a no haya ser que comentes la linea
 
 ```
 require dhcp_server_identifier
 
 ```
 
-in `/etc/dhcpcd.conf`. This should not cause issues unless you have multiple DHCP servers on your network (not typical); see [this page](https://technet.microsoft.com/en-us/library/cc977442.aspx) for more information.
+en `/etc/dhcpcd.conf`. Esto no debería causarle problemas a no ser que tenga múltiples servidores DHCP en su red (no es típico); vea [esta página](https://technet.microsoft.com/en-us/library/cc977442.aspx) para más información.
 
 ### dhcpcd y interfaces de red con systemd
 
-`dhcpcd.service` can be [enabled](/index.php/Enabled "Enabled") without specifying an interface. This may, however, create a race condition at boot with *systemd-udevd* trying to apply a predictable network interface name:
+`dhcpcd.service` puede [activarse](/index.php?title=Activarse&action=edit&redlink=1 "Activarse (page does not exist)") sin especificar una interfaz. Esto puede, sin embargo, crear una condición en el booteo intentando aplicar un nombre predictivo de la interfaz de red con *system-udev*:
 
 ```
 error changing net interface name wlan0 to wlp4s0: Device or resource busy" 
 
 ```
 
-To avoid it, enable *dhcpcd* per interface it should bind to as described in [#Running](#Running). The downside of the template unit is, however, that it does not support hot-plugging of a wired connection and will fail if the network cable is not connected. To work-around the failure, see [#Timeout delay](#Timeout_delay).
+Para evitarlo, habilita *dhcpcd* por interfaz que debería enlazar como se ha descrito en [#Iniciar](#Iniciar). La plantilla de abajo, sin embargo, no soporta la conexión en caliente de una conexión por cable y fallará si el cable de red no está conectado. Para tratar el fallo, vea [#Tiempo de espera](#Tiempo_de_espera).
 
-It is also possible to use `denyinterfaces` or `allowinterfaces` in [dhcpcd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5) to stop dhcpcd from binding to kernel names, for example
+También es posible utilizar `denyinterfaces` o `allowinterfaces` en [dhcpcd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5) para parar dhcpcd vinculando a los nombres del kernel, por ejemplo
 
 ```
 denyinterfaces wlan* eth*
 
 ```
 
-### Timeout delay
+### Tiempo de espera
 
-If *dhcpcd* operates on a single interface and fails to obtain a lease after 30 seconds (for example when the server is not ready or the cable not plugged), it will exit with an error.
+Si *dhcpcd* opera en una única interfaz y falla al obtener el arrendamiento (lease time) después de 30 segundos (por ejemplo cuando el servidor no está preparado o el cable no está conectado), saldrá con un error.
 
-To have *dhcpcd* wait indefinitely for one-time, [edit](/index.php/Edit "Edit") the unit and set the `timeout` option to `0`:
+Para hacer que *dhcpcd* espere indefinidamente por una vez, [edite](/index.php/Edite "Edite") la unidad y establece la opción `timeout` a `0`:
 
  `/etc/systemd/system/dhcpcd@.service.d/timeout.conf` 
 ```
@@ -324,7 +327,7 @@ ExecStart=
 ExecStart=/usr/bin/dhcpcd -w -q **-t 0** %I
 ```
 
-To have it wait indefinitely, let the unit restart after it exited:
+Para hacer que espere indefinidamente, deja que la unidad se reinicie después de salir:
 
  `/etc/systemd/system/dhcpcd@.service.d/dhcpcdrestart.conf` 
 ```
@@ -332,11 +335,11 @@ To have it wait indefinitely, let the unit restart after it exited:
 Restart=always
 ```
 
-## Known issues
+## Problemas conocidos
 
-### dhcpcd@.service causes slow startup
+### dhcpcd@.service causa un inicio lento
 
-By default the `dhcpcd@.service` waits to get an IP address before forking into the background via the `-w` flag for *dhcpcd*. If the unit is enabled, this may cause the boot to wait for an IP address before continuing. To fix this, create a [drop-in file](/index.php/Systemd#Drop-in_files "Systemd") for the unit with the following:
+Por defecto `dhcpcd@.service` espera hasta obtener una dirección IP antes de pasar a segundo plano vía parámetro `-w` para *dhcpcd*. Si la unidad está habilitada, puede causar que en el arranque espere a obtener una dirección IP antes de continuar. Para arreglarlo, crea un [archivo de inserción](/index.php/Systemd_(Espa%C3%B1ol)#Archivos_insertados "Systemd (Español)") para la unidad con lo siguiente:
 
  `/etc/systemd/system/dhcpcd@.service.d/no-wait.conf` 
 ```
@@ -345,9 +348,9 @@ ExecStart=
 ExecStart=/usr/bin/dhcpcd -b -q %I
 ```
 
-See also [FS#49685](https://bugs.archlinux.org/task/49685).
+Vea también [FS#49685](https://bugs.archlinux.org/task/49685).
 
-## See also
+## Véase también
 
 *   [dhcpcd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.8)
 *   [dhcpcd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5)

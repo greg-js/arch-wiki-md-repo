@@ -94,9 +94,9 @@ For those processors it is necessary to add `i915.enable_guc=2` to the [kernel p
 
  `/etc/modprobe.d/i915.conf`  `options i915 enable_guc=2` 
 
-You can also enable GuC submission by setting flag `enable_guc=3` but this is generally discouraged and may negatively affect your system stability.
+It is possible to enable both GuC/HuC firmware loading and GuC submission by using the `enable_guc=3` module parameter, although this is generally discouraged and may even negatively affect your system stability.
 
-You can verify both are enabled by using *dmesg*:
+You can verify both are enabled by using [dmesg](/index.php/Dmesg "Dmesg"):
 
  `$ dmesg` 
 ```
@@ -192,9 +192,7 @@ To enable fastboot, set `i915.fastboot=1` as [kernel parameter](/index.php/Kerne
 
 ### Intel GVT-g Graphics Virtualization Support
 
-To enable GVT support, mainly used for allowing [Xen](/index.php/Xen "Xen")/[KVM](/index.php/KVM "KVM") guests to access the Intel GPU of the host, the `enable_gvt=1` has to be set:
-
- `/etc/modprobe.d/i915.conf`  `options i915 enable_gvt=1` 
+See [Intel GVT-g](/index.php/Intel_GVT-g "Intel GVT-g") for details.
 
 ## Tips and tricks
 

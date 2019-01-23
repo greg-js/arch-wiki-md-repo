@@ -37,6 +37,7 @@ The *Compare files* dialog depends on [kompare](https://www.archlinux.org/packag
 
 *   [kdegraphics-thumbnailers](https://www.archlinux.org/packages/?name=kdegraphics-thumbnailers): Image files and PDFs
 *   [kimageformats](https://www.archlinux.org/packages/?name=kimageformats): Gimp *.xcf* files
+*   [resvg](https://aur.archlinux.org/packages/resvg/): Fast and accurate SVG image thumbnails
 *   [kdesdk-thumbnailers](https://www.archlinux.org/packages/?name=kdesdk-thumbnailers): Plugins for the thumbnailing system
 *   [ffmpegthumbs](https://www.archlinux.org/packages/?name=ffmpegthumbs): Video files (based on ffmpeg)
 *   [raw-thumbnailer](https://www.archlinux.org/packages/?name=raw-thumbnailer): *.raw* files

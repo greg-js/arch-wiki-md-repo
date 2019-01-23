@@ -18,7 +18,7 @@ This article covers the proprietary [NVIDIA](http://www.nvidia.com) graphics car
     *   [1.3 DRM kernel mode setting](#DRM_kernel_mode_setting)
         *   [1.3.1 Pacman hook](#Pacman_hook)
     *   [1.4 Hardware accelerated video decoding](#Hardware_accelerated_video_decoding)
-        *   [1.4.1 VDPAU](#VDPAU)
+        *   [1.4.1 NVDEC and VDPAU](#NVDEC_and_VDPAU)
         *   [1.4.2 XvMC](#XvMC)
 *   [2 Configuration](#Configuration)
     *   [2.1 Minimal configuration](#Minimal_configuration)
@@ -56,7 +56,7 @@ These instructions are for those using the stock [linux](https://www.archlinux.o
 
 3\. Install the appropriate driver for your card:
 
-*   For GeForce 600 series cards (except 610, 620, 625, 705, 800A and other low end rebrands) and newer [NVEx and newer], [install](/index.php/Install "Install") the [nvidia](https://www.archlinux.org/packages/?name=nvidia) or [nvidia-lts](https://www.archlinux.org/packages/?name=nvidia-lts) package.
+*   For GeForce 600-900 and 10 series cards and newer [NVEx and newer], [install](/index.php/Install "Install") the [nvidia](https://www.archlinux.org/packages/?name=nvidia) or [nvidia-lts](https://www.archlinux.org/packages/?name=nvidia-lts) package.
 
 *   If these packages do not work, [nvidia-beta](https://aur.archlinux.org/packages/nvidia-beta/) may have a newer driver version that offers support.
 *   There is also [nvidia-llb-dkms](https://aur.archlinux.org/packages/nvidia-llb-dkms/), which is built from Nvidia's [long lived branch](http://www.phoronix.com/scan.php?page=news_item&px=OTkxOA).
@@ -127,9 +127,9 @@ Make sure the `Target` package set in this hook is the one you've installed in s
 
 ### Hardware accelerated video decoding
 
-#### VDPAU
+#### NVDEC and VDPAU
 
-At least a video card with second generation [PureVideo HD](https://en.wikipedia.org/wiki/Nvidia_PureVideo#Table_of_GPUs_containing_a_PureVideo_SIP_block "wikipedia:Nvidia PureVideo") is required for [hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration") using VDPAU.
+Accelerated video decoding with VDPAU is supported on GeForce 8 series cards and newer. Accelerated video decoding with NVDEC is supported on Fermi cards and newer. See [hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration") for details.
 
 #### XvMC
 

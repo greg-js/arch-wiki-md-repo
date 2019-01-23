@@ -6,7 +6,7 @@ Como puede correr con o sin [xinetd](https://es.wikipedia.org/wiki/Xinetd), ser�
 
 *   [1 Sin xinetd (simple)](#Sin_xinetd_(simple))
 *   [2 Usando xinetd](#Usando_xinetd)
-*   [3 PAM with "virtual users"](#PAM_with_"virtual_users")
+*   [3 PAM con usuarios virtuales](#PAM_con_usuarios_virtuales)
     *   [3.1 Para agregar carpetas privadas para los usuarios virtuales](#Para_agregar_carpetas_privadas_para_los_usuarios_virtuales)
 
 ## Sin xinetd (simple)
@@ -109,7 +109,7 @@ listen=NO
 
 ```
 
-## PAM with "virtual users"
+## PAM con usuarios virtuales
 
 Al usar usuarios virtuales está la ventaja de no requerir una sesion real del usuario en el sistema. Mantener el ambiente en un recipiente es, por supuesto, una opción mas segura.
 

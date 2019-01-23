@@ -1,6 +1,6 @@
 Related articles
 
-*   [PCI_passthrough_via_OVMF](/index.php/PCI_passthrough_via_OVMF "PCI passthrough via OVMF")
+*   [PCI passthrough via OVMF](/index.php/PCI_passthrough_via_OVMF "PCI passthrough via OVMF")
 *   [QEMU](/index.php/QEMU "QEMU")
 *   [Intel graphics](/index.php/Intel_graphics "Intel graphics")
 
@@ -22,7 +22,7 @@ You'll have to create a virtual GPU (vGPU) first, then assign it to your VM. The
 You'll need to:
 
 *   Use at least Linux 4.16 and [QEMU](/index.php/QEMU "QEMU") 2.12.
-*   Add `i915.enable_gvt=1` to your kernel parameters to enable GPU virtualization.
+*   Add `i915.enable_gvt=1` to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to enable GPU virtualization.
 *   Find the PCI address and domain number of your GPU (`$GVT_PCI` and `$GVT_DOM` in commands below), as it resides in `/sys/bus/pci/devices`. It looks like this: `0000:00:02.0` - you can look it up by running `lspci -D -nn`, looking for `VGA compatible controller: Intel Corporation HD Graphics ...` and noting down the address on the left.
 *   Generate the vGPU GUID (`$GVT_GUID` in commands below) which you'll use to create and assign the vGPU. A single virtual GPU can be assigned only to a single VM - create as many GUIDs as you want vGPUs. (You can do so by running `uuidgen`.)
 
@@ -62,11 +62,11 @@ Finally, to create a VM with the virtualized GPU, add this parameter to the QEMU
 
 ### Missing mdev_supported_types directory
 
-If you have followed instructions and added *i915.enable_gvt=1* kernel parameter, but there is still no `/sys/bus/pci/devices/0000:02:00.0/mdev_supported_types` directory, probably your hardware is not supported. Check dmesg log for this message:
+If you have followed instructions and added `i915.enable_gvt=1` kernel parameter, but there is still no `/sys/bus/pci/devices/0000:02:00.0/mdev_supported_types` directory, probably your hardware is not supported. Check dmesg log for this message:
 
- `dmesg | grep -i gvt `  `[    4.227468] [drm] Unsupported device. GVT-g is disabled` 
+ `$ dmesg | grep -i gvt `  `[    4.227468] [drm] Unsupported device. GVT-g is disabled` 
 
-Coffee Lake is not supported yet. See this: [https://github.com/intel/gvt-linux/issues/53](https://github.com/intel/gvt-linux/issues/53)
+If that is the case, you may want to check upstream for support plans. For example, for the "Coffee Lake" (CFL) platform support, see [https://github.com/intel/gvt-linux/issues/53](https://github.com/intel/gvt-linux/issues/53)
 
 ## See also
 

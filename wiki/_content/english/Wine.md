@@ -398,7 +398,7 @@ $ update-mime-database ~/.local/share/mime/
 Alternatively you can delete all wine related stuff:
 
 ```
-$ find ~/.local/share -name "*wine*" | xargs --no-run-if-empty rm -r
+$ find ~/.local/share -name "*wine*" | xargs -I '{}' --no-run-if-empty rm -r '{}'
 
 ```
 

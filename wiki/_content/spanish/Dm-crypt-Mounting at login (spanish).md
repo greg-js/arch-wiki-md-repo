@@ -11,7 +11,7 @@ Artículos relacionados
 
 *   [pam_mount](/index.php/Pam_mount "Pam mount")
 
-Es posible configurar [PAM](/index.php/PAM "PAM") y [systemd (Español)](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") para montar automáticamente una partición «home» cifrada con [dm-crypt](/index.php/Dm-crypt "Dm-crypt") cuando su propietario inicie sesión y desmontarla cuando la cierre.
+Es posible configurar [PAM](/index.php/PAM_(Espa%C3%B1ol) "PAM (Español)") y [systemd (Español)](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") para montar automáticamente una partición «home» cifrada con [dm-crypt](/index.php/Dm-crypt "Dm-crypt") cuando su propietario inicie sesión y desmontarla cuando la cierre.
 
 Este tutorial supone que ya ha creado su partición cifrada, como se describe en [Dm-crypt/Encrypting a non-root file system (Español)](/index.php/Dm-crypt/Encrypting_a_non-root_file_system_(Espa%C3%B1ol) "Dm-crypt/Encrypting a non-root file system (Español)").
 

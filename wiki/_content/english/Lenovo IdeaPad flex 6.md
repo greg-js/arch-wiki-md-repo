@@ -2,15 +2,19 @@ The Lenovo Flex 6 is a flexible dual-mode laptop computer.
 
 ## Contents
 
-*   [1 PCI Devices (AMD)](#PCI_Devices_(AMD))
-*   [2 USB Devices](#USB_Devices)
-*   [3 Hardware Support](#Hardware_Support)
-    *   [3.1 UEFI](#UEFI)
-    *   [3.2 Video](#Video)
-    *   [3.3 Touchpad](#Touchpad)
-    *   [3.4 Touchscreen](#Touchscreen)
-*   [4 Issues](#Issues)
-    *   [4.1 Wireless](#Wireless)
+*   [1 14ARR (AMD Raven Ridge)](#14ARR_(AMD_Raven_Ridge))
+    *   [1.1 PCI Devices (AMD)](#PCI_Devices_(AMD))
+    *   [1.2 USB Devices](#USB_Devices)
+    *   [1.3 Hardware Support](#Hardware_Support)
+        *   [1.3.1 UEFI](#UEFI)
+        *   [1.3.2 Video](#Video)
+        *   [1.3.3 Touchpad](#Touchpad)
+        *   [1.3.4 Touchscreen](#Touchscreen)
+    *   [1.4 Issues](#Issues)
+        *   [1.4.1 Wireless](#Wireless)
+        *   [1.4.2 Firmware bug IOAPIC[x] not in IVRS table](#Firmware_bug_IOAPIC[x]_not_in_IVRS_table)
+
+# 14ARR (AMD Raven Ridge)
 
 ## PCI Devices (AMD)
 
@@ -105,3 +109,13 @@ and add this:
 blacklist ideapad_laptop
 
 ```
+
+### Firmware bug IOAPIC[x] not in IVRS table
+
+More info on this issue [here](https://superuser.com/questions/1052023/ioapic0-not-in-ivrs-table).
+
+Example of my paramters:
+
+`ivrs_ioapic[4]=00:14.0 ivrs_ioapic[5]=00:00.1`
+
+Before adding the above to your configuration, make sure you know how to edit your [kernel paramaters](https://wiki.archlinux.org/index.php/Kernel_parameters).

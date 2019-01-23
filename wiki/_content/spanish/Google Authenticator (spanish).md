@@ -1,4 +1,4 @@
-[Google Authenticator](https://github.com/google/google-authenticator) provee un procedimiento de autenticación de dos pasos que utiliza contraseñas de un sólo uso (OTP). La aplicación generadora de OTP está disponible para iOS, Android y Blackberry. Semejante a [S/KEY Authentication](/index.php/S/KEY_Authentication "S/KEY Authentication") el mecanismo de autenticación se integra en el sistema [PAM](/index.php/PAM "PAM") de Linux. Ésta guía muestra la instalación y configuración de éste mecanismo.
+[Google Authenticator](https://github.com/google/google-authenticator) provee un procedimiento de autenticación de dos pasos que utiliza contraseñas de un sólo uso (OTP). La aplicación generadora de OTP está disponible para iOS, Android y Blackberry. Semejante a [S/KEY Authentication](/index.php/S/KEY_Authentication "S/KEY Authentication") el mecanismo de autenticación se integra en el sistema [PAM](/index.php/PAM_(Espa%C3%B1ol) "PAM (Español)") de Linux. Ésta guía muestra la instalación y configuración de éste mecanismo.
 
 ## Contents
 

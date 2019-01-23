@@ -44,9 +44,9 @@
 | <small>3.8.</small> [Portátiles](/index.php/Category:Laptops_(Espa%C3%B1ol) "Category:Laptops (Español)") <small>(2)</small> |
 | <small>3.8.1.</small> [Acer](/index.php/Category:Acer_(Espa%C3%B1ol) "Category:Acer (Español)") <small>(6)</small> |
 | <small>3.8.2.</small> [ASUS](/index.php/Category:ASUS_(Espa%C3%B1ol) "Category:ASUS (Español)") <small>(2)</small> |
-| <small>3.8.3.</small> [Dell](/index.php/Category:Dell_(Espa%C3%B1ol) "Category:Dell (Español)") <small>(3)</small> |
+| <small>3.8.3.</small> [Dell](/index.php/Category:Dell_(Espa%C3%B1ol) "Category:Dell (Español)") <small>(5)</small> |
 | <small>3.8.4.</small> [HP](/index.php/Category:HP_(Espa%C3%B1ol) "Category:HP (Español)") <small>(4)</small> |
-| <small>3.8.5.</small> [Lenovo](/index.php/Category:Lenovo_(Espa%C3%B1ol) "Category:Lenovo (Español)") <small>(5)</small> |
+| <small>3.8.5.</small> [Lenovo](/index.php/Category:Lenovo_(Espa%C3%B1ol) "Category:Lenovo (Español)") <small>(6)</small> |
 | <small>3.8.6.</small> [MSI](/index.php/Category:MSI_(Espa%C3%B1ol) "Category:MSI (Español)") <small>(0)</small> |
 | <small>3.8.7.</small> [Sony](/index.php/Category:Sony_(Espa%C3%B1ol) "Category:Sony (Español)") <small>(2)</small> |
 | <small>3.8.8.</small> [Toshiba](/index.php/Category:Toshiba_(Espa%C3%B1ol) "Category:Toshiba (Español)") <small>(2)</small> |
@@ -59,6 +59,7 @@
 | <small>3.14.</small> [Sonido](/index.php/Category:Sound_(Espa%C3%B1ol) "Category:Sound (Español)") <small>(6) (también en [Multimedia](/index.php/Category:Multimedia_(Espa%C3%B1ol) "Category:Multimedia (Español)"))</small> |
 | <small>3.15.</small> [Almacenamiento](/index.php/Category:Storage_(Espa%C3%B1ol) "Category:Storage (Español)") <small>(3)</small> |
 | <small>3.15.1.</small> [Disco óptico](/index.php/Category:Optical_disc_(Espa%C3%B1ol) "Category:Optical disc (Español)") <small>(1)</small> |
+| <small>3.16.</small> [TV cards](/index.php/Category:TV_cards_(Espa%C3%B1ol) "Category:TV cards (Español)") <small>(1) (también en [Television](/index.php/Category:Television_(Espa%C3%B1ol) "Category:Television (Español)"))</small> |
 | <small>4.</small> [Administración de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)") <small>(8)</small> |
 | <small>4.1.</small> [Servicios de directorio](/index.php/Category:Directory_services_(Espa%C3%B1ol) "Category:Directory services (Español)") <small>(0)</small> |
 | <small>4.1.1.</small> [Sistema de nombres de dominio (DNS)](/index.php/Category:Domain_Name_System_(Espa%C3%B1ol) "Category:Domain Name System (Español)") <small>(6) (también en [Protocolos](/index.php/Category:Protocols_(Espa%C3%B1ol) "Category:Protocols (Español)"), [Servidores](/index.php/Category:Servers_(Espa%C3%B1ol) "Category:Servers (Español)"))</small> |
@@ -160,7 +161,9 @@
 | <small>5.1.11.3.</small> [Servidores multimedia](/index.php/Category:Media_servers_(Espa%C3%B1ol) "Category:Media servers (Español)") <small>(1) (también en [Servidores](/index.php/Category:Servers_(Espa%C3%B1ol) "Category:Servers (Español)"), [Retransmisión digital](/index.php/Category:Streaming_(Espa%C3%B1ol) "Category:Streaming (Español)"))</small> |
 | <small>5.1.11.4.</small> [Música](/index.php/Category:Music_(Espa%C3%B1ol) "Category:Music (Español)") <small>(4)</small> |
 | <small>5.1.11.5.</small> [Sonido](/index.php/Category:Sound_(Espa%C3%B1ol) "Category:Sound (Español)") <small>(6) (también en [Hardware](/index.php/Category:Hardware_(Espa%C3%B1ol) "Category:Hardware (Español)"))</small> |
-| <small>5.1.11.6.</small> [Video](/index.php/Category:Video_(Espa%C3%B1ol) "Category:Video (Español)") <small>(3)</small> |
+| <small>5.1.11.6.</small> [Television](/index.php/Category:Television_(Espa%C3%B1ol) "Category:Television (Español)") <small>(0)</small> |
+| <small>5.1.11.6.1.</small> [TV cards](/index.php/Category:TV_cards_(Espa%C3%B1ol) "Category:TV cards (Español)") <small>(1) (también en [Hardware](/index.php/Category:Hardware_(Espa%C3%B1ol) "Category:Hardware (Español)"))</small> |
+| <small>5.1.11.7.</small> [Video](/index.php/Category:Video_(Espa%C3%B1ol) "Category:Video (Español)") <small>(3)</small> |
 | <small>5.1.12.</small> [Ofimática](/index.php/Category:Office_(Espa%C3%B1ol) "Category:Office (Español)") <small>(8)</small> |
 | <small>5.1.12.1.</small> [TeX](/index.php/Category:TeX_(Espa%C3%B1ol) "Category:TeX (Español)") <small>(1)</small> |
 | <small>5.1.13.</small> [Science](/index.php/Category:Science_(Espa%C3%B1ol) "Category:Science (Español)") <small>(6)</small> |

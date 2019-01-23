@@ -225,7 +225,7 @@ Desde la versión 6.2 de OpenSSH, se puede agregar su propia utilidad para auten
 
 Vea [Autenticador de Google](/index.php/Google_Authenticator_(Espa%C3%B1ol) "Google Authenticator (Español)") para configurar el autenticador de Google.
 
-Para usar [PAM](/index.php/PAM "PAM") son OpenSSH, edite las siguientes lineas:
+Para usar [PAM](/index.php/PAM_(Espa%C3%B1ol) "PAM (Español)") son OpenSSH, edite las siguientes lineas:
 
  `/etc/ssh/sshd_config` 
 ```

@@ -382,7 +382,7 @@ which-2.20-6
 
 由于以上种种局限，建议使用专门的脚本去处理清理哪些、清理多少缓存：
 
-[pacman](https://www.archlinux.org/packages/?name=pacman) 提供的 *paccache* 命令默认会删除近3个版本前的软件包
+[pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) 提供的 *paccache* 命令默认会删除近3个版本前的软件包
 
 ```
 # paccache -r

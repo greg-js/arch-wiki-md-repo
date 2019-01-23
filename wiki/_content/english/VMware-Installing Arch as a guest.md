@@ -242,7 +242,7 @@ Add a rule for each share:
 
  `/etc/fstab` 
 ```
-.host:/*<shared_folder>* */home/user1/shares* fuse.vmhgfs-fuse defaults 0 0
+.host:/*<shared_folder>* */home/user1/shares* fuse.vmhgfs-fuse nofail 0 0
 
 ```
 
@@ -270,7 +270,6 @@ ConditionVirtualization=vmware
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStart=
 ExecStart=/usr/bin/vmhgfs-fuse -o allow_other -o auto_unmount .host:/*<shared_folder>* *<shared folders root directory>*
 
 [Install]

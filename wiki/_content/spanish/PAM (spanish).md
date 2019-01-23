@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [PAM](/index.php/PAM "PAM"), revisada por última vez el **2019-01-18**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=PAM&diff=0&oldid=563734) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [PAM](/index.php/PAM "PAM"), revisada por última vez el **2019-01-21**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=PAM&diff=0&oldid=564000) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -105,113 +105,113 @@ Con eso como fondo, véase [#Configuración del apilado y los módulos de PAM](#
 
 ## Configuración guiada
 
-This section provides an overview of content detailing how to apply changes to the PAM configuration and how to integrate special new PAM modules into the PAM stack. Note the man pages for the modules can generally be reached dropping the `.so` extension.
+Esta sección proporciona una descripción general del contenido que detalla cómo aplicar cambios a la configuración de PAM y cómo integrar nuevos módulos PAM especiales en la pila de PAM. Tenga en cuenta que, por lo general, se puede acceder a las páginas del manual de los módulos al eliminar la extensión `.so`.
 
 ### Configuración de los parámetros de seguridad
 
-The following sections describe examples to change the default PAM parameter configuration:
+Las siguientes secciones describen ejemplos para cambiar la configuración predeterminada de parámetros de PAM:
 
 *   [Security#Enforcing strong passwords using pam_cracklib](/index.php/Security#Enforcing_strong_passwords_using_pam_cracklib "Security")
 
-	shows how to enforce strong passwords with `pam_cracklib.so`.
+	muestra cómo forzar contraseñas seguras con `pam_cracklib.so`.
 
 *   [Security#Lockout user after three failed login attempts](/index.php/Security#Lockout_user_after_three_failed_login_attempts "Security")
 
-	shows how to limit login attempts with `pam_tally.so`.
+	muestra cómo limitar los intentos de inicio de sesión con `pam_tally.so`.
 
 *   [Security#Allow only certain users](/index.php/Security#Allow_only_certain_users "Security")
 
-	limits user logons with `pam_wheel.so`.
+	limita los inicios de sesión de usuario con `pam_wheel.so`.
 
 *   [Realtime process management#Configuring PAM](/index.php/Realtime_process_management#Configuring_PAM "Realtime process management") and [Security#Limit amount of processes](/index.php/Security#Limit_amount_of_processes "Security")
 
-	detail how to configure system process limits with `pam_limits.so`.
+	detalla cómo configurar los límites del proceso del sistema con `pam_limits.so`.
 
 *   [Environment variables#Using pam_env](/index.php/Environment_variables#Using_pam_env "Environment variables")
 
-	shows examples to set environment variables via `pam_env.so`.
+	muestra ejemplos para establecer variables de entorno a través de `pam_env.so`.
 
 ### Configuración del apilado y los módulos de PAM
 
-The following articles detail how to change the [#Apilado base de PAM](#Apilado_base_de_PAM) for special use-cases.
+Los siguientes artículos detallan cómo cambiar el [#Apilado base de PAM](#Apilado_base_de_PAM) para casos de uso especiales.
 
-PAM modules from the [Official repositories](/index.php/Official_repositories "Official repositories"):
+Módulos PAM de los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"):
 
 *   [pam_mount](/index.php/Pam_mount "Pam mount")
 
-	detail examples for using `pam_mount.so` to automount encrypted directory paths on user login.
+	ejemplos detallados para utilizar `pam_mount.so` para montar automáticamente las rutas de directorio cifradas en el inicio de sesión del usuario.
 
 *   [ECryptfs#Auto-mounting](/index.php/ECryptfs#Auto-mounting "ECryptfs")
 
-	uses `pam_ecryptfs.so` to automount an encrypted directory.
+	utiliza `pam_ecryptfs.so` para montar automáticamente un directorio cifrado.
 
-*   [Dm-crypt/Mounting at login](/index.php/Dm-crypt/Mounting_at_login "Dm-crypt/Mounting at login")
+*   [Dm-crypt/Mounting at login (Español)](/index.php/Dm-crypt/Mounting_at_login_(Espa%C3%B1ol) "Dm-crypt/Mounting at login (Español)")
 
-	shows how to use `pam_exec.so` to execute a custom script on a user login.
+	muestra cómo utilizar `pam_exec.so` para ejecutar un script personalizado en un inicio de sesión de usuario.
 
 *   [Active Directory Integration#Configuring PAM](/index.php/Active_Directory_Integration#Configuring_PAM "Active Directory Integration")
 
-	uses `pam_winbind.so` and `pam_krb5.so` to let users authenticate via Active Directory (LDAP, [Kerberos](/index.php/Kerberos "Kerberos")) services.
+	utiliza `pam_winbind.so` y `pam_krb5.so` para que los usuarios se identifiquen a través de servicios Active Directory (LDAP, [Kerberos](/index.php/Kerberos "Kerberos")).
 
-*   [LDAP authentication](/index.php/LDAP_authentication "LDAP authentication") with its [LDAP authentication#NSS and PAM](/index.php/LDAP_authentication#NSS_and_PAM "LDAP authentication") section
+*   [LDAP authentication](/index.php/LDAP_authentication "LDAP authentication") con su sección [LDAP authentication#NSS and PAM](/index.php/LDAP_authentication#NSS_and_PAM "LDAP authentication")
 
-	is an article about integrating LDAP client or server-side authentication with `pam_ldap.so`.
+	es un artículo sobre la integración de la autenticación de cliente o servidor LDAP con `pam_ldap.so`.
 
 *   [YubiKey#Two-factor authentication with SSH](/index.php/YubiKey#Two-factor_authentication_with_SSH "YubiKey")
 
-	relies on `pam_yubico.so` in the PAM stack to enable authentication via the proprietary Yubikey.
+	se basa en `pam_yubico.so` en la pila de PAM para activar la autenticación a través del protocolo propietario Yubikey.
 
 *   [pam_oath](/index.php/Pam_oath "Pam oath")
 
-	shows an example to implement software based two-factor authentication with `pam_oath.so`.
+	muestra un ejemplo para implementar la autenticación de dos factores *(two-factor)* basada en software con `pam_oath.so`.
 
 *   [fprint](/index.php/Fprint "Fprint")
 
-	employs `pam_fprintd.so` to setup fingerprint authentication.
+	emplea `pam_fprintd.so` para configurar la autenticación mediante huellas digitales.
 
-PAM modules from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"):
+Módulos PAM del [repositorio de usuarios de Arch](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)"):
 
 *   [pam_usb](/index.php/Pam_usb "Pam usb")
 
-	shows how to configure `pam_usb.so` to use an usb-device for, optionally two-factor, authentication.
+	muestra cómo configurar `pam_usb.so` para utilizar un dispositivo USB para autenticar, opcionalmente, mediante dos factores.
 
 *   [SSH keys#pam_ssh](/index.php/SSH_keys#pam_ssh "SSH keys")
 
-	uses `pam_ssh.so` to authenticate as a remote user.
+	utiliza `pam_ssh.so` para autenticar como un usuario remoto.
 
 *   [pam_abl](/index.php/Pam_abl "Pam abl")
 
-	explains how `pam_abl.so` can be used to limit brute-forcing attacks via ssh.
+	explica cómo se puede utilizar `pam_abl.so` para limitar los ataques de fuerza bruta a través de ssh.
 
 *   [EncFS](/index.php/EncFS#.2Fetc.2Fpam.d.2F "EncFS")
 
-	may get automounted via `pam_encfs.so`.
+	puede ser montado automáticamente a través `pam_encfs.so`.
 
-*   [Google Authenticator](/index.php/Google_Authenticator "Google Authenticator")
+*   [Google Authenticator](/index.php/Google_Authenticator_(Espa%C3%B1ol) "Google Authenticator (Español)")
 
-	shows how to set up two-factor authentication with `pam_google_authenticator.so`.
+	muestra cómo configurar la autenticación de dos factores con `pam_google_authenticator.so`.
 
-*   [Very Secure FTP Daemon#PAM with virtual users](/index.php/Very_Secure_FTP_Daemon#PAM_with_virtual_users "Very Secure FTP Daemon")
+*   [Very Secure FTP Daemon (Español)#PAM con usuarios virtuales](/index.php/Very_Secure_FTP_Daemon_(Espa%C3%B1ol)#PAM_con_usuarios_virtuales "Very Secure FTP Daemon (Español)")
 
-	explains how to configure a FTP chroot with `pam_pwdfile.so` to authenticate users without a local system account.
+	explica cómo configurar un chroot FTP con `pam_pwdfile.so` para autenticar usuarios sin una cuenta local de sistema.
 
 ## Otros paquetes de PAM
 
-Other than those packages mentioned so far, the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") contains a number of additional PAM modules and tools.
+Aparte de los paquetes mencionados hasta ahora, el [repositorio de usuarios de Arch](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)") Contiene varios módulos y herramientas PAM adicionales.
 
-General purpose utilities relating to PAM are:
+Las utilidades de propósito general relacionadas con PAM son:
 
-*   **[libx32_pam](https://github.com/ArchLinux-x32/libx32-pam)** — Arch Linux PAM x32 ABI library
+*   **[libx32_pam](https://github.com/ArchLinux-x32/libx32-pam)** — Biblioteca Arch Linux PAM x32 ABI
 
 	[http://linux-pam.org/](http://linux-pam.org/) || [libx32-pam](https://aur.archlinux.org/packages/libx32-pam/)
 
-*   **[Pamtester](http://linux.die.net/man/1/pamtester)** — Program to test the pluggable authentication modules (PAM) facility
+*   **[Pamtester](http://linux.die.net/man/1/pamtester)** — Programa para probar la instalación de los módulos de autenticación conectables (PAM)
 
 	[http://pamtester.sourceforge.net/](http://pamtester.sourceforge.net/) || [pamtester](https://aur.archlinux.org/packages/pamtester/)
 
-Note the AUR features a keyword tag for [PAM](https://aur.archlinux.org/packages/?O=0&SeB=k&K=pam&outdated=off&SB=p&SO=d&PP=50&do_Search=Go), but not all available packages are updated to include it. Hence, searching the [package description](https://aur.archlinux.org/packages/?O=0&SeB=nd&K=pam&outdated=off&SB=p&SO=d&PP=50&do_Search=Go) may be necessary.
+Tenga en cuenta que AUR cuenta con una etiqueta de palabra clave para [PAM](https://aur.archlinux.org/packages/?O=0&SeB=k&K=pam&outdated=off&SB=p&SO=d&PP=50&do_Search=Go), pero no todos los paquetes disponibles se actualizan para incluirlo. Por lo tanto, puede ser necesario buscar en la [descripción del paquete](https://aur.archlinux.org/packages/?O=0&SeB=nd&K=pam&outdated=off&SB=p&SO=d&PP=50&do_Search=Go).
 
 ## Véase también
 
-*   [linux-pam.org](http://www.linux-pam.org/) - The project homepage
-*   [Understanding and configuring PAM](https://www.ibm.com/developerworks/linux/library/l-pam/index.html) - An introductory article
+*   [linux-pam.org](http://www.linux-pam.org/) - La página de inicio del proyecto
+*   [Entendiendo y configurando PAM](https://www.ibm.com/developerworks/linux/library/l-pam/index.html) - Un artículo introductorio

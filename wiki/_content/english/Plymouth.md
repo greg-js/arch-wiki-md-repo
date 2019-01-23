@@ -82,7 +82,7 @@ Theme=spinner
 ShowDelay=5
 ```
 
-On systems that boot quickly, you may only see a flicker of your splash theme before your DM or login prompt is ready. You can set `ShowDelay` to an interval (in seconds) longer than your boot time to prevent this flicker and only show a blank screen. The default is 5 seconds, but you may wish to change this to a lower value to see your splash earlier during boot.
+On systems that boot quickly, you may only see a flicker of your splash theme before your DM or login prompt is ready. You can set `ShowDelay` to an interval (in seconds) longer than your boot time to prevent this flicker and only show a blank screen. The default is 5 seconds, but you may wish to change this to a lower value to see your splash earlier during boot. For some systems, setting this to 0 is the only way to see Plymouth.
 
 ### Changing the Theme
 

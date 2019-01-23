@@ -8,7 +8,7 @@ Artículos relacionados
 *   [polkit](/index.php/Polkit "Polkit")
 *   [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes")
 
-Los usuarios y grupos se utilizan en GNU/Linux para el [control de acceso](https://en.wikipedia.org/wiki/access_control#Computer_security y [PAM#Configuration How-Tos](/index.php/PAM#Configuration_How-Tos "PAM").
+Los usuarios y grupos se utilizan en GNU/Linux para el [control de acceso](https://en.wikipedia.org/wiki/access_control#Computer_security y [PAM (Español)#Configuración guiada](/index.php/PAM_(Espa%C3%B1ol)#Configuración_guiada "PAM (Español)").
 
 ## Contents
 
@@ -166,7 +166,7 @@ Para añadir un nuevo usuario, utilice el ocmando *useradd*:
 
 	define la ruta y el nombre de archivo del intérprete de línea de órdenes de inicio de sesión predeterminado del usuario. Una vez que se completa el arranque, el intérprete de línea de órdenes de inicio de sesión predeterminado es el que se especifica aquí. Asegúrese de que el intérprete de línea de órdenes elegido esté instalado si es distinto a [Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)").
 
-**Advertencia:** Para poder iniciar sesión, el intérprete de línea de órdenes de inicio de sesión debe ser uno de los listados en `/etc/shells`; de lo contrario, el módulo [PAM](/index.php/PAM "PAM") `pam_shell` negará la solicitud de inicio de sesión. En particular, no use la ruta `/usr/bin/bash` en lugar de `/bin/bash`, a menos que esté configurada correctamente en `/etc/shells`.
+**Advertencia:** Para poder iniciar sesión, el intérprete de línea de órdenes de inicio de sesión debe ser uno de los listados en `/etc/shells`; de lo contrario, el módulo [PAM](/index.php/PAM_(Espa%C3%B1ol) "PAM (Español)") `pam_shell` negará la solicitud de inicio de sesión. En particular, no use la ruta `/usr/bin/bash` en lugar de `/bin/bash`, a menos que esté configurada correctamente en `/etc/shells`.
 
 **Nota:** La contraseña del usuario recién creado debe definirse después, utilizando *passwd* como se muestra en [#Ejemplo para añadir un usuario](#Ejemplo_para_añadir_un_usuario).
 

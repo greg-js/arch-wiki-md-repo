@@ -8,7 +8,7 @@ Artículos relacionados
 
 La [utilidad](/index.php/Core_utility_(Espa%C3%B1ol) "Core utility (Español)") [su](https://en.wikipedia.org/wiki/es:Su_(Unix) (usuario sustituto) se utiliza para asumir la identidad de otro usuario en el sistema, el superusuario *(root)* por defecto.
 
-Véase [PAM](/index.php/PAM "PAM") para las formas de configurar el comportamiento de *su*.
+Véase [PAM](/index.php/PAM_(Espa%C3%B1ol) "PAM (Español)") para las formas de configurar el comportamiento de *su*.
 
 ## Contents
 
@@ -91,7 +91,7 @@ alias su='su -l'
 
 ### su y wheel
 
-su de BSD permite únicamente a los miembros del [grupo de usuario](/index.php/User_group_(Espa%C3%B1ol) "User group (Español)") `wheel` asumir la identidad del superusuario por defecto. Este no es el comportamiento por defecto de su en GNU, pero dicho comportamiento puede ser imitado usando [PAM](/index.php/PAM "PAM"). Descomente la línea apropiada en `/etc/pam.d/su` y `/etc/pam.d/su-l`:
+su de BSD permite únicamente a los miembros del [grupo de usuario](/index.php/User_group_(Espa%C3%B1ol) "User group (Español)") `wheel` asumir la identidad del superusuario por defecto. Este no es el comportamiento por defecto de su en GNU, pero dicho comportamiento puede ser imitado usando [PAM](/index.php/PAM_(Espa%C3%B1ol) "PAM (Español)"). Descomente la línea apropiada en `/etc/pam.d/su` y `/etc/pam.d/su-l`:
 
 ```
 auth required pam_wheel.so use_uid

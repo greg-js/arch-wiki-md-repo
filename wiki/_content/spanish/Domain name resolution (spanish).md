@@ -138,7 +138,7 @@ nameserver 77.88.8.3
 
 ## Conservar las configuraciones de DNS
 
-[dhcpcd](/index.php/Dhcpcd "Dhcpcd"), [netctl](/index.php/Netctl_(Espa%C3%B1ol) "Netctl (Español)"), [NetworkManager](/index.php/NetworkManager_(Espa%C3%B1ol) "NetworkManager (Español)") y otros muchos procesos, pueden sobrescribir `/etc/resolv.conf`. Esto suele ser un comportamiento deseable, pero a veces la configuración de DNS exige ajustarla manualmente (por ejemplo, cuando se utiliza una dirección IP estática). Hay varias maneras de hacer esto.
+[dhcpcd](/index.php/Dhcpcd_(Espa%C3%B1ol) "Dhcpcd (Español)"), [netctl](/index.php/Netctl_(Espa%C3%B1ol) "Netctl (Español)"), [NetworkManager](/index.php/NetworkManager_(Espa%C3%B1ol) "NetworkManager (Español)") y otros muchos procesos, pueden sobrescribir `/etc/resolv.conf`. Esto suele ser un comportamiento deseable, pero a veces la configuración de DNS exige ajustarla manualmente (por ejemplo, cuando se utiliza una dirección IP estática). Hay varias maneras de hacer esto.
 
 *   Si se está usando dhcpcd, vea [#Modificar la configuración dhcpcd](#Modificar_la_configuración_dhcpcd) a continuación.
 *   Si se está usando [netctl](/index.php/Netctl_(Espa%C3%B1ol) "Netctl (Español)"), con asignación de dirección IP estática, no utilize las opciones `DNS*` en su perfil, de lo contrario *resolvconf* será llamado y sobrescribirá `/etc/resolv.conf`.

@@ -64,7 +64,7 @@ Si no existe el directorio, el sistema se iniciará en modo [BIOS](https://en.wi
 
 ### Conectarse a Internet
 
-El servicio de Internet a través del demonio [dhcpcd](/index.php/Dhcpcd "Dhcpcd") está [activado](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) en el arranque para los dispositivos **cableados**. Compruebe que su conexión se ha establecido, utilizando la herramienta [ping](https://en.wikipedia.org/wiki/es:Ping "wikipedia:es:Ping"):
+El servicio de Internet a través del demonio [dhcpcd](/index.php/Dhcpcd_(Espa%C3%B1ol) "Dhcpcd (Español)") está [activado](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) en el arranque para los dispositivos **cableados**. Compruebe que su conexión se ha establecido, utilizando la herramienta [ping](https://en.wikipedia.org/wiki/es:Ping "wikipedia:es:Ping"):
 
 ```
 # ping archlinux.org

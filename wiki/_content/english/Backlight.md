@@ -7,7 +7,7 @@ Screen brightness might be tricky to control. On some machines physical hardware
     *   [2.1 Kernel command-line options](#Kernel_command-line_options)
     *   [2.2 Udev rule](#Udev_rule)
 *   [3 Switch off the backlight](#Switch_off_the_backlight)
-*   [4 systemd-backlight service](#systemd-backlight_service)
+*   [4 Save/Restore functionality](#Save/Restore_functionality)
 *   [5 Backlight utilities](#Backlight_utilities)
     *   [5.1 xbacklight](#xbacklight)
     *   [5.2 setpci](#setpci)
@@ -159,61 +159,31 @@ $ vbetool dpms on
 
 For example, this can be put to use when closing the notebook lid using [Acpid](/index.php/Acpid "Acpid").
 
-## systemd-backlight service
+## Save/Restore functionality
 
 The [systemd](/index.php/Systemd "Systemd") package includes the service `systemd-backlight@.service`, which is enabled by default and "static". It saves the backlight brightness level at shutdown and restores it at boot. The service uses the ACPI method described in [#ACPI](#ACPI), generating services for each folder found in `/sys/class/backlight/`. For example, if there is a folder named `acpi_video0`, it generates a service called `systemd-backlight@backlight:acpi_video0.service`. When using other methods of setting the backlight at boot, it is recommended to stop systemd-backlight from restoring the backlight by setting the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") parameter `systemd.restore_state=0`. See [systemd-backlight@.service(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-backlight%40.service.8) for details.
 
 **Note:** Some laptops have multiple video cards (e.g. Optimus) and the backlight restoration fails. Try [masking](/index.php/Systemd#Using_units "Systemd") an instance of the service (e.g. `systemd-backlight@backlight:acpi_video1` for `acpi_video1`).
 
+The [relight](https://aur.archlinux.org/packages/relight/) package provides an alternative systemd-based method of saving and restoring screen brightness.
+
+Additionally, the [brillo](https://aur.archlinux.org/packages/brillo/) and [light](https://www.archlinux.org/packages/?name=light) utilities support save/restore functionality. These two may be more useful if one wishes to restore the screen brightness on a per-user basis, however no systemd units are provided to accomplish this.
+
 ## Backlight utilities
 
-*   **acpilight** — "xbacklight" compatible utility that uses the sys filesystem to set the display brightness. Since it doesn't use X at all, it can also be used on the console and Wayland and has no problems with KMS drivers. Furthermore, on ThinkPad laptops, the keyboard backlight can also be controlled.
+The utilities in the following table can be used to control screen brightness. All of them are compatible with Wayland and do not require X.
 
-	[https://gitlab.com/wavexx/acpilight/](https://gitlab.com/wavexx/acpilight/) || [acpilight](https://www.archlinux.org/packages/?name=acpilight)
-
-*   **brightd** — Macbook-inspired brightd automatically dims (but does not put to standby) the screen when there is no user input for some time. A good companion of [Display Power Management Signaling](/index.php/Display_Power_Management_Signaling "Display Power Management Signaling") so that the screen does not blank out in a sudden.
-
-	[http://www.pberndt.com/Programme/Linux/brightd/](http://www.pberndt.com/Programme/Linux/brightd/) || [brightd](https://aur.archlinux.org/packages/brightd/)
-
-*   **brillo** — Minimal, secure, self-contained program to control brightness and keyboard brightness. Supports smooth adjustments and is Wayland compatible.
-
-	[https://gitlab.com/cameronnemo/brillo](https://gitlab.com/cameronnemo/brillo) || [brillo](https://aur.archlinux.org/packages/brillo/)
-
-*   **brightnessctl** — Lightweight brightness control tool (Wayland compatible). Note that brightnessctl is a setuid binary, which might be considered a security risk by some.
-
-	[https://github.com/Hummer12007/brightnessctl](https://github.com/Hummer12007/brightnessctl) || [brightnessctl](https://aur.archlinux.org/packages/brightnessctl/)
-
-*   **Calise** — Calculates ambient brightness and sets screen’s correct backlight using a camera.
-
-	[http://calise.sourceforge.net/](http://calise.sourceforge.net/) || [calise](https://aur.archlinux.org/packages/calise/)
-
-*   **Clight** — User daemon utility that aims to fully manage your display. It will automagically change screen backlight level to match ambient brightness, as computed by capturing frames from webcam, even on external monitors. Moreover, it can manage your screen temperature, just like redshift does. Finally, it can dim your screen after a timeout.
-
-	[https://github.com/FedeDP/Clight](https://github.com/FedeDP/Clight) || [clight-git](https://aur.archlinux.org/packages/clight-git/)
-
-*   **enlighten** — Very small C utility to control the backlight brightness in Linux.
-
-	[https://github.com/HalosGhost/enlighten](https://github.com/HalosGhost/enlighten) || [enlighten-git](https://aur.archlinux.org/packages/enlighten-git/)
-
-*   **illum** — Backlight manager, which changes the screen backlight level based on keypresses (brightness up and brightness down). Written for newer BIOS/UEFI that does not automatically handle those buttons. This is an alternate to handling those buttons via acpi handlers or via x11/wm hotkeys.
-
-	[https://github.com/jmesmon/illum](https://github.com/jmesmon/illum) || [illum-git](https://aur.archlinux.org/packages/illum-git/)
-
-*   **Light** — Program to control lights, leds and backlights. Works reliably by directly accessing sysfs, and not depending on X. Provides many features, such as saving/restoring brightness, limiting minimum brightness, etc. Designed to be bound to hotkeys or integrated into other applications.
-
-	[https://haikarainen.github.io/light/](https://haikarainen.github.io/light/) || [light](https://www.archlinux.org/packages/?name=light), [light-git](https://aur.archlinux.org/packages/light-git/)
-
-*   **Lux** — Shell script to easily control brightness on backlight-controllers.
-
-	[https://github.com/Ventto/lux](https://github.com/Ventto/lux) || [lux](https://aur.archlinux.org/packages/lux/)
-
-*   **relight** — The package provides `relight.service`, a [systemd](/index.php/Systemd "Systemd") service to automatically restore previous backlight settings during reboot along using the ACPI method explained above, and *relight-menu*, a dialog-based menu for selecting and configuring backlights for different screens.
-
-	[http://xyne.archlinux.ca/projects/relight](http://xyne.archlinux.ca/projects/relight) || [relight](https://aur.archlinux.org/packages/relight/)
-
-*   **xbacklight** — RandR-based backlight control application.
-
-	[https://xorg.freedesktop.org/](https://xorg.freedesktop.org/) || [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight)
+| Name | Controls keyboard backlights | Reacts to ambient brightness | Language | License | Notes | Package | Homepage |
+| acpilight | Yes | No | Python3 | GPL-3.0-or-later | "xbacklight" compatible | [acpilight](https://www.archlinux.org/packages/?name=acpilight) | [https://gitlab.com/wavexx/acpilight](https://gitlab.com/wavexx/acpilight) |
+| brightd | No | No | C | GPL-2.0 | Dims the screen when there is no user input for some time. | [brightd](https://aur.archlinux.org/packages/brightd/) | [http://www.pberndt.com/Programme/Linux/brightd](http://www.pberndt.com/Programme/Linux/brightd) |
+| brillo | Yes | No | C | GPL-3.0-only | Supports smooth and relative adjustments. | [brillo](https://aur.archlinux.org/packages/brillo/) | [https://gitlab.com/cameronnemo/brillo](https://gitlab.com/cameronnemo/brillo) |
+| brightnessctl | Yes | No | C | MIT | Binary is setuid unless otherwise configured. | [brightnessctl](https://aur.archlinux.org/packages/brightnessctl/) | [https://github.com/Hummer12007/brightnessctl](https://github.com/Hummer12007/brightnessctl) |
+| Calise | No | Yes | Python2 | GPL-3.0 | - | [calise](https://aur.archlinux.org/packages/calise/) | [http://calise.sourceforge.net](http://calise.sourceforge.net) |
+| Clight | No | Yes | C | GPL-3.0-or-later | Manages screen temperature and dims brightness after a timeout. | [clight-git](https://aur.archlinux.org/packages/clight-git/) | [https://github.com/FedeDP/Clight](https://github.com/FedeDP/Clight) |
+| enlighten | No | No | C | GPL-3.0 | - | [enlighten-git](https://aur.archlinux.org/packages/enlighten-git/) | [https://github.com/HalosGhost/enlighten](https://github.com/HalosGhost/enlighten) |
+| illum | No | No | C | AGPL-3.0 | Reacts to key presses. | [illum-git](https://aur.archlinux.org/packages/illum-git/) | [https://github.com/jmesmon/illum](https://github.com/jmesmon/illum) |
+| Light | Yes | No | C | GPL-3.0-only | - | [light](https://www.archlinux.org/packages/?name=light) | [https://haikarainen.github.io/light](https://haikarainen.github.io/light) |
+| Lux | No | No | Shell | MIT | - | [lux](https://aur.archlinux.org/packages/lux/) | [https://github.com/Ventto/lux](https://github.com/Ventto/lux) |
 
 ### xbacklight
 

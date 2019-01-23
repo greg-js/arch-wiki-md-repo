@@ -28,8 +28,8 @@
 *   [4 Thunderbolt docks](#Thunderbolt_docks)
     *   [4.1 TB16](#TB16)
 *   [5 EFI firmware updates](#EFI_firmware_updates)
-*   [6 Tipps and Tricks](#Tipps_and_Tricks)
-    *   [6.1 Systemd dont wait for Network](#Systemd_dont_wait_for_Network)
+*   [6 Tips and Tricks](#Tips_and_Tricks)
+    *   [6.1 Systemd doesn't wait for Network](#Systemd_doesn't_wait_for_Network)
 
 ## Suspend
 
@@ -109,13 +109,13 @@ TB16 works fine if either Thunderbolt security is disabled in the BIOS or using 
 
 This device is supported by [Fwupd](/index.php/Fwupd "Fwupd").
 
-## Tipps and Tricks
+## Tips and Tricks
 
-### Systemd dont wait for Network
+### Systemd doesn't wait for Network
 
-before few months systemd added "after= .. .. network.target" in /usr/lib/systemd/system/systemd-user-sessions.service
+Few months ago systemd added "after= .. .. network.target" in /usr/lib/systemd/system/systemd-user-sessions.service
 
-this causes systemd to wait for network connection at boot, you can modify this file to remove network.target but it will be overwritten on systemd update. Better workaround is to add /etc/systemd/system/systemd-user-sessions.service with network.target removed.
+This causes systemd to wait for network connection at boot, you can modify this file to remove network.target but it will be overwritten on systemd update. A better workaround is to add /etc/systemd/system/systemd-user-sessions.service with network.target removed.
 
  `/etc/systemd/system/systemd-user-sessions.service` 
 ```

@@ -1,5 +1,7 @@
 Lenovo ThinkPad P1 was released in 2018 and has up to Intel Core i7-8850H or Xeon E-2176M 6-core processor, up to 64 GB DDR4 RAM, and up to NVIDIA Quadro P2000 graphics.
 
+**Note:** The ThinkPad X1 Extreme is a consumer version of the same laptop which uses extremely similar hardware. Most of the information from [Lenovo ThinkPad X1 Extreme](/index.php/Lenovo_ThinkPad_X1_Extreme "Lenovo ThinkPad X1 Extreme") should be applicable to P1 models as well.
+
 ## Contents
 
 *   [1 Installation](#Installation)

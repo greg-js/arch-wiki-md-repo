@@ -663,7 +663,7 @@ It will print running program name and old library that was removed or replaced 
 
 ### Installing only content in required languages
 
-Most packages aims at installing documentation, translations, and other stuff in as many languages as possible. It is arguable if it is worth the effort and the gain of size to remove unrequired languages. Yet some prefer a cleaner, or smaller, system. [bleachbit](https://aur.archlinux.org/packages/bleachbit/) and [localepurge](https://aur.archlinux.org/packages/localepurge/) cleans undesirable languages by removing installed files. Which is not desirable since the administrator can less rely on pacman to track the system related files. A more fundamental way is using the `NoExtract` keyword, which prevets these files from being installed in the first place. The example below try to install only English (US) files, or none at all.
+Many packages attempt to install documentation and translations in several languages. Some programs are designed to remove such unnecessary files, such as [localepurge](https://aur.archlinux.org/packages/localepurge/), which runs after a package is installed to delete the unneeded locale files. A more direct approach is provided through the `NoExtract` directive in `pacman.conf`, which prevent these files from ever being installed. The example below installs English (US) files, or none at all:
 
  `/etc/pacman.conf` 
 ```
@@ -678,8 +678,6 @@ NoExtract = usr/share/man/* !usr/share/man/man*
 NoExtract = usr/share/vim/vim*/lang/*
 NoExtract = usr/lib/libreoffice/help/en-US/*
 ```
-
-Though this trick was used by many user, some users found that [removing it made bugs hide under the rug](https://wiki.archlinux.org/index.php?title=Talk:Pacman&oldid=460285#Dangerous_NoExtract_example).
 
 ## Performance
 

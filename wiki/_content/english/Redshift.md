@@ -6,6 +6,7 @@ From the [Redshift project web page](http://jonls.dk/redshift/):
 
 *   Redshift does not support [Wayland](/index.php/Wayland "Wayland") since it offers no way to adjust the color temperature [[1]](https://github.com/jonls/redshift/issues/55). However, there is a patched version available in the AUR: [redshift-wayland-git](https://aur.archlinux.org/packages/redshift-wayland-git/)
 *   [GNOME](/index.php/GNOME "GNOME") provides features like Redshift out-of-the-box and has [Wayland](/index.php/Wayland "Wayland") support. Enable the Night Light in Display settings.
+*   Likewise, [KDE Plasma](/index.php/KDE_Plasma "KDE Plasma") provides Night Color which is Wayland-only.
 
 ## Contents
 
@@ -67,9 +68,9 @@ where *TEMPERATURE* is the desired color temperature (between `1000` and `25000`
 
 There are several options to have redshift automatically started:
 
-*   By using a [systemd user unit](/index.php/Systemd#Using_units "Systemd"). Two services are provided: `redshift.service` and `redshift-gtk.service`. Activate only one of them depending on whether or not you want the system tray icon.
+*   By using [Systemd/User](/index.php/Systemd/User "Systemd/User"). Two services are provided: `redshift.service` and `redshift-gtk.service`. Activate only one of them depending on whether or not you want the system tray icon.
 *   By right-clicking the system tray icon when *redshift-gtk* or *plasma5-applets-redshift-control* is already launched and selecting *Autostart*.
-*   By placing a Redshift [Desktop entry](/index.php/Desktop_entry "Desktop entry") in `~/.config/autostart` or by adding `redshift&` to your window manager or desktop environment's [Autostarting](/index.php/Autostarting "Autostarting") method.
+*   By placing a Redshift [Desktop entry](/index.php/Desktop_entry "Desktop entry") in `~/.config/autostart` or by adding `redshift` to your window manager or desktop environment's [Autostarting](/index.php/Autostarting "Autostarting") method.
 
 **Note:** The Redshift service files contain `Restart=always` so they will restart infinitely. See [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5).
 

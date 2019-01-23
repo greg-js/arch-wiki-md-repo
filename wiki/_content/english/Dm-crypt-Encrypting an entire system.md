@@ -439,14 +439,14 @@ Mount the partition to `/mnt/boot`:
 Add the `keyboard`, `encrypt` and `lvm2` hooks to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
 
 ```
-HOOKS=(base consolefont modconf block filesystems fsck autodetect **udev** **keyboard** **keymap** **encrypt** **lvm2**)
+HOOKS=(base **udev** autodetect **keyboard** **keymap** consolefont modconf block **encrypt** **lvm2** filesystems fsck)
 
 ```
 
 If using the [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") hook with the systemd-based initramfs, the following needs to be set instead:
 
 ```
-HOOKS=(base modconf block filesystems fsck autodetect **systemd** **keyboard** **sd-vconsole** **sd-encrypt** **sd-lvm2**)
+HOOKS=(base **systemd** autodetect **keyboard** **sd-vconsole** modconf block **sd-encrypt** **sd-lvm2** filesystems fsck)
 
 ```
 

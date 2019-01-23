@@ -6249,6 +6249,10 @@ See also [Wikipedia:Comparison of office suites](https://en.wikipedia.org/wiki/C
 
 	[https://www.libreoffice.org/](https://www.libreoffice.org/) || [libreoffice-still](https://www.archlinux.org/packages/?name=libreoffice-still) or [libreoffice-fresh](https://www.archlinux.org/packages/?name=libreoffice-fresh)
 
+*   **[Onlyoffice](/index.php?title=Onlyoffice&action=edit&redlink=1 "Onlyoffice (page does not exist)")** — An office suite that combines text, spreadsheet and presentation editors
+
+	[https://www.onlyoffice.com/](https://www.onlyoffice.com/) || [onlyoffice-bin](https://aur.archlinux.org/packages/onlyoffice-bin/)
+
 *   **[OpenOffice](/index.php/OpenOffice "OpenOffice")** — Open-source office software suite for word processing, spreadsheets, presentations, graphics, databases and more, under the Apache Licence.
 
 	[https://www.openoffice.org/](https://www.openoffice.org/) || [openoffice](https://aur.archlinux.org/packages/openoffice/)

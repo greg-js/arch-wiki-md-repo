@@ -568,6 +568,7 @@ If running services like [Samba](/index.php/Samba "Samba")/[NFS](/index.php/NFS 
 
 Possible workarounds:
 
+*   Add `LLMNR=false` to the `[Network]` section of the network connection to disable LLMNR resolution and immediately continue with appending the DNS suffixes
 *   Trim `/etc/nsswitch.conf`'s `hosts` database (e.g., by removing `[!UNAVAIL=return]` option after `resolve` service)
 *   Switch to using fully-qualified domain names
 *   Use `/etc/hosts` to resolve hostnames

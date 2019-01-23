@@ -34,7 +34,7 @@ freshclamd.service | Conjunto de herramientas de antivirus para Unix. |
 | [dante](https://www.archlinux.org/packages/?name=dante) | sockd | sockd.service | Un cliente/servidor de SOCKS. |
 | [Deluge](/index.php/Deluge "Deluge") | deluged | deluged.service | Multiplataforma y cliente BitTorrent completo - demonio principal. |
 | deluge-web | deluge-web.service | Multiplataforma y cliente BitTorrent completo - demonio para la interfaz web. |
-| [Dhcpcd](/index.php/Dhcpcd "Dhcpcd") | dhcpcd | dhcpcd@.service | Demonio de DHCP. |
+| [Dhcpcd](/index.php/Dhcpcd_(Espa%C3%B1ol) "Dhcpcd (Español)") | dhcpcd | dhcpcd@.service | Demonio de DHCP. |
 | [Dovecot](/index.php/Dovecot "Dovecot") | dovecot | dovecot.service | Servidor IMAP y POP3. |
 | [Dropbox](/index.php/Dropbox "Dropbox") | dropboxd | dropbox@.service | Archivo multiplataforma de sincronización con control de versión. |
 | [fail2ban](/index.php/Fail2ban "Fail2ban") | fail2ban | fail2ban.service | Escanedados fail2ban de archivos de registros y baneados de IP que muestran los elementos maliciosos. |

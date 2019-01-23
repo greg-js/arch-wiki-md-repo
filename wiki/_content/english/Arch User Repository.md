@@ -60,7 +60,7 @@ A good number of new packages that enter the official repositories start in the 
 
 Users can search and download PKGBUILDs from the [AUR Web Interface](https://aur.archlinux.org). These PKGBUILDs can be built into installable packages using [makepkg](/index.php/Makepkg "Makepkg"), then installed using pacman.
 
-*   Ensure the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) package group is installed (`pacman -S --needed base-devel`).
+*   Ensure the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) package group is installed in full (`pacman -S --needed base-devel`).
 *   Glance over the [#FAQ](#FAQ) for answers to the most common questions.
 *   You may wish to adjust `/etc/makepkg.conf` to optimize for your processor prior to building packages from the AUR. A significant improvement in compile times can be realized on systems with multi-core processors by adjusting the MAKEFLAGS variable. Users can also enable hardware-specific optimizations in GCC via the CFLAGS variable. See [makepkg](/index.php/Makepkg "Makepkg") for more information.
 
@@ -90,7 +90,7 @@ Installing packages from the AUR is a relatively simple process. Essentially:
 
 ### Prerequisites
 
-First ensure that the necessary tools are installed by [installing](/index.php/Install "Install") the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group which includes [make](https://www.archlinux.org/packages/?name=make) and other tools needed for compiling from source.
+First ensure that the necessary tools are installed by [installing](/index.php/Install "Install") the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group in full which includes [make](https://www.archlinux.org/packages/?name=make) and other tools needed for compiling from source.
 
 **Note:** Packages in the AUR assume that the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group is installed, i.e. they do not list the group's members as dependencies explicitly.
 
