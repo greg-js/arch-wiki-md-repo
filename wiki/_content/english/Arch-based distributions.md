@@ -51,6 +51,7 @@ Asterisk indicates the year of first public release based on Arch Linux.
 *   [Artix Linux](https://sourceforge.net/projects/artix-linux/) 
 *   [BBQLinux](https://sourceforge.net/projects/bbqlinux/) 
 *   [BlackArch Linux](https://blackarch.org/) 
+*   [BlueLight](https://github.com/BlueLightOS/bluelight) 
 *   [Bluestar Linux](https://sourceforge.net/projects/bluestarlinux/) 
 *   [Chakra](https://sourceforge.net/projects/chakra/) 
 *   [Condres OS](https://sourceforge.net/projects/condres-os-gnu-linux/) 

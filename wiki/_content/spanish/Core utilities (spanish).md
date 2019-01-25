@@ -52,7 +52,7 @@ La siguiente tabla lista algunas utilidades importantes las cuales los usuarios 
 | GNU [sed](https://www.archlinux.org/packages/?name=sed) | sed | editor de secuencias (stream editor) | [sed(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sed.1), [info](https://www.gnu.org/software/sed/manual/html_node/index.html), [one-liners](http://sed.sourceforge.net/sed1line.txt) |
 | GNU [gawk](https://www.archlinux.org/packages/?name=gawk) | awk | lenguaje de escaneo y procesamiento de patrones | [gawk(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gawk.1), [info](https://www.gnu.org/software/gawk/manual/html_node/index.html) | [nawk](https://www.archlinux.org/packages/?name=nawk), [mawk](https://aur.archlinux.org/packages/mawk/) |
 | [util-linux](https://www.archlinux.org/packages/?name=util-linux) | [dmesg](https://en.wikipedia.org/wiki/dmesg |
-| [lsblk](/index.php/Lsblk "Lsblk") | lista los dispositivos de bloques | [lsblk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lsblk.8) |
+| [lsblk](/index.php/Lsblk_(Espa%C3%B1ol) "Lsblk (Español)") | lista los dispositivos de bloques | [lsblk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lsblk.8) |
 | [mount](/index.php/Mount "Mount") | monta un sistema de archivos | [mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8) |
 | [umount](/index.php/Umount "Umount") | desmonta un sistema de archivos | [umount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/umount.8) |
 | [su](/index.php/Su_(Espa%C3%B1ol) "Su (Español)") | substitute user | [su(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/su.1) | [sudo](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)") |

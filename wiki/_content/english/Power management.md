@@ -356,7 +356,6 @@ When performing lid switches in short succession, *logind* will delay the suspen
 ...
 HoldoffTimeoutSec=30s
 ...
-</nowiki>
 ```
 
 #### Suspend from corresponding laptop Fn key not working

@@ -6,6 +6,7 @@
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 Fan noise](#Fan_noise)
     *   [2.2 HP Compaq 8510w](#HP_Compaq_8510w)
+    *   [2.3 HP Compaq nc8000](#HP_Compaq_nc8000)
 
 ## Model List
 
@@ -237,3 +238,7 @@ HibernateMode=shutdown
 ```
 
 This file tells [Systemd](/index.php/Systemd "Systemd") to write `shutdown` instead of `platform` to `/sys/power/disk` before writing `disk` to `/sys/power/state`.
+
+### HP Compaq nc8000
+
+Install [TLP](/index.php/TLP "TLP") if suspend to ram fails.

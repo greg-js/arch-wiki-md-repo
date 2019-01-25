@@ -57,11 +57,12 @@ go_up = U LEFT
 
 ```
 
-To speed up navigation set the following in `~/.moc/config`:
+To speed up navigation and detach, set the following in `~/.moc/config`:
 
 ```
 ReadTags = no
 ShowTime = no
+TagsCacheSize = 0
 
 ```
 

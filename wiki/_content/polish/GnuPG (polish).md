@@ -8,64 +8,64 @@ Według [official website](https://www.gnupg.org/):
 *   [2 Konfiguracja](#Konfiguracja)
     *   [2.1 Lokalizacja katalogu](#Lokalizacja_katalogu)
     *   [2.2 Pliki konfiguracyjne](#Pliki_konfiguracyjne)
-    *   [2.3 Domyślne opcje dla nowych użytkowników](#Domy.C5.9Blne_opcje_dla_nowych_u.C5.BCytkownik.C3.B3w)
-*   [3 Używanie](#U.C5.BCywanie)
-    *   [3.1 Utwórz parę kluczy](#Utw.C3.B3rz_par.C4.99_kluczy)
+    *   [2.3 Domyślne opcje dla nowych użytkowników](#Domyślne_opcje_dla_nowych_użytkowników)
+*   [3 Używanie](#Używanie)
+    *   [3.1 Utwórz parę kluczy](#Utwórz_parę_kluczy)
     *   [3.2 Lista kluczy](#Lista_kluczy)
-    *   [3.3 Wyeksportuj swój klucz publiczny](#Wyeksportuj_sw.C3.B3j_klucz_publiczny)
+    *   [3.3 Wyeksportuj swój klucz publiczny](#Wyeksportuj_swój_klucz_publiczny)
     *   [3.4 Zaimportuj klucz publiczny](#Zaimportuj_klucz_publiczny)
-    *   [3.5 Użyj serwera kluczy](#U.C5.BCyj_serwera_kluczy)
+    *   [3.5 Użyj serwera kluczy](#Użyj_serwera_kluczy)
     *   [3.6 Szyfrowanie i odszyfrowanie](#Szyfrowanie_i_odszyfrowanie)
-        *   [3.6.1 Asymetryczny](#Asymetryczny)
-        *   [3.6.2 Symetryczny](#Symetryczny)
+        *   [3.6.1 Asymetryczne](#Asymetryczne)
+        *   [3.6.2 Symetryczne](#Symetryczne)
 *   [4 Konserwacja kluczy](#Konserwacja_kluczy)
-    *   [4.1 Zrób kopię swojego klucza prywatnego](#Zr.C3.B3b_kopi.C4.99_swojego_klucza_prywatnego)
-    *   [4.2 Edytuj swój klucz](#Edytuj_sw.C3.B3j_klucz)
+    *   [4.1 Zrób kopię swojego klucza prywatnego](#Zrób_kopię_swojego_klucza_prywatnego)
+    *   [4.2 Edytuj swój klucz](#Edytuj_swój_klucz)
     *   [4.3 Eksportowanie podklucza](#Eksportowanie_podklucza)
     *   [4.4 Rotating subkeys](#Rotating_subkeys)
 *   [5 Podpisy](#Podpisy)
-    *   [5.1 Utwórz podpis](#Utw.C3.B3rz_podpis)
+    *   [5.1 Utwórz podpis](#Utwórz_podpis)
         *   [5.1.1 Zarejestruj plik](#Zarejestruj_plik)
         *   [5.1.2 Clearsign a file or message](#Clearsign_a_file_or_message)
-        *   [5.1.3 Utwórz oddzielny podpis](#Utw.C3.B3rz_oddzielny_podpis)
+        *   [5.1.3 Utwórz oddzielny podpis](#Utwórz_oddzielny_podpis)
     *   [5.2 Zweryfikuj podpis](#Zweryfikuj_podpis)
 *   [6 gpg-agent](#gpg-agent)
     *   [6.1 Konfiguracja](#Konfiguracja_2)
-    *   [6.2 Załaduj ponownie agenta](#Za.C5.82aduj_ponownie_agenta)
+    *   [6.2 Załaduj ponownie agenta](#Załaduj_ponownie_agenta)
     *   [6.3 pinentry](#pinentry)
-    *   [6.4 Bezobsługowe hasło](#Bezobs.C5.82ugowe_has.C5.82o)
+    *   [6.4 Bezobsługowe hasło](#Bezobsługowe_hasło)
     *   [6.5 SSH agent](#SSH_agent)
         *   [6.5.1 Set SSH_AUTH_SOCK](#Set_SSH_AUTH_SOCK)
-        *   [6.5.2 Skonfiguruj pinentry, aby użyć prawidłowego TTY](#Skonfiguruj_pinentry.2C_aby_u.C5.BCy.C4.87_prawid.C5.82owego_TTY)
+        *   [6.5.2 Skonfiguruj pinentry, aby użyć prawidłowego TTY](#Skonfiguruj_pinentry,_aby_użyć_prawidłowego_TTY)
         *   [6.5.3 Dodaj klucze SSH](#Dodaj_klucze_SSH)
-        *   [6.5.4 Użyj klucza GPG jako klucza SSH](#U.C5.BCyj_klucza_GPG_jako_klucza_SSH)
+        *   [6.5.4 Użyj klucza GPG jako klucza SSH](#Użyj_klucza_GPG_jako_klucza_SSH)
 *   [7 Smartcards](#Smartcards)
     *   [7.1 GnuPG only setups](#GnuPG_only_setups)
-    *   [7.2 GnuPG z pcscd (PCSC Lite)](#GnuPG_z_pcscd_.28PCSC_Lite.29)
-        *   [7.2.1 Zawsze używaj pcscd](#Zawsze_u.C5.BCywaj_pcscd)
-*   [8 Porady i wskazówki](#Porady_i_wskaz.C3.B3wki)
+    *   [7.2 GnuPG z pcscd (PCSC Lite)](#GnuPG_z_pcscd_(PCSC_Lite))
+        *   [7.2.1 Zawsze używaj pcscd](#Zawsze_używaj_pcscd)
+*   [8 Porady i wskazówki](#Porady_i_wskazówki)
     *   [8.1 Inny algorytm](#Inny_algorytm)
-    *   [8.2 Zaszyfruj hasło](#Zaszyfruj_has.C5.82o)
-    *   [8.3 Odwoływanie klucza](#Odwo.C5.82ywanie_klucza)
+    *   [8.2 Zaszyfruj hasło](#Zaszyfruj_hasło)
+    *   [8.3 Odwoływanie klucza](#Odwoływanie_klucza)
     *   [8.4 Change trust model](#Change_trust_model)
-    *   [8.5 Ukryj wszystkie identyfikatory odbiorców](#Ukryj_wszystkie_identyfikatory_odbiorc.C3.B3w)
-    *   [8.6 Używanie caff do wysyłania kluczy partiami](#U.C5.BCywanie_caff_do_wysy.C5.82ania_kluczy_partiami)
-    *   [8.7 Zawsze pokazuj długie identyfikatory i odciski palca](#Zawsze_pokazuj_d.C5.82ugie_identyfikatory_i_odciski_palca)
+    *   [8.5 Ukryj wszystkie identyfikatory odbiorców](#Ukryj_wszystkie_identyfikatory_odbiorców)
+    *   [8.6 Używanie caff do wysyłania kluczy partiami](#Używanie_caff_do_wysyłania_kluczy_partiami)
+    *   [8.7 Zawsze pokazuj długie identyfikatory i odciski palca](#Zawsze_pokazuj_długie_identyfikatory_i_odciski_palca)
     *   [8.8 Niestandardowe funkcje](#Niestandardowe_funkcje)
     *   [8.9 Cache passwords](#Cache_passwords)
-*   [9 Rozwiązywanie problemów:](#Rozwi.C4.85zywanie_problem.C3.B3w:)
-    *   [9.1 Nie ma wystarczającej liczby losowych bajtów](#Nie_ma_wystarczaj.C4.85cej_liczby_losowych_bajt.C3.B3w)
+*   [9 Rozwiązywanie problemów:](#Rozwiązywanie_problemów:)
+    *   [9.1 Nie ma wystarczającej liczby losowych bajtów](#Nie_ma_wystarczającej_liczby_losowych_bajtów)
     *   [9.2 su](#su)
     *   [9.3 Agent complains end of file](#Agent_complains_end_of_file)
     *   [9.4 KGpg configuration permissions](#KGpg_configuration_permissions)
-    *   [9.5 GNOME na Wayland zastępuje gniazdo agenta SSH](#GNOME_na_Wayland_zast.C4.99puje_gniazdo_agenta_SSH)
+    *   [9.5 GNOME na Wayland zastępuje gniazdo agenta SSH](#GNOME_na_Wayland_zastępuje_gniazdo_agenta_SSH)
     *   [9.6 mutt](#mutt)
-    *   [9.7 "Utracone" klucze, aktualizacja do wersji 2.1 Gnupg](#.22Utracone.22_klucze.2C_aktualizacja_do_wersji_2.1_Gnupg)
-    *   [9.8 gpg zawiesza się dla wszystkich serwerów kluczy (podczas próby odebrania kluczy)](#gpg_zawiesza_si.C4.99_dla_wszystkich_serwer.C3.B3w_kluczy_.28podczas_pr.C3.B3by_odebrania_kluczy.29)
+    *   [9.7 "Utracone" klucze, aktualizacja do wersji 2.1 Gnupg](#"Utracone"_klucze,_aktualizacja_do_wersji_2.1_Gnupg)
+    *   [9.8 gpg zawiesza się dla wszystkich serwerów kluczy (podczas próby odebrania kluczy)](#gpg_zawiesza_się_dla_wszystkich_serwerów_kluczy_(podczas_próby_odebrania_kluczy))
     *   [9.9 Nie wykryto SmartCard](#Nie_wykryto_SmartCard)
-    *   [9.10 gpg: WARNING: server 'gpg-agent' is older than us (x < y)](#gpg:_WARNING:_server_.27gpg-agent.27_is_older_than_us_.28x_.3C_y.29)
-    *   [9.11 gpg: ..., IPC connect call failed](#gpg:_....2C_IPC_connect_call_failed)
-*   [10 Zobacz też](#Zobacz_te.C5.BC)
+    *   [9.10 gpg: WARNING: server 'gpg-agent' is older than us (x < y)](#gpg:_WARNING:_server_'gpg-agent'_is_older_than_us_(x_<_y))
+    *   [9.11 gpg: ..., IPC connect call failed](#gpg:_...,_IPC_connect_call_failed)
+*   [10 Zobacz też](#Zobacz_też)
 
 ## Instalacja
 
@@ -73,7 +73,7 @@ Według [official website](https://www.gnupg.org/):
 
 This will also install [pinentry](https://www.archlinux.org/packages/?name=pinentry), a collection of simple PIN or passphrase entry dialogs which GnuPG uses for passphrase entry. Which *pinentry* dialog is used is determined by the symbolic link `/usr/bin/pinentry`, which by default points to `/usr/bin/pinentry-gtk-2`.
 
-If you want to use a graphical frontend or program that integrates with GnuPG, see [List of applications/Security#Encryption, signing, steganography](/index.php/List_of_applications/Security#Encryption.2C_signing.2C_steganography "List of applications/Security").
+If you want to use a graphical frontend or program that integrates with GnuPG, see [List of applications/Security#Encryption, signing, steganography](/index.php/List_of_applications/Security#Encryption,_signing,_steganography "List of applications/Security").
 
 ## Konfiguracja
 
@@ -106,7 +106,7 @@ To doda odpowiednie `/home/user1/.gnupg` i `/home/user2/.gnupg` i skopiuj do nie
 
 ## Używanie
 
-**Note:** Whenever a *`user-id`* jest wymagany w poleceniu, można go określić za pomocą identyfikatora klucza, odcisku palca, części imienia i nazwiska lub adresu e-mail itp. GnuPG jest elastyczny w tym zakresie..
+**Note:** Kiedy *`user-id`* jest wymagany w poleceniu, można go określić za pomocą identyfikatora klucza, odcisku palca, części imienia i nazwiska lub adresu e-mail itp. GnuPG jest elastyczny w tym zakresie..
 
 ### Utwórz parę kluczy
 
@@ -148,18 +148,18 @@ $ gpg --list-secret-keys
 
 ### Wyeksportuj swój klucz publiczny
 
-Głównym zastosowaniem gpg jest zapewnienie poufności wymienianych wiadomości za pośrednictwem kryptografii z kluczem publicznym. Dzięki niemu każdy użytkownik dystrybuuje klucz publiczny swojego klucza, który może być używany przez innych do szyfrowania wiadomości do użytkownika. Klucz prywatny musi być zawsze "prywatny", w przeciwnym razie dochodzi do złamania poufności. Zobacz [w:Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography "w:Public-key cryptography") for examples about the message exchange.
+Głównym zastosowaniem gpg jest zapewnienie poufności wymienianych wiadomości za pośrednictwem kryptografii z kluczem publicznym. Dzięki niemu każdy użytkownik dystrybuuje klucz publiczny swojego klucza, który może być używany przez innych do szyfrowania wiadomości do użytkownika. Klucz prywatny musi być zawsze "prywatny", w przeciwnym razie dochodzi do złamania poufności. Zobacz w [w:Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography "w:Public-key cryptography") przykłady wymiany wiadomości.
 
 Tak więc, aby inni mogli wysyłać zaszyfrowane wiadomości, potrzebują Twojego publicznego klucza.
 
-To generate an ASCII version of a user's public key to file `*public.key*` (e.g. to distribute it by e-mail):
+By wygenerować wersję ASCII klucza publicznego do pliku `*public.key*` (np. do dystrybucji poprzez e-mail):
 
 ```
 $ gpg --output *public.key* --armor --export *user-id*
 
 ```
 
-Alternatywnie lub dodatkowo możesz [#Use a keyserver](#Use_a_keyserver) podzielić się swoim kluczem.
+Alternatywnie lub dodatkowo możesz zobaczyć sekcję [#Użyj serwera kluczy](#Użyj_serwera_kluczy) by podzielić się swoim kluczem.
 
 **Tip:** Dodaj `--no-emit-version` aby uniknąć drukowania numeru wersji lub dodać odpowiednie ustawienie do pliku konfiguracyjnego.
 
@@ -215,9 +215,9 @@ $ gpg --recv-keys *key-id*
 
 ### Szyfrowanie i odszyfrowanie
 
-#### Asymetryczny
+#### Asymetryczne
 
-Musisz [zaimportować klucz publiczny](#Zaimportuj_klucz_publiczny) użytkownika przed szyfrowaniem (opcje `--encrypt` or `-e`) plik lub wiadomość do tego odbiorcy (opcje `--recipient` or `-r`). Dodatkowo musisz [Utworzyć parę kluczy](#Utw.C3.B3rz_par.C4.99_kluczy) jeśli jeszcze tego nie zrobiłeś.
+Musisz [zaimportować klucz publiczny](#Zaimportuj_klucz_publiczny) użytkownika przed szyfrowaniem (opcje `--encrypt` or `-e`) pliku lub wiadomości do danego odbiorcy (opcje `--recipient` or `-r`). Dodatkowo musisz [Utworzyć parę kluczy](#Utwórz_parę_kluczy) jeśli jeszcze tego nie zrobiłeś.
 
 Aby zaszyfrować plik o nazwie "doc", użyj:
 
@@ -226,14 +226,14 @@ $ gpg --recipient *user-id* --encrypt *doc*
 
 ```
 
-Aby odszyfrować (opcja `--decrypt` lub `-d`) plik o nazwie *doc* .gpg zaszyfrowany kluczem publicznym, użyj:
+Aby odszyfrować (opcja `--decrypt` lub `-d`) zaszyfrowany kluczem prywatnym plik o nazwie *doc* .gpg za pomocą klucza publicznego, użyj:
 
 ```
 $ gpg --output *doc* --decrypt *doc*.gpg
 
 ```
 
-*gpg* poprosi cię o podanie hasła, a następnie odszyfruje i zapisze dane z *doc* . gpg do *doc* . Jeśli pominiesz `-o` (`--output`) opcje, *gpg' 'zapisze odszyfrowane dane na standardowe wyjście.*
+*gpg* poprosi cię o podanie hasła, a następnie odszyfruje i zapisze dane z *doc* . gpg do *doc* . Jeśli pominiesz `-o` (`--output`) opcje, *gpg* zapisze odszyfrowane dane na standardowe wyjście.
 
 **Tip:**
 
@@ -242,7 +242,7 @@ $ gpg --output *doc* --decrypt *doc*.gpg
 *   Dodaj `--no-emit-version` aby uniknąć drukowania numeru wersji lub dodać odpowiednie ustawienie do pliku konfiguracyjnego.
 *   Możesz użyć gnupg do zaszyfrowania poufnych dokumentów za pomocą własnego identyfikatora użytkownika jako odbiorcy lub używając `--default-recipient-self` zamiast tego flaga; można jednak wykonać tylko ten jeden plik naraz, chociaż zawsze można zarchiwizować różne pliki, a następnie zaszyfrować plik tar. Zobacz też [Disk encryption#Available methods](/index.php/Disk_encryption#Available_methods "Disk encryption") jeśli chcesz zaszyfrować katalogi lub cały system plików.
 
-#### Symetryczny
+#### Symetryczne
 
 Szyfrowanie symetryczne nie wymaga generowania pary kluczy i może być używane do prostego szyfrowania danych za pomocą hasła. Po prostu użyj `--symmetric` lub `-c` aby wykonać szyfrowanie symetryczne:
 

@@ -11,6 +11,7 @@ This page explains how to setup your system in order to use a [smart card](https
 *   [2 Scan for card reader](#Scan_for_card_reader)
 *   [3 Configuration](#Configuration)
     *   [3.1 Mozilla Firefox](#Mozilla_Firefox)
+    *   [3.2 Chromium](#Chromium)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Smargo/TV Card reader](#Smargo/TV_Card_reader)
     *   [4.2 p11tool](#p11tool)
@@ -84,7 +85,52 @@ Possibly identified card (using /usr/share/pcsc/smartcard_list.txt):
 
 ### Mozilla Firefox
 
-The browser needs to set the new security-related device. Open the **Security Devices** page (reach it via Preferences, Privacy & Security, Certificates), then click **Load** and set the Module Name to "CAC Module" and Module filename to `/usr/lib/opensc-pkcs11.so`.
+The browser needs to set the new security-related device. Open the **Security Devices** page (reach it via Preferences, Privacy & Security, Certificates), then click **Load** and set the Module Name to *CAC Module* and module filename to `/usr/lib/opensc-pkcs11.so`.
+
+### Chromium
+
+Chromium uses [NSS](/index.php/Network_Security_Services "Network Security Services"). Open a shell in your home directory and verify that the *CAC Module* is not already present:
+
+```
+ $ modutil -list -dbdir .pki/nssdb/
+
+ Listing of PKCS #11 Modules
+-----------------------------------------------------------
+  1\. NSS Internal PKCS #11 Module
+    ....
+
+```
+
+If not, close any browser and add the module (an user interaction for confirmation is required):
+
+```
+ $ modutil -dbdir sql:.pki/nssdb/ -add "CAC Module" -libfile /usr/lib/opensc-pkcs11.so
+
+ WARNING: Performing this operation while the browser is running could cause
+ corruption of your security databases. If the browser is currently running,
+ you should exit browser before continuing this operation. Type
+ 'q <enter>' to abort, or <enter> to continue:
+
+ Module "CAC Module" added to database.
+
+```
+
+Check for the correct execution of the command:
+
+```
+ $ modutil -list -dbdir .pki/nssdb/
+
+ Listing of PKCS #11 Modules
+ -----------------------------------------------------------
+   1\. NSS Internal PKCS #11 Module
+     ....
+   2\. CAC Module
+     library name: /usr/lib/opensc-pkcs11.so
+        uri: pkcs11:library-manufacturer=OpenSC%20Project;library-description=OpenSC%20smartcard%20framework;library-version=0.19
+      slots: 1 slot attached
+     status: loaded
+
+```
 
 ## Tips and tricks
 

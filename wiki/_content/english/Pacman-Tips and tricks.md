@@ -550,7 +550,7 @@ $ pacman -Qqe > pkglist.txt
 
 *   With option `-t`, the packages already required by other explicitly installed packages are not mentioned. If reinstalling from this list they will be installed but as dependencies only.
 *   With option `-n`, foreign packages (e.g. from [AUR](/index.php/AUR "AUR")) would be omitted from the list.
-*   Use `comm -13 <(pacman -Qqdt | sort) < (pacman -Qqdtt | sort) > optdeplist.txt` to also create a list of the installed optional dependencies which can be reinstalled with `--asdeps`.
+*   Use `comm -13 <(pacman -Qqdt | sort) <(pacman -Qqdtt | sort) > optdeplist.txt` to also create a list of the installed optional dependencies which can be reinstalled with `--asdeps`.
 *   Use `pacman -Qqem > foreignpkglist.txt` to create the list of AUR and other foreign packages that have been explicitly installed.
 
 To keep an up-to-date list of explicitly installed packages (e.g. in combination with a versioned `/etc/`), you can set up a [hook](/index.php/Pacman#Hooks "Pacman"). Example:

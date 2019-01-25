@@ -59,10 +59,11 @@
             *   [1.4.2.2 Graphical](#Graphical_4)
         *   [1.4.3 Video editors](#Video_editors)
         *   [1.4.4 Subtitles](#Subtitles)
-        *   [1.4.5 Screencast](#Screencast)
-        *   [1.4.6 Webcam](#Webcam)
-        *   [1.4.7 DVD authoring](#DVD_authoring)
-        *   [1.4.8 DVD ripping](#DVD_ripping)
+        *   [1.4.5 Subtitle editors](#Subtitle_editors)
+        *   [1.4.6 Screencast](#Screencast)
+        *   [1.4.7 Webcam](#Webcam)
+        *   [1.4.8 DVD authoring](#DVD_authoring)
+        *   [1.4.9 DVD ripping](#DVD_ripping)
     *   [1.5 Collection managers](#Collection_managers)
     *   [1.6 Media servers](#Media_servers)
     *   [1.7 Metadata](#Metadata)
@@ -1667,6 +1668,24 @@ See also [Wikipedia:Comparison of video editing software](https://en.wikipedia.o
 
 #### Subtitles
 
+*   **Penguin Subtitle Player** — Standalone subtitle player that provides a translucent window which always stays on the top so subtitles can be shown on top of the video without blocking anything.
+
+	[https://github.com/carsonip/Penguin-Subtitle-Player](https://github.com/carsonip/Penguin-Subtitle-Player) || [penguin-subtitle-player-git](https://aur.archlinux.org/packages/penguin-subtitle-player-git/)
+
+*   **subdl** — Command-line tool for downloading subtitles from opensubtitles.org.
+
+	[https://github.com/akexakex/subdl](https://github.com/akexakex/subdl) || [subdl](https://www.archlinux.org/packages/?name=subdl)
+
+*   **SubDownloader** — Automatic download/upload of subtitles using fast hashing.
+
+	[https://github.com/subdownloader/subdownloader](https://github.com/subdownloader/subdownloader) || [subdownloader](https://www.archlinux.org/packages/?name=subdownloader)
+
+*   **SubtitlesPrinter** — Print subtitles above a X-screen, independently of the video player.
+
+	[https://github.com/OlivierMarty/SubtitlesPrinter](https://github.com/OlivierMarty/SubtitlesPrinter) || [subtitles-printer-git](https://aur.archlinux.org/packages/subtitles-printer-git/)
+
+#### Subtitle editors
+
 See also [Wikipedia:Comparison of subtitle editors](https://en.wikipedia.org/wiki/Comparison_of_subtitle_editors "wikipedia:Comparison of subtitle editors").
 
 *   **[Aegisub](https://en.wikipedia.org/wiki/Aegisub "wikipedia:Aegisub")** — Subtitle editor.
@@ -1685,18 +1704,6 @@ See also [Wikipedia:Comparison of subtitle editors](https://en.wikipedia.org/wik
 
 	[http://www.jubler.org](http://www.jubler.org) || [jubler](https://aur.archlinux.org/packages/jubler/)
 
-*   **Penguin Subtitle Player** — Standalone subtitle player that provides a translucent window which always stays on the top so subtitles can be shown on top of the video without blocking anything.
-
-	[https://github.com/carsonip/Penguin-Subtitle-Player](https://github.com/carsonip/Penguin-Subtitle-Player) || [penguin-subtitle-player-git](https://aur.archlinux.org/packages/penguin-subtitle-player-git/)
-
-*   **subdl** — Command-line tool for downloading subtitles from opensubtitles.org.
-
-	[https://github.com/akexakex/subdl](https://github.com/akexakex/subdl) || [subdl](https://www.archlinux.org/packages/?name=subdl)
-
-*   **SubDownloader** — Automatic download/upload of subtitles using fast hashing.
-
-	[https://github.com/subdownloader/subdownloader](https://github.com/subdownloader/subdownloader) || [subdownloader](https://www.archlinux.org/packages/?name=subdownloader)
-
 *   **Subtitle Composer** — Subtitle editor with Qt 5 based GUI supporting various formats, features different player backends, able to display wave form.
 
 	[https://github.com/maxrd2/subtitlecomposer](https://github.com/maxrd2/subtitlecomposer) || [subtitlecomposer](https://aur.archlinux.org/packages/subtitlecomposer/)
@@ -1708,10 +1715,6 @@ See also [Wikipedia:Comparison of subtitle editors](https://en.wikipedia.org/wik
 *   **Subtitle Editor** — GTK+3 tool to edit subtitles for GNU/Linux/*BSD.
 
 	[http://kitone.github.io/subtitleeditor/](http://kitone.github.io/subtitleeditor/) || [subtitleeditor](https://www.archlinux.org/packages/?name=subtitleeditor)
-
-*   **SubtitlesPrinter** — Print subtitles above a X-screen, independently of the video player.
-
-	[https://github.com/OlivierMarty/SubtitlesPrinter](https://github.com/OlivierMarty/SubtitlesPrinter) || [subtitles-printer-git](https://aur.archlinux.org/packages/subtitles-printer-git/)
 
 #### Screencast
 

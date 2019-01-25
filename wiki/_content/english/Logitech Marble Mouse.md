@@ -1,38 +1,94 @@
-The **Logitech Marble Mouse** is a pointing device with four buttons and a trackball. It is also known as the **Trackman Marble**. The Marble Mouse is symmetrical, making it well-suited for use with either hand. [Picture](http://www.logitech.com/assets/21083/21083.png). Out-of-the box it does not scroll, but you can configure it to enable this.
-
 ## Contents
 
-*   [1 Installation](#Installation)
-*   [2 Basic function](#Basic_function)
-*   [3 Configuration](#Configuration)
-    *   [3.1 Buttons and trackball](#Buttons_and_trackball)
-        *   [3.1.1 Assigning buttons](#Assigning_buttons)
-        *   [3.1.2 "Both-large-buttons" combination-click](#"Both-large-buttons"_combination-click)
-        *   [3.1.3 Scroll modifier](#Scroll_modifier)
-    *   [3.2 Right-side or left-side](#Right-side_or_left-side)
-    *   [3.3 System-wide or per-user](#System-wide_or_per-user)
-    *   [3.4 Xorg input hotplugging](#Xorg_input_hotplugging)
-    *   [3.5 Without Xorg hotplugging](#Without_Xorg_hotplugging)
-    *   [3.6 Gnome 3 and Wayland](#Gnome_3_and_Wayland)
-        *   [3.6.1 Mouse wheel emulation](#Mouse_wheel_emulation)
-        *   [3.6.2 Acceleration profile](#Acceleration_profile)
-*   [4 Sample configuration](#Sample_configuration)
-    *   [4.1 Configuration file](#Configuration_file)
-    *   [4.2 Restarting X](#Restarting_X)
-*   [5 Minimal configuration](#Minimal_configuration)
-    *   [5.1 Using evdev](#Using_evdev)
-    *   [5.2 Using libinput](#Using_libinput)
-*   [6 Additional tweaks](#Additional_tweaks)
-    *   [6.1 Console (gpm)](#Console_(gpm))
-    *   [6.2 Chromium browser](#Chromium_browser)
-    *   [6.3 Firefox browser](#Firefox_browser)
-*   [7 See also](#See_also)
+*   [1 Overview](#Overview)
+*   [2 Installation](#Installation)
+*   [3 Sample Configurations](#Sample_Configurations)
+    *   [3.1 libinput](#libinput)
+*   [4 Basic function](#Basic_function)
+*   [5 Configuration](#Configuration)
+    *   [5.1 Buttons and trackball](#Buttons_and_trackball)
+        *   [5.1.1 Assigning buttons](#Assigning_buttons)
+        *   [5.1.2 "Both-large-buttons" combination-click](#"Both-large-buttons"_combination-click)
+        *   [5.1.3 Scroll modifier](#Scroll_modifier)
+    *   [5.2 Right-side or left-side](#Right-side_or_left-side)
+    *   [5.3 System-wide or per-user](#System-wide_or_per-user)
+    *   [5.4 Xorg input hotplugging](#Xorg_input_hotplugging)
+    *   [5.5 Without Xorg hotplugging](#Without_Xorg_hotplugging)
+    *   [5.6 Gnome 3 and Wayland](#Gnome_3_and_Wayland)
+        *   [5.6.1 Mouse wheel emulation](#Mouse_wheel_emulation)
+        *   [5.6.2 Acceleration profile](#Acceleration_profile)
+*   [6 Sample configuration](#Sample_configuration)
+    *   [6.1 Configuration file](#Configuration_file)
+    *   [6.2 Restarting X](#Restarting_X)
+*   [7 Minimal configuration](#Minimal_configuration)
+    *   [7.1 Using evdev](#Using_evdev)
+*   [8 Additional tweaks](#Additional_tweaks)
+    *   [8.1 Console (gpm)](#Console_(gpm))
+    *   [8.2 Chromium browser](#Chromium_browser)
+    *   [8.3 Firefox browser](#Firefox_browser)
+*   [9 See also](#See_also)
+
+## Overview
+
+The **Logitech Marble Mouse** is a pointing device with four buttons and a trackball, also known as the **Trackman Marble**. The Marble Mouse is usable either left- or right-handed. It requires some configuration to enable scrolling with the trackball. For a detailed image, see: [Logitech Marble Mouse](https://i.imgur.com/4pZrjAV.png) (or [here](https://help.ubuntu.com/community/Logitech_Marblemouse_USB?action=AttachFile&do=get&target=marble-mouse-buttons-names.png)).
 
 ## Installation
 
-No driver installation is required. Your system detects the Logitech Marble Mouse at system boot, or whenever it is "hot-plugged" into a booted system.
+The mouse is detected at boot time or whenever it is "hot-plugged" into a booted system, automatically. No special installation is required.
 
-The Marble Mouse is treated like any regular mouse — you do not need to configure it. You will probably want to, however, in order to enable scrolling or customize button actions.
+## Sample Configurations
+
+For additional information about available options, see [libinput's configuration details](http://manpages.ubuntu.com/manpages/bionic/man4/libinput.4.html#configuration%20details).
+
+### libinput
+
+GDM 3.16 and XFCE 4.12 use **libinput**. The following configuration steps are known to work as of Jan 23, 2019:
+
+1.  Install [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput)
+2.  Edit `/etc/X11/xorg.conf.d/10-libinput.conf`.
+3.  Append the following content:
+
+```
+Section "InputClass"
+  Identifier   "Marble Mouse"
+  MatchProduct "Logitech USB Trackball"
+  Driver       "libinput"
+  Option       "ScrollMethod"    "button"
+  Option       "ScrollButton"    "8"
+  Option       "MiddleEmulation" "on"
+EndSection
+
+```
+
+This:
+
+*   Enables horizontal and vertical scrolling by pressing and holding the small left button while moving the trackball.
+*   Enables chord-clicks by pressing the two large buttons simultaneously.
+*   Uses the small left button for browsing back.
+*   Uses the small right button for browsing forward.
+
+Or append:
+
+```
+Section "InputClass"
+  Identifier    "Marble Mouse"
+  MatchProduct  "Logitech USB Trackball"
+  Driver        "libinput"
+  Option        "ScrollMethod"        "button"
+  Option        "ScrollButton"        "9"
+  Option        "MiddleEmulation"     "on"
+  Option        "HorizontalScrolling" "false"
+  Option        "ButtonMapping"       "1 2 3 4 5 6 7 9 8"
+EndSection
+
+```
+
+This:
+
+*   Enables vertical scrolling by pressing and holding the small right button while moving the trackball.
+*   Disables horizontal scrolling.
+*   Uses the small left button for browsing forward.
+*   Uses the small right button for browsing back.
 
 ## Basic function
 
@@ -397,23 +453,6 @@ Section "InputClass"
         Option "EmulateWheelButton" "8"
         Option "XAxisMapping" "6 7"
         Option "Emulate3Buttons" "true"
-EndSection
-
-```
-
-### Using libinput
-
-As of version 3.16 GDM/Gnome uses libinput. For the device to work as described in the above section you need to install [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) and instead append this to `/etc/X11/xorg.conf.d/10-libinput.conf`.
-
- `/etc/X11/xorg.conf.d/10-libinput.conf` 
-```
-Section "InputClass"
-        Identifier      "Marble Mouse"
-        MatchProduct    "Logitech USB Trackball"
-        Driver          "libinput"
-        Option          "ScrollMethod" "button"
-        Option          "ScrollButton" "8"
-	Option		"MiddleEmulation" "on"
 EndSection
 
 ```

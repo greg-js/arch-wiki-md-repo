@@ -181,7 +181,7 @@
 | <small>5.1.19.4.</small> [Programas para Wiki](/index.php/Category:Wiki_software_(Espa%C3%B1ol) "Category:Wiki software (Español)") <small>(1)</small> |
 | <small>5.2.</small> [Línea de órdenes](/index.php/Category:Command-line_(Espa%C3%B1ol) "Category:Command-line (Español)") <small>(3) (también en [Administración del sistema](/index.php/Category:System_administration_(Espa%C3%B1ol) "Category:System administration (Español)"))</small> |
 | <small>5.2.1.</small> [Intérpretes de órdenes](/index.php/Category:Command_shells_(Espa%C3%B1ol) "Category:Command shells (Español)") <small>(5) (también en [Lenguaje de programación](/index.php/Category:Programming_languages_(Espa%C3%B1ol) "Category:Programming languages (Español)"))</small> |
-| <small>5.2.2.</small> [Órdenes](/index.php/Category:Commands_(Espa%C3%B1ol) "Category:Commands (Español)") <small>(44)</small> |
+| <small>5.2.2.</small> [Órdenes](/index.php/Category:Commands_(Espa%C3%B1ol) "Category:Commands (Español)") <small>(45)</small> |
 | <small>5.2.2.1.</small> [Console applications](/index.php/Category:Console_applications_(Espa%C3%B1ol) "Category:Console applications (Español)") <small>(7) (también en [Aplicaciones](/index.php/Category:Applications_(Espa%C3%B1ol) "Category:Applications (Español)"))</small> |
 | <small>5.2.2.2.</small> [Utilidades de descarga](/index.php/Category:Download_utilities_(Espa%C3%B1ol) "Category:Download utilities (Español)") <small>(2) (también en [Aplicaciones de internet](/index.php/Category:Internet_applications_(Espa%C3%B1ol) "Category:Internet applications (Español)"))</small> |
 | <small>5.2.2.3.</small> [Agentes de recuperación de correo](/index.php/Category:Mail_retrieval_agents_(Espa%C3%B1ol) "Category:Mail retrieval agents (Español)") <small>(1) (también en [Clientes de correo electrónico](/index.php/Category:Email_clients_(Espa%C3%B1ol) "Category:Email clients (Español)"))</small> |
@@ -222,7 +222,7 @@
 | <small>5.8.6.</small> [Mozilla](/index.php/Category:Mozilla_(Espa%C3%B1ol) "Category:Mozilla (Español)") <small>(1)</small> |
 | <small>5.8.7.</small> [OpenBSD](/index.php/Category:OpenBSD_(Espa%C3%B1ol) "Category:OpenBSD (Español)") <small>(1)</small> |
 | <small>5.8.8.</small> [Suckless](/index.php/Category:Suckless_(Espa%C3%B1ol) "Category:Suckless (Español)") <small>(2)</small> |
-| <small>6.</small> [Administración del sistema](/index.php/Category:System_administration_(Espa%C3%B1ol) "Category:System administration (Español)") <small>(10)</small> |
+| <small>6.</small> [Administración del sistema](/index.php/Category:System_administration_(Espa%C3%B1ol) "Category:System administration (Español)") <small>(11)</small> |
 | <small>6.1.</small> [Backup](/index.php/Category:Backup_(Espa%C3%B1ol) "Category:Backup (Español)") <small>(2)</small> |
 | <small>6.2.</small> [Proceso de arranque](/index.php/Category:Boot_process_(Espa%C3%B1ol) "Category:Boot process (Español)") <small>(21)</small> |
 | <small>6.2.1.</small> [Cargadores de arranque](/index.php/Category:Boot_loaders_(Espa%C3%B1ol) "Category:Boot loaders (Español)") <small>(6)</small> |
@@ -230,7 +230,7 @@
 | <small>6.2.3.</small> [Init](/index.php/Category:Init_(Espa%C3%B1ol) "Category:Init (Español)") <small>(2)</small> |
 | <small>6.3.</small> [Línea de órdenes](/index.php/Category:Command-line_(Espa%C3%B1ol) "Category:Command-line (Español)") <small>(3) (también en [Software](/index.php/Category:Software_(Espa%C3%B1ol) "Category:Software (Español)"))</small> |
 | <small>6.3.1.</small> [Intérpretes de órdenes](/index.php/Category:Command_shells_(Espa%C3%B1ol) "Category:Command shells (Español)") <small>(5) (también en [Lenguaje de programación](/index.php/Category:Programming_languages_(Espa%C3%B1ol) "Category:Programming languages (Español)"))</small> |
-| <small>6.3.2.</small> [Órdenes](/index.php/Category:Commands_(Espa%C3%B1ol) "Category:Commands (Español)") <small>(44)</small> |
+| <small>6.3.2.</small> [Órdenes](/index.php/Category:Commands_(Espa%C3%B1ol) "Category:Commands (Español)") <small>(45)</small> |
 | <small>6.3.2.1.</small> [Console applications](/index.php/Category:Console_applications_(Espa%C3%B1ol) "Category:Console applications (Español)") <small>(7) (también en [Aplicaciones](/index.php/Category:Applications_(Espa%C3%B1ol) "Category:Applications (Español)"))</small> |
 | <small>6.3.2.2.</small> [Utilidades de descarga](/index.php/Category:Download_utilities_(Espa%C3%B1ol) "Category:Download utilities (Español)") <small>(2) (también en [Aplicaciones de internet](/index.php/Category:Internet_applications_(Espa%C3%B1ol) "Category:Internet applications (Español)"))</small> |
 | <small>6.3.2.3.</small> [Agentes de recuperación de correo](/index.php/Category:Mail_retrieval_agents_(Espa%C3%B1ol) "Category:Mail retrieval agents (Español)") <small>(1) (también en [Clientes de correo electrónico](/index.php/Category:Email_clients_(Espa%C3%B1ol) "Category:Email clients (Español)"))</small> |

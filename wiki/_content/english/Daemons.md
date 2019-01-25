@@ -32,6 +32,7 @@ freshclamd.service | Anti-virus toolkit for Unix. |
 | [Deluge](/index.php/Deluge "Deluge") | deluged | deluged.service | Cross-platform and full-featured BitTorrent client - main daemon. |
 | deluge-web | deluge-web.service | Cross-platform and full-featured BitTorrent client - web interface daemon. |
 | [Dhcpcd](/index.php/Dhcpcd "Dhcpcd") | dhcpcd | dhcpcd@.service | DHCP daemon. |
+| [Docker](/index.php/Docker "Docker") | docker | docker.service | A container platform. |
 | [Dovecot](/index.php/Dovecot "Dovecot") | dovecot | dovecot.service | IMAP and POP3 server. |
 | [Dropbox](/index.php/Dropbox "Dropbox") | dropboxd | dropbox@.service | Cross-platform file synchronisation with version control. |
 | [fail2ban](/index.php/Fail2ban "Fail2ban") | fail2ban | fail2ban.service | Fail2ban scans log files and bans IP addresses that show malicious activity. |

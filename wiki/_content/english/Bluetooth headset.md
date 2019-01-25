@@ -166,7 +166,7 @@ Open GNOME Bluetooth and activate the bluetooth. After scanning for devices, you
 
 ### LDAC
 
-[LDAC](https://en.wikipedia.org/wiki/LDAC_(codec) support can be enabled by installing [pulseaudio-modules-bt-git](https://aur.archlinux.org/packages/pulseaudio-modules-bt-git/). See its [project page](https://github.com/EHfive/pulseaudio-modules-bt) for configuration tips.
+[LDAC](https://en.wikipedia.org/wiki/LDAC_(codec) support can be enabled by installing [pulseaudio-modules-bt-git](https://aur.archlinux.org/packages/pulseaudio-modules-bt-git/) and [libldac](https://aur.archlinux.org/packages/libldac/). See its [project page](https://github.com/EHfive/pulseaudio-modules-bt) for configuration tips.
 
 ### Troubleshooting
 

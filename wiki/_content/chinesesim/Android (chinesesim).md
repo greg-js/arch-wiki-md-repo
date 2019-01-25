@@ -24,14 +24,13 @@
         *   [2.4.7 注意事项和疑难杂症](#注意事项和疑难杂症)
     *   [2.5 NVIDIA Tegra 平台专用工具](#NVIDIA_Tegra_平台专用工具)
 *   [3 构建 Android](#构建_Android)
-    *   [3.1 OS 位数](#OS_位数)
-    *   [3.2 需要的软件包](#需要的软件包)
-    *   [3.3 Java Development Kit](#Java_Development_Kit)
-    *   [3.4 配置构建环境](#配置构建环境)
-    *   [3.5 下载源代码](#下载源代码)
-    *   [3.6 开始构建](#开始构建)
-    *   [3.7 测试镜像](#测试镜像)
-    *   [3.8 创建可烧录镜像](#创建可烧录镜像)
+    *   [3.1 需要的软件包](#需要的软件包)
+    *   [3.2 Java Development Kit](#Java_Development_Kit)
+    *   [3.3 配置构建环境](#配置构建环境)
+    *   [3.4 下载源代码](#下载源代码)
+    *   [3.5 开始构建](#开始构建)
+    *   [3.6 测试镜像](#测试镜像)
+    *   [3.7 创建可烧录镜像](#创建可烧录镜像)
 *   [4 恢复 Android](#恢复_Android)
     *   [4.1 Fastboot](#Fastboot)
     *   [4.2 Samsung](#Samsung)
@@ -335,58 +334,47 @@ $ adb pull *<what-to-pull>* *<where-to-place>*
 
 ## 构建 Android
 
-请注意如下说明文档是基于[官方 AOSP 构建说明](http://source.android.com/source/building.html)的。其他基于 Android 的系统，如 CyanogenMod，通常需要额外的步骤。
-
-### OS 位数
-
-只有安卓 2.2.x (Froyo) 和更早的版本需要在 32 位系统中构建。而2.3.x (Gingerbread) 之后，则需要 64 位系统。
+请注意如下说明文档是基于[官方 AOSP 构建说明](http://source.android.com/source/building.html)的。其他基于 Android 的系统，如 LineageOS，通常需要额外的步骤。
 
 ### 需要的软件包
 
 编译任意版本的安卓系统，都需要安装下列软件包：
 
-*   32位和64位系统：[gcc](https://www.archlinux.org/packages/?name=gcc) [git](https://www.archlinux.org/packages/?name=git) [gnupg](https://www.archlinux.org/packages/?name=gnupg) [flex](https://www.archlinux.org/packages/?name=flex) [bison](https://www.archlinux.org/packages/?name=bison) [gperf](https://www.archlinux.org/packages/?name=gperf) [sdl](https://www.archlinux.org/packages/?name=sdl) [wxgtk](https://www.archlinux.org/packages/?name=wxgtk) [squashfs-tools](https://www.archlinux.org/packages/?name=squashfs-tools) [curl](https://www.archlinux.org/packages/?name=curl) [ncurses](https://www.archlinux.org/packages/?name=ncurses) [zlib](https://www.archlinux.org/packages/?name=zlib) [schedtool](https://www.archlinux.org/packages/?name=schedtool) [perl-switch](https://www.archlinux.org/packages/?name=perl-switch) [zip](https://www.archlinux.org/packages/?name=zip) [unzip](https://www.archlinux.org/packages/?name=unzip) [libxslt](https://www.archlinux.org/packages/?name=libxslt) [python2-virtualenv](https://www.archlinux.org/packages/?name=python2-virtualenv) [bc](https://www.archlinux.org/packages/?name=bc)
+*   [lib32-gcc-libs](https://www.archlinux.org/packages/?name=lib32-gcc-libs) [git](https://www.archlinux.org/packages/?name=git) [gnupg](https://www.archlinux.org/packages/?name=gnupg) [flex](https://www.archlinux.org/packages/?name=flex) [bison](https://www.archlinux.org/packages/?name=bison) [gperf](https://www.archlinux.org/packages/?name=gperf) [sdl](https://www.archlinux.org/packages/?name=sdl) [wxgtk2](https://www.archlinux.org/packages/?name=wxgtk2) [squashfs-tools](https://www.archlinux.org/packages/?name=squashfs-tools) [curl](https://www.archlinux.org/packages/?name=curl) [ncurses](https://www.archlinux.org/packages/?name=ncurses) [zlib](https://www.archlinux.org/packages/?name=zlib) [schedtool](https://www.archlinux.org/packages/?name=schedtool) [perl-switch](https://www.archlinux.org/packages/?name=perl-switch) [zip](https://www.archlinux.org/packages/?name=zip) [unzip](https://www.archlinux.org/packages/?name=unzip) [libxslt](https://www.archlinux.org/packages/?name=libxslt) [python2-virtualenv](https://www.archlinux.org/packages/?name=python2-virtualenv) [bc](https://www.archlinux.org/packages/?name=bc) [rsync](https://www.archlinux.org/packages/?name=rsync) [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) [lib32-zlib](https://www.archlinux.org/packages/?name=lib32-zlib) [lib32-ncurses](https://www.archlinux.org/packages/?name=lib32-ncurses) [lib32-readline](https://www.archlinux.org/packages/?name=lib32-readline) [lib32-ncurses5-compat-libs](https://aur.archlinux.org/packages/lib32-ncurses5-compat-libs/)
 
-*   仅64位系统：[gcc-multilib](https://www.archlinux.org/packages/?name=gcc-multilib) [lib32-zlib](https://www.archlinux.org/packages/?name=lib32-zlib) [lib32-ncurses](https://www.archlinux.org/packages/?name=lib32-ncurses) [lib32-readline](https://www.archlinux.org/packages/?name=lib32-readline)
+在 [aosp-devel](https://aur.archlinux.org/packages/aosp-devel/) 综合包提供了他们全部简易安装。
 
-*   AUR 软件包 32位和64位系统： [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/)
+此外，LineageOS需要以下软件包：[xml2](https://aur.archlinux.org/packages/xml2/), [lzop](https://www.archlinux.org/packages/?name=lzop), [pngcrush](https://www.archlinux.org/packages/?name=pngcrush), [imagemagick](https://www.archlinux.org/packages/?name=imagemagick)
 
-*   AUR 软件包 仅64位系统： [lib32-ncurses5-compat-libs](https://aur.archlinux.org/packages/lib32-ncurses5-compat-libs/)
+它们可以与 [lineageos-devel](https://aur.archlinux.org/packages/lineageos-devel/) 元软件包一起安装。
 
-**注意:** [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) 和 [lib32-ncurses5-compat-libs](https://aur.archlinux.org/packages/lib32-ncurses5-compat-libs/) 的 PGP 签名可能会引起错误，可以通过手动导入以下签名解决：
-
-$ gpg --recv-keys 702353E0F7E48EDB
-
-要编译 Android 6+，你需要安装以下额外的软件包：
-
-*   32位和64位系统： [rsync](https://www.archlinux.org/packages/?name=rsync)
-
-**Note:** CyanogenMod 从13.0版本起使用了Maven构建工具，要编译 CyanogenMod，需要安装 [maven](https://www.archlinux.org/packages/?name=maven)软件包
+**Note:** 安装 [maven](https://www.archlinux.org/packages/?name=maven) 和 [gradle](https://www.archlinux.org/packages/?name=gradle) 去编译LineageOS可能会提高构建速度，因为构建过程优先使用系统的
 
 ### Java Development Kit
 
-Android 7 (Nougat) 可以使用 [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk) 编译。[[1]](https://source.android.com/source/requirements.html)
+[所需的JDK版本](https://source.android.com/source/requirements)取决于您正在构建的android版本：
 
-*   Android 5 和 6 （Lollipop 和 Marshmallow）需要OpenJDK 7，可以通过 [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) 软件包安装。
+*   对于Android 7和8（Nougat和 Oreo），OpenJDK 8是必需的，它与[jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk)软件包一起提供。
+*   对于Android 5和6（Lollipop 和 Marshmallow），OpenJDK 7是必需的，它与[jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk)软件包一起提供。
 
-旧版本 [需要](http://source.android.com/source/initializing.html) **Oracle JDK** 才能编译，**不支持** OpenJDK。
+旧版本需要 **Oracle JDK** 才能编译，**不支持** OpenJDK。
 
-*   Gingerbread 到 KitKat (2.3 - 4.4) 需要 Java 6，可以通过 [AUR](/index.php/AUR "AUR") 软件包 [jdk6](https://aur.archlinux.org/packages/jdk6/) 安装，详情参阅 [Java](/index.php/Java "Java")。
-*   Cupcake 到 Froyo (1.5 - 2.2) 需要 Java 5，可以通过 [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) 软件包安装。。
+*   Gingerbread 到 KitKat (2.3 - 4.4) 需要 Java 6，可以通过 [AUR](/index.php/AUR "AUR") 软件包 [jdk6](https://aur.archlinux.org/packages/jdk6/) 安装。
+*   Cupcake 到 Froyo (1.5 - 2.2) 需要 Java 5，可以通过 [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) 软件包安装。
 
-。
+**Note:** Android希望Java在 `/usr/lib/jvm/java-*version*-openjdk-amd64`.
+
+设置 JAVA_HOME 以避免此要求并匹配 Arch Linux 安装路径。 例:
+
+```
+$ export JAVA_HOME=/usr/lib/jvm/java-*version*-openjdk
+
+```
+此更改仅对当前终端会话有效。
 
 ### 配置构建环境
 
-安装 [repo](https://www.archlinux.org/packages/?name=repo) 软件包，然后：
-
-```
-$ mkdir ~/bin
-$ export PATH=~/bin:$PATH
-$ curl [https://storage.googleapis.com/git-repo-downloads/repo](https://storage.googleapis.com/git-repo-downloads/repo) > ~/bin/repo
-$ chmod a+x ~/bin/repo
-
-```
+安装 [repo](https://www.archlinux.org/packages/?name=repo) 软件包。
 
 创建一个用于构建的目录：
 
@@ -399,18 +387,27 @@ $ cd ~/android
 需要把默认的 python 从 3.X 版切换到 2.X 版：
 
 ```
-$ virtualenv2 venv # 创建一个包含 Virtualenv 的目录 venv
-
-```
-
-**注意:** 编译时可能报缺少 python 模块，可以通过链接 /usr/lib/python2.7/* 到 ~/android/venv/python2.7/ 来解决，实际路径按照虚拟环境的路径确定。
-
-激活 Virtualenv，使得 $PATH 指向 Python 2。
-
-**Note:** 虚拟环境仅在当前终端有效。
-
-```
+$ virtualenv2 venv
 $ source venv/bin/activate
+
+```
+
+**Note:**
+
+*   此激活仅对当前终端会话有效。虚拟环境将保存在 `venv` 文件夹中。
+*   在构建期间，您可能会收到与缺少的python模块有关的错误。 一个快速而肮脏的修复方法是 symlink /usr/lib/python2.7/* 到 ~/android/venv/lib/python2.7/ (如果与上面不同，请更改 ~/android 以反映您的构建目录).
+
+例:
+
+```
+$ ln -s /usr/lib/python2.7/* ~/android/venv/lib/python2.7/
+
+```
+
+或 (假设构建 Data/Android_Build):
+
+```
+$ ln -s /usr/lib/python2.7/* /Data/Android_Build/venv/lib/python2.7/
 
 ```
 

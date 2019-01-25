@@ -86,7 +86,7 @@ To have read permissions on the configuration files and work well with some IDEs
 
 [Start](/index.php/Start "Start") the `tomcat7` service.
 
-Once Tomcat is started, you can visit this page to see the result: [http://localhost:8080](http://localhost:8080). If a nice Tomcat local home page is displayed this means your Servlet container is up and running and ready to host you web apps. If the startup script failed or you can only see a Java error displayed in you browser, have a look at startup logs using [systemd's journalctl](/index.php/Systemd#Journal "Systemd"). Google is full of answers on recurrent issues found in Tomcat logs.
+Once Tomcat is started, you can visit this page to see the result: [http://localhost:8080](http://localhost:8080). If a nice Tomcat local home page is displayed this means your Servlet container is up and running and ready to host you web apps. If the startup script failed or you can only see a Java error displayed in you browser, have a look at startup logs using systemd's [journalctl](/index.php/Journalctl "Journalctl"). Google is full of answers on recurrent issues found in Tomcat logs.
 
 **Note:** To improve security, Arch Linux's Tomcat packages use the [jsvc](http://commons.apache.org/daemon/jsvc.html) binary from Apache's [common-daemons](http://commons.apache.org/daemon/). Tomcat's `systemd` service runs this Apache binary with root privileges which itself starts Tomcat with an underprivileged user (`tomcat7:tomcat7` in Arch Linux). This prevents malicious code that could be executed in a bad web application from causing too much damage. This also enables the use of ports under 1024 if needed. See `man jsvc` for options available and pass them through the `CATALINA_OPTS` environment variable declared in `/etc/conf.d/tomcat7`.
 
@@ -141,7 +141,7 @@ The files can now be hosted in `/home/archie/code/jsp/myProject/`. To see the pr
 
 ## Logging
 
-Tomcat when used with official Arch Linux packages uses [systemd's journalctl](/index.php/Systemd#Journal "Systemd") **for startup log**. This means that files `/var/log/tomcat7/catalina.err` and `/var/log/tomcat7/catalina.out` are **not** used. Other logs such as access logs and business logs defined in `/etc/tomcat7/server.xml` as `Valve` will still by default end up in `/var/log/tomcat7/`.
+Tomcat when used with official Arch Linux packages uses systemd's [journalctl](/index.php/Journalctl "Journalctl") **for startup log**. This means that files `/var/log/tomcat7/catalina.err` and `/var/log/tomcat7/catalina.out` are **not** used. Other logs such as access logs and business logs defined in `/etc/tomcat7/server.xml` as `Valve` will still by default end up in `/var/log/tomcat7/`.
 
 To restore upstream style logging, copy systemd file `/lib/systemd/system/tomcat7.service` to `/etc/systemd/system/tomcat7.service` and change both `SYSLOG` for the absolute paths of log files.
 

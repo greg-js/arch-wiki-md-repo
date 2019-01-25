@@ -1,12 +1,8 @@
-This article is intended to show users how to install Arch remotely via an [SSH](/index.php/SSH "SSH") connection. Consider this approach over the standard one in scenarios such as the following:
-
-*   Home theater PC without a proper monitor (e.g. an SDTV);
-*   PC located in another city, state, country (friend's house, parent's house, etc.);
-*   PC that you would rather setup remotely, for example from the comfort of one's own workstation with copy/paste abilities from the ArchWiki.
+This article is intended to show users how to install Arch remotely via an [SSH](/index.php/SSH "SSH") connection. Consider this approach when the host is located remotely or you wish to use the copy/paste ability of an SSH client to do the Arch install.
 
 ## On the remote (target) machine
 
-**Note:** These steps require physical access to the machine. Obviously, if physically located elsewhere, this will need to be coordinated with another person.
+**Note:** These steps require physical access to the machine. If the host is physically located elsewhere, this may need to be coordinated with another person.
 
 Boot the target machine into a live Arch environment via the [Live CD/USB image](/index.php/Getting_and_installing_Arch "Getting and installing Arch"): this will log the user in as root.
 
@@ -21,11 +17,11 @@ Secondly, setup a root password which is needed for an SSH connection, since the
 
 Now check that `PermitRootLogin yes` is present (and uncommented) in `/etc/ssh/sshd_config`. This setting allows root login with password authentication on the SSH server.
 
-**Note:** If the target machine is behind a NAT router, the SSH port (22 by default) will obviously need to be forwarded to the target machine's LAN IP address. The use of port forwarding is not covered in this guide.
-
 Finally, [start](/index.php/Start "Start") the openssh daemon with `sshd.service`, which is included by default on the live CD.
 
-**Note:** After installation it is recommended to harden SSH. The first step would be to remove `PermitRootLogin yes` from `/etc/ssh/sshd_config`.
+**Note:** Unless required, after installation it is recommended to remove `PermitRootLogin yes` from `/etc/ssh/sshd_config`.
+
+**Tip:** If the target machine is behind a NAT router, and you require external access, the SSH port (22 by default) will need to be forwarded to the target machine's LAN IP address.
 
 ## On the local machine
 

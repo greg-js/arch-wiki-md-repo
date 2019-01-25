@@ -200,7 +200,7 @@
  <small>5.2.2.7.</small> [Terminal multiplexers](/index.php/Category:Terminal_multiplexers "Category:Terminal multiplexers") <small>(3)</small> |
  <small>5.2.2.8.</small> [Xorg commands](/index.php/Category:Xorg_commands "Category:Xorg commands") <small>(11) (also in [X server](/index.php/Category:X_server "Category:X server"))</small> |
  <small>5.2.3.</small> [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators") <small>(17) (also in [Applications](/index.php/Category:Applications "Category:Applications"), [Emulation](/index.php/Category:Emulation "Category:Emulation"))</small> |
- <small>5.3.</small> [Daemons](/index.php/Category:Daemons "Category:Daemons") <small>(16) (also in [System administration](/index.php/Category:System_administration "Category:System administration"))</small> |
+ <small>5.3.</small> [Daemons](/index.php/Category:Daemons "Category:Daemons") <small>(17) (also in [System administration](/index.php/Category:System_administration "Category:System administration"))</small> |
  <small>5.3.1.</small> [Servers](/index.php/Category:Servers "Category:Servers") <small>(10) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
  <small>5.3.1.1.</small> [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System") <small>(19) (also in [Directory services](/index.php/Category:Directory_services "Category:Directory services"), [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
  <small>5.3.1.1.1.</small> [Multicast DNS](/index.php/Category:Multicast_DNS "Category:Multicast DNS") <small>(2)</small> |
@@ -253,7 +253,7 @@
  <small>6.3.3.</small> [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators") <small>(17) (also in [Applications](/index.php/Category:Applications "Category:Applications"), [Emulation](/index.php/Category:Emulation "Category:Emulation"))</small> |
  <small>6.4.</small> [Configuration files](/index.php/Category:Configuration_files "Category:Configuration files") <small>(13)</small> |
  <small>6.5.</small> [Configuration management](/index.php/Category:Configuration_management "Category:Configuration management") <small>(7)</small> |
- <small>6.6.</small> [Daemons](/index.php/Category:Daemons "Category:Daemons") <small>(16) (also in [Software](/index.php/Category:Software "Category:Software"))</small> |
+ <small>6.6.</small> [Daemons](/index.php/Category:Daemons "Category:Daemons") <small>(17) (also in [Software](/index.php/Category:Software "Category:Software"))</small> |
  <small>6.6.1.</small> [Servers](/index.php/Category:Servers "Category:Servers") <small>(10) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
  <small>6.6.1.1.</small> [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System") <small>(19) (also in [Directory services](/index.php/Category:Directory_services "Category:Directory services"), [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
  <small>6.6.1.1.1.</small> [Multicast DNS](/index.php/Category:Multicast_DNS "Category:Multicast DNS") <small>(2)</small> |

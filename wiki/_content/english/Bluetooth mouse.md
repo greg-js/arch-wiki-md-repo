@@ -58,6 +58,8 @@ First, your computer stores the Bluetooth device's mac address and pairing key. 
 
 To fix the problem, follow the instructions on [this post at StackExchange](https://unix.stackexchange.com/questions/255509/bluetooth-pairing-on-dual-boot-of-windows-linux-mint-ubuntu-stop-having-to-p).
 
+if using a Bluetooth LE device use [this](https://gist.github.com/5shekel/8b4998a69903438a6aac2f01a44463d3) python script, slightly edited to adapt for arch, originally discussed [here](https://unix.stackexchange.com/a/413831/43422).
+
 ## Troubleshooting
 
 ### Mouse lag

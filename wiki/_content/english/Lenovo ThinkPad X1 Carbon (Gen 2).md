@@ -569,7 +569,7 @@ Network controller: Intel Corporation Wireless 7260 (rev 83)
 
 #### Touchscreen
 
-Works out of the box as single touch. The hardware is multitouch, but current stable drivers only support left-click mouse emulation.
+Works out of the box as single touch. The hardware is multitouch, but current stable drivers only support left-click mouse emulation. Seems to work with [Touchegg](/index.php/Touchegg "Touchegg").
 
 #### GPU
 

@@ -538,7 +538,7 @@ EndSection
 
 ### General
 
-If a problem occurs, view the log stored in either `/var/log/` or, for the rootless X default since v1.16, in `~/.local/share/xorg/`. [GDM](/index.php/GDM "GDM") users should check the [systemd](/index.php/Systemd "Systemd") journal. [[4]](https://bbs.archlinux.org/viewtopic.php?id=184639)
+If a problem occurs, view the log stored in either `/var/log/` or, for the rootless X default since v1.16, in `~/.local/share/xorg/`. [GDM](/index.php/GDM "GDM") users should check the [systemd journal](/index.php/Systemd_journal "Systemd journal"). [[4]](https://bbs.archlinux.org/viewtopic.php?id=184639)
 
 The logfiles are of the form `Xorg.n.log` with `n` being the display number. For a single user machine with default configuration the applicable log is frequently `Xorg.0.log`, but otherwise it may vary. To make sure to pick the right file it may help to look at the timestamp of the X server session start and from which console it was started. For example:
 

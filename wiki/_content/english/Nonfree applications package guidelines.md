@@ -18,7 +18,8 @@ For many applications (most of which are Windows ones) there are neither sources
 *   [3 Package naming](#Package_naming)
 *   [4 File placement](#File_placement)
 *   [5 Missing files](#Missing_files)
-    *   [5.1 Files can only be obtained in an distributed archive/installer](#Files_can_only_be_obtained_in_an_distributed_archive/installer)
+    *   [5.1 Files can only be obtained in a distributed archive/installer](#Files_can_only_be_obtained_in_a_distributed_archive/installer)
+        *   [5.1.1 Scheme to choose](#Scheme_to_choose)
     *   [5.2 Files can only be obtained in an distributed compact-disk or other type of optical disk media](#Files_can_only_be_obtained_in_an_distributed_compact-disk_or_other_type_of_optical_disk_media)
     *   [5.3 Files can be obtained from several ways](#Files_can_be_obtained_from_several_ways)
 *   [6 Advanced topics](#Advanced_topics)
@@ -52,7 +53,7 @@ There are multiple reasons for packaging even non-packageable software:
 
 *   Sharing code and knowledge
 
-	It is simpler to apply tweaks, fix bugs and seek/provide help in a single public place like AUR versus submitting patches to proprietary developers who may have ceased support or asking vague questions on general purpose forums.
+	It is simpler to apply tweaks, fix bugs and seek/provide help in a single public place like the AUR versus submitting patches to proprietary developers who may have ceased support or asking vague questions on general purpose forums.
 
 ## Common rules
 
@@ -74,7 +75,7 @@ If the packaging of some program requires more effort and hacks than buying and 
 
 ## Package naming
 
-Before choosing a name on your own, search in AUR for existing versions of the software you want to package. Try to use established naming conversion (e.g. do not create something like [gish-hb](https://aur.archlinux.org/packages/gish-hb/) when there are already [aquaria-hib](https://aur.archlinux.org/packages/aquaria-hib/), [penumbra-overture-hib](https://aur.archlinux.org/packages/penumbra-overture-hib/) and [uplink-hib](https://aur.archlinux.org/packages/uplink-hib/)). Use suffix `-bin` **always** unless you are sure there will never be a source-based package—its creator would have to ask you (or in worst case TUs) to orphan existing package for him and you both will end up with PKGBUILDs cluttered with additional `replaces` and `conflicts`.
+Before choosing a name on your own, search in the AUR for existing versions of the software you want to package. Try to use established naming conventions (e.g. do not create something like [gish-hb](https://aur.archlinux.org/packages/gish-hb/) when there are already packages for [aquaria-hib](https://aur.archlinux.org/packages/aquaria-hib/), [penumbra-overture-hib](https://aur.archlinux.org/packages/penumbra-overture-hib/) and [uplink-hib](https://aur.archlinux.org/packages/uplink-hib/)). Use the suffix `-bin` **always** unless you are sure there will never be a source-based package—its creator would have to ask you (or in the worst case a TU) to orphan the existing package for him and you both will end up with PKGBUILDs cluttered with additional `replaces` and `conflicts`.
 
 ## File placement
 
@@ -86,17 +87,25 @@ For most commercial games there is no way to (legally) download game files, whic
 
 The subsections below provide recommendations for a few situations you may encounter.
 
-### Files can only be obtained in an distributed archive/installer
+### Files can only be obtained in a distributed archive/installer
 
-The software is only available via that archive/installer file, which must be obtained in order get the missing files.
+The software is only available via that archive/installer file, which must be obtained in order to get the missing files.
 
-Add the required archive/installer to the `source` array, renaming source filename so the source's link in AUR web interface looks different from names of files included in source tarball:
+Add the required archive/installer to the `source` array, renaming the source filename so the source's link in the AUR web interface looks different from names of files included in the source tarball:
 
- `sources=(... "*originalname*::**file:**//*originalname*")` 
+ `sources=(... "*originalname*::**local:**//*originalname*")` 
 
-Also add a pinned comment like the one below to the package page in AUR, and explain the details in PKGBUILD source:
+Also add a pinned comment like the one below to the package page in the AUR, and explain the details in the PKGBUILD:
 
  `Need archive/installer to work.` 
+
+#### Scheme to choose
+
+In case you use the **local://** scheme in a source array, makepkg behaves as though no scheme were specified, and the file must be manually placed in the same directory as the PKGBUILD.
+
+In case you use the **file://** scheme, you can additionally specify DLAGENTS for the file protocol, so it may be obtained in a special way. See examples [below](#Custom_DLAGENTS).
+
+However, there are still no clear rules which of these schemes you should use.
 
 ### Files can only be obtained in an distributed compact-disk or other type of optical disk media
 
@@ -106,7 +115,7 @@ Add an installer script and an `.install` file to the package contents, like [ts
 
 ### Files can be obtained from several ways
 
-Copying files from disk, downloading from Net or getting from archive during `build` phase may look like a good idea but it is not recommended because it limits the user's possibilities and makes package installation interactive (which is generally discouraged and just annoying). Again, a good installer script and `.install` file can work instead.
+Copying files from disk, downloading from Net or getting from archive during the `build` phase may look like a good idea but it is not recommended because it limits the user's possibilities and makes package installation interactive (which is generally discouraged and just annoying). Again, a good installer script and `.install` file can work instead.
 
 Few examples of various strategies for obtaining files required for package:
 
@@ -119,7 +128,7 @@ Few examples of various strategies for obtaining files required for package:
 
 ### Custom DLAGENTS
 
-Some software authors aggressively protect their software from automatic downloading: ban certain "User-Agent" strings, create temporary links to files etc. You can still conveniently download this files by using `DLAGENTS` variable in PKGBUILD (see [makepkg.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/makepkg.conf.5)). This is used by some packages in [official repositories](/index.php/Official_repositories "Official repositories"), for example [ttf-baekmuk](https://www.archlinux.org/packages/?name=ttf-baekmuk).
+Some software authors aggressively protect their software from automatic downloading: ban certain "User-Agent" strings, create temporary links to files etc. You can still conveniently download these files by using `DLAGENTS` variable in the PKGBUILD (see [makepkg.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/makepkg.conf.5)). This is used by some packages in [official repositories](/index.php/Official_repositories "Official repositories"), for example [ttf-baekmuk](https://www.archlinux.org/packages/?name=ttf-baekmuk).
 
 Please pay attention, if you want to have a customized user-agent string, if the latter contains spaces, parentheses, or slashes in it (or actually anything that can break parsing), this will not work. There's no workaround, this is the nature of arrays in bash and the way DLAGENTS was designed to be consumed in makepkg. The following example will thus **not work**:
 
@@ -135,16 +144,20 @@ DLAGENTS=("http::/usr/bin/curl -A 'Mozilla' -fLC - --retry 3 --retry-delay 3 -o�
 
 ```
 
-And following allows to extract temporary link to file from download page:
+And the following allows to extract temporary link to file from download page:
 
 ```
 DLAGENTS=("http::/usr/bin/wget -r -np -nd -H %u")
 
 ```
 
+In order to download temporary links to files or get past an interactive download, it is possible to analyze the HTTP request used to create the final download link, and then create a DLAGENTS that emulates this using curl. See for example [blackmagic-decklink-sdk](https://aur.archlinux.org/packages/blackmagic-decklink-sdk/) or [jlink-software-and-documentation](https://aur.archlinux.org/packages/jlink-software-and-documentation/).
+
+Alternatively, the DLAGENTS can be used to provide a more informative error message to the user when a file is missing. See for example [ttf-ms-win10](https://aur.archlinux.org/packages/ttf-ms-win10/).
+
 ### Unpacking
 
-Many proprietary programs are shipped in nasty installers which sometimes do not even run in Wine. Following tools may be of some help:
+Many proprietary programs are shipped in nasty installers which sometimes do not even run in Wine. The following tools may be of some help:
 
 *   [unzip](https://www.archlinux.org/packages/?name=unzip) and [unrar](https://www.archlinux.org/packages/?name=unrar) unpack executable SFX archives, based on this formats
 *   [cabextract](https://www.archlinux.org/packages/?name=cabextract) can unpack most `.cab` files (including ones with `.exe` extension)
@@ -153,12 +166,13 @@ Many proprietary programs are shipped in nasty installers which sometimes do not
     *   it even can extract single sections from common PE (`.exe` & `.dll`) files!
 *   [upx](https://www.archlinux.org/packages/?name=upx) is sometimes used to compress above-listed executables and can be used for decompressing them as well
 *   [innoextract](https://www.archlinux.org/packages/?name=innoextract) can unpack `.exe` installers created with [Inno Setup](https://en.wikipedia.org/wiki/Inno_Setup "wikipedia:Inno Setup") (used for example by GOG.com games)
+*   [libarchive](https://www.archlinux.org/packages/?name=libarchive) contains *bsdtar*, which can extract `.iso` images and `.AppImage` files (which are actually hybrid self-executable iso9660)
 
 In order to determine exact type of file run `file *file_of_unknown_type*`.
 
 ### Getting icons for .desktop files
 
-Proprietary software often have no separate icon files, so there is nothing to use in [.desktop](/index.php/.desktop ".desktop") file creation. Happily `.ico` files can be easily extracted from executables with programs from [icoutils](https://www.archlinux.org/packages/?name=icoutils) package. You can even do it on fly during `build` phase, for example:
+Proprietary software often have no separate icon files, so there is nothing to use in [.desktop](/index.php/.desktop ".desktop") file creation. Happily `.ico` files can be easily extracted from executables using programs from the [icoutils](https://www.archlinux.org/packages/?name=icoutils) package. You can even do it on the fly during the `build` phase, for example:
 
 ```
 $ wrestool -x --output=*icon.ico* -t14 *executable.exe*

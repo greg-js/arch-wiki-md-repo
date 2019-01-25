@@ -425,7 +425,7 @@ gtk-xft-antialias=1
 gtk-xft-hinting=1
 gtk-xft-hintstyle=hintslight
 gtk-xft-rgba=rgb
-gtk-decoration-layout=menu:close
+# gtk-decoration-layout=menu:close
 # gtk-application-prefer-dark-theme=1
 ```
 

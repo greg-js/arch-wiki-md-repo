@@ -883,10 +883,10 @@ Follow the instructions at [ext2fs: no external journal](/index.php/Fsck#ext2fs_
 
 ### No Default or UI found on some computers
 
-Certain motherboard manufacturers have less compatibility for booting from USB devices than others. While an ext4 formatted USB drive may boot on a more recent computer, some computers may hang if the boot partition containing the *kernel* and *initrd* are not on a FAT16 partition. To prevent an older machine from loading `ldlinux` and failing to read `syslinux.cfg`, use `cfdisk` to create a FAT16 partition (<=2GB) and format using [dosfstools](https://www.archlinux.org/packages/?name=dosfstools):
+Certain motherboard manufacturers have less compatibility for booting from USB devices than others. While an ext4 formatted USB drive may boot on a more recent computer, some computers may hang if the boot partition containing the *kernel* and *initrd* are not on a FAT16 partition. To prevent an older machine from loading `ldlinux` and failing to read `syslinux.cfg`, create a partition (≤ 2 GB) and format to [FAT16](/index.php/FAT16 "FAT16") using [dosfstools](https://www.archlinux.org/packages/?name=dosfstools):
 
 ```
-# mkfs.msdos -F 16 /dev/sda1
+# mkfs.fat -F 16 /dev/sda1
 
 ```
 
@@ -894,7 +894,7 @@ then install and configure Syslinux.
 
 ### Missing operating system
 
-*   Check that you have installed `gptmbr.bin` for GPT and `mbr.bin` for msdos partition table. A "Missing operating system" message comes from `mbr.bin` while `gptmbr.bin` would show a "Missing OS" message.
+*   Check that you have installed `gptmbr.bin` for GPT and `mbr.bin` for MBR partition table. A "Missing operating system" message comes from `mbr.bin` while `gptmbr.bin` would show a "Missing OS" message.
 *   Check whether the partition that contains `/boot` has the "boot" flag enabled.
 *   Check whether the first partition at the boot device starts at sector 1 rather than sector 63 or 2048\. Check this with `fdisk -l`. If it starts at sector 1, you can move the partition(s) with `gparted` from a rescue disk. Or, if you have a separate boot partition, you can back up `/boot` with
 

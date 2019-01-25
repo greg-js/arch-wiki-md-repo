@@ -213,7 +213,7 @@ See also [Wikipedia:Comparison of video codecs](https://en.wikipedia.org/wiki/Co
 
 See also [Wikipedia:Comparison of video container formats](https://en.wikipedia.org/wiki/Comparison_of_video_container_formats "wikipedia:Comparison of video container formats").
 
-*   **[MKVToolNix CLI](https://en.wikipedia.org/wiki/MKVToolNix "wikipedia:MKVToolNix")** — Set of tools to create, edit and inspect Matroska files.
+*   **[MKVToolNix](https://en.wikipedia.org/wiki/MKVToolNix "wikipedia:MKVToolNix")** — Set of tools to create, edit and inspect Matroska files.
 
 	[https://mkvtoolnix.download/](https://mkvtoolnix.download/) || [mkvtoolnix-cli](https://www.archlinux.org/packages/?name=mkvtoolnix-cli), [mkvtoolnix-gui](https://www.archlinux.org/packages/?name=mkvtoolnix-gui)
 

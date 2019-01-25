@@ -2,7 +2,7 @@
 
 若有空不妨協助翻譯各類文件，謝謝。
 
-| [正體中文](/index.php/Category:%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87 "Category:正體中文") <small>(72)</small> |
+| [正體中文](/index.php/Category:%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87 "Category:正體中文") <small>(71)</small> |
 | <small>1.</small> [關於 Arch](/index.php/Category:About_Arch_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:About Arch (正體中文)") <small>(9)</small> |
 | <small>1.1.</small> [Arch 開發](/index.php/Category:Arch_development_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Arch development (正體中文)") <small>(0) (還在 [開發](/index.php/Category:Development_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Development (正體中文)"))</small> |
 | <small>1.1.1.</small> [軟體包開發](/index.php/Category:Package_development_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Package development (正體中文)") <small>(5)</small> |
@@ -45,7 +45,7 @@
 | <small>6.4.</small> [美觀裝飾](/index.php/Category:Eye_candy_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Eye candy (正體中文)") <small>(0)</small> |
 | <small>6.4.1.</small> [字型](/index.php/Category:Fonts_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Fonts (正體中文)") <small>(1)</small> |
 | <small>6.5.</small> [檔案系統](/index.php/Category:File_systems_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:File systems (正體中文)") <small>(5)</small> |
-| <small>6.6.</small> [國際化](/index.php/Category:Internationalization_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Internationalization (正體中文)") <small>(4)</small> |
+| <small>6.6.</small> [國際化](/index.php/Category:Internationalization_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Internationalization (正體中文)") <small>(3)</small> |
 | <small>6.6.1.</small> [Localization](/index.php/Category:Localization_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Localization (正體中文)") <small>(1)</small> |
 | <small>6.7.</small> [Kernel](/index.php/Category:Kernel_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Kernel (正體中文)") <small>(1)</small> |
 | <small>6.8.</small> [Multimedia](/index.php/Category:Multimedia_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Multimedia (正體中文)") <small>(1)</small> |

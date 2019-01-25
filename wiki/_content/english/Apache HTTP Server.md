@@ -479,7 +479,7 @@ Apache is running a threaded MPM, but your PHP Module is not compiled to be thre
 
 ```
 
-you need to replace `mpm_event_module` with `mpm_prefork_module`:
+This is because PHP includes support for a module that is not threadsafe, and you are trying to use a threaded MPM. One solution to fix this is to use a non-threaded MPM. Try replacing `mpm_event_module` with `mpm_prefork_module`:
 
  `/etc/httpd/conf/httpd.conf` 
 ```
@@ -500,7 +500,7 @@ LoadModule mpm_prefork_module modules/mod_mpm_prefork.so
 
 ```
 
-Also check [the above](#Apache_is_running_a_threaded_MPM.2C_but_your_PHP_Module_is_not_compiled_to_be_threadsafe.) if more errors occur afterwards.
+and restart `httpd.service`.
 
 ### AH00072: make_sock: could not bind to address
 

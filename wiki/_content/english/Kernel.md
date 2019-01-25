@@ -11,6 +11,8 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Linux_kernel "wikipedia:L
 
 [Arch Linux](/index.php/Arch_Linux "Arch Linux") is based on the Linux kernel. There are various alternative Linux kernels available for Arch Linux in addition to the stable [Linux kernel](https://en.wikipedia.org/wiki/Linux_kernel "wikipedia:Linux kernel"). This article lists some of the options available in the repositories with a brief description of each. There is also a description of patches that can be applied to the system's kernel. The article ends with an overview of custom kernel compilation with links to various methods.
 
+Kernel packages are [installed](/index.php/Install "Install") onto the file system under `/boot/`. To be able to boot into kernels, the [boot loader](/index.php/Boot_loader "Boot loader") has to be configured appropriately.
+
 ## Contents
 
 *   [1 Officially supported kernels](#Officially_supported_kernels)

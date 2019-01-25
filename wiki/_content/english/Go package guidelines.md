@@ -97,7 +97,7 @@ build(){
 
 ### Old Go projects (for Go <1.11)
 
-When building go packages with [$GOPATH](/index.php/Go#$GOPATH "Go") there are a few problems one can encounter. Usually the project delivers a `Makefile` that can be used and should be used. There are cases where you still need to setup a `$GOPATH` in the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"). The following snippet sets up an appropriate `GOPATH` inside `$srcdir/gopath` one can use to build packages. A new directory is used as some go dependency managers does wierd things if it discovers the project in the root of the `$GOPATH`.
+When building go packages with [$GOPATH](/index.php/Go#$GOPATH "Go") there are a few problems one can encounter. Usually the project delivers a `Makefile` that can be used and should be used. There are cases where you still need to setup a `$GOPATH` in the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"). The following snippet sets up an appropriate `GOPATH` inside `$srcdir/gopath` one can use to build packages. A new directory is used as some go dependency managers do weird things if they discover the project in the root of the `$GOPATH`.
 
 **Note:** These builds should have `$GOPATH` stripped from the binary.
 

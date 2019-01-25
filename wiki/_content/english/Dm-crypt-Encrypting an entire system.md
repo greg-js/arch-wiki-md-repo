@@ -416,7 +416,7 @@ Create a [filesystem](/index.php/Filesystem "Filesystem") on the partition inten
 
 **Tip:** When opting to keep `/boot` on an [EFI system partition](/index.php/EFI_system_partition "EFI system partition") the recommended formatting is
 ```
-# mkfs.vfat /dev/sdb1
+# mkfs.fat -F32 /dev/sdb1
 
 ```
 
@@ -1076,20 +1076,6 @@ See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_config
 
 ### Configuring GRUB
 
-[install GRUB](/index.php/GRUB#Installation_2 "GRUB") to the mounted ESP for UEFI booting:
-
-```
-# grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB --recheck
-
-```
-
-[install GRUB](/index.php/GRUB#Installation "GRUB") to the disk for BIOS booting:
-
-```
-# grub-install --target=i386-pc --recheck /dev/sda
-
-```
-
 Configure GRUB to allow booting from `/boot` on a LUKS encrypted partition:
 
  `/etc/default/grub`  `GRUB_ENABLE_CRYPTODISK=y` 
@@ -1103,6 +1089,20 @@ If using the [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") hook, the followin
  `/etc/default/grub`  `GRUB_CMDLINE_LINUX="... rd.luks.name=*device-UUID*=cryptlvm" ...` 
 
 See [dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") and [GRUB#Encrypted /boot](/index.php/GRUB#Encrypted_/boot "GRUB") for details. The `*device-UUID*` refers to the UUID of `/dev/sda3` (the partition which holds the lvm containing the root filesystem). See [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").
+
+[install GRUB](/index.php/GRUB#Installation_2 "GRUB") to the mounted ESP for UEFI booting:
+
+```
+# grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB --recheck
+
+```
+
+[install GRUB](/index.php/GRUB#Installation "GRUB") to the disk for BIOS booting:
+
+```
+# grub-install --target=i386-pc --recheck /dev/sda
+
+```
 
 Generate GRUB's [configuration](/index.php/GRUB#Generate_the_main_configuration_file "GRUB") file:
 

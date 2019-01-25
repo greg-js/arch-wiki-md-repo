@@ -77,7 +77,7 @@ The flags depend on the cards GCN version:
 
 ### AMD DC
 
-AMD DC (display code), introduced in [linux](https://www.archlinux.org/packages/?name=linux) 4.15-4.17, is a new display stack that brings support for atomic mode-setting and HDMI/DP audio. For more info about AMDGPU-DC, see [this article](https://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-DC-Accepted).
+AMD DC (Display Core), introduced in [linux](https://www.archlinux.org/packages/?name=linux) 4.15-4.17, is a new display stack that brings support for atomic mode-setting and HDMI/DP audio. For more info about AMDGPU-DC, see [this article](https://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-DC-Accepted).
 
 If you are on GCN 1.1 or newer with AMDGPU and want to use DC, set `amdgpu.dc=1` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") or [module option](/index.php/Kernel_module#Setting_module_options "Kernel module") when using [KMS](/index.php/KMS "KMS").
 

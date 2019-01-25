@@ -9,7 +9,7 @@ This article describes how to set up a Japanese language environment. It does no
 
 *   [1 Fonts](#Fonts)
     *   [1.1 Sans-serif](#Sans-serif)
-    *   [1.2 Serif (and Sans-serif)](#Serif_.28and_Sans-serif.29)
+    *   [1.2 Serif (and Sans-serif)](#Serif_(and_Sans-serif))
 *   [2 Locale](#Locale)
 *   [3 Input methods](#Input_methods)
     *   [3.1 Anthy](#Anthy)
@@ -69,7 +69,7 @@ The following [input method](/index.php/Input_method "Input method") (IM) engine
 
 ### libkkc
 
-[libkkc](https://bitbucket.org/libkkc/) ([libkkc](https://www.archlinux.org/packages/?name=libkkc)) provides a converter from Japanese Kana-string to Kana-Kanji-mixed-string. It was named after kkc.el in GNU Emacs, a simple Kana Kanji converter, while libkkc tries to convert sentences in a bit more complex way using N-gram language models. It is developed by a Red Hat engineer.
+[libkkc](https://github.com/ueno/libkkc) ([libkkc](https://www.archlinux.org/packages/?name=libkkc)) provides a converter from Japanese Kana-string to Kana-Kanji-mixed-string. It was named after kkc.el in GNU Emacs, a simple Kana Kanji converter, while libkkc tries to convert sentences in a bit more complex way using N-gram language models. It is developed by a Red Hat engineer.
 
 [Install](/index.php/Install "Install") the engine for your framework.
 
@@ -83,7 +83,7 @@ See the article for the installation procedure.
 
 ### SKK
 
-[SKK](http://openlab.jp/skk/index.html) (Simple Kana to Kanji conversion program) is a Japanese input method on Emacs. It was designed by Dr. Masahiko Sato (Professor Emeritus, Kyoto University) (old link) and created in 1987\. A unique feature of SKK is that it converts words one by one (single-word conversion), without analyzing syntax or grammar.
+[SKK](https://github.com/ueno/libskk) (Simple Kana to Kanji conversion program) is a Japanese input method on Emacs. It was designed by Dr. Masahiko Sato (Professor Emeritus, Kyoto University) (old link) and created in 1987\. A unique feature of SKK is that it converts words one by one (single-word conversion), without analyzing syntax or grammar.
 
 [Install](/index.php/Install "Install") the SKK dictionaries ([skk-jisyo](https://www.archlinux.org/packages/?name=skk-jisyo)) and the engine for your framework.
 

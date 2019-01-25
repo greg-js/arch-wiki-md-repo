@@ -183,7 +183,7 @@ debug=on;
 
 ```
 
-Restart pdnsd and monitor the pdnsd.service for changes with the systemd journal:
+Restart pdnsd and monitor the pdnsd.service for changes with the [systemd journal](/index.php/Systemd_journal "Systemd journal"):
 
 ```
 journalctl -f _SYSTEMD_UNIT=pdnsd.service

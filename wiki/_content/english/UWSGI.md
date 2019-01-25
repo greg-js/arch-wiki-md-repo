@@ -16,7 +16,10 @@ There are alternatives written in Python such as [gunicorn](https://www.archlinu
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Socket activation](#Socket_activation)
     *   [4.2 Hardening uWSGI](#Hardening_uWSGI)
-*   [5 See also](#See_also)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Apache httpd](#Apache_httpd)
+        *   [5.1.1 AH00957: uwsgi: attempt to connect to 127.0.0.1:0 (*) failed](#AH00957:_uwsgi:_attempt_to_connect_to_127.0.0.1:0_(*)_failed)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -306,6 +309,14 @@ WantedBy=multi-user.target
 
 *   Using `NoNewPrivileges=yes` does not work with [Mailman](/index.php/Mailman "Mailman")'s cgi frontend! Remove this setting, if you want to use it in conjunction with it.
 *   If you want to harden your uWSGI app further, the use of namespaces is advisable. You can get a first glance on that topic in the [uWSGI namespaces documentation](http://uwsgi-docs.readthedocs.io/en/latest/Namespaces.html).
+
+## Troubleshooting
+
+### Apache httpd
+
+#### AH00957: uwsgi: attempt to connect to 127.0.0.1:0 (*) failed
+
+The default uWSGI port (3031) does not work (currently?) with Apache httpd server. See [[5]](https://github.com/unbit/uwsgi/issues/1491) for details.
 
 ## See also
 

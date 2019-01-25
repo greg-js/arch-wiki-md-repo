@@ -340,7 +340,7 @@ See also [Wikipedia:Comparison of office suites](https://en.wikipedia.org/wiki/C
 
 	[https://www.libreoffice.org/](https://www.libreoffice.org/) || [libreoffice-still](https://www.archlinux.org/packages/?name=libreoffice-still) or [libreoffice-fresh](https://www.archlinux.org/packages/?name=libreoffice-fresh)
 
-*   **[Onlyoffice](/index.php?title=Onlyoffice&action=edit&redlink=1 "Onlyoffice (page does not exist)")** — An office suite that combines text, spreadsheet and presentation editors
+*   **[OnlyOffice](https://en.wikipedia.org/wiki/OnlyOffice "wikipedia:OnlyOffice")** — Office suite that combines text, spreadsheet and presentation editors.
 
 	[https://www.onlyoffice.com/](https://www.onlyoffice.com/) || [onlyoffice-bin](https://aur.archlinux.org/packages/onlyoffice-bin/)
 

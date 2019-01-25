@@ -61,7 +61,7 @@ To use **somehost** as the hostname. Move **somehost.localdomain** to the first 
 
 ## Configuration
 
-Since systemd 216 (August 2014) there is no longer a default forward from systemd-journal to a running syslog daemon - so in order to gather system logs you either have to **turn journald Forward Feature on** or **use the imjournal** module of rsyslog go gather the logs by importing it from the systemd journald.
+Since systemd 216 (August 2014) there is no longer a default forward from [systemd journal](/index.php/Systemd_journal "Systemd journal") to a running syslog daemon - so in order to gather system logs you either have to **turn journald Forward Feature on** or **use the imjournal** module of rsyslog go gather the logs by importing it from the systemd journald.
 
 #### imjournal
 

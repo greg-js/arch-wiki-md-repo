@@ -63,7 +63,7 @@ The output of *lspci* is
 00:1c.3 PCI bridge: Intel Corporation Device 9d13 (rev f1)
 00:1c.4 PCI bridge: Intel Corporation Sunrise Point-LP PCI Express Root Port #5 (rev f1)
 00:1d.0 PCI bridge: Intel Corporation Sunrise Point-LP PCI Express Root Port #9 (rev f1)
-00:1f.0 ISA bridge: Intel Corporation Device 9d4e (rev 21)
+00:1f.0 ISA bridge: Intel Corporation Intel(R) 100 Series Chipset Family LPC Controller/eSPI Controller - 9D4E (rev 21)
 00:1f.2 Memory controller: Intel Corporation Sunrise Point-LP PMC (rev 21)
 00:1f.3 Audio device: Intel Corporation Sunrise Point-LP HD Audio (rev 21)
 00:1f.4 SMBus: Intel Corporation Sunrise Point-LP SMBus (rev 21)

@@ -123,7 +123,7 @@ Instead of the standard interface, using browsers such as [lynx](https://www.arc
 
 ### Viewer applications
 
-*   **GNOME Help** — Help viewer for [GNOME](/index.php/GNOME "GNOME"). It can show man pages via `yelp man:<name>`.
+*   **GNOME Help** — Help viewer for [GNOME](/index.php/GNOME "GNOME"). It can show man pages via `yelp man:<name>` or the undocumented `CTRL+L` keybinding from an existing window.
 
 	[https://wiki.gnome.org/Apps/Yelp](https://wiki.gnome.org/Apps/Yelp) || [yelp](https://www.archlinux.org/packages/?name=yelp)
 

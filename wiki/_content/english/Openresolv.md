@@ -2,7 +2,9 @@ Related articles
 
 *   [systemd-resolvconf](/index.php/Systemd-resolvconf "Systemd-resolvconf")
 
-[Openresolv](https://roy.marples.name/projects/openresolv) is a [resolvconf](https://en.wikipedia.org/wiki/resolvconf "wikipedia:resolvconf") implementation, i.e. a [resolv.conf](/index.php/Resolv.conf "Resolv.conf") management framework. An alternative implementation is [systemd-resolvconf](/index.php/Systemd-resolvconf "Systemd-resolvconf").
+[Openresolv](https://roy.marples.name/projects/openresolv) is a [resolvconf](https://en.wikipedia.org/wiki/resolvconf "wikipedia:resolvconf") implementation, i.e. a [resolv.conf](/index.php/Resolv.conf "Resolv.conf") management framework.
+
+**Tip:** An alternative implementation is [systemd-resolvconf](/index.php/Systemd-resolvconf "Systemd-resolvconf"), but it can only be used with [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved").
 
 ## Contents
 

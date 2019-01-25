@@ -4,7 +4,7 @@ Plex for Linux is split into a closed-source server Plex Media Server, and an op
 
 ## Contents
 
-*   [1 Plex Media Server (PMS)](#Plex_Media_Server_.28PMS.29)
+*   [1 Plex Media Server (PMS)](#Plex_Media_Server_(PMS))
     *   [1.1 Installation](#Installation)
     *   [1.2 Setup](#Setup)
     *   [1.3 Plugins](#Plugins)
@@ -14,9 +14,9 @@ Plex for Linux is split into a closed-source server Plex Media Server, and an op
     *   [1.7 Network](#Network)
     *   [1.8 Library Updates](#Library_Updates)
     *   [1.9 Troubleshooting](#Troubleshooting)
-*   [2 Plex Home Theater (PHT)](#Plex_Home_Theater_.28PHT.29)
+*   [2 Plex Home Theater (PHT)](#Plex_Home_Theater_(PHT))
     *   [2.1 Installation](#Installation_2)
-*   [3 Plex Media Player (PMP)](#Plex_Media_Player_.28PMP.29)
+*   [3 Plex Media Player (PMP)](#Plex_Media_Player_(PMP))
     *   [3.1 Installation](#Installation_3)
 *   [4 Kodi and PleXBMC](#Kodi_and_PleXBMC)
     *   [4.1 Installation](#Installation_4)
@@ -33,11 +33,24 @@ Install the [plex-media-server](https://aur.archlinux.org/packages/plex-media-se
 
 To begin configuring PMS, browse to `[http://localhost:32400/web/](http://localhost:32400/web/)`.
 
-To configure PMS remotely, you must first create an SSH tunnel (setup can only be done from `localhost`)
+To configure PMS remotely, you can first create an SSH tunnel (setup can only be done from `localhost`)
 
 `ssh ip.address.of.server -L 8888:localhost:32400`
 
 and then browse to `[http://localhost:8888/web/](http://localhost:8888/web/)`.
+
+or if you are running apache, with a reverse proxy, by adding this configuration in httpd-vhosts.conf
+
+`
+```
+<VirtualHost *:80>
+  ServerName ip.address.of.server
+  ProxyPass        / [http://localhost:32400/](http://localhost:32400/)
+  ProxyPassReverse / [http://localhost:32400/](http://localhost:32400/)
+</VirtualHost>
+
+```
+`
 
 ### Plugins
 

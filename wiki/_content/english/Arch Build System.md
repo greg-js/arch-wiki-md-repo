@@ -181,6 +181,8 @@ See [makepkg#Configuration](/index.php/Makepkg#Configuration "Makepkg") on how t
 
 Then, copy the directory containing the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") you wish to modify to a new location. There, make the desired modifications and use *makepkg* there as described in [makepkg#Usage](/index.php/Makepkg#Usage "Makepkg") to create and install the new package.
 
+**Tip:** Sometimes it is convenient to change pkgrel to 0\. It will not conflict with pkgrel in aur, but allow you to easily differentiate non-modified aur version package and your test modified version package.
+
 ## Tips and tricks
 
 ### Preserve modified packages

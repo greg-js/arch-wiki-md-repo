@@ -162,6 +162,7 @@ Arch 作为滚动发行版，软件变化比较快，对应的文档变化也比
 | [Common Applications (简体中文)](/index.php/Common_Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Common Applications (简体中文)") | 部分翻译 | DavidChen | 翻译中 |
 | [Common Applications/Science (简体中文)](/index.php/Common_Applications/Science_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Common Applications/Science (简体中文)") | drop maintain | 更新，翻译中 |
 | [Compiz (简体中文)](/index.php/Compiz_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Compiz (简体中文)") | 翻译中 | xiii_1991 | 20140813开始 |
+| [Conky (简体中文)](/index.php/Conky_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Conky (简体中文)") | 完成 | upi | 无 |
 | [Core utilities (简体中文)](/index.php/Core_utilities_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Core utilities (简体中文)") | 完成 | rentaro, Arisaka | 无 |
 | [Clover (简体中文)](/index.php/Clover_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Clover (简体中文)") | 完成 | Yume Kankawa | 无 |
 | [Disk cloning (简体中文)](/index.php/Disk_cloning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Disk cloning (简体中文)") | 翻译中 | _spaike97 | 无 |

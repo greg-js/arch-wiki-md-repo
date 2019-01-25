@@ -38,7 +38,9 @@ This page specifically concerns the specifics of running Arch Linux on this lapt
 
 Despite not being required for an Arch Linux install, a BIOS update is strongly recommended for general use of the laptop - the initial 1.13 version devices seem to ship with contains multiple bugs that can result in bricking the laptop: [Reddit thread discussing the issue](https://www.reddit.com/r/thinkpad/comments/a2g0k4/warning_do_not_change_from_hybrid_graphics_to/); [another Reddit thread discussing a different bricking issue](https://www.reddit.com/r/thinkpad/comments/9qreoj/psa_do_not_enable_bios_support_for_thunderbolt/).
 
-BIOS updates are normally available via [fwupd](/index.php/Fwupd "Fwupd"), however, the latest BIOS update version 1.17 is only available from [Lenovo's website](https://pcsupport.lenovo.com/en/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x1-extreme/downloads) as of January 2019\. You can use the bootable version if you don't have access to a Windows install.
+BIOS updates are available via [fwupd](/index.php/Fwupd "Fwupd"), the Lenovo Vantage application on Windows, or from [Lenovo's website](https://pcsupport.lenovo.com/en/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x1-extreme/downloads).
+
+The recommended minimum BIOS version is v1.17 (listed as 0.1.17 on LVFS).
 
 ### Graphics
 

@@ -31,27 +31,27 @@ From the [official website](https://prosody.im/):
 
 ### Optional dependencies
 
-Prosody has optional depedencies that although not strictly required for its operation, provide useful features. These dependencies may also have to be built and installed from the AUR. If you are unfamiliar with how to build and install packages from the AUR please see [AUR User Guidelines#Installing packages](/index.php/AUR_User_Guidelines#Installing_packages "AUR User Guidelines").
+Prosody has optional depedencies that although not strictly required for its operation, provide useful features. These dependencies may also have to be built and installed from the AUR. If you are unfamiliar with how to build and install packages from the AUR please see [AUR User Guidelines#Installing packages](/index.php/AUR_User_Guidelines#Installing_packages "AUR User Guidelines"). As of prosody version [0.11.2](https://blog.prosody.im/prosody-0-11-2-released/), Lua 5.2 is needed.
 
 	TLS/SSL Support (Recommended)
 
 	Allow Prosody to encrypt streams to prevent eavesdropping.
-*Requires:* [lua51-sec](https://www.archlinux.org/packages/?name=lua51-sec)
+*Requires:* [lua52-sec](https://www.archlinux.org/packages/?name=lua52-sec)
 
 	MySQL/Postgresql Backend
 
 	Allow Prosody to use a MySQL/mariadb/Postgresql backend for better scaling and performance.
-*Requires:* [lua51-dbi](https://www.archlinux.org/packages/?name=lua51-dbi)
+*Requires:* [lua52-dbi](https://www.archlinux.org/packages/?name=lua52-dbi)
 
 	Better Connection Scaling (Recommended)
 
 	Allow Prosody to use [libevent](http://www.monkey.org/~provos/libevent/) to handle a greater number of simultaneous connections.
-*Requires:* [lua51-event](https://aur.archlinux.org/packages/lua51-event/)
+*Requires:* [lua52-event](https://aur.archlinux.org/packages/lua52-event/)
 
 	Stream Compression
 
 	Allow Prosody to compress client-to-server streams for compatible clients to save bandwidth.
-*Requires:* [lua51-zlib](https://aur.archlinux.org/packages/lua51-zlib/)
+*Requires:* [lua52-zlib](https://aur.archlinux.org/packages/lua52-zlib/)
 
 	Cyrus SASL Support
 
@@ -61,7 +61,7 @@ Prosody has optional depedencies that although not strictly required for its ope
 	WebSocket Support
 
 	Allow Prosody to offer [WebSocket](https://prosody.im/doc/modules/mod_websocket) transport.
-*Requires:* [lua51-bitop](https://www.archlinux.org/packages/?name=lua51-bitop)
+*Requires:* [lua52-bitop](https://www.archlinux.org/packages/?name=lua52-bitop)
 
 ## Configuration
 
@@ -70,7 +70,7 @@ Prosody has optional depedencies that although not strictly required for its ope
 The main configuration file is located at `/etc/prosody/prosody.cfg.lua`. Information on how to configure Prosody can be found in Prosody's [documentation](https://prosody.im/doc/configure). The syntax of the configuration file can be checked after any changes are made by running:
 
 ```
-# luac5.1 -p /etc/prosody/prosody.cfg.lua
+# luac5.2 -p /etc/prosody/prosody.cfg.lua
 
 ```
 

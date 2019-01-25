@@ -136,7 +136,7 @@ The fallback image should be used for maximum compatibility.
 
 ### Minimizing disk access
 
-*   You may want to configure [journald](/index.php/Systemd#Journal "Systemd") to store its journals in RAM, e.g. by creating a custom configuration file:
+*   You may want to configure [systemd journal](/index.php/Systemd_journal "Systemd journal") to store its journals in RAM, e.g. by creating a custom configuration file:
 
  `/etc/systemd/journald.conf.d/usbstick.conf` 
 ```

@@ -14,8 +14,7 @@ Common tasks with floppy disks are described bellow, with available tools to acc
     *   [2.2 Mount](#Mount)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Unable to get diskette geometry](#Unable_to_get_diskette_geometry)
-*   [4 More Resources](#More_Resources)
-*   [5 Todo](#Todo)
+*   [4 See also](#See_also)
 
 ## Installation
 
@@ -25,10 +24,7 @@ Most of the floppy drives should be supported by stock kernel. The module `flopp
 
 The `floppy` module could not be loaded by default. In such case, it could be loaded with the following command:
 
-```
-$ modprobe floppy
-
-```
+1.  modprobe floppy
 
 ### Packages
 
@@ -44,7 +40,7 @@ Here are the commands needed to perform the most common tasks. In all examples i
 ### Format
 
 ```
-# mkfs.msdos /dev/fd0
+# mkfs.fat /dev/fd0
 
 ```
 
@@ -60,21 +56,15 @@ Here are the commands needed to perform the most common tasks. In all examples i
 ### Unable to get diskette geometry
 
 ```
-$ mkfs.msdos /dev/fd0
-mkfs.msdos 3.0.5 (27 Jul 2009)
-mkfs.msdos: unable to get diskette geometry for '/dev/fd0'
+# mkfs.fat /dev/fd0
+mkfs.fat 4.1 (2017-01-24)
+mkfs.fat: unable to get diskette geometry for '/dev/fd0'
 
 ```
 
 In such case, is probably that the diskette is physically damaged.
 
-## More Resources
+## See also
 
 *   [https://github.com/dosfstools/dosfstools](https://github.com/dosfstools/dosfstools) - DOS filesystem utilities
 *   [http://www.gnu.org/software/mtools/](http://www.gnu.org/software/mtools/) - a collection of utilities to access MS-DOS disks from Unix without mounting them
-
-## Todo
-
-*   [floppy(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/floppy.8)
-*   [fdformat(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fdformat.8)
-*   recovering a "dead" floppy

@@ -303,7 +303,7 @@ AllowHostnameUpdates=false
 
 Make sure to [restart](/index.php/Restart "Restart") the `connman.service` after changing this file.
 
-For testing purposes it is recommended to watch the [journal](/index.php/Systemd#Journal "Systemd") and plug the network cable a few times to see the action.
+For testing purposes it is recommended to watch the [systemd journal](/index.php/Systemd_journal "Systemd journal") and plug the network cable a few times to see the action.
 
 ### Prefer ethernet to wireless
 

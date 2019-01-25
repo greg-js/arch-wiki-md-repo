@@ -157,10 +157,11 @@ This article is a general list of applications sorted by category, as a referenc
             *   [2.4.2.2 Graphical](#Graphical_15)
         *   [2.4.3 Video editors](#Video_editors)
         *   [2.4.4 Subtitles](#Subtitles)
-        *   [2.4.5 Screencast](#Screencast)
-        *   [2.4.6 Webcam](#Webcam)
-        *   [2.4.7 DVD authoring](#DVD_authoring)
-        *   [2.4.8 DVD ripping](#DVD_ripping)
+        *   [2.4.5 Subtitle editors](#Subtitle_editors)
+        *   [2.4.6 Screencast](#Screencast)
+        *   [2.4.7 Webcam](#Webcam)
+        *   [2.4.8 DVD authoring](#DVD_authoring)
+        *   [2.4.9 DVD ripping](#DVD_ripping)
     *   [2.5 Collection managers](#Collection_managers)
     *   [2.6 Media servers](#Media_servers)
     *   [2.7 Metadata](#Metadata)
@@ -4075,6 +4076,24 @@ See also [Wikipedia:Comparison of video editing software](https://en.wikipedia.o
 
 #### Subtitles
 
+*   **Penguin Subtitle Player** — Standalone subtitle player that provides a translucent window which always stays on the top so subtitles can be shown on top of the video without blocking anything.
+
+	[https://github.com/carsonip/Penguin-Subtitle-Player](https://github.com/carsonip/Penguin-Subtitle-Player) || [penguin-subtitle-player-git](https://aur.archlinux.org/packages/penguin-subtitle-player-git/)
+
+*   **subdl** — Command-line tool for downloading subtitles from opensubtitles.org.
+
+	[https://github.com/akexakex/subdl](https://github.com/akexakex/subdl) || [subdl](https://www.archlinux.org/packages/?name=subdl)
+
+*   **SubDownloader** — Automatic download/upload of subtitles using fast hashing.
+
+	[https://github.com/subdownloader/subdownloader](https://github.com/subdownloader/subdownloader) || [subdownloader](https://www.archlinux.org/packages/?name=subdownloader)
+
+*   **SubtitlesPrinter** — Print subtitles above a X-screen, independently of the video player.
+
+	[https://github.com/OlivierMarty/SubtitlesPrinter](https://github.com/OlivierMarty/SubtitlesPrinter) || [subtitles-printer-git](https://aur.archlinux.org/packages/subtitles-printer-git/)
+
+#### Subtitle editors
+
 See also [Wikipedia:Comparison of subtitle editors](https://en.wikipedia.org/wiki/Comparison_of_subtitle_editors "wikipedia:Comparison of subtitle editors").
 
 *   **[Aegisub](https://en.wikipedia.org/wiki/Aegisub "wikipedia:Aegisub")** — Subtitle editor.
@@ -4093,18 +4112,6 @@ See also [Wikipedia:Comparison of subtitle editors](https://en.wikipedia.org/wik
 
 	[http://www.jubler.org](http://www.jubler.org) || [jubler](https://aur.archlinux.org/packages/jubler/)
 
-*   **Penguin Subtitle Player** — Standalone subtitle player that provides a translucent window which always stays on the top so subtitles can be shown on top of the video without blocking anything.
-
-	[https://github.com/carsonip/Penguin-Subtitle-Player](https://github.com/carsonip/Penguin-Subtitle-Player) || [penguin-subtitle-player-git](https://aur.archlinux.org/packages/penguin-subtitle-player-git/)
-
-*   **subdl** — Command-line tool for downloading subtitles from opensubtitles.org.
-
-	[https://github.com/akexakex/subdl](https://github.com/akexakex/subdl) || [subdl](https://www.archlinux.org/packages/?name=subdl)
-
-*   **SubDownloader** — Automatic download/upload of subtitles using fast hashing.
-
-	[https://github.com/subdownloader/subdownloader](https://github.com/subdownloader/subdownloader) || [subdownloader](https://www.archlinux.org/packages/?name=subdownloader)
-
 *   **Subtitle Composer** — Subtitle editor with Qt 5 based GUI supporting various formats, features different player backends, able to display wave form.
 
 	[https://github.com/maxrd2/subtitlecomposer](https://github.com/maxrd2/subtitlecomposer) || [subtitlecomposer](https://aur.archlinux.org/packages/subtitlecomposer/)
@@ -4116,10 +4123,6 @@ See also [Wikipedia:Comparison of subtitle editors](https://en.wikipedia.org/wik
 *   **Subtitle Editor** — GTK+3 tool to edit subtitles for GNU/Linux/*BSD.
 
 	[http://kitone.github.io/subtitleeditor/](http://kitone.github.io/subtitleeditor/) || [subtitleeditor](https://www.archlinux.org/packages/?name=subtitleeditor)
-
-*   **SubtitlesPrinter** — Print subtitles above a X-screen, independently of the video player.
-
-	[https://github.com/OlivierMarty/SubtitlesPrinter](https://github.com/OlivierMarty/SubtitlesPrinter) || [subtitles-printer-git](https://aur.archlinux.org/packages/subtitles-printer-git/)
 
 #### Screencast
 
@@ -4614,6 +4617,10 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 *   **nffm** — "Nothing Fancy File Manager", a mouseless ncurses file manager written in C.
 
 	[https://github.com/mariostg/nffm](https://github.com/mariostg/nffm) || [nffm-git](https://aur.archlinux.org/packages/nffm-git/)
+
+*   **nnn** — Tiny, lightning fast, feature-packed file manager.
+
+	[https://github.com/jarun/nnn](https://github.com/jarun/nnn) || [nnn](https://www.archlinux.org/packages/?name=nnn)
 
 *   **Pilot** — File manager that comes with the [Alpine](/index.php/Alpine "Alpine") email client.
 
@@ -6249,7 +6256,7 @@ See also [Wikipedia:Comparison of office suites](https://en.wikipedia.org/wiki/C
 
 	[https://www.libreoffice.org/](https://www.libreoffice.org/) || [libreoffice-still](https://www.archlinux.org/packages/?name=libreoffice-still) or [libreoffice-fresh](https://www.archlinux.org/packages/?name=libreoffice-fresh)
 
-*   **[Onlyoffice](/index.php?title=Onlyoffice&action=edit&redlink=1 "Onlyoffice (page does not exist)")** — An office suite that combines text, spreadsheet and presentation editors
+*   **[OnlyOffice](https://en.wikipedia.org/wiki/OnlyOffice "wikipedia:OnlyOffice")** — Office suite that combines text, spreadsheet and presentation editors.
 
 	[https://www.onlyoffice.com/](https://www.onlyoffice.com/) || [onlyoffice-bin](https://aur.archlinux.org/packages/onlyoffice-bin/)
 

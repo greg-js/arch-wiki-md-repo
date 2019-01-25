@@ -1,45 +1,58 @@
+**翻译状态：** 本文是英文页面 [Conky](/index.php/Conky "Conky") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-01-23，点击[这里](https://wiki.archlinux.org/index.php?title=Conky&diff=0&oldid={{{3}}})可以查看翻译后英文页面的改动。
+
+Related articles
+
+*   [Conky/Tips_and_tricks](/index.php/Conky/Tips_and_tricks "Conky/Tips and tricks")
+*   [Lm_sensors](/index.php/Lm_sensors "Lm sensors")
+*   [Hddtemp](/index.php/Hddtemp "Hddtemp")
+
 Conky 是一个用于X窗口系统的系统监视软件。它可以运行在 GNU/Linux 和 FreeBSD 上，是一个基于GPL协议的免费软件。Conky 可以监控许多系统变量，包括 CPU，内存，交换分区，磁盘空间，温度，top，上传，下载，系统消息，以及更多。它具有很高的可配置性，但配置有一些难于理解。Conky是torsmo的一个分支。
 
 ## Contents
 
-*   [1 安装与设置](#.E5.AE.89.E8.A3.85.E4.B8.8E.E8.AE.BE.E7.BD.AE)
-*   [2 AUR 软件包](#AUR_.E8.BD.AF.E4.BB.B6.E5.8C.85)
-*   [3 Tips and tricks](#Tips_and_tricks)
-    *   [3.1 在KDE4 和 XFCE4 中开启真透明](#.E5.9C.A8KDE4_.E5.92.8C_XFCE4_.E4.B8.AD.E5.BC.80.E5.90.AF.E7.9C.9F.E9.80.8F.E6.98.8E)
-    *   [3.2 Autostart with Xfce4](#Autostart_with_Xfce4)
-    *   [3.3 Prevent flickering](#Prevent_flickering)
-    *   [3.4 Custom colors](#Custom_colors)
-    *   [3.5 Dual Screen](#Dual_Screen)
-    *   [3.6 Do not minimize on Show Desktop](#Do_not_minimize_on_Show_Desktop)
-    *   [3.7 Integrate with Gnome 3](#Integrate_with_Gnome_3)
-    *   [3.8 Integrate with KDE](#Integrate_with_KDE)
-    *   [3.9 与Razor-qt相融合](#.E4.B8.8ERazor-qt.E7.9B.B8.E8.9E.8D.E5.90.88)
-    *   [3.10 Display package update information](#Display_package_update_information)
-    *   [3.11 Display weather forecast](#Display_weather_forecast)
-    *   [3.12 Display RSS feeds](#Display_RSS_feeds)
-    *   [3.13 Display Distrowatch Arch Linux ranking](#Display_Distrowatch_Arch_Linux_ranking)
-    *   [3.14 Display rTorrent stats](#Display_rTorrent_stats)
-    *   [3.15 Display your WordPress blog stats](#Display_your_WordPress_blog_stats)
-    *   [3.16 Display number of new emails (Gmail)](#Display_number_of_new_emails_.28Gmail.29)
-        *   [3.16.1 Other Methods](#Other_Methods)
-    *   [3.17 Display new emails (IMAP + SSL)](#Display_new_emails_.28IMAP_.2B_SSL.29)
-    *   [3.18 Fix scrolling with UTF-8 multibyte characters](#Fix_scrolling_with_UTF-8_multibyte_characters)
-*   [4 User-contributed configuration examples](#User-contributed_configuration_examples)
-    *   [4.1 Graysky](#Graysky)
-    *   [4.2 A sample rings script with nvidia support](#A_sample_rings_script_with_nvidia_support)
-*   [5 A note about symbolic fonts](#A_note_about_symbolic_fonts)
-*   [6 Universal method to enable true transparency](#Universal_method_to_enable_true_transparency)
-*   [7 See also](#See_also)
+*   [1 安装](#安装)
+*   [2 配置](#配置)
+    *   [2.1 双屏幕](#双屏幕)
+    *   [2.2 配置文件语法更改](#配置文件语法更改)
+*   [3 字体](#字体)
+    *   [3.1 符号字体](#符号字体)
+*   [4 自启动](#自启动)
+*   [5 故障排除](#故障排除)
+    *   [5.1 Conky启动并且在屏幕上不显示任何内容](#Conky启动并且在屏幕上不显示任何内容)
+    *   [5.2 透明度](#透明度)
+        *   [5.2.1 伪透明](#伪透明)
+        *   [5.2.2 启用真实透明](#启用真实透明)
+        *   [5.2.3 半透明](#半透明)
+    *   [5.3 不最小化显示桌面](#不最小化显示桌面)
+    *   [5.4 在GNOME Shell集成](#在GNOME_Shell集成)
+    *   [5.5 UTF-8 多字节字符固定滚动修复](#UTF-8_多字节字符固定滚动修复)
+    *   [5.6 避免闪烁](#避免闪烁)
+*   [6 你还可以看](#你还可以看)
 
-## 安装与设置
+## 安装
 
 *   [官方软件库](/index.php/Official_repositories "Official repositories")中已经包含了[conky](https://www.archlinux.org/packages/?name=conky)，您可以通过[pacman](/index.php/Pacman "Pacman")来安装它。
 
-**Note:** 这并没有lua支持。参阅[#AUR 软件包](#AUR_.E8.BD.AF.E4.BB.B6.E5.8C.85)
+除了 [官方软件仓库](/index.php/%E5%AE%98%E6%96%B9%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93 "官方软件仓库") 上的 [conky](https://www.archlinux.org/packages/?name=conky) 软件包, 在 [AUR](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)") 上还有很多关于conky的软件包。
 
-*   您可以编辑`~/.conkyrc`文件来定制您的conky或是使用[homeproject-screenshot](http://conky.sourceforge.net/screenshots.html)等其他网站上的范例
+*   Conky基本包，没有X11依赖 [conky-cli](https://aur.archlinux.org/packages/conky-cli/)
+*   Nvidia支持： [conky-nvidia](https://aur.archlinux.org/packages/conky-nvidia/)
+*   Lua支持： [conky-lua](https://aur.archlinux.org/packages/conky-lua/)
+*   Nvidia和Lua支持： [conky-lua-nv](https://aur.archlinux.org/packages/conky-lua-nv/)
 
-当您在编辑配置文件时,点击保存命令可立即看到conky界面的变化.您也没有必要重新登录您的X环境.所以您可以尽情尝试每一个设置，保存配置文件并查看conky界面的变化,然后修改不合适的地方.
+一些在conky变量上的建设需要安装额外的应用才能被使用，例如温度控制的 [Hddtemp](/index.php/Hddtemp "Hddtemp") 和音乐控制的 [mpd](/index.php/Mpd "Mpd")
+
+你可以编辑`~/.conkyrc`文件来定制您的conky或是使用[homeproject-screenshot](http://conky.sourceforge.net/screenshots.html)等其他网站上的范例
+
+附加应用:
+
+*   **Conky Manager** — Conky小部件的主题管理器. 它提供开启、关闭选项, 浏览和编辑已经安装的Conky主题.
+
+	[http://www.teejeetech.in/p/conky-manager.html](http://www.teejeetech.in/p/conky-manager.html) || [conky-manager](https://www.archlinux.org/packages/?name=conky-manager)
+
+## 配置
+
+*   当您在编辑配置文件时,点击保存命令可立即看到conky界面的变化.您也没有必要重新登录您的X环境.所以您可以尽情尝试每一个设置，保存配置文件并查看conky界面的变化,然后修改不合适的地方.
 
 *   或者，您可以使用默认配置:
 
@@ -57,905 +70,218 @@ $ usermod -aG log username
 
 ```
 
-You add `username` to the `log group`. Now `username` can read log files, and you will be able to redirect log messages with conky on your desktop.
+将 `username` 加入 `log group`. 现在 `username` can read log files, and you will be able to redirect log messages with conky on your desktop.
 
 *   如果conky并没有显现应有的效果 -- 比如 minimum_size -- 您需查看是否是因清空了 `/etc/conky/conky.conf`中的内容，或是因注释相关字段所造成。
 
-## AUR 软件包
+### 双屏幕
 
-除了 [官方软件仓库](/index.php/%E5%AE%98%E6%96%B9%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93 "官方软件仓库") 上的 [conky](https://www.archlinux.org/packages/?name=conky) 软件包, 在 [AUR](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)") 上还有很多关于conky的软件包。
+当你使用双屏幕配置时, 你需要进行一些设置来将 *conky* 放置到你想让它呆在桌面的某个位置.
 
-*   Conky基本包，没有X11依赖 [conky-cli](https://aur.archlinux.org/packages/conky-cli/)
-*   Nvidia支持： [conky-nvidia](https://aur.archlinux.org/packages/conky-nvidia/)
-*   Lua支持： [conky-lua](https://aur.archlinux.org/packages/conky-lua/)
-*   Nvidia和Lua支持： [conky-lua-nv](https://aur.archlinux.org/packages/conky-lua-nv/)
+通过调整`gap_x`, 假设你设置的是1680x1050像素的分辨率，你希望窗口位于左侧显示器的中间顶部，你应使用 :
 
-## Tips and tricks
-
-### 在KDE4 和 XFCE4 中开启真透明
-
-从1.8.0版本开始，conky支持真透明。只需要将下面语句添加进 `~/.conkyrc`:
-
-```
-own_window_transparent yes
-
-```
-
-The above option is not desired with the `OWN_WINDOW_ARGB_VISUAL yes` option. This replaces the [feh](https://www.archlinux.org/packages/?name=feh) method described below.
-
-### Autostart with Xfce4
-
-In `.conkyrc` file:
-
-```
-background yes
-
-```
-
-This variable will fork Conky to your background. If you want to make your window always visible on your desktop, sticky across all workspaces and not showing in your taskbar, add these arguments:
-
-```
-own_window yes
-own_window_type override
-
-```
-
-The override option makes your window out of control of your window manager.
-
-Add a `~/.config/autostart/conky.desktop`:
-
-```
-[Desktop Entry]
-Encoding=UTF-8
-Version=0.9.4
-Type=Application
-Name=conky
-Comment=
-Exec=conky -d
-StartupNotify=false
-Terminal=false
-Hidden=false
-
-```
-
-### Prevent flickering
-
-Conky needs Double Buffer Extension (DBE) support from the X server to prevent flickering because it cannot update the window fast enough without it. It can be enabled in `/etc/X11/xorg.conf` with `Load "dbe"` line in `Section "Module"`. The xorg.conf file has been replaced (1.8.x patch upwards) by `/etc/X11/xorg.conf.d` which contains the particular configuration files. *DBE* is loaded automatically.
-
-To enable double-buffer check to have in `~/.conkyrc`:
-
-```
-# Place below the other options, not below TEXT or XY
-double_buffer yes
-
-```
-
-### Custom colors
-
-Aside the classic preset colors (white, black, yellow...), you can set your own custom color using the color name code. To determine the code of a color, use a color selector app. The basic [gcolor2](https://www.archlinux.org/packages/?name=gcolor2) package in the [official repositories](/index.php/Official_repositories "Official repositories") will give you the color name. It is made of six hexadecimal digits (0-9, A-F). Add this line in your configuration file for a custom color:
-
-```
-color1     Colorname1
-color2     Colorname2
-
-```
-
-Then, when editing the TEXT section, use custom color number previously defined.
-
-### Dual Screen
-
-When using a dual screen configuration, you will need to play with two options to place your conky window. Let's say you are running a 1680X1050 pixels resolution, and you want the window on middle top of your left monitor, you will use this:
-
-```
-alignment top_left
-gap_X 840
-
-```
-
-The alignment option is trivial, and gap_X option is the distance, in pixels, from the left border of your screen.
-
-### Do not minimize on Show Desktop
-
-**Using Compiz:** If the 'Show Desktop' button or key-binding minimizes Conky along with all other windows, start the Compiz configuration settings manager, go to "General Options" and uncheck the "Hide Skip Taskbar Windows" option.
-
-If you do not use Compiz, try editing `~/.conkyrc` and adding/changing the following line:
-
-```
-own_window_type override
-
-```
-
-or
-
-```
-own_window_type desktop
-
-```
-
-Refer to conkys man page for the exact differences. But the latter option enables you to snap windows to conkys border using resize key-binds in e.g. Openbox, which the first one does not.
-
-### Integrate with Gnome 3
-
-Some have experienced problems with Conky showing up under Gnome 3.
-
-*   Add these lines to `~/.conkyrc`:
-
-```
-own_window yes
-own_window_type conky
-own_window_transparent yes
-own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
-
-```
-
-If you still experience problems with transparency. You could add these lines.
-
-```
-own_window_argb_visual yes
-own_window_argb_value 255
-
-```
-
-### Integrate with KDE
-
-Conky with screenshot configuration generate problems with icons visualization. So there are some steps to follow.
-
-*   Add these lines to `~/.conkyrc`:
-
-```
-own_window yes
-own_window_type normal
-own_window_transparent yes
-own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
-
-```
-
-*   If this setting is on, comment it out or delete the line:
-
-```
-minimum_size
-
-```
-
-*   To automatically start Conky, create this symlink:
-    *   KDE4:
-
-```
-$ ln -s /usr/bin/conky ~/.kde4/Autostart/conkylink
-
-```
-
-*   *   KDE3:
-
-```
-$ ln -s /usr/bin/conky ~/.kde/share/autostart/conkylink
-
-```
-
-*   Install the [feh](https://www.archlinux.org/packages/?name=feh) package which is available in the official repositories.
-*   Make a script to allow transparency with the desktop
-
-In KDE4 edit `~/.kde4/Autostart/fehconky`:
-
-```
-#!/bin/bash
-feh --bg-scale "$(sed -n 's/wallpaper=//p' ~/.kde4/share/config/plasma-desktop-appletsrc)"
-
-```
-
-In KDE3 edit `~/.kde/share/autostart/fehconky`:
-
-```
-#!/bin/bash
-feh --bg-scale $(dcop kdesktop KBackgroundIface currentWallpaper 1)
-
-```
-
-use `--bg-center` if you use a centered wallpaper.
-
-*   Make it executable:
-    *   KDE4:
-
-```
-$ chmod +x ~/.kde4/Autostart/fehconky
-
-```
-
-*   *   KDE3:
-
-```
-$ chmod +x ~/.kde/share/autostart/fehconky
-
-```
-
-*   Instead of using a script, you can add the corresponding line to the bottom of `~/.conkyrc`
-    *   For KDE4
-
-```
-${exec feh --bg-scale "$(sed -n 's/wallpaper=//p' ~/.kde4/share/config/plasma-desktop-appletsrc)"}
-
-```
-
-*   *   For KDE3
-
-```
-${exec feh --bg-scale $(dcop kdesktop KBackgroundIface currentWallpaper 1)}
-
-```
-
-### 与Razor-qt相融合
-
-当使用Conky的默认配置时, conky的界面可能会因点击桌面而消失. 请加入以下字段到`.conkyrc`中:
-
- `~/.conkyrc` 
-```
-own_window yes
-own_window_class Conky
-own_window_type normal
-own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
-own_window_transparent yes
-
-```
-
-### Display package update information
-
-*   [Pacman](/index.php/Pacman "Pacman") provides its own script called `checkupdates` which displays package updates from the official repos. Use `${execpi 3600 checkupdates | wc -l}` to display the total number of packages.
-*   [Paconky](https://bbs.archlinux.org/viewtopic.php?id=68104) - Displays package update information in a user-defined format. The output of this program can be included in Conky with the `${execpi}` command.
-*   [Scrolling Notifications](https://bbs.archlinux.org/viewtopic.php?id=53761) - Prints scrolling update notifications. From the author of Paconky.
-*   [Perl Script](https://bbs.archlinux.org/viewtopic.php?id=57291) - Simpler and earlier script from the author of Paconky. Prints only the number of packages needing an update.
-*   [Python Script](https://bbs.archlinux.org/viewtopic.php?id=37284) - Fairly configurable update notification program in [Python](/index.php/Python "Python").
-*   [Bash Script](https://bbs.archlinux.org/viewtopic.php?pid=483742#p483742) - [Bash](/index.php/Bash "Bash") script for users that have enabled ShowSize.
-
-### Display weather forecast
-
-See [this thread](https://bbs.archlinux.org/viewtopic.php?id=37381).
-
-### Display RSS feeds
-
-Conky has the ability to display RSS feeds natively without the need for an outside script to run and output into Conky. For example, to display the titles of the ten most recent Planet Arch updates and refresh the feed every minute, you would put this into your `~/.conkyrc` in the TEXT section:
-
-```
-${rss [https://planet.archlinux.org/rss20.xml](https://planet.archlinux.org/rss20.xml) 1 item_titles 10 }
-
-```
-
-If you want to display Arch Forum rss feed, add this line:
-
-```
-${rss [https://bbs.archlinux.org/extern.php?action=feed&type=rss](https://bbs.archlinux.org/extern.php?action=feed&type=rss) 1 item_titles 4}
-
-```
-
-where 1 is in minutes the refresh interval (15 mn is default),4 the number of items you wish to show.
-
-### Display Distrowatch Arch Linux ranking
-
-See [this thread](https://bbs.archlinux.org/viewtopic.php?id=88779).
-
-### Display rTorrent stats
-
-See [this thread](https://bbs.archlinux.org/viewtopic.php?id=67304).
-
-### Display your WordPress blog stats
-
-This can be achieved by using the in python written extension named [ConkyPress](http://evilshit.wordpress.com/2013/04/20/conkypress-a-wordpress-stats-visualization-tool-for-your-desktop/).
-
-### Display number of new emails (Gmail)
-
-Create a file named `gmail.py` in a convenient location (this example uses `~/.scripts/`) with the following [Python](/index.php/Python "Python") code:
-
- `gmail.py` 
-```
-#!/usr/bin/env python
-
-from urllib.request import FancyURLopener
-
-email = 'your email' # @gmail.com can be left out
-password  = 'your password'
-
-url = 'https://%s:%s@mail.google.com/mail/feed/atom' % (email, password)
-
-opener = FancyURLopener()
-page = opener.open(url)
-
-contents = page.read().decode('utf-8')
-
-ifrom = contents.index('<fullcount>') + 11
-ito   = contents.index('</fullcount>')
-
-fullcount = contents[ifrom:ito]
-
-print(fullcount + ' new')
-
-```
-
-You can also use Python's urllib as follows.
-
- `gmail.py` 
-```
-#! /usr/bin/env python
-
-import urllib.request
-from xml.etree import ElementTree as etree
-
-# Enter your username and password below within quotes below, in place of ****.
-# Set up authentication for gmail
-auth_handler = urllib.request.HTTPBasicAuthHandler()
-auth_handler.add_password(realm='New mail feed',
-                          uri='https://mail.google.com/',
-                          user= '****',
-                          passwd= '****')
-opener = urllib.request.build_opener(auth_handler)
-# ...and install it globally so it can be used with urlopen.
-urllib.request.install_opener(opener)
-
-gmail = 'https://mail.google.com/gmail/feed/atom'
-NS = '{http://purl.org/atom/ns#}'
-with urllib.request.urlopen(gmail) as source:
-    tree = etree.parse(source)
-fullcount = tree.find(NS + 'fullcount').text
-
-print(fullcount + ' new')
-
-```
-
-Add the following string to your `~/.conkyrc` in order the check your Gmail account for new email every five minutes (300 seconds) and display:
-
-```
-${execpi 300 python ~/.scripts/gmail.py}
-
-```
-
-#### Other Methods
-
-The same way, but with using `curl`, `grep` and `sed`:
-
 ```
-$ curl -s -u '''email''':'''password''' https://mail.google.com/mail/feed/atom | grep fullcount | sed 's/<[^0-9]*>//g'
+alignment = 'top_left',
+gap_X = 840,
 
 ```
 
-replace **email** and **password** with your data.
+`alignment` 的作用是显而易见的， `gap_X`是从屏幕左边框开始的距离（以像素为单位）。.
 
-Alternatively, you can use [stunnel](http://www.stunnel.org/) which is provided by the [stunnel](https://www.archlinux.org/packages/?name=stunnel) package.
+`xinerama_head`是一个可替换的选项，下面将在第二个屏幕的右上角放置“conky”窗口:
 
-The following configuration is taken from [Conky's FAQ](http://conky.sourceforge.net/faq.html)
-
-Modify `/etc/stunnel/stunnel.conf` as follows, and then start the `stunnel` [daemon](/index.php/Daemon "Daemon"):
-
-```
-# Service-level configuration for TLS server
-[imap]
-client = yes
-accept  = 143
-connect = imap.gmail.com:143
-protocol = imap
-sslVersion = TLSv1
-# Service-level configuration for SSL server
-[imaps]
-client = yes
-accept  = 993
-connect = imap.gmail.com:993
-
-```
-
-The only thing left is our `~/.conkyrc`:
-
-```
-imap localhost username * -i 120 -p 993
-TEXT
-Inbox: ${imap_unseen}/${imap_messages}
-
-```
-
-Here I used * as the password for Conky to ask for it at start, but you do not *have* to do it.
-
-### Display new emails (IMAP + SSL)
-
-Conky has built in support for IMAP accounts but does not support SSL. This can be provided using this script from [this forum post](http://www.unix.com/shell-programming-scripting/115322-perl-conky-gmail-imap-unread-message-count.html). This requires the Perl/CPAN Modules Mail::IMAPClient and IO::Socket::SSL which are in the [perl-mail-imapclient](https://aur.archlinux.org/packages/perl-mail-imapclient/) and [perl-io-socket-ssl](https://www.archlinux.org/packages/?name=perl-io-socket-ssl) packages
-
-Create a file named `imap.pl` in a location to be read by Conky. In this file, add (with the appropriate changes):
-
-```
-#!/usr/bin/perl
-
-# gimap.pl by gxmsgx
-# description: get the count of unread messages on imap
-
-use strict;
-use Mail::IMAPClient;
-use IO::Socket::SSL;
-
-my $username = 'example.username'; 
-my $password = 'password123'; 
-
-my $socket = IO::Socket::SSL->new(
-  PeerAddr => 'imap.server',
-  PeerPort => 993
- )
- or die "socket(): $@";
-
-my $client = Mail::IMAPClient->new(
-  Socket   => $socket,
-  User     => $username,
-  Password => $password,
- )
- or die "new(): $@";
-
-if ($client->IsAuthenticated()) {
-   my $msgct;
-
-   $client->select("INBOX");
-   $msgct = $client->unseen_count||'0';
-   print "$msgct
-";
-}
-
-$client->logout();
-
-```
-
-Add to `~/.conkyrc`:
-
-```
-${execpi 300 ~/.conky/imap.pl} 
-
 ```
+alignment = 'top_right',
+xinerama_head = 2,
 
-or wherever you saved the file.
-
-If you use Gmail you might need to [generate](http://www.google.com/accounts/IssuedAuthSubTokens?hide_authsub=1) an application specific password.
-
-Alternatively, you can use stunnel as shown above: [Conky#How to display the number of new emails (Gmail) in Conky](/index.php/Conky#How_to_display_the_number_of_new_emails_.28Gmail.29_in_Conky "Conky")
-
-### Fix scrolling with UTF-8 multibyte characters
-
-The current version of conky (1.9.0) suffers from a bug ([http://sourceforge.net/p/conky/bugs/341/](http://sourceforge.net/p/conky/bugs/341/)) where scrolling text increments by byte, not by character, resulting in text containing multibyte characters to disappear and reappear while scrolling. A package with a patch fixing this bug can be found in the AUR: [conky-utfscroll](https://aur.archlinux.org/packages/conky-utfscroll/)
-
-## User-contributed configuration examples
-
-### Graysky
-
-[Screenshot](http://img9.imageshack.us/img9/3153/imageffj.jpg).
-
-[Here](https://raw.github.com/graysky2/configs/5fbe513918dfe8066f87e670108318464902afae/dotfiles/.conkyrc) it is - modify to fit your system. Optimized for a quad core chip w/ several hdds (although one of them is not connected for this screenshot) and an nvidia graphics card. You can easily modify this to a dual or single core system with one or whatever number of hdds.
-
-### A sample rings script with nvidia support
-
 ```
-# -- Conky settings -- #
-background no
-update_interval 1
-
-cpu_avg_samples 2
-net_avg_samples 2
-
-override_utf8_locale yes
-
-double_buffer yes
-no_buffers yes
-
-text_buffer_size 2048
-imlib_cache_size 0
-
-# -- Window specifications -- #
 
-own_window yes
-own_window_type normal
-own_window_transparent yes
-own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
+### 配置文件语法更改
 
-border_inner_margin 0
-border_outer_margin 0
+从conky 1.10以来，配置文件都是用新的lua语法编写的，比如：
 
-minimum_size 320 800
-maximum_width 320
-
-alignment bottom_right
-gap_x 0
-gap_y 0
-
-# -- Graphics settings -- #
-draw_shades no
-draw_outline no
-draw_borders no
-draw_graph_borders yes
-
-# -- Text settings -- #
-use_xft yes
-xftfont MaiandraGD:size=24
-xftalpha 0.4
-
-uppercase no
-
-default_color 888888
-
-# -- Lua Load -- #
-lua_load ~/conky/lua/lua.lua
-lua_draw_hook_pre ring_stats
-
-TEXT
-${alignr}${voffset 53}${goto 90}${font MaiandraGD:size=11}${time %A, %d %B %Y}
-
-${voffset 5}${goto 164}${font MaiandraGD:size=16}${time %H:%M}
-
-${voffset -40}${goto 100}${font MaiandraGD:size=9}Kernel:${offset 70}Uptime:
-${goto 90}${font MaiandraGD:size=9}$kernel${offset 40}$uptime
-${voffset 57}${goto 117}${font snap:size=8}${cpu cpu0}%
-${goto 117}${cpu cpu1}%
-${goto 117}CPU
-${voffset 19}${goto 145}${memperc}%
-${goto 145}$swapperc%
-${goto 145}MEM
-${voffset 25}${goto 170}${nvidia gpufreq}
-${goto 170}${nvidia memfreq}
-${goto 170}GPU
-${voffset 27}${goto 198}${totaldown ppp0}
-${goto 198}${totalup ppp0}
-${goto 205}NET
-${voffset 21}
-${goto 222}${fs_used /home}
-${goto 230}DISK
-```
-
-And the required lua.lua script:
-
 ```
---[[
- Ring Meters by londonali1010 (2009)
-
- This script draws percentage meters as rings. It is fully customisable; all options are described in the script.
-
- IMPORTANT: if you are using the 'cpu' function, it will cause a segmentation fault if it tries to draw a ring straight away. The if statement on line 145 uses a delay to make sure that this does not happen. It calculates the length of the delay by the number of updates since Conky started. Generally, a value of 5s is long enough, so if you update Conky every 1s, use update_num > 5 in that if statement (the default). If you only update Conky every 2s, you should change it to update_num > 3; conversely if you update Conky every 0.5s, you should use update_num > 10\. ALSO, if you change your Conky, is it best to use "killall conky; conky" to update it, otherwise the update_num will not be reset and you will get an error.
-
- To call this script in Conky, use the following (assuming that you save this script to ~/scripts/rings.lua):
-         lua_load ~/scripts/rings-v1.2.1.lua
-         lua_draw_hook_pre ring_stats
-
- Changelog:
- + v1.2.1 -- Fixed minor bug that caused script to crash if conky_parse() returns a nil value (20.10.2009)
- + v1.2 -- Added option for the ending angle of the rings (07.10.2009)
- + v1.1 -- Added options for the starting angle of the rings, and added the "max" variable, to allow for variables that output a numerical value rather than a percentage (29.09.2009)
- + v1.0 -- Original release (28.09.2009)
+ conky.config = {
+   -- Comments start with a double dash
+   bool_value = true,
+   string_value = 'foo',
+   int_value = 42,
+ }
+ conky.text = [[
+ $variable
+ ${evaluated variable}
  ]]
 
- settings_table = {
-         {
-                 -- Edit this table to customise your rings.
-                 -- You can create more rings simply by adding more elements to settings_table.
-                 -- "name" is the type of stat to display; you can choose from 'cpu', 'memperc', 'fs_used_perc', 'battery_used_perc'.
-                 name='time',
-                 -- "arg" is the argument to the stat type, e.g. if in Conky you would write ${cpu cpu0}, 'cpu0' would be the argument. If you would not use an argument in the Conky variable, use ''.
-                 arg='%I.%M',
-                 -- "max" is the maximum value of the ring. If the Conky variable outputs a percentage, use 100.
-                 max=12,
-                 -- "bg_colour" is the colour of the base ring.
-                 bg_colour=0x888888,
-                 -- "bg_alpha" is the alpha value of the base ring.
-                 bg_alpha=0.3,
-                 -- "fg_colour" is the colour of the indicator part of the ring.
-                 fg_colour=0x888888,
-                 -- "fg_alpha" is the alpha value of the indicator part of the ring.
-                 fg_alpha=0.5,
-                 -- "x" and "y" are the x and y coordinates of the centre of the ring, relative to the top left corner of the Conky window.
-                 x=191, y=145,
-                 -- "radius" is the radius of the ring.
-                 radius=32,
-                 -- "thickness" is the thickness of the ring, centred around the radius.
-                 thickness=4,
-                 -- "start_angle" is the starting angle of the ring, in degrees, clockwise from top. Value can be either positive or negative.
-                 start_angle=0,
-                 -- "end_angle" is the ending angle of the ring, in degrees, clockwise from top. Value can be either positive or negative, but must be larger (e.g. more clockwise) than start_angle.
-                 end_angle=360
-         },
-         {
-                 name='time',
-                 arg='%M.%S',
-                 max=60,
-                 bg_colour=0x888888,
-                 bg_alpha=0.3,
-                 fg_colour=0x888888,
-                 fg_alpha=0.5,
-                 x=191, y=145,
-                 radius=37,
-                 thickness=4,
-                 start_angle=0,
-                 end_angle=360
-         },
-         {
-                 name='time',
-                 arg='%S',
-                 max=60,
-                 bg_colour=0x888888,
-                 bg_alpha=0.3,
-                 fg_colour=0x888888,
-                 fg_alpha=0.5,
-                 x=191, y=145,
-                 radius=42,
-                 thickness=4,
-                 start_angle=0,
-                 end_angle=360
-         },
-         {
-                 name='cpu',
-                 arg='cpu0',
-                 max=100,
-                 bg_colour=0x888888,
-                 bg_alpha=0.3,
-                 fg_colour=0x888888,
-                 fg_alpha=0.5,
-                 x=140, y=300,
-                 radius=26,
-                 thickness=5,
-                 start_angle=-90,
-                 end_angle=180
-         },
-         {
-                 name='cpu',
-                 arg='cpu1',
-                 max=100,
-                 bg_colour=0x888888,
-                 bg_alpha=0.3,
-                 fg_colour=0x888888,
-                 fg_alpha=0.5,
-                 x=140, y=300,
-                 radius=20,
-                 thickness=5,
-                 start_angle=-90,
-                 end_angle=180
-         },
-         {
-                 name='memperc',
-                 arg='',
-                 max=100,
-                 bg_colour=0x888888,
-                 bg_alpha=0.3,
-                 fg_colour=0x888888,
-                 fg_alpha=0.5,
-                 x=170, y=350,
-                 radius=26,
-                 thickness=5,
-                 start_angle=-90,
-                 end_angle=180
-         },
-         {
-                 name='swapperc',
-                 arg='',
-                 max=100,
-                 bg_colour=0x888888,
-                 bg_alpha=0.3,
-                 fg_colour=0x888888,
-                 fg_alpha=0.5,
-                 x=170, y=350,
-                 radius=20,
-                 thickness=5,
-                 start_angle=-90,
-                 end_angle=180
-         },
-         {
-                 name='time',
-                 arg='%d',
-                 max=31,
-                 bg_colour=0x888888,
-                 bg_alpha=0.3,
-                 fg_colour=0x888888,
-                 fg_alpha=0.5,
-                 x=191, y=145,
-                 radius=50,
-                 thickness=5,
-                 start_angle=-140,
-                 end_angle=-30
-         },
-         {
-                 name='time',
-                 arg='%m',
-                 max=12,
-                 bg_colour=0x888888,
-                 bg_alpha=0.3,
-                 fg_colour=0x888888,
-                 fg_alpha=0.5,
-                 x=191, y=145,
-                 radius=50,
-                 thickness=5,
-                 start_angle=30,
-                 end_angle=140
-         },
- --      {
- --              name='fs_used_perc',
- --              arg='/',
- --              max=100,
- --              bg_colour=0x888888,
- --              bg_alpha=0.3,
- --              fg_colour=0x888888,
- --              fg_alpha=0.5,
- --              x=260, y=503,
- --              radius=26,
- --              thickness=5,
- --              start_angle=-90,
- --              end_angle=180
- --      },
-         {
-                 name='fs_used_perc',
-                 arg='/home',
-                 max=100,
-                 bg_colour=0x888888,
-                 bg_alpha=0.3,
-                 fg_colour=0x888888,
-                 fg_alpha=0.5,
-                 x=260, y=503,
-                 radius=20,
-                 thickness=5,
-                 start_angle=-90,
-                 end_angle=180
-         },
-         {
-                 name='totalup',
-                 arg='ppp0',
-                 max=2,
-                 bg_colour=0x888888,
-                 bg_alpha=0.3,
-                 fg_colour=0x888888,
-                 fg_alpha=0.5,
-                 x=230, y=452,
-                 radius=20,
-                 thickness=5,
-                 start_angle=-90,
-                 end_angle=180
-         },
-         {
-                 name='totaldown',
-                 arg='ppp0',
-                 max=2,
-                 bg_colour=0x888888,
-                 bg_alpha=0.3,
-                 fg_colour=0x888888,
-                 fg_alpha=0.5,
-                 x=230, y=452,
-                 radius=26,
-                 thickness=5,
-                 start_angle=-90,
-                 end_angle=180
-         },
-         {
-                 name='nvidia',
-                 arg='gpufreq',
-                 max=475,
-                 bg_colour=0x888888,
-                 bg_alpha=0.3,
-                 fg_colour=0x888888,
-                 fg_alpha=0.5,
-                 x=200, y=401,
-                 radius=26,
-                 thickness=5,
-                 start_angle=-90,
-                 end_angle=180
-         },
- {
-                 name='nvidia',
-                 arg='memfreq',
-                 max=700,
-                 bg_colour=0x888888,
-                 bg_alpha=0.3,
-                 fg_colour=0x888888,
-                 fg_alpha=0.5,
-                 x=200, y=401,
-                 radius=20,
-                 thickness=5,
-                 start_angle=-90,
-                 end_angle=180
-         },
+```
+
+下面的一些示例可能仍然使用旧语法，例如：
+
+```
+ bool_value yes
+ string_value 'foo'
+ int_value 42
+
+```
+
+通过Lua脚本可以从旧语法转换为新的Lua语法。 [here](https://github.com/brndnmtthws/conky/blob/master/extras/convert.lua).
+
+## 字体
+
+要用conky显示unicode格式图片和emoji，你需要支持此功能的[font](/index.php/Fonts#Emoji_and_symbols "Fonts") 然后将conky配置为需显示的unicode字体. 例如:
+
+```
+ ${font Symbola:size=48}☺${font} 
+
+```
+
+### 符号字体
+
+符号字体常用于更复杂的conky配置，其中一些流行的配置包括；
+
+*   [ttf-pizzadude-bullets](https://aur.archlinux.org/packages/ttf-pizzadude-bullets/) - PizzaDude Bullet's font
+*   [otf-font-awesome-5-free](https://aur.archlinux.org/packages/otf-font-awesome-5-free/) - Font awesome icon from from [http://fontawesome.com/](http://fontawesome.com/)
+*   [ttf-weather-icons](https://aur.archlinux.org/packages/ttf-weather-icons/) - Erik flowers weather icon font with 222 glyphs
+
+## 自启动
+
+Conky可以通过几种不同的方式自启动, 一如 "[Autostarting](/index.php/Autostarting "Autostarting")"所述. 请选择最适合您的窗口管理器/桌面环境的方式.
+
+Conky有一种配置，使它在后台分支运行。这可能对于某些自动启动设置有效。
+
+In `conky.conf`:
+
+```
+conky.config = {
+    background = true,
+}
+
+```
+
+如果你使用图形桌面环境，并希望通过`conky.desktop` 自启动，请使用以下命令：
+
+ `~/.config/autostart/conky.desktop` 
+```
+[Desktop Entry]
+Type=Application
+Name=conky
+Exec=conky --daemonize --pause=5
+StartupNotify=false
+Terminal=false
+```
+
+`pause=5`参数在“conky”启动时会延时5秒钟，以确保桌面有时间加载并启动。
+
+## 故障排除
+
+这些是人们在conky发现的问题和他们的解决方案。
+
+### Conky启动并且在屏幕上不显示任何内容
+
+首先检查配置文件文本变量中的语法错误。然后再次检查你的用户是否有权运行配置文件中的每个命令，以及是否安装了所有需要的包。
+
+### 透明度
+
+Conky支持两种不同类型的透明度。需要安装并运行[composite manager](/index.php/Composite_manager "Composite manager"). 如果启用了真实透明，但是没有运行复合管理器，那么conky将不会优先透明，但是为字体、图像和背景启用了透明度。
+
+#### 伪透明
+
+默认情况下，在Conky中启用了伪透明。伪透明通过复制背景图像，并使用相关部分作为conky的背景达成效果。一些窗口管理器将背景墙纸设置为根窗口之上的一个级别，这可能导致conky具有灰色背景。要解决此问题，需要手动将其设置为*feh*。 In `~/.xinitrc`:
+
+```
+ sleep 1 && feh --bg-center ~/background.png &
+
+```
+
+#### 启用真实透明
+
+要实现真正的透明性，必须运行一个[composite manager](/index.php/Composite_manager "Composite manager") 并在conky.config内的`.conkyrc`中添加以下行：
+
+```
+ conky.config = {
+    own_window = true,
+    own_window_transparent = true,
+    own_window_argb_visual = true,
+    own_window_type = desktop,
  }
 
- require 'cairo'
+```
 
- function rgb_to_r_g_b(colour,alpha)
-         return ((colour / 0x10000) % 0x100) / 255., ((colour / 0x100) % 0x100) / 255., (colour % 0x100) / 255., alpha
- end
+如果窗口类型“桌面”不起作用，请尝试将其更改为 `normal`.如果仍然不起作用，请尝试其他选项，例如: `dock`, `panel`, 或者 `override` 替代.
 
- function draw_ring(cr,t,pt)
-         local w,h=conky_window.width,conky_window.height
+**Note:** [Xfce](/index.php/Xfce "Xfce")需要混合启用，请参见 [[1]](https://forum.xfce.org/viewtopic.php?pid=25939).
 
-         local xc,yc,ring_r,ring_w,sa,ea=pt['x'],pt['y'],pt['radius'],pt['thickness'],pt['start_angle'],pt['end_angle']
-         local bgc, bga, fgc, fga=pt['bg_colour'], pt['bg_alpha'], pt['fg_colour'], pt['fg_alpha']
+#### 半透明
 
-         local angle_0=sa*(2*math.pi/360)-math.pi/2
-         local angle_f=ea*(2*math.pi/360)-math.pi/2
-         local t_arc=t*(angle_f-angle_0)
+要在真实透明模式下实现半透明，必须在conky配置文件中使用以下设置:
 
-         -- Draw background ring
-
-         cairo_arc(cr,xc,yc,ring_r,angle_0,angle_f)
-         cairo_set_source_rgba(cr,rgb_to_r_g_b(bgc,bga))
-         cairo_set_line_width(cr,ring_w)
-         cairo_stroke(cr)
-
-         -- Draw indicator ring
-
-         cairo_arc(cr,xc,yc,ring_r,angle_0,angle_0+t_arc)
-         cairo_set_source_rgba(cr,rgb_to_r_g_b(fgc,fga))
-         cairo_stroke(cr)
- end
-
- function conky_ring_stats()
-         local function setup_rings(cr,pt)
-                 local str=''
-                 local value=0
-
-                 str=string.format('${%s %s}',pt['name'],pt['arg'])
-                 str=conky_parse(str)
-
-                 value=tonumber(str)
-                 if value == nil then value = 0 end
-                 pct=value/pt['max']
-
-                 draw_ring(cr,pct,pt)
-         end
-
-         if conky_window==nil then return end
-         local cs=cairo_xlib_surface_create(conky_window.display,conky_window.drawable,conky_window.visual, conky_window.width,conky_window.height)
-
-         local cr=cairo_create(cs)
-
-         local updates=conky_parse('${updates}')
-         update_num=tonumber(updates)
-
-         if update_num>5 then
-                 for i in pairs(settings_table) do
-                         setup_rings(cr,settings_table[i])
-                 end
-         end
- end            
+```
+ conky.config = {
+    own_window = true,
+    own_window_transparent = false,
+    own_window_argb_visual = true,
+    own_window_argb_value = 90,
+    own_window_type = desktop,
+ }
 
 ```
 
-## A note about symbolic fonts
+为了降低conky窗口的透明度，其中一种方式是可以将`own_window_argb_value` 的值增至 255.
 
-Many of the more decorated .conkyrc's use the fonts PizzaDude Bullets and Pie Charts for Maps. They are available from the AUR as 'ttf-pizzadude-bullets' and 'ttf-piechartsformaps' respectively, or they can be found and downloaded with a quick search and manually installed using the instructions in [Fonts](/index.php/Fonts "Fonts").
+### 不最小化显示桌面
 
-## Universal method to enable true transparency
+**Using Compiz:** 如果 'Show Desktop' 选项或键绑定与所有其他窗口一起和condy最小化, 启动compiz配置设置管理器，转到“General Options”并取消选中“Hide Skip Taskbar Windows”选项。.
 
-Transparency is a strange beast in Conky, but there is a way to universally apply true transparency with any environment or window manager by using xcompmgr and transset-df. Install xcompmgr from [extra] and transset-df from [community] with `pacman -S xcompmgr transset-df`. These packages both have the same 3 dependencies, so this is the lightest method for composition available, for those of you using standalone window managers in order to achieve the leanest setup you can manage (or whatever reason you have :D)
-
-NOTE: This may conflict with any other compositing manager you are already using.
-
-Check xcompmgr documentation to help you decide which compositing options you would like to enable. The following is a common standard command.
+如果不使用compiz，请尝试编辑 `conky.conf` 并添加/更改如下:
 
 ```
-$ xcompmgr -c -t-5 -l-5 -r4.2 -o.55 &
+own_window_type = 'override',
 
 ```
 
-Make sure conky is running with `conky &`. Use transset-df to enable transparency on the Conky window. Set '.5' to any value in the range 0 - 1.
+或者
 
 ```
-$ transset-df .5 -n Conky
-
-```
-
-This should give your conky window true transparency. If you get an error like,
-
- `$ transset-df .5 -n Conky`  `No Window matching Conky exists!` 
-
-Verify that conky is running, and use xprop and click on the conky window to find the name you should pass to `transset-df`.
-
- `$ xprop | grep WM_NAME`  `WM_NAME(STRING) = "Conky (ArchitectLinux)"` 
-
-In this case, "Conky" is right, but for you it may be different, so be sure to use your output instead. If `~/.conkyrc` has `own_window_type panel` then this xprop invocation may show now output. Try using any of the following options instead. `own_window_type {dock,normal,override,desktop}`
-
-Use this in `~/.xinitrc` to have transparent conky run when you `startx`.
-
-```
-xcompmgr -c -t-5 -l-5 -r4.2 -o.55 &
-conky -d; sleep 1 && transset-df .5 -n Conky
+own_window_type = 'desktop',
 
 ```
 
-## See also
+请参阅“conky”帮助文档了解具体差异。但是，后一个选项允许您使用调整大小键绑定（例如OpenBox）将窗口捕捉到“conky”的边界，而第一个选项则没有。
 
-*   [Official Conky Configuration Settings](http://conky.sourceforge.net/config_settings.html)
-*   [Conky Configs on arch forums](https://bbs.archlinux.org/viewtopic.php?id=39906)
-*   [Official website](http://conky.sourceforge.net/)
-*   [Conky](http://freshmeat.net/projects/conky/) on [Freshmeat](https://en.wikipedia.org/wiki/Freshmeat "wikipedia:Freshmeat")
-*   [Conky](http://sourceforge.net/projects/conky/) on [SourceForge](https://en.wikipedia.org/wiki/sourceforge.net "wikipedia:sourceforge.net")
+### 在GNOME Shell集成
+
+有人在[GNOME](/index.php/GNOME "GNOME")内的*conky*经历了错误.
+
+在 `conky.conf`添加:
+
+```
+own_window = true,
+own_window_type = 'desktop',
+
+```
+
+### UTF-8 多字节字符固定滚动修复
+
+“conky”（1.9.0）的当前版本存在一个[bug](https://github.com/brndnmtthws/conky/issues/129) 其中滚动文本按字节而不是按字符递增，从而导致包含多字节字符的文本在滚动时消失并重新出现。在 AUR: [conky-utfscroll](https://aur.archlinux.org/packages/conky-utfscroll/)中可以找到修复此错误的补丁包。
+
+### 避免闪烁
+
+*Conky*需要X服务内的双重缓冲扩展名*(DBE)* 支持来避免闪烁，因为没有它，窗口就无法足够快速的更新窗口. 可以通过 在 `/etc/X11/xorg.conf` 里的 [Xorg](/index.php/Xorg "Xorg")通过在`"Module"`中添加`Load "dbe"` 选项来启动. `xorg.conf` 文件已经被包含特定配置文件的`/etc/X11/xorg.conf.d` 所替代(1.8.x 版本以上)。只要 *DBE* 存在于`/usr/lib/xorg/modules`它就会被自动加载. 加载模块列表可以使用 `grep LoadModule /var/log/Xorg.0.log`查看.
+
+要启用双重缓冲，请将`double_buffer`选项加入`conky.conf`:
+
+```
+ conky.config = {
+     double_buffer = true,
+ }
+
+```
+
+## 你还可以看
+
+*   [官方网站](https://github.com/brndnmtthws/conky)
+*   [官方配置的Conky变量](http://conky.sourceforge.net/config_settings.html)
+*   [官方Conky对象](http://conky.sourceforge.net/variables.html)
+*   [Arch论坛中的Conky配置](https://bbs.archlinux.org/viewtopic.php?id=39906)
+*   [Conky](http://freecode.com/projects/conky/) on [Freecode](https://en.wikipedia.org/wiki/Freecode "wikipedia:Freecode")
 *   [#conky](irc://chat.freenode.org/conky) IRC chat channel on [freenode](https://en.wikipedia.org/wiki/Freenode "wikipedia:Freenode")
-*   [FAQ](http://novel.evilcoder.org/wiki/index.php?title=ConkyFAQ&oldid=12463)
+*   [常见问题](http://novel.evilcoder.org/wiki/index.php?title=ConkyFAQ&oldid=12463)

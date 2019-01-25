@@ -831,7 +831,7 @@ if you have key authentication additionally activated then you should perform
 
 to see which authentication method it actually uses.
 
-For debugging you can enable DEBUG3 on the server and look into the journal using journalctl
+For debugging you can enable DEBUG3 on the server and look into the journal using [journalctl](/index.php/Journalctl "Journalctl").
 
 ### Nifty fine-tuning for complete password-free kerberos handling.
 

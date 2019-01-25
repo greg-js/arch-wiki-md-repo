@@ -96,6 +96,8 @@ Thunderbird can be extensively configured by clicking *Edit > Preferences > Adva
 
 ### Set the default browser
 
+Using Xfce 4.12, edit `/usr/share/applications/mimeinfo.cache` as **root** and change all occurrences of **chrome.desktop** to **firefox.desktop**, for example, to ensure Thunderbird launches Firefox instead of a different browser.
+
 **Note:** Since version 24 the `network.protocol-handler.app.*` keys have no effect and will not be able to set the default browser.
 
 Thunderbird uses the default browser as defined by the [XDG MIME Applications](/index.php/XDG_MIME_Applications "XDG MIME Applications"). This is commonly modified by [desktop environments](/index.php/Desktop_environment "Desktop environment") (for example [GNOME](/index.php/GNOME "GNOME")'s Control Center: *Details > Default Applications > Web*).

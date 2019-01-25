@@ -1,13 +1,3 @@
-ArchWiki RU Source: [https://www.netzob.org/repository/1.0rc1/Netzob-1.0rc1.pdf](https://www.netzob.org/repository/1.0rc1/Netzob-1.0rc1.pdf)
+Redirect to:
 
-## **NetZob**
-
-**Netzob** - Это open source инструмент для обратной инженерии и фазинга трафика общесетевых протоколов. Он может использоваться для вывода формата сообщения и состояния оборудования для протокола через пассивные и активные процессы. Позже, модели могут быть использованы для симуляции реалистичного и контролируемого трафика.
-
-## Основные черты NetZob:
-
-1\. **Protocol Vocabulary Modeling and Inference**. Netzob позволяет составлять модели представления формата сообщений протокола (aka **словари**). Используя специальные алгоритмы, можно научить их произвольным последовательностям.
-
-2\. **Protocol Grammar Modeling and Inference**. **Грамматика** объявляет валидные последовательности состояние оборудования для протокола обмена сообщениями.
-
-3\. **Protocol Simulation**.
+*   [ArchWiki:Archive](/index.php/ArchWiki:Archive "ArchWiki:Archive")

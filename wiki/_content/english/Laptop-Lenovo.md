@@ -71,8 +71,8 @@ install CD version
 install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
-| Lenovo ThinkPad E485 | 2018-10-01 | Yes | Yes | Yes | Yes | Yes | Yes | N/A | Missing IVRS map in ACPI Table, add `amd_iommu=pt ivrs_ioapic[32]=00:14.0` in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). In order to get microsd (SDHCI) working, `echo 'options sdhci debug_quirks2="0x8000"' > /etc/modprobe.d/sdhci.conf` and change module load order `MODULES=(sdhci sdhci_pci)` in `/etc/mkinitcpio.conf` (line 7). Don't forget to run `mkinitcpio -p linux` afterwards. |
-| Lenovo ThinkPad E585 | 2018-11-01 | Yes | Yes | Yes | Yes | Yes | Yes | N/A | Missing IVRS map in ACPI Table, add `amd_iommu=pt ivrs_ioapic[32]=00:14.0` in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") In order to get microsd (SDHCI) working, `echo 'options sdhci debug_quirks2="0x8000"' > /etc/modprobe.d/sdhci.conf` and change module load order `MODULES=(sdhci sdhci_pci)` in `/etc/mkinitcpio.conf` (line 7). Don't forget to run `mkinitcpio -p linux` afterwards. |
+| Lenovo ThinkPad E485 | 2018-10-01 | Yes | Yes | Yes | Yes | Yes | Yes | N/A | Missing IVRS map in ACPI Table, add `amd_iommu=pt ivrs_ioapic[32]=00:14.0` in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). In order to get X to work correctly, add `iommu=soft` in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") (Linux 4.20 only). In order to get microsd (SDHCI) working, `echo 'options sdhci debug_quirks2="0x8000"' > /etc/modprobe.d/sdhci.conf` and change module load order `MODULES=(sdhci sdhci_pci)` in `/etc/mkinitcpio.conf` (line 7). Don't forget to run `mkinitcpio -p linux` afterwards. |
+| Lenovo ThinkPad E585 | 2018-11-01 | Yes | Yes | Yes | Yes | Yes | Yes | N/A | Missing IVRS map in ACPI Table, add `amd_iommu=pt ivrs_ioapic[32]=00:14.0` in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). In order to get X to work correctly, add `iommu=soft` in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") (Linux 4.20 only). In order to get microsd (SDHCI) working, `echo 'options sdhci debug_quirks2="0x8000"' > /etc/modprobe.d/sdhci.conf` and change module load order `MODULES=(sdhci sdhci_pci)` in `/etc/mkinitcpio.conf` (line 7). Don't forget to run `mkinitcpio -p linux` afterwards. |
 
 #### L series
 
@@ -83,6 +83,7 @@ install CD version
 | [Lenovo ThinkPad L380 Yoga](/index.php/Lenovo_ThinkPad_L380_Yoga "Lenovo ThinkPad L380 Yoga") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | Trackpoint*, Fingerprint reader |
 | Lenovo ThinkPad L420 | Yes | Yes | Yes | Yes | Yes | Not tested | Yes | NA |
 | Lenovo ThinkPad L430 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | Trackpoint* |
+| Lenovo ThinkPad L440 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | Trackpoint (Touchpad cannot be disabled, as mouse buttons are shared with Trackpoint), Fingerprint reader, SD Card Reader |
 | Lenovo ThinkPad L520 | 2018.09.01-x86_64 | Yes | Yes | Yes | Yes | Not tested | Not tested | Not tested | Not tested |
 | Lenovo ThinkPad L530 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | Trackpoint*, Fingerprint reader |
 | Lenovo ThinkPad L560 | Yes | Yes | Yes | Yes | Yes | Not tested | Not tested | NA | Trackpoint |

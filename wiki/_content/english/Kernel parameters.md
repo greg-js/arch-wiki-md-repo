@@ -1,6 +1,6 @@
 There are three ways to pass options to the kernel and thus control its behaviour:
 
-1.  When building the kernel. See [Kernel#Compilation](/index.php/Kernel#Compilation "Kernel") for details.
+1.  When building the kernel. See [Kernel Compilation](/index.php/Kernel_Compilation "Kernel Compilation") for details.
 2.  When starting the kernel (usually, when invoked from a boot loader).
 3.  At runtime (through the files in `/proc` and `/sys`). See [sysctl](/index.php/Sysctl "Sysctl") for details.
 

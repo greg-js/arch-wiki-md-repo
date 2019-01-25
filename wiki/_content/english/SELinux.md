@@ -485,7 +485,7 @@ This is important in case you wish to understand how to build your own policies,
 
 ## Troubleshooting
 
-The place to look for SELinux errors is the systemd journal. In order to see SELinux messages related to the label `system_u:system_r:policykit_t:s0` (for example), you would need to run:
+The place to look for SELinux errors is the [systemd journal](/index.php/Systemd_journal "Systemd journal"). In order to see SELinux messages related to the label `system_u:system_r:policykit_t:s0` (for example), you would need to run:
 
 ```
 # journalctl _SELINUX_CONTEXT=system_u:system_r:policykit_t:s0

@@ -1,34 +1,64 @@
 Artículos relacionados
 
-*   [MS Fonts](/index.php/MS_Fonts "MS Fonts")
-*   [Configuración de fuentes Xorg.](/index.php?title=Configuraci%C3%B3n_de_fuentes_Xorg.&action=edit&redlink=1 "Configuración de fuentes Xorg. (page does not exist)")
+*   [Font configuration](/index.php/Font_configuration "Font configuration")
+*   [Linux console#Fonts](/index.php/Linux_console#Fonts "Linux console")
+*   [Java Runtime Environment fonts](/index.php/Java_Runtime_Environment_fonts "Java Runtime Environment fonts")
+*   [Metric-compatible fonts](/index.php/Metric-compatible_fonts "Metric-compatible fonts")
+*   [Microsoft fonts](/index.php/Microsoft_fonts "Microsoft fonts")
+
+De [Fuentes del ordenador (En ingles)](https://en.wikipedia.org/wiki/Computer_font "wikipedia:Computer font"): "Una tipografía del ordenador (o fuente) es un archivo de datos electrónicos que contiene un conjunto de glifos, caracteres, o símbolos como dingbats."
+
+Note que ciertas licencias de fuentes pueden imponer ciertas limitaciones legales.
 
 ## Contents
 
-*   [1 Introducción](#Introducci.C3.B3n)
-    *   [1.1 Diferentes clases de fuentes](#Diferentes_clases_de_fuentes)
-    *   [1.2 Instalando fuentes](#Instalando_fuentes)
-*   [2 Configuración](#Configuraci.C3.B3n)
-    *   [2.1 FreeType autohinter (opcional)](#FreeType_autohinter_.28opcional.29)
-    *   [2.2 Deshabilitar las Fuentes de mapa de Bits que son feas (opcional)](#Deshabilitar_las_Fuentes_de_mapa_de_Bits_que_son_feas_.28opcional.29)
-*   [3 Preguntas Más Frecuentes](#Preguntas_M.C3.A1s_Frecuentes)
+*   [1 Formatos de fuente](#Formatos_de_fuente)
+    *   [1.1 Formato bitmap](#Formato_bitmap)
+    *   [1.2 Formato de contorno](#Formato_de_contorno)
+    *   [1.3 Otros Formatos](#Otros_Formatos)
+*   [2 Instalando fuentes](#Instalando_fuentes)
+*   [3 Configuración](#Configuración)
+    *   [3.1 FreeType autohinter (opcional)](#FreeType_autohinter_(opcional))
+    *   [3.2 Deshabilitar las Fuentes de mapa de Bits que son feas (opcional)](#Deshabilitar_las_Fuentes_de_mapa_de_Bits_que_son_feas_(opcional))
+*   [4 Preguntas Más Frecuentes](#Preguntas_Más_Frecuentes)
 
-## Introducción
+## Formatos de fuente
 
-La instalación estándar de un escritorio en Arch Linux nos proporcionará un gran soporte de fuentes, con las últimas versiones estables de X org, X server, freetype2 (con el intérprete bytecode habilitado) y fontconfig. Para más información sobre la configuración de fuentes, podéis visitar [Configuración de fuentes](/index.php?title=Configuraci%C3%B3n_de_fuentes&action=edit&redlink=1 "Configuración de fuentes (page does not exist)").
+Muchos ordenadores que usan fuentes hoy en día están en un formato *mapa de bits* (bitmap) o en formato *contorno* (outline).
 
-### Diferentes clases de fuentes
+	Fuentes mapa de bits
 
-En Linux existen varias clases de fuentes.
+	Consisten en una matriz de puntos o píxeles que representa la imagen de cada glifo en cada cara y tamaño.
 
-*   fuentes bitmap (.pcf .bdf .pcf.gz .bdf.gz)
-*   fuentes PostScript (.pfa .pfb)
+	Fuentes de contorno o *vectoriales*
 
-(pfa:formato ascii; pfb:formato binario)
+	Usa curvas de Bézier, instrucciones de dibujo y formulas matemáticas para describir cada glifo, que marcan el contorno del carácter en cualquier tamaño.
 
-*   fuentes TrueType/OpenType (.ttf)
+### Formato bitmap
 
-### Instalando fuentes
+*   [Distribución del formato mapa de bits (inglés)](https://en.wikipedia.org/wiki/Glyph_Bitmap_Distribution_Format "wikipedia:Glyph Bitmap Distribution Format") (BDF) por Adobe.
+*   [Formato compilado portable (inglés)](https://en.wikipedia.org/wiki/Portable_Compiled_Format "wikipedia:Portable Compiled Format") (PCF) por Xorg.
+*   [Fuentes de pantalla PC](https://en.wikipedia.org/wiki/PC_Screen_Font "wikipedia:PC Screen Font") (PSF) usado por el Kernel para las fuentes de la consola, no soportada por Xorg (la extension de los archivos Unicode PSF es `psfu`)
+
+Estos formatos también pueden estar comprimidos. Vea [#Bitmap](#Bitmap) para ver las fuentes bitmap disponibles.
+
+### Formato de contorno
+
+*   [Fuentes PostScript](https://en.wikipedia.org/wiki/es:Tipo_de_letra_PostScript "wikipedia:es:Tipo de letra PostScript") por Adobe – con varios formatos, por ejemplo: Fuente ASCII de impresora (PFA) y fuente binaria de impresora (PFB)
+*   [TrueType](https://en.wikipedia.org/wiki/es:TrueType "wikipedia:es:TrueType") por Apple y Microsoft (extensión: `ttf`)
+*   [OpenType](https://en.wikipedia.org/wiki/es:OpenType "wikipedia:es:OpenType") por Microsoft, construido sobre TrueType (extensiones: `otf`, `ttf`)
+
+Para la mayoría de casos, la diferencia técnica entre TrueType y OpenType puede ignorarse.
+
+### Otros Formatos
+
+La aplicación de composición, *Tex*, Y su software complementario, *Metafuente*, renderiza caracteres utilizando sus propios métodos. Algunas de estas extensiones utilizadas por estos dos programas son `*pk`, `*gf`, `mf` y `vf`.
+
+[FontForge](https://fontforge.github.io/en-US/) ([fontforge](https://www.archlinux.org/packages/?name=fontforge)), un editor de fuentes, puede guardar fuentes en su propio formato basado en texto, `sfd`, base de datos de fuentes spline (*s*pline *f*ont *d*atabase).
+
+El formato [SGV](https://www.w3.org/TR/SVG/text.html#FontsGlyphs) tiene también su propio método para describir fuentes.
+
+## Instalando fuentes
 
 En un sistema Linux moderno, añadir e instalar fuentes resulta mucho más fácil que antes. Veremos a continuación algunos consejos que harán el proceso más claro y asequible para el usuario medio. En primer lugar hemos de plantearnos el lugar donde se guardarán las nuevas fuentes. En general, los directorios más usados son:
 

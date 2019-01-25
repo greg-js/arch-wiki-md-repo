@@ -344,6 +344,10 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 	[https://github.com/mariostg/nffm](https://github.com/mariostg/nffm) || [nffm-git](https://aur.archlinux.org/packages/nffm-git/)
 
+*   **nnn** — Tiny, lightning fast, feature-packed file manager.
+
+	[https://github.com/jarun/nnn](https://github.com/jarun/nnn) || [nnn](https://www.archlinux.org/packages/?name=nnn)
+
 *   **Pilot** — File manager that comes with the [Alpine](/index.php/Alpine "Alpine") email client.
 
 	[https://www.washington.edu/alpine/](https://www.washington.edu/alpine/) || [alpine](https://aur.archlinux.org/packages/alpine/)

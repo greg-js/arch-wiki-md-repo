@@ -21,7 +21,7 @@
     *   [2.5 Конфигурация DNS](#Конфигурация_DNS)
     *   [2.6 Запуск Docker с сетью, заданной вручную, в systemd-networkd](#Запуск_Docker_с_сетью,_заданной_вручную,_в_systemd-networkd)
     *   [2.7 Расположение образов](#Расположение_образов)
-    *   [2.8 Insecure registries](#Insecure_registries)
+    *   [2.8 Небезопасные реестры](#Небезопасные_реестры)
 *   [3 Docker 0.9.0 — 1.2.x и LXC](#Docker_0.9.0_—_1.2.x_и_LXC)
 *   [4 Skype](#Skype)
 *   [5 Сборка образа i686](#Сборка_образа_i686)
@@ -175,9 +175,9 @@ ExecStart=
 ExecStart=/usr/bin/dockerd --data-root=*/path/to/new/location/docker* -H fd://
 ```
 
-### Insecure registries
+### Небезопасные реестры
 
-If you decide to use a self signed certificate for your private registry, Docker will refuse to use it until you declare that you trust it. Add a [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") for the `docker.service`, adding the `--insecure-registry` parameter to the `dockerd`:
+Если вы решите использовать самозаверенный сертификат для своего личного реестра, Docker откажется использовать его, пока вы не заявите, что доверяете ему. Добавьте [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") для `docker.service`, добавив `--insecure-registry` параметр в `dockerd`:
 
  `/etc/systemd/system/docker.service.d/override.conf` 
 ```

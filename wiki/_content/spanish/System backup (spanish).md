@@ -63,7 +63,7 @@ Para [Syslinux (Español)](/index.php/Syslinux_(Espa%C3%B1ol) "Syslinux (Españo
 
 Para [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)"), es recomendable [generar el archivo de configuración principal](/index.php/GRUB_(Espa%C3%B1ol)#Generar_el_archivo_de_configuración_principal "GRUB (Español)") automáticamente. Si desea instalar todos los archivos de GRUB en otro lugar que no sea `/boot`, como por ejemplo `/mnt/newroot/boot`, utilice el parámetro `--boot-directory`.
 
-Verifique también la nueva entrada del menú en `/boot/grub/grub.cfg`. Asegúrese de que el UUID coincida con el de la nueva partición, de lo contrario aún podría iniciar el sistema anterior. Encuentre el UUID de una partición con la orden [lsblk](/index.php/Lsblk "Lsblk"):
+Verifique también la nueva entrada del menú en `/boot/grub/grub.cfg`. Asegúrese de que el UUID coincida con el de la nueva partición, de lo contrario aún podría iniciar el sistema anterior. Encuentre el UUID de una partición con la orden [lsblk](/index.php/Lsblk_(Espa%C3%B1ol) "Lsblk (Español)"):
 
 ```
 $ lsblk -no NAME,UUID /dev/sdb3
