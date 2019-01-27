@@ -51,6 +51,7 @@
 
 ### Ресурсы в Telegram про Arch Linux
 
+*   [archlinux_ru](https://t.me/archlinux_ru) — неофициальная группа русскоговорящего сообщества Arch Linux.
 *   [Arch Linux RU](https://t.me/ArchLinuxChatRU) — неофициальная группа сообщества Arch Linux в СНГ.
 *   [Arch Linux](https://t.me/archlinuxgroup) — неофициальная группа для обсуждения всего о Arch Linux (на английском).
 *   [ArchWikiBot](https://t.me/archewikibot) — встроенный бот для поиска в ArchWiki.

@@ -80,44 +80,48 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
         *   [9.2.2 Network drivers](#Network_drivers)
         *   [9.2.3 Balloon driver](#Balloon_driver)
     *   [9.3 Preparing a FreeBSD guest](#Preparing_a_FreeBSD_guest)
-*   [10 QEMU Monitor](#QEMU_Monitor)
+*   [10 QEMU monitor](#QEMU_monitor)
     *   [10.1 Accessing the monitor console](#Accessing_the_monitor_console)
     *   [10.2 Sending keyboard presses to the virtual machine using the monitor console](#Sending_keyboard_presses_to_the_virtual_machine_using_the_monitor_console)
     *   [10.3 Creating and managing snapshots via the monitor console](#Creating_and_managing_snapshots_via_the_monitor_console)
     *   [10.4 Running the virtual machine in immutable mode](#Running_the_virtual_machine_in_immutable_mode)
     *   [10.5 Pause and power options via the monitor console](#Pause_and_power_options_via_the_monitor_console)
     *   [10.6 Taking screenshots of the virtual machine](#Taking_screenshots_of_the_virtual_machine)
-*   [11 Tips and tricks](#Tips_and_tricks)
-    *   [11.1 Improve virtual machine performance](#Improve_virtual_machine_performance)
-    *   [11.2 Starting QEMU virtual machines on boot](#Starting_QEMU_virtual_machines_on_boot)
-        *   [11.2.1 With libvirt](#With_libvirt)
-        *   [11.2.2 With systemd service](#With_systemd_service)
-    *   [11.3 Mouse integration](#Mouse_integration)
-    *   [11.4 Pass-through host USB device](#Pass-through_host_USB_device)
-    *   [11.5 USB redirection with SPICE](#USB_redirection_with_SPICE)
-    *   [11.6 Enabling KSM](#Enabling_KSM)
-    *   [11.7 Multi-monitor support](#Multi-monitor_support)
-    *   [11.8 Copy and paste](#Copy_and_paste)
-    *   [11.9 Windows-specific notes](#Windows-specific_notes)
-        *   [11.9.1 Fast startup](#Fast_startup)
-        *   [11.9.2 Remote Desktop Protocol](#Remote_Desktop_Protocol)
-    *   [11.10 Clone Linux system installed on physical equipment](#Clone_Linux_system_installed_on_physical_equipment)
-*   [12 Troubleshooting](#Troubleshooting)
-    *   [12.1 Mouse cursor is jittery or erratic](#Mouse_cursor_is_jittery_or_erratic)
-    *   [12.2 No visible Cursor](#No_visible_Cursor)
-    *   [12.3 Two different mouse cursors are visible](#Two_different_mouse_cursors_are_visible)
-    *   [12.4 Keyboard issues when using VNC](#Keyboard_issues_when_using_VNC)
-    *   [12.5 Keyboard seems broken or the arrow keys do not work](#Keyboard_seems_broken_or_the_arrow_keys_do_not_work)
-    *   [12.6 Guest display stretches on window resize](#Guest_display_stretches_on_window_resize)
-    *   [12.7 ioctl(KVM_CREATE_VM) failed: 16 Device or resource busy](#ioctl(KVM_CREATE_VM)_failed:_16_Device_or_resource_busy)
-    *   [12.8 libgfapi error message](#libgfapi_error_message)
-    *   [12.9 Kernel panic on LIVE-environments](#Kernel_panic_on_LIVE-environments)
-    *   [12.10 Windows 7 guest suffers low-quality sound](#Windows_7_guest_suffers_low-quality_sound)
-    *   [12.11 Could not access KVM kernel module: Permission denied](#Could_not_access_KVM_kernel_module:_Permission_denied)
-    *   [12.12 "System Thread Exception Not Handled" when booting a Windows VM](#"System_Thread_Exception_Not_Handled"_when_booting_a_Windows_VM)
-    *   [12.13 Certain Windows games/applications crashing/causing a bluescreen](#Certain_Windows_games/applications_crashing/causing_a_bluescreen)
-    *   [12.14 Applications in the VM experience long delays or take a long time to start](#Applications_in_the_VM_experience_long_delays_or_take_a_long_time_to_start)
-*   [13 See also](#See_also)
+*   [11 QEMU machine protocol](#QEMU_machine_protocol)
+    *   [11.1 Start QMP](#Start_QMP)
+    *   [11.2 Live merging of child image into parent image](#Live_merging_of_child_image_into_parent_image)
+    *   [11.3 Live creation of a new snapshot](#Live_creation_of_a_new_snapshot)
+*   [12 Tips and tricks](#Tips_and_tricks)
+    *   [12.1 Improve virtual machine performance](#Improve_virtual_machine_performance)
+    *   [12.2 Starting QEMU virtual machines on boot](#Starting_QEMU_virtual_machines_on_boot)
+        *   [12.2.1 With libvirt](#With_libvirt)
+        *   [12.2.2 With systemd service](#With_systemd_service)
+    *   [12.3 Mouse integration](#Mouse_integration)
+    *   [12.4 Pass-through host USB device](#Pass-through_host_USB_device)
+    *   [12.5 USB redirection with SPICE](#USB_redirection_with_SPICE)
+    *   [12.6 Enabling KSM](#Enabling_KSM)
+    *   [12.7 Multi-monitor support](#Multi-monitor_support)
+    *   [12.8 Copy and paste](#Copy_and_paste)
+    *   [12.9 Windows-specific notes](#Windows-specific_notes)
+        *   [12.9.1 Fast startup](#Fast_startup)
+        *   [12.9.2 Remote Desktop Protocol](#Remote_Desktop_Protocol)
+    *   [12.10 Clone Linux system installed on physical equipment](#Clone_Linux_system_installed_on_physical_equipment)
+*   [13 Troubleshooting](#Troubleshooting)
+    *   [13.1 Mouse cursor is jittery or erratic](#Mouse_cursor_is_jittery_or_erratic)
+    *   [13.2 No visible Cursor](#No_visible_Cursor)
+    *   [13.3 Two different mouse cursors are visible](#Two_different_mouse_cursors_are_visible)
+    *   [13.4 Keyboard issues when using VNC](#Keyboard_issues_when_using_VNC)
+    *   [13.5 Keyboard seems broken or the arrow keys do not work](#Keyboard_seems_broken_or_the_arrow_keys_do_not_work)
+    *   [13.6 Guest display stretches on window resize](#Guest_display_stretches_on_window_resize)
+    *   [13.7 ioctl(KVM_CREATE_VM) failed: 16 Device or resource busy](#ioctl(KVM_CREATE_VM)_failed:_16_Device_or_resource_busy)
+    *   [13.8 libgfapi error message](#libgfapi_error_message)
+    *   [13.9 Kernel panic on LIVE-environments](#Kernel_panic_on_LIVE-environments)
+    *   [13.10 Windows 7 guest suffers low-quality sound](#Windows_7_guest_suffers_low-quality_sound)
+    *   [13.11 Could not access KVM kernel module: Permission denied](#Could_not_access_KVM_kernel_module:_Permission_denied)
+    *   [13.12 "System Thread Exception Not Handled" when booting a Windows VM](#"System_Thread_Exception_Not_Handled"_when_booting_a_Windows_VM)
+    *   [13.13 Certain Windows games/applications crashing/causing a bluescreen](#Certain_Windows_games/applications_crashing/causing_a_bluescreen)
+    *   [13.14 Applications in the VM experience long delays or take a long time to start](#Applications_in_the_VM_experience_long_delays_or_take_a_long_time_to_start)
+*   [14 See also](#See_also)
 
 ## Installation
 
@@ -279,7 +283,7 @@ By default, QEMU will show the virtual machine's video output in a window. One t
 
 KVM must be supported by your processor and kernel, and necessary [kernel modules](/index.php/Kernel_modules "Kernel modules") must be loaded. See [KVM](/index.php/KVM "KVM") for more information.
 
-To start QEMU in KVM mode, append `-enable-kvm` to the additional start options. To check if KVM is enabled for a running VM, enter the QEMU [Monitor](https://en.wikibooks.org/wiki/QEMU/Monitor) using `Ctrl+Alt+Shift+2`, and type `info kvm`.
+To start QEMU in KVM mode, append `-enable-kvm` to the additional start options. To check if KVM is enabled for a running VM, enter the [#QEMU monitor](#QEMU_monitor) using `Ctrl+Alt+Shift+2`, and type `info kvm`.
 
 **Note:**
 
@@ -1450,13 +1454,13 @@ sed -i bak "s/ada/vtbd/g" /etc/fstab
 
 And verify that `/etc/fstab` is consistent. If anything goes wrong, just boot into a rescue CD and copy `/etc/fstab.bak` back to `/etc/fstab`.
 
-## QEMU Monitor
+## QEMU monitor
 
-While QEMU is running, a monitor console is provided in order to provide several ways to interact with the virtual machine running. The QEMU Monitor offers interesting capabilities such as obtaining information about the current virtual machine, hotplugging devices, creating snapshots of the current state of the virtual machine, etc. To see the list of all commands, run `help` or `?` in the QEMU monitor console or review the relevant section of the [official QEMU documentation](https://qemu.weilnetz.de/doc/qemu-doc.html#pcsys_005fmonitor).
+While QEMU is running, a monitor console is provided in order to provide several ways to interact with the virtual machine running. The QEMU monitor offers interesting capabilities such as obtaining information about the current virtual machine, hotplugging devices, creating snapshots of the current state of the virtual machine, etc. To see the list of all commands, run `help` or `?` in the QEMU monitor console or review the relevant section of the [official QEMU documentation](https://qemu.weilnetz.de/doc/qemu-doc.html#pcsys_005fmonitor).
 
 ### Accessing the monitor console
 
-When using the `std` default graphics option, one can access the QEMU Monitor by pressing `Ctrl+Alt+2` or by clicking *View > compatmonitor0* in the QEMU window. To return to the virtual machine graphical view either press `Ctrl+Alt+1` or click *View > VGA*.
+When using the `std` default graphics option, one can access the QEMU monitor by pressing `Ctrl+Alt+2` or by clicking *View > compatmonitor0* in the QEMU window. To return to the virtual machine graphical view either press `Ctrl+Alt+1` or click *View > VGA*.
 
 However, the standard method of accessing the monitor is not always convenient and does not work in all graphic outputs QEMU supports. Alternative options of accessing the monitor are described below:
 
@@ -1554,6 +1558,70 @@ Screenshots of the virtual machine graphic display can be obtained in the PPM fo
 
 ```
 
+## QEMU machine protocol
+
+The QEMU machine protocol (QMP) is a JSON-based protocol which allows applications to control a QEMU instance. Similarly to the [#QEMU monitor](#QEMU_monitor) it offers ways to interact with a running machine and the JSON protocol allows to do it programmatically. The description of all the QMP commands can be found in [qmp-commands](https://raw.githubusercontent.com/coreos/qemu/master/qmp-commands.hx).
+
+### Start QMP
+
+The usual way to control the guest using the QMP protocol, is to open a TCP socket when launching the machine using the `-qmp` option. Here it is using for example the TCP port 4444:
+
+```
+ $ qemu-system-x86_64 *[...]* -qmp tcp:localhost:4444,server,nowait
+
+```
+
+Then one way to communicate with the QMP agent is to use [netcat](/index.php/Netcat "Netcat"):
+
+ `nc localhost 4444`  `{"QMP": {"version": {"qemu": {"micro": 0, "minor": 1, "major": 3}, "package": ""}, "capabilities": []} } ` 
+
+At this stage, the only command that can be recognized is `qmp_capabilities`, so that QMP enters into command mode. Type:
+
+```
+ {"execute": "qmp_capabilities"}
+
+```
+
+Now, QMP is ready to receive commands, to retrieve the list of recognized commands, use:
+
+```
+ {"execute": "query-commands"}
+
+```
+
+### Live merging of child image into parent image
+
+It is possible to merge a running snapshot into its parent by issuing a `block-commit` command. In its simplest form the following line will commit the child into its parent:
+
+```
+ {"execute": "block-commit", "arguments": {"device": "*devicename*"}}
+
+```
+
+Upon reception of this command, the handler looks for the base image and converts it from read only to read write mode and then runs the commit job.
+
+Once the *block-commit* operation has completed, the event `BLOCK_JOB_READY` will be emitted, signalling that the synchronization has finished. The job can then be gracefully completed by issuing the command `block-job-complete`:
+
+```
+ {"execute": "block-job-complete", "arguments": {"device": "*devicename*"}}
+
+```
+
+Until such a command is issued, the *commit* operation remains active. After successful completion, the base image remains in read write mode and becomes the new active layer. On the other hand, the child image becomes invalid and it is the responsibility of the user to clean it up.
+
+**Tip:** The list of device and their names can be retrieved by executing the command `query-block` and parsing the results. The device name is in the `device` field, for example `ide0-hd0` for the hard disk in this example: `{"execute": "query-block"}`  `{"return": [{"io-status": "ok", "device": "**ide0-hd0**", "locked": false, "removable": false, "inserted": {"iops_rd": 0, "detect_zeroes": "off", "image": {"backing-image": {"virtual-size": 27074281472, "filename": "parent.qcow2", ... } ` 
+
+### Live creation of a new snapshot
+
+To create a new snapshot out of a running image, run the command:
+
+```
+ {"execute": "blockdev-snapshot-sync", "arguments": {"device": "*devicename*","snapshot-file": "*new_snapshot_name*.qcow2"}}
+
+```
+
+This creates an overlay file named `*new_snapshot_name*.qcow2` which then becomes the new active layer.
+
 ## Tips and tricks
 
 ### Improve virtual machine performance
@@ -1562,7 +1630,7 @@ There are a number of techniques that you can use to improve the performance of 
 
 *   Use the `-cpu host` option to make QEMU emulate the host's exact CPU. If you do not do this, it may be trying to emulate a more generic CPU.
 *   Especially for Windows guests, enable [Hyper-V enlightenments](http://blog.wikichoon.com/2014/07/enabling-hyper-v-enlightenments-with-kvm.html): `-cpu host,hv_relaxed,hv_spinlocks=0x1fff,hv_vapic,hv_time`.
-*   If the host machine has multiple CPUs, assign the guest more CPUs using the `-smp` option.
+*   If the host machine has multiple cores, assign the guest more cores using the `-smp` option.
 *   Make sure you have assigned the virtual machine enough memory. By default, QEMU only assigns 128 MiB of memory to each virtual machine. Use the `-m` option to assign more memory. For example, `-m 1024` runs a virtual machine with 1024 MiB of memory.
 *   Use KVM if possible: add `-machine type=pc,accel=kvm` to the QEMU start command you use.
 *   If supported by drivers in the guest operating system, use [virtio](http://wiki.libvirt.org/page/Virtio) for network and/or block devices. For example:

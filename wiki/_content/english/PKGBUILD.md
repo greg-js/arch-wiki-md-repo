@@ -120,7 +120,7 @@ An array of architectures that the PKGBUILD is intended to build and work on. Ar
 
 If a package is architecture-independent in its compiled state (shell scripts, fonts, themes, many types of extensions, etc.) then use `arch=('any')`. Please note that, as this is intended for packages that can be built once and used on any architecture, it will cause the package to be labeled `-any` as opposed to `-x86_64`, etc.
 
-If instead a package can be compiled for any architecture, but is architecture-specific once compiled, specify all architectures officially supported by Arch, i.e. `arch=('x86_64')`.
+If instead a package can be compiled for any architecture, but is architecture-specific once compiled, specify the architectures the package is known to compile on successfully (which should at least include `x86_64`, Arch's officially-supported architecture).
 
 The target architecture can be accessed with the variable `$CARCH` during a build.
 

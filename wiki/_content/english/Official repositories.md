@@ -141,7 +141,7 @@ This repository is similar to the *testing* repository, but for packages that ar
 
 ### gnome-unstable
 
-This repository contains the latest version of the [GNOME](/index.php/GNOME "GNOME") desktop environment, before it moves to the main *testing* repository.
+This repository contains testing packages for the next stable or stable release candidate version of the [GNOME](/index.php/GNOME "GNOME") desktop environment, before they are moved to the main *testing* repository.
 
 To enable it, add the following lines to `/etc/pacman.conf`:
 

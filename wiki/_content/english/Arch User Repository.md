@@ -286,7 +286,7 @@ $ git push
 
 **Note:** If `.SRCINFO` was not included in your first commit, add it by [rebasing with --root](https://git-scm.com/docs/git-rebase#git-rebase---root) or [filtering the tree](https://git-scm.com/docs/git-filter-branch#git-filter-branch---tree-filterltcommandgt) so the AUR will permit your initial push.
 
-**Tip:** To keep the working directory and commits as clean as possible, create a `.gitignore` that [excludes all files](/index.php/Dotfiles#Using_gitignore "Dotfiles") and force-add files as needed.
+**Tip:** To keep the working directory and commits as clean as possible, create a [gitignore(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gitignore.5) that excludes all files and force-add files as needed.
 
 ### Maintaining packages
 

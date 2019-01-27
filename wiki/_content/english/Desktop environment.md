@@ -30,7 +30,7 @@ Prior to installing a desktop environment, a functional X server installation is
 
 *   **[Budgie](/index.php/Budgie "Budgie")** — Budgie is a desktop environment designed with the modern user in mind, it focuses on simplicity and elegance.
 
-	[https://budgie-desktop.org/](https://budgie-desktop.org/) || [budgie-desktop](https://www.archlinux.org/packages/?name=budgie-desktop)
+	[https://getsol.us/](https://getsol.us/) || [budgie-desktop](https://www.archlinux.org/packages/?name=budgie-desktop)
 
 *   **[Cinnamon](/index.php/Cinnamon "Cinnamon")** — Cinnamon strives to provide a traditional user experience. Cinnamon is a fork of GNOME 3.
 

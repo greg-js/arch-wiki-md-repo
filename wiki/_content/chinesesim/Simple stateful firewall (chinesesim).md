@@ -1,7 +1,5 @@
 **翻译状态：** 本文是英文页面 [Simple_stateful_firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-10-18，点击[这里](https://wiki.archlinux.org/index.php?title=Simple_stateful_firewall&diff=0&oldid=400995)可以查看翻译后英文页面的改动。
 
-This page explains how to set up a stateful firewall using [iptables](/index.php/Iptables "Iptables"). It also explains what the rules mean and why they are needed. For simplicity, it is split into two major sections. The first section deals with a firewall for a single machine, the second sets up a NAT gateway in addition to the firewall from the first section.
-
 这篇文件解释了如何使用 [iptables](/index.php/Iptables_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Iptables (简体中文)") 建立状态防火墙。也解释了规则的含义以及为何需要这些规则，为简单起见，文章分成两个主要章节，第一章节讲解在单独一台计算机上使用 iptables，第二章节在第一章节基础上建立一个 NAT 网关。
 
 **Warning:** The rules are given in the order that they are executed. If you are logged into a remote machine, you may be locked out of the machine while setting up the rules. You should only follow the steps below while you are logged in locally.
@@ -14,10 +12,10 @@ The [example config file](/index.php/Simple_stateful_firewall#Example_iptables.r
 
 ## Contents
 
-*   [1 前提条件](#.E5.89.8D.E6.8F.90.E6.9D.A1.E4.BB.B6)
+*   [1 前提条件](#前提条件)
 *   [2 Firewall for a single machine](#Firewall_for_a_single_machine)
-    *   [2.1 创建必要的链](#.E5.88.9B.E5.BB.BA.E5.BF.85.E8.A6.81.E7.9A.84.E9.93.BE)
-    *   [2.2 FORWARD 链](#FORWARD_.E9.93.BE)
+    *   [2.1 创建必要的链](#创建必要的链)
+    *   [2.2 FORWARD 链](#FORWARD_链)
     *   [2.3 The OUTPUT chain](#The_OUTPUT_chain)
     *   [2.4 The INPUT chain](#The_INPUT_chain)
     *   [2.5 Example iptables.rules file](#Example_iptables.rules_file)
@@ -25,7 +23,7 @@ The [example config file](/index.php/Simple_stateful_firewall#Example_iptables.r
         *   [2.6.1 Opening ports to incoming connections](#Opening_ports_to_incoming_connections)
         *   [2.6.2 Port knocking](#Port_knocking)
     *   [2.7 Protection against spoofing attacks](#Protection_against_spoofing_attacks)
-    *   [2.8 "Hide" your computer](#.22Hide.22_your_computer)
+    *   [2.8 "Hide" your computer](#"Hide"_your_computer)
         *   [2.8.1 Block ping request](#Block_ping_request)
         *   [2.8.2 Tricking port scanners](#Tricking_port_scanners)
             *   [2.8.2.1 SYN scans](#SYN_scans)
@@ -94,7 +92,7 @@ num   pkts bytes target     prot opt in     out     source               destina
 
 ```
 
-否则，参阅 [Iptables (简体中文)#重置规则](/index.php/Iptables_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E9.87.8D.E7.BD.AE.E8.A7.84.E5.88.99 "Iptables (简体中文)")。
+否则，参阅 [Iptables (简体中文)#重置规则](/index.php/Iptables_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#重置规则 "Iptables (简体中文)")。
 
 ## Firewall for a single machine
 
@@ -417,7 +415,7 @@ If either or both of the portscanning tricks above were used the final default r
 
 ### Protection against other attacks
 
-See the [sysctl#TCP/IP stack hardening](/index.php/Sysctl#TCP.2FIP_stack_hardening "Sysctl") for relevant kernel parameters.
+See the [sysctl#TCP/IP stack hardening](/index.php/Sysctl#TCP/IP_stack_hardening "Sysctl") for relevant kernel parameters.
 
 #### Bruteforce attacks
 

@@ -186,6 +186,8 @@ ListenStream=12345
 
 **Tip:** When using socket activation a transient instance of `sshd@.service` will be started for each connection (with different instance names). Therefore, neither `sshd.socket` nor the daemon's regular `sshd.service` allow to monitor connection attempts in the log. The logs of socket-activated instances of SSH can be seen with `journalctl -u "sshd@*"` or with `journalctl /usr/bin/sshd`.
 
+**Note:** Even the `sshd.socket` unit may fail (e.g. due to out-of-memory situation) and `Restart=always` cannot be specified on socket units. [[6]](https://github.com/systemd/systemd/issues/11553)
+
 ### Protection
 
 Allowing remote log-on through SSH is good for administrative purposes, but can pose a threat to your server's security. Often the target of brute force attacks, SSH access needs to be limited properly to prevent third parties gaining access to your server.
@@ -964,7 +966,7 @@ The `reliability` (`0x04`) type-of-service should resolve the issue, as well as 
 
 ### Slow daemon startup after reboot
 
-If you are experiencing excessively long daemon startup times after reboots (e.g. several minutes before the daemon starts accepting connections), especially on headless or virtualized servers, it may be due to a lack of entropy.[[8]](https://bbs.archlinux.org/viewtopic.php?id=241954) This can be remedied by installing either [Rng-tools](/index.php/Rng-tools "Rng-tools") or [Haveged](/index.php/Haveged "Haveged"), as appropriate for your system. However, take note of the associated security implications discussed in each package's respective wiki page.
+If you are experiencing excessively long daemon startup times after reboots (e.g. several minutes before the daemon starts accepting connections), especially on headless or virtualized servers, it may be due to a lack of entropy.[[9]](https://bbs.archlinux.org/viewtopic.php?id=241954) This can be remedied by installing either [Rng-tools](/index.php/Rng-tools "Rng-tools") or [Haveged](/index.php/Haveged "Haveged"), as appropriate for your system. However, take note of the associated security implications discussed in each package's respective wiki page.
 
 ## See also
 

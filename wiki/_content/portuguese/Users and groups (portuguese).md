@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Users and groups](/index.php/Users_and_groups "Users and groups"). Data da última tradução: 2019-11-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Users_and_groups&diff=0&oldid=562974) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Users and groups](/index.php/Users_and_groups "Users and groups"). Data da última tradução: 2019-01-25\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Users_and_groups&diff=0&oldid=564645) na versão em inglês.
 
 Artigos relacionados
 
@@ -141,22 +141,18 @@ As ferramentas de gerenciamento de usuários, grupos e senhas no Arch Linux vem 
 
 ## Gerenciamento de usuário
 
-Para listar os usuários conectados no sistema, o comando *who* pode ser usado. Para listar todas as contas de usuários existentes, incluindo suas propriedades armazenadas na base de dados de [usuário](#Base_de_dados_de_usuários), execute `passwd -Sa` como root. Veja [passwd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/passwd.1) para a descrição do formato de saída.
+Para listar os usuários conectados no sistema, o comando `who` pode ser usado. Para listar todas as contas de usuários existentes, incluindo suas propriedades armazenadas na base de dados de [usuário](#Base_de_dados_de_usuários), execute `passwd -Sa` como root. Veja [passwd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/passwd.1) para a descrição do formato de saída.
 
 Para adicionar um novo usuário, use o comando *useradd*:
 
 ```
-# useradd -m -g *grupo_inicial* -G *grupos_adicionais* -s *shell_de_login* *nome_de_usuário*
+# useradd -m -G *grupos_adicionais* -s *shell_de_login* *nome_de_usuário*
 
 ```
 
 	`-m`/`--create-home`
 
 	cria o diretório pessoal do usuário como `/home/*nome_de_usuário*`. Dentro de seu diretório pessoal, um usuário que não seja root pode escrever arquivos, exclui-los, instalar programas e por aí vai.
-
-	`-g`/`--gid`
-
-	define o nome ou número de grupo do grupo inicial do usuário. Se especificado, o nome de grupo deve existir; se um número de grupo for fornecido, ele deve se referir a um grupo já existente. Se não especificado, o comportamento de *useradd* vai depender da variável `USERGROUPS_ENAB` contida em `/etc/login.defs`. O comportamento padrão (`USERGROUPS_ENAB yes`) é criar um grupo com o nome igual ao nome de usuário, com `GID` igual a `UID`.
 
 	`-G`/`--groups`
 
@@ -169,6 +165,8 @@ Para adicionar um novo usuário, use o comando *useradd*:
 **Atenção:** Para ser capaz de se autenticar, o shell de login deve ser um dos listados em `/etc/shells`, do contrário o módulo [PAM](/index.php/PAM "PAM")`pam_shell` vai negar a requisição de login. Em especial, não use o caminho `/usr/bin/bash` em vez de `/bin/bash`, a menos que propriamente configurado em `/etc/shells`.
 
 **Nota:** A senha para o usuário recém criado deve então ser definido, usando *passwd* conforme mostrado em [#Exemplo de adicionar um usuário](#Exemplo_de_adicionar_um_usuário).
+
+Se um grupo inicial do usuário for especificado por nome e número, deve se referir a um grupo já existente. Se não especificado, o comportamento de *useradd* vai depender da variável `USERGROUPS_ENAB` contida em `/etc/login.defs`. O comportamento padrão (`USERGROUPS_ENAB yes`) é criar um grupo com o nome igual ao nome de usuário, com `GID` igual a `UID`.
 
 Quando o shell de login destina-se a ser não funcional, por exemplo quando a conta de usuário é criada para um serviço específico, `/usr/bin/nologin` pode ser especificado no lugar de uma shell comum para educadamente recusar um login (veja [nologin(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nologin.8)).
 
@@ -438,7 +436,7 @@ Essa seção explica o propósito dos grupos essenciais do pacote [core/filesyst
 Usuários não *root* de estação de trabalho ou desktop frequentemente precisam ser adicionados a alguns dos grupos a seguir para permitir acesso a periféricos de hardware e facilitar administração de sistema:
 
 | Grupo | Arquivos afetados | Propósito |
-| adm | Grupo administrativo, similar ao `wheel`. |
+| adm | Grupo administrativo, geralmente usado para fornecer acesso de leitura a logs protegidos (incluindo arquivos [journal](/index.php/Systemd_(Portugu%C3%AAs)#Journal "Systemd (Português)")). |
 | ftp | `/srv/ftp/` | Acesso a arquivos servidos por servidores [FTP](https://en.wikipedia.org/wiki/pt:FTP "wikipedia:pt:FTP"). |
 | games | `/var/games` | Acesso a alguns softwares de jogos. |
 | http | `/srv/http/` | Acesso a arquivos servidos por servidores [HTTP](https://en.wikipedia.org/wiki/pt:HTTP "wikipedia:pt:HTTP"). |
@@ -448,7 +446,7 @@ Usuários não *root* de estação de trabalho ou desktop frequentemente precisa
 | systemd-journal | `/var/log/journal/*` | Pode ser usado para fornecer acesso somente leitura aos logs do systemd, como uma alternativa ao `adm` e ao `wheel` [[1]](https://cgit.freedesktop.org/systemd/systemd/tree/README?id=fdbbf0eeda929451e2aaf34937a72f03a225e315#n190). Do contrário, apenas mensagens geradas pelo usuário são exibidas. |
 | users | Grupo padrão de usuários. |
 | uucp | `/dev/ttyS[0-9]+`, `/dev/tts/[0-9]+`, `/dev/ttyUSB[0-9]+`, `/dev/ttyACM[0-9]+`, `/dev/rfcomm[0-9]+` | Portas seriais RS-232 e dispositivos conectados a elas. |
-| wheel | Grupo administrativo, comumente usado para dar acesso aos utilitários [sudo](/index.php/Sudo "Sudo") e [su](/index.php/Su "Su") (nenhum deles usa-o por padrão, sendo configurável em `/etc/pam.d/su` e `/etc/pam.d/su-l`). Também pode ser usado para ganhar acesso total de leitura aos arquivos de [journal](/index.php/Systemd_(Portugu%C3%AAs)#Journal "Systemd (Português)"). |
+| wheel | Grupo administrativo, comumente usado a dar privilégios para realizar ações administrativas. Pode ser usado para dar acesso aos utilitários [sudo](/index.php/Sudo "Sudo") e [su](/index.php/Su "Su") (nenhum deles usa-o por padrão, sendo configurável em `/etc/pam.d/su` e `/etc/pam.d/su-l`). Também tem acesso total de leitura aos arquivos de [journal](/index.php/Systemd_(Portugu%C3%AAs)#Journal "Systemd (Português)"). |
 
 ### Grupos de sistema
 

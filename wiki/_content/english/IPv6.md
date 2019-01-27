@@ -237,7 +237,7 @@ Prefix delegation is a common IPv6 deployment technique used by many ISPs. It is
 
 ### With dibbler
 
-[Dibbler](http://klub.com.pl/dhcpv6/) is a portable DHCPv6 client a server which can be used for Prefix delegation. It is available in the [AUR](/index.php/AUR "AUR") as [dibbler](https://aur.archlinux.org/packages/dibbler/).
+[Dibbler](http://klub.com.pl/dhcpv6/) is a portable DHCPv6 client and server which can be used for Prefix delegation. It can be [installed](/index.php/Install "Install") with [dibbler](https://aur.archlinux.org/packages/dibbler/) package.
 
 If you are using `dibbler` edit `/etc/dibbler/client.conf`
 
@@ -277,11 +277,11 @@ ia_pd 1 LAN
 
 This configuration will ask for a prefix from WAN interface (`WAN`) and delegate it to the internal interface (`LAN`). In the event that a `/64` range is issued, you will need to use the 2nd `ia_pd instruction` that is commented out instead. It will also disable router solicitations on all interfaces except for the WAN interface (`WAN`).
 
-**Tip:** Also read [dhcpcd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.8)and [dhcpcd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5).
+**Tip:** Also read [dhcpcd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.8) and [dhcpcd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5).
 
 ### With WIDE-DHCPv6
 
-[WIDE-DHCPv6](http://wide-dhcpv6.sourceforge.net/) is an open-source implementation of Dynamic Host Configuration Protocol for IPv6 (DHCPv6) originally developed by the KAME project. It is available in the [AUR](/index.php/AUR "AUR") as [wide-dhcpv6](https://aur.archlinux.org/packages/wide-dhcpv6/).
+[WIDE-DHCPv6](http://wide-dhcpv6.sourceforge.net/) is an open-source implementation of Dynamic Host Configuration Protocol for IPv6 (DHCPv6) originally developed by the KAME project. It can be [installed](/index.php/Install "Install") with [wide-dhcpv6](https://aur.archlinux.org/packages/wide-dhcpv6/).
 
 If you are using `wide-dhcpv6` edit `/etc/wide-dhcpv6/dhcp6c.conf`
 
@@ -303,12 +303,7 @@ id-assoc pd 0 {
 
 **Note:** `sla-len` should be set so that `(WAN-prefix) + (sla-len) = 64`. In this case it is set up for a `/56` prefix 56+8=64\. For a `/64` prefix `sla-len` should be `0`.
 
-To enable/start wide-dhcpv6 client use the following command. Change `WAN` with the interface that is connected to your WAN.
-
-```
-# systemctl enable/start dhcp6c@WAN.service
-
-```
+The wide-dhcpv6 client can be [started/enabled](/index.php/Started/enabled "Started/enabled") using the `dhcp6c@*interface*.service` systemd unit file, where `*interface*` is the interface name in the configuration file, e.g. for a interface name "WAN" use `dhcp6c@WAN.service`.
 
 **Tip:** Read dhcp6c(8) and dhcp6c.conf(5) for more information.
 
@@ -360,7 +355,7 @@ Disabling IPv6 functionality in the kernel does not prevent other programs from 
 
 #### dhcpcd
 
-*dhcpcd* will continue to harmlessly attempt to perform IPv6 router solicitation. To disable this, as stated in the [dhcpcd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5)[man page](/index.php/Man_page "Man page"), add the following to `/etc/dhcpcd.conf`:
+*dhcpcd* will continue to harmlessly attempt to perform IPv6 router solicitation. To disable this, as stated in the [dhcpcd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5) [man page](/index.php/Man_page "Man page"), add the following to `/etc/dhcpcd.conf`:
 
 ```
 noipv6rs
@@ -376,12 +371,7 @@ Then click "Save".
 
 #### ntpd
 
-Following advice in [systemd#Drop-in files](/index.php/Systemd#Drop-in_files "Systemd"), change how systemd starts `ntpd.service`:
-
-```
-# systemctl edit ntpd.service
-
-```
+Following advice in [systemd#Drop-in files](/index.php/Systemd#Drop-in_files "Systemd"), [edit](/index.php/Edit "Edit") `ntpd.service` to define how systemd starts it.
 
 This will create a drop-in snippet that will be run instead of the default `ntpd.service`. The `-4` flag prevents IPv6 from being used by the ntp daemon. Put the following into the drop-in snippet:
 

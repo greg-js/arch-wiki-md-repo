@@ -67,7 +67,7 @@ initrd	**/boot/*cpu_manufacturer*-ucode.img** /boot/initramfs-linux.img
 
 Repeat it for each menu entry.
 
-### [systemd-boot](/index.php/Systemd-boot "Systemd-boot")
+### systemd-boot
 
 Use the `initrd` option to load the microcode, before the initial ramdisk, as follows:
 
@@ -83,7 +83,7 @@ initrd  /initramfs-linux.img
 
 The latest microcode `*cpu_manufacturer*-ucode.img` must be available at boot time in your [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (ESP). The ESP must be mounted as `/boot` in order to have the microcode updated every time [amd-ucode](https://www.archlinux.org/packages/?name=amd-ucode) or [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) is updated. Otherwise, copy `/boot/*cpu_manufacturer*-ucode.img` to your ESP at every update of the microcode package.
 
-### [EFI boot stub / EFI handover](/index.php/EFISTUB "EFISTUB")
+### EFI boot stub / EFI handover
 
 Append two `initrd=` options:
 
@@ -99,7 +99,7 @@ cat /boot/*cpu_manufacturer*-ucode.img /boot/initramfs-linux.img > my_new_initrd
 objcopy ... --add-section .initrd=my_new_initrd
 ```
 
-### [rEFInd](/index.php/REFInd "REFInd")
+### rEFInd
 
 Edit boot options in `/boot/refind_linux.conf` as per [EFI boot stub above](#EFI_boot_stub_/_EFI_handover), example:
 
@@ -115,7 +115,7 @@ options  "root=root=UUID=(...) rw add_efi_memmap **initrd=/boot/*cpu_manufacture
 
 ```
 
-### [Syslinux](/index.php/Syslinux "Syslinux")
+### Syslinux
 
 **Note:** There must be no spaces between the `*cpu_manufacturer*-ucode.img` and `initramfs-linux.img` initrd files. The `INITRD` line must be exactly as illustrated below.
 

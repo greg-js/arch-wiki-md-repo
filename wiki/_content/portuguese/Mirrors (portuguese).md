@@ -1,7 +1,8 @@
-**Status de tradução:** Esse artigo é uma tradução de [Mirrors](/index.php/Mirrors "Mirrors"). Data da última tradução: 2018-08-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Mirrors&diff=0&oldid=535713) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Mirrors](/index.php/Mirrors "Mirrors"). Data da última tradução: 2019-01-25\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Mirrors&diff=0&oldid=564116) na versão em inglês.
 
 Artigos relacionados
 
+*   [Espelhos não oficiais](/index.php/Espelhos_n%C3%A3o_oficiais "Espelhos não oficiais")
 *   [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)")
 
 Esta página é um guia para selecionar e configurar seus espelhos e uma lista dos espelhos disponíveis atualmente.
@@ -18,27 +19,7 @@ Esta página é um guia para selecionar e configurar seus espelhos e uma lista d
         *   [3.1.2 Obtendo e classificando uma lista de espelho live](#Obtendo_e_classificando_uma_lista_de_espelho_live)
     *   [3.2 Classificação do lado do servidor](#Classificação_do_lado_do_servidor)
 *   [4 Solução de problemas](#Solução_de_problemas)
-*   [5 Espelhos não oficiais](#Espelhos_não_oficiais)
-    *   [5.1 Áustria](#Áustria)
-    *   [5.2 Canadá](#Canadá)
-    *   [5.3 China](#China)
-    *   [5.4 França](#França)
-    *   [5.5 Indonésia](#Indonésia)
-    *   [5.6 Irã](#Irã)
-    *   [5.7 Itália](#Itália)
-    *   [5.8 Japão](#Japão)
-    *   [5.9 Malásia](#Malásia)
-    *   [5.10 Holanda](#Holanda)
-    *   [5.11 Nova Zelândia](#Nova_Zelândia)
-    *   [5.12 Polônia](#Polônia)
-    *   [5.13 Rússia](#Rússia)
-    *   [5.14 África do Sul](#África_do_Sul)
-    *   [5.15 Suécia](#Suécia)
-    *   [5.16 Tailândia](#Tailândia)
-    *   [5.17 Turquia](#Turquia)
-    *   [5.18 Estados Unidos](#Estados_Unidos)
-    *   [5.19 Sourceforge (ISOs antigas)](#Sourceforge_(ISOs_antigas))
-*   [6 Veja também](#Veja_também)
+*   [5 Veja também](#Veja_também)
 
 ## Espelhos oficiais
 
@@ -46,7 +27,7 @@ A lista de espelhos oficial do Arch Linux está disponível no pacote [pacman-mi
 
 Verifique o status dos espelhos do Arch visitando a página [Mirror Status](https://www.archlinux.org/mirrors/status/). É recomendável usar apenas espelhos atualizados, ou seja, não fora de sincronia.
 
-Se você quiser que o seu espelho seja adicionado à lista oficial, veja [DeveloperWiki:NewMirrors](/index.php/DeveloperWiki:NewMirrors "DeveloperWiki:NewMirrors"). Enquanto isso, adicione-o à lista [#Espelhos não oficiais](#Espelhos_não_oficiais) no final desta página.
+Se você quiser que o seu espelho seja adicionado à lista oficial, veja [DeveloperWiki:NewMirrors](/index.php/DeveloperWiki:NewMirrors "DeveloperWiki:NewMirrors"). Enquanto isso, adicione-o ao artigo [Espelhos não oficiais](/index.php/Espelhos_n%C3%A3o_oficiais "Espelhos não oficiais").
 
 ### Espelhos prontos para IPv6
 
@@ -60,8 +41,8 @@ Exemplo:
 
 ```
 # Any
-# Server = ftp://mirrors.kernel.org/archlinux/$repo/os/$arch
-**Server = http://mirrors.kernel.org/archlinux/$repo/os/$arch**
+# Server = http://mirrors.kernel.org/archlinux/$repo/os/$arch
+**Server = https://mirrors.kernel.org/archlinux/$repo/os/$arch**
 
 ```
 
@@ -84,7 +65,7 @@ Para usar o espelho *HostEurope* como espelho padrão, adicione-o antes da linha
 
 ```
 [core]
-**Server = ftp://ftp.hosteurope.de/mirror/ftp.archlinux.org/core/os/$arch**
+**Server = http://ftp.hosteurope.de/mirror/ftp.archlinux.org/core/os/$arch**
 Include = /etc/pacman.d/mirrorlist
 
 ```
@@ -186,128 +167,6 @@ Lembre-se de descomentar um espelho preferencial conforme descrito acima e entã
 # pacman -Syu pacman-mirrorlist
 
 ```
-
-## Espelhos não oficiais
-
-Esses espelhos *não* estão listados no `/etc/pacman.d/mirrorlist`.
-
-### Áustria
-
-*   [http://gd.tuwien.ac.at/opsys/linux/archlinux/](http://gd.tuwien.ac.at/opsys/linux/archlinux/) - *Universidade Técnica de Viena*
-*   [ftp://gd.tuwien.ac.at/opsys/linux/archlinux/](ftp://gd.tuwien.ac.at/opsys/linux/archlinux/)
-
-### Canadá
-
-*   [https://na.mirrors.coltondrg.com/archlinux/](https://na.mirrors.coltondrg.com/archlinux/)
-
-### China
-
-**Telecom**
-
-*   [http://mirror.bit.edu.cn/archlinux/](http://mirror.bit.edu.cn/archlinux/) - *Beijing Institute of Technology*
-*   [http://mirrors.aliyun.com/archlinux/](http://mirrors.aliyun.com/archlinux/) - *Alibaba*
-
-**Unicom**
-
-*   [http://mirrors.sohu.com/archlinux/](http://mirrors.sohu.com/archlinux/)
-*   [http://mirrors.yun-idc.com/archlinux/](http://mirrors.yun-idc.com/archlinux/)
-
-**Cernet**
-
-*   [http://mirror.hust.edu.cn/archlinux/](http://mirror.hust.edu.cn/archlinux/) - *Huazhong University of Science and Technology Mirror (HUSTMirror)*
-*   [http://mirrors.geekpie.org/archlinux/](http://mirrors.geekpie.org/archlinux/) - *Geek Pie Association @ ShanghaiTech University*
-*   [http://ftp.sjtu.edu.cn/archlinux/](http://ftp.sjtu.edu.cn/archlinux/) - *Shanghai Jiaotong University(Legacy)*
-*   [https://mirrors.sjtug.sjtu.edu.cn/archlinux/](https://mirrors.sjtug.sjtu.edu.cn/archlinux/) - *Shanghai Jiaotong University Linux User Group*
-*   [http://mirrors.4.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.4.tuna.tsinghua.edu.cn/archlinux/) *(ipv4 apenas)*
-*   [http://mirrors.6.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.6.tuna.tsinghua.edu.cn/archlinux/) *(ipv6 apenas)*
-*   [http://mirror.lzu.edu.cn/archlinux/](http://mirror.lzu.edu.cn/archlinux/) - *Lanzhou University*
-*   [https://mirrors.nju.edu.cn/archlinux/](https://mirrors.nju.edu.cn/archlinux/) - *Nanjing University*
-
-### França
-
-*   [http://delta.archlinux.fr/](http://delta.archlinux.fr/) - *Com suporte a pacotes Delta. Precisa de [xdelta3](https://www.archlinux.org/packages/?name=xdelta3) para executar.*
-*   [https://eu.mirrors.coltondrg.com/archlinux/](https://eu.mirrors.coltondrg.com/archlinux/)
-*   [https://mirror.oldsql.cc/archlinux/](https://mirror.oldsql.cc/archlinux/)
-
-### Indonésia
-
-*   [http://kambing.ui.ac.id/archlinux/](http://kambing.ui.ac.id/archlinux/)
-
-### Irã
-
-*   [http://mirror.yazd.ac.ir/arch/](http://mirror.yazd.ac.ir/arch/)
-*   [http://repo.sadjad.ac.ir/arch/](http://repo.sadjad.ac.ir/arch/)
-
-### Itália
-
-*   [http://mi.mirror.garr.it/mirrors/archlinux/](http://mi.mirror.garr.it/mirrors/archlinux/)
-
-### Japão
-
-*   [http://ftp.nara.wide.ad.jp/pub/Linux/archlinux/](http://ftp.nara.wide.ad.jp/pub/Linux/archlinux/) - *Nara Institute of Science and Technology*
-*   [http://ftp.kddilabs.jp/Linux/packages/archlinux/](http://ftp.kddilabs.jp/Linux/packages/archlinux/)
-*   [http://srv2.ftp.ne.jp/Linux/packages/archlinux/](http://srv2.ftp.ne.jp/Linux/packages/archlinux/)
-*   [http://mirror.archlinuxjp.org/](http://mirror.archlinuxjp.org/)
-
-### Malásia
-
-*   [http://mirror.oscc.org.my/archlinux/](http://mirror.oscc.org.my/archlinux/)
-
-### Holanda
-
-*   [http://mirror.transip.net/archlinux/](http://mirror.transip.net/archlinux/) *TransIP B.V.*
-
-### Nova Zelândia
-
-*   [http://mirror.ece.auckland.ac.nz/archlinux/](http://mirror.ece.auckland.ac.nz/archlinux/) *NZ apenas*
-*   [https://mirror.fsmg.org.nz/archlinux/](https://mirror.fsmg.org.nz/archlinux/) - *Free Software Mirror Group*
-
-### Polônia
-
-*   [ftp://ftp.icm.edu.pl/pub/Linux/dist/archlinux/](ftp://ftp.icm.edu.pl/pub/Linux/dist/archlinux/) - ICM UW
-*   [http://ftp.icm.edu.pl/pub/Linux/dist/archlinux/](http://ftp.icm.edu.pl/pub/Linux/dist/archlinux/) - ICM UW
-*   [https://ftp.icm.edu.pl/pub/Linux/dist/archlinux/](https://ftp.icm.edu.pl/pub/Linux/dist/archlinux/) - ICM UW
-*   rsync://ftp.icm.edu.pl/pub/Linux/dist/archlinux/ - ICM UW
-
-### Rússia
-
-*   [http://mirrors.krasinfo.ru/archlinux/](http://mirrors.krasinfo.ru/archlinux/) - *Krasnoyarsk, Classica-Service Ltd*
-
-### África do Sul
-
-*   [http://ftp.leg.uct.ac.za/pub/linux/arch/](http://ftp.leg.uct.ac.za/pub/linux/arch/) - *Universidade da Cidade do Cabo*
-*   [ftp://ftp.leg.uct.ac.za/pub/linux/arch/](ftp://ftp.leg.uct.ac.za/pub/linux/arch/)
-*   [http://mirror.ufs.ac.za/archlinux/](http://mirror.ufs.ac.za/archlinux/) - *University of the Free State*
-*   [ftp://mirror.ufs.ac.za/os/linux/distros/archlinux/](ftp://mirror.ufs.ac.za/os/linux/distros/archlinux/)
-*   [http://archlinux.mirror.ac.za](http://archlinux.mirror.ac.za) - *TENET - Tertiary Education and Research Network of South Africa*
-*   [ftp://archlinux.mirror.ac.za](ftp://archlinux.mirror.ac.za)
-
-### Suécia
-
-*   [http://foss.dhyrule.se/linux/archlinux/](http://foss.dhyrule.se/linux/archlinux/)
-*   [ftp://foss.dhyrule.se/linux/archlinux/](ftp://foss.dhyrule.se/linux/archlinux/)
-
-### Tailândia
-
-*   [http://mirror1.ku.ac.th/archlinux/](http://mirror1.ku.ac.th/archlinux/)
-
-### Turquia
-
-*   [http://mirror.veriteknik.net.tr/archlinux/](http://mirror.veriteknik.net.tr/archlinux/) *- VeriTeknik Data Center*
-
-*   [http://ftp.linux.org.tr/archlinux/](http://ftp.linux.org.tr/archlinux/)
-
-### Estados Unidos
-
-*   [http://mirror.clarkson.edu/archlinux/](http://mirror.clarkson.edu/archlinux/)
-*   [http://mirror.pointysoftware.net/archlinux/](http://mirror.pointysoftware.net/archlinux/)
-*   [http://mirror.ziemer.bz/archlinux](http://mirror.ziemer.bz/archlinux)
-*   [https://lug.mines.edu/mirrors/archlinux/](https://lug.mines.edu/mirrors/archlinux/)
-*   [http://mirror.cs.umn.edu/arch/](http://mirror.cs.umn.edu/arch/)
-
-### Sourceforge (ISOs antigas)
-
-*   [http://sourceforge.net/projects/archlinux/files/](http://sourceforge.net/projects/archlinux/files/) - *Arquivos ISO apenas; Não tem nenhum lançamento desde 2006\. Use-o apenas para obter ISOs mais antigas.*
 
 ## Veja também
 

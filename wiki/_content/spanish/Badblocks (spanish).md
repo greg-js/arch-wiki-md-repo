@@ -12,7 +12,7 @@ Esto se puede hacer en un modo de escritura destructivo que efectivamente [borre
 
 *   [1 Instalación](#Instalación)
 *   [2 Fidelidad de los dispositivos de almacenamiento](#Fidelidad_de_los_dispositivos_de_almacenamiento)
-*   [3 Comparaciones con otros programas](#Comparaciones_con_otros_programas)
+*   [3 Comparación con otros programas](#Comparación_con_otros_programas)
 *   [4 Pruebas para sectores defectuosos](#Pruebas_para_sectores_defectuosos)
     *   [4.1 Prueba de lectura-escritura (advertencia: destructiva)](#Prueba_de_lectura-escritura_(advertencia:_destructiva))
         *   [4.1.1 Definir un patrón de prueba específico](#Definir_un_patrón_de_prueba_específico)
@@ -23,7 +23,7 @@ Esto se puede hacer en un modo de escritura destructivo que efectivamente [borre
     *   [5.2 Antes de la creación del sistema de archivos](#Antes_de_la_creación_del_sistema_de_archivos)
         *   [5.2.1 Ext4](#Ext4)
         *   [5.2.2 Tamaño de bloque](#Tamaño_de_bloque)
-*   [6 See also](#See_also)
+*   [6 Ver también](#Ver_también)
 
 ## Instalación
 
@@ -33,7 +33,7 @@ El paquete [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) es pa
 
 Aunque no hay una regla firme, es lógico pensar que una nueva unidad debe tener cero sectores defectuosos. Con el tiempo, los sectores defectuosos se desarrollarán y, aunque pueden definirse en el sistema de archivos para evitarlos, el uso continuo de la unidad generalmente puede dar lugar a la formación de sectores defectuosos adicionales y, por lo general, es el presagio de su muerte final. Se recomienda reemplazar el dispositivo.
 
-## Comparaciones con otros programas
+## Comparación con otros programas
 
 La práctica recomendada típica para probar un dispositivo de almacenamiento en busca de sectores defectuosos es utilizar el programa de pruebas del fabricante. La mayoría de los fabricantes tienen programas que hacen esto. El principal razonamiento para esto es que los fabricantes generalmente tienen sus estándares incorporados en los programas de prueba que le dirán si la unidad necesita ser reemplazada o no. La advertencia aquí es que algunos programas de prueba de los fabricantes no muestran los resultados completos de las pruebas y permiten que un cierto número de sectores defectuosos sean mostrados o no. Los programas de los fabricantes, sin embargo, son generalmente más rápidos que los "badblocks", a veces mucho más.
 
@@ -78,7 +78,9 @@ Opciones adicionales a considerar:
 
 #### Definir un patrón de prueba específico
 
-**Desde la página de manual:** El "patrón_prueba" puede ser un valor numérico entre 0 y ULONG_MAX-1 inclusive". [...]."
+**Desde la página de manual:** El "patrón_prueba" puede ser un valor numérico entre 0 y ULONG_MAX-1 inclusive, o la palabra *random* (aleatorio), que especifica que el bloque debe rellenarse con un patrón de bits aleatorio. Para los modos de lectura/escritura (-w) y no destructivo (-n), se pueden especificar uno o más patrones de prueba especificando la opción -t para cada patrón de prueba deseado.
+
+Para el modo de sólo lectura sólo se puede especificar un patrón único y no puede ser "aleatorio". Las pruebas de sólo lectura , con un patrón asumen que el patrón especificado ha sido escrito previamente en el disco, si no, un gran número de bloques fallarán en la verificación. Si se especifican múltiples patrones, todos los bloques se probarán con un patrón antes de proceder al siguiente.
 
 ##### Patrón aleatorio
 
@@ -186,7 +188,7 @@ Despues (re) crea el sistema de archivos con la información:
 
 #### Ext4
 
-De la página de manual [8 mke2fs( 8 )](https://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.):
+De la página de manual [mke2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8):
 
 	Tenga en cuenta que los números de bloque de la lista de bloques defectuosos deben generarse utilizando el mismo tamaño de bloque que el utilizado por *mke2fs*. Como resultado, la opción `-c` de *mke2fs* es un método mucho más simple y menos propenso a errores para comprobar si un disco tiene bloques defectuosos antes de formatearlo.
 
@@ -215,6 +217,10 @@ Añada esto a *badblocks*:
 
 ```
 
-## See also
+## Ver también
 
-*   [My hard disk has bad sectors or is developing bad sectors over time](http://www.pcguide.com/ts/x/comp/hdd/errorsBadSectors-c.html)
+*   [Mi disco duro tiene sectores defectuosos o está desarrollando sectores defectuosos con el paso del tiempo](http://www.pcguide.com/ts/x/comp/hdd/errorsBadSectors-c.html) -**Inglés**
+
+*   [badblocks(8) - Linux man page](https://linux.die.net/man/8/badblocks) -**Inglés**
+
+*   [Badblocks - Wikipedia](https://en.wikipedia.org/wiki/es:Badblocks "wikipedia:es:Badblocks") - **Español**

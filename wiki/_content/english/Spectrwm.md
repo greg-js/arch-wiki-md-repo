@@ -20,7 +20,7 @@ Spectrwm is written in C and configured with a text configuration file. It was p
 *   [9 Using spectrwm](#Using_spectrwm)
 *   [10 Troubleshooting](#Troubleshooting)
     *   [10.1 Help, I just logged in and all I see is a blank screen](#Help,_I_just_logged_in_and_all_I_see_is_a_blank_screen)
-    *   [10.2 Why does my window open in a desktop other then the current active one?](#Why_does_my_window_open_in_a_desktop_other_then_the_current_active_one?)
+    *   [10.2 Why does my window open in a desktop other than the current active one?](#Why_does_my_window_open_in_a_desktop_other_than_the_current_active_one?)
 *   [11 See also](#See_also)
 
 ## Installation
@@ -259,7 +259,7 @@ Meta+Shift+q: exit spectrwm
 
 Press `Shift+WinKey+Return` and an xterm will start. See [spectrwm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/spectrwm.1) for other default key bindings. Also check your configuration file.
 
-### Why does my window open in a desktop other then the current active one?
+### Why does my window open in a desktop other than the current active one?
 
 Currently the PID of window is used to determine the desktop for new windows. To workaround this with terminals for example, you can often pass an argument to open the terminal in a new process.
 

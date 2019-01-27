@@ -172,7 +172,7 @@ $ comm -12 <(pacman -Qq | sort) <(pacman -Slq *repo_name* | sort)
 List all packages on the Arch Linux ISO that are not in the base group:
 
 ```
-$ comm -23 <(curl https://git.archlinux.org/archiso.git/plain/configs/releng/packages.both) <(pacman -Qqg base | sort)
+$ comm -23 <(curl https://git.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) <(pacman -Qqg base | sort)
 
 ```
 
@@ -678,6 +678,8 @@ NoExtract = usr/share/man/* !usr/share/man/man*
 NoExtract = usr/share/vim/vim*/lang/*
 NoExtract = usr/lib/libreoffice/help/en-US/*
 ```
+
+Though this trick was used by many user, some users found that [removing it made bugs hide under the rug](https://wiki.archlinux.org/index.php?title=Talk:Pacman&oldid=460285#Dangerous_NoExtract_example).
 
 ## Performance
 

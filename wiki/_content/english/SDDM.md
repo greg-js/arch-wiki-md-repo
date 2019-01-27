@@ -184,45 +184,9 @@ EnableHiDPI=true
 
 **Note:** Make sure that your fingerprint is registered before making these changes. Fingerprint support is not completely working properly yet, and it seems logging in with only a password no longer works using this method.
 
-SDDM works with a fingerprint reader when using [fprint](/index.php/Fprint "Fprint"). After installing fprint and adding fingerprint signatures, add the line `auth sufficient pam_fprintd.so` to `/etc/pam.d/sddm`:
+SDDM works with a fingerprint reader when using [fprint](/index.php/Fprint "Fprint"). After installing fprint and adding fingerprint signatures, add the line `auth sufficient pam_fprintd.so` at the beginning of `/etc/pam.d/sddm`.
 
- `/etc/pam.d/sddm` 
-```
-#%PAM-1.0
-
-auth            sufficient        pam_fprintd.so
-auth		include		system-login
--auth		optional	pam_gnome_keyring.so
--auth   optional  pam_kwallet5.so
-
-account		include		system-login
-
-password	include		system-login
--password	optional	pam_gnome_keyring.so use_authtok
-
-session		optional	pam_keyinit.so force revoke
-session		include		system-login
--session		optional	pam_gnome_keyring.so auto_start
--session  optional  pam_kwallet5.so auto_start
-
-```
-
-Also add the line to `/etc/pam.d/kde` to make it work in KDE's lock screen:
-
- `/etc/pam.d/kde` 
-```
-#%PAM-1.0
-
-auth 			sufficient 		pam_fprintd.so
-auth            include         system-login
-
-account         include         system-login
-
-password        include         system-login
-
-session         include         system-login
-
-```
+**Tip:** To make it work in KDE's lock screen, also add the same line at the beginning of `/etc/pam.d/kde`.
 
 If you now press enter in the empty password field, the fingerprint reader should start working.
 

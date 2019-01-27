@@ -94,7 +94,7 @@ If you get the message `WARNING: Not enough clusters for a 32 bit FAT!`, reduce 
 
 ## Mount the partition
 
-The kernels and initramfs files need to be accessible by the [boot loader](/index.php/Boot_loader "Boot loader") or UEFI itself to successfully boot the system. Thus if you want to keep the setup simple, your boot loader choice limits the available mount points for EFI system partition.
+The kernels, initramfs files, and, in most cases, the processor's [microcode](/index.php/Microcode "Microcode"), need to be accessible by the [boot loader](/index.php/Boot_loader "Boot loader") or UEFI itself to successfully boot the system. Thus if you want to keep the setup simple, your boot loader choice limits the available mount points for EFI system partition.
 
 The simplest scenarios for mounting EFI system partition are:
 

@@ -143,7 +143,7 @@ Using this method, it is easy to create any number of individual event/action sc
 
 ## Tips and tricks
 
-**Note:** Some of actions, described here, such as Wi-Fi toggle and backlight control, may already be managed directly by driver. You should consult documentation of corresponding kernel modules, when this is the case.
+**Note:** Some of the actions described here, such as Wi-Fi toggle and backlight control, may already be managed directly by driver. You should consult documentation of corresponding kernel modules, when this is the case.
 
 ### Example events
 

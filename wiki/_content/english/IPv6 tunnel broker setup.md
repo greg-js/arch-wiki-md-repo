@@ -15,7 +15,7 @@ It is not that hard to do. Feel free to fill in the directions here if something
 
 Create the following systemd unit, replacing bold text with the IP addresses you got from HE:
 
-**Note:** If you are behind a NAT (typical home router setup), use your *local* IPv4 address for `**Client_IPv4_Address**`, e.g. `192.168.0.2`.
+**Note:** If you are behind a NAT (typical home router setup), use your *local* IPv4 address for `*client_IPv4_address*`, e.g. `192.168.0.2`.
  `/etc/systemd/system/he-ipv6.service` 
 ```
 [Unit]
@@ -25,9 +25,9 @@ After=network.target
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStart=/usr/bin/ip tunnel add he-ipv6 mode sit remote **Server_IPv4_Address** local **Client_IPv4_Address** ttl 255
+ExecStart=/usr/bin/ip tunnel add he-ipv6 mode sit remote *server_IPv4_address* local *client_IPv4_address* ttl 255
 ExecStart=/usr/bin/ip link set he-ipv6 up mtu 1480
-ExecStart=/usr/bin/ip addr add **Client_IPv6_Address** dev he-ipv6
+ExecStart=/usr/bin/ip addr add *client_IPv6_address* dev he-ipv6
 ExecStart=/usr/bin/ip -6 route add ::/0 dev he-ipv6
 ExecStop=/usr/bin/ip -6 route del ::/0 dev he-ipv6
 ExecStop=/usr/bin/ip link set he-ipv6 down
@@ -37,7 +37,7 @@ ExecStop=/usr/bin/ip tunnel del he-ipv6
 WantedBy=multi-user.target
 ```
 
-Then start/enable `he-ipv6.service`.
+Then [start/enable](/index.php/Start/enable "Start/enable") `he-ipv6.service`.
 
 ## systemd-networkd
 

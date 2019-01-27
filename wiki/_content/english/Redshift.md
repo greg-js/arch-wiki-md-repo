@@ -4,9 +4,11 @@ From the [Redshift project web page](http://jonls.dk/redshift/):
 
 **Note:**
 
-*   Redshift does not support [Wayland](/index.php/Wayland "Wayland") since it offers no way to adjust the color temperature [[1]](https://github.com/jonls/redshift/issues/55). However, there is a patched version available in the AUR: [redshift-wayland-git](https://aur.archlinux.org/packages/redshift-wayland-git/)
+*   Redshift does not support [Wayland](/index.php/Wayland "Wayland") since it offers no way to adjust the color temperature [[1]](https://github.com/jonls/redshift/issues/55).
 *   [GNOME](/index.php/GNOME "GNOME") provides features like Redshift out-of-the-box and has [Wayland](/index.php/Wayland "Wayland") support. Enable the Night Light in Display settings.
 *   Likewise, [KDE Plasma](/index.php/KDE_Plasma "KDE Plasma") provides Night Color which is Wayland-only.
+*   On Sway 1.0 and other wlroots-based compositors, [redshift-wlr-gamma-control-git](https://aur.archlinux.org/packages/redshift-wlr-gamma-control-git/) can be used.
+*   On Orbital, [redshift-wayland-git](https://aur.archlinux.org/packages/redshift-wayland-git/) can be used.
 
 ## Contents
 

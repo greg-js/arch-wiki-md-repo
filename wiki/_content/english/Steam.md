@@ -10,8 +10,6 @@ Related articles
 
 **Note:** Steam for Linux only supports Ubuntu LTS.[[1]](https://support.steampowered.com/kb_article.php?ref=1504-QHXN-8366) Thus, do not turn to Valve for support for issues with Steam on Arch Linux.
 
-Registration time: 03:01, 25 January 2019
-
 ## Contents
 
 *   [1 Installation](#Installation)

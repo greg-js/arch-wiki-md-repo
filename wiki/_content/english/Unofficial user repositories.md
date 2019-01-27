@@ -33,34 +33,35 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
     *   [2.16 eschwartz](#eschwartz)
     *   [2.17 ffy00](#ffy00)
     *   [2.18 fusion809](#fusion809)
-    *   [2.19 herecura](#herecura)
-    *   [2.20 holo](#holo)
-    *   [2.21 ivasilev](#ivasilev)
-    *   [2.22 jlk](#jlk)
-    *   [2.23 linux-macbook](#linux-macbook)
-    *   [2.24 llvm-svn](#llvm-svn)
-    *   [2.25 markzz](#markzz)
-    *   [2.26 maximbaz](#maximbaz)
-    *   [2.27 miffe](#miffe)
-    *   [2.28 mikelpint](#mikelpint)
-    *   [2.29 Minerva W Science](#Minerva_W_Science)
-    *   [2.30 mobile](#mobile)
-    *   [2.31 nah](#nah)
-    *   [2.32 pkgbuilder](#pkgbuilder)
-    *   [2.33 post-factum kernels](#post-factum_kernels)
-    *   [2.34 QOwnNotes](#QOwnNotes)
-    *   [2.35 qt-debug](#qt-debug)
-    *   [2.36 quarry](#quarry)
-    *   [2.37 repo-ck](#repo-ck)
-    *   [2.38 seblu](#seblu)
-    *   [2.39 seiichiro](#seiichiro)
-    *   [2.40 sergej-repo](#sergej-repo)
-    *   [2.41 siosm-aur](#siosm-aur)
-    *   [2.42 sublime-text](#sublime-text)
-    *   [2.43 subtitlecomposer](#subtitlecomposer)
-    *   [2.44 trinity](#trinity)
-    *   [2.45 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
-    *   [2.46 xyne-x86_64](#xyne-x86_64)
+    *   [2.19 gnome-devel](#gnome-devel)
+    *   [2.20 herecura](#herecura)
+    *   [2.21 holo](#holo)
+    *   [2.22 ivasilev](#ivasilev)
+    *   [2.23 jlk](#jlk)
+    *   [2.24 linux-macbook](#linux-macbook)
+    *   [2.25 llvm-svn](#llvm-svn)
+    *   [2.26 markzz](#markzz)
+    *   [2.27 maximbaz](#maximbaz)
+    *   [2.28 miffe](#miffe)
+    *   [2.29 mikelpint](#mikelpint)
+    *   [2.30 Minerva W Science](#Minerva_W_Science)
+    *   [2.31 mobile](#mobile)
+    *   [2.32 nah](#nah)
+    *   [2.33 pkgbuilder](#pkgbuilder)
+    *   [2.34 post-factum kernels](#post-factum_kernels)
+    *   [2.35 QOwnNotes](#QOwnNotes)
+    *   [2.36 qt-debug](#qt-debug)
+    *   [2.37 quarry](#quarry)
+    *   [2.38 repo-ck](#repo-ck)
+    *   [2.39 seblu](#seblu)
+    *   [2.40 seiichiro](#seiichiro)
+    *   [2.41 sergej-repo](#sergej-repo)
+    *   [2.42 siosm-aur](#siosm-aur)
+    *   [2.43 sublime-text](#sublime-text)
+    *   [2.44 subtitlecomposer](#subtitlecomposer)
+    *   [2.45 trinity](#trinity)
+    *   [2.46 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
+    *   [2.47 xyne-x86_64](#xyne-x86_64)
 *   [3 Unsigned](#Unsigned)
     *   [3.1 alucryd](#alucryd)
     *   [3.2 alucryd-multilib](#alucryd-multilib)
@@ -337,6 +338,21 @@ Server = https://pkgbuild.com/~ffy00/repo
 ```
 [home_fusion809_Arch_Extra]
 Server = https://download.opensuse.org/repositories/home:/fusion809/Arch_Extra/$arch
+
+```
+
+### gnome-devel
+
+*   **Maintainer:** [Andres Fernandez](https://plus.google.com/+AndresFernandezperonista), [Fernando Fernandez](https://plus.google.com/+FernandoFernandezBerel)
+*   **Description:** GNOME development releases. For testing purposes only.
+*   **Package list:** [https://softwareperonista.com.ar/repo/archlinux/gnome-devel/x86_64/](https://softwareperonista.com.ar/repo/archlinux/gnome-devel/x86_64/)
+*   **Key-ID:** DDCE9FD63370080B
+
+**Note:** Must be put above `[testing]` repository.
+
+```
+[gnome-devel]
+Server = https://softwareperonista.com.ar/repo/archlinux/gnome-devel/$arch
 
 ```
 

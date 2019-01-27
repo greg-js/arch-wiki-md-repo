@@ -6,7 +6,6 @@ Related articles
 *   [Openoffice#Speed up OpenOffice](/index.php/Openoffice#Speed_up_OpenOffice "Openoffice")
 *   [Laptop](/index.php/Laptop "Laptop")
 *   [Preload](/index.php/Preload "Preload")
-*   [Cpulimit](/index.php/Cpulimit "Cpulimit")
 
 This article provides information on basic system diagnostics relating to performance as well as steps that may be taken to reduce resource consumption or to otherwise optimize the system with the end-goal being either perceived or documented improvements to a system's performance.
 

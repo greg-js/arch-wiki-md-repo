@@ -19,7 +19,7 @@ QEMU может использовать другие гипервизоры, т
 *   [2 Графические интерфейсы для QEMU](#Графические_интерфейсы_для_QEMU)
 *   [3 Создание новой виртуальной машины](#Создание_новой_виртуальной_машины)
     *   [3.1 Создание образа жесткого диска](#Создание_образа_жесткого_диска)
-        *   [3.1.1 Overlay storage images](#Overlay_storage_images)
+        *   [3.1.1 Оверлейное хранилище изображений](#Оверлейное_хранилище_изображений)
         *   [3.1.2 Изменение размера образа](#Изменение_размера_образа)
         *   [3.1.3 Преобразование образа](#Преобразование_образа)
     *   [3.2 Подготовка установочного носителя](#Подготовка_установочного_носителя)
@@ -27,21 +27,21 @@ QEMU может использовать другие гипервизоры, т
 *   [4 Запуск виртуальной машины](#Запуск_виртуальной_машины)
     *   [4.1 Включение KVM](#Включение_KVM)
     *   [4.2 Включение поддержки IOMMU (Intel VT-d/AMD-Vi)](#Включение_поддержки_IOMMU_(Intel_VT-d/AMD-Vi))
-*   [5 Moving data between host and guest OS](#Moving_data_between_host_and_guest_OS)
-    *   [5.1 Network](#Network)
-    *   [5.2 QEMU's built-in SMB server](#QEMU's_built-in_SMB_server)
-    *   [5.3 Mounting a partition inside a raw disk image](#Mounting_a_partition_inside_a_raw_disk_image)
-        *   [5.3.1 With manually specifying byte offset](#With_manually_specifying_byte_offset)
-        *   [5.3.2 With loop module autodetecting partitions](#With_loop_module_autodetecting_partitions)
-        *   [5.3.3 With kpartx](#With_kpartx)
-    *   [5.4 Mounting a partition inside a qcow2 image](#Mounting_a_partition_inside_a_qcow2_image)
-    *   [5.5 Using any real partition as the single primary partition of a hard disk image](#Using_any_real_partition_as_the_single_primary_partition_of_a_hard_disk_image)
-        *   [5.5.1 By specifying kernel and initrd manually](#By_specifying_kernel_and_initrd_manually)
-        *   [5.5.2 Simulate virtual disk with MBR using linear RAID](#Simulate_virtual_disk_with_MBR_using_linear_RAID)
-            *   [5.5.2.1 Alternative: use nbd-server](#Alternative:_use_nbd-server)
-*   [6 Networking](#Networking)
-    *   [6.1 Link-level address caveat](#Link-level_address_caveat)
-    *   [6.2 User-mode networking](#User-mode_networking)
+*   [5 Перемещение данных между хостом и гостевой ОС](#Перемещение_данных_между_хостом_и_гостевой_ОС)
+    *   [5.1 Сеть](#Сеть)
+    *   [5.2 Встроенный SMB-сервер QEMU](#Встроенный_SMB-сервер_QEMU)
+    *   [5.3 Монтирование раздела внутри образа raw диска](#Монтирование_раздела_внутри_образа_raw_диска)
+        *   [5.3.1 С указанием байтового смещения вручную](#С_указанием_байтового_смещения_вручную)
+        *   [5.3.2 С loop модулем автоопределение разделов](#С_loop_модулем_автоопределение_разделов)
+        *   [5.3.3 С kpartx](#С_kpartx)
+    *   [5.4 Монтирование раздела внутри образа qcow2](#Монтирование_раздела_внутри_образа_qcow2)
+    *   [5.5 Использование любого реального раздела в качестве единственного основного раздела образа жесткого диска](#Использование_любого_реального_раздела_в_качестве_единственного_основного_раздела_образа_жесткого_диска)
+        *   [5.5.1 Указываем ядро и initrd вручную](#Указываем_ядро_и_initrd_вручную)
+        *   [5.5.2 Имитация виртуального диска с MBR с использованием линейного RAID](#Имитация_виртуального_диска_с_MBR_с_использованием_линейного_RAID)
+            *   [5.5.2.1 Альтернатива: использовать nbd-сервер](#Альтернатива:_использовать_nbd-сервер)
+*   [6 Сетевые топологии](#Сетевые_топологии)
+    *   [6.1 Предупреждение об уровне адресации](#Предупреждение_об_уровне_адресации)
+    *   [6.2 Пользовательский режим сети](#Пользовательский_режим_сети)
     *   [6.3 Tap networking with QEMU](#Tap_networking_with_QEMU)
         *   [6.3.1 Host-only networking](#Host-only_networking)
         *   [6.3.2 Internal networking](#Internal_networking)
@@ -69,7 +69,7 @@ QEMU может использовать другие гипервизоры, т
     *   [7.6 none](#none)
     *   [7.7 vnc](#vnc)
 *   [8 Audio](#Audio)
-    *   [8.1 Host](#Host)
+    *   [8.1 Хост](#Хост)
     *   [8.2 Guest](#Guest)
 *   [9 Installing virtio drivers](#Installing_virtio_drivers)
     *   [9.1 Preparing an (Arch) Linux guest](#Preparing_an_(Arch)_Linux_guest)
@@ -90,7 +90,7 @@ QEMU может использовать другие гипервизоры, т
 *   [11 Tips and tricks](#Tips_and_tricks)
     *   [11.1 Starting QEMU virtual machines on boot](#Starting_QEMU_virtual_machines_on_boot)
         *   [11.1.1 With libvirt](#With_libvirt)
-        *   [11.1.2 Custom script](#Custom_script)
+        *   [11.1.2 Пользовательский скрипт](#Пользовательский_скрипт)
     *   [11.2 Mouse integration](#Mouse_integration)
     *   [11.3 Pass-through host USB device](#Pass-through_host_USB_device)
     *   [11.4 USB redirection with SPICE](#USB_redirection_with_SPICE)
@@ -165,40 +165,40 @@ $ qemu-img create -f raw *файл_образа* 4G
 
 **Примечание:** Также вы можете просто создать образ *raw*, используя `dd` или `fallocate` для создания файла с нужным размером.
 
-**Важно:** Если вы храните образы на файловой системе [Btrfs](/index.php/Btrfs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Btrfs (Русский)"), вам следует рассмотреть возможность отключения [Копирования при записи](/index.php/Btrfs#Копирование_при_записи_(CoW) "Btrfs") для каталогов перед созданием каких-либо образов.
+**Важно:** Если вы храните образы в файловой системе [Btrfs](/index.php/Btrfs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Btrfs (Русский)"), вам следует рассмотреть возможность отключения [Copy-on-Write](/index.php/Btrfs#Copy-on-Write_(CoW) "Btrfs") для каталогов перед созданием каких-либо образов.
 
-#### Overlay storage images
+#### Оверлейное хранилище изображений
 
-You can create a storage image once (the 'backing' image) and have QEMU keep mutations to this image in an overlay image. This allows you to revert to a previous state of this storage image. You could revert by creating a new overlay image at the time you wish to revert, based on the original backing image.
+Вы можете создать образ хранилища один раз ('backing' изображение), и QEMU сохранит изменения этого изображения в оверлейном изображении. Это позволяет вам вернуться к предыдущему состоянию этого образа. Вы можете вернуться, создав новое оверлейное изображение в то время, когда вы хотите восстановить его, основываясь на исходном backing изображении.
 
-To create an overlay image, issue a command like:
+Чтобы создать оверлейное изображение, введите команду:
 
 ```
 $ qemu-img create -o backing_file=*img1.raw*,backing_fmt=*raw* -f *qcow2* *img1.cow*
 
 ```
 
-After that you can run your QEMU VM as usual (see [#Running virtualized system](#Running_virtualized_system)):
+После этого вы можете запускать виртуальную машину QEMU как обычно (см. [#Running virtualized system](#Running_virtualized_system)):
 
 ```
 $ qemu-system-x86_64 *img1.cow*
 
 ```
 
-The backing image will then be left intact and mutations to this storage will be recorded in the overlay image file.
+Дальше backing изображение останется без изменений, и изменения в этом хранилище будут записаны в файл оверлейного изображения.
 
-When the path to the backing image changes, repair is required.
+Если путь к фоновому изображению изменяется, требуется ремонт.
 
-**Warning:** The backing image's absolute filesystem path is stored in the (binary) overlay image file. Changing the backing image's path requires some effort.
+**Warning:** Абсолютный путь к backing изображению сохраняется в (двоичном) файле оверлейного изображения. Изменение пути backing изображения требует определенных усилий.
 
-Make sure that the original backing image's path still leads to this image. If necessary, make a symbolic link at the original path to the new path. Then issue a command like:
+Убедитесь, что путь к исходному backing изображению существует. При необходимости сделайте символическую ссылку на исходный путь. Затем выполните команду так:
 
 ```
 $ qemu-img rebase -b */new/img1.raw* */new/img1.cow*
 
 ```
 
-At your discretion, you may alternatively perform an 'unsafe' rebase where the old path to the backing image is not checked:
+На ваше усмотрение вы можете альтернативно выполнить «небезопасную» перебазировку, когда старый путь к резервному изображению не проверен:
 
 ```
 $ qemu-img rebase -u -b */new/img1.raw* */new/img1.cow*
@@ -239,14 +239,14 @@ $ qemu-img convert -f raw -O qcow2 *входной*.img *выходной*.qcow2
 
 Это первый раз, когда вам нужно будет запустить эмулятор. Для установки операционной системы на образ диска, вы должны подключить образ диска и установочный носитель к виртуальной машине и загрузить его с установочного носителя.
 
-Например, на гостевой системы i386 для установки из загрузочного файла ISO в качестве CD-ROM и образа диска raw, необходимо выполнить:
+Например, для гостевой системы i386 для установки из загрузочного файла ISO в качестве CD-ROM и образа диска raw, необходимо выполнить:
 
 ```
 $ qemu-system-x86_64 -cdrom *образ_iso* -boot order=d -drive file=*образ_диска*,format=raw
 
 ```
 
-Для получения дополнительной информации о загрузки с других типов носителей (например, дискет, образов дисков или физических дисков) смотрите [qemu(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/qemu.1) и смотрите [#Запуск виртуальной машины](#Запуск_виртуальной_машины), чтобы узнать другие полезные параметры.
+Для получения дополнительной информации о загрузке с других типов носителей (например, дискет, образов дисков или физических дисков) смотрите [qemu(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/qemu.1) и смотрите [#Запуск виртуальной машины](#Запуск_виртуальной_машины), чтобы узнать другие полезные параметры.
 
 После завершения установки операционной системы, образ QEMU может быть загружен напрямую (смотрите [#Запуск виртуальной машины](#Запуск_виртуальной_машины)).
 
@@ -254,7 +254,7 @@ $ qemu-system-x86_64 -cdrom *образ_iso* -boot order=d -drive file=*обра
 
 **Совет:**
 
-*   Вместо указания порядка загрузки `-boot order=x` некоторым пользователям удобнее использовать загрузочное меню: `-boot menu=on`, по крайней мере, во время настройки и экспериментов.
+*   Вместо указания порядка загрузки `-boot order=x`, некоторым пользователям, удобнее использовать загрузочное меню: `-boot menu=on`, по крайней мере, во время настройки и экспериментов.
 *   Если вам нужно заменить дискету или CD во время установочного процесса, вы можете использовать монитор QEMU (нажмите `Ctrl+Alt+2` в окне виртуальной машины) для излечения и подключения устройств хранения данных в виртуальной машине. Введите `info block`, чтобы увидеть блочные устройства. Потом используйте команду по замене устройств `change`. Нажмите `Ctrl+Alt+1`, чтобы вернуться обратно в виртуальную машину.
 
 ## Запуск виртуальной машины
@@ -302,15 +302,17 @@ $ qemu-system-x86_64 **-enable-kvm -machine q35,accel=kvm -device intel-iommu** 
 
 Добавление параметра ядра `intel_iommu=on`, пока все еще необходимо для переназначения ввода-вывода (например [PCI passthrough с vfio-pci](/index.php/PCI_passthrough_via_OVMF#Isolating_the_GPU "PCI passthrough via OVMF")). Если PCI passthrough необходим, не используйте параметр `-device intel-iommu`.
 
-## Moving data between host and guest OS
+## Перемещение данных между хостом и гостевой ОС
 
-### Network
+### Сеть
 
-Data can be shared between the host and guest OS using any network protocol that can transfer files, such as [NFS](/index.php/NFS "NFS"), [SMB](/index.php/SMB "SMB"), [NBD](https://en.wikipedia.org/wiki/Network_Block_Device "wikipedia:Network Block Device"), HTTP, [FTP](/index.php/Very_Secure_FTP_Daemon "Very Secure FTP Daemon"), or [SSH](/index.php/SSH "SSH"), provided that you have set up the network appropriately and enabled the appropriate services.
+Данные могут быть разделены между хостом и гостевой ОС, используя любой сетевой протокол, который может передавать файлы, такие как [NFS](/index.php/NFS "NFS"), [SMB](/index.php/SMB "SMB"), [NBD](https://en.wikipedia.org/wiki/%D0%A1%D0%B5%D1%82%D0%B5%D0%B2%D0%BE%D0%B5_%D0%B1%D0%BB%D0%BE%D1%87%D0%BD%D0%BE%D0%B5_%D1%83%D1%81%D1%82%D1%80%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%BE "wikipedia:Сетевое блочное устройство"), HTTP, [FTP](/index.php/Very_Secure_FTP_Daemon "Very Secure FTP Daemon"), or [SSH](/index.php/SSH "SSH"), при условии, что вы правильно настроили сеть и включили соответствующие службы.
 
-The default user-mode networking allows the guest to access the host OS at the IP address 10.0.2.2\. Any servers that you are running on your host OS, such as a SSH server or SMB server, will be accessible at this IP address. So on the guests, you can mount directories exported on the host via [SMB](/index.php/SMB "SMB") or [NFS](/index.php/NFS "NFS"), or you can access the host's HTTP server, etc. It will not be possible for the host OS to access servers running on the guest OS, but this can be done with other network configurations (see [#Tap networking with QEMU](#Tap_networking_with_QEMU)).
+Сеть в пользовательском режиме по умолчанию позволяет гостевой системе получить доступ к ОС хоста по IP-адресу 10.0.2.2\. Любые серверы, которые вы используете в своей операционной системе, такие как сервер SSH или SMB, будут доступны по этому IP-адресу. Таким образом, на гостевой ОС вы можете смонтировать каталоги, экспортированные на хост через [SMB](/index.php/SMB "SMB") или [NFS](/index.php/NFS "NFS"), или вы можете получить доступ к HTTP-серверу хоста и т.д.
 
-### QEMU's built-in SMB server
+Хост-ОС не сможет получить доступ к серверам, работающим на гостевой ОС, но это может быть сделано с другими сетевыми конфигурациями (см. [#Tap networking with QEMU](#Tap_networking_with_QEMU)).
+
+### Встроенный SMB-сервер QEMU
 
 QEMU's documentation says it has a "built-in" SMB server, but actually it just starts up [Samba](/index.php/Samba "Samba") with an automatically generated `smb.conf` file located at `/tmp/qemu-smb.*pid*-0/smb.conf` and makes it accessible to the guest at a different IP address (10.0.2.4 by default). This only works for user networking, and this is not necessarily very useful since the guest can also access the normal [Samba](/index.php/Samba "Samba") service on the host if you have set up shares on it.
 
@@ -330,103 +332,109 @@ Then, in the guest, you will be able to access the shared directory on the host 
 *   If you are using sharing options multiple times like `-net user,smb=*shared_dir_path1* -net user,smb=*shared_dir_path2*` or `-net user,smb=*shared_dir_path1*,smb=*shared_dir_path2*` then it will share only the last defined one.
 *   If you cannot access the shared folder and the guest system is Windows, check that the [NetBIOS protocol is enabled](http://ecross.mvps.org/howto/enable-netbios-over-tcp-ip-with-windows.htm) and that a firewall does not block [ports](http://technet.microsoft.com/en-us/library/cc940063.aspx) used by the NetBIOS protocol.
 
-### Mounting a partition inside a raw disk image
+### Монтирование раздела внутри образа raw диска
 
-When the virtual machine is not running, it is possible to mount partitions that are inside a raw disk image file by setting them up as loopback devices. This does not work with disk images in special formats, such as qcow2, although those can be mounted using `qemu-nbd`.
+Когда виртуальная машина не работает, можно смонтировать разделы, которые находятся внутри файла образа raw диска, настроив их в качестве устройств обратной связи. Это не работает с образами дисков в специальных форматах, таких как qcow2, хотя их можно смонтировать с помощью `qemu-nbd`.
 
 **Warning:** You must make sure to unmount the partitions before running the virtual machine again. Otherwise, data corruption is very likely to occur.
 
-#### With manually specifying byte offset
+#### С указанием байтового смещения вручную
 
-One way to mount a disk image partition is to mount the disk image at a certain offset using a command like the following:
+Один из способов смонтировать раздел образа диска - это смонтировать образ диска с определенным смещением, используя следующую команду:
 
 ```
 # mount -o loop,offset=32256 *disk_image* *mountpoint*
 
 ```
 
-The `offset=32256` option is actually passed to the `losetup` program to set up a loopback device that starts at byte offset 32256 of the file and continues to the end. This loopback device is then mounted. You may also use the `sizelimit` option to specify the exact size of the partition, but this is usually unnecessary.
+Параметр `offset=32256` фактически передается программе `losetup` для настройки устройства loopback, которое начинается с 32256 байтового смещения и продолжается до конца. Это loopback устройство затем монтируется. Вы также можете использовать опцию `sizelimit`, чтобы указать точный размер раздела, но это обычно не требуется.
 
-Depending on your disk image, the needed partition may not start at offset 32256\. Run `fdisk -l *disk_image*` to see the partitions in the image. fdisk gives the start and end offsets in 512-byte sectors, so multiply by 512 to get the correct offset to pass to `mount`.
+В зависимости от образа диска необходимый раздел может не начинаться со смещения 32256\. Запустите `fdisk -l *disk_image*`, чтобы увидеть разделы в образе. fdisk делает начальное и конечное смещения в 512-байтовых секторах, поэтому умножьте на 512, чтобы получить правильное смещение для передачи в `mount`.
 
-#### With loop module autodetecting partitions
+#### С loop модулем автоопределение разделов
 
-The Linux loop driver actually supports partitions in loopback devices, but it is disabled by default. To enable it, do the following:
+Драйвер loop Linux поддерживает разделы в устройствах loopback, но по умолчанию он отключен. Чтобы включить его, сделайте следующее:
 
-*   Get rid of all your loopback devices (unmount all mounted images, etc.).
-*   [Unload](/index.php/Kernel_modules#Manual_module_handling "Kernel modules") the `loop` kernel module, and load it with the `max_part=15` parameter set. Additionally, the maximum number of loop devices can be controlled with the `max_loop` parameter.
+*   Избавьтесь от всех ваших loopback устройств (размонтируйте все подключенные образы и т.д.).
+*   [Загрузить](/index.php/Kernel_modules#Manual_module_handling "Kernel modules") модуль ядра `loop` и загрузите его с набором параметров `max_part=15`. Кроме того, максимальное количество loop устройств можно контролировать с помощью параметра `max_loop`.
 
-**Tip:** You can put an entry in `/etc/modprobe.d` to load the loop module with `max_part=15` every time, or you can put `loop.max_part=15` on the kernel command-line, depending on whether you have the `loop.ko` module built into your kernel or not.
+**Совет:** Вы можете поместить запись в `/etc/modprobe.d`, чтобы каждый раз загружать модуль loop с парометром `max_part=15`, или вы можете поместить `loop.max_part=15` в командной строке ядра, в зависимости от того, встроен ли в ядро модуль `loop.ko` или нет.
 
-Set up your image as a loopback device:
+Настройте свое изображение в качестве loopback устройства:
 
 ```
 # losetup -f -P *disk_image*
 
 ```
 
-Then, if the device created was `/dev/loop0`, additional devices `/dev/loop0pX` will have been automatically created, where X is the number of the partition. These partition loopback devices can be mounted directly. For example:
+Затем, если созданным устройством было `/dev/loop0`, автоматически будут созданы дополнительные устройства `/dev/loop0pX`, где X - номер раздела. Эти устройства с loopback можно монтировать напрямую.
+
+Например:
 
 ```
 # mount /dev/loop0p1 *mountpoint*
 
 ```
 
-To mount the disk image with *udisksctl*, see [Udisks#Mount loop devices](/index.php/Udisks#Mount_loop_devices "Udisks").
+Чтобы смонтировать образ диска с помощью *udisksctl*, см. [Udisks#Mount loop devices](/index.php/Udisks#Mount_loop_devices "Udisks").
 
-#### With kpartx
+#### С kpartx
 
-**kpartx** from the [multipath-tools](https://www.archlinux.org/packages/?name=multipath-tools) package can read a partition table on a device and create a new device for each partition. For example:
+**kpartx** из пакета [multipath-tools](https://www.archlinux.org/packages/?name=multipath-tools) может прочитать таблицу разделов на устройстве и создать новое устройство для каждого раздела.
+
+Например:
 
 ```
 # kpartx -a *disk_image*
 
 ```
 
-This will setup the loopback device and create the necessary partition(s) device(s) in `/dev/mapper/`.
+Это настроит устройство обратной связи и создаст необходимое устройство(а) раздел(ов) в `/dev/mapper/`.
 
-### Mounting a partition inside a qcow2 image
+### Монтирование раздела внутри образа qcow2
 
-You may mount a partition inside a qcow2 image using `qemu-nbd`. See [Wikibooks](http://en.wikibooks.org/wiki/QEMU/Images#Mounting_an_image_on_the_host).
+Вы можете смонтировать раздел внутри образа qcow2, используя `qemu-nbd`. See [Wikibooks](http://en.wikibooks.org/wiki/QEMU/Images#Mounting_an_image_on_the_host).
 
-### Using any real partition as the single primary partition of a hard disk image
+### Использование любого реального раздела в качестве единственного основного раздела образа жесткого диска
 
-Sometimes, you may wish to use one of your system partitions from within QEMU. Using a raw partition for a virtual machine will improve performance, as the read and write operations do not go through the file system layer on the physical host. Such a partition also provides a way to share data between the host and guest.
+Иногда вы можете захотеть использовать один из ваших системных разделов внутри QEMU. Использование raw раздела для виртуальной машины повысит производительность, поскольку операции чтения и записи не проходят уровень файловой системы на физическом хосте. Такой раздел также обеспечивает возможность обмена данными между хостом и гостем.
 
-In Arch Linux, device files for raw partitions are, by default, owned by *root* and the *disk* group. If you would like to have a non-root user be able to read and write to a raw partition, you need to change the owner of the partition's device file to that user.
+В Arch Linux файлы устройств для raw разделов по умолчанию принадлежат *root* и группе *disk*. Если вы хотите, чтобы пользователь без полномочий root мог читать и записывать в необработанный раздел, вам нужно изменить владельца файла устройства раздела на этого пользователя.
 
 **Warning:**
 
-*   Although it is possible, it is not recommended to allow virtual machines to alter critical data on the host system, such as the root partition.
-*   You must not mount a file system on a partition read-write on both the host and the guest at the same time. Otherwise, data corruption will result.
+*   Хотя это возможно, не рекомендуется разрешать виртуальным машинам изменять важные данные в хост-системе, например в корневом разделе.
+*   Вы не должны монтировать файловую систему на чтение и запись раздела одновременно на хосте и госте. В противном случае может произойти к повреждению данных.
 
-After doing so, you can attach the partition to a QEMU virtual machine as a virtual disk.
+После этого вы можете присоединить раздел к виртуальной машине QEMU как виртуальный диск.
 
-However, things are a little more complicated if you want to have the *entire* virtual machine contained in a partition. In that case, there would be no disk image file to actually boot the virtual machine since you cannot install a bootloader to a partition that is itself formatted as a file system and not as a partitioned device with a MBR. Such a virtual machine can be booted either by specifying the [kernel](/index.php/Kernel "Kernel") and [initrd](/index.php/Initramfs "Initramfs") manually, or by simulating a disk with a MBR by using linear [RAID](/index.php/RAID "RAID").
+Однако все немного сложнее, если вы хотите, чтобы «вся» виртуальная машина содержалась в разделе. В этом случае не будет никакого файла образа диска для фактической загрузки виртуальной машины, поскольку вы не можете установить загрузчик на раздел, который сам отформатирован как файловая система, а не как устройство с разделами MBR. Такая виртуальная машина может быть загружена либо путем указания [kernel](/index.php/Kernel "Kernel") и [initrd](/index.php/Initramfs "Initramfs") вручную, либо путем моделирования диска с MBR с использованием линейного [RAID](/index.php/RAID "RAID").
 
-#### By specifying kernel and initrd manually
+#### Указываем ядро и initrd вручную
 
-QEMU supports loading [Linux kernels](/index.php/Kernels "Kernels") and [init ramdisks](/index.php/Initramfs "Initramfs") directly, thereby circumventing bootloaders such as [GRUB](/index.php/GRUB "GRUB"). It then can be launched with the physical partition containing the root file system as the virtual disk, which will not appear to be partitioned. This is done by issuing a command similar to the following:
+QEMU поддерживает загрузку [Linux kernels](/index.php/Kernels "Kernels") и [init ramdisks](/index.php/Initramfs "Initramfs") напрямую, обходя таким образом загрузчики, такие как [GRUB](/index.php/GRUB "GRUB"). Затем он может быть запущен с физическим разделом, содержащим корневую файловую систему в качестве виртуального диска, который не будет выглядеть как разделенный. Это делается с помощью команды, аналогичной следующей:
 
-**Note:** In this example, it is the **host's** images that are being used, not the guest's. If you wish to use the guest's images, either mount `/dev/sda3` read-only (to protect the file system from the host) and specify the `/full/path/to/images` or use some kexec hackery in the guest to reload the guest's kernel (extends boot time).
+**Примечание:** В этом примере используются изображения '*хоста'(в)*, а не гостевые. Если вы хотите использовать образы гостя, либо смонтируйте `/dev/sda3` только для чтения (для защиты файловой системы от хоста) и укажите `/full/path/to/images` или используйте хакерскую программу kexec в гостевой системе для перезагрузки гостевого ядра (увеличивает время загрузки).
 
 ```
 $ qemu-system-x86_64 -kernel /boot/vmlinuz-linux -initrd /boot/initramfs-linux.img -append root=/dev/sda /dev/sda3
 
 ```
 
-In the above example, the physical partition being used for the guest's root file system is `/dev/sda3` on the host, but it shows up as `/dev/sda` on the guest.
+В приведенном выше примере с физическим разделом, используемым для корневой файловой системы гостя, является `/dev/sda3` на хосте, но на госте он будет отображается как `/dev/sda`.
 
-You may, of course, specify any kernel and initrd that you want, and not just the ones that come with Arch Linux.
+Вы можете указать любое ядро и initrd, а не только те, которые поставляются с Arch Linux.
 
-When there are multiple [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to be passed to the `-append` option, they need to be quoted using single or double quotes. For example:
+Когда есть несколько [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), которые нужно передать в опцию `-append`, они должны быть заключены в одинарные или двойные кавычки.
+
+Например:
 
 ```
 ... -append 'root=/dev/sda1 console=ttyS0'
 
 ```
 
-#### Simulate virtual disk with MBR using linear RAID
+#### Имитация виртуального диска с MBR с использованием линейного RAID
 
 A more complicated way to have a virtual machine use a physical partition, while keeping that partition formatted as a file system and not just having the guest partition the partition as if it were a disk, is to simulate a MBR for it so that it can boot using a bootloader such as GRUB.
 
@@ -478,11 +486,11 @@ $ qemu-system-x86_64 -hdc /dev/md0 *[...]*
 
 You can, of course, safely set any bootloader on this disk image using QEMU, provided the original `/dev/hda*N*` partition contains the necessary tools.
 
-##### Alternative: use nbd-server
+##### Альтернатива: использовать nbd-сервер
 
-Instead of linear RAID, you may use `nbd-server` (from the [nbd](https://www.archlinux.org/packages/?name=nbd) package) to create an MBR wrapper for QEMU.
+Вместо линейного RAID вы можете использовать `nbd-server` (из пакета [nbd](https://www.archlinux.org/packages/?name=nbd)) для создания оболочки MBR для QEMU.
 
-Assuming you have already set up your MBR wrapper file like above, rename it to `wrapper.img.0`. Then create a symbolic link named `wrapper.img.1` in the same directory, pointing to your partition. Then put the following script in the same directory:
+Предполагая, что вы уже настроили файл-оболочку MBR, как описано выше, переименуйте его в `wrapper.img.0`. Затем создайте символическую ссылку с именем `wrapper.img.1` в том же каталоге, указывая на ваш раздел. Затем поместите следующий скрипт в тот же каталог:
 
 ```
 #!/bin/sh
@@ -505,20 +513,20 @@ nbd-server \
 
 ```
 
-The `.0` and `.1` suffixes are essential; the rest can be changed. After running the above script (which you may need to do as root to make sure nbd-server is able to access the partition), you can launch QEMU with:
+Суффиксы `.0` and `.1` необходимы; остальное можно изменить. После запуска приведенного выше сценария (который может потребоваться запустить от имени пользователя root, чтобы nbd-сервер мог получить доступ к разделу), вы можете запустить QEMU с помощью:
 
 ```
 qemu-system-x86_64 -drive file=nbd:127.713705:10809:exportname=wrap *[...]*
 
 ```
 
-## Networking
+## Сетевые топологии
 
-The performance of virtual networking should be better with tap devices and bridges than with user-mode networking or vde because tap devices and bridges are implemented in-kernel.
+Производительность виртуальных сетей должна быть лучше с устройствами и мостами(bridges), подключенными к сети, чем с сетью в пользовательском режиме или vde, потому что устройства и мосты с поддержкой сети реализованы в ядре.
 
-In addition, networking performance can be improved by assigning virtual machines a [virtio](http://wiki.libvirt.org/page/Virtio) network device rather than the default emulation of an e1000 NIC. See [#Installing virtio drivers](#Installing_virtio_drivers) for more information.
+Кроме того, производительность сети можно улучшить, назначив виртуальным машинам сетевое устройство [virtio](http://wiki.libvirt.org/page/Virtio), а не эмуляцию по умолчанию для сетевой карты e1000\. См. [#Installing virtio drivers](#Installing_virtio_drivers) для получения дополнительной информации.
 
-### Link-level address caveat
+### Предупреждение об уровне адресации
 
 By giving the `-net nic` argument to QEMU, it will, by default, assign a virtual machine a network interface with the link-level address `52:54:00:12:34:56`. However, when using bridged networking with multiple virtual machines, it is essential that each virtual machine has a unique link-level (MAC) address on the virtual machine side of the tap device. Otherwise, the bridge will not work correctly, because it will receive packets from multiple sources that have the same link-level address. This problem occurs even if the tap devices themselves have unique link-level addresses because the source link-level address is not rewritten as packets pass through the tap device.
 
@@ -563,7 +571,7 @@ Generating unique link-level addresses can be done in several ways:
 
     ```
 
-### User-mode networking
+### Пользовательский режим сети
 
 By default, without any `-netdev` arguments, QEMU will use user-mode networking with a built-in DHCP server. Your virtual machines will be assigned an IP address when they run their DHCP client, and they will be able to access the physical host's network through IP masquerading done by QEMU.
 
@@ -1242,23 +1250,23 @@ When using VNC, you might experience keyboard problems described (in gory detail
 
 ## Audio
 
-### Host
+### Хост
 
-The audio driver used by QEMU is set with the `QEMU_AUDIO_DRV` environment variable:
+Драйвер аудио, используемый QEMU, устанавливается с помощью переменной среды `QEMU_AUDIO_DRV`:
 
 ```
 $ export QEMU_AUDIO_DRV=pa
 
 ```
 
-Run the following command to get QEMU's configuration options related to PulseAudio:
+Выполните следующую команду, чтобы получить параметры конфигурации QEMU, связанные с PulseAudio:
 
 ```
 $ qemu-system-x86_64 -audio-help | awk '/Name: pa/' RS=
 
 ```
 
-The listed options can be exported as environment variables, for example:
+Перечисленные параметры можно экспортировать как переменные среды, например:
 
 ```
 $ export QEMU_PA_SINK=alsa_output.pci-0000_04_01.0.analog-stereo.monitor
@@ -1529,9 +1537,9 @@ Screenshots of the virtual machine graphic display can be obtained in the PPM fo
 
 If a virtual machine is set up with [libvirt](/index.php/Libvirt "Libvirt"), it can be configured with `virsh autostart` or through the *virt-manager* GUI to start at host boot by going to the Boot Options for the virtual machine and selecting "Start virtual machine on host boot up".
 
-#### Custom script
+#### Пользовательский скрипт
 
-To run QEMU VMs on boot, you can use following systemd unit and config.
+Для запуска виртуальных машин QEMU при загрузке вы можете использовать следующий системный модуль и конфигурацию.
 
  `/etc/systemd/system/qemu@.service` 
 ```

@@ -40,7 +40,7 @@ Despite not being required for an Arch Linux install, a BIOS update is strongly 
 
 BIOS updates are available via [fwupd](/index.php/Fwupd "Fwupd"), the Lenovo Vantage application on Windows, or from [Lenovo's website](https://pcsupport.lenovo.com/en/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x1-extreme/downloads).
 
-The recommended minimum BIOS version is v1.17 (listed as 0.1.17 on LVFS).
+The recommended minimum BIOS version is v1.17 (listed as 0.1.17 on LVFS); the latest version, v1.18, contains additional fixes, but is only available from Lenovo's website as of late January 2019.
 
 ### Graphics
 
@@ -70,7 +70,7 @@ Thunderbolt works out of the box (tested with ThinkPad Thunderbolt 3 Dock); see 
 
 ### Other hardware
 
-The webcam works out of the box, though it appears connected at all times, no matter the slider state (the camera appears "disconnected" in Windows when the protective slider is closed) - however, when the slider is closed, a completely black image is reported by the camera.
+The webcam works out of the box, though it appears connected at all times, no matter the slider state (the camera reports a "disconnected" placeholder image in Windows when the protective slider is closed) - however, when the slider is closed, a completely black image is reported by the camera.
 
 The fingerprint scanner is currently not supported in libfprint - a reverse engineering effort was ongoing [here](https://github.com/nmikhailov/Validity90), but seems to have stalled. Upstream libfprint bug is tracked [here](https://gitlab.freedesktop.org/libfprint/libfprint/issues/134).
 

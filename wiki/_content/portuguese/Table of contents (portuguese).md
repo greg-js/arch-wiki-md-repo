@@ -6,7 +6,7 @@
 | <small>1.2.1.1.</small> [Arch package guidelines](/index.php/Category:Arch_package_guidelines_(Portugu%C3%AAs) "Category:Arch package guidelines (Português)") <small>(26)</small> |
 | <small>1.3.</small> [ArchWiki](/index.php/Category:ArchWiki_(Portugu%C3%AAs) "Category:ArchWiki (Português)") <small>(8)</small> |
 | <small>1.3.1.</small> [Help](/index.php/Category:Help_(Portugu%C3%AAs) "Category:Help (Português)") <small>(15)</small> |
-| <small>1.3.2.</small> [Lists](/index.php/Category:Lists_(Portugu%C3%AAs) "Category:Lists (Português)") <small>(2)</small> |
+| <small>1.3.2.</small> [Lists](/index.php/Category:Lists_(Portugu%C3%AAs) "Category:Lists (Português)") <small>(3)</small> |
 | <small>1.3.2.1.</small> [Lists of software](/index.php/Category:Lists_of_software_(Portugu%C3%AAs) "Category:Lists of software (Português)") <small>(8) (também em [Software](/index.php/Category:Software_(Portugu%C3%AAs) "Category:Software (Português)"))</small> |
 | <small>1.4.</small> [Installation process](/index.php/Category:Installation_process_(Portugu%C3%AAs) "Category:Installation process (Português)") <small>(6)</small> |
 | <small>1.5.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems_(Portugu%C3%AAs) "Category:Live Arch systems (Português)") <small>(2)</small> |
@@ -43,7 +43,7 @@
 | <small>4.6.1.</small> [Android](/index.php/Category:Android_(Portugu%C3%AAs) "Category:Android (Português)") <small>(1)</small> |
 | <small>4.7.</small> [Sound](/index.php/Category:Sound_(Portugu%C3%AAs) "Category:Sound (Português)") <small>(4) (também em [Multimedia](/index.php/Category:Multimedia_(Portugu%C3%AAs) "Category:Multimedia (Português)"))</small> |
 | <small>4.8.</small> [Storage](/index.php/Category:Storage_(Portugu%C3%AAs) "Category:Storage (Português)") <small>(1)</small> |
-| <small>5.</small> [Rede](/index.php/Category:Networking_(Portugu%C3%AAs) "Category:Networking (Português)") <small>(4)</small> |
+| <small>5.</small> [Rede](/index.php/Category:Networking_(Portugu%C3%AAs) "Category:Networking (Português)") <small>(5)</small> |
 | <small>5.1.</small> [Domain Name System](/index.php/Category:Domain_Name_System_(Portugu%C3%AAs) "Category:Domain Name System (Português)") <small>(5)</small> |
 | <small>5.2.</small> [Email](/index.php/Category:Email_(Portugu%C3%AAs) "Category:Email (Português)") <small>(0)</small> |
 | <small>5.2.1.</small> [Mail server](/index.php/Category:Mail_server_(Portugu%C3%AAs) "Category:Mail server (Português)") <small>(2) (também em [Servers](/index.php/Category:Servers_(Portugu%C3%AAs) "Category:Servers (Português)"))</small> |
@@ -119,7 +119,7 @@
 | <small>7.12.</small> [Linux console](/index.php/Category:Linux_console_(Portugu%C3%AAs) "Category:Linux console (Português)") <small>(3)</small> |
 | <small>7.13.</small> [Localization](/index.php/Category:Localization_(Portugu%C3%AAs) "Category:Localization (Português)") <small>(2)</small> |
 | <small>7.14.</small> [Logging](/index.php/Category:Logging_(Portugu%C3%AAs) "Category:Logging (Português)") <small>(1)</small> |
-| <small>7.15.</small> [Gerenciamento de pacotes](/index.php/Category:Package_management_(Portugu%C3%AAs) "Category:Package management (Português)") <small>(19)</small> |
+| <small>7.15.</small> [Gerenciamento de pacotes](/index.php/Category:Package_management_(Portugu%C3%AAs) "Category:Package management (Português)") <small>(20)</small> |
 | <small>7.16.</small> [Power management](/index.php/Category:Power_management_(Portugu%C3%AAs) "Category:Power management (Português)") <small>(1)</small> |
 | <small>7.17.</small> [Security](/index.php/Category:Security_(Portugu%C3%AAs) "Category:Security (Português)") <small>(8)</small> |
 | <small>7.17.1.</small> [Cryptography](/index.php/Category:Cryptography_(Portugu%C3%AAs) "Category:Cryptography (Português)") <small>(0)</small> |

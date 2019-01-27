@@ -137,8 +137,6 @@ PASSWD              =
 
 **Note:** MySQL socket support can be enabled by using `/var/run/mysqld/mysqld.sock` as the listen address.
 
-**Warning:** Gitea does not work with MariaDB < 10.2 out of the box ([workaround](https://github.com/go-gitea/gitea/issues/2979)), and the [mariadb](https://www.archlinux.org/packages/?name=mariadb) package is hold on 10.1 to keep [compatibility](https://lists.archlinux.org/pipermail/arch-general/2017-September/044255.html) with depending packages.
-
 The following is an example of setting up [MariaDB](/index.php/MariaDB "MariaDB"), setting your desired password:
 
  `$ mysql -u root -p` 

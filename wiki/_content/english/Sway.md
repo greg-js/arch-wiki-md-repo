@@ -1,4 +1,4 @@
-*sway* is a compositor for [Wayland](/index.php/Wayland "Wayland") designed to be fully compatible with [i3](/index.php/I3 "I3"). According to [the official website](http://swaywm.org):
+*sway* is a compositor for [Wayland](/index.php/Wayland "Wayland") designed to be fully compatible with [i3](/index.php/I3 "I3"). According to [the official website](https://swaywm.org):
 
 	Sway is a drop-in replacement for the i3 window manager, but for Wayland instead of X11\. It works with your existing i3 configuration and supports most of i3's features, and a few extras.
 
@@ -280,4 +280,5 @@ You may be able to alter your TTY resolution (thus also altering the WLC and Swa
 ## See also
 
 *   [GitHub project](https://github.com/SirCmpwn/sway)
-*   [Website](http://swaywm.org)
+*   [sr.ht git page](https://git.sr.ht/~sircmpwn/sway)
+*   [Website](https://swaywm.org)

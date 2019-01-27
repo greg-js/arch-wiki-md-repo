@@ -188,7 +188,7 @@ The goal of Intel Fastboot is to preserve the frame-buffer as setup by the BIOS 
 To enable fastboot, set `i915.fastboot=1` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") or set in `/etc/modprobe.d/i915.conf`:
 
  `/etc/modprobe.d/i915.conf`  `options i915 fastboot=1` 
-**Warning:** This parameter is not enabled by default and may cause issues on some systems [[4]](https://www.phoronix.com/scan.php?page=news_item&px=i915-Fastboot-Default-2017).
+**Warning:** This parameter is not enabled by default and may cause issues on some older (pre-Skylake) systems.[[4]](https://www.phoronix.com/scan.php?page=news_item&px=Intel-Fastboot-Default-2019-Try)
 
 ### Intel GVT-g Graphics Virtualization Support
 

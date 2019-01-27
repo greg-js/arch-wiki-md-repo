@@ -7,7 +7,7 @@
 | <small>1.2.2.</small> [Listados](/index.php/Category:Lists_(Espa%C3%B1ol) "Category:Lists (Español)") <small>(4)</small> |
 | <small>1.2.2.1.</small> [Listados de programas](/index.php/Category:Lists_of_software_(Espa%C3%B1ol) "Category:Lists of software (Español)") <small>(22) (también en [Software](/index.php/Category:Software_(Espa%C3%B1ol) "Category:Software (Español)"))</small> |
 | <small>1.3.</small> [DeveloperWiki](/index.php/Category:DeveloperWiki_(Espa%C3%B1ol) "Category:DeveloperWiki (Español)") <small>(0) (también en [Desarrollo](/index.php/Category:Development_(Espa%C3%B1ol) "Category:Development (Español)"))</small> |
-| <small>1.3.1.</small> [Desarrollo de Arch](/index.php/Category:Arch_development_(Espa%C3%B1ol) "Category:Arch development (Español)") <small>(2)</small> |
+| <small>1.3.1.</small> [Desarrollo de Arch](/index.php/Category:Arch_development_(Espa%C3%B1ol) "Category:Arch development (Español)") <small>(3)</small> |
 | <small>1.3.1.1.</small> [Desarrollo de paquetes](/index.php/Category:Package_development_(Espa%C3%B1ol) "Category:Package development (Español)") <small>(10)</small> |
 | <small>1.3.1.2.</small> [Desarrollo de pacman](/index.php/Category:Pacman_development_(Espa%C3%B1ol) "Category:Pacman development (Español)") <small>(1)</small> |
 | <small>1.3.2.</small> [Proyectos de Arch](/index.php/Category:Arch_projects_(Espa%C3%B1ol) "Category:Arch projects (Español)") <small>(6) (también en [Proyectos de software](/index.php/Category:Software_projects_(Espa%C3%B1ol) "Category:Software projects (Español)"))</small> |
@@ -16,7 +16,7 @@
 | <small>1.6.</small> [Equipos](/index.php/Category:Teams_(Espa%C3%B1ol) "Category:Teams (Español)") <small>(4)</small> |
 | <small>2.</small> [Desarrollo](/index.php/Category:Development_(Espa%C3%B1ol) "Category:Development (Español)") <small>(6)</small> |
 | <small>2.1.</small> [DeveloperWiki](/index.php/Category:DeveloperWiki_(Espa%C3%B1ol) "Category:DeveloperWiki (Español)") <small>(0) (también en [Acerca de Arch](/index.php/Category:About_Arch_(Espa%C3%B1ol) "Category:About Arch (Español)"))</small> |
-| <small>2.1.1.</small> [Desarrollo de Arch](/index.php/Category:Arch_development_(Espa%C3%B1ol) "Category:Arch development (Español)") <small>(2)</small> |
+| <small>2.1.1.</small> [Desarrollo de Arch](/index.php/Category:Arch_development_(Espa%C3%B1ol) "Category:Arch development (Español)") <small>(3)</small> |
 | <small>2.1.1.1.</small> [Desarrollo de paquetes](/index.php/Category:Package_development_(Espa%C3%B1ol) "Category:Package development (Español)") <small>(10)</small> |
 | <small>2.1.1.2.</small> [Desarrollo de pacman](/index.php/Category:Pacman_development_(Espa%C3%B1ol) "Category:Pacman development (Español)") <small>(1)</small> |
 | <small>2.1.2.</small> [Proyectos de Arch](/index.php/Category:Arch_projects_(Espa%C3%B1ol) "Category:Arch projects (Español)") <small>(6) (también en [Proyectos de software](/index.php/Category:Software_projects_(Espa%C3%B1ol) "Category:Software projects (Español)"))</small> |
@@ -59,7 +59,7 @@
 | <small>3.14.</small> [Sonido](/index.php/Category:Sound_(Espa%C3%B1ol) "Category:Sound (Español)") <small>(6) (también en [Multimedia](/index.php/Category:Multimedia_(Espa%C3%B1ol) "Category:Multimedia (Español)"))</small> |
 | <small>3.15.</small> [Almacenamiento](/index.php/Category:Storage_(Espa%C3%B1ol) "Category:Storage (Español)") <small>(3)</small> |
 | <small>3.15.1.</small> [Disco óptico](/index.php/Category:Optical_disc_(Espa%C3%B1ol) "Category:Optical disc (Español)") <small>(1)</small> |
-| <small>3.16.</small> [TV cards](/index.php/Category:TV_cards_(Espa%C3%B1ol) "Category:TV cards (Español)") <small>(1) (también en [Television](/index.php/Category:Television_(Espa%C3%B1ol) "Category:Television (Español)"))</small> |
+| <small>3.16.</small> [TV cards](/index.php/Category:TV_cards_(Espa%C3%B1ol) "Category:TV cards (Español)") <small>(3) (también en [Television](/index.php/Category:Television_(Espa%C3%B1ol) "Category:Television (Español)"))</small> |
 | <small>4.</small> [Administración de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)") <small>(8)</small> |
 | <small>4.1.</small> [Servicios de directorio](/index.php/Category:Directory_services_(Espa%C3%B1ol) "Category:Directory services (Español)") <small>(0)</small> |
 | <small>4.1.1.</small> [Sistema de nombres de dominio (DNS)](/index.php/Category:Domain_Name_System_(Espa%C3%B1ol) "Category:Domain Name System (Español)") <small>(6) (también en [Protocolos](/index.php/Category:Protocols_(Espa%C3%B1ol) "Category:Protocols (Español)"), [Servidores](/index.php/Category:Servers_(Espa%C3%B1ol) "Category:Servers (Español)"))</small> |
@@ -137,10 +137,10 @@
 | <small>5.1.5.</small> [Sistemas de gestión de bases de datos](/index.php/Category:Database_management_systems_(Espa%C3%B1ol) "Category:Database management systems (Español)") <small>(2)</small> |
 | <small>5.1.5.1.</small> [DBMSs relacionales](/index.php/Category:Relational_DBMSs_(Espa%C3%B1ol) "Category:Relational DBMSs (Español)") <small>(1)</small> |
 | <small>5.1.6.</small> [Diccionarios](/index.php/Category:Dictionaries_(Espa%C3%B1ol) "Category:Dictionaries (Español)") <small>(2)</small> |
-| <small>5.1.7.</small> [Emulación](/index.php/Category:Emulation_(Espa%C3%B1ol) "Category:Emulation (Español)") <small>(4)</small> |
+| <small>5.1.7.</small> [Emulación](/index.php/Category:Emulation_(Espa%C3%B1ol) "Category:Emulation (Español)") <small>(5)</small> |
 | <small>5.1.7.1.</small> [Emuladores de terminal](/index.php/Category:Terminal_emulators_(Espa%C3%B1ol) "Category:Terminal emulators (Español)") <small>(3) (también en [Aplicaciones](/index.php/Category:Applications_(Espa%C3%B1ol) "Category:Applications (Español)"), [Línea de órdenes](/index.php/Category:Command-line_(Espa%C3%B1ol) "Category:Command-line (Español)"))</small> |
 | <small>5.1.8.</small> [Gestores de archivos](/index.php/Category:File_managers_(Espa%C3%B1ol) "Category:File managers (Español)") <small>(4)</small> |
-| <small>5.1.9.</small> [Juegos](/index.php/Category:Gaming_(Espa%C3%B1ol) "Category:Gaming (Español)") <small>(5)</small> |
+| <small>5.1.9.</small> [Juegos](/index.php/Category:Gaming_(Espa%C3%B1ol) "Category:Gaming (Español)") <small>(6)</small> |
 | <small>5.1.10.</small> [Aplicaciones de internet](/index.php/Category:Internet_applications_(Espa%C3%B1ol) "Category:Internet applications (Español)") <small>(2) (también en [Administración de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)"))</small> |
 | <small>5.1.10.1.</small> [Redes de anonimato](/index.php/Category:Anonymity_networks_(Espa%C3%B1ol) "Category:Anonymity networks (Español)") <small>(3) (también en [Seguridad](/index.php/Category:Security_(Espa%C3%B1ol) "Category:Security (Español)"))</small> |
 | <small>5.1.10.2.</small> [BitTorrent](/index.php/Category:BitTorrent_(Espa%C3%B1ol) "Category:BitTorrent (Español)") <small>(2) (también en [Punto-a-punto](/index.php/Category:Peer-to-peer_(Espa%C3%B1ol) "Category:Peer-to-peer (Español)"), [Protocolos](/index.php/Category:Protocols_(Espa%C3%B1ol) "Category:Protocols (Español)"))</small> |
@@ -162,7 +162,7 @@
 | <small>5.1.11.4.</small> [Música](/index.php/Category:Music_(Espa%C3%B1ol) "Category:Music (Español)") <small>(4)</small> |
 | <small>5.1.11.5.</small> [Sonido](/index.php/Category:Sound_(Espa%C3%B1ol) "Category:Sound (Español)") <small>(6) (también en [Hardware](/index.php/Category:Hardware_(Espa%C3%B1ol) "Category:Hardware (Español)"))</small> |
 | <small>5.1.11.6.</small> [Television](/index.php/Category:Television_(Espa%C3%B1ol) "Category:Television (Español)") <small>(0)</small> |
-| <small>5.1.11.6.1.</small> [TV cards](/index.php/Category:TV_cards_(Espa%C3%B1ol) "Category:TV cards (Español)") <small>(1) (también en [Hardware](/index.php/Category:Hardware_(Espa%C3%B1ol) "Category:Hardware (Español)"))</small> |
+| <small>5.1.11.6.1.</small> [TV cards](/index.php/Category:TV_cards_(Espa%C3%B1ol) "Category:TV cards (Español)") <small>(3) (también en [Hardware](/index.php/Category:Hardware_(Espa%C3%B1ol) "Category:Hardware (Español)"))</small> |
 | <small>5.1.11.7.</small> [Video](/index.php/Category:Video_(Espa%C3%B1ol) "Category:Video (Español)") <small>(3)</small> |
 | <small>5.1.12.</small> [Ofimática](/index.php/Category:Office_(Espa%C3%B1ol) "Category:Office (Español)") <small>(8)</small> |
 | <small>5.1.12.1.</small> [TeX](/index.php/Category:TeX_(Espa%C3%B1ol) "Category:TeX (Español)") <small>(1)</small> |

@@ -33,7 +33,9 @@ Related articles
     *   [3.1 Pi-hole DNS management](#Pi-hole_DNS_management)
     *   [3.2 Forced update of ad-serving domains list](#Forced_update_of_ad-serving_domains_list)
     *   [3.3 Temporarily disable Pi-hole](#Temporarily_disable_Pi-hole)
-*   [4 See also](#See_also)
+*   [4 Troubleshooting](#Troubleshooting_2)
+    *   [4.1 Data loss on reboot](#Data_loss_on_reboot)
+*   [5 See also](#See_also)
 
 ## Pi-hole server
 
@@ -310,6 +312,16 @@ $ pihole enable
 ```
 
 or, via web interface, clicking on *Enable*.
+
+## Troubleshooting
+
+### Data loss on reboot
+
+Systems without a [RTC](/index.php/RTC "RTC") such as some ARM devices will likely experience loss of data in the query log upon rebooting. When systems lacking a [RTC](/index.php/RTC "RTC") boot, the time is set *after* the network and resolver come up. Aspects of Pi-hole can get started before this happens leading to the data loss. An incorrectly set [RTC](/index.php/RTC "RTC") can also cause problems. See: [Installation_guide#Time_zone](/index.php/Installation_guide#Time_zone "Installation guide") and [System_time](/index.php/System_time "System time").
+
+For devices lacking a [RTC](/index.php/RTC "RTC"): A hacky work-around for this is to use [Systemd#Drop-in_files](/index.php/Systemd#Drop-in_files "Systemd") against `pihole-FTL.service` wherein a delay is built in calling `/usr/bin/sleep x` in a `ExecStartPre` statement. Note that the value of "x" in the sleep time depends on how long your specific hardware takes to establish the time sync.
+
+[Issue#11008](https://github.com/systemd/systemd/issues/11008) against systemd-timesyncd is currently preventing the use of the *time-sync.target* to automate this.
 
 ## See also
 

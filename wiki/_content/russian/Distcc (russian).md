@@ -20,9 +20,9 @@ Distcc это программа, предназначенная для расп
 *   [5 Monitoring progress](#Monitoring_progress)
 *   [6 "Cross Compiling" with distcc](#"Cross_Compiling"_with_distcc)
     *   [6.1 X86](#X86)
-        *   [6.1.1 Chroot method (preferred)](#Chroot_method_(preferred))
-            *   [6.1.1.1 Add port numbers to DISTCC_HOSTS on the i686 chroot](#Add_port_numbers_to_DISTCC_HOSTS_on_the_i686_chroot)
-            *   [6.1.1.2 Invoke makepkg from the Native Environment](#Invoke_makepkg_from_the_Native_Environment)
+        *   [6.1.1 Метод Chroot (предпочтительно)](#Метод_Chroot_(предпочтительно))
+            *   [6.1.1.1 Добавить номера портов в DISTCC_HOSTS для i686 chroot](#Добавить_номера_портов_в_DISTCC_HOSTS_для_i686_chroot)
+            *   [6.1.1.2 Вызов makepkg из родной среды](#Вызов_makepkg_из_родной_среды)
         *   [6.1.2 Multilib GCC method (not recommended)](#Multilib_GCC_method_(not_recommended))
     *   [6.2 Other architectures](#Other_architectures)
         *   [6.2.1 Arch ARM](#Arch_ARM)
@@ -41,9 +41,9 @@ Distcc это программа, предназначенная для расп
 
 	slaves
 
-	The slave(s) accept compilation requests send by the master.
+	Подчиненный(е) принимает запросы на компиляцию, отправленные мастером.
 
-**Примечание:** как Мастер так и Слев машин(ы) должны быть запущены по distcc.
+**Примечание:** как Мастер так и Слев машин(ы) должны быть запущены с помощью distcc.
 
 ## Приступая к работе
 
@@ -55,7 +55,7 @@ Distcc это программа, предназначенная для расп
 
 ### Ведомый (Slaves)
 
-Конфигурация для slaves хранится в `/etc/conf.d/distccd`. Параметры командной строки указаны в [distcc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/distcc.1). Как минимум, настроить разрешенные диапазонов адресов в [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing "wikipedia:Classless Inter-Domain Routing") формат:
+Конфигурация для slaves хранится в `/etc/conf.d/distccd`. Параметры командной строки указаны в [distcc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/distcc.1). Как минимум, настроить разрешенные диапазонов адресов в [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing "wikipedia:Classless Inter-Domain Routing") формате:
 
 ```
 DISTCC_ARGS="--allow 192.168.0.0/24"
@@ -76,9 +76,9 @@ DISTCC_ARGS="--allow 192.168.0.0/24"
 2.  Uncomment the *DISTCC_HOSTS* line and add the IP addresses of the slaves then a slash and the number of threads they are to use. The subsequent IP address/threads should be separated by a white space. This list is ordered from most powerful to least powerful (processing power).
 3.  Adjust the MAKEFLAGS variable to correspond to the number of sum of the number of individual values specified for the max threads per server. In the example below, this is 5+3+3=11\. If users specify more than this sum, the extra theoretical thread(s) will be blocked by distcc and appear as such in monitoring utils such as *distccmon-text* described below.
 
-**Note:** It is common practice although optional to define the number of threads as the number of physical core+hyperhtreaded cores (if they exist) plus 1\. Do this on a per-server basis, NOT in the MAKEFLAGS!
+**Note:** Это обычная практика, хотя необязательно определять количество потоков как количество физических ядер+hyperhtreaded ядер (если они существуют) плюс 1\. Делайте это для каждого сервера, а НЕ в MAKEFLAGS!
 
-Example using relevant lines:
+Пример с использованием соответствующих строк:
 
 ```
 BUILDENV=(distcc fakeroot color !ccache check !sign)
@@ -87,7 +87,7 @@ DISTCC_HOSTS="192.168.0.2/5 192.168.0.3/3 192.168.0.4/3"
 
 ```
 
-If users wish to use distcc through SSH, add an "@" symbol in front of the IP address in this section. If key-based auth is not setup on the systems, set the DISTCC_SSH variable to ignore checking for authenticated hosts, i.e. DISTCC_SSH="ssh -i"
+Если пользователи хотят использовать distcc через SSH, добавьте символ "@" перед IP-адресом в этом разделе. Если аутентификация на основе ключей в системах не настроена, установите переменную DISTCC_SSH, чтобы игнорировать проверку для аутентифицированных хостов, то есть DISTCC_SSH="ssh -i"
 
 **Warning:** Make sure that neither the **CFLAGS** and **CXXFLAGS** have -march=native set or else distccd will not distribute work to other machines! Using the Arch defaults for these variables is recommended.
 
@@ -209,24 +209,24 @@ An ideal setup is one that uses the unmodified ARCH packages for distccd running
 
 A [discussion thread](https://bbs.archlinux.org/viewtopic.php?id=129762) has been started on the topic; feel free to contribute.
 
-#### Chroot method (preferred)
+#### Метод Chroot (предпочтительно)
 
-**Note:** This method works, but is not very elegant requiring duplication of distccd on all nodes AND need to have a 32-bit chroots on all nodes.
+**Note:** Этот метод работает, но он не очень элегантный, требующий дублирования distccd на всех узлах И должен иметь 32-битные chroot на всех узлах.
 
 Assuming the user has a [32-bit chroot](/index.php/Install_bundled_32-bit_system_in_Arch64 "Install bundled 32-bit system in Arch64") setup and configured on **each node** of the distcc cluster, the strategy is to have two separate instances of distccd running on different ports on each node -- one runs in the native x86_64 environment and the other in the x86 chroot on a modified port. Start makepkg via a [schroot command](/index.php/Install_bundled_32-bit_system_in_64-bit_system#Schroot "Install bundled 32-bit system in 64-bit system") invoking makepkg.
 
-##### Add port numbers to DISTCC_HOSTS on the i686 chroot
+##### Добавить номера портов в DISTCC_HOSTS для i686 chroot
 
-Append the port number defined eariler (3692) to each of the hosts in `/opt/arch32/etc/makepkg.conf` as follows:
+Добавьте номер порта, определенный ранее (3692), к каждому из хостов в `/opt/arch32/etc/makepkg.conf` следующим образом:
 
 ```
 DISTCC_HOSTS="192.168.1.101/5:3692 192.168.1.102/5:3692 192.168.1.103/3:3692"
 
 ```
 
-**Note:** This only needs to be setup on the "master" i686 chroot. Where "master" is defined as the one from which the compilation will take place.
+**Note:** Это нужно настроить только на "мастер" chroot i686\. Где "мастер" определяется как тот, из под которого будет происходить компиляция.
 
-##### Invoke makepkg from the Native Environment
+##### Вызов makepkg из родной среды
 
 Setup [schroot](/index.php/Install_bundled_32-bit_system_in_64-bit_system#Schroot "Install bundled 32-bit system in 64-bit system") on the native x86_64 environment. Invoke makepkg to build an i686 package from the native x86_64 environment, simply by:
 
@@ -243,25 +243,25 @@ See [Makepkg#Build 32-bit packages on a 64-bit system](/index.php/Makepkg#Build_
 
 #### Arch ARM
 
-When building on an Arch ARM device, the developers *highly* recommend using the official project toolchains.
+При сборке на устройстве Arch ARM разработчики *очень* рекомендуют использовать официальные наборы инструментов проекта. When building on an Arch ARM device,
 
 *   [ARMv8](https://archlinuxarm.org/builder/xtools/x-tools8.tar.xz)
 *   [ARMv7l hard](https://archlinuxarm.org/builder/xtools/x-tools7h.tar.xz)
 *   [ARMv6l hard](https://archlinuxarm.org/builder/xtools/x-tools6h.tar.xz)
 *   [ARMv5te soft](https://archlinuxarm.org/builder/xtools/x-tools.tar.xz)
 
-Extract the toolchain corresponding to the requisite architecture somewhere on the **slave filesystem** and edit `/etc/conf.d/distccd` adjusting the PATH to allow the toolchain to be used.
+Извлеките цепочку инструментов, соответствующую требуемой архитектуре, где-нибудь в **подчиненной файловой системе** и отредактируйте `/etc/conf.d/distccd`, настроив PATH, чтобы позволить использовать toolchain.
 
-Example with the toolchain extracted to `/mnt/data`:
+Пример с набором инструментов, извлеченным в `/mnt/data`:
 
 ```
 PATH=/mnt/data/x-tools8/aarch64-unknown-linux-gnueabi/bin:$PATH
 
 ```
 
-To read in the configuration file, [restart](/index.php/Restart "Restart") `distcc.service`.
+Чтобы прочитать файл конфигурации, [restart](/index.php/Restart "Restart") `distcc.service`.
 
-Optionally link it to your user's homedir if planning to build without makepkg. Example:
+При желании свяжите его с homedir вашего пользователя, если планируете собирать без makepkg. Пример:
 
 ```
 $ ln -s /mnt/data/x-tools8 x-tools8

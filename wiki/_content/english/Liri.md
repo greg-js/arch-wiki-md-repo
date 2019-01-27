@@ -22,9 +22,9 @@ Related articles
 
 ## Installation
 
-Install [liri-shell-git](https://aur.archlinux.org/packages/liri-shell-git/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+Install [liri-shell-git](https://aur.archlinux.org/packages/liri-shell-git/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"), and then install [liri-settings-git](https://aur.archlinux.org/packages/liri-settings-git/) [liri-terminal-git](https://aur.archlinux.org/packages/liri-terminal-git/) [liri-files-git](https://aur.archlinux.org/packages/liri-files-git/) as well, plus optionally [liri-appcenter-git](https://aur.archlinux.org/packages/liri-appcenter-git/).
 
-Otherwise you can follow these instructions:
+Previously, you could follow these instructions:
 
 Add the following lines to your `/etc/pacman.conf` file:
 
@@ -43,6 +43,8 @@ sudo pacman -S liri-shell-git
 sudo pacman -S liri-settings-git liri-terminal-git liri-files-git liri-appcenter-git
 
 ```
+
+However it seems liri only supports flatpak now a days.
 
 ### Other applications
 

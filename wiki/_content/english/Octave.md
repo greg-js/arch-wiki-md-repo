@@ -26,7 +26,7 @@ From the [official website](http://www.gnu.org/software/octave/):
 
 [Install](/index.php/Install "Install") the [octave](https://www.archlinux.org/packages/?name=octave) package.
 
-Run the GUI app with *octave* or the CLI app with *octave-cli*.
+Run the GUI app with *octave --gui* or the CLI app with *octave-cli*.
 
 ### Alternative graphical interfaces
 

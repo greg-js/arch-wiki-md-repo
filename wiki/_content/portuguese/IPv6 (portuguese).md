@@ -1,8 +1,8 @@
-**Status de tradução:** Esse artigo é uma tradução de [IPv6](/index.php/IPv6 "IPv6"). Data da última tradução: 2018-12-31\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=IPv6&diff=0&oldid=529196) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [IPv6](/index.php/IPv6 "IPv6"). Data da última tradução: 2019-01-25\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=IPv6&diff=0&oldid=564682) na versão em inglês.
 
 Artigos relacionados
 
-*   [IPv6 tunnel broker setup](/index.php/IPv6_tunnel_broker_setup "IPv6 tunnel broker setup")
+*   [Configuração de tunnel broker IPv6](/index.php/Configura%C3%A7%C3%A3o_de_tunnel_broker_IPv6 "Configuração de tunnel broker IPv6")
 
 No Arch Linux, IPv6 está habilitado por padrão.
 
@@ -31,7 +31,8 @@ No Arch Linux, IPv6 está habilitado por padrão.
         *   [7.2.2 NetworkManager](#NetworkManager_2)
         *   [7.2.3 ntpd](#ntpd)
     *   [7.3 systemd-networkd](#systemd-networkd_2)
-*   [8 Veja também](#Veja_também)
+*   [8 Preferir IPv4 a IPv6](#Preferir_IPv4_a_IPv6)
+*   [9 Veja também](#Veja_também)
 
 ## Descoberta de vizinhança
 
@@ -116,12 +117,12 @@ Ajuste de acordo com outros front-ends de firewall e não se esqueça de habilit
 
 ## Extensões de privacidade
 
-When a client acquires an address through SLAAC its IPv6 address is derived from the advertised prefix and the MAC address of the network interface of the client. This may raise security concerns as the MAC address of the computer can be easily derived by the IPv6 address. In order to tackle this problem the *IPv6 Privacy Extensions* standard ([RFC 4941](https://tools.ietf.org/html/rfc4941)) has been developed. With privacy extensions the kernel generates a *temporary* address that is mangled from the original autoconfigured address. Private addresses are preferred when connecting to a remote server so the original address is hidden. To enable Privacy Extensions reproduce the following steps:
+Quando um cliente adquire um endereço através do SLAAC, seu endereço IPv6 é derivado do prefixo anunciado e do endereço MAC da interface de rede do cliente. Isso pode aumentar as preocupações de segurança, pois o endereço MAC do computador pode ser facilmente derivado pelo endereço IPv6\. Para resolver este problema, o padrão *IPv6 Privacy Extensions* ([RFC 4941](https://tools.ietf.org/html/rfc4941)) foi desenvolvido. Com as extensões de privacidade, o kernel gera um endereço *temporário* que é destacado do endereço original configurado automaticamente. Os endereços privados são preferidos ao se conectar a um servidor remoto, portanto, o endereço original fica oculto. Para ativar as extensões de privacidade, reproduza as seguintes etapas:
 
-Add these lines to `/etc/sysctl.d/40-ipv6.conf`:
+Adicione essas linhas a `/etc/sysctl.d/40-ipv6.conf`:
 
 ```
-# Enable IPv6 Privacy Extensions
+# Habilita IPv6 Privacy Extensions
 net.ipv6.conf.all.use_tempaddr = 2
 net.ipv6.conf.default.use_tempaddr = 2
 net.ipv6.conf.*nic0*.use_tempaddr = 2
@@ -130,19 +131,19 @@ net.ipv6.conf.*nicN*.use_tempaddr = 2
 
 ```
 
-Where `nic0` to `nicN` are your **N**etwork **I**nterface **C**ards. You can find their names using the instructions in [Network configuration#Listing network interfaces](/index.php/Network_configuration#Listing_network_interfaces "Network configuration"). The `all.use_tempaddr` or `default.use_tempaddr` parameters are not applied to nic's that already exist when the [sysctl](/index.php/Sysctl "Sysctl") settings are executed.
+Sendo que `nic0` a `nicN` são suas placas de rede (***N**etwork **I**nterface **C**ards*). Você pode encontrar seus nomes usando as instruções em [Configuração de rede#Listando interfaces de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede#Listando_interfaces_de_rede "Configuração de rede"). Os parâmetros `all.use_tempaddr` ou `default.use_tempaddr` não são aplicados nas *NIC*s que já existem quando as configurações de [sysctl](/index.php/Sysctl "Sysctl") são executadas.
 
-After a reboot, at the latest, Privacy Extensions should be enabled.
+Após uma reinicialização, no final, Privacy Extensions devem estar habilitadas.
 
 ### dhcpcd
 
-[dhcpcd](/index.php/Dhcpcd "Dhcpcd") includes in its default configuration file since version 6.4.0 the option `slaac private`, which enables "Stable Private IPv6 Addresses instead of hardware based ones", implementing [RFC 7217](https://tools.ietf.org/html/rfc7217) ([commit](http://roy.marples.name/projects/dhcpcd/info/8aa9dab00dc72c453aeccbde885ecce27a3d81ff)). Therefore, it is not necessary to change anything, except if it is desired to change of IPv6 address more often than each time the system is connected to a new network. Set it to `slaac hwaddr` for a stable address.
+[dhcpcd](/index.php/Dhcpcd "Dhcpcd") inclui em seu arquivo de configuração padrão desde a versão 6.4.0 a opção `slaac private`, que ativa "Endereços IPv6 privados estáveis ao invés de baseados em hardware", implementando [RFC 7217](https://tools.ietf.org/html/rfc7217) ([commit](http://roy.marples.name/projects/dhcpcd/info/8aa9dab00dc72c453aeccbde885ecce27a3d81ff)). Portanto, não é necessário alterar nada, exceto se for desejado alterar o endereço IPv6 com mais frequência do que a cada vez que o sistema for conectado a uma nova rede. Defina para `slaac hwaddr` para um endereço estável.
 
 ### NetworkManager
 
-NetworkManager does not honour the settings placed in `/etc/sysctl.d/40-ipv6.conf`. This can be verified by running `$ ip -6 addr show *interface*` after rebooting: no `scope global **temporary**` address appears besides the regular one.
+NetworkManager não honra as configurações colocadas em `/etc/sysctl.d/40-ipv6.conf`. Isso pode ser verificado executando `$ ip -6 addr show *interface*` após reiniciar: nenhum endereço `scope global **temporary**` aparece além do regular.
 
-To enable IPv6 Privacy Extensions by default, add these lines to `/etc/NetworkManager/NetworkManager.conf`
+Para habilitar IPv6 Privacy Extensions por padrão, adicione essas linhas a `/etc/NetworkManager/NetworkManager.conf`
 
  `/etc/NetworkManager/NetworkManager.conf` 
 ```
@@ -151,9 +152,9 @@ To enable IPv6 Privacy Extensions by default, add these lines to `/etc/NetworkMa
 **ipv6.ip6-privacy=2**
 ```
 
-In order to enable IPv6 Privacy Extensions for individual NetworkManager-managed connections, edit the desired connection keyfile in `/etc/NetworkManager/system-connections/` and append to its `[ipv6]` section the key-value pair `ip6-privacy=2`:
+Para habilitar as IPv6 Privacy Extensions para conexões gerenciadas pelo NetworkManager, edite o arquivo de conexão desejado em `/etc/NetworkManager/system-connections/` e acrescente à sua seção `[ipv6]` o par de valores-chave `ip6-privacy=2`:
 
- `/etc/NetworkManager/system-connections/*example_connection*` 
+ `/etc/NetworkManager/system-connections/*conexao-exemplo*` 
 ```
 ...
 [ipv6]
@@ -161,13 +162,13 @@ method=auto
 **ip6-privacy=2**
 ```
 
-**Note:** Although it may seem the `scope global temporary` IPv6 address created by enabling Privacy Extensions never gets renewed (it never shifts to `deprecated` status at the term of its `valid_lft` lifetime), it is to be verified over a longer period of time that this address **does** indeed change.
+**Nota:** Embora possa parecer que o endereço IPv6 `scope global temporary` criado ao ativar as Privacy Extensions nunca é renovado (nunca muda para o status `deprecated` no termo de sua vida útil `valid_lft`), deve ser verificado durante um período de tempo mais longo que esse endereço **realmente** muda.
 
 ### systemd-networkd
 
-Systemd-networkd also does not honor the settings `net.ipv6.conf.xxx.use_tempaddr` placed in `/etc/sysctl.d/40-ipv6.conf` unless the option `IPv6PrivacyExtensions` is set with the value `kernel` in the .network file(s).
+Systemd-networkd também não honra as configurações `net.ipv6.conf.xxx.use_tempaddr` colocadas em `/etc/sysctl.d/40-ipv6.conf` a menos que a opção `IPv6PrivacyExtensions` esteja definida com o valor `kernel` no(s) arquivo(s) .network.
 
-Other options for the IPv6 Privacy Extensions like:
+Outras opções para as IPv6 Privacy Extensions como:
 
 ```
 net.ipv6.conf.xxx.temp_prefered_lft
@@ -175,15 +176,15 @@ net.ipv6.conf.xxx.temp_valid_lft
 
 ```
 
-are honored, however.
+são honradas.
 
-**Note:** `temp_prefered_lft` is the variable name, preferred has to be misspelled.
+**Nota:** `temp_prefered_lft` é o nome da variável, *preferred* tem que ser escrito errado mesmo.
 
-See [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") and [systemd.network(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.network.5) for details.
+Veja [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") e [systemd.network(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.network.5) para detalhes.
 
 ### connman
 
-Add to `/var/lib/connman/settings` under the global section:
+Adicione a `/var/lib/connman/settings` sob a seção global:
 
 ```
 [global]
@@ -193,13 +194,13 @@ IPv6.privacy=preferred
 
 ## Endereço estático
 
-Sometimes, using a static address can improve security. For example, if your local router uses Neighbor Discovery or radvd ([RFC 2461](http://www.apps.ietf.org/rfc/rfc2461.html)), your interface will automatically be assigned an address based on its MAC address (using IPv6's Stateless Autoconfiguration). This may be less than ideal for security since it allows a system to be tracked even if the network portion of the IP address changes.
+Às vezes, usar um endereço estático pode melhorar a segurança. Por exemplo, se o seu roteador local usa Neighbor Discovery ou radvd ([RFC 2461](http://www.apps.ietf.org/rfc/rfc2461.html)), sua interface receberá automaticamente um endereço baseado em seu endereço MAC (usando a configuração automática sem estado do IPv6). Isso pode ser menos do que ideal para segurança, pois permite que um sistema seja rastreado mesmo que a parte da rede do endereço IP seja alterada.
 
-To assign a static IP address using [netctl](/index.php/Netctl "Netctl"), look at the example profile in `/etc/netctl/examples/ethernet-static`. The following lines are important:
+Para atribuir um endereço IP estático usando [netctl](/index.php/Netctl "Netctl"), veja no exemplo de perfil em `/etc/netctl/examples/ethernet-static`. As seguintes linhas são importantes:
 
 ```
 ...
-# For IPv6 static address configuration
+# Para configuração de endereço IPv6 estático
 IP6=static
 Address6=('1234:5678:9abc:def::1/64' '1234:3456::123/96')
 Routes6=('abcd::1234')
@@ -207,23 +208,23 @@ Gateway6='1234:0:123::abcd'
 
 ```
 
-**Note:** If you are connected IPv6-only, then you need to determine your IPv6 DNS server. For example:
+**Nota:** Se você estiver conectado somente a IPv6, precisará determinar seu servidor DNS IPv6\. Por exemplo:
 ```
 DNS=('6666:6666::1' '6666:6666::2')
 
 ```
-If your provider did not give you IPv6 DNS and you are not running your own, you can choose from the [resolv.conf](/index.php/Resolv.conf "Resolv.conf") article.
+Se o seu provedor não forneceu DNS IPv6 e você não está executando o seu próprio, você pode escolher o artigo [resolv.conf](/index.php/Resolv.conf_(Portugu%C3%AAs) "Resolv.conf (Português)").
 
 ## IPv6 e PPPoE
 
-The standard tool for PPPoE, `pppd`, provides support for IPv6 on PPPoE as long as your ISP and your modem support it. Just add the following to `/etc/ppp/pppoe.conf`
+A ferramenta padrão para o PPPoE, `pppd`, fornece suporte a IPv6 sob PPPoE desde que seu provedor de internet e seu modem tenham suporte a isso. Basta adicionar ao seguinte a `/etc/ppp/pppoe.conf`
 
 ```
 +ipv6
 
 ```
 
-If you are using [netctl](/index.php/Netctl "Netctl") for PPPoE then just add the following to your netctl configuration instead
+Se você estiver usando [netctl](/index.php/Netctl "Netctl") para PPPoE, basta adicionar o seguinte a sua configuração de netctl
 
 ```
 PPPoEIP6=yes
@@ -232,20 +233,20 @@ PPPoEIP6=yes
 
 ## Delegação de prefixo (DHCPv6-PD)
 
-**Note:** This section is targeted towards custom gateway configuration, not client machines. For standard market routers please consult the documentation of your router on how to enable prefix delegation.
+**Nota:** Esta seção é direcionada para a configuração de gateway personalizada, não para máquinas clientes. Para roteadores de mercado padrão, consulte a documentação do seu roteador sobre como habilitar a delegação de prefixo.
 
-Prefix delegation is a common IPv6 deployment technique used by many ISPs. It is a method of assigning a network prefix to a user site (ie. local network). A router can be configured to assign different network prefixes to various subnetworks. The ISP handles out a network prefix using DHCPv6 (usually a `/56` or `/64`) and a dhcp client assigns the prefixes to the local network. For a simple two interface gateway it practically assigns an IPv6 prefix to the interface connected to to the local network from an address acquired through the interface connected to WAN (or a pseudo-interface such as ppp).
+A delegação de prefixo é uma técnica comum de implementação de IPv6 usada por muitos ISPs. É um método de atribuição de um prefixo de rede a um site do usuário (por exemplo, rede local). Um roteador pode ser configurado para atribuir diferentes prefixos de rede a várias sub-redes. O ISP distribui um prefixo de rede usando DHCPv6 (geralmente um `/56` ou `/64`) e um cliente dhcp atribui os prefixos à rede local. Para um simples gateway de duas interfaces, ele praticamente atribui um prefixo IPv6 à interface conectada à rede local a partir de um endereço adquirido através da interface conectada à WAN (ou uma pseudo-interface como ppp).
 
 ### Com dibbler
 
-[Dibbler](http://klub.com.pl/dhcpv6/) is a portable DHCPv6 client a server which can be used for Prefix delegation. It is available in the [AUR](/index.php/AUR "AUR") as [dibbler](https://aur.archlinux.org/packages/dibbler/).
+[Dibbler](http://klub.com.pl/dhcpv6/) é um cliente e servidor DHCPv6 portátil que pode ser usado para delegação de prefixo. Pode ser [instalado](/index.php/Instala "Instala") com o pacote [dibbler](https://aur.archlinux.org/packages/dibbler/).
 
-If you are using `dibbler` edit `/etc/dibbler/client.conf`
+Se você está usando `dibbler`, edite `/etc/dibbler/client.conf`
 
 ```
 log-mode short
 log-level 7
-# use the interface connected to your WAN
+# use a interface conectada a sua WAN
 iface "WAN" {
   ia
   pd
@@ -253,47 +254,47 @@ iface "WAN" {
 
 ```
 
-**Tip:** Read dibbler-client(8) for more information.
+**Dica:** Leia dibbler-client(8) para mais informações.
 
 ### Com dhcpcd
 
-[dhcpcd](/index.php/Dhcpcd "Dhcpcd") apart from IPv4 dhcp support also provides a fairly complete implementation of the DHCPv6 client standard which includes DHCPv6-PD. If you are using `dhcpcd` edit `/etc/dhcpcd.conf`. You might already be using dhcpcd for IPv4 so just update your existing configuration.
+O [dhcpcd](/index.php/Dhcpcd "Dhcpcd") além do suporte a dhcp IPv4 também fornece uma implementação bastante completa do padrão de cliente DHCPv6 que inclui o DHCPv6-PD. Se você estiver usando `dhcpcd` edite `/etc/dhcpcd.conf`. Você pode já estar usando o dhcpcd para IPv4, portanto, basta atualizar sua configuração existente.
 
 ```
 duid
 noipv6rs
 waitip 6
-# Uncomment this line if you are running dhcpcd for IPv6 only.
+# Descomente esta linha se você está usando dhcpcd para apenas IPv6.
 #ipv6only
 
-# use the interface connected to WAN
+# usa a interface conectada a WAN
 interface WAN
 ipv6rs
 iaid 1
-# use the interface connected to your LAN
+# use a interface conectada a sua LAN
 ia_pd 1 LAN
 #ia_pd 1/::/64 LAN/0/64
 
 ```
 
-This configuration will ask for a prefix from WAN interface (`WAN`) and delegate it to the internal interface (`LAN`). In the event that a `/64` range is issued, you will need to use the 2nd `ia_pd instruction` that is commented out instead. It will also disable router solicitations on all interfaces except for the WAN interface (`WAN`).
+Essa configuração solicitará um prefixo da interface WAN (`WAN`) e a delegará para a interface interna (`LAN`). No caso de um intervalo `/64` ser emitido, você precisará usar a segunda `ia_pd instruction` comentada em seu lugar. Ele também desativará as solicitações do roteador em todas as interfaces, exceto na interface WAN (`WAN`).
 
-**Tip:** Also read [dhcpcd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.8)and [dhcpcd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5).
+**Dica:** Leia também [dhcpcd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.8) e [dhcpcd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5).
 
 ### Com WIDE-DHCPv6
 
-[WIDE-DHCPv6](http://wide-dhcpv6.sourceforge.net/) is an open-source implementation of Dynamic Host Configuration Protocol for IPv6 (DHCPv6) originally developed by the KAME project. It is available in the [AUR](/index.php/AUR "AUR") as [wide-dhcpv6](https://aur.archlinux.org/packages/wide-dhcpv6/).
+[WIDE-DHCPv6](http://wide-dhcpv6.sourceforge.net/) é uma implementação de código aberto do Protocolo de Configuração de Host Dinâmico para IPv6 (DHCPv6) originalmente desenvolvido pelo projeto KAME. Pode ser [instalado](/index.php/Instala "Instala") com o pacote [wide-dhcpv6](https://aur.archlinux.org/packages/wide-dhcpv6/).
 
-If you are using `wide-dhcpv6` edit `/etc/wide-dhcpv6/dhcp6c.conf`
+Se você está usando `wide-dhcpv6`, edite `/etc/wide-dhcpv6/dhcp6c.conf`
 
 ```
-# use the interface connected to your WAN
+# use a interface conectada a sua WAN
 interface WAN {
   send ia-pd 0;
 };
 
 id-assoc pd 0 {
-  # use the interface connected to your LAN
+  # use a interface conectada a sua LAN
   prefix-interface LAN {
     sla-id 1;
     sla-len 8;
@@ -302,39 +303,34 @@ id-assoc pd 0 {
 
 ```
 
-**Note:** `sla-len` should be set so that `(WAN-prefix) + (sla-len) = 64`. In this case it is set up for a `/56` prefix 56+8=64\. For a `/64` prefix `sla-len` should be `0`.
+**Nota:** `sla-len` deve ser definido de forma que `(WAN-prefix) + (sla-len) = 64`. Neste caso, é configurado para um `/56` prefix 56+8=64\. Para um prefixo `/64`, `sla-len` deve ser `0`.
 
-To enable/start wide-dhcpv6 client use the following command. Change `WAN` with the interface that is connected to your WAN.
+O cliente wide-dhcpv6 pode ser [iniciado/habilitado](/index.php/Iniciado/habilitado "Iniciado/habilitado") usando o arquivo unit systemd `dhcp6c@*interface*.service`, sendo que `*interface*` é o nome da interface no arquivo de configuração. Por exemplo, para um nome de interface "WAN", use `dhcp6c@WAN.service`.
 
-```
-# systemctl enable/start dhcp6c@WAN.service
-
-```
-
-**Tip:** Read dhcp6c(8) and dhcp6c.conf(5) for more information.
+**Dica:** Leia dhcp6c(8) e dhcp6c.conf(5) para mais informações.
 
 ### Outros clientes
 
-[systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") claims to be capable of DHCPv6-PD but is lacking documentation on how to do it.
+[systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") afirma ser capaz de DHCPv6-PD, mas está faltando documentação sobre como fazê-lo.
 
-[dhclient](/index.php/Dhclient "Dhclient") can also request a prefix, but assigning that prefix, or parts of that prefix to interfaces must be done using a dhclient exit script. For example: [https://github.com/jaymzh/v6-gw-scripts/blob/master/dhclient-ipv6](https://github.com/jaymzh/v6-gw-scripts/blob/master/dhclient-ipv6).
+[dhclient](/index.php/Dhclient "Dhclient") também pode solicitar um prefixo, mas atribuir esse prefixo ou partes desse prefixo a interfaces deve ser feito usando um script de saída do dhclient. Por exemplo: [https://github.com/jaymzh/v6-gw-scripts/blob/master/dhclient-ipv6](https://github.com/jaymzh/v6-gw-scripts/blob/master/dhclient-ipv6).
 
 ## Desabilitar IPv6
 
-**Note:** The Arch kernel has IPv6 support built in directly, therefore a module cannot be blacklisted.
+**Nota:** O Arch kernel tem suporte a IPv6 compilado diretamente e, portanto, um módulo não pode ser inserido na lista negra.
 
 ### Desabilitar funcionalidade
 
-**Warning:** Disabling the IPv6 stack can break certain programs which expect it to be enabled. [FS#46297](https://bugs.archlinux.org/task/46297)
+**Atenção:** Desativar a pilha IPv6 pode quebrar certos programas que esperam que ela seja ativada. [FS#46297](https://bugs.archlinux.org/task/46297)
 
-Adding `ipv6.disable=1` to the kernel line disables the whole IPv6 stack, which is likely what you want if you are experiencing issues. See [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") for more information.
+Adicionar `ipv6.disable=1` à linha do kernel desativa toda a pilha IPv6, o que é provável o que você deseja se estiver tendo problemas. Veja [Parâmetros do kernel](/index.php/Kernel_parameters "Kernel parameters") para mais informações.
 
-Alternatively, adding `ipv6.disable_ipv6=1` instead will keep the IPv6 stack functional but will not assign IPv6 addresses to any of your network devices.
+Como alternativa, adicionar `ipv6.disable_ipv6=1` manterá a pilha do IPv6 funcional, mas não atribuirá endereços IPv6 a nenhum de seus dispositivos de rede.
 
-One can also avoid assigning IPv6 addresses to specific network interfaces by adding the following sysctl config to `/etc/sysctl.d/40-ipv6.conf`:
+Também é possível evitar a atribuição de endereços IPv6 a interfaces de rede específicas, adicionando a seguinte configuração de sysctl a `/etc/sysctl.d/40-ipv6.conf`:
 
 ```
-# Disable IPv6
+# Desabilita IPv6
 net.ipv6.conf.all.disable_ipv6 = 1
 net.ipv6.conf.*nic0*.disable_ipv6 = 1
 ...
@@ -342,26 +338,26 @@ net.ipv6.conf.*nicN*.disable_ipv6 = 1
 
 ```
 
-Note that you must list all of the targeted interfaces explicitly, as disabling `all.disable_ipv6` does not apply to interfaces that are already "up" when sysctl settings are applied.
+Observe que você deve listar explicitamente todas as interfaces de destino, pois a desabilitação de `all.disable_ipv6` não se aplica a interfaces que já estão "up" quando as configurações de sysctl são aplicadas.
 
-Note 2, if disabling IPv6 by sysctl, you should comment out the IPv6 hosts in your `/etc/hosts`:
+Outra observação: se desabilitar o IPv6 por sysctl, você deve comentar os hosts IPv6 em seu `/etc/hosts`:
 
 ```
-#<ip-address> <hostname.domain.org> <hostname>
+#<endereço-ip> <hostnam.domínio.org> <hostname>
 127.0.0.1 localhost.localdomain localhost
 #::1 localhost.localdomain localhost
 
 ```
 
-otherwise there could be some connection errors because hosts are resolved to their IPv6 address which is not reachable.
+caso contrário, pode haver alguns erros de conexão, pois os hosts são resolvidos para o endereço IPv6, que não pode ser acessado.
 
 ### Outros programas
 
-Disabling IPv6 functionality in the kernel does not prevent other programs from trying to use IPv6\. In most cases, this is completely harmless, but if you find yourself having issues with that program, you should consult the program's manual pages for a way to disable that functionality.
+Desabilitar a funcionalidade do IPv6 no kernel não impede que outros programas tentem usar o IPv6\. Na maioria dos casos, isso é completamente inofensivo, mas se você tiver problemas com esse programa, consulte as páginas de manual do programa para obter uma maneira de desabilitar essa funcionalidade.
 
 #### dhcpcd
 
-*dhcpcd* will continue to harmlessly attempt to perform IPv6 router solicitation. To disable this, as stated in the [dhcpcd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5)[man page](/index.php/Man_page "Man page"), add the following to `/etc/dhcpcd.conf`:
+*dhcpcd* vai continuar sem prejuízo tentar realizar uma solicitação IPv6 ao roteador. Para desabilitar isso, conforme documentado na [página man](/index.php/P%C3%A1gina_man "Página man") [dhcpcd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5), adicione o seguinte ao `/etc/dhcpcd.conf`:
 
 ```
 noipv6rs
@@ -371,20 +367,15 @@ noipv6
 
 #### NetworkManager
 
-To disable IPv6 in NetworkManager, right click the network status icon, and select *Edit Connections > Wired >* Network name *> Edit > IPv6 Settings > Method > Ignore/Disabled*
+Para desabilitar IPv6 no NetworkManager, clique com o botão direito no ícone de status de rede, e selecione *Editar conexões > Cabeada >* Nome da rede *> Editar > Configurações IPv6 > Método > Ignorado/Desabilitado*
 
-Then click "Save".
+Então, clique em "Salvar".
 
 #### ntpd
 
-Following advice in [systemd#Drop-in files](/index.php/Systemd#Drop-in_files "Systemd"), change how systemd starts `ntpd.service`:
+Seguindo o conselho em [systemd (Português)#Arquivos drop-in](/index.php/Systemd_(Portugu%C3%AAs)#Arquivos_drop-in "Systemd (Português)"), [edite](/index.php/Edite "Edite") `ntpd.service` para definir como o systemd o inicia.
 
-```
-# systemctl edit ntpd.service
-
-```
-
-This will create a drop-in snippet that will be run instead of the default `ntpd.service`. The `-4` flag prevents IPv6 from being used by the ntp daemon. Put the following into the drop-in snippet:
+Isso criará um trecho drop-in que será executado em vez do padrão `ntpd.service`. O sinalizador `-4` impede que o IPv6 seja usado pelo daemon ntp. Coloque o seguinte no trecho drop-in:
 
 ```
 [Service]
@@ -393,17 +384,29 @@ ExecStart=/usr/bin/ntpd -4 -g -u ntp:ntp
 
 ```
 
-which first clears the previous `ExecStart`, and then replaces it with one that includes the `-4` flag.
+que primeiro limpa o `ExecStart` anterior e, em seguida, o substitui por um que inclua o sinalizador `-4`.
 
 ### systemd-networkd
 
-networkd supports disabling IPv6 on a per-interface basis. When a network unit's `[Network]` section has either `LinkLocalAddressing=ipv4` or `LinkLocalAddressing=no`, networkd will not try to configure IPv6 on the matching interfaces.
+O networkd possui suporte a desabilitação do IPv6 por interface. Quando a seção `[Network]` de uma unidade de rede possui `LinkLocalAddressing=ipv4` ou `LinkLocalAddressing=no`, o networkd não tentará configurar o IPv6 na correspondência interfaces.
 
-Note however that even when using the above option, networkd will still be expecting to receive router advertisements if IPv6 is not disabled globally. If IPv6 traffic is not being received by the interface (e.g. due to sysctl or ip6tables settings), it will remain in the configuring state and potentially cause timeouts for services waiting for the network to be fully configured. To avoid this, the `IPv6AcceptRA=no` option should also be set in the `[Network]` section.
+No entanto, observe que, mesmo ao usar a opção acima, o networkd ainda esperará receber anúncios do roteador se o IPv6 não estiver desabilitado globalmente. Se o tráfego IPv6 não estiver sendo recebido pela interface (por exemplo, devido a configurações sysctl ou ip6tables), ele permanecerá no estado de configuração e poderá causar tempos limites para os serviços aguardando a configuração completa da rede. Para evitar isso, a opção `IPv6AcceptRA=no` também deve ser definida na seção `[Network]`.
+
+## Preferir IPv4 a IPv6
+
+Descomente a seguinte linha no `/etc/gai.conf`:
+
+```
+#
+#    Para sites que preferem conexões IPv4, mude a última linha para
+#
+precedence ::ffff:0:0/96  100
+
+```
 
 ## Veja também
 
-*   [IPv6](https://www.kernel.org/doc/Documentation/networking/ipv6.txt) - kernel.org documentation
-*   [IPv6 temporary addresses](http://www.ipsidixit.net/2012/08/09/ipv6-temporary-addresses-and-privacy-extensions/) - a summary about temporary addresses and privacy extensions
-*   [IPv6 prefixes](http://tldp.org/HOWTO/Linux+IPv6-HOWTO/ch03s02.html) - a summary of prefix types
-*   [net.ipv6 options](http://tldp.org/HOWTO/Linux+IPv6-HOWTO/ch11s02.html) - documentation of kernel parameters
+*   [IPv6](https://www.kernel.org/doc/Documentation/networking/ipv6.txt) - documentação do kernel.org
+*   [Endereços temporários IPv6](http://www.ipsidixit.net/2012/08/09/ipv6-temporary-addresses-and-privacy-extensions/) - um resumo sobre endereços temporários e extensões de privacidade
+*   [IPv6 prefixes](http://tldp.org/HOWTO/Linux+IPv6-HOWTO/ch03s02.html) - um resumo de tipos de prefixo
+*   [net.ipv6 options](http://tldp.org/HOWTO/Linux+IPv6-HOWTO/ch11s02.html) - documentação de parâmetros do kernel

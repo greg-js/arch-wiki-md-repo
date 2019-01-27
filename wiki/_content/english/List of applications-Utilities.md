@@ -320,13 +320,13 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 	[http://www.clex.sk/](http://www.clex.sk/) || [clex](https://aur.archlinux.org/packages/clex/)
 
+*   **ded** — directory editor, file manager similar to Emacs dired
+
+	[http://invisible-island.net/ded/ded.html](http://invisible-island.net/ded/ded.html) || [ded](https://aur.archlinux.org/packages/ded/)
+
 *   **[Dired](https://en.wikipedia.org/wiki/Dired "wikipedia:Dired")** — Directory editor integrated with [Emacs](/index.php/Emacs "Emacs").
 
 	[https://www.gnu.org/software/emacs/manual/html_node/emacs/Dired.html](https://www.gnu.org/software/emacs/manual/html_node/emacs/Dired.html) || [emacs](https://www.archlinux.org/packages/?name=emacs)
-
-*   **dired** — Ancient DIRectory EDitor since 1980.
-
-	[http://fossies.org/linux/misc/old/](http://fossies.org/linux/misc/old/) || [dired](https://aur.archlinux.org/packages/dired/)
 
 *   **Last File Manager** — Powerful file manager written in Python 3 with a curses interface.
 

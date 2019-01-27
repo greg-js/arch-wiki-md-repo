@@ -128,12 +128,24 @@ ListenStream=
 ListenStream=8080
 # start when receiving an UDP datagram (Wakeup/WOL)
 ListenDatagram=9
-# do not wait for network
-# (comment out ListenStream and ListenDatagram lines above)  
-#ListenStream=
-#ListenStream=0.0.0.0:8080
-#ListenDatagram=0.0.0.0:9
-#FreeBind=true
+
+[Install]
+WantedBy=sockets.target
+
+```
+
+Alternatively, to not wait for network:
+
+ `/etc/systemd/system/kodi@.socket` 
+```
+[Unit]
+Conflicts=kodi@%i.service
+
+[Socket]
+ListenStream=
+ListenStream=0.0.0.0:8080
+ListenDatagram=0.0.0.0:9
+FreeBind=true
 
 [Install]
 WantedBy=sockets.target

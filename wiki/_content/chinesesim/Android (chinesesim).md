@@ -348,7 +348,7 @@ $ adb pull *<what-to-pull>* *<where-to-place>*
 
 它们可以与 [lineageos-devel](https://aur.archlinux.org/packages/lineageos-devel/) 元软件包一起安装。
 
-**Note:** 安装 [maven](https://www.archlinux.org/packages/?name=maven) 和 [gradle](https://www.archlinux.org/packages/?name=gradle) 去编译LineageOS可能会提高构建速度，因为构建过程优先使用系统的
+**注意:** 安装 [maven](https://www.archlinux.org/packages/?name=maven) 和 [gradle](https://www.archlinux.org/packages/?name=gradle) 去编译LineageOS可能会提高构建速度，因为构建过程优先使用系统的
 
 ### Java Development Kit
 
@@ -362,7 +362,7 @@ $ adb pull *<what-to-pull>* *<where-to-place>*
 *   Gingerbread 到 KitKat (2.3 - 4.4) 需要 Java 6，可以通过 [AUR](/index.php/AUR "AUR") 软件包 [jdk6](https://aur.archlinux.org/packages/jdk6/) 安装。
 *   Cupcake 到 Froyo (1.5 - 2.2) 需要 Java 5，可以通过 [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) 软件包安装。
 
-**Note:** Android希望Java在 `/usr/lib/jvm/java-*version*-openjdk-amd64`.
+**注意:** Android希望Java在 `/usr/lib/jvm/java-*version*-openjdk-amd64`.
 
 设置 JAVA_HOME 以避免此要求并匹配 Arch Linux 安装路径。 例:
 
@@ -392,7 +392,7 @@ $ source venv/bin/activate
 
 ```
 
-**Note:**
+**注意:**
 
 *   此激活仅对当前终端会话有效。虚拟环境将保存在 `venv` 文件夹中。
 *   在构建期间，您可能会收到与缺少的python模块有关的错误。 一个快速而肮脏的修复方法是 symlink /usr/lib/python2.7/* 到 ~/android/venv/lib/python2.7/ (如果与上面不同，请更改 ~/android 以反映您的构建目录).

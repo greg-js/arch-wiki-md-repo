@@ -314,7 +314,7 @@ Syslinux also allows you to use a boot menu. To use it, copy the `menu` and `lib
 
 ```
 
-As of version 5.0.0, additional `lib*.c32` library modules must also be copied. See [the Syslinux wiki](https://www.syslinux.org/wiki/index.php?title=Library_modules#Syslinux_modules_working_dependencies) for the current module dependency tree.
+Since version 5.00, additional `lib*.c32` library modules are frequently needed too. See [the Syslinux wiki](https://www.syslinux.org/wiki/index.php?title=Library_modules#Syslinux_modules_working_dependencies) for the module dependency tree.
 
 Configuration:
 
@@ -356,7 +356,7 @@ Syslinux also allows you to use a graphical boot menu. To use it, copy the `vesa
 
 ```
 
-As of version 5.0.0, additional `lib*.c32` library modules must also be copied. See [the Syslinux wiki](https://www.syslinux.org/wiki/index.php?title=Library_modules#Syslinux_modules_working_dependencies) for the current module dependency tree.
+Since version 5.00, additional `lib*.c32` library modules are frequently needed too. See [the Syslinux wiki](https://www.syslinux.org/wiki/index.php?title=Library_modules#Syslinux_modules_working_dependencies) for the module dependency tree.
 
 **Note:** If you are using [UEFI](/index.php/UEFI "UEFI"), make sure to copy from `/usr/lib/syslinux/efi64/` (or `efi32` for IA32 (32-bit) EFI systems), otherwise you will be presented with a black screen. In that case, boot from a live medium and use [chroot](/index.php/Chroot "Chroot") to make the appropriate changes.
 

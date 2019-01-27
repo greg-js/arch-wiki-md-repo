@@ -130,7 +130,7 @@ These [mirrors](/index.php/Mirrors "Mirrors") are *not* listed in `/etc/pacman.d
 
 ## Turkey
 
-*   [http://mirror.veriteknik.net.tr/archlinux/](http://mirror.veriteknik.net.tr/archlinux/) *- VeriTeknik Data Center*
+*   [http://mirror.veriteknik.net.tr/archlinux/](http://mirror.veriteknik.net.tr/archlinux/) - *VeriTeknik Data Center*
 *   [http://ftp.linux.org.tr/archlinux/](http://ftp.linux.org.tr/archlinux/)
 
 ## United Kingdom
