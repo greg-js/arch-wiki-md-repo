@@ -20,7 +20,7 @@ This article describes how to set up a Korean language environment. It does not 
 
 ## Fonts
 
-To use any Korean input method, you need to have Korean fonts installed. Install [ttf-nanum](https://aur.archlinux.org/packages/ttf-nanum/) from the [AUR](/index.php/AUR "AUR"). If you also want Korean monospaced fonts, install [ttf-nanumgothic_coding](https://aur.archlinux.org/packages/ttf-nanumgothic_coding/) from the AUR. If you want to view and use Yethangul(옛한글), install [ttf-unfonts-core-ibx](https://aur.archlinux.org/packages/ttf-unfonts-core-ibx/) font.
+To use any Korean input method, you need to have Korean fonts installed. Install [ttf-nanum](https://aur.archlinux.org/packages/ttf-nanum/) from the [AUR](/index.php/AUR "AUR"). If you also want Korean monospaced fonts, install [ttf-nanumgothic_coding](https://aur.archlinux.org/packages/ttf-nanumgothic_coding/) from the AUR. If you want to view and use Yethangul(옛한글), install [ttf-unfonts-core-ibx](https://aur.archlinux.org/packages/ttf-unfonts-core-ibx/) or [ttf-kopubworld](https://aur.archlinux.org/packages/ttf-kopubworld/)/[otf-kopubworld](https://aur.archlinux.org/packages/otf-kopubworld/) font.
 
 See also [Fonts#Korean](/index.php/Fonts#Korean "Fonts").
 

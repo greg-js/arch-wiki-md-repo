@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch-based distributions](/index.php/Arch-based_distributions "Arch-based distributions"). Data da última tradução: 2018-11-04\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch-based_distributions&diff=0&oldid=552513) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch-based distributions](/index.php/Arch-based_distributions "Arch-based distributions"). Data da última tradução: 2019-01-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch-based_distributions&diff=0&oldid=564508) na versão em inglês.
 
 Artigos relacionados
 
@@ -53,6 +53,7 @@ Asterisco indica o ano do primeiro lançamento público baseado no Arch Linux.
 *   [Artix Linux](https://sourceforge.net/projects/artix-linux/) 
 *   [BBQLinux](https://sourceforge.net/projects/bbqlinux/) 
 *   [BlackArch Linux](https://blackarch.org/) 
+*   [BlueLight](https://github.com/BlueLightOS/bluelight) 
 *   [Bluestar Linux](https://sourceforge.net/projects/bluestarlinux/) 
 *   [Chakra](https://sourceforge.net/projects/chakra/) 
 *   [Condres OS](https://sourceforge.net/projects/condres-os-gnu-linux/) 

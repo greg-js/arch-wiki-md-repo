@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Installing Arch Linux on a USB key](/index.php/Installing_Arch_Linux_on_a_USB_key "Installing Arch Linux on a USB key"). Data da última tradução: 2019-01-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Installing_Arch_Linux_on_a_USB_key&diff=0&oldid=563273) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Installing Arch Linux on a USB key](/index.php/Installing_Arch_Linux_on_a_USB_key "Installing Arch Linux on a USB key"). Data da última tradução: 2019-01-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Installing_Arch_Linux_on_a_USB_key&diff=0&oldid=564449) na versão em inglês.
 
 Artigos relacionados
 
@@ -138,7 +138,7 @@ A imagem alternativa deve ser usada para compatibilidade máxima.
 
 ### Minimizando o acesso a disco
 
-*   Você pode querer configurar [journald](/index.php/Systemd_(Portugu%C3%AAs)#Journal "Systemd (Português)") para armazenar seus journals na RAM, por exemplo, criando um arquivo de configuração personalizado:
+*   Você pode querer configurar o [journal do systemd](/index.php/Journal_do_systemd "Journal do systemd") para armazenar seus journals na RAM, por exemplo, criando um arquivo de configuração personalizado:
 
  `/etc/systemd/journald.conf.d/usbstick.conf` 
 ```

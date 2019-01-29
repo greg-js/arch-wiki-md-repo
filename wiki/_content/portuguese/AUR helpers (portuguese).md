@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [AUR helpers](/index.php/AUR_helpers "AUR helpers"). Data da última tradução: 2019-01-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AUR_helpers&diff=0&oldid=562952) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [AUR helpers](/index.php/AUR_helpers "AUR helpers"). Data da última tradução: 2019-01-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AUR_helpers&diff=0&oldid=564133) na versão em inglês.
 
 **Atenção:** Auxiliares do AUR **não possuem suporte** pelo Arch Linux. Você deve se familiarizar com o [processo manual de compilação](/index.php/Arch_User_Repository_(Portugu%C3%AAs)#Instalando_pacotes "Arch User Repository (Português)") para estar preparado para diagnosticar e resolver problemas.
 
@@ -96,7 +96,7 @@ de shell | Especificidade |
 | [pikaur](https://aur.archlinux.org/packages/pikaur/) | Python | Sim | Sim | Sim | Sim | Sim | Sim | [-Sy](https://github.com/actionless/pikaur#pikaur) | bash, fish, zsh | [usuários dinâmicos](http://0pointer.net/blog/dynamic-users-with-systemd.html), interação em lote (1,2) |
 | [trizen](https://aur.archlinux.org/packages/trizen/) | Perl | Sim | Sim | [Sim](https://github.com/trizen/trizen/commit/6fb0cc9) | [Sim](https://github.com/trizen/trizen/commit/7ab7ee5f) | Sim | [Parcial](https://github.com/trizen/trizen/issues/46) | [-Ud*](https://github.com/trizen/trizen/commit/9e7b40e)}} | bash, fish, zsh | – |
 | [wrapaur](https://aur.archlinux.org/packages/wrapaur/) | Bash | Sim | Não | Sim | Não | Não | Não | – | – | – |
-| [yay](https://aur.archlinux.org/packages/yay/) | Go | Sim | [Sim](https://github.com/Jguer/yay/pull/447) | [Sim](https://github.com/Jguer/yay/pull/297) | Sim | Não | Sim | [-Sy*](https://github.com/Jguer/yay/commit/3bdb534)
+| [yay](https://aur.archlinux.org/packages/yay/) | Go | Sim | [Sim](https://github.com/Jguer/yay/pull/447) | [Sim](https://github.com/Jguer/yay/pull/297) | Sim | Sim | Sim | [-Sy*](https://github.com/Jguer/yay/commit/3bdb534)
 [--ask*](https://github.com/Jguer/yay/commit/ea5a94e) | bash, fish, zsh | obtém chaves PGP, interação em lote (1,2) |
 | [aurman](https://aur.archlinux.org/packages/aurman/)
 <small>([descontinuado](https://github.com/polygamma/aurman#stopped-development-for-public-use))</small> | Python | Sim | Sim | Sim | Sim | [Sim](https://github.com/polygamma/aurman/wiki/Description-of-the-aurman-dependency-solving) | Sim | [-Sy*](https://github.com/polygamma/aurman/commit/6c02ba3)

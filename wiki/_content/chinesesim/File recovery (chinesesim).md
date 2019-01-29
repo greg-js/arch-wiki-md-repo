@@ -4,14 +4,14 @@
 
 ## Contents
 
-*   [1 特别提示](#.E7.89.B9.E5.88.AB.E6.8F.90.E7.A4.BA)
-    *   [1.1 三思而后行](#.E4.B8.89.E6.80.9D.E8.80.8C.E5.90.8E.E8.A1.8C)
-    *   [1.2 故障的磁盘](#.E6.95.85.E9.9A.9C.E7.9A.84.E7.A3.81.E7.9B.98)
-    *   [1.3 备份闪存介质或者小分区](#.E5.A4.87.E4.BB.BD.E9.97.AA.E5.AD.98.E4.BB.8B.E8.B4.A8.E6.88.96.E8.80.85.E5.B0.8F.E5.88.86.E5.8C.BA)
-    *   [1.4 恢复数码相机](#.E6.81.A2.E5.A4.8D.E6.95.B0.E7.A0.81.E7.9B.B8.E6.9C.BA)
+*   [1 特别提示](#特别提示)
+    *   [1.1 三思而后行](#三思而后行)
+    *   [1.2 故障的磁盘](#故障的磁盘)
+    *   [1.3 备份闪存介质或者小分区](#备份闪存介质或者小分区)
+    *   [1.4 恢复数码相机](#恢复数码相机)
 *   [2 Foremost](#Foremost)
 *   [3 Extundelete](#Extundelete)
-    *   [3.1 安装](#.E5.AE.89.E8.A3.85)
+    *   [3.1 安装](#安装)
     *   [3.2 Usage](#Usage)
 *   [4 Testdisk and PhotoRec](#Testdisk_and_PhotoRec)
     *   [4.1 Installation](#Installation)
@@ -24,9 +24,9 @@
     *   [6.1 Mount the entire disk](#Mount_the_entire_disk)
     *   [6.2 Mounting partitions](#Mounting_partitions)
         *   [6.2.1 Getting disk geometry](#Getting_disk_geometry)
-    *   [6.3 使用 QEMU 来修复 NTFS](#.E4.BD.BF.E7.94.A8_QEMU_.E6.9D.A5.E4.BF.AE.E5.A4.8D_NTFS)
-*   [7 文本文件恢复](#.E6.96.87.E6.9C.AC.E6.96.87.E4.BB.B6.E6.81.A2.E5.A4.8D)
-*   [8 参阅](#.E5.8F.82.E9.98.85)
+    *   [6.3 使用 QEMU 来修复 NTFS](#使用_QEMU_来修复_NTFS)
+*   [7 文本文件恢复](#文本文件恢复)
+*   [8 参阅](#参阅)
 
 ## 特别提示
 

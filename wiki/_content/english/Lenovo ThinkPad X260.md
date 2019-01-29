@@ -8,6 +8,7 @@ The Lenovo ThinkPad X260 is the successor to the [Lenovo ThinkPad X240](/index.p
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 fn-4 sleep hotkey not recognized](#fn-4_sleep_hotkey_not_recognized)
     *   [2.2 No audio from docking station](#No_audio_from_docking_station)
+    *   [2.3 No audio over HDMI](#No_audio_over_HDMI)
 
 ## Configuration
 
@@ -33,4 +34,18 @@ Not sure if a BIOS level error or not. fn itself is regarded as an acpi wakeup e
 
 Kernel is already supported docking station after commit 3194ed4, but maybe not enable default, edit this file to enable it.
 
- `/etc/modprobe.d/alsa-base.conf`  `options snd-hda-intel model=thinkpad`
+ `/etc/modprobe.d/alsa-base.conf`  `options snd-hda-intel model=thinkpad` 
+
+### No audio over HDMI
+
+Use "aplay -l" to list all audio devices. Use speaker-test to find the correct device-id for HDMI audio, e.g.
+
+`speaker-test -c 2 -r 48000 -D hw:0,7`
+
+Once you have identified the correct audio device id, add the device at the end of your /etc/pulse/default.pa:
+
+ `/etc/pulse/default.pa`  `load-module module-alsa-sink device=hw:0,7 channels=2 rate=48000 sink_properties=device.description=HDMI` 
+
+Finally:
+
+`killall pulseaudio ; pulseaudio --check`

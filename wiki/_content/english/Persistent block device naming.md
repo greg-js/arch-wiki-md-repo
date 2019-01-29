@@ -71,41 +71,41 @@ The labels of your filesystems can be changed. Following are some methods for ch
 
 	swap 
 
-	`swaplabel -L <label> /dev/XXX` using [util-linux](https://www.archlinux.org/packages/?name=util-linux)
+	`swaplabel -L "*new label*" /dev/*XXX*` using [util-linux](https://www.archlinux.org/packages/?name=util-linux)
 
 	ext2/3/4 
 
-	`e2label /dev/XXX <label>` using [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs)
+	`e2label /dev/*XXX* "*new label*"` using [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs)
 
 	btrfs 
 
-	`btrfs filesystem label /dev/XXX <label>` using [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs)
+	`btrfs filesystem label /dev/*XXX* "*new label*"` using [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs)
 
 	reiserfs 
 
-	`reiserfstune -l <label> /dev/XXX` using [reiserfsprogs](https://www.archlinux.org/packages/?name=reiserfsprogs)
+	`reiserfstune -l "*new label*" /dev/*XXX*` using [reiserfsprogs](https://www.archlinux.org/packages/?name=reiserfsprogs)
 
 	jfs 
 
-	`jfs_tune -L <label> /dev/XXX` using [jfsutils](https://www.archlinux.org/packages/?name=jfsutils)
+	`jfs_tune -L "*new label*" /dev/*XXX*` using [jfsutils](https://www.archlinux.org/packages/?name=jfsutils)
 
 	xfs 
 
-	`xfs_admin -L <label> /dev/XXX` using [xfsprogs](https://www.archlinux.org/packages/?name=xfsprogs)
+	`xfs_admin -L "*new label*" /dev/*XXX*` using [xfsprogs](https://www.archlinux.org/packages/?name=xfsprogs)
 
 	fat/vfat 
 
-	`fatlabel /dev/XXX <label>` using [dosfstools](https://www.archlinux.org/packages/?name=dosfstools)
+	`fatlabel /dev/*XXX* "*new label*"` using [dosfstools](https://www.archlinux.org/packages/?name=dosfstools)
 
-	`mlabel -i /dev/XXX ::<label>` using [mtools](https://www.archlinux.org/packages/?name=mtools)
+	`mlabel -i /dev/*XXX* ::"*new label*"` using [mtools](https://www.archlinux.org/packages/?name=mtools)
 
 	exfat 
 
-	`exfatlabel /dev/XXX <label>` using [exfat-utils](https://www.archlinux.org/packages/?name=exfat-utils)
+	`exfatlabel /dev/*XXX* "*new label*"` using [exfat-utils](https://www.archlinux.org/packages/?name=exfat-utils)
 
 	ntfs 
 
-	`ntfslabel /dev/XXX <label>` using [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g)
+	`ntfslabel /dev/*XXX* "*new label*"` using [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g)
 
 	zfs 
 

@@ -11,7 +11,8 @@ From [Wikipedia:File Allocation Table](https://en.wikipedia.org/wiki/File_Alloca
 *   [1 File system creation](#File_system_creation)
 *   [2 Kernel configuration](#Kernel_configuration)
 *   [3 Writing to FAT32 as normal user](#Writing_to_FAT32_as_normal_user)
-*   [4 See also](#See_also)
+*   [4 Detecting FAT type](#Detecting_FAT_type)
+*   [5 See also](#See_also)
 
 ## File system creation
 
@@ -88,6 +89,51 @@ And unmount it with:
 
 ```
 $ umount /mnt/fat32
+
+```
+
+## Detecting FAT type
+
+If you need to know which [type of FAT file system](https://en.wikipedia.org/wiki/File_Allocation_Table#Types "wikipedia:File Allocation Table") a partition uses, use the *file* command:
+
+ `# file -s /dev/*partition*`  `/dev/*partition*: DOS/MBR boot sector, code offset 0x3c+2, OEM-ID "mkfs.fat", sectors/cluster 4, root entries 512, sectors 4096 (volumes <=32 MB), Media descriptor 0xf8, sectors/FAT 3, sectors/track 32, heads 64, serial number 0x5bc09c21, unlabeled, **FAT (12 bit)**` 
+
+Alternatively you can use *minfo* from the [mtools](https://www.archlinux.org/packages/?name=mtools) package:
+
+ `# minfo -i /dev/*partition* ::` 
+```
+device information:
+===================
+filename="/dev/*partition*"
+sectors per track: 32
+heads: 64
+cylinders: 2
+
+media byte: f8
+
+mformat command line: mformat -t 2 -h 64 -s 32 -i "/dev/*partition*" ::
+
+bootsector information
+======================
+banner:"mkfs.fat"
+sector size: 512 bytes
+cluster size: 4 sectors
+reserved (boot) sectors: 1
+fats: 2
+max available root directory slots: 512
+small size: 4096 sectors
+media descriptor byte: 0xf8
+sectors per fat: 3
+sectors per track: 32
+heads: 64
+hidden sectors: 0
+big size: 0 sectors
+physical drive id: 0x80
+reserved=0x0
+dos4=0x29
+serial number: 5BC09C21
+disk label="NO NAME    "
+disk type="**FAT12**   "
 
 ```
 

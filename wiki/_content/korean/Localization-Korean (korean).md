@@ -8,22 +8,22 @@
 
 ## Contents
 
-*   [1 글꼴](#.EA.B8.80.EA.BC.B4)
-*   [2 한글 입력기 고르기](#.ED.95.9C.EA.B8.80_.EC.9E.85.EB.A0.A5.EA.B8.B0_.EA.B3.A0.EB.A5.B4.EA.B8.B0)
-    *   [2.1 입력기별 문제](#.EC.9E.85.EB.A0.A5.EA.B8.B0.EB.B3.84_.EB.AC.B8.EC.A0.9C)
-*   [3 입력기 설정](#.EC.9E.85.EB.A0.A5.EA.B8.B0_.EC.84.A4.EC.A0.95)
+*   [1 글꼴](#글꼴)
+*   [2 한글 입력기 고르기](#한글_입력기_고르기)
+    *   [2.1 입력기별 문제](#입력기별_문제)
+*   [3 입력기 설정](#입력기_설정)
     *   [3.1 ibus-hangul](#ibus-hangul)
     *   [3.2 uim-byeoru](#uim-byeoru)
     *   [3.3 scim-hangul](#scim-hangul)
     *   [3.4 fcitx-hangul](#fcitx-hangul)
     *   [3.5 nabi](#nabi)
-*   [4 팁과 트릭](#.ED.8C.81.EA.B3.BC_.ED.8A.B8.EB.A6.AD)
-    *   [4.1 한영키 사용하기](#.ED.95.9C.EC.98.81.ED.82.A4_.EC.82.AC.EC.9A.A9.ED.95.98.EA.B8.B0)
-    *   [4.2 리브레오피스](#.EB.A6.AC.EB.B8.8C.EB.A0.88.EC.98.A4.ED.94.BC.EC.8A.A4)
+*   [4 팁과 트릭](#팁과_트릭)
+    *   [4.1 한영키 사용하기](#한영키_사용하기)
+    *   [4.2 리브레오피스](#리브레오피스)
 
 ## 글꼴
 
-한글 입력을 사용하기 위해서는 한글 글꼴이 설치되어 있어야 합니다. [ttf-nanum](https://aur.archlinux.org/packages/ttf-nanum/) 패키지를 [AUR](/index.php/AUR "AUR")에서 설치하십시오. 터미널 등에서 사용할 수 있는 고정폭 글꼴이 필요하다면 AUR에서 [ttf-nanumgothic_coding](https://aur.archlinux.org/packages/ttf-nanumgothic_coding/) 패키지를 설치하십시오. 옛한글을 읽고 입력하기 원한다면, [ttf-unfonts-core-ibx](https://aur.archlinux.org/packages/ttf-unfonts-core-ibx/) 패키지를 사용하십시오.
+한글 입력을 사용하기 위해서는 한글 글꼴이 설치되어 있어야 합니다. [ttf-nanum](https://aur.archlinux.org/packages/ttf-nanum/) 패키지를 [AUR](/index.php/AUR "AUR")에서 설치하십시오. 터미널 등에서 사용할 수 있는 고정폭 글꼴이 필요하다면 AUR에서 [ttf-nanumgothic_coding](https://aur.archlinux.org/packages/ttf-nanumgothic_coding/) 패키지를 설치하십시오. 옛한글을 읽고 입력하기 원한다면, [ttf-unfonts-core-ibx](https://aur.archlinux.org/packages/ttf-unfonts-core-ibx/) 혹은 [ttf-kopubworld](https://aur.archlinux.org/packages/ttf-kopubworld/)/[otf-kopubworld](https://aur.archlinux.org/packages/otf-kopubworld/) 패키지를 사용하십시오.
 
 다른 한글 폰트는 [Fonts#Korean](/index.php/Fonts#Korean "Fonts")에서 확인할 수 있습니다.
 
@@ -88,7 +88,7 @@ uim의 전역 설정을 마쳤다면, uim 설정창 왼쪽의 트리 메뉴에�
 
 이제 트리 메뉴에서 *Byeoru* 바로 아래에 있는 *Byeoru Keybinding 1*에 클릭하십시오. 여기에서 한영 전환에 사용할 단축키를 설정하십시오. 위에서 입력기 전환을 위한 단축키를 선택했다면, 여기에서는 반드시 다른 단축키를 사용해야 합니다. 대부분의 한국 사용자들은 한영 전환에 `Ctrl+space`나 `shift+space`를 사용합니다.
 
-**참고:** 오른쪽 alt키(한/영키)로 한영 전환을 하고 싶다면, [#한영키 사용하기](#.ED.95.9C.EC.98.81.ED.82.A4_.EC.82.AC.EC.9A.A9.ED.95.98.EA.B8.B0) 섹션으로 가십시오.
+**참고:** 오른쪽 alt키(한/영키)로 한영 전환을 하고 싶다면, [#한영키 사용하기](#한영키_사용하기) 섹션으로 가십시오.
 
 이제 uim-byeoru를 이용하여 한글 입력을 할 수 있을 것입니다.
 

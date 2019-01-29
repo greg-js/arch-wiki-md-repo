@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch Build System](/index.php/Arch_Build_System "Arch Build System"). Data da última tradução: 2018-10-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_Build_System&diff=0&oldid=545084) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch Build System](/index.php/Arch_Build_System "Arch Build System"). Data da última tradução: 2019-01-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_Build_System&diff=0&oldid=564796) na versão em inglês.
 
 Artigos relacionados
 

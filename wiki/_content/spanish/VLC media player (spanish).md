@@ -172,7 +172,7 @@ Si utiliza una variante ffmpeg de AUR, asegúrese de que también la haya actual
 
 ### Fallo de segmentación
 
-Al iniciar VLC, puede obtener un fallo de seguridad y descartar factores generales como [microcódigo](/index.php/Microcode "Microcode"), una posible solución a esto es ejecutar lo siguiente:
+Al iniciar VLC, puede obtener un fallo de seguridad y descartar factores generales como [microcódigo](/index.php/Microcode_(Espa%C3%B1ol) "Microcode (Español)"), una posible solución a esto es ejecutar lo siguiente:
 
 ```
 # /usr/lib/vlc/vlc-cache-gen /usr/lib/vlc/plugins

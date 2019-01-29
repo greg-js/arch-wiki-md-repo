@@ -1,4 +1,4 @@
-[Visual Studio Code](https://code.visualstudio.com/) is a cross-platform, free and open-source (licensed under the MIT License) text editor developed by Microsoft and written in JavaScript and TypeScript. It is built on the Electron framework and is extensible using extensions, which can be browsed from within the text editor itself (via its extension gallery) or from [https://marketplace.visualstudio.com/VSCode](https://marketplace.visualstudio.com/VSCode). While open-source, a proprietary build (licensed under an End-User License Agreement) provided by Microsoft is available and used as the basis for the [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin/) AUR package (for an explanation of the mixed licensing, see this GitHub [comment](https://github.com/Microsoft/vscode/issues/60#issuecomment-161792005)).
+[Visual Studio Code](https://code.visualstudio.com/) is a cross-platform, free and open-source (licensed under the MIT License) text editor developed by Microsoft and written in JavaScript and TypeScript. It is built on the Electron framework and is extensible using extensions, which can be browsed [on the web](https://marketplace.visualstudio.com/VSCode) or from within the text editor itself. While the project is open-source, a proprietary build (licensed under an End-User License Agreement) is also provided by Microsoft. For an explanation of the mixed licensing, see [this GitHub comment](https://github.com/Microsoft/vscode/issues/60#issuecomment-161792005).
 
 ## Contents
 
@@ -14,20 +14,13 @@
 
 The following packages provide VSCode:
 
-*   [code](https://www.archlinux.org/packages/?name=code)
-*   [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin/)
-*   [code-git](https://aur.archlinux.org/packages/code-git/)
+*   [code](https://www.archlinux.org/packages/?name=code) (open-source release)
+*   [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin/) (Microsoft-branded release)
+*   [code-git](https://aur.archlinux.org/packages/code-git/) (in-development open-source version)
 
 ## Usage
 
-Run `code` for:
-
-*   [code](https://www.archlinux.org/packages/?name=code)
-*   [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin/)
-
-Run `code-oss` for:
-
-*   For [code-git](https://aur.archlinux.org/packages/code-git/)
+Run `code` to start the application (or `code-git` when using [code-git](https://aur.archlinux.org/packages/code-git/)).
 
 If for any reason you wish to launch multiple instances of Visual Studio Code, the `-n` flag can be used.
 

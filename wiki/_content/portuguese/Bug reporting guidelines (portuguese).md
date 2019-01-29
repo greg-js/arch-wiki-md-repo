@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Bug reporting guidelines](/index.php/Bug_reporting_guidelines "Bug reporting guidelines"). Data da última tradução: 2018-12-29\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Bug_reporting_guidelines&diff=0&oldid=557450) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Bug reporting guidelines](/index.php/Bug_reporting_guidelines "Bug reporting guidelines"). Data da última tradução: 2019-01-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Bug_reporting_guidelines&diff=0&oldid=564425) na versão em inglês.
 
 Artigos relacionados
 
@@ -104,7 +104,7 @@ Aqui está uma lista de informações úteis que devem ser mencionadas no seu re
 *   Indique se **a funcionalidade funcionou em algum momento** ou não. Se sim, indique desde quando parou de funcionar.
 *   Indique a sua **marca de hardware** quando tiver problemas relacionados com hardware
 *   Adicione **informações de log relevantes** quando estiver disponível. Isso pode ser obtido nos seguintes locais, dependendo do problema:
-    *   [Journal do systemd](/index.php/Systemd_(Portugu%C3%AAs)#Journal "Systemd (Português)"). Se estiver usando [syslog-ng](https://www.archlinux.org/packages/?name=syslog-ng), `/var/log/messages` contém logs relacionados a kernel e problemas relacionados ao hardware.
+    *   O [journal do systemd](/index.php/Journal_do_systemd "Journal do systemd"). Se estiver usando [syslog-ng](https://www.archlinux.org/packages/?name=syslog-ng), `/var/log/messages` contém logs relacionados a kernel e problemas relacionados ao hardware.
     *   `~/.local/share/xorg/Xorg.0.log` ou `/var/log/Xorg.0.log` ou `/var/log/Xorg.2.log` ou a qualquer arquivo de log tipo Xorg se problemas relacionados a vídeo (nvidia, ati, xorg...)
     *   Execute seu programa em um **console** e use o modo **verboso** *(verbose)* e/ou **depuração** *(debug)* se disponível (veja a documentação do programa) e copie a saída em um arquivo. Ao executar um aplicativo em um terminal, certifique-se de que informações relevantes serão exibidas em **inglês**, de forma que mais pessoas possam entendê-la. Isso pode ser feito usando `export LC_ALL="C"`. Exemplifique com um software chamado *foobar* do qual você gostaria de ter informações relevantes em tempo de execução e considerando que *foobar* tem uma opção `--verbose`:
 

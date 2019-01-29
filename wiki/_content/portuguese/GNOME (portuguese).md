@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [GNOME](/index.php/GNOME "GNOME"). Data da última tradução: 2019-01-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=562506) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [GNOME](/index.php/GNOME "GNOME"). Data da última tradução: 2019-01-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=565125) na versão em inglês.
 
 Artigos relacionados
 
@@ -117,14 +117,15 @@ Após editar o arquivo `~/.xinitrc`, GNOME pode ser iniciado com o comando `star
 *   Um servidor X — fornecido pelo pacote [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) — ainda é necessário para executar aplicativos que ainda não foram portados para o [Wayland](/index.php/Wayland "Wayland").
 *   Wayland com o driver proprietário da [NVIDIA](/index.php/NVIDIA "NVIDIA") atualmente sofre de um desempenho muito ruim: [FS#53284](https://bugs.archlinux.org/task/53284).
 
-Iniciar manualmente uma sessão Wayland é possível com `XDG_SESSION_TYPE=wayland dbus-run-session gnome-session`.
+Iniciar manualmente uma sessão Wayland é possível com `QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland dbus-run-session gnome-session`. QT_QPA_PLATFORM faz aplicativos em QT como VLC, calibre e smplayer usarem wayland.
 
 Para iniciar ao autenticar no tty1, adicione o seguinte ao seu `.bash_profile`:
 
 ```
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]] && [[ -z $XDG_SESSION_TYPE ]]; then
-  XDG_SESSION_TYPE=wayland exec dbus-run-session gnome-session
+  QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland exec dbus-run-session gnome-session
 fi
+ export QT_QPA_PLATFORM
 
 ```
 

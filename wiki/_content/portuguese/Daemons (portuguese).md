@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Daemon](/index.php/Daemon "Daemon"). Data da última tradução: 2019-01-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Daemon&diff=0&oldid=561789) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Daemon](/index.php/Daemon "Daemon"). Data da última tradução: 2019-01-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Daemon&diff=0&oldid=564488) na versão em inglês.
 
 Um [daemon](https://en.wikipedia.org/wiki/Daemon_(computing) é um programa que roda em "background" como um processo (sem terminal ou interface), que comumente espera por eventos para oferecer serviços. Um bom exemplo é um servidor web que espera por requisições para entregar uma página, ou um servidor ssh que espera por alguma tentativa de login. Apesar destes serem exemplos de aplicações bastante conhecidas e difundidas, há daemons cujo trabalho não é visível. Daemons que as tarefas são enviar logs para arquivos(ex: `syslog`, `metalog`) ou manter o horário do sistema sincronizado como o [ntpd](/index.php/Ntpd "Ntpd"). Para maiores informações veja [daemon(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/daemon.7).
 
@@ -34,6 +34,7 @@ freshclamd.service | Anti-virus para Unix. |
 | [Deluge](/index.php/Deluge "Deluge") | deluged | deluged.service | Cliente de BitTorrent cross-platform e com diversas funcionalidades. |
 | deluge-web | deluge-web.service | Cliente de BitTorrent cross-platform e com diversas funcionalidades. Daemon de interface web. |
 | [Dhcpcd](/index.php/Dhcpcd "Dhcpcd") | dhcpcd | dhcpcd@.service | Daemon DHCP . |
+| [Docker](/index.php/Docker "Docker") | docker | docker.service | Uma plataforma de contêineres. |
 | [Dovecot](/index.php/Dovecot "Dovecot") | dovecot | dovecot.service | Servidor IMAP e POP3. |
 | [Dropbox](/index.php/Dropbox "Dropbox") | dropboxd | dropbox@.service | Sistema de sincronização de arquivos e controle de versão. |
 | [fail2ban](/index.php/Fail2ban "Fail2ban") | fail2ban | fail2ban.service | Fail2ban verifica arquivos de log e bane endereços ip que demonstram atividade maliciosa. |

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [System maintenance](/index.php/System_maintenance "System maintenance"). Data da última tradução: 2018-10-30\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=System_maintenance&diff=0&oldid=546559) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [System maintenance](/index.php/System_maintenance "System maintenance"). Data da última tradução: 2019-01-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=System_maintenance&diff=0&oldid=564809) na versão em inglês.
 
 Artigos relacionados
 
@@ -67,7 +67,7 @@ Veja [Xorg (Português)#Troubleshooting](/index.php/Xorg_(Portugu%C3%AAs)#Troubl
 
 ## Backup
 
-Crie backups de dados importante em intervalos regulares. Veja [Programas de sincronização e backup](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs") para muitas alternativas de aplicativos que podem se adequar ao seu caso. Veja [Category:System recovery](/index.php/Category:System_recovery "Category:System recovery") e [Category:System recovery (Português)](/index.php/Category:System_recovery_(Portugu%C3%AAs) "Category:System recovery (Português)") para outros artigos de internet.
+Crie backups de dados importante em intervalos regulares. Veja [Programas de sincronização e backup](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs") para muitas alternativas de aplicativos que podem se adequar ao seu caso. Veja [Category:System recovery (Português)](/index.php/Category:System_recovery_(Portugu%C3%AAs) "Category:System recovery (Português)") para outros artigos de internet.
 
 Os backups podem ser automatizados com [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers").
 
@@ -105,7 +105,7 @@ Se o sistema possui pacotes do [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Portu
 
 ### Leia antes de atualizar o sistema
 
-Antes de atualizar, espera-se que os usuários visitem a [página inicial do Arch Linux](https://www.archlinux.org/) (ou até o [Arch Linux Brasil](http://www.archlinux-br.org/)) para verificar as últimas notícias ou, alternativamente, estejam inscritos no [feed RSS](https://www.archlinux.org/feeds/news/), na [lista de discussão arch-announce](https://mailman.archlinux.org/mailman/listinfo/arch-announce/) ou sigam [@archlinux](https://twitter.com/archlinux) no Twitter. Quando atualizações exigirem intervenção fora do normal do usuário (mais do que pode ser tratado simplesmente seguindo as instruções fornecidas pelo *pacman*), uma notícia apropriada será publicada.
+Antes de atualizar, espera-se que os usuários visitem a [página inicial do Arch Linux](https://www.archlinux.org/) (ou até o [Arch Linux Brasil](http://www.archlinux-br.org/)) para verificar as últimas notícias ou, alternativamente, estejam inscritos no [feed RSS](https://www.archlinux.org/feeds/news/) ou na [lista de discussão arch-announce](https://mailman.archlinux.org/mailman/listinfo/arch-announce/). Quando atualizações exigirem intervenção fora do normal do usuário (mais do que pode ser tratado simplesmente seguindo as instruções fornecidas pelo *pacman*), uma notícia apropriada será publicada.
 
 Antes de atualizar softwares fundamentais (como o [kernel](/index.php/Kernel "Kernel"), [xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)"), [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") ou [glibc](https://www.archlinux.org/packages/?name=glibc)) para uma nova versão, procure pelo [fórum](https://bbs.archlinux.org/) apropriado por algum relato de problema.
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Official repositories](/index.php/Official_repositories "Official repositories"). Data da última tradução: 2019-01-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Official_repositories&diff=0&oldid=562422) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Official repositories](/index.php/Official_repositories "Official repositories"). Data da última tradução: 2019-01-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Official_repositories&diff=0&oldid=564906) na versão em inglês.
 
 Artigos relacionados
 
@@ -143,7 +143,7 @@ Esse repositório é similar ao repositório *testing*, mas para pacotes que sã
 
 ### gnome-unstable
 
-Esse repositório contém a versão mais recente do ambiente gráfico do [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)"), antes de ser movido para o repositório principal de teste *testing*.
+Esse repositório contém pacotes de teste para o próximo lançamento estável ou candidato a lançamento estável do ambiente [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)"), antes de serem movidos para o repositório principal de teste *testing*.
 
 Para habilitá-lo, adicione as seguintes linhas ao `/etc/pacman.conf`:
 
@@ -153,7 +153,7 @@ Include = /etc/pacman.d/mirrorlist
 
 ```
 
-A entrada *gnome-unstable* deve estar primeiro na lista de repositórios (*i.e.*, acima da entrada *testing*).
+A entrada *gnome-unstable* deve estar primeiro na lista de repositórios, ou seja, em cima da entrada *testing*).
 
 Por favor, relate erros relacionados a empacotamento em nosso [rastreador de erro](https://bugs.archlinux.org/), enquanto o resto deve ser relatado para o *upstream* no [Gitlab do GNOME](https://gitlab.gnome.org).
 
@@ -169,7 +169,7 @@ Include = /etc/pacman.d/mirrorlist
 
 ```
 
-A entrada *kde-unstable* deve estar primeiro na lista de repositórios (*i.e.*, em cima da entrada *testing*).
+A entrada *kde-unstable* deve estar primeiro na lista de repositórios, ou seja, em cima da entrada *testing*).
 
 Certifique-se de [fazer relatórios de erros](/index.php/Diretrizes_de_relat%C3%B3rios_de_erro "Diretrizes de relatórios de erro") se você descobrir algum problema.
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Cross-compiling tools package guidelines](/index.php/Cross-compiling_tools_package_guidelines "Cross-compiling tools package guidelines"). Data da última tradução: 2018-10-31\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Cross-compiling_tools_package_guidelines&diff=0&oldid=552263) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Cross-compiling tools package guidelines](/index.php/Cross-compiling_tools_package_guidelines "Cross-compiling tools package guidelines"). Data da última tradução: 2019-01-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Cross-compiling_tools_package_guidelines&diff=0&oldid=565045) na versão em inglês.
 
 **[Diretrizes de criação de pacotes](/index.php/Padr%C3%B5es_de_empacotamento_do_Arch "Padrões de empacotamento do Arch")**
 

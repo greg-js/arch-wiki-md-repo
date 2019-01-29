@@ -118,9 +118,11 @@ Also it is important to use keywords wisely to increase the chances of appearing
 
 An array of architectures that the PKGBUILD is intended to build and work on. Arch officially supports only `x86_64`, but other projects may support other architectures. For example, [Arch Linux 32](https://archlinux32.org/) provides support for `i686` and [Arch Linux ARM](http://archlinuxarm.org/) provides support for `arm` (armv5), `armv6h` (armv6 hardfloat), `armv7h` (armv7 hardfloat), and `aarch64` (armv8 64bit).
 
-If a package is architecture-independent in its compiled state (shell scripts, fonts, themes, many types of extensions, etc.) then use `arch=('any')`. Please note that, as this is intended for packages that can be built once and used on any architecture, it will cause the package to be labeled `-any` as opposed to `-x86_64`, etc.
+There are two types of values the array can use:
 
-If instead a package can be compiled for any architecture, but is architecture-specific once compiled, specify the architectures the package is known to compile on successfully (which should at least include `x86_64`, Arch's officially-supported architecture).
+*   `arch=('any')` is a magic value that, used on its own, indicates the package can be built once on any architecture, and once built, is architecture-independent in its compiled state (shell scripts, fonts, themes, many types of extensions, etc.).
+
+*   `arch=('x86_64')` with one or more architectures indicates the package can be compiled for any of the specified architectures, but is architecture-specific once compiled. For these packages, specify all architectures that the PKGBUILD officially supports. For official repository and AUR packages, this means *x86_64*. Optionally, AUR packages may choose to additionally support other known working architectures.
 
 The target architecture can be accessed with the variable `$CARCH` during a build.
 

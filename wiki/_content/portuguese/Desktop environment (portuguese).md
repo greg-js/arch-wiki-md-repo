@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Desktop environment](/index.php/Desktop_environment "Desktop environment"). Data da última tradução: 2018-10-31\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Desktop_environment&diff=0&oldid=548087) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Desktop environment](/index.php/Desktop_environment "Desktop environment"). Data da última tradução: 2019-01-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Desktop_environment&diff=0&oldid=564634) na versão em inglês.
 
 Artigos relacionados
 
@@ -32,7 +32,7 @@ Antes de instalar um ambiente de desktop, é necessária uma instalação funcio
 
 *   **[Budgie](/index.php/Budgie "Budgie")** — Budgie é um ambiente de desktop projetado com o usuário moderno em mente, ele se concentra na simplicidade e elegância.
 
-	[https://budgie-desktop.org/](https://budgie-desktop.org/) || [budgie-desktop](https://www.archlinux.org/packages/?name=budgie-desktop)
+	[https://getsol.us/](https://getsol.us/) || [budgie-desktop](https://www.archlinux.org/packages/?name=budgie-desktop)
 
 *   **[Cinnamon](/index.php/Cinnamon "Cinnamon")** — O Cinnamon se esforça para fornecer uma experiência de usuário tradicional. Cinnamon é um fork do GNOME 3.
 

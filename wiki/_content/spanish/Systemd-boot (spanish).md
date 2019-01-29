@@ -163,7 +163,7 @@ options root=LABEL=*arch_os* rw
 **Nota:**
 
 *   Si realiza un arranque dual con Windows, se recomienda encarecidamente que desactive la opción predeterminada [Fast Start-Up](/index.php/Dual_boot_with_Windows#Fast_Start-Up "Dual boot with Windows").
-*   Recuerde cargar el *microcódigo* de Intel con `initrd` si procede, se proporciona un ejemplo en [Microcode#systemd-boot](/index.php/Microcode#systemd-boot "Microcode").
+*   Recuerde cargar el *microcódigo* de Intel con `initrd` si procede, se proporciona un ejemplo en [Microcode (Español)#systemd-boot](/index.php/Microcode_(Espa%C3%B1ol)#systemd-boot "Microcode (Español)").
 *   La partición raíz se puede identificar con su `LABEL` o `PARTUUID`. Este último se puede encontrar con la orden `blkid -s PARTUUID -o value /dev/sd*xY*`, donde `*x*` es la letra del dispositivo y `*Y*` es el número de partición. Esto es necesario solo para identificar la partición raíz, no la partición `*esp*`.
 
 **Sugerencia:**

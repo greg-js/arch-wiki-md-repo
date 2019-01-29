@@ -57,7 +57,7 @@ QEMU может использовать другие гипервизоры, т
         *   [6.5.1 Basics](#Basics_2)
         *   [6.5.2 Startup scripts](#Startup_scripts_2)
     *   [6.6 Shorthand configuration](#Shorthand_configuration)
-*   [7 Graphics](#Graphics)
+*   [7 Графика](#Графика)
     *   [7.1 std](#std)
     *   [7.2 qxl](#qxl)
         *   [7.2.1 SPICE](#SPICE)
@@ -1092,19 +1092,19 @@ Notice the lack of network IDs, and that the device was created with `model=...`
 
 See [QEMU networking documentation](https://qemu.weilnetz.de/doc/qemu-doc.html#Network-options) for more information on parameters you can use.
 
-## Graphics
+## Графика
 
-QEMU can use the following different graphic outputs: `std`, `qxl`, `vmware`, `virtio`, `cirrus` and `none`.
+QEMU может использовать следующие различные графические выходные данные: `std`, `qxl`, `vmware`, `virtio`, `cirrus` и `none`.
 
 ### std
 
-With `-vga std` you can get a resolution of up to 2560 x 1600 pixels without requiring guest drivers. This is the default since QEMU 2.2.
+С `-vga std` вы можете получить разрешение до 2560 x 1600 пикселей без использования гостевых драйверов. Это значение по умолчанию, начиная с QEMU 2.2.
 
 ### qxl
 
-QXL is a paravirtual graphics driver with 2D support. To use it, pass the `-vga qxl` option and install drivers in the guest. You may want to use SPICE for improved graphical performance when using QXL.
+QXL - это виртуальный графический драйвер с поддержкой 2D. Чтобы использовать его, передайте параметр `-vga qxl` и установите драйверы в гостевой системе. Возможно, вы захотите использовать SPICE для улучшения графической производительности при использовании QXL.
 
-On Linux guests, the `qxl` and `bochs_drm` kernel modules must be loaded in order to gain a decent performance.
+В гостевых системах Linux модули ядра `qxl` и `bochs_drm` должны быть загружены для достижения достойной производительности.
 
 #### SPICE
 
@@ -1209,7 +1209,7 @@ $ spicy -h *hostname* -s 5901 --spice-ca-file=ca-cert.pem --spice-host-subject="
 
 ### vmware
 
-Although it is a bit buggy, it performs better than std and cirrus. Install the VMware drivers [xf86-video-vmware](https://www.archlinux.org/packages/?name=xf86-video-vmware) and [xf86-input-vmmouse](https://www.archlinux.org/packages/?name=xf86-input-vmmouse) for Arch Linux guests.
+Хотя он немного глючит, он работает лучше, чем std и cirrus. Установите драйверы VMware [xf86-video-vmware](https://www.archlinux.org/packages/?name=xf86-video-vmware) и [xf86-input-vmmouse](https://www.archlinux.org/packages/?name=xf86-input-vmmouse) для гостевых ОС Arch Linux.
 
 ### virtio
 
@@ -1230,11 +1230,11 @@ For more information visit [kraxel's blog](https://www.kraxel.org/blog/tag/virgl
 
 ### cirrus
 
-The cirrus graphical adapter was the default [before 2.2](http://wiki.qemu.org/ChangeLog/2.2#VGA). It [should not](https://www.kraxel.org/blog/2014/10/qemu-using-cirrus-considered-harmful/) be used on modern systems.
+Графический адаптер цирруса был по умолчанию [before 2.2](http://wiki.qemu.org/ChangeLog/2.2#VGA). Его [не следует](https://www.kraxel.org/blog/2014/10/qemu-using-cirrus-considered-harmful/) использовать в современных системах.
 
 ### none
 
-This is like a PC that has no VGA card at all. You would not even be able to access it with the `-vnc` option. Also, this is different from the `-nographic` option which lets QEMU emulate a VGA card, but disables the SDL display.
+Это как ПК, у которого вообще нет VGA карты. Вы даже не сможете получить к нему доступ с помощью опции `-vnc`. Кроме того, это отличается от опции `-nographic`, которая позволяет QEMU эмулировать карту VGA, но отключает отображение SDL.
 
 ### vnc
 

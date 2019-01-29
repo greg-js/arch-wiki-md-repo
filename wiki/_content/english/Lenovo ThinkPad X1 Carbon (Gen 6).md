@@ -63,7 +63,8 @@ Version: ThinkPad X1 Carbon 6th
     *   [4.1 Keyboard Fn Shortcuts](#Keyboard_Fn_Shortcuts)
     *   [4.2 Special buttons](#Special_buttons)
     *   [4.3 Bind special keys](#Bind_special_keys)
-    *   [4.4 HDR Display Color Calibration](#HDR_Display_Color_Calibration)
+    *   [4.4 Disabling red LED Thinkpad logo](#Disabling_red_LED_Thinkpad_logo)
+    *   [4.5 HDR Display Color Calibration](#HDR_Display_Color_Calibration)
 *   [5 Intel Graphics UHD 620 issues](#Intel_Graphics_UHD_620_issues)
 *   [6 TrackPoint and Touchpad issues](#TrackPoint_and_Touchpad_issues)
 *   [7 Thunderbolt dock](#Thunderbolt_dock)
@@ -198,6 +199,51 @@ It should be noted that `Fn+F11` which is `KEY_KEYBOARD` and `Fn+F12` which is `
 # bindsym XF86Launch2 [your app]
 
 ```
+
+### Disabling red LED Thinkpad logo
+
+If you want to shut down Big Brother, (the red led on the "i" letter located on the cover of your x1c6 thinkpad logo) follow these steps :
+
+*   Firstly, add the kernel parameter : **ec_sys.write_support=1** (if you are using UEFI boot as I do, you can add this parameter in /boot/efi/loader/entries/arch.conf in "options")
+*   Then, you can disable directly the LED with this command :
+
+```
+# echo -n -e "\x0a" | sudo dd of="/sys/kernel/debug/ec/ec0/io" bs=1 seek=12 count=1 conv=notrunc 2> /dev/null
+
+```
+
+You can also turn the LED off at startup with [Systemd](/index.php/Systemd "Systemd") :
+
+*   Create a sh script (/root/disable_led.sh for instance) and put this :
+
+```
+#!/bin/bash
+echo -n -e "\x0a" | dd of="/sys/kernel/debug/ec/ec0/io" bs=1 seek=12 count=1 conv=notrunc 2> /dev/null
+
+```
+
+*   Create a service under /etc/systemd/system/ called led.service, and insert the following:
+
+```
+Description=Disabling thinkpad led
+
+[Service]
+ExecStart=/root/disable_led.sh
+
+[Install]
+WantedBy=multi-user.target
+
+```
+
+*   Then start and enable this service
+
+```
+# systemctl start led.service
+# systemctl enable led.service
+
+```
+
+Say goodbye to Big Brother !
 
 ### HDR Display Color Calibration
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Data da última tradução: 2019-01-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_User_Repository&diff=0&oldid=562090) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Data da última tradução: 2019-01-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_User_Repository&diff=0&oldid=564909) na versão em inglês.
 
 Artigos relacionados
 
@@ -62,7 +62,7 @@ Um bom número de novos pacotes que entram para os repositórios oficiais inicia
 
 Os usuários podem pesquisar e baixar os PKGBUILDs da [Interface Web do AUR](https://aur.archlinux.org). Esses PKGBUILDs podem ser construídos dentro dos pacotes instaláveis usando [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)"), e depois instalados usando pacman.
 
-*   Certifique-se de que o grupo de pacotes [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) está instalado (`pacman -S --needed base-devel`).
+*   Certifique-se de que o grupo de pacotes [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) está todo instalado (`pacman -S --needed base-devel`).
 *   Veja o [#FAQ](#FAQ) para respostas das questões mais comuns.
 *   Você pode querer ajustar `/etc/makepkg.conf` para melhor otimizar a prioridade do seu processador para a construção dos pacotes do AUR. Uma melhora significante nos tempos de compilação pode ser realizada nos sistemas com processadores multi-cores ao ajustar a variável MAKEFLAGS. Os usuários também podem habilitar otimizações específicas de hardware no GCC por meio da variável CFLAGS. Veja [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") para mais informações.
 
@@ -92,7 +92,7 @@ A instalação de pacotes do AUR é um processo relativamente simples. Essencial
 
 ### Pré-requisitos
 
-Primeiro, certifique-se de que as ferramentas necessárias estão instaladas, [instalando](/index.php/Instale "Instale") o grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), o qual inclui [make](https://www.archlinux.org/packages/?name=make) e outras ferramentas necessárias para a compilação do código-fonte.
+Primeiro, certifique-se de que as ferramentas necessárias estão instaladas, [instalando](/index.php/Instale "Instale") todo o grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), o qual inclui [make](https://www.archlinux.org/packages/?name=make) e outras ferramentas necessárias para a compilação do código-fonte.
 
 **Nota:** Os pacotes do AUR presumem que o grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) está instalado, isto é, eles não listarão explicitamente os membros deste grupo como dependências
 
@@ -286,7 +286,7 @@ $ git push
 
 **Nota:** Se o `.SRCINFO` foi incluído em seu primeiro commit, adicione-o realizando o [rebase com --root](https://git-scm.com/docs/git-rebase#git-rebase---root) ou [filtrando a árvore](https://git-scm.com/docs/git-filter-branch#git-filter-branch---tree-filterltcommandgt), de forma que o AUR permita seu push inicial.
 
-**Dica:** Para manter o diretório de trabalho e os commits o mais limpo possível, crie um `.gitignore` que [exclua todos os arquivos](/index.php/Dotfiles_(Portugu%C3%AAs)#Usando_gitignore "Dotfiles (Português)") e adicione forçadamente os arquivos conforme necessário.
+**Dica:** Para manter o diretório de trabalho e os commits o mais limpo possível, crie um [gitignore(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gitignore.5) exclua todos os arquivos e adicione forçadamente os arquivos conforme necessário.
 
 ### Mantendo pacotes
 

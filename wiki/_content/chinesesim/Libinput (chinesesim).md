@@ -141,14 +141,14 @@ You may define as many sections as you like in a single configuration file (usua
 *   `MatchIsTouchpad "on"`
 *   `MatchIsTouchscreen "on"`
 
-The input device can then be configured with any of the lines in the CONFIGURATION DETAILS section of [libinput(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4). Common options include:
+输入设备能够在CONFIGURATION中进行配置，详情请看[libinput(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4)。一些常用的配置选项有：
 
-*   `Option "Tapping" "on"`: tapping a.k.a. tap-to-click
-*   `Option "ClickMethod" "clickfinger"`: trackpad no longer has middle and right button areas and instead two-finger click is a context click and three-finger click is a middle click, see the [docs](https://wayland.freedesktop.org/libinput/doc/latest/clickpad_softbuttons.html#clickfinger).
-*   `Option "NaturalScrolling" "true"`: natural (reverse) scrolling
-*   `Option "ScrollMethod" "edge"`: edge (vertical) scrolling
+*   `Option "Tapping" "on"`: 触摸以点击
+*   `Option "ClickMethod" "clickfinger"`: 触摸板不再拥有中右键区域的区分，与之代替的是双指代表右键，三指代表中键。 详情请看[docs](https://wayland.freedesktop.org/libinput/doc/latest/clickpad_softbuttons.html#clickfinger).
+*   `Option "NaturalScrolling" "true"`: 自然滚动（反方向滚动）
+*   `Option "ScrollMethod" "edge"`: 边缘滚动页面
 
-Bear in mind that some of them may only apply to certain devices and you'll need to restart X for changes to take effect.
+注意：有的功能只在特定设备中起作用，并且你可能需要重启 ‘X服务’ 来让功能生效。。
 
 ### 图形工具
 

@@ -290,7 +290,7 @@ There are many options that can be configured (such as cache mode, cache flush i
 
 Changing the cache mode is done by echoing one of 'writethrough', 'writeback', 'writearound' or 'none' to /sys/block/bcache[0-9]/bcache/cache_mode.
 
-Note that changes to /sys are temporary, and will revert back after a reboot. To set custom configurations at boot create a .conf file in `/etc/tmpfile.d`. To set, in a persistent fashion, the sequential cutoff for bcache0 to 1 MB and write back you could create a file `/etc/tmpfile.d/my-bcache.conf` with the contents
+Note that some changes to /sys are temporary, and will revert back after a reboot (It seems that at least cache_mode does not need this workaround). To set custom configurations at boot create a .conf file in `/etc/tmpfile.d`. To set, in a persistent fashion, the sequential cutoff for bcache0 to 1 MB and write back you could create a file `/etc/tmpfile.d/my-bcache.conf` with the contents
 
 ```
   w /sys/block/bcache0/bcache/sequential_cutoff - - - - 1M

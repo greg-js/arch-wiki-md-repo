@@ -25,6 +25,7 @@ Users and groups are used on GNU/Linux for [access control](https://en.wikipedia
     *   [8.2 System groups](#System_groups)
     *   [8.3 Pre-systemd groups](#Pre-systemd_groups)
     *   [8.4 Unused groups](#Unused_groups)
+*   [9 Other tools related to these databases](#Other_tools_related_to_these_databases)
 
 ## Overview
 
@@ -134,8 +135,6 @@ The user, group and password management tools on Arch Linux come from the [shado
 | `/etc/passwd` | User account information |
 | `/etc/gshadow` | Contains the shadowed information for group accounts |
 | `/etc/group` | Defines the groups to which users belong |
-| `/etc/sudoers` | List of who can run what by sudo |
-| `/home/*` | Home directories |
 
 ## User management
 
@@ -255,7 +254,7 @@ Alternatively, the `/etc/passwd` file can be edited directly, see [#User databas
 
 Also keep in mind the following notes:
 
-*   If you are using [sudo](/index.php/Sudo "Sudo") make sure you update your `/etc/sudoers` to reflect the new username(s) (via the visudo command as root).
+*   If you are using [sudo](/index.php/Sudo "Sudo") make sure you update your `/etc/sudoers` to reflect the new username(s) (via the *visudo* command as root).
 *   Personal [crontabs](/index.php/Cron#Crontab_format "Cron") need to be adjusted by renaming the user's file in `/var/spool/cron` from the old to the new name, and then opening `crontab -e` to change any relevant paths and have it adjust the file permissions accordingly.
 *   [Wine's](/index.php/Wine "Wine") personal folders/files' contents in `~/.wine/drive_c/users`, `~/.local/share/applications/wine/Programs` and possibly more need to be manually renamed/edited.
 *   Certain Thunderbird addons, like [Enigmail](https://www.enigmail.net/index.php/en/), may need to be reinstalled.
@@ -355,7 +354,7 @@ The *pwck* command can be used to verify the integrity of the user database. It 
 
 ## Group management
 
-`/etc/group` is the file that defines the groups on the system (see [group(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/group.5) for details).
+`/etc/group` is the file that defines the groups on the system (see [group(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/group.5) for details). There is also its companion `gshadow` which is rarely used. Its details are at [gshadow(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gshadow.5).
 
 Display group membership with the `groups` command:
 
@@ -492,3 +491,14 @@ The following groups are currently not used for any purpose:
 | network | Unused by default. Can be used e.g. for granting access to NetworkManager (see [NetworkManager#Set up PolicyKit permissions](/index.php/NetworkManager#Set_up_PolicyKit_permissions "NetworkManager")). |
 | power |
 | uuidd |
+
+## Other tools related to these databases
+
+[getent(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/getent.8) can be used to read a particular record.
+
+```
+% getent group tty
+
+```
+
+As warned in [#User database](#User_database), using specific utilities such as `passwd` and `chfn`, is a better way to change the databases. Never the less, there are times when editing them directly is looked after. For those times, `vipw`, `vigr` are provided. It is strongly recommended to use these tailored editors over using a general text editor as they lock the databases against concurrent editing. They also help prevent invalid entries and/or syntax errors. Note that Arch Linux prefers usage of specific tools, such as *chage*, for modifying the shadow database over using `vipw -s` and `vigr -s` from the shadow-utils suite. See also [FS#31414](https://bugs.archlinux.org/task/31414).

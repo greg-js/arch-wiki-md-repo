@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Device file](/index.php/Device_file "Device file"). Data da última tradução: 2018-09-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Device_file&diff=0&oldid=542013) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Device file](/index.php/Device_file "Device file"). Data da última tradução: 2019-01-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Device_file&diff=0&oldid=564483) na versão em inglês.
 
 From [Wikipédia](https://en.wikipedia.org/wiki/pt:Arquivos_de_dispositivo "wikipedia:pt:Arquivos de dispositivo"):
 
@@ -61,6 +61,7 @@ Nós de dispositivos que não têm um dispositivo físico.
 *   [/dev/shm](/index.php//dev/shm "/dev/shm")
 *   [/dev/null](https://en.wikipedia.org/wiki/pt:/dev/null "wikipedia:pt:/dev/null"), [/dev/zero](https://en.wikipedia.org/wiki/pt:/dev/zero "wikipedia:pt:/dev/zero"), veja [null(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/null.4)
 *   [/dev/full](https://en.wikipedia.org/wiki/pt:/dev/full "wikipedia:pt:/dev/full"), veja [full(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/full.4)
+*   [/dev/ttyX](/index.php//dev/ttyX_(Portugu%C3%AAs) "/dev/ttyX (Português)"), sendo que X é um número
 
 ## Veja também
 

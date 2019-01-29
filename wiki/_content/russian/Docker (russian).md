@@ -22,12 +22,16 @@
     *   [2.6 Запуск Docker с сетью, заданной вручную, в systemd-networkd](#Запуск_Docker_с_сетью,_заданной_вручную,_в_systemd-networkd)
     *   [2.7 Расположение образов](#Расположение_образов)
     *   [2.8 Небезопасные реестры](#Небезопасные_реестры)
-*   [3 Docker 0.9.0 — 1.2.x и LXC](#Docker_0.9.0_—_1.2.x_и_LXC)
-*   [4 Skype](#Skype)
-*   [5 Сборка образа i686](#Сборка_образа_i686)
-    *   [5.1 Образ ArchLinux](#Образ_ArchLinux)
-    *   [5.2 Образ Debian](#Образ_Debian)
-*   [6 Смотрите также](#Смотрите_также)
+*   [3 Образы](#Образы)
+    *   [3.1 Arch Linux](#Arch_Linux)
+    *   [3.2 Debian](#Debian)
+        *   [3.2.1 Создание образа вручную](#Создание_образа_вручную)
+*   [4 Docker 0.9.0 — 1.2.x и LXC](#Docker_0.9.0_—_1.2.x_и_LXC)
+*   [5 Skype](#Skype)
+*   [6 Сборка образа i686](#Сборка_образа_i686)
+    *   [6.1 Образ ArchLinux](#Образ_ArchLinux)
+    *   [6.2 Образ Debian](#Образ_Debian)
+*   [7 Смотрите также](#Смотрите_также)
 
 ## Установка
 
@@ -184,6 +188,55 @@ ExecStart=/usr/bin/dockerd --data-root=*/path/to/new/location/docker* -H fd://
 [Service]
 ExecStart=
 ExecStart=/usr/bin/dockerd -H fd:// --insecure-registry my.registry.name:5000
+```
+
+## Образы
+
+### Arch Linux
+
+Следующая команда выгружает [archlinux/base](https://hub.docker.com/r/archlinux/base/) x86_64 образ. Это урезанная версия ядра Arch без сети и т.д.
+
+```
+# docker pull archlinux/base
+
+```
+
+Смотрите также [README.md](https://github.com/archlinux/archlinux-docker/blob/master/README.md).
+
+Для полноценного образа Arch, клонируйте репозиторий и создайте свой собственный образ.
+
+```
+$ git clone [https://github.com/archlinux/archlinux-docker.git](https://github.com/archlinux/archlinux-docker.git)
+
+```
+
+Отредактируйте файл `packages` так, чтобы он содержал только «base». Затем запустите:
+
+```
+# make docker-image
+
+```
+
+### Debian
+
+Следующая команда выгружает [debian](https://hub.docker.com/r/_/debian/) x86_64 образ.
+
+```
+# docker pull debian
+
+```
+
+#### Создание образа вручную
+
+Создайте образ Debian с [debootstrap](https://www.archlinux.org/packages/?name=debootstrap):
+
+```
+# mkdir jessie-chroot
+# debootstrap jessie ./jessie-chroot [http://http.debian.net/debian/](http://http.debian.net/debian/)
+# cd jessie-chroot
+# tar cpf - . | docker import - debian
+# docker run -t -i --rm debian /bin/bash
+
 ```
 
 ## Docker 0.9.0 — 1.2.x и LXC

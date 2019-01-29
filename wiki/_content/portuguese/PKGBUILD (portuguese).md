@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"). Data da última tradução: 2019-01-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=PKGBUILD&diff=0&oldid=563398) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"). Data da última tradução: 2019-01-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=PKGBUILD&diff=0&oldid=564976) na versão em inglês.
 
 Artigos relacionados
 
@@ -120,9 +120,11 @@ Também é importante usar palavras-chaves com sabedoria para aumentar as chance
 
 Um vetor de arquiteturas nas quais o PKGBUILD deve poder ser compilado e funcionar. Arch oferece suporte oficialmente apenas `x86_64`, mas outros projetos podem oferecer suporte a outras arquiteturas. Por exemplo, [Arch Linux 32](https://archlinux32.org/) fornece suporte a `i686` [Arch Linux ARM](http://archlinuxarm.org/) forence suporte a `arm` (armv5), `armv6h` (armv6 hardfloat), `armv7h` (armv7 hardfloat) e `aarch64` (armv8 64bit).
 
-Se um pacote independe de arquitetura em seu estado compilado (shell scripts, fontes, temas, muitos tipos de extensões etc.), então use `arch=('any')`. Por favor note que, como isso serve para pacotes que podem ser compilados uma vez e serem usados para qualquer arquitetura, isso fará com que o pacote seja rotulado com `-any` em vez de `-x86_64`, etc.
+Há dois tipos de valores que o vetor pode usar:
 
-Se um pacote puder ser compilado para qualquer arquitetura, mas é específico para uma arquitetura uma vez compilado, especifique todas as arquiteturas às quais o Arch oferece suporte, isto é, `arch=('x86_64')`.
+*   `arch=('any')` é um valor mágico que, usado assim, indica que o pacote pode ser compilado em uma arquitetura e, após compilado, independe da arquitetura em seu estado compilado (shell scripts, fontes, ema, muitos tipos de extensões etc.).
+
+*   `arch=('x86_64')` com uma ou mais arquiteturas indica que o pacote pode ser compilado para qualquer uma das arquiteturas especificadas, mas é específico da arquitetura depois de compilado. Para esses pacotes, especifique todas as arquiteturas as quais o PKGBUILD oficialmente possui suporte. Para repositórios oficiais e pacotes AUR, isso significa *x86_64*. Opcionalmente, os pacotes AUR podem optar por ter suporte adicional a outras arquiteturas que save-se funcionar.
 
 A arquitetura alvo pode ser acessada com a variável `$CARCH` durante uma compilação.
 
@@ -135,11 +137,11 @@ A URL do site oficial do software sendo empacotado.
 A licença sob a qual o software é distribuído. O pacote [licenses](https://www.archlinux.org/packages/?name=licenses) (parte do [grupo base](/index.php/Grupo_base "Grupo base")) contém muitas licenças comumente usadas, que são instaladas em `/usr/share/licenses/common`. Se um pacote é licenciado sob uma dessas licenças, o valor deve ser definido para o nome do diretório (ex.: `license=('GPL')`). Se a licença adequada não estiver incluída, diversas coisas devem ser feitas:
 
 1.  Adicione `custom` ao vetor `license`. Opcionalmente, você pode substituir `custom` com `custom:*nome da licença*`. Uma vez que uma licença é usada em dois ou mais pacotes em um repositório oficial (incluindo [repositório community](/index.php/Reposit%C3%B3rio_community "Repositório community")), ela se torna parte do pacote [licenses](https://www.archlinux.org/packages/?name=licenses).
-2.  Instale a licença em: `/usr/share/licenses/*pkgname*/` (ex.: `/usr/share/licenses/foobar/LICENSE`). Uma boa forma de fazer isso é usando: {{bc|install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"}
+2.  Instale a licença em: `/usr/share/licenses/*pkgname*/` (ex.: `/usr/share/licenses/foobar/LICENSE`). Uma boa forma de fazer isso é usando: `install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"` 
 3.  Se a licença é encontrada apenas em um site, então você precisa inclui-la separadamente no pacote.
 
 *   As licenças [BSD](https://en.wikipedia.org/wiki/pt:Licen%C3%A7a_BSD "wikipedia:pt:Licença BSD"), [ISC](https://en.wikipedia.org/wiki/pt:Licen%C3%A7a_ISC "wikipedia:pt:Licença ISC"), [MIT](https://en.wikipedia.org/wiki/pt:Licen%C3%A7a_MIT "wikipedia:pt:Licença MIT"), [zlib/png](https://en.wikipedia.org/wiki/pt:Licen%C3%A7a_zlib "wikipedia:pt:Licença zlib") e [Python](https://en.wikipedia.org/wiki/pt:Python "wikipedia:pt:Python") são casos especiais e não podem ser incluídos no pacote [licenses](https://www.archlinux.org/packages/?name=licenses). Para manter a consistência no vetor `license`, é tratado como licença comum (`license=('BSD')`, `license=('ISC')`, `license=('MIT')`, `license=('ZLIB')` e `license=('Python')`), mas tecnicamente cada uma é uma licença personalizada, porque cada uma possui sua própria linha de copyright. Quaisquer pacotes licenciados sob essas quatro devem ter uma licença única armazenada em `/usr/share/licenses/*pkgname*`.
-*   Alguns pacotes podem não estar cobertos por uma única licença. Nestes casos, múltiplas entradas podem ser feitas no vetor `license` como, por exemplo, `license=('GPL' 'custom:*nome da licença'*)`.
+*   Alguns pacotes podem não estar cobertos por uma única licença. Nestes casos, múltiplas entradas podem ser feitas no vetor `license` como, por exemplo, `license=('GPL' "custom:*nome da licença*")`.
 *   (L)GPL possui muitas verões e permutações daquelas versões. Para softwares sob (L)GPL, a convenção é:
     *   (L)GPL — (L)GPLv2 ou qualquer versão posterior
     *   (L)GPL2 — (L)GPL2 apenas

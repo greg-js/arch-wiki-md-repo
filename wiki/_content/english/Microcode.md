@@ -287,8 +287,8 @@ Users may consult either Intel or AMD at the following links to see if a particu
 
 It is possible to find out if the `intel-ucode.img` contains a microcode image for the running CPU with [iucode-tool](https://www.archlinux.org/packages/?name=iucode-tool).
 
-1.  Install [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) (changing initrd is not required for detection)
-2.  Install [iucode-tool](https://www.archlinux.org/packages/?name=iucode-tool)
+1.  [Install](/index.php/Install "Install") [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) (changing initrd is not required for detection)
+2.  [Install](/index.php/Install "Install") [iucode-tool](https://www.archlinux.org/packages/?name=iucode-tool)
 3.  `# modprobe cpuid` 
 4.  Extract microcode image and search it for your cpuid:
      `# bsdtar -Oxf /boot/intel-ucode.img | iucode_tool -tb -lS -` 

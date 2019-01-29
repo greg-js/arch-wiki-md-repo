@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Nonfree applications package guidelines](/index.php/Nonfree_applications_package_guidelines "Nonfree applications package guidelines"). Data da última tradução: 2018-11-03\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Nonfree_applications_package_guidelines&diff=0&oldid=552590) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Nonfree applications package guidelines](/index.php/Nonfree_applications_package_guidelines "Nonfree applications package guidelines"). Data da última tradução: 2019-01-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Nonfree_applications_package_guidelines&diff=0&oldid=564548) na versão em inglês.
 
 **[Diretrizes de criação de pacotes](/index.php/Padr%C3%B5es_de_empacotamento_do_Arch "Padrões de empacotamento do Arch")**
 
@@ -21,6 +21,7 @@ Para muitos aplicativos (a maioria dos quais são do Windows), não há fontes n
 *   [4 Colocação de arquivos](#Colocação_de_arquivos)
 *   [5 Arquivos em falta](#Arquivos_em_falta)
     *   [5.1 Os arquivos só podem ser obtidos em um pacote/instalador distribuído](#Os_arquivos_só_podem_ser_obtidos_em_um_pacote/instalador_distribuído)
+        *   [5.1.1 Esquema a escolher](#Esquema_a_escolher)
     *   [5.2 Os arquivos só podem ser obtidos em um CD distribuído ou outro tipo de mídia de disco ótico](#Os_arquivos_só_podem_ser_obtidos_em_um_CD_distribuído_ou_outro_tipo_de_mídia_de_disco_ótico)
     *   [5.3 Os arquivos podem ser obtidos de várias maneiras](#Os_arquivos_podem_ser_obtidos_de_várias_maneiras)
 *   [6 Tópicos avançados](#Tópicos_avançados)
@@ -76,7 +77,7 @@ Se o empacotamento de algum programa exigir mais esforço e hacks do que comprar
 
 ## Nomenclatura de pacotes
 
-Antes de escolher um nome, pesquise no AUR as versões existentes do software que você deseja empacotar. Tente usar uma conversão de nomenclatura estabelecida (por exemplo, não crie algo como [gish-hb](https://aur.archlinux.org/packages/gish-hb/) quando já houver [aquaria-hib](https://aur.archlinux.org/packages/aquaria-hib/), [penumbra-overture-hib](https://aur.archlinux.org/packages/penumbra-overture-hib/) e [uplink-hib](https://aur.archlinux.org/packages/uplink-hib/)). **Sempre** use o sufixo `-bin`, a menos que você tenha certeza de que nunca haverá um pacote baseado em código-fonte; seu criador terá que perguntar a você (ou no pior caso TUs) ao pacote órfão existente. ele e os dois acabarão com PKGBUILDs cheios de `replaces` e `conflicts` adicionais.
+Antes de escolher um nome, pesquise no AUR as versões existentes do software que você deseja empacotar. Tente usar uma convenções de nomenclatura estabelecida (por exemplo, não crie algo como [gish-hb](https://aur.archlinux.org/packages/gish-hb/) quando já houverem pacotes para [aquaria-hib](https://aur.archlinux.org/packages/aquaria-hib/), [penumbra-overture-hib](https://aur.archlinux.org/packages/penumbra-overture-hib/) e [uplink-hib](https://aur.archlinux.org/packages/uplink-hib/)). **Sempre** use o sufixo `-bin`, a menos que você tenha certeza de que nunca haverá um pacote baseado em código-fonte – o criador do pacote teria que pedir a você (ou, no pior caso, um TUs) que tornasse órfão (isto é, abandonasse) o pacote existente para que ele e vocês dois acabarão com PKGBUILDs cheios de `replaces` e `conflicts` adicionais.
 
 ## Colocação de arquivos
 
@@ -94,11 +95,19 @@ O software só está disponível através desse arquivo de pacote/instalador, qu
 
 Adicione o pacote/instalador necessário a um vetor `source`, renomeando o nome do arquivo de origem para que o link da origem na interface web do AUR seja diferente dos nomes dos arquivos incluídos no tarball de origem:
 
- `source=(... "*nomeoriginal*::**file:**//*nomeoriginal*")` 
+ `source=(... "*nomeoriginal*::**local:**//*nomeoriginal*")` 
 
 Adicione também um comentário fixado como o abaixo na página do pacote no AUR e explique os detalhes no PKGBUILD:
 
  `Need archive/installer to work.` 
+
+#### Esquema a escolher
+
+Caso você use o esquema **local://** em um array de fontes, o makepkg se comporta como se nenhum esquema fosse especificado, e o arquivo deve ser colocado manualmente no mesmo diretório que o PKGBUILD.
+
+Caso você use o esquema **file://**, você pode adicionalmente especificar DLAGENTS para o protocolo file, de forma que ele pode ser obtido em uma forma especial. Veja os exemplos [abaixo](#DLAGENTS_personalizados).
+
+Porém, ainda não há regras claras sobre quais esquemas você deve usar.
 
 ### Os arquivos só podem ser obtidos em um CD distribuído ou outro tipo de mídia de disco ótico
 
@@ -144,6 +153,10 @@ DLAGENTS=("http::/usr/bin/wget -r -np -nd -H %u")
 
 ```
 
+Para baixar links temporários para arquivos ou passar por um download interativo, é possível analisar a solicitação HTTP usada para criar o link de download final e, em seguida, criar um DLAGENTS que emule isso usando o curl. Veja por exemplo [blackmagic-decklink-sdk](https://aur.archlinux.org/packages/blackmagic-decklink-sdk/) ou [jlink-software-and-documentation](https://aur.archlinux.org/packages/jlink-software-and-documentation/).
+
+Alternativamente, o DLAGENTS pode ser usado para fornecer uma mensagem de erro mais informativa ao usuário quando um arquivo está faltando. Veja, por exemplo, [ttf-ms-win10](https://aur.archlinux.org/packages/ttf-ms-win10/).
+
 ### Desempacotamento
 
 Muitos programas proprietários são publicados em instaladores desagradáveis que às vezes nem funcionam no Wine. As seguintes ferramentas podem ajudar:
@@ -155,6 +168,7 @@ Muitos programas proprietários são publicados em instaladores desagradáveis q
     *   ele pode até mesmo extrair seções únicas de arquivos comuns de PE (`.exe` e `.dll`)!
 *   [upx](https://www.archlinux.org/packages/?name=upx) às vezes é usado para compactar os executáveis listados acima e também pode ser usado para descompactá-los
 *   [innoextract](https://www.archlinux.org/packages/?name=innoextract) pode descompactar instaladores `.exe` criados com [Inno Setup](https://en.wikipedia.org/wiki/pt:Inno_Setup "wikipedia:pt:Inno Setup") (usado, por exemplo, por jogos GOG.com)
+*   [libarchive](https://www.archlinux.org/packages/?name=libarchive) contém *bsdtar*, que pode extrair imagens `.iso` e arquivos `.AppImage` (que na verdade são iso9660 híbridos autoexecutáveis)
 
 Para determinar o tipo exato de arquivo, execute `file *arquivo_de_tipo_desconhecido*`.
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Man page](/index.php/Man_page "Man page"). Data da última tradução: 2019-01-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Man_page&diff=0&oldid=563907) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Man page](/index.php/Man_page "Man page"). Data da última tradução: 2019-01-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Man_page&diff=0&oldid=564584) na versão em inglês.
 
 Artigos relacionados
 
@@ -125,7 +125,7 @@ Em vez da interface padrão, o uso de navegadores como [lynx](https://www.archli
 
 ### Aplicativos de visualização
 
-*   **GNOME Help** — Visualização de ajuda para o [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)"). Ele pode mostrar páginas man via `yelp man:<nome>`.
+*   **GNOME Help** — Visualização de ajuda para o [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)"). Ele pode mostrar páginas man via `yelp man:<nome>` ou a combinação de teclas não documentada `CTRL+L` a partir de uma janela existente.
 
 	[https://wiki.gnome.org/Apps/Yelp](https://wiki.gnome.org/Apps/Yelp) || [yelp](https://www.archlinux.org/packages/?name=yelp)
 

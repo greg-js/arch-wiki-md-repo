@@ -116,7 +116,7 @@ Si no utiliza uno de los métodos simples para [#Montar la partición](#Montar_l
 
 ```
 
-**Nota:** es posible que deba copiar el [Microcódigo](/index.php/Microcode "Microcode") en la línea de la entrada de arranque.
+**Nota:** es posible que deba copiar el [Microcódigo](/index.php/Microcode_(Espa%C3%B1ol) "Microcode (Español)") en la línea de la entrada de arranque.
 
 Además, deberá mantener actualizados los archivos en el ESP con las últimas actualizaciones del kernel. De lo contrario, podría producirse un sistema no arrancable. Las siguientes secciones muestran varios mecanismos para automatizarlo.
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks"). Data da última tradução: 2019-01-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&diff=0&oldid=564067) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks"). Data da última tradução: 2019-01-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&diff=0&oldid=564797) na versão em inglês.
 
 Artigos relacionados
 
@@ -174,7 +174,7 @@ $ comm -12 <(pacman -Qq | sort) <(pacman -Slq *nome_repo* | sort)
 Listar todos os pacotes na ISO do Arch Linux que não estão no grupo base:
 
 ```
-$ comm -23 <(curl https://git.archlinux.org/archiso.git/plain/configs/releng/packages.both) <(pacman -Qqg base | sort)
+$ comm -23 <(curl https://git.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) <(pacman -Qqg base | sort)
 
 ```
 
@@ -552,7 +552,7 @@ $ pacman -Qqe > pkglist.txt
 
 *   Com a opção `-t`, os pacotes já necessários para outros pacotes explicitamente instalados não são mencionados. Se estiver reinstalando a partir desta lista, eles serão instalados, mas apenas como dependências.
 *   Com uma opção `-n`, pacotes externos (p. ex., do [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)")) são omitidos da lista.
-*   Use `comm -13 <(pacman -Qqdt | sort) < (pacman -Qqdtt | sort) > optdeplist.txt` para também criar uma lista das dependências opcionais instaladas que pode ser reinstalada com `--asdeps`.
+*   Use `comm -13 <(pacman -Qqdt | sort) <(pacman -Qqdtt | sort) > optdeplist.txt` para também criar uma lista das dependências opcionais instaladas que pode ser reinstalada com `--asdeps`.
 *   Use `pacman -Qqem > foreignpkglist.txt` para criar a lista de AUR e outros pacotes externos que foram explicitamente instalados.
 
 Para manter uma lista atualizada de pacotes explicitamente instalados (p. ex., em combinação com um `/etc/` versionado), você pode configurar um [hook](/index.php/Pacman_(Portugu%C3%AAs)#Hooks "Pacman (Português)"). Exemplo:
@@ -665,7 +665,7 @@ Ele imprimirá o nome do programa em execução e a biblioteca antiga que foi re
 
 ### Instalando apenas conteúdo nos idiomas necessários
 
-A maioria dos pacotes tem como objetivo instalar documentação, traduções e outras coisas no maior número de idiomas possível. É discutível se vale a pena o esforço e o ganho de tamanho para remover idiomas não requeridos. No entanto, alguns preferem um sistema mais limpo ou menor. [bleachbit](https://aur.archlinux.org/packages/bleachbit/) e [localepurge](https://aur.archlinux.org/packages/localepurge/) limpam idiomas indesejáveis removendo os arquivos instalados. O que não é desejável, pois o administrador pode confiar menos no pacman para rastrear os arquivos relacionados ao sistema. Uma maneira mais fundamental é usar a palavra-chave `NoExtract`, que previne que esses arquivos sejam instalados em primeiro lugar. O exemplo abaixo tenta instalar apenas arquivos em inglês (EUA) ou nenhum.
+Muitos pacotes tentam instalar documentação e traduções em vários idiomas. Alguns programas são projetados para remover esses arquivos desnecessários, como [localepurge](https://aur.archlinux.org/packages/localepurge/), que é executado após a instalação de um pacote para excluir os arquivos de localidade desnecessários. Uma abordagem mais direta é fornecida através da diretiva `NoExtract` em `pacman.conf`, que impede que esses arquivos sejam instalados. O exemplo abaixo instala arquivos em inglês (EUA) ou nenhum:
 
  `/etc/pacman.conf` 
 ```

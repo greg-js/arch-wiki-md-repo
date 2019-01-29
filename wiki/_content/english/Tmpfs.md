@@ -27,7 +27,7 @@ Generally, tasks and programs that run frequent read/write operations can benefi
 
 By default, a tmpfs partition has its maximum size set to half of the available RAM, however it is possible to overrule this value. To explicitly set a maximum size, in this example to override the default `/tmp` mount, use the `size` mount option:
 
- `/etc/fstab`  `tmpfs   /tmp         tmpfs   nodev,nosuid,size=2G          0  0` 
+ `/etc/fstab`  `tmpfs   /tmp         tmpfs   rw,nodev,nosuid,size=2G          0  0` 
 
 To specify a more secure mounting, specify the following mount option:
 
@@ -39,7 +39,7 @@ Reboot for the changes to take effect. Note that although it may be tempting to 
 
 After applying changes, verify that they took effect by looking at `/proc/mounts` and using `findmnt`:
 
- `$ findmnt --target /tmp` 
+ `$ findmnt /tmp` 
 ```
 TARGET SOURCE FSTYPE OPTIONS
 /tmp   tmpfs  tmpfs  rw,nosuid,nodev,relatime

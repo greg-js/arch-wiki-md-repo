@@ -16,7 +16,12 @@ Note que ciertas licencias de fuentes pueden imponer ciertas limitaciones legale
     *   [1.1 Formato bitmap](#Formato_bitmap)
     *   [1.2 Formato de contorno](#Formato_de_contorno)
     *   [1.3 Otros Formatos](#Otros_Formatos)
-*   [2 Instalando fuentes](#Instalando_fuentes)
+*   [2 Instalación](#Instalación)
+    *   [2.1 Pacman](#Pacman)
+    *   [2.2 Crear un paquete](#Crear_un_paquete)
+    *   [2.3 Instalación manual](#Instalación_manual)
+    *   [2.4 Aplicaciones antiguas](#Aplicaciones_antiguas)
+    *   [2.5 Advertencias sobre Pango](#Advertencias_sobre_Pango)
 *   [3 Configuración](#Configuración)
     *   [3.1 FreeType autohinter (opcional)](#FreeType_autohinter_(opcional))
     *   [3.2 Deshabilitar las Fuentes de mapa de Bits que son feas (opcional)](#Deshabilitar_las_Fuentes_de_mapa_de_Bits_que_son_feas_(opcional))
@@ -58,49 +63,130 @@ La aplicación de composición, *Tex*, Y su software complementario, *Metafuente
 
 El formato [SGV](https://www.w3.org/TR/SVG/text.html#FontsGlyphs) tiene también su propio método para describir fuentes.
 
-## Instalando fuentes
+## Instalación
 
-En un sistema Linux moderno, añadir e instalar fuentes resulta mucho más fácil que antes. Veremos a continuación algunos consejos que harán el proceso más claro y asequible para el usuario medio. En primer lugar hemos de plantearnos el lugar donde se guardarán las nuevas fuentes. En general, los directorios más usados son:
+Hay varios métodos para instalar fuentes.
 
-*   /usr/share/fonts
-*   /usr/X11R6/lib/X11/fonts
+### Pacman
 
-De esta manera todos los usuarios del sistema tendrán acceso a ellas (siempre bajo privilegios de root). Copiarlas a ~/.fonts puede ser también una buena idea.
+Fuentes y colecciones de fuentes se pueden instalar con [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") en repositorios habilitados.
 
-En Arch Linux disponemos de algunas colecciones de fuentes ya preempaquetadas. Para buscarlas podemos ejecutar
+Las fuentes disponibles se pueden encontrar [buscando paquetes](/index.php/Pacman_(Espa%C3%B1ol)#Consultar_la_base_de_datos_de_los_paquetes "Pacman (Español)") (Por ej. `font` o `ttf`).
 
-```
-pacman -Ss fonts
+### Crear un paquete
 
-```
+Debería dejar a pacman la habilidad de manejar sus fuentes, que se hace creando un paquete de Arch. Este se puede compartir con la comunidad en el [AUR](/index.php/AUR_(Espa%C3%B1ol) "AUR (Español)"). Los paquetes para instalar fuentes son particularmente similares; simplemente tome un [paquete](https://git.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/adobe-source-code-pro-fonts) como plantilla que debería funcionar bien. Para aprender como se modifica para su fuente vea [Creando paquetes](/index.php/Creating_packages_(Espa%C3%B1ol) "Creating packages (Español)").
 
-Entre los paquetes disponibles podemos encontrar
+El nombre de familia de un archivo de fuente se puede adquirir utilizando `fc-query` por ejemplo: `fc-query -f '%{family[0]}
+' /path/to/file`. El formato se describe en el manual FcPatternFormat(3).
 
-```
-extra/artwiz-fonts 1.3-3
- This is set of (improved) artwiz fonts.
-extra/ttf-ms-fonts 2.0-1
- Un-extracted TTF Fonts from Microsoft
+### Instalación manual
 
-```
+La forma recomendada para añadir fuentes al sistema que no están en los repositorios está descrito en [#Crear un paquete](#Crear_un_paquete). Esto le da a pacman la habilidad de quitar o actualizar después de un tiempo. De todas formas las fuentes también se pueden instalar manualmente.
 
-Para la instalación de los paquetes hacemos:
+Para instalar fuentes en todo el sistema (disponible para todos los usuarios), mueve la carpeta al directorio `/usr/share/fonts/`. Todos los usuarios tienen que poder leer el archivo, utilice [chmod](/index.php/Chmod "Chmod") para establecer los permisos correctos (es decir al menos `0444` para archivos y `0555` para carpetas). Para instalar las fuentes solo para un único usuario, utilice `~/.local/share/fonts` (`~/.fonts/` está obsoleto).
 
-```
-pacman -S artwiz-fonts ttf-ms-fonts
+Para cargar las fuentes directamente en Xserver (lo contrario a utilizar un *servidor de fuentes*) el directorio recientemente añadido tiene que incluirse en la entrada FontPath. Esta entrada se localiza en la sección *Archivos* [de su archivo de configuración Xorg](/index.php/Xorg_(Espa%C3%B1ol)#Configuración "Xorg (Español)") (por ej. `/etc/X11/xorg.conf` o `/etc/xorg.conf`). vea [#Aplicaciones antiguas](#Aplicaciones_antiguas) para más detalles.
+
+Después actualice la cache de fuente de fontconfig: (normalmente no es necesario ya que la librería de fontconfig lo hace)
 
 ```
-
-De esta manera, las fuentes quedarán bajo el directorio /usr/X11R6/lib/X11/fonts. Se recomienda a los usuarios CJK (chinos, japoneses y coreanos) la instalación de ttf-arphic-uming, ttf-arphic-ukai y ttf-fireflysung para una visualización apropiada
-
-Otra opción podría ser el uso de KDE *Font Installer*, en KDE *Control Center*. Funciona perfectamente para aquellos que usen KDE. Además, las fuentes pueden ser instaladas manualmente bajo los tres directorios arriba especificados. En ese caso, como root hemos de hacer
-
-```
-fc-cache -vf
+$ fc-cache
 
 ```
 
-{translate_me}
+### Aplicaciones antiguas
+
+Con aplicaciones antiguas que no soportan fontconfig (por ej. Aplicaciones GTK+ 1.x, y `xfontsel`) se necesita crear el índice en el directorio de la fuente:
+
+```
+$ mkfontscale
+$ mkfontdir
+
+```
+
+O incluir más de una carpeta con un comando:
+
+```
+$ for dir in /font/dir1/ /font/dir2/; do xset +fp $dir; done && xset fp rehash
+
+```
+
+O si la fuente está instalado en una sub-carpeta diferente dentro de por ej. `/usr/share/fonts`:
+
+```
+$ for dir in * ; do if [  -d  "$dir"  ]; then cd "$dir";xset +fp "$PWD" ;mkfontscale; mkfontdir;cd .. ;fi; done && xset fp rehash
+
+```
+
+Puede que a veces el servidor X puede fallar al cargar el directorio de las fuentes y necesites volver a escanear todos los archivos de `fonts.dir`:
+
+```
+# xset +fp /usr/share/fonts/misc # Informa al servidor X de los nuevos directorios
+# xset fp rehash                # Fuerza un escaneo nuevo
+
+```
+
+Para comprobar que la o las fuentes están incluidas:
+
+```
+$ xlsfonts | grep fontname
+
+```
+
+**Nota:** Muchos paquetes configurarán automáticamente Xorg para utilizar la fuente sobre la instalación. Si este es el caso de su fuente este paso no es necesario.
+
+También puede establecerse globalmente en `/etc/X11/xorg.conf` o `/etc/X11/xorg.conf.d`.
+
+Aquí hay un ejemplo de la sección que ha de ser añadida a `/etc/X11/xorg.conf`. Añada o quite paths basado en los particulares requisitos de su fuente.
+
+```
+# Deje que X.Org conozca los directorios personalizados de fuente
+Section "Files"
+    FontPath    "/usr/share/fonts/100dpi"
+    FontPath    "/usr/share/fonts/75dpi"
+    FontPath    "/usr/share/fonts/cantarell"
+    FontPath    "/usr/share/fonts/cyrillic"
+    FontPath    "/usr/share/fonts/encodings"
+    FontPath    "/usr/share/fonts/misc"
+    FontPath    "/usr/share/fonts/truetype"
+    FontPath    "/usr/share/fonts/TTF"
+    FontPath    "/usr/share/fonts/util"
+EndSection
+
+```
+
+### Advertencias sobre Pango
+
+Cuando [Pango](http://www.pango.org/) se está utilizando en su sistema él leerá desde [fontconfig](http://www.freedesktop.org/wiki/Software/fontconfig) para saber de donde obtener las fuentes.
+
+```
+(process:5741): Pango-WARNING **: failed to choose a font, expect ugly output. engine-type='PangoRenderFc', script='common'
+(process:5741): Pango-WARNING **: failed to choose a font, expect ugly output. engine-type='PangoRenderFc', script='latin'
+
+```
+
+Si usted ha visto errores similares y/o vee bloques en vez de caracteres en su aplicación necesita añadir las fuentes y actualizar font cache. En este ejemplo se utiliza la fuente [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) para mostrar la solución (después de una instalación exitosa del paquete) y ejecute como root para habilitarlo para todos los usuarios.
+
+```
+# fc-cache
+/usr/share/fonts: caching, new cache contents: 0 fonts, 3 dirs
+/usr/share/fonts/TTF: caching, new cache contents: 16 fonts, 0 dirs
+/usr/share/fonts/encodings: caching, new cache contents: 0 fonts, 1 dirs
+/usr/share/fonts/encodings/large: caching, new cache contents: 0 fonts, 0 dirs
+/usr/share/fonts/util: caching, new cache contents: 0 fonts, 0 dirs
+/var/cache/fontconfig: cleaning cache directory
+fc-cache: succeeded
+
+```
+
+Puedes comprobar si una fuente por defecto está configurada como tal:
+
+```
+# fc-match
+LiberationMono-Regular.ttf: "Liberation Mono" "Regular"
+
+```
 
 # Configuración
 

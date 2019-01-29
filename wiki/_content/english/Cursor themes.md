@@ -43,12 +43,13 @@ Some websites that have cursor themes:
 
 *   [GNOME Look](https://www.gnome-look.org/browse/cat/107/ord/latest/)
 *   [Customize.org](http://www.customize.org/list/xcursors)
-*   [Deviant Art](http://www.deviantart.com/browse/all/customization/skins/linuxutil/x11cursors/)
+*   [Deviant Art](https://www.deviantart.com/browse/all/customization/skins/linuxutil/x11cursors/)
+*   [Open Desktop](https://www.opendesktop.org/browse/cat/107/)
 
 For *user-specific* installation, use the `~/.icons/` directory. Extract them with this command that will work for most archives:
 
 ```
-$ bsdtar xvf foobar-cursor-theme.tar.gz --directory ~/.icons
+$ tar xvf foobar-cursor-theme.tar.gz -C ~/.icons
 
 ```
 

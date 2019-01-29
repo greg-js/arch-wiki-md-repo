@@ -7820,7 +7820,7 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 
 *   **Quick Hash GUI** — A GUI to enable the rapid selection and subsequent hashing of files (individually or recursively throughout a folder structure) text and (on Linux) disks.
 
-	[https://sourceforge.net/projects/quickhash/](https://sourceforge.net/projects/quickhash/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+	[https://www.quickhash-gui.org/](https://www.quickhash-gui.org/) || [quickhash-gui-bin](https://aur.archlinux.org/packages/quickhash-gui-bin/)
 
 *   **RHash** — Utility for verifying hash sums (SFV, CRC, etc). Supports lots of algorithms.
 

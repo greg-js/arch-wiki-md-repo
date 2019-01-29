@@ -1,18 +1,23 @@
-Related articles
+**Status de tradução:** Esse artigo é uma tradução de [Java](/index.php/Java "Java"). Data da última tradução: 2019-01-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Java&diff=0&oldid=561791) na versão em inglês.
+
+Artigos relacionados
 
 *   [Diretrizes de pacotes Java](/index.php/Diretrizes_de_pacotes_Java "Diretrizes de pacotes Java")
 *   [Fontes do Java Runtime Environment](/index.php/Java_Runtime_Environment_Fonts "Java Runtime Environment Fonts")
 
 Do [artigo do Wikipédia](https://en.wikipedia.org/wiki/pt:Java_(linguagem_de_programa%C3%A7%C3%A3o) "wikipedia:pt:Java (linguagem de programação)"):
 
-	Java é uma linguagem de programação interpretada orientada a objetos desenvolvida na década de 90 por uma equipe de programadores chefiada por James Gosling, na empresa Sun Microsystems. Diferente das linguagens de programação convencionais, que são compiladas para código nativo, a linguagem Java é compilada para um bytecode que é interpretado por uma máquina virtual (Java Virtual Machine, mais conhecida pela sua abreviação JVM). A linguagem de programação Java é a linguagem convencional da Plataforma Java, mas não é a sua única linguagem.
+	Java é uma linguagem de programação interpretada orientada a objetos desenvolvida na década de 90 por uma equipe de programadores chefiada por James Gosling, na empresa Sun Microsystems. Diferente das linguagens de programação convencionais, que são compiladas para código nativo, a linguagem Java é compilada para um bytecode que é interpretado por uma máquina virtual (Java Virtual Machine, mais conhecida pela sua abreviação [JVM](https://en.wikipedia.org/wiki/pt:M%C3%A1quina_virtual_Java "wikipedia:pt:Máquina virtual Java")). A linguagem de programação Java é a linguagem convencional da Plataforma Java, mas não é a sua única linguagem.
 
-Arch Linux oferece suporte oficial às versões de código aberto OpenJDK 7, 8 e 9\. Todas essas JVM podem ser instaladas sem conflito e alternadas entre si usando o script auxiliar `archlinux-java`. Vários outros ambientes Java estão disponíveis no [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"), sem suporte oficial.
+Arch Linux oferece suporte oficial às versões de código aberto [OpenJDK](https://openjdk.java.net/) 7, 8, 9, 10 e 11\. Todas essas JVM podem ser instaladas sem conflito e alternadas entre si usando o script auxiliar `archlinux-java`. Vários outros ambientes Java estão disponíveis no [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"), sem suporte oficial.
 
 ## Contents
 
 *   [1 Instalação](#Instalação)
-*   [2 Marcando pacotes como desatualizados](#Marcando_pacotes_como_desatualizados)
+    *   [1.1 OpenJDK](#OpenJDK)
+    *   [1.2 Outras implementações](#Outras_implementações)
+*   [2 Ferramenta de desenvolvimento](#Ferramenta_de_desenvolvimento)
+    *   [2.1 Descompiladores](#Descompiladores)
 *   [3 Alternando entre JVM](#Alternando_entre_JVM)
     *   [3.1 Listar ambientes Java compatíveis instalados](#Listar_ambientes_Java_compatíveis_instalados)
     *   [3.2 Alterar o ambiente Java padrão](#Alterar_o_ambiente_Java_padrão)
@@ -27,10 +32,13 @@ Arch Linux oferece suporte oficial às versões de código aberto OpenJDK 7, 8 e
     *   [5.4 Faltando texto em alguns aplicativos](#Faltando_texto_em_alguns_aplicativos)
     *   [5.5 Aplicações sem redimensionamento com o WM, menus fechando imediatamente](#Aplicações_sem_redimensionamento_com_o_WM,_menus_fechando_imediatamente)
     *   [5.6 Sistema congela ao depurar aplicativos JavaFX](#Sistema_congela_ao_depurar_aplicativos_JavaFX)
+    *   [5.7 Construtor MediaPlayer do JavaFX lança uma exceção](#Construtor_MediaPlayer_do_JavaFX_lança_uma_exceção)
+    *   [5.8 Aplicativos Java não podem abrir links externos](#Aplicativos_Java_não_podem_abrir_links_externos)
 *   [6 Dicas e truques](#Dicas_e_truques)
     *   [6.1 Melhor renderização de fonte](#Melhor_renderização_de_fonte)
     *   [6.2 Silenciar mensagem 'Picked up _JAVA_OPTIONS' na linha de comando](#Silenciar_mensagem_'Picked_up_JAVA_OPTIONS'_na_linha_de_comando)
     *   [6.3 Visual GTK](#Visual_GTK)
+        *   [6.3.1 Suporte a GTK3](#Suporte_a_GTK3)
     *   [6.4 Melhor desempenho 2D](#Melhor_desempenho_2D)
     *   [6.5 Gerenciadores de janela non-reparenting / Janela cinza / Programas não estão sendo desenhados corretamente](#Gerenciadores_de_janela_non-reparenting_/_Janela_cinza_/_Programas_não_estão_sendo_desenhados_corretamente)
 *   [7 Veja também](#Veja_também)
@@ -39,75 +47,124 @@ Arch Linux oferece suporte oficial às versões de código aberto OpenJDK 7, 8 e
 
 **Nota:**
 
-*   A instalação de um JDK vai trazer automaticamente suas dependência em JRE.
-*   Após a instalação, o ambiente Java precisará se reconhecido pelo shell (variável `$PATH`). Isso pode ser feito [carregando](/index.php/Carrega "Carrega") `/etc/profile` pela linha de comando ou saindo e entrando novamente em um ambiente de desktop.
+*   Arch Linux possui suporte oficial apenas à implementação [OpenJDK](#OpenJDK).
+*   Após a instalação, o ambiente Java precisará se reconhecido pelo shell (variável `$PATH`). Isso pode ser feito carregando `/etc/profile` pela linha de comando ou saindo e entrando novamente em um ambiente de desktop.
 
 Os pacotes *common* são trazidos respectivamente como dependência, chamados de [java-runtime-common](https://www.archlinux.org/packages/?name=java-runtime-common) (contendo arquivos comuns para Java Runtime Environments) e [java-environment-common](https://www.archlinux.org/packages/?name=java-environment-common) (contendo arquivos comuns para Java Development Kits). O arquivo de ambiente fornecido `/etc/profile.d/jre.sh` aponta para um link simbólico `/usr/lib/jvm/default/bin`, definido pelo script auxiliar `archlinux-java`. Os links `/usr/lib/jvm/default` e `/usr/lib/jvm/default-runtime` devem **sempre** ser editados com `archlinux-java`. Ele é usado para exibir e apontar para uma ambiente Java padrão em `/usr/lib/jvm/java-${VERSÃO_MAIOR_JAVA}-${NOME_FORNECEDOR}` ou um runtime do Java em `/usr/lib/jvm/java-${VERSÃO_MAIOR_JAVA}-${NOME_FORNECEDOR}/jre`.
 
-A maioria dos executáveis da instalação do Java são fornecidos por linsk diretos em `/usr/bin`, enquanto outros estão disponíveis em `$PATH`.
+A maioria dos executáveis da instalação do Java são fornecidos por linsk diretos em `/usr/bin`, enquanto outros estão disponíveis em `$PATH`. O script `/etc/profile.d/jdk.sh` não é mais fornecido por nenhum pacote.
 
-**Atenção:** O arquivo `/etc/profile.d/jdk.sh` não é mais fornecido por nenhum pacote.
+### OpenJDK
 
-Os pacotes a seguir estão disponíveis:
+[OpenJDK](https://en.wikipedia.org/wiki/pt:OpenJDK "wikipedia:pt:OpenJDK") é uma implementação de código aberto do Java Platform, Standard Edition (Java SE).
 
-**OpenJDK 7** — A implementação código aberto da sétima edição do Java SE.
+	JRE *headless*
 
-	[http://openjdk.java.net/projects/jdk7/](http://openjdk.java.net/projects/jdk7/) || [jre7-openjdk-headless](https://www.archlinux.org/packages/?name=jre7-openjdk-headless) [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) [openjdk7-doc](https://www.archlinux.org/packages/?name=openjdk7-doc) [openjdk7-src](https://www.archlinux.org/packages/?name=openjdk7-src)
+	O tempo de execução mínimo de Java - necessário para execução de programas sem GUI.
 
-**IBM J9 7** — Implementação da IBM da sétima edição do JRE.
+	JRE completo
 
-	[https://developer.ibm.com/javasdk/downloads/sdk7/](https://developer.ibm.com/javasdk/downloads/sdk7/) || [jdk7-j9-bin](https://aur.archlinux.org/packages/jdk7-j9-bin/) [jdk7r1-j9-bin](https://aur.archlinux.org/packages/jdk7r1-j9-bin/)
+	Ambiente de tempo de execução completo do Java - needed for executing Java GUI programs, depends on headless JRE.
 
-**OpenJDK 8** — A implementação código aberto da oitava edição do Java SE.
+	JDK
 
-	[http://openjdk.java.net/projects/jdk8/](http://openjdk.java.net/projects/jdk8/) || [jre8-openjdk-headless](https://www.archlinux.org/packages/?name=jre8-openjdk-headless) [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk) [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk) [openjdk8-doc](https://www.archlinux.org/packages/?name=openjdk8-doc) [openjdk8-src](https://www.archlinux.org/packages/?name=openjdk8-src)
+	[Java Development Kit](https://en.wikipedia.org/wiki/Java_Development_Kit "wikipedia:Java Development Kit") - necessário para desenvolvimento em Java, depende do JRE completo.
+
+| Versão | JRE *headless* | JRE completo | JDK | Documentação | Fontes |
+| [OpenJDK 11](https://openjdk.java.net/projects/jdk/11/) | [jre-openjdk-headless](https://www.archlinux.org/packages/?name=jre-openjdk-headless) | [jre-openjdk](https://www.archlinux.org/packages/?name=jre-openjdk) | [jdk-openjdk](https://www.archlinux.org/packages/?name=jdk-openjdk) | [openjdk-doc](https://www.archlinux.org/packages/?name=openjdk-doc) | [openjdk-src](https://www.archlinux.org/packages/?name=openjdk-src) |
+| [OpenJDK 10](https://openjdk.java.net/projects/jdk/10/) | [jre10-openjdk-headless](https://www.archlinux.org/packages/?name=jre10-openjdk-headless) | [jre10-openjdk](https://www.archlinux.org/packages/?name=jre10-openjdk) | [jdk10-openjdk](https://www.archlinux.org/packages/?name=jdk10-openjdk) | [openjdk10-doc](https://www.archlinux.org/packages/?name=openjdk10-doc) | [openjdk10-src](https://www.archlinux.org/packages/?name=openjdk10-src) |
+| [OpenJDK 8](https://openjdk.java.net/projects/jdk8/) | [jre8-openjdk-headless](https://www.archlinux.org/packages/?name=jre8-openjdk-headless) | [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk) | [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk) | [openjdk8-doc](https://www.archlinux.org/packages/?name=openjdk8-doc) | [openjdk8-src](https://www.archlinux.org/packages/?name=openjdk8-src) |
+| [OpenJDK 7](https://openjdk.java.net/projects/jdk7/) | [jre7-openjdk-headless](https://www.archlinux.org/packages/?name=jre7-openjdk-headless) | [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) | [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) | [openjdk7-doc](https://www.archlinux.org/packages/?name=openjdk7-doc) | [openjdk7-src](https://www.archlinux.org/packages/?name=openjdk7-src) |
+
+**IcedTea-Web** — Java Web Start e o plugin Java obsoleto para navegador.
+
+	[https://icedtea.classpath.org/wiki/IcedTea-Web](https://icedtea.classpath.org/wiki/IcedTea-Web) || [icedtea-web](https://www.archlinux.org/packages/?name=icedtea-web)
 
 **OpenJFX 8** — A implementação código aberto do JavaFX. Você [não precisa](https://wiki.openjdk.java.net/display/OpenJFX/Repositories+and+Releases) instalar esse pacote se você está fazendo uso do Java SE (a implementação da Oracle do JRE e JDK, descritos abaixo). Esse pacote só interessa usuários da implementação código aberto de Java (projeto OpenJDK).
 
 	[http://openjdk.java.net/projects/openjfx/](http://openjdk.java.net/projects/openjfx/) || [java-openjfx](https://www.archlinux.org/packages/?name=java-openjfx) [java-openjfx-doc](https://www.archlinux.org/packages/?name=java-openjfx-doc) [java-openjfx-src](https://www.archlinux.org/packages/?name=java-openjfx-src)
 
-**IBM J9 8** — Implementação da IBM da oitava edição do JRE.
+**OpenJFX** — Última compilação da comunidade de OpenJFX.
 
-	[https://developer.ibm.com/javasdk/downloads/sdk8/](https://developer.ibm.com/javasdk/downloads/sdk8/) || [jdk8-j9-bin](https://aur.archlinux.org/packages/jdk8-j9-bin/)
+	[https://openjfx.io/](https://openjfx.io/) || [java-openjfx-bin](https://aur.archlinux.org/packages/java-openjfx-bin/)
 
-**OpenJDK 9** — A implementação código aberto da nona edição do Java SE.
+**OpenJDK EA** — OpenJDK Early-Access Build para a última versão de desenvolvimento.
 
-	[http://openjdk.java.net/projects/jdk9/](http://openjdk.java.net/projects/jdk9/) || [jre9-openjdk-headless](https://www.archlinux.org/packages/?name=jre9-openjdk-headless) [jre9-openjdk](https://www.archlinux.org/packages/?name=jre9-openjdk) [jdk9-openjdk](https://www.archlinux.org/packages/?name=jdk9-openjdk) [openjdk9-doc](https://www.archlinux.org/packages/?name=openjdk9-doc) [openjdk9-src](https://www.archlinux.org/packages/?name=openjdk9-src)
+	[https://jdk.java.net](https://jdk.java.net) || [java-openjdk-ea-bin](https://aur.archlinux.org/packages/java-openjdk-ea-bin/)
 
-**OpenJ9** — Implementação do Eclipse de JRE, contribuído pela IBM.
+**OpenJFX EA** — OpenJFX Early-Access Build para a última versão de desenvolvimento.
 
-	[https://www.eclipse.org/openj9/](https://www.eclipse.org/openj9/) || [jdk8-openj9-bin](https://aur.archlinux.org/packages/jdk8-openj9-bin/) [jdk9-openj9-bin](https://aur.archlinux.org/packages/jdk9-openj9-bin/)
+	[https://openjfx.io/](https://openjfx.io/) || [java-openjfx-ea-bin](https://aur.archlinux.org/packages/java-openjfx-ea-bin/)
+
+### Outras implementações
 
 **Java SE** — Implementação da Oracle de JRE e JDK.
 
-	[http://www.oracle.com/technetwork/java/javase/downloads/index.html](http://www.oracle.com/technetwork/java/javase/downloads/index.html) || [jre](https://aur.archlinux.org/packages/jre/) [jre6](https://aur.archlinux.org/packages/jre6/) [jre7](https://aur.archlinux.org/packages/jre7/) [jre8](https://aur.archlinux.org/packages/jre8/) [jre-devel](https://aur.archlinux.org/packages/jre-devel/) [jdk](https://aur.archlinux.org/packages/jdk/) [jdk5](https://aur.archlinux.org/packages/jdk5/) [jdk6](https://aur.archlinux.org/packages/jdk6/) [jdk7](https://aur.archlinux.org/packages/jdk7/) [jdk8](https://aur.archlinux.org/packages/jdk8/) [jdk-devel](https://aur.archlinux.org/packages/jdk-devel/)
+	[https://www.oracle.com/technetwork/java/javase/downloads/index.html](https://www.oracle.com/technetwork/java/javase/downloads/index.html) || [jre](https://aur.archlinux.org/packages/jre/) [jre9](https://aur.archlinux.org/packages/jre9/) [jre8](https://aur.archlinux.org/packages/jre8/) [jre7](https://aur.archlinux.org/packages/jre7/) [jre6](https://aur.archlinux.org/packages/jre6/) [jdk](https://aur.archlinux.org/packages/jdk/) [jdk9](https://aur.archlinux.org/packages/jdk9/) [jdk8](https://aur.archlinux.org/packages/jdk8/) [jdk7](https://aur.archlinux.org/packages/jdk7/) [jdk6](https://aur.archlinux.org/packages/jdk6/) [jdk5](https://aur.archlinux.org/packages/jdk5/) [jdk-devel](https://aur.archlinux.org/packages/jdk-devel/)
 
-**Parrot VM** — Uma VM com suporte experimental para Java [[1]](http://trac.parrot.org/parrot/wiki/Languages) por meio de dois métodos diferentes: como um [tradutor de um *bytecode* de Java VM](http://code.google.com/p/parrot-jvm/) ou como um [compilador Java visando o Parrot VM](https://github.com/chrisdolan/perk).
+**OpenJ9** — Implementação do Eclipse de JRE, contribuído pela IBM.
+
+	[https://www.eclipse.org/openj9/](https://www.eclipse.org/openj9/) || [jdk9-openj9-bin](https://aur.archlinux.org/packages/jdk9-openj9-bin/) [jdk8-openj9-bin](https://aur.archlinux.org/packages/jdk8-openj9-bin/)
+
+**IBM J9** — Implementação da IBM da oitava edição de JRE.
+
+	[https://developer.ibm.com/javasdk/](https://developer.ibm.com/javasdk/) || [jdk8-j9-bin](https://aur.archlinux.org/packages/jdk8-j9-bin/) [jdk7-j9-bin](https://aur.archlinux.org/packages/jdk7-j9-bin/) [jdk7r1-j9-bin](https://aur.archlinux.org/packages/jdk7r1-j9-bin/)
+
+**Parrot VM** — Uma VM com suporte experimental para Java [[1]](http://trac.parrot.org/parrot/wiki/Languages) por meio de dois métodos diferentes: seja como um [tradução de *bytecodes* de Java VM](https://code.google.com/p/parrot-jvm/) ou como um [compilador Java visando a VM de Parrot](https://github.com/chrisdolan/perk).
 
 	[http://www.parrot.org/](http://www.parrot.org/) || [parrot](https://aur.archlinux.org/packages/parrot/)
 
 **Nota:** Versões de 32 bits do Java SE podem ser localizados prefixando `bin32-`, (por exemplo, [bin32-jre](https://aur.archlinux.org/packages/bin32-jre/) e [bin32-jdk](https://aur.archlinux.org/packages/bin32-jdk/)). Elas usam [java32-runtime-common](https://aur.archlinux.org/packages/java32-runtime-common/), que funciona como [java-runtime-common](https://www.archlinux.org/packages/?name=java-runtime-common) acrescentando `32` ao final (por exemplo, `java32`). A mesma analogia se aplica a [java32-environment-common](https://aur.archlinux.org/packages/java32-environment-common/), que é usado somente por pacotes de JDK de 32 bits.
 
-## Marcando pacotes como desatualizados
+## Ferramenta de desenvolvimento
 
-Embora os lançamentos do pacote Arch Linux possam conter uma referência às versões proprietárias nas quais os pacotes se baseiam, o projeto código aberto possui seu próprio esquema de versão:
+Para ambientes de desenvolvimento integrados, veja [List of applications#Integrated development environments](/index.php/List_of_applications#Integrated_development_environments "List of applications") e especificamente a subseção *Java IDEs*.
 
-*   [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk), [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) e [jre7-openjdk-headless](https://www.archlinux.org/packages/?name=jre7-openjdk-headless) devem ser marcados como desatualizados com base na [versão do *IcedTea*](http://icedtea.wildebeest.org/download/source) (ex.: `2.4.3`), em vez da versão de referência da Oracle (ex. `u45` no lançamento `7.u45_2.4.3-1`).
-*   [icedtea-web](https://www.archlinux.org/packages/?name=icedtea-web) deve ser marcado como desatualizado com base na [versão do *IcedTea Web*](http://icedtea.wildebeest.org/download/source) (ex.: `1.4.1`). Ele é independente da versão do *IcedTea*.
+Para desencorajar reverse engineering, um ofuscador como [proguard](https://aur.archlinux.org/packages/proguard/) pode ser usado.
+
+#### Descompiladores
+
+*   **Bytecode Viewer** — Suíte de engenharia reversa de Java, incluindo um descompilador, editor e depurador.
+
+	[https://bytecodeviewer.com](https://bytecodeviewer.com) || [bytecode-viewer](https://aur.archlinux.org/packages/bytecode-viewer/)
+
+*   **CFR** — Descompilador Java, com suporte a recursos modernos de Java 9, 10 e além.
+
+	[https://www.benf.org/other/cfr/](https://www.benf.org/other/cfr/) || [cfr](https://aur.archlinux.org/packages/cfr/)
+
+*   **Fernflower** — Descompilador analítico para Java, desenvolvido como parte do [IntelliJ IDEA](/index.php/IntelliJ_IDEA "IntelliJ IDEA").
+
+	[https://github.com/JetBrains/intellij-community/tree/master/plugins/java-decompiler/engine](https://github.com/JetBrains/intellij-community/tree/master/plugins/java-decompiler/engine) || [fernflower-git](https://aur.archlinux.org/packages/fernflower-git/)
+
+*   **[JAD](https://en.wikipedia.org/wiki/JAD_(software) "wikipedia:JAD (software)")** — Descompilador Java sem manutenção.
+
+	[https://varaneckas.com/jad](https://varaneckas.com/jad) || [jad](https://www.archlinux.org/packages/?name=jad)
+
+*   **JD-Core-java** — Wrapper leve para o [Java Decompiler](https://en.wikipedia.org/wiki/Java_Decompiler "wikipedia:Java Decompiler").
+
+	[https://github.com/nviennot/jd-core-java](https://github.com/nviennot/jd-core-java) || [jd-core-java](https://aur.archlinux.org/packages/jd-core-java/)
+
+*   **Krakatau** — Descompilador java, assembler e disassembler.
+
+	[https://github.com/Storyyeller/Krakatau](https://github.com/Storyyeller/Krakatau) || [krakatau-git](https://aur.archlinux.org/packages/krakatau-git/)
+
+*   **Procyon decompiler** — Descompilador java experimental, inspirado por ILSpy e Mono.Cecil.
+
+	[https://bitbucket.org/mstrobel/procyon/wiki/Java%20Decompiler](https://bitbucket.org/mstrobel/procyon/wiki/Java%20Decompiler) || [procyon-decompiler](https://aur.archlinux.org/packages/procyon-decompiler/), GUI: [luyten](https://aur.archlinux.org/packages/luyten/)
 
 ## Alternando entre JVM
 
 O script auxiliar `archlinux-java` fornece tais funcionalidades:
 
 ```
-archlinux-java <COMANDO>
+archlinux-java <COMMAND>
 
-COMANDO:
-	status		Lista ambientes Java instalados e um habilitado
-	get		Retorna o nome curto do ambiente Java definido como padrão
-	set <JAVA_ENV>	Força <JAVA_ENV> como padrão
-	unset		Desconfigura o ambiente Java padrão atual
-	fix		Corrige uma configuração inválida/quebrada de ambiente Java padrão
+COMMAND:
+	status		List installed Java environments and enabled one
+	get		Return the short name of the Java environment set as default
+	set <JAVA_ENV>	Force <JAVA_ENV> as default
+	unset		Unset current default Java environment
+	fix		Fix an invalid/broken default Java environment configuration
 
 ```
 
@@ -165,7 +222,7 @@ Não há necessidade de remover a definição de um ambiente Java, pois os pacot
 
 ### Corrigir o ambiente Java padrão
 
-Se um link inválido de ambiente Java estiver definido, executar o comando `archlinux-java fix` tenta corrigi-lo. Note também que, se nenhum ambiente Java padrão estiver configurado, isso fará com que busque outros válidos e tentará configurá-lo para você. Os pacotes oficialmente suportados "OpenJDK 7" e "OpenJDK 8" serão considerados primeiro nesta ordem, então, pacotes não oficiais do [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)").
+Se um link inválido de ambiente Java estiver definido, executar o comando `archlinux-java fix` tenta corrigi-lo. Note também que, se nenhum ambiente Java padrão estiver configurado, isso fará com que busque outros válidos e tentará configurá-lo para você. O pacote oficialmente suportado "OpenJDK 8" será considerado primeiro nesta ordem, então, outros ambientes instalados.
 
 ```
 # archlinux-java fix
@@ -207,11 +264,11 @@ Note também que:
 
 ### MySQL
 
-Devido ao fato de que os drivers JDBC costumam usar a porta no URL para estabelecer uma conexão com o banco de dados, ele é considerado "remoto" (ou seja, o MySQL não escuta a porta de acordo com suas configurações padrão), apesar do fato de que eles estão possivelmente executando no mesmo host. Assim, para usar JDBC e MySQL, você deve habilitar o acesso remoto ao MySQL, seguindo as instruções em [MySQL#Grant remote access](/index.php/MySQL#Grant_remote_access "MySQL").
+Devido ao fato de que os drivers JDBC costumam usar a porta no URL para estabelecer uma conexão com o banco de dados, ele é considerado "remoto" (ou seja, o MySQL não escuta a porta de acordo com suas configurações padrão), apesar do fato de que eles estão possivelmente executando no mesmo host. Assim, para usar JDBC e MySQL, você deve habilitar o acesso remoto ao MySQL, seguindo as instruções em [MariaDB#Grant remote access](/index.php/MariaDB#Grant_remote_access "MariaDB").
 
 ### Personificar outro gerenciador de janela
 
-Você pode usar o [wmname](https://www.archlinux.org/packages/?name=wmname) do [suckless.org](http://tools.suckless.org/x/wmname) para fazer a JVM acreditar que você está executando em um gerenciador de janela diferente. Isso pode resolver um problema de renderização das GUIs Java ocorrendo em gerenciadores de janela, como o [Awesome](/index.php/Awesome "Awesome"), [Dwm](/index.php/Dwm "Dwm") ou [Ratpoison](/index.php/Ratpoison "Ratpoison").
+Você pode usar o [wmname](https://www.archlinux.org/packages/?name=wmname) do [suckless.org](https://tools.suckless.org/x/wmname) para fazer a JVM acreditar que você está executando em um gerenciador de janela diferente. Isso pode resolver um problema de renderização das GUIs Java ocorrendo em gerenciadores de janela, como o [Awesome](/index.php/Awesome "Awesome"), [Dwm](/index.php/Dwm "Dwm") ou [Ratpoison](/index.php/Ratpoison "Ratpoison").
 
 ```
 $ wmname LG3D
@@ -224,7 +281,7 @@ Isso funciona porque a JVM contém uma lista codificada de gerenciadores de jane
 
 ### Fontes ilegíveis
 
-Além das sugestões mencionadas abaixo em [#Melhor renderização de fonte](#Melhor_renderização_de_fonte), algumas fontes ainda pode não estar legíveis depois. Se esse for o caso, há uma grande chance das fontes da Microsoft estarem sendo usadas. Instale [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) do [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)").
+Além das sugestões mencionadas abaixo em [#Melhor renderização de fonte](#Melhor_renderização_de_fonte), algumas fontes ainda pode não estar legíveis depois. Se esse for o caso, há uma grande chance das fontes da Microsoft estarem sendo usadas. Instale [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/).
 
 ### Faltando texto em alguns aplicativos
 
@@ -246,13 +303,38 @@ Há várias coisas que podem ajudar:
 
 ao `LogHook` pode ajudar.
 
-Veja [[2]](http://wiki.haskell.org/Xmonad/Frequently_asked_questions#Problems_with_Java_applications.2C_Applet_java_console) para mais informações.
+Veja [[2]](https://wiki.haskell.org/Xmonad/Frequently_asked_questions#Problems_with_Java_applications.2C_Applet_java_console) para mais informações.
 
 ### Sistema congela ao depurar aplicativos JavaFX
 
 Se o seu sistema congela durante a depuração de um aplicativo JavaFX, você pode tentar fornecer a opção JVM `-Dsun.awt.disablegrab=true`.
 
-Veja [http://bugs.java.com/view_bug.do?bug_id=6714678](http://bugs.java.com/view_bug.do?bug_id=6714678)
+Veja [https://bugs.java.com/view_bug.do?bug_id=6714678](https://bugs.java.com/view_bug.do?bug_id=6714678)
+
+### Construtor MediaPlayer do JavaFX lança uma exceção
+
+Criar uma instância da classe MediaPlayer dos módulos de som do JavaFX pode lançar a seguinte exceção (ambos Oracle JDK e OpenJDK)
+
+```
+... (i.e. FXMLLoader construction exceptions) ...
+Caused by: MediaException: UNKNOWN : com.sun.media.jfxmedia.MediaException: Could not create player! : com.sun.media.jfxmedia.MediaException: Could not create player!
+ at javafx.scene.media.MediaException.exceptionToMediaException(MediaException.java:146)
+ at javafx.scene.media.MediaPlayer.init(MediaPlayer.java:511)
+ at javafx.scene.media.MediaPlayer.<init>(MediaPlayer.java:414)
+ at <constructor call>
+...
+
+```
+
+que resulta em algumas incompatibilidades de JavaFX com compilação moderna do [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) entregada no repositório do Arch Linux.
+
+Uma solução que funciona é instalar [ffmpeg-compat-55](https://aur.archlinux.org/packages/ffmpeg-compat-55/).
+
+Veja [https://www.reddit.com/r/archlinux/comments/70o8o6/using_a_javafx_mediaplayer_in_arch/](https://www.reddit.com/r/archlinux/comments/70o8o6/using_a_javafx_mediaplayer_in_arch/)
+
+### Aplicativos Java não podem abrir links externos
+
+Se um aplicativo Java não for capaz de abrir um link para, por exemplo seu navegador web, instale [gvfs](https://www.archlinux.org/packages/?name=gvfs). Isso é necessário pelo método Desktop.Action.BROWSE. Veja [[3]](https://bugs.launchpad.net/ubuntu/+source/openjdk-8/+bug/1574879/comments/2)
 
 ## Dicas e truques
 
@@ -299,7 +381,13 @@ Alguns programas Java insistem em usar a aparência multiplataforma Metal. Em al
 
 `swing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel`.
 
-**Nota:** Forçar o Java a usar o GTK pode quebrar alguns aplicativos. O JRE/JDK está vinculado ao GTK2 enquanto muitas aplicações de desktop usam o GTK3\. Se um aplicativo GTK3 tiver plugins Java com GUI, é provável que o aplicativo falhe ao abrir a GUI Java, já que não há suporte à mistura de GTK2 e GTK3\. O Libreoffice 5.0 é um exemplo disso.
+#### Suporte a GTK3
+
+Nos lançamentos de Java anteriores à versão 9, o visual GTK é vinculado ao GTK2, enquanto muitos aplicativos de desktop mais recentes usam o GTK3\. Essa incompatibilidade entre as versões do GTK pode interromper os aplicativos que utilizam os plug-ins Java com a GUI, já que a mixagem do GTK2 e do GTK3 no mesmo processo não é suportada (por exemplo, o LibreOffice 5.0).
+
+Desde [Java 9](https://openjdk.java.net/jeps/283), o GTK LookAndFeel pode ser executado nas versões GTK `2`, `2.2` e `3`, padronizando para GTK2\. Isso pode ser substituído definindo a seguinte propriedade:
+
+`jdk.gtk.version=3`
 
 ### Melhor desempenho 2D
 
@@ -309,6 +397,8 @@ Alternar para o pipeline de aceleração de hardware baseado em OpenGL melhorar�
 export _JAVA_OPTIONS='-Dsun.java2d.opengl=true'
 
 ```
+
+**Nota:** Habilitar essa opção pode fazer com que a interface do usuário de software, como os IDEs do JetBrains, se comporte mal, fazendo com que eles desenhem janelas, pop-ups e barras de ferramentas parcialmente.
 
 ### Gerenciadores de janela non-reparenting / Janela cinza / Programas não estão sendo desenhados corretamente
 
@@ -323,4 +413,4 @@ Não configurar isso pode resultar em programa javas não serem desenhados corre
 
 ## Veja também
 
-*   [Introdução à Programação Usando o Java](http://math.hws.edu/javanotes/)
+*   [Introdução à Programação Usando o Java](https://math.hws.edu/javanotes/)

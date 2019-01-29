@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Core utilities](/index.php/Core_utilities "Core utilities"). Data da última tradução: 2019-01-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Core_utilities&diff=0&oldid=562627) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Core utilities](/index.php/Core_utilities "Core utilities"). Data da última tradução: 2019-01-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Core_utilities&diff=0&oldid=564428) na versão em inglês.
 
 Artigos relacionados
 
@@ -49,8 +49,8 @@ A tabela a seguir lista alguns utilitários importantes com os quais os usuário
 | GNU [grep](https://www.archlinux.org/packages/?name=grep) | grep | imprime linhas correspondendo a um padrão | [grep(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/grep.1), [info](https://www.gnu.org/software/grep/manual/html_node/index.html) | [#Alternativas ao grep](#Alternativas_ao_grep) |
 | GNU [sed](https://www.archlinux.org/packages/?name=sed) | sed | editor de fluxo | [sed(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sed.1), [info](https://www.gnu.org/software/sed/manual/html_node/index.html), [uma linha](http://sed.sourceforge.net/sed1line_pt-BR.html) |
 | GNU [gawk](https://www.archlinux.org/packages/?name=gawk) | awk | linguagem de varredura e processamento de padrão | [gawk(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gawk.1), [info](https://www.gnu.org/software/gawk/manual/html_node/index.html) | [nawk](https://www.archlinux.org/packages/?name=nawk), [mawk](https://aur.archlinux.org/packages/mawk/) |
-| [util-linux](https://www.archlinux.org/packages/?name=util-linux) | [dmesg](https://en.wikipedia.org/wiki/pt:dmesg |
-| [lsblk](/index.php/Lsblk "Lsblk") | lista dispositivos de bloco | [lsblk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lsblk.8) |
+| [util-linux](https://www.archlinux.org/packages/?name=util-linux) | [dmesg](https://en.wikipedia.org/wiki/pt:dmesg "wikipedia:pt:dmesg") | exibe ou controla o *ring buffer* do kernel | [dmesg(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dmesg.1) | [journal do systemd](/index.php/Journal_do_systemd "Journal do systemd") |
+| [lsblk](/index.php/Lsblk_(Portugu%C3%AAs) "Lsblk (Português)") | lista dispositivos de bloco | [lsblk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lsblk.8) |
 | [mount](/index.php/Mount "Mount") | monta um sistema de arquivos | [mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8) |
 | [umount](/index.php/Umount "Umount") | desmonta um sistema de arquivos | [umount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/umount.8) |
 | [su](/index.php/Su "Su") | substitui o usuário | [su(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/su.1) | [sudo](/index.php/Sudo "Sudo") |
@@ -100,7 +100,7 @@ Alternativas aos utilitários principais no grupo [base](https://www.archlinux.o
 
 	[https://github.com/silentbicycle/ff](https://github.com/silentbicycle/ff) || [ff-git](https://aur.archlinux.org/packages/ff-git/)
 
-*   **[mlocate](/index.php/Mlocate "Mlocate")** — Implementação de fusão entre locate e updatedb.
+*   **[mlocate](/index.php/Mlocate_(Portugu%C3%AAs) "Mlocate (Português)")** — Implementação de fusão entre locate e updatedb.
 
 	[https://pagure.io/mlocate](https://pagure.io/mlocate) || [mlocate](https://www.archlinux.org/packages/?name=mlocate)
 

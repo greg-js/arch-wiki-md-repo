@@ -1,5 +1,13 @@
 本文参照[Power management/Suspend and hibernate](/index.php/Power_management/Suspend_and_hibernate "Power management/Suspend and hibernate")翻译，但增删部分内容，旨在简要描述挂起、睡眠和休眠的工作原理以及实现方式。
 
+现主要有三种挂起方式：**suspend to RAM**（挂起到内存，睡眠），**suspend to disk**（休眠），和**hybrid suspend**或者**suspend to both**（内存和硬盘都保存一份内容）：
+
+*   **Suspend to RAM**： 将机器中大多数和RAM不相关的部件断电，机器状态仅仅保存在RAM中。建议笔记本用户把系统设置成用电池为省电或合盖时自动进入此模式。
+
+*   **Suspend to disk**： 将机器内容保存至 [swap space交换空间](/index.php?title=Swap_space%E4%BA%A4%E6%8D%A2%E7%A9%BA%E9%97%B4&action=edit&redlink=1 "Swap space交换空间 (page does not exist)") 并完全断电。再次开机时内容恢复。和上一个不同，这个挂起时不会耗电。
+
+*   **Suspend to both**： 将上面两个合在一起。如果没断电，系统就从RAM恢复；反之从硬盘恢复，但速度更慢。
+
 ## Contents
 
 *   [1 挂起、睡眠和休眠的区别](#挂起、睡眠和休眠的区别)

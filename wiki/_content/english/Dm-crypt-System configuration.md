@@ -255,21 +255,37 @@ rd.luks.options=timeout=10s,swap,cipher=aes-cbc-essiv:sha256,size=256
 
 #### rd.luks.key
 
-**Note:** `sd-encrypt` hook only supports keyfiles that are embedded in the initramfs (i.e. specified in the `FILES` array in `/etc/mkinitcpio.conf`). See [systemd issue 9181](https://github.com/systemd/systemd/issues/9181).
+Specify the location of a password file used to decrypt the device specified by its UUID. There is no default location like there is with the `encrypt` hook parameter `cryptkey`.
+
+If the keyfile is [included](/index.php/Mkinitcpio#BINARIES_and_FILES "Mkinitcpio") in the initramfs:
 
 ```
-rd.luks.key=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*=*mykeyfile*
+rd.luks.key=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*=*/path/to/keyfile*
 
 ```
 
 or
 
 ```
-rd.luks.key=*mykeyfile*
+rd.luks.key=*/path/to/keyfile*
 
 ```
 
-Specify the location of a password file used to decrypt the device specified by its UUID. There is no default location like there is with the `encrypt` hook parameter `cryptkey`.
+If the keyfile is on another device:
+
+```
+rd.luks.key=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*=*/path/to/keyfile*:UUID=*ZZZZZZZZ-ZZZZ-ZZZZ-ZZZZ-ZZZZZZZZZZZZ*
+
+```
+
+or
+
+```
+rd.luks.key=*/path/to/keyfile*:UUID=*ZZZZZZZZ-ZZZZ-ZZZZ-ZZZZ-ZZZZZZZZZZZZ*
+
+```
+
+Replace `UUID=*ZZZZZZZZ-ZZZZ-ZZZZ-ZZZZ-ZZZZZZZZZZZZ*` with the identifier of the device on which the keyfile is located. If the type of file system is different than your root file system, you must [include the kernel module for it in the initramfs](/index.php/Mkinitcpio#MODULES "Mkinitcpio").
 
 #### Timeout
 

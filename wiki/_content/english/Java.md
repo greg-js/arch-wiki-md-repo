@@ -279,7 +279,7 @@ This works because the JVM contains a hard-coded list of known, non-re-parenting
 
 ### Illegible fonts
 
-In addition to the suggestions mentioned below in [#Better font rendering](#Better_font_rendering), some fonts may still not be legible afterwards. If this is the case, there is a good chance Microsoft fonts are being used. Install [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) from the [AUR](/index.php/AUR "AUR").
+In addition to the suggestions mentioned below in [#Better font rendering](#Better_font_rendering), some fonts may still not be legible afterwards. If this is the case, there is a good chance Microsoft fonts are being used. Install [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/).
 
 ### Missing text in some applications
 

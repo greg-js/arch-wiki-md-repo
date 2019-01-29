@@ -147,7 +147,7 @@ nameserver 2002:d596:2a92:1:71:53::    ## ns1.censurfridns.dk
 
 ## 保护 DNS 设置
 
-[dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd), [NetworkManager](/index.php/NetworkManager "NetworkManager"), 已经许多别的程序能够覆盖 `/etc/resolv.conf`里的内容. 这样的行为通常是可取的, 但是有些时候DNS设置需要手动配置(比如使用静态IP时). 有几种方法可以实现. 如果你使用NetworkManager, 参见 [this thread](https://bbs.archlinux.org/viewtopic.php?id=45394) .
+[dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd), [NetworkManager](/index.php/NetworkManager "NetworkManager"), 以及许多别的程序能够覆盖 `/etc/resolv.conf`里的内容. 这样的行为通常是可取的, 但是有些时候DNS设置需要手动配置(比如使用静态IP时). 有几种方法可以实现. 如果你使用NetworkManager, 参见 [this thread](https://bbs.archlinux.org/viewtopic.php?id=45394) .
 
 ### 修改dhcpcd配置
 

@@ -1,127 +1,103 @@
-**Status de tradução:** Esse artigo é uma tradução de [Dotfiles](/index.php/Dotfiles "Dotfiles"). Data da última tradução: 2019-01-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dotfiles&diff=0&oldid=563155) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Dotfiles](/index.php/Dotfiles "Dotfiles"). Data da última tradução: 2019-01-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dotfiles&diff=0&oldid=565037) na versão em inglês.
 
 Artigos relacionados
 
 *   [XDG Base Directory support](/index.php/XDG_Base_Directory_support "XDG Base Directory support")
 *   [X resources](/index.php/X_resources "X resources")
 
-Este artigo coleta repositórios de usuários com arquivos de configuração personalizados, comumente conhecidos como *dotfiles* (que poderia ser traduzido como "arquivos-ponto").
+A configuração de aplicativos específica do usuário é tradicionalmente armazenada nos chamados [*dotfiles*](https://en.wikipedia.org/wiki/dotfile ou [uma ferramenta dedicada](#Ferramentas)) . Além de explicar como gerenciar seus dotfiles, este artigo também contém [uma lista de repositórios de dotfiles](#Repositórios_de_usuários) dos usuários do Arch Linux.
 
 ## Contents
 
-*   [1 Controle de versão](#Controle_de_versão)
-    *   [1.1 Usando gitignore](#Usando_gitignore)
-    *   [1.2 Outras ferramentas](#Outras_ferramentas)
-    *   [1.3 Mantendo dotfiles em várias máquinas](#Mantendo_dotfiles_em_várias_máquinas)
-*   [2 Repositórios](#Repositórios)
-*   [3 Veja também](#Veja_também)
+*   [1 Rastreando dotfiles diretamente com Git](#Rastreando_dotfiles_diretamente_com_Git)
+*   [2 Configuração específica por host](#Configuração_específica_por_host)
+    *   [2.1 Ferramentas](#Ferramentas)
+    *   [2.2 Ferramentas interfaceando Git](#Ferramentas_interfaceando_Git)
+*   [3 Repositórios de usuários](#Repositórios_de_usuários)
+*   [4 Veja também](#Veja_também)
 
-## Controle de versão
+## Rastreando dotfiles diretamente com Git
 
-A gerência de *dotfiles* com [sistemas de controle de versão](/index.php/Version_control_system "Version control system"), como o [Git](/index.php/Git "Git"), ajuda a acompanhar as alterações, compartilhar com outras pessoas e sincronizar os *dotfiles* entre vários hosts.
+O benefício de rastrear dotfiles diretamente com o Git é que ele requer apenas [Git](/index.php/Git "Git") e não envolve links simbólicos. A desvantagem é que [configuração específica por cada host](#Configuração_específica_por_host) geralmente requer a mesclagem de alterações em vários [ramos](/index.php/Git#Branching "Git") (*branches*).
 
-### Usando gitignore
+A maneira mais simples de conseguir essa abordagem é inicializar um repositório [Git](/index.php/Git "Git") diretamente em seu diretório inicial e ignorar todos os arquivos por padrão com um padrão de [gitignore(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gitignore.5) de `*`. Este método, no entanto, vem com duas desvantagens: ele pode se tornar confuso quando você tiver outros repositórios Git em seu diretório inicial (por exemplo, se você esquecer de inicializar um repositório que você subitamente opera em seu repositório dotfile) e você não poderá mais ver facilmente quais arquivos o diretório atual não é rastreado (porque eles são ignorados).
 
-Manter um [diretório git](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository) dentro da pasta *home* permite acompanhar diretamente as alterações. Recomenda-se adicionar seletivamente o conteúdo do arquivo ao índice com [git-add(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-add.1).
-
-Para evitar arquivos não rastreados (aparecerem em commits e removidos por [git-clean(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-clean.1)), primeiro exclua todos os arquivos com [gitignore(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gitignore.5):
-
- `~/.git/info/exclude`  `*` 
-
-Então, use `git add -f`, por exemplo:
+Um método alternativo sem essas desvantagens é o "método repository seco e alias" popularizado por [este comentário no Hacker News](https://news.ycombinator.com/item?id=11070797), que apenas usa três comandos para configurar:
 
 ```
-$ git add -f ~/.config/*
+$ git init --bare ~/.dotfiles
+$ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+$ config config status.showUntrackedFiles no
 
 ```
 
-e faça commit as alterações com [git-commit(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-commit.1):
-
-```
-$ git commit -a
-
-```
+Você pode então gerenciar seus dotfiles com o [alias](/index.php/Alias "Alias") criado.
 
 **Dica:** Para evitar fazer commit acidental de informações confidenciais, veja [Git#Filtering confidential information](/index.php/Git#Filtering_confidential_information "Git").
 
-### Outras ferramentas
+## Configuração específica por host
 
-*   **dotdrop** — Uma ferramenta para gerenciar seus *dotfiles* entre hosts diferentes e salvá-los em git sem duplicatas.
+Um problema comum com a sincronização de arquivos de pontos em várias máquinas é a configuração específica para cada host.
 
-	[https://github.com/deadc0de6/dotdrop](https://github.com/deadc0de6/dotdrop) || [dotdrop](https://aur.archlinux.org/packages/dotdrop/)
+Com [Git](/index.php/Git "Git") isso pode ser resolvido mantendo um ramo *master* para toda a configuração compartilhada, enquanto cada máquina individual possui um ramo específico da máquina com check-out. A configuração específica por host pode aplicada para um ramo específico da máquina; Quando a configuração compartilhada é modificada no ramo *master*, os ramos por máquina precisam ser *rebased* na parte superior do *master* atualizado.
 
-*   **dotfiles** — Uma ferramenta para facilitar o gerenciamento de links simbólicos para seus *dotfiles* em $HOME, permitindo que você mantenha todos eles em um único diretório.
-
-	[https://github.com/jbernard/dotfiles](https://github.com/jbernard/dotfiles) || [dotfiles](https://aur.archlinux.org/packages/dotfiles/)
-
-*   **dotgit** — Uma solução abrangente para gerenciar seus *dotfiles*.
-
-	[http://github.com/Cube777/dotgit](http://github.com/Cube777/dotgit) || [dotgit](https://aur.archlinux.org/packages/dotgit/)
-
-*   **dots** — Uma ferramenta portátil para gerenciar um único conjunto de *dotfiles* de forma organizada.
-
-	[https://github.com/EvanPurkhiser/dots](https://github.com/EvanPurkhiser/dots) || [dots-manager](https://aur.archlinux.org/packages/dots-manager/)
-
-*   **[etckeeper](/index.php/Etckeeper "Etckeeper")** — Destinado a configuração de todo o sistema de controle de versão no /etc. Funciona mantendo o controle de permissões e modos que o software de controle de versão geralmente ignora. Pode usar vários sistemas SCM como backend. Hooks podem autoconfirmar alterações no repositório antes de uma atualização do sistema.
-
-	[http://etckeeper.branchable.com/](http://etckeeper.branchable.com/) || [etckeeper](https://www.archlinux.org/packages/?name=etckeeper)
-
-*   **GNU Stow** — Pode ser usado para fazer um link simbólico para *dotfiles* de um repositório para a árvore $HOME. Consulte [[1]](http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html) para mais informações.
-
-	[http://www.gnu.org/software/stow/](http://www.gnu.org/software/stow/) || [stow](https://www.archlinux.org/packages/?name=stow)
-
-*   **homeshick** — Sincronizador de *dotfiles* git escrito em bash.
-
-	[https://github.com/andsens/homeshick](https://github.com/andsens/homeshick) || [homeshick-git](https://aur.archlinux.org/packages/homeshick-git/)
-
-*   **homesick** — Seu diretório home é seu castelo. Não deixe seus dotfiles para trás.
-
-	[https://github.com/technicalpickles/homesick](https://github.com/technicalpickles/homesick) || [homesick](https://aur.archlinux.org/packages/homesick/)
-
-*   **mackup** — Um pequeno utilitário Python para manter as configurações do seu aplicativo em sincronia.
-
-	[https://github.com/lra/mackup](https://github.com/lra/mackup) || [mackup](https://aur.archlinux.org/packages/mackup/)
-
-*   **Pearl** — Gerenciador de pacotes para *dotfiles*, plugins, programas e qualquer forma de código acessível via git. Permite compartilhar e sincronizar pacotes facilmente através de sistemas e tê-los prontos para usar com facilidade.
-
-	[https://github.com/pearl-core/pearl](https://github.com/pearl-core/pearl) || [pearl-git](https://aur.archlinux.org/packages/pearl-git/)
-
-*   **rcm** — Pode ser usado para fazer link simbólicos para dotfiles de um repositório para árvore $HOME.
-
-	[https://github.com/thoughtbot/rcm](https://github.com/thoughtbot/rcm) || [rcm](https://aur.archlinux.org/packages/rcm/)
-
-*   **vcsh** — Permite a separação de módulos diferentes (por exemplo, configuração do Emacs vs. configuração de zsh) em repositórios individuais que podem ser mantidos separadamente, ao contrário de manter todos os arquivos de pontos em um único repositório. Funciona apenas com o git.
-
-	[https://github.com/RichiH/vcsh](https://github.com/RichiH/vcsh) || [vcsh](https://aur.archlinux.org/packages/vcsh/)
-
-*   **yadm** — Gerencia arquivos em sistemas usando um único repositório Git. Fornece uma maneira de usar arquivos alternativos em um sistema operacional ou host específico. Fornece um método de criptografar dados confidenciais para que possa ser armazenado com segurança em seu repositório.
-
-	[https://github.com/TheLocehiliosan/yadm](https://github.com/TheLocehiliosan/yadm) || [yadm-git](https://aur.archlinux.org/packages/yadm-git/)
-
-### Mantendo dotfiles em várias máquinas
-
-Uma forma de manter os *dotfiles* em várias máquinas em vários hosts, permitindo a personalização por host, é manter um ramo mestre para toda a configuração compartilhada, enquanto cada máquina individual possui uma ramificação específica da máquina com check-out. A configuração específica do host pode ser confirmada na ramificação específica da máquina; como a configuração compartilhada é adicionada ao ramo mestre, as ramos por máquina são então *rebase*ados no mestre atualizado.
-
-A desvantagem de ter alguns dos arquivos de configuração em várias ramos é que você deve se lembrar de manter e sincronizar as alterações. Use lógica condicional para minimizar o número de arquivos específicos da máquina. Por exemplo, os scripts bash (por exemplo, `.bashrc`) podem aplicar configurações diferentes dependendo do nome da máquina (ou tipo, variável personalizada, etc.):
+Em scripts de configuração como [arquivos de configuração do shell](/index.php/Shell_de_linha_de_comando "Shell de linha de comando"), a lógica condicional pode ser usada. Por exemplo, scripts [Bash](/index.php/Bash "Bash") (por exemplo, `.bashrc`) podem aplicar configurações diferentes dependendo do nome da máquina (ou tipo, variável personalizada, etc.):
 
 ```
-if [[ "$(uname -n)" == "archlaptop" ]]; then
+if [[ "$(hostname)" == "archlaptop" ]]; then
     # comandos específicos de laptop aqui
 else
-    # comandos de desktop ou servidor
+    # comandos de máquina desktop ou servidor
 fi
 
 ```
 
-Outra abordagem é gerenciar configuração específica de máquina com ferramentas baseadas em mecanismo de modelos, p.ex., [qualia](https://pypi.python.org/pypi/mir.qualia/) ou [Dotdrop](https://github.com/deadc0de6/dotdrop). Essa abordagem requer um trabalho menos manual e não causa conflitos de mesclagem.
+Similarmente, também podem ser alcançados com [.Xresources](/index.php/.Xresources ".Xresources").[[1]](https://jnrowe.github.io/articles/tips/Sharing_Xresources_between_systems.html)
 
-## Repositórios
+Se você achar que fazer *rebase* de ramos do Git é trabalhoso demais, você pode querer usar uma [ferramenta](#Ferramentas) que possui suporte a *agrupamento de arquivos*, ou se uma flexibilidade ainda maior é desejada, uma ferramenta que faz *processamento*.
+
+### Ferramentas
+
+	Agrupamento de arquivos
+
+	Como arquivos de configuração podem ser agrupados para grupos de configuração (também chamados de perfis ou pacotes).
+
+	Processamento
+
+	Algumas ferramentas processam arquivos de configuração para permitir que eles sejam personalizados dependendo do host.
+
+| Nome | Pacote | Escrito em | Agrupamento de arquivos | Processamento |
+| [dotdrop](https://deadc0de.re/dotdrop/) | [dotdrop](https://aur.archlinux.org/packages/dotdrop/) | Python | arquivo de configuração | Jinja2 |
+| [dotfiles](https://github.com/jbernard/dotfiles) | [dotfiles](https://aur.archlinux.org/packages/dotfiles/) | Python | [Não](https://github.com/jbernard/dotfiles/pull/24) | Não |
+| [Dots](https://github.com/EvanPurkhiser/dots) | [dots-manager](https://aur.archlinux.org/packages/dots-manager/) | Python | baseado em diretórios | pontos de acréscimos personalizados |
+| [GNU Stow](https://www.gnu.org/software/stow/) | [stow](https://www.archlinux.org/packages/?name=stow) | Perl | baseado em diretórios[[2]](http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html) | Não |
+| [Mackup](https://github.com/lra/mackup) | [mackup](https://aur.archlinux.org/packages/mackup/) | Python | automático por aplicativo | Não |
+| [mir.qualia](https://github.com/darkfeline/mir.qualia) | [mir.qualia](https://aur.archlinux.org/packages/mir.qualia/) | Python | Não | custom blocks |
+| [rcm](https://github.com/thoughtbot/rcm) | [rcm](https://aur.archlinux.org/packages/rcm/) | Perl | baseado em diretórios (por host ou tag) | Não |
+
+### Ferramentas interfaceando Git
+
+Se você não estiver confortável com o [Git](/index.php/Git "Git"), você pode querer usar uma dessas ferramentas, que abstraem o sistema de controle de versão (mais ou menos).
+
+| Nome | Pacote | Escrito em | Agrupamento de arquivos | Processamento |
+| [dotgit](https://github.com/kobus-v-schoor/dotgit) | [dotgit](https://aur.archlinux.org/packages/dotgit/) | Bash | baseado em nome de arquivo | Não |
+| [homeshick](https://github.com/andsens/homeshick) | [homeshick-git](https://aur.archlinux.org/packages/homeshick-git/) | Bash | direcionado a repositório | Não |
+| [homesick](https://github.com/technicalpickles/homesick) | [homesick](https://aur.archlinux.org/packages/homesick/) | Ruby | direcionado a repositório | Não |
+| [Pearl](https://github.com/pearl-core/pearl) | [pearl-git](https://aur.archlinux.org/packages/pearl-git/) | Bash | direcionado a repositório | Não |
+| [vcsh](https://github.com/RichiH/vcsh) | [vcsh](https://aur.archlinux.org/packages/vcsh/) | Shell | direcionado a repositório | Não |
+| [yadm](https://thelocehiliosan.github.io/yadm/) | [yadm-git](https://aur.archlinux.org/packages/yadm-git/) | Shell | baseado em nome de arquivo
+(por classe, SO, hostname & usuário) [[3]](https://thelocehiliosan.github.io/yadm/docs/alternates) | Jinja2
+(opcional)[[4]](https://thelocehiliosan.github.io/yadm/docs/alternates#jinja-templates) |
+
+1.  Possui suporte a criptografia de arquivos confidenciais com [GPG](/index.php/GPG "GPG").[[5]](https://thelocehiliosan.github.io/yadm/docs/encryption)
+
+## Repositórios de usuários
 
 | Autor | Shell
 (Estrutura
 de shell) | WM / DE | Editor | Terminal | Multiplexador | Áudio | Monitor | E-mail | IRC |
 | [alfunx](https://github.com/alfunx/.dotfiles) | zsh | awesome | vim | kitty | tmux | ncmpcpp/mpd | htop/lain | thunderbird |
-| [Ambrevar](https://github.com/Ambrevar/dotfiles) | zsh | awesome | emacs | rxvt-unicode | cmus | htop/vicious | mutt |
+| [Ambrevar](https://gitlab.com/Ambrevar/dotfiles) | Eshell | EXWM | Emacs | Emacs (Eshell) | Emacs TRAMP + dtach | EMMS | conky/dzen | mu4e | Circe |
 | [awal](https://github.com/awalGarg/dotfiles) | fish | i3 | vim | st | tmux | i3status | The Lounge |
 | [ayekat](https://github.com/ayekat/dotfiles) | zsh | karuiwm | vim | rxvt-unicode | tmux | ncmpcpp/mpd | karuibar | mutt | irssi |
 | [bamos](https://github.com/bamos/dotfiles) | zsh | i3/xmonad | vim/emacs | rxvt-unicode | tmux | mpv/cmus | conky/xmobar | mutt | ERC |
@@ -163,4 +139,4 @@ de shell) | WM / DE | Editor | Terminal | Multiplexador | Áudio | Monitor | E-m
 *   [XMonad Config Archive](http://wiki.haskell.org/Xmonad/Config_archive)
 *   [dotshare.it](http://dotshare.it)
 *   [dotfiles.github.io](https://dotfiles.github.io/)
-*   [terminal.sexy](https://terminal.sexy/) -Designer de esquema de cores do terminal
+*   [terminal.sexy](https://terminal.sexy/) - Designer de esquema de cores do terminal

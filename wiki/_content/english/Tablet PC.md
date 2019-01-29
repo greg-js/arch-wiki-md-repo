@@ -38,7 +38,9 @@ Intel (x86) tablets that are known to work (well) with Arch:
 *   [Microsoft Surface Pro 3](/index.php/Microsoft_Surface_Pro_3 "Microsoft Surface Pro 3")
 *   [Samsung ATIV Smart PC Pro XE700T1C](/index.php/Samsung_ATIV_Smart_PC_Pro_XE700T1C "Samsung ATIV Smart PC Pro XE700T1C")
 *   Asus T300 Chi
-*   Acer Switch 3 (be careful, it is shipped with a 32 bits UEFI only, like the [ASUS x205ta](/index.php/ASUS_x205ta "ASUS x205ta"))
+*   Acer Switch 3
+    *   Older models are shipped with a 32 bits UEFI only, like the [ASUS x205ta](/index.php/ASUS_x205ta "ASUS x205ta")
+    *   Recent models are shipped with a [nonworking touchpad](https://bugzilla.kernel.org/show_bug.cgi?id=95851)
 
 ## Stylus
 

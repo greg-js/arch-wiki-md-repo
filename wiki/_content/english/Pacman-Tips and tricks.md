@@ -679,7 +679,7 @@ NoExtract = usr/share/vim/vim*/lang/*
 NoExtract = usr/lib/libreoffice/help/en-US/*
 ```
 
-Though this trick was used by many user, some users found that [removing it made bugs hide under the rug](https://wiki.archlinux.org/index.php?title=Talk:Pacman&oldid=460285#Dangerous_NoExtract_example).
+Some users noted that removing locales has resulted in [unintended consequences](https://wiki.archlinux.org/index.php?title=Talk:Pacman&oldid=460285#Dangerous_NoExtract_example).
 
 ## Performance
 

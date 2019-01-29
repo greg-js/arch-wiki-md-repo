@@ -313,7 +313,7 @@ O cliente wide-dhcpv6 pode ser [iniciado/habilitado](/index.php/Iniciado/habilit
 
 [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") afirma ser capaz de DHCPv6-PD, mas está faltando documentação sobre como fazê-lo.
 
-[dhclient](/index.php/Dhclient "Dhclient") também pode solicitar um prefixo, mas atribuir esse prefixo ou partes desse prefixo a interfaces deve ser feito usando um script de saída do dhclient. Por exemplo: [https://github.com/jaymzh/v6-gw-scripts/blob/master/dhclient-ipv6](https://github.com/jaymzh/v6-gw-scripts/blob/master/dhclient-ipv6).
+[dhclient](/index.php/Dhclient_(Portugu%C3%AAs) "Dhclient (Português)") também pode solicitar um prefixo, mas atribuir esse prefixo ou partes desse prefixo a interfaces deve ser feito usando um script de saída do dhclient. Por exemplo: [https://github.com/jaymzh/v6-gw-scripts/blob/master/dhclient-ipv6](https://github.com/jaymzh/v6-gw-scripts/blob/master/dhclient-ipv6).
 
 ## Desabilitar IPv6
 

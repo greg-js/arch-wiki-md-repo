@@ -401,6 +401,7 @@ Relevant websites:
 *   [ttf-nanum](https://aur.archlinux.org/packages/ttf-nanum/) - Nanum series TrueType fonts
 *   [ttf-nanumgothic_coding](https://aur.archlinux.org/packages/ttf-nanumgothic_coding/) - Nanum series fixed width TrueType fonts
 *   [ttf-kopub](https://aur.archlinux.org/packages/ttf-kopub/)/[otf-kopub](https://aur.archlinux.org/packages/otf-kopub/) - Korean TrueType/OpenType fonts by Korea Publisher Society
+*   [ttf-kopubworld](https://aur.archlinux.org/packages/ttf-kopubworld/)/[otf-kopubworld](https://aur.archlinux.org/packages/otf-kopubworld/) - Multilingual (Korean, Yethangul, Chinese extended, Japanese, Latin extended, Cyrillic, Arabic, Hebrew, Devanagari) TrueType/OpenType fonts by Korea Publisher Society
 *   [ttf-unfonts-core-ibx](https://aur.archlinux.org/packages/ttf-unfonts-core-ibx/) - A collection of Korean TrueType fonts by KLDP
 
 ##### Vietnamese

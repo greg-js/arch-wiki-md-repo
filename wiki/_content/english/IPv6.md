@@ -15,22 +15,24 @@ In Arch Linux, IPv6 is enabled by default.
     *   [3.2 NetworkManager](#NetworkManager)
     *   [3.3 systemd-networkd](#systemd-networkd)
     *   [3.4 connman](#connman)
-*   [4 Static address](#Static_address)
-*   [5 IPv6 and PPPoE](#IPv6_and_PPPoE)
-*   [6 Prefix delegation (DHCPv6-PD)](#Prefix_delegation_(DHCPv6-PD))
-    *   [6.1 With dibbler](#With_dibbler)
-    *   [6.2 With dhcpcd](#With_dhcpcd)
-    *   [6.3 With WIDE-DHCPv6](#With_WIDE-DHCPv6)
-    *   [6.4 Other clients](#Other_clients)
-*   [7 Disable IPv6](#Disable_IPv6)
-    *   [7.1 Disable functionality](#Disable_functionality)
-    *   [7.2 Other programs](#Other_programs)
-        *   [7.2.1 dhcpcd](#dhcpcd_2)
-        *   [7.2.2 NetworkManager](#NetworkManager_2)
-        *   [7.2.3 ntpd](#ntpd)
-    *   [7.3 systemd-networkd](#systemd-networkd_2)
-*   [8 Prefer IPv4 over IPv6](#Prefer_IPv4_over_IPv6)
-*   [9 See also](#See_also)
+*   [4 Stable private addresses](#Stable_private_addresses)
+    *   [4.1 NetworkManager](#NetworkManager_2)
+*   [5 Static address](#Static_address)
+*   [6 IPv6 and PPPoE](#IPv6_and_PPPoE)
+*   [7 Prefix delegation (DHCPv6-PD)](#Prefix_delegation_(DHCPv6-PD))
+    *   [7.1 With dibbler](#With_dibbler)
+    *   [7.2 With dhcpcd](#With_dhcpcd)
+    *   [7.3 With WIDE-DHCPv6](#With_WIDE-DHCPv6)
+    *   [7.4 Other clients](#Other_clients)
+*   [8 Disable IPv6](#Disable_IPv6)
+    *   [8.1 Disable functionality](#Disable_functionality)
+    *   [8.2 Other programs](#Other_programs)
+        *   [8.2.1 dhcpcd](#dhcpcd_2)
+        *   [8.2.2 NetworkManager](#NetworkManager_3)
+        *   [8.2.3 ntpd](#ntpd)
+    *   [8.3 systemd-networkd](#systemd-networkd_2)
+*   [9 Prefer IPv4 over IPv6](#Prefer_IPv4_over_IPv6)
+*   [10 See also](#See_also)
 
 ## Neighbor discovery
 
@@ -189,6 +191,30 @@ Add to `/var/lib/connman/settings` under the global section:
 IPv6.privacy=preferred
 
 ```
+
+## Stable private addresses
+
+Another option is a stable private IP address ([RFC 7217](https://tools.ietf.org/html/rfc7217)). This allows for IPs that are stable within a network without exposing the MAC address of the interface.
+
+In order to have the kernel generate a key (for `wlan0`, for example) we can set:
+
+```
+sysctl net.ipv6.conf.wlan0.addr_gen_mode=3
+
+```
+
+Bring the interface down and up and you should see `stable-privacy` next to each IPv6 address after running `ip addr show dev wlan0`. The kernel has generated a 128-bit secret for generating ip addresses for this interface, to see it run `sysctl net.ipv6.conf.wlan0.stable_secret`. We're going to persist this value so add the following lines to `/etc/sysctl.d/40-ipv6.conf`:
+
+```
+# Enable IPv6 stable privacy mode
+net.ipv6.conf.wlan0.stable_secret = <output from previous command>
+net.ipv6.conf.wlan0.addr_gen_mode = 2
+
+```
+
+### NetworkManager
+
+The above settings are not honored by NetworkManager, but NetworkManager uses stable private addresses by default.
 
 ## Static address
 

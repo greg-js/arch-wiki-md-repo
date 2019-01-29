@@ -1,14 +1,10 @@
-**Status de tradução:** Esse artigo é uma tradução de [Install from SSH](/index.php/Install_from_SSH "Install from SSH"). Data da última tradução: 2018-10-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Install_from_SSH&diff=0&oldid=544157) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Install from SSH](/index.php/Install_from_SSH "Install from SSH"). Data da última tradução: 2019-01-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Install_from_SSH&diff=0&oldid=564616) na versão em inglês.
 
-Este artigo possui o intuito de mostrar aos usuários como instalar o Arch através de uma conexão [SSH](/index.php/SSH_(Portugu%C3%AAs) "SSH (Português)"). Considere esta forma de instalação a padrão nos seguintes cenários:
-
-*   Home Theater Personal Computer (HTPC) sem um monitor conectado (p. ex., um SDTV)
-*   Um PC localizado em outra cidade, estado, país (casa do amigo, de um parente, etc.)
-*   Um PC que pode ser tranquilamente instalado remoto, para que você possa desfrutar do conforto de sua estação de trabalho com capacidades de copiar/colar coisas da Wiki do Arch.
+Este artigo possui o intuito de mostrar aos usuários como instalar o Arch através de uma conexão [SSH](/index.php/SSH_(Portugu%C3%AAs) "SSH (Português)"). Considere esta abordagem quando o host está em local remoto ou você quiser usar capacidade de copiar/colar de um cliente SSH para fazer a instalação do Arch.
 
 ## Na máquina remota (destino)
 
-**Nota:** Esses passos exigem acesso físico à máquina. Obviamente, se estiver localizado fisicamente em outro lugar, isso precisará ser coordenado com outra pessoa.
+**Nota:** Esses passos exigem acesso físico à máquina. Se o host estiver localizado fisicamente em outro lugar, isso pode ser coordenado com outra pessoa.
 
 Inicie a máquina destino em um ambiente Arch *live* por meio de uma [imagem CD/USB Live](/index.php/Obtendo_e_instalando_o_Arch "Obtendo e instalando o Arch"): isso vai autenticar o usuário como root.
 
@@ -23,11 +19,11 @@ Em seguida, configure uma senha de root que é necessária para uma conexão SSH
 
 Agora, certifique-se que `PermitRootLogin yes` está presente (e descomentado) no `/etc/ssh/sshd_config`. Essa configuração vai permitir o login como root com autenticação com senha no servidor SSH.
 
-**Nota:** Se o computador destino está atrás de algum roteador NAT, a porta SSH (22, por padrão) deverá ser obviamente encaminhada para o endereço IP de LAN da máquina em questão. O uso de encaminhamento de porta não está no escopo deste guia.
-
 Finalmente, [inicie](/index.php/Inicie "Inicie") o daemon openssh com `sshd.service`, que está incluído por padrão no *live CD*.
 
-**Nota:** Após a instalação, é recomendado melhorar a segurança do SSH. O primeiro passo seria remover `PermitRootLogin yes` do `/etc/ssh/sshd_config`.
+**Nota:** A menos que precise, após a instalação é recomendado remover `PermitRootLogin yes` do `/etc/ssh/sshd_config`.
+
+**Dica:** Se o computador destino está atrás de algum roteador NAT, e você precisar de acesso externo, a porta SSH (22, por padrão) deverá ser encaminhada para o endereço IP de LAN da máquina destino.
 
 ## Na máquina local
 

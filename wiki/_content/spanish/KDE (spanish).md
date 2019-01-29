@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [KDE](/index.php/KDE "KDE"), revisada por última vez el **2019-01-05**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=561787) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [KDE](/index.php/KDE "KDE"), revisada por última vez el **2019-01-28**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=564820) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -136,7 +136,7 @@ Plasma puede iniciarse usando o bien un [gestor de pantallas](/index.php/Display
 
 ### Desde la consola
 
-Para iniciar Plasma con [xinit/startx](/index.php/Xinit_(Espa%C3%B1ol) "Xinit (Español)"), agregue `exec startkde` a su archivo `.xinitrc`. Si desea iniciar Xorg al iniciar sesión, consulte [iniciar X al iniciar sesión](/index.php/Xinit_(Espa%C3%B1ol)#Inicio_automático_de_X_al_inicio_de_sesión "Xinit (Español)"). Para iniciar una sesión de Plasma en Wayland desde una consola, ejecute `export XDG_SESSION_TYPE=wayland && export $(dbus-launch) && startplasmacompositor`.[[1]](https://community.kde.org/KWin/Wayland#Start_a_Plasma_session_on_Wayland)
+Para iniciar Plasma con [xinit/startx](/index.php/Xinit_(Espa%C3%B1ol) "Xinit (Español)"), agregue `exec startkde` a su archivo `.xinitrc`. Si desea iniciar Xorg al iniciar sesión, véase [iniciar X al iniciar sesión](/index.php/Xinit_(Espa%C3%B1ol)#Inicio_automático_de_X_al_inicio_de_sesión "Xinit (Español)"). Para iniciar una sesión de Plasma en Wayland desde una consola, ejecute `XDG_SESSION_TYPE=wayland dbus-run-session startplasmacompositor`.[[1]](https://community.kde.org/KWin/Wayland#Start_a_Plasma_session_on_Wayland)
 
 ## Configuración
 

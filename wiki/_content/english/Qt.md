@@ -10,7 +10,7 @@ Related articles
 *   Extensive internationalization support.
 *   A complete library that provides SQL database access, XML parsing, thread management, network support, and a unified cross-platform application programming interface (API) for file handling.
 
-The Qt framework is emerging as a major development platform and is the basis of the [KDE](/index.php/KDE "KDE") software community, among other important open source and proprietary applications such as [VLC](/index.php/VLC "VLC"), [VirtualBox](/index.php/VirtualBox "VirtualBox"), [Mathematica](/index.php/Mathematica "Mathematica") and many others.
+The Qt framework is the basis of the [KDE](/index.php/KDE "KDE") software community, as well as other important open source and proprietary applications such as [VLC](/index.php/VLC "VLC"), [VirtualBox](/index.php/VirtualBox "VirtualBox"), [Mathematica](/index.php/Mathematica "Mathematica") and many others.
 
 ## Contents
 
@@ -38,13 +38,11 @@ The Qt framework is emerging as a major development platform and is the basis of
         *   [4.3.7 Perl](#Perl)
         *   [4.3.8 Lua](#Lua)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Qt programs crash when opening file dialogs under GNOME Wayland](#Qt_programs_crash_when_opening_file_dialogs_under_GNOME_Wayland)
-    *   [5.2 Disable/Change Qt journal logging behaviour](#Disable/Change_Qt_journal_logging_behaviour)
-    *   [5.3 Icon theme is not applied](#Icon_theme_is_not_applied)
-    *   [5.4 Theme not applied to root applications](#Theme_not_applied_to_root_applications)
-    *   [5.5 Qt4 style not respected](#Qt4_style_not_respected)
-    *   [5.6 Applications using QML crash or do not work with Qt 5.8 - 5.10](#Applications_using_QML_crash_or_do_not_work_with_Qt_5.8_-_5.10)
-    *   [5.7 All Qt5-based applications fail to run after Qt5 update](#All_Qt5-based_applications_fail_to_run_after_Qt5_update)
+    *   [5.1 Disable/Change Qt journal logging behaviour](#Disable/Change_Qt_journal_logging_behaviour)
+    *   [5.2 Icon theme is not applied](#Icon_theme_is_not_applied)
+    *   [5.3 Theme not applied to root applications](#Theme_not_applied_to_root_applications)
+    *   [5.4 Qt4 style not respected](#Qt4_style_not_respected)
+    *   [5.5 All Qt5-based applications fail to run after Qt5 update](#All_Qt5-based_applications_fail_to_run_after_Qt5_update)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -428,19 +426,6 @@ label:show()
 
 ## Troubleshooting
 
-### Qt programs crash when opening file dialogs under GNOME Wayland
-
-Under a GNOME Wayland environment, Qt programs such as Smplayer and Calibre may crash when opening a "FileDiag" (e.g. the "Open file" or "Save as" dialogs), because by default Qt tries to use the native GTK FileDiag, but the invocation assumes the use of X11 and would segfault in Wayland. This issue can be worked around in two ways:
-
-*   Force the use of X11 GDK backend for these Qt programs.
-
-```
-GDK_BACKEND=x11 some_qt_program
-
-```
-
-*   Install the latest git snapshot of [qgnomeplatform-git](https://aur.archlinux.org/packages/qgnomeplatform-git/), which contains a fix. The platform plugin should work automatically under GNOME (3.20 or later); if not, manually set the [environment variable](/index.php/Environment_variables#Using_pam_env "Environment variables"): `QT_QPA_PLATFORMTHEME=qgnomeplatform` . This also has the effect of [uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications").
-
 ### Disable/Change Qt journal logging behaviour
 
 When using [KDE](/index.php/KDE "KDE") and/or any other Qt [desktop environment](/index.php/Desktop_environment "Desktop environment") debug info may be frequently be logged in the [systemd journal](/index.php/Systemd_journal "Systemd journal").
@@ -478,19 +463,6 @@ Alternatively, you can symlink the Qt4 styles directory to the KDE4 styles one:
 
 ```
 # ln -s /usr/lib/{kde,qt}4/plugins/styles/*theme_name*
-
-```
-
-### Applications using QML crash or do not work with Qt 5.8 - 5.10
-
-**Note:** This is meant to be resolved with Qt 5.11 (see BBS thread [222486: sddm-helper crashes](https://bbs.archlinux.org/viewtopic.php?id=222486)), published into the main repositories in late May 2018.
-
-Between Qt 5.8 and 5.10, applications that rely on QML (such as [SDDM](/index.php/SDDM "SDDM") or some [KDE](/index.php/KDE "KDE") programs) may crash or fail to function correctly if they do not have execution privileges under `/home` or `/var` (e.g. if these are separate filesystems mounted as '`noexec`'). This is a result of the **qmlcache** feature, which relies on being able to write files out to `.cache` directories and then execute them.
-
-If you do not want to -- or cannot -- allow such execution privileges, a workaround is to set the following as appropriate in your [environment variables](/index.php/Environment_variables "Environment variables"):
-
-```
-QML_DISABLE_DISK_CACHE=1
 
 ```
 

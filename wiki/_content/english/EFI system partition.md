@@ -42,6 +42,12 @@ The command returns:
 *   The disk's partition table: it indicates `Disklabel type: gpt` if the partition table is [GPT](/index.php/GPT "GPT") or `Disklabel type: dos` if it is [MBR](/index.php/MBR "MBR").
 *   The list of partitions on the disk: Look for the EFI system partition in the list, it is a small (usually about 100–550 MiB) partition with a type `EFI System` or `EFI (FAT-12/16/32)`. To confirm this is the ESP, mount it and check whether it contains a directory named `EFI`, if it does this is definitely the ESP.
 
+**Tip:** To find out whether it is a FAT12, FAT16 or FAT32 file system, use `minfo` from [mtools](https://www.archlinux.org/packages/?name=mtools).
+```
+# minfo -i /dev/sd*x* :: | grep 'disk type'
+
+```
+
 **Warning:** When dual-booting, avoid reformatting the ESP, as it may contain files required to boot other operating systems.
 
 If you found an existing EFI system partition, simply proceed to [#Mount the partition](#Mount_the_partition). If you did not find one, you will need to create it, proceed to [#Create the partition](#Create_the_partition).

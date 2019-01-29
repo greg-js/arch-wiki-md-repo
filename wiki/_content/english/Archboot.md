@@ -1,4 +1,8 @@
-Archboot is an unofficial set of scripts to generate bootable media for CD/USB/PXE, designed for installation or rescue operation.
+Related articles
+
+*   [Archiso](/index.php/Archiso "Archiso")
+
+**Archboot** is an unofficial set of scripts to generate bootable media for CD/USB/PXE, designed for installation or rescue operation.
 
 It only runs in RAM, without any special filesystems like squashfs, thus it is limited to the RAM which is installed in your system.
 

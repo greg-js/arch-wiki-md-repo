@@ -37,7 +37,7 @@ Esse artigo cobre softwares corretores/[verificadores ortográficos](https://en.
 
 ### Enchant
 
-[Enchant](https://en.wikipedia.org/wiki/Enchant_(software) é uma biblioteca interfaceadora para a verificação ortográfica genérica, desenvolvido como parte do [AbiWord](/index.php/AbiWord "AbiWord"), com suporte a todos os verificadores ortográficos acima, com exceção do Ispell.
+[Enchant](https://en.wikipedia.org/wiki/Enchant_(software) é uma biblioteca interfaceadora para a verificação ortográfica genérica, desenvolvido como parte do [AbiWord](/index.php/AbiWord_(Portugu%C3%AAs) "AbiWord (Português)"), com suporte a todos os verificadores ortográficos acima, com exceção do Ispell.
 
 Enchant está disponível como o pacote [enchant](https://www.archlinux.org/packages/?name=enchant). Para seu uso e arquivo de ordem, veja [enchant-2(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/enchant-2.1).
 
@@ -59,15 +59,15 @@ Enchant é usado por vários aplicativos pelas bibliotecas [GTK](/index.php/GTK 
 *   [Thunderbird#Spell checking](/index.php/Thunderbird#Spell_checking "Thunderbird")
 *   [LibreOffice#Spell checking](/index.php/LibreOffice#Spell_checking "LibreOffice")
 
-[AbiWord](/index.php/AbiWord "AbiWord") e [Gedit](/index.php/Gedit "Gedit") usam o Enchant.
+[AbiWord](/index.php/AbiWord_(Portugu%C3%AAs) "AbiWord (Português)") e [Gedit](/index.php/Gedit "Gedit") usam o Enchant.
 
 ## Verificadores gramaticais
 
-*   **LanguageTool** — Verificador de idioma de código aberto, escrito em [Java](/index.php/Java "Java").
+*   **LanguageTool** — Verificador de idioma de código aberto, escrito em [Java](/index.php/Java_(Portugu%C3%AAs) "Java (Português)").
 
 	[https://www.languagetool.org](https://www.languagetool.org) || [languagetool](https://www.archlinux.org/packages/?name=languagetool)
 
-*   **Style and Diction** — Dction identifica frases prolixas e comumente mal utilizadas. Style analisa as características da superfície de um documento.
+*   **Style and Diction** — Diction identifica frases prolixas e comumente mal utilizadas. Style analisa as características da superfície de um documento.
 
 	[https://www.gnu.org/software/diction/](https://www.gnu.org/software/diction/) || [diction](https://aur.archlinux.org/packages/diction/)
 
@@ -75,4 +75,4 @@ Enchant é usado por vários aplicativos pelas bibliotecas [GTK](/index.php/GTK 
 
 [Firefox](/index.php/Firefox "Firefox"), [Thunderbird](/index.php/Thunderbird "Thunderbird"), [Chromium](/index.php/Chromium "Chromium") e [LibreOffice](/index.php/LibreOffice "LibreOffice") todos possuem suporte a verificação gramatical apenas por meio de extensões. Para o LibreOffice, veja [LibreOffice#Grammar checking](/index.php/LibreOffice#Grammar_checking "LibreOffice").
 
-[AbiWord](/index.php/AbiWord "AbiWord") possui um verificador gramatical interno, veja [AbiWord#Grammar checking](/index.php/AbiWord#Grammar_checking "AbiWord").
+[AbiWord](/index.php/AbiWord_(Portugu%C3%AAs) "AbiWord (Português)") possui um verificador gramatical interno, veja [AbiWord (Português)#Verificação gramatical](/index.php/AbiWord_(Portugu%C3%AAs)#Verificação_gramatical "AbiWord (Português)").

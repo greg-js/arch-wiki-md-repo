@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [NetworkManager](/index.php/NetworkManager "NetworkManager"). Data da última tradução: 2019-01-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=NetworkManager&diff=0&oldid=562494) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [NetworkManager](/index.php/NetworkManager "NetworkManager"). Data da última tradução: 2019-01-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=NetworkManager&diff=0&oldid=564138) na versão em inglês.
 
 Related articles
 
@@ -206,7 +206,7 @@ O [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)") tem uma ferram
 
 ### KDE Plasma
 
-[Instale](/index.php/Instale "Instale") o pacote [plasma-nm](https://www.archlinux.org/packages/?name=plasma-nm).
+[Instale](/index.php/Instale "Instale") o pacote [plasma-nm](https://www.archlinux.org/packages/?name=plasma-nm). Em seguida, adicione-o à barra de tarefas do KDE por meio do menu *Opções de painel > Adicionar widgets > Rede*.
 
 ### nm-applet
 
