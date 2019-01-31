@@ -58,127 +58,127 @@ As duas versões do GTK+ estão atualmente disponíveis nos [repositórios ofici
 
 ## Temas
 
-In GTK+ 2, the default theme is Raleigh, but Arch Linux has a custom configuration file at `/usr/share/gtk-2.0/gtkrc`, which sets the default theme to Adwaita. In GTK+ 3, the default theme is Adwaita, but HighContrast, HighContrastInverse and Raleigh themes are also included.
+No GTK+ 2, o tema padrão é o Raleigh, mas o Arch Linux tem um arquivo de configuração personalizado em `/usr/share/gtk-2.0/gtkrc`, que define o tema padrão como Adwaita. No GTK+ 3, o tema padrão é Adwaita, mas os temas HighContrast, HighContrastInverse e Raleigh também estão incluídos.
 
-To force a specific theme, set the following [environment variables](/index.php/Environment_variables "Environment variables"):
+Para forçar um tema específico, defina as seguintes [variáveis de ambiente](/index.php/Vari%C3%A1veis_de_ambiente "Variáveis de ambiente"):
 
-*   For GTK+ 2, use `GTK2_RC_FILES`. For example to launch [GIMP](/index.php/GIMP "GIMP") with the theme Raleigh:
+*   Para GTK+ 2, use `GTK2_RC_FILES`. Por exemplo, para iniciar o [GIMP](/index.php/GIMP "GIMP") com o tema Raleigh:
 
 ```
 $ GTK2_RC_FILES=/usr/share/themes/Raleigh/gtk-2.0/gtkrc gimp
 
 ```
 
-**Tip:** `gtkrc` can also be a custom file in your home directory created by any of the [#Configuration tools](#Configuration_tools). See [#Examples](#Examples).
+**Dica:** `gtkrc` também pode ser um arquivo personalizado em seu diretório home criado por qualquer uma das [#Ferramentas de configuração](#Ferramentas_de_configuração). Veja [#Exemplos](#Exemplos).
 
-*   For GTK+ 3, use `GTK_THEME`. For example to launch GNOME Calculator with the dark variant of Adwaita:
+*   Para GTK+ 3, use `GTK_THEME`. Por exemplo, para iniciar a Calculadora do GNOME com a variante escura do Adwaita:
 
 ```
 $ GTK_THEME=Adwaita:dark gnome-calculator
 
 ```
 
-**Note:** To apply the above to desktop shortcuts (or launchers) see [Desktop entries#Modify environment variables](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries").
+**Nota:** Para aplicar o acima aos atalhos da área de trabalho (ou lançadores), consulte [Desktop entries#Modify environment variables](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries").
 
-More themes can be installed from the official repositories or the [AUR](/index.php/AUR "AUR"). Manually extracted themes go in `~/.themes/` or `~/.local/share/themes/` directory.
+Mais temas podem ser instalados a partir dos repositórios oficiais ou do [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"). Temas extraídos manualmente vão nos diretórios `~/.themes/` ou `~/.local/share/themes/`.
 
-**GTK+ 2 and GTK+ 3.20 or newer are supported:**
+**GTK+ 2 e GTK+ 3.20 ou mais novos tem suporte em:**
 
-*   **Adapta** — An adaptive Gtk+ theme based on Material Design Guidelines. Includes: Adapta, Adapta-Eta, Adapta-Nokto, Adapta-Nokto-Eta
+*   **Adapta** — Um tema Gtk+ adaptivo baseado em Material Design Guidelines. Inclui: Adapta, Adapta-Eta, Adapta-Nokto, Adapta-Nokto-Eta
 
 	[https://github.com/tista500/Adapta](https://github.com/tista500/Adapta) || [adapta-gtk-theme](https://www.archlinux.org/packages/?name=adapta-gtk-theme)
 
-*   **Arc** — A flat theme with a modern look and transparent elements. Includes: Arc, Arc-Dark, Arc-Darker
+*   **Arc** — Um tema plano com um visual moderno e elementos transparentes. Inclui: Arc, Arc-Dark, Arc-Darker
 
-	[https://github.com/nicohood/arc-theme](https://github.com/nicohood/arc-theme) || with transparency: [arc-gtk-theme](https://www.archlinux.org/packages/?name=arc-gtk-theme), without transparency: [arc-solid-gtk-theme](https://www.archlinux.org/packages/?name=arc-solid-gtk-theme)
+	[https://github.com/nicohood/arc-theme](https://github.com/nicohood/arc-theme) || com transparência: [arc-gtk-theme](https://www.archlinux.org/packages/?name=arc-gtk-theme), sem transparência: [arc-solid-gtk-theme](https://www.archlinux.org/packages/?name=arc-solid-gtk-theme)
 
-*   **Bluebird** — Blue Desktop Suite for Xfce.
+*   **Bluebird** — Blue Desktop Suite para o Xfce.
 
 	[https://github.com/shimmerproject/Bluebird](https://github.com/shimmerproject/Bluebird) || [xfce-theme-bluebird](https://aur.archlinux.org/packages/xfce-theme-bluebird/)
 
-*   **Breeze** — GTK+ version of KDE's default widget theme. Includes: Breeze, Breeze-Dark
+*   **Breeze** — A versão GTK+ do tema de widgets padrão do KDE. Inclui: Breeze, Breeze-Dark
 
 	[https://cgit.kde.org/breeze-gtk.git](https://cgit.kde.org/breeze-gtk.git) || [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk)
 
-*   **Deepin** — Default theme for the Deepin desktop. Includes: deepin, deepin-dark
+*   **Deepin** — Tema padrão para o ambiente Deepin. Inclui: deepin, deepin-dark
 
 	[https://github.com/linuxdeepin/deepin-gtk-theme](https://github.com/linuxdeepin/deepin-gtk-theme) || [deepin-gtk-theme](https://www.archlinux.org/packages/?name=deepin-gtk-theme)
 
-*   **GNOME Extra Themes** — Extra themes for the GNOME desktop. Includes: Adwaita, Adwaita-dark, HighContrast
+*   **GNOME Extra Themes** — Temas extras para o ambiente GNOME. Inclui: Adwaita, Adwaita-dark, HighContrast
 
 	[https://gitlab.gnome.org/GNOME/gnome-themes-extra](https://gitlab.gnome.org/GNOME/gnome-themes-extra) || [gnome-themes-extra](https://www.archlinux.org/packages/?name=gnome-themes-extra)
 
-*   **Greybird** — A grey and blue Xfce theme, used by default in Xubuntu 12.04.
+*   **Greybird** — Um tema cinza e azul para o Xfce, usado por padrão no Xubuntu 12.04.
 
 	[https://github.com/shimmerproject/Greybird](https://github.com/shimmerproject/Greybird) || [xfce-theme-greybird](https://aur.archlinux.org/packages/xfce-theme-greybird/)
 
-*   **Materia** — A Material Design-like flat theme for GTK3, GTK2, and GNOME-Shell.
+*   **Materia** — Um tema plano semelhante ao Material Design para GTK3, GTK2 e GNOME-Shell.
 
 	[https://github.com/nana-4/materia-theme](https://github.com/nana-4/materia-theme) || [materia-gtk-theme](https://www.archlinux.org/packages/?name=materia-gtk-theme)
 
-*   **MATE Themes** — Default themes for the MATE desktop. Includes: BlackMATE, Blue-Submarine, BlueMenta, ContrastHighInverse, Green-Submarine, GreenLaguna, Menta, TraditionalGreen, TraditionalOk
+*   **MATE Themes** — Temas padrão para o ambiente MATE. Inclui: BlackMATE, Blue-Submarine, BlueMenta, ContrastHighInverse, Green-Submarine, GreenLaguna, Menta, TraditionalGreen, TraditionalOk
 
 	[https://github.com/mate-desktop/mate-themes](https://github.com/mate-desktop/mate-themes) || [mate-themes](https://www.archlinux.org/packages/?name=mate-themes)
 
-*   **Numix** — A flat and light theme with a modern look (GNOME, Openbox, Unity, Xfce). Includes: Numix
+*   **Numix** — Um tema plano e leve com um visual moderno (GNOME, Openbox, Unity, Xfce). Inclui: Numix
 
 	[https://github.com/shimmerproject/Numix](https://github.com/shimmerproject/Numix) || [numix-gtk-theme](https://www.archlinux.org/packages/?name=numix-gtk-theme)
 
-*   **Vertex** — Theme for GTK 3, GTK 2, Gnome-Shell and Cinnamon.
+*   **Vertex** — Tema para GTK 3, GTK 2, Gnome-Shell e Cinnamon.
 
 	[https://github.com/horst3180/vertex-theme](https://github.com/horst3180/vertex-theme) || [vertex-themes](https://aur.archlinux.org/packages/vertex-themes/)
 
-*   **Zuki** — Themes for GTK, gnome-shell and more.
+*   **Zuki** — Tema para GTK, gnome-shell e mais.
 
 	[https://github.com/lassekongo83/zuki-themes](https://github.com/lassekongo83/zuki-themes) || [zuki-themes](https://aur.archlinux.org/packages/zuki-themes/)
 
-There are a number of additional GTK+ themes in the AUR, example: [search for gtk-theme](https://aur.archlinux.org/packages.php?K=gtk-theme).
+Há vários temas GTK+ adicionais no AUR. Por exemplo, [pesquise por gtk-theme](https://aur.archlinux.org/packages.php?K=gtk-theme).
 
-**Note:** Because GTK+ 3 changes rapidly, GTK+ 3 themes often require re-working after a GTK+ 3 release. For this reason, not all GTK+ 3 themes may look as intended when used with the latest GTK+ 3 version.
+**Nota:** Porque o GTK+ 3 muda rapidamente, temas GTK+ 3 geralmente exigem retrabalhos após um lançamento do GTK+ 3\. Por este motivo, nem todos os temas para GTK+ 3 podem parecer como pretendidos quando usados com a versão mais recente do GTK+ 3.
 
 ### GTK+ e Qt
 
-If you have GTK+ and Qt (KDE) applications on your desktop then you know that their looks do not blend well. If you wish to make your GTK+ styles match your Qt styles please read [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications").
+Se você tem aplicativos GTK+ e Qt (KDE) em sua área de trabalho, sabe que sua aparência não combina bem. Se você deseja fazer seus estilos de GTK+ combinarem com seus estilos de Qt, por favor, leia [Aparência uniforme para aplicativos em Qt e GTK](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications").
 
 ## Ferramentas de configuração
 
-Most major [desktop environments](/index.php/Desktop_environments "Desktop environments") provide tools to configure the GTK+ theme, icons, font and font size, and manage these settings via [XSettings](https://specifications.freedesktop.org/xsettings-spec/xsettings-spec-0.5.html):
+A maioria dos grandes [ambientes de desktop](/index.php/Ambientes_de_desktop "Ambientes de desktop") fornecem ferramentas para configurar o tema GTK+, ícones, fonte e tamanho da fonte, e gerenciar essas configurações por [XSettings](https://specifications.freedesktop.org/xsettings-spec/xsettings-spec-0.5.html):
 
-*   If you use [Cinnamon](/index.php/Cinnamon "Cinnamon"), use Themes tool (*cinnamon-settings themes*): go to *System Settings > Themes*.
-*   If you use [Enlightenment](/index.php/Enlightenment "Enlightenment"): go to *Settings > All > Look > Application Theme*.
-*   If you use [GNOME](/index.php/GNOME "GNOME"), use GNOME Tweaks (*gnome-tweaks*): install [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks).
-*   If you use [MATE](/index.php/MATE "MATE"), use the Appearance Preferences tool (*mate-appearance-properties*): go to *System > Settings > Appearance*.
-*   If you use [Xfce](/index.php/Xfce "Xfce"), use the Appearance tool: go to *Settings > Appearance*.
+*   Se você usa [Cinnamon](/index.php/Cinnamon "Cinnamon"), use a ferramenta Temas (*cinnamon-settings themes*): vá em *Configurações do sistema > Temas*.
+*   Se você usa [Enlightenment](/index.php/Enlightenment "Enlightenment"): vá em *Definições > Tudo > Aparência > Tema das aplicações*.
+*   Se você usa [GNOME](/index.php/GNOME "GNOME"), use Ajustes do GNOME (*gnome-tweaks*): instale [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks).
+*   Se você usa [MATE](/index.php/MATE "MATE"), use a ferramenta Appearance Preferences (*mate-appearance-properties*): vá em *Sistema > Configurações > Aparência*.
+*   Se você usa [Xfce](/index.php/Xfce "Xfce"), use a ferramenta Appearance: vá em *Configurações > Aparência*.
 
-Other GUI tools generally overwrite the [configuration files](#Configuration).
+Outras ferramentas GUI geralmente sobrescrevem os [arquivos de configuração](#Configuração).
 
-**Both GTK+ 2 and GTK+ 3 are supported:**
+**Suporte a GTK+ 2 e GTK+ 3:**
 
-*   **KDE GTK Configurator** — Application that allows you to change style and font of GTK+ 2 and Gtk+ 3 applications.
+*   **KDE GTK Configurator** — Aplicativo que permite que você altere o estilo e fonte de aplicativos GTK+ 2 e GTK+ 3.
 
 	[https://cgit.kde.org/kde-gtk-config.git](https://cgit.kde.org/kde-gtk-config.git) || [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config)
 
-	After installation, `kde-gtk-config` can also be found in *System Settings > Application Style > GTK*.
+	Após a instalação, `kde-gtk-config` também pode ser encontrado em *Configurações do sistema > Estilo dos aplicativos > GTK*.
 
-*   **LXAppearance** — Desktop independent GTK+ 2 and GTK+ 3 style configuration tool from the LXDE project (it does not require other parts of the LXDE desktop).
+*   **LXAppearance** — Ferramenta de configuração de estilo independente para GTK+ 2 e GTK+ 3 do projeto LXDE (não requer outras partes da área de trabalho do LXDE).
 
 	[http://wiki.lxde.org/en/LXAppearance](http://wiki.lxde.org/en/LXAppearance) || [lxappearance](https://www.archlinux.org/packages/?name=lxappearance)
 
-*   **Oo-mox** — Graphical application for generating different color variations of Numix and Flat-Plat themes (GTK+ 2 and 3), Archdroid and Gnome-Colors icon themes. Also allows generating pre-scaled GTK+ 2 themes for HiDPI displays.
+*   **Oo-mox** — Aplicativo gráfico para gerar diferentes variações de cores dos temas dos temas Numix e Flat-Plat (GTK+ 2 e 3), Archdroid e Gnome-Colors. Também permite gerar temas GTK+ 2 pré-dimensionados para telas HiDPI.
 
 	[https://github.com/actionless/oomox](https://github.com/actionless/oomox) || [oomox](https://aur.archlinux.org/packages/oomox/)
 
-**Only GTK+ 2 is supported:**
+**Suporte apenas a GTK+ 2:**
 
-*   **GTK+ Change Theme** — Little program that lets you change your GTK+ 2.0 theme (considered a better alternative to *switch2*).
+*   **GTK+ Change Theme** — Um programa pequeno que permite que você altere seu tema GTK+ 2.0 (considerado uma alternativa melhor ao *switch2*).
 
 	[http://plasmasturm.org/code/gtk-chtheme/](http://plasmasturm.org/code/gtk-chtheme/) || [gtk-chtheme](https://www.archlinux.org/packages/?name=gtk-chtheme)
 
-*   **GTK+ Preference Tool** — GTK+ theme selector and font switcher.
+*   **GTK+ Preference Tool** — Seletor de temas GTK+ e alternador de fontes.
 
 	[http://gtk-win.sourceforge.net/home/index.php/Main/GTKPreferenceTool](http://gtk-win.sourceforge.net/home/index.php/Main/GTKPreferenceTool) || [gtk2_prefs](https://aur.archlinux.org/packages/gtk2_prefs/)
 
-*   **GTK+ Theme Switch** — Simple GTK+ theme switcher.
+*   **GTK+ Theme Switch** — Alternador de temas GTK+ simples.
 
 	[http://muhri.net/nav.php3?node=gts](http://muhri.net/nav.php3?node=gts) || [gtk-theme-switch2](https://www.archlinux.org/packages/?name=gtk-theme-switch2)
 

@@ -69,7 +69,7 @@ If BOINC did not ask you to connect to a project, then make sure you are connect
 
 #### Projects using GPU
 
-If you want to use your GPU, you need the proprietary nvidia or amd drivers. For ATI/AMD Cards you also need [Catalyst](/index.php/Catalyst "Catalyst") driver for stock kernel which you can get from AUR. For Nvidia, you also need the package [opencl-nvidia](https://www.archlinux.org/packages/?name=opencl-nvidia) located in extra. To prevent computing errors on x86_64 you most likely need the *OpenGL (Multilib)* package listed in [Xorg#Driver installation](/index.php/Xorg#Driver_installation "Xorg").
+If you want to use your GPU, you may need the proprietary nvidia or amd drivers. For ATI/AMD Cards you may also need [Catalyst](/index.php/Catalyst "Catalyst") driver for stock kernel which you can get from AUR. For newer AMD systems such as the Ryzen 5 2400G you can simply install [opencl-amd](https://aur.archlinux.org/packages/opencl-amd/) on top of the open source [AMDGPU](/index.php/AMDGPU "AMDGPU") to provide OpenCL capability for GPU work. For Nvidia, you also need the package [opencl-nvidia](https://www.archlinux.org/packages/?name=opencl-nvidia) located in extra. To prevent computing errors on x86_64 you most likely need the *OpenGL (Multilib)* package listed in [Xorg#Driver installation](/index.php/Xorg#Driver_installation "Xorg").
 
 In addition, the boinc user should be in the video group:
 

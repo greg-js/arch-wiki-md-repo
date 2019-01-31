@@ -188,6 +188,11 @@ case $2 in
            rm /etc/apcupsd/powerfail
          fi
 
+         # This may also exist, need to remove it.
+         if [ -f /etc/nologin ]; then
+           rm /etc/nologin
+         fi
+
 	 # Restart the daemon; otherwise it may be unresponsive in a
          # second powerfailure situation.
 	 systemctl restart apcupsd

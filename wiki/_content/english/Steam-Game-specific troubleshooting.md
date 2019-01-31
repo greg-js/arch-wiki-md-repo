@@ -743,9 +743,9 @@ Run the game with `UNITY_DISABLE_GRAPHICS_DRIVER_WORKAROUNDS=yes`.
 
 ### Civilization V
 
-Run the game with `LD_PRELOAD=/usr/lib32/libopenal.so.1 %command%`.[[3]](https://steamcommunity.com/app/8930/discussions/0/1621726179576099775/) For old versions of PulseAudio (<12.0), use `LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6:/usr/lib32/libopenal.so.1' %command%`.[[4]](https://github.com/ValveSoftware/steam-for-linux/issues/4379)
+Run the game with `LD_PRELOAD=/usr/lib32/libopenal.so.1 %command%`.[[3]](https://steamcommunity.com/app/8930/discussions/0/1621726179576099775/) For old versions of PulseAudio (<12.0), use `LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6:/usr/lib32/libopenal.so.1' %command%`.[[4]](https://github.com/ValveSoftware/steam-for-linux/issues/4379) If libopenal.so.1 is not in /usr/lib32, you may need to run `sudo pacman -S multilib/lib32-openal` after making sure multilib is enabled.[[5]](https://wiki.archlinux.org/index.php/Official_repositories#multilib)
 
-If you are experiencing heavy lag (less than 1fps) or the game crashes on startup, try adding the following paths to LD_PRELOAD: `'/usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1 /usr/$LIB/libgpg-error.so ./libcxxrt.so /usr/lib32/libstdc++.so.6 /usr/lib32/libopenal.so.1'`.[[5]](https://forum.manjaro.org/t/civ-v-wont-launch-after-update/10825/6)
+If you are experiencing heavy lag (less than 1fps) or the game crashes on startup, try adding the following paths to LD_PRELOAD: `'/usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1 /usr/$LIB/libgpg-error.so ./libcxxrt.so /usr/lib32/libstdc++.so.6 /usr/lib32/libopenal.so.1'`.[[6]](https://forum.manjaro.org/t/civ-v-wont-launch-after-update/10825/6)
 
 #### Stuttering sound with PulseAudio
 
@@ -753,7 +753,7 @@ See [PulseAudio/Troubleshooting#Laggy sound](/index.php/PulseAudio/Troubleshooti
 
 #### Game crashes seconds after loading a map
 
-If you have a CPU with more than 8 threads (such as AMD Ryzen), set `MaxSimultaneousThreads` to `16` in `config.ini` in game directory.[[6]](https://www.reddit.com/r/civ5/comments/5z77jr/game_crashes_randomly_on_linux_amd_ryzen/)
+If you have a CPU with more than 8 threads (such as AMD Ryzen), set `MaxSimultaneousThreads` to `16` in `config.ini` in game directory.[[7]](https://www.reddit.com/r/civ5/comments/5z77jr/game_crashes_randomly_on_linux_amd_ryzen/)
 
 #### Game crashes after intro video with "Unable to load texture (LoadingBaseGame.dds)"
 
@@ -979,7 +979,7 @@ See [PulseAudio/Troubleshooting#Laggy sound](/index.php/PulseAudio/Troubleshooti
 
 #### Mouse not working in-game
 
-If your mouse works in the main menu but not in-game, run the game with `SDL_VIDEO_X11_DGAMOUSE=0`. [[7]](https://bbs.archlinux.org/viewtopic.php?id=184905)
+If your mouse works in the main menu but not in-game, run the game with `SDL_VIDEO_X11_DGAMOUSE=0`. [[8]](https://bbs.archlinux.org/viewtopic.php?id=184905)
 
 #### Brightness slider not working
 
@@ -1219,7 +1219,7 @@ SDL_GL_LoadLibrary(NULL) failed: Failed loading libGL.so.1: /usr/lib32/libxcb-dr
 
 #### Steam overlay
 
-Steam distributes a copy of libxcb which is incompatible with the latest xorg libxcb. See [[8]](https://github.com/ValveSoftware/steam-for-linux/issues/3199), [[9]](https://github.com/ValveSoftware/steam-for-linux/issues/3093).
+Steam distributes a copy of libxcb which is incompatible with the latest xorg libxcb. See [[9]](https://github.com/ValveSoftware/steam-for-linux/issues/3199), [[10]](https://github.com/ValveSoftware/steam-for-linux/issues/3093).
 
 #### Chinese tips and player names not shown
 
@@ -1779,7 +1779,7 @@ If Multiwinia crashes on startup on X64 systems, force launching the 32-bit exec
 
 ```
 
-See [[10]](https://steamcommunity.com/app/1530/discussions/0/864969481950542663/#c558746995160431396).
+See [[11]](https://steamcommunity.com/app/1530/discussions/0/864969481950542663/#c558746995160431396).
 
 ### Natural Selection 2
 
@@ -1808,7 +1808,7 @@ The environment variable `SDL_VIDEODRIVER` must not be set to `wayland`. Try set
 
 This problem occurs with locales that use comas instead of dots to separate decimals.
 
-Set launch options in steam to `LANG=C %command%`.[[11]](http://steamcommunity.com/app/457140/discussions/3/1488866180617243731/#c1488866813753688864)
+Set launch options in steam to `LANG=C %command%`.[[12]](http://steamcommunity.com/app/457140/discussions/3/1488866180617243731/#c1488866813753688864)
 
 ### Penumbra: Overture
 
@@ -2077,7 +2077,7 @@ and seeing if you get output like
 
 ```
 
-If this is indeed your problem, download the libnss-sss package from Ubuntu's repository [[12]](https://packages.ubuntu.com/bionic/i386/libnss-sss/download), extract the libnss_sss.so.2 from the downloaded package, and place it at ~/.local/share/Steam/steamapps/common/Stellaris. The game should now load properly.
+If this is indeed your problem, download the libnss-sss package from Ubuntu's repository [[13]](https://packages.ubuntu.com/bionic/i386/libnss-sss/download), extract the libnss_sss.so.2 from the downloaded package, and place it at ~/.local/share/Steam/steamapps/common/Stellaris. The game should now load properly.
 
 ### Stephen's Sausage Roll
 
@@ -2133,7 +2133,7 @@ Dependencies:
 *   [lib32-glu](https://www.archlinux.org/packages/?name=lib32-glu)
 *   [lib32-libpulse](https://www.archlinux.org/packages/?name=lib32-libpulse) if you use PulseAudio
 
-The game bundles an outdated version of libstdc++ which prevents the game from starting. [[13]](http://steamcommunity.com/app/204060/discussions/0/364039785161291413) The following can be observed when you run Steam and S&S from the terminal:
+The game bundles an outdated version of libstdc++ which prevents the game from starting. [[14]](http://steamcommunity.com/app/204060/discussions/0/364039785161291413) The following can be observed when you run Steam and S&S from the terminal:
 
 ```
 libGL error: unable to load driver: i965_dri.so
@@ -2338,9 +2338,9 @@ LD_PRELOAD='/usr/lib/libstdc++.so.6:/usr/lib/libgcc_s.so.1:/usr/lib/libxcb.so.1:
 
 ```
 
-Otherwise, run the game via shell and set up proper audio device for FMOD, as discussed in [[14]](https://steamcommunity.com/app/237930/discussions/2/620695877176333955/).
+Otherwise, run the game via shell and set up proper audio device for FMOD, as discussed in [[15]](https://steamcommunity.com/app/237930/discussions/2/620695877176333955/).
 
-Also, check out this thread [[15]](https://steamcommunity.com/app/237930/discussions/2/492378265893557247/).
+Also, check out this thread [[16]](https://steamcommunity.com/app/237930/discussions/2/492378265893557247/).
 
 ### Transmissions: Element 120
 
@@ -2502,7 +2502,7 @@ If there is no audio after launching the game, install [pulseaudio-alsa](https:/
 
 #### Blank screen
 
-If having a green or blank screen on startup, run the game with `MESA_GL_VERSION_OVERRIDE=4.1COMPAT`. [[16]](https://forum.warthunder.com/index.php?/topic/267809-linux-potential-workaround-for-mesa-drivers-black-screen/) [[17]](http://forum.warthunder.com/index.php?search_term=0030709&app=core&module=search&do=search&fromMainBar=1&search_app=forums%3Aforum%3A920&sort_field=&sort_order=&search_in=posts)
+If having a green or blank screen on startup, run the game with `MESA_GL_VERSION_OVERRIDE=4.1COMPAT`. [[17]](https://forum.warthunder.com/index.php?/topic/267809-linux-potential-workaround-for-mesa-drivers-black-screen/) [[18]](http://forum.warthunder.com/index.php?search_term=0030709&app=core&module=search&do=search&fromMainBar=1&search_app=forums%3Aforum%3A920&sort_field=&sort_order=&search_in=posts)
 
 ### Warhammer 40,000: Dawn of War II
 
@@ -2530,7 +2530,7 @@ with:
 
 #### Stuck on black screen or logo on launch
 
-Add `-screen-fullscreen 0` to launch options. [[18]](https://steamcommunity.com/app/582500/discussions/1/1470840994974091613/)
+Add `-screen-fullscreen 0` to launch options. [[19]](https://steamcommunity.com/app/582500/discussions/1/1470840994974091613/)
 
 ### Worms W.M.D
 
@@ -2543,7 +2543,7 @@ $ ln -s ~/.steam/steam/ubuntu12_32/steam-runtime/amd64/lib/x86_64-linux-gnu/*dbu
 
 ```
 
-Now the game should run using the default "Play Worms W.M.D" option. See also Steam community discussions [[19]](https://steamcommunity.com/app/327030/discussions/2/133257959065155871/) and [[20]](https://steamcommunity.com/app/327030/discussions/1/343785380902286766/).
+Now the game should run using the default "Play Worms W.M.D" option. See also Steam community discussions [[20]](https://steamcommunity.com/app/327030/discussions/2/133257959065155871/) and [[21]](https://steamcommunity.com/app/327030/discussions/1/343785380902286766/).
 
 On some systems there are terrain bugs where holes in terrain are not rendered properly and worms can fall through terrain unexpectedly. These bugs can make the game unplayable in many situations and there is no known fix for them.
 

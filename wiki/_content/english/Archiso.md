@@ -249,7 +249,7 @@ Rebuilding the iso after modifications is not officially supported. However, it 
 
 ```
 
-Furthermore it is required to edit the script `airootfs/root/customize_airootfs.sh`, and add an `id` command in the beginning of the `useradd` line as shown here. Otherwise the rebuild stops at this point because the user that is to be added already exists [FS#41865](https://bugs.archlinux.org/task/41865).
+If you have edited `airootfs/root/customize_airootfs.sh` to create an unprivileged user, the rebuild will fail when creating it because the user will already exist ([FS#41865](https://bugs.archlinux.org/task/41865)). To avoid this issue, you need to check if the user exists before running `useradd`, e.g. by running `id`:
 
 ```
 ! id arch && useradd -m -p "" -g users -G "adm,audio,floppy,log,network,rfkill,scanner,storage,optical,power,wheel" -s /usr/bin/zsh arch

@@ -97,6 +97,10 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 	[http://neverball.org/](http://neverball.org/) || [neverball](https://www.archlinux.org/packages/?name=neverball)
 
+*   **[OpenLieroX](https://en.wikipedia.org/wiki/Liero#OpenLieroX "wikipedia:Liero")** — An extremely addictive realtime worms shoot-em-up backed by an active gamers community.
+
+	[http://openlierox.sourceforge.net/](http://openlierox.sourceforge.net/) || [openlierox](https://aur.archlinux.org/packages/openlierox/)
+
 *   **[Rune](https://en.wikipedia.org/wiki/Rune_(video_game) "wikipedia:Rune (video game)")** — 3rd person Adventure / Hack'n Slay using Unreal Engine. Runs great from box installation.
 
 	[http://www.rune-world.com](http://www.rune-world.com) || [rune](https://aur.archlinux.org/packages/rune/)

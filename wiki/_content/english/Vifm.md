@@ -196,7 +196,7 @@ fileviewer *.pdf
 
 ```
 
-into vifmrc enables pdf-previewing using pdftotext. The %c is a vifm macro for the current file under the cursor. The preview is activated with
+into vifmrc enables pdf-previewing using pdftotext. The `%c` is a vifm macro for the current file under the cursor. The preview is activated with
 
 ```
 :view
@@ -226,6 +226,18 @@ fileviewer *.html
  \ w3m %c
 
 ```
+
+For printing text instead of previewing the file (for binary files for example):
+
+```
+fileviewer *.exe
+ \ echo Binary file: no preview available. %i
+
+```
+
+`%i` is there because `%c` is implicitly used if no other macro is used. In this case, `%i` is ignored.
+
+For handling filetypes not handled by anything else, put `fileviewer * <your command>` as the last fileviewer option in your config file.
 
 Further useful programs for previews include
 

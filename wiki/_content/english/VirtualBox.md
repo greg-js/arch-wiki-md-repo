@@ -76,7 +76,9 @@ In order to integrate functions of the host system to the guests, including shar
     *   [5.26 Windows: Screen flicker if 3D acceleration enabled](#Windows:_Screen_flicker_if_3D_acceleration_enabled)
     *   [5.27 No hardware 3D acceleration in Arch Linux guest](#No_hardware_3D_acceleration_in_Arch_Linux_guest)
     *   [5.28 Black screen for guest in EFI mode](#Black_screen_for_guest_in_EFI_mode)
-*   [6 See also](#See_also)
+*   [6 Known issues](#Known_issues)
+    *   [6.1 Automounting does not work](#Automounting_does_not_work)
+*   [7 See also](#See_also)
 
 ## Installation steps for Arch Linux hosts
 
@@ -898,13 +900,17 @@ To deal with this problem, apply the patch set at [FS#49752#comment152254](https
 
 ### Black screen for guest in EFI mode
 
-When the guest is using UEFI in Virtualbox (*Enable EFI (special OSes only)*), you get a black screen during the boot and maybe after.
+When the guest is using UEFI in Virtualbox by following [#Installation in EFI mode](#Installation_in_EFI_mode), you will get a black screen during boot and after if the VM's Graphics Controller is set to VBoxSVGA.
 
 This is because you are experiencing [FS#61184](https://bugs.archlinux.org/task/61184).
 
-The workaround is to use the VBoxVGA graphics controller, as that is the only one that does not display a black screen. Go to VM *Settings > Display'* and change the *Graphics Controller* to *VBoxVGA*.
+The workaround is to use VMSVGA (the default) or VBoxVGA as the graphics controller. Go to VM *Settings > Display'* and change the *Graphics Controller* to either *VMSVGA* or *VBoxVGA*.
 
-The default VMSVGA will show a black screen until Linux loads the graphics driver and VBoxSVGA will always show a black screen.
+## Known issues
+
+### Automounting does not work
+
+Automounting does not work with the packaged guest additions [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) and [virtualbox-guest-utils-nox](https://www.archlinux.org/packages/?name=virtualbox-guest-utils-nox) starting with version 6.0.0-1\. See [FS#61307](https://bugs.archlinux.org/task/61307).
 
 ## See also
 

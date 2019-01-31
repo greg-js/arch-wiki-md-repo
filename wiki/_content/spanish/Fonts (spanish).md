@@ -22,10 +22,14 @@ Note que ciertas licencias de fuentes pueden imponer ciertas limitaciones legale
     *   [2.3 Instalación manual](#Instalación_manual)
     *   [2.4 Aplicaciones antiguas](#Aplicaciones_antiguas)
     *   [2.5 Advertencias sobre Pango](#Advertencias_sobre_Pango)
-*   [3 Configuración](#Configuración)
-    *   [3.1 FreeType autohinter (opcional)](#FreeType_autohinter_(opcional))
-    *   [3.2 Deshabilitar las Fuentes de mapa de Bits que son feas (opcional)](#Deshabilitar_las_Fuentes_de_mapa_de_Bits_que_son_feas_(opcional))
-*   [4 Preguntas Más Frecuentes](#Preguntas_Más_Frecuentes)
+*   [3 Paquetes de fuente](#Paquetes_de_fuente)
+    *   [3.1 Bitmap](#Bitmap)
+    *   [3.2 Latin script](#Latin_script)
+        *   [3.2.1 Familias](#Familias)
+        *   [3.2.2 Mono espacio](#Mono_espacio)
+        *   [3.2.3 Sans-serif](#Sans-serif)
+        *   [3.2.4 Serif](#Serif)
+        *   [3.2.5 Sin clasificación](#Sin_clasificación)
 
 ## Formatos de fuente
 
@@ -188,238 +192,96 @@ LiberationMono-Regular.ttf: "Liberation Mono" "Regular"
 
 ```
 
-# Configuración
-
-## FreeType autohinter (opcional)
-
-Puedes establecer el autohinter de FreeType . Ejecuta como root :
-
-```
-ln -s /etc/fonts/conf.avail/10-autohint.conf /etc/fonts/conf.d/10-autohint.conf
-
-```
-
-## Deshabilitar las Fuentes de mapa de Bits que son feas (opcional)
-
-Edita ~/.fonts.conf y pon el siguiente contenido:
-
-```
-   <selectfont>
-       <rejectfont>
-           <pattern>
-               <patelt name="scalable">
-                   <bool>false</bool>
-               </patelt>
-           </pattern>
-       </rejectfont>
-   </selectfont>
-
-```
-
-Reinicia las X (ctrl+alt+backspace)
-
-Si al llegar a este punto piensas que las fuentes se ven muy gruesas, modifica el archivo de configuración de fuentes: edita (o créalo si no existe) el archivo ~/.fonts.conf con el siguiente contenido:
-
-```
-<?xml version="1.0"?>
-<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
-<fontconfig>
-    <match target="font" >
-        <test compare="more" name="weight">
-            <const>medium</const>
-        </test>
-        <edit mode="assign" name="autohint">
-            <bool>false</bool>
-        </edit>
-    </match>
-</fontconfig>
-
-```
-
-# Preguntas Más Frecuentes
-
-**P. Mis fuentes son muy grandes o muy pequeñas. La resolución parece mala. Mis fuentes están deformes.**
-
-R(1). Lea la sección*Display Size/DPI* de [Xorg](/index.php/Xorg "Xorg") donde encontrará un ejemplo de configuración.
-
-R(2). Obtenga la resolución correcta desde una consola, ejecutando:
-
-```
-xdpyinfo | grep resolution
-
-```
-
-Cambie el valor a lo que entregue la salida de este comando en el configurador de fuentes de Gnome. Reinicie las X. Algunas veces la tarjeta de video entrega información equivocada a las X. Puede ser mejor establecer un valor entre 72-78 DPI para pantallas de 1024x768\. 96 DPI es un buen valor para 1280x1024, pero depende de la resolución exacta. Yo prefiero una resolución de 75 en el computador de micasa, y el tamaño de las fuentes parece ser un poco más fiel a su tamaño adecuado cuando ésto está establecido. En la mayoría de los casos, si los números no hacen juego, puede usar el siguiente método.
-
-También puede optar a forzar a que las X partan con una resolución. Esto puede producir buenos resultados en algunos modos de pantalla. Por ejemplo puede usar:
-
-```
-startx -- -dpi 75
-
-```
-
-Esto forzará a las X a partir en el modo DPI de 75x75\. Puede cambiar sus ajustes de las fuentes de Gnome (En el menú Aplicaciones/Preferencias del Escritorio/Fuentes) a 75 DPI y debería obtener un buen ajuste.
-
-Si esto funcionó bien para usted, puede editar su guión "startx" para forzar siempre esta opción a la partida. Edite el fichero "/usr/bin/startx" como root.
-
-Cambie la siguiente línea:
-
-```
-defaultserverargs=""
-
-```
-
-para que diga...
-
-```
-defaultserverargs="-dpi 75"
-
-```
-
-**P. ¿Cómo instalo fuentes?**
-
-R. Una manera fácil de instalar fuentes es guardarlas en el directorio "$HOME/.fonts" y correr "fc-cache". También puede realizar una instalación a través de todo el sistema copiando las fuentes al directorio "/usr/share/fonts" u otro directorio (siempre que esté listado en el archivo "/etc/fonts/fonts.conf"), y luego ejecutando el comando "fc-cache" como root. También puede necesitar ejecutar el comando "ttmkfdir" o "mkfontdir".
-
-**P. Las fuentes en GNU Emacs son mostradas como cuadrados.**
-
-R. Se debe instalar el paquete xorg-fonts-75dpi o xorg-fonts-100dpi.
-
-**P. Las fuentes lucen muy mal en OpenOffice.org.**
-
-R. Si se tiene un error/problema-de-fuentes en el paquete openoffice-base, usar el original rpm-packages desde el sitio web official siempre funciona. "Las fuentes malas son cosa del pasado con la nueva version (2.3.1)." ([http://www.stchman.com/tweaks.html](http://www.stchman.com/tweaks.html)).
-
-Notar que OpenOffice.org para Linux con una (inferior) copia de freetype2 que son construidas directamente dentro del código. En el pasado se podia forzar a conectar al ordenar, compartido, freetype2 configurando lo siguiente antes de empezar la version.
-
-```
-export LD_PRELOAD=/usr/lib/xorg/modules/fonts/libfreetype.so
-
-```
-
-Lo anterior (Ene. 2008) esta reportado para no funcionar mas pero para qa.openoffice.org un patch para este transpaso se esta desarrollando
-
-A. This can be changed in the OpenOffice.org configurator. From the drop-down menu, select "Tools/Options/OpenOffice.org/Fonts". Check the box that says "Apply Replacement Table". Type "Andale Sans UI" in the font box (this may have to be input manually, if it doesn't appear in the drop-down menu) **P. La fuente del menú de OpenOffice.org luce bastante mal. No usa antialiasing tampoco.**
-
-R. Esto se puede cambiar en el configurador de OpenOffice.org. Desde el menu deslizante hacia abajo, seleccionar "Herramientas/Opciones/OpenOffice.org/Fuentes"("Tools/Options/OpenOffice.org/Fonts"). Verificar la casilla que dice "Aplicar tabla de reemplazo" ("Apply Replacement Table"). Escribir "Andale Sans UI" en la casilla de fuente (A lo mejor esto debera ser ingresado manualmente, si no aparece en el menu desplazado hacia abajo) y elegir la fuente que desees con la opcion "Reemplazar con" ("Replace With"). Usuarios de linea de codigos (Dropline users) pueden preferir el sistema predeterminado, "Trebuchet MS". Cuando está seleccionado, hacer clic en la caja de chequeo (checkmark box). Luego eligir las opciones "siempre" y "pantalla" ("always" y "screen") en la caja a continuación. Aplicar los cambios, ahora las fuentes de los menu deberia lucir bien.
-
-**P. OpenOffice.org no detecta mis fuentes TrueType.**
-
-R. Asegurarse que se han agregado las entradas apropiadas en el archivo /etc/X11/xorg.conf que apunta los programas al directorio /usr/share/fonts/
-
-Por ejemplo, aquí hay un ejemplo de un archivo xorg.conf:
-
-```
-Section "Files"
-    RgbPath         "/usr/share/X11/rgb"
-    ModulePath      "/usr/lib/xorg/modules"
-    FontPath        "/usr/share/fonts/misc"
-    FontPath        "/usr/share/fonts/75dpi"
-    FontPath        "/usr/share/fonts/100dpi"
-    FontPath        "/usr/share/fonts/TTF"
-    FontPath        "/usr/share/fonts/Type1"
-EndSection
-
-```
-
-Otra solucion es ejecutar la herramienta de administración de openoffice
-
-```
-# /opt/openoffice/program/spadmin
-
-```
-
-Desde la cual se puede agregar fuentes.
-
-**P. Mozilla y otros programas no pueden acceder a fuentes TrueType en el sistema, en vez de eso se revierten a fuentes feas**
-
-R. Asegurarse que el modulo "freetype" esta cargado en el archivo /etc/X11/xorg.conf y en /usr/share/fonts/TTF/fonts.dir se listan todas las fuentes de TrueType que estan instaladas.
-
-Intentar verificar las secciones de "Archivos" en el xorg.conf, y asegurarse que se tienen todos (o varios) estos directorios listados.
-
-```
-Section "Files"
-    RgbPath         "/usr/share/X11/rgb"
-    ModulePath      "/usr/lib/xorg/modules"
-    FontPath        "/usr/share/fonts/misc"
-    FontPath        "/usr/share/fonts/75dpi"
-    FontPath        "/usr/share/fonts/100dpi"
-    FontPath        "/usr/share/fonts/TTF"
-    FontPath        "/usr/share/fonts/Type1"
-EndSection
-
-```
-
-Finalmente, ir al siguiente directorio de fuentes:
-
-```
-/usr/share/fonts/TTF
-/usr/share/fonts
-
-```
-
-Intentar borrando los archivos "fonts.dir" y "fonts.scale" en estos directorios. Se querrá hacer un respaldo de ellos primero. Ejecutar estos comandos para reeplazarlos:
-
-```
-mkfontscale
-mkfontdir
-
-```
-
-Asegurarse de reiniciar X para que los efectos tomen efecto.
-
-**P. Cuales son las fuentes sugeridas para Mozilla/Firefox?**
-
-R. Estas fuentes son recomendadas para Firefox:
-
-```
-Proportional: Serif   Size (pixels): 16
-Serif: Times New Roman
-Sans-serif: Arial
-Monospace: Courier New   Size (pixels): 13
-Display resolution: System settings
-
-```
-
-*   Nota: Times New Roman puede aparecer como una fuente non-TTF. Si este es el caso, leer "como arreglar esto" mas abajo.
-
-Las siguientes son Dropline's predeterminadas de Mozilla (también recomendadas):
-
-```
-Proportional: Serif   Size (pixels): 14
-Serif: Times New Roman
-Sans-serif: Verdana
-Cursive: Andale Mono
-Fantasy: Andale Mono
-Monospace: Courier New   Size (pixels): 11
-Allow Documents to use other fonts: Enabled
-Display resolution: System settings
-
-```
-
-**P. Porqué mis aplicaciones se muestran como cuadrados cuando deberian ser flechas o similares?**
-
-R. Esto puede ayudar a activar las fuentes bitmap. Están desactivadas por defecto.
-
-```
-cd /etc/fonts/conf.d
-rm 10-bitmaps.conf
-ln -s yes-bitmaps.conf 10-bitmaps.conf
-cd -
-
-```
-
-Si tú crees que tus fuentes lucen feas ahora, considera remover los siguiente paquetes:
-
-```
-pacman -Rs xorg-fonts-100dpi xorg-fonts-75dpi
-
-```
-
-Leer [aquí](https://bbs.archlinux.org/viewtopic.php?t=21250) y [aquí](https://bbs.archlinux.org/viewtopic.php?t=18425) para mas información.
-
-**P. Acabo de actualizar via pacman -Syu y todas mis fuentes son feas**
-
-R. Aquí hay varios errores posibles en conflicto. Mirar estos enlaces:
-
-1 - [https://bbs.archlinux.org/viewtopic.php?t=866](https://bbs.archlinux.org/viewtopic.php?t=866)
-
-2 - [https://bbs.archlinux.org/viewtopic.php?t=4975](https://bbs.archlinux.org/viewtopic.php?t=4975)
+## Paquetes de fuente
+
+Esta es una lista selectiva que incluye muchos paquetes de fuentes del [AUR](/index.php/AUR_(Espa%C3%B1ol) "AUR (Español)") junto con los repositorios oficiales. Las fuentes que tiene soporte Unicode están estiquetadas con "Unicode", vea el proyecto o la Wikipedia para más detalles.
+
+El [script Archfonts Python](https://github.com/ternstor/distrofonts) se puede utilizar para generar una visión general de todas las fuentes TTF encontradas en los repositorios oficiales / AUR (la generación de la imagen está hecha utilizando [ttf2png](https://aur.archlinux.org/packages/ttf2png/)).
+
+### Bitmap
+
+*   Por defecto 8x16.
+*   [Dina](http://www.dcmembers.com/jibsen/download/61/) ([dina-font](https://www.archlinux.org/packages/?name=dina-font)) – 6pt, 8pt, 9pt, 10pt, mono espaciado , basada en Proggy.
+*   [Efont](http://openlab.jp/efont/unicode/) ([efont-unicode-bdf](https://aur.archlinux.org/packages/efont-unicode-bdf/)) – 10px, 12px, 14px, 16px, 24px, normal, negrita y itálica.
+*   [Gohu](http://font.gohu.org/) ([gohufont](https://aur.archlinux.org/packages/gohufont/)) – 11px, 14px, normal y negrita.
+*   [Lime](http://artwizaleczapka.sourceforge.net/) ([artwiz-fonts](https://www.archlinux.org/packages/?name=artwiz-fonts)).
+*   [ProFont](http://tobiasjung.name/profont/) ([ttf-profont-iix](https://aur.archlinux.org/packages/ttf-profont-iix/)) – 10px, 11px, 12px, 15px, 17px, 22px, 29px, normal.
+*   [Proggy](https://en.wikipedia.org/wiki/Proggy_programming_fonts "wikipedia:Proggy programming fonts") ([proggyfonts](https://aur.archlinux.org/packages/proggyfonts/)) – tiene diferentes variantes.
+*   [Tamsyn](http://www.fial.com/~scott/tamsyn-font/) ([tamsyn-font](https://www.archlinux.org/packages/?name=tamsyn-font)).
+*   [Terminus](http://terminus-font.sourceforge.net/) ([terminus-font](https://www.archlinux.org/packages/?name=terminus-font)).
+*   [Tewi](https://github.com/lucy/tewi-font) ([bdf-tewi-git](https://aur.archlinux.org/packages/bdf-tewi-git/)).
+*   [Unifont](http://unifoundry.com/unifont.html) (Covetura Unicode [más extensa](https://en.wikipedia.org/wiki/Unicode_font#Comparison_of_fonts "wikipedia:Unicode font") que cualquier fuente) ([bdf-unifont](https://www.archlinux.org/packages/?name=bdf-unifont)).
+
+### Latin script
+
+#### Familias
+
+*   [Luxi fonts](https://en.wikipedia.org/wiki/Luxi_fonts "wikipedia:Luxi fonts") ([font-bh-ttf](https://www.archlinux.org/packages/?name=font-bh-ttf)) – Fuentes Luxi X.Org.
+*   [Bitstream Vera](https://en.wikipedia.org/wiki/es:Bitstream_Vera "wikipedia:es:Bitstream Vera") ([ttf-bitstream-vera](https://www.archlinux.org/packages/?name=ttf-bitstream-vera)) – serif, sans-serif, y mono espaciada.
+*   [Courier Prime](https://quoteunquoteapps.com/courierprime/) ([ttf-courier-prime](https://aur.archlinux.org/packages/ttf-courier-prime/)) – Fuente alternativa Courier optimizada para las pantallas.
+*   [Croscore fonts](https://en.wikipedia.org/wiki/es:Croscore_fonts "wikipedia:es:Croscore fonts") ([ttf-croscore](https://www.archlinux.org/packages/?name=ttf-croscore)) – Sustituto de Google para Arial de Window, Times New Roman, y Courier New.
+*   [DejaVu](https://en.wikipedia.org/wiki/es:DejaVu "wikipedia:es:DejaVu") ([ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu)) – Bitstream Vera modificado para una mayor cobertura de Unicode.
+*   [Droid](https://en.wikipedia.org/wiki/es:Droid "wikipedia:es:Droid") ([ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid)) – Fuente por defecto de las versiones antiguas de Android.
+*   [Roboto](https://en.wikipedia.org/wiki/es:Roboto "wikipedia:es:Roboto") ([ttf-roboto](https://www.archlinux.org/packages/?name=ttf-roboto)) – Fuente por defecto de las versiones nuevas de Android.
+*   [Google Noto](https://en.wikipedia.org/wiki/es:Google_Noto "wikipedia:es:Google Noto") ([noto-fonts](https://www.archlinux.org/packages/?name=noto-fonts)) – Unicode
+*   [Liberation fonts](https://en.wikipedia.org/wiki/es:Liberation_fonts "wikipedia:es:Liberation fonts") ([ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation)) – Fuente libre compatible con la métrica que sustituye las fuentes Arial, Arial Narrow, Times New Roman y Courier New encontradas en Windows y productos de Microsoft Office.
+*   [Ubuntu](https://en.wikipedia.org/wiki/es:Ubuntu_(tipo_de_letra) ([ttf-ubuntu-font-family](https://www.archlinux.org/packages/?name=ttf-ubuntu-font-family))
+*   [Microsoft fonts](/index.php/Microsoft_fonts "Microsoft fonts") ([ttf-ms-win10](https://aur.archlinux.org/packages/ttf-ms-win10/)) – Fuentes de Windows 10.
+
+Paquetes de fuentes licenciadas por Microsoft:
+
+*   [Microsoft fonts](http://corefonts.sourceforge.net/) ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/)) – Andalé Mono, Courier New, Arial, Arial Black, Comic Sans, Impact, Lucida Sans, Microsoft Sans Serif, Trebuchet, Verdana, Georgia, Times New Roman
+*   Vista fonts ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/)) – Consolas, Calibri, Candara, Corbel, Cambria, Constantia
+
+#### Mono espacio
+
+Para más fuentes mono espaciada vea [#Bitmap](#Bitmap) y [#Familias](#Familias).
+
+*   [Anonymous Pro](http://www.marksimonson.com/fonts/view/anonymous-pro) ([ttf-anonymous-pro](https://www.archlinux.org/packages/?name=ttf-anonymous-pro), incluido en [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)).
+*   [Envy Code R](https://damieng.com/blog/2008/05/26/envy-code-r-preview-7-coding-font-released) ([ttf-envy-code-r](https://aur.archlinux.org/packages/ttf-envy-code-r/)).
+*   Fantasque Sans Mono ([ttf-fantasque-sans-git](https://aur.archlinux.org/packages/ttf-fantasque-sans-git/)).
+*   [Fira Mono](https://en.wikipedia.org/wiki/Fira_Sans "wikipedia:Fira Sans") ([ttf-fira-mono](https://www.archlinux.org/packages/?name=ttf-fira-mono), [otf-fira-mono](https://www.archlinux.org/packages/?name=otf-fira-mono)) – diseñado para Firefox OS.
+*   [FreeMono](https://en.wikipedia.org/wiki/es:GNU_FreeFont "wikipedia:es:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont)) - Unicode
+*   [Hack](https://sourcefoundry.org/hack/) ([ttf-hack](https://www.archlinux.org/packages/?name=ttf-hack)) - fuente mono espaciada de código abierto, utilizada por defecto en KDE Plasma.
+*   [Inconsolata](https://en.wikipedia.org/wiki/Inconsolata "wikipedia:Inconsolata") ([ttf-inconsolata](https://www.archlinux.org/packages/?name=ttf-inconsolata), incluida en [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) - inspirado por Consolas.
+*   [Inconsolata-g](https://leonardo-m.livejournal.com/77079.html) ([ttf-inconsolata-g](https://aur.archlinux.org/packages/ttf-inconsolata-g/)) - añade algunas modificaciones familiares para el programador.
+*   [Iosevka](https://be5invis.github.io/Iosevka/) ([ttf-iosevka](https://aur.archlinux.org/packages/ttf-iosevka/)) – Iosevka es un esbelto tipo de letra monospace sans-serif y slab-serif inspirado por Pragmata Pro, M+ y PF DIN Mono, diseñado para ser la fuente ideal para programar.
+*   [Lucida Typewriter](https://en.wikipedia.org/wiki/Lucida_Typewriter "wikipedia:Lucida Typewriter") (incluida en el paquete [jre](https://aur.archlinux.org/packages/jre/)).
+*   [Menlo](https://en.wikipedia.org/wiki/Menlo_(typeface) (derivado: [ttf-meslo](https://aur.archlinux.org/packages/ttf-meslo/)) - fuente mono espaciada por defecto de OS X.
+*   [Monaco](https://en.wikipedia.org/wiki/es:Monaco_(tipograf%C3%ADa) ([ttf-monaco](https://aur.archlinux.org/packages/ttf-monaco/)) - fuente propietaria diseñada por Apple para OS X.
+*   Monofur ([ttf-monofur](https://aur.archlinux.org/packages/ttf-monofur/))
+*   [Mononoki](https://madmalik.github.io/mononoki) ([ttf-mononoki](https://aur.archlinux.org/packages/ttf-mononoki/))
+*   [Source Code Pro](https://en.wikipedia.org/wiki/Source_Code_Pro "wikipedia:Source Code Pro") ([adobe-source-code-pro-fonts](https://www.archlinux.org/packages/?name=adobe-source-code-pro-fonts))
+
+Webs relevantes:
+
+*   [Dan Benjamin's Top 10 fuentes de programación](http://hivelogic.com/articles/top-10-programming-fonts).
+*   [Lista de fuentes de Trevor Lowing](http://www.lowing.org/fonts/) .
+*   [Slant: ¿Cuales son las mejores fuentes de programación?](https://www.slant.co/topics/67/~what-are-the-best-programming-fonts).
+*   [Stack Overflow: Fuentes recomendadas para programar](https://stackoverflow.com/questions/4689/recommended-fonts-for-programming).
+
+#### Sans-serif
+
+*   [Andika](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=andika) ([ttf-andika](https://aur.archlinux.org/packages/ttf-andika/)).
+*   [FreeSans](https://en.wikipedia.org/wiki/es:GNU_FreeFont "wikipedia:es:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont)) - Unicode.
+*   [Inter UI](https://github.com/rsms/inter) ([ttf-inter-ui](https://aur.archlinux.org/packages/ttf-inter-ui/)) – diseñada para las interfaces de usuario.
+*   [Linux Biolinum](https://en.wikipedia.org/wiki/es:Linux_Libertine "wikipedia:es:Linux Libertine") ([ttf-linux-libertine](https://www.archlinux.org/packages/?name=ttf-linux-libertine)) – sustituto libre para Times New Roman.
+*   [PT Sans](https://en.wikipedia.org/wiki/PT_Sans "wikipedia:PT Sans") ([ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) - tres pricipales variantes: normal, estrecho, y subtítulo - Unicode: Latín, Cyrillic
+*   [Source Sans Pro](https://en.wikipedia.org/wiki/Source_Sans_Pro "wikipedia:Source Sans Pro") ([adobe-source-sans-pro-fonts](https://www.archlinux.org/packages/?name=adobe-source-sans-pro-fonts))
+*   [Tahoma](https://en.wikipedia.org/wiki/es:Tahoma "wikipedia:es:Tahoma") ([ttf-tahoma](https://aur.archlinux.org/packages/ttf-tahoma/))
+
+#### Serif
+
+*   [EB Garamond](http://www.georgduffner.at/ebgaramond/) ([otf-eb-garamond](https://aur.archlinux.org/packages/otf-eb-garamond/)).
+*   [FreeSerif](https://en.wikipedia.org/wiki/es:GNU_FreeFont "wikipedia:es:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont)) - Unicode.
+*   [Gentium](https://en.wikipedia.org/wiki/es:Gentium "wikipedia:es:Gentium") ([ttf-gentium](https://www.archlinux.org/packages/?name=ttf-gentium)) - Unicode: Latin, Greek, Cyrillic, Phonetic Alphabet.
+*   [Linux Libertine](https://en.wikipedia.org/wiki/es:Linux_Libertine "wikipedia:es:Linux Libertine") ([ttf-linux-libertine](https://www.archlinux.org/packages/?name=ttf-linux-libertine)) - Unicode: Latin, Greek, Cyrillic, Hebrew.
+
+#### Sin clasificación
+
+*   [ttf-cheapskate](https://www.archlinux.org/packages/?name=ttf-cheapskate) - Coleccion de fuentes de *dustismo.com*.
+*   [ttf-junicode](https://www.archlinux.org/packages/?name=ttf-junicode) - Fuente Junius que contiene casi todos los script y glifos medivales.
+*   [ttf-mph-2b-damase](https://www.archlinux.org/packages/?name=ttf-mph-2b-damase) - Cubre el primer plano completo y muchos scripts.
+*   [xorg-fonts-type1](https://www.archlinux.org/packages/?name=xorg-fonts-type1) - Conjuntos IBM Courier y Adobe Utopia del [tipo de letra PostScript](https://en.wikipedia.org/wiki/es:Tipo_de_letra_PostScript "wikipedia:es:Tipo de letra PostScript").
+*   [all-repository-fonts](https://aur.archlinux.org/packages/all-repository-fonts/) - Meta paquete para todas las fuentes de los repositorios oficiales.
+*   [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/) - una enorme colección de fuentes libres (incluye Ubuntu, Inconsolata, Roboto, etc.) - Nota: Su diálogo de fuentes puede ser muy grande ya que se añadirán más de cien fuentes.

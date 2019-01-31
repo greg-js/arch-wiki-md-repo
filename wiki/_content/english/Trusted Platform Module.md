@@ -7,37 +7,30 @@ TPM is naturally supported only on devices that have TPM hardware support. If yo
 ## Contents
 
 *   [1 Versions](#Versions)
-*   [2 Drivers](#Drivers)
-*   [3 Usage](#Usage)
-    *   [3.1 Basics](#Basics)
-    *   [3.2 Securing SSH Keys](#Securing_SSH_Keys)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 tcsd.service failed to start](#tcsd.service_failed_to_start)
-*   [5 See also](#See_also)
+*   [2 Using TPM 1.2](#Using_TPM_1.2)
+    *   [2.1 Drivers](#Drivers)
+    *   [2.2 Usage](#Usage)
+    *   [2.3 Basics](#Basics)
+    *   [2.4 Securing SSH Keys](#Securing_SSH_Keys)
+*   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 tcsd.service failed to start](#tcsd.service_failed_to_start)
+*   [4 See also](#See_also)
 
 ## Versions
 
-**Note:** Support for TPM 2.0 is lacking.
+There are two very different TPM specifications: 1.2 and 2.0, which also use different software stacks.
 
-Current attempts to run `tcsd` on a system with TPM 2.0 will result in the following:
+- TPM 1.2 uses the "TrouSerS" TSS (TCG software stack) by IBM, which is packaged as [trousers](https://aur.archlinux.org/packages/trousers/) (tcsd) and [tpm-tools](https://aur.archlinux.org/packages/tpm-tools/) (userspace). All software access the TPM through the *tcsd* daemon.
 
-```
-# cat /sys/class/tpm/tpm0/device/description 
-TPM 2.0 Device
+- TPM 2.0 allows direct access via `/dev/tpm0` (one client at a time), managed access through the [tpm2-abrmd](https://www.archlinux.org/packages/?name=tpm2-abrmd) resource manager daemon, or kernel-managed access via `/dev/tpmrm0`. There are two choices of userspace tools, [tpm2-tools](https://www.archlinux.org/packages/?name=tpm2-tools) by Intel and [ibm-tss](https://aur.archlinux.org/packages/ibm-tss/) by IBM.
 
-```
+TPM 2.0 requires UEFI (native); BIOS or CSM systems can only use TPM 1.2.
 
-```
-# tcsd -f
-TCSD TDDL ioctl: (25) Inappropriate ioctl for device
-TCSD TDDL Falling back to Read/Write device support.
-TCSD TCS ERROR: TCS GetCapability failed with result = 0x1e
+Some TPM chips can be switched between 1.2 and 2.0 through a firmware upgrade (which can be done only a limited number of times).
 
-```
+## Using TPM 1.2
 
-The rest of this article will focus only on TPM 1.2
-
-## Drivers
+### Drivers
 
 TPM drivers are natively supported in modern kernels, but might need to be loaded:
 
@@ -53,9 +46,9 @@ Depending on your chipset, you might also need to load one of the following:
 
 ```
 
-## Usage
+### Usage
 
-TPM is managed by `tcsd`, a userspace daemon that manages Trusted Computing resources and should be (according to the TSS spec) the only portal to the TPM device driver. `tcsd` is part of the [trousers](https://aur.archlinux.org/packages/trousers/) AUR package, which was created and released by IBM, and can be configured via `/etc/tcsd.conf`.
+TPM 1.2 is managed by `tcsd`, a userspace daemon that manages Trusted Computing resources and should be (according to the TSS spec) the only portal to the TPM device driver. `tcsd` is part of the [trousers](https://aur.archlinux.org/packages/trousers/) AUR package, which was created and released by IBM, and can be configured via `/etc/tcsd.conf`.
 
 To start tcsd and watch the output, run:
 
@@ -146,7 +139,7 @@ $ ssh-keygen -D /usr/lib/libsimple-tpm-pk11.so
 
 ### tcsd.service failed to start
 
-The `tcsd.service` service may not start correctly due to permission issues.[[2]](https://bugs.launchpad.net/ubuntu/+source/trousers/+bug/963587/comments/3). It is possible to fix this using:
+The `tcsd.service` service may not start correctly due to permission issues.[[1]](https://bugs.launchpad.net/ubuntu/+source/trousers/+bug/963587/comments/3). It is possible to fix this using:
 
 ```
 # chown tss:tss /dev/tpm*

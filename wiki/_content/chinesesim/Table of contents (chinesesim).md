@@ -141,7 +141,7 @@
 | <small>7.11.</small> [X server](/index.php/Category:X_server_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:X server (简体中文)") <small>(28)</small> |
 | <small>7.11.1.</small> [Xorg commands](/index.php/Category:Xorg_commands_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Xorg commands (简体中文)") <small>(1) (同时还属于 [Commands](/index.php/Category:Commands_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Commands (简体中文)"))</small> |
 | <small>8.</small> [系统管理](/index.php/Category:System_administration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:System administration (简体中文)") <small>(6)</small> |
-| <small>8.1.</small> [Backup](/index.php/Category:Backup_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Backup (简体中文)") <small>(1)</small> |
+| <small>8.1.</small> [Backup](/index.php/Category:Backup_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Backup (简体中文)") <small>(2)</small> |
 | <small>8.2.</small> [Command-line](/index.php/Category:Command-line_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Command-line (简体中文)") <small>(3) (同时还属于 [应用程序](/index.php/Category:Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Applications (简体中文)"))</small> |
 | <small>8.2.1.</small> [Commands](/index.php/Category:Commands_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Commands (简体中文)") <small>(0)</small> |
 | <small>8.2.1.1.</small> [Xorg commands](/index.php/Category:Xorg_commands_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Xorg commands (简体中文)") <small>(1) (同时还属于 [X server](/index.php/Category:X_server_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:X server (简体中文)"))</small> |

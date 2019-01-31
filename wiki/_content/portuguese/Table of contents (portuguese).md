@@ -65,7 +65,7 @@
 | <small>5.8.1.</small> [Web applications](/index.php/Category:Web_applications_(Portugu%C3%AAs) "Category:Web applications (Português)") <small>(0) (também em [Applications](/index.php/Category:Applications_(Portugu%C3%AAs) "Category:Applications (Português)"))</small> |
 | <small>5.8.1.1.</small> [Web admin interfaces](/index.php/Category:Web_admin_interfaces_(Portugu%C3%AAs) "Category:Web admin interfaces (Português)") <small>(1)</small> |
 | <small>5.8.2.</small> [Web server](/index.php/Category:Web_server_(Portugu%C3%AAs) "Category:Web server (Português)") <small>(0) (também em [Servers](/index.php/Category:Servers_(Portugu%C3%AAs) "Category:Servers (Português)"))</small> |
-| <small>5.9.</small> [Wireless networking](/index.php/Category:Wireless_networking_(Portugu%C3%AAs) "Category:Wireless networking (Português)") <small>(1)</small> |
+| <small>5.9.</small> [Wireless networking](/index.php/Category:Wireless_networking_(Portugu%C3%AAs) "Category:Wireless networking (Português)") <small>(2)</small> |
 | <small>6.</small> [Software](/index.php/Category:Software_(Portugu%C3%AAs) "Category:Software (Português)") <small>(0)</small> |
 | <small>6.1.</small> [Command-line](/index.php/Category:Command-line_(Portugu%C3%AAs) "Category:Command-line (Português)") <small>(4) (também em [Administração do sistema](/index.php/Category:System_administration_(Portugu%C3%AAs) "Category:System administration (Português)"))</small> |
 | <small>6.1.1.</small> [Command shells](/index.php/Category:Command_shells_(Portugu%C3%AAs) "Category:Command shells (Português)") <small>(1) (também em [Programming languages](/index.php/Category:Programming_languages_(Portugu%C3%AAs) "Category:Programming languages (Português)"))</small> |

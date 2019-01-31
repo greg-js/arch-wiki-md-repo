@@ -25,6 +25,7 @@
         *   [3.5.1 Open-with extension](#Open-with_extension)
 *   [4 小技巧](#小技巧)
     *   [4.1 网页截图](#网页截图)
+    *   [4.2 获取cookie信息](#获取cookie信息)
 *   [5 疑难解答](#疑难解答)
     *   [5.1 Firefox 启动时间太长](#Firefox_启动时间太长)
     *   [5.2 字体问题](#字体问题)
@@ -215,6 +216,12 @@ screenshot *filename*
 screenshot --fullpage *filename*
 
 ```
+
+### 获取cookie信息
+
+使用快捷键Shift+F9打开开发者工具，在Storage下面的Cookies选项中有当前网页的cookie详细信息，比如：igneous，ipb_member_id，ipb_pass_hash等。
+
+如果Cookies里面空的就说明这个网页没有使用cookie。
 
 ## 疑难解答
 

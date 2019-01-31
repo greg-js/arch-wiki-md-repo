@@ -1,5 +1,3 @@
-**翻译状态：** 本文是英文页面 [Deepin_Desktop_Environment](/index.php/Deepin_Desktop_Environment "Deepin Desktop Environment") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-10-02，点击[这里](https://wiki.archlinux.org/index.php?title=Deepin_Desktop_Environment&diff=0&oldid=545101)可以查看翻译后英文页面的改动。
-
 [深度桌面环境](https://www.deepin.org/dde/) (Deepin Desktop Environment, DDE) 是 Linux 发行版 Deepin 的桌面环境。
 
 ## Contents
@@ -8,9 +6,12 @@
 *   [2 启动](#启动)
     *   [2.1 通过显示管理器](#通过显示管理器)
     *   [2.2 通过 xinit](#通过_xinit)
-*   [3 故障排除](#故障排除)
-    *   [3.1 从待机状态恢复后没有背景](#从待机状态恢复后没有背景)
-*   [4 报告 Bug](#报告_Bug)
+*   [3 配置](#配置)
+    *   [3.1 自定义触摸板手势](#自定义触摸板手势)
+*   [4 故障排除](#故障排除)
+    *   [4.1 从待机状态恢复后没有背景](#从待机状态恢复后没有背景)
+    *   [4.2 无线网络无法连接](#无线网络无法连接)
+*   [5 报告 Bug](#报告_Bug)
 
 ## 安装
 
@@ -44,6 +45,21 @@ greeter-session=lightdm-deepin-greeter
 Execute `startx` or `xinit` to start DDE.
 
 **Note:** 如果你想在开机时自动启动xorg，请参阅 [Start X at login](/index.php/Start_X_at_login "Start X at login") .
+
+## 配置
+
+### 自定义触摸板手势
+
+deepin官方没有提供自定义触摸板手势，但我们可以通过修改配置文件的方式来自定义触摸板。
+
+配置文件目录：
+
+```
+/usr/share/dde-daemon/gesture.json
+
+```
+
+设置完后注销或重启使其生效
 
 ## 故障排除
 
@@ -89,6 +105,17 @@ deepin-wm --replace
 ```
 
 第一个命令使你创建的脚本可执行，第二个命令确保服务始终在开机时启动，最后一个命令使服务立即启动，因此你可以测试解决方法而无需重启。
+
+### 无线网络无法连接
+
+网络管理器会随即生成并设置MAC地址。这是默认选项，如果要禁止它，将下面的几行加入到网络管理器的配置文件中。
+
+ `/etc/NetworkManager/NetworkManager.conf` 
+```
+[device]
+wifi.scan-rand-mac-address=no
+
+```
 
 ## 报告 Bug
 

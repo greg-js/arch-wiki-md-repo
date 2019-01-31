@@ -68,16 +68,17 @@ PC speaker capability is included. See [PC speaker](/index.php/PC_speaker "PC sp
 
 ### Wireless
 
-You may find out which wireless network card you have with:
+It has been reported to have Broadcom BCM43228, which can be confirmed as seen below:
 
 ```
-$ lspci | grep Broadcom | grep -v Ethernet
+ $ lspci | grep Broadcom | grep -v Ethernet
+ 02:00.0 Network controller: Broadcom Inc. and subsidiaries BCM43228 802.11a/b/g/n
 
 ```
 
-It seems this laptop may have BCM5761 or BCM43228.
+This network card requires the open source b43 together with blob firmware [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/), or the proprietary wl module via [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl) or [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms).
 
-In both cases, you will need the proprietary driver [broadcom-wl](/index.php/Broadcom_wireless#broadcom-wl "Broadcom wireless").
+See [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") for more info.
 
 ## Troubleshooting
 

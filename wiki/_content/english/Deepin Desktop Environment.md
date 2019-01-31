@@ -12,10 +12,12 @@ The [Deepin Desktop Environment](https://www.deepin.org/en/?language=en) (DDE) i
 *   [2 Starting](#Starting)
     *   [2.1 Via a display manager](#Via_a_display_manager)
     *   [2.2 Via xinit](#Via_xinit)
-*   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 No background after resuming from standby](#No_background_after_resuming_from_standby)
-    *   [3.2 Wireless network does not connect](#Wireless_network_does_not_connect)
-*   [4 Bug reporting](#Bug_reporting)
+*   [3 Configuration](#Configuration)
+    *   [3.1 Customize the touchpad gesture](#Customize_the_touchpad_gesture)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 No background after resuming from standby](#No_background_after_resuming_from_standby)
+    *   [4.2 Wireless network does not connect](#Wireless_network_does_not_connect)
+*   [5 Bug reporting](#Bug_reporting)
 
 ## Installation
 
@@ -45,6 +47,19 @@ Note that a valid home directory must exist for a user other than root for the g
 To use Deepin via [xinit](/index.php/Xinit "Xinit"), you'll need to add the following to your .xinitrc file.
 
  `~/.xinitrc`  `exec startdde` 
+
+## Configuration
+
+### Customize the touchpad gesture
+
+Deepin doesn't officially support customize the gesture, but we can do it by changing the configuration file. Configuration file directory:
+
+```
+/usr/share/dde-daemon/gesture.json
+
+```
+
+Reboot or re-login after you edit the file.
 
 ## Troubleshooting
 

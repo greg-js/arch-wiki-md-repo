@@ -6,6 +6,8 @@
 *   [2 Older Versions (Not fully working)](#Older_Versions_(Not_fully_working))
     *   [2.1 Kinetic](#Kinetic)
 *   [3 catkin_make](#catkin_make)
+    *   [3.1 Using Catkin with an IDE](#Using_Catkin_with_an_IDE)
+        *   [3.1.1 CLion](#CLion)
 *   [4 catkin build](#catkin_build)
 *   [5 Rebuild when shared libraries are updated](#Rebuild_when_shared_libraries_are_updated)
 *   [6 Ros 2](#Ros_2)
@@ -36,6 +38,26 @@ Note that catkin uses python2, and therefore catkin_make may fail unless it expl
 alias catkin_make="catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python2 -DPYTHON_INCLUDE_DIR=/usr/include/python2.7 -DPYTHON_LIBRARY=/usr/lib/libpython2.7.so"
 
 ```
+
+Another way is to use [python-catkin_tools](https://aur.archlinux.org/packages/python-catkin_tools/) and to configure it by running the following command in your Catkin workspace.
+
+```
+catkin config --cmake-args -DPYTHON_EXECUTABLE=/usr/bin/python
+
+```
+
+### Using Catkin with an IDE
+
+#### CLion
+
+To make [CLion](https://aur.archlinux.org/packages/CLion/) support ROS packages, you can change the `Exec` parameter of its desktop file ( `~/.local/share/applications/jetbrains-clion.desktop`) as follows.
+
+```
+Exec=bash -i -c "source /home/[username]/catkin_ws/devel/setup.sh;/opt/clion/bin/clion.sh" %f
+
+```
+
+However, `/home/[username]/catkin_ws` must be exchanged with your Catkin workspace. You can now open a Catkin project without [cmake](https://www.archlinux.org/packages/?name=cmake) complaining about missing packages, hopefully.
 
 ## catkin build
 

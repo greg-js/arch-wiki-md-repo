@@ -47,7 +47,7 @@ This article describes how to set up nginx and how to optionally integrate it wi
 
 [Install](/index.php/Install "Install") the package [nginx-mainline](https://www.archlinux.org/packages/?name=nginx-mainline) (mainline branch: new features, updates, bugfixes) or [nginx](https://www.archlinux.org/packages/?name=nginx) (stable branch: major bugfixes only).
 
-Using the mainline branch is recommended. The main reason to use the stable branch is that you are concerned about possible impacts of new features, such as incompatibility with third-party modules or the inadvertent introduction of bugs in new features [[1]](https://www.nginx.com/blog/nginx-1-6-1-7-released/).
+Using the mainline branch is recommended. The main reason to use the stable branch is that you are concerned about possible impacts of new features, such as incompatibility with third-party modules or the inadvertent introduction of bugs in [new features](https://nginx.org/en/download.html).
 
 **Note:** All nginx modules available in the [official repositories](/index.php/Official_repositories "Official repositories") require the *nginx* package (as opposed to *nginx-mainline*) as a dependency. It may be wise to review the list of modules for any you might need/want before making the *nginx* vs *nginx-mainline* decision. Modules for *nginx-mainline* can be found in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
@@ -281,7 +281,7 @@ To remove a `server`:
 *   Mozilla has a useful [TLS article](https://wiki.mozilla.org/Security/Server_Side_TLS "mozillawiki:Security/Server Side TLS") as well as an [automated tool](https://mozilla.github.io/server-side-tls/ssl-config-generator/) to help create a more secure configuration.
 *   [Cipherli.st](https://cipherli.st) provides strong TLS implementation examples and tutorial for most modern webservers.
 
-**Warning:** If you plan on implementing TLS, know that some variations and implementations are [still vulnerable to attack](https://en.wikipedia.org/wiki/Transport_Layer_Security#Attacks_against_TLS.2FSSL "wikipedia:Transport Layer Security")[[2]](https://weakdh.org/#affected). For details on these current vulnerabilities within TLS and how to apply appropriate changes to nginx, visit [https://weakdh.org/sysadmin.html](https://weakdh.org/sysadmin.html)
+**Warning:** If you plan on implementing TLS, know that some variations and implementations are [still vulnerable to attack](https://en.wikipedia.org/wiki/Transport_Layer_Security#Attacks_against_TLS.2FSSL "wikipedia:Transport Layer Security")[[1]](https://weakdh.org/#affected). For details on these current vulnerabilities within TLS and how to apply appropriate changes to nginx, visit [https://weakdh.org/sysadmin.html](https://weakdh.org/sysadmin.html)
 
 Create a private key and self-signed certificate. This is adequate for most installations that do not require a [CSR](/index.php/OpenSSL#Generate_a_certificate_signing_request "OpenSSL"):
 
@@ -402,7 +402,7 @@ Finally, [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Star
 
 ###### Adding to main configuration
 
-When serving a PHP web-application, a `location` for PHP-FPM should to be included in each [server block](/index.php/Nginx#Server_blocks "Nginx") [[3]](https://www.nginx.com/resources/wiki/start/topics/examples/phpfcgi/), e.g.:
+When serving a PHP web-application, a `location` for PHP-FPM should to be included in each [server block](/index.php/Nginx#Server_blocks "Nginx") [[2]](https://www.nginx.com/resources/wiki/start/topics/examples/phpfcgi/), e.g.:
 
  `/etc/nginx/sites-available/example` 
 ```
@@ -860,7 +860,7 @@ Now we should be good to go. Go ahead and [start](/index.php/Start "Start") ngin
 
 ### Alternative script for systemd
 
-On pure systemd you can get advantages of chroot + systemd. [[4]](http://0pointer.de/blog/projects/changing-roots.html) Based on set [user group](http://wiki.nginx.org/CoreModule#user) an pid on:
+On pure systemd you can get advantages of chroot + systemd. [[3]](http://0pointer.de/blog/projects/changing-roots.html) Based on set [user group](http://wiki.nginx.org/CoreModule#user) an pid on:
 
  `/etc/nginx/nginx.conf` 
 ```
@@ -984,7 +984,7 @@ When starting the `nginx.service`, the process might log the message:
 
 ```
 
-To fix this warning, increase the values for these keys inside the `http` block [[5]](http://nginx.org/en/docs/http/ngx_http_core_module.html#types_hash_max_size) [[6]](http://nginx.org/en/docs/http/server_names.html):
+To fix this warning, increase the values for these keys inside the `http` block [[4]](http://nginx.org/en/docs/http/ngx_http_core_module.html#types_hash_max_size) [[5]](http://nginx.org/en/docs/http/server_names.html):
 
  `/etc/nginx/nginx.conf` 
 ```
@@ -1011,6 +1011,7 @@ To start nginx after all configured network devices are up and assigned an IP ad
 
 ## See also
 
+*   [WebDAV with nginx](/index.php/WebDAV#Nginx "WebDAV")
 *   [nginx configuration pitfalls](https://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/)
 *   [Very good in-depth 2014 look at nginx security and Reverse Proxying](https://calomel.org/nginx.html)
 *   [Installing LEMP (nginx, PHP, MySQL with MariaDB engine and PhpMyAdmin) in Arch Linux](http://www.tecmint.com/install-nginx-php-mysql-with-mariadb-engine-and-phpmyadmin-in-arch-linux/)

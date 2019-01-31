@@ -241,6 +241,8 @@ user ALL=(ALL) NOPASSWD: /usr/bin/psd-overlay-helper
 
 See the example in the PREVIEW MODE section above which shows a system using overlayfs to illustrate the memory savings that can be achieved. Note the "overlayfs size" report compared to the total "profile size" report for each profile. Be aware that these numbers will change depending on how much data is written to the profile, but in common use cases the overlayfs size will always be less than the profile size.
 
+**Warning:** Usage of *psd* in overlayfs mode (in particular, *psd-overlay-helper*) may lead to privilege escalation. [[1]](https://github.com/graysky2/profile-sync-daemon/issues/235)
+
 ### I need more memory to accommodate my profile/profiles in /run/user/xxxx. How can I allocate more?
 
 The standard way of controlling the size of /run/user is the RuntimeDirectorySize directive in `/etc/systemd/logind.conf` (see the man page for logind.conf for more). By default, 10% of physical memory is used but one can increase it safely. Remember that tmpfs only consumes what is actually used; the number specified here is just a maximum allowed.

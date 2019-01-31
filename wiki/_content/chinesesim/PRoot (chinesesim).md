@@ -1,3 +1,5 @@
+**翻译状态：** 本文是英文页面 [PRoot](/index.php/PRoot "PRoot") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-01-31，点击[这里](https://wiki.archlinux.org/index.php?title=PRoot&diff=0&oldid=560586)可以查看翻译后英文页面的改动。
+
 [PRoot](https://proot-me.github.io)是一个能在用户空间内运行的程序, 功能类似于[chroot](/index.php/Chroot "Chroot"), `mount --bind`和 binfmt_misc , 能让root用户使用备用根目录运行程序, 就像chroot "jail"一样。 PRoot在由于缺少root权限而无法使用chroot的情况下尤其有用。
 
 ## 安装

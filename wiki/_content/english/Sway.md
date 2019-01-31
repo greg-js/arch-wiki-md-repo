@@ -232,7 +232,7 @@ read lcd < /tmp/lcd
 
 ### Application launchers
 
-i3-dmenu-desktop, [j4-dmenu-desktop](https://aur.archlinux.org/packages/j4-dmenu-desktop/), [dmenu](https://www.archlinux.org/packages/?name=dmenu), and [rofi](https://www.archlinux.org/packages/?name=rofi) all function relatively well in Sway, but all run under XWayland and suffer from the safe issue where they can become unresponsive if the cursor is moved to a native Wayland window. Moving the cursor to an XWayland window and pressing Escape should fix the issue, and sometimes running `pkill` does too.
+i3-dmenu-desktop, [j4-dmenu-desktop](https://aur.archlinux.org/packages/j4-dmenu-desktop/), [dmenu](https://www.archlinux.org/packages/?name=dmenu), and [rofi](https://www.archlinux.org/packages/?name=rofi) all function relatively well in Sway, but all run under XWayland and suffer from the same issue where they can become unresponsive if the cursor is moved to a native Wayland window. Moving the cursor to an XWayland window and pressing Escape should fix the issue, and sometimes running `pkill` does too.
 
 One alternative is bemenu, which is a native Wayland dmenu replacement.
 

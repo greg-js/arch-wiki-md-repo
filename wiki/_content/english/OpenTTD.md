@@ -146,4 +146,5 @@ musicdriver = "extmidi:cmd=/home/<user>/openttd/playmidi"
 ## See also
 
 *   [OpenTTD](http://www.openttd.org)
+*   [OpenTTD FAQ](https://wiki.openttd.org/FAQ_troubleshooting)
 *   [OpenTTD Wiki](http://wiki.openttd.org/Main_Page)

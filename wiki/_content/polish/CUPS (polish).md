@@ -1,124 +1,95 @@
 ## Contents
 
-*   [1 Wstęp](#Wst.C4.99p)
-*   [2 Instalacja wymaganych pakietów i sterownika drukarki](#Instalacja_wymaganych_pakiet.C3.B3w_i_sterownika_drukarki)
+*   [1 Wstęp](#Wstęp)
+*   [2 Instalacja](#Instalacja)
 *   [3 Konfiguracja](#Konfiguracja)
-    *   [3.1 Drukarka USB](#Drukarka_USB)
-    *   [3.2 Drukarka LPT](#Drukarka_LPT)
-*   [4 Interfejs konfiguracyjny Web i jego narzędzia](#Interfejs_konfiguracyjny_Web_i_jego_narz.C4.99dzia)
-*   [5 Alternatywne interfejsy CUPS](#Alternatywne_interfejsy_CUPS)
-*   [6 Informacje końcowe](#Informacje_ko.C5.84cowe)
+    *   [3.1 USB](#USB)
+    *   [3.2 Parallel port](#Parallel_port)
+    *   [3.3 Sieć](#Sieć)
+*   [4 Sterowniki](#Sterowniki)
+    *   [4.1 CUPS](#CUPS)
+    *   [4.2 Foomatic](#Foomatic)
+    *   [4.3 Dedykowane sterowniki do drukarek](#Dedykowane_sterowniki_do_drukarek)
+*   [5 Interfejs konfiguracyjny Web i jego narzędzia](#Interfejs_konfiguracyjny_Web_i_jego_narzędzia)
+*   [6 Alternatywne interfejsy CUPS](#Alternatywne_interfejsy_CUPS)
+*   [7 Informacje końcowe](#Informacje_końcowe)
 
 ## Wstęp
 
 CUPS (Common UNIX Printing System) jest nowoczesnym, przenośnym systemem obsługi urządzeń drukujących dla systemów bazujących na architekturze UNIX.
 
-## Instalacja wymaganych pakietów i sterownika drukarki
+## Instalacja
 
-Na początek zainstaluj podstawowe pakiety:
+[Zainstaluj](/index.php/Zainstaluj "Zainstaluj") [cups](https://www.archlinux.org/packages/?name=cups).
 
-```
-# pacman -S cups ghostscript gsfonts
+Jeżeli chcesz zapisać wydruk jako dokument PDF, zainstaluj także [cups-pdf](https://www.archlinux.org/packages/?name=cups-pdf). Domyślnie, pliki pdf znajdują się w `/var/spool/cups-pdf/$USER`. Ta lokalizacja może zostać zmieniona w `/etc/cups/cups-pdf.conf`.
 
-```
-
-Aby uruchomić `cups`, wpisz:
-
-```
-# /etc/rc.d/cups start
-
-```
-
-Aby `cups` ładował się przy każdym uruchomieniu systemu, dodajmy odpowiedni wpis do sekcji DAEMONS w `/etc/rc.conf`:
-
- `/etc/rc.conf`  `DAEMONS=(... cups ...)` 
-
-Następnie wybierz odpowiedni sterownik do swojej drukarki i go także zainstaluj:
-
-*   [gutenprint](https://www.archlinux.org/packages/?name=gutenprint) - sterowniki do drukarek Canon, Epson, Lexmark, Sony, Olympus.
-*   [hplip](https://www.archlinux.org/packages/?name=hplip) - sterowki do drukarek firmy HP.
-*   [splix](https://www.archlinux.org/packages/?name=splix) - sterowki do drukarek firmy Samsung.
-*   [cups-pdf](https://www.archlinux.org/packages/?name=cups-pdf) - pakiet, który pozwala na konfigurację wirtualnej drukarki PDF tworzącej dokumenty o tym właśnie formacie.
-
-W przypadku, gdy drukarka pomimo zainstalowanych wymaganych pakietów nie działa, spróbuj zainstalować wszystkie sterowniki. Zdarzają się bowiem takie sytuacje, że drukarki mogą działać na innych sterownikach. Na przykład do prawidłowego działania drukarki Brother HL-2140 wymagany jest pakiet `hplip`.
+[Enable](/index.php/Enable "Enable") oraz [start](/index.php/Start "Start") dla serwisu `org.cups.cupsd.service`.
 
 ## Konfiguracja
 
-Teraz, kiedy już masz zainstalowane podstawowe pakiety do obsługi drukarki, możesz przejść do etapu jej konfiguracji. W środowiskach graficznych, takich jak GNOME czy KDE, znajdziesz przydatne programy, które mogą pomóc w zarządzania drukarką. Jako, że nie wszyscy używają tych środowisk, poniższa konfiguracja koncentruje się na zastosowaniach dostarczonych przez interfejs sieciowy `cups`.
+Dodatkowe kroki w celu wykrycia drukarki są podane poniżej dla konkretnych interfejsów.
 
-### Drukarka USB
+**Note:**
 
-Użytkownicy podłączający swoją drukarkę za pomocą USB mogą być zmuszeni do wyłączenia modułu `usblp`, choć i tu są wyjątki - drukarki Epson i Canon nie zostaną rozpoznane bez niego. Aby wyłączyć `usblp`, dodaj do `/etc/rc.conf` odpowiedni wpis:
+*   Programy pomocnicze używają użytkownika i grupy `cups`. Dzięki temu mają dostęp do sterowników drukarki i plików konfiguracyjnych w `/etc/cups/`, które należą do grupy `cups`.
+*   Przed [cups](https://www.archlinux.org/packages/?name=cups) 2.2.6-2, grupa `lp` [była używana zamiast grupy cups](https://git.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/cups&id=a209bf21797a239c7ddb4614f0266ba1e5238622). Po aktualizacji `/etc/cups` powinna należeć do grupy `cups` oraz w pliku konfiguracyjnym `/etc/cups/cups-files.conf` powinny się znaleźć `User 209` i `Group 209`.
 
- `/etc/rc.conf`  `MODULES=(... !usblp ...)` 
+### USB
 
-Jeżeli posiadasz skompilowany przez siebie kernel, możesz potrzebować ręcznie załadować moduł `usbcore`:
+By sprawdzić, czy drukarka USB jest wykrywana:
 
+ `$ lsusb` 
 ```
-# modprobe usbcore
-
-```
-
-Gdy moduły są już zainstalowane, podłącz drukarkę i sprawdź, czy system ją wykrywa:
-
-```
-# tail /var/log/messages.log
+(...)
+Bus 001 Device 007: ID 03f0:1004 Hewlett-Packard DeskJet 970c/970cse
 
 ```
 
-albo
+### Parallel port
 
+By użyć Parallel portu, wymagane są moduły `lp`, `parport` i `parport_pc` [kernel modules](/index.php/Kernel_modules "Kernel modules").
+
+ `$ dmesg | grep -i parport` 
 ```
-# dmesg
-
-```
-
-Jeśli używasz `usblp`, wynik powinien wskazywać wykrycie drukarki, jak na poniższym przykładzie:
-
-```
-Feb 19 20:17:11 kernel: printer.c: usblp0: USB Bidirectional
-printer dev 2 if 0 alt 0 proto 2 vid 0x04E8 pid 0x300E
-Feb 19 20:17:11 kernel: usb.c: usblp driver claimed interface cfef3920
-Feb 19 20:17:11 kernel: printer.c: v0.13: USB Printer Device Class driver
+ parport0: Printer, Hewlett-Packard HP LaserJet 2100 Series
+ lp0: using parport0 (polling)
 
 ```
 
-Jeśli wyłączyłeś `usblp` w `/etc/rc.conf`, otrzymasz wynik:
+### Sieć
 
-```
-usb 3-2: new full speed USB device using uhci_hcd and address 3
-usb 3-2: configuration #1 chosen from 1 choice
+[Avahi](/index.php/Avahi "Avahi") może zostać użyty do wykrycia drukarek w sieci lokalnej. By użyć hostname [Avahi](/index.php/Avahi "Avahi"), uzyskaj adres [hostname.local](/index.php/Avahi#Hostname_resolution "Avahi") i zainicjuj [restart](/index.php/Restart "Restart") `org.cups.cupsd.service`.
 
-```
+Jeżeli łączysz się drukarkę przez protokół [Samba](/index.php/Samba "Samba"), lub system ma być serwerem drukarki dla klientów Windows, zainstaluj pakiet [samba](https://www.archlinux.org/packages/?name=samba).
 
-### Drukarka LPT
+## Sterowniki
 
-Jeśli planujesz połączyć drukarkę za pomocą portu równoległego, musisz załadować poniższe moduły:
+Sterowniki mogą pochodzić z wielu źródeł. Sprawdź [CUPS/Printer-specific problems](/index.php/CUPS/Printer-specific_problems "CUPS/Printer-specific problems") by zobaczyć niekompletną listę sterowników, które zadziałały innym.
 
-```
-# modprobe lp
-# modprobe parport
-# modprobe parport_pc
+Do obsługi drukarki CUPS potrzebuje pliku PPD i dla większości drukarek [niektórych filtrów](https://www.cups.org/doc/man-filter.html). W celu dowiedzenia się jak CUPS używa plików PPD i filtrów, sprawdź [[1]](https://www.cups.org/doc/postscript-driver.html).
 
-```
+Lista [OpenPrinting Printer List](http://www.openprinting.org/printers) zawiera rekomendacje sterowników dla wielu drukarek. Dostarcza także plików PPD dla każdej drukarki, choć większość jest dostępna w [foomatic](#Foomatic) lub rekomendowanym pakiecie sterownika.
 
-Sprawdź, czy system wykrywa drukarkę:
+Kiedy dostarczysz plik PPD do CUPS, serwer CUPS zapisze go w `/etc/cups/ppd/`.
 
-```
-# tail /var/log/messages.log
+### CUPS
 
-```
+CUPS zawiera niektóre pliki PPD i filtry w standardzie, co powinno wystarczyć w większości przypadków. CUPS wspiera [AirPrint](https://en.wikipedia.org/wiki/AirPrint "wikipedia:AirPrint") i [IPP Everywhere](http://www.pwg.org/ipp/everywhere.html).
 
-Powinieneś otrzymać:
+### Foomatic
 
-```
-lp0: using parport0 (polling).
+Projekt [foomatic](https://wiki.linuxfoundation.org/openprinting/database/foomatic) dostarcza PPD dla wielu sterowników drukarek, zarówno wolnych jak niewolnych. By dowiedzieć się jak działa foomatic, sprawdź [Foomatic from the Developer's View](http://www.openprinting.org/download/kpfeifle/LinuxKongress2002/Tutorial/IV.Foomatic-Developer/IV.tutorial-handout-foomatic-development.html).
 
-```
+By używać foomatic, [Zainstaluj](/index.php/Zainstaluj "Zainstaluj") [foomatic-db-engine](https://www.archlinux.org/packages/?name=foomatic-db-engine) i jedno z [foomatic-db](https://www.archlinux.org/packages/?name=foomatic-db), [foomatic-db-ppds](https://www.archlinux.org/packages/?name=foomatic-db-ppds), [foomatic-db-nonfree-ppds](https://www.archlinux.org/packages/?name=foomatic-db-nonfree-ppds) lub [foomatic-db-gutenprint-ppds](https://www.archlinux.org/packages/?name=foomatic-db-gutenprint-ppds).
 
-Aby system automatycznie ładował wymagany moduł przy każdym uruchomieniu, użyj swojego edytora tekstu i otwórz `/etc/rc.conf`, następnie dopisz odpowiedni wpis do sekcji MODULES.Oto przykład:
+Pliki PPD z pakietu foomatic mogą wymagać dodatkowych filtrów, takich jak [gutenprint](https://www.archlinux.org/packages/?name=gutenprint), [ghostscript](https://www.archlinux.org/packages/?name=ghostscript) lub z innych źródeł (np. [min12xxw](https://aur.archlinux.org/packages/min12xxw/)). Dla [ghostscript](https://www.archlinux.org/packages/?name=ghostscript), [gsfonts](https://www.archlinux.org/packages/?name=gsfonts) mogą być także wymagane.
 
- `/etc/rc.conf`  `MODULES=(... lp parport parport_pc ...)` 
+### Dedykowane sterowniki do drukarek
+
+Wielu producentów drukarek dostarcza swoje własne sterowniki dla Linuxa. Są one często dostępne w oficjalnym repozytorium Arch lub w [AUR](/index.php/AUR "AUR").
+
+Niektóre z nich są dokładniej opisane w [CUPS/Printer-specific problems](/index.php/CUPS/Printer-specific_problems "CUPS/Printer-specific problems").
 
 ## Interfejs konfiguracyjny Web i jego narzędzia
 
@@ -147,9 +118,9 @@ W przypadku pakietu `system-config-printer` musisz wykonać poniższe czynności
 
 ```
 
-- Dodaj w pliku `/etc/cups/cupsd.conf` wpis `lpadmin<code> do wiersza:`
+- Dodaj w pliku `/etc/cups/cupsd.conf` wpis `lpadmin `do wiersza:``
 
-` `/etc/cups/cupsd.conf`  `SystemGroup sys root **lpadmin**` 
+`` `/etc/cups/cupsd.conf`  `SystemGroup sys root **lpadmin**` 
 
 - Zrestartuj CUPS:
 
@@ -164,7 +135,7 @@ Użytkownicy środowiska [KDE](/index.php/KDE_(Polski) "KDE (Polski)") mogą kon
 
 Przeczytaj także angielskojęzyczne artykuły:
 
-`
+*   [Konfiguracja drukarki sieciowej](/index.php/CUPS_printer_sharing "CUPS printer sharing")
+*   [Rozwiązywanie problemów](/index.php/CUPS#Troubleshooting "CUPS")
 
-`*   [Konfiguracja drukarki sieciowej](/index.php/CUPS_printer_sharing "CUPS printer sharing")`
-*   `[Rozwiązywanie problemów](/index.php/CUPS#Troubleshooting "CUPS")`
+``

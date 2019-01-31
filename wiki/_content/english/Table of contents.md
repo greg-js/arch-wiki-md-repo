@@ -46,7 +46,7 @@
 | <small>3.9.9.</small> [HASEE](/index.php/Category:HASEE "Category:HASEE") <small>(1)</small> |
 | <small>3.9.10.</small> [HP](/index.php/Category:HP "Category:HP") <small>(58)</small> |
 | <small>3.9.11.</small> [IBM](/index.php/Category:IBM "Category:IBM") <small>(2)</small> |
-| <small>3.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(92)</small> |
+| <small>3.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(93)</small> |
 | <small>3.9.13.</small> [MSI](/index.php/Category:MSI "Category:MSI") <small>(6)</small> |
 | <small>3.9.14.</small> [Samsung](/index.php/Category:Samsung "Category:Samsung") <small>(7)</small> |
 | <small>3.9.15.</small> [Sony](/index.php/Category:Sony "Category:Sony") <small>(10)</small> |
@@ -190,7 +190,7 @@
 | <small>5.1.20.6.</small> [Wiki software](/index.php/Category:Wiki_software "Category:Wiki software") <small>(6)</small> |
 | <small>5.2.</small> [Command-line](/index.php/Category:Command-line "Category:Command-line") <small>(5) (also in [System administration](/index.php/Category:System_administration "Category:System administration"))</small> |
 | <small>5.2.1.</small> [Command shells](/index.php/Category:Command_shells "Category:Command shells") <small>(10) (also in [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages"))</small> |
-| <small>5.2.2.</small> [Commands](/index.php/Category:Commands "Category:Commands") <small>(83)</small> |
+| <small>5.2.2.</small> [Commands](/index.php/Category:Commands "Category:Commands") <small>(84)</small> |
 | <small>5.2.2.1.</small> [Console applications](/index.php/Category:Console_applications "Category:Console applications") <small>(19) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
 | <small>5.2.2.2.</small> [Download utilities](/index.php/Category:Download_utilities "Category:Download utilities") <small>(6) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
 | <small>5.2.2.3.</small> [Mail retrieval agents](/index.php/Category:Mail_retrieval_agents "Category:Mail retrieval agents") <small>(5) (also in [Email clients](/index.php/Category:Email_clients "Category:Email clients"))</small> |
@@ -241,7 +241,7 @@
 | <small>6.2.3.</small> [Init](/index.php/Category:Init "Category:Init") <small>(8)</small> |
 | <small>6.3.</small> [Command-line](/index.php/Category:Command-line "Category:Command-line") <small>(5) (also in [Software](/index.php/Category:Software "Category:Software"))</small> |
 | <small>6.3.1.</small> [Command shells](/index.php/Category:Command_shells "Category:Command shells") <small>(10) (also in [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages"))</small> |
-| <small>6.3.2.</small> [Commands](/index.php/Category:Commands "Category:Commands") <small>(83)</small> |
+| <small>6.3.2.</small> [Commands](/index.php/Category:Commands "Category:Commands") <small>(84)</small> |
 | <small>6.3.2.1.</small> [Console applications](/index.php/Category:Console_applications "Category:Console applications") <small>(19) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
 | <small>6.3.2.2.</small> [Download utilities](/index.php/Category:Download_utilities "Category:Download utilities") <small>(6) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
 | <small>6.3.2.3.</small> [Mail retrieval agents](/index.php/Category:Mail_retrieval_agents "Category:Mail retrieval agents") <small>(5) (also in [Email clients](/index.php/Category:Email_clients "Category:Email clients"))</small> |

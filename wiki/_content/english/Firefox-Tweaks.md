@@ -177,7 +177,7 @@ If the system has memory to spare, `tmpfs` can be used to [cache the entire prof
 
 ### Disable Pocket
 
-If you don't use the Pocket-service, you may want to disable it by setting `extensions.pocket.enabled` to *false* in `about:config`.
+If you do not use the Pocket-service, you may want to disable it by setting `extensions.pocket.enabled` to *false* in `about:config`.
 
 ## Appearance
 
@@ -382,7 +382,7 @@ To force Firefox to use a light theme (e.g. Adwaita) for web content only:
 
 1.  Open `about:config` in the address bar.
 2.  Create a new `widget.content.gtk-theme-override` string type entry (`right mouse button` *> New > String*).
-3.  Set the value to the light theme to use for rendering purposes (e.g. `Adwaita`).
+3.  Set the value to the light theme to use for rendering purposes (e.g. `Adwaita:light`).
 4.  Restart Firefox.
 
 ### Tabs in title bar
@@ -489,6 +489,7 @@ Before continuing, remember there is a reason some of these variables are not en
 | media.mediasource.mp4.enabled | true (default) | Enable [MP4](https://en.wikipedia.org/wiki/MPEG-4_Part_14 "wikipedia:MPEG-4 Part 14") MSE |
 | media.mediasource.webm.enabled | true (default) | Enable [WebM](https://en.wikipedia.org/wiki/WebM "wikipedia:WebM") MSE. |
 | media.mediasource.ignore_codecs | true | Enable H.264 MSE, amongst other things (This boolean key has to be created!) |
+| media.av1.enabled | true | Enable [AV1](https://en.wikipedia.org/wiki/AV1 "wikipedia:AV1") |
 
 #### Widevine and Netflix/Amazon Video
 
@@ -595,7 +596,7 @@ Else rather boot the container, with systemd ideally setting up your networking 
 
 ```
 
-**Note:** There is [a bug](https://github.com/systemd/systemd/issues/7093) in systemd version 235 that causes /tmp/.X11-unix to disappear from the filesystem when doing this. If you're having trouble, try binding /tmp/.X11-unix read-only instead: `--bind-ro=/tmp/.X11-unix`
+**Note:** There is [a bug](https://github.com/systemd/systemd/issues/7093) in systemd version 235 that causes /tmp/.X11-unix to disappear from the filesystem when doing this. If you are having trouble, try binding /tmp/.X11-unix read-only instead: `--bind-ro=/tmp/.X11-unix`
 
 Once your container is booted, run the Xorg binary like so:
 
@@ -606,7 +607,7 @@ Once your container is booted, run the Xorg binary like so:
 
 ### Disable WebRTC audio post processing
 
-If you are using the PulseAudio [module-echo-cancel](/index.php/PulseAudio/Troubleshooting#Enable_Echo/Noise-Cancellation "PulseAudio/Troubleshooting"), you probably don't want Firefox to do additional audio post processing.
+If you are using the PulseAudio [module-echo-cancel](/index.php/PulseAudio/Troubleshooting#Enable_Echo/Noise-Cancellation "PulseAudio/Troubleshooting"), you probably do not want Firefox to do additional audio post processing.
 
 To disable audio post processing, change the value of the following preferences to `false`:
 
@@ -618,7 +619,7 @@ To disable audio post processing, change the value of the following preferences 
 
 Install [libu2f-host](https://www.archlinux.org/packages/?name=libu2f-host) for the required udev rules to allow Firefox to communicate with the U2F key.
 
-Firefox supports the Fido U2F authentication protocol. However, it's disabled by default. To enable it set `security.webauth.u2f` to `true` in `about:config`.
+Firefox supports the Fido U2F authentication protocol. However, it is disabled by default. To enable it set `security.webauth.u2f` to `true` in `about:config`.
 
 **Note:** Firefox does not inplement the entire U2F protocol [[4]](https://www.yubico.com/2017/11/how-to-navigate-fido-u2f-in-firefox-quantum/). Some sites might not work correctly.
 

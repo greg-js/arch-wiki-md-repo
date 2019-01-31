@@ -150,7 +150,7 @@ This can be resolved using [lenovo-throttling-fix-git](https://aur.archlinux.org
 
 ## Thermal Modes / Fan profiles
 
-Just like in Windows by using Dell Power Manager you can set the thermal configuration and behaviour of the fans and CPU of your machine. This is done within a terminal with the following commands.
+Just like in Windows by using Dell Power Manager you can set the thermal configuration and behaviour of the fans and CPU of your machine. This is done within a terminal with the commands below, or alternatively via a [KDE Plasma widget](https://store.kde.org/p/1282623):
 
 To find out what thermal mode is set type:
 
@@ -235,6 +235,7 @@ Also all three Type-C ports support DisplayPort alternate mode. It is taken care
 *   [Dell Type-C to VGA adapter](https://www.dell.com/en-us/shop/dell-adapter-usb-c-to-vga/apd/470-abnc/pc-accessories) (tested with 1080p at 60 Hz)
 *   [Dell Type-C to HDMI adapter](https://www.dell.com/en-us/work/shop/dell-adapter-usb-c-to-hdmi/apd/470-abmz/pc-accessories) (tested with 1080p and 4K, both work at 60 Hz)
 *   [Moshi USB-C to HDMI Adapter](https://www.moshi.com/en/product/usb-c-to-hdmi-adapter/silver) (tested with 1080p and 4K, both work at 60 Hz)
+*   FAILED [Cable Matters model 201048 USB-C Multiport](https://www.amazon.com/gp/product/B01M0K0DL2) Ethernet, USB, and power delivery work. Video works, if connected at boot or if HDMI is plugged in last. Did not work if HDMI is already plugged into adapter when adapter is plugged into computer. Or, if computer fell asleep, monitor sometimes did not wake up. Both problems are fixable, by unplugging and replugging the HDMI connector. (Dell U2415 monitor at 1920x1200, Antergos 19.1, Linux kernel 4.20, System firmware 0.1.6.3, Thunderbolt Controller 33.00)
 
 ## Fingerprint reader
 

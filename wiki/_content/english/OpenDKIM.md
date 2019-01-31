@@ -256,14 +256,6 @@ WantedBy=multi-user.target
 
 ```
 
-Add the socket directory and set its credentials:
-
-```
-# mkdir /run/opendkim
-# chown opendkim:mail /run/opendkim
-
-```
-
 Edit `/etc/postfix/main.cf` accordingly to make Postfix listen to this unix socket:
 
  `/etc/postfix/main.cf` 

@@ -26,7 +26,7 @@ Lenovo ThinkPad P1 was released in 2018 and has up to Intel Core i7-8850H or Xeo
 
 This might potentially brick your device and require Lenovo to replace your motherboard. Apparently verified on BIOS v1.15 and still not resolved.
 
-BIOS v1.17 (released Dec 24, 2018) fixes the issue.
+You will want to use BIOS v1.18 or newer. BIOS v1.17 (released Dec 24, 2018) originally fixed the issue for the mass majority; however, this version has been removed due to additional bricking issues that happen occasionally related to the Hybrid graphics options when changed.
 
 ### Firmware update
 

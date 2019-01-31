@@ -4,7 +4,7 @@ Related articles
 *   [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics")
 *   [Wayland](/index.php/Wayland "Wayland")
 
-**翻译状态：** 本文是英文页面 [Libinput](/index.php/Libinput "Libinput") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-11-10，点击[这里](https://wiki.archlinux.org/index.php?title=Libinput&diff=0&oldid=553763)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Libinput](/index.php/Libinput "Libinput") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-01-31，点击[这里](https://wiki.archlinux.org/index.php?title=Libinput&diff=0&oldid=553763)可以查看翻译后英文页面的改动。
 
 来自[libinput](https://freedesktop.org/wiki/Software/libinput/) wiki 项目
 
@@ -144,7 +144,7 @@ You may define as many sections as you like in a single configuration file (usua
 输入设备能够在CONFIGURATION中进行配置，详情请看[libinput(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4)。一些常用的配置选项有：
 
 *   `Option "Tapping" "on"`: 触摸以点击
-*   `Option "ClickMethod" "clickfinger"`: 触摸板不再拥有中右键区域的区分，与之代替的是双指代表右键，三指代表中键。 详情请看[docs](https://wayland.freedesktop.org/libinput/doc/latest/clickpad_softbuttons.html#clickfinger).
+*   `Option "ClickMethod" "clickfinger"`: 触摸板不再拥有中右键区域的区分，与之代替的是双指代表右键，三指代表中键。 详情请看[docs](https://wayland.freedesktop.org/libinput/doc/latest/clickpad-softbuttons.html#clickfinger-behavior).
 *   `Option "NaturalScrolling" "true"`: 自然滚动（反方向滚动）
 *   `Option "ScrollMethod" "edge"`: 边缘滚动页面
 
@@ -161,6 +161,7 @@ There are different GUI tools:
     *   Similar to the GNOME UI, with more options.
 *   [KDE Plasma](/index.php/KDE_Plasma "KDE Plasma") 5:
     *   Set of keyboard, mouse, controller, and touch pad options. Some features are still placeholders.
+    *   [kcm-pointing-devices-git](https://aur.archlinux.org/packages/kcm-pointing-devices-git/) is a rewritten KCM for all input devices supported by libinput.
 
 ## Tips and tricks
 
@@ -324,7 +325,7 @@ $ gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll false
 
 ### KDE's Touchpad KCM 对触摸板设置不起作用
 
-KDE's Touchpad KCM has libinput support for [Xorg](/index.php/Xorg "Xorg"), but not all GUI settings are available yet. You may find that a setting such as *Disable touchpad when typing* has no effect and other options are greyed out. Until the support is extended, a workaround is to set the options manually with `xinput set-prop`.
+KDE's Touchpad KCM has libinput support for [Xorg](/index.php/Xorg "Xorg"), but not all GUI settings are available yet. You may find that a setting such as *Disable touchpad when typing* has no effect and other options are greyed out. Until the support is extended, a workaround is to install [kcm-pointing-devices-git](https://aur.archlinux.org/packages/kcm-pointing-devices-git/) or set the options manually with `xinput set-prop`.
 
 ### 触摸板没有被检测到
 

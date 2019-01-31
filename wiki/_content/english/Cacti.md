@@ -28,7 +28,7 @@ extension=pdo_mysql
 extension=snmp
 ```
 
-PHP scripts are, by default, permitted only to open files in specific directories. Configure (or comment out) `open_basedir` in `/etc/php/php.ini`. When misconfigured, errors such as `PHP Warning: include(): open_basedir restriction in effect.` will appear in the webserver log file.
+PHP scripts are, by default, permitted only to open files in specific directories. Configure (or comment out) `open_basedir` in `/etc/php/php.ini`. When misconfigured, errors such as `PHP Warning: include(): open_basedir restriction in effect.` will appear in the webserver log file. Don’t forget to add /etc/webapps (or /etc/webapps/cacti if you prefer) and /var/log/cacti to open_basedir.
 
 In order to display dates and times in the correct timezone, configure `date.timezone` in `/etc/php/php.ini`. Values are in "Continent/City" notation, for example "America/New_York", "Asia/Tokyo".
 
@@ -92,7 +92,7 @@ Alternatively, use [PhpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin") to achieve t
 Add the database access details to `/usr/share/webapps/cacti/include/config.php`:
 
 ```
-$database_type = "mysqli";
+$database_type = "mysql";
 $database_default = "cactidb";
 $database_username = "cactiuser";
 $database_password = "some_password";

@@ -72,7 +72,7 @@ Alternatively, you can add these lines to your `~/[.bashrc](/index.php/.bashrc "
 
 ```
 alias less='less -Q'
-alias man 'man -P "less -Q"'
+alias man='man -P "less -Q"'
 
 ```
 

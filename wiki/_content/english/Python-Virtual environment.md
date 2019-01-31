@@ -14,11 +14,16 @@
 *   [5 virtualenvwrapper](#virtualenvwrapper)
     *   [5.1 Installation](#Installation_2)
     *   [5.2 Basic usage](#Basic_usage)
-*   [6 See also](#See_also)
+*   [6 Pipenv](#Pipenv)
+    *   [6.1 Installation](#Installation_3)
+    *   [6.2 Basic usage](#Basic_usage_2)
+*   [7 See also](#See_also)
 
 ## Overview
 
 A virtual environment is a directory into which some binaries and shell scripts are installed. The binaries include *python* for executing scripts and *pip* for installing other modules within the environment. There are also shell scripts (one for [bash](/index.php/Bash "Bash"), csh, and [fish](/index.php/Fish "Fish")) to activate the environment. Essentially, a virtual environment mimics a full system install of [Python](/index.php/Python "Python") and all of the desired modules without interfering with any system on which the application might run.
+
+In 2017, [python-pipenv](https://www.archlinux.org/packages/?name=python-pipenv) was published which manages all the above tools - managing virtual environments of python interpreters, package dependencies, their activation and reproducible locking of versions in Pipfiles.
 
 ## Installation
 
@@ -31,6 +36,11 @@ A virtual environment is a directory into which some binaries and shell scripts 
 *   Python 3.3+: [python](https://www.archlinux.org/packages/?name=python)
 *   Python 3: [python-virtualenv](https://www.archlinux.org/packages/?name=python-virtualenv)
 *   Python 2: [python2-virtualenv](https://www.archlinux.org/packages/?name=python2-virtualenv)
+
+For pip-env:
+
+*   Python 3: [python-pipenv](https://www.archlinux.org/packages/?name=python-pipenv)
+*   Python 2: [python2-pipenv](https://www.archlinux.org/packages/?name=python2-pipenv)
 
 ## Usage
 
@@ -164,6 +174,20 @@ After you have done your things, leave the virtual environment:
 (my_env) $ deactivate
 
 ```
+
+## Pipenv
+
+*pipenv* allows better managed CLI interactions by providing a single program that does all the functions of the above tools.
+
+### Installation
+
+[Install](/index.php/Install "Install") the [python-pipenv](https://www.archlinux.org/packages/?name=python-pipenv) package from the [official repositories](/index.php/Official_repositories "Official repositories").
+
+### Basic usage
+
+All commands can be executed in the project folder, and pipenv will recognize the specific situation - whether a virtualenv exists in the directory, locating it, and running on the specific virtual interpreter when pipenv is executed.
+
+More information at [[1]](https://pipenv.readthedocs.io/en/latest/), [[2]](https://realpython.com/pipenv-guide/).
 
 ## See also
 

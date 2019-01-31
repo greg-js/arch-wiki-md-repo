@@ -13,12 +13,13 @@ Related articles
     *   [2.1 Initial setup](#Initial_setup)
     *   [2.2 Running Wicd in Desktop Environment](#Running_Wicd_in_Desktop_Environment)
     *   [2.3 Running Wicd in Text Mode](#Running_Wicd_in_Text_Mode)
-    *   [2.4 Switching WPA supplicant driver](#Switching_WPA_supplicant_driver)
-    *   [2.5 Autostart](#Autostart)
-    *   [2.6 Scripts](#Scripts)
-        *   [2.6.1 Stop ARP spoofing attacks](#Stop_ARP_spoofing_attacks)
-        *   [2.6.2 Change MAC using macchanger](#Change_MAC_using_macchanger)
-        *   [2.6.3 Start/stop openvpn client](#Start/stop_openvpn_client)
+    *   [2.4 Connecting with wicd-cli](#Connecting_with_wicd-cli)
+    *   [2.5 Switching WPA supplicant driver](#Switching_WPA_supplicant_driver)
+    *   [2.6 Autostart](#Autostart)
+    *   [2.7 Scripts](#Scripts)
+        *   [2.7.1 Stop ARP spoofing attacks](#Stop_ARP_spoofing_attacks)
+        *   [2.7.2 Change MAC using macchanger](#Change_MAC_using_macchanger)
+        *   [2.7.3 Start/stop openvpn client](#Start/stop_openvpn_client)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Autoconnect on resume from hibernation/suspension](#Autoconnect_on_resume_from_hibernation/suspension)
     *   [3.2 Importing pynotify failed, notifications disabled](#Importing_pynotify_failed,_notifications_disabled)
@@ -110,6 +111,52 @@ $ wicd-curses
 **Note:** Wicd does not prompt you for a passkey. To use encrypted connections (WPA/WEP), expand the network you want to connect to, click **Advanced** and enter the needed info.
 
 **Note:** *wicd-curses* is less stable than *wicd-gtk*, and is known to crash regularly. If a crash occurs when attempting to configure a wireless network, try [wicd-patched](https://aur.archlinux.org/packages/wicd-patched/)
+
+### Connecting with wicd-cli
+
+If wicd-curses is failing for some reason you can connect using wicd-cli. Wireless example (sudo may be required):
+
+scan networks:
+
+```
+$ wicd-cli --wireless -S
+
+```
+
+list networks:
+
+```
+$ wicd-cli --wireless -l
+
+```
+
+get network Bssid (use '#' index from previous command in place of '0')
+
+```
+$ wicd-cli -n 0 -d
+
+```
+
+select network (replace bssid with your network's bssid from previous command)
+
+```
+$ wicd-cli -n 0 -p bssid "D0:13:FD:3F:78:4A"
+
+```
+
+set network password or key (example is for passphrase, remove "s:" for key"
+
+```
+$ wicd-cli -n 0 -p key s:"password"
+
+```
+
+connect
+
+```
+$ wicd-cli -n 0 -c
+
+```
 
 ### Switching WPA supplicant driver
 

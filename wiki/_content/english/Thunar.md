@@ -30,8 +30,8 @@ From the project [home page](https://docs.xfce.org/xfce/thunar/start):
     *   [4.2 Scan for viruses](#Scan_for_viruses)
     *   [4.3 Link to Dropbox](#Link_to_Dropbox)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Tumblerd hangs up, uses too much CPU](#Tumblerd_hangs_up.2C_uses_too_much_CPU)
-    *   [5.2 Trash/network icons disappear randomly](#Trash.2Fnetwork_icons_disappear_randomly)
+    *   [5.1 Tumblerd hangs up, uses too much CPU](#Tumblerd_hangs_up,_uses_too_much_CPU)
+    *   [5.2 Trash/network icons disappear randomly](#Trash/network_icons_disappear_randomly)
     *   [5.3 Not authenticated to mount filesystems](#Not_authenticated_to_mount_filesystems)
 *   [6 See also](#See_also)
 
