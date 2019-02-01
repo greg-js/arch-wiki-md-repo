@@ -296,6 +296,8 @@ Most dance pads should work. However some pads, especially those used from a vid
 
 ```
 
+If that did not work, you can try [axisfix-git](https://aur.archlinux.org/packages/axisfix-git/) or patching the `joydev` kernel module ([https://github.com/adiel-mittmann/dancepad](https://github.com/adiel-mittmann/dancepad)).
+
 ### Logitech Thunderpad Digital
 
 Logitech Thunderpad Digital won't show all the buttons if you use the `analog` module. Use the device specific `adi` module for this controller.

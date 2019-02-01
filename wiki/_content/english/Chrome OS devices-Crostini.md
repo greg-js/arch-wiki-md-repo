@@ -40,7 +40,7 @@ The below instructions were taken from [https://www.reddit.com/r/Crostini/wiki/h
 
 1\. Install an Arch linux container
 
-Open a new terminal in Chrome (Ctrl + Shift + T). Then connect to terminal and create an arch linux container:
+Open a new terminal in Chrome (Ctrl + Alt + T). Then connect to terminal and create an arch linux container:
 
 ```
 vsh termina
@@ -67,7 +67,7 @@ lxc rename arch penguin
 By default the gmail user has no password set. Use lxc exec to set a password:
 
 ```
-lxc exec arch -- bash
+lxc exec penguin -- bash
 
 ```
 

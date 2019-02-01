@@ -15,12 +15,12 @@ Este artículo proporciona varios métodos para falsificar una dirección de con
         *   [2.3.1 Crear la unidad](#Crear_la_unidad)
             *   [2.3.1.1 iproute2](#iproute2_2)
             *   [2.3.1.2 macchanger](#macchanger_2)
-        *   [2.3.2 Enabling service](#Enabling_service)
-    *   [2.4 netctl interfaces](#netctl_interfaces)
+        *   [2.3.2 Activar el servicio](#Activar_el_servicio)
+    *   [2.4 Interfaces netctl](#Interfaces_netctl)
     *   [2.5 NetworkManager](#NetworkManager)
-*   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Connection to DHCPv4 network fails](#Connection_to_DHCPv4_network_fails)
-*   [4 See also](#See_also)
+*   [3 Solución de problemas](#Solución_de_problemas)
+    *   [3.1 La conexión a la red DHCPv4 falla](#La_conexión_a_la_red_DHCPv4_falla)
+*   [4 Véase también](#Véase_también)
 
 ## Manualmente
 
@@ -143,16 +143,16 @@ Donde `XX:XX:XX:XX:XX:XX` es la dirección MAC original e `YY:YY:YY:YY:YY:YY` es
 
 #### Crear la unidad
 
-Below you find two examples of [systemd](/index.php/Systemd "Systemd") units to change a MAC address at boot, one sets a static MAC using *ip* and one uses *macchanger* to assign a random MAC address. The systemd `network-pre.target` is used to ensure the MAC is changed before a network manager like [Netctl](/index.php/Netctl "Netctl") or [NetworkManager](/index.php/NetworkManager "NetworkManager"), [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") or [dhcpcd](/index.php/Dhcpcd "Dhcpcd") service starts.
+A continuación, encontrará dos ejemplos de unidades [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") para cambiar una dirección MAC durante el arranque, uno configura una MAC estática utilizando *ip* y el otro utiliza *macchanger* para asignar una dirección MAC aleatoria. El `network-pre.target` de systemd se utiliza para asegurar que la MAC se cambie antes que un gestor de red como [Netctl](/index.php/Netctl_(Espa%C3%B1ol) "Netctl (Español)") o [NetworkManager](/index.php/NetworkManager_(Espa%C3%B1ol) "NetworkManager (Español)"), comience el servicio [systemd-networkd](/index.php/Systemd-networkd_(Espa%C3%B1ol) "Systemd-networkd (Español)") o [dhcpcd](/index.php/Dhcpcd_(Espa%C3%B1ol) "Dhcpcd (Español)").
 
 ##### iproute2
 
-[systemd](/index.php/Systemd "Systemd") unit setting a predefined MAC address:
+La unidad [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") configura una dirección MAC predefinida:
 
  `/etc/systemd/system/macspoof@.service` 
 ```
 [Unit]
-Description=MAC Address Change %I
+Description=Cambio de dirección MAC %I
 Wants=network-pre.target
 Before=network-pre.target
 BindsTo=sys-subsystem-net-devices-%i.device
@@ -170,12 +170,12 @@ WantedBy=multi-user.target
 
 ##### macchanger
 
-[systemd](/index.php/Systemd "Systemd") unit setting a random address while preserving the original NIC vendor bytes. Ensure that [macchanger](https://www.archlinux.org/packages/?name=macchanger) is [installed](/index.php/Pacman#Installing_specific_packages "Pacman"):
+La unidad [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") establece una dirección aleatoria mientras se conservan los bytes originales del proveedor NIC. Asegúrese de que [macchanger](https://www.archlinux.org/packages/?name=macchanger) está [instalado](/index.php/Pacman_(Espa%C3%B1ol)#Instalar_paquetes_específicos "Pacman (Español)"):
 
  `/etc/systemd/system/macspoof@.service` 
 ```
 [Unit]
-Description=macchanger on %I
+Description=macchanger en %I
 Wants=network-pre.target
 Before=network-pre.target
 BindsTo=sys-subsystem-net-devices-%i.device
@@ -190,45 +190,45 @@ WantedBy=multi-user.target
 
 ```
 
-A full random address can be set using the `-r` option, see [#macchanger](#macchanger).
+Se puede establecer una dirección completamente aleatoria utilizando la opción `-r`, véase [#macchanger](#macchanger).
 
-#### Enabling service
+#### Activar el servicio
 
-Append the desired network interface to the service name (e.g. `eth0`) and [enable](/index.php/Enable "Enable") the service (e.g. `macspoof@eth0.service`).
+Añada la interfaz de red deseada al nombre del servicio (por ejemplo `eth0`) y [active](/index.php/Enable_(Espa%C3%B1ol) "Enable (Español)") el servicio (por ejemplo `macspoof@eth0.service`).
 
-Reboot, or stop and start the prerequisite and requisite services in the proper order. If you are in control of your network, verify that the spoofed MAC has been picked up by your router by examining the static, or DHCP address tables within the router.
+Reinicie, o detenga e inicie los servicios requeridos en el orden correcto. Si tiene el control de su red, verifique que el enrutador haya recogido la MAC falsificada mediante el examen de las tablas de direcciones DHCP o estáticas dentro del enrutador.
 
-### netctl interfaces
+### Interfaces netctl
 
-You can use a [netctl hook](/index.php/Netctl#Using_hooks "Netctl") to run a command each time a netctl profile is re-/started for a specific network interface. Replace `*interface*` accordingly:
+Puede utilizar un [hook de netctl](/index.php/Netctl#Using_hooks "Netctl") para ejecutar una orden cada vez que un perfil netctl es re-/iniciado para una interfaz de red específica. Reemplace `*interfaz*` en consecuencia:
 
- `/etc/netctl/interfaces/*interface*` 
+ `/etc/netctl/interfaces/*interfaz*` 
 ```
 #!/usr/bin/env sh
-/usr/bin/macchanger -r *interface*
+/usr/bin/macchanger -r *interfaz*
 ```
 
-Make the script executable:
+Haga el script ejecutable:
 
 ```
-chmod +x /etc/netctl/interfaces/*interface*
+chmod +x /etc/netctl/interfaces/*interfaz*
 
 ```
 
-Source: [akendo.eu](https://blog.akendo.eu/archlinuxrandom-mac-address-for-new-wireless-connections/)
+Fuente: [akendo.eu](https://blog.akendo.eu/archlinuxrandom-mac-address-for-new-wireless-connections/)
 
 ### NetworkManager
 
-See [NetworkManager#Configuring MAC address randomization](/index.php/NetworkManager#Configuring_MAC_address_randomization "NetworkManager").
+Véase [NetworkManager#Configuring MAC address randomization](/index.php/NetworkManager#Configuring_MAC_address_randomization "NetworkManager").
 
-## Troubleshooting
+## Solución de problemas
 
-### Connection to DHCPv4 network fails
+### La conexión a la red DHCPv4 falla
 
-If you cannot connect to a DHCPv4 network and you are using dhcpcd, which is the default for NetworkManager, you might need to [modify the dhcpcd configuration](/index.php/Dhcpcd#Client_ID "Dhcpcd") to obtain a lease.
+Si no puede conectarse a una red DHCPv4 y está utilizando dhcpcd, que es el predeterminado para NetworkManager, es posible que deba [modificar la configuración dhcpcd](/index.php/Dhcpcd_(Espa%C3%B1ol)#ID_del_cliente "Dhcpcd (Español)") para obtener un arrendamiento *(lease)*.
 
-## See also
+## Véase también
 
-*   [Wikipedia:MAC spoofing](https://en.wikipedia.org/wiki/MAC_spoofing "wikipedia:MAC spoofing")
-*   [Macchanger GitHub page](https://github.com/alobbs/macchanger)
-*   [Article on DebianAdmin](http://www.debianadmin.com/change-your-network-card-mac-media-access-control-address.html) with more *macchanger* options
+*   [Wikipedia:es:MAC spoofing](https://en.wikipedia.org/wiki/es:MAC_spoofing "wikipedia:es:MAC spoofing")
+*   [Página en GitHub de Macchanger](https://github.com/alobbs/macchanger)
+*   [Artículo en DebianAdmin](http://www.debianadmin.com/change-your-network-card-mac-media-access-control-address.html) con más opciones de *macchanger*

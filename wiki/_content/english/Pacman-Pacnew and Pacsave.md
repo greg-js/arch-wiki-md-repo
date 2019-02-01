@@ -7,7 +7,7 @@ When *pacman* removes a package that has a configuration file, it normally creat
 *   [3 Types explained](#Types_explained)
     *   [3.1 .pacnew](#.pacnew)
     *   [3.2 .pacsave](#.pacsave)
-*   [4 Locating .pac* files](#Locating_.pac.2A_files)
+*   [4 Locating .pac* files](#Locating_.pac*_files)
 *   [5 Managing .pacnew files](#Managing_.pacnew_files)
     *   [5.1 pacdiff](#pacdiff)
     *   [5.2 Third-party utilities](#Third-party_utilities)
@@ -88,7 +88,7 @@ Pacman does not deal with *.pacnew* files automatically: you must maintain these
 
 ### pacdiff
 
-[pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) provides the simple *pacdiff* tool for managing pacnew/pacsave files. It will search all *.pacnew* and *.pacsave* files and ask for any actions on them. It uses [vimdiff](/index.php/Vim#Merging_files "Vim") by default, but you may specify a different tool with `DIFFPROG=*your_editor* pacdiff`. See [List of applications/Utilities#Comparison, diff, merge](/index.php/List_of_applications/Utilities#Comparison.2C_diff.2C_merge "List of applications/Utilities") for other common comparison tools.
+[pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) provides the simple *pacdiff* tool for managing pacnew/pacsave files. It will search all *.pacnew* and *.pacsave* files and ask for any actions on them. It uses [vimdiff](/index.php/Vim#Merging_files "Vim") by default, but you may specify a different tool with `DIFFPROG=*your_editor* pacdiff`. See [List of applications/Utilities#Comparison, diff, merge](/index.php/List_of_applications/Utilities#Comparison,_diff,_merge "List of applications/Utilities") for other common comparison tools.
 
 ### Third-party utilities
 
@@ -115,6 +115,10 @@ You can use one of the following tools:
 *   **pacnews-git** — A simple script aimed at finding all *.pacnew* files, then editing them with [vimdiff](/index.php/Vim#Merging_files "Vim").
 
 	[https://github.com/pbrisbin/scripts/blob/master/pacnews](https://github.com/pbrisbin/scripts/blob/master/pacnews) || [pacnews-git](https://aur.archlinux.org/packages/pacnews-git/)
+
+*   **pacfiles-mode** — A package for [Emacs](/index.php/Emacs "Emacs") to manage and merge *.pacnew* files, available in [melpa](https://melpa.org/#/pacfiles-mode).
+
+	[https://github.com/UndeadKernel/pacfiles-mode](https://github.com/UndeadKernel/pacfiles-mode) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 ## See also
 

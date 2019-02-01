@@ -23,16 +23,13 @@ This page contains information about running games and related system configurat
         *   [3.7.2 Using higher quality remixing for better sound](#Using_higher_quality_remixing_for_better_sound)
         *   [3.7.3 Matching hardware buffers to Pulse's buffering](#Matching_hardware_buffers_to_Pulse's_buffering)
     *   [3.8 Double check your CPU frequency scaling settings](#Double_check_your_CPU_frequency_scaling_settings)
-*   [4 Improving framerates and responsiveness with scheduling policies](#Improving_framerates_and_responsiveness_with_scheduling_policies)
-    *   [4.1 For Wine programs](#For_Wine_programs)
-    *   [4.2 For everything else](#For_everything_else)
-        *   [4.2.1 Policies](#Policies)
-        *   [4.2.2 Nice levels](#Nice_levels)
-        *   [4.2.3 Core affinity](#Core_affinity)
-        *   [4.2.4 General case](#General_case)
-        *   [4.2.5 Optimus, and other helping programs](#Optimus,_and_other_helping_programs)
-*   [5 Using alternate kernels](#Using_alternate_kernels)
-    *   [5.1 Using BFQ](#Using_BFQ)
+*   [4 Improving performance](#Improving_performance)
+    *   [4.1 Improving frame rates and responsiveness with scheduling policies](#Improving_frame_rates_and_responsiveness_with_scheduling_policies)
+        *   [4.1.1 Policies](#Policies)
+        *   [4.1.2 Nice levels](#Nice_levels)
+        *   [4.1.3 Core affinity](#Core_affinity)
+        *   [4.1.4 General case](#General_case)
+        *   [4.1.5 Optimus, and other helping programs](#Optimus,_and_other_helping_programs)
 
 ## Game environments
 
@@ -171,16 +168,13 @@ If you are using [PulseAudio](/index.php/PulseAudio "PulseAudio"), you may wish 
 
 Pulseaudio is built to be run with realtime priority, being an audio daemon. However, because of security risks of it locking up the system, it is scheduled as a regular thread by default. To adjust this, first make sure you are in the `audio` group. Then, uncomment and edit the following lines in `/etc/pulse/daemon.conf`:
 
+ `/etc/pulse/daemon.conf` 
 ```
 high-priority = yes
 nice-level = -11
 
-```
-
-```
 realtime-scheduling = yes
 realtime-priority = 5
-
 ```
 
 and restart pulseaudio.
@@ -202,28 +196,28 @@ Matching the buffers can reduce stuttering and increase performance marginally. 
 
 If your system is currently configured to properly insert its own cpu frequency scaling driver, the system sets the default governor to Ondemand. By default, this governor only adjusts the clock if the system is utilizing 95% of its CPU, and then only for a very short period of time. This saves power and reduces heat, but has a noticeable impact on performance. You can instead only have the system downclock when it is idle, by tuning the system governor. To do so, see [Cpufrequtils#Tuning the ondemand governor](/index.php/Cpufrequtils#Tuning_the_ondemand_governor "Cpufrequtils").
 
-## Improving framerates and responsiveness with scheduling policies
+## Improving performance
 
-Most every game can benefit if given the correct scheduling policies for the kernel to prioritize the task. However, without the help of a daemon, this rescheduling would have to be carried out manually or through the use of several daemons for each policy. These policies should ideally be set per-thread by the application itself, but not all developers implement these policies. There are several methods for getting them to work anyway:
+See also main article: [Improving performance](/index.php/Improving_performance "Improving performance"). For Wine programs, see [Wine#Performance](/index.php/Wine#Performance "Wine").
 
-### For Wine programs
+### Improving frame rates and responsiveness with scheduling policies
 
-See [Wine#Performance](/index.php/Wine#Performance "Wine")
+Most games can benefit if given the correct scheduling policies for the kernel to prioritize the task. These policies should ideally be set per-thread by the application itself.
 
-### For everything else
+For programs which do not implement scheduling policies on their own, application known as [schedtool](https://www.archlinux.org/packages/?name=schedtool), and its associated daemon [schedtoold](https://aur.archlinux.org/packages/schedtoold/) can handle many of these tasks automatically.
 
-For programs which do not implement scheduling policies on their own, one tool known as **schedtool**, and its associated daemon [schedtoold](https://aur.archlinux.org/packages/schedtoold/) can handle many of these tasks automatically. To edit what programs relieve what policies, simply edit `/etc/schedtoold.conf` and add the program followed by the *schedtool* arguments desired.
+To edit what programs relieve what policies, simply edit `/etc/schedtoold.conf` and add the program followed by the *schedtool* arguments desired.
 
 #### Policies
 
-First and foremost, setting the scheduling policy to `SCHED_ISO` will not only allow the process to use a maximum of 80 percent of the CPU, but will attempt to reduce latency and stuttering wherever possible. `SCHED_ISO` requires [Linux-ck](/index.php/Linux-ck "Linux-ck") to operate, as it has only been implemented in that kernel. [Linux-ck](/index.php/Linux-ck "Linux-ck") itself provides a hefty latency reduction, and should ideally be installed Most if not all games will benefit from this:
+`SCHED_ISO` (only implemented in BFS/MuQSSPDS schedulers found in -pf and -ck [kernels](/index.php/Kernel "Kernel")) – will not only allow the process to use a maximum of 80 percent of the CPU, but will attempt to reduce latency and stuttering wherever possible. Most if not all games will benefit from this:
 
 ```
 bit.trip.runner -I
 
 ```
 
-For users not using [Linux-ck](/index.php/Linux-ck "Linux-ck"), `SCHED_FIFO` provides an alternative, that can even work better. You should test to see if your applications run more smoothly with `SCHED_FIFO`, in which case by all means use it instead. Be warned though, as `SCHED_FIFO` runs the risk of starving the system! Use this in cases where -I is used below:
+`SCHED_FIFO` provides an alternative, that can even work better. You should test to see if your applications run more smoothly with `SCHED_FIFO`, in which case by all means use it instead. Be warned though, as `SCHED_FIFO` runs the risk of starving the system! Use this in cases where -I is used below:
 
 ```
 bit.trip.runner -F -p 15
@@ -248,7 +242,9 @@ bit.trip.runner -a 0x1
 
 ```
 
-uses first core. Some CPUs are hyperthreaded and have only 2 or 4 cores but show up as 4 or 8, and are best accounted for:
+uses first core.
+
+Some CPUs are hyperthreaded and have only 2 or 4 cores but show up as 4 or 8, and are best accounted for:
 
 ```
 bit.trip.runner -a 0x5
@@ -280,13 +276,3 @@ wineserver -F -p 20 -n 19
 steam.exe -I -n -5
 
 ```
-
-## Using alternate kernels
-
-**Note:** Many users report inconsistant framerate and other performance hits when using [Linux-ck](/index.php/Linux-ck "Linux-ck"), even if the overall framerate is sometimes higher. You may wish to try using [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) if you just want BFQ.
-
-The stock Arch kernel provides a very good baseline for general usage. However, if your system has less than 16 cores and is intended for use primarily as a workstation, you can sacrifice a small amount of throughput on batch workloads and gain a significant boost to interactivity by using [Linux-ck](/index.php/Linux-ck "Linux-ck"). Using a pre-optimized kernel will most definitely offset any loss of throughput that may have occurred as a result, so be sure to select the appropriate kernel for your architecture.
-
-### Using BFQ
-
-BFQ is an io-scheduler that comes as a feature of [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) and [Linux-ck](/index.php/Linux-ck "Linux-ck"), and is optimized to be much more simplistic, but provides better interactivity and throughput for non-server workloads. To enable, simply add the kernel parameter *elevator=bfq* to your [bootloader](/index.php/Bootloader "Bootloader"). It is important to note that although most guides recommend using either *noop* or *deadline* for SSDs for their raw throughput, they are actually detrimental to interactivity when more than one thread is attempting to access the device. It is best to use *bfq* unless you desperately need the throughput advantage.

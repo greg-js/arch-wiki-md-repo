@@ -414,6 +414,23 @@ session required pam_unix.so
 session optional pam_permit.so
 ```
 
+These PAM changes will apply to fresh login. To also allow the `su` command to authenticate through SSSD, edit `/etc/pam.d/su`:
+
+ `/etc/pam.d/su` 
+```
+#%PAM-1.0
+auth            sufficient        pam_rootok.so
+
+**auth sufficient   pam_sss.so      forward_pass**
+auth            required        pam_unix.so
+
+**account [default=bad success=ok user_unknown=ignore authinfo_unavail=ignore] pam_sss.so**
+account         required        pam_unix.so
+
+**session         required        pam_unix.so**
+session optional pam_sss.so
+```
+
 ##### 1\. SUDO Configuration
 
 Edit `/etc/pam.d/sudo` as follows.

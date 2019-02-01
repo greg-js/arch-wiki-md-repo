@@ -74,12 +74,12 @@ $
 
 For example, if you have a Logitech TrackMan Marble serial mouse, as I do, the device type you would specify would be either *--mouseman* or *-mman*.
 
-The default */etc/conf.d/inputattach.conf* file assumes a Microsoft serial mouse, and assumes the mouse is attached to the first serial port of the computer. The **IAPARAMS** variable is an array of inputattach arguments. An inputattach instance will be started for each element. See *inputattach --help* for details on arguments.
+The default */etc/conf.d/inputattach* file assumes a Microsoft serial mouse, and assumes the mouse is attached to the first serial port of the computer. The **IAPARAMS** variable is an array of inputattach arguments. An inputattach instance will be started for each element. See *inputattach --help* for details on arguments.
 
-Here's an example of a */etc/conf.d/inputattach.conf* file, modified to suit a Logitech TrackMan Marble serial mouse:
+Here's an example of a */etc/conf.d/inputattach* file, modified to suit a Logitech TrackMan Marble serial mouse:
 
 ```
-$ cat /etc/conf.d/inputattach.conf 
+$ cat /etc/conf.d/inputattach 
 #
 # Configuration for inputattach
 #
@@ -94,7 +94,7 @@ $
 
 ```
 
-Once you have modified the */etc/conf.d/inputattach.conf* file, you can then attempt to start the *inputattach* service, by running
+Once you have modified the */etc/conf.d/inputattach* file, you can then attempt to start the *inputattach* service, by running
 
 ```
 # systemctl start inputattach

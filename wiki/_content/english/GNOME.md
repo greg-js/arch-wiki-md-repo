@@ -127,6 +127,8 @@ fi
 
 ```
 
+In case something doesn't work as expected, you may try to change [-z $XDG_SESSION_TYPE](/index.php?title=-z_$XDG_SESSION_TYPE&action=edit&redlink=1 "-z $XDG SESSION TYPE (page does not exist)") to [$XDG_SESSION_TYPE = tty](/index.php?title=$XDG_SESSION_TYPE_%3D_tty&action=edit&redlink=1 "$XDG SESSION TYPE = tty (page does not exist)") .
+
 ### GNOME applications in Wayland
 
 When the *GNOME* session is used, GNOME applications will be run using Wayland. For debugging cases, the [GTK+ manual](https://developer.gnome.org/gtk3/stable/gtk-running.html) lists options and environment variables.

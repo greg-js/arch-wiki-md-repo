@@ -58,7 +58,7 @@ Persistent configuration is implemented as a DBM database, which contains two ta
 
 `iscsid` is managed by a systemd Unit.
 
-Start `iscsi.service` [using systemd](/index.php/Systemd#Using_units "Systemd").
+Start `iscsid.service` or `iscsid.socket` [using systemd](/index.php/Systemd#Using_units "Systemd").
 
 If the SCSI target requires authentication by the initiator, the configuration file /etc/iscsi/iscsid.conf may need to be updated.
 
@@ -134,8 +134,8 @@ You can also check where the attached iSCSI devices are located in the /dev tree
 
 At the server (target) you might need to include the client iqn from `/etc/iscsi/initiatorname.iscsi` in the acl configuration.
 
-Many of the `iscsiadm` operations require that the iSCSI daemon `iscsid` is running. To verify that this is the case, [check the status](/index.php/Systemd#Using_units "Systemd") of the `open-iscsi.service`.
+Many of the `iscsiadm` operations require that the iSCSI daemon `iscsid` is running. To verify that this is the case, [check the status](/index.php/Systemd#Using_units "Systemd") of the `iscsid.service`.
 
-To run the iSCSI daemon in debug mode (make sure you stopped `open-iscsi.service` before)
+To run the iSCSI daemon in debug mode (make sure you stopped `iscsid.service` before)
 
  `# iscsid -d 8 -c /etc/iscsi/iscsid.conf -i /etc/iscsi/initiatorname.iscsi -f`

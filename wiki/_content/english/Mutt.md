@@ -478,7 +478,7 @@ Keep in mind that writing your password in `.muttrc` is a security risk. One sol
 An alternative solution is to encrypt your password with [GnuPG](/index.php/GnuPG "GnuPG") in an encrypted file. [Setup your own keypair](/index.php/GnuPG#Create_a_key_pair "GnuPG") if you have not done so already. [Create](/index.php/Create "Create") a file in a [tmpfs](/index.php/Tmpfs "Tmpfs") with the following contents:
 
 ```
-set my_pass = " *password*"
+set my_pass = "*password*"
 
 ```
 

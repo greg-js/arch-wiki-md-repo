@@ -68,7 +68,7 @@ Next, we use pacstrap to install a basic arch-system into the container. At mini
 
 **Tip:** The `-i` option will **avoid** auto-confirmation of package selection. As you do not need to install the Linux kernel in the container, you can remove it from the package list selection to save space. See [Pacman#Usage](/index.php/Pacman#Usage "Pacman").
 
-**Note:** The package [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) required by [linux](https://www.archlinux.org/packages/?name=linux), which is included in the [base](https://www.archlinux.org/groups/x86_64/base/) group and isn't necessary to run the container, causes some issues to `systemd-tmpfiles-setup.service` during the booting process with `systemd-nspawn`. It's possible to install the [base](https://www.archlinux.org/groups/x86_64/base/) group but excluding the [linux](https://www.archlinux.org/packages/?name=linux) package and its dependencies when building the container with `# pacstrap -i -c ~/MyContainer base --ignore linux [additional pkgs/groups]`. The `--ignore` flag will be simply passed to [pacman](https://www.archlinux.org/packages/?name=pacman). See [FS#46591](https://bugs.archlinux.org/task/46591) for more information.
+**Note:** The package [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) required by [linux](https://www.archlinux.org/packages/?name=linux), which is included in the [base](https://www.archlinux.org/groups/x86_64/base/) group and is not necessary to run the container, causes some issues to `systemd-tmpfiles-setup.service` during the booting process with `systemd-nspawn`. It is possible to install the [base](https://www.archlinux.org/groups/x86_64/base/) group but excluding the [linux](https://www.archlinux.org/packages/?name=linux) package and its dependencies when building the container with `pacstrap -i -c ~/MyContainer base --ignore linux [additional pkgs/groups]`. The `--ignore` flag will be simply passed to [pacman](https://www.archlinux.org/packages/?name=pacman). See [FS#46591](https://bugs.archlinux.org/task/46591) for more information.
 
 Once your installation is finished, boot into the container:
 
@@ -110,7 +110,7 @@ Unlike Arch, Debian and Ubuntu will not let you login without a password on firs
 
 ```
 
-If the above didn't work. One can start the container and use these commands instead:
+If the above did not work. One can start the container and use these commands instead:
 
 ```
 # systemd-nspawn -b -D myContainer  #Starts the container
@@ -302,17 +302,11 @@ See [#Specify per-container settings](#Specify_per-container_settings).
 
 ### Configure networking
 
-For the most simple setup, allowing outgoing connections to the internet, you can use [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") for network management and DHCP and `systemd-resolved` for DNS.
-
-```
-# systemctl enable --now systemd-networkd systemd-resolved
-# ln -sf /run/systemd/resolve/resolv.conf /etc/resolv.conf # let systemd-resolved manage /etc/resolv.conf
-
-```
+For the most simple setup, allowing outgoing connections to the internet, you can use [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") for network management and DHCP and [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") for DNS.
 
 This assumes you have started `systemd-nspawn` with the `-n` switch, creating a virtual Ethernet link to the host.
 
-Instead of using `systemd-resolved` you can also manually [edit](/index.php/Textedit "Textedit") your container's `/etc/resolv.conf` by adding your DNS server's IP address.
+Instead of using [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") you can also manually [edit](/index.php/Textedit "Textedit") your container's `/etc/resolv.conf` by adding your DNS server's IP address.
 
 Note the canonical [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") host and container .network files are from [https://github.com/systemd/systemd/tree/master/network](https://github.com/systemd/systemd/tree/master/network) .
 

@@ -9,12 +9,12 @@ This article introduces the reader to the JFS file system. In particular, proced
 ## Contents
 
 *   [1 Background](#Background)
-    *   [1.1 GNU/Linux development team](#GNU.2FLinux_development_team)
+    *   [1.1 GNU/Linux development team](#GNU/Linux_development_team)
     *   [1.2 Technical features](#Technical_features)
-*   [2 Implementing on GNU/Linux](#Implementing_on_GNU.2FLinux)
+*   [2 Implementing on GNU/Linux](#Implementing_on_GNU/Linux)
 *   [3 Optimizations](#Optimizations)
     *   [3.1 Defragmenting JFS](#Defragmenting_JFS)
-    *   [3.2 Deadline I/O scheduler](#Deadline_I.2FO_scheduler)
+    *   [3.2 Deadline I/O scheduler](#Deadline_I/O_scheduler)
     *   [3.3 External journal](#External_journal)
     *   [3.4 noatime fstab attribute](#noatime_fstab_attribute)
     *   [3.5 Journal modes](#Journal_modes)
@@ -152,35 +152,7 @@ Basically, this script copies the data off the JFS file system to a backup drive
 
 ### Deadline I/O scheduler
 
-JFS seems to perform better when the kernel has been configured to use the *Deadline I/O Scheduler*. Indeed, JFS's performance seems to exceed that of other GNU/Linux file systems with this particular scheduler being employed [[8]](http://www.redhat.com/archives/ext3-users/2005-July/msg00018.html). There are several ways to utilize this scheduler. One is to recompile with the Deadline I/O scheduler set to the default:
-
-```
-Block layer
-    ---> I/O Schedulers
-        ---> [*] Deadline I/O scheduler
-        ---> Default I/O scheduler (Deadline) --->
-
-```
-
-If you are using a generic Arch package for your kernel, you can simply append *elevator=deadline* to the kernel line commandline or permenantly to kernel line in your */etc/default/grub* and run *grub-mkconfig -o /boot/grub/grub.cfg*. The kernel entry would look something like:
-
-```
-# (0) Arch 2.6.22
-title   Arch Linux
-root    (hd0,0)
-kernel  /vmlinuz-linux root=/dev/sda3 elevator=deadline
-initrd /initramfs-linux.img
-
-```
-
-It is also possible to enable the Deadline I/O scheduler for specific devices by invoking the following command:
-
-```
-echo deadline > /sys/block/sda/queue/scheduler 
-
-```
-
-This sets the Deadline scheduler as the default for `/dev/sda` (the entire physical device).
+JFS seems to perform better when the kernel has been configured to use the [Deadline I/O Scheduler](/index.php/Improving_performance#Input/output_schedulers "Improving performance"). Indeed, JFS's performance seems to exceed that of other GNU/Linux file systems with this particular scheduler being employed [[8]](http://www.redhat.com/archives/ext3-users/2005-July/msg00018.html).
 
 ### External journal
 

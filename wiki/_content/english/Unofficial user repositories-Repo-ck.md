@@ -10,13 +10,12 @@ Related articles
 *   [2 Kernels and related packages](#Kernels_and_related_packages)
 *   [3 Selecting the correct CPU optimized package](#Selecting_the_correct_CPU_optimized_package)
     *   [3.1 Speed benefits of CPU optimized packages](#Speed_benefits_of_CPU_optimized_packages)
-*   [4 BFQ I/O scheduler](#BFQ_I/O_scheduler)
-*   [5 Repository statistics](#Repository_statistics)
-*   [6 Mirrors](#Mirrors)
-*   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 Support](#Support)
-    *   [7.2 Downloads interrupt regularly](#Downloads_interrupt_regularly)
-    *   [7.3 Error: signature from graysky is unknown trust](#Error:_signature_from_graysky_is_unknown_trust)
+*   [4 Repository statistics](#Repository_statistics)
+*   [5 Mirrors](#Mirrors)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 Support](#Support)
+    *   [6.2 Downloads interrupt regularly](#Downloads_interrupt_regularly)
+    *   [6.3 Error: signature from graysky is unknown trust](#Error:_signature_from_graysky_is_unknown_trust)
 
 ## Setup
 
@@ -112,10 +111,6 @@ For further help, see:
 ### Speed benefits of CPU optimized packages
 
 Extensive testing comparing the effect of GCC compile options show varying results, from no change to rather significant speed ups. [[1]](https://bbs.archlinux.org/viewtopic.php?id=154333) [[2]](https://www.phoronix.com/scan.php?page=news_item&px=GCC-Optimizations-E3V5-Levels) [[3]](https://www.phoronix.com/scan.php?page=article&item=intel_core_avx2&num=2)
-
-## BFQ I/O scheduler
-
-See [Improving performance#Input/output schedulers](/index.php/Improving_performance#Input/output_schedulers "Improving performance").
 
 ## Repository statistics
 

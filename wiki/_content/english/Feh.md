@@ -39,6 +39,8 @@ This is just one example; there are many more options available should you desir
 
 **Tip:** The `--start-at` option will display a selected image in feh while allowing to browse all other images in the directory as well, in their default order, i.e. as if you had run "feh *" and cycled through to the selected image. For example, `feh --start-at ./foo.jpg .` views all images in the current directory, starting with `*foo*.jpg`.
 
+If you are browsing photos from a modern camera with EXIF data, it is interesting to use the `--auto-rotate` option to automatically rotate images. This does not alter the file.
+
 ### Set the wallpaper
 
 `feh` can be used to set the desktop wallpaper, for example for [window managers](/index.php/Window_manager "Window manager") without this feature such as [Openbox](/index.php/Openbox "Openbox"), [Fluxbox](/index.php/Fluxbox "Fluxbox"), and [xmonad](/index.php/Xmonad "Xmonad").

@@ -59,25 +59,26 @@ Version: ThinkPad X1 Carbon 6th
     *   [2.4 BIOS configurations](#BIOS_configurations)
 *   [3 Power management/Throttling issues](#Power_management/Throttling_issues)
     *   [3.1 Throttling fix](#Throttling_fix)
-*   [4 Configuration](#Configuration)
-    *   [4.1 Keyboard Fn Shortcuts](#Keyboard_Fn_Shortcuts)
-    *   [4.2 Special buttons](#Special_buttons)
-    *   [4.3 Bind special keys](#Bind_special_keys)
-    *   [4.4 Disabling red LED Thinkpad logo](#Disabling_red_LED_Thinkpad_logo)
-    *   [4.5 HDR Display Color Calibration](#HDR_Display_Color_Calibration)
-*   [5 Intel Graphics UHD 620 issues](#Intel_Graphics_UHD_620_issues)
-*   [6 TrackPoint and Touchpad issues](#TrackPoint_and_Touchpad_issues)
-*   [7 Thunderbolt dock](#Thunderbolt_dock)
-    *   [7.1 Plugable USB-C Mini Docking Station with 85W Power Delivery UD-CAM](#Plugable_USB-C_Mini_Docking_Station_with_85W_Power_Delivery_UD-CAM)
-        *   [7.1.1 Bios settings](#Bios_settings)
-        *   [7.1.2 TLP blacklisting devices from USB autosuspend](#TLP_blacklisting_devices_from_USB_autosuspend)
-    *   [7.2 Lenovo dock](#Lenovo_dock)
-*   [8 Full-disk encryption](#Full-disk_encryption)
-    *   [8.1 Ramdisk module](#Ramdisk_module)
-*   [9 Tools](#Tools)
-    *   [9.1 Diagnostics](#Diagnostics)
-*   [10 References](#References)
-*   [11 Additional resources](#Additional_resources)
+*   [4 Audio crackling](#Audio_crackling)
+*   [5 Configuration](#Configuration)
+    *   [5.1 Keyboard Fn Shortcuts](#Keyboard_Fn_Shortcuts)
+    *   [5.2 Special buttons](#Special_buttons)
+    *   [5.3 Bind special keys](#Bind_special_keys)
+    *   [5.4 Disabling red LED Thinkpad logo](#Disabling_red_LED_Thinkpad_logo)
+    *   [5.5 HDR Display Color Calibration](#HDR_Display_Color_Calibration)
+*   [6 Intel Graphics UHD 620 issues](#Intel_Graphics_UHD_620_issues)
+*   [7 TrackPoint and Touchpad issues](#TrackPoint_and_Touchpad_issues)
+*   [8 Thunderbolt dock](#Thunderbolt_dock)
+    *   [8.1 Plugable USB-C Mini Docking Station with 85W Power Delivery UD-CAM](#Plugable_USB-C_Mini_Docking_Station_with_85W_Power_Delivery_UD-CAM)
+        *   [8.1.1 Bios settings](#Bios_settings)
+        *   [8.1.2 TLP blacklisting devices from USB autosuspend](#TLP_blacklisting_devices_from_USB_autosuspend)
+    *   [8.2 Lenovo dock](#Lenovo_dock)
+*   [9 Full-disk encryption](#Full-disk_encryption)
+    *   [9.1 Ramdisk module](#Ramdisk_module)
+*   [10 Tools](#Tools)
+    *   [10.1 Diagnostics](#Diagnostics)
+*   [11 References](#References)
+*   [12 Additional resources](#Additional_resources)
 
 ## BIOS
 
@@ -149,6 +150,17 @@ sudo systemctl enable --now lenovo_fix.service
 The script also supports more advance thermal/performance features including CPU undervolting. See the [lenovo-throttling-fix repository](https://github.com/erpalma/lenovo-throttling-fix) `README.md` for details.
 
 **Note:** If you installed [thermald](https://www.archlinux.org/packages/?name=thermald), it may conflict with the throttling fix in this package. Consider disabling thermald or otherwise work around this.
+
+## Audio crackling
+
+When charging you may hear crackling noise while listening to audio. [The work around](https://www.reddit.com/r/thinkpad/comments/8j8208/audio_crackling_through_both_headphone_jack_and/) for this issue is to disable one of the PINs:
+
+```
+sudo hda-verb /dev/snd/hwC0D0 0x1d SET_PIN_WIDGET_CONTROL 0x0
+
+```
+
+There is also a kernel patch for this issue, which can be found [here](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1805079).
 
 ## Configuration
 

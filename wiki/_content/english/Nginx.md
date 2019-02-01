@@ -34,6 +34,7 @@ This article describes how to set up nginx and how to optionally integrate it wi
     *   [5.1 Running unprivileged using systemd](#Running_unprivileged_using_systemd)
     *   [5.2 Alternative script for systemd](#Alternative_script_for_systemd)
     *   [5.3 Nginx Beautifier](#Nginx_Beautifier)
+    *   [5.4 Better headers management](#Better_headers_management)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Configuration validation](#Configuration_validation)
     *   [6.2 Accessing local IP redirects to localhost](#Accessing_local_IP_redirects_to_localhost)
@@ -910,6 +911,20 @@ The `PIDFile` in unit file allows systemd to monitor process (absolute path requ
 ### Nginx Beautifier
 
 [nginxbeautifier](https://aur.archlinux.org/packages/nginxbeautifier/) is a commandline tool used to beautify and format nginx configuration files.
+
+### Better headers management
+
+Nginx has a rather unintuitive header management system where headers can only be defined in one context, any other headers are ignored. To remedy this we can install the [headers-more-nginx](https://github.com/openresty/headers-more-nginx-module#more_set_headers) module.
+
+[Install](/index.php/Install "Install") the package [nginx-mod-headers-more](https://www.archlinux.org/packages/?name=nginx-mod-headers-more) package. This will install the module to `/usr/lib/nginx/modules` directory.
+
+To load the module add the following to the top of your main nginx configuration file.
+
+ `/etc/nginx/nginx.conf` 
+```
+load_module "/usr/lib/nginx/modules/ngx_http_headers_more_filter_module.so";
+...
+```
 
 ## Troubleshooting
 
