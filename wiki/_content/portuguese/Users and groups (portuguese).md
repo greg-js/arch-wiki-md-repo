@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Users and groups](/index.php/Users_and_groups "Users and groups"). Data da última tradução: 2019-01-25\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Users_and_groups&diff=0&oldid=564645) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Users and groups](/index.php/Users_and_groups "Users and groups"). Data da última tradução: 2019-02-02\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Users_and_groups&diff=0&oldid=565116) na versão em inglês.
 
 Artigos relacionados
 
@@ -27,6 +27,7 @@ Usuários e grupos são usados no GNU/Linux para [controle de acesso](https://en
     *   [8.2 Grupos de sistema](#Grupos_de_sistema)
     *   [8.3 Grupos pré-systemd](#Grupos_pré-systemd)
     *   [8.4 Grupos sem uso](#Grupos_sem_uso)
+*   [9 Outras ferramentas relacionadas para esses banco de dados](#Outras_ferramentas_relacionadas_para_esses_banco_de_dados)
 
 ## Visão geral
 
@@ -136,12 +137,10 @@ As ferramentas de gerenciamento de usuários, grupos e senhas no Arch Linux vem 
 | `/etc/passwd` | Informações da conta do usuário |
 | `/etc/gshadow` | Contém a "sombra" da informação para contas de grupo |
 | `/etc/group` | Define os grupos para aos quais os usuários pertencem |
-| `/etc/sudoers` | Lista de quem pode executar o que com sudo |
-| `/home/*` | Diretórios *home* |
 
 ## Gerenciamento de usuário
 
-Para listar os usuários conectados no sistema, o comando `who` pode ser usado. Para listar todas as contas de usuários existentes, incluindo suas propriedades armazenadas na base de dados de [usuário](#Base_de_dados_de_usuários), execute `passwd -Sa` como root. Veja [passwd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/passwd.1) para a descrição do formato de saída.
+Para listar os usuários conectados no sistema, o comando *who* pode ser usado. Para listar todas as contas de usuários existentes, incluindo suas propriedades armazenadas na base de dados de [usuário](#Base_de_dados_de_usuários), execute `passwd -Sa` como root. Veja [passwd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/passwd.1) para a descrição do formato de saída.
 
 Para adicionar um novo usuário, use o comando *useradd*:
 
@@ -357,7 +356,7 @@ O comando *pwck* pode ser usado para verificar a integridade da base de dados de
 
 ## Gerenciamento de grupo
 
-`/etc/group` é o arquivo que define os grupos no sistema (veja [group(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/group.5) para detalhes).
+`/etc/group` é o arquivo que define os grupos no sistema (veja [group(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/group.5) para detalhes). Há também seu companheiro `gshadow` que raramente é usado. Seus detalhes estão em [gshadow(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gshadow.5).
 
 Mostre associação a grupos com o comando `groups`:
 
@@ -494,3 +493,14 @@ Os seguintes grupos estão atualmente sem uso para qualquer propósito:
 | network | Sem uso por padrão. Pode ser usado, por exemplo, para conceder acesso ao NetworkManager (veja [NetworkManager (Português)#Configurar as permissões de PolicyKit](/index.php/NetworkManager_(Portugu%C3%AAs)#Configurar_as_permissões_de_PolicyKit "NetworkManager (Português)")). |
 | power |
 | uuidd |
+
+## Outras ferramentas relacionadas para esses banco de dados
+
+[getent(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/getent.8) pode ser usado para ler um registro em particular.
+
+```
+% getent group tty
+
+```
+
+Conforme avisado em [#Base de dados de usuários](#Base_de_dados_de_usuários), o uso de utilitários específicos, como `passwd` e `chfn`, é uma maneira melhor de alterar os bancos de dados. Nunca o menos, há momentos em que editá-los diretamente é cuidada. Para aqueles momentos, `vipw`, `vigr` são fornecidos. É altamente recomendável usar esses editores sob medida usando um editor de texto geral, pois eles bloqueiam os bancos de dados em relação à edição simultânea. Eles também ajudam a evitar entradas inválidas e/ou erros de sintaxe. Observe que o Arch Linux prefere o uso de ferramentas específicas, como *chage*, para modificar o banco de dados shadow usando `vipw -s` e `vigr -s` do conjunto shadow-utils. Veja também [FS#31414](https://bugs.archlinux.org/task/31414).

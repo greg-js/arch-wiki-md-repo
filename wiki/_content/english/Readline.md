@@ -51,7 +51,7 @@ set vi-cmd-mode-string \1\e[2 q\2
 
 ```
 
-This will set a block shaped cursor when in command mode and a pipe cursor when in insert mode. Note that you must have the mode indicator enabled for this to work (see [Readline#Mode indicator in prompt](/index.php/Readline#Mode_indicator_in_prompt "Readline").
+This will set a block shaped cursor when in command mode and a pipe cursor when in insert mode. Note that you must have the mode indicator enabled for this to work (see [#Mode indicator in prompt](#Mode_indicator_in_prompt).
 
 The Virtual Console uses different escape codes, so you should check first which term is being used:
 

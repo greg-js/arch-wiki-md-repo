@@ -1499,7 +1499,7 @@ qemu-system-x86_64 \
 
 ```
 
-As noted in [QEMU 3.0 audio changes](/index.php/PCI_passthrough_via_OVMF#QEMU_3.0_audio_changes "PCI passthrough via OVMF") the specified chipset will include a series of audio patches.
+As noted in [QEMU 3.0 audio changes](#QEMU_3.0_audio_changes) the specified chipset will include a series of audio patches.
 
 Setting `QEMU_AUDIO_TIMER_PERIOD` to values higher than 100 might also help (did not test value lower than 100).
 

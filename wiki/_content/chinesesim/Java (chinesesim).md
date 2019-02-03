@@ -14,6 +14,8 @@ Arch Linux官方支持开源的 [OpenJDK](https://openjdk.java.net/) 版本7、8
 *   [1 安装](#安装)
     *   [1.1 OpenJDK](#OpenJDK)
     *   [1.2 其他实现](#其他实现)
+    *   [1.3 开发工具](#开发工具)
+        *   [1.3.1 反编译器](#反编译器)
 *   [2 在JVM间切换](#在JVM间切换)
     *   [2.1 列出兼容的安装了的Java环境](#列出兼容的安装了的Java环境)
     *   [2.2 改变默认Java环境](#改变默认Java环境)
@@ -109,6 +111,39 @@ Arch Linux官方支持开源的 [OpenJDK](https://openjdk.java.net/) 版本7、8
 	[http://www.parrot.org/](http://www.parrot.org/) || [parrot](https://aur.archlinux.org/packages/parrot/)
 
 **注意:** 32比特版本的JavaSE可以通过添加前缀 `bin32-`来找到，例如 [bin32-jre](https://aur.archlinux.org/packages/bin32-jre/) 和 [bin32-jdk](https://aur.archlinux.org/packages/bin32-jdk/). 他们使用的是 [java32-runtime-common](https://aur.archlinux.org/packages/java32-runtime-common/),而这和 [java-runtime-common](https://www.archlinux.org/packages/?name=java-runtime-common)功能一样只要添加后缀就好了`32`, 例如. `java32`. 同样的方法也适用于 [java32-environment-common](https://aur.archlinux.org/packages/java32-environment-common/),它只用于32比特版本的JDK包.
+
+### 开发工具
+
+对于集成开发环境，查阅[List of applications#Integrated development environments](/index.php/List_of_applications#Integrated_development_environments "List of applications") 和特定的 *Java IDEs* 的子分区
+
+为了阻止逆向工程，可以使用像[proguard](https://aur.archlinux.org/packages/proguard/)的混淆器.
+
+#### 反编译器
+
+*   **Bytecode Viewer** — Java逆向工程套件, 包括一个反编译器, 编辑器和调试器.
+
+	[https://bytecodeviewer.com](https://bytecodeviewer.com) || [bytecode-viewer](https://aur.archlinux.org/packages/bytecode-viewer/)
+
+*   **CFR** — Java反编译器，支持Java 9,10和更高版本的现代功能
+
+	[https://www.benf.org/other/cfr/](https://www.benf.org/other/cfr/) || [cfr](https://aur.archlinux.org/packages/cfr/)
+
+*   **Fernflower** — Java的分析反编译器, 被开发为[IntelliJ IDEA](/index.php/IntelliJ_IDEA "IntelliJ IDEA")的一部分.
+
+	[https://github.com/JetBrains/intellij-community/tree/master/plugins/java-decompiler/engine](https://github.com/JetBrains/intellij-community/tree/master/plugins/java-decompiler/engine) || [fernflower-git](https://aur.archlinux.org/packages/fernflower-git/)
+
+*   **[JAD](https://en.wikipedia.org/wiki/JAD_(software) "wikipedia:JAD (software)")** — 不被维护的Java反编译器.
+
+	[https://varaneckas.com/jad](https://varaneckas.com/jad) || [jad](https://www.archlinux.org/packages/?name=jad)
+
+*   {{App|JD-Core-java|[[Wikipedia:Java Decompiler|Java反编译器]的薄包装].|[https://github.com/nviennot/jd-core-java%7C](https://github.com/nviennot/jd-core-java%7C)[jd-core-java](https://aur.archlinux.org/packages/jd-core-java/)}}
+*   **Krakatau** — Java的反编译器，汇编器和反汇编器.
+
+	[https://github.com/Storyyeller/Krakatau](https://github.com/Storyyeller/Krakatau) || [krakatau-git](https://aur.archlinux.org/packages/krakatau-git/)
+
+*   **Procyon decompiler** — 实验性质的Java反编译器, 被ILSpy and Mono.Cecil启发.
+
+	[https://bitbucket.org/mstrobel/procyon/wiki/Java%20Decompiler](https://bitbucket.org/mstrobel/procyon/wiki/Java%20Decompiler) || [procyon-decompiler](https://aur.archlinux.org/packages/procyon-decompiler/), GUI: [luyten](https://aur.archlinux.org/packages/luyten/)
 
 ## 在JVM间切换
 

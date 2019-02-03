@@ -6,7 +6,9 @@
 *   [2 D-Bus remote control](#D-Bus_remote_control)
 *   [3 Show/hide roster](#Show/hide_roster)
 *   [4 OMEMO Support](#OMEMO_Support)
-*   [5 Minimize / Close to tray](#Minimize_/_Close_to_tray)
+*   [5 Advanced configuration](#Advanced_configuration)
+    *   [5.1 Minimize / Close to tray](#Minimize_/_Close_to_tray)
+    *   [5.2 Hide chat banner](#Hide_chat_banner)
 
 ## Installation
 
@@ -43,6 +45,14 @@ In order to use OMEMO in Gajim, follow these steps:
 8.  Restart Gajim;
 9.  Please refer to the official documentation for [running instructions](https://dev.gajim.org/gajim/gajim-plugins/wikis/OmemoGajimPlugin#running)
 
-## Minimize / Close to tray
+## Advanced configuration
 
-By default Gajim remains in the taskbar (for Docks) instead of minimizing to tray when closing it. If you would like to disable this behavior, go to *Preferences > Advanced > Advanced Configuration Editor* and change **hide_on_roster_x_button** to **Activated**.
+Settings in *Preferences > Advanced > Advanced Configuration Editor* can be adjusted in order to increase Gajim's usability.
+
+### Minimize / Close to tray
+
+By default Gajim remains in the taskbar (for Docks) instead of minimizing to tray when closing it, to disable this behavior **enable** the **hide_on_roster_x_button** preference.
+
+### Hide chat banner
+
+To hide the avatar banner that normally resides close to top of the two-person chat window **enable** the **hide_chat_banner** preference.

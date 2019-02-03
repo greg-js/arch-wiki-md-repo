@@ -18,7 +18,7 @@ Related articles
 
 ## Prepare live CD/DVD/USB
 
-You should have [squashfs-tools](https://www.archlinux.org/packages/?name=squashfs-tools) installed in live CD/DVD/USB to make SquashFS archives. Please refer to [Archiso#Configure_the_live_medium](/index.php/Archiso#Configure_the_live_medium "Archiso") on how to configure `packages.x86_64` and build live CD/DVD/USB to with [squashfs-tools](https://www.archlinux.org/packages/?name=squashfs-tools) installed.
+You should have [squashfs-tools](https://www.archlinux.org/packages/?name=squashfs-tools) installed in live CD/DVD/USB to make SquashFS archives. Please refer to [Archiso#Configure the live medium](/index.php/Archiso#Configure_the_live_medium "Archiso") on how to configure `packages.x86_64` and build live CD/DVD/USB to with [squashfs-tools](https://www.archlinux.org/packages/?name=squashfs-tools) installed.
 
 ## Backup in live environment
 

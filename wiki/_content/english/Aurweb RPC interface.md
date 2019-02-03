@@ -107,7 +107,7 @@ https://aur.archlinux.org/rpc/?v=5&type=info&arg[]=foobar
 Info for multiple `foobar` and `bar` packages:
 
 ```
-https://aur.archlinux.org/rpc/?v=5&type=info&arg[]=foo&arg[]=bar
+https://aur.archlinux.org/rpc/?v=5&type=info&arg[]=foobar&arg[]=bar
 
 ```
 

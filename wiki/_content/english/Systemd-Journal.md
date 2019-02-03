@@ -27,7 +27,7 @@ Systemd journal classifies messages by [Priority level](#Priority_level) and [Fa
 A syslog severity code (in systemd called priority) is used to mark the importance of a message [RFC 5424 Section 6.2.1](https://tools.ietf.org/html/rfc5424#section-6.2.1).
 
 | Value | Severity | Keyword | Description | Examples |
-| 0 | Emergency | emerg | System is unusable | Severe Kernel BUG, systemd dumped core.
+| 0 | Emergency | emerg | System is unusable | Severe Kernel BUG, [systemd dumped core](/index.php/Systemd-coredump "Systemd-coredump").
 This level should not be used by applications. |
 | 1 | Alert | alert | Should be corrected immediately | Vital subsystem goes out of work. Data loss.
 `kernel: BUG: unable to handle kernel paging request at ffffc90403238ffc`. |

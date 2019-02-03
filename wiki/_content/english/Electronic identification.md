@@ -20,7 +20,7 @@ An [electronic identification](https://en.wikipedia.org/wiki/Electronic_identifi
 
 All types of electronic identification **require** installing the [ccid](https://www.archlinux.org/packages/?name=ccid) package. After installation, [enable](/index.php/Enable "Enable"), and [start](/index.php/Start "Start") `pcscd.socket`. In addition, [ACS](https://www.acs.com.hk/en/product-lines/2/pc-linked-smart-card-readers/) smart cards also require the [acsccid](https://www.archlinux.org/packages/?name=acsccid) package.
 
-[pcsc-tools](https://www.archlinux.org/packages/?name=pcsc-tools) contains `pcsc_scan` program that can be used to check smart card detection [Smartcards#Scan_for_card_reader](/index.php/Smartcards#Scan_for_card_reader "Smartcards").
+[pcsc-tools](https://www.archlinux.org/packages/?name=pcsc-tools) contains `pcsc_scan` program that can be used to check smart card detection [Smartcards#Scan for card reader](/index.php/Smartcards#Scan_for_card_reader "Smartcards").
 
 ## Setup per country
 

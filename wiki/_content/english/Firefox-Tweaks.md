@@ -352,7 +352,7 @@ When using a dark [GTK+](/index.php/GTK%2B "GTK+") theme, one might encounter In
 
 The extension [Text Contrast for Dark Themes](https://addons.mozilla.org/firefox/addon/text-contrast-for-dark-themes/) sets the other color as needed to maintain contrast.
 
-Alternatively set the standard colors explicitly for all web pages in `userContent.css` or using the [stylus add-on](https://addons.mozilla.org/firefox/addon/styl-us/).
+Alternatively set the standard colors explicitly for all web pages in `userContent.css` or using the [stylus add-on](https://addons.mozilla.org/firefox/addon/styl-us/). The style sheet is usually located in your profile folder (visit `about:profiles` for the path) in `chrome/userContent.css`, if not you can create it there.
 
 The following sets input fields to standard black text / white background; both can be overridden by the displayed site, so that colors are seen as intended:
 

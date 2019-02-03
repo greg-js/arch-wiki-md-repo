@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [IPv6](/index.php/IPv6 "IPv6"). Data da última tradução: 2019-01-25\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=IPv6&diff=0&oldid=564682) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [IPv6](/index.php/IPv6 "IPv6"). Data da última tradução: 2019-02-02\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=IPv6&diff=0&oldid=565013) na versão em inglês.
 
 Artigos relacionados
 
@@ -17,22 +17,24 @@ No Arch Linux, IPv6 está habilitado por padrão.
     *   [3.2 NetworkManager](#NetworkManager)
     *   [3.3 systemd-networkd](#systemd-networkd)
     *   [3.4 connman](#connman)
-*   [4 Endereço estático](#Endereço_estático)
-*   [5 IPv6 e PPPoE](#IPv6_e_PPPoE)
-*   [6 Delegação de prefixo (DHCPv6-PD)](#Delegação_de_prefixo_(DHCPv6-PD))
-    *   [6.1 Com dibbler](#Com_dibbler)
-    *   [6.2 Com dhcpcd](#Com_dhcpcd)
-    *   [6.3 Com WIDE-DHCPv6](#Com_WIDE-DHCPv6)
-    *   [6.4 Outros clientes](#Outros_clientes)
-*   [7 Desabilitar IPv6](#Desabilitar_IPv6)
-    *   [7.1 Desabilitar funcionalidade](#Desabilitar_funcionalidade)
-    *   [7.2 Outros programas](#Outros_programas)
-        *   [7.2.1 dhcpcd](#dhcpcd_2)
-        *   [7.2.2 NetworkManager](#NetworkManager_2)
-        *   [7.2.3 ntpd](#ntpd)
-    *   [7.3 systemd-networkd](#systemd-networkd_2)
-*   [8 Preferir IPv4 a IPv6](#Preferir_IPv4_a_IPv6)
-*   [9 Veja também](#Veja_também)
+*   [4 Endereços privados estáveis](#Endereços_privados_estáveis)
+    *   [4.1 NetworkManager](#NetworkManager_2)
+*   [5 Endereço estático](#Endereço_estático)
+*   [6 IPv6 e PPPoE](#IPv6_e_PPPoE)
+*   [7 Delegação de prefixo (DHCPv6-PD)](#Delegação_de_prefixo_(DHCPv6-PD))
+    *   [7.1 Com dibbler](#Com_dibbler)
+    *   [7.2 Com dhcpcd](#Com_dhcpcd)
+    *   [7.3 Com WIDE-DHCPv6](#Com_WIDE-DHCPv6)
+    *   [7.4 Outros clientes](#Outros_clientes)
+*   [8 Desabilitar IPv6](#Desabilitar_IPv6)
+    *   [8.1 Desabilitar funcionalidade](#Desabilitar_funcionalidade)
+    *   [8.2 Outros programas](#Outros_programas)
+        *   [8.2.1 dhcpcd](#dhcpcd_2)
+        *   [8.2.2 NetworkManager](#NetworkManager_3)
+        *   [8.2.3 ntpd](#ntpd)
+    *   [8.3 systemd-networkd](#systemd-networkd_2)
+*   [9 Preferir IPv4 a IPv6](#Preferir_IPv4_a_IPv6)
+*   [10 Veja também](#Veja_também)
 
 ## Descoberta de vizinhança
 
@@ -191,6 +193,30 @@ Adicione a `/var/lib/connman/settings` sob a seção global:
 IPv6.privacy=preferred
 
 ```
+
+## Endereços privados estáveis
+
+Outra opção é um endereço IP privado estável ([RFC 7217](https://tools.ietf.org/html/rfc7217)). Isso permite que os IPs sejam estáveis dentro de uma rede sem expor o endereço MAC da interface.
+
+Para que o kernel gere uma chave (por `wlan0`, por exemplo) podemos definir:
+
+```
+sysctl net.ipv6.conf.wlan0.addr_gen_mode=3
+
+```
+
+Desative a interface e ative-a novamente e você deverá ver `stable-privacy` ao lado de cada endereço IPv6 depois de executar `ip addr show dev wlan0`. O kernel gerou um segredo de 128 bits para gerar endereços IP para esta interface, para vê-lo rodar `sysctl net.ipv6.conf.wlan0.stable_secret`. Vamos persistir esse valor, então adicione as seguintes linhas ao `/etc/sysctl.d/40-ipv6.conf`:
+
+```
+# Habilita modo de privacidade estável de IPv6
+net.ipv6.conf.wlan0.stable_secret = <saída do comando anterior>
+net.ipv6.conf.wlan0.addr_gen_mode = 2
+
+```
+
+### NetworkManager
+
+As configurações acima não são respeitadas pelo NetworkManager, mas o NetworkManager usa endereços privados estáveis por padrão.
 
 ## Endereço estático
 

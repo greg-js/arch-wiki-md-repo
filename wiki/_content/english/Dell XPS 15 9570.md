@@ -65,7 +65,6 @@ blacklist rivafb
 blacklist nvidiafb
 blacklist rivatv
 blacklist nv
-blacklist uvcvideo
 ```
 
 And make sure the discrete GPU powers off by default on boot.

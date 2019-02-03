@@ -29,9 +29,10 @@ This article is a general list of applications sorted by category, as a referenc
             *   [1.2.2.1 Gecko-based](#Gecko-based)
                 *   [1.2.2.1.1 Firefox spin-offs](#Firefox_spin-offs)
             *   [1.2.2.2 Blink-based](#Blink-based)
-                *   [1.2.2.2.1 Chromium spin-offs](#Chromium_spin-offs)
-                *   [1.2.2.2.2 Browsers based on qt5-webengine](#Browsers_based_on_qt5-webengine)
-                *   [1.2.2.2.3 Browsers based on electron/muon](#Browsers_based_on_electron/muon)
+                *   [1.2.2.2.1 Privacy-focused chromium spin-offs](#Privacy-focused_chromium_spin-offs)
+                *   [1.2.2.2.2 Proprietary chromium spin-offs](#Proprietary_chromium_spin-offs)
+                *   [1.2.2.2.3 Browsers based on qt5-webengine](#Browsers_based_on_qt5-webengine)
+                *   [1.2.2.2.4 Browsers based on electron/muon](#Browsers_based_on_electron/muon)
             *   [1.2.2.3 WebKit-based](#WebKit-based)
                 *   [1.2.2.3.1 Browsers based on webkit2gtk](#Browsers_based_on_webkit2gtk)
                 *   [1.2.2.3.2 Browsers based on qt5-webkit](#Browsers_based_on_qt5-webkit)
@@ -364,14 +365,16 @@ This article is a general list of applications sorted by category, as a referenc
             *   [7.1.4.1 Console](#Console_25)
             *   [7.1.4.2 Graphical](#Graphical_25)
         *   [7.1.5 Contacts management](#Contacts_management)
+            *   [7.1.5.1 Console](#Console_26)
+            *   [7.1.5.2 Graphical](#Graphical_26)
         *   [7.1.6 Financial management](#Financial_management)
         *   [7.1.7 Cryptocurrency](#Cryptocurrency)
         *   [7.1.8 Project management](#Project_management)
     *   [7.2 Education](#Education)
         *   [7.2.1 Flashcards](#Flashcards)
         *   [7.2.2 Touch typing](#Touch_typing)
-            *   [7.2.2.1 Console](#Console_26)
-            *   [7.2.2.2 Graphical](#Graphical_26)
+            *   [7.2.2.1 Console](#Console_27)
+            *   [7.2.2.2 Graphical](#Graphical_27)
         *   [7.2.3 Recipe management](#Recipe_management)
     *   [7.3 Accessibility](#Accessibility)
         *   [7.3.1 Speech synthesizers](#Speech_synthesizers)
@@ -381,8 +384,8 @@ This article is a general list of applications sorted by category, as a referenc
     *   [7.4 Display managers](#Display_managers)
     *   [7.5 Desktop environments](#Desktop_environments)
         *   [7.5.1 Window managers](#Window_managers)
-            *   [7.5.1.1 Console](#Console_27)
-            *   [7.5.1.2 Graphical](#Graphical_27)
+            *   [7.5.1.1 Console](#Console_28)
+            *   [7.5.1.2 Graphical](#Graphical_28)
             *   [7.5.1.3 Composite managers](#Composite_managers)
         *   [7.5.2 Window tilers](#Window_tilers)
         *   [7.5.3 Taskbars](#Taskbars)
@@ -608,11 +611,7 @@ See also [Wikipedia:Blink (web engine)](https://en.wikipedia.org/wiki/Blink_(web
 
 	[https://www.chromium.org/](https://www.chromium.org/) || [chromium](https://www.archlinux.org/packages/?name=chromium)
 
-###### Chromium spin-offs
-
-*   **[Google Chrome](/index.php/Google_Chrome "Google Chrome")** — Proprietary web browser developed by Google.
-
-	[https://www.google.com/chrome/](https://www.google.com/chrome/) || [google-chrome](https://aur.archlinux.org/packages/google-chrome/)
+###### Privacy-focused chromium spin-offs
 
 *   **Inox** — A privacy-focused patchset for Chromium, which disables Google services, proprietary features, prevents "calling home" and unhides all extensions.
 
@@ -622,6 +621,16 @@ See also [Wikipedia:Blink (web engine)](https://en.wikipedia.org/wiki/Blink_(web
 
 	[https://iridiumbrowser.de/](https://iridiumbrowser.de/) || [iridium](https://aur.archlinux.org/packages/iridium/)
 
+*   **Ungoogled Chromium** — Modifications to Google Chromium for removing Google integration and enhancing privacy, control, and transparency
+
+	[https://github.com/Eloston/ungoogled-chromium](https://github.com/Eloston/ungoogled-chromium) || [ungoogled-chromium](https://aur.archlinux.org/packages/ungoogled-chromium/)
+
+###### Proprietary chromium spin-offs
+
+*   **[Google Chrome](/index.php/Google_Chrome "Google Chrome")** — Proprietary web browser developed by Google.
+
+	[https://www.google.com/chrome/](https://www.google.com/chrome/) || [google-chrome](https://aur.archlinux.org/packages/google-chrome/)
+
 *   **[Opera](/index.php/Opera "Opera")** — Proprietary browser developed by Opera Software.
 
 	[https://opera.com](https://opera.com) || [opera](https://www.archlinux.org/packages/?name=opera)
@@ -629,10 +638,6 @@ See also [Wikipedia:Blink (web engine)](https://en.wikipedia.org/wiki/Blink_(web
 *   **[Slimjet](https://en.wikipedia.org/wiki/SlimBrowser "wikipedia:SlimBrowser")** — Fast, smart and powerful proprietary browser based on Chromium.
 
 	[http://www.slimjet.com/](http://www.slimjet.com/) || [slimjet](https://aur.archlinux.org/packages/slimjet/)
-
-*   **Ungoogled Chromium** — Modifications to Google Chromium for removing Google integration and enhancing privacy, control, and transparency
-
-	[https://github.com/Eloston/ungoogled-chromium](https://github.com/Eloston/ungoogled-chromium) || [ungoogled-chromium](https://aur.archlinux.org/packages/ungoogled-chromium/)
 
 *   **[Vivaldi](/index.php/Vivaldi "Vivaldi")** — An advanced proprietary browser made with the power user in mind.
 
@@ -6186,6 +6191,10 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[https://code.visualstudio.com](https://code.visualstudio.com) || [code](https://www.archlinux.org/packages/?name=code)
 
+*   **xed** — Text editor based on Pluma developed for Linux Mint.
+
+	[https://github.com/linuxmint/xed](https://github.com/linuxmint/xed) || [xed](https://www.archlinux.org/packages/?name=xed)
+
 *   **XEdit** — Simple text editor for the X Window System.
 
 	[https://www.x.org/wiki](https://www.x.org/wiki) || [xorg-xedit](https://www.archlinux.org/packages/?name=xorg-xedit)
@@ -8891,6 +8900,18 @@ These applications support time, task and contacts management.
 	[https://zanshin.kde.org/](https://zanshin.kde.org/) || [zanshin](https://www.archlinux.org/packages/?name=zanshin)
 
 #### Contacts management
+
+##### Console
+
+*   **Abook** — Text-based contacts manager designed for use with mutt.
+
+	[http://abook.sourceforge.net/](http://abook.sourceforge.net/) || [abook](https://www.archlinux.org/packages/?name=abook)
+
+*   **Khard** — Command-line addressbook that is able to sync with CardDAV-servers.
+
+	[https://github.com/scheibler/khard](https://github.com/scheibler/khard) || [khard](https://www.archlinux.org/packages/?name=khard)
+
+##### Graphical
 
 *   **GNOME Contacts** — Contacts manager for GNOME.
 

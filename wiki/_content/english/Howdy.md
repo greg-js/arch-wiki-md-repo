@@ -9,8 +9,9 @@
     *   [2.2 Add correct IR sensor](#Add_correct_IR_sensor)
     *   [2.3 Add face to Howdy](#Add_face_to_Howdy)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Howdy does not seem to work](#Howdy_does_not_seem_to_work)
-    *   [3.2 Errors recognizing an input device](#Errors_recognizing_an_input_device)
+    *   [3.1 Testing your IR camera](#Testing_your_IR_camera)
+    *   [3.2 Howdy does not seem to work](#Howdy_does_not_seem_to_work)
+    *   [3.3 Errors recognizing an input device](#Errors_recognizing_an_input_device)
 
 ## Installation
 
@@ -49,6 +50,15 @@ Determine the correct `/dev/videoX` file connected to the IR sensor. This can be
 In order to add a face model to Howdy, run `sudo howdy add`.
 
 ## Troubleshooting
+
+### Testing your IR camera
+
+It can be useful to first make verify that your IR camera functions correctly. A set of 10 jpg photos can be taken to test your device using the gstreamer package with the following command (replacing /dev/video0 with the location of your IR camera):
+
+```
+gst-launch-1.0 v4l2src device=/dev/video0 num-buffers=10 ! image/jpeg ! multifilesink location="frame-%02d.jpg"
+
+```
 
 ### Howdy does not seem to work
 

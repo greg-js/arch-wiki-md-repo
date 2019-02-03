@@ -21,12 +21,12 @@ This article describes how to access an [iSCSI](/index.php/ISCSI "ISCSI") target
 
 ## Overview
 
-The following diagram shows how the Components work together. A more detailed version can be found here: [Open-iSCSI modules](https://archive.is/HHYKR/90a7a1c178a2c069a7cbc0b578b6fb5854f827fa.jpg)
+The following diagram shows how the Components work together. A more detailed version can be found here: [Open-iSCSI modules (Outdated)](https://archive.is/HHYKR/90a7a1c178a2c069a7cbc0b578b6fb5854f827fa.jpg)
 
 ```
- +-------------------------------------------------------+             
- | Targets & Sessions configuration Database (DBM based) |             
- +-------------------------------------------------------+             
+ +--------------------------------------------------------+             
+ | Targets & Sessions configuration files and directories |             
+ +--------------------------------------------------------+             
 
  +--------------------------+     +----------------------------------+ 
  | iscsiadm                 |     | iscsid: iSCSI daemon             | 
@@ -47,10 +47,10 @@ The following diagram shows how the Components work together. A more detailed ve
 
 From the Open-iSCSI [README](https://github.com/open-iscsi/open-iscsi):
 
-Persistent configuration is implemented as a DBM database, which contains two tables:
+Persistent configuration is implemented as a tree of files and directories, which are contained in two directories:
 
-*   Discovery table (/etc/iscsi/send_targets)
-*   Node table (/etc/iscsi/nodes)
+*   Discovery table (/etc/iscsi/send_targets) which has directories named after target addresses.
+*   Node table (/etc/iscsi/nodes) which has directories named after IQN (ISCSI Unique Name) of particular device.
 
 ## Configuration
 
@@ -58,9 +58,9 @@ Persistent configuration is implemented as a DBM database, which contains two ta
 
 `iscsid` is managed by a systemd Unit.
 
-Start `iscsid.service` or `iscsid.socket` [using systemd](/index.php/Systemd#Using_units "Systemd").
+[Start](/index.php/Start "Start") `iscsid.service` or `iscsid.socket`.
 
-If the SCSI target requires authentication by the initiator, the configuration file /etc/iscsi/iscsid.conf may need to be updated.
+If the SCSI target requires authentication by the initiator, the configuration file `/etc/iscsi/iscsid.conf` may need to be updated.
 
 The following parameters are used for authenticating a login session of an initiator to a target and for the target to establish a session back to the initiator
 
@@ -88,37 +88,61 @@ discovery.sendtargets.auth.password_in = <password in initiator>
 
 ### Target discovery
 
- `# iscsiadm -m discovery -t sendtargets -p <portalip>` 
+```
+# iscsiadm -m discovery -t sendtargets -p <portalip>
+
+```
 
 ### Delete obsolete targets
 
- `# iscsiadm -m discovery -p <portalip> -o delete` 
+```
+# iscsiadm -m discovery -p <portalip> -o delete
+
+```
 
 ### Login to available targets
 
- `# iscsiadm -m node -L all` 
+```
+# iscsiadm -m node -L all
+
+```
 
 or login to specific target
 
- `# iscsiadm -m node --targetname=<targetname> --login` 
+```
+# iscsiadm -m node --targetname=<targetname> --login
+
+```
 
 logout:
 
- `# iscsiadm -m node -U all` 
+```
+# iscsiadm -m node -U all
+
+```
 
 ### Info
 
 For running session
 
- `# iscsiadm -m session -P 3` 
+```
+# iscsiadm -m session -P 3
+
+```
 
 The last line of the above command will show the name of the attached dev e.g
 
- `Attached scsi disk **sdd** State: running` 
+```
+Attached scsi disk **sdd** State: running
+
+```
 
 For the known nodes
 
- `# iscsiadm -m node` 
+```
+# iscsiadm -m node
+
+```
 
 ### Online resize of volumes
 
@@ -138,4 +162,7 @@ Many of the `iscsiadm` operations require that the iSCSI daemon `iscsid` is runn
 
 To run the iSCSI daemon in debug mode (make sure you stopped `iscsid.service` before)
 
- `# iscsid -d 8 -c /etc/iscsi/iscsid.conf -i /etc/iscsi/initiatorname.iscsi -f`
+```
+# iscsid -d 8 -c /etc/iscsi/iscsid.conf -i /etc/iscsi/initiatorname.iscsi -f
+
+```

@@ -681,7 +681,7 @@ Siccome le unità saranno aggiornate di volta in volta , usare systemd-delta per
 
 ### Evidenziazione della sintassi per le unità di systemd con Vim
 
-L'evidenziazione della sintassi per le unità di systemd con [Vim](/index.php/Vim "Vim") può essere attivata installando [vim-systemd](https://www.archlinux.org/packages/?name=vim-systemd) dal [repo ufficiale](/index.php/Official_repositories "Official repositories").
+L'evidenziazione della sintassi per le unità di systemd con [Vim](/index.php/Vim "Vim") può essere attivata installando [vim-systemd](https://aur.archlinux.org/packages/vim-systemd/) dal [repo ufficiale](/index.php/Official_repositories "Official repositories").
 
 ## Targets
 

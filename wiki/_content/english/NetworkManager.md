@@ -392,7 +392,7 @@ dns=systemd-resolved
 
 #### Other methods
 
-**Tip:** If [openresolv](/index.php/Openresolv "Openresolv") has a subscriber for the [local DNS resolver](/index.php/Domain_name_resolution#Resolvers "Domain name resolution"), set the local server address in `/etc/resolvconf.conf` and [configure NetworkManager to use openresolv](#Use_openresolv).
+**Tip:** If [openresolv](/index.php/Openresolv "Openresolv") has a subscriber for the local [DNS resolver](/index.php/DNS_resolver "DNS resolver"), set the local server address in `/etc/resolvconf.conf` and [configure NetworkManager to use openresolv](#Use_openresolv).
 
 With an already working caching DNS server, the DNS server address can be specified in NetworkManager's settings (usually by right-clicking the applet). Setup will depend on the type of front-end used; the process usually involves right-clicking on the applet, editing (or creating) a profile, and then choosing DHCP type as *Automatic (specify addresses)*. The DNS addresses will need to be entered and are usually in this form: `127.0.0.1, *DNS-server-one*, ...`.
 

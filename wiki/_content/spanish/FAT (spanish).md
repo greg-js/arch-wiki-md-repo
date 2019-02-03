@@ -1,9 +1,9 @@
 **Estado de la traducción**
-Este artículo es una traducción de [FAT](/index.php/FAT "FAT"), revisada por última vez el **2018-10-31**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=FAT&diff=0&oldid=552197) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [FAT](/index.php/FAT "FAT"), revisada por última vez el **2019-02-01**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=FAT&diff=0&oldid=565020) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
-*   [Sistema de archivos](/index.php/File_systems_(Espa%C3%B1ol) "File systems (Español)")
+*   [Sistemas de archivos](/index.php/File_systems_(Espa%C3%B1ol) "File systems (Español)")
 
 De [Wikipedia:Tabla de asignación de archivos](https://en.wikipedia.org/wiki/es:Tabla_de_asignaci%C3%B3n_de_archivos "wikipedia:es:Tabla de asignación de archivos"):
 
@@ -16,7 +16,8 @@ De [Wikipedia:Tabla de asignación de archivos](https://en.wikipedia.org/wiki/es
 *   [1 Creación del sistema de archivos](#Creación_del_sistema_de_archivos)
 *   [2 Configuración del kernel](#Configuración_del_kernel)
 *   [3 Escribir en FAT32 como usuario normal](#Escribir_en_FAT32_como_usuario_normal)
-*   [4 Véase también](#Véase_también)
+*   [4 Detectar el tipo de FAT](#Detectar_el_tipo_de_FAT)
+*   [5 Véase también](#Véase_también)
 
 ## Creación del sistema de archivos
 
@@ -93,6 +94,51 @@ Y desmontarlo con:
 
 ```
 $ umount /mnt/fat32
+
+```
+
+## Detectar el tipo de FAT
+
+Si necesita saber qué [tipo de sistema de archivos FAT](https://en.wikipedia.org/wiki/es:Tabla_de_asignaci%C3%B3n_de_archivos#Historia_y_versiones "wikipedia:es:Tabla de asignación de archivos") utiliza una partición, ejecute la orden `file`:
+
+ `# file -s /dev/*partición*`  `/dev/*partición*: DOS/MBR boot sector, code offset 0x3c+2, OEM-ID "mkfs.fat", sectors/cluster 4, root entries 512, sectors 4096 (volumes <=32 MB), Media descriptor 0xf8, sectors/FAT 3, sectors/track 32, heads 64, serial number 0x5bc09c21, unlabeled, **FAT (12 bit)**` 
+
+Alternativamente, puede ejecutar la orden `minfo` del paquete [mtools](https://www.archlinux.org/packages/?name=mtools):
+
+ `# minfo -i /dev/*partición* ::` 
+```
+device information:
+===================
+filename="/dev/*partición*"
+sectors per track: 32
+heads: 64
+cylinders: 2
+
+media byte: f8
+
+mformat command line: mformat -t 2 -h 64 -s 32 -i "/dev/*partición*" ::
+
+bootsector information
+======================
+banner:"mkfs.fat"
+sector size: 512 bytes
+cluster size: 4 sectors
+reserved (boot) sectors: 1
+fats: 2
+max available root directory slots: 512
+small size: 4096 sectors
+media descriptor byte: 0xf8
+sectors per fat: 3
+sectors per track: 32
+heads: 64
+hidden sectors: 0
+big size: 0 sectors
+physical drive id: 0x80
+reserved=0x0
+dos4=0x29
+serial number: 5BC09C21
+disk label="NO NAME    "
+disk type="**FAT12**   "
 
 ```
 

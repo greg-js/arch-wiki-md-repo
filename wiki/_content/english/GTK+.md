@@ -598,7 +598,7 @@ NautilusWindow {
 
 ### Wrong focus events with tiling window managers
 
-**Note:** This disables touchscreen support for GTK3 applications. [[8]](https://bugzilla.gnome.org/show_bug.cgi?id=677329#c14)
+**Note:** This disables smooth scrolling and touchscreen support for GTK3 applications. [[8]](https://bugzilla.gnome.org/show_bug.cgi?id=677329#c14)
 
 [Define](/index.php/Define "Define") `GDK_CORE_DEVICE_EVENTS=1` to use GTK2 style input, instead of xinput2\. [[9]](https://bugzilla.gnome.org/show_bug.cgi?id=677329#c10)
 

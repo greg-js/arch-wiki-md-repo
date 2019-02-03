@@ -315,7 +315,7 @@ RestartSec=30
 
 **提示:** 用 `systemd-delta` 命令來查看哪些單元檔案被覆蓋、哪些被修改。系統維護的時候需要即時了解哪些單元已經有了更新。
 
-安裝 [vim-systemd](https://www.archlinux.org/packages/?name=vim-systemd) 軟體包，可以使 unit 設定檔在 [Vim](/index.php/Vim "Vim") 下支持語法高亮。
+安裝 [vim-systemd](https://aur.archlinux.org/packages/vim-systemd/) 軟體包，可以使 unit 設定檔在 [Vim](/index.php/Vim "Vim") 下支持語法高亮。
 
 ## 目標（target）
 

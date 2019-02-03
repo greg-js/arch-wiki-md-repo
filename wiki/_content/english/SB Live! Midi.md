@@ -4,7 +4,7 @@
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Which bank to load?](#Which_bank_to_load.3F)
+    *   [2.1 Which bank to load?](#Which_bank_to_load?)
     *   [2.2 Automating](#Automating)
 
 ## Installation

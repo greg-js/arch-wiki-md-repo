@@ -295,7 +295,7 @@ $ systemctl hybrid-sleep
 
 *   Вы можете использовать *systemd-delta*, чтобы увидеть, какие файлы юнитов были переопределены и что конкретно было изменено. Для обслуживания системы в целом важно регулярно проверять предоставляемые файлы юнитов на полученные обновления.
 *   Используйте `systemctl cat *юнит*` чтобы посмотреть содержимое файла юнита и все Drop-in snippets кода.
-*   Подсветку синтаксиса для файлов юнитов *systemd* в редакторе [Vim](/index.php/Vim_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Vim (Русский)") можно включить, установив пакет [vim-systemd](https://www.archlinux.org/packages/?name=vim-systemd) из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)").
+*   Подсветку синтаксиса для файлов юнитов *systemd* в редакторе [Vim](/index.php/Vim_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Vim (Русский)") можно включить, установив пакет [vim-systemd](https://aur.archlinux.org/packages/vim-systemd/) из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)").
 
 #### Замена файлов юнита
 

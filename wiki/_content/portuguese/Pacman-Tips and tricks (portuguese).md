@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks"). Data da última tradução: 2019-01-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&diff=0&oldid=564797) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks"). Data da última tradução: 2019-02-02\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&diff=0&oldid=565058) na versão em inglês.
 
 Artigos relacionados
 
@@ -681,7 +681,7 @@ NoExtract = usr/share/vim/vim*/lang/*
 NoExtract = usr/lib/libreoffice/help/en-US/*
 ```
 
-Embora esse truque tenha sido usado por muitos usuários, alguns usuários descobriram que [removê-los fazia com que erros se escondessem para debaixo do tapete](https://wiki.archlinux.org/index.php?title=Talk:Pacman&oldid=460285#Dangerous_NoExtract_example).
+Alguns usuários notaram que remover localidades resultou em [consequências não planejadas](https://wiki.archlinux.org/index.php?title=Talk:Pacman&oldid=460285#Dangerous_NoExtract_example).
 
 ## Desempenho
 

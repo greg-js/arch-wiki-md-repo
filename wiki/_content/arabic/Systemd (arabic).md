@@ -654,7 +654,7 @@ As the provided unit files will be updated from time to time, use systemd-delta 
 
 ### تسليط الضوء على بناء الوحدات بواسطة Vim
 
-Syntax highlighting for systemd unit files within [Vim](/index.php/Vim "Vim") can be enabled by installing [vim-systemd](https://www.archlinux.org/packages/?name=vim-systemd) from the [official repositories](/index.php/Official_repositories "Official repositories").
+Syntax highlighting for systemd unit files within [Vim](/index.php/Vim "Vim") can be enabled by installing [vim-systemd](https://aur.archlinux.org/packages/vim-systemd/) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## الأهداف
 

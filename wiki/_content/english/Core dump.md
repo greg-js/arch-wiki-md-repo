@@ -7,7 +7,7 @@ A [core dump](https://en.wikipedia.org/wiki/Core_dump "wikipedia:Core dump") is 
     *   [1.2 Using ulimit](#Using_ulimit)
     *   [1.3 Using systemd](#Using_systemd)
 *   [2 Making a core dump](#Making_a_core_dump)
-    *   [2.1 Where do they go?](#Where_do_they_go.3F)
+    *   [2.1 Where do they go?](#Where_do_they_go?)
 *   [3 Examining a core dump](#Examining_a_core_dump)
 *   [4 See also](#See_also)
 
@@ -108,7 +108,7 @@ Use *coredumpctl* to find the corresponding dump:
 
 ```
 
-You need to uniquely identify the relevant dump. This is possible by specifying a `PID`, name of the executable, path to the executable or a journalctl predicate (see `coredumpctl(1)` and `journalctl(1)` for details). To see details of the core dumps:
+You need to uniquely identify the relevant dump. This is possible by specifying a `PID`, name of the executable, path to the executable or a journalctl predicate (see [coredumpctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/coredumpctl.1) and [journalctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1) for details). To see details of the core dumps:
 
 ```
 # coredumpctl info *match*

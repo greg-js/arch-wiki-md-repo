@@ -1,4 +1,4 @@
-[Nvidia-xrun](https://github.com/Witko/nvidia-xrun) is a utility to allow Nvidia optimus enabled laptops run [X server](/index.php/Xorg "Xorg") with discrete nvidia graphics on demand. This solution offers full GPU utilization, compatibility and better performance than [Bumblebee](/index.php/Bumblebee "Bumblebee").
+[Nvidia-xrun](https://github.com/Witko/nvidia-xrun) is a utility to allow Nvidia optimus enabled laptops run [X server](/index.php/X_server "X server") with discrete nvidia graphics on demand. This solution offers full GPU utilization, compatibility and better performance than [Bumblebee](/index.php/Bumblebee "Bumblebee").
 
 X server can only be used with integrated graphics or discrete Nvidia graphics, but not both, so user might want to switch to separate [virtual console](/index.php/Linux_console "Linux console") and start another X server using different graphics from what was used for the first X server.
 

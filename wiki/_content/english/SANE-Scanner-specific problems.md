@@ -144,7 +144,7 @@ net {IP_OF_SCANNER}
 
 ### Image Scan v3
 
-Some models require "Image Scan 3", which is different from "Image Scan! for Linux" and is not available in the official repositores. Install [imagescan](https://aur.archlinux.org/packages/imagescan/) for the base program. It should detect supported USB scanners automatically by default. If you want to make use of a network scanner you also have to install [imagescan-plugin-networkscan](https://aur.archlinux.org/packages/imagescan-plugin-networkscan/). Then edit `/etc/utsushi/utsushi.conf`, and enter the ip address of your scanner to it.
+Some models require "Image Scan 3", which is different from "Image Scan! for Linux" and is not available in the official repositores. Install [imagescan](https://www.archlinux.org/packages/?name=imagescan) for the base program. It should detect supported USB scanners automatically by default. If you want to make use of a network scanner you also have to install [imagescan-plugin-networkscan](https://aur.archlinux.org/packages/imagescan-plugin-networkscan/). Then edit `/etc/utsushi/utsushi.conf`, and enter the ip address of your scanner to it.
 
 ```
 [devices]

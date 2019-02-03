@@ -8,6 +8,10 @@
 
 	[https://wiki.gnome.org/Apps/DFeet](https://wiki.gnome.org/Apps/DFeet) || [d-feet](https://www.archlinux.org/packages/?name=d-feet)
 
+*   **QDbusViewer** — GUI D-Bus debugger. Can be used to inspect D-Bus services and invoke methods on them.
+
+	[https://doc.qt.io/qt-5/qdbusviewer.html](https://doc.qt.io/qt-5/qdbusviewer.html) || [qt5-tools](https://www.archlinux.org/packages/?name=qt5-tools)
+
 ## See also
 
 *   [D-Bus homepage](https://www.freedesktop.org/wiki/Software/dbus/) – freedesktop.org

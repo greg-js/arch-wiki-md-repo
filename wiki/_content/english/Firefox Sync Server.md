@@ -97,7 +97,7 @@ server {
 
 To configure desktop Firefox to talk to your new Sync server, go to `about:config`, search for `identity.sync.tokenserver.uri` and change its value to the URL of your server with a path of `token/1.0/sync/1.5`:
 
- `identity.sync.tokenserver.uri: http://example.com/ffsync/token/1.0/sync/1.5` 
+ `identity.sync.tokenserver.uri: http://example.com/token/1.0/sync/1.5` 
 **Tip:** Enter `about:sync-log` in the Firefox URL bar to get a list of logs related to Firefox Sync.
 
 ## See also

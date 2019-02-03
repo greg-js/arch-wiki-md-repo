@@ -2,7 +2,7 @@
 
 *   [Firewalls](/index.php/Firewalls "Firewalls")
 *   [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall")
-*   [Sysctl#TCP/IP stack hardening](/index.php/Sysctl#TCP.2FIP_stack_hardening "Sysctl")
+*   [Sysctl#TCP/IP stack hardening](/index.php/Sysctl#TCP/IP_stack_hardening "Sysctl")
 *   [Sshguard](/index.php/Sshguard "Sshguard")
 *   [Fail2ban](/index.php/Fail2ban "Fail2ban")
 *   [Nftables](/index.php/Nftables "Nftables")
@@ -13,11 +13,11 @@
 
 ## Contents
 
-*   [1 Εγκατάσταση](#.CE.95.CE.B3.CE.BA.CE.B1.CF.84.CE.AC.CF.83.CF.84.CE.B1.CF.83.CE.B7)
-*   [2 Βασικές έννοιες](#.CE.92.CE.B1.CF.83.CE.B9.CE.BA.CE.AD.CF.82_.CE.AD.CE.BD.CE.BD.CE.BF.CE.B9.CE.B5.CF.82)
-    *   [2.1 Πίνακες](#.CE.A0.CE.AF.CE.BD.CE.B1.CE.BA.CE.B5.CF.82)
-    *   [2.2 Αλυσίδες](#.CE.91.CE.BB.CF.85.CF.83.CE.AF.CE.B4.CE.B5.CF.82)
-    *   [2.3 Κανόνες](#.CE.9A.CE.B1.CE.BD.CF.8C.CE.BD.CE.B5.CF.82)
+*   [1 Εγκατάσταση](#Εγκατάσταση)
+*   [2 Βασικές έννοιες](#Βασικές_έννοιες)
+    *   [2.1 Πίνακες](#Πίνακες)
+    *   [2.2 Αλυσίδες](#Αλυσίδες)
+    *   [2.3 Κανόνες](#Κανόνες)
     *   [2.4 Traversing Chains](#Traversing_Chains)
     *   [2.5 Modules](#Modules)
 *   [3 Configuring and Running iptables](#Configuring_and_Running_iptables)

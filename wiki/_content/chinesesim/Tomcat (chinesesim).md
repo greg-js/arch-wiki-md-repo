@@ -6,22 +6,22 @@ Tomcat 是一个由 Apache Software Foundation 开发的开源的 Java [Servlet 
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-    *   [1.1 文件系统层次结构](#.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F.E5.B1.82.E6.AC.A1.E7.BB.93.E6.9E.84)
-*   [2 初始化配置](#.E5.88.9D.E5.A7.8B.E5.8C.96.E9.85.8D.E7.BD.AE)
-*   [3 启动/停止 Tomcat](#.E5.90.AF.E5.8A.A8.2F.E5.81.9C.E6.AD.A2_Tomcat)
-    *   [3.1 备用“手动”方法](#.E5.A4.87.E7.94.A8.E2.80.9C.E6.89.8B.E5.8A.A8.E2.80.9D.E6.96.B9.E6.B3.95)
-*   [4 部署和处理 Web 程序](#.E9.83.A8.E7.BD.B2.E5.92.8C.E5.A4.84.E7.90.86_Web_.E7.A8.8B.E5.BA.8F)
-    *   [4.1 GUI 方法](#GUI_.E6.96.B9.E6.B3.95)
-    *   [4.2 CLI 方法](#CLI_.E6.96.B9.E6.B3.95)
-    *   [4.3 把项目部署在别的目录](#.E6.8A.8A.E9.A1.B9.E7.9B.AE.E9.83.A8.E7.BD.B2.E5.9C.A8.E5.88.AB.E7.9A.84.E7.9B.AE.E5.BD.95)
-*   [5 日志记录](#.E6.97.A5.E5.BF.97.E8.AE.B0.E5.BD.95)
-*   [6 进一步设置](#.E8.BF.9B.E4.B8.80.E6.AD.A5.E8.AE.BE.E7.BD.AE)
-    *   [6.1 从以前版本的 Tomcat 中迁移](#.E4.BB.8E.E4.BB.A5.E5.89.8D.E7.89.88.E6.9C.AC.E7.9A.84_Tomcat_.E4.B8.AD.E8.BF.81.E7.A7.BB)
-    *   [6.2 使用不同版本的 JRE/JDK 来运行 Tomcat](#.E4.BD.BF.E7.94.A8.E4.B8.8D.E5.90.8C.E7.89.88.E6.9C.AC.E7.9A.84_JRE.2FJDK_.E6.9D.A5.E8.BF.90.E8.A1.8C_Tomcat)
-    *   [6.3 安全配置](#.E5.AE.89.E5.85.A8.E9.85.8D.E7.BD.AE)
-*   [7 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
-    *   [7.1 Tomcat 服务已经启动，但是无法加载页面](#Tomcat_.E6.9C.8D.E5.8A.A1.E5.B7.B2.E7.BB.8F.E5.90.AF.E5.8A.A8.EF.BC.8C.E4.BD.86.E6.98.AF.E6.97.A0.E6.B3.95.E5.8A.A0.E8.BD.BD.E9.A1.B5.E9.9D.A2)
+*   [1 安装](#安装)
+    *   [1.1 文件系统层次结构](#文件系统层次结构)
+*   [2 初始化配置](#初始化配置)
+*   [3 启动/停止 Tomcat](#启动/停止_Tomcat)
+    *   [3.1 备用“手动”方法](#备用“手动”方法)
+*   [4 部署和处理 Web 程序](#部署和处理_Web_程序)
+    *   [4.1 GUI 方法](#GUI_方法)
+    *   [4.2 CLI 方法](#CLI_方法)
+    *   [4.3 把项目部署在别的目录](#把项目部署在别的目录)
+*   [5 日志记录](#日志记录)
+*   [6 进一步设置](#进一步设置)
+    *   [6.1 从以前版本的 Tomcat 中迁移](#从以前版本的_Tomcat_中迁移)
+    *   [6.2 使用不同版本的 JRE/JDK 来运行 Tomcat](#使用不同版本的_JRE/JDK_来运行_Tomcat)
+    *   [6.3 安全配置](#安全配置)
+*   [7 故障排除](#故障排除)
+    *   [7.1 Tomcat 服务已经启动，但是无法加载页面](#Tomcat_服务已经启动，但是无法加载页面)
 
 ## 安装
 
@@ -44,7 +44,7 @@ INFO: The APR based Apache Tomcat Native library which allows optimal performanc
 | `/etc/tomcat*` | 配置文件。包括： `tomcat-users.xml` (defines users allowed to use administration tools and their roles), `server.xml` (Main Tomcat configuration file), `catalina.policy` (security policies configuration file) |
 | `/usr/share/tomcat*` | Tomcat 主文件夹。包括脚本文件及到其它文件夹的链接 |
 | `/usr/share/java/tomcat*` | Tomcat 的 Java 库（jar文件） |
-| `/var/log/tomcat*` | **不**被 `systemd` 记录的日志文件 (参阅 [#日志记录](#.E6.97.A5.E5.BF.97.E8.AE.B0.E5.BD.95)) |
+| `/var/log/tomcat*` | **不**被 `systemd` 记录的日志文件 (参阅 [#日志记录](#日志记录)) |
 | `/var/lib/tomcat*/webapps` | Tomcat 部署你的 Web 程序的地方 |
 | `/var/tmp/tomcat*` | Tomcat 存储你的 Web 程序数据的地方 |
 
@@ -90,7 +90,7 @@ INFO: The APR based Apache Tomcat Native library which allows optimal performanc
 
 [启动](/index.php/Start "Start") `tomcat7` 服务。
 
-一旦 Tomcat 启动了，你可以通过访问这个页面来查看结果：[http://localhost:8080](http://localhost:8080) 。如果显示了一个漂亮的 Tomcat 本地页面，表明你的 Servlet 容器正在运行，并且可以装载你的 web 程序了。如果启动脚本失败了，又或者你在浏览器里只看到了一个 Java 错误页面，你可以通过 [systemd的 journalctl](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E6.97.A5.E5.BF.97 "Systemd (简体中文)") 命令来查看启动日志。Google 上有 Tomcat 日志里常见问题的解决办法。
+一旦 Tomcat 启动了，你可以通过访问这个页面来查看结果：[http://localhost:8080](http://localhost:8080) 。如果显示了一个漂亮的 Tomcat 本地页面，表明你的 Servlet 容器正在运行，并且可以装载你的 web 程序了。如果启动脚本失败了，又或者你在浏览器里只看到了一个 Java 错误页面，你可以通过 [systemd的 journalctl](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#日志 "Systemd (简体中文)") 命令来查看启动日志。Google 上有 Tomcat 日志里常见问题的解决办法。
 
 **Note:** To improve security, Arch Linux's Tomcat packages use the [jsvc](http://commons.apache.org/daemon/jsvc.html) binary from Apache's [common-daemons](http://commons.apache.org/daemon/). Tomcat's `systemd` service runs this Apache binary with root privileges which itself starts Tomcat with an underprivileged user (`tomcat7:tomcat7` in Arch Linux). This prevents malicious code that could be executed in a bad web application from causing too much damage. This also enables the use of ports under 1024 if needed. See `man jsvc` for options available and pass them through the `CATALINA_OPTS` environment variable declared in `/etc/conf.d/tomcat7`.
 
@@ -284,4 +284,4 @@ NEW_PASSWORD:b7bbb48a5b7749f1f908eb3c0c021200c72738ce
 </Service>
 ```
 
-最后 [重启](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E5.8D.95.E5.85.83 "Systemd (简体中文)") `tomcat7` 和 `httpd` 服务。
+最后 [重启](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#使用单元 "Systemd (简体中文)") `tomcat7` 和 `httpd` 服务。

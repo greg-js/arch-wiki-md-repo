@@ -192,7 +192,7 @@ xrandr --auto
 
 #### GDM
 
-对于[GDM](/index.php/GDM "GDM")：
+对于[GDM](/index.php/GDM "GDM")，创建以下两个.desktop文件：
 
 ```
 /usr/share/gdm/greeter/autostart/optimus.desktop
@@ -209,7 +209,7 @@ X-GNOME-Autostart-Phase=DisplayServer
 
 ```
 
-确保GDM使用了Xorg模式。
+确保GDM[使用Xorg作为后端](/index.php/GDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#使用Xorg作为后端 "GDM (简体中文)")。
 
 ### 检验 3D
 

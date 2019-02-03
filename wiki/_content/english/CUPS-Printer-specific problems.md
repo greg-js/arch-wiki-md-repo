@@ -344,6 +344,7 @@ E515dw
 | PX-S7070X |
 | PX-S884 |
 | TX125 | [epson-inkjet-printer-n10-nx127](https://aur.archlinux.org/packages/epson-inkjet-printer-n10-nx127/) |
+| WF-3620 | [epson-inkjet-printer-escpr](https://www.archlinux.org/packages/?name=epson-inkjet-printer-escpr) |
 | WF-3720 | [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) |
 | WF-4720 |
 | WF-4730 |

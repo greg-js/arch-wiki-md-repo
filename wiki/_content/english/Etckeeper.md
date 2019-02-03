@@ -68,7 +68,36 @@ See [cron#Cronie](/index.php/Cron#Cronie "Cron"), [cron](/index.php/Cron "Cron")
 
 ### Incron
 
+**Note:** This section applies only to incron version 5.10.
+
 To automatically create commits on **every** file modification inside `/etc/`, use [incron](https://www.archlinux.org/packages/?name=incron). It utilizes native filesystem signalling through [inotify(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/inotify.7).
+
+After installing incron and initializing etckeeper, add root to the users allowed to run incron scripts:
+
+```
+# echo root | sudo tee -a /etc/incron.allow
+
+```
+
+Then edit the incrontab with:
+
+```
+# sudo incrontab -e
+
+```
+
+Add in the text:
+
+```
+# /etc IN_MODIFY,IN_NO_LOOP /bin/etckeeper commit "[message]"
+
+```
+
+*IN_NO_LOOP* is a flag that waits for the commit to finish before running the next command, and prevents an infinite loop.
+
+Where *[message]* could be something like `"modified $#"` where $# is a special incrontab wildcard expanded to the name of the file modified.
+
+Do note that Incron is not capable of watching subdirectories. Only files within the path will be monitored. If you need subdirectories monitored, you must give them their own entry. However, commits when top-level files are modified will still commit all changes.
 
 See: [[1]](http://inotify.aiken.cz/?section=incron&page=doc&lang=en), [[2]](https://linux.die.net/man/8/incrond)
 

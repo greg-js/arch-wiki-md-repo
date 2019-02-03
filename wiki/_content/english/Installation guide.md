@@ -108,7 +108,7 @@ The installation image enables the [dhcpcd](/index.php/Dhcpcd "Dhcpcd") daemon f
 
 ```
 
-If no connection is available, [stop](/index.php/Stop "Stop") the *dhcpcd* service with `systemctl stop dhcpcd@*interface*` where the `*interface*` name can be [tab-completed](https://en.wikipedia.org/wiki/Command-line_completion "wikipedia:Command-line completion"). Proceed to configure the network as described in [Network configuration](/index.php/Network_configuration "Network configuration").
+If no connection is available, [stop](/index.php/Stop "Stop") the *dhcpcd* service with `systemctl stop dhcpcd@*interface*` where the `*interface*` name can be [tab-completed](https://en.wikipedia.org/wiki/Command-line_completion "wikipedia:Command-line completion"), and configure the network as described in [Network configuration](/index.php/Network_configuration "Network configuration").
 
 ### Update the system clock
 
@@ -141,16 +141,17 @@ If you want to create any stacked block devices for [LVM](/index.php/LVM "LVM"),
 
 #### Example layouts
 
-| BIOS with [MBR](/index.php/MBR "MBR") or GPT |
+| BIOS with [MBR](/index.php/MBR "MBR") |
 | Mount point | Partition | [Partition type](https://en.wikipedia.org/wiki/Partition_type "w:Partition type") | Suggested size |
- /dev/sd*X*1 | [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition") | 1 MiB |
-| `/mnt` | /dev/sd*X*2 | Linux | Remainder of the device |
-| [SWAP] | /dev/sd*X*3 | Linux [swap](/index.php/Swap "Swap") | More than 512 MiB |
+| `/mnt` | `/dev/sd*X*1` | Linux | Remainder of the device |
+| [SWAP] | `/dev/sd*X*2` | Linux swap | More than 512 MiB |
 | UEFI with [GPT](/index.php/GPT "GPT") |
-| Mount point | Partition | [Partition type (GUID)](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "w:GUID Partition Table") | Suggested size |
-| `/mnt/boot` or `/mnt/efi` | /dev/sd*X*1 | [EFI system partition](/index.php/EFI_system_partition "EFI system partition") | 260–512 MiB |
-| `/mnt` | /dev/sd*X*2 | Linux | Remainder of the device |
-| [SWAP] | /dev/sd*X*3 | Linux [swap](/index.php/Swap "Swap") | More than 512 MiB |
+| Mount point | Partition | [Partition type](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "w:GUID Partition Table") | Suggested size |
+| `/mnt/boot` or `/mnt/efi` | `/dev/sd*X*1` | [EFI system partition](/index.php/EFI_system_partition "EFI system partition") | 256–512 MiB |
+| `/mnt` | `/dev/sd*X*2` | Linux x86-64 root (/) | Remainder of the device |
+| [SWAP] | `/dev/sd*X*3` | Linux swap | More than 512 MiB |
+
+See also [Partitioning#Example layouts](/index.php/Partitioning#Example_layouts "Partitioning").
 
 **Note:**
 
@@ -159,18 +160,18 @@ If you want to create any stacked block devices for [LVM](/index.php/LVM "LVM"),
 
 ### Format the partitions
 
-Once the partitions have been created, each must be formatted with an appropriate [file system](/index.php/File_system "File system"). For example, to format the root partition on `/dev/sd*X*2` with `*ext4*`, run:
+Once the partitions have been created, each must be formatted with an appropriate [file system](/index.php/File_system "File system"). For example, if the root partition is on `/dev/sd*X*1` and will contain the `*ext4*` file system, run:
 
 ```
-# mkfs.*ext4* /dev/sd*X*2
+# mkfs.*ext4* /dev/sd*X1*
 
 ```
 
 If you created a partition for swap, initialize it with *mkswap*:
 
 ```
-# mkswap /dev/sd*X*3
-# swapon /dev/sd*X*3
+# mkswap /dev/sd*X2*
+# swapon /dev/sd*X2*
 
 ```
 
@@ -181,17 +182,11 @@ See [File systems#Create a file system](/index.php/File_systems#Create_a_file_sy
 [Mount](/index.php/Mount "Mount") the file system on the root partition to `/mnt`, for example:
 
 ```
-# mount /dev/sd*X*2 /mnt
+# mount /dev/sd*X1* /mnt
 
 ```
 
-Where required, create mount points and mount the corresponding partitions, for example:
-
-```
-# mkdir /mnt/efi
-# mount /dev/sd*X*1 /mnt/efi
-
-```
+Create any remaining mount points (such as `/mnt/efi`) and mount their corresponding partitions.
 
 [genfstab](https://git.archlinux.org/arch-install-scripts.git/tree/genfstab.in) will later detect mounted file systems and swap space.
 

@@ -13,14 +13,16 @@
             *   [1.1.4.1 Console](#Console_2)
             *   [1.1.4.2 Graphical](#Graphical_2)
         *   [1.1.5 Contacts management](#Contacts_management)
+            *   [1.1.5.1 Console](#Console_3)
+            *   [1.1.5.2 Graphical](#Graphical_3)
         *   [1.1.6 Financial management](#Financial_management)
         *   [1.1.7 Cryptocurrency](#Cryptocurrency)
         *   [1.1.8 Project management](#Project_management)
     *   [1.2 Education](#Education)
         *   [1.2.1 Flashcards](#Flashcards)
         *   [1.2.2 Touch typing](#Touch_typing)
-            *   [1.2.2.1 Console](#Console_3)
-            *   [1.2.2.2 Graphical](#Graphical_3)
+            *   [1.2.2.1 Console](#Console_4)
+            *   [1.2.2.2 Graphical](#Graphical_4)
         *   [1.2.3 Recipe management](#Recipe_management)
     *   [1.3 Accessibility](#Accessibility)
         *   [1.3.1 Speech synthesizers](#Speech_synthesizers)
@@ -30,8 +32,8 @@
     *   [1.4 Display managers](#Display_managers)
     *   [1.5 Desktop environments](#Desktop_environments)
         *   [1.5.1 Window managers](#Window_managers)
-            *   [1.5.1.1 Console](#Console_4)
-            *   [1.5.1.2 Graphical](#Graphical_4)
+            *   [1.5.1.1 Console](#Console_5)
+            *   [1.5.1.2 Graphical](#Graphical_5)
             *   [1.5.1.3 Composite managers](#Composite_managers)
         *   [1.5.2 Window tilers](#Window_tilers)
         *   [1.5.3 Taskbars](#Taskbars)
@@ -299,6 +301,18 @@ These applications support time, task and contacts management.
 	[https://zanshin.kde.org/](https://zanshin.kde.org/) || [zanshin](https://www.archlinux.org/packages/?name=zanshin)
 
 #### Contacts management
+
+##### Console
+
+*   **Abook** — Text-based contacts manager designed for use with mutt.
+
+	[http://abook.sourceforge.net/](http://abook.sourceforge.net/) || [abook](https://www.archlinux.org/packages/?name=abook)
+
+*   **Khard** — Command-line addressbook that is able to sync with CardDAV-servers.
+
+	[https://github.com/scheibler/khard](https://github.com/scheibler/khard) || [khard](https://www.archlinux.org/packages/?name=khard)
+
+##### Graphical
 
 *   **GNOME Contacts** — Contacts manager for GNOME.
 

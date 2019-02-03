@@ -306,7 +306,7 @@ Si el sistema tiene una dirección IP permanente, se debe usar dicha dirección,
 
 Normalmente no es necesario crear una imagen *initramfs* nueva, dado que [mkinitcpio (Español)](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") se ejecuta durante la instalación del paquete [linux](https://www.archlinux.org/packages/?name=linux) con *pacstrap*.
 
-Para [LVM](/index.php/LVM_(Espa%C3%B1ol)#Configurar_mkinitcpio "LVM (Español)"), [cifrar el sistema](/index.php/Dm-crypt_(Espa%C3%B1ol) "Dm-crypt (Español)") o [RAID](/index.php/RAID#Configurar_mkinitcpio "RAID"), modifique [mkinitcpio.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.conf.5) y regenere la imagen initramfs:
+Para [LVM](/index.php/LVM_(Espa%C3%B1ol)#Configurar_mkinitcpio "LVM (Español)"), [cifrar el sistema](/index.php/Dm-crypt_(Espa%C3%B1ol) "Dm-crypt (Español)") o [RAID](/index.php/RAID#Configure_mkinitcpio "RAID"), modifique [mkinitcpio.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.conf.5) y regenere la imagen initramfs:
 
 ```
 # mkinitcpio -p linux

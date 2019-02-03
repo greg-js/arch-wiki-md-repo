@@ -238,7 +238,7 @@ The [Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol 
 
 ### DNS security
 
-For better security while browsing web, paying online, connecting to [SSH](/index.php/SSH "SSH") services and similar tasks consider using [DNSSEC](/index.php/DNSSEC "DNSSEC")-enabled [DNS resolver](/index.php/DNS_resolver "DNS resolver") that can validate signed [DNS](https://en.wikipedia.org/wiki/Domain_Name_System "wikipedia:Domain Name System") records, and [DNSCrypt](/index.php/DNSCrypt "DNSCrypt") to encrypt DNS traffic.
+For better security while browsing the web, paying online, connecting to [SSH](/index.php/SSH "SSH") services and similar tasks consider using [DNSSEC](/index.php/DNSSEC "DNSSEC")-enabled [DNS resolver](/index.php/DNS_resolver "DNS resolver") that can validate signed [DNS](https://en.wikipedia.org/wiki/Domain_Name_System "wikipedia:Domain Name System") records, and an encrypted protocol such as [DNS over TLS](https://en.wikipedia.org/wiki/DNS_over_TLS "wikipedia:DNS over TLS"), [DNS over HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTPS") or [DNSCrypt](https://en.wikipedia.org/wiki/DNSCrypt "wikipedia:DNSCrypt"). See [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution") for details.
 
 ### Setting up a firewall
 

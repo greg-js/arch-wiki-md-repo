@@ -14,9 +14,10 @@
             *   [1.2.2.1 Gecko-based](#Gecko-based)
                 *   [1.2.2.1.1 Firefox spin-offs](#Firefox_spin-offs)
             *   [1.2.2.2 Blink-based](#Blink-based)
-                *   [1.2.2.2.1 Chromium spin-offs](#Chromium_spin-offs)
-                *   [1.2.2.2.2 Browsers based on qt5-webengine](#Browsers_based_on_qt5-webengine)
-                *   [1.2.2.2.3 Browsers based on electron/muon](#Browsers_based_on_electron/muon)
+                *   [1.2.2.2.1 Privacy-focused chromium spin-offs](#Privacy-focused_chromium_spin-offs)
+                *   [1.2.2.2.2 Proprietary chromium spin-offs](#Proprietary_chromium_spin-offs)
+                *   [1.2.2.2.3 Browsers based on qt5-webengine](#Browsers_based_on_qt5-webengine)
+                *   [1.2.2.2.4 Browsers based on electron/muon](#Browsers_based_on_electron/muon)
             *   [1.2.2.3 WebKit-based](#WebKit-based)
                 *   [1.2.2.3.1 Browsers based on webkit2gtk](#Browsers_based_on_webkit2gtk)
                 *   [1.2.2.3.2 Browsers based on qt5-webkit](#Browsers_based_on_qt5-webkit)
@@ -298,11 +299,7 @@ See also [Wikipedia:Blink (web engine)](https://en.wikipedia.org/wiki/Blink_(web
 
 	[https://www.chromium.org/](https://www.chromium.org/) || [chromium](https://www.archlinux.org/packages/?name=chromium)
 
-###### Chromium spin-offs
-
-*   **[Google Chrome](/index.php/Google_Chrome "Google Chrome")** — Proprietary web browser developed by Google.
-
-	[https://www.google.com/chrome/](https://www.google.com/chrome/) || [google-chrome](https://aur.archlinux.org/packages/google-chrome/)
+###### Privacy-focused chromium spin-offs
 
 *   **Inox** — A privacy-focused patchset for Chromium, which disables Google services, proprietary features, prevents "calling home" and unhides all extensions.
 
@@ -312,6 +309,16 @@ See also [Wikipedia:Blink (web engine)](https://en.wikipedia.org/wiki/Blink_(web
 
 	[https://iridiumbrowser.de/](https://iridiumbrowser.de/) || [iridium](https://aur.archlinux.org/packages/iridium/)
 
+*   **Ungoogled Chromium** — Modifications to Google Chromium for removing Google integration and enhancing privacy, control, and transparency
+
+	[https://github.com/Eloston/ungoogled-chromium](https://github.com/Eloston/ungoogled-chromium) || [ungoogled-chromium](https://aur.archlinux.org/packages/ungoogled-chromium/)
+
+###### Proprietary chromium spin-offs
+
+*   **[Google Chrome](/index.php/Google_Chrome "Google Chrome")** — Proprietary web browser developed by Google.
+
+	[https://www.google.com/chrome/](https://www.google.com/chrome/) || [google-chrome](https://aur.archlinux.org/packages/google-chrome/)
+
 *   **[Opera](/index.php/Opera "Opera")** — Proprietary browser developed by Opera Software.
 
 	[https://opera.com](https://opera.com) || [opera](https://www.archlinux.org/packages/?name=opera)
@@ -319,10 +326,6 @@ See also [Wikipedia:Blink (web engine)](https://en.wikipedia.org/wiki/Blink_(web
 *   **[Slimjet](https://en.wikipedia.org/wiki/SlimBrowser "wikipedia:SlimBrowser")** — Fast, smart and powerful proprietary browser based on Chromium.
 
 	[http://www.slimjet.com/](http://www.slimjet.com/) || [slimjet](https://aur.archlinux.org/packages/slimjet/)
-
-*   **Ungoogled Chromium** — Modifications to Google Chromium for removing Google integration and enhancing privacy, control, and transparency
-
-	[https://github.com/Eloston/ungoogled-chromium](https://github.com/Eloston/ungoogled-chromium) || [ungoogled-chromium](https://aur.archlinux.org/packages/ungoogled-chromium/)
 
 *   **[Vivaldi](/index.php/Vivaldi "Vivaldi")** — An advanced proprietary browser made with the power user in mind.
 

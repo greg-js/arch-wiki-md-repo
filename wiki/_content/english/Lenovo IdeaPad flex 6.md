@@ -118,4 +118,4 @@ Example of my paramters:
 
 `ivrs_ioapic[4]=00:14.0 ivrs_ioapic[5]=00:00.1`
 
-Before adding the above to your configuration, make sure you know how to edit your [kernel paramaters](https://wiki.archlinux.org/index.php/Kernel_parameters).
+Before adding the above to your configuration, make sure you know how to edit your [kernel paramaters](/index.php/Kernel_parameters "Kernel parameters").

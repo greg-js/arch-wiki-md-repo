@@ -235,7 +235,7 @@ bit.trip.runner -n -4
 
 #### Core affinity
 
-There is some confusion in development as to whether the driver should be multithreading, or the program. In any case where they both attempt it, it causes drops in framerate and crashes. Examples of this include a number of modern games, and any Wine program which is running without [GLSL](https://en.wikipedia.org/wiki/OpenGL_Shading_Language "wikipedia:OpenGL Shading Language") disabled. To select a single core and allow only the driver to handle this process, simply use the `-a 0x*#*` flag, where *#* is the core number, e.g.:
+There is some confusion in development as to whether the driver should be multithreading, or the program. In any case where they both attempt it, it causes drops in framerate and crashes. Examples of this include a number of modern games, and any Wine program which is running with [GLSL](https://en.wikipedia.org/wiki/OpenGL_Shading_Language "wikipedia:OpenGL Shading Language") enabled. To select a single core and allow only the driver to handle this process, simply use the `-a 0x*#*` flag, where *#* is the core number, e.g.:
 
 ```
 bit.trip.runner -a 0x1

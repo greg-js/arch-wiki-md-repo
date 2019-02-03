@@ -1,7 +1,7 @@
 相关文章
 
 *   [Firewalls](/index.php/Firewalls "Firewalls")
-*   [Sysctl#TCP/IP stack hardening](/index.php/Sysctl#TCP.2FIP_stack_hardening "Sysctl")
+*   [Sysctl#TCP/IP stack hardening](/index.php/Sysctl#TCP/IP_stack_hardening "Sysctl")
 
 **翻译状态：** 本文是英文页面 [Iptables](/index.php/Iptables "Iptables") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-10-17，点击[这里](https://wiki.archlinux.org/index.php?title=Iptables&diff=0&oldid=266924)可以查看翻译后英文页面的改动。
 
@@ -11,26 +11,26 @@
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 基本概念](#.E5.9F.BA.E6.9C.AC.E6.A6.82.E5.BF.B5)
-    *   [2.1 表（Tables）](#.E8.A1.A8.EF.BC.88Tables.EF.BC.89)
-    *   [2.2 链 （Chains）](#.E9.93.BE_.EF.BC.88Chains.EF.BC.89)
-    *   [2.3 规则 （Rules）](#.E8.A7.84.E5.88.99_.EF.BC.88Rules.EF.BC.89)
-    *   [2.4 遍历链 （Traversing Chains）](#.E9.81.8D.E5.8E.86.E9.93.BE_.EF.BC.88Traversing_Chains.EF.BC.89)
-    *   [2.5 模块 （Modules）](#.E6.A8.A1.E5.9D.97_.EF.BC.88Modules.EF.BC.89)
-*   [3 配置并运行 iptables](#.E9.85.8D.E7.BD.AE.E5.B9.B6.E8.BF.90.E8.A1.8C_iptables)
-    *   [3.1 从命令行](#.E4.BB.8E.E5.91.BD.E4.BB.A4.E8.A1.8C)
-        *   [3.1.1 显示当前规则](#.E6.98.BE.E7.A4.BA.E5.BD.93.E5.89.8D.E8.A7.84.E5.88.99)
-        *   [3.1.2 重置规则](#.E9.87.8D.E7.BD.AE.E8.A7.84.E5.88.99)
-        *   [3.1.3 编辑规则](#.E7.BC.96.E8.BE.91.E8.A7.84.E5.88.99)
-    *   [3.2 配置文件](#.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)
-    *   [3.3 指南](#.E6.8C.87.E5.8D.97)
-*   [4 日志](#.E6.97.A5.E5.BF.97)
-    *   [4.1 限制日志级别](#.E9.99.90.E5.88.B6.E6.97.A5.E5.BF.97.E7.BA.A7.E5.88.AB)
-    *   [4.2 查看记录的数据包](#.E6.9F.A5.E7.9C.8B.E8.AE.B0.E5.BD.95.E7.9A.84.E6.95.B0.E6.8D.AE.E5.8C.85)
-    *   [4.3 使用 syslog-ng](#.E4.BD.BF.E7.94.A8_syslog-ng)
-    *   [4.4 使用 ulogd](#.E4.BD.BF.E7.94.A8_ulogd)
-*   [5 参见](#.E5.8F.82.E8.A7.81)
+*   [1 安装](#安装)
+*   [2 基本概念](#基本概念)
+    *   [2.1 表（Tables）](#表（Tables）)
+    *   [2.2 链 （Chains）](#链_（Chains）)
+    *   [2.3 规则 （Rules）](#规则_（Rules）)
+    *   [2.4 遍历链 （Traversing Chains）](#遍历链_（Traversing_Chains）)
+    *   [2.5 模块 （Modules）](#模块_（Modules）)
+*   [3 配置并运行 iptables](#配置并运行_iptables)
+    *   [3.1 从命令行](#从命令行)
+        *   [3.1.1 显示当前规则](#显示当前规则)
+        *   [3.1.2 重置规则](#重置规则)
+        *   [3.1.3 编辑规则](#编辑规则)
+    *   [3.2 配置文件](#配置文件)
+    *   [3.3 指南](#指南)
+*   [4 日志](#日志)
+    *   [4.1 限制日志级别](#限制日志级别)
+    *   [4.2 查看记录的数据包](#查看记录的数据包)
+    *   [4.3 使用 syslog-ng](#使用_syslog-ng)
+    *   [4.4 使用 ulogd](#使用_ulogd)
+*   [5 参见](#参见)
 
 ## 安装
 
@@ -98,7 +98,7 @@ iptables 包含 5 张表（tables）:
 
 表由链组成，链是一些按顺序排列的规则的列表。默认的 `filter` 表包含 `INPUT`， `OUTPUT` 和 `FORWARD` 3条内建的链，这3条链作用于数据包过滤过程中的不同时间点，如该[流程图](http://www.frozentux.net/iptables-tutorial/chunkyhtml/images/tables_traverse.jpg)所示。`nat` 表包含`PREROUTING`， `POSTROUTING` 和 `OUTPUT` 链。
 
-使用 [iptables(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iptables.8) 查看其他表中内建链的描述。
+使用 [iptables(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iptables.8) 查看其他表中内建链的描述。
 
 默认情况下，任何链中都没有规则。可以向链中添加自己想用的规则。链的默认规则通常设置为 `ACCEPT`，如果想确保任何包都不能通过规则集，那么可以重置为 `DROP`。默认的规则总是在一条链的最后生效，所以在默认规则生效前数据包需要通过所有存在的规则。
 
@@ -108,7 +108,7 @@ iptables 包含 5 张表（tables）:
 
 数据包的过滤基于 **规则**。**规则**由一个*目标*（数据包包匹配所有条件后的动作）和很多*匹配*（导致该规则可以应用的数据包所满足的条件）指定。一个规则的典型匹配事项是数据包进入的端口（例如：eth0 或者 eth1）、数据包的类型（ICMP, TCP, 或者 UDP）和数据包的目的端口。
 
-目标使用 `-j` 或者 `--jump` 选项指定。目标可以是用户定义的链（例如，如果条件匹配，跳转到之后的用户定义的链，继续处理）、一个内置的特定目标或者是一个目标扩展。内置目标是 `ACCEPT`， `DROP`， `QUEUE` 和 `RETURN`，目标扩展是 `REJECT` and `LOG`。如果目标是内置目标，数据包的命运会立刻被决定并且在当前表的数据包的处理过程会停止。如果目标是用户定义的链，并且数据包成功穿过第二条链，目标将移动到原始链中的下一个规则。目标扩展可以被*终止*（像内置目标一样）或者*不终止*（像用户定义链一样）。详细信息参阅 [iptables-extensions(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iptables-extensions.8)。
+目标使用 `-j` 或者 `--jump` 选项指定。目标可以是用户定义的链（例如，如果条件匹配，跳转到之后的用户定义的链，继续处理）、一个内置的特定目标或者是一个目标扩展。内置目标是 `ACCEPT`， `DROP`， `QUEUE` 和 `RETURN`，目标扩展是 `REJECT` and `LOG`。如果目标是内置目标，数据包的命运会立刻被决定并且在当前表的数据包的处理过程会停止。如果目标是用户定义的链，并且数据包成功穿过第二条链，目标将移动到原始链中的下一个规则。目标扩展可以被*终止*（像内置目标一样）或者*不终止*（像用户定义链一样）。详细信息参阅 [iptables-extensions(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iptables-extensions.8)。
 
 ### 遍历链 （Traversing Chains）
 
@@ -385,7 +385,7 @@ LOG 目标可以用来记录匹配某个规则的数据包。和 ACCEPT 或 DROP
 
 ```
 
-[下文](#.E9.99.90.E5.88.B6.E6.97.A5.E5.BF.97.E7.BA.A7.E5.88.AB)会给出 `limit` 和 `limit-burst` 选项的解释。
+[下文](#限制日志级别)会给出 `limit` 和 `limit-burst` 选项的解释。
 
 现在任何时候想要丢弃数据包并且记录该事件，只要跳转到 `logdrop` 链，例如：
 

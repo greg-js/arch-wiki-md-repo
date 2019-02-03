@@ -332,7 +332,7 @@ username@host ~ %                                                         [0]
 *   [https://github.com/MrElendig/dotfiles-alice/blob/master/.zshrc](https://github.com/MrElendig/dotfiles-alice/blob/master/.zshrc) - basic setup, with dynamic prompt and window title/hardinfo.
 *   [https://github.com/slashbeast/conf-mgmt/blob/master/roles/home_files/files/DOTzshrc](https://github.com/slashbeast/conf-mgmt/blob/master/roles/home_files/files/DOTzshrc) - zshrc with multiple features, be sure to check out comments into it. Notable features: confirm function to ensure that user want to run poweroff, reboot or hibernate, support for GIT in prompt (done without vcsinfo), tab completion with menu, printing current executed command into window's title bar and more.
 
-See [dotfiles#Repositories](/index.php/Dotfiles#Repositories "Dotfiles") for more.
+See [dotfiles#User repositories](/index.php/Dotfiles#User_repositories "Dotfiles") for more.
 
 ### Configuration Frameworks
 

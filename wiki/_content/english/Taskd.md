@@ -1,4 +1,4 @@
-[taskd](https://github.com/GothenburgBitFactory/taskserver) is a lightweight, secure server providing multi-user, multi-client access to task data. This allows true syncing between desktop and mobile clients.
+[taskd](https://github.com/GothenburgBitFactory/taskserver) is a lightweight, secure server for [Taskwarrior](https://en.wikipedia.org/wiki/Taskwarrior "wikipedia:Taskwarrior") ([task](https://www.archlinux.org/packages/?name=task)). It allows multiple users to intelligently synchronize their tasks between multiple clients, including between desktop and mobile ones.
 
 ## Contents
 
@@ -24,7 +24,7 @@ taskd is available in the AUR as [taskd](https://aur.archlinux.org/packages/task
 
 Once taskd is installed, you need to set it up. The first step is to `export TASKDDATA=/var/lib/taskd ` (otherwise you need to append `--data /var/lib/taskd` to every taskd command).
 
-Next, edit the `/usr/share/doc/taskd/pki/vars` file. The `CN=` line must either match the server's hostname or IP address, depending on how you connect. Once the file is edited to your heart's content, change to the directory `/usr/share/doc/taskd/pki/` and run `./generate`. This will create selfsigned certificates for your server. Copy all generated *.pem-files to `/var/lib/taskd`. Note that at least the ca.cert.pem must remain in the pki folder for the user-certificate generation later on.
+Next, edit the `/usr/share/doc/taskd/pki/vars` file. The `CN=` line must either match the server's hostname or IP address, depending on how you connect. Once the file is edited to your heart's content, change to the directory `/usr/share/doc/taskd/pki/` and run `./generate`. This will create self-signed certificates for your server. Copy all generated `.pem` to `/var/lib/taskd`. Note that at least the `ca.cert.pem` must remain in the `pki` folder for the user-certificate generation later on.
 
 Now you need to configure the taskd config. This can be done by either using `taskd config` or editing `/var/lib/taskd/config` directly.
 
@@ -37,7 +37,7 @@ taskd config --force server.crl $TASKDDATA/server.crl.pem
 taskd config --force ca.cert $TASKDDATA/ca.cert.pem
 ```
 
-Additionally you should change where taskd logs to, since the default is /tmp/log. This can be done by running
+Additionally you should change where taskd logs to, since the default is `/tmp/taskd.log`. This can be done by running
 
 ```
 touch /var/log/taskd.log
@@ -58,33 +58,39 @@ taskd add user group username
 
 Note the key the last command returns, the user will need it to synchronize.
 
-Make sure new group and user are readable by user taskd.
+Make sure new group and user are readable by user `taskd`.
 
- `chown -R taskd:taskd /var/lib/taskd/orgs` Return to `/usr/share/doc/taskd/pki/` and run `./generate.client username` This will return username.cert.pem and username.key.pem.
+ `chown -R taskd:taskd /var/lib/taskd/orgs` Return to `/usr/share/doc/taskd/pki/` and run `./generate.client username` This will return `username.cert.pem` and `username.key.pem`.
 
-The username.key.pem, username.cert.pem and ca.cert.pem must be added to the user's `~/.task` directory.
+The `username.key.pem`, `username.cert.pem` and `ca.cert.pem` must be copied into to the user's Taskwarrior user data directory (default `~/.task`).
 
 ## Client
 
 ### User configuration
 
-Once the *.pem files are added to `~/.task`, they must be added to the task config, along with the servername and unique ID.
+Once the `.pem` files have been copied to a user's Taskwarrior data directory, their configuration must be updated to point to the files.
+
+Add the following to the `config` file in the same directory:
 
 ```
-task config taskd.certificate ~/.task/username.cert.pem
-task config taskd.key ~/.task/username.key.pem
-task config taskd.ca ~/.task/ca.cert.pem
-task config taskd.server servername:port
-task config taskd.credentials group/username/key
+taskd.server=servername:port
+taskd.credentials=group/username/key
+taskd.certificate=~/.task/username.cert.pem
+taskd.key=~/.task/username.key.pem
+taskd.ca=~/.task/ca.cert.pem
 ```
 
-After you're done, check the config file. task likes to escape slashes.
+Paths are relative to the directory in which `task` is executed, so paths should be relative to `~` or absolute.
 
-After running a `task sync init`, the user is able to synchronize taskwarrior whereever pleased.
+Run `task sync init` to perform the initial synchronization, which requires consenting to sending your Taskwarrior data to the server.
+
+Run `task sync` at any time to send your local changes to the server.
 
 ### Using the Android Taskwarrior app
 
-Before you even download the android app, you need to create a folder. On your external storage (or if you only have an internal one, then there) create the folder `Android/data/kvj.taskw/files/key` where "key" is the same as the key given when creating the user in taskd. Then add the username.key.pem, username.cert.pem and ca.cert.pem files to that folder. Create a new file in that folder called `.taskrc.android`. It should look like this:
+Before you even download the android app, you need to create a folder. On your external storage (or if you only have an internal one, then there) create the folder `Android/data/kvj.taskw/files/key` where "key" is the same as the key given when creating the user with `taskd`. Then add the `username.key.pem`, `username.cert.pem` and `ca.cert.pem` files to that folder.
+
+Create a new file in that folder called `.taskrc.android`. It should look like this:
 
 ```
 taskd.server=servername:port
@@ -96,13 +102,17 @@ taskd.ca=ca.cert.pem
 
 Ensure that the config file `.taskrc.android` has a newline at the end. Otherwise, it will not be parsed correctly.
 
-Now download the app and start it. When adding a profile, choose the datafolder you just created. Taskwarrior should now sync and work as expected.
+Now download the app and start it. When prompted to add a profile, choose the data folder that you just created. Taskwarrior should now sync and work as expected.
 
 ## Troubleshooting
 
 ### Unreachable Server
 
-Should the server be unreachable but running, it bound itself to an IPv6 address. You can force IPv4 by adding `family=IPv4` to `/var/lib/taskd/config`. Restart taskd afterwards.
+Should the server be unreachable but running, it bound itself to an IPv6 address. You can force IPv4 by adding `family=IPv4` to `/var/lib/taskd/config`.
+
+If the server stalls on "Server starting", it may be failing to resolve the address you've specified in the `server` option. After a while the server will time out with "Name or service not known". In that case, try adding an external `/etc/hosts` entry aliasing that address to your external IP address (see [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution")),
+
+Restart taskd after attempting these, then check if your issue is fixed.
 
 ### "Bad Key"
 

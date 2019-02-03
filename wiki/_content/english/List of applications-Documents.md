@@ -270,6 +270,10 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[https://code.visualstudio.com](https://code.visualstudio.com) || [code](https://www.archlinux.org/packages/?name=code)
 
+*   **xed** — Text editor based on Pluma developed for Linux Mint.
+
+	[https://github.com/linuxmint/xed](https://github.com/linuxmint/xed) || [xed](https://www.archlinux.org/packages/?name=xed)
+
 *   **XEdit** — Simple text editor for the X Window System.
 
 	[https://www.x.org/wiki](https://www.x.org/wiki) || [xorg-xedit](https://www.archlinux.org/packages/?name=xorg-xedit)

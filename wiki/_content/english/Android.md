@@ -69,7 +69,7 @@ You can [install](/index.php/Install "Install") it with the [android-studio](htt
 *   Make sure you properly [set the Java environment](/index.php/Java#Change_default_Java_environment "Java") otherwise android-studio will not start.
 *   If Android Studio shows up as a blank window try [exporting](/index.php/Export "Export") `_JAVA_AWT_WM_NONREPARENTING=1`, see [issue #57675](https://code.google.com/p/android/issues/detail?id=57675).
 
-The Android Studio Setup Wizard installs the required [#SDK packages](#SDK_packages) for you and and places the SDK by default in `~/Android/Sdk`.
+The Android Studio Setup Wizard installs the required [#SDK packages](#SDK_packages) and places the SDK by default in `~/Android/Sdk`.
 
 To build apps from the command-line (using e.g. `./gradlew assembleDebug`) set the [ANDROID_SDK_ROOT](https://developer.android.com/studio/command-line/variables#android_sdk_root) [environment variable](/index.php/Environment_variable "Environment variable") to your SDK location.
 

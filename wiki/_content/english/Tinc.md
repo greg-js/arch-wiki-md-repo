@@ -30,7 +30,7 @@ For each virtual private network you have to create a separate directory `/etc/t
 You can also start by copying the sample configuration
 
 ```
-# cp -r /usr/share/tinc/examples/sample-config/* /etc/tinc/*vpnname*
+# cp -r /usr/share/tinc/examples/* /etc/tinc/*vpnname*
 
 ```
 

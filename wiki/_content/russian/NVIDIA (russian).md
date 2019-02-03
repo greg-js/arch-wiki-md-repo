@@ -13,35 +13,35 @@
 
 ## Contents
 
-*   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-    *   [1.1 Не поддерживаемые драйвера](#.D0.9D.D0.B5_.D0.BF.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.B8.D0.B2.D0.B0.D0.B5.D0.BC.D1.8B.D0.B5_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D0.B0)
-    *   [1.2 Собственное ядро](#.D0.A1.D0.BE.D0.B1.D1.81.D1.82.D0.B2.D0.B5.D0.BD.D0.BD.D0.BE.D0.B5_.D1.8F.D0.B4.D1.80.D0.BE)
+*   [1 Установка](#Установка)
+    *   [1.1 Не поддерживаемые драйвера](#Не_поддерживаемые_драйвера)
+    *   [1.2 Собственное ядро](#Собственное_ядро)
     *   [1.3 Pure Video HD](#Pure_Video_HD)
     *   [1.4 DRM kernel mode setting](#DRM_kernel_mode_setting)
         *   [1.4.1 Pacman hook](#Pacman_hook)
-    *   [1.5 Аппаратное ускорение видео посредством XvMC](#.D0.90.D0.BF.D0.BF.D0.B0.D1.80.D0.B0.D1.82.D0.BD.D0.BE.D0.B5_.D1.83.D1.81.D0.BA.D0.BE.D1.80.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B2.D0.B8.D0.B4.D0.B5.D0.BE_.D0.BF.D0.BE.D1.81.D1.80.D0.B5.D0.B4.D1.81.D1.82.D0.B2.D0.BE.D0.BC_XvMC)
-*   [2 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
-    *   [2.1 Минимальная настройка](#.D0.9C.D0.B8.D0.BD.D0.B8.D0.BC.D0.B0.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
-    *   [2.2 Автоматическая настройка](#.D0.90.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B0.D1.8F_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
+    *   [1.5 Аппаратное ускорение видео посредством XvMC](#Аппаратное_ускорение_видео_посредством_XvMC)
+*   [2 Настройка](#Настройка)
+    *   [2.1 Минимальная настройка](#Минимальная_настройка)
+    *   [2.2 Автоматическая настройка](#Автоматическая_настройка)
     *   [2.3 NVIDIA Settings](#NVIDIA_Settings)
-    *   [2.4 Несколько мониторов](#.D0.9D.D0.B5.D1.81.D0.BA.D0.BE.D0.BB.D1.8C.D0.BA.D0.BE_.D0.BC.D0.BE.D0.BD.D0.B8.D1.82.D0.BE.D1.80.D0.BE.D0.B2)
-        *   [2.4.1 Использование NVIDIA Settings](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_NVIDIA_Settings)
+    *   [2.4 Несколько мониторов](#Несколько_мониторов)
+        *   [2.4.1 Использование NVIDIA Settings](#Использование_NVIDIA_Settings)
         *   [2.4.2 ConnectedMonitor](#ConnectedMonitor)
         *   [2.4.3 TwinView](#TwinView)
-            *   [2.4.3.1 Ручная конфигурация из командной строки с использованием xrandr](#.D0.A0.D1.83.D1.87.D0.BD.D0.B0.D1.8F_.D0.BA.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D1.8F_.D0.B8.D0.B7_.D0.BA.D0.BE.D0.BC.D0.B0.D0.BD.D0.B4.D0.BD.D0.BE.D0.B9_.D1.81.D1.82.D1.80.D0.BE.D0.BA.D0.B8_.D1.81_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5.D0.BC_xrandr)
-            *   [2.4.3.2 Vsync при использовании TwinView](#Vsync_.D0.BF.D1.80.D0.B8_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B8_TwinView)
+            *   [2.4.3.1 Ручная конфигурация из командной строки с использованием xrandr](#Ручная_конфигурация_из_командной_строки_с_использованием_xrandr)
+            *   [2.4.3.2 Vsync при использовании TwinView](#Vsync_при_использовании_TwinView)
             *   [2.4.3.3 Gaming using TwinView](#Gaming_using_TwinView)
-        *   [2.4.4 Режим Mosaic](#.D0.A0.D0.B5.D0.B6.D0.B8.D0.BC_Mosaic)
+        *   [2.4.4 Режим Mosaic](#Режим_Mosaic)
             *   [2.4.4.1 Base Mosaic](#Base_Mosaic)
             *   [2.4.4.2 SLI Mosaic](#SLI_Mosaic)
-    *   [2.5 Драйвер Persistence](#.D0.94.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80_Persistence)
-*   [3 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
+    *   [2.5 Драйвер Persistence](#Драйвер_Persistence)
+*   [3 Смотрите также](#Смотрите_также)
 
 ## Установка
 
 **Важно:** Избегайте установки пакета драйвера с сайта NVIDIA. Установка через [pacman](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)") позволяет обновлять драйвер вместе с остальной системой.
 
-Данные инструкции предназначены для предоставляемых в дистрибутиве пакетов ядра [linux](https://www.archlinux.org/packages/?name=linux) или [linux-lts](https://www.archlinux.org/packages/?name=linux-lts). Для пользователей ядра, собранного самостоятельно, следует обратится к [следующему](#.D0.A1.D0.BE.D0.B1.D1.81.D1.82.D0.B2.D0.B5.D0.BD.D0.BD.D0.BE.D0.B5_.D1.8F.D0.B4.D1.80.D0.BE) подразделу.
+Данные инструкции предназначены для предоставляемых в дистрибутиве пакетов ядра [linux](https://www.archlinux.org/packages/?name=linux) или [linux-lts](https://www.archlinux.org/packages/?name=linux-lts). Для пользователей ядра, собранного самостоятельно, следует обратится к [следующему](#Собственное_ядро) подразделу.
 
 1\. Если вы не знаете модель графической карты, установленной у вас, для поиска используйте данный запрос:
 
@@ -58,13 +58,13 @@
 *   Для карт GeForce 400 series и более новых [NVCx и новее], [установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет **nvidia-390xx** (**sudo pacman -S nvidia-390xx**) или [nvidia-lts](https://www.archlinux.org/packages/?name=nvidia-lts) для [linux-lts](https://www.archlinux.org/packages/?name=linux-lts). Для самых новых моделей графических ускорителей может потребоваться [установка](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакета [nvidia-beta](https://aur.archlinux.org/packages/nvidia-beta/), т.к. стабильная версия драйвера может не поддерживать новые функции, добавленные в эти карты. Для использования драйвера с длительным сроком поддержки и поддержкой [DKMS](/index.php/Dynamic_Kernel_Module_Support_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dynamic Kernel Module Support (Русский)"), [установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") [nvidia-llb-dkms](https://aur.archlinux.org/packages/nvidia-llb-dkms/).
 *   Для карт GeForce 8000/9000 и 100-300 series [NV5x, NV8x, NV9x и NVAx] года производства 2006-2010, [установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [nvidia-340xx](https://www.archlinux.org/packages/?name=nvidia-340xx) или [nvidia-340xx-lts](https://www.archlinux.org/packages/?name=nvidia-340xx-lts) вместе с [nvidia-340xx-libgl](https://www.archlinux.org/packages/?name=nvidia-340xx-libgl).
 *   Для карт GeForce 6000/7000 series [NV4x и NV6x] года производства 2004-2006, [установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [nvidia-304xx](https://www.archlinux.org/packages/?name=nvidia-304xx) или [nvidia-304xx-lts](https://www.archlinux.org/packages/?name=nvidia-304xx-lts) вместе с [nvidia-304xx-libgl](https://www.archlinux.org/packages/?name=nvidia-304xx-libgl).
-*   Для более старых моделей, обратитесь к подразделу [#Не поддерживаемые драйвера](#.D0.9D.D0.B5_.D0.BF.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.B8.D0.B2.D0.B0.D0.B5.D0.BC.D1.8B.D0.B5_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D0.B0).
+*   Для более старых моделей, обратитесь к подразделу [#Не поддерживаемые драйвера](#Не_поддерживаемые_драйвера).
 
 4\. Если разрядность вашей ОС 64-бит и вам необходима поддержка OpenGL 32-бит, то необходимо установить соответствующие пакеты *lib32* из репозитория [multilib](/index.php/Multilib "Multilib") (например, [lib32-nvidia-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-libgl), [lib32-nvidia-340xx-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-libgl) или [lib32-nvidia-304xx-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-304xx-libgl)).
 
 5\. Перезагрузите систему. Пакет [nvidia](https://www.archlinux.org/packages/?name=nvidia) содержит файл с чёрным списком, который включает в себя модуль *nouveau*, поэтому перезагрузка необходима.
 
-После того, как драйвер будет установлен, можно перейти к разделу [#Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0).
+После того, как драйвер будет установлен, можно перейти к разделу [#Настройка](#Настройка).
 
 ### Не поддерживаемые драйвера
 

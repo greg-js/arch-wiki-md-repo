@@ -300,6 +300,8 @@ Use the following command to mount your folder in your Arch Linux guest:
 
 ```
 
+where *shared_folder_name* is the *Folder name* assigned by the hypervisor when the share was created.
+
 The vboxsf filesystem offers other options which can be displayed with this command:
 
 ```

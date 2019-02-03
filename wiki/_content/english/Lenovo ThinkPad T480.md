@@ -149,7 +149,7 @@ Without the intel driver (xf86-video-intel), neither xbacklight or xrandr bright
 
 Assuming encrypted installation, during boot process you are prompted to enter password to decrypt disk. In some cases you may not be able to enter password, because at this time keyboard driver is not loaded yet.
 
-To fix this simply put `atkbd` module into `MODULES` in [mkinitcpio](https://wiki.archlinux.org/index.php/Mkinitcpio) config file:
+To fix this simply put `atkbd` module into `MODULES` in [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") config file:
 
  `/etc/mkinitcpio.conf` 
 ```

@@ -456,6 +456,8 @@ BTN_TR=rb
 BTN_TL=lb
 BTN_TR2=rt
 BTN_TL2=lt
+BTN_THUMBL=tl
+BTN_THUMBR=tr
 BTN_START=start
 BTN_SELECT=back
 

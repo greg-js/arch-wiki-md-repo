@@ -404,7 +404,9 @@ If you get the error when attempting to load or create a LiveScript:
 
 ```
 
-*   It could be because of broken symlinks of [libgcrypt](https://www.archlinux.org/packages/?name=libgcrypt) and other dependencies, after system updates. On the first start of the Live Editor the components are extracted and these libary symlinks are created (if not existing). A solution is to simply delete the whole folder containing the broken symlinks and the extracted components, which are in the installation directory (represented by `$MATLABROOT`) under:
+*   It could be because of broken symlinks of [libgcrypt](https://www.archlinux.org/packages/?name=libgcrypt) and other dependencies, after system updates. On the first start of the Live Editor the components are extracted and these libary symlinks are created (if not existing).
+
+A solution is to simply delete the whole folder containing the broken symlinks and the extracted components, which are in the installation directory (represented by `$MATLABROOT`) under:
 
 ```
 $MATLABROOT/sys/jxbrowser-chromium
@@ -420,7 +422,10 @@ Or if the installation directory is not user writable in:
 
 Matlab will then regenerate the contents on the next Live Editor start.
 
+A better option is to replace libgcrypt symlink in this extraction directory with a less precise one. For example, after extraction, this link to /lib64/libgcrypt.so.20.2.4 is created. Replace it with e.g. /lib64/libgcrypt.so.20.
+
 *   Also the steps in [#Addon manager not working](#Addon_manager_not_working) may resolve the issue.
+*   It can also happen due to missing gconf package. Make sure [gconf](https://www.archlinux.org/packages/?name=gconf) is installed.
 *   If the above does not help, execute in the command window
 
 ```

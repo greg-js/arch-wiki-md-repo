@@ -82,7 +82,7 @@ BIOS upgrade is easy, thanks to the EFI implementation: place the update binary 
 
 Backlight and its control work out-of-the-box:
 
-*   The [systemd-backlight.service](/index.php/Backlight#systemd-backlight_service "Backlight") takes care of both *eDP panel* and *keyboard* backlight (and any other external device) status, saving at shutdown and restoring their values at boot.
+*   The [systemd-backlight.service](/index.php/Backlight#Save/Restore_functionality "Backlight") takes care of both *eDP panel* and *keyboard* backlight (and any other external device) status, saving at shutdown and restoring their values at boot.
 *   Hardware Function keys (`Fn-F11` and `Fn-F12` for screen backlight and `Fn-F10` for keyboard backlight) work without any operation, as well.
 
 **Note:** By default, the keyboard backlight automatically turns off after 60 seconds of inactivity. You can change the default behaviour by editing the related *sysfs* entry `/sys/devices/platform/dell-laptop/leds/dell\:\:kbd_backlight/stop_timeout`.

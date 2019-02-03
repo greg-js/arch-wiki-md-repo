@@ -44,7 +44,7 @@ The command returns:
 
 **Tip:** To find out whether it is a FAT12, FAT16 or FAT32 file system, use `minfo` from [mtools](https://www.archlinux.org/packages/?name=mtools).
 ```
-# minfo -i /dev/sd*x* :: | grep 'disk type'
+# minfo -i /dev/sd*xY* :: | grep 'disk type'
 
 ```
 

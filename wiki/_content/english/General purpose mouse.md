@@ -2,6 +2,8 @@ GPM, short for General Purpose Mouse, is a daemon that provides mouse support fo
 
 ## Installation
 
+**Warning:** [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) is no longer actively updated. If possible, use [libinput](/index.php/Libinput "Libinput").
+
 [Install](/index.php/Install "Install") the [gpm](https://www.archlinux.org/packages/?name=gpm) package. For touchpad support on a laptop you may also need to install [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics).
 
 ## Configuration

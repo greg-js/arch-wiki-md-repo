@@ -13,7 +13,7 @@ The Lenovo P50 is a quad core Intel Skylake Laptop.
     *   [3.5 Touchpad active even if disabled in BIOS](#Touchpad_active_even_if_disabled_in_BIOS)
     *   [3.6 Prevent tap clicking while typing](#Prevent_tap_clicking_while_typing)
     *   [3.7 Video compression artifacts in VLC](#Video_compression_artifacts_in_VLC)
-    *   [3.8 Fingeprint Validity Sensor not working](#Fingeprint_Validity_Sensor_not_working)
+    *   [3.8 Fingerprint Validity Sensor not working](#Fingerprint_Validity_Sensor_not_working)
     *   [3.9 Headsets not working with pulseaudio](#Headsets_not_working_with_pulseaudio)
     *   [3.10 Wifi failing to come up (Intel 8260)](#Wifi_failing_to_come_up_(Intel_8260))
     *   [3.11 External monitor can't be detected on Hybrid Graphics](#External_monitor_can't_be_detected_on_Hybrid_Graphics)
@@ -45,7 +45,7 @@ External video using the Mini DisplayPort seems to work most reliably when the B
 
 ### Sluggish graphics performance with HD Graphics 530 (Skylake GT2)
 
-When running with the native 4K resolution, performance can appear sluggish. This might be improved in the UEFI BIOS by increasing the amout of RAM the Intel graphics adapter should take from the DRAM from 256MB to the maximum 512MB.
+When running with the native 4K resolution, performance can appear sluggish. This might be improved in the UEFI BIOS by increasing the amount of RAM the Intel graphics adapter should take from the DRAM from 256MB to the maximum 512MB.
 
 ### High CPU chromium bug
 
@@ -89,22 +89,22 @@ xinput list
 
 ### Prevent tap clicking while typing
 
-The touchpad is very sensitive so it often happens that while typing the cursor is moved from unwanted clicks. Best solution is to deactivate tap click for the touchpad and use the harware buttons.
+The touchpad is very sensitive so it often happens that while typing the cursor is moved from unwanted clicks. Best solution is to deactivate tap click for the touchpad and use the hardware buttons.
 
-This can be done either in the settings of your graphical desktop enviroment (Gnome3 works after installing libinput drivers) or directly from the shell temporarily with:
+This can be done either in the settings of your graphical desktop environment (Gnome3 works after installing libinput drivers) or directly from the shell temporarily with:
 
 ```
 synclient TapButton1=0
 
 ```
 
-This change can be made permament by changing the Xorg configuration.
+This change can be made permanent by changing the Xorg configuration.
 
 ### Video compression artifacts in VLC
 
 When running on the Nvidia dGPU, if you see compression artifacts when playing videos in VLC, go to Tools -> Preferences -> Input / Codecs and set "Hardware-accelerated decoding" to "Disable".
 
-### Fingeprint Validity Sensor not working
+### Fingerprint Validity Sensor not working
 
 Thanks to [nmikhailov's reverse engineering work](https://github.com/nmikhailov/Validity90) and [3v1n0's libfprint implementation](https://github.com/3v1n0/libfprint) we can now use the fingerprint sensor in Linux. The fingerprint device on the P50 is listed as 138a:0090, make sure this is the one you have using lsusb. Installation requires fprintd from official repos and [libfprint-vfs0090-git](https://aur.archlinux.org/packages/libfprint-vfs0090-git/) from AUR. Then follow the instructions in [fprint](/index.php/Fprint "Fprint"). An official driver hasn't been released yet, discussion about this can be followed [on the official Lenovo forum](https://forums.lenovo.com/t5/Linux-Discussion/Validity-Fingerprint-Reader-Linux/td-p/3352145).
 

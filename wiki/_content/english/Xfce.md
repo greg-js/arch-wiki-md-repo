@@ -58,15 +58,16 @@ Related articles
     *   [5.2 GTK themes not working with multiple monitors](#GTK_themes_not_working_with_multiple_monitors)
     *   [5.3 Icons do not appear in right-click menus](#Icons_do_not_appear_in_right-click_menus)
     *   [5.4 NVIDIA and xfce4-sensors-plugin](#NVIDIA_and_xfce4-sensors-plugin)
-    *   [5.5 Panel applets keep being aligned on the left](#Panel_applets_keep_being_aligned_on_the_left)
-    *   [5.6 Preferred Applications preferences have no effect](#Preferred_Applications_preferences_have_no_effect)
-    *   [5.7 Restore default settings](#Restore_default_settings)
-    *   [5.8 Session failure](#Session_failure)
-    *   [5.9 Fonts in window title crashing xfce4-title](#Fonts_in_window_title_crashing_xfce4-title)
-    *   [5.10 Laptop lid settings ignored](#Laptop_lid_settings_ignored)
-    *   [5.11 User switching action button is greyed out](#User_switching_action_button_is_greyed_out)
-    *   [5.12 Macros in .Xresources not working](#Macros_in_.Xresources_not_working)
-    *   [5.13 Cursor theme doesn't change on login](#Cursor_theme_doesn't_change_on_login)
+    *   [5.5 Black screens at boot with NVIDIA and multiple monitors](#Black_screens_at_boot_with_NVIDIA_and_multiple_monitors)
+    *   [5.6 Panel applets keep being aligned on the left](#Panel_applets_keep_being_aligned_on_the_left)
+    *   [5.7 Preferred Applications preferences have no effect](#Preferred_Applications_preferences_have_no_effect)
+    *   [5.8 Restore default settings](#Restore_default_settings)
+    *   [5.9 Session failure](#Session_failure)
+    *   [5.10 Fonts in window title crashing xfce4-title](#Fonts_in_window_title_crashing_xfce4-title)
+    *   [5.11 Laptop lid settings ignored](#Laptop_lid_settings_ignored)
+    *   [5.12 User switching action button is greyed out](#User_switching_action_button_is_greyed_out)
+    *   [5.13 Macros in .Xresources not working](#Macros_in_.Xresources_not_working)
+    *   [5.14 Cursor theme doesn't change on login](#Cursor_theme_doesn't_change_on_login)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -230,7 +231,7 @@ Alternatively, add the commands you wish to run (including setting environment v
 
 The [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security") contains a short description of these four screen lockers together with other popular applications.
 
-In particular, [light-locker](https://www.archlinux.org/packages/?name=light-locker) integrates well with [xfce4-power-manager](https://www.archlinux.org/packages/?name=xfce4-power-manager): once installed, Xfce Power Manager's setting gains an additional *Security* tab to configure *light-locker* and the existing *Lock screen when system is going for sleep* setting is relocated under this tab. It is then possible to set in this GUI whether the session should be locked upon screensaver activity or whenever the system goes to sleep.
+In particular, an alternative locker [light-locker](https://www.archlinux.org/packages/?name=light-locker) integrates well with [xfce4-power-manager](https://www.archlinux.org/packages/?name=xfce4-power-manager): once installed, Xfce Power Manager's setting gains an additional *Security* tab to configure *light-locker* and the existing *Lock screen when system is going for sleep* setting is relocated under this tab. It is then possible to set in this GUI whether the session should be locked upon screensaver activity or whenever the system goes to sleep.
 
 To have *xflock4* run *light-locker* or any custom session locker, not among the four cited above, one must set `LockCommand` in the session's xfconf channel to the command line to be used (the command inside the quotes in the following example can be adapted accordingly for other screen lockers):
 
@@ -611,6 +612,15 @@ $ gconftool-2 --type boolean --set /desktop/gnome/interface/menus_have_icons tru
 ### NVIDIA and xfce4-sensors-plugin
 
 To detect and use sensors of nvidia gpu you need to install [libxnvctrl](https://www.archlinux.org/packages/?name=libxnvctrl) and then rebuild [xfce4-sensors-plugin](https://www.archlinux.org/packages/?name=xfce4-sensors-plugin) with [ABS](/index.php/ABS "ABS"). You also have the option of using [xfce4-sensors-plugin-nvidia](https://aur.archlinux.org/packages/xfce4-sensors-plugin-nvidia/) which replaces [xfce4-sensors-plugin](https://www.archlinux.org/packages/?name=xfce4-sensors-plugin).
+
+### Black screens at boot with NVIDIA and multiple monitors
+
+Using [NVIDIA](/index.php/NVIDIA "NVIDIA"), multiple monitors and [NVIDIA/Troubleshooting#Avoid_screen_tearing](/index.php/NVIDIA/Troubleshooting#Avoid_screen_tearing "NVIDIA/Troubleshooting") may result as a black screen when booting Xfce. The screens' position conflict into the files `/etc/X11/xorg.conf` and `~/.config/xfce4/xfconf/xfce-perchannel-xml/displays.xml`. Deleting the `displays.xml` file fixes the behavior.
+
+```
+$ rm ~/.config/xfce4/xfconf/xfce-perchannel-xml/displays.xml
+
+```
 
 ### Panel applets keep being aligned on the left
 

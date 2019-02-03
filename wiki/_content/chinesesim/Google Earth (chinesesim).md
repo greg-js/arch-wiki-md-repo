@@ -6,16 +6,16 @@
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 故障处理](#.E6.95.85.E9.9A.9C.E5.A4.84.E7.90.86)
-    *   [2.1 启动时出现错误](#.E5.90.AF.E5.8A.A8.E6.97.B6.E5.87.BA.E7.8E.B0.E9.94.99.E8.AF.AF)
-        *   [2.1.1 Startup tips 被启用](#Startup_tips_.E8.A2.AB.E5.90.AF.E7.94.A8)
-        *   [2.1.2 ~/.drirc文件的结尾没有换行](#.7E.2F.drirc.E6.96.87.E4.BB.B6.E7.9A.84.E7.BB.93.E5.B0.BE.E6.B2.A1.E6.9C.89.E6.8D.A2.E8.A1.8C)
-        *   [2.1.3 缓存文件损坏](#.E7.BC.93.E5.AD.98.E6.96.87.E4.BB.B6.E6.8D.9F.E5.9D.8F)
-        *   [2.1.4 Another crash happened while handling crash!](#Another_crash_happened_while_handling_crash.21)
-    *   [2.2 占用的内存过多](#.E5.8D.A0.E7.94.A8.E7.9A.84.E5.86.85.E5.AD.98.E8.BF.87.E5.A4.9A)
-    *   [2.3 Panoramio上的照片无法使用](#Panoramio.E4.B8.8A.E7.9A.84.E7.85.A7.E7.89.87.E6.97.A0.E6.B3.95.E4.BD.BF.E7.94.A8)
-    *   [2.4 地球除了黄色的边框以外什么都不显示](#.E5.9C.B0.E7.90.83.E9.99.A4.E4.BA.86.E9.BB.84.E8.89.B2.E7.9A.84.E8.BE.B9.E6.A1.86.E4.BB.A5.E5.A4.96.E4.BB.80.E4.B9.88.E9.83.BD.E4.B8.8D.E6.98.BE.E7.A4.BA)
+*   [1 安装](#安装)
+*   [2 故障处理](#故障处理)
+    *   [2.1 启动时出现错误](#启动时出现错误)
+        *   [2.1.1 Startup tips 被启用](#Startup_tips_被启用)
+        *   [2.1.2 ~/.drirc文件的结尾没有换行](#~/.drirc文件的结尾没有换行)
+        *   [2.1.3 缓存文件损坏](#缓存文件损坏)
+        *   [2.1.4 Another crash happened while handling crash!](#Another_crash_happened_while_handling_crash!)
+    *   [2.2 占用的内存过多](#占用的内存过多)
+    *   [2.3 Panoramio上的照片无法使用](#Panoramio上的照片无法使用)
+    *   [2.4 地球除了黄色的边框以外什么都不显示](#地球除了黄色的边框以外什么都不显示)
 
 ## 安装
 

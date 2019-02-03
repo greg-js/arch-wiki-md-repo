@@ -19,7 +19,7 @@ Bus 002 Device 005: ID 0fd9:002c Elgato Systems GmbH EyeTV DTT Deluxe v2
 
 ## Instalación
 
-[Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") [linuxtv-dvb-apps](https://www.archlinux.org/packages/?name=linuxtv-dvb-apps) usando [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)")
+[Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") [linuxtv-dvb-apps](https://aur.archlinux.org/packages/linuxtv-dvb-apps/) usando [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)")
 
 ```
 pacman -S linuxtv-dvb-apps

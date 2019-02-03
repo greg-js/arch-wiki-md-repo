@@ -281,7 +281,7 @@ RestartSec=30
 
 ### Επισήμανση σύνταξης για μονάδες με τον Vim
 
-Η επισήμανση σύνταξης για τα αρχεία μονάδων του *systemd* μέσα στον [Vim(*αγγλικά*)](/index.php/Vim "Vim") μπορεί να ενεργοποιηθεί εγκαθιστώντας το [vim-systemd](https://www.archlinux.org/packages/?name=vim-systemd) από τα [επίσημα αποθετήρια(*αγγλικά*).](/index.php/Official_repositories "Official repositories")
+Η επισήμανση σύνταξης για τα αρχεία μονάδων του *systemd* μέσα στον [Vim(*αγγλικά*)](/index.php/Vim "Vim") μπορεί να ενεργοποιηθεί εγκαθιστώντας το [vim-systemd](https://aur.archlinux.org/packages/vim-systemd/) από τα [επίσημα αποθετήρια(*αγγλικά*).](/index.php/Official_repositories "Official repositories")
 
 ## Targets
 

@@ -2,7 +2,7 @@ Thunderbolt 3 works out of the box with recent Linux kernel versions. The Linux 
 
 ## Thunderbolt Security
 
-Modern Thunderbolt devices implement security modes that require user authorization when connecting devices - this is to protect from malicious devices performing [DMA attacks](https://en.wikipedia.org/wiki/DMA_attack) or otherwise interfering with the hardware (see [Thunderstrike 2](https://trmm.net/Thunderstrike_2)).
+Modern Thunderbolt devices implement security modes that require user authorization when connecting devices - this is to protect from malicious devices performing [DMA attacks](https://en.wikipedia.org/wiki/DMA_attack "wikipedia:DMA attack") or otherwise interfering with the hardware (see [Thunderstrike 2](https://trmm.net/Thunderstrike_2)).
 
 The modes currently supported on Linux are:
 

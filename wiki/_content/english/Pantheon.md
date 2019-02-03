@@ -110,7 +110,7 @@ These are some of the original, patched, and selected packages that comprise the
 *   [pantheon-photos](https://www.archlinux.org/packages/?name=pantheon-photos) or [pantheon-photos-git](https://aur.archlinux.org/packages/pantheon-photos-git/): Photo manager developed from [shotwell](https://www.archlinux.org/packages/?name=shotwell)
 *   [pantheon-camera-git](https://aur.archlinux.org/packages/pantheon-camera-git/): Webcam app developed from [snap-photobooth](https://aur.archlinux.org/packages/snap-photobooth/)
 *   [elementary-scan-bzr](https://aur.archlinux.org/packages/elementary-scan-bzr/): Simple scan utility (does not build)
-*   [switchboard](https://aur.archlinux.org/packages/switchboard/) or [switchboard-git](https://aur.archlinux.org/packages/switchboard-git/): Pluggable settings manager similar to [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center)
+*   [switchboard](https://www.archlinux.org/packages/?name=switchboard) or [switchboard-git](https://aur.archlinux.org/packages/switchboard-git/): Pluggable settings manager similar to [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center)
 
 ## Launching Pantheon
 
@@ -146,7 +146,7 @@ For applications which do not provide a [systemd unit](/index.php/Systemd#Using_
 
 ## Configuration
 
-Configure Pantheon via [switchboard](https://aur.archlinux.org/packages/switchboard/) or [switchboard-git](https://aur.archlinux.org/packages/switchboard-git/) and its plugs (*switchboard-plug-**), which must be installed separately. Not all of [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center)'s settings panels have been ported. In addition, except [plank](/index.php/Plank "Plank"), all the Pantheon components store their configuration in the `org.pantheon` or `io.elementary` [gsettings keys](/index.php/GNOME#Configuration "GNOME"), which can be edited with [dconf-editor](https://www.archlinux.org/packages/?name=dconf-editor).
+Configure Pantheon via [switchboard](https://www.archlinux.org/packages/?name=switchboard) or [switchboard-git](https://aur.archlinux.org/packages/switchboard-git/) and its plugs (*switchboard-plug-**), which must be installed separately. Not all of [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center)'s settings panels have been ported. In addition, except [plank](/index.php/Plank "Plank"), all the Pantheon components store their configuration in the `org.pantheon` or `io.elementary` [gsettings keys](/index.php/GNOME#Configuration "GNOME"), which can be edited with [dconf-editor](https://www.archlinux.org/packages/?name=dconf-editor).
 
 **Note:** [switchboard-plug-elementary-tweaks-git](https://aur.archlinux.org/packages/switchboard-plug-elementary-tweaks-git/) provides easy access to [customizations for various aspects of the Pantheon desktop and applications](https://raw.githubusercontent.com/elementary-tweaks/elementary-tweaks/master/docs/screenshot.png), similar to [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks).
 

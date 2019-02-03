@@ -11,7 +11,7 @@ Distcc это программа, предназначенная для расп
 *   [2 Приступая к работе](#Приступая_к_работе)
 *   [3 Конфигурация](#Конфигурация)
     *   [3.1 Ведомый (Slaves)](#Ведомый_(Slaves))
-    *   [3.2 Мастер](#Мастер)
+    *   [3.2 Мастер (Master)](#Мастер_(Master))
         *   [3.2.1 Для использования с makepkg](#Для_использования_с_makepkg)
         *   [3.2.2 For use without makepkg](#For_use_without_makepkg)
 *   [4 Compile](#Compile)
@@ -25,8 +25,9 @@ Distcc это программа, предназначенная для расп
             *   [6.1.1.2 Вызов makepkg из родной среды](#Вызов_makepkg_из_родной_среды)
         *   [6.1.2 Multilib GCC method (not recommended)](#Multilib_GCC_method_(not_recommended))
     *   [6.2 Other architectures](#Other_architectures)
-        *   [6.2.1 Arch ARM](#Arch_ARM)
-        *   [6.2.2 Additional toolchains](#Additional_toolchains)
+        *   [6.2.1 Arch Linux ARM](#Arch_Linux_ARM)
+        *   [6.2.2 Master](#Master)
+        *   [6.2.3 Additional toolchains](#Additional_toolchains)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Journalctl](#Journalctl)
     *   [7.2 code 110](#code_110)
@@ -49,7 +50,7 @@ Distcc это программа, предназначенная для расп
 
 [Установить](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C "Установить") пакет [distcc](https://www.archlinux.org/packages/?name=distcc) на всех компьютерах в кластере:
 
-Для других дистрибутивов, или даже операционных систем, включая Windows использование через cygwin, обратитесь к [distcc docs](http://distcc.samba.org/doc.html).
+Для других дистрибутивов, или даже операционных систем, включая Windows используйте через cygwin, обратитесь к [distcc docs](http://distcc.samba.org/doc.html).
 
 ## Конфигурация
 
@@ -66,7 +67,7 @@ DISTCC_ARGS="--allow 192.168.0.0/24"
 
 [Запустить](/index.php/%D0%97%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D1%8C "Запустить") `distccd.service` на всех участвующих slave. Для запуска `distccd.service` при загрузке, [enable](/index.php/Enable "Enable") на каждой участвующей машине.
 
-### Мастер
+### Мастер (Master)
 
 #### Для использования с makepkg
 
@@ -241,32 +242,31 @@ See [Makepkg#Build 32-bit packages on a 64-bit system](/index.php/Makepkg#Build_
 
 ### Other architectures
 
-#### Arch ARM
+#### Arch Linux ARM
 
-При сборке на устройстве Arch ARM разработчики *очень* рекомендуют использовать официальные наборы инструментов проекта. When building on an Arch ARM device,
+Разработчики настоятельно рекомендуют использовать официальный проект [toolchains](https://archlinuxarm.org/wiki/Distcc_Cross-Compiling), который должен быть установлен на подчиненном (slave) компьютере(ах) x86_64\. Вместо того, чтобы вручную управлять ими, [AUR](/index.php/AUR "AUR") предоставляет все четыре набора инструментов, а также простые модули обслуживания systemd:
 
-*   [ARMv8](https://archlinuxarm.org/builder/xtools/x-tools8.tar.xz)
-*   [ARMv7l hard](https://archlinuxarm.org/builder/xtools/x-tools7h.tar.xz)
-*   [ARMv6l hard](https://archlinuxarm.org/builder/xtools/x-tools6h.tar.xz)
-*   [ARMv5te soft](https://archlinuxarm.org/builder/xtools/x-tools.tar.xz)
+*   [distccd-alarm-armv5](https://aur.archlinux.org/packages/distccd-alarm-armv5/)
+*   [distccd-alarm-armv6h](https://aur.archlinux.org/packages/distccd-alarm-armv6h/)
+*   [distccd-alarm-armv7h](https://aur.archlinux.org/packages/distccd-alarm-armv7h/)
+*   [distccd-alarm-armv8](https://aur.archlinux.org/packages/distccd-alarm-armv8/)
 
-Извлеките цепочку инструментов, соответствующую требуемой архитектуре, где-нибудь в **подчиненной файловой системе** и отредактируйте `/etc/conf.d/distccd`, настроив PATH, чтобы позволить использовать toolchain.
+Настройка на ведомом компьютере, содержащем набор инструментов, идентична [#Slaves](#Slaves) за исключением того, что имя файла конфигурации и служебного файла systemd совпадает с именем соответствующего пакета. Например, для armv7h файл конфигурации - `/etc/conf.d/distccd-armv7h`, а системный сервисный модуль - `distccd-armv7h.service`.
 
-Пример с набором инструментов, извлеченным в `/mnt/data`:
+Обратите внимание, что каждая из цепочек инструментов работает на своем уникальном порту, что позволяет им если это необходимо сосуществовать на подчиненном компьютере. Обязательно разрешите трафик на порт, на котором работает distcc, см. [Category:Firewalls](/index.php/Category:Firewalls "Category:Firewalls") и [distcc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/distcc.1).
 
-```
-PATH=/mnt/data/x-tools8/aarch64-unknown-linux-gnueabi/bin:$PATH
+| Target architecture | Distcc Port |
+| *armv5* | 3633 |
+| *armv6h* | 3634 |
+| *armv7h* | 3635 |
+| *armv8h/aarch64* | 3636 |
 
-```
+#### Master
 
-Чтобы прочитать файл конфигурации, [restart](/index.php/Restart "Restart") `distcc.service`.
+Настройка мастера идентична [#Master](#Master) за исключением того, что необходимо изменить следующие два файла, чтобы определить теперь нестандартный порт, который предполагается использовать для подчиненных. Обратитесь к таблице выше, если используете пакет AUR.
 
-При желании свяжите его с homedir вашего пользователя, если планируете собирать без makepkg. Пример:
-
-```
-$ ln -s /mnt/data/x-tools8 x-tools8
-
-```
+1.  `/etc/conf.d/distcc`: пример на машине armv7h: `DISTCC_ARGS="--allow 127.0.0.1 --allow 192.168.10.0/24 --port 3635`
+2.  `/etc/makepkg.conf`: пример на машине armv7h: `DISTCC_HOSTS="192.168.10.2/5:3635 192.168.10.3/5:3635"`
 
 #### Additional toolchains
 

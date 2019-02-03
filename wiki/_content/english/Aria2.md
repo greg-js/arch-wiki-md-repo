@@ -82,7 +82,7 @@ on-download-complete=exit
 This is essentially the same as if running the following:
 
 ```
-$ aria2c dir=${HOME}/Desktop file-allocation=none input-file=${HOME}/.aria2/input.conf on-download-complete=exit log-level=warn FILE
+$ aria2c --dir=${HOME}/Desktop --file-allocation=none --input-file=${HOME}/.aria2/input.conf --on-download-complete=exit --log-level=warn FILE
 
 ```
 

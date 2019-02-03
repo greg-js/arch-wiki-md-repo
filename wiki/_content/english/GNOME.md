@@ -127,7 +127,7 @@ fi
 
 ```
 
-In case something doesn't work as expected, you may try to change [-z $XDG_SESSION_TYPE](/index.php?title=-z_$XDG_SESSION_TYPE&action=edit&redlink=1 "-z $XDG SESSION TYPE (page does not exist)") to [$XDG_SESSION_TYPE = tty](/index.php?title=$XDG_SESSION_TYPE_%3D_tty&action=edit&redlink=1 "$XDG SESSION TYPE = tty (page does not exist)") .
+In case it does not work as expected, you may try to change `[[ -z $XDG_SESSION_TYPE ]]` to `[[ $XDG_SESSION_TYPE = tty ]]`.
 
 ### GNOME applications in Wayland
 

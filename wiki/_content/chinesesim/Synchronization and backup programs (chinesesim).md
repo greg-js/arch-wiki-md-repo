@@ -5,6 +5,7 @@ Related articles
 *   [List of applications#File sharing](/index.php/List_of_applications#File_sharing "List of applications")
 *   [System maintenance#Backup](/index.php/System_maintenance#Backup "System maintenance")
 *   [Dotfiles#Version control](/index.php/Dotfiles#Version_control "Dotfiles")
+
 *   [File recovery (简体中文)](/index.php/File_recovery_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "File recovery (简体中文)")
 
 这个页面列出并比较了在两个或多个位置之间同步数据的应用程序，以及在此功能之上建立的以备份为目的的制作重要数据的增量副本的应用程序。因为它们的关系，这两组程序共享许多特征所有在同一篇文章里解释描述它们.

@@ -27,58 +27,63 @@
                 *   [1.2.2.3.1 基于webkit2gtk的浏览器](#基于webkit2gtk的浏览器)
                 *   [1.2.2.3.2 基于qt5-webkit的浏览器](#基于qt5-webkit的浏览器)
             *   [1.2.2.4 其它](#其它)
-    *   [1.3 下载](#下载)
-        *   [1.3.1 FTP](#FTP)
-            *   [1.3.1.1 FTP 客户端](#FTP_客户端)
-            *   [1.3.1.2 FTP 服务器](#FTP_服务器)
-        *   [1.3.2 BitTorrent 客户端](#BitTorrent_客户端)
-            *   [1.3.2.1 命令行](#命令行)
-                *   [1.3.2.1.1 命令行后端](#命令行后端)
-                *   [1.3.2.1.2 纯命令行界面](#纯命令行界面)
-            *   [1.3.2.2 图形环境](#图形环境)
-                *   [1.3.2.2.1 libtorrent-rasterbar 后端](#libtorrent-rasterbar_后端)
-                *   [1.3.2.2.2 libktorrent 后端](#libktorrent_后端)
-                *   [1.3.2.2.3 其它](#其它_2)
-        *   [1.3.3 电驴](#电驴)
-        *   [1.3.4 Gnutella](#Gnutella)
-    *   [1.4 通讯](#通讯)
-        *   [1.4.1 邮件客户端](#邮件客户端)
-            *   [1.4.1.1 终端](#终端_2)
-            *   [1.4.1.2 图形界面](#图形界面_2)
-        *   [1.4.2 即时聊天](#即时聊天)
-            *   [1.4.2.1 多协议客户端](#多协议客户端)
-                *   [1.4.2.1.1 命令行](#命令行_2)
-                *   [1.4.2.1.2 图形环境](#图形环境_2)
-        *   [1.4.3 IRC 客户端](#IRC_客户端)
-            *   [1.4.3.1 终端](#终端_3)
-            *   [1.4.3.2 图形界面](#图形界面_3)
-            *   [1.4.3.3 XMPP (Jabber)](#XMPP_(Jabber))
-                *   [1.4.3.3.1 命令行客户端](#命令行客户端)
-                *   [1.4.3.3.2 图形界面客户端](#图形界面客户端)
-                *   [1.4.3.3.3 服务器](#服务器)
-            *   [1.4.3.4 多协议客户端](#多协议客户端_2)
-                *   [1.4.3.4.1 命令行](#命令行_3)
-                *   [1.4.3.4.2 图形界面](#图形界面_4)
-        *   [1.4.4 局域网聊天](#局域网聊天)
-        *   [1.4.5 软件式电话](#软件式电话)
-            *   [1.4.5.1 客户端](#客户端)
-                *   [1.4.5.1.1 SIP](#SIP)
-                *   [1.4.5.1.2 IAX2](#IAX2)
-                *   [1.4.5.1.3 Skype](#Skype)
-                *   [1.4.5.1.4 其它](#其它_3)
-                *   [1.4.5.1.5 多协议](#多协议)
-            *   [1.4.5.2 实用工具](#实用工具)
-    *   [1.5 新闻，RSS 与博客](#新闻，RSS_与博客)
-        *   [1.5.1 新闻抓取](#新闻抓取)
-            *   [1.5.1.1 终端](#终端_4)
-            *   [1.5.1.2 图形界面](#图形界面_5)
-        *   [1.5.2 播客客户端](#播客客户端)
-        *   [1.5.3 Usenet 新闻播报与新闻抓取](#Usenet_新闻播报与新闻抓取)
-        *   [1.5.4 博客软件](#博客软件)
-        *   [1.5.5 微博客户端](#微博客户端)
-    *   [1.6 网络剪贴板](#网络剪贴板)
-    *   [1.7 比特币](#比特币)
-    *   [1.8 Surveying](#Surveying)
+    *   [1.3 Web服务器](#Web服务器)
+        *   [1.3.1 静态web服务器](#静态web服务器)
+        *   [1.3.2 专门的 web服务器](#专门的_web服务器)
+        *   [1.3.3 WSGI 服务器](#WSGI_服务器)
+        *   [1.3.4 性能测试](#性能测试)
+    *   [1.4 下载](#下载)
+        *   [1.4.1 FTP](#FTP)
+            *   [1.4.1.1 FTP 客户端](#FTP_客户端)
+            *   [1.4.1.2 FTP 服务器](#FTP_服务器)
+        *   [1.4.2 BitTorrent 客户端](#BitTorrent_客户端)
+            *   [1.4.2.1 命令行](#命令行)
+                *   [1.4.2.1.1 命令行后端](#命令行后端)
+                *   [1.4.2.1.2 纯命令行界面](#纯命令行界面)
+            *   [1.4.2.2 图形环境](#图形环境)
+                *   [1.4.2.2.1 libtorrent-rasterbar 后端](#libtorrent-rasterbar_后端)
+                *   [1.4.2.2.2 libktorrent 后端](#libktorrent_后端)
+                *   [1.4.2.2.3 其它](#其它_2)
+        *   [1.4.3 电驴](#电驴)
+        *   [1.4.4 Gnutella](#Gnutella)
+    *   [1.5 通讯](#通讯)
+        *   [1.5.1 邮件客户端](#邮件客户端)
+            *   [1.5.1.1 终端](#终端_2)
+            *   [1.5.1.2 图形界面](#图形界面_2)
+        *   [1.5.2 即时聊天](#即时聊天)
+            *   [1.5.2.1 多协议客户端](#多协议客户端)
+                *   [1.5.2.1.1 命令行](#命令行_2)
+                *   [1.5.2.1.2 图形环境](#图形环境_2)
+        *   [1.5.3 IRC 客户端](#IRC_客户端)
+            *   [1.5.3.1 终端](#终端_3)
+            *   [1.5.3.2 图形界面](#图形界面_3)
+            *   [1.5.3.3 XMPP (Jabber)](#XMPP_(Jabber))
+                *   [1.5.3.3.1 命令行客户端](#命令行客户端)
+                *   [1.5.3.3.2 图形界面客户端](#图形界面客户端)
+                *   [1.5.3.3.3 服务器](#服务器)
+            *   [1.5.3.4 多协议客户端](#多协议客户端_2)
+                *   [1.5.3.4.1 命令行](#命令行_3)
+                *   [1.5.3.4.2 图形界面](#图形界面_4)
+        *   [1.5.4 局域网聊天](#局域网聊天)
+        *   [1.5.5 软件式电话](#软件式电话)
+            *   [1.5.5.1 客户端](#客户端)
+                *   [1.5.5.1.1 SIP](#SIP)
+                *   [1.5.5.1.2 IAX2](#IAX2)
+                *   [1.5.5.1.3 Skype](#Skype)
+                *   [1.5.5.1.4 其它](#其它_3)
+                *   [1.5.5.1.5 多协议](#多协议)
+            *   [1.5.5.2 实用工具](#实用工具)
+    *   [1.6 新闻，RSS 与博客](#新闻，RSS_与博客)
+        *   [1.6.1 新闻抓取](#新闻抓取)
+            *   [1.6.1.1 终端](#终端_4)
+            *   [1.6.1.2 图形界面](#图形界面_5)
+        *   [1.6.2 播客客户端](#播客客户端)
+        *   [1.6.3 Usenet 新闻播报与新闻抓取](#Usenet_新闻播报与新闻抓取)
+        *   [1.6.4 博客软件](#博客软件)
+        *   [1.6.5 微博客户端](#微博客户端)
+    *   [1.7 网络剪贴板](#网络剪贴板)
+    *   [1.8 比特币](#比特币)
+    *   [1.9 Surveying](#Surveying)
 
 ## 互联网
 
@@ -463,6 +468,116 @@
 *   **[Pale Moon](https://en.wikipedia.org/wiki/Pale_Moon_(web_browser) "wikipedia:Pale Moon (web browser)")** — 一个Firefox分支专注于速度, 使用Firefox29之前的界面。使用 [Goanna](https://en.wikipedia.org/wiki/Goanna_(software) "wikipedia:Goanna (software)")布局引擎,一个Gecko分支. Firefox附加组件可能不兼容. [[1]](https://addons.palemoon.org/firefox/incompatible/) 没有更新的Firefox特性比如cache2, e10s, 和 OTMC.
 
 	[http://www.palemoon.org/](http://www.palemoon.org/) || [palemoon](https://aur.archlinux.org/packages/palemoon/) or [palemoon-bin](https://aur.archlinux.org/packages/palemoon-bin/)
+
+### Web服务器
+
+一个[web服务器](https://en.wikipedia.org/wiki/Web_server "wikipedia:Web server")通过HTTP提供给像 [web浏览器](/index.php/Category:Web_browser "Category:Web browser")一样的客户端网页和其它文件服务. 主要的web服务器能通过程序提供界面来提供动态内容([web applications](/index.php/Web_applications "Web applications")).
+
+也可查阅 [Category:Web server](/index.php/Category:Web_server "Category:Web server") 和 [Wikipedia:Comparison of web server software](https://en.wikipedia.org/wiki/Comparison_of_web_server_software "wikipedia:Comparison of web server software").
+
+*   **[Apache](/index.php/Apache "Apache")** — 高性能的 基于Unix的 HTTP 服务器.
+
+	[http://www.apache.org/dist/httpd](http://www.apache.org/dist/httpd) || [apache](https://www.archlinux.org/packages/?name=apache)
+
+*   **[Caddy](/index.php/Caddy "Caddy")** — 带有自动HTTPS的HTTP/2 web服务器.
+
+	[https://caddyserver.com/](https://caddyserver.com/) || [caddy](https://aur.archlinux.org/packages/caddy/)
+
+*   **[Hiawatha](/index.php/Hiawatha "Hiawatha")** — 安全且先进的web服务器.
+
+	[https://www.hiawatha-webserver.org/](https://www.hiawatha-webserver.org/) || [hiawatha](https://www.archlinux.org/packages/?name=hiawatha)
+
+*   **[Lighttpd](/index.php/Lighttpd "Lighttpd")** — 一个安全, 快速, 兼容且非常灵活的web服务器.
+
+	[http://www.lighttpd.net/](http://www.lighttpd.net/) || [lighttpd](https://www.archlinux.org/packages/?name=lighttpd)
+
+*   **[nginx](/index.php/Nginx "Nginx")** — 轻量的 HTTP服务器和IMAP/POP3代理服务器.
+
+	[https://nginx.org/](https://nginx.org/) || [nginx](https://www.archlinux.org/packages/?name=nginx)
+
+*   **sthttpd** — thttpd web 服务器的支持分支.
+
+	[https://github.com/blueness/sthttpd](https://github.com/blueness/sthttpd) || [sthttpd](https://www.archlinux.org/packages/?name=sthttpd)
+
+*   **yaws** — 用Erlang写的Web 服务器/框架.
+
+	[http://yaws.hyber.org/](http://yaws.hyber.org/) || [yaws](https://www.archlinux.org/packages/?name=yaws)
+
+#### 静态web服务器
+
+*   **darkhttpd** — 一个小巧且安全的静态web服务器,用C写成,不支持HTTPS和 Auth.
+
+	[https://unix4lyfe.org/darkhttpd/](https://unix4lyfe.org/darkhttpd/) || [darkhttpd](https://www.archlinux.org/packages/?name=darkhttpd)
+
+*   **KatWeb** — 一个轻量的静态web服务器和反向代理工具, 用Go写成, 为现代web设计.
+
+	[https://github.com/kittyhacker101/KatWeb](https://github.com/kittyhacker101/KatWeb) || [katweb](https://aur.archlinux.org/packages/katweb/)
+
+*   **quark** — 一个极度小巧和简单的http仅支持get的web服务器. 仅仅支持在单个主机上的静态页面.
+
+	[http://tools.suckless.org/quark/](http://tools.suckless.org/quark/) || [quark-git](https://aur.archlinux.org/packages/quark-git/)
+
+*   **serve** — 静态文件服务和目录列表.
+
+	[https://github.com/zeit/serve](https://github.com/zeit/serve) || [nodejs-serve](https://aur.archlinux.org/packages/nodejs-serve/)
+
+*   **servy** — 一个小巧的web服务器, 单个二进制文件, 用Rust写成.
+
+	[https://github.com/zethra/servy](https://github.com/zethra/servy) || [servy](https://aur.archlinux.org/packages/servy/)
+
+*   **Webfs** — 简单和即时的web服务器用以支持最静态的内容.
+
+	[http://linux.bytesex.org/misc/webfs.html](http://linux.bytesex.org/misc/webfs.html) || [webfs](https://www.archlinux.org/packages/?name=webfs)
+
+[Python](/index.php/Python "Python") 标准库模块 [http.server](https://docs.python.org/library/http.server.html) 也能从命令行用作服务器.
+
+#### 专门的 web服务器
+
+*   **Mongoose** — 内置的web服务器库, 支持WebSocket和 MQTT.
+
+	[https://github.com/cesanta/mongoose](https://github.com/cesanta/mongoose) || [mongoose](https://aur.archlinux.org/packages/mongoose/)
+
+*   **webhook** — 创建 HTTP 端点(hooks)的小型服务器
+
+	[https://github.com/adnanh/webhook](https://github.com/adnanh/webhook) || [webhook](https://aur.archlinux.org/packages/webhook/)
+
+*   **Woof** — 一个专门的单文件web服务器; 是Web Offer One File（提供单文件服务的web）的缩写.
+
+	[http://www.home.unix-ag.org/simon/woof.html](http://www.home.unix-ag.org/simon/woof.html) || [woof](https://aur.archlinux.org/packages/woof/)
+
+#### WSGI 服务器
+
+*   **Gunicorn** — 一个Python的WSGI HTTP服务器，用在UNIX上.
+
+	[https://gunicorn.org/](https://gunicorn.org/) || [gunicorn](https://www.archlinux.org/packages/?name=gunicorn), [python2-gunicorn](https://www.archlinux.org/packages/?name=python2-gunicorn)
+
+*   **[uWSGI](/index.php/UWSGI "UWSGI")** — 一个快速、自治愈的、 开发者/系统管理员友好的 程序容器服务器，用C写成.
+
+	[https://uwsgi-docs.readthedocs.io/](https://uwsgi-docs.readthedocs.io/) || [uwsgi](https://www.archlinux.org/packages/?name=uwsgi)
+
+*   **Waitress** — 一个WSGI 服务器，针对 Python 2和3.
+
+	[https://github.com/Pylons/waitress](https://github.com/Pylons/waitress) || [python-waitress](https://www.archlinux.org/packages/?name=python-waitress), [python2-waitress](https://www.archlinux.org/packages/?name=python2-waitress)
+
+Apache也支持 WSGI ，通过 [mod_wsgi](/index.php/Mod_wsgi "Mod wsgi")模块.
+
+#### 性能测试
+
+*   **http_load** — 一个web服务器性能测试工具, 运行在一个进程里.
+
+	[http://www.acme.com/software/http_load/](http://www.acme.com/software/http_load/) || [http_load](https://aur.archlinux.org/packages/http_load/)
+
+*   **httperf** — 可以生成各种 HTTP 工作负载, 用 C写成.
+
+	[https://github.com/httperf/httperf](https://github.com/httperf/httperf) || [httperf](https://aur.archlinux.org/packages/httperf/)
+
+*   **vegeta** — HTTP 负载测试工具, 用 Go写成.
+
+	[https://github.com/tsenart/vegeta](https://github.com/tsenart/vegeta) || [vegeta](https://www.archlinux.org/packages/?name=vegeta)
+
+*   **Web Bench** — 基准测试工具, 用 fork() 来模拟多个客户端.
+
+	[http://home.tiscali.cz/~cz210552/webbench.html](http://home.tiscali.cz/~cz210552/webbench.html) || [webbench](https://aur.archlinux.org/packages/webbench/)
 
 ### 下载
 

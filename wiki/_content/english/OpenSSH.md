@@ -38,6 +38,8 @@ OpenSSH is occasionally confused with the similarly-named OpenSSL; however, the 
         *   [4.1.2 Step 2: configure your browser (or other programs)](#Step_2:_configure_your_browser_(or_other_programs))
     *   [4.2 X11 forwarding](#X11_forwarding)
         *   [4.2.1 Setup](#Setup)
+            *   [4.2.1.1 Remote](#Remote)
+            *   [4.2.1.2 Client](#Client)
         *   [4.2.2 Usage](#Usage)
     *   [4.3 Forwarding other ports](#Forwarding_other_ports)
     *   [4.4 Jump hosts](#Jump_hosts)
@@ -440,7 +442,7 @@ X11 forwarding is a mechanism that allows graphical interfaces of X11 programs r
 
 #### Setup
 
-On the remote system:
+##### Remote
 
 *   [install](/index.php/Install "Install") the [xorg-xauth](https://www.archlinux.org/packages/?name=xorg-xauth) and [xorg-xhost](https://www.archlinux.org/packages/?name=xorg-xhost) packages
 *   in `/etc/ssh/ssh**d**_config`:
@@ -448,7 +450,10 @@ On the remote system:
     *   set `X11Forwarding` to *yes*
 *   then [restart](/index.php/Restart "Restart") the [*sshd* daemon](#Daemon_management).
 
-On the client side, enable the `ForwardX11` option by either specifying the `-X` switch on the command line for opportunistic connections, or by setting `ForwardX11` to *yes* in the [client's configuration](#Configuration).
+##### Client
+
+*   [install](/index.php/Install "Install") the [xorg-xauth](https://www.archlinux.org/packages/?name=xorg-xauth) package
+*   enable the `ForwardX11` option by either specifying the `-X` switch on the command line for opportunistic connections, or by setting `ForwardX11` to *yes* in the [client's configuration](#Configuration).
 
 **Tip:** You can enable the `ForwardX11Trusted` option (`-Y` switch on the command line) if GUI is drawing badly or you receive errors; this will prevent X11 forwardings from being subjected to the [X11 SECURITY extension](http://www.x.org/wiki/Development/Documentation/Security/) controls. Be sure you have read [the warning](#X11_forwarding) at the beginning of this section if you do so.
 

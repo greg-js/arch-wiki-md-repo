@@ -84,7 +84,7 @@ To create a new rule create a new section with a custom name in your config file
 
 When a notification is matched you can perform certain actions on it like modifying the format string, which is especially useful if you want tocompletely ignore certain notifications. In that case simply add the line `format=""` to your rule.
 
-Another useful feature is if you want to keep certain notifications out of your history for example if you use dunst as a [Volume indicator](/index.php/Dunstify#Using_dunstify_as_volume/brightness_level_indicator "Dunstify"). To achieve this simply add `history_ignore=yes` to your rule.
+Another useful feature is if you want to keep certain notifications out of your history for example if you use dunst as a [Volume indicator](#Using_dunstify_as_volume/brightness_level_indicator). To achieve this simply add `history_ignore=yes` to your rule.
 
 ### Scripting
 
@@ -175,7 +175,7 @@ To realize that volume indicator place the following script somewhere on your `P
 
 `getProgressString` needs to be some function assembling the progressbar like string. This script uses [[3]](https://github.com/Fabian-G/dotfiles/blob/master/scripts/bin/getProgressString).
 
-Now simply bind `changeVolume 2dB+ unmute` etc. to some hotkey and you are done. You might also want to make dunst ignore these type of notifications in its history. See [Dunst#Modifying](/index.php/Dunst#Modifying "Dunst").
+Now simply bind `changeVolume 2dB+ unmute` etc. to some hotkey and you are done. You might also want to make dunst ignore these type of notifications in its history. See [#Modifying](#Modifying).
 
 ## Troubleshooting
 

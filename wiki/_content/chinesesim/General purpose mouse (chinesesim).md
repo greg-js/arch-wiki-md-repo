@@ -24,6 +24,8 @@ GPM（General Purpose Mouse，通用鼠标）是为 Linux 虚拟控制台（TTY�
 
 ### 笔记本
 
+**警告:** `xf86-input-synaptics` 已经停止维护，请尽量使用 [libinput](/index.php/Libinput "Libinput")。
+
 用 [pacman](/index.php/Pacman "Pacman") 安装 [gpm](https://www.archlinux.org/packages/?name=gpm) 和 [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) 即可。
 
 ```
