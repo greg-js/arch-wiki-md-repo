@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Elgato EyeTV DTT Deluxe v2](/index.php/Elgato_EyeTV_DTT_Deluxe_v2 "Elgato EyeTV DTT Deluxe v2"), revisada por última vez el **2019-01-25**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Elgato_EyeTV_DTT_Deluxe_v2&diff=0&oldid=564700) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Elgato EyeTV DTT Deluxe v2](/index.php/Elgato_EyeTV_DTT_Deluxe_v2 "Elgato EyeTV DTT Deluxe v2"), revisada por última vez el **2019-02-03**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Elgato_EyeTV_DTT_Deluxe_v2&diff=0&oldid=564700) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 No hay demasiada información sobre EyeTV DTT Deluxe v2 en la web, así que allá vamos.
 
@@ -19,14 +19,9 @@ Bus 002 Device 005: ID 0fd9:002c Elgato Systems GmbH EyeTV DTT Deluxe v2
 
 ## Instalación
 
-[Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") [linuxtv-dvb-apps](https://aur.archlinux.org/packages/linuxtv-dvb-apps/) usando [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)")
+[Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquete [linuxtv-dvb-apps](https://aur.archlinux.org/packages/linuxtv-dvb-apps/) del [AUR](/index.php/AUR_(Espa%C3%B1ol) "AUR (Español)")
 
-```
-pacman -S linuxtv-dvb-apps
-
-```
-
-Descargue el firmware y copie los archivos a `/lib/firmware`
+Después, descargue el firmware y copie los archivos a `/lib/firmware`
 
 ```
 wget [http://kernellabs.com/firmware/as102/as102_data1_st.hex](http://kernellabs.com/firmware/as102/as102_data1_st.hex)

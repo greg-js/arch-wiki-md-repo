@@ -83,7 +83,7 @@
 | <small>4.14.</small> [存储设备](/index.php/Category:Storage_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Storage (简体中文)") <small>(5)</small> |
 | <small>4.14.1.</small> [Optical disc](/index.php/Category:Optical_disc_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Optical disc (简体中文)") <small>(2)</small> |
 | <small>5.</small> [帮助](/index.php/Category:Help_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Help (简体中文)") <small>(10)</small> |
-| <small>6.</small> [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)") <small>(34)</small> |
+| <small>6.</small> [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)") <small>(35)</small> |
 | <small>6.1.</small> [Distributed computing](/index.php/Category:Distributed_computing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Distributed computing (简体中文)") <small>(1)</small> |
 | <small>6.2.</small> [域名解析](/index.php/Category:Domain_Name_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Domain Name System (简体中文)") <small>(5)</small> |
 | <small>6.3.</small> [FTP](/index.php/Category:File_Transfer_Protocol_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:File Transfer Protocol (简体中文)") <small>(1)</small> |
@@ -130,7 +130,7 @@
 | <small>7.6.5.</small> [层叠窗口管理器](/index.php/Category:Stacking_WMs_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Stacking WMs (简体中文)") <small>(6)</small> |
 | <small>7.6.6.</small> [平铺窗口管理器](/index.php/Category:Tiling_WMs_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Tiling WMs (简体中文)") <small>(5)</small> |
 | <small>7.6.7.</small> [Xfce](/index.php/Category:Xfce_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Xfce (简体中文)") <small>(1)</small> |
-| <small>7.7.</small> [文件系统](/index.php/Category:File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:File systems (简体中文)") <small>(26)</small> |
+| <small>7.7.</small> [文件系统](/index.php/Category:File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:File systems (简体中文)") <small>(27)</small> |
 | <small>7.7.1.</small> [Disk encryption](/index.php/Category:Disk_encryption_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Disk encryption (简体中文)") <small>(1) (同时还属于 [加密](/index.php/Category:Encryption_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Encryption (简体中文)"))</small> |
 | <small>7.7.2.</small> [Storage virtualization](/index.php/Category:Storage_virtualization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Storage virtualization (简体中文)") <small>(1)</small> |
 | <small>7.8.</small> [软件包管理](/index.php/Category:Package_management_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Package management (简体中文)") <small>(20)</small> |
@@ -162,7 +162,7 @@
 | <small>8.11.1.</small> [Audio](/index.php/Category:Audio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Audio (简体中文)") <small>(1)</small> |
 | <small>8.11.2.</small> [Video](/index.php/Category:Video_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Video (简体中文)") <small>(1)</small> |
 | <small>8.12.</small> [脚本](/index.php/Category:Scripts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Scripts (简体中文)") <small>(2)</small> |
-| <small>8.13.</small> [安全](/index.php/Category:Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Security (简体中文)") <small>(18)</small> |
+| <small>8.13.</small> [安全](/index.php/Category:Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Security (简体中文)") <small>(19)</small> |
 | <small>8.13.1.</small> [加密](/index.php/Category:Encryption_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Encryption (简体中文)") <small>(3)</small> |
 | <small>8.13.1.1.</small> [Disk encryption](/index.php/Category:Disk_encryption_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Disk encryption (简体中文)") <small>(1) (同时还属于 [文件系统](/index.php/Category:File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:File systems (简体中文)"))</small> |
 | <small>8.13.2.</small> [防火墙](/index.php/Category:Firewalls_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Firewalls (简体中文)") <small>(4) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small> |

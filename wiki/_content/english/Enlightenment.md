@@ -93,6 +93,8 @@ exec enlightenment_start
 
 After that Enlightenment can be launched by typing `startx`. See [xinitrc](/index.php/Xinitrc "Xinitrc") for details.
 
+To try the experimental [Wayland](/index.php/Wayland "Wayland") compositor, enter `enlightenment_start` in a [tty](/index.php/Tty "Tty").
+
 ### Configuration
 
 Enlightenment has a sophisticated configuration system that can be accessed from the Main menu's Settings submenu.

@@ -1,9 +1,11 @@
 **Estado de la traducción**
-Este artículo es una traducción de [General purpose mouse](/index.php/General_purpose_mouse "General purpose mouse"), revisada por última vez el **2019-01-04**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=General_purpose_mouse&diff=0&oldid=545942) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [General purpose mouse](/index.php/General_purpose_mouse "General purpose mouse"), revisada por última vez el **2019-02-03**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=General_purpose_mouse&diff=0&oldid=565542) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 GPM, abreviatura de General Purpose Mouse, es un daemon que proporciona soporte de ratón para las consolas virtuales Linux.
 
 ## Instalación
+
+**Advertencia:** El paquete [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) ya no se actualiza de forma activa. Si es posible, utilize [libinput](/index.php/Libinput_(Espa%C3%B1ol) "Libinput (Español)").
 
 [Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquete [gpm](https://www.archlinux.org/packages/?name=gpm). Es posible que también necesite instalar [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) para la compatibilidad con el panel táctil en un ordenador portátil.
 

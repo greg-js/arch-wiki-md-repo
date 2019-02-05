@@ -12,7 +12,6 @@ Related articles
     *   [2.1 Influxdb installation](#Influxdb_installation)
     *   [2.2 Aggregate data](#Aggregate_data)
     *   [2.3 Creating Grafana dashboard](#Creating_Grafana_dashboard)
-*   [3 See also](#See_also)
 
 ## Installation
 
@@ -58,7 +57,3 @@ curl -i -XPOST '[http://localhost:8086/write?db=example'](http://localhost:8086/
 *   Create a query by selecting your aggregated data. Click on `select measurement` which is located beside `FROM`. In the dropdown menu should appear a list of "tables" in your database, e.g. the table named `localhost`. If no suggestions comes up, your connection to InfluxDB might be broken or no data has been aggregated yet.
 *   Beside the bold text `SELECT` click on `value` and choose for example the measurement data `uptime`.
 *   To save changes, click `Back to dashboard`, then the floppy disc icon.
-
-## See also
-
-*   [Official homepage](https://grafana.org/)

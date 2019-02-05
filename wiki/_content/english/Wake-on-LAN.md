@@ -6,11 +6,11 @@
 *   [2 Software configuration](#Software_configuration)
     *   [2.1 Enable WoL on the network adapter](#Enable_WoL_on_the_network_adapter)
     *   [2.2 Make it persistent](#Make_it_persistent)
-        *   [2.2.1 netctl](#netctl)
-        *   [2.2.2 systemd.link](#systemd.link)
-        *   [2.2.3 systemd service](#systemd_service)
-        *   [2.2.4 udev](#udev)
-        *   [2.2.5 cron](#cron)
+        *   [2.2.1 systemd.link](#systemd.link)
+        *   [2.2.2 systemd service](#systemd_service)
+        *   [2.2.3 udev](#udev)
+        *   [2.2.4 cron](#cron)
+        *   [2.2.5 netctl](#netctl)
         *   [2.2.6 NetworkManager](#NetworkManager)
     *   [2.3 Enable WoL in TLP](#Enable_WoL_in_TLP)
 *   [3 Trigger a wake up](#Trigger_a_wake_up)
@@ -64,26 +64,28 @@ This command might not last beyond the next reboot and in this case must be repe
 
 ### Make it persistent
 
-#### netctl
-
-If using netctl, one can make this setting persistent by adding the following the netctl profile:
-
- `/etc/netctl/*profile*`  `ExecUpPost='/usr/bin/ethtool -s *interface* wol g'` 
-
 #### systemd.link
 
-Link-level configuration is possible through systemd. The actual setup is performed by the `net_setup_link` udev builtin. Add the `WakeOnLan` option to the network link file:
+Link-level configuration is possible through [systemd-networkd#link files](/index.php/Systemd-networkd#link_files "Systemd-networkd"). The actual setup is performed by the `net_setup_link` udev builtin. Add the `WakeOnLan` option to the network link file:
 
  `/etc/systemd/network/50-wired.link` 
 ```
+[Match]
+MACAddress=*aa:bb:cc:dd:ee:ff*
+
 [Link]
-WakeOnLan=magic
-...
+NamePolicy=kernel database onboard slot path
+MACAddressPolicy=persistent
+**WakeOnLan=magic**
 ```
 
-**Note:** This configuration applies only to the link-level, and is independent of network-level daemons such as [NetworkManager](/index.php/NetworkManager "NetworkManager") or [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd").
+Also see [systemd.link(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.link.5) for more information.
 
-See [systemd-networkd#link files](/index.php/Systemd-networkd#link_files "Systemd-networkd") and [systemd.link(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.link.5) for more information.
+**Note:**
+
+*   This configuration applies only to the link-level, and is independent of network-level daemons such as [NetworkManager](/index.php/NetworkManager "NetworkManager") or [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd").
+*   To be considered, the file name should come before the default `99-default.link` link file shipped with systemd. For example `50-wired.link` works.
+*   Interface naming must be taken over in the *.link* file as the default is no longer used.
 
 #### systemd service
 
@@ -108,19 +110,13 @@ Alternatively install the [wol-systemd](https://aur.archlinux.org/packages/wol-s
 
 #### udev
 
-[udev](/index.php/Udev "Udev") is capable of running any command as soon as a device is visible. The following rule will turn on WOL on all [network interfaces](/index.php/Network_interface "Network interface") whose name matches `enp*`:
+[udev](/index.php/Udev "Udev") is capable of running any command as soon as a device is visible. The following rule will turn on WOL on all [network interfaces](/index.php/Network_interface "Network interface") whose name matches `enp*`. The file name is important and must start with a number between 81 and 99 so that it runs **after** `80-net-setup-link.rules`, which renames interfaces with predicable names. Otherwise, `NAME` would be undefined and the rule would not run.
 
- `/etc/udev/rules.d/99-wol.rules` 
-```
-ACTION=="add", SUBSYSTEM=="net", NAME=="enp*", RUN+="/usr/bin/ethtool -s $name wol g"
-
-```
+ `/etc/udev/rules.d/**81**-wol.rules`  `ACTION=="add", SUBSYSTEM=="net", NAME=="enp*", RUN+="/usr/bin/ethtool -s $name wol g"` 
 
 The `$name` placeholder will be replaced by the value of the `NAME` variable for the matched device.
 
-**Note:** The name of the configuration file is important. Due to the introduction of [persistent device names](/index.php/Network_configuration#Network_interfaces "Network configuration") in systemd v197, it is important that the rules matching a specific network interface are named lexicographically after `80-net-name-slot.rules`, so that they are applied after the devices gain the persistent names.
-
-**Warning:** [udev](/index.php/Udev "Udev") will match the device as soon it becomes available, be this in the [initramfs](/index.php/Initramfs "Initramfs") (before the switch_root) or the main system. The order is not deterministic; there is no guarantee. Be sure that your initramfs includes the necessary udev rules (from `/etc/udev/rules.d`) and supporting binaries (`/usr/bin/ethtool`).
+**Note:** [udev](/index.php/Udev "Udev") will match the device as soon it becomes available, be this in the [initramfs](/index.php/Initramfs "Initramfs") (before the switch_root) or the main system. The order is not deterministic; there is no guarantee. Be sure that your initramfs includes the necessary udev rules (from `/etc/udev/rules.d`) and supporting binaries (`/usr/bin/ethtool`).
 
 #### cron
 
@@ -130,6 +126,12 @@ A command can be run each time the computer is (re)booted using "@reboot" in a c
 @reboot /usr/bin/ethtool -s *interface* wol g
 
 ```
+
+#### netctl
+
+If using [netctl](/index.php/Netctl "Netctl"), one can make this setting persistent by adding the following the netctl profile:
+
+ `/etc/netctl/*profile*`  `ExecUpPost='/usr/bin/ethtool -s *interface* wol g'` 
 
 #### NetworkManager
 
@@ -219,9 +221,10 @@ $ wol -i *target_IP* *target_MAC_address*
 
 ```
 
-**Tip:** If you intend to continue using Wake-on-LAN, it is recommended to assign a static IP address to the target computer.
+**Tip:**
 
-**Tip:** Only use the `-i` switch when the target address is on a different subnet from the sender.
+*   If you intend to continue using Wake-on-LAN, it is recommended to assign a static IP address to the target computer.
+*   Only use the `-i` switch when the target address is on a different subnet from the sender.
 
 ### Across the internet
 

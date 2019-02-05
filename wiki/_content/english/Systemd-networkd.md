@@ -259,7 +259,7 @@ Most common keys are:
 
 These files are an alternative to custom udev rules and will be applied by [udev](/index.php/Udev "Udev") as the device appears. They have two sections: `[Match]` and `[Link]`. Below are commonly configured keys for each section. See [systemd.link(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.link.5) for more information and examples.
 
-**Tip:** Use `udevadm test-builtin net_setup_link /sys/path/to/network/device` to diagnose problems with *.link* files.
+**Tip:** Use `# udevadm test-builtin net_setup_link /sys/path/to/network/device` to diagnose problems with *.link* files.
 
 #### [Match] section
 

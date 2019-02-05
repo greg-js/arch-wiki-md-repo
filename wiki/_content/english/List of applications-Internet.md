@@ -657,7 +657,7 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 *   **ClipGrab** — Downloader and converter for YouTube, Vimeo and many other online video sites.
 
-	[https://clipgrab.org/](https://clipgrab.org/) || [clipgrab-qt5](https://aur.archlinux.org/packages/clipgrab-qt5/)
+	[https://clipgrab.org/](https://clipgrab.org/) || [clipgrab](https://www.archlinux.org/packages/?name=clipgrab)
 
 *   **FatRat** — Qt based download manager with support for HTTP, FTP, SFTP, BitTorrent and Metalink.
 

@@ -1482,7 +1482,7 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 	[http://dag.wieers.com/home-made/dstat/](http://dag.wieers.com/home-made/dstat/) || [dstat](https://www.archlinux.org/packages/?name=dstat)
 
-*   **[Fsniper](/index.php/Fsniper "Fsniper")** — Daemon to run scripts based on changes in files monitored by inotify.
+*   **Fsniper** — Daemon to run scripts based on changes in files monitored by inotify.
 
 	[http://projects.l3ib.org/fsniper/](http://projects.l3ib.org/fsniper/) || [fsniper](https://aur.archlinux.org/packages/fsniper/)
 

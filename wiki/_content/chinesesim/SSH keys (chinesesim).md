@@ -16,9 +16,8 @@ SSH 密钥对可以让您方便的登录到 SSH 服务器，而无需输入密�
     *   [3.1 简单的方法](#简单的方法)
     *   [3.2 传统的方法](#传统的方法)
 *   [4 安全性](#安全性)
-    *   [4.1 保证 authorized_keys 文件的安全](#保证_authorized_keys_文件的安全)
-    *   [4.2 禁用密码登录](#禁用密码登录)
-    *   [4.3 双因素认证与公钥](#双因素认证与公钥)
+    *   [4.1 禁用密码登录](#禁用密码登录)
+    *   [4.2 双因素认证与公钥](#双因素认证与公钥)
 *   [5 SSH agents](#SSH_agents)
     *   [5.1 ssh-agent](#ssh-agent)
         *   [5.1.1 ssh-agent 作为包装程序运行](#ssh-agent_作为包装程序运行)
@@ -179,12 +178,13 @@ $ scp ~/.ssh/id_ecdsa.pub username@remote-server.org:
 
 ```
 
-将公钥上传到服务器。注意，该命令最末的 `:` 不可省略。上传成功之后，先使用口令登录到服务器，将公钥文件重命名为 `authorized_keys`，并移动到 `~/.ssh` 下，若 `~/.ssh` 不存在则新建一个。
+将位于`~/.ssh/id_ecdsa.pub`的公钥上传到服务器。注意，该命令最末的 `:` 不可省略。上传成功之后，先使用口令登录到服务器，将公钥文件重命名为 `authorized_keys`，并移动到 `~/.ssh` 下，若 `~/.ssh` 不存在则新建一个。
 
 ```
 $ ssh username@remote-server.org
 username@remote-server.org's password:
 $ mkdir ~/.ssh
+$ chmod 700 ~/.ssh
 $ cat ~/id_ecdsa.pub >> ~/.ssh/authorized_keys
 $ rm ~/id_ecdsa.pub
 $ chmod 600 ~/.ssh/authorized_keys
@@ -194,33 +194,6 @@ $ chmod 600 ~/.ssh/authorized_keys
 上面最后两个命令移除服务器上的公钥，并设置 `authorized_keys` 的权限为只有您，也即文件拥有者，有读写权限。
 
 ## 安全性
-
-### 保证 authorized_keys 文件的安全
-
-为了保证安全，您应该阻止其他用户添加新的公钥。
-
-将 `authorized_keys` 的权限设置为对拥有者只读，其他用户没有任何权限：
-
-```
-$ chmod 400 ~/.ssh/authorized_keys
-
-```
-
-为保证 `authorized_keys` 的权限不会被改掉，您还需要设置该文件的 immutable 位权限：
-
-```
-# chattr +i ~/.ssh/authorized_keys
-
-```
-
-然而，用户还可以重命名 `~/.ssh`，然后新建新的 `~/.ssh` 目录和 `authorized_keys` 文件。要避免这种情况，您需要设置 `~./ssh` 的 immutable 位权限：
-
-```
-# chattr +i ~/.ssh
-
-```
-
-**注意:** 如果您需要添加新的公钥，您需要移除 `authorized_keys` 的 immutable 位权限。然后，添加好新的公钥之后，按照上述步骤重新加上 immutable 位权限。
 
 ### 禁用密码登录
 

@@ -131,7 +131,7 @@ Samba users can be listed using the [pdbedit(8)](https://jlk.fjfi.cvut.cz/arch/m
 
 ##### Changing user password
 
-To change an user password, use `smbpasswd`:
+To change a user password, use `smbpasswd`:
 
 ```
 # smbpasswd *samba_user*
@@ -538,10 +538,10 @@ The credential file should explicitly readable/writeable to root:
 
 #### As mount entry
 
-This is an simple example of a `cifs` [mount entry](/index.php/Fstab "Fstab") that requires authentication:
+This is a simple example of a `cifs` [mount entry](/index.php/Fstab "Fstab") that requires authentication:
 
  `/etc/fstab`  `//*SERVER*/*sharename* /mnt/*mountpoint* cifs username=*myuser*,password=*mypass* 0 0` 
-**Note:** Space in sharename should be replaced by `\040` (ASCII code for space in octal). For example, `//*SERVER*/share name` on the command line should be `//*SERVER*/share\040name` in `/etc/fstab`.
+**Note:** Spaces in sharename should be replaced by `\040` (ASCII code for space in octal). For example, `//*SERVER*/share name` on the command line should be `//*SERVER*/share\040name` in `/etc/fstab`.
 
 **Tip:** Use `x-systemd.automount` if you want them to be mounted only upon access. See [Fstab#Remote filesystem](/index.php/Fstab#Remote_filesystem "Fstab") for details.
 
@@ -955,7 +955,7 @@ If the command was successful then create a configuration file:
 
 ### Connection to SERVER failed: (Error NT_STATUS_UNSUCCESSFUL)
 
-You are probably passing wrong server name to `smbclient`. To find out the server name, run `hostnamectl` on the server and look at "Transient hostname" line
+You are probably passing a wrong server name to `smbclient`. To find out the server name, run `hostnamectl` on the server and look at "Transient hostname" line
 
 ### Connection to SERVER failed: (Error NT_STATUS_CONNECTION_REFUSED)
 

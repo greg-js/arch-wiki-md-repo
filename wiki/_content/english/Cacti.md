@@ -4,6 +4,8 @@
 
 *   [1 Server setup](#Server_setup)
 *   [2 Cacti setup](#Cacti_setup)
+    *   [2.1 Apache](#Apache)
+    *   [2.2 Nginx](#Nginx)
 *   [3 MySQL setup](#MySQL_setup)
 *   [4 Spine](#Spine)
 *   [5 Systemd](#Systemd)
@@ -12,7 +14,7 @@
 
 ## Server setup
 
-This article assumes that you already have a working [LAMP](/index.php/LAMP "LAMP") (Linux, Apache, MySQL, PHP) server.
+This article assumes that you already have a working [LAMP](/index.php/LAMP "LAMP") (Linux, Apache, MySQL, PHP) server. Alternatively, when using Nginx instead of Apache, it is assumed you have a php proxy such as [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) running as well.
 
 ## Cacti setup
 
@@ -31,6 +33,8 @@ extension=snmp
 PHP scripts are, by default, permitted only to open files in specific directories. Configure (or comment out) `open_basedir` in `/etc/php/php.ini`. When misconfigured, errors such as `PHP Warning: include(): open_basedir restriction in effect.` will appear in the webserver log file. Don’t forget to add /etc/webapps (or /etc/webapps/cacti if you prefer) and /var/log/cacti to open_basedir.
 
 In order to display dates and times in the correct timezone, configure `date.timezone` in `/etc/php/php.ini`. Values are in "Continent/City" notation, for example "America/New_York", "Asia/Tokyo".
+
+### Apache
 
 Configure Apache to point to Cacti by adding the following in a `/etc/httpd/conf/extra/cacti.conf` (or in a vhost's config file):
 
@@ -62,7 +66,45 @@ Alias /cacti /usr/share/webapps/cacti
 
 ```
 
-If the Cacti config is in a separate file, remember to add `Include conf/extra/cacti.conf` to `/etc/httpd/conf/httpd.conf`.
+### Nginx
+
+When using [Nginx](/index.php/Nginx "Nginx"), the following configuration snippet works for a subdomain:
+
+```
+server {
+   listen 80;
+   server_name cacti.acme.com;
+   return 301 https://$server_name$request_uri;
+}
+
+server {
+   listen 443 ssl;
+   server_name cacti.acme.com;
+   root /usr/share/webapps/cacti;
+
+   index index.php;
+   charset utf-8;
+
+   location ~ \.php?$ {
+       include /etc/nginx/fastcgi_params;
+       fastcgi_pass unix:/var/run/php-fpm/php-fpm.sock;
+       fastcgi_index index.php;
+       fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+   }
+
+   access_log /var/log/nginx/cacti.access.log main;
+   error_log /var/log/nginx/cacti.error.log warn;
+
+   include ssl.conf;
+}
+
+```
+
+Edit the following parameter:
+
+ `/usr/share/webapps/cacti/include/config.php`  `$url_path = '/';` 
+
+If the Cacti configuration is in a separate file, remember to add `Include conf/extra/cacti.conf` to `/etc/httpd/conf/httpd.conf`.
 
 The file `/usr/share/webapps/cacti/.htaccess` also controls access. Configure or remove it.
 

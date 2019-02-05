@@ -1374,6 +1374,36 @@ Arch is the best!
 
 ```
 
+	Verilog
+
+	A hardware description language, standardized as IEEE 1364
+
+```
+module top;
+  initial $display("Arch is the best!");
+endmodule
+
+```
+
+	VHDL
+
+	VHSIC Hardware Description Language
+
+```
+use std.textio.all;
+
+entity top is
+end top;
+
+architecture behaviour of top is begin
+  process begin
+    write (output, String'("Arch is the best!"));
+    wait;
+  end process;
+end behaviour;
+
+```
+
 	VimScript
 
 	A scripting language for the Vim text editor.

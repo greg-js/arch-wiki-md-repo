@@ -61,7 +61,7 @@ Busque errores en los archivos de registro ubicados en `/var/log`, así como er
 
 ```
 
-Consulte [Systemd#Journal](/index.php/Systemd#Journal "Systemd") para obtener más información. Consulte [Xorg#Troubleshooting](/index.php/Xorg#Troubleshooting "Xorg") para obtener información sobre dónde y cómo [Xorg](/index.php/Xorg "Xorg") registra errores.
+Consulte [Systemd/Journal](/index.php/Systemd/Journal "Systemd/Journal") para obtener más información. Consulte [Xorg#Troubleshooting](/index.php/Xorg#Troubleshooting "Xorg") para obtener información sobre dónde y cómo [Xorg](/index.php/Xorg "Xorg") registra errores.
 
 ## Copias de respaldo
 

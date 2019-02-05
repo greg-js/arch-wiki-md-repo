@@ -45,19 +45,19 @@ Updating the UEFI works like described here: [link ThinkWiki BIOS Upgrade/Using 
 | **Device** | **Working** |
 | [Intel graphics](/index.php/Intel_graphics "Intel graphics") | Yes |
 | [Wireless network configuration#iwlwifi](/index.php/Wireless_network_configuration#iwlwifi "Wireless network configuration") | Yes |
-| Mobile broadband | ?? |
+| Mobile broadband | Yes |
 | [ALSA](/index.php/ALSA "ALSA") | Yes |
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
 | [TrackPoint](/index.php/TrackPoint "TrackPoint") | Yes |
 | Camera | Yes |
-| Fingerprint Reader | Yes |
+| Fingerprint Reader | No |
 | [Power management](/index.php/Power_management "Power management") | Yes |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes |
 | microSD card reader | Yes |
 
 ### Fingerprint Reader
 
-An open source Linux driver has been developed by reverse engineering the Windows driver. [[1]](https://github.com/nmikhailov/Validity90)
+An open source Linux driver prototype has been developed by reverse engineering the Windows driver. The project seems to have died while in early testing. [[1]](https://github.com/nmikhailov/Validity90)
 
 The fingerprint reader included with this model `138a:0090 Validity Sensors, Inc` currently lacks an official linux driver. [libfprint bugreport](https://gitlab.freedesktop.org/libfprint/libfprint/issues/54). Synaptics (which has acquired 'Validity Sensors') has unofficially said that they cannot disclose the protocol, but may possibly release a binary driver.
 
@@ -103,8 +103,8 @@ All cards feature BT4.1 connectivity and should work out of the box when startin
 
 There are several cards used
 
-*   4G LTE (Huawei ME906S)
-*   Qualcomm Snapdragon X7 LTE-A (Sierra Wireless EM7455)
+*   4G LTE (Huawei ME906S) - Tested, stable and working.
+*   Qualcomm Snapdragon X7 LTE-A (Sierra Wireless EM7455) - ??.
 
 ## See also
 

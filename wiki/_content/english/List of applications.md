@@ -969,7 +969,7 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 *   **ClipGrab** — Downloader and converter for YouTube, Vimeo and many other online video sites.
 
-	[https://clipgrab.org/](https://clipgrab.org/) || [clipgrab-qt5](https://aur.archlinux.org/packages/clipgrab-qt5/)
+	[https://clipgrab.org/](https://clipgrab.org/) || [clipgrab](https://www.archlinux.org/packages/?name=clipgrab)
 
 *   **FatRat** — Qt based download manager with support for HTTP, FTP, SFTP, BitTorrent and Metalink.
 
@@ -5761,7 +5761,7 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 	[http://dag.wieers.com/home-made/dstat/](http://dag.wieers.com/home-made/dstat/) || [dstat](https://www.archlinux.org/packages/?name=dstat)
 
-*   **[Fsniper](/index.php/Fsniper "Fsniper")** — Daemon to run scripts based on changes in files monitored by inotify.
+*   **Fsniper** — Daemon to run scripts based on changes in files monitored by inotify.
 
 	[http://projects.l3ib.org/fsniper/](http://projects.l3ib.org/fsniper/) || [fsniper](https://aur.archlinux.org/packages/fsniper/)
 

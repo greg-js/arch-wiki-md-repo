@@ -251,7 +251,7 @@ warning: You appear to have cloned an empty repository.
 Checking connectivity... done.
 ```
 
-**Note:** Replace "pkgbase.git" with your own package name, e.g. "my-new-aur-package.git". The repository will not be empty if `*pkgbase*` matches a [deleted](#Other_requests) package.
+**Note:** The repository will not be empty if `*pkgbase*` matches a [deleted](#Other_requests) package.
 
 If you already have a package, [initialize it](/index.php/Git#Getting_a_Git_repository "Git") as a Git repository if it isn't one, and add an AUR remote:
 

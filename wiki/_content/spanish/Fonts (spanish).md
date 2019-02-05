@@ -34,13 +34,24 @@ Note que ciertas licencias de fuentes pueden imponer ciertas limitaciones legale
         *   [3.3.1 Escritura antigua](#Escritura_antigua)
         *   [3.3.2 Árabe](#Árabe)
         *   [3.3.3 Braille](#Braille)
-        *   [3.3.4 Chino, Japonés, Coreano, Vietnamita](#Chino,_Japonés,_Coreano,_Vietnamita)
+        *   [3.3.4 Chino, japonés, coreano, vietnamita](#Chino,_japonés,_coreano,_vietnamita)
             *   [3.3.4.1 Pan-CJK](#Pan-CJK)
             *   [3.3.4.2 Chino](#Chino)
             *   [3.3.4.3 Japonés](#Japonés)
             *   [3.3.4.4 Coreano](#Coreano)
             *   [3.3.4.5 Vietnamita](#Vietnamita)
         *   [3.3.5 Cirílico](#Cirílico)
+        *   [3.3.6 Griego](#Griego)
+        *   [3.3.7 Hebreo](#Hebreo)
+        *   [3.3.8 Índico](#Índico)
+        *   [3.3.9 Camboyano](#Camboyano)
+        *   [3.3.10 Mongol y tunguses](#Mongol_y_tunguses)
+        *   [3.3.11 Persa](#Persa)
+        *   [3.3.12 Tai–Kadai](#Tai–Kadai)
+        *   [3.3.13 Tibeto-Burman](#Tibeto-Burman)
+    *   [3.4 Emoji y símbolos](#Emoji_y_símbolos)
+    *   [3.5 Matemáticas](#Matemáticas)
+    *   [3.6 Fuentes de otros sistemas operativos](#Fuentes_de_otros_sistemas_operativos)
 
 ## Formatos de fuente
 
@@ -277,7 +288,7 @@ Webs relevantes:
 *   [FreeSans](https://en.wikipedia.org/wiki/es:GNU_FreeFont "wikipedia:es:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont)) - Unicode.
 *   [Inter UI](https://github.com/rsms/inter) ([ttf-inter-ui](https://aur.archlinux.org/packages/ttf-inter-ui/)) – diseñada para las interfaces de usuario.
 *   [Linux Biolinum](https://en.wikipedia.org/wiki/es:Linux_Libertine "wikipedia:es:Linux Libertine") ([ttf-linux-libertine](https://www.archlinux.org/packages/?name=ttf-linux-libertine)) – sustituto libre para Times New Roman.
-*   [PT Sans](https://en.wikipedia.org/wiki/PT_Sans "wikipedia:PT Sans") ([ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) - tres pricipales variantes: normal, estrecho, y subtítulo - Unicode: Latín, Cyrillic
+*   [PT Sans](https://en.wikipedia.org/wiki/PT_Sans "wikipedia:PT Sans") ([ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) - tres pricipales variantes: normal, estrecho, y subtítulo - Unicode: latín, cirílico.
 *   [Source Sans Pro](https://en.wikipedia.org/wiki/Source_Sans_Pro "wikipedia:Source Sans Pro") ([adobe-source-sans-pro-fonts](https://www.archlinux.org/packages/?name=adobe-source-sans-pro-fonts))
 *   [Tahoma](https://en.wikipedia.org/wiki/es:Tahoma "wikipedia:es:Tahoma") ([ttf-tahoma](https://aur.archlinux.org/packages/ttf-tahoma/))
 
@@ -285,8 +296,8 @@ Webs relevantes:
 
 *   [EB Garamond](http://www.georgduffner.at/ebgaramond/) ([otf-eb-garamond](https://aur.archlinux.org/packages/otf-eb-garamond/)).
 *   [FreeSerif](https://en.wikipedia.org/wiki/es:GNU_FreeFont "wikipedia:es:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont)) - Unicode.
-*   [Gentium](https://en.wikipedia.org/wiki/es:Gentium "wikipedia:es:Gentium") ([ttf-gentium](https://www.archlinux.org/packages/?name=ttf-gentium)) - Unicode: Latin, Greek, Cyrillic, Phonetic Alphabet.
-*   [Linux Libertine](https://en.wikipedia.org/wiki/es:Linux_Libertine "wikipedia:es:Linux Libertine") ([ttf-linux-libertine](https://www.archlinux.org/packages/?name=ttf-linux-libertine)) - Unicode: Latin, Greek, Cyrillic, Hebrew.
+*   [Gentium](https://en.wikipedia.org/wiki/es:Gentium "wikipedia:es:Gentium") ([ttf-gentium](https://www.archlinux.org/packages/?name=ttf-gentium)) - Unicode: latín, griego cirílico, hebreo.
+*   [Linux Libertine](https://en.wikipedia.org/wiki/es:Linux_Libertine "wikipedia:es:Linux Libertine") ([ttf-linux-libertine](https://www.archlinux.org/packages/?name=ttf-linux-libertine)) - Unicode: latín, griego cirílico, hebreo.
 
 #### Sin clasificación
 
@@ -301,7 +312,7 @@ Webs relevantes:
 
 #### Escritura antigua
 
-*   [ttf-ancient-fonts](https://aur.archlinux.org/packages/ttf-ancient-fonts/) - Fuentes que contienen simbolos Unicode para las escrituras Egeo, Egipcio, Cuneiforme, Anatolian, Maya y Analecta.
+*   [ttf-ancient-fonts](https://aur.archlinux.org/packages/ttf-ancient-fonts/) - Fuentes que contienen simbolos Unicode para las escrituras egeo, egipcio, cuneiforme, anatolian, maya y analecta.
 
 #### Árabe
 
@@ -315,83 +326,171 @@ Webs relevantes:
 
 *   [ttf-ubraille](https://www.archlinux.org/packages/?name=ttf-ubraille) - Fuente que contiene símbolos Unicode para el *braille*.
 
-#### Chino, Japonés, Coreano, Vietnamita
+#### Chino, japonés, coreano, vietnamita
 
 ##### Pan-CJK
 
-*   Fuentes adobe source han - Una gran colección de fuentes con un soporte comprensible de Chino simplificado, Chino tradicional, Japones, y Coreano, con un diseño y aspecto consistente.
+*   Fuentes adobe source han - Una gran colección de fuentes con un soporte comprensible de chino simplificado, chino tradicional, japones, y coreano, con un diseño y aspecto consistente.
     *   [adobe-source-han-sans-otc-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-otc-fonts) - Sans fonts.
     *   [adobe-source-han-serif-otc-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-serif-otc-fonts) - Serif fonts.
 
-*   [noto-fonts-cjk](https://www.archlinux.org/packages/?name=noto-fonts-cjk) - Otra gran colección de fuentes con un soporte comprensible de Chino simplificado, Chino tradicional, Japones, y Coreano, con un diseño y aspecto consistente. Actualmente es una versión renombrada de [adobe-source-han-sans-otc-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-otc-fonts).
+*   [noto-fonts-cjk](https://www.archlinux.org/packages/?name=noto-fonts-cjk) - Otra gran colección de fuentes con un soporte comprensible de chino simplificado, chino tradicional, japones, y coreano, con un diseño y aspecto consistente. Actualmente es una versión renombrada de [adobe-source-han-sans-otc-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-otc-fonts).
 
 ##### Chino
 
 *   Fuentes adobe source han.
-    *   [adobe-source-han-sans-cn-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-cn-fonts) - Fuentes de Chino simplificado OpenType/CFF Sans.
-    *   [adobe-source-han-sans-tw-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-tw-fonts) - Fuentes de Chino tradicional OpenType/CFF Sans.
-    *   [adobe-source-han-serif-cn-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-serif-cn-fonts) - Fuentes de Chino simplificado OpenType/CFF Serif.
-    *   [adobe-source-han-serif-tw-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-serif-tw-fonts) - Fuentes de Chino tradicional OpenType/CFF Serif.
+    *   [adobe-source-han-sans-cn-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-cn-fonts) - Fuentes de chino simplificado OpenType/CFF Sans.
+    *   [adobe-source-han-sans-tw-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-tw-fonts) - Fuentes de chino tradicional OpenType/CFF Sans.
+    *   [adobe-source-han-serif-cn-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-serif-cn-fonts) - Fuentes de chino simplificado OpenType/CFF Serif.
+    *   [adobe-source-han-serif-tw-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-serif-tw-fonts) - Fuentes de chino tradicional OpenType/CFF Serif.
 
-*   Fuentes noto, Chino.
-    *   [noto-fonts-sc](https://aur.archlinux.org/packages/noto-fonts-sc/) - Fuentes Noto CJK-SC para Chino simplificado.
-    *   [noto-fonts-tc](https://aur.archlinux.org/packages/noto-fonts-tc/) - Fuentes Noto CJK-TC para Chino tradicional.
+*   Fuentes noto, chino.
+    *   [noto-fonts-sc](https://aur.archlinux.org/packages/noto-fonts-sc/) - Fuentes Noto CJK-SC para chino simplificado.
+    *   [noto-fonts-tc](https://aur.archlinux.org/packages/noto-fonts-tc/) - Fuentes Noto CJK-TC para chino tradicional.
 
 *   Fuentes wqy
     *   [wqy-microhei](https://www.archlinux.org/packages/?name=wqy-microhei) - La Familia tipográfica WenQuanYi Micro Hei (también conocida como Hei, Gothic o Dotum) es un estilo sans-serif derivado de Droid Sans Fallback, ofrece una gran calidad CJK y un gran contorno, además es extremadamente compacto (~5M).
-    *   [wqy-zenhei](https://www.archlinux.org/packages/?name=wqy-zenhei) - Estilo Hei Ti (sans-serif) Contorno Chino con incrustaciones con Bitmapped Song Ti (también soporta Japonés (parcialmente) y caracteres Coreanos).
+    *   [wqy-zenhei](https://www.archlinux.org/packages/?name=wqy-zenhei) - Estilo Hei Ti (sans-serif) Contorno chino con incrustaciones con Bitmapped Song Ti (también soporta japonés (parcialmente) y caracteres coreanos).
     *   [wqy-bitmapfont](https://www.archlinux.org/packages/?name=wqy-bitmapfont) - Fuente china Bitmapped Song Ti (serif).
 
 *   Fuentes arficas.
-    *   [ttf-arphic-ukai](https://www.archlinux.org/packages/?name=ttf-arphic-ukai) - Fuente Unicode *Kaiti* (trazos de pincel) (se sugiere habilitar anti-aliasing).
-    *   [ttf-arphic-uming](https://www.archlinux.org/packages/?name=ttf-arphic-uming) - Fuente Unicode *Mingti* (impresa).
+    *   [ttf-arphic-ukai](https://www.archlinux.org/packages/?name=ttf-arphic-ukai) - Fuente Unicode *kaiti* (trazos de pincel) (se sugiere habilitar anti-aliasing).
+    *   [ttf-arphic-uming](https://www.archlinux.org/packages/?name=ttf-arphic-uming) - Fuente Unicode *mingti* (impresa).
 
 *   [opendesktop-fonts](https://www.archlinux.org/packages/?name=opendesktop-fonts) - Fuente *New Sung*, anteriormente era el paquete ttf-fireflysung.
 
-*   [ttf-hannom](https://www.archlinux.org/packages/?name=ttf-hannom) - Fuentes ttf Chinas and Vietnamitas.
+*   [ttf-hannom](https://www.archlinux.org/packages/?name=ttf-hannom) - Fuentes ttf chinas and vietnamitas.
 
 *   Fuentes estándar del ministerio de educación de la república china en Taiwan.
-    *   [ttf-tw](https://aur.archlinux.org/packages/ttf-tw/) - Fuentes Chinas tradicionales Kai y Song del ministerio de educación de Taiwan.
-    *   [ttf-twcns-fonts](https://aur.archlinux.org/packages/ttf-twcns-fonts/) Fuentes Chinas TrueType por el ministerio de educación del gobierno de Taiwan, soporta el estándar CNS11643, incluido el tipo de letra Kai y Sung.
+    *   [ttf-tw](https://aur.archlinux.org/packages/ttf-tw/) - Fuentes chinas tradicionales Kai y Song del ministerio de educación de Taiwan.
+    *   [ttf-twcns-fonts](https://aur.archlinux.org/packages/ttf-twcns-fonts/) Fuentes chinas TrueType por el ministerio de educación del gobierno de Taiwan, soporta el estándar CNS11643, incluido el tipo de letra kai y sung.
 
-*   Fuentes Chinas de Windows
-    *   [ttf-ms-win8-zh_cn](https://aur.archlinux.org/packages/ttf-ms-win8-zh_cn/) - Fuentes de Chino simplificado de windows 8.
-    *   [ttf-ms-win8-zh_tw](https://aur.archlinux.org/packages/ttf-ms-win8-zh_tw/) - Fuentes de Chino tradicional de windows 8.
-    *   [ttf-ms-win10-zh_cn](https://aur.archlinux.org/packages/ttf-ms-win10-zh_cn/) - Fuentes de Chino simplificado de windows 10.
-    *   [ttf-ms-win10-zh_tw](https://aur.archlinux.org/packages/ttf-ms-win10-zh_tw/) - Fuentes de Chino tradicional de windows 10.
+*   Fuentes chinas de Windows
+    *   [ttf-ms-win8-zh_cn](https://aur.archlinux.org/packages/ttf-ms-win8-zh_cn/) - Fuentes de chino simplificado de windows 8.
+    *   [ttf-ms-win8-zh_tw](https://aur.archlinux.org/packages/ttf-ms-win8-zh_tw/) - Fuentes de chino tradicional de windows 8.
+    *   [ttf-ms-win10-zh_cn](https://aur.archlinux.org/packages/ttf-ms-win10-zh_cn/) - Fuentes de chino simplificado de windows 10.
+    *   [ttf-ms-win10-zh_tw](https://aur.archlinux.org/packages/ttf-ms-win10-zh_tw/) - Fuentes de chino tradicional de windows 10.
 
 *   [ttf-i.bming](https://aur.archlinux.org/packages/ttf-i.bming/) - Fuente CJK serif que enfatiza en un estilo de letra antiguo.
 
 ##### Japonés
 
-*   [adobe-source-han-sans-jp-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-jp-fonts) - Fuentes Japonesas OpenType/CFF.
-*   [otf-ipafont](https://www.archlinux.org/packages/?name=otf-ipafont) - Conjunto de fuentes formales góticas Japonesas (sans-serif) y Mincho (serif); una fuente de código abierto de gran calidad. Fuente por defecto de openSUSE-ja.
-*   [ttf-hanazono](https://www.archlinux.org/packages/?name=ttf-hanazono) - Una fuente libre Japonesa kanji, estilo Mincho (serif).
-*   [ttf-sazanami](https://www.archlinux.org/packages/?name=ttf-sazanami) - Una fuente libre Japonesa TrueType. Esta era desactualizada y no se mantendrá más, pero varios entornos puede que tengan establecido esta fuente como fuente alternativa.
-*   [ttf-koruri](https://aur.archlinux.org/packages/ttf-koruri/) - Fuente Japonesa TrueType obtenida mezclando [ttf-mplus](https://aur.archlinux.org/packages/ttf-mplus/) y Open Sans.
-*   [ttf-monapo](https://aur.archlinux.org/packages/ttf-monapo/) - Fuente Japonesa para ver [2channel Shift JIS art](https://en.wikipedia.org/wiki/2channel_Shift_JIS_art "wikipedia:2channel Shift JIS art") apropiadamente.
-*   [ttf-mplus](https://aur.archlinux.org/packages/ttf-mplus/) - Fuente Japonesa con un estilo gótico moderno en su contorno. Incluye todo de Japonés Hiragana/Katakana, Latino básico, Latino-1 suplemento, Latino extandido-A, Extensiones IPA y la mayoría de Kanji Japonés, Griego, Cirílico, Vietnamita con siete pesos (proporcional) o 5 pesos (mono espaciado).
-*   [ttf-vlgothic](https://aur.archlinux.org/packages/ttf-vlgothic/) - Fuente gótica Japonesa. Por defecto en los Linux Debian/Fedora/Vine.
+*   [adobe-source-han-sans-jp-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-jp-fonts) - Fuentes japonesas OpenType/CFF.
+*   [otf-ipafont](https://www.archlinux.org/packages/?name=otf-ipafont) - Conjunto de fuentes formales góticas japonesas (sans-serif) y mincho (serif); una fuente de código abierto de gran calidad. Fuente por defecto de openSUSE-ja.
+*   [ttf-hanazono](https://www.archlinux.org/packages/?name=ttf-hanazono) - Una fuente libre japonesa kanji, estilo Mincho (serif).
+*   [ttf-sazanami](https://www.archlinux.org/packages/?name=ttf-sazanami) - Una fuente libre japonesa TrueType. Esta estaba desactualizada y no se mantendrá más, pero varios entornos puede que tengan establecido esta fuente como fuente alternativa.
+*   [ttf-koruri](https://aur.archlinux.org/packages/ttf-koruri/) - Fuente japonesa TrueType obtenida mezclando [ttf-mplus](https://aur.archlinux.org/packages/ttf-mplus/) y Open Sans.
+*   [ttf-monapo](https://aur.archlinux.org/packages/ttf-monapo/) - Fuente japonesa para ver [2channel Shift JIS art](https://en.wikipedia.org/wiki/2channel_Shift_JIS_art "wikipedia:2channel Shift JIS art") apropiadamente.
+*   [ttf-mplus](https://aur.archlinux.org/packages/ttf-mplus/) - Fuente japonesa con un estilo gótico moderno en su contorno. Incluye todo de japonés hiragana/katakana, latín básico, latín-1 suplemento, latín extandido-A, extensiones IPA y la mayoría de kanji japonés, griego, cirílico, vietnamita con siete pesos (proporcional) o 5 pesos (mono espaciado).
+*   [ttf-vlgothic](https://aur.archlinux.org/packages/ttf-vlgothic/) - Fuente gótica japonesa. Por defecto en los Linux Debian/Fedora/Vine.
 
 ##### Coreano
 
-*   [adobe-source-han-sans-kr-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-kr-fonts) - Fuente Coreana OpenType/CFF.
-*   [ttf-baekmuk](https://www.archlinux.org/packages/?name=ttf-baekmuk) - Colección de fuentes Coreanas TrueType.
+*   [adobe-source-han-sans-kr-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-kr-fonts) - Fuente coreana OpenType/CFF.
+*   [ttf-baekmuk](https://www.archlinux.org/packages/?name=ttf-baekmuk) - Colección de fuentes coreanas TrueType.
 *   [spoqa-han-sans](https://aur.archlinux.org/packages/spoqa-han-sans/) - Fuentes Han Sans personalizadas por Spoqa
 *   [ttf-d2coding](https://aur.archlinux.org/packages/ttf-d2coding/) - Fuente D2Coding de ancho fijo TrueType hecho por Naver.
 *   [ttf-nanum](https://aur.archlinux.org/packages/ttf-nanum/) - Serie de fuentes Nanum TrueType.
 *   [ttf-nanumgothic_coding](https://aur.archlinux.org/packages/ttf-nanumgothic_coding/) - Serie de fuentes Nanum TrueType de ancho fijo.
-*   [ttf-kopub](https://aur.archlinux.org/packages/ttf-kopub/)/[otf-kopub](https://aur.archlinux.org/packages/otf-kopub/) - Fuente Coreanas TrueType/OpenType por la sociedad de editores de Corea.
-*   [ttf-kopubworld](https://aur.archlinux.org/packages/ttf-kopubworld/)/[otf-kopubworld](https://aur.archlinux.org/packages/otf-kopubworld/) - Fuentes plurilingües (Coreano, Yethangul, Chino extendido, Japonés, Latino extendido, Cirílico, Árabe, Hebreo, Devanagari) TrueType/OpenType por la sociedad de editores de Corea.
-*   [ttf-unfonts-core-ibx](https://aur.archlinux.org/packages/ttf-unfonts-core-ibx/) - Una colección de fuentes Coreanas TrueType por KLDP.
+*   [ttf-kopub](https://aur.archlinux.org/packages/ttf-kopub/)/[otf-kopub](https://aur.archlinux.org/packages/otf-kopub/) - Fuente coreanas TrueType/OpenType por la sociedad de editores de Corea.
+*   [ttf-kopubworld](https://aur.archlinux.org/packages/ttf-kopubworld/)/[otf-kopubworld](https://aur.archlinux.org/packages/otf-kopubworld/) - Fuentes plurilingües (coreano, yethangul, chino extendido, japonés, latín extendido, cirílico, árabe, hebreo, devanagari) TrueType/OpenType por la sociedad de editores de Corea.
+*   [ttf-unfonts-core-ibx](https://aur.archlinux.org/packages/ttf-unfonts-core-ibx/) - Una colección de fuentes coreanas TrueType por KLDP.
 
 ##### Vietnamita
 
-*   [ttf-hannom](https://www.archlinux.org/packages/?name=ttf-hannom) - Fuente Vietnamita TrueType font para los caracteres chữ Nôm.
+*   [ttf-hannom](https://www.archlinux.org/packages/?name=ttf-hannom) - Fuente vietnamita TrueType font para los caracteres chữ Nôm.
 
 #### Cirílico
 
 Vea también [#Escritura latina](#Escritura_latina)
 
-*   [ttf-paratype](https://aur.archlinux.org/packages/ttf-paratype/) - Familia de fuente por ParaType: sans, serif, mono, cirílico extendido y latino, licencia OFL.
-*   [otf-russkopis](https://aur.archlinux.org/packages/otf-russkopis/) - Una fuente libre cursiva OpenType para la escritura Cirílica.
+*   [ttf-paratype](https://aur.archlinux.org/packages/ttf-paratype/) - Familia de fuente por ParaType: sans, serif, mono, cirílico extendido y latín, licencia OFL.
+*   [otf-russkopis](https://aur.archlinux.org/packages/otf-russkopis/) - Una fuente libre cursiva OpenType para la escritura cirílica.
+
+#### Griego
+
+Casi todas las fuentes Unicode contienen el conjunto de caracteres griegos (politónico incluido). Estas fuentes adicionales puede que no tengan el conjunto completo de caracteres Unicode pero utiliza una gran calidad en los caracteres griegos (y en el latín, por supuesto).
+
+*   [otf-gfs](https://aur.archlinux.org/packages/otf-gfs/) - Selección de fuentes de OpenType de la sociedad griega de fuentes.
+*   [ttf-mgopen](https://aur.archlinux.org/packages/ttf-mgopen/) - Fuentes profesionales TrueType por Magenta.
+
+#### Hebreo
+
+*   [opensiddur-hebrew-fonts](https://aur.archlinux.org/packages/opensiddur-hebrew-fonts/) - Gran colección de fuentes hebreas con licencia de código abierto.
+*   [culmus](https://aur.archlinux.org/packages/culmus/) - Una buena colección de fuentes hebreas libres.
+
+#### Índico
+
+*   [ttf-freebanglafont](https://www.archlinux.org/packages/?name=ttf-freebanglafont) - Fuente para bangla.
+*   [ttf-indic-otf](https://www.archlinux.org/packages/?name=ttf-indic-otf) - Colección de fuentes índicas OpenType (contiene ttf-freebanglafont), proporciona el carácter [U+0CA0](http://www.fileformat.info/info/unicode/char/ca0/index.htm) "ಠ".
+*   [lohit-fonts](https://aur.archlinux.org/packages/lohit-fonts/) - Fuentes índicas TrueType del proyecto Fedora (contiene Fuentes Oriya y más).
+*   [ttf-devanagarifonts](https://aur.archlinux.org/packages/ttf-devanagarifonts/) - Fuentes TrueType devanagaries (contiene 283 tipos de letra).
+*   [ttf-gurmukhi-fonts_sikhnet](https://aur.archlinux.org/packages/ttf-gurmukhi-fonts_sikhnet/) - Fuentes TrueType gurmujíes (gurbaniwebthick,prabhki).
+*   [ttf-gurmukhi_punjabi](https://aur.archlinux.org/packages/ttf-gurmukhi_punjabi/) - TTF gurmujíes / panyabí (contiene 252 tipos de letra).
+*   [ttf-gujrati-fonts](https://aur.archlinux.org/packages/ttf-gujrati-fonts/) -Fuentes TTF guyaratíes (Avantika,Gopika,Shree768).
+*   [ttf-kannada-font](https://aur.archlinux.org/packages/ttf-kannada-font/) - canarés, lengua del estado Karnataka en India.
+*   [ttf-lklug](https://aur.archlinux.org/packages/ttf-lklug/) - Fuentes Unicode cingalés.
+*   [ttf-tamil](https://aur.archlinux.org/packages/ttf-tamil/) - Fuentes Unicode tamil.
+*   [ttf-urdufonts](https://aur.archlinux.org/packages/ttf-urdufonts/) - Fuentes urdu (Jameel Noori Nastaleeq (+kasheeda), Nafees Web Naskh, PDMS Saleem Quran) y configuración para establecer Jameel Noori Nastaleeq como fuente por defecto para urdu.
+*   [fonts-smc-malayalam](https://aur.archlinux.org/packages/fonts-smc-malayalam/) - Fuentes Unicode malabar lanzadas por 'Swathanthra Malayalam Computing' (contiene 11 tipos de letra).
+
+#### Camboyano
+
+*   [ttf-khmer](https://www.archlinux.org/packages/?name=ttf-khmer) - Fuente que cubre los glifos del lenguaje camboyano.
+*   [Hanuman](https://www.google.com/fonts/specimen/Hanuman) ([ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/))
+
+#### Mongol y tunguses
+
+*   [ttf-abkai](https://aur.archlinux.org/packages/ttf-abkai/) - Fuentes para las escrituras sibe, smnchu y daur (incompleto, aún en desarrollo).
+
+#### Persa
+
+*   [persian-fonts](https://aur.archlinux.org/packages/persian-fonts/) - Meta-paquete para instalar todas las fuentes persas del AUR.
+*   [borna-fonts](https://aur.archlinux.org/packages/borna-fonts/) - Serie de fuentes persa B Borna Rayaneh Co..
+*   [iran-nastaliq-fonts](https://aur.archlinux.org/packages/iran-nastaliq-fonts/) - Fuente caligráfica libre Unicode persa.
+*   [iranian-fonts](https://aur.archlinux.org/packages/iranian-fonts/) - Familia Iranian-Sans e Iranian-Serif de fuentes persa.
+*   [ir-standard-fonts](https://aur.archlinux.org/packages/ir-standard-fonts/) - Fuentes persas estándar del Consejo Supremo de Tecnologías de la Información y la Comunicación de Irán (SCICT).
+*   [persian-hm-ftx-fonts](https://aur.archlinux.org/packages/persian-hm-ftx-fonts/) - Series de fuentes persa derivado de X Series 2, Metafont y Fuentes FarsiTeX con la característica kashida.
+*   [persian-hm-xs2-fonts](https://aur.archlinux.org/packages/persian-hm-xs2-fonts/) - Series de fuentes persa derivado de X Series 2 con la característica kashida.
+*   [sina-fonts](https://aur.archlinux.org/packages/sina-fonts/) - Serie de fuente persa Sina Pardazesh Co..
+*   [gandom-fonts](https://aur.archlinux.org/packages/gandom-fonts/), [parastoo-fonts](https://aur.archlinux.org/packages/parastoo-fonts/), [sahel-fonts](https://aur.archlinux.org/packages/sahel-fonts/), [samim-fonts](https://aur.archlinux.org/packages/samim-fonts/), [shabnam-fonts](https://aur.archlinux.org/packages/shabnam-fonts/), [tanha-fonts](https://aur.archlinux.org/packages/tanha-fonts/), [vazir-fonts](https://aur.archlinux.org/packages/vazir-fonts/), [vazir-code-fonts](https://aur.archlinux.org/packages/vazir-code-fonts/) - Bonitas fuentes persa hecho por Ali Rasti Kerdar.
+*   [ttf-yas](https://aur.archlinux.org/packages/ttf-yas/) - Serie de fuente persa Yas (con **hueco cero**).
+*   [ttf-x2](https://aur.archlinux.org/packages/ttf-x2/) - Fuentes libres con soporte para persa, árabe, urdu, pashto, dari, uzbeko, kurdo, uigur, turco antiguo (otomano) y turco moderno (romano).
+
+#### Tai–Kadai
+
+*   [fonts-tlwg](https://www.archlinux.org/packages/?name=fonts-tlwg) - Colección de fuentes escalables tailandesas.
+*   [ttf-lao](https://aur.archlinux.org/packages/ttf-lao/) - Fuente TTF Lao (Phetsarath_OT)
+*   [ttf-lao-fonts](https://aur.archlinux.org/packages/ttf-lao-fonts/) - Fuente TTF Lao, ambas Unicode y no-Unicode para Windows.
+
+#### Tibeto-Burman
+
+*   [ttf-tibetan-machine](https://www.archlinux.org/packages/?name=ttf-tibetan-machine) - Fuente TTF Tibetan Machine.
+*   [ttf-myanmar-fonts](https://aur.archlinux.org/packages/ttf-myanmar-fonts/) - 121 tipos de letra de myordbok.com
+
+### Emoji y símbolos
+
+Una sección del Unicode estándar está dedicado a caracteres pictográficos que son llamados "emoji".
+
+*   [noto-fonts-emoji](https://www.archlinux.org/packages/?name=noto-fonts-emoji) - Fuente de emoji de Google, como en Android o Google Hangouts.
+*   [ttf-symbola](https://aur.archlinux.org/packages/ttf-symbola/) - proporciona muchos símbolos Unicode, incluido emoji, en un estilo de contorno.
+*   [ttf-emojione](https://aur.archlinux.org/packages/ttf-emojione/) - Fuente colorida oficial EmojiOne.
+*   [ttf-emojione-color](https://aur.archlinux.org/packages/ttf-emojione-color/) - Fuente de emoji a color y en B&W SVGinOT construida desde EmojiOne.
+*   [ttf-twemoji-color](https://aur.archlinux.org/packages/ttf-twemoji-color/) - Glifos código abierto de Twitter.
+
+[Kaomoji](https://en.wikipedia.org/wiki/es:Emoticono#Estilo_de_Asia_Oriental "wikipedia:es:Emoticono") a veces como "emoticonos japoneses" están compuestos por caracteres de varios conjuntos, incluido CJK y fuentes índicas. Por ejemplo, estos paquetes proporcionan muchos kaomoji existentes: [ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont), [ttf-arphic-uming](https://www.archlinux.org/packages/?name=ttf-arphic-uming), y [ttf-indic-otf](https://www.archlinux.org/packages/?name=ttf-indic-otf).
+
+### Matemáticas
+
+*   [font-mathematica](https://www.archlinux.org/packages/?name=font-mathematica) - Fuentes matemáticas por Wolfram Research, Inc.
+*   [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) y [texlive-fontsextra](https://www.archlinux.org/packages/?name=texlive-fontsextra) contiene muchas fuentes matemáticas como la matemática moderna latina y [STIX Fonts](https://en.wikipedia.org/wiki/STIX_Fonts_project "wikipedia:STIX Fonts project"). Vea [Hacer que las fuentes estén disponibles en Fontconfig (en inglés)](/index.php/TeX_Live#Making_fonts_available_to_Fontconfig "TeX Live") para la configuración.
+*   [otf-stix](https://aur.archlinux.org/packages/otf-stix/) - Versión independiente, una de las más recientes de STIX.
+*   [otf-latin-modern](https://www.archlinux.org/packages/?name=otf-latin-modern), [otf-latinmodern-math](https://www.archlinux.org/packages/?name=otf-latinmodern-math) - Versión mejorada de fuentes computacionales modernas usadas en LaTeX.
+*   [ttf-computer-modern-fonts](https://aur.archlinux.org/packages/ttf-computer-modern-fonts/), [otf-cm-unicode](https://aur.archlinux.org/packages/otf-cm-unicode/) - [Computación moderna (inglés)](https://en.wikipedia.org/wiki/Computer_Modern "wikipedia:Computer Modern") (de la fama de TeX).
+*   [ttf-mathtype](https://aur.archlinux.org/packages/ttf-mathtype/) - Fuentes MathType.
+
+### Fuentes de otros sistemas operativos
+
+*   [ttf-mac-fonts](https://aur.archlinux.org/packages/ttf-mac-fonts/) - Fuentes de TrueType Apple MacOS.
+
+Vea [Fuentes métricamente compatibles (inglés)](/index.php/Metric-compatible_fonts "Metric-compatible fonts"), que muestra las alternativas para las [Fuentes de Microsoft (inglés)](/index.php/Microsoft_fonts "Microsoft fonts").

@@ -71,7 +71,7 @@ The result should end with the following lines, indicating the signature is trus
 
 ## Install a DNSSEC-validating resolver
 
-To use DNSSEC system-wide, you can use a DNS resolver that is capable of validating DNSSEC records, so that all DNS lookups go through the it. See [Domain name resolution#Resolvers](/index.php/Domain_name_resolution#Resolvers "Domain name resolution") for available options. Note that each requires specific options to enable their DNSSEC validation feature.
+To use DNSSEC system-wide, you can use a DNS resolver that is capable of validating DNSSEC records, so that all DNS lookups go through the it. See [Domain name resolution#DNS servers](/index.php/Domain_name_resolution#DNS_servers "Domain name resolution") for available options. Note that each requires specific options to enable their DNSSEC validation feature.
 
 If you attempt to visit a site with a bogus (spoofed) IP address, the validating resolver will prevent you from receiving the invalid DNS data and your browser (or other application) will be told there is no such host. Since all DNS lookups go through the validating resolver, you do not need software that has DNSSEC support built-in when using this option.
 

@@ -59,7 +59,7 @@ Look for errors in the log files located at `/var/log`, as well as high priority
 
 ```
 
-See [Systemd#Journal](/index.php/Systemd#Journal "Systemd") for more information.
+See [systemd/Journal](/index.php/Systemd/Journal "Systemd/Journal") for more information.
 
 See [Xorg#Troubleshooting](/index.php/Xorg#Troubleshooting "Xorg") for information on where and how [Xorg](/index.php/Xorg "Xorg") logs errors.
 

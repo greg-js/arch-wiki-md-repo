@@ -9,6 +9,7 @@
         *   [1.1.3 Others](#Others)
     *   [1.2 Initial setup](#Initial_setup)
     *   [1.3 GNOME](#GNOME)
+    *   [1.4 KDE](#KDE)
 *   [2 Configuration](#Configuration)
     *   [2.1 IBus](#IBus)
     *   [2.2 Ibus-rime](#Ibus-rime)
@@ -105,6 +106,10 @@ In *Interface > Default Input Method*, select *ibus* instead of *xim*.
 ### GNOME
 
 [GNOME](/index.php/GNOME "GNOME") integrates with IBus[[1]](https://help.gnome.org/misc/release-notes/3.6/i18n-ibus.html.en), so you should only need to install the package specific to your language. To enable input in your language, add it to the *Input Sources* section of the *Region & Language* settings. After you add your input sources (at least 2), GNOME will show the input switcher icon in the tray. If you do not find your appropriate input source when trying to add your input sources, most likely you have not done locale-gen for that locale. The default keyboard shortcut to switch to the next input method in GNOME is `Super+space`; disregard the *next input method* shortcut set in *ibus-setup*.
+
+### KDE
+
+[KDE](/index.php/KDE "KDE") needs the 'kimtoy' package to work with ibus
 
 ## Configuration
 

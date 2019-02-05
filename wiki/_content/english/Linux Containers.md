@@ -41,8 +41,6 @@ Alternatives for using containers are [systemd-nspawn](/index.php/Systemd-nspawn
     *   [5.2 No network-connection with veth in container config](#No_network-connection_with_veth_in_container_config)
     *   [5.3 Error: unknown command](#Error:_unknown_command)
     *   [5.4 Error: Failed at step KEYRING spawning...](#Error:_Failed_at_step_KEYRING_spawning...)
-    *   [5.5 Errors due to mknod changes in linux 4.18 kernel](#Errors_due_to_mknod_changes_in_linux_4.18_kernel)
-    *   [5.6 Error: Failed to initialize cgroup driver / PAM unable to open pam_cgfs.so](#Error:_Failed_to_initialize_cgroup_driver_/_PAM_unable_to_open_pam_cgfs.so)
 *   [6 See also](#See_also)
 
 ## Privileged containers or unprivileged containers
@@ -561,44 +559,6 @@ Then add the following line to the container configuration **after** lxc.idmap
 lxc.seccomp.profile = /etc/lxc/unpriv.seccomp
 
 ```
-
-### Errors due to mknod changes in linux 4.18 kernel
-
-Applications may have errors such as the following with nginx:
-
-nginx failes with [emerg]: open("/dev/null") failed (13: Permission denied)
-
-There has been changes in linux 4.18 kernel with how mknod is handled and how it interacts with systemd's Privatedevice feature.
-
-Workaround is to revert to a 4.17 version kernel until fixed upstream
-
-*   [After upgrading to 3.4 nginx won't start on container because it can't open /dev/null #4950](https://github.com/lxc/lxd/issues/4950)
-
-### Error: Failed to initialize cgroup driver / PAM unable to open pam_cgfs.so
-
-There is a bug in LXC 3.0.2\. If you get these errors:
-
-```
-lxc-start: $NAME: cgroups/cgfsng.c: all_controllers_found: 701 No freezer controller mountpoint found
-lxc-start: $NAME: cgroups/cgroup.c: cgroup_init: 44 Failed to initialize cgroup driver                                                                          
-lxc-start: $NAME: start.c: lxc_init: 861 Failed to initialize cgroup driver
-lxc-start: $NAME: start.c: __lxc_start: 1876 Failed to initialize container "$NAME"
-lxc-start: $NAME: tools/lxc_start.c: main: 330 The container failed to start
-lxc-start: $NAME: tools/lxc_start.c: main: 336 Additional information can be obtained by setting the --logfile and --logpriority options
-
-```
-
-associated with these errors in the output of journalctl:
-
-```
-Aug 17 16:06:25 localhost sshd[747]: PAM unable to dlopen(/usr/lib/security/pam_cgfs.so): /usr/lib/security/pam_cgfs.so: undefined symbol: strlcat
-Aug 17 16:06:25 localhost sshd[747]: PAM adding faulty module: /usr/lib/security/pam_cgfs.so
-
-```
-
-It is because of [issue 2556](https://github.com/lxc/lxc/issues/2556), which has been fixed upstream already, but has not been backported to Arch (see [FS#59689](https://bugs.archlinux.org/task/59689)).
-
-[Downgrading](/index.php/Downgrading "Downgrading") to LXC 3.0.1 may solve the problem until the fix is packaged.
 
 ## See also
 

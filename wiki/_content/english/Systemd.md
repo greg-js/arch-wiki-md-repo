@@ -662,7 +662,7 @@ If `journalctl -u foounit` does not show any output for a short lived service, l
 
 After using `systemd-analyze` a number of users have noticed that their boot time has increased significantly in comparison with what it used to be. After using `systemd-analyze blame` [NetworkManager](/index.php/NetworkManager "NetworkManager") is being reported as taking an unusually large amount of time to start.
 
-The problem for some users has been due to `/var/log/journal` becoming too large. This may have other impacts on performance, such as for `systemctl status` or `journalctl`. As such the solution is to remove every file within the folder (ideally making a backup of it somewhere, at least temporarily) and then setting a journal file size limit as described in [#Journal size limit](#Journal_size_limit).
+The problem for some users has been due to `/var/log/journal` becoming too large. This may have other impacts on performance, such as for `systemctl status` or `journalctl`. As such the solution is to remove every file within the folder (ideally making a backup of it somewhere, at least temporarily) and then setting a journal file size limit as described in [Systemd/Journal#Journal size limit](/index.php/Systemd/Journal#Journal_size_limit "Systemd/Journal").
 
 ### systemd-tmpfiles-setup.service fails to start at boot
 

@@ -2,13 +2,7 @@ From the [Redshift project web page](http://jonls.dk/redshift/):
 
 	[Redshift](https://en.wikipedia.org/wiki/Redshift_(software) adjusts the color temperature of your screen according to your surroundings. This may help your eyes hurt less if you are working in front of the screen at night. This program is inspired by [f.lux](http://justgetflux.com).
 
-**Note:**
-
-*   Redshift does not support [Wayland](/index.php/Wayland "Wayland") since it offers no way to adjust the color temperature [[1]](https://github.com/jonls/redshift/issues/55).
-*   [GNOME](/index.php/GNOME "GNOME") provides features like Redshift out-of-the-box and has [Wayland](/index.php/Wayland "Wayland") support. Enable the Night Light in Display settings.
-*   Likewise, [KDE Plasma](/index.php/KDE_Plasma "KDE Plasma") provides Night Color which is Wayland-only.
-*   On Sway 1.0 and other wlroots-based compositors, [redshift-wlr-gamma-control-git](https://aur.archlinux.org/packages/redshift-wlr-gamma-control-git/) can be used.
-*   On Orbital, [redshift-wayland-git](https://aur.archlinux.org/packages/redshift-wayland-git/) can be used.
+**Note:** Redshift does not support [Wayland](/index.php/Wayland "Wayland") since it offers no way to adjust the color temperature [[1]](https://github.com/jonls/redshift/issues/55). See [Wayland#Gamma](/index.php/Wayland#Gamma "Wayland") for more.
 
 ## Contents
 
@@ -70,15 +64,15 @@ where *TEMPERATURE* is the desired color temperature (between `1000` and `25000`
 
 There are several options to have redshift automatically started:
 
+*   By right-clicking the system tray icon and selecting *Autostart* when *redshift-gtk* or *plasma5-applets-redshift-control* is already launched.
+*   By placing a Redshift [Desktop entry](/index.php/Desktop_entry "Desktop entry") in `~/.config/autostart/` or by adding `redshift` to your window manager or desktop environment's [Autostarting](/index.php/Autostarting "Autostarting") method.
 *   By using [Systemd/User](/index.php/Systemd/User "Systemd/User"). Two services are provided: `redshift.service` and `redshift-gtk.service`. Activate only one of them depending on whether or not you want the system tray icon.
-*   By right-clicking the system tray icon when *redshift-gtk* or *plasma5-applets-redshift-control* is already launched and selecting *Autostart*.
-*   By placing a Redshift [Desktop entry](/index.php/Desktop_entry "Desktop entry") in `~/.config/autostart` or by adding `redshift` to your window manager or desktop environment's [Autostarting](/index.php/Autostarting "Autostarting") method.
 
 **Note:** The Redshift service files contain `Restart=always` so they will restart infinitely. See [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5).
 
 ## Configuration
 
-Redshift reads the configuration file `~/.config/redshift/redshift.conf`, if it exists. However, Redshift does not create that configuration file, so you may want to create it manually. See [redshift.conf.sample](https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample).
+Redshift reads the configuration file `~/.config/redshift/redshift.conf` [[2]](https://github.com/jonls/redshift/releases/tag/v1.12) if it exists. However, Redshift does not create that configuration file, so you may want to create it manually. See [redshift.conf.sample](https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample).
 
 ### Automatic location based on GeoClue2
 
@@ -98,7 +92,7 @@ users=
 
 *   This workaround is not needed with Geoclue2 version 2.5.0 and above.
 *   If using [GNOME](/index.php/GNOME "GNOME"), also toggle Location Services to "On" in *Settings > Privacy*.
-*   Due possible bugs with geoclue2 and Redshift [[2]](https://github.com/jonls/redshift/issues/318), it may be required to use the `manual` location-provider instead, e.g. for Paris:
+*   Due possible bugs with geoclue2 and Redshift [[3]](https://github.com/jonls/redshift/issues/318), it may be required to use the `manual` location-provider instead, e.g. for Paris:
 
  `~/.config/redshift/redshift.conf` 
 ```
@@ -149,7 +143,7 @@ For more information, see [this](https://bbs.archlinux.org/viewtopic.php?pid=138
 
 ### Use real screen brightness
 
-Redshift has a brightness adjustment setting, but it does not work the way most people might expect. In fact it is a fake brightness adjustment obtained by manipulating the gamma ramps, which means that it does not reduce the backlight of the screen. [[3]](http://jonls.dk/redshift/#known-bugs-and-limitations)
+Redshift has a brightness adjustment setting, but it does not work the way most people might expect. In fact it is a fake brightness adjustment obtained by manipulating the gamma ramps, which means that it does not reduce the backlight of the screen. [[4]](http://jonls.dk/redshift/#known-bugs-and-limitations)
 
 Changing screen backlight is possible with redshift hooks and [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr) and [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight) but, please see [Backlight#xbacklight](/index.php/Backlight#xbacklight "Backlight") as there are some limitations and you may have to find another method of controlling the backlight depending on your hardware.
 
@@ -227,7 +221,7 @@ The [systemd](/index.php/Systemd "Systemd") unit has a line in the `redshift.ser
 
 ### Redshift temporarily resets using some wine apps that reset gamma values
 
-If you notice that using some wine apps, redshift seems to reset temporarily upon launch, or adjusting settings, or etc, then there is a useful registry key that seems to alleviate this. See [[4]](https://www.winehq.org/pipermail/wine-bugs/2015-January/403770.html) and [[5]](https://wiki.winehq.org/UsefulRegistryKeys). Set or create the string value
+If you notice that using some wine apps, redshift seems to reset temporarily upon launch, or adjusting settings, or etc, then there is a useful registry key that seems to alleviate this. See [[5]](https://www.winehq.org/pipermail/wine-bugs/2015-January/403770.html) and [[6]](https://wiki.winehq.org/UsefulRegistryKeys). Set or create the string value
 
  `HKEY_CURRENT_USER\Software\Wine\X11 Driver`  `UseXVidMode="N"` 
 
@@ -291,7 +285,5 @@ users=
 
 *   [Redshift website](http://jonls.dk/redshift)
 *   [Redshift on github](http://github.com/jonls/redshift)
-*   [Wikipedia:Redshift_(software)](https://en.wikipedia.org/wiki/Redshift_(software) "wikipedia:Redshift (software)")
-*   [blugon](https://aur.archlinux.org/packages/blugon/) - simple Blue Light Filter [[6]](https://github.com/jumper149/blugon)
-*   [sct](https://aur.archlinux.org/packages/sct/) - set color temperature [[7]](http://www.tedunangst.com/flak/post/sct-set-color-temperature)
-*   [xflux-gui-git](https://aur.archlinux.org/packages/xflux-gui-git/)
+*   [Wikipedia:Redshift (software)](https://en.wikipedia.org/wiki/Redshift_(software) "wikipedia:Redshift (software)")
+*   Similar software: [[7]](https://github.com/jumper149/blugon) [blugon](https://aur.archlinux.org/packages/blugon/), [xflux-gui-git](https://aur.archlinux.org/packages/xflux-gui-git/)

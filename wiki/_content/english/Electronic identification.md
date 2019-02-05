@@ -14,6 +14,7 @@ An [electronic identification](https://en.wikipedia.org/wiki/Electronic_identifi
         *   [2.2.1 DigiDoc](#DigiDoc)
         *   [2.2.2 Chromium](#Chromium)
         *   [2.2.3 Firefox](#Firefox)
+        *   [2.2.4 For new cards issued since December 2018](#For_new_cards_issued_since_December_2018)
     *   [2.3 Sweden](#Sweden)
 
 ## Installation
@@ -74,6 +75,17 @@ After installing [chrome-token-signing](https://aur.archlinux.org/packages/chrom
 To enable PIN 1 authentication in [Firefox](/index.php/Firefox "Firefox") you should install [esteidpkcs11loader](https://aur.archlinux.org/packages/esteidpkcs11loader/) and [chrome-token-signing](https://aur.archlinux.org/packages/chrome-token-signing/). After restarting the browser make sure that "Firefox PKCS11 loader" extension is enabled. You can also follow manual instructions at [Smartcards#Mozilla Firefox](/index.php/Smartcards#Mozilla_Firefox "Smartcards").
 
 For [firefox-esr52](https://aur.archlinux.org/packages/firefox-esr52/) and other other Firefox forks you can use [esteidfirefoxplugin](https://aur.archlinux.org/packages/esteidfirefoxplugin/).
+
+#### For new cards issued since December 2018
+
+Install [awp-blob](https://aur.archlinux.org/packages/awp-blob/). (Which installs awp from official deb package with blobs. No source currently exists: see discussion at [[2]](https://github.com/open-eid/linux-installer/issues/37)).
+
+In Firefox, enable "IDEMIA PKCS11 loader" extension after restart. For Chrome/Chromium, you could try
+
+```
+ modutil -force -dbdir sql:$HOME/.pki/nssdb -add idemia-pkcs11 -libfile /usr/local/AWP/lib/libOcsPKCS11Wrapper.so -mechanisms FRIENDLY
+
+```
 
 ### Sweden
 

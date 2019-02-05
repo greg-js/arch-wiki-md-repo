@@ -289,7 +289,7 @@ The YUV file can then be transcoded to other formats using [FFmpeg](/index.php/F
 
 #### Window switching
 
-To switch windows with `Super+Space` instead of `Super+Tab` use the following patch:
+To switch windows with `Super`+`Space` instead of `Super`+`Tab` use the following patch:
 
 ```
 diff --git a/shell.c b/shell.c
@@ -378,12 +378,19 @@ Some of the above may support [display managers](/index.php/Display_manager "Dis
 
 ### Gamma
 
-While [Redshift](/index.php/Redshift "Redshift") doesn't support Wayland (without a patch) it is possible to apply the desired temperature in tty before starting a compositor. For example:
+While [Redshift](/index.php/Redshift "Redshift") doesn't support Wayland (without a patch) it is possible to apply the desired temperature in [tty](/index.php/Tty "Tty") before starting a compositor. For example:
 
 ```
 redshift -m drm -PO 3000
 
 ```
+
+Otherwise some compositors feature this option during runtime:
+
+*   [GNOME](/index.php/GNOME "GNOME") provides features like [Redshift](/index.php/Redshift "Redshift") out-of-the-box and has Wayland support. Enable [Night Light](/index.php/GNOME#Night_Light "GNOME") in Display settings.
+*   Likewise, [KDE Plasma](/index.php/KDE_Plasma "KDE Plasma") provides *Night Color* which is Wayland-only.
+*   On Sway 1.0 and other wlroots-based compositors, [redshift-wlr-gamma-control-git](https://aur.archlinux.org/packages/redshift-wlr-gamma-control-git/) can be used.
+*   On Orbital, [redshift-wayland-git](https://aur.archlinux.org/packages/redshift-wayland-git/) can be used.
 
 ### LLVM assertion failure
 

@@ -494,7 +494,7 @@ The following groups are currently not used for any purpose:
 
 ## Other tools related to these databases
 
-[getent(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/getent.8) can be used to read a particular record.
+[getent(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/getent.1) can be used to read a particular record.
 
 ```
 % getent group tty
