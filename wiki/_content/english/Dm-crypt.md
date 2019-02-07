@@ -3,9 +3,9 @@ Related articles
 *   [Disk encryption](/index.php/Disk_encryption "Disk encryption")
 *   [Removing system encryption](/index.php/Removing_system_encryption "Removing system encryption")
 
-dm-crypt is the Linux kernel's [device mapper](https://en.wikipedia.org/wiki/device_mapper "wikipedia:device mapper") crypto target. From [Wikipedia:dm-crypt](https://en.wikipedia.org/wiki/dm-crypt "wikipedia:dm-crypt"), it is a:
+dm-crypt is the Linux kernel's [device mapper](https://en.wikipedia.org/wiki/device_mapper "wikipedia:device mapper") crypto target. From [Wikipedia:dm-crypt](https://en.wikipedia.org/wiki/dm-crypt "wikipedia:dm-crypt"), it is:
 
-	a transparent disk encryption subsystem in [the] Linux kernel.... [It is] implemented as a device mapper target and may be stacked on top of other device mapper transformations. It can thus encrypt whole disks (including removable media), partitions, software RAID volumes, logical volumes, as well as files. It appears as a block device, which can be used to back file systems, swap or as an LVM physical volume.
+	a transparent disk encryption subsystem in [the] Linux kernel... [It is] implemented as a device mapper target and may be stacked on top of other device mapper transformations. It can thus encrypt whole disks (including removable media), partitions, software RAID volumes, logical volumes, as well as files. It appears as a block device, which can be used to back file systems, swap or as an LVM physical volume.
 
 ## Contents
 

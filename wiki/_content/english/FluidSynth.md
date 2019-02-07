@@ -6,7 +6,7 @@
 *   [2 Usage](#Usage)
     *   [2.1 Standalone mode](#Standalone_mode)
     *   [2.2 ALSA daemon mode](#ALSA_daemon_mode)
-*   [3 How to convert MIDI to MP3/OGG](#How_to_convert_MIDI_to_MP3.2FOGG)
+*   [3 How to convert MIDI to MP3/OGG](#How_to_convert_MIDI_to_MP3/OGG)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Conflicting with PulseAudio](#Conflicting_with_PulseAudio)
 
@@ -46,8 +46,7 @@ If you want fluidsynth to run as ALSA daemon, edit `/etc/conf.d/fluidsynth` and 
 
 ```
 SOUND_FONT=/usr/share/soundfonts/FluidR3_GM.sf2
-AUDIO_DRIVER=alsa
-OTHER_OPTS='-is -m alsa_seq -r 48000'
+OTHER_OPTS='-a alsa -m alsa_seq -r 48000'
 
 ```
 

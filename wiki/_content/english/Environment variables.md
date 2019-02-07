@@ -44,7 +44,7 @@ Each process stores their environment in the `/proc/$PID/environ` file. This fil
 
 ### Globally
 
-Most Linux distributions tell you to change or add environment variable definitions in `/etc/profile` or other locations. Keep in mind that there are also package-specific configuration files containing variable settings such as `/etc/locale.conf`. Be sure to maintain and manage the environment variables and pay attention to the numerous files that can contain environment variables. In principle, any shell script can be used for initializing environmental variables, but following traditional UNIX conventions, these statements should be only be present in some particular files.
+Most Linux distributions tell you to change or add environment variable definitions in `/etc/profile` or other locations. Keep in mind that there are also package-specific configuration files containing variable settings such as `/etc/locale.conf`. Be sure to maintain and manage the environment variables and pay attention to the numerous files that can contain environment variables. In principle, any shell script can be used for initializing environmental variables, but following traditional UNIX conventions, these statements should only be present in some particular files.
 
 The following files should be used for defining global environment variables on your system: `/etc/environment`, `/etc/profile` and shell specific configuration files. Each of these files has different limitations, so you should carefully select the appropriate one for your purposes.
 

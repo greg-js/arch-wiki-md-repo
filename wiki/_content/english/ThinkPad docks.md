@@ -13,6 +13,8 @@ Both of them are supported out-the-box by [GNOME](/index.php/GNOME "GNOME") and 
 
 **Note:** Some modern ThinkPads with exotic [NVIDIA](/index.php/NVIDIA "NVIDIA") graphics like the Quadro M2200 might not work with dockd because the [NVIDIA](/index.php/NVIDIA "NVIDIA") driver is buggy and causes a kernel crash. See [Issue #3](https://github.com/libthinkpad/dockd/issues/3) on Github
 
+**Note:** If you are using a different environment than [GNOME](/index.php/GNOME "GNOME") or [KDE](/index.php/KDE "KDE") and you are connecting the dock through a thunderbolt connector, you may have to authorize the use of the thunderbolt device before you can use the dock. You can use [bolt](https://www.archlinux.org/packages/?name=bolt) or [tbt](https://aur.archlinux.org/packages/tbt/) to authorize devices. See [Thunderbolt](/index.php/Thunderbolt "Thunderbolt") for more information.
+
 ## Contents
 
 *   [1 Using dockd](#Using_dockd)

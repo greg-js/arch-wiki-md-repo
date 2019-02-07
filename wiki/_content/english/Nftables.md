@@ -72,14 +72,15 @@ nftables' user-space utility *nft* performs most of the rule-set evaluation befo
 
 All changes below are temporary. To make changes permanent, save your ruleset to `/etc/nftables.conf` which is loaded by `nftables.service`:
 
-**Warning:** `nft list ruleset` command on nftables v0.7 (Scrooge McDuck) on a Debian System, simplifies the outputted rules. They are not again readable as correct config by nft if you save them to /etc/nftables.conf and nft will not start with the broken ruleset!
-
 ```
 # nft list ruleset > /etc/nftables.conf
 
 ```
 
-**Note:** `nft list` does not output variable definitions, if you have any in `/etc/nftables.conf` they will be lost. Any variables used in rules will be replaced by that variable value.
+**Note:**
+
+*   `nft list` does not output variable definitions, if you have any in `/etc/nftables.conf` they will be lost. Any variables used in rules will be replaced by that variable value.
+*   `nft list ruleset` in nftables v0.7 (Scrooge McDuck) have syntax limitation for ICMP and ICMPv6 dual use. That leads to errors if the export is used as new ruleset. For further information and solution see the following [stackexchange post](https://unix.stackexchange.com/questions/408497/nftables-configuration-error-conflicting-protocols-specified-inet-service-v-i?rq=1).
 
 To read input from a file use the `-f` flag:
 

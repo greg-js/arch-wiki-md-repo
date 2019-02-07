@@ -64,6 +64,8 @@ More details about LightDM's design can be found [here](http://www.freedesktop.o
 
 ## Installation
 
+**[LightDM 1:1.28.0-2 is broken](https://bugs.archlinux.org/task/61654)** - make sure to avoid this specific package version.
+
 [Install](/index.php/Install "Install") the [lightdm](https://www.archlinux.org/packages/?name=lightdm) package.
 
 **Tip:** Stable releases are even-numbered (1.8, 1.10) while development releases are odd-numbered (1.9, 1.11). These development releases are available with [lightdm-devel](https://aur.archlinux.org/packages/lightdm-devel/). Also available is [lightdm-git](https://aur.archlinux.org/packages/lightdm-git/).

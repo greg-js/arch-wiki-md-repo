@@ -1,4 +1,4 @@
-**CDM** is a minimalistic, yet full-featured replacement for login-managers like [SLiM](/index.php/SLiM "SLiM"), [SDDM](/index.php/SDDM "SDDM") and [GDM](/index.php/GDM "GDM") that provides a fast, dialog-based login system without the overhead of the X Window System. Written in pure bash, CDM has almost no dependencies, yet supports multiple users/sessions and can start virtually any DE/WM.
+**CDM** is a minimalistic, yet full-featured replacement for [display managers](/index.php/Display_manager "Display manager") like [SLiM](/index.php/SLiM "SLiM"), [SDDM](/index.php/SDDM "SDDM") and [GDM](/index.php/GDM "GDM") that provides a fast, dialog-based login system without the overhead of the X Window System. Written in pure bash, CDM has almost no dependencies, yet supports multiple users/sessions and can start virtually any desktop environment or window manager.
 
 ## Contents
 

@@ -12,9 +12,11 @@ MongoDB (from hu**mongo**us) 是一个开源的，面向文档的数据库系统
 
 ## 安装
 
-从 [官方软件仓库](/index.php/Official_repositories "Official repositories") 安装 [mongodb](https://aur.archlinux.org/packages/mongodb/)。
+由于 MongoDB 修改了软件授权协议，[官方软件仓库](/index.php/Official_repositories "Official repositories")已经删除了此软件包，需要的用户可以选择安装 [mongodb](https://aur.archlinux.org/packages/mongodb/) 或 [mongodb-bin](https://aur.archlinux.org/packages/mongodb-bin/) 软件包。请注意从代码编译 [mongodb](https://aur.archlinux.org/packages/mongodb/) 需要 ~160GB 磁盘空间，需要花费几个小时时间。
 
-[Start/Enable](/index.php/Systemd#Using_units "Systemd") `mongodb.service`.
+可以选择安装 [mongodb-tools](https://www.archlinux.org/packages/?name=mongodb-tools)，这个软件包提供了 `mongoimport`, `mongoexport`, `mongodump`, `mongorestore` 等工具。
+
+[Start/Enable](/index.php/Systemd#Using_units "Systemd") 服务 `mongodb.service`。
 
 第一次启动 mongodb 服务时，会为记录和日志文件预先分配空间，在此期间不能使用数据库 shell。
 
@@ -30,6 +32,20 @@ $ mongo
 ## Troubleshooting
 
 ### 无法启动 MongoDB
+
+检查 systemctl 的服务是否使用了正确的数据库位置:
+
+```
+$ vi /usr/lib/systemd/system/mongodb.service
+
+```
+
+在 "ExecStart" 中加入 "--dbpath /var/lib/mongodb"：
+
+```
+ExecStart=/usr/bin/numactl --interleave=all mongod --quiet --config /etc/mongodb.conf --dbpath /var/lib/mongodb
+
+```
 
 检查是否存在3G以上的剩余磁盘空间用于记录文件的储存，否则，MongoDB将启动启动失败
 
@@ -60,6 +76,15 @@ $ df -h /var/lib/mongodb/
 
 ```
 # chown -R mongodb: /var/{log,lib}/mongodb/
+
+```
+
+最后，从 mongodb [文档](https://docs.mongodb.com/manual/reference/configuration-options/) 复制配置文件，删除下面两行并 [重启](/index.php/Restart "Restart") mongodb.service:
+
+ `/etc/mongodb.conf` 
+```
+processManagement:
+   fork: true
 
 ```
 

@@ -129,5 +129,5 @@ In particular, if adding the `acpi=off` kernel parameter makes kexec work correc
 ## See also
 
 *   [[systemd-devel] Right way to do kexec](http://lists.freedesktop.org/archives/systemd-devel/2012-March/004760.html)
-*   [kdump: a kexec based crash dumping mechansim for Linux](http://lse.sourceforge.net/kdump/)
+*   [kdump: a kexec based crash dumping mechanism for Linux](http://lse.sourceforge.net/kdump/)
 *   [Reboot Linux faster using kexec](https://web.archive.org/web/20090505132901/http://www.ibm.com/developerworks/linux/library/l-kexec.html)

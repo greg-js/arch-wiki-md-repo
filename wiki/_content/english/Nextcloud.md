@@ -110,7 +110,7 @@ Exec = /usr/bin/runuser -u http -- /usr/bin/php /usr/share/webapps/nextcloud/occ
 
 **Tip:** For all prerequisite PHP modules, see [upstream documentation](https://docs.nextcloud.com/server/latest/admin_manual/installation/source_installation.html#prerequisites-label).
 
-Install [PHP#gd](/index.php/PHP#gd "PHP") and [php-intl](https://www.archlinux.org/packages/?name=php-intl) as additional modules. Configure [OPcache](/index.php/PHP#OPCache "PHP") as recommended by [the documentation](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/server_tuning.html#enable-php-opcache).
+Install [PHP#gd](/index.php/PHP#gd "PHP") and [php-intl](https://www.archlinux.org/packages/?name=php-intl) as additional modules. Configure [OPcache](/index.php/PHP#OPCache "PHP") as recommended by [the documentation](https://docs.nextcloud.com/server/latest/admin_manual/installation/server_tuning.html#enable-php-opcache).
 
 Some apps (*News* for example) require the `iconv` extension, if you wish to use these apps, uncomment the extension in `/etc/php/php.ini`.
 

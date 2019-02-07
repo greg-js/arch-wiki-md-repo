@@ -291,7 +291,7 @@ Screencast utilities allow you to create a video of your desktop or individual w
 
 ## Weston
 
-In the [Weston](/index.php/Wayland#Weston "Wayland") Wayland compositor, screenshots can be taking by pressing `Super+s`, which are stored in Weston's current working directory. Screencasts are also supported; recording is started and stopped by pressing `Super+r`, which will create a file called `capture.wcap` in Weston's current working directory. The capture can be decoded to YUV format by running `wcap-decode --yuv4mpeg2 capture.wcap`; the output of this command can be written to a file or piped into FFmpeg for further processing.
+See [Wayland#Screencast recording](/index.php/Wayland#Screencast_recording "Wayland").
 
 ## Terminal
 

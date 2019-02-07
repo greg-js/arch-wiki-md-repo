@@ -67,15 +67,15 @@ Weston is the reference implementation of a Wayland compositor.
 | `Super+Scroll` (or `PageUp`/`PageDown`) | Zoom in/out of desktop |
 | `Super+Tab` | Switch windows |
 | `Super+LMB` | Move Window |
-| `Super+MMB` | Rotate Window ! |
+| `Super+MMB` | Rotate Window |
 | `Super+RMB` | Resize Window |
 | `Super+Alt+Scroll` | Change window opacity |
-| `Super+K` | Force Kill Active Window |
-| `Super+KeyUp/KeyDown` | Switch Prev/Next Workspace |
-| `Super+Shift+KeyUp/KeyDown` | Grab Current Window and Switch Workspace |
-| `Super+F***n***` | Switch to Workspace ***n*** |
-| `Super+S` | Take a screenshot |
-| `Super+R` | Record a screencast. |
+| `Super+k` | Force Kill Active Window |
+| `Super+Up/Down` | Switch Prev/Next Workspace |
+| `Super+Shift+Up/Down` | Grab Current Window and Switch Workspace |
+| `Super+F*n*` | Switch to Workspace *n* (e.g. F2) |
+| `Super+s` | Take a screenshot |
+| `Super+r` | Record a screencast |
 
 To launch Weston natively (from a TTY) or to run Weston inside a running X session:
 
@@ -278,14 +278,14 @@ Weston uses the default sans-serif font for window title bars, clocks, etc. See 
 
 #### Screencast recording
 
-Weston has built-in screencast recording which can be started and stopped by pressing the `Super+r` key combination. Screencasts are saved to the file `capture.wcap` in the current working directory of Weston. The WCAP format is a lossless video format specific to Weston, which only records the difference in frames. To be able to play the recorded screencast, the WCAP file will need to be converted to a format which a media player can understand. First, convert the capture to the YUV pixel format:
+Weston has built-in screencast recording which can be started and stopped by pressing the `Super`+`r` key combination. Screencasts are saved to the file `capture.wcap` in the current working directory of Weston. The WCAP format is a lossless video format specific to Weston, which only records the difference in frames. To be able to play the recorded screencast, the WCAP file will need to be converted to a format which a media player can understand. First, convert the capture to the YUV pixel format:
 
 ```
-$ wcap-decode capture.wcap --yuv4mpeg2 > capture.y4m
+$ wcap-decode --yuv4mpeg2 capture.wcap > capture.y4m
 
 ```
 
-The YUV file can then be transcoded to other formats using [FFmpeg](/index.php/FFmpeg "FFmpeg").
+The YUV file can then be transcoded to other formats using [FFmpeg](/index.php/FFmpeg "FFmpeg") or [x264](https://www.archlinux.org/packages/?name=x264) (see `x264 -h` for more).
 
 #### Window switching
 

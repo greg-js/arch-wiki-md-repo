@@ -60,7 +60,7 @@ Related articles
 
 请参照软件开发者提供的： [Postfix Basic Configuration 基础配置项](http://www.postfix.org/BASIC_CONFIGURATION_README.html). 默认的配置文件位于`/etc/postfix` 。 其中两个非常重要的文件是:
 
-*   `master.cf`, defines what Postfix services are enabled an what how clients connect to them, see [master(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/master.5)
+*   `master.cf`, 定义了启用哪些Postfix服务以及客户端如何连接它们, 请参照 [master(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/master.5)
 *   `main.cf`, 主配置文件，请参照 [postconf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/postconf.5)（英文）
 
 配置文件更改过后需要 [重新加载](/index.php/Reload "Reload") 主服务 `postfix.service`。

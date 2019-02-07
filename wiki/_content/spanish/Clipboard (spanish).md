@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Clipboard](/index.php/Clipboard "Clipboard"), revisada por última vez el **2018-10-17**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Clipboard&diff=0&oldid=548128) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Clipboard](/index.php/Clipboard "Clipboard"), revisada por última vez el **2019-02-05**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Clipboard&diff=0&oldid=562231) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -8,36 +8,41 @@ Artículos relacionados
 *   [Desactivar pegar desde el ratón en GTK+](/index.php/GTK%2B_(Espa%C3%B1ol)#Desactivar_pegar_desde_el_ratón "GTK+ (Español)")
 *   [Vim#Clipboard](/index.php/Vim#Clipboard "Vim")
 
-De [Wikipedia:es:Portapapeles](https://en.wikipedia.org/wiki/es:Portapapeles "wikipedia:es:Portapapeles"):
+De acuerdo con [Wikipedia:es:Portapapeles](https://en.wikipedia.org/wiki/es:Portapapeles "wikipedia:es:Portapapeles"):
 
 	El portapapeles es una habilidad utilizada para el almacenamiento de datos a corto plazo y/o la transferencia de datos entre documentos o aplicaciones, a través de las operaciones [copiar y pegar](https://en.wikipedia.org/wiki/es:copiar_y_pegar "wikipedia:es:copiar y pegar").
 
 ## Contents
 
 *   [1 Historia](#Historia)
-*   [2 Bases](#Bases)
+*   [2 Selecciones](#Selecciones)
 *   [3 Herramientas](#Herramientas)
 *   [4 Gestores](#Gestores)
 *   [5 Véase también](#Véase_también)
 
 ## Historia
 
-En X10, se introdujeron "búffers de corte". Estos eran buffers limitados que almacenaban texto arbitrario y eran utilizados por la mayoría de las aplicaciones. Sin embargo, fueron ineficientes y su implementación varió, por lo que se introdujeron las selecciones. Los búferes de corte han quedado en desuso hace mucho tiempo, y aunque algunas aplicaciones (como xterm) pueden tener soporte heredado para ellos, no se recomienda su uso.
+En X10, se introdujeron *búffers de corte*. Estos eran buffers limitados que almacenaban texto arbitrario y eran utilizados por la mayoría de las aplicaciones. Sin embargo, fueron ineficientes y su implementación varió, por lo que se introdujeron las selecciones. Los búferes de corte han quedado en desuso hace mucho tiempo, y aunque algunas aplicaciones (como [xterm](/index.php/Xterm "Xterm")) pueden tener soporte heredado para ellos, no se recomienda su uso.
 
-## Bases
+## Selecciones
 
-El estándar [ICCCM](https://tronche.com/gui/x/icccm/) (Manual de convenciones de comunicación entre clientes) define tres "selecciones": PRIMARIA, SECUNDARIA y PORTAPAPELES. A pesar de la denominación, los tres son básicamente "portapapeles". En lugar del antiguo sistema de "buffers de corte" donde las aplicaciones arbitrarias podrían modificar los datos almacenados en los buffers de corte, solo una aplicación puede controlar o "poseer" una selección a la vez. Esto evita inconsistencias en el funcionamiento de las selecciones.
+[Freedesktop.org](/index.php/Freedesktop.org_(Espa%C3%B1ol) "Freedesktop.org (Español)") describe las dos *selecciones* principales de la siguiente manera: [[1]](https://specifications.freedesktop.org/clipboards-spec/clipboards-latest.txt)
 
-De las tres selecciones, los usuarios solo deben preocuparse por PRIMARIA y PORTAPAPELES. SECUNDARIA solo se usa de manera inconsistente y fue pensado como una alternativa a PRIMARIA. La mayoría de los programas para Xorg, incluidas las aplicaciones [Qt](/index.php/Qt "Qt") y [GTK+](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)"), tratan las selecciones PRIMARIA y PORTAPAPELES de la [siguiente forma](https://specifications.freedesktop.org/clipboards-spec/clipboards-latest.txt):
+	PRIMARIA
 
-*   La selección de PORTAPAPELES se utiliza para las órdenes explícitos de copiar/pegar que involucran atajos de teclado o elementos de menú. Por lo tanto, se comporta como el sistema de un solo portapapeles en Windows. A diferencia de PRIMARIA, también puede gestionar [múltiples formatos de datos](https://stackoverflow.com/questions/3571179/how-does-x11-clipboard-handle-multiple-data-formats).
-*   La selección PRIMARIA se utiliza para el texto seleccionado en ese momento, incluso si no se copia explícitamente, y para pegar con el botón central del ratón. En algunos casos, también es posible pegar con un atajo de teclado.
+	se utiliza para el texto seleccionado actualmente, incluso si no se ha copiado explícitamente, y para pegar con el botón central del ratón. En algunos casos, también es posible pegar con un atajo de teclado.
+
+	PORTAPAPELES
+
+	se utiliza para las órdenes explícitas de copiar/pegar que involucran atajos de teclado o elementos de menú. Por lo tanto, se comporta como el sistema de un solo portapapeles en Windows. A diferencia de PRIMARIA, también puede manejar [mútiples formatos de datos](https://stackoverflow.com/questions/3571179/how-does-x11-clipboard-handle-multiple-data-formats).
+
+La mayoría de los programas para [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)"), incluidas las aplicaciones [Qt](/index.php/Qt "Qt") y [GTK+](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)"), siguen este comportamiento. Si bien [ICCCM](https://tronche.com/gui/x/icccm/) también define una selección SECUNDARIA, no tiene un acuerdo consensuado sobre el propósito. A pesar de la denominación, las tres selecciones son básicamente "portapapeles". En lugar del antiguo sistema de "buffers de corte" donde las aplicaciones arbitrarias podrían modificar los datos almacenados en los buffers de corte, solo una aplicación puede controlar o "poseer" una selección a la vez. Esto evita inconsistencias en el funcionamiento de las selecciones.
 
 Véase la página de [atajos de teclado](/index.php/Keyboard_shortcuts "Keyboard shortcuts") que enumera los accesos directos predeterminados en muchos programas.
 
-También es importante darse cuenta de que, según los protocolos de selección, no se copia nada en ninguna parte [hasta que se pegue](https://unix.stackexchange.com/questions/213840/how-to-toggle-or-turn-off-text-selection-being-sent-to-the-clipboard/213843#213843). Por ejemplo, si selecciona una palabra en una ventana de terminal, cierra el terminal y luego quiere pegarlo en otro lugar, no funcionará porque el terminal se ha ido y el texto no se ha copiado en ninguna parte. Si desea que la palabra se mantenga después de cerrar la ventana del terminal, considere instalar un [gestor de portapapeles](#Gestores).
+También es importante darse cuenta de que, según los protocolos de selección, no se copia nada [hasta que se pegue](https://unix.stackexchange.com/questions/213840/how-to-toggle-or-turn-off-text-selection-being-sent-to-the-clipboard/213843#213843). Por ejemplo, si selecciona una palabra en una ventana de terminal, cierra el terminal y luego quiere pegarlo en otro lugar, no funcionará porque el terminal se ha ido y el texto no se ha copiado en ninguna parte. Si desea que la palabra se mantenga después de cerrar la ventana del terminal, considere instalar un [gestor de portapapeles](#Gestores).
 
-**Nota:** Los [gestores de portapapeles](#Gestores) puede cambiar significativamente la experiencia del usuario, por ejemplo, podrían sincronizar las selecciones PRIMARIA y PORTAPAPELES para emular un sistema de un solo portapapeles.
+**Nota:** Los [gestores de portapapeles](#Gestores) pueden cambiar significativamente la experiencia del usuario, por ejemplo, podrían sincronizar las selecciones PRIMARIA y PORTAPAPELES para emular un sistema de un solo portapapeles.
 
 ## Herramientas
 
@@ -73,7 +78,7 @@ Esta sección lista los demonios que rastrean su portapapeles, para proporcionar
 
 *   **ClipIt** — Bifurcación de Parcellite. Tiene disponible una línea de órdenes y un modo gráfico.
 
-	[https://sourceforge.net/projects/gtkclipit/](https://sourceforge.net/projects/gtkclipit/) || [clipit](https://aur.archlinux.org/packages/clipit/)
+	[https://github.com/CristianHenzel/ClipIt](https://github.com/CristianHenzel/ClipIt) || [clipit](https://aur.archlinux.org/packages/clipit/)
 
 *   **Clipman** — Complemento de gestor de portapapeles para el panel de Xfce4\. Mantiene el contenido del portapapeles mientras que se suele perder cuando se cierra una aplicación. Es capaz de manejar texto e imágenes, y tiene una función para ejecutar acciones específicas en el texto seleccionado al compararlas con expresiones regulares.
 
@@ -89,9 +94,9 @@ Esta sección lista los demonios que rastrean su portapapeles, para proporcionar
 
 *   **Clipster** — Un gestor de portapapeles ligero, controlado por línea de órdenes, escrito en Python.
 
-	[https://github.com/mrichar1/clipster](https://github.com/mrichar1/clipster) || [clipster-git](https://aur.archlinux.org/packages/clipster-git/)
+	[https://github.com/mrichar1/clipster](https://github.com/mrichar1/clipster) || [clipster](https://aur.archlinux.org/packages/clipster/)
 
-*   **CopyQ** — Gestor de portapapeles inteligente con historial de búsqueda y modificable, con acciones personalizadas en elementos y soporte de línea de órdenes.
+*   **CopyQ** — Gestor de portapapeles Qt inteligente con historial de búsqueda y modificable, con acciones personalizadas en elementos y soporte de línea de órdenes.
 
 	[https://github.com/hluk/CopyQ](https://github.com/hluk/CopyQ) || [copyq](https://www.archlinux.org/packages/?name=copyq)
 

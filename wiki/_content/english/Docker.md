@@ -52,8 +52,6 @@ If you want to be able to run docker as a regular user, add your user to the `do
 
 **Warning:** Anyone added to the `docker` group is root equivalent. More information [here](https://github.com/docker/docker/issues/9976) and [here](https://docs.docker.com/engine/security/security/).
 
-**Note:** As of [linux](https://www.archlinux.org/packages/?name=linux) 4.15.0-1 *vsyscalls*, which are required by certain programs in containers (such as *apt-get*), have been disabled by default in kernel configuration. To enable them again, add the `vsyscall=emulate` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"). More information in [FS#57336](https://bugs.archlinux.org/task/57336).
-
 ## Configuration
 
 ### Storage driver
@@ -171,13 +169,13 @@ By default, docker images are located at `/var/lib/docker`. They can be moved to
 
 If you have run the docker images, you need to make sure the images are unmounted totally. Once that is completed, you may move the images from `/var/lib/docker` to the target destination.
 
-Then add a [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") for the `docker.service`, adding the `--data-root` parameter to the `ExecStart`:
+Then add a [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") for the `docker.service`, adding the `-g` parameter to the `ExecStart`:
 
  `/etc/systemd/system/docker.service.d/docker-storage.conf` 
 ```
 [Service]
 ExecStart= 
-ExecStart=/usr/bin/dockerd --data-root=*/path/to/new/location/docker* -H fd://
+ExecStart=/usr/bin/dockerd -g */path/to/new/location/docker* -H fd://
 ```
 
 ### Insecure registries

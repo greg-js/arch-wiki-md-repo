@@ -15,26 +15,23 @@ The `-m` parameter precedes the declaration of the mouse to be used. The `-t` pa
 
 ```
 
-The [gpm](https://www.archlinux.org/packages/?name=gpm) package needs to be started with a few parameters. These parameters can be added in the file `/etc/conf.d/gpm`, or used when running *gpm* directly. As of 2016, the `gpm.service` file for [systemd](/index.php/Systemd "Systemd") includes the parameters for a USB mice. Obviously, it should be edited if there is another mice type, and the file is used.
+The [gpm](https://www.archlinux.org/packages/?name=gpm) package needs to be started with a few parameters. These parameters can be recorded by [creating](/index.php/Create "Create") the file `/etc/conf.d/gpm`, or used when running *gpm* directly. As of 2016, the `gpm.service` file for [systemd](/index.php/Systemd "Systemd") includes the parameters for a USB mice.
 
-*   For PS/2 mice, replace the existing line with:
+ `/usr/lib/systemd/system/gpm.service`  `ExecStart=/usr/bin/gpm -m /dev/input/mice -t imps2` 
 
-```
-GPM_ARGS="-m /dev/psaux -t ps2"
+Obviously, it should be edited, preferably in a [systemd friendly manner](/index.php/Systemd#Editing_provided_units "Systemd"), if there is another mice type, and the service is used.
 
-```
-
-*   Whereas USB mice should use:
+*   For PS/2 mice, the parameters are:
 
 ```
-GPM_ARGS="-m /dev/input/mice -t imps2"
+-m /dev/psaux -t ps2
 
 ```
 
 *   And IBM Trackpoints need:
 
 ```
-GPM_ARGS="-m /dev/input/mice -t ps2"
+-m /dev/input/mice -t ps2
 
 ```
 

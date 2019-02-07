@@ -268,25 +268,25 @@ Then [fetch](/index.php/Git#Using_remotes "Git") this remote to initialize it in
 
 **Warning:** Your commits will be authored with your [global Git name and email address](/index.php/Git#Configuration "Git"). It is very difficult to change commits after pushing them ([FS#45425](https://bugs.archlinux.org/task/45425)). If you want to push to the AUR under different credentials, you can change them per package with `git config user.name "..."` and `git config user.email "..."`.
 
-When releasing a new version of the packaged software, update the [pkgver](/index.php/PKGBUILD#pkgver "PKGBUILD") or [pkgrel](/index.php/PKGBUILD#pkgrel "PKGBUILD") variables to notify all users that an upgrade is needed. Do not update those values if only minor changes to the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") such as the correction of a typo are being published.
+To upload or update a package [add](/index.php/Git#Staging_changes "Git") *at least* [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and [.SRCINFO](/index.php/.SRCINFO ".SRCINFO") then any new or modified [.install](/index.php/PKGBUILD#install "PKGBUILD") files, [patches](/index.php/Patching_packages "Patching packages") or other [local source files](/index.php/PKGBUILD#source "PKGBUILD"); [commit](/index.php/Git#Commiting_changes "Git") with a meaningful commit message, and finally [push](/index.php/Git#Push_to_a_repository "Git") the changes to the AUR.
 
-Be sure to regenerate [.SRCINFO](/index.php/.SRCINFO ".SRCINFO") whenever `PKGBUILD` metadata changes, such as `pkgver()` updates; otherwise the AUR will not show updated version numbers.
-
-To upload or update a package, [add](/index.php/Git#Staging_changes "Git") *at least* `PKGBUILD` and `.SRCINFO`, then any additional new or modified helper files (such as [*.install*](/index.php/PKGBUILD#install "PKGBUILD") files or [local source files](/index.php/PKGBUILD#source "PKGBUILD") such as [patches](/index.php/Patching_packages "Patching packages")), [commit](/index.php/Git#Committing_changes "Git") with a meaningful commit message, and finally [push](/index.php/Git#Push_to_a_repository "Git") the changes to the AUR.
+**Tip:** To keep the working directory and commits as clean as possible, create a [gitignore(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gitignore.5) that excludes all files and force-add files as needed.
 
 For example:
 
 ```
 $ makepkg --printsrcinfo > .SRCINFO
-$ git add PKGBUILD .SRCINFO
+$ git add -f PKGBUILD .SRCINFO
 $ git commit -m "*useful commit message*"
 $ git push
 
 ```
 
-**Note:** If `.SRCINFO` was not included in your first commit, add it by [rebasing with --root](https://git-scm.com/docs/git-rebase#git-rebase---root) or [filtering the tree](https://git-scm.com/docs/git-filter-branch#git-filter-branch---tree-filterltcommandgt) so the AUR will permit your initial push.
+**Note:**
 
-**Tip:** To keep the working directory and commits as clean as possible, create a [gitignore(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gitignore.5) that excludes all files and force-add files as needed.
+*   After modifying a package, except for very minor changes (such as fixing a typo) that would not require re-installation of the package, update its [version](/index.php/PKGBUILD#Version "PKGBUILD") accordingly.
+*   Regenerate `.SRCINFO` after updating such `PKGBUILD` metadata in order to publish it in the AUR.
+*   If `.SRCINFO` was not added before your first commit, add it by [rebasing with --root](https://git-scm.com/docs/git-rebase#git-rebase---root) or [filtering the tree](https://git-scm.com/docs/git-filter-branch#git-filter-branch---tree-filterltcommandgt) so the AUR will permit your initial push.
 
 ### Maintaining packages
 

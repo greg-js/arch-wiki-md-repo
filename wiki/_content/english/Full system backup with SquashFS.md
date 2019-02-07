@@ -2,8 +2,6 @@ Related articles
 
 *   [Full system backup with tar](/index.php/Full_system_backup_with_tar "Full system backup with tar")
 
-**Warning:** The following method is complete but not yet tested. Do not use before this warning sign is removed.
-
 ## Contents
 
 *   [1 Overview](#Overview)
@@ -29,15 +27,16 @@ Boot into live CD/DVD/USB and mount filesystems you'd like to backup.
 ```
 mount /dev/sdb2 /mnt
 mount /dev/sdb1 /mnt/boot/efi
-/somewhere/backup.sh /mnt /somewhere/$(date +%Y%m%d_%a).sfs
+/somewhere/mksquashfs.sh /mnt /somewhere/$(date +%Y%m%d_%a).sfs
 ```
 
 where
 
- `/somewhere/backup.sh` 
+ `/somewhere/mksquashfs.sh` 
 ```
 #!/bin/bash
-# SYNTAX:backup.sh SOURCE_DIRECTORY BACKUP_ARCHIVE_FILE
+
+# SYNTAX: mksquashfs.sh SOURCE_DIRECTORY BACKUP_ARCHIVE_DIRECTORY
 
 # Paths to exclude
 exclude='
@@ -46,9 +45,14 @@ boot/grub
 boot/initramfs-linux*.img
 '
 
+echo -ne "
+
+Have you fsck'd? "
+read
+
 # Backup
 mksquashfs \
-  "$1" "$2" \
+  "$1" "$2/$(date +%Y%m%d_%a).sfs" \
   -comp gzip \
   -xattrs \
   -ef <(echo $exclude) \
@@ -59,6 +63,8 @@ mksquashfs \
 ```
 
 ## Restore(decompress)
+
+**Warning:** The following is complete but not yet tested. Do not use before this warning sign is removed.
 
 ```
 #!/bin/bash
@@ -83,6 +89,8 @@ unsquashfs -force -dest $target $archive
     3.  grub-mkconfig
 
 ## Restore(mount and copy)
+
+**Warning:** The following is complete but not yet tested. Do not use before this warning sign is removed.
 
 ```
 #!/bin/bash

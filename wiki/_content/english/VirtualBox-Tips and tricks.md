@@ -24,19 +24,22 @@ See [VirtualBox](/index.php/VirtualBox "VirtualBox") for the main article.
         *   [7.3.1 Create a raw disk .vmdk image](#Create_a_raw_disk_.vmdk_image)
         *   [7.3.2 Create the VM configuration file](#Create_the_VM_configuration_file)
 *   [8 Install a native Arch Linux system from VirtualBox](#Install_a_native_Arch_Linux_system_from_VirtualBox)
-*   [9 Move a native Windows installation to a virtual machine](#Move_a_native_Windows_installation_to_a_virtual_machine)
-    *   [9.1 Tasks on Windows](#Tasks_on_Windows)
-    *   [9.2 Using Disk2vhd to clone Windows partition](#Using_Disk2vhd_to_clone_Windows_partition)
-    *   [9.3 Tasks on GNU/Linux](#Tasks_on_GNU/Linux)
-    *   [9.4 Fix MBR and Microsoft bootloader](#Fix_MBR_and_Microsoft_bootloader)
-    *   [9.5 Known limitations](#Known_limitations)
-*   [10 Run a Windows partition in VirtualBox](#Run_a_Windows_partition_in_VirtualBox)
-    *   [10.1 Configure udev to give VirtualBox raw access to Windows partitions](#Configure_udev_to_give_VirtualBox_raw_access_to_Windows_partitions)
-    *   [10.2 VirtualBox configuration](#VirtualBox_configuration)
-        *   [10.2.1 Create virtual disk image files](#Create_virtual_disk_image_files)
-        *   [10.2.2 Attach virtual disk images to the VM](#Attach_virtual_disk_images_to_the_VM)
-    *   [10.3 Set up a separate ESP in VirtualBox](#Set_up_a_separate_ESP_in_VirtualBox)
-    *   [10.4 Configure the virtual UEFI firmware to use the Windows bootloader](#Configure_the_virtual_UEFI_firmware_to_use_the_Windows_bootloader)
+*   [9 Install MacOS guest](#Install_MacOS_guest)
+    *   [9.1 No keyboard/mouse input when attempting to install Mojave](#No_keyboard/mouse_input_when_attempting_to_install_Mojave)
+    *   [9.2 UEFI interactive shell after restart](#UEFI_interactive_shell_after_restart)
+*   [10 Move a native Windows installation to a virtual machine](#Move_a_native_Windows_installation_to_a_virtual_machine)
+    *   [10.1 Tasks on Windows](#Tasks_on_Windows)
+    *   [10.2 Using Disk2vhd to clone Windows partition](#Using_Disk2vhd_to_clone_Windows_partition)
+    *   [10.3 Tasks on GNU/Linux](#Tasks_on_GNU/Linux)
+    *   [10.4 Fix MBR and Microsoft bootloader](#Fix_MBR_and_Microsoft_bootloader)
+    *   [10.5 Known limitations](#Known_limitations)
+*   [11 Run a Windows partition in VirtualBox](#Run_a_Windows_partition_in_VirtualBox)
+    *   [11.1 Configure udev to give VirtualBox raw access to Windows partitions](#Configure_udev_to_give_VirtualBox_raw_access_to_Windows_partitions)
+    *   [11.2 VirtualBox configuration](#VirtualBox_configuration)
+        *   [11.2.1 Create virtual disk image files](#Create_virtual_disk_image_files)
+        *   [11.2.2 Attach virtual disk images to the VM](#Attach_virtual_disk_images_to_the_VM)
+    *   [11.3 Set up a separate ESP in VirtualBox](#Set_up_a_separate_ESP_in_VirtualBox)
+    *   [11.4 Configure the virtual UEFI firmware to use the Windows bootloader](#Configure_the_virtual_UEFI_firmware_to_use_the_Windows_bootloader)
 
 ## Import/export VirtualBox virtual machines from/to other hypervisors
 
@@ -391,6 +394,38 @@ Now, you should have a working VM configuration whose virtual VMDK disk is tied 
 *   This is why, it is recommended to create your partitions in a native installation first, otherwize the partitions will not be taken into consideration in your MBR/GPT partition table.
 
 After completing the installation, boot your computer natively with an GNU/Linux installation media (whether it be Arch Linux or not), [chroot](/index.php/Installation_guide#Chroot "Installation guide") into your installed Arch Linux installation and install and configure a [bootloader](/index.php/Bootloader "Bootloader").
+
+## Install MacOS guest
+
+MacOS can be tricky to install. After a few hours of trying and failing I finally got it to install after tweaking some of the virtual machine configuration:
+
+```
+$ VBoxManage modifyvm "MyMacVM" --cpuid-set 00000001 000106e5 00100800 0098e3fd bfebfbff 
+$ VBoxManage setextradata "MyMacVM" "VBoxInternal/Devices/efi/0/Config/DmiSystemVersion" "1.0"
+$ VBoxManage setextradata "MyMacVM" "VBoxInternal/Devices/efi/0/Config/DmiBoardProduct" "Iloveapple"
+$ VBoxManage setextradata "MyMacVM" "VBoxInternal/Devices/smc/0/Config/DeviceKey" "ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc"
+$ VBoxManage setextradata "MyMacVM" "VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC" 1
+$ VBoxManage setextradata "MyMacVM" VBoxInternal2/EfiGopMode 4
+
+```
+
+I got this information from the user twister.mr on [medium](https://medium.com/@twister.mr/installing-macos-to-virtualbox-1fcc5cf22801). I don't know which of configuration entries are strictly required.
+
+### No keyboard/mouse input when attempting to install Mojave
+
+If you are attempting to install Mojave, after doing the aforementioned steps, the installer will load up but you might not be able to send keyboard or mouse input. The reason seems to be that Mojave no longer supports the USB 1.1 controllers and in order to fix the issue you need to emulating USB 3.0\. To do that first install the [VirtualBox#Extension_pack](/index.php/VirtualBox#Extension_pack "VirtualBox").
+
+Then go to Machine -> Settings -> USB and select USB 3.0\. Input should work from this point onwards.
+
+### UEFI interactive shell after restart
+
+For some reason, the installer is sometimes unable to properly format the bootable drive during installation and you end up in an UEFI shell. To proceed from here:
+
+1.  Type **exit** at the UEFI prompt
+2.  Select **Boot Maintenance Manager**
+3.  Select **Boot From File**
+
+You will now be brought to couple of obscure PCI paths. The first one is the one that you just attempted to boot from and it didn't work. The second (or third) one should be the one with the MacOS recovery partition that you need to load to continue the installation. Click the second Entry. If it's empty, click **ESC** to go back and select the third entry. Once you get one with folders click though the folders. It should be something like **macOS Install Data** -> **Locked Files** -> **Boot Files** -> **boot.efi** . Once you click enter on the **boot.efi** you should boot into the MacOS installer and resume installation. Note that some of the subdirectories might be missing. Remember that you need to get to a **boot.efi**. Adapted from [superuser.com](https://superuser.com/questions/1235970/stuck-on-uefi-interactive-shell-with-mac-os-x-high-sierra-vm)
 
 ## Move a native Windows installation to a virtual machine
 

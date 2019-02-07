@@ -65,6 +65,7 @@ The [pacman](https://www.archlinux.org/pacman/) [package manager](https://en.wik
     *   [3.15 "Cannot open shared object file" error](#"Cannot_open_shared_object_file"_error)
     *   [3.16 Freeze of package downloads](#Freeze_of_package_downloads)
     *   [3.17 Failed retrieving file 'core.db' from mirror](#Failed_retrieving_file_'core.db'_from_mirror)
+    *   [3.18 Failed retrieving file <file.db> from <mirror>: Operation too slow.](#Failed_retrieving_file_<file.db>_from_<mirror>:_Operation_too_slow.)
 *   [4 Understanding](#Understanding)
     *   [4.1 What happens during package install/upgrade/removal](#What_happens_during_package_install/upgrade/removal)
 *   [5 See also](#See_also)
@@ -783,6 +784,10 @@ Some issues have been reported regarding network problems that prevent *pacman* 
 ### Failed retrieving file 'core.db' from mirror
 
 If you receive this error message with correct [mirrors](/index.php/Mirrors "Mirrors"), try setting a different [name server](/index.php/Resolv.conf "Resolv.conf").
+
+### Failed retrieving file <file.db> from <mirror>: Operation too slow.
+
+If the mirror and your network connection work otherwise, this might be a timeout issue. Under `[Options]`, put `DisableDownloadTimeout` into `/etc/pacman.conf`.
 
 ## Understanding
 

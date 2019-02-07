@@ -59,7 +59,7 @@ Related articles
 
 **Tip:** To automate bluetoothctl commands, use `echo -e "<command1>
 <command2>
-" | bluetoothctl`
+" | bluetoothctl` or `bluetoothctl -- command`
 
 #### Graphical
 

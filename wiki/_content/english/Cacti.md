@@ -10,7 +10,7 @@
 *   [4 Spine](#Spine)
 *   [5 Systemd](#Systemd)
 *   [6 Web configuration](#Web_configuration)
-*   [7 External links](#External_links)
+*   [7 See also](#See_also)
 
 ## Server setup
 
@@ -18,7 +18,7 @@ This article assumes that you already have a working [LAMP](/index.php/LAMP "LAM
 
 ## Cacti setup
 
-[Install](/index.php/Install "Install") the [cacti](https://www.archlinux.org/packages/?name=cacti), [php-snmp](https://www.archlinux.org/packages/?name=php-snmp) and [net-snmp](https://www.archlinux.org/packages/?name=net-snmp) packages. Ensure LAMP services (`httpd`, `mysqld`) are [started](/index.php/Start "Start") and [enabled](/index.php/Enable "Enable"). If it is necessary for Cacti to monitor the machine that it is running on, configure [snmpd](/index.php/Snmpd "Snmpd").
+[Install](/index.php/Install "Install") the [cacti](https://www.archlinux.org/packages/?name=cacti), [php-snmp](https://www.archlinux.org/packages/?name=php-snmp) and [net-snmp](https://www.archlinux.org/packages/?name=net-snmp) packages. Ensure LAMP services (`httpd.service`, `mysqld.service`) are [started](/index.php/Start "Start") and [enabled](/index.php/Enable "Enable"). If it is necessary for Cacti to monitor the machine that it is running on, configure [snmpd](/index.php/Snmpd "Snmpd").
 
 Cacti uses PHP, an SQL database (MySQL or MariaDB) and SNMP, so enable the required PHP modules:
 
@@ -30,9 +30,9 @@ extension=pdo_mysql
 extension=snmp
 ```
 
-PHP scripts are, by default, permitted only to open files in specific directories. Configure (or comment out) `open_basedir` in `/etc/php/php.ini`. When misconfigured, errors such as `PHP Warning: include(): open_basedir restriction in effect.` will appear in the webserver log file. Don’t forget to add /etc/webapps (or /etc/webapps/cacti if you prefer) and /var/log/cacti to open_basedir.
+PHP scripts are, by default, permitted only to open files in specific directories. Configure (or comment out) `open_basedir` in `/etc/php/php.ini`. When misconfigured, errors such as `PHP Warning: include(): open_basedir restriction in effect.` will appear in the webserver log file. Don’t forget to add `/etc/webapps` (or `/etc/webapps/cacti` if you prefer), `/var/log/cacti` and `/var/lib/cacti/rra` to `open_basedir`.
 
-In order to display dates and times in the correct timezone, configure `date.timezone` in `/etc/php/php.ini`. Values are in "Continent/City" notation, for example "America/New_York", "Asia/Tokyo".
+In order to display dates and times in the correct timezone, configure `date.timezone` in `/etc/php/php.ini`. Values are in `*Continent*/*City*` notation, for example `America/New_York`, `Asia/Tokyo`.
 
 ### Apache
 
@@ -108,7 +108,12 @@ If the Cacti configuration is in a separate file, remember to add `Include conf/
 
 The file `/usr/share/webapps/cacti/.htaccess` also controls access. Configure or remove it.
 
-Cacti needs to have permission to write its gathered data and log messages to disk: `# chown -R http:http /usr/share/webapps/cacti/{rra,log}`
+Cacti needs to have permission to write its gathered data and log messages to disk:
+
+```
+# chown -R http:http /usr/share/webapps/cacti/{rra,log}
+
+```
 
 ## MySQL setup
 
@@ -123,6 +128,7 @@ Run the following commands as root:
 mysql> GRANT ALL ON cactidb.* TO cactiuser@localhost IDENTIFIED BY 'some_password';
 mysql> FLUSH PRIVILEGES;
 mysql> exit
+
 ```
 
 Alternatively, use [PhpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin") to achieve the same results:
@@ -149,11 +155,12 @@ Optionally, install [cacti-spine](https://aur.archlinux.org/packages/cacti-spine
 ```
 DB_User cactiuser
 DB_Pass some_password
+
 ```
 
 ## Systemd
 
-Cacti uses a poller to collect data, so create a [Systemd](/index.php/Systemd "Systemd") service to run poller.php, and a timer to run the service every 5 minutes:
+Cacti uses a poller to collect data, so create a [Systemd](/index.php/Systemd "Systemd") service to run `poller.php`, and a timer to run the service every 5 minutes:
 
  `/etc/systemd/system/cacti_poller.service` 
 ```
@@ -189,26 +196,27 @@ Sep 27 15:50:00 hoom php[4072]: OK u:0.00 s:0.01 r:0.35
 Sep 27 15:50:00 hoom php[4072]: OK u:0.00 s:0.01 r:0.38
 Sep 27 15:50:00 hoom php[4072]: OK u:0.00 s:0.01 r:0.40
 Sep 27 15:50:01 hoom php[4072]: 09/27/2015 03:50:01 PM - SYSTEM STATS: Time:0.6176 Method:cmd.php Processes:1 Threads:N/A Hosts:5 HostsPerProcess:5 DataSources:169 RRDsProcessed:15
+
 ```
 
 ## Web configuration
 
 Open a browser and go to http://your_server/cacti/. You should be welcomed with the cacti installer.
 
-*   Click Next
-*   Select New Install and click Next
-*   Ensure that all paths are ok. You need to specify versions of RRDTool and NET-SNMP. Get RRDTool Utility Version using 'rrdtool -v', and'net-snmp-config --version' for NET-SNMP. Click Finish.
-    *   If any paths are invalid, you'll need to figure out why. Check the apache error logs for hints.
+*   Click *Next*
+*   Select *New Install* and click *Next*
+*   Ensure that all paths are ok. You need to specify versions of RRDTool and NET-SNMP. Get RRDTool Utility Version using `rrdtool -v`, and `net-snmp-config --version` for NET-SNMP. Click *Finish*.
+    *   If any paths are invalid, you will need to figure out why. Check the apache error logs for hints.
 *   Login with username "admin" and password "admin".
-*   Change the password as requested, click Save.
+*   Change the password as requested, click *Save*.
 *   (Optional) If you chose to install spine, follow these instructions to set it up.
-    *   Click on Settings, on the left panel of the Console tab.
-    *   Select the Poller tab.
+    *   Click on *Settings*, on the left panel of the Console tab.
+    *   Select the *Poller* tab.
     *   Change Poller Type to spine.
-    *   Adjust any other settings on the page as desired, then click Save.
-    *   Select the Paths tab.
-    *   Set Spine Poller File Path to /usr/bin/spine and click Save.
+    *   Adjust any other settings on the page as desired, then click *Save*.
+    *   Select the *Paths* tab.
+    *   Set Spine Poller File Path to `/usr/bin/spine` and click *Save*.
 
-## External links
+## See also
 
 *   [https://cacti.net](https://cacti.net)

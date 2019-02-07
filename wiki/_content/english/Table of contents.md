@@ -41,10 +41,10 @@
 | <small>3.9.4.</small> [ASUS](/index.php/Category:ASUS "Category:ASUS") <small>(61)</small> |
 | <small>3.9.5.</small> [Casper](/index.php/Category:Casper "Category:Casper") <small>(1)</small> |
 | <small>3.9.6.</small> [Clevo](/index.php/Category:Clevo "Category:Clevo") <small>(2)</small> |
-| <small>3.9.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(68)</small> |
+| <small>3.9.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(69)</small> |
 | <small>3.9.8.</small> [Fujitsu](/index.php/Category:Fujitsu "Category:Fujitsu") <small>(1)</small> |
 | <small>3.9.9.</small> [HASEE](/index.php/Category:HASEE "Category:HASEE") <small>(1)</small> |
-| <small>3.9.10.</small> [HP](/index.php/Category:HP "Category:HP") <small>(58)</small> |
+| <small>3.9.10.</small> [HP](/index.php/Category:HP "Category:HP") <small>(59)</small> |
 | <small>3.9.11.</small> [IBM](/index.php/Category:IBM "Category:IBM") <small>(2)</small> |
 | <small>3.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(93)</small> |
 | <small>3.9.13.</small> [MSI](/index.php/Category:MSI "Category:MSI") <small>(6)</small> |

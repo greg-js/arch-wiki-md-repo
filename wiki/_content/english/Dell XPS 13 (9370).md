@@ -91,7 +91,7 @@ Some other options that save battery life are:
 
 ## Storage
 
-The nvme SSD is a Toshiba KXG50ZNV256G, KXG50ZNV512G or KXG50ZNV1T02\. The stock firmware version AADA4102 has severe problems when the ssd enters the lowest power state. This results in a unresponsive device (kernel complains about read-only filesystem) The problems can occur any time, but seem to have become way more common on Kernel 4.18 on battery power. [Firmware Version AADA4105](https://www.dell.com/support/home/us/en/19/drivers/driversdetails?driverid=c0pf8) seems to fix the problem.
+The nvme SSD is a Toshiba KXG50ZNV256G, KXG50ZNV512G or KXG50ZNV1T02\. The stock firmware version AADA4102 has severe problems when the ssd enters the lowest power state. This results in a unresponsive device (kernel complains about read-only filesystem) The problems can occur any time, but seem to have become way more common on Kernel 4.18 on battery power. [Firmware Version AADA4105](https://www.dell.com/support/home/us/en/19/drivers/driversdetails?driverid=c0pf8) seems to fix the problem. The firmware is available for Windows only but [can be updated under Linux at your own risk](https://gist.github.com/klingtnet/22ab0b907e2d9d20f98c72c93ea5dd37#gistcomment-2830279).
 
 Note : On some devices, the nvme SSD can be a SK hynix EJ82N00301190264W (1TB) and not a Toshiba one
 

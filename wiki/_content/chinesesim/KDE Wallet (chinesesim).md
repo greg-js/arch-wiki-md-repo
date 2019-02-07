@@ -4,8 +4,8 @@
 
 ## Contents
 
-*   [1 在登录时自动解锁 Kwallet](#.E5.9C.A8.E7.99.BB.E5.BD.95.E6.97.B6.E8.87.AA.E5.8A.A8.E8.A7.A3.E9.94.81_Kwallet)
-*   [2 使用 KDE Wallet 存储 ssh keys](#.E4.BD.BF.E7.94.A8_KDE_Wallet_.E5.AD.98.E5.82.A8_ssh_keys)
+*   [1 在登录时自动解锁 Kwallet](#在登录时自动解锁_Kwallet)
+*   [2 使用 KDE Wallet 存储 ssh keys](#使用_KDE_Wallet_存储_ssh_keys)
 *   [3 KDE Wallet for Firefox](#KDE_Wallet_for_Firefox)
 *   [4 KDE Wallet for Chrome and Chromium](#KDE_Wallet_for_Chrome_and_Chromium)
 *   [5 See also](#See_also)
@@ -16,7 +16,7 @@
 
 [安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [kwallet-pam](https://www.archlinux.org/packages/?name=kwallet-pam) 包，
 
-如果没有使用 [SDDM](/index.php/SDDM "SDDM") 登陆管理器，需要编辑您的登录管理器 pam (通常为于 `/etc/pam.d` ) 文件，并在其相应部分下添加:
+如果没有使用 [SDDM](/index.php/SDDM "SDDM") 登陆管理器，需要编辑您的登录管理器 pam (通常位于 `/etc/pam.d` ) 文件，并在其相应部分下添加:
 
 ```
 auth            optional        pam_kwallet5.so

@@ -16,7 +16,6 @@
 *   [3 Trigger a wake up](#Trigger_a_wake_up)
     *   [3.1 On the same LAN](#On_the_same_LAN)
     *   [3.2 Across the internet](#Across_the_internet)
-        *   [3.2.1 Forward a port to the broadcast address](#Forward_a_port_to_the_broadcast_address)
 *   [4 Miscellaneous](#Miscellaneous)
     *   [4.1 Check reception of the magic packets](#Check_reception_of_the_magic_packets)
         *   [4.1.1 Using netcat](#Using_netcat)
@@ -84,8 +83,8 @@ Also see [systemd.link(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.li
 **Note:**
 
 *   This configuration applies only to the link-level, and is independent of network-level daemons such as [NetworkManager](/index.php/NetworkManager "NetworkManager") or [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd").
-*   To be considered, the file name should come before the default `99-default.link` link file shipped with systemd. For example `50-wired.link` works.
-*   Interface naming must be taken over in the *.link* file as the default is no longer used.
+*   To be considered, the file name should alphabetically come before the default `99-default.link` link file shipped with systemd. For example `50-wired.link` works.
+*   In the `Match` section, `OriginalName=` can also be used to identify the interface.
 
 #### systemd service
 
@@ -170,28 +169,21 @@ When using [TLP](/index.php/TLP "TLP") for suspend/hibernate, the `WOL_DISABLE` 
 
 ## Trigger a wake up
 
-To trigger WoL on a target machine, its MAC address and external or internal IP should be known.
+To trigger WoL on a target machine, its **MAC address** must be known. To obtain it, execute the following command from the machine:
 
-To obtain the internal IP address and MAC address of the target computer, execute the following command:
-
- `$ ip addr` 
+ `$ ip link` 
 ```
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default
    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-   inet 127.0.0.1/8 scope host lo
-      valid_lft forever preferred_lft forever
-   inet6 ::1/128 scope host
-      valid_lft forever preferred_lft forever
 2: enp1s0: <BROADCAST,MULTICAST,PROMISC,UP,LOWER_UP> mtu 1500 qdisc fq_codel master br0 state UP group default qlen 1000
     link/ether **48:05:ca:09:0e:6a** brd ff:ff:ff:ff:ff:ff
-    inet **192.168.1.20/24** brd 192.168.1.255 scope global br0
-       valid_lft forever preferred_lft forever
-    inet6 fe80::6a05:caff:fe09:e6a/64 scope link
-       valid_lft forever preferred_lft forever
-
 ```
 
-Here the internal IP address is `192.168.1.20` and the MAC address is `48:05:ca:09:0e:6a`.
+Here the MAC address is `48:05:ca:09:0e:6a`.
+
+In its simplest form, Wake-on-LAN broadcasts the magic packet containing the MAC address within the current network subnet, below the IP protocol layer. The knowledge of an IP address for the target computer is not necessary.
+
+If used to wake up a computer over the internet or in a different subnet, it typically relies on the router to relay the packet and broadcast it. In this scenario, the external IP address of the router must be known and in some cases the internal IP address of the target machine is needed to ensure the NAT (Network Address Translator) router manages to communicate with the target machine.
 
 Applications that are able to send magic packets for Wake-on-LAN:
 
@@ -205,7 +197,7 @@ Applications that are able to send magic packets for Wake-on-LAN:
 
 ### On the same LAN
 
-If you are connected directly to another computer through a network cable, or the traffic within a LAN is not firewalled, then using Wake-on-LAN should be very easy since there is no need to worry about port redirects.
+If you are connected directly to another computer through a network cable, or the traffic within a LAN is not firewalled, then using Wake-on-LAN should be straightforward since there is no need to worry about port redirects.
 
 In the simplest case the default broadcast address `255.255.255.255` is used:
 
@@ -221,39 +213,23 @@ $ wol -i *target_IP* *target_MAC_address*
 
 ```
 
-**Tip:**
-
-*   If you intend to continue using Wake-on-LAN, it is recommended to assign a static IP address to the target computer.
-*   Only use the `-i` switch when the target address is on a different subnet from the sender.
-
 ### Across the internet
 
-When the source and target computers are separated by a router, Wake-on-LAN can be achieved via [port forwarding](https://en.wikipedia.org/wiki/Port_forwarding "wikipedia:Port forwarding"). The router needs to be configured using one of these two options:
+When the source and target computers are separated by a NAT router, different solution can be envisaged:
+
+*   If the router supports *WoL*, one can rely on it to properly broadcast the packet into the local network.
+
+Otherwise Wake-on-Lan can be achieved via [port forwarding](https://en.wikipedia.org/wiki/Port_forwarding "wikipedia:Port forwarding"). The router needs to be configured using one of these two options:
 
 *   Forward a different port to each target machine. This requires any target machine to have a static IP address on its LAN.
-*   Forward a single port to the [broadcast address](https://en.wikipedia.org/wiki/Broadcast_address "wikipedia:Broadcast address"). This is likely not possible on your router with the stock firmware, in this case refer to [#Forward a port to the broadcast address](#Forward_a_port_to_the_broadcast_address) for workarounds.
+*   Forward a single port to the [broadcast address](https://en.wikipedia.org/wiki/Broadcast_address "wikipedia:Broadcast address"). Most routers do not allow to forward to broadcast, however if you can get shell access to your router, through telnet, ssh, serial cable or other mean, run the command: `$ ip neighbor add 192.168.1.254 lladdr FF:FF:FF:FF:FF:FF dev net0` This example assumes the network is *192.168.1.0/24* and uses *net0* as network interface. Now, forward UDP port 9 to 192.168.1.254\. This solution was successfully tested on a Linksys WRT54G running [Tomato](https://en.wikipedia.org/wiki/Tomato_(firmware) "wikipedia:Tomato (firmware)"), and on the Verizon FIOS ActionTec router. For notes on how to do it on a router with [DD-WRT](https://en.wikipedia.org/wiki/DD-WRT "wikipedia:DD-WRT") firmware, see [this tutorial](http://www.dd-wrt.com/wiki/index.php/WOL#Remote_Wake_On_LAN_via_Port_Forwarding) and for a router with [OpenWrt](https://en.wikipedia.org/wiki/OpenWrt "wikipedia:OpenWrt") firmware, see [this tutorial](https://wiki.openwrt.org/doc/uci/wol).
 
-In both cases, run the following command from the source computer to trigger wake-up:
+In any case, run the following command from the source computer to trigger wake-up:
 
 ```
 $ wol -p *forwarded_port* -i *router_IP* *target_MAC_address*
 
 ```
-
-#### Forward a port to the broadcast address
-
-Most routers do not allow to forward to broadcast, however if you can get shell access to your router (through telnet, ssh, serial cable, etc), you can implement this workaround:
-
-```
-$ ip neighbor add 192.168.1.254 lladdr FF:FF:FF:FF:FF:FF dev net0
-
-```
-
-(The above command assumes your network is *192.168.1.0/24* and uses *net0* as network interface). Now, forward UDP port 9 to 192.168.1.254\. This has worked for me on a Linksys WRT54G running [Tomato](https://en.wikipedia.org/wiki/Tomato_(firmware) "wikipedia:Tomato (firmware)"), and on the Verizon FIOS ActionTec router.
-
-For notes on how to do it on a router with [DD-WRT](https://en.wikipedia.org/wiki/DD-WRT "wikipedia:DD-WRT") firmware, see [this tutorial](http://www.dd-wrt.com/wiki/index.php/WOL#Remote_Wake_On_LAN_via_Port_Forwarding).
-
-For notes on how to do it on a router with [OpenWrt](https://en.wikipedia.org/wiki/OpenWrt "wikipedia:OpenWrt") firmware, see [this tutorial](https://wiki.openwrt.org/doc/uci/wol).
 
 ## Miscellaneous
 

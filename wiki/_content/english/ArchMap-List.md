@@ -1102,5 +1102,6 @@ You can use the following website to get your device's coordinates along with a 
 22.809794, 88.374308 "feline" # Kolkata, West Bengal, India
 34.408747, -119.8642 "Moelf" # California, United States
 28.601209, 77.192202 "tonybenoy" # Delhi,India
+50.093967, 18.546516 "tluszcz" # Rybnik, Poland
 
 ```

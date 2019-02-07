@@ -12,7 +12,7 @@ Related articles
 *   [2 Configuration](#Configuration)
     *   [2.1 General settings](#General_settings)
         *   [2.1.1 High quality configurations](#High_quality_configurations)
-        *   [2.1.2 Profiles](#Profiles)
+        *   [2.1.2 Custom profiles](#Custom_profiles)
     *   [2.2 Key bindings](#Key_bindings)
     *   [2.3 Additional configuration files](#Additional_configuration_files)
 *   [3 Scripts](#Scripts)
@@ -26,7 +26,6 @@ Related articles
     *   [4.1 SVP 4 Linux (SmoothVideoProject)](#SVP_4_Linux_(SmoothVideoProject))
 *   [5 Tips and Tricks](#Tips_and_Tricks)
     *   [5.1 Hardware decoding](#Hardware_decoding)
-        *   [5.1.1 In GNOME Wayland](#In_GNOME_Wayland)
     *   [5.2 Save position on quit](#Save_position_on_quit)
     *   [5.3 Volume is too low](#Volume_is_too_low)
     *   [5.4 Play a DVD](#Play_a_DVD)
@@ -46,9 +45,10 @@ Related articles
     *   [6.1 General debugging](#General_debugging)
     *   [6.2 Fix jerky playback and tearing](#Fix_jerky_playback_and_tearing)
     *   [6.3 Problems with window compositors](#Problems_with_window_compositors)
-    *   [6.4 No volume bar, cannot change volume](#No_volume_bar,_cannot_change_volume)
-    *   [6.5 GNOME Blank screen (Wayland)](#GNOME_Blank_screen_(Wayland))
-    *   [6.6 Use mpv with a compositor](#Use_mpv_with_a_compositor)
+    *   [6.4 Video acceleration fails on (X)Wayland](#Video_acceleration_fails_on_(X)Wayland)
+    *   [6.5 No volume bar, cannot change volume](#No_volume_bar,_cannot_change_volume)
+    *   [6.6 GNOME Blank screen (Wayland)](#GNOME_Blank_screen_(Wayland))
+    *   [6.7 Use mpv with a compositor](#Use_mpv_with_a_compositor)
 
 ## Installation
 
@@ -79,7 +79,7 @@ Add the following settings to `~/.config/mpv/mpv.conf`.
 
 #### High quality configurations
 
-This loads high quality OpenGL options. Most users can run these without any problems, but they are not enabled by default to avoid causing problems for the few users who cannot run them.
+This loads high quality OpenGL options when using `vo=gpu` as video output (default). Most users can run these without any problems, but they are not enabled by default to avoid causing problems for the few users who cannot run them:
 
 ```
 profile=gpu-hq
@@ -111,7 +111,7 @@ Beyond this there is still a lot you can do but things become more complicated, 
 
 There are also plenty of other options you may find desirable as well. It is worthwhile taking a look at [mpv(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mpv.1). It's also helpful to run *mpv* from the command line to check for error messages about the config.
 
-#### Profiles
+#### Custom profiles
 
 In `mpv.conf` it is possible to create *profiles* which are essentially just "groups of options" with which you can:
 
@@ -277,19 +277,13 @@ See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardwa
 
 **Note:** The main difference between hardware decoding and software decoding is that in software decoding the file will be decompressed and then moved onto the video card whereas with hardware decoding it will be moved to the video card first and then decompressed. In either case, video *playback* will still be hardware accelerated via the video card.
 
-Unlike *mplayer* and *mplayer2*, *mpv* has both VA-API and VDPAU support built-in. To enable it, run *mpv* with the `--hwdec=*method*` option. You can find list of all available methods looking in the [mpv(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mpv.1) manual. To make this persistent, add the line `hwdec=*method*` to your configuration file. If hardware decoding cannot be used, *mpv* will automatically fall back to software decoding.
+Unlike *mplayer* and *mplayer2*, *mpv* has both [VA-API](/index.php/VA-API "VA-API") and [VDPAU](/index.php/VDPAU "VDPAU") support built-in. To enable it, run *mpv* with the `--hwdec=*method*` option. You can find list of all available methods looking in the [mpv(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mpv.1) manual. To make this persistent, add the line `hwdec=*method*` to your configuration file. If hardware decoding cannot be used, *mpv* will automatically fall back to software decoding.
 
 The default video output driver, `gpu`, is the preferred video output driver and all others are offered only for compatibility purposes. If one encounters problems they may choose to use either `vo=vdpau` (if using `hwdec=vdpau`) or `vo=vaapi` (if using `hwdec=vaapi`) instead. This can affect the framedrop code used and cause other small differences.
 
-For VA-API hardware decoding with `vo=gpu` enable EGL with the `gpu-context=x11egl` option or use vaapi video output driver `vo=vaapi` instead.
+**Tip:** Custom GPU context can be using the `gpu-context` option and may used to overrule auto-detect. E.g. to use X11/EGL set `gpu-context=x11egl`. See [mpv(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mpv.1) for more information.
 
 Even with hardware decoding enabled, it will only be used for [some codecs](https://mpv.io/manual/stable/#options-hwdec-codecs) by default. In order to use hardware decoding with all codecs set `hwdec-codecs=all`. It is also possible to specify an exact list of codecs for which you want hardware decoding to be used (provided it has been enabled) by setting `--hwdec-codecs=h264,mpeg2video`.
-
-#### In GNOME Wayland
-
-Because GNOME in Wayland mode also runs an Xorg server, video acceleration will fail with `[vaapi] libva: va_getDriverName() failed with unknown libva error,driver_name=(null)`.
-
-To make *mpv* use the Wayland compositor, add the `--gpu-context=wayland` option (however this will prevent the display of window decorations). See [[3]](https://github.com/01org/intel-vaapi-driver/issues/203#issuecomment-311299852).
 
 ### Save position on quit
 
@@ -425,11 +419,10 @@ If *mpv* runs but it just does not run well then a fourth thing that might be wo
 
 ### Fix jerky playback and tearing
 
-*mpv* defaults to using the OpenGL video output device setting on hardware that supports it. In cases such as trying to play video back on a 4K display using a Intel HD4XXX series card or similar, you will find video playback unreliable, jerky to the point of stopping entirely at times and with major tearing when using any opengl output setting. If you experience any of these issues, using the XV (XVideo) video output device may help:
+*mpv* defaults to using the OpenGL video output device setting on hardware that supports it. In cases such as trying to play video back on a 4K display using a Intel HD4XXX series card or similar, you will find video playback unreliable, jerky to the point of stopping entirely at times and with major tearing when using any OpenGL output setting. If you experience any of these issues, using the XV ([Xorg](/index.php/Xorg "Xorg") only) video output device may help:
 
  `~/.config/mpv/mpv.conf`  `vo=xv` 
-
-This VO is deprecated and will cause issues in recent versions of mpv, most noticeably is the osd looking very blurry.
+**Note:** This is the most compatible VO on X, but may be low-quality, and has issues with OSD and subtitle display.
 
 It is possible to increase playback performance even more (especially on lower hardware), but this decreases the video quality dramatically in most cases.
 
@@ -449,6 +442,10 @@ vd-lavc-threads=<threads>
 Window compositors such as KWin or Mutter can cause trouble for playback smoothness. In such cases, it may help to set `x11-bypass-compositor=yes` to make *mpv* also disable window compositing when playing in windowed mode (if supported by the compositor).
 
 With KWin compositing and hardware decoding, you may also want to set `x11-bypass-compositor=no` to keep compositing enabled in fullscreen, since reanabling compositing after leaving fullscreen may introduce stutter for a period of time.
+
+### Video acceleration fails on (X)Wayland
+
+To make *mpv* (force) the usage of the [Wayland](/index.php/Wayland "Wayland") compositor, one may need to set the `--gpu-context=wayland` option. See [[3]](https://github.com/01org/intel-vaapi-driver/issues/203#issuecomment-311299852).
 
 ### No volume bar, cannot change volume
 

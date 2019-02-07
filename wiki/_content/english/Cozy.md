@@ -80,18 +80,11 @@ $ curl [http://localhost:8080/version](http://localhost:8080/version)
 To add an instance (you will be prompted for your Cozy admin password, you might also pass it using COZY_ADMIN_PASSWORD env var):
 
 ```
-$ cozy-stack instances add <instance>.example.tld --apps onboarding,settings,store
+$ cozy-stack instances add <instance>.example.tld --apps home,settings,store
 
 ```
 
 This will output you a registration token. You can also specify an email using `--email <address>` at which the registration token will be sent.
-
-In the likely event installing `onboarding` fails, you have to manually add it this way:
-
-```
-$ cozy-stack apps install --domain <instance>.example.tld onboarding [git://github.com/cozy/cozy-onboarding-v3.git#latest](git://github.com/cozy/cozy-onboarding-v3.git#latest)
-
-```
 
 You will then need to visit `https://<instance>.example.tld/?registerToken=<token>`, which requires you to have setup a reverse proxy (see below).
 

@@ -15,9 +15,9 @@ This article deals only with codecs and application backends; see [List of appli
 *   [1 Requirements](#Requirements)
 *   [2 List of codecs](#List_of_codecs)
     *   [2.1 Audio](#Audio)
-        *   [2.1.1 Lossy audio codecs](#Lossy_audio_codecs)
-            *   [2.1.1.1 AAC](#AAC)
-        *   [2.1.2 Lossless audio codecs](#Lossless_audio_codecs)
+        *   [2.1.1 Lossless audio codecs](#Lossless_audio_codecs)
+        *   [2.1.2 Lossy audio codecs](#Lossy_audio_codecs)
+            *   [2.1.2.1 AAC](#AAC)
     *   [2.2 Image codecs](#Image_codecs)
     *   [2.3 Video codecs](#Video_codecs)
 *   [3 Container format tools](#Container_format_tools)
@@ -44,6 +44,20 @@ It is not always necessary to explicitly install codecs if you have installed a 
 
 See also [Wikipedia:Comparison of audio coding formats](https://en.wikipedia.org/wiki/Comparison_of_audio_coding_formats "wikipedia:Comparison of audio coding formats").
 
+#### Lossless audio codecs
+
+*   **[Apple Lossless](https://en.wikipedia.org/wiki/Apple_Lossless "wikipedia:Apple Lossless") (ALAC)** — A lossless audio compression codec developed by Apple and deployed on all of its platforms and devices.
+
+	[https://alac.macosforge.org/](https://alac.macosforge.org/) || [alac-git](https://aur.archlinux.org/packages/alac-git/)
+
+*   **[FLAC](https://en.wikipedia.org/wiki/FLAC "wikipedia:FLAC")** — Free Lossless Audio Codec.
+
+	[https://xiph.org/flac/](https://xiph.org/flac/) || [flac](https://www.archlinux.org/packages/?name=flac)
+
+*   **[WavPack](https://en.wikipedia.org/wiki/WavPack "wikipedia:WavPack")** — Lossless audio compression format that also has a lossy [hybrid mode](https://en.wikipedia.org/wiki/WavPack#Hybrid_mode "wikipedia:WavPack").
+
+	[http://www.wavpack.com/](http://www.wavpack.com/) || [wavpack](https://www.archlinux.org/packages/?name=wavpack)
+
 #### Lossy audio codecs
 
 | Codec | Encode | Decode |
@@ -52,7 +66,7 @@ See also [Wikipedia:Comparison of audio coding formats](https://en.wikipedia.org
 | [CELT](https://en.wikipedia.org/wiki/CELT "wikipedia:CELT") | [celt](https://www.archlinux.org/packages/?name=celt) |
 | [MPEG-1](https://en.wikipedia.org/wiki/MPEG-1 "wikipedia:MPEG-1") | [libmad](https://www.archlinux.org/packages/?name=libmad) |
 | [MP3](https://en.wikipedia.org/wiki/MP3 "wikipedia:MP3") | [lame](https://www.archlinux.org/packages/?name=lame) |
-| [Musepack](https://en.wikipedia.org/wiki/Musepack "wikipedia:Musepack") (MPC) | – | [libmpcdec](https://www.archlinux.org/packages/?name=libmpcdec) |
+| [Musepack](https://en.wikipedia.org/wiki/Musepack "wikipedia:Musepack") (MPC) | –  | [libmpcdec](https://www.archlinux.org/packages/?name=libmpcdec) |
 | [Opus](https://en.wikipedia.org/wiki/Opus_(audio_format) | [opus](https://www.archlinux.org/packages/?name=opus), [opus-git](https://aur.archlinux.org/packages/opus-git/) |
 | [Vorbis](https://en.wikipedia.org/wiki/Vorbis "wikipedia:Vorbis") | [libvorbis](https://www.archlinux.org/packages/?name=libvorbis) |
 | Speech codecs |
@@ -122,20 +136,6 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Advanced_Audio_Coding "wikipedia:
 *   **[Nero AAC](https://en.wikipedia.org/wiki/Advanced_Audio_Coding "wikipedia:Advanced Audio Coding")** — AAC audio codec (decode/encode/tag) all-in-one.
 
 	[http://www.nero.com/eng/company/about-nero/nero-aac-codec.php](http://www.nero.com/eng/company/about-nero/nero-aac-codec.php) || [neroaac](https://aur.archlinux.org/packages/neroaac/)
-
-#### Lossless audio codecs
-
-*   **[Apple Lossless](https://en.wikipedia.org/wiki/Apple_Lossless "wikipedia:Apple Lossless") (ALAC)** — A lossless audio compression codec developed by Apple and deployed on all of its platforms and devices.
-
-	[https://alac.macosforge.org/](https://alac.macosforge.org/) || [alac-git](https://aur.archlinux.org/packages/alac-git/)
-
-*   **[FLAC](https://en.wikipedia.org/wiki/FLAC "wikipedia:FLAC")** — Free Lossless Audio Codec.
-
-	[https://xiph.org/flac/](https://xiph.org/flac/) || [flac](https://www.archlinux.org/packages/?name=flac)
-
-*   **[WavPack](https://en.wikipedia.org/wiki/WavPack "wikipedia:WavPack")** — Lossless audio compression format that also has a lossy [hybrid mode](https://en.wikipedia.org/wiki/WavPack#Hybrid_mode "wikipedia:WavPack").
-
-	[http://www.wavpack.com/](http://www.wavpack.com/) || [wavpack](https://www.archlinux.org/packages/?name=wavpack)
 
 ### Image codecs
 

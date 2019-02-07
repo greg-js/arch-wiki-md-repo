@@ -7,11 +7,12 @@ See the [Laptop/Dell](/index.php/Laptop/Dell "Laptop/Dell") chart for informatio
 *   [1 Hardware Details](#Hardware_Details)
 *   [2 Tunning](#Tunning)
     *   [2.1 lm_sensors](#lm_sensors)
-    *   [2.2 Grub parameters](#Grub_parameters)
-    *   [2.3 Power Saving Modes](#Power_Saving_Modes)
-        *   [2.3.1 plugged](#plugged)
-        *   [2.3.2 On battery](#On_battery)
-        *   [2.3.3 Fan Control](#Fan_Control)
+    *   [2.2 Disable C6 State](#Disable_C6_State)
+    *   [2.3 Grub parameters](#Grub_parameters)
+    *   [2.4 Power Saving Modes](#Power_Saving_Modes)
+        *   [2.4.1 plugged](#plugged)
+        *   [2.4.2 On battery](#On_battery)
+        *   [2.4.3 Fan Control](#Fan_Control)
 *   [3 Others](#Others)
 
 ## Hardware Details
@@ -76,10 +77,50 @@ sensors
 
 in order to get temperatures
 
+### Disable C6 State
+
+This will save you freezez, use only if you get them, because it will get hotter.
+
+install [zenstates](https://aur.archlinux.org/packages/zenstates-git/) from aur
+
+```
+yay -S zenstates-git
+
+```
+
+Then place create a service that disables C6 on the following path: /lib/systemd/system/disable-c6.service with the following code:
+
+```
+[Unit]
+Description=Disables C6 state
+
+[Service]
+ExecStart=/usr/bin/zenstates --disable-c6
+
+[Install]
+WantedBy=multi-user.target
+
+```
+
+Fnally enable de process and reboot
+
+```
+sudo systemctl enable disable-c6.service
+sudo reboot
+
+```
+
 ### Grub parameters
 
 ```
-radeon.dpm=1 idle=nomwait
+quiet radeon.dpm=1 acpi_osi=Linux acpi_backlight=vendor
+
+```
+
+if you get freezez add (but will get hotter):
+
+```
+idle=nomwait
 
 ```
 
@@ -105,7 +146,9 @@ echo low | sudo tee /sys/class/drm/card0/device/power_dpm_force_performance_leve
 
 #### Fan Control
 
-I'm having good results with [[1]](https://aur.archlinux.org/packages/nbfc/%7Cnbfc) using the settings on my git [this link](https://github.com/danielfm123/nbfc/blob/master/Configs/Dell%20Inspiron%207375.xml%7Cin) (i will pull request after testing)
+I'm having good results tuning with [nbfc](https://aur.archlinux.org/packages/nbfc/) I made a config based on Dell Inspiron 7348 avivable on [my nbfc fork](https://github.com/danielfm123/nbfc/blob/master/Configs/Dell%20Inspiron%207375.xml) witch has more than the default 2 levels of speed in bios.
+
+Ill pull request upon more testing
 
 ## Others
 

@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Enlightenment](/index.php/Enlightenment "Enlightenment"), revisada por última vez el **2019-02-04**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Enlightenment&diff=0&oldid=557595) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Enlightenment](/index.php/Enlightenment "Enlightenment"), revisada por última vez el **2019-02-05**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Enlightenment&diff=0&oldid=565831) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -11,7 +11,7 @@ Artículos relacionados
 
 *   [1 Enlightenment](#Enlightenment)
     *   [1.1 Instalación](#Instalación)
-        *   [1.1.1 Desde el AUR](#Desde_el_AUR)
+        *   [1.1.1 Del AUR](#Del_AUR)
     *   [1.2 Iniciar Enlightenment](#Iniciar_Enlightenment)
         *   [1.2.1 Entrance](#Entrance)
         *   [1.2.2 Iniciar Enlightenment manualmente](#Iniciar_Enlightenment_manualmente)
@@ -36,7 +36,7 @@ Artículos relacionados
     *   [2.1 Instalar E16](#Instalar_E16)
     *   [2.2 Configuración básica](#Configuración_básica)
         *   [2.2.1 Iniciar/reiniciar/detener scripts](#Iniciar/reiniciar/detener_scripts)
-        *   [2.2.2 Composición](#Composición_2)
+        *   [2.2.2 Compositor](#Compositor)
 *   [3 Véase también](#Véase_también)
 
 ## Enlightenment
@@ -49,7 +49,7 @@ Consta tanto del [gestor de ventanas](/index.php/Window_manager_(Espa%C3%B1ol) "
 
 También es posible que desee instalar [terminology](https://www.archlinux.org/packages/?name=terminology), que es un emulador de terminal basado en EFL que se integra bien con Enlightenment.
 
-#### Desde el AUR
+#### Del AUR
 
 **Advertencia:** Algunos de estos PKGBUILDs usan código de desarrollo inestable. Usélos bajo su propia responsabilidad.
 
@@ -94,7 +94,9 @@ exec enlightenment_start
 
 ```
 
-Posteriormente, se puede iniciar Enlightenment escribiendo `startx`. Véase [xinitrc](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)") para obtener más detalles.
+Posteriormente, se puede iniciar Enlightenment ejecutando `startx`. Véase [xinitrc](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)") para obtener más detalles.
+
+Para probar el compositor experimental [Wayland](/index.php/Wayland_(Espa%C3%B1ol) "Wayland (Español)"), ejecute `enlightenment_start` en un [tty](/index.php/Getty_(Espa%C3%B1ol) "Getty (Español)").
 
 ### Configuración
 
@@ -123,7 +125,7 @@ Para la configuración extendida, también puede instalar Econnman (disponible e
 
 También puede utilizar [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) para gestionar sus conexiones de red, véase [NetworkManager](/index.php/NetworkManager_(Espa%C3%B1ol) "NetworkManager (Español)") para obtener más información.
 
-Sin embargo, tenga en cuenta que el applet necesitará el soporte de Appindicator para mostrarse en la [bandeja del sistema](#Bandeja_de_sistema) de Enlightenment. Véase [NetworkManager#Appindicator](/index.php/NetworkManager#Appindicator "NetworkManager"). Como alternativa al uso del applet, NetworkManager incluye las interfaces CLI y TUI para la configuración de la red, véase [NetworkManager#Usage](/index.php/NetworkManager#Usage "NetworkManager").
+Sin embargo, tenga en cuenta que el applet necesitará el soporte de Appindicator para mostrarse en la [bandeja del sistema](#Bandeja_del_sistema) de Enlightenment. Véase [NetworkManager#Appindicator](/index.php/NetworkManager#Appindicator "NetworkManager"). Como alternativa al uso del applet, NetworkManager incluye las interfaces CLI y TUI para la configuración de la red, véase [NetworkManager#Usage](/index.php/NetworkManager#Usage "NetworkManager").
 
 #### Agente Polkit
 
@@ -145,7 +147,7 @@ Véase más información sobre este tema en el artículo [GNOME Keyring](/index.
 
 #### Bandeja del sistema
 
-**Nota:** Desde Enlightenment 20, la compatibilidad con Xembed se ha eliminado [[1]](https://twitter.com/_enlightenment_/status/538000507315314688) lo que significa que muchos applets "heredados" ya no se pueden mostrar en el Systray. Para usar estos applets, deberá usar en su lugar una aplicación de bandeja de sistema standalone como, por ejemplo [stalonetray](https://www.archlinux.org/packages/?name=stalonetray).
+**Nota:** Desde Enlightenment 20, la compatibilidad con Xembed se ha eliminado [[1]](https://twitter.com/_enlightenment_/status/538000507315314688) lo que significa que muchos applets "heredados" ya no se pueden mostrar en el Systray. Para usar estos applets, deberá usar en su lugar una aplicación standalone de bandeja del sistema como, por ejemplo, [stalonetray](https://www.archlinux.org/packages/?name=stalonetray).
 
 Enlightenment es compatible con una bandeja del sistema, pero no está habilitada de forma predeterminada. Para habilitar la bandeja del sistema, abra el menú principal de Enlightenment, navegue hasta el submenú *Preferencias* y haga clic en la opción *Módulos*. Desplácese hacia abajo hasta que vea la opción *Systray*. Resalte esa opción y haga clic en *Cargar*. Ahora que el módulo se ha cargado, se puede agregar al estante. Haga clic derecho en el estante al que desea agregar Systray, resalte el submenú *Estante* y haga clic en la opción *Contenidos*. Desplácese hacia abajo hasta que vea *Systray*. Resalte esa opción y haga clic en el botón *Añadir*.
 
@@ -296,7 +298,7 @@ $ cp /usr/share/e16/config/bindings.cfg ~/.e16
 
 Cree una carpeta Init, una carpeta Start y una carpeta Stop en su directorio `~/.e16`: cualquier script .sh que se encuentre allí se ejecutará o bien al inicio (de la carpeta Init), o en cada reinicio (de la carpeta Start) , o en el apagado (de la carpeta Stop); siempre que lo permita a través del botón central del ratón / preferencias / sesión / <habilitar scripts> y los haga ejecutables con `chmod +x *suscript.sh*`. Los ejemplos típicos incluyen el inicio de pulseaudio o su applet de administrador de red favorito.
 
-#### Composición
+#### Compositor
 
 Las sombras, los efectos de transparencia *et al* se pueden encontrar accediendo con el botón central/derecho del ratón / Preferencias, Composición.
 

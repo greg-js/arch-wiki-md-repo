@@ -146,19 +146,19 @@ Run *mocp* to start the server and interface. Some useful default shortcuts (pre
 | Silent seek backward by 5s | `[` |
 | Switch between playlist and file list | `Tab` |
 | Add a file/directory to the playlist | `a` |
-| Add a directory recursively to the playlist | `A` |
+| Add a directory recursively to the playlist | ``Shift+a`` |
 | Delete an item from the playlist | `d` |
-| Clear the playlist | `C` |
+| Clear the playlist | ``Shift+c`` |
 | Increase volume by 1% | `>` |
 | Decrease volume by 1% | `<` |
-| Increase volume by 5% | `.` (dot) |
+| Increase volume by 5% | `.` (period) |
 | Decrease volume by 5% | `,` (comma) |
 | Set volume to 10% | `Alt+1` |
 | Set volume to 90% | `Alt+9` |
 | Detach MOC from the server | `q` |
-| Quit | `Q` |
+| Quit | ``Shift+q`` |
 
-To shut down the server, press `Shift+q` or run the `mocp -x` command.
+To shut down the server, run the `mocp -x` command.
 
 ## Scrobbling
 

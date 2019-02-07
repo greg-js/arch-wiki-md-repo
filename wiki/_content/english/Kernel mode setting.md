@@ -25,7 +25,7 @@ The Linux kernel's implementation of KMS enables native resolution in the frameb
 
 ## Background
 
-Previously, setting up the video card was the job of the X server. Because of this, it was not easily possible to have fancy graphics in virtual consoles. Also, each time a switch from X to a virtual console was made (`Ctrl+Alt+F1`), the server had to give control over the video card to the kernel, which was slow and caused flickering. The same "painful" process happened when the control was given back to the X server (`Ctrl+Alt+F7`).
+Previously, setting up the video card was the job of the X server. Because of this, it was not easily possible to have fancy graphics in [virtual consoles](/index.php/Virtual_console "Virtual console"). Also, each time a switch from X to a virtual console was made (`Ctrl+Alt+F2`), the server had to give control over the video card to the kernel, which was slow and caused flickering. The same "painful" process happened when the control was given back to the X server (`Alt+F7` when X runs in VT7).
 
 With Kernel Mode Setting (KMS), the kernel is now able to set the mode of the video card. This makes fancy graphics during bootup, virtual console and X fast switching possible, among other things.
 
@@ -80,9 +80,9 @@ If you see an error code of `0x00000010 (2)` while booting up, (you will get abo
 
 If your native resolution is not automatically configured or no display at all is detected, then your monitor might send none or just a skewed [EDID](https://en.wikipedia.org/wiki/EDID "wikipedia:EDID") file. The kernel will try to catch this case and will set one of the most typical resolutions.
 
-In case you have the EDID file for your monitor you merely not to explicitly enforce it (see below). However most often one does not have direct access to sane file and it is necessary to either extract an existing one and fix it or to generate a new one.
+In case you have the EDID file for your monitor you merely need to explicitly enforce it (see below). However most often one does not have direct access to a sane file and it is necessary to either extract an existing one and fix it or to generate a new one.
 
-Generating new EDID binaries for various resolutions and configurations is possible during kernel compilation by following the [upstream documentation](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/Documentation/EDID/HOWTO.txt) (also see [here](https://www.osadl.org/Single-View.111+M5315d29dd12.0.html) for a short guide). Other solutions are outlined in detail this [article](https://kodi.wiki/view/Creating_and_using_edid.bin_via_xorg.conf). Extracting an existing one is in most cases easier, e.g. if your monitor works fine under Windows you might have luck extracting the EDID from the corresponding driver, or if a similar monitor works which has the same settings you may use `get-edid` from the [read-edid](https://www.archlinux.org/packages/?name=read-edid) package.
+Generating new EDID binaries for various resolutions and configurations is possible during kernel compilation by following the [upstream documentation](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/Documentation/EDID/HOWTO.txt) (also see [here](https://www.osadl.org/Single-View.111+M5315d29dd12.0.html) for a short guide). Other solutions are outlined in details in this [article](https://kodi.wiki/view/Creating_and_using_edid.bin_via_xorg.conf). Extracting an existing one is in most cases easier, e.g. if your monitor works fine under Windows you might have luck extracting the EDID from the corresponding driver, or if a similar monitor works which has the same settings you may use `get-edid` from the [read-edid](https://www.archlinux.org/packages/?name=read-edid) package.
 
 After having prepared your EDID place it in a folder, e.g. called `edid` under `/usr/lib/firmware` and copy your binary into it.
 
@@ -100,7 +100,7 @@ drm.edid_firmware=edid/your_edid.bin
 
 ```
 
-In order to apply it only to a specific monitor use:
+In order to apply it only to a specific connector use:
 
 ```
 drm_kms_helper.edid_firmware=VGA-1:edid/your_edid.bin

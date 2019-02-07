@@ -86,7 +86,7 @@ EndSection
 
 ```
 
-See [Linux Wacom Tablet PC Configuration](http://linuxwacom.sourceforge.net/wiki/index.php/Tablet_PC_Configuration) and [Liniux Wacom Tablet Configuration](http://linuxwacom.sourceforge.net/wiki/index.php/Tablet_Configuration) notes for more details.
+See [The Linux Wacom Project](https://linuxwacom.github.io/) for more details.
 
 ## Rotation
 

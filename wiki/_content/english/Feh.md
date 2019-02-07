@@ -82,7 +82,7 @@ $ feh --bg-center path/to/file/for/first/monitor path/to/file/for/second/monitor
 
 ### Open SVG images
 
- `$ feh --magick-timeout 1 file.svg` 
+ `$ feh --conversion-timeout 1 file.svg` 
 
 Note that this requires the [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) package.
 

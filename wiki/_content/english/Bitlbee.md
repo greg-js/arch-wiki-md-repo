@@ -7,7 +7,7 @@ The users' buddies appear as normal IRC users in a channel and conversations use
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 Daemon](#Daemon)
-*   [3 Basic Usage (Jabber/XMPP)](#Basic_Usage_.28Jabber.2FXMPP.29)
+*   [3 Basic Usage (Jabber/XMPP)](#Basic_Usage_(Jabber/XMPP))
     *   [3.1 OTR](#OTR)
 *   [4 External Services](#External_Services)
     *   [4.1 Telegram](#Telegram)
@@ -36,6 +36,13 @@ For daemon mode uncomment the following lines.
 ```
 DaemonInterface = 0.0.0.0
 DaemonPort = 6667
+
+```
+
+To only allow connections from localhost set the listen interface (`DaemonInterface`) to loopback.
+
+```
+DaemonInterface = 127.0.0.1
 
 ```
 
