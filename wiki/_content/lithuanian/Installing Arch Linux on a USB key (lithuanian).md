@@ -165,7 +165,7 @@ Storage=volatile
 RuntimeMaxUse=30M
 ```
 
-*   Norint išjunti `fsync` irsusijusius sistemos šaukinius interneto naršyklėse, bei kitose programose nerašančiose svarbių deuomenų, naudokite *eatmydata* komanddą iš [libeatmydata](https://aur.archlinux.org/packages/libeatmydata/) tokių šaukinių išvengimui:
+*   Norint išjunti `fsync` irsusijusius sistemos šaukinius interneto naršyklėse, bei kitose programose nerašančiose svarbių deuomenų, naudokite *eatmydata* komanddą iš [libeatmydata](https://www.archlinux.org/packages/?name=libeatmydata) tokių šaukinių išvengimui:
 
 ```
 $ eatmydata firefox

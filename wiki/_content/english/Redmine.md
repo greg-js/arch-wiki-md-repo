@@ -171,7 +171,7 @@ To enable [OpenID](http://janrain.com/openid-enabled) support, is required a ver
 
 ### Build and Installation
 
-Download, build and install the [redmine](https://aur.archlinux.org/packages/redmine/) package from the [AUR](/index.php/AUR "AUR").
+Download, build and install the [redmine](https://www.archlinux.org/packages/?name=redmine) package from the [AUR](/index.php/AUR "AUR").
 
 **Note:** Detailed build instructions are in [Arch User Repository#Build and install the package](/index.php/Arch_User_Repository#Build_and_install_the_package "Arch User Repository"). It is **HIGHLY** recommended to read the [AUR](/index.php/AUR "AUR") page to understand what are you doing.
 

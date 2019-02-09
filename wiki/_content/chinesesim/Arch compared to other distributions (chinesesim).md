@@ -64,7 +64,7 @@
 *   Debian 是上游最大的发行版,其社区规模更大,提供稳定、测试和不稳定分支,包含超过51000个二进制包. ARCH 的软件仓库相对较小,但是如果包含AUR,那么支持的软件数量也差不多.
 *   Debian 对自由软件更热情，但是也提供非自由软件仓库。Arch 对 GNU 定义的非自由（“non-free”）软件更显宽容.
 *   Debian 对稳定分支的测试更详细彻底，软件基本冻结并提供[五年](https://wiki.debian.org/LTS)支持。Arch 提供的的软件包比 Debian Stable 和 testing 分支中的软件包更新,和 unstable 里的差不多，而且没有固定发布周期，滚动发布。
-*   Debian 支持许多架构,包括 alpha,arm,hppa,i386,x86_64,ia64,m68k,mips,mipsel,powerpc,s390和sparc.而ARCH仅对 i686 和 x86_64 提供官方支持,其对 arm 的支持移植自社区项目(例如对Raspberry Pi的支持).
+*   Debian 支持许多架构,包括 alpha,arm,hppa,i386,x86_64,ia64,m68k,mips,mipsel,powerpc,s390和sparc.而ARCH仅对 x86_64 提供官方支持,其对 arm 的支持移植自社区项目(例如对Raspberry Pi的支持).
 *   ARCH 对从源码创建软件包提供更好的支持,有一个类 ports 系统.Debian 不提供类 ports 系统,而是依靠它巨大的软件仓库.
 *   ARCH 安装环境只提供最小的基本系统,然后通过编辑文本文件来配置系统.而 Debian 的配置方式更为自动化并且还提供多种安装方式.
 *   在启动脚本上,Debian ( 8.0或更高版本 )和 ARCH 均使用 [systemd](/index.php/Systemd "Systemd") ,因为其总体性能优。

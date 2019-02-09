@@ -172,7 +172,7 @@ EM7345: SIM-Problems [[1]](https://thesquareplanet.com/blog/wwan-on-the-x1-carbo
 
 #### GPS
 
-N5321 is unknown EM7345 can output GPS using AT-Commands. You can use [[2]](https://github.com/tuxmaster/gpsd-tcp%7Cgpsd-tcp) to interface to gpsd.
+N5321 is unknown EM7345 can output GPS using AT-Commands. You can use [gpsd-tcp](https://github.com/tuxmaster/gpsd-tcp) to interface to gpsd.
 
 ## See also
 

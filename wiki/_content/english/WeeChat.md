@@ -28,6 +28,9 @@ Related articles
         *   [7.6.2 Native client](#Native_client)
     *   [7.7 Desktop notifications](#Desktop_notifications)
     *   [7.8 Mobile device notifications](#Mobile_device_notifications)
+    *   [7.9 WeeChat Relay with a Systemd User Service](#WeeChat_Relay_with_a_Systemd_User_Service)
+        *   [7.9.1 Tmux Method](#Tmux_Method)
+        *   [7.9.2 Headless Method](#Headless_Method)
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 Errors loading plugins](#Errors_loading_plugins)
 *   [9 Getting Help](#Getting_Help)
@@ -274,6 +277,67 @@ and intialize the API token and end-to-end encryption password in WeeChat
 ```
 
 An alternative that does not require a Google Account is a Ruby script for [NotifyMyAndroid.com](https://www.notifymyandroid.com) from [here](https://github.com/jamtur01/nma-weechat), with a similar installation procedure to the above, but into `~/.weechat/ruby`.
+
+### WeeChat Relay with a Systemd User Service
+
+To use your WeeChat instance as a WeeChat relay for other WeeChat clients (not to be confused with the IRC relay feature) you can use the WeeChat relay plugin and either a [systemd user service](/index.php/Systemd/User "Systemd/User"), if you only want headless operation, or a combination of a systemd user service and [tmux](/index.php/Tmux "Tmux") to maintain full command line functionality.
+
+Either method involves creating a service file in the directory `~/.config/systemd/user/`
+
+#### Tmux Method
+
+Due to the incompatibilities between how systemd manages jobs and the client-server behavior of tmux you will want to use the -L option to separate your default tmux sessions from the WeeChat one being managed by systemd. If this is the first tmux session started using the default socket then stopping and restarting the WeeChat user service will kill all the sessions connected to the default tmux socket. If the WeeChat tmux session is started after another default tmux session then the WeeChat session will die once systemd moves onto the next service unit. Sequestering the WeeChat tmux server to its own socket forces the expected behaviors when invoking systemctl start, stop, and restart. This does however mean that you will not see the WeeChat session when using tmux without using -L to select the correct socket.
+
+ `~/.config/systemd/user/weechat.service` 
+```
+[Unit]
+Description=A WeeChat client and relay service using Tmux
+After=network.target
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/tmux -L weechat new -d -s weechat weechat
+ExecStop=/usr/bin/tmux -L weechat kill-session -t weechat
+
+[Install]
+WantedBy=default.target
+```
+
+Once the service is in place all you need to do is enable it with `systemctl --user enable weechat`
+
+From there you can start the service and connect to the tmux session in order to configure the weechat relay plugin.
+
+```
+systemctl --user start weechat
+tmux -L weechat attach
+
+```
+
+From there you can configure the WeeChat relay plugin with the desired settings on the console: [https://www.weechat.org/files/doc/stable/weechat_user.en.html#relay_plugin](https://www.weechat.org/files/doc/stable/weechat_user.en.html#relay_plugin)
+
+#### Headless Method
+
+A key difference with this method is that you will either need to start WeeChat normally, configure the relay plugin, stop WeeChat, and then start the service or edit your relay.conf file manually while WeeChat is not running and then start your service. Either way you will need to configure your relay settings before starting your systemd WeeChat service: [https://www.weechat.org/files/doc/stable/weechat_user.en.html#relay_plugin](https://www.weechat.org/files/doc/stable/weechat_user.en.html#relay_plugin)
+
+ `~/.config/systemd/user/weechat-headless.service` 
+```
+[Unit]
+Description=A headless WeeChat client and relay service 
+After=network.target
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/weechat-headless --daemon
+
+[Install]
+WantedBy=default.target
+```
+
+Note that we do not need an ExecStop defined because systemd will automatically track the PID and send the appropriate shutdown signal to the daemon.
+
+Once the service is in place all you need to do is enable it with `systemctl --user enable weechat-headless`
+
+When you are ready to start your headless relay use `systemctl --user start weechat-headless`
 
 ## Troubleshooting
 

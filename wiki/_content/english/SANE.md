@@ -108,7 +108,7 @@ Many frontends exist for SANE, a non-exhaustive list of which can be found on th
 
 	[http://www.xsane.org/](http://www.xsane.org/) || [xsane](https://www.archlinux.org/packages/?name=xsane)
 
-Some [OCR software](/index.php/List_of_applications/Documents#OCR_software "List of applications/Documents") are able to scan images using SANE: gImageReader, [gscan2pdf](https://en.wikipedia.org/wiki/Scanner_Access_Now_Easy#gscan2pdf "wikipedia:Scanner Access Now Easy"), Linux-Intelligent-Ocr-Solution, [OCRFeeder](https://en.wikipedia.org/wiki/OCRFeeder "wikipedia:OCRFeeder"), Paperwork.
+Some [OCR software](/index.php/List_of_applications/Documents#OCR_software "List of applications/Documents") are able to scan images using SANE: gImageReader, [gscan2pdf](https://en.wikipedia.org/wiki/Scanner_Access_Now_Easy#gscan2pdf "wikipedia:Scanner Access Now Easy"), Linux-Intelligent-Ocr-Solution, [OCRFeeder](https://en.wikipedia.org/wiki/OCRFeeder "wikipedia:OCRFeeder"), [Paperwork](https://openpaper.work).
 
 **Note:** Scanning directly to PDF using XSane in 16bit color depth mode is known to produces [corrupted files](https://bugs.launchpad.net/ubuntu/+source/xsane/+bug/539162) and a note in `pacman` output warns so. 8bit mode is known to work.
 
@@ -230,11 +230,11 @@ Your [webcam](/index.php/Webcam "Webcam") might also be listed as scanning devic
 
 ### Device busy
 
-If your USB device is listed with `scanimage -L` but launching the test `scanimage pixma:04A9173E_11DAD1 --format=tiff > test.tiff` always return the 'Device busy' error, you might try to add your username to the scanner group `usermod -a -G scanner yourusername` then blacklist the `usblp` kernel module by writing `blacklist usblp` in `/etc/modprobe.d/no-usblp.conf` (it prevents `usblp` from loading to support scanning, not needed by either CUPS or xsane and related tools). Reboot to finish. [[4]](http://cromwell-intl.com/linux/canon-pixma-printer-scanner.html)
+If your USB device is listed with `scanimage -L` but launching the test `scanimage pixma:04A9173E_11DAD1 --format=tiff > test.tiff` always return the 'Device busy' error, you might try to add your username to the scanner group `usermod -a -G scanner yourusername` then blacklist the `usblp` kernel module by writing `blacklist usblp` in `/etc/modprobe.d/no-usblp.conf` (it prevents `usblp` from loading to support scanning, not needed by xsane and related tools, might also [conflict with CUPS](/index.php/CUPS/Troubleshooting#Conflict_with_usblp "CUPS/Troubleshooting")). Reboot to finish. [[4]](http://cromwell-intl.com/linux/canon-pixma-printer-scanner.html)
 
 ### Permission problem
 
-After systemd, the `scanner` and `lp` groups are deprecated. No need to add your user to those groups. See [Users and groups#Pre-systemd groups](/index.php/Users_and_groups#Pre-systemd_groups "Users and groups") for detail.
+With systemd, the `scanner` and `lp` groups are deprecated. No need to add your user to those groups. See [Users and groups#Pre-systemd groups](/index.php/Users_and_groups#Pre-systemd_groups "Users and groups") for detail.
 
 You can also try to change permissions of usb device but this is not recommended, a better solution is to fix the [Udev rules](/index.php/Udev_rules "Udev rules") so that your scanner is recognized.
 

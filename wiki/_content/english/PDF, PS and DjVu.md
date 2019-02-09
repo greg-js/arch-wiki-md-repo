@@ -276,6 +276,13 @@ $ gm convert 1.jpg 2.jpg 3.jpg out.pdf
 
 ### Concatenate PDFs
 
+With Ghostscript:
+
+```
+$ gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=out.pdf -dBATCH 1.pdf 2.pdf 3.pdf
+
+```
+
 With PDFtk:
 
 ```
@@ -294,13 +301,6 @@ With QPDF:
 
 ```
 $ qpdf --empty --pages 1.pdf 2.pdf 3.pdf -- out.pdf
-
-```
-
-With Ghostscript:
-
-```
-$ gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=out.pdf -dBATCH 1.pdf 2.pdf 3.pdf
 
 ```
 
@@ -326,17 +326,17 @@ $ pdftk in.pdf input_pw *password* output out.pdf
 
 ```
 
-With QPDF:
-
-```
-$ qpdf --decrypt --password=*password* in.pdf out.pdf
-
-```
-
 With Poppler to PostScript:
 
 ```
 $ pdftops -upw *password* in.pdf out.ps
+
+```
+
+With QPDF:
+
+```
+$ qpdf --decrypt --password=*password* in.pdf out.pdf
 
 ```
 
@@ -407,17 +407,17 @@ PDF [Imposition](https://en.wikipedia.org/wiki/Imposition "wikipedia:Imposition"
 
 ### Inspecting metadata
 
-With Poppler:
-
-```
-$ pdfinfo file.pdf
-
-```
-
 With [ExifTool](/index.php/ExifTool "ExifTool"):
 
 ```
 $ exiftool file.pdf
+
+```
+
+With Poppler:
+
+```
+$ pdfinfo file.pdf
 
 ```
 
@@ -471,13 +471,13 @@ Can be used to undo simple [imposition](#Imposing_a_PDF).
 ## DjVu tools
 
 *   [DjVuLibre](#Engines) provides many command-line tools, like [ddjvu(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ddjvu.1) for example.
-*   **pdf2djvu** — Creates DjVu files from PDF files.
-
-	[https://jwilk.net/software/pdf2djvu](https://jwilk.net/software/pdf2djvu) || [pdf2djvu](https://www.archlinux.org/packages/?name=pdf2djvu)
-
 *   **img2djvu** — Single-pass DjVu encoder based on DjVu Libre and ImageMagick
 
 	[https://github.com/ashipunov/img2djvu](https://github.com/ashipunov/img2djvu) || [img2djvu-git](https://aur.archlinux.org/packages/img2djvu-git/)
+
+*   **pdf2djvu** — Creates DjVu files from PDF files.
+
+	[https://jwilk.net/software/pdf2djvu](https://jwilk.net/software/pdf2djvu) || [pdf2djvu](https://www.archlinux.org/packages/?name=pdf2djvu)
 
 ### Convert DjVu to images
 

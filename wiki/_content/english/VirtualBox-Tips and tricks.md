@@ -397,7 +397,7 @@ After completing the installation, boot your computer natively with an GNU/Linux
 
 ## Install MacOS guest
 
-MacOS can be tricky to install. After a few hours of trying and failing I finally got it to install after tweaking some of the virtual machine configuration:
+Before starting the VM, run the following commands on the host machine [[1]](https://medium.com/@twister.mr/installing-macos-to-virtualbox-1fcc5cf22801):
 
 ```
 $ VBoxManage modifyvm "MyMacVM" --cpuid-set 00000001 000106e5 00100800 0098e3fd bfebfbff 
@@ -409,23 +409,21 @@ $ VBoxManage setextradata "MyMacVM" VBoxInternal2/EfiGopMode 4
 
 ```
 
-I got this information from the user twister.mr on [medium](https://medium.com/@twister.mr/installing-macos-to-virtualbox-1fcc5cf22801). I don't know which of configuration entries are strictly required.
-
 ### No keyboard/mouse input when attempting to install Mojave
 
-If you are attempting to install Mojave, after doing the aforementioned steps, the installer will load up but you might not be able to send keyboard or mouse input. The reason seems to be that Mojave no longer supports the USB 1.1 controllers and in order to fix the issue you need to emulating USB 3.0\. To do that first install the [VirtualBox#Extension_pack](/index.php/VirtualBox#Extension_pack "VirtualBox").
+If you are attempting to install Mojave, after doing the aforementioned steps, the installer will load up but you might not be able to send keyboard or mouse input. The reason seems to be that Mojave no longer supports the USB 1.1 controllers and in order to fix the issue you need to emulating USB 3.0\. To do that first install the [VirtualBox Extension pack](/index.php/VirtualBox#Extension_pack "VirtualBox").
 
-Then go to Machine -> Settings -> USB and select USB 3.0\. Input should work from this point onwards.
+Then go to *Machine > Settings > USB* and select *USB 3.0*. Input should work from this point onwards.
 
 ### UEFI interactive shell after restart
 
-For some reason, the installer is sometimes unable to properly format the bootable drive during installation and you end up in an UEFI shell. To proceed from here:
+If the installer is unable to properly format the bootable drive during installation and you end up in an UEFI shell, enter the following:
 
-1.  Type **exit** at the UEFI prompt
-2.  Select **Boot Maintenance Manager**
-3.  Select **Boot From File**
+1.  Type `exit` at the UEFI prompt
+2.  Select *Boot Maintenance Manager*
+3.  Select *Boot From File*
 
-You will now be brought to couple of obscure PCI paths. The first one is the one that you just attempted to boot from and it didn't work. The second (or third) one should be the one with the MacOS recovery partition that you need to load to continue the installation. Click the second Entry. If it's empty, click **ESC** to go back and select the third entry. Once you get one with folders click though the folders. It should be something like **macOS Install Data** -> **Locked Files** -> **Boot Files** -> **boot.efi** . Once you click enter on the **boot.efi** you should boot into the MacOS installer and resume installation. Note that some of the subdirectories might be missing. Remember that you need to get to a **boot.efi**. Adapted from [superuser.com](https://superuser.com/questions/1235970/stuck-on-uefi-interactive-shell-with-mac-os-x-high-sierra-vm)
+You will now be brought to couple of obscure PCI paths. The first one is the one that you just attempted to boot from and it did not work. The second (or third) one should be the one with the MacOS recovery partition that you need to load to continue the installation. Click the second Entry. If it's empty, press `Esc` to go back and select the third entry. Once you get one with folders click though the folders. It should be something like *macOS Install Data > Locked Files > Boot Files > boot.efi* . Once you click enter on the *boot.efi* you should boot into the MacOS installer and resume installation. Note that some of the subdirectories might be missing. Remember that you need to get to a `boot.efi`.[[2]](https://superuser.com/questions/1235970/stuck-on-uefi-interactive-shell-with-mac-os-x-high-sierra-vm)
 
 ## Move a native Windows installation to a virtual machine
 

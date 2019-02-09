@@ -134,6 +134,9 @@ blacklist nvidia
 blacklist nvidia-drm
 blacklist nvidia-modeset
 blacklist nvidia-uv
+blacklist nvidia_uvm
 blacklist nouveau
 
 ```
+
+Make sure DRM kernel mode setting is disabled see [NVIDIA#DRM kernel mode setting](/index.php/NVIDIA#DRM_kernel_mode_setting "NVIDIA")

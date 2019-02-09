@@ -1138,7 +1138,7 @@ See also [Wikipedia:List of Unified Modeling Language tools](https://en.wikipedi
 
 *   **[Redmine](/index.php/Redmine "Redmine")** — A flexible project management web application. Written using the Ruby on Rails, it is cross-platform and cross-database.
 
-	[https://www.redmine.org](https://www.redmine.org) || [redmine](https://aur.archlinux.org/packages/redmine/)
+	[https://www.redmine.org](https://www.redmine.org) || [redmine](https://www.archlinux.org/packages/?name=redmine)
 
 *   **[Request Tracker](/index.php/Request_Tracker "Request Tracker") (RT)** — The leading open-source issue tracking system.
 

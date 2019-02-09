@@ -15,31 +15,31 @@ Google Chrome has following notable built-in features over Chromium:
 
 See these [two](https://chromium.googlesource.com/chromium/src/+/master/docs/chromium_browser_vs_google_chrome.md) [articles](https://www.howtogeek.com/202825/what%E2%80%99s-the-difference-between-chromium-and-chrome/) for an explanation of the differences between Chromium and Chrome.
 
-See [List of applications#Blink-based](/index.php/List_of_applications#Blink-based "List of applications") for other browsers based on Chromium.
+See [List of applications/Internet#Blink-based](/index.php/List_of_applications/Internet#Blink-based "List of applications/Internet") for other browsers based on Chromium.
 
 ## Contents
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 Default applications](#Default_applications)
-    *   [2.2 Flash Player plugin](#Flash_Player_plugin)
+    *   [2.2 Certificates](#Certificates)
     *   [2.3 Widevine Content Decryption Module plugin](#Widevine_Content_Decryption_Module_plugin)
-    *   [2.4 PDF viewer plugin](#PDF_viewer_plugin)
-    *   [2.5 Certificates](#Certificates)
-    *   [2.6 Hardware video acceleration](#Hardware_video_acceleration)
+    *   [2.4 Force GPU acceleration](#Force_GPU_acceleration)
+    *   [2.5 Hardware video acceleration](#Hardware_video_acceleration)
+    *   [2.6 Flash Player plugin](#Flash_Player_plugin)
+    *   [2.7 PDF viewer plugin](#PDF_viewer_plugin)
 *   [3 Tips and tricks](#Tips_and_tricks)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Fonts](#Fonts)
         *   [4.1.1 Font rendering issues in PDF plugin](#Font_rendering_issues_in_PDF_plugin)
         *   [4.1.2 Font rendering issues of UTF characters](#Font_rendering_issues_of_UTF_characters)
         *   [4.1.3 Tab font size is too large](#Tab_font_size_is_too_large)
-    *   [4.2 Force GPU acceleration](#Force_GPU_acceleration)
-    *   [4.3 WebGL](#WebGL)
-    *   [4.4 Incorrect HiDPI rendering](#Incorrect_HiDPI_rendering)
-    *   [4.5 Password prompt on every start with GNOME Keyring](#Password_prompt_on_every_start_with_GNOME_Keyring)
-    *   [4.6 Chromecasts in the network are not discovered](#Chromecasts_in_the_network_are_not_discovered)
-    *   [4.7 Losing cookies and passwords when switching between desktop environments](#Losing_cookies_and_passwords_when_switching_between_desktop_environments)
-    *   [4.8 Hang on startup when Google Sync enabled](#Hang_on_startup_when_Google_Sync_enabled)
+    *   [4.2 WebGL](#WebGL)
+    *   [4.3 Incorrect HiDPI rendering](#Incorrect_HiDPI_rendering)
+    *   [4.4 Password prompt on every start with GNOME Keyring](#Password_prompt_on_every_start_with_GNOME_Keyring)
+    *   [4.5 Chromecasts in the network are not discovered](#Chromecasts_in_the_network_are_not_discovered)
+    *   [4.6 Losing cookies and passwords when switching between desktop environments](#Losing_cookies_and_passwords_when_switching_between_desktop_environments)
+    *   [4.7 Hang on startup when Google Sync enabled](#Hang_on_startup_when_Google_Sync_enabled)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -49,7 +49,6 @@ There are several packages available to [install](/index.php/Install "Install") 
 *   [chromium](https://www.archlinux.org/packages/?name=chromium) – stable release.
 *   [chromium-dev](https://aur.archlinux.org/packages/chromium-dev/) – development release.
 *   [chromium-snapshot-bin](https://aur.archlinux.org/packages/chromium-snapshot-bin/) – nightly build.
-*   [chromium-vaapi](https://aur.archlinux.org/packages/chromium-vaapi/), [chromium-vaapi-bin](https://aur.archlinux.org/packages/chromium-vaapi-bin/) – packages with [VA-API](/index.php/VA-API "VA-API") support, for configuration see [#Hardware video acceleration](#Hardware_video_acceleration).
 
 Google Chrome packages:
 
@@ -63,6 +62,43 @@ Google Chrome packages:
 
 To set Chromium as the default browser and to change which applications Chromium launches when opening downloaded files, see [default applications](/index.php/Default_applications "Default applications").
 
+### Certificates
+
+Chromium uses [Network Security Services](/index.php/Network_Security_Services "Network Security Services") for certificate management. Certificates can be managed in `chrome://settings/certificates`.
+
+### Widevine Content Decryption Module plugin
+
+Widevine is Google's Encrypted Media Extensions (EME) Content Decryption Module (CDM). It is used to watch premium video content such as Netflix. It is automatically installed when using Google Chrome.
+
+To install it for Chromium, [install](/index.php/Install "Install") the [chromium-widevine](https://aur.archlinux.org/packages/chromium-widevine/) package. Make sure *Allow sites to play protected content* is checked in `chrome://settings/content/protectedContent`.
+
+### Force GPU acceleration
+
+**Warning:** Disabling the rendering blacklist may cause unstable behavior, including crashes of the host. See the bug reports in `chrome://gpu` for details.
+
+To force GPU acceleration, [append](/index.php/Append "Append") the following flags to [persistent configuration](/index.php/Chromium/Tips_and_tricks#Making_flags_persistent "Chromium/Tips and tricks"):
+
+ `~/.config/chromium-flags.conf` 
+```
+--ignore-gpu-blacklist
+--enable-gpu-rasterization
+--enable-native-gpu-memory-buffers
+--enable-zero-copy
+
+```
+
+Additionally the flag `--disable-gpu-driver-bug-workarounds` may need to be passed to prevent GPU workaround from being used. Flags in `chrome://gpu` should state "Hardware accelerated" when configured and available.
+
+### Hardware video acceleration
+
+Accelerated video decoding using [VA-API](/index.php/VA-API "VA-API") is compiled in and enabled by default in [chromium](https://www.archlinux.org/packages/?name=chromium).
+
+**Note:** There is no official support from Chromium for this feature, but you may ask for help in [the dedicated forum thread](https://bbs.archlinux.org/viewtopic.php?id=244031).
+
+Be sure to install correct VA-API driver for your video card and verify VA-API has been enabled and working correctly, see [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
+
+Additionally `--disable-gpu-driver-bug-workarounds` has been tested and confirmed to remove video freezes (especially when watching in fullscreen).
+
 ### Flash Player plugin
 
 Flash Player is automatically installed when using Google Chrome.
@@ -71,46 +107,9 @@ To install it for Chromium, [install](/index.php/Install "Install") the [pepper-
 
 Make sure Flash is allowed to run in `chrome://settings/content/flash`.
 
-### Widevine Content Decryption Module plugin
-
-Widevine is Google's Encrypted Media Extensions (EME) Content Decryption Module (CDM). It is used to watch premium video content such as Netflix. It is automatically installed when using Google Chrome.
-
-To install it for Chromium, [install](/index.php/Install "Install") the [chromium-widevine](https://aur.archlinux.org/packages/chromium-widevine/) package. Make sure *Allow sites to play protected content* is checked in `chrome://settings/content/protectedContent`.
-
 ### PDF viewer plugin
 
 Chromium and Google Chrome are bundled with the *Chromium PDF Viewer* plugin. If you don't want to use this plugin, check *Open PDFs using a different application* in `chrome://settings/content/pdfDocuments`.
-
-### Certificates
-
-Chromium uses [Network Security Services](/index.php/Network_Security_Services "Network Security Services") for certificate management. Certificates can be managed in `chrome://settings/certificates`.
-
-### Hardware video acceleration
-
-Accelerated video decoding using [VA-API](/index.php/VA-API "VA-API") is available on [chromium-vaapi](https://aur.archlinux.org/packages/chromium-vaapi/) and [chromium-vaapi-bin](https://aur.archlinux.org/packages/chromium-vaapi-bin/).
-
-**Note:**
-
-*   [Verify VA-API](/index.php/Hardware_video_acceleration#Verifying_VA-API "Hardware video acceleration") has been enabled and working correctly.
-*   One may need to [#Force GPU acceleration](#Force_GPU_acceleration) as Chromium uses a GPU blacklist by default.
-
-On [ATI](/index.php/ATI "ATI")/[AMDGPU](/index.php/AMDGPU "AMDGPU") video corruption may occur [[1]](https://bugs.freedesktop.org/show_bug.cgi?id=106490). A workaround is to set `allow_rgb10_configs=false` [environment variable](/index.php/Environment_variable "Environment variable")
-
-*   globally (all applications will be affected):
-
- `/etc/environment`  `allow_rgb10_configs=false` 
-
-*   or app-specific adding the [variable](/index.php/Environment_variable "Environment variable") to `chromium.desktop` [desktop entry](/index.php/Desktop_entry "Desktop entry") editing the `Exec=` command line:
-
- `~/.local/share/applications/chromium.desktop`  `Exec=allow_rgb10_configs=false chromium %U` 
-**Tip:** It may be helpful to copy the `.desktop` file in `/usr/share/applications/` and then modify the one locally at `~/.local/share/applications/`.
-
-To use hardware video acceleration:
-
-*   enable both `chrome://flags/#enable-accelerated-video` and `chrome://flags/#enable-accelerated-mjpeg-decode` flags;
-*   specifying `--enable-accelerated-video` and `--enable-accelerated-mjpeg-decode` as arguments or [append](/index.php/Append "Append") them to the [persistent configuration](/index.php/Chromium/Tips_and_tricks#Making_flags_persistent "Chromium/Tips and tricks").
-
-Additionally `--disable-gpu-driver-bug-workarounds` has been tested and confirmed to remove video freezes (especially when watching in fullscreen).
 
 ## Tips and tricks
 
@@ -133,14 +132,6 @@ UTF characters may render as boxes (e.g. simplified Chinese characters). Install
 #### Tab font size is too large
 
 Chromium will use the GTK settings as described in [GTK+#Configuration](/index.php/GTK%2B#Configuration "GTK+"). When configured, Chromium will use the `gtk-font-name` setting for tabs (which may mismatch window font size). To override these settings, use `--force-device-scale-factor=1.0`.
-
-### Force GPU acceleration
-
-**Warning:** Disabling the rendering blacklist may cause unstable behavior, including crashes of the host. See the bug reports in `chrome://gpu` for details.
-
-To force GPU acceleration, *enable* the flags: `--ignore-gpu-blacklist`, `--enable-gpu-rasterization`, `--enable-zero-copy` in `chrome://flags` or [append](/index.php/Append "Append") to the [persistent configuration](/index.php/Chromium/Tips_and_tricks#Making_flags_persistent "Chromium/Tips and tricks"). Additionally the flag `--disable-gpu-driver-bug-workarounds` may need to be passed to prevent GPU workaround from being used. Flags in `chrome://gpu` should state "Hardware accelerated" when configured and available.
-
-For *Native GpuMemoryBuffers* the flag `--enable-native-gpu-memory-buffers` needs to be pass or some optimizations (like the zero-copy rasterizer) will use software rendering. The flag isn't available under `chrome://flags` and must be passed as a [persistent flag](/index.php/Chromium/Tips_and_tricks#Making_flags_persistent "Chromium/Tips and tricks") or directly from the command line.
 
 ### WebGL
 

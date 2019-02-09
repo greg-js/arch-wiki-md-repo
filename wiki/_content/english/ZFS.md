@@ -59,6 +59,7 @@ As a result:
         *   [6.10.2 ZFS Snapshot Manager](#ZFS_Snapshot_Manager)
     *   [6.11 Creating a share](#Creating_a_share)
         *   [6.11.1 NFS](#NFS)
+        *   [6.11.2 SMB](#SMB)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Creating a zpool fails](#Creating_a_zpool_fails)
     *   [7.2 ZFS is using too much RAM](#ZFS_is_using_too_much_RAM)
@@ -786,6 +787,27 @@ It should return something like this:
 ```
 Export list for hostname:
 /dataset 192.168.11.0/24
+
+```
+
+#### SMB
+
+When sharing smb shares configuring usershares in your smb.conf will allow ZFS to setup and create the shares.
+
+```
+# [global]
+#    usershare path = /var/lib/samba/usershares
+#    usershare max shares = 100
+#    usershare allow guests = yes
+#    usershare owner only = no
+
+```
+
+Create and set permissions on the user directory as root
+
+```
+# mkdir /var/lib/samba/usershares
+# chmod +t /var/lib/samba/usershares
 
 ```
 

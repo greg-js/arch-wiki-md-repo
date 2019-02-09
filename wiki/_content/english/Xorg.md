@@ -222,7 +222,7 @@ See [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "
 *   Newer versions of Xorg are auto-configuring, so manual configuration should not be needed.
 *   If Xorg is unable to detect any monitor or to avoid auto-configuring, a configuration file can be used. A common case where this is necessary is a headless system, which boots without a monitor and starts Xorg automatically, either from a [virtual console](/index.php/Automatic_login_to_virtual_console "Automatic login to virtual console") at [login](/index.php/Start_X_at_login "Start X at login"), or from a [display manager](/index.php/Display_manager "Display manager").
 
-For a headless configuration the [xf86-video-dummy](https://www.archlinux.org/packages/?name=xf86-video-dummy) driver is necessary, [install](/index.php/Install "Install") it and create a configuration file, such as the following:
+For a headless configuration the [xf86-video-dummy](https://www.archlinux.org/packages/?name=xf86-video-dummy) driver is necessary; [install](/index.php/Install "Install") it and create a configuration file, such as the following:
 
  `/etc/X11/xorg.conf.d/10-headless.conf` 
 ```
@@ -246,6 +246,7 @@ Section "Screen"
         SubSection "Display"
         EndSubSection
 EndSection
+
 ```
 
 ### Multiple monitors
@@ -292,9 +293,9 @@ The bus ID here is 1:0:0.
 
 The DPI of the X server is determined in the following manner:
 
-1.  The -dpi command line option has highest priority.
-2.  If this is not used, the DisplaySize setting in the X config file is used to derive the DPI, given the screen resolution.
-3.  If no DisplaySize is given, the monitor size values from [DDC](https://en.wikipedia.org/wiki/Display_Data_Channel "wikipedia:Display Data Channel") are used to derive the DPI, given the screen resolution.
+1.  The `-dpi` command line option has highest priority.
+2.  If this is not used, the `DisplaySize` setting in the X config file is used to derive the DPI, given the screen resolution.
+3.  If no `DisplaySize` is given, the monitor size values from [DDC](https://en.wikipedia.org/wiki/Display_Data_Channel "wikipedia:Display Data Channel") are used to derive the DPI, given the screen resolution.
 4.  If DDC does not specify a size, 75 DPI is used by default.
 
 In order to get correct dots per inch (DPI) set, the display size must be recognized or set. Having the correct DPI is especially necessary where fine detail is required (like font rendering). Previously, manufacturers tried to create a standard for 96 DPI (a 10.3" diagonal monitor would be 800x600, a 13.2" monitor 1024x768). These days, screen DPIs vary and may not be equal horizontally and vertically. For example, a 19" widescreen LCD at 1440x900 may have a DPI of 89x87\. To be able to set the DPI, the Xorg server attempts to auto-detect your monitor's physical screen size through the graphic card with DDC. ~~When the Xorg server knows the physical screen size, it will be able to set the correct DPI depending on resolution size.~~
@@ -389,7 +390,7 @@ $ xrdb -query | grep dpi
 
 ```
 
-With GTK library versions since 3.16, when this variable is not otherwise explicitly set, GTK sets it to 96\. To have GTK apps obey the server DPI you may need to explictly set Xft.dpi to the same value as the server. The Xft.dpi resource is the method by which some desktop environments optionally force DPI to a particular value in personal settings. Among these are KDE and TDE.
+With GTK library versions since 3.16, when this variable is not otherwise explicitly set, GTK sets it to 96\. To have GTK apps obey the server DPI you may need to explictly set Xft.dpi to the same value as the server. The Xft.dpi resource is the method by which some desktop environments optionally force DPI to a particular value in personal settings. Among these are [KDE](/index.php/KDE "KDE") and [TDE](/index.php/TDE "TDE").
 
 ### Display Power Management
 
@@ -522,6 +523,7 @@ To block tty access when in an X add the following to [xorg.conf](#Configuration
 Section "ServerFlags"
     Option "DontVTSwitch" "True"
 EndSection
+
 ```
 
 ### Prevent a user from killing X
@@ -532,6 +534,7 @@ To prevent a user from killing when it is running add the following to [xorg.con
 Section "ServerFlags"
     Option "DontZap"      "True"
 EndSection
+
 ```
 
 ## Troubleshooting
@@ -549,7 +552,6 @@ The logfiles are of the form `Xorg.n.log` with `n` being the display number. For
 ```
 
 *   In the logfile then be on the lookout for any lines beginning with `(EE)`, which represent errors, and also `(WW)`, which are warnings that could indicate other issues.
-
 *   If there is an *empty* `.xinitrc` file in your `$HOME`, either delete or edit it in order for X to start properly. If you do not do this X will show a blank screen with what appears to be no errors in your `Xorg.0.log`. Simply deleting it will get it running with a default X environment.
 *   If the screen goes black, you may still attempt to switch to a different virtual console (e.g. `Ctrl+Alt+F2`), and blindly log in as root. You can do this by typing `root` (press `Enter` after typing it) and entering the root password (again, press `Enter` after typing it).
 
@@ -602,7 +604,7 @@ Cannot run in framebuffer mode. Please specify busIDs for all framebuffer device
 
 ### Program requests "font '(null)'"
 
-*   Error message: "*unable to load font `(null)'.*"
+Error message: `unable to load font `(null)'`.
 
 Some programs only work with bitmap fonts. Two major packages with bitmap fonts are available, [xorg-fonts-75dpi](https://www.archlinux.org/packages/?name=xorg-fonts-75dpi) and [xorg-fonts-100dpi](https://www.archlinux.org/packages/?name=xorg-fonts-100dpi). You do not need both; one should be enough. To find out which one would be better in your case, try `xdpyinfo` from [xorg-xdpyinfo](https://www.archlinux.org/packages/?name=xorg-xdpyinfo), like this:
 

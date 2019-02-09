@@ -29,13 +29,14 @@ From [Wikipedia:Simple Desktop Display Manager](https://en.wikipedia.org/wiki/Si
     *   [2.7 Enable HiDPI](#Enable_HiDPI)
     *   [2.8 Using a fingerprint reader](#Using_a_fingerprint_reader)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Long load time before SDDM shows the greeter](#Long_load_time_before_SDDM_shows_the_greeter)
-    *   [3.2 Hangs after login](#Hangs_after_login)
-    *   [3.3 SDDM starts on tty1 instead of tty7](#SDDM_starts_on_tty1_instead_of_tty7)
-    *   [3.4 One or more users do not show up on the greeter](#One_or_more_users_do_not_show_up_on_the_greeter)
-    *   [3.5 SDDM loads only US keyboard layout](#SDDM_loads_only_US_keyboard_layout)
-    *   [3.6 Screen resolution is too low](#Screen_resolution_is_too_low)
-    *   [3.7 Long load time on autofs home directory](#Long_load_time_on_autofs_home_directory)
+    *   [3.1 Blank screen with cursor, but no greeter shows](#Blank_screen_with_cursor,_but_no_greeter_shows)
+    *   [3.2 Long load time before SDDM shows the greeter](#Long_load_time_before_SDDM_shows_the_greeter)
+    *   [3.3 Hangs after login](#Hangs_after_login)
+    *   [3.4 SDDM starts on tty1 instead of tty7](#SDDM_starts_on_tty1_instead_of_tty7)
+    *   [3.5 One or more users do not show up on the greeter](#One_or_more_users_do_not_show_up_on_the_greeter)
+    *   [3.6 SDDM loads only US keyboard layout](#SDDM_loads_only_US_keyboard_layout)
+    *   [3.7 Screen resolution is too low](#Screen_resolution_is_too_low)
+    *   [3.8 Long load time on autofs home directory](#Long_load_time_on_autofs_home_directory)
 
 ## Installation
 
@@ -191,6 +192,10 @@ SDDM works with a fingerprint reader when using [fprint](/index.php/Fprint "Fpri
 If you now press enter in the empty password field, the fingerprint reader should start working.
 
 ## Troubleshooting
+
+### Blank screen with cursor, but no greeter shows
+
+Check your disk space with `df -h`. If no available space, greeter will crash.
 
 ### Long load time before SDDM shows the greeter
 

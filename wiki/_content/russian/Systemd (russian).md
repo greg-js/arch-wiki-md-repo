@@ -2,6 +2,7 @@
 
 *   [Systemd/Пользователь](/index.php/Systemd/%D0%9F%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C "Systemd/Пользователь")
 *   [Systemd/Tаймеры](/index.php/Systemd/T%D0%B0%D0%B9%D0%BC%D0%B5%D1%80%D1%8B "Systemd/Tаймеры")
+*   [Systemd/Journal (Русский)](/index.php/Systemd/Journal_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd/Journal (Русский)")
 *   [systemd FAQ](/index.php/Systemd_FAQ "Systemd FAQ")
 *   [init](/index.php/Init "Init")
 *   [Init Rosetta (Русский)](/index.php/Init_Rosetta_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Init Rosetta (Русский)")
@@ -10,7 +11,7 @@
 *   [Увеличение производительности/Процесс загрузки системы](/index.php/%D0%A3%D0%B2%D0%B5%D0%BB%D0%B8%D1%87%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8/%D0%9F%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81_%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B "Увеличение производительности/Процесс загрузки системы")
 *   [Разрешить пользователям выключение системы](/index.php/%D0%A0%D0%B0%D0%B7%D1%80%D0%B5%D1%88%D0%B8%D1%82%D1%8C_%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F%D0%BC_%D0%B2%D1%8B%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B "Разрешить пользователям выключение системы")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [systemd](/index.php/Systemd "Systemd"). Дата последней синхронизации: 20 сентября 2015‎. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Systemd&diff=0&oldid=400997).
+**Состояние перевода:** На этой странице представлен перевод статьи [systemd](/index.php/Systemd "Systemd"). Дата последней синхронизации: 8 февраля 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Systemd&diff=0&oldid=565707).
 
 Цитата с [веб-страницы проекта](http://freedesktop.org/wiki/Software/systemd):
 
@@ -38,16 +39,15 @@
     *   [3.3 Соответствие уровней SysV целям systemd](#Соответствие_уровней_SysV_целям_systemd)
     *   [3.4 Изменение текущей цели](#Изменение_текущей_цели)
     *   [3.5 Изменение цели загрузки по умолчанию](#Изменение_цели_загрузки_по_умолчанию)
+    *   [3.6 Порядок выбора цели по умолчанию](#Порядок_выбора_цели_по_умолчанию)
 *   [4 Временные файлы](#Временные_файлы)
 *   [5 Таймеры](#Таймеры)
 *   [6 Монтирование](#Монтирование)
-*   [7 Журнал](#Журнал)
-    *   [7.1 Фильтрация вывода](#Фильтрация_вывода)
-    *   [7.2 Ограничение размера журнала](#Ограничение_размера_журнала)
-    *   [7.3 Очистка файлов журнала вручную](#Очистка_файлов_журнала_вручную)
-    *   [7.4 Journald в связке с классическим демоном syslog](#Journald_в_связке_с_классическим_демоном_syslog)
-    *   [7.5 Перенаправить журнал на /dev/tty12](#Перенаправить_журнал_на_/dev/tty12)
-    *   [7.6 Команда просмотра другого журнала](#Команда_просмотра_другого_журнала)
+    *   [6.1 Автомонтирование разделов GPT](#Автомонтирование_разделов_GPT)
+*   [7 Полезные советы](#Полезные_советы)
+    *   [7.1 Запуск сервисов после подключения к сети](#Запуск_сервисов_после_подключения_к_сети)
+    *   [7.2 Включение установленных юнитов по умолчанию](#Включение_установленных_юнитов_по_умолчанию)
+    *   [7.3 Песочница для приложений](#Песочница_для_приложений)
 *   [8 Решение проблем](#Решение_проблем)
     *   [8.1 Изучение ошибок systemd](#Изучение_ошибок_systemd)
     *   [8.2 Диагностика проблем с загрузкой системы](#Диагностика_проблем_с_загрузкой_системы)
@@ -60,6 +60,8 @@
         *   [8.7.2 watchdog watchdog0: watchdog did not stop!](#watchdog_watchdog0:_watchdog_did_not_stop!)
     *   [8.8 Время загрузки системы увеличивается с течением времени](#Время_загрузки_системы_увеличивается_с_течением_времени)
     *   [8.9 systemd-tmpfiles-setup.service fails to start at boot](#systemd-tmpfiles-setup.service_fails_to_start_at_boot)
+    *   [8.10 Версия systemd, отображаемая при загрузке, не совпадает с версией пакета](#Версия_systemd,_отображаемая_при_загрузке,_не_совпадает_с_версией_пакета)
+    *   [8.11 Отключение emergency mode на удалённой машине](#Отключение_emergency_mode_на_удалённой_машине)
 *   [9 Смотрите также](#Смотрите_также)
 
 ## Основы использования systemctl
@@ -75,6 +77,13 @@
 *   Пользователи [Plasma](/index.php/Plasma_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Plasma (Русский)") могут использовать графический интерфейс [systemd-kcm](https://aur.archlinux.org/packages/systemd-kcm/).
 
 ### Анализ состояния системы
+
+Показать **состояние системы**:
+
+```
+$ systemctl status
+
+```
 
 **Список запущенных** юнитов:
 
@@ -101,6 +110,13 @@ $ systemctl --failed
 
 ```
 $ systemctl list-unit-files
+
+```
+
+Show the cgroup slice, memory and parent for a PID:
+
+```
+$ systemctl status *pid*
 
 ```
 
@@ -293,8 +309,6 @@ $ systemctl hybrid-sleep
 
 Смотрите справочную страницу руководства [systemd.service(5)](http://www.freedesktop.org/software/systemd/man/systemd.service.html#Type=) для более детального пояснения значений `Type`.
 
-Обратитесь к руководству [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5) для получения более детального объяснения.
-
 ### Редактирование предоставленных пакетами файлов юнитов
 
 Не стоит редактировать юнит-файлы пакетов напрямую, так как это приведёт к конфликтам с pacman. Есть два безопасных способа редактирования юнит-файлов, предоставленных пакетом: создать новый файл, который полностью заменит оригинальный, или создать фрагмент кода, который применяется поверх оригинального файла из пакета. В обоих методах, чтобы применить изменения, нужно перезагрузить юнит. Это может быть сделано либо путем редактирования блока с помощью `systemctl edit` (которая автоматически перезагрузит юнит) либо перезагрузкой всех юнитов с помощью команды:
@@ -328,7 +342,7 @@ $ systemctl hybrid-sleep
 
 Эта команда откроет `/etc/systemd/system/*юнит*` в вашем текстовом редакторе (если файл ещё не существует, будет скопирован оригинальный файл из пакета в качестве основы) и автоматически перезагрузит его, когда вы закончите редактирование.
 
-**Примечание:** Pacman не обновит заменённые файлы юнита, в отличие от оригинальных которые обновятся. Так что этот метод может сделать обслуживание системы более сложным. По этой причине рекомендуется следующий подход.
+**Примечание:** Pacman не обновит заменённые файлы юнита, в отличие от оригинальных, которые обновятся. Так что этот метод может сделать обслуживание системы более сложным. По этой причине рекомендуется следующий подход.
 
 #### Drop-in файлы
 
@@ -426,9 +440,9 @@ $ systemctl list-units --type=target
 
 ### Изменение цели загрузки по умолчанию
 
-Стандартная цель - `default.target`, которая по умолчанию ссылается на `graphical.target` (примерно соответствующего прежнему уровню запуска 5).
+Стандартная цель — `default.target`, которая по умолчанию ссылается на `graphical.target` (примерно соответствующего прежнему уровню запуска 5).
 
-Узнать текущую цель может так:
+Узнать текущую цель можно так:
 
 ```
 $ systemctl get-default
@@ -447,6 +461,14 @@ Created symlink /etc/systemd/system/default.target -> /usr/lib/systemd/system/mu
 
 *   `systemd.unit=multi-user.target` (что примерно соответствует прежнему уровню запуска 3)
 *   `systemd.unit=rescue.target` (что примерно соответствует прежнему уровню запуска 1)
+
+### Порядок выбора цели по умолчанию
+
+*systemd* выбирает `default.target` в таком порядке (чем выше по списку, тем приоритетнее):
+
+1.  Параметр ядра, показанный выше
+2.  Символьная ссылка `/etc/systemd/system/default.target`
+3.  Символьная ссылка `/usr/lib/systemd/system/default.target`
 
 ## Временные файлы
 
@@ -470,108 +492,65 @@ w    /proc/acpi/wakeup     -    -    -    -   USBE
 
 ## Таймеры
 
-Таймер - это файл конфигурации юнита, имя которого заканчивается на *.timer*. Он расшифровывает информацию о таймере, контролируемом при помощи *systemd*, для активации в определенное время. Смотрите статью [systemd/Tаймеры](/index.php/Systemd/T%D0%B0%D0%B9%D0%BC%D0%B5%D1%80%D1%8B "Systemd/Tаймеры").
+Таймер - это файл конфигурации юнита, имя которого заканчивается на *.timer*. Он содержит информацию о таймере, контролируемом при помощи *systemd*, для активации в определенное время. Смотрите статью [systemd/Tаймеры](/index.php/Systemd/T%D0%B0%D0%B9%D0%BC%D0%B5%D1%80%D1%8B "Systemd/Tаймеры").
 
 **Примечание:** Таймеры способны в значительной степени заменить функциональность *cron*. Смотрите раздел [Замена cron](/index.php/Systemd/T%D0%B0%D0%B9%D0%BC%D0%B5%D1%80%D1%8B#В_качестве_замены_cron "Systemd/Tаймеры")
 
 ## Монтирование
 
-Так как systemd полностью заменяет собой SysVinit, он отвечает за точки монтирования, описанные в файле `/etc/fstab`. Фактически он выходит за рамки возможностей обычного `fstab`, реализуя особые точки монтирования с префиксом `x-systemd`, например, т.н. *автомонтирование* (монтирование по запросу) использует данные расширения (см. [для более подробной информации как это реализовано](/index.php/Fstab_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Автоматическое_монтирование_с_systemd "Fstab (Русский)")). С полным описанием всех расширений и работы с ними вы можете ознакомиться на английском в [[2]](https://www.freedesktop.org/software/systemd/man/systemd.mount.html#fstab)
+Так как *systemd* полностью заменяет собой SysVinit, он отвечает за точки монтирования, описанные в файле `/etc/fstab`. [systemd-fstab-generator(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-fstab-generator.8) преобразует записи из `/etc/fstab` в юниты systemd; это выполняется при каждой загрузке системы, а также при перезагрузке конфигурации системного менеджера.
 
-## Журнал
+*systemd* расширяет возможности [fstab](/index.php/Fstab_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fstab (Русский)") и предлагает дополнительные опции монтирования. Они могут влиять на зависимости юнита монтирования: например, могут гарантировать, что монтирование выполняется только после подключения к сети или после монтирования другого раздела. Полный список опций монтирования *systemd* (обычно имеют префикс `x-systemd`), описан в [systemd.mount(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.mount.5#FSTAB).
 
-*systemd* имеет собственную систему ведения логов, названную журналом (journal). В связи с этим больше не требуется запускать демон `syslog`. Для чтения логов используйте команду:
+Примером этих опций может быть т.н. *автомонтирование* (монтирование по запросу) (см. [для более подробной информации как это реализовано](/index.php/Fstab_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Автоматическое_монтирование_с_systemd "Fstab (Русский)")).
 
+### Автомонтирование разделов GPT
+
+На дисках [GPT](/index.php/GPT_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GPT (Русский)") [systemd-gpt-auto-generator(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-gpt-auto-generator.8) будет автоматически монтировать разделы в соответствии [Discoverable Partitions Specification](https://www.freedesktop.org/wiki/Specifications/DiscoverablePartitionsSpec/), так что они могут отсутствовать в `fstab`.
+
+Автомонтирование раздела может быть отключено путём изменения [GUID типа](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table") раздела или установкой атрибута 63 "do not automount"; см. [gdisk#Prevent GPT partition automounting](/index.php/Gdisk#Prevent_GPT_partition_automounting "Gdisk").
+
+## Полезные советы
+
+### Запуск сервисов после подключения к сети
+
+Чтобы запустить сервис только после подключения к сети, добавьте такие зависимости в *.service* файле:
+
+ `/etc/systemd/system/*foo*.service` 
 ```
-# journalctl
-
-```
-
-В Arch Linux каталог `/var/log/journal/` является частью пакета [systemd](https://www.archlinux.org/packages/?name=systemd), и по умолчанию (когда в конфигурационном файле `/etc/systemd/journald.conf` параметр `Storage=` имеет значение `auto`) журнал записывается именно в `/var/log/journal/`. Если вы или какая-то программа удалит этот каталог, *systemd* **не** пересоздаст его автоматически и вместо этого будет писать свои журналы по непостоянному пути `/run/systemd/journal`. Однако, папка будет пересоздана, когда вы установите `Storage=persistent` и выполните `systemctl restart systemd-journald` (или перезагрузитесь).
-
-Сообщения в журнале классифицируются по приоритету и объектам. Классификация записей соответствует классическому протоколу [Syslog](https://en.wikipedia.org/wiki/Syslog "wikipedia:Syslog") ([RFC 5424](https://tools.ietf.org/html/rfc5424)).
-
-### Фильтрация вывода
-
-*journalctl* позволяет фильтровать вывод по особым полям. Помните, что, если должно быть отражено большое количество сообщений или необходима фильтрация в большом промежутке времени, вывод этой команды может быть отложен на какое-то время.
-
-**Совет:** Несмотря на то, что журнал хранится в двоичном формате, содержимое его сообщений не меняется. Это означает, что их можно просматривать при помощи *strings*, например, в окружении, в котором не установлен *systemd*. Пример: `$ strings /mnt/arch/var/log/journal/af4967d77fba44c6b093d0e9862f6ddd/system.journal | grep -i *сообщение*` 
-
-Примеры:
-
-*   Показать все сообщения с момента текущей загрузки системы: `# journalctl -b` Однако, пользователи часто интересуются сообщениями не для текущей, а для предыдущей загрузки (например, если произошел невосстановимый сбой системы). Это возможно, если задать параметр флагу `-b`: `journalctl -b -0` покажет сообщения с момента текущей загрузки, `journalctl -b -1` - предыдущей загрузки, `journalctl -b -2` - следующей за предыдущей, и т.д. Для просмотра полного описания смотрите страницу справочного руководства [journalctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1): имеется гораздо более мощная семантика
-*   Показать все сообщения, начиная с какой-либо даты (и, если хотите, времени): `# journalctl --since="2012-10-30 18:17:16"` 
-*   Показать все сообщения за последние 20 минут: `# journalctl --since "20 min ago"` 
-*   Показывать новые сообщения: `# journalctl -f` 
-*   Показать все сообщения для конкретного исполняемого файла: `# journalctl /usr/lib/systemd/systemd` 
-*   Показать все сообщения для конкретного процесса: `# journalctl _PID=1` 
-*   Показать все сообщения для конкретного юнита: `# journalctl -u netcfg` 
-*   Показать кольцевой буфер ядра: `# journalctl -k` 
-*   Показать auth.log эквивалентно фильтрации syslog facility: `# journalctl -f -l SYSLOG_FACILITY=10` 
-
-Для получения дополнительной информации смотрите страницы справочного руководства [journalctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1) и [systemd.journal-fields(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.journal-fields.7) или [пост в блоге](http://0pointer.de/blog/projects/journalctl.html) Lennart'а.
-
-**Совет:** По умолчанию *journalctl* отсекает части строк, которые не вписываются в экран по ширине, и, в некоторых случаях, возможно, будет лучше использовать специальную программу-обертку. Управление этой возможностью производится посредством [переменной окружения](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Environment variables (Русский)") `SYSTEMD_LESS`, в которой содержатся опции, передаваемые в [less](/index.php/%D0%91%D0%B0%D0%B7%D0%BE%D0%B2%D1%8B%D0%B5_%D1%83%D1%82%D0%B8%D0%BB%D0%B8%D1%82%D1%8B#less "Базовые утилиты") (программа постраничного просмотра, используемая по умолчанию). По умолчанию ей присвоены опции `FRSXMK` (для получения дополнительной информации смотрите [less(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/less.1) и [journalctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1)).
-
-Если убрать опцию `S`, будет достигнут требуемый результат. Например, запустите *journalctl*, как показано здесь:
-
-```
-$ SYSTEMD_LESS=FRXMK journalctl
-
-```
-Если вы хотите, чтобы такое поведение использовалось по умолчанию, [экспортируйте](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#На_уровне_пользователя "Environment variables (Русский)") переменную из файла `~/.bashrc` или `~/.zshrc`
-
-### Ограничение размера журнала
-
-Если журнал сохраняется при перезагрузке, его размер по умолчанию ограничен значением в 10% от объема соответствующей файловой системы. Например, для директории `/var/log/journal`, расположенной на корневом разделе в 50 Гбайт, максимальный размер журналируемых данных составит 5 Гбайт. Максимальный объем постоянного журнала можно контролировать при помощи значения `SystemMaxUse` в конфигурационном файле `/etc/systemd/journald.conf`, поэтому для ограничения его объемом, например, в 50 Mбайт раскомментируйте и отредактируйте соответствующую строку:
-
- `/etc/systemd/journald.conf`  `SystemMaxUse=50M` 
-
-Для получения дополнительной информации обратитесь к странице справочного руководства [journald.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journald.conf.5).
-
-### Очистка файлов журнала вручную
-
-Файлы журнала находятся в `/var/log/journal`, так что `rm` будет работать. Или используйте `journalctl`,
-
-Примеры:
-
-*   Remove archived journal files until the disk space they use falls below 100M: `# journalctl --vacuum-size=100M` 
-*   Make all journal files contain no data older than 2 weeks. `# journalctl --vacuum-time=2weeks` 
-
-Для получения дополнительной информации, обратитесь к [journalctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1).
-
-### Journald в связке с классическим демоном syslog
-
-Совместимость с классической реализацией non-journald aware [syslog](/index.php/Syslog-ng "Syslog-ng") можно обеспечить, заставив *systemd* направлять все сообщения через сокет `/run/systemd/journal/syslog`. Чтобы дать возможность демону syslog работать вместе с журналом *systemd*, следует привязать данный демон к указанному сокету вместо `/dev/log` ([официальное сообщение](http://lwn.net/Articles/474968/)). Пакетом [syslog-ng](https://www.archlinux.org/packages/?name=syslog-ng) из репозиториев автоматически предоставляется необходимая конфигурация.
-
-Начиная с версии systemd 216, по умолчанию `journald.conf` для передачи данных в сокет был изменён на `ForwardToSyslog=no`, чтобы избежать нагрузки на систему, потому что [rsyslog](/index.php/Rsyslog "Rsyslog") или [syslog-ng](/index.php/Syslog-ng "Syslog-ng") (начиная с версии 3.6) тянут сообщения из журнала [самостоятельно](http://lists.freedesktop.org/archives/systemd-devel/2014-August/022295.html#journald).
-
-Смотрите [Syslog-ng#Overview](/index.php/Syslog-ng#Overview "Syslog-ng") и [Syslog-ng#syslog-ng and systemd journal](/index.php/Syslog-ng#syslog-ng_and_systemd_journal "Syslog-ng"), или соответственно [rsyslog](/index.php/Rsyslog "Rsyslog") для подробной информации о конфигурировании.
-
-Если взамен вы используете [rsyslog](https://aur.archlinux.org/packages/rsyslog/), нет необходимости менять эту настройку, поскольку [rsyslog](/index.php/Rsyslog "Rsyslog") забирает сообщения из журнала [самостоятельно](http://lists.freedesktop.org/archives/systemd-devel/2014-August/022295.html#journald).
-
-### Перенаправить журнал на /dev/tty12
-
-Создайте [drop-in каталог](#Редактирование_предоставленных_пакетами_файлов_юнитов) `/etc/systemd/journald.conf.d` и создайте файл `fw-tty12.conf` с содержимым:
-
- `/etc/systemd/journald.conf.d/fw-tty12.conf` 
-```
-[Journal]
-ForwardToConsole=yes
-TTYPath=/dev/tty12
-MaxLevelConsole=info
+[Unit]
+...
+**Wants=network-online.target**
+**After=network-online.target**
+...
 ```
 
-Затем [перезапустите](#Использование_юнитов) systemd-journald.
+Также должна быть включена служба ожидания сети того приложения, которое управляет сетью; только тогда `network-online.target` будет соответствовать состоянию сети.
 
-### Команда просмотра другого журнала
+*   Пользователям [NetworkManager](/index.php/NetworkManager "NetworkManager") следует [включить](#Использование_юнитов) `NetworkManager-wait-online.service`.
 
-Если появилась необходимость проверить логи другой системы, которая неисправна, загрузитесь с работоспособной системы, чтобы восстановить неисправную систему. Примонтируйте диск неисправной системы, например в `/mnt` и укажите путь журнала через `-D`/`--directory`, например так:
+*   Для пользователей [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") юнит `systemd-networkd-wait-online.service` включается автоматически, когда `systemd-networkd.service` тоже включен; проверьте это командой `systemctl is-enabled systemd-networkd-wait-online.service`, больше ничего не требуется.
 
-```
-$ journalctl -D */mnt*/var/log/journal -xe
+Подробнее можно почитать в systemd wiki: [Running services after the network is up](https://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/).
 
-```
+### Включение установленных юнитов по умолчанию
+
+Arch Linux поставляется с файлом `/usr/lib/systemd/system-preset/99-default.preset`, содержащим `disable *`. Это приводит к тому, что *systemctl preset* не включает юниты по умолчанию, так что после установки нового пакета пользователь должен сам включить его юниты.
+
+Если такое поведение не устраивает, создайте символьную ссылку `/etc/systemd/system-preset/99-default.preset` на `/dev/null` для переопределения файла конфигурации. This will cause *systemctl preset* to enable all units that get installed—regardless of unit type—unless specified in another file in one *systemctl preset'*s configuration directories. User units are not affected. Для получения дополнительной информации смотрите [systemd.preset(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.preset.5).
+
+**Note:** Включение всех юнитов по умолчанию может привести к проблемам для пакетов, содержащих взаимоисключающие юниты. *systemctl preset* is designed to be used by distributions and spins or system administrators. In the case where two conflicting units would be enabled, you should explicitly specify which one is to be disabled in a preset configuration file as specified in the manpage for `systemd.preset`.
+
+### Песочница для приложений
+
+A unit file can be created as a sandbox to isolate applications and their processes within a hardened virtual environment. systemd leverages [namespaces](https://en.wikipedia.org/wiki/Linux_namespaces "wikipedia:Linux namespaces"), white-/blacklisting of [Capabilities](/index.php/Capabilities "Capabilities"), and [control groups](/index.php/Control_groups "Control groups") to container processes through an extensive [execution environment configuration](https://www.freedesktop.org/software/systemd/man/systemd.exec.html).
+
+The enhancement of an existing systemd unit file with application sandboxing typically requires trial-and-error tests accompanied by the generous use of [strace](https://www.archlinux.org/packages/?name=strace), [stderr](https://en.wikipedia.org/wiki/Standard_streams#Standard_error_.28stderr.29 "wikipedia:Standard streams") and [journalctl](https://www.freedesktop.org/software/systemd/man/journalctl.html) error logging and output facilities. You may want to first search upstream documentation for already done tests to base trials on.
+
+Some examples on how sandboxing with systemd can be deployed:
+
+*   `CapabilityBoundingSet` defines a whitelisted set of allowed capabilities, but may also be used to blacklist a specific capability for a unit.
+    *   The `CAP_SYS_ADM` capability, for example, which should be one of the [goals of a secure sandbox](https://lwn.net/Articles/486306/): `CapabilityBoundingSet=~ CAP_SYS_ADM`
 
 ## Решение проблем
 
@@ -583,13 +562,20 @@ $ journalctl -D */mnt*/var/log/journal -xe
 
  `$ systemctl --failed`  `systemd-modules-load.service   loaded **failed failed**  Load Kernel Modules` 
 
+Как вариант, можно почитать лог ошибок *systemd*:
+
+```
+$ journalctl -fp err
+
+```
+
 **2.** Хорошо, мы обнаружили проблему в службе `systemd-modules-load` и хотим узнать больше:
 
  `$ systemctl status systemd-modules-load` 
 ```
 systemd-modules-load.service - Load Kernel Modules
    Loaded: loaded (/usr/lib/systemd/system/systemd-modules-load.service; static)
-   Active: **failed** (Result: exit-code) since So 2013-08-25 11:48:13 CEST; 32s ago
+   Active: **failed** (Result: exit-code) since Sun 2013-08-25 11:48:13 MSK; 32s ago
      Docs: man:systemd-modules-load.service(8).
            man:modules-load.d(5)
   Process: **15630** ExecStart=/usr/lib/systemd/systemd-modules-load (**code=exited, status=1/FAILURE**)
@@ -597,30 +583,30 @@ systemd-modules-load.service - Load Kernel Modules
 
 Если вы не увидите в списке `Process ID`, просто перезапустите службу при помощи команды `systemctl restart systemd-modules-load`
 
-**3.** Теперь у нас есть id процесса (PID) для более детального изучения ошибки. Введите следующую команду с правильным `Process ID` (в данном примере это 15630):
+**3.** Теперь у нас есть id процесса (PID) для более детального изучения ошибки. Введём следующую команду с правильным `Process ID` (в данном примере это 15630):
 
  `$ journalctl _PID=15630` 
 ```
--- Logs begin at Sa 2013-05-25 10:31:12 CEST, end at So 2013-08-25 11:51:17 CEST. --
-Aug 25 11:48:13 mypc systemd-modules-load[15630]: **Failed to find module 'blacklist usblp'**
-Aug 25 11:48:13 mypc systemd-modules-load[15630]: **Failed to find module 'install usblp /bin/false'**
+-- Logs begin at Sat 2013-05-25 10:31:12 MSK, end at Sun 2013-08-25 11:51:17 MSK. --
+авг 25 11:48:13 mypc systemd-modules-load[15630]: **Failed to find module 'blacklist usblp'**
+авг 25 11:48:13 mypc systemd-modules-load[15630]: **Failed to find module 'install usblp /bin/false'**
 ```
 
-**4.** Мы видим, что некоторые конфигурационные файлы модулей ядра имеют неверные настройки. В этом случае мы взглянем на эти настройки в каталоге `/etc/modules-load.d/`:
+**4.** Мы видим, что некоторые конфигурационные файлы модулей ядра имеют неверные настройки. В этом случае взглянем на эти настройки в каталоге `/etc/modules-load.d/`:
 
  `$ ls -Al /etc/modules-load.d/` 
 ```
 ...
--rw-r--r--   1 root root    79  1\. Dez 2012  blacklist.conf
--rw-r--r--   1 root root     1  2\. Mär 14:30 encrypt.conf
--rw-r--r--   1 root root     3  5\. Dez 2012  printing.conf
--rw-r--r--   1 root root     6 14\. Jul 11:01 realtek.conf
--rw-r--r--   1 root root    65  2\. Jun 23:01 virtualbox.conf
+-rw-r--r--   1 root root    79  1\. дек  2012 blacklist.conf
+-rw-r--r--   1 root root     1  2\. мар 14:30 encrypt.conf
+-rw-r--r--   1 root root     3  5\. дек  2012 printing.conf
+-rw-r--r--   1 root root     6 14\. июл 11:01 realtek.conf
+-rw-r--r--   1 root root    65  2\. июн 23:01 virtualbox.conf
 ...
 
 ```
 
-**5.** Сообщение об ошибке `Failed to find module 'blacklist usblp'` должно относиться к неправильной настройке в файле `blacklist.conf`. Давайте закомментируем настройку, вставив хэш-символ **#** перед каждой опцией, найденной на шаге 3:
+**5.** Сообщение об ошибке `Failed to find module 'blacklist usblp'` должно относиться к неправильной настройке в файле `blacklist.conf`. Давайте закомментируем настройку, вставив символ **#** перед каждой опцией, найденной на шаге 3:
 
  `/etc/modules-load.d/blacklist.conf` 
 ```
@@ -629,26 +615,26 @@ Aug 25 11:48:13 mypc systemd-modules-load[15630]: **Failed to find module 'insta
 
 ```
 
-**6.** Теперь попробуйте запустить `systemd-modules-load`:
+**6.** Теперь попробуем запустить `systemd-modules-load`:
 
 ```
 $ systemctl start systemd-modules-load
 
 ```
 
-Если все прошло успешно, ничего не отобразится. Если же вы видите какие-либо ошибки, вернитесь к шагу 3 и используйте новый PID для устранения оставшихся ошибок.
+Если всё прошло успешно, ничего не отобразится. Если же вы видите какие-либо ошибки, вернитесь к шагу 3 и используйте новый PID для устранения оставшихся ошибок.
 
-Если все хорошо, вы можете удостовериться, что служба успешно запустилась, при помощи команды:
+Если всё хорошо, можно удостовериться, что служба успешно запустилась, при помощи команды:
 
  `$ systemctl status systemd-modules-load` 
 ```
 systemd-modules-load.service - Load Kernel Modules
    Loaded: **loaded** (/usr/lib/systemd/system/systemd-modules-load.service; static)
-   Active: **active (exited)** since So 2013-08-25 12:22:31 CEST; 34s ago
+   Active: **active (exited)** since Sun 2013-08-25 12:22:31 MSK; 34s ago
      Docs: man:systemd-modules-load.service(8)
            man:modules-load.d(5)
  Process: 19005 ExecStart=/usr/lib/systemd/systemd-modules-load (code=exited, status=0/SUCCESS)
-Aug 25 12:22:31 mypc systemd[1]: **Started Load Kernel Modules**.
+авг 25 12:22:31 mypc systemd[1]: **Started Load Kernel Modules**.
 ```
 
 Чаще всего подобные проблемы можно решить так, как показано выше. Для дальнейшего изучения этого вопроса взгляните на раздел [#Диагностика проблем с загрузкой системы](#Диагностика_проблем_с_загрузкой_системы).
@@ -665,21 +651,23 @@ Aug 25 12:22:31 mypc systemd[1]: **Started Load Kernel Modules**.
 
 Если какая-либо служба *systemd* ведет себя не так, как ожидается, и вы хотите получить дополнительную информацию о том, что происходит, присвойте [переменной окружения](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Environment variables (Русский)") `SYSTEMD_LOG_LEVEL` значение `debug`. Например, чтобы запустить демон *systemd-networkd* в режиме отладки:
 
+Добавьте [drop-in файл](#Drop-in_файлы) для службы:
+
+```
+[Service]
+Environment=SYSTEMD_LOG_LEVEL=debug
+
+```
+
+Или, как вариант, пропишите переменную окружения вручную:
+
 ```
 # systemctl stop systemd-networkd
 # SYSTEMD_LOG_LEVEL=debug /lib/systemd/systemd-networkd
 
 ```
 
-В качестве альтернативы можно временно отредактировать файл службы для получения подробного вывода. Например:
-
- `/usr/lib/systemd/system/systemd-networkd.service` 
-```
-[Service]
-...
-Environment=SYSTEMD_LOG_LEVEL=debug
-....
-```
+После этого следите за [журналом](/index.php/Systemd/Journal_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd/Journal (Русский)") службы с помощью опции `-f`/`--follow`.
 
 Если вы знаете, что в дальнейшем вам по-прежнему будет нужна эта отладочная информация, добавьте переменную [обычным](#Редактирование_предоставленных_пакетами_файлов_юнитов) способом.
 
@@ -689,7 +677,7 @@ Environment=SYSTEMD_LOG_LEVEL=debug
 
 ### По-видимому, процессы с кратким сроком жизни не оставляют записей в логах
 
-Если команда `journalctl -u foounit` не показывает вывода для службы с коротким сроком жизни, вместо нее обратитесь к PID. Например, если загрузка службы `systemd-modules-load.service` завершилась неудачно и команда `systemctl status systemd-modules-load` показывает, что она была запущена с PID 123, то вы сможете посмотреть вывод процесса в журнале под данным PID, то есть командой `journalctl -b _PID=123`. Такие поля метаданных для журнала, как `_SYSTEMD_UNIT` и `_COMM`, собираются асинхронно и зависят от директории `/proc` в случае с действующими процессами. Исправление этой ситуации требует внесения исправлений в ядро для обеспечения предоставления этих данных через сокет, наподобие `SCM_CREDENTIALS`.
+Если команда `journalctl -u foounit` не показывает вывода для службы с коротким сроком жизни, вместо нее обратитесь к PID. Например, если загрузка службы `systemd-modules-load.service` завершилась неудачно и команда `systemctl status systemd-modules-load` показывает, что она была запущена с PID 123, то вы сможете посмотреть вывод процесса в журнале под данным PID, то есть командой `journalctl -b _PID=123`. Такие поля метаданных для журнала, как `_SYSTEMD_UNIT` и `_COMM`, собираются асинхронно и зависят от директории `/proc` в случае с действующими процессами. Исправление этой ситуации требует внесения исправлений в ядро для обеспечения предоставления этих данных через сокет, наподобие `SCM_CREDENTIALS`. В общем, [это баг](https://github.com/systemd/systemd/issues/2913). Имейте в виду, что быстро падающие службы могут ничего не отпечатать в журнале as per design of systemd.
 
 ### Отключение журналирования аварийных дампов памяти приложений
 
@@ -731,24 +719,38 @@ Storage=none
 
 Смотрите инструкцию [Access Control Lists (Русский)#Включение ACL](/index.php/Access_Control_Lists_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Включение_ACL "Access Control Lists (Русский)") для включения ACL на файловой системе в которой `/var/log/journal`.
 
+### Версия systemd, отображаемая при загрузке, не совпадает с версией пакета
+
+Вам нужно [пересоздать initramfs](/index.php/Mkinitcpio_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Создание_загрузочного_образа "Mkinitcpio (Русский)"), после чего версии должны совпасть.
+
+**Tip:** Можно использовать pacman hook для автоматического пересоздания initramfs после каждого обновления [systemd](https://www.archlinux.org/packages/?name=systemd). См. [эту тему форума](https://bbs.archlinux.org/viewtopic.php?id=215411) и [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman").
+
+### Отключение emergency mode на удалённой машине
+
+Вам может понадобиться отключить emergency mode на удалённой машине, например на виртуальных машинах Azure или Google Cloud. Это связано с тем, что в случае ухода системы в emergency mode она отключится от сети и лишит вас возможности подключения к ней.
+
+```
+# systemctl mask emergency.service
+# systemctl mask emergency.target
+
+```
+
 ## Смотрите также
 
 *   [Systemd для администраторов (Рус.)](http://wiki.opennet.ru/Systemd)
 *   [systemd для администраторов (PDF)](http://www2.kangran.su/%7Ennz/pub/s4a/s4a_latest.pdf) - перевод [цикла статей](http://0pointer.de/blog/projects) Леннарта Поттеринга (Lennart Poettering)
-*   [Официальный веб-сайт (англ.)](http://www.freedesktop.org/wiki/Software/systemd)
 *   [Статья в Википедии](https://en.wikipedia.org/wiki/ru:Systemd "wikipedia:ru:Systemd")
-*   [Страницы справочных руководств (англ.)](http://0pointer.de/public/systemd-man/)
-*   [Оптимизации systemd (англ.)](http://freedesktop.org/wiki/Software/systemd/Optimizations)
-*   [FAQ (англ.)](http://www.freedesktop.org/wiki/Software/systemd/FrequentlyAskedQuestions)
-*   [Советы и трюки (англ.)](http://www.freedesktop.org/wiki/Software/systemd/TipsAndTricks)
-*   [О systemd в Fedora Project (англ.)](http://fedoraproject.org/wiki/Systemd)
-*   [Отладка проблем systemd (англ.)](http://fedoraproject.org/wiki/How_to_debug_Systemd_problems)
+*   [Официальный веб-сайт (англ.)](http://www.freedesktop.org/wiki/Software/systemd)
+    *   [Оптимизации systemd](https://www.freedesktop.org/wiki/Software/systemd/Optimizations)
+    *   [systemd FAQ](https://www.freedesktop.org/wiki/Software/systemd/FrequentlyAskedQuestions)
+    *   [systemd Советы и трюки](https://www.freedesktop.org/wiki/Software/systemd/TipsAndTricks)
+*   [Страницы справочных руководств (англ.)](https://www.freedesktop.org/software/systemd/man/)
+*   Другие дистрибутивы
+    *   [Страница systemd в Gentoo Wiki](https://wiki.gentoo.org/wiki/Systemd/ru)
+    *   [О systemd в Fedora Project (англ.)](https://fedoraproject.org/wiki/Systemd)
+    *   [Fedora Project - Отладка проблем systemd (англ.)](https://fedoraproject.org/wiki/How_to_debug_Systemd_problems)
+    *   [Шпаргалка Fedora по переходу с SysVinit на systemd](https://fedoraproject.org/wiki/SysVinit_to_Systemd_Cheatsheet/ru)
+    *   [Страница systemd в Debian Wiki](https://wiki.debian.org/ru/Systemd "debian:ru/Systemd")
+*   [Блог Lennart'а (англ.)](http://0pointer.de/blog/projects/systemd.html), [update 1](http://0pointer.de/blog/projects/systemd-update.html), [update 2](http://0pointer.de/blog/projects/systemd-update-2.html), [update 3](http://0pointer.de/blog/projects/systemd-update-3.html), [Why systemd?](http://0pointer.de/blog/projects/why.html)
+*   [Emacs Syntax highlighting for Systemd files (англ.)](/index.php/Emacs#Syntax_highlighting_for_systemd_Files "Emacs")
 *   [часть 1](http://www.h-online.com/open/features/Control-Centre-The-systemd-Linux-init-system-1565543.html) и [часть 2](http://www.h-online.com/open/features/Booting-up-Tools-and-tips-for-systemd-1570630.html) вводной статьи в журнале *The H Open* (англ.)
-*   [Блог Lennart'а (англ.)](http://0pointer.de/blog/projects/systemd.html)
-*   [Status update (англ.)](http://0pointer.de/blog/projects/systemd-update.html)
-*   [Status update2 (англ.)](http://0pointer.de/blog/projects/systemd-update-2.html)
-*   [Status update3 (англ.)](http://0pointer.de/blog/projects/systemd-update-3.html)
-*   [Самые последние изменения (англ.)](http://0pointer.de/blog/projects/why.html)
-*   [Шпаргалка Fedora по переходу с SysVinit на systemd](http://fedoraproject.org/wiki/SysVinit_to_Systemd_Cheatsheet/ru)
-*   [Статья systemd в Gentoo Wiki (англ.)](http://wiki.gentoo.org/wiki/Systemd)
-*   [Emacs Syntax highlighting for Systemd files](/index.php/Emacs#Syntax_highlighting_for_systemd_Files "Emacs")

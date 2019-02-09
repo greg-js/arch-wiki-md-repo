@@ -18,11 +18,12 @@ This article describes how to install Arch Linux on a Chromebook in a container 
 *   [1 Introduction](#Introduction)
     *   [1.1 Enabling Linux support](#Enabling_Linux_support)
     *   [1.2 Replacing the default Debian Linux container with Arch Linux](#Replacing_the_default_Debian_Linux_container_with_Arch_Linux)
-*   [2 Known issues](#Known_issues)
-*   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Network not working on Pixelbook](#Network_not_working_on_Pixelbook)
-    *   [3.2 DNS resolution not working](#DNS_resolution_not_working)
-    *   [3.3 App not opening in chrome OS (infinite spinner)](#App_not_opening_in_chrome_OS_(infinite_spinner))
+*   [2 Troubleshooting](#Troubleshooting)
+    *   [2.1 Network not working on Pixelbook](#Network_not_working_on_Pixelbook)
+    *   [2.2 DNS resolution not working](#DNS_resolution_not_working)
+    *   [2.3 App not opening in chrome OS (infinite spinner)](#App_not_opening_in_chrome_OS_(infinite_spinner))
+    *   [2.4 Steam / OpenGL / GLX not working](#Steam_/_OpenGL_/_GLX_not_working)
+    *   [2.5 App that requires sound card not working](#App_that_requires_sound_card_not_working)
 
 ## Introduction
 
@@ -104,18 +105,6 @@ $ systemctl --user status sommelier-x@0
 
 Now, when apps are installed in Arch Linux, they will automatically show up and can be launched from ChromeOS. Note that while GUI apps work, rendering is still software, with no OpenGL support yet.
 
-## Known issues
-
-Tested, working (2018-11-24)
-
-*   Pycharm
-
-Tested, not working (2018-11-24 - no hardware acceleration, audio)
-
-*   Gnome (No OpenGL)
-*   glxgears (No OpenGL)
-*   Audacity (No recording devices)
-
 ## Troubleshooting
 
 ### Network not working on Pixelbook
@@ -149,3 +138,34 @@ lxc start penguin
 ```
 
 Instead of using an lxc console session, I use a regular Linux terminal GUI launched from ChomeOS that prevents this issue.
+
+### Steam / OpenGL / GLX not working
+
+I found that Steam / OpenGL / GLX don't work out of the box because the Arch install is different. The issue has to do with sommelier-x. The original crostini [cros-container-guest-tools installer](https://chromium.googlesource.com/chromiumos/containers/cros-container-guest-tools/+/master/cros-sommelier-config/postinst) copies the crostini supplied swrast_dri.so to /usr/lib64/dri/ because "mesa always looks at that path" instead of the version of swrast_dri.so supplied with crostini. This line installing swrast_dri.so is not part of the Arch linux installer, and thus OpenGL apps via X11 do not function. Further, on Arch copying this library over in needed for sommelier-x to work with GLX, allowing steam to work, but glxgears/glxinfo need the default mesa-distributed swrast_dri.so. I've been able to get steam & glxgears with the right combination of libraries by running the below commands each time Arch starts up.
+
+```
+ $ glxgears
+ Error: couldn't get an RGB, Double-buffered visual
+
+ $ sudo cp /usr/lib64/dri/swrast_dri.so /usr/lib64/dri/swrast_dri.so.backup
+ $ sudo cp /opt/google/cros-containers/lib/swrast_dri.so /usr/lib64/dri/swrast_dri.so
+ $ systemctl --user restart sommelier-x@0.service
+
+ $ glxinfo
+ Segmentation fault (core dumped)
+ $ # But Steam works at this point
+
+ $ sudo cp /usr/lib64/dri/swrast_dri.so.backup /usr/lib64/dri/swrast_dri.so
+
+ $ glxgears
+ SUCCESS
+
+ $ # But after a few minutes sommelier-x reloads the mesa version and fails.
+
+```
+
+To get steam working I had to replace /usr/lib64/dri/swrast_dri.so with the cros-containers version. This works permanently. I haven't been able to find a way to keep glxgears/glxinfo working permanently.
+
+### App that requires sound card not working
+
+Crostini does not yet support sound. However, a dummy sound card can be created by installing and running pulseaudio that allows apps that require a sound card to run.

@@ -24,7 +24,7 @@ For general help on the install preocedure see the [Installation guide](/index.p
     *   [2.2 Running the Arch Installation](#Running_the_Arch_Installation)
         *   [2.2.1 Sample partition layout](#Sample_partition_layout)
         *   [2.2.2 Install Bootloader](#Install_Bootloader)
-        *   [2.2.3 Note about Macbook Pro 9,1 and 9,2](#Note_about_Macbook_Pro_9.2C1_and_9.2C2)
+        *   [2.2.3 Note about Macbook Pro 9,1 and 9,2](#Note_about_Macbook_Pro_9,1_and_9,2)
         *   [2.2.4 rEFInd](#rEFInd)
 *   [3 Post Installation](#Post_Installation)
     *   [3.1 SD Card Reader](#SD_Card_Reader)
@@ -34,7 +34,7 @@ For general help on the install preocedure see the [Installation guide](/index.p
         *   [3.4.1 Wireless Flakiness](#Wireless_Flakiness)
         *   [3.4.2 Keyboard Backlight](#Keyboard_Backlight)
     *   [3.5 Xorg](#Xorg)
-*   [4 Bells & Whistles](#Bells_.26_Whistles)
+*   [4 Bells & Whistles](#Bells_&_Whistles)
     *   [4.1 Emulating OSX Touchpad Gestures](#Emulating_OSX_Touchpad_Gestures)
         *   [4.1.1 Using synclient](#Using_synclient)
         *   [4.1.2 Using Touchegg](#Using_Touchegg)
@@ -185,7 +185,7 @@ In order to be able to access a OSX user's directory, only the uid and gid need 
 
 ### Wireless
 
-Macbooks 8,1 to 9,2 (and possibly newer) use BCM4331 for Wifi. See [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") for details.
+Macbooks 8,1 to 9,2 (and possibly newer) use BCM4331 for Wifi. See [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") for details. The Mac Mini 5.1 Also uses the Broadcom BCM4331 Wi-Fi Chip.
 
 ### Inverting FN keys
 

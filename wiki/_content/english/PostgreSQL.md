@@ -20,7 +20,8 @@ Related articles
     *   [5.6 Change default encoding of new databases to UTF-8](#Change_default_encoding_of_new_databases_to_UTF-8)
 *   [6 Graphical tools](#Graphical_tools)
 *   [7 Upgrading PostgreSQL](#Upgrading_PostgreSQL)
-    *   [7.1 Manual dump and reload](#Manual_dump_and_reload)
+    *   [7.1 pg_upgrade](#pg_upgrade)
+    *   [7.2 Manual dump and reload](#Manual_dump_and_reload)
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 Improve performance of small transactions](#Improve_performance_of_small_transactions)
     *   [8.2 Prevent disk writes when idle](#Prevent_disk_writes_when_idle)
@@ -415,6 +416,8 @@ IgnorePkg = postgresql*
 This will ensure you do not accidentally upgrade the database to an incompatible version. When an upgrade is available, pacman will notify you that it is skipping the upgrade because of the entry in `pacman.conf`. Minor version upgrades are safe to perform. However, if you do an accidental upgrade to a different major version, you might not be able to access any of your data. Always check the [PostgreSQL home page](https://www.postgresql.org/) to be sure of what steps are required for each upgrade. For a bit about why this is the case, see the [versioning policy](https://www.postgresql.org/support/versioning).
 
 There are two main ways to upgrade your PostgreSQL database. Read the official documentation for details.
+
+### pg_upgrade
 
 For those wishing to use `pg_upgrade`, a [postgresql-old-upgrade](https://www.archlinux.org/packages/?name=postgresql-old-upgrade) package is available that will always run one major version behind the real PostgreSQL package. This can be installed side-by-side with the new version of PostgreSQL. To upgrade from older versions of PostgreSQL there are AUR packages available: [postgresql-96-upgrade](https://aur.archlinux.org/packages/postgresql-96-upgrade/), [postgresql-95-upgrade](https://aur.archlinux.org/packages/postgresql-95-upgrade/), [postgresql-94-upgrade](https://aur.archlinux.org/packages/postgresql-94-upgrade/), [postgresql-93-upgrade](https://aur.archlinux.org/packages/postgresql-93-upgrade/), [postgresql-92-upgrade](https://aur.archlinux.org/packages/postgresql-92-upgrade/).
 

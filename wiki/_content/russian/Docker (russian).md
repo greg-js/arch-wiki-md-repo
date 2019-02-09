@@ -26,12 +26,14 @@
     *   [3.1 Arch Linux](#Arch_Linux)
     *   [3.2 Debian](#Debian)
         *   [3.2.1 Создание образа вручную](#Создание_образа_вручную)
-*   [4 Docker 0.9.0 — 1.2.x и LXC](#Docker_0.9.0_—_1.2.x_и_LXC)
-*   [5 Skype](#Skype)
-*   [6 Сборка образа i686](#Сборка_образа_i686)
-    *   [6.1 Образ ArchLinux](#Образ_ArchLinux)
-    *   [6.2 Образ Debian](#Образ_Debian)
-*   [7 Смотрите также](#Смотрите_также)
+*   [4 Удаление Docker и образов](#Удаление_Docker_и_образов)
+*   [5 Useful tips](#Useful_tips)
+*   [6 Docker 0.9.0 — 1.2.x и LXC](#Docker_0.9.0_—_1.2.x_и_LXC)
+*   [7 Skype](#Skype)
+*   [8 Сборка образа i686](#Сборка_образа_i686)
+    *   [8.1 Образ ArchLinux](#Образ_ArchLinux)
+    *   [8.2 Образ Debian](#Образ_Debian)
+*   [9 Смотрите также](#Смотрите_также)
 
 ## Установка
 
@@ -237,6 +239,86 @@ $ git clone [https://github.com/archlinux/archlinux-docker.git](https://github.c
 # tar cpf - . | docker import - debian
 # docker run -t -i --rm debian /bin/bash
 
+```
+
+## Удаление Docker и образов
+
+Если вы хотите полностью удалить Docker, вам следует выполнить следующие шаги:
+
+**Примечание:** Не копируйте бездумно эти команды, не убедившись, что вы знаете, что делаете.
+
+Выдать список работающих контейнеров:
+
+```
+# docker ps
+
+```
+
+Выдать список всех контейнеров, запущенных на хосте для удаления:
+
+```
+# docker ps -a
+
+```
+
+Остановить работающий контейнер:
+
+```
+# docker stop <CONTAINER ID>
+
+```
+
+Выполнить команду kill для всё ещё работающих контейнеров:
+
+```
+# docker kill <CONTAINER ID>
+
+```
+
+Удалить все контейнеры, перечисленные по ID:
+
+```
+# docker rm <CONTAINER ID>
+
+```
+
+Выдать список всех образов Docker:
+
+```
+# docker images
+
+```
+
+Удалить все образы Docker по ID:
+
+```
+# docker rmi <IMAGE ID>
+
+```
+
+Удалить все данные Docker (очистить каталог):
+
+```
+# rm -R /var/lib/docker
+
+```
+
+## Useful tips
+
+To grab the IP address of a running container:
+
+ `$ docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <container-name OR id> `  `172.17.0.37` 
+
+For each running container, the name and corresponding IP address can be listed for use in `/etc/hosts`:
+
+```
+#!/usr/bin/env sh
+for ID in $(docker ps -q | awk '{print $1}'); do
+    IP=$(docker inspect --format="{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}" "$ID")
+    NAME=$(docker ps | grep "$ID" | awk '{print $NF}')
+    printf "%s %s
+" "$IP" "$NAME"
+done
 ```
 
 ## Docker 0.9.0 — 1.2.x и LXC

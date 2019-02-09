@@ -203,7 +203,7 @@ Storage=volatile
 RuntimeMaxUse=30M
 ```
 
-*   要在web浏览器或者其他应用没有写入关键数据时停用`fsync`和相关的系统调用,可以使用来自[libeatmydata](https://aur.archlinux.org/packages/libeatmydata/)的*eatmydata*来避免过多的系统调用:
+*   要在web浏览器或者其他应用没有写入关键数据时停用`fsync`和相关的系统调用,可以使用来自[libeatmydata](https://www.archlinux.org/packages/?name=libeatmydata)的*eatmydata*来避免过多的系统调用:
 
 ```
 $ eatmydata firefox

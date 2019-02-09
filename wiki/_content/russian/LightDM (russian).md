@@ -54,6 +54,8 @@
 
 ## Установка
 
+**[LightDM 1:1.28.0-2 имеет ошибки](https://bugs.archlinux.org/task/61654)** - не используйте конкретно эту версию пакета.
+
 [Установите](/index.php/Install "Install") [lightdm](https://www.archlinux.org/packages/?name=lightdm). Обратите внимание, что чётные выпуски являются стабильными (1.8, 1.10), а разрабатываемые релизы, - нечётными (1.9, 1.11). Разрабатываемые релизы доступны в [lightdm-devel](https://aur.archlinux.org/packages/lightdm-devel/). Также доступен [lightdm-bzr](https://aur.archlinux.org/packages/lightdm-bzr/).
 
 ### Greeter (Экран приветствия/входа в систему)

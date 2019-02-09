@@ -93,7 +93,7 @@ An important distinction of *LUKS* to note at this point is that the key is used
 
 *Cryptsetup* supports different encryption operating modes to use with *dm-crypt*:
 
-*   `--type luks` for using the default LUKS format version (currently LUKS1),
+*   `--type luks` for using the default LUKS format version (LUKS1 with [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) < 2.1.0, LUKS2 with [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) ≥ 2.1.0),
 *   `--type luks1` for using LUKS1, the most common version of LUKS,
 *   `--type luks2` for using LUKS2, the latest available version of LUKS that allows additional extensions,
 *   `--type plain` for using dm-crypt plain mode,

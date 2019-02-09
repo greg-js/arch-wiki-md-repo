@@ -29,7 +29,7 @@ It should support as much hardware as vesafb.
     *   [4.3 The Hooks Array](#The_Hooks_Array)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Uvesafb cannot reserve memory](#Uvesafb_cannot_reserve_memory)
-    *   [5.2 Error: "pci_root PNP0A08:00 address space collision + Uvesafb cannot reserve memory"](#Error:_.22pci_root_PNP0A08:00_address_space_collision_.2B_Uvesafb_cannot_reserve_memory.22)
+    *   [5.2 Error: "pci_root PNP0A08:00 address space collision + Uvesafb cannot reserve memory"](#Error:_"pci_root_PNP0A08:00_address_space_collision_+_Uvesafb_cannot_reserve_memory")
 *   [6 See also](#See_also)
 
 ## Installation
@@ -209,4 +209,4 @@ pci=nocrs
 
 *   [Uvesafb Kernel Page](https://www.kernel.org/doc/Documentation/fb/uvesafb.txt)
 *   [Gentoo's uvesafb Page](http://dev.gentoo.org/~spock/projects/uvesafb)
-*   [VESA mode numbers](http://infosnews.5cz.de/VESA_BIOS_Extensions.html#VBE_mode_numbers)
+*   [VESA mode numbers](https://en.wikipedia.org/wiki/VESA_BIOS_Extensions#VBE_mode_numbers "wikipedia:VESA BIOS Extensions")

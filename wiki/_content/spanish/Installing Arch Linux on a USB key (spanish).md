@@ -168,7 +168,7 @@ Storage=volatile
 RuntimeMaxUse=30M
 ```
 
-*   Para desactivar `fsync` y las llamadas al sistema relacionadas en los navegadores web y otras aplicaciones que no escriben datos esenciales, use la orden *eatmydata* de [libeatmydata](https://aur.archlinux.org/packages/libeatmydata/) para evitar tales llamadas al sistema:
+*   Para desactivar `fsync` y las llamadas al sistema relacionadas en los navegadores web y otras aplicaciones que no escriben datos esenciales, use la orden *eatmydata* de [libeatmydata](https://www.archlinux.org/packages/?name=libeatmydata) para evitar tales llamadas al sistema:
 
 ```
 $ eatmydata firefox

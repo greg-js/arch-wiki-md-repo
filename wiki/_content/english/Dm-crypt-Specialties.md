@@ -508,8 +508,8 @@ By using a detached header the encrypted blockdevice itself only carries encrypt
 See [dm-crypt/Device encryption#Encryption options for LUKS mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") for encryption options before performing the first step to setup the encrypted system partition and creating a header file to use with `cryptsetup`:
 
 ```
-# dd if=/dev/zero of=header.img bs=4M count=1
-# cryptsetup luksFormat --type luks2 /dev/sdX --align-payload 8192 --header header.img
+# dd if=/dev/zero of=header.img bs=16M count=1
+# cryptsetup luksFormat --type luks2 /dev/sdX --align-payload 32768 --header header.img
 
 ```
 

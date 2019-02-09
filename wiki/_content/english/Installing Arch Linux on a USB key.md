@@ -145,7 +145,7 @@ Storage=volatile
 RuntimeMaxUse=30M
 ```
 
-*   To disable `fsync` and related system calls in web browsers and other applications that do not write essential data, use the *eatmydata* command from [libeatmydata](https://aur.archlinux.org/packages/libeatmydata/) to avoid such system calls:
+*   To disable `fsync` and related system calls in web browsers and other applications that do not write essential data, use the *eatmydata* command from [libeatmydata](https://www.archlinux.org/packages/?name=libeatmydata) to avoid such system calls:
 
 ```
 $ eatmydata firefox

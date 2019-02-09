@@ -20,7 +20,10 @@ IWD can work in standalone mode or in combination with comprehensive network man
     *   [4.1 Disable auto-connect for a particular network](#Disable_auto-connect_for_a_particular_network)
     *   [4.2 Disable periodic scan for available networks](#Disable_periodic_scan_for_available_networks)
     *   [4.3 Deny console (local) user from modifying the settings](#Deny_console_(local)_user_from_modifying_the_settings)
-*   [5 See also](#See_also)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Connect issues after reboot](#Connect_issues_after_reboot)
+    *   [5.2 iwctl reject passphrase](#iwctl_reject_passphrase)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -163,28 +166,7 @@ Example configuration files for these network types can be found in subdirectori
 
 File `/etc/iwd/main.conf` can be used for main configuration.
 
-By default, `iwd` stores the network configuration in `/var/lib/iwd` directory. The configuration file is named as `*network*.*type*` where *network* is network SSID and *type* is network type i.e. one of "open", "wep", "psk", "8021x". The file is used to store the encrypted `PreSharedKey` and optionally the cleartext `Passphrase` and can be created by the user without invoking `iwctl`. The file can also be used for other configuration pertaining to that network SSID.
-
-A minimal example file to connect to a WPA2/PSK secured network with SSID "spaceship" and passphrase "test1234":
-
- `/var/lib/iwd/spaceship.psk` 
-```
-[Security]
-PreSharedKey=aafb192ce2da24d8c7805c956136f45dd612103f086034c402ed266355297295
-```
-
-The PreSharedKey can be calculated with wpa_passphrase from the SSID and the WIFI passphrase:
-
- `$ wpa_passphrase "spaceship" "test1234"` 
-```
-network={
-        ssid="spaceship"
-        #psk="test1234"
-        psk=aafb192ce2da24d8c7805c956136f45dd612103f086034c402ed266355297295
-}
-```
-
-**Note:** The SSID of the network is used as a filename only when it contains only alphanumeric characters or one of `- _`. If it contains any other characters, the name will instead be an `=`-character followed by the hex-encoded version of the SSID.
+By default, `iwd` stores the network configuration in `/var/lib/iwd` directory. The configuration file is named as `*network*.*type*` where *network* is network SSID and *type* is network type i.e. one of "open", "wep", "psk", "8021x". The file is used to store the encrypted `PreSharedKey` and optionally the cleartext `Passphrase` and can be created by the user without invoking `iwctl`.
 
 ### Disable auto-connect for a particular network
 
@@ -241,6 +223,35 @@ If you do not want to allow console user to modify the settings but allow readin
 ```
 
 **Tip:** Remove *<allow>* lines above to deny reading the status information as well.
+
+## Troubleshooting
+
+### Connect issues after reboot
+
+A low entropy pool can cause connection problems in particular noticeable after reboot. See [Random number generation](/index.php/Random_number_generation "Random number generation") for suggestions to increase the entropy pool.
+
+### iwctl reject passphrase
+
+In case interactive iwctl rejects your passphrase (e.g. with special chars) for connecting to a network, you can create the configuration file manually. A minimal example file to connect to a WPA2/PSK secured network with SSID "spaceship" and passphrase "test1234":
+
+ `/var/lib/iwd/spaceship.psk` 
+```
+[Security]
+PreSharedKey=aafb192ce2da24d8c7805c956136f45dd612103f086034c402ed266355297295
+```
+
+The PreSharedKey can be calculated with *wpa_passphrase* ([wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) package) from the SSID and the WIFI passphrase:
+
+ `$ wpa_passphrase "spaceship" "test1234"` 
+```
+network={
+        ssid="spaceship"
+        #psk="test1234"
+        psk=aafb192ce2da24d8c7805c956136f45dd612103f086034c402ed266355297295
+}
+```
+
+**Note:** The SSID of the network is used as a filename only when it contains only alphanumeric characters or one of `- _`. If it contains any other characters, the name will instead be an `=`-character followed by the hex-encoded version of the SSID.
 
 ## See also
 

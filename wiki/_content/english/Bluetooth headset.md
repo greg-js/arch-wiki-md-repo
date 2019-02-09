@@ -809,7 +809,7 @@ Possible solutions:
 
 *   For some headsets, using the headset's volume or play/pause controls while connected can trigger the A2DP profile to become available.
 
-*   It is possible that connecting to a headset via `bluetoothctl` from [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils) will make the A2DP sink profile available.
+*   It is possible that connecting to a headset via `bluetoothctl` from [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils) will make the A2DP sink profile available. There is an automation for this every time a bluetooth device is connected: [fix-bt-a2dp](https://aur.archlinux.org/packages/fix-bt-a2dp/)
 
 ```
 [bluetooth]# connect *[headset MAC here]*

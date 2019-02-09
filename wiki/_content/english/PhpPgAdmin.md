@@ -89,7 +89,7 @@ Restart lighttpd and browse to [http://localhost/phppgadmin/index.php](http://lo
 
 Make sure to set up [nginx#FastCGI](/index.php/Nginx#FastCGI "Nginx") with separate configuration file for PHP as shown in [nginx#PHP configuration file](/index.php/Nginx#PHP_configuration_file "Nginx").
 
-Using this method, you will access PhpPgAdmin as `phpmyadmin.<domain>`.
+Using this method, you will access PhpPgAdmin as `phppgadmin.<domain>`.
 
 You can setup a sub domain (or domain) with a server block such as:
 
