@@ -2,7 +2,11 @@ Related articles
 
 *   [Archiso_offline](/index.php/Archiso_offline "Archiso offline")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Normal Method: Pacman](#Normal_Method:_Pacman)
     *   [1.1 A simple example](#A_simple_example)

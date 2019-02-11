@@ -7,7 +7,11 @@ Related articles
 
 This article covers the [radeon](https://wiki.freedesktop.org/xorg/radeon/) open source driver which supports the majority of AMD (previously ATI) GPUs.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Selecting the right driver](#Selecting_the_right_driver)
 *   [2 Installation](#Installation)

@@ -4,7 +4,11 @@ Ze [strony GTK+](http://www.gtk.org):
 
 GTK+, GIMP Toolkit, został stworzony przez [GNU Project](/index.php/GNU_Project "GNU Project") dla [GIMPa](/index.php/GIMP "GIMP"), ale obecnie jest bardzo popularnym zestawem narzędzi z bindingami dla wielu języków. W tym artykule omówimy narzędzia używane do konfigurowania motywu, stylu, ikony, czcionki i rozmiaru czcionki GTK+, a także ręcznej konfiguracji szczegółów.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalacja](#Instalacja)
 *   [2 Motywy](#Motywy)

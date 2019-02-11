@@ -12,7 +12,11 @@ Artículos relacionados
 
 Este artículo tiene como objetivo ayudar a los usuarios a crear sus propios paquetes utilizando el [sistema de compilación](/index.php/Arch_Build_System "Arch Build System") de Arch Linux, asi como subirlos en [AUR](/index.php/AUR "AUR"). Cubre la creación de un [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") - un archivo de descripción de compilación de paquetes originado por `makepkg` para crear un paquete binario desde los archivos fuentes. Si ya está posee un archivo `PKGBUILD`, vea [makepkg](/index.php/Makepkg "Makepkg"). Para obtener instrucciones sobre las normas existentes y las formas de mejorar la calidad del paquete, consulte [Arch packaging standards](/index.php/Arch_packaging_standards "Arch packaging standards")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Resumen](#Resumen)
     *   [1.1 Metapaquetes y grupos](#Metapaquetes_y_grupos)

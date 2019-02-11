@@ -5,7 +5,11 @@ Related articles
 
 *xrandr* is an official configuration utility to the [RandR](https://en.wikipedia.org/wiki/RandR "wikipedia:RandR") (*Resize and Rotate*) [X Window System](https://en.wikipedia.org/wiki/X_Window_System "wikipedia:X Window System") extension. It can be used to set the size, orientation or reflection of the outputs for a screen. For configuring multiple monitors see the [Multihead](/index.php/Multihead "Multihead") page.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Graphical front-ends](#Graphical_front-ends)

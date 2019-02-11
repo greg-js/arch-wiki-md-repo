@@ -2,7 +2,11 @@ From the project [home page](http://www.webmin.com/):
 
 	Webmin is a web-based interface for system administration for Unix. Using any modern web browser, you can setup user accounts, Apache, DNS, file sharing and much more. Webmin removes the need to manually edit Unix configuration files like `/etc/passwd`, and lets you manage a system from the console or remotely. See the [standard modules](http://www.webmin.com/standard.html) page for a list of all the functions built into Webmin, or check out the [screenshots](http://www.webmin.com/demo.html).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

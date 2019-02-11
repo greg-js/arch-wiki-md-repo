@@ -12,7 +12,11 @@ Related articles
 
 [Git](https://en.wikipedia.org/wiki/Git_(software) is the version control system (VCS) designed and developed by Linus Torvalds, the creator of the Linux kernel. Git is now used to maintain [AUR](/index.php/AUR "AUR") packages, as well as many other projects, including sources for the Linux kernel.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Graphical front-ends](#Graphical_front-ends)
@@ -531,7 +535,7 @@ In order to enable Bash completion, source `/usr/share/git/completion/git-comple
 The Git package comes with a prompt script. To enable it, source the `/usr/share/git/completion/git-prompt.sh` and set a custom prompt with the `%s` parameter:
 
 *   For [Bash](/index.php/Bash "Bash"): `PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '`
-*   For [zsh](/index.php/Zsh "Zsh"): `setopt PROMPT_SUBST ; PS1='[%n@%m %c$(__git_ps1 " (%s)")]\$ '`
+*   For [zsh](/index.php/Zsh "Zsh"): `setopt PROMPT_SUBST ; PS1='[%n@%m %c$(__git_ps1 " (%s)")]\$ '`
 
 To automate this see [Command-line shell#Configuration files](/index.php/Command-line_shell#Configuration_files "Command-line shell").
 

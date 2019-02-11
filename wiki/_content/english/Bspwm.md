@@ -5,7 +5,11 @@ Related articles
 
 [bspwm](https://github.com/baskerville/bspwm) is a tiling window manager that represents windows as the leaves of a full binary tree. bspwm supports multiple monitors and is configured and controlled through messages. [EWMH](https://standards.freedesktop.org/wm-spec/wm-spec-latest.html) is partially supported.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Starting](#Starting)

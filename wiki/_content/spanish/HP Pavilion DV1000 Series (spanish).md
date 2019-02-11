@@ -3,7 +3,11 @@ Este artículo es una traducción de [HP Pavilion DV1000 Series](/index.php/HP_P
 
 En esta página, trataré de hacer que la instalación de Arch en su HP Pavillion serie dv1000 sea lo más sencilla que pueda. Si tiene algo que añadir, contribuya con esta página por favor.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 ¿Qué funciona?](#¿Qué_funciona?)
 *   [2 ¿Qué es lo que no funciona?](#¿Qué_es_lo_que_no_funciona?)

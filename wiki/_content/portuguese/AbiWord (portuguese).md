@@ -2,7 +2,11 @@
 
 [AbiWord](http://www.abisource.com/) é um processador de texto que oferece uma alternativa mais leve para o [LibreOffice](/index.php/LibreOffice "LibreOffice") Writer e o [OpenOffice](/index.php/OpenOffice "OpenOffice") Writer, ao mesmo tempo em que fornece excelente funcionalidade. O AbiWord possui suporte a muitos tipos de documentos padrão, como documentos ODF, documentos do Microsoft Word, documentos do WordPerfect, documentos em formato Rich Text e páginas da Web em HTML.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalação](#Instalação)
 *   [2 Diretório de configuração do usuário](#Diretório_de_configuração_do_usuário)

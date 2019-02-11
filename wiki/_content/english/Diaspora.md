@@ -4,7 +4,11 @@ Related articles
 
 [Diaspora](https://www.diasporafoundation.org/) is the privacy aware, personally controlled, do-it-all, open source social network.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Prerequisites](#Prerequisites)
 *   [2 Installation](#Installation)

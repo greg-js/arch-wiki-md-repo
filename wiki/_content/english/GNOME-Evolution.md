@@ -1,6 +1,10 @@
 [Evolution](https://wiki.gnome.org/Apps/Evolution/) is an application for managing email, calendars, contacts, tasks, and notes. It is the default mail client in [GNOME](/index.php/GNOME "GNOME"). It includes support for IMAP, Microsoft Exchange Server 2007 and 2010, Novell GroupWise, [Kolab](/index.php/Kolab "Kolab"), LDAP, WebDAV, CalDAV, and many other services and protocols.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 IMAP Setup](#IMAP_Setup)
@@ -219,14 +223,14 @@ One way to change the settings is to set the variable in /usr/share/applications
 change the line:
 
 ```
-Exec=evolution %U
+Exec=evolution %U
 
 ```
 
 to something like this (in case you do not like to use ECC ciphers with NIST/NSA curves):
 
 ```
-Exec=env G_TLS_GNUTLS_PRIORITY=${G_TLS_GNUTLS_PRIORITY:-NORMAL:-ECDHE-ECDSA:-ECDHE-RSA} evolution %U
+Exec=env G_TLS_GNUTLS_PRIORITY=${G_TLS_GNUTLS_PRIORITY:-NORMAL:-ECDHE-ECDSA:-ECDHE-RSA} evolution %U
 
 ```
 

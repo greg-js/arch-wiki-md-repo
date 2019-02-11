@@ -12,7 +12,11 @@
 
 本文将介绍关于系统性能诊断的基本知识，以及优化系统性能的具体步骤。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 基础工作](#基础工作)
     *   [1.1 了解系统](#了解系统)

@@ -2,7 +2,11 @@
 
 This article describes how to set up nginx and how to optionally integrate it with [PHP](/index.php/PHP "PHP") via [#FastCGI](#FastCGI).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Running](#Running)

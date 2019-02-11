@@ -3,7 +3,11 @@ Related articles
 *   [PulseAudio](/index.php/PulseAudio "PulseAudio")
 *   [PulseAudio/Troubleshooting](/index.php/PulseAudio/Troubleshooting "PulseAudio/Troubleshooting")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Set default input source](#Set_default_input_source)
 *   [2 Set the default output source](#Set_the_default_output_source)

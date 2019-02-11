@@ -23,7 +23,11 @@ O *pacman* é escrito na linguagem de programação [C](/index.php/C "C") e usa 
 
 **Dica:** O pacote [pacman](https://www.archlinux.org/packages/?name=pacman) contém ferramentas tal como [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") e *vercmp*. Outras ferramentas úteis como o [pactree](#Pactree) e [checkupdates](/index.php/Checkupdates_(Portugu%C3%AAs) "Checkupdates (Português)") estão localizados em [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) ([anteriormente](https://git.archlinux.org/pacman.git/commit/?id=0c99eabd50752310f42ec808c8734a338122ec86) parte do pacman). Execute `pacman -Ql pacman pacman-contrib | grep -E 'bin/.+'` para ver a lista completa.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Uso](#Uso)
     *   [1.1 Instalando pacotes](#Instalando_pacotes)

@@ -9,7 +9,11 @@ Do [GDM - GNOME Display Manager](https://wiki.gnome.org/Projects/GDM): "O Gerenc
 
 [Gerenciadores de exibição](/index.php/Gerenciadores_de_exibi%C3%A7%C3%A3o "Gerenciadores de exibição") fornecem a usuários de [X Window System](/index.php/X_Window_System_(Portugu%C3%AAs) "X Window System (Português)") e [Wayland](/index.php/Wayland "Wayland") com um prompt de login gráfico.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalação](#Instalação)
 *   [2 Inicialização](#Inicialização)

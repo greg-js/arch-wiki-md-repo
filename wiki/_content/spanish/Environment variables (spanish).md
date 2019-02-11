@@ -7,7 +7,11 @@ Artículos relacionados
 
 Una variable de entorno es un objeto con nombre que contiene información usada por uno o más programas. En términos simples, es una variable con un nombre y un valor. El valor de una variable de entorno puede ser, por ejemplo, la ubicación de todos los archivos ejecutables, el editor por defecto, o las configuraciones regionales del sistema. Puede que esta forma de administrar configuraciones parezca difícil de manejar; sin embargo, las variables de entorno representan un mecanismo simple para compartir configuraciones entre múltiples aplicaciones y procesos en Linux.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Utilidades](#Utilidades)
 *   [2 Cómo definir variables](#Cómo_definir_variables)

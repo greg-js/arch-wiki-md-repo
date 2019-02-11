@@ -6,7 +6,11 @@ Related articles
 
 Регулярное обслуживание системы необходимо для правильной работы Arch в течение определенного периода времени. Своевременное обслуживание является привычной практикой многих пользователей.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Проверка на наличие ошибок](#Проверка_на_наличие_ошибок)
     *   [1.1 Неудачный запуск служб systemd](#Неудачный_запуск_служб_systemd)

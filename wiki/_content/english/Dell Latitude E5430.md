@@ -11,7 +11,11 @@
 
 The Dell Latitude E5430 is a business line laptop made for corporate users who have a need for durability. This article will tell you how to get the basic components of the laptop running with Arch.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Hardware specification](#Hardware_specification)
 *   [2 Hardware support](#Hardware_support)
@@ -112,24 +116,24 @@ This solution of provided in the forum thread [Xkeyboard/xkbcomp gives warnings]
 Modules found by [hwdetect](https://www.archlinux.org/packages/?name=hwdetect):
 
 ```
-AGP      : intel-gtt 
-ACPI     : ac battery button processor thermal video 
-BLOCK    : scsi_mod sd_mod sr_mod ahci libahci libata uvcvideo usbcore ehci-hcd ehci-pci xhci-hcd usb-common 
+AGP      : intel-gtt 
+ACPI     : ac battery button processor thermal video 
+BLOCK    : scsi_mod sd_mod sr_mod ahci libahci libata uvcvideo usbcore ehci-hcd ehci-pci xhci-hcd usb-common 
 BLUETOOTH: btusb bluetooth 
-CDROM    : cdrom 
-CPUFREQ  : acpi-cpufreq 
-CRYPTO   : aes-x86_64 aesni-intel crc32-pclmul crc32c-intel crct10dif-pclmul ghash-clmulni-intel glue_helper ablk_helper crct10dif_common crct10dif_generic cryptd gf128mul lrw 
-DRM      : drm drm_kms_helper i915 
-HWMON    : coretemp hwmon 
-I2C      : i2c-algo-bit i2c-i801 i2c-core 
-INPUT    : evdev joydev atkbd psmouse mousedev i8042 libps2 serio serio_raw sparse-keymap hid-generic hid usbhid 
-KVM      : kvm-intel kvm 
-MEDIA    : media uvcvideo videobuf2-core videobuf2-memops videobuf2-vmalloc videodev 
-NET      : tg3 libphy bluetooth 6lowpan_iphc rfkill 
-PARPORT  : parport parport_pc 
-SOUND    : pcspkr snd-hwdep snd-pcm snd-timer snd snd-hda-codec snd-hda-controller snd-hda-intel soundcore 
+CDROM    : cdrom 
+CPUFREQ  : acpi-cpufreq 
+CRYPTO   : aes-x86_64 aesni-intel crc32-pclmul crc32c-intel crct10dif-pclmul ghash-clmulni-intel glue_helper ablk_helper crct10dif_common crct10dif_generic cryptd gf128mul lrw 
+DRM      : drm drm_kms_helper i915 
+HWMON    : coretemp hwmon 
+I2C      : i2c-algo-bit i2c-i801 i2c-core 
+INPUT    : evdev joydev atkbd psmouse mousedev i8042 libps2 serio serio_raw sparse-keymap hid-generic hid usbhid 
+KVM      : kvm-intel kvm 
+MEDIA    : media uvcvideo videobuf2-core videobuf2-memops videobuf2-vmalloc videodev 
+NET      : tg3 libphy bluetooth 6lowpan_iphc rfkill 
+PARPORT  : parport parport_pc 
+SOUND    : pcspkr snd-hwdep snd-pcm snd-timer snd snd-hda-codec snd-hda-controller snd-hda-intel soundcore 
 WATCHDOG : iTCO_vendor_support iTCO_wdt 
-OTHER    : microcode dcdbas led-class mac_hid lpc_ich mei-me mei mmc_core sdhci-pci sdhci shpchp dell-laptop dell-wmi wmi intel_rapl pps_core ptp intel_powerclamp x86_pkg_temp_thermal crc-t10dif crc16
+OTHER    : microcode dcdbas led-class mac_hid lpc_ich mei-me mei mmc_core sdhci-pci sdhci shpchp dell-laptop dell-wmi wmi intel_rapl pps_core ptp intel_powerclamp x86_pkg_temp_thermal crc-t10dif crc16
 
 ```
 

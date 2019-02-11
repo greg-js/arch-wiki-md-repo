@@ -11,7 +11,11 @@ Related articles
 
 Though Fontconfig is used often in modern Unix and Unix-like operating systems, some applications rely on the original method of font selection and display, the [X Logical Font Description](/index.php/X_Logical_Font_Description "X Logical Font Description").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Font paths](#Font_paths)
 *   [2 Fontconfig configuration](#Fontconfig_configuration)

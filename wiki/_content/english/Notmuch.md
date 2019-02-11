@@ -4,7 +4,11 @@ Related articles
 
 [Notmuch](http://notmuchmail.org/) is a mail indexer. Essentially, is a very thin front end on top of *xapian*. Much like [Sup](/index.php/Sup "Sup"), it focuses on one thing: indexing your email messages. Notmuch can be used as an email reader, or simply as an indexer and search tool for other MUAs, like [mutt](/index.php/Mutt "Mutt").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Overview](#Overview)
 *   [2 First time Usage](#First_time_Usage)
@@ -71,7 +75,7 @@ alot is a standalone CLI interface for notmuch, written in python. It is availab
 Alot uses [mailcap](https://en.wikipedia.org/wiki/Mailcap "wikipedia:Mailcap") for handling different kinds of files. This currently includes html mails, which means that you need to configure a `~/.mailcap` file in order to view html mails. As minimum, put this line into your `~/.mailcap`:
 
 ```
- text/html; w3m -dump -o -document_charset=%{charset} %s; nametemplate=%s.html; copiousoutput
+ text/html; w3m -dump -o -document_charset=%{charset} %s; nametemplate=%s.html; copiousoutput
 
 ```
 

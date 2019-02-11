@@ -1,6 +1,10 @@
 [taskd](https://github.com/GothenburgBitFactory/taskserver) is a lightweight, secure server for [Taskwarrior](https://en.wikipedia.org/wiki/Taskwarrior "wikipedia:Taskwarrior") ([task](https://www.archlinux.org/packages/?name=task)). It allows multiple users to intelligently synchronize their tasks between multiple clients, including between desktop and mobile ones.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Server](#Server)
     *   [1.1 Installation](#Installation)

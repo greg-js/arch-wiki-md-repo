@@ -18,7 +18,11 @@ Secure Shell (SSH) - это сетевой протокол, который по
 
 (Источник: [SSH](https://en.wikipedia.org/wiki/ru:SSH "wikipedia:ru:SSH"))
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 OpenSSH](#OpenSSH)
     *   [1.1 Установка OpenSSH](#Установка_OpenSSH)

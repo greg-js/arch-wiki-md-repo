@@ -4,7 +4,11 @@ Related articles
 
 [Repo-ck](http://repo-ck.com/) is an unofficial Arch Linux repository hosting generic and CPU-optimized kernels and support packages, featuring [MuQSS](http://ck-hack.blogspot.com) (pronounced mux) and rest of the ck patchset by [Con Kolivas](https://en.wikipedia.org/wiki/Con_Kolivas "wikipedia:Con Kolivas"). It has been in operation since 2011 and is maintained by [graysky](/index.php/User:Graysky "User:Graysky").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Setup](#Setup)
 *   [2 Kernels and related packages](#Kernels_and_related_packages)

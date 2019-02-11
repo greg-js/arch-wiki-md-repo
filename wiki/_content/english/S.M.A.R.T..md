@@ -1,6 +1,10 @@
 [S.M.A.R.T.](https://en.wikipedia.org/wiki/S.M.A.R.T. "wikipedia:S.M.A.R.T.") (Self-Monitoring, Analysis, and Reporting Technology) is a supplementary component built into many modern storage devices through which devices monitor, store, and analyze the health of their operation. Statistics are collected (temperature, number of reallocated sectors, seek errors...) which software can use to measure the health of a device, predict possible device failure, and provide notifications on unsafe values.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Smartmontools](#Smartmontools)
     *   [1.1 smartctl](#smartctl)

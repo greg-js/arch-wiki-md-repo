@@ -4,7 +4,11 @@ Related articles
 
 Od wersji KDE SC 4.3, dla każdej aplikacji dostarczane są oddzielne pakiety. W artykule opisano koncepcję grup i meta-pakietów.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Terminologia](#Terminologia)
 *   [2 Korzystanie z grup pakietów](#Korzystanie_z_grup_pakietów)

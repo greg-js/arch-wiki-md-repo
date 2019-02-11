@@ -9,7 +9,11 @@
 
 [nftables](/index.php/Nftables "Nftables") 已经包含在 [Linux kernel 3.13](http://www.phoronix.com/scan.php?page=news_item&px=MTQ5MDU) 中，以后会取代 iptables 成为主要的 Linux 防火墙工具。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 基本概念](#基本概念)
@@ -252,7 +256,7 @@ num   pkts bytes target     prot opt in     out     source               destina
 ```
 Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
 num   pkts bytes target     prot opt in     out     source               destination
-1        0     0 REJECT     tcp  --  *      *      !10.0.0.85            0.0.0.0/0            tcp dpt:17500 reject-with icmp-port-unreachable
+1        0     0 REJECT     tcp  --  *      *      !10.0.0.85            0.0.0.0/0            tcp dpt:17500 reject-with icmp-port-unreachable
 
 Chain FORWARD (policy DROP 0 packets, 0 bytes)
 num   pkts bytes target     prot opt in     out     source               destination
@@ -280,7 +284,7 @@ num   pkts bytes target     prot opt in     out     source               destina
 Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
 num   pkts bytes target     prot opt in     out     source               destination
 1        0     0 ACCEPT     tcp  --  *      *       10.0.0.85            0.0.0.0/0            tcp dpt:17500 /* Friendly Dropbox */
-2        0     0 REJECT     tcp  --  *      *      !10.0.0.85            0.0.0.0/0            tcp dpt:17500 reject-with icmp-port-unreachable
+2        0     0 REJECT     tcp  --  *      *      !10.0.0.85            0.0.0.0/0            tcp dpt:17500 reject-with icmp-port-unreachable
 
 Chain FORWARD (policy DROP 0 packets, 0 bytes)
 num   pkts bytes target     prot opt in     out     source               destination

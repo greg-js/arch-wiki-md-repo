@@ -5,7 +5,11 @@ Related articles
 
 [Wayland](http://wayland.freedesktop.org/) is a protocol for a [compositing window manager](https://en.wikipedia.org/wiki/Compositing_window_manager "wikipedia:Compositing window manager") to talk to its clients, as well as a library implementing the protocol. It is supported on some desktop environments like [GNOME](/index.php/GNOME "GNOME") and [KDE](/index.php/KDE "KDE"). There is also a compositor reference implementation called Weston. XWayland provides a compatibility layer to seamlessly run legacy [X11](/index.php/X11 "X11") applications in Wayland.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Requirements](#Requirements)
 *   [2 Weston](#Weston)

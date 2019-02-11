@@ -6,7 +6,11 @@ Related articles
 
 A multiboot USB flash drive allows booting multiple ISO files from a single device. The ISO files can be copied to the device and booted directly without unpacking them first. There are multiple methods available, but they may not work for all ISO images.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Using GRUB and loopback devices](#Using_GRUB_and_loopback_devices)
     *   [1.1 Preparation](#Preparation)

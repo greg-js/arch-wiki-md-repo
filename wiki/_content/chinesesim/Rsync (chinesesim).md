@@ -7,7 +7,11 @@
 
 [rsync](http://samba.anu.edu.au/rsync/) 是一个开源工具，可以进行快速的增量的文件传输。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 使用方法](#使用方法)

@@ -1,6 +1,10 @@
 **Readline** - это библиотека, созданная [GNU Project](/index.php/GNU_Project "GNU Project"), используемая [Bash](/index.php/Bash_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bash (Русский)") и другими программами с интерфейсом CLI для того, чтобы взаимодействовать с командной строкой. Перед прочтением этой статьи пожалуйста ознакомьтесь с домашней [страницей](http://www.gnu.org/s/readline/) проекта, т.к. здесь размещена только общая информация.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Редактирование в командной строке](#Редактирование_в_командной_строке)

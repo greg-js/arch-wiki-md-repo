@@ -11,7 +11,11 @@ Do [Wikipédia](https://en.wikipedia.org/wiki/GNU "wikipedia:GNU"):
 
 Porque o kernel do GNU, [Hurd](https://www.gnu.org/s/hurd/hurd.html), não está pronto para produção [[1]](https://www.gnu.org/software/hurd/hurd/status.html), o GNU é normalmente usado com o kernel do Linux. O [Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs) "Arch Linux (Português)") é uma distribuição GNU/Linux, usando software GNU como o shell [Bash](/index.php/Bash "Bash"), o GNU coreutils, o conjunto de ferramentas do GNU *(toolchain)* e vários outros utilitários e bibliotecas. Esta página não tenta listar todos os [quase 400](https://www.gnu.org/software/software.html#allgnupkgs) pacotes GNU e apenas destaca alguns.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Texinfo](#Texinfo)
 *   [2 Sistema base](#Sistema_base)

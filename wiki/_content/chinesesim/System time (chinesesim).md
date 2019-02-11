@@ -6,7 +6,11 @@
 
 一个操作系统通过如下内容确定时间：时间数值、时间标准、时区和夏令时调节(中国已经废止)。本文分别介绍各个部分的定义及如何设置他们。要维护准确的系统时间，请参考 [网络时间协议](/index.php/Network_Time_Protocol_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network Time Protocol (简体中文)") 一文。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 硬件时钟和系统时钟](#硬件时钟和系统时钟)
     *   [1.1 读取时间](#读取时间)

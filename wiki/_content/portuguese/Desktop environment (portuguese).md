@@ -7,7 +7,11 @@ Artigos relacionados
 
 Um [ambiente de desktop](https://en.wikipedia.org/wiki/pt:Ambiente_de_desktop "wikipedia:pt:Ambiente de desktop") ou ambiente de trabalho (em inglês, *desktop environment* ou **DE**) é uma implementação da [metáfora de escritório](https://en.wikipedia.org/wiki/pt:Met%C3%A1fora_de_escrit%C3%B3rio "wikipedia:pt:Metáfora de escritório") feita por um conjunto de programas, que compartilham uma interface gráfica de usuário (GUI) comum.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Visão geral](#Visão_geral)
 *   [2 Lista de ambientes de desktop](#Lista_de_ambientes_de_desktop)

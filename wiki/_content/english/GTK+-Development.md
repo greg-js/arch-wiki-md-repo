@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Write a simple message dialog app](#Write_a_simple_message_dialog_app)
     *   [1.1 Ada](#Ada)
@@ -53,7 +57,7 @@ with Gtk.Dialog;           use Gtk.Dialog;
 with Gtk.Message_Dialog;   use Gtk.Message_Dialog;
 
 procedure hello_world is
-  Dialog   : Gtk_Message_Dialog;
+  Dialog   : Gtk_Message_Dialog;
   Response : Gtk_Response_Type;
 begin
   Gtk.Main.Init;
@@ -515,7 +519,7 @@ Hello.run()
 #!/usr/bin/env ruby
 require 'gir_ffi-gtk3'
 Gtk.init
-Hello = Gtk::MessageDialog.new nil, :modal, :info, :ok, "Hello world!"
+Hello = Gtk::MessageDialog.new nil, :modal, :info, :ok, "Hello world!"
 Hello.secondary_text = "This is an example dialog."
 Hello.run
 ```
@@ -527,9 +531,9 @@ Hello.run
 #!/usr/bin/env ruby
 require 'gtk3'
 Gtk.init
-Hello = Gtk::MessageDialog.new(:type => :info,
-                               :buttons_type => :ok,
-                               :message => "Hello world!")
+Hello = Gtk::MessageDialog.new(:type => :info,
+                               :buttons_type => :ok,
+                               :message => "Hello world!")
 Hello.secondary_text = "This is an example dialog."
 Hello.run
 ```

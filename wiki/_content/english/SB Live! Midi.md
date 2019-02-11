@@ -1,6 +1,10 @@
 *SB Live!* uses a wavetable synthesizer for its MIDI output. Therefore, in order to get MIDI output you need to load the SoundFont banks into the card. This is done by the `asfxload` utility from `awesfx` package.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

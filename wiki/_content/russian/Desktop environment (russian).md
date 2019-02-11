@@ -7,7 +7,11 @@
 
 [Среда рабочего стола](https://en.wikipedia.org/wiki/ru:%D0%A1%D1%80%D0%B5%D0%B4%D0%B0_%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B3%D0%BE_%D1%81%D1%82%D0%BE%D0%BB%D0%B0 "wikipedia:ru:Среда рабочего стола") предоставляет полнофункциональное графическое окружение для системы, включающее набор графических приложений, утилит и компонентов рабочего стола. Как правило, среды рабочего стола базируются на одном из графических тулкитов, таких как [GTK+](/index.php/GTK%2B "GTK+") или [Qt](/index.php/Qt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Qt (Русский)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Обзор](#Обзор)
 *   [2 Список сред рабочего стола](#Список_сред_рабочего_стола)

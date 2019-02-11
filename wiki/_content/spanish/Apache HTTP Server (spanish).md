@@ -5,7 +5,11 @@
 *   **M**ySQL/**M**ariaDB, el sistema administrador de base de datos;
 *   **P**HP u otros, p.e. Perl, Python.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Apache, PHP, y MySQL](#Apache,_PHP,_y_MySQL)
     *   [1.1 Instalar Paquetes](#Instalar_Paquetes)

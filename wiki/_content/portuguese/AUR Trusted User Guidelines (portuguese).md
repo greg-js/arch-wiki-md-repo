@@ -8,7 +8,11 @@ O **Trusted User (TU)** ("Usuário confiado") é um membro da comunidade encarre
 
 Os TUs são governados usando as [TU bylaws](https://aur.archlinux.org/trusted-user/TUbylaws.html) ("Estatuto dos TUs")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Lista de tarefas para novos Trusted Users](#Lista_de_tarefas_para_novos_Trusted_Users)
 *   [2 O TU e o AUR](#O_TU_e_o_AUR)

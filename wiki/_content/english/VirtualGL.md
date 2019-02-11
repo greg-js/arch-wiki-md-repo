@@ -2,7 +2,11 @@ VirtualGL redirects an application's *OpenGL/GLX commands* to a separate X serve
 
 The main use-case is to enable server-side hardware-accelerated 3D rendering for *remote desktop* set-ups where the X server that handles the application is either on the other side of the network *(in the case of X11 forwarding)*, or a "virtual" X server that cannot access the graphics hardware *(in the case of VNC)*.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation and setup](#Installation_and_setup)
 *   [2 Using VirtualGL with X11 forwarding](#Using_VirtualGL_with_X11_forwarding)
@@ -192,7 +196,7 @@ The "Performance Measurement" chapter of the user manual describes how to get a 
 If `vglrun` exits with an error messages like...
 
 ```
-[VGL] ERROR: Could not open display :0.
+[VGL] ERROR: Could not open display :0.
 
 ```
 

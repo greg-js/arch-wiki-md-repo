@@ -4,7 +4,11 @@ Tomcat 是一个由 Apache Software Foundation 开发的开源的 Java [Servlet 
 
 **注意:** 目前存在两个版本的稳定分支： [7](http://tomcat.apache.org/download-70.cgi) 和 [8](https://tomcat.apache.org/download-80.cgi)。没一个版本能完全替代另一个。相反，[每个分支是一部分 "Servlet" 和 "JSP" Java 标准的实现](http://tomcat.apache.org/whichversion.html#Apache_Tomcat_Versions)。两个版本都被 Arch Linux 官方支持：[tomcat7](https://www.archlinux.org/packages/?name=tomcat7) 和 [tomcat8](https://www.archlinux.org/packages/?name=tomcat8)。选用哪个版本主要由你的 web 程序的需求来决定的。如果你只是为了试试 tomcat 或者你不打算花时间来区分，那么你选用 tomcat7 可能会更好点。这个页面针对的是 tomcat7 ，但是大部分内容也适用于 tomcat8。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
     *   [1.1 文件系统层次结构](#文件系统层次结构)

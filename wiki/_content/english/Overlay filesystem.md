@@ -6,7 +6,11 @@ From [the initial kernel commit](https://git.kernel.org/pub/scm/linux/kernel/git
 
 Overlayfs has been in the linux kernel since 3.18.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)

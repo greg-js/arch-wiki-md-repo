@@ -2,7 +2,11 @@
 
 [Julia](https://julialang.org/) 是一种高水平、高性能的针对数字计算的动态编程语言。它提供了复杂的编译器、分布式平行执行方式、数字的精准性和广泛的数学函数库。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 IJulia](#IJulia)
@@ -32,7 +36,7 @@
 ```
   Building Arpack → `~/.julia/packages/Arpack/UiiMc/deps/build.log`
 ┌ Error: Error building `Arpack`:
-│ ERROR: LoadError: LibraryProduct(nothing, ["libarpack"], :libarpack, "Prefix(~/.julia/packages/Arpack/UiiMc/deps/usr)") is not satisfied, cannot generate deps.jl!
+│ ERROR: LoadError: LibraryProduct(nothing, ["libarpack"], :libarpack, "Prefix(~/.julia/packages/Arpack/UiiMc/deps/usr)") is not satisfied, cannot generate deps.jl!
 ```
 
 [一个问题已经提出了](https://github.com/JuliaLinearAlgebra/Arpack.jl/issues/5).

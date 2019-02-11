@@ -1,6 +1,10 @@
 See [GNOME](/index.php/GNOME "GNOME") for the main article.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Shell freezes](#Shell_freezes)
 *   [2 Shell segfaults](#Shell_segfaults)

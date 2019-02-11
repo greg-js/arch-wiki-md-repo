@@ -4,7 +4,11 @@ Related articles
 
 This article is designed to help Linux users to play the Blu-ray discs they have legally purchased on their computers. Since no official Blu-ray player software is available on their system, Linux users have to use open-source libraries capable of handling the DRM schemes that protect these disc contents. This is legal in most countries where interoperability allows this.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 How it works](#How_it_works)
     *   [1.1 Blu-ray DRM](#Blu-ray_DRM)

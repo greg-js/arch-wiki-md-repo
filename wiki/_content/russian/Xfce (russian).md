@@ -12,7 +12,11 @@
 
 [Xfce](http://www.xfce.org) — легковесная модульная [среда рабочего стола](/index.php/%D0%A1%D1%80%D0%B5%D0%B4%D0%B0_%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B3%D0%BE_%D1%81%D1%82%D0%BE%D0%BB%D0%B0 "Среда рабочего стола"), на данный момент работающая на основе GTK+ 2 и GTK+ 3\. Она включает в себя оконный менеджер, файловый менеджер, рабочий стол и основную панель.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Запуск Xfce](#Запуск_Xfce)
@@ -807,7 +811,7 @@ chmod 500 ~/.config/xfce4/desktop/
 Проблема возникает, если Firefox установлен как браузер по умолчанию в `exo-preferred-applications`. При открытии файлов HTML, в имени которых есть пробелы, каждая часть имени, разделенная пробелом, может быть открыта как отдельный URL в отдельной вкладке ([[3]](https://bugzilla.xfce.org/show_bug.cgi?id=10731)). Вы можете открывать такие файлы, указывая явно `firefox.desktop` (*Firefox*) вместо `exo-web-browser.desktop` (*Web Browser*), или в файле `/usr/share/xfce4/helpers/firefox.desktop` измените:
 
 ```
-X-XFCE-CommandsWithParameter=%B -remote "openURL(%s)";%B %s;
+X-XFCE-CommandsWithParameter=%B -remote "openURL(%s)";%B %s;
 
 ```
 

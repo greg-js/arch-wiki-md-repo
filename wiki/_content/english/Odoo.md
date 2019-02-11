@@ -4,7 +4,11 @@ Odoo features an application server which uses PostgreSQL as database back-end, 
 
 A thriving support and development community has grown up around Odoo, providing free technical support, bug-fixing, new development, and support services. Odoo provides extensive documentation in various electronic formats, as well as hardcopy. The company responsible for development of Odoo earns profits through partnership services with Odoo consultants, and by providing support, training, hosting services, software development, and software quality testing and verification.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Installing Odoo](#Installing_Odoo)

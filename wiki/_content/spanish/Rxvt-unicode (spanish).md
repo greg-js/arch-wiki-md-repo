@@ -1,6 +1,10 @@
 [rxvt-unicode](http://software.schmorp.de/pkg/rxvt-unicode.html) es un [emulador de terminal](/index.php?title=Terminal_Emulator&action=edit&redlink=1 "Terminal Emulator (page does not exist)") altamente configurable derivado de [rxvt](https://en.wikipedia.org/wiki/Rxvt con el fin de minimizar el uso de los recursos del sistema. Desarrollado por Marc Lehmann, algunas de las características más sobresalientes de rxvt-unicode son el soporte de idiomas internacionales a través de [Unicode](https://en.wikipedia.org/wiki/Unicode "wikipedia:Unicode"), asi como la habilidad de mostrar múltiples tipografias y soporte para extensiones [Perl](https://en.wikipedia.org/wiki/Perl "wikipedia:Perl").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installación](#Installación)
 *   [2 Configuración](#Configuración)

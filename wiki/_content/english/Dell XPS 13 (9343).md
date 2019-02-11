@@ -25,7 +25,11 @@ The installation process for Arch Linux on the XPS 13 does not differ from any o
 
 As of kernel 4.1.3 (released July 2015), a patched kernel is no longer necessary. However, some manual configuration is still recommended to get the best experience.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Model differences](#Model_differences)
 *   [2 Configuration](#Configuration)

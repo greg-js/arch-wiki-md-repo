@@ -6,7 +6,11 @@ Artigos relacionados
 
 [Locales](https://en.wikipedia.org/wiki/Locale_(computer_software) "wikipedia:Locale (computer software)"), por vezes chamados em português de *localidades*, são usados pelo [glibc](https://www.archlinux.org/packages/?name=glibc) e outros programas ou bibliotecas conscientes de locales para renderizar texto, exibindo corretamente valores monetários regionais, formatos de hora e data, idiossincrasias alfabéticas e outros padrões específicas para locales.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Gerando locales](#Gerando_locales)
 *   [2 Configurando o locale](#Configurando_o_locale)

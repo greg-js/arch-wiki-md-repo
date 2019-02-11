@@ -2,7 +2,11 @@ A product of the [OLPC](https://en.wikipedia.org/wiki/One_Laptop_per_Child is a 
 
 Sugar has a special [Taxonomy](http://wiki.sugarlabs.org/go/Taxonomy) to name the parts of its system. The graphical interface itself constitute the **Glucose** group. This is the core system can reasonably expect to be present when installing Sugar. But to really use the environment, you need activities (some sort of applications). Base activities are part of **Fructose**. Then, **Sucrose** is constituted by both Glucose and Fructose and represents what should be distributed as a basic sugar desktop environment. Extra activities are part of **Honey**. Note that Ribose (the underlaying operating system) is here replaced by Arch.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 From Activity Library](#From_Activity_Library)

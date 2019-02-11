@@ -5,7 +5,11 @@ Web es el navegador web predeterminado para [GNOME](/index.php/GNOME_(Espa%C3%B1
 
 **Nota:** Web era conocido como [Epiphany](http://projects.gnome.org/epiphany/) antes de la versión 3.4\. La aplicación recibió nuevos nombres descriptivos, uno para cada idioma admitido. El nombre *Epiphany* se utiliza todavía en muchos lugares, como el nombre del ejecutable, algunos nombres de paquetes, algunas entradas de escritorio y algunos esquemas GSettings.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Configuración](#Configuración)

@@ -6,7 +6,11 @@ Related articles
 
 [netctl](https://projects.archlinux.org/netctl.git/) is a CLI and profile-based network manager and an Arch project.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

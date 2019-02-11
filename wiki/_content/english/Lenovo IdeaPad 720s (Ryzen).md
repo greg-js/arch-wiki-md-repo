@@ -2,7 +2,11 @@ The [Lenovo IdeaPad 720s (Ryzen)](https://www3.lenovo.com/us/en/laptops/ideapad/
 
 CPU/APU-wise, Linux support for the 720s is in decent shape since kernel ~4.15 (CPU and GPU temperatures per [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors)); the more recent the better. Its rtl8821ce WLAN and Bluetooth chip has no mainlined driver (as of 4.17), but [rtl8821ce-dkms-git](https://aur.archlinux.org/packages/rtl8821ce-dkms-git/) comes to rescue here.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 PCI Devices](#PCI_Devices)
 *   [2 USB Devices](#USB_Devices)

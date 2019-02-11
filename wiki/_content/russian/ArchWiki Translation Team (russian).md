@@ -2,7 +2,11 @@
 
 **Примечание:** Не вносите изменения в эту страницу, если вы не являетесь членом команды
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 О проекте](#О_проекте)
     *   [1.1 Цели и задачи](#Цели_и_задачи)

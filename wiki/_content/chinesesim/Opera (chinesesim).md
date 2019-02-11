@@ -8,7 +8,11 @@ Related articles
 
 [Opera](http://www.opera.com)浏览器，是一款自1994年以来由挪威[Opera Software](https://en.wikipedia.org/wiki/Opera_Software "wikipedia:Opera Software")公司开发的免费浏览器软件。该浏览器因曾经最先引入诸如标签式浏览、内置搜索等功能而闻名。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
     *   [1.1 旧的 Presto 版本](#旧的_Presto_版本)

@@ -4,13 +4,16 @@ Related articles
 *   [Disk cloning](/index.php/Disk_cloning "Disk cloning")
 *   [List of applications#File sharing](/index.php/List_of_applications#File_sharing "List of applications")
 *   [System maintenance#Backup](/index.php/System_maintenance#Backup "System maintenance")
-*   [Dotfiles#Version control](/index.php/Dotfiles#Version_control "Dotfiles")
-
+*   [Dotfiles](/index.php/Dotfiles "Dotfiles")
 *   [File recovery](/index.php/File_recovery "File recovery")
 
 This page lists and compares applications that synchronize data between two or more locations, and those that build on top of such functionality to make incremental copies of important data for backup purposes. Because of their relationship, the two groups share several traits that justify describing them in the same article.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Backup overview](#Backup_overview)
 *   [2 Data synchronization](#Data_synchronization)

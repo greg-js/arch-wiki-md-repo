@@ -5,7 +5,11 @@ Related articles
 
 [feh](http://feh.finalrewind.org/) is a lightweight and powerful image viewer that can also be used to manage the desktop wallpaper for standalone window managers lacking such features.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)

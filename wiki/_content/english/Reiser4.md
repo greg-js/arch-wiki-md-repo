@@ -4,7 +4,11 @@ Related articles
 
 [Reiser4](https://en.wikipedia.org/wiki/Reiser4 "wikipedia:Reiser4") is the successor filesystem for ReiserFS, developed from scratch by [Namesys](https://en.wikipedia.org/wiki/Namesys "wikipedia:Namesys") and [Hans Reiser](https://en.wikipedia.org/wiki/Hans_Reiser "wikipedia:Hans Reiser"). It is very efficient for handling small files (often used in `/var` for this purpose) and includes features such as cheap transparent compression and block suballocation. Because it is an atomic file system "your file system operations either entirely occur, or they entirely don't, and they do not corrupt due to half occurring." [Benchmarks](https://web.archive.org/web/20150314201355/http://vizzzion.org/?id=reiser4) with other linux filesystems are also available.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Important Notes](#Important_Notes)
 *   [2 Packages](#Packages)

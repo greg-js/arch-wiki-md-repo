@@ -13,7 +13,11 @@ Nevertheless, the Arch Linux [mutt](https://www.archlinux.org/packages/?name=mut
 
 This article covers using both native IMAP sending and retrieval, and a setup depending on [OfflineIMAP](/index.php/OfflineIMAP "OfflineIMAP") or [getmail](/index.php/Getmail "Getmail") (POP3) to retrieve mail, [procmail](/index.php/Procmail "Procmail") to filter it in the case of POP3, and [msmtp](/index.php/Msmtp "Msmtp") to send it.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 NeoMutt](#NeoMutt)
@@ -713,7 +717,7 @@ where `$TERMINAL` is your terminal.
 You can install [muttprint](https://aur.archlinux.org/packages/muttprint/) for fancier printing quality. In your muttrc file, insert:
 
 ```
-set print_command="/usr/bin/muttprint %s -p {PrinterName}"
+set print_command="/usr/bin/muttprint %s -p {PrinterName}"
 
 ```
 
@@ -734,7 +738,7 @@ Create a .urlview in $HOME and insert the following:
 
 ```
 REGEXP (((http|https|ftp|gopher)|mailto)[.:][^ >"\t]*|www\.[-a-z0-9.]+)[^ .,;\t>">\):]
-COMMAND <your-browser> %s
+COMMAND <your-browser> %s
 
 ```
 
@@ -743,7 +747,7 @@ When you read an email on the pager, hitting ctrl+b will list all the urls from 
 Some browser will require additional arguments to work properly. For example, [Luakit](/index.php/Luakit "Luakit") will close on Mutt exit. You need to fork it to background, using the `-n` parameter:
 
 ```
-COMMAND luakit -n %s 2>/dev/null
+COMMAND luakit -n %s 2>/dev/null
 
 ```
 
@@ -758,7 +762,7 @@ It is possible to pass the html body to an external HTML program and then dump i
 If `~/.mutt/mailcap` does not exist you will need to create it and save the following to it.
 
 ```
-text/html; lynx -assume_charset=%{charset} -display_charset=utf-8 -dump %s; nametemplate=%s.html; copiousoutput
+text/html; lynx -assume_charset=%{charset} -display_charset=utf-8 -dump %s; nametemplate=%s.html; copiousoutput
 
 ```
 
@@ -1301,7 +1305,7 @@ If you are having problems with character encoding, first read [this section](ht
 If Chinese text is still garbled, it may help to decode with GBK even when GB2312 is specified in the header. You can do this with `iconv` by adding the following to your `mailcap` file:
 
 ```
-text/plain; iconv -f gbk -t utf-8 %s; test=echo "%{charset}" | grep -ic "gb2312"; copiousoutput;
+text/plain; iconv -f gbk -t utf-8 %s; test=echo "%{charset}" | grep -ic "gb2312"; copiousoutput;
 
 ```
 
@@ -1315,7 +1319,7 @@ auto_view text/plain
 For HTML emails, you can edit the relevant line of your mailcap by replacing `%{charset}` with `$(echo %{charset} | sed s/gb2312/gbk/I)`, for example:
 
 ```
-text/html; w3m -dump -I $(echo %{charset} | sed s/gb2312/gbk/I) %s; nametemplate=%s.html; copiousoutput
+text/html; w3m -dump -I $(echo %{charset} | sed s/gb2312/gbk/I) %s; nametemplate=%s.html; copiousoutput
 
 ```
 

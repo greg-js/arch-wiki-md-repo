@@ -5,7 +5,11 @@
 
 Distcc это программа, предназначенная для распределения задач компиляции между компьютерами в сети на таких языках как C, C++, Objective C or Objective C++. Приведет к тем же результатам, что и локальная сборка, простота в установке и использовании и как правило, гораздо быстрее, чем локальная компиляция. Круто то что можно использовать его вместе с родными утилитами для компиляции Arch, такими как makepkg.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Условия](#Условия)
 *   [2 Приступая к работе](#Приступая_к_работе)
@@ -82,7 +86,7 @@ DISTCC_ARGS="--allow 192.168.0.0/24"
 Пример с использованием соответствующих строк:
 
 ```
-BUILDENV=(distcc fakeroot color !ccache check !sign)
+BUILDENV=(distcc fakeroot color !ccache check !sign)
 MAKEFLAGS="-j11"
 DISTCC_HOSTS="192.168.0.2/5 192.168.0.3/3 192.168.0.4/3"
 

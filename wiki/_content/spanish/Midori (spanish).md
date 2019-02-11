@@ -18,7 +18,11 @@ Algunas de sus características son:
 *   Interfaz extensible y personalizable.
 *   **Extensiones** comunes como AdBlock, formulario de historial, acceso rápido, etc.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Extensiones](#Extensiones)

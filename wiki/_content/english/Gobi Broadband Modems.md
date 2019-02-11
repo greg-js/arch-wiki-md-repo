@@ -1,6 +1,10 @@
 This is a short tutorial on connecting to the internet using your gobi modem.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Device identification](#Device_identification)
 *   [2 gobi_loader](#gobi_loader)

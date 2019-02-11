@@ -5,7 +5,11 @@ Related articles
 
 This page is a guide to selecting and configuring your mirrors, and a listing of current available mirrors.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Official mirrors](#Official_mirrors)
     *   [1.1 IPv6-ready mirrors](#IPv6-ready_mirrors)

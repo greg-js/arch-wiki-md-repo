@@ -10,7 +10,11 @@
 
 **注意:** 中国用户可以特别留意 [#中国大陆用户的推荐解决方案](#中国大陆用户的推荐解决方案) 内容。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 系统管理](#系统管理)
     *   [1.1 用户和用户组](#用户和用户组)

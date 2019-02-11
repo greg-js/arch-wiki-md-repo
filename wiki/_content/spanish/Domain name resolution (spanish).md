@@ -4,7 +4,11 @@ El archivo de configuración para los resolvers de DNS es `/etc/resolv.conf`. De
 
 	*«En un sistema correctamente configurado este archivo puede no ser necesario. El único servidor de nombres a consultar será la máquina local; el nombre de dominio se determina a partir del nombre del host y la ruta de búsqueda de dominio se construye a partir del nombre de dominio.»*
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 DNS en Linux](#DNS_en_Linux)
 *   [2 Servidores DNS alternativos](#Servidores_DNS_alternativos)

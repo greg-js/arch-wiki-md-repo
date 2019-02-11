@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Model A55VJ-SXH161 (also K55VJ):](#Model_A55VJ-SXH161_(also_K55VJ):)
     *   [1.1 Hardware](#Hardware)

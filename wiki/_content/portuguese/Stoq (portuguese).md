@@ -2,7 +2,11 @@
 
 O aplicativo Stoq usa o [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") como banco de dados back-end, com um cliente através de uma interface gráfica.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalação](#Instalação)
     *   [1.1 Instalação do Stoq](#Instalação_do_Stoq)

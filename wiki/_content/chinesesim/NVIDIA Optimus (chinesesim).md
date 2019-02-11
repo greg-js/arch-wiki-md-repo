@@ -21,7 +21,11 @@ NVIDIA Optimus是一种允许 Intel 集成 GPU 和 NVIDIA GPU 建成并通过一
 
 这些方法在下文有详细解释。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 禁用可交换显卡](#禁用可交换显卡)
 *   [2 使用 nvidia](#使用_nvidia)

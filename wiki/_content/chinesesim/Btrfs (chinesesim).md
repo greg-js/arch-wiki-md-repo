@@ -17,7 +17,11 @@
 *   Btrfs 有一些功能被认为是实验性的特性，可参见内核百科的 [Btrfs 稳定性状态报告](https://btrfs.wiki.kernel.org/index.php/Main_Page#Stability_status)，[Btrfs 足够稳定了吗？](https://btrfs.wiki.kernel.org/index.php/FAQ#Is_btrfs_stable.3F)和[开始使用 Btrfs](https://btrfs.wiki.kernel.org/index.php/Getting_started)。
 *   了解当前的[局限性](#局限性).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 准备工作](#准备工作)
 *   [2 创建文件系统](#创建文件系统)

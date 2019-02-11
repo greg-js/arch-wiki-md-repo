@@ -5,7 +5,11 @@ Related articles
 
 InfluxDB is a time series database built from the ground up to handle high write and query loads. It is the second piece of the [TICK stack](https://www.influxdata.com/time-series-platform/). InfluxDB is meant to be used as a backing store for any use case involving large amounts of timestamped data, including DevOps monitoring, application metrics, IoT sensor data, and real-time analytics. For more detailed information, see the [official documentation](https://docs.influxdata.com/influxdb/).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

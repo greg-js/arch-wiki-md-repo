@@ -7,7 +7,11 @@ Related articles
 
 As it is based on versatile text interfaces, such as Ncurses or S-Lang, it works on a regular console, inside an X Window terminal, over [SSH](/index.php/SSH "SSH") connections and all kinds of remote shells.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Skins](#Skins)

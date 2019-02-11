@@ -6,7 +6,11 @@
 
 This document covers standards and guidelines on writing [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") for [Python](/index.php/Python "Python") software.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Package naming](#Package_naming)
 *   [2 Architecture](#Architecture)

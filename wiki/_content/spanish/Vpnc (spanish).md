@@ -3,7 +3,11 @@ Este artículo es una traducción de [Vpnc](/index.php/Vpnc "Vpnc"), revisada po
 
 [vpnc](https://www.unix-ag.uni-kl.de/~massar/vpnc/) es un cliente VPN para los redes privadas virtules del hardware de Cisco.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Configuración](#Configuración)

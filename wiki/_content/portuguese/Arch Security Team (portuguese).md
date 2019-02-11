@@ -2,7 +2,11 @@
 
 A Equipe de Segurança do Arch é um grupo de voluntários cujo objetivo é rastrear problemas de segurança com pacotes do Arch Linux. Todos os problemas são rastreados no [rastreador de segurança do Arch Linux](https://security.archlinux.org/). A equipe era conhecida como *Arch CVE Monitoring Team* (em português, Equipe de Monitoramento do Arch CVE).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Missão](#Missão)
 *   [2 Contribuir](#Contribuir)

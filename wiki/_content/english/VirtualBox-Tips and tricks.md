@@ -1,6 +1,10 @@
 See [VirtualBox](/index.php/VirtualBox "VirtualBox") for the main article.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Import/export VirtualBox virtual machines from/to other hypervisors](#Import/export_VirtualBox_virtual_machines_from/to_other_hypervisors)
     *   [1.1 Remove additions](#Remove_additions)
@@ -99,15 +103,15 @@ Find hereafter the implementation details of a systemd service that will be used
  `/etc/systemd/system/vboxvmservice@.service` 
 ```
 [Unit]
-Description=VBox Virtual Machine %i Service
+Description=VBox Virtual Machine %i Service
 Requires=systemd-modules-load.service
 After=systemd-modules-load.service
 
 [Service]
 User=*username*
 Group=vboxusers
-ExecStart=/usr/bin/VBoxManage startvm %i --type *startmode*
-ExecStop=/usr/bin/VBoxManage controlvm %i *stopmode*
+ExecStart=/usr/bin/VBoxManage startvm %i --type *startmode*
+ExecStop=/usr/bin/VBoxManage controlvm %i *stopmode*
 RemainAfterExit=yes
 
 [Install]

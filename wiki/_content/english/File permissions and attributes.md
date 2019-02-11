@@ -9,7 +9,11 @@ Related articles
 
 **Warning:** When used for security purposes, permissions and attributes only defend against attacks launched from the booted system. To protect the stored data from attackers with physical access to the machine, one must also implement [disk encryption](/index.php/Disk_encryption "Disk encryption").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Viewing permissions](#Viewing_permissions)
     *   [1.1 Examples](#Examples)
@@ -284,11 +288,11 @@ $ chmod go=rx *filename*
 To view the existing permissions of a file or directory in numeric form, use the [stat(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/stat.1) command:
 
 ```
-$ stat -c %a *filename*
+$ stat -c %a *filename*
 
 ```
 
-Where the %a option specifies output in numeric form.
+Where the %a option specifies output in numeric form.
 
 Most folders and directories are set to `755` to allow reading, writing and execution to the owner, but deny writing to everyone else, and files are normally `644` to allow reading and writing for the owner but just reading for everyone else; refer to the last note on the lack of `x` permissions with non executable files: it is the same thing here.
 

@@ -3,7 +3,11 @@ Este artículo es una traducción de [KDevelop](/index.php/KDevelop "KDevelop"),
 
 *"[KDevelop](http://kdevelop.org/) es un IDE (Entorno de Desarrollo Integrado) de código abierto y gratuito para MS Windows, Mac OS X, Linux, Solaris y FreeBSD. Es un IDE ampliable con plugins, repleto de características para desarrollar en C/C++ y otros lenguajes de programación. Se basa en KDevPlatform y las librerías [KDE](/index.php/KDE_(Espa%C3%B1ol) "KDE (Español)") y [Qt](/index.php/Qt "Qt"), y está en desarrollo desde 1998."*
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
     *   [1.1 Plugins](#Plugins)

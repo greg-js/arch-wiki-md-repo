@@ -1,6 +1,10 @@
 The Arch Security Team is a group of volunteers whose goal is to track security issues with Arch Linux packages. All issues are tracked on the [Arch Linux security tracker](https://security.archlinux.org/). The team was formerly known as the *Arch CVE Monitoring Team*.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Mission](#Mission)
 *   [2 Contribute](#Contribute)

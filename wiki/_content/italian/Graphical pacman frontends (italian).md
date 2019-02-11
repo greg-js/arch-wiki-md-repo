@@ -1,6 +1,10 @@
 Quella qui riportata è una lista di interfacce grafiche per Pacman, progettate per costituire una versione grafica dello strumento di gestione pacchetti CLI (*Command Line Interface*) pacman. La lista include software basato su Gtk2, Qt, e una varietà di indicatori per pannelli di sistema. **Nessuno di questi software è ufficialmente supportato dal team di Archlinux**.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Interfacce grafiche per Gnome/Gtk2](#Interfacce_grafiche_per_Gnome/Gtk2)
     *   [1.1 GtkPacman](#GtkPacman)

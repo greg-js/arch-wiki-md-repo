@@ -5,7 +5,11 @@
 
 На этой странице размещены ответы на вопросы, часто задаваемые новыми пользователями Arch Linux. Вы также можете найти полезную для вас информацию на страницах [Философия Arch](/index.php/%D0%A4%D0%B8%D0%BB%D0%BE%D1%81%D0%BE%D1%84%D0%B8%D1%8F_Arch "Философия Arch") и [Arch Linux](/index.php/Arch_Linux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch Linux (Русский)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Общие вопросы](#Общие_вопросы)
     *   [1.1 Что такое Arch Linux?](#Что_такое_Arch_Linux?)

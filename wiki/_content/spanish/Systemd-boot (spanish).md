@@ -11,7 +11,11 @@ Artículos relacionados
 
 Es fácil de configurar, pero solo puede iniciar ejecutables EFI, tales como [EFISTUB (Español)](/index.php/EFISTUB_(Espa%C3%B1ol) "EFISTUB (Español)") del kernel de Linux, Intérprete de órdenes de UEFI, GRUB o Windows Boot Manager.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
     *   [1.1 Instalar el gestor de arranque EFI](#Instalar_el_gestor_de_arranque_EFI)

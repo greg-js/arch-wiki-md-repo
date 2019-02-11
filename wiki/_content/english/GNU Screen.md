@@ -2,7 +2,11 @@
 
 See the official overview [GNU Screen manual](https://www.gnu.org/software/screen/manual/screen.html#Overview) for the description of the features.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
@@ -349,7 +353,7 @@ altscreen on
 
 add following to ~/.screenrc
 
- `~/.screenrc`  `windowlist string "%4n %h%=%f"` 
+ `~/.screenrc`  `windowlist string "%4n %h%=%f"` 
 
 ## See also
 

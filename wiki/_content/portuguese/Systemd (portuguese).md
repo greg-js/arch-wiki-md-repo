@@ -18,7 +18,11 @@ De [página web do projeto](https://freedesktop.org/wiki/Software/systemd/):
 
 **Nota:** Para uma explicação detalhada do porquê Arch migrou para o *systemd*, consulte [esta mensagem do fórum internacional](https://bbs.archlinux.org/viewtopic.php?pid=1149530#p1149530).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Uso básico do systemctl](#Uso_básico_do_systemctl)
     *   [1.1 Analisando o estado do sistema](#Analisando_o_estado_do_sistema)

@@ -4,7 +4,11 @@ For more detailed instructions, see the respective [ArchWiki](/index.php/ArchWik
 
 Arch Linux should run on any [x86_64](https://en.wikipedia.org/wiki/X86-64 "wikipedia:X86-64")-compatible machine with a minimum of 512 MB RAM. A basic installation with all packages from the [base](https://www.archlinux.org/groups/x86_64/base/) group should take less than 800 MB of disk space. As the installation process needs to retrieve packages from a remote repository, this guide assumes a working internet connection is available.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Pre-installation](#Pre-installation)
     *   [1.1 Verify signature](#Verify_signature)

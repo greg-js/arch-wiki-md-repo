@@ -7,7 +7,11 @@ Los nombres de los «locales» `(configuración regional)` se definen utilizando
 
 ```
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Activar el «locale» necesario](#Activar_el_«locale»_necesario)
     *   [1.1 Ejemplo ES Español](#Ejemplo_ES_Español)

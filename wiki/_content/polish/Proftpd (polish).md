@@ -1,6 +1,10 @@
 [proFtpd](http://proftpd.org/) (Pro FTP daemon) jest wysoce funkcjonalnym serwerem FTP, odsłaniającym dużą liczbę opcji konfiguracyjnych dla użytkownika.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalacja](#Instalacja)
 *   [2 Konfiguracja](#Konfiguracja)

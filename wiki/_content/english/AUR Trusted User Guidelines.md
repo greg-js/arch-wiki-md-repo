@@ -6,7 +6,11 @@ Related articles
 
 The TUs are governed using the [TU bylaws](https://aur.archlinux.org/trusted-user/TUbylaws.html)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 TODO list for new Trusted Users](#TODO_list_for_new_Trusted_Users)
 *   [2 The TU and the AUR](#The_TU_and_the_AUR)

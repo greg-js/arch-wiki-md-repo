@@ -22,7 +22,11 @@ Variáveis obrigatórias são `pkgname`, `pkgver`, `pkgrel` e `arch`. `license` 
 
 **Dica:** Use [namcap](/index.php/Namcap_(Portugu%C3%AAs) "Namcap (Português)") para verificar PKGBUILDs por erros comuns de empacotamento.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Nome do pacote](#Nome_do_pacote)
     *   [1.1 pkgbase](#pkgbase)

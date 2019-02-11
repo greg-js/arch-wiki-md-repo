@@ -9,7 +9,11 @@ Related articles
 
 Snaps can be confined using [AppArmor](/index.php/AppArmor "AppArmor") which is now enabled in the default kernel. Consult relevant wiki pages to find steps for enabling [AppArmor](/index.php/AppArmor "AppArmor") in your system.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

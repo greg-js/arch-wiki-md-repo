@@ -9,7 +9,11 @@ PAWM stands for *Puto Amo Window Manager*.
 
 **Note:** It's unmaintained. Latest released version is 2.3.0.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)

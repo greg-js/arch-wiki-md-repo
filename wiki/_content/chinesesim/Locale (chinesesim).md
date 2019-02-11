@@ -2,7 +2,11 @@
 
 Locales 被 [glibc](https://www.archlinux.org/packages/?name=glibc) 和其它需要本地化的应用程序和库用来解析文本(或正确的显示当前区域的某些文字样式,如货币,时间,日期,特殊字符和其他的区域格式).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 生成 locale](#生成_locale)
 *   [2 设置 locale](#设置_locale)
@@ -225,7 +229,7 @@ $ cp /usr/share/applications/abiword.desktop ~/.local/share/applications/
 
 编辑 `Exec` 选项:
 
- `~/.local/share/applications/abiword.desktop`  `Exec=env LANG=he_IL.UTF-8 abiword %U` 
+ `~/.local/share/applications/abiword.desktop`  `Exec=env LANG=he_IL.UTF-8 abiword %U` 
 
 ### Python, ViM 和 UTF-8
 

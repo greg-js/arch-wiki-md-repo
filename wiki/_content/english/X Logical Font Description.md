@@ -5,7 +5,11 @@ Related articles
 
 Two different font systems are used by [X11](/index.php/X11 "X11"): the older or core X Logical Font Description, *XLFD,* and the newer X FreeType, *Xft,* systems (see [An Xft Tutorial](http://keithp.com/~keithp/render/Xft.tutorial) for font names format). XLFD was originally designed for bitmap fonts and support for scalable fonts (Type1, TrueType and OpenType) was added later. XLFD does not support anti‑aliasing and sub‑pixel rasterization. Xft uses the FreeType and Fontconfig libraries and is more suitable when the smooth appearance of fonts is desired. A guide for using Fontconfig and Xft may be found at [Font configuration](/index.php/Font_configuration "Font configuration").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Font names](#Font_names)
     *   [1.1 Font name elements](#Font_name_elements)

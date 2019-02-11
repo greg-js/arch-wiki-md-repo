@@ -64,3 +64,4 @@
 | [#archlinux.se](irc://irc.freenode.net/archlinux.se) | Обсуждение (Swedish) |
 | [#archlinux-ve](irc://irc.freenode.net/archlinux-ve) | Обсуждение (Venezuela) |
 | [#archlinuxvn](irc://irc.freenode.net/archlinuxvn) | Обсуждение (Vietnamese, Tiếng Việt) |
+| [#archlinux-tg](irc://irc.freenode.net/archlinux-tg) | Мост в телеграм-группу [ArchlinuxChatRU](https://t.me/ArchlinuxChatRU) (Russian) |

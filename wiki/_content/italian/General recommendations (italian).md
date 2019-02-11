@@ -8,7 +8,11 @@ Questa pagina è un indice ragionato di altri articoli e di informazioni rilevan
 
 Si assume che i lettori abbiano letto e seguito la [Guida per Principianti](/index.php/Guida_per_Principianti "Guida per Principianti") oppure la [Guida Ufficiale all'Installazione](/index.php/Guida_Ufficiale_all%27Installazione "Guida Ufficiale all'Installazione") per installare un sistema Arch Linux base. Inoltre ci sono diversi altri pacchetti software normalmente considerati fondamentali per un sistema completo e funzionale. Ad esempio, qualora si desideri un interfaccia grafica, si legga prima la pagina dedicata a [Xorg](/index.php/Xorg_(Italiano) "Xorg (Italiano)"), mentre chi fosse interessato alla possibilità di stampare consideri di leggere anche la pagina su [Cups](/index.php/CUPS_(Italiano) "CUPS (Italiano)"). Tutti gli utenti possono familiarizzare con la struttura del file system leggendo [Filesystem Hierarchy Standard](/index.php/Filesystem_Hierarchy_Standard_(Italiano) "Filesystem Hierarchy Standard (Italiano)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Aspetto](#Aspetto)
     *   [1.1 Output a colori](#Output_a_colori)

@@ -4,7 +4,11 @@ Related articles
 *   [Arch User Repository#FAQ](/index.php/Arch_User_Repository#FAQ "Arch User Repository")
 *   [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 أسئلة عامة](#أسئلة_عامة)
     *   [1.1 ما هي توزيعة آرتش لينُكس؟](#ما_هي_توزيعة_آرتش_لينُكس؟)

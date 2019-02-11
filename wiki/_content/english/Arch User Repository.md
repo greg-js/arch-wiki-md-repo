@@ -17,7 +17,11 @@ A good number of new packages that enter the official repositories start in the 
 
 **Warning:** AUR packages are user produced content. Any use of the provided files is at your own risk.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Getting started](#Getting_started)
 *   [2 History](#History)

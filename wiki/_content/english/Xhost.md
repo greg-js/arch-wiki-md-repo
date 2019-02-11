@@ -26,7 +26,7 @@ $ xhost -
 
 ```
 
-## The 'cannot connect to X server :0.0' output
+## The 'cannot connect to X server :0.0' output
 
 **Warning:** This command disables access control, meaning that any user on the system, or on your network if X is listening on the network, has access to your $DISPLAY without any authentication. This opens a security hole on your system that allows other users to launch applications (including key loggers) on your X server.
 

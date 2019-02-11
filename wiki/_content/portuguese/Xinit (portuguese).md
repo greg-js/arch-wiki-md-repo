@@ -13,7 +13,11 @@ Do [Wikipédia](https://en.wikipedia.org/wiki/xinit "wikipedia:xinit"):
 
 *xinit* é normalmente usado para iniciar os [gerenciadores de janela](/index.php/Gerenciadores_de_janela "Gerenciadores de janela") ou [ambientes de desktop](/index.php/Ambientes_de_desktop "Ambientes de desktop"). Embora você também possa usar o *xinit* para executar aplicativos GUI sem um gerenciador de janelas, muitos aplicativos gráficos esperam um gerenciador de janelas compatível com [EWMH](https://en.wikipedia.org/wiki/Extended_Window_Manager_Hints para você e geralmente obtém o [xprofile](/index.php/Xprofile_(Portugu%C3%AAs) "Xprofile (Português)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalação](#Instalação)
 *   [2 Configuração](#Configuração)
@@ -98,7 +102,7 @@ $ startx
 ou se [#xserverrc](#xserverrc) estiver configurado:
 
 ```
-$ xinit -- :1
+$ xinit -- :1
 
 ```
 

@@ -4,7 +4,11 @@ Synchronization is based on unique message identifiers (UIDs), so no identificat
 
 **Note:** isync is the name of the project, mbsync is the name of the executable
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installing](#Installing)
 *   [2 Configuring](#Configuring)

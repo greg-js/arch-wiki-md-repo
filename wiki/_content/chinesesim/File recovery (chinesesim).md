@@ -2,7 +2,11 @@
 
 这篇文章列举了一系列的Arch Linux下恢复数据的选择.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 特别提示](#特别提示)
     *   [1.1 三思而后行](#三思而后行)

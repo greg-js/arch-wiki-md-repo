@@ -14,7 +14,11 @@ Related articles
 
 **Note:** 本页面力求列出已知的GNU / Linux下运行所有游戏。访问通过[official repositories](/index.php/Official_repositories "Official repositories") and [AUR](/index.php/AUR "AUR"). 欲了解更多有关运行游戏，相关的系统配置提示， 参阅 [Gaming](/index.php/Gaming "Gaming"). 对于可能更多的最新选择的可用游戏 在 AUR, 请检查 [AUR 'games' category](https://aur.archlinux.org/packages.php?O=0&K=&do_Search=Go&detail=1&C=6&SeB=nd&SB=n&SO=a&PP=25).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 动作和冒险](#动作和冒险)
 *   [2 街机](#街机)

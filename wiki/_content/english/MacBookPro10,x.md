@@ -10,7 +10,11 @@ The general installation guidelines are described in [Mac](/index.php/Mac "Mac")
 
 **Note:** To have all hardware supported, you should run this Notebook with Kernel 3.7 or newer.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Preparing for the Installation](#Preparing_for_the_Installation)
     *   [1.1 Preparing the Hard drive](#Preparing_the_Hard_drive)

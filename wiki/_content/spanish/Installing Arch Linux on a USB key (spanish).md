@@ -9,7 +9,11 @@ Artículos relacionados
 
 Esta página describe cómo realizar una instalación normal de Arch en una llave USB (o «unidad flash»). A diferencia de un [USB como soporte de instalación](/index.php/USB_Installation_Media_(Espa%C3%B1ol) "USB Installation Media (Español)"), el usb live daría como resultado la instalación de un sistema de forma permanente en unidad flash USB idéntica a como resultaría una instalación normal sobre un disco duro.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
     *   [1.1 Ajustes de instalación](#Ajustes_de_instalación)

@@ -7,7 +7,11 @@ Artículos relacionados
 
 [Wicd](http://www.wicd.net/) es un gestor de conexiones de red que puede manejar interfaces inalámbricas y cableadas, de forma similar y alternativa a [NetworkManager](/index.php/NetworkManager_(Espa%C3%B1ol) "NetworkManager (Español)"). Wicd está escrito en [Python](/index.php/Python "Python") y [GTK+](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)"), por lo que necesita de la instalación de un menor número de dependencias repecto de otros gestores de red. Alternativamente, está disponible una versión de Wicd para [KDE](/index.php/KDE "KDE"), escrito en [Qt](/index.php/Qt "Qt"), desde el repositorio [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)"). Wicd también se puede ejecutar desde el terminal en una interfaz diseñada con las bibliotecas curses, que no requiere una sesión de servidor X, ni área de notificación (véase [#Ejecutar Wicd en modo texto](#Ejecutar_Wicd_en_modo_texto)).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
     *   [1.1 Paquete base](#Paquete_base)
@@ -171,16 +175,16 @@ if [ "${connection_type}" == "wireless" ]; then
        case "$essid" in
                YOUR-NETWORK-NAME-ESSID)
                        sudo arp -s 192.168.0.1 00:11:22:33:44:55
-                       ;;
+                       ;;
                Netgear01923)
                        sudo arp -s 192.168.0.1 10:11:20:33:40:50
-                       ;;
+                       ;;
                ANOTHER-ESSID)
                        sudo arp -s 192.168.0.1 11:33:55:77:99:00
-                       ;;
+                       ;;
                *)
                        echo "Static ARP not set. No network defined."
-                       ;;
+                       ;;
        esac
 fi
 

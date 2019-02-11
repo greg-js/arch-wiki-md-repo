@@ -2,7 +2,11 @@
 
 [dwb](http://portix.bitbucket.org/dwb/) is a lightweight and flexible web browser using the webkit engine. It is customizable through its web interface and fully usable with keyboard shortcuts.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Basic usage](#Basic_usage)

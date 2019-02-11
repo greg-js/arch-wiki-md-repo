@@ -1,6 +1,10 @@
 [Music On Console](https://moc.daper.net/) is a lightweight music player similar to [MPD](/index.php/MPD "MPD"), but unlike it, MOC comes with an interface and its server does not support remote access.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Front-ends](#Front-ends)

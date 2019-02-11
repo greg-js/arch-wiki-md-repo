@@ -4,7 +4,11 @@ Artículos relacionados
 
 En un sistema operativo, el reloj (*«clock»*) está determinado por cuatro partes: el valor del horario, la hora estándar, la zona horaria y el horario de verano (-DST- **D**aylight **S**aving **T**ime, si corresponde). En este artículo se explica qué son y cómo leer/configurar los mismos. Para *mantener* la hora del sistema ajustada mediante la red consulte [Network Time Protocol daemon](/index.php/Network_Time_Protocol_daemon_(Espa%C3%B1ol) "Network Time Protocol daemon (Español)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Reloj del hardware y reloj del sistema](#Reloj_del_hardware_y_reloj_del_sistema)
     *   [1.1 Leer el reloj](#Leer_el_reloj)

@@ -1,7 +1,11 @@
 **Estado de la traducción**
 Este artículo es una traducción de [IRC Cloaks](/index.php/IRC_Cloaks "IRC Cloaks"), revisada por última vez el **2019-01-26**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=IRC_Cloaks&diff=0&oldid=564889) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Desarrolladores](#Desarrolladores)
 *   [2 Usuarios de confianza](#Usuarios_de_confianza)

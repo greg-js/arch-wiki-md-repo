@@ -11,7 +11,11 @@ Do [artigo do Wikipédia](https://en.wikipedia.org/wiki/pt:Java_(linguagem_de_pr
 
 Arch Linux oferece suporte oficial às versões de código aberto [OpenJDK](https://openjdk.java.net/) 7, 8, 9, 10 e 11\. Todas essas JVM podem ser instaladas sem conflito e alternadas entre si usando o script auxiliar `archlinux-java`. Vários outros ambientes Java estão disponíveis no [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"), sem suporte oficial.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalação](#Instalação)
     *   [1.1 OpenJDK](#OpenJDK)

@@ -28,7 +28,11 @@ Related articles
 
 将 [XDG 自动启动程序](/index.php/XDG_Autostart "XDG Autostart")项放到特定位置，可以[自动启动](/index.php/Autostarting "Autostarting")应用程序。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 应用程序配置项](#应用程序配置项)
     *   [1.1 范例文件](#范例文件)
@@ -259,7 +263,7 @@ $ fbrokendesktop /usr/share/apps/kdm/sessions/icewm.desktop
 
 在 `Exec` 命令中可以使用 `env` 修改环境变量:
 
- `~/.local/share/applications/abiword.desktop`  `Exec=env LANG=he_IL.UTF-8 abiword %U` 
+ `~/.local/share/applications/abiword.desktop`  `Exec=env LANG=he_IL.UTF-8 abiword %U` 
 
 ## 参阅
 

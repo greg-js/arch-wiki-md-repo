@@ -2,7 +2,11 @@
 
 Um **grupo de pacotes** é um conjunto de pacotes relacionados, definidos pelo [empacotador](/index.php/Empacotador "Empacotador"), que podem ser instalados ou desinstalados simultaneamente usando o nome do grupo como um substituto para cada nome de pacote individual. Embora um grupo não seja um pacote, ele pode ser instalado de maneira semelhante a um pacote, consulte [Pacman (Português)#Instalando grupos de pacotes](/index.php/Pacman_(Portugu%C3%AAs)#Instalando_grupos_de_pacotes "Pacman (Português)") e [PKGBUILD (Português)#groups](/index.php/PKGBUILD_(Portugu%C3%AAs)#groups "PKGBUILD (Português)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Grupos](#Grupos)
     *   [1.1 base](#base)

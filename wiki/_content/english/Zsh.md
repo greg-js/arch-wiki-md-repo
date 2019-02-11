@@ -2,7 +2,11 @@
 
 The [Zsh FAQ](http://zsh.sourceforge.net/FAQ/zshfaq01.html#l4) offers more reasons to use Zsh.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Initial configuration](#Initial_configuration)
@@ -314,7 +318,7 @@ $ print -P '%B%F{red}co%F{green}lo%F{blue}rs%f%b'
 This is an example of a two-sided prompt:
 
 ```
-PROMPT='%F{red}%n%f@%F{blue}%m%f %F{yellow}%1~%f %# '
+PROMPT='%F{red}%n%f@%F{blue}%m%f %F{yellow}%1~%f %# '
 RPROMPT='[%F{yellow}%?%f]'
 
 ```

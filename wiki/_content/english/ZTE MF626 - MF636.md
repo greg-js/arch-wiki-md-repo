@@ -4,7 +4,11 @@ Related articles
 
 The ZTE MF626 / MF636 is a USB modem which combines 3G+/3G with EDGE/GPRS in one compact device. It has an integrated micro-SD card reader. It can send data at speeds up to 4.5 Mbps on 3G+ networks and receive data at speeds of up to 7.2 Mbps.  It is also known as the Rogers (Canadian cellular carrier) red stick USB dongle.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Configuration](#Configuration)
     *   [1.1 Disable CD mode on the device](#Disable_CD_mode_on_the_device)

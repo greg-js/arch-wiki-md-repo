@@ -5,7 +5,11 @@ Related articles
 
 [ConnMan](https://01.org/connman) is a command-line network manager designed for use with embedded devices and fast resolve times. It is modular through a [plugin architecture](http://git.kernel.org/cgit/network/connman/connman.git/tree/plugins), but has native [DHCP](https://en.wikipedia.org/wiki/DHCP "wikipedia:DHCP") and [NTP](/index.php/NTP "NTP") support.[[1]](http://git.kernel.org/cgit/network/connman/connman.git/tree/src/)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Front-ends](#Front-ends)
@@ -293,7 +297,7 @@ $ connmanctl disable wifi
 
 ### Avoid changing the hostname
 
-By default, ConnMan changes the transient hostname (see [hostnamectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostnamectl.1)) on a per network basis. This can create problems with X authority: If ConnMan changes your hostname to something else than the one used to generate the xauth magic cookie, then it will become impossible to create new windows. Symptoms are error messages like "No protocol specified" and "Can't open display: :0.0". Manually resetting the host name fixes this, but a permanent solution is to prevent ConnMan from changing your host name in the first place. This can be accomplished by adding the following to `/etc/connman/main.conf`:
+By default, ConnMan changes the transient hostname (see [hostnamectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostnamectl.1)) on a per network basis. This can create problems with X authority: If ConnMan changes your hostname to something else than the one used to generate the xauth magic cookie, then it will become impossible to create new windows. Symptoms are error messages like "No protocol specified" and "Can't open display: :0.0". Manually resetting the host name fixes this, but a permanent solution is to prevent ConnMan from changing your host name in the first place. This can be accomplished by adding the following to `/etc/connman/main.conf`:
 
 ```
 [General]

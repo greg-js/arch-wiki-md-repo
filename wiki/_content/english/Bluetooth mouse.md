@@ -5,7 +5,11 @@ Related articles
 
 This article describes configuration & troubleshooting steps specific to Bluetooth mice. The information here builds on the main [Bluetooth](/index.php/Bluetooth "Bluetooth") article, and assumes the user has already followed any installation, configuration, or troubleshooting from that article.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Configuration](#Configuration)
     *   [1.1 Apple Magic Mouse scroll speed](#Apple_Magic_Mouse_scroll_speed)

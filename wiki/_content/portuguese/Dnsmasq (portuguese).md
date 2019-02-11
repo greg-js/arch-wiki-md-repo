@@ -6,7 +6,11 @@ Artigos relacionados
 
 [dnsmasq](http://www.thekelleys.org.uk/dnsmasq/doc.html) fornece um [servidor DNS](https://en.wikipedia.org/wiki/Name_server "wikipedia:Name server"), um [servidor DHCP](https://en.wikipedia.org/wiki/pt:Dynamic_Host_Configuration_Protocol "wikipedia:pt:Dynamic Host Configuration Protocol") com suporte a [DHCPv6](https://en.wikipedia.org/wiki/DHCPv6 "wikipedia:DHCPv6") e [PXE](https://en.wikipedia.org/wiki/Preboot_Execution_Environment "wikipedia:Preboot Execution Environment"), e um [servidor TFTP](https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol "wikipedia:Trivial File Transfer Protocol"). Ele é projetado para ser leve e ter um tamanho reduzido, adequado para roteadores e firewalls com recursos restritos. O dnsmasq também pode ser configurado para armazenar em cache as consultas DNS para melhorar as velocidades de pesquisa de DNS nos sites visitados anteriormente.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalação](#Instalação)
 *   [2 Iniciar o daemon](#Iniciar_o_daemon)

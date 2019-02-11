@@ -2,7 +2,11 @@ Arch Wiki 上有许多中文页面，这其中大部分是从外文翻译过来�
 
 如果你希望对Arch Wiki做贡献，参与Wiki建设，比如翻译英文页面和对已翻译过的中文页面进行维护，只需要编辑下面的[#页面维护列表](#页面维护列表)，添加相应的条目，并将自己加为相关页面的维护者。如果你在列表中还没有找到想要翻译的页面，可以自行添加。另外，如果因为时间原因无法再维护页面，请及时将自己从维护者列表中删除。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 创建翻译](#创建翻译)
 *   [2 Templates](#Templates)

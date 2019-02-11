@@ -12,7 +12,11 @@ Parameters either have the format `parameter` or `parameter=value`.
 
 **Note:** All kernel parameters are case-sensitive. Most of them are lower case, writing those in upper case does not work.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Configuration](#Configuration)
     *   [1.1 Syslinux](#Syslinux)

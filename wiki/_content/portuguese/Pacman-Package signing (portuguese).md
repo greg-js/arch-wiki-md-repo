@@ -15,7 +15,11 @@ Exemplos de redes de confiança:
 
 **Nota:** O protocolo HKP usa 11371/tcp para comunicação. Para obter as chaves assinadas dos servidores (usando *pacman-key*), essa porta é necessária para comunicação.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Configuração](#Configuração)
     *   [1.1 Configurando o pacman](#Configurando_o_pacman)

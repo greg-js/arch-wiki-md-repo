@@ -6,7 +6,11 @@ Articoli correlati
 
 Un [Desktop environment](https://en.wikipedia.org/wiki/it:Desktop_environment "wikipedia:it:Desktop environment") fornisce una *completa* interfaccia Grafica Utente (GUI) per un sistema, abbinando insieme una serie di client [X](https://en.wikipedia.org/wiki/it:X_Window_System "wikipedia:it:X Window System") scritti utilizzando widget-toolkit ed insiemi di librerie comuni.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 X Window System](#X_Window_System)
 *   [2 Ambienti Desktop](#Ambienti_Desktop)

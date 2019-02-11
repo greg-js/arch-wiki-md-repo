@@ -1,6 +1,10 @@
 *virtualenv* is a tool used to create an isolated workspace for a [Python](/index.php/Python "Python") application. It has various advantages such as the ability to install modules locally, export a working environment, and execute a [Python](/index.php/Python "Python") program in that environment.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Overview](#Overview)
 *   [2 Installation](#Installation)

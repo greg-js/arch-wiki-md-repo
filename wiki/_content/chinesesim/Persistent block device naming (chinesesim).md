@@ -13,7 +13,11 @@ Related articles
 *   持久设备名有一些超出本文范围的限制，比如虽然 [mkinitcpio](/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Mkinitcpio (简体中文)") 支持某个方法，但 systemd 会对支持的设备名添加额外的限制(例如 [FS#42884](https://bugs.archlinux.org/task/42884))。
 *   如果你使用 [LVM2](/index.php/LVM2 "LVM2")，本文将不适用。因为 LVM 自动处理这一问题。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 持久化命名的方法](#持久化命名的方法)
     *   [1.1 by-label](#by-label)

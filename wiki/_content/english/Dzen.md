@@ -1,6 +1,10 @@
 [Dzen](http://robm.github.com/dzen/) is "a general purpose messaging, notification and menuing program for X11\. It was designed to be scriptable in any language and integrate well with window managers like [dwm](/index.php/Dwm "Dwm"), [wmii](/index.php/Wmii "Wmii") and [xmonad](/index.php/Xmonad "Xmonad") though it will work with any window manager."
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

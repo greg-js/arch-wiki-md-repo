@@ -9,7 +9,11 @@ Which way you choose depends heavily on how the new system differs from your old
 
 **Warning:** Some of the following instructions can be dangerous: you are advised to backup all of your important data on the old system before continuing.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Bottom to Top](#Bottom_to_Top)
     *   [1.1 On the old system](#On_the_old_system)

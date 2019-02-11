@@ -14,7 +14,11 @@ Artículos relacionados
 
 Antes de cifrar una unidad, es recomendable realizar un borrado seguro del disco, sobrescribiendo toda la unidad con datos aleatorios. Para evitar ataques criptográficos o [recuperación de archivos](/index.php/File_recovery "File recovery") no deseados, lo ideal es que estos datos sean indistinguibles de los datos escritos posteriormente por dm-crypt. Para comprender mejor el tema vea [Disk encryption (Español)#Preparar el disco](/index.php/Disk_encryption_(Espa%C3%B1ol)#Preparar_el_disco "Disk encryption (Español)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Borrar de forma segura la unidad de disco duro](#Borrar_de_forma_segura_la_unidad_de_disco_duro)
     *   [1.1 Métodos genéricos](#Métodos_genéricos)

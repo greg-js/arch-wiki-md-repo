@@ -18,7 +18,11 @@ Active Directory serves as a central location for network administration and sec
 
 Active Directory uses [Lightweight Directory Access Protocol (LDAP)](https://en.wikipedia.org/wiki/Ldap "wikipedia:Ldap") versions 2 and 3, Microsoft's version of [Kerberos](/index.php/Kerberos "Kerberos") and DNS.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Terminology](#Terminology)
 *   [2 Active Directory configuration](#Active_Directory_configuration)

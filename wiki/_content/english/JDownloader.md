@@ -1,6 +1,10 @@
 [JDownloader](http://jdownloader.org/) is a download manager written in [Java](/index.php/Java "Java"). JDownloader can download normal files, but also files from online file hosting services like MEGA.nz.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Running](#Running)

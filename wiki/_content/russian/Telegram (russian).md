@@ -4,7 +4,11 @@
 
 Хотя официальные приложения и имеют открытый исходный код, они обновляются не сразу же после выхода новых версий приложений. Серверная часть Telegram является проприетарной.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
     *   [1.1 Плагины для других приложений](#Плагины_для_других_приложений)

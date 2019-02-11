@@ -6,7 +6,11 @@
 
 This document covers standards and guidelines on writing [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") for [Electron](/index.php/Electron "Electron").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Using the system electron](#Using_the_system_electron)
     *   [1.1 Building compiled extensions against the system electron](#Building_compiled_extensions_against_the_system_electron)

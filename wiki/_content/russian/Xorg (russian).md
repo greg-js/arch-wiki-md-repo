@@ -18,7 +18,11 @@ C [http://www.x.org/wiki/](http://www.x.org/wiki/):
 
 **Xorg** (обычно называемый просто **X**) очень популярен среди пользователей Linux, что привело к тому, что большинство приложений с графическим интерфейсом используют X11, из-за этого Xorg доступен в большинстве дистрибутивов. Для более подробной информации смотрите статью [Xorg](https://en.wikipedia.org/wiki/ru:X.Org_Server "w:ru:X.Org Server") в Википедии или посетите [веб-сайт Xorg](http://www.x.org/wiki/).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
     *   [1.1 Установка драйвера](#Установка_драйвера)
@@ -160,13 +164,13 @@ Xorg можно настроить через `xorg.conf` и через файл
 Xorg также можно настраивать через `/etc/X11/xorg.conf` или `/etc/xorg.conf`. Чтобы сгенерировать основу файла `xorg.conf`:
 
 ```
-# Xorg :0 -configure
+# Xorg :0 -configure
 
 ```
 
 Это создает файл `xorg.conf.new` в `/root/`, который можно скопировать в `/etc/X11/xorg.conf`.
 
-**Совет:** Если вы уже запустили X, тогда используйте другой дисплей, например `Xorg :2 -configure`.
+**Совет:** Если вы уже запустили X, тогда используйте другой дисплей, например `Xorg :2 -configure`.
 
 Кроме того, ваш проприетарный видеодрайвер может поставляться с инструментом для автоматической настройки Xorg: смотрите статьи [NVIDIA (Русский)](/index.php/NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NVIDIA (Русский)") или [AMD Catalyst (Русский)](/index.php/AMD_Catalyst_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AMD Catalyst (Русский)") для подробностей.
 
@@ -438,7 +442,7 @@ $ xrdb -query | grep dpi
 Для запуска вложенного сеанса другой среды рабочего стола:
 
 ```
-$ /usr/bin/Xnest :1 -geometry 1024x768+0+0 -ac -name Windowmaker & wmaker -display :1
+$ /usr/bin/Xnest :1 -geometry 1024x768+0+0 -ac -name Windowmaker & wmaker -display :1
 
 ```
 

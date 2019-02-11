@@ -13,7 +13,11 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Linux_kernel "wikipedia:L
 
 Kernel packages are [installed](/index.php/Install "Install") onto the file system under `/boot/`. To be able to boot into kernels, the [boot loader](/index.php/Boot_loader "Boot loader") has to be configured appropriately.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Officially supported kernels](#Officially_supported_kernels)
 *   [2 Compilation](#Compilation)

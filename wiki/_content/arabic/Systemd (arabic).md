@@ -6,7 +6,11 @@
 
 انظر أيضًا مقالة systemd [في ويكيبيديا](https://en.wikipedia.org/wiki/Systemd "wikipedia:Systemd").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 تحضيرات قبل التحوّل](#تحضيرات_قبل_التحوّل)
 *   [2 التثبيت](#التثبيت)
@@ -376,10 +380,10 @@ An example of a custom sleep script:
 case $1/$2 in
   pre/*)
     echo "Going to $2..."
-    ;;
+    ;;
   post/*)
     echo "Waking up from $2..."
-    ;;
+    ;;
 esac
 ```
 

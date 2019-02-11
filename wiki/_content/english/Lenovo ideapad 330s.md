@@ -1,6 +1,10 @@
 The [Lenovo IdeaPad 330s (Ryzen)](https://www.notebookcheck.net/Lenovo-IdeaPad-330-15-Ryzen-5-2500U-Laptop-Review.329434.0.html) is a laptop computer with a 15" screen, AMD Ryzen™ 2500U processor.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 PCI Devices](#PCI_Devices)
 *   [2 USB Devices](#USB_Devices)

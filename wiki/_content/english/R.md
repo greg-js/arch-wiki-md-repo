@@ -5,7 +5,11 @@ Related articles
 
 [R](https://en.wikipedia.org/wiki/R_(programming_language) is a "free software environment for statistical computing and graphics."[[1]](https://www.r-project.org/)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)

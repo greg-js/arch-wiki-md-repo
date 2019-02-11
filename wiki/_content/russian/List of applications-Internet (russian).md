@@ -6,7 +6,11 @@
 
 <a class="mw-selflink selflink">Интернет</a> – [Мультимедиа](/index.php/List_of_applications/Multimedia_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Multimedia (Русский)") – [Утилиты](/index.php/List_of_applications/Utilities_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Utilities (Русский)") – [Документы](/index.php/List_of_applications/Documents_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Documents (Русский)") – [Безопасность](/index.php/List_of_applications/Security_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Security (Русский)") – [Наука](/index.php/List_of_applications/Science_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Science (Русский)") – [Другие](/index.php/List_of_applications/Other_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Other (Русский)")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Интернет](#Интернет)
     *   [1.1 Управление подключениями](#Управление_подключениями)

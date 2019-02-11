@@ -9,7 +9,11 @@ Artigos relacionados
 
 Usuários e grupos são usados no GNU/Linux para [controle de acesso](https://en.wikipedia.org/wiki/pt:Controle_de_acesso#Na_seguran.C3.A7a_da_informa.C3.A7.C3.A3o "wikipedia:pt:Controle de acesso") — isto é, para controlar o acesso aos arquivos, diretórios e periféricos do sistema. O Linux oferece mecanismos de controle de acesso relativamente simples/grosseiros por padrão. Para opções mais avançadas, veja [ACL](/index.php/ACL "ACL") e [PAM#Configuration How-Tos](/index.php/PAM#Configuration_How-Tos "PAM").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Visão geral](#Visão_geral)
 *   [2 Permissões e propriedade](#Permissões_e_propriedade)
@@ -79,7 +83,7 @@ Neste exemplo, o diretório `sf_Shared` pertence ao usuário *root* e do grupo *
 
 Usuário dono:
 
- `$ stat -c %U /media/sf_Shared/` 
+ `$ stat -c %U /media/sf_Shared/` 
 ```
 root
 
@@ -87,7 +91,7 @@ root
 
 Grupo dono:
 
- `$ stat -c %G /media/sf_Shared/` 
+ `$ stat -c %G /media/sf_Shared/` 
 ```
 vboxsf
 
@@ -95,7 +99,7 @@ vboxsf
 
 Direitos de acesso:
 
- `$ stat -c %A /media/sf_Shared/` 
+ `$ stat -c %A /media/sf_Shared/` 
 ```
 drwxrwx---
 

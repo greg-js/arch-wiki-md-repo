@@ -2,7 +2,11 @@
 
 The scope of this article, however, will mainly focus on the usage of MIDI in computer systems for playback of files that contain MIDI data. These files usually come with the `.mid` extension, and were hugely popular in the golden days of multimedia computing to share music. In professional music composition/arrangement, it still plays a vital role.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 MIDI file](#MIDI_file)
 *   [2 GM Bank](#GM_Bank)

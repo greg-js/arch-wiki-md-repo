@@ -4,7 +4,11 @@ Document viewer uses the poppler library as a backend.
 
 **Note:** Document viewer was previously known as [Evince](https://wiki.gnome.org/Apps/Evince) until the application was given new descriptive names, one for each supported language. The name *Evince* is still used in numerous places such as the executable name, some package names, some desktop entries, and some GSettings schemas.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Troubleshooting](#Troubleshooting)

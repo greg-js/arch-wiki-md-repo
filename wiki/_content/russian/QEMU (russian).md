@@ -13,7 +13,11 @@ Related articles
 
 QEMU может использовать другие гипервизоры, такие как [Xen](/index.php/Xen_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xen (Русский)") или [KVM](/index.php/KVM "KVM"), для использования расширений ЦП ([HVM](https://en.wikipedia.org/wiki/Hardware-assisted_virtualization "wikipedia:Hardware-assisted virtualization")) для виртуализации. При использовании в качестве виртуализатора QEMU достигает производительность схожую с нативной путем исполнения гостевого кода напрямую на ЦП хост-ситемы.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Графические интерфейсы для QEMU](#Графические_интерфейсы_для_QEMU)
@@ -1241,8 +1245,8 @@ For more information visit [kraxel's blog](https://www.kraxel.org/blog/tag/virgl
 Given that you used the `-nographic` option, you can add the `-vnc display` option to have QEMU listen on `display` and redirect the VGA display to the VNC session. There is an example of this in the [#Starting QEMU virtual machines on boot](#Starting_QEMU_virtual_machines_on_boot) section's example configs.
 
 ```
-$ qemu-system-x86_64 -vga std -nographic -vnc :0
-$ gvncviewer :0
+$ qemu-system-x86_64 -vga std -nographic -vnc :0
+$ gvncviewer :0
 
 ```
 

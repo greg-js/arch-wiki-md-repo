@@ -4,7 +4,11 @@ GStreamer allows a programmer to create a variety of media-handling components, 
 
 Designed to be cross-platform, it is known to work on Linux (x86, PowerPC and ARM), Solaris (Intel and SPARC), macOS, Microsoft Windows and OS/400\. GStreamer has bindings for programming-languages like [Python](/index.php/Python "Python"), C++, Perl, GNU Guile ([guile](https://www.archlinux.org/packages/?name=guile)), and [Ruby](/index.php/Ruby "Ruby"). GStreamer is free software, licensed under the GNU Lesser General Public License.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Integration](#Integration)

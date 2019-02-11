@@ -1,6 +1,10 @@
 [深度桌面环境](https://www.deepin.org/dde/) (Deepin Desktop Environment, DDE) 是 Linux 发行版 Deepin 的桌面环境。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 启动](#启动)

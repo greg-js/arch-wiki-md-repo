@@ -14,7 +14,11 @@
 
 For a general overview of laptop-related articles and recommendations, see [Laptop](/index.php/Laptop "Laptop").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Configuration](#Configuration)
     *   [1.1 BIOS](#BIOS)
@@ -230,7 +234,7 @@ Also, it could be useful to add `analog_gain_control=0` to `aec_args` to disable
 The issue can be fixed by installing [vlc](https://www.archlinux.org/packages/?name=vlc) and running:
 
 ```
-$ vlc v4l:// :v4l-vdev="/dev/video0"
+$ vlc v4l:// :v4l-vdev="/dev/video0"
 
 ```
 

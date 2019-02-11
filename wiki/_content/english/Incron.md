@@ -1,6 +1,10 @@
 [incron](http://inotify.aiken.cz/?section=incron&page=about&lang=en) is a daemon which monitors [filesystem events](/index.php/Autostarting#On_filesystem_events "Autostarting") and executes commands defined in system and user tables.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Activation and Autostart](#Activation_and_Autostart)

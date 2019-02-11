@@ -4,7 +4,11 @@
 
 Arch Linux би трябвало да работи на всяка [x86_64](https://en.wikipedia.org/wiki/X86-64 "wikipedia:X86-64") съвместима машина с поне 512 MB RAM. Основна инсталация с всички пакети от група [base](https://www.archlinux.org/groups/x86_64/base/) може да заеме по-малко от 800 MB of дисково пространство. Тъй като инсталационният процес трябва да вземе пакети от външни хранилища, това ръководство приема, че е налична работеща интернет връзка.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Преди инсталацията](#Преди_инсталацията)
     *   [1.1 Verify signature](#Verify_signature)

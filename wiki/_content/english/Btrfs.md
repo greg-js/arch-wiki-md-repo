@@ -10,7 +10,11 @@ From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page):
 
 **Warning:** Btrfs has some features that are unstable. See the Btrfs Wiki's [Status](https://btrfs.wiki.kernel.org/index.php/Status), [Is Btrfs stable?](https://btrfs.wiki.kernel.org/index.php/FAQ#Is_btrfs_stable.3F) and [Getting started](https://btrfs.wiki.kernel.org/index.php/Getting_started) for more detailed information. See the [#Known issues](#Known_issues) section.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Preparation](#Preparation)
 *   [2 File system creation](#File_system_creation)

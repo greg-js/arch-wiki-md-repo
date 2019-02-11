@@ -10,7 +10,11 @@ Related articles
 
 In order to integrate functions of the host system to the guests, including shared folders and clipboard, video acceleration and a seamless window integration mode, *guest additions* are provided for some guest operating systems.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation steps for Arch Linux hosts](#Installation_steps_for_Arch_Linux_hosts)
     *   [1.1 Install the core packages](#Install_the_core_packages)

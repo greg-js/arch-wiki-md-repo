@@ -1,6 +1,10 @@
 [Compton](https://github.com/yshui/compton) is a standalone [compositor](/index.php/Compositor "Compositor") for [Xorg](/index.php/Xorg "Xorg"), suitable for use with [window managers](/index.php/Window_managers "Window managers") that do not provide compositing. Compton is a fork of [xcompmgr-dana](http://oliwer.net/xcompmgr-dana/), which in turn is a fork of [xcompmgr](/index.php/Xcompmgr "Xcompmgr").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -60,7 +64,7 @@ To set opacity (in effect transparency) for focused and unfocused windows (for e
 ```
 opacity-rule = [
   "90:class_g = 'URxvt' && focused",
-  "60:class_g = 'URxvt' && !focused"
+  "60:class_g = 'URxvt' && !focused"
 ];
 
 ```
@@ -121,14 +125,14 @@ $ compton -cCGfF -o 0.38 -O 200 -I 200 -t 0 -l 0 -r 3 -D2 -m 0.88
 If a [multihead](/index.php/Multihead "Multihead") configuration is used without xinerama - meaning that X server is started with more than one screen - then compton will start on only one screen by default. It can be started on all screens by using the `-d` argument. For example, to run on X screen 0 in the background:
 
 ```
- compton -b -d :0
+ compton -b -d :0
 
 ```
 
 The above should work on all monitors, but if it doesn't try an older method that manually specifies each one:
 
 ```
-seq 0 3 | xargs -l1 -I@ compton -b -d :0.@
+seq 0 3 | xargs -l1 -I@ compton -b -d :0.@
 
 ```
 
@@ -302,7 +306,7 @@ Not drawing underlying tabbed windows can be enabled by adding the following to 
 
 ```
 opacity-rule = [
-  "95:class_g = 'URxvt' && !_NET_WM_STATE@:32a",
+  "95:class_g = 'URxvt' && !_NET_WM_STATE@:32a",
   "0:_NET_WM_STATE@[0]:32a *= '_NET_WM_STATE_HIDDEN'",
   "0:_NET_WM_STATE@[1]:32a *= '_NET_WM_STATE_HIDDEN'",
   "0:_NET_WM_STATE@[2]:32a *= '_NET_WM_STATE_HIDDEN'",

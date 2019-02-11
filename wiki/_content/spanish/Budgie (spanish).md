@@ -10,7 +10,11 @@ Artículos relacionados
 
 [Budgie](https://budgie-desktop.org/home/) es el escritorio predeterminado de Solus Operating System, escrito desde cero. Además de un diseño más moderno, Budgie puede emular la apariencia y la sensación del escritorio GNOME 2.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Puesta en marcha](#Puesta_en_marcha)

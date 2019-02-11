@@ -8,7 +8,11 @@ You control a *tee*, a ball-shaped 2D character, using your keyboard and mouse t
 
 The game works in a client–server model, where the user plays using a Client which connects to a local or remote Server. Since DDNet has official servers, you most likely will only start the Client and play online.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Optional skins](#Optional_skins)

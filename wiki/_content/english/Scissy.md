@@ -1,6 +1,10 @@
 [Scissy](https://github.com/abique/scissy) is a standalone and minimal git hosting service.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Create certificate](#Create_certificate)

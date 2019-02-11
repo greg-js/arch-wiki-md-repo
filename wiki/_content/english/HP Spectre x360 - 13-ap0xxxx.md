@@ -15,7 +15,11 @@
 
 This article covers specific configuration of this laptop. Currently based on experience with Xfce4, running on X.org.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Hardware Info](#Hardware_Info)
     *   [1.1 Hardware Options](#Hardware_Options)

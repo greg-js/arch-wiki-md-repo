@@ -8,7 +8,11 @@ Artículos relacionados
 
 [Etckeeper](http://etckeeper.branchable.com/) le permite mantener `/etc` bajo el control de versiones.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Configuración](#Configuración)

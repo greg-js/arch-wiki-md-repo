@@ -6,7 +6,11 @@ Related articles
 
 **翻译状态：** 本文是英文页面 [Systemd_FAQ](/index.php/Systemd_FAQ "Systemd FAQ") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-03-11，点击[这里](https://wiki.archlinux.org/index.php?title=Systemd_FAQ&diff=0&oldid=418529)可以查看翻译后英文页面的改动。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 常见问题](#常见问题)
     *   [1.1 为什么控制台上会显示日志信息？](#为什么控制台上会显示日志信息？)

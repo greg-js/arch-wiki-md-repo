@@ -4,7 +4,11 @@ Related articles
 *   [systemd/User](/index.php/Systemd/User "Systemd/User")
 *   [Daemons#List of daemons](/index.php/Daemons#List_of_daemons "Daemons")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 FAQ](#FAQ)
     *   [1.1 Why do I get log messages on my console?](#Why_do_I_get_log_messages_on_my_console?)

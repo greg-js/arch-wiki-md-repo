@@ -13,7 +13,11 @@ De [Wikipedia:Logical Volume Manager (Linux)](https://en.wikipedia.org/wiki/Logi
 
 	LVM es un [gestor de volúmenes lógicos](https://en.wikipedia.org/wiki/logical_volume_management "wikipedia:logical volume management") para el [kernel de Linux](https://en.wikipedia.org/wiki/N%C3%BAcleo_Linux "wikipedia:Núcleo Linux"), que gestiona unidades de disco y dispositivos similares de almacenamiento masivo.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Bloques para construir LVM](#Bloques_para_construir_LVM)
 *   [2 Ventajas](#Ventajas)

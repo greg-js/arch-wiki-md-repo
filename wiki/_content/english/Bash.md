@@ -10,7 +10,11 @@ Related articles
 
 [Bash](https://www.gnu.org/software/bash/) (Bourne-again Shell) is a [command-line shell](/index.php/Command-line_shell "Command-line shell")/programming language by the [GNU Project](/index.php/GNU_Project "GNU Project"). Its name is a homaging reference to its predecessor, the long-deprecated Bourne shell. Bash can be run on most UNIX-like operating systems, including GNU/Linux.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Invocation](#Invocation)
     *   [1.1 Configuration files](#Configuration_files)

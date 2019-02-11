@@ -2,7 +2,11 @@ This article documents configuration and troubleshooting specific to the Alienwa
 
 See the [Installation guide](/index.php/Installation_guide "Installation guide") for general installation instructions.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Getting Linux to boot](#Getting_Linux_to_boot)
 *   [2 Touchpad](#Touchpad)
@@ -206,7 +210,7 @@ Sometimes when you sleep the computer and resume it, the OLED screen will flicke
 ```
 $ cat /usr/local/bin/resmon 
 #!/bin/sh
-xrandr -d :0.0 --output eDP-1 --off && xrandr -d :0.0 --output eDP-1 --auto
+xrandr -d :0.0 --output eDP-1 --off && xrandr -d :0.0 --output eDP-1 --auto
 
 ```
 

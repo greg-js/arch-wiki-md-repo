@@ -18,7 +18,11 @@ In Arch Linux, power management consists of two main parts:
     *   [udev](/index.php/Udev "Udev") rules
 2.  Configuration of userspace tools, which interact with the kernel and react to its events. Many userspace tools also allow to modify kernel configuration in a "user-friendly" way. See [#Userspace tools](#Userspace_tools) for the options.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Userspace tools](#Userspace_tools)
     *   [1.1 Console](#Console)
@@ -328,10 +332,10 @@ An example of a custom sleep script:
 case $1/$2 in
   pre/*)
     echo "Going to $2..."
-    ;;
+    ;;
   post/*)
     echo "Waking up from $2..."
-    ;;
+    ;;
 esac
 
 ```
@@ -587,9 +591,10 @@ Alternatively, to blacklist devices that are not working with PCI runtime power 
  `/etc/udev/rules.d/pci_pm.rules` 
 ```
 # blacklist for pci runtime power management
-SUBSYSTEM=="pci", ATTR{vendor}=="0x1234", ATTR{device}=="0x1234", ATTR{power/control}:="on"
+SUBSYSTEM=="pci", ATTR{vendor}=="0x1234", ATTR{device}=="0x1234", ATTR{power/control}="on", GOTO="pci_pm_end"
 
 SUBSYSTEM=="pci", ATTR{power/control}="auto"
+LABEL="pci_pm_end"
 
 ```
 

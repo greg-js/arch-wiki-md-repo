@@ -10,7 +10,11 @@ El kernel de Linux admite arrancar con EFISTUB (EFI BOOT STUB). Esta caracterís
 
 Con EFISTUB un kernel se puede arrancar directamente por una placa base UEFI o indirectamente usando un [gestor de arranque](/index.php/Boot_loader_(Espa%C3%B1ol) "Boot loader (Español)"). Este último es recomendado si se tienen múltiples pares de kernel/initramfs y el menú de inicio UEFI de su placa base no es fácil de usar.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Prepararse para EFISTUB](#Prepararse_para_EFISTUB)
 *   [2 Arrancar EFISTUB](#Arrancar_EFISTUB)

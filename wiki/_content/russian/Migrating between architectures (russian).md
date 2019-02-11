@@ -6,7 +6,11 @@
 
 **Важно:** Если не указано явно, все эти методы **не проверены** и могут нанести непоправимый урон вашей системе. Продолжайте на свой риск.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Общая подготовка](#Общая_подготовка)
     *   [1.1 Проверка 64-битной архитектуры](#Проверка_64-битной_архитектуры)

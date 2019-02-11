@@ -15,7 +15,11 @@ Este artículo cubre [fdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fdisk
 
 **Sugerencia:** Para la funcionalidad de partición básica con una interfaz de usuario de texto, se puede utilizar [cfdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cfdisk.8).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Listar las particiones](#Listar_las_particiones)

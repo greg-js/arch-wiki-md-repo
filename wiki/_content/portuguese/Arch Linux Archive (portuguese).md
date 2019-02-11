@@ -14,7 +14,11 @@ O **Arch Linux Archive** (também conhecido como **ALA**), antigamente conhecido
 
 Os pacotes são mantidos apenas por poucos anos e, posteriormente, eles são movidos para [Arch Linux Historical Archive](#Historical_Archive) no archive.org.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Localização](#Localização)
 *   [2 Diretórios](#Diretórios)

@@ -10,7 +10,11 @@ En biología evolutiva, la [cooperation](https://en.wikipedia.org/wiki/Co-operat
 
 En este artículo se describe cómo los usuarios nuevos o experimentados en Arch, pueden contribuir a la comunidad. Tenga en cuenta que esto no es una lista exhaustiva. Antes de contribuir, por favor acostúmbrese al [código de conducta](/index.php/Code_of_conduct_(Espa%C3%B1ol) "Code of conduct (Español)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Comunidad](#Comunidad)
     *   [1.1 Publicar en los foros](#Publicar_en_los_foros)

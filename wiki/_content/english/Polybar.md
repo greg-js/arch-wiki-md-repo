@@ -1,6 +1,10 @@
 [polybar](https://github.com/jaagr/polybar) is a fast and easy-to-use tool for creating status bars. It aims to be easily customizable, utilising many modules which enable a wide range of (editable) functionality, such as displaying workspaces, the date, or system volume. Polybar is especially useful for [Window managers](/index.php/Window_manager "Window manager") that have a limited or non-existent status bar, such as [awesome](/index.php/Awesome "Awesome") or [i3](/index.php/I3 "I3"). Polybar can also be used on full [Desktop environments](/index.php/Desktop_environment "Desktop environment") like [Plasma](/index.php/Plasma "Plasma").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -53,7 +57,7 @@ modules-right = date
 
 [module/date]
 type = internal/date
-date = %Y-%m-%d%
+date = %Y-%m-%d%
 ```
 
 It defines a bar named `mybar` with a module called `date`.

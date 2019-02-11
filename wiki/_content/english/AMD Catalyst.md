@@ -8,7 +8,11 @@ This article covers the now legacy AMD proprietary Catalyst driver.
 
 **Note:** Catalyst packages are no longer offered in the official repositories. It is no longer updated by AMD and does not support the latest Xorg. Installing an old Xorg is required.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Selecting the right driver](#Selecting_the_right_driver)
 *   [2 Installation](#Installation)
@@ -1150,7 +1154,7 @@ Add --disable-gpu execute option to the chromium, ie. to /usr/share/applications
 
 ```
 # cat /usr/share/applications/chromium.desktop | grep -i exec
-Exec=chromium %U --disable-gpu
+Exec=chromium %U --disable-gpu
 
 ```
 

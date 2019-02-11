@@ -1,6 +1,10 @@
 Εδώ συχνές ερωτήσεις-απαντήσεις για την αρχιτεκτονική x86_64 στο Arch Linux
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Πώς μπορώ να εγκαταστήσω το Arch64;](#Πώς_μπορώ_να_εγκαταστήσω_το_Arch64;)
 *   [2 Πόσο πλήρης είναι η μεταφορά στην 64bit αρχιτεκτονική; Θα έχω όλα τα πακέτα απο το αντίστοιχο 32bit περιβάλλον ;](#Πόσο_πλήρης_είναι_η_μεταφορά_στην_64bit_αρχιτεκτονική;_Θα_έχω_όλα_τα_πακέτα_απο_το_αντίστοιχο_32bit_περιβάλλον_;)

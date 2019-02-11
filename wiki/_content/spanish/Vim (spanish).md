@@ -1,6 +1,10 @@
 Vim (**Vi** I**M**Proved), es un editor de texto derivado de Vi. Es notoriamente conocido por su empinada curva de aprendizaje, y su poco amistosa interfaz de usuario. No obstante, debido a su eficiencia, variedad de añadidos ("plugins") y posibilidades de personalización, vim es uno de los editores de texto más populares entre programadores y usuarios de sistemas tipo Unix (junto con [Emacs](/index.php/Emacs "Emacs")*). Existe también una versión gráfica, gVim, que proporciona un sistema de menús al usuario.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Configuración](#Configuración)
@@ -399,7 +403,7 @@ ZZ
 
 *   Salida forzada
 
-Si :q no funciona, será debido probablemente a que no grabó los cambios. Si quiere grabarlos, use :wq. Si no quiere conservar los cambios, teclee
+Si :q no funciona, será debido probablemente a que no grabó los cambios. Si quiere grabarlos, use :wq. Si no quiere conservar los cambios, teclee
 
 ```
 :q!

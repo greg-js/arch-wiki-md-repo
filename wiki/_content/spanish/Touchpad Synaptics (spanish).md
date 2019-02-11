@@ -8,7 +8,11 @@ Este artículo detalla el proceso de instalación y configuración de ***Synapti
 
 **Nota:** Si desea configurar su touchpad en el centro de control de GNOME, necesita usar el controlador de [libinput](/index.php/Libinput_(Espa%C3%B1ol) "Libinput (Español)").[[1]](https://bugzilla.gnome.org/show_bug.cgi?id=764257#c12)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Configuración](#Configuración)

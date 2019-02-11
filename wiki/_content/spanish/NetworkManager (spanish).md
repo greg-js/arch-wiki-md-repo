@@ -7,7 +7,11 @@ Artículos relacionados
 
 [NetworkManager](http://projects.gnome.org/NetworkManager/) es un programa que proporciona a los sistemas la detección y configuración automática para conectarse a la red. Las funcionalidades de NetworkManager son útiles tanto para redes inalámbricas como por cable. Para las redes inalámbricas, NetworkManager prefiere las redes conocidas y tiene la capacidad de cambiar a la red más confiable. NetworkManager permite que las aplicaciones puedan cambiar de modalidad en línea y fuera de línea. NetworkManager da preferencia a las conexiones por cable antes que a las inalámbricas, tiene soporte para conexiones por módem y para ciertos tipos de VPN. NetworkManager fue originariamente desarrollado por Red Hat y ahora es respaldado por el proyecto [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Intalación base](#Intalación_base)
     *   [1.1 Soporte VPN](#Soporte_VPN)

@@ -5,7 +5,11 @@ Related articles
 
 [Thunderbird](https://www.thunderbird.net/en-US/) is an open source email, news, and chat client previously developed by the Mozilla Foundation.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Securing](#Securing)

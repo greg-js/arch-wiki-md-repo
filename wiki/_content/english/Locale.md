@@ -4,7 +4,11 @@ Related articles
 
 [Locales](https://en.wikipedia.org/wiki/Locale_(computer_software) "w:Locale (computer software)") are used by [glibc](https://www.archlinux.org/packages/?name=glibc) and other locale-aware programs or libraries for rendering text, correctly displaying regional monetary values, time and date formats, alphabetic idiosyncrasies, and other locale-specific standards.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Generating locales](#Generating_locales)
 *   [2 Setting the locale](#Setting_the_locale)

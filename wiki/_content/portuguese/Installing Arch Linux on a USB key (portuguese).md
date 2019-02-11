@@ -8,7 +8,11 @@ Artigos relacionados
 
 Esta página explica como realizar uma instalação normal do Arch em um pendrive (também conhecido como "unidade flash" ou, em inglês, de *USB key*). Em contraste com o fato de ter um LiveUSB coberto em [Mídia de instalação em flash USB](/index.php/M%C3%ADdia_de_instala%C3%A7%C3%A3o_em_flash_USB "Mídia de instalação em flash USB"), o resultado será uma instalação persistente idêntica à instalação normal em HDD, mas em uma unidade flash USB.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalação](#Instalação)
     *   [1.1 Ajustes na instalação](#Ajustes_na_instalação)

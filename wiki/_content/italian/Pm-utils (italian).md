@@ -11,7 +11,11 @@ Un aspetto meno conosciuto è quello che simula le commutazioni fatte da [Laptop
 
 Utilizzato in combinazione col pacchetto [cpupower](/index.php/Cpupower "Cpupower"), gli utenti notebook (e desktop) sono dotati di una suite completa per la gestione dell'alimentazione.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installazione](#Installazione)
     *   [1.1 Installare backend per la sospensione alternativi (opzionale)](#Installare_backend_per_la_sospensione_alternativi_(opzionale))
@@ -180,11 +184,11 @@ case $1 in
     true)
     echo "Enable screen power saving"
     echo 5 > /sys/class/backlight/acpi_video0/device/backlight/acpi_video0/brightness
-    ;;
+    ;;
     false)
     echo "Disable screen power saving"
     echo 14 > /sys/class/backlight/acpi_video0/device/backlight/acpi_video0/brightness
-    ;;
+    ;;
 esac
 
 ```
@@ -278,18 +282,18 @@ Di seguito viene mostrato un Hook dimostrativo ed inutile, il quale aggiunge del
 case $1 in
     hibernate)
         echo "Il sistema si accinge alla sospensione su disco!"
-        ;;
+        ;;
     suspend)
         echo "Il sistema si accinge alla sospensione in RAM!"
-        ;;
+        ;;
     thaw)
         echo "La sospensione su disco è terminata, il sistema è in ripristino..."
-        ;;
+        ;;
     resume)
         echo "La sospensione su Ram è terminata..."
-        ;;
+        ;;
     *)  echo "C'è qualcosa di totalmente sbagliato."
-        ;;
+        ;;
 esac
 
 ```

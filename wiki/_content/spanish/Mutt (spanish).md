@@ -1,6 +1,10 @@
 **Mutt** es un cliente correo renombrado por sus poderosas características. Mutt, a pesar de más de una decada desde su lanzamiento, sigue siendo el cliente de correo favorito de un gran número de usuarios expertos. Desafortunadamente, una instalación por defecto de Mutt está plagada por combinación de teclas complicadas y una enorme cantidad de documentación. Esta guía ayudará al usuario promedio a instalar y correr Mutt, y comenzar a personalizarlo como sea necesario.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Descripción](#Descripción)
 *   [2 Instalación](#Instalación)
@@ -329,7 +333,7 @@ Para propósitos de prueba, remita el correo a usted mismo. Después de escribir
 Puede instalar [muttprint](https://aur.archlinux.org/packages/muttprint/) del [AUR](/index.php/AUR "AUR") para una calidad de impresión superior. Inserte en su archivo muttrc:
 
 ```
-set print_command="/usr/bin/muttprint %s -p {PrinterName}"
+set print_command="/usr/bin/muttprint %s -p {PrinterName}"
 
 ```
 
@@ -362,7 +366,7 @@ Cree un archivo .urlview en $HOME e ingrese lo siguiente:
 
 ```
 REGEXP (((http|https|ftp|gopher)|mailto)[.:][^ >"\t]*|www\.[-a-z0-9.]+)[^ .,;\t>">\):]
-COMMAND firefox %s 
+COMMAND firefox %s 
 
 ```
 
@@ -418,7 +422,7 @@ pacman -S lynx
 Si *~/.mutt/mailcap* no existe va a necesitar crearlo y guardar lo siguiente en el:
 
 ```
-text/html; lynx -dump %s; nametemplate=%s.html; copiousoutput
+text/html; lynx -dump %s; nametemplate=%s.html; copiousoutput
 
 ```
 

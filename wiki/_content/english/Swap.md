@@ -15,7 +15,11 @@ From [All about Linux swap space](http://www.linux.com/news/software/application
 
 Support for swap is provided by the Linux kernel and user-space utilities from the [util-linux](https://www.archlinux.org/packages/?name=util-linux) package.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Swap space](#Swap_space)
 *   [2 Swap partition](#Swap_partition)

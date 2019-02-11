@@ -23,7 +23,11 @@
 
 В консольном режиме некоторым *символам клавиш* (например от `F1` до `F246`) могут быть назначены определённые действия (такие как переключение на другую консоль или печать последовательности символов). Смотрите [Extra keyboard keys in console](/index.php/Extra_keyboard_keys_in_console "Extra keyboard keys in console") для дополнительной информации.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Идентификация кодов клавиш](#Идентификация_кодов_клавиш)
     *   [1.1 Скан коды](#Скан_коды)
@@ -128,7 +132,7 @@ $ xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.*keycode 
 Если вы нажимаете клавишу и ничего не появляется на терминале, это может означать, что либо у клавиши нет *скан кода*, либо *сканкоду* не назначен *код клавиши*, либо какой-то другой процесс отлавливает нажатия клавиш. Если вы подозреваете, что процесс, слушающий X сервер отлавливает нажатия клавиш, вы можете попробовать запустить xev из чистой X сессии:
 
 ```
-$ xinit /usr/bin/xterm -- :1
+$ xinit /usr/bin/xterm -- :1
 
 ```
 

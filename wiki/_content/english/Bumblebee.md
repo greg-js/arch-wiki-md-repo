@@ -13,7 +13,11 @@ From Bumblebee's [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ):
 
 **Note:** You might want to use [nvidia-xrun](/index.php/Nvidia-xrun "Nvidia-xrun") or [PRIME](/index.php/PRIME "PRIME") instead, because Bumblebee not only has significant performance issues[[1]](https://github.com/Witko/nvidia-xrun/issues/4#issuecomment-153386837)[[2]](https://bbs.archlinux.org/viewtopic.php?pid=1822926), but also has no plans to support [Vulkan](/index.php/Vulkan "Vulkan")[[3]](https://github.com/Bumblebee-Project/Bumblebee/issues/769#issuecomment-218016574).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Bumblebee: Optimus for Linux](#Bumblebee:_Optimus_for_Linux)
 *   [2 Installation](#Installation)
@@ -34,7 +38,7 @@ From Bumblebee's [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ):
     *   [4.4 Multiple NVIDIA Graphics Cards](#Multiple_NVIDIA_Graphics_Cards)
 *   [5 CUDA without Bumblebee](#CUDA_without_Bumblebee)
 *   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 [VGL] ERROR: Could not open display :8](#[VGL]_ERROR:_Could_not_open_display_:8)
+    *   [6.1 [VGL] ERROR: Could not open display :8](#[VGL]_ERROR:_Could_not_open_display_:8)
     *   [6.2 Xlib: extension "GLX" missing on display ":0.0"](#Xlib:_extension_"GLX"_missing_on_display_":0.0")
     *   [6.3 [ERROR]Cannot access secondary GPU: No devices detected](#[ERROR]Cannot_access_secondary_GPU:_No_devices_detected)
         *   [6.3.1 NVIDIA(0): Failed to assign any connected display devices to X screen 0](#NVIDIA(0):_Failed_to_assign_any_connected_display_devices_to_X_screen_0)
@@ -146,7 +150,7 @@ $ optirun wine application.exe
 For another example, open NVIDIA Settings panel with Optimus:
 
 ```
-$ optirun -b none nvidia-settings -c :8
+$ optirun -b none nvidia-settings -c :8
 
 ```
 
@@ -397,7 +401,7 @@ On some notebooks, the digital Video Output (HDMI or DisplayPort) is hardwired t
 -d <source display>  source display
 -f                   keep in foreground (do not detach from console and daemonize)
 -b                   start bumblebee
--a                   connect to all local displays (e.g. :1, :2, etc)
+-a                   connect to all local displays (e.g. :1, :2, etc)
 -S                   disable use of a singleton and launch a fresh intel-virtual-output process
 -v                   all verbose output, implies -f
 -V <category>        specific verbose output, implies -f
@@ -477,7 +481,7 @@ To turn off the nvidia card after using CUDA do:
 
 **Note:** Please report bugs at [Bumblebee-Project](https://github.com/Bumblebee-Project/Bumblebee)'s GitHub tracker as described in its [wiki](https://github.com/Bumblebee-Project/Bumblebee/wiki/Reporting-Issues).
 
-### [VGL] ERROR: Could not open display :8
+### [VGL] ERROR: Could not open display :8
 
 There is a known problem with some wine applications that fork and kill the parent process without keeping track of it (for example the free to play online game "Runes of Magic")
 
@@ -664,7 +668,7 @@ Change `KeepUnusedXServer` in `/etc/bumblebee/bumblebee.conf` from `false` to `t
 Video tearing is a somewhat common problem on Bumblebee. To fix it, you need to enable vsync. It should be enabled by default on the Intel card, but verify that from Xorg logs. To check whether or not it is enabled for NVIDIA, make sure [nvidia-settings](https://www.archlinux.org/packages/?name=nvidia-settings) is installed and run:
 
 ```
-$ optirun nvidia-settings -c :8
+$ optirun nvidia-settings -c :8
 
 ```
 

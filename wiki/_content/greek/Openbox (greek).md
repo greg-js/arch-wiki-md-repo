@@ -8,7 +8,11 @@ Related articles
 
 Ο Openbox είναι ένας ελαφρύς, ισχυρός και πλήρως παραμετροποιήσιμος *stacking* [διαχειριστής παραθύρων (αγγλικά)](/index.php/Window_manager "Window manager") με εκτεταμένη υποστήριξη προτύπων. Μπορεί να χτιστεί και να τρέξει ανεξάρτητα ως βάση για κάποιο [περιβάλλον εργασίας (αγγλικά)](/index.php/Desktop_environment "Desktop environment"), ή να ενσωματωθεί σε άλλα περιβάλλοντα εργασίας όπως το [KDE](/index.php/KDE "KDE") ή το [Xfce](/index.php/Xfce "Xfce"), ως μια εναλλακτική έναντι των διαχειριστών παραθύρων που αυτά παρέχουν. Το περιβάλλον εργασίας [LXDE](/index.php/LXDE "LXDE") είναι το ίδιο χτισμένο γυρώ από τον Οpenbox. Μια περιεκτική λίστα των χαρακτηριστικών του καταγράφεται στο [επίσημο site του Openbox](http://openbox.org/). Το συγκεκριμένο άρθρο αναφέρεται ειδικά στον τρόπο εγκατάστασης του Openbox στο Arch Linux.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Εγκατάσταση](#Εγκατάσταση)
 *   [2 Openbox Sessions](#Openbox_Sessions)

@@ -2,7 +2,11 @@
 
 The basic requirements are a working [Postfix](/index.php/Postfix "Postfix") installation with users set up and a working [ClamAV](/index.php/ClamAV "ClamAV") daemon, so be sure you have installed and configured them properly.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

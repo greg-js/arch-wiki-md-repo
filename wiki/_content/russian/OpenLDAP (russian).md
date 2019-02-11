@@ -2,7 +2,11 @@ OpenLDAP, LDAP являются очень большой темой для оп
 
 Если вам совершенно неизвестно что такое ldap, то можете [почитать (англ)](http://www.brennan.id.au/20-Shared_Address_Book_LDAP.html) хорошую инструкцию-введение, которая легка в понимании и поможет вам разобраться в основах, даже если вы только знакомитесь с LDAP.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Настройка](#Настройка)

@@ -11,7 +11,11 @@ From [gocryptfs](https://nuetzlich.net/gocryptfs/):
 
 See the [gocryptfs](https://nuetzlich.net/gocryptfs/) project home for further introduction of its features, benchmarks, etc. See [Disk encryption#Comparison table](/index.php/Disk_encryption#Comparison_table "Disk encryption") for an overview of alternative methods and [EncFS](/index.php/EncFS "EncFS") for the direct alternative.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)

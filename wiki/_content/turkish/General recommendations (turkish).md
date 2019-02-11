@@ -6,7 +6,11 @@ Related articles
 
 Bu doküman, Arch kurulu bir sistem için geliştirmeler ve işlev eklemeleri için önemli ipuçları içermektedir. Okuyucularımızın temel Arch Linux kurulumu için [Installation guide (Türkçe)](/index.php/Installation_guide_(T%C3%BCrk%C3%A7e) "Installation guide (Türkçe)") sayfasını okuması gerekmektedir. Bu sayfadaki diğer ipuçlarını da anlayabilmek için [#System administration](#System_administration) ve [#Package management](#Package_management) bölümlerinde açıklanan konseptleri anlamak ve okumak *gerekmektedir*.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Sistem yönetimi](#Sistem_yönetimi)
     *   [1.1 Kullanıcılar ve gruplar](#Kullanıcılar_ve_gruplar)

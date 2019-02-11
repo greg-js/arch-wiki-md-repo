@@ -3,7 +3,11 @@ Este artículo es una traducción de [Arch Linux](/index.php/Arch_Linux "Arch Li
 
 Arch Linux es una distribución [GNU](/index.php/GNU_(Espa%C3%B1ol) "GNU (Español)")/Linux de propósito general, desarrollada independientemente para x86-64, que se esfuerza por proporcionar las últimas versiones estables de la mayoría del software, siguiendo un modelo de lanzamiento continuo (*rolling-release*). La instalación por defecto deja un sistema de base mínima, que el usuario configurará posteriormente agregando lo que necesite.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Principios](#Principios)
     *   [1.1 Simplicidad](#Simplicidad)

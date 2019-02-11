@@ -13,7 +13,11 @@ In generale, i codec sono utilizzati dalle applicazioni multimediali per codific
 
 Questo articolo tratterà solamente di codec e di applicazioni che lavorano come backend; si veda l'articolo [Lista delle applicazioni](/index.php/List_of_applications_(Italiano)#Multimedia#Multimedia "List of applications (Italiano)") per una lista completa di media player più utilizzati (come [MPlayer](/index.php/MPlayer_(Italiano) "MPlayer (Italiano)"), [mpv](/index.php/Mpv "Mpv") e [VLC](/index.php/VLC "VLC")).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Requisiti](#Requisiti)
 *   [2 Lista dei codec](#Lista_dei_codec)

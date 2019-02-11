@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Εισαγωγή](#Εισαγωγή)
 *   [2 Εγκατάσταση του Xorg](#Εγκατάσταση_του_Xorg)

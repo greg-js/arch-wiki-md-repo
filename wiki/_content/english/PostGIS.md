@@ -1,6 +1,10 @@
 PostGIS adds support for geographic objects in the PostgreSQL database. This document describes the process for installing PostGIS and creating a template PostGIS database. It is assumed that PostgreSQL has been installed. If it hasn't, please refer to the [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") page.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installing PostGIS](#Installing_PostGIS)
 *   [2 Installing PostGIS Extension](#Installing_PostGIS_Extension)

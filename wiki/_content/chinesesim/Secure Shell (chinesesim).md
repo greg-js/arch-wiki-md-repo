@@ -19,7 +19,11 @@ SSH 通常用于远程访问和执行命令，但是它也支持隧道，转发�
 
 (来源：[维基百科 Secure Shell](https://en.wikipedia.org/wiki/Secure_Shell "wikipedia:Secure Shell"))
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 OpenSSH](#OpenSSH)
     *   [1.1 安装OpenSSH](#安装OpenSSH)

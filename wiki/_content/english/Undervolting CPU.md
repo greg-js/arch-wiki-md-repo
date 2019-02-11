@@ -10,7 +10,11 @@ Undervolting is a process through which voltage to computer processors and compo
 
 **Warning:** Misconfiguration of CPU voltage and/or temperatures might result in permanently damaged hardware. You have been warned!
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Overview](#Overview)
 *   [2 Tools](#Tools)

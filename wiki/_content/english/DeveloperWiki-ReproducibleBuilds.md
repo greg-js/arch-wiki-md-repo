@@ -2,7 +2,11 @@ A list of reproducible build meetings and work in progress documentation.
 
 [Reproducible build results](https://tests.reproducible-builds.org/archlinux/archlinux.html)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Helping out](#Helping_out)
 *   [2 To-do list](#To-do_list)
@@ -22,7 +26,7 @@ Arch users can help contribute to Reproducible Build issues by looking at the [c
 
 *   FTBS (failed to build from source): reproduce the build failure locally and create a bug report if the package can't be [built from a clean chroot](/index.php/DeveloperWiki:Building_in_a_clean_chroot "DeveloperWiki:Building in a clean chroot") (extra-x86_64-build or multilib-build).
 *   Failed to download sources, reproduce the issue (makepkg -o -d) and create a bug report on the Arch bugtracker.
-*   Failed to reproduce. Locally you can reproduce packages using {pkg|reprotest}. Note that not all variations can be used. For simple time related testing:
+*   Failed to reproduce. Locally you can reproduce packages using [reprotest](https://www.archlinux.org/packages/?name=reprotest). Note that not all variations can be used. For simple time related testing:
 
 ```
  reprotest --variations '+time' 'sudo extra-x86_64-build' '*.pkg.tar.xz' 

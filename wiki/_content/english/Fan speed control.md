@@ -9,7 +9,11 @@ Fan control can bring various benefits to your system, such as quieter working s
 
 **Warning:** Configuring or completely stopping fans on high system load might result in permanently damaged hardware. You have been warned!
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Overview](#Overview)
 *   [2 Fancontrol (lm-sensors)](#Fancontrol_(lm-sensors))

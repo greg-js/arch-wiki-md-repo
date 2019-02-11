@@ -2,7 +2,11 @@
 
 Если вы ищете пошаговое руководство, то его можно найти на gentoo wiki: [http://wiki.gentoo.org/wiki/Screen](http://wiki.gentoo.org/wiki/Screen)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Основы](#Основы)
@@ -125,8 +129,8 @@ The default statusbar may be a little lacking. You may find this one more helpfu
 ```
 hardstatus off
 hardstatus alwayslastline
-hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d
- %{W} %c %{g}]'
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d
+ %{W} %c %{g}]'
 
 ```
 
@@ -146,8 +150,8 @@ This one's pretty simple; just switch your current hardstatus line into a captio
 ```
 backtick 1 5 5 true
 termcapinfo rxvt* 'hs:ts=\E]2;:fs=\007:ds=\E]2;\007'
-hardstatus string "screen (%n: %t)"
-caption string "%{= kw}%Y-%m-%d;%c %{= kw}%-Lw%{= kG}%{+b}[%n %t]%{-b}%{= kw}%+Lw%1`"
+hardstatus string "screen (%n: %t)"
+caption string "%{= kw}%Y-%m-%d;%c %{= kw}%-Lw%{= kG}%{+b}[%n %t]%{-b}%{= kw}%+Lw%1`"
 caption always
 
 ```

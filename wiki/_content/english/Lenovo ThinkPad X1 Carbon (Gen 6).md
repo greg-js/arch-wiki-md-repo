@@ -22,7 +22,8 @@ Version: ThinkPad X1 Carbon 6th
 | [Intel graphics](/index.php/Intel_graphics "Intel graphics") | Yes | i915, (intel_agp) |
 | [Wireless network](/index.php/Wireless_network_configuration#iwlwifi "Wireless network configuration") | Yes | iwlmvm |
 | Native Ethernet with [included dongle](https://www3.lenovo.com/us/en/accessories-and-monitors/cables-and-adapters/adapters/CABLE-BO-TP-OneLink%2B-to-RJ45-Adapter/p/4X90K06975) | Yes | ? |
-| Mobile broadband | No¹ | ? |
+| Mobile broadband Fibocom | No¹ | ? |
+| Mobile broadband Sierra EM7455 | Yes | cdc_mbim, cdc_wcm, cdc_ncm |
 | Audio | Yes | snd_hda_intel |
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes | psmouse, rmi_smbus, i2c_i801 |
 | [TrackPoint](/index.php/TrackPoint "TrackPoint") | Yes | psmouse, rmi_smbus, i2c_i801 |
@@ -46,7 +47,11 @@ Version: ThinkPad X1 Carbon 6th
 
  |
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 BIOS](#BIOS)
     *   [1.1 Updates](#Updates)
@@ -60,25 +65,28 @@ Version: ThinkPad X1 Carbon 6th
 *   [3 Power management/Throttling issues](#Power_management/Throttling_issues)
     *   [3.1 Throttling fix](#Throttling_fix)
 *   [4 Audio crackling](#Audio_crackling)
-*   [5 Configuration](#Configuration)
-    *   [5.1 Keyboard Fn Shortcuts](#Keyboard_Fn_Shortcuts)
-    *   [5.2 Special buttons](#Special_buttons)
-    *   [5.3 Bind special keys](#Bind_special_keys)
-    *   [5.4 Disabling red LED Thinkpad logo](#Disabling_red_LED_Thinkpad_logo)
-    *   [5.5 HDR Display Color Calibration](#HDR_Display_Color_Calibration)
-*   [6 Intel Graphics UHD 620 issues](#Intel_Graphics_UHD_620_issues)
-*   [7 TrackPoint and Touchpad issues](#TrackPoint_and_Touchpad_issues)
-*   [8 Thunderbolt dock](#Thunderbolt_dock)
-    *   [8.1 Plugable USB-C Mini Docking Station with 85W Power Delivery UD-CAM](#Plugable_USB-C_Mini_Docking_Station_with_85W_Power_Delivery_UD-CAM)
-        *   [8.1.1 Bios settings](#Bios_settings)
-        *   [8.1.2 TLP blacklisting devices from USB autosuspend](#TLP_blacklisting_devices_from_USB_autosuspend)
-    *   [8.2 Lenovo dock](#Lenovo_dock)
-*   [9 Full-disk encryption](#Full-disk_encryption)
-    *   [9.1 Ramdisk module](#Ramdisk_module)
-*   [10 Tools](#Tools)
-    *   [10.1 Diagnostics](#Diagnostics)
-*   [11 References](#References)
-*   [12 Additional resources](#Additional_resources)
+*   [5 Wireless WAN / LTE](#Wireless_WAN_/_LTE)
+    *   [5.1 Settings for Sierra Wireless EM7455](#Settings_for_Sierra_Wireless_EM7455)
+    *   [5.2 WWAN/LTE GUI](#WWAN/LTE_GUI)
+*   [6 Configuration](#Configuration)
+    *   [6.1 Keyboard Fn Shortcuts](#Keyboard_Fn_Shortcuts)
+    *   [6.2 Special buttons](#Special_buttons)
+    *   [6.3 Bind special keys](#Bind_special_keys)
+    *   [6.4 Disabling red LED Thinkpad logo](#Disabling_red_LED_Thinkpad_logo)
+    *   [6.5 HDR Display Color Calibration](#HDR_Display_Color_Calibration)
+*   [7 Intel Graphics UHD 620 issues](#Intel_Graphics_UHD_620_issues)
+*   [8 TrackPoint and Touchpad issues](#TrackPoint_and_Touchpad_issues)
+*   [9 Thunderbolt dock](#Thunderbolt_dock)
+    *   [9.1 Plugable USB-C Mini Docking Station with 85W Power Delivery UD-CAM](#Plugable_USB-C_Mini_Docking_Station_with_85W_Power_Delivery_UD-CAM)
+        *   [9.1.1 Bios settings](#Bios_settings)
+        *   [9.1.2 TLP blacklisting devices from USB autosuspend](#TLP_blacklisting_devices_from_USB_autosuspend)
+    *   [9.2 Lenovo dock](#Lenovo_dock)
+*   [10 Full-disk encryption](#Full-disk_encryption)
+    *   [10.1 Ramdisk module](#Ramdisk_module)
+*   [11 Tools](#Tools)
+    *   [11.1 Diagnostics](#Diagnostics)
+*   [12 References](#References)
+*   [13 Additional resources](#Additional_resources)
 
 ## BIOS
 
@@ -161,6 +169,95 @@ sudo hda-verb /dev/snd/hwC0D0 0x1d SET_PIN_WIDGET_CONTROL 0x0
 ```
 
 There is also a kernel patch for this issue, which can be found [here](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1805079).
+
+## Wireless WAN / LTE
+
+It is officially admitted that the Fibocom L850 GL LTE card is not working under Linux. Nevertheless, a solution (Sierra EM7455) has been found (credits to [j_jito](https://www.reddit.com/user/j_jito) on reddit, [Daniel Wood](https://github.com/danielewood/sierra-wireless-modems), and [TPader](https://www.reddit.com/user/tpader) on reddit).
+
+### Settings for Sierra Wireless EM7455
+
+Sierra Wireless EM7455 is fully working with linux (and Arch Linux as well). Here are the settings to make this Sierra Wireless modem working under Linux :
+
+Firstly, check if ttyUSBX are available with this command
+
+```
+dmesg | grep ttyUSB
+
+```
+
+Then, connect to /dev/ttyUSB2 (/dev/ttyUSB1 is dedicated to GPS on Sierra for your information)
+
+```
+screen /dev/ttyUSB2 115200
+
+```
+
+And, follow those steps to enter these AT commands
+
+1\. Enable Terminal Echo
+
+```
+ATE1
+
+```
+
+2\. Enable Advanced Commands
+
+```
+AT!ENTERCND="A710"
+
+```
+
+3\. Set Interface to MBIM
+
+```
+AT!USBCOMP=1,1,0000100D
+
+```
+
+4\. Change the Modem Identity to Generic
+
+```
+AT!USBVID=1199
+AT!USBPID=9071,9070
+AT!USBPRODUCT="Sierra Wireless EM7455"
+AT!PRIID="9904609","002.026","Generic"
+
+```
+
+5\. Enable All Bands
+
+```
+AT!BAND=00
+
+```
+
+6\. Enable Modem after PowerON
+
+```
+AT!PCOFFEN=2
+
+```
+
+7\. Enable Modem Fast Enumeration
+
+```
+AT!CUSTOM="FASTENUMEN",2
+
+```
+
+8\. Restart Modem
+
+```
+AT!RESET
+
+```
+
+If you need more information, read [this](https://github.com/danielewood/sierra-wireless-modems).
+
+### WWAN/LTE GUI
+
+Install [NetworkManager](/index.php/NetworkManager "NetworkManager") and [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) to make your life easier founding the correct APN for your SIM card.
 
 ## Configuration
 

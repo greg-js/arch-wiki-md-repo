@@ -12,7 +12,11 @@ Related articles
 
 The Qt framework is the basis of the [KDE](/index.php/KDE "KDE") software community, as well as other important open source and proprietary applications such as [VLC](/index.php/VLC "VLC"), [VirtualBox](/index.php/VirtualBox "VirtualBox"), [Mathematica](/index.php/Mathematica "Mathematica") and many others.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Default Qt toolkit](#Default_Qt_toolkit)

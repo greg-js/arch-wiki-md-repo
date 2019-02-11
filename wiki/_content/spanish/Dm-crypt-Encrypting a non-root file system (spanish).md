@@ -9,7 +9,11 @@ Este artículo es una traducción de [Dm-crypt/Encrypting a non-root file system
 
 Los siguientes son ejemplos de encriptación de un sistema de archivos secundario, es decir, no raíz, con dm-crypt.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Descripción general](#Descripción_general)
 *   [2 Partición](#Partición)

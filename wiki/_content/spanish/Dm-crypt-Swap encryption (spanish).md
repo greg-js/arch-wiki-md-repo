@@ -9,7 +9,11 @@ Este artículo es una traducción de [Dm-crypt/Swap encryption](/index.php/Dm-cr
 
 Dependiendo de los requisitos, se pueden usar diferentes métodos para cifrar la partición [de intercambio](/index.php/Swap_(Espa%C3%B1ol) "Swap (Español)"), los cuales se describen a continuación. Una configuración en la que el cifrado del espacio de intercambio se reinicializa en cada arranque (con un nuevo cifrado) proporciona una mayor protección de datos, ya que evita los fragmentos de archivos confidenciales que pueden haber sido intercambiados hace tiempo sin sobrescribirlos. Sin embargo, volver a cifrar el espacio de intercambio también inhibe el uso de una función de suspensión en disco en general.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Sin soporte para suspensión en disco](#Sin_soporte_para_suspensión_en_disco)
     *   [1.1 UUID y LABEL](#UUID_y_LABEL)

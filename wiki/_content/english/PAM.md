@@ -12,7 +12,11 @@ The [Linux Pluggable Authentication Modules](http://www.linux-pam.org/) (PAM) pr
 
 This article explains the Arch Linux base set-up defaults for PAM to authenticate local and remote users. Applying changes to the defaults is subject of crosslinked specialized per topic articles.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -60,7 +64,7 @@ For a different application, a different path may apply. For example, [openssh](
 
 Consequently, the choice of the configuration file in the stack matters. For the above example, a special authentication method could be required for `sshd` only, or all remote logins by changing `system-remote-login`; both changes would not affect local logins. Applying the change to `system-login` or `system-auth` instead would affect local and remote logins.
 
-Like the example of `sshd`, any **pam-aware** application is required to install its policy to `/etc/pam.d` in order to integrate and rely on the PAM stack appropriately. If an application fails to do it, the `/etc/pam.d/other` policy is applied per default. A permissive policy for it is installed per default ([FS#48650](https://bugs.archlinux.org/task/48650)).
+Like the example of `sshd`, any **pam-aware** application is required to install its policy to `/etc/pam.d` in order to integrate and rely on the PAM stack appropriately. If an application fails to do it, the `/etc/pam.d/other` default policy to deny and log a warning is applied.
 
 **Tip:** PAM is dynamically linked at runtime. For example: `$ ldd /usr/bin/login |grep pam` 
 ```

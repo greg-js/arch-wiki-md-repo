@@ -1,6 +1,10 @@
 [Erlang](https://www.erlang.org/) is a programming language with the specific qualities of immutable data and distributed computing.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)

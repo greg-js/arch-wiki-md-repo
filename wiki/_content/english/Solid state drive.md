@@ -8,7 +8,11 @@ Related articles
 
 This article covers special topics for operating [solid state drives](https://en.wikipedia.org/wiki/Solid-state_drive "wikipedia:Solid-state drive") (SSDs) and other flash-memory based storage devices. If you want to partition an SSD for a specific purpose, it may be useful to consider the [List of file systems optimized for flash memory](https://en.wikipedia.org/wiki/List_of_file_systems#File_systems_optimized_for_flash_memory.2C_solid_state_media "wikipedia:List of file systems"). For general usage, you should simply choose your preferred [filesystem](/index.php/Filesystem "Filesystem").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Usage](#Usage)
     *   [1.1 TRIM](#TRIM)

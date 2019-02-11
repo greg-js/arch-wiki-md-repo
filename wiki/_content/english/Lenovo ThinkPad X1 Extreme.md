@@ -17,7 +17,11 @@ This page specifically concerns the specifics of running Arch Linux on this lapt
 
 **Note:** The ThinkPad P1 is a workstation version of the same laptop which uses extremely similar hardware. Most of the information on this page should be applicable to P1 models as well.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Hardware compatibility](#Hardware_compatibility)
     *   [1.1 BIOS update](#BIOS_update)

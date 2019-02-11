@@ -1,6 +1,10 @@
 [Haskell](http://www.haskell.org) is a general purpose, purely functional, programming language.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Compiler](#Compiler)

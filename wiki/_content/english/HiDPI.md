@@ -6,7 +6,11 @@ HiDPI (High Dots Per Inch) displays, also known by Apple's "[Retina Display](htt
 
 Not all software behaves well in high-resolution mode yet. Here are listed most common tweaks which make work on a HiDPI screen more pleasant.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Desktop environments](#Desktop_environments)
     *   [1.1 GNOME](#GNOME)
@@ -303,13 +307,13 @@ Update GRUB configuration by running `grub-mkconfig -o /boot/grub/grub.cfg`
 
 ## Applications
 
-As a general rule, applications can be launched with a custom scaling value, e.g. `$ atom --force-device-scale-factor=2`. A more permanent solution is to add this scaling factor as a flag to the relevant .conf or .desktop file (normally located at `/usr/share/applications/`). In the latter instance, the flag should be added to the line beginning with "Exec=", e.g. `Exec=/usr/bin/atom --force-device-scale-factor=2 %F`. The next section provides more details on implementing this for specific applications.
+As a general rule, applications can be launched with a custom scaling value, e.g. `$ atom --force-device-scale-factor=2`. A more permanent solution is to add this scaling factor as a flag to the relevant .conf or .desktop file (normally located at `/usr/share/applications/`). In the latter instance, the flag should be added to the line beginning with "Exec=", e.g. `Exec=/usr/bin/atom --force-device-scale-factor=2 %F`. The next section provides more details on implementing this for specific applications.
 
 ### Atom
 
 Add `--force-device-scale-factor=2` as a flag to the atom.desktop file:
 
- `/usr/share/applications/atom.desktop`  `Exec=/usr/bin/atom --force-device-scale-factor=2 %F` 
+ `/usr/share/applications/atom.desktop`  `Exec=/usr/bin/atom --force-device-scale-factor=2 %F` 
 
 ### Browsers
 
@@ -416,7 +420,7 @@ Skype for Linux ([skypeforlinux-stable-bin](https://aur.archlinux.org/packages/s
 
 Slack ([slack-desktop](https://aur.archlinux.org/packages/slack-desktop/)), like all [Electron](https://electronjs.org/) apps, can be configured to use a custom scaling value by adding a `--force-device-scale-factor` flag to the .desktop file. This is normally located at `/usr/share/applications/`. The flag should be added to the line beginning with "Exec=". For example:
 
- `/usr/share/applications/slack.desktop`  `Exec=env LD_PRELOAD=/usr/lib/libcurl.so.3 /usr/bin/slack --force-device-scale-factor=1.5 %U` 
+ `/usr/share/applications/slack.desktop`  `Exec=env LD_PRELOAD=/usr/lib/libcurl.so.3 /usr/bin/slack --force-device-scale-factor=1.5 %U` 
 
 ### Spotify
 

@@ -10,7 +10,11 @@ From [Wikipedia:Computer font](https://en.wikipedia.org/wiki/Computer_font "wiki
 
 Note that certain font licenses may impose some legal limitations.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Font formats](#Font_formats)
     *   [1.1 Bitmap formats](#Bitmap_formats)
@@ -149,7 +153,7 @@ $ for dir in /font/dir1/ /font/dir2/; do xset +fp $dir; done && xset fp rehash
 Or if fonts were installed in a different sub-folders under the e.g. `/usr/share/fonts`:
 
 ```
-$ for dir in * ; do if [  -d  "$dir"  ]; then cd "$dir";xset +fp "$PWD" ;mkfontscale; mkfontdir;cd .. ;fi; done && xset fp rehash
+$ for dir in * ; do if [  -d  "$dir"  ]; then cd "$dir";xset +fp "$PWD" ;mkfontscale; mkfontdir;cd .. ;fi; done && xset fp rehash
 
 ```
 
@@ -560,7 +564,7 @@ $ fc-list
 Applications and browsers select and display fonts depending upon fontconfig preferences and available font glyph for Unicode text. To list installed fonts for a particular language, issue a command `fc-list :lang="two letter language code"`. For instance, to list installed Arabic fonts or fonts supporting Arabic glyph:
 
  `$ fc-list -f '%{file}
-' :lang=ar` 
+' :lang=ar` 
 ```
 /usr/share/fonts/TTF/FreeMono.ttf
 /usr/share/fonts/TTF/DejaVuSansCondensed.ttf

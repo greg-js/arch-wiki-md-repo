@@ -49,59 +49,59 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 Contents of `/proc/cpuinfo`:
 
 ```
-processor       : 0
-vendor_id       : AuthenticAMD
-cpu family      : 22
-model           : 48
-model name      : AMD E1-6010 APU with AMD Radeon R2 Graphics
-stepping        : 1
-microcode       : 0x7030105
-cpu MHz         : 1200.000
-cache size      : 1024 KB
-physical id     : 0
-siblings        : 2
-core id         : 0
-cpu cores       : 2
-apicid          : 0
-initial apicid  : 0
-fpu             : yes
-fpu_exception   : yes
-cpuid level     : 13
-wp              : yes
-flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc extd_apicid aperfmperf eagerfpu pni pclmulqdq monitor ssse3 cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt topoext perfctr_nb bpext perfctr_l2 arat hw_pstate npt lbrv svm_lock nrip_save tsc_scale flushbyasid decodeassists pausefilter pfthreshold vmmcall bmi1 xsaveopt
-bugs            : fxsave_leak sysret_ss_attrs
-bogomips        : 2696.31
-TLB size        : 1024 4K pages
-clflush size    : 64
+processor       : 0
+vendor_id       : AuthenticAMD
+cpu family      : 22
+model           : 48
+model name      : AMD E1-6010 APU with AMD Radeon R2 Graphics
+stepping        : 1
+microcode       : 0x7030105
+cpu MHz         : 1200.000
+cache size      : 1024 KB
+physical id     : 0
+siblings        : 2
+core id         : 0
+cpu cores       : 2
+apicid          : 0
+initial apicid  : 0
+fpu             : yes
+fpu_exception   : yes
+cpuid level     : 13
+wp              : yes
+flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc extd_apicid aperfmperf eagerfpu pni pclmulqdq monitor ssse3 cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt topoext perfctr_nb bpext perfctr_l2 arat hw_pstate npt lbrv svm_lock nrip_save tsc_scale flushbyasid decodeassists pausefilter pfthreshold vmmcall bmi1 xsaveopt
+bugs            : fxsave_leak sysret_ss_attrs
+bogomips        : 2696.31
+TLB size        : 1024 4K pages
+clflush size    : 64
 cache_alignment : 64
-address sizes   : 40 bits physical, 48 bits virtual
+address sizes   : 40 bits physical, 48 bits virtual
 power management: ts ttp tm 100mhzsteps hwpstate [12] [13]
 
-processor       : 1
-vendor_id       : AuthenticAMD
-cpu family      : 22
-model           : 48
-model name      : AMD E1-6010 APU with AMD Radeon R2 Graphics
-stepping        : 1
-microcode       : 0x7030105
-cpu MHz         : 1000.000
-cache size      : 1024 KB
-physical id     : 0
-siblings        : 2
-core id         : 1
-cpu cores       : 2
-apicid          : 1
-initial apicid  : 1
-fpu             : yes
-fpu_exception   : yes
-cpuid level     : 13
-wp              : yes
-flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc extd_apicid aperfmperf eagerfpu pni pclmulqdq monitor ssse3 cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt topoext perfctr_nb bpext perfctr_l2 arat hw_pstate npt lbrv svm_lock nrip_save tsc_scale flushbyasid decodeassists pausefilter pfthreshold vmmcall bmi1 xsaveopt
-bugs            : fxsave_leak sysret_ss_attrs
-bogomips        : 2696.31
-TLB size        : 1024 4K pages
-clflush size    : 64
+processor       : 1
+vendor_id       : AuthenticAMD
+cpu family      : 22
+model           : 48
+model name      : AMD E1-6010 APU with AMD Radeon R2 Graphics
+stepping        : 1
+microcode       : 0x7030105
+cpu MHz         : 1000.000
+cache size      : 1024 KB
+physical id     : 0
+siblings        : 2
+core id         : 1
+cpu cores       : 2
+apicid          : 1
+initial apicid  : 1
+fpu             : yes
+fpu_exception   : yes
+cpuid level     : 13
+wp              : yes
+flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc extd_apicid aperfmperf eagerfpu pni pclmulqdq monitor ssse3 cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt topoext perfctr_nb bpext perfctr_l2 arat hw_pstate npt lbrv svm_lock nrip_save tsc_scale flushbyasid decodeassists pausefilter pfthreshold vmmcall bmi1 xsaveopt
+bugs            : fxsave_leak sysret_ss_attrs
+bogomips        : 2696.31
+TLB size        : 1024 4K pages
+clflush size    : 64
 cache_alignment : 64
-address sizes   : 40 bits physical, 48 bits virtual
+address sizes   : 40 bits physical, 48 bits virtual
 power management: ts ttp tm 100mhzsteps hwpstate [12] [13]
 ```

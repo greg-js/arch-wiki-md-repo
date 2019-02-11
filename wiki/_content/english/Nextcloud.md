@@ -11,7 +11,11 @@ From [Wikipedia:Nextcloud](https://en.wikipedia.org/wiki/Nextcloud "wikipedia:Ne
 
 Nextcloud is a fork of ownCloud. For differences between the two, see [wikipedia:Nextcloud#Differences from ownCloud](https://en.wikipedia.org/wiki/Nextcloud#Differences_from_ownCloud "wikipedia:Nextcloud").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Prerequisites](#Prerequisites)
 *   [2 Installation](#Installation)

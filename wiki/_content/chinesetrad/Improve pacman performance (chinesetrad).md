@@ -17,7 +17,7 @@ pacman -S wget
 *   現在讓我們來編輯 `/etc/pacman.conf` 這個設定檔。將下面一行加在 `[options]` 這一段下，或著取消 `XferCommand` 這一行的註解號 :
 
 ```
-XferCommand = /usr/bin/wget -c --passive-ftp -c %u
+XferCommand = /usr/bin/wget -c --passive-ftp -c %u
 
 ```
 
@@ -31,7 +31,7 @@ grep wget /etc/pacman.conf
 	你應該得到如下的回覆 :
 
 ```
-XferCommand = /usr/bin/wget -c --passive-ftp -c %u
+XferCommand = /usr/bin/wget -c --passive-ftp -c %u
 
 ```
 

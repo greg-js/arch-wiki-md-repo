@@ -2,7 +2,11 @@ The [Logitech Unifying Receiver](http://www.logitech.com/349/6072) is a wireless
 
 [ltunify](https://lekensteyn.nl/logitech-unifying.html) is a command-line C program that can perform pairing, unpairing and listing of devices. [Solaar](http://pwr.github.io/Solaar/) is a graphical Python program that integrates in your system tray and allows you to configure additional features of your input device such as swapping the functionality of Fn keys.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)

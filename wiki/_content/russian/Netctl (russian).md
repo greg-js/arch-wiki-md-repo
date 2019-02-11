@@ -1,6 +1,10 @@
 *netctl* — это инструмент командной строки, используемый для настройки и управления сетевыми подключениями через профили. Это нативный проект Arch Linux для настройки сети.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Использование](#Использование)

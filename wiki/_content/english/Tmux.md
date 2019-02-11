@@ -2,7 +2,11 @@
 
 tmux is an ISC-licensed alternative to [GNU Screen](/index.php/GNU_Screen "GNU Screen"). Although similar, there are many differences between the programs, as noted on the [tmux FAQ page](https://github.com/tmux/tmux/wiki/FAQ).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

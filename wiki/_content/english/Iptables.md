@@ -5,10 +5,15 @@ Related articles
 *   [Sshguard](/index.php/Sshguard "Sshguard")
 *   [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall")
 *   [Sysctl#TCP/IP stack hardening](/index.php/Sysctl#TCP/IP_stack_hardening "Sysctl")
+*   [Uncomplicated Firewall](/index.php/Uncomplicated_Firewall "Uncomplicated Firewall")
 
 *iptables* is a command line utility for configuring Linux kernel [firewall](/index.php/Firewall "Firewall") implemented within the [Netfilter](https://en.wikipedia.org/wiki/Netfilter "wikipedia:Netfilter") project. The term *iptables* is also commonly used to refer to this kernel-level firewall. It can be configured directly with iptables, or by using one of the many [console](#Console) and [graphical](#Graphical) front-ends. *iptables* is used for [IPv4](https://en.wikipedia.org/wiki/IPv4 "wikipedia:IPv4") and *ip6tables* is used for [IPv6](/index.php/IPv6 "IPv6"). Both *iptables* and *ip6tables* have the same syntax, but some options are specific to either IPv4 or IPv6.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Front-ends](#Front-ends)
@@ -307,7 +312,7 @@ Now, say we change our mind about Dropbox and decide to install it on our comput
 ```
 Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
 num   pkts bytes target     prot opt in     out     source               destination
-1        0     0 REJECT     tcp  --  *      *      !10.0.0.85            0.0.0.0/0            tcp dpt:17500 reject-with icmp-port-unreachable
+1        0     0 REJECT     tcp  --  *      *      !10.0.0.85            0.0.0.0/0            tcp dpt:17500 reject-with icmp-port-unreachable
 
 Chain FORWARD (policy DROP 0 packets, 0 bytes)
 num   pkts bytes target     prot opt in     out     source               destination
@@ -330,7 +335,7 @@ So we write a new rule to allow our trusted user immediately. Using `-I` to inse
 Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
 num   pkts bytes target     prot opt in     out     source               destination
 1        0     0 ACCEPT     tcp  --  *      *       10.0.0.85            0.0.0.0/0            tcp dpt:17500 /* Friendly Dropbox */
-2        0     0 REJECT     tcp  --  *      *      !10.0.0.85            0.0.0.0/0            tcp dpt:17500 reject-with icmp-port-unreachable
+2        0     0 REJECT     tcp  --  *      *      !10.0.0.85            0.0.0.0/0            tcp dpt:17500 reject-with icmp-port-unreachable
 
 Chain FORWARD (policy DROP 0 packets, 0 bytes)
 num   pkts bytes target     prot opt in     out     source               destination

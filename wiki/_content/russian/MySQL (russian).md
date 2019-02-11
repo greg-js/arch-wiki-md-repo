@@ -2,7 +2,11 @@ MySQL - это широко применяемая свободная много
 
 **Примечание:** На сегодняшний день в Archlinux к использованию по умолчанию предлагается MariaDB - официальный форк сервера MySQL. Настоятельно рекомендуется всем пользователям обновиться до [MariaDB](/index.php/MariaDB "MariaDB"). Oracle MySQL был перемещен из официальных репозиториев Archlinux в AUR. Для получения более подробной информации прочтите [объявление](https://www.archlinux.org/news/mariadb-replaces-mysql-in-repositories/).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
     *   [1.1 Автоматический запуск при загрузке системы](#Автоматический_запуск_при_загрузке_системы)

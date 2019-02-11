@@ -3,7 +3,11 @@ Este artículo es una traducción de [Unofficial mirrors](/index.php/Unofficial_
 
 Estos [mirrors](/index.php/Mirrors_(Espa%C3%B1ol) "Mirrors (Español)") *no* están listados en `/etc/pacman.d/mirrorlist`.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Australia](#Australia)
 *   [2 Canadá](#Canadá)

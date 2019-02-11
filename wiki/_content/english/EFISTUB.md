@@ -7,7 +7,11 @@ The Linux kernel supports EFISTUB booting which allows [EFI](/index.php/EFI "EFI
 
 With EFISTUB a kernel can be booted directly by a UEFI motherboard or indirectly using a [boot loader](/index.php/Boot_loader "Boot loader"). Using a boot loader is recommended if you have multiple kernel/initramfs pairs and your motherboard's UEFI boot menu is not easy to use.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Preparing for EFISTUB](#Preparing_for_EFISTUB)
 *   [2 Booting EFISTUB](#Booting_EFISTUB)

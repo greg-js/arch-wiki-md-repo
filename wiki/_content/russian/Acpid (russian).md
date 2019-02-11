@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Краткое вступление](#Краткое_вступление)
 *   [2 Для кого предназначено данное руководство?](#Для_кого_предназначено_данное_руководство?)

@@ -5,7 +5,11 @@ Este artículo es una traducción de [Subversion](/index.php/Subversion "Subvers
 
 Este artículo trata sobre la configuración de un servidor svn en su máquina. Hay dos servidores svn populares, el *vnserve* incorporado y la opción más avanzada, [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server") con complementos svn.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Configuración de Apache Subversion](#Configuración_de_Apache_Subversion)
     *   [1.1 Objetivos](#Objetivos)

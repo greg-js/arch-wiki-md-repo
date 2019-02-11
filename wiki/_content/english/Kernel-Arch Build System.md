@@ -2,7 +2,11 @@ See [Kernels](/index.php/Kernels "Kernels") for the main article.
 
 The [Arch Build System](/index.php/Arch_Build_System "Arch Build System") can be used to build a custom kernel based on the official [linux](https://www.archlinux.org/packages/?name=linux) package. This compilation method can automate the entire process, and is based on a very well tested package. You can edit the PKGBUILD to use a custom kernel configuration or add additional patches.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Getting the Ingredients](#Getting_the_Ingredients)
 *   [2 Modifying the PKGBUILD](#Modifying_the_PKGBUILD)

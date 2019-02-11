@@ -2,7 +2,11 @@
 
 [Node.js](http://nodejs.org/) 是一个 javascript 运行环境，并附带有功能丰富的库.使用 [Google's V8 引擎](https://code.google.com/p/v8/) 在浏览器外执行代码. 由于其是事件驱动、非阻塞 I/O 模型，它适合于实时 web 应用.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
     *   [1.1 多版本需求](#多版本需求)

@@ -8,7 +8,11 @@ Ejecutado como programa independiente, **badblocks** devuelve una lista de bloqu
 
 Esto se puede hacer en un modo de escritura destructivo que efectivamente [borre](/index.php/Securely_wipe_disk "Securely wipe disk") el dispositivo (¡haga una copia de seguridad!) o en modo de lectura-escritura no destructiva (¡también es recomendable la copia de seguridad!) y los modos de solo lectura.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Fidelidad de los dispositivos de almacenamiento](#Fidelidad_de_los_dispositivos_de_almacenamiento)

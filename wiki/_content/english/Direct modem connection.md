@@ -6,7 +6,11 @@ This article describes how one can connect directly to the Internet from an Arch
 
 Due to a lack of developers for dialup issues, connecting Arch to the Internet with a dialup line requires a lot of manual setup. If at all possible, set up a dedicated router which can be used as a default gateway on the Arch box.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Analog modem](#Analog_modem)
 *   [2 ISDN](#ISDN)

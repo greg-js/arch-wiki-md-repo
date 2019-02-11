@@ -1,6 +1,10 @@
 [GNU nano](https://www.nano-editor.org/) (or nano) is a text editor which aims to introduce a simple interface and intuitive command options to console based text editing. *nano* supports features including colorized syntax highlighting, DOS/Mac file type conversions, spellchecking and [UTF-8](https://en.wikipedia.org/wiki/UTF-8 "wikipedia:UTF-8") encoding. *nano* opened with an empty buffer typically occupies under 4 MB of resident memory.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

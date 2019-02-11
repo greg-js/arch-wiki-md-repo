@@ -4,7 +4,11 @@ Related articles
 
 A [display manager](https://en.wikipedia.org/wiki/X_display_manager_(program_type) "wikipedia:X display manager (program type)"), or login manager, is typically a graphical user interface that is displayed at the end of the boot process in place of the default shell. There are various implementations of display managers, just as there are various types of [window managers](/index.php/Window_managers "Window managers") and [desktop environments](/index.php/Desktop_environments "Desktop environments"). There is usually a certain amount of customization and themeability available with each one.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 List of display managers](#List_of_display_managers)
     *   [1.1 Console](#Console)

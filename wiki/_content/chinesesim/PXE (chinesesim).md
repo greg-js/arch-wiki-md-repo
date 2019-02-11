@@ -10,7 +10,11 @@ Related articles
 
 在本指南中，PXE 用于通过支持 PXE 的 Option ROM 在目标机器上启动安装介质。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 准备](#准备)
 *   [2 服务器搭建](#服务器搭建)

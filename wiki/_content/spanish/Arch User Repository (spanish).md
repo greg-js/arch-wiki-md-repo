@@ -20,7 +20,11 @@ Un buen número de paquetes nuevos que entran en los repositorios oficiales tien
 
 **Advertencia:** Los paquetes contenidos en AUR son producidos por el usuario. Cualquier uso de los archivos proporcionados lo es bajo el propio riesgo del usuario.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Para empezar](#Para_empezar)
 *   [2 Historia](#Historia)

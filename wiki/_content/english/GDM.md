@@ -7,7 +7,11 @@ From [GDM - GNOME Display Manager](https://wiki.gnome.org/Projects/GDM): "The GN
 
 [Display managers](/index.php/Display_manager "Display manager") provide [X Window System](/index.php/X_Window_System "X Window System") and [Wayland](/index.php/Wayland "Wayland") users with a graphical login prompt.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Starting](#Starting)

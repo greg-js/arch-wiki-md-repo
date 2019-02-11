@@ -6,7 +6,11 @@
 
 由于AUR工具并不被官方支持，所以它们不在[官方软件仓库](/index.php/Official_repositories "Official repositories")中提供。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 构建和搜索](#构建和搜索)
     *   [1.1 开发中](#开发中)

@@ -14,7 +14,11 @@ Related articles
 *   For basic partitioning functionality with a text user interface, [cgdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cgdisk.8) can be used.
 *   GPT fdisk website has detailed walkthroughs for [gdisk](https://www.rodsbooks.com/gdisk/walkthrough.html), [cgdisk](https://www.rodsbooks.com/gdisk/cgdisk-walkthrough.html), [sgdisk](https://www.rodsbooks.com/gdisk/sgdisk-walkthrough.html) and [FixParts](https://www.rodsbooks.com/fixparts/).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 List partitions](#List_partitions)

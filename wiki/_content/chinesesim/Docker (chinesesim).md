@@ -9,7 +9,11 @@ Related articles
 
 [Docker](https://en.wikipedia.org/wiki/Docker_(software) 是一种打包、传输和运行任何程序作为轻量级容器的实用工具.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 配置](#配置)

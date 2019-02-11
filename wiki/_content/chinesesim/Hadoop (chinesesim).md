@@ -4,7 +4,11 @@ Related articles
 
 [Apache Hadoop](http://hadoop.apache.org) 是一个支持在商业硬件大型集群上运行应用程序框架。Hadoop框架透明地提供应用程序可靠性和数据传输。Hadoop实现了一个名为Map/Reduce计算模式，应用程序被划分成许多小片段，这些小片段可能在集群中的任何节点上被执行或反复执行。此外，它提供了一个分布式文件系统（HDFS）来存储在计算节点上的数据，它使集群有非常高的带宽。MapReduce和Hadoop分布式文件系统使框架能自行处理失效节点。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 配置](#配置)

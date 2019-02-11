@@ -9,7 +9,11 @@
 
 **Примечание:** Если вы добавите принтер в этот список, подумайте о том, чтобы внести свой вклад в [OpenPrinting](https://wiki.linuxfoundation.org/openprinting/database/databaseintro) - таким образом и для пользователей других дистрибутивов эта информация будет полезна!
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Brother](#Brother)
     *   [1.1 Сетевые принтеры](#Сетевые_принтеры)

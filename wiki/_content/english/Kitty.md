@@ -1,6 +1,10 @@
 [Kitty](https://sw.kovidgoyal.net/kitty/index.html) is a scriptable OpenGL based terminal emulator with tiling capabilities, TrueColor, ligatures support and protocol extensions for keyboard input and image rendering.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)

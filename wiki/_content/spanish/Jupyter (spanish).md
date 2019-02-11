@@ -5,7 +5,11 @@ Este artículo es una traducción de [Jupyter](/index.php/Jupyter "Jupyter"), re
 
 Jupyter Notebook es la aplicación tradicional y la más estable . [JupyterLab](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) tiene una nueva interfaz y es más adecuado para trabajar con proyectos más grandes que constan de varios archivos. JupyterLab se considera "listo para su uso diario" desde la [versión 0.33](https://jupyterlab.readthedocs.io/en/stable/getting_started/changelog.html#v0-33-0).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Puesta en marcha](#Puesta_en_marcha)

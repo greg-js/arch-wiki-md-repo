@@ -8,7 +8,11 @@ xmonad is written, configured and extensible in [Haskell](http://haskell.org/). 
 
 Layouts are applied dynamically, and different layouts may be used on each workspace. [Xinerama](https://en.wikipedia.org/wiki/Xinerama "wikipedia:Xinerama") is fully supported, allowing windows to be tiled on several physical screens.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Starting](#Starting)

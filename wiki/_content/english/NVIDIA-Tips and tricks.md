@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Fixing terminal resolution](#Fixing_terminal_resolution)
 *   [2 Using TV-out](#Using_TV-out)

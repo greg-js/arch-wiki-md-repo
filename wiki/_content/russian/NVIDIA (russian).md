@@ -11,7 +11,11 @@
 
 Данная статья описывает процесс установки и настройки проприетарного драйвера графических карт [NVIDIA](http://www.nvidia.com). Для получения информации о драйверах с открытым исходным кодом обратитесь к статье [Nouveau (Русский)](/index.php/Nouveau_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Nouveau (Русский)"). Также есть отдельная статья для обладателей ноутбуков с технологиями на базе [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
     *   [1.1 Не поддерживаемые драйвера](#Не_поддерживаемые_драйвера)

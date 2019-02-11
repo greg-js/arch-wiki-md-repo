@@ -9,7 +9,11 @@
 
 [Firefox](https://www.mozilla.org/ru/firefox/) — популярный графический веб-браузер с открытым исходным кодом, разрабатываемый [Mozilla](https://www.mozilla.org/ru/).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Дополнения](#Дополнения)

@@ -7,7 +7,11 @@ Artículos relacionados
 *   [systemd/User (Español)](/index.php/Systemd/User_(Espa%C3%B1ol) "Systemd/User (Español)")
 *   [Daemons (Español)#Listado de demonios](/index.php/Daemons_(Espa%C3%B1ol)#Listado_de_demonios "Daemons (Español)")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 FAQ](#FAQ)
     *   [1.1 ¿Por qué recibo mensajes de registro en mi consola?](#¿Por_qué_recibo_mensajes_de_registro_en_mi_consola?)

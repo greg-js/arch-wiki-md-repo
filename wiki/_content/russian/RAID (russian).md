@@ -12,7 +12,11 @@
 
 This article explains what RAID is and how to create/manage a software RAID array using mdadm.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Introduction](#Introduction)
     *   [1.1 Standard RAID levels](#Standard_RAID_levels)

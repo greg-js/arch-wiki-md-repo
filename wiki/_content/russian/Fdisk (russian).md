@@ -13,7 +13,11 @@
 
 **Совет:** Для основных функций разделения можно использовать [cfdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cfdisk.8) с текстовым пользовательским интерфейсом.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Список разделов](#Список_разделов)

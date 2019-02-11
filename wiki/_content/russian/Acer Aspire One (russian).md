@@ -1,6 +1,10 @@
 Эта страница содержит информацию об установке Arch Linux на Acer Aspire One.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Прежде чем начать установку](#Прежде_чем_начать_установку)
     *   [1.1 SSD](#SSD)
@@ -252,7 +256,7 @@ USECOLOR="yes"
 #HARDWARE
 #------------
 
-MODULES=(**!memstick !snd-pcsp acpi_cpufreq ath5k pciehp r8169 uvcvideo**)
+MODULES=(**!memstick !snd-pcsp acpi_cpufreq ath5k pciehp r8169 uvcvideo**)
 
 #------------
 #NETWORKING
@@ -1195,9 +1199,9 @@ EndSection
 ### Lines from rc.conf (kernel >=2.6.27)
 
 ```
- MODULES=(r8169 acpi_cpufreq ath5k !wlan !ath_hal !ath_pci snd-mixer-oss snd-pcm-oss snd-hwdep snd-page-alloc snd-pcm snd-timer snd snd-hda-intel soundcore !pcspkr !uvcvideo !videodev !v4l1_compat !video !memstick pciehp acer-wmi)
+ MODULES=(r8169 acpi_cpufreq ath5k !wlan !ath_hal !ath_pci snd-mixer-oss snd-pcm-oss snd-hwdep snd-page-alloc snd-pcm snd-timer snd snd-hda-intel soundcore !pcspkr !uvcvideo !videodev !v4l1_compat !video !memstick pciehp acer-wmi)
  NETWORKS=(wpa.example)
- DAEMONS=(@acpid @laptop-mode cpufreq syslog-ng !netfs !crond dbus @hal @network @net-profiles gdm)
+ DAEMONS=(@acpid @laptop-mode cpufreq syslog-ng !netfs !crond dbus @hal @network @net-profiles gdm)
 
 ```
 

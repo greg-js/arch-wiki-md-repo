@@ -2,7 +2,11 @@
 
 [Visual Studio Code](https://code.visualstudio.com/)是一个跨平台，免费，开源 (使用MIT协议)的文本编辑器，由微软使用JavaScript和TypeScript开发。它构建于Electron框架之上，并且极具扩展性。可以在编辑器自带的应用商店，或者从 [https://marketplace.visualstudio.com/VSCode](https://marketplace.visualstudio.com/VSCode) 中安装扩展。尽管Visual Studio Code是开源软件，但是微软提供一个专有版本（使用终端用户许可协议授权），被用作[visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin/)AUR软件包的基础（有关混合授权的说明，请参阅此 GitHub[评论](https://github.com/Microsoft/vscode/issues/60#issuecomment-161792005)）。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 使用](#使用)

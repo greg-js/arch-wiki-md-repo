@@ -11,7 +11,11 @@ Each filesystem is described in a separate line. These definitions will be conve
 
 The `mount` command will use fstab, if just one of either directory or device is given, to fill in the value for the other parameter. When doing so, mount options which are listed in fstab will also be used.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Usage](#Usage)
 *   [2 Identifying filesystems](#Identifying_filesystems)

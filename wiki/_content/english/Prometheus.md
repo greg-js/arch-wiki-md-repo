@@ -6,7 +6,11 @@ Related articles
 
 [Prometheus](https://prometheus.io/) is an open-source metrics collection and processing tool. It consists primarily of a timeseries database and a query language to access and process the metrics it stores. Separate services perform metric exposure, from which the Prometheus server can pull. It provides a very minimal web UI out of the box. To get a functional dashboard system, third-party tools like [Grafana](/index.php/Grafana "Grafana") can be used.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

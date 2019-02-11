@@ -8,7 +8,11 @@
 
 [GNU Parted](https://www.gnu.org/software/parted/parted.html) 是创建和处理分区表的程序。GParted 是 GUI 前端。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 使用](#使用)

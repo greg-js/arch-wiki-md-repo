@@ -1,6 +1,10 @@
 Παρακάτω αναφέρονται κάποιες χρήσιμες πληροφορίες και συμβουλές για τους νεοεισελθέντες στο Arch Linux.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Αυτόματη Αναγνώριση Hardware](#Αυτόματη_Αναγνώριση_Hardware)
 *   [2 Επιτάχυνση της Διαδικασίας Εκκίνησης του Lilo](#Επιτάχυνση_της_Διαδικασίας_Εκκίνησης_του_Lilo)

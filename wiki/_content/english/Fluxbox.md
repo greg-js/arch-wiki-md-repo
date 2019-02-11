@@ -4,7 +4,11 @@ Related articles
 
 Fluxbox is a [window manager](/index.php/Window_manager "Window manager") for [X11](/index.php/X11 "X11"). It is based on the (now abandoned) Blackbox 0.61.1 code, but with significant enhancements and continued development. Fluxbox provides a number of window management features such as tabbing and grouping and has hundreds of styles (themes) available. All Fluxbox configuration is stored in plaintext files, however some settings are exposed graphically in the configuration menu.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Starting](#Starting)

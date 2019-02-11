@@ -2,7 +2,11 @@
 
 [Kitty](https://sw.kovidgoyal.net/kitty/index.html) — это программируемый эмулятор терминала на основе OpenGL. Kitty поддерживает мозаичный режим (тайлинг), TrueColor, лигатуры и расширения для работы с клавиатурой и рендеринга изображений.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Использование](#Использование)

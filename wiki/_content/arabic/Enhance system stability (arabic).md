@@ -4,7 +4,11 @@
 
 ما هو مدى الاستقرار الذي سيحققه نظام آرتش؟ هناك الكثير من التقارير في منتديات آرتش عن مديري أنظمة خبراء يستخدمون آرتش في مُخَدِّمات خاصة بالإنتاج، موقع Archlinux.org هو مثال عن هذا الأمر أما على صعيد الحواسيب الشخصية فإن التثبيت الصحيح لآرتش يقدم استقراراً ممتازاً.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 إعداد آرتش](#إعداد_آرتش)
     *   [1.1 تلميحات محددة خاصة بآرتش](#تلميحات_محددة_خاصة_بآرتش)

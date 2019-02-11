@@ -4,7 +4,11 @@
 
 See [System time#Time synchronization](/index.php/System_time#Time_synchronization "System time") for other NTP implementations.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

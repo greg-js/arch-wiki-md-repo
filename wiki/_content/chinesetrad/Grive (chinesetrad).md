@@ -1,6 +1,10 @@
 Grive 是一個開源的 [Google雲端硬碟](https://en.wikipedia.org/wiki/Google_Drive "wikipedia:Google Drive") 客戶端軟體。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安裝](#安裝)
 *   [2 設定](#設定)

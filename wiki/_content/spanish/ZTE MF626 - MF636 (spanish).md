@@ -7,7 +7,11 @@ Artículos relacionados
 
 El ZTE MF626 / MF636 es un módem USB que combina 3G+/3G con EDGE/GPRS en un dispositivo compacto. Cuenta con un lector de tarjetas micro-SD integrado. Puede enviar información a velocidades de hasta 4.5 Mbps en redes 3G+ y recibir información a velocidades de hasta 7.2 Mbps. También se le conoce como el adaptador USB rojo Rogers (una compañía telefónica canadiense).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Configuración](#Configuración)
     *   [1.1 Deshabilitar el modo CD en el dispositivo](#Deshabilitar_el_modo_CD_en_el_dispositivo)

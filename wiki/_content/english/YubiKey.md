@@ -2,7 +2,11 @@ This article describes how [Yubico](https://yubico.com)'s [YubiKey](https://en.w
 
 **Note:** Before you overwrite the initial configuration of slot 1, please be aware of the warning under [#Initial configuration](#Initial_configuration).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Introduction](#Introduction)
     *   [1.1 Installation](#Installation)

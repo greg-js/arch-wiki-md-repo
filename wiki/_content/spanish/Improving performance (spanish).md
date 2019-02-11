@@ -10,7 +10,11 @@ Artículos relacionados
 *   [Preload](/index.php/Preload "Preload")
 *   [Improve boot performance](/index.php/Improve_boot_performance "Improve boot performance")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Lo básico](#Lo_básico)
 *   [2 Conoce tu sistema](#Conoce_tu_sistema)

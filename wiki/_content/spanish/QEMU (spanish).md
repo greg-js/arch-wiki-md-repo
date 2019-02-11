@@ -9,7 +9,11 @@ Cuando se utiliza como un emulador de máquina, QEMU pede correr sistemas operat
 
 QEMU puede usar hipervisores como [Xen](/index.php/Xen "Xen") o [KVM](/index.php/KVM "KVM") para utilizar las extensiones del procesador para la virtualización. Cuando se utiliza como virtualizador, QEMU alcanza un performance cercano a el rendimiento nativo ejecutando el código de invitado directamente en el CPU host.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 front-ends para QEMU](#front-ends_para_QEMU)
@@ -1046,8 +1050,8 @@ Esto es como un PC que no tiene tarjeta VGA en absoluto. Ni siquiera podrías ac
 Dado que usó la opción `-nographic`, puede agregar la opción `-vnc display` para que QEMU escuche en `display` y redirigir la pantalla VGA a la sesión VNC . Hay un ejemplo de esto en las configuraciones de ejemplo de la sección [#Inicio de las máquinas virtuales QEMU en el arranque](#Inicio_de_las_máquinas_virtuales_QEMU_en_el_arranque).
 
 ```
-$ qemu-system-i386 -vga std -nographic -vnc :0
-$ gvncviewer :0
+$ qemu-system-i386 -vga std -nographic -vnc :0
+$ gvncviewer :0
 
 ```
 

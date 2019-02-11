@@ -2,7 +2,11 @@ See [Font configuration](/index.php/Font_configuration "Font configuration") for
 
 Configurations can vary to a degree. Please post Fontconfig configurations with an explanation for why they were done.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Hinted fonts](#Hinted_fonts)
 *   [2 No hinting for italic or bold](#No_hinting_for_italic_or_bold)

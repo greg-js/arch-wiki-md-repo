@@ -10,7 +10,11 @@
 
 注意：部分字体在许可协议中规定了使用时的法律限制。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 字体类型](#字体类型)
     *   [1.1 常见格式](#常见格式)
@@ -258,7 +262,7 @@ $ for dir in /font/dir1/ /font/dir2/; do xset +fp $dir; done && xset fp rehash
 或者如果字体被安装在一个不同的子文件夹，比如在 `/usr/share/fonts` 下:
 
 ```
-$ for dir in * ; do if [  -d  "$dir"  ]; then cd "$dir";xset +fp "$PWD" ;mkfontscale; mkfontdir;cd .. ;fi; done && xset fp rehash
+$ for dir in * ; do if [  -d  "$dir"  ]; then cd "$dir";xset +fp "$PWD" ;mkfontscale; mkfontdir;cd .. ;fi; done && xset fp rehash
 
 ```
 
@@ -424,7 +428,7 @@ Github用户Ternstor编写了一段python脚本，可以通过在 AUR 和官方�
 
 应用程序与浏览器会根据 fontconfig 设置和 Unicode 文字可用的字体来选择其显示字体。用指令 `fc-list :lang="双字母的语言代码"` 枚举系统安装了哪些可对应该语言的字体。例如，枚举已经安装的阿拉伯文字体，以及支持阿拉伯字的字体：
 
- `$ fc-list :lang=ar | cut -d: -f1` 
+ `$ fc-list :lang=ar | cut -d: -f1` 
 ```
 /usr/share/fonts/TTF/FreeMono.ttf
 /usr/share/fonts/TTF/DejaVuSansCondensed.ttf

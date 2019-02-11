@@ -9,7 +9,11 @@
 
 参阅 [PAM](/index.php/PAM "PAM") 可以找到配置 **su** 其他特性的方法。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 用法](#用法)

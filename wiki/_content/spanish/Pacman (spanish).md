@@ -24,7 +24,11 @@ El [gestor de paquetes](https://en.wikipedia.org/wiki/Package_management_system 
 
 **Sugerencia:** el paquete oficial [pacman](https://www.archlinux.org/packages/?name=pacman) también contiene otras herramientas útiles, tales como [makepkg](/index.php/Makepkg "Makepkg"), **pactree**, **vercmp** y [checkupdates](/index.php/Checkupdates "Checkupdates"). Se puede obtener la lista completa de dichas herramientas con `pacman -Qlq pacman | grep bin`
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Utilización](#Utilización)
     *   [1.1 Instalar paquetes](#Instalar_paquetes)

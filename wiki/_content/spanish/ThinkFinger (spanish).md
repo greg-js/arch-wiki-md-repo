@@ -5,7 +5,11 @@ ThinkFinger es un controlador para el lector de huellas digitales SGS de la empr
 
 **Advertencia:** Las revisiones de ThinkFinger-svn por encima de la 72 requieren que cargue el nódulo *uinput*!
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Configuración](#Configuración)

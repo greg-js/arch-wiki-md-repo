@@ -9,7 +9,11 @@ If you use SCIM, see [Smart Common Input Method platform](/index.php/Smart_Commo
 
 If you use IBus, see [IBus](/index.php/IBus "IBus").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Japanese fonts](#Japanese_fonts)
@@ -402,9 +406,9 @@ If you will be using via LEIM, write the following settings into your `.emacs.d/
 (require 'uim-leim)
 
 ;; set default IM. Uncomment the one of the followings.
-;(setq default-input-method "japanese-anthy-utf8-uim")        ; Anthy (UTF-8)
-;(setq default-input-method "japanese-google-cgiapi-jp-uim")  ; Google-CGIAPI-Jp
-;(setq default-input-method "japanese-mozc-uim")              ; Mozc
+;(setq default-input-method "japanese-anthy-utf8-uim")        ; Anthy (UTF-8)
+;(setq default-input-method "japanese-google-cgiapi-jp-uim")  ; Google-CGIAPI-Jp
+;(setq default-input-method "japanese-mozc-uim")              ; Mozc
 
 ```
 

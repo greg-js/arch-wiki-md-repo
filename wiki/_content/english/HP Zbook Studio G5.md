@@ -1,6 +1,10 @@
 The HP Zbook Studio G5 is a workstation replacement laptop.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Booting from live media](#Booting_from_live_media)

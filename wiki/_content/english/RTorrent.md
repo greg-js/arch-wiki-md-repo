@@ -1,6 +1,10 @@
 [rTorrent](https://rakshasa.github.io/rtorrent/) is a quick and efficient BitTorrent client that uses, and is in development alongside, the libTorrent (not to be confused with [libtorrent-rasterbar](https://www.archlinux.org/packages/?name=libtorrent-rasterbar)) library. It is written in C++ and uses the [ncurses](https://en.wikipedia.org/wiki/ncurses "wikipedia:ncurses") programming library, which means it uses a text user interface. When combined with a terminal multiplexer (e.g. [GNU Screen](/index.php/GNU_Screen "GNU Screen") or [Tmux](/index.php/Tmux "Tmux")) and [Secure Shell](/index.php/Secure_Shell "Secure Shell"), it becomes a convenient remote [BitTorrent client](https://en.wikipedia.org/wiki/BitTorrent_(protocol)#Operation "wikipedia:BitTorrent (protocol)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Unofficial packages](#Unofficial_packages)

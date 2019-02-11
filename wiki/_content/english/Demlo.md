@@ -1,6 +1,10 @@
 [Demlo](http://ambrevar.bitbucket.io/demlo/) is a batch music tagger and library organizer powered by Lua and [FFmpeg](/index.php/FFmpeg "FFmpeg"). It supports transcoding, case checking, cue sheets, online tagging with MusicBrainz, manual tag editing with you favorite editor, cover downloading and processing, and more.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

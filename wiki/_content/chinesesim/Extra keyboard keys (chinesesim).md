@@ -17,7 +17,11 @@
 
 **符号(symbol)**是一个键的第三级识别 ID，Xorg 通过该 ID 引用按键。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 第一步： 映射扫描码](#第一步：_映射扫描码)
     *   [1.1 使用 xev](#使用_xev)

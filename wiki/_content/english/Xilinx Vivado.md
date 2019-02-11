@@ -1,6 +1,10 @@
 ArchLinux is not officially supported by Vivado, but as happens with [Xilinx ISE WebPACK](/index.php/Xilinx_ISE_WebPACK "Xilinx ISE WebPACK"), most of its features can be used with a bit of hacking.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Prerequisites](#Prerequisites)
     *   [1.1 Dependencies](#Dependencies)

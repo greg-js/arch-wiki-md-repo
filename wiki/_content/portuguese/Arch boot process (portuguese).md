@@ -13,7 +13,11 @@ Artigos relacionados
 
 Para inicializar o Arch Linux, um carregador [gerenciador de boot](#Gerenciador_de_boot) compatível com Linux deve ser configurado. O gerenciador de boot é responsável por carregar o kernel e o [ramdisk inicial](/index.php/Initial_ramdisk "Initial ramdisk") antes de iniciar o processo de inicialização. O procedimento é bastante diferente para sistemas [BIOS](https://en.wikipedia.org/wiki/pt:BIOS "wikipedia:pt:BIOS") e [UEFI](/index.php/UEFI "UEFI"), a descrição detalhada é fornecida nesta página ou em páginas vinculadas.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Tipos de firmware](#Tipos_de_firmware)
     *   [1.1 BIOS](#BIOS)

@@ -6,7 +6,11 @@ Related articles
 
 [systemd](/index.php/Systemd "Systemd") offers users the ability to manage services under the user's control with a per-user systemd instance, enabling users to start, stop, enable, and disable their own units. This is convenient for daemons and other services that are commonly run for a single user, such as [mpd](/index.php/Mpd "Mpd"), or to perform automated tasks like fetching mail.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 How it works](#How_it_works)
 *   [2 Basic setup](#Basic_setup)

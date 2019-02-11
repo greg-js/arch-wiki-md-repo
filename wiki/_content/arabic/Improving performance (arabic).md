@@ -1,6 +1,10 @@
 هذا المقال هو تحليل وكشف عن الطرق المتبعة للحصول على أداء أفضل في archlinux
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 أساسيات](#أساسيات)
     *   [1.1 تعرف على نظامك](#تعرف_على_نظامك)

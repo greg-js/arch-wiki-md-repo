@@ -8,7 +8,11 @@ Related articles
 
 [Bluetooth](https://en.wikipedia.org/wiki/Bluetooth "wikipedia:Bluetooth") is a standard for the short-range wireless interconnection of cellular phones, computers, and other electronic devices. In Linux, the canonical implementation of the Bluetooth protocol stack is [BlueZ](http://www.bluez.org/).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Front-ends](#Front-ends)
@@ -71,7 +75,7 @@ The following packages allow for a graphical interface to customize Bluetooth.
     *   [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) provides the configuration front-end GUI that can be accessed by typing Bluetooth on the Activities overview, or with the `gnome-control-center bluetooth` command.
     *   You can also launch the `bluetooth-sendto` command directly to send files to a remote device.
     *   To receive files, open the Bluetooth settings panel; you can only receive whilst the Bluetooth panel is open.
-    *   To add a Bluetooth entry to the *Send To* menu in Thunar's file properties menu, see instructions [here](http://docs.xfce.org/xfce/thunar/send-to). (The command that needs to be configured is `bluetooth-sendto %F`).
+    *   To add a Bluetooth entry to the *Send To* menu in Thunar's file properties menu, see instructions [here](http://docs.xfce.org/xfce/thunar/send-to). (The command that needs to be configured is `bluetooth-sendto %F`).
 
 	[https://wiki.gnome.org/Projects/GnomeBluetooth](https://wiki.gnome.org/Projects/GnomeBluetooth) ||
 

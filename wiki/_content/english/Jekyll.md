@@ -2,7 +2,11 @@
 
 Werner announced the release of Jekyll on his website on November 17, 2008\. [[1]](http://tom.preston-werner.com/2008/11/17/blogging-like-a-hacker.html)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 RubyGems (recommended)](#RubyGems_(recommended))

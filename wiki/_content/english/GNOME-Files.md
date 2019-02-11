@@ -10,7 +10,11 @@ Files is the default file manager for [GNOME](https://wiki.gnome.org/). Files at
 
 **Note:** Files was known as [Nautilus](https://wiki.gnome.org/Apps/Nautilus) prior to version 3.6\. The application was given new descriptive names, one for each supported language. The name *Nautilus* is still used in numerous places such as the executable name, some package names, some desktop entries, and some GSettings schemas.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Plugins](#Plugins)

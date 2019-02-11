@@ -1,6 +1,10 @@
 This article describes how to access an [iSCSI](/index.php/ISCSI "ISCSI") target with the [Open-iSCSI](https://github.com/open-iscsi/open-iscsi) initiator.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Overview](#Overview)

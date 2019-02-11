@@ -11,7 +11,11 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
 
 **Warning:** The official Arch Linux Developers and the Trusted Users do not perform tests of any sort to verify the contents of these repositories. You must decide whether to trust their maintainers and you take full responsibility for any consequences of using any unofficial repository.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Adding your repository to this page](#Adding_your_repository_to_this_page)
 *   [2 Signed](#Signed)

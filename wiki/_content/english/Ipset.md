@@ -5,7 +5,11 @@ Related articles
 
 [ipset](http://ipset.netfilter.org/) is a companion application for the [iptables](/index.php/Iptables "Iptables") Linux [firewall](/index.php/Firewall "Firewall"). It allows you to setup rules to quickly and easily block a set of IP addresses, among other things.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

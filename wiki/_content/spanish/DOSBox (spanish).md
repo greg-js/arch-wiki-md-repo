@@ -3,7 +3,11 @@ Este artículo es una traducción de [DOSBox](/index.php/DOSBox "DOSBox"), revis
 
 [DOSBox](https://www.dosbox.com/) es un emulador de DOS para ordenadores x86 que permite ejecutar juegos o programas antiguos DOS.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Configuración](#Configuración)

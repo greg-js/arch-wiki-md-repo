@@ -7,7 +7,11 @@ Related articles
 
 [MariaDB](https://en.wikipedia.org/wiki/MariaDB "wikipedia:MariaDB") is a reliable, high performance and full-featured database server which aims to be an 'always Free, backward compatible, drop-in' replacement of [MySQL](/index.php/MySQL "MySQL"). Since 2013 MariaDB is Arch Linux's default implementation of MySQL.[[1]](https://www.archlinux.org/news/mariadb-replaces-mysql-in-repositories/)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

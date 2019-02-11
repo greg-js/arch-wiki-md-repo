@@ -13,7 +13,11 @@ Para una comparación más completa, véase esta [comparación de sistemas opera
 
 En adelante, solo se compara Arch Linux con otras distribuciones. Las adaptaciones de la comunidad que admiten arquitecturas que no sean x86_64 se pueden encontrar listados entre las [distribuciones basadas en Arch](/index.php/Arch-based_distributions_(Espa%C3%B1ol) "Arch-based distributions (Español)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Basadas en las fuentes](#Basadas_en_las_fuentes)
     *   [1.1 CRUX](#CRUX)

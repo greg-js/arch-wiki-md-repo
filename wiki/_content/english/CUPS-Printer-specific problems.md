@@ -7,7 +7,11 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
 
 **Note:** If you add a printer to this list, consider contributing your entry to [OpenPrinting](https://wiki.linuxfoundation.org/openprinting/database/databaseintro) - that way users of other distributions will also benefit!
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Brother](#Brother)
     *   [1.1 Network printers](#Network_printers)

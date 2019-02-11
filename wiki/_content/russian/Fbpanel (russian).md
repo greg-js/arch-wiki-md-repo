@@ -3,12 +3,16 @@ Fbpanel - лёгковесная, гибко настраиваемая пане
 [GitHub](https://github.com/aanatoly/fbpanel)
 [SourceForge](http://fbpanel.sourceforge.net/)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-*   [2 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Установка](#Установка)
+*   [2 Настройка](#Настройка)
     *   [2.1 wincmd plugin](#wincmd_plugin)
-*   [3 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
+*   [3 Решение проблем](#Решение_проблем)
 
 ## Установка
 

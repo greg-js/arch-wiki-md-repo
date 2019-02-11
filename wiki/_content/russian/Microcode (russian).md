@@ -4,7 +4,11 @@
 
 Особенно пользователи процессоров семейства Intel Haswell и Broadwell должны установить эти обновления, чтобы обеспечить стабильность системы. Но, понятное дело, все пользователи должны устанавливать эти обновления.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Включение раннего обновления микрокода](#Включение_раннего_обновления_микрокода)

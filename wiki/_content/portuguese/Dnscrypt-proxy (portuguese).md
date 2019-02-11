@@ -6,7 +6,11 @@ Artigos relacionados
 
 O [dnscrypt-proxy](https://github.com/jedisct1/dnscrypt-proxy) é um proxy DNS com suporte para os protocolos DNS criptografados [DNS sobre HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTPS") e [DNSCrypt](https://dnscrypt.info/), que pode ser usado para prevenir ataques do tipo *man-in-the-middle* e espionagem. O *dnscrypt-proxy* também é compatível com [DNSSEC](/index.php/DNSSEC_(Portugu%C3%AAs) "DNSSEC (Português)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalação](#Instalação)
 *   [2 Configuração](#Configuração)
@@ -64,7 +68,7 @@ Uma lista completa de resolvedores está localizada na [página do upstream](htt
 Para ver se algum programa está usando a porta 53, execute:
 
 ```
- $ ss -lp 'sport = :domain'
+ $ ss -lp 'sport = :domain'
 
 ```
 

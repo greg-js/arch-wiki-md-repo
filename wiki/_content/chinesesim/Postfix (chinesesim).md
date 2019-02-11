@@ -15,7 +15,11 @@ Related articles
 
 本文基于 [邮件服务器](/index.php/Mail_server "Mail server")。 本文的目标是设置Postfix并解释基本配置文件的功能。 这里有两种交付方式的设置说明：本地系统用户方式 和 虚拟用户方式。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 配置](#配置)

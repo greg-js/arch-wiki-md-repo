@@ -1,6 +1,10 @@
 See [rxvt-unicode](/index.php/Rxvt-unicode "Rxvt-unicode") for the main article.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Improved Kuake-like behavior in Openbox](#Improved_Kuake-like_behavior_in_Openbox)
     *   [1.1 Scriptlets](#Scriptlets)

@@ -2,7 +2,11 @@
 
 [官方网站](http://aspell.net/): "GNU Aspell 是一个自由、开源的拼写检查工具，目的是取代 Ispell. 可以单独使用，也可以作为库文件使用."
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 使用](#使用)

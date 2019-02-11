@@ -1,19 +1,23 @@
 **Состояние перевода:** На этой странице представлен перевод статьи [systemd/Journal](/index.php/Systemd/Journal "Systemd/Journal"). Дата последней синхронизации: 7 февраля 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Systemd/Journal&diff=0&oldid=565517).
 
-*Основная статья: [systemd](/index.php/Systemd "Systemd").*
+Основная статья: [systemd (Русский)](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)").
 
-*systemd* имеет собственную систему ведения логов, названную журналом (journal). В связи с этим больше не требуется запускать демон `syslog`. Для чтения логов используйте команду:
+*systemd* использует журнал (journal), собственную систему ведения логов, в связи с чем больше не требуется запускать демон `syslog`. Для чтения логов используйте следующую команду:
 
 ```
 # journalctl
 
 ```
 
-В Arch Linux каталог `/var/log/journal/` является частью пакета [systemd](https://www.archlinux.org/packages/?name=systemd), и по умолчанию (когда в конфигурационном файле `/etc/systemd/journald.conf` параметр `Storage=` имеет значение `auto`) журнал записывается именно в `/var/log/journal/`. Если вы или какая-то программа удалит этот каталог, *systemd* **не** пересоздаст его автоматически и вместо этого будет писать свои журналы по непостоянному пути `/run/systemd/journal`. Однако каталог будет создан заново, когда вы установите `Storage=persistent` и выполните `systemctl restart systemd-journald` (или перезагрузитесь).
+В Arch Linux каталог `/var/log/journal/` — это часть пакета [systemd](https://www.archlinux.org/packages/?name=systemd) и по умолчанию (когда в конфигурационном файле `/etc/systemd/journald.conf` параметру `Storage=` задано значение `auto`) журнал записывается именно в `/var/log/journal/`. Если вы или какая-то программа удалит этот каталог, *systemd* **не** пересоздаст его автоматически и вместо этого будет вести журнал в `/run/systemd/journal` без сохранения между перезагрузками. Однако каталог будет пересоздан, если задать `Storage=persistent` и [перезапустить](/index.php/%D0%9F%D0%B5%D1%80%D0%B5%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D1%8C "Перезапустить") `systemd-journald.service` (или перезагрузиться).
 
-Сообщения в журнале классифицируются по приоритету и категориям (Facility). Классификация записей соответствует классическому протоколу [Syslog](https://en.wikipedia.org/wiki/Syslog "wikipedia:Syslog") ([RFC 5424](https://tools.ietf.org/html/rfc5424)).
+Сообщения в журнале классифицируются по [уровню приоритета](#Уровни_приоритета) и [категории](#Категории) (Facility). Классификация записей соответствует классическому протоколу [Syslog](https://en.wikipedia.org/wiki/ru:Syslog "wikipedia:ru:Syslog") ([RFC 5424](https://tools.ietf.org/html/rfc5424)).
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Уровни приоритета](#Уровни_приоритета)
 *   [2 Категории](#Категории)

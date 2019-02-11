@@ -1,6 +1,10 @@
 预加载的主要作用是让把文件放入RAM中，或者让文件保持在RAM中。这样做的好处是让应用预加载从而更快的打开，因为从内存读取要比从硬盘读取速度更快。虽然这样会使用一部分内存，但不会比应用打开后所需的内存多。所以，预加载最好用于大型的，经常打开的应用，比如 Firefox 和 LibreOffice。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Go-preload](#Go-preload)
     *   [1.1 配置](#配置)

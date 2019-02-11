@@ -5,7 +5,11 @@ Související články
 
 Tato stránka srovnává Arch Linux s ostatními populárními distribucemi GNU/Linuxu a UNIX-like operačními systémy. Následující přehled obsahuje stručné popisy, které vám mohou pomoci rozhodnout, jestli Arch Linux bude vyhovovat vašim potřebám. Mějte prosím na paměti, že nejlepším způsobem jak porovnat Arch s ostatními distribucemi je, že si ho nainstalujete a vyzkoušíte sami.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Source-based distribuce](#Source-based_distribuce)
     *   [1.1 Gentoo Linux](#Gentoo_Linux)

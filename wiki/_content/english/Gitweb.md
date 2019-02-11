@@ -2,7 +2,11 @@ Gitweb is the default web interface that comes with [Git](/index.php/Git "Git") 
 
 Gitweb actually supports FCGI natively, so you do not need to wrap it as a CGI script. [[1]](http://repo.or.cz/w/alt-git.git?a=blob_plain;f=gitweb/INSTALL)[[2]](https://sixohthree.com/1402/running-gitweb-in-fastcgi-mode)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

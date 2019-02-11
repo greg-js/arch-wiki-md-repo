@@ -6,7 +6,11 @@
 
 [MPlayer](http://www.mplayerhq.hu/) 是 GNU/Linux 下非常流行的影音播放器，支持大多数文件格式，非常通用。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 图形前端](#图形前端)
@@ -283,7 +287,7 @@ $ ps -eo pcpu,pid,user,comm | grep -i "mplayer"$ | sed  "s/ mplayer$//m"
 打开`/usr/share/applications/mplayer.desktop`，修改下面的内容：
 
 ```
-Exec=mplayer %U
+Exec=mplayer %U
 
 ```
 

@@ -13,7 +13,11 @@ Related articles
 
 KDE is a software project currently comprising a [desktop environment](/index.php/Desktop_environment "Desktop environment") known as Plasma, a collection of libraries and frameworks (KDE Frameworks) and several applications (KDE Applications) as well. KDE upstream has a well maintained [UserBase wiki](https://userbase.kde.org/). Detailed information about most KDE applications can be found there.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Plasma](#Plasma)

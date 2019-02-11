@@ -1,6 +1,10 @@
 [Gajim](https://gajim.org/index.php?lang=en) is a full featured and easy to use XMPP client.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 D-Bus remote control](#D-Bus_remote_control)

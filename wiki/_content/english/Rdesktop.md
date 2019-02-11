@@ -22,7 +22,11 @@ Still unimplemented are:
 
 Support for the additional features available in RDP 5.1 and RDP 6 (including multi-head display spanning and window composition) also have not yet been implemented.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)

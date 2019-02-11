@@ -2,7 +2,11 @@
 
 [KDE Wallet Manager](http://utils.kde.org/projects/kwalletmanager/) 是一个用于管理 KDE Plasma 上密码的工具。它将用于在 KDE 上访问和管理你的密码
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 在登录时自动解锁 Kwallet](#在登录时自动解锁_Kwallet)
 *   [2 使用 KDE Wallet 存储 ssh keys](#使用_KDE_Wallet_存储_ssh_keys)

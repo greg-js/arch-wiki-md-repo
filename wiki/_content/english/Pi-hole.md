@@ -8,7 +8,11 @@ Related articles
 
 [Pi-hole](https://pi-hole.net/) is a [DNS sinkhole](https://en.wikipedia.org/wiki/DNS_sinkhole "wikipedia:DNS sinkhole") that compiles a blocklist of domains known to host advertisements and malware from multiple third-party sources. Pi-hole uses [dnsmasq](/index.php/Dnsmasq "Dnsmasq") to seamlessly drop any and all requests for domains in its blocklist. Running it effectively deploys network-wide ad-blocking without the need to configure individual clients. The package comes with a web and a CLI interface.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Pi-hole server](#Pi-hole_server)
     *   [1.1 Installation](#Installation)
@@ -22,6 +26,7 @@ Related articles
         *   [1.3.1 Troubleshooting](#Troubleshooting)
     *   [1.4 Using Pi-hole together with OpenVPN](#Using_Pi-hole_together_with_OpenVPN)
     *   [1.5 Password-protect web interface](#Password-protect_web_interface)
+    *   [1.6 Using DNS Over HTTPS (DOH)](#Using_DNS_Over_HTTPS_(DOH))
 *   [2 Pi-hole Standalone](#Pi-hole_Standalone)
     *   [2.1 Installation](#Installation_2)
     *   [2.2 Initial configuration](#Initial_configuration_2)
@@ -201,6 +206,10 @@ pihole -a -p
 ```
 
 To disable the password protection set a blank password.
+
+### Using DNS Over HTTPS (DOH)
+
+DNS queries can also be performed [over HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS) by using privacy-first DNS [1.1.1.1](https://1.1.1.1/) by [Cloudflare](https://www.cloudflare.com/). Install [cloudflared-bin](https://aur.archlinux.org/packages/cloudflared-bin/) and follow [upstream documentation](https://docs.pi-hole.net/guides/dns-over-https/).
 
 ## Pi-hole Standalone
 

@@ -2,7 +2,11 @@ Artículos relacionados
 
 *   [HTTP tunneling](/index.php/HTTP_tunneling "HTTP tunneling")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Introducción](#Introducción)
 *   [2 Variables de entorno](#Variables_de_entorno)

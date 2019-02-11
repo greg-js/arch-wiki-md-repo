@@ -2,7 +2,11 @@
 
 p7zip 是 [7-Zip](https://en.wikipedia.org/wiki/7zip "wikipedia:7zip") 的 [POSIX](https://en.wikipedia.org/wiki/POSIX "wikipedia:POSIX") 系统移植，支持 Linux.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装 & 使用](#安装_&_使用)
 *   [2 例程](#例程)

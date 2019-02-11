@@ -9,7 +9,11 @@
 
 [虚拟控制台](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console")键盘映射(keymaps), 控制台字体和控制台映射由软件包 [kbd](https://www.archlinux.org/packages/?name=kbd) 提供([systemd](/index.php/Systemd "Systemd")依赖此软件包)。这个包还提供了很多管理虚拟控制台的底层工具。此外，*systemd* 还提供了 *localectl* 工具，可以同时控制系统 [locale](/index.php/Locale "Locale") 和控制台、Xorg 的键盘布局设置.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 查看键盘设置](#查看键盘设置)
 *   [2 设置键盘映射](#设置键盘映射)

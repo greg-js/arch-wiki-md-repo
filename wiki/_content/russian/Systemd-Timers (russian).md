@@ -9,7 +9,11 @@
 
 Таймеры - файлы служб [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)"), имя которых оканчивается на `.timer`, а также они контролируют файлы `.service` или события. И могут выступать альтернативой [cron](/index.php/Cron_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Cron (Русский)") (смотрите [#В качестве замены cron](#В_качестве_замены_cron)). Помимо этого имеют встроенную поддержку событий календаря, монотонных временных событий и могут быть запущены в асинхронном режиме.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Юниты таймера](#Юниты_таймера)
 *   [2 Служба юнита](#Служба_юнита)
@@ -194,11 +198,11 @@ ERRMAIL
  `/etc/systemd/system/status-email-*user*@.service` 
 ```
 [Unit]
-Description=status email for %i to *user*
+Description=status email for %i to *user*
 
 [Service]
 Type=oneshot
-ExecStart=/usr/local/bin/systemd-email *address* %i
+ExecStart=/usr/local/bin/systemd-email *address* %i
 User=nobody
 Group=systemd-journal
 ```

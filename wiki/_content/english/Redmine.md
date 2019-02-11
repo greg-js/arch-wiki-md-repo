@@ -10,7 +10,11 @@ Related articles
 
 Redmine is written using the [Ruby on Rails](/index.php/Ruby_on_Rails "Ruby on Rails") framework. It is cross-platform and cross-[database](https://en.wikipedia.org/wiki/database "wikipedia:database") and supports 34 languages.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Prerequisites](#Prerequisites)
     *   [1.1 Ruby](#Ruby)

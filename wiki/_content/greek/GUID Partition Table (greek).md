@@ -11,7 +11,11 @@
 
 Σε κάθε τρόπο κατάτμησης, ο αριθμός των κατατμήσεων οι οποίες μπορούν να οριστούν βασίζεται στο συνολικό χώρο που καταλαμβάνει ο πίνακας κατατμήσεων και στον χώρο που απαιτείται για την αποθήκευση των πληροφοριών μιας μεμονωμένης κατάτμησης.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Master Boot Record](#Master_Boot_Record)
     *   [1.1 Τα προβλήματα του MBR](#Τα_προβλήματα_του_MBR)

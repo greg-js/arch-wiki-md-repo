@@ -1,6 +1,10 @@
 AutoFS provides automounting of removable media or network shares when they are inserted or accessed.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -65,7 +69,7 @@ Alternatively, you can have autofs mount your media to a specific folder, rather
  `/etc/autofs/auto.master`  `/-     /etc/autofs/auto.template`  `/etc/autofs/auto.template` 
 ```
 /path/to/folder     -options :/device/path
-/home/user/usbstick  -fstype=auto,async,nodev,nosuid,umask=000  :/dev/sdb1
+/home/user/usbstick  -fstype=auto,async,nodev,nosuid,umask=000  :/dev/sdb1
 ```
 
 **Note:** This can cause problems with resources getting locked if the connection to the share is lost. When trying to access the folder, programs will get locked into waiting for a response, and either the connection has to be restored or the process has to be forcibly killed before unmounting is possible. To mitigate this, only use if you will always be connected to the share, and do not use your home folder or other commonly used folders lest your file browser reads ahead into the disconnected folder
@@ -187,7 +191,7 @@ Next, add a new entry for FTP servers in `/etc/autofs/auto.master`:
 Create the file `/etc/autofs/auto.ftp` and add a server using the `[ftp://myuser:mypassword@host:port/path](ftp://myuser:mypassword@host:port/path)` format:
 
 ```
-servername -fstype=curl,rw,allow_other,nodev,nonempty,noatime    :ftp\://myuser\:mypassword\@remoteserver
+servername -fstype=curl,rw,allow_other,nodev,nonempty,noatime    :ftp\://myuser\:mypassword\@remoteserver
 
 ```
 
@@ -205,7 +209,7 @@ password mypassword
 The line in `/etc/autofs/auto.ftp` looks like this without user and password:
 
 ```
-servername -fstype=curl,allow_other    :ftp\://remoteserver
+servername -fstype=curl,allow_other    :ftp\://remoteserver
 
 ```
 
@@ -290,7 +294,7 @@ Create a new entry for SSH servers in `/etc/autofs/auto.master`:
 
 Create the file `/etc/autofs/auto.ssh` and add an SSH server:
 
- `/etc/autofs/auto.ssh`  `servername     -fstype=fuse,rw,allow_other,IdentityFile=/home/username/.ssh/id_rsa :sshfs\#username@host\:/` 
+ `/etc/autofs/auto.ssh`  `servername     -fstype=fuse,rw,allow_other,IdentityFile=/home/username/.ssh/id_rsa :sshfs\#username@host\:/` 
 
 After a restart your SSH server should be accessible through `/media/ssh/servername`.
 
@@ -303,7 +307,7 @@ Install the [mtpfs](https://www.archlinux.org/packages/?name=mtpfs) package.
 Create a new entry for MTP Device in `/etc/autofs/auto.misc`:
 
 ```
-android -fstype=fuse,allow_other,umask=000     :mtpfs
+android -fstype=fuse,allow_other,umask=000     :mtpfs
 
 ```
 

@@ -1,6 +1,10 @@
 Unclutter hides your X mouse cursor when you do not need it, to prevent it from getting in the way. You have only to move the mouse to restore the mouse cursor. Unclutter is very useful in tiling window managers where you do not need the mouse often.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)

@@ -18,7 +18,11 @@ Related articles
 
 [GNOME](https://en.wikipedia.org/wiki/es:GNOME que pretende ser simple y fácil de utilizar. Está diseñado por [el Proyecto GNOME](https://en.wikipedia.org/wiki/The_GNOME_Project en lugar de [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Sesiones de GNOME](#Sesiones_de_GNOME)

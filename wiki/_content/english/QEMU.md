@@ -11,7 +11,11 @@ When used as a machine emulator, QEMU can run OSes and programs made for one mac
 
 QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.php/KVM "KVM") to use CPU extensions ([HVM](https://en.wikipedia.org/wiki/Hardware-assisted_virtualization "wikipedia:Hardware-assisted virtualization")) for virtualization. When used as a virtualizer, QEMU achieves near native performances by executing the guest code directly on the host CPU.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Graphical front-ends for QEMU](#Graphical_front-ends_for_QEMU)
@@ -214,7 +218,7 @@ $ qemu-img rebase -u -b */new/img1.raw* */new/img1.cow*
 
 #### Resizing an image
 
-**Warning:** Resizing an image containing an NTFS boot file system could make the operating system installed on it unbootable. For full explanation and workaround see [[1]](http://tjworld.net/wiki/Howto/ResizeQemuDiskImages).
+**Warning:** Resizing an image containing an NTFS boot file system could make the operating system installed on it unbootable. It is recommended to create a backup first.].
 
 The `qemu-img` executable has the `resize` option, which enables easy resizing of a hard drive image. It works for both *raw* and *qcow2*. For example, to increase image space by 10 GB, run:
 
@@ -223,7 +227,7 @@ $ qemu-img resize *disk_image* +10G
 
 ```
 
-After enlarging the disk image, you must use file system and partitioning tools inside the virtual machine to actually begin using the new space. When shrinking a disk image, you must **first reduce the allocated file systems and partition sizes** using the file system and partitioning tools inside the virtual machine and then shrink the disk image accordingly, otherwise shrinking the disk image will result in data loss!
+After enlarging the disk image, you must use file system and partitioning tools inside the virtual machine to actually begin using the new space. When shrinking a disk image, you must **first reduce the allocated file systems and partition sizes** using the file system and partitioning tools inside the virtual machine and then shrink the disk image accordingly, otherwise shrinking the disk image will result in data loss! For a Windows guest, open the "create and format hard disk partitions" control panel.
 
 #### Converting an image
 
@@ -1238,10 +1242,10 @@ This is like a PC that has no VGA card at all. You would not even be able to acc
 
 ### vnc
 
-One can add the `-vnc :X` option to have QEMU redirect the VGA display to the VNC session. Substitute `X` for the number of the display (0 will then listen on 5900, 1 on 5901...).
+One can add the `-vnc :X` option to have QEMU redirect the VGA display to the VNC session. Substitute `X` for the number of the display (0 will then listen on 5900, 1 on 5901...).
 
 ```
-$ qemu-system-x86_64 -vnc :0
+$ qemu-system-x86_64 -vnc :0
 
 ```
 
@@ -1254,7 +1258,7 @@ An example is also provided in the [#Starting QEMU virtual machines on boot](#St
 An access password can be setup easily by using the `password` option. The password must be indicated in the QEMU monitor and connection is only possible once the password is provided.
 
 ```
-$ qemu-system-x86_64 -vnc :0,password -monitor stdio
+$ qemu-system-x86_64 -vnc :0,password -monitor stdio
 
 ```
 
@@ -1271,7 +1275,7 @@ change vnc password
 The following command line directly runs vnc with a password:
 
 ```
-$ cat vncpassword.txt | qemu-system-x86_64 -vnc :0,password -monitor stdio
+$ cat vncpassword.txt | qemu-system-x86_64 -vnc :0,password -monitor stdio
 
 ```
 
@@ -1353,13 +1357,13 @@ You might also want to install [qemu-guest-agent](https://www.archlinux.org/pack
 
 ### Preparing a Windows guest
 
-**Note:** The only (reliable) way to upgrade a Windows 8.1 guest to Windows 10 seems to be to temporarily choose cpu core2duo,nx for the install [[2]](http://ubuntuforums.org/showthread.php?t=2289210). After the install, you may revert to other cpu settings (8/8/2015).
+**Note:** The only (reliable) way to upgrade a Windows 8.1 guest to Windows 10 seems to be to temporarily choose cpu core2duo,nx for the install [[1]](http://ubuntuforums.org/showthread.php?t=2289210). After the install, you may revert to other cpu settings (8/8/2015).
 
 #### Block device drivers
 
 ##### New Install of Windows
 
-Windows does not come with the virtio drivers. Therefore, you will need to load them during installation. There are basically two ways to do this: via Floppy Disk or via ISO files. Both images can be downloaded from the [Fedora repository](https://fedoraproject.org/wiki/Windows_Virtio_Drivers).
+Windows does not come with the virtio drivers. Therefore, you will need to load them during installation. There are basically two ways to do this: via Floppy Disk or via ISO files. Both images can be downloaded from the [Fedora repository](https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso).
 
 The floppy disk option is difficult because you will need to press F6 (Shift-F6 on newer Windows) at the very beginning of powering on the QEMU. This is difficult since you need time to connect your VNC console window. You can attempt to add a delay to the boot sequence. See [qemu(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/qemu.1) for more details about applying a delay at boot.
 
@@ -1388,7 +1392,7 @@ You should now see your virtio disk(s) listed here, ready to be selected, format
 
 Modifying an existing Windows guest for booting from virtio disk is a bit tricky.
 
-You can download the virtio disk driver from the [Fedora repository](https://fedoraproject.org/wiki/Windows_Virtio_Drivers).
+You can download the virtio disk driver from the [Fedora repository](https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso).
 
 Now you need to create a new disk image, which will force Windows to search for the driver. For example:
 
@@ -1404,7 +1408,7 @@ $ qemu-system-x86_64 -m 512 -drive file=*windows_disk_image*,if=ide -drive file=
 
 ```
 
-Windows will detect the fake disk and try to find a driver for it. If it fails, go to the *Device Manager*, locate the SCSI drive with an exclamation mark icon (should be open), click *Update driver* and select the virtual CD-ROM. Do not forget to select the checkbox which says to search for directories recursively.
+Windows will detect the fake disk and try to find a driver for it. If it fails, go to the *Device Manager*, locate the SCSI drive with an exclamation mark icon (should be open), click *Update driver* and select the virtual CD-ROM. Do not navigate to the driver folder within the CD-ROM, simply select the CD-ROM drive and Windows will find the appropriate driver automatically (tested for Windows 7 SP1). Do not forget to select the checkbox which says to search for directories recursively.
 
 When the installation is successful, you can turn off the virtual machine and launch it again, now with the boot disk attached in virtio mode:
 
@@ -1692,7 +1696,7 @@ Description=QEMU virtual machine
 [Service]
 Environment="type=system-x86_64" "haltcmd=kill -INT $MAINPID"
 EnvironmentFile=/etc/conf.d/qemu.d/%i
-ExecStart=/usr/bin/qemu-${type} -name %i -nographic $args
+ExecStart=/usr/bin/qemu-${type} -name %i -nographic $args
 ExecStop=/bin/sh -c ${haltcmd}
 TimeoutStopSec=30
 KillMode=none

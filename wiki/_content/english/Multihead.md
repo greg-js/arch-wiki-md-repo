@@ -16,7 +16,11 @@ Related articles
 *   **Screen** refers to an X-Window screen (that is: a **monitor** attached to a **display**).
 *   **Display** refers to a collection of **screens** that are in use at the same time showing parts of a single desktop (you can drag windows among all **screens** in a single **display**).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Historical background](#Historical_background)
 *   [2 Separate screens](#Separate_screens)
@@ -418,7 +422,7 @@ To use this new layout, launch the game via the `startx` script:
 
 ```
 # Launch Xonotic on a new X11 display using the "Gaming" layout
-startx /usr/bin/xonotic-glx -fullscreen -- :1 -layout Gaming
+startx /usr/bin/xonotic-glx -fullscreen -- :1 -layout Gaming
 
 ```
 

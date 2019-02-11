@@ -21,7 +21,11 @@ Consider using [VeraCrypt](https://veracrypt.fr/), a TrueCrypt fork in active de
 
 For more details on how TrueCrypt compares to other disk encryption solution, see [Disk encryption#Comparison table](/index.php/Disk_encryption#Comparison_table "Disk encryption").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Accessing a TrueCrypt or VeraCrypt container using cryptsetup](#Accessing_a_TrueCrypt_or_VeraCrypt_container_using_cryptsetup)

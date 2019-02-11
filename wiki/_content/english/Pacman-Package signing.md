@@ -13,7 +13,11 @@ Examples of webs of trust:
 
 **Note:** The HKP protocol uses 11371/tcp for communication. In order to get the signed keys from the servers (using *pacman-key*), this port is required for communication.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Setup](#Setup)
     *   [1.1 Configuring pacman](#Configuring_pacman)

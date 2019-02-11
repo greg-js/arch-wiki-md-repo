@@ -10,7 +10,11 @@ Related articles
 
 这个页面列出并比较了在两个或多个位置之间同步数据的应用程序，以及在此功能之上建立的以备份为目的的制作重要数据的增量副本的应用程序。因为它们的关系，这两组程序共享许多特征所有在同一篇文章里解释描述它们.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 备份概览](#备份概览)
 *   [2 数据同步](#数据同步)

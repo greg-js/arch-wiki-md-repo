@@ -1,6 +1,10 @@
 The following are examples of common scenarios of full system encryption with *dm-crypt*. They explain all the adaptations that need to be done to the normal [installation procedure](/index.php/Installation_guide "Installation guide"). All the necessary tools are on the [installation image](https://www.archlinux.org/download/).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Overview](#Overview)
 *   [2 LUKS on a partition](#LUKS_on_a_partition)

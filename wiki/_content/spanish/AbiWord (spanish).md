@@ -1,9 +1,13 @@
 **Estado de la traducción**
-Este artículo es una traducción de [AbiWord](/index.php/AbiWord "AbiWord"), revisada por última vez el **2019-01-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=AbiWord&diff=0&oldid=562524) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [AbiWord](/index.php/AbiWord "AbiWord"), revisada por última vez el **2019-02-09**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=AbiWord&diff=0&oldid=562766) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 [AbiWord](http://www.abisource.com/) es un procesador de textos que ofrece una alternativa más liviana que [LibreOffice](/index.php/LibreOffice_(Espa%C3%B1ol) "LibreOffice (Español)") Writer y [OpenOffice](/index.php/OpenOffice "OpenOffice") Writer, mientras que al mismo tiempo proporciona una gran funcionalidad. AbiWord admite muchos tipos de documentos estándar, como documentos ODF, documentos Microsoft Word, documentos WordPerfect, documentos Rich Text Format y páginas web HTML.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Directorio de configuración del usuario](#Directorio_de_configuración_del_usuario)

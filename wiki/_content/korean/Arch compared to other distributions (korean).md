@@ -1,6 +1,10 @@
 이 페이지는 아치와 타 GNU/리눅스 배포본/`유닉스`-류 운영체제간 유사점과 차이점에 대한 요약입니다. 아치와 타 배포본을 비교하는 최선의 방법은 직접 설치하고 써보는 것입니다. 아치는 항상 새로운 사용자를 도우려는 놀라운 사용자 커뮤니티를 갖고 있습니다. 아래의 요약은 아치가 당신에게 정말로 필요하다고 판단하기에 충분한 정보를 제공할 뿐입니다.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 소스-기반](#소스-기반)
     *   [1.1 젠투](#젠투)

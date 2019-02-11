@@ -7,7 +7,11 @@ Artículos relacionados
 
 Para métodos generales para mejorar la flexibilidad de las sugerencias proporcionadas o del propio pacman, consulte [Core utilities](/index.php/Core_utilities "Core utilities") y [Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Mantenimiento](#Mantenimiento)
     *   [1.1 Listando paquetes](#Listando_paquetes)
@@ -67,7 +71,7 @@ Es posible que desee obtener la lista de paquetes instalados con su versión, lo
 *   Lista de todos los paquetes externos (normalmente descargados e instalados manualmente): `pacman -Qm`.
 *   Lista de todos los paquetes originales (instalados desde la (s) base de datos de sincronización): `pacman -Qn` .
 *   Lista de paquetes por regex: `pacman -Qs *regex*` .
-*   Lista de paquetes por regex con formato de salida personalizado: `expac -s "%-30n %v" *regex*` (necesita [expac](https://www.archlinux.org/packages/?name=expac)).
+*   Lista de paquetes por regex con formato de salida personalizado: `expac -s "%-30n %v" *regex*` (necesita [expac](https://www.archlinux.org/packages/?name=expac)).
 
 #### Por tamaño
 
@@ -95,7 +99,7 @@ Para listar los paquetes explícitamente instalados que no están en [base](http
 Para enumerar los 20 últimos paquetes instalados con expac , ejecute:
 
 ```
- $ expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 20
+ $ expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 20
 
 ```
 
@@ -223,7 +227,7 @@ Como alternativa puede utilizar [expac](https://www.archlinux.org/packages/?name
 
 ```
 $ expac -l '
-' %E -S *packages* | sort -u
+' %E -S *packages* | sort -u
 
 ```
 
@@ -610,7 +614,7 @@ Esto también es muy útil si necesita configuraciones proxy más potentes que l
 Para usar `wget` , primero instale el paquete [wget](https://www.archlinux.org/packages/?name=wget) y luego modifique `/etc/pacman.conf` descomentando la siguiente línea en la sección `[options]` :
 
 ```
- XferCommand = /usr/bin/wget --passive-ftp -c -O %o %u
+ XferCommand = /usr/bin/wget --passive-ftp -c -O %o %u
 
 ```
 
@@ -625,7 +629,7 @@ En lugar de descomentar los parámetros de `wget` en `/etc/pacman.conf` , tambi�
 Instale [aria2](https://www.archlinux.org/packages/?name=aria2) y luego edite `/etc/pacman.conf` agregando la siguiente línea a la sección `[options]` :
 
 ```
-XferCommand = /usr/bin/aria2c --allow-overwrite=true --continue=true --file-allocation=none --log-level=error --max-tries=2 --max-connection-per-server=2 --max-file-not-found=5 --min-split-size=5M --no-conf --remote-time=true --summary-interval=60 --timeout=5 --dir=/ --out %o %u
+XferCommand = /usr/bin/aria2c --allow-overwrite=true --continue=true --file-allocation=none --log-level=error --max-tries=2 --max-connection-per-server=2 --max-file-not-found=5 --min-split-size=5M --no-conf --remote-time=true --summary-interval=60 --timeout=5 --dir=/ --out %o %u
 
 ```
 
@@ -642,10 +646,10 @@ Vea [OPTIONS](http://aria2.sourceforge.net/manual/en/html/aria2c.html#options) e
 
 Hay otras aplicaciones de descarga que puede usar con *pacman* . Aquí están, y su configuración asociada de XferCommand
 
-*   `snarf`: `XferCommand = /usr/bin/snarf -N %u`
-*   `lftp`: `XferCommand = /usr/bin/lftp -c pget %u`
-*   `axel`: `XferCommand = /usr/bin/axel -n 2 -v -a -o %o %u`
-*   `hget`: `XferCommand = /usr/bin/hget %u -n 2 -skip-tls false` (por favor lea [documentation on the Github project page](https://github.com/huydx/hget) for para mas información)
+*   `snarf`: `XferCommand = /usr/bin/snarf -N %u`
+*   `lftp`: `XferCommand = /usr/bin/lftp -c pget %u`
+*   `axel`: `XferCommand = /usr/bin/axel -n 2 -v -a -o %o %u`
+*   `hget`: `XferCommand = /usr/bin/hget %u -n 2 -skip-tls false` (por favor lea [documentation on the Github project page](https://github.com/huydx/hget) for para mas información)
 
 ## Utilidades
 

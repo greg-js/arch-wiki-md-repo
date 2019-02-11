@@ -25,7 +25,11 @@ Aún sin implementar se encuentran:
 
 Soporte para funcionalidades adicionales disponibles en RDP 5.1 y RDP 6 (incluyendo pantalla multi-head spanning y composición multiventana) aún no han sido implementadas.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Utilización](#Utilización)

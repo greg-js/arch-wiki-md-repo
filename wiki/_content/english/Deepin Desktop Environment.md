@@ -6,7 +6,11 @@ Related articles
 
 The [Deepin Desktop Environment](https://www.deepin.org/en/?language=en) (DDE) is the [desktop environment](/index.php/Desktop_environment "Desktop environment") of the Chinese [Deepin](https://en.wikipedia.org/wiki/Deepin "wikipedia:Deepin") Linux distribution.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Starting](#Starting)

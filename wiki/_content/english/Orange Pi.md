@@ -4,7 +4,11 @@ Orange Pi (One) is a minimalist computer built for the [ARMv7-A architecture](ht
 
 This article is strongly based on [Banana Pi](/index.php/Banana_Pi "Banana Pi"). Moreover this article is not meant to be an exhaustive setup guide and assumes that the reader has setup an Arch system before.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Using original ArchLinuxARM tarball](#Using_original_ArchLinuxARM_tarball)

@@ -12,7 +12,11 @@ De [ACPI site](http://www.acpi.info/):
 
 Los módulos ACPI son módulos del kernel para diferentes partes de ACPI. Permiten funciones ACPI especiales o añaden información en `/proc` o `/sys`. Esta información puede ser analizada por [acpid](/index.php/Acpid_(Espa%C3%B1ol) "Acpid (Español)") para eventos u otras aplicaciones de supervisión.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 ¿Qué módulos están disponibles?](#¿Qué_módulos_están_disponibles?)
 *   [2 Cómo seleccionar los adecuados](#Cómo_seleccionar_los_adecuados)

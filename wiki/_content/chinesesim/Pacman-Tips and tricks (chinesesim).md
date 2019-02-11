@@ -7,7 +7,11 @@
 
 Pacman 本身也是 bash 程序，所以有些通用优化请参考 [Core utilities](/index.php/Core_utilities "Core utilities") 和 [Bash](/index.php/Bash "Bash").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 维护](#维护)
     *   [1.1 查询软件包](#查询软件包)
@@ -56,13 +60,13 @@ Pacman 本身也是 bash 程序，所以有些通用优化请参考 [Core utilit
 *   所有外部软件包 (通常是手动下载安装，或者已经从数据库中删除): `pacman -Qm`.
 *   所有从数据库中安装的软件包: `pacman -Qn`.
 *   按正则表达式查询软件包: `pacman -Qs *regex*`.
-*   按正则表达式查询软件包，自定义输出格式：`expac -s "%-30n %v" *regex*` (需要安装 [expac](https://www.archlinux.org/packages/?name=expac)).
+*   按正则表达式查询软件包，自定义输出格式：`expac -s "%-30n %v" *regex*` (需要安装 [expac](https://www.archlinux.org/packages/?name=expac)).
 
 ### 显示所有软件包及其大小
 
 将所有软件包按占用空间大小排序输出：
 
-*   安装 [expac](https://www.archlinux.org/packages/?name=expac) 并运行 `expac -s "%-30n %m"`
+*   安装 [expac](https://www.archlinux.org/packages/?name=expac) 并运行 `expac -s "%-30n %m"`
 *   用 [community] 中的 [pacgraph](https://www.archlinux.org/packages/?name=pacgraph) 加 -c 选项可以生成所有安装的软件包及其大小.
 
 #### 获取大小
@@ -91,7 +95,7 @@ $ expac -H M "%011m\t%-20n\t%10d" $(comm -23 <(pacman -Qqen | sort) <(pacman -Qq
 用 [expac](https://www.archlinux.org/packages/?name=expac) 查询最近安装的 20 个软件包：
 
 ```
-$ expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 20
+$ expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 20
 
 ```
 
@@ -449,7 +453,7 @@ Powerpill 是 Pacman 的完整包裹程序，增加了平行下载和分段下�
 
 要使用 `wget`，首先使用`pacman -S wget`安装它，然后修改`/etc/pacman.conf`并在其中的`[options]`区段将下面内容去掉注释：
 
- `XferCommand = /usr/bin/wget --passive-ftp -c -O %o %u` 
+ `XferCommand = /usr/bin/wget --passive-ftp -c -O %o %u` 
 
 除了将`wget`参数放在`/etc/pacman.conf`里，你也可以直接修改`wget`配置文件（全局文件是`/etc/wgetrc`，各个用户的文件是`$HOME/.wgetrc`）。
 
@@ -467,7 +471,7 @@ Powerpill 是 Pacman 的完整包裹程序，增加了平行下载和分段下�
 
 修改`/etc/pacman.conf`，在`[option]`段添加下列一行（如果已存在则修改之）：
 
- `XferCommand = /usr/bin/aria2c --allow-overwrite=true -c --file-allocation=none --log-level=error -m2 --max-connection-per-server=2 --max-file-not-found=5 --min-split-size=5M --no-conf --remote-time=true --summary-interval=60 -t5 -d / -o %o %u` 
+ `XferCommand = /usr/bin/aria2c --allow-overwrite=true -c --file-allocation=none --log-level=error -m2 --max-connection-per-server=2 --max-file-not-found=5 --min-split-size=5M --no-conf --remote-time=true --summary-interval=60 -t5 -d / -o %o %u` 
 
 #### 参数细节 =
 
@@ -553,9 +557,9 @@ Powerpill 是 Pacman 的完整包裹程序，增加了平行下载和分段下�
 
 这里还有一些可以和Pacman协同工作的下载软件。下面列举了它们对应的XferCommand命令写法：
 
-*   `snarf`: `XferCommand = /usr/bin/snarf -N %u`
-*   `lftp`: `XferCommand = /usr/bin/lftp -c pget %u`
-*   `axel`: `XferCommand = /usr/bin/axel -n 2 -v -a -o %o %u`
+*   `snarf`: `XferCommand = /usr/bin/snarf -N %u`
+*   `lftp`: `XferCommand = /usr/bin/lftp -c pget %u`
+*   `axel`: `XferCommand = /usr/bin/axel -n 2 -v -a -o %o %u`
 
 ## 工具
 

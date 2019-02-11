@@ -1,6 +1,10 @@
 Эта статья содержит только советы по запуску игр и соответствующие советы по настройке системы. Список популярных игр для GNU/Linux можно найти на [Common Applications/Games](/index.php/Common_Applications/Games "Common Applications/Games") и [Netbook Games](/index.php/Netbook_Games "Netbook Games").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Игровые Среды](#Игровые_Среды)
 *   [2 Получение игр](#Получение_игр)
@@ -78,14 +82,14 @@
 Как упоминалось ранее, иногда может возникнуть необходимость запуска отдельного Х сервера. Отдельный X сервер дает некоторые преимущества, например более высокую производительность, возможность перехода в игру по клавишам CTRL-ALT-F7 / CTRL-ALT-F8, не требуется завершать основную сессию X-ов (она продолжает работать) в случае конфликта игры с видеодрайвером. Для запуска отдельного X сервера (для примера возьмем [Nexuiz](http://alientrap.org/nexuiz/)) достаточно выполнить следующее:
 
 ```
-xinit /usr/bin/nexuiz-glx -- :1
+xinit /usr/bin/nexuiz-glx -- :1
 
 ```
 
 Можно дополнительно создать конфигурациооный файл для X-ов:
 
 ```
-xinit /usr/bin/nexuiz-glx -- :1 -xf86config xorg-game.conf 
+xinit /usr/bin/nexuiz-glx -- :1 -xf86config xorg-game.conf 
 
 ```
 
@@ -103,7 +107,7 @@ if [ $# -ge 1 ]; then
   echo -e "${openbox} &
 ${game}" > ${tmpgame}
   echo "starting ${game}"
-  xinit ${tmpgame} -- :1 -xf86config xorg-game.conf || exit 1
+  xinit ${tmpgame} -- :1 -xf86config xorg-game.conf || exit 1
 else
   echo "not a valid argument"
 fi

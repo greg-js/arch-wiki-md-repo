@@ -11,7 +11,11 @@ The HP Envy X360 15-bq102ng was released in 2017\. It has a Ryzen Mobile 5 2500u
 | Sensors | STM Sensor hub | **Working** | Use [iio-sensor-proxy](https://www.archlinux.org/packages/?name=iio-sensor-proxy) to use autorotate |
 | USB C | AMD xHCI Host Controller | **Working** | Data and DP working |
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installing Arch](#Installing_Arch)
 *   [2 Battery and Power Management](#Battery_and_Power_Management)

@@ -1,9 +1,13 @@
 **Estado de la traducción**
-Este artículo es una traducción de [p7zip](/index.php/P7zip "P7zip"), revisada por última vez el **2018-11-30**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=P7zip&diff=0&oldid=529216) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [p7zip](/index.php/P7zip "P7zip"), revisada por última vez el **2019-02-09**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=P7zip&diff=0&oldid=557880) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 [p7zip](http://p7zip.sourceforge.net/) es un port de línea de comandos de [7-Zip](https://en.wikipedia.org/wiki/es:7-Zip "wikipedia:es:7-Zip") para sistemas [POSIX](https://en.wikipedia.org/wiki/es:POSIX "wikipedia:es:POSIX"), incluido Linux.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Ejemplos](#Ejemplos)

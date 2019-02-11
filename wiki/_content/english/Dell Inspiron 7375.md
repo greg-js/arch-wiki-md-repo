@@ -2,17 +2,20 @@ This is an install and configuration guide for the Dell Inspiron 13 7000 Series 
 
 See the [Laptop/Dell](/index.php/Laptop/Dell "Laptop/Dell") chart for information on other Dell laptops.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Hardware Details](#Hardware_Details)
 *   [2 Tunning](#Tunning)
     *   [2.1 lm_sensors](#lm_sensors)
-    *   [2.2 Disable C6 State](#Disable_C6_State)
-    *   [2.3 Grub parameters](#Grub_parameters)
-    *   [2.4 Power Saving Modes](#Power_Saving_Modes)
-        *   [2.4.1 plugged](#plugged)
-        *   [2.4.2 On battery](#On_battery)
-        *   [2.4.3 Fan Control](#Fan_Control)
+    *   [2.2 Kernel and Grub Parameters](#Kernel_and_Grub_Parameters)
+    *   [2.3 Power Saving Modes](#Power_Saving_Modes)
+        *   [2.3.1 plugged](#plugged)
+        *   [2.3.2 On battery](#On_battery)
+    *   [2.4 Fan Control](#Fan_Control)
 *   [3 Others](#Others)
 
 ## Hardware Details
@@ -77,52 +80,25 @@ sensors
 
 in order to get temperatures
 
-### Disable C6 State
+### Kernel and Grub Parameters
 
-This will save you freezez, use only if you get them, because it will get hotter.
-
-install [zenstates](https://aur.archlinux.org/packages/zenstates-git/) from aur
+System will be unstable with kernel bellow 4.20, while you have older kernel add this parameters to grub
 
 ```
-yay -S zenstates-git
+quiet radeon.dpm=1 acpi_osi=Linux acpi_backlight=vendor amd_iommu=on ivrs_ioapic[4]=00:14.0 ivrs_ioapic[5]=00:00.2 idle=nomwait
 
 ```
 
-Then place create a service that disables C6 on the following path: /lib/systemd/system/disable-c6.service with the following code:
+The upgrade to 4.20 patched for Raver Ridge installing [linux-amd-raven](http://aur.archlinux.org/packages/linux-amd-raven) and may be you will want to install after [linux-amd-raven-headers](http://aur.archlinux.org/packages/linux-amd-raven-headers) in order to build DKMS modules.
 
-```
-[Unit]
-Description=Disables C6 state
-
-[Service]
-ExecStart=/usr/bin/zenstates --disable-c6
-
-[Install]
-WantedBy=multi-user.target
-
-```
-
-Fnally enable de process and reboot
-
-```
-sudo systemctl enable disable-c6.service
-sudo reboot
-
-```
-
-### Grub parameters
+Sinde idle=nomwait makes it run hotter. After the kernel upgrade you can remove idle=nomwait from grub, getting the following line:
 
 ```
 quiet radeon.dpm=1 acpi_osi=Linux acpi_backlight=vendor amd_iommu=on ivrs_ioapic[4]=00:14.0 ivrs_ioapic[5]=00:00.2
 
 ```
 
-if you get freezez add (but will get hotter):
-
-```
-idle=nomwait
-
-```
+you can use grub-customizer to make it easier
 
 ### Power Saving Modes
 
@@ -144,7 +120,9 @@ echo low | sudo tee /sys/class/drm/card0/device/power_dpm_force_performance_leve
 
 ```
 
-#### Fan Control
+once you have kernel 4.20, this setup plus tlp will give you the same battery time as windows.
+
+### Fan Control
 
 I'm having good results tuning with [nbfc](https://aur.archlinux.org/packages/nbfc/) I made a config based on Dell Inspiron 7348 avivable on [my nbfc fork](https://github.com/danielfm123/nbfc/blob/master/Configs/Dell%20Inspiron%207375.xml) witch has more than the default 2 levels of speed in bios.
 

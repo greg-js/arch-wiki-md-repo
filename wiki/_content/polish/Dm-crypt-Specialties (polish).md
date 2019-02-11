@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Zabezpieczanie niezaszyfrowanej partycji rozruchowej](#Zabezpieczanie_niezaszyfrowanej_partycji_rozruchowej)
     *   [1.1 Uruchamianie z urządzenia wymiennego](#Uruchamianie_z_urządzenia_wymiennego)
@@ -581,14 +585,14 @@ for cryptopt in ${cryptoptions//,/ }; do
     case ${cryptopt} in
         allow-discards)
             cryptargs="${cryptargs} --allow-discards"
-            ;;  
+            ;;  
         **header)
             cryptargs="${cryptargs} --header /boot/header.img"
             headerFlag=true
-            ;;**
+            ;;**
         *)  
             echo "Encryption option '${cryptopt}' not known, ignoring." >&2 
-            ;;  
+            ;;  
     esac
 done
 

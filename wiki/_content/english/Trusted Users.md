@@ -3,7 +3,11 @@ The [Trusted Users](https://www.archlinux.org/people/trusted-users/) serve the f
 1.  Maintain the *community* repository as an intermediary between Arch Linux's [official repositories](/index.php/Official_repositories "Official repositories") and the unsupported package collection in the [AUR](/index.php/AUR "AUR").
 2.  Maintain, manage, and watch over the operation of the [AUR](/index.php/AUR "AUR").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 How do I become a TU?](#How_do_I_become_a_TU?)
 *   [2 Active Trusted Users](#Active_Trusted_Users)

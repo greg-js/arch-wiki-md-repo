@@ -11,7 +11,11 @@ Related articles
 
 This page lists OS distributions which are derived from Arch Linux **either in whole or in part**, to help enforce the [Arch Linux trademark policy](/index.php/DeveloperWiki:TrademarkPolicy "DeveloperWiki:TrademarkPolicy"). Although it intends to be as comprehensive as possible, it is not an exhaustive list. SourceForge project links are preferred to simplify maintenance.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Active](#Active)
 *   [2 Inactive](#Inactive)

@@ -9,7 +9,11 @@ The MacBook Pro 11,x consists of models with Retina display shipped by Apple In 
 
 Like previous MacBook models, the MacBook Pro 11,x supports UEFI. This page will cover the current status of hardware support on Arch Linux, as well as post-installation recommendations.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Overview](#Overview)
 *   [2 Firmware updates](#Firmware_updates)

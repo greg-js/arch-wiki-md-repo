@@ -1,6 +1,10 @@
 [Gopher](https://en.wikipedia.org/wiki/Gopher_(protocol) is a protocol for information transfer over the internet that was very popular before HTTP took over as the dominant protocol, but there is still a community of gopher users that prefer the simplicity of the protocol over the more complex and large protocols more often encountered. Note that not all browsers support gopher, or have incomplete support.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 GoFish server](#GoFish_server)
     *   [1.1 Installation](#Installation)

@@ -6,7 +6,11 @@ In case of a HDD the whole sector should get retired. A sector is a subdivision 
 
 This can be done in a destructive write-mode that effectively [wipes](/index.php/Securely_wipe_disk "Securely wipe disk") the device (do backup!) or in non-destructive read-write (backup advisable as well!) and read-only modes.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Storage device fidelity](#Storage_device_fidelity)

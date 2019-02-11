@@ -4,7 +4,11 @@ Arch Linux uses the [GNU C Library](https://en.wikipedia.org/wiki/GNU_C_Library 
 
 You can use the [GNU toolchain](/index.php/GNU_toolchain "GNU toolchain") or the [LLVM toolchain](/index.php/LLVM_toolchain "LLVM toolchain") to develop software in C, [C++](https://en.wikipedia.org/wiki/C%2B%2B "wikipedia:C++") or [Objective-C](https://en.wikipedia.org/wiki/Objective-C "wikipedia:Objective-C").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Useful tools](#Useful_tools)
     *   [1.1 Static code analyzers](#Static_code_analyzers)

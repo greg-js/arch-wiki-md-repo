@@ -10,7 +10,11 @@ The [example config file](/index.php/Simple_stateful_firewall#Example_iptables.r
 
 [example config file](/index.php/Simple_stateful_firewall#Example_iptables.rules_file "Simple stateful firewall") 可以用来解决这个问题。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 前提条件](#前提条件)
 *   [2 Firewall for a single machine](#Firewall_for_a_single_machine)

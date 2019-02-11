@@ -4,7 +4,11 @@
 
 [Internet](/index.php/List_of_Applications/Internet_(Italiano) "List of Applications/Internet (Italiano)") - [Multimedia](/index.php/List_of_Applications/Multimedia_(Italiano) "List of Applications/Multimedia (Italiano)") - [Utilità](/index.php/List_of_Applications/Utilities_(Italiano) "List of Applications/Utilities (Italiano)") - [Documenti](/index.php/List_of_Applications/Documents_(Italiano) "List of Applications/Documents (Italiano)") - [Sicurezza](/index.php/List_of_Applications/Security_(Italiano) "List of Applications/Security (Italiano)") - [Giochi](/index.php/List_of_Applications/Games_(Italiano) "List of Applications/Games (Italiano)") - [Scienza](/index.php/List_of_Applications/Science_(Italiano) "List of Applications/Science (Italiano)") - [Altro](/index.php/List_of_Applications/Other_(Italiano) "List of Applications/Other (Italiano)")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Varie](#Varie)
     *   [1.1 Applicazioni per prendere appunti / Organizers](#Applicazioni_per_prendere_appunti_/_Organizers)

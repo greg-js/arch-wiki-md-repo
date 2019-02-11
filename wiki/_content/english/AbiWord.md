@@ -1,6 +1,10 @@
 [AbiWord](http://www.abisource.com/) is a word processor that provides a lighter alternative for [LibreOffice](/index.php/LibreOffice "LibreOffice") Writer and [OpenOffice](/index.php/OpenOffice "OpenOffice") Writer, while at the same time providing great functionality. AbiWord supports many standard document types, such as ODF documents, Microsoft Word documents, WordPerfect documents, Rich Text Format documents and HTML web pages.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 User config directory](#User_config_directory)

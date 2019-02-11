@@ -11,7 +11,11 @@ Wiping a disk is done by writing new data over every single bit.
 
 **Note:** References to "disks" in this article also apply to loopback devices.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Common use cases](#Common_use_cases)
     *   [1.1 Wipe all data left on the device](#Wipe_all_data_left_on_the_device)

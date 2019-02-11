@@ -1,6 +1,10 @@
 This article covers [spell checking](https://en.wikipedia.org/wiki/Spell_checker "wikipedia:Spell checker") and [grammar checking](https://en.wikipedia.org/wiki/Grammar_checker "wikipedia:Grammar checker") software.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Spell checkers](#Spell_checkers)
     *   [1.1 Language-specific](#Language-specific)

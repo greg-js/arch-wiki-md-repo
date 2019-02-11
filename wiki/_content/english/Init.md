@@ -11,7 +11,11 @@ The init *scripts* (or *rc*) are launched by the init process to guarantee basic
 
 These components combine to the init *system*. Some inits include the service manager in the init process, or have init scripts in close relation to them. These inits are below referred to as *integrated*, though entries in different categories may explicitly depend on each other.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Inits (integrated)](#Inits_(integrated))
 *   [2 Inits](#Inits)

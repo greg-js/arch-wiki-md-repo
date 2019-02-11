@@ -4,7 +4,11 @@ Related articles
 
 Some Apple keyboard models may have swapped keys or missing functionality. This article describes how to change the settings for the keyboard so that it behaves as expected.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Numlock is on](#Numlock_is_on)
 *   [2 Repeating keys on a wireless keyboard](#Repeating_keys_on_a_wireless_keyboard)

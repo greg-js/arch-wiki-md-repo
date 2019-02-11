@@ -1,6 +1,10 @@
 Táto stránka popisuje postup rozbehania čítačky a aplikácie eID klient pre [Občiansky preukaz SR s čipom (eID)](https://portal.minv.sk/wps/wcm/connect/sk/site/main/obciansky-preukaz-s-cipom/) v Arch linuxe.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Testované a funkčné čítačky](#Testované_a_funkčné_čítačky)
 *   [2 Inštalácia](#Inštalácia)

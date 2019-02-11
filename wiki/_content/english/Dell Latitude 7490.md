@@ -1,6 +1,10 @@
 The Latitude 7490 is virtually identical to the [Dell Latitude 7480](/index.php/Dell_Latitude_7480 "Dell Latitude 7480") with the exception of an upgrade to Kabylake-R processors (8th gen).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Components](#Components)
     *   [1.1 lscpu Output](#lscpu_Output)

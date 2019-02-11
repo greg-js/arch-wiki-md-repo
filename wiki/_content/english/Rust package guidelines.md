@@ -6,7 +6,11 @@
 
 This document covers standards and guidelines on writing [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") for [Rust](/index.php/Rust "Rust").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 General guidelines](#General_guidelines)
     *   [1.1 Package naming](#Package_naming)

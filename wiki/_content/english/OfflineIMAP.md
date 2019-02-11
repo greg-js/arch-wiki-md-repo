@@ -8,7 +8,11 @@ Related articles
 
 **Note:** [imapfw](http://www.offlineimap.org/development/2015/10/08/imapfw-is-made-public.html) is intended to replace offlineimap in the future.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

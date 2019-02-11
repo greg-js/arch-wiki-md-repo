@@ -10,7 +10,11 @@ Related articles
 
 **Note:** 若希望了解 Arch 為何轉變到 systemd, 請參照 [這篇文章](https://bbs.archlinux.org/viewtopic.php?pid=1149530#p1149530).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 systemd 基本工具](#systemd_基本工具)
     *   [1.1 分析系統狀態](#分析系統狀態)

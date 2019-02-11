@@ -1,6 +1,10 @@
 [GNU Wget](http://www.gnu.org/software/wget/) is a free software package for retrieving files using [HTTP](/index.php/HTTP "HTTP"), HTTPS, [FTP](/index.php/FTP "FTP") and FTPS *(FTPS since version 1.18)*. It is a non-interactive commandline tool, so it may easily be called from scripts.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -57,7 +61,7 @@ Proxies that use HTML authentication forms are not covered.
 To have [pacman](/index.php/Pacman "Pacman") automatically use Wget and a proxy with authentication, place the Wget command into `/etc/pacman.conf`, in the `[options]` section:
 
 ```
-XferCommand = /usr/bin/wget --proxy-user "domain\user" --proxy-password="password" --passive-ftp -q --show-progress -c -O %o %u
+XferCommand = /usr/bin/wget --proxy-user "domain\user" --proxy-password="password" --passive-ftp -q --show-progress -c -O %o %u
 
 ```
 

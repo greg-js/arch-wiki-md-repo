@@ -8,7 +8,11 @@
 
 這份註釋索引文件列舉了其他熱門文章和重要資訊，善用這些資源可以幫您新安裝的 Arch 系統提升和新增功能。這裡所列出的頁面需要使用 [pacman](/index.php/Pacman_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Pacman (正體中文)") 從[官方倉庫](/index.php/Official_repositories_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Official repositories (正體中文)")安裝額外的軟體包，至於來自非官方的 [Arch 使用者倉庫](/index.php/Arch_User_Repository_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Arch User Repository (正體中文)")的軟體包，需要配置 [makepkg](/index.php/Makepkg "Makepkg")，另外可搭配 [AUR 幫助程式](/index.php/AUR_helper "AUR helper")使用。因此在繼續之前，應該徹底瞭解軟體包的管理概念。這裡假設讀者已經閱讀[新手教學](/index.php/Beginners%27_guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Beginners' guide (正體中文)")或[安裝指南](/index.php/Installation_guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Installation guide (正體中文)")，按照步驟安裝一個基本的 Arch Linux 系統。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 外觀](#外觀)
     *   [1.1 彩色輸出](#彩色輸出)

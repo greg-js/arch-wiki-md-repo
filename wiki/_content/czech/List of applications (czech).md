@@ -13,7 +13,11 @@ Tento článek je obecný seznam aplikací seřazených podle kategorií, má sl
 
 **Note:** Aplikace v sekcích "Konzole" mohou mít grafické front-endy. Oficiální front-endy jsou momentálně vynechány.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Internet](#Internet)
     *   [1.1 BitTorrent klienti](#BitTorrent_klienti)

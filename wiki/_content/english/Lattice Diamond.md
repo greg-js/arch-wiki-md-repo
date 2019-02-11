@@ -2,7 +2,11 @@
 
 Arch Linux is not officially supported by [Lattice Diamond](http://www.latticesemi.com/), but as happens with other HDL suites like [Xilinx ISE WebPACK](/index.php/Xilinx_ISE_WebPACK "Xilinx ISE WebPACK") or [Xilinx Vivado](/index.php/Xilinx_Vivado "Xilinx Vivado"), most of its features can be used with a bit of hacking.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Prerequisites](#Prerequisites)
 *   [2 Installation](#Installation)
@@ -64,6 +68,6 @@ SUBSYSTEM=="usb",ACTION=="add",ATTRS{idVendor}=="1134",ATTRS{idProduct}=="8001",
 
 ```
 SUBSYSTEM=="usb",ACTION=="add",ATTRS{idVendor}=="0403",ATTRS{idProduct}=="6010",MODE=="0666",GROUP=="username:x:1000:",SYMLINK+="ftdi-%n"
-SUBSYSTEM=="usb",ATTRS{idVendor}=="0403",ATTRS{idProduct}=="6010",RUN+="/bin/sh -c 'basename %p > /sys/bus/usb/drivers/ftdi_sio/unbind'"
+SUBSYSTEM=="usb",ATTRS{idVendor}=="0403",ATTRS{idProduct}=="6010",RUN+="/bin/sh -c 'basename %p > /sys/bus/usb/drivers/ftdi_sio/unbind'"
 
 ```

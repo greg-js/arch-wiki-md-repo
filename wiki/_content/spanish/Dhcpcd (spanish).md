@@ -11,7 +11,11 @@ Artículos relacionados
 
 **Nota:** *dhcpcd* (DHCP **client** daemon) no es lo mismo que [dhcpd](/index.php/Dhcpd "Dhcpd") (DHCP **(server)** daemon).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Iniciar](#Iniciar)
@@ -324,7 +328,7 @@ Para hacer que *dhcpcd* espere indefinidamente por una vez, [edite](/index.php/E
 ```
 [Service]
 ExecStart=
-ExecStart=/usr/bin/dhcpcd -w -q **-t 0** %I
+ExecStart=/usr/bin/dhcpcd -w -q **-t 0** %I
 ```
 
 Para hacer que espere indefinidamente, deja que la unidad se reinicie después de salir:
@@ -345,7 +349,7 @@ Por defecto `dhcpcd@.service` espera hasta obtener una dirección IP antes de pa
 ```
 [Service]
 ExecStart=
-ExecStart=/usr/bin/dhcpcd -b -q %I
+ExecStart=/usr/bin/dhcpcd -b -q %I
 ```
 
 Vea también [FS#49685](https://bugs.archlinux.org/task/49685).

@@ -7,7 +7,11 @@ Related articles
 
 [bspwm](https://github.com/baskerville/bspwm) é um gerenciador de janelas leve, lado a lado, e minimalista escrito em C que organiza janelas em [árvore binária](https://pt.wikipedia.org/wiki/%C3%81rvore_bin%C3%A1ria) completa. Seu tamanho instalado é menor que 600KB. O bspwm tem suporte para [EWMH](https://standards.freedesktop.org/wm-spec/wm-spec-latest.html) e múltiplos monitores. Ele responde apenas a eventos e mensagens X que recebe em um soquete dedicado de um programa incluído em seu pacote, o bspc.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalação](#Instalação)
 *   [2 Iniciando](#Iniciando)

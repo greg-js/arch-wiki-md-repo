@@ -11,7 +11,11 @@ A GUID Partíciós Tábla (GPT) egy új stílusú particionálási mód, mely r�
 
 Hogy megértsük a GPT-t, meg kell értenünk, mi is az MBR és mik a hátrányai.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Master Boot Record](#Master_Boot_Record)
     *   [1.1 Az MBR hátrányai](#Az_MBR_hátrányai)

@@ -5,7 +5,11 @@ Related articles
 
 Using [GNU Screen](/index.php/GNU_Screen "GNU Screen"), [Irssi](/index.php/Irssi "Irssi"), [Bitlbee](/index.php/Bitlbee "Bitlbee"), and [SSH](/index.php/SSH "SSH") together allows you to have a persistent connection to IRC servers and other chat networks. Via SSH, you can access this persistent chat suite from anywhere. Putting the pieces together is not difficult, and this page will guide you through it.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Components](#Components)
     *   [1.1 GNU Screen](#GNU_Screen)

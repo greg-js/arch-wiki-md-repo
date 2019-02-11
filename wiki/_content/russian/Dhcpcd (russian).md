@@ -8,7 +8,11 @@
 
 **Примечание:** Не путайте *dhcpcd* — DHCP-клиент и [dhcpd](/index.php/Dhcpd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dhcpd (Русский)"), который является **DHCP-сервером**.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Запуск](#Запуск)
@@ -244,7 +248,7 @@ error changing net interface name wlan0 to wlp4s0: Device or resource busy
 ```
 [Service]
 ExecStart=
-ExecStart=/usr/bin/dhcpcd -w -q **-t 0** %I
+ExecStart=/usr/bin/dhcpcd -w -q **-t 0** %I
 ```
 
 Не забудьте [перезагрузить конфигурацию systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Редактирование_предоставленных_пакетами_файлов_юнитов "Systemd (Русский)").

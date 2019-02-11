@@ -6,7 +6,11 @@ Llaves SSH también tienen algunas desventajas y puede que no funcionen en todos
 
 Este articulo asume que el lector tiene un conocimiento básico del protocolo de [Shell Segura](/index.php/Secure_Shell_(Espa%C3%B1ol) "Secure Shell (Español)") y que el paquete [openssh](https://www.archlinux.org/packages/?name=openssh) ha sido [instalado](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Informacion preliminar](#Informacion_preliminar)
 *   [2 Generando las llaves SSH](#Generando_las_llaves_SSH)

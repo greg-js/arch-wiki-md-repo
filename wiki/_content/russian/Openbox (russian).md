@@ -9,7 +9,11 @@
 
 Openbox - это легкий и гибкий в настройке [оконный менеджер](/index.php/%D0%9E%D0%BA%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Оконный менеджер"), поддерживающий большинство стандартных функций. Все его особенности описаны на [официальном веб-сайте](http://openbox.org/). Эта статья описывает процесс установки Openbox под Arch Linux.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Обновление до Openbox 3.5](#Обновление_до_Openbox_3.5)

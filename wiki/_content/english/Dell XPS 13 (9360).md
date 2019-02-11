@@ -24,7 +24,11 @@ The installation process for Arch on the XPS 13 does not differ from any other P
 
 As of kernel 4.5, the Intel Kaby Lake architecture is supported.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Content Adaptive Brightness Control](#Content_Adaptive_Brightness_Control)
 *   [2 Power Saving](#Power_Saving)
@@ -218,7 +222,7 @@ Call Trace:
   __warn+0xcb/0xf0
   warn_slowpath_null+0x1d/0x20
   net_rx_action+0x274/0x3a0
-  ? irq_finalize_oneshot.part.35+0xe0/0xe0
+  ? irq_finalize_oneshot.part.35+0xe0/0xe0
 
 ```
 

@@ -10,7 +10,11 @@
 
 Xcompmgr不替代任何窗口管理器，所以对于[Openbox](/index.php/Openbox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Openbox (简体中文)")和[Fluxbox](/index.php/Fluxbox "Fluxbox")这类缺乏特效的[窗口管理器](/index.php/%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E5%99%A8 "窗口管理器")来讲，配合Xcompmgr能得到更华丽的视觉效果。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
     *   [1.1 分支版本](#分支版本)

@@ -1,6 +1,10 @@
 See [PulseAudio](/index.php/PulseAudio "PulseAudio") for the main article.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Volume](#Volume)
     *   [1.1 Auto-Mute Mode](#Auto-Mute_Mode)

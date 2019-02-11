@@ -7,7 +7,11 @@
 
 [Docker](http://www.docker.io) — это утилита для упаковки, загрузки и запуска любых приложений через легковесный контейнер.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Настройка](#Настройка)

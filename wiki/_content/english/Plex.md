@@ -2,7 +2,11 @@
 
 Plex for Linux is split into a closed-source server Plex Media Server, and an open-source client Plex Home Theater, a fork of the popular [Kodi](/index.php/Kodi "Kodi") project.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Plex Media Server (PMS)](#Plex_Media_Server_(PMS))
     *   [1.1 Installation](#Installation)

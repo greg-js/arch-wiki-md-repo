@@ -9,7 +9,11 @@ De [Ext4 - Linux Kernel Newbies](http://kernelnewbies.org/Ext4) (traduzido):
 
 	Ext4 é a evolução do sistema de arquivos mais usado no Linux, o Ext3\. De diversas formas, o Ext4 é uma melhoria mais profunda sobre Ext3 do que o Ext3 foi sobre Ext2\. O Ext3 foi principalmente sobre adicionar *journaling* ao Ext2, mas o Ext4 modifica estruturas de dados importantes do sistema de arquivos como aqueles projetados para armazenar os dados de arquivos. O resultado é um sistema de arquivos com um desenho melhorado, melhor desempenho, confiabilidade e recursos.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Criando um novo sistema de arquivos ext4](#Criando_um_novo_sistema_de_arquivos_ext4)
     *   [1.1 Proporção de bytes por nó-i](#Proporção_de_bytes_por_nó-i)

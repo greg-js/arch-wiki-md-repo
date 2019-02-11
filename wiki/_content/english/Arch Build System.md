@@ -16,7 +16,11 @@ The Arch build system is a *ports-like* system for building and packaging softwa
 
 ABS is a similar concept. ABS is made up of a directory tree that can be checked out using SVN. This tree represents, but does not contain, all official Arch software. Subdirectories do not contain the software package nor the source but rather a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") file and sometimes other files. By issuing [makepkg](/index.php/Makepkg "Makepkg") inside a directory containing a PKGBUILD, the software is first compiled and then packaged within the build directory. Then you can use [pacman](/index.php/Pacman "Pacman") to install or upgrade your new package.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 ABS overview](#ABS_overview)
     *   [1.1 SVN tree](#SVN_tree)

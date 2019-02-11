@@ -6,7 +6,11 @@ Related articles
 
 [Samba](https://www.samba.org/) is a re-implementation of the [SMB](https://en.wikipedia.org/wiki/Server_Message_Block "wikipedia:Server Message Block") networking protocol. It facilitates file and printer sharing among Linux and Windows systems as an alternative to [NFS](/index.php/NFS "NFS"). This article provides instructions for users on how to setup Samba.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Server](#Server)
     *   [1.1 Installation](#Installation)
@@ -216,8 +220,8 @@ Permissions may be applied to both the server and shares:
  `/etc/samba/smb.conf` 
 ```
 [global]
-  ;inherit owner = unix only ; Inherit ownership of the parent directory for new files and directories
-  ;inherit permissions = yes ; Inherit permissions of the parent directory for new files and directories
+  ;inherit owner = unix only ; Inherit ownership of the parent directory for new files and directories
+  ;inherit permissions = yes ; Inherit permissions of the parent directory for new files and directories
   create mask = 0664
   directory mask = 2755
   force create mode = 0644
@@ -265,7 +269,7 @@ By default Samba allows the usage of (possible) insecure and out-of-dated protoc
 ```
 [global]
   server min protocol = NT1
-  ; server max protocol = SMB3
+  ; server max protocol = SMB3
 ```
 
 **Note:** See `server max protocol` in [smb.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5) for an overview of supported protocols.

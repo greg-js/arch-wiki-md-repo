@@ -1,6 +1,10 @@
 콤튼[Compton](/index.php/Compton "Compton")은 컴포지팅 기능을 네이티브하게 지원하지 않는 [window managers](/index.php/Window_managers "Window managers")와 함께 사용하기 좋은 스탠드얼론 컴포짓 매니저 입니다. 콤튼은 [xcompmgr](/index.php/Xcompmgr "Xcompmgr")의 포크버전인 [xcompmgr-dana](http://oliwer.net/xcompmgr-dana/)의 포크입니다. 더 자세한 정보가 필요하다면 [compton github page](https://github.com/chjj/compton)을 읽으십시오.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 설치](#설치)
 *   [2 사용](#사용)
@@ -133,7 +137,7 @@ shadow-exclude = "class_g = 'conky'";
 xinerama 를 사용하지 않고 [multihead](/index.php/Multihead "Multihead") 설정이 되있다면 (X 서버가 하나의 스크린 이상에서 실행 중이라면) 기본적으로 콤튼은 하나의 스크린에서만 실행이 될 것입니다. `-d` 인자를 사용하면 모든 스크린에서 실행시킬 수 있습니다. 예로, 콤튼을 4개의 모니터에서 사용하려면 다음 커맨드를 입력하면 됩니다:
 
 ```
-seq 0 3 | xargs -l1 -I@ compton -b -d :0.@
+seq 0 3 | xargs -l1 -I@ compton -b -d :0.@
 
 ```
 
@@ -156,7 +160,7 @@ Not drawing underlying tabbed windows can be enabled by adding the following to 
 
 ```
 opacity-rule = [
-  "95:class_g = 'URxvt' && !_NET_WM_STATE@:32a",
+  "95:class_g = 'URxvt' && !_NET_WM_STATE@:32a",
   "0:_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'"
 ];
 

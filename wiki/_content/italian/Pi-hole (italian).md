@@ -8,7 +8,11 @@ Articoli correlati
 
 [Pi-hole](https://pi-hole.net/) è un [DNS sinkhole](https://en.wikipedia.org/wiki/DNS_sinkhole "wikipedia:DNS sinkhole") che redige una lista di blocco di domini conosciuti per offrire pubblicità e malware da sorgenti multiple di terze parti. Pi-hole, attraverso l'uso di [dnsmasq](/index.php/Dnsmasq "Dnsmasq"), elimina semplicemente tutte le richieste di domini nella sua lista di blocco. Questa configurazione implementa efficacemente il blocco della pubblicità a livello di rete senza dover configurare ogni singolo client. Il pacchetto offre una interfaccia web e una a riga di comando.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Pi-hole Server](#Pi-hole_Server)
     *   [1.1 Installazione](#Installazione)

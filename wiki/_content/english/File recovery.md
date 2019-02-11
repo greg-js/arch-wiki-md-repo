@@ -4,7 +4,11 @@ Related articles
 
 This article lists data recovery and undeletion options for Linux.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Special notes](#Special_notes)
     *   [1.1 Before you start](#Before_you_start)

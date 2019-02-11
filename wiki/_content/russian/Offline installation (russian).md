@@ -9,7 +9,11 @@
 
 Сначала следуйте инструкциям статьи [Руководство по установке](/index.php/%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE_%D0%BF%D0%BE_%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B5 "Руководство по установке"), а затем пропустите разделы от [Соединения с Интернетом](/index.php/Installation_guide_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Соединение_с_Интернетом "Installation guide (Русский)") до [Установки основных пакетов](/index.php/Installation_guide_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_основных_пакетов "Installation guide (Русский)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка archiso в новый корень](#Установка_archiso_в_новый_корень)
 *   [2 Chroot и настройка базовой системы](#Chroot_и_настройка_базовой_системы)

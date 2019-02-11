@@ -10,7 +10,11 @@ De [Fuentes del ordenador (En ingles)](https://en.wikipedia.org/wiki/Computer_fo
 
 Note que ciertas licencias de fuentes pueden imponer ciertas limitaciones legales.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Formatos de fuente](#Formatos_de_fuente)
     *   [1.1 Formato bitmap](#Formato_bitmap)
@@ -141,7 +145,7 @@ $ for dir in /font/dir1/ /font/dir2/; do xset +fp $dir; done && xset fp rehash
 O si la fuente está instalado en una sub-carpeta diferente dentro de por ej. `/usr/share/fonts`:
 
 ```
-$ for dir in * ; do if [  -d  "$dir"  ]; then cd "$dir";xset +fp "$PWD" ;mkfontscale; mkfontdir;cd .. ;fi; done && xset fp rehash
+$ for dir in * ; do if [  -d  "$dir"  ]; then cd "$dir";xset +fp "$PWD" ;mkfontscale; mkfontdir;cd .. ;fi; done && xset fp rehash
 
 ```
 

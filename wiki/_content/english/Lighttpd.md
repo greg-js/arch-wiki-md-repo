@@ -1,6 +1,10 @@
 [lighttpd](https://www.lighttpd.net/) is "a secure, fast, compliant, and very flexible [web-server](https://en.wikipedia.org/wiki/Web_server "wikipedia:Web server") that has been optimized for high-performance environments. It has a very low memory footprint compared to other webservers and takes care of cpu-load. Its advanced feature-set ([FastCGI](https://en.wikipedia.org/wiki/FastCGI "wikipedia:FastCGI"), [CGI](https://en.wikipedia.org/wiki/Common_Gateway_Interface "wikipedia:Common Gateway Interface"), Auth, Output-Compression, URL-Rewriting and many more) make lighttpd the perfect webserver-software for every server that suffers load problems."
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -415,7 +419,7 @@ Put the test.py in the root of your server (do not forget to chmod +x it)
 #!/usr/bin/env python2
 
 def myapp(environ, start_response):
-    print 'got request: %s' % environ
+    print 'got request: %s' % environ
     start_response('200 OK', [('Content-Type', 'text/plain')])
     return ['Hello World!']
 

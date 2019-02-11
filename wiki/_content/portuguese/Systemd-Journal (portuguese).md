@@ -11,7 +11,11 @@ No Arch Linux, o diretório `/var/log/journal/` faz parte do pacote *systemd* e 
 
 O journal do systemd classifica mensagens por [nível de prioridade](#Nível_de_prioridade) e [facilidade](#Facilidade). A classificação de registro de logs corresponde ao clássico protocolo do [Syslog](https://en.wikipedia.org/wiki/pt:Syslog "wikipedia:pt:Syslog") ([RFC 5424](https://tools.ietf.org/html/rfc5424)).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Nível de prioridade](#Nível_de_prioridade)
 *   [2 Facilidade](#Facilidade)

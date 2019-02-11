@@ -8,7 +8,11 @@ SSMTP is a program which delivers email from a local computer to a configured ma
 
 **Note:** ssmtp is unmaintained. Consider using something like [msmtp](/index.php/Msmtp "Msmtp") or [OpenSMTPD](/index.php/OpenSMTPD "OpenSMTPD") instead.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Forward to a Gmail mail server](#Forward_to_a_Gmail_mail_server)

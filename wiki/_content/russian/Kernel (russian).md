@@ -14,7 +14,11 @@
 
 Существуют различные альтернативные доступные ядра Arch Linux в дополнение к основным Linux ядрам. В этой статье перечислены некоторые из вариантов имеющихся в репозиториях, с кратким описанием каждого из них. Существует также описание патчей, которые могут быть применены к ядру. Статья заканчивается обзором пользовательской компиляции ядра со ссылками на различные методы.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Предварительно скомпилированные ядра](#Предварительно_скомпилированные_ядра)
     *   [1.1 Официальные пакеты](#Официальные_пакеты)
@@ -35,7 +39,7 @@
 *   [3 Компиляция ядра](#Компиляция_ядра)
     *   [3.1 Используя Arch Build System (ABS)](#Используя_Arch_Build_System_(ABS))
     *   [3.2 Традиционный метод](#Традиционный_метод)
-    *   [3.3 Пропиетарный NVIDIA драйвер](#Пропиетарный_NVIDIA_драйвер)
+    *   [3.3 Проприетарный драйвер NVIDIA](#Проприетарный_драйвер_NVIDIA)
 *   [4 Смотрите также](#Смотрите_также)
     *   [4.1 Тесты и обзоры](#Тесты_и_обзоры)
 
@@ -255,9 +259,9 @@ Arch Linux предусматривает несколько методов ко
 
 Смотрите [Kernels/Compilation/Traditional](/index.php/Kernels/Compilation/Traditional "Kernels/Compilation/Traditional").
 
-### Пропиетарный NVIDIA драйвер
+### Проприетарный драйвер NVIDIA
 
-Смотрите[NVIDIA#Alternate install: custom kernel](/index.php/NVIDIA#Alternate_install:_custom_kernel "NVIDIA") инструкцию по использованию пропиетарного драйвера NVIDIA с патченным ядром.
+Смотрите [NVIDIA#Alternate install: custom kernel](/index.php/NVIDIA#Alternate_install:_custom_kernel "NVIDIA")  инструкцию по использованию пропиетарного драйвера NVIDIA с патченным ядром.
 
 ## Смотрите также
 

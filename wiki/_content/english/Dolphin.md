@@ -6,7 +6,11 @@ Related articles
 
 [Dolphin](https://www.kde.org/applications/system/dolphin/) is the default file manager of [KDE](/index.php/KDE "KDE"). For the video game console emulator, see [Dolphin emulator](/index.php/Dolphin_emulator "Dolphin emulator").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Compare files](#Compare_files)

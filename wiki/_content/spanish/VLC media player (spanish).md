@@ -5,7 +5,11 @@ Desde la [página de inicio](https://www.videolan.org/vlc/) del proyecto:
 
 	VLC es un marco y reproductor multimedia multiplataforma gratuito y de código abierto que reproduce la mayoría de los archivos multimedia, así como DVD, CD de audio, VCD y varios protocolos de transmisión.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Idioma](#Idioma)
@@ -41,14 +45,14 @@ Las variantes notables son:
 VLC no ofrece una opción para cambiar el idioma en su menú *Preferencias*. Pero puedes usar el prefijo *LANGUAGE=*. Por ejemplo, modifique la línea `/usr/share/applications/vlc.desktop`:
 
 ```
-Exec=/usr/bin/vlc %U
+Exec=/usr/bin/vlc %U
 
 ```
 
 a:
 
 ```
-Exec=LANGUAGE=fr /usr/bin/vlc %U
+Exec=LANGUAGE=fr /usr/bin/vlc %U
 
 ```
 
@@ -212,7 +216,7 @@ Si VLC no reproduce ningún vídeo o archivo de audio a través de SFTP, asegúr
 Si se niega a reproducir cualquier archivo multimedia que contenga espacios a través de SFTP y siempre solicita autenticación, cambie la línea Exec en el archivo `vlc.desktop` a:
 
 ```
-Exec=/usr/bin/vlc --started-from-file %F
+Exec=/usr/bin/vlc --started-from-file %F
 
 ```
 

@@ -10,7 +10,11 @@
 
 常规性的备份系统和用户数据是非常重要的，比如说 `/etc`, `/home`, `/var` 这些目录。如果是服务器还有 `/srv`.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 使用 Btrfs snapshots](#使用_Btrfs_snapshots)
 *   [2 使用 LVM snapshots](#使用_LVM_snapshots)

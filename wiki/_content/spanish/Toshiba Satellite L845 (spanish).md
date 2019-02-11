@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Toshiba Satellite L845](/index.php/Toshiba_Satellite_L845 "Toshiba Satellite L845"), revisada por última vez el **2018-12-01**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Toshiba_Satellite_L845&diff=0&oldid=316487) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Toshiba Satellite L845](/index.php/Toshiba_Satellite_L845 "Toshiba Satellite L845"), revisada por última vez el **2019-02-09**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Toshiba_Satellite_L845&diff=0&oldid=557934) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 ## Corregir las teclas Fn
 

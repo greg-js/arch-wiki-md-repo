@@ -17,7 +17,11 @@ See these [two](https://chromium.googlesource.com/chromium/src/+/master/docs/chr
 
 See [List of applications/Internet#Blink-based](/index.php/List_of_applications/Internet#Blink-based "List of applications/Internet") for other browsers based on Chromium.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

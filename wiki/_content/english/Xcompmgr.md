@@ -7,7 +7,11 @@ Related articles
 
 Because it does not replace any existing window manager, it is an ideal solution for users of lightweight [window managers](/index.php/Window_managers "Window managers"), seeking a more elegant desktop.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

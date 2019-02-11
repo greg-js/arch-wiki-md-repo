@@ -5,7 +5,11 @@ Los fabricantes de procesadores lanzan actualizaciones de estabilidad y segurida
 
 Los usuarios de las CPU que pertenecen a las familias de procesadores Intel Haswell y Broadwell en particular deben instalar estas actualizaciones de microcódigo para garantizar la estabilidad del sistema. Pero todos los usuarios deben instalar las actualizaciones como una cuestión de rutina.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Habilitar las actualizaciones de microcódigo tempranas](#Habilitar_las_actualizaciones_de_microcódigo_tempranas)

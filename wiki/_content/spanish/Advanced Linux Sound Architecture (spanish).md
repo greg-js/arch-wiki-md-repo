@@ -7,8 +7,11 @@ La [Arquitectura Avanzada para el Sonido en Linux](https://en.wikipedia.org/wiki
 
 **Nota:** Para un entorno de sonido alternativo, consulte la página [Open Sound System](/index.php/Open_Sound_System_(Espa%C3%B1ol) "Open Sound System (Español)")
 .
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
     *   [1.1 Utilidades en el espacio de usuario](#Utilidades_en_el_espacio_de_usuario)

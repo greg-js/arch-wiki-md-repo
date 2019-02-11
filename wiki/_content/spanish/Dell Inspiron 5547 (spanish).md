@@ -5,7 +5,11 @@ Esta es una guía de instalación y configuración para el portátil Dell Inspir
 
 Véase la tabla [Laptop/Dell](/index.php/Laptop/Dell "Laptop/Dell") para obtener información sobre otros portátiles Dell.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Detalles del hardware](#Detalles_del_hardware)
 *   [2 Instalación](#Instalación)

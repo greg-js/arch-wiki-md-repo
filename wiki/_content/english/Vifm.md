@@ -8,7 +8,11 @@ From the [Vifm](http://vifm.info/) home page:
 
 If you use [vi](/index.php/Vi "Vi"), Vifm gives you complete keyboard control over your files without having to learn a new set of commands.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Help file](#Help_file)
@@ -104,7 +108,7 @@ highlight /^.*\.(zip|gz|bz2|xz|tar|tgz|tbz2|7z|rar|iso|rpm|deb)$/ ctermfg=red
 As of 0.6.2 you can customize key bindings in Vifm. These can be set from the command mode using the map command, like so:
 
 ```
-:map ] :s
+:map ] :s
 
 ```
 
@@ -115,8 +119,8 @@ However, these mappings will not be saved between sessions. To map a key permane
 You can assign applications to filetypes in vifmrc, eg.
 
 ```
-filetype *.jpg,*.jpeg,*.png,*.gif feh %f 2>/dev/null &
-filetype *.md5 md5sum -c %f
+filetype *.jpg,*.jpeg,*.png,*.gif feh %f 2>/dev/null &
+filetype *.md5 md5sum -c %f
 
 ```
 
@@ -127,7 +131,7 @@ Several defaults can be found in vifmrc. These can be edited or added to followi
 ```
 filextype *.jpg,*.jpeg,*.png,*.gif
        \ {View in feh}
-       \ feh -FZ %d --start-at %d/%c 2>/dev/null
+       \ feh -FZ %d --start-at %d/%c 2>/dev/null
 
 ```
 
@@ -138,15 +142,15 @@ It will display your selected image in feh, but it will enable you to browse all
 You can also create custom commands in vifmrc, eg.
 
 ```
-command df df -h %m 2> /dev/null
-command diff vim -d %f %F
+command df df -h %m 2> /dev/null
+command diff vim -d %f %F
 
 ```
 
 #### Creating symbolic links
 
 ```
-command link ln -s %d/%f %D
+command link ln -s %d/%f %D
 
 ```
 
@@ -164,7 +168,7 @@ a link of the selected file is made in the other directory (if you are in split 
 make a .torrent of the current file in the other tab's dir
 
 ```
-command mkt mktorrent -p -a [your announce url here] -o %D/%f.torrent %d/%f
+command mkt mktorrent -p -a [your announce url here] -o %D/%f.torrent %d/%f
 
 ```
 
@@ -192,7 +196,7 @@ Provided [poppler](https://www.archlinux.org/packages/?name=poppler) is installe
 
 ```
 fileviewer *.pdf
-  \ pdftotext %c -
+  \ pdftotext %c -
 
 ```
 
@@ -207,7 +211,7 @@ Neat image previewing can be achieved using img2txt from [libcaca](https://www.a
 
 ```
 fileviewer *.png,*.jpeg,*.jpg
- \ img2txt %c 
+ \ img2txt %c 
 
 ```
 
@@ -215,7 +219,7 @@ Previewing the contents of tar-archives:
 
 ```
 fileviewer *.tar,*.tar.gz
- \ tar -tvf %c
+ \ tar -tvf %c
 
 ```
 
@@ -223,7 +227,7 @@ For previewing html documents suitable programs are text based browsers includin
 
 ```
 fileviewer *.html
- \ w3m %c
+ \ w3m %c
 
 ```
 
@@ -231,7 +235,7 @@ For printing text instead of previewing the file (for binary files for example):
 
 ```
 fileviewer *.exe
- \ echo Binary file: no preview available. %i
+ \ echo Binary file: no preview available. %i
 
 ```
 
@@ -262,9 +266,9 @@ nmap ; :
 
 ### Total size of selected files
 
-To get the total size of selected files change %s to %E in `~/.vifm/vifmrc`, like so:
+To get the total size of selected files change %s to %E in `~/.vifm/vifmrc`, like so:
 
 ```
-set statusline="  %t%= %A %10u:%-7g %15E %20d  "
+set statusline="  %t%= %A %10u:%-7g %15E %20d  "
 
 ```

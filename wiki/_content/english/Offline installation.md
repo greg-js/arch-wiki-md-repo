@@ -7,7 +7,11 @@ If you wish to install the [Archiso](/index.php/Archiso "Archiso") (e.g. [the of
 
 First, follow the [Installation guide](/index.php/Installation_guide "Installation guide"), skipping the [Installation guide#Connect to the Internet](/index.php/Installation_guide#Connect_to_the_Internet "Installation guide") section, until the [Installation guide#Install the base packages](/index.php/Installation_guide#Install_the_base_packages "Installation guide") step.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Install the archiso to the new root](#Install_the_archiso_to_the_new_root)
 *   [2 Chroot and configure the base system](#Chroot_and_configure_the_base_system)

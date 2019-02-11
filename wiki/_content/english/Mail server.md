@@ -11,7 +11,11 @@ A mail server consists of multiple components. A [mail transfer agent](https://e
 
 ```
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Software](#Software)
     *   [1.1 POP3/IMAP servers](#POP3/IMAP_servers)

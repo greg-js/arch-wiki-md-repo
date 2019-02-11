@@ -2,7 +2,11 @@ MySQL è un database SQL ampiamente diffuso e multi-threaded. Per maggiori infor
 
 **Note:** MariaDB è l'implementazione ufficialmente adottata da Archlinux. Si raccomandano gli utenti di [passare](#Passare_da_Oracle_MySQL_a_MariaDB) a MariaDB. Oracle MySQL è in [AUR](/index.php/AUR "AUR"). Annuncio ufficiale: [[1]](https://www.archlinux.org/news/mariadb-replaces-mysql-in-repositories/).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installazione](#Installazione)
     *   [1.1 Passare da Oracle MySQL a MariaDB](#Passare_da_Oracle_MySQL_a_MariaDB)

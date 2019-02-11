@@ -2,7 +2,11 @@ Według [official website](https://www.gnupg.org/):
 
 	GnuPG to pełna i darmowa implementacja [OpenPGP](http://openpgp.org/about/) standard zdefiniowany przez [RFC4880](https://tools.ietf.org/html/rfc4880) (znany również jako PGP). GnuPG pozwala na szyfrowanie i podpisywanie danych i komunikacji. Posiada wszechstronny system zarządzania kluczami, a także moduły dostępu do wszystkich rodzajów katalogów kluczy publicznych. GnuPG, znany również jako GPG, to narzędzie linii poleceń z funkcjami ułatwiającymi integrację z innymi aplikacjami. Dostępnych jest wiele aplikacji i bibliotek frontendowych. Wersja 2 GnuPG zapewnia także obsługę S/MIME i Secure Shell (ssh).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalacja](#Instalacja)
 *   [2 Konfiguracja](#Konfiguracja)

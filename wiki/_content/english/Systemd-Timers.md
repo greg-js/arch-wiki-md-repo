@@ -7,7 +7,11 @@ Related articles
 
 Timers are [systemd](/index.php/Systemd "Systemd") unit files whose name ends in `.timer` that control `.service` files or events. Timers can be used as an alternative to [cron](/index.php/Cron "Cron") (read [#As a cron replacement](#As_a_cron_replacement)). Timers have built-in support for calendar time events, monotonic time events, and can be run asynchronously.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Timer units](#Timer_units)
 *   [2 Service unit](#Service_unit)
@@ -202,11 +206,11 @@ Whatever executable you use, it should probably take at least two arguments as t
  `/etc/systemd/system/status-email-*user*@.service` 
 ```
 [Unit]
-Description=status email for %i to *user*
+Description=status email for %i to *user*
 
 [Service]
 Type=oneshot
-ExecStart=/usr/local/bin/systemd-email *address* %i
+ExecStart=/usr/local/bin/systemd-email *address* %i
 User=nobody
 Group=systemd-journal
 ```

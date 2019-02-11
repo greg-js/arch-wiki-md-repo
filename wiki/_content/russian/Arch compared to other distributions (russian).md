@@ -6,7 +6,11 @@
 
 Эта страница написана с целью показать сходства и различия между Arch и другими популярными дистрибутивами GNU/Linux. Этот вопрос задают очень часто, и хорошо было бы иметь стандартный ответ. Тем не менее, учтите: лучший способ сравнить дистрибутивы между собой — установить и попробовать самому. Текст ниже призван лишь дать достаточно информации, чтобы вы решили, подходит вам Arch или нет.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Source-based](#Source-based)
     *   [1.1 Arch и Gentoo](#Arch_и_Gentoo)

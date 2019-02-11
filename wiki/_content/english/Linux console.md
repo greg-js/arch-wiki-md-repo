@@ -11,7 +11,11 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Linux_console "wikipedia:
 
 This article describes the basics of the Linux console and how to configure the font display. Keyboard configuration is described in the [/Keyboard configuration](/index.php/Linux_console/Keyboard_configuration "Linux console/Keyboard configuration") subpage.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Implementation](#Implementation)
     *   [1.1 Virtual consoles](#Virtual_consoles)

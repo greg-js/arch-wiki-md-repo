@@ -9,7 +9,11 @@ From [Wikipedia](https://en.wikipedia.org/wiki/GNU "wikipedia:GNU"):
 
 Because the GNU kernel, [Hurd](https://www.gnu.org/s/hurd/hurd.html), is not production-ready [[1]](https://www.gnu.org/software/hurd/hurd/status.html) GNU is usually used with the Linux kernel. [Arch Linux](/index.php/Arch_Linux "Arch Linux") is such a GNU/Linux distribution, using GNU software like the [Bash](/index.php/Bash "Bash") shell, the GNU coreutils, the GNU toolchain and numerous other utilities and libraries. This page does not attempt to list all of the [nearly 400](https://www.gnu.org/software/software.html#allgnupkgs) GNU packages and only highlights some.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Texinfo](#Texinfo)
 *   [2 Base system](#Base_system)

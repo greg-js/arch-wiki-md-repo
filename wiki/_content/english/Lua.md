@@ -1,6 +1,10 @@
 [Lua](https://en.wikipedia.org/wiki/Lua_(programming_language) "wikipedia:Lua (programming language)"), according to its own website [lua.org](https://www.lua.org/), is a powerful, efficient, lightweight, embeddable scripting language. This makes Lua ideal for configuration and extensions of other programs, also because of its great interoperation with [C](/index.php/C "C"). The basic Lua interpreter is less than 250kB in size. As the official implementation is written in [ANSI C](https://en.wikipedia.org/wiki/ANSI_C "wikipedia:ANSI C") it is available for many platforms and architectures.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 LuaJIT](#LuaJIT)

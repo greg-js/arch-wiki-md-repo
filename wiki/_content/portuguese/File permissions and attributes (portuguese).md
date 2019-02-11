@@ -11,7 +11,11 @@ Artigos relacionados
 
 **Atenção:** Quando usados para fins de segurança, as permissões e atributos só defendem contra ataques iniciados a partir do sistema inicializado. Para proteger os dados armazenados dos invasores com acesso físico à máquina, é preciso também implementar [criptografia de disco](/index.php/Disk_encryption "Disk encryption").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Visualizando permissões](#Visualizando_permissões)
     *   [1.1 Exemplos](#Exemplos)
@@ -286,11 +290,11 @@ $ chmod go=rx *nome_do_arquivo*
 Para visualizar as permissões existentes de um arquivo ou diretório no formato numérico, use o comando [stat(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/stat.1):
 
 ```
-$ stat -c %a *nome_do_arquivo*
+$ stat -c %a *nome_do_arquivo*
 
 ```
 
-sendo que a opção %a especifica a saída no formato numérico.
+sendo que a opção %a especifica a saída no formato numérico.
 
 A maioria das pastas e diretórios é configurada para `755` para permitir leitura, escrita e execução para o proprietário, mas nega a escrita para todos os outros, e os arquivos são normalmente `644` para permitir leitura e escrita para o proprietário, mas apenas leitura para todos os outros; consulte a última nota sobre a falta de permissões `x` com arquivos não executáveis: é a mesma coisa aqui.
 

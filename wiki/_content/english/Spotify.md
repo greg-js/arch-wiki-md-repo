@@ -1,6 +1,10 @@
 [Spotify](https://en.wikipedia.org/wiki/Spotify "wikipedia:Spotify") is a digital music streaming service with a freemium business model. This article is mainly about the semi-official, proprietary **Spotify for Linux** client, which is developed by Spotify's engineers in their spare time and not actively supported by Spotify.[[1]](https://www.spotify.com/us/download/linux/) Alternatively, there is an [online player](https://open.spotify.com/) and a couple of open source [third-party clients](#Third-party_clients).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Third-party clients](#Third-party_clients)
@@ -241,17 +245,17 @@ With the help of `xdotool` it is possible to send your hotkeys to the applicatio
 case $1 in
    "play")
        key="XF86AudioPlay"
-       ;;
+       ;;
    "next")
        key="XF86AudioNext"
-       ;;
+       ;;
    "prev")
        key="XF86AudioPrev"
-       ;;
+       ;;
    *)
        echo "Usage: $0 play|next|prev"
        exit 1
-        ;;
+        ;;
 esac
 xdotool key --window $(xdotool search --name "Spotify (Premium |Unlimited |Free )?- Linux Preview"|head -n1) $key
 exit 0
@@ -482,7 +486,7 @@ Name=Spotify
 GenericName=Music Player
 Comment=Spotify streaming music client
 Icon=spotify-client
-Exec=spotify **--force-device-scale-factor=2** %U
+Exec=spotify **--force-device-scale-factor=2** %U
 TryExec=spotify
 Terminal=false
 Type=Application

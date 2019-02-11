@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Securing the unencrypted boot partition](#Securing_the_unencrypted_boot_partition)
     *   [1.1 Booting from a removable device](#Booting_from_a_removable_device)
@@ -577,14 +581,14 @@ for cryptopt in ${cryptoptions//,/ }; do
     case ${cryptopt} in
         allow-discards)
             cryptargs="${cryptargs} --allow-discards"
-            ;;  
+            ;;  
         **header)
             cryptargs="${cryptargs} --header /boot/header.img"
             headerFlag=true
-            ;;**
+            ;;**
         *)  
             echo "Encryption option '${cryptopt}' not known, ignoring." >&2 
-            ;;  
+            ;;  
     esac
 done
 

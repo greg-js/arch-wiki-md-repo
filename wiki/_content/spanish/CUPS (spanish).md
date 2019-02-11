@@ -10,7 +10,11 @@ De la [web de CUPS](https://www.cups.org/):
 
 Aunque hay otras alternativas de impresión como LPRng, el Sistema de Impresión Común de Unix (***C**ommon **U**nix **P**rinting **S**ystem*) es la opción más popular debido a su relativa facilidad de uso.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Cups Linux Printing workflow](#Cups_Linux_Printing_workflow)
 *   [2 Instalar el paquete del cliente](#Instalar_el_paquete_del_cliente)

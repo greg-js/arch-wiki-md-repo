@@ -7,7 +7,11 @@ Artículos relacionados
 *   [Gestor de pantalla](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)")
 *   [Gestor de ventanas](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Enlightenment](#Enlightenment)
     *   [1.1 Instalación](#Instalación)

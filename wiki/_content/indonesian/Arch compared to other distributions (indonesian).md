@@ -5,7 +5,11 @@ Related articles
 
 Halaman ini berisi tentang perbandingan antara Archlinux dengan distribusi GNU/Linux lain serta sistem operasi yang menyerupai UNIX. Sehingga Anda dapat tahu apakah Archlinux adalah sistem operasi yang cocok untuk Anda atau tidak.Namun,mencoba secara langsung Archlinux adalah cara terbaik untuk membandingkan Archlinux dengan sistem operasi lainnya.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Source-based (Berbasis kode sumber)](#Source-based_(Berbasis_kode_sumber))
     *   [1.1 Gentoo](#Gentoo)

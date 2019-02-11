@@ -7,7 +7,11 @@ Artigos relacionados
 
 Para métodos gerais para melhorar a flexibilidade das dicas fornecidas ou do *pacman* em si, veja [Utilitários principais](/index.php/Utilit%C3%A1rios_principais "Utilitários principais") e [Bash](/index.php/Bash "Bash").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Manutenção](#Manutenção)
     *   [1.1 Listando pacotes](#Listando_pacotes)
@@ -73,7 +77,7 @@ Você pode querer obter a lista de pacotes instalados com sua versão, o que é 
 *   Listar todos os pacotes externos (geralmente baixados e instalados manualmente ou removidos do repositório): `pacman -Qm`.
 *   Listar todos os pacotes nativos (instalados a partir de base(s) de dados de sincronização): `pacman -Qn`.
 *   Listar pacotes por expressão regular: `pacman -Qs *regex*`.
-*   Listar pacotes por expressão regular com formato de saída personalizada: `expac -s "%-30n %v" *regex*` (precisa de [expac](https://www.archlinux.org/packages/?name=expac)).
+*   Listar pacotes por expressão regular com formato de saída personalizada: `expac -s "%-30n %v" *regex*` (precisa de [expac](https://www.archlinux.org/packages/?name=expac)).
 
 #### Com tamanho
 
@@ -121,7 +125,7 @@ $ pacman -Quq|xargs expac -S -H M '%k\t%n' | sort -sh
 Para listar os últimos 20 pacotes instalados com [expac](https://www.archlinux.org/packages/?name=expac), execute:
 
 ```
-$ expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 20
+$ expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 20
 
 ```
 
@@ -293,7 +297,7 @@ Alternativamente, com [expac](https://www.archlinux.org/packages/?name=expac):
 
 ```
 $ expac -l '
-' %E -S *pacotes* | sort -u
+' %E -S *pacotes* | sort -u
 
 ```
 
@@ -669,14 +673,14 @@ Muitos pacotes tentam instalar documentação e traduções em vários idiomas. 
 
  `/etc/pacman.conf` 
 ```
-NoExtract = usr/share/help/* !usr/share/help/en*
+NoExtract = usr/share/help/* !usr/share/help/en*
 NoExtract = usr/share/gtk-doc/html/*
 NoExtract = usr/share/locale/* usr/share/X11/locale/* usr/share/i18n/* opt/google/chrome/locales/*
-NoExtract = !*locale*/en*/* !usr/share/i18n/charmaps/UTF-8.gz !usr/share/*locale*/locale.*
-NoExtract = !usr/share/*locales/en_?? !usr/share/*locales/i18n !usr/share/*locales/iso*
-NoExtract = !usr/share/*locales/trans*
+NoExtract = !*locale*/en*/* !usr/share/i18n/charmaps/UTF-8.gz !usr/share/*locale*/locale.*
+NoExtract = !usr/share/*locales/en_?? !usr/share/*locales/i18n !usr/share/*locales/iso*
+NoExtract = !usr/share/*locales/trans*
 NoExtract = usr/share/qt4/translations/*
-NoExtract = usr/share/man/* !usr/share/man/man*
+NoExtract = usr/share/man/* !usr/share/man/man*
 NoExtract = usr/share/vim/vim*/lang/*
 NoExtract = usr/lib/libreoffice/help/en-US/*
 ```
@@ -711,7 +715,7 @@ Esse também é muito útil se você precisar de configurações de proxy mais p
 Para usar o `wget`, primeiro [instale](/index.php/Instale "Instale") o pacote [wget](https://www.archlinux.org/packages/?name=wget) e, após, modifique o `/etc/pacman.conf` descomentando a seguinte linha na seção `[options]`:
 
 ```
-XferCommand = /usr/bin/wget --passive-ftp -c -O %o %u
+XferCommand = /usr/bin/wget --passive-ftp -c -O %o %u
 
 ```
 
@@ -726,7 +730,7 @@ O [aria2](/index.php/Aria2 "Aria2") é um utilitário de download leve com supor
 Instale o [aria2](https://www.archlinux.org/packages/?name=aria2) e, após, edite o `/etc/pacman.conf` adicionando a seguinte linha à seção `[options]`:
 
 ```
-XferCommand = /usr/bin/aria2c --allow-overwrite=true --continue=true --file-allocation=none --log-level=error --max-tries=2 --max-connection-per-server=2 --max-file-not-found=5 --min-split-size=5M --no-conf --remote-time=true --summary-interval=60 --timeout=5 --dir=/ --out %o %u
+XferCommand = /usr/bin/aria2c --allow-overwrite=true --continue=true --file-allocation=none --log-level=error --max-tries=2 --max-connection-per-server=2 --max-file-not-found=5 --min-split-size=5M --no-conf --remote-time=true --summary-interval=60 --timeout=5 --dir=/ --out %o %u
 
 ```
 
@@ -743,10 +747,10 @@ Veja [OPTIONS](http://aria2.sourceforge.net/manual/en/html/aria2c.html#options) 
 
 Existem outros aplicativos de download que você pode usar com *pacman*. Aqui estão, e as configurações associadas de XferCommand:
 
-*   `snarf`: `XferCommand = /usr/bin/snarf -N %u`
-*   `lftp`: `XferCommand = /usr/bin/lftp -c pget %u`
-*   `axel`: `XferCommand = /usr/bin/axel -n 2 -v -a -o %o %u`
-*   `hget`: `XferCommand = /usr/bin/hget %u -n 2 -skip-tls false` (por favor, leia a [documentação na página de projeto no Github](https://github.com/huydx/hget) para mais informações)
+*   `snarf`: `XferCommand = /usr/bin/snarf -N %u`
+*   `lftp`: `XferCommand = /usr/bin/lftp -c pget %u`
+*   `axel`: `XferCommand = /usr/bin/axel -n 2 -v -a -o %o %u`
+*   `hget`: `XferCommand = /usr/bin/hget %u -n 2 -skip-tls false` (por favor, leia a [documentação na página de projeto no Github](https://github.com/huydx/hget) para mais informações)
 
 ## Utilitários
 

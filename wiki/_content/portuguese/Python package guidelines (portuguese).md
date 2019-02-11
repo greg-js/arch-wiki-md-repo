@@ -8,7 +8,11 @@
 
 Esse documento cobre padrões e diretrizes na escrita de [PKGBUILDs](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") para softwares [Python](/index.php/Python "Python").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Nome do pacote](#Nome_do_pacote)
     *   [1.1 Arquitetura](#Arquitetura)

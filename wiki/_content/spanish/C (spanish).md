@@ -7,7 +7,11 @@ Arch Linux utiliza la [Biblioteca de C de GNU](https://en.wikipedia.org/wiki/GNU
 
 Puede utilizar [toolchain de GNU](/index.php/GNU_toolchain_(Espa%C3%B1ol) "GNU toolchain (Español)") o [LLVM toolchain](/index.php/LLVM_toolchain "LLVM toolchain") para desarrollar software en C, [C++](https://en.wikipedia.org/wiki/C%2B%2B "wikipedia:C++") u [Objective-C](https://en.wikipedia.org/wiki/es:Objective-C "wikipedia:es:Objective-C").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Herramientas útiles](#Herramientas_útiles)
     *   [1.1 Analizadores de código estático](#Analizadores_de_código_estático)

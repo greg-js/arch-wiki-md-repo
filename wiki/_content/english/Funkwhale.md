@@ -14,7 +14,11 @@ Quoting the [main documentation page](https://docs.funkwhale.audio/index.html):
 
 Instances can be federated with the ActivityPub protocol.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Installation from AUR](#Installation_from_AUR)

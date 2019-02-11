@@ -2,7 +2,11 @@
 
 [Systemtap](http://sourceware.org/systemtap/) 是一种在运行时收集 Linux 系统信息的自由软件(GPL)框架。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 SystemTap](#SystemTap)
 *   [2 标准内核](#标准内核)

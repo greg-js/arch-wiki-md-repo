@@ -4,7 +4,11 @@ Related articles
 *   [Display manager](/index.php/Display_manager "Display manager")
 *   [Window manager](/index.php/Window_manager "Window manager")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Enlightenment](#Enlightenment)
     *   [1.1 Installation](#Installation)

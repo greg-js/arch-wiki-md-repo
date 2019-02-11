@@ -11,7 +11,11 @@
 *   TypeScript
 *   Другие языки (Java, Ruby, PHP и т.д.) посредством использования omnicompletion.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Настройка](#Настройка)

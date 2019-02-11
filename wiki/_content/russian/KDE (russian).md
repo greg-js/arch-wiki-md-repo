@@ -11,13 +11,17 @@
 *   [Trinity](/index.php/Trinity "Trinity")
 *   [Uniform Look for Qt and GTK Applications (Русский)](/index.php/Uniform_Look_for_Qt_and_GTK_Applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Uniform Look for Qt and GTK Applications (Русский)")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [KDE](/index.php/KDE "KDE"). Дата последней синхронизации: 7 января 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=561787).
+**Состояние перевода:** На этой странице представлен перевод статьи [KDE](/index.php/KDE "KDE"). Дата последней синхронизации: 10 февраля 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=564820).
 
 KDE — проект, состоящий из [среды рабочего стола](/index.php/Desktop_environment_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop environment (Русский)") (KDE Plasma), набора библиотек и фреймворков (KDE Frameworks), а также набора приложений (KDE Applications).
 
 KDE активно поддерживает вики-ресурс [UserBase](https://userbase.kde.org/). Здесь пользователи могут получить наиболее актуальную и подробную информацию о большинстве приложений KDE.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
     *   [1.1 KDE Plasma](#KDE_Plasma)
@@ -141,7 +145,7 @@ KDE Plasma можно запустить с помощью [экранного �
 
 Для запуска KDE Plasma с помощью [xinit/startx](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xinitrc (Русский)"), добавьте строку `exec startkde` в файл `.xinitrc`. Также если вы хотите автоматически запускать [Xorg (Русский)](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)") при входе в систему, ознакомьтесь со статьёй [xinitrc (Русский)#Автозапуск X при входе в систему](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Автозапуск_X_при_входе_в_систему "Xinitrc (Русский)").
 
-Для запуска из консоли сеанса KDE Plasma используя [Wayland (Русский)](/index.php/Wayland_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wayland (Русский)"), выполните `export XDG_SESSION_TYPE=wayland && export $(dbus-launch) && startplasmacompositor`.[[1]](https://community.kde.org/KWin/Wayland#Start_a_Plasma_session_on_Wayland)
+Для запуска сеанса KDE Plasma с [Wayland (Русский)](/index.php/Wayland_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wayland (Русский)") из консоли, выполните `XDG_SESSION_TYPE=wayland dbus-run-session startplasmacompositor`.[[1]](https://community.kde.org/KWin/Wayland#Start_a_Plasma_session_on_Wayland)
 
 ## Настройка
 

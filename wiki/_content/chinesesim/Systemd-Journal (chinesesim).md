@@ -15,7 +15,11 @@ systemd 提供了自己的日志系统（logging system），称为 journal。�
 
 Systemd 日志事件提示信息的记录安装优先级和更能进行分离，符合经典的 BSD syslog 协议风格（[维基百科](https://en.wikipedia.org/wiki/Syslog "wikipedia:Syslog")，[RFC 5424](https://tools.ietf.org/html/rfc5424)）。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 优先级](#优先级)
 *   [2 功能](#功能)

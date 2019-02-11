@@ -8,7 +8,11 @@ Since NoMachine version 4, the software is proprietary and currently two edition
 
 The free edition allows to connect to an existing X display (also known as display shadowing of a live session with a physical display) or, if no X display is available (e.g. on head-less machines), NoMachine tries to start its own X server with the default [Desktop environment](/index.php/Desktop_environment "Desktop environment") automatically. The major limitation of the free edition is that only a single remote desktop session may run on the server.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
@@ -66,7 +70,7 @@ It will search the LAN for available NoMachine servers or, if disabled or in a d
 
 ### Headless server
 
-If no X server is running on the server, NoMachine starts its own X server (`DISPLAY :0`) and tries to run a `/etc/X11/Xsession` script to get the user into the default DE. This fails in Arch Linux (you get only a black screen) because an `Xsession` script does not exist.
+If no X server is running on the server, NoMachine starts its own X server (`DISPLAY :0`) and tries to run a `/etc/X11/Xsession` script to get the user into the default DE. This fails in Arch Linux (you get only a black screen) because an `Xsession` script does not exist.
 
 To resolve this issue, edit the key `DefaultDesktopCommand` in `/usr/NX/etc/node.cfg`. E.g. for MATE desktop environment:
 
@@ -79,12 +83,12 @@ DefaultDesktopCommand "/usr/bin/mate-session"
 
 In default setup, the Free edition of NoMachine connects the client directly to an existing X session on the remote computer, even if it runs the X Display Manager only. This may be unwanted, because no other user may use the target computer locally at the same moment and because any person with physical access to the target computer can see on the physical display, what the remotely connected user is doing.
 
-However, it is possible to setup NoMachine to check only for a particular DISPLAY, e.g. `DISPLAY :10` and it will ignore the existing X session on `DISPLAY :0` (standard setup in Arch Linux) and start a new virtual session for the remotely connecting user.
+However, it is possible to setup NoMachine to check only for a particular DISPLAY, e.g. `DISPLAY :10` and it will ignore the existing X session on `DISPLAY :0` (standard setup in Arch Linux) and start a new virtual session for the remotely connecting user.
 
 To do so, edit the key `PhysicalDisplays` in `/usr/NX/etc/node.cfg`:
 
 ```
-PhysicalDisplays :10
+PhysicalDisplays :10
 
 ```
 

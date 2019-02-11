@@ -4,7 +4,11 @@ Related articles
 
 [MPlayer](http://www.mplayerhq.hu/) is a popular movie player for GNU/Linux. It has support for most video and audio formats and is thus highly versatile, even if it is mostly used for viewing videos.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Frontends/GUIs](#Frontends/GUIs)
@@ -278,7 +282,7 @@ $ ps -eo pcpu,pid,user,comm | grep -i "mplayer"$ | sed  "s/ mplayer$//m"
 MPlayer can fail to open a file with spaces (e.g. 'The Movie') by saying that it could not open the file `file:///*The%20Movie*` (where all spaces are converted to `%20`). This can be fixed by editing `/usr/share/applications/mplayer.desktop` to changing the following line from:
 
 ```
-Exec=mplayer %U
+Exec=mplayer %U
 
 ```
 

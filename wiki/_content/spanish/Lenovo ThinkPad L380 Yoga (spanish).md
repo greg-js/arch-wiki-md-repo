@@ -10,7 +10,11 @@ Version: ThinkPad L380 Yoga
 
 ```
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Configuración](#Configuración)
     *   [1.1 Tarjeta SD](#Tarjeta_SD)

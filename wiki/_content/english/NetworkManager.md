@@ -7,7 +7,11 @@ Related articles
 
 **Warning:** By default, Wi-Fi passwords are stored in clear text, see [#Encrypted Wi-Fi passwords](#Encrypted_Wi-Fi_passwords).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Mobile broadband support](#Mobile_broadband_support)

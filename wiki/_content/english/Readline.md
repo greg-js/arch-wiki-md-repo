@@ -1,6 +1,10 @@
 [Readline](https://www.gnu.org/software/readline/) is a library by the [GNU Project](/index.php/GNU_Project "GNU Project"), used by [Bash](/index.php/Bash "Bash") and other CLI-interface programs to edit and interact with the command line. See [readline(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/readline.3) for more information.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Editing mode](#Editing_mode)

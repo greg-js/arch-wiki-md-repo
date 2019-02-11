@@ -11,7 +11,11 @@ The [Unified Extensible Firmware Interface](https://www.uefi.org/) (UEFI or EFI 
 
 It is distinct from the commonly used "[MBR boot code](/index.php/Partitioning#Master_Boot_Record_(bootstrap_code) "Partitioning")" method followed for [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") systems. See [Arch boot process](/index.php/Arch_boot_process "Arch boot process") for their differences and the boot process using UEFI. To set up UEFI boot loaders, see [Arch boot process#Boot loader](/index.php/Arch_boot_process#Boot_loader "Arch boot process").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 UEFI versions](#UEFI_versions)
 *   [2 UEFI firmware bitness](#UEFI_firmware_bitness)

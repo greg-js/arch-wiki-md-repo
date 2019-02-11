@@ -16,7 +16,11 @@ Artículos relacionados
 
 KDE es un proyecto de software que actualmente comprende un [entorno de escritorio](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)") conocido como Plasma, una colección de librerías y frameworks (KDE Frameworks) y también varias aplicaciones (KDE Applications). El anterior KDE tiene un [UserBase wiki](https://userbase.kde.org/) bien mantenido. Allí se puede encontrar información detallada sobre la mayoría de las aplicaciones KDE.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
     *   [1.1 Plasma](#Plasma)

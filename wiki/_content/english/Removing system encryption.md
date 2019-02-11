@@ -1,6 +1,10 @@
 Removing system encryption with [dm-crypt and LUKS](/index.php/Dm-crypt "Dm-crypt").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Prerequisites](#Prerequisites)
 *   [2 Boot into a Live Environment](#Boot_into_a_Live_Environment)

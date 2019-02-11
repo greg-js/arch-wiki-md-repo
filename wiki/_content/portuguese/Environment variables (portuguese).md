@@ -6,7 +6,11 @@ Artigos relacionados
 
 Uma variável de ambiente é um objeto nomeado que contém dados usados por um ou mais aplicativos. Em termos simples, é uma variável com um nome e um valor. O valor de uma variável ambiental pode, por exemplo, ser a localização de todos os arquivos executáveis no sistema de arquivos, o editor padrão que deve ser usado ou as configurações de localidade do sistema. Os usuários novos no Linux geralmente podem encontrar essa maneira de gerenciar as configurações um pouco incontrolável. No entanto, as variáveis de ambiente fornecem uma maneira simples de compartilhar configurações entre vários aplicativos e processos no Linux.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Utilitários](#Utilitários)
 *   [2 Definindo variáveis](#Definindo_variáveis)

@@ -12,7 +12,11 @@ The **Arch Linux Archive** (a.k.a **ALA**), formerly known as **Arch Linux Rollb
 
 Packages are only kept for a few years, afterwards they are moved to the [Arch Linux Historical Archive](#Historical_Archive) on archive.org.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Location](#Location)
 *   [2 Directories](#Directories)

@@ -8,7 +8,11 @@ No Linux, eles estão no diretório `/dev`, de acordo com [Filesystem Hierarchy 
 
 No Arch Linux, os nós de dispositivo são gerenciados pelo [udev](/index.php/Udev "Udev").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Dispositivos de bloco](#Dispositivos_de_bloco)
     *   [1.1 lsblk](#lsblk)

@@ -9,7 +9,11 @@ Del [artículo de Wikipedia sobre DNSSEC](https://en.wikipedia.org/wiki/Domain_N
 
 	Las [extensiones de seguridad para el sistema de nombres de dominio](https://en.wikipedia.org/wiki/es:Domain_Name_System_Security_Extensions "wikipedia:es:Domain Name System Security Extensions") (siglas en inglés «*DNSSEC*») son un conjunto de especificaciones del [Grupo de Trabajo de Ingeniería de Internet](https://en.wikipedia.org/wiki/es:Grupo_de_Trabajo_de_Ingenier%C3%ADa_de_Internet "wikipedia:es:Grupo de Trabajo de Ingeniería de Internet") (siglas en inglés, «*IETF*») para proteger cierto tipo de información proporcionada por el sistema de nombres de dominio (siglas en inglés «*DNS*») que se utiliza en el Protocolo de Internet (siglas en inglés «*IP*»). Se trata de un conjunto de extensiones para los DNS que proporcionan a los clientes DNS (o *resolvers*) la autenticación del origen de los datos del DNS, la denegación autenticada de las existencia e integridad de los datos, pero no su disponibilidad ni confidencialidad.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Validación básica de DNSSEC](#Validación_básica_de_DNSSEC)
     *   [1.1 Instalación](#Instalación)

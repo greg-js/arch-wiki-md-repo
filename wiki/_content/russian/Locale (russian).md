@@ -1,6 +1,10 @@
 [Локали](https://en.wikipedia.org/wiki/ru:%D0%9B%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C "wikipedia:ru:Локаль") определяют язык, который использует система, а также региональные особенности, такие как денежные знаки, формат чисел, даты и времени и наборы символов.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Генерирование локалей](#Генерирование_локалей)
 *   [2 Установка локали](#Установка_локали)
@@ -172,7 +176,7 @@ $ cp /usr/share/applications/abiword.desktop ~/.local/share/applications/
 
 И отредактируйте команду в опции `Exec`:
 
- `~/.local/share/applications/abiword.desktop`  `Exec=env LANG=he_IL.UTF-8 abiword %U` 
+ `~/.local/share/applications/abiword.desktop`  `Exec=env LANG=he_IL.UTF-8 abiword %U` 
 
 ## Решение проблем
 

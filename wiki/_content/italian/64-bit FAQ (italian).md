@@ -1,6 +1,10 @@
 Di seguito è riportato un elenco di domande frequenti su Arch Linux a 64-bit.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Come posso determinare se il mio processore è compatibile con un sistema x86_64?](#Come_posso_determinare_se_il_mio_processore_è_compatibile_con_un_sistema_x86_64?)
     *   [1.1 Untenti Linux](#Untenti_Linux)

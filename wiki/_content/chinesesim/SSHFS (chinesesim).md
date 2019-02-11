@@ -10,7 +10,11 @@ Related articles
 
 [SSHFS](https://github.com/libfuse/sshfs) 是一个通过 [SSH](/index.php/Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Secure Shell (简体中文)") 挂载基于 FUSE 的文件系统的客户端程序。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
     *   [1.1 Mounting](#Mounting)

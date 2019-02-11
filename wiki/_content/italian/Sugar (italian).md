@@ -8,7 +8,11 @@ Per facilitarne l'installazione e buona norma reperire alcuni pacchetti relativi
 
 Sugar ha una speciale tassonomia per nominare le parti del suo sistema. Il desktop in sè costituisce il gruppo glucosio. Questo è il sistema di base che è ragionevolmente possibile aspettarsi di ottenere con l'installazione. Ma per usare realmente l'ambiente, si ha bisogno delle attività. Le attività Basic e Sample sono parte di fruttosio. Quindi, saccarosio è costituito sia da `glucose` che da `fructose` e rappresenta ciò che dovrebbe essere distribuito come un normale ambiente desktop Sugar. Notare che `ribose` (il sistema operativo sottostante) è rimpiazzato da Arch. `Honey` (le attività extra) non sono attualmente fornite in AUR ma possono essere installate come mostrato nella sezione [#Compilazione](#Compilazione).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Per iniziare: Glucosio](#Per_iniziare:_Glucosio)
     *   [1.1 Compilare da AUR](#Compilare_da_AUR)
@@ -106,19 +110,19 @@ Questa è la strada più adeguata da seguire. Di seguito viene fornita la lista 
 ```
 # Syntax: pkgname .. :-> location + comment1 + comment2 ..
 
-espeak			 :-> [community]
-squeak			 :-> [unsupported]
-evince			 :-> [extra]
-pyabiword		 :-> [unsupported]
-python-cjson		 :-> [community]
-python-telepathy	 :-> [community]
-gstreamer0.10-espeak	 :-> [unsupported]
-olpcsound		 :-> [unsupported]
-telepathy-glib		 :-> [community]
-xulrunner		 :-> [extra]
-telepathy-gabble	 :-> [community]
-telepathy-salut         :-> [community]
-hippo-canvas		 :-> [unsupported]
+espeak			 :-> [community]
+squeak			 :-> [unsupported]
+evince			 :-> [extra]
+pyabiword		 :-> [unsupported]
+python-cjson		 :-> [community]
+python-telepathy	 :-> [community]
+gstreamer0.10-espeak	 :-> [unsupported]
+olpcsound		 :-> [unsupported]
+telepathy-glib		 :-> [community]
+xulrunner		 :-> [extra]
+telepathy-gabble	 :-> [community]
+telepathy-salut         :-> [community]
+hippo-canvas		 :-> [unsupported]
 
 ```
 

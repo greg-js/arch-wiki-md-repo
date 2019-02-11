@@ -6,7 +6,11 @@ Related articles
 
 This document is an annotated index of popular articles and important information for improving and adding functionalities to the installed Arch system. Readers are assumed to have read and followed the [Installation guide](/index.php/Installation_guide "Installation guide") to obtain a basic Arch Linux installation. Having read and understood the concepts explained in [#System administration](#System_administration) and [#Package management](#Package_management) is *required* for following the other sections of this page and the other articles in the wiki.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 إدارة النظام](#إدارة_النظام)
     *   [1.1 المستخدمون والمجموعات](#المستخدمون_والمجموعات)

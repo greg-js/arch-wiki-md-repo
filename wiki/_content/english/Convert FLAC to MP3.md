@@ -4,7 +4,11 @@ Related articles
 
 This article presents ways of doing audio transcoding between FLAC and MP3 audio files using command line/scripted tools, and suggest a few graphical utilities to do the same and more.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Packages](#Packages)
 *   [2 Graphical applications](#Graphical_applications)

@@ -1,6 +1,10 @@
 [Matrix](https://matrix.org/) is an ambitious new ecosystem for open federated instant messaging and VoIP. It consists of servers, clients and bridge software to connect to existing messaging solutions like IRC.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

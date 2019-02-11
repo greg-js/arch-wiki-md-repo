@@ -7,7 +7,11 @@ This page strives to list all games which have a package available in the [offic
 
 For more about running games, related system configuration tips, see [Gaming](/index.php/Gaming "Gaming"). For an up to date selection of games available in the AUR, try checking the [AUR 'game' keyword](https://aur.archlinux.org/packages/?SeB=k&K=game).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Action and adventure](#Action_and_adventure)
 *   [2 Arcade](#Arcade)

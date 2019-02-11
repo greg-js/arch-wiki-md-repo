@@ -4,7 +4,11 @@ SSH 密钥对可以让您方便的登录到 SSH 服务器，而无需输入密�
 
 本文将为您介绍如何管理密钥对，以方便的连接到您的 SSH 服务器。本文默认您已经熟知 [SSH](/index.php/Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Secure Shell (简体中文)")，并安装好位于[官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)") 的 [openssh](https://www.archlinux.org/packages/?name=openssh)。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 背景](#背景)
 *   [2 生成密钥对](#生成密钥对)

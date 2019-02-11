@@ -8,7 +8,11 @@ There are several ways to achieve this on Linux:
 
 For pre-2007 video cards see [XvMC](/index.php/XvMC "XvMC").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Intel](#Intel)
@@ -150,7 +154,7 @@ Install [vdpauinfo](https://www.archlinux.org/packages/?name=vdpauinfo) to verif
 
  `$ vdpauinfo` 
 ```
-display: :0   screen: 0
+display: :0   screen: 0
 API version: 1
 Information string: G3DVL VDPAU Driver Shared Library version 1.0
 

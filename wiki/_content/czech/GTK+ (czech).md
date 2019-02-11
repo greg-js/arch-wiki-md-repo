@@ -4,7 +4,11 @@ Související články
 
 Tento článek popisuje konfiguraci témat GTK+ aplikací. GTK+ (GIMP Toolkit) je multiplatformní knihovna pro tvorbu grafických uživatelských rozhraní, původně stvořená pro [gimp](https://www.archlinux.org/packages/?name=gimp), ale v současnosti velmi oblíbená s bindingy pro mnoho programovacích jazyků. Tento článek prozkoumává nástroje pro konfigurací GTK+ témat, stylu, ikon, fontů a velikosti fontů. Popíše též detailní ruční konfiguraci.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Témata](#Témata)
     *   [1.1 GTK+ 1.x](#GTK+_1.x)

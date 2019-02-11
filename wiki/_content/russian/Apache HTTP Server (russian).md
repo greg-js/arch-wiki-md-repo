@@ -13,7 +13,11 @@ Apache часто используется вместе с языком сцен
 
 Если вам нужно быстро создать окружение для разработки и тестирования, то можете просто установить [Xampp](/index.php/XAMPP_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "XAMPP (Русский)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Настройка](#Настройка)

@@ -8,7 +8,11 @@
 
 Arch Linux официально поддерживает открытую реализацию [OpenJDK](http://openjdk.java.net/) версий 7 и 8\. Эти версии могут быть без проблем установлены одновременно, при этом переключение между ними производится с помощью специального скрипта `archlinux-java`. Несколько других реализаций доступны в [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)"), но они не поддерживаются официально.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
     *   [1.1 Устаревание пакетов](#Устаревание_пакетов)

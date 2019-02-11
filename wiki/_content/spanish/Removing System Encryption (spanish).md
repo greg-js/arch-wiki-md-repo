@@ -3,7 +3,11 @@ Este artículo es una traducción de [Removing System Encryption](/index.php/Rem
 
 Eliminar el cifrado de un sistema encriptado con [dm-crypt y LUKS](/index.php/Dm-crypt_(Espa%C3%B1ol) "Dm-crypt (Español)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Requisitos previos](#Requisitos_previos)
 *   [2 Arrancar en un entorno Live](#Arrancar_en_un_entorno_Live)

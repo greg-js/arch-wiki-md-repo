@@ -1,6 +1,10 @@
 [Cacti](https://www.cacti.net/) is a web-based system monitoring and graphing solution.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Server setup](#Server_setup)
 *   [2 Cacti setup](#Cacti_setup)

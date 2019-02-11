@@ -4,7 +4,11 @@ Articoli correlati
 
 [Pek Window Manager](http://pekwm.org) è stato scritto da Claes Nästen. Il codice è basato su un'altro gestore di finestre aewm++, ma si è evoluto talmente da non avere più nulla in comune con aewm++. Dispone anche di un esteso set di funzioni, tra cui il raggruppamento delle finestre (non diverso da [ion3](/index.php/Ion3 "Ion3"), pwm o [fluxbox](/index.php/Fluxbox "Fluxbox")), proprietà automatiche, xinerama e keygrabber per il supporto al portachiavi, e molto altro.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installazione](#Installazione)
 *   [2 Avvio](#Avvio)

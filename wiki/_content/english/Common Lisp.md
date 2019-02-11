@@ -1,6 +1,10 @@
 [Common Lisp](https://common-lisp.net/) is a highly dynamic multi-paradigm language that emphasizes interactivity and performance.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Implementations](#Implementations)
 *   [2 Quicklisp](#Quicklisp)

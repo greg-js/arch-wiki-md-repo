@@ -9,7 +9,11 @@ From [GitLab's homepage](https://about.gitlab.com/):
 
 An example live version can be found at [GitLab.com](https://gitlab.com/).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -98,8 +102,8 @@ GitLab Unicorn is the main component which processes most of the user requests. 
 
  `/etc/webapps/gitlab/unicorn.rb` 
 ```
-listen "/run/gitlab/gitlab.socket", :backlog => 1024
-listen "**127.0.0.1:8080**", :tcp_nopush => true
+listen "/run/gitlab/gitlab.socket", :backlog => 1024
+listen "**127.0.0.1:8080**", :tcp_nopush => true
 ```
 
 If the Unicorn address is changed, the configuration of other components which communicate with Unicorn have to be updated as well:
@@ -301,15 +305,15 @@ Start the [Redis](/index.php/Redis "Redis") server and the `gitlab-gitaly.servic
 Initialize the database and activate advanced features:
 
 ```
-# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle exec rake gitlab:setup RAILS_ENV=production"
+# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle-2.5 exec rake gitlab:setup RAILS_ENV=production"
 
 ```
 
 Finally run the following commands to check your installation:
 
 ```
-# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle exec rake gitlab:env:info RAILS_ENV=production"
-# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle exec rake gitlab:check RAILS_ENV=production"
+# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle-2.5 exec rake gitlab:env:info RAILS_ENV=production"
+# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle-2.5 exec rake gitlab:check RAILS_ENV=production"
 
 ```
 
@@ -350,7 +354,7 @@ See [#Troubleshooting](#Troubleshooting) and log files inside the `/usr/share/we
 After updating the [gitlab](https://www.archlinux.org/packages/?name=gitlab) package, it is required to upgrade the database:
 
 ```
-# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle exec rake db:migrate RAILS_ENV=production"
+# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle-2.5 exec rake db:migrate RAILS_ENV=production"
 
 ```
 
@@ -375,7 +379,7 @@ The common method of testing keys (ex: `$ ssh -T git@*YOUR_SERVER*`) requires a 
  `/etc/ssh/sshd_config` 
 ```
 PubkeyAuthentication   yes
-AuthorizedKeysFile     %h/.ssh/authorized_keys
+AuthorizedKeysFile     %h/.ssh/authorized_keys
 
 ```
 
@@ -426,7 +430,7 @@ Additionally, force the Let's Encrypt request for gitlab to be redirected to thi
  `/etc/http/conf/extra/gitlab.conf` 
 ```
 Alias "/.well-known"  "/srv/http/letsencrypt/.well-known"
-RewriteCond   %{REQUEST_URI}  !/\.well-known/.*
+RewriteCond   %{REQUEST_URI}  !/\.well-known/.*
 
 ```
 
@@ -615,7 +619,7 @@ Redis caches gravatar images, so if you have visited your GitLab with http, then
 
 ```
 cd /usr/share/webapps/gitlab
-RAILS_ENV=production bundle exec rake cache:clear
+RAILS_ENV=production bundle-2.5 exec rake cache:clear
 
 ```
 
@@ -635,14 +639,14 @@ First, move to the gitlab installation directory.
 If every gitlab page gives a 500 error, then the database migrations and the assets are probably stale. If not, skip this step.
 
 ```
-# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle exec rake db:migrate RAILS_ENV=production"
+# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle-2.5 exec rake db:migrate RAILS_ENV=production"
 
 ```
 
 If gitlab is constantly waiting for the deployment to finish, then the assets have probably not been recompiled.
 
 ```
-# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle exec rake gitlab:assets:clean gitlab:assets:compile cache:clear RAILS_ENV=production"
+# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle-2.5 exec rake gitlab:assets:clean gitlab:assets:compile cache:clear RAILS_ENV=production"
 
 ```
 

@@ -3,7 +3,11 @@ Este artículo es una traducción de [Common Lisp](/index.php/Common_Lisp "Commo
 
 [Common Lisp](https://common-lisp.net/) es un lenguaje multi-paradigma altamente dinámico que enfatiza la interactividad y el rendimiento.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Implementaciones](#Implementaciones)
 *   [2 Quicklisp](#Quicklisp)

@@ -4,7 +4,11 @@ Orange Pi (One) - это миниатюрный компьютер, создан
 
 Эта статья основана на [Banana Pi](/index.php/Banana_Pi "Banana Pi"). Более того, эта статья не является исчерпывающим руководством по установке и предполагает, что читатель уже настраивал систему Arch ранее.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
     *   [1.1 Использование оригинального архива ArchLinuxARM](#Использование_оригинального_архива_ArchLinuxARM)

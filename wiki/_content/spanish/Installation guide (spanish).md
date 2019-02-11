@@ -7,7 +7,11 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
 
 Arch Linux puede ejecutarse en cualquier máquina compatible [x86_64](https://en.wikipedia.org/wiki/es:X86-64 "wikipedia:es:X86-64") con al menos 512 MB de RAM. Una instalación básica con todos los paquetes del grupo [base](https://www.archlinux.org/groups/x86_64/base/) debería ocupar menos de 800 MB de espacio en disco. Dado que el proceso de instalación necesita obtener los paquetes desde un repositorio remoto, necesitará una conexión a Internet funcional.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Preinstalación](#Preinstalación)
     *   [1.1 Verificar las firmas](#Verificar_las_firmas)

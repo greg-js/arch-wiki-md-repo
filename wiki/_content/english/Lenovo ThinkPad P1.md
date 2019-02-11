@@ -2,7 +2,11 @@ Lenovo ThinkPad P1 was released in 2018 and has up to Intel Core i7-8850H or Xeo
 
 **Note:** The ThinkPad X1 Extreme is a consumer version of the same laptop which uses extremely similar hardware. Most of the information from [Lenovo ThinkPad X1 Extreme](/index.php/Lenovo_ThinkPad_X1_Extreme "Lenovo ThinkPad X1 Extreme") should be applicable to P1 models as well.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Do not change to "Discrete Graphics" with BIOS v1.15](#Do_not_change_to_"Discrete_Graphics"_with_BIOS_v1.15)

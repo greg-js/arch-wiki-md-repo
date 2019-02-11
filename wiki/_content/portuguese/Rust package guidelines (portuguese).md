@@ -8,7 +8,11 @@
 
 Esse documento cobre padrões e diretrizes sobre escrita de [PKGBUILDs](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") para [Rust](/index.php/Rust "Rust").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Diretrizes gerais](#Diretrizes_gerais)
     *   [1.1 Nomenclatura de pacote](#Nomenclatura_de_pacote)

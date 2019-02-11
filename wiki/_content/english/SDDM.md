@@ -11,7 +11,11 @@ From [Wikipedia:Simple Desktop Display Manager](https://en.wikipedia.org/wiki/Si
 
 **Note:** The Wayland windowing system is not yet fully supported [[1]](https://github.com/sddm/sddm/issues/440). Wayland sessions are listed, but SDDM runs on X11.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

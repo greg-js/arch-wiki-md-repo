@@ -5,7 +5,11 @@
 
 本文包含安装和配置 [NVIDIA](http://www.nvidia.com) *专有* 显卡驱动的信息。想要了解开源驱动的信息，参见 [Nouveau](/index.php/Nouveau "Nouveau").如果您使用基于 hybrid Intel/NVIDIA的双显卡笔记本, 参见 [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus") 内容.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
     *   [1.1 备用安装：定制内核](#备用安装：定制内核)

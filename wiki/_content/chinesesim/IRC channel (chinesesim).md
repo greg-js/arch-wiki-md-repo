@@ -6,7 +6,11 @@
 *   [International communities](/index.php/International_communities "International communities")
 *   [phrik](/index.php/Phrik "Phrik")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 官方频道](#官方频道)
     *   [1.1 用户名注册](#用户名注册)

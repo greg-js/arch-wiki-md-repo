@@ -7,7 +7,11 @@ Related articles
 
 **Note:** The file does not affect system services. For [systemd](/index.php/Systemd "Systemd") services the files `/etc/systemd/system.conf`, `/etc/systemd/user.conf`, and `/etc/systemd/<systemd_unit>/override.conf` control the limit. See the [systemd-system.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-system.conf.5) man page for details.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Syntax](#Syntax)
 *   [2 Recommendations](#Recommendations)

@@ -7,7 +7,11 @@ Related articles
 
 **Note:** In November, 2018, Dropbox dropped support for all filesystems except unencrypted [Ext4](/index.php/Ext4 "Ext4").[[1]](https://www.dropboxforum.com/t5/Syncing-and-uploads/Dropbox-client-warns-me-that-it-ll-stop-syncing-in-Nov-why/m-p/290065/highlight/true#M42255)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 AUR](#AUR)

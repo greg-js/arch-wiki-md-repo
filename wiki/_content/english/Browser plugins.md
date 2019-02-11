@@ -12,7 +12,11 @@ There are two types of browser plugins, based on the plugin API they use:
 
 Most plugins on this page are NPAPI-only, unless noted otherwise.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Flash players](#Flash_players)
     *   [1.1 Adobe Flash Player](#Adobe_Flash_Player)

@@ -1,6 +1,10 @@
 หน้านี้ได้รวบรวมความเหมือนและความแตกต่างระหว่าง Arch และ Distribution (หรือ Distro) อื่นๆ เนื่องจากคำถามนี้ได้รับความนิยมและถูกถามเป็นอย่างมาก ดังนั้นคำตอบที่เป็นมาตรฐานจึงเป็นเรื่องที่ดี ข้อแนะนำคือ วิธีการเปรียบเทียบที่ดีที่สุดคือการติดตั้งและลองใช้งาน Arch และ Distro อื่นๆ แล้วเปรียบเทียบกันด้วยตัวของคุณเอง Arch มีชุมชนผู้ใช้งานที่ยอดเยี่ยม ที่พร้อมจะช่วยเหลือผู้ใช้ใหม่ๆ ข้อสรุปข้างล่างนี้มีจุดประสงค์เพื่อให้ข้อมูลที่เพียงพอในการตัดสินใจว่า Arch เหมาะสมกับคุณหรือไม่
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Arch กับ Gentoo](#Arch_กับ_Gentoo)
 *   [2 Arch กับ Crux](#Arch_กับ_Crux)

@@ -8,7 +8,11 @@
 
 *   **Suspend to both**： 将上面两个合在一起。如果没断电，系统就从RAM恢复；反之从硬盘恢复，但速度更慢。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 挂起、睡眠和休眠的区别](#挂起、睡眠和休眠的区别)
 *   [2 休眠设置](#休眠设置)

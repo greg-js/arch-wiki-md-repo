@@ -2,7 +2,11 @@
 
 DKIM is supported by most common mail providers, including Yahoo, Google and Outlook.com.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 The idea](#The_idea)
 *   [2 Installation](#Installation)

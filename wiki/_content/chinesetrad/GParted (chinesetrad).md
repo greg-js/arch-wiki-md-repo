@@ -4,7 +4,11 @@
 
 **警告:** GParted 可以讀寫您的硬碟分割區，因此若不慎使用會導致資料遺失。建議您在使用 GParted 之前先備份受影響的分割區。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安裝到 Arch](#安裝到_Arch)
     *   [1.1 選用相依性](#選用相依性)

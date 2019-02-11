@@ -9,7 +9,11 @@ Related articles
 
 Among the supported features are page caching, RSS feeds, printable versions of pages, news flashes, blogs, search, and support for language internationalization.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Introduction](#Introduction)
 *   [2 Installation](#Installation)

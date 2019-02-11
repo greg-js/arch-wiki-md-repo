@@ -19,7 +19,11 @@ Un servidor SSH, por defecto, escucha el puerto TCP 22\. Un programa cliente de 
 
 (Source: [Wikipedia:es:Secure Shell](https://en.wikipedia.org/wiki/es:Secure_Shell "wikipedia:es:Secure Shell"))
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 OpenSSH](#OpenSSH)
     *   [1.1 Instalación](#Instalación)

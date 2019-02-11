@@ -8,7 +8,11 @@ For many applications (most of which are Windows ones) there are neither sources
 
 **Note:** All information here is package-agnostic, for information specific to the most typical nonfree software see [Wine PKGBUILD guidelines](/index.php/Wine_PKGBUILD_guidelines "Wine PKGBUILD guidelines").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Rationale](#Rationale)
 *   [2 Common rules](#Common_rules)
@@ -133,21 +137,21 @@ Some software authors aggressively protect their software from automatic downloa
 Please pay attention, if you want to have a customized user-agent string, if the latter contains spaces, parentheses, or slashes in it (or actually anything that can break parsing), this will not work. There's no workaround, this is the nature of arrays in bash and the way DLAGENTS was designed to be consumed in makepkg. The following example will thus **not work**:
 
 ```
-DLAGENTS=("http::/usr/bin/curl -A 'Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1)' -fLC - --retry 3 --retry-delay 3 -o %o %u")
+DLAGENTS=("http::/usr/bin/curl -A 'Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1)' -fLC - --retry 3 --retry-delay 3 -o %o %u")
 
 ```
 
 Shorten it to the following which is working:
 
 ```
-DLAGENTS=("http::/usr/bin/curl -A 'Mozilla' -fLC - --retry 3 --retry-delay 3 -o %o %u")
+DLAGENTS=("http::/usr/bin/curl -A 'Mozilla' -fLC - --retry 3 --retry-delay 3 -o %o %u")
 
 ```
 
 And the following allows to extract temporary link to file from download page:
 
 ```
-DLAGENTS=("http::/usr/bin/wget -r -np -nd -H %u")
+DLAGENTS=("http::/usr/bin/wget -r -np -nd -H %u")
 
 ```
 

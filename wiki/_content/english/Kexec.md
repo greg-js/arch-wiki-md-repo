@@ -4,7 +4,11 @@ Related articles
 
 [Kexec](https://en.wikipedia.org/wiki/Kexec "wikipedia:Kexec") is a system call that enables you to load and boot into another kernel from the currently running kernel. This is useful for kernel developers or other people who need to reboot very quickly without waiting for the whole BIOS boot process to finish. Note that kexec may not work correctly for you due to devices *not* fully re-initializing when using this method, however this is rarely the case.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Rebooting using kexec](#Rebooting_using_kexec)
@@ -60,7 +64,7 @@ If the default behavior does not work for you or you desire to conveniently load
  `/etc/systemd/system/kexec-load@.service` 
 ```
 [Unit]
-Description=load %i kernel into the current kernel
+Description=load %i kernel into the current kernel
 Documentation=man:kexec(8)
 DefaultDependencies=no
 Before=shutdown.target umount.target final.target

@@ -10,7 +10,11 @@ Norėdami prisijungti prie [IRC](https://en.wikipedia.org/wiki/Internet_Relay_Ch
 
 Iš jūsų tikimasi, kad prieš jungdamiesi prie oficialių kanalų, būsite susipažinę su [Code of conduct](/index.php/Code_of_conduct "Code of conduct") ir [Code of conduct#IRC](/index.php/Code_of_conduct#IRC "Code of conduct"). Dažniausiai naudojamų sutrumpinimų sąrašą galima rasti [Arch terminologijoje](/index.php/Arch_terminology "Arch terminology") ir [IRC žargone](http://www.ircbeginner.com/ircinfo/abbreviations.html).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Pagrindiniai kanalai](#Pagrindiniai_kanalai)
     *   [1.1 Registracija](#Registracija)

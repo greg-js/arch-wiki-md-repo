@@ -13,7 +13,11 @@ Artigos relacionados
 
 Esta página lista as distribuições do sistema operacional que são derivadas do Arch Linux **no todo ou em parte**, para ajudar a aplicar a [Política de marca registrada do Arch Linux](/index.php/DeveloperWiki:TrademarkPolicy "DeveloperWiki:TrademarkPolicy"). Embora pretenda ser o mais abrangente possível, não é uma lista exaustiva. Os links do projeto SourceForge são preferidos para simplificar a manutenção.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Ativas](#Ativas)
 *   [2 Inativas](#Inativas)

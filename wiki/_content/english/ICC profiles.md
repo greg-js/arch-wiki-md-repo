@@ -1,6 +1,10 @@
 As it pertains to general desktop use, an [ICC profile](https://en.wikipedia.org/wiki/ICC_profile "wikipedia:ICC profile") is a binary file which contains precise data regarding the color attributes of an input, or output device. Single, or multiple profiles can be applied across a system and its devices to produce consistent and repeatable results for graphic and document editing and publishing. ICC profiles are typically calibrated with a [(tristimulus) colorimeter](https://en.wikipedia.org/wiki/Tristimulus_colorimeter "wikipedia:Tristimulus colorimeter"), or a spectrophotometer when absolute color accuracy is required.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Utilities](#Utilities)
 *   [2 Profile generation](#Profile_generation)
@@ -197,7 +201,7 @@ Load profile `P221W-sRGB.icc` in `/usr/share/color/icc` on display host:0 when X
 ```
 #!/bin/bash
 
-/usr/bin/xcalib -d :0 /usr/share/color/icc/P221W-sRGB.icc
+/usr/bin/xcalib -d :0 /usr/share/color/icc/P221W-sRGB.icc
 ```
 
 #### JWM `<StartupCommand>` example
@@ -205,7 +209,7 @@ Load profile `P221W-sRGB.icc` in `/usr/share/color/icc` on display host:0 when X
 Load profile `P221W-Native.icc` in `/usr/local/share/color/icc` on display host:0 when JWM starts
 
 ```
- `<StartupCommand>`xcalib -d :0 /usr/local/share/color/icc/P221W-Native.icc`</StartupCommand>`
+ `<StartupCommand>`xcalib -d :0 /usr/local/share/color/icc/P221W-Native.icc`</StartupCommand>`
 
 ```
 

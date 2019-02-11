@@ -10,7 +10,11 @@ Attualmente, le performance dei driver open source non sono *alla pari* con i dr
 
 In caso si incertezza, provare in primo luogo i driver open source; sono adatti alla maggior parte delle necessità e sono generalmente più flessibili e meno problematici. (vedere la [tabella delle caratteristiche](http://www.x.org/wiki/RadeonFeature) per i dettagli.) Per una panoramica riservata ai driver proprietari ATI "Catalyst" e la loro configurazione, consultare [ATI Catalyst](/index.php/ATI_Catalyst "ATI Catalyst"); questo articolo copre solamente i driver open source. I driver [ATI Catalyst non sono ufficialmente supportati](https://www.archlinux.org/news/439/) in Arch Linux.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Convenzione dei nomi](#Convenzione_dei_nomi)
 *   [2 Panoramica](#Panoramica)

@@ -7,7 +7,11 @@ From [Postfix's site](http://www.postfix.org/SASL_README.html):
 
 	People who go to the trouble of installing Postfix may have the expectation that Postfix is more secure than some other mailers. The Cyrus SASL library contains a lot of code. With this, Postfix becomes as secure as other mail systems that use the Cyrus SASL library. Dovecot provides an alternative that may be worth considering.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Introduction](#Introduction)
 *   [2 Configuration with cyrus-sasl package](#Configuration_with_cyrus-sasl_package)

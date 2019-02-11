@@ -5,7 +5,11 @@
 
 Описываются возможные методы повышения уровня безопасности и защиты информации в системах на базе ArchLinux.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Защита информации](#Защита_информации)
 *   [2 Физическая безопасность](#Физическая_безопасность)

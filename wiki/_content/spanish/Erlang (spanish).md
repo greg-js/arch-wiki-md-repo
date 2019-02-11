@@ -3,7 +3,11 @@ Este artículo es una traducción de [Erlang](/index.php/Erlang "Erlang"), revis
 
 [Erlang](https://www.erlang.org/) es un lenguaje de programación con las cualidades específicas de datos inmutables y computación distribuida.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Utilización](#Utilización)

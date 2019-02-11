@@ -1,6 +1,10 @@
 [polybar](https://github.com/jaagr/polybar) jest szybkim i prostym do używania narzędziem do tworzenia paska statusu. Program ma na calu być łatwo dostosowywalnym, wykorzystującym wiele modułów, które umożliwiają szeroki zakres funkcji (edytowalnych), takich jak wyświetlanie obszarów roboczych, daty czy głośności systemowej. Polybar jest wyjątkowo przydatny dla [Window manager](/index.php/Window_manager "Window manager")ów które mają ograniczony panel lub wcale go nie mają jak np [awesome](/index.php/Awesome "Awesome") czy [i3](/index.php/I3 "I3"). Polybar również może byc używany na pełnych [środowiskach graficznych](/index.php/Desktop_environment "Desktop environment") jak [Plasma (Polski)](/index.php/Plasma_(Polski) "Plasma (Polski)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalacja](#Instalacja)
 *   [2 Konfiguracja](#Konfiguracja)
@@ -51,7 +55,7 @@ modules-right = date
 
 [module/date]
 type = internal/date
-date = %Y-%m-%d%
+date = %Y-%m-%d%
 ```
 
 Definiuje panel nazwany `mybar` z modułem `date`.

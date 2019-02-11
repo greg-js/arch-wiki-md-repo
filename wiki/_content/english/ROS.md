@@ -1,6 +1,10 @@
 [ROS](http://www.ros.org) is an open-source, meta-operating system for your robot. It provides the services you would expect from an operating system, including hardware abstraction, low-level device control, implementation of commonly-used functionality, message-passing between processes, and package management.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation Instructions](#Installation_Instructions)
 *   [2 Older Versions (Not fully working)](#Older_Versions_(Not_fully_working))
@@ -53,7 +57,7 @@ catkin config --cmake-args -DPYTHON_EXECUTABLE=/usr/bin/python
 To make [CLion](https://aur.archlinux.org/packages/CLion/) support ROS packages, you can change the `Exec` parameter of its desktop file ( `~/.local/share/applications/jetbrains-clion.desktop`) as follows.
 
 ```
-Exec=bash -i -c "source /home/[username]/catkin_ws/devel/setup.sh;/opt/clion/bin/clion.sh" %f
+Exec=bash -i -c "source /home/[username]/catkin_ws/devel/setup.sh;/opt/clion/bin/clion.sh" %f
 
 ```
 

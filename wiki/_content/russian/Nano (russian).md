@@ -2,7 +2,11 @@
 
 [GNU nano](http://www.nano-editor.org/) (или просто nano) это текстовый редактор, с простым и интуитивно понятным интерфейсом, включающим в себя основные команды по редактированию текста. *Nano* поддерживает раскраску синтаксиса, конвертацию файлов DOS/Mac, проверку орфографии и кодировку [UTF-8](https://en.wikipedia.org/wiki/ru:UTF-8 "wikipedia:ru:UTF-8"). Программа *Nano* (с пустым буфером) занимает в оперативной памяти всего 1.5 Мб.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Насторйка](#Насторйка)

@@ -7,7 +7,11 @@ Related articles
 
 Modern Linux systems are more than capable of supporting your (semi-)professional audio needs. Latencies of 5ms down to even as low as 1ms can be achieved with good hardware and proper configuration.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Getting started](#Getting_started)
     *   [1.1 System configuration](#System_configuration)

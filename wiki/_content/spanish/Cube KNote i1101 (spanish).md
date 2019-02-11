@@ -18,7 +18,11 @@ Este artículo es una traducción de [Cube KNote i1101](/index.php/Cube_KNote_i1
 
 Cube KNote i1101 es una tablet de 11 pulgadas con el procesador Apollo Lake (Celeron N3450) y 6GB de memoria RAM. También cuenta con una pantalla de resolución Full HD (1920x1080).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación y configuración](#Instalación_y_configuración)
     *   [1.1 Sonido](#Sonido)

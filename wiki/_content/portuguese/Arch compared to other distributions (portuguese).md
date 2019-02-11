@@ -12,7 +12,11 @@ Para uma comparação mais completa, veja [Wikipedia:Comparison of operating sys
 
 Em todos os itens a seguir, apenas o Arch Linux é comparado com outras distribuições. Os *ports* comunitários que suportam arquiteturas diferentes de x86_64 podem ser encontradas listadas entre as [distribuições baseadas no Arch](/index.php/Distribui%C3%A7%C3%B5es_baseadas_no_Arch "Distribuições baseadas no Arch").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Baseados em código-fonte](#Baseados_em_código-fonte)
     *   [1.1 CRUX](#CRUX)

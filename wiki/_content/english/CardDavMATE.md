@@ -2,7 +2,11 @@
 
 This guide shows you how to install CardDavMATE to use with [DAViCal](/index.php/DAViCal "DAViCal").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

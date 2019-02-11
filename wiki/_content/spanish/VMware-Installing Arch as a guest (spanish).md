@@ -5,7 +5,11 @@ Artículos relacionados
 
 Este artículo trata sobre la instalación de Arch Linux en un producto [VMware](/index.php/VMware "VMware"), como [Player (Plus)](http://www.vmware.com/products/player/), [Fusion](http://www.vmware.com/products/fusion/) o [Workstation](http://www.vmware.com/products/workstation/).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Controladores en el kernel](#Controladores_en_el_kernel)
 *   [2 Herramientas VMware frente a Open-VM-Tools](#Herramientas_VMware_frente_a_Open-VM-Tools)

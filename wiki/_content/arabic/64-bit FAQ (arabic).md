@@ -1,6 +1,10 @@
 أدناه قائمة بالأسئلة المتكررة عن توزيعة آرتش لينوكس بمعمارية 64 بت.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 كيف يمكنني أن أحدد ما إذا كان معالجي متوافقاً مع معمارية 64 بت أم لا؟](#كيف_يمكنني_أن_أحدد_ما_إذا_كان_معالجي_متوافقاً_مع_معمارية_64_بت_أم_لا؟)
     *   [1.1 لمستخدمي لينوكس](#لمستخدمي_لينوكس)

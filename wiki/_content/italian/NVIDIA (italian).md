@@ -7,7 +7,11 @@ Articoli correlati
 
 Questo articolo tratta dell'installazione e configurazione dei driver proprietari per schede grafiche [NVIDIA](http://www.nvidia.com). Si veda [Nouveau](/index.php/Nouveau "Nouveau") per le informazioni sui driver open-source. Si consulti invece l'articolo [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus") se disponete di un portatile che sfrutta questa tecnologia.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installazione](#Installazione)
     *   [1.1 Installazione alternativa: kernel personalizzato](#Installazione_alternativa:_kernel_personalizzato)

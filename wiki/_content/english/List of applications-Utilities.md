@@ -1,6 +1,10 @@
 [Internet](/index.php/List_of_applications/Internet "List of applications/Internet") – [Multimedia](/index.php/List_of_applications/Multimedia "List of applications/Multimedia") – <a class="mw-selflink selflink">Utilities</a> – [Documents](/index.php/List_of_applications/Documents "List of applications/Documents") – [Security](/index.php/List_of_applications/Security "List of applications/Security") – [Science](/index.php/List_of_applications/Science "List of applications/Science") – [Other](/index.php/List_of_applications/Other "List of applications/Other")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Utilities](#Utilities)
     *   [1.1 Terminal](#Terminal)
@@ -1421,6 +1425,10 @@ See also [Wikipedia:List of tools to create Live USB systems](https://en.wikiped
 *   **WoeUSB** — Simple tool to create USB stick windows installer from an ISO image or a real DVD. (Fork of WinUSB).
 
 	[https://github.com/slacka/WoeUSB](https://github.com/slacka/WoeUSB) || [woeusb](https://aur.archlinux.org/packages/woeusb/)
+
+*   **windows2usb** — Windows 7/8/8.1/10 ISO to Flash Drive burning utility for Linux with MBR/GPT, BIOS/UEFI, FAT32/NTFS support
+
+	[https://github.com/ValdikSS/windows2usb](https://github.com/ValdikSS/windows2usb) || [windows2usb-git](https://aur.archlinux.org/packages/windows2usb-git/)
 
 ### System
 

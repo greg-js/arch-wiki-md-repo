@@ -1,6 +1,10 @@
 **Rhythmbox** is an audio player that plays and helps organize digital music. It is designed to work well under the [GNOME](/index.php/GNOME "GNOME") desktop using the [GStreamer](/index.php/GStreamer "GStreamer") media framework.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Tips](#Tips)

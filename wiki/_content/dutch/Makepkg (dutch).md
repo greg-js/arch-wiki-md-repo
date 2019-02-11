@@ -1,6 +1,10 @@
 `makepkg` wordt gebruikt om je eigen software te compileren voor gebruik met [Pacman](/index.php/Pacman "Pacman"). Het gebruikt een script-gebaseerd bouwsysteem dat de broncode kan downloaden en valideren, afhankelijkheden controleert, instellingen configureert, het pakket bouwt, het pakket installeert in een tijdelijke omgeving, aanpassingen maakt, meta-gegevens genereert en vervolgens de hele handel in een tarball rolt. Zoals je kunt zien, heeft makepkg veel features, waarvan de belangrijkste hieronder beschreven worden.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Het systeem configureren](#Het_systeem_configureren)
     *   [1.1 Arch Build System](#Arch_Build_System)

@@ -2,7 +2,11 @@
 
 Он легкий, расширяемый и внешне схож с µTorrent.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Настройка веб-сервера](#Настройка_веб-сервера)

@@ -1,6 +1,10 @@
 This article contains scanner or manufacturer-specific instructions for [SANE](/index.php/SANE "SANE").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Agfa](#Agfa)
     *   [1.1 Snapscan e40](#Snapscan_e40)

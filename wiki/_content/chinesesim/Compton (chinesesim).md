@@ -2,7 +2,11 @@
 
 Compton 是一个独立的合成管理器，可以给不带合成功能的窗口管理器（例如 [i3](/index.php/I3_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "I3 (简体中文)")）带来淡入淡出、半透明、阴影等视觉效果。Compton 是 [xcompmgr-dana](http://oliwer.net/xcompmgr-dana/) 的分支，而后者又是 [xcompmgr](/index.php/Xcompmgr "Xcompmgr") 的分支。欲了解更多，可查看 [GitHub 上的 compton 项目](https://github.com/chjj/compton)。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 使用](#使用)
@@ -130,7 +134,7 @@ shadow-exclude = "class_g = 'conky'";
 如果你在用 [多个显示器](/index.php/Multihead "Multihead") 但没有使用 xinerama，那么 X server 会自动以多个 screen 的模式运行，然而 compton 默认只会接管一个 screen 的合成。解决办法是启动多个 compton 进程，并以 `-d` 参数来逐个指定要负责的 screen。下面这个范例命令是给四个 screen 用的：
 
 ```
-seq 0 3 | xargs -l1 -I@ compton -b -d :0.@
+seq 0 3 | xargs -l1 -I@ compton -b -d :0.@
 
 ```
 
@@ -153,7 +157,7 @@ seq 0 3 | xargs -l1 -I@ compton -b -d :0.@
 
 ```
 opacity-rule = [
-  "95:class_g = 'URxvt' && !_NET_WM_STATE@:32a",
+  "95:class_g = 'URxvt' && !_NET_WM_STATE@:32a",
   "0:_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'"
 ];
 

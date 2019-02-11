@@ -7,7 +7,11 @@ Related articles
 
 This article explains some methods for general troubleshooting. For application specific issues, please reference the particular wiki page for that program.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 General procedures](#General_procedures)
     *   [1.1 Attention to detail](#Attention_to_detail)
@@ -230,11 +234,11 @@ kernel: CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
 kernel: CR2: 0000000000000000 CR3: 00000007c6456000 CR4: 00000000001406e0
 kernel: Call Trace:
 **kernel:  do_one_initcall+0x50/0x190** [4]
-kernel:  ? do_init_module+0x27/0x1f2
+kernel:  ? do_init_module+0x27/0x1f2
 kernel:  do_init_module+0x5f/0x1f2
 kernel:  load_module+0x23f3/0x2be0
 kernel:  SYSC_init_module+0x16b/0x1a0
-kernel:  ? SYSC_init_module+0x16b/0x1a0
+kernel:  ? SYSC_init_module+0x16b/0x1a0
 kernel:  SyS_init_module+0xe/0x10
 kernel:  entry_SYSCALL_64_fastpath+0x1a/0xa5
 kernel: RIP: 0033:0x7f301f3a2a0a

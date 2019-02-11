@@ -1,21 +1,25 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Mono](/index.php/Mono "Mono"), revisada por última vez el **2018-11-08**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Mono&diff=0&oldid=552396) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Mono](/index.php/Mono "Mono"), revisada por última vez el **2019-02-09**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Mono&diff=0&oldid=553466) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 De [Wikipedia](https://en.wikipedia.org/wiki/es:Proyecto_Mono "wikipedia:es:Proyecto Mono"):
 
 	Mono es el nombre de un proyecto de código abierto iniciado por Ximian respaldado por Microsoft y actualmente impulsado por Novell (tras la adquisición de Ximian) para crear un grupo de herramientas libres, basadas en GNU/Linux y compatibles con .NET según lo especificado por el ECMA.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
 *   [1 Instalación](#Instalación)
-*   [2 Ejecutando aplicaciones Mono](#Ejecutando_aplicaciones_Mono)
+*   [2 Ejecutar aplicaciones Mono](#Ejecutar_aplicaciones_Mono)
 *   [3 Probar Mono](#Probar_Mono)
 *   [4 Desarrollo](#Desarrollo)
 *   [5 Solución de problemas](#Solución_de_problemas)
     *   [5.1 Recibo un error "cannot execute "ruta/a/tu/binario" file name has not been set."](#Recibo_un_error_"cannot_execute_"ruta/a/tu/binario"_file_name_has_not_been_set.")
     *   [5.2 Recibo un error cuando intento ejecutar los binarios de Mono directamente: "cannot execute binary file"](#Recibo_un_error_cuando_intento_ejecutar_los_binarios_de_Mono_directamente:_"cannot_execute_binary_file")
     *   [5.3 Recibo un error de handshake TLS (o un error basado en un sistema de certificados similar)](#Recibo_un_error_de_handshake_TLS_(o_un_error_basado_en_un_sistema_de_certificados_similar))
-    *   [5.4 Recibo un error al compilar fsharp: "System.TypeInitializationException: The type initializer for 'System.Console' threw an exception"](#Recibo_un_error_al_compilar_fsharp:_"System.TypeInitializationException:_The_type_initializer_for_'System.Console'_threw_an_exception")
+    *   [5.4 Recibo un error al compilar F#: "System.TypeInitializationException: The type initializer for 'System.Console' threw an exception"](#Recibo_un_error_al_compilar_F#:_"System.TypeInitializationException:_The_type_initializer_for_'System.Console'_threw_an_exception")
 *   [6 Véase también](#Véase_también)
 
 ## Instalación
@@ -26,20 +30,22 @@ Si necesita soporte de VisualBasic.Net, debe [instalar](/index.php/Install_(Espa
 
 MonoDevelop recurre a [xterm](/index.php/Xterm "Xterm") cuando ejecuta su proyecto. Podría instalarlo cuando esté escribiendo una aplicación de consola.
 
-## Ejecutando aplicaciones Mono
+**Nota:** Al instalar el paquete, las [autoridades de certificación](/index.php/Certificate_authorities "Certificate authorities") se almacenan en `/usr/share/.mono/certs/Trust/`, pero el hecho de desinstalar el paquete no las elimina. [[1]](https://bbs.archlinux.org/viewtopic.php?id=201926)
+
+## Ejecutar aplicaciones Mono
 
 Puede ejecutar los binarios de Mono recurriendo a `mono` manualmente:
 
 ```
-$ mono programsname.exe
+$ mono nombredelprograma.exe
 
 ```
 
 También puede ejecutar los binarios de Mono directamente, al igual que los binarios nativos:
 
 ```
-$ chmod 755 exefile.exe
-$ ./exefile.exe
+$ chmod 755 archivoexe.exe
+$ ./archivoexe.exe
 
 ```
 
@@ -70,7 +76,7 @@ Hello world!
 
 ## Desarrollo
 
-Empezar a desarrollar en Mono/C# es muy fácil. Solo [instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el [MonoDevelop IDE](http://monodevelop.com/) con el paquete [monodevelop-stable](https://aur.archlinux.org/packages/monodevelop-stable/) o [monodevelop-git](https://aur.archlinux.org/packages/monodevelop-git/). Alternativamente, puede instalar el IDE [rider](https://aur.archlinux.org/packages/rider/).
+Empezar a desarrollar en Mono/C# es muy fácil. Solamente [instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") [MonoDevelop IDE](http://monodevelop.com/) con el paquete [monodevelop-stable](https://aur.archlinux.org/packages/monodevelop-stable/) o [monodevelop-git](https://aur.archlinux.org/packages/monodevelop-git/). Alternativamente, puede instalar el IDE [rider](https://aur.archlinux.org/packages/rider/).
 
 Si desea el navegador de documentación API y algunas herramientas de testeo y desarrollo, instale [mono-tools](https://www.archlinux.org/packages/?name=mono-tools).
 
@@ -90,9 +96,9 @@ Para solucionar esto, [reinicie](/index.php/Daemon_(Espa%C3%B1ol) "Daemon (Espa�
 
 Intente `mozroots --import --ask-remove`, el cual debería actualizar los certificados de mono. `mozroots` es parte del paquete mono.
 
-### Recibo un error al compilar fsharp: "System.TypeInitializationException: The type initializer for 'System.Console' threw an exception"
+### Recibo un error al compilar F#: "System.TypeInitializationException: The type initializer for 'System.Console' threw an exception"
 
-Este es un error reciente en mcs que se utiliza para compilar fsharp. Una solución es usar `export TERM=xterm`, como se detalla aquí [[1]](https://github.com/mono/mono/issues/6752)
+Este es un error reciente en mcs que se utiliza para compilar F#. Una solución es usar `export TERM=xterm`, tal y como se detalla [aquí](https://github.com/mono/mono/issues/6752).
 
 ## Véase también
 

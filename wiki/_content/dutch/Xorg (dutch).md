@@ -1,6 +1,10 @@
 **Xorg** is een open-source implementatie van het X Window Systeem, versie 11\. Omdat X zeer populair is bij GNU/Linux gebruikers, maken veel distributies en graphische applicaties hier gebruik van. Zie voor meer details het [Wikipedia artikel](https://nl.wikipedia.org/wiki/X_Window_System) of de [Xorg Wiki](http://www.x.org/wiki).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installatie](#Installatie)
     *   [1.1 Inputapparaten](#Inputapparaten)

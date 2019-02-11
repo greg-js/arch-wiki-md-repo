@@ -18,7 +18,11 @@ LIRC is a daemon that can translate key presses on a supported remote into progr
 4.  `/usr/bin/lircd` uses the information from `/etc/lirc/lircd.conf.d/foo.conf` to convert the pulse data into button press information.
 5.  Programs that use LIRC translate the button press info from `/usr/bin/lircd` into user-defined actions according to `~/.config/lircrc` or to program-specific mappings.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

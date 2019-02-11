@@ -1,6 +1,10 @@
 [phpMyAdmin](https://en.wikipedia.org/wiki/phpMyAdmin "wikipedia:phpMyAdmin") is a web-based tool to help manage MySQL databases using an Apache/PHP frontend.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Running](#Running)
@@ -81,8 +85,8 @@ By preference; access phpMyAdmin by subdomain, e.g. `[https://pma.domain.tld](ht
 ```
 server {
     server_name pma.domain.tld;
-    ; listen 80; # also listen on http
-    ; listen [::]:80;
+    ; listen 80; # also listen on http
+    ; listen [::]:80;
     listen 443 ssl http2;
     listen [::]:443 ssl http2;
     index index.php;
@@ -90,9 +94,9 @@ server {
     error_log /var/log/nginx/pma.error.log;
 
     # Allows limiting access to certain client addresses.
-    ; allow 192.168.1.0/24;
-    ; allow *my-ip*;
-    ; deny all;
+    ; allow 192.168.1.0/24;
+    ; allow *my-ip*;
+    ; deny all;
 
     root /usr/share/webapps/phpMyAdmin;
     location / {

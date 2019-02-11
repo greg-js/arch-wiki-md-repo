@@ -4,7 +4,11 @@ Tento postup má výhody před pouhým zkopírovaním osobních dat s vynechávn
 
 Instrukce byly převzaty z [z toho přízpěvku ve fóru](https://bbs.archlinux.org/viewtopic.php?id=83071).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Soubory](#Soubory)
     *   [1.1 Zálohovací skript](#Zálohovací_skript)

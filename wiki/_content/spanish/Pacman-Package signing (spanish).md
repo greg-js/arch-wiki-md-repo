@@ -16,7 +16,11 @@ Ejemplos de redes de confianza:
 
 **Nota:** el protocolo HKP utiliza el puerto 11371/tcp para establecer la conexión. Este puerto es necesario para obtener las claves firmadas de los servidores mediante pacman-key.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Configuración](#Configuración)
     *   [1.1 Configurar pacman](#Configurar_pacman)

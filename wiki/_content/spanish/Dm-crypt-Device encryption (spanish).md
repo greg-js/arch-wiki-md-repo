@@ -9,7 +9,11 @@ Este artículo es una traducción de [Dm-crypt/Device encryption](/index.php/Dm-
 
 Esta sección explica cómo utilizar manualmente *dm-crypt* desde la línea de órdenes para cifrar un sistema.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Preparación](#Preparación)
 *   [2 Utilización de cryptsetup](#Utilización_de_cryptsetup)

@@ -6,7 +6,11 @@
 
 **تلميحة :** الحزمة الرسمية من [pacman](https://www.archlinux.org/packages/?name=pacman) تضم أيضاً مجموعة أدوات مساعدة، من قبيل **makepkg**, **pactree**, **vercmp** والمزيد . نفذ `pacman -Ql pacman | grep bin` للحصول على اللائحة كاملة.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 التهيئة](#التهيئة)
     *   [1.1 الخيارات العامة](#الخيارات_العامة)

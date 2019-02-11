@@ -6,7 +6,11 @@
 
 	*Внимание языка сосредоточено на трёх задачах: безопасность, скорость и параллелизм. Он сопоставим по скорости и возможностям с C++, однако, даёт большую безопасность при работе с памятью, что обеспечивается механизмами ограничения.*
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Rust Core Library](#Rust_Core_Library)
 *   [2 Стандартная библиотека Rust](#Стандартная_библиотека_Rust)

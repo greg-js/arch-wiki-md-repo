@@ -18,7 +18,11 @@ Mezi jeho hlavní přednosti patří:
 *   Upravitelné a rozšiřitelné rozhraní.
 *   Podpora **rozšíření** jako je AdBlock, Speed dial, atd.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalace](#Instalace)
 *   [2 Rozšíření](#Rozšíření)

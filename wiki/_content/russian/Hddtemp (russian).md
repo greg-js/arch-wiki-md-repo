@@ -1,11 +1,19 @@
+Ссылки по теме
+
+*   [lm sensors (Русский)](/index.php/Lm_sensors_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Lm sensors (Русский)")
+
 [hddtemp](https://savannah.nongnu.org/projects/hddtemp/) это небольшая утилита (включающая в состав службу), позволяющая узнать температуру жесткого диска посредством S.M.A.R.T. (для устройств, поддерживающих эту технологию).
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
 
-*   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-*   [2 Использование](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
-*   [3 Служба](#.D0.A1.D0.BB.D1.83.D0.B6.D0.B1.D0.B0)
-*   [4 Мониторинг](#.D0.9C.D0.BE.D0.BD.D0.B8.D1.82.D0.BE.D1.80.D0.B8.D0.BD.D0.B3)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Установка](#Установка)
+*   [2 Использование](#Использование)
+*   [3 Служба](#Служба)
+*   [4 Мониторинг](#Мониторинг)
 *   [5 Solid State Drives](#Solid_State_Drives)
 
 ## Установка
@@ -25,9 +33,9 @@ Hddtemp требует привилегий суперпользователя. 
 
 Запуск службы позволит получить информацию о температуре по TCP/IP, использовать, например, со скриптами.
 
-Эта служба [контролируется](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.8E.D0.BD.D0.B8.D1.82.D0.BE.D0.B2 "Systemd (Русский)") `hddtemp.service`.
+Эта служба [контролируется](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Использование_юнитов "Systemd (Русский)") `hddtemp.service`.
 
-**Примечание:** аргументы `hddtemp` указаны в файле юнита `/usr/lib/systemd/system/hddtemp.service`. Это особенно важно при использовании нескольких дисков,так как по умолчанию включено отслеживание только для `/dev/sda`. Измените `ExecStart`, [отредактировав](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A0.D0.B5.D0.B4.D0.B0.D0.BA.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.B5.D0.B4.D0.BE.D1.81.D1.82.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.B0.D0.BC.D0.B8_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2_.D1.8E.D0.BD.D0.B8.D1.82.D0.BE.D0.B2 "Systemd (Русский)") `hddtemp.service`:
+**Примечание:** аргументы `hddtemp` указаны в файле юнита `/usr/lib/systemd/system/hddtemp.service`. Это особенно важно при использовании нескольких дисков,так как по умолчанию включено отслеживание только для `/dev/sda`. Измените `ExecStart`, [отредактировав](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Редактирование_предоставленных_пакетами_файлов_юнитов "Systemd (Русский)") `hddtemp.service`:
 
 *   Создайте каталог в `/etc/systemd/system`:
 
@@ -91,7 +99,7 @@ $ man hddtemp
 
 ## Мониторинг
 
-Hddtemp может быть встроен в [различные системы мониторинга](/index.php/List_of_applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A1.D0.BE.D1.81.D1.82.D0.BE.D1.8F.D0.BD.D0.B8.D0.B5_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B "List of applications (Русский)").
+Hddtemp может быть встроен в [различные системы мониторинга](/index.php/List_of_applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Состояние_системы "List of applications (Русский)").
 
 ## Solid State Drives
 

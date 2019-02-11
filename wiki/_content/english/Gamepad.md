@@ -1,6 +1,10 @@
 Joysticks can be a bit of a hassle to get working in Linux. Not because they are poorly supported, but simply because you need to determine which modules to load to get your joystick working, and it's not always very obvious!
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Joystick input systems](#Joystick_input_systems)
 *   [2 Determining which modules you need](#Determining_which_modules_you_need)
@@ -755,8 +759,8 @@ With somes softwares like Parsec and Shadow cloud gaming streaming apps, motion 
 
  `/etc/udev/rules.d/51-disable-DS3-and-DS4-motion-controls.rules` 
 ```
-SUBSYSTEM=="input", ATTRS{name}=="*Controller Motion Sensors", RUN+="/bin/rm %E{DEVNAME}", ENV{ID_INPUT_JOYSTICK}=""
-SUBSYSTEM=="input", ATTRS{name}=="*Controller Touchpad", RUN+="/bin/rm %E{DEVNAME}", ENV{ID_INPUT_JOYSTICK}=""
+SUBSYSTEM=="input", ATTRS{name}=="*Controller Motion Sensors", RUN+="/bin/rm %E{DEVNAME}", ENV{ID_INPUT_JOYSTICK}=""
+SUBSYSTEM=="input", ATTRS{name}=="*Controller Touchpad", RUN+="/bin/rm %E{DEVNAME}", ENV{ID_INPUT_JOYSTICK}=""
 ```
 
 This should work in USB and Bluetooth mode. (If you want use bluetooth mode, press "home" button and "share" button together, white led of gamepad should blink very quickly, then add wireless controller with your bluetooth manager (bluez, gnome-bluetooth...)

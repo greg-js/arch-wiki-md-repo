@@ -2,7 +2,11 @@
 
 This wiki page covers a basic setup of the smokeping daemon and the CGI webinterface.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Optional Prerequisites](#Optional_Prerequisites)

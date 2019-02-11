@@ -1,6 +1,10 @@
 [FluidSynth](http://www.fluidsynth.org/) is a real-time software synthesizer based on the SoundFont 2 specifications. It is optionally used by [gst-plugins-bad](https://www.archlinux.org/packages/?name=gst-plugins-bad).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)

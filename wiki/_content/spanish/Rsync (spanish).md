@@ -5,7 +5,11 @@ Artículos relacionados
 
 [rsync](https://rsync.samba.org/) es una herramienta de código abierto que permite transferir archivos rápidamente y de forma incremental.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Uso](#Uso)

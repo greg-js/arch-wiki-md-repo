@@ -16,7 +16,11 @@ This particular method of securing data is obviously not perfect, but there are 
 
 For more details on how EncFS compares to other disk encryption solution, see [Disk encryption#Comparison table](/index.php/Disk_encryption#Comparison_table "Disk encryption").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Comparison to eCryptFS](#Comparison_to_eCryptFS)
 *   [2 Installation](#Installation)

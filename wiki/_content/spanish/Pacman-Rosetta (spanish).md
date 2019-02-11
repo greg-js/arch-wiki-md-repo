@@ -7,7 +7,11 @@ Esta página utiliza una tabla comparativa para mostrar la correspondencia entre
 
 **Nota:** algunas de las herramientas que se describen aquí son específicas para una determinada versión de pacman. La opción `**-Qk**` es nueva en pacman 4.1.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Operaciones básicas](#Operaciones_básicas)
 *   [2 Consultar paquetes específicos](#Consultar_paquetes_específicos)

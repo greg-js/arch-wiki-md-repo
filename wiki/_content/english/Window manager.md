@@ -7,7 +7,11 @@ Related articles
 
 A [window manager](https://en.wikipedia.org/wiki/Window_manager "wikipedia:Window manager") (WM) is system software that controls the placement and appearance of windows within a windowing system in a graphical user interface (GUI). It can be part of a [desktop environment](/index.php/Desktop_environment "Desktop environment") (DE) or be used standalone.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Overview](#Overview)
     *   [1.1 Types](#Types)

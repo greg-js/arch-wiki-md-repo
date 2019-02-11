@@ -4,7 +4,11 @@ Related articles
 
 For an overview about Secure Boot in Linux see [Rodsbooks' Secure Boot](http://www.rodsbooks.com/efi-bootloaders/secureboot.html) article. This article focuses on how to set up Secure Boot in Arch Linux.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Secure Boot status](#Secure_Boot_status)
     *   [1.1 Check the status](#Check_the_status)

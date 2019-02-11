@@ -6,7 +6,11 @@ Related articles
 
 **Note:** As of November 2016 there are plans to switch the development focus to [FVWM3](https://github.com/fvwmorg/fvwm3), a successor to FVWM2 which will have new features but will not be compatible with FVWM2\. [[2]](https://www.mail-archive.com/fvwm-workers@fvwm.org/msg04516.html)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installing](#Installing)
 *   [2 Starting](#Starting)
@@ -311,7 +315,7 @@ One can also use conditional commands (see [fvwm(1)](https://jlk.fjfi.cvut.cz/ar
 
 ```
 AddToFunc CloseAllButThis
-+ I All (CurrentPage, !Focused) Close
++ I All (CurrentPage, !Focused) Close
 
 ```
 
@@ -553,43 +557,43 @@ The following functions can tile a window to the left half, right half, top half
 ```
 DestroyFunc TileLeft
 AddToFunc TileLeft
-+ I ThisWindow (!Shaded, !Iconic) Maximize 50 100
-+ I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 +0
++ I ThisWindow (!Shaded, !Iconic) Maximize 50 100
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 +0
 
 DestroyFunc TileRight
 AddToFunc TileRight
-+ I ThisWindow (!Shaded, !Iconic) Maximize 50 100
-+ I ThisWindow (Maximized, !Shaded, !Iconic) Move -0 +0
++ I ThisWindow (!Shaded, !Iconic) Maximize 50 100
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move -0 +0
 
 DestroyFunc TileTop
 AddToFunc TileTop
-+ I ThisWindow (!Shaded, !Iconic) Maximize 100 50
-+ I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 +0
++ I ThisWindow (!Shaded, !Iconic) Maximize 100 50
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 +0
 
 DestroyFunc TileBottom
 AddToFunc TileBottom
-+ I ThisWindow (!Shaded, !Iconic) Maximize 100 50
-+ I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 -0
++ I ThisWindow (!Shaded, !Iconic) Maximize 100 50
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 -0
 
 DestroyFunc TileTopLeft
 AddToFunc TileTopLeft
-+ I ThisWindow (!Shaded, !Iconic) Maximize 50 50
-+ I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 +0
++ I ThisWindow (!Shaded, !Iconic) Maximize 50 50
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 +0
 
 DestroyFunc TileTopRight
 AddToFunc TileTopRight
-+ I ThisWindow (!Shaded, !Iconic) Maximize 50 50
-+ I ThisWindow (Maximized, !Shaded, !Iconic) Move -0 +0
++ I ThisWindow (!Shaded, !Iconic) Maximize 50 50
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move -0 +0
 
 DestroyFunc TileBottomLeft
 AddToFunc TileBottomLeft
-+ I ThisWindow (!Shaded, !Iconic) Maximize 50 50
-+ I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 -0
++ I ThisWindow (!Shaded, !Iconic) Maximize 50 50
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move +0 -0
 
 DestroyFunc TileBottomRight
 AddToFunc TileBottomRight
-+ I ThisWindow (!Shaded, !Iconic) Maximize 50 50
-+ I ThisWindow (Maximized, !Shaded, !Iconic) Move -0 -0
++ I ThisWindow (!Shaded, !Iconic) Maximize 50 50
++ I ThisWindow (Maximized, !Shaded, !Iconic) Move -0 -0
 ```
 
 ### Transfer focus on page or desk switch
@@ -627,7 +631,7 @@ Window decorations (borders and titlebars) can be toggled on or off for a select
 ```
 DestroyFunc UndecorateWin
 AddToFunc UndecorateWin
-+ I ThisWindow (HasHandles) WindowStyle !Title, !Borders
++ I ThisWindow (HasHandles) WindowStyle !Title, !Borders
 + I ThisWindow (!HasHandles) WindowStyle Title, Borders
 ```
 
@@ -650,14 +654,14 @@ You may find that with some programs the starting position of its window changes
 This is typically due to *PPosition* (program position) or *USPosition* (user specified position) hints which applications can set and which FVWM respects by default. For troublesome windows, you can configure FVWM to ignore the hints that are causing the problem. The first step is to get the class name or resource name of the window in question - use the [#FvwmIdent](#FvwmIdent) module for this. Then try disabling either the PPosition or USPosition hints for the window. For example:
 
 ```
-Style chromium !UsePPosition
+Style chromium !UsePPosition
 
 ```
 
 For windows whose position is affected by resizing this can typically be fixed by setting the FixedPPosition style on the window which causes FVWM to ignore attempts by the window to change its position. This can be set in conjunction with ignoring USPosition hints if necessary, see below:
 
 ```
-Style VirtualBox !UseUSPosition, FixedPPosition
+Style VirtualBox !UseUSPosition, FixedPPosition
 
 ```
 

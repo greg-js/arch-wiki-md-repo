@@ -1,7 +1,11 @@
 Questa pagina raccoglie alcune delle somiglianze e delle differenze tra Arch e le altre distribuzioni GNU/Linux.
 Nota: il modo migliore per confrontare Arch con le altre distribuzioni è quello di installarla e provarla in prima persona. Arch ha una magnifica comunità di utenti sempre pronta ad aiutare i nuovi arrivati. Le informazioni qui sotto sono pensate per aiutarti a decidere se Arch è giusta per te.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Source-Based](#Source-Based)
     *   [1.1 Arch vs Gentoo](#Arch_vs_Gentoo)

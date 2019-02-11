@@ -2,7 +2,11 @@
 
 	*LibreOffice是一款功能强大且免费的开源办公软件，它同时支持Windows, Macintosh 和 Linux系统，为你提供六种针对文档编辑和数据处理需求的拥有丰富功能的应用：Writer, Calc, Impress, Draw, Math和Base。*
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 主题](#主题)

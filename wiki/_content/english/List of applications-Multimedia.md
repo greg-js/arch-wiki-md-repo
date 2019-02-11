@@ -1,6 +1,10 @@
 [Internet](/index.php/List_of_applications/Internet "List of applications/Internet") – <a class="mw-selflink selflink">Multimedia</a> – [Utilities](/index.php/List_of_applications/Utilities "List of applications/Utilities") – [Documents](/index.php/List_of_applications/Documents "List of applications/Documents") – [Security](/index.php/List_of_applications/Security "List of applications/Security") – [Science](/index.php/List_of_applications/Science "List of applications/Science") – [Other](/index.php/List_of_applications/Other "List of applications/Other")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Multimedia](#Multimedia)
     *   [1.1 Codecs](#Codecs)
@@ -1847,6 +1851,10 @@ See [Optical disc drive#DVD-Video](/index.php/Optical_disc_drive#DVD-Video "Opti
 *   **[Icecast](/index.php/Icecast "Icecast")** — Streaming media (audio/video) server which currently supports Ogg (Vorbis and Theora), Opus, WebM and MP3 streams.
 
 	[https://icecast.org/](https://icecast.org/) || [icecast](https://www.archlinux.org/packages/?name=icecast)
+
+*   **Jellyfin** — Jellyfin is a Free Software Media System that puts you in control of managing and streaming your media.
+
+	[https://jellyfin.github.io/](https://jellyfin.github.io/) || [jellyfin](https://aur.archlinux.org/packages/jellyfin/)
 
 *   **[Plex](/index.php/Plex "Plex")** — Proprietary media server, which organizes your personal video, music, and photo collections and streams them to all of your devices.
 

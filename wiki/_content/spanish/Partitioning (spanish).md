@@ -11,7 +11,11 @@ Un disco duro completo se puede o bien asignar a una sola partición, o bien se 
 
 Cada partición debe ser formateada con un [tipo de sistema de archivos](/index.php/File_systems_(Espa%C3%B1ol) "File systems (Español)") antes de ser utilizada.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Tabla de particiones](#Tabla_de_particiones)
     *   [1.1 Master Boot Record](#Master_Boot_Record)

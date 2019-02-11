@@ -20,7 +20,11 @@ It is a common practice to define the variables in the PKGBUILD in same order as
 
 **Tip:** Use [namcap](/index.php/Namcap "Namcap") to check PKGBUILDs for common packaging mistakes.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Package name](#Package_name)
     *   [1.1 pkgbase](#pkgbase)

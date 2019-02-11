@@ -13,7 +13,11 @@ Artículos relacionados
 *   Escribir datos en un CD o DVD
 *   Instalar y eliminar fuentes
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Configuración](#Configuración)

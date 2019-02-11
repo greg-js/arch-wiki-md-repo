@@ -2,7 +2,11 @@
 
 Образ работает только в оперативной памяти, без каких-либо специальных файловых систем, таких как SquashFS, таким образом ограничиваясь только объёмом оперативной памяти, установленной в Вашей системе.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Отличия от установочного образа archiso](#Отличия_от_установочного_образа_archiso)

@@ -13,7 +13,11 @@ Dalla pagina web del [progetto](http://freedesktop.org/wiki/Software/systemd):
 
 **Nota:** Per una dettagliata spiegazione del motivo per cui Arch è passato a systemd, leggi questo [post](https://bbs.archlinux.org/viewtopic.php?pid=1149530#p1149530).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Uso base di systemctl](#Uso_base_di_systemctl)
     *   [1.1 Analizzare lo stato del sistema](#Analizzare_lo_stato_del_sistema)
@@ -600,10 +604,10 @@ case $1/$2 in
   pre/*)
     echo "Going to $2..."
 
-    ;;
+    ;;
   post/* )
     echo "Waking up from $2..."
-    ;;
+    ;;
 esac
 ```
 

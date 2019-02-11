@@ -6,7 +6,11 @@
 
 [Интернет](/index.php/List_of_applications/Internet_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Internet (Русский)") – [Мультимедиа](/index.php/List_of_applications/Multimedia_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Multimedia (Русский)") – [Утилиты](/index.php/List_of_applications/Utilities_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Utilities (Русский)") – [Документы](/index.php/List_of_applications/Documents_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Documents (Русский)") – [Безопасность](/index.php/List_of_applications/Security_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Security (Русский)") – [Наука](/index.php/List_of_applications/Science_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "List of applications/Science (Русский)") – <a class="mw-selflink selflink">Другие</a>
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Другие](#Другие)
     *   [1.1 Рабочие окружения](#Рабочие_окружения)

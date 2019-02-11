@@ -5,7 +5,11 @@ Este artículo es una traducción de [Julia](/index.php/Julia "Julia"), revisada
 
 [Julia](https://julialang.org/) es un lenguaje de programación dinámico de alto nivel y alto rendimiento para computación numérica. Proporciona un sofisticado compilador, ejecución paralela distribuida, precisión numérica y una extensa librería de funciones matemáticas.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 IJulia](#IJulia)
@@ -35,7 +39,7 @@ La compilación del paquete Arpack puede generar un error como el que se muestra
 ```
   Building Arpack → `~/.julia/packages/Arpack/UiiMc/deps/build.log`
 ┌ Error: Error building `Arpack`:
-│ ERROR: LoadError: LibraryProduct(nothing, ["libarpack"], :libarpack, "Prefix(~/.julia/packages/Arpack/UiiMc/deps/usr)") is not satisfied, cannot generate deps.jl!
+│ ERROR: LoadError: LibraryProduct(nothing, ["libarpack"], :libarpack, "Prefix(~/.julia/packages/Arpack/UiiMc/deps/usr)") is not satisfied, cannot generate deps.jl!
 ```
 
 [Se ha presentado un problema](https://github.com/JuliaLinearAlgebra/Arpack.jl/issues/5).

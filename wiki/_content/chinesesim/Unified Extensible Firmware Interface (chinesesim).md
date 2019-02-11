@@ -10,7 +10,11 @@
 
 [统一可扩展固件界面](http://www.uefi.org/)(Unified Extensible Firmware Interface)，简称 UEFI, 是操作系统与固件交互的新模式，提供了启动操作系统或程序的标准环境。该方式有别于传统[BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS")系统所使用的“[MBR](/index.php/MBR "MBR")”，二者启动的区别见 [Arch boot process#Firmware types](/index.php/Arch_boot_process#Firmware_types "Arch boot process")。若要配置 UEFI 引导器，详见 [Boot loaders (简体中文)](/index.php/Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Boot loaders (简体中文)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 UEFI 发展历史](#UEFI_发展历史)
 *   [2 UEFI 固件架构](#UEFI_固件架构)

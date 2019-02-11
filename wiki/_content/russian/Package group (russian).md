@@ -1,8 +1,12 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Package group](/index.php/Package_group "Package group"). Дата последней синхронизации: 1 января 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Package_group&diff=0&oldid=561245).
+**Состояние перевода:** На этой странице представлен перевод статьи [Package group](/index.php/Package_group "Package group"). Дата последней синхронизации: 10 февраля 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Package_group&diff=0&oldid=566038).
 
 **Группа пакетов** — набор связанных пакетов, определённый [мейнтейнером](/index.php/Packager "Packager") и пакеты которого могут быть одновременно установлены или удалены используя имя группы вместо имени каждого пакета. Не смотря на то, что группа не является пакетом, её всё-равно можно установить похожим способом, смотрите [Pacman (Русский)#Установка группы пакетов](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_группы_пакетов "Pacman (Русский)") и [PKGBUILD (Русский)#groups](/index.php/PKGBUILD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#groups "PKGBUILD (Русский)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Группы](#Группы)
     *   [1.1 base](#base)

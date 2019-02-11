@@ -6,7 +6,11 @@ On Linux they are in the `/dev` directory, according to the [Filesystem Hierarch
 
 On Arch Linux the device nodes are managed by [udev](/index.php/Udev "Udev").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Block devices](#Block_devices)
     *   [1.1 lsblk](#lsblk)

@@ -9,7 +9,11 @@ Artículos relacionados
 
 Para seguir este tutorial, se debe tener una cuenta protonvpn.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Tutorial](#Tutorial)
     *   [1.1 Guardar la autenticación OpenVPN](#Guardar_la_autenticación_OpenVPN)

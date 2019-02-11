@@ -4,7 +4,11 @@
 
 [Internet](/index.php/List_of_applications/Internet_(Espa%C3%B1ol) "List of applications/Internet (Español)") – <a class="mw-selflink selflink">Multimedia</a> – [Utilidades](/index.php/List_of_applications/Utilities_(Espa%C3%B1ol) "List of applications/Utilities (Español)") – [Documentos](/index.php/List_of_applications/Documents_(Espa%C3%B1ol) "List of applications/Documents (Español)") – [Seguridad](/index.php/List_of_applications/Security_(Espa%C3%B1ol) "List of applications/Security (Español)") – [Ciencia](/index.php/List_of_applications/Science_(Espa%C3%B1ol) "List of applications/Science (Español)") – [Otras](/index.php/List_of_applications/Other_(Espa%C3%B1ol) "List of applications/Other (Español)")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Multimedia](#Multimedia)
     *   [1.1 Visores de imágenes](#Visores_de_imágenes)

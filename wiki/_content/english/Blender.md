@@ -4,7 +4,11 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Blender_(software) "wikipedia:Ble
 
 [Blender](http://www.blender.org) is best known as a popular open source 3D modelling program.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 GPU Rendering](#GPU_Rendering)

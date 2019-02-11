@@ -64,8 +64,6 @@ The [#Comparison table](#Comparison_table) columns have the following meaning:
 | [yaah](https://aur.archlinux.org/packages/yaah/) | Bash | Optional | Yes | – | bash | – |
 | [aurel](https://aur.archlinux.org/packages/aurel/)
 <small>([discontinued](https://bbs.archlinux.org/viewtopic.php?pid=1522459#p1522459))</small> | Emacs Lisp | No | Yes | – | – | [emacs](/index.php/Emacs "Emacs") integration |
-| [cower](https://aur.archlinux.org/packages/cower/)
-<small>([discontinued](https://github.com/falconindy/cower#description))</small> | C | No | Yes | – | bash, zsh | regex support |
 
 ### Download and build
 

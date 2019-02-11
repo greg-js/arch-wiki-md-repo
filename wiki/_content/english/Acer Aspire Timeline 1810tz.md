@@ -1,6 +1,10 @@
 **Acer Aspire Timeline 1810tz**
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 lspci](#lspci)
 *   [2 Fan control](#Fan_control)

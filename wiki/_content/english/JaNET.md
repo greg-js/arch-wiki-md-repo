@@ -4,7 +4,11 @@ The virtual she-butler comes to life through project jaNET, a platform ready to 
 
 jaNET provides a built in framework to fulfil most of our daily information manners (like e-mail notification, weather conditions etc) but it can also be extend by wrapping 3rd party applications, processes or scripts in order to become a more flexible and smart system!
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Manual installation](#Manual_installation)

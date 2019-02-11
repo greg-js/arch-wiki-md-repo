@@ -10,7 +10,11 @@ Related articles
 
 *systemd-networkd* is a system daemon that manages network configurations. It detects and configures network devices as they appear; it can also create virtual network devices. This service can be especially useful to set up complex network configurations for a container managed by [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") or for virtual machines. It also works fine on simple connections.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Basic usage](#Basic_usage)
     *   [1.1 Required services and setup](#Required_services_and_setup)

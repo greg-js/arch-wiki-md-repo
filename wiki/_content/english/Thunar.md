@@ -10,7 +10,11 @@ From the project [home page](https://docs.xfce.org/xfce/thunar/start):
 
 	Thunar is a modern file manager for the Xfce Desktop Environment. Thunar has been designed from the ground up to be fast and easy-to-use. Its user interface is clean and intuitive, and does not include any confusing or useless options by default. Thunar is fast and responsive with a good start up time and folder load time.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Plugins and addons](#Plugins_and_addons)
@@ -97,7 +101,7 @@ It can also be configured to execute certain actions when cameras and audio play
 Here's an example setting for making Amarok play an audio CD.
 
 ```
- Multimedia - Audio CDs: `amarok --cdplay %d`
+ Multimedia - Audio CDs: `amarok --cdplay %d`
 
 ```
 
@@ -170,12 +174,12 @@ To use this action you need to have [catfish](https://www.archlinux.org/packages
 To use this action you need to have [clamav](https://www.archlinux.org/packages/?name=clamav) and [clamtk](https://www.archlinux.org/packages/?name=clamtk) installed.
 
 | Name | Command | File patterns | Appears if selection contains |
-| Scan for virus | `clamtk %F` | * | Select all |
+| Scan for virus | `clamtk %F` | * | Select all |
 
 ### Link to Dropbox
 
 | Name | Command | File patterns | Appears if selection contains |
-| Link to Dropbox | `ln -s %f /path/to/DropboxFolder` | * | Directories, other files |
+| Link to Dropbox | `ln -s %f /path/to/DropboxFolder` | * | Directories, other files |
 
 Please note that when using many custom actions to symlink files and folder to a particular place, it might be useful to put them into the `Send To` folder of the context menu to avoid that the menu itself gets bloated. This is fairly easy to achieve and requires a .desktop file in `~/.local/share/Thunar/sendto` for each action to perform. Say we want to put the above Dropbox symlink action into Send To, we create a `dropbox_folder.desktop` with the following content. The new applied action will be active after restarting Thunar.
 

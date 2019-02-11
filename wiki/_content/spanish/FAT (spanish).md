@@ -11,7 +11,11 @@ De [Wikipedia:Tabla de asignación de archivos](https://en.wikipedia.org/wiki/es
 
 	FAT es relativamente sencillo. A causa de ello, es un formato popular para disquetes admitido prácticamente por todos los sistemas operativos existentes para computadora personal. Se utiliza como mecanismo de intercambio de datos entre sistemas operativos distintos que coexisten en la misma computadora, lo que se conoce como entorno multiarranque. También se utiliza en tarjetas de memoria y dispositivos similares.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Creación del sistema de archivos](#Creación_del_sistema_de_archivos)
 *   [2 Configuración del kernel](#Configuración_del_kernel)

@@ -6,7 +6,11 @@ Related articles
 
 Šis puslapis paaiškina kaip atlikti įprastą Arch Linux diegimą į USB raktą. Priešingai nei LiveUSB kuris aprašytas - [USB diegimo laikmena](/index.php/USB_flash_installation_media "USB flash installation media"), rezultate gausime nuolatinę sistemą įdentišką diegiant į kietąjį diską, tiesiog USB laikmenoje.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Diegimas](#Diegimas)
     *   [1.1 Diegimo patobulinimai](#Diegimo_patobulinimai)

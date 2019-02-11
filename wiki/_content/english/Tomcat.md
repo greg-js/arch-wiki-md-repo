@@ -2,7 +2,11 @@ Tomcat is an open source Java [Servlet container](https://en.wikipedia.org/wiki/
 
 **Note:** Tomcat currently exists under two stable branches: [7](http://tomcat.apache.org/download-70.cgi) and [8](https://tomcat.apache.org/download-80.cgi). None of these version deprecates the preceding. Instead, [each branch is the implementation of a couple of the "Servlet" and "JSP" Java standards](http://tomcat.apache.org/whichversion.html#Apache_Tomcat_Versions). All versions are officially supported in Arch Linux: [tomcat7](https://www.archlinux.org/packages/?name=tomcat7) and [tomcat8](https://www.archlinux.org/packages/?name=tomcat8). Check the version you need depending on your web applications requirements. If you just want to try out tomcat or just do not want to spend more time figuring out, there are good chances you will want to try tomcat7\. This wiki page refers to tomcat7 but most of its content can be applied to tomcat8.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Filesystem hierarchy](#Filesystem_hierarchy)

@@ -6,7 +6,11 @@ Related articles
 
 *rescached* is not a reimplementation of a DNS server like BIND. The primary goal of *rescached* is only to cache DNS queries and answers to minimize unneeded traffic to the outside network. It is intended for personal systems or serving a small group of users.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Features](#Features)
 *   [2 How cache in rescached works](#How_cache_in_rescached_works)

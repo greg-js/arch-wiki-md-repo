@@ -6,7 +6,11 @@ Related articles
 
 This page lists various network tools. *ping* and *ip* are covered by [Network configuration](/index.php/Network_configuration "Network configuration").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Traceroute](#Traceroute)
 *   [2 Netcat](#Netcat)

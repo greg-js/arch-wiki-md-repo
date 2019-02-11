@@ -1,6 +1,10 @@
 If you want to install the same Arch packages over and over - like for testing AIF profiles - it could help if you wouldn't have to get the packages every time from the internet. This article shows you how to setup a [Squid](/index.php/Squid "Squid") proxy that only caches arch packages and can be used with aif/pacman/wget/etc with minimal configuration on the client system.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Install Squid](#Install_Squid)
 *   [2 Configure Squid](#Configure_Squid)

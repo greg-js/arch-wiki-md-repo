@@ -1,6 +1,10 @@
 [Squid](http://www.squid-cache.org) is a caching proxy for HTTP, HTTPS and FTP, providing extensive access controls.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

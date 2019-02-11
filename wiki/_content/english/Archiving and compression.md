@@ -7,7 +7,11 @@ These tools are often used in sequence by firstly creating an archive file and t
 
 Of course there are also [tools that do both](#Archiving_and_compression), which tend to additionally offer encryption, error detection and recovery.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Archiving only](#Archiving_only)
 *   [2 Compression tools](#Compression_tools)

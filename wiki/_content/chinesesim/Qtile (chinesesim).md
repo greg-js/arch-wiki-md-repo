@@ -9,7 +9,11 @@ From [Qtile web site](http://qtile.org/):
 
 	*Qtile 是一个全功能、可轻易修改(骇)的平铺式窗口管理程序。 Qtile 简单、轻巧、扩展性高。 撰写自订的窗口堆叠模式、插件以及指令是轻而易举的事情。程序以及设定均是以 [python](/index.php/Python_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Python (简体中文)") 写成，意味着：您可以使用语言所提供的所有能力及弹性来满足您对窗口管理的需求。*
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 启动](#启动)
@@ -173,7 +177,7 @@ def startup():
 有时候会因为插件的参数没有完整，或者设定之间有冲突情形发生、模组未 import 等，需要检查出错位置，可以以如下方式启动一个虚拟的 Xorg 并进行测试：
 
 ```
-echo "exec qtile" > /tmp/.start_qtile ; xinit /tmp/.start_qtile -- :2
+echo "exec qtile" > /tmp/.start_qtile ; xinit /tmp/.start_qtile -- :2
 
 ```
 

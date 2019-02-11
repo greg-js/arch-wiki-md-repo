@@ -2,7 +2,11 @@
 
 The goal of this how to is to setup a simple WebDAV configuration using a [web server](/index.php/Web_server "Web server").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Server](#Server)
     *   [1.1 Apache](#Apache)

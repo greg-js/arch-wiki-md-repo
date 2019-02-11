@@ -10,7 +10,11 @@ La [partición del sistema EFI](https://en.wikipedia.org/wiki/EFI_system_partiti
 
 La especificación UEFI exige soporte para los sistemas de archivos FAT12, FAT16 y FAT32 (vea [UEFI specification version 2.7, section 13.3.1.1](https://www.uefi.org/sites/default/files/resources/UEFI%20Spec%202_7_A%20Sept%206.pdf#G17.1019485)), pero cualquier proveedor puede opcionalmente agregar soporte para otros sistemas de archivos adicionales; por ejemplo, algunos proveedores añaden soporte de Apple [Macs](/index.php/Mac "Mac") (y de forma predeterminada) para sus propios controladores del sistema de archivos HFS +.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Comprobar la existencia de una partición](#Comprobar_la_existencia_de_una_partición)
 *   [2 Crear la partición](#Crear_la_partición)

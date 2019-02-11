@@ -1,7 +1,11 @@
 **Estado de la traducción**
 Este artículo es una traducción de [Activating Numlock on Bootup](/index.php/Activating_Numlock_on_Bootup "Activating Numlock on Bootup"), revisada por última vez el **2018-12-27**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Activating_Numlock_on_Bootup&diff=0&oldid=554881) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Consola](#Consola)
     *   [1.1 Usando un servicio separado](#Usando_un_servicio_separado)
@@ -73,7 +77,7 @@ Para deshabilitar la sugerencia de activación del bloqueo numérico que se mues
 ```
 [Service]
 ExecStart=
-ExecStart=-/sbin/agetty '-p -- \\u' --nohints --noclear %I $TERM
+ExecStart=-/sbin/agetty '-p -- \\u' --nohints --noclear %I $TERM
 
 ```
 

@@ -7,7 +7,11 @@ Il nome dei Locale sono definiti utilizzando il seguente formato:
 
 ```
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Abilitare il Locale necessario](#Abilitare_il_Locale_necessario)
     *   [1.1 Esempio IT Italiano](#Esempio_IT_Italiano)

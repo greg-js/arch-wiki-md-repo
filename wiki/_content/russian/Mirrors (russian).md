@@ -6,7 +6,11 @@
 
 На этой странице представлено руководство по выбору и настройке зеркал, а также список зеркал, доступных в настоящее время.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Включение зеркал](#Включение_зеркал)
     *   [1.1 Обновление базы данных pacman после изменения зеркал](#Обновление_базы_данных_pacman_после_изменения_зеркал)

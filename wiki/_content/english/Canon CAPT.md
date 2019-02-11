@@ -7,7 +7,11 @@ Related articles
 
 CAPT is Canon's proprietary Canon Advanced Printing Technology (CAPT) driver, supporting the **Canon i-Sensys** series of laser printers. For more information, see [Setting up CAPT printers on Ubuntu](https://help.ubuntu.com/community/CanonCaptDrv190).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

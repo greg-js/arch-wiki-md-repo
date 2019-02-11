@@ -4,7 +4,11 @@ Related articles
 
 [Vim](https://en.wikipedia.org/wiki/Vim_(text_editor) is a terminal text editor. It is an extended version of [vi](/index.php/Vi "Vi") with additional features, including syntax highlighting, a comprehensive help system, native scripting (vimscript), a visual mode for text selection, and comparison of files (vimdiff).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
@@ -199,10 +203,10 @@ set viminfo='10,<100,:100,%,n~/.vim/.viminfo
 where each parameter is preceded by an identifier:
 
 ```
- 'q  : q, number of edited file remembered
- <m  : m, number of lines saved for each register
- :p  : p, number of  history cmd lines remembered
- %   : saves and restore the buffer list
+ 'q  : q, number of edited file remembered
+ <m  : m, number of lines saved for each register
+ :p  : p, number of  history cmd lines remembered
+ %   : saves and restore the buffer list
  n...: fully qualified path to the viminfo files (note that this is a literal "*n*")
 
 ```
@@ -360,7 +364,7 @@ Feel free to change the shortcuts.
 
 ```
 #Maps ctrl-c to find functions calling the function
-nnoremap <C-c> :cs find c <C-R>=expand("<cword>")<CR><CR>
+nnoremap <C-c> :cs find c <C-R>=expand("<cword>")<CR><CR>
 
 ```
 
@@ -376,7 +380,7 @@ Useful options to be put in `~/.vimrc`:
 let Tlist_Compact_Format = 1
 let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_Close_On_Select = 1
-nnoremap <C-l> :TlistToggle<CR>
+nnoremap <C-l> :TlistToggle<CR>
 
 ```
 

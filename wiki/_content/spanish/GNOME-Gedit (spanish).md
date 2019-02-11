@@ -3,7 +3,11 @@ Este artículo es una traducción de [GNOME/Gedit](/index.php/GNOME/Gedit "GNOME
 
 [gedit](https://en.wikipedia.org/wiki/es:gedit "w:es:gedit") es un editor de texto de propósito general para GNOME.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Configuración](#Configuración)

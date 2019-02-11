@@ -10,7 +10,11 @@ Estas herramientas a menudo se utilizan en secuencia creando primero un archivo 
 
 Por supuesto, también hay [herramientas que hacen ambas cosas](#Archivado_y_compresión), que tienden a ofrecer adicionalmente cifrado, detección de errores y recuperación.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Solo archivado](#Solo_archivado)
 *   [2 Herramientas de compresión](#Herramientas_de_compresión)

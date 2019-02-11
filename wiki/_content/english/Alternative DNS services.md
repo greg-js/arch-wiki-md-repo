@@ -1,6 +1,10 @@
 This article lists [domain name system](https://en.wikipedia.org/wiki/Domain_name_system "wikipedia:Domain name system") (DNS) services that may replace an internet service provider's DNS service. To use one of these servers, see [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Cisco Umbrella (formerly OpenDNS)](#Cisco_Umbrella_(formerly_OpenDNS))
 *   [2 Cloudflare](#Cloudflare)

@@ -9,7 +9,11 @@ This article covers the installation and configuration of Arch Linux on a Lenovo
 
 For a general overview of laptop-related articles and recommendations, see [Laptop](/index.php/Laptop "Laptop").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Firmware (e.g. bios and peripherals)](#Firmware_(e.g._bios_and_peripherals))
 *   [2 Kernel and hardware support](#Kernel_and_hardware_support)
@@ -33,7 +37,10 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 
 ## Firmware (e.g. bios and peripherals)
 
-As of writing, the current BIOS version is 1.55. The T470 is one of the models supported officially by Lenovo through the [fwupd](/index.php/Fwupd "Fwupd") firmware update program. If you are using a UEFI boot scheme, this is probably the easiest and most officially supported way to keep all the firmware programs updated.
+As of writing, the current BIOS version is 1.55. The T470 is one of the models supported officially by Lenovo through the [fwupd](/index.php/Fwupd "Fwupd") firmware update program.
+
+If you are using a UEFI boot scheme, this is probably the easiest and most officially supported way to keep all the firmware programs updated.
+**Note:** Users have observed a BIOS requirement of "UEFI/Legacy Boot" set to "UEFI Only" when using [fwupd](/index.php/Fwupd "Fwupd").
 
 If it does not work for you or if you prefer these methods, it is still possible to do the BIOS update by booting on a specially crafted disk or USB stick. By visiting the downloads section (T470) an ISO can be downloaded and burned to disk which will perform the update [from Lenovo](http://pcsupport.lenovo.com/gb/en/products/laptops-and-netbooks/thinkpad-t-series-laptops/thinkpad-t470/downloads). Or [extracted and copied on a USB Stick](http://www.thinkwiki.org/wiki/BIOS_Upgrade#Booting_from_a_USB_Flash_drive).
 
@@ -53,7 +60,7 @@ As of writing this, the fingerprint reader is still under [prototype development
 
 To get the sensor working, it first must be initialized with data. This currently only works with Windows. So if you had used the reader before installing Arch, this should work fine. Otherwise install a Windows version in a virtualbox, connect the Validity Sensor over USB(USB 2.0), install the drivers and use it a few times.
 
-As soon as this step is completed, the sensor can be used under Linux. Check out [Validity90 prototype](https://github.com/nmikhailov/Validity90/tree/master/prototype), build it and check if the sensor is working. Install [fprintd](https://www.archlinux.org/packages/?name=fprintd), [libfprint-vfs0097-git](https://aur.archlinux.org/packages/libfprint-vfs0097-git/) and for testing [fprint_demo](https://aur.archlinux.org/packages/fprint_demo/). You can now enroll your fingers. fprintd and fprint_demo might have be started with superuser privileges.
+As soon as this step is completed, the sensor can be used under Linux. Check out [Validity90 prototype](https://github.com/nmikhailov/Validity90/tree/master/prototype), build it and check if the sensor is working. Install [fprintd](https://www.archlinux.org/packages/?name=fprintd), [libfprint-vfs0097-git](https://aur.archlinux.org/packages/libfprint-vfs0097-git/) and for testing [fprint_demo](https://aur.archlinux.org/packages/fprint_demo/). You can now enroll your fingers. fprintd and fprint_demo might have to be started with superuser privileges.
 
 After setting up the fingerprint sensor is complete, one can use it to login or authenticate for `sudo` or `su`(To use this, launch fprintd_enroll prior as root).
 

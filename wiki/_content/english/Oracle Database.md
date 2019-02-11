@@ -4,7 +4,11 @@ Related articles
 
 This document will help you install [Oracle Database](https://en.wikipedia.org/wiki/Oracle_Database "wikipedia:Oracle Database") 11gR1 on Arch Linux. If you only want to connect to Oracle databases running elsewhere, see the instructions for installing the [Oracle client](/index.php/Oracle_client "Oracle client"). For installation of Oracle Express Edition, see [#Install Oracle Express Edition](#Install_Oracle_Express_Edition).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Install Oracle](#Install_Oracle)
     *   [1.1 Pre installation](#Pre_installation)
@@ -590,7 +594,7 @@ xdb:/oracle/product/db:Y
 To start the oracle database daemon during boot, add "oracledb" in your /etc/rc.conf:
 
 ```
-DAEMONS=(oracledb syslog-ng dbus !network netfs crond ntpd alsa hal wicd fam)
+DAEMONS=(oracledb syslog-ng dbus !network netfs crond ntpd alsa hal wicd fam)
 
 ```
 

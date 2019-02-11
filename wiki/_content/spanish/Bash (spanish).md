@@ -13,7 +13,11 @@ Artículos relacionados
 
 [Bash](https://www.gnu.org/software/bash/) (Bourne-again Shell) es un [intérprete de línea de órdenes](/index.php/Command-line_shell_(Espa%C3%B1ol) "Command-line shell (Español)")/lenguaje de programación por el [proyecto GNU](/index.php/GNU_Project_(Espa%C3%B1ol) "GNU Project (Español)"). Su nombre es un homenaje en referencia a su predecesor, el intérprete de línea de órdenes Bourne, que ha estado en desuso desde hace mucho tiempo. Bash se puede ejecutar en la mayoría de los sistemas operativos similares a UNIX, incluido GNU/Linux.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Invocación](#Invocación)
     *   [1.1 Archivos de configuración](#Archivos_de_configuración)

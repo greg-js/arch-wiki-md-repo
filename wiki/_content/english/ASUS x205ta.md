@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Booting Arch install media](#Booting_Arch_install_media)
     *   [1.1 Proper way of generating a bootia32.efi with grub.cfg included](#Proper_way_of_generating_a_bootia32.efi_with_grub.cfg_included)
@@ -275,10 +279,10 @@ Next, follow the normal steps to activate [bluetooth](/index.php/Bluetooth "Blue
 case $1 in
     pre)
         rmmod brcmfmac
-        ;;
+        ;;
     post)
         modprobe brcmfmac
-        ;;
+        ;;
 esac
 
 exit 0

@@ -9,7 +9,11 @@ Este artículo es una traducción de [Dm-crypt/Encrypting an entire system](/ind
 
 Los siguientes son ejemplos de escenarios comunes en el cifrado completo de un sistema con *dm-crypt*. Se explican todas las adaptaciones que se necesitan introducir en el [proceso de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)"). Todas las herramientas necesarias para ello están presentes en la [imagen de instalación](https://www.archlinux.org/download/).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Descripción general](#Descripción_general)
 *   [2 Esquema de particionado simple con LUKS](#Esquema_de_particionado_simple_con_LUKS)

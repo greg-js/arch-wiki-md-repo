@@ -6,7 +6,11 @@ Related articles
 
 An FTL is found in all flash memory with a SCSI/SATA/PCIe/NVMe interface [[1]](http://accelazh.github.io/ssd/A-Summary-On-SSD-And-FTL), opposed to bare NAND Flash and SmartMediaCards [[2]](http://www.linux-mtd.infradead.org/archive/tech/nand.html).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Creating a F2FS file system](#Creating_a_F2FS_file_system)
 *   [2 Mounting a F2FS file system](#Mounting_a_F2FS_file_system)

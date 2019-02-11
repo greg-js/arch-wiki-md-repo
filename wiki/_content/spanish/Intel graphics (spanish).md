@@ -12,7 +12,11 @@ Para obtener una lista completa de los modelos GPU-Intel, y los chipsets y CPUs 
 
 **Nota:** Las tarjetas gráficas basadas en el chip PowerVR (series [GMA 3600](/index.php/Intel_GMA_3600 "Intel GMA 3600")) no son compatibles con los controladores de código abierto.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Configuración](#Configuración)

@@ -1,6 +1,10 @@
 This page contains the list of users that is used by the [ArchMap](/index.php/ArchMap "ArchMap") project.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Adding yourself to the list](#Adding_yourself_to_the_list)
 *   [2 How to get your coordinates](#How_to_get_your_coordinates)
@@ -941,7 +945,7 @@ You can use the following website to get your device's coordinates along with a 
 59.446297,17.926927 "malondron" # Sollentuna, Sweden
 47.336118,-122.17055 "unsined" # Auburn, WA, USA
 39.633613,-104.909490 "mistofvongola" # Denver, CO, USA
-59.253569,17.880454 "demize" # Stoclholm, Sweden
+59.1801374,18.1285828 "demize" # Stockholm, Sweden
 44.734912,-93.228107 "Kingpatzer" # Apple Valley, MN, USA
 49.594766,11.015444 "georgnix" # Erlangen, Germany
 36.31439,139.578265 "Enz_worker" # Sano, Tochigi, Japan
@@ -1046,7 +1050,7 @@ You can use the following website to get your device's coordinates along with a 
 51.993161,7.547592 "thunfisch" # Münster, NRW, Germany, EU
 51.544265,-0.011686 "ragreener" # London, United Kingdom
 61.464059,23.890607 "Michael" # Tampere, Finland
-42.250611,-84.459172 "Mark Weiman (markzz)" # Jackson, Michigan, United States
+42.2580859,-83.622115 "Mark Weiman (markzz)" # Ypsilanti, Michigan, United States
 19.040532,-98.194858 "Marco A. Rojas (MrcRjs)" # Puebla de Zaragoza, Puebla, Mexico
 39.508295,-84.181346 "TheClean" # Clearcreek Township, Ohio
 48.8123411,2.3710360999999693 "Ybalrid" # Ivry-sur-Seine, Île-de-France, France

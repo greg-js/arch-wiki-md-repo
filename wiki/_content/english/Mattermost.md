@@ -4,7 +4,11 @@ From [Mattermost's homepage](http://www.mattermost.org/):
 
 This article describes how to install and configure the Mattermost server.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 With Docker](#With_Docker)

@@ -6,7 +6,11 @@ Related articles
 
 **Tip:** An alternative implementation is [systemd-resolvconf](/index.php/Systemd-resolvconf "Systemd-resolvconf"), but it can only be used with [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)

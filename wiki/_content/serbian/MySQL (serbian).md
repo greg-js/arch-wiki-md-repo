@@ -1,6 +1,10 @@
 MySQL jе siroko rasprostranjena SQL baza podataka koja ima vise niti i namenjena je za vise korisnika. Za vise informacija o funkcijama pogledajte [oficijalnu home stranicu](http://www.mysql.com/).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalacija](#Instalacija)
 *   [2 Konfigurisanje](#Konfigurisanje)
@@ -84,8 +88,8 @@ Ako vidite nesto poput ovoga:
 
 ```
  # /etc/rc.d/mysqld restart
- :: Stopping MySQL  [FAIL] 
- :: Starting MySQL  [FAIL]
+ :: Stopping MySQL  [FAIL] 
+ :: Starting MySQL  [FAIL]
 
 ```
 

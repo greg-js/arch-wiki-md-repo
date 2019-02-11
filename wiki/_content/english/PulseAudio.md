@@ -7,7 +7,11 @@ Related articles
 
 **Note:** Some confusion may occur between [ALSA](/index.php/ALSA "ALSA") and PulseAudio. ALSA includes a Linux kernel component with sound card drivers, as well as a userspace component, `libalsa`.[[1]](http://www.alsa-project.org/main/index.php/Download) PulseAudio builds only on the kernel component, but offers compatibility with `libalsa` through [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa).[[2]](http://www.freedesktop.org/wiki/Software/PulseAudio/FAQ/#index14h3)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Front-ends](#Front-ends)

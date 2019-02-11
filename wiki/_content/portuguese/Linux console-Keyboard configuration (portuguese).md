@@ -8,7 +8,11 @@ Artigos relacionados
 
 Mapeamentos de teclado (conhecido pela abreviação inglesa como *keymaps*) para [console virtual](https://en.wikipedia.org/wiki/Virtual_console do sistema quanto as configurações de layout do teclado para o console virtual e o Xorg.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Vendo as configurações do teclado](#Vendo_as_configurações_do_teclado)
 *   [2 Mapas de teclado](#Mapas_de_teclado)

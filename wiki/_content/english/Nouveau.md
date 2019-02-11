@@ -8,7 +8,11 @@ This article covers the open-source [Nouveau](https://nouveau.freedesktop.org/) 
 
 Find your card's [code name](https://nouveau.freedesktop.org/wiki/CodeNames) (a more detailed list is available on [Wikipedia](https://en.wikipedia.org/wiki/Comparison_of_Nvidia_Graphics_Processing_Units "wikipedia:Comparison of Nvidia Graphics Processing Units")), and compare it with the [feature matrix](https://nouveau.freedesktop.org/wiki/FeatureMatrix/) for supported features.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Loading](#Loading)

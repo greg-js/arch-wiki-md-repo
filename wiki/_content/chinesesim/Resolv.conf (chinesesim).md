@@ -6,7 +6,11 @@ DNS 解析的配置文件是 `/etc/resolv.conf`，根据[resolv.conf(5) 手册�
 
 	*"在普通用途的系统里这个文件不是必须的.需要查询的只有本地主机名；主机名决定域名,域名将构成域搜索路径."*
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 DNS 解析](#DNS_解析)
 *   [2 选择其它 DNS 服务器](#选择其它_DNS_服务器)

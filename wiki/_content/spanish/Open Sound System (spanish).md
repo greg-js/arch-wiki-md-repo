@@ -1,6 +1,10 @@
 El [Open Sound System](https://es.wikipedia.org/wiki/Open_Sound_System) (**OSS**) es una arquitectura de sonido alternativa para sistemas compatibles con UNIX y POSIX. OSS versión 3 era el sistema original de sonido para Linux y estaba incluido en el kernel hasta que fue reemplazado por [Advanced Linux Sound Architecture](/index.php/Advanced_Linux_Sound_Architecture_(Espa%C3%B1ol) "Advanced Linux Sound Architecture (Español)") (**ALSA**) en 2002, año en que la versión 4 de OSS se convirtió en un producto propietario. Luego, OSSv4 volvió a ser software libre en 2007 cuando [4Front Technologies](http://www.opensound.com/) liberó el código bajo licencia GPL.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Comparaciones con ALSA](#Comparaciones_con_ALSA)
     *   [1.1 Ventajas de OSS (usuarios)](#Ventajas_de_OSS_(usuarios))

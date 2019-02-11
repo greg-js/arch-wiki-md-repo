@@ -10,7 +10,11 @@ Related articles
 
 كل المقارنات التالية هي بين آرتش لينكس والتوزيعات الأخرى. نسخ المجتمع المنقولة الداعمة لبنًى غير x86_64 موجودة في [Arch-based distributions](/index.php/Arch-based_distributions "Arch-based distributions").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 التوزيعات المبنية على المصدر](#التوزيعات_المبنية_على_المصدر)
     *   [1.1 CRUX](#CRUX)

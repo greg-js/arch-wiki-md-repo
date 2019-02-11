@@ -1,6 +1,10 @@
 [Profile-sync-daemon](https://aur.archlinux.org/packages/Profile-sync-daemon/) (psd) — небольшой псевдо-демон, предназначенный для переноса профилей браузеров в tmpfs (ОЗУ) и синхронизации с постоянным хранилищем (HDD/SSD) используя rsync. Демон автоматически производит резервные копии на случай возникновения сбоев.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Преимущества psd](#Преимущества_psd)
 *   [2 Установка и настройка](#Установка_и_настройка)

@@ -1,6 +1,10 @@
 Poniżej przedstawiono przykłady typowych scenariuszy pełnego szyfrowania systemu z dm-crypt. Wyjaśniają wszystkie adaptacje, które należy wykonać w normalnej procedurze instalacji. Wszystkie niezbędne narzędzia znajdują się na [installation image](https://www.archlinux.org/download/).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Przegląd](#Przegląd)
 *   [2 Prosty układ partycji z LUKS](#Prosty_układ_partycji_z_LUKS)

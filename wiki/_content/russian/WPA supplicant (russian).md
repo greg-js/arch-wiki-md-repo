@@ -7,7 +7,11 @@
 
 *wpa_supplicant* является реализацией компонента IEEE 802.1X/WPA Supplicant, который используется на клиентских машинах. Он реализует согласование ключей шифрования с аутентификатором WPA (WPA Authenticator), аутентификацию EAP с сервером аутентификации (Authentication Server), а также управляет роумингом и выполняет сопряжение адаптера с беспроводной сетью.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Обзор](#Обзор)
@@ -257,10 +261,10 @@ network={
 case "$2" in
     CONNECTED)
         notify-send "WPA supplicant: connection established";
-        ;;
+        ;;
     DISCONNECTED)
         notify-send "WPA supplicant: connection lost";
-        ;;
+        ;;
 esac
 
 ```

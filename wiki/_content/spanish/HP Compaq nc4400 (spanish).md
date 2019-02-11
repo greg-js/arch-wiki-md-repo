@@ -1,7 +1,11 @@
 **Estado de la traducción**
 Este artículo es una traducción de [HP Compaq nc4400](/index.php/HP_Compaq_nc4400 "HP Compaq nc4400"), revisada por última vez el **2018-12-18**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=HP_Compaq_nc4400&diff=0&oldid=559434) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Especificaciones del sistema](#Especificaciones_del_sistema)
 *   [2 Configuración](#Configuración)

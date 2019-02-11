@@ -9,7 +9,11 @@ MySQL是一个广泛使用的多线程多用户式数据库。具体特性请参
 
 **注意:** MariaDB 现在是 Arch Linux 官方默认的 MySQL 实现。Oracle MySQL 已被移动到 [AUR](/index.php/AUR "AUR")，推荐所有用户[升级](#Upgrade_from_Oracle_MySQL_to_MariaDB)到 MariaDB。参见[这条公告](https://www.archlinux.org/news/mariadb-replaces-mysql-in-repositories/)。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
     *   [1.1 升级](#升级)

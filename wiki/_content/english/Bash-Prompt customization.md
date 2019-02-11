@@ -6,7 +6,11 @@ Related articles
 
 Bash has several prompts which can be customized to increase productivity, aesthetic appeal, and nerd cred.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Prompts](#Prompts)
 *   [2 Techniques](#Techniques)

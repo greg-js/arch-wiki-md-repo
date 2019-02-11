@@ -6,7 +6,11 @@ Del [artículo de Wikipedia](https://en.wikipedia.org/wiki/Udev "wikipedia:Udev"
 
 Udev carga los módulos del kernel en paralelo (simultáneamente) para proveer una potencial ventaja de rendimiento, en vez de cargar los módulos secuencialmente (uno después de otro). Los módulos son, por lo tanto, cargados asíncronamente. La desventaja inherente de este método es que udev no siempre carga los módulos en el mismo orden en cada arranque del sistema. Si la máquina posee múltiples dispositivos de bloque, esto se puede manifestar en que los nodos de los dispositivos cambian su designación aleatoriamente. Por ejemplo, si la máquina tiene dos discos duros, `/dev/sda` puede convertirse aleatoriamente en `/dev/sdb`. Continue leyendo más abajo para mayor información.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Acerca de las reglas udev](#Acerca_de_las_reglas_udev)

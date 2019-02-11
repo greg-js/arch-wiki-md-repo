@@ -2,7 +2,11 @@
 
 **Tip:** When using [systemd](/index.php/Systemd "Systemd"), temporary files in tmpfs directories can be recreated at boot by using [tmpfiles.d](/index.php/Systemd#Temporary_files "Systemd").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Usage](#Usage)
 *   [2 Examples](#Examples)

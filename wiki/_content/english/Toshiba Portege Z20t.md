@@ -1,6 +1,10 @@
 The power of an enterprise-class laptop. The freedom and convenience of a tablet. Why choose when you can get the best of both? The Toshiba Portégé® Z20t Ultrabook® offers innovative 2-in-1 versatility in a supremely crafted chassis, along with outstanding battery life and an exceptional handwriting experience.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Specifications](#Specifications)
 *   [2 Installation and configuration](#Installation_and_configuration)

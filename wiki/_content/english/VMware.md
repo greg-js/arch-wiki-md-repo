@@ -8,7 +8,11 @@ This article is about the latest major [VMware](https://en.wikipedia.org/wiki/VM
 
 You may also be interested in [VMware/Installing Arch as a guest](/index.php/VMware/Installing_Arch_as_a_guest "VMware/Installing Arch as a guest"). For older versions, use the [vmware-patch](https://aur.archlinux.org/packages/vmware-patch/) package.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 VMware bundle](#VMware_bundle)

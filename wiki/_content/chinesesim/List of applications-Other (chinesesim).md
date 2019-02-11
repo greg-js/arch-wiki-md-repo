@@ -6,7 +6,11 @@
 
 **翻译状态：** 本文是英文页面 [List_of_applications](/index.php/List_of_applications "List of applications") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-02-20，点击[这里](https://wiki.archlinux.org/index.php?title=List_of_applications&diff=0&oldid=417274)可以查看翻译后英文页面的改动。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 其它](#其它)
     *   [1.1 工作环境](#工作环境)

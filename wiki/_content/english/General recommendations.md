@@ -6,7 +6,11 @@ Related articles
 
 This document is an annotated index of popular articles and important information for improving and adding functionalities to the installed Arch system. Readers are assumed to have read and followed the [Installation guide](/index.php/Installation_guide "Installation guide") to obtain a basic Arch Linux installation. Having read and understood the concepts explained in [#System administration](#System_administration) and [#Package management](#Package_management) is *required* for following the other sections of this page and the other articles in the wiki.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 System administration](#System_administration)
     *   [1.1 Users and groups](#Users_and_groups)
@@ -166,7 +170,7 @@ This section provides orientation for users wishing to run graphical application
 
 ### Display drivers
 
-The default *vesa* display driver will work with most video cards, but performance can be significantly improved and additional features harnessed by installing the appropriate driver for [ATI](/index.php/ATI "ATI"), [Intel](/index.php/Intel "Intel"), or [NVIDIA](/index.php/NVIDIA "NVIDIA") products.
+The default *vesa* display driver will work with most video cards, but performance can be significantly improved and additional features harnessed by installing the appropriate driver for [AMD](/index.php/Xorg#AMD "Xorg"), [Intel](/index.php/Intel "Intel"), or [NVIDIA](/index.php/NVIDIA "NVIDIA") products.
 
 ### Desktop environments
 

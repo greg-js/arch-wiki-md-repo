@@ -8,7 +8,11 @@ This tutorial shows how to download, install, and configure the following softwa
     *   USB-Blaster (I and II) Download Cable Driver
 *   ModelSim-Altera Edition (Included with Quartus Prime Standard Edition)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Quartus Prime Standard Edition](#Quartus_Prime_Standard_Edition)
     *   [1.1 Installation via AUR](#Installation_via_AUR)

@@ -1,6 +1,10 @@
 **Nota:** In questa pagina sono elencati solo giochi popolari nativi ed emulatori di piattaforme di gioco per GNU/Linux, liberamente accessibili tramite i [Depositi ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)") e [AUR](/index.php/AUR_(Italiano) "AUR (Italiano)"). Per saperne di più sui giochi in esecuzione, relativi consigli di configurazione del sistema ed vedere [Giochi](/index.php?title=Gaming_(Italiano)&action=edit&redlink=1 "Gaming (Italiano) (page does not exist)"). Per un elenco dei giochi più aggiornata disponibili su AUR, controllare la [categoria 'games'](https://aur.archlinux.org/packages.php?O=0&K=&do_Search=Go&detail=1&C=6&SeB=nd&SB=n&SO=a&PP=25).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Azione e avventura](#Azione_e_avventura)
 *   [2 Arcade](#Arcade)

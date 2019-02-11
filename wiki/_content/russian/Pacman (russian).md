@@ -22,7 +22,11 @@
 
 **Совет:** Официальный пакет [pacman](https://www.archlinux.org/packages/?name=pacman) включает в себя много дополнительных полезных инструментов, таких как **makepkg**, **pactree**, **vercmp** и [checkupdates](#Частичные_обновления_не_поддерживаются). Выполните `pacman -Ql pacman | grep bin`, чтобы увидеть полный список.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Настройка](#Настройка)
     *   [1.1 Основные параметры](#Основные_параметры)

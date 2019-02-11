@@ -3,7 +3,11 @@ Este artículo es una traducción de [Nessus](/index.php/Nessus "Nessus"), revis
 
 [Nessus](https://en.wikipedia.org/wiki/es:Nessus "wikipedia:es:Nessus") es un [escáner de vulnerabilidades](https://en.wikipedia.org/wiki/Vulnerability_scanner "wikipedia:Vulnerability scanner") patentado, disponible de forma gratuita para uso personal. Hay [más de 40,000 complementos](http://www.tenable.com/plugins/) que cubren una amplia gama de fallos tanto locales como remotos.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Configuración posterior a la instalación](#Configuración_posterior_a_la_instalación)

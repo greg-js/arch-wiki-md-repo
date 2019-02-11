@@ -2,7 +2,11 @@
 
 [GStreamer](https://en.wikipedia.org/wiki/GStreamer "wikipedia:GStreamer") 是一个基于管道的多媒体框架。Gstreamer使用C语言编写，基于GObject。 Gstreamer允许程序员创建各种媒体处理组件，包括简单的音频播放，音频与视频播放，录制，流媒体控制与媒体编辑。其管道式设计是创建多种多媒体程序的基础，例如视频编辑器，流媒体服务器，以及媒体播放器。 Gstreamer是跨平台框架，目前已知可在下列平台上工作：Linux (x86, PowerPC 以及 ARM), Solaris (Intel 和 SPARC), Mac OS X, Microsoft Windows 以及 OS/400。Gstreamer是发布在GPL（GNU通用公共授权）协议下的自由软件。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 整合](#整合)

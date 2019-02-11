@@ -6,7 +6,11 @@ Related articles
 
 This page contains information about running games and related system configuration tips.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Game environments](#Game_environments)
 *   [2 Getting games](#Getting_games)
@@ -92,14 +96,14 @@ In some cases like those mentioned above, it may be necessary or desired to run 
 To start a second X server (using the free first person shooter game [Xonotic](http://www.xonotic.org/) as an example) you can simply do:
 
 ```
-$ xinit /usr/bin/xonotic-glx -- :1 vt$XDG_VTNR
+$ xinit /usr/bin/xonotic-glx -- :1 vt$XDG_VTNR
 
 ```
 
 This can further be spiced up by using a separate X configuration file:
 
 ```
-$ xinit /usr/bin/xonotic-glx -- :1 -xf86config xorg-game.conf vt$XDG_VTNR
+$ xinit /usr/bin/xonotic-glx -- :1 -xf86config xorg-game.conf vt$XDG_VTNR
 
 ```
 

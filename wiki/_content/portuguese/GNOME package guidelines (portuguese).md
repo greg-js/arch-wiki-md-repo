@@ -8,7 +8,11 @@
 
 Os pacotes do [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)") no Arch Linux segue, um certo esquema.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 URL fonte](#URL_fonte)
     *   [1.1 Usando tarball de lançamento](#Usando_tarball_de_lançamento)

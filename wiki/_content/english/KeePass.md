@@ -2,7 +2,11 @@ KeePass is an encrypted password database format. It is an alternative to online
 
 There are two versions of the format: *KeePass 1.x (Classic)* and *KeePass 2.x*
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Integration](#Integration)

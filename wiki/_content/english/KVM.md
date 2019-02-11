@@ -11,7 +11,11 @@ Differences between KVM and [Xen](/index.php/Xen "Xen"), [VMware](/index.php/VMw
 
 This article does not cover features common to multiple emulators using KVM as a backend. You should see related articles for such information.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Checking support for KVM](#Checking_support_for_KVM)
     *   [1.1 Hardware support](#Hardware_support)

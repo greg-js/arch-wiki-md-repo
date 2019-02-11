@@ -6,7 +6,11 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Rust_(programming_language) "wiki
 
 	[Rust](http://rust-lang.org/) is a general-purpose, multi-paradigm, compiled programming language sponsored by Mozilla Research. It is designed to be a "safe, concurrent, practical language", supporting pure-functional, imperative-procedural, and object-oriented styles. The goal of Rust is to be a good language for creating highly concurrent and highly safe systems, and programming in the large. This has led to a feature set with an emphasis on safety, control of memory layout, and concurrency. Performance of idiomatic Rust is comparable to the performance of idiomatic C++.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Core language](#Core_language)
     *   [1.1 Rust Core Library](#Rust_Core_Library)

@@ -23,7 +23,11 @@ De [Wikipedia](https://en.wikipedia.org/wiki/es:Drupal "wikipedia:es:Drupal"):
 
 Este artículo describe cómo configurar Drupal y [Apache](/index.php/Apache_HTTP_Server_(Espa%C3%B1ol) "Apache HTTP Server (Español)"), [MySQL](/index.php/MySQL_(Espa%C3%B1ol) "MySQL (Español)") o [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"), [PHP](/index.php/PHP_(Espa%C3%B1ol) "PHP (Español)") y [Postfix](/index.php/Postfix "Postfix") para trabajar con él. Se da por hecho que tiene algún tipo de servidor [LAMP](/index.php/LAMP_(Espa%C3%B1ol) "LAMP (Español)") (Linux, Apache, MySQL, PHP), LAPP (Linux, Apache, PostgreSQL, PHP) o LASP (Linux, Apache, SQLite, PHP) ya configurado.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Configuración](#Configuración)

@@ -1,6 +1,10 @@
 W tej sekcji opisano sposób ręcznego wykorzystania *dm-crypt* z linii poleceń w celu zaszyfrowania systemu.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Przygotowanie](#Przygotowanie)
 *   [2 Wykorzystanie Cryptsetup](#Wykorzystanie_Cryptsetup)

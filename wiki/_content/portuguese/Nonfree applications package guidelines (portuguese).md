@@ -10,7 +10,11 @@ Para muitos aplicativos (a maioria dos quais são do Windows), não há fontes n
 
 **Nota:** Todas as informações aqui são agnósticos a pacotes. Para informações específicas para a maioria dos softwares não livres, veja [Diretrizes de pacotes Wine](/index.php/Diretrizes_de_pacotes_Wine "Diretrizes de pacotes Wine").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Motivo](#Motivo)
 *   [2 Regras comuns](#Regras_comuns)
@@ -135,21 +139,21 @@ Alguns autores de software protegem agressivamente seu software contra downloads
 Por favor, preste atenção, se você quiser ter uma string user-agent personalizada, se esta contiver espaços, parênteses ou barras (ou, na verdade, qualquer coisa que possa interromper a análise), isso não funcionará. Não há solução alternativa, essa é a natureza de vetores no bash e a maneira como o DLAGENTS foi projetado para ser usado no makepkg. O exemplo a seguir, portanto, **não funciona**:
 
 ```
-DLAGENTS=("http::/usr/bin/curl -A 'Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1)' -fLC - --retry 3 --retry-delay 3 -o %o %u")
+DLAGENTS=("http::/usr/bin/curl -A 'Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1)' -fLC - --retry 3 --retry-delay 3 -o %o %u")
 
 ```
 
 Encurte para o seguinte que está funcionando:
 
 ```
-DLAGENTS=("http::/usr/bin/curl -A 'Mozilla' -fLC - --retry 3 --retry-delay 3 -o %o %u")
+DLAGENTS=("http::/usr/bin/curl -A 'Mozilla' -fLC - --retry 3 --retry-delay 3 -o %o %u")
 
 ```
 
 E, a seguir, permita extrair link temporário para o arquivo da página de download:
 
 ```
-DLAGENTS=("http::/usr/bin/wget -r -np -nd -H %u")
+DLAGENTS=("http::/usr/bin/wget -r -np -nd -H %u")
 
 ```
 

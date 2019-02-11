@@ -5,7 +5,11 @@ Related articles
 
 [youtube-dl](https://youtube-dl.org/) is a command-line program that lets you easily download videos and audio from more than a thousand websites. See the [list of supported sites](https://github.com/rg3/youtube-dl/blob/master/docs/supportedsites.md).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

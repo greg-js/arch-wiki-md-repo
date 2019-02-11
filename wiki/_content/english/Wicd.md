@@ -5,7 +5,11 @@ Related articles
 
 [Wicd](https://launchpad.net/wicd) is a network connection manager that can manage wireless and wired interfaces, similar and an alternative to [NetworkManager](/index.php/NetworkManager "NetworkManager"). Wicd is written in [Python](/index.php/Python "Python") and [GTK+](/index.php/GTK%2B "GTK+"). Wicd can also run from the terminal in a curses interface, requiring no X server session or task panel (see [#Running Wicd in Text Mode](#Running_Wicd_in_Text_Mode)).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Notifications](#Notifications)
@@ -200,16 +204,16 @@ if [ "${connection_type}" == "wireless" ]; then
         case "$essid" in
         YOUR-NETWORK-NAME-ESSID)
                 arp -s 192.168.0.1 00:11:22:33:44:55
-         ;;
+         ;;
          Netgear01923)
                 arp -s 192.168.0.1 10:11:20:33:40:50
-         ;;
+         ;;
          ANOTHER-ESSID)
                 arp -s 192.168.0.1 11:33:55:77:99:00
-         ;;
+         ;;
          *)
                 echo "Static ARP not set. No network defined."
-         ;;
+         ;;
        esac
 fi
 

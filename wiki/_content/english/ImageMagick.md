@@ -9,7 +9,11 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/ImageMagick "wikipedia:Im
 ```
 See also [FS#59778](https://bugs.archlinux.org/task/59778).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
@@ -65,8 +69,8 @@ Running `import` without the `-window` option allows selecting a window or an ar
 If you run twinview or dualhead, simply take the screenshot twice and use `imagemagick` to paste them together:
 
 ```
-import -window root -display :0.0 -screen /tmp/0.png
-import -window root -display :0.1 -screen /tmp/1.png
+import -window root -display :0.0 -screen /tmp/0.png
+import -window root -display :0.1 -screen /tmp/1.png
 convert +append /tmp/0.png /tmp/1.png screenshot.png
 rm /tmp/{0,1}.png
 

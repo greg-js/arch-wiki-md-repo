@@ -11,7 +11,11 @@
 
 Если вам требуется только краткое изложение требований и процесса сборки, вы можете также воспользоваться [официальной документацией проекта](https://git.archlinux.org/archiso.git/tree/docs).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Настройка live носителя](#Настройка_live_носителя)
@@ -218,7 +222,7 @@ systemctl set-default graphical.target
 ```
 [Service]
 ExecStart=
-ExecStart=-/sbin/agetty --autologin **isouser** --noclear %I 38400 linux
+ExecStart=-/sbin/agetty --autologin **isouser** --noclear %I 38400 linux
 
 ```
 

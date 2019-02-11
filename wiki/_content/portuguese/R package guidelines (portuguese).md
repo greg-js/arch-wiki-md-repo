@@ -8,7 +8,11 @@
 
 Este documento abrange padrões e diretrizes para escrever [PKGBUILDs](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") para pacotes [R](/index.php/R "R"). A maioria das informações pode ser obtida consultando o arquivo `DESCRIPTION` do pacote. Você pode obter a maior parte de dentro do R executando `tools::CRAN_package_db()`.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Nomenclatura de pacote](#Nomenclatura_de_pacote)
 *   [2 Versão de pacote](#Versão_de_pacote)

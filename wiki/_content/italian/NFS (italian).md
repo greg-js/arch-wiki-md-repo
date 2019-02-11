@@ -4,7 +4,11 @@ Lo scopo di questo articolo è quello di configurare un server nfs per condivide
 *   nfs-utils è stato aggiornato dal 2009-06-23, ed è ora abilitato il supporto NFS4\. Vedere [news bulletin](https://www.archlinux.org/news/452/).
 *   portmap è stato sostituito da rpcbind.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Pacchetti richiesti](#Pacchetti_richiesti)
 *   [2 Configurazione del server](#Configurazione_del_server)

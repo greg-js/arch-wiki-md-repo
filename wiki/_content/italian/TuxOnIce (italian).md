@@ -1,6 +1,10 @@
 Questa è una guida veloce all'installazione di [TuxOnIce](http://www.tuxonice.net) (conosciuto anche come suspend2), un framework avanzato per la sospensione/ibernazione, che supporta l'ibernazione in una partizione swap o in un normale file con una compressione veloce LZO. Visita il sito di TuxOnIce per una lista completa delle [caratteristiche](http://www.tuxonice.net/features).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Preparazione del kernel](#Preparazione_del_kernel)
 *   [2 Ricreare initramfs](#Ricreare_initramfs)

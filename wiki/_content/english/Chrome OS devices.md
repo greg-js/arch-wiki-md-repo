@@ -12,7 +12,11 @@ This article was created to provide information on how to get Arch installed on 
 
 **Note:** This article describes how to install Arch Linux by activating developer mode. For instructions on how to install Arch Linux in a ChromeOS container without having to enable developer mode see [Crostini](/index.php/Crostini "Crostini")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Introduction](#Introduction)
     *   [1.1 Legacy Boot Mode](#Legacy_Boot_Mode)

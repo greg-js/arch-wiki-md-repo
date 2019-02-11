@@ -10,7 +10,11 @@ Related articles
 
 参见 Simon Tatham 的 [如何有效的报告问题](http://www.chiark.greenend.org.uk/~sgtatham/bugs.html)。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 开始之前](#开始之前)
     *   [1.1 查找重复问题](#查找重复问题)

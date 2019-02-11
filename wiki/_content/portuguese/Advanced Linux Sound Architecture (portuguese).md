@@ -9,7 +9,11 @@ Artigos relacionados
 *   [PulseAudio (Português)](/index.php/PulseAudio_(Portugu%C3%AAs) "PulseAudio (Português)")
 *   [Open Sound System](/index.php/Open_Sound_System "Open Sound System")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Sobre este documento](#Sobre_este_documento)
 *   [2 Instalação](#Instalação)

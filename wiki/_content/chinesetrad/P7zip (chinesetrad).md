@@ -1,6 +1,10 @@
 p7zip 是 [7-Zip](https://en.wikipedia.org/wiki/7zip "wikipedia:7zip") 的 [POSIX](https://en.wikipedia.org/wiki/POSIX "wikipedia:POSIX") 實作，支援Linux。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安裝＆使用](#安裝＆使用)
 *   [2 範例](#範例)

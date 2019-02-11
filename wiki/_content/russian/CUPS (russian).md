@@ -10,7 +10,11 @@
 
 [CUPS](https://www.cups.org/) - это стандартная система печати с открытым исходным кодом, разработанная Apple Inc. для MacOS® и других UNIX®-подобных операционных систем.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Интерфейсы подключения](#Интерфейсы_подключения)

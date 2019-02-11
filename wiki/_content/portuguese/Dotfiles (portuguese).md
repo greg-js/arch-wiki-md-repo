@@ -7,7 +7,11 @@ Artigos relacionados
 
 A configuração de aplicativos específica do usuário é tradicionalmente armazenada nos chamados [*dotfiles*](https://en.wikipedia.org/wiki/dotfile ou [uma ferramenta dedicada](#Ferramentas)) . Além de explicar como gerenciar seus dotfiles, este artigo também contém [uma lista de repositórios de dotfiles](#Repositórios_de_usuários) dos usuários do Arch Linux.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Rastreando dotfiles diretamente com Git](#Rastreando_dotfiles_diretamente_com_Git)
 *   [2 Configuração específica por host](#Configuração_específica_por_host)

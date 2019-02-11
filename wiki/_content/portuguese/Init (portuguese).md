@@ -13,7 +13,11 @@ Os *init scripts* (ou *rc*) são iniciados pelo processo init para garantir a fu
 
 Esses componentes combinam-se com o *sistema* init. Algumas entradas incluem o gerenciador de serviços no processo de inicialização ou possuem scripts de inicialização em relação próxima. Estes inits são abaixo referidos como *integrados*, embora as entradas em diferentes categorias possam depender explicitamente umas das outras.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Inits (integrados)](#Inits_(integrados))
 *   [2 Inits](#Inits)

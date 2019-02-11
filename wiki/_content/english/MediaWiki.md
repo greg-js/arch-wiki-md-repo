@@ -2,7 +2,11 @@
 
 [MediaWiki](https://www.mediawiki.org/wiki/MediaWiki) is a free and open source wiki software written in [PHP](/index.php/PHP "PHP"), originally developed for Wikipedia. It also powers this wiki (see [Special:Version](/index.php/Special:Version "Special:Version") and the [GitHub repository](https://github.com/archlinux/archwiki)).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

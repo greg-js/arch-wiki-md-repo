@@ -9,7 +9,11 @@
 
 Currently not listed on the HP site, but basically a lower-spec version of [HP ENVY 13-ah0003na](https://store.hp.com/UKStore/Merch/Product.aspx?id=4EY21EA&opt=ABU&sel=NTB), i.e. 256 GB SSD, 8GB RAM, Core i5.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Video](#Video)

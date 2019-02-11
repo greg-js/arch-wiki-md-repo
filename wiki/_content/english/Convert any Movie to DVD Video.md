@@ -7,7 +7,11 @@ MEncoder is part of the [mplayer](https://www.archlinux.org/packages/?name=mplay
 
 	*Why another article about this process?* There is a plethora of articles, man pages, and blog entries about how to convert any movie to a standard DVD Video viewable on any hardware DVD player. However, most of those pages focus on one aspect of this process. The point of this article is to summarize most of the available knowledge in only one place.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 The parts of a DVD](#The_parts_of_a_DVD)
 *   [2 The Audio](#The_Audio)
@@ -406,7 +410,7 @@ If just moving the subtitle image is not enough you might want to convert the pi
 For example to convert the pictures from the Ntsc resolution to the Pal one, we write a text file with:
 
 ```
-for d in *.png ;do
+for d in *.png ;do
   convert "$d" -resize '720x575!' +dither -map "$d" tmp.png || break
   mv tmp.png "$d"
   echo "$d"

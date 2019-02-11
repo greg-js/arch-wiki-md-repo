@@ -5,7 +5,11 @@
 
 [NTFS-3G](http://www.tuxera.com/community/ntfs-3g-download/) — свободная реализация файловой системы NTFS с поддержкой записи и чтения данных. Для упрощения разработки и обеспечения лучшей переносимости NTFS-3G использует драйвер файловой системы FUSE.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Ручное монтирование](#Ручное_монтирование)

@@ -16,7 +16,11 @@ The specs of my particular model are:
 | Sensors | STM Sensor hub | **Not Working** | On Windows used for orientation sensing and hard drive drop protection |
 | USB C | AMD xHCI Host Controller | **Not Working** | Data and DP working |
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installing Arch](#Installing_Arch)
 *   [2 Battery and Power Management](#Battery_and_Power_Management)

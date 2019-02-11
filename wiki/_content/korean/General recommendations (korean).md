@@ -7,7 +7,11 @@
 
 이 문서에서는 아치 리눅스 시스템을 향상시키고, 기능을 추가하는 데에 유용하거나 중요한 정보를 다룹니다. 이 문서는 여러분이 [초보자 안내서](/index.php/%EC%B4%88%EB%B3%B4%EC%9E%90_%EC%95%88%EB%82%B4%EC%84%9C "초보자 안내서")나 [설치 안내서](/index.php/%EC%84%A4%EC%B9%98_%EC%95%88%EB%82%B4%EC%84%9C "설치 안내서")를 통해 기본적인 아치 리눅스 설치를 끝낸 뒤라고 가정합니다. [#시스템 관리](#시스템_관리)와 [#패키지 관리](#패키지_관리) 섹션에서 다루는 기본적인 개념들을 *반드시* 이해하고 나서 나머지 항목들을 읽으십시오.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 시스템 관리](#시스템_관리)
     *   [1.1 사용자와 그룹](#사용자와_그룹)

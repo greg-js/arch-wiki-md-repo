@@ -9,7 +9,11 @@ Artículos relacionados
 
 *systemd-networkd* es un demonio del sistema que maneja las configuraciones de red. Detecta y configura los dispositivos de red que aparecen; también puede crear dispositivos de red virtuales. Este servicio puede ser especialmente útil para establecer configuraciones complejas de red para un contenedor manejado por [systemd-nspawn (Español)](/index.php/Systemd-nspawn_(Espa%C3%B1ol) "Systemd-nspawn (Español)") o por maquinas virtuales. Además trabaja bien en conecciones simples.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Uso Básico](#Uso_Básico)
     *   [1.1 Servicios Requeridos e Instalación](#Servicios_Requeridos_e_Instalación)

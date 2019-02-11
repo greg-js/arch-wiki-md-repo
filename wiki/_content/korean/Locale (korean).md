@@ -7,7 +7,11 @@
 
 ```
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 필요한 로캘 활성화](#필요한_로캘_활성화)
     *   [1.1 한국어 예시](#한국어_예시)

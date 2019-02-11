@@ -7,7 +7,11 @@ Related articles
 
 Ten dokument to zbiór popularnych artykułów i przydatnych informacji o dodawaniu funkcjonalności do zainstalowanego systemu Arch. Zakłada się, że czytelnicy przeczytali i wykonali instrukcje zawarte w [Beginners' guide (Polski)](/index.php/Beginners%27_guide_(Polski) "Beginners' guide (Polski)") lub [Installation guide (Polski)](/index.php/Installation_guide_(Polski) "Installation guide (Polski)") i zainstalowali podstawowy system. Zaznajomienie się z informacjami zawartymi w [#Administracja systemem](#Administracja_systemem) i [#Zarządzanie pakietami](#Zarządzanie_pakietami) jest *wymagane* do zrozumienia innych sekcji tej strony i pozostałych stron na wiki.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Administracja systemem](#Administracja_systemem)
     *   [1.1 Użytkownicy i grupy](#Użytkownicy_i_grupy)

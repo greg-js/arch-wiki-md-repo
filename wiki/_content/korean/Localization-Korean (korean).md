@@ -6,7 +6,11 @@
 
 이 문서를 읽기 전에 [X11](/index.php/X11 "X11") 환경을 미리 설치하고 설정하십시오. 이 문서는 콘솔에서 한국어를 입력하는 방법을 다루지 않습니다.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 글꼴](#글꼴)
 *   [2 한글 입력기 고르기](#한글_입력기_고르기)

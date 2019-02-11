@@ -6,7 +6,11 @@ Related articles
 
 ***cron** - классический демон-планировщик задач в UNIX-подобных операционных системах, использующийся для периодического выполнения заданий в определённое время. Регулярные действия описываются инструкциями, помещенными в файлы crontab и в специальные директории.*
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Настройка](#Настройка)
@@ -108,7 +112,7 @@ identity *myself*@myisp.com
        password *"secret"*
        starttls enabled
        default
-mda "/usr/bin/procmail -d %T"
+mda "/usr/bin/procmail -d %T"
 
 ```
 

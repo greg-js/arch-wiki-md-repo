@@ -6,7 +6,11 @@ Artículos relacionados
 
 El [gestor de pantalla](https://en.wikipedia.org/wiki/es:X_Display_Manager y de [entornos de escritorios](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)"). Estos gestores suelen proporcionar un cierto grado de personalización y disponibilidad de temas con cada uno.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Lista de gestores de pantalla](#Lista_de_gestores_de_pantalla)
     *   [1.1 De consola](#De_consola)

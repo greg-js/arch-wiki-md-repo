@@ -15,7 +15,11 @@ Both of them are supported out-the-box by [GNOME](/index.php/GNOME "GNOME") and 
 
 **Note:** If you are using a different environment than [GNOME](/index.php/GNOME "GNOME") or [KDE](/index.php/KDE "KDE") and you are connecting the dock through a thunderbolt connector, you may have to authorize the use of the thunderbolt device before you can use the dock. You can use [bolt](https://www.archlinux.org/packages/?name=bolt) or [tbt](https://aur.archlinux.org/packages/tbt/) to authorize devices. See [Thunderbolt](/index.php/Thunderbolt "Thunderbolt") for more information.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Using dockd](#Using_dockd)
 *   [2 Installing](#Installing)

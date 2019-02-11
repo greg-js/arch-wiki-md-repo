@@ -1,6 +1,10 @@
 [PC Engines](http://pcengines.ch/) is a swiss hardware manufacturer for embedded x86 devices.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 apu2c4](#apu2c4)
     *   [1.1 Hardware](#Hardware)

@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Introduction](#Introduction)
     *   [1.1 Relevant online resources](#Relevant_online_resources)
@@ -476,7 +480,7 @@ Then nothing else happens. Ensure you have the correct drivers installed as well
 Further to this, utilising the `%command%` switch, you can kill standalone compositors (such as Xcompmgr or [Compton](/index.php/Compton "Compton")) - which can cause lag and tearing in some games on some systems - and relaunch them after the game ends by adding the following to your game's launch options.
 
 ```
- killall compton && %command%; compton -b &
+ killall compton && %command%; compton -b &
 
 ```
 
@@ -501,20 +505,20 @@ To be able to play games which require using Nvidia GPU (for example, Hitman 201
 
 Find the game in steam library, right click -> Properties -> SET LAUNCH OPTIONS. Change options to
 
-`primusrun %command%`
+`primusrun %command%`
 
 Running steam with primusrum used to work. While steam has changed some behavior that now running steam with primusrun would not have effect on launching games. As a result, you need to set launch options for each game (and you do NOT have to run steam with primusrun).
 
 For primusrun, VSYNC is enabled by default it could result in a mouse input delay lag, slightly decrease performance and in-game FPS might be locked to a refresh rate of a monitor/display. In order to disable VSYNC for primusrun default value of option vblank_mode needs to be overridden by environment variable.
 
-`vblank_mode=0 primusrun %command%`
+`vblank_mode=0 primusrun %command%`
 
 Same with optirun that uses primus as a bridge.
 
-`vblank_mode=0 optirun -b primus %command%`
+`vblank_mode=0 optirun -b primus %command%`
 
 If that did not work try:
 
-`LD_PRELOAD="libpthread.so.0 libGL.so.1" __GL_THREADED_OPTIMIZATIONS=1 optirun %command%`
+`LD_PRELOAD="libpthread.so.0 libGL.so.1" __GL_THREADED_OPTIMIZATIONS=1 optirun %command%`
 
 For more details see [Bumblebee#Primusrun mouse delay (disable VSYNC)](/index.php/Bumblebee#Primusrun_mouse_delay_(disable_VSYNC) "Bumblebee").

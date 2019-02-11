@@ -4,7 +4,11 @@ Related articles
 
 [rxvt-unicode](http://software.schmorp.de/pkg/rxvt-unicode.html) is a customizable terminal emulator forked from [rxvt](https://en.wikipedia.org/wiki/Rxvt "wikipedia:Rxvt"). Features of rxvt-unicode include international language support through [Unicode](https://en.wikipedia.org/wiki/Unicode "wikipedia:Unicode"), transparency, the ability to display multiple font types and support for [Perl](/index.php/Perl "Perl") extensions.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

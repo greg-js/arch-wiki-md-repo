@@ -16,7 +16,11 @@ Artículos relacionados
 
 **Nota:** en el presente artículo, la expresión `*esp*` indica el punto de montaje de la [partición del sistema EFI (*«EFI system partition»*)](/index.php/EFI_system_partition_(Espa%C3%B1ol) "EFI system partition (Español)") conocida por sus siglas en ingles «**ESP**».
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Sistemas BIOS](#Sistemas_BIOS)
     *   [1.1 Instrucciones específicas para GUID Partition Table (GPT)](#Instrucciones_específicas_para_GUID_Partition_Table_(GPT))

@@ -1,6 +1,10 @@
 The **Logitech Marble Mouse** is a pointing device with four buttons and a trackball, also known as the **Trackman Marble**. The Marble Mouse is usable either left- or right-handed. It requires some configuration to enable scrolling with the trackball. For a detailed image, see: [Logitech Marble Mouse](https://i.imgur.com/4pZrjAV.png) (or [here](https://help.ubuntu.com/community/Logitech_Marblemouse_USB?action=AttachFile&do=get&target=marble-mouse-buttons-names.png)).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Sample Configurations](#Sample_Configurations)

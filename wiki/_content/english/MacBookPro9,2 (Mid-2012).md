@@ -13,7 +13,11 @@ For general help on the install preocedure see the [Installation guide](/index.p
 
 **Note:** Remember to back up your pre-existing OSX installation before proceeding!
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Preparation](#Preparation)
     *   [1.1 Recording UIDs](#Recording_UIDs)
@@ -76,12 +80,12 @@ The following differences will apply to MacBooks:
 ```
 partition  mountpoint  size       type  label
 /dev/sda1  /boot/efi   200MiB     vfat  EFI
-/dev/sda2  -           ?          hfs+  Mac OS X
-/dev/sda3  -           ?          hfs+  Recovery
+/dev/sda2  -           ?          hfs+  Mac OS X
+/dev/sda3  -           ?          hfs+  Recovery
 /dev/sda4  /boot       100MiB     boot  boot
 /dev/sda5  /           10GiB      ext4  root
 /dev/sda6  /home       remaining  ext4  home (optional)
-/dev/sda7  ?           ?          ?     shared (optional)
+/dev/sda7  ?           ?          ?     shared (optional)
 
 ```
 

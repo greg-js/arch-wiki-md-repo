@@ -6,7 +6,11 @@ This page uses a table to display the correspondence of [package management](htt
 
 *   Some of the tools described here are specific to a certain version of pacman. The -Qk option is new in pacman 4.1.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Basic operations](#Basic_operations)
 *   [2 Querying specific packages](#Querying_specific_packages)

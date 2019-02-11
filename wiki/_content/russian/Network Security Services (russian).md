@@ -2,7 +2,11 @@
 
 Приложения, встроенные в NSS, поддерживают [SSL](https://en.wikipedia.org/wiki/ru:SSL "wikipedia:ru:SSL") v2/v3, [TLS](https://en.wikipedia.org/wiki/ru:TLS "wikipedia:ru:TLS"), [PKCS](https://en.wikipedia.org/wiki/ru:PKCS "wikipedia:ru:PKCS") #5/#7/#11/#12, [S/MIME](https://en.wikipedia.org/wiki/ru:S/MIME "wikipedia:ru:S/MIME"), [X.509](https://en.wikipedia.org/wiki/ru:X.509 "wikipedia:ru:X.509") v3, а также прочие стандарты безопасности.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Управление сертификатами](#Управление_сертификатами)

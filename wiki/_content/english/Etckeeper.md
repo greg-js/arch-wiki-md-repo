@@ -5,7 +5,11 @@ Related articles
 
 [Etckeeper](http://etckeeper.branchable.com/) is a collection of tools to keep track of `/etc/` in a repository ([Git](/index.php/Git "Git"), [Mercurial](/index.php/Mercurial "Mercurial"), [Bazaar](/index.php/Bazaar "Bazaar") or [Darcs](/index.php/Darcs "Darcs") are supported). A [pacman hook](/index.php/Pacman_hook "Pacman hook") auto-commits changes before a system-upgrade and file permissions are tracked, which version control does not normally support, but is important for files like [/etc/shadow](/index.php//etc/shadow "/etc/shadow").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

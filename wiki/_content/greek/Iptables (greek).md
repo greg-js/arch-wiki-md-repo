@@ -11,7 +11,11 @@
 
 Το [nftables](/index.php/Nftables "Nftables") βγήκε με [την έκδοση του Linux kernel 3.13](http://www.phoronix.com/scan.php?page=news_item&px=MTQ5MDU), και θα αντικαταστήσει μια μέρα το iptables ως το κύριο εργαλείο του Linux firewall.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Εγκατάσταση](#Εγκατάσταση)
 *   [2 Βασικές έννοιες](#Βασικές_έννοιες)
@@ -254,7 +258,7 @@ Now, say we change our mind about Dropbox and decide to install it on our comput
 ```
 Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
 num   pkts bytes target     prot opt in     out     source               destination
-1        0     0 REJECT     tcp  --  *      *      !10.0.0.85            0.0.0.0/0            tcp dpt:17500 reject-with icmp-port-unreachable
+1        0     0 REJECT     tcp  --  *      *      !10.0.0.85            0.0.0.0/0            tcp dpt:17500 reject-with icmp-port-unreachable
 
 Chain FORWARD (policy DROP 0 packets, 0 bytes)
 num   pkts bytes target     prot opt in     out     source               destination
@@ -282,7 +286,7 @@ So we write a new rule to allow our trusted user immediately. Using `-I` to inse
 Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
 num   pkts bytes target     prot opt in     out     source               destination
 1        0     0 ACCEPT     tcp  --  *      *       10.0.0.85            0.0.0.0/0            tcp dpt:17500 /* Friendly Dropbox */
-2        0     0 REJECT     tcp  --  *      *      !10.0.0.85            0.0.0.0/0            tcp dpt:17500 reject-with icmp-port-unreachable
+2        0     0 REJECT     tcp  --  *      *      !10.0.0.85            0.0.0.0/0            tcp dpt:17500 reject-with icmp-port-unreachable
 
 Chain FORWARD (policy DROP 0 packets, 0 bytes)
 num   pkts bytes target     prot opt in     out     source               destination

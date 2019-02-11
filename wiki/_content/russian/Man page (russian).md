@@ -2,7 +2,11 @@
 
 man-страницы изначально подразумевались как самодостаточные документы. Они ограничены в возможностях ссылаться друг на друга, в отличие от поддерживающих гиперссылки [info-файлов](https://en.wikipedia.org/wiki/Info_(Unix) — попытки GNU создать замену традиционному формату man-страниц.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Доступ к man-страницам](#Доступ_к_man-страницам)
 *   [2 Формат страниц](#Формат_страниц)

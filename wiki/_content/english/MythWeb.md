@@ -1,6 +1,10 @@
 MythWeb is a web interface for [MythTV](/index.php/MythTV "MythTV")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -57,7 +61,7 @@ LoadModule deflate_module modules/mod_deflate.so
 You will also need to enable CGI uncomment the following lines in `httpd.conf`:
 
 ```
-<IfModule !mpm_prefork_module>
+<IfModule !mpm_prefork_module>
         LoadModule cgid_module modules/mod_cgid.so
 </IfModule>
 <IfModule mpm_prefork_module>

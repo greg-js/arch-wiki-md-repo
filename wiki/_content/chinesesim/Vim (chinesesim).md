@@ -6,7 +6,11 @@
 
 [Vim](https://en.wikipedia.org/wiki/Vim_(text_editor) "wikipedia:Vim (text editor)")是一个终端文本编辑器。作为[Vi](https://en.wikipedia.org/wiki/Vi "wikipedia:Vi")的一个扩展版本，它具有以下附加功能：语法突出显示，全面的帮助系统，本地脚本（vimscript），文本选择的可视模式和文件比较（vimdiff）。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 用法](#用法)
@@ -312,7 +316,7 @@ cscope -bq
 let Tlist_Compact_Format = 1
 let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_Close_On_Select = 1
-nnoremap <C-l> :TlistToggle<CR>
+nnoremap <C-l> :TlistToggle<CR>
 
 ```
 

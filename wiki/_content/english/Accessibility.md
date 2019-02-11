@@ -4,7 +4,11 @@ Related articles
 
 There are many different methods of providing accessibility to users that have a physical or visual handicap. However, unless a [desktop environment](/index.php/Desktop_environment "Desktop environment") is used, the configuration might require some tinkering until one gets it right.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Desktop environments](#Desktop_environments)
 *   [2 Independent to specific desktop environments](#Independent_to_specific_desktop_environments)

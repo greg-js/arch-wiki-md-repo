@@ -11,7 +11,11 @@ From the [GTK+ website](https://www.gtk.org/):
 
 GTK+, The GIMP Toolkit, was initially made by the [GNU Project](/index.php/GNU_Project "GNU Project") for [GIMP](/index.php/GIMP "GIMP"), but it is now a very popular toolkit with bindings for many languages. This article will explore the tools used to configure the GTK+ theme, style, icon, font and font size, and also detail manual configuration.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Themes](#Themes)

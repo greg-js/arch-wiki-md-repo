@@ -2,7 +2,11 @@ Related articles
 
 [Transfer More](https://up.sceptique.eu) is an minimalist open-source upload http server to store and share files temporarily, written in [Crystal](/index.php/Crystal "Crystal"), and based on Kemal [[1]](https://kemalcr.com/).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Running](#Running)

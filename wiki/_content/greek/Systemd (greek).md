@@ -14,7 +14,11 @@
 
 **Σημείωση:** Για μια λεπτομερή εξήγηση σχετικά με το γιατί το Arch μετακινήθηκε στο *systemd*, δείτε [αυτήν την ανάρτηση στο forum](https://bbs.archlinux.org/viewtopic.php?pid=1149530#p1149530).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Βασική χρήση της εντολής systemctl](#Βασική_χρήση_της_εντολής_systemctl)
     *   [1.1 Αναλύοντας την κατάσταση του συστήματος](#Αναλύοντας_την_κατάσταση_του_συστήματος)

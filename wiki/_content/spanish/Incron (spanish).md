@@ -3,7 +3,11 @@ Este artículo es una traducción de [Incron](/index.php/Incron "Incron"), revis
 
 [incron](http://inotify.aiken.cz/?section=incron&page=about&lang=en) es un daemon que supervisa los [eventos de sistemas de archivos](/index.php/Autostarting_(Espa%C3%B1ol)#En_eventos_de_sistemas_de_archivos "Autostarting (Español)") y ejecuta los comandos definidos en las tablas del usuario y del sistema.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Activación e inicio automático](#Activación_e_inicio_automático)

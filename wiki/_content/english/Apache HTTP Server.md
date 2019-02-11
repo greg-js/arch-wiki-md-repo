@@ -7,7 +7,11 @@ The [Apache HTTP Server](https://en.wikipedia.org/wiki/Apache_HTTP_Server "wikip
 
 This article describes how to set up Apache and how to optionally integrate it with [PHP](/index.php/PHP "PHP").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -507,7 +511,7 @@ and restart `httpd.service`.
 This can be caused by multiple things. Most common issue being that something is already listening on a given port, check via netstat that this is not happening:
 
 ```
-# netstat -lnp | grep -e :80 -e :443
+# netstat -lnp | grep -e :80 -e :443
 
 ```
 

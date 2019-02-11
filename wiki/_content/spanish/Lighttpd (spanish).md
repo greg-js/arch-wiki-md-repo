@@ -1,6 +1,10 @@
 [Lighttpd](https://www.lighttpd.net/) es un servidor web "seguro, rápido, compatible y muy flexible" que ha sido optimizado para ambientes de alto rendimiento. Consume muy pocos recursos comparado con otros servidores web y se ocupa de balancear el CPU. Sus características avanzadas ([FastCGI](https://en.wikipedia.org/wiki/FastCGI "wikipedia:FastCGI"), [CGI](https://en.wikipedia.org/wiki/Common_Gateway_Interface "wikipedia:Common Gateway Interface"), Auth, entre otras) hacen que lighttpd sea el servidor web perfecto para todos aquellos que sufren problemas de balanceo."
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Configuración](#Configuración)
@@ -329,7 +333,7 @@ Ponga el archivo *test.py* en el directorio raíz de su servidor y no olvide per
 #!/usr/bin/env python2
 
 def myapp(environ, start_response):
-    print 'got request: %s' % environ
+    print 'got request: %s' % environ
     start_response('200 OK', [('Content-Type', 'text/plain')])
     return ['Hello World!']
 

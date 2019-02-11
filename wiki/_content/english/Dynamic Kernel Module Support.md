@@ -4,7 +4,11 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Dynamic_Kernel_Module_Support "wi
 
 This means that a user does not have to wait for a company, project, or package maintainer to release a new version of the module. Since the introduction of [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman"), the rebuild of the modules is handled automatically when a kernel is upgraded.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Upgrades](#Upgrades)

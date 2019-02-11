@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Volume](#Volume)
     *   [1.1 No output](#No_output)
@@ -83,7 +87,7 @@ $ su -c 'python2 hda-analyzer.py'
 The script assumes that `/usr/bin/python` refers to Python 2, which is incorrect on Arch by default. To avoid this issue run the following command:
 
 ```
-$ sed -i 's/python %s/python2 %s/' hda-analyzer.py
+$ sed -i 's/python %s/python2 %s/' hda-analyzer.py
 
 ```
 

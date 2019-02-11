@@ -8,7 +8,11 @@
 
 Os pacotes do [KDE](/index.php/KDE "KDE") no Arch Linux seguem um certo esquema.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Diretório de compilação](#Diretório_de_compilação)
 *   [2 Prefixo de instalação](#Prefixo_de_instalação)

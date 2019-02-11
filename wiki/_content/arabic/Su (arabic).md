@@ -7,7 +7,11 @@ Related articles
 
 طالع [PAM](/index.php/PAM "PAM") لمعرفة الطرق التي يمكن ضبط سلوك *su* بها.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 التثبيت](#التثبيت)
 *   [2 الاستعمال](#الاستعمال)

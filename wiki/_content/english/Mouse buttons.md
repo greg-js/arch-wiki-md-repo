@@ -5,7 +5,11 @@ Related articles
 
 This article describes how to configure a mouse with more than 3 buttons.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Prerequisites](#Prerequisites)
 *   [2 Finding the mouse name](#Finding_the_mouse_name)
@@ -469,7 +473,7 @@ device  2: /dev/input/event2: Sleep Button
 device  3: /dev/input/event3: Power Button
 device  4: /dev/input/event4: Power Button
 device  5: /dev/input/event5: PC Speaker
-Display name: :0.0
+Display name: :0.0
 
 ```
 

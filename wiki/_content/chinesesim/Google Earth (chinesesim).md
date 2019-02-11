@@ -4,7 +4,11 @@
 
 *"Google Earth可以让您在一个虚拟的地球上随意的旅行并观看卫星影像,地形,地图,3D建筑等元素. 随着Google earth中地理内容的丰富, 您将能探索更真实的世界，并能够飞到您最喜欢的地方, 搜索商户或者只是用于导航。"*
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 故障处理](#故障处理)

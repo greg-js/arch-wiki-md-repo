@@ -9,7 +9,11 @@ Related articles
 
 **Bash** (Bourne-again Shell) - это [оболочка командной строки](/index.php/Command-line_shell_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Command-line shell (Русский)")/язык программирования, созданная [GNU Project](/index.php/GNU_Project "GNU Project"). Название является отсылкой к предшественнику - давно устаревшей Bourne shell. Bash можно запустить на большинстве UNIX-like систем, включая GNU/Linux.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Обращение к Bash](#Обращение_к_Bash)
     *   [1.1 Файлы настроек](#Файлы_настроек)

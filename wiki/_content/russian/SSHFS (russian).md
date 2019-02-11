@@ -10,7 +10,11 @@
 
 [SSHFS](https://github.com/libfuse/sshfs) - клиент файловой системы на основе FUSE для монтирования удаленных каталогов через подключение [SSH](/index.php/SSH_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "SSH (Русский)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
     *   [1.1 Монтирование](#Монтирование)

@@ -6,7 +6,11 @@ For more information: [https://www.3dconnexion.com/products/spacemouse.html#pane
 
 **Note:** The following instructions have been tested and proven to work on the most basic model (Space Navigator).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Proprietary drivers](#Proprietary_drivers)
 *   [2 Open Source Drivers](#Open_Source_Drivers)

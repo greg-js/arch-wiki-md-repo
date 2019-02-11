@@ -11,7 +11,11 @@ Related articles
 
 Wordpress的最大特性是易于配置与管理。[搭建WordPress将使用5分钟（实际上远远不止）](http://codex.wordpress.org/Installing_WordPress). WordPress管理面板允许用户轻松地配置其网站的几乎每个方面，包括获取和安装插件和主题。WordPress提供方便的自动更新。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
     *   [1.1 使用pacman安装](#使用pacman安装)

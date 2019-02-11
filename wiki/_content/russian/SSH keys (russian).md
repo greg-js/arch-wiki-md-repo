@@ -6,7 +6,11 @@
 
 У метода использования ключей SSH есть определенные недостатки, и он подходит не для всех, но при этом во многих случаях он может предложить несколько существенных преимуществ. Общее понимание того, как работают ключи SSH, поможет вам решить, как и когда применять их для удовлетворения ваших потребностей. Если вы собираетесь читать эту статью, предполагается, что вы уже знаете основы работы протокола [Secure Shell](/index.php/Secure_Shell_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Secure Shell (Русский)") и [установили](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [openssh](https://www.archlinux.org/packages/?name=openssh).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Описание](#Описание)
 *   [2 Генерация пары ключей SSH](#Генерация_пары_ключей_SSH)

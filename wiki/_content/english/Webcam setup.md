@@ -2,7 +2,11 @@ This is a guide to setting up your webcam in Arch Linux.
 
 Most probably your webcam will work out of the box. Permissions to access video devices (e.g. `/dev/video0`) are handled by [udev](/index.php/Udev "Udev"), there is no configuration necessary.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Loading](#Loading)
 *   [2 Configuration](#Configuration)
@@ -17,7 +21,6 @@ Most probably your webcam will work out of the box. Permissions to access video 
     *   [4.2 Microsoft Lifecam Studio/Cinema](#Microsoft_Lifecam_Studio/Cinema)
     *   [4.3 Skype](#Skype)
     *   [4.4 Check bandwidth used by USB webcams](#Check_bandwidth_used_by_USB_webcams)
-    *   [4.5 Groups](#Groups)
 
 ## Loading
 
@@ -79,14 +82,14 @@ $ xawtv -nodga
 [VLC](/index.php/VLC "VLC") can also be used to view and record your webcam. In VLC's "Media" menu, open the 'Capture Device...' dialog and enter the video and audio device files. Or from the command line, do:
 
 ```
-$ vlc v4l:// :v4l-vdev="/dev/video0" :v4l-adev="/dev/audio2"
+$ vlc v4l:// :v4l-vdev="/dev/video0" :v4l-adev="/dev/audio2"
 
 ```
 
 This will make VLC mirror your webcam. To take stills, simply choose 'Snapshot' in the 'Video' menu. To record the stream, you add a `--sout` argument, e.g.
 
 ```
-$ vlc v4l:// :v4l-vdev="/dev/video0" :v4l-adev="/dev/audio2" \ 
+$ vlc v4l:// :v4l-vdev="/dev/video0" :v4l-adev="/dev/audio2" \ 
   --sout "#transcode{vcodec=mp1v,vb=1024,scale=1,acodec=mpga,ab=192,channels=2}:duplicate{dst=std{access=file,mux=mpeg1,dst=/tmp/test.mpg}}"
 
 ```
@@ -94,7 +97,7 @@ $ vlc v4l:// :v4l-vdev="/dev/video0" :v4l-adev="/dev/audio2" \
 (Obviously a bit overkill with regard to the bit rates but it is fine for testing purposes.) Notice that this will not produce a mirror on the display - in order to see what you are recording, you would need to add the display as a destination to the argument:
 
 ```
-... :duplicate{dst=display,dst=std{access= ....
+... :duplicate{dst=display,dst=std{access= ....
 
 ```
 
@@ -194,7 +197,3 @@ When testing the webcam, note the following:
 ### Check bandwidth used by USB webcams
 
 When running multiple webcams on a single USB bus, they may saturate the bandwidth of the USB bus and not work properly. You can diagnose this with the *usbtop* tool from the [usbtop](https://aur.archlinux.org/packages/usbtop/) package.
-
-### Groups
-
-If the system is telling you it cannot find the device, this may be because you are not part of the `video` group. Check to make sure you are part of the group `video` using `groups`. If not, add yourself by using `gpasswd`.

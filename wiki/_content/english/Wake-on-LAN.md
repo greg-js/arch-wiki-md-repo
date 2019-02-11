@@ -1,6 +1,10 @@
 [Wake-on-LAN](https://en.wikipedia.org/wiki/Wake-on-LAN "wikipedia:Wake-on-LAN") (WoL) is a feature to switch on a computer via the network.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Hardware settings](#Hardware_settings)
 *   [2 Software configuration](#Software_configuration)
@@ -93,12 +97,12 @@ This is an equivalent of previous `systemd.link` option, but uses a standalone s
  `/etc/systemd/system/wol@.service` 
 ```
 [Unit]
-Description=Wake-on-LAN for %i
+Description=Wake-on-LAN for %i
 Requires=network.target
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/ethtool -s %i wol g
+ExecStart=/usr/bin/ethtool -s %i wol g
 Type=oneshot
 
 [Install]
@@ -114,8 +118,6 @@ Alternatively install the [wol-systemd](https://aur.archlinux.org/packages/wol-s
  `/etc/udev/rules.d/**81**-wol.rules`  `ACTION=="add", SUBSYSTEM=="net", NAME=="enp*", RUN+="/usr/bin/ethtool -s $name wol g"` 
 
 The `$name` placeholder will be replaced by the value of the `NAME` variable for the matched device.
-
-**Note:** [udev](/index.php/Udev "Udev") will match the device as soon it becomes available, be this in the [initramfs](/index.php/Initramfs "Initramfs") (before the switch_root) or the main system. The order is not deterministic; there is no guarantee. Be sure that your initramfs includes the necessary udev rules (from `/etc/udev/rules.d`) and supporting binaries (`/usr/bin/ethtool`).
 
 #### cron
 

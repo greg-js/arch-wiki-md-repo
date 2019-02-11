@@ -4,7 +4,11 @@ Artículos relacionados
 
 [Firefox](http://www.firefox.com) es un popular proyecto open-source, es el navegador web de [Mozilla](http://www.mozilla.com).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Add-ons](#Add-ons)
@@ -346,7 +350,7 @@ https://duckduckgo.com/?q=!
 
 ```
 
-El último caracter es un espacio ' '. Es necesario porque si no lo pone, se convertirá en un !Bang.
+El último caracter es un espacio ' '. Es necesario porque si no lo pone, se convertirá en un !Bang.
 
 ### El diálogo "Desea que Firefox guarde sus pestañas para la próxima vez?" no aparece
 

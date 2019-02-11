@@ -20,7 +20,11 @@
 
 Xorg 在 Linux 用户中非常流行，已经成为图形用户程序的必备条件，所以大部分发行版都提供了它。详情参见 [Xorg](https://en.wikipedia.org/wiki/X.Org_Server "wikipedia:X.Org Server") 维基文章或访问[Xorg 网站](http://www.x.org/wiki/)。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
     *   [1.1 驱动安装](#驱动安装)
@@ -159,13 +163,13 @@ Xorg 可以通过 `/etc/X11/xorg.conf` 或 `/etc/xorg.conf` 和位于 `/etc/X11/
 可用通过 `/etc/X11/xorg.conf` 或 `/etc/xorg.conf` 配置 Xorg，用下面命令可用生成 `xorg.conf` 模板:
 
 ```
-# Xorg :0 -configure
+# Xorg :0 -configure
 
 ```
 
 执行后会在 `/root/` 生成 `xorg.conf.new` 文件。
 
-**Tip:** 如果以及运行了 X 服务器，请使用不同的 display，例如 `Xorg :2 -configure`.
+**Tip:** 如果以及运行了 X 服务器，请使用不同的 display，例如 `Xorg :2 -configure`.
 
 显卡的专有驱动可能也提供了自动配置 Xorg 的工具，详情请参考 [NVIDIA](/index.php/NVIDIA "NVIDIA") 或 [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst")。
 
@@ -412,7 +416,7 @@ $ man Xserver
 To run a nested session of another desktop environment:
 
 ```
-$ /usr/bin/Xnest :1 -geometry 1024x768+0+0 -ac -name Windowmaker & wmaker -display :1
+$ /usr/bin/Xnest :1 -geometry 1024x768+0+0 -ac -name Windowmaker & wmaker -display :1
 
 ```
 

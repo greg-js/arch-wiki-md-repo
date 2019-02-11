@@ -2,7 +2,11 @@ Processor manufacturers release stability and security updates to the processor 
 
 Users of CPUs belonging to the Intel Haswell and Broadwell processor families in particular must install these microcode updates to ensure system stability. But all users should install the updates as a matter of course.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Enabling early microcode updates](#Enabling_early_microcode_updates)

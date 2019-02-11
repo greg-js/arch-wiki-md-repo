@@ -18,7 +18,11 @@ O sistema de compilação do Arch *(Arch build system)* é um sistema *tipo port
 
 ABS é um conceito similar. ABS é feito de uma árvore de diretórios que pode ser obtida (*checkout*) usando o SVN. Essa árvore representa, mas não contém, todos os softwares oficiais do Arch. Subdiretórios não contêm o pacote de software nem o fonte, e sim um arquivo [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") e, algumas vezes, outros arquivos. Ao executar [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") dentro de um diretório contendo um PKGBUILD, o software é primeiro compilado e então empacotado dentro do diretório de compilação. Então, você pode usar [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") para instalar ou atualizar seu novo pacote.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Visão geral de ABS](#Visão_geral_de_ABS)
     *   [1.1 Árvore SVN](#Árvore_SVN)

@@ -13,7 +13,11 @@ GRUB2 – [мультисистемный](https://ru.wikipedia.org/wiki/Multibo
 
 [GRUB2](http://www.gnu.org/software/grub/grub.html) - не путать с [GRUB Legacy](/index.php/GRUB_Legacy_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GRUB Legacy (Русский)") - это новая ветка загрузчика GRUB, GRand Uniform Bootloader. GRUB2 не использует код старой ветки GRUB (GRUB Legacy), и создан на основе проекта [PUPA](http://www.nongnu.org/pupa/).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Предисловие](#Предисловие)
     *   [1.1 Замечание для текущих и бывших пользователей GRUB Legacy](#Замечание_для_текущих_и_бывших_пользователей_GRUB_Legacy)

@@ -18,7 +18,11 @@ Arch 中的电源管理包含两个主要部分：
     *   [udev](/index.php/Udev "Udev") rules
 2.  配置用户空间工具，这些工具与内核交互，很多用户空间的工具，配置界面更友好。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 用户空间工具](#用户空间工具)
 *   [2 用 systemd 进行电源管理](#用_systemd_进行电源管理)
@@ -276,10 +280,10 @@ systemd 会同时执行所有脚本。
 case $1/$2 in
   pre/*)
     echo "进入 $2 状态..."
-    ;;
+    ;;
   post/*)
     echo "从 $2 状态唤醒..."
-    ;;
+    ;;
 esac
 ```
 

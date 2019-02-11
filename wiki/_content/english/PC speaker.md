@@ -9,7 +9,11 @@ Sounds from the computer can be heard from the built-in case speaker, the speake
 
 **Note:** The sounds are caused by the BIOS (Basic Input/Output System), the OS (Operating System), the DE (Desktop Environment), or various software programs. The BIOS is a particularly troublesome problem because it is kept inside an EPROM chip on the motherboard, and the only direct control the user has is by turning the power on or off. Unless the BIOS setup has a setting you can adjust or you wish to attempt to reprogram that chip with the proper light source, it is not likely you will be able to change it at all. BIOS-generated beep sounds are not addressed here, except to say that unplugging your computer case speaker will stop all such sounds from being heard. (Do so at your own risk.)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Disable PC Speaker](#Disable_PC_Speaker)
     *   [1.1 Globally](#Globally)

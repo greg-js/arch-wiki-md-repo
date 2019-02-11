@@ -6,7 +6,11 @@
 
 Это означает, что пользователь может не ждать, пока какая-то компания, проект или сопроводитель пакета выпустит новую версию модуля. После введения [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman") пересборка модулей осуществляется автоматически во время обновления ядра.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Обновления](#Обновления)

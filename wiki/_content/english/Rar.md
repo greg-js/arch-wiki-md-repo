@@ -1,6 +1,10 @@
 RAR (and UNRAR) is the Linux port of the commandline-only version of [WinRAR](http://www.rarlab.com/download.htm) available in both the i686 and x86-64 flavors.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Key features](#Key_features)
 *   [2 Installation](#Installation)

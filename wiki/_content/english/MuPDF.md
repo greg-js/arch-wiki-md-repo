@@ -9,7 +9,11 @@ The renderer in MuPDF is tailored for high quality anti-aliased graphics. It ren
 
 MuPDF supports all static functions required by PDF 1.7 and is a lightweight alternative to poppler based pdf applications.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)

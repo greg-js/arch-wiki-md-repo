@@ -10,7 +10,11 @@
 
 本文主要包括 [加固](https://en.wikipedia.org/wiki/Hardening_(computing) Arch Linux 系统的常用建议与最佳实践。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 基本概念](#基本概念)
 *   [2 密码](#密码)
@@ -376,17 +380,17 @@ auth		required	pam_wheel.so use_uid
 
  `linux-hardened` 
 ```
-Anonymous mapping randomization test     : 32 quality bits (guessed)
-Heap randomization test (ET_EXEC)        : 26 quality bits (guessed)
-Heap randomization test (PIE)            : 40 quality bits (guessed)
-Main executable randomization (ET_EXEC)  : No randomization
-Main executable randomization (PIE)      : 32 quality bits (guessed)
-Shared library randomization test        : 32 quality bits (guessed)
-VDSO randomization test                  : 32 quality bits (guessed)
-Stack randomization test (SEGMEXEC)      : 40 quality bits (guessed)
-Stack randomization test (PAGEEXEC)      : 40 quality bits (guessed)
-Arg/env randomization test (SEGMEXEC)    : 44 quality bits (guessed)
-Arg/env randomization test (PAGEEXEC)    : 44 quality bits (guessed)
+Anonymous mapping randomization test     : 32 quality bits (guessed)
+Heap randomization test (ET_EXEC)        : 26 quality bits (guessed)
+Heap randomization test (PIE)            : 40 quality bits (guessed)
+Main executable randomization (ET_EXEC)  : No randomization
+Main executable randomization (PIE)      : 32 quality bits (guessed)
+Shared library randomization test        : 32 quality bits (guessed)
+VDSO randomization test                  : 32 quality bits (guessed)
+Stack randomization test (SEGMEXEC)      : 40 quality bits (guessed)
+Stack randomization test (PAGEEXEC)      : 40 quality bits (guessed)
+Arg/env randomization test (SEGMEXEC)    : 44 quality bits (guessed)
+Arg/env randomization test (PAGEEXEC)    : 44 quality bits (guessed)
 Offset to library randomisation (ET_EXEC): 32 quality bits (guessed)
 Offset to library randomisation (ET_DYN) : 34 quality bits (guessed)
 Randomization under memory exhaustion @~0: 32 bits (guessed)
@@ -395,17 +399,17 @@ Randomization under memory exhaustion @0 : 32 bits (guessed)
 ```
  `linux` 
 ```
-Anonymous mapping randomization test     : 28 quality bits (guessed)
-Heap randomization test (ET_EXEC)        : 13 quality bits (guessed)
-Heap randomization test (PIE)            : 28 quality bits (guessed)
-Main executable randomization (ET_EXEC)  : No randomization
-Main executable randomization (PIE)      : 28 quality bits (guessed)
-Shared library randomization test        : 28 quality bits (guessed)
-VDSO randomization test                  : 20 quality bits (guessed)
-Stack randomization test (SEGMEXEC)      : 30 quality bits (guessed)
-Stack randomization test (PAGEEXEC)      : 30 quality bits (guessed)
-Arg/env randomization test (SEGMEXEC)    : 22 quality bits (guessed)
-Arg/env randomization test (PAGEEXEC)    : 22 quality bits (guessed)
+Anonymous mapping randomization test     : 28 quality bits (guessed)
+Heap randomization test (ET_EXEC)        : 13 quality bits (guessed)
+Heap randomization test (PIE)            : 28 quality bits (guessed)
+Main executable randomization (ET_EXEC)  : No randomization
+Main executable randomization (PIE)      : 28 quality bits (guessed)
+Shared library randomization test        : 28 quality bits (guessed)
+VDSO randomization test                  : 20 quality bits (guessed)
+Stack randomization test (SEGMEXEC)      : 30 quality bits (guessed)
+Stack randomization test (PAGEEXEC)      : 30 quality bits (guessed)
+Arg/env randomization test (SEGMEXEC)    : 22 quality bits (guessed)
+Arg/env randomization test (PAGEEXEC)    : 22 quality bits (guessed)
 Offset to library randomisation (ET_EXEC): 28 quality bits (guessed)
 Offset to library randomisation (ET_DYN) : 28 quality bits (guessed)
 Randomization under memory exhaustion @~0: 28 bits (guessed)
@@ -417,17 +421,17 @@ Randomization under memory exhaustion @0 : 28 bits (guessed)
 
  `linux-hardened` 
 ```
-Anonymous mapping randomization test     : 16 quality bits (guessed)
-Heap randomization test (ET_EXEC)        : 22 quality bits (guessed)
-Heap randomization test (PIE)            : 27 quality bits (guessed)
-Main executable randomization (ET_EXEC)  : No randomization
-Main executable randomization (PIE)      : 18 quality bits (guessed)
-Shared library randomization test        : 16 quality bits (guessed)
-VDSO randomization test                  : 16 quality bits (guessed)
-Stack randomization test (SEGMEXEC)      : 24 quality bits (guessed)
-Stack randomization test (PAGEEXEC)      : 24 quality bits (guessed)
-Arg/env randomization test (SEGMEXEC)    : 28 quality bits (guessed)
-Arg/env randomization test (PAGEEXEC)    : 28 quality bits (guessed)
+Anonymous mapping randomization test     : 16 quality bits (guessed)
+Heap randomization test (ET_EXEC)        : 22 quality bits (guessed)
+Heap randomization test (PIE)            : 27 quality bits (guessed)
+Main executable randomization (ET_EXEC)  : No randomization
+Main executable randomization (PIE)      : 18 quality bits (guessed)
+Shared library randomization test        : 16 quality bits (guessed)
+VDSO randomization test                  : 16 quality bits (guessed)
+Stack randomization test (SEGMEXEC)      : 24 quality bits (guessed)
+Stack randomization test (PAGEEXEC)      : 24 quality bits (guessed)
+Arg/env randomization test (SEGMEXEC)    : 28 quality bits (guessed)
+Arg/env randomization test (PAGEEXEC)    : 28 quality bits (guessed)
 Offset to library randomisation (ET_EXEC): 18 quality bits (guessed)
 Offset to library randomisation (ET_DYN) : 16 quality bits (guessed)
 Randomization under memory exhaustion @~0: 18 bits (guessed)
@@ -436,17 +440,17 @@ Randomization under memory exhaustion @0 : 18 bits (guessed)
 ```
  `linux` 
 ```
-Anonymous mapping randomization test     : 8 quality bits (guessed)
-Heap randomization test (ET_EXEC)        : 13 quality bits (guessed)
-Heap randomization test (PIE)            : 13 quality bits (guessed)
-Main executable randomization (ET_EXEC)  : No randomization
-Main executable randomization (PIE)      : 8 quality bits (guessed)
-Shared library randomization test        : 8 quality bits (guessed)
-VDSO randomization test                  : 8 quality bits (guessed)
-Stack randomization test (SEGMEXEC)      : 19 quality bits (guessed)
-Stack randomization test (PAGEEXEC)      : 19 quality bits (guessed)
-Arg/env randomization test (SEGMEXEC)    : 11 quality bits (guessed)
-Arg/env randomization test (PAGEEXEC)    : 11 quality bits (guessed)
+Anonymous mapping randomization test     : 8 quality bits (guessed)
+Heap randomization test (ET_EXEC)        : 13 quality bits (guessed)
+Heap randomization test (PIE)            : 13 quality bits (guessed)
+Main executable randomization (ET_EXEC)  : No randomization
+Main executable randomization (PIE)      : 8 quality bits (guessed)
+Shared library randomization test        : 8 quality bits (guessed)
+VDSO randomization test                  : 8 quality bits (guessed)
+Stack randomization test (SEGMEXEC)      : 19 quality bits (guessed)
+Stack randomization test (PAGEEXEC)      : 19 quality bits (guessed)
+Arg/env randomization test (SEGMEXEC)    : 11 quality bits (guessed)
+Arg/env randomization test (PAGEEXEC)    : 11 quality bits (guessed)
 Offset to library randomisation (ET_EXEC): 8 quality bits (guessed)
 Offset to library randomisation (ET_DYN) : 13 quality bits (guessed)
 Randomization under memory exhaustion @~0: No randomization

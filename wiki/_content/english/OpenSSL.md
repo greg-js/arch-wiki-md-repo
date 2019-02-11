@@ -6,7 +6,11 @@ Related articles
 
 **Warning:** Collaborated research into OpenSSL protocol usage, published in May 2015, showed further significant risks for SSL connections; named "Logjam" attack. See [https://weakdh.org/](https://weakdh.org/) for results and [https://weakdh.org/sysadmin.html](https://weakdh.org/sysadmin.html) for suggested server-side configuration changes.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

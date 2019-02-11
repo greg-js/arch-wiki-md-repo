@@ -9,7 +9,11 @@ From the [Wikipedia article](https://en.wikipedia.org/wiki/Java_(programming_lan
 
 Arch Linux officially supports the open source [OpenJDK](https://openjdk.java.net/) versions 7, 8, 10, and 11\. All these JVM can be installed without conflict and switched between using helper script `archlinux-java`. Several other Java environments are available in [AUR](/index.php/AUR "AUR") but are not officially supported.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 OpenJDK](#OpenJDK)

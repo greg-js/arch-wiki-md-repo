@@ -2,7 +2,11 @@
 
 Esse artigo cobre softwares corretores/[verificadores ortográficos](https://en.wikipedia.org/wiki/pt:Corretor_ortogr%C3%A1fico "wikipedia:pt:Corretor ortográfico") e [verificadores gramaticais](https://en.wikipedia.org/wiki/pt:Corretor_gramatical "wikipedia:pt:Corretor gramatical").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Verificadores ortográficos](#Verificadores_ortográficos)
     *   [1.1 Específico do idioma](#Específico_do_idioma)

@@ -1,6 +1,10 @@
 Arch Linux è una distribuzione GNU/Linux indipendente, sviluppata per un uso general-purpose, rilasciata per l'architettura [x86-64](https://en.wikipedia.org/wiki/it:x86-64 "wikipedia:it:x86-64"). La versione dei pacchetti disponibili per Arch Linux tende a essere sempre l'ultima stabile possibile. Il modello di sviluppo seguito è il rolling release. L'installazione di default è molto minimale, sarà poi l'utente a decidere come dovrà prendere forma il proprio sistema.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Pricipi](#Pricipi)
     *   [1.1 Semplicità](#Semplicità)

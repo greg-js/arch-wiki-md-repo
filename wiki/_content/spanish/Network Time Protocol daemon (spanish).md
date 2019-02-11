@@ -11,7 +11,11 @@ Artículos relacionados
 
 En este artículo se describe, además, cómo configurar y ejecutar el demonio NTP, tanto como cliente, así como servidor.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Configuración](#Configuración)

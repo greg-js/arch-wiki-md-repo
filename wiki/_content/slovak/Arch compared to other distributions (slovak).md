@@ -1,6 +1,10 @@
 Táto stránka zhrňuje niektoré podobnosti a rozdiely medzi Archom a ostatnými distribúciami. Táto otázka sa opakovane objavuje a bolo by pekné mať štandardné reakcie. Prosím, majte na pamäti: najlepším spôsobom ako porovnať Arch s ostatnými distribúciami je, že si ho nainštalujete a vyskúšate sami. Arch má vynikajúcu používateľskú komunitu, ktorá vždy rada ochotne pomôže novým používateľom. Účelom zhrnutí uvedených nižšie je iba dať vám dostatok informácií, aby ste sa rozhodli, či je Arch naozaj pre vás.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Arch vs Gentoo](#Arch_vs_Gentoo)
 *   [2 Arch vs Slackware](#Arch_vs_Slackware)

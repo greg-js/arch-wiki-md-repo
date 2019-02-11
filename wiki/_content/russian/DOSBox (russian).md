@@ -2,7 +2,11 @@
 
 [DOSBox](https://www.dosbox.com/) — эмулятор ПК со встроенным окружением DOS, предназначенный для запуска старых DOS-игр и программ.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Настройка](#Настройка)

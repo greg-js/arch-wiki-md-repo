@@ -1,6 +1,10 @@
 [애비워드](http://www.abisource.com/)는 [LibreOffice](/index.php/LibreOffice "LibreOffice") 라이터와 비슷한 워드프로세서로 다양한 기능을 제공하는 동시에 더 가볍다. 애비워드는 ODF, MS 워드 문서, 워드퍼펙트 문서, RTF, HTML 등 많은 표준 문서 형식을 지원한다.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 설치](#설치)
 *   [2 템플릿](#템플릿)

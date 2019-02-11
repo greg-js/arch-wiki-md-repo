@@ -1,6 +1,10 @@
 **Tor** ([ang.](/index.php?title=J%C4%99zyk_angielski&action=edit&redlink=1 "Język angielski (page does not exist)") **The Onion Router**) – wirtualna sieć komputerowa implementująca trasowanie cebulowe drugiej generacji. Sieć zapobiega analizie ruchu sieciowego i w konsekwencji zapewnia użytkownikom prawie anonimowy dostęp do zasobów Internet
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Wprowadzenie](#Wprowadzenie)
 *   [2 Instalacja](#Instalacja)
@@ -371,7 +375,7 @@ W magazynie archim, pacman ufaj tylko kluczom, które są podpisane przez ciebie
  `/etc/pacman.conf` 
 ```
 ...
-XferCommand = /usr/bin/curl --socks5-hostname localhost:9050 -C - -f %u > %o
+XferCommand = /usr/bin/curl --socks5-hostname localhost:9050 -C - -f %u > %o
 ...
 ```
 

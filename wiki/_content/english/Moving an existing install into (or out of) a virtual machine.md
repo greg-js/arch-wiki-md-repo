@@ -7,7 +7,11 @@ Related articles
 
 This article describes how to transfer your current Arch Linux installation in or out of a virtual environment (i.e. QEMU, VirtualBox, VMware). A virtual machine ("VM", for short) uses different hardware, which needs to be addressed by re-generating the initramfs image and possibly adjusting the fstab – especially if it is an [SSD](/index.php/SSD "SSD").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Moving out of a VM](#Moving_out_of_a_VM)
     *   [1.1 Set up a shared folder](#Set_up_a_shared_folder)

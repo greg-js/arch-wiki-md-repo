@@ -10,7 +10,11 @@ For a more complete comparison, see [w:Comparison of operating systems](https://
 
 In all of the following only Arch Linux is compared with other distributions. Community ports that support architectures other than x86_64 can be found listed among the [Arch-based distributions](/index.php/Arch-based_distributions "Arch-based distributions").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Source-based](#Source-based)
     *   [1.1 CRUX](#CRUX)

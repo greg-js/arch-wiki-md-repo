@@ -16,7 +16,11 @@ dm-crypt es el [mapeador de dispositivos](https://en.wikipedia.org/wiki/device_m
 
 	un subsistema de cifrado de discos que provee cifrado transparente de dispositivos de bloque en [el] kernel de Linux... [El mismo] es implementado como un soporte para mapear dispositivos y puede ser apilado sobre otras estructuras del mapeador de dispositivos. De este modo, puede cifrar discos completos (incluidos medios extraíbles), particiones, volúmenes RAID por software, volúmenes lógicos y archivos. Se muestra como un dispositivo de bloque, que se puede utilizar para respaldar sistemas de archivos, espacios de intercambio o como un volumen físico LVM.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Escenarios comunes](#Escenarios_comunes)
 *   [2 Preparar la unidad](#Preparar_la_unidad)

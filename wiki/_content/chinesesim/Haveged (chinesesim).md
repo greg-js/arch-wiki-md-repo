@@ -8,7 +8,11 @@ Related articles
 
 {{警告|此程序无法保证熵的质量([[1]](https://lwn.net/Articles/525459/)，[[2]](http://security.stackexchange.com/questions/34523/is-it-appropriate-to-use-haveged-as-a-source-of-entropy-on-virtual-machines)). 如果对安全要求较高，请考虑使用硬件随机数生成器 [rng-tools](https://www.archlinux.org/packages/?name=rng-tools).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 检查当前的熵](#检查当前的熵)

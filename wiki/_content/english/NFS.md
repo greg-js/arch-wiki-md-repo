@@ -12,7 +12,11 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Network_File_System "wikipedia:Ne
 *   Unlike [Samba](/index.php/Samba "Samba"), NFS doesn't have any user authentication by default, client access is restricted by their IP-address/[hostname](/index.php/Hostname "Hostname").
 *   NFS expects the [user](/index.php/User "User") and/or [user group](/index.php/User_group "User group") ID's are the same on both the client and server. It is however possible to overrule the UID/GID by using `anonuid`/`anongid` with `all_squash` in `/etc/exports`.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

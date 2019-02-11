@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Hardware](#Hardware)
 *   [2 Installation](#Installation)
@@ -19,21 +23,21 @@
 
 ```
 HARDWARE DETECT ver 4.8.2 (simple mode)
- Kernel     : 2.6.19-ARCH
+ Kernel     : 2.6.19-ARCH
  CPU & Cache:
   Processor 0 is Genuine Intel(R) CPU T2600  @ 2.16GHz 2161MHz, 2048 KB Cache
   Processor 1 is Genuine Intel(R) CPU T2600  @ 2.16GHz 2161MHz, 2048 KB Cache
- Soundcard  : No sound card
- Video      : nVidia Corp.|Quadro NVS 110M / GeForce Go 7300 server: Xorg (vesa)  
- Driver     : xf86-video-vesa 
- Monitor    : Generic Monitor  H: 28.0-96.0kHz V: 50.0-75.0Hz
- Mouse      : Generic PS/2 Wheel Mouse xtype: PS2 device: /dev/psaux
+ Soundcard  : No sound card
+ Video      : nVidia Corp.|Quadro NVS 110M / GeForce Go 7300 server: Xorg (vesa)  
+ Driver     : xf86-video-vesa 
+ Monitor    : Generic Monitor  H: 28.0-96.0kHz V: 50.0-75.0Hz
+ Mouse      : Generic PS/2 Wheel Mouse xtype: PS2 device: /dev/psaux
  Drive(scsi): SCSI device sda: 234441648 512-byte hdwr sectors (120034 MB)
   SCSI device sda: 234441648 512-byte hdwr sectors (120034 MB)
- USB        : Intel Corp.|I/O Controller Hub UHCI USB #1 module: unknown
- Ethernet   : Broadcom Corp.|NetXtreme BCM5752 Gigabit Ethernet PCI Express module: tg3 device:   eth0
+ USB        : Intel Corp.|I/O Controller Hub UHCI USB #1 module: unknown
+ Ethernet   : Broadcom Corp.|NetXtreme BCM5752 Gigabit Ethernet PCI Express module: tg3 device:   eth0
   eth1 
- Network    : Broadcom Corp.|NetXtreme BCM5752 Gigabit Ethernet PCI Express module: unknown 
+ Network    : Broadcom Corp.|NetXtreme BCM5752 Gigabit Ethernet PCI Express module: unknown 
  PCMCIA slot: O2Micro Inc.|OZ6912 CardBus Controller module: yenta_socket
 
 ```

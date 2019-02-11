@@ -2,7 +2,11 @@
 
 ReadyMedia is a simple, lightweight alternative to [MediaTomb](/index.php/MediaTomb "MediaTomb"), but has fewer features. It does not have a web interface for administration and must be configured by editing a text file.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration and starting](#Configuration_and_starting)

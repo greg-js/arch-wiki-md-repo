@@ -6,7 +6,11 @@ Related articles
 
 Šis dokumentas tai anotuotas populiarių straipsnių ir svarbios informacijos indeksas skirtas pagerinti ir pridėti funkcionalumo įdiegtai Arch sistemai. Daroma prielaida, kad skaitytojai perskaitė ir sekdami [diegimo gidą](/index.php/Installation_guide_(Lietuvi%C5%A1kai) "Installation guide (Lietuviškai)") įsidiegė Arch Linux. Kitų skyrių, bei kitų straipsnių supratimui ir sekimui *reikalinga* perskaityti ir suprasti sąvokas esančias [#Sistemos administravimas](#Sistemos_administravimas) bei [#Paketų valdymas](#Paketų_valdymas).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Sistemos administravimas](#Sistemos_administravimas)
     *   [1.1 Naudotojai ir grupės](#Naudotojai_ir_grupės)

@@ -22,7 +22,11 @@ Se o sistema hospedeiro funciona no Arch Linux, isso pode ser conseguido simples
 
 **Atenção:** Certifique-se de compreender cada passo antes de prosseguir. É fácil destruir seu sistema ou perder dados críticos, e seu provedor de serviços provavelmente cobrará muito para ajudá-lo a recuperar.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Backup e preparação](#Backup_e_preparação)
 *   [2 De um host executando o Arch Linux](#De_um_host_executando_o_Arch_Linux)

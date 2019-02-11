@@ -2,7 +2,11 @@ From the project [home page](https://aria2.github.io/):
 
 	aria2 is a lightweight multi-protocol & multi-source command-line download utility. It supports [HTTP](/index.php/HTTP "HTTP")/[HTTPS](/index.php/HTTPS "HTTPS"), [FTP](/index.php/FTP "FTP"), [BitTorrent](/index.php/BitTorrent "BitTorrent") and [Metalink](https://en.wikipedia.org/wiki/Metalink "wikipedia:Metalink"). aria2 can be manipulated via built-in [JSON-RPC](https://en.wikipedia.org/wiki/JSON-RPC "wikipedia:JSON-RPC") and [XML-RPC](https://en.wikipedia.org/wiki/XML-RPC "wikipedia:XML-RPC") interfaces.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -365,11 +369,11 @@ You can use Aria2 instead of [curl](https://www.archlinux.org/packages/?name=cur
  `/etc/makepkg.conf` 
 ```
 [...]
-DLAGENTS=('ftp::/usr/bin/aria2c -UWget -s4 %u -o %o'
-          'http::/usr/bin/aria2c -UWget -s4 %u -o %o'
-          'https::/usr/bin/aria2c -UWget -s4 %u -o %o'
-          'rsync::/usr/bin/rsync --no-motd -z %u %o'
-          'scp::/usr/bin/scp -C %u %o')
+DLAGENTS=('ftp::/usr/bin/aria2c -UWget -s4 %u -o %o'
+          'http::/usr/bin/aria2c -UWget -s4 %u -o %o'
+          'https::/usr/bin/aria2c -UWget -s4 %u -o %o'
+          'rsync::/usr/bin/rsync --no-motd -z %u %o'
+          'scp::/usr/bin/scp -C %u %o')
 [...]
 ```
 

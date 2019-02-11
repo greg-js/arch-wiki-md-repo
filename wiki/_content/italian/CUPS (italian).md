@@ -10,7 +10,11 @@ Dal sito di [CUPS](https://www.cups.org/):
 
 Anche se ci sono altri sistemi di stampa come LPRNG, il Common Unix Printing System è la scelta più popolare per la sua relativa facilità d'uso.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Cups Linux Printing workflow](#Cups_Linux_Printing_workflow)
 *   [2 Installare il client](#Installare_il_client)

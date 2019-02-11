@@ -5,7 +5,11 @@ Articoli correlati
 
 **Mozilla Thunderbird** è un client email, newsgroup, e aggregatore di notizie progettato attorno alla semplicità e alla completa personalizzazione evitando la pesantezza. Supporta POP, IMAP, SMTP, S/MIME, e la criptazione OpenPGP (attraverso l'estensione Enigmail). Similmente a [Firefox](/index.php/Firefox "Firefox"), possiede una grande varietà di estensioni e addon, disponibili per il download, che aggiungono nuove funzionalità.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installazione](#Installazione)
 *   [2 Estensioni](#Estensioni)

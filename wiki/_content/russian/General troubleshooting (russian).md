@@ -10,7 +10,11 @@
 
 General troubleshooting - Устранение общих неполадок в системе. Эта статья дает советы по устранению общих проблем. Для решения проблем, связанных с конкретной программой, посетите соответствующую страницу Wiki.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Общие процедуры](#Общие_процедуры)
     *   [1.1 Внимание к деталям](#Внимание_к_деталям)

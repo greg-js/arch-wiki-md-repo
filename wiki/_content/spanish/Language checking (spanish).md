@@ -3,7 +3,11 @@ Este artículo es una traducción de [Language checking](/index.php/Language_che
 
 Este arículo cubre los programas de [corrección ortográfica](https://en.wikipedia.org/wiki/es:Corrector_ortogr%C3%A1fico "wikipedia:es:Corrector ortográfico") y de [corrección gramatical](https://en.wikipedia.org/wiki/Grammar_checker "wikipedia:Grammar checker").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Correctores ortográficos](#Correctores_ortográficos)
     *   [1.1 Idioma específico](#Idioma_específico)

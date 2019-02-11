@@ -12,7 +12,11 @@ Related articles
 
 **Note:** [Desktop environments](/index.php/Desktop_environments "Desktop environments"), such as [GNOME](/index.php/GNOME "GNOME"), [systemd](/index.php/Power_management#ACPI_events "Power management") login manager and some [extra key handling](/index.php/Extra_keyboard_keys "Extra keyboard keys") daemons may implement own event handling schemes, independent of acpid. Running more than one system at the same time may lead to unexpected behaviour, such as suspending two times in a row after one sleep button press. You should be aware of this and only activate desirable handlers.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -42,7 +46,7 @@ button/sleep)
         SLPB) echo -n mem >/sys/power/state ;;
 	 *)    logger "ACPI action undefined: $2" ;;
     esac
-    ;;
+    ;;
 
 ```
 
@@ -105,7 +109,7 @@ By default, all ACPI events are passed through the `/etc/acpi/handler.sh` script
 ```
 # Pass all events to our one handler script
 event=.*
-action=/etc/acpi/handler.sh %e
+action=/etc/acpi/handler.sh %e
 
 ```
 
@@ -116,7 +120,7 @@ As root, create the following file:
  `/etc/acpi/events/sleep-button` 
 ```
 event=button sleep.*
-action=/etc/acpi/actions/sleep-button.sh %e
+action=/etc/acpi/actions/sleep-button.sh %e
 ```
 
 Now create the following file:
@@ -158,10 +162,10 @@ ac_adapter)
             case "$4" in
                 00000000)
                     echo -n 50 > /sys/class/backlight/acpi_video0/brightness
-                    ;;
+                    ;;
                 00000001)
                     echo -n 100 > /sys/class/backlight/acpi_video0/brightness
-                    ;;
+                    ;;
             esac
 
 ```

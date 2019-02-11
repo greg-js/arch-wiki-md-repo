@@ -12,7 +12,11 @@ Por favor, note que nosso wiki também oferece suporte a conteúdo internacional
 
 Esta lista não está completa. Se você conhece uma comunidade que não está listada, sinta-se à vontade para adicioná-la. Se você está procurando por uma comunidade que não possui uma comunidade existente, inicie uma ou visite o [fórum "Other Languages"](https://bbs.archlinux.org/viewforum.php?id=30).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Alemão](#Alemão)
 *   [2 Chinês](#Chinês)

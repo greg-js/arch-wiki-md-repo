@@ -4,7 +4,11 @@
 
 	GnuPG - полная и свободная реализация [OpenPGP](http://openpgp.org/about/) стандарта, определенного в [RFC4880](https://tools.ietf.org/html/rfc4880) (также известного, как PGP). GnuPG позволяет вам шифровать и подписывать данные и сообщения. Он оснащен универсальной системой управления ключами, а также модулями доступа для всех типов открытых ключей. GnuPG, также известный как GPG, это инструмент командной строки с возможностью легкой интеграции с другими приложениями. Доступен богатый выбор пользовательских приложений и библиотек. Также 2 версия GnuPG поддерживает S/MIME и Secure Shell (ssh).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Настройка](#Настройка)

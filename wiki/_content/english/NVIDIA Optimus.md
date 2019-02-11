@@ -18,7 +18,11 @@ NVIDIA Optimus is a technology that allows an Intel integrated GPU and discrete 
 
 These options are explained in detail below.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Disabling switchable graphics](#Disabling_switchable_graphics)
 *   [2 Using nvidia](#Using_nvidia)

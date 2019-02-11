@@ -1,6 +1,10 @@
 [USBGuard](https://github.com/dkopecek/usbguard) offers a white/black-listing mechanism for USB-devices. Inspiration for this is drawn from exploits like BadUSB. It makes use of a device blocking infrastructure included in the Linux kernel and consists of a daemon and some front-ends.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

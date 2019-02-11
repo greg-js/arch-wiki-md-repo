@@ -6,7 +6,11 @@ Related articles
 
 这篇条目提供了 Arch Linux 和 Windows 双重启动的一些相关信息。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 重要信息](#重要信息)
     *   [1.1 Windows UEFI 和 BIOS 启动限制](#Windows_UEFI_和_BIOS_启动限制)

@@ -4,7 +4,11 @@ Related articles
 
 This page explains how to setup Arch to use a US Department of Defense [Common Access Card](https://en.wikipedia.org/wiki/Common_Access_Card "wikipedia:Common Access Card") (CAC).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Configuration](#Configuration)

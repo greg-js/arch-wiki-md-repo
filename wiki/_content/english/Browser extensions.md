@@ -4,7 +4,11 @@ Related articles
 
 This article lists some [browser extensions](https://en.wikipedia.org/wiki/Browser_extension "wikipedia:Browser extension") available for [Firefox](/index.php/Firefox "Firefox") and/or [Chromium](/index.php/Chromium "Chromium").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Privacy](#Privacy)

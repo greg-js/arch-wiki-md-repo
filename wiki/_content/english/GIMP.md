@@ -5,7 +5,11 @@ Related articles
 
 [GIMP](https://en.wikipedia.org/wiki/GIMP "wikipedia:GIMP") is a powerful raster image editing program, and commonly used for photo retouching, image composition, and general graphic design work. It can be used as a simple paint program, an expert quality photo retouching program, an online batch processing system, a mass production image renderer, an image format converter, etc.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Tips and tricks](#Tips_and_tricks)

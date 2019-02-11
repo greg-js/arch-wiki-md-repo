@@ -1,6 +1,10 @@
 [Django](http://www.djangoproject.com) is a high-level [Python](/index.php/Python "Python") Web framework which follows the model–view–template (MVT) architectural pattern.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Database driver](#Database_driver)

@@ -11,7 +11,11 @@ From the [awesome website](https://awesomewm.org/):
 
 	[awesome](https://en.wikipedia.org/wiki/awesome_(window_manager) is a highly configurable, next generation framework [window manager](/index.php/Window_manager "Window manager") for [Xorg](/index.php/Xorg "Xorg"). It is very fast and extensible [..]. It is primarily targeted at power users, developers and any people dealing with every day computing tasks and who want to have fine-grained control on its graphical environment.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Starting](#Starting)
@@ -538,7 +542,7 @@ This will return the focus to the last client whenever the keyboard receives foc
 [xorg-server-xephyr](https://www.archlinux.org/packages/?name=xorg-server-xephyr) allows you to run X nested in another X's client window. This allows you to debug rc.lua without breaking your current desktop. Start by copying rc.lua into a new file (e.g. rc.lua.new), and modify it as needed. Then run new instance of awesome in Xephyr, supplying rc.lua.new as a config file like this:
 
 ```
-$ Xephyr :1 -ac -br -noreset -screen 1152x720 &
+$ Xephyr :1 -ac -br -noreset -screen 1152x720 &
 $ DISPLAY=:1.0 awesome -c ~/.config/awesome/rc.lua.new
 
 ```

@@ -8,7 +8,11 @@ Opening (and closing) bug reports on the [Arch Linux Bugtracker](https://bugs.ar
 
 See also: [How to Report Bugs Effectively](https://www.chiark.greenend.org.uk/~sgtatham/bugs.html) by Simon Tatham
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Before reporting](#Before_reporting)
     *   [1.1 Search for duplicates](#Search_for_duplicates)

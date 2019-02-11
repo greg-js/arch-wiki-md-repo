@@ -10,7 +10,11 @@
 *   [ambienti desktop](/index.php/Desktop_environment_(Italiano) "Desktop environment (Italiano)"), come [GNOME](/index.php/GNOME "GNOME"), [systemd](/index.php/Systemd#Power_management "Systemd") login manager e alcuni demoni di[gestione dei tasti extra](/index.php/Extra_keyboard_keys "Extra keyboard keys") potrebbero implementare degli schemi per la gestione degli eventi propri, in maniera indipendente da acpid. Eseguendo più di un sistema alla volta, potrebbe provocare comportamenti inaspettati, come una sospensione doppia, due volte in fila dopo una pressione del pulsante per la sospensione. Si dovrebbe essere consapevoli di ciò, e abilitare solamente i gestori desiderati.
 *   Siccome di default lo script installato da acpid, **/etc/acpi/handler.sh**, sovrascriverà la funzionalità alla pressione del pulsante di accensione del tuo ambiente desktop, probabilmente vorrai cambiare la routine di acpid, per evitare di spegnere il sistema alla pressione inavvertita del pulsante di accensione.(leggi le istruzioni sotto).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installazione](#Installazione)
 *   [2 Configurazione](#Configurazione)
@@ -43,7 +47,7 @@ button/sleep)
         SLPB) echo -n mem >/sys/power/state ;;
 	 *)    logger "ACPI action undefined: $2" ;;
     esac
-    ;;
+    ;;
 
 ```
 
@@ -99,7 +103,7 @@ Per impostazione predefinita, tutti gli eventi ACPI sono passati allo script `/e
 ```
 # Pass all events to our one handler script
 event=.*
-action=/etc/acpi/handler.sh %e
+action=/etc/acpi/handler.sh %e
 
 ```
 
@@ -154,7 +158,7 @@ button/lid)
 
             xs=$(ps up $(pidof xscreensaver) | awk '/xscreensaver/ {print $1}')
             if test $xs; then su $xs -c "xscreensaver-command -lock"; fi
-            ;;
+            ;;
 
 ```
 
@@ -167,7 +171,7 @@ button/lid)
             #echo "LID switched!">/dev/tty5 
              /usr/bin/pm-suspend &
              DISPLAY=:0.0 su -c - username /usr/bin/slimlock
-             ;;
+             ;;
 
 ```
 
@@ -180,10 +184,10 @@ ac_adapter)
             case "$4" in
                 00000000)
                     echo -n 50 > /sys/class/backlight/acpi_video0/brightness
-                    ;;
+                    ;;
                 00000001)
                     echo -n 100 > /sys/class/backlight/acpi_video0/brightness
-                    ;;
+                    ;;
             esac
 
 ```
@@ -292,8 +296,8 @@ Aggiungendo queste stringhe al fondo del file `/etc/acpi/actions/lm_lid.sh` o al
 
 ```
 case $(cat /proc/acpi/button/lid/LID0/state | awk '{print $2}') in
-    closed) XAUTHORITY=$(ps -C xinit -f --no-header | sed -n 's/.*-auth //; s/ -[^ ].*//; p') xset -display :0 dpms force off ;;
-    open)   XAUTHORITY=$(ps -C xinit -f --no-header | sed -n 's/.*-auth //; s/ -[^ ].*//; p') xset -display :0 dpms force on  ;;
+    closed) XAUTHORITY=$(ps -C xinit -f --no-header | sed -n 's/.*-auth //; s/ -[^ ].*//; p') xset -display :0 dpms force off ;;
+    open)   XAUTHORITY=$(ps -C xinit -f --no-header | sed -n 's/.*-auth //; s/ -[^ ].*//; p') xset -display :0 dpms force on  ;;
 esac
 
 ```
@@ -305,7 +309,7 @@ Con alcune combinazioni di [Xorg](/index.php/Xorg_(Italiano) "Xorg (Italiano)") 
 ```
 case $(cat /proc/acpi/button/lid/LID0/state | awk '{print $2}') in
     closed) vbetool dpms off ;;
-    open)   vbetool dpms on  ;;
+    open)   vbetool dpms on  ;;
 esac
 
 ```
@@ -338,10 +342,10 @@ button/power)
             getuser "$user"
             echo $user > /dev/tty5
             su $user -c "dcop ksmserver ksmserver logout 0 2 0"
-            ;;
+            ;;
           *) logger "ACPI action undefined $2" ;;
     esac
-    ;;
+    ;;
 
 ```
 

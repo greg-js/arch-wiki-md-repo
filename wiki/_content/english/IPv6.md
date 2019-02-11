@@ -4,7 +4,11 @@ Related articles
 
 In Arch Linux, IPv6 is enabled by default.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Neighbor discovery](#Neighbor_discovery)
 *   [2 Stateless autoconfiguration (SLAAC)](#Stateless_autoconfiguration_(SLAAC))

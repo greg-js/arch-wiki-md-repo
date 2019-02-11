@@ -9,7 +9,11 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Clipboard_(computing) "wi
 
 	The clipboard is a facility used for short-term data storage and/or data transfer between documents or applications, via [copy and paste](https://en.wikipedia.org/wiki/copy_and_paste "wikipedia:copy and paste") operations.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 History](#History)
 *   [2 Selections](#Selections)

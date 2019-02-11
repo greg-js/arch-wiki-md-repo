@@ -5,7 +5,11 @@ Related articles
 
 A [desktop environment](https://en.wikipedia.org/wiki/Desktop_environment "wikipedia:Desktop environment") (**DE**) is an implementation of the [desktop metaphor](https://en.wikipedia.org/wiki/Desktop_metaphor "wikipedia:Desktop metaphor") made of a bundle of programs, which share a common graphical user interface (GUI).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Overview](#Overview)
 *   [2 List of desktop environments](#List_of_desktop_environments)

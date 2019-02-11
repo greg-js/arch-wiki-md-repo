@@ -15,7 +15,11 @@ Nowadays, the root file system may be on a wide range of hardware, from SCSI to 
 
 mkinitcpio has been developed by the Arch Linux developers and from community contributions. See the [public Git repository](https://projects.archlinux.org/mkinitcpio.git/).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Image creation and activation](#Image_creation_and_activation)

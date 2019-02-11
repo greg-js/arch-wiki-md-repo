@@ -5,7 +5,11 @@ Related articles
 
 [Snapper](http://snapper.io) is a tool created by openSUSE's Arvin Schnell that helps with managing snapshots of [Btrfs](/index.php/Btrfs "Btrfs") subvolumes and thin-provisioned [LVM](/index.php/LVM "LVM") volumes. It can create and compare snapshots, revert between snapshots, and supports automatic snapshots timelines.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Create a new configuration](#Create_a_new_configuration)
@@ -86,6 +90,8 @@ If you have a [cron](/index.php/Cron "Cron") daemon, this feature should start a
  `TIMELINE_CREATE="no"` 
 
 If you do not have a [cron](/index.php/Cron "Cron") daemon, you can use the provided systemd units. [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `snapper-timeline.timer` to start the automatic snapshot timeline. Additionally, [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `snapper-cleanup.timer` to periodically cleanup older snapshots.
+
+**Note:** If you have a cron daemon and also enable the systemd units, this may result in duplicate snapshots being created. If you wish to disable cron integration while using the systemd units, one possible solution is not to install the snapper package's cron files via [pacman](/index.php/Pacman "Pacman")'s [NoExtract](/index.php/Pacman#Skip_files_from_being_installed_to_system "Pacman") and [NoUpgrade](/index.php/Pacman#Skip_file_from_being_upgraded "Pacman") configuration options. See [[1]](https://unix.stackexchange.com/questions/425570/snapper-has-recently-started-performing-duplicate-snapshots-each-hour)
 
 #### Set snapshot limits
 
@@ -237,7 +243,7 @@ Eventually, you want to be able to browse the `.snapshots` directory with a user
 
 ```
 # chmod a+rx .snapshots
-# chown :users .snapshots
+# chown :users .snapshots
 
 ```
 

@@ -6,14 +6,18 @@ Related articles
 
 [DVB-T](https://en.wikipedia.org/wiki/DVB-T "wikipedia:DVB-T") is a standard for transmitting terrestrial digital video broadcast, which is used in the majority of Africa, Asia, Australia and Europe. It is possible to receive DVB-T using several different hardware setups, however this article will focus on DVB-T USB dongles based on the RTL2832U chipset (which are also very popular as cheap software defined radios using [RTL-SDR](/index.php/RTL-SDR "RTL-SDR")).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Driver](#Driver)
 *   [2 Utilities](#Utilities)
     *   [2.1 Scanning](#Scanning)
 *   [3 Clients](#Clients)
     *   [3.1 VLC](#VLC)
-    *   [3.2 MPlayer / mpv](#MPlayer_.2F_mpv)
+    *   [3.2 MPlayer / mpv](#MPlayer_/_mpv)
         *   [3.2.1 Channel selector](#Channel_selector)
     *   [3.3 ffmpeg](#ffmpeg)
     *   [3.4 dvbjet](#dvbjet)
@@ -84,6 +88,8 @@ If you do not know your country code, enter the following to get a list of codes
 
 Note that country code is optional is some cases (see `man w_scan` for details). More advanced scanning options can be found under [DVB-S#Scanning channels](/index.php/DVB-S#Scanning_channels "DVB-S"). See also *w_scan'*s [man page](http://dev.man-online.org/man2/w_scan/) and [documentation](http://linuxtv.org/wiki/index.php/W_scan).
 
+When `w_scan` fails to find all expected channels you could try `w_scan2`. It is a fork of the original *w_scan* and can be found on [GitHub](https://github.com/stefantalpalaru/w_scan2).
+
 ## Clients
 
 See also [how to disable screensaver when playing video/TV](/index.php/XScreenSaver "XScreenSaver") by using configuration files or use `xset` command before and after player starts to enable/disable it. If you have installed [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver) then you will need to use `xscreensaver-command` instead of `xset` to activate/deactivate screensaver from command line.
@@ -110,7 +116,7 @@ where the frequency is set in Hz, and should match the base frequency for the tr
 VLC also accepts various command line arguments, for example if you want to tune into a different program:
 
 ```
-$ vlc dvb://frequency=543000000 :program=3
+$ vlc dvb://frequency=543000000 :program=3
 
 ```
 

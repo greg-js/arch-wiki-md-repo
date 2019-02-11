@@ -1,6 +1,10 @@
 [Blackbox](http://blackboxwm.sourceforge.net/) is a lightweight [stacking window manager](/index.php/Window_managers#Stacking_window_managers "Window managers"). It was last updated November 3, 2005 with no plans for future releases, however its design has inspired many forks and spiritual successors.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Starting](#Starting)

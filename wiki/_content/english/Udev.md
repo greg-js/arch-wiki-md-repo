@@ -10,7 +10,11 @@ From [Wikipedia:udev](https://en.wikipedia.org/wiki/udev "wikipedia:udev"):
 
 *udev* loads kernel modules by utilizing coding parallelism to provide a potential performance advantage versus loading these modules serially. The modules are therefore loaded asynchronously. The inherent disadvantage of this method is that *udev* does not always load modules in the same order on each boot. If the machine has multiple block devices, this may manifest itself in the form of device nodes changing designations randomly. For example, if the machine has two hard drives, `/dev/sda` may randomly become `/dev/sdb`. See below for more info on this.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 About udev rules](#About_udev_rules)

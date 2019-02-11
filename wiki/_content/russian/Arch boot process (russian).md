@@ -5,7 +5,11 @@
 
 Эта статья призвана описать процесс загрузки Arch Linux и перечислить вовлеченные в процесс загрузки системные файлы, предоставляя ссылки на соответствующие статьи в вики там, где это потребуется. Arch славится своей приверженностью стилю загрузки [BSD](https://en.wikipedia.org/wiki/Berkeley_Software_Distribution "wikipedia:Berkeley Software Distribution"), в отличии более распространенного [SysV](https://en.wikipedia.org/wiki/UNIX_System_V "wikipedia:UNIX System V"). Это означает, что существует небольшое различие между уровнями выполнения([Wikipedia:runlevel](https://en.wikipedia.org/wiki/runlevel "wikipedia:runlevel")), поскольку система по умолчанию сконфигурирована использовать и запускать одни и те же модули и процессы на всех уровнях выполнения. Преимуществом такой схемы выступает то, что пользователю становится легче настроить процесс запуска (см. [rc.conf](/index.php/Rc.conf "Rc.conf")); с другой стороны, некоторые способы углубленного конфигурирования (какие были в SysV) потеряны. Тем, кого это не устраивает, будет полезно обратиться к статье [Adding Runlevels](/index.php/Adding_Runlevels "Adding Runlevels"). Чтобы узнать больше о различиях между стилями инициализации BSD и SysV см. [Wikipedia:Init](https://en.wikipedia.org/wiki/Init "wikipedia:Init")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 До выполнения init](#До_выполнения_init)
 *   [2 Пользовательские ловушки](#Пользовательские_ловушки)

@@ -1,6 +1,10 @@
 [st](https://st.suckless.org/) is a simple terminal implementation for [Xorg](/index.php/Xorg "Xorg") by [suckless](https://suckless.org/). It is intended to serve as a lightweight replacement for [xterm](/index.php/Xterm "Xterm") or [urxvt](/index.php/Urxvt "Urxvt"). It currently supports 256 colors, true colors, most VT10X escape sequences, UTF-8, X11 copy/paste, anti-aliased fonts (using fontconfig), fallback fonts, resizing, shortcuts via config.h, and line drawing.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

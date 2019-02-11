@@ -1,6 +1,10 @@
 [蓝牙（Bluetooth）](https://en.wikipedia.org/wiki/Bluetooth "wikipedia:Bluetooth")是一个短距离无线通信标准，适用于手机，计算机和其他电子设备之间的通信。在 Linux 中，通常使用的蓝牙协议栈实现是 [BlueZ](http://www.bluez.org/)。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
     *   [1.1 前端](#前端)
@@ -62,7 +66,7 @@
     *   [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) 可通过图形界面配置蓝牙。可以在活动预览输入“蓝牙”或者运行 `gnome-control-center bluetooth` 进行配置。
     *   你还可以直接运行 `bluetooth-sendto` 命令来把文件发送到远程设备。
     *   打开蓝牙设置面板来接收文件；只有在蓝牙设置面板打开时才能接收文件。
-    *   To add a Bluetooth entry to the *Send To* menu in Thunar's file properties menu, see instructions [here](http://docs.xfce.org/xfce/thunar/send-to). (The command that needs to be configured is `bluetooth-sendto %F`).
+    *   To add a Bluetooth entry to the *Send To* menu in Thunar's file properties menu, see instructions [here](http://docs.xfce.org/xfce/thunar/send-to). (The command that needs to be configured is `bluetooth-sendto %F`).
 
 	[https://wiki.gnome.org/Projects/GnomeBluetooth](https://wiki.gnome.org/Projects/GnomeBluetooth) ||
 

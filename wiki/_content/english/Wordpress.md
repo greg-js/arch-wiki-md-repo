@@ -9,7 +9,11 @@ Related articles
 
 The biggest feature of WordPress is its ease in configuration and administration. [Setting up a WordPress site takes five minutes](http://codex.wordpress.org/Installing_WordPress). The WordPress administration panel allows users to easily configure almost every aspect of their website including fetching and installing plugins and themes. WordPress provides effortless automatic updates.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Installation using pacman](#Installation_using_pacman)

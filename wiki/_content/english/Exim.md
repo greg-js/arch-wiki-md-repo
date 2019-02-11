@@ -7,7 +7,11 @@ Related articles
 
 [Exim](https://en.wikipedia.org/wiki/Exim "wikipedia:Exim") is a versatile [mail transfer agent](/index.php/Mail_transfer_agent "Mail transfer agent"). This article builds upon [Mail server](/index.php/Mail_server "Mail server"). While the [Exim wiki](https://github.com/Exim/exim/wiki/) provides some helpful how-tos on certain specific use cases, a [detailed description](https://exim.org/exim-html-current/doc/html/spec_html/index.html) of all configuration options is available as well.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Basic configuration](#Basic_configuration)

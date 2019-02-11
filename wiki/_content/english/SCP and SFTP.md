@@ -6,7 +6,11 @@ Related articles
 
 The [Secure copy (SCP)](https://en.wikipedia.org/wiki/Secure_copy "wikipedia:Secure copy") is a protocol to transfer files via a [Secure Shell](/index.php/Secure_Shell "Secure Shell") connection. The [SSH file transfer protocol (SFTP)](https://en.wikipedia.org/wiki/SSH_file_transfer_protocol "wikipedia:SSH file transfer protocol") is a related protocol, also relying on a secure shell back-end. Both protocols allow secure file transfers, encrypting passwords and transferred data. The SFTP protocol, however, features additional capabilities like, for example, resuming broken transfers or remote file manipulation like deletion.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Secure file transfer protocol (SFTP)](#Secure_file_transfer_protocol_(SFTP))
 *   [2 Secure file transfer protocol (SFTP) with a chroot jail](#Secure_file_transfer_protocol_(SFTP)_with_a_chroot_jail)
@@ -63,7 +67,7 @@ Add the following to the end of `/etc/ssh/sshd_config` to enable the share and t
 ```
 ...
  Match group sshusers
-  ChrootDirectory %h
+  ChrootDirectory %h
   X11Forwarding no
   AllowTcpForwarding no
   PasswordAuthentication yes

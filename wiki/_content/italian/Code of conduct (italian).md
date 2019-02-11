@@ -4,7 +4,11 @@ Arch Linux è una distribuzione community-driven; gli sviluppatori, lo staff di 
 
 Familiarizzare con i principi e le linee guida, è sia una cortesia nei confronti della comunità e un modo efficiente di interagire con gli altri Arch Linux users in modo costruttivo.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Buon senso: introduzione](#Buon_senso:_introduzione)
 *   [2 Codice di condotta](#Codice_di_condotta)
@@ -249,7 +253,7 @@ La lingua ufficiale del canale **#archlinux** è l'Inglese. Se hai bisogno di ai
 
 *   Non floodare il canale con testo. Questo include ASCII art, comandi dei bot e logs di errori.
     *   **Usare un servizio di paste per condividere qualcosa più lungo di tre linee**. `program &> program-output.txt` in combinazione con [pastebin clients](/index.php/Pastebin_Clients "Pastebin Clients").
-    *   Se si vuol provare comandi dei bot o leggere la funzione di !help, farlo in una `/query` o `/msg`. Esempio: `/query phrik help <command>`.
+    *   Se si vuol provare comandi dei bot o leggere la funzione di !help, farlo in una `/query` o `/msg`. Esempio: `/query phrik help <command>`.
 
 *   Le risposte automatiche nei canali o via messaggi privati non sono permessi, eccezion fatta per away in privato.
 

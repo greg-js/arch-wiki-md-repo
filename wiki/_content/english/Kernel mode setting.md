@@ -10,7 +10,11 @@ The Linux kernel's implementation of KMS enables native resolution in the frameb
 
 **Note:** The proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") driver (since 364.12) also implements kernel mode-setting, but it does not use the built-in kernel implementation and it lacks an fbdev driver for the high-resolution console.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Background](#Background)
 *   [2 Installation](#Installation)

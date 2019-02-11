@@ -6,7 +6,11 @@ Arch Linux 是一个社区驱动的发行版；开发者、支持人员和提供
 
 熟悉这些原则和指南是对社区的尊重，同时也有助于您和其他用户交流时实现互惠互利。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 常识](#常识)
 *   [2 行为准则](#行为准则)

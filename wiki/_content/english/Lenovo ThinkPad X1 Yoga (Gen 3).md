@@ -37,7 +37,11 @@ To ensure you have this version, [install](/index.php/Install "Install") the pac
 
  |
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 BIOS](#BIOS)
     *   [1.1 Thunderbolt BIOS assist potential brick issue](#Thunderbolt_BIOS_assist_potential_brick_issue)

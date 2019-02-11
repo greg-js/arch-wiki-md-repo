@@ -10,7 +10,11 @@ Related articles
 
 **Warning:** Liri is currently in alpha stage and there might be issues.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Starting the desktop](#Starting_the_desktop)

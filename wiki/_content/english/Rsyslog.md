@@ -4,7 +4,11 @@ Related articles
 
 [rsyslog](http://www.rsyslog.com/) is an alternate logger to [syslog-ng](/index.php/Syslog-ng "Syslog-ng") and offers many benefits over [syslog-ng](/index.php/Syslog-ng "Syslog-ng").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Starting service](#Starting_service)

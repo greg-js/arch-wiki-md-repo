@@ -3,7 +3,11 @@ Este artículo es una traducción de [Proftpd](/index.php/Proftpd "Proftpd"), re
 
 [proFtpd](http://proftpd.org/) (Pro FTP daemon) es un servidor FTP altamente sofisticado, que presenta una gran cantidad de opciones de configuración al usuario.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Configuración](#Configuración)

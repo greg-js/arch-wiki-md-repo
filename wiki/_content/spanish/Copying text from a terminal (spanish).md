@@ -1,9 +1,13 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Copying text from a terminal](/index.php/Copying_text_from_a_terminal "Copying text from a terminal"), revisada por última vez el **2018-11-13**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Copying_text_from_a_terminal&diff=0&oldid=554909) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Copying text from a terminal](/index.php/Copying_text_from_a_terminal "Copying text from a terminal"), revisada por última vez el **2019-02-09**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Copying_text_from_a_terminal&diff=0&oldid=554979) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 La mayoría de los emuladores de terminal maduros permiten a los usuarios copiar o guardar sus contenidos.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Enfoque general](#Enfoque_general)
     *   [1.1 Terminales sin selección de PORTAPAPELES](#Terminales_sin_selección_de_PORTAPAPELES)
@@ -21,7 +25,7 @@ En los emuladores gráficos de terminal, los contenidos generalmente se seleccio
 
 ### Terminales sin selección de PORTAPAPELES
 
-Algunos emuladores no admiten la [selección de PORTAPAPELES](/index.php/Clipboard_(Espa%C3%B1ol)#Bases "Clipboard (Español)") de manera nativa, y copian los datos a la selección PRIMARIA. Para ellos se puede usar [xclip](https://www.archlinux.org/packages/?name=xclip):
+Algunos emuladores no admiten la [selección de PORTAPAPELES](/index.php/Clipboard_(Espa%C3%B1ol)#Selecciones "Clipboard (Español)") de manera nativa, y copian los datos a la selección PRIMARIA. Para ellos se puede usar [xclip](https://www.archlinux.org/packages/?name=xclip):
 
 ```
 $ xclip -o | xclip -selection clipboard -i

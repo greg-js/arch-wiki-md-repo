@@ -13,7 +13,11 @@ This article describes how to install Arch Linux on a Chromebook in a container 
 *   Audio support is still [in progress](https://crbug.com/781398) (Feb 4 2019)
 *   OpenGL support is still [in progress](https://crbug.com/837073) (Feb 4 2019)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Introduction](#Introduction)
     *   [1.1 Enabling Linux support](#Enabling_Linux_support)

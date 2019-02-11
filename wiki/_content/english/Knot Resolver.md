@@ -4,7 +4,11 @@ Related articles
 
 [Knot Resolver](https://www.knot-resolver.cz/) is a full (recursive), caching DNS resolver. It is designed to scale from small home-office networks to providing DNS servers at the scale of ISPs. Knot Resolver supports [DNSSEC](/index.php/DNSSEC "DNSSEC").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

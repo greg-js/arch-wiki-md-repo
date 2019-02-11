@@ -1,6 +1,10 @@
 Il Momo design è un 3.5G HSDPA USB modem usato per la navigazione in internet. La sua installazione può risultare un po' ostica su linux visto che i produttori non rilasciano driver specifici per linux.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Hardware](#Hardware)
 *   [2 Prima di tutto](#Prima_di_tutto)
@@ -42,7 +46,7 @@ A daemon which implements the PPP protocol for dial-up networking
 avviare il modulo ppp-generic inserendolo nell'apposita riga di /etc/rc.conf
 
 ```
-MODULES=(nvidia ppp-generic !usblp option) 
+MODULES=(nvidia ppp-generic !usblp option) 
 
 ```
 

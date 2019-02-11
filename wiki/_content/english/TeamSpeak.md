@@ -2,7 +2,11 @@ From [Wikipedia:TeamSpeak](https://en.wikipedia.org/wiki/TeamSpeak "wikipedia:Te
 
 	TeamSpeak is proprietary Voice over IP software that allows computer users to speak on a chat channel with fellow computer users, much like a telephone conference call.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Client](#Client)

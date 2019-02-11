@@ -4,7 +4,11 @@ Related articles
 
 [Rofi](https://github.com/DaveDavenport/rofi) is a window switcher, run dialog, ssh-launcher and [dmenu](/index.php/Dmenu "Dmenu") replacement that started as a clone of [simpleswitcher](https://github.com/seanpringle/simpleswitcher), written by [Sean Pringle](https://github.com/seanpringle) and later expanded by [Dave Davenport](https://github.com/DaveDavenport).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

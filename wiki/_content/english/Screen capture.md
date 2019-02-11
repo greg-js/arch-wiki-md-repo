@@ -4,7 +4,11 @@ Related articles
 
 This article lists and describes [screenshot](https://en.wikipedia.org/wiki/Screenshot "wikipedia:Screenshot") and [screencast](https://en.wikipedia.org/wiki/Screencast "wikipedia:Screencast") software.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Screenshot software](#Screenshot_software)
     *   [1.1 Dedicated software](#Dedicated_software)

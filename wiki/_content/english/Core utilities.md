@@ -10,7 +10,11 @@ Related articles
 
 Most command-line interfaces are documented in [man pages](/index.php/Man_page "Man page"), utilities by the [GNU Project](/index.php/GNU_Project "GNU Project") are documented primarily in [Info manuals](/index.php/Info_manual "Info manual"), some [shells](/index.php/Shell "Shell") provide a `help` command for shell builtin commands. Additionally most utilities print their usage when run with the `--help` flag.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Essentials](#Essentials)
     *   [1.1 Preventing data loss](#Preventing_data_loss)

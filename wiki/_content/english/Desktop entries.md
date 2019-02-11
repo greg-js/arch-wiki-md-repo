@@ -1,6 +1,10 @@
 The [XDG Desktop Entry specification](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html) defines a standard for applications to integrate into application menus of [desktop environments](/index.php/Desktop_environment "Desktop environment") implementing the [XDG Desktop Menu](https://specifications.freedesktop.org/menu-spec/menu-spec-latest.html) specification.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Basics](#Basics)
 *   [2 Application entry](#Application_entry)
@@ -277,7 +281,7 @@ where *desktop-name* can be option such as *GNOME*, *Xfce*, *KDE* etc. A desktop
 
 Edit the `Exec=` command line by prepending *env*, for example:
 
- `~/.local/share/applications/abiword.desktop`  `Exec=env LANG=he_IL.UTF-8 abiword %U` 
+ `~/.local/share/applications/abiword.desktop`  `Exec=env LANG=he_IL.UTF-8 abiword %U` 
 **Tip:** It may be preferable to copy the `.desktop` file to the `~/.local/share/applications/` directory instead of modifying it in the `/usr/share/applications/` one.
 
 ## See also

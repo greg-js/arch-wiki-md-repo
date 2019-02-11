@@ -5,7 +5,11 @@ Esta es una guía para configurar su webcam en Arch Linux.
 
 Lo más probable es que su webcam funcione sin necesidad de configuración. Los permisos para acceder a los dispositivos de vídeo (por ejemplo, `/dev/video0`) son manejados por [udev](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)"), no es necesaria ninguna configuración.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Cargar](#Cargar)
 *   [2 Configuración](#Configuración)
@@ -82,14 +86,14 @@ $ xawtv -nodga
 [VLC](/index.php/VLC_(Espa%C3%B1ol) "VLC (Español)") también se puede usar para ver y grabar su webcam. En el menú "Medio" de VLC, abra el cuadro de diálogo 'Dispositivo de captura ...' e ingrese los archivos del dispositivo de vídeo y audio. O desde la línea de comando, haga:
 
 ```
-$ vlc v4l:// :v4l-vdev="/dev/video0" :v4l-adev="/dev/audio2"
+$ vlc v4l:// :v4l-vdev="/dev/video0" :v4l-adev="/dev/audio2"
 
 ```
 
 Esto hará que VLC refleje su webcam. Para tomar instantáneas, simplemente elija 'Instantánea' en el menú 'Vídeo'. Para grabar una transmisión, agregue un argumento `--sout`. Por ejemplo:
 
 ```
-$ vlc v4l:// :v4l-vdev="/dev/video0" :v4l-adev="/dev/audio2" \ 
+$ vlc v4l:// :v4l-vdev="/dev/video0" :v4l-adev="/dev/audio2" \ 
   --sout "#transcode{vcodec=mp1v,vb=1024,scale=1,acodec=mpga,ab=192,channels=2}:duplicate{dst=std{access=file,mux=mpeg1,dst=/tmp/test.mpg}}"
 
 ```
@@ -97,7 +101,7 @@ $ vlc v4l:// :v4l-vdev="/dev/video0" :v4l-adev="/dev/audio2" \
 (Obviamente, es un poco exagerado con respecto a las tasas de bits, pero está bien para propósitos de testeo). Tenga en cuenta que esto no producirá un espejo en la pantalla - para ver lo que está grabando, deberá agregar el monitor como un argumento de destino:
 
 ```
-... :duplicate{dst=display,dst=std{access= ....
+... :duplicate{dst=display,dst=std{access= ....
 
 ```
 

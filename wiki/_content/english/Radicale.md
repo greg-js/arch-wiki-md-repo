@@ -6,7 +6,11 @@ Related articles
 
 [Radicale](http://radicale.org/) is a server designed to support the CalDav and CardDav protocols. It requires at least Python 3.3.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

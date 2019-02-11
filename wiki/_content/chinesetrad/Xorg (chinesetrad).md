@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安裝 xorg](#安裝_xorg)
     *   [1.1 不使用 xorg.conf](#不使用_xorg.conf)

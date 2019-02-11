@@ -15,7 +15,11 @@
 
 Cube KNote i1101 is a 11-inch tablet with Apollo Lake(Celeron N3450) and 6GB RAM. It also comes with a FHD (1920x1080) resolusion screen.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation and configuration](#Installation_and_configuration)
     *   [1.1 Sound](#Sound)

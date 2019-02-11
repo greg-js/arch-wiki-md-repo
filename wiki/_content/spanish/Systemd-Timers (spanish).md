@@ -10,7 +10,11 @@ Artículos relacionados
 
 Los temporizadores son archivos de unidad de [systemd (Español)](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") cuyo nombre termina en `.timer` que controlan archivos `.service` o eventos. Los temporizadores se pueden usar como una alternativa a [cron](/index.php/Cron "Cron") (lea [#Como un reemplazo de cron](#Como_un_reemplazo_de_cron)). Los temporizadores tienen soporte incorporado para ejecutar eventos basados en el calendario, eventos de tiempo monotónicos y se pueden ejecutar de forma asíncrona.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Unidades de temporizador](#Unidades_de_temporizador)
 *   [2 Unidad de servicio](#Unidad_de_servicio)
@@ -212,11 +216,11 @@ Cualquiera que sea el ejecutable que utilice, probablemente debería tomar, al m
  `/etc/systemd/system/status-email-*user*@.service` 
 ```
 [Unit]
-Description=status email for %i to *user*
+Description=status email for %i to *user*
 
 [Service]
 Type=oneshot
-ExecStart=/usr/local/bin/systemd-email *address* %i
+ExecStart=/usr/local/bin/systemd-email *address* %i
 User=nobody
 Group=systemd-journal
 ```

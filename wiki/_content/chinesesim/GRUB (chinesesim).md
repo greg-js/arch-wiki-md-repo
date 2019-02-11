@@ -13,7 +13,11 @@
 
 [GRUB](https://www.gnu.org/software/grub/) , 是下一代 GRand Unified Bootloader, 请不要和 [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy")  混淆了。它来自下一代 GRUB 研究项目 [PUPA](http://www.nongnu.org/pupa/)，代码全部重写，实现了模块化和增强了移植性。[[1]](http://www.gnu.org/software/grub/grub-faq.en.html#q1).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 前言](#前言)
 *   [2 BIOS 系统](#BIOS_系统)

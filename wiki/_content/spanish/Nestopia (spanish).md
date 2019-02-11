@@ -3,7 +3,11 @@ Este artículo es una traducción de [Nestopia](/index.php/Nestopia "Nestopia"),
 
 [Nestopia](https://github.com/0ldsk00l/nestopia) es un emulador de la NES de código abierto que intenta emular su hardware con la mayor precisión posible. Está disponible para Windows, macOS, Linux y BSD. También hay un port para Libretro, véase [RetroArch](/index.php/RetroArch_(Espa%C3%B1ol) "RetroArch (Español)") para obtener más información.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Solución de problemas](#Solución_de_problemas)

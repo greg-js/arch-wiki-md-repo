@@ -5,7 +5,11 @@ Related articles
 
 The [Media Transfer Protocol](https://en.wikipedia.org/wiki/Media_Transfer_Protocol "wikipedia:Media Transfer Protocol") (MTP) can be used to transfer media files to and from many mobile phones (all Windows Phone 7/8/10 devices, most newer [Android](/index.php/Android "Android") devices) and media players (e.g. Creative Zen).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Connecting](#Connecting)
 *   [2 FUSE filesystems](#FUSE_filesystems)

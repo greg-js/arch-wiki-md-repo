@@ -12,7 +12,11 @@ Sudo es una alternativa a [su](/index.php/Su_(Espa%C3%B1ol) "Su (Español)") par
 
 Sudo también se puede usar para ejecutar comandos como otros usuarios; además, sudo registra todos los comandos y los intentos de acceso fallidos para la auditoría de seguridad.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Utilización](#Utilización)
@@ -91,7 +95,7 @@ Para cambiar el editor permanentemente, véase la sección [variables de entorno
 # Restablece el entorno predeterminado
 Defaults      env_reset
 # Establece el EDITOR predeterminado a nano, y no permite a visudo usar EDITOR/VISUAL.
-Defaults      editor=/usr/bin/nano, !env_editor
+Defaults      editor=/usr/bin/nano, !env_editor
 
 ```
 
@@ -123,7 +127,7 @@ Para dehabilitar la solicitud de contraseña para el usuario `NOMBRE_DE_USUARIO`
 **Advertencia:** Esto permitirá que cualquier proceso que se ejecute con su nombre de usuario use sudo sin solicitar permiso.
 
 ```
-Defaults:NOMBRE_DE_USUARIO      !authenticate
+Defaults:NOMBRE_DE_USUARIO      !authenticate
 
 ```
 
@@ -164,7 +168,7 @@ El propietario y el grupo para el archivo `sudoers` deben ser ambos 0\. Los perm
 Si le molesta que sudo, de forma predeterminada, requiera introducir la contraseña cada vez que abra un nuevo terminal, deshabilite **tty_tickets**:
 
 ```
-Defaults !tty_tickets
+Defaults !tty_tickets
 
 ```
 
@@ -303,8 +307,8 @@ echo 'AllowGroups ssh' >> /etc/ssh/sshd_config
 Añada usuarios a otros grupos.
 
 ```
-for g in power network ;do ;gpasswd -a joe $g ;done
-for g in network power storage ;do ;gpasswd -a admin $g ;done
+for g in power network ;do ;gpasswd -a joe $g ;done
+for g in network power storage ;do ;gpasswd -a admin $g ;done
 
 ```
 

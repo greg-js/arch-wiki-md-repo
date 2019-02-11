@@ -1,6 +1,10 @@
 MongoDB (from hu**mongo**us) is an open source document-oriented database system developed and supported by [MongoDB Inc. (formerly 10gen)](http://www.mongodb.com/). It is part of the NoSQL family of database systems. Instead of storing data in tables as is done in a "classical" relational database, MongoDB stores structured data as JSON-like documents with dynamic schemas (MongoDB calls the format [BSON](http://bsonspec.org/)), making the integration of data in certain types of applications easier and faster.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)

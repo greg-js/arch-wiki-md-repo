@@ -7,7 +7,11 @@ Related articles
 
 [e4rat](http://e4rat.sourceforge.net/) stands for e4 'reduced access time' (ext4 file system only) and is a project by Andreas Rid and Gundolf Kiefer. The [e4rat range of tools](http://e4rat.sourceforge.net/) are comprised of e4rat-collect, e4rat-realloc and e4rat-preload.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Process](#Process)
     *   [1.1 Who benefits, who does not](#Who_benefits,_who_does_not)

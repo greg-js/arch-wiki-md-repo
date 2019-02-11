@@ -1,6 +1,10 @@
 Hurricane Electric offers a free [tunnel broker](http://tunnelbroker.net/) service that is relatively painless to use under Arch if you wish to add IPv6 connectivity to an IPv4-only host.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Registering for a tunnel](#Registering_for_a_tunnel)
 *   [2 Setting up Hurricane Electric tunnel](#Setting_up_Hurricane_Electric_tunnel)

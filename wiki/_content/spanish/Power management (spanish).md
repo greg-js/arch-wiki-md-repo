@@ -21,7 +21,11 @@ También hay muchas herramientas de administración de energía:
 
 **Nota:** Los ajustes relativos a la energía que se han establecido en un lugar/con alguna herramienta, pueden ser sobrescritos en otro lugar/con otras herramientas.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Administración de energía con systemd](#Administración_de_energía_con_systemd)
     *   [1.1 Eventos de ACPI](#Eventos_de_ACPI)
@@ -194,10 +198,10 @@ He aquí un ejemplo de script de sleep personalizado:
 case $1/$2 in
   pre/*)
     echo "Going to $2..."
-    ;;
+    ;;
   post/*)
     echo "Waking up from $2..."
-    ;;
+    ;;
 esac
 ```
 

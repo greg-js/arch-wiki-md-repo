@@ -1,6 +1,10 @@
 **Tip:** If in need to remotely unlock root or other early-boot filesystems (headless machine, distant servers...), follow the specific instructions from [dm-crypt/Specialties#Remote unlocking of the root (or other) partition](/index.php/Dm-crypt/Specialties#Remote_unlocking_of_the_root_(or_other)_partition "Dm-crypt/Specialties").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 mkinitcpio](#mkinitcpio)
     *   [1.1 Examples](#Examples)

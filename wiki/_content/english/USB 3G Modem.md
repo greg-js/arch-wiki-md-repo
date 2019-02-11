@@ -7,7 +7,11 @@ Related articles
 
 A number of mobile telephone networks around the world offer mobile internet connections over UMTS (or EDGE or GSM) using a portable USB modem device.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Remove the PIN](#Remove_the_PIN)
 *   [2 Device identification](#Device_identification)

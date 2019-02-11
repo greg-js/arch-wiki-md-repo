@@ -6,7 +6,11 @@ Artigos relacionados
 
 Este artigo detalha como instalar e configurar um dispositivo de rede sem fio Broadcom.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Histórico](#Histórico)
 *   [2 Seleção de drivers](#Seleção_de_drivers)

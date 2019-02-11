@@ -2,7 +2,11 @@ Related articles
 
 *   [Full system backup with tar](/index.php/Full_system_backup_with_tar "Full system backup with tar")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Overview](#Overview)
 *   [2 Prepare live CD/DVD/USB](#Prepare_live_CD/DVD/USB)

@@ -9,7 +9,11 @@ Related articles
 
 If you require a technical run-down of requirements and build steps only, have a look at the [official project documentation](https://git.archlinux.org/archiso.git/tree/docs) too.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Setup](#Setup)
 *   [2 Configure the live medium](#Configure_the_live_medium)
@@ -214,7 +218,7 @@ You can modify this file to change the auto login user:
 ```
 [Service]
 ExecStart=
-ExecStart=-/sbin/agetty --autologin **isouser** --noclear %I 38400 linux
+ExecStart=-/sbin/agetty --autologin **isouser** --noclear %I 38400 linux
 
 ```
 

@@ -1,6 +1,10 @@
 Below is a list of frequently asked questions about Arch64.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Kako da instalirate Arch64?](#Kako_da_instalirate_Arch64?)
 *   [2 Koliko je potpun port?](#Koliko_je_potpun_port?)

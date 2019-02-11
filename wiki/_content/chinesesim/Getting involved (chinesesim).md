@@ -9,7 +9,11 @@
 
 本文简单介绍了 Archer 为 Arch 社团做贡献的若干途径。开始贡献前请先熟悉一下 [行为守则](/index.php/Code_of_conduct_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Code of conduct (简体中文)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 社区](#社区)
     *   [1.1 论坛发帖](#论坛发帖)

@@ -5,7 +5,11 @@ Related articles
 
 An [electronic identification](https://en.wikipedia.org/wiki/Electronic_identification "w:Electronic identification") ("eID") is an electronic identification solution of citizens or organizations, for example in view to access benefits or services provided by government authorities, banks or other companies. Apart from online authentication many eICs also give users the option to sign electronic documents with a digital signature.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Setup per country](#Setup_per_country)

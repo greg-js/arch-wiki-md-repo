@@ -8,7 +8,11 @@ Related articles
 
 [Nemo](https://github.com/linuxmint/nemo) is a fork of [GNOME Files](/index.php/GNOME_Files "GNOME Files") (formerly known as Nautilus). It is also the default file manager of the [Cinnamon](/index.php/Cinnamon "Cinnamon") desktop. Nemo is based on the Files 3.4 code. It was created as a response to the changes in Files 3.6 which saw features such as type ahead find and split pane view removed.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Extensions](#Extensions)
@@ -127,7 +131,7 @@ Action files must have the `.nemo_action` file extension.
 Name=Clam Scan
 Comment=Clam Scan
 
-Exec=gnome-terminal -x sh -c "clamscan -r %F | less"
+Exec=gnome-terminal -x sh -c "clamscan -r %F | less"
 
 Icon-Name=bug-buddy
 
@@ -142,9 +146,9 @@ Extensions=dir;exe;dll;zip;gz;7z;rar;
 ```
 [Nemo Action]
 Active=true
-Name=Archive %N
-Comment=Archiving %N will add .archive to the object.
-Exec=<archive.py %F>
+Name=Archive %N
+Comment=Archiving %N will add .archive to the object.
+Exec=<archive.py %F>
 Selection=S
 Extensions=any;
 ```
@@ -175,7 +179,7 @@ for arg in sys.argv:
 Active=true
 Name=Compare later
 Comment=Save file for comparison later.
-Exec=<compare.sh save %F>
+Exec=<compare.sh save %F>
 Icon-Name=meld
 Selection=S
 Extensions=any
@@ -185,8 +189,8 @@ Extensions=any
 [Nemo Action]
 Active=true
 Name=Compare with saved element
-Comment=Compare %F saved file or directory.
-Exec=<compare.sh compare %F>
+Comment=Compare %F saved file or directory.
+Exec=<compare.sh compare %F>
 Icon-Name=meld
 Selection=S
 Extensions=any

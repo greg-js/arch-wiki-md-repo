@@ -8,7 +8,11 @@ Artículos relacionados
 
 *netctl* es una herramienta basada en CLI (*«intérprete de línea de órdenes»*, esto es, a través de consola)) utilizada para configurar y gestionar las conexiones de red mediante perfiles. Es la apuesta de Arch Linux para sustituir a *netcfg*. *netctl* supone el futuro (y el presente) de la gestión de conexiones de red.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Bibliografía altamente recomendada](#Bibliografía_altamente_recomendada)

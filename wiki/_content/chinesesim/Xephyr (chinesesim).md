@@ -11,7 +11,7 @@
 如果希望运行一个嵌套的 X 窗口，你需要指定一个 **DISPLAY**。
 
 ```
-$ Xephyr -br -ac -noreset -screen 800x600 :1
+$ Xephyr -br -ac -noreset -screen 800x600 :1
 
 ```
 
@@ -32,6 +32,6 @@ $ DISPLAY=:1 spectrwm
 也可以通过 startx 命令让 Xephyr 使用你的 [xinitrc](/index.php/Xinitrc "Xinitrc") ：
 
 ```
- $ startx -- /usr/bin/Xephyr :1
+ $ startx -- /usr/bin/Xephyr :1
 
 ```

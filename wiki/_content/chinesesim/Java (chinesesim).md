@@ -9,7 +9,11 @@ Related articles
 
 Arch Linux官方支持开源的 [OpenJDK](https://openjdk.java.net/) 版本7、8、10和11.所有的JVM都能无冲突的被安装，并切换到帮助脚本`archlinux-java`. 一些其他的Java环境也是可使用的，在 [Arch User Repository (简体中文)](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)")中，但官方并不支持。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
     *   [1.1 OpenJDK](#OpenJDK)

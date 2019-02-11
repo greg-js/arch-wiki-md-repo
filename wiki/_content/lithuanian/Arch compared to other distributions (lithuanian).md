@@ -5,7 +5,11 @@ Related articles
 
 Šitas puslapis bando sulyginti Arch Linux su kitomis populiariomis GNU/Linux distribucijomis ir UNIX tipo operacinėmis sistemomis. Sekantys apibūdinimai yra trumpi apibūdinimai, kurios galėtų padėti žmogui apsispręsti ar Arch Linux gali patenkinti jo poreikius. Nors apžvalgos ir apibūdinimai gali būti naudingi, patirtis iš pirmų rankų visada yra geriausias būdas palyginti distribucijas.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Paremtos pradinio kodo kompiliavimu](#Paremtos_pradinio_kodo_kompiliavimu)
     *   [1.1 Gentoo](#Gentoo)

@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Configuración del servidor](#Configuración_del_servidor)
     *   [1.1 Zend Core + Apache](#Zend_Core_+_Apache)
@@ -111,7 +115,7 @@ para obtener la ruta.
 
 **Integración con Komodo**, Caja de herramientas -> Añadir -> Nueva orden:
 
-*   Orden: *zca --recursive %F*
+*   Orden: *zca --recursive %F*
 *   Ejecutar en: Pestaña de salida de la orden
 *   Analizar salida con: *<tt>^(?P<file>.+?)\(line (?P<line>\d+)\): (?P<content>.*)$</tt>*
 *   Seleccione *Mostrar salida analizada como una lista*
@@ -120,6 +124,6 @@ para obtener la ruta.
 
 ```
  autocmd FileType php setlocal makeprg=zca\ %<.php                               
- autocmd FileType php setlocal errorformat=%f(line\ %l):\ %m
+ autocmd FileType php setlocal errorformat=%f(line\ %l):\ %m
 
 ```

@@ -2,7 +2,11 @@
 
 It is a simpler alternative to [PhpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin"). You can find more pieces of information about this project at the [official page](http://www.adminer.org/en/) or at [Wikipedia](https://en.wikipedia.org/wiki/Adminer "wikipedia:Adminer").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

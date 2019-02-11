@@ -7,7 +7,11 @@ Related articles
 
 [ipset](http://ipset.netfilter.org/)是 Linux [防火墙](/index.php/Firewalls "Firewalls") [iptables](/index.php/Iptables "Iptables") 的一个协助工具。 通过这个工具可以轻松愉快地屏蔽一组IP地址。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 配置](#配置)

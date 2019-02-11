@@ -5,7 +5,11 @@ Related articles
 
 [mpv](https://mpv.io/) is a media player based on [MPlayer](/index.php/MPlayer "MPlayer") and the now unmaintained *mplayer2*. It supports a wide variety of video file formats, audio and video codecs, and subtitle types. A comprehensive (although admittedly incomplete) list of differences between *mpv* and the aforementioned players can be found [here](https://github.com/mpv-player/mpv/blob/master/DOCS/mplayer-changes.rst).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Front ends](#Front_ends)

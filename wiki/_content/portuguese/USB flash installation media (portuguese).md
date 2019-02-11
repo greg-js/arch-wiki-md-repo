@@ -10,7 +10,11 @@ Esta página discute vários métodos multiplataforma sobre como criar uma unida
 
 Se você deseja executar uma instalação completa do Arch Linux a partir de uma unidade USB (por exemplo, com configurações persistentes), consulte [Instalando Arch Linux em um pendrive](/index.php/Instalando_Arch_Linux_em_um_pendrive "Instalando Arch Linux em um pendrive"). Se você gostaria de usar seu pendrive inicializável com Arch Linux como um sistema de recuperação, veja [chroot](/index.php/Change_root_(Portugu%C3%AAs) "Change root (Português)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 USB inicializável com BIOS e UEFI](#USB_inicializável_com_BIOS_e_UEFI)
     *   [1.1 Usando ferramentas automáticas](#Usando_ferramentas_automáticas)
@@ -236,7 +240,7 @@ O Syslinux já está pré-instalado em `/mnt/usb/arch/boot/syslinux`. Instale-o 
 
 ```
 > cd bios\
-> for /r %Y in (*.c32) do copy "%Y" "X:\arch\boot\syslinux\" /y
+> for /r %Y in (*.c32) do copy "%Y" "X:\arch\boot\syslinux\" /y
 > copy mbr\*.bin X:\arch\boot\syslinux\ /y
 
 ```

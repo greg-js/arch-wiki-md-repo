@@ -15,7 +15,11 @@ A configuração de rede sem fio *(wireless)* é um processo de duas partes. A p
 
 A seção [#iw](#iw) descreve como gerenciar manualmente sua interface de rede sem fio / suas LANs sem fio usando [iw](https://www.archlinux.org/packages/?name=iw). A seção [Configuração de rede#Gerenciadores de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede#Gerenciadores_de_rede "Configuração de rede") descreve vários programas que podem ser usados para gerenciar automaticamente sua interface sem fio, alguns dos quais incluem uma GUI e todos incluem suporte a perfis de rede (útil ao alternar frequentemente de redes sem fio, como laptops).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Driver de dispositivo](#Driver_de_dispositivo)
     *   [1.1 Verificar o status de driver](#Verificar_o_status_de_driver)

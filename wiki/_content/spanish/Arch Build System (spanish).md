@@ -19,7 +19,11 @@ Arch Build System (*«sistema de compilación de Arch»*), ABS para abreviar, es
 
 ABS es un concepto similar. ABS es un componente de un árbol de directorios (el árbol ABS) que se puede verificar utilizando SVN. Este árbol representa (pero no contiene) todo el *sotfware oficial de Arch*. Se hace referencia a cada subdirectorio, nominado por el nombre del paquete, como un «ABS», de igual manera a como si se refiriese a un «puerto». Estos ABS (o subdirectorios) no contienen el paquete de software ni el código fuente, sino más bien un archivo [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") y, a veces, otros archivos. Mediante la ejecución de la orden [makepkg](/index.php/Makepkg "Makepkg") dentro de un directorio que contiene un PKGBUILD, el sistema primero compila y luego *empaqueta* el software, dentro del directorio de compilación, antes de ser instalado. A continuación, se puede utilizar [pacman](/index.php/Pacman "Pacman"), el gestor de paquetes de Arch Linux, para instalar o actualizar el nuevo paquete.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Descripción general de ABS](#Descripción_general_de_ABS)
     *   [1.1 Árbol SVN](#Árbol_SVN)

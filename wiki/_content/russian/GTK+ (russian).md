@@ -13,7 +13,11 @@ C [сайта GTK+](http://www.gtk.org):
 
 GTK+, GIMP Toolkit, изначально сделан [проектом GNU](/index.php/GNU_Project "GNU Project") для [GIMP](/index.php/GIMP "GIMP"), но теперь это очень популярный инструмент связанный с многими языками. Эта статья будет исследовать инструменты, используемые для настройки GTK+ тем, стилей, иконок, шрифтов и размеров шрифтов, а также подробную ручную настройку.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Темы](#Темы)

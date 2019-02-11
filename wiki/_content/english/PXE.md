@@ -8,7 +8,11 @@ From [Wikipedia:Preboot Execution Environment](https://en.wikipedia.org/wiki/Pre
 
 In this guide, PXE is used to boot the installation media with an appropriate option-rom that supports PXE on the target. This works well when you already have a server set up.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Preparation](#Preparation)
 *   [2 Server setup](#Server_setup)

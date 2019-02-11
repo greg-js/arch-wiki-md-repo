@@ -5,7 +5,11 @@ Related articles
 
 [IMWheel](http://imwheel.sourceforge.net/) is a tool for tweaking mouse wheel behavior, on a per-program basis. It can map mousewheel input to keyboard input, increase mousewheel speed, and has support for modifier keys.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

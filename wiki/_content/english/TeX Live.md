@@ -9,7 +9,11 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/TeX_Live "wikipedia:TeX L
 
 TeX Live includes the [tex(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tex.1) and [pdftex(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pdftex.1) programs, the [LaTeX](https://en.wikipedia.org/wiki/LaTeX "wikipedia:LaTeX") and [ConTeXt](https://en.wikipedia.org/wiki/ConTeXt "wikipedia:ConTeXt") TeX macro packages and the [XeTeX](https://en.wikipedia.org/wiki/XeTeX "wikipedia:XeTeX") and [LuaTeX](https://en.wikipedia.org/wiki/LuaTeX "wikipedia:LuaTeX") TeX engines.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 tllocalmgr](#tllocalmgr)

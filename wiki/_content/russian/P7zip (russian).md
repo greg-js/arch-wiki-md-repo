@@ -1,6 +1,10 @@
 [7-Zip](https://en.wikipedia.org/wiki/ru:7-Zip "wikipedia:ru:7-Zip") — свободный файловый архиватор с высокой степенью сжатия данных. *p7zip* - портированная консольная версия 7-Zip для систем стандарта [POSIX](https://en.wikipedia.org/wiki/ru:POSIX "wikipedia:ru:POSIX"), включая Linux.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка и использование](#Установка_и_использование)
 *   [2 Синтаксис](#Синтаксис)

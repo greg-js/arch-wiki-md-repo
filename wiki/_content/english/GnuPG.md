@@ -8,7 +8,11 @@ According to the [official website](https://www.gnupg.org/):
 
 	GnuPG is a complete and free implementation of the [OpenPGP](http://openpgp.org/about/) standard as defined by [RFC4880](https://tools.ietf.org/html/rfc4880) (also known as PGP). GnuPG allows you to encrypt and sign your data and communication. It features a versatile key management system as well as access modules for all kinds of public key directories. GnuPG, also known as GPG, is a command line tool with features for easy integration with other applications. A wealth of frontend applications and libraries are available. Version 2 of GnuPG also provides support for S/MIME and Secure Shell (ssh).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -233,6 +237,7 @@ $ gpg --recv-keys *key-id*
 *   Adding `keyserver-options auto-key-retrieve` to `gpg.conf` will automatically fetch keys from the key server as needed, but this can be considered a **privacy violation**; see "web bug" in [gpg(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gpg.1).
 *   An alternative key server is `pool.sks-keyservers.net` and can be specified with `keyserver` in `dirmngr.conf`; see also [wikipedia:Key server (cryptographic)#Keyserver examples](https://en.wikipedia.org/wiki/Key_server_(cryptographic)#Keyserver_examples "wikipedia:Key server (cryptographic)").
 *   If your network blocks ports used for hkp/hkps, you may need to specify port 80, i.e. `pool.sks-keyservers.net:80`
+*   If receiving GPG fails with the following error message: `gpg: keyserver receive failed: Connection refused`, please check your DNS servers or use others.
 *   You can connect to the keyserver over [Tor](/index.php/Tor "Tor") using `--use-tor`. See this [GnuPG blog post](https://gnupg.org/blog/20151224-gnupg-in-november-and-december.html) for more information.
 *   You can connect to a keyserver using a proxy by setting the `http_proxy` [environment variable](/index.php/Environment_variable "Environment variable") and setting `honor-http-proxy` in `dirmngr.conf`. Alternatively, set `http-proxy *host[:port]*` in `dirmngr.conf`, overriding the `http_proxy` environment variable. [Restart](/index.php/Restart "Restart") the `dirmngr.service` [user service](/index.php/Systemd/User "Systemd/User") for the changes to take effect.
 *   If you wish to import a key ID to install a specific Arch Linux package, see [pacman/Package signing#Managing the keyring](/index.php/Pacman/Package_signing#Managing_the_keyring "Pacman/Package signing") and [Makepkg#Signature checking](/index.php/Makepkg#Signature_checking "Makepkg").

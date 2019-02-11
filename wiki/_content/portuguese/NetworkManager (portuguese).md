@@ -9,7 +9,11 @@ O [NetworkManager](https://wiki.gnome.org/Projects/NetworkManager/) é um progra
 
 **Atenção:** Por padrão, as senhas de Wi-Fi são armazenadas em texto simples, veja [#Senhas de Wi-Fi criptografadas](#Senhas_de_Wi-Fi_criptografadas).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalação](#Instalação)
     *   [1.1 Suporte a banda larga móvel](#Suporte_a_banda_larga_móvel)

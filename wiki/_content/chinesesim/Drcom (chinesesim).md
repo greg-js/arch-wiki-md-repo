@@ -1,6 +1,10 @@
 `drcom`作为中国大陆众多高校采用拨号上网的认证方式，某些学校不提供Linux客户端，或者不对各个发行版都支持. [dogcom](https://github.com/mchome/dogcom)通过分析drcom认证数据包，支持发送心跳包，保持握手.从而解决了校园网认证问题
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 配置](#配置)

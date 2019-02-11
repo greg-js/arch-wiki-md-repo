@@ -16,7 +16,11 @@ Um [repositório de software](https://en.wikipedia.org/wiki/pt:Reposit%C3%B3rio 
 
 Pacotes nos repositórios oficiais são atualizados constantemente: quando um pacote é atualizado, sua versão antiga é removida do repositórios. Não há grandes lançamentos do Arch: cada pacote é atualizado na medida em que novas versões se tornam disponíveis a partir de fontes do *upstream*. Cada repositório está sempre coerente, isto é, os pacotes que ele hospeda sempre são versões reciprocamente compatíveis.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Repositórios estáveis](#Repositórios_estáveis)
     *   [1.1 core](#core)

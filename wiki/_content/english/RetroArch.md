@@ -2,7 +2,11 @@
 
 [RetroArch](http://www.retroarch.com/) is the reference implementation of the libretro API. It is a modular front-end for video game system emulators, game engines, video games, media players and other applications that offers several uncommon technical features such as multi-pass shader support, real-time rewinding and video recording (using [FFmpeg](/index.php/FFmpeg "FFmpeg")), it also features a gamepad-driven UI on top of a full-featured command-line interface.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)

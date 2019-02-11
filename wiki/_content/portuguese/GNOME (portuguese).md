@@ -17,7 +17,11 @@ Artigos relacionados
 
 [GNOME](https://en.wikipedia.org/wiki/pt:GNOME "wikipedia:pt:GNOME") (/(ɡ)noʊm/) é um [ambiente de desktop](/index.php/Ambiente_de_desktop "Ambiente de desktop"), ou *desktop environment*, que visa ser simples e fácil de usar. Ele é projetado por [O Projeto GNOME](https://en.wikipedia.org/wiki/The_GNOME_Project "wikipedia:The GNOME Project") e é composto interiramente de software livre e código aberto. O GNOME é uma parte do [Projeto GNU](/index.php/Projeto_GNU "Projeto GNU"). O *display* padrão é o [Wayland](/index.php/Wayland "Wayland") em vez do [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalação](#Instalação)
 *   [2 Sessões do GNOME](#Sessões_do_GNOME)

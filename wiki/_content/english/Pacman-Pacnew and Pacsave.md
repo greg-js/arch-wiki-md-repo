@@ -1,6 +1,10 @@
 When *pacman* removes a package that has a configuration file, it normally creates a backup copy of that config file and appends *.pacsave* to the name of the file. Likewise, when *pacman* upgrades a package which includes a new config file created by the maintainer differing from the currently installed file, it saves a *.pacnew* file with the new configuration. *pacman* provides notice when these files are written.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Why these files are created](#Why_these_files_are_created)
 *   [2 Package backup files](#Package_backup_files)

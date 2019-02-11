@@ -19,7 +19,11 @@
 
 Более подробную информацию о проекте LightDM можно найти [здесь](http://www.freedesktop.org/wiki/Software/LightDM/Design).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
     *   [1.1 Greeter (Экран приветствия/входа в систему)](#Greeter_(Экран_приветствия/входа_в_систему))
@@ -187,7 +191,7 @@ theme-name=classic
 [greeter-settings]
 Background=/usr/share/archlinux/wallpaper/archlinux-underground.jpg
 BackgroundKeepAspectRatio=true
-GreetMessage=Welcome to %hostname%
+GreetMessage=Welcome to %hostname%
 ```
 
 ### Изменение вашего аватара

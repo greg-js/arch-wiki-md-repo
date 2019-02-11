@@ -1,6 +1,10 @@
 The HP 6510b is a compact yet powerful laptop with a high-resolution screen (if you pick the WXGA+ version). It has been labeled "Novel SuSE Enterprise certified" by HP, which should mean Linux runs fine on it.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Hardware specifications](#Hardware_specifications)
 *   [2 Setup](#Setup)

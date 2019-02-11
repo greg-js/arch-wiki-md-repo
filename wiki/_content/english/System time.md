@@ -13,7 +13,11 @@ Standard behavior of most operating systems is:
 *   Keep accurate time of the system clock, see [#Time synchronization](#Time_synchronization).
 *   Set the hardware clock from the system clock on shutdown.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Hardware clock](#Hardware_clock)
     *   [1.1 Read hardware clock](#Read_hardware_clock)

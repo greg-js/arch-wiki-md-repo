@@ -5,7 +5,11 @@ Related articles
 
 Эта статья посвящена установке Arch Linux в продукт [VMware](/index.php/VMware "VMware") , такой как [Player (Plus)](http://www.vmware.com/products/player/), [Fusion](http://www.vmware.com/products/fusion/) или [Workstation](http://www.vmware.com/products/workstation/).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Встроенные драйверы](#Встроенные_драйверы)
 *   [2 VMware Tools versus Open-VM-Tools](#VMware_Tools_versus_Open-VM-Tools)

@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 About / Prerequisites](#About_/_Prerequisites)
 *   [2 Finding the Mouse Name](#Finding_the_Mouse_Name)

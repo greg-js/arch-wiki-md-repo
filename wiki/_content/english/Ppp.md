@@ -1,6 +1,10 @@
 **ppp** (Paul's PPP Package) is an open source package which implements the [point-to-point protocol](https://en.wikipedia.org/wiki/point-to-point_protocol "wikipedia:point-to-point protocol") (PPP) on Linux and Solaris systems. It is implemented as single *pppd* daemon and acts as backend for [xl2tpd](https://www.archlinux.org/packages/?name=xl2tpd), [pptpd](https://www.archlinux.org/packages/?name=pptpd) and [netctl](/index.php/Netctl "Netctl"). [3G](https://en.wikipedia.org/wiki/3G "wikipedia:3G"), [L2TP](https://en.wikipedia.org/wiki/L2TP "wikipedia:L2TP") and [PPPoE](https://en.wikipedia.org/wiki/PPPoE "wikipedia:PPPoE") connections are internally based on PPP protocol and therefore can be managed by ppp.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

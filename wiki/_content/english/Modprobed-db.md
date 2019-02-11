@@ -5,7 +5,11 @@ Related articles
 
 [modprobed-db](https://aur.archlinux.org/packages/modprobed-db/) keeps a running list of ALL modules ever probed on a system and allow for easy recall. This is very useful for users wishing to build a minimal kernel via a `make localmodconfig` which simply takes every module currently probed and switches everything BUT them off in the `.config` for a kernel resulting in smaller kernel packages and reduced compilation times.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation and Setup](#Installation_and_Setup)
 *   [2 Usage](#Usage)

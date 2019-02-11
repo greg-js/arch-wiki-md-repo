@@ -11,7 +11,11 @@
 
 "*Bumblebee 致力于使 NVIDIA Optimus 在 GNU/Linux 系统上可用，实现两块不同的供电配置的显卡同时插入使用，共享同一个 framebuffer。*"
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Bumblebee: Linux上的 Optimus](#Bumblebee:_Linux上的_Optimus)
 *   [2 安装](#安装)
@@ -32,7 +36,7 @@
 *   [5 如 Windows 一般在集显和独显间切换](#如_Windows_一般在集显和独显间切换)
 *   [6 不依赖Bumblebee来使用CUDA](#不依赖Bumblebee来使用CUDA)
 *   [7 疑难问题](#疑难问题)
-    *   [7.1 [VGL] ERROR: Could not open display :8](#[VGL]_ERROR:_Could_not_open_display_:8)
+    *   [7.1 [VGL] ERROR: Could not open display :8](#[VGL]_ERROR:_Could_not_open_display_:8)
     *   [7.2 Xlib: extension "GLX" missing on display ":0.0"](#Xlib:_extension_"GLX"_missing_on_display_":0.0")
     *   [7.3 [ERROR]Cannot access secondary GPU: No devices detected](#[ERROR]Cannot_access_secondary_GPU:_No_devices_detected)
         *   [7.3.1 NVIDIA(0): Failed to assign any connected display devices to X screen 0](#NVIDIA(0):_Failed_to_assign_any_connected_display_devices_to_X_screen_0)
@@ -134,7 +138,7 @@ $ optirun wine application.exe
 另外，用 Optimus 打开 NVIDIA 设置面板:
 
 ```
-$ optirun -b none nvidia-settings -c :8
+$ optirun -b none nvidia-settings -c :8
 
 ```
 
@@ -474,7 +478,7 @@ EndSection  # Samsung 2494
 *   请注意在 xrandr 输出列表中的 VIRTUAL 显示器的位置。计数从零开始，也就是说，如果它给出了第三个显示器，你会指定 `-x 2` 作为参数传递给 `screenclone`（注：这可能并不总是正确的。如果你看到内部的笔记本电脑显示屏克隆在监视器上，只管尝试 `-x 2`）。
 *   克隆VIRTUAL显示器的内容到由Bumblebee创建的，经由NVIDIA的芯片连接到所述的DisplayPort显示器的X服务器:
 
-	`screenclone -d :8 -x 2`
+	`screenclone -d :8 -x 2`
 
 这就行了，三个显示器都应该配置好并正常工作。
 
@@ -526,7 +530,7 @@ export LD_LIBRARY_PATH=/tmp/libgl-switcheroo-$USER/fs/\$LIB${LD_LIBRARY_PATH+:}$
 
 **注意:** 报告 Bug 的位置在 [Bumblebee-Project](https://github.com/Bumblebee-Project/Bumblebee)，Bumblebee 的 [Wiki](https://github.com/Bumblebee-Project/Bumblebee/wiki/Reporting-Issues) 中描述。
 
-### [VGL] ERROR: Could not open display :8
+### [VGL] ERROR: Could not open display :8
 
 一个关于部分wine程序的已知问题是它会fork并杀死父进程而不是跟踪它的动态(例如免费网络游戏 "Runes of Magic")
 
@@ -718,7 +722,7 @@ EndSection
 视频撕裂是 Bumblebee 上一个常见的问题，要修复这个问题，你需要启用 vsync。默认情况下，Intel 显卡已启用此设置，但是还是检查一下 Xorg 的日志，要检查 nvidia 是否启用了此设置，运行:
 
 ```
-$ optirun nvidia-settings -c :8
+$ optirun nvidia-settings -c :8
 
 ```
 

@@ -2,7 +2,11 @@
 
 当为Arch Linux构建软件包时,您应该遵循以下的**软件包指导原则**，如果您想贡献你的软件包至Arch Linux时,您应该更加遵循软件包指导原则。同时需要阅读[PKGBUILD](https://archlinux.org/pacman/PKGBUILD.5.html) 和 [makepkg](https://archlinux.org/pacman/makepkg.8.html) 手册。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 PKGBUILD样例](#PKGBUILD样例)
 *   [2 打包规则](#打包规则)

@@ -4,7 +4,11 @@
 
 [Internet](/index.php/List_of_applications/Internet_(Espa%C3%B1ol) "List of applications/Internet (Español)") – [Multimedia](/index.php/List_of_applications/Multimedia_(Espa%C3%B1ol) "List of applications/Multimedia (Español)") – <a class="mw-selflink selflink">Utilidades</a> – [Documentos](/index.php/List_of_applications/Documents_(Espa%C3%B1ol) "List of applications/Documents (Español)") – [Seguridad](/index.php/List_of_applications/Security_(Espa%C3%B1ol) "List of applications/Security (Español)") – [Ciencia](/index.php/List_of_applications/Science_(Espa%C3%B1ol) "List of applications/Science (Español)") – [Otras](/index.php/List_of_applications/Other_(Espa%C3%B1ol) "List of applications/Other (Español)")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Utilidades](#Utilidades)
     *   [1.1 Órdenes básicas de la shell](#Órdenes_básicas_de_la_shell)

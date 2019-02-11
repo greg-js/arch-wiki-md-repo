@@ -10,7 +10,11 @@
 
 英文维基百科的[《操作系统比较》](https://en.wikipedia.org/wiki/Comparison_of_operating_systems "w:Comparison of operating systems")和[《Linux发行版比较》](https://en.wikipedia.org/wiki/Comparison_of_Linux_distributions "w:Comparison of Linux distributions")这两个页面包含了更详细的比较信息。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 基于源码的发行版](#基于源码的发行版)
     *   [1.1 CRUX](#CRUX)

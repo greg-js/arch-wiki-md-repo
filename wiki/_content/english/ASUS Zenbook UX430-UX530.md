@@ -16,7 +16,11 @@
 
 ASUS [announced](https://www.asus.com/News/q0npwWGXCqpxoVf8) UX430 and UX530 models. Since these models share almost the same hardware (the only difference is screen size and discrete NVidia graphics card), this article covers hardware specific configuration for all UX430UA, UX430UQ, UX530UQ and UX530UX models.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Configuration](#Configuration)
     *   [1.1 Secure Boot (option)](#Secure_Boot_(option))

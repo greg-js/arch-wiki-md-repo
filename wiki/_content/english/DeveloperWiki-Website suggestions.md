@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Introduction](#Introduction)
 *   [2 Ideas and Suggestions](#Ideas_and_Suggestions)
@@ -22,7 +26,7 @@ This article is part of the [DeveloperWiki](/index.php/DeveloperWiki "DeveloperW
 
 Implement an [OpenID](http://openid.net/)-like identity system for the official Arch Linux websites.
 
-*   If we could integrate login/pass throughout AUR, Wiki, Forums, and Bugs this way ... well I'm afraid I'd get a bit moist.  :)
+*   If we could integrate login/pass throughout AUR, Wiki, Forums, and Bugs this way ... well I'm afraid I'd get a bit moist. :)
     [georgia_tech_swagger](/index.php/User:Georgia_tech_swagger "User:Georgia tech swagger")
 *   Might also consider Mozilla Persona[[1]](https://www.mozilla.org/en-US/persona/), which should be easier to implement than full blown openID.
 

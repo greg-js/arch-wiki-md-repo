@@ -4,7 +4,11 @@
 
 [網路](/index.php/List_of_Applications/Internet_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "List of Applications/Internet (正體中文)") – [多媒體](/index.php/List_of_Applications/Multimedia_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "List of Applications/Multimedia (正體中文)") – [工具](/index.php/List_of_Applications/Utilities_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "List of Applications/Utilities (正體中文)") – [文件](/index.php/List_of_Applications/Documents_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "List of Applications/Documents (正體中文)") – [安全性](/index.php/List_of_Applications/Security_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "List of Applications/Security (正體中文)") – [科學](/index.php/List_of_Applications/Science_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "List of Applications/Science (正體中文)") – [其他](/index.php/List_of_Applications/Other_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "List of Applications/Other (正體中文)")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 工具](#工具)
     *   [1.1 硬碟分割工具](#硬碟分割工具)

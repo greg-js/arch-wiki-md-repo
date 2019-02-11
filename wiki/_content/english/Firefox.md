@@ -9,7 +9,11 @@ Related articles
 
 [Firefox](https://www.mozilla.org/firefox) is a popular open source graphical web browser from [Mozilla](https://www.mozilla.org).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installing](#Installing)
 *   [2 Add-ons](#Add-ons)
@@ -188,7 +192,7 @@ When your default language choice does not stick, see [#Firefox does not remembe
 *   To use the KDE file selection and print dialogs in Firefox 64 or newer:
     1.  Install [xdg-desktop-portal](https://www.archlinux.org/packages/?name=xdg-desktop-portal) and [xdg-desktop-portal-kde](https://www.archlinux.org/packages/?name=xdg-desktop-portal-kde),
     2.  Copy the Firefox [desktop entry](/index.php/Desktop_entry "Desktop entry") `/usr/share/applications/firefox.desktop` to `~/.local/share/applications/firefox.desktop`,
-    3.  Edit `~/.local/share/applications/firefox.desktop` and add `GTK_USE_PORTAL=1` to all `Exec` lines before the actual command. E.g.: `Exec=GTK_USE_PORTAL=1 /usr/lib/firefox/firefox %u`.
+    3.  Edit `~/.local/share/applications/firefox.desktop` and add `GTK_USE_PORTAL=1` to all `Exec` lines before the actual command. E.g.: `Exec=GTK_USE_PORTAL=1 /usr/lib/firefox/firefox %u`.
 *   For integration with [KDE](/index.php/KDE "KDE") mime type system and file dialog, one can use [firefox-kde-opensuse](https://aur.archlinux.org/packages/firefox-kde-opensuse/) variant from AUR with OpenSUSE’s patches applied.
 *   Extensions/add-ons may provide additional integration, such as:
     *   Browser integration in [Plasma](/index.php/Plasma "Plasma"): requires [plasma-browser-integration](https://www.archlinux.org/packages/?name=plasma-browser-integration) and the [plasma-integration add-on](https://addons.mozilla.org/firefox/addon/plasma-integration/).

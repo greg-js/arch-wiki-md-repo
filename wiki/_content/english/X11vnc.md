@@ -6,7 +6,11 @@ Related articles
 
 *x11vnc* does not create an extra display (or X desktop) for remote control. Instead, it shows in real time the existing X11 display, unlike *Xvnc*, part of [TigerVNC](/index.php/TigerVNC "TigerVNC"), which is an alternatives VNC server available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Setting up x11vnc](#Setting_up_x11vnc)
     *   [1.1 Installation](#Installation)
@@ -38,14 +42,14 @@ First, start X either by *startx* or through a [display manager](/index.php/Disp
 Then, run the following command, all available options are explained in [x11vnc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/x11vnc.1).
 
 ```
-$ x11vnc -display :0
+$ x11vnc -display :0
 
 ```
 
 Another option is to place the x11vnc command line in a script which is called at login, for example:
 
 ```
-x11vnc -wait 50 -noxdamage -passwd PASSWORD -display :0 -forever -o /var/log/x11vnc.log -bg
+x11vnc -wait 50 -noxdamage -passwd PASSWORD -display :0 -forever -o /var/log/x11vnc.log -bg
 
 ```
 
@@ -58,14 +62,14 @@ You may set an X authority file for the VNC server. This is accomplished by usin
 ##### Start X
 
 ```
-$ x11vnc -display :0 -auth ~/.Xauthority
+$ x11vnc -display :0 -auth ~/.Xauthority
 
 ```
 
 If that fails, you may have to run instead (as root):
 
 ```
-# x11vnc -display :0 -auth /home/*user*/.Xauthority
+# x11vnc -display :0 -auth /home/*user*/.Xauthority
 
 ```
 
@@ -76,14 +80,14 @@ Where *user* is the username of the user who is running the X server.
 **Note:** Newer GDM packages ship with Xwayland as the default display server backend. The following instructions, however, only apply when using Xorg (else `.Xauthority` is not created, and *x11vnc* fails to start). You are therefore advised to uncomment `#WaylandEnable=false` setting in `/etc/gdm/custom.conf` in order to proceed.
 
 ```
-# x11vnc -display :0 -auth /var/lib/gdm/:0.Xauth
+# x11vnc -display :0 -auth /var/lib/gdm/:0.Xauth
 
 ```
 
 Newer versions of GDM uses /run/user. Example for user 120 (gdm), used for login screen.
 
 ```
-# x11vnc -display :0 -auth /run/user/120/gdm/Xauthority
+# x11vnc -display :0 -auth /run/user/120/gdm/Xauthority
 
 ```
 
@@ -92,14 +96,14 @@ or see [Troubleshooting](#Troubleshooting) section below
 ##### Lightdm
 
 ```
-# x11vnc -display :0 -auth /var/run/lightdm/root/\:0
+# x11vnc -display :0 -auth /var/run/lightdm/root/\:0
 
 ```
 
 ##### LXDM
 
 ```
-# x11vnc -display :0 -auth /var/run/lxdm/lxdm-\:0.auth
+# x11vnc -display :0 -auth /var/run/lxdm/lxdm-\:0.auth
 
 ```
 
@@ -108,7 +112,7 @@ or see [Troubleshooting](#Troubleshooting) section below
 SDDM uses an unpredictable UUID for the auth file [[1]](https://github.com/sddm/sddm/issues/622) therefore one needs to:
 
 ```
-# x11vnc -display :0 -auth $(find /var/run/sddm/ -type f)
+# x11vnc -display :0 -auth $(find /var/run/sddm/ -type f)
 
 ```
 
@@ -117,7 +121,7 @@ Embedding this into a systemd .service file will require a trick to evaluate the
 ##### SLIM
 
 ```
-# x11vnc -display :0 -auth /var/run/slim.auth
+# x11vnc -display :0 -auth /var/run/slim.auth
 
 ```
 
@@ -136,7 +140,7 @@ $ x11vnc -storepasswd *password* ~/.x11vnc/passwd
 To connect using the stored password use the `-rfbauth` argument and point to the passwd file you created, like so:
 
 ```
-$ x11vnc -display :0 -rfbauth ~/.x11vnc/passwd 
+$ x11vnc -display :0 -rfbauth ~/.x11vnc/passwd 
 
 ```
 
@@ -147,7 +151,7 @@ Your viewer should prompt for a password when connecting.
 By default, x11vnc will accept the first VNC session and shutdown when the session disconnects. In order to avoid that, start x11vnc with either the `-many` or the `-forever` argument, like this:
 
 ```
-$ x11vnc -many -display :0
+$ x11vnc -many -display :0
 
 ```
 
@@ -175,7 +179,7 @@ Use the `-localhost` flag with x11vnc for it to bind to the local interface. Onc
 Simple example (from [http://www.karlrunge.com/x11vnc/index.html#tunnelling](http://www.karlrunge.com/x11vnc/index.html#tunnelling) ):
 
 ```
-$ ssh -t -L 5900:localhost:5900 remote_host 'x11vnc -localhost -display :0'
+$ ssh -t -L 5900:localhost:5900 remote_host 'x11vnc -localhost -display :0'
 
 ```
 
@@ -222,7 +226,7 @@ If you are using GNOME 3 and x11vnc and you get the following errors
 Try running x11vnc like
 
 ```
-$ x11vnc -noxdamage -many -display :0 -auth /var/run/gdm/$(sudo ls /var/run/gdm | grep $(whoami))/database -forever -bg
+$ x11vnc -noxdamage -many -display :0 -auth /var/run/gdm/$(sudo ls /var/run/gdm | grep $(whoami))/database -forever -bg
 
 ```
 

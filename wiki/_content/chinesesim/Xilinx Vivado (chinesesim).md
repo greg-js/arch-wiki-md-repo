@@ -2,7 +2,11 @@
 
 Archlinux 并不受 Vivado 的正式支持，但是从 [Xilinx ISE WebPACK](/index.php/Xilinx_ISE_WebPACK "Xilinx ISE WebPACK") 的使用体验上看，只需要一点修改便能正常使用所有功能。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 先决条件](#先决条件)
     *   [1.1 依赖](#依赖)

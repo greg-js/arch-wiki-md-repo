@@ -9,7 +9,11 @@ El controlador libre no está *a la par* con el controlador propietario en térm
 
 Si tiene dudas sobre cuál elegir, pruebe primero el controlador de código abierto, dado que, por regla general, se adaptará perfectamente a la mayoría de sus necesidades y es menos problemático (consulte la [tabla de características](http://www.x.org/wiki/RadeonFeature) para más detalles).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Convenciones sobre nombres](#Convenciones_sobre_nombres)
 *   [2 Descripción](#Descripción)

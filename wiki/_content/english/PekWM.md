@@ -1,6 +1,10 @@
 [The Pek Window Manager](http://pekwm.org) is written by Claes Nästen. The code is based on the aewm++ window manager, but it has evolved enough that it no longer resembles aewm++ at all. It also has an expanded feature-set, including window grouping (not unlike to [ion3](/index.php/Ion3 "Ion3"), pwm, or even [fluxbox](/index.php/Fluxbox "Fluxbox")), auto properties, xinerama and keygrabber that supports keychains, and much more.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Starting](#Starting)

@@ -2,7 +2,11 @@
 
 MongoDB (from hu**mongo**us) 是一个开源的，面向文档的数据库系统，由 [MongoDB Inc. (formerly 10gen)](http://www.mongodb.com/)开发并提供支持. 它是NoSQL家族中的一员， 替代用表储存数据的经典的关系型数据库， MongoDB的数据储存结构类似于用动态视图（dynamic schemas）储存类JSON文档（JSON-like documents) （MongoDB称这种格式为[BSON](http://bsonspec.org/)， 将数据尽早尽快地整合成对应的应用类型.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 使用](#使用)

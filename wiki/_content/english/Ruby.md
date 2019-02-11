@@ -1,6 +1,10 @@
 Ruby is a dynamic, interpreted, open source programming language with a focus on simplicity and productivity.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installing Ruby](#Installing_Ruby)
     *   [1.1 Multiple versions](#Multiple_versions)
@@ -45,20 +49,9 @@ RubyGems is a package manager for Ruby modules (called *gems*), somewhat compara
 
 This is required for executable gems to work without typing out the full location, although libraries will work without having to modify your path.
 
-To allow installing RubyGems through the current [user](/index.php/User "User"), e.g. on *Your user account isn't allowed to install to the system RubyGems.*, export `GEM_HOME` to the local path:
-
-```
-$ export GEM_HOME=$HOME/.gem
-
-```
-
 You may want to append this variable to `.profile` instead:
 
- `~/.profile` 
-```
-PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
-export GEM_HOME=$HOME/.gem
-```
+ `~/.profile`  `PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"` 
 
 Use `gem env` to view the current RubyGems environment:
 

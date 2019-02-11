@@ -15,7 +15,11 @@
 
 KDE 是由 Plasma [桌面环境](/index.php/Desktop_environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop environment (简体中文)")、库、框架 (KDE Frameworks)、和应用组成的软件项目。KDE 上游有一份维护良好的 [UserBase Wiki](https://userbase.kde.org/)。大多数 KDE 应用程序的详细信息都可以在那里找到。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
     *   [1.1 Plasma 桌面](#Plasma_桌面)

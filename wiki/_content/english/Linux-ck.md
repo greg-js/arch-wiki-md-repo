@@ -3,7 +3,11 @@ Related articles
 *   [Unofficial user repositories/Repo-ck](/index.php/Unofficial_user_repositories/Repo-ck "Unofficial user repositories/Repo-ck")
 *   [Modprobed-db](/index.php/Modprobed-db "Modprobed-db")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 General package details](#General_package_details)
     *   [1.1 Release cycle](#Release_cycle)
@@ -143,7 +147,7 @@ This error does not seems to affect the docker daemon, just containers. This is 
 
  config CGROUP_CPUACCT
         bool "Simple CPU accounting controller"
-+       depends on !SCHED_MUQSS
++       depends on !SCHED_MUQSS
         help
           Provides a simple controller for monitoring the
           total CPU consumed by the tasks in a cgroup.

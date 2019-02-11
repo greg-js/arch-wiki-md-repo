@@ -12,7 +12,11 @@ The Xorg server uses the [X keyboard extension](/index.php/X_keyboard_extension 
 
 **Note:** XKB options can be overridden by the tools provided by some desktop environments such as [GNOME](/index.php/GNOME "GNOME") and [KDE](/index.php/KDE "KDE").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Viewing keyboard settings](#Viewing_keyboard_settings)
     *   [1.1 Third party utilities](#Third_party_utilities)

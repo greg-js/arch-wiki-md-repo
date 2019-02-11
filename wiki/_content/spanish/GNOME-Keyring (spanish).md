@@ -3,7 +3,11 @@ Este artículo es una traducción de [GNOME/Keyring](/index.php/GNOME/Keyring "G
 
 [GNOME Keyring](https://wiki.gnome.org/Projects/GnomeKeyring) (*llavero de GNOME*) es "una colección de componentes en GNOME que almacenan secretos, contraseñas, claves, certificados y los ponen a disposición de las aplicaciones".
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Administrar utilizando la GUI](#Administrar_utilizando_la_GUI)

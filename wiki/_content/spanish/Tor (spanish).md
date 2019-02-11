@@ -6,7 +6,11 @@ Artículos relacionados
 
 [Tor](https://www.torproject.org)es una implementación 'open source' de 2da generación del [enrutamiento de cebolla](https://es.wikipedia.org/wiki/Encaminamiento_de_cebolla) que provee libre acceso a una red proxy anónimos. Su principal objetivo es proteger el [anónimato en Internet](https://en.wikipedia.org/wiki/Anonymity#Anonymity_on_the_Internet "wikipedia:Anonymity") del [análisis de tráfico](https://es.wikipedia.org/wiki/Análisis_de_tráfico).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Introducción](#Introducción)
 *   [2 Instalación](#Instalación)

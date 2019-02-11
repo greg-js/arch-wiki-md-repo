@@ -7,7 +7,11 @@ Artigos relacionados
 
 Esta página é um guia para selecionar e configurar seus espelhos e uma lista dos espelhos disponíveis atualmente.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Espelhos oficiais](#Espelhos_oficiais)
     *   [1.1 Espelhos prontos para IPv6](#Espelhos_prontos_para_IPv6)

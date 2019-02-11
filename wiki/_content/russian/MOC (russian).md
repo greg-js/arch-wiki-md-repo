@@ -1,6 +1,10 @@
 **M**usic **O**n **C**onsole (Музыка в консоли) - это легкий музыкальный плеер, который состоит из двух частей: сервера (Moc) и плеера/интерфейса (Mocp). Такая реализация похожа на реализацию [mpd](/index.php/Music_Player_Daemon_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Music Player Daemon (Русский)"), но, в отличие от *mpd*, Moc поставляется сразу с интерфейсом. Сервер не поддерживает удалённый доступ.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Настройка](#Настройка)

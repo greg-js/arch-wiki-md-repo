@@ -4,7 +4,11 @@ Related articles
 
 This is an article detailing different methods of Arch/Windows coexistence.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Important information](#Important_information)
     *   [1.1 Windows UEFI vs BIOS limitations](#Windows_UEFI_vs_BIOS_limitations)

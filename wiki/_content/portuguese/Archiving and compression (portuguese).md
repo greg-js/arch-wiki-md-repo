@@ -9,7 +9,11 @@ Essas ferramentas geralmente são usadas em sequência, criando primeiro um arqu
 
 Claro que também existem [ferramentas que fazem ambos](#Arquivamento_e_compressão), que tendem a oferecer adicionalmente criptografia, detecção de erro e recuperação.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Arquivamento apenas](#Arquivamento_apenas)
 *   [2 Ferramentas de compressão](#Ferramentas_de_compressão)

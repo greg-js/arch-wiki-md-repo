@@ -8,7 +8,11 @@
 
 Во многом, он похож на программу [GNU Screen](/index.php/Screen_Tips "Screen Tips"), но имеет некоторые отличия. (Кто сказал улучшения?) За более подробной информацией обращайтесь на [официальный вебсайт](http://tmux.sourceforge.net/).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Настройка](#Настройка)
@@ -251,7 +255,7 @@ set-option -g status-fg cyan
 set-option -g status-interval 5
 set-option -g status-left-length 30
 set-option -g status-left '#[fg=magenta]» #[fg=blue,bold]#T#[default]'
-set-option -g status-right '#[fg=cyan]»» #[fg=blue,bold]###S #[fg=magenta]%R %m-%d#(acpi | cut -d ',' -f 2)#[default]'
+set-option -g status-right '#[fg=cyan]»» #[fg=blue,bold]###S #[fg=magenta]%R %m-%d#(acpi | cut -d ',' -f 2)#[default]'
 set-option -g visual-activity on
 set-window-option -g monitor-activity on
 set-window-option -g window-status-current-fg white

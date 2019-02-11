@@ -15,7 +15,11 @@
 
 本文仅仅关心解码器和应用程序后端。[这里](/index.php/Common_Applications#Multimedia "Common Applications")包含媒体播放器的列表。[MPlayer](/index.php/MPlayer_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "MPlayer (简体中文)") 和 [VLC](/index.php/VLC_media_player "VLC media player") 是常用的选择。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 需求条件](#需求条件)
 *   [2 常用编解码器](#常用编解码器)

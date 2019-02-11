@@ -1,6 +1,10 @@
 [gedit](https://en.wikipedia.org/wiki/gedit "w:gedit") is a general-purpose text editor for GNOME.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

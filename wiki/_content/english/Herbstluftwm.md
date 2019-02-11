@@ -1,6 +1,10 @@
 [Herbstluftwm](http://herbstluftwm.org) is a manual tiling window manager for X11 using Xlib and Glib.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Starting](#Starting)

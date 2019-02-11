@@ -10,7 +10,11 @@ La [utilidad](/index.php/Core_utility_(Espa%C3%B1ol) "Core utility (Español)") 
 
 Véase [PAM](/index.php/PAM_(Espa%C3%B1ol) "PAM (Español)") para las formas de configurar el comportamiento de *su*.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Utilización](#Utilización)

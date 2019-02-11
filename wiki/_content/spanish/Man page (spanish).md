@@ -2,7 +2,11 @@ Las **páginas man** (abreviatura de "páginas del manual") son una extensa docu
 
 Contrario a su ámbito, las páginas del manual están diseñadas para ser documentos autocontenidos, limitándose consecuentemente a enlazar a otras páginas del manual cuando se discuten temas relacionados. Esto contrasta bastante con los archivos info con conocimiento de hipervínculos, el intento de GNU para remplazar el formato tradicional de las páginas del manual.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Acceder a las páginas del manual](#Acceder_a_las_páginas_del_manual)
 *   [2 Formato](#Formato)

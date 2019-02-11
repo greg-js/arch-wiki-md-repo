@@ -1,6 +1,10 @@
 The following tips and tricks should work for both Chromium and Chrome unless explicitly stated.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Browsing experience](#Browsing_experience)
     *   [1.1 chrome:// URLs](#chrome://_URLs)

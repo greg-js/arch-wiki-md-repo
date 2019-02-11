@@ -6,7 +6,11 @@ Artículos relacionados
 *   [Portátil](/index.php/Laptop_(Espa%C3%B1ol) "Laptop (Español)")
 *   [Laptop/Dell](/index.php/Laptop/Dell "Laptop/Dell")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 lspci](#lspci)

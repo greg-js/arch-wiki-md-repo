@@ -10,7 +10,11 @@ Please note that our official wiki also supports internationalized content. In a
 
 This list is by no means complete. If you know of a community that is not listed, please feel free to add it. If you are looking for a community that doesn't have an existing community, start one or visit the [Other Languages forum](https://bbs.archlinux.org/viewforum.php?id=30).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Chinese](#Chinese)
     *   [1.1 China](#China)

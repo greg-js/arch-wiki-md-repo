@@ -6,7 +6,11 @@ Related articles
 
 Keyboard mappings (keymaps) for [virtual console](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console"), console fonts and console maps are provided by the [kbd](https://www.archlinux.org/packages/?name=kbd) package (a dependency of [systemd](/index.php/Systemd "Systemd")), which also provides many low-level tools for managing virtual console. In addition, *systemd* also provides the *localectl* tool, which can control both the system [locale](/index.php/Locale "Locale") and keyboard layout settings for both the virtual console and Xorg.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Viewing keyboard settings](#Viewing_keyboard_settings)
 *   [2 Keymaps](#Keymaps)

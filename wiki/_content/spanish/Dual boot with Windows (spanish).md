@@ -1,6 +1,10 @@
 Este es una artículo simple que detalla los diferentes métodos de coexistencia entre Arch y Windows.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Información Importante](#Información_Importante)
     *   [1.1 Limitaciones UEFI vs. BIOS en Windows](#Limitaciones_UEFI_vs._BIOS_en_Windows)

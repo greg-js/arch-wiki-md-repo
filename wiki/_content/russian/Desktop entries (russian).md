@@ -22,7 +22,11 @@
 
 Связанное с этим материалом, а также определенные в файлах `.desktop`, являются ассоциациями типа MIME для файлов данных. [Приложения по умолчанию](/index.php/Default_applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Default applications (Русский)") описывают, как они настроены.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Ярлык приложения](#Ярлык_приложения)
     *   [1.1 Пример файла](#Пример_файла)
@@ -279,7 +283,7 @@ $ fbrokendesktop /usr/share/apps/kdm/sessions/icewm.desktop
 
 Отредактируйте команду `Exec`, добавив `env`, например:
 
- `~/.local/share/applications/abiword.desktop`  `Exec=env LANG=he_IL.UTF-8 abiword %U` 
+ `~/.local/share/applications/abiword.desktop`  `Exec=env LANG=he_IL.UTF-8 abiword %U` 
 
 ## Смотрите также
 

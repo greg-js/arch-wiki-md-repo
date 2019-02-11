@@ -1,6 +1,10 @@
 p7zip je port příkazového řádku [7-Zip](https://en.wikipedia.org/wiki/7zip "wikipedia:7zip") pro systémy [POSIX](https://en.wikipedia.org/wiki/POSIX "wikipedia:POSIX") včetně Linuxu.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalace](#Instalace)
 *   [2 Příklady](#Příklady)

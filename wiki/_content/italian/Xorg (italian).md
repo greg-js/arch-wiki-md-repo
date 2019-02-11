@@ -16,7 +16,11 @@ Da [http://www.x.org/wiki/](http://www.x.org/wiki/):
 
 **Xorg** è un'applicazione pubblica e open-source del sistema X-window versione 11\. Dal momento che Xorg è la scelta più popolare tra gli utenti Linux, la sua ubiquità ha portato a renderlo un requisito sempre presente per le applicazioni GUI, con conseguente adozione massiccia dalla maggior parte delle distribuzioni. Consultare l'articolo di Wikipedia [Xorg](https://en.wikipedia.org/wiki/X.Org_Server "wikipedia:X.Org Server") o visitare [Xorg website](http://www.x.org/wiki/) per ulteriori informazioni.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installazione](#Installazione)
     *   [1.1 Installazione dei Driver](#Installazione_dei_Driver)
@@ -138,7 +142,7 @@ La cartella `/etc/X11/xorg.conf.d/` include configurazioni specifiche dell'utent
 Xorg può anche essere configurato tramite `/etc/X11/xorg.conf` o `/etc/xorg.conf`. Potete generare uno scheletro di xorg.conf tramite:
 
 ```
- # Xorg :0 -configure
+ # Xorg :0 -configure
 
 ```
 
@@ -392,7 +396,7 @@ Le seguenti opzioni devono essere aggiunte alla variabile `"defaultserverargs"` 
 Per avviare una sessione di X di un altro desktop environment dentro la presente:
 
 ```
-$ /usr/bin/Xnest :1 -geometry 1024x768+0+0 -ac -name Windowmaker & wmaker -display :1
+$ /usr/bin/Xnest :1 -geometry 1024x768+0+0 -ac -name Windowmaker & wmaker -display :1
 
 ```
 

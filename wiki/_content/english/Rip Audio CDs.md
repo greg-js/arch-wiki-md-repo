@@ -6,7 +6,11 @@ Related articles
 
 CD rippers are designed to extract ("rip") the raw digital audio (in a format commonly called CDDA) from a compact disc to a file or other output.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Introduction](#Introduction)
 *   [2 Ripping](#Ripping)

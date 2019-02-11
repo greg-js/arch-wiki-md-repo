@@ -10,7 +10,11 @@ Artículos relacionados
 
 Los usuarios y grupos se utilizan en GNU/Linux para el [control de acceso](https://en.wikipedia.org/wiki/access_control#Computer_security y [PAM (Español)#Configuración guiada](/index.php/PAM_(Espa%C3%B1ol)#Configuración_guiada "PAM (Español)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Descripción](#Descripción)
 *   [2 Permisos y propiedad](#Permisos_y_propiedad)
@@ -78,7 +82,7 @@ En este ejemplo, la carpeta `sf_Shared` es propiedad del usuario *root* y del gr
 
 El usuario propietario:
 
- `$ stat -c %U /media/sf_Shared/` 
+ `$ stat -c %U /media/sf_Shared/` 
 ```
 root
 
@@ -86,7 +90,7 @@ root
 
 El grupo propietario:
 
- `$ stat -c %G /media/sf_Shared/` 
+ `$ stat -c %G /media/sf_Shared/` 
 ```
 vboxsf
 
@@ -94,7 +98,7 @@ vboxsf
 
 Los permisos de acceso:
 
- `$ stat -c %A /media/sf_Shared/` 
+ `$ stat -c %A /media/sf_Shared/` 
 ```
 drwxrwx---
 

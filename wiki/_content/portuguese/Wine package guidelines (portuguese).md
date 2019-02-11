@@ -8,7 +8,11 @@
 
 Muitos programas do Windows ainda podem ser úteis no Linux e, portanto, podemos querer ter um pacote para eles. As diferenças entre os dois sistemas operacionais tornam essa tarefa um pouco complexa. Nesta diretriz, falaremos sobre binários do Win32, já que os projetos em que a origem está disponível geralmente são portados para o Linux.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Coisas para verificar imediatamente](#Coisas_para_verificar_imediatamente)
     *   [1.1 Licença](#Licença)

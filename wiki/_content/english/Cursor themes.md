@@ -1,6 +1,10 @@
 The display server is accompanied by a *cursor theme* that helps various aspects of GUI navigation and manipulation. The display server includes a cursor theme, however, other cursor themes can be installed and selected.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Packages](#Packages)

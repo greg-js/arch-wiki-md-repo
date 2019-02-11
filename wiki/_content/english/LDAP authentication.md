@@ -3,7 +3,11 @@ Related articles
 *   [OpenLDAP](/index.php/OpenLDAP "OpenLDAP")
 *   [LDAP Hosts](/index.php/LDAP_Hosts "LDAP Hosts")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Introduction and Concepts](#Introduction_and_Concepts)
     *   [1.1 NSS and PAM](#NSS_and_PAM)

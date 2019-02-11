@@ -1,7 +1,11 @@
 **Estado de la traducción**
 Este artículo es una traducción de [Dell Inspiron 1521](/index.php/Dell_Inspiron_1521 "Dell Inspiron 1521"), revisada por última vez el **2019-01-19**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Dell_Inspiron_1521&diff=0&oldid=563919) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Especificaciones de hardware](#Especificaciones_de_hardware)
     *   [1.1 Salida de lspci](#Salida_de_lspci)

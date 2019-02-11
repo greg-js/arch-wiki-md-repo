@@ -11,7 +11,11 @@ From [flatpak(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/flatpak.1):
 
 	*Flatpak uses [OSTree](https://ostree.readthedocs.io/en/latest/) to distribute and deploy data. The repositories it uses are OSTree repositories and can be manipulated with the ostree utility. Installed runtimes and applications are OSTree checkouts.*
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Managing repositories](#Managing_repositories)

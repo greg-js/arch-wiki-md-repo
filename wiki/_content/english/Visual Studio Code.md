@@ -1,6 +1,10 @@
 [Visual Studio Code](https://code.visualstudio.com/) is a cross-platform, free and open-source (licensed under the MIT License) text editor developed by Microsoft and written in JavaScript and TypeScript. It is built on the Electron framework and is extensible using extensions, which can be browsed [on the web](https://marketplace.visualstudio.com/VSCode) or from within the text editor itself. While the project is open-source, a proprietary build (licensed under an End-User License Agreement) is also provided by Microsoft. For an explanation of the mixed licensing, see [this GitHub comment](https://github.com/Microsoft/vscode/issues/60#issuecomment-161792005).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
@@ -9,6 +13,7 @@
     *   [3.2 External Terminal](#External_Terminal)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Global menu not working in KDE/Plasma](#Global_menu_not_working_in_KDE/Plasma)
+    *   [4.2 Unable to move items to trash](#Unable_to_move_items_to_trash)
 
 ## Installation
 
@@ -62,3 +67,16 @@ Example:
 ### Global menu not working in KDE/Plasma
 
 Visual Studio Code uses DBus to pass the menu to Plasma, try installing [libdbusmenu-glib](https://www.archlinux.org/packages/?name=libdbusmenu-glib)
+
+### Unable to move items to trash
+
+By default, [Electron](https://electron.atom.io/) apps use `gvfs-trash` to delete files. This command is [deprecated and no longer exists](https://github.com/electron/electron/issues/15011), so the `ELECTRON_TRASH` environment variable must be used instead to specify which trash utility should be used.
+
+For example, for deleting files under [Plasma](/index.php/Plasma "Plasma"):
+
+```
+$ ELECTRON_TRASH=kioclient5 code
+
+```
+
+At the time of writing, Electron supports `kioclient5`, `kioclient`, `trash-cli`, `gio` and `gvfs-trash` (default). More info is available at this [Github pull request page](https://github.com/electron/electron/pull/7178).

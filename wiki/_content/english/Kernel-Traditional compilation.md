@@ -1,6 +1,10 @@
 This article is an introduction to building custom kernels from **kernel.org sources**. This method of compiling kernels is the traditional method common to all distributions. It can be, depending on your background, more complicated than using the [Kernels/Arch Build System](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System"). Consider the [Arch Build System](/index.php/Arch_Build_System "Arch Build System") tools are developed and maintained to make repeatable compilation tasks efficient and safe.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Preparation](#Preparation)
     *   [1.1 Install the core packages](#Install_the_core_packages)

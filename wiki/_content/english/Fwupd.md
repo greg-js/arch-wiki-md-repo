@@ -7,7 +7,11 @@ Related articles
 
 Supported devices are listed [here](https://fwupd.org/lvfs/devicelist) and [more are to come](https://fwupd.org/vendorlist).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)

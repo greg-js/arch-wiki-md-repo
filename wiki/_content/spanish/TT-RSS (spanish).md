@@ -3,7 +3,11 @@ Este artículo es una traducción de [TT-RSS](/index.php/TT-RSS "TT-RSS"), revis
 
 [Tiny Tiny RSS](https://tt-rss.org/) es un agregador de fuentes de noticias (RSS/Atom) de código abierto basado en web, diseñado para permitirle leer noticias desde cualquier ubicación, de tal modo que le parecerá estar utilizando lo más parecido a la aplicación de un escritorio real.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
     *   [1.1 Configurar PHP y base de datos](#Configurar_PHP_y_base_de_datos)

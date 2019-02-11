@@ -1,6 +1,10 @@
 [Blueman](https://github.com/blueman-project/blueman) is a full featured [Bluetooth](/index.php/Bluetooth "Bluetooth") manager written in [GTK+](/index.php/GTK%2B "GTK+").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
@@ -76,7 +80,7 @@ Now you will need to move the script to an appropriate location (e.g., `/usr/loc
 
 ```
 
-The last step is to change the line in *Blueman tray icon > Local Services > Transfer > Advanced* to `obex_thunar.sh %d`.
+The last step is to change the line in *Blueman tray icon > Local Services > Transfer > Advanced* to `obex_thunar.sh %d`.
 
 **Tip:** If you do not want to create a script, you could just replace this command: `nautilus --browse obex://` with this one: `thunar obex://` in *Local Services > Transfer > Advanced*
 

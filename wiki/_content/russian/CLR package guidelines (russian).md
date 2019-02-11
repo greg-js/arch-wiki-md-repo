@@ -6,7 +6,11 @@
 
 Этот документ определяет стандарты для создания пакетов Common Language Runtime (.NET) для Arch Linux. На текущий момент только [Mono](/index.php/Mono "Mono") способен обеспечить эффективный и работоспособный запуск CLR в смешанных системах. Будьте внимательны - большинство CLR программ разработанных в среде Microsoft .NET могут не запустится в Mono, так как содержат платформозависимые .NET-факторы: вызовы P/Invoke и Microsoft DRM API (цифровые средства защиты авторских прав). Однако, в связке с [Wine](/index.php/Wine "Wine") (версия 1.5.6 и выше), у Вас есть некоторая вероятность запустить ваше приложение. Для получения информации смотрите [Wine PKGBUILD Guidelines](/index.php/Wine_PKGBUILD_Guidelines "Wine PKGBUILD Guidelines").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Подготовка к сборке пакетов](#Подготовка_к_сборке_пакетов)
     *   [1.1 Подписанные сборки](#Подписанные_сборки)

@@ -2,7 +2,11 @@
 
 Esses [espelhos](/index.php/Espelhos "Espelhos") *não* estão listados no `/etc/pacman.d/mirrorlist`.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 África do Sul](#África_do_Sul)
 *   [2 Austrália](#Austrália)

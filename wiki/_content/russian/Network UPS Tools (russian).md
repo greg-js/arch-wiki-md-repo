@@ -1,6 +1,10 @@
 Этот документ описывает, как установить [Network UPS Tools (NUT)](http://networkupstools.org/). Network UPS Tools совместим с тысячами моделей ИБП. Можно проверить [Список совместимого оборудования](http://networkupstools.org/stable-hcl.html) чтобы увидеть, поддерживается ли ваш ИБП.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка Network UPS Tools](#Установка_Network_UPS_Tools)
 *   [2 Конфигурация](#Конфигурация)

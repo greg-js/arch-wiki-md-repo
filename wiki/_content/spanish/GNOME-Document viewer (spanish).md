@@ -7,7 +7,11 @@ El visor de documentos utiliza la biblioteca poppler como backend.
 
 **Nota:** El visor de documentos era conocido anteriormente como [Evince](https://wiki.gnome.org/Apps/Evince) hasta que la aplicación recibió nuevos nombres descriptivos, uno para cada idioma admitido. El nombre *Evince* todavía se utiliza en muchos lugares, como el nombre del ejecutable, algunos nombres de paquetes, algunas entradas de escritorio y algunos esquemas GSettings.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Solución de problemas](#Solución_de_problemas)

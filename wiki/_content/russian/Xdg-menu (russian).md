@@ -16,7 +16,11 @@
 
 Также с XDG совместимы: KDE, Gnome, Xfce, Enlightenment.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Иерархия меню](#Иерархия_меню)
 *   [2 Настройка](#Настройка)

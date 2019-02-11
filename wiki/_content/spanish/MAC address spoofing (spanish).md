@@ -3,7 +3,11 @@ Este artículo es una traducción de [MAC address spoofing](/index.php/MAC_addre
 
 Este artículo proporciona varios métodos para falsificar una dirección de control de acceso al medio (MAC).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Manualmente](#Manualmente)
     *   [1.1 iproute2](#iproute2)

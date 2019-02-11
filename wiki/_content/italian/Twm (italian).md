@@ -4,7 +4,11 @@ Articoli correlati
 
 TWM è un window manager per X11\. Si tratta di un piccolo programma, in fase di costruzione contro Xlib invece di usare una libreria di widget, e come tale è molto leggero sulle risorse di sistema. Anche se semplice, è altamente configurabile, caratteri, colori, larghezza dei bordi, barra del titolo e pulsanti possono essere impostati dall'utente
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Breve storia di Twm](#Breve_storia_di_Twm)
 *   [2 Installazione](#Installazione)

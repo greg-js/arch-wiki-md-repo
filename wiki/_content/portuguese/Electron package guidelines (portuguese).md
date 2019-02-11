@@ -8,7 +8,11 @@
 
 Este documento abrange padrões e diretrizes para escrever [PKGBUILDs](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") para [Electron](/index.php/Electron_(Portugu%C3%AAs) "Electron (Português)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Usando o electron do sistema](#Usando_o_electron_do_sistema)
     *   [1.1 Construindo extensões compiladas com o electron do sistema](#Construindo_extensões_compiladas_com_o_electron_do_sistema)

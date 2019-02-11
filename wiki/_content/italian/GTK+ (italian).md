@@ -10,7 +10,11 @@ Dal [Sito di GTK+](http://www.gtk.org):
 
 GTK+, The GIMP Toolkit, fu creato inizialmente dal [Progetto GNU](/index.php/GNU_Project "GNU Project") per il [GIMP](/index.php/GIMP "GIMP"), ma ora è un toolkit molto famoso con supporto per molte lingue.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Programmi di configurazione](#Programmi_di_configurazione)
 *   [2 Temi](#Temi)

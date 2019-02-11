@@ -7,7 +7,11 @@ Related articles
 
 这篇文章将介绍如何配置按键超过 3 个的鼠标。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 写在前面](#写在前面)
 *   [2 查找鼠标名称](#查找鼠标名称)
@@ -463,7 +467,7 @@ device  2: /dev/input/event2: Sleep Button
 device  3: /dev/input/event3: Power Button
 device  4: /dev/input/event4: Power Button
 device  5: /dev/input/event5: PC Speaker
-Display name: :0.0
+Display name: :0.0
 
 ```
 

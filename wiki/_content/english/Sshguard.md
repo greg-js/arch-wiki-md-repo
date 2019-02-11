@@ -11,7 +11,11 @@ sshguard is different from the latter in that it is written in C, is lighter and
 
 sshguard is not vulnerable to most (or maybe any) of the log analysis [vulnerabilities](https://web.archive.org/web/20120625102244/http://www.ossec.net/main/attacking-log-analysis-tools) that have caused problems for similar tools.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Setup](#Setup)

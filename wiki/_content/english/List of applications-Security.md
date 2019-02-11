@@ -1,6 +1,10 @@
 [Internet](/index.php/List_of_applications/Internet "List of applications/Internet") – [Multimedia](/index.php/List_of_applications/Multimedia "List of applications/Multimedia") – [Utilities](/index.php/List_of_applications/Utilities "List of applications/Utilities") – [Documents](/index.php/List_of_applications/Documents "List of applications/Documents") – <a class="mw-selflink selflink">Security</a> – [Science](/index.php/List_of_applications/Science "List of applications/Science") – [Other](/index.php/List_of_applications/Other "List of applications/Other")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Security](#Security)
     *   [1.1 Network security](#Network_security)
@@ -319,6 +323,10 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 *   **vlock** — TTY locker. A mirror of the [original vlock](https://lists.archlinux.org/pipermail/aur-general/2013-July/024662.html) is available at [github](https://github.com/WorMzy/vlock).
 
 	[http://www.kbd-project.org](http://www.kbd-project.org) || [kbd](https://www.archlinux.org/packages/?name=kbd)
+
+*   **xfce4-screensaver** — A screen saver and locker that aims to have simple, sane, secure defaults and be well integrated with the xfce desktop.
+
+	[https://git.xfce.org/apps/xfce4-screensaver/about/](https://git.xfce.org/apps/xfce4-screensaver/about/) || [xfce4-screensaver](https://aur.archlinux.org/packages/xfce4-screensaver/)
 
 *   **xlockmore** — Simple X11 screen lock with PAM support.
 

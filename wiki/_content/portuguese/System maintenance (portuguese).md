@@ -6,7 +6,11 @@ Artigos relacionados
 
 Manutenção de sistema regular é necessário para o correto funcionamento do Arch por um período de tempo. Manutenção periódica é uma prática a que muitos usuários se acostumam.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Verifique por erros](#Verifique_por_erros)
     *   [1.1 Falha em serviços de systemd](#Falha_em_serviços_de_systemd)

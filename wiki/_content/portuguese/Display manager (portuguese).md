@@ -6,7 +6,11 @@ Artigos relacionados
 
 Um [gerenciador de exibição](https://en.wikipedia.org/wiki/X_display_manager_(program_type) "wikipedia:X display manager (program type)"), ou gerenciador de login, é tipicamente uma interface gráfica de usuário que é exibida no final do processo de inicialização no lugar do shell padrão. Há várias implementações de gerenciadores de exibição, assim como existem vários tipos de [gerenciadores de janela](/index.php/Gerenciadores_de_janela "Gerenciadores de janela") e [ambientes de desktop](/index.php/Ambientes_de_desktop "Ambientes de desktop"). Geralmente, há uma certa quantidade de personalização e mudança de tema disponível com cada um.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Lista de gerenciadores de exibição](#Lista_de_gerenciadores_de_exibição)
     *   [1.1 Console](#Console)

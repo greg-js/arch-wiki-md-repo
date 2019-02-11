@@ -12,7 +12,11 @@
 
 Кодеки используются мультимедийными приложениями для кодирования и декодирования аудио и видео потоков. Для того, чтобы иметь возможность проигрывать закодированные потоки, пользователи должны обеспечить установку соответствующего кодека.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Требования](#Требования)
 *   [2 Список кодеков](#Список_кодеков)

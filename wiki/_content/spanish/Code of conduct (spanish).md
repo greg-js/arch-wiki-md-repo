@@ -7,7 +7,11 @@ Arch Linux es una distribución impulsada por la comunidad; los desarrolladores,
 
 Familiarizarse con los principios y directrices que aquí se recogen es, a la vez, una cortesía a la comunidad y una manera eficaz de hacer sus interacciones iniciales con otros usuarios de Arch Linux mutuamente beneficiosas.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Consideraciones de sentido común](#Consideraciones_de_sentido_común)
 *   [2 Código de conducta](#Código_de_conducta)

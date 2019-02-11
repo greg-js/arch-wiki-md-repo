@@ -1,6 +1,10 @@
 [CrashPlan](https://www.crashplan.com/en-us/) is a [backup program](/index.php/Backup_program "Backup program") that backs up data to remote servers, other computers, or hard drives. Backing up to the cloud servers requires a monthly subscription.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Basic Usage](#Basic_Usage)

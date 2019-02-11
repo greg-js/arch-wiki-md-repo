@@ -1,6 +1,10 @@
 **Abiword** je textový procesor, který nabízí odlehčenou alternativu k Writeru z OpenOffice, při stejné rychlosti a zachování skvělé funkcionality. Abiword podporuje mnoho standardních typů dokumentů, např. dokumenty z OpenOffice.org, Microsoft Wordu, WordPerfectu, Rich Text Format dokumenty a HTML stránky.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalace](#Instalace)
 *   [2 Oprava krachu dialogu tisku](#Oprava_krachu_dialogu_tisku)

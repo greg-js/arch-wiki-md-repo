@@ -6,7 +6,11 @@ Related articles
 
 [Vim](https://en.wikipedia.org/wiki/ru:Vim "wikipedia:ru:Vim") - консольный текстовый редактор, являющийся расширенной версией [vi](https://en.wikipedia.org/wiki/vi "wikipedia:vi") с дополнительными функциями, которые включают в себя: подсветку синтаксиса, полноценную систему помощи, встроенную поддержку скриптов (vimscript), визуальный режим для простоты выделения и сравнение файлов (vimdiff).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Использование](#Использование)
@@ -309,7 +313,7 @@ cscope -bq
 
 ```
 #Maps ctrl-c to find functions calling the function
-nnoremap <C-c> :cs find c <C-R>=expand("<cword>")<CR><CR>
+nnoremap <C-c> :cs find c <C-R>=expand("<cword>")<CR><CR>
 
 ```
 
@@ -325,7 +329,7 @@ nnoremap <C-c> :cs find c <C-R>=expand("<cword>")<CR><CR>
 let Tlist_Compact_Format = 1
 let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_Close_On_Select = 1
-nnoremap <C-l> :TlistToggle<CR>
+nnoremap <C-l> :TlistToggle<CR>
 
 ```
 

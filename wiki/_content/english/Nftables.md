@@ -8,7 +8,11 @@ It consists of three main components: a kernel implementation, the libnl netlink
 
 You can also visit the [official nftables wiki page](https://wiki.nftables.org/wiki-nftables/index.php/Main_Page) for more information.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)

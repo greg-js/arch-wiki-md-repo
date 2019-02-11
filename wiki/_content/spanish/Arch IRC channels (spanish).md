@@ -13,7 +13,11 @@ Para utilizar [Internet Relay Chat](https://en.wikipedia.org/wiki/es:Internet_Re
 
 Debe familiarizarse con nuestro [código de conducta](/index.php/Code_of_conduct_(Espa%C3%B1ol) "Code of conduct (Español)") y en particular con el de [IRC](/index.php/Code_of_conduct_(Espa%C3%B1ol)#IRC "Code of conduct (Español)") antes de unirse a cualquiera de los canales oficiales. Para obtener una lista de las abreviaturas comúnmente utilizadas, véase [terminología de Arch](/index.php/Arch_terminology_(Espa%C3%B1ol) "Arch terminology (Español)") y [jerga de IRC](http://www.ircbeginner.com/ircinfo/abbreviations.html).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Canales principales](#Canales_principales)
     *   [1.1 Registro](#Registro)

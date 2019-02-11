@@ -4,7 +4,11 @@ Related articles
 
 [fortune](https://en.wikipedia.org/wiki/Fortune_(Unix) is a simple program that displays random poignant, inspirational, silly or snide phrase from a database of quotations. The *fortune* command-line utility is part of the [fortune-mod](https://www.archlinux.org/packages/?name=fortune-mod) package.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
@@ -145,8 +149,8 @@ $ fortune -a | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d 
         o
           o  
              ,'``.._   ,'``.
-            :,--._:)\,:,._,.:
-            :`--,*@@@:`...';\* 
+            :,--._:)\,:,._,.:
+            :`--,*@@@:`...';\* 
              `,'@@@@@@@`---'@@`.     
              /@@@@@@@@@@@@@@@@@:
             /@@@@@@@@@@@@@@@@@@@\
@@ -154,11 +158,11 @@ $ fortune -a | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d 
          `...,---'``````-..._@@@@|:@@@@@@@\
            (                 )@@@;:@@@@)@@@\  _,-.
             `.              (@@@//@@@@@@@@@@`'@@@@\
-             :               `.//@@)@@@@@@)@@@@@,@;
+             :               `.//@@)@@@@@@)@@@@@,@;
              |`.            _,'/@@@@@@@)@@@@)@,'@,'
-             :`.`-..____..=:.-':@@@@@.@@@@@_,@@,'
+             :`.`-..____..=:.-':@@@@@.@@@@@_,@@,'
             ,'\ ``--....-)='    `._,@@\    )@@@'``._
-           /@_@`.       (@)      /@@@@@)  ; / \ \`-.'
+           /@_@`.       (@)      /@@@@@)  ; / \ \`-.'
           (@@@`-:`.     `' ___..'@@_,-'   |/   `.)
            `-. `.`.``-----``--,@@.'
              |/`.\`'        ,',');

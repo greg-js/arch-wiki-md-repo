@@ -6,7 +6,11 @@ Related articles
 
 [GNU Parted](https://www.gnu.org/software/parted/parted.html) is a program for creating and manipulating partition tables. GParted is a GUI frontend.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)

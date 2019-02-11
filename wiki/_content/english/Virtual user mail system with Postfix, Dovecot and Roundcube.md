@@ -11,7 +11,11 @@ Roughly, the components used in this article are [Postfix](/index.php/Postfix "P
 
 In the end, the provided solution will allow you to use the best currently available security mechanisms, you will be able to send mails using SMTP and SMTPS and receive mails using POP3, POP3S, IMAP and IMAPS. Additionally, configuration will be easy thanks to PostfixAdmin and users will be able to login using Roundcube.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -527,7 +531,7 @@ mail_plugins=quota
 protocol pop3 {
 	 mail_plugins = quota
 	 pop3_client_workarounds = outlook-no-nuls oe-ns-eoh
-	 pop3_uidl_format = %08Xu%08Xv
+	 pop3_uidl_format = %08Xu%08Xv
 }
 protocol lda {
 	mail_plugins = quota
@@ -540,10 +544,10 @@ protocol imap {
 plugin {
        quota = dict:User quota::proxy::quotadict
        quota_rule2 = Trash:storage=+10%%
-       quota_warning = storage=100%% quota-warning +100 %u
-       quota_warning2 = storage=95%% quota-warning +95 %u
-       quota_warning3 = storage=80%% quota-warning +80 %u
-       quota_warning4 = -storage=100%% quota-warning -100 %u # user is no longer over quota
+       quota_warning = storage=100%% quota-warning +100 %u
+       quota_warning2 = storage=95%% quota-warning +95 %u
+       quota_warning3 = storage=80%% quota-warning +80 %u
+       quota_warning4 = -storage=100%% quota-warning -100 %u # user is no longer over quota
 }
 
 ```

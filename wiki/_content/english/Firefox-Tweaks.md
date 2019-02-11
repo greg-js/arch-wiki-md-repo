@@ -7,7 +7,11 @@ Related articles
 
 This page contains advanced Firefox configuration options and performance tweaks.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Performance](#Performance)
     *   [1.1 Change Performance settings](#Change_Performance_settings)

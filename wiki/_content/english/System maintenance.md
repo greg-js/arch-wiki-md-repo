@@ -4,7 +4,11 @@ Related articles
 
 Regular system maintenance is necessary for the proper function of Arch over a period of time. Timely maintenance is a practice many users get accustomed to.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Check for errors](#Check_for_errors)
     *   [1.1 Failed systemd services](#Failed_systemd_services)

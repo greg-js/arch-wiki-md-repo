@@ -6,7 +6,11 @@
 
 Arch Linux 可在任何 RAM 不小於 512MB 的 [x86_64](https://en.wikipedia.org/wiki/X86-64 "wikipedia:X86-64") 相容機器上運作。用 [base](https://www.archlinux.org/groups/x86_64/base/) 軟體包群組內的所有軟體包進行基本安裝將佔用小於 800MB 的硬碟空間。由於安裝過程中需要從遠端軟體庫取得軟體包，因此需要連線到網際網路。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安裝前的準備](#安裝前的準備)
     *   [1.1 設定鍵盤配置](#設定鍵盤配置)

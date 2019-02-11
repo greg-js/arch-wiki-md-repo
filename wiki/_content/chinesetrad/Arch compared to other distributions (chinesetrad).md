@@ -7,7 +7,11 @@
 
 這個頁面會將 Arch Linux 和其他流行的 GNU/Linux 發行版與類 UNIX 作業系統做個比較。您可以藉由下面的簡短描述，看看 Arch Linux 是否真的符合自己的需要。儘管在比較各家發行版本上有不少評價和說法，但最好的方式還是動手來安裝體驗。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 基於原始碼的發行版](#基於原始碼的發行版)
     *   [1.1 Gentoo Linux](#Gentoo_Linux)

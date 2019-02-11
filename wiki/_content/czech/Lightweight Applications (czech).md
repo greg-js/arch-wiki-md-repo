@@ -1,6 +1,10 @@
 Poskytuje seznam odlehčeného softwaru pro ty, kteří si přejí používat programy, které vyžadují minimum systémových prostředků.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Multimedia](#Multimedia)
     *   [1.1 Audio přehrávače](#Audio_přehrávače)

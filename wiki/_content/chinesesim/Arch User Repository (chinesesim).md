@@ -19,7 +19,11 @@
 
 **警告:** AUR 中的软件包是由其他用户编写的，使用这些文件的风险由您自行承担。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 入门](#入门)
 *   [2 历史](#历史)

@@ -6,7 +6,11 @@ Související články
 
 **Xorg** je veřejná open-source implementace systému X window verze 11\. Jelikož je Xorg nejpopulárnější volbou mezi uživateli Linuxu, jeho všudypřítomnost vedla k tomu, že se stal základním předpokladem pro provozování grafických aplikací a byl tak masově adoptován většinou distribucí. Pro více informací viz článek [Xorg](https://en.wikipedia.org/wiki/X.Org_Server "wikipedia:X.Org Server") na Wikipedii nebo můžete navštívit [stránky Xorg (anglicky)](http://www.x.org/wiki/).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalace](#Instalace)
 *   [2 Konfigurace](#Konfigurace)
@@ -655,7 +659,7 @@ Note: If you start X with kdm, the startx script does not seem to be executed. X
 To start another X session in for example CTRL + ALT + F8 you need to type this on a console:
 
 ```
-xinit /path/to/wm -- :1
+xinit /path/to/wm -- :1
 
 ```
 
@@ -666,7 +670,7 @@ Change "/path/to/wm" to your window manager start file or to your login manager 
 To run a nested session of another desktop environment:
 
 ```
-$ /usr/bin/Xnest :1 -geometry 1024x768+0+0 -ac -name Windowmaker & wmaker -display :1
+$ /usr/bin/Xnest :1 -geometry 1024x768+0+0 -ac -name Windowmaker & wmaker -display :1
 
 ```
 

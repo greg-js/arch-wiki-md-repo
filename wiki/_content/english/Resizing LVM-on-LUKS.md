@@ -1,6 +1,10 @@
 This article follows the process of resizing and shrinking an LVM-on-LUKS-on-GPT partition, such that an extra (plain) partition can be added in the unused space cleared up on the end of the hard drive.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Method](#Method)
 *   [2 Process](#Process)

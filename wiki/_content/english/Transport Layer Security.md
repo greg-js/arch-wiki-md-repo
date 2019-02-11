@@ -2,7 +2,11 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Transport_Layer_Security 
 
 	**Transport Layer Security** (**TLS**), and its now-deprecated[[1]](https://tools.ietf.org/html/rfc7568) predecessor, **Secure Sockets Layer** (**SSL**), are cryptographic protocols designed to provide communications security over a computer network. Several versions of the protocols find widespread use in applications such as web browsing, email, instant messaging, and voice over IP (VoIP). Websites can use TLS to secure all communications between their servers and web browsers.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Implementations](#Implementations)
 *   [2 Certificate authorities](#Certificate_authorities)

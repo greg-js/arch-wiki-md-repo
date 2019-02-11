@@ -1,6 +1,10 @@
 The HUAWEI EG162G is a EDGE/GPRS modem used for wireless internet access. Linux kernel support this at least from version 2.6.29.4 and thus setting this up is not very hard.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Plug it in](#Plug_it_in)
 *   [2 Installation](#Installation)

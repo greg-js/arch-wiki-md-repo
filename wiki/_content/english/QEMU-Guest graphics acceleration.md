@@ -6,7 +6,11 @@ Related articles
 
 There are multiple methods for virtual machine (VM) graphics display which yield greatly accelerated or near-bare metal performance.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Methods for QEMU guest graphics acceleration](#Methods_for_QEMU_guest_graphics_acceleration)
     *   [1.1 QXL video driver and SPICE client for display](#QXL_video_driver_and_SPICE_client_for_display)

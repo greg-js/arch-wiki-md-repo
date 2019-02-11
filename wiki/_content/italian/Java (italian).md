@@ -4,7 +4,11 @@ Articoli correlati
 
 "*Java è un linguaggio di programmazione originariamente sviluppato da Sun Microsystems e rilasciato nel 1995 come componente centrale della piattaforma Java della Sun Microsystems. Il linguaggio deriva gran parte della sua sintassi dal C e dal C++ ma ha un modello a oggetti più semplice e una minore quantità di ottimizzazioni a basso livello. Le applicazioni Java sono tipicamente compilate in bytecode che può essere eseguito su qualsiasi Java Virtual Machine (JVM) indipendentemente dall'architettura hardware.*" — [Wikipedia article](https://en.wikipedia.org/wiki/Java_(programming_language) "wikipedia:Java (programming language)")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installazione](#Installazione)
     *   [1.1 OpenJDK](#OpenJDK)

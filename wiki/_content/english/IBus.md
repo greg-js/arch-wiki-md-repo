@@ -1,6 +1,10 @@
 [IBus](https://en.wikipedia.org/wiki/Intelligent_Input_Bus "wikipedia:Intelligent Input Bus") (*Intelligent Input Bus*) is an [input method](/index.php/Input_method "Input method") framework, a system for entering non-Latin characters.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Input method engines](#Input_method_engines)

@@ -4,7 +4,11 @@
 
 **Важно:** Для корректной работы инструмент должен правильно парсить IP-адреса в лог-файлах. Всегда **проверяйте** лог-фильтры для каждого приложения, требующего защиты.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
     *   [1.1 systemd](#systemd)

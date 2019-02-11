@@ -5,7 +5,11 @@ Articoli correlati
 
 LXDM è un display manager leggero per l'ambiente desktop [LXDE](/index.php/LXDE_(Italiano) "LXDE (Italiano)"). L'interfaccia utente è realizzata con [GTK+](/index.php/GTK%2B_(Italiano) "GTK+ (Italiano)") 2\. È ancora nelle prime fasi di sviluppo.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installazione](#Installazione)
 *   [2 Configurazione](#Configurazione)

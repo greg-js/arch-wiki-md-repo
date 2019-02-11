@@ -6,7 +6,11 @@
 
 Arch Linux 能在任何内存空间不小于 512MB 的 [x86_64](https://en.wikipedia.org/wiki/zh:X86-64 "w:zh:X86-64") 兼容机上运行。用 [base](https://www.archlinux.org/groups/x86_64/base/) 组内的软件包进行的基本安装将占用小于 800MB 的存储空间。由于安装过程中需要从远程存储库获取软件包，机器将需要一个有效的互联网连接。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装前的准备](#安装前的准备)
     *   [1.1 验证签名](#验证签名)

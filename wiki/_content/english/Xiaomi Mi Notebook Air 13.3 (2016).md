@@ -12,7 +12,11 @@ The Mi Notebook Air 13.3 is an aluminium Ultrabook. It is a product by the Chine
 
 The installation should be going without any problems, if you follow the following steps.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Pre-Installation System Settings](#Pre-Installation_System_Settings)
 *   [2 Graphics Card Configuration](#Graphics_Card_Configuration)

@@ -1,6 +1,10 @@
 This article gives an overview on how to host a [Git](/index.php/Git "Git") server. For more information, refer to the [Git on the Server chapter](https://git-scm.com/book/en/v2/Git-on-the-Server-The-Protocols) of the Pro Git book.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Protocols](#Protocols)
     *   [1.1 SSH](#SSH)

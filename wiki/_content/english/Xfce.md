@@ -9,7 +9,11 @@ Related articles
 
 [Xfce](http://www.xfce.org) is a lightweight and modular [desktop environment](/index.php/Desktop_environment "Desktop environment") currently based on both GTK+ 2 and GTK+ 3\. To provide a complete user experience, it includes a window manager, a file manager, desktop and panel.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Starting](#Starting)

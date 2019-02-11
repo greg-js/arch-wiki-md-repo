@@ -2,7 +2,11 @@
 
 Este documento te dice como instalar, configurar y usar **lm_sensors** para que puedas monitorear tu CPU y/o la temperatura de tu placa madre y velocidad de los ventiladores.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Aviso para los Kernels >=2.6.31](#Aviso_para_los_Kernels_>=2.6.31)
 *   [2 Uso](#Uso)

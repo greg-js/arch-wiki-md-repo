@@ -6,7 +6,11 @@ Currently, Arch Linux supports the A2DP profile (Audio Sink) for remote audio pl
 
 **Note:** Bluez5 dropped the direct integration for [ALSA](/index.php/ALSA "ALSA") and supports [PulseAudio](/index.php/PulseAudio "PulseAudio"). If you do not want to use PulseAudio, you have to use [bluez-alsa-git](https://aur.archlinux.org/packages/bluez-alsa-git/), as ALSA plugin.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Headset via Bluez5/PulseAudio](#Headset_via_Bluez5/PulseAudio)
     *   [1.1 Configuration via CLI](#Configuration_via_CLI)

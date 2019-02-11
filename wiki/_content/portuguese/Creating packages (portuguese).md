@@ -15,7 +15,11 @@ Artigos relacionados
 
 Esse artigo objetiva auxiliar usuários na criação de seus próprios pacotes usando o [sistema de compilação](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)") "tipo *ports*" do Arch Linux, também para enviou ao [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"). Ele cobre criação de um [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") – um arquivo de descrição de compilação de pacote carregado pelo `makepkg` para criar um pacote binário a partir do fonte. Se já estiver em posse de um `PKGBUILD`, veja [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)"). Para instruções sobre regras e formas existentes para melhorar a qualidade de pacote, veja [Padrões de empacotamento do Arch](/index.php/Padr%C3%B5es_de_empacotamento_do_Arch "Padrões de empacotamento do Arch").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Visão Geral](#Visão_Geral)
 *   [2 Preparação](#Preparação)

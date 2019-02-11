@@ -1,6 +1,10 @@
 [p7zip](http://p7zip.sourceforge.net/) is command line port of [7-Zip](https://en.wikipedia.org/wiki/7zip "wikipedia:7zip") for [POSIX](https://en.wikipedia.org/wiki/POSIX "wikipedia:POSIX") systems, including Linux.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Examples](#Examples)

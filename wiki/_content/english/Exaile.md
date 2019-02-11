@@ -1,6 +1,10 @@
 [Exaile](http://www.exaile.org/) is a music manager and player for GTK+ written in Python. It incorporates automatic fetching of album art, lyrics fetching, Last.fm scrobbling, support for many portable media players, internet radio such as shoutcast, and tabbed playlists.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Enabling cover art, lyrics, and guitar tablature](#Enabling_cover_art,_lyrics,_and_guitar_tablature)

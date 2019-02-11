@@ -13,7 +13,11 @@ For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs
 
 **Note:** PowerVR-based graphics ([GMA 3600](/index.php/Intel_GMA_3600 "Intel GMA 3600") series) are not supported by open source drivers.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Loading](#Loading)

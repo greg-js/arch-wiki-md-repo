@@ -7,7 +7,11 @@ dm-crypt is the Linux kernel's [device mapper](https://en.wikipedia.org/wiki/dev
 
 	a transparent disk encryption subsystem in [the] Linux kernel... [It is] implemented as a device mapper target and may be stacked on top of other device mapper transformations. It can thus encrypt whole disks (including removable media), partitions, software RAID volumes, logical volumes, as well as files. It appears as a block device, which can be used to back file systems, swap or as an LVM physical volume.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Common scenarios](#Common_scenarios)
 *   [2 Drive preparation](#Drive_preparation)

@@ -18,7 +18,11 @@ From [Wikipedia](https://en.wikipedia.org/wiki/File_system "wikipedia:File syste
 
 Individual drive partitions can be setup using one of the many different available filesystems. Each has its own advantages, disadvantages, and unique idiosyncrasies. A brief overview of supported filesystems follows; the links are to Wikipedia pages that provide much more information.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Types of file systems](#Types_of_file_systems)
     *   [1.1 Journaling](#Journaling)

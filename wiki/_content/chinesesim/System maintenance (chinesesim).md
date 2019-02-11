@@ -6,7 +6,11 @@
 
 要持续使用 Arch linux，需要进行系统日常维护，每个用户都应该及时维护系统。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 检查错误](#检查错误)
     *   [1.1 systemd 服务问题](#systemd_服务问题)

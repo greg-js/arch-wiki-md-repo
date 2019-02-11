@@ -1,6 +1,10 @@
 WvDial is a Point-to-Point Protocol dialer: it dials a modem and starts [ppp](/index.php/Ppp "Ppp") in order to connect to the Internet.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

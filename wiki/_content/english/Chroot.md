@@ -6,7 +6,11 @@ Related articles
 
 A [chroot](https://en.wikipedia.org/wiki/Chroot "wikipedia:Chroot") is an operation that changes the apparent root directory for the current running process and their children. A program that is run in such a modified environment cannot access files and commands outside that environmental directory tree. This modified environment is called a *chroot jail*.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Reasoning](#Reasoning)
 *   [2 Requirements](#Requirements)

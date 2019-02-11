@@ -12,7 +12,11 @@ De acuerdo con [Wikipedia:es:Portapapeles](https://en.wikipedia.org/wiki/es:Port
 
 	El portapapeles es una habilidad utilizada para el almacenamiento de datos a corto plazo y/o la transferencia de datos entre documentos o aplicaciones, a través de las operaciones [copiar y pegar](https://en.wikipedia.org/wiki/es:copiar_y_pegar "wikipedia:es:copiar y pegar").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Historia](#Historia)
 *   [2 Selecciones](#Selecciones)

@@ -7,7 +7,11 @@ Related articles
 
 [Docker](https://en.wikipedia.org/wiki/Docker_(software) is a utility to pack, ship and run any application as a lightweight container.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

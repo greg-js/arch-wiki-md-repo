@@ -6,7 +6,11 @@ dhcpd is the [Internet Systems Consortium](http://www.isc.org/downloads/dhcp/) D
 
 **Note:** *dhcpd* (DHCP **(server)** daemon) is not the same as [dhcpcd](/index.php/Dhcpcd "Dhcpcd") (DHCP **client** daemon).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)

@@ -2,7 +2,11 @@ Instalace Arch64 svázaná s 32bit systémem
 
 Tento článek je určený především pro ty, kdo opravdu potřebují používat 32bitové aplikace. Protože Arch64 se snaží být čistě 64bitovou distribucí, bývá občas problém sehnat knihovny pro 32bit emulaci. Tento postup vytvoří čistě 32bitovou instalaci ArchLinuxu ve vaší stávající 64bitové.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalace základních balíčků](#Instalace_základních_balíčků)
 *   [2 /etc/rc.d/arch32 rc skript](#/etc/rc.d/arch32_rc_skript)
@@ -94,7 +98,7 @@ case $1 in
         mount --bind /home /opt/arch32/home
         add_daemon arch32
         stat_done
-        ;;
+        ;;
     stop)
         stat_busy "Stopping Arch32 chroot"
         umount /opt/arch32/proc/bus/usb
@@ -107,12 +111,12 @@ case $1 in
         umount /opt/arch32/home
         rm_daemon arch32
         stat_done
-        ;;
+        ;;
     restart)
         $0 stop
         sleep 1
         $0 start
-        ;;
+        ;;
     *)
         echo "usage: $0 {start|stop|restart}"
 esac

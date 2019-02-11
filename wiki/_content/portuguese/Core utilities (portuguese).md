@@ -12,7 +12,11 @@ Artigos relacionados
 
 A maioria das interfaces de linha de comando está principalmente documentada em [páginas man](/index.php/P%C3%A1ginas_man "Páginas man"), utilitários pelo [Projeto GNU](/index.php/Projeto_GNU "Projeto GNU") estão documentados em [manual info](/index.php/Manual_info "Manual info"), alguns [shells](/index.php/Shell_(Portugu%C3%AAs) "Shell (Português)") fornecem um `help` comando para comandos embutidos [shell](/index.php/Shell_(Portugu%C3%AAs) "Shell (Português)"). Além disso, a maioria dos utilitários imprime seu uso quando executado com o sinalizador `--help`.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Essenciais](#Essenciais)
 *   [2 Não essenciais](#Não_essenciais)

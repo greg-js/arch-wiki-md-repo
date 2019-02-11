@@ -2,7 +2,11 @@
 
 The author of cdist is also using Arch Linux as a target distribution and has some re-usable example configurations online. This page describes how to automatically configure Arch Linux using cdist.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Preparation](#Preparation)
 *   [2 How to use the types](#How_to_use_the_types)

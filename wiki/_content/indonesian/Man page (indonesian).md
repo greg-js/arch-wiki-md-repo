@@ -4,7 +4,11 @@ Terlepas dari ruang lingkupnya, halaman panduan dirancang untuk menjadi dokumen 
 
 [less](/index.php/Core_utilities#less "Core utilities") adalah halaman bawaan yang digunakan dengan *man*.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Mengakses halaman panduan](#Mengakses_halaman_panduan)
 *   [2 Format](#Format)

@@ -5,7 +5,11 @@ Related articles
 
 [Syncthing](https://syncthing.net) is an open-source file synchronization client/server application, written in [Go](/index.php/Go "Go"), implementing its own, equally free [Block Exchange Protocol](https://docs.syncthing.net/specs/bep-v1.html). All transit communications between syncthing nodes are encrypted using [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security "wikipedia:Transport Layer Security"), and all nodes are uniquely identified with cryptographic certificates.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Running Syncthing](#Running_Syncthing)

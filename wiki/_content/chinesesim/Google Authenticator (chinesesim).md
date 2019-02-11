@@ -2,7 +2,11 @@
 
 [Google Authenticator](https://github.com/google/google-authenticator) 使用一次性密码(**O**ne-**t**ime **P**asscodes)进行两步验证。iOS、Android 甚至 Blackberry 上都提供了 OTP 生成器应用。与 [S/KEY Authentication](/index.php/S/KEY_Authentication "S/KEY Authentication") 类似，两步验证将集成在Linux的 [PAM](/index.php/PAM "PAM") 系统中。此指南显示了此两步验证的安装与配置。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 设置插入式验证模块(**P**luggable **A**uthentication **M**odules)](#设置插入式验证模块(Pluggable_Authentication_Modules))

@@ -2,7 +2,11 @@ From the project [home page](http://www.ffmpeg.org/):
 
 	FFmpeg is a complete, cross-platform solution to record, convert and stream audio and video. It includes libavcodec - the leading audio/video codec library.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Package installation](#Package_installation)
 *   [2 Encoding examples](#Encoding_examples)
@@ -240,13 +244,13 @@ Subtitles embedded in container files, such as MPEG-2 and Matroska, can be extra
 ...
 Stream #0:0(und): Video: h264 (High), yuv420p, 1920x800 [SAR 1:1 DAR 12:5], 23.98 fps, 23.98 tbr, 1k tbn, 47.95 tbc (default)
   Metadata:
-  CREATION_TIME   : 2012-06-05 05:04:15
-  LANGUAGE        : und
+  CREATION_TIME   : 2012-06-05 05:04:15
+  LANGUAGE        : und
 Stream #0:1(und): Audio: aac, 44100 Hz, stereo, fltp (default)
  Metadata:
- CREATION_TIME   : 2012-06-05 05:10:34
- LANGUAGE        : und
- HANDLER_NAME    : GPAC ISO Audio Handler
+ CREATION_TIME   : 2012-06-05 05:10:34
+ LANGUAGE        : und
+ HANDLER_NAME    : GPAC ISO Audio Handler
 **Stream #0:2: Subtitle: ssa (default)**
 
 ```
@@ -474,7 +478,7 @@ $ ffprobe -v quiet -print_format json -show_format -show_streams file.ext
 ### Create a screen of the video every X frames
 
 ```
-$ ffmpeg -i file.ext -an -s 319x180 -vf fps=1/**100** -qscale:v 75 %03d.jpg
+$ ffmpeg -i file.ext -an -s 319x180 -vf fps=1/**100** -qscale:v 75 %03d.jpg
 
 ```
 

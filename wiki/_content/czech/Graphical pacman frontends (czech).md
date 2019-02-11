@@ -2,7 +2,11 @@ Toto je seznam Pacman GUI frontendů, Pacman/AUR pohlížečů balíčků a tray
 
 **Warning:** Žádný z těchto nástrojů není oficiálně podporován vývojáři Arch Linuxu.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Pacman Frontendy](#Pacman_Frontendy)
     *   [1.1 GNOME/GTK+](#GNOME/GTK+)

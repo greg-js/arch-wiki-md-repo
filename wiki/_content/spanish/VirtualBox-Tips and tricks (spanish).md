@@ -5,7 +5,11 @@ Este artículo es una traducción de [VirtualBox/Tips and tricks](/index.php/Vir
 
 Véase [VirtualBox (Español)](/index.php/VirtualBox_(Espa%C3%B1ol) "VirtualBox (Español)") para el artículo principal.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Importar/exportar máquinas virtuales de VirtualBox a/desde otros hipervisores](#Importar/exportar_máquinas_virtuales_de_VirtualBox_a/desde_otros_hipervisores)
     *   [1.1 Eliminar complementos](#Eliminar_complementos)
@@ -101,15 +105,15 @@ He aquí los detalles de la implementación de un servicio de systemd que se uti
  `/etc/systemd/system/vboxvmservice@.service` 
 ```
 [Unit]
-Description=VBox Virtual Machine %i Service
+Description=VBox Virtual Machine %i Service
 Requires=systemd-modules-load.service
 After=systemd-modules-load.service
 
 [Service]
 User=*username*
 Group=vboxusers
-ExecStart=/usr/bin/VBoxManage startvm %i --type *startmode*
-ExecStop=/usr/bin/VBoxManage controlvm %i *stopmode*
+ExecStart=/usr/bin/VBoxManage startvm %i --type *startmode*
+ExecStop=/usr/bin/VBoxManage controlvm %i *stopmode*
 RemainAfterExit=yes
 
 [Install]

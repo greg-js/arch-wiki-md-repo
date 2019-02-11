@@ -5,7 +5,11 @@ Related articles
 
 Ez az oldal megpróbálja felvázolni az Arch Linux és más népszerű GNU/Linux disztribúciók, illetve <tt>UNIX</tt>-szerű operációs rendszerek közti hasonlóságokat és különbségeket. A következő leírások csak rövid összefoglalók, melyek célja, hogy segítsen az olvasónak eldönteni, hogy az Arch Linux megfelel-e igényeinek. Még ha ezek az összefoglalók törekednek is a minél jobb leírásra, a döntést a rendszer tényleges kipróbálása után érdemes meghozni.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Forráskód alapú disztribúciók](#Forráskód_alapú_disztribúciók)
     *   [1.1 Gentoo](#Gentoo)

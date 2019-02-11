@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Alternative installation methods](#Alternative_installation_methods)
     *   [1.1 Install to external USB stick](#Install_to_external_USB_stick)

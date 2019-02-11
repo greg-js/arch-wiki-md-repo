@@ -14,7 +14,11 @@ makepkg es usado para compilar y construir paquetes capaces de instalar mediante
 
 makepkg lo provee el paquete [pacman](https://www.archlinux.org/packages/?name=pacman).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Configuración](#Configuración)
     *   [1.1 Información del empaquetador](#Información_del_empaquetador)
@@ -283,7 +287,7 @@ COMPRESSGZ=(**pigz** -c -f -n)
 
 Esto muestra todos los paquetes instalados en el sistema con el empaquetador *nombreempaqueetador*:
 
-$ expac "%n %p" | grep "*nombreempaquetador*" | column -t
+$ expac "%n %p" | grep "*nombreempaquetador*" | column -t
 
 Esto muestra todos los paquetes instalados en el sistema con el empaquetador establecido en la variable `PACKAGER` en el `/etc/makepkg`. Solo muestra los paquetes que están en el repositorio definido en `/etc/pacman.conf`.
 

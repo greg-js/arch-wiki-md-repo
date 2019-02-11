@@ -13,7 +13,11 @@ Among other things they can be used to:
 *   theme [XScreenSaver](/index.php/XScreenSaver "XScreenSaver")
 *   configure low-level X applications like: [xorg-xclock](https://www.archlinux.org/packages/?name=xorg-xclock), [xpdf](https://www.archlinux.org/packages/?name=xpdf), [rxvt-unicode](/index.php/Rxvt-unicode "Rxvt-unicode")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)

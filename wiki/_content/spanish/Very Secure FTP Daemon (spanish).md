@@ -2,7 +2,11 @@
 
 Como puede correr con o sin [xinetd](https://es.wikipedia.org/wiki/Xinetd), serán explicados los dos métodos.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Sin xinetd (simple)](#Sin_xinetd_(simple))
 *   [2 Usando xinetd](#Usando_xinetd)

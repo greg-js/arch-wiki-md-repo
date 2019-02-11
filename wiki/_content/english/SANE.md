@@ -5,7 +5,11 @@ Related articles
 
 [SANE](http://www.sane-project.org/) ([Scanner Access Now Easy](https://en.wikipedia.org/wiki/Scanner_Access_Now_Easy "wikipedia:Scanner Access Now Easy")) provides a library and a command-line tool to use scanners under GNU/Linux. See [[1]](http://www.sane-project.org/sane-supported-devices.html) to check if sane supports your scanner.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Verification](#Verification)

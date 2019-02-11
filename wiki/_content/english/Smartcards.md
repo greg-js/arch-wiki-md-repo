@@ -5,7 +5,11 @@ Related articles
 
 This page explains how to setup your system in order to use a [smart card](https://en.wikipedia.org/wiki/Smart_card "wikipedia:Smart card") reader.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Scan for card reader](#Scan_for_card_reader)

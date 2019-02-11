@@ -17,7 +17,11 @@
 
 **注意:** [Arch Linux 论坛的这篇帖子](https://bbs.archlinux.org/viewtopic.php?pid=1149530#p1149530) 详细地解释了 Arch Linux 迁移到 systemd 的原因。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 systemd 基本工具](#systemd_基本工具)
     *   [1.1 分析系统状态](#分析系统状态)

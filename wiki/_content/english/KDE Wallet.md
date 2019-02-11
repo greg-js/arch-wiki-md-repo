@@ -1,6 +1,10 @@
 [KDE Wallet Manager](http://utils.kde.org/projects/kwalletmanager/) is a tool to manage passwords on the [KDE](/index.php/KDE "KDE") Plasma system. By using the KWallet subsystem it not only allows you to keep your own secrets but also to access and manage the passwords of every application that integrates with KWallet.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Unlock KDE Wallet automatically on login](#Unlock_KDE_Wallet_automatically_on_login)
     *   [1.1 Configure display manager](#Configure_display_manager)

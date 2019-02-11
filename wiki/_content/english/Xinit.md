@@ -11,7 +11,11 @@ From [Wikipedia](https://en.wikipedia.org/wiki/xinit "wikipedia:xinit"):
 
 *xinit* is typically used to start [window managers](/index.php/Window_manager "Window manager") or [desktop environments](/index.php/Desktop_environment "Desktop environment"). While you can also use *xinit* to run GUI applications without a window manager, many graphical applications expect an [EWMH](https://en.wikipedia.org/wiki/Extended_Window_Manager_Hints "wikipedia:Extended Window Manager Hints") compliant window manager. [Display managers](/index.php/Display_manager "Display manager") start [Xorg](/index.php/Xorg "Xorg") for you and generally source [xprofile](/index.php/Xprofile "Xprofile").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -93,7 +97,7 @@ $ startx
 Or if [#xserverrc](#xserverrc) is configured:
 
 ```
-$ xinit -- :1
+$ xinit -- :1
 
 ```
 

@@ -1,6 +1,10 @@
 This article describes how to set up and run [chrony](http://chrony.tuxfamily.org/), an alternative [NTP](/index.php/Time_synchronization "Time synchronization") client and server that is roaming friendly and designed specifically for systems that are not online all the time.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

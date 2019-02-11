@@ -1,6 +1,10 @@
 [Ghost](https://ghost.org/) is a free and open source blogging platform written in JavaScript and distributed under the MIT License, designed to simplify the process of online publishing for individual bloggers as well as online publications.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 AUR installation](#AUR_installation)
 *   [2 Custom installation](#Custom_installation)

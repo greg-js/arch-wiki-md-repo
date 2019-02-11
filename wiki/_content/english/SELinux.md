@@ -8,7 +8,11 @@ Security-Enhanced Linux (SELinux) is a Linux feature that provides a variety of 
 
 Running SELinux under a Linux distribution requires three things: An SELinux enabled kernel, SELinux Userspace tools and libraries, and SELinux Policies (mostly based on the Reference Policy). Some common Linux programs will also need to be patched/compiled with SELinux features.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Current status in Arch Linux](#Current_status_in_Arch_Linux)
 *   [2 Concepts: Mandatory Access Controls](#Concepts:_Mandatory_Access_Controls)

@@ -9,7 +9,11 @@ Sudo is an alternative to [su](/index.php/Su "Su") for running commands as root.
 
 Sudo can also be used to run commands as other users; additionally, sudo logs all commands and failed access attempts for security auditing.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
@@ -91,7 +95,7 @@ To change the editor permanently, see [Environment variables#Per user](/index.ph
 # Reset environment by default
 Defaults      env_reset
 # Set default EDITOR to nano, and do not allow visudo to use EDITOR/VISUAL.
-Defaults      editor=/usr/bin/nano, !env_editor
+Defaults      editor=/usr/bin/nano, !env_editor
 
 ```
 
@@ -123,7 +127,7 @@ To disable asking for a password for user `USER_NAME`:
 **Warning:** This will let any process running with your user name to use sudo without asking for permission.
 
 ```
-Defaults:USER_NAME      !authenticate
+Defaults:USER_NAME      !authenticate
 
 ```
 
@@ -164,7 +168,7 @@ The owner and group for the `sudoers` file must both be 0\. The file permissions
 If you are annoyed by sudo's defaults that require you to enter your password every time you open a new terminal, disable **tty_tickets**:
 
 ```
-Defaults !tty_tickets
+Defaults !tty_tickets
 
 ```
 
@@ -303,8 +307,8 @@ echo 'AllowGroups ssh' >> /etc/ssh/sshd_config
 Add users to other groups.
 
 ```
-for g in power network ;do ;gpasswd -a joe $g ;done
-for g in network power storage ;do ;gpasswd -a admin $g ;done
+for g in power network ;do ;gpasswd -a joe $g ;done
+for g in network power storage ;do ;gpasswd -a admin $g ;done
 
 ```
 

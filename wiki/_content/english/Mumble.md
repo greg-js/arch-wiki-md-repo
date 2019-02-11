@@ -4,7 +4,11 @@ From [Wikipedia, the free encyclopedia](https://en.wikipedia.org/wiki/Mumble_(so
 
 This page goes over installation and configuration of both the client portion of the software (Mumble) and the server portion (Murmur).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Client](#Client)
     *   [1.1 Installation](#Installation)

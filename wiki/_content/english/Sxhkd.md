@@ -5,7 +5,11 @@ Related articles
 
 [sxhkd](https://github.com/baskerville/sxhkd) is a simple [X](/index.php/X "X") hotkey daemon, by the developer of [bspwm](/index.php/Bspwm "Bspwm"), that reacts to input events by executing commands.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

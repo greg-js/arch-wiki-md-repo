@@ -2,7 +2,11 @@ This is an install and configuration guide for the Dell Inspiron 15 000 Series (
 
 See the [Laptop/Dell](/index.php/Laptop/Dell "Laptop/Dell") chart for information on other Dell laptops.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Hardware Details](#Hardware_Details)
 *   [2 Installation](#Installation)

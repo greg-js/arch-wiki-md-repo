@@ -4,7 +4,11 @@ In practice a TPM can be used for various different security applications such a
 
 TPM is naturally supported only on devices that have TPM hardware support. If your hardware has TPM support but it is not showing up, it might need to be enabled in the BIOS settings.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Versions](#Versions)
 *   [2 Using TPM 1.2](#Using_TPM_1.2)

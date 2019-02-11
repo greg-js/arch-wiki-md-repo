@@ -2,7 +2,11 @@
 
 [Plymouth](http://www.freedesktop.org/wiki/Software/Plymouth) é um projeto da Fedora que consiste em proporcionar um processo de inicialização gráfico sem cintilação. Baseia-se no [modo de configuração do kernel](/index.php/Kernel_mode_setting "Kernel mode setting") (KMS) para definir uma resolução nativa da tela assim que possível, fornecendo então uma tela de boas vindas atrativa, até chegar no gerenciador de login.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Preparação](#Preparação)
 *   [2 Instalação](#Instalação)

@@ -18,7 +18,11 @@ More details about LightDM's design can be found [here](http://www.freedesktop.o
 
 **Note:** The Wayland windowing system is not yet fully supported. Wayland sessions are listed, but LightDM runs on X11.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Greeter](#Greeter)
@@ -234,7 +238,7 @@ theme-name=classic
 [greeter-settings]
 Background=/usr/share/archlinux/wallpaper/archlinux-underground.jpg
 BackgroundKeepAspectRatio=true
-GreetMessage=Welcome to %hostname%
+GreetMessage=Welcome to %hostname%
 ```
 
 #### Slick Greeter

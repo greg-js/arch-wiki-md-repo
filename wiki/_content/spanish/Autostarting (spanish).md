@@ -7,7 +7,11 @@ Artículos relacionados
 
 Este artículo se enlaza con varios métodos para iniciar scripts o aplicaciones automáticamente cuando se está produciendo algún evento en particular.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 En el arranque / apagado](#En_el_arranque_/_apagado)
 *   [2 En el inicio / fin de sesión](#En_el_inicio_/_fin_de_sesión)

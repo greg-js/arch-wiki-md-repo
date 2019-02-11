@@ -10,7 +10,11 @@ Desde la wiki de [libinput](https://freedesktop.org/wiki/Software/libinput/):
 
 El controlador de entrada X.Org soporta la mayoría de [Xorg#dispositivos de entrada](/index.php/Xorg_(Espa%C3%B1ol)#Los_dispositivos_de_entrada "Xorg (Español)"). particularmente interesante es la intención del proyecto de proveer soporte avanzado a dispositivos táctiles (multitouch y gestos) como pantallas táctiles. Vea la documentación de [libinput](http://wayland.freedesktop.org/libinput/doc/latest/pages.html) para mas información.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Configuración](#Configuración)

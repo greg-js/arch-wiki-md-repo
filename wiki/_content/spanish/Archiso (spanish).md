@@ -12,7 +12,11 @@ Artículos relacionados
 
 Si necesita únicamente un resumen técnico de los requisitos y los pasos de compilación, véase también la [documentación oficial del proyecto](https://git.archlinux.org/archiso.git/tree/docs).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Preparar la instalación](#Preparar_la_instalación)
 *   [2 Configurar el soporte live](#Configurar_el_soporte_live)
@@ -218,7 +222,7 @@ Puede modificar este archivo para cambiar el usuario que inicie sesión automát
 ```
 [Service]
 ExecStart=
-ExecStart=-/sbin/agetty --autologin **isouser** --noclear %I 38400 linux
+ExecStart=-/sbin/agetty --autologin **isouser** --noclear %I 38400 linux
 
 ```
 

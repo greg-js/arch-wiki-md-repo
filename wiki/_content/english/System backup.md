@@ -8,7 +8,11 @@ Related articles
 
 It is important to regularly backup system and user data stored for example in `/etc`, `/home`, `/var` and for server installations, also `/srv`.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Using Btrfs snapshots](#Using_Btrfs_snapshots)
 *   [2 Using LVM snapshots](#Using_LVM_snapshots)

@@ -1,6 +1,10 @@
 See [GRUB](/index.php/GRUB "GRUB") for the main article.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 其它安装方式](#其它安装方式)
     *   [1.1 安装到U盘](#安装到U盘)

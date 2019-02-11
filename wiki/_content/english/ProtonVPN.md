@@ -6,7 +6,11 @@ Related articles
 
 In order to use this tutorial, one must have a protonvpn account.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Walkthrough](#Walkthrough)
     *   [1.1 Saving OpenVPN Authentication](#Saving_OpenVPN_Authentication)

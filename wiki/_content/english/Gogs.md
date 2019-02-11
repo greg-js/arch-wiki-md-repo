@@ -4,7 +4,11 @@ Related articles
 
 [Gogs](http://gogs.io/) (Go Git Service) is a Self Hosted Git service, which was written in the [Go](/index.php/Go "Go") programming language.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Packages](#Packages)
 *   [2 Installation](#Installation)

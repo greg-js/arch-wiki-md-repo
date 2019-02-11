@@ -4,7 +4,11 @@ From [spectrwm website](http://spectrwm.org/):
 
 Spectrwm is written in C and configured with a text configuration file. It was previously known as scrotwm.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -127,7 +131,7 @@ update_interval 1.0
 total_run_times 0
 use_spacer none
 TEXT
-${time %R %a,%d-%#b-%y} |Mail:${new_mails} |Up:${uptime_short} |Temp:${acpitemp}C |Batt:${battery_short} |${addr wlan0} |RAM:$memperc% |CPU:${cpu}% | ${downspeedf wlan0}
+${time %R %a,%d-%#b-%y} |Mail:${new_mails} |Up:${uptime_short} |Temp:${acpitemp}C |Batt:${battery_short} |${addr wlan0} |RAM:$memperc% |CPU:${cpu}% | ${downspeedf wlan0}
 
 ```
 

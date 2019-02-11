@@ -5,7 +5,11 @@ Related articles
 
 **Libcanberra** is a simple abstract interface for playing event sounds. It implements the [XDG Sound Theme and Naming Specifications](https://freedesktop.org/wiki/Specifications/sound-theme-spec/) for generating event sounds on free desktops, such as GNOME. Further description [here](http://0pointer.de/lennart/projects/libcanberra/)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -221,7 +225,7 @@ GLib.usleep(2000000)
 ```
 #!/usr/bin/ruby
 require 'gir_ffi'
-GirFFI.setup :GSound
+GirFFI.setup :GSound
 Hello = GSound::Context.new
 Hello.play_simple("event.id" => "phone-incoming-call", 
                   "event.description" => "hello world")

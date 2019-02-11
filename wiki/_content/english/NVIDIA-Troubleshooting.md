@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Corrupted screen: "Six screens" Problem](#Corrupted_screen:_"Six_screens"_Problem)
 *   [2 '/dev/nvidia0' input/output error](#'/dev/nvidia0'_input/output_error)

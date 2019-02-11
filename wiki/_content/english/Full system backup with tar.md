@@ -4,7 +4,11 @@ Related articles
 
 This article will show you how to do a full system backup with [tar](/index.php/Tar "Tar").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Overview](#Overview)
 *   [2 Boot with LiveCD](#Boot_with_LiveCD)

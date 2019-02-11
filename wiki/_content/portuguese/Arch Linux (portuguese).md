@@ -2,7 +2,11 @@
 
 O Arch Linux é uma distribuição [GNU](/index.php/GNU_(Portugu%C3%AAs) "GNU (Português)")/Linux x86_64 de uso geral desenvolvida independentemente que se empenha em fornecer as últimas versões estáveis da maioria dos softwares seguindo um modelo de lançamento contínuo (*rolling-release*). A instalação padrão é um sistema base mínimo, configurado pelo usuário para adicionar apenas o que é propositalmente necessário.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Princípios](#Princípios)
     *   [1.1 Simplicidade](#Simplicidade)

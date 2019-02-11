@@ -1,6 +1,10 @@
 [MythTV](https://www.mythtv.org/) is an application suite designed to provide an amazing multimedia experience. It provides PVR functionality to a Linux based computer and also supports other media types. Combined with a nice, quiet computer and a decent TV, it makes an excellent centerpiece to a home theater system.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Structure](#Structure)
     *   [1.1 mythbackend](#mythbackend)

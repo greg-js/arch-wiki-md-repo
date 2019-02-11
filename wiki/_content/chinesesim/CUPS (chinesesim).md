@@ -4,7 +4,11 @@
 
 虽然有其他的打印程序包例如LPRNG，但CUPS是相当流行和相对容易使用的。它是Arch linux及许多其他Linux发行版缺省的打印系统。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装 CUPS](#安装_CUPS)
     *   [1.1 打印机驱动](#打印机驱动)

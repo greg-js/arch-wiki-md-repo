@@ -10,7 +10,11 @@ Abrir (e fechar) relatórios de erros no [Rastreador de erros do Arch Linux](htt
 
 Veja também: [Como relatar erros de forma efetiva](https://www.chiark.greenend.org.uk/~sgtatham/bugs.html) (em inglês) por Simon Tatham
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Antes de relatar](#Antes_de_relatar)
     *   [1.1 Pesquise por duplicados](#Pesquise_por_duplicados)

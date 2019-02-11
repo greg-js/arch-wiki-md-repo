@@ -5,7 +5,11 @@ Related articles
 
 Desktop notifications are small, passive popup dialogs that notify the user of particular events in an asynchronous manner.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Libnotify](#Libnotify)
 *   [2 Notification servers](#Notification_servers)
@@ -621,7 +625,7 @@ Hello.show()
 ```
 #!/usr/bin/ruby
 require 'gir_ffi'
-GirFFI.setup :Notify
+GirFFI.setup :Notify
 Notify.init("Hello world")
 Hello = Notify::Notification.new("Hello world!", "This is an example notification.", "dialog-information")
 Hello.show

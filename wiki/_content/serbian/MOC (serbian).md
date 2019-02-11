@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Opis](#Opis)
 *   [2 Instalacija](#Instalacija)
@@ -88,7 +92,7 @@ $ vim ~/.moc/config
 add line:
 
 ```
-OnSongChange = "/usr/lib/lastfmsubmitd/lastfmsubmit --artist %a --title %t --length %d --album %b"
+OnSongChange = "/usr/lib/lastfmsubmitd/lastfmsubmit --artist %a --title %t --length %d --album %b"
 
 ```
 

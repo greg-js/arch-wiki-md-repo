@@ -13,7 +13,11 @@ Las *utilidades principales* son las herramientas básicas y fundamentales de un
 
 La mayoría de las interfaces de línea de órdenes están documentadas en las [páginas del manual](/index.php/Man_page_(Espa%C3%B1ol) "Man page (Español)"), las utilidades del [Proyecto GNU](/index.php/GNU_Project_(Espa%C3%B1ol) "GNU Project (Español)") están documentadas en los [manuales de información](/index.php/Info_manual_(Espa%C3%B1ol) "Info manual (Español)"), algunos intérpretes de línea de órdenes proporcionan una orden `help` para las órdenes incorporadas de la [línea de órdenes](/index.php/Shell_(Espa%C3%B1ol) "Shell (Español)"). Además, la mayoría de las utilidades imprimen su uso cuando se ejecutan con el indicador `--help`.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Esenciales](#Esenciales)
     *   [1.1 Previniendo la pérdida de datos](#Previniendo_la_pérdida_de_datos)

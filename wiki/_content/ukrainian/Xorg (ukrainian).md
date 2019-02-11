@@ -16,7 +16,11 @@
 
 **Xorg** (зазвичай називають просто **X**) є найпопулярнішою віконною системою серед користувачів Linux. Її поширеність призвела до того, що вона стала необхідною умовою для додатків з графічним інтерфейсом, що призвело до масового використання у більшості дистрибутивів. Дивіться статтю [X Window System](https://uk.wikipedia.org/wiki/X_Window_System/) у Вікіпедії або перейдіть на [веб-сайт Xorg](http://www.x.org/wiki/), щоб дізнатися більше.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Встановлення](#Встановлення)
     *   [1.1 Встановлення драйверів](#Встановлення_драйверів)
@@ -158,13 +162,13 @@ Xorg використовує файл налаштувань`xorg.conf` і фа
 Xorg також можна налаштувати за допомогою `/etc/X11/xorg.conf` або `/etc/xorg.conf`. Ви також можете створити основу для `xorg.conf` з:
 
 ```
-# Xorg :0 -configure
+# Xorg :0 -configure
 
 ```
 
 Це має створити файл `xorg.conf.new` в `/root/`, в який можна скопіювати `/etc/X11/xorg.conf`.
 
-**Порада:** Якщо ви вже запустили X-сервер, використовуйте інший дисплей, наприклад `Xorg :2 -configure`.
+**Порада:** Якщо ви вже запустили X-сервер, використовуйте інший дисплей, наприклад `Xorg :2 -configure`.
 
 Крім того, драйвери пропрієтарних відеокарт можуть постачатися з інструментом для автоматичної настройки Xorg: див. Статтю вашого відео-драйвера, [NVIDIA](/index.php/NVIDIA "NVIDIA") або [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst").
 
@@ -436,7 +440,7 @@ $ xrdb -query | grep dpi
 Для запуску вкладеного сеансу іншого середовища робочого столу:
 
 ```
-$ /usr/bin/Xnest :1 -geometry 1024x768+0+0 -ac -name Windowmaker & wmaker -display :1
+$ /usr/bin/Xnest :1 -geometry 1024x768+0+0 -ac -name Windowmaker & wmaker -display :1
 
 ```
 

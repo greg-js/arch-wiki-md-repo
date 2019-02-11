@@ -11,7 +11,11 @@ This article describes how to use persistent names for your [block devices](/ind
 *   Persistent naming has limits that are out-of-scope in this article. For example, while [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") may support a method, systemd may impose its own limits (e.g. [FS#42884](https://bugs.archlinux.org/task/42884)) on naming it can process during boot.
 *   If you are using [LVM](/index.php/LVM "LVM"), this article is not relevant as LVM takes care of this automatically.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Persistent naming methods](#Persistent_naming_methods)
     *   [1.1 by-label](#by-label)

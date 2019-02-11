@@ -13,7 +13,11 @@ Um servidor de e-mail consiste em vários componentes. Um [agente de transferên
 
 ```
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Software](#Software)
     *   [1.1 Servidores POP3/IMAP](#Servidores_POP3/IMAP)

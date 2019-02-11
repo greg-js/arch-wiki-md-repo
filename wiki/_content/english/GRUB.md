@@ -13,7 +13,11 @@ Related articles
 
 **Note:** In the entire article `*esp*` denotes the mountpoint of the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") aka ESP.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 BIOS systems](#BIOS_systems)
     *   [1.1 GUID Partition Table (GPT) specific instructions](#GUID_Partition_Table_(GPT)_specific_instructions)

@@ -4,7 +4,11 @@ Related articles
 
 [Dunst](https://dunst-project.org/) is a lightweight replacement for the notification-daemons provided by most desktop environments.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Appearance](#Appearance)

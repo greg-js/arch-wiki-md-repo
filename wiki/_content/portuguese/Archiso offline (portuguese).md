@@ -8,7 +8,11 @@ Artigos relacionados
 
 Um recurso adicional do Archiso Offline é que os pacotes AUR podem ser incluídos no processo de criação ISO.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Configuração](#Configuração)
     *   [1.1 Instalando pacotes](#Instalando_pacotes)

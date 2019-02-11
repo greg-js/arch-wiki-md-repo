@@ -1,6 +1,10 @@
 This document describes how to install the APC UPS daemon. The APC UPS can communicate with the Linux system through either a RS-232 or USB serial connection. In the event of a prolonged power outage, should the APC UPS lose most of its battery capacity, it can tell the Linux box to perform a safe shutdown.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Install the package](#Install_the_package)
 *   [2 Configure APC UPS](#Configure_APC_UPS)
@@ -54,40 +58,40 @@ Next, wait about a minute and confirm the daemon is running and properly monitor
 
  `# apcaccess status` 
 ```
-APC      : 001,033,0819
-DATE     : Sat Mar 05 SOMETIME 2005
+APC      : 001,033,0819
+DATE     : Sat Mar 05 SOMETIME 2005
 HOSTNAME : somehostname
-RELEASE  : 3.10.16
-VERSION  : 3.10.16 (04 November 2004) unknown
-UPSNAME  : somehostname
-CABLE    : USB Cable
-MODEL    : Back-UPS ES 725
-UPSMODE  : Stand Alone
+RELEASE  : 3.10.16
+VERSION  : 3.10.16 (04 November 2004) unknown
+UPSNAME  : somehostname
+CABLE    : USB Cable
+MODEL    : Back-UPS ES 725
+UPSMODE  : Stand Alone
 STARTTIME: Sat Mar SOMETIME 2005
-STATUS   : ONLINE
-LINEV    : 119.0 Volts
-LOADPCT  :  23.0 Percent Load Capacity
-BCHARGE  : 100.0 Percent
+STATUS   : ONLINE
+LINEV    : 119.0 Volts
+LOADPCT  :  23.0 Percent Load Capacity
+BCHARGE  : 100.0 Percent
 TIMELEFT :  30.5 Minutes
 MBATTCHG : 5 Percent
 MINTIMEL : 3 Minutes
-MAXTIME  : 0 Seconds
-LOTRANS  : 088.0 Volts
-HITRANS  : 138.0 Volts
+MAXTIME  : 0 Seconds
+LOTRANS  : 088.0 Volts
+HITRANS  : 138.0 Volts
 ALARMDEL : Always
-BATTV    : 13.5 Volts
+BATTV    : 13.5 Volts
 NUMXFERS : 0
-TONBATT  : 0 seconds
+TONBATT  : 0 seconds
 CUMONBATT: 0 seconds
 XOFFBATT : N/A
 STATFLAG : 0x02000008 Status Flag
-MANDATE  : 2002-12-02
+MANDATE  : 2002-12-02
 SERIALNO : QB0249360043
 BATTDATE : 2000-00-00
 NOMBATTV :  12.0
 FIRMWARE : 02.n2.D USB FW:n2
 APCMODEL : Back-UPS ES 725
-END APC  : Sat SOMETIME 2005
+END APC  : Sat SOMETIME 2005
 
 ```
 
@@ -178,7 +182,7 @@ case $2 in
            echo "Otherwise, the UPS may cut the power during the reboot!!!"
            echo
          fi
-       ;;
+       ;;
 
        # Coming out of a hibernate state.
        post)
@@ -196,9 +200,9 @@ case $2 in
 	 # Restart the daemon; otherwise it may be unresponsive in a
          # second powerfailure situation.
 	 systemctl restart apcupsd
-       ;;
+       ;;
     esac
-  ;;
+  ;;
 esac
 
 ```

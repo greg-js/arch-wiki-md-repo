@@ -15,7 +15,11 @@ Related articles
 
 Alternatives for using containers are [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn"), [docker](/index.php/Docker "Docker") or [rkt](https://www.archlinux.org/packages/?name=rkt).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Privileged containers or unprivileged containers](#Privileged_containers_or_unprivileged_containers)
     *   [1.1 An example to illustrate unprivileged containers](#An_example_to_illustrate_unprivileged_containers)

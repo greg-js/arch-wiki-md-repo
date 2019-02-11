@@ -8,7 +8,11 @@ Related articles
 
 **Warning:** Tor does not work with the current version of OpenSSL (see [FS#61623](https://bugs.archlinux.org/task/61623)).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Introduction](#Introduction)
 *   [2 Installation](#Installation)
@@ -571,7 +575,7 @@ On stock arch, pacman only trust keys which are either signed by you (That can b
  `/etc/pacman.conf` 
 ```
 ...
-XferCommand = /usr/bin/curl --socks5-hostname localhost:9050 -C - -f %u > %o
+XferCommand = /usr/bin/curl --socks5-hostname localhost:9050 -C - -f %u > %o
 ...
 ```
 

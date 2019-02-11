@@ -6,7 +6,11 @@ Articoli correlati
 
 Un [display manager](https://en.wikipedia.org/wiki/X_display_manager_(program_type) e [gestori di finestre](/index.php/Window_manager_(Italiano) "Window manager (Italiano)"). Solitamente è possibile, entro certi limiti, personalizzare il loro aspetto.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Lista dei display manager disponibili](#Lista_dei_display_manager_disponibili)
     *   [1.1 Testuali](#Testuali)

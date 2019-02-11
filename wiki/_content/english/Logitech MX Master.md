@@ -1,6 +1,10 @@
 [Logitech MX Master](http://www.logitech.com/en-us/product/mx-master)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Usage](#Usage)
 *   [2 List of events sent by mouse](#List_of_events_sent_by_mouse)

@@ -4,7 +4,11 @@ From the [WireGuard](https://www.wireguard.com/) project homepage:
 
 **Warning:** WireGuard has not undergone proper degrees of security auditing and the protocol is still subject to change.[[1]](https://www.wireguard.com/#work-in-progress)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
@@ -20,6 +24,10 @@ From the [WireGuard](https://www.wireguard.com/) project homepage:
     *   [3.2 Key generation](#Key_generation_2)
     *   [3.3 Server config](#Server_config)
     *   [3.4 Client config](#Client_config)
+    *   [3.5 Using systemd-networkd](#Using_systemd-networkd)
+        *   [3.5.1 Server](#Server_2)
+        *   [3.5.2 Client foo](#Client_foo)
+        *   [3.5.3 Client bar](#Client_bar)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Routes are periodically reset](#Routes_are_periodically_reset)
     *   [4.2 Connection loss with NetworkManager](#Connection_loss_with_NetworkManager)
@@ -50,9 +58,9 @@ The below commands demonstrate how to setup a basic tunnel between two peers wit
 
 The external addresses should already exist. For example, peer A should be able to ping peer B via `ping 10.10.10.2`, and vice versa. The internal addresses will be new addresses created by the *ip* commands below and will be shared internally within the new WireGuard network. The `/24` in the IP addresses is the [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation "wikipedia:Classless Inter-Domain Routing").
 
-#### Key generation
+### Key generation
 
-**Note:** It's recommended to save the private key file with strict permissions such as `600`.
+**Note:** It is recommended to save the private key file with strict permissions such as `600`.
 
 To create a private key:
 
@@ -82,7 +90,7 @@ One can also generate a preshared key to add an additional layer of symmetric-ke
 
 ```
 
-#### Peer A setup
+### Peer A setup
 
 This peer will listen on UDP port 48574 and will accept connection from peer B by linking its public key with both its inner and outer IPs addresses.
 
@@ -97,7 +105,7 @@ This peer will listen on UDP port 48574 and will accept connection from peer B b
 
 `[Peer B public key]` should have the same format as `EsnHH9m6RthHSs+sd9uM6eCHe/mMVFaRh93GYadDDnM=`. `allowed-ips` is a list of addresses that peer A will be able to send traffic to. `allowed-ips 0.0.0.0/0` would allow sending traffic to any address.
 
-#### Peer B setup
+### Peer B setup
 
 As with Peer A, whereas the wireguard daemon is listening on the UDP port 39814 and accept connection from peer A only.
 
@@ -110,7 +118,7 @@ As with Peer A, whereas the wireguard daemon is listening on the UDP port 39814 
 
 ```
 
-#### Basic checkups
+### Basic checkups
 
 Invoking the wg command without parameter will give a quick overview of the current configuration.
 
@@ -136,7 +144,7 @@ At this point one could reach the end of the tunnel:
 
 ```
 
-#### Persistent configuration
+### Persistent configuration
 
 The configuration can be saved by utilizing `showconf`:
 
@@ -146,7 +154,7 @@ The configuration can be saved by utilizing `showconf`:
 
 ```
 
-#### Example peer configuration
+### Example peer configuration
 
  `/etc/wireguard/wg0.conf` 
 ```
@@ -161,7 +169,7 @@ Endpoint = [SERVER ENDPOINT]:51820
 PersistentKeepalive = 25
 ```
 
-#### Example configuration for systemd-networkd
+### Example configuration for systemd-networkd
 
  `/etc/systemd/network/30-wg0.netdev` 
 ```
@@ -234,8 +242,8 @@ ListenPort = 51820
 PrivateKey = [SERVER PRIVATE KEY]
 
 # note - substitute *eth0* in the following lines to match the Internet-facing interface
-PostUp = iptables -A FORWARD -i %i -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
-PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
+PostUp = iptables -A FORWARD -i %i -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
 
 [Peer]
 # client foo
@@ -256,12 +264,7 @@ The interface can be managed manually or by systemctl.
 
 For example: bring the interface up by using `wg-quick up wg0` and bring it down by using `wg-quick down wg0`.
 
-Alternatively, systemctl can be used to manage the interface. [Start](/index.php/Start "Start") and optionally [enable](/index.php/Enable "Enable") it via `wg-quick@.service` where the server config name is inserted after the "@" symbol. For example:
-
-```
-# systemctl start wg-quick@wg0
-
-```
+Alternatively, systemctl can be used to manage the interface. [Start](/index.php/Start "Start") and optionally [enable](/index.php/Enable "Enable") it via `wg-quick@.service` where the server config name is inserted after the "@" symbol. For example, [start](/index.php/Start "Start") `wg-quick@wg0.service`.
 
 ### Client config
 
@@ -305,6 +308,112 @@ $ qrencode -t ansiutf8 < foo.conf
 
 **Note:** Users of [NetworkManager](/index.php/NetworkManager "NetworkManager"), may need to [enable](/index.php/Enable "Enable") the `NetworkManager-wait-online.service` and users of [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") may need to [enable](/index.php/Enable "Enable") the `systemd-networkd-wait-online.service` to wait until devices are network ready before attempting wireguard connection.
 
+### Using systemd-networkd
+
+Systemd-networkd has native support for WireGuard protocols and therefore does not require the [wireguard-tools](https://www.archlinux.org/packages/?name=wireguard-tools) package.
+
+#### Server
+
+ `/etc/systemd/network/99-server.netdev` 
+```
+[NetDev]
+Name = wg0
+Kind = wireguard
+Description = Wireguard
+
+[WireGuard]
+ListenPort = 51820
+PrivateKey = [SERVER PRIVATE KEY]
+
+[WireGuardPeer]
+PublicKey = [FOO's PUBLIC KEY]
+PresharedKey = [PRE-SHARED KEY]
+AllowedIPs = 10.200.200.2/32
+
+[WireGuardPeer]
+PublicKey = [BAR's PUBLIC KEY]
+PresharedKey = [PRE-SHARED KEY]
+AllowedIPs = 10.200.200.3/32
+```
+ `/etc/systemd/network/99-server.network` 
+```
+[Match]
+Name = wg0
+
+[Network]
+Address = 10.200.200.1/32
+
+[Route]
+Gateway = 10.200.200.1
+Destination = 10.200.200.0/24
+```
+
+#### Client foo
+
+ `/etc/systemd/network/99-client.netdev` 
+```
+[NetDev]
+Name = wg0
+Kind = wireguard
+Description = Wireguard
+
+[WireGuard]
+PrivateKey = [FOO's PRIVATE KEY]
+
+[WireGuardPeer]
+PublicKey = [SERVER PUBLICKEY]
+PresharedKey = [PRE-SHARED KEY]
+AllowedIPs = 10.200.0.0/24
+Endpoint = my.ddns.address.com:51820
+PersistentKeepalive = 25
+```
+ `/etc/systemd/network/99-client.network` 
+```
+[Match]
+Name = wg0
+
+[Network]
+Address = 10.200.200.2/32
+
+[Route]
+Gateway = 10.200.200.1
+Destination = 10.200.200.0/24
+GatewayOnlink=true
+```
+
+#### Client bar
+
+ `/etc/systemd/network/99-client.netdev` 
+```
+[NetDev]
+Name = wg0
+Kind = wireguard
+Description = Wireguard
+
+[WireGuard]
+PrivateKey = [BAR's PRIVATE KEY]
+
+[WireGuardPeer]
+PublicKey = [SERVER PUBLICKEY]
+PresharedKey = [PRE-SHARED KEY]
+AllowedIPs = 10.200.0.0/24
+Endpoint = my.ddns.address.com:51820
+PersistentKeepalive = 25
+```
+ `/etc/systemd/network/99-client.network` 
+```
+[Match]
+Name = wg0
+
+[Network]
+Address = 10.200.200.3/32
+
+[Route]
+Gateway = 10.200.200.1
+Destination = 10.200.200.0/24
+GatewayOnlink=true
+```
+
 ## Troubleshooting
 
 ### Routes are periodically reset
@@ -319,7 +428,7 @@ unmanaged-devices=interface-name:wg0
 
 ### Connection loss with NetworkManager
 
-On desktop, connection loss can be experienced when all the traffic is tunnelled through a Wireguard interface: typically, the connection is seemingly lost after a while or upon new connection to an access point.
+On desktop, connection loss can be experienced when all the traffic is tunneled through a Wireguard interface: typically, the connection is seemingly lost after a while or upon new connection to an access point.
 
 By default *wg-quick* uses a resolvconf provider such as [openresolv](/index.php/Openresolv "Openresolv") to register new [DNS](/index.php/DNS "DNS") entries (i.e. `DNS` keyword in the configuration file). However [NetworkManager](/index.php/NetworkManager "NetworkManager") does not use resolvconf by default: every time a new [DHCP](/index.php/DHCP "DHCP") lease is acquired, [NetworkManager](/index.php/NetworkManager "NetworkManager") overwrites the global DNS addresses with the DHCP-provided ones which might not be available through the tunnel.
 
@@ -340,7 +449,7 @@ At the time of writing (Sept. 2018), the resolvconf-compatible mode offered by [
 [Interface]
 Address = 10.0.0.2/24  # The client IP from wg0server.conf with the same subnet mask
 PrivateKey = [CLIENT PRIVATE KEY]
-PostUp = resolvectl domain %i "~."; resolvectl dns %i 10.0.0.1; resolvectl dnssec %i yes
+PostUp = resolvectl domain %i "~."; resolvectl dns %i 10.0.0.1; resolvectl dnssec %i yes
 
 [Peer]
 PublicKey = [SERVER PUBLICKEY]
@@ -360,7 +469,7 @@ No `PostDown` key is necessary as *systemd-resolved* automatically revert all pa
 It may be desirable to store private keys in encrypted form, such as through use of [pass](https://www.archlinux.org/packages/?name=pass). Just replace the PrivateKey line under [Interface] in the configuration file with:
 
 ```
- PostUp = wg set %i private-key <(su user -c "export PASSWORD_STORE_DIR=/path/to/your/store/; pass WireGuard/private-keys/%i")
+ PostUp = wg set %i private-key <(su user -c "export PASSWORD_STORE_DIR=/path/to/your/store/; pass WireGuard/private-keys/%i")
 
 ```
 

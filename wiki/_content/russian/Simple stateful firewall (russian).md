@@ -2,7 +2,11 @@
 
 **Важно:** Это руководство нужно применять только войдя в систему локально. Если же Вы войдете в систему удаленно (по SSH, например), то скорее всего потеряете соединение с удаленной системой. Вы были предупреждены!
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Требования](#Требования)
 *   [2 Настрока для одной системы](#Настрока_для_одной_системы)
@@ -519,9 +523,9 @@ knockd is a [port knocking](http://www.portknocking.org/) daemon that can provid
        sequence      = 2222:udp,3333:tcp,4444:udp
        seq_timeout   = 15
        tcpflags      = syn,ack
-       start_command = /usr/sbin/iptables -A open -s %IP% -p tcp --syn --dport 22 -j ACCEPT
+       start_command = /usr/sbin/iptables -A open -s %IP% -p tcp --syn --dport 22 -j ACCEPT
        cmd_timeout   = 10
-       stop_command  = /usr/sbin/iptables -D open -s %IP% -p tcp --syn --dport 22 -j ACCEPT 
+       stop_command  = /usr/sbin/iptables -D open -s %IP% -p tcp --syn --dport 22 -j ACCEPT 
 
 ```
 

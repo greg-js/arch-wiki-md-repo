@@ -9,7 +9,11 @@ This page expains how to write [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") for s
 *   [mingw-w64](https://mingw-w64.org): provides 32 and 64-bit toolchains with secure crt, Vista+ API, DDK (ReactOS), and DirectX (WINE) support. For a full list of supported features and differences with the old MinGW.org, see [here](https://sourceforge.net/p/mingw-w64/wiki2/Feature%20list/). Available from the AUR by installing [mingw-w64-gcc](https://aur.archlinux.org/packages/mingw-w64-gcc/).
 *   [MinGW](http://www.mingw.org/): provides 32-bit toolchains with limited DirectX support. It also suffers from long-standing breakage in the implementation of thread-local storage and the floating point library support. It has been removed from the official repositories and the AUR.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Package naming](#Package_naming)
 *   [2 Packaging](#Packaging)

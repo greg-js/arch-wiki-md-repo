@@ -6,7 +6,11 @@
 
 [显示管理器](https://en.wikipedia.org/wiki/X_display_manager_(program_type) "wikipedia:X display manager (program type)")或登录管理器是一个在启动最后显示的图形界面。和窗口管理器一样，显示管理器有很多种。通常每个显示管理器都能进行一些定制。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 显示管理器列表](#显示管理器列表)
     *   [1.1 控制台](#控制台)

@@ -8,7 +8,11 @@ In spite of their scope, man pages are designed to be self-contained documents, 
 
 [man-db](https://www.archlinux.org/packages/?name=man-db) implements *man* on Arch Linux, and [less](/index.php/Core_utilities#Essentials "Core utilities") is the default pager used with *man*.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Accessing man pages](#Accessing_man_pages)
 *   [2 Format](#Format)

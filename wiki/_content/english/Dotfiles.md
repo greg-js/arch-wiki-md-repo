@@ -5,7 +5,11 @@ Related articles
 
 User-specific application configuration is traditionally stored in so called [dotfiles](https://en.wikipedia.org/wiki/dotfile "wikipedia:dotfile") (files whose filename starts with a dot). It is common practice to track dotfiles with a [version control system](/index.php/Version_control_system "Version control system") such as [Git](/index.php/Git "Git") to keep track of changes and synchronize dotfiles across various hosts. There are various approaches to managing your dotfiles (e.g. directly tracking dotfiles in the home directory v.s. storing them in a subdirectory and symlinking/copying/generating files with a [shell](/index.php/Shell "Shell") script or [a dedicated tool](#Tools)). Apart from explaining how to manage your dotfiles this article also contains [a list of dotfile repositories](#User_repositories) from Arch Linux users.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Tracking dotfiles directly with Git](#Tracking_dotfiles_directly_with_Git)
 *   [2 Host-specific configuration](#Host-specific_configuration)
@@ -115,7 +119,7 @@ If you are uncomfortable with [Git](/index.php/Git "Git"), you may want to use o
 | [neersighted](https://github.com/neersighted/dotfiles) | zsh | i3 | vim | rxvt-unicode | tmux | ncmpcpp | htop | mutt | irssi |
 | [OK100](https://github.com/ok100/configs) | bash | dwm | vim | rxvt-unicode | cmus | conky, dzen | mutt | weechat |
 | [pablox-cl](https://github.com/pablox-cl/dotfiles) | zsh (zplug) | gnome3 | neovim | kitty |
-| [reisub0](https://github.com/reisub0/dot) | bash | awesome | neovim | termite | mpd | conky |
+| [reisub0](https://github.com/reisub0/dot) | fish | qtile | neovim | kitty | mpd | conky |
 | [sistematico](https://github.com/sistematico/majestic) | zsh/fish/bash | [i3-gaps](https://github.com/Airblader/i3) | vim/nano | termite | tmux | ncmpcpp | polybar | mutt | weechat |
 | [sitilge](https://git.sitilge.id.lv/sitilge/dotfiles) | zsh | awesome | neovim | termite | thunderbird |
 | [swalladge](https://github.com/swalladge/dotfiles) | zsh/bash | i3 | neovim/vim | termite | tmux | cmus | i3pystatus | mutt |

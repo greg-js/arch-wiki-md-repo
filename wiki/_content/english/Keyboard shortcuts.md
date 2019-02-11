@@ -1,6 +1,10 @@
 This article provides a list of (not commonly known) default keyboard shortcuts and provides information about user customization.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Standard shortcuts](#Standard_shortcuts)
     *   [1.1 Kernel](#Kernel)

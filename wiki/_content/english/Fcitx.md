@@ -1,6 +1,10 @@
 [Fcitx](https://en.wikipedia.org/wiki/Fcitx "wikipedia:Fcitx") is a lightweight [input method](/index.php/Input_method "Input method") framework aimed at providing environment independent language support for Linux. It supports a lot of different languages and also provides many useful non-CJK features.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Input method engines](#Input_method_engines)

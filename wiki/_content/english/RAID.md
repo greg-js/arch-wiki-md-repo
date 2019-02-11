@@ -15,7 +15,11 @@ This article explains how to create/manage a software RAID array using mdadm.
 
 **Warning:** Be sure [to back up](/index.php/Backup_programs "Backup programs") all data before proceeding.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 RAID levels](#RAID_levels)
     *   [1.1 Standard RAID levels](#Standard_RAID_levels)

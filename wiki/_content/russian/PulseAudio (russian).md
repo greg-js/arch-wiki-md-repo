@@ -7,7 +7,11 @@
 
 [PulseAudio](https://en.wikipedia.org/wiki/ru:PulseAudio "wikipedia:ru:PulseAudio") - это многофункциональный звуковой сервер, предназначенный для работы в качестве прослойки между вашими приложениями и аппаратными устройствами, либо [ALSA](/index.php/ALSA "ALSA") или [OSS](/index.php/OSS "OSS"). Он также с легкостью может передавать аудио по сети между локальными устройствами используя [Avahi](/index.php/Avahi "Avahi"), если тот доступен. Несмотря на то, что основная цель заключена в простоте настройки звука, его модульная архитектура позволяет более опытным пользователям конфигурировать демон в соответствии со своими нуждами.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
     *   [1.1 Интерфейсы](#Интерфейсы)

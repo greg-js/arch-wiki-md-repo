@@ -4,7 +4,11 @@ There are currently no official drivers for any Razer peripherals in Linux. Howe
 
 Another package, [openrazer-meta](https://aur.archlinux.org/packages/openrazer-meta/) can be used to enable Razer support along with [polychromatic](https://aur.archlinux.org/packages/polychromatic/) or [razergenie](https://aur.archlinux.org/packages/razergenie/) for GUI configuration. Supported devices are [listed here](https://openrazer.github.io/#devices)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 razercfg](#razercfg)
     *   [1.1 Compatibility](#Compatibility)

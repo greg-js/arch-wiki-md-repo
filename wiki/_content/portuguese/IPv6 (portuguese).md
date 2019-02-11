@@ -6,7 +6,11 @@ Artigos relacionados
 
 No Arch Linux, IPv6 está habilitado por padrão.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Descoberta de vizinhança](#Descoberta_de_vizinhança)
 *   [2 Autoconfiguração sem estado (SLAAC)](#Autoconfiguração_sem_estado_(SLAAC))

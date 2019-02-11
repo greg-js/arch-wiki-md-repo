@@ -9,7 +9,11 @@ LXDM 是轻量级的 [LXDE](/index.php/LXDE "LXDE") [桌面环境](/index.php/De
 
 LXDM 不支持 XDMCP 协议，要使用 XDMCP，请使用 [LightDM](/index.php/LightDM "LightDM").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 用法](#用法)

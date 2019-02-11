@@ -13,7 +13,11 @@
 
 作为虚拟机时，QEMU可以使用其他虚拟机管理程序（如 [Xen](/index.php/Xen_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xen (简体中文)") 或 [KVM](/index.php/KVM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KVM (简体中文)")）来使用CPU扩展（[HVM](https://en.wikipedia.org/wiki/Hardware-assisted_virtualization "wikipedia:Hardware-assisted virtualization")）进行虚拟化，通过在主机CPU上直接执行客户机代码来获得接近于宿主机的性能。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 QEMU 的图形前端](#QEMU_的图形前端)
@@ -1029,8 +1033,8 @@ This is like a PC that has no VGA card at all. You would not even be able to acc
 Given that you used the `-nographic` option, you can add the `-vnc display` option to have QEMU listen on `display` and redirect the VGA display to the VNC session. There is an example of this in the [#Starting QEMU virtual machines on boot](#Starting_QEMU_virtual_machines_on_boot) section's example configs.
 
 ```
-$ qemu-system-i386 -vga std -nographic -vnc :0
-$ gvncviewer :0
+$ qemu-system-i386 -vga std -nographic -vnc :0
+$ gvncviewer :0
 
 ```
 

@@ -10,7 +10,11 @@ From the [libinput](https://freedesktop.org/wiki/Software/libinput/) wiki page:
 
 The X.Org input driver supports most regular [Xorg#Input devices](/index.php/Xorg#Input_devices "Xorg"). Particularly notable is the project's goal to provide advanced support for touch (multitouch and gesture) features of touchpads and touchscreens. See the [libinput documentation](http://wayland.freedesktop.org/libinput/doc/latest/pages.html) for more information.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

@@ -25,7 +25,11 @@ The installation process for Arch on the XPS 13 does not differ from any other P
 
 ¹ The webcam works with kernel 4.17.4 or later. For earlier kernels this applies: Some users have experienced webcam firmware issues with recent models and there are [many reports of non-functional webcams on new laptops](https://www.dell.com/community/Linux-General/Dell-xps-13-9370-Webcam-support/td-p/6032049). User reports indicate Dell support is responsive to replacing screens to install a webcam that uses linux-compatible UVC 1.0 rather than 1.5 firmware drivers.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 UEFI](#UEFI)
 *   [2 Content Adaptive Brightness Control](#Content_Adaptive_Brightness_Control)

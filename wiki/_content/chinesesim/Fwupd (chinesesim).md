@@ -9,7 +9,11 @@ Related articles
 
 支持的设备列表请查看 [这里](https://fwupd.org/lvfs/devicelist) 更多厂商支持计划请查看 [链接](https://fwupd.org/vendorlist)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 使用](#使用)

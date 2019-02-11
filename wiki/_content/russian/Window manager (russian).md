@@ -8,7 +8,11 @@
 
 [Оконный менеджер](https://en.wikipedia.org/wiki/Window_manager или работать отдельно.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Обзор](#Обзор)
     *   [1.1 Типы](#Типы)

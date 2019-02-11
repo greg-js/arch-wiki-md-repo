@@ -6,7 +6,11 @@
 
 **Samba** 是 [SMB/CIFS](https://en.wikipedia.org/wiki/Server_Message_Block 的补充使得在 Linux 和 Windows 系统中进行文件共享、打印机共享更容易实现。一些用户说Samba配置简单，操作直观。然而，许多新用户会因为它的复杂性和非直观的机制而遇到问题。强烈建议新用户仔细按照下面的指导。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 服务器配置](#服务器配置)
     *   [1.1 建立共享](#建立共享)
@@ -85,7 +89,7 @@ Samba 服务的配置文件是 `/etc/samba/smb.conf`，如果没有则 smbd 无�
    comment = Home Directories
    browseable = no
    writable = yes
-   valid users = %S
+   valid users = %S
 ```
 
 同时，默认配置文件也共享打印机，包含一些不错的示例配置。更多的可用选项可以通过 [smb.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5) 查询，在此处 [Here](http://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html) 是在线版本。

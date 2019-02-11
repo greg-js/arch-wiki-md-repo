@@ -10,7 +10,11 @@ OpenVPN is tightly bound to the [OpenSSL](http://www.openssl.org) library, and d
 
 OpenVPN is designed to work with the [TUN/TAP](https://en.wikipedia.org/wiki/TUN/TAP "wikipedia:TUN/TAP") virtual networking interface that exists on most platforms. Overall, it aims to offer many of the key features of [IPSec](https://en.wikipedia.org/wiki/Ipsec "wikipedia:Ipsec") but with a relatively lightweight footprint. OpenVPN was written by James Yonan and is published under the [GNU General Public License (GPL)](https://en.wikipedia.org/wiki/GNU_General_Public_License "wikipedia:GNU General Public License").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Kernel configuration](#Kernel_configuration)
@@ -413,10 +417,10 @@ case "$2" in
     if [ "$CONNECTION_ID" == "Provider" ]; then
       systemctl start openvpn-client@*<configuration>*
     fi
-  ;;
+  ;;
   down)
     systemctl stop openvpn-client@*<configuration>*
-  ;;
+  ;;
 esac
 ```
 
@@ -835,7 +839,7 @@ The default systemd service file for openvpn-client does not have the --writepid
 ```
 [Service]
 ExecStart=
-ExecStart=/usr/sbin/openvpn --suppress-timestamps --nobind --config %i.conf --writepid /var/run/openvpn-client/%i.pid
+ExecStart=/usr/sbin/openvpn --suppress-timestamps --nobind --config %i.conf --writepid /var/run/openvpn-client/%i.pid
 
 ```
 

@@ -4,7 +4,11 @@ From the [Redshift project web page](http://jonls.dk/redshift/):
 
 **Note:** Redshift does not support [Wayland](/index.php/Wayland "Wayland") since it offers no way to adjust the color temperature [[1]](https://github.com/jonls/redshift/issues/55). See [Wayland#Gamma](/index.php/Wayland#Gamma "Wayland") for more.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Front ends](#Front_ends)

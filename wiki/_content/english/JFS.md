@@ -6,7 +6,11 @@ The [w:Journaled File System](https://en.wikipedia.org/wiki/Journaled_File_Syste
 
 This article introduces the reader to the JFS file system. In particular, procedures for implementation, maintenance and optimization will be presented along with background information on the file system itself and some cautionary notes on precarious implementations.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Background](#Background)
     *   [1.1 GNU/Linux development team](#GNU/Linux_development_team)

@@ -3,7 +3,11 @@ Este artículo es una traducción de [Pacman/Pacnew and Pacsave](/index.php/Pacm
 
 Cuando *pacman* elimina un paquete que tiene un archivo de configuración, normalmente crea una copia de respaldo de ese archivo de configuración y agrega *.pacsave* al nombre del archivo. Del mismo modo, cuando *pacman* actualiza un paquete que incluye un nuevo archivo de configuración creado por el mantenedor que difiere del archivo que se instala, guarda un archivo *.pacnew* con la nueva configuración. *pacman* avisa de estas operacoines cuando se escriben dichos archivos.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Por qué se crean estos archivos](#Por_qué_se_crean_estos_archivos)
 *   [2 Copias de seguridad de archivos de paquetes](#Copias_de_seguridad_de_archivos_de_paquetes)

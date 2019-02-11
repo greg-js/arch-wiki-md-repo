@@ -10,7 +10,11 @@ Related articles
 
 	GnuPG 是 RFC4880 OpenPGP 标准 PGP 的完整实现，自由软件。GnuPG 可以加密和签名数据和信息传递，包含一个通用的密钥管理系统，包含的访问模块可以访问各种公钥目录。 GnuPG, 简称 GPG, 是命令行工具，很方便和其它程序进行整合，具有很多前端程序和函数库。 GnuPG V2 还支持 S/MIME 和 Secure Shell (ssh).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 配置](#配置)

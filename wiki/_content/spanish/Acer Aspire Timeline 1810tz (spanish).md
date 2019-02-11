@@ -3,7 +3,11 @@ Este artículo es una traducción de [Acer Aspire Timeline 1810tz](/index.php/Ac
 
 **Acer Aspire Timeline 1810tz**
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 lspci](#lspci)
 *   [2 Control del ventilador](#Control_del_ventilador)

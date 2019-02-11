@@ -1,6 +1,10 @@
 [WebGrab+Plus](http://www.webgrabplus.com/) is a multi-site incremental [XMLTV](https://en.wikipedia.org/wiki/XMLTV "wikipedia:XMLTV") [EPG](https://en.wikipedia.org/wiki/EPG "wikipedia:EPG") grabber. It collects TV program guide data from selected TV guide sites for your favorite channels. It can later be used by [Kodi](/index.php/Kodi "Kodi") and other popular players.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)

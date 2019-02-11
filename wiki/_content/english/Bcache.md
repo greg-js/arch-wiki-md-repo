@@ -10,7 +10,11 @@ Bcache needs the backing device to be formatted as a bcache block device. In mos
 *   The bcache-dev branch is under heavy development. The on-disk format has undergone changes in 3.18 which are not backwards compatible with previous formats[[1]](http://www.spinics.net/lists/linux-bcache/msg02721.html). Note: This only applies to users who compile-in bcache-dev. The version built-in to the upstream Linux kernel is unaffected[[2]](http://www.spinics.net/lists/linux-bcache/msg02724.html).
 *   Bcache and [btrfs](/index.php/Btrfs "Btrfs") could leave you with a corrupted filesystem. Please visit [this post](https://www.hdevalence.ca/blog/2013-09-21-notes-on-my-archlinux-install) for more information. Btrfs wiki reports that it was fixed in kernels 3.19+ [[3]](https://btrfs.wiki.kernel.org/index.php/Gotchas#Historical_references).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Setting up a bcache device on an existing system](#Setting_up_a_bcache_device_on_an_existing_system)
     *   [1.1 Bcache management](#Bcache_management)

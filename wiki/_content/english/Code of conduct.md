@@ -4,7 +4,11 @@ Arch Linux is a community-driven distribution; the developers, support staff and
 
 Familiarising yourself with the principles and guidelines here is both a courtesy to the community and an effective way of making your initial interactions with other Arch Linux users mutually beneficial.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Common sense introduction](#Common_sense_introduction)
 *   [2 Code of conduct](#Code_of_conduct)

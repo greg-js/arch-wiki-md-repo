@@ -9,7 +9,11 @@ Related articles
 
 **Note:** As at November 2018, [pam_mount](https://www.archlinux.org/packages/?name=pam_mount) does not yet support luks2 encrypted partitions. A workaround could be to use [pam_mount-git](https://aur.archlinux.org/packages/pam_mount-git/), see [[1]](https://bbs.archlinux.org/viewtopic.php?id=242131).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 General setup](#General_setup)
     *   [1.1 Veracrypt volumes](#Veracrypt_volumes)

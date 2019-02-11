@@ -12,7 +12,11 @@ One can think of the key-based authentication in terms similar to that of how [S
 *   Avoid generating keys on devices without a good entropy source. See [[1]](https://community.openvpn.net/openvpn/wiki/GettingStartedwithOVPN#Configuringencryption).
 *   Due to a [bug](https://github.com/OpenVPN/easy-rsa/issues/119), the `vars` file is not sourced if it is not specified explicitly.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Certificate Authority (CA)](#Certificate_Authority_(CA))
 *   [2 OpenVPN server files](#OpenVPN_server_files)

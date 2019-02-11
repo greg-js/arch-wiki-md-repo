@@ -8,7 +8,11 @@ O *dhcpd* é o servidor DHCP da [Internet Systems Consortium](http://www.isc.org
 
 **Nota:** *dhcpd* (DHCP **(server)** daemon) não é o mesmo que [dhcpcd](/index.php/Dhcpcd "Dhcpcd") (DHCP **cliente** daemon).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalação](#Instalação)
 *   [2 Uso](#Uso)

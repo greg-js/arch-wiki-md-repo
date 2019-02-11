@@ -1,6 +1,10 @@
 This document describes how to install the [Network UPS Tools (NUT)](http://networkupstools.org/). Network UPS Tools is compatible with thousands models of UPS. You can check the [Hardware Compatibility List](http://networkupstools.org/stable-hcl.html) to see if your UPS is supported.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation of Network UPS Tools](#Installation_of_Network_UPS_Tools)
 *   [2 Configuration](#Configuration)

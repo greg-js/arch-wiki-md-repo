@@ -11,7 +11,11 @@ Related articles
 
 **Note:** *xmodmap* settings are reset by *setxkbmap*, which not only alters the alphanumeric keys to the values given in the map, but also resets all other keys to the startup default. [[1]](http://wiki.linuxquestions.org/wiki/Configuring_keyboards)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Introduction](#Introduction)
 *   [2 Installation](#Installation)

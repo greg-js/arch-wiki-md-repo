@@ -5,7 +5,11 @@ Related articles
 
 [makepkg-optimize](https://aur.archlinux.org/packages/makepkg-optimize/) is a collection of supplemental [buildenv](https://git.archlinux.org/pacman.git/commit/?id=508b4e3ec0cb3e365942f4dc0626edda4789932b) and [tidy](https://git.archlinux.org/pacman.git/commit/?id=295a3491adc4af5c8634ac82777212ed9c664457) scripts for [pacman-git](https://aur.archlinux.org/packages/pacman-git/) which provide macros for several kinds of optimization in the `build()` and `package()` stages.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Configuration](#Configuration)

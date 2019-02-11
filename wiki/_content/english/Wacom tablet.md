@@ -1,6 +1,10 @@
 [Wacom](https://en.wikipedia.org/wiki/Wacom_(company) does not officially support Linux. Linux support is provided by the [Linux Wacom Project](https://linuxwacom.github.io/). Supported devices are listed on the [Device IDs](https://github.com/linuxwacom/input-wacom/wiki/Device-IDs) page with a version number in the *input-wacom* column.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

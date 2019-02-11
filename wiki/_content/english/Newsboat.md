@@ -6,7 +6,11 @@ From the [documentation](https://newsboat.org/releases/2.12/docs/newsboat.html#_
 
 Newsboat is a [fork](https://groups.google.com/forum/#!topic/newsbeuter/RPtlWX8CPGU) of Newsbeuter. The only difference is that Newsboat is actively maintained while Newsbeuter isn't.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
@@ -64,7 +68,7 @@ http://username:password@hostname.domain.tld/feed.rss
 
 In order to protect username and password, make sure that `~/.config/newsboat/urls` has the appropriate permissions.
 
-Newsboat also makes sure that usernames and passwords within URLs aren’t displayed in its user interface. In case there is a @ in the username, you need to write it as %40 instead so that it can be distinguished from the @ that separates the username/password part from the hostname part.
+Newsboat also makes sure that usernames and passwords within URLs aren’t displayed in its user interface. In case there is a @ in the username, you need to write it as %40 instead so that it can be distinguished from the @ that separates the username/password part from the hostname part.
 
 You can also configure local files as feeds, by prefixing the local path with `file://` and adding it to the `~/.config/newsboat/urls` file:
 
@@ -167,7 +171,7 @@ A clever little hack allows you to pass the url of an article to an external com
 For example, if you subscribe to a youtube channel and you would like to open the video with [mpv](/index.php/Mpv "Mpv"), do the following:
 
 ```
-macro y set browser "mpv %u"; open-in-browser ; set browser "elinks %u"
+macro y set browser "mpv %u"; open-in-browser ; set browser "elinks %u"
 
 ```
 

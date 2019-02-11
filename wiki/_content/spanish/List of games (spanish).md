@@ -4,7 +4,11 @@ Artículos relacionados
 
 **Nota:** Esta página se esfuerza para listar todos los juegos conocidos que funcionan bajo GNU/Linux. Algunos de ellos están accesibles líbremente a través de los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") y [AUR](/index.php/AUR_(Espa%C3%B1ol) "AUR (Español)"). Para más información sobre cómo ejecutar juegos, consejos relacionados con la configuración del sistema, etc. véase [Gaming](/index.php/Gaming "Gaming"). Para una selección de juegos disponibles en AUR, posiblemente más actualizada, pruebe sondeando la [categoría «games» de AUR](https://aur.archlinux.org/packages.php?O=0&K=&do_Search=Go&detail=1&C=6&SeB=nd&SB=n&SO=a&PP=25).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Aventura y acción](#Aventura_y_acción)
 *   [2 Arcade](#Arcade)

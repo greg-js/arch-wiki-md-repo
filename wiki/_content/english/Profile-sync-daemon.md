@@ -13,7 +13,11 @@ Related articles
 
 **Note:** psd can slow down [login](https://www.reddit.com/r/archlinux/comments/4l7gvm/very_slow_when_login/d3lrx9y/), as that is when it copies your browser cache to RAM.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Design goals and benefits of psd](#Design_goals_and_benefits_of_psd)
 *   [2 Setup and installation](#Setup_and_installation)

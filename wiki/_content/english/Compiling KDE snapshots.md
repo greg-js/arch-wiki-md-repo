@@ -1,6 +1,10 @@
 This article provides step-by-step guide how to compile your own KDE git/svn snapshot from sources using [kde-snapshots](https://gitorious.org/kde-snapshots-repo) scripts. These scripts are used for [[kde-snapshots] repo](https://bbs.archlinux.org/viewtopic.php?pid=994402).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Introduction](#Introduction)
 *   [2 Why?](#Why?)

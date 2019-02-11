@@ -1,6 +1,10 @@
 Tämä sivu kiteyttää joitakin yhtäläisyyksiä ja eroja Arch Linuksin ja muiden GNU/Linux jakeluiden tai `UNIX`in kaltaistaisten käyttöjärjestelmien välillä. Huomioi että paras tapa verrata Archia muihin jakeluihin on asentaa ja kokeilla muita jakeluita itse. Archilla on mahtava käyttäjäyhteisö joka on aina valmis auttamaan uutta käyttäjää. Alla oleva yhteenveto on tarkoitettu antamaan sinulle tarpeeksi tietoa päättääksesi onko Arch Linux sinulle sopiva.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Lähdekoodipohjainen](#Lähdekoodipohjainen)
     *   [1.1 Arch vs Gentoo](#Arch_vs_Gentoo)

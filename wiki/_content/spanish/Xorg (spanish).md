@@ -15,7 +15,11 @@ De [http://www.x.org/wiki/](http://www.x.org/wiki/):
 
 **Xorg** es una aplicación pública, una implementación en código abierto del sistema X window versión 11\. Desde el momento que Xorg se convierte en la opción más popular entre los usuarios de Linux, su omnipresencia ha dado lugar a que sea un requisito cada vez más utilizado por las aplicaciones GUI (**G**raphical **U**ser **I**nterface), con la consiguiente adopción masiva por la mayoría de las distribuciones. Consulte el artículo de Wikipedia sobre [Xorg](https://en.wikipedia.org/wiki/X.Org_ServerX.Org "wikipedia:X.Org ServerX.Org") o visite el [sitio web de Xorg](http://www.x.org/wiki/) para más detalles.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
     *   [1.1 Instalación del controlador](#Instalación_del_controlador)
@@ -131,7 +135,7 @@ La carpeta `/etc/X11/xorg.conf.d/` guarda la configuración específica del usua
 Xorg también se puede configurar mediante los archivo `/etc/X11/xorg.conf` o `/etc/xorg.conf`. También puede generar la estructura de `xorg.conf` con:
 
 ```
- # Xorg :0 -configure
+ # Xorg :0 -configure
 
 ```
 
@@ -379,7 +383,7 @@ Las siguientes opciones tienen que ser añadidos a la variable `"defaultserverar
 Para ejecutar una sesión anidada de X en otro entorno de escritorio:
 
 ```
-$ /usr/bin/Xnest :1 -geometry 1024x768+0+0 -ac -name Windowmaker & wmaker -display :1
+$ /usr/bin/Xnest :1 -geometry 1024x768+0+0 -ac -name Windowmaker & wmaker -display :1
 
 ```
 

@@ -4,7 +4,11 @@ Artículos relacionados
 
 Este documento describe cómo usar las populares memorias USB con Linux. No obstante, también es válido para otros dispositivos, como las cámaras digitales que actúan como si fueran meros dispositivos USB de almacenamiento.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Cargar el módulo "usb_storage" en el kernel](#Cargar_el_módulo_"usb_storage"_en_el_kernel)
 *   [2 Montar la memoria USB](#Montar_la_memoria_USB)

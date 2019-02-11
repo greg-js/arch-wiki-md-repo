@@ -4,7 +4,11 @@
 
 	*aria2 - это легкая мультипротокольная и многопоточная консольная утилита загрузки. Она поддерживает [HTTP](https://en.wikipedia.org/wiki/ru:HTTP и [Metalink](https://en.wikipedia.org/wiki/ru:Metalink "wikipedia:ru:Metalink"). aria2 можно управлять с помощью встроенных интерфейсов [JSON-RPC](https://en.wikipedia.org/wiki/ru:JSON-RPC "wikipedia:ru:JSON-RPC") и [XML-RPC](https://en.wikipedia.org/wiki/ru:XML-RPC "wikipedia:ru:XML-RPC").*
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Настройка](#Настройка)
@@ -379,11 +383,11 @@ $ aria2c -UWget http://some-url-to-download/file.xyz
  `/etc/makepkg.conf` 
 ```
 [...]
-DLAGENTS=('ftp::/usr/bin/aria2c -UWget -s4 %u -o %o'
-          'http::/usr/bin/aria2c -UWget -s4 %u -o %o'
-          'https::/usr/bin/aria2c -UWget -s4 %u -o %o'
-          'rsync::/usr/bin/rsync --no-motd -z %u %o'
-          'scp::/usr/bin/scp -C %u %o')
+DLAGENTS=('ftp::/usr/bin/aria2c -UWget -s4 %u -o %o'
+          'http::/usr/bin/aria2c -UWget -s4 %u -o %o'
+          'https::/usr/bin/aria2c -UWget -s4 %u -o %o'
+          'rsync::/usr/bin/rsync --no-motd -z %u %o'
+          'scp::/usr/bin/scp -C %u %o')
 [...]
 ```
 

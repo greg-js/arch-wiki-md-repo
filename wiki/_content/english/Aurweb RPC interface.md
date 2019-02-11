@@ -6,7 +6,11 @@ The [Aurweb RPC interface](https://aur.archlinux.org/rpc.php) is a lightweight [
 
 **Note:** This article describes v5 of the RPC Interface API, as updated with AUR v4.7.0 on July 7, 2018.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 API usage](#API_usage)
     *   [1.1 Query types](#Query_types)

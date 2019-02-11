@@ -14,7 +14,11 @@ Linux PAM( Pluggable Authentication Modules ) 提供了一个框架，用于进�
 
 本文描述在 Arch Linux 下为本地和远端用户配置 PAM 权限的方式方法。具体的细节配置方法将在专门的文章内展开。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 配置](#配置)

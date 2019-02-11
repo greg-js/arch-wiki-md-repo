@@ -10,7 +10,11 @@ Related articles
 
 This article covers the proprietary [NVIDIA](http://www.nvidia.com) graphics card driver. For the open-source driver, see [Nouveau](/index.php/Nouveau "Nouveau"). If you have a laptop with hybrid Intel/NVIDIA graphics, see [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus") instead.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Unsupported drivers](#Unsupported_drivers)

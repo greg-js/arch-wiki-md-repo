@@ -14,7 +14,11 @@ Related articles
 
 Installing Arch Linux on a MacBook (12"/Air/Pro) or an iMac is quite similar to installing it on any other computer. However, due to the specific hardware configuration of a Mac, there are a few deviations and special considerations which warrant a separate guide. For more background information, please see the [Installation guide](/index.php/Installation_guide "Installation guide") and [UEFI](/index.php/UEFI "UEFI"). This guide contains installation-instructions that can be used on any Apple computer whose hardware is supported by the Linux kernel. Please see 'related' pages (on the top right of this page) for model-specific tips and troubleshooting.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Overview](#Overview)
 *   [2 Firmware updates](#Firmware_updates)
@@ -194,11 +198,11 @@ It is possible to resize the newly created partition from within the Arch instal
 ```
 partition  mountpoint  size          type  label
 /dev/sda1  /boot/efi   200MiB        vfat  EFI
-/dev/sda2  -           ?             hfs+  OS X
-/dev/sda3  -           ?             hfs+  Recovery
+/dev/sda2  -           ?             hfs+  OS X
+/dev/sda3  -           ?             hfs+  Recovery
 /dev/sda4  -           100MiB        hfs+  Boot Arch Linux from the Apple boot loader (optional)
 /dev/sda5  /boot       100MiB        boot  boot
-/dev/sda6  -           ?             swap  swap (optional)
+/dev/sda6  -           ?             swap  swap (optional)
 /dev/sda7  /           15-20GiB      ext4  root
 /dev/sda8  /home       remaining     ext4  home
 

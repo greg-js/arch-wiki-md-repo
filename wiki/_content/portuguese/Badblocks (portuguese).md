@@ -8,7 +8,11 @@ No caso de um HDD, todo o setor deve ser aposentado. Um setor é uma subdivisão
 
 Isso pode ser feito em um modo de gravação *(write-mode)* destrutivo que efetivamente [apaga](/index.php/Securely_wipe_disk "Securely wipe disk") o dispositivo (faça backup!) ou em modos não-destrutivos de leitura-gravação (backup aconselhável também!) e somente leitura.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalação](#Instalação)
 *   [2 Fidelidade do dispositivo de armazenamento](#Fidelidade_do_dispositivo_de_armazenamento)

@@ -4,7 +4,11 @@ Like the Archiso image, this image is compatible with the x86_64 architecture. A
 
 A detached GPG signature is provided on the download page.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Credits](#Credits)
 *   [2 Installing from the CD](#Installing_from_the_CD)

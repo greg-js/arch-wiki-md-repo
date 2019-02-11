@@ -4,7 +4,11 @@ Related articles
 
 [TigerVNC](http://tigervnc.org/) is an implementation of the [Virtual Network Computing](https://en.wikipedia.org/wiki/Virtual_Network_Computing "wikipedia:Virtual Network Computing") (VNC) protocol. This article focuses on the server functionality.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Running vncserver for virtual (headless) sessions](#Running_vncserver_for_virtual_(headless)_sessions)
@@ -74,7 +78,7 @@ Note the `:1` trailing the hostname. This indicates the TCP port number on which
 To shutdown the just created VNC server, use the `-kill` switch:
 
 ```
-$ vncserver -kill :1
+$ vncserver -kill :1
 
 ```
 
@@ -137,9 +141,9 @@ Type=simple
 User=foo
 PAMName=login
 PIDFile=/home/%u/.vnc/%H%i.pid
-ExecStartPre=/bin/sh -c '/usr/bin/vncserver -kill %i > /dev/null 2>&1 || :'
-ExecStart=/usr/bin/vncserver %i -geometry 1440x900 -alwaysshared -fg
-ExecStop=/usr/bin/vncserver -kill %i
+ExecStartPre=/bin/sh -c '/usr/bin/vncserver -kill %i > /dev/null 2>&1 || :'
+ExecStart=/usr/bin/vncserver %i -geometry 1440x900 -alwaysshared -fg
+ExecStop=/usr/bin/vncserver -kill %i
 
 [Install]
 WantedBy=multi-user.target
@@ -238,7 +242,7 @@ WantedBy=default.target
 
 **Warning:** It is ill-advised to connect insecurely to a vncserver outside of a trusted LAN. Note that TigerVNC is encrypted by default unless it is specifically instructed otherwise by setting `SecurityTypes` to a non-secure option, although this lacks identity verification and will not prevent man-in-the-middle attack during the connection setup. *X509Vnc* is the recommended option for a secure connection.
 
-Any number of clients can connect to a vncserver. A simple example is given below where vncserver is running on 10.1.10.2 port 5901, or :1 in shorthand notation:
+Any number of clients can connect to a vncserver. A simple example is given below where vncserver is running on 10.1.10.2 port 5901, or :1 in shorthand notation:
 
 ```
 $ vncviewer 10.1.10.2:1
@@ -282,7 +286,7 @@ For servers offering SSH connection, an advantage of this method is that it is n
 On the server side, *vncserver* must be run. It is recommended to use the `-localhost` switch when running *vncserver* this way since it allows connections from the localhost only and by analogy, only from users ssh'ed and authenticated on the box. For example run a command such as:
 
 ```
-$ vncserver -geometry 1440x900 -alwaysshared -dpi 96 **-localhost** :1
+$ vncserver -geometry 1440x900 -alwaysshared -dpi 96 **-localhost** :1
 
 ```
 
@@ -362,7 +366,7 @@ Install [dispmanx_vnc](https://aur.archlinux.org/packages/dispmanx_vnc/) on the 
 If not [#Accessing vncserver via SSH tunnels](#Accessing_vncserver_via_SSH_tunnels) where the identification and the encryption are handled via SSH, it is recommended to use *X509Vnc*, as *TLSVnc* lacks identity verification.
 
 ```
-$ vncserver -x509key */path/to/key.pem* -x509cert */path/to/cert.pem* -SecurityTypes X509Vnc :1
+$ vncserver -x509key */path/to/key.pem* -x509cert */path/to/cert.pem* -SecurityTypes X509Vnc :1
 
 ```
 
@@ -395,7 +399,7 @@ Most probably it means that you use application that strictly requires Composite
 You should restart vncserver in this case using something like following:
 
 ```
- vncserver -geometry ... -depth 24 :1 +extension Composite
+ vncserver -geometry ... -depth 24 :1 +extension Composite
 
 ```
 

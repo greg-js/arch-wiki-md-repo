@@ -7,7 +7,11 @@ Related articles
 
 Users and groups are used on GNU/Linux for [access control](https://en.wikipedia.org/wiki/access_control#Computer_security "wikipedia:access control")—that is, to control access to the system's files, directories, and peripherals. Linux offers relatively simple/coarse access control mechanisms by default. For more advanced options, see [ACL](/index.php/ACL "ACL") and [PAM#Configuration How-Tos](/index.php/PAM#Configuration_How-Tos "PAM").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Overview](#Overview)
 *   [2 Permissions and ownership](#Permissions_and_ownership)
@@ -77,7 +81,7 @@ In this example, the `sf_Shared` directory is owned by the *root* user and the *
 
 Owning user:
 
- `$ stat -c %U /media/sf_Shared/` 
+ `$ stat -c %U /media/sf_Shared/` 
 ```
 root
 
@@ -85,7 +89,7 @@ root
 
 Owning group:
 
- `$ stat -c %G /media/sf_Shared/` 
+ `$ stat -c %G /media/sf_Shared/` 
 ```
 vboxsf
 
@@ -93,7 +97,7 @@ vboxsf
 
 Access rights:
 
- `$ stat -c %A /media/sf_Shared/` 
+ `$ stat -c %A /media/sf_Shared/` 
 ```
 drwxrwx---
 

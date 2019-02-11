@@ -4,7 +4,11 @@
 
 Репозиторий *multilib* позволяет запускать и собирать 32-битные приложения в 64-битной версии Arch Linux. Он содержит пакеты с 32-битными версиями библиотек, которые используются для запуска 32-битных программ. Эти библиотеки располагаются в каталоге `/usr/lib32`.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Структура каталогов](#Структура_каталогов)
 *   [2 Включение](#Включение)

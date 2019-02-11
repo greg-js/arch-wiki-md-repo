@@ -11,7 +11,11 @@ Artículos relacionados
 
 Es importante hacer regularmente una copia de seguridad de los datos del sistema y del usuario, almacenados, por ejemplo, en `/etc`, `/home`, `/var` y, para las instalaciones del servidor, también en `/srv`.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Utilizar instantáneas de Btrfs](#Utilizar_instantáneas_de_Btrfs)
 *   [2 Utilizar instantáneas de LVM](#Utilizar_instantáneas_de_LVM)

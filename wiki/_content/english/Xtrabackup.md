@@ -6,7 +6,11 @@ It can back up data from InnoDB, XtraDB, and MyISAM tables on MySQL 5.0 and 5.1 
 
 **Note:** MyISAM tables are read-only while they are being backed up.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage Examples](#Usage_Examples)

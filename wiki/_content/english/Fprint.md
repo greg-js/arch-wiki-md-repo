@@ -9,7 +9,11 @@ From [the fprint homepage](http://www.freedesktop.org/wiki/Software/fprint/):
 
 The idea is to use the built-in fingerprint reader in some notebooks for login using [PAM](/index.php/PAM "PAM"). This article will also explain how to use regular password for backup login method (solely fingerprint scanner is not recommended due to numerous reasons).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Prerequisites](#Prerequisites)
 *   [2 Installation](#Installation)

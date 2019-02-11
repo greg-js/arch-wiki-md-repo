@@ -17,7 +17,11 @@ Este artículo trata sobre el software de [cifrado de discos](https://en.wikiped
 
 El cifrado de disco solo debe ser visto como un complemento a los mecanismos de seguridad existentes en el sistema operativo —se enfoca a asegurar el acceso físico fuera de línea—, al tiempo que se delega en *otras* partes del sistema que proporcinan elementos confiables como la seguridad de la red y la seguridad del usuario basada en el control de acceso.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 ¿Por qué utilizar la criptografía?](#¿Por_qué_utilizar_la_criptografía?)
 *   [2 Cifrar datos del sistema](#Cifrar_datos_del_sistema)

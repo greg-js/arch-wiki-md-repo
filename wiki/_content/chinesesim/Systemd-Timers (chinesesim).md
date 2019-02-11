@@ -9,7 +9,11 @@ Related articles
 
 Timers 是以 `.timer` 为后缀名的 [systemd](/index.php/Systemd "Systemd") 单元文件，用于控制 `.service` 文件或事件。Timers 可用来替换 [cron](/index.php/Cron "Cron")（阅读 [#替代 cron](#替代_cron)）。Timers 内置了日历定时事件和单调定时事件的支持，并可以异步执行这些事件。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 定时器单元](#定时器单元)
 *   [2 服务单元](#服务单元)

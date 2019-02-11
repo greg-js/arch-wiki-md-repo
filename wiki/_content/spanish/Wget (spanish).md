@@ -3,7 +3,11 @@ Este artículo es una traducción de [Wget](/index.php/Wget "Wget"), revisada po
 
 [GNU Wget](http://www.gnu.org/software/wget/) es un paquete de software libre para recuperar archivos utilizando [HTTP](/index.php/HTTP_(Espa%C3%B1ol) "HTTP (Español)"), HTTPS, [FTP](/index.php/FTP_(Espa%C3%B1ol) "FTP (Español)") y FTPS *(FTPS desde la versión 1.18)*. Es una herramienta de línea de órdenes no interactiva, por lo que puede ser llamada fácilmente desde scripts.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Configuración](#Configuración)
@@ -60,7 +64,7 @@ Los proxies que utilizan formularios de autenticación HTML no están cubiertos.
 Para que [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") utilice automáticamente Wget y un proxy con autenticación, coloque la orden Wget en `/etc/pacman.conf`, en la sección `[options]`:
 
 ```
-XferCommand = /usr/bin/wget --proxy-user "dominio\usuario" --proxy-password="contraseña" --passive-ftp -q --show-progress -c -O %o %u
+XferCommand = /usr/bin/wget --proxy-user "dominio\usuario" --proxy-password="contraseña" --passive-ftp -q --show-progress -c -O %o %u
 
 ```
 

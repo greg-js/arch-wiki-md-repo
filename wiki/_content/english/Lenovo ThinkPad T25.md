@@ -15,7 +15,11 @@ This article covers the installation and configuration of Arch Linux on a Lenovo
 
 For a general overview of laptop-related articles and recommendations, see [Laptop](/index.php/Laptop "Laptop").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Firmware (e.g. bios and peripherals)](#Firmware_(e.g._bios_and_peripherals))
 *   [2 Kernel and hardware support](#Kernel_and_hardware_support)

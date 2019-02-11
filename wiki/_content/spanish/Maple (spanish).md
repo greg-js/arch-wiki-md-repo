@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Maple](/index.php/Maple "Maple"), revisada por última vez el **2018-11-04**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Maple&diff=0&oldid=553066) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Maple](/index.php/Maple "Maple"), revisada por última vez el **2019-02-09**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Maple&diff=0&oldid=554103) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -14,7 +14,11 @@ De su [página web oficial](http://www.maplesoft.com/products/maple/):
 
 Maple es un software propietario producido por Maplesoft y requiere una licencia para obtener, instalar y activar. Arch no tiene soporte oficial, pero el instalador provisto por Maplesoft puede funcionar en algunos casos.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Solución de problemas](#Solución_de_problemas)

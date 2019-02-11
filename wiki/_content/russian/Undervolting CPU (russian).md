@@ -12,7 +12,11 @@ Related articles
 
 **Важно:** Неправильная настройка напряжения и/или температуры процессора могут вызвать полный отказ оборудования. Вас предупредили!
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Описание](#Описание)
 *   [2 Утилиты](#Утилиты)

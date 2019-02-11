@@ -8,7 +8,11 @@
 
 [Samba](https://www.samba.org/) — это реализация сетевого протокола [SMB](https://en.wikipedia.org/wiki/ru:Server_Message_Block "wikipedia:ru:Server Message Block"). Она облегчает организацию общего доступа к файлам и принтерам между системами Linux и Windows и является альтернативой [NFS (Русский)](/index.php/NFS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NFS (Русский)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Настройка сервера](#Настройка_сервера)
     *   [1.1 Установка](#Установка)

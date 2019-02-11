@@ -1,6 +1,10 @@
 [Bluetooth](http://www.bluetooth.org/) es un protocolo estándar para comunicación inalámbrica de corta distancia en teléfonos móviles, computadores portátiles y otros equipos electrónicos. En Linux la implementación mas conocida del protocolo Bluetooth es [BlueZ](http://www.bluez.org/).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
     *   [1.1 Interfaces](#Interfaces)
@@ -53,7 +57,7 @@
 
 Para recibir archivos, abra el panel de configuración de Bluetooth; solo se puede recibir mientras que el panel de Bluetooth este abierto.
 
-**Sugerencia:** Para agregar una entrada de *Enviar a* en el menu de Thunar, vea las instrucciones [aquí](http://docs.xfce.org/xfce/thunar/send-to). (El comando que necesita ser configurado es `bluetooth-sendto %F`).
+**Sugerencia:** Para agregar una entrada de *Enviar a* en el menu de Thunar, vea las instrucciones [aquí](http://docs.xfce.org/xfce/thunar/send-to). (El comando que necesita ser configurado es `bluetooth-sendto %F`).
 
 ##### Bluedevil
 

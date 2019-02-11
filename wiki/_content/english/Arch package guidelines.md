@@ -8,7 +8,11 @@ Related articles
 
 When building packages for Arch Linux, **adhere to the package guidelines** below, especially if the intention is to **contribute** a new package to Arch Linux. You should also see the [PKGBUILD](https://archlinux.org/pacman/PKGBUILD.5.html) and [makepkg](https://archlinux.org/pacman/makepkg.8.html) manpages.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 PKGBUILD prototype](#PKGBUILD_prototype)
 *   [2 Package etiquette](#Package_etiquette)

@@ -11,7 +11,11 @@ Related articles
 
 你可以在 [GitLab.com](https://gitlab.com/)找到实时版本的例子.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 配置](#配置)
@@ -100,8 +104,8 @@ GitLab Unicorn 是处理大多数用户请求的主要组件. 默认的, 它监�
 
  `/etc/webapps/gitlab/unicorn.rb` 
 ```
-listen "/run/gitlab/gitlab.socket", :backlog => 1024
-listen "**127.0.0.1:8080**", :tcp_nopush => true
+listen "/run/gitlab/gitlab.socket", :backlog => 1024
+listen "**127.0.0.1:8080**", :tcp_nopush => true
 ```
 
 如果 Unicorn 地址被改变, 其它与Unicorn交流的组件的配置也需要被更新:
@@ -377,7 +381,7 @@ password: You'll be prompted to create one on your first visit.
  `/etc/ssh/sshd_config` 
 ```
 PubkeyAuthentication   yes
-AuthorizedKeysFile     %h/.ssh/authorized_keys
+AuthorizedKeysFile     %h/.ssh/authorized_keys
 
 ```
 
@@ -428,7 +432,7 @@ hostname 127.0.0.1; # Your server name or IP
  `/etc/http/conf/extra/gitlab.conf` 
 ```
 Alias "/.well-known"  "/srv/http/letsencrypt/.well-known"
-RewriteCond   %{REQUEST_URI}  !/\.well-known/.*
+RewriteCond   %{REQUEST_URI}  !/\.well-known/.*
 
 ```
 

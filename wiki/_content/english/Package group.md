@@ -1,6 +1,10 @@
 A **package group** is a set of related packages, defined by the [packager](/index.php/Packager "Packager"), which can be installed or uninstalled simultaneously by using the group name as a substitute for each individual package name. While a group is not a package, it can be installed in a similar fashion to a package, see [Pacman#Installing package groups](/index.php/Pacman#Installing_package_groups "Pacman") and [PKGBUILD#groups](/index.php/PKGBUILD#groups "PKGBUILD").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Groups](#Groups)
     *   [1.1 base](#base)

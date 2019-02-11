@@ -9,7 +9,11 @@ De [GDM - GNOME Display Manager](http://projects.gnome.org/gdm/about.html):
 
 Los [gestores de pantallas](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)") proporcionan a los usuarios de [X Window System](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)") un inicio de sesión gráfico.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
     *   [1.1 GDM como la pantalla de bienvenida predeterminada](#GDM_como_la_pantalla_de_bienvenida_predeterminada)

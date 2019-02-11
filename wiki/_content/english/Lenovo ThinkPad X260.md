@@ -1,6 +1,10 @@
 The Lenovo ThinkPad X260 is the successor to the [Lenovo ThinkPad X240](/index.php/Lenovo_ThinkPad_X240 "Lenovo ThinkPad X240") and [Lenovo ThinkPad X250](/index.php/Lenovo_ThinkPad_X250 "Lenovo ThinkPad X250"). Major differences include the removal of VGA, removal of the SATA channel in the M.2 slots, and end of the 400nit screen option. New in this gen is the addition of HDMI, DDR4 memory, and improved battery life.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Configuration](#Configuration)
     *   [1.1 Fingerprint](#Fingerprint)

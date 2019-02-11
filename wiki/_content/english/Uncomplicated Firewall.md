@@ -7,7 +7,11 @@ From the project [home page](https://launchpad.net/ufw):
 
 	Ufw stands for Uncomplicated Firewall, and is a program for managing a netfilter [firewall](/index.php/Firewall "Firewall"). It provides a command line interface and aims to be uncomplicated and easy to use.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Basic configuration](#Basic_configuration)

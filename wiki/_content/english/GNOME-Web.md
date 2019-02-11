@@ -2,7 +2,11 @@ Web is the default web browser for [GNOME](/index.php/GNOME "GNOME"). Web provid
 
 **Note:** Web was known as [Epiphany](https://wiki.gnome.org/Apps/Web) prior to version 3.4\. The application was given new descriptive names, one for each supported language. The name *Epiphany* is still used in numerous places such as the executable name, some package names, some desktop entries, and some GSettings schemas.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

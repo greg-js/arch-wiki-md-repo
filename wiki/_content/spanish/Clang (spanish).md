@@ -3,7 +3,11 @@ Este artículo es una traducción de [Clang](/index.php/Clang "Clang"), revisada
 
 [Clang](http://clang.llvm.org/) es un compilador de [C](/index.php/C_(Espa%C3%B1ol) "C (Español)")/C ++/Objective C/[CUDA](/index.php/CUDA "CUDA") basado en [LLVM](/index.php/LLVM "LLVM"). Se distribuye bajo la Licencia BSD.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Compilar paquetes con Clang](#Compilar_paquetes_con_Clang)

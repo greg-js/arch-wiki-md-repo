@@ -1,6 +1,10 @@
 This article covers software to view, edit and convert [PDF](https://en.wikipedia.org/wiki/PDF "wikipedia:PDF"), [PostScript](https://en.wikipedia.org/wiki/PostScript "wikipedia:PostScript") (PS), [DjVu](https://en.wikipedia.org/wiki/DjVu "wikipedia:DjVu") (*déjà vu*) and [XPS](https://en.wikipedia.org/wiki/Open_XML_Paper_Specification "wikipedia:Open XML Paper Specification") files.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Engines](#Engines)
 *   [2 Viewers](#Viewers)

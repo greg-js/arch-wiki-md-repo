@@ -9,7 +9,7 @@
 If you wish to run a nested X window, you'll need to specify a display.
 
 ```
-$ Xephyr -br -ac -noreset -screen 800x600 :1
+$ Xephyr -br -ac -noreset -screen 800x600 :1
 
 ```
 
@@ -30,6 +30,6 @@ $ DISPLAY=:1 spectrwm
 You can also launch Xephyr with your [xinitrc](/index.php/Xinitrc "Xinitrc") using startx:
 
 ```
- $ startx -- /usr/bin/Xephyr :1
+ $ startx -- /usr/bin/Xephyr :1
 
 ```

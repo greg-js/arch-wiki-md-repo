@@ -8,7 +8,11 @@
 
 Esse documento cobra padrões e diretrizes sobre a escrita de [PKGBUILDs](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") para [Go](/index.php/Go "Go").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Diretrizes gerais](#Diretrizes_gerais)
     *   [1.1 Nomenclatura de pacote](#Nomenclatura_de_pacote)

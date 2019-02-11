@@ -2,7 +2,11 @@
 
 Vim 注重鍵盤的使用，並提供許多有用功能，例如語法標亮和腳本功能。Vim 不像 nano 或 pico 這些簡易的文字編輯器，它需要一段時間去學習，並得花上大量的時間才能精通。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安裝](#安裝)
 *   [2 用法](#用法)
@@ -302,7 +306,7 @@ Feel free to change the shortcuts.
 
 ```
 #Maps ctrl-c to find functions calling the function 
-nnoremap <C-c> :cs find c <C-R>=expand("<cword>")<CR><CR>
+nnoremap <C-c> :cs find c <C-R>=expand("<cword>")<CR><CR>
 
 ```
 
@@ -318,7 +322,7 @@ Usefull options to be put in ~/.vimrc
 let Tlist_Compact_Format = 1
 let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_Close_On_Select = 1
-nnoremap <C-l> :TlistToggle<CR>
+nnoremap <C-l> :TlistToggle<CR>
 
 ```
 
@@ -326,43 +330,43 @@ nnoremap <C-l> :TlistToggle<CR>
 
 Vim includes a diff editor, a program that aids the merging of differences between two (or more, with limited usefulness) files. `vimdiff` opens a horizontally multi-paned view that colorfully highlights differences, each pane containing one of the files to be examined/edited. Vim has [several modes](#Usage), two important ones being **Insert mode**, which lets text be edited, and **Command mode**, which lets the cursor be moved move across windows and lines. Begin by running `vimdiff file1 file2`. Some example commands follow.
 
-	`]c`  
+	`]c`
 
 	next difference
 
-	`[c`  
+	`[c`
 
 	previous difference
 
-	`Ctrl+w+w`  
+	`Ctrl+w+w`
 
 	switch windows
 
-	`i`  
+	`i`
 
 	enter Insert mode
 
-	`Esc`  
+	`Esc`
 
 	exit Insert mode
 
-	`p`  
+	`p`
 
 	paste
 
-	`do`  
+	`do`
 
 	diff obtain. When the cursor is on a (highlighted) difference, copies the changes from the other window to the current one.
 
-	`dp`  
+	`dp`
 
 	diff put. Inverse of diff obtain; copies the changes from current windows to the other one.
 
-	`zo`  
+	`zo`
 
 	open folded text
 
-	`zc`  
+	`zc`
 
 	close folded text
 
@@ -370,23 +374,23 @@ Vim includes a diff editor, a program that aids the merging of differences betwe
 
 	re-scan the files for differences
 
-	`yy`  
+	`yy`
 
 	copy a line
 
-	`dd`  
+	`dd`
 
 	cut a line
 
-	`:wq`  
+	`:wq`
 
 	save and exit the current window
 
-	`:wqa`  
+	`:wqa`
 
 	save and exit both windows
 
-	`:q!`  
+	`:q!`
 
 	exit without saving
 

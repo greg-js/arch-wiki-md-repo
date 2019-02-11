@@ -6,7 +6,11 @@ Related articles
 
 [Mathematica](https://en.wikipedia.org/wiki/Wolfram_Mathematica "wikipedia:Wolfram Mathematica") is a commercial program used in scientific, engineering and mathematical fields. Here we explain how to install it.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Mathematica 6](#Mathematica_6)

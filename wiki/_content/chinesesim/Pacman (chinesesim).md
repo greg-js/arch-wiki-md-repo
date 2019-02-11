@@ -22,7 +22,11 @@
 
 **提示：** [pacman](https://www.archlinux.org/packages/?name=pacman) 软件包还提供了其它有用工具，例如 [makepkg](/index.php/Makepkg "Makepkg")、**pactree**、**vercomp**、 [checkupdates](/index.php/Checkupdates "Checkupdates")等。可以通过 `pacman -Ql pacman | grep bin` 获取工具列表。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 用法](#用法)
     *   [1.1 安装软件包](#安装软件包)

@@ -1,6 +1,10 @@
 [Tor](https://ru.wikipedia.org/wiki/Tor) - открытая реализация анонимной сети [луковой маршрутизации](https://ru.wikipedia.org/wiki/Луковая_маршрутизация) 2-го поколения. Он может пригодится тем, кто хочет сохранить анонимность в интернете, а также защитить трафик от третьей стороны (провайдера и других любопытных). Также, использование подобного программного обеспечения актуально для стран в которых есть [интернет-цензура](https://ru.wikipedia.org/wiki/Интернет-цензура).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Принцип работы](#Принцип_работы)
 *   [2 Установка](#Установка)

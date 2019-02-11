@@ -17,7 +17,11 @@ Related articles
 
 Поддержка подкачки обеспечивается ядром Linux и утилитами в пользовательском пространстве из [util-linux](https://www.archlinux.org/packages/?name=util-linux) пакета.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Пространство подкачки](#Пространство_подкачки)
 *   [2 Раздел подкачки](#Раздел_подкачки)

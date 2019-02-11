@@ -8,7 +8,11 @@ Artigos relacionados
 
 Essa página lista várias ferramentas de rede. *ping* e *ip* são cobertos por [Configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede "Configuração de rede").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Traceroute](#Traceroute)
 *   [2 Netcat](#Netcat)

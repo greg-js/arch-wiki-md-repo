@@ -10,7 +10,11 @@ In general, codecs are utilized by multimedia applications to encode or decode a
 
 This article deals only with codecs and application backends; see [List of applications/Multimedia](/index.php/List_of_applications/Multimedia "List of applications/Multimedia") for a list of media players ([MPlayer](/index.php/MPlayer "MPlayer"), [mpv](/index.php/Mpv "Mpv") and [VLC](/index.php/VLC "VLC") are popular choices).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Requirements](#Requirements)
 *   [2 List of codecs](#List_of_codecs)

@@ -5,7 +5,11 @@
 
 [DWM](http://dwm.suckless.org/) — это динамический [фреймовый](https://ru.wikipedia.org/wiki/Фреймовый_оконный_менеджеррежиме) оконный менеджер для [X](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)"). Его функционал может быть значительно расширен различными [Дополнениями](#Дополнения). Режимы работы могут переключаться динамически, в зависимости от приложения и поставленной задачи. **dwm** - чрезвычайно легковесный и быстрый, написан на Си при условии не выходить за рамки 2000 строк исходного кода. Он обеспечивает поддержку нескольких видео-выходов для [xrandr (Русский)](/index.php/Xrandr_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xrandr (Русский)") и Xinerama.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
     *   [1.1 Требования](#Требования)
@@ -75,7 +79,7 @@
 
 ```
 while true; do
-    xsetroot -name "$( date +"%F %R" )"
+    xsetroot -name "$( date +"%F %R" )"
     sleep 1m    # Время обновления
 done &
 ```

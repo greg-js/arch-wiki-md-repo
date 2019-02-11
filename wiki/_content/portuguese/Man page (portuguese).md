@@ -10,7 +10,11 @@ Apesar de seu escopo, páginas man são projetadas para serem documentos autocon
 
 [man-db](https://www.archlinux.org/packages/?name=man-db) implementa *man* no Arch Linux, e o [less](/index.php/Utilit%C3%A1rios_principais#Essenciais "Utilitários principais") é o paginador padrão usado com *man*.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Acessando páginas man](#Acessando_páginas_man)
 *   [2 Formato](#Formato)

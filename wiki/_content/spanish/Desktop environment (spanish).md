@@ -6,7 +6,11 @@ Artículos relacionados
 
 Un [entorno de escritorio](https://en.wikipedia.org/wiki/es:Desktop_environment "wikipedia:es:Desktop environment") proporciona una *completa* interfaz gráfica de usuario (GUI) para un sistema donde se agrupan una diversidad de clientes de X escritos con un conjunto de herramientas Widget y un conjunto de bibliotecas comunes.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 X Window System](#X_Window_System)
 *   [2 Entornos de Escritorio](#Entornos_de_Escritorio)

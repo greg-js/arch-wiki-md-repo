@@ -8,7 +8,11 @@ Related articles
 
 This article explains how to configure a network connection.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Check the connection](#Check_the_connection)
     *   [1.1 Ping](#Ping)

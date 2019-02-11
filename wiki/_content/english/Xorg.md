@@ -16,7 +16,11 @@ From [http://www.x.org/wiki/](http://www.x.org/wiki/):
 
 **Xorg** (commonly referred as simply **X**) is the most popular display server among Linux users. Its ubiquity has led to making it an ever-present requisite for GUI applications, resulting in massive adoption from most distributions. See the [Xorg](https://en.wikipedia.org/wiki/X.Org_Server "wikipedia:X.Org Server") Wikipedia article or visit the [Xorg website](http://www.x.org/wiki/) for more details.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Driver installation](#Driver_installation)
@@ -158,13 +162,13 @@ For option examples to set, see also the [fedora wiki](http://fedoraproject.org/
 Xorg can also be configured via `/etc/X11/xorg.conf` or `/etc/xorg.conf`. You can also generate a skeleton for `xorg.conf` with:
 
 ```
-# Xorg :0 -configure
+# Xorg :0 -configure
 
 ```
 
 This should create a `xorg.conf.new` file in `/root/` that you can copy over to `/etc/X11/xorg.conf`.
 
-**Tip:** If you are already running an X server, use a different display, for example `Xorg :2 -configure`.
+**Tip:** If you are already running an X server, use a different display, for example `Xorg :2 -configure`.
 
 Alternatively, your proprietary video card drivers may come with a tool to automatically configure Xorg: see the article of your video driver, [NVIDIA](/index.php/NVIDIA "NVIDIA") or [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst"), for more details.
 
@@ -437,7 +441,7 @@ See also [Clipboard#Tools](/index.php/Clipboard#Tools "Clipboard") and [an overv
 To run a nested session of another desktop environment:
 
 ```
-$ /usr/bin/Xnest :1 -geometry 1024x768+0+0 -ac -name Windowmaker & wmaker -display :1
+$ /usr/bin/Xnest :1 -geometry 1024x768+0+0 -ac -name Windowmaker & wmaker -display :1
 
 ```
 

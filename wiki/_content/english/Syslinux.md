@@ -8,7 +8,11 @@ Related articles
 
 **Note:** Syslinux, by itself, cannot access files from partitions other than its own. See [#Chainloading](#Chainloading) on how to work around this.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 BIOS Systems](#BIOS_Systems)
     *   [1.1 Boot process overview](#Boot_process_overview)

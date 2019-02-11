@@ -4,7 +4,11 @@ Related articles
 
 *   [ThinkPad docks](/index.php/ThinkPad_docks "ThinkPad docks")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 IBM/Lenovo](#IBM/Lenovo)
     *   [1.1 ThinkPad](#ThinkPad)

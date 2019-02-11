@@ -17,7 +17,11 @@ Related articles
 
 **Важно:** Btrfs содержит некоторые возможности, считающиеся экспериментальными. За подробностями, пройдите по ссылкам Btrfs Wiki's [Статус](https://btrfs.wiki.kernel.org/index.php/Status), [Btrfs стабильна?](https://btrfs.wiki.kernel.org/index.php/FAQ#Is_btrfs_stable.3F) и [Начинаем](https://btrfs.wiki.kernel.org/index.php/Getting_started). Смотрите раздел [#Известные проблемы](#Известные_проблемы).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Подготовка](#Подготовка)
 *   [2 Создание раздела диска Btrfs](#Создание_раздела_диска_Btrfs)

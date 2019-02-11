@@ -7,7 +7,11 @@ The [su](https://en.wikipedia.org/wiki/Su_(Unix) [core utility](/index.php/Core_
 
 See [PAM](/index.php/PAM "PAM") for ways to configure *su'*s behavior.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)

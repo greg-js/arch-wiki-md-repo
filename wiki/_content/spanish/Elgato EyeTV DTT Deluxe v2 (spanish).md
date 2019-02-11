@@ -3,7 +3,11 @@ Este artículo es una traducción de [Elgato EyeTV DTT Deluxe v2](/index.php/Elg
 
 No hay demasiada información sobre EyeTV DTT Deluxe v2 en la web, así que allá vamos.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 lsusb](#lsusb)
 *   [2 Instalación](#Instalación)

@@ -10,7 +10,11 @@
 
 Если вам нужно запускать Arch Linux с USB-накопителя с сохранением изменений, посмотрите статью [Installing Arch Linux on a USB key](/index.php/Installing_Arch_Linux_on_a_USB_key "Installing Arch Linux on a USB key"). Если вы хотите использовать загрузочный USB-носитель Arch Linux в целях восстановления, посмотрите статью [Cмена суперпользователя](/index.php/Chroot_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Chroot (Русский)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Создание загрузочного USB для BIOS и UEFI](#Создание_загрузочного_USB_для_BIOS_и_UEFI)
     *   [1.1 Используя автоматические инструменты](#Используя_автоматические_инструменты)
@@ -235,7 +239,7 @@ Syslinux уже предустановлен в `/mnt/usb/arch/boot/syslinux`. �
 
 ```
 > cd bios\
-> for /r %Y in (*.c32) do copy "%Y" "X:\arch\boot\syslinux\" /y
+> for /r %Y in (*.c32) do copy "%Y" "X:\arch\boot\syslinux\" /y
 > copy mbr\*.bin X:\arch\boot\syslinux\ /y
 
 ```

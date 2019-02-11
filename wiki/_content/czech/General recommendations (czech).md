@@ -1,6 +1,10 @@
 Každý nový archista by měl po čerstvé instalaci dokončit pár věcí. V tomto dokumentu najdete pár tipů a další užitečné informace pro nováčky.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Hardware](#Hardware)
     *   [1.1 Detekce](#Detekce)

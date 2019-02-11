@@ -1,6 +1,10 @@
 [PyPy](http://pypy.org/) is an alternate implementation of the [Python](/index.php/Python "Python") 2.7.13 and 3.5.3 interpreters. PyPy's benefits are in the area of speed, memory usage, sandboxing and stacklessness. It is compatible with CPython with [some exceptions](http://pypy.org/compat.html). PyPy also can be used to compile RPython programs to C code.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)

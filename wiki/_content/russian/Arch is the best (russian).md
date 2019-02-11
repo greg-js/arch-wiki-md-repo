@@ -1,6 +1,10 @@
 "Арч — лучший!" — амбициозный и поражающий своей оригинальностью и изысканностью, одновременно возбуждающий и шокирующий (хотя, возможно, несколько переусложненный) проект, однозначно доказывающий неоспоримое превосходство Arch.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Немного истории](#Немного_истории)
 *   [2 Установка](#Установка)
@@ -194,12 +198,12 @@ alert 'Arch is the best!'
 Available languages: ")
   (doall (map #(println (key %)) translations))
   (print "Enter language or Ctrl-c: ") (flush)
-  (translations (read-line) :badinput))
+  (translations (read-line) :badinput))
 
 (defn arch-is-the-best []
   (loop [choice (read-choice)]
     (case choice
-      :badinput (do (print "
+      :badinput (do (print "
 Bad input!
 ")
                     (recur (read-choice)))
@@ -253,8 +257,8 @@ Pick a language:
      else
      do (let ((language-def
                (assoc input *best-list*
-                      :key (lambda (lang) (symbol-name lang))
-                      :test #'string-equal)))
+                      :key (lambda (lang) (symbol-name lang))
+                      :test #'string-equal)))
           (if language-def
               (format t "~&~A~%" (second language-def))
               (format t "~&Invalid language.~%"))))
@@ -607,16 +611,16 @@ archIsBest_len:
    .section .text
    .globl _start
 _start:
-   xorl %ebx, %ebx
-   movl $4, %eax
-   xorl %ebx, %ebx
-   incl %ebx
-   leal archIsBest, %ecx
-   movl archIsBest_len, %edx
+   xorl %ebx, %ebx
+   movl $4, %eax
+   xorl %ebx, %ebx
+   incl %ebx
+   leal archIsBest, %ecx
+   movl archIsBest_len, %edx
    int $0x80
-   xorl %eax, %eax
-   incl %eax
-   xorl %ebx, %ebx
+   xorl %eax, %eax
+   incl %eax
+   xorl %ebx, %ebx
    int $0x80
 
 ```
@@ -717,7 +721,7 @@ print ('Arch is the best');
 **Shoes** — версия Ruby, использующая Shoes для GUI.
 
 ```
-Shoes.app :width => 135, :height => 30 do
+Shoes.app :width => 135, :height => 30 do
     para "Arch is the Best!"
 end
 

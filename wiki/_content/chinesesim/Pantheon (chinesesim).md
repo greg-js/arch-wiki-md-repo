@@ -2,7 +2,11 @@
 
 [Pantheon](http://elementaryos.org/) 是linux发行版 elementary os 的默认桌面环境。由开发者使用vala语言和gtk3工具包编写完成，高效并且易于使用。用户界面上，与GNOME-shell和Mac OS X多有相似之处。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
     *   [1.1 补充信息](#补充信息)

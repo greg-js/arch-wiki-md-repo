@@ -11,7 +11,11 @@ Xorg utiliza [X keyboard extension](/index.php/X_keyboard_extension "X keyboard 
 
 En este artículo se describe la configuración de bajo nivel usando XKB, que es eficaz en la mayoría de los casos, aunque algunos entornos de escritorios como [GNOME (Español)](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)") la sobrescriben con su propia configuración.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Visualizar la configuración del teclado](#Visualizar_la_configuración_del_teclado)
     *   [1.1 Utilidades de terceros](#Utilidades_de_terceros)

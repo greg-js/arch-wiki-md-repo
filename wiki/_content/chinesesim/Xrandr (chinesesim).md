@@ -7,7 +7,11 @@ Related articles
 
 "xrandr" 是一款官方的 [RandR](https://en.wikipedia.org/wiki/RandR "wikipedia:RandR") (*Resize and Rotate*)[Wikipedia:X Window System](https://en.wikipedia.org/wiki/X_Window_System "wikipedia:X Window System") 扩展配置工具。它可以设置屏幕显示的大小、方向、镜像等。对多显示器的情况，请参考 [Multihead](/index.php/Multihead "Multihead") 页面。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
     *   [1.1 图形化操作程序](#图形化操作程序)

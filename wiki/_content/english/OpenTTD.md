@@ -1,6 +1,10 @@
 OpenTTD is a free re-implementation of the popular DOS game [Transport Tycoon Deluxe](https://en.wikipedia.org/wiki/Transport_Tycoon_Deluxe "wikipedia:Transport Tycoon Deluxe"). You are a transport company owner, and you must manage it over the years in order to make profit.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Original Transport Tycoon Deluxe data (optional)](#Original_Transport_Tycoon_Deluxe_data_(optional))

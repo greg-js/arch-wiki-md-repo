@@ -9,7 +9,11 @@ Artículos relacionados
 
 Este documento es un índice con anotaciones a otros artículos populares e información importante para mejorar y añadir funcionalidades al sistema Arch instalado. Se supone que los lectores han leído y seguido la [guía de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)") para instalar un sistema básico de Arch Linux. Es necesario haber leído y comprendido los conceptos explicados en [administración del sistema](#Administración_del_sistema) y [administración de paquetes](#Administración_de_paquetes) antes de continuar con las otras secciones de esta página y de otros artículos de la wiki.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Administración del sistema](#Administración_del_sistema)
     *   [1.1 Usuarios y grupos](#Usuarios_y_grupos)

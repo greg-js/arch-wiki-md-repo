@@ -12,7 +12,11 @@
 
 GTK+，或称 GIMP Toolkit，最初由[GNU项目](/index.php/GNU_Project "GNU Project")为图像编辑软件[GIMP](/index.php/GIMP "GIMP")开发，但现在它已经被广泛地应用在各种语言的图形界面编程中。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 配置工具](#配置工具)
 *   [2 主题](#主题)

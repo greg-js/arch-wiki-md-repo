@@ -2,7 +2,11 @@ Hard Drive Active Protection System (**HDAPS**) protects your hard drive from su
 
 **Note:** [SSD](/index.php/SSD "SSD") drives do not need HDAPS as they lack any mechanical components.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Shock detection](#Shock_detection)
     *   [1.1 tp_smapi](#tp_smapi)

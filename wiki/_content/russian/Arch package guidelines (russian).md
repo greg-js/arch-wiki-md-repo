@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Стандарты для создания пакетов Arch](#Стандарты_для_создания_пакетов_Arch)
     *   [1.1 Шаблон PKGBUILD](#Шаблон_PKGBUILD)

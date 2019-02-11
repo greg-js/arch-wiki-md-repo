@@ -2,7 +2,11 @@
 
 X server can only be used with integrated graphics or discrete Nvidia graphics, but not both, so user might want to switch to separate [virtual console](/index.php/Linux_console "Linux console") and start another X server using different graphics from what was used for the first X server.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

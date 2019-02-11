@@ -1,6 +1,10 @@
 There is not much information about the EyeTV DTT Deluxe v2 on the web so here we go.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 lsusb](#lsusb)
 *   [2 Installation](#Installation)

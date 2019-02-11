@@ -5,7 +5,11 @@ Related articles
 
 This article summarizes the [XDG Base Directory specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html) in [#Specification](#Specification) and tracks software support in [#Support](#Support).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Specification](#Specification)
     *   [1.1 User directories](#User_directories)
@@ -851,11 +855,14 @@ export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
 ~/.zshenv
 ~/.zlogin
 ~/.zlogout
-~/.histfile`
+~/.histfile
+~/.zcompdump`
 
  | [[150]](http://www.zsh.org/mla/workers/2013/msg00692.html) | Consider exporting `ZDOTDIR=$HOME/.config/zsh` in `~/.zshenv` (this is hardcoded due to the bootstrap problem). You could also add this to `/etc/zsh/zshenv` and avoid the need for any dotfiles in your `HOME`. Doing this however requires root privilege which may not be viable and is system-wide.
 
 `$ export HISTFILE="$XDG_DATA_HOME"/zsh/history`
+
+`$ compinit -d $XDG_DATA_HOME/zsh/zcompdump-$ZSH_VERSION` [[151]](https://unix.stackexchange.com/questions/391641/separate-path-for-zcompdump-files) /!\ The folder needs to exist
 
  |
 

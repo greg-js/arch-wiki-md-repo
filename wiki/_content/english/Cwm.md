@@ -2,7 +2,11 @@
 
 cwm is developed as part of the OpenBSD base system. A “portable” version which runs on Linux is also available.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

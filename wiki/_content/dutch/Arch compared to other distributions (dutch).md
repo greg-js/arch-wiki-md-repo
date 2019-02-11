@@ -1,6 +1,10 @@
 Deze pagina vat de overeenkomsten en de verschillen samen tussen Arch en andere distributies. De vraag komt vaak voor en daarom is het aardig om een standaard antwoord te hebben. Nota bene: de beste manier om Arch te vergelijken met andere distributies is om het te installeren en zelf uit te proberen. Arch heeft een geweldige gebruikersgemeenschap die altijd bereid is om nieuwe gebruikers te helpen. De samenvattingen hieronder zijn alleen bedoeld om je genoeg informatie te geven om te beslissen of Arch echt voor jou is.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Arch vs Gentoo](#Arch_vs_Gentoo)
 *   [2 Arch vs Crux](#Arch_vs_Crux)

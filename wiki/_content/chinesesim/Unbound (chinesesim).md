@@ -2,7 +2,11 @@
 
 **翻译状态：** 本文是英文页面 [Unbound](/index.php/Unbound "Unbound") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-09-04，点击[这里](https://wiki.archlinux.org/index.php?title=Unbound&diff=0&oldid=397940)可以查看翻译后英文页面的改动。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 配置](#配置)

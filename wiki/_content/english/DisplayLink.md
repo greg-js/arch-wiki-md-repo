@@ -2,7 +2,11 @@ DisplayLink devices on Linux still only have experimental support. While some pe
 
 Also be warned that even over USB 3.0, a DisplayLink monitor may exhibit noticeably more lag than e.g. a DisplayPort monitor, especially when large portions of the screen are being redrawn.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 USB 2.0 DL-1x5, DL-1x0 Devices](#USB_2.0_DL-1x5,_DL-1x0_Devices)

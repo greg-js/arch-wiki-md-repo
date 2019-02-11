@@ -1,6 +1,10 @@
 This article summarizes the install process required for OpenVPN. See [OpenVPN](/index.php/OpenVPN "OpenVPN") instead for a walkthrough.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Install](#Install)
 *   [2 Prepare data](#Prepare_data)

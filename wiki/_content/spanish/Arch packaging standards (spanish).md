@@ -11,7 +11,11 @@ Artículos relacionados
 
 Al crear paquetes para Arch Linux deberá **adherirse a las pautas para los paquetes** de abajo, especialmente si desea **contribuir** con un nuevo paquete a Arch Linux. También debería leer los manuales de [PKGBUILD](https://www.archlinux.org/pacman/PKGBUILD.5.html) y [makepkg](https://www.archlinux.org/pacman/makepkg.8.html).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Prototipo de PKGBUILD](#Prototipo_de_PKGBUILD)
 *   [2 Reglas de etiquetado de paquetes](#Reglas_de_etiquetado_de_paquetes)

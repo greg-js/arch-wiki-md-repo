@@ -2,7 +2,11 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/GnuTLS "wikipedia:GnuTLS"
 
 	**GnuTLS** (the **GNU Transport Layer Security Library**) is a free software implementation of the TLS, SSL and DTLS protocols. It offers an application programming interface (API) for applications to enable secure communication over the network transport layer, as well as interfaces to access X.509, PKCS #12, OpenPGP and other structures.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)

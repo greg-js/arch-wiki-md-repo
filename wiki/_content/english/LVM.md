@@ -10,7 +10,11 @@ From [Wikipedia:Logical Volume Manager (Linux)](https://en.wikipedia.org/wiki/Lo
 
 	LVM is a [logical volume manager](https://en.wikipedia.org/wiki/logical_volume_management "wikipedia:logical volume management") for the [Linux kernel](https://en.wikipedia.org/wiki/Linux_kernel "wikipedia:Linux kernel"); it manages disk drives and similar mass-storage devices.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 LVM Building Blocks](#LVM_Building_Blocks)
 *   [2 Advantages](#Advantages)

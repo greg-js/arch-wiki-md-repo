@@ -5,7 +5,11 @@ Related articles
 
 Denne side forsøger at drage sammenligninger mellem Arch Linux og andre populære GNU/Linux-distributioner og <tt>UNIX</tt>-lignende operativsystemer. De følgende opsummeringer er korte beskrivelser som kan hjælpe med at beslutte om Arch Linux vil dække dine behov. Selvom gennemgange og beskrivelser kan være nyttige, er førstehåndsoplevelser uanfægteligt den bedste måde til at sammenligne distributioner.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Kildebaserede](#Kildebaserede)
     *   [1.1 Gentoo Linux](#Gentoo_Linux)

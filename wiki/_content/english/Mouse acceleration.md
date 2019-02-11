@@ -14,7 +14,11 @@ Setting the mouse acceleration depends on the windowing protocol you are using: 
 *   If you are using [Wayland](/index.php/Wayland "Wayland"), the events are controlled via [libinput](/index.php/Libinput "Libinput"). It is the compositor's job to expose the settings brought by libinput. There is currently no standard way to change settings across compositors.[[1]](https://www.reddit.com/r/gnome/comments/3upay2/wayland_where_are_the_mouse_acceleration_options/)
 *   [GNOME](/index.php/GNOME "GNOME") manages mouse acceleration by itself. A choice between "adaptive" and "flat" profiles can be chosen by installing [dconf-editor](https://www.archlinux.org/packages/?name=dconf-editor) and editing the value in org/gnome/desktop/peripherals/mouse/acceleration-profile. Alternatively, [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks) can also be used to edit the org/gnome/desktop/peripherals/mouse/acceleration-profile.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Mouse acceleration with libinput](#Mouse_acceleration_with_libinput)
     *   [1.1 Changing the acceleration](#Changing_the_acceleration)
@@ -251,6 +255,7 @@ Section "InputClass"
 	Driver "libinput"
 	MatchIsPointer "yes"
 	Option "AccelProfile" "flat"
+	Option "AccelSpeed" "0"
 EndSection
 ```
 

@@ -1,7 +1,11 @@
 **Estado de la traducción**
 Este artículo es una traducción de [ASUS A55VJ](/index.php/ASUS_A55VJ "ASUS A55VJ"), revisada por última vez el **2018-12-05**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=ASUS_A55VJ&diff=0&oldid=558368) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Modelo A55VJ-SXH161 (también K55VJ):](#Modelo_A55VJ-SXH161_(también_K55VJ):)
     *   [1.1 Hardware](#Hardware)

@@ -6,7 +6,11 @@ Related articles
 
 A additional feature of Archiso Offline is AUR packages are possible to include in the ISO build process.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Setup](#Setup)
     *   [1.1 Installing packages](#Installing_packages)

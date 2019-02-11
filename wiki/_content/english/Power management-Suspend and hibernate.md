@@ -14,7 +14,11 @@ Currently there are three methods of suspending available: **suspend to RAM** (u
 
 There are multiple low level interfaces (backends) providing basic functionality, and some high level interfaces providing tweaks to handle problematic hardware drivers/kernel modules (e.g. video card re-initialization).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Low level interfaces](#Low_level_interfaces)
     *   [1.1 kernel (swsusp)](#kernel_(swsusp))
@@ -194,12 +198,12 @@ case $1/$2 in
     # echo "Going to $2..."
     /usr/bin/echo "0" > /sys/class/vtconsole/vtcon1/bind
     /usr/bin/rmmod nouveau
-    ;;
+    ;;
   post/*)
     # echo "Waking up from $2..."
     /usr/bin/modprobe nouveau
     /usr/bin/echo "1" > /sys/class/vtconsole/vtcon1/bind
-    ;;
+    ;;
 esac
 ```
 

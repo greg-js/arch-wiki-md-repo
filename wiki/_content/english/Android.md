@@ -3,7 +3,11 @@ Related articles
 *   [Android tethering](/index.php/Android_tethering "Android tethering")
 *   [Android Debug Bridge](/index.php/Android_Debug_Bridge "Android Debug Bridge")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Transferring files](#Transferring_files)
 *   [2 App development](#App_development)
@@ -121,7 +125,7 @@ Add your user into this group:
 Change folder's group.
 
 ```
-# chown -R :sdkusers /opt/android-sdk/
+# chown -R :sdkusers /opt/android-sdk/
 
 ```
 

@@ -1,6 +1,10 @@
 A [core dump](https://en.wikipedia.org/wiki/Core_dump "wikipedia:Core dump") is a file containing a process's address space (memory) when the process terminates unexpectedly. Core dumps may be produced on-demand (such as by a [debugger](#Making_a_core_dump)), or automatically upon termination. Core dumps are triggered by the kernel in response to program crashes, and may be passed to a helper program (such as [systemd-coredump](http://www.freedesktop.org/software/systemd/man/systemd-coredump.html)) for further processing. A core dump is not typically used by an average user, but may be passed on to developers upon request where it can be invaluable as a post-mortem snapshot of the program's state at the time of the crash, especially if the fault is hard to reliably reproduce.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Disabling automatic core dumps](#Disabling_automatic_core_dumps)
     *   [1.1 Using sysctl](#Using_sysctl)
@@ -89,7 +93,7 @@ The `kernel.core_pattern` [sysctl](/index.php/Sysctl "Sysctl") decides where aut
 
 ```
 $ cat /proc/sys/kernel/core_pattern 
-|/usr/lib/systemd/systemd-coredump %p %u %g %s %t %e
+|/usr/lib/systemd/systemd-coredump %p %u %g %s %t %e
 
 ```
 

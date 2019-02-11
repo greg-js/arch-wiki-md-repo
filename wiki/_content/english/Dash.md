@@ -14,7 +14,11 @@ DASH shines in:
 *   Security. Dash is a long-established, tiny project with simple and long-established functionality; one that is still very much [alive](https://git.kernel.org/cgit/utils/dash/dash.git/log/), and with [many](https://git.kernel.org/cgit/utils/dash/dash.git/stats/?period=q&ofs=10) active developers. Thus, Dash has a much smaller attack surface, while still having many eyes on its code.
 *   If classic `/bin/sh` needed only.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Use DASH as /bin/sh](#Use_DASH_as_/bin/sh)

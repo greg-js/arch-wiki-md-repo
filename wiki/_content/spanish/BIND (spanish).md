@@ -13,7 +13,11 @@ BIND (*Berkeley Internet Name Daemon*) es la implementación de referencia del p
 
 **Note:** The organization developing BIND is serving security notices to paying customers up to four days before Linux distributions or the general public.[[1]](https://kb.isc.org/article/AA-00861/0/ISC-Software-Defect-and-Security-Vulnerability-Disclosure-Policy.html)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Redireccionamiento](#Redireccionamiento)
@@ -79,10 +83,10 @@ $TTL 7200
 ; domain.tld
 @       IN      SOA     ns01.domain.tld. postmaster.domain.tld. (
                                         2007011601 ; Serial
-                                        28800      ; Refresh
-                                        1800       ; Retry
-                                        604800     ; Expire - 1 week
-                                        86400 )    ; Minimum
+                                        28800      ; Refresh
+                                        1800       ; Retry
+                                        604800     ; Expire - 1 week
+                                        86400 )    ; Minimum
                 IN      NS      ns01
                 IN      NS      ns02
 ns01            IN      A       0.0.0.0

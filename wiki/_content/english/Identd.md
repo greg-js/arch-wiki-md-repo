@@ -5,7 +5,11 @@ So you have two choices:
 1.  Tell the truth (see [#oidentd](#oidentd) below)
 2.  Tell a little white lie (see nullidentdmod or nullidentd below)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 oidentd](#oidentd)
 *   [2 nullIdentdMod](#nullIdentdMod)

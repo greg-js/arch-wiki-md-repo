@@ -10,7 +10,11 @@ Artigos relacionados
 
 Ao compilar pacotes para o Arch Linux, **siga as diretrizes de empacotamento** abaixo, especialmente se a intenção é **contribuir** com um novo pacote para o Arch Linux. Você também deve ler as páginas de manual do [PKGBUILD](https://archlinux.org/pacman/PKGBUILD.5.html) e do [makepkg](https://archlinux.org/pacman/makepkg.8.html).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Protótipo de PKGBUILD](#Protótipo_de_PKGBUILD)
 *   [2 Etiqueta de pacotes](#Etiqueta_de_pacotes)

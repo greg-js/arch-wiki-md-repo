@@ -7,7 +7,11 @@ Artículos relacionados
 *   [Preguntas frecuentes Arch User Repository](/index.php/Arch_User_Repository_(Espa%C3%B1ol)#FAQ "Arch User Repository (Español)")
 *   [Solución de problemas](/index.php/General_troubleshooting_(Espa%C3%B1ol) "General troubleshooting (Español)")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 General](#General)
     *   [1.1 ¿Qué es Arch Linux?](#¿Qué_es_Arch_Linux?)

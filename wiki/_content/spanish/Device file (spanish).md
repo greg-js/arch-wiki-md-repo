@@ -9,7 +9,11 @@ En Linux están en el directorio `/dev`, de acuerdo con el [Estándar de jerarqu
 
 En Arch Linux los nodos del dispositivo son gestionados por [udev](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Dispositivos de bloque](#Dispositivos_de_bloque)
     *   [1.1 lsblk](#lsblk)

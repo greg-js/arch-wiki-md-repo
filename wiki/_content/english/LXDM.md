@@ -7,7 +7,11 @@ LXDM is a lightweight [display manager](/index.php/Display_manager "Display mana
 
 LXDM does not support the [XDMCP](/index.php/XDMCP "XDMCP") protocol. An alternative that does is [LightDM](/index.php/LightDM "LightDM").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

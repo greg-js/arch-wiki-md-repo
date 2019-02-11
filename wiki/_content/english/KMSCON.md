@@ -8,7 +8,11 @@ From the project's [git repository](http://cgit.freedesktop.org/~dvdhrm/kmscon/t
 
 	Kmscon is a simple terminal emulator based on linux [kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"). It is an attempt to replace the in-kernel VT implementation with a userspace console.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Features](#Features)
 *   [2 Install](#Install)

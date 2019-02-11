@@ -13,7 +13,11 @@ Configuring wireless is a two-part process; the first part is to identify and en
 
 The [#iw](#iw) section describes how to manually manage your wireless network interface / your wireless LANs using [iw](https://www.archlinux.org/packages/?name=iw). The [Network configuration#Network managers](/index.php/Network_configuration#Network_managers "Network configuration") section describes several programs that can be used to automatically manage your wireless interface, some of which include a GUI and all of which include support for network profiles (useful when frequently switching wireless networks, like with laptops).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Device driver](#Device_driver)
     *   [1.1 Check the driver status](#Check_the_driver_status)

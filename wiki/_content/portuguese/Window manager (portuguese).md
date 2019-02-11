@@ -9,7 +9,11 @@ Related articles
 
 Um [gerenciador de janela](https://en.wikipedia.org/wiki/pt:Gerenciador_de_janela "wikipedia:pt:Gerenciador de janela"), ou *window manager* (WM), é um software de sistema que controla o posicionamento e aparência de janelas dentro de um sistema de janelas em uma interface gráfica de usuário (GUI). Ele pode ser parte de um [ambiente de desktop](/index.php/Ambiente_de_desktop "Ambiente de desktop") (DE) ou ser usado de forma independente.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Visão geral](#Visão_geral)
     *   [1.1 Tipos](#Tipos)

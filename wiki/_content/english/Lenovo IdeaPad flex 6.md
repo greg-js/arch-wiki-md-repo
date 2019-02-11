@@ -1,6 +1,10 @@
 The Lenovo Flex 6 is a flexible dual-mode laptop computer.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 14ARR (AMD Raven Ridge)](#14ARR_(AMD_Raven_Ridge))
     *   [1.1 PCI Devices (AMD)](#PCI_Devices_(AMD))

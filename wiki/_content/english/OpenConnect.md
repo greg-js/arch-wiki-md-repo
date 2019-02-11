@@ -1,6 +1,10 @@
 [OpenConnect](http://www.infradead.org/openconnect/) is a client for Cisco's [AnyConnect SSL VPN](https://www.cisco.com/go/asm) and Pulse Secure's [Pulse Connect Secure](/index.php/Pulse_Connect_Secure "Pulse Connect Secure").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)

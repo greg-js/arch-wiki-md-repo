@@ -1,6 +1,10 @@
 [rTorrent](http://libtorrent.rakshasa.no/) - это быстрый и эффективный клиент BitTorrent использующий библиотеку libtorrent. rTorrent написан на C++ и использует программную библиотеку [ncurses](https://en.wikipedia.org/wiki/ncurses "wikipedia:ncurses"), которая означает, что он использует текстовый интерфейс. В сочетании с [GNU Screen](/index.php/GNU_Screen "GNU Screen") и [Secure Shell](/index.php/Secure_Shell "Secure Shell"), он становится удобным удаленным клиентом [BitTorrent](https://en.wikipedia.org/wiki/BitTorrent_(protocol)#Operation "wikipedia:BitTorrent (protocol)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Конфигурация](#Конфигурация)

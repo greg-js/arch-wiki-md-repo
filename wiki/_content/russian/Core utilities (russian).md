@@ -15,7 +15,11 @@
 
 Эта статья описывает так называемые *базовые* утилиты для системы GNU/Linux, такие как *less*, *ls* и *grep*. В этой статье будут описаны утилиты GNU, находящиеся в пакете [coreutils](https://www.archlinux.org/packages/?name=coreutils), а также некоторые другие. Ниже будут описаны различные полезные советы и другая полезная информация, связанная с этими утилитами.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Основные команды](#Основные_команды)
 *   [2 cat](#cat)

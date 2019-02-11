@@ -6,7 +6,11 @@ Related articles
 
 This page explains how to perform a regular Arch installation onto a USB key (or "flash drive"). In contrast to having a LiveUSB as covered in [USB flash installation media](/index.php/USB_flash_installation_media "USB flash installation media"), the result will be a persistent installation identical to normal installation to HDD, but on a USB flash drive.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Installation tweaks](#Installation_tweaks)

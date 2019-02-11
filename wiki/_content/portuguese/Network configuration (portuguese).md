@@ -10,7 +10,11 @@ Artigos relacionados
 
 Esse artigo explica como configurar uma conexão de rede.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Verificar a conexão](#Verificar_a_conexão)
     *   [1.1 Ping](#Ping)

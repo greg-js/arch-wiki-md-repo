@@ -1,6 +1,10 @@
 [PHP](http://www.php.net/) — широко распространенный скриптовый язык программирования общего назначения, который ориентирован главным образом для использования в веб и также может быть встроен в HTML.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Запуск](#Запуск)
@@ -224,7 +228,7 @@ Add the following lines into your `.vimrc`:
 
 ```
 autocmd FileType php setlocal makeprg=zca\ %<.php
-autocmd FileType php setlocal errorformat=%f(line\ %l):\ %m
+autocmd FileType php setlocal errorformat=%f(line\ %l):\ %m
 
 ```
 
@@ -245,7 +249,7 @@ autocmd FileType php setlocal errorformat=%f(line\ %l):\ %m
 
 Toolbox -> Add -> New Command:
 
-*   Command: *zca --recursive %F*
+*   Command: *zca --recursive %F*
 *   Run in: Command Output Tab
 *   Parse output with: *`^(?P<file>.+?)\(line (?P<line>\d+)\): (?P<content>.*)$`*
 *   Select *Show parsed output as a list*

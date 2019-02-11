@@ -10,7 +10,11 @@ To use [Internet Relay Chat](https://en.wikipedia.org/wiki/Internet_Relay_Chat "
 
 You are expected to familiarize yourself with our [Code of conduct](/index.php/Code_of_conduct "Code of conduct") and [Code of conduct#IRC](/index.php/Code_of_conduct#IRC "Code of conduct") before joining any of the official channels. For a list of commonly used abbreviations, see [Arch terminology](/index.php/Arch_terminology "Arch terminology") and [IRC Jargon](http://www.ircbeginner.com/ircinfo/abbreviations.html).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Main channels](#Main_channels)
     *   [1.1 Registration](#Registration)
@@ -121,3 +125,4 @@ International discussions are available at the following channels, also located 
 | [#archlinux-tr](ircs://chat.freenode.net/archlinux-tr) | Discussion (Turkish) |
 | [#archlinux-ve](ircs://chat.freenode.net/archlinux-ve) | Discussion (Venezuela) |
 | [#archlinuxvn](ircs://chat.freenode.net/archlinuxvn) | Discussion (Vietnamese, Tiếng Việt) |
+| [#archlinux-tg](ircs://chat.freenode.net/archlinux-tg) | IRC to Telegram bridge into [ArchlinuxChatRU](https://t.me/ArchlinuxChatRU) (Russian) |

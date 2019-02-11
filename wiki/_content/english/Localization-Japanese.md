@@ -5,7 +5,11 @@ Related articles
 
 This article describes how to set up a Japanese language environment. It does not cover setting up Japanese input on the console.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Fonts](#Fonts)
     *   [1.1 Sans-serif](#Sans-serif)

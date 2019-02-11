@@ -11,7 +11,11 @@
 
 [Firefox](https://www.mozilla.org/firefox)（火狐）是[Mozilla](https://www.mozilla.org)（谋智网络）出品的一款图形界面网络浏览器。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 配置](#配置)

@@ -1,6 +1,10 @@
 This article gives several methods to spoof a Media Access Control (MAC) address.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Manually](#Manually)
     *   [1.1 iproute2](#iproute2)

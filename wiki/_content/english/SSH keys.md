@@ -6,7 +6,11 @@ Key-based authentication is not without its drawbacks and may not be appropriate
 
 This article assumes you already have a basic understanding of the [Secure Shell](/index.php/Secure_Shell "Secure Shell") protocol and have [installed](/index.php/Install "Install") the [openssh](https://www.archlinux.org/packages/?name=openssh) package.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Background](#Background)
 *   [2 Generating an SSH key pair](#Generating_an_SSH_key_pair)
@@ -600,7 +604,7 @@ For instructions on how to use kwallet to store your SSH keys, see [KDE Wallet#U
 
 See [KeePass#Plugin Installation](/index.php/KeePass#Plugin_Installation "KeePass") or [install](/index.php/Install "Install") the [keepass-plugin-keeagent](https://www.archlinux.org/packages/?name=keepass-plugin-keeagent) package. There is also the beta version, where new features appear first, [keepass-plugin-keeagent-beta](https://aur.archlinux.org/packages/keepass-plugin-keeagent-beta/).
 
-This agent can be used directly, by matching KeeAgent socket: `KeePass -> Tools -> Options -> KeeAgent -> Agent mode socket file -> %XDG_RUNTIME_DIR%/keeagent.socket`- and environment variable: `export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR"'/keeagent.socket'`.
+This agent can be used directly, by matching KeeAgent socket: `KeePass -> Tools -> Options -> KeeAgent -> Agent mode socket file -> %XDG_RUNTIME_DIR%/keeagent.socket`- and environment variable: `export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR"'/keeagent.socket'`.
 
 ### KeePassXC
 

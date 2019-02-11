@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Уловки конфигурации](#Уловки_конфигурации)
     *   [1.1 Добавление/Редактирование GDM сессий](#Добавление/Редактирование_GDM_сессий)

@@ -1,7 +1,11 @@
 **Estado de la traducción**
 Este artículo es una traducción de [Lenovo IdeaPad y530](/index.php/Lenovo_IdeaPad_y530 "Lenovo IdeaPad y530"), revisada por última vez el **2019-01-12**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Lenovo_IdeaPad_y530&diff=0&oldid=562932) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Hacer que las cosas funcionen](#Hacer_que_las_cosas_funcionen)
     *   [1.1 Habilitar todos los altavoces](#Habilitar_todos_los_altavoces)

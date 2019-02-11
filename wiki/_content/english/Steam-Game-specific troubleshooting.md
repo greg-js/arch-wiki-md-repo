@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Introduction](#Introduction)
 *   [2 Contributing](#Contributing)
@@ -373,7 +377,7 @@ If game crash on start
 
 ```
 # add this to Steam launch option 
-$ LD_PRELOAD="libpthread.so.0 libGL.so.1" __GL_THREADED_OPTIMIZATIONS=1 %command% -force-glcore
+$ LD_PRELOAD="libpthread.so.0 libGL.so.1" __GL_THREADED_OPTIMIZATIONS=1 %command% -force-glcore
 
 ```
 
@@ -490,7 +494,7 @@ int sem_timedwait(sem_t *sem, const struct timespec *abs_timeout)
 { 
     if (abs_timeout->tv_nsec >= 1000000000)
     { 
-        //fprintf(stderr, "to: %lu:%lu
+        //fprintf(stderr, "to: %lu:%lu
 ", abs_timeout->tv_sec, abs_timeout->tv_nsec); 
         ((struct timespec *)abs_timeout)->tv_nsec -= 1000000000; 
         ((struct timespec *)abs_timeout)->tv_sec++; 
@@ -507,7 +511,7 @@ __attribute__((constructor)) void init(void)
 
 Compile with `gcc -m32 -o loadfix.so loadfix.c -ldl -shared -fPIC -Wall -Wextra`
 
-Launch with `LD_PRELOAD=$LD_PRELOAD:./loadfix.so %command%`
+Launch with `LD_PRELOAD=$LD_PRELOAD:./loadfix.so %command%`
 
 #### Gamepad not working
 
@@ -670,7 +674,7 @@ In case there are messages like this in the terminal:
 The following change may help ([source](http://steamcommunity.com/app/49520/discussions/0/348292787746982160/)):
 
 ```
-LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6' %command%
+LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6' %command%
 
 ```
 
@@ -700,7 +704,7 @@ If the game appears as *Running*, then syncs and closes when you launch it from 
 Set your [launch options](/index.php/Launch_option "Launch option") to:
 
 ```
-LD_PRELOAD="/usr/lib32/libpng16.so.16" %command%
+LD_PRELOAD="/usr/lib32/libpng16.so.16" %command%
 
 ```
 
@@ -743,7 +747,7 @@ Run the game with `UNITY_DISABLE_GRAPHICS_DRIVER_WORKAROUNDS=yes`.
 
 ### Civilization V
 
-Run the game with `LD_PRELOAD=/usr/lib32/libopenal.so.1 %command%`.[[3]](https://steamcommunity.com/app/8930/discussions/0/1621726179576099775/) For old versions of PulseAudio (<12.0), use `LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6:/usr/lib32/libopenal.so.1' %command%`.[[4]](https://github.com/ValveSoftware/steam-for-linux/issues/4379) If libopenal.so.1 is not in /usr/lib32, you may need to run `sudo pacman -S multilib/lib32-openal` after making sure multilib is enabled.[Official repositories#multilib](/index.php/Official_repositories#multilib "Official repositories")
+Run the game with `LD_PRELOAD=/usr/lib32/libopenal.so.1 %command%`.[[3]](https://steamcommunity.com/app/8930/discussions/0/1621726179576099775/) For old versions of PulseAudio (<12.0), use `LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6:/usr/lib32/libopenal.so.1' %command%`.[[4]](https://github.com/ValveSoftware/steam-for-linux/issues/4379) If libopenal.so.1 is not in /usr/lib32, you may need to run `sudo pacman -S multilib/lib32-openal` after making sure multilib is enabled.[Official repositories#multilib](/index.php/Official_repositories#multilib "Official repositories")
 
 If you are experiencing heavy lag (less than 1fps) or the game crashes on startup, try adding the following paths to LD_PRELOAD: `'/usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1 /usr/$LIB/libgpg-error.so ./libcxxrt.so /usr/lib32/libstdc++.so.6 /usr/lib32/libopenal.so.1'`.[[5]](https://forum.manjaro.org/t/civ-v-wont-launch-after-update/10825/6)
 
@@ -763,7 +767,7 @@ The solution is either to install the game on a case-insensitive file system lik
 
 #### Game crashes on startup with an error in libpulsecommon-12.0.so"
 
-Run the game with `LD_PRELOAD=/usr/lib32/libopenal.so.1 %command%`
+Run the game with `LD_PRELOAD=/usr/lib32/libopenal.so.1 %command%`
 
 ### Civilization: Beyond earth
 
@@ -803,7 +807,7 @@ Segfault is caused by [lib32-intel-tbb](https://aur.archlinux.org/packages/lib32
 
 ### Civilization VI
 
-Either run with steam-native, launch option `LD_PRELOAD=/usr/lib/libfreetype.so.6 %command%`, or `env LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6'`. The latter will disable the Steam overlay.
+Either run with steam-native, launch option `LD_PRELOAD=/usr/lib/libfreetype.so.6 %command%`, or `env LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6'`. The latter will disable the Steam overlay.
 
 Follow [#OpenSSL 1.0 setup](#OpenSSL_1.0_setup).
 
@@ -854,7 +858,7 @@ If the game crashed with error
 The solution is to set launch option to be
 
 ```
-   LD_PRELOAD=/usr/lib/libfreetype.so.6 %command%
+   LD_PRELOAD=/usr/lib/libfreetype.so.6 %command%
 
 ```
 
@@ -871,7 +875,7 @@ Requires [libidn11](https://www.archlinux.org/packages/?name=libidn11) & [librtm
 Also if you use Bumblebee set your [launch options](/index.php/Launch_option "Launch option") to:
 
 ```
-LD_PRELOAD="$LD_PRELOAD:libpthread.so.0:libGL.so.1" __GL_THREADED_OPTIMIZATIONS=1  optirun %command%
+LD_PRELOAD="$LD_PRELOAD:libpthread.so.0:libGL.so.1" __GL_THREADED_OPTIMIZATIONS=1  optirun %command%
 
 ```
 
@@ -894,7 +898,7 @@ Like with [#Alien Isolation](#Alien_Isolation) you need to symlink `/usr/lib/lib
 Use the steam-runtime, e.g. set the [launch options](https://support.steampowered.com/kb_article.php?ref=1040-JWMT-2947) to:
 
 ```
-~/.steam/root/ubuntu12_32/steam-runtime/run.sh %command%
+~/.steam/root/ubuntu12_32/steam-runtime/run.sh %command%
 
 ```
 
@@ -1032,7 +1036,7 @@ $ pacmd set-source-volume *device_name* 0x6000
 Set launch options to:
 
 ```
-vblank_mode=0 %command%
+vblank_mode=0 %command%
 
 ```
 
@@ -1179,7 +1183,7 @@ In the game, go to the options and adjust the audio levels.
 
 Linux version is shipped with the Windows version, but can only be installed with Steam Play.
 
-Native version can be started with this launch option: `./DDLC.sh # %command%`
+Native version can be started with this launch option: `./DDLC.sh # %command%`
 
 ### Dota 2
 
@@ -1252,7 +1256,7 @@ $ unzip assets00[123].zip
 For AMD cards this game crashes on launch, unless you start it like this:
 
 ```
-R600_DEBUG=mono %command%
+R600_DEBUG=mono %command%
 
 ```
 
@@ -1351,7 +1355,7 @@ Starts with black page. Requires to be told to use the libSDL2 shipping with Ste
 
 Add to Steam launch options for game.
 
-LD_PRELOAD=~/.local/share/Steam/ubuntu12_32/steam-runtime/amd64/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0 %command%
+LD_PRELOAD=~/.local/share/Steam/ubuntu12_32/steam-runtime/amd64/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0 %command%
 
 Note however, that this disables the Steam overlay as a side effect.
 
@@ -1661,7 +1665,7 @@ LD_PRELOAD=~/.steam/root/ubuntu12_32/steam-runtime/amd64/usr/lib/x86_64-linux-gn
 and from Steam, the complete game [launch options](/index.php/Launch_option "Launch option") would be:
 
 ```
-LD_PRELOAD=~/.steam/root/ubuntu12_32/steam-runtime/amd64/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0 %command% -screen-fullscreen 0 -screen-width 1280 -screen-height 720
+LD_PRELOAD=~/.steam/root/ubuntu12_32/steam-runtime/amd64/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0 %command% -screen-fullscreen 0 -screen-width 1280 -screen-height 720
 
 ```
 
@@ -1755,7 +1759,7 @@ Requires [lib32-nas](https://aur.archlinux.org/packages/lib32-nas/).
 Set launch options to:
 
 ```
-LD_LIBRARY_PATH="." %command%
+LD_LIBRARY_PATH="." %command%
 
 ```
 
@@ -1808,7 +1812,7 @@ The environment variable `SDL_VIDEODRIVER` must not be set to `wayland`. Try set
 
 This problem occurs with locales that use comas instead of dots to separate decimals.
 
-Set launch options in steam to `LANG=C %command%`.[[11]](http://steamcommunity.com/app/457140/discussions/3/1488866180617243731/#c1488866813753688864)
+Set launch options in steam to `LANG=C %command%`.[[11]](http://steamcommunity.com/app/457140/discussions/3/1488866180617243731/#c1488866813753688864)
 
 ### Penumbra: Overture
 
@@ -2173,7 +2177,7 @@ If you encounter the game not launching do the following:
 
 Cut & Paste libsteam_api.so from the "SS2/Bin" folder within the main steam common folder and transfer it to "SS2" main game folder not the sub folder "SS2/bin"
 
-After Cut & Paste put LD_PRELOAD='/usr/$LIB/libxcb.so.1' %command% into the Launch options
+After Cut & Paste put LD_PRELOAD='/usr/$LIB/libxcb.so.1' %command% into the Launch options
 
 Once all of these have been implemented the game should work after hitting play on steam.
 
@@ -2185,7 +2189,7 @@ Open cam.cfg in the SS2 folder you may have to search for it via the search mode
 
 Place game_screen_size 1024 768 or game_screen_size 1920 1080 depending on your resolution & put game_full_screen 1 into bottom of the cam.cfg file.
 
-Then go to cam_ext.cfg and next to the display setting place a simi-colon prefix next to the use_d3d_display option so it should be like this ;use_d3d_display it should then properly not go off-screen and should stay full screen within the active main screen.
+Then go to cam_ext.cfg and next to the display setting place a simi-colon prefix next to the use_d3d_display option so it should be like this ;use_d3d_display it should then properly not go off-screen and should stay full screen within the active main screen.
 
 ### Tabletop Simulator
 
@@ -2246,7 +2250,7 @@ The solution is to preload the system SDL2 libraries: `LD_PRELOAD='/usr/$LIB/lib
 This happens because of an incompatibility with the newer version of `lib32-curl`. To fix the problem , set your [launch options](/index.php/Launch_option "Launch option") to:
 
 ```
- LD_PRELOAD=./libcurl.so.4 %command%
+ LD_PRELOAD=./libcurl.so.4 %command%
 
 ```
 
@@ -2297,7 +2301,7 @@ If you are experiencing issues with launching games such as Torchlight 2 or Civi
 Right click the game in Steam, and set the following as it's launch option:
 
 ```
-LD_PRELOAD=/usr/lib/libfreetype.so.6 %command%
+LD_PRELOAD=/usr/lib/libfreetype.so.6 %command%
 
 ```
 
@@ -2446,9 +2450,9 @@ Affected games: *FORCED, Gone Home, Ichi, Nimble Quest, Syder Arcade*.
 
 The sound system in Unity 5 changed and to be able to play games created with it you must most likely install and run [PulseAudio](/index.php/PulseAudio "PulseAudio").
 
-Another solution is to disable the Steam runtime: in the launch options for the game, write this: `LD_LIBRARY_PATH="" %command%`
+Another solution is to disable the Steam runtime: in the launch options for the game, write this: `LD_LIBRARY_PATH="" %command%`
 
-Another solution is to prevent Unity from trying to use pulseaudio using [pulsenomore](https://aur.archlinux.org/packages/pulsenomore/) package from the [AUR](/index.php/AUR "AUR"). Once it is installed, use the following as launch options :`/usr/bin/pulsenomore %command%`
+Another solution is to prevent Unity from trying to use pulseaudio using [pulsenomore](https://aur.archlinux.org/packages/pulsenomore/) package from the [AUR](/index.php/AUR "AUR"). Once it is installed, use the following as launch options :`/usr/bin/pulsenomore %command%`
 
 Affected games: *Kerbal Space Program, SUPERHOT, ClusterTruck*
 
@@ -2482,7 +2486,7 @@ Install [wqy-microhei](https://www.archlinux.org/packages/?name=wqy-microhei) an
 Add the following line to your [launch options](/index.php/Launch_option "Launch option") :
 
 ```
-SDL_DYNAMIC_API=/usr/lib/libSDL2-2.0.so %command%
+SDL_DYNAMIC_API=/usr/lib/libSDL2-2.0.so %command%
 
 ```
 
@@ -2616,7 +2620,7 @@ Dependencies:
 If you are running a [hybrid graphics](/index.php/Hybrid_graphics "Hybrid graphics") system, try:
 
 ```
-__GL_THREADED_OPTIMIZATIONS=0 primusrun %command%
+__GL_THREADED_OPTIMIZATIONS=0 primusrun %command%
 
 ```
 

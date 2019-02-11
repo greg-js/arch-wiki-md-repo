@@ -18,7 +18,11 @@ Some of its features are:
 *   Customizable and extensible interface.
 *   Common **extensions** such as AdBlock, form history, a speed dial, etc.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Extensions](#Extensions)

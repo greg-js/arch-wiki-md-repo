@@ -2,7 +2,11 @@
 
 For the reverse operation (generating codes compatible with Google Authenticator under Linux) see [#Code generation](#Code_generation) below.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Setting up the PAM](#Setting_up_the_PAM)

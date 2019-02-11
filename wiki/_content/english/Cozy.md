@@ -8,7 +8,11 @@ The platform aims at simplifying the use of a personal cloud and at allowing the
 
 Third-party apps will also be available through a marketplace soon.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

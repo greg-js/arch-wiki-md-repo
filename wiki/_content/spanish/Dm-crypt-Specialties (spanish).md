@@ -7,7 +7,11 @@
 **Estado de la traducción**
 Este artículo es una traducción de [Dm-crypt/Specialties](/index.php/Dm-crypt/Specialties "Dm-crypt/Specialties"), revisada por última vez el **2018-11-22**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Dm-crypt/Specialties&diff=0&oldid=552071) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Asegurar la partición de arranque no cifrada](#Asegurar_la_partición_de_arranque_no_cifrada)
     *   [1.1 Arrancar desde un dispositivo extraíble](#Arrancar_desde_un_dispositivo_extraíble)
@@ -586,14 +590,14 @@ for cryptopt in ${cryptoptions//,/ }; do
     case ${cryptopt} in
         allow-discards)
             cryptargs="${cryptargs} --allow-discards"
-            ;;  
+            ;;  
         **header)
             cryptargs="${cryptargs} --header /boot/header.img"
             headerFlag=true
-            ;;**
+            ;;**
         *)  
             echo "Encryption option '${cryptopt}' not known, ignoring." >&2 
-            ;;  
+            ;;  
     esac
 done
 

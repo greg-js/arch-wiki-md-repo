@@ -2,7 +2,11 @@
 
 Официальный клиент называется 'Certbot', который позволяет запрашивать действительные сертификаты X.509 прямо из командной строки. Минимальный клиент с ручным созданием CSR доступен в [acme-tiny](https://www.archlinux.org/packages/?name=acme-tiny), клиенты, подходящие для скриптов, - это [simp_le-git](https://aur.archlinux.org/packages/simp_le-git/) и [letsencrypt-cli](https://aur.archlinux.org/packages/letsencrypt-cli/).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Конфигурация](#Конфигурация)

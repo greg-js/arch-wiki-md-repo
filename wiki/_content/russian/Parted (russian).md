@@ -7,7 +7,11 @@
 
 GNU Parted is a program for creating and manipulating partition tables. GParted is a GUI frontend.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Использование](#Использование)

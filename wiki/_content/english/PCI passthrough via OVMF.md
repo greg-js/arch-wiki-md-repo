@@ -6,7 +6,11 @@ The Open Virtual Machine Firmware ([OVMF](https://github.com/tianocore/tianocore
 
 Provided you have a desktop computer with a spare GPU you can dedicate to the host (be it an integrated GPU or an old OEM card, the brands do not even need to match) and that your hardware supports it (see [#Prerequisites](#Prerequisites)), it is possible to have a VM of any OS with its own dedicated GPU and near-native performance. For more information on techniques see the background [presentation (pdf)](https://www.linux-kvm.org/images/b/b3/01x09b-VFIOandYou-small.pdf).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Prerequisites](#Prerequisites)
 *   [2 Setting up IOMMU](#Setting_up_IOMMU)
@@ -146,7 +150,7 @@ The following script should allow you to see how your various PCI devices are ma
 shopt -s nullglob
 for d in /sys/kernel/iommu_groups/*/devices/*; do 
     n=${d#*/iommu_groups/*}; n=${n%%/*}
-    printf 'IOMMU Group %s ' "$n"
+    printf 'IOMMU Group %s ' "$n"
     lspci -nns "${d##*/}"
 done;
 
@@ -323,7 +327,7 @@ to
 
 ```
 
-Next, find your keyboard and mouse devices in `/dev/input/by-id/`. You may find multiple devices associated to your mouse or keyboard, so try `/dev/input/by-id/*device_id*` and either hit some keys on the keyboard or wiggle your mouse to see if input comes through, if so you have got the right device. Now add those devices to your configuration
+Next, find your keyboard and mouse devices in `/dev/input/by-id/`. You may find multiple devices associated to your mouse or keyboard, so try `cat /dev/input/by-id/*device_id*` and either hit some keys on the keyboard or wiggle your mouse to see if input comes through, if so you have got the right device. Now add those devices to your configuration
 
  `$ virsh edit [vmname]` 
 ```
@@ -1318,12 +1322,12 @@ One should compare VBIOS versions between host and guest systems using [nvflash]
  `$ ./nvflash --version` 
 ```
 ...
-Version               : 80.04.XX.00.97
+Version               : 80.04.XX.00.97
 ...
-UEFI Support          : No
-UEFI Version          : N/A
-UEFI Variant Id       : N/A ( Unknown )
-UEFI Signer(s)        : Unsigned
+UEFI Support          : No
+UEFI Version          : N/A
+UEFI Variant Id       : N/A ( Unknown )
+UEFI Signer(s)        : Unsigned
 ...
 
 ```
@@ -1333,12 +1337,12 @@ And to check a given VBIOS file:
  `$ ./nvflash --version NV299MH.rom` 
 ```
 ...
-Version               : 80.04.XX.00.95
+Version               : 80.04.XX.00.95
 ...
-UEFI Support          : Yes
-UEFI Version          : 0x10022 (Jul  2 2013 @ 16377903 )
-UEFI Variant Id       : 0x0000000000000004 ( GK1xx )
-UEFI Signer(s)        : Microsoft Corporation UEFI CA 2011
+UEFI Support          : Yes
+UEFI Version          : 0x10022 (Jul  2 2013 @ 16377903 )
+UEFI Variant Id       : 0x0000000000000004 ( GK1xx )
+UEFI Signer(s)        : Microsoft Corporation UEFI CA 2011
 ...
 
 ```

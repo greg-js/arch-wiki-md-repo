@@ -10,7 +10,11 @@
 
 For a general overview of laptop-related articles and recommendations, see [Laptop](/index.php/Laptop "Laptop")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Hardware overview](#Hardware_overview)
     *   [1.1 Alienware 15(early 2015)](#Alienware_15(early_2015))

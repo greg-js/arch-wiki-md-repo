@@ -10,7 +10,11 @@ Related articles
 
 **Note:** Steam for Linux only supports Ubuntu LTS.[[1]](https://support.steampowered.com/kb_article.php?ref=1504-QHXN-8366) Thus, do not turn to Valve for support for issues with Steam on Arch Linux.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 SteamCMD](#SteamCMD)
@@ -101,8 +105,8 @@ By default Steam simply appends your option string to the launch command. To set
 ### Examples
 
 *   only arguments: `-foo`
-*   environment variables: `FOO=bar BAZ=bar %command% -baz`
-*   completely different command: `othercommand # %command%`
+*   environment variables: `FOO=bar BAZ=bar %command% -baz`
+*   completely different command: `othercommand # %command%`
 
 ## Tips and tricks
 
@@ -184,7 +188,7 @@ sed -i "/Notifications.PanelPosition/ s/\"[A-Za-z]*\"/\"$1\"/" ~/.steam/root/res
 And the [#Launch options](#Launch_options) should be something like:
 
 ```
-~/.steam/notifpos.sh TopLeft && %command%
+~/.steam/notifpos.sh TopLeft && %command%
 
 ```
 

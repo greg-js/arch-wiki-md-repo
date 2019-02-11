@@ -1,6 +1,10 @@
 This page intends to allow remote sessions using "X Display Manager Control Protocol" (XDMCP). See the GDM documention for more information on the parameters: [https://help.gnome.org/admin/gdm/3.6/configuration.html.en#xdmcpsection](https://help.gnome.org/admin/gdm/3.6/configuration.html.en#xdmcpsection).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Setup Graphical Logins](#Setup_Graphical_Logins)
     *   [1.1 XDM](#XDM)
@@ -135,14 +139,14 @@ SLiM doesn't support Xdmcp.
 You can access your login manager on the network computer 192.168.0.10 via the following command. TCP and UDP streams are opened. So it is not possible to access the login manager via an SSH connection.
 
 ```
-Xnest -query 192.168.0.10 -geometry 1280x1024 :1
+Xnest -query 192.168.0.10 -geometry 1280x1024 :1
 
 ```
 
 Or, with Xephyr, if you experience refreshing problems with Xnest:
 
 ```
-Xephyr -query 192.168.0.10 -screen 1280x1024 -br -reset -terminate :1
+Xephyr -query 192.168.0.10 -screen 1280x1024 -br -reset -terminate :1
 
 ```
 
@@ -160,7 +164,7 @@ Xserver should recognize your monitor and set appropriate resolution.
 After allowing XDMCP access as described above, edit `/etc/X11/xdm/Xservers` and comment out:
 
 ```
-#:0 local /usr/bin/X :0
+#:0 local /usr/bin/X :0
 
 ```
 

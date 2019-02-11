@@ -13,7 +13,11 @@
 *   [Ubuntu中文论坛Arch专区](http://forum.ubuntu.org.cn/viewforum.php?f=155)
 *   [IRC频道:#archlinux-cn](irc://irc.freenode.net/#archlinux-cn)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 基本中文支持](#基本中文支持)
     *   [1.1 locale设置](#locale设置)

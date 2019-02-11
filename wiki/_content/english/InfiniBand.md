@@ -1,6 +1,10 @@
 This page explains how to set up, diagnose, and benchmark [InfiniBand](https://en.wikipedia.org/wiki/InfiniBand "wikipedia:InfiniBand") networks.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Introduction](#Introduction)
     *   [1.1 Overview](#Overview)

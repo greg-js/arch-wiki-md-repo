@@ -4,7 +4,11 @@ Related articles
 
 [llpp](http://repo.or.cz/w/llpp.git) is a lightweight, fast and featureful [PDF](/index.php/PDF "PDF"), EPUB, XPS and CBZ viewer based on [MuPDF](/index.php/MuPDF "MuPDF").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
@@ -70,7 +74,7 @@ More examples can be found in llpp's example file [keys.txt](http://repo.or.cz/w
 You can annotate a pdf with `Shift + Right Click`. To allow saving of annotations add
 
 ```
-   savepath-command='echo %s'
+   savepath-command='echo %s'
 
 ```
 

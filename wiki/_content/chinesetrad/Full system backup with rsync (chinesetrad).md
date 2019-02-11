@@ -5,7 +5,11 @@ Related articles
 
 這篇文章是教你使用 [rsync](/index.php/Rsync "Rsync") 來備份你的 "/" ， 並且排除部份目錄。 這個方法比使用 `dd` 備份磁碟 ([disk cloning](/index.php/Disk_cloning "Disk cloning")) 更好。我們可以使用這個方法備份不同的磁區大小以及不同的檔案系統，而且這個方法也比使用 `cp -a` 來得更好，因為有更好的的檔案權限控管，以及保留檔案屬性還有 Access Control Lists (ACLs). [[1]](http://www.bestbits.at/acl/about.html)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 只要執行一行指令](#只要執行一行指令)
 *   [2 使用 script](#使用_script)

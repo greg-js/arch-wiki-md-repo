@@ -4,7 +4,11 @@ Related articles
 
 This guide will give you an overview for the most common server options in existence and will outline some administration and security guidelines.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Preface](#Preface)
     *   [1.1 What is a server?](#What_is_a_server?)

@@ -2,7 +2,11 @@
 
 [Shadowsocks](https://github.com/clowwindy/shadowsocks/)是一个轻量级[socks5](https://en.wikipedia.org/wiki/SOCKS_(protocol)#SOCKS5 "wikipedia:SOCKS (protocol)")代理，最初用 Python 编写。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 配置](#配置)
@@ -146,7 +150,7 @@ shadowsocks客户端启动后，其他程序并不会直接应用socks5连接，
 使用[systemd](/index.php/Systemd "Systemd")启动或重启`privoxy.service`服务，就可以使用了。假设转化后的http代理为127.0.0.1:8010，则在终端中启动（以启动chromium为例）：
 
 ```
- $ chromium %U --proxy-server=127.0.0.1:8010
+ $ chromium %U --proxy-server=127.0.0.1:8010
 
 ```
 

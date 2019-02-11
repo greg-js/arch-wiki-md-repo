@@ -2,7 +2,11 @@ NanoPi NEO Plus2 is a minimalist computer built for the [ARMv8-A architecture](h
 
 **Note:** The device is not officially supported by the ALARM project, i.e. please refrain from submitting patches, feature requests or bug reports for it.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Boot order](#Boot_order)

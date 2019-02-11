@@ -2,7 +2,11 @@
 
 This page details on how to setup an own Firefox Sync Server and how to configure the client software to use it.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Server setup](#Server_setup)
     *   [1.1 Installation](#Installation)

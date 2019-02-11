@@ -2,7 +2,11 @@ Bu belge, Arch Linux'u yüklemek için kullanılan canlı sistem kılavuzudur. K
 
 Daha ayrıntılı talimatlar için, bu kılavuzdan sırasıyla [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") makalelerine ya da çeşitli programların olduğu linklere' [man pages](/index.php/Man_page "Man page"), bakınız. İnteraktif yardım için, [IRC kanalını](/index.php/IRC_channel "IRC channel") ve [forumu](https://bbs.archlinux.org/) kullanabilirsiniz.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Kurulum Öncesi](#Kurulum_Öncesi)
     *   [1.1 Klavye düzenini ayarla](#Klavye_düzenini_ayarla)

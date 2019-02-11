@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [PAM](/index.php/PAM "PAM"), revisada por última vez el **2019-01-21**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=PAM&diff=0&oldid=564000) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [PAM](/index.php/PAM "PAM"), revisada por última vez el **2019-02-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=PAM&diff=0&oldid=566242) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -15,7 +15,11 @@ Los [módulos de autenticación conectables de Linux](http://www.linux-pam.org/)
 
 Este artículo explica los valores predeterminados de configuración base de Arch Linux para PAM para autenticar usuarios locales y remotos. La aplicación de cambios a los valores predeterminados está sujeta a artículos especializados reticulados por tema.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Configuración](#Configuración)
@@ -63,7 +67,7 @@ Para una aplicación diferente, se puede aplicar una ruta diferente. Por ejemplo
 
 En consecuencia, la elección del archivo de configuración en la pila es importante. Para el ejemplo anterior, se podría requerir un método de autenticación especial solo para `sshd` o para todos los inicios de sesión remotos cambiando `system-remote-login`; ambos cambios no afectarían los inicios de sesión locales. Aplicar el cambio a `system-login` o `system-auth` en cambio afectaría los inicios de sesión locales y remotos.
 
-Al igual que en el ejemplo de `sshd`, se requiere que cualquier aplicación **consciente de PAM** instale su política en `/etc/pam.d` para integrar y confiar en la pila de PAM apropiadamente. Si una aplicación no lo hace, la política de `/etc/pam.d/other` se aplica por defecto. Se instala una política permisiva por defecto ([FS#48650](https://bugs.archlinux.org/task/48650)).
+Al igual que en el ejemplo de `sshd`, se requiere que cualquier aplicación **consciente de PAM** instale su política en `/etc/pam.d` para integrar y confiar en la pila de PAM apropiadamente. Si una aplicación no lo hace, se aplica la política predeterminada para denegar de `/etc/pam.d/other` y se registra una advertencia.
 
 **Sugerencia:** PAM está enlazado dinámicamente en tiempo de ejecución. Por ejemplo: `$ ldd /usr/bin/login |grep pam` 
 ```

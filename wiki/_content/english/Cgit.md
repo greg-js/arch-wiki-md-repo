@@ -1,6 +1,10 @@
 [Cgit](http://git.zx2c4.com/cgit/) is an attempt to create a fast web interface for the [git](/index.php/Git "Git") version control system, using a built in cache to decrease pressure on the git server.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration of web server](#Configuration_of_web_server)

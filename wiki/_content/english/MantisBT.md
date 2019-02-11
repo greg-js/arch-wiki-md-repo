@@ -1,6 +1,10 @@
 [MantisBT](https://mantisbt.org) (Mantis Bug Tracker) is a bug tracker written in [PHP](/index.php/PHP "PHP"). For a list of features, visit its website.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

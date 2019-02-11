@@ -3,7 +3,11 @@ Este artículo es una traducción de [Ghostscript](/index.php/Ghostscript "Ghost
 
 [Ghostscript](https://en.wikipedia.org/wiki/es:Ghostscript "wikipedia:es:Ghostscript") es un intérprete para PostScript y PDF.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Utilización](#Utilización)

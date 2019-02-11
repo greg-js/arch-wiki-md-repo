@@ -14,7 +14,11 @@ Related articles
 
 This mechanism differs from [Lxc-systemd](/index.php/Lxc-systemd "Lxc-systemd") or [Libvirt](/index.php/Libvirt "Libvirt")-lxc, as it is a much simpler tool to configure.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Examples](#Examples)

@@ -9,7 +9,11 @@ Na biologia, o [mutualismo](https://en.wikipedia.org/wiki/pt:Mutualismo_(biologi
 
 Este artigo descreve como usuários novos e experientes do Arch podem contribuir para a comunidade. Note que não é uma lista exaustiva. Antes de contribuir, por favor esteja familiarizado com o [Código de conduta](/index.php/C%C3%B3digo_de_conduta "Código de conduta").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Comunidade](#Comunidade)
     *   [1.1 Postagens nos fóruns](#Postagens_nos_fóruns)

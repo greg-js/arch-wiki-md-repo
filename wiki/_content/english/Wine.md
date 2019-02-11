@@ -7,7 +7,11 @@ Related articles
 
 **Warning:** If you can access a file or resource with your user account, programs running in Wine can too. See [#Running Wine under a separate user account](#Running_Wine_under_a_separate_user_account) and [Security#Sandboxing applications](/index.php/Security#Sandboxing_applications "Security") for possible precautions.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

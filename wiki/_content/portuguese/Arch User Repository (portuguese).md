@@ -19,7 +19,11 @@ Um bom número de novos pacotes que entram para os repositórios oficiais inicia
 
 **Atenção:** Os pacotes do AUR são conteúdo produzido por usuário. Qualquer uso dos arquivos fornecidos está por sua própria conta e risco.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Começando](#Começando)
 *   [2 História](#História)

@@ -7,7 +7,11 @@ Related articles
 
 Features include: [vi](/index.php/Vi "Vi")-style key bindings, bookmarks, selections, tagging, tabs, command history, the ability to make symbolic links, several console modes, and a task view. *ranger* has customizable commands and key bindings, including bindings to external scripts. Ranger also comes with its own [file opener](/index.php/File_opener "File opener"), [rifle(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/rifle.1). The closest competitors are [Vifm](/index.php/Vifm "Vifm") and [lf](https://github.com/gokcehan/lf).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
@@ -74,14 +78,14 @@ See [ranger(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ranger.1) for general
 To add a keybind that moves files to your trash directory `~/.local/share/Trash/files/` with `DD`, add to `~/.config/ranger/rc.conf`:
 
 ```
-map DD shell mv %s /home/${USER}/.local/share/Trash/files/
+map DD shell mv %s /home/${USER}/.local/share/Trash/files/
 
 ```
 
 Alternatively, use GIO commandline tool provided by [glib2](https://www.archlinux.org/packages/?name=glib2) package:
 
 ```
-map DD shell gio trash %s
+map DD shell gio trash %s
 
 ```
 
@@ -367,7 +371,7 @@ Now you can change your shell binding for ranger:
 
  `rc.conf` 
 ```
-map S shell shellcd %d
+map S shell shellcd %d
 
 ```
 

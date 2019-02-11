@@ -6,7 +6,11 @@ Related articles
 
 This is one of the products from the [Lenovo S-series](http://shop.lenovo.com/de/de/laptops/lenovo/s-series), which is different from the IdeaPad S-Series.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Hardware specifications](#Hardware_specifications)
     *   [1.1 PCI devices](#PCI_devices)

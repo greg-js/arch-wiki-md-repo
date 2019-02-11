@@ -13,7 +13,11 @@ The [RDP Thinbook 1310](https://www.rdp.online/budget-laptops) is an 11.6 inch b
 | Power Management | Seems Fine |
 | Lid/Keyboard | Working |
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Hardware Information](#Hardware_Information)
     *   [1.1 lspci](#lspci)

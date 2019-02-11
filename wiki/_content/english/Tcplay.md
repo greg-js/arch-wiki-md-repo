@@ -8,7 +8,11 @@ Related articles
 
 Source: [github project home](https://github.com/bwalex/tc-play)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Encrypting a file as a virtual volume](#Encrypting_a_file_as_a_virtual_volume)

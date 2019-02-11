@@ -20,7 +20,11 @@ If the host system runs Arch Linux, this can be achieved by simply installing [a
 
 **Warning:** Please make sure you understand each step before proceeding. It is easy to destroy your system or to lose critical data, and your service provider will likely charge a lot to help you recover.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Backup and Preparation](#Backup_and_Preparation)
 *   [2 From a host running Arch Linux](#From_a_host_running_Arch_Linux)

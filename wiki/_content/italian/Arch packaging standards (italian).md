@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Standard di Pacchettizzazione](#Standard_di_Pacchettizzazione)
     *   [1.1 Prototipo di PKGBUILD](#Prototipo_di_PKGBUILD)

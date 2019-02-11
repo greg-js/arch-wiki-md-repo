@@ -5,7 +5,11 @@ Related articles
 
 [rsync](https://rsync.samba.org/) is an open source utility that provides fast incremental file transfer.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Front-ends](#Front-ends)

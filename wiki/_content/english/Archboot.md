@@ -6,7 +6,11 @@ Related articles
 
 It only runs in RAM, without any special filesystems like squashfs, thus it is limited to the RAM which is installed in your system.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 The difference to the archiso install media](#The_difference_to_the_archiso_install_media)

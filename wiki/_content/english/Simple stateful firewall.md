@@ -10,7 +10,11 @@ This page explains how to set up a [stateful](https://en.wikipedia.org/wiki/Stat
 
 **Warning:** The rules below are given in the order they are executed and should only be followed while logged in locally. If you are logged into a remote machine, you may be locked out of the machine while setting up the rules. To get around this problem in a remote setup, the [example config file](#Resulting_iptables.rules_file) can be used.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Prerequisites](#Prerequisites)
 *   [2 Firewall for a single machine](#Firewall_for_a_single_machine)

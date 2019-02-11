@@ -11,7 +11,11 @@ Esta página explica como escrever [PKGBUILDs](/index.php/PKGBUILD_(Portugu%C3%A
 *   [mingw-w64](https://mingw-w64.org): fornece cadeia de ferramentas de 32 e 64 bits com suporte a secure crt, Vista+ API, DDK (ReactOS) e DirectX (WINE). Para uma lista completa dos recursos e diferenças suportados com o antigo MinGW.org, veja [aqui](https://sourceforge.net/p/mingw-w64/wiki2/Feature%20list/). Disponível em [mingw-w64-gcc](https://aur.archlinux.org/packages/mingw-w64-gcc/).
 *   [MinGW](http://www.mingw.org/): fornece cadeia de ferramentas de 32 bits com suporte limitado a DirectX. Ele também sofre com a quebra de longa duração na implementação do armazenamento local de encadeamento e no suporte à biblioteca de ponto flutuante. Foi removido dos repositórios oficiais e do AUR.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Nomenclatura de pacote](#Nomenclatura_de_pacote)
 *   [2 Empacotamento](#Empacotamento)

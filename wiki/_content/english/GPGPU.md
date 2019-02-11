@@ -6,7 +6,11 @@ Related articles
 
 GPGPU stands for [General-purpose computing on graphics processing units](https://en.wikipedia.org/wiki/GPGPU "wikipedia:GPGPU"). In Linux, there are currently two major GPGPU frameworks: [OpenCL](https://en.wikipedia.org/wiki/OpenCL "wikipedia:OpenCL") and [CUDA](https://en.wikipedia.org/wiki/CUDA "wikipedia:CUDA").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 OpenCL](#OpenCL)
     *   [1.1 OpenCL Runtime](#OpenCL_Runtime)

@@ -20,7 +20,11 @@
 
 После создания раздел нужно отформатировать в необходимую вам [файловую систему](/index.php/%D0%A4%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0 "Файловая система"), прежде чем записывать данные на него.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Таблица разделов](#Таблица_разделов)
     *   [1.1 Главная загрузочная запись (MBR)](#Главная_загрузочная_запись_(MBR))

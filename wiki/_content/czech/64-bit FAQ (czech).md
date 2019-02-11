@@ -1,6 +1,10 @@
 Následuje seznam často kladených dotazů k 64-bitovému Archlinuxu (Arch64)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Jak nainstaluji Arch64?](#Jak_nainstaluji_Arch64?)
 *   [2 Do jaké míry je Arch64 hotový? Budu v něm mít všechny své balíčky z 32-bitového Archlinuxu?](#Do_jaké_míry_je_Arch64_hotový?_Budu_v_něm_mít_všechny_své_balíčky_z_32-bitového_Archlinuxu?)

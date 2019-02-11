@@ -8,7 +8,11 @@ This page discusses various multi-platform methods on how to create an Arch Linu
 
 If you would like to run a full install of Arch Linux from a USB drive (i.e. with persistent settings), see [Installing Arch Linux on a USB key](/index.php/Installing_Arch_Linux_on_a_USB_key "Installing Arch Linux on a USB key"). If you would like to use your bootable Arch Linux USB stick as a rescue USB, see [Change root](/index.php/Change_root "Change root").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 BIOS and UEFI bootable USB](#BIOS_and_UEFI_bootable_USB)
     *   [1.1 Using automatic tools](#Using_automatic_tools)
@@ -233,7 +237,7 @@ Syslinux is already preinstalled in `/mnt/usb/arch/boot/syslinux`. Install it co
 
 ```
 > cd bios\
-> for /r %Y in (*.c32) do copy "%Y" "X:\arch\boot\syslinux\" /y
+> for /r %Y in (*.c32) do copy "%Y" "X:\arch\boot\syslinux\" /y
 > copy mbr\*.bin X:\arch\boot\syslinux\ /y
 
 ```

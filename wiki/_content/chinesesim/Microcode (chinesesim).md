@@ -4,7 +4,11 @@
 
 属于Intel Haswell和Broadwell处理器系列的CP US用户必须安装这些微代码更新，以确保系统稳定性。当然，所有用户都应该安装这些更新。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 启用早期微码更新](#启用早期微码更新)

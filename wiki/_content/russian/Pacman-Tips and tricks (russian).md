@@ -7,7 +7,11 @@
 
 Для общих методов улучшения гибкости предоставляемых советов или самого Pacman смотрите [Базовые утилиты](/index.php/%D0%91%D0%B0%D0%B7%D0%BE%D0%B2%D1%8B%D0%B5_%D1%83%D1%82%D0%B8%D0%BB%D0%B8%D1%82%D1%8B "Базовые утилиты") и [Bash](/index.php/Bash_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bash (Русский)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Красота и комфорт](#Красота_и_комфорт)
     *   [1.1 Графические оболочки](#Графические_оболочки)
@@ -136,7 +140,7 @@
 *   Список всех внешних пакетов (обычно загруженных и установленных вручную): `pacman -Qm`.
 *   Список всех родных пакетов (установленных из синхронизированной(ых) баз(ы)): `pacman -Qn`.
 *   Список пакетов по регулярному выражению (regex): `pacman -Qs *regex*`.
-*   Список пакетов по регулярному выражению с пользовательским форматом вывода: `expac -s "%-30n %v" *regex*` (требуется [expac](https://www.archlinux.org/packages/?name=expac)).
+*   Список пакетов по регулярному выражению с пользовательским форматом вывода: `expac -s "%-30n %v" *regex*` (требуется [expac](https://www.archlinux.org/packages/?name=expac)).
 
 #### С размером
 
@@ -184,7 +188,7 @@ $ pacman -Quq|xargs expac -S -H M '%k\t%n' | sort -sh
 Чтобы увидеть список последних 20 установленных пакетов при помощи [expac](https://www.archlinux.org/packages/?name=expac):
 
 ```
-$ expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 20
+$ expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 20
 
 ```
 
@@ -303,7 +307,7 @@ $ pacman -Si *packages* | awk -F'[:<=>]' '/^Depends/ {print $2}' | xargs -n1 | s
 
 ```
 $ expac -l '
-' %E -S *packages* | sort -u
+' %E -S *packages* | sort -u
 
 ```
 
@@ -912,7 +916,7 @@ The [Powerpill wiki page](/index.php/Powerpill "Powerpill") provides basic confi
 Для использования `wget`, во первых [установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [wget](https://www.archlinux.org/packages/?name=wget) а затем отредактируйте `/etc/pacman.conf` приведя в секции `[options]` строку к следующему виду:
 
 ```
-XferCommand = /usr/bin/wget -c -q --show-progress --passive-ftp -O %o %u
+XferCommand = /usr/bin/wget -c -q --show-progress --passive-ftp -O %o %u
 
 ```
 
@@ -927,7 +931,7 @@ XferCommand = /usr/bin/wget -c -q --show-progress --passive-ftp -O %o %u
 Install [aria2](https://www.archlinux.org/packages/?name=aria2), then edit `/etc/pacman.conf` by adding the following line to the `[options]` section:
 
 ```
-XferCommand = /usr/bin/aria2c --allow-overwrite=true --continue=true --file-allocation=none --log-level=error --max-tries=2 --max-connection-per-server=2 --max-file-not-found=5 --min-split-size=5M --no-conf --remote-time=true --summary-interval=60 --timeout=5 --dir=/ --out %o %u
+XferCommand = /usr/bin/aria2c --allow-overwrite=true --continue=true --file-allocation=none --log-level=error --max-tries=2 --max-connection-per-server=2 --max-file-not-found=5 --min-split-size=5M --no-conf --remote-time=true --summary-interval=60 --timeout=5 --dir=/ --out %o %u
 
 ```
 
@@ -955,6 +959,6 @@ See [OPTIONS](http://aria2.sourceforge.net/manual/en/html/aria2c.html#options) i
 
 Есть и другие приложения для загрузок, которые можно использовать с Pacman. Вот они и связанные с ними параметры XferCommand:
 
-*   `snarf`: `XferCommand = /usr/bin/snarf -N %u`
-*   `lftp`: `XferCommand = /usr/bin/lftp -c pget %u`
-*   `axel`: `XferCommand = /usr/bin/axel -n 2 -v -a -o %o %u`
+*   `snarf`: `XferCommand = /usr/bin/snarf -N %u`
+*   `lftp`: `XferCommand = /usr/bin/lftp -c pget %u`
+*   `axel`: `XferCommand = /usr/bin/axel -n 2 -v -a -o %o %u`

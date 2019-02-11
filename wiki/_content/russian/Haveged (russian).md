@@ -8,7 +8,11 @@
 
 **Важно:** Качество сгенерированной энтропии не гарантируется и иногда оспаривается (см. [LCE: Do not play dice with random numbers](https://lwn.net/Articles/525459/) и [Is it appropriate to use haveged as a source of entropy on virtual machines?](http://security.stackexchange.com/questions/34523/is-it-appropriate-to-use-haveged-as-a-source-of-entropy-on-virtual-machines)). Используйте haveged на свой риск или используйте его в паре с аппаратным генератором случайных чисел с помощью [rng-tools](https://www.archlinux.org/packages/?name=rng-tools) (см. секцию [#Альтернативы](#Альтернативы))
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Просмотр доступной энтропии](#Просмотр_доступной_энтропии)

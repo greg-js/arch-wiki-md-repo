@@ -2,7 +2,11 @@
 
 **Note:** X2Go isn't compatible with all desktop environments. You can check [X2Go desktop environment compatibility](http://wiki.x2go.org/doku.php/doc:de-compat) first, especially if you want to shadow your current desktop.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Server configuration](#Server_configuration)

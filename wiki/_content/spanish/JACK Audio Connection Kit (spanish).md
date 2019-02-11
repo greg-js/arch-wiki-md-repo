@@ -7,7 +7,11 @@ De [JACK Audio Connection Kit](https://en.wikipedia.org/wiki/JACK_Audio_Connecti
 
 	JACK Audio Connection Kit (o JACK; un acrónimo recursivo) es un demonio de servidores de sonido profesional que proporciona conexiones de baja latencia en tiempo real para audio y datos MIDI entre aplicaciones que implementan su API.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalacción](#Instalacción)
     *   [1.1 JACK2](#JACK2)

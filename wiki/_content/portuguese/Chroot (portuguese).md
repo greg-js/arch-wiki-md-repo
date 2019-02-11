@@ -8,7 +8,11 @@ Artigos relacionados
 
 [chroot](https://en.wikipedia.org/wiki/pt:Chroot "wikipedia:pt:Chroot") é uma operação que altera o diretório raiz aparente para o processo atual de execução e seus filhos. Um programa que é executado em tal ambiente modificado não consegue acessar os arquivos e comandos fora dessa árvore de diretórios ambiental. Esse ambiente modificado é chamado de um *prisão chroot* (ou *chroot jail*).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Motivação](#Motivação)
 *   [2 Requisitos](#Requisitos)

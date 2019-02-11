@@ -28,7 +28,7 @@ $ xhost -
 
 ```
 
-## A saída 'cannot connect to X server :0.0'
+## A saída 'cannot connect to X server :0.0'
 
 **Atenção:** Este comando desabilita o controle de acesso, o que significa que qualquer usuário no sistema, ou em sua rede se o X estiver ouvindo na rede, tenha acesso ao seu $DISPLAY sem qualquer autenticação. Isso abre uma falha de segurança em seu sistema que permite que outros usuários iniciem aplicativos (incluindo registradores de chaves ou *keyloggers*) em seu servidor X.
 

@@ -13,7 +13,11 @@ Related articles
 
 This article aims to assist users creating their own packages using the Arch Linux "ports-like" [build system](/index.php/Arch_Build_System "Arch Build System"), also for submission in [AUR](/index.php/AUR "AUR"). It covers creation of a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") – a package build description file sourced by `makepkg` to create a binary package from source. If already in possession of a `PKGBUILD`, see [makepkg](/index.php/Makepkg "Makepkg"). For instructions regarding existing rules and ways to improve package quality see [Arch packaging standards](/index.php/Arch_packaging_standards "Arch packaging standards").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Overview](#Overview)
 *   [2 Preparation](#Preparation)

@@ -1,6 +1,10 @@
 **M**usic **O**n **C**onsole jest lekkim odtwarzaczem muzyki składającym się z dwóch części, z serwera (Moc) i z graficznego interfejsu (Mocp). Ogólnie jest podobny do [mpd](/index.php/Music_Player_Daemon_(Polski) "Music Player Daemon (Polski)"), ale w przeciwieństwie do *mpd*, Moc jest instalowany z razem ze standardowym interfejsem. Serwer Moc nie pozwala na zdalny dostęp.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installacja](#Installacja)
 *   [2 Konfiguracja](#Konfiguracja)

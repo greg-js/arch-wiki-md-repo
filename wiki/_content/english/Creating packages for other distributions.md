@@ -4,7 +4,11 @@ Related articles
 
 [Arch is the best](/index.php/Arch_is_the_best "Arch is the best"). But you may still want to package for other distributions.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 General](#General)
 *   [2 Debian](#Debian)

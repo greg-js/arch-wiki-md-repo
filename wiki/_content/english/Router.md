@@ -4,7 +4,11 @@ This article does not attempt to show how to set up a shared connection between 
 
 **Note:** Throughout the article, **intern0** and **extern0** are used as names for the network interfaces. The reasoning is further explained in [#Persistent interface naming](#Persistent_interface_naming).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Hardware Requirements](#Hardware_Requirements)
 *   [2 Network interface configuration](#Network_interface_configuration)

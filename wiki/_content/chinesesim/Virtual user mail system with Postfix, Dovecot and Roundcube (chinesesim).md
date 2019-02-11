@@ -11,7 +11,11 @@ Related articles
 
 本文提供的解决方案将允许您使用当前最好的安全机制，您将能够使用SMTP和SMTPS发送邮件，并使用POP3，POP3S，IMAP和IMAPS接收邮件。 此外，由于使用了PostfixAdmin，配置将很容易，用户将能够使用Roundcube登录。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 配置](#配置)
@@ -532,7 +536,7 @@ mail_plugins=quota
 protocol pop3 {
 	 mail_plugins = quota
 	 pop3_client_workarounds = outlook-no-nuls oe-ns-eoh
-	 pop3_uidl_format = %08Xu%08Xv
+	 pop3_uidl_format = %08Xu%08Xv
 }
 protocol lda {
 	mail_plugins = quota
@@ -545,10 +549,10 @@ protocol imap {
 plugin {
        quota = dict:User quota::proxy::quotadict
        quota_rule2 = Trash:storage=+10%%
-       quota_warning = storage=100%% quota-warning +100 %u
-       quota_warning2 = storage=95%% quota-warning +95 %u
-       quota_warning3 = storage=80%% quota-warning +80 %u
-       quota_warning4 = -storage=100%% quota-warning -100 %u # user is no longer over quota
+       quota_warning = storage=100%% quota-warning +100 %u
+       quota_warning2 = storage=95%% quota-warning +95 %u
+       quota_warning3 = storage=80%% quota-warning +80 %u
+       quota_warning4 = -storage=100%% quota-warning -100 %u # user is no longer over quota
 }
 
 ```

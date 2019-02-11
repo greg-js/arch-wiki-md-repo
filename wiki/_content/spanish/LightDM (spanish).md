@@ -4,7 +4,11 @@ Artículos relacionados
 
 [Lightdm](http://www.freedesktop.org/wiki/Software/LightDM) LighDM es un gestor de sesión inter-escritorio que aspira a ser el estándar para el sistema de ventanas X11 y para [Wayland](/index.php/Wayland "Wayland").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
     *   [1.1 Greeter](#Greeter)

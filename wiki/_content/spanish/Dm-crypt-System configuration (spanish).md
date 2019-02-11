@@ -9,7 +9,11 @@ Este artículo es una traducción de [Dm-crypt/System configuration](/index.php/
 
 **Sugerencia:** Si necesita desbloquear de forma remota la raíz u otros sistemas de archivos de arranque temprano (máquinas sin encabezados, servidores distantes ...), siga las instrucciones específicas de [dm-crypt/Specialties (Español)#Desbloqueo remoto de la partición (u otro volumen) raíz](/index.php/Dm-crypt/Specialties_(Espa%C3%B1ol)#Desbloqueo_remoto_de_la_partición_(u_otro_volumen)_raíz "Dm-crypt/Specialties (Español)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 mkinitcpio](#mkinitcpio)
     *   [1.1 Ejemplos](#Ejemplos)

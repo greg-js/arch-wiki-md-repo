@@ -2,7 +2,11 @@
 
 The official clients are open-source but the code for recent versions is not always immediately published. The server-side code is proprietary.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Chat client plugins](#Chat_client_plugins)

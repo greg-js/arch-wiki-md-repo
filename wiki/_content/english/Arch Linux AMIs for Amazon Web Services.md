@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Running public Arch AMIs](#Running_public_Arch_AMIs)
     *   [1.1 AMI Images from Uplink Labs](#AMI_Images_from_Uplink_Labs)

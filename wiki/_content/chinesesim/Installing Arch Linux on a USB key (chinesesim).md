@@ -8,7 +8,11 @@
 
 本页讨论如何在U盘(闪存盘)上安装一个常规的 Arch，这里的系统是指一个可以升级和使用的系统，而不是一个用来引导系统启动的[USB 安装媒介](/index.php/USB_Installation_Media_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "USB Installation Media (简体中文)")。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 准备](#准备)
 *   [2 安装](#安装)

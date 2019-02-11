@@ -12,7 +12,11 @@ This article discusses the use of Arch Linux on Virtual Private Servers, and inc
 
 *   Since many container-based virtualization environments rely on older kernels, it may be impossible to keep an Arch Linux install up-to-date in such an environment. Linux 2.6.32, used by OpenVZ 6, is not supported by systemd since version 205 (and will not work with systemd-212 or higher). OpenVZ does sometimes backport newer kernel features into its kernel, but as of 2018-06-27, a fresh installation of Arch does not work on OpenVZ 6 kernel version 2.6.32-042stab131.1 . Arch can be installed on OpenVZ 7, with [a minor workaround](#Preparing_the_Arch_build_for_use_on_an_OpenVZ_7_container), as of OpenVZ 7 kernel version 3.10.0-693-21.1.vz7.48.2 .
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Providers that offer Arch Linux](#Providers_that_offer_Arch_Linux)
 *   [2 Installation](#Installation)

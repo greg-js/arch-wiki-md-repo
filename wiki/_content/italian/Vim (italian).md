@@ -2,7 +2,11 @@
 
 Vim è ideato per ridurre al minimo il lavoro delle dita, e non ci sarà mai bisogno di usare il mouse. Questo può sembrare sciocco, ma una volta padroneggiato vim, se ne comprenderà il motivo.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Caratteristiche](#Caratteristiche)
 *   [2 Installazione](#Installazione)
@@ -187,7 +191,7 @@ Oppure è possibile disabilitare questa funzione:
 ```
 set nobackup
 set nowritebackup
-set noswapfile    ! (disabilita i file swap)
+set noswapfile    ! (disabilita i file swap)
 
 ```
 

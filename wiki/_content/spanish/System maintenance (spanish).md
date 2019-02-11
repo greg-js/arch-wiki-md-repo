@@ -7,7 +7,11 @@ Artículos relacionados
 
 El mantenimiento regular del sistema es necesario para el correcto funcionamiento de Arch durante un período de tiempo. El mantenimiento oportuno es una práctica a la que muchos usuarios se acostumbran.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Compruebe si hay errores](#Compruebe_si_hay_errores)
     *   [1.1 Servicios systemd fallidos](#Servicios_systemd_fallidos)

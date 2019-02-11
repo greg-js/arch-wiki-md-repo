@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Nomenclatura del pacchetto](#Nomenclatura_del_pacchetto)
     *   [1.1 Versionamento dei pacchetti](#Versionamento_dei_pacchetti)

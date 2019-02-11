@@ -1,6 +1,10 @@
 [Pantheon](https://bbs.archlinux.org/viewtopic.php?id=152930) is the desktop environment originally created for the [elementary OS](http://elementary.io/) distribution. It is written from scratch in [Vala](https://en.wikipedia.org/wiki/Vala_(programming_language) "wikipedia:Vala (programming language)"), using [GTK3](/index.php/GTK%2B "GTK+") and [Granite](https://github.com/elementary/granite). With regards to usability and appearance, the desktop has some similarities with [GNOME Shell](/index.php/GNOME_Shell "GNOME Shell") and [macOS](https://en.wikipedia.org/wiki/MacOS "wikipedia:MacOS").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Project Status](#Project_Status)
 *   [2 Installation](#Installation)

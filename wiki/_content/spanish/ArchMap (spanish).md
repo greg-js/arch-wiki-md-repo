@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [ArchMap](/index.php/ArchMap "ArchMap"), revisada por última vez el **2018-10-26**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=ArchMap&diff=0&oldid=551255) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [ArchMap](/index.php/ArchMap "ArchMap"), revisada por última vez el **2019-02-09**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=ArchMap&diff=0&oldid=551255) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -7,7 +7,11 @@ Artículos relacionados
 
 El proyecto **ArchMap** crea un mapa de usuarios de Arch Linux de todo el mundo.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Historia](#Historia)
     *   [1.1 Capturas de pantalla](#Capturas_de_pantalla)
@@ -33,7 +37,7 @@ La versión actual fue iniciada por [User:Alux](/index.php/User:Alux "User:Alux"
 He aquí algunas capturas de pantalla de cómo solía verse:
 
 *   [Europa](http://archive.today/AZELb) - 2006
-*   [EEUU](http://archive.today/aQwag) - 2006
+*   [Estados Unidos](http://archive.today/aQwag) - 2006
 *   [América del Sur](http://archive.today/HIlLi) - 2009
 
 ## archmap
@@ -72,4 +76,4 @@ Algunas otras representaciones de los datos están alojadas en [CartoDB](https:/
 
 ## Alístese
 
-Vaya a la página [Lista ArchMap](/index.php/ArchMap/List "ArchMap/List"), siga las instrucciones y luego use el botón [**editar**] para agregarse al mapa.
+Vaya al artículo [Lista ArchMap](/index.php/ArchMap/List "ArchMap/List"), siga las instrucciones y luego use el botón [**editar**] para añadirse al mapa.
