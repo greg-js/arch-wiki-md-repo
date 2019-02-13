@@ -1230,6 +1230,8 @@ See also [[11]](https://bbs.archlinux.org/viewtopic.php?id=135955).
 
 ### Audacity
 
+To work with PulseAudio, Audacity requires the [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa) is installed. This provides the `pulse:...` playback and recording devices.
+
 When starting Audacity you may find that your headphones no longer work. This can be because Audacity is trying to use them as a recording device. To fix this, open Audacity, then set its recording device to `pulse:Internal Mic:0`.
 
 Under some circumstances, playback may be distorted, very fast, or freeze, as discussed in the [Audacity Wiki's Linux Issues page](http://wiki.audacityteam.org/wiki/Linux_Issues#ALSA_and_other_sound_systems).

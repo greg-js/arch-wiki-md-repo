@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [systemd/Journal](/index.php/Systemd/Journal "Systemd/Journal"). Дата последней синхронизации: 7 февраля 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Systemd/Journal&diff=0&oldid=565517).
+**Состояние перевода:** На этой странице представлен перевод статьи [systemd/Journal](/index.php/Systemd/Journal "Systemd/Journal"). Дата последней синхронизации: 11 февраля 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Systemd/Journal&diff=0&oldid=566388).
 
 Основная статья: [systemd (Русский)](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)").
 
@@ -30,57 +30,60 @@
 
 ## Уровни приоритета
 
-Коды уровни важности сообщений syslog (в systemd называются приоритетами) используются для пометки важности сообщений [RFC 5424 Section 6.2.1](https://tools.ietf.org/html/rfc5424#section-6.2.1).
+Коды важности syslog (в systemd называются приоритетами) используются для пометки важности сообщений [RFC 5424 Раздел 6.2.1](https://tools.ietf.org/html/rfc5424#section-6.2.1).
 
 | Значение | Важность | Ключевое слово | Описание | Примеры |
-| 0 | Emergency | emerg | System is unusable | Severe Kernel BUG, [systemd dumped core](/index.php/Systemd-coredump "Systemd-coredump").
-This level should not be used by applications. |
-| 1 | Alert | alert | Should be corrected immediately | Vital subsystem goes out of work. Data loss.
+| 0 | Emergency | emerg | Cистема не работоспособна | Серьёзный баг в ядре, [дамп памяти systemd](/index.php/Systemd-coredump "Systemd-coredump").
+Данный уровень не должен использоваться приложениями. |
+| 1 | Alert | alert | Cистема требует немедленного вмешательства | Отказ важной подсистемы. Потеря данных.
 `kernel: BUG: unable to handle kernel paging request at ffffc90403238ffc`. |
-| 2 | Critical | crit | Critical conditions | Crashes, coredumps. Like familiar flash:
+| 2 | Critical | crit | Cостояние системы критическое | Аварийные отказы, дампы памяти. Например, знакомое сообщение:
 `systemd-coredump[25319]: Process 25310 (plugin-containe) of user 1000 dumped core`
-Failure in the system primary application, like X11. |
-| 3 | Error | err | Error conditions | Not severe error reported:
+Отказ основных приложений системы, например, X11. |
+| 3 | Error | err | Cообщения об ошибках | Сообщение о некритической ошибке:
 `kernel: usb 1-3: 3:1: cannot get freq at ep 0x84`,
 `systemd[1]: Failed unmounting /var.`,
-`libvirtd[1720]: internal error: Failed to initialize a valid firewall backend`). |
-| 4 | Warning | warning | May indicate that an error will occur if action is not taken. | A non-root file system has only 1GB free.
+`libvirtd[1720]: internal error: Failed to initialize a valid firewall backend` |
+| 4 | Warning | warning | Предупреждения о возможных проблемах | В некорневой файловой системе остался всего 1 ГБ свободного места.
 `org.freedesktop. Notifications[1860]: (process:5999): Gtk-WARNING **: Locale not supported by C library. Using the fallback 'C' locale`. |
-| 5 | Notice | notice | Events that are unusual, but not error conditions. | `systemd[1]: var.mount: Directory /var to mount over is not empty, mounting anyway`. `gcr-prompter[4997]: Gtk: GtkDialog mapped without a transient parent. This is discouraged`. |
-| 6 | Informational | info | Normal operational messages that require no action. | `lvm[585]: 7 logical volume(s) in volume group "archvg" now active`. |
-| 7 | Debug | debug | Information useful to developers for debugging the application. | `kdeinit5[1900]: powerdevil: Scheduling inhibition from ":1.14" "firefox" with cookie 13 and reason "screen"`. |
+| 5 | Notice | notice | Cообщения о нормальных, но важных событиях | `systemd[1]: var.mount: Directory /var to mount over is not empty, mounting anyway`,
+`gcr-prompter[4997]: Gtk: GtkDialog mapped without a transient parent. This is discouraged` |
+| 6 | Informational | info | Информационные сообщения | `lvm[585]: 7 logical volume(s) in volume group "archvg" now active` |
+| 7 | Debug | debug | Отладочные сообщения | `kdeinit5[1900]: powerdevil: Scheduling inhibition from ":1.14" "firefox" with cookie 13 and reason "screen"` |
+
+Если вы не можете найти сообщение на ожидаемом уровне, поищите также на несколько уровней выше и ниже: вышеуказанные правила являются рекомендацией и у разработчиков приложений может быть другой взгляд на важность проблемы.
 
 ## Категории
 
-Коды категорий (facility) syslog используются для указания типа программы, добавляющего сообщение в лог [RFC 5424 Section 6.2.1](https://tools.ietf.org/html/rfc5424#section-6.2.1).
+Коды категорий (facility) syslog используются для указания типа программы, добавляющего сообщение в лог [RFC 5424 Раздел 6.2.1](https://tools.ietf.org/html/rfc5424#section-6.2.1).
 
 | Код категории | Ключевое слово | Описание | Информация |
-| 0 | kern | kernel messages |
-| 1 | user | user-level messages |
-| 2 | mail | mail system | Archaic POSIX still supported and sometimes used (for more [mail(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mail.1)) |
-| 3 | daemon | system daemons | All daemons, including systemd and its subsystems |
-| 4 | auth | security/authorization messages | Also watch for different facility 10 |
-| 5 | syslog | messages generated internally by syslogd | For syslogd implementations (not used by systemd, see facility 3) |
-| 6 | lpr | line printer subsystem (archaic subsystem) |
-| 7 | news | network news subsystem (archaic subsystem) |
-| 8 | uucp | UUCP subsystem (archaic subsystem) |
+| 0 | kern | Сообщения ядра |
+| 1 | user | Сообщения программного обеспечения пользователя |
+| 2 | mail | Почтовая система | Архаический POSIX всё ещё поддерживается и иногда используется (см. [mail(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mail.1) для получения более подробной информации) |
+| 3 | daemon | Системные службы | Все демоны, включая systemd и его подсистемы |
+| 4 | auth | Сообщения безопасности (авторизации) | См. также код 10 |
+| 5 | syslog | Собственные сообщения syslogd | Для реализаций syslogd (не используется в systemd, см. код 3) |
+| 6 | lpr | Подсистема печати (архаическая подсистема) |
+| 7 | news | Подсистема новостных групп (архаическая подсистема) |
+| 8 | uucp | Подсистема UUCP (архаическая подсистема) |
 | 9 | clock daemon | systemd-timesyncd |
-| 10 | authpriv | security/authorization messages | Also watch for different facility 4 |
-| 11 | ftp | FTP daemon |
-| 12 | - | NTP subsystem |
-| 13 | - | log audit |
-| 14 | - | log alert |
-| 15 | cron | scheduling daemon |
-| 16 | local0 | local use 0 (local0) |
-| 17 | local1 | local use 1 (local1) |
-| 18 | local2 | local use 2 (local2) |
-| 19 | local3 | local use 3 (local3) |
-| 20 | local4 | local use 4 (local4) |
-| 21 | local5 | local use 5 (local5) |
-| 22 | local6 | local use 6 (local6) |
-| 23 | local7 | local use 7 (local7) |
+| 10 | authpriv | Сообщения безопасности (авторизации) | См. также код 4 |
+| 11 | ftp | Служба FTP |
+| 12 | - | Подсистема NTP |
+| 13 | - | Журнал аудита |
+| 14 | - | Аварийный журнал |
+| 15 | cron | Служба планирования |
+| 16 | local0 | Локальное использование 0 (local0) |
+| 17 | local1 | Локальное использование 1 (local1) |
+| 18 | local2 | Локальное использование 2 (local2) |
+| 19 | local3 | Локальное использование 3 (local3) |
+| 20 | local4 | Локальное использование 4 (local4) |
+| 21 | local5 | Локальное использование 5 (local5) |
+| 22 | local6 | Локальное использование 6 (local6) |
+| 23 | local7 | Локальное использование 7 (local7) |
 
-Полезные категории для наблюдения: 0,1,3,4,9,10,15.
+Полезные категории для наблюдения: 0, 1, 3, 4, 9, 10, 15.
 
 ## Фильтрация вывода
 

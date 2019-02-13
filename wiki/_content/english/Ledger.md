@@ -1,6 +1,10 @@
 [Ledger](http://ledger-cli.org/) is a powerful, double-entry accounting system that is accessed from the UNIX command-line. Ledger, begun in 2003, is written by John Wiegley and released under the BSD license.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
@@ -15,7 +19,7 @@ There are several ports of ledger to various languages. [ledger](https://www.arc
 
 [The online documentation](http://ledger-cli.org/3.0/doc/ledger3.html) contains [a tutorial](http://ledger-cli.org/3.0/doc/ledger3.html#Ledger-Tutorial) to help new users get started.
 
-**Tip:** To avoid having to type `--file /path/to/finances.ledger` every time you invoke ledger, consider setting `LEDGER_FILE` as one of your [Environment variables](/index.php/Environment_variables "Environment variables")
+**Tip:** To avoid having to type `--file /path/to/finances.ledger` every time you invoke ledger, consider setting `LEDGER_FILE` as one of your [Environment variables](/index.php/Environment_variables "Environment variables") or add `--file /path/to/finances.ledger` to your `.ledgerrc`.
 
 Emacs users may be interested in using ledger-mode. ledger-mode is available on MELPA and comes with info, accessible via `C-h i m Ledger mode RET`.
 

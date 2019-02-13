@@ -181,7 +181,7 @@ Where `*N*` is the NVRAM boot entry created for booting `PreLoader.efi`. Check w
 
 ### shim
 
-When run, shim tries to launch `grubx64.efi`, if MokList does not contain the hash of `grubx64.efi` or the key it is signed with, shim will launch MokManager (`mmx64.efi`). In MokManager you must enroll the hash of the EFI binaries you want to launch (your [boot loader](/index.php/Boot_loader "Boot loader") (`grubx64.efi`) and kernel) or enroll the key they are signed with.
+When run, shim tries to launch `grubx64.efi`. If MokList does not contain the hash of `grubx64.efi` or the key it is signed with, shim will launch MokManager (`mmx64.efi`). In MokManager you must enroll the hash of the EFI binaries you want to launch (your [boot loader](/index.php/Boot_loader "Boot loader") (`grubx64.efi`) and kernel) or enroll the key they are signed with.
 
 **Note:** If you use [#shim with hash](#shim_with_hash), each time you update any of the binaries (e.g. boot loader or kernel) you will need to enroll their new hash.
 

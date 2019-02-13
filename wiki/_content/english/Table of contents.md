@@ -1,5 +1,5 @@
 | [English](/index.php/Category:English "Category:English") <small>(2)</small> |
-| <small>1.</small> [About Arch](/index.php/Category:About_Arch "Category:About Arch") <small>(17)</small> |
+| <small>1.</small> [About Arch](/index.php/Category:About_Arch "Category:About Arch") <small>(18)</small> |
 | <small>1.1.</small> [Arch community](/index.php/Category:Arch_community "Category:Arch community") <small>(5)</small> |
 | <small>1.1.1.</small> [Classroom](/index.php/Category:Classroom "Category:Classroom") <small>(2)</small> |
 | <small>1.2.</small> [ArchWiki](/index.php/Category:ArchWiki "Category:ArchWiki") <small>(11)</small> |
@@ -53,7 +53,7 @@
 | <small>3.9.16.</small> [Toshiba](/index.php/Category:Toshiba "Category:Toshiba") <small>(15)</small> |
 | <small>3.9.17.</small> [Xiaomi](/index.php/Category:Xiaomi "Category:Xiaomi") <small>(2)</small> |
 | <small>3.10.</small> [Mainboards and BIOS](/index.php/Category:Mainboards_and_BIOS "Category:Mainboards and BIOS") <small>(4)</small> |
-| <small>3.11.</small> [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices") <small>(18)</small> |
+| <small>3.11.</small> [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices") <small>(19)</small> |
 | <small>3.11.1.</small> [Android](/index.php/Category:Android "Category:Android") <small>(3)</small> |
 | <small>3.12.</small> [Modems](/index.php/Category:Modems "Category:Modems") <small>(17) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
 | <small>3.13.</small> [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware") <small>(22)</small> |
@@ -305,7 +305,7 @@
 | <small>6.17.1.</small> [Network monitoring](/index.php/Category:Network_monitoring "Category:Network monitoring") <small>(9) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
 | <small>6.17.2.</small> [System monitors](/index.php/Category:System_monitors "Category:System monitors") <small>(10) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
 | <small>6.18.</small> [Notification](/index.php/Category:Notification "Category:Notification") <small>(2)</small> |
-| <small>6.19.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(31)</small> |
+| <small>6.19.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(32)</small> |
 | <small>6.20.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(19)</small> |
 | <small>6.21.</small> [Security](/index.php/Category:Security "Category:Security") <small>(36)</small> |
 | <small>6.21.1.</small> [Access control](/index.php/Category:Access_control "Category:Access control") <small>(5)</small> |

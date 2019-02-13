@@ -228,7 +228,7 @@ Device: /dev/sdb [SAT], no ATA CHECK POWER STATUS support, ignoring -n Directive
 
 As an alternative you can user -i option of smartd. It controls how often smartd spins the disks up to check their status. Default is 30 minutes. To change it create and edit `/etc/default/smartmontools`.
 
- `/etc/default/smartmontools`  `SMARTD_ARGS="-i 21600"  Check status every 21600 seconds (3 hours)` 
+ `/etc/default/smartmontools`  `SMARTD_ARGS="-i 10800"  Check status every 10800 seconds (3 hours)` 
 
 For more info see [smartd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smartd.8).
 

@@ -2,7 +2,11 @@ The [X keyboard extension](https://en.wikipedia.org/wiki/X_keyboard_extension "w
 
 This article describes how to modify and create keyboard layouts. If you are looking for how to configure your keyboard, see [Xorg/Keyboard configuration](/index.php/Xorg/Keyboard_configuration "Xorg/Keyboard configuration").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Precautions and preparations](#Precautions_and_preparations)
 *   [2 Getting and setting XKB layout](#Getting_and_setting_XKB_layout)
@@ -294,7 +298,7 @@ A completely irrelevant section describing physical keyboard layout. Can be dele
 
 Check your existing layout first, as it likely contains standard definition for many common keys.
 
-Thoughout the text, "xkb_keycodes { text }" means "text" should be added to xkb_keycodes section. Whenever it's clear from context, section names are omitted.
+Throughout the text, "xkb_keycodes { text }" means "text" should be added to xkb_keycodes section. Whenever it's clear from context, section names are omitted.
 
 ### Simple key assignment
 
@@ -355,6 +359,19 @@ with
 
 ```
    key <LFSH> {         [         ISO_Level2_Latch ] };
+
+```
+
+You might also need to add the following to `/usr/share/X11/xkb/compat/basic`
+
+```
+   interpret ISO_Level2_Latch+AnyOf(all) {
+       useModMapMods=level1;
+       action= LatchMods(modifiers=Shift,clearLocks,latchToLock);
+   };
+   interpret ISO_Level2_Latch+AnyOfOrNone(all) {
+       action= LatchMods(modifiers=Shift,clearLocks,latchToLock);
+   };
 
 ```
 

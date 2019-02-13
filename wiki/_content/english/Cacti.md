@@ -70,6 +70,10 @@ Alias /cacti /usr/share/webapps/cacti
 
 ```
 
+If the Cacti configuration is in a separate file, remember to add `Include conf/extra/cacti.conf` to `/etc/httpd/conf/httpd.conf`.
+
+The file `/usr/share/webapps/cacti/.htaccess` also controls access. Configure or remove it.
+
 ### Nginx
 
 When using [Nginx](/index.php/Nginx "Nginx"), the following configuration snippet works for a subdomain:
@@ -107,10 +111,6 @@ server {
 Edit the following parameter:
 
  `/usr/share/webapps/cacti/include/config.php`  `$url_path = '/';` 
-
-If the Cacti configuration is in a separate file, remember to add `Include conf/extra/cacti.conf` to `/etc/httpd/conf/httpd.conf`.
-
-The file `/usr/share/webapps/cacti/.htaccess` also controls access. Configure or remove it.
 
 Cacti needs to have permission to write its gathered data and log messages to disk:
 

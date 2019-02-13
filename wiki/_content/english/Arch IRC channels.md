@@ -118,6 +118,7 @@ International discussions are available at the following channels, also located 
 | [#archlinux.org.pl](ircs://chat.freenode.net/archlinux.org.pl) | Discussion (Polish) |
 | [#archlinux-pt](ircs://chat.freenode.net/archlinux-pt) | Discussion (Portuguese) |
 | [#archlinux.ro](ircs://chat.freenode.net/archlinux.ro) | Discussion (Romanian) |
+| [#archlinux-tg](ircs://chat.freenode.net/archlinux-tg) | Discussion (Russian); bridge between IRC and Telegram group [Arch Linux RU](https://t.me/ArchLinuxChatRU) |
 | [#archlinux-ru](ircs://chat.freenode.net/archlinux-ru) | Discussion (Russian); also on **[irc.mibbit.net#archlinux-ru](irc://irc.mibbit.net/archlinux-ru)** |
 | [#archlinux-rs](ircs://chat.freenode.net/archlinux-rs) | Discussion (Serbian) |
 | [#archlinux-es](ircs://chat.freenode.net/archlinux-es) | Discussion (Spanish) |
@@ -125,4 +126,3 @@ International discussions are available at the following channels, also located 
 | [#archlinux-tr](ircs://chat.freenode.net/archlinux-tr) | Discussion (Turkish) |
 | [#archlinux-ve](ircs://chat.freenode.net/archlinux-ve) | Discussion (Venezuela) |
 | [#archlinuxvn](ircs://chat.freenode.net/archlinuxvn) | Discussion (Vietnamese, Tiếng Việt) |
-| [#archlinux-tg](ircs://chat.freenode.net/archlinux-tg) | IRC to Telegram bridge into [ArchlinuxChatRU](https://t.me/ArchlinuxChatRU) (Russian) |

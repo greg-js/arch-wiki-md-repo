@@ -223,7 +223,6 @@ Supported only in Git master branch, there's no updated stable release yet.
 
  |
 | [node-gyp](https://github.com/nodejs/node-gyp) | `~/.node-gyp` | [2b5ce52a](https://github.com/nodejs/node-gyp/commit/2b5ce52a) | [[37]](https://github.com/nodejs/node-gyp/pull/1570) | Only available on master as of 2018-12-04. |
-| [NVIDIA](/index.php/NVIDIA "NVIDIA") | `~/.nv` |
 | [OfflineIMAP](/index.php/OfflineIMAP "OfflineIMAP") | `~/.offlineimaprc` | [5150de5](https://github.com/OfflineIMAP/offlineimap/commit/5150de5) | [[38]](https://github.com/OfflineIMAP/offlineimap/issues/32) |
 | [opentyrian](https://aur.archlinux.org/packages/opentyrian/) | `~/.opentyrian` | [8d45ff2](https://bitbucket.org/opentyrian/opentyrian/commits/8d45ff2) | [[39]](https://web.archive.org/web/20140815181350/http://code.google.com/p/opentyrian/issues/detail?id=125) |
 | [pcsx2](https://www.archlinux.org/packages/?name=pcsx2) | `~/.pcsx2` | 
@@ -510,6 +509,7 @@ init-module=${XDG_CONFIG_HOME}/npm/config/npm-init.js
 `prefix` is unnecessary (and unsupported) if Node.js is installed by [nvm](https://aur.archlinux.org/packages/nvm/).
 
  |
+| [NVIDIA](/index.php/NVIDIA "NVIDIA") | `~/.nv` | Uses XDG_CACHE_HOME if set, otherwise improperly falls back to ~/.nv instead of ~/.cache. |
 | [nvidia-settings](https://www.archlinux.org/packages/?name=nvidia-settings) | `~/.nvidia-settings-rc` | `$ nvidia-settings --config="$XDG_CONFIG_HOME"/nvidia/settings` |
 | [nvm](https://aur.archlinux.org/packages/nvm/) | `~/.nvm` | `$ export NVM_DIR="$XDG_DATA_HOME"/nvm` |
 | [Octave](/index.php/Octave "Octave") | 
@@ -901,6 +901,8 @@ export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
 	Rust
 
 	[directories-rs](https://github.com/soc/directories-rs)
+
+	[rust-xdg](https://github.com/whitequark/rust-xdg)
 
 	Python
 

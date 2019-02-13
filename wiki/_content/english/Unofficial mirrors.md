@@ -148,6 +148,7 @@ These [mirrors](/index.php/Mirrors "Mirrors") are *not* listed in `/etc/pacman.d
 *   [http://mirror.ziemer.bz/archlinux](http://mirror.ziemer.bz/archlinux)
 *   [https://lug.mines.edu/mirrors/archlinux/](https://lug.mines.edu/mirrors/archlinux/)
 *   [http://mirror.cs.umn.edu/arch/](http://mirror.cs.umn.edu/arch/)
+*   [http://mirror.katie.host/archlinux/](http://mirror.katie.host/archlinux/) - *Has auto-generated deltas for the last 3 months to current version. Deltas mirrored from [here](http://archlinux.uk.mirror.allworldit.com/archlinux-deltarepo/). Check [here](https://bbs.archlinux.org/viewtopic.php?id=243247) for more info*
 
 ## Sourceforge (old ISOs)
 

@@ -1,19 +1,25 @@
-**翻译状态：** 本文是英文页面 [Vivaldi](/index.php/Vivaldi "Vivaldi") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-07-05，点击[这里](https://wiki.archlinux.org/index.php?title=Vivaldi&diff=0&oldid=481339)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Vivaldi](/index.php/Vivaldi "Vivaldi") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-02-12，点击[这里](https://wiki.archlinux.org/index.php?title=Vivaldi&diff=0&oldid=545158)可以查看翻译后英文页面的改动。
 
-[Vivaldi](http://vivaldi.com/) 是由前 [Opera](/index.php/Opera "Opera") 团队成员新近开发的一款浏览器。Vivaldi 基于 [Chromium](/index.php/Chromium "Chromium") 开发，专注于个性化体验。
+[Vivaldi](http://vivaldi.com/) 是由前 [Opera](/index.php/Opera "Opera") 创立者和开发团队成员新近开发的一款浏览器。Vivaldi 基于 [Chromium](/index.php/Chromium "Chromium") 开发，专注于个性化体验。
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 扩展程序](#.E6.89.A9.E5.B1.95.E7.A8.8B.E5.BA.8F)
-*   [3 媒体播放](#.E5.AA.92.E4.BD.93.E6.92.AD.E6.94.BE)
-*   [4 排错](#.E6.8E.92.E9.94.99)
-    *   [4.1 无法将 Vivaldi 设为默认浏览器](#.E6.97.A0.E6.B3.95.E5.B0.86_Vivaldi_.E8.AE.BE.E4.B8.BA.E9.BB.98.E8.AE.A4.E6.B5.8F.E8.A7.88.E5.99.A8)
-*   [5 参阅](#.E5.8F.82.E9.98.85)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 安装](#安装)
+*   [2 扩展程序](#扩展程序)
+*   [3 媒体播放](#媒体播放)
+*   [4 排错](#排错)
+    *   [4.1 无法将 Vivaldi 设为默认浏览器](#无法将_Vivaldi_设为默认浏览器)
+*   [5 参阅](#参阅)
 
 ## 安装
 
 可以从 AUR 安装 Vivaldi 的正式版（[vivaldi](https://aur.archlinux.org/packages/vivaldi/)）或快照版（[vivaldi-snapshot](https://aur.archlinux.org/packages/vivaldi-snapshot/)）。 或者也可以添加 [herecura](/index.php/Unofficial_user_repositories#herecura "Unofficial user repositories") 的非官方源，安装预构建的包。
+
+若需将 [GTK+](/index.php/GTK%2B "GTK+") 风格的文件选择对话框替换成 [Qt](/index.php/Qt "Qt") 风格，只要安装 [kdialog](https://www.archlinux.org/packages/?name=kdialog) 包即可。
 
 ## 扩展程序
 

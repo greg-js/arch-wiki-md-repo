@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [HP Envy 14-j106tx](/index.php/HP_Envy_14-j106tx "HP Envy 14-j106tx"), revisada por última vez el **2019-02-09**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=HP_Envy_14-j106tx&diff=0&oldid=557709) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [HP Envy 14-j106tx](/index.php/HP_Envy_14-j106tx "HP Envy 14-j106tx"), revisada por última vez el **2019-02-11**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=HP_Envy_14-j106tx&diff=0&oldid=557709) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 | **Dispositivo** | **Estado** | **Módulos** |
 | Intel | **Funciona** | xf86-video-intel |
@@ -23,7 +23,7 @@ Este artículo es una traducción de [HP Envy 14-j106tx](/index.php/HP_Envy_14-j
 
 *RAM* 8 GB (4GB x 2)
 
-*Monitor* 14" diagonal FHD anti-glare WLED-backlit (1920 x 1080)
+*Pantalla* 14" diagonal FHD anti-glare WLED-backlit (1920 x 1080)
 
 *Tarjeta gráfica* NVIDIA GeForce GTX 950M (4 GB DDR3L dedicated)
 

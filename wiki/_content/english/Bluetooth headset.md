@@ -16,7 +16,7 @@ Currently, Arch Linux supports the A2DP profile (Audio Sink) for remote audio pl
     *   [1.1 Configuration via CLI](#Configuration_via_CLI)
         *   [1.1.1 Setting up auto connection](#Setting_up_auto_connection)
     *   [1.2 Configuration via GNOME Bluetooth](#Configuration_via_GNOME_Bluetooth)
-    *   [1.3 LDAC](#LDAC)
+    *   [1.3 LDAC/aptX](#LDAC/aptX)
     *   [1.4 Troubleshooting](#Troubleshooting)
         *   [1.4.1 Bad sound / Static noise / "Muddy" sound](#Bad_sound_/_Static_noise_/_"Muddy"_sound)
         *   [1.4.2 Selected audio profile, but headset inactive and audio cannot be redirected](#Selected_audio_profile,_but_headset_inactive_and_audio_cannot_be_redirected)
@@ -168,9 +168,9 @@ First, you need to be sure that `bluetooth.service` systemd unit is running.
 
 Open GNOME Bluetooth and activate the bluetooth. After scanning for devices, you can connect to your headset selecting it on the device list. You can directly access to sound configuration panel from the device menu. On the sound panel, a new sink should appear when your device is connected.
 
-### LDAC
+### LDAC/aptX
 
-[LDAC](https://en.wikipedia.org/wiki/LDAC_(codec) support can be enabled by installing [pulseaudio-modules-bt-git](https://aur.archlinux.org/packages/pulseaudio-modules-bt-git/) and [libldac](https://aur.archlinux.org/packages/libldac/). See its [project page](https://github.com/EHfive/pulseaudio-modules-bt) for configuration tips.
+[LDAC](https://en.wikipedia.org/wiki/LDAC_(codec) "wikipedia:LDAC (codec)")/[aptX](https://en.wikipedia.org/wiki/aptX "wikipedia:aptX") codec support can be enabled by installing [pulseaudio-modules-bt-git](https://aur.archlinux.org/packages/pulseaudio-modules-bt-git/) and [libldac](https://aur.archlinux.org/packages/libldac/). See its [project page](https://github.com/EHfive/pulseaudio-modules-bt) for configuration tips.
 
 ### Troubleshooting
 

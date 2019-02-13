@@ -89,7 +89,7 @@
 | <small>4.7.</small> [Módems](/index.php/Category:Modems_(Espa%C3%B1ol) "Category:Modems (Español)") <small>(3) (también en [Hardware](/index.php/Category:Hardware_(Espa%C3%B1ol) "Category:Hardware (Español)"))</small> |
 | <small>4.8.</small> [Configuración de conexiones de red](/index.php/Category:Network_configuration_(Espa%C3%B1ol) "Category:Network configuration (Español)") <small>(7)</small> |
 | <small>4.8.1.</small> [Gestores de red](/index.php/Category:Network_managers_(Espa%C3%B1ol) "Category:Network managers (Español)") <small>(4)</small> |
-| <small>4.9.</small> [Compartir en red](/index.php/Category:Network_sharing_(Espa%C3%B1ol) "Category:Network sharing (Español)") <small>(2)</small> |
+| <small>4.9.</small> [Compartir en red](/index.php/Category:Network_sharing_(Espa%C3%B1ol) "Category:Network sharing (Español)") <small>(3)</small> |
 | <small>4.10.</small> [Punto-a-punto](/index.php/Category:Peer-to-peer_(Espa%C3%B1ol) "Category:Peer-to-peer (Español)") <small>(0)</small> |
 | <small>4.10.1.</small> [BitTorrent](/index.php/Category:BitTorrent_(Espa%C3%B1ol) "Category:BitTorrent (Español)") <small>(2) (también en [Aplicaciones de internet](/index.php/Category:Internet_applications_(Espa%C3%B1ol) "Category:Internet applications (Español)"), [Protocolos](/index.php/Category:Protocols_(Espa%C3%B1ol) "Category:Protocols (Español)"))</small> |
 | <small>4.11.</small> [Protocolos](/index.php/Category:Protocols_(Espa%C3%B1ol) "Category:Protocols (Español)") <small>(2)</small> |
@@ -99,7 +99,7 @@
 | <small>4.11.4.</small> [Protocolo de transferencia de archivos (FTP)](/index.php/Category:File_Transfer_Protocol_(Espa%C3%B1ol) "Category:File Transfer Protocol (Español)") <small>(1)</small> |
 | <small>4.11.4.1.</small> [Servidores FTP](/index.php/Category:FTP_servers_(Espa%C3%B1ol) "Category:FTP servers (Español)") <small>(2) (también en [Servidores](/index.php/Category:Servers_(Espa%C3%B1ol) "Category:Servers (Español)"))</small> |
 | <small>4.11.5.</small> [Protocolo de tiempo de red (NTP)](/index.php/Category:Network_Time_Protocol_(Espa%C3%B1ol) "Category:Network Time Protocol (Español)") <small>(1) (también en [Servidores](/index.php/Category:Servers_(Espa%C3%B1ol) "Category:Servers (Español)"), [Sincronización](/index.php/Category:Synchronization_(Espa%C3%B1ol) "Category:Synchronization (Español)"))</small> |
-| <small>4.11.6.</small> [Intérprete seguro de órdenes](/index.php/Category:Secure_Shell_(Espa%C3%B1ol) "Category:Secure Shell (Español)") <small>(4) (también en [Seguridad](/index.php/Category:Security_(Espa%C3%B1ol) "Category:Security (Español)"))</small> |
+| <small>4.11.6.</small> [Intérprete seguro de órdenes](/index.php/Category:Secure_Shell_(Espa%C3%B1ol) "Category:Secure Shell (Español)") <small>(5) (también en [Seguridad](/index.php/Category:Security_(Espa%C3%B1ol) "Category:Security (Español)"))</small> |
 | <small>4.11.7.</small> [Seguridad de la capa de transporte](/index.php/Category:Transport_Layer_Security_(Espa%C3%B1ol) "Category:Transport Layer Security (Español)") <small>(1) (también en [Criptografía](/index.php/Category:Cryptography_(Espa%C3%B1ol) "Category:Cryptography (Español)"))</small> |
 | <small>4.11.8.</small> [WebDAV](/index.php/Category:WebDAV_(Espa%C3%B1ol) "Category:WebDAV (Español)") <small>(2) (también en [Servidores](/index.php/Category:Servers_(Espa%C3%B1ol) "Category:Servers (Español)"))</small> |
 | <small>4.11.9.</small> [XMPP](/index.php/Category:XMPP_(Espa%C3%B1ol) "Category:XMPP (Español)") <small>(2) (también en [Mensajería instantánea](/index.php/Category:Instant_messaging_(Espa%C3%B1ol) "Category:Instant messaging (Español)"), [Servidores](/index.php/Category:Servers_(Espa%C3%B1ol) "Category:Servers (Español)"))</small> |
@@ -260,7 +260,7 @@
 | <small>6.8.</small> [Compartir archivos](/index.php/Category:File_sharing_(Espa%C3%B1ol) "Category:File sharing (Español)") <small>(0) (también en [Aplicaciones de internet](/index.php/Category:Internet_applications_(Espa%C3%B1ol) "Category:Internet applications (Español)"))</small> |
 | <small>6.9.</small> [Sistemas de archivos](/index.php/Category:File_systems_(Espa%C3%B1ol) "Category:File systems (Español)") <small>(13)</small> |
 | <small>6.9.1.</small> [Cifrado de disco](/index.php/Category:Disk_encryption_(Espa%C3%B1ol) "Category:Disk encryption (Español)") <small>(11) (también en [Cifrado](/index.php/Category:Encryption_(Espa%C3%B1ol) "Category:Encryption (Español)"))</small> |
-| <small>6.9.2.</small> [FUSE](/index.php/Category:FUSE_(Espa%C3%B1ol) "Category:FUSE (Español)") <small>(3)</small> |
+| <small>6.9.2.</small> [FUSE](/index.php/Category:FUSE_(Espa%C3%B1ol) "Category:FUSE (Español)") <small>(4)</small> |
 | <small>6.9.3.</small> [Virtualización de almacenamiento](/index.php/Category:Storage_virtualization_(Espa%C3%B1ol) "Category:Storage virtualization (Español)") <small>(3)</small> |
 | <small>6.10.</small> [Freedesktop.org](/index.php/Category:Freedesktop.org_(Espa%C3%B1ol) "Category:Freedesktop.org (Español)") <small>(1)</small> |
 | <small>6.11.</small> [Interfaz gráfico de usuario](/index.php/Category:Graphical_user_interfaces_(Espa%C3%B1ol) "Category:Graphical user interfaces (Español)") <small>(4)</small> |
@@ -285,7 +285,7 @@
 | <small>6.17.1.</small> [Monitores del sistema](/index.php/Category:System_monitors_(Espa%C3%B1ol) "Category:System monitors (Español)") <small>(1) (también en [Aplicaciones](/index.php/Category:Applications_(Espa%C3%B1ol) "Category:Applications (Español)"))</small> |
 | <small>6.18.</small> [Gestión de paquetes](/index.php/Category:Package_management_(Espa%C3%B1ol) "Category:Package management (Español)") <small>(21)</small> |
 | <small>6.19.</small> [Gestión de energía](/index.php/Category:Power_management_(Espa%C3%B1ol) "Category:Power management (Español)") <small>(4)</small> |
-| <small>6.20.</small> [Seguridad](/index.php/Category:Security_(Espa%C3%B1ol) "Category:Security (Español)") <small>(10)</small> |
+| <small>6.20.</small> [Seguridad](/index.php/Category:Security_(Espa%C3%B1ol) "Category:Security (Español)") <small>(11)</small> |
 | <small>6.20.1.</small> [Redes de anonimato](/index.php/Category:Anonymity_networks_(Espa%C3%B1ol) "Category:Anonymity networks (Español)") <small>(3) (también en [Aplicaciones de internet](/index.php/Category:Internet_applications_(Espa%C3%B1ol) "Category:Internet applications (Español)"))</small> |
 | <small>6.20.2.</small> [Autenticación](/index.php/Category:Authentication_(Espa%C3%B1ol) "Category:Authentication (Español)") <small>(2)</small> |
 | <small>6.20.3.</small> [Criptografía](/index.php/Category:Cryptography_(Espa%C3%B1ol) "Category:Cryptography (Español)") <small>(1)</small> |
@@ -296,7 +296,7 @@
 | <small>6.20.4.</small> [Cortafuegos](/index.php/Category:Firewalls_(Espa%C3%B1ol) "Category:Firewalls (Español)") <small>(6) (también en [Administración de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)"))</small> |
 | <small>6.20.5.</small> [Servidores proxy](/index.php/Category:Proxy_servers_(Espa%C3%B1ol) "Category:Proxy servers (Español)") <small>(1) (también en [Servidores](/index.php/Category:Servers_(Espa%C3%B1ol) "Category:Servers (Español)"))</small> |
 | <small>6.20.6.</small> [Sandboxing](/index.php/Category:Sandboxing_(Espa%C3%B1ol) "Category:Sandboxing (Español)") <small>(1)</small> |
-| <small>6.20.7.</small> [Intérprete seguro de órdenes](/index.php/Category:Secure_Shell_(Espa%C3%B1ol) "Category:Secure Shell (Español)") <small>(4) (también en [Protocolos](/index.php/Category:Protocols_(Espa%C3%B1ol) "Category:Protocols (Español)"))</small> |
+| <small>6.20.7.</small> [Intérprete seguro de órdenes](/index.php/Category:Secure_Shell_(Espa%C3%B1ol) "Category:Secure Shell (Español)") <small>(5) (también en [Protocolos](/index.php/Category:Protocols_(Espa%C3%B1ol) "Category:Protocols (Español)"))</small> |
 | <small>6.20.8.</small> [Pruebas de seguridad](/index.php/Category:Security_testing_(Espa%C3%B1ol) "Category:Security testing (Español)") <small>(1)</small> |
 | <small>6.20.9.</small> [Red privada virtual (VPN)](/index.php/Category:Virtual_Private_Network_(Espa%C3%B1ol) "Category:Virtual Private Network (Español)") <small>(1) (también en [Administración de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)"), [Servidores](/index.php/Category:Servers_(Espa%C3%B1ol) "Category:Servers (Español)"))</small> |
 | <small>6.20.9.1.</small> [Proveedores VPN](/index.php/Category:VPN_providers_(Espa%C3%B1ol) "Category:VPN providers (Español)") <small>(1)</small> |

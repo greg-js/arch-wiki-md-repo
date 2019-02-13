@@ -240,6 +240,8 @@ i3-dmenu-desktop, [j4-dmenu-desktop](https://aur.archlinux.org/packages/j4-dmenu
 
 One alternative is [bemenu-git](https://aur.archlinux.org/packages/bemenu-git/), which is a native Wayland dmenu replacement.
 
+Or you can build your own with a floating terminal and fzf (Discussed in an [GitHub Issue](https://github.com/swaywm/sway/issues/1367)).
+
 The reason for this issue is that Wayland clients/windows do not have access to input devices unless they have focus of the screen. The XWayland server is itself a client to the Wayland compositor, so one of its XWayland clients must have focus for it to access user input. However, once one of its clients has focus, it can gather input and make it available to all XWayland clients through the X11 protocol.
 
 ### VirtualBox

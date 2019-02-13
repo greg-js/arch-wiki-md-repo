@@ -15,7 +15,7 @@ The Arch User Repository (AUR) is a community-driven repository for Arch users. 
 
 A good number of new packages that enter the official repositories start in the AUR. In the AUR, users are able to contribute their own package builds (PKGBUILD and related files). The AUR community has the ability to vote for packages in the AUR. If a package becomes popular enough — provided it has a compatible license and good packaging technique — it may be entered into the *community* repository (directly accessible by [pacman](/index.php/Pacman "Pacman") or [abs](/index.php/Abs "Abs")).
 
-**Warning:** AUR packages are user produced content. Any use of the provided files is at your own risk.
+**Warning:** AUR packages are user produced content with no official support. Any use of the provided files is at your own risk.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -39,6 +39,9 @@ A good number of new packages that enter the official repositories start in the 
         *   [5.1.4 Publishing new package content](#Publishing_new_package_content)
     *   [5.2 Maintaining packages](#Maintaining_packages)
     *   [5.3 Other requests](#Other_requests)
+        *   [5.3.1 Deletion](#Deletion)
+        *   [5.3.2 Merge](#Merge)
+        *   [5.3.3 Orphan](#Orphan)
 *   [6 Web interface translation](#Web_interface_translation)
 *   [7 Comment syntax](#Comment_syntax)
 *   [8 FAQ](#FAQ)
@@ -255,7 +258,7 @@ warning: You appear to have cloned an empty repository.
 Checking connectivity... done.
 ```
 
-**Note:** The repository will not be empty if `*pkgbase*` matches a [deleted](#Other_requests) package.
+**Note:** The repository will not be empty if `*pkgbase*` matches a [deleted](#Deletion) package.
 
 If you already have a package, [initialize it](/index.php/Git#Getting_a_Git_repository "Git") as a Git repository if it isn't one, and add an AUR remote:
 
@@ -301,15 +304,27 @@ $ git push
 
 ### Other requests
 
-Orphan, deletion and merge requests can be created by clicking on the "Submit Request" link under "Package Actions" on the right hand side. This automatically sends a notification email to the current package maintainer and to the [aur-requests mailing list](https://mailman.archlinux.org/mailman/listinfo/aur-requests) for discussion. [Trusted Users](/index.php/Trusted_Users "Trusted Users") will then either accept or reject the request.
+[Deletion](#Deletion), [merge](#Merge), and [orphan](#Orphan) requests can be created by clicking on the "Submit Request" link under "Package Actions" on the right hand side. This will send a notification email to the current maintainer and to the [aur-requests mailing list](https://mailman.archlinux.org/mailman/listinfo/aur-requests) for discussion. A [Trusted User](/index.php/Trusted_User "Trusted User") will then either accept or reject the request.
 
-*   Orphan requests will be granted after two weeks if the current maintainer did not react.
-*   Merge requests are to delete the package base and transfer its votes and comments to another package base. The name of the package base to merge into is required. Note this has nothing to do with 'git merge' or GitLab's merge requests.
-*   Deletion requests require the following information:
-    *   A short note explaining the reason for deletion. Note that a package's comments does not sufficiently point out the reasons why a package is up for deletion. Because as soon as a TU takes action, the only place where such information can be obtained is the aur-requests mailing list.
-    *   Supporting details, like when a package is provided by another package, if you are the maintainer yourself, it is renamed and the original owner agreed, etc.
-    *   Deletion requests can be rejected, in which case if you are the maintainer of the package you will likely be advised to disown the package to allow adoption by another packager.
-    *   After a package is deleted, its Git repository remains available in the AUR.
+#### Deletion
+
+You may request to *unlist* a `*pkgbase*` from the AUR. A short note explaining the reason for deletion is required, as well as supporting details (like when a package is provided by another package, if you are the maintainer yourself, it is renamed and the original owner agreed, etc).
+
+**Note:**
+
+*   It is not sufficient to explain why a package is up for deletion only in its comments because as soon as a TU takes action, the only place where such information can be obtained is the aur-requests mailing list.
+*   Deletion requests can be rejected, in which case if you are the maintainer you will likely be advised to disown the package to allow adoption by another maintainer.
+*   After a package is "deleted", its [git](/index.php/Git "Git") repository remains available for [cloning](/index.php/Arch_User_Repository#Acquire_build_files "Arch User Repository").
+
+#### Merge
+
+You may request to delete a `*pkgbase*` and transfer its votes and comments to another `*pkgbase*`. The name of the package to merge into is required.
+
+**Note:** This has nothing to do with 'git merge' or GitLab's merge requests.
+
+#### Orphan
+
+You may request that a `*pkgbase*` be disowned. These requests will be granted after two weeks if the current maintainer did not react.
 
 ## Web interface translation
 

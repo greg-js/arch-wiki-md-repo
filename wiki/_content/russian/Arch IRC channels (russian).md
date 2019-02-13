@@ -58,10 +58,10 @@
 | [#archlinux-ir](irc://irc.freenode.net/archlinux-ir) | Обсуждение (Persian) |
 | [#archlinux.org.pl](irc://irc.freenode.net/archlinux.org.pl) | Обсуждение (Polish) |
 | [#archlinux.ro](irc://irc.freenode.net/archlinux.ro) | Обсуждение (Romanian) |
+| [#archlinux-tg](ircs://chat.freenode.net/archlinux-tg) | Обсуждение (Russian); мост между IRC и Телеграм-группой [Arch Linux RU](https://t.me/ArchLinuxChatRU) |
 | [#archlinux-ru](irc://irc.mibbit.net/archlinux-ru) (Mibbit) | Обсуждение (Russian); также на [freenode](irc://irc.freenode.net/archlinux-ru) (неоф.) |
 | [#archlinux-rs](irc://irc.freenode.net/archlinux-rs) | Обсуждение (Serbian) |
 | [#archlinux-es](irc://irc.freenode.net/archlinux-es) | Обсуждение (Spanish) |
 | [#archlinux.se](irc://irc.freenode.net/archlinux.se) | Обсуждение (Swedish) |
 | [#archlinux-ve](irc://irc.freenode.net/archlinux-ve) | Обсуждение (Venezuela) |
 | [#archlinuxvn](irc://irc.freenode.net/archlinuxvn) | Обсуждение (Vietnamese, Tiếng Việt) |
-| [#archlinux-tg](irc://irc.freenode.net/archlinux-tg) | Мост в телеграм-группу [ArchlinuxChatRU](https://t.me/ArchlinuxChatRU) (Russian) |

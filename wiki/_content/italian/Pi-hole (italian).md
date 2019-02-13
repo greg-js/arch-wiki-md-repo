@@ -26,6 +26,7 @@ Articoli correlati
         *   [1.3.1 Risoluzione dei problemi](#Risoluzione_dei_problemi)
     *   [1.4 Usare Pi-hole attraverso OpenVPN](#Usare_Pi-hole_attraverso_OpenVPN)
     *   [1.5 Proteggere con password l'interfaccia web](#Proteggere_con_password_l'interfaccia_web)
+    *   [1.6 Usare DNS Over HTTPS (DOH)](#Usare_DNS_Over_HTTPS_(DOH))
 *   [2 Pi-hole Standalone](#Pi-hole_Standalone)
     *   [2.1 Installazione](#Installazione_2)
     *   [2.2 Configurazione iniziale](#Configurazione_iniziale_2)
@@ -37,9 +38,13 @@ Articoli correlati
     *   [3.1 Gestione dei DNS di Pi-hole](#Gestione_dei_DNS_di_Pi-hole)
     *   [3.2 Aggiornamento forzato della lista dei domini pubblicitari](#Aggiornamento_forzato_della_lista_dei_domini_pubblicitari)
     *   [3.3 Disabilitare temporaneamente Pi-hole](#Disabilitare_temporaneamente_Pi-hole)
-*   [4 Risorse](#Risorse)
+*   [4 Risoluzione di problemi](#Risoluzione_di_problemi)
+    *   [4.1 Perdita di dati su riavvio](#Perdita_di_dati_su_riavvio)
+*   [5 Risorse](#Risorse)
 
 ## Pi-hole Server
+
+**Note:** [pi-hole-server](https://aur.archlinux.org/packages/pi-hole-server/) non è ufficialmente supportato dal progetto Pi-hole.
 
 ### Installazione
 
@@ -173,7 +178,6 @@ Per approfondire, leggi [Issue#1800](https://github.com/pi-hole/pi-hole/issues/1
 *   Se configuri usando il metodo del DHCP server e su un apparato il blocco della pubblicità non funziona, potrebbe avere ancora un rilascio DHCP obsoleto. Se non sai come rinnovarlo, prova a riavviare l'apparato.
 *   Un semplice metodo per capire se il router è configurato correttamente è per prima cosa rinnovare il rilascio DHCP, quindi verificare il contenuto del file `/etc/resolv.conf` su un client Linux. Si dovrebbe vedere l'indirizzo IP di Pi-hole e non l'indirizzo del router.
 *   Se hai problemi con il secondo metodo, prova a disabilitare il `dns-rebind` sul router (se presente).
-    *   Questo potrebbe anche risolvere i problemi di velocità, dove i client devono aspettare alcuni secondi per avere una risposta dal server DNS di pi-hole.
 
 ### Usare Pi-hole attraverso OpenVPN
 
@@ -205,7 +209,13 @@ pihole -a -p
 
 Per disabilitare la protezione inserisci una password vuota.
 
+### Usare DNS Over HTTPS (DOH)
+
+Le richieste DNS possono anche essere eseguite [via HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS) usando un privacy-first DNS [1.1.1.1](https://1.1.1.1/) di [Cloudflare](https://www.cloudflare.com/). Installa [cloudflared-bin](https://aur.archlinux.org/packages/cloudflared-bin/) e segui [la documentatione del progetto](https://docs.pi-hole.net/guides/dns-over-https/).
+
 ## Pi-hole Standalone
+
+**Note:** [pi-hole-standalone](https://aur.archlinux.org/packages/pi-hole-standalone/) non è ufficialmente supportato dal progetto Pi-hole.
 
 La variante Standalone di Pi-hole per Archlinux è nata dalla necessità di usare i servizi di Pi-hole in mobilità. [L'articolo Sky-hole](http://dlaa.me/blog/post/skyhole) è stato di ispirazione.
 
@@ -316,6 +326,12 @@ pihole enable
 ```
 
 o, via interfaccia web, cliccando su *Enable*.
+
+## Risoluzione di problemi
+
+### Perdita di dati su riavvio
+
+I sistemi senza il [RTC](/index.php/RTC "RTC") come alcuni dispositivi ARM è probabile che possano perdere dati dal log delle query durante un riavvio. Quando un sistema senza [RTC](/index.php/RTC "RTC") si avvia, l'orologio di sistema è impostato *dopo* l'esecuzione della rete e del resolver. Alcune parti di Pi-hole possono avviarsi prima che questo accada portando alla perdita di dati. Anche un valore [RTC](/index.php/RTC "RTC") sbagliato può causare problemi. Vedi: [Installation guide#Time zone](/index.php/Installation_guide#Time_zone "Installation guide") and [System time](/index.php/System_time "System time"). Per dispositivi senza [RTC](/index.php/RTC "RTC"): Una possibile soluzione può essere l'uso di [Systemd#Drop-in files](/index.php/Systemd#Drop-in_files "Systemd") su `pihole-FTL.service` usando una chiamata ritardata `/usr/bin/sleep x` con una direttiva `ExecStartPre`. Da notare che il valore di "x" dipende da quanto tempo il tuo sistema impiega ad effettuare un time sync. Al momento la segnalazione [Issue#11008](https://github.com/systemd/systemd/issues/11008) su systemd-timesyncd sta impedento l'uso di *time-sync.target* per automatizzare il tutto.
 
 ## Risorse
 

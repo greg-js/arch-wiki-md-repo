@@ -1,4 +1,4 @@
-| [Русский](/index.php/Category:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9 "Category:Русский") <small>(453)</small> | [English](/index.php/Category:English "Category:English") <small>(2)</small> |
+| [Русский](/index.php/Category:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9 "Category:Русский") <small>(455)</small> | [English](/index.php/Category:English "Category:English") <small>(2)</small> |
 | <small>1.</small> [Об Arch](/index.php/Category:About_Arch_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:About Arch (Русский)") <small>(14)</small> | <small>1.</small> [About Arch](/index.php/Category:About_Arch "Category:About Arch") <small>(17)</small> |
 | <small>1.1.</small> [Arch community](/index.php/Category:Arch_community_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Arch community (Русский)") <small>(2)</small> | <small>1.1.</small> [Arch community](/index.php/Category:Arch_community "Category:Arch community") <small>(5)</small> |
  <small>1.1.1.</small> [Classroom](/index.php/Category:Classroom "Category:Classroom") <small>(2)</small> |
@@ -55,7 +55,7 @@
  <small>3.9.16.</small> [Toshiba](/index.php/Category:Toshiba "Category:Toshiba") <small>(15)</small> |
  <small>3.9.17.</small> [Xiaomi](/index.php/Category:Xiaomi "Category:Xiaomi") <small>(2)</small> |
  <small>3.10.</small> [Mainboards and BIOS](/index.php/Category:Mainboards_and_BIOS "Category:Mainboards and BIOS") <small>(4)</small> |
-| <small>3.9.</small> [Мобильные устройства](/index.php/Category:Mobile_devices_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Mobile devices (Русский)") <small>(3)</small> | <small>3.11.</small> [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices") <small>(18)</small> |
+| <small>3.9.</small> [Мобильные устройства](/index.php/Category:Mobile_devices_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Mobile devices (Русский)") <small>(3)</small> | <small>3.11.</small> [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices") <small>(19)</small> |
  <small>3.11.1.</small> [Android](/index.php/Category:Android "Category:Android") <small>(3)</small> |
 | <small>3.10.</small> [Модемы](/index.php/Category:Modems_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Modems (Русский)") <small>(4) (Также в [Сетевое оборудование](/index.php/Category:Networking_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Networking (Русский)"))</small> | <small>3.12.</small> [Modems](/index.php/Category:Modems "Category:Modems") <small>(17) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
  <small>3.13.</small> [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware") <small>(22)</small> |

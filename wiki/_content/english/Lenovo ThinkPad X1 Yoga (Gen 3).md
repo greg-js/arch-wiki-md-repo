@@ -109,6 +109,8 @@ There is an automated script called x1carbon2018s3 by [fiji-flo](https://github.
     *   [https://github.com/lsmith77/x1carbon2018s3](https://github.com/lsmith77/x1carbon2018s3)
         *   [https://github.com/ryankhart/x1carbon2018s3](https://github.com/ryankhart/x1carbon2018s3)
 
+**Note:** Be aware, that this may cause the touch screen and stylus to fail to wake up from suspend.
+
 #### Bios settings [[1]](https://github.com/ryankhart/x1carbon2018s3#bios-settings)
 
 Ensure that Boot Mode is set to `Quick` and not `Diagnostic`

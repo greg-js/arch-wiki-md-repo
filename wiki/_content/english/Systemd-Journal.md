@@ -41,12 +41,13 @@ Failure in the system primary application, like X11. |
 | 3 | Error | err | Error conditions | Not severe error reported:
 `kernel: usb 1-3: 3:1: cannot get freq at ep 0x84`,
 `systemd[1]: Failed unmounting /var.`,
-`libvirtd[1720]: internal error: Failed to initialize a valid firewall backend`). |
+`libvirtd[1720]: internal error: Failed to initialize a valid firewall backend` |
 | 4 | Warning | warning | May indicate that an error will occur if action is not taken. | A non-root file system has only 1GB free.
 `org.freedesktop. Notifications[1860]: (process:5999): Gtk-WARNING **: Locale not supported by C library. Using the fallback 'C' locale`. |
-| 5 | Notice | notice | Events that are unusual, but not error conditions. | `systemd[1]: var.mount: Directory /var to mount over is not empty, mounting anyway`. `gcr-prompter[4997]: Gtk: GtkDialog mapped without a transient parent. This is discouraged`. |
-| 6 | Informational | info | Normal operational messages that require no action. | `lvm[585]: 7 logical volume(s) in volume group "archvg" now active`. |
-| 7 | Debug | debug | Information useful to developers for debugging the application. | `kdeinit5[1900]: powerdevil: Scheduling inhibition from ":1.14" "firefox" with cookie 13 and reason "screen"`. |
+| 5 | Notice | notice | Events that are unusual, but not error conditions. | `systemd[1]: var.mount: Directory /var to mount over is not empty, mounting anyway`,
+`gcr-prompter[4997]: Gtk: GtkDialog mapped without a transient parent. This is discouraged` |
+| 6 | Informational | info | Normal operational messages that require no action. | `lvm[585]: 7 logical volume(s) in volume group "archvg" now active` |
+| 7 | Debug | debug | Information useful to developers for debugging the application. | `kdeinit5[1900]: powerdevil: Scheduling inhibition from ":1.14" "firefox" with cookie 13 and reason "screen"` |
 
 If you cannot find a message on the expected priority level, also search a couple of levels above and below: these rules are recommendations, and the developer of the affected application may have a different perception of the issue's importance from yours.
 
@@ -55,32 +56,32 @@ If you cannot find a message on the expected priority level, also search a coupl
 A syslog facility code is used to specify the type of program that is logging the message [RFC 5424 Section 6.2.1](https://tools.ietf.org/html/rfc5424#section-6.2.1).
 
 | Facility code | Keyword | Description | Info |
-| 0 | kern | kernel messages |
-| 1 | user | user-level messages |
-| 2 | mail | mail system | Archaic POSIX still supported and sometimes used (for more [mail(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mail.1)) |
-| 3 | daemon | system daemons | All daemons, including systemd and its subsystems |
-| 4 | auth | security/authorization messages | Also watch for different facility 10 |
-| 5 | syslog | messages generated internally by syslogd | For syslogd implementations (not used by systemd, see facility 3) |
-| 6 | lpr | line printer subsystem (archaic subsystem) |
-| 7 | news | network news subsystem (archaic subsystem) |
+| 0 | kern | Kernel messages |
+| 1 | user | User-level messages |
+| 2 | mail | Mail system | Archaic POSIX still supported and sometimes used (for more [mail(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mail.1)) |
+| 3 | daemon | System daemons | All daemons, including systemd and its subsystems |
+| 4 | auth | Security/authorization messages | Also watch for different facility 10 |
+| 5 | syslog | Messages generated internally by syslogd | For syslogd implementations (not used by systemd, see facility 3) |
+| 6 | lpr | Line printer subsystem (archaic subsystem) |
+| 7 | news | Network news subsystem (archaic subsystem) |
 | 8 | uucp | UUCP subsystem (archaic subsystem) |
-| 9 | clock daemon | systemd-timesyncd |
-| 10 | authpriv | security/authorization messages | Also watch for different facility 4 |
+| 9 | Clock daemon | systemd-timesyncd |
+| 10 | authpriv | Security/authorization messages | Also watch for different facility 4 |
 | 11 | ftp | FTP daemon |
 | 12 | - | NTP subsystem |
-| 13 | - | log audit |
-| 14 | - | log alert |
-| 15 | cron | scheduling daemon |
-| 16 | local0 | local use 0 (local0) |
-| 17 | local1 | local use 1 (local1) |
-| 18 | local2 | local use 2 (local2) |
-| 19 | local3 | local use 3 (local3) |
-| 20 | local4 | local use 4 (local4) |
-| 21 | local5 | local use 5 (local5) |
-| 22 | local6 | local use 6 (local6) |
-| 23 | local7 | local use 7 (local7) |
+| 13 | - | Log audit |
+| 14 | - | Log alert |
+| 15 | cron | Scheduling daemon |
+| 16 | local0 | Local use 0 (local0) |
+| 17 | local1 | Local use 1 (local1) |
+| 18 | local2 | Local use 2 (local2) |
+| 19 | local3 | Local use 3 (local3) |
+| 20 | local4 | Local use 4 (local4) |
+| 21 | local5 | Local use 5 (local5) |
+| 22 | local6 | Local use 6 (local6) |
+| 23 | local7 | Local use 7 (local7) |
 
-So, useful facilities to watch: 0,1,3,4,9,10,15.
+Useful facilities to watch: 0, 1, 3, 4, 9, 10, 15.
 
 ## Filtering output
 

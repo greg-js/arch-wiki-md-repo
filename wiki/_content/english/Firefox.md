@@ -19,17 +19,18 @@ Related articles
 *   [2 Add-ons](#Add-ons)
     *   [2.1 Adding search engines](#Adding_search_engines)
         *   [2.1.1 arch-firefox-search](#arch-firefox-search)
-*   [3 Configuration](#Configuration)
-    *   [3.1 Multimedia playback](#Multimedia_playback)
-        *   [3.1.1 Open With extension](#Open_With_extension)
-    *   [3.2 Spell checking](#Spell_checking)
-    *   [3.3 KDE/GNOME integration](#KDE/GNOME_integration)
-    *   [3.4 Smooth Scrolling](#Smooth_Scrolling)
-*   [4 Plugins](#Plugins)
+*   [3 Plugins](#Plugins)
+*   [4 Configuration](#Configuration)
+    *   [4.1 Multimedia playback](#Multimedia_playback)
+        *   [4.1.1 Open With extension](#Open_With_extension)
+    *   [4.2 Spell checking](#Spell_checking)
+    *   [4.3 KDE/GNOME integration](#KDE/GNOME_integration)
+    *   [4.4 Smooth Scrolling](#Smooth_Scrolling)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Dark themes](#Dark_themes)
     *   [5.2 Screenshot of webpage](#Screenshot_of_webpage)
     *   [5.3 Window manager rules](#Window_manager_rules)
+    *   [5.4 Touchscreen gestures and pixel-perfect trackpad scrolling](#Touchscreen_gestures_and_pixel-perfect_trackpad_scrolling)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Firefox startup takes very long](#Firefox_startup_takes_very_long)
     *   [6.2 Font troubleshooting](#Font_troubleshooting)
@@ -97,6 +98,21 @@ Also, you can use the [add-to-searchbar](https://firefox.maltekraus.de/extension
 #### arch-firefox-search
 
 [Install](/index.php/Install "Install") the [arch-firefox-search](https://www.archlinux.org/packages/?name=arch-firefox-search) package to add Arch-specific searches (AUR, wiki, forum, etc, as specified by user) to the Firefox search toolbar.
+
+## Plugins
+
+**Note:** Firefox [has removed support](https://support.mozilla.org/en-US/kb/npapi-plugins) for [NPAPI](https://en.wikipedia.org/wiki/NPAPI "w:NPAPI") plugins, except for Flash.
+
+See the main article: [Browser plugins](/index.php/Browser_plugins "Browser plugins")
+
+To find out what plugins are installed/enabled, enter:
+
+```
+about:plugins
+
+```
+
+in the Firefox address bar or go to the *Add-ons* entry in the Firefox Menu and select the *Plugins* tab.
 
 ## Configuration
 
@@ -229,21 +245,6 @@ user_pref("toolkit.scrollbox.verticalScrollDistance", 2);
 
 If you have troubles on machines with varying performance, try modifying the `mousewheel.min_line_scroll_amount` until it feels snappy enough.
 
-## Plugins
-
-**Note:** Firefox [has removed support](https://support.mozilla.org/en-US/kb/npapi-plugins) for [NPAPI](https://en.wikipedia.org/wiki/NPAPI "w:NPAPI") plugins, except for Flash.
-
-See the main article: [Browser plugins](/index.php/Browser_plugins "Browser plugins")
-
-To find out what plugins are installed/enabled, enter:
-
-```
-about:plugins
-
-```
-
-in the Firefox address bar or go to the *Add-ons* entry in the Firefox Menu and select the *Plugins* tab.
-
 ## Tips and tricks
 
 For general enhancements see [Firefox/Tweaks](/index.php/Firefox/Tweaks "Firefox/Tweaks"), for privacy related enhancements see [Firefox/Privacy](/index.php/Firefox/Privacy "Firefox/Privacy").
@@ -280,6 +281,10 @@ Class can be specified when launching Firefox with a not-in-use profile:
 $ firefox -P *profile_name* --class=*class_name*
 
 ```
+
+### Touchscreen gestures and pixel-perfect trackpad scrolling
+
+To enable touch gestures (like scrolling and pinch-to-zoom) and one-to-one trackpad scrolling (as can be witnessed with GTK3 applications like Nautilus), set the `MOZ_USE_XINPUT2=1` [environment variable](/index.php/Environment_variable "Environment variable") before starting Firefox.
 
 ## Troubleshooting
 

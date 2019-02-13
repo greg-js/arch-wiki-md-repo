@@ -41,11 +41,12 @@ Related articles
 *   [12 Disabling automatic spawning of PulseAudio server](#Disabling_automatic_spawning_of_PulseAudio_server)
 *   [13 Disabling pulseaudio daemon altogether](#Disabling_pulseaudio_daemon_altogether)
 *   [14 Remap stereo to mono](#Remap_stereo_to_mono)
-*   [15 Swap left/right channels](#Swap_left/right_channels)
-    *   [15.1 Using default.pa](#Using_default.pa)
-*   [16 PulseAudio as a minimal unintrusive dumb pipe to ALSA](#PulseAudio_as_a_minimal_unintrusive_dumb_pipe_to_ALSA)
-*   [17 Having both speakers and headphones plugged in and switching in software on-the-fly](#Having_both_speakers_and_headphones_plugged_in_and_switching_in_software_on-the-fly)
-*   [18 Allowing multiple users to use PulseAudio at the same time](#Allowing_multiple_users_to_use_PulseAudio_at_the_same_time)
+*   [15 Remap left or right to mono](#Remap_left_or_right_to_mono)
+*   [16 Swap left/right channels](#Swap_left/right_channels)
+    *   [16.1 Using default.pa](#Using_default.pa)
+*   [17 PulseAudio as a minimal unintrusive dumb pipe to ALSA](#PulseAudio_as_a_minimal_unintrusive_dumb_pipe_to_ALSA)
+*   [18 Having both speakers and headphones plugged in and switching in software on-the-fly](#Having_both_speakers_and_headphones_plugged_in_and_switching_in_software_on-the-fly)
+*   [19 Allowing multiple users to use PulseAudio at the same time](#Allowing_multiple_users_to_use_PulseAudio_at_the_same_time)
 
 ## Set default input source
 
@@ -772,6 +773,25 @@ set-default-sink mono
 (replace alsa_output.pci-0000_00_1f.5.analog-stereo in the sound card name shown from `pacmd list-sinks`)
 
 Switch player between virtual mono sink and real stereo sink.
+
+## Remap left or right to mono
+
+Particularly useful in the case an audio stream has different content in the left and right channels, such as Japanese television broadcasts with bilingual audio.
+
+```
+# For Japanese bilingual TV
+load-module module-remap-sink sink_name=Left-to-Mono sink_properties="device.description='Left to Mono (5.1 AC3 on ALC892 Digital)'" master=alsa_output.pci-0000_00_1b.0.iec958-ac3-surround-51 channels=2 master_channel_map=mono,mono channel_map=front-left,rear-left
+load-module module-remap-sink sink_name=Right-to-Mono sink_properties="device.description='Right to Mono (5.1 AC3 on ALC892 Digital)'" master=alsa_output.pci-0000_00_1b.0.iec958-ac3-surround-51 channels=2 master_channel_map=mono,mono channel_map=front-right,rear-right
+
+```
+
+Replace `alsa_output.pci-0000_00_1b.0.iec958-ac3-surround-51` (5.1 AC3 on ALC892 Digital) with your own card (`pacmd list-sinks`).
+
+**Note:**
+
+*   *master_channel_map* is a list of outputs to be remapped to.
+*   *channel_map* is a list of inputs to be remapped from.
+*   A stereo card will not have to specify as many channels, eg. `channels=1 master_channel_map=mono channel_map=right`
 
 ## Swap left/right channels
 

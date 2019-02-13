@@ -8,6 +8,8 @@ Related articles
 
 [Pi-hole](https://pi-hole.net/) is a [DNS sinkhole](https://en.wikipedia.org/wiki/DNS_sinkhole "wikipedia:DNS sinkhole") that compiles a blocklist of domains known to host advertisements and malware from multiple third-party sources. Pi-hole uses [dnsmasq](/index.php/Dnsmasq "Dnsmasq") to seamlessly drop any and all requests for domains in its blocklist. Running it effectively deploys network-wide ad-blocking without the need to configure individual clients. The package comes with a web and a CLI interface.
 
+**Note:** Pi-hole on Arch Linux is not officially supported by the Pi-hole project.
+
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
@@ -212,8 +214,6 @@ To disable the password protection set a blank password.
 DNS queries can also be performed [over HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS) by using privacy-first DNS [1.1.1.1](https://1.1.1.1/) by [Cloudflare](https://www.cloudflare.com/). Install [cloudflared-bin](https://aur.archlinux.org/packages/cloudflared-bin/) and follow [upstream documentation](https://docs.pi-hole.net/guides/dns-over-https/).
 
 ## Pi-hole Standalone
-
-**Note:** [pi-hole-standalone](https://aur.archlinux.org/packages/pi-hole-standalone/) is not officially supported by the Pi-hole project.
 
 The Arch Linux Pi-hole Standalone variant is born from the need to use Pi-hole services in a mobile context. [Sky-hole article](http://dlaa.me/blog/post/skyhole) was inspirational.
 

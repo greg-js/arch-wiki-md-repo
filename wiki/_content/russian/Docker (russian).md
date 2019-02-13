@@ -31,7 +31,7 @@
     *   [3.2 Debian](#Debian)
         *   [3.2.1 Создание образа вручную](#Создание_образа_вручную)
 *   [4 Удаление Docker и образов](#Удаление_Docker_и_образов)
-*   [5 Useful tips](#Useful_tips)
+*   [5 Полезные советы](#Полезные_советы)
 *   [6 Docker 0.9.0 — 1.2.x и LXC](#Docker_0.9.0_—_1.2.x_и_LXC)
 *   [7 Skype](#Skype)
 *   [8 Сборка образа i686](#Сборка_образа_i686)
@@ -307,13 +307,13 @@ $ git clone [https://github.com/archlinux/archlinux-docker.git](https://github.c
 
 ```
 
-## Useful tips
+## Полезные советы
 
-To grab the IP address of a running container:
+Чтобы получить IP адрес контейнера, выполните:
 
  `$ docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <container-name OR id> `  `172.17.0.37` 
 
-For each running container, the name and corresponding IP address can be listed for use in `/etc/hosts`:
+Для каждого работающего контейнера имя и соответствующий IP-адрес могут быть перечислены для использования в `/etc/hosts`:
 
 ```
 #!/usr/bin/env sh

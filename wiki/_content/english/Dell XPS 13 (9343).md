@@ -9,7 +9,7 @@
 | Touchpad | Working |
 | Webcam | Working |
 | Card Reader | Working |
-| Wireless switch | Working ([Some issues with kde](#rfkill_issues_with_KDE)) |
+| Wireless switch | Working |
 
 Related articles
 
@@ -57,7 +57,7 @@ As of kernel 4.1.3 (released July 2015), a patched kernel is no longer necessary
     *   [3.3 Pink & green artifacts in video or webcam output](#Pink_&_green_artifacts_in_video_or_webcam_output)
     *   [3.4 Graphical artifacting/instability after S3 resume](#Graphical_artifacting/instability_after_S3_resume)
     *   [3.5 Connection issues with Broadcom wireless](#Connection_issues_with_Broadcom_wireless)
-    *   [3.6 rfkill issues with KDE](#rfkill_issues_with_KDE)
+    *   [3.6 Wireless switch/rfkill issues with KDE](#Wireless_switch/rfkill_issues_with_KDE)
     *   [3.7 EFISTUB does not boot](#EFISTUB_does_not_boot)
     *   [3.8 Random kernel hangs at boot](#Random_kernel_hangs_at_boot)
     *   [3.9 Sound doesn't work after upgrading to kernel 4.4+](#Sound_doesn't_work_after_upgrading_to_kernel_4.4+)
@@ -245,7 +245,7 @@ If you encounter some artifacts and/or an unusable graphical environment after r
 
 If `wifi-menu` and `iwlist scan` fail after driver installation and reboot, try disabling "Wireless Switch" control in the BIOS.
 
-### rfkill issues with KDE
+### Wireless switch/rfkill issues with KDE
 
 As from kernel version 4.4 the rfkill switch works. The KDE plasma-nm (NetworkManager) widget does not indicate that wlan is active after it has been reactivated, but still connects correctly. The KDE system tray bluetooth widget usually disappears if the switch disables bluetooth, and fails to reappear when it is reactivated. You can work around this by setting the switch not to switch bluetooth in the BIOS setup. With kernel version < 4.13.11 and/or plasma-desktop < 5.11 the mouse pointer may freeze first time that the rfkill switch is used. To unfreeze it, switch to another virtual console and back.
 

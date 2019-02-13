@@ -126,7 +126,7 @@ The content of a **hidden** feed can only be found through a query feed.
 
 ## Configuration
 
-Several aspects of Newsboat’s behaviour can be configured via a configuration file which is located, by default, in `~/.newsboat/config`. This configuration file contains lines of the form:
+Several aspects of Newsboat’s behaviour can be configured via a configuration file which is located, by default, in `~/.config/newsboat/config`. This configuration file contains lines of the form:
 
 ```
 <config-command> <arg1> ...

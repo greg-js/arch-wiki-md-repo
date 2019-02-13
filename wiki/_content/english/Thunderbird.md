@@ -66,7 +66,7 @@ A version overview, both past and future, can be read on [MozillaWiki:Releases](
 
 *   **[Enigmail](/index.php/Thunderbird/Enigmail "Thunderbird/Enigmail")** — Extension for writing and receiving email signed and/or encrypted with the OpenPGP standard.
 
-	[https://www.enigmail.net](https://www.enigmail.net) || [thunderbird-extension-enigmail](https://www.archlinux.org/packages/?name=thunderbird-extension-enigmail), [thunderbird-enigmail-git](https://aur.archlinux.org/packages/thunderbird-enigmail-git/)
+	[https://www.enigmail.net](https://www.enigmail.net) || [thunderbird-extension-enigmail](https://www.archlinux.org/packages/?name=thunderbird-extension-enigmail), [thunderbird-extension-enigmail-git](https://aur.archlinux.org/packages/thunderbird-extension-enigmail-git/)
 
 *   **TorBirdy** — Extension that configures Thunderbird to make connections over the [Tor](/index.php/Tor "Tor") anonymity network
 
@@ -251,7 +251,9 @@ $ cp -R ~/.thunderbird /to/backup/folder/
 
 ```
 
-2\. Export all you Accounts, Calendar and Feeds via an AddOn like it's written in *Export section* of this Wiki. 3\. Uninstall your current Thunderbird installation
+2\. Export all your Accounts, Calendar and Feeds via an AddOn like it's written in *Export section* of this Wiki.
+
+3\. Uninstall your current Thunderbird installation:
 
 ```
 $ pacman -R thunderbird

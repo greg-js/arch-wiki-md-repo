@@ -12,7 +12,11 @@ Related articles
 
 *makepkg* is provided by the [pacman](https://www.archlinux.org/packages/?name=pacman) package.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Configuration](#Configuration)
     *   [1.1 Packager information](#Packager_information)
@@ -33,7 +37,7 @@ Related articles
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Makepkg sometimes fails to sign a package without asking for signature passphrase](#Makepkg_sometimes_fails_to_sign_a_package_without_asking_for_signature_passphrase)
     *   [4.2 CFLAGS/CXXFLAGS/LDFLAGS in makepkg.conf do not work for CMake based packages](#CFLAGS/CXXFLAGS/LDFLAGS_in_makepkg.conf_do_not_work_for_CMake_based_packages)
-    *   [4.3 CFLAGS/CXXFLAGS in makepkg.conf do not work for QMAKE based packages](#CFLAGS/CXXFLAGS_in_makepkg.conf_do_not_work_for_QMAKE_based_packages)
+    *   [4.3 CFLAGS/CXXFLAGS/LDFLAGS in makepkg.conf do not work for QMAKE based packages](#CFLAGS/CXXFLAGS/LDFLAGS_in_makepkg.conf_do_not_work_for_QMAKE_based_packages)
     *   [4.4 Specifying install directory for QMAKE based packages](#Specifying_install_directory_for_QMAKE_based_packages)
     *   [4.5 WARNING: Package contains reference to $srcdir](#WARNING:_Package_contains_reference_to_$srcdir)
     *   [4.6 Makepkg fails to download dependencies when behind proxy](#Makepkg_fails_to_download_dependencies_when_behind_proxy)
@@ -245,7 +249,7 @@ COMPRESSGZ=(**pigz** -c -f -n)
 This shows all packages installed on the system with the packager named *packagername*:
 
 ```
-$ expac "%n %p" | grep "*packagername*" | column -t
+$ expac "%n %p" | grep "*packagername*" | column -t
 
 ```
 
@@ -300,9 +304,9 @@ In order to let CMake use the variables defined in `makepkg.conf`, simply do not
 
 This will cause cmake to use a build type of `None` which then uses the environmental variables such as `CFLAGS`, `CPPFLAGS`, etc.
 
-### CFLAGS/CXXFLAGS in makepkg.conf do not work for QMAKE based packages
+### CFLAGS/CXXFLAGS/LDFLAGS in makepkg.conf do not work for QMAKE based packages
 
-Qmake automatically sets the variable `CFLAGS` and `CXXFLAGS` according to what it thinks should be the right configuration. In order to let qmake use the variables defined in the makepkg configuration file, you must edit the PKGBUILD and pass the variables [QMAKE_CFLAGS](http://doc.qt.io/qt-5/qmake-variable-reference.html#qmake-cflags) and [QMAKE_CXXFLAGS](http://doc.qt.io/qt-5/qmake-variable-reference.html#qmake-cxxflags) to qmake. For example:
+Qmake automatically sets the variable `CFLAGS`, `CXXFLAGS` and `LDFLAGS` according to what it thinks should be the right configuration. In order to let qmake use the variables defined in the makepkg configuration file, you must edit the PKGBUILD and pass the variables [QMAKE_CFLAGS](https://doc.qt.io/qt-5/qmake-variable-reference.html#qmake-cflags), [QMAKE_CXXFLAGS](https://doc.qt.io/qt-5/qmake-variable-reference.html#qmake-cxxflags) and [QMAKE_LFLAGS](https://doc.qt.io/qt-5/qmake-variable-reference.html#qmake-lflags) to qmake. For example:
 
  `PKGBUILD` 
 ```
@@ -310,10 +314,11 @@ Qmake automatically sets the variable `CFLAGS` and `CXXFLAGS` according to what 
 
 build() {
   cd "$srcdir/$_pkgname-$pkgver-src"
-  qmake-qt4 "$srcdir/$_pkgname-$pkgver-src/$_pkgname.pro" \
+  qmake-qt5 "$srcdir/$_pkgname-$pkgver-src/$_pkgname.pro" \
     PREFIX=/usr \
     QMAKE_CFLAGS="${CFLAGS}" \
-    QMAKE_CXXFLAGS="${CXXFLAGS}"
+    QMAKE_CXXFLAGS="${CXXFLAGS}" \
+    QMAKE_LFLAGS="${LDFLAGS}"
 
   make
 }
@@ -322,7 +327,7 @@ build() {
 
 ```
 
-Alternatively, for a system wide configuration, you can create your own `qmake.conf` and set the [QMAKESPEC](http://doc.qt.io/qt-5/qmake-environment-reference.html#qmakespec) environment variable.
+Alternatively, for a system wide configuration, you can create your own `qmake.conf` and set the [QMAKESPEC](https://doc.qt.io/qt-5/qmake-environment-reference.html#qmakespec) environment variable.
 
 ### Specifying install directory for QMAKE based packages
 

@@ -88,6 +88,7 @@
         *   [5.34.5 Brightness slider not working](#Brightness_slider_not_working)
         *   [5.34.6 Microphone not working](#Microphone_not_working)
         *   [5.34.7 Mouse is unrensponsive or moves slowly](#Mouse_is_unrensponsive_or_moves_slowly)
+        *   [5.34.8 Game crashes on startup with game controller plugged in](#Game_crashes_on_startup_with_game_controller_plugged_in)
     *   [5.35 Creeper World 3: Arc Eternal](#Creeper_World_3:_Arc_Eternal)
         *   [5.35.1 Game does not start](#Game_does_not_start_2)
     *   [5.36 Crusader Kings II](#Crusader_Kings_II)
@@ -1041,6 +1042,12 @@ vblank_mode=0 %command%
 ```
 
 Works with almost any other game.
+
+#### Game crashes on startup with game controller plugged in
+
+[csgo-osx-linux issue #1757](https://github.com/ValveSoftware/csgo-osx-linux/issues/1757)
+
+The solution is to add `-nojoy` to the launch options.
 
 ### Creeper World 3: Arc Eternal
 
@@ -2507,6 +2514,8 @@ If there is no audio after launching the game, install [pulseaudio-alsa](https:/
 #### Blank screen
 
 If having a green or blank screen on startup, run the game with `MESA_GL_VERSION_OVERRIDE=4.1COMPAT`. [[16]](https://forum.warthunder.com/index.php?/topic/267809-linux-potential-workaround-for-mesa-drivers-black-screen/) [[17]](http://forum.warthunder.com/index.php?search_term=0030709&app=core&module=search&do=search&fromMainBar=1&search_app=forums%3Aforum%3A920&sort_field=&sort_order=&search_in=posts)
+
+steam startup WarThunder need set startup options `XMODIFIERS="" %command%`
 
 ### Warhammer 40,000: Dawn of War II
 

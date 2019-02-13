@@ -216,7 +216,19 @@ If the desired mapping is not found in that file, an alternative is to use [xmod
 
 The default combinations for the compose keys depend on the [locale](/index.php/Locale "Locale") configured for the session and are stored in `/usr/share/X11/locale/*used_locale*/Compose`, where `*used_locale*` is for example `en_US.UTF-8`.
 
-You can define your own compose key combinations by copying the default file to `~/.XCompose` and editing it. The compose key works with any of the thousands of valid Unicode characters, including those outside the Basic Multilingual Plane. Take a look at the [Compose(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/Compose.5) man page, it explains the format of the XCompose files.
+You can define your own compose key combinations by copying the default file to `~/.XCompose` and editing it. It is also possible to create an empty `~/.XCompose` and include the default one using `include "%L"`, for example:
+
+ `~/.XCompose` 
+```
+include "%L"
+
+<Multi_key> <g> <a> : "α"
+<Multi_key> <g> <b> : "β"
+<Multi_key> <g> <g> : "γ"
+
+```
+
+The compose key works with any of the thousands of valid Unicode characters, including those outside the Basic Multilingual Plane. Take a look at the [Compose(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/Compose.5) man page, it explains the format of the XCompose files.
 
 However, GTK does not use [XIM](https://en.wikipedia.org/wiki/X_Input_Method "wikipedia:X Input Method") by default and therefore does not follow `~/.XCompose` keys. This can be fixed by forcing GTK to use XIM by adding `export GTK_IM_MODULE=xim` and/or `export XMODIFIERS="@im=none"` to `~/.xprofile`.
 

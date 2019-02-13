@@ -1,3 +1,6 @@
+**Estado de la traducción**
+Este artículo es una traducción de [Fonts](/index.php/Fonts "Fonts"), revisada por última vez el **2019-2-12**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Fonts&diff=0&oldid=565234) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
 Artículos relacionados
 
 *   [Font configuration](/index.php/Font_configuration "Font configuration")
@@ -56,6 +59,14 @@ Note que ciertas licencias de fuentes pueden imponer ciertas limitaciones legale
     *   [3.4 Emoji y símbolos](#Emoji_y_símbolos)
     *   [3.5 Matemáticas](#Matemáticas)
     *   [3.6 Fuentes de otros sistemas operativos](#Fuentes_de_otros_sistemas_operativos)
+*   [4 Orden de fuentes alternativas con X11](#Orden_de_fuentes_alternativas_con_X11)
+*   [5 Alias de fuente](#Alias_de_fuente)
+*   [6 Sugerencias y trucos](#Sugerencias_y_trucos)
+    *   [6.1 Listar todas las fuentes instaladas](#Listar_todas_las_fuentes_instaladas)
+    *   [6.2 Listar las fuentes instaladas de un lenguaje particular](#Listar_las_fuentes_instaladas_de_un_lenguaje_particular)
+    *   [6.3 Establecer la fuente del terminal sobre la marcha](#Establecer_la_fuente_del_terminal_sobre_la_marcha)
+    *   [6.4 Caché específico de fuente de una aplicación](#Caché_específico_de_fuente_de_una_aplicación)
+*   [7 Vea también](#Vea_también)
 
 ## Formatos de fuente
 
@@ -498,3 +509,84 @@ Una sección del Unicode estándar está dedicado a caracteres pictográficos qu
 *   [ttf-mac-fonts](https://aur.archlinux.org/packages/ttf-mac-fonts/) - Fuentes de TrueType Apple MacOS.
 
 Vea [Fuentes métricamente compatibles (inglés)](/index.php/Metric-compatible_fonts "Metric-compatible fonts"), que muestra las alternativas para las [Fuentes de Microsoft (inglés)](/index.php/Microsoft_fonts "Microsoft fonts").
+
+## Orden de fuentes alternativas con X11
+
+Automáticamente fontconfig selecciona una fuente que cumpla con los requisitos de ese momento. Es decir, que si una ventana contiene inglés y chino, fontconfig cambiará de fuente para el chino si la que está por defecto no lo soporta.
+
+Fontconfig permite que cada usuario configure el orden a través de `$XDG_CONFIG_HOME/fontconfig/fonts.conf`. Si prefiere que una fuente particular se seleccione antes que su fuente Serif favorita, el archivo queda así:
+
+```
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+<alias>
+   <family>serif</family>
+   <prefer>
+     <family>El nombre de su fuente serif favorita</family>
+     <family>El nombre de su fuente china</family>
+   </prefer>
+ </alias>
+</fontconfig>
+
+```
+
+**Sugerencia:** Si usa localmente chino, establezca `LC_LANG` a `und` para que funcione. Si no los textos chinos e ingleses serán renderizados por la fuente china.
+
+También se puede añadir una sección para sans-serif y monospace. Para más información. eche un vistazo al manual de fontconfig.
+
+Vea también [Establecer o reemplazar las fuentes por defecto (en inglés](/index.php/Font_configuration#Replace_or_set_default_fonts "Font configuration").
+
+## Alias de fuente
+
+Hay varios alias de fuentes que representa a otras fuentes con la intención de que las aplicaciones utilicen fuentes similares. Los alias más comunes son: `serif` para las fuentes de tipo serif (p.ej. DejaVu Serif); `sans-serif` para las fuentes del tipo sans-serif (p.ej. DejaVu Sans); y `monospace` para las fuentes mono-espaciadas (p.ej. DejaVu Sans Mono). Sin embargo, el aspecto de las fuentes que representan puede variar y la relación no se observa en las herramientas de gestión de fuentes, como las que se encuentran en [KDE](/index.php/KDE_(Espa%C3%B1ol) "KDE (Español)") y otros [entornos de escritorio](/index.php/Desktop_environments_(Espa%C3%B1ol) "Desktop environments (Español)").
+
+Para invertir un alias y encontrar qué fuente es la que representa, ejecute:
+
+ `$ fc-match monospace` 
+```
+DejaVuSansMono.ttf: "DejaVu Sans Mono" "Book"
+
+```
+
+En este caso, `DejaVuSansMono.ttf` es la fuente representada por el alias de monospace.
+
+## Sugerencias y trucos
+
+### Listar todas las fuentes instaladas
+
+Puede utilizar el siguiente comando para listar todas las fuentes instaladas fontconfig que están disponibles en su sistema.
+
+```
+$ fc-list
+
+```
+
+### Listar las fuentes instaladas de un lenguaje particular
+
+Las aplicaciones y navegadores selecciona y muestra fuentes dependiendo de la configuración de fontconfig y de los glifos disponibles para el texto Unicode. Para listar las fuentes instaladas de un lenguaje particular, ejecute `fc-list :lang="two letter language code"`. Por ejemplo, para listar las fuentes árabes o las que soportan glifos árabes instaladas:
+
+ `$ fc-list -f '%{file}
+' :lang=ar` 
+```
+/usr/share/fonts/TTF/FreeMono.ttf
+/usr/share/fonts/TTF/DejaVuSansCondensed.ttf
+/usr/share/fonts/truetype/custom/DroidKufi-Bold.ttf
+/usr/share/fonts/TTF/DejaVuSansMono.ttf
+/usr/share/fonts/TTF/FreeSerif.ttf
+
+```
+
+### Establecer la fuente del terminal sobre la marcha
+
+Para los emuladores de terminal que usan `Xresources`, las fuentes se pueden establecer utilizando secuencias de escape. Especificamente, `echo -e "\033]710;$font\007"` para cambier la fuente normal (`*font` en `~/.Xresources`), y reemplazarla `710` con `711`, `712`, y `713` para cambiar las fuentes `*boldFont`, `*italicFont`, y `*boldItalicFont`, respectivamente.
+
+### Caché específico de fuente de una aplicación
+
+Matplotlib ([python-matplotlib](https://www.archlinux.org/packages/?name=python-matplotlib) o [python2-matplotlib](https://www.archlinux.org/packages/?name=python2-matplotlib)) usa su propia cache de fuente, así que después de actualizar las fuentes, asegúrese de eliminar `~/.matplotlib/fontList.cache`, `~/.cache/matplotlib/fontList.cache`, `~/.sage/matplotlib-1.2.1/fontList.cache`, etc. Así regenerará su caché de fuente y encontrará las nuevas fuentes [[1]](http://matplotlib.1069221.n5.nabble.com/getting-matplotlib-to-recognize-a-new-font-td40500.html).
+
+## Vea también
+
+*   [Estado de la representación de texto](http://behdad.org/text/)
+*   [Biblioteca de fuentes](https://fontlibrary.org/es) - Fuentes con licencia libre.
+*   [Fuentes en screenshots.debian.net](https://screenshots.debian.net/packages?search=fonts&show=with)

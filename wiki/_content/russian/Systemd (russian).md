@@ -231,7 +231,7 @@ $ systemctl help *юнит*
 
 Перезагрузить *systemd* для поиска **новых или измененных юнитов**:
 
-**Note:** Эта команда перезагружает только настройки systemd и не просит юниты перезагрузить их собственные настройки; для юнитов используйте `reload`.
+**Примечание:** Эта команда перезагружает только настройки systemd и не просит юниты перезагрузить их собственные настройки; для юнитов используйте `reload`.
 
 ```
 # systemctl daemon-reload
@@ -542,7 +542,7 @@ Arch Linux поставляется с файлом `/usr/lib/systemd/system-pre
 
 Если такое поведение не устраивает, создайте символьную ссылку `/etc/systemd/system-preset/99-default.preset` на `/dev/null` для переопределения файла конфигурации. This will cause *systemctl preset* to enable all units that get installed—regardless of unit type—unless specified in another file in one *systemctl preset'*s configuration directories. User units are not affected. Для получения дополнительной информации смотрите [systemd.preset(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.preset.5).
 
-**Note:** Включение всех юнитов по умолчанию может привести к проблемам для пакетов, содержащих взаимоисключающие юниты. *systemctl preset* is designed to be used by distributions and spins or system administrators. In the case where two conflicting units would be enabled, you should explicitly specify which one is to be disabled in a preset configuration file as specified in the manpage for `systemd.preset`.
+**Примечание:** Включение всех юнитов по умолчанию может привести к проблемам для пакетов, содержащих взаимоисключающие юниты. *systemctl preset* is designed to be used by distributions and spins or system administrators. In the case where two conflicting units would be enabled, you should explicitly specify which one is to be disabled in a preset configuration file as specified in the manpage for `systemd.preset`.
 
 ### Песочница для приложений
 
@@ -726,7 +726,7 @@ Storage=none
 
 Вам нужно [пересоздать initramfs](/index.php/Mkinitcpio_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Создание_загрузочного_образа "Mkinitcpio (Русский)"), после чего версии должны совпасть.
 
-**Tip:** Можно использовать pacman hook для автоматического пересоздания initramfs после каждого обновления [systemd](https://www.archlinux.org/packages/?name=systemd). См. [эту тему форума](https://bbs.archlinux.org/viewtopic.php?id=215411) и [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman").
+**Совет:** Можно использовать pacman hook для автоматического пересоздания initramfs после каждого обновления [systemd](https://www.archlinux.org/packages/?name=systemd). См. [эту тему форума](https://bbs.archlinux.org/viewtopic.php?id=215411) и [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman").
 
 ### Отключение emergency mode на удалённой машине
 
