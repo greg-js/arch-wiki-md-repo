@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Adding a new mirror](#Adding_a_new_mirror)
 *   [2 Notes about private mirrors](#Notes_about_private_mirrors)
@@ -52,7 +56,7 @@ All other mirrors should sync from one of tier 1 mirrors. Syncing from archlinux
 *   [rsync](/index.php/Rsync "Rsync") support
 *   Proven reliability (be a tier 2 mirror for a while and have reasonable uptime, response to out-of-sync notifications etc.)
 
-You can use rsync directly or [this script](https://git.server-speed.net/users/flo/bin/tree/syncrepo.sh) as a starting point. Please note that the script tries to minimize load and bandwidth used (about 3MiB of metadata for each rsync run as of 2018-03-01) in case there are no changes. Feel free to remove this check if you don't sync very often or your upstream mirror does not provide the lastupdate file.
+You can use rsync directly or [this script](https://git.archlinux.org/infrastructure.git/tree/roles/syncrepo/files/syncrepo-template.sh) as a starting point. Please note that the script tries to minimize load and bandwidth used (about 3MiB of metadata for each rsync run as of 2018-03-01) in case there are no changes. Feel free to remove this check if you don't sync very often or your upstream mirror does not provide the lastupdate file.
 
 ### Create a feature-request
 

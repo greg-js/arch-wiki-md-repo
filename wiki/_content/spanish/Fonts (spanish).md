@@ -3,7 +3,7 @@ Este artículo es una traducción de [Fonts](/index.php/Fonts "Fonts"), revisada
 
 Artículos relacionados
 
-*   [Font configuration](/index.php/Font_configuration "Font configuration")
+*   [Configuración de fuentes](/index.php/Font_configuration_(Espa%C3%B1ol) "Font configuration (Español)")
 *   [Linux console#Fonts](/index.php/Linux_console#Fonts "Linux console")
 *   [Java Runtime Environment fonts](/index.php/Java_Runtime_Environment_fonts "Java Runtime Environment fonts")
 *   [Metric-compatible fonts](/index.php/Metric-compatible_fonts "Metric-compatible fonts")
@@ -61,7 +61,7 @@ Note que ciertas licencias de fuentes pueden imponer ciertas limitaciones legale
     *   [3.6 Fuentes de otros sistemas operativos](#Fuentes_de_otros_sistemas_operativos)
 *   [4 Orden de fuentes alternativas con X11](#Orden_de_fuentes_alternativas_con_X11)
 *   [5 Alias de fuente](#Alias_de_fuente)
-*   [6 Sugerencias y trucos](#Sugerencias_y_trucos)
+*   [6 Consejos y trucos](#Consejos_y_trucos)
     *   [6.1 Listar todas las fuentes instaladas](#Listar_todas_las_fuentes_instaladas)
     *   [6.2 Listar las fuentes instaladas de un lenguaje particular](#Listar_las_fuentes_instaladas_de_un_lenguaje_particular)
     *   [6.3 Establecer la fuente del terminal sobre la marcha](#Establecer_la_fuente_del_terminal_sobre_la_marcha)
@@ -551,7 +551,7 @@ DejaVuSansMono.ttf: "DejaVu Sans Mono" "Book"
 
 En este caso, `DejaVuSansMono.ttf` es la fuente representada por el alias de monospace.
 
-## Sugerencias y trucos
+## Consejos y trucos
 
 ### Listar todas las fuentes instaladas
 

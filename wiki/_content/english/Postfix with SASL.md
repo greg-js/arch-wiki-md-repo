@@ -62,6 +62,17 @@ log_level: 7
 
 ```
 
+Since pambase 20190105.1-1 and newer uses restrictive fallback for "other" PAM service, a pam configuration file is now required.[[1]](https://bugs.archlinux.org/task/61700)[[2]](https://bbs.archlinux.org/viewtopic.php?pid=1824850)
+
+Create `/etc/pam.d/smtp`.
+
+```
+#%PAM-1.0
+auth            required        pam_unix.so
+account         required        pam_unix.so
+
+```
+
 [Start/enable](/index.php/Start/enable "Start/enable") the `saslauthd.service`.
 
 [Restart](/index.php/Restart "Restart") the `postfix.service`.

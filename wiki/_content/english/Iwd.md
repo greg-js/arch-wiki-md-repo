@@ -209,7 +209,6 @@ By default when `iwd` is in disconnected state, it periodically scans for availa
 
  `/etc/iwd/main.conf` 
 ```
-# Upcoming iwd version 0.13 and above
 [Scan]
 disable_periodic_scan=true
 ```

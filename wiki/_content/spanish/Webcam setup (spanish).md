@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Webcam setup](/index.php/Webcam_setup "Webcam setup"), revisada por última vez el **2018-12-29**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Webcam_setup&diff=0&oldid=560708) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Webcam setup](/index.php/Webcam_setup "Webcam setup"), revisada por última vez el **2019-02-13**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Webcam_setup&diff=0&oldid=566292) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Esta es una guía para configurar su webcam en Arch Linux.
 
@@ -24,7 +24,6 @@ Lo más probable es que su webcam funcione sin necesidad de configuración. Los 
     *   [4.2 Microsoft Lifecam Studio/Cinema](#Microsoft_Lifecam_Studio/Cinema)
     *   [4.3 Skype](#Skype)
     *   [4.4 Comprobar el ancho de banda utilizado por las webcams USB](#Comprobar_el_ancho_de_banda_utilizado_por_las_webcams_USB)
-    *   [4.5 Grupos](#Grupos)
 
 ## Cargar
 
@@ -201,7 +200,3 @@ Al probar la webcam, tenga en cuenta lo siguiente:
 ### Comprobar el ancho de banda utilizado por las webcams USB
 
 Cuando se ejecutan varias webcams en un único bus USB, pueden llegar a saturar el ancho de banda del bus USB y dejar de funcionar correctamente. Esto puede ser diagnosticado con la herramienta *usbtop* del paquete [usbtop](https://aur.archlinux.org/packages/usbtop/).
-
-### Grupos
-
-Si el sistema le dice que no puede encontrar el dispositivo, posiblemente sea debido a que no forma parte del grupo `video`. Asegúrese de que forma parte del grupo `video` usando `groups`. Si no lo es, agréguese usando `gpasswd`.

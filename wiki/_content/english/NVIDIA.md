@@ -60,7 +60,7 @@ These instructions are for those using the stock [linux](https://www.archlinux.o
 
 3\. Install the appropriate driver for your card:
 
-*   For GeForce 600-900 and 10 series cards and newer [NVEx and newer], [install](/index.php/Install "Install") the [nvidia](https://www.archlinux.org/packages/?name=nvidia) or [nvidia-lts](https://www.archlinux.org/packages/?name=nvidia-lts) package if you use the linux-lts kernel.
+*   For GeForce 600-900 and Quadro/Tesla/Tegra K-series cards and newer [NVE0, NV110 and NV130 family cards from around 2010-2019], [install](/index.php/Install "Install") the [nvidia](https://www.archlinux.org/packages/?name=nvidia) or [nvidia-lts](https://www.archlinux.org/packages/?name=nvidia-lts) package.
 
 *   If these packages do not work, [nvidia-beta](https://aur.archlinux.org/packages/nvidia-beta/) may have a newer driver version that offers support.
 *   There is also [nvidia-llb-dkms](https://aur.archlinux.org/packages/nvidia-llb-dkms/), which is built from Nvidia's [long lived branch](http://www.phoronix.com/scan.php?page=news_item&px=OTkxOA).
@@ -70,7 +70,7 @@ These instructions are for those using the stock [linux](https://www.archlinux.o
 
 *   For even older cards (released in 2006 or earlier), have a look at [#Unsupported drivers](#Unsupported_drivers).
 
-4\. For 32-bit application support, also install the equivalent *lib32* package from the [multilib](/index.php/Multilib "Multilib") repository (e.g. [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils), [lib32-nvidia-390xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-390xx-utils) or [lib32-nvidia-340xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-utils)).
+4\. For 32-bit application support, also install the corresponding *lib32* nvidia package from the [multilib](/index.php/Multilib "Multilib") repository (e.g. [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils), [lib32-nvidia-390xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-390xx-utils) or [lib32-nvidia-340xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-utils)).
 
 5\. Reboot. The [nvidia](https://www.archlinux.org/packages/?name=nvidia) package contains a file which blacklists the *nouveau* module, so rebooting is necessary.
 

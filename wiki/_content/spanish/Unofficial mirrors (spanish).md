@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Unofficial mirrors](/index.php/Unofficial_mirrors "Unofficial mirrors"), revisada por última vez el **2019-01-29**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Unofficial_mirrors&diff=0&oldid=565206) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Unofficial mirrors](/index.php/Unofficial_mirrors "Unofficial mirrors"), revisada por última vez el **2019-02-13**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Unofficial_mirrors&diff=0&oldid=566488) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Estos [mirrors](/index.php/Mirrors_(Espa%C3%B1ol) "Mirrors (Español)") *no* están listados en `/etc/pacman.d/mirrorlist`.
 
@@ -151,6 +151,7 @@ Estos [mirrors](/index.php/Mirrors_(Espa%C3%B1ol) "Mirrors (Español)") *no* est
 *   [http://mirror.ziemer.bz/archlinux](http://mirror.ziemer.bz/archlinux)
 *   [https://lug.mines.edu/mirrors/archlinux/](https://lug.mines.edu/mirrors/archlinux/)
 *   [http://mirror.cs.umn.edu/arch/](http://mirror.cs.umn.edu/arch/)
+*   [http://mirror.katie.host/archlinux/](http://mirror.katie.host/archlinux/) - *Contiene deltas generados automáticamente para los últimos 3 meses hasta la versión actual. Los deltas se obtienen de [aquí](http://archlinux.uk.mirror.allworldit.com/archlinux-deltarepo/). Véase [aquí](https://bbs.archlinux.org/viewtopic.php?id=243247) para obtener más información*
 
 ## Sourceforge (ISOs antiguos)
 

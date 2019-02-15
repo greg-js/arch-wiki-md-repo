@@ -331,7 +331,7 @@ Relevant websites:
 *   [ttf-amiri](https://aur.archlinux.org/packages/ttf-amiri/) - A classical Arabic typeface in Naskh style poineered by Amiria Press
 *   [ttf-arabeyes-fonts](https://aur.archlinux.org/packages/ttf-arabeyes-fonts/) - Collection of free Arabic fonts
 *   [ttf-qurancomplex-fonts](https://aur.archlinux.org/packages/ttf-qurancomplex-fonts/) - Fonts by King Fahd Glorious Quran Printing Complex in al-Madinah al-Munawwarah
-*   [ttf-sil-lateef](https://aur.archlinux.org/packages/ttf-sil-lateef/) - Unicode Arabic font from SIL
+*   [ttf-sil-lateef](https://aur.archlinux.org/packages/ttf-sil-lateef/) - Unicode Arabic font from [SIL](https://en.wikipedia.org/wiki/SIL_International "wikipedia:SIL International")
 *   [ttf-sil-scheherazade](https://aur.archlinux.org/packages/ttf-sil-scheherazade/) - Unicode Arabic font from SIL (Alternative for Traditional Arabic font)
 
 #### Braille

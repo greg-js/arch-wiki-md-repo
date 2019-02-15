@@ -3,8 +3,8 @@ Este artículo es una traducción de [dhcpcd](/index.php/Dhcpcd "Dhcpcd"), revis
 
 Artículos relacionados
 
-*   [Network configuration (Español)](/index.php/Network_configuration_(Espa%C3%B1ol) "Network configuration (Español)")
-*   [Wireless network configuration (Español)](/index.php/Wireless_network_configuration_(Espa%C3%B1ol) "Wireless network configuration (Español)")
+*   [Configuración de red](/index.php/Network_configuration_(Espa%C3%B1ol) "Network configuration (Español)")
+*   [Configuración de red inalámbrica](/index.php/Wireless_network_configuration_(Espa%C3%B1ol) "Wireless network configuration (Español)")
 *   [dhcpd](/index.php/Dhcpd "Dhcpd")
 
 *dhcpcd* es un cliente DHCP y DHCPv6\. Actualmente es el cliente DHCP de código abierto que más características tiene, vea su [página](https://roy.marples.name/projects/dhcpcd) para una lista completa de características.

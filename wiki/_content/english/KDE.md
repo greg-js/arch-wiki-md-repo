@@ -77,11 +77,12 @@ KDE is a software project currently comprising a [desktop environment](/index.ph
     *   [6.3 Graphical problems](#Graphical_problems)
         *   [6.3.1 Getting current state of KWin for support and debug purposes](#Getting_current_state_of_KWin_for_support_and_debug_purposes)
         *   [6.3.2 Disable desktop effects manually or automatically for defined applications](#Disable_desktop_effects_manually_or_automatically_for_defined_applications)
-        *   [6.3.3 Disable compositing](#Disable_compositing)
-        *   [6.3.4 Flickering in fullscreen when compositing is enabled](#Flickering_in_fullscreen_when_compositing_is_enabled)
-        *   [6.3.5 Screen tearing with NVIDIA](#Screen_tearing_with_NVIDIA)
-        *   [6.3.6 Plasma cursor sometimes shown incorrectly](#Plasma_cursor_sometimes_shown_incorrectly)
-        *   [6.3.7 Unusable screen resolution set](#Unusable_screen_resolution_set)
+        *   [6.3.3 Enable transparency](#Enable_transparency)
+        *   [6.3.4 Disable compositing](#Disable_compositing)
+        *   [6.3.5 Flickering in fullscreen when compositing is enabled](#Flickering_in_fullscreen_when_compositing_is_enabled)
+        *   [6.3.6 Screen tearing with NVIDIA](#Screen_tearing_with_NVIDIA)
+        *   [6.3.7 Plasma cursor sometimes shown incorrectly](#Plasma_cursor_sometimes_shown_incorrectly)
+        *   [6.3.8 Unusable screen resolution set](#Unusable_screen_resolution_set)
     *   [6.4 Sound problems](#Sound_problems)
         *   [6.4.1 No sound after suspend](#No_sound_after_suspend)
         *   [6.4.2 MP3 files cannot be played when using the GStreamer Phonon backend](#MP3_files_cannot_be_played_when_using_the_GStreamer_Phonon_backend)
@@ -619,6 +620,17 @@ $ qdbus org.kde.KWin /KWin supportInformation
 Plasma has desktop effects enabled by default and e.g. not every game will disable them automatically. You can disable desktop effects in *System Settings > Desktop Behavior > Desktop Effects* and you can toggle desktop effects with `Alt+Shift+F12`.
 
 Additionally, you can create custom KWin rules to automatically disable/enable compositing when a certain application/window starts under *System Settings > Window Management > Window Rules*.
+
+#### Enable transparency
+
+If you use a transparent background without enabling the compositor, you will get the message:
+
+```
+This color scheme uses a transparent background which does not appear to be supported on your desktop
+
+```
+
+In *System Settings > Display and Monitor*, check *Enable compositor on startup* and restart Plasma.
 
 #### Disable compositing
 

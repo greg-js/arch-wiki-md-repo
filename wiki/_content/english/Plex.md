@@ -79,8 +79,8 @@ You can further increase security via systemd, by [editing](/index.php/Edit "Edi
  `/etc/systemd/system/plexmediaserver.service.d/restrict.conf` 
 ```
 [Service]
-ReadOnlyDirectories=/
-ReadWriteDirectories=/var/lib/plex /tmp
+ReadOnlyPaths=/
+ReadWritePaths=/var/lib/plex /tmp
 ```
 
 **Note:** Those mechanisms are currently limited. For instance, `ReadOnlyDirectories` do not apply to any submount, you have to list them as well.

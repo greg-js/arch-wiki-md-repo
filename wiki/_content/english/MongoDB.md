@@ -10,21 +10,26 @@ MongoDB (from hu**mongo**us) is an open source document-oriented database system
 *   [2 Usage](#Usage)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 MongoDB won't start](#MongoDB_won't_start)
-    *   [3.2 MongoDB complains about transparent_hugepage Kernel Setting](#MongoDB_complains_about_transparent_hugepage_Kernel_Setting)
+    *   [3.2 Warning about Transparent Huge Pages (THP)](#Warning_about_Transparent_Huge_Pages_(THP))
 
 ## Installation
 
-MongoDB has been removed from the [official repositories](/index.php/Official_repositories "Official repositories") due to its re-licensing issues. You can install the [mongodb](https://aur.archlinux.org/packages/mongodb/) or [mongodb-bin](https://aur.archlinux.org/packages/mongodb-bin/) package. (Please note that compiling source code in the [mongodb](https://aur.archlinux.org/packages/mongodb/) requires ~160GB free disk space and takes several hours)
+MongoDB has been removed from the [official repositories](/index.php/Official_repositories "Official repositories") due to its re-licensing issues [[1]](https://lists.archlinux.org/pipermail/arch-dev-public/2019-January/029430.html).
 
-You may also wish to install [mongodb-tools](https://www.archlinux.org/packages/?name=mongodb-tools) alongside with [mongodb](https://aur.archlinux.org/packages/mongodb/), which provides tools such as `mongoimport`, `mongoexport`, `mongodump`, `mongorestore`, among others.
+[PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") are provided in [AUR](/index.php/AUR "AUR") to build MongoDB from source instead:
 
-[Start/Enable](/index.php/Systemd#Using_units "Systemd") the `mongodb.service` daemon.
+*   [mongodb](https://aur.archlinux.org/packages/mongodb/) - requires around 160GB free disk space and may take several hours to build.
+*   [mongodb-bin](https://aur.archlinux.org/packages/mongodb-bin/) - prebuilt MongoDB binary.
 
-During the first startup of the mongodb service, it will [pre-allocate space](https://docs.mongodb.com/manual/faq/storage/#preallocated-data-files), by creating large files (for its journal and other data). This step may take a while, during which the database shell is unavailable.
+[Install](/index.php/Install "Install") [mongodb-tools](https://www.archlinux.org/packages/?name=mongodb-tools) or [mongodb-tools-bin](https://aur.archlinux.org/packages/mongodb-tools-bin/), which provides tools such as `mongoimport`, `mongoexport`, `mongodump`, `mongorestore`, among others.
 
 ## Usage
 
-To access the Database shell type in the terminal:
+[Start](/index.php/Start "Start")/[Enable](/index.php/Enable "Enable") the `mongodb.service` daemon.
+
+**Note:** During the first startup of the mongodb service, it will [pre-allocate space](https://docs.mongodb.com/manual/faq/storage/#preallocated-data-files), by creating large files (for its journal and other data). This step may take a while, during which the MongoDB shell is unavailable.
+
+Use `mongo` to access the MongoDB shell [[2]](https://docs.mongodb.com/manual/mongo/):
 
 ```
 $ mongo
@@ -90,18 +95,18 @@ processManagement:
 
 ```
 
-### MongoDB complains about transparent_hugepage Kernel Setting
+### Warning about Transparent Huge Pages (THP)
 
-After starting the mongoDB, if you see some warnings about the transparent_hugepage you can permanently disable this System Setting by editing the following file (see [FreeDesktop tmpfiles.d Manual](https://www.freedesktop.org/software/systemd/man/tmpfiles.d.html)):
+One may want to permanently disable this feature by using a [tmpfile](/index.php/Tmpfile "Tmpfile"):
 
- `/etc/tmpfiles.d/local.conf` 
+ `/etc/tmpfiles.d/mongodb.conf` 
 ```
 w /sys/kernel/mm/transparent_hugepage/enabled - - - - never
 w /sys/kernel/mm/transparent_hugepage/defrag - - - - never
 
 ```
 
-If you want to disable only for this boot, you can use SysCtl or by simply echoing in the files like below:
+Use [sysctl](/index.php/Sysctl "Sysctl") to disable THP at runtime:
 
 ```
 # echo never > /sys/kernel/mm/transparent_hugepage/enabled

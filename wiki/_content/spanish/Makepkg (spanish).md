@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [makepkg](/index.php/Makepkg "Makepkg"), revisada por última vez el **2018-12-26**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Makepkg&diff=0&oldid=549263) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [makepkg](/index.php/Makepkg "Makepkg"), revisada por última vez el **2019-2-13**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Makepkg&diff=0&oldid=566504) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -40,7 +40,7 @@ makepkg lo provee el paquete [pacman](https://www.archlinux.org/packages/?name=p
 *   [4 Solución de problemas](#Solución_de_problemas)
     *   [4.1 A veces makepkg falla al firmar un paquete sin preguntar la frase de firma](#A_veces_makepkg_falla_al_firmar_un_paquete_sin_preguntar_la_frase_de_firma)
     *   [4.2 CFLAGS/CXXFLAGS/LDFLAGS en makepkg.conf no funcionan en los paquetes basados en CMake](#CFLAGS/CXXFLAGS/LDFLAGS_en_makepkg.conf_no_funcionan_en_los_paquetes_basados_en_CMake)
-    *   [4.3 CFLAGS/CXXFLAGS en makepkg.conf no funcionan en los paquetes basados en QMAKE](#CFLAGS/CXXFLAGS_en_makepkg.conf_no_funcionan_en_los_paquetes_basados_en_QMAKE)
+    *   [4.3 CFLAGS/CXXFLAGS/LDFLAGS en makepkg.conf no funcionan en los paquetes basados en QMAKE](#CFLAGS/CXXFLAGS/LDFLAGS_en_makepkg.conf_no_funcionan_en_los_paquetes_basados_en_QMAKE)
     *   [4.4 Especificar el directorio de instalación para los paquetes basados en QMAKE](#Especificar_el_directorio_de_instalación_para_los_paquetes_basados_en_QMAKE)
     *   [4.5 ADVERTENCIA: Paquetes que contienen referencias a $srcdir](#ADVERTENCIA:_Paquetes_que_contienen_referencias_a_$srcdir)
     *   [4.6 Makepkg falla al descargar las dependencias a través de un proxy](#Makepkg_falla_al_descargar_las_dependencias_a_través_de_un_proxy)
@@ -335,9 +335,9 @@ Con el fin de dejar que CMake use las variables definidas en `makepkg.conf`, sim
 
 Esto causa que cmake utilice una construcción tipo `None` en la que utiliza las variables de entorno como `CFLAGS`, `CPPFLAGS`, etc.
 
-### CFLAGS/CXXFLAGS en makepkg.conf no funcionan en los paquetes basados en QMAKE
+### CFLAGS/CXXFLAGS/LDFLAGS en makepkg.conf no funcionan en los paquetes basados en QMAKE
 
-Qmake establece automáticamente las variables `CFLAGS` y `CXXFLAGS` acorde con la configuración que él considera correcto. Con el fin de dejar que qmake utilice las variables definidas en el archivo de configuración makepkg, tienes que editar el PKGBUILD y pasar las variables [QMAKE_CFLAGS](http://doc.qt.io/qt-5/qmake-variable-reference.html#qmake-cflags) y [QMAKE_CXXFLAGS](http://doc.qt.io/qt-5/qmake-variable-reference.html#qmake-cxxflags) a qmake. Por ejemplo:
+Qmake establece automáticamente las variables `CFLAGS`, `CXXFLAGS` y `LDFLAGS` acorde con la configuración que él considera correcto. Con el fin de dejar que qmake utilice las variables definidas en el archivo de configuración makepkg, tienes que editar el PKGBUILD y pasar las variables [QMAKE_CFLAGS](https://doc.qt.io/qt-5/qmake-variable-reference.html#qmake-cflags), [QMAKE_CXXFLAGS](https://doc.qt.io/qt-5/qmake-variable-reference.html#qmake-cxxflags) y [QMAKE_LFLAGS](https://doc.qt.io/qt-5/qmake-variable-reference.html#qmake-lflags) a qmake. Por ejemplo:
 
  `PKGBUILD` 
 ```
@@ -345,10 +345,11 @@ Qmake establece automáticamente las variables `CFLAGS` y `CXXFLAGS` acorde con 
 
 build() {
   cd "$srcdir/$_pkgname-$pkgver-src"
-  qmake-qt4 "$srcdir/$_pkgname-$pkgver-src/$_pkgname.pro" \
+  qmake-qt5 "$srcdir/$_pkgname-$pkgver-src/$_pkgname.pro" \
     PREFIX=/usr \
     QMAKE_CFLAGS="${CFLAGS}" \
-    QMAKE_CXXFLAGS="${CXXFLAGS}"
+    QMAKE_CXXFLAGS="${CXXFLAGS}" \
+    QMAKE_LFLAGS="${LDFLAGS}"
 
   make
 }
@@ -357,7 +358,7 @@ build() {
 
 ```
 
-Alternativamente, en un sistema amplio de configuración, puedes crear tu propio `qmake.conf` y establecer las variables de entorno [QMAKESPEC](http://doc.qt.io/qt-5/qmake-environment-reference.html#qmakespec).
+Alternativamente, en un sistema amplio de configuración, puedes crear tu propio `qmake.conf` y establecer las variables de entorno [QMAKESPEC](https://doc.qt.io/qt-5/qmake-environment-reference.html#qmakespec).
 
 ### Especificar el directorio de instalación para los paquetes basados en QMAKE
 

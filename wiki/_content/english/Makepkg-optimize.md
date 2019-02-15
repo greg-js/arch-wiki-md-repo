@@ -43,7 +43,7 @@ $ makepkg --config /etc/makepkg-optimize.conf
 
 ```
 
-**Note:** [Profile-guided optimization](https://en.wikipedia.org/wiki/Profile-guided_optimization "wikipedia:Profile-guided optimization") requires that a package be built and installed *twice*. The first phase initiates profile generation in `$PROFDEST/$pkgbase.gen`; the second moves them to `$PROFDEST/$pkgbase.used` and applies them.
+**Note:** [Profile-guided optimization](https://en.wikipedia.org/wiki/Profile-guided_optimization "wikipedia:Profile-guided optimization") requires that a package be built and installed *twice*. The first phase initiates profile generation in `$PROFDEST/*pkgbase*.gen`; the second moves them to `$PROFDEST/*pkgbase*.used` and applies them.
 
 ## Build an optimized package in a clean chroot
 
@@ -103,19 +103,15 @@ $ makechrootpkg -c -r "$CHROOT" -- --config /etc/makepkg-optimize.conf
 After the first building phase, bind the [PGO cache](#Create_a_PGO_cache):
 
 ```
-# mount -o bind {,"$CHROOT"/"$USER"}/mnt/pgo
+# mount -o bind {,"$CHROOT"/root}/mnt/pgo
+# mount -o bind "$CHROOT"/{root,"$USER"}/mnt/pgo
 
 ```
 
-**Tip:** Alternatively, use [fstab](/index.php/Fstab "Fstab") to bind these folders persistently.
+**Tip:** Use [fstab](/index.php/Fstab "Fstab") to [bind](https://serverfault.com/a/613184) these folders at boot.
 
-Once the package is [installed](/index.php/Pacman#Additional_commands "Pacman"), test-run its executables.
+[Install](/index.php/Pacman#Additional_commands "Pacman") the package and test-run its executables.
 
 **Note:** Profiles are generated on program `exit()`. Persistent daemons, such as [systemd](/index.php/Systemd "Systemd"), may require a reboot to produce profiles. If you have rebooted, be sure to rebind the PGO cache before rebuilding.
 
-For the second building phase, do *not* pass `-c` to `makechrootpkg`, but clean `$srcdir` and overwrite the previous package by passing `-Cf` to `makepkg`:
-
-```
-$ makechrootpkg -r "$CHROOT" -- -Cf --config /etc/makepkg-optimize.conf
-
-```
+After thoroughly utilizing the software, [rebuild](/index.php/Makepkg-optimize#Build_a_package "Makepkg-optimize") and reinstall the package.

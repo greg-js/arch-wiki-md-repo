@@ -17,20 +17,20 @@ Artículos relacionados
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
-    *   [1.1 Montando](#Montando)
-    *   [1.2 Desmontando](#Desmontando)
+    *   [1.1 Montaje](#Montaje)
+    *   [1.2 Desmontaje](#Desmontaje)
 *   [2 Opciones](#Opciones)
-*   [3 Chrooting](#Chrooting)
-*   [4 Automounting](#Automounting)
-    *   [4.1 On demand](#On_demand)
-    *   [4.2 On boot](#On_boot)
-    *   [4.3 Secure user access](#Secure_user_access)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Checklist](#Checklist)
+*   [3 Haciendo Chroot](#Haciendo_Chroot)
+*   [4 Montaje automático](#Montaje_automático)
+    *   [4.1 Bajo demanda](#Bajo_demanda)
+    *   [4.2 En el arranque](#En_el_arranque)
+    *   [4.3 Acceso de usuario seguro](#Acceso_de_usuario_seguro)
+*   [5 Solución de problemas](#Solución_de_problemas)
+    *   [5.1 Lista de comprobación](#Lista_de_comprobación)
     *   [5.2 Connection reset by peer](#Connection_reset_by_peer)
     *   [5.3 Remote host has disconnected](#Remote_host_has_disconnected)
     *   [5.4 fstab mounting issues](#fstab_mounting_issues)
-*   [6 See also](#See_also)
+*   [6 Véase también](#Véase_también)
 
 ## Instalación
 
@@ -42,7 +42,7 @@ Artículos relacionados
 *   Es posible que desee utilizar [Google Authenticator](/index.php/Google_Authenticator_(Espa%C3%B1ol) "Google Authenticator (Español)") para proporcionar seguridad adicional como es la autenticación de dos pasos.
 *   [SSH keys](/index.php/SSH_keys_(Espa%C3%B1ol) "SSH keys (Español)") puede ser utilizado sobre la autenticación tradicional de contraseña.
 
-### Montando
+### Montaje
 
 Para poder montar un directorio, el usuario de SSH necesita poder acceder a él. Invoque *sshfs* para montar un directorio remoto:
 
@@ -64,7 +64,7 @@ Cuando no se especifica, la ruta remota se establece de manera predeterminada en
 
 SSH le pedirá la contraseña, si es necesario. Si no desea escribir la contraseña varias veces al día, véase [SSH keys](/index.php/SSH_keys_(Espa%C3%B1ol) "SSH keys (Español)").
 
-### Desmontando
+### Desmontaje
 
 Para desmontar el sistema remoto:
 
@@ -82,25 +82,25 @@ $ fusermount3 -u /ruta/local
 
 ## Opciones
 
-*sshfs* can automatically convert between local and remote user IDs. Use the `idmap=user` option to translate the UID of the connecting user to the remote user `myuser` (GID remains unchanged):
+*sshfs' puede convertir automáticamente entre ID de usuarios locales y remotos. Utilice la opción `idmap=user` para traducir el UID del usuario que se conecta al usuario remoto `miusuario` (GID permanece sin cambios):*
 
 ```
-$ sshfs myuser@mycomputer:/remote/path /local/path -o idmap=user
+$ sshfs miusuario@micomputadora:/ruta/remota /ruta/local -o idmap=user
 
 ```
 
-If you need more control over UID and GID translation, look at the options `idmap=file`, `uidfile` and `gidfile`.
+Si necesita más control sobre la traducción de UID y GID, mire las opciones `idmap=file`, `uidfile` y `gidfile`.
 
-A complete list of options can be found in [sshfs(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sshfs.1).
+Se puede encontrar una lista completa de opciones en [sshfs(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sshfs.1).
 
-## Chrooting
+## Haciendo Chroot
 
-You may want to restrict a specific user to a specific directory on the remote system. This can be done by editing `/etc/ssh/sshd_config`:
+Es posible que desee restringir un usuario específico a un directorio específico en el sistema remoto. Esto se puede hacer editando `/etc/ssh/sshd_config`:
 
  `/etc/ssh/sshd_config` 
 ```
 .....
-Match User *someuser* 
+Match User *algúnusuario* 
        ChrootDirectory */chroot/%u*
        ForceCommand internal-sftp
        AllowTcpForwarding no
@@ -109,92 +109,92 @@ Match User *someuser*
 
 ```
 
-**Note:** The chroot directory **must** be owned by root, otherwise you will not be able to connect.
+**Nota:** El directorio chroot **debe** ser propiedad del superusuario *(root)*, de lo contrario no podrá conectarse.
 
-See also [SFTP chroot](/index.php/SFTP_chroot "SFTP chroot"). For more information check the [sshd_config(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sshd_config.5) man page for `Match`, `ChrootDirectory` and `ForceCommand`.
+Véase también [SFTP chroot](/index.php/SFTP_chroot "SFTP chroot"). Para más información revise la página del manual [sshd_config(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sshd_config.5) para `Match`, `ChrootDirectory` y `ForceCommand`.
 
-## Automounting
+## Montaje automático
 
-Automounting can happen on boot, or on demand (when accessing the directory). For both, the setup happens in the [fstab](/index.php/Fstab "Fstab").
+El montaje automático puede ocurrir en el arranque o bajo demanda (al acceder al directorio). Para ambos, la configuración ocurre en [fstab](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Español)").
 
-**Note:** Keep in mind that automounting is done through the root user, therefore you cannot use hosts configured in `.ssh/config` of your normal user.
+**Nota:** Tenga en cuenta que el montaje automático se realiza a través del superusuario, por lo tanto, no puede utilizar anfitriones *(hosts)* configurados en `.ssh/config` de su usuario normal.
 
-To let the root user use an SSH key of a normal user, specify its full path in the `IdentityFile` option.
+Para permitir que el superusuario utilice una clave SSH de un usuario normal, especifique su ruta completa en la opción `IdentityFile`.
 
-**And most importantly**, use each sshfs mount at least once manually **while root** so the host's signature is added to the `/root/.ssh/known_hosts` file.
+**Y más importante**, utilice manualmente cada montaje sshfs al menos una vez **cuando sea superusuario** para que la firma del anfitrión se añada al archivo `/root/.ssh/known_hosts`.
 
-### On demand
+### Bajo demanda
 
-With systemd on-demand mounting is possible using `/etc/fstab` entries.
+Con systemd es posible el montaje bajo demanda utilizando entradas `/etc/fstab`.
 
-Example:
-
-```
-user@host:/remote/folder /mount/point  fuse.sshfs noauto,x-systemd.automount,_netdev,users,idmap=user,IdentityFile=/home/user/.ssh/id_rsa,allow_other,reconnect 0 0
+Por ejemplo:
 
 ```
-
-The important mount options here are *noauto,x-systemd.automount,_netdev*.
-
-*   *noauto* tells it not to mount at boot
-*   *x-systemd.automount* does the on-demand magic
-*   *_netdev* tells it that it is a network device, not a block device (without it "No such device" errors might happen)
-
-**Note:** After editing `/etc/fstab`, (re)start the required service: `systemctl daemon-reload && systemctl restart <target>` where `<target>` can be found by running `systemctl list-unit-files --type automount`
-
-**Tip:** [autosshfs-git](https://aur.archlinux.org/packages/autosshfs-git/) do not require editing `/etc/fstab` to add a new mountpoint. Instead, regular users can create one by simply attempting to access it (with e. g. something like `ls ~/mnt/ssh/[user@]yourremotehost[:port]`). [autosshfs-git](https://aur.archlinux.org/packages/autosshfs-git/) uses AutoFS. Users need to be enabled to use it with `autosshfs-user`.
-
-### On boot
-
-An example on how to use sshfs to mount a remote filesystem through `/etc/fstab`
-
-```
-USERNAME@HOSTNAME_OR_IP:/REMOTE/DIRECTORY  /LOCAL/MOUNTPOINT  fuse.sshfs  defaults,_netdev  0  0
+usuario@host:/carpeta/remota /punto/montaje  fuse.sshfs noauto,x-systemd.automount,_netdev,users,idmap=user,IdentityFile=/home/usuario/.ssh/id_rsa,allow_other,reconnect 0 0
 
 ```
 
-Take for example the *fstab* line
+Las opciones de montaje importantes aquí son *noauto,x-systemd.automount,_netdev*.
+
+*   *noauto* le dice que no se monte en el arranque
+*   *x-systemd.automount* hace la magia bajo demanda
+*   *_netdev* le dice que es un dispositivo de red, no un dispositivo de bloque (sin él pueden ocurrir errores del tipo "No existe dicho dispositivo")
+
+**Nota:** Despues de editar `/etc/fstab`, (re)inicie el servicio requerido: `systemctl daemon-reload && systemctl restart <objetivo>` donde `<objetivo>` se puede encontrar ejecutando `systemctl list-unit-files --type automount`
+
+**Sugerencia:** [autosshfs-git](https://aur.archlinux.org/packages/autosshfs-git/) no requiere editar `/etc/fstab` para añadir un nuevo punto de montaje. En cambio, los usuarios normales pueden crear uno simplemente intentando acceder a él (por ejemplo, con algo como `ls ~/mnt/ssh/[usuario@]yourremotehost[:puerto]`). [autosshfs-git](https://aur.archlinux.org/packages/autosshfs-git/) utiliza AutoFS. Los usuarios deben estar activados para utilizarlo con `autosshfs-user`.
+
+### En el arranque
+
+Un ejemplo de cómo utilizar sshfs para montar un sistema de archivos remoto a través de `/etc/fstab`
+
+```
+USUARIO@NOMBREHOST_O_IP:/DIRECTORIO/REMOTO  /PUNTOMONTAJE/LOCAL  fuse.sshfs  defaults,_netdev  0  0
+
+```
+
+Tomemos, por ejemplo, la línea *fstab*
 
 ```
 llib@192.168.1.200:/home/llib/FAH  /media/FAH2  fuse.sshfs  defaults,_netdev  0  0
 
 ```
 
-The above will work automatically if you are using an SSH key for the user. See [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys").
+Lo anterior funcionará automáticamente si está utilizando una clave SSH para el usuario. Véase [Uso de claves SSH](/index.php/Using_SSH_Keys "Using SSH Keys").
 
-If you want to use sshfs with multiple users:
-
-```
-user@domain.org:/home/user  /media/user   fuse.sshfs    defaults,allow_other,_netdev    0  0
+Si quiere utilizar sshfs con múltiples usuarios:
 
 ```
-
-Again, it is important to set the *_netdev* mount option to make sure the network is available before trying to mount.
-
-### Secure user access
-
-When automounting via [fstab](/index.php/Fstab "Fstab"), the filesystem will generally be mounted by root. By default, this produces undesireable results if you wish access as an ordinary user and limit access to other users.
-
-An example mountpoint configuration:
-
-```
-USERNAME@HOSTNAME_OR_IP:/REMOTE/DIRECTORY  /LOCAL/MOUNTPOINT  fuse.sshfs noauto,x-systemd.automount,_netdev,user,idmap=user,follow_symlinks,identityfile=/home/USERNAME/.ssh/id_rsa,allow_other,default_permissions,uid=USER_ID_N,gid=USER_GID_N 0 0
+usuario@dominio.org:/home/usuario  /media/usuario   fuse.sshfs    defaults,allow_other,_netdev    0  0
 
 ```
 
-Summary of the relevant options:
+Una vez más, es importante configurar la opción de montaje *_netdev* para asegurarse de que la red esté disponible antes de intentar montar.
 
-*   *allow_other* - Allow other users than the mounter (i.e. root) to access the share.
-*   *default_permissions* - Allow kernel to check permissions, i.e. use the actual permissions on the remote filesystem. This allows prohibiting access to everybody otherwise granted by *allow_other*.
-*   *uid*, *gid* - set reported ownership of files to given values; *uid* is the numeric user ID of your user, *gid* is the numeric group ID of your user.
+### Acceso de usuario seguro
 
-## Troubleshooting
+Al realizar el montaje automático a través de [fstab](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Español)"), el sistema de archivos generalmente será montado por el superusuario. De forma predeterminada, esto produce resultados indeseables si desea acceder como un usuario normal y limitar el acceso a otros usuarios.
 
-### Checklist
+Un ejemplo de configuración del punto de montaje:
 
-Read [OpenSSH#Checklist](/index.php/OpenSSH#Checklist "OpenSSH") first. Further issues to check are:
+```
+USUARIO@NOMBREHOST_O_IP:/DIRECTORIO/REMOTO  /PUNTOMONTAJE/LOCAL  fuse.sshfs noauto,x-systemd.automount,_netdev,user,idmap=user,follow_symlinks,identityfile=/home/USUARIO/.ssh/id_rsa,allow_other,default_permissions,uid=N_ID_USUARIO,gid=N_GID_USUARIO 0 0
 
-1\. Is your SSH login sending additional information from server's `/etc/issue` file e.g.? This might confuse SSHFS. You should temporarily deactivate server's `/etc/issue` file:
+```
+
+Resumen de las opciones relevantes:
+
+*   *allow_other* - Permite que otros usuarios que no sean el montador (es decir, el superusuario) accedan al recurso compartido.
+*   *default_permissions* - Permite que el kernel verifique los permisos, es decir, utilice los permisos reales en el sistema de archivos remoto. Esto permite prohibir el acceso a todas las personas que de otra forma concede *allow_other*.
+*   *uid*, *gid* - establece la propiedad de archivos reportada a unos valores determinados; *uid* es el ID numérico de su usuario, *gid* es el ID numérico del grupo de su usuario.
+
+## Solución de problemas
+
+### Lista de comprobación
+
+Lea primero [OpenSSH (Español)#Lista de comprobación](/index.php/OpenSSH_(Espa%C3%B1ol)#Lista_de_comprobación "OpenSSH (Español)"). Otros temas para verificar son:
+
+1\. ¿Su inicio de sesión SSH está enviando información adicional desde, por ejemplo, el archivo `/etc/issue` del servidor? Esto podría confundir SSHFS. Debería desactivar temporalmente el archivo `/etc/issue` del servidor:
 
 ```
 $ mv /etc/issue /etc/issue.orig
@@ -266,6 +266,6 @@ To be able to run `mount -av` and see the debug output, remove the following:
 
 ```
 
-## See also
+## Véase también
 
-*   [How to mount chrooted SSH filesystem](http://wiki.gilug.org/index.php/How_to_mount_SFTP_accesses), with special care with owners and permissions questions.
+*   [Cómo montar el sistema de archivos SSH en chroot](http://wiki.gilug.org/index.php/How_to_mount_SFTP_accesses), Con especial cuidado con las preguntas de propietarios y permisos.

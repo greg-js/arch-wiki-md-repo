@@ -34,8 +34,8 @@ smartctl is a command-line tool that "controls the Self-Monitoring, Analysis and
 
 The `-i`/`--info` option prints a variety of information about a device, including whether SMART is available and enabled:
 
+ `# smartctl --info /dev/sda | grep 'SMART support is:'` 
 ```
-# smartctl --info /dev/sda | grep 'SMART support is:'
 SMART support is: Available - device has SMART capability.
 SMART support is: Enabled
 
@@ -60,16 +60,16 @@ There are three types of self-tests that a device can execute (all are safe to u
 
 The `-c`/`--capabilities` flag prints which tests a device supports and the approximate execution time of each test. For example:
 
+ `# smartctl -c /dev/sda` 
 ```
-# smartctl -c /dev/sda
-[…]
+...
 Short self-test routine
 recommended polling time:        (   1) minutes.
 Extended self-test routine
 recommended polling time:        (  74) minutes.
 Conveyance self-test routine
 recommended polling time:        (   2) minutes.
-[…]
+...
 
 ```
 
@@ -123,6 +123,7 @@ To monitor for all possible SMART errors on `/dev/sda` and `/dev/sdb`, and ignor
 ```
 /dev/sda -a
 /dev/sdb -a
+
 ```
 
 To monitor for all possible SMART errors on externally connected disks (USB-backup disks spring to mind) it is prudent to tell *smartd* the UUID of the device since the /dev/sdX of the drive might change during a reboot.
@@ -152,17 +153,29 @@ Now your USB disk will be monitored even if the /dev/sdX path changes during reb
 
 To have an email sent when a failure or new error occurs, use the `-m` option:
 
- `/etc/smartd.conf`  `DEVICESCAN -m address@domain.com` 
+ `/etc/smartd.conf` 
+```
+DEVICESCAN -m address@domain.com
+
+```
 
 To be able to send the email externally (i.e. not to the root mail account) a MTA (Mail Transport Agent) or a MUA (Mail User Agent) will need to be installed and configured. Common MTAs are [Msmtp](/index.php/Msmtp "Msmtp") and [SSMTP](/index.php/SSMTP "SSMTP"). Common MTUs are sendmail and [Postfix](/index.php/Postfix "Postfix"). It is enough to simply configure [S-nail](/index.php/S-nail "S-nail") if you do not want anything else, but you will need to follow [these instructions](//dominicm.com/configure-email-notifications-on-arch-linux/).
 
 The `-M test` option causes a test email to be sent each time the smartd daemon starts:
 
- `/etc/smartd.conf`  `DEVICESCAN -m address@domain.com -M test` 
+ `/etc/smartd.conf` 
+```
+DEVICESCAN -m address@domain.com -M test
+
+```
 
 Emails can take quite a while to be delivered. To make sure you are warned immediately if your hard drive fails, you may also define a script to be executed in addition to the email sending:
 
- `/etc/smartd.conf`  `DEVICESCAN -m address@domain.com -M exec /usr/local/bin/smartdnotify` 
+ `/etc/smartd.conf` 
+```
+DEVICESCAN -m address@domain.com -M exec /usr/local/bin/smartdnotify
+
+```
 
 To send an email and a system notification, put something like this into `/usr/local/bin/smartdnotify`:
 
@@ -213,7 +226,11 @@ You can execute your custom scripts with `/etc/smartd.conf`  `DEVICESCAN -m @sma
 
 If you use a computer under control of power management, you should instruct smartd how to handle disks in low power mode. Usually, in response to SMART commands issued by smartd, the disk platters are spun up. So if this option is not used, then a disk which is in a low-power mode may be spun up and put into a higher-power mode when it is periodically polled by smartd.
 
- `/etc/smartd.conf`  `DEVICESCAN -n standby,15,q` 
+ `/etc/smartd.conf` 
+```
+DEVICESCAN -n standby,15,q
+
+```
 
 More info on [smartmontools wiki](http://www.smartmontools.org/wiki/Powermode).
 
@@ -236,16 +253,26 @@ For more info see [smartd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smartd.
 
 smartd can tell disks to perform self-tests on a schedule. The following `/etc/smartd.conf` configuration will start a short self-test every day between 2-3am, and an extended self test weekly on Saturdays between 3-4am:
 
- `/etc/smartd.conf`  `DEVICESCAN -s (S/../.././02|L/../../6/03)` 
+ `/etc/smartd.conf` 
+```
+DEVICESCAN -s (S/../.././02|L/../../6/03)
+
+```
 
 #### Alert on temperature changes
 
 smartd can track disk temperatures and alert if they rise too quickly or hit a high limit. The following will log changes of 4 degrees or more, log when temp reaches 35 degrees, and log/email a warning when temp reaches 40:
 
- `/etc/smartd.conf`  `DEVICESCAN -W 4,35,40` 
-**Tip:** You can determine the current disk temperature with the command `smartctl -A /dev/<device> | grep Temperature_Celsius`
+ `/etc/smartd.conf` 
+```
+DEVICESCAN -W 4,35,40
 
-**Tip:** If you have some disks that run a lot hotter/cooler than others, remove `DEVICESCAN` and define a separate configuration for each device with appropriate temperature settings.
+```
+
+**Tip:**
+
+*   You can determine the current disk temperature with the command `smartctl -A /dev/<device> | grep Temperature_Celsius`
+*   If you have some disks that run a lot hotter/cooler than others, remove `DEVICESCAN` and define a separate configuration for each device with appropriate temperature settings.
 
 #### Complete smartd.conf example
 
@@ -260,7 +287,11 @@ Putting together all of the above gives the following example configuration:
 *   `-W ...` monitor temperature
 *   `-m ...` mail alerts
 
- `/etc/smartd.conf`  `DEVICESCAN -a -o on -S on -n standby,q -s (S/../.././02|L/../../6/03) -W 4,35,40 -m <username or email>` 
+ `/etc/smartd.conf` 
+```
+DEVICESCAN -a -o on -S on -n standby,q -s (S/../.././02|L/../../6/03) -W 4,35,40 -m <username or email>
+
+```
 
 ## Console Applications
 

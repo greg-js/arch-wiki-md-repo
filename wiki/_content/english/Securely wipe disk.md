@@ -175,7 +175,7 @@ A block storage devices contains sectors and a size of a single sector that can 
 As an example we use the parameters with the *dd* command to wipe a partition:
 
 ```
-# dd if=*data_source* of=/dev/sd"X" bs=*sector_size* count=*sector_number* seek=*partitions_start_sector*
+# dd if=*data_source* of=/dev/sd"X" bs=*sector_size* count=*sector_number* seek=*partitions_start_sector* status=progress
 
 ```
 
@@ -227,15 +227,19 @@ BytesInSector=512
 By using the starting address of the partition on the device by defining it in the `seek=` option
 
 ```
-# dd if=*data_source* of=/dev/sd"X" bs=${BytesInSector} count=${End} seek=${Start}
+# dd if=*data_source* of=/dev/sd"X" bs=${BytesInSector} count=${End} seek=${Start} status=progress
 
 ```
 
 By using the partitions name
 
- `LogicalSectors=3839709184` 
 ```
-# dd if=*data_source* of=/dev/sd"XA" bs=${BytesInSector} count=${LogicalSectors}
+LogicalSectors=3839709184
+
+```
+
+```
+# dd if=*data_source* of=/dev/sd"XA" bs=${BytesInSector} count=${LogicalSectors} status=progress
 
 ```
 
@@ -247,7 +251,7 @@ PhysicalSectorSizeBytes=4096
 ```
 
 ```
-# dd if=*data_source* of=/dev/sd"X" bs=${PhysicalSectorSizeBytes} count=${AllDiskPhysicalSectors} seek=0
+# dd if=*data_source* of=/dev/sd"X" bs=${PhysicalSectorSizeBytes} count=${AllDiskPhysicalSectors} seek=0 status=progress
 
 ```
 
@@ -336,14 +340,14 @@ See also [Core utilities#Essentials](/index.php/Core_utilities#Essentials "Core 
 Zero-fill the disk by writing a zero byte to every addressable location on the disk using the [/dev/zero](https://en.wikipedia.org/wiki//dev/zero "wikipedia:/dev/zero") stream.
 
 ```
-# dd if=/dev/zero of=/dev/sdX bs=4096
+# dd if=/dev/zero of=/dev/sdX bs=4096 status=progress
 
 ```
 
 Or the [/dev/urandom](https://en.wikipedia.org/wiki//dev/random "wikipedia:/dev/random") stream:
 
 ```
-# dd if=/dev/urandom of=/dev/sdX bs=4096
+# dd if=/dev/urandom of=/dev/sdX bs=4096 status=progress
 
 ```
 

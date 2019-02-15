@@ -219,7 +219,7 @@ dconf load /org/cinnamon/desktop/keybindings/ <keybindings-backup.dconf
 
 ### Screenshot
 
-As explained in [Taking a screenshot](/index.php/Taking_a_screenshot#Cinnamon "Taking a screenshot"), installing [gnome-screenshot](https://www.archlinux.org/packages/?name=gnome-screenshot) will add this functionality. The default shortcut key is `Prt Sc` key. This binding ca be changed in the applet *Menu > Preferences > Keyboard* under *Shortcuts > System > Screenshots and Recording*. The default save directory is `$HOME/Pictures`, but can be customized with eg.
+As explained in [Taking a screenshot](/index.php/Taking_a_screenshot#Cinnamon "Taking a screenshot"), installing [gnome-screenshot](https://www.archlinux.org/packages/?name=gnome-screenshot) will add this functionality. The default shortcut key is `Prt Sc` key. This binding can be changed in the applet *Menu > Preferences > Keyboard* under *Shortcuts > System > Screenshots and Recording*. The default save directory is `$HOME/Pictures`, but can be customized with eg.
 
 ```
 $ gsettings set org.gnome.gnome-screenshot auto-save-directory file:///home/*USER*/*some_path*

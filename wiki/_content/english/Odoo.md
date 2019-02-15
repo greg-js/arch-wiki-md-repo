@@ -183,4 +183,4 @@ Reload or restart `nginx` service to enable the new configuration.
 
 ## Additional documentation
 
-As Odoo is a complete enterprise solution, it might be rather complex to use for newcomers. Therefore, reading the [Odoo User Documentation](https://www.odoo.com/documentation/user/9.0/) and [Odoo technical documentation](https://www.odoo.com/documentation/9.0/) is highly advised.
+As Odoo is a complete enterprise solution, it might be rather complex to use for newcomers. Therefore, reading the [Odoo User Documentation](https://www.odoo.com/documentation/user/) and [Odoo technical documentation](https://www.odoo.com/documentation/) is highly advised.

@@ -13,13 +13,15 @@ Related articles
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
 *   [3 Configuration](#Configuration)
-    *   [3.1 UI Font](#UI_Font)
-    *   [3.2 Custom key bindings](#Custom_key_bindings)
-    *   [3.3 Save annotations to pdf](#Save_annotations_to_pdf)
+    *   [3.1 Per-document options](#Per-document_options)
+    *   [3.2 UI Font](#UI_Font)
+    *   [3.3 Custom key bindings](#Custom_key_bindings)
+    *   [3.4 Save annotations to pdf](#Save_annotations_to_pdf)
 *   [4 Tips and Tricks](#Tips_and_Tricks)
     *   [4.1 Reload File](#Reload_File)
-    *   [4.2 Remote Interface](#Remote_Interface)
-    *   [4.3 Inverse search using Synctex and Vim/Emacs](#Inverse_search_using_Synctex_and_Vim/Emacs)
+    *   [4.2 Multiple Columns](#Multiple_Columns)
+    *   [4.3 Remote Interface](#Remote_Interface)
+    *   [4.4 Inverse search using Synctex and Vim/Emacs](#Inverse_search_using_Synctex_and_Vim/Emacs)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -30,11 +32,17 @@ Related articles
 
 llpp uses keyboard shortcuts and the mouse to navigate through a document. By default, pressing `F1` or `h` will bring up a help page where all other key bindings are described.
 
-Check out the following page for a complete list of the [key and mouse bindings](http://repo.or.cz/w/llpp.git/blob_plain/master:/KEYS).
+Check out the following page for the [full help text](https://github.com/moosotc/llpp/blob/master/help.ml).
 
 ## Configuration
 
 llpp uses a configuration file to store settings: `$XDG_CONFIG_HOME/llpp.conf` or `~/.config/llpp.conf`. This file stores: 1) application defaults, and 2) file-by-file user preferences (e.g. the last page viewed).
+
+### Per-document options
+
+Pressing `i` will enter information mode, where you can examine and modify display settings for the current document.
+
+Alternately, pressing `-X` (where *X* is one of the tunable options shown in the help screen) allows you to set a single setting directly.
 
 ### UI Font
 
@@ -95,6 +103,14 @@ $ killall -SIGHUP llpp
 ```
 
 *   Using the "remote" interface (see below)
+
+### Multiple Columns
+
+For side-by-side 2-page viewing, press `-C2` (or set `columns` to `2` in info mode).
+
+If the page offset is wrong (left-hand page showing on the right-hand side), set columns to `2,1,0`.
+
+A unique feature of llpp is being able to split a single page down the middle by setting columns to `-2`. Use `-3` to split a 3-column document.
 
 ### Remote Interface
 

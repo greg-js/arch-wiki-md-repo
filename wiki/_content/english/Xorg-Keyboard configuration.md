@@ -216,7 +216,7 @@ If the desired mapping is not found in that file, an alternative is to use [xmod
 
 The default combinations for the compose keys depend on the [locale](/index.php/Locale "Locale") configured for the session and are stored in `/usr/share/X11/locale/*used_locale*/Compose`, where `*used_locale*` is for example `en_US.UTF-8`.
 
-You can define your own compose key combinations by copying the default file to `~/.XCompose` and editing it. It is also possible to create an empty `~/.XCompose` and include the default one using `include "%L"`, for example:
+You can define your own compose key combinations by copying the default file to `~/.XCompose` and editing it. Alternatively, create an empty `~/.XCompose` and include the default one using `include "%L"`, for example:
 
  `~/.XCompose` 
 ```
@@ -291,7 +291,7 @@ The *typematic delay* indicates the amount of time (typically in miliseconds) a 
 
 ### Using xset
 
-The tool *xset* can be used to set the typematic delay and rate for an active X server, certain actions during runtime tho may cause the XServer to reset these changes and revert instead to its *seat defaults*.
+The tool *xset* can be used to set the typematic delay and rate for an active X server, certain actions during runtime though may cause the XServer to reset these changes and revert instead to its *seat defaults*.
 
 Usage:
 

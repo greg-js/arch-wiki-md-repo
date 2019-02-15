@@ -11,21 +11,25 @@ Anche se Fontconfig è l'attuale standard in Linux, alcune applicazioni si basan
 
 I pacchetti rendering dei font su Arch Linux includono il supporto per *freetype2* con l'interprete bytecode (BCI) abilitato. Esistono dei pacchetti patchati per migliorare il rendering dei fonts, specialmente con monitor LCD. Vedere la sezione [#Pacchetti con patch](#Pacchetti_con_patch) riportata più avanti. Il pacchetto [#Infinality](#Infinality) consente sia l'auto-hinting che il subpixel rendering, permette la regolazione dei filtri LCD senza ricompilare e migliora l'auto-hinting dei caratteri in grassetto.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Percorso dei fonts](#Percorso_dei_fonts)
 *   [2 Configurazione fontconfig](#Configurazione_fontconfig)
     *   [2.1 Presets](#Presets)
     *   [2.2 Anti-aliasing](#Anti-aliasing)
     *   [2.3 Hinting](#Hinting)
-        *   [2.3.1 Byte-Code Interpreter (BCI)](#Byte-Code_Interpreter_.28BCI.29)
+        *   [2.3.1 Byte-Code Interpreter (BCI)](#Byte-Code_Interpreter_(BCI))
         *   [2.3.2 Autohinter](#Autohinter)
         *   [2.3.3 Hint style](#Hint_style)
     *   [2.4 Subpixel rendering](#Subpixel_rendering)
         *   [2.4.1 Filtro LCD](#Filtro_LCD)
         *   [2.4.2 Specifiche filtro LCD avanzate](#Specifiche_filtro_LCD_avanzate)
-    *   [2.5 Disabilitare l'auto-hinter per i caratteri in grassetto](#Disabilitare_l.27auto-hinter_per_i_caratteri_in_grassetto)
-    *   [2.6 Abilitare l'anti-aliasing solo per i caratteri grandi](#Abilitare_l.27anti-aliasing_solo_per_i_caratteri_grandi)
+    *   [2.5 Disabilitare l'auto-hinter per i caratteri in grassetto](#Disabilitare_l'auto-hinter_per_i_caratteri_in_grassetto)
+    *   [2.6 Abilitare l'anti-aliasing solo per i caratteri grandi](#Abilitare_l'anti-aliasing_solo_per_i_caratteri_grandi)
     *   [2.7 Sostituire i font](#Sostituire_i_font)
     *   [2.8 Disattivare i font bitmap](#Disattivare_i_font_bitmap)
     *   [2.9 Creare stili grassetto e corsivo per i font incompleti](#Creare_stili_grassetto_e_corsivo_per_i_font_incompleti)

@@ -42,5 +42,5 @@ To minimize to tray on startup, use `-i` option.
 
 ## See also
 
-*   [Bugtracker](https://github.com/FreeRDP/Remmina/issues) - for the application
+*   [Bugtracker](https://gitlab.com/Remmina/Remmina/issues) - for the application
 *   [Project wiki](https://github.com/FreeRDP/FreeRDP/wiki) - with extensive resources

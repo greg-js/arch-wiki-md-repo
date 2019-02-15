@@ -119,6 +119,8 @@ cryptdevice=*device*:*dmname*
 *   `*dmname*` is the **d**evice-**m**apper name given to the device after decryption, which will be available as `/dev/mapper/*dmname*`.
 *   If a LVM contains the [encrypted root](/index.php/Dm-crypt/Encrypting_an_entire_system#LUKS_on_LVM "Dm-crypt/Encrypting an entire system"), the LVM gets activated first and the volume group containing the logical volume of the encrypted root serves as *device*. It is then followed by the respective volume group to be mapped to root. The parameter follows the form of `cryptdevice=*/dev/vgname/lvname*:*dmname*`.
 
+**Tip:** One may want to [enable Discard/TRIM support](/index.php/Dm-crypt/Specialties#Discard/TRIM_support_for_solid_state_drives_(SSD) "Dm-crypt/Specialties") for solid state drives (SSD).
+
 #### cryptkey
 
 This parameter specifies the location of a keyfile and is required by the `*encrypt*` hook for reading such a keyfile to unlock the `*cryptdevice*` (unless a key is in the default location, see below). It can have three parameter sets, depending on whether the keyfile exists as a file in a particular device, a bitstream starting on a specific location, or a file in the initramfs.

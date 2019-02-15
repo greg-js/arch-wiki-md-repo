@@ -256,7 +256,7 @@
 | <small>6.6.1.10.</small> [XMPP](/index.php/Category:XMPP_(Espa%C3%B1ol) "Category:XMPP (Español)") <small>(2) (también en [Mensajería instantánea](/index.php/Category:Instant_messaging_(Espa%C3%B1ol) "Category:Instant messaging (Español)"), [Protocolos](/index.php/Category:Protocols_(Espa%C3%B1ol) "Category:Protocols (Español)"))</small> |
 | <small>6.7.</small> [Mejoras visuales](/index.php/Category:Eye_candy_(Espa%C3%B1ol) "Category:Eye candy (Español)") <small>(8)</small> |
 | <small>6.7.1.</small> [Arranque gráfico](/index.php/Category:Bootsplash_(Espa%C3%B1ol) "Category:Bootsplash (Español)") <small>(2) (también en [Proceso de arranque](/index.php/Category:Boot_process_(Espa%C3%B1ol) "Category:Boot process (Español)"))</small> |
-| <small>6.7.2.</small> [Tipografías](/index.php/Category:Fonts_(Espa%C3%B1ol) "Category:Fonts (Español)") <small>(1)</small> |
+| <small>6.7.2.</small> [Tipografías](/index.php/Category:Fonts_(Espa%C3%B1ol) "Category:Fonts (Español)") <small>(2)</small> |
 | <small>6.8.</small> [Compartir archivos](/index.php/Category:File_sharing_(Espa%C3%B1ol) "Category:File sharing (Español)") <small>(0) (también en [Aplicaciones de internet](/index.php/Category:Internet_applications_(Espa%C3%B1ol) "Category:Internet applications (Español)"))</small> |
 | <small>6.9.</small> [Sistemas de archivos](/index.php/Category:File_systems_(Espa%C3%B1ol) "Category:File systems (Español)") <small>(13)</small> |
 | <small>6.9.1.</small> [Cifrado de disco](/index.php/Category:Disk_encryption_(Espa%C3%B1ol) "Category:Disk encryption (Español)") <small>(11) (también en [Cifrado](/index.php/Category:Encryption_(Espa%C3%B1ol) "Category:Encryption (Español)"))</small> |
@@ -268,7 +268,7 @@
 | <small>6.11.1.1.</small> [GNOME](/index.php/Category:GNOME_(Espa%C3%B1ol) "Category:GNOME (Español)") <small>(6) (también en [Proyectos de software](/index.php/Category:Software_projects_(Espa%C3%B1ol) "Category:Software projects (Español)"))</small> |
 | <small>6.11.1.2.</small> [KDE](/index.php/Category:KDE_(Espa%C3%B1ol) "Category:KDE (Español)") <small>(3) (también en [Proyectos de software](/index.php/Category:Software_projects_(Espa%C3%B1ol) "Category:Software projects (Español)"))</small> |
 | <small>6.11.1.3.</small> [Xfce](/index.php/Category:Xfce_(Espa%C3%B1ol) "Category:Xfce (Español)") <small>(1)</small> |
-| <small>6.11.2.</small> [Gestores de inicio de sesión](/index.php/Category:Display_managers_(Espa%C3%B1ol) "Category:Display managers (Español)") <small>(3)</small> |
+| <small>6.11.2.</small> [Gestores de inicio de sesión](/index.php/Category:Display_managers_(Espa%C3%B1ol) "Category:Display managers (Español)") <small>(4)</small> |
 | <small>6.11.3.</small> [Conjunto de widgets](/index.php/Category:Widget_toolkits_(Espa%C3%B1ol) "Category:Widget toolkits (Español)") <small>(2) (también en [Desarrollo](/index.php/Category:Development_(Espa%C3%B1ol) "Category:Development (Español)"))</small> |
 | <small>6.11.4.</small> [Gestores de ventanas](/index.php/Category:Window_managers_(Espa%C3%B1ol) "Category:Window managers (Español)") <small>(0)</small> |
 | <small>6.11.4.1.</small> [Gestores de ventanas dinánicas](/index.php/Category:Dynamic_WMs_(Espa%C3%B1ol) "Category:Dynamic WMs (Español)") <small>(3)</small> |

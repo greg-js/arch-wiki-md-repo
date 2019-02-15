@@ -11,6 +11,7 @@
     *   [3.1 Fingerprint reader](#Fingerprint_reader)
     *   [3.2 Thunderbolt 3](#Thunderbolt_3)
         *   [3.2.1 eGPU](#eGPU)
+        *   [3.2.2 Dock Stations](#Dock_Stations)
     *   [3.3 Tablet mode](#Tablet_mode)
     *   [3.4 Pen](#Pen)
     *   [3.5 External display](#External_display)
@@ -176,6 +177,22 @@ TTYVHangup=yes
 [Install]
 WantedBy=multi-user.target
 ```
+
+#### Dock Stations
+
+<caption>Wavlink USB-C Ultra 5K Universal Docking Station</caption>
+| Feature | Status |
+| USB-C | Working |
+| USB 3.0 | Working |
+| Audio Jack | Working |
+| Gigabit Ethernet | Working |
+| HDMI 1 & 2 | Only X11, requires [DisplayLink](/index.php/DisplayLink "DisplayLink") |
+| DisplayPort 1 & 2 | Untested |
+| 5K Combo (Joined DisplayPorts) | Untested |
+
+**Warning:** Some Windows Managers running in Wayland will freeze your system completely if there is a display connected to the dock station, requiring a reboot. This is the case of SwayWM.
+
+**Note:** DisplayLink has stated [here](https://support.displaylink.com/forums/287786-displaylink-feature-suggestions/suggestions/16639654-linux-wayland-support) that they are working to bring eGPU/DisplayLink multimonitor support to Wayland through GNOME and a [patch was submitted for GNOME 3.32](https://gitlab.gnome.org/GNOME/mutter/commit/d4bea60e1aab8e58bd2925d24256ddfdd125dbdb)
 
 ### Tablet mode
 

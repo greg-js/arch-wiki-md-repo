@@ -31,6 +31,9 @@ Related articles
     *   [7.1 Journalctl](#Journalctl)
     *   [7.2 Adjust log level](#Adjust_log_level)
     *   [7.3 Limit HDD/SSD usage by relocating $HOME/.distcc](#Limit_HDD/SSD_usage_by_relocating_$HOME/.distcc)
+    *   [7.4 For distccd-alarm-arm*](#For_distccd-alarm-arm*)
+        *   [7.4.1 No such file or directory](#No_such_file_or_directory)
+        *   [7.4.2 Monitoring does not work](#Monitoring_does_not_work)
 *   [8 See also](#See_also)
 
 ## Terms
@@ -240,6 +243,23 @@ By default, distcc creates `$HOME/.distcc` which stores transient relevant info 
 $ export DISTCC_DIR=/tmp/distcc
 
 ```
+
+### For distccd-alarm-arm*
+
+#### No such file or directory
+
+If you got an error like:
+
+```
+distcc[25479] (dcc_execvp) ERROR: failed to exec armv7l-unknown-linux-gnueabihf-g++: No such file or directory
+
+```
+
+then you are running distccd and not the distccd-alarm-arm-* service. Just stop distccd and start distccd-alarm-arm*.
+
+#### Monitoring does not work
+
+As distccd-alarm-arm* services use the `nobody` user, you can't see what's going on. You are only left with the option to tail the log in /tmp. For example, `tail -f /tmp/distccd-armv7h.log`
 
 ## See also
 

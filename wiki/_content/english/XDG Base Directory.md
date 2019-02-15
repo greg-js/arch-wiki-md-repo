@@ -110,7 +110,6 @@ Supported only in Git master branch, there's no updated stable release yet.
  |
 | [citra-git](https://aur.archlinux.org/packages/citra-git/) | `~/.citra-emu` | [f7c3193](https://github.com/citra-emu/citra/commit/f7c3193) | [[8]](https://github.com/citra-emu/citra/pull/575) |
 | [Composer](/index.php/Composer "Composer") | `~/.composer` | [1.0.0-beta1](https://github.com/composer/composer/releases/tag/1.0.0-beta1) | [[9]](https://github.com/composer/composer/pull/1407) |
-| [cower](https://aur.archlinux.org/packages/cower/) | [8b70805](https://github.com/falconindy/cower/commit/8b70805) |
 | [d-feet](https://www.archlinux.org/packages/?name=d-feet) | `~/.d-feet` | [7f6104b](https://gitlab.gnome.org/GNOME/d-feet/commit/7f6104b) |
 | [dconf](https://www.archlinux.org/packages/?name=dconf) |
 | [Dolphin emulator](/index.php/Dolphin_emulator "Dolphin emulator") | `~/.dolphin-emu` | [a498c68](https://github.com/dolphin-emu/dolphin/commit/a498c68) | [[10]](https://github.com/dolphin-emu/dolphin/pull/2304) |

@@ -1566,6 +1566,10 @@ See [lm_sensors#Graphical front-ends](/index.php/Lm_sensors#Graphical_front-ends
 
 	[https://github.com/KittyKatt/screenFetch](https://github.com/KittyKatt/screenFetch) || [screenfetch](https://www.archlinux.org/packages/?name=screenfetch)
 
+*   **nmon** — Console based application for monitoring various system components.
+
+	[http://nmon.sourceforge.net/](http://nmon.sourceforge.net/) || [nmon](https://www.archlinux.org/packages/?name=nmon)
+
 ##### Graphical
 
 *   **hardinfo** — A small application that displays information about your hardware and operating system, it looks like the Device Manager in Windows.

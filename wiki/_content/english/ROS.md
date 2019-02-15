@@ -10,7 +10,7 @@
 *   [2 Older Versions (Not fully working)](#Older_Versions_(Not_fully_working))
     *   [2.1 Kinetic](#Kinetic)
 *   [3 catkin_make](#catkin_make)
-    *   [3.1 Using Catkin with an IDE](#Using_Catkin_with_an_IDE)
+    *   [3.1 Using Catkin/ROS with an IDE](#Using_Catkin/ROS_with_an_IDE)
         *   [3.1.1 CLion](#CLion)
 *   [4 catkin build](#catkin_build)
 *   [5 Rebuild when shared libraries are updated](#Rebuild_when_shared_libraries_are_updated)
@@ -50,7 +50,7 @@ catkin config --cmake-args -DPYTHON_EXECUTABLE=/usr/bin/python
 
 ```
 
-### Using Catkin with an IDE
+### Using Catkin/ROS with an IDE
 
 #### CLion
 
@@ -61,7 +61,7 @@ Exec=bash -i -c "source /home/[username]/catkin_ws/devel/setup.sh;/opt/clion/bin
 
 ```
 
-However, `/home/[username]/catkin_ws` must be exchanged with your Catkin workspace. You can now open a Catkin project without [cmake](https://www.archlinux.org/packages/?name=cmake) complaining about missing packages, hopefully.
+However, `/home/[username]/catkin_ws` must be exchanged with your Catkin workspace. You can now open a Catkin project without [cmake](https://www.archlinux.org/packages/?name=cmake) complaining about missing packages, hopefully. If desired or needed you can use Python 3 by adding `-DPYTHON_EXECUTABLE=/usr/bin/python3` to the CMake options which can be found in the settings.
 
 ## catkin build
 

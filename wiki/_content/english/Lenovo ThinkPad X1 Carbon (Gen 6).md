@@ -67,6 +67,9 @@ Version: ThinkPad X1 Carbon 6th
 *   [4 Audio crackling](#Audio_crackling)
 *   [5 Wireless WAN / LTE](#Wireless_WAN_/_LTE)
     *   [5.1 Settings for Sierra Wireless EM7455](#Settings_for_Sierra_Wireless_EM7455)
+        *   [5.1.1 General description](#General_description)
+        *   [5.1.2 Step-by-step](#Step-by-step)
+        *   [5.1.3 Remarks](#Remarks)
     *   [5.2 WWAN/LTE GUI](#WWAN/LTE_GUI)
 *   [6 Configuration](#Configuration)
     *   [6.1 Keyboard Fn Shortcuts](#Keyboard_Fn_Shortcuts)
@@ -172,88 +175,192 @@ There is also a kernel patch for this issue, which can be found [here](https://b
 
 ## Wireless WAN / LTE
 
-It is officially admitted that the Fibocom L850 GL LTE card is not working under Linux. Nevertheless, a solution (Sierra EM7455) has been found (credits to [j_jito](https://www.reddit.com/user/j_jito) on reddit, [Daniel Wood](https://github.com/danielewood/sierra-wireless-modems), and [TPader](https://www.reddit.com/user/tpader) on reddit).
+ThinkPad X1 Carbon (Gen 6) is exclusively shipped with a Fibocom L850-GL LTE modem, which is not supported under Linux and Lenovo doesn't seem to care about it.
+
+It is normally impossible to swap the LTE modem for a supported one due to BIOS-level restrictions ("whitelists" of allowed M.2 expansion cards) implemented in all modern Lenovo laptops. However, a method has been found to configure any Sierra Wireless EM73xx/EM74xx modem to "evade" the whitelist checks, so these modems can be used normally.
 
 ### Settings for Sierra Wireless EM7455
 
-Sierra Wireless EM7455 is fully working with linux (and Arch Linux as well). Here are the settings to make this Sierra Wireless modem working under Linux :
+#### General description
 
-Firstly, check if ttyUSBX are available with this command
+Use `AT!CUSTOM="FASTENUMEN",0` AT command to disable the modem's *USB fast enumeration* feature. The modem will take a significantly longer time to appear on the USB bus and the firmware will "miss" the modem at boot time.
+
+Alternatively, use `AT!CUSTOM="FASTENUMEN",2` to selectively enable *USB fast enumeration* for warm boots only. The modem will reappear faster on S3 resume but still evade the whitelist checks on regular boots *and* reboots (the mechanism of this effect is not fully clear to the author).
+
+This comes with a downside: because the firmware does not "see" the modem, it will not export the WWAN rfkill but instead it will unconditionally assert the `W_DISABLE` pin of the M.2 slot, forcing the modem into "airplane mode". Use `AT!PCOFFEN=2` AT command to configure the modem to ignore this pin.
+
+#### Step-by-step
+
+1\. Boot the laptop with the stock modem in place and WWAN card access enabled in BIOS setup.
+
+2\. Suspend the laptop (make sure it is configured to use S3).
+
+3\. Hot-swap the stock Fibocom modem with the Sierra Wireless one, then resume. Whitelists are not consulted at S3 resume.
+
+Check that the modem is present on the USB bus:
 
 ```
-dmesg | grep ttyUSB
+# lsusb
+<...>
+Bus 001 Device 004: ID 1199:9071 Sierra Wireless, Inc.
+<...>
 
 ```
 
-Then, connect to /dev/ttyUSB2 (/dev/ttyUSB1 is dedicated to GPS on Sierra for your information)
+Remember the VID (vendor ID) of the modem (`1199` in this example).
+
+4\. Stop ModemManager, if it is running:
 
 ```
-screen /dev/ttyUSB2 115200
+ # systemctl stop ModemManager
 
 ```
 
-And, follow those steps to enter these AT commands
+5\. Optionally, update the modem firmware with the `qmi-firmware-update` tool:
 
-1\. Enable Terminal Echo
+```
+# cd /path/to/extracted/firmware
+# qmi-firmware-update -d 1199 -u *.cwe *.nvu
+
+```
+
+6\. Change the modem's USB composition to enable AT command ports:
+
+```
+# qmicli -d /dev/cdc-wdm1 --dms-swi-set-usb-composition=8
+
+```
+
+7\. Power-cycle the modem as advised by `qmicli`:
+
+```
+# qmicli -d /dev/cdc-wdm1 --dms-set-operating-mode=offline
+# qmicli -d /dev/cdc-wdm1 --dms-set-operating-mode=reset
+
+```
+
+8\. Wait for the modem to reappear, then verify:
+
+```
+# qmicli -d /dev/cdc-wdm1 --dms-swi-get-usb-composition
+[/dev/cdc-wdm1] Successfully retrieved USB compositions:
+            USB composition 6: DM, NMEA, AT, QMI
+        [*] USB composition 8: DM, NMEA, AT, MBIM
+            USB composition 9: MBIM
+
+```
+
+9\. Verify that the three serial ports `/dev/ttyUSB0`, `/dev/ttyUSB1` and `/dev/ttyUSB2` are now available (assuming you do not have any other USB-serial converters plugged in):
+
+```
+# ls -l /dev/ttyUSB*
+crw-rw---- 1 root uucp 188, 0 Feb 14 20:11 /dev/ttyUSB0
+crw-rw---- 1 root uucp 188, 1 Feb 14 20:11 /dev/ttyUSB1
+crw-rw---- 1 root uucp 188, 2 Feb 14 20:11 /dev/ttyUSB2
+
+```
+
+10\. Attach to `/dev/ttyUSB2` with a serial terminal emulator of your choice (e. g. `screen`):
+
+```
+# screen /dev/ttyUSB2 115200
+
+```
+
+11\. Enter the AT commands (note that you do not need to type `OK`, the replies are included here as part of a session transcript):
+
+11.1\. Enable command echo (if echo is initially disabled, you won't see this command as you type it):
 
 ```
 ATE1
+OK
 
 ```
 
-2\. Enable Advanced Commands
+11.2\. Unlock engineering commands:
 
 ```
 AT!ENTERCND="A710"
+OK
 
 ```
 
-3\. Set Interface to MBIM
+11.3\. Check customization options (these are the author's options):
 
 ```
-AT!USBCOMP=1,1,0000100D
+AT!CUSTOM?
+!CUSTOM: 
+             GPSENABLE          0x01
+             GPSSEL             0x01
+             IPV6ENABLE         0x01
+             SIMLPM             0x01
+             SINGLEAPNSWITCH    0x01
 
-```
-
-4\. Change the Modem Identity to Generic
-
-```
-AT!USBVID=1199
-AT!USBPID=9071,9070
-AT!USBPRODUCT="Sierra Wireless EM7455"
-AT!PRIID="9904609","002.026","Generic"
+OK
 
 ```
 
-5\. Enable All Bands
-
-```
-AT!BAND=00
-
-```
-
-6\. Enable Modem after PowerON
-
-```
-AT!PCOFFEN=2
-
-```
-
-7\. Enable Modem Fast Enumeration
+11.4\. Configure *USB fast enumeration* (swap `2` for `0` if you want to play it safe):
 
 ```
 AT!CUSTOM="FASTENUMEN",2
+OK
 
 ```
 
-8\. Restart Modem
+11.5\. Verify:
+
+```
+AT!CUSTOM?
+!CUSTOM: 
+             GPSENABLE          0x01
+             GPSSEL             0x01
+             IPV6ENABLE         0x01
+             SIMLPM             0x01
+             FASTENUMEN         0x02
+             SINGLEAPNSWITCH    0x01
+
+OK
+
+```
+
+*(it should now show the `FASTENUMEN` option alongside others)*
+
+11.6\. Configure the modem to ignore W_DISABLE:
+
+```
+AT!PCOFFEN=2
+OK
+
+```
+
+11.7\. Verify:
+
+```
+AT!PCOFFEN?
+2
+
+OK
+
+```
+
+11.8\. Reset the modem:
 
 ```
 AT!RESET
+OK
 
 ```
 
-If you need more information, read [this](https://github.com/danielewood/sierra-wireless-modems).
+*(the terminal will disconnect after a while)*
+
+12\. Wait for the modem to reappear, then verify configuration by rebooting / powering down / hard resetting the laptop.
+
+#### Remarks
+
+For more information (including the original thought process that led to this discovery), see these [lenovo](https://forums.lenovo.com/t5/Linux-Discussion/X1C-gen-6-Fibocom-L850-GL-Ubuntu-18-04/m-p/4307332/highlight/true#M12232) [threads](https://forums.lenovo.com/t5/Linux-Discussion/Getting-Sierra-EM7455-and-similar-to-work-on-X1C6/td-p/4326043) and this [reddit](https://www.reddit.com/r/thinkpad/comments/a3yd2j/sierra_wireless_em7455_seems_working_with_my/) thread.
+
+You may also apply other useful configuration options described [here](https://github.com/danielewood/sierra-wireless-modems).
 
 ### WWAN/LTE GUI
 

@@ -6,7 +6,11 @@ Related articles
 
 Pregled opcija za podesavanje fontova i raznih tehnika za unapredjenje citljivosti fontova.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Font staze](#Font_staze)
     *   [1.1 Fontconfig](#Fontconfig)
@@ -14,7 +18,7 @@ Pregled opcija za podesavanje fontova i raznih tehnika za unapredjenje citljivos
 *   [2 Fontconfig podesavanja](#Fontconfig_podesavanja)
     *   [2.1 Anti-aliasing](#Anti-aliasing)
     *   [2.2 Hintovanje](#Hintovanje)
-        *   [2.2.1 Bajt-kod interpreter (BCI)](#Bajt-kod_interpreter_.28BCI.29)
+        *   [2.2.1 Bajt-kod interpreter (BCI)](#Bajt-kod_interpreter_(BCI))
         *   [2.2.2 Automatsko hintovanje](#Automatsko_hintovanje)
         *   [2.2.3 Hint stil](#Hint_stil)
     *   [2.3 Subpixel renderovanje](#Subpixel_renderovanje)

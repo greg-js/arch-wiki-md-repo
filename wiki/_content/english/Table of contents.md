@@ -1,5 +1,5 @@
 | [English](/index.php/Category:English "Category:English") <small>(2)</small> |
-| <small>1.</small> [About Arch](/index.php/Category:About_Arch "Category:About Arch") <small>(18)</small> |
+| <small>1.</small> [About Arch](/index.php/Category:About_Arch "Category:About Arch") <small>(17)</small> |
 | <small>1.1.</small> [Arch community](/index.php/Category:Arch_community "Category:Arch community") <small>(5)</small> |
 | <small>1.1.1.</small> [Classroom](/index.php/Category:Classroom "Category:Classroom") <small>(2)</small> |
 | <small>1.2.</small> [ArchWiki](/index.php/Category:ArchWiki "Category:ArchWiki") <small>(11)</small> |
@@ -85,7 +85,7 @@
 | <small>4.10.1.</small> [BitTorrent](/index.php/Category:BitTorrent "Category:BitTorrent") <small>(6) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"), [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
 | <small>4.11.</small> [Protocols](/index.php/Category:Protocols "Category:Protocols") <small>(6)</small> |
 | <small>4.11.1.</small> [BitTorrent](/index.php/Category:BitTorrent "Category:BitTorrent") <small>(6) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"), [Peer-to-peer](/index.php/Category:Peer-to-peer "Category:Peer-to-peer"))</small> |
-| <small>4.11.2.</small> [DHCP](/index.php/Category:DHCP "Category:DHCP") <small>(3)</small> |
+| <small>4.11.2.</small> [DHCP](/index.php/Category:DHCP "Category:DHCP") <small>(4)</small> |
 | <small>4.11.3.</small> [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System") <small>(19) (also in [Directory services](/index.php/Category:Directory_services "Category:Directory services"), [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
 | <small>4.11.3.1.</small> [Multicast DNS](/index.php/Category:Multicast_DNS "Category:Multicast DNS") <small>(2)</small> |
 | <small>4.11.4.</small> [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol") <small>(4)</small> |
@@ -305,7 +305,7 @@
 | <small>6.17.1.</small> [Network monitoring](/index.php/Category:Network_monitoring "Category:Network monitoring") <small>(9) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
 | <small>6.17.2.</small> [System monitors](/index.php/Category:System_monitors "Category:System monitors") <small>(10) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
 | <small>6.18.</small> [Notification](/index.php/Category:Notification "Category:Notification") <small>(2)</small> |
-| <small>6.19.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(32)</small> |
+| <small>6.19.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(31)</small> |
 | <small>6.20.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(19)</small> |
 | <small>6.21.</small> [Security](/index.php/Category:Security "Category:Security") <small>(36)</small> |
 | <small>6.21.1.</small> [Access control](/index.php/Category:Access_control "Category:Access control") <small>(5)</small> |

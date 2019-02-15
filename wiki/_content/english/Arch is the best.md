@@ -103,6 +103,15 @@ BEGIN {
 
 ```
 
+	BASIC
+
+	A scripting language that one of the most commonly used computer programming languages in the 1960's, considered an easy step for students to learn before more powerful languages such as FORTRAN.
+
+```
+10 PRINT "Arch is the best!"
+
+```
+
 	Batch
 
 	A scripting language for Windows that can be used to automate tasks or just have some fun.

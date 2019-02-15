@@ -1,6 +1,10 @@
-[sysctl](https://en.wikipedia.org/wiki/sysctl "wikipedia:sysctl") is a tool for examining and changing [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") at runtime (package [procps-ng](https://www.archlinux.org/packages/?name=procps-ng) in [official repositories](/index.php/Official_repositories "Official repositories")). sysctl is implemented in procfs, the virtual process file system at `/proc/`.
+[sysctl](https://en.wikipedia.org/wiki/sysctl "wikipedia:sysctl") is a tool for examining and changing [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") at runtime (package [procps-ng](https://www.archlinux.org/packages/?name=procps-ng) in [official repositories](/index.php/Official_repositories "Official repositories")). sysctl is implemented in [procfs](https://en.wikipedia.org/wiki/procfs "wikipedia:procfs"), the virtual process file system at `/proc/`.
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Configuration](#Configuration)
 *   [2 Security](#Security)

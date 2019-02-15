@@ -85,7 +85,7 @@
  <small>4.10.1.</small> [BitTorrent](/index.php/Category:BitTorrent "Category:BitTorrent") <small>(6) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"), [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
  <small>4.11.</small> [Protocols](/index.php/Category:Protocols "Category:Protocols") <small>(6)</small> |
  <small>4.11.1.</small> [BitTorrent](/index.php/Category:BitTorrent "Category:BitTorrent") <small>(6) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"), [Peer-to-peer](/index.php/Category:Peer-to-peer "Category:Peer-to-peer"))</small> |
- <small>4.11.2.</small> [DHCP](/index.php/Category:DHCP "Category:DHCP") <small>(3)</small> |
+ <small>4.11.2.</small> [DHCP](/index.php/Category:DHCP "Category:DHCP") <small>(4)</small> |
  <small>4.11.3.</small> [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System") <small>(19) (also in [Directory services](/index.php/Category:Directory_services "Category:Directory services"), [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
  <small>4.11.3.1.</small> [Multicast DNS](/index.php/Category:Multicast_DNS "Category:Multicast DNS") <small>(2)</small> |
  <small>4.11.4.</small> [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol") <small>(4)</small> |

@@ -1468,7 +1468,7 @@ See also [Wikipedia:Comparison of video player software](https://en.wikipedia.or
 
 *   **GNOME MPV** — Simple frontend for [mpv](/index.php/Mpv "Mpv") (GTK+ 3).
 
-	[https://gnome-mpv.github.io/](https://gnome-mpv.github.io/) || [gnome-mpv](https://www.archlinux.org/packages/?name=gnome-mpv)
+	[https://gnome-mpv.github.io/](https://gnome-mpv.github.io/) || [gnome-mpv](https://www.archlinux.org/packages/?name=gnome-mpv), [gnome-mpv-git](https://aur.archlinux.org/packages/gnome-mpv-git/)
 
 *   **Kawaii-Player** — Audio/video manager and multimedia player (based on [mpv](/index.php/Mpv "Mpv")) with PC-to-PC casting feature, along with functionalities of portable media server and torrent streaming server.
 
@@ -1480,7 +1480,7 @@ See also [Wikipedia:Comparison of video player software](https://en.wikipedia.or
 
 *   **Media Player Classic Qute Theater** — Clone of [Media Player Classic](https://en.wikipedia.org/wiki/Media_Player_Classic "wikipedia:Media Player Classic") reimplimented in Qt and based on [mpv](/index.php/Mpv "Mpv").
 
-	[https://github.com/cmdrkotori/mpc-qt](https://github.com/cmdrkotori/mpc-qt) || [mpc-qt](https://aur.archlinux.org/packages/mpc-qt/)
+	[https://github.com/cmdrkotori/mpc-qt](https://github.com/cmdrkotori/mpc-qt) || [mpc-qt](https://aur.archlinux.org/packages/mpc-qt/), [mpc-qt-git](https://aur.archlinux.org/packages/mpc-qt-git/)
 
 *   **[mpv](/index.php/Mpv "Mpv")** — Very basic GUI for mpv. Can be launched with `mpv --player-operation-mode=pseudo-gui`.
 
