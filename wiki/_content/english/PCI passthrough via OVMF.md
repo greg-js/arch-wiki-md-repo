@@ -81,6 +81,7 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [10.12 Host lockup if guest is left running during sleep](#Host_lockup_if_guest_is_left_running_during_sleep)
     *   [10.13 Cannot boot after upgrading ovmf](#Cannot_boot_after_upgrading_ovmf)
     *   [10.14 QEMU via cli pulseaudio stuttering/delay](#QEMU_via_cli_pulseaudio_stuttering/delay)
+    *   [10.15 Bluescreen at boot since Windows 10 1803](#Bluescreen_at_boot_since_Windows_10_1803)
 *   [11 See also](#See_also)
 
 ## Prerequisites
@@ -1506,6 +1507,22 @@ qemu-system-x86_64 \
 As noted in [QEMU 3.0 audio changes](#QEMU_3.0_audio_changes) the specified chipset will include a series of audio patches.
 
 Setting `QEMU_AUDIO_TIMER_PERIOD` to values higher than 100 might also help (did not test value lower than 100).
+
+### Bluescreen at boot since Windows 10 1803
+
+Since Windows 10 1803 there is a problem when you are using "host-passthrough" as cpu model. The machine can't boot and is either boot looping or you get a bluescreen. You can workaround this by:
+
+```
+echo 1 > /sys/module/kvm/parameters/ignore_msrs
+
+```
+
+To make it permanently you can create a modprobe file `kvm.conf`:
+
+```
+options kvm.ignore_msrs=1
+
+```
 
 ## See also
 

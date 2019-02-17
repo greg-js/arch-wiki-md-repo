@@ -4,16 +4,18 @@
 
 KVM, Xen, VMware, 和 QEMU 的不同，请看这里[KVM FAQ](http://www.linux-kvm.org/page/FAQ#What_is_the_difference_between_kvm_and_Xen.3F).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 检查是否支持KVM](#检查是否支持KVM)
     *   [1.1 硬件支持](#硬件支持)
     *   [1.2 内核支持](#内核支持)
-    *   [1.3 KVM模块](#KVM模块)
-*   [2 Para-virtualized devices](#Para-virtualized_devices)
-    *   [2.1 VIRTIO modules](#VIRTIO_modules)
-    *   [2.2 加载内核模块](#加载内核模块)
-    *   [2.3 List of para-virtualized devices](#List_of_para-virtualized_devices)
+*   [2 准虚拟化(使用VIRTIO)](#准虚拟化(使用VIRTIO))
+    *   [2.1 内核支持](#内核支持_2)
+    *   [2.2 准虚拟化设备列表](#准虚拟化设备列表)
 *   [3 如何使用KVM](#如何使用KVM)
 *   [4 小贴士与小技巧](#小贴士与小技巧)
     *   [4.1 嵌套虚拟化](#嵌套虚拟化)
@@ -25,74 +27,67 @@ KVM, Xen, VMware, 和 QEMU 的不同，请看这里[KVM FAQ](http://www.linux-kv
 KVM需要虚拟机宿主（host）的处理器带有虚拟化支持（对于Intel处理器来说是VT-x，对于AMD处理器来说是AMD-V）。你可以通过以下命令来检查你的处理器是否支持虚拟化：
 
 ```
-$ lscpu
+$ LC_ALL=C lscpu | grep Virtualization
 
 ```
 
-如果你的处理器支持虚拟化，输出结果中会有一行Virtualization的信息。
-
-你也可以运行：
-
-```
-$ grep -E "(vmx|svm)" --color=always /proc/cpuinfo
-
-```
-
-如果运行后没有显示，那么你的处理器**不**支持硬件虚拟化，你**不能**使用KVM。
+或者： $ grep -E --color=auto 'vmx|svm|0xc0f' /proc/cpuinfo 如果运行后没有显示，那么你的处理器**不**支持硬件虚拟化，你**不能**使用KVM。
 
 **注意:** 您可能需要在BIOS中启用虚拟化支持
 
 ### 内核支持
 
-Arch Linux的内核提供了相应的[内核模块](/index.php/Kernel_modules_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel modules (简体中文)")来支持KVM和VIRTIO
+Arch Linux的内核提供了相应的[内核模块](/index.php/Kernel_modules_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel modules (简体中文)")来支持KVM。
 
-### KVM模块
-
-如果你的内核是用 CONFIG_IKCONFIG_PROC 这个选项编译的话，你可以通过以下命令来检查你的内核是否已经包含了支持虚拟化所必须的模块（`kvm`及`kvm_amd`与`kvm_intel`这两者中的任意一个）：
+*   你可以通过以下命令来检查你的内核是否已经包含了支持虚拟化所必须的模块（`kvm`及`kvm_amd`与`kvm_intel`这两者中的任意一个）：
 
 ```
-$ zgrep KVM /proc/config.gz
+$ zgrep CONFIG_KVM /proc/config.gz
 
 ```
 
-如果模块设置不等于 `y`或`m`,则该模块**不**可用
+如果模块设置不为 `y`或`m`,则该模块**不**可用
 
-## Para-virtualized devices
+*   然后确认这些内核模块是否已自动加载：
 
-Para-virtualization provides a fast and efficient means of communication for guests to use devices on the host machine. KVM provides para-virtualized devices to virtual machines using the Virtio API as a layer between the hypervisor and guest.
+```
+$ lsmod | grep kvm
 
-All virtio devices have two parts: the host device and the guest driver.
+```
 
-### VIRTIO modules
+如果运行后没有显示，那么需要[手动加载](/index.php/Kernel_modules_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#手动加载卸载 "Kernel modules (简体中文)")这些模块。
 
-用以下命令检查所需的模块是否可用:
+## 准虚拟化(使用VIRTIO)
+
+准虚拟化为客户机提供了一种使用主机上设备的快速有效的通信方式。KVM使用Virtio API作为虚拟机管理程序和客户机之间的连接层，为虚拟机提供准虚拟化设备（亦称Virtio设备）。 所有Virtio设备都包括两部分：主机设备和客户机驱动程序。
+
+### 内核支持
+
+*   用以下命令检查VIRTIO模块是否可用:
 
 ```
 $ zgrep VIRTIO /proc/config.gz
 
 ```
 
-### 加载内核模块
-
-首先检查内核模块是否已经自动加载，This should be the case with recent versions of [udev](/index.php/Udev "Udev").
+*   检查VIRTIO模块是否已经自动加载:
 
 ```
-$ lsmod | grep kvm
 $ lsmod | grep virtio
 
 ```
 
-上面的命令如果没有返回内容，那么你需要[手动加载](/index.php/Kernel_modules_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#手动加载卸载 "Kernel modules (简体中文)") 内核模块。
+如果运行后没有显示，那么需要[手动加载](/index.php/Kernel_modules_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#手动加载卸载 "Kernel modules (简体中文)")这些模块。
 
 **Tip:** 如果 `kvm_intel` 或 `kvm_amd` 加载失败但是`kvm` 加载成功， (`lscpu`可检查硬件支持情况)检查你的BIOS设置。一些品牌机 (尤其时笔记本电脑) 默认关闭了这个功能，请确保是否是硬件支持该功能，但在BIOS中它被关闭了，在`dmesg`的提示信息中会展示出相关的警告信息。
 
-### List of para-virtualized devices
+### 准虚拟化设备列表
 
-*   network device (virtio-net)
-*   block device (virtio-blk)
-*   controller device (virtio-scsi)
-*   serial device (virtio-serial)
-*   balloon device (virtio-balloon)
+*   网络设备 (virtio-net)
+*   硬盘设备 (virtio-blk)
+*   控制器设备 (virtio-scsi)
+*   串口设备 (virtio-serial)
+*   气球设备 (virtio-balloon)
 
 ## 如何使用KVM
 
@@ -100,7 +95,7 @@ $ lsmod | grep virtio
 
 ## 小贴士与小技巧
 
-**注意:** 请参考[QEMU#Tips and tricks](/index.php/QEMU#Tips_and_tricks "QEMU")和[QEMU#Troubleshooting](/index.php/QEMU#Troubleshooting "QEMU")词条。
+**注意:** 请参考[QEMU#Tips and tricks](/index.php/QEMU#Tips_and_tricks "QEMU")和[QEMU#Troubleshooting](/index.php/QEMU#Troubleshooting "QEMU")词条获取更多相关技巧。
 
 ### 嵌套虚拟化
 

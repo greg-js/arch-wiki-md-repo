@@ -13,7 +13,11 @@
 
 For a general overview of laptop-related articles and recommendations, see [Laptop](/index.php/Laptop "Laptop").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Configuration](#Configuration)
     *   [1.1 Video](#Video)
@@ -46,7 +50,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 
 #### Drivers
 
-Install [bumblebee](/index.php/Bumblebee "Bumblebee") along with Nvidia and Intel drivers.
+See [Intel Graphics](/index.php/Intel_graphics#Installation "Intel graphics"), [Hardware Acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration") and [NVIDIA_Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus").
 
 #### Brightness
 
@@ -203,7 +207,7 @@ WantedBy=suspend.target
 
 #### Crackling sound
 
-Add `tsched=0` to pulseaudio config file as per instructions at [PulseAudio/Troubleshooting#Glitches, skips or crackling](/index.php/PulseAudio/Troubleshooting#Glitches.2C_skips_or_crackling "PulseAudio/Troubleshooting").
+Add `tsched=0` to pulseaudio config file as per instructions at [PulseAudio/Troubleshooting#Glitches, skips or crackling](/index.php/PulseAudio/Troubleshooting#Glitches,_skips_or_crackling "PulseAudio/Troubleshooting").
 
 ### Failed to initialize the NVIDIA GPU
 

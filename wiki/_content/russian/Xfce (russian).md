@@ -365,7 +365,7 @@ XFCE4 поддерживает [спецификацию звуковых тем
 
 #### Настройка xfce4-mixer
 
-[xfce4-mixer](https://www.archlinux.org/packages/?name=xfce4-mixer) — графический микшер и плагин для панели, разработанный командой Xfce. Является частью группы пакетов [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/), поэтому, вероятно, уже установлен у вас. Xfce 4.6 использует [gstreamer](https://www.archlinux.org/packages/?name=gstreamer) как бэкэнд для управления уровнем звука, поэтому, сначала необходимо настроить совместную работу gstreamer и xfce4-mixer. Некоторые пакеты плагинов, перечисленные как опциональные для gstreamer, должны быть установлены. Без них, вы можете получать ошибку при клике на значок микшера на панели:
+[xfce4-mixer](https://aur.archlinux.org/packages/xfce4-mixer/) — графический микшер и плагин для панели, разработанный командой Xfce. Является частью группы пакетов [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/), поэтому, вероятно, уже установлен у вас. Xfce 4.6 использует [gstreamer](https://www.archlinux.org/packages/?name=gstreamer) как бэкэнд для управления уровнем звука, поэтому, сначала необходимо настроить совместную работу gstreamer и xfce4-mixer. Некоторые пакеты плагинов, перечисленные как опциональные для gstreamer, должны быть установлены. Без них, вы можете получать ошибку при клике на значок микшера на панели:
 
 ```
  GStreamer was unable to detect any sound devices. Some sound system specific GStreamer packages may be missing.

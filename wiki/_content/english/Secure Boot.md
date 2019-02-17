@@ -548,7 +548,7 @@ Follow [#Enroll keys in firmware](#Enroll_keys_in_firmware) to add `add_MS_db.au
 
 ## Disable Secure Boot
 
-The Secure Boot feature can be disabled via the UEFI firmware interface. The Secure Boot feature can be disabled via the UEFI firmware interface. How to access the firmware configuration is described in [#Before booting the OS](#Before_booting_the_OS).
+The Secure Boot feature can be disabled via the UEFI firmware interface. How to access the firmware configuration is described in [#Before booting the OS](#Before_booting_the_OS).
 
 If using a hotkey did not work and you can boot Windows, you can force a reboot into the firmware configuration in the following way (for Windows 10): *Settings > Update & Security > Recovery > Advanced startup (Restart now) > Troubleshoot > Advanced options > UEFI Firmware settings > restart*.
 

@@ -28,15 +28,14 @@ ASUS [announced](https://www.asus.com/News/q0npwWGXCqpxoVf8) UX430 and UX530 mod
     *   [1.3 Audio](#Audio)
     *   [1.4 Touchpad](#Touchpad)
     *   [1.5 Fingerprint sensor](#Fingerprint_sensor)
-    *   [1.6 Suspend](#Suspend)
 *   [2 Troubleshooting](#Troubleshooting)
-    *   [2.1 Linux kernel 4.13 issues](#Linux_kernel_4.13_issues)
-    *   [2.2 Headphones audio is too low](#Headphones_audio_is_too_low)
-    *   [2.3 Fan spins all the time](#Fan_spins_all_the_time)
-    *   [2.4 Microcode](#Microcode)
-    *   [2.5 Nvidia issues with Bumblebee](#Nvidia_issues_with_Bumblebee)
-    *   [2.6 Headset Microphone](#Headset_Microphone)
-    *   [2.7 No sound](#No_sound)
+    *   [2.1 Headphones audio is too low](#Headphones_audio_is_too_low)
+    *   [2.2 Microcode](#Microcode)
+    *   [2.3 Nvidia issues with Bumblebee](#Nvidia_issues_with_Bumblebee)
+    *   [2.4 Headset Microphone](#Headset_Microphone)
+    *   [2.5 No sound (after Windows)](#No_sound_(after_Windows))
+    *   [2.6 Suspend](#Suspend)
+    *   [2.7 Fan always active](#Fan_always_active)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Power saving and performance](#Power_saving_and_performance)
     *   [3.2 Extract Windows 10 license key](#Extract_Windows_10_license_key)
@@ -51,9 +50,7 @@ If the aforementioned "Secure Boot" option is a menu rather than an on-or-off op
 
 ## Video
 
-See [Intel Graphics](/index.php/Intel_graphics#Installation "Intel graphics") and [Hardware Acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration"). For models with discrete NVidia graphics card, also see [Bumblebee](/index.php/Bumblebee "Bumblebee").
-
-**Note:** As shown in [this thread](https://bbs.archlinux.org/viewtopic.php?pid=1822926), [Bumblebee](/index.php/Bumblebee "Bumblebee") makes Nvidia GFX slower than integrated graphics and has no [Vulkan](/index.php/Vulkan "Vulkan") support. Consider using [Nvidia-xrun](/index.php/Nvidia-xrun "Nvidia-xrun") instead.
+See [Intel Graphics](/index.php/Intel_graphics#Installation "Intel graphics") and [Hardware Acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration"). For models with discrete Nvidia graphics card, also see [NVIDIA_Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus").
 
 ## Audio
 
@@ -69,19 +66,7 @@ See [Libinput](/index.php/Libinput "Libinput").
 
 Install fingerprint sensor driver [libfprint-elantech-git](https://aur.archlinux.org/packages/libfprint-elantech-git/), then see [Fprint](/index.php/Fprint "Fprint") and you might be also interested in [Fingerprint GUI](/index.php/Fingerprint_GUI "Fingerprint GUI").
 
-## Suspend
-
-Linux (4.17 at least) default to [suspend-to-idle](https://www.kernel.org/doc/html/v4.18/admin-guide/pm/sleep-states.html#suspend-to-idle) which isn't very power effective. This is probably due to this change in [4.14-rc1](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=e870c6c87cf9484090d28f2a68aa29e008960c93). For better power effective you can use [suspend-to-ram](https://www.kernel.org/doc/html/v4.18/admin-guide/pm/sleep-states.html#suspend-to-ram) by adding `mem_sleep_default=deep` to the kernel cmdline.
-
 # Troubleshooting
-
-## Linux kernel 4.13 issues
-
-**Bug references**: [197469](https://bugzilla.kernel.org/show_bug.cgi?id=197469) and [197449](https://bugzilla.kernel.org/show_bug.cgi?id=197449)
-
-**Description**: Unstable CPU frequencies staying at minimum of 800Mhz-1600Mhz instead of 400-700Mhz. This wastes battery and generates heat, causing fan to spin more aggressively. Also KVM crashes running Windows 10 VM with all available VirtIO features.
-
-**Fix**: Use kernel version 4.12.* (or earlier) or 4.14.4 (or further). Avoid any 4.13.* versions.
 
 ## Headphones audio is too low
 
@@ -123,10 +108,6 @@ WantedBy=multi-user.target suspend.target hibernate.target
 
 And finally, [start and enable](/index.php/Systemd#Using_units "Systemd") `fix_headphones_audio.service`.
 
-## Fan spins all the time
-
-See [Fan speed control#NBFC](/index.php/Fan_speed_control#NBFC "Fan speed control"). Also see [#Linux kernel 4.13 issues](#Linux_kernel_4.13_issues)
-
 ## Microcode
 
 During boot you might get the message `[Firmware Bug]: TSC_DEADLINE disabled due to Errata; please update microcode to version: 0x52 (or later)`. See [Microcode](/index.php/Microcode "Microcode") to resolve it.
@@ -149,9 +130,17 @@ options snd-hda-intel model=dell-headset-multi
 
 ```
 
-## No sound
+## No sound (after Windows)
 
 There seems to be a bug in the firmware that prevents the embedded sound card from working in Arch after Windows has been restarted. A complete shutdown of the laptop is required to get the sound card working again.
+
+## Suspend
+
+Linux (4.17 at least) default to [suspend-to-idle](https://www.kernel.org/doc/html/v4.18/admin-guide/pm/sleep-states.html#suspend-to-idle) which isn't very power effective. This is probably due to this change in [4.14-rc1](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=e870c6c87cf9484090d28f2a68aa29e008960c93). For better power effective you can use [suspend-to-ram](https://www.kernel.org/doc/html/v4.18/admin-guide/pm/sleep-states.html#suspend-to-ram) by adding `mem_sleep_default=deep` to the kernel cmdline.
+
+## Fan always active
+
+See [Fan_speed_control#NBFC](/index.php/Fan_speed_control#NBFC "Fan speed control").
 
 # Tips and tricks
 

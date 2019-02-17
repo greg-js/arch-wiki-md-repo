@@ -1,10 +1,12 @@
 Related articles
 
 *   [dnsmasq](/index.php/Dnsmasq "Dnsmasq")
+*   [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution")
 *   [lighttpd](/index.php/Lighttpd "Lighttpd")
 *   [Linux Containers](/index.php/Linux_Containers "Linux Containers")
 *   [nginx](/index.php/Nginx "Nginx")
 *   [OpenVPN](/index.php/OpenVPN "OpenVPN")
+*   [WireGuard](/index.php/WireGuard "WireGuard")
 
 [Pi-hole](https://pi-hole.net/) is a [DNS sinkhole](https://en.wikipedia.org/wiki/DNS_sinkhole "wikipedia:DNS sinkhole") that compiles a blocklist of domains known to host advertisements and malware from multiple third-party sources. Pi-hole uses [dnsmasq](/index.php/Dnsmasq "Dnsmasq") to seamlessly drop any and all requests for domains in its blocklist. Running it effectively deploys network-wide ad-blocking without the need to configure individual clients. The package comes with a web and a CLI interface.
 
@@ -16,33 +18,45 @@ Related articles
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 Pi-hole server](#Pi-hole_server)
-    *   [1.1 Installation](#Installation)
-    *   [1.2 Initial configuration](#Initial_configuration)
-        *   [1.2.1 FTL](#FTL)
-        *   [1.2.2 Web server](#Web_server)
-            *   [1.2.2.1 Lighttpd](#Lighttpd)
-            *   [1.2.2.2 Nginx](#Nginx)
-        *   [1.2.3 /etc/hosts](#/etc/hosts)
-    *   [1.3 Making devices use Pi-hole](#Making_devices_use_Pi-hole)
-        *   [1.3.1 Troubleshooting](#Troubleshooting)
-    *   [1.4 Using Pi-hole together with OpenVPN](#Using_Pi-hole_together_with_OpenVPN)
-    *   [1.5 Password-protect web interface](#Password-protect_web_interface)
-    *   [1.6 Using DNS Over HTTPS (DOH)](#Using_DNS_Over_HTTPS_(DOH))
-*   [2 Pi-hole Standalone](#Pi-hole_Standalone)
-    *   [2.1 Installation](#Installation_2)
-    *   [2.2 Initial configuration](#Initial_configuration_2)
-        *   [2.2.1 Dnsmasq](#Dnsmasq)
-        *   [2.2.2 Configuring host name resolution](#Configuring_host_name_resolution)
-            *   [2.2.2.1 Manually](#Manually)
-            *   [2.2.2.2 Openresolve](#Openresolve)
-*   [3 Using Pi-hole](#Using_Pi-hole)
-    *   [3.1 Pi-hole DNS management](#Pi-hole_DNS_management)
-    *   [3.2 Forced update of ad-serving domains list](#Forced_update_of_ad-serving_domains_list)
-    *   [3.3 Temporarily disable Pi-hole](#Temporarily_disable_Pi-hole)
-*   [4 Troubleshooting](#Troubleshooting_2)
-    *   [4.1 Data loss on reboot](#Data_loss_on_reboot)
-*   [5 See also](#See_also)
+*   [1 Overview](#Overview)
+*   [2 Pi-hole server](#Pi-hole_server)
+    *   [2.1 Installation](#Installation)
+    *   [2.2 Configuration](#Configuration)
+        *   [2.2.1 FTL](#FTL)
+        *   [2.2.2 Web interface](#Web_interface)
+            *   [2.2.2.1 Set-up PHP](#Set-up_PHP)
+            *   [2.2.2.2 Set-up web server](#Set-up_web_server)
+                *   [2.2.2.2.1 Lighttpd](#Lighttpd)
+                *   [2.2.2.2.2 Nginx](#Nginx)
+            *   [2.2.2.3 Protect with password](#Protect_with_password)
+        *   [2.2.3 Update hosts file](#Update_hosts_file)
+    *   [2.3 Making devices use Pi-hole](#Making_devices_use_Pi-hole)
+*   [3 Pi-hole standalone](#Pi-hole_standalone)
+    *   [3.1 Installation](#Installation_2)
+    *   [3.2 Configuration](#Configuration_2)
+        *   [3.2.1 Dnsmasq](#Dnsmasq)
+        *   [3.2.2 Configuring host name resolution](#Configuring_host_name_resolution)
+            *   [3.2.2.1 Manually](#Manually)
+            *   [3.2.2.2 Openresolve](#Openresolve)
+*   [4 Using Pi-hole](#Using_Pi-hole)
+    *   [4.1 Pi-hole DNS management](#Pi-hole_DNS_management)
+    *   [4.2 Forced update of ad-serving domains list](#Forced_update_of_ad-serving_domains_list)
+    *   [4.3 Temporarily disable Pi-hole](#Temporarily_disable_Pi-hole)
+*   [5 Tips & Tricks](#Tips_&_Tricks)
+    *   [5.1 Cloudflared DNS service](#Cloudflared_DNS_service)
+    *   [5.2 Use with VPN server](#Use_with_VPN_server)
+        *   [5.2.1 OpenVPN](#OpenVPN)
+        *   [5.2.2 WireGuard](#WireGuard)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 Data loss on reboot](#Data_loss_on_reboot)
+*   [7 See also](#See_also)
+
+## Overview
+
+There are 2 versions of Pi-Hole available for Arch Linux:
+
+*   [#Pi-hole_server](#Pi-hole_server) - This is default and well-known Pi-Hole server that most users are looking for. It is designed to be used as a DNS server for other devices on the LAN.
+*   [#Pi-hole_standalone](#Pi-hole_standalone) - This is alternative lightweight Pi-Hole installation, designed for a mobile context. It is intended to be used on the same device (e.g. laptop), where no external and centralised Pi-Hole server is available. It also has no web interface and automatically updates.
 
 ## Pi-hole server
 
@@ -50,7 +64,7 @@ Related articles
 
 [Install](/index.php/Install "Install") the [pi-hole-server](https://aur.archlinux.org/packages/pi-hole-server/) package.
 
-### Initial configuration
+### Configuration
 
 #### FTL
 
@@ -67,15 +81,13 @@ FTL is a DNS resolver/forwarder and a database-like wrapper/API that provides lo
 
 **Note:** Since Pi-hole-FTL 4.0, a private fork of dnsmasq is integrated in the FTL sub-project. The original [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) package is now conflicting with [pi-hole-ftl](https://aur.archlinux.org/packages/pi-hole-ftl/) and will be uninstalled when upgrading from a previous version. It's still possible to use the previous dnsmasq config files, just ensure that `conf-dir=/etc/dnsmasq.d/,*.conf` in the original `/etc/dnsmasq.conf` is not commented out.
 
-#### Web server
+#### Web interface
 
-Optionally choose a web server for the Pi-hole web interface.
+Pi-hole has a very powerful, user friendly, but completely optional web interface. It allows not only to change settings, but analyse and visualise DNS queries performed by other devices.
 
-**Note:** Pi-hole does not strictly require a web interface as many commands are possible via the CLI interface.
+##### Set-up PHP
 
-Example config files that work out-of-the-box are provided for both [lighttpd](https://www.archlinux.org/packages/?name=lighttpd) and [nginx](https://www.archlinux.org/packages/?name=nginx). Other web servers can also run the WebUI, but are currently unsupported.
-
-Install [php-sqlite](https://www.archlinux.org/packages/?name=php-sqlite) and enable the relevant extensions detailed here:
+Install [php-sqlite](https://www.archlinux.org/packages/?name=php-sqlite) ([php](https://www.archlinux.org/packages/?name=php) will be installed automatically) and enable the relevant extensions detailed here:
 
  `/etc/php/php.ini` 
 ```
@@ -87,7 +99,7 @@ extension=sqlite3
 [...]
 ```
 
-For security reasons, one can populate the [PHP open_basedir](/index.php/PHP#Configuration "PHP") directive however, the Pi-hole administration web interface will need access to following files and directories:
+For security reasons, one can optionally populate the [PHP open_basedir](/index.php/PHP#Configuration "PHP") directive however, the Pi-hole administration web interface will need access to following files and directories:
 
 ```
 /srv/http/pihole
@@ -107,7 +119,11 @@ For security reasons, one can populate the [PHP open_basedir](/index.php/PHP#Con
 
 ```
 
-##### Lighttpd
+##### Set-up web server
+
+Example config files that work out-of-the-box are provided for both [lighttpd](https://www.archlinux.org/packages/?name=lighttpd) and [nginx](https://www.archlinux.org/packages/?name=nginx). Other web servers can also be used, but are currently unsupported.
+
+###### Lighttpd
 
 [Install](/index.php/Install "Install") [lighttpd](https://www.archlinux.org/packages/?name=lighttpd) and [php-cgi](https://www.archlinux.org/packages/?name=php-cgi).
 
@@ -120,7 +136,7 @@ Copy the package provided default config for Pi-hole:
 
 [Enable](/index.php/Enable "Enable") `lighttpd.service` and re/start it.
 
-##### Nginx
+###### Nginx
 
 [Install](/index.php/Install "Install") [nginx-mainline](https://www.archlinux.org/packages/?name=nginx-mainline) and [php-fpm](https://www.archlinux.org/packages/?name=php-fpm).
 
@@ -152,7 +168,18 @@ Copy the package provided default config for Pi-hole:
 
 [Enable](/index.php/Enable "Enable") `nginx.service` `php-fpm.service` and re/start them.
 
-#### /etc/hosts
+##### Protect with password
+
+Optionally, you might want to password-protect the Pi-hole web interface. Run the following command and enter your password:
+
+```
+pihole -a -p
+
+```
+
+To disable the password protection, set a blank password.
+
+#### Update hosts file
 
 [filesystem](https://www.archlinux.org/packages/?name=filesystem) ships with an empty `/etc/hosts` file which is known to prevent Pi-hole from fetching block lists. One must append the following to this file to insure correct operation, noting that *ip.address.of.pihole* should be the actual IP address of the machine running Pi-hole (eg 192.168.1.250) and *myhostname* should be the actual hostname of the machine running Pi-hole.
 
@@ -166,54 +193,16 @@ For more, see [Issue#1800](https://github.com/pi-hole/pi-hole/issues/1800).
 
 ### Making devices use Pi-hole
 
-[The upstream documentation](https://discourse.pi-hole.net/t/how-do-i-configure-my-devices-to-use-pi-hole-as-their-dns-server/245) documents four different methods:
+To use Pi-Hole, make sure that your devices use Pi-Hole's IP address as their only DNS server. To accomplish this, there are generally 2 methods to make it happen:
 
-1.  Define Pi-hole's IP address as the only DNS entry in the router
-2.  Advertise Pi-hole's IP address via dnsmasq in the router (if supported)
-3.  Manually configure each device to use the Pi-hole as their DNS server
-4.  [Use Pi-hole's built-in DHCP server](https://discourse.pi-hole.net/t/how-do-i-use-pi-holes-built-in-dhcp-server-and-why-would-i-want-to/3026)
+1.  In router's LAN DHCP settings, set Pi-Hole's IP address as the only DNS server available for connected devices.
+2.  Manually configure each device to use Pi-Hole's IP address as their only DNS server.
 
-#### Troubleshooting
+**Note:** Some routers (or even ISPs) do not allow to change LAN DNS settings, so you might want to disable router's DHCP server and use [Pi-Hole's built in DHCP server instead](https://discourse.pi-hole.net/t/how-do-i-use-pi-holes-built-in-dhcp-server-and-why-would-i-want-to), as it is automatically configured to use Pi-Hole.
 
-*   If you setup a DHCP-based method and ad blocking does not work on a device, it might still have an outdated DHCP lease. If you do not know how to renew your DHCP lease, try restarting the device.
-*   A simple check to see that the router is setup correctly is to first renew a DHCP lease, then inspect the contents of `/etc/resolv.conf` on a Linux client. One should see the IP address of the Pi-hole box, not the IP address of the router.
-*   If you are having problems with method 2, try disabling the `dns-rebind` feature on the router (if present).
+More information about making other devices use Pi-Hole can be found at [upstream documentation](https://discourse.pi-hole.net/t/how-do-i-configure-my-devices-to-use-pi-hole-as-their-dns-server/245).
 
-### Using Pi-hole together with OpenVPN
-
-An [OpenVPN](/index.php/OpenVPN "OpenVPN") server can be configured to advertise a Pi-hole instance to its clients. Add the following two lines to your `/etc/openvpn/server/server.conf`:
-
-```
-push "redirect-gateway def1 bypass-dhcp"
-push "dhcp-option DNS *Pi-Hole-IP*"
-
-```
-
-If it still does not work, try creating a file `/etc/dnsmasq.d/00-openvpn.conf` with the following content:
-
-```
-interface=tun0
-
-```
-
-It may be necessary to make `dnsmasq` listen on `tun0`.
-
-### Password-protect web interface
-
-To password-protect the Pi-hole web interface, run the following command and enter your password:
-
-```
-pihole -a -p
-
-```
-
-To disable the password protection set a blank password.
-
-### Using DNS Over HTTPS (DOH)
-
-DNS queries can also be performed [over HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS) by using privacy-first DNS [1.1.1.1](https://1.1.1.1/) by [Cloudflare](https://www.cloudflare.com/). Install [cloudflared-bin](https://aur.archlinux.org/packages/cloudflared-bin/) and follow [upstream documentation](https://docs.pi-hole.net/guides/dns-over-https/).
-
-## Pi-hole Standalone
+## Pi-hole standalone
 
 The Arch Linux Pi-hole Standalone variant is born from the need to use Pi-hole services in a mobile context. [Sky-hole article](http://dlaa.me/blog/post/skyhole) was inspirational.
 
@@ -221,7 +210,7 @@ The Arch Linux Pi-hole Standalone variant is born from the need to use Pi-hole s
 
 [Install](/index.php/Install "Install") the [pi-hole-standalone](https://aur.archlinux.org/packages/pi-hole-standalone/) package. The Pi-hole standalone package install a statically enabled timer (and relative service) will weekly update Pi-hole blacklisted servers list. If you do not like default timer timings (from upstrem project) you can, of course, [edit](/index.php/Edit "Edit") it or preventing from being executed by [masking](/index.php/Systemd#Using_units "Systemd") it. You need to manually start `pi-hole-gravity.timer` or simply reboot after your configuration is finished.
 
-### Initial configuration
+### Configuration
 
 #### Dnsmasq
 
@@ -321,6 +310,46 @@ $ pihole enable
 ```
 
 or, via web interface, clicking on *Enable*.
+
+## Tips & Tricks
+
+### Cloudflared DNS service
+
+Pi-Hole can be configured to use privacy-first DNS [1.1.1.1](https://1.1.1.1/) by [Cloudflare](https://www.cloudflare.com/) over HTTPS (DOH). Install [cloudflared-bin](https://aur.archlinux.org/packages/cloudflared-bin/) and follow [upstream documentation](https://docs.pi-hole.net/guides/dns-over-https/).
+
+### Use with VPN server
+
+Pi-Hole server can be used on the same host where VPN server is deployed, so connected VPN clients can also use Pi-Hole.
+
+#### OpenVPN
+
+An [OpenVPN](/index.php/OpenVPN "OpenVPN") server can be configured to advertise a Pi-hole instance to its clients. Add the following two lines to your `/etc/openvpn/server/server.conf`:
+
+```
+push "redirect-gateway def1 bypass-dhcp"
+push "dhcp-option DNS *Pi-Hole-IP*"
+
+```
+
+If it still does not work, try creating a file `/etc/dnsmasq.d/00-openvpn.conf` with the following content:
+
+```
+interface=tun0
+
+```
+
+It may be necessary to make `dnsmasq` listen on `tun0`.
+
+#### WireGuard
+
+[WireGuard](/index.php/WireGuard "WireGuard") clients can be configured to use Pi-Hole DNS server. In the client configuration file, specify the following line:
+
+```
+DNS = *Pi-Hole-IP*
+
+```
+
+See more information in [WireGuard#Client_config](/index.php/WireGuard#Client_config "WireGuard").
 
 ## Troubleshooting
 

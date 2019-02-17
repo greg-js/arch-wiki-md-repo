@@ -119,7 +119,7 @@
 | <small>4.15.1.</small> [VPN providers](/index.php/Category:VPN_providers "Category:VPN providers") <small>(8)</small> |
 | <small>4.16.</small> [Voice over IP](/index.php/Category:Voice_over_IP "Category:Voice over IP") <small>(7)</small> |
 | <small>4.17.</small> [Web](/index.php/Category:Web "Category:Web") <small>(4)</small> |
-| <small>4.17.1.</small> [Web applications](/index.php/Category:Web_applications "Category:Web applications") <small>(34) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
+| <small>4.17.1.</small> [Web applications](/index.php/Category:Web_applications "Category:Web applications") <small>(35) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
 | <small>4.17.1.1.</small> [Content management systems](/index.php/Category:Content_management_systems "Category:Content management systems") <small>(4)</small> |
 | <small>4.17.1.2.</small> [Git web interfaces](/index.php/Category:Git_web_interfaces "Category:Git web interfaces") <small>(5) (also in [Version Control System](/index.php/Category:Version_Control_System "Category:Version Control System"))</small> |
 | <small>4.17.1.3.</small> [Issue tracking systems](/index.php/Category:Issue_tracking_systems "Category:Issue tracking systems") <small>(6) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
@@ -181,7 +181,7 @@
 | <small>5.1.17.</small> [System monitors](/index.php/Category:System_monitors "Category:System monitors") <small>(10) (also in [Monitoring](/index.php/Category:Monitoring "Category:Monitoring"))</small> |
 | <small>5.1.18.</small> [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators") <small>(17) (also in [Command-line](/index.php/Category:Command-line "Category:Command-line"), [Emulation](/index.php/Category:Emulation "Category:Emulation"))</small> |
 | <small>5.1.19.</small> [Text editors](/index.php/Category:Text_editors "Category:Text editors") <small>(16) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
-| <small>5.1.20.</small> [Web applications](/index.php/Category:Web_applications "Category:Web applications") <small>(34) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
+| <small>5.1.20.</small> [Web applications](/index.php/Category:Web_applications "Category:Web applications") <small>(35) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
 | <small>5.1.20.1.</small> [Content management systems](/index.php/Category:Content_management_systems "Category:Content management systems") <small>(4)</small> |
 | <small>5.1.20.2.</small> [Git web interfaces](/index.php/Category:Git_web_interfaces "Category:Git web interfaces") <small>(5) (also in [Version Control System](/index.php/Category:Version_Control_System "Category:Version Control System"))</small> |
 | <small>5.1.20.3.</small> [Issue tracking systems](/index.php/Category:Issue_tracking_systems "Category:Issue tracking systems") <small>(6) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |

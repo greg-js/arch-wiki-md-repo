@@ -89,7 +89,7 @@ This article lists and describes [screenshot](https://en.wikipedia.org/wiki/Scre
 
 *   **ScreenGrab** — Cross-platform application designed to quickly take screenshots (Qt).
 
-	[https://github.com/DOOMer/screengrab](https://github.com/DOOMer/screengrab) || [screengrab](https://aur.archlinux.org/packages/screengrab/)
+	[https://github.com/DOOMer/screengrab](https://github.com/DOOMer/screengrab) || [screengrab](https://www.archlinux.org/packages/?name=screengrab)
 
 *   **[Scrot](https://en.wikipedia.org/wiki/Scrot "wikipedia:Scrot")** — Simple command-line screenshot utility for X.
 

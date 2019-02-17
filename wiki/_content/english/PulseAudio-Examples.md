@@ -42,11 +42,12 @@ Related articles
 *   [13 Disabling pulseaudio daemon altogether](#Disabling_pulseaudio_daemon_altogether)
 *   [14 Remap stereo to mono](#Remap_stereo_to_mono)
 *   [15 Remap left or right to mono](#Remap_left_or_right_to_mono)
-*   [16 Swap left/right channels](#Swap_left/right_channels)
-    *   [16.1 Using default.pa](#Using_default.pa)
-*   [17 PulseAudio as a minimal unintrusive dumb pipe to ALSA](#PulseAudio_as_a_minimal_unintrusive_dumb_pipe_to_ALSA)
-*   [18 Having both speakers and headphones plugged in and switching in software on-the-fly](#Having_both_speakers_and_headphones_plugged_in_and_switching_in_software_on-the-fly)
-*   [19 Allowing multiple users to use PulseAudio at the same time](#Allowing_multiple_users_to_use_PulseAudio_at_the_same_time)
+*   [16 Remap for broadcasting software](#Remap_for_broadcasting_software)
+*   [17 Swap left/right channels](#Swap_left/right_channels)
+    *   [17.1 Using default.pa](#Using_default.pa)
+*   [18 PulseAudio as a minimal unintrusive dumb pipe to ALSA](#PulseAudio_as_a_minimal_unintrusive_dumb_pipe_to_ALSA)
+*   [19 Having both speakers and headphones plugged in and switching in software on-the-fly](#Having_both_speakers_and_headphones_plugged_in_and_switching_in_software_on-the-fly)
+*   [20 Allowing multiple users to use PulseAudio at the same time](#Allowing_multiple_users_to_use_PulseAudio_at_the_same_time)
 
 ## Set default input source
 
@@ -792,6 +793,31 @@ Replace `alsa_output.pci-0000_00_1b.0.iec958-ac3-surround-51` (5.1 AC3 on ALC892
 *   *master_channel_map* is a list of outputs to be remapped to.
 *   *channel_map* is a list of inputs to be remapped from.
 *   A stereo card will not have to specify as many channels, eg. `channels=1 master_channel_map=mono channel_map=right`
+
+## Remap for broadcasting software
+
+If you do not want to capture sound from the application you need to create Remap sink:
+
+```
+### Create Remap sink
+load-module module-remap-sink sink_name=Remap_sink master=SINK_NAME channels=2 remix=no
+set-default-sink Remap_sink 
+
+```
+
+**Note:** Replace `SINK_NAME` with the real name of the master sink `pacmd list-sinks`.
+
+Then restart PulseAudio daemon:
+
+```
+# pulseaudio -k
+# pulseaudio --start
+
+```
+
+Now you need set the `Remap_sink` as the default sound source in broadcast software
+
+**Note:** Use environment variable `PULSE_SINK=SINK_NAME` for applications, sound that does not need to be captured.
 
 ## Swap left/right channels
 

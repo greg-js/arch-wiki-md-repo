@@ -9,7 +9,11 @@ Related articles
 
 [Xfce](http://www.xfce.org)는 현재 GTK+ 2를 기반으로 하는 모듈식의 저용량 [데스크탑 환경](/index.php/Desktop_environment "Desktop environment")이다. 완벽한 사용자 경험을 제공하기 위해 Xfce는 창 관리자, 파일 관리자, 데스크탑과 패널을 포함한다.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 설치하기](#설치하기)
 *   [2 Xfce 시작하기](#Xfce_시작하기)
@@ -321,7 +325,7 @@ XFCE 테마들은 [xfce-look.org](http://www.xfce-look.org)에서 구할 수 있
 
 **Note:** ᅟᅡXfce4 mixer와 Xfce4 volumed는 Streamer 1.0으로 포팅이 되지 않기 때문에 더이상 유지보수 되는 업스트림(upstream)으로 취급되지 않는다. 더 자세한 사항은 다음 링크(4.12)를 참고한다. [news post](http://www.xfce.org/about/news/?post=1425081600).
 
-[xfce4-mixer](https://www.archlinux.org/packages/?name=xfce4-mixer)로 제공되는 Xfce4 mixer는 Xfce 팀에서 개발된 GUI 믹서 어플리케이션과 패널 플러그인이다. 해당 패키지는 xfce4 패키지 그룹의 일부분으로 포함되어 있다. [PulseAudio](/index.php/PulseAudio "PulseAudio")와 [OSS](/index.php/OSS "OSS") 지원을 원한다면 [gstreamer0.10-good-plugins](https://aur.archlinux.org/packages/gstreamer0.10-good-plugins/) 설치가 필요하다.
+[xfce4-mixer](https://aur.archlinux.org/packages/xfce4-mixer/)로 제공되는 Xfce4 mixer는 Xfce 팀에서 개발된 GUI 믹서 어플리케이션과 패널 플러그인이다. 해당 패키지는 xfce4 패키지 그룹의 일부분으로 포함되어 있다. [PulseAudio](/index.php/PulseAudio "PulseAudio")와 [OSS](/index.php/OSS "OSS") 지원을 원한다면 [gstreamer0.10-good-plugins](https://aur.archlinux.org/packages/gstreamer0.10-good-plugins/) 설치가 필요하다.
 
 Xfce4 mixer가 제대로 동작하도록 하기 위해 기본으로 설정되어 있는 사운드 카드를 변경해야할지도 모른다. 기본 사운드 카드 변경과 관련하여 자세한 사항을 알고 싶다면 [Advanced Linux Sound Architecture#Set the default sound card](/index.php/Advanced_Linux_Sound_Architecture#Set_the_default_sound_card "Advanced Linux Sound Architecture")를 참고한다. 또 다른 방법으로 [PulseAudio](/index.php/PulseAudio "PulseAudio")와 [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) 또는 [PulseAudio](/index.php/PulseAudio "PulseAudio")와 [OSS](/index.php/OSS "OSS")를 함께 사용하는 방법이 있다. OSS 사용 부분이 궁금하다면 [OSS#Applications that use GStreamer](/index.php/OSS#Applications_that_use_GStreamer "OSS")을 참고한다.
 
@@ -335,7 +339,7 @@ Xfce4 mixer가 제대로 동작하도록 하기 위해 기본으로 설정되어
 
 #### 키보드의 볼륨 조절 버튼
 
-[xfce4-mixer](https://www.archlinux.org/packages/?name=xfce4-mixer) 패키지의 버전이 `4.10.0-3` 이거나 더 높은 경우 mixer 패널 애플릿이 키보드를 이용한 볼륨조절 기능을 제공한다. 하지만 볼륨조절 관련 알림창은 보이지 않는다. 다른 방법으로는, [xfce4-volumed](https://aur.archlinux.org/packages/xfce4-volumed/)를 사용할 수 있다. 해당 프로그램은 Xfce4 mixer로 볼륨키를 매핑시키고 Xfce4-notifyd를 통해 관련 알림창을 화면에 표시해준다. 만약 PulseAudio를 사용하고 있고 Xfce4 Mixer 프로그램 사용을 원하지 않는 경우라면, [xfce4-pulseaudio-plugin](https://www.archlinux.org/packages/?name=xfce4-pulseaudio-plugin)을 설치한다. 이 플러그인 또한 패널 애플릿으로서 키보드 버튼을 통한 볼륨조절과 관련 알림창을 띄워주는 기능을 가지고 있다.
+[xfce4-mixer](https://aur.archlinux.org/packages/xfce4-mixer/) 패키지의 버전이 `4.10.0-3` 이거나 더 높은 경우 mixer 패널 애플릿이 키보드를 이용한 볼륨조절 기능을 제공한다. 하지만 볼륨조절 관련 알림창은 보이지 않는다. 다른 방법으로는, [xfce4-volumed](https://aur.archlinux.org/packages/xfce4-volumed/)를 사용할 수 있다. 해당 프로그램은 Xfce4 mixer로 볼륨키를 매핑시키고 Xfce4-notifyd를 통해 관련 알림창을 화면에 표시해준다. 만약 PulseAudio를 사용하고 있고 Xfce4 Mixer 프로그램 사용을 원하지 않는 경우라면, [xfce4-pulseaudio-plugin](https://www.archlinux.org/packages/?name=xfce4-pulseaudio-plugin)을 설치한다. 이 플러그인 또한 패널 애플릿으로서 키보드 버튼을 통한 볼륨조절과 관련 알림창을 띄워주는 기능을 가지고 있다.
 
 **Warning:** [xfce4-pulseaudio-plugin](https://www.archlinux.org/packages/?name=xfce4-pulseaudio-plugin) 의 경우 높은 CPU 사용량을 가질 수 있다. (~5% on i7 Intel CPU).
 

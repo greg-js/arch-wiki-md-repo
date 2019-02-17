@@ -46,7 +46,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Rust_(programming_language) "wiki
 
 ### Rust Core Library
 
-The [Rust Core Library](https://doc.rust-lang.org/core/) is the dependency-free foundation of the Rust Standard Library. It interfaces directly with LLVM primitives, which allows Rust to be platform and hardware-agnostic. It is this integration with LLVM that allows Rust to obtain greater performance than equivalent C applications compiled with Clang, making Rust software designed with libcore lower level than C. Developers looking to target software for embedded platforms may forego the standard library with `#[nostd]` to exclusively use the no-batteries-included core library for smaller binary sizes and improved performance. However, using `#[nostd]` limits the amount of software support that you can get from the larger Rust community as a majority of libraries require the standard library.
+The [Rust Core Library](https://doc.rust-lang.org/core/) is the dependency-free foundation of the Rust Standard Library. It interfaces directly with LLVM primitives, which allows Rust to be platform and hardware-agnostic. It is this integration with LLVM that allows Rust to obtain greater performance than equivalent C applications compiled with Clang, making Rust software designed with libcore lower level than C. Developers looking to target software for embedded platforms may forego the standard library with `#![no_std]` to exclusively use the no-batteries-included core library for smaller binary sizes and improved performance. However, using `#![no_std]` limits the amount of software support that you can get from the larger Rust community as a majority of libraries require the standard library.
 
 ### Rust Standard Library
 

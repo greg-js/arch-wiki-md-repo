@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Remmina](/index.php/Remmina "Remmina"), revisada por última vez el **2018-10-18**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Remmina&diff=0&oldid=548283) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Remmina](/index.php/Remmina "Remmina"), revisada por última vez el **2019-02-15**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Remmina&diff=0&oldid=566597) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -45,5 +45,5 @@ Para minimizar la bandeja en el inicio, utilice la opción `-i`.
 
 ## Véase también
 
-*   [Bugtracker](https://github.com/FreeRDP/Remmina/issues) - para la aplicación
+*   [Bugtracker](https://gitlab.com/Remmina/Remmina/issues) - para la aplicación
 *   [Wiki del proyecto](https://github.com/FreeRDP/FreeRDP/wiki) - con amplios recursos

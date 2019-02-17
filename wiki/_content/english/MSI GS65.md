@@ -62,13 +62,13 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 
 At bootup, the BIOS settings page is entered via the delete key, the quick boot select window can be activated via the F11 key, PXE scanning can be activated via the F12 key
 
-In the BIOS setings,he model name can be seen in the Main tab, [Secure Boot](/index.php/Secure_Boot "Secure Boot") can be disabled from the Security tab and boot mode can optionally be switched from [UEFI](/index.php/UEFI "UEFI") to legacy.
+In the BIOS setings, the model name can be seen in the Main tab, [Secure Boot](/index.php/Secure_Boot "Secure Boot") can be disabled from the Security tab and boot mode can optionally be switched from [UEFI](/index.php/UEFI "UEFI") to legacy. Advanced BIOS options can be accessed by going to the 'Advanced' tab and holding down l-alt, then pressing r-ctrl, r-shift, then F2.
 
-There is no option to disable the discrete intel GPU.
+There is no known option to disable the discrete intel GPU, there may be one present after unlocking the advanced options.
 
 #### E16Q2IMS.110
 
-This BIOS version seems to introduce many ACPI problems, including a flood of "No handler or method for GPE [00->6E]" at boot, which can be solved through kernel parameters:
+This BIOS version introduces many ACPI problems (if BIOS is changed from [UEFI](/index.php/UEFI "UEFI") to legacy), including a flood of "No handler or method for GPE [00->6E]" at boot, which can be solved through kernel parameters:
 
 *   `acpi=off` allows to boot but most things won't work, including the keyboard and touchpad.
 *   `pci=nomsi` or `acpi=off acpi=force` allows to boot and have working keyboard and touchpad, but the NVidia card won't work ; neither will the USB3 ports.
@@ -158,6 +158,24 @@ Device Descriptor:
 ```
 
 The Steel Series lights on the keyboard cannot be configured with [msi-keyboard-git](https://aur.archlinux.org/packages/msi-keyboard-git/) or [msiklm-git](https://aur.archlinux.org/packages/msiklm-git/), because those tools only work with region-based RGB lighting. For this laptop model, the tool [msi-perkeyrgb](https://aur.archlinux.org/packages/msi-perkeyrgb/) provides partial control.
+
+ `$ msi-perkeyrgb -m gs65 --list-preset` 
+```
+Available presets for GS65:
+	- aqua
+	- chakra
+	- default
+	- disco
+	- drain
+	- freeway
+	- plain
+	- rainbow-split
+	- roulette
+
+```
+ `$ msi-perkeyrgb -m gs65 -p aqua` 
+
+If keyboard lights remain off, be sure you've rebooted after installing msi-perkeyrgb to refresh udev and that the brightness is turned to maximum with Fn+PgUp, then try the command again.
 
 #### Button Mapping
 

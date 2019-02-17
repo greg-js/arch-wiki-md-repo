@@ -1,25 +1,29 @@
 Go back to [Music Player Daemon](/index.php/Music_Player_Daemon "Music Player Daemon").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Troubleshooting](#Troubleshooting)
     *   [1.1 Autodetection failed](#Autodetection_failed)
     *   [1.2 MPD hangs on first startup](#MPD_hangs_on_first_startup)
         *   [1.2.1 Easy Tag](#Easy_Tag)
         *   [1.2.2 Kid3](#Kid3)
-    *   [1.3 Cannot connect to mpd: host "localhost" not found: Temporary failure in name resolution](#Cannot_connect_to_mpd:_host_.22localhost.22_not_found:_Temporary_failure_in_name_resolution)
+    *   [1.3 Cannot connect to mpd: host "localhost" not found: Temporary failure in name resolution](#Cannot_connect_to_mpd:_host_"localhost"_not_found:_Temporary_failure_in_name_resolution)
     *   [1.4 Other issues when attempting to connect to mpd with a client](#Other_issues_when_attempting_to_connect_to_mpd_with_a_client)
         *   [1.4.1 First fix](#First_fix)
         *   [1.4.2 Second fix](#Second_fix)
     *   [1.5 Binding to IPV6 before IPV4](#Binding_to_IPV6_before_IPV4)
-    *   [1.6 daemon: cannot setgid for user "mpd": Operation not permitted](#daemon:_cannot_setgid_for_user_.22mpd.22:_Operation_not_permitted)
+    *   [1.6 daemon: cannot setgid for user "mpd": Operation not permitted](#daemon:_cannot_setgid_for_user_"mpd":_Operation_not_permitted)
     *   [1.7 daemon: fatal_error: Failed to set group NN: Operation not permitted](#daemon:_fatal_error:_Failed_to_set_group_NN:_Operation_not_permitted)
         *   [1.7.1 First fix](#First_fix_2)
         *   [1.7.2 Second fix](#Second_fix_2)
         *   [1.7.3 Third fix](#Third_fix)
-    *   [1.8 MPD & ALSA](#MPD_.26_ALSA)
+    *   [1.8 MPD & ALSA](#MPD_&_ALSA)
         *   [1.8.1 High CPU usage with ALSA](#High_CPU_usage_with_ALSA)
-        *   [1.8.2 Playing audio files with different rate (works for EMU 0202/0204/0404)](#Playing_audio_files_with_different_rate_.28works_for_EMU_0202.2F0204.2F0404.29)
+        *   [1.8.2 Playing audio files with different rate (works for EMU 0202/0204/0404)](#Playing_audio_files_with_different_rate_(works_for_EMU_0202/0204/0404))
     *   [1.9 Changing user](#Changing_user)
 
 ## Troubleshooting
@@ -132,7 +136,7 @@ listen: bind to '0.0.0.0:6600' failed: Address already in use (continuing anyway
 it means mpd binds to the ipv6 interface before binding to ipv4\. If you want to use your ipv4 interface, hardcode it in `mpd.conf`, like:
 
 ```
-bind_to_address "127.0.0.1"
+bind_to_address "0.0.0.0"
 
 ```
 

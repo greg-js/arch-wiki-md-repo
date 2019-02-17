@@ -13,7 +13,11 @@ Tratto da [Xfce - About](http://www.xfce.org/about/):
 
 Xfce è un [ambiente Desktop](/index.php/Desktop_environment_(Italiano) "Desktop environment (Italiano)") leggero e modulare, attualmente basato sule GTK+2 anche se in futuro potrebbe essere portato sulle GTK+3\. XFCE include una collezione di applicazioni come un gestore delle, un file manager ed un pannello per fornire un'esperienza utente completa. Xfce è molto popolare ed usato da molti utenti, in parte perché è leggero, ma anche perché una grande quantità delle impostazioni sono gestite tramite una GUI. Questo è in netto contrasto con i desktop come GNOME Shell che nascondono molte delle impostazioni all'utente.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installazione](#Installazione)
 *   [2 Avviare Xfce](#Avviare_Xfce)
@@ -479,7 +483,7 @@ Si potrebbe anche provare a utilizzare un impostazione DPI personalizzata.
 
 #### Configurazione di xfce4-mixer
 
-[xfce4-mixer](https://www.archlinux.org/packages/?name=xfce4-mixer) è un mixer con GUI che si applica come plugin nel pannello e sviluppata dal team di Xfce . É parte del gruppo xfce4, quindi probabilmente lo avrete già installato. Xfce 4.6 usa GStreamer come backend per controllare il volume, quindi prima bisogna fare in modo che gstreamer cooperi con xfce4-mixer. Uno o più pacchetti del plugin di GStreamer elencati come dipendenze opzionali di xfce4-mixer devino essere installati. Senza uno di questi pacchetti, richiesti dal plugin, apparirà il seguente errore quando si effettua il clic sulla voce del pannello del mixer.
+[xfce4-mixer](https://aur.archlinux.org/packages/xfce4-mixer/) è un mixer con GUI che si applica come plugin nel pannello e sviluppata dal team di Xfce . É parte del gruppo xfce4, quindi probabilmente lo avrete già installato. Xfce 4.6 usa GStreamer come backend per controllare il volume, quindi prima bisogna fare in modo che gstreamer cooperi con xfce4-mixer. Uno o più pacchetti del plugin di GStreamer elencati come dipendenze opzionali di xfce4-mixer devino essere installati. Senza uno di questi pacchetti, richiesti dal plugin, apparirà il seguente errore quando si effettua il clic sulla voce del pannello del mixer.
 
 ```
  GStreamer was unable to detect any sound devices. Some sound system specific GStreamer packages may be missing. 
@@ -496,7 +500,7 @@ Per ulteriori dettagli, ad esempio come impostare la scheda audio di default, ve
 
 #### Xfce4-mixer con OSS4
 
-Se avete provato la sezione qui sopra per ottenere [xfce4-mixer](https://www.archlinux.org/packages/?name=xfce4-mixer) funzionante ma non funziona comunque, allora potrebbe essere necessario compilarsi per se [gstreamer0.10-good-plugins](https://aur.archlinux.org/packages/gstreamer0.10-good-plugins/). Si scarichi il PKGBUILD e gli altri file necessari da ABS o [qui](https://repos.archlinux.org/wsvn/packages/gstreamer0.10-good/repos/extra-i686/), modificare il PKGBUILD, aggiungendo --enable-oss.
+Se avete provato la sezione qui sopra per ottenere [xfce4-mixer](https://aur.archlinux.org/packages/xfce4-mixer/) funzionante ma non funziona comunque, allora potrebbe essere necessario compilarsi per se [gstreamer0.10-good-plugins](https://aur.archlinux.org/packages/gstreamer0.10-good-plugins/). Si scarichi il PKGBUILD e gli altri file necessari da ABS o [qui](https://repos.archlinux.org/wsvn/packages/gstreamer0.10-good/repos/extra-i686/), modificare il PKGBUILD, aggiungendo --enable-oss.
 
 ```
 ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var \

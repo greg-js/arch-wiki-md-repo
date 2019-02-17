@@ -19,7 +19,7 @@ Aunque Fontconfig se utiliza a menudo en los Unix modernos y en los sistemas ope
 
 *   [1 Path de fuentes](#Path_de_fuentes)
 *   [2 Configuración de FontConfig](#Configuración_de_FontConfig)
-    *   [2.1 Presets](#Presets)
+    *   [2.1 Ajustes predeterminados](#Ajustes_predeterminados)
     *   [2.2 Anti-aliasing](#Anti-aliasing)
     *   [2.3 Hinting](#Hinting)
         *   [2.3.1 Byte-Code Interpreter (BCI)](#Byte-Code_Interpreter_(BCI))
@@ -38,7 +38,7 @@ Aunque Fontconfig se utiliza a menudo en los Unix modernos y en los sistemas ope
     *   [2.12 Change rule overriding](#Change_rule_overriding)
     *   [2.13 Query the current settings](#Query_the_current_settings)
 *   [3 Applications without fontconfig support](#Applications_without_fontconfig_support)
-*   [4 Troubleshooting](#Troubleshooting)
+*   [4 Solución de problemas](#Solución_de_problemas)
     *   [4.1 Distorted fonts](#Distorted_fonts)
     *   [4.2 Calibri, Cambria, Monaco, etc. not rendering properly](#Calibri,_Cambria,_Monaco,_etc._not_rendering_properly)
     *   [4.3 Applications overriding hinting](#Applications_overriding_hinting)
@@ -96,36 +96,36 @@ Para ver una lista de fuentes Xorg reconocidas utilice `xlsfonts`, del paquete [
 
 ## Configuración de FontConfig
 
-Fontconfig is documented in the [fonts-conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fonts-conf.5) man page.
+La documentación de fontconfig se encuentra en la página del manual [fonts-conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fonts-conf.5).
 
-Configuration can be done per-user through `$XDG_CONFIG_HOME/fontconfig/fonts.conf`, and globally with `/etc/fonts/local.conf`. The settings in the per-user configuration have precedence over the global configuration. Both these files use the same syntax.
+La configuración se puede hacer por usuario via `$XDG_CONFIG_HOME/fontconfig/fonts.conf`, y globalmente con `/etc/fonts/local.conf`. Las configuraciones por usuario tienen prioridad sobre la configuración global. Ambos archivos utilizan la misma sintaxis.
 
-**Note:** Configuration files and directories: `~/.fonts.conf/`, `~/.fonts.conf.d/` and `~/.fontconfig/*.cache-*` are deprecated since [fontconfig](https://www.archlinux.org/packages/?name=fontconfig) 2.10.1 ([upstream commit](http://cgit.freedesktop.org/fontconfig/commit/?id=8c255fb185d5651b57380b0a9443001e8051b29d)) and will not be read by default in the future versions of the package. New paths are `$XDG_CONFIG_HOME/fontconfig/fonts.conf`, `$XDG_CONFIG_HOME/fontconfig/conf.d/NN-name.conf` and `$XDG_CACHE_HOME/fontconfig/*.cache-*` respectively. If using the second location, make sure the naming is valid (where `NN` is a two digit number like `00`, `10`, or `99`).
+**Nota:** Los archivos de configuración y los directorios: `~/.fonts.conf/`, `~/.fonts.conf.d/` y `~/.fontconfig/*.cache-*` están obsoletos desde [fontconfig](https://www.archlinux.org/packages/?name=fontconfig) 2.10.1 ([upstream commit](http://cgit.freedesktop.org/fontconfig/commit/?id=8c255fb185d5651b57380b0a9443001e8051b29d)) y no se leerá por defecto en las futuras versiones del paquete. Los nuevos paths son `$XDG_CONFIG_HOME/fontconfig/fonts.conf`, `$XDG_CONFIG_HOME/fontconfig/conf.d/NN-name.conf` y `$XDG_CACHE_HOME/fontconfig/*.cache-*` respectivamente. Si utiliza la segunda localización, asegúrese de que el nombre es válido (donde `NN` es un número de dos dígitos como `00`, `10`, o `99`).
 
-Fontconfig gathers all its configurations in a central file (`/etc/fonts/fonts.conf`). This file is replaced during fontconfig updates and should not be edited. Fontconfig-aware applications source this file to know available fonts and how they get rendered. This file is a conglomeration of rules from the global configuration (`/etc/fonts/local.conf`), the configured presets in `/etc/fonts/conf.d/`, and the user configuration file (`$XDG_CONFIG_HOME/fontconfig/fonts.conf`). `fc-cache` can be used to rebuild fontconfig's configuration, although changes will only be visible in newly launched applications.
+Fontconfig reúne toda su configuración en un archivo principal (`/etc/fonts/fonts.conf`). Este archivo se reemplaza durante las actualizaciones y no se debe editar. Las aplicaciones compatibles con fontconfig obtienen este archivo para conocer las fuentes disponibles y saber cómo se procesan. Este archivo es un conjunto de reglas de la configuración global (`/etc/fonts/local.conf`), la configuración presente en `/etc/fonts/conf.d/`, y el archivo de configuración del usuario (`$XDG_CONFIG_HOME/fontconfig/fonts.conf`). `fc-cache` se puede utilizar para reconstruir la configuración de fontconfig, aunque los cambios solo serán visibles para las aplicaciones lanzadas a partir de ese momento.
 
-**Note:** For some desktop environments (such as [GNOME](/index.php/GNOME "GNOME") and [KDE](/index.php/KDE "KDE")) using the *Font Control Panel* will automatically create or overwrite the user font configuration file. For these desktop environments, it is best to match your already defined font configurations to get the expected behavior. Also ensure that the desktop [locale](/index.php/Locale "Locale") settings or *Regional Settings* are supported by the configured fonts, if not the font configuration could be overidden.
+**Nota:** En algunos entornos de escritorio (como [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)") y [KDE](/index.php/KDE_(Espa%C3%B1ol) "KDE (Español)") crea o sobrescribe el archivo de configuración de fuentes del usuario al utilizar el *panel de control de fuentes*. Para estos entornos de escritorio es mejor coincidir con las configuraciones definidas a fin de obtener el comportamiento deseado. También asegurese de que la *configuración regional* o los [locales](/index.php/Locale_(Espa%C3%B1ol) "Locale (Español)") del escritorio están soportados por la fuente configurada, si no la configuración de las fuentes puede sobrescribirse.
 
-Fontconfig configuration files use [XML](https://en.wikipedia.org/wiki/XML "wikipedia:XML") format and need these headers:
+Los archivos de configuración utiliza el formato [XML](https://en.wikipedia.org/wiki/es:Extensible_Markup_Language "wikipedia:es:Extensible Markup Language") y necesita estas cabeceras:
 
 ```
 <?xml version="1.0"?>
 <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
 <fontconfig>
 
-  <!-- settings go here -->
+  <!-- Los ajustes van aquí -->
 
 </fontconfig>
 
 ```
 
-The configuration examples in this article omit these tags.
+Los ejemplos de configuración en este artículo omite estas etiquetas.
 
-### Presets
+### Ajustes predeterminados
 
-There are presets installed in the directory `/etc/fonts/conf.avail`. They can be enabled by creating [symbolic links](https://en.wikipedia.org/wiki/Symbolic_link "wikipedia:Symbolic link") to them, both per-user and globally, as described in `/etc/fonts/conf.d/README`. These presets will override matching settings in their respective configuration files.
+Los ajustes predeterminados están instalados en el directorio `/etc/fonts/conf.avail`. Se pueden activar creando [enlaces simbólicos](https://en.wikipedia.org/wiki/es:Enlace_simb%C3%B3lico "wikipedia:es:Enlace simbólico") a los archivos de configuración del usuario o globalmente o a ambos, como se describe en `/etc/fonts/conf.d/README`. Estos ajustes sobrescribirán los ajustes correspondientes en sus respectivos archivos de configuración.
 
-For example, to enable sub-pixel RGB rendering globally:
+Por ejemplo, para activar el renderizado sub-pixel RGB globalmente:
 
 ```
 # cd /etc/fonts/conf.d
@@ -133,7 +133,7 @@ For example, to enable sub-pixel RGB rendering globally:
 
 ```
 
-To do the same but instead for a per-user configuration:
+Para hacer lo mismo pero con la configuración del usuario:
 
 ```
 $ mkdir $XDG_CONFIG_HOME/fontconfig/conf.d
@@ -143,7 +143,7 @@ $ ln -s /etc/fonts/conf.avail/10-sub-pixel-rgb.conf $XDG_CONFIG_HOME/fontconfig/
 
 ### Anti-aliasing
 
-[Font rasterization](https://en.wikipedia.org/wiki/Font_rasterization "wikipedia:Font rasterization") converts vector font data to bitmap data so that it can be displayed. The result can appear jagged due to [aliasing](https://en.wikipedia.org/wiki/Aliasing "wikipedia:Aliasing"). The technique known as [anti-aliasing](https://en.wikipedia.org/wiki/Anti-aliasing "wikipedia:Anti-aliasing") can be used to increase the apparent resolution of font edges. Anti-aliasing is **enabled** by default. To disable it:
+La [renderización de fuentes (en inglés)](https://en.wikipedia.org/wiki/Font_rasterization "wikipedia:Font rasterization") convierte los datos vectoriales de la fuente a un mapa de bits para poder mostrarla. El resultado puede parecer dentado debido al [aliasing](https://en.wikipedia.org/wiki/es:Aliasing "wikipedia:es:Aliasing"). La técnica conocida como [anti-aliasing (en inglés)](https://en.wikipedia.org/wiki/Anti-aliasing "wikipedia:Anti-aliasing") puede utilizarse para aumentar aparentemente la resolución de los bordes de las fuentes. Anti-aliasing está *activado* por defecto. Para desactivarlo:
 
 ```
   <match target="font">
@@ -154,7 +154,7 @@ $ ln -s /etc/fonts/conf.avail/10-sub-pixel-rgb.conf $XDG_CONFIG_HOME/fontconfig/
 
 ```
 
-**Note:** Some applications, like [GNOME](/index.php/GNOME "GNOME") may [override default anti-aliasing settings](#Troubleshooting).
+**Nota:** Algunas aplicaciones, como [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)") puede [sobrescribir los ajustes anti-aliasing por defecto](#Solución_de_problemas).
 
 ### Hinting
 
@@ -505,7 +505,7 @@ Xft.rgba: rgb
 
 Make sure the settings are loaded properly when X starts with `xrdb -q` (see [Xresources](/index.php/Xresources "Xresources") for more information).
 
-## Troubleshooting
+## Solución de problemas
 
 ### Distorted fonts
 

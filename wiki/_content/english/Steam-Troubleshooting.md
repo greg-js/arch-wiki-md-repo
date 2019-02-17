@@ -29,6 +29,7 @@
     *   [7.4 Steam forgets password](#Steam_forgets_password)
     *   [7.5 Preventing crash memory dumps](#Preventing_crash_memory_dumps)
     *   [7.6 Steam license problem with playing videos](#Steam_license_problem_with_playing_videos)
+    *   [7.7 No context menu for joining/inviting friends](#No_context_menu_for_joining/inviting_friends)
 *   [8 In-home streaming issues](#In-home_streaming_issues)
     *   [8.1 In-home streaming does not work from archlinux host to archlinux guest](#In-home_streaming_does_not_work_from_archlinux_host_to_archlinux_guest)
     *   [8.2 Hardware decoding not available](#Hardware_decoding_not_available)
@@ -340,6 +341,12 @@ This video requires a license to play which cannot be retrieved. This may be a t
 ```
 
 To solve this issue follow the [*Streaming Videos on Steam* support page](https://support.steampowered.com/kb_article.php?ref=8699-OASD-1871#15).
+
+### No context menu for joining/inviting friends
+
+Since the new Steam Friends UI update, it may be the case that in the right-click menu the entries for "Join Game", "Invite to Game" and "View Game Info" are missing.
+
+In order to fix this, it maybe be necessary to install [lsof](https://www.archlinux.org/packages/?name=lsof).
 
 ## In-home streaming issues
 

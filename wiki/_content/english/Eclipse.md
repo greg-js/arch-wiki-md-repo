@@ -2,7 +2,11 @@
 
 The Eclipse IDE is largely written in Java but can be used to develop applications in a number of languages, including Java, C/C++, PHP, Perl and Python. The IDE can also provide subversion support and task management.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Plugins](#Plugins)
@@ -144,7 +148,7 @@ Part of [this](https://bugs.eclipse.org/bugs/show_bug.cgi?id=318177) bug. Just l
 
 Eclipse supplies a Dark theme which can be enabled in Window > Preferences > General > Appearance and selecting the 'Dark' theme.
 
-The dark theme uses its own colours rather than the GTK theme colours, if you prefer it to fully respect GTK colour settings, then remove or move to backup sub folder all of the .css files from `/usr/share/eclipse/plugins/org.eclipse.ui.themes_1.0.0.xxxx/css/`.
+The dark theme uses its own colours rather than the GTK theme colours, if you prefer it to fully respect GTK colour settings, then remove or move to backup sub folder all of the .css files from `/usr/lib/eclipse/plugins/org.eclipse.ui.themes_x.x.xxx.vxxxxxxxx-xxxx/css/`.
 
 ### Change Default Window Title Font Size
 

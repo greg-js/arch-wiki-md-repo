@@ -202,7 +202,7 @@ Edit `/etc/nsswitch.conf`:
 
  `/etc/nsswitch.conf` 
 ```
-hosts: files libvirt dns myhostname
+hosts: files libvirt libvirt_guest dns myhostname
 
 ```
 

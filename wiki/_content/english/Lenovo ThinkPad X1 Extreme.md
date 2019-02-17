@@ -98,7 +98,7 @@ STOP_CHARGE_THRESH_BAT0=90
 
 ### CPU throttling workaround
 
-A stress test using [s-tui](https://aur.archlinux.org/packages/s-tui/) indicates that CPU power limit is capped at 38W, keeping CPU temperature at 81C and resulting in maximum sustained frequency around 2850 MHz on i7-8750H. Similar to other modern Thinkpad laptops, this can be worked around by using [lenovo-throttling-fix-git](https://aur.archlinux.org/packages/lenovo-throttling-fix-git/). It raises the power limit to 44W, which, combined with the `performance` [CPU frequency scaling governor](/index.php/CPU_frequency_scaling#Scaling_governors "CPU frequency scaling"), allows the same CPU to run at 3100 MHz with the temperature of 95C.
+A stress test using [s-tui](https://aur.archlinux.org/packages/s-tui/) indicates that CPU power limit is capped at 38W, keeping CPU temperature at 81C and resulting in maximum sustained frequency around 2850 MHz on i7-8750H. Similar to other modern Thinkpad laptops, this can be worked around by using [throttled](https://aur.archlinux.org/packages/throttled/) or [lenovo-throttling-fix-git](https://aur.archlinux.org/packages/lenovo-throttling-fix-git/). It raises the power limit to 44W, which, combined with the `performance` [CPU frequency scaling governor](/index.php/CPU_frequency_scaling#Scaling_governors "CPU frequency scaling"), allows the same CPU to run at 3100 MHz with the temperature of 95C.
 
 See the [lenovo-throttling-fix homepage](https://github.com/erpalma/lenovo-throttling-fix) for more info about the temporary fix; a [proper solution](https://git.kernel.org/pub/scm/linux/kernel/git/rzhang/linux.git/commit/?h=next&id=bcd8aa670b74c026759cd6c06019d98b7b28bfd6) is incoming, and likely to appear in Linux 5.1.
 
@@ -110,7 +110,7 @@ Undervolting the CPU/Intel GPU works well with [intel-undervolt](/index.php/Unde
 
 As of January 2019, the following commonly used kernel parameters are known to work:
 
-*   `i915.enable_psr=1` - enables panel self-refresh on Intel graphics, likely power savings
+*   `i915.enable_psr=1` - enables panel self-refresh on Intel graphics, likely power savings; will likely be enabled by default starting with Linux 5.1
 *   `i915.fastboot=1` - skips mode setting on startup, prevents flickering on compatible boot loaders (rEFInd, GRUB2 with resolution set, etc.); will be enabled by default starting with Linux 5.1
 *   `i915.enable_guc=2` - enables [GuC/HuC firmware loading](/index.php/Intel_graphics#Enable_GuC_/_HuC_firmware_loading "Intel graphics"), allowing additional hardware acceleration for some video encoding configurations
 

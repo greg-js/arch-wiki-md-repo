@@ -14,11 +14,11 @@ Supported devices are listed [here](https://fwupd.org/lvfs/devicelist) and [more
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
+    *   [1.1 Graphical front-ends](#Graphical_front-ends)
 *   [2 Usage](#Usage)
 *   [3 Setup for UEFI BIOS upgrade](#Setup_for_UEFI_BIOS_upgrade)
-    *   [3.1 Reinstall bootloader](#Reinstall_bootloader)
-    *   [3.2 Secure Boot](#Secure_Boot)
-        *   [3.2.1 Using your own keys](#Using_your_own_keys)
+    *   [3.1 Secure Boot](#Secure_Boot)
+        *   [3.1.1 Using your own keys](#Using_your_own_keys)
 
 ## Installation
 
@@ -26,25 +26,37 @@ Supported devices are listed [here](https://fwupd.org/lvfs/devicelist) and [more
 
 See [#Setup for UEFI BIOS upgrade](#Setup_for_UEFI_BIOS_upgrade) if you intend such an use.
 
+### Graphical front-ends
+
+Certain [desktop environments](/index.php/Desktop_environments "Desktop environments") front-end solutions have built-in fwupd support:
+
+*   **GNOME Software** — Will check for updates periodically and automatically download firmwares in the background on [GNOME](/index.php/GNOME "GNOME"). After a firmware has been downloaded a popup will be displayed in Gnome Software to perform the update.
+
+	[https://wiki.gnome.org/Apps/Software](https://wiki.gnome.org/Apps/Software) || [gnome-software](https://www.archlinux.org/packages/?name=gnome-software)
+
+*   **KDE Discover** — Software center used with [Plasma](/index.php/Plasma "Plasma"). With the release of KDE Plasma 5.14, a new fwupd backend has been implemented in KDE Discover for firmware updates. These firmware updates are shown with other system updates.
+
+	[https://userbase.kde.org/Discover](https://userbase.kde.org/Discover) || [discover](https://www.archlinux.org/packages/?name=discover)
+
 ## Usage
 
-You can get available devices by running:
+To display all devices detected by fwupd:
 
 ```
 $ fwupdmgr get-devices
 
 ```
 
-**Note:** Some returned devices might not be updatable through fwupd, *e.g.* Intel integrated graphics.
+**Note:** Listed devices may not be updatable through fwupd (*e.g.* Intel integrated graphics). Alternative vendor solutions may be provided instead.
 
-To refresh metadata on available updates:
+To download the latest metadata from LVFS:
 
 ```
 $ fwupdmgr refresh
 
 ```
 
-To check which devices have updates:
+To list updates available for any devices on the system:
 
 ```
 $ fwupdmgr get-updates
@@ -58,26 +70,21 @@ $ fwupdmgr update
 
 ```
 
-**Note:** Some updates might require root rights.
+**Note:**
+
+*   Updates that can be applied live will be done immediately.
+*   Updates that run at bootup will be staged for the next reboot.
+*   The [root user](/index.php/Root_user "Root user") may be required to perform certain device updates.
 
 ## Setup for UEFI BIOS upgrade
 
-**Warning:** An update to your UEFI firmware may discard your boot loader installation, so it may be necessary to reinstall your boot loader after the firmware update is finished. If your system only applies the firmware update on a reboot, then you may need to have an Arch installation on a removable media ready to reinstall your boot loader so your system bootable again.
+**Warning:** An update to your UEFI firmware may discard the current [bootloader](/index.php/Bootloader "Bootloader") installation. It may be necessary to reinstall the bootloader using [chroot](/index.php/Chroot "Chroot") after the firmware update has been installed successful.
 
-1.  Make sure you are booted in UEFI mode.
+The following requirements should be met:
+
+1.  Make sure you are booted in [UEFI](/index.php/UEFI "UEFI") mode.
 2.  Verify [your EFI variables are accessible](/index.php/Unified_Extensible_Firmware_Interface#Requirements_for_UEFI_variable_support "Unified Extensible Firmware Interface").
 3.  Mount your [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (ESP) properly. `*esp*` is used to denote the mountpoint in this article.
-
-### Reinstall bootloader
-
-If after updating the firmware you find the Arch boot entry is missing you can add it back with [efibootmgr](/index.php/Efibootmgr "Efibootmgr"). For example, if you use GRUB:
-
-```
-$ efibootmgr --create --disk /dev/nvme0n1 --part 1 --loader /EFI/GRUB/grubx64.efi --label "Arch Linux"
-
-```
-
-(It is just the UEFI entry missing, so it should be possible to restore it with any UEFI shell, such as those in the BIOS setup utility?)
 
 ### Secure Boot
 

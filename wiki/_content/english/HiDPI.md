@@ -15,6 +15,7 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
 *   [1 Desktop environments](#Desktop_environments)
     *   [1.1 GNOME](#GNOME)
         *   [1.1.1 Fractional Scaling](#Fractional_Scaling)
+        *   [1.1.2 Text Scaling](#Text_Scaling)
     *   [1.2 KDE](#KDE)
         *   [1.2.1 Tray icons with fixed size](#Tray_icons_with_fixed_size)
     *   [1.3 Xfce](#Xfce)
@@ -126,6 +127,15 @@ From README.xsettings
 Noting that variants must be specified in the usual way (wrapped in <>).
 
 Note also that DPI in the above example is expressed in 1024ths of an inch.
+
+#### Text Scaling
+
+Alternatively or additionally to above solution, you can scale only text by factor not limited by whole numbers, for example:
+
+```
+$ gsettings set org.gnome.desktop.interface text-scaling-factor 1.5
+
+```
 
 ### KDE
 

@@ -2,7 +2,11 @@ As PCI passthrough is quite tricky to get right (both on the hardware and softwa
 
 **Note:** If you have got VFIO working properly, please post your own setup according to the template on the bottom.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Users' setups](#Users'_setups)
     *   [1.1 mstrthealias: Intel 7800X / X299, GTX 1070](#mstrthealias:_Intel_7800X_/_X299,_GTX_1070)
@@ -84,19 +88,20 @@ Configuration:
 Hardware:
 
 *   **CPU**: Intel Core i7-6700K (using iGPU as the host GPU)
-*   **Motherboard**: Gigabyte GA-Z170X-UD3 (Revision 1.0, BIOS/UEFI Version: F22)
+*   **Motherboard**: Gigabyte GA-Z170X-UD3 (Revision 1.0, BIOS/UEFI Version: F23d)
 *   **GPU**: MSI GeForce 1070 Gaming X (10Gbps)
 *   **RAM**: 16GB DDR4 2400MHz
 
 Configuration:
 
-*   **Kernel**: Linux-ck (no ACS patch needed).
+*   **Kernel**: "Vanilla" Linux (no ACS patch needed).
 *   Using **libvirt**: XML domain, helper scripts, IOMMU groups, etc available in [my VFIO repository](https://github.com/DragoonAethis/VFIO).
 *   **Guest OS**: Windows 8.1 Pro.
 *   The entire HDD is passed to the VM as a raw device (formatted as a single NTFS partition).
 *   USB keyboard and mouse are passed to the guest VM and shared with the host with Synergy.
-*   Virtualized audio is working: PulseAudio on the host is configured to accept TCP connections, and the envvars required for QEMU to use PA are pointed at the PA server running on 127.0.0.1\. This way it is not required to change the QEMU user, everything works flawlessly. (Exact details in the repo.)
+*   Virtualized audio: PulseAudio -> local Unix socket. Previously, I've had a bit more complex setup in which PA on the host was configured to accept TCP connections, and the envvars required for QEMU to use PA were pointed at the PA server running on 127.0.0.1\. This way it was not required to change the QEMU user (exact details in the repo), but introduced other minor issues I've resolved later.
 *   Bridged networking (with NetworkManager's and [this tutorial's](https://www.happyassassin.net/2014/07/23/bridged-networking-for-libvirt-with-networkmanager-2014-fedora-21/) help) is used. `bridge0` is created, `eth0` interface is bound to it. STP disabled, VirtIO NIC is configured in the VM and that VM is seen in the network just as any other computer (and is being assigned an IP address from the router itself, can communicate freely with other computers).
+*   For some reason, enabling intel_iommu=on on the kernel cmdline without CSM support enabled in UEFI causes a black screen on boot. Enable it (Windows 8/10 features need to be enabled to show "CSM Support", selecting "Other OS" hides that).
 
 ### Manbearpig3130's Virtual Gaming Machine
 

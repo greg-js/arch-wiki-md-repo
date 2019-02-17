@@ -1,5 +1,7 @@
 This article describes how to access an [iSCSI](/index.php/ISCSI "ISCSI") target with the [Open-iSCSI](https://github.com/open-iscsi/open-iscsi) initiator.
 
+**Note:** ISCSI is NOT encrypted. Transmitting data over unsecured channel is not recommended.
+
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
@@ -10,11 +12,13 @@ This article describes how to access an [iSCSI](/index.php/ISCSI "ISCSI") target
 *   [2 Overview](#Overview)
 *   [3 Configuration](#Configuration)
     *   [3.1 Start the Service](#Start_the_Service)
-    *   [3.2 Target discovery](#Target_discovery)
-    *   [3.3 Delete obsolete targets](#Delete_obsolete_targets)
-    *   [3.4 Login to available targets](#Login_to_available_targets)
-    *   [3.5 Info](#Info)
-    *   [3.6 Online resize of volumes](#Online_resize_of_volumes)
+    *   [3.2 ISCSI Qualified Name (IQN)](#ISCSI_Qualified_Name_(IQN))
+    *   [3.3 Authentication](#Authentication)
+    *   [3.4 Target discovery](#Target_discovery)
+    *   [3.5 Delete obsolete targets](#Delete_obsolete_targets)
+    *   [3.6 Login to available targets](#Login_to_available_targets)
+    *   [3.7 Info](#Info)
+    *   [3.8 Online resize of volumes](#Online_resize_of_volumes)
 *   [4 Tips & Troubleshooting](#Tips_&_Troubleshooting)
 
 ## Installation
@@ -53,8 +57,8 @@ From the Open-iSCSI [README](https://github.com/open-iscsi/open-iscsi):
 
 Persistent configuration is implemented as a tree of files and directories, which are contained in two directories:
 
-*   Discovery table (/etc/iscsi/send_targets) which has directories named after target addresses.
-*   Node table (/etc/iscsi/nodes) which has directories named after IQN (ISCSI Unique Name) of particular device.
+*   Discovery directory `/etc/iscsi/send_targets` which has directories named after target addresses.
+*   Node directory `/etc/iscsi/nodes` which has directories named after IQN (ISCSI Unique Name) of particular device.
 
 ## Configuration
 
@@ -64,27 +68,49 @@ Persistent configuration is implemented as a tree of files and directories, whic
 
 [Start](/index.php/Start "Start") `iscsid.service` or `iscsid.socket`.
 
-If the SCSI target requires authentication by the initiator, the configuration file `/etc/iscsi/iscsid.conf` may need to be updated.
+### ISCSI Qualified Name (IQN)
 
-The following parameters are used for authenticating a login session of an initiator to a target and for the target to establish a session back to the initiator
+IQN is used for identifying every device.
+
+Open-ISCSI stores its initiator IQN in the `/etc/iscsi/initiatorname.iscsi` file with a format `InitiatorName=*iqn*`
+
+During installation the initial IQN will be generated. If you wish to generate new IQN the `iscsi-iname` utility can be used which prints out new IQN.
+
+### Authentication
+
+If the ISCSI target requires authentication by the initiator, the configuration file `/etc/iscsi/iscsid.conf` may need to be updated.
+
+The following parameters are used for authenticating a login session of an initiator to a target:
 
 ```
 node.session.auth.authmethod = CHAP
-node.session.auth.username = <username in target>
-node.session.auth.password = <password in target>
-node.session.auth.username_in = <username in initiator>
-node.session.auth.password_in = <password in initiator>
+node.session.auth.username = *initiators_username*
+node.session.auth.password = *initiators_password*
 
 ```
 
-The following parameters are used for authenticating a discovery session of an initiator to a target and for the target to establish a session back to the initiator.
+If your target has two-way authentication enabled then those lines also need to be edited:
+
+```
+node.session.auth.username_in = *targets_username*
+node.session.auth.password_in = *targets_password*
+
+```
+
+If your target requires authentication to get the list of its nodes (most won't) then following lines should be edited:
 
 ```
 discovery.sendtargets.auth.authmethod = CHAP
-discovery.sendtargets.auth.username = <username in target>
-discovery.sendtargets.auth.password = <password in target>
-discovery.sendtargets.auth.username_in = <username in initiator>
-discovery.sendtargets.auth.password_in = <password in initiator>
+discovery.sendtargets.auth.username = *initiators_username*
+discovery.sendtargets.auth.password = *initiators_password*
+
+```
+
+If your target has two-way authentication enabled then those lines also need to be edited:
+
+```
+discovery.sendtargets.auth.username_in = *targets_username*
+discovery.sendtargets.auth.password_in = *targets_password*
 
 ```
 
@@ -92,15 +118,19 @@ discovery.sendtargets.auth.password_in = <password in initiator>
 
 ### Target discovery
 
-```
-# iscsiadm -m discovery -t sendtargets -p <portalip>
+Request the target its nodes.
 
 ```
+# iscsiadm --mode discovery --portal *target_ip* --type sendtargets
+
+```
+
+On success information about nodes and target will be saved on your initiator.
 
 ### Delete obsolete targets
 
 ```
-# iscsiadm -m discovery -p <portalip> -o delete
+# iscsiadm -m discovery -p *target_ip* -o delete
 
 ```
 
@@ -114,7 +144,7 @@ discovery.sendtargets.auth.password_in = <password in initiator>
 or login to specific target
 
 ```
-# iscsiadm -m node --targetname=<targetname> --login
+# iscsiadm -m node --targetname=*targetname* --login
 
 ```
 

@@ -2,7 +2,11 @@ Compiz è un [gestore di finestre composito](https://it.wikipedia.org/wiki/Compo
 
 Compiz è il cuore del progetto Compiz-Fusion, il quale aveva l'obiettivo di aggiungere funzionalità e plugin al WM e che da un po' di tempo è stato riassorbito dal progetto Compiz originale. Entrambi i progetti sono attivi e in costante sviluppo. Per maggiori informazioni, riferirsi all'articolo (in inglese) [Compiz Fusion vs. Compiz](http://wiki.compiz-fusion.org/CompizFusionVsCompiz).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Requisiti](#Requisiti)
 *   [2 Installazione](#Installazione)
@@ -11,32 +15,32 @@ Compiz è il cuore del progetto Compiz-Fusion, il quale aveva l'obiettivo di agg
     *   [3.1 Decoratori](#Decoratori)
     *   [3.2 Altro](#Altro)
 *   [4 Avviare Compiz Fusion](#Avviare_Compiz_Fusion)
-    *   [4.1 Avvio manuale (con "fusion-icon")](#Avvio_manuale_.28con_.22fusion-icon.22.29)
-    *   [4.2 Avvio Manuale (senza "fusion-icon")](#Avvio_Manuale_.28senza_.22fusion-icon.22.29)
+    *   [4.1 Avvio manuale (con "fusion-icon")](#Avvio_manuale_(con_"fusion-icon"))
+    *   [4.2 Avvio Manuale (senza "fusion-icon")](#Avvio_Manuale_(senza_"fusion-icon"))
     *   [4.3 KDE](#KDE)
-        *   [4.3.1 Utilizzando Impostazioni di sistema(semplice)](#Utilizzando_Impostazioni_di_sistema.28semplice.29)
-        *   [4.3.2 Autostart (con "fusion-icon")](#Autostart_.28con_.22fusion-icon.22.29)
-        *   [4.3.3 Autostart (senza "fusion-icon")](#Autostart_.28senza_.22fusion-icon.22.29)
-        *   [4.3.4 Esportazione della variabile KDEWM (Metodo Ottimale)](#Esportazione_della_variabile_KDEWM_.28Metodo_Ottimale.29)
+        *   [4.3.1 Utilizzando Impostazioni di sistema(semplice)](#Utilizzando_Impostazioni_di_sistema(semplice))
+        *   [4.3.2 Autostart (con "fusion-icon")](#Autostart_(con_"fusion-icon"))
+        *   [4.3.3 Autostart (senza "fusion-icon")](#Autostart_(senza_"fusion-icon"))
+        *   [4.3.4 Esportazione della variabile KDEWM (Metodo Ottimale)](#Esportazione_della_variabile_KDEWM_(Metodo_Ottimale))
     *   [4.4 GNOME](#GNOME)
-        *   [4.4.1 Autostart (senza "fusion-icon") (Metodo Ottimale)](#Autostart_.28senza_.22fusion-icon.22.29_.28Metodo_Ottimale.29)
-        *   [4.4.2 Autostart (senza "fusion-icon", Gnome <= 2.24)](#Autostart_.28senza_.22fusion-icon.22.2C_Gnome_.3C.3D_2.24.29)
-        *   [4.4.3 Autostart (con "fusion-icon")](#Autostart_.28con_.22fusion-icon.22.29_2)
+        *   [4.4.1 Autostart (senza "fusion-icon") (Metodo Ottimale)](#Autostart_(senza_"fusion-icon")_(Metodo_Ottimale))
+        *   [4.4.2 Autostart (senza "fusion-icon", Gnome <= 2.24)](#Autostart_(senza_"fusion-icon",_Gnome_<=_2.24))
+        *   [4.4.3 Autostart (con "fusion-icon")](#Autostart_(con_"fusion-icon")_2)
     *   [4.5 XFCE](#XFCE)
-        *   [4.5.1 Autostart in XFCE (senza "fusion-icon")](#Autostart_in_XFCE_.28senza_.22fusion-icon.22.29)
-        *   [4.5.2 Autostart in XFCE (con "fusion-icon")](#Autostart_in_XFCE_.28con_.22fusion-icon.22.29)
+        *   [4.5.1 Autostart in XFCE (senza "fusion-icon")](#Autostart_in_XFCE_(senza_"fusion-icon"))
+        *   [4.5.2 Autostart in XFCE (con "fusion-icon")](#Autostart_in_XFCE_(con_"fusion-icon"))
         *   [4.5.3 Metodo 1:](#Metodo_1:)
         *   [4.5.4 Metodo 2:](#Metodo_2:)
         *   [4.5.5 Metodo 3:](#Metodo_3:)
     *   [4.6 Compiz come gestore di finestre autonomo](#Compiz_come_gestore_di_finestre_autonomo)
         *   [4.6.1 Aggiungere un menu radice](#Aggiungere_un_menu_radice)
 *   [5 Varie](#Varie)
-    *   [5.1 Impostate i plugin di base se volete usare Compiz!!](#Impostate_i_plugin_di_base_se_volete_usare_Compiz.21.21)
+    *   [5.1 Impostate i plugin di base se volete usare Compiz!!](#Impostate_i_plugin_di_base_se_volete_usare_Compiz!!)
     *   [5.2 Usare Compiz-Manager](#Usare_Compiz-Manager)
     *   [5.3 Usare gtk-window-decorator](#Usare_gtk-window-decorator)
     *   [5.4 gconf: Configurazioni aggiuntive per Compiz](#gconf:_Configurazioni_aggiuntive_per_Compiz)
     *   [5.5 Scorciatoie da tastiera](#Scorciatoie_da_tastiera)
-    *   [5.6 Note per ATI R600/R700](#Note_per_ATI_R600.2FR700)
+    *   [5.6 Note per ATI R600/R700](#Note_per_ATI_R600/R700)
 *   [6 Risorse Aggiuntive](#Risorse_Aggiuntive)
 
 ## Requisiti
@@ -613,7 +617,7 @@ Se questo script non funzionasse, o nel caso abbiate problemi con la sessione db
 #!/bin/sh
 cd /home/<yourusername>
 #
-/usr/bin/X :0.0 -br -audit 0 -nolisten tcp vt7 &
+/usr/bin/X :0.0 -br -audit 0 -nolisten tcp vt7 &
 #
 export DISPLAY=:0.0
 #

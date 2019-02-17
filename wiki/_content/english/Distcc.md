@@ -31,7 +31,7 @@ Related articles
     *   [7.1 Journalctl](#Journalctl)
     *   [7.2 Adjust log level](#Adjust_log_level)
     *   [7.3 Limit HDD/SSD usage by relocating $HOME/.distcc](#Limit_HDD/SSD_usage_by_relocating_$HOME/.distcc)
-    *   [7.4 For distccd-alarm-arm*](#For_distccd-alarm-arm*)
+    *   [7.4 For distccd-alarm](#For_distccd-alarm)
         *   [7.4.1 No such file or directory](#No_such_file_or_directory)
         *   [7.4.2 Monitoring does not work](#Monitoring_does_not_work)
 *   [8 See also](#See_also)
@@ -244,22 +244,22 @@ $ export DISTCC_DIR=/tmp/distcc
 
 ```
 
-### For distccd-alarm-arm*
+### For distccd-alarm
 
 #### No such file or directory
 
-If you got an error like:
+Errors similar to the following indicate that the user is mistakenly running the distccd service provided by [distcc](https://www.archlinux.org/packages/?name=distcc) and NOT provided by the distccd-alarm packages (ie [distccd-alarm-armv5](https://aur.archlinux.org/packages/distccd-alarm-armv5/), [distccd-alarm-armv6h](https://aur.archlinux.org/packages/distccd-alarm-armv6h/), [distccd-alarm-armv7h](https://aur.archlinux.org/packages/distccd-alarm-armv7h/), or [distccd-alarm-armv8](https://aur.archlinux.org/packages/distccd-alarm-armv8/).)
+
+Be sure to start the correct service for the target architecture.
 
 ```
 distcc[25479] (dcc_execvp) ERROR: failed to exec armv7l-unknown-linux-gnueabihf-g++: No such file or directory
 
 ```
 
-then you are running distccd and not the distccd-alarm-arm-* service. Just stop distccd and start distccd-alarm-arm*.
-
 #### Monitoring does not work
 
-As distccd-alarm-arm* services use the `nobody` user, you can't see what's going on. You are only left with the option to tail the log in /tmp. For example, `tail -f /tmp/distccd-armv7h.log`
+Since the distccd-alarm-arm* services use the `nobody` user, `/usr/bin/distccmon-text` does not work to monitor compilation. One can inspect the output of the actually distcc log to troubleshoot if needed, `tail -f /tmp/distccd-armv7h.log` for example.
 
 ## See also
 
