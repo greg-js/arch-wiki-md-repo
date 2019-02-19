@@ -32,8 +32,14 @@
         *   [3.2.1 Создание образа вручную](#Создание_образа_вручную)
 *   [4 Удаление Docker и образов](#Удаление_Docker_и_образов)
 *   [5 Полезные советы](#Полезные_советы)
-*   [6 Docker 0.9.0 — 1.2.x и LXC](#Docker_0.9.0_—_1.2.x_и_LXC)
-*   [7 Skype](#Skype)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 docker0 Bridge gets no IP / no internet access in containers](#docker0_Bridge_gets_no_IP_/_no_internet_access_in_containers)
+    *   [6.2 Default number of allowed processes/threads too low](#Default_number_of_allowed_processes/threads_too_low)
+    *   [6.3 Error initializing graphdriver: devmapper](#Error_initializing_graphdriver:_devmapper)
+    *   [6.4 Failed to create some/path/to/file: No space left on device](#Failed_to_create_some/path/to/file:_No_space_left_on_device)
+    *   [6.5 Invalid cross-device link in kernel 4.19.1](#Invalid_cross-device_link_in_kernel_4.19.1)
+    *   [6.6 CPUACCT missing in docker with Linux-ck](#CPUACCT_missing_in_docker_with_Linux-ck)
+*   [7 Docker 0.9.0 — 1.2.x и LXC](#Docker_0.9.0_—_1.2.x_и_LXC)
 *   [8 Сборка образа i686](#Сборка_образа_i686)
     *   [8.1 Образ ArchLinux](#Образ_ArchLinux)
     *   [8.2 Образ Debian](#Образ_Debian)
@@ -325,6 +331,81 @@ for ID in $(docker ps -q | awk '{print $1}'); do
 done
 ```
 
+## Troubleshooting
+
+### docker0 Bridge gets no IP / no internet access in containers
+
+Docker enables IP forwarding by itself, but by default [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") overrides the respective sysctl setting. Set `IPForward=yes` in the network profile. See [Internet sharing#Enable packet forwarding](/index.php/Internet_sharing#Enable_packet_forwarding "Internet sharing") for details.
+
+**Note:** You may need to [restart](/index.php/Restart "Restart") `docker.service` each time you [restart](/index.php/Restart "Restart") `systemd-networkd.service` or `iptables.service`
+
+### Default number of allowed processes/threads too low
+
+If you run into error messages like
+
+```
+# e.g. Java
+java.lang.OutOfMemoryError: unable to create new native thread
+# e.g. C, bash, ...
+fork failed: Resource temporarily unavailable
+
+```
+
+then you might need to adjust the number of processes allowed by systemd. The default is 500 (see `system.conf`), which is pretty small for running several docker containers. [Edit](/index.php/Edit "Edit") the `docker.service` with the following snippet:
+
+ `# systemctl edit docker.service` 
+```
+[Service]
+TasksMax=infinity
+```
+
+### Error initializing graphdriver: devmapper
+
+If *systemctl* fails to start docker and provides an error:
+
+```
+Error starting daemon: error initializing graphdriver: devmapper: Device docker-8:2-915035-pool is not a thin pool
+
+```
+
+Then, try the following steps to resolve the error. Stop the service, back up `/var/lib/docker/` (if desired), remove the contents of `/var/lib/docker/`, and try to start the service. See the open [GitHub issue](https://github.com/docker/docker/issues/21304) for details.
+
+### Failed to create some/path/to/file: No space left on device
+
+If you are getting an error message like this:
+
+```
+ERROR: Failed to create some/path/to/file: No space left on device
+
+```
+
+when building or running a Docker image, even though you do have enough disk space available, make sure:
+
+*   [Tmpfs](/index.php/Tmpfs "Tmpfs") is disabled or has enough memory allocation. Docker might be trying to write files into `/tmp` but fails due to restrictions in memory usage and not disk space.
+*   If you are using [XFS](/index.php/XFS "XFS"), you might want to remove the `noquota` mount option from the relevant entries in `/etc/fstab` (usually where `/tmp` and/or `/var/lib/docker` reside). Refer to [Disk quota](/index.php/Disk_quota "Disk quota") for more information, especially if you plan on using and resizing `overlay2` Docker storage driver.
+*   XFS quota mount options (`uquota`, `gquota`, `prjquota`, etc.) fail during re-mount of the file system. To enable quota for root file system, the mount option must be passed to initramfs as a [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `rootflags=`. Subsequently, it should not be listed among mount options in `/etc/fstab` for the root (`/`) filesystem.
+
+**Note:** There are some differences of XFS Quota compared to standard Linux [Disk quota](/index.php/Disk_quota "Disk quota"), [[1]](http://inai.de/linux/adm_quota) may be worth reading.
+
+### Invalid cross-device link in kernel 4.19.1
+
+If commands like *dpkg* fail to run in docker, e.g:
+
+```
+dpkg: error: error creating new backup file '/var/lib/dpkg/status-old': Invalid cross-device link
+
+```
+
+Either add a `overlay.metacopy=N` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") or downgrade to 4.18.x until [this issue](https://github.com/docker/for-linux/issues/480) is resolved. More info in the [Arch forum](https://bbs.archlinux.org/viewtopic.php?id=241866).
+
+### CPUACCT missing in docker with Linux-ck
+
+In newer versions of [Linux-ck](/index.php/Linux-ck "Linux-ck") ([some experienced](https://aur.archlinux.org/packages/linux-ck#comment-677316) with 4.19, 4.20 seems general), a change to the MuQSS was made that disables the `CONFIG_CGROUP_CPUACCT` option from the kernel, which makes *some* usage of docker (`run` or `build`) to produce the following error:
+
+ `$ docker run --rm hello-world`  `docker: Error response from daemon: unable to find "cpuacct" in controller set: unknown.` 
+
+This error does not seems to affect the docker daemon, just containers. Read more on [Linux-ck#CPUACCT missing in docker](/index.php/Linux-ck#CPUACCT_missing_in_docker "Linux-ck").
+
 ## Docker 0.9.0 — 1.2.x и LXC
 
 Начиная с версии 0.9.0, Docker предоставляет новый способ запуска контейнеров без необходимости в LXC, называемый *libcontainer*.
@@ -339,10 +420,6 @@ ExecStart=
 ExecStart=/usr/bin/docker -d -e lxc
 
 ```
-
-## Skype
-
-Смотрите [Skype#Docker](/index.php/Skype#Docker "Skype").
 
 ## Сборка образа i686
 

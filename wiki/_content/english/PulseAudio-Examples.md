@@ -810,8 +810,8 @@ set-default-sink Remap_sink
 Then restart PulseAudio daemon:
 
 ```
-# pulseaudio -k
-# pulseaudio --start
+$ pulseaudio -k
+$ pulseaudio --start
 
 ```
 

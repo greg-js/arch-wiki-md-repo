@@ -256,6 +256,8 @@ QT_FONT_DPI=96 vym
 
 ### GDK 3 (GTK+ 3)
 
+If you are using a window manager other than Gnome and have scaled the fonts using Xft.dpi, you must tell GDK to scale the UI as well. This will result in a further increase of the font-size for GDK apps, so you must undo the scaling of the text only.
+
 To scale UI elements by a factor of two:
 
 ```

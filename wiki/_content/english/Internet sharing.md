@@ -11,7 +11,11 @@ Related articles
 
 This article explains how to share the internet connection from one machine to other(s).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Requirements](#Requirements)
 *   [2 Configuration](#Configuration)
@@ -20,7 +24,7 @@ This article explains how to share the internet connection from one machine to o
     *   [2.3 Enable NAT](#Enable_NAT)
         *   [2.3.1 With iptables](#With_iptables)
         *   [2.3.2 With nftables](#With_nftables)
-    *   [2.4 Assigning IP addresses to the client PC(s)](#Assigning_IP_addresses_to_the_client_PC.28s.29)
+    *   [2.4 Assigning IP addresses to the client PC(s)](#Assigning_IP_addresses_to_the_client_PC(s))
         *   [2.4.1 Manually adding an IP](#Manually_adding_an_IP)
 *   [3 Troubleshooting](#Troubleshooting)
 *   [4 See also](#See_also)
@@ -39,7 +43,7 @@ This section assumes, that the network device connected to the client computer(s
 
 **Tip:** You can rename your devices to this scheme using [Udev#Setting static device names](/index.php/Udev#Setting_static_device_names "Udev").
 
-All configuration is done on the server computer, except for the final step of [#Assigning IP addresses to the client PC(s)](#Assigning_IP_addresses_to_the_client_PC.28s.29).
+All configuration is done on the server computer, except for the final step of [#Assigning IP addresses to the client PC(s)](#Assigning_IP_addresses_to_the_client_PC(s)).
 
 ### Static IP address
 
@@ -124,7 +128,7 @@ After that, you have to masquerade the `net0` adresses for `internet0`:
 
 ```
 
-You may want to add some more firewall restrictions on the forwarding (assuming the filter table already exists, like configured in [Nftables#Simple IPv4/IPv6 firewall](/index.php/Nftables#Simple_IPv4.2FIPv6_firewall "Nftables")):
+You may want to add some more firewall restrictions on the forwarding (assuming the filter table already exists, like configured in [Nftables#Simple IPv4/IPv6 firewall](/index.php/Nftables#Simple_IPv4/IPv6_firewall "Nftables")):
 
 ```
 # nft add chain inet filter forward { type filter hook forward priority 0 \; policy drop}

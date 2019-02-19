@@ -117,7 +117,7 @@ set mouse=a
 
 `mouse=a` 选项在 `defaults.vim` 中设置。
 
-{{注意| 如果可以访问X服务器，复制/粘贴将使用`"*` 寄存器，参见[#Clipboard](#Clipboard)。按住`shift key`键可以使用xterm处理鼠标按钮。
+**注意:** 如果可以访问X服务器，复制/粘贴将使用`"*` 寄存器，参见[剪贴板](#剪贴板)。按住`shift key`键可以使用xterm处理鼠标按钮。
 
 ### 跨行移动光标
 

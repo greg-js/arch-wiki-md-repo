@@ -457,7 +457,7 @@ Where using a static menu, it will then be necessary to edit the `~/.config/open
 
 **Tip:** XDoTool can simulate any keybind for any action, and as such, it may therefore be used for many other purposes...
 
-[xdotool](https://www.archlinux.org/packages/?name=xdotool) is a package that can issue commands to simulate key presses / keybinds, meaning that it is possible to use it to invoke keybind-related actions without having to actually press their assigned keys. As this includes the ability to invoke an assigned keybind for the Openbox desktop menu, it is therefore possible to use XDoTool to turn the Openbox desktop menu into a panel menu. Especially where the desktop menu is heavily customised and feature-rich, this may prove very useful to:
+[xdotool](/index.php/Xdotool "Xdotool") is a package that can issue commands to simulate key presses / keybinds, meaning that it is possible to use it to invoke keybind-related actions without having to actually press their assigned keys. As this includes the ability to invoke an assigned keybind for the Openbox desktop menu, it is therefore possible to use XDoTool to turn the Openbox desktop menu into a panel menu. Especially where the desktop menu is heavily customised and feature-rich, this may prove very useful to:
 
 *   Replace an existing panel menu
 *   Implement a panel menu where otherwise not provided or possible (e.g. for [Tint2](/index.php/Tint2 "Tint2"))

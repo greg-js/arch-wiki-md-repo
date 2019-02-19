@@ -43,7 +43,7 @@
 | <small>3.7.2.</small> [Ratones](/index.php/Category:Mice_(Espa%C3%B1ol) "Category:Mice (Español)") <small>(2)</small> |
 | <small>3.8.</small> [Portátiles](/index.php/Category:Laptops_(Espa%C3%B1ol) "Category:Laptops (Español)") <small>(2)</small> |
 | <small>3.8.1.</small> [Acer](/index.php/Category:Acer_(Espa%C3%B1ol) "Category:Acer (Español)") <small>(6)</small> |
-| <small>3.8.2.</small> [ASUS](/index.php/Category:ASUS_(Espa%C3%B1ol) "Category:ASUS (Español)") <small>(2)</small> |
+| <small>3.8.2.</small> [ASUS](/index.php/Category:ASUS_(Espa%C3%B1ol) "Category:ASUS (Español)") <small>(3)</small> |
 | <small>3.8.3.</small> [Dell](/index.php/Category:Dell_(Espa%C3%B1ol) "Category:Dell (Español)") <small>(7)</small> |
 | <small>3.8.4.</small> [HP](/index.php/Category:HP_(Espa%C3%B1ol) "Category:HP (Español)") <small>(4)</small> |
 | <small>3.8.5.</small> [Lenovo](/index.php/Category:Lenovo_(Espa%C3%B1ol) "Category:Lenovo (Español)") <small>(6)</small> |

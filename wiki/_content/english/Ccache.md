@@ -5,7 +5,11 @@ Related articles
 
 [ccache](http://ccache.samba.org/) is a tool for the gcc compiler used to compile the same program over and over again with little downtime. While it may take a few seconds longer to compile a program the first time with *ccache*, subsequent compiles will be much, much faster.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -39,13 +43,20 @@ See [ccache(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ccache.1) for details
 
 To enable *ccache* when using [makepkg](/index.php/Makepkg "Makepkg") edit `/etc/makepkg.conf`. In `BUILDENV` uncomment `ccache` (remove the exclamation mark) to enable caching. For example:
 
- `/etc/makepkg.conf`  `BUILDENV=(fakeroot !distcc color **ccache** check !sign)` 
+ `/etc/makepkg.conf`  `BUILDENV=(fakeroot !distcc color **ccache** check !sign)` 
 
 ### Enable for command line
 
 If you are compiling your code from the command line, and not building packages, then you will still want to use *ccache* to help speed things up.
 
-For that, you need to change your `$PATH` to include *ccache'*s binaries before the path to your compiler:
+For that, you can prefix each compilation command with `ccache`.
+
+```
+$ ccache cc hello_world.c
+
+```
+
+Alternatively, change your `$PATH` to include *ccache'*s binaries before the path to your compiler:
 
 ```
 $ export PATH="/usr/lib/ccache/bin/:$PATH"
@@ -54,7 +65,7 @@ $ export PATH="/usr/lib/ccache/bin/:$PATH"
 
 You may want to set this line as [environment variable](/index.php/Environment_variable "Environment variable") for regular usage.
 
-**Note:** This will inevitably enable *ccache* for *makepkg* as well if invoked with this PATH.
+**Note:** Such export will inevitably enable *ccache* for *makepkg* as well if invoked with this PATH.
 
 ### Enable with colorgcc
 

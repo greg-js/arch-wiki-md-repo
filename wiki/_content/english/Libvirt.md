@@ -68,11 +68,11 @@ Because of its daemon/client architecture, libvirt needs only be installed on th
 
 For network connectivity, install:
 
-**Note:** As of libvirt 4.8.0 you need to change the firewall backend in `/etc/firewalld/firewalld.conf` from nftables to iptables.
-
-*   [firewalld](https://www.archlinux.org/packages/?name=firewalld), [ebtables](https://www.archlinux.org/packages/?name=ebtables), and [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) for the [default](http://wiki.libvirt.org/page/VirtualNetworking#The_default_configuration) NAT/DHCP networking.
+*   [ebtables](https://www.archlinux.org/packages/?name=ebtables), and [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) for the [default](http://wiki.libvirt.org/page/VirtualNetworking#The_default_configuration) NAT/DHCP networking.
 *   [bridge-utils](https://www.archlinux.org/packages/?name=bridge-utils) for bridged networking.
 *   [openbsd-netcat](https://www.archlinux.org/packages/?name=openbsd-netcat) for remote management over [SSH](/index.php/SSH "SSH").
+
+**Note:** If you are using [firewalld](https://www.archlinux.org/packages/?name=firewalld), as of libvirt 4.8.0 you need to change the firewall backend in `/etc/firewalld/firewalld.conf` from nftables to iptables.
 
 ### Client
 

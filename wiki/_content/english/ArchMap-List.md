@@ -1107,5 +1107,6 @@ You can use the following website to get your device's coordinates along with a 
 34.408747, -119.8642 "Moelf" # California, United States
 28.601209, 77.192202 "tonybenoy" # Delhi,India
 50.093967, 18.546516 "tluszcz" # Rybnik, Poland
+41.931970,-74.018433,"Big Ben's Web Hosting", #Kingston, New York, USA
 
 ```

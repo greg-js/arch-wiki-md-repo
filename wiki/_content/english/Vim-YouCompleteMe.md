@@ -5,9 +5,10 @@
 *   C#
 *   Go
 *   Rust
+*   Java
 *   JavaScript
 *   TypeScript
-*   Other languages (Java, Ruby, PHP etc.) through the use of omnicompletion system
+*   Other languages (Ruby, PHP etc.) through the use of omnicompletion system
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -21,7 +22,8 @@
         *   [2.1.1 Extra conf structure](#Extra_conf_structure)
         *   [2.1.2 Extra conf location](#Extra_conf_location)
     *   [2.2 Java](#Java)
-    *   [2.3 C#](#C#)
+    *   [2.3 Java - alternative](#Java_-_alternative)
+    *   [2.4 C#](#C#)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 E764: Option 'omnifunc' is not set](#E764:_Option_'omnifunc'_is_not_set)
     *   [3.2 No completion in Java files](#No_completion_in_Java_files)
@@ -31,13 +33,15 @@
 
 ## Installation
 
-Install [vim-youcompleteme-git](https://aur.archlinux.org/packages/vim-youcompleteme-git/) package from [AUR](/index.php/AUR "AUR"). For an alternative manual way of installing YouCompleteMe see [upstream instructions](https://github.com/Valloric/YouCompleteMe#full-installation-guide).
+Install [vim-youcompleteme-git](https://aur.archlinux.org/packages/vim-youcompleteme-git/) package from [AUR](/index.php/AUR "AUR"). For an alternative manual way of installing YouCompleteMe see [upstream instructions](https://github.com/Valloric/YouCompleteMe#linux-64-bit).
 
 ## Configuration
 
 ### C/C++
 
 YCM uses a python script called `.ycm_extra_conf.py` to set project wide settings, needed to provide completion and syntax check. A brief introduction to essential configuration follows, for details and advanced options see the [upstream documentation](https://github.com/Valloric/YouCompleteMe#options).
+
+Alternatively, provide a `compile_commands.json` in the project's root.
 
 #### Extra conf structure
 
@@ -71,6 +75,10 @@ In example, with the following setting
 any file in `~/dev` will be whitelisted, any in `~/` will be blacklisted, and due to order precedence any file in `~/` excepted the `~/dev` folder will be blacklisted.
 
 ### Java
+
+YCM has integrated support for [jdt.ls](https://github.com/eclipse/eclipse.jdt.ls) which can be installed by passing `--java-completer` to the `install.py` script.
+
+### Java - alternative
 
 For Java completion, a project file should be present and Eclim headless server must be running.
 

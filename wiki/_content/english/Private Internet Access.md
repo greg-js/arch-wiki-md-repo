@@ -1,6 +1,10 @@
 [Private Internet Access](https://www.privateinternetaccess.com/) is a subscription-based VPN service.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Manual](#Manual)
     *   [1.1 NetworkManager applet approach](#NetworkManager_applet_approach)
@@ -76,7 +80,7 @@ Private Internet Access has an installation script that sets up [NetworkManager]
 
 ### Official Linux client
 
-Private Internet Access has now an official client for Linux with support for Arch. Download the client from [this page](https://www.privateinternetaccess.com/pages/download), unzip the file (e.g. `pia-v81-installer-linux.tar.gz`) and run the installation script (.e.g. `# ./pia-v81-installer-linux.sh`).
+Private Internet Access now has an official client for Linux with support for Arch. Download the client from [this page](https://www.privateinternetaccess.com/pages/download), unzip the file (e.g. `pia-v81-installer-linux.tar.gz`) and run the installation script (.e.g. `# ./pia-v81-installer-linux.sh`).
 
 ### Packages
 

@@ -236,7 +236,7 @@ WantedBy=default.target
 
 *   This unit will only be useful if the user in the unit is currently running a X session.
 *   Do not run this service if your local area network is untrusted.
-*   You may need read man page for more detail.
+*   You may need to read the man page for more detail.
 
 ## Connecting to vncserver
 

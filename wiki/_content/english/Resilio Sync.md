@@ -7,7 +7,11 @@ Related articles
 
 Peer-to-peer (P2P) sync, instead of having a central server which archives every file, uses peer-to-peer connections between the devices themselves therefore there is no limit on data storage and/or transfer speed. The user's data is exclusively stored on the devices with which the user chose to be in sync with, hence it is required to have at least two user devices, or "nodes" to be online. If many devices are connected simultaneously, files are shared between them in a mesh networking topology.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Security](#Security)
 *   [2 Synchronization](#Synchronization)
@@ -74,7 +78,7 @@ You'll probably want to change some of the settings, including:
 
 *   The `rslsync` executable does not create the `storage_path` directory if it doesn't exist, you will have to do this manually or use [#Automatic config file creation](#Automatic_config_file_creation).
 *   The storage_path setting defines where metadata will be saved, **not** the synced files themselves. Where synced files are saved is configured on a per-folder basis in the WebGUI.
-*   The configuration option `webui/password_hash` does not seem to be working correctly with recent versions of `rslsync`. Use `webui/password` instead for specifying credentials.
+*   The configuration option `webui/password_hash_unified` is calculated with `webui/password_hash_salt_unified` prepended, if any salt is used at all.
 
 ### Automatic config file creation
 

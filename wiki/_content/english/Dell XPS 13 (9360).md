@@ -93,27 +93,35 @@ CPU (0): -160.16 mV GPU (1): -125.00 mV CPU Cache (2): -89.84 mV
 
 Edit the config file
 
-`sudo nano /etc/intel-undervolt.conf`
+```
+$ nano /etc/intel-undervolt.conf
+
+```
 
 This is an example for i5-7200u
 
-`# CPU Undervolting`
+```
+# CPU Undervolting
 
-`apply 0 'CPU' -160`
+undervolt 0 'CPU' -160
+undervolt 1 'GPU' -125
+undervolt 2 'CPU Cache' -90
+undervolt 3 'System Agent' 0
+undervolt 4 'Analog I/O' 0
 
-`apply 1 'GPU' -125`
+# Daemon Update Interval
 
-`apply 2 'CPU Cache' -90`
+interval 5000
 
-`apply 3 'System Agent' 0`
-
-`apply 4 'Analog I/O' 0`
-
-`interval 5000`
+```
 
 then enable/start the daemon :)
 
-`sudo systemctl enable intel-undervolt && sudo systemctl start intel-undervolt`
+```
+$ systemctl enable intel-undervolt
+$ systemctl start intel-undervolt
+
+```
 
 ## NVM Express SSD Power Saving
 
@@ -161,7 +169,7 @@ If you have the QHD+ (3200x1800) model, also check out [HiDPI](/index.php/HiDPI 
 
 ### Module-based Powersaving Options
 
-For the HD 620 graphics card the following modules are working: (see [Intel graphics#Module-based Powersaving Options](/index.php/Intel_graphics#Module-based_Powersaving_Options "Intel graphics"))
+For the HD 620 graphics card the following modules are working: (see [Intel graphics#Module-based options](/index.php/Intel_graphics#Module-based_options "Intel graphics"))
 
 ```
 modeset=1 enable_fbc=1 

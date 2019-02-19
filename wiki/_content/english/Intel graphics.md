@@ -27,7 +27,7 @@ For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs
 *   [4 Module-based options](#Module-based_options)
     *   [4.1 Framebuffer compression (enable_fbc)](#Framebuffer_compression_(enable_fbc))
     *   [4.2 Fastboot](#Fastboot)
-    *   [4.3 Intel GVT-g Graphics Virtualization Support](#Intel_GVT-g_Graphics_Virtualization_Support)
+    *   [4.3 Intel GVT-g graphics virtualization support](#Intel_GVT-g_graphics_virtualization_support)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Setting scaling mode](#Setting_scaling_mode)
     *   [5.2 Hardware accelerated H.264 decoding on GMA 4500](#Hardware_accelerated_H.264_decoding_on_GMA_4500)
@@ -42,14 +42,13 @@ For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs
     *   [6.7 X freeze/crash with intel driver](#X_freeze/crash_with_intel_driver)
     *   [6.8 Baytrail complete freeze](#Baytrail_complete_freeze)
     *   [6.9 Adding undetected resolutions](#Adding_undetected_resolutions)
-    *   [6.10 Weathered colors (color range problem)](#Weathered_colors_(color_range_problem))
-    *   [6.11 Backlight is not adjustable](#Backlight_is_not_adjustable)
-    *   [6.12 Corruption/Unresponsiveness in Chromium and Firefox](#Corruption/Unresponsiveness_in_Chromium_and_Firefox)
-    *   [6.13 Kernel crashing w/kernels 4.0+ on Broadwell/Core-M chips](#Kernel_crashing_w/kernels_4.0+_on_Broadwell/Core-M_chips)
-    *   [6.14 Lag in Windows guests](#Lag_in_Windows_guests)
-    *   [6.15 Screen flickering](#Screen_flickering)
-    *   [6.16 OpenGL 2.1 with i915 driver](#OpenGL_2.1_with_i915_driver)
-    *   [6.17 KMS Issue: console is limited to small area](#KMS_Issue:_console_is_limited_to_small_area)
+    *   [6.10 Backlight is not adjustable](#Backlight_is_not_adjustable)
+    *   [6.11 Corruption/Unresponsiveness in Chromium and Firefox](#Corruption/Unresponsiveness_in_Chromium_and_Firefox)
+    *   [6.12 Kernel crashing w/kernels 4.0+ on Broadwell/Core-M chips](#Kernel_crashing_w/kernels_4.0+_on_Broadwell/Core-M_chips)
+    *   [6.13 Lag in Windows guests](#Lag_in_Windows_guests)
+    *   [6.14 Screen flickering](#Screen_flickering)
+    *   [6.15 OpenGL 2.1 with i915 driver](#OpenGL_2.1_with_i915_driver)
+    *   [6.16 KMS Issue: console is limited to small area](#KMS_Issue:_console_is_limited_to_small_area)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -81,15 +80,6 @@ Refer to [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Ea
 
 ### Enable GuC / HuC firmware loading
 
-**Warning:** Using [GVT-g graphics virtualization](/index.php/Intel_GVT-g "Intel GVT-g") by setting `enable_gvt=1` is not supported as of linux 4.18.8 when GuC/HuC is also enabled. The i915 module would fail to initialize as shown in system journal. `$ journalctl` 
-```
-... kernel: [drm:intel_gvt_init [i915]] *ERROR* i915 GVT-g loading failed due to Graphics virtualization is not yet supported with GuC submission
-... kernel: i915 0000:00:02.0: [drm:i915_driver_load [i915]] Device initialization failed (-5)
-... kernel: i915: probe of 0000:00:02.0 failed with error -5
-... kernel: snd_hda_intel 0000:00:1f.3: failed to add i915 component master (-19)
-
-```
-
 For Skylake and newer processors, some video features (e.g. CBR rate control on SKL low-power encoding mode) may require the use of an updated GPU firmware, which is currently (as of 4.16) not enabled by default. Enabling GuC/HuC firmware loading can cause issues on some systems; disable it if you experience freezing (for example, after resuming from hibernation).
 
 **Note:** See [Gentoo:Intel#Feature support](https://wiki.gentoo.org/wiki/Intel#Feature_support "gentoo:Intel") for an overview of Intel processor generations.
@@ -116,6 +106,15 @@ Alternatively, check using:
 ```
 # cat /sys/kernel/debug/dri/0/i915_huc_load_status
 # cat /sys/kernel/debug/dri/0/i915_guc_load_status
+
+```
+
+**Warning:** Using [GVT-g graphics virtualization](/index.php/Intel_GVT-g "Intel GVT-g") by setting `enable_gvt=1` is not supported as of linux 4.18.8 when GuC/HuC is also enabled. The i915 module would fail to initialize as shown in system journal. `$ journalctl` 
+```
+... kernel: [drm:intel_gvt_init [i915]] *ERROR* i915 GVT-g loading failed due to Graphics virtualization is not yet supported with GuC submission
+... kernel: i915 0000:00:02.0: [drm:i915_driver_load [i915]] Device initialization failed (-5)
+... kernel: i915: probe of 0000:00:02.0 failed with error -5
+... kernel: snd_hda_intel 0000:00:1f.3: failed to add i915 component master (-19)
 
 ```
 
@@ -194,7 +193,7 @@ To enable fastboot, set `i915.fastboot=1` as [kernel parameter](/index.php/Kerne
  `/etc/modprobe.d/i915.conf`  `options i915 fastboot=1` 
 **Warning:** This parameter is not enabled by default and may cause issues on some older (pre-Skylake) systems.[[4]](https://www.phoronix.com/scan.php?page=news_item&px=Intel-Fastboot-Default-2019-Try)
 
-### Intel GVT-g Graphics Virtualization Support
+### Intel GVT-g graphics virtualization support
 
 See [Intel GVT-g](/index.php/Intel_GVT-g "Intel GVT-g") for details.
 
@@ -277,7 +276,7 @@ The intel-driver uses [Triple Buffering](http://www.intel.com/support/graphics/s
 
 ```
 
-**Warning:** Do not use [driconf](https://www.archlinux.org/packages/?name=driconf) to create this file. It is buggy and will set the wrong driver.
+**Note:** Do not use [driconf](https://www.archlinux.org/packages/?name=driconf) to create this file. It is buggy and will set the wrong driver.
 
 ### SNA issues
 
@@ -357,20 +356,6 @@ This is originally an Intel CPU bug that can be triggered by certain c-state tra
 ### Adding undetected resolutions
 
 This issue is covered on the [Xrandr page](/index.php/Xrandr#Adding_undetected_resolutions "Xrandr").
-
-### Weathered colors (color range problem)
-
-Kernel 3.9 [contains](http://lists.freedesktop.org/archives/dri-devel/2013-January/033576.html) a new default "Automatic" mode for the "Broadcast RGB" property in the Intel driver. It is almost equivalent to "Limited 16:235" (instead of the old default "Full") whenever an HDMI/DP output is in a [CEA mode](http://raspberrypi.stackexchange.com/questions/7332/what-is-the-difference-between-cea-and-dmt). If a monitor does not support signal in limited color range, it will cause weathered colors.
-
-**Note:** Some monitors/TVs support both color range. In that case an option often known as *Black Level* may need to be adjusted to make them handle the signal correctly. Some TVs can handle signal in limited range only. Setting Broadcast RGB to "Full" will cause color clipping. You may need to set it to "Limited 16:235" manually to avoid the clipping.
-
-One can force mode e.g. `xrandr --output <HDMI> --set "Broadcast RGB" "Full"` (replace `<HDMI>` with the appropriate output device, verify by running `xrandr`).
-
-Unfortunately, the Intel driver does not support setting the color range through an `xorg.conf.d` configuration file.
-
-A [bug report](https://bugzilla.kernel.org/show_bug.cgi?id=94921) is filed and a patch can be found in the attachment.
-
-Also there are other related problems which can be fixed editing GPU registers. More information can be found [[10]](http://lists.freedesktop.org/archives/intel-gfx/2012-April/016217.html) and [[11]](http://github.com/OpenELEC/OpenELEC.tv/commit/09109e9259eb051f34f771929b6a02635806404c).
 
 ### Backlight is not adjustable
 

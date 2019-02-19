@@ -21,7 +21,7 @@ According to the [official website](https://www.gnupg.org/):
     *   [2.3 Default options for new users](#Default_options_for_new_users)
 *   [3 Usage](#Usage)
     *   [3.1 Create a key pair](#Create_a_key_pair)
-    *   [3.2 Generate Revocation Key](#Generate_Revocation_Key)
+    *   [3.2 Generate a revocation certificate](#Generate_a_revocation_certificate)
     *   [3.3 List keys](#List_keys)
     *   [3.4 Export your public key](#Export_your_public_key)
     *   [3.5 Import a public key](#Import_a_public_key)
@@ -143,20 +143,18 @@ The command will prompt for answers to several questions. For general use most p
 
 **Note:** The name and email address you enter here will be seen by anybody who imports your key.
 
-### Generate Revocation Key
+### Generate a revocation certificate
 
 After generating your key, one of the first things you should do is create a revocation certificate:
 
 ```
-$ gpg --gen-revoke --armor --output=RevocationCertificate.asc <user-id>
+$ gpg --gen-revoke --armor --output=*revocation_certificate.asc* *user-id*
 
 ```
 
-This certificate can be used to revoke your key if it is ever lost or compromised. Do not neglect this step! Print it out, save it on a disk, and store it safely. It will be short enough that you can type it back in by hand without much effort if you just print it out.
+This certificate can be used to revoke your key if it is ever lost or compromised. Protect your revocation key like you protect your secret keys. Print it out, save it on a disk, and store it safely. It will be short enough that you can type it back in by hand without much effort if you just print it out.
 
 If you lose your secret key or it is compromised, you will want to revoke your key by uploading the revocation certificate to a public keyserver (assuming you uploaded your public key to a public keyserver in the first place).
-
-Protect your revocation key like you protect your secret keys.
 
 ### List keys
 
@@ -715,8 +713,8 @@ card_atr 12:23:34:45:67:89:ab:cd:... {
     driver = "openpgp"
 }
 ...
-
 ```
+
 After that you can test with `pkcs11-tool -O --login` that the OpenPGP applet is selected by default. Other PKCS#11 clients like browsers may need to be restarted for that change to be applied.
 
 ## Tips and tricks
@@ -870,7 +868,7 @@ There have been issues with [kgpg](https://www.archlinux.org/packages/?name=kgpg
 
 For Wayland sessions, `gnome-session` sets `SSH_AUTH_SOCK` to the standard gnome-keyring socket, `$XDG_RUNTIME_DIR/keyring/ssh`. This overrides any value set in `~/.pam_environmment` or systemd unit files.
 
-See GNOME Keyring wiki entry on how to disable this behavior. [GNOME/Keyring#Disable keyring daemon components](/index.php/GNOME/Keyring#Disable_keyring_daemon_components "GNOME/Keyring")
+See [GNOME/Keyring#Disable keyring daemon components](/index.php/GNOME/Keyring#Disable_keyring_daemon_components "GNOME/Keyring") on how to disable this behavior.
 
 ### mutt
 

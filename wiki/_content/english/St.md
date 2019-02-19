@@ -75,6 +75,8 @@ $ st -f 'Liberation Mono-12'
 
 ```
 
+Font names can be found with `fc-list`.
+
 ### Cursor
 
 By default the mouse pointer is `XC_xterm;` which often can be hard to find. To change it to your cursor theme's normal one, edit the following:

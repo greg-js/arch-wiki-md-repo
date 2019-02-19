@@ -4,7 +4,11 @@ Related articles
 
 [Apache Hadoop](https://hadoop.apache.org) is a framework for running applications on large cluster built of commodity hardware. The Hadoop framework transparently provides applications both reliability and data motion. Hadoop implements a computational paradigm named Map/Reduce, where the application is divided into many small fragments of work, each of which may be executed or re-executed on any node in the cluster. In addition, it provides a distributed file system (HDFS) that stores data on the compute nodes, providing very high aggregate bandwidth across the cluster. Both MapReduce and the Hadoop Distributed File System are designed so that node failures are automatically handled by the framework.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -115,6 +119,27 @@ Format a new distributed-filesystem:
 $ hadoop namenode -format
 
 ```
+
+Edit `/etc/hadoop/core-site.xml` and add below configuration:
+
+```
+ <configuration>
+   <property>
+     <name>fs.defaultFS</name>
+     <value>hdfs://localhost:9000</value>
+   </property>
+ </configuration>
+
+```
+
+Start the hadoop namenode:
+
+```
+$ hadoop namenode
+
+```
+
+You may access the web GUI via [http://localhost:9870/](http://localhost:9870/)
 
 [Start](/index.php/Start "Start") the following hadoop systemd units: `hadoop-datanode`, `hadoop-jobtracker`, `hadoop-namenode`, `hadoop-secondarynamenode`, `hadoop-tasktracker`.
 

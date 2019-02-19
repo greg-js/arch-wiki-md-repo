@@ -45,7 +45,7 @@
 
 ## Installation
 
-[Spotify for Linux](https://www.spotify.com/us/download/linux/) can be [installed](/index.php/Install "Install") with the [spotify](https://aur.archlinux.org/packages/spotify/) or [spotify-stable](https://aur.archlinux.org/packages/spotify-stable/) package. If you wish to play local files you will need to additionally install [zenity](https://www.archlinux.org/packages/?name=zenity) and [ffmpeg-compat-54](https://aur.archlinux.org/packages/ffmpeg-compat-54/).
+[Spotify for Linux](https://www.spotify.com/us/download/linux/) can be [installed](/index.php/Install "Install") with the [spotify](https://aur.archlinux.org/packages/spotify/) package. If you wish to play local files you will need to additionally install [zenity](https://www.archlinux.org/packages/?name=zenity) and [ffmpeg-compat-54](https://aur.archlinux.org/packages/ffmpeg-compat-54/).
 
 ### Third-party clients
 

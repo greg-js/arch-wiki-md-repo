@@ -40,7 +40,7 @@ Related articles
     *   [5.1 Job for netctl@wlan(...).service failed](#Job_for_netctl@wlan(...).service_failed)
     *   [5.2 dhcpcd: ipv4_addroute: File exists](#dhcpcd:_ipv4_addroute:_File_exists)
     *   [5.3 DHCP timeout issues](#DHCP_timeout_issues)
-    *   [5.4 DHCP Troubleshooting](#DHCP_Troubleshooting)
+    *   [5.4 dhcpcd debugging](#dhcpcd_debugging)
     *   [5.5 Connection timeout issues](#Connection_timeout_issues)
     *   [5.6 Problems with netctl-auto on resume](#Problems_with_netctl-auto_on_resume)
     *   [5.7 netctl-auto does not automatically unblock a wireless card to use an interface](#netctl-auto_does_not_automatically_unblock_a_wireless_card_to_use_an_interface)
@@ -510,7 +510,7 @@ On some systems dhcpcd in combination with netctl causes timeout issues on resum
 
 If you are having timeout issues when requesting leases via DHCP you can set the timeout value higher than netctl's 30 seconds by default. Create a file in `/etc/netctl/hooks/` or `/etc/netctl/interfaces/`, add `TimeoutDHCP=40` to it for a timeout of 40 seconds and make the file executable.
 
-### DHCP Troubleshooting
+### dhcpcd debugging
 
 If dhcpcd fails to obtain an address, add the `-d` option to `/usr/lib/netctl/dhcp` and then use `journalctl -xe` to view the debugging messages which may indicate, for example, that the IP address offered by the server is rejected by the client after detecting that the IP address is already in use.
 

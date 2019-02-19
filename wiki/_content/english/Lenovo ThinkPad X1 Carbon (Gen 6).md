@@ -85,7 +85,8 @@ Version: ThinkPad X1 Carbon 6th
         *   [9.1.2 TLP blacklisting devices from USB autosuspend](#TLP_blacklisting_devices_from_USB_autosuspend)
     *   [9.2 Lenovo dock](#Lenovo_dock)
 *   [10 Full-disk encryption](#Full-disk_encryption)
-    *   [10.1 Ramdisk module](#Ramdisk_module)
+    *   [10.1 LUKS: Ramdisk module](#LUKS:_Ramdisk_module)
+    *   [10.2 OPAL: Hardware based full-disk encryption](#OPAL:_Hardware_based_full-disk_encryption)
 *   [11 Tools](#Tools)
     *   [11.1 Diagnostics](#Diagnostics)
 *   [12 References](#References)
@@ -575,9 +576,13 @@ Then reboot and your dock should work correctly.
 
 ## Full-disk encryption
 
-### Ramdisk module
+### LUKS: Ramdisk module
 
 With LUKS for root, i915 needs to be loaded in ramdisk in order to access the password prompt. Add i915 to MODULES list in `/etc/mkinitcpio.conf` and regenerate the ramdisk.
+
+### OPAL: Hardware based full-disk encryption
+
+See [Self-Encrypting_Drives](/index.php/Self-Encrypting_Drives "Self-Encrypting Drives") (Confirmed working)
 
 ## Tools
 

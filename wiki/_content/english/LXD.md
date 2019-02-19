@@ -82,6 +82,13 @@ $ lxc launch images:centos/7/amd64 centos
 
 ```
 
+To create an amd64 Arch container:
+
+```
+$ lxc launch images:archlinux/current/amd64 arch
+
+```
+
 ## Advance usage
 
 ### LXD Networking

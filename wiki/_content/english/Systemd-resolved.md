@@ -46,7 +46,7 @@ To use *systemd-resolved* [start](/index.php/Start "Start") and [enable](/index.
 1.  Using the systemd DNS stub file - the systemd DNS stub file `/run/systemd/resolve/stub-resolv.conf` contains the local stub `127.0.0.53` as the only DNS server and a list of search domains. This is the **recommended** mode of operation. The service users are advised to redirect the `/etc/resolv.conf` file to the local stub DNS resolver file `/run/systemd/resolve/stub-resolv.conf` managed by *systemd-resolved*. This propagates the systemd managed configuration to all the clients. This can be done by replacing `/etc/resolv.conf` with a symbolic link to the systemd stub: `# ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf` 
 2.  Preserving *resolv.conf* - this mode preserves `/etc/resolv.conf` and *systemd-resolved* is simply a client of this file. This mode is less disruptive as `/etc/resolv.conf` can continue to be managed by other packages.
 
-**Tip:** The mode of operation of *systemd-resolved* is detected automatically, depending on whether `/etc/resolv.conf` is a symlink to the local stub DNS resolver file or contains server names.
+**Note:** The mode of operation of *systemd-resolved* is detected automatically, depending on whether `/etc/resolv.conf` is a symlink to the local stub DNS resolver file or contains server names.
 
 #### Setting DNS servers
 

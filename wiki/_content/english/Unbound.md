@@ -27,6 +27,7 @@ Related articles
             *   [2.4.2.1 Using openresolv](#Using_openresolv_2)
             *   [2.4.2.2 Manually specifying DNS servers](#Manually_specifying_DNS_servers_2)
     *   [2.5 Access control](#Access_control)
+    *   [2.6 Forwarding using DNS over TLS](#Forwarding_using_DNS_over_TLS)
 *   [3 Usage](#Usage)
     *   [3.1 Starting Unbound](#Starting_Unbound)
     *   [3.2 Remotely control Unbound](#Remotely_control_Unbound)
@@ -311,6 +312,26 @@ access-control: 192.168.1.0/24 allow
 ```
 
 *action* can be one of `deny` (drop message), `refuse` (polite error reply), `allow` (recursive ok), or `allow_snoop` (recursive and nonrecursive ok). By default everything is refused except for localhost.
+
+### Forwarding using DNS over TLS
+
+To use this feature you will need to specify `tls-cert-bundle` option that points to the local system's root certificate authority bundle, allow unbound to forward TLS requests and also specify any number of servers that allow DNS of TLS.
+
+For each server you will need to specify that the connection port using @, and you will also need to indicate which is its domain name with #. Even though it looks like an comment the hashtag name allows for the TLS authentication name to be set for stub-zones and with `unbound-control forward control` command. There should not be any spaces between the @ and # markups.
+
+ `/etc/unbound/unbound.conf` 
+```
+...
+server:
+...
+	tls-cert-bundle: /etc/ssl/certs/ca-certificates.crt
+...
+forward-zone:
+        name: "."
+        forward-tls-upstream: yes
+        forward-addr: 1.1.1.1@853#cloudflare-dns
+
+```
 
 ## Usage
 

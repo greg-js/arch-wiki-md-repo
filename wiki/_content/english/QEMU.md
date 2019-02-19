@@ -218,7 +218,7 @@ $ qemu-img rebase -u -b */new/img1.raw* */new/img1.cow*
 
 #### Resizing an image
 
-**Warning:** Resizing an image containing an NTFS boot file system could make the operating system installed on it unbootable. It is recommended to create a backup first.].
+**Warning:** Resizing an image containing an NTFS boot file system could make the operating system installed on it unbootable. It is recommended to create a backup first.
 
 The `qemu-img` executable has the `resize` option, which enables easy resizing of a hard drive image. It works for both *raw* and *qcow2*. For example, to increase image space by 10 GB, run:
 

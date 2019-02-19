@@ -429,19 +429,15 @@ $ sudo -u http darkhttpd /var/cache/pacman/pkg --no-server-id
 
 You could also run darkhttpd as a systemd service for convenience. Just add this server at the top of your `/etc/pacman.d/mirrorlist` in client machines with `Server = http://mymirror:8080`. Make sure to keep your mirror updated.
 
-If you're already running a web server for some other purpose, you might wish to reuse that as your local repo server instead of darkhttpd. For example, say you already serve a site with [nginx](/index.php/Nginx "Nginx"), you can add an nginx server block listening on port 8080:
+If you are already running a web server for some other purpose, you might wish to reuse that as your local repo server instead of darkhttpd. For example, if you already serve a site with [nginx](/index.php/Nginx "Nginx"), you can add an nginx server block listening on port 8080:
 
  `/etc/nginx/nginx.conf` 
 ```
-http {
-    # ... other nginx server configs up here
-
-    server {
-        listen 8080;
-        root /var/cache/pacman/pkg;
-        server_name myarchrepo.localdomain;
-        try_files $uri $uri/;
-    }
+server {
+    listen 8080;
+    root /var/cache/pacman/pkg;
+    server_name myarchrepo.localdomain;
+    try_files $uri $uri/;
 }
 
 ```

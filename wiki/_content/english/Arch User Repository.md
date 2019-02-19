@@ -109,7 +109,7 @@ Locate the package in the AUR. This is done using the search field at the top of
 
 There are several methods for acquiring the build files:
 
-*   Clone the [git](/index.php/Git "Git") repository that is labelled as the "Git Clone URL" in the "Package Details". This is the preferred method.
+*   Option 1: Clone the [git](/index.php/Git "Git") repository that is labelled as the "Git Clone URL" in the "Package Details". This is the preferred method.
 
 ```
 $ git clone https://aur.archlinux.org/*package_name*.git
@@ -118,7 +118,7 @@ $ git clone https://aur.archlinux.org/*package_name*.git
 
 	An advantage of this method is that you can easily get updates to the package via `git pull`.
 
-*   Download the build files with your web browser by clicking the "Download snapshot" link under "Package Actions" on the right hand side. This will download a compressed file, which must be extracted (preferably in a directory set aside for AUR builds)
+*   Option 2: Download the build files with your web browser by clicking the "Download snapshot" link under "Package Actions" on the right hand side. This will download a compressed file, which must be extracted (preferably in a directory set aside for AUR builds)
 
 ```
 $ tar -xvf *package_name*.tar.gz

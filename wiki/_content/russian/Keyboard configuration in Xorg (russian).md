@@ -14,7 +14,11 @@
 
 **Note:** Параметры XKB могут быть переопределены инструментами, представленными некоторыми окружениями рабочего стола, такими как [GNOME](/index.php/GNOME_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNOME (Русский)") и [KDE](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Просмотр настроек клавиатуры](#Просмотр_настроек_клавиатуры)
     *   [1.1 Сторонние утилиты](#Сторонние_утилиты)
@@ -160,6 +164,20 @@ $ localectl [--no-convert] set-x11-keymap *раскладка* [*модель* [
 
 ```
 $ localectl --no-convert set-x11-keymap us,ru pc105 dvorak, grp:alt_shift_toggle
+
+```
+
+Например, можно установить английскую и русскую раскладки, которые будут переключаться по ctrl+shift:
+
+```
+$ localectl --no-convert set-x11-keymap us,ru "" "" grp:ctrl_shift_toggle
+
+```
+
+Чтобы изменения вступили в силу, перезагрузите Xorg командой:
+
+```
+$ systemctl restart display-manager
 
 ```
 

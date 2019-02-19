@@ -4,7 +4,11 @@
 *   get public links to files and folders
 *   customize folder syncing
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Commands](#Commands)
@@ -13,7 +17,7 @@
 
 ## Installation
 
-[Yandex-disk](https://aur.archlinux.org/packages/Yandex-disk/) client for Linux can be installed in from the [AUR](/index.php/AUR "AUR"). Note that it's a CLI client - there is no official GUI for it at the moment.(see [#Unofficial clients](#Unofficial_clients))
+[yandex-disk](https://aur.archlinux.org/packages/yandex-disk/) client for Linux can be installed in from the [AUR](/index.php/AUR "AUR"). Note that it's a CLI client - there is no official GUI for it at the moment.(see [#Unofficial clients](#Unofficial_clients))
 
 To setup your proxy, user and local folder, enter
 

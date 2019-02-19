@@ -413,7 +413,7 @@ Upgrading major PostgreSQL versions requires some extra maintenance.
 It is recommended to add the following to your `/etc/pacman.conf` file:
 
 ```
-IgnorePkg = postgresql*
+IgnorePkg = postgresql postgresql-libs
 
 ```
 

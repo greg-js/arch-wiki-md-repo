@@ -6,7 +6,11 @@
 
 [Version control systems](https://en.wikipedia.org/wiki/Revision_control "wikipedia:Revision control") can be used for retrieval of source code for both usual statically versioned packages and latest (trunk) version of a development branch. This article covers both cases.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Prototypes](#Prototypes)
 *   [2 Guidelines](#Guidelines)
@@ -63,7 +67,7 @@ source=('[folder::][vcs+]url[#fragment]')
 An example Git source array:
 
 ```
-source=('project_name::git+http://project_url#branch=project_branch')
+source=('project_name::git+https://project_url#branch=project_branch')
 
 ```
 

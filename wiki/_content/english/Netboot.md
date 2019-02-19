@@ -1,12 +1,18 @@
 Netboot images are small (<1MB) images that can be used to download the latest Arch Linux release on the fly upon system boot. It is unnecessary to update the netboot image, the newest release will be available automatically. Netboot images can be downloaded from the [Arch Linux website](https://www.archlinux.org/releng/netboot/).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 BIOS](#BIOS)
     *   [1.1 Using ipxe.lkrn](#Using_ipxe.lkrn)
     *   [1.2 Using ipxe.pxe](#Using_ipxe.pxe)
 *   [2 UEFI](#UEFI)
     *   [2.1 Installation with efibootmgr](#Installation_with_efibootmgr)
+*   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 Error 022fe2](#Error_022fe2)
 
 ## BIOS
 
@@ -49,3 +55,32 @@ Then you can create a boot entry as follows:
 # efibootmgr --create --disk /dev/sda --part 1 --loader /EFI/arch_netboot/arch_netboot.efi --label "Arch Linux Netboot"
 
 ```
+
+## Troubleshooting
+
+### Error 022fe2
+
+When loading ipxe.1e77e6bfd61e.efi you get such error:
+
+```
+[https://www.archlinux.org/releng/netboot/archlinux.ipxe](https://www.archlinux.org/releng/netboot/archlinux.ipxe)... Permission denied ([http://ipxe.org/022fe28f](http://ipxe.org/022fe28f))
+
+```
+
+When loading ipxe.8da38b4a9310.pxe you get such error:
+
+```
+[https://www.archlinux.org/releng/netboot/archlinux.ipxe](https://www.archlinux.org/releng/netboot/archlinux.ipxe)... Permission denied ([http://ipxe.org/022fe23c](http://ipxe.org/022fe23c))
+
+```
+
+This is a bug related to https/ocsp/certificates (see [FS#58470](https://bugs.archlinux.org/task/58470)).
+
+As a workaround, download this file ([https://www.archlinux.org/releng/netboot/archlinux.ipxe](https://www.archlinux.org/releng/netboot/archlinux.ipxe)) and place it to your own http server. Then run in iPXE shell:
+
+```
+iPXE> chain http://*yourdomain.com*/path/to/file/archlinux.ipxe
+
+```
+
+replacing *yourdomain.com* and path.
