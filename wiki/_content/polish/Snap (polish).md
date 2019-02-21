@@ -6,7 +6,11 @@ Related articles
 
 [snapd](https://github.com/snapcore/snapd) jest demonem REST API dla zarządzania pakietami snap. Użytkownicy mogą zarządzać nim korzystając z klienta *snap*, który jest częścią tego samego pakietu.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalacja](#Instalacja)
 *   [2 Konfiguracja](#Konfiguracja)

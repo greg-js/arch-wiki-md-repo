@@ -220,6 +220,12 @@ dhcp-option=3,0.0.0.0
 # Set DNS servers to announce
 dhcp-option=6,0.0.0.0
 
+# If your dnsmasq server is also doing the routing for your network,
+# you can use option 121 to push a static route out.
+# x.x.x.x is the destination LAN, yy is the CIDR notation (usually /24), 
+# and z.z.z.z is the host which will do the routing.
+dhcp-option=121,x.x.x.x/yy,z.z.z.z
+
 # Dynamic range of IPs to make available to LAN PC and the lease time. 
 # Ideally set the lease time to 5m only at first to test everything works okay before you set long-lasting records.
 dhcp-range=192.168.111.50,192.168.111.100,12h

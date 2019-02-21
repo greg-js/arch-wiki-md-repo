@@ -21,6 +21,7 @@ The [Deepin Desktop Environment](https://www.deepin.org/en/?language=en) (DDE) i
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 No background after resuming from standby](#No_background_after_resuming_from_standby)
     *   [4.2 Wireless network does not connect](#Wireless_network_does_not_connect)
+    *   [4.3 Bluetooth Menu does not show up / work](#Bluetooth_Menu_does_not_show_up_/_work)
 *   [5 Bug reporting](#Bug_reporting)
 
 ## Installation
@@ -118,6 +119,16 @@ NetworkManager sets the MAC address generated randomly. This was already enabled
 ```
 [device]
 wifi.scan-rand-mac-address=no
+
+```
+
+### Bluetooth Menu does not show up / work
+
+Enable the `bluetooth.service`. This service is not enabled by default.
+
+```
+# systemctl enable bluetooth.service
+# systemctl start bluetooth.service
 
 ```
 

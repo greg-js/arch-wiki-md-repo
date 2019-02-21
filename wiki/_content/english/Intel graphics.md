@@ -49,6 +49,7 @@ For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs
     *   [6.14 Screen flickering](#Screen_flickering)
     *   [6.15 OpenGL 2.1 with i915 driver](#OpenGL_2.1_with_i915_driver)
     *   [6.16 KMS Issue: console is limited to small area](#KMS_Issue:_console_is_limited_to_small_area)
+    *   [6.17 Weathered colors (color range problems)](#Weathered_colors_(color_range_problems))
 *   [7 See also](#See_also)
 
 ## Installation
@@ -448,6 +449,12 @@ The update of [mesa](https://www.archlinux.org/packages/?name=mesa) from version
 One of the low-resolution video ports may be enabled on boot which is causing the terminal to utilize a small area of the screen. To fix, explicitly disable the port with an i915 module setting with `video=SVIDEO-1:d` in the kernel command line parameter in the bootloader. See [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") for more info.
 
 If that does not work, try disabling TV1 or VGA1 instead of SVIDEO-1\. Video port names can be listed with [xrandr](/index.php/Xrandr "Xrandr").
+
+### Weathered colors (color range problems)
+
+The "Broadcast RGB" property in the Intel driver defines the color range which can be used by the display - either "Limited 16:235" (which limits the color range for some displays that can't properly display all colors) and "Full". Since kernel 3.9, the new default property "Automatic" tries to determine whenever the display supports the full color range, and if it doesn't/detection fails, color range falls back to "Limited 16:235". This results in weathered colors and grey blacks. On some displays/connectors, despite the full color range being supported properly, automatic detection fails and falls back to the limited color range ([upstream bug report, kernels 4.18-4.20](https://bugs.freedesktop.org/show_bug.cgi?id=108821)).
+
+You can forcefully set the desired color range by running `xrandr --output <OUT> --set "Broadcast RGB" "Full"` (replace `<OUT>` with the appropriate output device, listed by running `xrandr`). There is no way to persist this setting in `xorg.conf`.
 
 ## See also
 

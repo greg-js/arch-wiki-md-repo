@@ -164,7 +164,7 @@
 | <small>5.1.11.6.</small> [Television](/index.php/Category:Television_(Espa%C3%B1ol) "Category:Television (Español)") <small>(0)</small> |
 | <small>5.1.11.6.1.</small> [TV cards](/index.php/Category:TV_cards_(Espa%C3%B1ol) "Category:TV cards (Español)") <small>(3) (también en [Hardware](/index.php/Category:Hardware_(Espa%C3%B1ol) "Category:Hardware (Español)"))</small> |
 | <small>5.1.11.7.</small> [Video](/index.php/Category:Video_(Espa%C3%B1ol) "Category:Video (Español)") <small>(3)</small> |
-| <small>5.1.12.</small> [Ofimática](/index.php/Category:Office_(Espa%C3%B1ol) "Category:Office (Español)") <small>(8)</small> |
+| <small>5.1.12.</small> [Ofimática](/index.php/Category:Office_(Espa%C3%B1ol) "Category:Office (Español)") <small>(9)</small> |
 | <small>5.1.12.1.</small> [TeX](/index.php/Category:TeX_(Espa%C3%B1ol) "Category:TeX (Español)") <small>(1)</small> |
 | <small>5.1.13.</small> [Science](/index.php/Category:Science_(Espa%C3%B1ol) "Category:Science (Español)") <small>(6)</small> |
 | <small>5.1.13.1.</small> [Automatización de diseño electronico](/index.php/Category:Electronic_design_automation_(Espa%C3%B1ol) "Category:Electronic design automation (Español)") <small>(2) (también en [Desarrollo](/index.php/Category:Development_(Espa%C3%B1ol) "Category:Development (Español)"))</small> |

@@ -177,7 +177,7 @@ Finally [restart](/index.php/Restart "Restart") `sshguard.service`
 
 A slightly more aggressive banning rule than the default one is proposed here to illustrate various options:
 
-*   It monitors [sshd](/index.php/Sshd "Sshd") and [vsftpd](/index.php/Vsftpd "Vsftpd") via logs from the [Systemd#Journal](/index.php/Systemd#Journal "Systemd")
+*   It monitors [sshd](/index.php/Sshd "Sshd") and [vsftpd](/index.php/Vsftpd "Vsftpd") via logs from the [systemd/Journal](/index.php/Systemd/Journal "Systemd/Journal")
 *   It blocks attackers after 2 attempts (each having a cost of 10, explaining the `20` value of the `THRESHOLD` parameter) for 180 seconds with subsequent block time longer by a factor of 1.5\. Note that this 1.5 multiplicative delay is internal and not controlled in the settings
 *   Attackers are permanently blacklisted after 10 attempts (10 attempts having each a cost of 10, explaining the `100` value in the `BLACKLIST_FILE` parameter)
 *   It blocks not only the attacker's IP but all the IPv4 subnet 24 ([CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing "wikipedia:Classless Inter-Domain Routing") notation)

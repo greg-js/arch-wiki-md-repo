@@ -133,7 +133,7 @@ This setup will enable a DHCP IP for both a wired and wireless connection making
 
 The kernel's route metric (same as configured with *ip*) decides which route to use for outgoing packets, in cases when several match. This will be the case when both wireless and wired devices on the system have active connections. To break the tie, the kernel uses the metric. If one of the connections is terminated, the other automatically wins without there being a gap with nothing configured (ongoing transfers may still not deal with this nicely but that is at a different OSI layer).
 
-**Note:** The `Metric` option is for static routes while the `RouteMetric` option is for setups not using static routes.
+**Note:** The `Metric` option is for static routes while the `RouteMetric` option is for setups not using static routes. See [systemd.network(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.network.5) for more details.
  `/etc/systemd/network/20-wired.network` 
 ```
 [Match]

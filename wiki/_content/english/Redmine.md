@@ -738,7 +738,7 @@ Type=simple
 User=redmine2
 Group=redmine2
 Environment=GEM_HOME=/home/redmine2/.gem/
-ExecStart=/usr/bin/ruby /usr/share/webapps/redmine/script/rails server webrick -e production
+ExecStart=/usr/bin/ruby /usr/share/webapps/redmine/bin/rails server webrick -e production
 
 # Give a reasonable amount of time for the server to start up/shut down
 TimeoutSec=300

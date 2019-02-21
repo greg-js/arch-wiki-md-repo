@@ -7,7 +7,11 @@ Related articles
 
 A software access point, also called virtual router or virtual Wi-Fi, enables a computer to turn its wireless interface into a Wi-Fi access point. It saves the trouble of getting a separate wireless router.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Requirements](#Requirements)
     *   [1.1 Wi-Fi device must support AP mode](#Wi-Fi_device_must_support_AP_mode)
@@ -76,7 +80,7 @@ Random MAC address can be generated using [macchanger](/index.php/Macchanger "Ma
 
 ## Configuration
 
-Setting up an access point comprises two main parts:
+Setting up an access point consists of two main parts:
 
 1.  Setting up the **Wi-Fi link layer**, so that wireless clients can associate to your computer's *software access point* and exchange IP packets with it.
 2.  Setting up the **network configuration** on your computer, so that it properly relays IP packets between its own internet connection and the wireless clients.

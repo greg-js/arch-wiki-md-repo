@@ -151,8 +151,8 @@ WantedBy=multi-user.target
 
 **Note:**
 
-*   If you plan to use [Xfce](/index.php/Xfce "Xfce") desktop environment on VNC server then [D-Bus](/index.php/D-Bus "D-Bus") starting before VNC server may be required. Just add `ExecStartPre=/usr/bin/dbus-launch` entry in `[Service]` section of unit file.
-*   Do not run this service if your local area network is untrusted.
+*   Users of the[Xfce](/index.php/Xfce "Xfce") desktop environment on VNC server may require [D-Bus](/index.php/D-Bus "D-Bus") starting before the VNC server. Just add `ExecStartPre=/usr/bin/dbus-launch` entry in `[Service]` section of unit file.
+*   Do not run this service if the local area network is untrusted.
 
 [Start](/index.php/Start "Start") `vncserver@*:1*.service` and optionally [enable](/index.php/Enable "Enable") it to run at boot time/shutdown.
 
@@ -211,7 +211,7 @@ For more information, see [x0vncserver(1)](https://jlk.fjfi.cvut.cz/arch/manpage
 
 ### Starting and stopping x0vncserver via systemd
 
-In order to have a VNC Server running x0vncserver, which is the easiest way for most users to quickly have remote access to the current desktop, you can create a systemd unit as follows replacing the user and the options with the desired ones:
+In order to have a VNC Server running x0vncserver, which is the easiest way for most users to quickly have remote access to the current desktop, create a systemd unit as follows replacing the user and the options with the desired ones:
 
  `~/.config/systemd/user/x0vncserver.service` 
 ```
@@ -235,8 +235,8 @@ WantedBy=default.target
 **Note:**
 
 *   This unit will only be useful if the user in the unit is currently running a X session.
-*   Do not run this service if your local area network is untrusted.
-*   You may need to read the man page for more detail.
+*   Do not run this service if the local area network is untrusted.
+*   Refer to the man page for more detail.
 
 ## Connecting to vncserver
 
@@ -394,9 +394,9 @@ $ x0vncserver -RemapKeys="0x3c->0x2c"
 
 ### Black rectangle instead of window
 
-Most probably it means that you use application that strictly requires Composite Xorg extension. For example webkit based app: midori, psi-plus, etc.
+Most probably this is due to the application strictly requiring the composite Xorg extension. For example webkit based app: midori, psi-plus, etc.
 
-You should restart vncserver in this case using something like following:
+Restart vncserver in this case using something like following:
 
 ```
  vncserver -geometry ... -depth 24 :1 +extension Composite

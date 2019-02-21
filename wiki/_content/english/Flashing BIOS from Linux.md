@@ -7,7 +7,11 @@ This article aims on providing information on flashing your system BIOS under Li
 *   HP users may download Windows BIOS updater from HP website, extract *.exe file and locate ISO image for burning to a CD. Using CD, upgrade is possible from BIOS menu using 'Firmware Upgrade' without using below tools. See [this](https://h30434.www3.hp.com/t5/Notebook-Operating-System-and-Recovery/How-to-update-BIOS-on-Linux/td-p/4869835) thread for details.
 *   For users with Dell computers, Dell recommends Linux users flash their BIOS following information located [here](https://www.dell.com/support/article/us/en/19/sln171755/updating-the-dell-bios-in-linux-and-ubuntu-environments) (in short, put the .EXE on a USB stick and use the F12 boot menu to access the firmware's flash utility).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 fwupd](#fwupd)
 *   [2 BiosDisk](#BiosDisk)
@@ -18,9 +22,9 @@ This article aims on providing information on flashing your system BIOS under Li
     *   [3.2 Usage](#Usage_2)
 *   [4 FreeDOS](#FreeDOS)
     *   [4.1 Unetbootin](#Unetbootin)
-    *   [4.2 Gentoo](#Gentoo)
+    *   [4.2 dosemu](#dosemu)
     *   [4.3 Pre-built images](#Pre-built_images)
-    *   [4.4 Using a FreeDOS-provided Disk Image + USB stick](#Using_a_FreeDOS-provided_Disk_Image_.2B_USB_stick)
+    *   [4.4 Using a FreeDOS-provided Disk Image + USB stick](#Using_a_FreeDOS-provided_Disk_Image_+_USB_stick)
     *   [4.5 Images that are too large for a floppy](#Images_that_are_too_large_for_a_floppy)
     *   [4.6 Usage](#Usage_3)
 *   [5 Bootable optical disk emulation](#Bootable_optical_disk_emulation)
@@ -126,9 +130,11 @@ You should format a pendrive with FAT16 and flag it as "boot" (you may do this t
 
 **Warning:** Unetbootin may not function properly on some Lenovo systems. It may be necessary to create the bootable stick on a different device. See [here](http://reboot.pro/topic/9849-blinking-cursor-at-boot/).
 
-### Gentoo
+### dosemu
 
-Check out [FreeDOS Flash Drive](https://wiki.gentoo.org/wiki/BIOS_Update#FreeDOS_environment "gentoo:BIOS Update") on the Gentoo Wiki if you want to create a bootable FreeDOS Flash drive.
+The problem with the official FreeDOS images is the lack of extra space for holding firmware and BIOS update files and programs. The easiest way to create a DOS, bootable FAT drive of arbitrary size under Linux is to [mount a FAT drive under dosemu then make it bootable with the FreeDOS sys command.](https://wiki.gentoo.org/wiki/Bootable_DOS_USB_stick)
+
+For an alternative method, see [FreeDOS Flash Drive](https://wiki.gentoo.org/wiki/BIOS_Update#FreeDOS_environment "gentoo:BIOS Update"), also on the Gentoo Wiki.
 
 ### Pre-built images
 

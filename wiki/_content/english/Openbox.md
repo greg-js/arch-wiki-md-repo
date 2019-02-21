@@ -155,7 +155,7 @@ xset -b
 
 ### Themes
 
-Install [obconf](https://www.archlinux.org/packages/?name=obconf) and [lxappearance-obconf](https://www.archlinux.org/packages/?name=lxappearance-obconf) for a GUI to configure visual settings and theming.
+Install [obconf](https://www.archlinux.org/packages/?name=obconf) and/or [lxappearance-obconf](https://www.archlinux.org/packages/?name=lxappearance-obconf) for a GUI to configure visual settings and theming.
 
 A good selection of themes are available in the [openbox-themes](https://www.archlinux.org/packages/?name=openbox-themes) package or the [AUR](/index.php/AUR "AUR"). Some [GTK+#Themes](/index.php/GTK%2B#Themes "GTK+") come with an Openbox theme as well. Both Openbox-specific and Openbox-compatible themes will be installed to the `/usr/share/themes` directory and will also be immediately available for selection.
 

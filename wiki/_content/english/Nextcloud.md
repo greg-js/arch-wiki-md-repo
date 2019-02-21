@@ -387,6 +387,9 @@ php-set = extension=apcu
 php-set = apc.ttl=7200
 php-set = apc.enable_cli=1
 
+; web server is already handling URL rewriting, so tell NextCloud not to repeat this
+env = front_controller_active=true
+
 cron2 = minute=-15,unique=1 /usr/bin/php -f /usr/share/webapps/nextcloud/cron.php 1>/dev/null
 
 ```

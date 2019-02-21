@@ -53,7 +53,7 @@ $ xinput --list-props <device id>
 
 ### Persistent configuration
 
-libinput does not store configuration options, it is up to the caller to manage these. Under Wayland configuration is restored by the desktop environment. Under X [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) reads the xorg config files and applies the options [[4]](https://wayland.freedesktop.org/libinput/doc/latest/faq.html#faq_config_options). To make changes persistent under X create a file like this:
+libinput does not store configuration options, it is up to the caller to manage these. Under Wayland configuration is restored by the desktop environment. Under X [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) reads the xorg config files and applies the options [[4]](https://wayland.freedesktop.org/libinput/doc/latest/faqs.html#how-do-i-configure-my-device-on-x). To make changes persistent under X create a file like this:
 
  `/etc/X11/xorg.conf.d/99-libinput-custom-config.conf` 
 ```

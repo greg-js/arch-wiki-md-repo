@@ -176,7 +176,7 @@ DefaultDependencies=no
 
 [Service]
 Type=oneshot
-ExecStart=/bin/sh -c 'echo ON > /proc/acpi/bbswitch'
+ExecStart=/bin/sh -c "awk '{print $2}' /proc/acpi/bbswitch > /tmp/gpu_state && echo ON > /proc/acpi/bbswitch"
 #ExecStart=/usr/bin/modprobe nvidia
 
 [Install]
@@ -186,9 +186,11 @@ WantedBy=hibernate.target
 WantedBy=suspend-then-hibernate.target
 WantedBy=sleep.target
 WantedBy=suspend.target
+
 ```
-And a service to disable the card again at resume:
-**Note:** This service is not smart enough to detect if the card should actually be powered off, and will do so regardless of if an application is currently using it. A smarter variant would have `nvidia-enable-power-off.service` write the state of the card to `/tmp` before suspending and then check it before disabling it on resume.
+
+And a service to disable the card again at resume if it was originally off:
+
  `/etc/systemd/system/nvidia-disable-resume.service` 
 ```
 [Unit]
@@ -201,7 +203,7 @@ After=hibernate.target
 
 [Service]
 Type=oneshot
-ExecStart=/bin/sh -c 'echo OFF > /proc/acpi/bbswitch'
+ExecStart=/bin/sh -c 'cat /tmp/gpu_state > /proc/acpi/bbswitch || echo OFF > /proc/acpi/bbswitch'
 #ExecStart=/usr/bin/rmmod nvidia
 
 [Install]
@@ -211,4 +213,5 @@ WantedBy=sleep.target
 WantedBy=suspend.target
 WantedBy=suspend-then-hibernate.target
 WantedBy=hibernate.target
+
 ```

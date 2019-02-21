@@ -385,9 +385,7 @@ To check if the PKGBUILD is broken, or your system is misconfigured, consider bu
 
 ### ERROR: One or more PGP signatures could not be verified!; what should I do?
 
-Most likely you do not have the required public key(s) in you personal keyring to verify downloaded files. If one or more .sig files are downloaded while building the package, [makepkg will automatically verify corresponding file(s) with the public key of its signer](/index.php/Makepkg#Signature_checking "Makepkg"). If you do not have the required key in your personal keyring, *makepkg* will fail to do the verification.
-
-The recommended way to deal with this problem is to import the required public key, either [manually](/index.php/GnuPG#Import_a_public_key "GnuPG") or [from a key server](/index.php/GnuPG#Use_a_keyserver "GnuPG"). Often, you can simply find the fingerprint of the needed public key(s) in the [validpgpkeys](/index.php/PKGBUILD#validpgpkeys "PKGBUILD") section of the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD").
+See [Makepkg#ERROR: One or more PGP signatures could not be verified!](/index.php/Makepkg#ERROR:_One_or_more_PGP_signatures_could_not_be_verified! "Makepkg").
 
 ### How do I create a PKGBUILD?
 

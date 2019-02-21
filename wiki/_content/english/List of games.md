@@ -95,7 +95,7 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 *   **[Minecraft](/index.php/Minecraft "Minecraft")** — Java based sandbox game.
 
-	[https://minecraft.net/](https://minecraft.net/) || [minecraft](https://aur.archlinux.org/packages/minecraft/)
+	[https://minecraft.net/](https://minecraft.net/) || [minecraft-launcher](https://aur.archlinux.org/packages/minecraft-launcher/)
 
 *   **[Neverball](https://en.wikipedia.org/wiki/Neverball "wikipedia:Neverball")** — 3D game to guide a ball through a maze.
 

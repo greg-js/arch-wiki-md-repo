@@ -507,7 +507,7 @@ For advanced functionality install [pkgfile](/index.php/Pkgfile "Pkgfile"), whic
 
 ### General options
 
-General options are in the `[options]` section. Read [pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8) or look in the default `pacman.conf` for information on what can be done here.
+General options are in the `[options]` section. Read [pacman.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.conf.5) or look in the default `pacman.conf` for information on what can be done here.
 
 #### Comparing versions before updating
 

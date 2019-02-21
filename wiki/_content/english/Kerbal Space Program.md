@@ -1,18 +1,23 @@
 Since version 0.19, Kerbal Space Program includes a native Linux version. However, only Ubuntu 12.04 is officialy supported, so it may not work on Arch Linux out of the box.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Known issues](#Known_issues)
     *   [2.1 Game never progresses past initial loading](#Game_never_progresses_past_initial_loading)
-    *   [2.2 Game SegFaults before launching, v1.1+](#Game_SegFaults_before_launching.2C_v1.1.2B)
+    *   [2.2 Game SegFaults before launching, v1.1+](#Game_SegFaults_before_launching,_v1.1+)
     *   [2.3 No text display](#No_text_display)
-    *   [2.4 In-game menus are blank, v1.1+](#In-game_menus_are_blank.2C_v1.1.2B)
+    *   [2.4 In-game menus are blank, v1.1+](#In-game_menus_are_blank,_v1.1+)
     *   [2.5 Graphics flickering when using primusrun](#Graphics_flickering_when_using_primusrun)
     *   [2.6 Game crashes when accessing settings or saves on 64 bit systems on Steam](#Game_crashes_when_accessing_settings_or_saves_on_64_bit_systems_on_Steam)
     *   [2.7 Game has garbled graphics when running on x86_64 with all lib32 drivers installed](#Game_has_garbled_graphics_when_running_on_x86_64_with_all_lib32_drivers_installed)
     *   [2.8 No audio on 64-bit systems](#No_audio_on_64-bit_systems)
     *   [2.9 Black ingame textures](#Black_ingame_textures)
+    *   [2.10 Joystick inputs are not recognized, v1.4+](#Joystick_inputs_are_not_recognized,_v1.4+)
 *   [3 See also](#See_also)
 
 ## Installation
@@ -59,7 +64,7 @@ Run with PRIMUS_SYNC=2 (but you will get reduced frame rate this way). Alternati
 In the properties for Kerbal Space program, set a launch option of:
 
 ```
-LC_ALL=C %command%_64
+LC_ALL=C %command%_64
 
 ```
 
@@ -82,7 +87,7 @@ Launch with
 Alternatively, to launch it from steam, set the following launch option:
 
 ```
- %command%_64
+ %command%_64
 
 ```
 
@@ -107,13 +112,17 @@ Launch with
 Or you can simply right click on Kerbal Space Program on your game list, click on Properties, click on SET LAUNCH OPTIONS, then add this:
 
 ```
-LD_LIBRARY_PATH="/usr/lib:$LD_LIBRARY_PATH" LC_ALL=C %command%_64
+LD_LIBRARY_PATH="/usr/lib:$LD_LIBRARY_PATH" LC_ALL=C %command%_64
 
 ```
 
 ### Black ingame textures
 
 Disable "Edge Highlighting (PPFX)" in graphics settings ingame.
+
+### Joystick inputs are not recognized, v1.4+
+
+This is a [bug in KSP](https://bugs.kerbalspaceprogram.com/issues/17984). As it has existed for a while now and depends on an upstream bug in the Unity engine it is unlikely to be fixed soon. Currently your only options are reverting to an older version of KSP (1.3 or lower) that used an older version of Unity or to emulate an XBox Controller or to use a third party mod like [AFBW](https://forum.kerbalspaceprogram.com/index.php?/topic/175359-15-afbw-revived-joystick-controller-mod/). With some configuration the latter one comes pretty close to the vanilla behaviour and even grants some additional features.
 
 ## See also
 

@@ -76,7 +76,7 @@ More details about LightDM's design can be found [here](http://www.freedesktop.o
 
 ### Greeter
 
-You will probably want to install a greeter. A greeter is a GUI that prompts the user for credentials, lets the user select a session, and so on. It is possible to use LightDM without a greeter, but only if an automatic login is configured, otherwise you will need to install [xorg-server](https://www.archlinux.org/packages/?name=xorg-server) and one of the greeter packages below.
+You will probably want to install a greeter. A greeter is a GUI that prompts the user for credentials, lets the user select a session, and so on. It is possible to use LightDM without a greeter, but only if an automatic login is configured; otherwise you will need to install [xorg-server](https://www.archlinux.org/packages/?name=xorg-server) and one of the greeter packages below.
 
 The official repositories contain the following greeters:
 
@@ -112,7 +112,7 @@ lightdm-kde-greeter.desktop
 
 ## Enabling LightDM
 
-Make sure to [enable](/index.php/Enable "Enable") `lightdm.service` so LightDM will be started at boot, see also [Display manager#Loading the display manager](/index.php/Display_manager#Loading_the_display_manager "Display manager").
+Make sure to [enable](/index.php/Enable "Enable") `lightdm.service` so LightDM will be started at boot; see also [Display manager#Loading the display manager](/index.php/Display_manager#Loading_the_display_manager "Display manager").
 
 ## Command line tool
 

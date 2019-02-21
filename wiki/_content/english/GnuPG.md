@@ -475,7 +475,7 @@ $ gpg --verify archlinux-*version*.iso.sig */path/to/*archlinux-*version*.iso
 
 ```
 
-If a file as been encrypted in addition to being signed, simply [decrypt](#Encrypt_and_decrypt) the file and its signature will also be verified.
+If a file has been encrypted in addition to being signed, simply [decrypt](#Encrypt_and_decrypt) the file and its signature will also be verified.
 
 ## gpg-agent
 
@@ -658,7 +658,7 @@ Then edit `sshcontrol` like this. Adding the keygrip is a one-time action; you w
 
 ## Smartcards
 
-GnuPG uses *scdaemon* as an interface to your smartcard reader, please refer to the [man page](/index.php/Man_page "Man page") for details.
+GnuPG uses *scdaemon* as an interface to your smartcard reader, please refer to the [man page](/index.php/Man_page "Man page") [scdaemon(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/scdaemon.1) for details.
 
 ### GnuPG only setups
 
@@ -668,7 +668,7 @@ If you do not plan to use other cards but those based on GnuPG, you should check
 
 ### GnuPG with pcscd (PCSC Lite)
 
-Pcscd is a daemon which handles access to smartcard (SCard API). If GnuPG's scdaemon fails to connect the smartcard directly (e.g. by using its integrated CCID support), it will fallback and try to find a smartcard using the PCSC Lite driver.
+[pcscd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pcscd.8) is a daemon which handles access to smartcard (SCard API). If GnuPG's scdaemon fails to connect the smartcard directly (e.g. by using its integrated CCID support), it will fallback and try to find a smartcard using the PCSC Lite driver.
 
 To use pscsd [install](/index.php/Install "Install") [pcsclite](https://www.archlinux.org/packages/?name=pcsclite) and [ccid](https://www.archlinux.org/packages/?name=ccid). Then [start](/index.php/Start "Start") and/or [enable](/index.php/Enable "Enable") `pcscd.service`. Alternatively start and/or enable `pcscd.socket` to activate the daemon when needed.
 
@@ -771,7 +771,7 @@ $ gpg --import *<fingerprint>*.rev
 
 ```
 
-Then send the key that was revoked back to your keyserver(s) of choice.
+Then [send the key](#Use_a_keyserver) that was revoked back to your keyserver(s) of choice.
 
 ### Change trust model
 

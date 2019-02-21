@@ -908,12 +908,17 @@ Server = https://minzordos.000webhostapp.com/Repo/
 ### ownstuff
 
 *   **Maintainer:** [Martchus](https://aur.archlinux.org/account/Martchus)
-*   **Description:** A lot of packages from the AUR, eg. a great number of mingw-w64 packages, fonts, tools like [Tag Editor](https://aur.archlinux.org/packages/tageditor), [Syncthing Tray](https://aur.archlinux.org/packages/syncthingtray) and [Subtitle Composer](https://aur.archlinux.org/packages/subtitlecomposer)
+*   **Description:** A lot of packages from the AUR, e.g. a great number of mingw-w64 packages, fonts, tools like [Tag Editor](https://aur.archlinux.org/packages/tageditor), [Syncthing Tray](https://aur.archlinux.org/packages/syncthingtray) and [Subtitle Composer](https://aur.archlinux.org/packages/subtitlecomposer)
 *   **Upstream page**: [https://github.com/Martchus/PKGBUILDs](https://github.com/Martchus/PKGBUILDs) (sources beside the AUR) and [https://martchus.no-ip.biz/repoindex](https://martchus.no-ip.biz/repoindex) (package browser/search)
 
 ```
+[ownstuff-testing]
+Server = https://martchus.no-ip.biz/repo/arch/$repo/os/$arch
+Server = https://ftp.f3l.de/~martchus/$repo/os/$arch
+
 [ownstuff]
-Server = http://martchus.no-ip.biz/repo/arch/$repo/os/$arch
+Server = https://martchus.no-ip.biz/repo/arch/$repo/os/$arch
+Server = https://ftp.f3l.de/~martchus/$repo/os/$arch
 
 ```
 

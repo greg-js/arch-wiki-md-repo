@@ -630,7 +630,7 @@ This color scheme uses a transparent background which does not appear to be supp
 
 ```
 
-In *System Settings > Display and Monitor*, check *Enable compositor on startup* and restart Plasma.
+In *System Settings > Display and Monitor > Compositor*, check *Enable compositor on startup* and restart Plasma.
 
 #### Disable compositing
 

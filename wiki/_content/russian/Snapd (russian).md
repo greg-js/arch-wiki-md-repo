@@ -4,7 +4,11 @@
 
 [snapd](https://github.com/snapcore/snapd) это REST API демон для управления snap-пакетами ("snaps"). Пользователи могут взаимодействовать с ним с помощью *snap* клиента, входящего в тот же пакет.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Настройка](#Настройка)

@@ -498,7 +498,7 @@ You can verify the profile is active by running `colormgr get-devices`.
 
 ## Intel Graphics UHD 620 issues
 
-[Enable GuC/HuC firmware loading](/index.php/Intel_graphics#Enable_GuC_/_HuC_firmware_loading "Intel graphics") suggests to load GPU firmware with warning. However, on Wayland for Carbon X1 gen 6 it cause GPU hang problem. Issues can be reflected as: a) crashing GPU process of Chrome / Chromium / Electron apps and subsequent host freezing; b) crashing of Gnome / Wayland with possibility to reboot via second virtual terminal; c) just host freezing. In dmesg the following can be observed:
+*   [Enable GuC/HuC firmware loading](/index.php/Intel_graphics#Enable_GuC_/_HuC_firmware_loading "Intel graphics") suggests to load GPU firmware with warning. However, on Wayland for Carbon X1 gen 6 it cause GPU hang problem. Issues can be reflected as: a) crashing GPU process of Chrome / Chromium / Electron apps and subsequent host freezing; b) crashing of Gnome / Wayland with possibility to reboot via second virtual terminal; c) just host freezing. In dmesg the following can be observed:
 
 ```
  kernel: [drm] GPU HANG: ecode 9:0:0x85dffffd, in chrome [18418], reason: hang on rcs0, action: reset
@@ -512,6 +512,17 @@ You can verify the profile is active by running `colormgr get-devices`.
 ```
 
 Note that, first line changes depending on the source of crashing application, but the result is the same, so issue is with GPU / firmware. Basically don't enable GuC / HuC firmware loading, at least if on Wayland. There are a number of similar issues reported including [#108717](https://bugs.freedesktop.org/show_bug.cgi?id=108717).
+
+*   The `modesetting` driver causes [tearing](/index.php/Intel_graphics#Tearing "Intel graphics") in some situations. You can install the `xf86-video-intel` driver instead and enable the `"TearFree"` option in your configuration file:
+
+ `/etc/X11/xorg.conf.d/20-intel.conf` 
+```
+Section "Device"
+  Identifier  "Intel Graphics"
+  Driver      "intel"
+  Option      "TearFree" "true"
+EndSection
+```
 
 ## TrackPoint and Touchpad issues
 

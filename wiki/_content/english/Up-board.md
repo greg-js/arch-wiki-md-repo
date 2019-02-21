@@ -1,14 +1,19 @@
 The [UP Board](http://up-board.org) is a Intel based SOC device by Aaeon. There is a companion device, the UP Core, that uses the same chipset and devices. Installation of Arch is no different, except that you do not have the GPIO bus to enable.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 GPIO](#GPIO)
-*   [3 Sound](#Sound)
-    *   [3.1 Compilation](#Compilation)
-        *   [3.1.1 Manual](#Manual)
-        *   [3.1.2 Arch Build System](#Arch_Build_System)
-*   [4 See Also](#See_Also)
+*   [3 Rebooting](#Rebooting)
+*   [4 Sound](#Sound)
+    *   [4.1 Compilation](#Compilation)
+        *   [4.1.1 Manual](#Manual)
+        *   [4.1.2 Arch Build System](#Arch_Build_System)
+*   [5 See Also](#See_Also)
 
 ## Installation
 
@@ -19,6 +24,16 @@ The UP Board features a [UEFI](/index.php/UEFI "UEFI") only setup (no BIOS emula
 ## GPIO
 
 The GPIO pins on the UP board are routed through a CPLD that requires a custom driver. This driver has not yet been added to the mainline kernel, but there are patches available that add the functionality. The AUR package [linux-up](https://aur.archlinux.org/packages/linux-up/) provides the mainline kernel with the driver patched in and enabled.
+
+## Rebooting
+
+Due to a possible bug, discussed at [https://forum.up-community.org/discussion/comment/8980#Comment_8980](https://forum.up-community.org/discussion/comment/8980#Comment_8980) and reported here, [https://bugs.freedesktop.org/show_bug.cgi?id=106721](https://bugs.freedesktop.org/show_bug.cgi?id=106721)
+
+Rebooting the board multiple times without disconnecting power, as what could happen if using as a server, could fail with a kernel panic.
+
+To make rebooting the board more reliable, try adding the following to your /etc/default/grub configuration.
+
+ `/etc/default/grub`  `GRUB_CMDLINE_LINUX_DEFAULT="reboot=efi,cold fsck.mode=force fsck.repair=yes"` 
 
 ## Sound
 

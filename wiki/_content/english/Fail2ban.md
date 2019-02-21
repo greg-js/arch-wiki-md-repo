@@ -7,7 +7,11 @@ Related articles
 
 **Warning:** Using an IP banning software will stop trivial attacks but it relies on an additional daemon and successful logging. Additionally, if the attacker knows your IP address, they can send packets with a spoofed source header and get your IP address banned. Make sure to specify your IP in `ignoreip`.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
@@ -63,7 +67,7 @@ Status for the jail: sshd
 
 ## Configuration
 
-Due to the possibility of the `/etc/fail2ban/jail.conf` file being overwritten or improved during a distribution update, it is recommended to [Create](/index.php/Create "Create") `/etc/fail2ban/jail.local` file. For example to change default ban time to 1 day:
+Due to the possibility of the `/etc/fail2ban/jail.conf` file being overwritten or improved during a distribution update, it is recommended to [create](/index.php/Create "Create") `/etc/fail2ban/jail.local` file. For example to change default ban time to 1 day:
 
  `/etc/fail2ban/jail.local` 
 ```

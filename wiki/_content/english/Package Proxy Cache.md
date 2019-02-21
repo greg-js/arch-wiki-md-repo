@@ -68,7 +68,7 @@ Every time you change the cache_dir path (and after fresh install), you need to 
 
 and it could be helpful to check the config file before running squid:
 
- `# squid -k check` 
+ `# squid -k parse` 
 
 ## Start Squid
 

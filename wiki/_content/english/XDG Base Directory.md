@@ -654,7 +654,7 @@ $ export XSERVERRC="$XDG_CONFIG_HOME"/X11/xserverrc`
 
 Note that these variables are respected by *xinit*, but not by *startx*. Instead, specify the filename as an argument:
 
-`$ startx "$XDG_CONFIG_HOME/X11/xinitrc" -- vt1`
+`$ startx "$XDG_CONFIG_HOME/X11/xinitrc" -- "$XDG_CONFIG_HOME/X11/xserverrc" vt1`
 
  |
 | [xorg-xrdb](https://www.archlinux.org/packages/?name=xorg-xrdb) | 

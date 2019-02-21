@@ -23,6 +23,8 @@
 
 ## Configuration
 
+Copy the configuration example from `/usr/share/doc/polybar/config` to `$XDG_CONFIG_HOME/polybar/config`
+
 #### Running Polybar
 
 Polybar can be run with the following:
