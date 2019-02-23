@@ -24,7 +24,7 @@ The [readline](https://www.archlinux.org/packages/?name=readline) package is mos
 
 ## Editing mode
 
-By default Readline uses Emacs style shortcuts for interacting with command line. However, [vi](/index.php/Vi "Vi") style editing interface is also supported by adding the following to `~/.inputrc`:
+By default Readline uses [Emacs](/index.php/Emacs "Emacs") style shortcuts for interacting with command line. However, [vi](/index.php/Vi "Vi") style editing interface is also supported by adding the following to `~/.inputrc`:
 
  `~/.inputrc`  ` set editing-mode vi` 
 

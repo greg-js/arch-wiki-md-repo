@@ -21,11 +21,11 @@ Aunque Fontconfig se utiliza a menudo en los Unix modernos y en los sistemas ope
 *   [2 Configuración de FontConfig](#Configuración_de_FontConfig)
     *   [2.1 Ajustes predeterminados](#Ajustes_predeterminados)
     *   [2.2 Anti-aliasing](#Anti-aliasing)
-    *   [2.3 Hinting](#Hinting)
-        *   [2.3.1 Byte-Code Interpreter (BCI)](#Byte-Code_Interpreter_(BCI))
-        *   [2.3.2 Autohinter](#Autohinter)
-        *   [2.3.3 Hintstyle](#Hintstyle)
-    *   [2.4 Pixel alignment](#Pixel_alignment)
+    *   [2.3 Optimización](#Optimización)
+        *   [2.3.1 Intérprete Byte-Code (BCI)](#Intérprete_Byte-Code_(BCI))
+        *   [2.3.2 Auto-optimizado](#Auto-optimizado)
+        *   [2.3.3 Estilo de optimización](#Estilo_de_optimización)
+    *   [2.4 Alineamiento de píxeles](#Alineamiento_de_píxeles)
     *   [2.5 Subpixel rendering](#Subpixel_rendering)
         *   [2.5.1 LCD filter](#LCD_filter)
         *   [2.5.2 Advanced LCD filter specification](#Advanced_LCD_filter_specification)
@@ -156,13 +156,13 @@ La [renderización de fuentes (en inglés)](https://en.wikipedia.org/wiki/Font_r
 
 **Nota:** Algunas aplicaciones, como [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)") puede [sobrescribir los ajustes anti-aliasing por defecto](#Solución_de_problemas).
 
-### Hinting
+### Optimización
 
-[Font hinting](https://en.wikipedia.org/wiki/Font_hinting "wikipedia:Font hinting") (also known as instructing) is the use of mathematical instructions to adjust the display of an outline font so that it lines up with a rasterized grid (i.e. the pixel grid of the display). Its intended effect is to make fonts appear more crisp so that they are more readable. Fonts will line up correctly without hinting when displays have around 300 [DPI](https://en.wikipedia.org/wiki/Dots_per_inch "wikipedia:Dots per inch").
+[Hinting (en inglés)](https://en.wikipedia.org/wiki/Font_hinting "wikipedia:Font hinting") (optimización de la renderización) es el uso de instrucciones matemáticas para ajustar el contorno de la fuente de forma que se alinee a una cuadricula rasterizada ( es decir la cuadrícula de píxeles de la pantalla). Este efecto hace que la fuente sea más nítida y por lo tanto más legible. Las fuentes se alinean sin optimizarse cuando las pantallas tienen alrededor de 300 [ppp](https://en.wikipedia.org/wiki/es:Puntos_por_pulgada "wikipedia:es:Puntos por pulgada").
 
-#### Byte-Code Interpreter (BCI)
+#### Intérprete Byte-Code (BCI)
 
-Using BCI hinting, instructions in TrueType fonts are rendered according to FreeTypes's interpreter. BCI hinting works well with fonts with good hinting instructions. Hinting is **enabled** by default. To disable it:
+Utilizando las optimizaciones del BCI las instrucciones en las fuentes TrueType se representan acorde con el intérprete FreeTypes. La optimización está *activada* por defecto. Para desactivarla:
 
 ```
   <match target="font">
@@ -173,11 +173,11 @@ Using BCI hinting, instructions in TrueType fonts are rendered according to Free
 
 ```
 
-**Note:** You can switch BCI implementations by editing `/etc/profile.d/freetype2.sh` which includes a brief documentation. Possible values are `truetype:interpreter-version=35` (classic mode, emulates Windows 98; 2.6 default), `truetype:interpreter-version=38` ("Infinality" subpixel mode), `truetype:interpreter-version=40` (minimal subpixel mode; 2.7 default). Subpixel rendering should use a subpixel BCI. For details, see [[1]](https://www.freetype.org/freetype2/docs/subpixel-hinting.html).
+**Nota:** Puede cambiar las implementaciones BCI editando `/etc/profile.d/freetype2.sh` que incluye una breve documentación. Los valores posibles son `truetype:interpreter-version=35` (modo clásico, emula Windows 98; 2.6 por defecto), `truetype:interpreter-version=38` (modo subpixel "ifinito"), `truetype:interpreter-version=40` (modo subpixel minimo; 2.7 por defecto). La renderización subpixel debe utilizar al BCI subpixel. Para más detalles, vea [[1]](https://www.freetype.org/freetype2/docs/subpixel-hinting.html).
 
-#### Autohinter
+#### Auto-optimizado
 
-The autohinter attempts to do automatic hinting and disregards any existing hinting information. Originally it was the default because TrueType2 fonts were patent-protected but now that these patents have expired there is very little reason to use it. It does work better with fonts that have broken or no hinting information but it will be strongly sub-optimal for fonts with good hinting information. Generally common fonts are of the later kind so autohinter will not be useful. Autohinter is **disabled** by default. To enable it:
+El auto-optimizado intenta optimizar automáticamente y obvia toda la información de optimización. Originalmente era la que estaba por defecto porque las fuentes TrueType2 estaban patentadas pero ahora esas patentes expiraron y esa es la pequeña razón para utilizarla. Funciona mejor con fuentes que no tienen información de optimización o que dicha información este defectuosa, pero sobre-optimiza fuentes con una información de optimización válida. Generalmente las fuentes son del último tipo y auto-optimizado no es útil. El auto-optimizado está *desactivado* por defecto. Para activarlo:
 
 ```
   <match target="font">
@@ -188,11 +188,11 @@ The autohinter attempts to do automatic hinting and disregards any existing hint
 
 ```
 
-#### Hintstyle
+#### Estilo de optimización
 
-Hintstyle is the amount of font reshaping done to line up to the grid. Hinting values are: `hintnone`, `hintslight`, `hintmedium`, and `hintfull`. `hintslight` will make the font more fuzzy to line up to the grid but will be better in retaining font shape (see [[2]](https://www.freetype.org/freetype2/docs/text-rendering-general.html)), while `hintfull` will be a crisp font that aligns well to the pixel grid but will lose a greater amount of font shape. `hintslight` implicitly uses the autohinter in a vertical-only mode in favor of font-native information for non-CFF (*.otf*) fonts.
+El estilo de optimizado (hintstyle) es la cantidad de remodelado de fuentes que se utiliza para alinearla a la cuadricula. Los valores de optimización son: `hintnone`, `hintslight`, `hintmedium`, y `hintfull`. `hintslight` hará la fuente más borrosa para alinearla a la cuadrícula pero con una mejor conservación de la forma de la fuente (vea [[2]](https://www.freetype.org/freetype2/docs/text-rendering-general.html)), mientras `hintfull` la hará más nítida para que se alinee bien a la cuadrícula pero se pierde bastante la forma de la fuente. `hintslight` usa solo el auto-optimizado en un modo vertical a favor de la información nativa de las fuentes no-CFF (*.otf*).
 
-`hintslight` is the default setting. To change it:
+`hintslight` es la configuración por defecto. Para cambiarla:
 
 ```
   <match target="font">
@@ -203,11 +203,11 @@ Hintstyle is the amount of font reshaping done to line up to the grid. Hinting v
 
 ```
 
-**Note:** Some applications, like [GNOME](/index.php/GNOME "GNOME") may [override default hinting settings.](#Troubleshooting)
+**Nota:** Algunas aplicaciones, como [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)") puede [sobrescribir los ajustes de optimización por defecto.](#Solución_de_problemas)
 
-### Pixel alignment
+### Alineamiento de píxeles
 
-Most monitors manufactured today use the Red, Green, Blue (RGB) specification. Fontconfig will need to know your monitor type to be able to display your fonts correctly. Monitors are either: **RGB** (most common), **BGR**, **V-RGB** (vertical), or **V-BGR**. A monitor test can be found [here](http://www.lagom.nl/lcd-test/subpixel.php).
+Muchos monitores fabricados hoy en día utilizan las especificaciones rojo, verde, azul (RGB, red, green, blue). Fontconfig necesita conocer su tipo de monitor para poder mostrar las fuentes correctamente. Los monitores son: **RGB** (más común), **BGR**, **V-RGB** (vertical), or **V-BGR**. Un test del monitor se puede encontrar [aquí](http://www.lagom.nl/lcd-test/subpixel.php).
 
 ```
   <match target="font">
@@ -218,7 +218,7 @@ Most monitors manufactured today use the Red, Green, Blue (RGB) specification. F
 
 ```
 
-**Note:** Without subpixel rendering (see below), freetype will only care about the alignment (vertical or horizontal) of the subpixels. There is no difference between **RGB** and **BGR**, for example.
+**Nota:** sin renderización subpixel (vea abajo), freetype solo se ocupará sobre la alineación (vertical o horizontal) de los subpíxeles. Por ejemplo, no diferencia entre **RGB** y **BGR**.
 
 ### Subpixel rendering
 

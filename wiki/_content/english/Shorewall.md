@@ -4,18 +4,24 @@ You describe your firewall/gateway requirements using entries in a set of config
 
 Shorewall can be used on a dedicated firewall system, a multi-function gateway/router/server or on a standalone GNU/Linux system. Shorewall does not use Netfilter's ipchains compatibility mode and can thus take advantage of Netfilter's connection state tracking capabilities.
 
+[Shorewall development ended on February 21st, 2019.](https://sourceforge.net/p/shorewall/mailman/message/36589783/)
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 /etc/shorewall/interfaces](#.2Fetc.2Fshorewall.2Finterfaces)
-    *   [2.2 /etc/shorewall/policy](#.2Fetc.2Fshorewall.2Fpolicy)
-    *   [2.3 /etc/shorewall/rules](#.2Fetc.2Fshorewall.2Frules)
-    *   [2.4 /etc/shorewall/masq](#.2Fetc.2Fshorewall.2Fmasq)
+    *   [2.1 /etc/shorewall/interfaces](#/etc/shorewall/interfaces)
+    *   [2.2 /etc/shorewall/policy](#/etc/shorewall/policy)
+    *   [2.3 /etc/shorewall/rules](#/etc/shorewall/rules)
+    *   [2.4 /etc/shorewall/masq](#/etc/shorewall/masq)
         *   [2.4.1 SSH](#SSH)
-        *   [2.4.2 Port forwarding (DNAT)](#Port_forwarding_.28DNAT.29)
-    *   [2.5 /etc/shorewall/stoppedrules](#.2Fetc.2Fshorewall.2Fstoppedrules)
-    *   [2.6 /etc/shorewall/shorewall.conf](#.2Fetc.2Fshorewall.2Fshorewall.conf)
+        *   [2.4.2 Port forwarding (DNAT)](#Port_forwarding_(DNAT))
+    *   [2.5 /etc/shorewall/stoppedrules](#/etc/shorewall/stoppedrules)
+    *   [2.6 /etc/shorewall/shorewall.conf](#/etc/shorewall/shorewall.conf)
 *   [3 Start](#Start)
 *   [4 Traffic shaping](#Traffic_shaping)
 

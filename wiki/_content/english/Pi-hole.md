@@ -34,7 +34,7 @@ Related articles
 *   [3 Pi-hole standalone](#Pi-hole_standalone)
     *   [3.1 Installation](#Installation_2)
     *   [3.2 Configuration](#Configuration_2)
-        *   [3.2.1 Dnsmasq](#Dnsmasq)
+        *   [3.2.1 FTL](#FTL_2)
         *   [3.2.2 Configuring host name resolution](#Configuring_host_name_resolution)
             *   [3.2.2.1 Manually](#Manually)
             *   [3.2.2.2 Openresolve](#Openresolve)
@@ -47,6 +47,7 @@ Related articles
     *   [5.2 Use with VPN server](#Use_with_VPN_server)
         *   [5.2.1 OpenVPN](#OpenVPN)
         *   [5.2.2 WireGuard](#WireGuard)
+    *   [5.3 Additional blocklists](#Additional_blocklists)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Data loss on reboot](#Data_loss_on_reboot)
 *   [7 See also](#See_also)
@@ -212,7 +213,9 @@ The Arch Linux Pi-hole Standalone variant is born from the need to use Pi-hole s
 
 ### Configuration
 
-#### Dnsmasq
+#### FTL
+
+Pi-hole-standalone now uses FTL as hostnames resolver. Since Pi-hole 4.0, a private fork of dnsmasq is integrated in the FTL sub-project. The original [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) package is now conflicting with [pi-hole-ftl](https://aur.archlinux.org/packages/pi-hole-ftl/) and will be uninstalled when upgrading from a previous version. It's still possible to use the previous dnsmasq config files.
 
 Ensure that the following line in `/etc/dnsmasq.conf` is uncommented:
 
@@ -221,7 +224,9 @@ conf-dir=/etc/dnsmasq.d/,*.conf
 
 ```
 
-[Enable](/index.php/Enable "Enable") `dnsmasq.service` and re/start it.
+If you do not have `/etc/dnsmasq.conf` file at all, you can use the example conf file within the package (`/usr/share/pihole/configs/dnsmasq.example.conf`) that will work out of box.
+
+`pihole-FTL.service` is statically enabled; re/start it.
 
 #### Configuring host name resolution
 
@@ -350,6 +355,20 @@ DNS = *Pi-Hole-IP*
 ```
 
 See more information in [WireGuard#Client_config](/index.php/WireGuard#Client_config "WireGuard").
+
+### Additional blocklists
+
+Pi-Hole was intended to block ads, but it can also be used to block other unwanted content:
+
+1.  Tracking domains
+2.  Malware domains
+3.  Piracy sites
+4.  Fake news sites
+5.  Phishing sites
+
+**Note:** Pi-Hole blocklists must contain **domains**. Some blocklists might contain IP addresses of 127.0.0.1 and domain combination - this format is accepted by Pi-Hole.
+
+There are many websites providing these blocklists, like [this](https://hosts-file.net/?s=Download) or [this](https://firebog.net/).
 
 ## Troubleshooting
 

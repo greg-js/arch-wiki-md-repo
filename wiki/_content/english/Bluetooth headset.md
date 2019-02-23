@@ -48,7 +48,7 @@ Currently, Arch Linux supports the A2DP profile (Audio Sink) for remote audio pl
             *   [4.2.1.1 ALSA /etc/asound.conf](#ALSA_/etc/asound.conf)
             *   [4.2.1.2 /etc/dbus-1/system.d/bluetooth.conf](#/etc/dbus-1/system.d/bluetooth.conf)
             *   [4.2.1.3 Tested applications](#Tested_applications)
-*   [5 Switch between HSV and A2DP setting](#Switch_between_HSV_and_A2DP_setting)
+*   [5 Switch between HSP/HFP and A2DP setting](#Switch_between_HSP/HFP_and_A2DP_setting)
     *   [5.1 A2DP not working with PulseAudio](#A2DP_not_working_with_PulseAudio)
         *   [5.1.1 Socket interface problem](#Socket_interface_problem)
         *   [5.1.2 A2DP sink profile is unavailable](#A2DP_sink_profile_is_unavailable)
@@ -766,7 +766,7 @@ The settings here seem to be enabled for root only. See the policy user="root" s
 
 As noted above this will work easily with audacious. YouTube videos with Chromium and Flash Player will work on some videos. If the video has ads it will not work, but if the video does not have ads it will work. Just make sure that after audacious is working with Bluetooth headset, start Chromium, and navigate to YouTube. Find a video without leading ads, and it should play the audio. If the settings icon has the a menu with two drop-down combo boxes for Speed and Quality it will play.
 
-## Switch between HSV and A2DP setting
+## Switch between HSP/HFP and A2DP setting
 
 This can easily be achieved by the following command where the `*card_number*` can be obtained by running `pacmd list-cards`.
 
@@ -774,6 +774,8 @@ This can easily be achieved by the following command where the `*card_number*` c
 $ pacmd set-card-profile *card_number* a2dp_sink
 
 ```
+
+This can also be automatically selected by appending `auto_switch=2` to `load-module module-bluetooth-policy` in `/etc/pulse/default.pa`.
 
 For more information about PulseAudio profiles, see [PulseAudio Documentation](https://freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Bluetooth/#index1h2).
 

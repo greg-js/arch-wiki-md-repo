@@ -332,7 +332,7 @@ Once this is done, `systemctl --user enable` `tmux.service`, `multiplexer.target
 
 ### Window manager
 
-To run a window manager as a systemd service, you first need to run [#Xorg as a systemd user service](#Xorg_as_a_systemd_user_service). In the following we will use awesome as an example:
+To run a window manager as a systemd service, you first need to run [#Xorg as a systemd user service](#Xorg_as_a_systemd_user_service). In the following we will use [awesome](/index.php/Awesome "Awesome") as an example:
 
  `~/.config/systemd/user/awesome.service` 
 ```

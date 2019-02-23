@@ -78,4 +78,4 @@ You could configure your nginx with a **/etc/nginx/servers-enabled/some-file.con
 
 ### Others
 
-See [[2]](https://github.com/Nephos/transfer_more#usage) to get the last version of the documentation. See [[3]](https://kemalcr.com/guide/) to understand how the web framework behind transfer-more works.
+See [[2]](https://git.sceptique.eu/Sceptique/transfer_more#usage) to get the last version of the documentation. See [[3]](https://kemalcr.com/guide/) to understand how the web framework behind transfer-more works.

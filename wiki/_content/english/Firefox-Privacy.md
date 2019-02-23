@@ -115,7 +115,7 @@ Firefox 60 introduced a feature called [Trusted Recursive Resolver](https://wiki
 
 *   If you trust DNS servers you've configured yourself more than Cloudflare's, you can disable TRR in `about:config` by setting `network.trr.mode` (integer, create it it it doesn't exist) to `5`. (A value of 0 means disabled by default, and might be overridden by future updates - a value of 5 is disabled by choice and will not be overridden.)
 *   If you trust Cloudflare DNS servers and would prefer extra privacy (thanks to encrypted DNS requests), you can enforce TRR by setting `network.trr.mode` to `3` (which completely disables classic DNS requests) or `2` (uses TRR by default, falls back to classic DNS requests if that fails). Keep in mind that if you're using any intranet websites or trying to access computers in your local networks by their hostnames, enabling TRR may break name resolving in such cases.
-*   If you want to encrypt your DNS requests but not use Cloudflare servers, you can point to a new DNS over HTTPS server by setting `network.trr.uri` to your resolver URL. A list of currently available resolvers can be found [here](https://gist.github.com/bagder/5e29101079e9ac78920ba2fc718aceec), along with other configuration options for TRR.
+*   If you want to encrypt your DNS requests but not use Cloudflare servers, you can point to a new DNS over HTTPS server by setting `network.trr.uri` to your resolver URL. A list of currently available resolvers can be found [here](https://github.com/curl/curl/wiki/DNS-over-HTTPS#publicly-available-servers), along with other configuration options for TRR.
 
 ### Disable geolocation
 

@@ -264,3 +264,5 @@ Since the distccd-alarm-arm* services use the `nobody` user, `/usr/bin/distccmon
 ## See also
 
 *   [https://github.com/distcc/distcc](https://github.com/distcc/distcc)
+
+*   [icecream](https://aur.archlinux.org/packages/icecream/) - An easier to configure fork of distcc that some find brings notably better results and improved utilisation of available cores.

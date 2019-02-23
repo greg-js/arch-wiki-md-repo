@@ -459,10 +459,10 @@ Download the [gdisk EFI application](/index.php/Gdisk#gdisk_EFI_application "Gdi
 
 Install and setup [fwupd](/index.php/Fwupd "Fwupd").
 
-Copy the `fwupx64.efi` binary and firmware files to `*esp*/EFI/tools/`:
+Copy the `fwupx64.efi` binary and firmware file to `*esp*/EFI/tools/`:
 
 ```
-# cp -r /usr/lib/fwupdate/EFI/arch/* *esp*/EFI/tools/
+# cp /usr/lib/fwupd/efi/fwupdx64.efi *esp*/EFI/tools/
 
 ```
 

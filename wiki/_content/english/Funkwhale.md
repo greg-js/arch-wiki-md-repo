@@ -33,9 +33,10 @@ Instances can be federated with the ActivityPub protocol.
 *   [3 Initialization](#Initialization)
     *   [3.1 Setup](#Setup)
     *   [3.2 Database setup](#Database_setup)
-*   [4 Usage](#Usage)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Proxy logs](#Proxy_logs)
+*   [4 Version upgrade](#Version_upgrade)
+*   [5 Usage](#Usage)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 Proxy logs](#Proxy_logs)
 
 ## Installation
 
@@ -65,7 +66,7 @@ It also assume that you are using Funkwhale on a local network. See the official
 
 ### Host config
 
-Make sure your `/etc/hosts` file is setup correctly. The Funkwhale server is running on `127.0.0.2` with alias `funkwhale.local`, not to conflict with existing web applications already configured on `127.0.0.1`, but this can be changed.
+Make sure your `/etc/hosts` file is setup correctly. The Funkwhale server is running on `127.0.0.1` with alias `funkwhale.local`, but this can be changed.
 
 Your `/etc/hosts` file should look something like the following,
 
@@ -73,7 +74,7 @@ Your `/etc/hosts` file should look something like the following,
 #<ip-address>   <hostname.domain.org>   <hostname>
 127.0.0.1       localhost
 ::1             localhost
-127.0.0.2       funkwhale.local
+127.0.0.1       funkwhale.local
 ```
 
 ### Configure nginx
@@ -140,15 +141,6 @@ $ useradd -r -d /srv/funkwhale -m funkwhale -c "Funkwhale music server -s /sbin/
 
 ```
 
-To work, Funkwhale needs several environment variables to be present, these should be defined in the environment file `/etc/webapps/funkwhale/config/.env`. There is a template at `/etc/webapps/funkwhale/env.template`, copy it and modify it to fit your installation.
-
-```
-$ cp /etc/webapps/funkwhale/env.template /etc/webapps/funkwhale/config/.env
-
-```
-
-The `FUNKWHALE_HOSTNAME` variable should correspond to the hostname in `/etc/hosts`. `DJANGO_ALLOWED_HOSTS` needs also to match the address where the funkwhale instance will be reached. You should generate a unique `DJANGO_SECRET_KEY` and change the paths accordingly to your installation.
-
 Next, the folder where Funkwhale will store the users data should be created in `/srv/funkwhale`. It should be owned by the `funkwhale` user,
 
 ```
@@ -157,17 +149,28 @@ $ chown funkwhale:funkwhale /srv/funkwhale
 
 ```
 
-The next commands should be run as the `funkwhale` user. Create sub-folders,
+To work, Funkwhale needs several environment variables to be present, these should be defined in the environment file `/srv/funkwhale/config/env`. There is a template at `/etc/webapps/funkwhale/env.template`, copy it and modify it to fit your installation.
+
+```
+$ mkdir /srv/funkwhale/config
+$ cp /etc/webapps/funkwhale/env.template /srv/funkwhale/config/env
+$ chown -R funkwhale:funkwhale /srv/funkwhale/config
+
+```
+
+The `FUNKWHALE_HOSTNAME` variable should correspond to the hostname in `/etc/hosts`. `DJANGO_ALLOWED_HOSTS` needs also to match the address where the funkwhale instance will be reached. You should generate a unique `DJANGO_SECRET_KEY` and change the paths accordingly to your installation.
+
+The next commands should be run as the `funkwhale` user. Create sub-folders for api files and to store the music,
 
  `$ sudo -u funkwhale -H bash` 
 ```
 [funkwhale]$ cd /srv/funkwhale
-[funkwhale]$ mkdir -p data/static data/media data/music
+[funkwhale]$ mkdir -p api data/static data/media data/music
 ```
 
 **Tip:** As you will need to run several commands as the `funkwhale` user with the environment variables loaded, you can use the following command-line after logging in:
 
-`[funkwhale]$ export $(cat /etc/webapps/funkwhale/config/.env`
+`[funkwhale]$ export $(cat /srv/funkwhale/config/env`
 
 For convenience, you can copy this line to /srv/funkwhale/.bashrc (or whichever shell you are using), so it is loaded automatically everytime you log in.
 
@@ -190,6 +193,28 @@ You also need to collect the static files for the webapp,
 [funkwhale]$ python /usr/share/webapps/funkwhale/api/manage.py collectstatic
 
 ```
+
+## Version upgrade
+
+All the command should be entered as `funkwhale` user. [Stop](/index.php/Stop "Stop") the `funkwhale.service` before upgrading.
+
+The static files have to be collected again,
+
+```
+[funkwhale]$ python /usr/share/webapps/funkwhale/api/manage.py collectstatic --no-input
+
+```
+
+Then apply database migrations,
+
+```
+[funkwhale]$ python /usr/share/webapps/funkwhale/api/manage.py migrate
+
+```
+
+The `funkwhale.service` can be [started](/index.php/Started "Started") again.
+
+**Note:** All the instructions for upgrading are given on the official documentation [[6]](https://docs.funkwhale.audio/upgrading/index.html).
 
 ## Usage
 

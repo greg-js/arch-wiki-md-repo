@@ -32,6 +32,7 @@ Related articles
         *   [5.3.1 Use a skin](#Use_a_skin)
         *   [5.3.2 Live patching](#Live_patching)
     *   [5.4 In-home streaming](#In-home_streaming)
+        *   [5.4.1 Different subnets](#Different_subnets)
     *   [5.5 Steam Controller](#Steam_Controller)
 *   [6 Troubleshooting](#Troubleshooting)
 *   [7 See also](#See_also)
@@ -197,6 +198,24 @@ And the [#Launch options](#Launch_options) should be something like:
 Steam has built-in support for [in-home streaming](http://store.steampowered.com/streaming/).
 
 See [this Steam Community guide](https://steamcommunity.com/sharedfiles/filedetails/?id=680514371) on how to setup a headless in-home streaming server on Linux.
+
+#### Different subnets
+
+Steam client will not be able to detect host if both are on different subnets, which is common case when using VPN to your home network. Even if both client and server can ping each other - steam client would still not be able to detect host, so you need to force it. To do it, start Steam with below command:
+
+```
+$ steam -console
+
+```
+
+Wait until Steam starts. Once it loaded, you will find extra tab named "Console". Open it and then paste below command with correct host IP address:
+
+```
+connect_remote <host_ip>:27036
+
+```
+
+You will see notification that you can now stream games from host machine.
 
 ### Steam Controller
 

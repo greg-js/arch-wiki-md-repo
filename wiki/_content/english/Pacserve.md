@@ -1,6 +1,10 @@
 [Pacserve](http://xyne.archlinux.ca/projects/pacserve/) allows to easily share pacman packages between computers. This is very useful if you have a slow internet connection and multiple machines running Arch Linux.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

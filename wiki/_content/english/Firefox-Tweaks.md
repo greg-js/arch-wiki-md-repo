@@ -142,6 +142,7 @@ An alternative approach is to use `about:config` settings:
 *   Set `browser.cache.disk.enable` to `false`
 *   Verify that `browser.cache.memory.enable` is set to `true`, more information about this option can be found in the [browser.cache.memory Mozilla article](http://kb.mozillazine.org/Browser.cache.memory.enable)
 *   Add the entry (*right click > new > integer*) `browser.cache.memory.capacity` and set it to the amount of KB you want to spare, or to `-1` for [automatic](http://kb.mozillazine.org/Browser.cache.memory.capacity#-1) cache size selection (skipping this step has the same effect as setting the value to `-1`)
+    *   The "automatic" size selection is based on a decade-old table that only contains settings for systems at or below 8GB of system memory. The following formula very closely approximates this table, and can be used to set the Firefox cache more dynamically: `41297 - (41606 / (1 + ((RAM / 1.16) ^ 0.75)))`, where `RAM` is in GB and the result is in KB.
 
 This method has some drawbacks:
 

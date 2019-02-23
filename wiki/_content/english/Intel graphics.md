@@ -110,7 +110,7 @@ Alternatively, check using:
 
 ```
 
-**Warning:** Using [GVT-g graphics virtualization](/index.php/Intel_GVT-g "Intel GVT-g") by setting `enable_gvt=1` is not supported as of linux 4.18.8 when GuC/HuC is also enabled. The i915 module would fail to initialize as shown in system journal. `$ journalctl` 
+**Warning:** Using [GVT-g graphics virtualization](/index.php/Intel_GVT-g "Intel GVT-g") by setting `enable_gvt=1` is not supported as of linux 4.20.11 when GuC/HuC is also enabled. The i915 module would fail to initialize as shown in system journal. `$ journalctl` 
 ```
 ... kernel: [drm:intel_gvt_init [i915]] *ERROR* i915 GVT-g loading failed due to Graphics virtualization is not yet supported with GuC submission
 ... kernel: i915 0000:00:02.0: [drm:i915_driver_load [i915]] Device initialization failed (-5)

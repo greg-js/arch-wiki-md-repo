@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [makepkg](/index.php/Makepkg "Makepkg"), revisada por última vez el **2019-2-13**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Makepkg&diff=0&oldid=566504) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [makepkg](/index.php/Makepkg "Makepkg"), revisada por última vez el **2019-2-21**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Makepkg&diff=0&oldid=566977) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -43,10 +43,11 @@ makepkg lo provee el paquete [pacman](https://www.archlinux.org/packages/?name=p
     *   [4.3 CFLAGS/CXXFLAGS/LDFLAGS en makepkg.conf no funcionan en los paquetes basados en QMAKE](#CFLAGS/CXXFLAGS/LDFLAGS_en_makepkg.conf_no_funcionan_en_los_paquetes_basados_en_QMAKE)
     *   [4.4 Especificar el directorio de instalación para los paquetes basados en QMAKE](#Especificar_el_directorio_de_instalación_para_los_paquetes_basados_en_QMAKE)
     *   [4.5 ADVERTENCIA: Paquetes que contienen referencias a $srcdir](#ADVERTENCIA:_Paquetes_que_contienen_referencias_a_$srcdir)
-    *   [4.6 Makepkg falla al descargar las dependencias a través de un proxy](#Makepkg_falla_al_descargar_las_dependencias_a_través_de_un_proxy)
-        *   [4.6.1 Habilitar proxy estableciendo su URL en XferCommand](#Habilitar_proxy_estableciendo_su_URL_en_XferCommand)
-        *   [4.6.2 Habilitar proxy via sudoer's env_keep](#Habilitar_proxy_via_sudoer's_env_keep)
-    *   [4.7 Makepkg falla, pero el make termina bien](#Makepkg_falla,_pero_el_make_termina_bien)
+    *   [4.6 ERROR: ¡Una o más firmas PGP no se pueden verificar!](#ERROR:_¡Una_o_más_firmas_PGP_no_se_pueden_verificar!)
+    *   [4.7 Makepkg falla al descargar las dependencias a través de un proxy](#Makepkg_falla_al_descargar_las_dependencias_a_través_de_un_proxy)
+        *   [4.7.1 Habilitar proxy estableciendo su URL en XferCommand](#Habilitar_proxy_estableciendo_su_URL_en_XferCommand)
+        *   [4.7.2 Habilitar proxy via sudoer's env_keep](#Habilitar_proxy_via_sudoer's_env_keep)
+    *   [4.8 Makepkg falla, pero el make termina bien](#Makepkg_falla,_pero_el_make_termina_bien)
 *   [5 Véase también](#Véase_también)
 
 ## Configuración
@@ -401,9 +402,15 @@ $ grep -R "$(pwd)/src" pkg/
 
 ```
 
+### ERROR: ¡Una o más firmas PGP no se pueden verificar!
+
+Probablemente no tenga la clave pública en su llavero (keyring) personal para verificar los archivos descargados. Si una o mas archivos .sig se descargan mientras el paquete se construye, [makepkg verificará automáticamente el correspondiente o los correspondientes archivos con la clave pública del firmante](#Verificación_de_firmas). Si no tiene la clave requerida en su keyring personal, *makepkg* fallará al hacer la verificación.
+
+La forma recomendada para solucionar el problema es importar la clave pública requerida, ya sea [manualmente](/index.php/GnuPG_(Espa%C3%B1ol)#Importar_una_clave "GnuPG (Español)") o [desde el servidor de claves](/index.php/GnuPG_(Espa%C3%B1ol)#Importar_una_clave "GnuPG (Español)"). Normalmente, puede encontrar la huella de la clave pública necesaria en la sección [validpgpkeys (en inglés)](/index.php/PKGBUILD#validpgpkeys "PKGBUILD") del [PKGBUILD (en inglés)](/index.php/PKGBUILD "PKGBUILD").
+
 ### Makepkg falla al descargar las dependencias a través de un proxy
 
-Cuando *makepkg* llama a las dependencias, llama a pacman para instalar los paquetes, que requieren permisos administrativos via *sudo*. De todas formas, *sudo* no pasa ninguna [variable de entorno](/index.php?title=Variable_de_entorno&action=edit&redlink=1 "Variable de entorno (page does not exist)") al entorno con privilegios, incluido las variables relacionadas con el proxy `ftp_proxy`, `http_proxy`, `https_proxy`, y `no_proxy`.
+Cuando *makepkg* llama a las dependencias, llama a pacman para instalar los paquetes, que requieren permisos administrativos via *sudo*. De todas formas, *sudo* no pasa ninguna [variable de entorno](/index.php/Environment_variables_(Espa%C3%B1ol) "Environment variables (Español)") al entorno con privilegios, incluido las variables relacionadas con el proxy `ftp_proxy`, `http_proxy`, `https_proxy`, y `no_proxy`.
 
 Para tener a *makepkg* trabajando a través de un proxy tiene que seguir uno de los dos métodos.
 

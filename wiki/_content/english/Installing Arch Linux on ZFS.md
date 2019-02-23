@@ -5,7 +5,11 @@ Related articles
 
 This article details the steps required to install Arch Linux onto a ZFS root filesystem.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Embedding archzfs into archiso](#Embedding_archzfs_into_archiso)
@@ -31,6 +35,8 @@ This article details the steps required to install Arch Linux onto a ZFS root fi
 ## Installation
 
 See [ZFS#Installation](/index.php/ZFS#Installation "ZFS") for installing the ZFS packages. If installing Arch Linux onto ZFS from the archiso, it would be easier to use the [archzfs](/index.php/Unofficial_user_repositories#archzfs "Unofficial user repositories") repository.
+
+There is also a interactive installer, [ALEZ](https://github.com/danboid/ALEZ), which provides an easy way to get a ZFS system up and running if you do not require much customization.
 
 ### Embedding archzfs into archiso
 

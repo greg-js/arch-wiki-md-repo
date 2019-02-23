@@ -26,8 +26,11 @@ In this guide, PXE is used to boot the installation media with an appropriate op
     *   [4.1 NFS](#NFS)
     *   [4.2 NBD](#NBD)
     *   [4.3 Existing PXE Server](#Existing_PXE_Server)
-    *   [4.4 DHCP interface rename bug](#DHCP_interface_rename_bug)
-    *   [4.5 Low memory systems](#Low_memory_systems)
+    *   [4.4 Low memory systems](#Low_memory_systems)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 DHCP interface rename bug](#DHCP_interface_rename_bug)
+    *   [5.2 VirtualBox cannot boot while real machine can](#VirtualBox_cannot_boot_while_real_machine_can)
+    *   [5.3 VirtualBox falls out to EFI shell](#VirtualBox_falls_out_to_EFI_shell)
 
 ## Preparation
 
@@ -85,7 +88,7 @@ tftp-root=/mnt/archiso
 
 ### HTTP
 
-Thanks to recent changes in [archiso](/index.php/Archiso "Archiso"), it is now possible to boot from HTTP (`archiso_pxe_http` initcpio hook) or NFS (`archiso_pxe_nfs` initcpio hook); among all alternatives, darkhttpd is by far the most trivial to setup (and the lightest-weight).
+Thanks to `archiso_pxe_http` initcpio hook and `archiso_pxe_nfs` initcpio hook in [archiso](/index.php/Archiso "Archiso"), it is possible to boot from HTTP or NFS. Among all alternatives, darkhttpd is by far the most trivial to setup (and the lightest-weight).
 
 First, [install](/index.php/Install "Install") the [darkhttpd](https://www.archlinux.org/packages/?name=darkhttpd) package.
 
@@ -221,10 +224,6 @@ LABEL 2
 
 You can replace `archiso_http_srv` with `archiso_nfs_srv` for NFS or `archiso_nbd_srv` for NBD. Adding the `ip=` instruction is necessary to instruct the kernel to bring up the network interface before it attempts to mount the installation medium over the network. See [README.bootparams](https://git.archlinux.org/archiso.git/plain/docs/README.bootparams) for available boot parameters.
 
-### DHCP interface rename bug
-
-[FS#36749](https://bugs.archlinux.org/task/36749) causes default [predictable network interface renaming](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames/) to fail and then dhcp client to fail because of it. A workaround is to add the kernel boot parameter `net.ifnames=0` to disable predictable interface names.
-
 ### Low memory systems
 
 The `copytoram` [initramfs](/index.php/Initramfs "Initramfs") option can be used to control whether the root filesystem should be copied to ram in its entirety in early-boot.
@@ -232,3 +231,32 @@ The `copytoram` [initramfs](/index.php/Initramfs "Initramfs") option can be used
 It highly recommended to leave this option alone, and should only be disabled if entirely necessary (systems with less than ~256MB physical memory). Append `copytoram=n` to your kernel line if you wish to do so.
 
 **Note:** As this requires loop-mounting squashfs from a mounted remote filesystem, `copytoram=n` and `[archiso_pxe_http](#HTTP)` are mutually exclusive.
+
+## Troubleshooting
+
+### DHCP interface rename bug
+
+[FS#36749](https://bugs.archlinux.org/task/36749) causes default [predictable network interface renaming](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames/) to fail and then dhcp client to fail because of it. A workaround is to add the kernel boot parameter `net.ifnames=0` to disable predictable interface names.
+
+### VirtualBox cannot boot while real machine can
+
+When using VirtualBox to test your configuration, virtual machine is stucked at
+
+```
+   Probing EDD (edd=off to disable)... ok
+
+```
+
+But pxe booting with real machine works fine. The problem may be because you have set several cpu cores to your client machine, and you set its type as Other and version as Unknown (64 bit). So VirtualBox does not know which paravirtualization interface to use by default. Adding loglevel=7 kernel parameter lets you see that machine was actually stuck at
+
+```
+   [    0.063697] smp: Bringing up secondary CPUs...
+   [    0.103768] x86: Booting SMP configuration:
+
+```
+
+To resolve this, either use one cpu core, or go to machine settings -> System -> Acceleration and set one of the following paravirtualization interface: Minimal, Hyper-V, KVM.
+
+### VirtualBox falls out to EFI shell
+
+Currently VirtualBox does not support PXE booting in UEFI mode. See [this](https://forums.virtualbox.org/viewtopic.php?f=9&t=84349). You can try qemu instead.

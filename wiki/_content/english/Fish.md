@@ -97,7 +97,7 @@ Also, depending on the terminal, you may be able to set fish as the default shel
 
 #### Use terminal multiplexer options
 
-To set fish as the shell started in tmux, put this into your `~/.tmux.conf`:
+To set fish as the shell started in [tmux](/index.php/Tmux "Tmux"), put this into your `~/.tmux.conf`:
 
 ```
 set-option -g default-shell "/usr/bin/fish"

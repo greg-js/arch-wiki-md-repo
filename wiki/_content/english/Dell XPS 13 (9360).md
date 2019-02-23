@@ -32,26 +32,28 @@ As of kernel 4.5, the Intel Kaby Lake architecture is supported.
 
 *   [1 Content Adaptive Brightness Control](#Content_Adaptive_Brightness_Control)
 *   [2 Power Saving](#Power_Saving)
-*   [3 NVM Express SSD Power Saving](#NVM_Express_SSD_Power_Saving)
-*   [4 Video](#Video)
-    *   [4.1 Module-based Powersaving Options](#Module-based_Powersaving_Options)
-    *   [4.2 Blank screen issue after booting](#Blank_screen_issue_after_booting)
-*   [5 Wireless](#Wireless)
-*   [6 Bluetooth](#Bluetooth)
-*   [7 Thunderbolt 3 / USB 3.1](#Thunderbolt_3_/_USB_3.1)
-    *   [7.1 Ethernet repeatedly disconnects/reconnects with Dell USB-C adapter (DA200)](#Ethernet_repeatedly_disconnects/reconnects_with_Dell_USB-C_adapter_(DA200))
-    *   [7.2 USB-C Compatibility Chart](#USB-C_Compatibility_Chart)
-    *   [7.3 Thunderbolt Firmware updates](#Thunderbolt_Firmware_updates)
-*   [8 SATA controller](#SATA_controller)
-*   [9 Touchpad](#Touchpad)
-    *   [9.1 Remove psmouse errors from dmesg](#Remove_psmouse_errors_from_dmesg)
-*   [10 Touchscreen](#Touchscreen)
-    *   [10.1 Gestures](#Gestures)
-    *   [10.2 Scrolling in Firefox](#Scrolling_in_Firefox)
-*   [11 Keyboard Backlight](#Keyboard_Backlight)
-*   [12 Hidden Keyboard Keys](#Hidden_Keyboard_Keys)
-    *   [12.1 Unobtrusive mode](#Unobtrusive_mode)
-*   [13 Firmware Updates](#Firmware_Updates)
+    *   [2.1 Disabling SD-Card reader](#Disabling_SD-Card_reader)
+    *   [2.2 CPU Undervolting](#CPU_Undervolting)
+    *   [2.3 NVM Express SSD](#NVM_Express_SSD)
+    *   [2.4 Graphics adapter](#Graphics_adapter)
+*   [3 Video](#Video)
+*   [4 Wireless](#Wireless)
+*   [5 Bluetooth](#Bluetooth)
+*   [6 Thunderbolt 3 / USB 3.1](#Thunderbolt_3_/_USB_3.1)
+    *   [6.1 Ethernet repeatedly disconnects/reconnects with Dell USB-C adapter (DA200)](#Ethernet_repeatedly_disconnects/reconnects_with_Dell_USB-C_adapter_(DA200))
+    *   [6.2 USB-C Compatibility Chart](#USB-C_Compatibility_Chart)
+    *   [6.3 Thunderbolt Firmware updates](#Thunderbolt_Firmware_updates)
+*   [7 SATA controller](#SATA_controller)
+*   [8 Touchpad](#Touchpad)
+    *   [8.1 Remove psmouse errors from dmesg](#Remove_psmouse_errors_from_dmesg)
+*   [9 Touchscreen](#Touchscreen)
+    *   [9.1 Gestures](#Gestures)
+    *   [9.2 Scrolling in Firefox](#Scrolling_in_Firefox)
+*   [10 Keyboard Backlight](#Keyboard_Backlight)
+*   [11 Hidden Keyboard Keys](#Hidden_Keyboard_Keys)
+    *   [11.1 Unobtrusive mode](#Unobtrusive_mode)
+*   [12 Firmware Updates](#Firmware_Updates)
+*   [13 Sleep to idle (s2idle, S0ix)](#Sleep_to_idle_(s2idle,_S0ix))
 *   [14 Troubleshooting](#Troubleshooting)
     *   [14.1 EFISTUB does not boot](#EFISTUB_does_not_boot)
     *   [14.2 Not waking from suspend](#Not_waking_from_suspend)
@@ -61,6 +63,7 @@ As of kernel 4.5, the Intel Kaby Lake architecture is supported.
     *   [14.6 Coil Whine](#Coil_Whine)
     *   [14.7 Freezing after waking from suspend](#Freezing_after_waking_from_suspend)
     *   [14.8 Continuous hissing sound with headphones](#Continuous_hissing_sound_with_headphones)
+    *   [14.9 Blank screen issue after booting](#Blank_screen_issue_after_booting)
 *   [15 Fingerprint sensor](#Fingerprint_sensor)
 *   [16 See Also](#See_Also)
 
@@ -83,13 +86,22 @@ To test if your XPS 13 is affected by the CABC, go to this [test page](http://ty
 
 It's possible to save around ~10/20% energy with somes tricks.
 
-First, we can disable SD-Card adapter in bios settings (-0.5W~)
+### Disabling SD-Card reader
 
-Then, it's possible to undervolt CPU and GPU with [intel-undervolt](/index.php/Undervolting_CPU#intel-undervolt "Undervolting CPU")
+The SD-Card adapter can be disabled in BIOS settings to save ~0.5W.
+
+### CPU Undervolting
+
+It's possible to undervolt CPU and GPU with [intel-undervolt](/index.php/Undervolting_CPU#intel-undervolt "Undervolting CPU")
 
 This is an example of best stable values for a I5-7200u (depend of your cpu):
 
-CPU (0): -160.16 mV GPU (1): -125.00 mV CPU Cache (2): -89.84 mV
+```
+CPU (0): -160.16 mV
+GPU (1): -125.00 mV
+CPU Cache (2): -89.84 mV
+
+```
 
 Edit the config file
 
@@ -123,7 +135,7 @@ $ systemctl start intel-undervolt
 
 ```
 
-## NVM Express SSD Power Saving
+### NVM Express SSD
 
 For some devices it might be necessary to set a higher value for the `nvme_core.default_ps_max_latency_us` parameter to enable all power saving states. This parameter has to be set on the [kernel command line](/index.php/Kernel_command_line "Kernel command line").
 
@@ -159,15 +171,7 @@ Idle Transition Power State   (ITPS): 4
 
 If the power states are enabled there should be values for ITPT and ITPS in the first entries. Also the ITPS-value of the last filled entry should be the highest power saving-state of the SSD (which can be viewed using `smartctl -a /dev/nvme0` or `nvme id-ctrl /dev/nvme0`).
 
-## Video
-
-The video should work with the `i915` driver of the current [linux](https://www.archlinux.org/packages/?name=linux) kernel. Consult [Intel graphics](/index.php/Intel_graphics "Intel graphics") for a detailed installation and configuration guide as well as for [Intel graphics#Troubleshooting](/index.php/Intel_graphics#Troubleshooting "Intel graphics").
-
-If you have the QHD+ (3200x1800) model, also check out [HiDPI](/index.php/HiDPI "HiDPI") for UI scaling configurations.
-
-*But there might be video issues left for this model. **Please help by contributing any feedback** about similar issues you might have experience(d) to this bugreport ([https://bugs.freedesktop.org/show_bug.cgi?id=100671](https://bugs.freedesktop.org/show_bug.cgi?id=100671)).*
-
-### Module-based Powersaving Options
+### Graphics adapter
 
 For the HD 620 graphics card the following modules are working: (see [Intel graphics#Module-based options](/index.php/Intel_graphics#Module-based_options "Intel graphics"))
 
@@ -201,9 +205,13 @@ NOT WORKING: semaphores=1
 
 The semaphore option is NOT working for kaby lake CPUs and won't enable even if you set the option to 1.
 
-### Blank screen issue after booting
+## Video
 
-If using "late start" [KMS](/index.php/KMS "KMS") (the default) and the screen goes blank when loading modules, it may help to add `i915` and `intel_agp` to the initramfs or using a special [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"). Consult [Intel graphics#Blank screen during boot, when "Loading modules"](/index.php/Intel_graphics#Blank_screen_during_boot,_when_"Loading_modules" "Intel graphics") for more information about the kernel parameter way and have a look at [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting") for a guide on how to setup the modules for the initramfs.
+The video should work with the `i915` driver of the current [linux](https://www.archlinux.org/packages/?name=linux) kernel. Consult [Intel graphics](/index.php/Intel_graphics "Intel graphics") for a detailed installation and configuration guide as well as for [Intel graphics#Troubleshooting](/index.php/Intel_graphics#Troubleshooting "Intel graphics").
+
+If you have the QHD+ (3200x1800) model, also check out [HiDPI](/index.php/HiDPI "HiDPI") for UI scaling configurations.
+
+*But there might be video issues left for this model. **Please help by contributing any feedback** about similar issues you might have experience(d) to this bugreport ([https://bugs.freedesktop.org/show_bug.cgi?id=100671](https://bugs.freedesktop.org/show_bug.cgi?id=100671)).*
 
 ## Wireless
 
@@ -249,7 +257,7 @@ ath10k_pci 0000:3a:00.0: firmware ver RM.4.4.1.c1-00042-QCARMSWP-1 api 6 feature
 
 ```
 
-The latest bios update (2.9.0), which also contains important microcode security updates, manages to make these crashes occur no matter what firmware you load. Installing an [alternative intel wifi card](https://www.amazon.com/Intel-Dual-Band-Wireless-Ac-8265/dp/B01MZA1AB2) solves the problem.
+The latest BIOS update (2.9.0), which also contains important microcode security updates, manages to make these crashes occur no matter what firmware you load. Installing an [alternative intel wifi card](https://www.amazon.com/Intel-Dual-Band-Wireless-Ac-8265/dp/B01MZA1AB2) solves the problem.
 
 ## Bluetooth
 
@@ -409,6 +417,33 @@ Dell provides firmware updates via [fwupd](/index.php/Fwupd "Fwupd"). Please not
 
 Alternatively, the BIOS update can be downloaded from the [Dell website](https://www.dell.com/support/home/us/en/19/product-support/product/xps-13-9360-laptop/drivers) (filter by "BIOS") and placed in a location accessible to the firmware. This could be the '/boot' folder, or a FAT32 formatted USB stick. Then restart your laptop and hit F12 while starting. In the boot menu choose firmware update and select the downloaded file.
 
+## Sleep to idle (s2idle, S0ix)
+
+According to the method described in an [Intel article](https://01.org/blogs/qwang59/2018/how-achieve-s0ix-states-linux), this device supports Low Power S0 Idle (S0ix).
+
+To try S0ix, write `freeze` to `/sys/power/state` (see [Power_management/Suspend_and_hibernate](/index.php/Power_management/Suspend_and_hibernate "Power management/Suspend and hibernate")). The system should behave like it is sleeping, except the power button light is on. Press power button to wake up.
+
+S0ix can be used as an alternative to "Sleep to RAM", by changing the following systemd configuration:
+
+ `/etc/systemd/sleep.conf` 
+```
+[Sleep]
+SuspendState=freeze mem standby
+
+```
+
+You may need to prevent the xHCI controller from waking up the system. Write `XHC` to `/proc/acpi/wakeup`, or write `disabled` to `/sys/devices/pci0000:00/0000:00:14.0/power/wakeup`. Different models may have different PCI ID for the xHCI controller, see the 4th column of `grep XHC /proc/acpi/wakeup`.
+
+To make the change permanent, put a file to `/etc/tmpfiles.d`:
+
+ `/etc/tmpfiles.d/disable-xhci-wakeup.conf` 
+```
+w /sys/devices/pci0000:00/0000:00:14.0/power/wakeup - - - - disabled
+
+```
+
+If you want to enable waking up by key press, see [Dell_XPS_13_2-in-1_(9365)#Suspend_issues](/index.php/Dell_XPS_13_2-in-1_(9365)#Suspend_issues "Dell XPS 13 2-in-1 (9365)").
+
 ## Troubleshooting
 
 ### EFISTUB does not boot
@@ -482,6 +517,10 @@ volume = 1
 
 ```
 
+### Blank screen issue after booting
+
+If using "late start" [KMS](/index.php/KMS "KMS") (the default) and the screen goes blank when loading modules, it may help to add `i915` and `intel_agp` to the initramfs or using a special [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"). Consult [Intel graphics#Blank screen during boot, when "Loading modules"](/index.php/Intel_graphics#Blank_screen_during_boot,_when_"Loading_modules" "Intel graphics") for more information about the kernel parameter way and have a look at [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting") for a guide on how to setup the modules for the initramfs.
+
 ## Fingerprint sensor
 
 Dell officially does not support fingerprint reader functionality [[4]](http://en.community.dell.com/techcenter/os-applications/f/4613/t/20006668), however an effort on reverse engineering the protocol of Validity 138a:0090, 138a:0094, 138a:0097 fingerprint readers can be found at github [[5]](https://github.com/nmikhailov/Validity90).
@@ -490,3 +529,5 @@ Dell officially does not support fingerprint reader functionality [[4]](http://e
 
 *   [Arch Forum thread for Dell XPS 13 (9360)](https://bbs.archlinux.org/viewtopic.php?id=217865)
 *   [Service Manual for Dell XPS 13 (9360)](http://topics-cdn.dell.com/pdf/xps-13-9360-laptop_service%20manual2_en-us.pdf)
+*   [How to achieve S0ix states in Linux*](https://01.org/blogs/qwang59/2018/how-achieve-s0ix-states-linux)
+*   [Best practice to debug Linux* suspend/hibernate issues](https://01.org/blogs/rzhang/2015/best-practice-debug-linux-suspend/hibernate-issues)

@@ -1,10 +1,14 @@
-Hybrid-graphics is a concept involving two graphics cards on same computer. The laptop manufacturers developed new technologies involving two graphic cards in an single computer, with different abilities and power consumptions. Hybrid-graphics is developed to support both high performance and power saving usages.
+Hybrid-graphics is a concept involving two graphics cards on same computer. Laptop manufacturers have developed new technologies involving two graphic cards with different abilities and power consumptions on a single computer. Hybrid-graphics has been developed to support both high performance and power saving use cases.
 
-There are a variety of technologies and each manufacturer developed its own solution to this problem. This technology is well supported on Windows but it's still quite experimental with Linux distributions. Here we try to explain a little about each approach and models and some community solutions to the lack of GNU/Linux systems support.
+There are a variety of technologies and each manufacturer developed its own solution to this problem. This technology is well supported on Windows but it's still quite experimental with Linux distributions. Here we try to explain a little about each approach and describe some community solutions to the lack of GNU/Linux systems support.
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
 
-*   [1 First Generation Hybrid Model (Basic Switching)](#First_Generation_Hybrid_Model_.28Basic_Switching.29)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 First Generation Hybrid Model (Basic Switching)](#First_Generation_Hybrid_Model_(Basic_Switching))
 *   [2 Dynamic Switching Model](#Dynamic_Switching_Model)
     *   [2.1 Fully Power Down Discrete GPU](#Fully_Power_Down_Discrete_GPU)
         *   [2.1.1 Using bbswitch](#Using_bbswitch)
@@ -14,7 +18,7 @@ There are a variety of technologies and each manufacturer developed its own solu
 
 **Note:** Unless your notebook is from the last decade, it’s most likely using [dynamic switching](#Dynamic_Switching_Model).
 
-The first generation of notebooks with hybrid graphics follow an approach that involves a two graphic card setup with a hardware multiplexer ([MUX](https://en.wikipedia.org/wiki/Multiplexer "wikipedia:Multiplexer")). It allows power save and low-end 3D rendering by using an Integrated Graphics Processor (IGP); or a major power consumption with 3D rendering performance using a Dedicated/Discrete Graphics Processor (DGP). This model makes the user choose (at boot time or at login time) within the two power/graphics profiles and is almost fixed through all the user session. The switch is done by a similar workflow:
+The first generation of notebooks with hybrid graphics follow an approach that involves a two graphic card setup with a hardware multiplexer ([MUX](https://en.wikipedia.org/wiki/Multiplexer "wikipedia:Multiplexer")). It allows power save and low-end 3D rendering by using an Integrated Graphics Processor (IGP) or a major power consumption with 3D rendering performance using a Dedicated/Discrete Graphics Processor (DGP). This model makes the user choose (at boot time or at login time) between the two power/graphics profiles and is almost fixed throughout the user session. The switch is done in a workflow similar to the following:
 
 *   Turn off the display
 *   Turn on the DGP
@@ -28,7 +32,7 @@ This switch is somewhat rough and adds some blinks and black screens in laptops 
 
 **Note:** This model is utilized by most manufacturers as of 2016.
 
-Most of the new Hybrid-graphics technologies involve two graphic cards as the [basic switching](#First_Generation_Hybrid_Model_.28Basic_Switching.29) but now the DGP and IGP are plugged to a framebuffer and there is no hardware multiplexer. The IGP is always on and the DGP is switched on/off when there is a need in power-save or performance-rendering. In most cases there is no way to use *only* the DGP and all the switching and rendering is controlled by software. At startup, the Linux kernel starts using a video mode and setting up low-level graphic drivers which will be used by the applications. Most of the Linux distributions then use X.org to create a graphical environment. Finally, a few other softwares are launched, first a login manager and then a window manager, and so on. This hierarchical system has been designed to be used in most of cases on a single graphic card.
+Most of the new Hybrid-graphics technologies involve two graphic cards as the [basic switching](#First_Generation_Hybrid_Model_(Basic_Switching)) but now the DGP and IGP are plugged to a framebuffer and there is no hardware multiplexer. The IGP is always on and the DGP is switched on/off when there is a need in power-save or performance-rendering. In most cases there is no way to use *only* the DGP and all the switching and rendering is controlled by software. At startup, the Linux kernel starts using a video mode and setting up low-level graphic drivers which will be used by the applications. Most of the Linux distributions then use X.org to create a graphical environment. Finally, a few other softwares are launched, first a login manager and then a window manager, and so on. This hierarchical system has been designed to be used in most of cases on a single graphic card.
 
 **Note:**
 Read [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus") and [Bumblebee](/index.php/Bumblebee "Bumblebee") for details about NVidia using hybrid graphics with NVidia’s proprietary driver.

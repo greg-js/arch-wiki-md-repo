@@ -73,7 +73,7 @@
  <small>4.3.1.1.</small> [Mail retrieval agents](/index.php/Category:Mail_retrieval_agents "Category:Mail retrieval agents") <small>(5) (also in [Commands](/index.php/Category:Commands "Category:Commands"))</small> |
  <small>4.3.2.</small> [Mail server](/index.php/Category:Mail_server "Category:Mail server") <small>(21) (also in [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
  <small>4.4.</small> [Firewalls](/index.php/Category:Firewalls "Category:Firewalls") <small>(13) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
- <small>4.5.</small> [Instant messaging](/index.php/Category:Instant_messaging "Category:Instant messaging") <small>(6) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
+ <small>4.5.</small> [Instant messaging](/index.php/Category:Instant_messaging "Category:Instant messaging") <small>(8) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
  <small>4.5.1.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat") <small>(15) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
  <small>4.5.2.</small> [XMPP](/index.php/Category:XMPP "Category:XMPP") <small>(5) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"), [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
  <small>4.6.</small> [Modems](/index.php/Category:Modems "Category:Modems") <small>(17) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |
@@ -152,7 +152,7 @@
  <small>5.1.10.5.1.</small> [Mail retrieval agents](/index.php/Category:Mail_retrieval_agents "Category:Mail retrieval agents") <small>(5) (also in [Commands](/index.php/Category:Commands "Category:Commands"))</small> |
  <small>5.1.10.6.</small> [File sharing](/index.php/Category:File_sharing "Category:File sharing") <small>(5) (also in [System administration](/index.php/Category:System_administration "Category:System administration"))</small> |
  <small>5.1.10.7.</small> [Groupware](/index.php/Category:Groupware "Category:Groupware") <small>(3)</small> |
- <small>5.1.10.8.</small> [Instant messaging](/index.php/Category:Instant_messaging "Category:Instant messaging") <small>(6) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
+ <small>5.1.10.8.</small> [Instant messaging](/index.php/Category:Instant_messaging "Category:Instant messaging") <small>(8) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
  <small>5.1.10.8.1.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat") <small>(15) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
  <small>5.1.10.8.2.</small> [XMPP](/index.php/Category:XMPP "Category:XMPP") <small>(5) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"), [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
  <small>5.1.10.9.</small> [News aggregators](/index.php/Category:News_aggregators "Category:News aggregators") <small>(3)</small> |

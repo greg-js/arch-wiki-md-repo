@@ -13,7 +13,7 @@
 *   [GNOME/Document viewer](/index.php/GNOME/Document_viewer "GNOME/Document viewer")
 *   [Официальные репозитории#gnome-unstable](/index.php/%D0%9E%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%B8#gnome-unstable "Официальные репозитории")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [GNOME](/index.php/GNOME "GNOME"). Дата последней синхронизации: 11 января 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=562506).
+**Состояние перевода:** На этой странице представлен перевод статьи [GNOME](/index.php/GNOME "GNOME"). Дата последней синхронизации: 21 февраля 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=567043).
 
 [GNOME](https://en.wikipedia.org/wiki/ru:GNOME "wikipedia:ru:GNOME") (произностися как /(ɡ)noʊm/) - это [окружение рабочего стола](/index.php/%D0%9E%D0%BA%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B3%D0%BE_%D1%81%D1%82%D0%BE%D0%BB%D0%B0 "Окружение рабочего стола"), которое стремится быть простым и легким в использовании. Оно разработано в рамках [Проекта GNOME](https://en.wikipedia.org/wiki/ru:%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_GNOME "wikipedia:ru:Проект GNOME") и состоит полностью из свободного и открытого программного обеспечения. Является частью [Проекта GNU](https://en.wikipedia.org/wiki/ru:%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_GNU "wikipedia:ru:Проект GNU"). По умолчанию использует [Wayland](/index.php/Wayland_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wayland (Русский)"), а не [Xorg](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)").
 
@@ -121,16 +121,18 @@ GNOME может быть запущен как графически, испол
 *   Пакет [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) все еще нужен даже для запуска тех приложений, которые не портированы на [Wayland](/index.php/Wayland_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wayland (Русский)").
 *   Wayland с проприетарным драйвером [NVIDIA](/index.php/NVIDIA "NVIDIA") на данный момент имеет плохую производительность: [FS#53284](https://bugs.archlinux.org/task/53284).
 
-Вручную можно запустить следующей командой: `XDG_SESSION_TYPE=wayland dbus-run-session gnome-session`.
+Вручную можно запустить следующей командой: `QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland dbus-run-session gnome-session`. QT_QPA_PLATFORM заставляет приложения, написанные на [Qt (Русский)](/index.php/Qt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Qt (Русский)"), например, [VLC](/index.php/VLC "VLC"), calibre и SMPlayer, использовать Wayland.
 
 Чтобы запускать сессию GNOME при входе в систему, добавьте следующее в `.bash_profile`:
 
 ```
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]] && [[ -z $XDG_SESSION_TYPE ]]; then
-  XDG_SESSION_TYPE=wayland exec dbus-run-session gnome-session
+  QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland exec dbus-run-session gnome-session
 fi
 
 ```
+
+Если это не работает, попробуйте изменить `[[ -z $XDG_SESSION_TYPE ]]` на `[[ $XDG_SESSION_TYPE = tty ]]`.
 
 ### Приложения GNOME в Wayland
 
@@ -535,5 +537,5 @@ CriticalPowerAction=HybridSleep
     *   [GNOME Apps Index](https://wiki.gnome.org/Apps)
     *   [Wikipedia:GNOME Core Applications](https://en.wikipedia.org/wiki/GNOME_Core_Applications "wikipedia:GNOME Core Applications")
 *   Исходный код/Зеркала GNOME:
-    *   [GNOME Git Repository](https://gitlab.gnome.org/)
-    *   [GNOME Github Mirror](https://github.com/GNOME)
+    *   [Git-репозиторий GNOME](https://gitlab.gnome.org/)
+    *   [Зеркало GNOME на GitHub](https://github.com/GNOME)

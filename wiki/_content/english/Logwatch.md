@@ -15,7 +15,7 @@
 
 [Install](/index.php/Install "Install") [logwatch](https://www.archlinux.org/packages/?name=logwatch).
 
-In addition to the logwatch binaries, scripts and config files, the pacman package also includes a cron job that is installed as `/etc/cron.daily/0logwatch`. Also note that logwatch scripts use perl, which is a dependency of the logwatch package.
+In addition to the logwatch binaries, scripts and config files, the pacman package also includes a [cron](/index.php/Cron "Cron") job that is installed as `/etc/cron.daily/0logwatch`. Also note that logwatch scripts use [perl](/index.php/Perl "Perl"), which is a dependency of the logwatch package.
 
 ## Configuration
 

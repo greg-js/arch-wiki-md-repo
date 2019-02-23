@@ -1,6 +1,10 @@
 [Amarok](http://amarok.kde.org/) è un lettore e organizzatore musicale per Linux con un'interfaccia in [Qt](/index.php/Qt "Qt") intuitiva che si integra molto bene con [KDE](/index.php/KDE "KDE").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installazione](#Installazione)
 *   [2 Personalizzazione](#Personalizzazione)
