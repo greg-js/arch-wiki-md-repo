@@ -1,6 +1,10 @@
-[lemonbar](https://github.com/LemonBoy/bar) is a lightweight bar based on XCB. It provides foreground/background color switching along with text alignment and colored under/overlining of text, full UTF-8 support and reduced memory footprint. Nothing less and nothing more.
+[lemonbar](https://github.com/LemonBoy/bar) is a lightweight bar based on [XCB](https://xcb.freedesktop.org/). It provides foreground/background color switching along with text alignment and colored under/overlining of text, full UTF-8 support and reduced memory footprint. Nothing less and nothing more.
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -65,7 +69,7 @@ The following example prints the date and time in the middle of the bar, the fon
 
 # Define the clock
 Clock() {
-        DATETIME=$(date "+%a %b %d, %T")
+        DATETIME=$(date "+%a %b %d, %T")
 
         echo -n "$DATETIME"
 }

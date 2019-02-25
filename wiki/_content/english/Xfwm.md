@@ -7,7 +7,11 @@ Related articles
 
 **xfwm** is the window manager for the [Xfce](/index.php/Xfce "Xfce") environment.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Starting](#Starting)
@@ -132,7 +136,7 @@ See also: [Logout alters workspaces](http://forum.xfce.org/viewtopic.php?id=6056
 
 ### Video tearing
 
-If you experience video tearing whilst using Xfwm, open *xfwm4-tweaks-settings*, navigate to the compositor tab and tick the *Synchronize drawing to the vertical blank* option. If you use Intel graphics and you have already enabled "TearFree" option in Xorg config as described in [Intel graphics#Tearing](/index.php/Intel_graphics#Tearing "Intel graphics"), then disable *Synchronize drawing to the vertical blank* option.
+If you experience video tearing install Xfwm4.13, open *xfwm4-tweaks-settings*, navigate to the compositor tab and tick the *Synchronize drawing to the vertical blank* option. If you use Intel graphics and you have already enabled "TearFree" option in Xorg config as described in [Intel graphics#Tearing](/index.php/Intel_graphics#Tearing "Intel graphics"), then disable *Synchronize drawing to the vertical blank* option.
 
 If this does not fix the tearing, consider disabling Xfwm's compositor and using an alternative [composite manager](/index.php/Composite_manager "Composite manager").
 

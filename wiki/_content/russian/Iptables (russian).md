@@ -2,7 +2,7 @@
 
 *   [Firewalls](/index.php/Firewalls "Firewalls")
 *   [Simple stateful firewall (Русский)](/index.php/Simple_stateful_firewall_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Simple stateful firewall (Русский)")
-*   [Sysctl#TCP/IP stack hardening](/index.php/Sysctl#TCP.2FIP_stack_hardening "Sysctl")
+*   [Sysctl#TCP/IP stack hardening](/index.php/Sysctl#TCP/IP_stack_hardening "Sysctl")
 *   [Sshguard](/index.php/Sshguard "Sshguard")
 *   [Fail2ban](/index.php/Fail2ban "Fail2ban")
 *   [Nftables](/index.php/Nftables "Nftables")
@@ -11,32 +11,36 @@
 
 [nftables](/index.php/Nftables "Nftables") была выпущена вместе с [ядром Linux версии 3.13](http://www.phoronix.com/scan.php?page=news_item&px=MTQ5MDU), и в один прекрасный день заменит iptables как основную утилиту для настройки межсетевого экрана Linux.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-*   [2 Основные понятия](#.D0.9E.D1.81.D0.BD.D0.BE.D0.B2.D0.BD.D1.8B.D0.B5_.D0.BF.D0.BE.D0.BD.D1.8F.D1.82.D0.B8.D1.8F)
-    *   [2.1 Таблицы](#.D0.A2.D0.B0.D0.B1.D0.BB.D0.B8.D1.86.D1.8B)
-    *   [2.2 Цепочки](#.D0.A6.D0.B5.D0.BF.D0.BE.D1.87.D0.BA.D0.B8)
-    *   [2.3 Правила](#.D0.9F.D1.80.D0.B0.D0.B2.D0.B8.D0.BB.D0.B0)
-    *   [2.4 Прохождение по цепочке](#.D0.9F.D1.80.D0.BE.D1.85.D0.BE.D0.B6.D0.B4.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE_.D1.86.D0.B5.D0.BF.D0.BE.D1.87.D0.BA.D0.B5)
-    *   [2.5 Модули](#.D0.9C.D0.BE.D0.B4.D1.83.D0.BB.D0.B8)
-*   [3 Настройка и запуск iptables](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.B8_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA_iptables)
-    *   [3.1 Настройка из командной строки](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.B8.D0.B7_.D0.BA.D0.BE.D0.BC.D0.B0.D0.BD.D0.B4.D0.BD.D0.BE.D0.B9_.D1.81.D1.82.D1.80.D0.BE.D0.BA.D0.B8)
-        *   [3.1.1 Отображение текущих правил](#.D0.9E.D1.82.D0.BE.D0.B1.D1.80.D0.B0.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5_.D1.82.D0.B5.D0.BA.D1.83.D1.89.D0.B8.D1.85_.D0.BF.D1.80.D0.B0.D0.B2.D0.B8.D0.BB)
-        *   [3.1.2 Сброс правил](#.D0.A1.D0.B1.D1.80.D0.BE.D1.81_.D0.BF.D1.80.D0.B0.D0.B2.D0.B8.D0.BB)
-        *   [3.1.3 Редактирование правил](#.D0.A0.D0.B5.D0.B4.D0.B0.D0.BA.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.B0.D0.B2.D0.B8.D0.BB)
-    *   [3.2 Файл настроек](#.D0.A4.D0.B0.D0.B9.D0.BB_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B5.D0.BA)
-    *   [3.3 Руководства по настройке iptables](#.D0.A0.D1.83.D0.BA.D0.BE.D0.B2.D0.BE.D0.B4.D1.81.D1.82.D0.B2.D0.B0_.D0.BF.D0.BE_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B5_iptables)
-*   [4 Логирование](#.D0.9B.D0.BE.D0.B3.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
-    *   [4.1 Ограничение скорости логирования](#.D0.9E.D0.B3.D1.80.D0.B0.D0.BD.D0.B8.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81.D0.BA.D0.BE.D1.80.D0.BE.D1.81.D1.82.D0.B8_.D0.BB.D0.BE.D0.B3.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F)
-    *   [4.2 Просмотр логированных пакетов](#.D0.9F.D1.80.D0.BE.D1.81.D0.BC.D0.BE.D1.82.D1.80_.D0.BB.D0.BE.D0.B3.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.BD.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Установка](#Установка)
+*   [2 Основные понятия](#Основные_понятия)
+    *   [2.1 Таблицы](#Таблицы)
+    *   [2.2 Цепочки](#Цепочки)
+    *   [2.3 Правила](#Правила)
+    *   [2.4 Прохождение по цепочке](#Прохождение_по_цепочке)
+    *   [2.5 Модули](#Модули)
+*   [3 Настройка и запуск iptables](#Настройка_и_запуск_iptables)
+    *   [3.1 Настройка из командной строки](#Настройка_из_командной_строки)
+        *   [3.1.1 Отображение текущих правил](#Отображение_текущих_правил)
+        *   [3.1.2 Сброс правил](#Сброс_правил)
+        *   [3.1.3 Редактирование правил](#Редактирование_правил)
+    *   [3.2 Файл настроек](#Файл_настроек)
+    *   [3.3 Руководства по настройке iptables](#Руководства_по_настройке_iptables)
+*   [4 Логирование](#Логирование)
+    *   [4.1 Ограничение скорости логирования](#Ограничение_скорости_логирования)
+    *   [4.2 Просмотр логированных пакетов](#Просмотр_логированных_пакетов)
     *   [4.3 syslog-ng](#syslog-ng)
     *   [4.4 ulogd](#ulogd)
-*   [5 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
+*   [5 Смотрите также](#Смотрите_также)
 
 ## Установка
 
-Стандартная сборка ядра Arch Linux включает в себя поддержку iptables. Все, что потребуется – [установить](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2 "Pacman (Русский)") пользовательские утилиты, предоставляемые пакетом [iptables](https://www.archlinux.org/packages/?name=iptables) из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)") (пакет [iproute2](https://www.archlinux.org/packages/?name=iproute2) из группы [base](https://www.archlinux.org/groups/x86_64/base/) зависит от iptables, поэтому пакет iptables уже должен быть установлен в вашей системе).
+Стандартная сборка ядра Arch Linux включает в себя поддержку iptables. Все, что потребуется – [установить](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_определенных_пакетов "Pacman (Русский)") пользовательские утилиты, предоставляемые пакетом [iptables](https://www.archlinux.org/packages/?name=iptables) из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)") (пакет [iproute2](https://www.archlinux.org/packages/?name=iproute2) из группы [base](https://www.archlinux.org/groups/x86_64/base/) зависит от iptables, поэтому пакет iptables уже должен быть установлен в вашей системе).
 
 ## Основные понятия
 
@@ -92,7 +96,7 @@ iptables содержит пять таблиц:
 2.  `filter` – это таблица по умолчанию, в которой сосредоточены все действия типичные для межсетевых экранов.
 3.  `nat` используется для [преобразования сетевых адресов](https://en.wikipedia.org/wiki/ru:NAT "wikipedia:ru:NAT") (например, проброс портов).
 4.  `mangle` служит для специальных преобразований пакетов (смотрите также [Преобразованный пакет](https://en.wikipedia.org/wiki/Mangled_packet "wikipedia:Mangled packet")).
-5.  `security` используется для [контроля доступа](/index.php/Security_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9A.D0.BE.D0.BD.D1.82.D1.80.D0.BE.D0.BB.D1.8C_.D0.B4.D0.BE.D1.81.D1.82.D1.83.D0.BF.D0.B0 "Security (Русский)") (например, SELinux – смотрите [эту статью](http://lwn.net/Articles/267140/) для получения подробной информации).
+5.  `security` используется для [контроля доступа](/index.php/Security_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Контроль_доступа "Security (Русский)") (например, SELinux – смотрите [эту статью](http://lwn.net/Articles/267140/) для получения подробной информации).
 
 Скорее всего, вам нужно будет использовать только две из них: **filter** и **nat**. Остальные таблицы используются в сложных конфигурациях затрагивающих множество маршрутизаторов и точек маршрутизации и в любом случае выходят за рамки данной статьи.
 
@@ -246,7 +250,7 @@ num   pkts bytes target     prot opt in     out     source               destina
 ```
 Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
 num   pkts bytes target     prot opt in     out     source               destination
-1        0     0 REJECT     tcp  --  *      *      !10.0.0.85            0.0.0.0/0            tcp dpt:17500 reject-with icmp-port-unreachable
+1        0     0 REJECT     tcp  --  *      *      !10.0.0.85            0.0.0.0/0            tcp dpt:17500 reject-with icmp-port-unreachable
 
 Chain FORWARD (policy DROP 0 packets, 0 bytes)
 num   pkts bytes target     prot opt in     out     source               destination
@@ -276,7 +280,7 @@ num   pkts bytes target     prot opt in     out     source               destina
 Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
 num   pkts bytes target     prot opt in     out     source               destination
 1        0     0 ACCEPT     tcp  --  *      *       10.0.0.85            0.0.0.0/0            tcp dpt:17500 /* Friendly Dropbox */
-2        0     0 REJECT     tcp  --  *      *      !10.0.0.85            0.0.0.0/0            tcp dpt:17500 reject-with icmp-port-unreachable
+2        0     0 REJECT     tcp  --  *      *      !10.0.0.85            0.0.0.0/0            tcp dpt:17500 reject-with icmp-port-unreachable
 
 Chain FORWARD (policy DROP 0 packets, 0 bytes)
 num   pkts bytes target     prot opt in     out     source               destination
@@ -381,7 +385,7 @@ RequiredBy=network-pre.target
 
 ```
 
-В разделе [#Ограничение скорости логирования](#.D0.9E.D0.B3.D1.80.D0.B0.D0.BD.D0.B8.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81.D0.BA.D0.BE.D1.80.D0.BE.D1.81.D1.82.D0.B8_.D0.BB.D0.BE.D0.B3.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F) дано разъяснение опций `limit` и `limit-burst`. Теперь, когда мы захотим отбросить пакет и добавить запись в лог об этом, мы просто выполним переход на цепочку `logdrop`:
+В разделе [#Ограничение скорости логирования](#Ограничение_скорости_логирования) дано разъяснение опций `limit` и `limit-burst`. Теперь, когда мы захотим отбросить пакет и добавить запись в лог об этом, мы просто выполним переход на цепочку `logdrop`:
 
 ```
 # iptables -A INPUT -m conntrack --ctstate INVALID -j logdrop
@@ -403,7 +407,7 @@ RequiredBy=network-pre.target
 
 ### Просмотр логированных пакетов
 
-Логированные пакеты сохраняются как сообщения ядра в [журнале systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.96.D1.83.D1.80.D0.BD.D0.B0.D0.BB "Systemd (Русский)").
+Логированные пакеты сохраняются как сообщения ядра в [журнале systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Журнал "Systemd (Русский)").
 
 Чтобы отобразить все пакеты, которые были залогированы с момента последнего перезапуска, выполните
 

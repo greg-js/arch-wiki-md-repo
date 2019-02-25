@@ -498,6 +498,8 @@ Xfce has no native support for colour management. [[3]](https://bugzilla.xfce.or
 
 Xfce has support for multiple monitors. Settings can be configured in the *Applications > Settings > Display* dialog. For more information, see the [display](http://docs.xfce.org/xfce/xfce4-settings/display) article from the Xfce documentation.
 
+XFCE's display configuration is not persistent so you may find yourself needing to use the display tool a lot, especially if you use multiple displays. One workaround for this is to use [arandr](https://www.archlinux.org/packages/?name=arandr) to easily configure your display configurations in the form of xrandr commands which you can assign to be executed as XFCE keyboard shortcuts.
+
 ### SSH agents
 
 By default Xfce 4.10 will try to load gpg-agent or ssh-agent in that order during session initialization. To disable this, create an xfconf key using the following command:
@@ -619,7 +621,7 @@ To detect and use sensors of nvidia gpu you need to install [libxnvctrl](https:/
 
 ### Black screens at boot with NVIDIA and multiple monitors
 
-Using [NVIDIA](/index.php/NVIDIA "NVIDIA"), multiple monitors and [NVIDIA/Troubleshooting#Avoid_screen_tearing](/index.php/NVIDIA/Troubleshooting#Avoid_screen_tearing "NVIDIA/Troubleshooting") may result as a black screen when booting Xfce. The screens' position conflict into the files `/etc/X11/xorg.conf` and `~/.config/xfce4/xfconf/xfce-perchannel-xml/displays.xml`. Deleting the `displays.xml` file fixes the behavior.
+Using [NVIDIA](/index.php/NVIDIA "NVIDIA"), multiple monitors and [NVIDIA/Troubleshooting#Avoid screen tearing](/index.php/NVIDIA/Troubleshooting#Avoid_screen_tearing "NVIDIA/Troubleshooting") may result as a black screen when booting Xfce. The screens' position conflict into the files `/etc/X11/xorg.conf` and `~/.config/xfce4/xfconf/xfce-perchannel-xml/displays.xml`. Deleting the `displays.xml` file fixes the behavior.
 
 ```
 $ rm ~/.config/xfce4/xfconf/xfce-perchannel-xml/displays.xml

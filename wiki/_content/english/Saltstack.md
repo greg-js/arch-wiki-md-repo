@@ -4,7 +4,11 @@ From [docs.saltstack.com](http://docs.saltstack.com/):
 
 	Salt delivers a dynamic communication bus for instrastructures that can be used for orchestration, remote execution, configuration management and much more.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Components of Salt Stack](#Components_of_Salt_Stack)

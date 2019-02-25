@@ -7,7 +7,7 @@ See [systemd](/index.php/Systemd "Systemd") for the main article.
 
 ```
 
-In Arch Linux, the directory `/var/log/journal/` is a part of the [systemd](https://www.archlinux.org/packages/?name=systemd) package, and the journal (when `Storage=` is set to `auto` in `/etc/systemd/journald.conf`) will write to `/var/log/journal/`. If you or some program delete that directory, *systemd* will **not** recreate it automatically and instead will write its logs to `/run/systemd/journal` in a nonpersistent way. However, the folder will be recreated when you set `Storage=persistent` and [restart](/index.php/Restart "Restart") `systemd-journald.service` (or reboot).
+In Arch Linux, the directory `/var/log/journal/` is a part of the [systemd](https://www.archlinux.org/packages/?name=systemd) package, and the journal (when `Storage=` is set to `auto` in `/etc/systemd/journald.conf`) will write to `/var/log/journal/`. If that directory is deleted, *systemd* will **not** recreate it automatically and instead will write its logs to `/run/systemd/journal` in a nonpersistent way. However, the folder will be recreated if `Storage=persistent` is added to journald.conf and `systemd-journald.service` is [restarted](/index.php/Restart "Restart") (or the system is rebooted).
 
 Systemd journal classifies messages by [Priority level](#Priority_level) and [Facility](#Facility). Logging classification corresponds to classic [Syslog](https://en.wikipedia.org/wiki/Syslog "wikipedia:Syslog") protocol ([RFC 5424](https://tools.ietf.org/html/rfc5424)).
 
@@ -49,7 +49,7 @@ Failure in the system primary application, like X11. |
 | 6 | Informational | info | Normal operational messages that require no action. | `lvm[585]: 7 logical volume(s) in volume group "archvg" now active` |
 | 7 | Debug | debug | Information useful to developers for debugging the application. | `kdeinit5[1900]: powerdevil: Scheduling inhibition from ":1.14" "firefox" with cookie 13 and reason "screen"` |
 
-If you cannot find a message on the expected priority level, also search a couple of levels above and below: these rules are recommendations, and the developer of the affected application may have a different perception of the issue's importance from yours.
+These rules are recommendations, and the priority level of a given error is at the application developer's discretion. It is always possible that the error will be at a higher or lower level than expected.
 
 ## Facility
 
@@ -85,13 +85,11 @@ Useful facilities to watch: 0, 1, 3, 4, 9, 10, 15.
 
 ## Filtering output
 
-*journalctl* allows you to filter the output by specific fields. Be aware that if there are many messages to display or filtering of large time span has to be done, the output of this command can be delayed for quite some time.
-
-**Tip:** While the journal is stored in a binary format, the content of stored messages is not modified. This means it is viewable with *strings*, for example for recovery in an environment which does not have *systemd* installed. Example command: `$ strings /mnt/arch/var/log/journal/af4967d77fba44c6b093d0e9862f6ddd/system.journal | grep -i *message*` 
+*journalctl* allows for the filtering of the output by specific fields. If there are many messages to display or filtering of large time span has to be done, the output of this command can be extensively delayed.
 
 Examples:
 
-*   Show all messages from this boot: `# journalctl -b` However, often one is interested in messages not from the current, but from the previous boot (e.g. if an unrecoverable system crash happened). This is possible through optional offset parameter of the `-b` flag: `journalctl -b -0` shows messages from the current boot, `journalctl -b -1` from the previous boot, `journalctl -b -2` from the second previous and so on – you can see the list of boots with their numbers by using `journalctl --list-boots`. See [journalctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1) for full description, the semantics is much more powerful.
+*   Show all messages from this boot: `# journalctl -b` However, often one is interested in messages not from the current, but from the previous boot (e.g. if an unrecoverable system crash happened). This is possible through optional offset parameter of the `-b` flag: `journalctl -b -0` shows messages from the current boot, `journalctl -b -1` from the previous boot, `journalctl -b -2` from the second previous and so on – you can see the list of boots with their numbers by using `journalctl --list-boots`. See [journalctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1) for a full description; the semantics are more powerful than indicated here.
 *   Show all messages from date (and optional time): `# journalctl --since="2012-10-30 18:17:16"` 
 *   Show all messages since 20 minutes ago: `# journalctl --since "20 min ago"` 
 *   Follow new messages: `# journalctl -f` 
@@ -99,11 +97,11 @@ Examples:
 *   Show all messages by a specific process: `# journalctl _PID=1` 
 *   Show all messages by a specific unit: `# journalctl -u man-db.service` 
 *   Show kernel ring buffer: `# journalctl -k` 
-*   Show only error, critical, and alert priority messages `# journalctl -p err..alert` Numbers also can be used, `journalctl -p 3..1`. If single number/keyword used, `journalctl -p 3` - all higher priority levels also included.
+*   Show only error, critical and alert priority messages: `# journalctl -p err..alert` You can use numeric log level too, like `journalctl -p 3..1`. If single number/log level is used, `journalctl -p 3`, then all higher priority log levels are also included (i.e. 0 to 3 in this case).
 *   Show auth.log equivalent by filtering on syslog facility: `# journalctl SYSLOG_FACILITY=10` 
-*   If your journal directory (by default located under `/var/log/journal`) contains huge amount of log data then `journalctl` can take several minutes in filtering output. You can speed it up significantly by using `--file` option to force `journalctl` to look only into most recent journal: `# journalctl --file /var/log/journal/*/system.journal -f` 
+*   If the journal directory (by default located under `/var/log/journal`) contains a large amount of log data then `journalctl` can take several minutes to filter output. It can be sped up significantly by using `--file` option to force `journalctl` to look only into most recent journal: `# journalctl --file /var/log/journal/*/system.journal -f` 
 
-See [journalctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1), [systemd.journal-fields(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.journal-fields.7), or Lennart's [blog post](http://0pointer.de/blog/projects/journalctl.html) for details.
+See [journalctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1), [systemd.journal-fields(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.journal-fields.7), or [Lennart Poettering's blog post](http://0pointer.de/blog/projects/journalctl.html) for details.
 
 **Tip:** By default, *journalctl* truncates lines longer than screen width, but in some cases, it may be better to enable wrapping instead of truncating. This can be controlled by the `SYSTEMD_LESS` [environment variable](/index.php/Environment_variable "Environment variable"), which contains options passed to [less](/index.php/Core_utilities#Essentials "Core utilities") (the default pager) and defaults to `FRSXMK` (see [less(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/less.1) and [journalctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1) for details).
 
@@ -113,17 +111,19 @@ By omitting the `S` option, the output will be wrapped instead of truncated. For
 $ SYSTEMD_LESS=FRXMK journalctl
 
 ```
-If you would like to set this behaviour as default, [export](/index.php/Environment_variables#Per_user "Environment variables") the variable from `~/.bashrc` or `~/.zshrc`.
+To set this behaviour as default, [export](/index.php/Environment_variables#Per_user "Environment variables") the variable from `~/.bashrc` or `~/.zshrc`.
+
+**Tip:** While the journal is stored in a binary format, the content of stored messages is not modified. This means it is viewable with *strings*, for example for recovery in an environment which does not have *systemd* installed, e.g.: `$ strings /mnt/arch/var/log/journal/af4967d77fba44c6b093d0e9862f6ddd/system.journal | grep -i *message*` 
 
 ## Journal size limit
 
-If the journal is persistent (non-volatile), its size limit is set to a default value of 10% of the size of the underlying file system but capped to 4 GiB. For example, with `/var/log/journal/` located on a 20 GiB partition, journal data may take up to 2 GiB. On a 50 GiB partition, it would max at 4 GiB.
+If the journal is persistent (non-volatile), its size limit is set to a default value of 10% of the size of the underlying file system but capped at 4 GiB. For example, with `/var/log/journal/` located on a 20 GiB partition, journal data may take up to 2 GiB. On a 50 GiB partition, it would max at 4 GiB.
 
 The maximum size of the persistent journal can be controlled by uncommenting and changing the following:
 
  `/etc/systemd/journald.conf`  `SystemMaxUse=50M` 
 
-It is also possible to use the drop-in snippets configuration override mechanism rather than editing the global configuration file. In this case do not forget to place the overrides under the `[Journal]` header:
+It is also possible to use the drop-in snippets configuration override mechanism rather than editing the global configuration file. In this case, place the overrides under the `[Journal]` header:
 
  `/etc/systemd/journald.conf.d/00-journal-size.conf` 
 ```
@@ -131,13 +131,13 @@ It is also possible to use the drop-in snippets configuration override mechanism
 SystemMaxUse=50M
 ```
 
-[Restart](/index.php/Restart "Restart") the `systemd-journald.service` after changing this setting to immediately apply the new limit.
+[Restart](/index.php/Restart "Restart") the `systemd-journald.service` after changing this setting to apply the new limit.
 
 See [journald.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journald.conf.5) for more info.
 
 ## Clean journal files manually
 
-Journal files can be globally removed from `/var/log/journal/` using *e.g.* `rm`, or can be trimmed according to various criteria using `journalctl`. Examples:
+Journal files can be globally removed from `/var/log/journal/` using *e.g.* `rm`, or can be trimmed according to various criteria using `journalctl`. For example:
 
 *   Remove archived journal files until the disk space they use falls below 100M: `# journalctl --vacuum-size=100M` 
 *   Make all journal files contain no data older than 2 weeks. `# journalctl --vacuum-time=2weeks` 

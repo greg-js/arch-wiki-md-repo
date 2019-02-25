@@ -174,11 +174,11 @@ Open GNOME Bluetooth and activate the bluetooth. After scanning for devices, you
 
 ### Troubleshooting
 
-**Note:** Many users report frustration with getting A2DP/Bluetooth Headsets to work. see [#Switch between HSV and A2DP setting](#Switch_between_HSV_and_A2DP_setting) for additional information.
+**Note:** Many users report frustration with getting A2DP/Bluetooth Headsets to work. see [#Switch between HSP/HFP and A2DP setting](#Switch_between_HSP/HFP_and_A2DP_setting) for additional information.
 
 #### Bad sound / Static noise / "Muddy" sound
 
-If you experience bad sound quality with your headset, it could in all likelihood be because your headset is not set to the correct profile. See [#Switch between HSV and A2DP setting](#Switch_between_HSV_and_A2DP_setting) to solve the problem.
+If you experience bad sound quality with your headset, it could in all likelihood be because your headset is not set to the correct profile. See [#Switch between HSP/HFP and A2DP setting](#Switch_between_HSP/HFP_and_A2DP_setting) to solve the problem.
 
 #### Selected audio profile, but headset inactive and audio cannot be redirected
 

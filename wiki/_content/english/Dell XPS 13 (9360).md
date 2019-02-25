@@ -421,7 +421,7 @@ Alternatively, the BIOS update can be downloaded from the [Dell website](https:/
 
 According to the method described in an [Intel article](https://01.org/blogs/qwang59/2018/how-achieve-s0ix-states-linux), this device supports Low Power S0 Idle (S0ix).
 
-To try S0ix, write `freeze` to `/sys/power/state` (see [Power_management/Suspend_and_hibernate](/index.php/Power_management/Suspend_and_hibernate "Power management/Suspend and hibernate")). The system should behave like it is sleeping, except the power button light is on. Press power button to wake up.
+To try S0ix, write `freeze` to `/sys/power/state` (see [Power management/Suspend and hibernate](/index.php/Power_management/Suspend_and_hibernate "Power management/Suspend and hibernate")). The system should behave like it is sleeping, except the power button light is on. Press power button to wake up.
 
 S0ix can be used as an alternative to "Sleep to RAM", by changing the following systemd configuration:
 
@@ -442,7 +442,7 @@ w /sys/devices/pci0000:00/0000:00:14.0/power/wakeup - - - - disabled
 
 ```
 
-If you want to enable waking up by key press, see [Dell_XPS_13_2-in-1_(9365)#Suspend_issues](/index.php/Dell_XPS_13_2-in-1_(9365)#Suspend_issues "Dell XPS 13 2-in-1 (9365)").
+If you want to enable waking up by key press, see [Dell XPS 13 2-in-1 (9365)#Suspend issues](/index.php/Dell_XPS_13_2-in-1_(9365)#Suspend_issues "Dell XPS 13 2-in-1 (9365)").
 
 ## Troubleshooting
 

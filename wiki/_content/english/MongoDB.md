@@ -12,6 +12,7 @@ MongoDB (from hu**mongo**us) is an open source document-oriented database system
     *   [3.1 File Format](#File_Format)
     *   [3.2 Requiring Authentication](#Requiring_Authentication)
     *   [3.3 NUMA](#NUMA)
+    *   [3.4 Clean Start and Stop](#Clean_Start_and_Stop)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 MongoDB won't start](#MongoDB_won't_start)
     *   [4.2 Warning about Transparent Huge Pages (THP)](#Warning_about_Transparent_Huge_Pages_(THP))
@@ -162,13 +163,46 @@ ExecStart=**/usr/bin/numactl --interleave=all** /usr/bin/mongod --quiet --config
 
 Zone claim also needs to be disabled, but on arch, `/proc/sys/vm/zone_reclaim_mode` defaults to `0`.
 
-[Reenable](https://wiki.archlinux.org/index.php/Systemd#Replacement_unit_files) and [Restart](/index.php/Restart "Restart") `mongodb.service`. (Merely restarting it will not switch to the `/etc` version.)
+[Reenable](/index.php/Systemd#Replacement_unit_files "Systemd") and [Restart](/index.php/Restart "Restart") `mongodb.service`. (Merely restarting it will not switch to the `/etc` version.)
+
+### Clean Start and Stop
+
+By default, [systemd](/index.php/Systemd "Systemd") immediately kills anything after asking it to start or stop, if it has not finished doing so within 90 seconds.
+
+[mongodb](https://aur.archlinux.org/packages/mongodb/) makes [systemd](/index.php/Systemd "Systemd") wait as long as it takes for MongoDB to start, but [mongodb-bin](https://aur.archlinux.org/packages/mongodb-bin/) does not. Both packages allow [systemd](/index.php/Systemd "Systemd") to kill MongoDB after it's asked to stop, if it hasn't finished within 90 seconds.
+
+Large MongoDB databases can take a considerable amount of time to cleanly shut down, especially if swap is being used. (An active 450GB database on a top of the line NVMe with 64GB RAM and 16GB swap can take an hour to shut down.)
+
+By default, MongoDB uses journaling. [[6]](https://docs.mongodb.com/manual/reference/configuration-options/#storage-options) With journaling, an unclean shutdown should not pose a risk of data loss. But, if not shutdown cleanly, large MongoDB databases can take a considerable amount of time to start back up. In this case, choosing whether to require a clean shutdown is a choice of a slower shutdown versus a slower startup. [[7]](https://groups.google.com/forum/?utm_medium=email&utm_source=footer#!msg/mongodb-user/KjBU_GcNcmw/gR2UxRIFAgAJ)
+
+**Warning:** If you disable journaling, failing to require a clean shutdown severely risks data loss, so you really need to require a clean shutdown. [[8]](https://docs.mongodb.com/manual/tutorial/recover-data-following-unexpected-shutdown/)
+
+To prevent [systemd](/index.php/Systemd "Systemd") from killing MongoDB after 90 seconds, make and then [edit](/index.php/Edit "Edit") your own `.service` file, i.e.:
+
+```
+# cp /usr/lib/systemd/system/mongodb.service /etc/systemd/system
+
+```
+
+To allow MongoDB to cleanly shutdown, [append](/index.php/Append "Append") to the `[Service]` section: (On large databases, this may substantially slow down your system shutdown time, but speeds up your next MongoDB start time)
+
+```
+TimeoutStopSec=infinity
+
+```
+
+If MongoDB needs a long time to start back up, it can be very problematic for [systemd](/index.php/Systemd "Systemd") to keep killing and restarting it every 90 seconds [[9]](https://jira.mongodb.org/browse/SERVER-38086), so [mongodb](https://aur.archlinux.org/packages/mongodb/) prevents this. If using [mongodb-bin](https://aur.archlinux.org/packages/mongodb-bin/), to make [systemd](/index.php/Systemd "Systemd") wait as long as it takes for MongoDB to start, [append](/index.php/Append "Append") to the `[Service]` section:
+
+```
+TimeoutStartSec=infinity
+
+```
 
 ## Troubleshooting
 
 ### MongoDB won't start
 
-If MongoDB won't start, and you just upgraded to [mongodb](https://aur.archlinux.org/packages/mongodb/) 4.0.6-2+, you probably have a custom `/etc/mongodb.conf`. When MongoDB was in the [Official repositories](/index.php/Official_repositories "Official repositories"), it used an Arch-specific configuration file that used the systemd service type of simple. It now supplies upstream's systemd service and configuration files, which instead use a systemd service type of forking. Pacman will automatically upgrade your systemd service file, but will only automatically upgrade your `/etc/mongodb.conf` [if you never modified it](https://wiki.archlinux.org/index.php/Pacman/Pacnew_and_Pacsave). In that case, systemd will be expecting `mongod` to fork, but its configuration file will tell it not to. You need to: switch to the new configuration file installed at `/etc/mongodb.conf.pacnew`, and duplicate changes you made to the old one that you still need, considering the new one is now in the YAML format, and the old one is probably in the MongoDB 2.4 format; or modify your existing one to enable forking. (To continue using the old 2.4 file format instead of YAML, adding `fork: true` should be what is needed.)
+If MongoDB won't start, and you just upgraded to [mongodb](https://aur.archlinux.org/packages/mongodb/) 4.0.6-2+, you probably have a custom `/etc/mongodb.conf`. When MongoDB was in the [Official repositories](/index.php/Official_repositories "Official repositories"), it used an Arch-specific configuration file that used the systemd service type of simple. It now supplies upstream's systemd service and configuration files, which instead use a systemd service type of forking. Pacman will automatically upgrade your systemd service file, but will only automatically upgrade your `/etc/mongodb.conf` [if you never modified it](/index.php/Pacman/Pacnew_and_Pacsave "Pacman/Pacnew and Pacsave"). In that case, systemd will be expecting `mongod` to fork, but its configuration file will tell it not to. You need to: switch to the new configuration file installed at `/etc/mongodb.conf.pacnew`, and duplicate changes you made to the old one that you still need, considering the new one is now in the YAML format, and the old one is probably in the MongoDB 2.4 format; or modify your existing one to enable forking. (To continue using the old 2.4 file format instead of YAML, adding `fork: true` should be what is needed.)
 
 Check that the systemctl service is configured to use the correct database location:
 

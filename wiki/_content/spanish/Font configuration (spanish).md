@@ -26,12 +26,12 @@ Aunque Fontconfig se utiliza a menudo en los Unix modernos y en los sistemas ope
         *   [2.3.2 Auto-optimizado](#Auto-optimizado)
         *   [2.3.3 Estilo de optimización](#Estilo_de_optimización)
     *   [2.4 Alineamiento de píxeles](#Alineamiento_de_píxeles)
-    *   [2.5 Subpixel rendering](#Subpixel_rendering)
-        *   [2.5.1 LCD filter](#LCD_filter)
-        *   [2.5.2 Advanced LCD filter specification](#Advanced_LCD_filter_specification)
-    *   [2.6 Disable auto-hinter for bold fonts](#Disable_auto-hinter_for_bold_fonts)
-    *   [2.7 Replace or set default fonts](#Replace_or_set_default_fonts)
-    *   [2.8 Whitelisting and blacklisting fonts](#Whitelisting_and_blacklisting_fonts)
+    *   [2.5 Representación subpixel](#Representación_subpixel)
+        *   [2.5.1 Filtro LCD](#Filtro_LCD)
+        *   [2.5.2 Especificaciones avanzadas del filtro LCD](#Especificaciones_avanzadas_del_filtro_LCD)
+    *   [2.6 Desactivar auto-hinter para fuentes en negrita](#Desactivar_auto-hinter_para_fuentes_en_negrita)
+    *   [2.7 Reemplazar o establecer las fuentes por defecto](#Reemplazar_o_establecer_las_fuentes_por_defecto)
+    *   [2.8 Lista blanca y lista negra de fuentes](#Lista_blanca_y_lista_negra_de_fuentes)
     *   [2.9 Disable bitmap fonts](#Disable_bitmap_fonts)
     *   [2.10 Disable scaling of bitmap fonts](#Disable_scaling_of_bitmap_fonts)
     *   [2.11 Create bold and italic styles for incomplete fonts](#Create_bold_and_italic_styles_for_incomplete_fonts)
@@ -218,21 +218,21 @@ Muchos monitores fabricados hoy en día utilizan las especificaciones rojo, verd
 
 ```
 
-**Nota:** sin renderización subpixel (vea abajo), freetype solo se ocupará sobre la alineación (vertical o horizontal) de los subpíxeles. Por ejemplo, no diferencia entre **RGB** y **BGR**.
+**Nota:** Sin la representación subpixel (vea abajo), freetype solo se ocupará sobre la alineación (vertical o horizontal) de los subpíxeles. Por ejemplo, no diferencia entre **RGB** y **BGR**.
 
-### Subpixel rendering
+### Representación subpixel
 
-[Subpixel rendering](https://en.wikipedia.org/wiki/Subpixel_rendering "wikipedia:Subpixel rendering") is a technique to improve sharpness of font rendering by effectively tripling the horizontal (or vertical) resolution through the use of subpixels. On Windows machines, this technique is called "ClearType".
+[La representación subpixel](https://en.wikipedia.org/wiki/es:Renderizaci%C3%B3n_de_subpixel "wikipedia:es:Renderización de subpixel") es una técnica para mejorar la nitidez de las fuentes triplicando la resilución horizontal (o vertical) a través del uso de los subpixel. En los sistemas Windows, esta técnica se llama "ClearType".
 
-FreeType implements its own LCD-optimized rendering called [Harmony](http://lists.gnu.org/archive/html/freetype-commit/2017-03/msg00012.html). With this FreeType LCD rendering technology, the resulting output does not require additional LCD filtering, unlike Microsoft's patented Cleartype subpixel rendering where an LCD filter is recommended. See section below on how to enable LCD filter and its benefits.
+FreeType implementa su propio renderizador optimizado LCD llamado [Harmony](http://lists.gnu.org/archive/html/freetype-commit/2017-03/msg00012.html). Con esta tecnología de renderizado LCD, el resultado no requiere ningún filtro LCD adicional, no como renderizador subpixel patentado de Microsoft ClearType donde se recomienda un filtro LCD. Vea abajo la sección cómo activar el filtro LCD y sus beneficios.
 
-Cleartype subpixel rendering is covered by Microsoft patents and **disabled** by default on Arch Linux. To enable it, you have to re-compile [freetype2](https://www.archlinux.org/packages/?name=freetype2) and define the `FT_CONFIG_OPTION_SUBPIXEL_RENDERING` macro, or use e.g. the AUR package [freetype2-cleartype](https://aur.archlinux.org/packages/freetype2-cleartype/).
+El renderizador subpixel ClearType está protegido por las patentes de Microsoft y **desactivado** por defecto en Arch Linux. Para habilitarlo, tiene que recompilar [freetype2](https://www.archlinux.org/packages/?name=freetype2) y definir la macro `FT_CONFIG_OPTION_SUBPIXEL_RENDERING`, o utilizar p.ej. el paquete del AUR [freetype2-cleartype](https://aur.archlinux.org/packages/freetype2-cleartype/).
 
-#### LCD filter
+#### Filtro LCD
 
-When using Cleartype subpixel rendering, you should enable the LCD filter, which is designed to reduce colour fringing. This is described under [LCD filtering](https://www.freetype.org/freetype2/docs/reference/ft2-lcd_filtering.html) in the FreeType 2 API reference. Different options are described under [FT_LcdFilter](http://www.freetype.org/freetype2/docs/reference/ft2-lcd_filtering.html#FT_LcdFilter), and are illustrated by this [LCD filter test](http://www.spasche.net/files/lcdfiltering/) page.
+Cuando utilize el renderizador subpixel ClearType, debe de activar el filtro LCD, que está diseñado para reducir la franja de color. Está descrito en [Filtrar LCD (en inglés)](https://www.freetype.org/freetype2/docs/reference/ft2-lcd_filtering.html) en la referencia de la API FreeType 2\. Las diferentes opciones están descritas en [FT_LcdFilter](http://www.freetype.org/freetype2/docs/reference/ft2-lcd_filtering.html#FT_LcdFilter), y están ilustradas en la página [test de filtros LCD](http://www.spasche.net/files/lcdfiltering/).
 
-The `lcddefault` filter will work for most users. Other filters are available that can be used in special situations: `lcdlight`; a lighter filter ideal for fonts that look too bold or fuzzy, `lcdlegacy`, the original Cairo filter; and `lcdnone` to disable it entirely.
+El filtro `lcddefault` será suficiente para la mayoría de los usuarios. Otros filtros están disponibles y se pueden utilizar en situaciones especiales: `lcdlight`; un filtro ligero ideales para fuentes que se ven demasiado borrosas o negrita, `lcdlegacy`, el filtro original Cairo; y `lcdnone` para desactivarlo completamente.
 
 ```
   <match target="font">
@@ -243,11 +243,11 @@ The `lcddefault` filter will work for most users. Other filters are available th
 
 ```
 
-#### Advanced LCD filter specification
+#### Especificaciones avanzadas del filtro LCD
 
-If the available built-in LCD filters are not satisfactory, it is possible to tweak the font rendering very specifically by building a custom freetype2 package and modifying the hardcoded filters. The [Arch Build System](/index.php/Arch_Build_System "Arch Build System") can be used to build and install packages from source. This requires installation of the [asp](https://www.archlinux.org/packages/?name=asp) package.
+Si los filtros LCD incluidos no le resultan satisfactorios, es posible retocar el renderizador de fuentes de forma muy específica construyendo un paquete freetype2 personalizado y modificar los filtros codificados. El [sistema de construcción de Arch](/index.php/Arch_Build_System_(Espa%C3%B1ol) "Arch Build System (Español)") se puede utilizar para construir e instalar paquetes desde código fuente. Esto requiere la instalación del paquete [asp](https://www.archlinux.org/packages/?name=asp).
 
-Checkout the [freetype2](https://www.archlinux.org/packages/?name=freetype2) PKGBUILD and download/extract the build files:
+Revise el PKGBUILD de [freetype2](https://www.archlinux.org/packages/?name=freetype2) y descargue/extraiga los archivos:
 
 ```
 $ asp checkout freetype2
@@ -256,9 +256,9 @@ $ makepkg -o
 
 ```
 
-Enable subpixel rendering by editing the file `src/freetype-VERSION/include/freetype/config/ftoption.h` and uncommenting the `FT_CONFIG_OPTION_SUBPIXEL_RENDERING` macro.
+Para activar el renderizado subpixel edite el archivo `src/freetype-VERSION/include/freetype/config/ftoption.h` y descomente la macro `FT_CONFIG_OPTION_SUBPIXEL_RENDERING`.
 
-Then, edit the file `src/freetype-VERSION/src/base/ftlcdfil.c` and look up the definition of the constant `default_filter[5]`:
+Después, edite el archivo `src/freetype-VERSION/src/base/ftlcdfil.c` y busque la definición de la constante `default_filter[5]`:
 
 ```
 static const FT_Byte  default_filter[5] =
@@ -266,7 +266,7 @@ static const FT_Byte  default_filter[5] =
 
 ```
 
-This constant defines a low-pass filter applied to the rendered glyph. Modify it as needed. (reference: [freetype list discussion](https://lists.nongnu.org/archive/html/freetype/2006-09/msg00069.html)) Save the file, build and install the custom package:
+Esta constante define un filtro que suaviza el glifo renderizado. Modifiquelo tanto como sea necesario. (referencia: [lista de discusión freetype (en inglés)](https://lists.nongnu.org/archive/html/freetype/2006-09/msg00069.html)) Guarde el archivo, construyalo e instale el paquete personalizado:
 
 ```
 $ makepkg -e
@@ -275,11 +275,11 @@ $ makepkg -e
 
 ```
 
-Reboot or restart X. The lcddefault filter should now render fonts differently.
+Reinicie o reinicie X. El filtro lcddefault debe renderizar las fuentes de forma diferente.
 
-### Disable auto-hinter for bold fonts
+### Desactivar auto-hinter para fuentes en negrita
 
-The auto-hinter uses sophisticated methods for font rendering, but often makes bold fonts too wide. Fortunately, a solution can be turning off the autohinter for bold fonts while leaving it on for the rest:
+Auto-hinter utiliza métodos sofisticados para renderizar fuentes, pero a veces hace que las fuentes sean demasiado grandes. Afortunadamente, una solución es desactivar autohinter para fuentes en negritas mientras que para el resto sige activado:
 
 ```
 ...
@@ -295,9 +295,9 @@ The auto-hinter uses sophisticated methods for font rendering, but often makes b
 
 ```
 
-### Replace or set default fonts
+### Reemplazar o establecer las fuentes por defecto
 
-The most reliable way to do this is to add an XML fragment similar to the one below. *Using the "binding" attribute will give you better results*, for example, in Firefox where you may not want to change properties of font being replaced. This will cause Ubuntu to be used in place of Georgia:
+La forma más fiable de hacer esto es añadir un fragmento XML similar al que hay abajo. *Utilizar el atributo "Unión (binding)" le dará mejores resultados*, por ejemplo, en Firefox cuando no quiera cambiar las propiedades de la fuente que se está reemplazando. Esto hará que Ubuntu se use en vez de Georgia:
 
 ```
 ...
@@ -309,12 +309,12 @@ The most reliable way to do this is to add an XML fragment similar to the one be
 
 ```
 
-An alternate approach is to set the "preferred" font, but *this only works if the original font is not on the system*, in which case the one specified will be substituted:
+El enfoque alternativo es establecer la fuente "preferida", pero *esto solo funciona si la fuente original no está en el sistema*, en este caso se sustituirá el valor especificado:
 
 ```
 ...
-<!-- Replace Helvetica with Bitstream Vera Sans Mono -->
-<!-- Note, an alias for Helvetica should already exist in default conf files -->
+<!-- Reemplazando Helvetica con Bitstream Vera Sans Mono -->
+<!-- Nota, debe existir un alias para Helvetica en los archivos de configuración por defecto -->
 <alias>
     <family>Helvetica</family>
     <prefer><family>Bitstream Vera Sans Mono</family></prefer>
@@ -324,16 +324,16 @@ An alternate approach is to set the "preferred" font, but *this only works if th
 
 ```
 
-### Whitelisting and blacklisting fonts
+### Lista blanca y lista negra de fuentes
 
-The element `<selectfont>` is used in conjunction with the `<acceptfont>` and `<rejectfont>` elements to selectively whitelist or blacklist fonts from the resolve list and match requests. The simplest and most typical use case it to reject one font that is needed to be installed, however is getting matched for a generic font query that is causing problems within application user interfaces.
+El elemento `<selectfont>` se usa en conjunto con los elementos `<acceptfont>` y `<rejectfont>` para seleccionar las fuentes en las listas blanca y negra y resolver las coincidencias y solicitudes. El más simple y el más típico caso es rechazar una fuente que necesita instalarse, sin embargo coincide con una fuente genérica que puede causar problemas en las interfaces de las aplicaciones.
 
-First obtain the Family name as listed in the font itself:
+Primero obtenga el nombre de la familia de la fuente:
 
  `$ fc-scan .fonts/lklug.ttf --format='%{family}
 '`  `LKLUG` 
 
-Then use that Family name in a `<rejectfont>` stanza:
+Después utilice ese nombre de la familia en la estrofa `<rejectfont>`:
 
 ```
 <selectfont>
@@ -348,7 +348,7 @@ Then use that Family name in a `<rejectfont>` stanza:
 
 ```
 
-Typically when both elements are combined, `<rejectfont>` is first used on a more general matching glob to reject a large group (such as a whole directory), then `<acceptfont>` is used after it to whitelist individual fonts out of the larger blacklisted group.
+Normalmente cuando ambos elementos se combinan, `<rejectfont>` se usa primero de una forma general para rechazar un gran grupo (como todo un directorio), después `<acceptfont>` se utiliza para poner en la lista blanca fuentes especificas que están en el gran grupo de la lista negra.
 
 ```
 <selectfont>

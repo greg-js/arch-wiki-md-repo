@@ -219,7 +219,7 @@
 
 *   **[ROOT](https://en.wikipedia.org/wiki/ru:ROOT "wikipedia:ru:ROOT")** — Программа анализа данных и библиотека, разработанные в CERN (изначально для физики элементарных частиц)
 
-	[http://root.cern.ch/drupal/](http://root.cern.ch/drupal/) || [root](https://aur.archlinux.org/packages/root/)
+	[http://root.cern.ch/drupal/](http://root.cern.ch/drupal/) || [root](https://www.archlinux.org/packages/?name=root)
 
 *   **[SciDAVis](https://en.wikipedia.org/wiki/ru:SciDAVis "wikipedia:ru:SciDAVis")** — Форк QtiPlot, созданный с целью быть более документированным и дружелюбным к пользователю
 

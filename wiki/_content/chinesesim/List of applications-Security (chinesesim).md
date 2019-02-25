@@ -4,19 +4,23 @@
 
 [互联网](/index.php/List_of_Applications/Internet_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications/Internet (简体中文)") – [多媒体](/index.php/List_of_Applications/Multimedia_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications/Multimedia (简体中文)") – [工具](/index.php/List_of_Applications/Utilities_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications/Utilities (简体中文)") – [文档](/index.php/List_of_Applications/Documents_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications/Documents (简体中文)") – [安全](/index.php/List_of_Applications/Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications/Security (简体中文)") – [科学](/index.php/List_of_Applications/Science_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications/Science (简体中文)") – [其它](/index.php/List_of_Applications/Other_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications/Other (简体中文)")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 安全](#.E5.AE.89.E5.85.A8)
-    *   [1.1 防火墙](#.E9.98.B2.E7.81.AB.E5.A2.99)
-    *   [1.2 网络安全](#.E7.BD.91.E7.BB.9C.E5.AE.89.E5.85.A8)
-    *   [1.3 威胁与漏洞探测](#.E5.A8.81.E8.83.81.E4.B8.8E.E6.BC.8F.E6.B4.9E.E6.8E.A2.E6.B5.8B)
-    *   [1.4 文件安全](#.E6.96.87.E4.BB.B6.E5.AE.89.E5.85.A8)
-        *   [1.4.1 反恶意软件](#.E5.8F.8D.E6.81.B6.E6.84.8F.E8.BD.AF.E4.BB.B6)
-    *   [1.5 备份](#.E5.A4.87.E4.BB.BD)
-    *   [1.6 锁屏](#.E9.94.81.E5.B1.8F)
-    *   [1.7 Hash 校验](#Hash_.E6.A0.A1.E9.AA.8C)
-    *   [1.8 加密，签名与信息隐藏](#.E5.8A.A0.E5.AF.86.EF.BC.8C.E7.AD.BE.E5.90.8D.E4.B8.8E.E4.BF.A1.E6.81.AF.E9.9A.90.E8.97.8F)
-    *   [1.9 密码管理](#.E5.AF.86.E7.A0.81.E7.AE.A1.E7.90.86)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 安全](#安全)
+    *   [1.1 防火墙](#防火墙)
+    *   [1.2 网络安全](#网络安全)
+    *   [1.3 威胁与漏洞探测](#威胁与漏洞探测)
+    *   [1.4 文件安全](#文件安全)
+        *   [1.4.1 反恶意软件](#反恶意软件)
+    *   [1.5 备份](#备份)
+    *   [1.6 锁屏](#锁屏)
+    *   [1.7 Hash 校验](#Hash_校验)
+    *   [1.8 加密，签名与信息隐藏](#加密，签名与信息隐藏)
+    *   [1.9 密码管理](#密码管理)
 
 ## 安全
 
@@ -114,7 +118,7 @@ See also [Wikipedia:Comparison of firewalls](https://en.wikipedia.org/wiki/Compa
 
 *   **Osiris** — Tool for monitoring system integrity and changes across a network.
 
-	[https://launchpad.net/osiris](https://launchpad.net/osiris) || [osiris](https://www.archlinux.org/packages/?name=osiris)
+	[https://launchpad.net/osiris](https://launchpad.net/osiris) || [osiris](https://aur.archlinux.org/packages/osiris/)
 
 *   **OSSEC** — Open Source Host-based Intrusion Detection System that performs log analysis, file integrity checking, policy monitoring, rootkit detection, real-time alerting and active response.
 

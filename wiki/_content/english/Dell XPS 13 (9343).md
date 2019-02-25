@@ -218,7 +218,9 @@ This profile has been made with the spectrophotometer's high resolution spectral
 
 ### Sometimes the system fails to resume from suspend after closing and reopening the LID
 
-According to [this kernel.org bug report](https://bugzilla.kernel.org/show_bug.cgi?id=86241) this is supposed to be fixed since a long time, yet it still happens with kernels up to 4.18.6 (at least on the QHD+ model). You can work it around with the following command:
+Even if reported as fixed upstream according to [this kernel.org bug report](https://bugzilla.kernel.org/show_bug.cgi?id=86241), users still suffer of this problem (reported for both FullHD model with kernel 4.20.12 and the QHD+ model with kernel 4.18.6).
+
+One more, following a comment in the abovementioned bug report, you can work it around blacklisting *mei* modules:
 
 ```
 sudo cat << EOF > /etc/modprobe.d/blacklist.suspend-bug.conf

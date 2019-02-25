@@ -37,7 +37,7 @@ To specify a more secure mounting, specify the following mount option:
 
  `/etc/fstab`  `tmpfs   /www/cache    tmpfs  rw,size=1G,nr_inodes=5k,noexec,nodev,nosuid,uid=*user*,gid=*group*,mode=1700 0 0` 
 
-See the [mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8) man page and [Security#File systems](/index.php/Security#File_systems "Security") for more information.
+See the [tmpfs(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tmpfs.5) man page and [Security#File systems](/index.php/Security#File_systems "Security") for more information.
 
 Reboot for the changes to take effect. Note that although it may be tempting to simply run `mount -a` to make the changes effective immediately, this will make any files currently residing in these directories inaccessible (this is especially problematic for running programs with lockfiles, for example). However, if all of them are empty, it should be safe to run `mount -a` instead of rebooting (or mount them individually).
 
@@ -58,14 +58,7 @@ The tmpfs can also be temporarily resized without the need to reboot, for exampl
 
 ## Disable automatic mount
 
-Under [systemd](/index.php/Systemd "Systemd"), `/tmp` is automatically mounted as a tmpfs even though no entry is specified in `/etc/fstab`.
-
-To disable the automatic mount, run:
-
-```
-# systemctl mask tmp.mount
-
-```
+Under [systemd](/index.php/Systemd "Systemd"), `/tmp` is automatically mounted as a tmpfs even though no entry is specified in `/etc/fstab`. To disable the automatic mount, [mask](/index.php/Mask "Mask") the `tmp.mount` systemd unit.
 
 Files will no longer be stored in a tmpfs, but on the block device instead. The `/tmp` contents will now be preserved between reboots, which might not be the desired behavior. To regain the previous behavior and clean the `/tmp` folder automatically when restarting, consider using [tmpfiles.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tmpfiles.d.5):
 

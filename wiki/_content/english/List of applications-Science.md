@@ -276,7 +276,7 @@ See also [Wikipedia:List of information graphics software](https://en.wikipedia.
 
 *   **[ROOT](https://en.wikipedia.org/wiki/ROOT "wikipedia:ROOT")** — Data analysis program and library (originally for particle physics) developed by CERN.
 
-	[https://root.cern.ch/](https://root.cern.ch/) || [root](https://aur.archlinux.org/packages/root/)
+	[https://root.cern.ch/](https://root.cern.ch/) || [root](https://www.archlinux.org/packages/?name=root)
 
 *   **[SciDAVis](https://en.wikipedia.org/wiki/SciDAVis "wikipedia:SciDAVis")** — Fork of QtiPlot with the goal of being better documented and more user friendly.
 

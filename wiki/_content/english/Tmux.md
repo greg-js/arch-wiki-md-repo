@@ -94,7 +94,7 @@ Ctrl-b w (Select from interactive list of windows)
 
 #### Copy Mode
 
-A tmux window may be in one of several modes. The default permits direct access to the terminal attached to the window; the other is copy mode. Once in copy mode you can navigate the buffer including scrolling the history. Use vi or emacs-style key bindings in copy mode. The default is emacs, unless VISUAL or EDITOR contains ‘vi’
+A tmux window may be in one of several modes. The default permits direct access to the terminal attached to the window; the other is copy mode. Once in copy mode you can navigate the buffer including scrolling the history. Use [vi](/index.php/Vi "Vi") or [emacs](/index.php/Emacs "Emacs")-style key bindings in copy mode. The default is emacs, unless VISUAL or EDITOR contains ‘vi’
 
 To enter copy mode do the following:
 

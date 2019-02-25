@@ -78,6 +78,7 @@ Version: ThinkPad X1 Carbon 6th
     *   [6.4 Disabling red LED Thinkpad logo](#Disabling_red_LED_Thinkpad_logo)
     *   [6.5 HDR Display Color Calibration](#HDR_Display_Color_Calibration)
 *   [7 Intel Graphics UHD 620 issues](#Intel_Graphics_UHD_620_issues)
+    *   [7.1 GNOME Wayland not available](#GNOME_Wayland_not_available)
 *   [8 TrackPoint and Touchpad issues](#TrackPoint_and_Touchpad_issues)
 *   [9 Thunderbolt dock](#Thunderbolt_dock)
     *   [9.1 Plugable USB-C Mini Docking Station with 85W Power Delivery UD-CAM](#Plugable_USB-C_Mini_Docking_Station_with_85W_Power_Delivery_UD-CAM)
@@ -523,6 +524,10 @@ Section "Device"
   Option      "TearFree" "true"
 EndSection
 ```
+
+#### GNOME Wayland not available
+
+If you haven't added the i915 to the MODULES list in /etc/mkinitcpio.conf (e.g. following the full disk encryption requirements below), you may be unable to run Wayland on kernel 4.20 (the gnome on Wayland option might not be present on GDM). Adding i915 to the MODULES list in /etc/mkinitcpio.conf and regenerating the ramdisk solves this issue.
 
 ## TrackPoint and Touchpad issues
 

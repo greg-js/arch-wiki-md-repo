@@ -12,7 +12,11 @@
 
 В этом руководстве PXE используется для загрузки установочного носителя с соответствующей опцией-rom, которая поддерживает PXE в целевом объекте. Это хорошо работает, когда у вас уже установлен сервер.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Как это работает](#Как_это_работает)
 *   [2 Подготовка](#Подготовка)

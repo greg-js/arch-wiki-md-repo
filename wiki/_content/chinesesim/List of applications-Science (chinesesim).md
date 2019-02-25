@@ -229,7 +229,7 @@
 
 *   **[ROOT](https://en.wikipedia.org/wiki/ROOT "wikipedia:ROOT")** — CERN研发的数据分析软件和函数库(原用于微观物理学)。
 
-	[http://root.cern.ch/drupal/](http://root.cern.ch/drupal/) || [root](https://aur.archlinux.org/packages/root/)
+	[http://root.cern.ch/drupal/](http://root.cern.ch/drupal/) || [root](https://www.archlinux.org/packages/?name=root)
 
 *   **[SciDAVis](https://en.wikipedia.org/wiki/SciDAVis "wikipedia:SciDAVis")** — QtiPlot的派生软件，以提供更好的文档支持和友好用户介面为目标。
 

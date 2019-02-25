@@ -6,7 +6,11 @@ Touhou Project games are one of the most popular of this genre because, among ot
 
 Despite the difficulty, they can be very addicting games.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Python Engine](#Python_Engine)

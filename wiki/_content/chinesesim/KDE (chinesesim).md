@@ -27,7 +27,7 @@ KDE 是由 Plasma [桌面环境](/index.php/Desktop_environment_(%E7%AE%80%E4%BD
     *   [1.3 不稳定版](#不稳定版)
 *   [2 启动 Plasma](#启动_Plasma)
     *   [2.1 使用显示管理器](#使用显示管理器)
-    *   [2.2 控制台启动](#控制台启动)
+    *   [2.2 从控制台启动](#从控制台启动)
 *   [3 配置](#配置)
     *   [3.1 个性化](#个性化)
         *   [3.1.1 Plasma 桌面](#Plasma_桌面_2)
@@ -104,7 +104,7 @@ KDE 是由 Plasma [桌面环境](/index.php/Desktop_environment_(%E7%AE%80%E4%BD
 
 ### Plasma 桌面
 
-在安装 Plasma 之前，请确保 [Xorg](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)") 已经被安装到您的系统中。
+在安装 Plasma 之前，请确保 [Xorg](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)") 已经被安装到您的系统中并可以正常工作。
 
 [安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) 元软件包或者 [plasma](https://www.archlinux.org/groups/x86_64/plasma/) 组。 关于 [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) 和 [plasma](https://www.archlinux.org/groups/x86_64/plasma/) 两者的不同请参阅[这里](/index.php/Creating_packages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#元软件包和软件包组 "Creating packages (简体中文)")。若要最小化安装 Plasma，可以安装 [plasma-desktop](https://www.archlinux.org/packages/?name=plasma-desktop) 包。
 
@@ -127,20 +127,20 @@ Plasma 可以通过[显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD
 ### 使用显示管理器
 
 *   在菜单中选择 *Plasma* 用 [Xorg](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)") 启动。
-*   安装 [plasma-wayland-session](https://www.archlinux.org/packages/?name=plasma-wayland-session) 软件包，然后选择 *Plasma (Wayland)* 用 [Wayland](/index.php/Wayland_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wayland (简体中文)") 启动。
+*   安装 [plasma-wayland-session](https://www.archlinux.org/packages/?name=plasma-wayland-session) 软件包，并选择 *Plasma (Wayland)* 用 [Wayland](/index.php/Wayland_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wayland (简体中文)") 启动。
 
-**注意:** [NVIDIA](/index.php/NVIDIA_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "NVIDIA (简体中文)") 的专有驱动需要 EGLStreams 启动 Wayland。KDE 还没有将 EGLStreams 加入到其 Wayland [配置（英文）](https://blog.martin-graesslin.com/blog/2016/09/to-eglstream-or-not)中。因此存在以下解决方法：
+**注意:** [NVIDIA](/index.php/NVIDIA_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "NVIDIA (简体中文)") 的专有驱动需要 EGLStreams 启动 Wayland。KDE 还没有将 EGLStreams 加入到其 Wayland [配置（英文）](https://blog.martin-graesslin.com/blog/2016/09/to-eglstream-or-not)中。因此需要以下解决方案：
 
 *   使用 [Nouveau](/index.php/Nouveau_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Nouveau (简体中文)") 驱动。
 *   使用 Xorg 会话（默认）。
 
-### 控制台启动
+### 从控制台启动
 
-若要使用 "[xinit/startx](/index.php/Xinit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xinit (简体中文)")" 启动 Plasma 桌面，请在 `.xinitrc` 文件中添加 `exec startkde`。若要在登录的时候开启 Xorg 请参阅[在启动时自动启用 X](/index.php/Start_X_at_Login_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Start X at Login (简体中文)")。若要从终端启动 Wayland 会话, 运行 `export XDG_SESSION_TYPE=wayland && export $(dbus-launch) && startplasmacompositor`。[[1]](https://community.kde.org/KWin/Wayland#Start_a_Plasma_session_on_Wayland%7C在控制台启动Wayland会话)
+若要使用 "[xinit/startx](/index.php/Xinit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xinit (简体中文)")" 启动 Plasma 桌面，请在 `.xinitrc` 文件中添加 `exec startkde`。若要在登录的时候开启 Xorg 请参阅[在启动时自动启用 X](/index.php/Start_X_at_Login_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Start X at Login (简体中文)")。若要从终端启动 Wayland 会话, 运行 `XDG_SESSION_TYPE=wayland dbus-run-session startplasmacompositor`。[[1]](https://community.kde.org/KWin/Wayland#Start_a_Plasma_session_on_Wayland%7C在控制台启动Wayland会话)
 
 ## 配置
 
-大部分配置被储存在 `~/.config`。KDE 主要在**“系统设置”**内配置。它也可通过 `systemsettings5` 启动。
+KDE应用的大部分配置被储存在 `~/.config`。KDE 主要在**“系统设置”**内配置。它也可通过 终端执行`systemsettings5` 启动。
 
 ### 个性化
 
@@ -148,20 +148,20 @@ Plasma 可以通过[显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD
 
 ##### 主题
 
-[Plasma 主题](http://kde-look.org/index.php?xcontentmode=76)定义面板和 plasmoids。官方资料库和 [AUR](https://aur.archlinux.org/packages.php?K=plasma+theme) 提供了很多主题。
+[Plasma 主题](https://store.kde.org/browse/cat/104/)定义了面板和 plasmoids的样式。为使系统级使用更加便利，官方软件源和 [AUR](https://aur.archlinux.org/packages.php?K=plasma+theme) 提供了很多可用主题。
 
-通过桌面设置控制面板来安装主题是最简单的方法：
+您也可以通过系统设置来安装主题：
 
 ```
  系统设置 > 工作空间主题 > 桌面主题 > 获取新主题
 
 ```
 
-这将呈现出 [https://store.kde.org/](https://store.kde.org/) 的前端让你轻松安装，卸载，或者更新第三方 Plasma 脚本。
+这将呈现出 [https://store.kde.org/](https://store.kde.org/) 的前端，轻松安装，卸载，或者更新第三方 Plasma 脚本。 [KDE商店](https://store.kde.org/) 提供了更多的plasma个性化方案，包括 [SDDM](/index.php/SDDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "SDDM (简体中文)") 主题和 [plymouth](/index.php/Plymouth "Plymouth") 主题
 
-加载页面和锁定页面暂时无法自定义，但你可以在 `/usr/share/plasma/look-and-feel/` 修改原本的主题。请阅 Kubuntu论坛的[这个帖子](https://www.kubuntuforums.net/showthread.php?67599-Plasma-5-background-images&s=59832dc20e5bfc2948dbb591d8453f61)。
+**提示：** 加载页面和锁定页面暂时无法自定义，但你可以在 ' **/usr/share/plasma/look-and-feel '** 中修改原本的主题。请参阅 Kubuntu论坛这个帖子 https://www.kubuntuforums.net/showthread.php?67599-Plasma-5-background-images&=59832dc20e5bfc2948dbb591d8453f61
 
-注意[SDDM](/index.php/SDDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "SDDM (简体中文)")的登录界面主题并不在此处设置。
+[SDDM](/index.php/SDDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "SDDM (简体中文)")的登录界面主题亦可在设置中进行调整。
 
 ###### Qt 和 GTK+ 应用外观
 

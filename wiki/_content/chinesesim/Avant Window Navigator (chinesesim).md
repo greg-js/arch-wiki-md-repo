@@ -6,17 +6,21 @@
 
 [Avant Window Navigator](https://launchpad.net/awn) (AWN) 是用 C 语言书写的轻量级 dock 程序。它支持启动器、任务列表和第三方 applets。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-    *   [1.1 可选依赖](#.E5.8F.AF.E9.80.89.E4.BE.9D.E8.B5.96)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 安装](#安装)
+    *   [1.1 可选依赖](#可选依赖)
     *   [1.2 Compositing](#Compositing)
-*   [2 运行 Awn](#.E8.BF.90.E8.A1.8C_Awn)
-*   [3 配置](#.E9.85.8D.E7.BD.AE)
-*   [4 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
-    *   [4.1 外部 applets](#.E5.A4.96.E9.83.A8_applets)
+*   [2 运行 Awn](#运行_Awn)
+*   [3 配置](#配置)
+*   [4 提示与技巧](#提示与技巧)
+    *   [4.1 外部 applets](#外部_applets)
         *   [4.1.1 DockbarX](#DockbarX)
-*   [5 更多资源](#.E6.9B.B4.E5.A4.9A.E8.B5.84.E6.BA.90)
+*   [5 更多资源](#更多资源)
 
 ## 安装
 

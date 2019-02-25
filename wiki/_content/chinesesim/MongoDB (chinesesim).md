@@ -18,7 +18,7 @@ MongoDB (from hu**mongo**us) 是一个开源的，面向文档的数据库系统
 
 由于 MongoDB 修改了软件授权协议，[官方软件仓库](/index.php/Official_repositories "Official repositories")已经删除了此软件包，需要的用户可以选择安装 [mongodb](https://aur.archlinux.org/packages/mongodb/) 或 [mongodb-bin](https://aur.archlinux.org/packages/mongodb-bin/) 软件包。请注意从代码编译 [mongodb](https://aur.archlinux.org/packages/mongodb/) 需要 ~160GB 磁盘空间，需要花费几个小时时间。
 
-可以选择安装 [mongodb-tools](https://www.archlinux.org/packages/?name=mongodb-tools)，这个软件包提供了 `mongoimport`, `mongoexport`, `mongodump`, `mongorestore` 等工具。
+可以选择安装 [mongodb-tools](https://aur.archlinux.org/packages/mongodb-tools/)，这个软件包提供了 `mongoimport`, `mongoexport`, `mongodump`, `mongorestore` 等工具。
 
 [Start/Enable](/index.php/Systemd#Using_units "Systemd") 服务 `mongodb.service`。
 

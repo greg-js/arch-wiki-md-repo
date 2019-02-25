@@ -275,7 +275,7 @@ Then [fetch](/index.php/Git#Using_remotes "Git") this remote to initialize it in
 
 **Warning:** Your commits will be authored with your [global Git name and email address](/index.php/Git#Configuration "Git"). It is very difficult to change commits after pushing them ([FS#45425](https://bugs.archlinux.org/task/45425)). If you want to push to the AUR under different credentials, you can change them per package with `git config user.name "..."` and `git config user.email "..."`.
 
-To upload or update a package [add](/index.php/Git#Staging_changes "Git") *at least* [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and [.SRCINFO](/index.php/.SRCINFO ".SRCINFO") then any new or modified [.install](/index.php/PKGBUILD#install "PKGBUILD") files, [patches](/index.php/Patching_packages "Patching packages") or other [local source files](/index.php/PKGBUILD#source "PKGBUILD"); [commit](/index.php/Git#Commiting_changes "Git") with a meaningful commit message, and finally [push](/index.php/Git#Push_to_a_repository "Git") the changes to the AUR.
+To upload or update a package [add](/index.php/Git#Staging_changes "Git") *at least* [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and [.SRCINFO](/index.php/.SRCINFO ".SRCINFO") then any new or modified [.install](/index.php/PKGBUILD#install "PKGBUILD") files, [patches](/index.php/Patching_packages "Patching packages") or other [local source files](/index.php/PKGBUILD#source "PKGBUILD"); [commit](/index.php/Git#Committing_changes "Git") with a meaningful commit message, and finally [push](/index.php/Git#Push_to_a_repository "Git") the changes to the AUR.
 
 **Tip:** To keep the working directory and commits as clean as possible, create a [gitignore(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gitignore.5) that excludes all files and force-add files as needed.
 
@@ -314,7 +314,7 @@ You may request to *unlist* a `*pkgbase*` from the AUR. A short note explaining 
 
 *   It is not sufficient to explain why a package is up for deletion only in its comments because as soon as a TU takes action, the only place where such information can be obtained is the aur-requests mailing list.
 *   Deletion requests can be rejected, in which case if you are the maintainer you will likely be advised to disown the package to allow adoption by another maintainer.
-*   After a package is "deleted", its [git](/index.php/Git "Git") repository remains available for [cloning](/index.php/Arch_User_Repository#Acquire_build_files "Arch User Repository").
+*   After a package is "deleted", its [git](/index.php/Git "Git") repository remains available for [cloning](#Acquire_build_files).
 
 #### Merge
 

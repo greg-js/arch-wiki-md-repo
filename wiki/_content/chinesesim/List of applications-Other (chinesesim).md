@@ -278,7 +278,7 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 *   **Albert** — An application launcher inspired by Alfred.
 
-	[https://github.com/manuelschneid3r/albert](https://github.com/manuelschneid3r/albert) || [albert](https://aur.archlinux.org/packages/albert/)
+	[https://github.com/manuelschneid3r/albert](https://github.com/manuelschneid3r/albert) || [albert](https://www.archlinux.org/packages/?name=albert)
 
 *   **Ayr** — Manages menus of application launchers, either executables or desktop files. Also opens files and URLs with launchers, desktop files, or applications associated by name or mimetype. Uses dmenu to manage its menus.
 

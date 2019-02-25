@@ -38,7 +38,7 @@ There is a fairly recent passthrough method called [Looking Glass](https://looki
 
 ### Fully virtualized GPU support via Intel-specific iGVT-g extension
 
-[iGVT-g](/index.php/Intel_graphics#Intel_GVT-g_Graphics_Virtualization_Support "Intel graphics") is limited to Intel graphics on [recent Intel CPUs](https://github.com/intel/gvt-linux/wiki/GVTg_Setup_Guide) (starting with 5th generation Intel Core(TM) processors). For more information, see [this Reddit thread for use on an Arch host system](https://www.reddit.com/r/VFIO/comments/8h352p/guide_running_windows_via_qemukvm_and_intel_gvtg/). If you use [Libvirt](/index.php/Libvirt "Libvirt"), you might want to check out [this blog.](https://blog.bepbep.co/posts/gvt/)
+[iGVT-g](/index.php/Intel_graphics#Intel_GVT-g_graphics_virtualization_support "Intel graphics") is limited to Intel graphics on [recent Intel CPUs](https://github.com/intel/gvt-linux/wiki/GVTg_Setup_Guide) (starting with 5th generation Intel Core(TM) processors). For more information, see [this Reddit thread for use on an Arch host system](https://www.reddit.com/r/VFIO/comments/8h352p/guide_running_windows_via_qemukvm_and_intel_gvtg/). If you use [Libvirt](/index.php/Libvirt "Libvirt"), you might want to check out [this blog.](https://blog.bepbep.co/posts/gvt/)
 
 ### Virgil3d virtio-gpu paravirtualized device driver
 

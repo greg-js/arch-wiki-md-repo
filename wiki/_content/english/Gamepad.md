@@ -27,6 +27,8 @@ Joysticks can be a bit of a hassle to get working in Linux. Not because they are
     *   [7.2 Logitech Thunderpad Digital](#Logitech_Thunderpad_Digital)
     *   [7.3 Nintendo Gamecube Controller](#Nintendo_Gamecube_Controller)
     *   [7.4 Nintendo Switch Wired Pro Controller](#Nintendo_Switch_Wired_Pro_Controller)
+        *   [7.4.1 Dolphin (Gamecube Controller Emulation)](#Dolphin_(Gamecube_Controller_Emulation))
+        *   [7.4.2 Steam](#Steam)
     *   [7.5 PlayStation 3/4 controller](#PlayStation_3/4_controller)
         *   [7.5.1 Connecting via Bluetooth](#Connecting_via_Bluetooth)
         *   [7.5.2 Using generic/clone controllers](#Using_generic/clone_controllers)
@@ -324,6 +326,28 @@ udev can be reloaded with the new configuration by executing
 ```
 
 ### Nintendo Switch Wired Pro Controller
+
+#### Dolphin (Gamecube Controller Emulation)
+
+Shinyquagsire23 made a git repo called "HID Joy-Con Whispering"[[1]](https://github.com/shinyquagsire23/HID-Joy-Con-Whispering), which contains a driver for the Joy Cons and the Switch Pro Controller over USB. Currently, it does not support rumble or gyroscope.
+
+After running make, load the uinput module:
+
+```
+ # modprobe uinput
+
+```
+
+Then to activate the driver:
+
+```
+ # ./uinputdriver > /dev/null
+
+```
+
+Over on Dolphin's controller configuration menu, there should be an entry for evdev/0/joycon (not Nintendo Switch Pro Controller). Select it, and you should now be able to configure the controls.
+
+#### Steam
 
 While the controller works for native Linux games, this controller isn't detected by Steam. To fix this, we'll need to add a line to 70-steam-controller.rules.
 

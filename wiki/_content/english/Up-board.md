@@ -27,7 +27,7 @@ The GPIO pins on the UP board are routed through a CPLD that requires a custom d
 
 ## Rebooting
 
-Due to a possible bug, discussed at [https://forum.up-community.org/discussion/comment/8980#Comment_8980](https://forum.up-community.org/discussion/comment/8980#Comment_8980) and reported here, [https://bugs.freedesktop.org/show_bug.cgi?id=106721](https://bugs.freedesktop.org/show_bug.cgi?id=106721)
+Due to a possible bug, discussed at [https://forum.up-community.org/discussion/comment/8980#Comment_8980](https://forum.up-community.org/discussion/comment/8980#Comment_8980) and reported here [https://bugs.freedesktop.org/show_bug.cgi?id=106721](https://bugs.freedesktop.org/show_bug.cgi?id=106721)
 
 Rebooting the board multiple times without disconnecting power, as what could happen if using as a server, could fail with a kernel panic.
 

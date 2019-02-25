@@ -1,6 +1,10 @@
 [Dolphin](https://www.kde.org/applications/system/dolphin/) je výchozí správce souborů [KDE](/index.php/KDE "KDE").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalace](#Instalace)
     *   [1.1 Porovnání souborů](#Porovnání_souborů)

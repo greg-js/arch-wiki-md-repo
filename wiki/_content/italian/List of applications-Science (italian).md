@@ -188,7 +188,7 @@ Si veda l'articolo principale: [List of applications/Documents (Italiano)#Docume
 
 *   **[ROOT](https://en.wikipedia.org/wiki/ROOT "wikipedia:ROOT")** — Programma di analisi dei dati e relativa libreria ideato originariamente per la fisica delle particelle sviluppato dal CERN.
 
-	[http://root.cern.ch/drupal/](http://root.cern.ch/drupal/) || [root](https://aur.archlinux.org/packages/root/)
+	[http://root.cern.ch/drupal/](http://root.cern.ch/drupal/) || [root](https://www.archlinux.org/packages/?name=root)
 
 *   **[SciDAVis](https://en.wikipedia.org/wiki/SciDAVis "wikipedia:SciDAVis")** — Fork di QtiPlot con l'obiettivo do essere meglio documentato e più amichevole.
 

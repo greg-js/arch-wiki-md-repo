@@ -50,7 +50,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 
 #### Drivers
 
-See [Intel Graphics](/index.php/Intel_graphics#Installation "Intel graphics"), [Hardware Acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration") and [NVIDIA_Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus").
+See [Intel Graphics](/index.php/Intel_graphics#Installation "Intel graphics"), [Hardware Acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration") and [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus").
 
 #### Brightness
 

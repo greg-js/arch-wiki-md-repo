@@ -116,6 +116,7 @@ install CD version
  | HDMI audio requires nvhda module |
 | [Lenovo ThinkPad P52](/index.php/Lenovo_ThinkPad_P52 "Lenovo ThinkPad P52") | 2018.09 | Yes | Yes | Yes | Yes | Unknown | Suspend working, hibernate not tested | NA | Touchpad (No) |
 | [Lenovo ThinkPad P1](/index.php/Lenovo_ThinkPad_P1 "Lenovo ThinkPad P1") | 2018.12 | Yes | Yes | Yes | Yes | Yes | Suspend working, hibernate not tested | NA | Webcam (Yes), multi-monitor (yes) |
+| [Lenovo ThinkPad P52s](/index.php/Lenovo_ThinkPad_P52s "Lenovo ThinkPad P52s") | 2019.02 | Yes* (See Remarks) | Yes | Yes | Yes | Yes | Suspend (Yes), Hibernate (Yes) | Not tested | Webcam (Yes), Multi-monitor (Yes), Card Reader (Yes), Smartcard Reader (Yes), NFC (No, [see this](https://github.com/nfc-tools/libnfc/issues/455)), Fingerprint (No, [see this](https://forums.lenovo.com/t5/Linux-Discussion/Thinkpad-T580-Synaptics-Metallica-MIS-Touch-Fingerprint-Reader/m-p/4057745)) | *Intel graphics needs to be specified in the Xorg config for Xorg to work, see [Lenovo ThinkPad P52s](/index.php/Lenovo_ThinkPad_P52s "Lenovo ThinkPad P52s") |
 
 #### T series
 

@@ -139,7 +139,7 @@
 | <small>5.1.6.</small> [Diccionarios](/index.php/Category:Dictionaries_(Espa%C3%B1ol) "Category:Dictionaries (Español)") <small>(2)</small> |
 | <small>5.1.7.</small> [Emulación](/index.php/Category:Emulation_(Espa%C3%B1ol) "Category:Emulation (Español)") <small>(5)</small> |
 | <small>5.1.7.1.</small> [Emuladores de terminal](/index.php/Category:Terminal_emulators_(Espa%C3%B1ol) "Category:Terminal emulators (Español)") <small>(3) (también en [Aplicaciones](/index.php/Category:Applications_(Espa%C3%B1ol) "Category:Applications (Español)"), [Línea de órdenes](/index.php/Category:Command-line_(Espa%C3%B1ol) "Category:Command-line (Español)"))</small> |
-| <small>5.1.8.</small> [Gestores de archivos](/index.php/Category:File_managers_(Espa%C3%B1ol) "Category:File managers (Español)") <small>(4)</small> |
+| <small>5.1.8.</small> [Gestores de archivos](/index.php/Category:File_managers_(Espa%C3%B1ol) "Category:File managers (Español)") <small>(5)</small> |
 | <small>5.1.9.</small> [Juegos](/index.php/Category:Gaming_(Espa%C3%B1ol) "Category:Gaming (Español)") <small>(6)</small> |
 | <small>5.1.10.</small> [Aplicaciones de internet](/index.php/Category:Internet_applications_(Espa%C3%B1ol) "Category:Internet applications (Español)") <small>(2) (también en [Administración de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)"))</small> |
 | <small>5.1.10.1.</small> [Redes de anonimato](/index.php/Category:Anonymity_networks_(Espa%C3%B1ol) "Category:Anonymity networks (Español)") <small>(3) (también en [Seguridad](/index.php/Category:Security_(Espa%C3%B1ol) "Category:Security (Español)"))</small> |
@@ -218,7 +218,7 @@
 | <small>5.8.2.</small> [Proyectos de Arch](/index.php/Category:Arch_projects_(Espa%C3%B1ol) "Category:Arch projects (Español)") <small>(6) (también en [DeveloperWiki](/index.php/Category:DeveloperWiki_(Espa%C3%B1ol) "Category:DeveloperWiki (Español)"))</small> |
 | <small>5.8.3.</small> [GNOME](/index.php/Category:GNOME_(Espa%C3%B1ol) "Category:GNOME (Español)") <small>(6) (también en [Entornos de escritorios](/index.php/Category:Desktop_environments_(Espa%C3%B1ol) "Category:Desktop environments (Español)"))</small> |
 | <small>5.8.4.</small> [GNU](/index.php/Category:GNU_(Espa%C3%B1ol) "Category:GNU (Español)") <small>(10)</small> |
-| <small>5.8.5.</small> [KDE](/index.php/Category:KDE_(Espa%C3%B1ol) "Category:KDE (Español)") <small>(4) (también en [Entornos de escritorios](/index.php/Category:Desktop_environments_(Espa%C3%B1ol) "Category:Desktop environments (Español)"))</small> |
+| <small>5.8.5.</small> [KDE](/index.php/Category:KDE_(Espa%C3%B1ol) "Category:KDE (Español)") <small>(5) (también en [Entornos de escritorios](/index.php/Category:Desktop_environments_(Espa%C3%B1ol) "Category:Desktop environments (Español)"))</small> |
 | <small>5.8.6.</small> [Mozilla](/index.php/Category:Mozilla_(Espa%C3%B1ol) "Category:Mozilla (Español)") <small>(1)</small> |
 | <small>5.8.7.</small> [OpenBSD](/index.php/Category:OpenBSD_(Espa%C3%B1ol) "Category:OpenBSD (Español)") <small>(1)</small> |
 | <small>5.8.8.</small> [Suckless](/index.php/Category:Suckless_(Espa%C3%B1ol) "Category:Suckless (Español)") <small>(2)</small> |
@@ -266,7 +266,7 @@
 | <small>6.11.</small> [Interfaz gráfico de usuario](/index.php/Category:Graphical_user_interfaces_(Espa%C3%B1ol) "Category:Graphical user interfaces (Español)") <small>(4)</small> |
 | <small>6.11.1.</small> [Entornos de escritorios](/index.php/Category:Desktop_environments_(Espa%C3%B1ol) "Category:Desktop environments (Español)") <small>(7)</small> |
 | <small>6.11.1.1.</small> [GNOME](/index.php/Category:GNOME_(Espa%C3%B1ol) "Category:GNOME (Español)") <small>(6) (también en [Proyectos de software](/index.php/Category:Software_projects_(Espa%C3%B1ol) "Category:Software projects (Español)"))</small> |
-| <small>6.11.1.2.</small> [KDE](/index.php/Category:KDE_(Espa%C3%B1ol) "Category:KDE (Español)") <small>(4) (también en [Proyectos de software](/index.php/Category:Software_projects_(Espa%C3%B1ol) "Category:Software projects (Español)"))</small> |
+| <small>6.11.1.2.</small> [KDE](/index.php/Category:KDE_(Espa%C3%B1ol) "Category:KDE (Español)") <small>(5) (también en [Proyectos de software](/index.php/Category:Software_projects_(Espa%C3%B1ol) "Category:Software projects (Español)"))</small> |
 | <small>6.11.1.3.</small> [Xfce](/index.php/Category:Xfce_(Espa%C3%B1ol) "Category:Xfce (Español)") <small>(1)</small> |
 | <small>6.11.2.</small> [Gestores de inicio de sesión](/index.php/Category:Display_managers_(Espa%C3%B1ol) "Category:Display managers (Español)") <small>(4)</small> |
 | <small>6.11.3.</small> [Conjunto de widgets](/index.php/Category:Widget_toolkits_(Espa%C3%B1ol) "Category:Widget toolkits (Español)") <small>(2) (también en [Desarrollo](/index.php/Category:Development_(Espa%C3%B1ol) "Category:Development (Español)"))</small> |

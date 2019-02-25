@@ -1705,7 +1705,7 @@ See also [Bonjour](/index.php/Avahi#Link-Local_(Bonjour/Zeroconf)_chat "Avahi"),
 
 *   **[Wire](https://en.wikipedia.org/wiki/Wire_(software) "wikipedia:Wire (software)")** — Modern, private messenger. Based on the [Electron](https://electronjs.org/) platform.
 
-	[https://wire.com/](https://wire.com/) || [wire-desktop](https://aur.archlinux.org/packages/wire-desktop/)
+	[https://wire.com/](https://wire.com/) || [wire-desktop](https://www.archlinux.org/packages/?name=wire-desktop)
 
 *   **YakYak** — Unofficial desktop client for Google Hangouts. Based on the [Electron](https://electronjs.org/) platform.
 

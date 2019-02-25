@@ -16,15 +16,15 @@ This article is an introduction to building custom kernels from **kernel.org sou
         *   [2.1.1 A. Default Arch configuration](#A._Default_Arch_configuration)
         *   [2.1.2 B. Generated configuration](#B._Generated_configuration)
     *   [2.2 Advanced configuration](#Advanced_configuration)
-*   [3 Compilation and installation](#Compilation_and_installation)
-    *   [3.1 Compile the kernel](#Compile_the_kernel)
-    *   [3.2 Compile the modules](#Compile_the_modules)
-    *   [3.3 Copy the kernel to /boot directory](#Copy_the_kernel_to_/boot_directory)
-    *   [3.4 Make initial RAM disk](#Make_initial_RAM_disk)
-        *   [3.4.1 Automated preset method](#Automated_preset_method)
-        *   [3.4.2 Manual method](#Manual_method)
-    *   [3.5 Copy System.map](#Copy_System.map)
-*   [4 Bootloader configuration](#Bootloader_configuration)
+*   [3 Compilation](#Compilation)
+*   [4 Installation](#Installation)
+    *   [4.1 Install the modules](#Install_the_modules)
+    *   [4.2 Copy the kernel to /boot directory](#Copy_the_kernel_to_/boot_directory)
+    *   [4.3 Make initial RAM disk](#Make_initial_RAM_disk)
+        *   [4.3.1 Automated preset method](#Automated_preset_method)
+        *   [4.3.2 Manual method](#Manual_method)
+    *   [4.4 Copy System.map](#Copy_System.map)
+*   [5 Bootloader configuration](#Bootloader_configuration)
 
 ## Preparation
 
@@ -174,7 +174,7 @@ If unsure, only change a few options between compilations. If you cannot boot yo
 
 Running `$ lspci -k #` from liveCD lists names of kernel modules in use. Most importantly, you must maintain CGROUPS support. This is necessary for [systemd](/index.php/Systemd "Systemd").
 
-## Compilation and installation
+## Compilation
 
 **Tip:** If you want to have [gcc](https://www.archlinux.org/packages/?name=gcc) optimize for your processor's instruction sets, edit `arch/x86/Makefile` (both for 32 and 64 bits, see [[1]](https://lkml.org/lkml/2007/7/20/447)) within the kernel source directory:
 
@@ -182,8 +182,6 @@ Running `$ lspci -k #` from liveCD lists names of kernel modules in use. Most im
 *   Change the call cc-options flag from `-march=native` to the one that you have selected in Processor Family, e.g. `cflags-$(CONFIG_MK8) += $(call cc-option,-march=native)`. This is probably the best way to compile with `-march=native` as it works.
 
 *   Note: For 32bit Kernels, you need to edit `arch/x86/Makefile_32.cpu` instead and set `-march=native` for your processor.
-
-### Compile the kernel
 
 Compilation time will vary from as little as fifteen minutes to over an hour, depending on your kernel configuration and processor capability. Once the `.config` file has been set for the custom kernel, within the source directory run the following command to compile:
 
@@ -194,9 +192,11 @@ $ make
 
 **Tip:** To compile faster, *make* can be run with the `-jX` argument, where `X` is an integer number of parallel jobs. The best results are often achieved using the number of CPU cores in the machine + 1; for example, with a 2-core processor run `make -j3`. See [Makepkg#Improving compile times](/index.php/Makepkg#Improving_compile_times "Makepkg") for more information.
 
-### Compile the modules
+## Installation
 
 **Warning:** From this step onwards, commands must be either run as root or with root privileges. If not, they will fail.
+
+### Install the modules
 
 Once the kernel has been compiled, the modules for it must follow. As root or with root privileges, run the following command to do so:
 
@@ -293,7 +293,7 @@ The `System.map` file is not required for booting Linux. It is a type of "phone 
 *   Some processes like klogd, ksymoops etc
 *   By OOPS handler when information has to be dumped to the screen during a kernel crash (i.e info like in which function it has crashed).
 
-**Tip:** UEFI partitions are formatted using FAT32, which does not support symlinks.
+**Tip:** [UEFI](/index.php/UEFI "UEFI") partitions are formatted using FAT32, which does not support symlinks.
 
 If your `/boot` is on a filesystem which supports symlinks (i.e., not FAT32), copy `System.map` to `/boot`, appending your kernel's name to the destination file. Then create a symlink from `/boot/System.map` to point to `/boot/System.map-YourKernelName`:
 
@@ -312,6 +312,6 @@ After completing all steps above, you should have the following 3 files and 1 so
 
 ## Bootloader configuration
 
-Add an entry for your new kernel in your bootloader's configuration file - see [GRUB](/index.php/GRUB "GRUB"), [LILO](/index.php/LILO "LILO"), [GRUB2](/index.php/GRUB2 "GRUB2"), [Syslinux](/index.php/Syslinux "Syslinux"), [systemd-boot](/index.php/Systemd-boot "Systemd-boot") or [REFInd](/index.php/REFInd "REFInd") for examples.
+Add an entry for your new kernel in your bootloader's configuration file. See [Arch boot process#Feature comparison](/index.php/Arch_boot_process#Feature_comparison "Arch boot process") for possible boot loaders, their wiki articles and other information.
 
-**Tip:** Kernel sources include a script to automate the process for LILO: `$ arch/x86/boot/install.sh`. Remember to type `lilo` as root at the prompt to update it.
+**Tip:** Kernel sources include a script to automate the process for [LILO](/index.php/LILO "LILO"): `$ arch/x86/boot/install.sh`. Remember to type `lilo` as root at the prompt to update it.

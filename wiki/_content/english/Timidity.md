@@ -1,6 +1,10 @@
 TiMidity++ is a [software synthesizer](https://en.wikipedia.org/wiki/software_synthesizer "wikipedia:software synthesizer") that can play MIDI files without a hardware synthesizer. It can either render to the sound card in real time, or it can save the result to a file, such as a PCM .wav file.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -14,11 +18,11 @@ TiMidity++ is a [software synthesizer](https://en.wikipedia.org/wiki/software_sy
         *   [3.1.2 Daemon mode](#Daemon_mode)
         *   [3.1.3 Connect to virtual MIDI device](#Connect_to_virtual_MIDI_device)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 TiMidity++ does not play MIDI files](#TiMidity.2B.2B_does_not_play_MIDI_files)
+    *   [4.1 TiMidity++ does not play MIDI files](#TiMidity++_does_not_play_MIDI_files)
     *   [4.2 Daemon mode plays sound out of pace](#Daemon_mode_plays_sound_out_of_pace)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Convert files](#Convert_files)
-    *   [5.2 How to make DOSBox use TiMidity++](#How_to_make_DOSBox_use_TiMidity.2B.2B)
+    *   [5.2 How to make DOSBox use TiMidity++](#How_to_make_DOSBox_use_TiMidity++)
 *   [6 See also](#See_also)
 
 ## Installation

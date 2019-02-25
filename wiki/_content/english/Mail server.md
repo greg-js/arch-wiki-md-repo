@@ -64,7 +64,7 @@ All of these software except Sendmail include a mail delivery agent.
 
 	[https://dovecot.org/](https://dovecot.org/) || [dovecot](https://www.archlinux.org/packages/?name=dovecot)
 
-*   **[UW IMAP](https://en.wikipedia.org/wiki/UW_IMAP "wikipedia:UW IMAP")** — An IMAP/POP server.
+*   **[UW IMAP](/index.php/UW_IMAP "UW IMAP")** — An IMAP/POP server.
 
 	[https://www.washington.edu/imap/](https://www.washington.edu/imap/) || [imap](https://www.archlinux.org/packages/?name=imap)
 

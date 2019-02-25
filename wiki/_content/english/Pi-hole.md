@@ -320,7 +320,42 @@ or, via web interface, clicking on *Enable*.
 
 ### Cloudflared DNS service
 
-Pi-Hole can be configured to use privacy-first DNS [1.1.1.1](https://1.1.1.1/) by [Cloudflare](https://www.cloudflare.com/) over HTTPS (DOH). Install [cloudflared-bin](https://aur.archlinux.org/packages/cloudflared-bin/) and follow [upstream documentation](https://docs.pi-hole.net/guides/dns-over-https/).
+Pi-Hole can be configured to use privacy-first DNS [1.1.1.1](https://1.1.1.1/) by [Cloudflare](https://www.cloudflare.com/) over HTTPS (DOH). Install [cloudflared-bin](https://aur.archlinux.org/packages/cloudflared-bin/) and create a configuration file under /etc/cloudflared/
+
+For example:
+
+```
+/etc/cloudflared/cloudflared.yml
+
+```
+
+```
+proxy-dns: true
+proxy-dns-upstream:
+ - [https://1.0.0.1/dns-query](https://1.0.0.1/dns-query)
+ - [https://1.1.1.1/dns-query](https://1.1.1.1/dns-query)
+ - [https://2606:4700:4700::1111/dns-query](https://2606:4700:4700::1111/dns-query)
+ - [https://2606:4700:4700::1001/dns-query](https://2606:4700:4700::1001/dns-query)
+proxy-dns-port: 8000
+proxy-dns-address: 0.0.0.0
+logfile: /var/log/cloudflared.log
+
+```
+
+Then, start/enable the service with:
+
+```
+#systemctl enable cloudflared@cloudflared
+#systemctl start cloudflared@cloudflared
+
+```
+
+Finally, go to your pihole admin settings and set a custom Upstream DNS server:
+
+```
+127.0.0.1#8000
+
+```
 
 ### Use with VPN server
 

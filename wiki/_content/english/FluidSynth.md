@@ -121,8 +121,4 @@ find . -regex '.*[.][mM][iI][dD][iI]?$' -print0 | xargs -0 -n 1 -P $maxjobs bash
 
 If your *fluidsynth* application is set to use alsa as driver, the sound card will be accessed directly and pulseaudio and applications using pulseaudio will not be able to work properly. You can modify the configuration file `/etc/conf.d/fluidsynth` and change the driver to PulseAudio, then restart *fluidsynth* and PulseAudio:
 
- `/etc/conf.d/fluidsynth` 
-```
-AUDIO_DRIVER=pulseaudio
-OTHER_OPTS='-m alsa_seq -r 48000'
-```
+ `/etc/conf.d/fluidsynth`  `OTHER_OPTS='-a pulseaudio -m alsa_seq -r 48000'`

@@ -4,7 +4,11 @@ Related articles
 
 [Avant Window Navigator](https://launchpad.net/awn) (AWN) is a lightweight dock written in C. It has support for launchers, task lists and third party applets.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Additional dependencies](#Additional_dependencies)

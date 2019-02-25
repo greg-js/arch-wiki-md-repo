@@ -10,6 +10,7 @@ For the reverse operation (generating codes compatible with Google Authenticator
 
 *   [1 Installation](#Installation)
 *   [2 Setting up the PAM](#Setting_up_the_PAM)
+    *   [2.1 Request OTP only when connecting from outside your local network](#Request_OTP_only_when_connecting_from_outside_your_local_network)
 *   [3 Generating a secret key file](#Generating_a_secret_key_file)
 *   [4 Setting up your OTP-generator](#Setting_up_your_OTP-generator)
 *   [5 Testing](#Testing)
@@ -60,6 +61,36 @@ Enable challenge-response authentication in `/etc/ssh/**sshd_config**`:
 Finally, [reload](/index.php/Reload "Reload") the `sshd` service.
 
 **Warning:** OpenSSH will ignore all of this if you are authenticating with a SSH-key pair and have [disabled password logins](/index.php/OpenSSH#Force_public_key_authentication "OpenSSH"). However, as of OpenSSH 6.2, you can add `AuthenticationMethods` to allow both: two-factor and key-based authentication. See [OpenSSH#Two-factor authentication and public keys](/index.php/OpenSSH#Two-factor_authentication_and_public_keys "OpenSSH").
+
+### Request OTP only when connecting from outside your local network
+
+Sometimes, we just want to enable the 2FA capability just when we connect from outside our local network. To achieve this, create a file: `/etc/secutiry/access-local.conf`
+
+And add the networks where you want to be able to bypass the 2FA from:
+
+```
+# only allow from local IP range
++ : ALL : 192.168.20.0/24
+# Additional network: VPN tunnel ip range (in case you have one)
++ : ALL : 10.8.0.0/24
++ : ALL : LOCAL
+- : ALL : ALL
+
+```
+
+Go ahead and add this to your `/etc/pam.d/sshd`
+
+```
+#%PAM-1.0
+#auth     required  pam_securetty.so     #disable remote root
+**auth [success=1 default=ignore] pam_access.so accessfile=/etc/security/access-local.conf**
+auth      required  pam_google_authenticator.so
+auth      include   system-remote-login
+account   include   system-remote-login
+password  include   system-remote-login
+session   include   system-remote-login
+
+```
 
 ## Generating a secret key file
 

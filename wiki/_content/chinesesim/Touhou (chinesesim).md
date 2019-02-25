@@ -8,14 +8,18 @@
 
 本wiki的目标是帮助ArchLinux用户安装东方本作及其他东方相关的包.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 包](#.E5.8C.85)
-    *   [1.1 如何打包一个游戏](#.E5.A6.82.E4.BD.95.E6.89.93.E5.8C.85.E4.B8.80.E4.B8.AA.E6.B8.B8.E6.88.8F)
-    *   [1.2 Python引擎](#Python.E5.BC.95.E6.93.8E)
-*   [2 其他](#.E5.85.B6.E4.BB.96)
-    *   [2.1 安装完整版游戏](#.E5.AE.89.E8.A3.85.E5.AE.8C.E6.95.B4.E7.89.88.E6.B8.B8.E6.88.8F)
-    *   [2.2 MIDI 音源](#MIDI_.E9.9F.B3.E6.BA.90)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 包](#包)
+    *   [1.1 如何打包一个游戏](#如何打包一个游戏)
+    *   [1.2 Python引擎](#Python引擎)
+*   [2 其他](#其他)
+    *   [2.1 安装完整版游戏](#安装完整版游戏)
+    *   [2.2 MIDI 音源](#MIDI_音源)
 *   [3 See also](#See_also)
 
 ## 包

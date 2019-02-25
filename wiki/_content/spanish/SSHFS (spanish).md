@@ -60,7 +60,7 @@ $ sshfs miusuario@micomputadora:/ruta/remota /ruta/local -C -p 9876
 
 Aquí `-p 9876` especifica el número de puerto y `-C` activa la compresión. Para más opciones véase la sección [#Opciones](#Opciones).
 
-Cuando no se especifica, la ruta remota se establece de manera predeterminada en el directorio de inicio del usuario remoto. Los nombres de usuario y las opciones predeterminadas se pueden predefinir para cada computadora en `~/.ssh/config` para simplificar el uso de *sshfs*. Para obtener más información, véase [OpenSSH#Client use](/index.php/OpenSSH#Client_use "OpenSSH").
+Cuando no se especifica, la ruta remota se establece de manera predeterminada en el directorio de inicio del usuario remoto. Los nombres de usuario y las opciones predeterminadas se pueden predefinir para cada computadora en `~/.ssh/config` para simplificar el uso de *sshfs*. Para obtener más información, véase [OpenSSH#Client usage](/index.php/OpenSSH#Client_usage "OpenSSH").
 
 SSH le pedirá la contraseña, si es necesario. Si no desea escribir la contraseña varias veces al día, véase [SSH keys](/index.php/SSH_keys_(Espa%C3%B1ol) "SSH keys (Español)").
 

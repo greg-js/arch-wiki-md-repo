@@ -44,13 +44,6 @@
 
 By default, the cache directories will be created in `/var/cache/squid`, and the appropriate permissions set up for those directories. However, for greater control, we need to delve into `/etc/squid/squid.conf`.
 
-Everything is well commented, but if you want to strip the comments out you should run:
-
-```
-sed -i "/^#/d;/^ *$/d" /etc/squid/squid.conf
-
-```
-
 The following options might be of some use to you. If you do not have the option present in your configuration file, add it!
 
 *   `http_port` - Sets the port that Squid binds to on your local machine. You can have Squid bind to multiple ports by specifying multiple http_port lines. By default, Squid binds to port 3128.

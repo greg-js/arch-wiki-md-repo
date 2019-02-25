@@ -25,14 +25,15 @@ Related articles
 *   [1 Historical background](#Historical_background)
 *   [2 Separate screens](#Separate_screens)
 *   [3 RandR](#RandR)
-    *   [3.1 Configuration using xrandr](#Configuration_using_xrandr)
-        *   [3.1.1 VGA1 left of HDMI1 at their preferred resolutions](#VGA1_left_of_HDMI1_at_their_preferred_resolutions)
-        *   [3.1.2 VGA1 right of HDMI1 at fixed resolutions](#VGA1_right_of_HDMI1_at_fixed_resolutions)
-        *   [3.1.3 Combine screens into virtual display](#Combine_screens_into_virtual_display)
-    *   [3.2 Configuration using xorg.conf](#Configuration_using_xorg.conf)
-        *   [3.2.1 Example: dualhead configuration using relative coordinates](#Example:_dualhead_configuration_using_relative_coordinates)
-        *   [3.2.2 Example: dualhead configuration using relative coordinates with custom resolutions](#Example:_dualhead_configuration_using_relative_coordinates_with_custom_resolutions)
-        *   [3.2.3 Example: dualhead configuration using absolute coordinates](#Example:_dualhead_configuration_using_absolute_coordinates)
+    *   [3.1 Configuration using arandr](#Configuration_using_arandr)
+    *   [3.2 Configuration using xrandr](#Configuration_using_xrandr)
+        *   [3.2.1 VGA1 left of HDMI1 at their preferred resolutions](#VGA1_left_of_HDMI1_at_their_preferred_resolutions)
+        *   [3.2.2 VGA1 right of HDMI1 at fixed resolutions](#VGA1_right_of_HDMI1_at_fixed_resolutions)
+        *   [3.2.3 Combine screens into virtual display](#Combine_screens_into_virtual_display)
+    *   [3.3 Configuration using xorg.conf](#Configuration_using_xorg.conf)
+        *   [3.3.1 Example: dualhead configuration using relative coordinates](#Example:_dualhead_configuration_using_relative_coordinates)
+        *   [3.3.2 Example: dualhead configuration using relative coordinates with custom resolutions](#Example:_dualhead_configuration_using_relative_coordinates_with_custom_resolutions)
+        *   [3.3.3 Example: dualhead configuration using absolute coordinates](#Example:_dualhead_configuration_using_absolute_coordinates)
 *   [4 TwinView](#TwinView)
 *   [5 Xinerama](#Xinerama)
 *   [6 Application support](#Application_support)
@@ -71,9 +72,21 @@ Working this way does have certain advantages, such as windows popping up on one
 
 [RandR](https://en.wikipedia.org/wiki/RandR "wikipedia:RandR") (**R**otate **and** **R**esize) is an [X Window System](https://en.wikipedia.org/wiki/X_Window_System "wikipedia:X Window System") extension, which allows clients to dynamically change (e.g. resize, rotate, reflect) screens. In most cases, it can fully replace the old Xinerama setup. See [an explanation](http://i3wm.org/docs/multi-monitor.html#_the_explanation) why RandR is better than Xinerama.
 
-RandR can be configured for the current session via the [xrandr](/index.php/Xrandr "Xrandr") tool or persistently via an [xorg.conf](/index.php/Xorg.conf "Xorg.conf") file.
+RandR can be configured for the current session via the [xrandr](/index.php/Xrandr "Xrandr") tool, arandr or persistently via an [xorg.conf](/index.php/Xorg.conf "Xorg.conf") file.
 
 **Note:** There are multiple ways to configure the same thing, you might have to experiment a little before you find the best configuration.
+
+### Configuration using arandr
+
+arandr can graphically arrange your monitors, change resolutions, and save a script to duplicate your setup. By default, if you "Save As" it will be saved in `~/.screenlayout/`. These files can then be added to your `~/.profile`. Sometimes problems arise from running the arandr script too soon after login.
+
+Edit `~/.profile`
+
+```
+$ sleep 3
+$ /home/<user>/.screenlayout/myLayout.sh
+
+```
 
 ### Configuration using xrandr
 

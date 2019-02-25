@@ -14,7 +14,7 @@
 | Ambient Light Sensor | Not working |
 | Battery charge threshold | Not working |
 
-ASUS [announced](https://www.asus.com/News/q0npwWGXCqpxoVf8) UX430 and UX530 models. Since these models share almost the same hardware (the only difference is screen size and discrete NVidia graphics card), this article covers hardware specific configuration for all UX430UA, UX430UQ, UX530UQ and UX530UX models.
+ASUS [announced](https://www.asus.com/News/q0npwWGXCqpxoVf8) UX430 and UX530 models. Since these models share almost the same hardware (the only difference is screen size and discrete NVidia GPU), this article covers hardware specific configuration for all UX430UA, UX430UQ, UX530UQ and UX530UX models.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -50,7 +50,7 @@ If the aforementioned "Secure Boot" option is a menu rather than an on-or-off op
 
 ## Video
 
-See [Intel Graphics](/index.php/Intel_graphics#Installation "Intel graphics") and [Hardware Acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration"). For models with discrete Nvidia graphics card, also see [NVIDIA_Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus").
+See [Intel Graphics](/index.php/Intel_graphics#Installation "Intel graphics") and [Hardware Acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration"). For models with discrete Nvidia graphics card, also see [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus").
 
 ## Audio
 
@@ -140,7 +140,7 @@ Linux (4.17 at least) default to [suspend-to-idle](https://www.kernel.org/doc/ht
 
 ## Fan always active
 
-See [Fan_speed_control#NBFC](/index.php/Fan_speed_control#NBFC "Fan speed control").
+See [Fan speed control#NBFC](/index.php/Fan_speed_control#NBFC "Fan speed control").
 
 # Tips and tricks
 

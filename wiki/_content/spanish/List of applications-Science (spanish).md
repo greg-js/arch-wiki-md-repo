@@ -201,7 +201,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 *   **[ROOT](https://en.wikipedia.org/wiki/ROOT "wikipedia:ROOT")** — Programa de análisis de datos y biblioteca (originalmente para la física de partículas), desarrollado por el CERN.
 
-	[http://root.cern.ch/drupal/](http://root.cern.ch/drupal/) || [root](https://aur.archlinux.org/packages/root/)
+	[http://root.cern.ch/drupal/](http://root.cern.ch/drupal/) || [root](https://www.archlinux.org/packages/?name=root)
 
 *   **[SciDAVis](https://en.wikipedia.org/wiki/SciDAVis "wikipedia:SciDAVis")** — Fork de QtiPlot con el objetivo de estar mejor documentado y más fácil de usar.
 

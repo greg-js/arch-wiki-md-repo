@@ -1,4 +1,4 @@
-[Gajim](https://gajim.org/index.php?lang=en) is a full featured and easy to use XMPP client.
+[Gajim](https://gajim.org/index.php?lang=en) is a full featured and easy to use [XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") client.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

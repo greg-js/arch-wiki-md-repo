@@ -45,7 +45,7 @@
 
 ## Installation
 
-[Spotify for Linux](https://www.spotify.com/us/download/linux/) can be [installed](/index.php/Install "Install") with the [spotify](https://aur.archlinux.org/packages/spotify/) package. If you wish to play local files you will need to additionally install [zenity](https://www.archlinux.org/packages/?name=zenity) and [ffmpeg-compat-54](https://aur.archlinux.org/packages/ffmpeg-compat-54/).
+[Spotify for Linux](https://www.spotify.com/us/download/linux/) can be [installed](/index.php/Install "Install") with the [spotify](https://aur.archlinux.org/packages/spotify/) package. If you wish to play local files you will need to additionally install [zenity](https://www.archlinux.org/packages/?name=zenity) and [ffmpeg-compat-57](https://aur.archlinux.org/packages/ffmpeg-compat-57/).
 
 ### Third-party clients
 
@@ -633,7 +633,7 @@ If you get a segmentation fault or error message when trying to play local files
 
 ```
 
-- it's caused by a missing libavcodec dependency. For PulseAudio users, installing [ffmpeg-compat-54](https://aur.archlinux.org/packages/ffmpeg-compat-54/) should fix it. If you get PGP verification errors when you install it you might have to import the correct PGP key.
+- it's caused by a missing libavcodec dependency. For PulseAudio users, installing [ffmpeg-compat-57](https://aur.archlinux.org/packages/ffmpeg-compat-57/) should fix it. If you get PGP verification errors when you install it you might have to import the correct PGP key.
 
 ```
    $ gpg --keyserver pgp.mit.edu --recv-keys FCF986EA15E6E293A5644F10B4322F04D67658D8

@@ -89,7 +89,7 @@ quiet radeon.dpm=1 acpi_osi=Linux acpi_backlight=vendor amd_iommu=on ivrs_ioapic
 
 ```
 
-The upgrade to 4.20 patched for Raver Ridge installing [linux-amd-raven](http://aur.archlinux.org/packages/linux-amd-raven) and may be you will want to install after [linux-amd-raven-headers](http://aur.archlinux.org/packages/linux-amd-raven-headers) in order to build DKMS modules.
+The upgrade to 4.20 patched for Raver Ridge installing [linux-amd-raven](https://aur.archlinux.org/packages/linux-amd-raven/) and may be you will want to install after [linux-amd-raven-headers](https://aur.archlinux.org/packages/linux-amd-raven-headers/) in order to build DKMS modules.
 
 Sinde idle=nomwait makes it run hotter. After the kernel upgrade you can remove idle=nomwait from grub, getting the following line:
 

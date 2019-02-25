@@ -832,7 +832,7 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 *   **Albert** — Sophisticated, plugin based standalone keyboard launcher.
 
-	[https://github.com/manuelschneid3r/albert](https://github.com/manuelschneid3r/albert) || [albert](https://aur.archlinux.org/packages/albert/)
+	[https://github.com/manuelschneid3r/albert](https://github.com/manuelschneid3r/albert) || [albert](https://www.archlinux.org/packages/?name=albert)
 
 *   **Application Finder** — Easy-to-use application launcher from Xfce.
 

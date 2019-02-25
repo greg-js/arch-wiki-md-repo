@@ -211,7 +211,7 @@ Per disabilitare la protezione inserisci una password vuota.
 
 ### Usare DNS Over HTTPS (DOH)
 
-Le richieste DNS possono anche essere eseguite [via HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS) usando un privacy-first DNS [1.1.1.1](https://1.1.1.1/) di [Cloudflare](https://www.cloudflare.com/). Installa [cloudflared-bin](https://aur.archlinux.org/packages/cloudflared-bin/) e segui [la documentatione del progetto](https://docs.pi-hole.net/guides/dns-over-https/).
+Le richieste DNS possono anche essere eseguite [via HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTPS") usando un privacy-first DNS [1.1.1.1](https://1.1.1.1/) di [Cloudflare](https://www.cloudflare.com/). Installa [cloudflared-bin](https://aur.archlinux.org/packages/cloudflared-bin/) e segui [la documentatione del progetto](https://docs.pi-hole.net/guides/dns-over-https/).
 
 ## Pi-hole Standalone
 

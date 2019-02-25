@@ -29,6 +29,8 @@
     *   [3.1 Optimus Nvidia](#Optimus_Nvidia)
     *   [3.2 bbswitch](#bbswitch)
     *   [3.3 nvidia-xrun](#nvidia-xrun)
+    *   [3.4 Troubleshoot](#Troubleshoot)
+        *   [3.4.1 NVRM: Failed to enable MSI; falling back to PCIe virtual-wire interrupts](#NVRM:_Failed_to_enable_MSI;_falling_back_to_PCIe_virtual-wire_interrupts)
 *   [4 Thunderbolt docks](#Thunderbolt_docks)
     *   [4.1 TB16](#TB16)
 *   [5 EFI firmware updates](#EFI_firmware_updates)
@@ -81,7 +83,9 @@ Integrated graphics works well out of the box.
 
 Works but additional configuration is needed. (see *[[3]](https://github.com/Bumblebee-Project/bbswitch/issues/140#issuecomment-394180574))
 
-*   If tlp is installed, add the graphic card to **RUNTIME_PM_BLACKLIST**
+*   Disable runtime PM:
+    *   If [tlp](/index.php/Tlp "Tlp") is installed, add the graphic card to **RUNTIME_PM_BLACKLIST**
+    *   If [laptop-mode-tools](/index.php/Laptop-mode-tools "Laptop-mode-tools") is installed, add the graphic card to **AUTOSUSPEND_RUNTIME_DEVID_BLACKLIST** in **/etc/laptop-mode/conf.d/runtime-pm.conf**
 *   Uninstall or disable bbswitch
 *   Install bumblebee and set **PMMethod=none** in nvidia section
 *   Install nvidia driver
@@ -99,6 +103,17 @@ The [nvidia-xrun](https://aur.archlinux.org/packages/nvidia-xrun/) package will 
 
 ```
  systemctl enable nvidia-xrun-pm
+
+```
+
+### Troubleshoot
+
+#### NVRM: Failed to enable MSI; falling back to PCIe virtual-wire interrupts
+
+Sometimes it happens after suspend/resume. GPU could work fine without MSI. [[5]](http://us.download.nvidia.com/XFree86/Linux-x86/325.15/README/knownissues.html#msi_interrupts). You could disable MSI by adding the following in **/etc/modprobe.d/nvidia.conf**:
+
+```
+ options nvidia NVreg_EnableMSI=0
 
 ```
 
