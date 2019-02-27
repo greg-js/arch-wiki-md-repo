@@ -412,6 +412,10 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 
 	[https://cointop.sh/](https://cointop.sh/) || [cointop](https://aur.archlinux.org/packages/cointop/)
 
+*   **Coinbash** — Single file bash script which display cryptocurrency market data.
+
+	[https://github.com/8go/coinbash](https://github.com/8go/coinbash) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
 *   **Electrum** — Lightweight [Bitcoin](/index.php/Bitcoin "Bitcoin") client.
 
 	[https://electrum.org/](https://electrum.org/) || [electrum](https://www.archlinux.org/packages/?name=electrum)

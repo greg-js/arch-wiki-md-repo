@@ -356,6 +356,10 @@ Navigate to the submenu *System Settings > Input Devices > Keyboard > Advanced (
 
 KCM stands for **KC**onfig **M**odule. KCMs can help you configure your system by providing interfaces in System Settings, or through the command line with *kcmshell5*.
 
+*   **sddm-kcm** — KDE Config Module for [SDDM](/index.php/SDDM "SDDM").
+
+	[https://cgit.kde.org/sddm-kcm.git](https://cgit.kde.org/sddm-kcm.git) || [sddm-kcm](https://www.archlinux.org/packages/?name=sddm-kcm)
+
 *   **kde-gtk-config** — GTK2 and GTK3 Configurator for KDE.
 
 	[https://cgit.kde.org/kde-gtk-config.git](https://cgit.kde.org/kde-gtk-config.git) || [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config)

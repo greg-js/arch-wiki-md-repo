@@ -1,6 +1,10 @@
 [Citrix Receiver](https://en.wikipedia.org/wiki/Citrix_Receiver "wikipedia:Citrix Receiver") is the client component of [XenDesktop](https://en.wikipedia.org/wiki/XenDesktop "wikipedia:XenDesktop") (desktop virtualization software) and [XenApp](https://en.wikipedia.org/wiki/XenApp "wikipedia:XenApp") (application virtualization software), developed by [Citrix Systems](https://en.wikipedia.org/wiki/Citrix_Systems "wikipedia:Citrix Systems").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Google Chromium](#Google_Chromium)
@@ -123,8 +127,25 @@ To get audio input into Citrix Receiver, in `~/.ICAClient/wfclient.ini`, add `Al
 
 ## Troubleshooting
 
-If you have issues opening a Citrix connection under Firefox you may need to set the Citrix Receiver plugin to 'Always Activate' under the Firefox Add-ons Manager plugin settings.
+*   If you have issues opening a Citrix connection under Firefox you may need to set the Citrix Receiver plugin to 'Always Activate' under the Firefox Add-ons Manager plugin settings.
 
-If you have cursor alignment issues under Citrix and you have multiple displays connected to your machine you may need to disable all but one when using Citrix.
+*   If you have cursor alignment issues under Citrix and you have multiple displays connected to your machine you may need to disable all but one when using Citrix.
 
-If you have sticky Control Ctrl key issues after logging to session you may resolve it using this [guide](http://looselytyped.blogspot.com/2014/08/fixing-sticky-control-key-issues-with.html)
+*   If you have sticky Control Ctrl key issues after logging to session you may resolve it using this [guide](http://looselytyped.blogspot.com/2014/08/fixing-sticky-control-key-issues-with.html)
+
+*   On i3 window manager, Citrix might go full screen and grab all keyboard input. A workaround is to disable full screen mode in ~/.ICAClient/All_Regions.ini. See [forum](https://bbs.archlinux.org/viewtopic.php?id=242398) for more info.
+
+```
+[Virtual Channels\Seamless Windows]
+TWIMode=0
+
+[Virtual Channels\Thinwire Graphics]
+DesiredColor=8
+ApproximateColors=*
+DesiredHRES=1024
+DesiredVRES=768
+ScreenPercent=*
+UseFullScreen=false
+TWIFullScreenMode=false
+NoWindowManager=false
+```

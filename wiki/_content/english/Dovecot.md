@@ -23,12 +23,11 @@ This article describes how to set up Dovecot for personal or small office use.
     *   [2.2 Create the TLS certificate](#Create_the_TLS_certificate)
     *   [2.3 Dovecot configuration](#Dovecot_configuration)
     *   [2.4 Generate DH parameters](#Generate_DH_parameters)
-    *   [2.5 PAM Authentication](#PAM_Authentication)
-    *   [2.6 PAM Authentication with LDAP](#PAM_Authentication_with_LDAP)
-    *   [2.7 Sieve](#Sieve)
-        *   [2.7.1 Sieve Interpreter Plugin](#Sieve_Interpreter_Plugin)
-            *   [2.7.1.1 Example: SpamAssassin - move spam to "Junk" folder](#Example:_SpamAssassin_-_move_spam_to_"Junk"_folder)
-        *   [2.7.2 ManageSieve Server](#ManageSieve_Server)
+    *   [2.5 PAM Authentication with LDAP](#PAM_Authentication_with_LDAP)
+    *   [2.6 Sieve](#Sieve)
+        *   [2.6.1 Sieve Interpreter Plugin](#Sieve_Interpreter_Plugin)
+            *   [2.6.1.1 Example: SpamAssassin - move spam to "Junk" folder](#Example:_SpamAssassin_-_move_spam_to_"Junk"_folder)
+        *   [2.6.2 ManageSieve Server](#ManageSieve_Server)
 *   [3 Starting the server](#Starting_the_server)
 *   [4 Tricks](#Tricks)
 
@@ -89,17 +88,6 @@ then add the file to `/etc/dovecot/conf.d/10-ssl.conf`
 
 ```
 ssl_dh = </etc/dovecot/dh.pem
-
-```
-
-### PAM Authentication
-
-*   To configure PAM for dovecot, create `/etc/pam.d/dovecot` with the following content:
-
- `/etc/pam.d/dovecot` 
-```
-auth    required        pam_unix.so nullok
-account required        pam_unix.so 
 
 ```
 

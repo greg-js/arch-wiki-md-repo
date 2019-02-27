@@ -24,6 +24,7 @@
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Autostart on login](#Autostart_on_login)
     *   [5.2 Backlight toggle](#Backlight_toggle)
+    *   [5.3 Screen capture](#Screen_capture)
 *   [6 Known issues](#Known_issues)
     *   [6.1 Application launchers](#Application_launchers)
     *   [6.2 VirtualBox](#VirtualBox)
@@ -229,6 +230,38 @@ read lcd < /tmp/lcd
         swaymsg "output * dpms off"
         echo 0 > /tmp/lcd
     fi
+
+```
+
+### Screen capture
+
+Capturing the screen can be done using [grim](https://www.archlinux.org/packages/?name=grim) for screenshots and [wf-recorder-git](https://aur.archlinux.org/packages/wf-recorder-git/) for video. Optionally, [slurp](https://www.archlinux.org/packages/?name=slurp) can be used to select the part of the screen to capture.
+
+Take a screenshot of the whole screen :
+
+```
+grim screenshot.png
+
+```
+
+Take a screenshot of a part of the screen :
+
+```
+grim -g "$(slurp)" screenshot.png
+
+```
+
+Capture a video of the whole screen :
+
+```
+wf-recorder -o recording.mp4
+
+```
+
+Capture a video of a part of the screen :
+
+```
+wf-recorder -g "$(slurp)"
 
 ```
 

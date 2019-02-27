@@ -99,7 +99,7 @@ The manual way is presented in the following subsections. The idea is to either 
 
 [Pacman](https://git.archlinux.org/pacman.git/) can be compiled on most Linux distributions, and used directly on the host system to bootstrap Arch Linux. The [arch-install-scripts](https://git.archlinux.org/arch-install-scripts.git/about/) should run without issues directly from the downloaded sources on any recent distribution.
 
-Some distributions provide a pacman package in their official repositories which can be used for this purpose. As of June 2018, Gentoo and Fedora are both known to do so. Fedora also provides the *arch-install-scripts*.
+Some distributions provide a package for *pacman* and/or *arch-install-scripts* in their official repositories which can be used for this purpose. As of February 2019, Gentoo is known to provide the *pacman* package, and Alpine Linux and Fedora are known to provide both *pacman* and *arch-install-scripts*.
 
 ### Creating a chroot
 

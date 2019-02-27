@@ -7,7 +7,11 @@ The **Intel GMA 3600** series is a family of integrated video adapters based on 
 
 The Linux kernel has support since version 3.5.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Xorg driver](#Xorg_driver)
 *   [2 Troubleshooting](#Troubleshooting)
@@ -70,6 +74,11 @@ It is unable to utilize whole chip power and play fullHD movies using graphics a
 
 ```
 mplayer -lavdopts threads=4 -fs myvideo.avi
+
+```
+
+```
+mpv vd-lavc-threads=4 -fs myvideo.avi
 
 ```
 

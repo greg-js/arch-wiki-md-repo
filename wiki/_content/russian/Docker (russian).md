@@ -32,9 +32,9 @@
         *   [3.2.1 Создание образа вручную](#Создание_образа_вручную)
 *   [4 Удаление Docker и образов](#Удаление_Docker_и_образов)
 *   [5 Полезные советы](#Полезные_советы)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 docker0 Bridge gets no IP / no internet access in containers](#docker0_Bridge_gets_no_IP_/_no_internet_access_in_containers)
-    *   [6.2 Default number of allowed processes/threads too low](#Default_number_of_allowed_processes/threads_too_low)
+*   [6 Устранение неполадок](#Устранение_неполадок)
+    *   [6.1 docker0 Bridge не получает IP адреса/нет доступа к Интернету в контейнерах](#docker0_Bridge_не_получает_IP_адреса/нет_доступа_к_Интернету_в_контейнерах)
+    *   [6.2 Слишком низкое значение количества процессов/потоков по умолчанию](#Слишком_низкое_значение_количества_процессов/потоков_по_умолчанию)
     *   [6.3 Error initializing graphdriver: devmapper](#Error_initializing_graphdriver:_devmapper)
     *   [6.4 Failed to create some/path/to/file: No space left on device](#Failed_to_create_some/path/to/file:_No_space_left_on_device)
     *   [6.5 Invalid cross-device link in kernel 4.19.1](#Invalid_cross-device_link_in_kernel_4.19.1)
@@ -331,17 +331,17 @@ for ID in $(docker ps -q | awk '{print $1}'); do
 done
 ```
 
-## Troubleshooting
+## Устранение неполадок
 
-### docker0 Bridge gets no IP / no internet access in containers
+### docker0 Bridge не получает IP адреса/нет доступа к Интернету в контейнерах
 
-Docker enables IP forwarding by itself, but by default [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") overrides the respective sysctl setting. Set `IPForward=yes` in the network profile. See [Internet sharing#Enable packet forwarding](/index.php/Internet_sharing#Enable_packet_forwarding "Internet sharing") for details.
+Docker сам включает переадресацию IP, но по умолчанию [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") переопределяет соответствующую настройку sysctl. Установите `IPForward=yes` в настройках сети. Подробнее читайте в [Internet sharing#Enable packet forwarding](/index.php/Internet_sharing#Enable_packet_forwarding "Internet sharing").
 
-**Note:** You may need to [restart](/index.php/Restart "Restart") `docker.service` each time you [restart](/index.php/Restart "Restart") `systemd-networkd.service` or `iptables.service`
+**Примечание:** Вам может понадобится выполнить [restart](/index.php/Restart "Restart") `docker.service` каждый раз, когда Вы выполняете [restart](/index.php/Restart "Restart") `systemd-networkd.service` или `iptables.service`
 
-### Default number of allowed processes/threads too low
+### Слишком низкое значение количества процессов/потоков по умолчанию
 
-If you run into error messages like
+Если вы столкнетесь с сообщениями об ошибках, похожими на следующие:
 
 ```
 # e.g. Java
@@ -351,7 +351,7 @@ fork failed: Resource temporarily unavailable
 
 ```
 
-then you might need to adjust the number of processes allowed by systemd. The default is 500 (see `system.conf`), which is pretty small for running several docker containers. [Edit](/index.php/Edit "Edit") the `docker.service` with the following snippet:
+тогда вам может потребоваться настроить количество процессов, разрешенных systemd. Значени по умолчанию 500 (смотрите `system.conf`), что довольно мало для запуска нескольких Docker контейнеров. [Edit](/index.php/Edit "Edit") `docker.service` со следующим фрагментом:
 
  `# systemctl edit docker.service` 
 ```

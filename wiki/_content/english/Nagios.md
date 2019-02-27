@@ -1,6 +1,10 @@
 [Nagios](http://www.nagios.org/) is an open source host, service and network monitoring program. It monitors specified hosts and services, alerting you to any developing issues, errors or improvements. This article describes the installation and configuration of Nagios.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Features](#Features)
 *   [2 Webserver](#Webserver)
@@ -140,6 +144,11 @@ If you are still getting this error, you might need to change the rights on the 
 ### Nginx configuration
 
 Apart from php and php-fpm, You should have [fcgiwrap](/index.php/Nginx#CGI_implementation "Nginx") installed or else CGI scripts will not run.
+
+You will also need to ensure php-fm and fcgiwrap services/sockets are started when using nginx
+
+1.  [Start](/index.php/Start "Start"), or restart, `php-fpm.service` for php-fpm
+2.  [Start](/index.php/Start "Start"), or restart, `fcgiwrap.socket` for fcgiwrap
 
 Example configuration:
 
@@ -315,7 +324,7 @@ Edit `/etc/nagios/objects/localhost.cfg` to include checking of rdiff-backup on 
 
 ```
 define service{
-        use                             local-service         ; Name of service template to use
+        use                             local-service         ; Name of service template to use
         host_name                       localhost
         service_description             rdiff-backup
 	check_command			check_rdiff!/home/x/rdiffbackup!8!10!500!24

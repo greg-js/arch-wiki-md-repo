@@ -2,7 +2,7 @@
 | Display | Working | xf86-video-intel |
 | Backlight | Working with workaround, see notes |
 | Touchscreen | Working |
-| Stylus | Working | xf86-input-wacom |
+| Stylus | Pen tip and pressure sensitivity work, see notes | xf86-input-wacom |
 | Wireless | Working with workaround, see notes | r8723bs |
 | Audio | Working |
 | Battery Status | Working |
@@ -25,8 +25,9 @@ The Nuvision Solo 10 Draw is a [Tablet PC](/index.php/Tablet_PC "Tablet PC") dev
 *   [2 Installation](#Installation)
 *   [3 On-Screen Keyboard](#On-Screen_Keyboard)
 *   [4 Backlight](#Backlight)
-*   [5 Wireless](#Wireless)
-*   [6 Accelerometer](#Accelerometer)
+*   [5 Stylus](#Stylus)
+*   [6 Wireless](#Wireless)
+*   [7 Accelerometer](#Accelerometer)
 
 ## System Specifications
 
@@ -78,6 +79,35 @@ As a workaround, make sure that graphic module 'i915' is never added to the init
 The idea is that 'i915' is loaded too early into the system and 'i915' tries to obtain control over parts of the system that haven't fully loaded yet.
 
 As of the 11th of February 2019, this workaround appears to work fine.
+
+## Stylus
+
+As of February 25, 2019 the current Linux Wacom drver does not fully support the stylus.
+
+Stylus buttons work and the pen tip with full pressure sensitivity works but dedicated erasers do not.
+
+Someone will need to help write the required code changes to make this work as intended.
+
+As discussed here, [https://github.com/linuxwacom/libwacom/issues/70](https://github.com/linuxwacom/libwacom/issues/70)
+
+ `Quote from GitHub issue, user whot` 
+```
+You'll need a kernel patch for this device, but there may be a quirk available, cc @bentiss
+Short story: rubber/pen are supposed to be exclusive but your device sets pen, then rubber instead of clearing the pen bit first. 
+That's not something the current code handles because it's not correct protocol. The `BTN_TOOL_*` bits are special. 
+```
+ E: 0.078665 0001 0140 0001	# EV_KEY / BTN_TOOL_PEN         1
+ E: 0.078665 0003 0000 7086	# EV_ABS / ABS_X                7086
+ E: 0.078665 0003 0001 4153	# EV_ABS / ABS_Y                4153
+ E: 0.078665 0000 0000 0000	# ------------ SYN_REPORT (0) ---------- +8ms
+ E: 0.084891 0001 0141 0001	# EV_KEY / BTN_TOOL_RUBBER      1
+ E: 0.084891 0004 0004 852037	# EV_MSC / MSC_SCAN             852037
+ E: 0.084891 0001 014a 0001	# EV_KEY / BTN_TOUCH            1
+ E: 0.084891 0003 0000 7077	# EV_ABS / ABS_X                7077
+ E: 0.084891 0003 0001 4176	# EV_ABS / ABS_Y                4176
+ E: 0.084891 0000 0000 0000	# ------------ SYN_REPORT (0) ---------- +6ms
+ ```
+```
 
 ## Wireless
 

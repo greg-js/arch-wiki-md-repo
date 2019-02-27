@@ -74,6 +74,8 @@ $ arch-nspawn "$CHROOT"/root pacman -U /root/nodejs-svgo-1.1.1-1-any.pkg.tar.xz
 
 ```
 
+**Warning:** This voids the warrantee on your "Clean" CHROOT!
+
 #### Create a PGO cache
 
 To use PGO, create a folder in the same place, inside and outside of the chroot, to store [profiles](https://gcc.gnu.org/onlinedocs/gcc/Gcov-Data-Files.html):

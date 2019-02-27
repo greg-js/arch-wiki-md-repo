@@ -78,6 +78,10 @@ All of these software except Sendmail include a mail delivery agent.
 
 	[http://www.procmail.org/](http://www.procmail.org/) || [procmail](https://www.archlinux.org/packages/?name=procmail)
 
+*   **[Maildrop](/index.php?title=Maildrop&action=edit&redlink=1 "Maildrop (page does not exist)")** — A mail filter/mail delivery agent used by the Courier Mail Server.
+
+	[https://www.courier-mta.org/maildrop/](https://www.courier-mta.org/maildrop/) || [courier-maildrop](https://aur.archlinux.org/packages/courier-maildrop/)
+
 See also [Wikipedia:Comparison of e-mail servers](https://en.wikipedia.org/wiki/Comparison_of_e-mail_servers "wikipedia:Comparison of e-mail servers").
 
 ## Ports

@@ -1,6 +1,6 @@
-**翻译状态：** 本文是英文页面 [Arch_Linux](/index.php/Arch_Linux "Arch Linux") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-07-10，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_Linux&diff=0&oldid=507441)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Arch_Linux](/index.php/Arch_Linux "Arch Linux") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-02-25，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_Linux&diff=0&oldid=556870)可以查看翻译后英文页面的改动。
 
-Arch Linux 是通用 x86-64 GNU/Linux 发行版。Arch采用滚动升级模式，尽全力提供最新的稳定版软件。初始安装的Arch只是一个基本系统，随后用户可以根据自己的喜好安装需要的软件并配置成符合自己理想的系统.
+Arch Linux 是通用 x86-64 [GNU](/index.php/GNU "GNU")/Linux 发行版。Arch采用滚动升级模式，尽全力提供最新的稳定版软件。初始安装的Arch只是一个基本系统，随后用户可以根据自己的喜好安装需要的软件并配置成符合自己理想的系统.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -40,7 +40,7 @@ Arch Linux 将简洁定义为：**避免任何不必要的添加、修改和复�
 
 Arch尽全力保持软件处于最新的稳定版本，只要不出现系统软件包破损，都尽量用最新版本。Arch采用[滚动升级](https://en.wikipedia.org/wiki/Rolling_release "wikipedia:Rolling release")策略，安装之后可以持续升级。
 
-Arch向GNU/Linux用户提供了许多新特性，包括[systemd](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)")初始化系统、现代的[文件系统](/index.php/File_systems "File systems")、LVM2/EVMS、软件磁盘阵列（软RAID）、udev支持、initcpio（附带mkinitcpio）以及最新的内核。
+Arch向[GNU](/index.php/GNU "GNU")/Linux用户提供了许多新特性，包括[systemd](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)")初始化系统、现代的[文件系统](/index.php/File_systems "File systems")、LVM2/EVMS、软件磁盘阵列（软RAID）、udev支持、initcpio（附带mkinitcpio）以及最新的内核。
 
 ### 实用
 
@@ -72,7 +72,7 @@ Arch 开发者都是不收工资的志愿者，目前也没有通过 Arch Linux 
 
 ### 中期
 
-[这个](/images/8/8d/Archstats2002-2011.png "Archstats2002-2011.png")图表见证了Arch Linux 社区的稳步扩大. 而且从早期开始，Arch 就树立起了 [开放、友好和社区互助的形象](http://www.osnews.com/story/4827)。
+[这个](/index.php/File:Archstats2002-2011.png "File:Archstats2002-2011.png")图表见证了Arch Linux 社区的稳步扩大. 而且从早期开始，Arch 就树立起了 [开放、友好和社区互助的形象](http://www.osnews.com/story/4827)。
 
 ### ArchWiki 的诞生
 
@@ -84,7 +84,7 @@ Arch 开发者都是不收工资的志愿者，目前也没有通过 Arch Linux 
 
 ### Arch 安装脚本
 
-2012 年 7 月的 Arch Linux 安装介质中 [弃用了](https://www.archlinux.org/news/install-media-20120715-released/) 基于菜单的 Arch 安装框架。并编写了几个便于安装过程中使用的脚本。
+2012 年 7 月的 Arch Linux 安装介质中 [弃用了](https://www.archlinux.org/news/install-media-20120715-released/) 基于菜单的 *Arch 安装框架*(AIF)，改为使用*Arch 安装脚本*。
 
 ### Systemd 时代
 

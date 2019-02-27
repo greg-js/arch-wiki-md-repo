@@ -201,39 +201,39 @@ $ mv /etc/issue /etc/issue.orig
 
 ```
 
-2\. Keep in mind that most SSH related troubleshooting articles you will find on the web are **not** Systemd related. Often `/etc/fstab` definitions wrongly begin with `*sshfs#*user@host:/mnt/server/folder ... fuse ...` instead of using the syntax `user@host:/mnt/server/folder ... fuse.*sshfs* ... *x-systemd*, ...`.
+2\. Tenga en cuenta que la mayoría de los artículos de solución de problemas relacionados con SSH que encontrará en la web no están relacionados con Systemd. A menudo las definiciones en `/etc/fstab` comienzan erroneamente con `*sshfs#*user@host:/mnt/servidores/carpeta ... fuse ...` en lugar de utilizar la sintaxis `user@host:/mnt/servidores/carpeta ... fuse.*sshfs* ... *x-systemd*, ...`.
 
-3\. Check that the owner of server's source folder and content is owned by the server's user.
-
-```
-$ chown -R USER_S: /mnt/servers/folder
+3\. Compruebe que el propietario de la carpeta de origen y el contenido del servidor es propiedad del usuario del servidor.
 
 ```
-
-4\. The server's user ID can be different from the client's one. Obviously both user names have to be the same. You just have to care for the client's user IDs. SSHFS will translate the UID for you with the following mount options:
-
-```
-uid=*USER_C_ID*,gid=*GROUP_C_ID*
+$ chown -R USER_S: /mnt/servidores/carpeta
 
 ```
 
-5\. Check that the client's target mount point (folder) is owned by the client user. This folder should have the same user ID as defined in SSHFS's mount options.
+4\. El ID de usuario del servidor puede ser diferente del cliente. Obviamente ambos nombres de usuario tienen que ser los mismos. Solo tiene que cuidar los ID de usuario del cliente. SSHFS traducirá el UID con las siguientes opciones de montaje:
 
 ```
-$ chown -R USER_C: /mnt/client/folder
+uid=*ID_USUARIO_C*,gid=*ID_GRUPO_C*
 
 ```
 
-6\. Check that the client's mount point (folder) is empty. By default you cannot mount SSHFS folders to non-empty folders.
+5\. Compruebe que el punto de montaje de destino del cliente (carpeta) es propiedad del usuario cliente. Esta carpeta debe tener el mismo ID de usuario definido en las opciones de montaje de SSHFS.
+
+```
+$ chown -R USUARIO_C: /mnt/cliente/carpeta
+
+```
+
+6\. Compruebe que el punto de montaje (carpeta) del cliente esté vacío. De forma predeterminada no puede montar carpetas SSHFS en carpetas no vacías.
 
 ### Connection reset by peer
 
-*   If you are trying to access the remote system with a hostname, try using its IP address, as it can be a domain name solving issue. Make sure you edit `/etc/hosts` with the server details.
-*   If you are using non-default key names and are passing it as `-i .ssh/my_key`, this will not work. You have to use `-o IdentityFile=/home/user/.ssh/my_key`, with the full path to the key.
-*   If your `/root/.ssh/config` is a symlink, you will be getting this error as well. See [this serverfault topic](http://serverfault.com/questions/507748/bad-owner-or-permissions-on-root-ssh-config)
-*   Adding the option '`sshfs_debug`' (as in '`sshfs -o sshfs_debug user@server ...`') can help in resolving the issue.
-*   If that doesn't reveal anything useful, you might also try adding the option '`debug`'
-*   If you are trying to sshfs into a router running DD-WRT or the like, there is a solution [here](http://www.dd-wrt.com/wiki/index.php/SFTP_with_DD-WRT). (note that the -osftp_server=/opt/libexec/sftp-server option can be used to the sshfs command in stead of patching dropbear)
+*   Si está intentando acceder al sistema remoto con un nombre de host, intente utilizar su dirección IP, ya que puede ser un problema de resolución de nombres de dominio. Asegúrese de editar `/etc/hosts` con los detalles del servidor.
+*   Si está utilizando nombres de clave no predeterminados y los está pasando como `-i .ssh/my_key`, no funcionará. Tiene que utilizar `-o IdentityFile=/home/user/.ssh/my_key`, con la ruta completa a la clave.
+*   Si su `/root/.ssh/config` es un enlace simbólico, recibirá este error también. Véase [este tema en serverfault](http://serverfault.com/questions/507748/bad-owner-or-permissions-on-root-ssh-config)
+*   Añadiendo la opción '`sshfs_debug`' (como en '`sshfs -o sshfs_debug user@server ...`') puede ayudar a resolver el problema.
+*   Si eso no revela nada útil, también puede intentar añadir la opción '`debug`'
+*   Si está intentando hacer sshfs a través de un enrutador que utiliza DD-WRT o similar, hay una solución [aquí](http://www.dd-wrt.com/wiki/index.php/SFTP_with_DD-WRT). (tenga en cuenta que la opción -osftp_server=/opt/libexec/sftp-server se puede utilizar para la orden sshfs en lugar de parchear dropbear)
 *   If you see this only on boot, it may be that systemd is attempting to mount prior to a network connection being available. Enabling the 'wait-online' service appropriate to your network connection (eg. systemd-networkd-wait-online.service) fixes this.
 *   Old Forum thread: [sshfs: Connection reset by peer](https://bbs.archlinux.org/viewtopic.php?id=27613)
 *   Make sure your user can log into the server (especially when using AllowUsers)

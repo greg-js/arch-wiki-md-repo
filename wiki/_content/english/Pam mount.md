@@ -76,12 +76,13 @@ In general, you have to edit configuration files in `/etc/pam.d` so that *pam_mo
 ```
 #%PAM-1.0
 
-auth       required   pam_tally.so         onerr=succeed file=/var/log/faillog
+auth       required   pam_tally2.so        onerr=succeed file=/var/log/tallylog
 auth       required   pam_shells.so
 auth       requisite  pam_nologin.so
 **auth       optional   pam_mount.so**
 auth       include    system-auth
 
+account    required   pam_tally2.so
 account    required   pam_access.so
 account    required   pam_nologin.so
 account    include    system-auth

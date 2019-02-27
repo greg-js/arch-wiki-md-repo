@@ -58,7 +58,8 @@ Two versions of GTK+ are currently available in the [official repositories](/ind
 
 *   **GTK+ 3.x** is available with the [gtk3](https://www.archlinux.org/packages/?name=gtk3) package.
 *   **GTK+ 2.x** is available with the [gtk2](https://www.archlinux.org/packages/?name=gtk2) package.
-*   **GTK+ 1.x** is available with the [gtk](https://aur.archlinux.org/packages/gtk/) package.
+
+**GTK+ 1.x** is available with the [gtk](https://aur.archlinux.org/packages/gtk/) package.
 
 ## Themes
 
@@ -162,7 +163,7 @@ Other GUI tools generally overwrite the [configuration files](#Configuration).
 
 	[https://cgit.kde.org/kde-gtk-config.git](https://cgit.kde.org/kde-gtk-config.git) || [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config)
 
-	After installation, `kde-gtk-config` can also be found in *System Settings > Application Style > GTK*.
+	After installation, `kde-gtk-config` can also be found in *System Settings > Application Style > GNOME/GTK Application Style*.
 
 *   **LXAppearance** — Desktop independent GTK+ 2 and GTK+ 3 style configuration tool from the LXDE project (it does not require other parts of the LXDE desktop).
 

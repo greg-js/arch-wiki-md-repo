@@ -88,7 +88,7 @@
 | <small>6.8.</small> [Servidor X](/index.php/Category:X_server_(Portugu%C3%AAs) "Category:X server (Português)") <small>(5)</small> |
 | <small>6.8.1.</small> [Xorg commands](/index.php/Category:Xorg_commands_(Portugu%C3%AAs) "Category:Xorg commands (Português)") <small>(1) (também em [Commands](/index.php/Category:Commands_(Portugu%C3%AAs) "Category:Commands (Português)"))</small> |
 | <small>7.</small> [Administração do sistema](/index.php/Category:System_administration_(Portugu%C3%AAs) "Category:System administration (Português)") <small>(4)</small> |
-| <small>7.1.</small> [Processo de Inicialização](/index.php/Category:Boot_process_(Portugu%C3%AAs) "Category:Boot process (Português)") <small>(3)</small> |
+| <small>7.1.</small> [Processo de Inicialização](/index.php/Category:Boot_process_(Portugu%C3%AAs) "Category:Boot process (Português)") <small>(4)</small> |
 | <small>7.1.1.</small> [Boot loaders](/index.php/Category:Boot_loaders_(Portugu%C3%AAs) "Category:Boot loaders (Português)") <small>(1)</small> |
 | <small>7.1.2.</small> [Bootsplash](/index.php/Category:Bootsplash_(Portugu%C3%AAs) "Category:Bootsplash (Português)") <small>(1) (também em [Aparência](/index.php/Category:Eye_candy_(Portugu%C3%AAs) "Category:Eye candy (Português)"))</small> |
 | <small>7.1.3.</small> [Init](/index.php/Category:Init_(Portugu%C3%AAs) "Category:Init (Português)") <small>(2)</small> |
@@ -100,7 +100,7 @@
 | <small>7.2.2.3.</small> [Xorg commands](/index.php/Category:Xorg_commands_(Portugu%C3%AAs) "Category:Xorg commands (Português)") <small>(1) (também em [Servidor X](/index.php/Category:X_server_(Portugu%C3%AAs) "Category:X server (Português)"))</small> |
 | <small>7.3.</small> [Configuration files](/index.php/Category:Configuration_files_(Portugu%C3%AAs) "Category:Configuration files (Português)") <small>(1)</small> |
 | <small>7.4.</small> [Configuration management](/index.php/Category:Configuration_management_(Portugu%C3%AAs) "Category:Configuration management (Português)") <small>(1)</small> |
-| <small>7.5.</small> [Daemons](/index.php/Category:Daemons_(Portugu%C3%AAs) "Category:Daemons (Português)") <small>(3)</small> |
+| <small>7.5.</small> [Daemons](/index.php/Category:Daemons_(Portugu%C3%AAs) "Category:Daemons (Português)") <small>(4)</small> |
 | <small>7.5.1.</small> [Servers](/index.php/Category:Servers_(Portugu%C3%AAs) "Category:Servers (Português)") <small>(0) (também em [Rede](/index.php/Category:Networking_(Portugu%C3%AAs) "Category:Networking (Português)"))</small> |
 | <small>7.5.1.1.</small> [Mail server](/index.php/Category:Mail_server_(Portugu%C3%AAs) "Category:Mail server (Português)") <small>(2) (também em [Email](/index.php/Category:Email_(Portugu%C3%AAs) "Category:Email (Português)"))</small> |
 | <small>7.5.1.2.</small> [Web server](/index.php/Category:Web_server_(Portugu%C3%AAs) "Category:Web server (Português)") <small>(0) (também em [Web](/index.php/Category:Web_(Portugu%C3%AAs) "Category:Web (Português)"))</small> |

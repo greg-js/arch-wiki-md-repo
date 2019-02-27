@@ -17,8 +17,7 @@ Related articles
 *   [2 Installation](#Installation)
     *   [2.1 Enable Southern Islands (SI) and Sea Islands (CIK) support](#Enable_Southern_Islands_(SI)_and_Sea_Islands_(CIK)_support)
         *   [2.1.1 Set required module parameters](#Set_required_module_parameters)
-    *   [2.2 AMD DC](#AMD_DC)
-    *   [2.3 AMDGPU PRO](#AMDGPU_PRO)
+    *   [2.2 AMDGPU PRO](#AMDGPU_PRO)
 *   [3 Loading](#Loading)
     *   [3.1 Enable early KMS](#Enable_early_KMS)
 *   [4 Xorg configuration](#Xorg_configuration)
@@ -31,10 +30,9 @@ Related articles
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Xorg or applications won't start](#Xorg_or_applications_won't_start)
     *   [6.2 Screen artifacts and frequency problem](#Screen_artifacts_and_frequency_problem)
-    *   [6.3 Screen flickering](#Screen_flickering)
-    *   [6.4 R9 390 series Poor Performance and/or Instability](#R9_390_series_Poor_Performance_and/or_Instability)
-    *   [6.5 Freezes with "[drm] IP block:gmc_v8_0 is hung!" kernel error](#Freezes_with_"[drm]_IP_block:gmc_v8_0_is_hung!"_kernel_error)
-    *   [6.6 Cursor corruption](#Cursor_corruption)
+    *   [6.3 R9 390 series Poor Performance and/or Instability](#R9_390_series_Poor_Performance_and/or_Instability)
+    *   [6.4 Freezes with "[drm] IP block:gmc_v8_0 is hung!" kernel error](#Freezes_with_"[drm]_IP_block:gmc_v8_0_is_hung!"_kernel_error)
+    *   [6.5 Cursor corruption](#Cursor_corruption)
 
 ## Selecting the right driver
 
@@ -79,12 +77,6 @@ The flags depend on the cards GCN version:
 *   Southern Islands (SI): `radeon.si_support=0 amdgpu.si_support=1`
 *   Sea Islands (CIK): `radeon.cik_support=0 amdgpu.cik_support=1`
 
-### AMD DC
-
-AMD DC (Display Core), introduced in [linux](https://www.archlinux.org/packages/?name=linux) 4.15-4.17, is a new display stack that brings support for atomic mode-setting and HDMI/DP audio. For more info about AMDGPU-DC, see [this article](https://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-DC-Accepted).
-
-If you are on GCN 1.1 or newer with AMDGPU and want to use DC, set `amdgpu.dc=1` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") or [module option](/index.php/Kernel_module#Setting_module_options "Kernel module") when using [KMS](/index.php/KMS "KMS").
-
 ### AMDGPU PRO
 
 **Warning:** Arch Linux is officially not supported.
@@ -113,25 +105,7 @@ If it does not happen, then:
 
 ### Enable early KMS
 
-**Tip:** If you have problems with the resolution, [Kernel mode setting#Forcing modes and EDID](/index.php/Kernel_mode_setting#Forcing_modes_and_EDID "Kernel mode setting") may help.
-
-[Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting") (KMS) is supported by the amdgpu driver, is mandatory and enabled by default.
-
-KMS is typically initialized after the [initramfs stage](/index.php/Arch_boot_process#initramfs "Arch boot process"). It is possible, however, to enable KMS during the initramfs stage. To do this, add the `amdgpu` module to the `MODULES` line in `/etc/mkinitcpio.conf`:
-
-```
-MODULES=(amdgpu radeon)
-
-```
-
-Now, regenerate the initramfs:
-
-```
-# mkinitcpio -p linux
-
-```
-
-The change takes effect at the next reboot.
+See [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting").
 
 ## Xorg configuration
 
@@ -296,19 +270,15 @@ A workaround [[4]](https://bugs.freedesktop.org/show_bug.cgi?id=96868#c13) is sa
 
 There is also a GUI solution [[5]](https://github.com/marazmista/radeon-profile) where you can manage the "power_dpm" with [radeon-profile-git](https://aur.archlinux.org/packages/radeon-profile-git/) and [radeon-profile-daemon-git](https://aur.archlinux.org/packages/radeon-profile-daemon-git/).
 
-### Screen flickering
-
-If you experience flickering [[6]](https://bugzilla.kernel.org/show_bug.cgi?id=199101) add `amdgpu.dc=0` to your kernel parameters.
-
 ### R9 390 series Poor Performance and/or Instability
 
-If you experience issues [[7]](https://bugs.freedesktop.org/show_bug.cgi?id=91880) with a AMD R9 390 series graphics card, set `radeon.cik_support=0 radeon.si_support=0 amdgpu.cik_support=1 amdgpu.si_support=1 amdgpu.dpm=1 amdgpu.dc=1` as [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to force the use of amdgpu driver instead of radeon.
+If you experience issues [[6]](https://bugs.freedesktop.org/show_bug.cgi?id=91880) with a AMD R9 390 series graphics card, set `radeon.cik_support=0 radeon.si_support=0 amdgpu.cik_support=1 amdgpu.si_support=1 amdgpu.dpm=1 amdgpu.dc=1` as [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to force the use of amdgpu driver instead of radeon.
 
 If it still does not work, try disabling DPM, by setting the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to: `radeon.cik_support=0 radeon.si_support=0 amdgpu.cik_support=1 amdgpu.si_support=1`
 
 ### Freezes with "[drm] IP block:gmc_v8_0 is hung!" kernel error
 
-If you experience freezes and kernel crashes during a GPU intensive task with the kernel error " [drm] IP block:gmc_v8_0 is hung!" [[8]](https://bugs.freedesktop.org/show_bug.cgi?id=102322), a workaround is to set `amggpu.vm_update_mode=3` as [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to force the GPUVM page tables update to be done using the CPU. Downsides are listed here [[9]](https://bugs.freedesktop.org/show_bug.cgi?id=102322#c15).
+If you experience freezes and kernel crashes during a GPU intensive task with the kernel error " [drm] IP block:gmc_v8_0 is hung!" [[7]](https://bugs.freedesktop.org/show_bug.cgi?id=102322), a workaround is to set `amggpu.vm_update_mode=3` as [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to force the GPUVM page tables update to be done using the CPU. Downsides are listed here [[8]](https://bugs.freedesktop.org/show_bug.cgi?id=102322#c15).
 
 ### Cursor corruption
 

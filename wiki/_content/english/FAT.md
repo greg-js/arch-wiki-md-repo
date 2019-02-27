@@ -33,6 +33,8 @@ Format a partition to FAT32:
 
 ```
 
+**Note:** `mkfs.vfat` is a symlink to `mkfs.fat`, they are the same utility.
+
 ## Kernel configuration
 
 Here is an example of the default *mount* configuration in the kernel:

@@ -875,6 +875,8 @@ This can be stopped by setting `dns=none` in a configuration file:
 dns=none
 ```
 
+**Note:** See [#DNS caching and split DNS](#DNS_caching_and_split_DNS), to configure NetworkManager using other DNS backends like [dnsmasq](/index.php/Dnsmasq "Dnsmasq") and [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved"), instead of using `dns=none`.
+
 After that `/etc/resolv.conf` might be a broken symlink that you will need to remove. Then, just create a new `/etc/resolv.conf` file.
 
 *NetworkManager* also offers hooks via so called dispatcher scripts that can be used to alter the `/etc/resolv.conf` after network changes. See [#Network services with NetworkManager dispatcher](#Network_services_with_NetworkManager_dispatcher) and [NetworkManager(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.8) for more information.

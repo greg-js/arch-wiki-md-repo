@@ -25,11 +25,11 @@ Use the [Installation guide](/index.php/Installation_guide "Installation guide")
 
 ## Xorg
 
-The Intel device needs to be specified in the Xorg config. Add the following section to your Xorg configuration (`/etc/X11/xorg.conf`).
+The Intel device needs to be specified in the Xorg config. Create the file `/etc/X11/xorg.conf.d/20-intel.conf` with the following contents (or add it to your `/etc/X11/xorg.conf`).
 
 ```
 Section "Device"
-   Identifier "intel"
+   Identifier "Intel Graphics"
    Driver "intel"
    BusID "PCI:0:2:0"
    Option "TearFree" # Not required but helpful

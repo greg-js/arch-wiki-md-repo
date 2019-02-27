@@ -1,11 +1,16 @@
 [Neovim](https://neovim.io/) is a fork of [Vim](/index.php/Vim "Vim") aiming to improve user experience, plugins, and GUIs.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Transition from vim](#Transition_from_vim)
-        *   [2.1.1 Loading vim addons](#Loading_vim_addons)
+    *   [2.1 Migrating from Vim](#Migrating_from_Vim)
+    *   [2.2 Shared Configuration between Vim and Nvim](#Shared_Configuration_between_Vim_and_Nvim)
+        *   [2.2.1 Loading vim addons](#Loading_vim_addons)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Replacing vi and vim with neovim](#Replacing_vi_and_vim_with_neovim)
     *   [3.2 Symlinking init.vim to .vimrc](#Symlinking_init.vim_to_.vimrc)
@@ -19,11 +24,21 @@
 
 ## Configuration
 
-### Transition from vim
+**Important:** Make sure your environment variable $XDG_CONFIG_HOME is set or your bspwmrc will not be found. This can be done by adding `XDG_CONFIG_HOME="$HOME/.config"` and `export XDG_CONFIG_HOME` to your `~/.profile`.
+
+Nvim's user-specific configuration file is located in `~/.config/nvim/init.vim` Nvim is compatible with most of Vim's options, however there are options specific to Nvim. For a complete list of Nvim options, see Neovim's [help file](https://neovim.io/doc/user/options.html).
+
+Nvim's data directory is located in `~/.local/share/nvim/` and contains swap for open files, the [ShaDa](https://neovim.io/doc/user/starting.html#shada) (Shared Data) file, and the site directory for plugins.
+
+### Migrating from Vim
+
+If you wish to migrate your existing Vim configuration to Nvim, simply copy your `~/.vimrc` to `~/.config/nvim/init.vim`. If applicable, copy the contents of `~/.vim/autoload/` to `~/.local/share/nvim/site/autoload/`.
+
+### Shared Configuration between Vim and Nvim
 
 Neovim uses `$XDG_CONFIG_HOME/nvim` instead of `~/.vim` as its main configuration directory and `$XDG_CONFIG_HOME/nvim/init.vim` instead of `~/.vimrc` as its main configuration file.
 
-See [nvim-from-vim](https://neovim.io/doc/user/nvim.html#nvim-from-vim) or the `:help nvim-from-vim` neovim command to use your vim configuration in neovim.
+If you wish to continue using Vim and wish to source your existing Vim configuration in Nvim, see [nvim-from-vim](https://neovim.io/doc/user/nvim.html#nvim-from-vim) or the `:help nvim-from-vim` neovim command.
 
 #### Loading vim addons
 

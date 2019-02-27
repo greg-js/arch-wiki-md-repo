@@ -48,49 +48,9 @@ Intel (x86) tablets that are known to work (well) with Arch:
 
 ## Stylus
 
-First [install](/index.php/Install "Install") [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom).
+[Install](/index.php/Install "Install") [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom).
 
-Then add the following lines to the **ServerLayout** section of the [Xorg](/index.php/Xorg "Xorg") configuration file `/etc/X11/xorg.conf`:
-
-```
-InputDevice    "stylus" "SendCoreEvents"
-InputDevice    "eraser" "SendCoreEvents"
-InputDevice    "cursor" "SendCoreEvents"
-
-```
-
-As well as the following sections:
-
-```
-Section "InputDevice"
-    Identifier     "stylus"
-    Driver         "wacom"
-    Option         "Device" "/dev/ttyS0"
-    Option         "Type" "stylus"
-    Option         "ForceDevice" "ISDV4"
-    Option         "Button2" "3"
-EndSection
-
-Section "InputDevice"
-    Identifier     "eraser"
-    Driver         "wacom"
-    Option         "Device" "/dev/ttyS0"
-    Option         "Type" "eraser"
-    Option         "ForceDevice" "ISDV4"
-    Option         "Button2" "3"
-EndSection
-
-Section "InputDevice"
-    Identifier     "cursor"
-    Driver         "wacom"
-    Option         "Device" "/dev/ttyS0"
-    Option         "Type" "cursor"
-    Option         "ForceDevice" "ISDV4"
-EndSection
-
-```
-
-See [The Linux Wacom Project](https://linuxwacom.github.io/) for more details.
+**Note:** To configure styles devices manually (although not recommended), see the [Linux Wacom Project Wiki](https://github.com/linuxwacom/xf86-input-wacom/wiki/Configuring-X).
 
 ## Rotation
 

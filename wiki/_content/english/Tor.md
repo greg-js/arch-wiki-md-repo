@@ -156,7 +156,7 @@ $ newgrp tor
 
 ```
 
-restart tor
+[restart](/index.php/Restart "Restart") tor
 
 ```
 # systemctl restart tor
@@ -323,7 +323,7 @@ After running the script as root, Tor can be launched in the [chroot](/index.php
 
 ```
 
-or if you use systemd overload the service:
+or, if you use [systemd, overload](/index.php/Systemd#Editing_provided_units "Systemd") the service:
 
  `/etc/systemd/system/tor.service.d/chroot.conf` 
 ```
@@ -398,7 +398,7 @@ Setup [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") accordi
 
 #### Start and enable systemd-nspawn
 
-[Start](/index.php/Start "Start") and enable `systemd-nspawn@tor-exit.service`.
+[Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `systemd-nspawn@tor-exit.service`.
 
 ### Container configuration
 
@@ -432,7 +432,7 @@ The Tor Project currently only supports web browsing with tor through the [Tor B
 
 ### Firefox
 
-In *Preferences > General > Network Proxy > Settings* select *Manual proxy configuration* and enter SOCKS host `localhost` with port `9050` (SOCKS v5). To channel all DNS requests through TOR's socks proxy, also select *Proxy DNS when using SOCKS v5*.
+In *Preferences > General > Network Settings > Settings...* , select *Manual proxy configuration* and enter SOCKS host `localhost` with port `9050` (SOCKS v5). To channel all DNS requests through TOR's socks proxy, also select *Proxy DNS when using SOCKS v5*.
 
 ### Chromium
 
@@ -447,7 +447,7 @@ The `--proxy-server="socks5://myproxy:8080"` flag tells Chrome to send all `http
 
 **Warning:** Proxying of `ftp://` URLs through a SOCKS proxy is not yet implemented[[3]](https://www.chromium.org/developers/design-documents/network-stack/socks-proxy).
 
-The `--proxy-server` flag applies to URL loads only. There are other components of Chrome which may issue DNS resolves directly and hence bypass this proxy server. The most notable such component is the "DNS prefetcher". Hence if DNS prefetching is not disabled in Chrome then you will still see local DNS requests being issued by Chrome despite having specified a SOCKS v5 proxy server. Disabling DNS prefetching would solve this problem, however it is a fragile solution since once needs to be aware of all the areas in Chrome which issue raw DNS requests. To address this, the next flag, `--host-resolver-rules="MAP * ~NOTFOUND , EXCLUDE myproxy"`, is a catch-all to prevent Chrome from sending any DNS requests over the network. It says that all DNS resolves are to be simply mapped to the (invalid) address `~NOTFOUND` (think of it as `0.0.0.0`). The `"EXCLUDE"` clause make an exception for `"myproxy"`, because otherwise Chrome would be unable to resolve the address of the SOCKS proxy server itself, and all requests would necessarily fail with `PROXY_CONNECTION_FAILED`.
+The `--proxy-server` flag applies to URL loads only. There are other components of Chrome which may issue DNS resolves directly and hence bypass this proxy server. The most notable such component is the "DNS prefetcher". Hence if DNS prefetching is not disabled in Chrome then you will still see local DNS requests being issued by Chrome despite having specified a SOCKS v5 proxy server. Disabling DNS prefetching would solve this problem, however it is a fragile solution since one needs to be aware of all the areas in Chrome which issue raw DNS requests. To address this, the next flag, `--host-resolver-rules="MAP * ~NOTFOUND , EXCLUDE myproxy"`, is a catch-all to prevent Chrome from sending any DNS requests over the network. It says that all DNS resolves are to be simply mapped to the (invalid) address `~NOTFOUND` (think of it as `0.0.0.0`). The `"EXCLUDE"` clause make an exception for `"myproxy"`, because otherwise Chrome would be unable to resolve the address of the SOCKS proxy server itself, and all requests would necessarily fail with `PROXY_CONNECTION_FAILED`.
 
 To prevent the [WebRTC leak](https://ipleak.net/#webrtcleak) you can install the extension [WebRTC Network Limiter](https://chrome.google.com/webstore/detail/webrtc-network-limiter/npeicpdbkakmehahjeeohfdhnlpdklia).
 
@@ -492,7 +492,7 @@ Keep in mind that Polipo is not required if you can use a SOCKS 5 proxy, which T
 
 ### Privoxy
 
-You can also use this setup in other applications like messaging (e.g. Jabber, IRC). Applications that support HTTP proxies you can connect to Privoxy (i.e. `127.0.0.1:8118`). To use SOCKS proxy directly, you can point your application at Tor (i.e. `127.0.0.1:9050`). A problem with this method though is that applications doing DNS resolves by themselves may leak information. Consider using Socks4A (e.g. with Privoxy) instead.
+You can also use this setup in other applications like messaging (e.g. [Jabber](/index.php/Jabber "Jabber"), [IRC](/index.php/IRC "IRC")). Applications that support HTTP proxies you can connect to Privoxy (i.e. `127.0.0.1:8118`). To use SOCKS proxy directly, you can point your application at Tor (i.e. `127.0.0.1:9050`). A problem with this method though is that applications doing DNS resolves by themselves may leak information. Consider using Socks4A (e.g. with Privoxy) instead.
 
 ## Instant messaging
 
@@ -500,7 +500,7 @@ In order to use an IM client with tor, we do not need an http proxy like [polipo
 
 ### Pidgin
 
-You can set up Pidgin to use Tor globally, or per account. To use Tor globally, go to *Tools -> Preferences -> Proxy*. To use Tor for specific accounts, go to *Accounts > Manage Accounts*, select the desired account, click Modify, then go to the Proxy tab. The proxy settings are as follows:
+You can set up [Pidgin](/index.php/Pidgin "Pidgin") to use Tor globally, or per account. To use Tor globally, go to *Tools -> Preferences -> Proxy*. To use Tor for specific accounts, go to *Accounts > Manage Accounts*, select the desired account, click Modify, then go to the Proxy tab. The proxy settings are as follows:
 
 ```
 Proxy type SOCKS5
@@ -547,7 +547,7 @@ For more information check [Accessing freenode Via Tor](https://freenode.net/kb/
 
 ## Pacman
 
-Pacman download operations (repository DBs, packages, and public keys) can be done using the Tor network.
+[Pacman](/index.php/Pacman "Pacman") download operations (repository DBs, packages, and public keys) can be done using the Tor network.
 
 Advantages:
 

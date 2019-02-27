@@ -15,7 +15,11 @@
 
 This article covers specific configuation of this laptop. Currently based on experience with Gnome, running on Wayland.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Hardware Info](#Hardware_Info)
     *   [1.1 Hardware Options](#Hardware_Options)
@@ -89,7 +93,7 @@ Installation is very straightforward. You will need to disable secureboot in BIO
 
 ### Audio
 
-The laptop has a Realtek ALC295 Codec with a 4 speaker system built in. Currently only the 2 speakers on the underside of the machine will work. More information at [https://bugzilla.kernel.org/show_bug.cgi?id=189331](https://bugzilla.kernel.org/show_bug.cgi?id=189331)
+The laptop has a Realtek ALC295 Codec with a 4 speaker system built in. Currently only the 2 speakers on the underside of the machine will work out of the box. The additional speakers can be enabled using `hdajackretask` from the [alsa-tools](https://www.archlinux.org/packages/?name=alsa-tools) package. To accomplish this, with the Realtek ALC295 codec selected, override pin 0x14 to "Internal Speaker (LFE)" and pin 0x1e to "Internal Speaker". The option to show unconnected pins may need to be selected. More information at [https://bugzilla.kernel.org/show_bug.cgi?id=189331](https://bugzilla.kernel.org/show_bug.cgi?id=189331)
 
 ### Mute Button
 

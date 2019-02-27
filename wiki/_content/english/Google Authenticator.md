@@ -64,9 +64,7 @@ Finally, [reload](/index.php/Reload "Reload") the `sshd` service.
 
 ### Request OTP only when connecting from outside your local network
 
-Sometimes, we just want to enable the 2FA capability just when we connect from outside our local network. To achieve this, create a file: `/etc/secutiry/access-local.conf`
-
-And add the networks where you want to be able to bypass the 2FA from:
+Sometimes, we just want to enable the 2FA capability just when we connect from outside our local network. To achieve this, create a file (e.g. `/etc/secutiry/access-local.conf`) and add the networks where you want to be able to bypass the 2FA from:
 
 ```
 # only allow from local IP range
@@ -78,7 +76,7 @@ And add the networks where you want to be able to bypass the 2FA from:
 
 ```
 
-Go ahead and add this to your `/etc/pam.d/sshd`
+Then edit your `/etc/pam.d/sshd` and add the line:
 
 ```
 #%PAM-1.0

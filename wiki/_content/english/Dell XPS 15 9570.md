@@ -1,4 +1,4 @@
-**Note:** This page far from completed. Some not mentioned items could be same as [XPS 15 9560](/index.php/XPS_15_9560 "XPS 15 9560")
+**Note:** This page far from completed. Some not mentioned items could be same as [XPS 15 9560](/index.php/XPS_15_9560 "XPS 15 9560"). Most of it also applies to the Precision 5530
 
 | **Device/Functionality** | **Status** |
 | [Suspend](#Suspend) | Working |

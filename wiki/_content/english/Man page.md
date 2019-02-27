@@ -17,6 +17,9 @@ In spite of their scope, man pages are designed to be self-contained documents, 
 *   [1 Accessing man pages](#Accessing_man_pages)
 *   [2 Format](#Format)
 *   [3 Searching manuals](#Searching_manuals)
+    *   [3.1 Building the manual cache with mandb](#Building_the_manual_cache_with_mandb)
+    *   [3.2 Searching for expressions in manuals](#Searching_for_expressions_in_manuals)
+    *   [3.3 Getting one-line descriptions with whatis](#Getting_one-line_descriptions_with_whatis)
 *   [4 Page width](#Page_width)
 *   [5 Reading local man pages](#Reading_local_man_pages)
     *   [5.1 Viewer applications](#Viewer_applications)
@@ -50,15 +53,6 @@ $ man 5 passwd
 
 to read the man page on `/etc/passwd`, rather than the `passwd` utility.
 
-One-line descriptions of man pages can be displayed using the `whatis` command. For example, for a brief description of the man page sections about `ls`, type:
-
- `$ whatis ls` 
-```
-ls (1p)              - list directory contents
-ls (1)               - list directory contents
-
-```
-
 ## Format
 
 Man pages all follow a fairly standard format, which helps in navigating them. See the section entitled "Sections within a manual page" in [man-pages(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/man-pages.7).
@@ -67,6 +61,8 @@ Man pages all follow a fairly standard format, which helps in navigating them. S
 
 Even though the `man` utility allows users to display man pages, and search their contents via *less*, a problem arises when one knows not the exact name of the desired manual page in the first place! Fortunately, the `-k` or `--apropos` options can be used to search the manual page descriptions for instances of a given keyword.
 
+### Building the manual cache with mandb
+
 The search feature is provided by a dedicated cache, otherwise all searches would give the *nothing appropriate* result. By default, maintenance of that cache is handled by `man-db.service` which gets periodically triggered by `man-db.timer`. You can manually (re)generate the cache or update it by running:
 
 ```
@@ -74,7 +70,9 @@ The search feature is provided by a dedicated cache, otherwise all searches woul
 
 ```
 
-Now you can begin your search. For example, to search for man pages related to "password":
+### Searching for expressions in manuals
+
+For example, to search for man pages related to "password":
 
 ```
 $ man -k password
@@ -101,6 +99,17 @@ If you want to do a more in-depth search by matching the keywords found in the w
 
 ```
 $ man -K password
+
+```
+
+### Getting one-line descriptions with whatis
+
+One-line descriptions of man pages in the man-db cache can be displayed using the `whatis` command. For example, for a brief description of the man page sections about `ls`, type:
+
+ `$ whatis ls` 
+```
+ls (1p)              - list directory contents
+ls (1)               - list directory contents
 
 ```
 
@@ -216,7 +225,7 @@ There are several online databases of man pages, including:
 *   [DragonFlyBSD man pages](https://leaf.dragonflybsd.org/cgi/web-man)
 *   [FreeBSD man pages](https://www.freebsd.org/cgi/man.cgi)
 *   [NetBSD man pages](http://netbsd.gw.com/cgi-bin/man-cgi)
-*   [OpenBSD man pages](https://www.openbsd.org/cgi-bin/man.cgi)
+*   [OpenBSD man pages](https://man.openbsd.org)
 *   [Mac OS X man pages](https://developer.apple.com/documentation/Darwin/Reference/ManPages/index.html)
 *   [Plan 9 Manual — Volume 1](http://man.cat-v.org/plan_9/)
 *   [Inferno Manual — Volume 1](http://man.cat-v.org/inferno/)
